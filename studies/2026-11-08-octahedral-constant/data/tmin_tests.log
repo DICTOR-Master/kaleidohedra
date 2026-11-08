@@ -1,0 +1,41 @@
+1. SANITY: Platonic solids (exact)
+   tetrahedron   V= 4 F= 4  t_min = 9 = 9.000000   (R/r)^2 = 9   ok
+   cube          V= 8 F= 6  t_min = 3 = 3.000000   (R/r)^2 = 3   ok
+   octahedron    V= 6 F= 8  t_min = 3 = 3.000000   (R/r)^2 = 3   ok
+   dodecahedron  V=20 F=12  t_min = 15 - 6*sqrt(5) = 1.583592   (R/r)^2 = 15 - 6*sqrt(5)   ok
+   icosahedron   V=12 F=20  t_min = 15 - 6*sqrt(5) = 1.583592   (R/r)^2 = 15 - 6*sqrt(5)   ok
+2. TEST: octahedral solids (exact); theorem says t_min <= (R/r)^2 <= 3
+   cuboctahedron                            V=12 F=14  t_min = 3/2 = 1.500000   (R/r)^2 = 2 = 2.000000   <= 3 ok
+   truncated octahedron                     V=24 F=14  t_min = 3/2 = 1.500000   (R/r)^2 = 5/3 = 1.666667   <= 3 ok
+   rhombic dodecahedron                     V=14 F=12  t_min = 2 = 2.000000   (R/r)^2 = 2 = 2.000000   <= 3 ok
+   truncated cube                           V=24 F=14  t_min = -3 + 3*sqrt(2) = 1.242641   (R/r)^2 = 5 - 2*sqrt(2) = 2.171573   <= 3 ok
+   rhombicuboctahedron                      V=24 F=26  t_min = 23/7 - 10*sqrt(2)/7 = 1.265409   (R/r)^2 = 7 - 4*sqrt(2) = 1.343146   <= 3 ok
+   truncated cuboctahedron                  V=48 F=26  t_min = sqrt(2)/7 + 1 = 1.202031   (R/r)^2 = 2*sqrt(2)/49 + 69/49 = 1.465886   <= 3 ok
+   tetrakis hexahedron                      V=14 F=24  t_min = 5/3 = 1.666667   (R/r)^2 = 5/3 = 1.666667   <= 3 ok
+   triakis octahedron                       V=14 F=24  t_min = 5 - 2*sqrt(2) = 2.171573   (R/r)^2 = 5 - 2*sqrt(2) = 2.171573   <= 3 ok
+   P_mu, mu = 9/8                           V=24 F=14  t_min = 9/8 = 1.125000   (R/r)^2 = 65/27 = 2.407407   <= 3 ok
+   P_mu, mu = 5/4                           V=24 F=14  t_min = 5/4 = 1.250000   (R/r)^2 = 51/25 = 2.040000   <= 3 ok
+   P_mu, mu = 11/8                          V=24 F=14  t_min = 11/8 = 1.375000   (R/r)^2 = 219/121 = 1.809917   <= 3 ok
+   P_mu, mu = 3/2                           V=24 F=14  t_min = 3/2 = 1.500000   (R/r)^2 = 5/3 = 1.666667   <= 3 ok
+   P_mu, mu = 13/8                          V=24 F=14  t_min = 159/104 = 1.528846   (R/r)^2 = 267/169 = 1.579882   <= 3 ok
+   P_mu, mu = 7/4                           V=24 F=14  t_min = 43/28 = 1.535714   (R/r)^2 = 25/16 = 1.562500   <= 3 ok
+   P_mu, mu = 15/8                          V=24 F=14  t_min = 61/40 = 1.525000   (R/r)^2 = 113/64 = 1.765625   <= 3 ok
+   P_mu, mu = 2                             V=12 F=14  t_min = 3/2 = 1.500000   (R/r)^2 = 2 = 2.000000   <= 3 ok
+   P_mu, mu = 17/8                          V=24 F=14  t_min = 24/17 = 1.411765   (R/r)^2 = 129/64 = 2.015625   <= 3 ok
+   P_mu, mu = 9/4                           V=24 F=14  t_min = 4/3 = 1.333333   (R/r)^2 = 33/16 = 2.062500   <= 3 ok
+   P_mu, mu = 19/8                          V=24 F=14  t_min = 24/19 = 1.263158   (R/r)^2 = 137/64 = 2.140625   <= 3 ok
+   P_mu, mu = 5/2                           V=24 F=14  t_min = 6/5 = 1.200000   (R/r)^2 = 9/4 = 2.250000   <= 3 ok
+   P_mu, mu = 21/8                          V=24 F=14  t_min = 8/7 = 1.142857   (R/r)^2 = 153/64 = 2.390625   <= 3 ok
+   P_mu, mu = 11/4                          V=24 F=14  t_min = 12/11 = 1.090909   (R/r)^2 = 41/16 = 2.562500   <= 3 ok
+   P_mu, mu = 23/8                          V=24 F=14  t_min = 24/23 = 1.043478   (R/r)^2 = 177/64 = 2.765625   <= 3 ok
+   P_mu, mu = 1/2 + sqrt(5)/2               V=24 F=14  t_min = 6 - 2*sqrt(5) = 1.527864   (R/r)^2 = 15 - 6*sqrt(5) = 1.583592   <= 3 ok
+   P_mu, mu = sqrt(3)                       V=24 F=14  t_min = 5 - 2*sqrt(3) = 1.535898   (R/r)^2 = 5 - 2*sqrt(3) = 1.535898   <= 3 ok
+   largest t_min among the exact octahedral tests: 2.171573
+2b. TEST (float): random orbit hulls, 1-3 random seed points
+   group O : 3000 random hulls, max t_min = 1.527871
+   group Oh: 2000 random hulls, max t_min = 1.272571
+3. (float) groups without 4-fold axes: T_h (orbits 3-designs, bound 3) and T (2-designs, bound 9)
+   group Th: 2000 random hulls, max t_min = 1.533860  (bound 3: ok)
+   group T : 2000 random hulls, max t_min = 2.798954  (bound 9: ok)
+time 17.4s
+FINAL ok

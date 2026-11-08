@@ -1,0 +1,26 @@
+  v=(1, 0, 0) w=(1, 0, 0)  |v|^2|w|^2=1  caseA L=1 (3L^2=3)  caseB L=2/3 (3L^2=4/3)
+  v=(1, 0, 0) w=(1, 1, 0)  |v|^2|w|^2=2  caseA L=1 (3L^2=3)  caseB L=1 (3L^2=3)
+  v=(1, 0, 0) w=(1, 1, 1)  |v|^2|w|^2=3  caseA L=1 (3L^2=3)  caseB L=1 (3L^2=3)
+  v=(1, 1, 0) w=(1, 0, 0)  |v|^2|w|^2=2  caseA L=1 (3L^2=3)  caseB L=1 (3L^2=3)
+  v=(1, 1, 0) w=(1, 1, 0)  |v|^2|w|^2=4  caseA L=2 (3L^2=12)  caseB L=5/3 (3L^2=25/3)
+  v=(1, 1, 0) w=(1, 1, 1)  |v|^2|w|^2=6  caseA L=2 (3L^2=12)  caseB L=2 (3L^2=12)
+  v=(1, 1, 1) w=(1, 0, 0)  |v|^2|w|^2=3  caseA L=1 (3L^2=3)  caseB L=1 (3L^2=3)
+  v=(1, 1, 1) w=(1, 1, 0)  |v|^2|w|^2=6  caseA L=2 (3L^2=12)  caseB L=2 (3L^2=12)
+  v=(1, 1, 1) w=(1, 1, 1)  |v|^2|w|^2=9  caseA L=3 (3L^2=27)  caseB L=7/3 (3L^2=49/3)
+equality pairs, case A: [((1, 0, 0), (1, 1, 1)), ((1, 1, 1), (1, 0, 0))]  case B: [((1, 0, 0), (1, 1, 1)), ((1, 1, 1), (1, 0, 0))]
+cos^2 of the sides e1-m, m-c3, e1-c3: 1/2 2/3 1/3
+kite diagonal m-m' cos = 1/2 (60 deg; the kite proof needs <= 1/sqrt3)
+float: min F over 20000 random pairs = 0.630690 (1/sqrt3 = 0.577350); bound > F in 0 cases
+  ok   |O| = 24, |O_h| = 48
+  ok   O closed under products
+  ok   g1, g2, g3 are rotations in O
+  ok   g2 half-turn about (1,1,0)
+  ok   g3 quarter-turn about x1
+  ok   (g_i a).(s0 b) = E0, E12, E23
+  ok   E0+E12+E23 has nonnegative coefficients
+  ok   case A: 9 vertex pairs pass exactly
+  ok   case B: 9 vertex pairs pass exactly (weights 1/3)
+  ok   equality only at (e1, c3) and (c3, e1)
+  ok   hypotenuse cos^2 = 1/3, kite diagonal 60 deg
+  ok   float: reduction bound never exceeds F, F >= 1/sqrt3
+FINAL ok

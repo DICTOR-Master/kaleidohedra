@@ -1,0 +1,15 @@
+cos^2 of the sides: {('5', '3'): 2*sqrt(5)/15 + 1/3, ('3', '2'): sqrt(5)/6 + 1/2, ('5', '2'): sqrt(5)/10 + 1/2}
+angles (deg): {('5', '3'): 37.3774, ('3', '2'): 20.9052, ('5', '2'): 31.7175}
+case A (T x T, identity): passes True | equality pairs 2
+case B single mirror in side 5-3: passes True (equality pairs 2)
+case B single mirror in side 3-2: passes False (equality pairs 2)
+case B single mirror in side 5-2: passes False (equality pairs 2)
+case B average of the three mirrors: passes True
+so every icosahedral orbit hull has inradius >= c, c^2 = (5+2sqrt5)/15, 1/c^2 = 15 - 6*sqrt(5)
+  ok   |I| = 60
+  ok   sides 31.717, 20.905, 37.377 deg
+  ok   longest side has cos^2 = (5+2sqrt5)/15
+  ok   case A
+  ok   case B: the kite (mirror in the longest side 5-3) passes, as in #43
+  ok   1/c^2 = 15 - 6 sqrt5
+FINAL ok

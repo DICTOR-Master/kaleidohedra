@@ -1,0 +1,38 @@
+  mu = 17/16              3/mu = 48/17                  t_min: 17/16                  17/16                  equal   (R/r)^2 equal: False
+  mu = 9/8                3/mu = 8/3                    t_min: 9/8                    9/8                    equal   (R/r)^2 equal: False
+  mu = 19/16              3/mu = 48/19                  t_min: 19/16                  19/16                  equal   (R/r)^2 equal: False
+  mu = 5/4                3/mu = 12/5                   t_min: 5/4                    5/4                    equal   (R/r)^2 equal: False
+  mu = 21/16              3/mu = 16/7                   t_min: 21/16                  21/16                  equal   (R/r)^2 equal: False
+  mu = 11/8               3/mu = 24/11                  t_min: 11/8                   11/8                   equal   (R/r)^2 equal: False
+  mu = 23/16              3/mu = 48/23                  t_min: 23/16                  23/16                  equal   (R/r)^2 equal: False
+  mu = 3/2                3/mu = 2                      t_min: 3/2                    3/2                    equal   (R/r)^2 equal: False
+  mu = 25/16              3/mu = 48/25                  t_min: 607/400                607/400                equal   (R/r)^2 equal: False
+  mu = 13/8               3/mu = 24/13                  t_min: 159/104                159/104                equal   (R/r)^2 equal: False
+  mu = 27/16              3/mu = 16/9                   t_min: 221/144                221/144                equal   (R/r)^2 equal: False
+  mu = 7/4                3/mu = 12/7                   t_min: 43/28                  43/28                  equal   (R/r)^2 equal: False
+  mu = 29/16              3/mu = 48/29                  t_min: 711/464                711/464                equal   (R/r)^2 equal: False
+  mu = 15/8               3/mu = 8/5                    t_min: 61/40                  61/40                  equal   (R/r)^2 equal: False
+  mu = 31/16              3/mu = 48/31                  t_min: 751/496                751/496                equal   (R/r)^2 equal: False
+  mu = 2                  3/mu = 3/2                    t_min: 3/2                    3/2                    equal   (R/r)^2 equal: False
+  mu = 33/16              3/mu = 16/11                  t_min: 16/11                  16/11                  equal   (R/r)^2 equal: False
+  mu = 17/8               3/mu = 24/17                  t_min: 24/17                  24/17                  equal   (R/r)^2 equal: False
+  mu = 35/16              3/mu = 48/35                  t_min: 48/35                  48/35                  equal   (R/r)^2 equal: False
+  mu = 9/4                3/mu = 4/3                    t_min: 4/3                    4/3                    equal   (R/r)^2 equal: False
+  mu = 37/16              3/mu = 48/37                  t_min: 48/37                  48/37                  equal   (R/r)^2 equal: False
+  mu = 19/8               3/mu = 24/19                  t_min: 24/19                  24/19                  equal   (R/r)^2 equal: False
+  mu = 39/16              3/mu = 16/13                  t_min: 16/13                  16/13                  equal   (R/r)^2 equal: False
+  mu = 5/2                3/mu = 6/5                    t_min: 6/5                    6/5                    equal   (R/r)^2 equal: False
+  mu = 41/16              3/mu = 48/41                  t_min: 48/41                  48/41                  equal   (R/r)^2 equal: False
+  mu = 21/8               3/mu = 8/7                    t_min: 8/7                    8/7                    equal   (R/r)^2 equal: False
+  mu = 43/16              3/mu = 48/43                  t_min: 48/43                  48/43                  equal   (R/r)^2 equal: False
+  mu = 11/4               3/mu = 12/11                  t_min: 12/11                  12/11                  equal   (R/r)^2 equal: False
+  mu = 45/16              3/mu = 16/15                  t_min: 16/15                  16/15                  equal   (R/r)^2 equal: False
+  mu = 23/8               3/mu = 24/23                  t_min: 24/23                  24/23                  equal   (R/r)^2 equal: False
+  mu = 47/16              3/mu = 48/47                  t_min: 48/47                  48/47                  equal   (R/r)^2 equal: False
+  mu = sqrt(3)            3/mu = sqrt(3)                t_min: 5 - 2*sqrt(3)          5 - 2*sqrt(3)          equal   (R/r)^2 equal: True
+  mu = 1/2 + sqrt(5)/2    3/mu = -3/2 + 3*sqrt(5)/2     t_min: 6 - 2*sqrt(5)          6 - 2*sqrt(5)          equal   (R/r)^2 equal: False
+  mu = sqrt(2)/2 + 1      3/mu = 6 - 3*sqrt(2)          t_min: -2 + 5*sqrt(2)/2       -2 + 5*sqrt(2)/2       equal   (R/r)^2 equal: False
+t_min invariant under mu <-> 3/mu on all tested mu: True | (R/r)^2 invariant: False
+closed form mu / 5 - mu - 3/mu / 3/mu matches every exact t_min: True
+float: 1104 three-family solids with all planes facets in S and S^v: max |t_min(S) - t_min(S^v)| = 6.66e-16
+FINAL ok

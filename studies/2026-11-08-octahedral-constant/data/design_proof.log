@@ -1,0 +1,24 @@
+mean of p = -m/3 + 1/(9*m)  (= (1 - 3 m^2)/(9 m))
+=> max_g (g u).w >= 1/sqrt3 for all unit u, w; equality only if all 24 values are +-1/sqrt3
+values (g e1).c3 over O: [-sqrt(3)/3, sqrt(3)/3]
+group orders: {'T': 12, 'T_h': 24, 'T_d': 24, 'I': 60}
+  T: orbits are spherical 2-designs -> constant 9
+  T_h: orbits are spherical 3-designs -> constant 3
+  T_d: orbits are spherical 2-designs -> constant 9
+  I: orbits are spherical 3-designs -> constant 3
+float LP: moment bound for 3-designs m >= 0.577350 (1/sqrt3 = 0.577350); for 5-designs m >= 0.774597 (#43 icosahedral c = 0.794654)
+  ok   sum_g t = 0
+  ok   sum_g t^2 = 8 |u|^2 |w|^2
+  ok   sum_g t^3 = 0
+  ok   sum_g t^4 != 24/5 |u|^4|w|^4 (not a 4-design)
+  ok   mean p = (1 - 3m^2)/(9m)
+  ok   p <= 0 for t <= m (factor form)
+  ok   equality case e1, c3
+  ok   orders T 12, T_h 24, T_d 24, I 60
+  ok   T design strength
+  ok   T_h design strength
+  ok   T_d design strength
+  ok   I design strength
+  ok   2-design: mean (m-t)(t+1) = m - 1/3
+  ok   float: 3-design LP bound = 1/sqrt3
+FINAL ok
