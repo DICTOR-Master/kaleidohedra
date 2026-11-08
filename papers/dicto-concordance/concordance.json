@@ -6395,6 +6395,12 @@
     "mess_up": "Rung 0 figures clipped: shapes drawn outside their svg frame; figcheck only checked page width",
     "guard": "svgclip.mjs (each shape's box inside its svg frame, exit 9); generators fit the frame to what is drawn (make_rung0.py _bbox); wired into print.mjs 11-08 (exit 9, ALLOW_CLIP=1 override; regress OK; negative test refused)",
     "where": "papers/svgclip.mjs on dbb"
+   },
+   {
+    "date": "2026-11-08",
+    "mess_up": "dicto_exact.py crashed on dbb (uncleared denominator) and sat unnoticed ~3 h until DICTO asked; DICTO: why do you let things crash without fixing",
+    "guard": "every long dbb job runs through ~/dicto-alerts/dbbjob.sh: no FINAL ok line (crash/timeout/FAIL) writes ~/dicto-alerts/NAME.txt, printed by show.sh before every message; tested on a failing and a passing job",
+    "where": "~/dicto-alerts/dbbjob.sh"
    }
   ],
   "practice": [
