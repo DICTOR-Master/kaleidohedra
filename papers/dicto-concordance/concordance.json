@@ -6318,6 +6318,40 @@
    "reason": "the polynomial of the side read as the polynomial of the depth",
    "found_by": "dataset v8 build (D123, D124), checked numerically 2026-11-08",
    "status": "TO FIX at #89's next version and the Golden Ladder's next version"
+  },
+  {
+   "date": "2026-11-09",
+   "what": "remove machine names (dicto-big-brother / dicto-node / LAN address) from the text at the next version",
+   "papers": [
+    "2026-10-18-bull-horns",
+    "2026-11-02-hexoct-family",
+    "2026-11-04-harmonic-fingerprint",
+    "2026-11-04-pyramid-tilings",
+    "2026-11-04-cubic-pairings",
+    "2026-11-07-dehn-tilers",
+    "2026-11-07-loop-equality",
+    "2026-10-25-gnomon-polar",
+    "book-golden-ladder",
+    "book-golden-cycle",
+    "book-laws-of-stacking",
+    "book-star-cores",
+    "book-space-fillers",
+    "dicto-vacuus",
+    "book-queens",
+    "oeis-matcher-sheet",
+    "dual-pairs-dimensions",
+    "star-cores-a",
+    "star-cores-results",
+    "face-to-face",
+    "star-cores-c",
+    "golden-truncated-triangles",
+    "golden-cuts-beyond-plato",
+    "six-dimensions-golden-cubes",
+    "two-tiles",
+    "star-cores-d",
+    "star-cores-b",
+    "window-law"
+   ]
   }
  ],
  "modus_operandi": {
@@ -6468,6 +6502,12 @@
     "mess_up": "#103 v2 draft printed with its 'Version 2 adds' line outside the red box; my fix then dropped the line (a replace on a stale match failed silently) — DICTO: 'additional text outside the red box', 'you literally crossed a red line'",
     "guard": "print.mjs exit 10: a DRAFT of Version >=2 must carry 'Version N adds' inside the status box and nowhere outside; my edit scripts assert every replacement happened. Tested: real draft prints, planted outside line refused, guard_regress 8/8",
     "where": "print.mjs on dicto-big-brother"
+   },
+   {
+    "date": "2026-11-09",
+    "mess_up": "machine names (dicto-big-brother, dicto-node) printed in #103 v2 and in ~30 published papers/books (DICTO: 'big brother mentioned?!')",
+    "guard": "print.mjs exit 11 refuses any paper/book naming DICTO's computers or 192.168.x (plan-/status- notes excepted); tested both ways, guard_regress 8/8. Published ones are corrected at their next version (the guard forces it)",
+    "where": "print.mjs"
    }
   ],
   "practice": [
