@@ -184,3 +184,11 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
 - NAMES (DICTO 11-08, "yes"): the **DICTO Yantra** is now the perfect Cleo-Antonius yantra (GF1). The Cleo-Octangula (Cleo-Icos +
   stella tetrahedron; yantras K1 and V1) is the near-traditional variant. The great pair Cleo-Icos + Antonius side is the
   **Cleo-Antonius**.
+- One slope / grids (scripts/lattice_yantra.py, lattice_clash.py, one_slope.py, grid_yantra.py; DICTO 11-08 after the Matos
+  painting: "a triangular grid for triangles", then "the Cleo grid"): with one leg slope for all nine triangles every condition is
+  linear and the slope drops out of the depths. Result: the 18 marmas and 7 tips-on-bases fix the yantra uniquely up to scale and
+  shift, with integer height ratios t5 : t1 : t4 : t6 : t8 : t9 : t2 : t3 : t7 = 2 : 4 : 4 : 4 : 6 : 6 : 8 : 8 : 9; the corner touches
+  force zero size (impossible); the great triangles (8 and 9) cannot both be inscribed. With t7 inscribed, t3's tip falls outside the
+  circle (depth 1.167 equilateral, 1.126 Cleo grid), and the pieces are 12, 9, 6, 9, 1 (37), not 43. The slope only stretches the
+  yantra sideways, so the equilateral and Cleo grids are the same yantra up to that stretch. A grid yantra is exact in its meetings
+  but is not the traditional figure; painted grid yantras (e.g. H. J. T. Matos 2023, CC BY-SA 4.0, DICTO's reference) relax exactness.
