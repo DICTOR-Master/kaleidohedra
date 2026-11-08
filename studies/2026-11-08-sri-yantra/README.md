@@ -141,3 +141,14 @@ rhombus345_exact.py → rhombus345-exact-data.txt · figure.py → figure-*-data
 - Kulaichev's exact degree needs a longer elimination run, or Rh345-style towers with u as a parameter.
 - Kavi Mahesh's rational heights could be made exact: fix his P, R, S and Q, solve b1, and get the field ℚ(√2, √3, √Δ).
 - Outside this study: the **spherical Śrī Yantra** (Gupta's kūrma form, C. S. Rao 1998), which is DICTO's queued "mandala spheres" idea. Lines become great-circle arcs, and the same exactness question applies.
+
+## 7. The great pair from solids (DICTO, 8 Nov 2026, later)
+DICTO proposed the tetrahedral yantra in a sphere (the triangles become tetrahedra, the rhombus becomes the stella octangula),
+then spinning tetrahedra (each sweeps a cone; the flat yantra is the axial section of nine nested cones, its 9 mirror pairs of
+marmas become 9 circles where two cones and one level disc meet), then the Cleo-Icos as the great pair.
+- Stella yantra (scripts/stella_yantra.py): u = v = 1/sqrt2 (regular stella octangula spun), t1 and t9 corners on the circle:
+  valid; P = 1/3 exactly, Q = 0.5643071201..., S = 0.9561723639...; misses Kulaichev's (d) by -3.4e-4 (squared form).
+- Cleo yantra (scripts/cleo_yantra.py): u = v = 2/phi^2 = 3 - sqrt5 (the Cleo-Icos, icosahedron face pyramid, spun), t1 and t9
+  corners on the circle: valid; Q = 0.5467623283..., S = 0.9051499328...; misses Kulaichev's (d) by +9.0e-5.
+- Kulaichev's own yantra lies between them: u = 0.7504385160..., Q = 0.5507052329..., S = 0.9200601459... The Cleo yantra is the
+  nearest of the three to it (differences 0.014, 0.004, 0.015). Exact forms: stella_algdep.py running; Kulaichev algdep running.
