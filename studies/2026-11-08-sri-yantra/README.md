@@ -209,3 +209,11 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   lines cross, not on the exact sizes. The extra hidden triangles come with extra crossings (28 sandhis): E1 +9, Cleo rhombus +15.
   Joined sides (scripts/collinear.py; DICTO: "no, the DICTO Yantra I'm talking about"): no two sides of different triangles lie on one
   straight line in any yantra above (tolerance 1e-6), so no longer joined sides and no extra triangles: the DICTO Yantra keeps 122.
+- EXACT FORM OF THE DICTO YANTRA (scripts/dicto_exact.py → dicto_exact2.py → dicto_exact3.py, 8 Nov night; data
+  figures/dicto-yantra-exact-u.txt): the great slope u of the DICTO Yantra (GF1) is a root of an irreducible integer polynomial of
+  degree 160, even in u (largest coefficient 226 digits, 60 real roots); its root near 0.6793 agrees with GF1's u to all 30 stored digits
+  (0.6793185887067746573886503103907545526887…), and the next factor's nearest root is 0.01 away. So u² has degree 80 over Q
+  (irreducible) and degree 40 over Q(√5) (the degree-80 polynomial splits there into two of degree 40). Route: G, H, D resultants in S
+  (sympy, 66 min; the first try was killed at the next step, exit 137, memory), norm over Q(√5), only the factors through GF1 kept
+  (degrees (40, 40) and (40, 56) in (t, u)), resultant in t in PARI (degree 2240 in u, 40 s), PARI factorisation (1^1600, 160, 160,
+  320). Compare Kulaichev's yantra: degree bound 12544, no polynomial found up to degree 96.

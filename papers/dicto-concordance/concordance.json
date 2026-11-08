@@ -5029,6 +5029,15 @@
     "retry": "dicto_exact2.py",
     "study": "studies/2026-11-08-sri-yantra",
     "date": "2026-11-08"
+   },
+   {
+    "question": "DICTO Yantra (GF1) exact minimal polynomial of u",
+    "method": "dicto_exact2/3: norm over Q(sqrt5), factors through GF1, PARI resultant and factorisation",
+    "status": "SETTLED",
+    "result": "u has an irreducible even integer minimal polynomial of degree 160 (u^2 degree 80 over Q, 40 over Q(sqrt5)); root agrees with GF1 u to all 30 stored digits; file studies/2026-11-08-sri-yantra/figures/dicto-yantra-exact-u.txt",
+    "retry": "",
+    "study": "studies/2026-11-08-sri-yantra",
+    "date": "2026-11-08"
    }
   ]
  },
