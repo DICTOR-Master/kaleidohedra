@@ -152,3 +152,9 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   corners on the circle: valid; Q = 0.5467623283..., S = 0.9051499328...; misses Kulaichev's (d) by +9.0e-5.
 - Kulaichev's own yantra lies between them: u = 0.7504385160..., Q = 0.5507052329..., S = 0.9200601459... The Cleo yantra is the
   nearest of the three to it (differences 0.014, 0.004, 0.015). Exact forms: stella_algdep.py running; Kulaichev algdep running.
+- Kites (scripts/kites.py, DICTO 11-08: "distort the overall Cleo to the kite form proportion"): great pair with different slopes,
+  t1 and t9 corners on the circle. K1 Cleo-Icos above / stella below (u = 2/phi^2, v = 1/sqrt2): valid, EXACTLY the traditional 43
+  (14, 10, 10, 8, 1); P = 1/3, Q = 0.53625 (Huet classical 0.537), R = 0.63148, S = 0.93007; field contains sqrt2 and sqrt5 (as the
+  Golden Cut Cubes). K2 stella above / Cleo below: valid, 43. K3, K4 with the golden slope phi/2 above: valid but 45 pieces, so the
+  count depends on the slopes, not on kite vs rhombus alone. Huet's classical slopes from his depths: u = 0.813 (near phi/2 = 0.809),
+  v = 0.705 (near 1/sqrt2): a hint only (his figures have three digits).
