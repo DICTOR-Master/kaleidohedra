@@ -6456,6 +6456,12 @@
     "mess_up": "dicto_exact.py crashed on dbb (uncleared denominator) and sat unnoticed ~3 h until DICTO asked; DICTO: why do you let things crash without fixing",
     "guard": "every long dbb job runs through ~/dicto-alerts/dbbjob.sh: no FINAL ok line (crash/timeout/FAIL) writes ~/dicto-alerts/NAME.txt, printed by show.sh before every message; tested on a failing and a passing job",
     "where": "~/dicto-alerts/dbbjob.sh"
+   },
+   {
+    "date": "2026-11-09",
+    "mess_up": "reading folder piled up with stale drafts again (3rd time; DICTO: too many stale files in to read)",
+    "guard": "~/dicto-alerts/show.sh now lists every top-level file in ~/Documents/papers-to-read older than 1 day before each message; tested with a 2-day-old file",
+    "where": "~/dicto-alerts/show.sh"
    }
   ],
   "practice": [
