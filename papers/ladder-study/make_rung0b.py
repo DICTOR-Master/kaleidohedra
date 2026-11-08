@@ -1,7 +1,9 @@
 # Rung 0, simpler: one idea per step, a picture, one sentence, one mnemonic, one line up, one line down, one thing to try.
 exec(open('make_rung0.py').read().split("STEPS=[")[0])   # reuse drawing helpers and FIG1..FIG5
 from math import *
-def S(w,h,b): return f'<svg viewBox="0 0 {w} {h}" width="100%" style="max-height:48mm" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans" font-size="12">{b}</svg>'
+def S(w,h,b):
+    x0, y0, W, H = _bbox(b, w, h)   # frame fitted to everything drawn (guard 11-08)
+    return f'<svg viewBox="{x0:.1f} {y0:.1f} {W:.1f} {H:.1f}" width="100%" style="max-height:48mm" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans" font-size="12">{b}</svg>'
 dot=lambda x,y,c=K,r=5:f'<circle cx="{x}" cy="{y}" r="{r}" fill="{c}"/>'
 ln=lambda x1,y1,x2,y2,c=K,w=2:f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{c}" stroke-width="{w}"/>'
 def arc(cx,cy,r,a0,a1,c):

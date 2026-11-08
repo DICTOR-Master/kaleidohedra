@@ -1,7 +1,26 @@
 # Rung 0 of the Golden Ladder study companion: from a point to the triangle of mirrors.
 from math import *
 G='#b8962e'; B='#3b6fb6'; V='#7a4fa6'; K='#333'; L='#bbb'
-def svg(w,h,body): return f'<svg viewBox="0 0 {w} {h}" width="100%" style="max-height:62mm" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans" font-size="11">{body}</svg>'
+import re as _re
+def _bbox(body, w, h):
+    """frame fitted to everything drawn (GUARD 11-08, DICTO: figures were clipped): points, lines, circles, and text by its anchor"""
+    xs, ys = [0, w], [0, h]
+    for m in _re.finditer(r'points="([^"]+)"', body):
+        for pr in m.group(1).split():
+            x, y = pr.split(','); xs.append(float(x)); ys.append(float(y))
+    for m in _re.finditer(r'<line [^>]*x1="([-\d.]+)" y1="([-\d.]+)" x2="([-\d.]+)" y2="([-\d.]+)"', body):
+        xs += [float(m.group(1)), float(m.group(3))]; ys += [float(m.group(2)), float(m.group(4))]
+    for m in _re.finditer(r'<circle [^>]*cx="([-\d.]+)" cy="([-\d.]+)" r="([-\d.]+)"', body):
+        cx, cy, r = map(float, m.groups()); xs += [cx - r, cx + r]; ys += [cy - r, cy + r]
+    for m in _re.finditer(r'<text x="([-\d.]+)" y="([-\d.]+)" text-anchor="(\w+)" font-size="([\d.]+)"[^>]*>([^<]*)</text>', body):
+        x, y, anc, sz, t = float(m.group(1)), float(m.group(2)), m.group(3), float(m.group(4)), m.group(5)
+        tw = 0.66 * sz * len(t); x0 = x - tw / 2 if anc == 'middle' else (x - tw if anc == 'end' else x)
+        xs += [x0, x0 + tw]; ys += [y - sz, y + 0.4 * sz]
+    pad = 8
+    return min(xs) - pad, min(ys) - pad, max(xs) - min(xs) + 2 * pad, max(ys) - min(ys) + 2 * pad
+def svg(w,h,body):
+    x0, y0, W, H = _bbox(body, w, h)
+    return f'<svg viewBox="{x0:.1f} {y0:.1f} {W:.1f} {H:.1f}" width="100%" style="max-height:62mm" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans" font-size="11">{body}</svg>'
 def poly(pts,fill='none',stroke=K,sw=1.4,op=1): return f'<polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x,y in pts)}" fill="{fill}" fill-opacity="{op}" stroke="{stroke}" stroke-width="{sw}"/>'
 def txt(x,y,s,anchor='middle',size=11,col=K): return f'<text x="{x:.1f}" y="{y:.1f}" text-anchor="{anchor}" font-size="{size}" fill="{col}">{s}</text>'
 def tri_from_angles(A,Bang,base=80):
