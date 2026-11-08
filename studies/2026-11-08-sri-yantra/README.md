@@ -196,3 +196,9 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   triangles inscribed) with the traditional 43, minimise spread/mean of the 43 areas. E1: u = 0.7777407207, v = 0.7434588452,
   Q = 0.5415589952, S = 0.8719616408; spread/mean 0.614 (Huet classical 0.677, DICTO Yantra 0.866); t1 and t9 corners 0.037 and 0.047
   inside the circle (as in the Matos painting); smallest/largest piece 0.020 (pieces must shrink ring by ring toward the bindu).
+- Viewpoint and E1 (DICTO 11-08: "would viewpoint have helped the circle missing on the most artistic one?"): no. A viewpoint maps
+  the disc onto itself, inside to inside, on to on, so E1's corners (0.037, 0.047 inside) stay inside from every viewpoint. Instead
+  (scripts/even_on_circle.py): the most even 43-piece yantra WITH both small triangles' corners on the circle, E2: u = 0.828646295,
+  v = 0.6480975804, Q = 0.4948781144, S = 0.9206010173 (corners on to 1e-10 and 6e-7, from a penalty search), spread/mean 0.800.
+  Ladder: E1 0.614 (corners inside) < E2 0.800 (corners on) < DICTO Yantra 0.866 (corners on AND bindu centred). The circle costs
+  most of the evenness; centring the bindu costs a little more.
