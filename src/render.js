@@ -188,6 +188,7 @@ scene.background = new THREE.Color(0x05050a);
 // wheel, same "UI state, not world state" convention this app already
 // applies to every other transient screen.
 let activeDimension = null;
+let hiddenUntilEntry = null; // the return cover's Clear it: the old world stays out of sight until a new one is entered (or the menu closes)
 // The 4D world (src/app/world-4d.js) -- created in init, switched on
 // only while activeDimension === '4D'.
 let world4d = null;
@@ -4789,6 +4790,7 @@ async function init() {
       // The Polyhedraverse door opens on its own space with its build behind the menu: closing the menu there without a pick
       // asks about a saved build too (once), as entering any world does.
       onClose: () => setTimeout(() => {
+        if (hiddenUntilEntry !== null && !worldNow) { camera.layers.mask = hiddenUntilEntry; hiddenUntilEntry = null; }
         if (SITE !== 'polyhedraverse' || worldNow || polyDoorAsked || !(own3DActive() && own3D === 'poly')) return;
         polyDoorAsked = true;
         worldNow = { action: null, stores: null, keys: null, before: storesNow() };
@@ -4830,6 +4832,7 @@ async function init() {
     const builtState = (json) => JSON.stringify(json, (k, v) => (k === 'lastModified' ? undefined : v));
     const storesNow = () => new Map([...historyRestorers].map(([k, { get }]) => [k, JSON.stringify(get())]));
     function enterWorld(dimension, action, title) {
+      if (hiddenUntilEntry !== null) { camera.layers.mask = hiddenUntilEntry; hiddenUntilEntry = null; } // after the return cover's Clear it
       // Shears are never remembered (DICTO 2026-10-22: "all shears should clear when exiting"): every entry, by any route, even
       // back into the same world, starts unsheared, each shear mode its world's default.
       shear?.reset();
@@ -4917,8 +4920,9 @@ async function init() {
     }
     function askKeepBuild() { return askChoice('leave', ['keep', 'discard', 'stay']); }
     /** The app's small question panel: a title, a line, and big buttons (the first one marked). */
-    function askChoice(prefix, choices) {
+    function askChoice(prefix, choices, blank = false) {
       const dlg = document.getElementById('leave-dialog');
+      dlg.classList.toggle('blank', blank); // the opening cover: an opaque page, nothing of the last visit shows through
       const L = getSettings().language;
       document.getElementById('leave-title').textContent = t(`${prefix}.title`, L);
       document.getElementById('leave-body').textContent = t(`${prefix}.body`, L);
@@ -5037,6 +5041,30 @@ async function init() {
       // tile set (#75's tiles when none is given, so #75's links show what they always did).
       setTimeout(() => dimensionWizard.go(`tool:hexoctWorld${openHexoct[1] ? `:${openHexoct[1]}` : ''}`, 'kaleidohedra', 'HexOct'), 0);
     } else dimensionWizard.open();
+
+    // The return cover (DICTO 2026-11-08: "when I open K it's always a mess, it seems to open on top of previous visits; it needs an
+    // always blank page covering anything active that gives you the choice to close what was there, then your new selection comes
+    // immediately"; the moment he meant: coming back to the tab or home-screen app, which resumes exactly as left). Back after
+    // RETURN_S seconds away (or from the browser's page cache) with a world open: a blank page hides it; Clear it opens the wizard at
+    // once over a clean screen (nothing is deleted: the build stays saved in its world, whose entry asks Continue / Start fresh as
+    // always); Keep it carries on where you were.
+    const RETURN_S = 30;
+    let hiddenAt = 0;
+    async function returnCover() {
+      if (!worldNow || dimensionWizard.isOpen || !document.getElementById('leave-dialog').hidden) return;
+      const layersBefore = camera.layers.mask;
+      camera.layers.mask = 0;
+      const choice = await askChoice('opening', ['clear', 'keep'], true);
+      if (choice === 'clear') { dimensionWizard.open(); worldNow = null; } // the old world stays hidden until a new one is entered
+      camera.layers.mask = choice === 'clear' && dimensionWizard.isOpen ? 0 : layersBefore;
+      if (choice === 'clear') hiddenUntilEntry = layersBefore;
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { hiddenAt = Date.now(); return; }
+      if (hiddenAt && Date.now() - hiddenAt >= RETURN_S * 1000) returnCover();
+    });
+    window.addEventListener('pageshow', (e) => { if (e.persisted) returnCover(); });
+    window.__returnCover = returnCover; // the browser test's door (a real tab switch cannot be scripted)
 
     window.addEventListener('keydown', (e) => {
       if (e.code !== 'Tab' && e.code !== 'Space' && e.code !== 'Escape') return;
