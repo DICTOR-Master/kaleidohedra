@@ -1,0 +1,17 @@
+R1: u=19/24 v=2/3 Q=8/15 S=8/9  (Delta is a rational square: a fully RATIONAL yantra (found by rational_search.py; the only one in 627 million tests of rational_search2.py))
+   field Q (Delta is a square)
+   23 condition expressions, all exactly zero: True  (18 marma points, 6 corner touches)
+   depths b1..b9 (x48): 3.297 9.888 14.769 18.098 20.954 25.600 29.507 36.052 42.667   max |b - grid/48| = 0.0563
+Q1: u=13/16 v=12/17 Q=29/54 S=5/6  (small-height rationals near Huet's classical parameters)
+   field Q(sqrt Delta), Delta = 372639115394715684021285990239975966989957/98723773367379740975128010404580090925000000
+   23 condition expressions, all exactly zero: True  (18 marma points, 6 corner touches)
+   depths b1..b9 (x48): 5.576 11.064 15.963 19.002 21.552 25.778 28.913 35.327 40.000   max |b - grid/48| = 0.0417
+Q2: u=4/5 v=7/10 Q=8/15 S=5/6  (smaller heights, a little further from Huet)
+   field Q(sqrt Delta), Delta = 1504793333185451458035712/429986417622655044898828125
+   23 condition expressions, all exactly zero: True  (18 marma points, 6 corner touches)
+   depths b1..b9 (x48): 6.376 10.420 15.785 18.405 21.375 25.600 29.268 36.008 40.000   max |b - grid/48| = 0.0417
+Q3: u=3/4 v=3/4 Q=11/20 S=11/12  (on DICTO's 3-4-5 rhombus (u = v = 3/4), Q and S rational next to the degree-20 Rh345 values)
+   field Q(sqrt Delta), Delta = 46937232165645145071/11467828956824000000000
+   23 condition expressions, all exactly zero: True  (18 marma points, 6 corner touches)
+   depths b1..b9 (x48): 5.222 12.476 17.280 19.757 22.603 26.400 30.720 36.023 44.000   max |b - grid/48| = 0.0417
+FINAL ok
