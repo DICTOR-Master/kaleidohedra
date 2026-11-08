@@ -6462,6 +6462,12 @@
     "mess_up": "reading folder piled up with stale drafts again (3rd time; DICTO: too many stale files in to read)",
     "guard": "~/dicto-alerts/show.sh now lists every top-level file in ~/Documents/papers-to-read older than 1 day before each message; tested with a 2-day-old file",
     "where": "~/dicto-alerts/show.sh"
+   },
+   {
+    "date": "2026-11-09",
+    "mess_up": "#103 v2 draft printed with its 'Version 2 adds' line outside the red box; my fix then dropped the line (a replace on a stale match failed silently) — DICTO: 'additional text outside the red box', 'you literally crossed a red line'",
+    "guard": "print.mjs exit 10: a DRAFT of Version >=2 must carry 'Version N adds' inside the status box and nowhere outside; my edit scripts assert every replacement happened. Tested: real draft prints, planted outside line refused, guard_regress 8/8",
+    "where": "print.mjs on dicto-big-brother"
    }
   ],
   "practice": [
