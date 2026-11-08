@@ -10,3 +10,8 @@ perfect yantra and only grows on a sphere; its base angles never reach equality)
 cleo_sphere.py (DICTO 11-08 "leaning towards Cleos"): twenty yantras, one in the inscribed circle (20.9052 deg) of each face of the
 spherical icosahedron, i.e. on the base of each of the twenty Cleo-Icos; adjacent caps touch; the twelve gaps sit at the icosahedron's
 corners. cleo-sphere-yantras.png.
+sphere81.py (DICTO 11-08: "81 triangle spherical yantra" / "a four times bigger one with four triangles for every one"): the twenty
+Cleo faces each split into four by their side midpoints (geodesic frequency 2): 80 triangles (20 central, 60 corner), 42 corners,
+120 edges (Euler 2); with the bindu at the centre, 81, the number of the rare Kongōkai mandala. A DICTO Yantra (Cleo-Antonius, GF1) in
+each triangle's inscribed circle; corner yantras point to their icosahedron corner (five-petalled flowers at the 12 corners).
+sphere81.png.
