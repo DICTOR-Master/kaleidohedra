@@ -37,7 +37,8 @@ cases = [('DICTO Yantra (GF1)', load('golden_family.json', 'GF1')), ('most even 
          ('middle way E2', load('even2.json', 'E2')), ('Cleo-Octangula K1', load('kites.json', 'K1')),
          ('Cleo rhombus (45 pieces)', load('cleo-yantra.json', 'Cleo')), ('perfect stella PF2', load('perfect.json', 'PF2')),
          ('Huet classical (approx.)', huet())]
-res = []
-for name, (b, w, a) in cases:
-    c = count(b, w, a); res.append(c); print(f'{name:28s} all triangles: {c}', flush=True)
-print('FINAL ok' if all(c > 43 for c in res) else 'FINAL FAIL: a count below the 43 pieces')
+if __name__ == "__main__":
+  res = []
+  for name, (b, w, a) in cases:
+      c = count(b, w, a); res.append(c); print(f'{name:28s} all triangles: {c}', flush=True)
+  print('FINAL ok' if all(c > 43 for c in res) else 'FINAL FAIL: a count below the 43 pieces')

@@ -207,3 +207,5 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   middle way E2 122; Cleo-Octangula K1 122; perfect stella PF2 122; Huet classical 122; most even E1 131; Cleo rhombus (45 pieces)
   137. Every yantra with the traditional crossing pattern (43 pieces, 24 sandhis) has the same 122: the count depends only on which
   lines cross, not on the exact sizes. The extra hidden triangles come with extra crossings (28 sandhis): E1 +9, Cleo rhombus +15.
+  Joined sides (scripts/collinear.py; DICTO: "no, the DICTO Yantra I'm talking about"): no two sides of different triangles lie on one
+  straight line in any yantra above (tolerance 1e-6), so no longer joined sides and no extra triangles: the DICTO Yantra keeps 122.
