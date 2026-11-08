@@ -164,3 +164,8 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   minus that disc is a gnomon and the yantras nest without end. On the Cleo-Octangula with (b) and (d): G1, valid, 43 triangles,
   18 marmas, 24 sandhis; nesting ratio k = 0.0630741873 (1/k = 15.8543); t9 corners miss the circle by 0.066 (inside). With (c)
   and (d): no valid yantra. Figure: figures/gnomon-yantra.png. G1 is a placeholder name.
+- Perfect yantras (scripts/perfect_yantra.py, DICTO 11-08 "can we split them to get perfection"): with both slopes fixed only two
+  of (b), (c), (d) can hold, so one solid is kept exact and the other slope freed. PF1 (Cleo-Icos above exact): lower slope
+  0.762114, all of (b)(c)(d) exact, k = 0.0561783, but 45 pieces / 28 sandhis (near-rhombus). PF2 (stella below exact): upper
+  slope 0.695886, all of (b)(c)(d) exact, k = 0.0563429, and the traditional 43 triangles, 18 marmas, 24 sandhis: perfect in every
+  condition, but its upper great triangle is no longer the Cleo-Icos (steeper: the kite turned the other way from Huet's).
