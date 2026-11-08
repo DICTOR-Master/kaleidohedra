@@ -5,7 +5,8 @@ Exact: every line a great circle, every concurrency kept. Orthographic view; onl
 import json, math, itertools
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
-V = json.load(open('viewpoint.json'))['V1']; f = lambda d: {int(k): float(v['a']) for k, v in d.items()}
+V = json.load(open('golden_family.json'))['GF1']   # the DICTO Yantra (Cleo-Antonius)
+f = lambda d: {int(k): float(v['a']) for k, v in d.items()}
 b, w, a = f(V['b']), f(V['w']), f(V['apex'])
 phi = (1 + 5 ** .5) / 2
 I = [np.array(p, float) for c in [(0, 1, phi), (1, phi, 0), (phi, 0, 1)] for p in itertools.product(*[(x, -x) if x else (0,) for x in c])]
@@ -39,5 +40,5 @@ for t in faces:
 fnt = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf', 22)
 d.text((cx, 40), 'Twenty yantras on the bases of the twenty Cleo-Icos', font=fnt, fill=(230, 230, 235), anchor='mm')
 d.text((W - 16, H - 14), 'DICTO · dictospheres.com', font=ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf', 16), fill=GOLD, anchor='rs')
-img.save('cleo-sphere-yantras.png')
+img.save('cleo-sphere-yantras-gf1.png')
 print('FINAL ok' if len(faces) == 20 and abs(math.degrees(RHO) - 20.9051) < 1e-3 else 'FINAL FAIL')

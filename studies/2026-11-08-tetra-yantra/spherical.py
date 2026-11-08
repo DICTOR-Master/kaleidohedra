@@ -7,7 +7,8 @@ import json, math, itertools
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 RHO = math.radians(60)
-V = json.load(open('viewpoint.json'))['V1']; f = lambda d: {int(k): float(v['a']) for k, v in d.items()}
+V = json.load(open('golden_family.json'))['GF1']   # the DICTO Yantra (Cleo-Antonius)
+f = lambda d: {int(k): float(v['a']) for k, v in d.items()}
 b, w, a = f(V['b']), f(V['w']), f(V['apex'])
 sc = math.tan(RHO) / 0.5                                  # circle radius 1/2 (diameter-1 frame) -> tan(RHO) on the plane z = 1
 def plane(p): x, d = p; return np.array([x * sc, (0.5 - d) * sc, 1.0])
@@ -33,7 +34,7 @@ def panel(cx, cy, R, el, title):
 panel(380, 360, 300, 0.0, 'from above the cap (60°)')
 panel(1110, 360, 300, math.radians(-55), 'tilted: great circles on the sphere')
 d.text((W - 18, H - 14), 'DICTO · dictospheres.com', font=ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf', 16), fill=GOLD, anchor='rs')
-img.save('spherical-yantra.png')
+img.save('spherical-yantra-gf1.png')
 # bases: their planes all contain the x-axis direction (1, 0, 0) (the two opposite points on the equator)
 base_ok = all(abs(np.dot(normal(s), [1, 0, 0])) < 1e-12 for s in segs[0::3])
 print('every level base is a great circle through (±1, 0, 0):', base_ok)

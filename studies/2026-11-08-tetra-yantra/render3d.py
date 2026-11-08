@@ -2,12 +2,12 @@
 with its tip on the vertical axis and a level base; spinning, each sweeps a cone, and the flat yantra is exactly the axial section of
 the nine nested cones (its 9 mirror pairs of marmas become 9 circles where two cones and one level disc meet). Still, the pyramids
 (bases inscribed in the cones' base circles; apex-down ones turned 60 degrees, as in the stella octangula) show from the three
-positions on the great circles the yantra narrowed to cos 30 (an affine image: every concurrency kept). Data: kites.json K1.
+positions on the great circles the yantra narrowed to cos 30 (an affine image: every concurrency kept). Data: golden_family.json GF1 (the DICTO Yantra).
 Panels: (1) spinning cones in the sphere, (2) the still tetrahedra, (3) side view of the still tetrahedra at one of the three positions."""
 import json, math, itertools
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
-K = json.load(open('kites.json'))['K1']
+K = json.load(open('golden_family.json'))['GF1']   # the DICTO Yantra (Cleo-Antonius)
 f = lambda d: {int(k): float(v['a']) for k, v in d.items()}
 b, w, a = f(K['b']), f(K['w']), f(K['apex'])
 UP = {i for i in range(1, 10) if a[i] < b[i]}           # apex above base (depth smaller)
@@ -70,7 +70,7 @@ for i in sorted(range(1, 10), key=lambda i: -w[i]):
     for p, q in list(itertools.combinations(base, 2)) + [(p, ap) for p in base]:
         dr.line([P(cx, cy, sc, proj(p)), P(cx, cy, sc, proj(q))], fill=c + (230,), width=3 if i in (3, 7) else 2)
 dr.text((cx, 735), 'still: the tetrahedra', font=font, fill=(230, 230, 235), anchor='mm')
-dr.text((cx, 765), 'above: a Cleo-Icos; below: a stella tetrahedron', font=small, fill=(200, 200, 205), anchor='mm')
+dr.text((cx, 765), 'great pair: the Cleo-Antonius', font=small, fill=(200, 200, 205), anchor='mm')
 # panel 3: side view at one of the three positions (view along a mirror plane): x -> x * cos30 for these pyramids
 cx = 1500; s3 = math.sqrt(3) / 2
 dr.ellipse([cx - sc * 0.5, cy - sc * 0.5, cx + sc * 0.5, cy + sc * 0.5], outline=(140, 140, 150), width=2)
@@ -83,6 +83,6 @@ dr.text((cx, 735), 'still, from one of the three positions', font=font, fill=(23
 dr.text((cx, 765), 'the yantra narrowed to cos 30°: all 18 meetings kept', font=small, fill=(200, 200, 205), anchor='mm')
 dr.text((W // 2, 40), 'The DICTO Yantra in three dimensions', font=ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf', 30), fill=GOLD, anchor='mm')
 dr.text((W - 20, H - 16), 'DICTO · dictospheres.com', font=small, fill=GOLD, anchor='rs')
-img.save('dicto-yantra-3d.png')
+img.save('dicto-yantra-3d-gf1.png')
 print('marma circles:', len(marmas))
 print('FINAL ok' if len(marmas) == 9 else f'FINAL FAIL: {len(marmas)} marma circles, expected 9')
