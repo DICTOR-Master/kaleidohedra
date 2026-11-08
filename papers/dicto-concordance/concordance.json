@@ -6315,7 +6315,37 @@
     "guard": "figcheck already flags it; plates fitted",
     "where": "papers/figcheck.mjs"
    },
-   "release loops: ssh inside tidy.py read the loop's stdin, so a while-read release loop published 2 of 10 records and dropped the rest silently (11-07). Guard: tidy.py ssh -n with stdin closed; zen_new/zen_newversion start every subprocess with stdin closed; release loops print every line, never filtered to \"published\"."
+   "release loops: ssh inside tidy.py read the loop's stdin, so a while-read release loop published 2 of 10 records and dropped the rest silently (11-07). Guard: tidy.py ssh -n with stdin closed; zen_new/zen_newversion start every subprocess with stdin closed; release loops print every line, never filtered to \"published\".",
+   {
+    "date": "2026-11-08",
+    "mess_up": "deploy runs failed and nobody saw it for hours, nearly every day (10-28/29 HTTP 402 x8, 10-31 push rejected, 11-07 21:00 DNS): the only alert was a desktop pop-up and a log line",
+    "guard": "ship.py --run-queue retries a network failure 3 times 5 min apart; any failure writes ~/dicto-alerts/deploy.txt (cleared by the next clean run); ~/dicto-alerts/show.sh prints open alerts and a not-LIVE last deploy, run on every prompt by a Claude Code hook (hook pending DICTO's approval)",
+    "where": "~/dicto-deploy/ship.py, ~/dicto-alerts/show.sh"
+   },
+   {
+    "date": "2026-11-08",
+    "mess_up": "Golden Ladder cover fixed in the book on 11-07 but the site kept the old image, so DICTO kept seeing the missing top rung; sibling: Alicia cover older than Queens v4",
+    "guard": "~/dicto-deploy/cover_check.py as dictospheres pre-commit hook: stops a commit when a site cover is older than its book's cover source and differs (tested on the old image)",
+    "where": "~/dictospheres/.git/hooks/pre-commit"
+   },
+   {
+    "date": "2026-11-08",
+    "mess_up": "my notes to DICTO were pasted with the text into his live OEIS draft (PROG, CROSSREFS, KEYWORD)",
+    "guard": "form-filling replies hold only the paste text in code blocks, nothing beside them (memory feedback-paste-only)",
+    "where": "memory"
+   },
+   {
+    "date": "2026-11-08",
+    "mess_up": "accessibility audit counted 27 formula image descriptions instead of 5: the check took 'cos' inside 'icosahedron' for a cosine",
+    "guard": "site-audit/make.py asserts the formula check matches no ordinary words before counting",
+    "where": "papers/site-audit/make.py"
+   },
+   {
+    "date": "2026-11-08",
+    "mess_up": "a complaint was answered with a fix in the source (book PDF) while the place DICTO looks (the site) stayed unchanged",
+    "guard": "standing rule: on any complaint change the thing he sees first, queue it, say when it is live; guards after (memory feedback-complaint-visible-first)",
+    "where": "memory"
+   }
   ],
   "practice": [
    "Read ok = release the exact PDF read, the same session; a new record or chapters into a book: ask first.",
