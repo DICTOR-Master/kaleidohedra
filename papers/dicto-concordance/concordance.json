@@ -5446,6 +5446,14 @@
     "retry": "rerun the three mix_tile runs only if the aim still needs them (later studies: #97, hat, waveform, Escher hexagon); wait on a PID, never on pgrep of a string the waiter itself contains",
     "study": "one-piece aim (11-05 milestone 1)",
     "date": "2026-11-09"
+   },
+   {
+    "question": "global census: all 25 regular polytopes (5 Platonic, 4 Kepler–Poinsot, 6 convex 4D, 10 Schläfli–Hess) under DICTO's growth rule + the turn for stars",
+    "status": "SETTLED",
+    "result": "T-gain always g = (R/h)² (4D new: 16, 4, 4, 2, 28-12√5); halos/cores classical, core cycle period 2 with scale t²/g; star line conv(P ∪ t·feet) has walls at ρ_k²/h² and turn t ↦ g/t (fixed point R/h); turn identity holds for all 25 and within one flag the turn theorem holds, but for whole star polytopes the peak at the turn fails (12 of 14 peak at the ends; SSD/GD the turn is the minimum 15-6√5); DICTO's t = 2 is the fixed point for the four g = 4 polytopes; known stellations reproduced as events (SSD at √5, GSD at 3, stella octangula at 3, small stellated 120-cell at √5-1)",
+    "retry": "rule for when the ends beat the turn; why turn values equal convex gains",
+    "study": "studies/2026-11-09-regular-stars-census",
+    "date": "2026-11-09"
    }
   ]
  },

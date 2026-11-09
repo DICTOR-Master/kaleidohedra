@@ -1,0 +1,2236 @@
+[
+ {
+  "symbol": "{3,3,3}",
+  "name": "5-cell",
+  "density": 1,
+  "counts": [
+   5,
+   10,
+   10,
+   5
+  ],
+  "g": "16",
+  "g_f": 16.0,
+  "walls_t": [
+   "1",
+   "8/3",
+   "6",
+   "16"
+  ],
+  "walls_t_f": [
+   1.0,
+   2.6666666666666665,
+   6.0,
+   16.0
+  ],
+  "T_chain": {
+   "period": 2,
+   "gain_radius": "16",
+   "corners": [
+    5,
+    5,
+    5
+   ],
+   "exact_check": true
+  },
+  "core": {
+   "cycle_from_turn": 0,
+   "period": 2,
+   "scale_radius_t1": "1/16",
+   "corners": [
+    5,
+    5
+   ],
+   "exact_check": true
+  },
+  "star_halo": {
+   "corners": 5,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 5,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "[1, 8/3]",
+    "on_wall": [],
+    "convex": true,
+    "turned_partner": "8",
+    "turned_partner_f": 8.0
+   },
+   "phi": {
+    "hop": "[1, 8/3]",
+    "on_wall": [],
+    "convex": true,
+    "turned_partner": "-8 + (8)*sqrt(5)",
+    "turned_partner_f": 9.888543819998318
+   }
+  },
+  "incidences": [
+   {
+    "t": "8/3",
+    "t_f": 2.6666666666666665,
+    "what": "side hyperplane through another tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(16)",
+  "fixed_point_t_f": 4.0
+ },
+ {
+  "symbol": "{4,3,3}",
+  "name": "tesseract",
+  "density": 1,
+  "counts": [
+   16,
+   32,
+   24,
+   8
+  ],
+  "g": "4",
+  "g_f": 4.0,
+  "walls_t": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "walls_t_f": [
+   1.0,
+   2.0,
+   3.0,
+   4.0
+  ],
+  "T_chain": {
+   "period": 2,
+   "gain_radius": "4",
+   "corners": [
+    16,
+    8,
+    16
+   ],
+   "exact_check": true
+  },
+  "core": {
+   "cycle_from_turn": 0,
+   "period": 2,
+   "scale_radius_t1": "1/4",
+   "corners": [
+    8,
+    16
+   ],
+   "exact_check": true
+  },
+  "star_halo": {
+   "corners": 8,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 8,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "[1, 2]",
+    "on_wall": [
+     "2"
+    ],
+    "convex": true,
+    "turned_partner": "2",
+    "turned_partner_f": 2.0
+   },
+   "phi": {
+    "hop": "[1, 2]",
+    "on_wall": [],
+    "convex": true,
+    "turned_partner": "-2 + (2)*sqrt(5)",
+    "turned_partner_f": 2.4721359549995796
+   }
+  },
+  "incidences": [
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(4)",
+  "fixed_point_t_f": 2.0
+ },
+ {
+  "symbol": "{3,3,4}",
+  "name": "16-cell",
+  "density": 1,
+  "counts": [
+   8,
+   24,
+   32,
+   16
+  ],
+  "g": "4",
+  "g_f": 4.0,
+  "walls_t": [
+   "1",
+   "4/3",
+   "2",
+   "4"
+  ],
+  "walls_t_f": [
+   1.0,
+   1.3333333333333333,
+   2.0,
+   4.0
+  ],
+  "T_chain": {
+   "period": 2,
+   "gain_radius": "4",
+   "corners": [
+    8,
+    16,
+    8
+   ],
+   "exact_check": true
+  },
+  "core": {
+   "cycle_from_turn": 0,
+   "period": 2,
+   "scale_radius_t1": "1/4",
+   "corners": [
+    16,
+    8
+   ],
+   "exact_check": true
+  },
+  "star_halo": {
+   "corners": 16,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 16,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "[4/3, 2]",
+    "on_wall": [
+     "2"
+    ],
+    "convex": false,
+    "turned_partner": "2",
+    "turned_partner_f": 2.0
+   },
+   "phi": {
+    "hop": "[4/3, 2]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "-2 + (2)*sqrt(5)",
+    "turned_partner_f": 2.4721359549995796
+   }
+  },
+  "incidences": [
+   {
+    "t": "4/3",
+    "t_f": 1.3333333333333333,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip; it is a facet hyperplane of P (stellation)"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(4)",
+  "fixed_point_t_f": 2.0
+ },
+ {
+  "symbol": "{3,4,3}",
+  "name": "24-cell",
+  "density": 1,
+  "counts": [
+   24,
+   96,
+   96,
+   24
+  ],
+  "g": "2",
+  "g_f": 2.0,
+  "walls_t": [
+   "1",
+   "4/3",
+   "3/2",
+   "2"
+  ],
+  "walls_t_f": [
+   1.0,
+   1.3333333333333333,
+   1.5,
+   2.0
+  ],
+  "T_chain": {
+   "period": 2,
+   "gain_radius": "2",
+   "corners": [
+    24,
+    24,
+    24
+   ],
+   "exact_check": true
+  },
+  "core": {
+   "cycle_from_turn": 0,
+   "period": 2,
+   "scale_radius_t1": "1/2",
+   "corners": [
+    24,
+    24
+   ],
+   "exact_check": true
+  },
+  "star_halo": {
+   "corners": 24,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 24,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "[3/2, 2]",
+    "on_wall": [
+     "2"
+    ],
+    "convex": false,
+    "turned_partner": "1",
+    "turned_partner_f": 1.0
+   },
+   "phi": {
+    "hop": "[3/2, 2]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "-1 + (1)*sqrt(5)",
+    "turned_partner_f": 1.2360679774997898
+   }
+  },
+  "incidences": [
+   {
+    "t": "4/3",
+    "t_f": 1.3333333333333333,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip; it is a facet hyperplane of P (stellation)"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(2)",
+  "fixed_point_t_f": 1.4142135623730951
+ },
+ {
+  "symbol": "{3,5,5/2}",
+  "name": "icosahedral 120-cell",
+  "density": 4,
+  "counts": [
+   120,
+   720,
+   1200,
+   120
+  ],
+  "g": "6 + (-2)*sqrt(5)",
+  "g_f": 1.5278640450004204,
+  "walls_t": [
+   "1",
+   "4/3",
+   "5/2 + (-1/2)*sqrt(5)",
+   "6 + (-2)*sqrt(5)"
+  ],
+  "walls_t_f": [
+   1.0,
+   1.3333333333333333,
+   1.381966011250105,
+   1.5278640450004204
+  ],
+  "T_chain": {
+   "note": "T sees only the corners: the chain of the convex hull, a 600-cell",
+   "corners": 120
+  },
+  "core": {
+   "first_core_corners": 120,
+   "note": "the hull of the facet centres: a 600-cell; from there the convex cycle (period 2)"
+  },
+  "star_halo": {
+   "corners": 120,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 120,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "beyond g",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "3 + (-1)*sqrt(5)",
+    "turned_partner_f": 0.7639320225002102
+   },
+   "phi": {
+    "hop": "beyond g",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "-8 + (4)*sqrt(5)",
+    "turned_partner_f": 0.9442719099991592
+   }
+  },
+  "incidences": [
+   {
+    "t": "-1 + (1)*sqrt(5)",
+    "t_f": 1.2360679774997898,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "4/3",
+    "t_f": 1.3333333333333333,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1 + (1/5)*sqrt(5)",
+    "t_f": 1.4472135954999579,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "6 + (-2)*sqrt(5)",
+    "t_f": 1.5278640450004204,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1/2 + (1/2)*sqrt(5)",
+    "t_f": 1.618033988749895,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip; it is a facet hyperplane of P (stellation)"
+   },
+   {
+    "t": "1 + (3/5)*sqrt(5)",
+    "t_f": 2.341640786499874,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "3/2 + (1/2)*sqrt(5)",
+    "t_f": 2.618033988749895,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2 + (2/5)*sqrt(5)",
+    "t_f": 2.8944271909999157,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "1 + (1)*sqrt(5)",
+    "t_f": 3.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "3 + (1)*sqrt(5)",
+    "t_f": 5.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "6 + (2)*sqrt(5)",
+    "t_f": 10.47213595499958,
+    "what": "side hyperplane through another tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(6 + (-2)*sqrt(5))",
+  "fixed_point_t_f": 1.2360679774997896
+ },
+ {
+  "symbol": "{3,5/2,5}",
+  "name": "great icosahedral 120-cell",
+  "density": 76,
+  "counts": [
+   120,
+   720,
+   1200,
+   120
+  ],
+  "g": "6 + (2)*sqrt(5)",
+  "g_f": 10.47213595499958,
+  "walls_t": [
+   "1",
+   "4/3",
+   "5/2 + (1/2)*sqrt(5)",
+   "6 + (2)*sqrt(5)"
+  ],
+  "walls_t_f": [
+   1.0,
+   1.3333333333333333,
+   3.618033988749895,
+   10.47213595499958
+  ],
+  "T_chain": {
+   "note": "T sees only the corners: the chain of the convex hull, a 600-cell",
+   "corners": 120
+  },
+  "core": {
+   "first_core_corners": 120,
+   "note": "the hull of the facet centres: a 600-cell; from there the convex cycle (period 2)"
+  },
+  "star_halo": {
+   "corners": 120,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 120,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "[4/3, 5/2 + (1/2)*sqrt(5)]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "3 + (1)*sqrt(5)",
+    "turned_partner_f": 5.23606797749979
+   },
+   "phi": {
+    "hop": "[4/3, 5/2 + (1/2)*sqrt(5)]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "2 + (2)*sqrt(5)",
+    "turned_partner_f": 6.47213595499958
+   }
+  },
+  "incidences": [
+   {
+    "t": "2 + (-2/5)*sqrt(5)",
+    "t_f": 1.105572809000084,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "8/11 + (2/11)*sqrt(5)",
+    "t_f": 1.133830541363598,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "-1 + (1)*sqrt(5)",
+    "t_f": 1.2360679774997898,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "4/3",
+    "t_f": 1.3333333333333333,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1 + (1/5)*sqrt(5)",
+    "t_f": 1.4472135954999579,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "6 + (-2)*sqrt(5)",
+    "t_f": 1.5278640450004204,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1/2 + (1/2)*sqrt(5)",
+    "t_f": 1.618033988749895,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "14/11 + (2/11)*sqrt(5)",
+    "t_f": 1.6792850868181435,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip; it is a facet hyperplane of P (stellation)"
+   },
+   {
+    "t": "1 + (3/5)*sqrt(5)",
+    "t_f": 2.341640786499874,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "3/2 + (1/2)*sqrt(5)",
+    "t_f": 2.618033988749895,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1 + (1)*sqrt(5)",
+    "t_f": 3.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "3 + (1)*sqrt(5)",
+    "t_f": 5.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "6 + (2)*sqrt(5)",
+    "t_f": 10.47213595499958,
+    "what": "side hyperplane through another tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(6 + (2)*sqrt(5))",
+  "fixed_point_t_f": 3.23606797749979
+ },
+ {
+  "symbol": "{3,3,5}",
+  "name": "600-cell",
+  "density": 1,
+  "counts": [
+   120,
+   720,
+   1200,
+   600
+  ],
+  "g": "28 + (-12)*sqrt(5)",
+  "g_f": 1.1671842700025223,
+  "walls_t": [
+   "1",
+   "4 + (-4/3)*sqrt(5)",
+   "10 + (-4)*sqrt(5)",
+   "28 + (-12)*sqrt(5)"
+  ],
+  "walls_t_f": [
+   1.0,
+   1.0185760300002804,
+   1.0557280900008408,
+   1.1671842700025223
+  ],
+  "T_chain": {
+   "period": 2,
+   "gain_radius": "28 + (-12)*sqrt(5)",
+   "corners": [
+    120,
+    600,
+    120
+   ],
+   "exact_check": true
+  },
+  "core": {
+   "cycle_from_turn": 0,
+   "period": 2,
+   "scale_radius_t1": "7/16 + (3/16)*sqrt(5)",
+   "corners": [
+    600,
+    120
+   ],
+   "exact_check": true
+  },
+  "star_halo": {
+   "corners": 600,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 600,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "beyond g",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "14 + (-6)*sqrt(5)",
+    "turned_partner_f": 0.5835921350012612
+   },
+   "phi": {
+    "hop": "beyond g",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "-44 + (20)*sqrt(5)",
+    "turned_partner_f": 0.7213595499957961
+   }
+  },
+  "incidences": [
+   {
+    "t": "4 + (-4/3)*sqrt(5)",
+    "t_f": 1.0185760300002804,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-2/11 + (6/11)*sqrt(5)",
+    "t_f": 1.0378552604544307,
+    "what": "side hyperplane through another corner and tip; it is a facet hyperplane of P (stellation)"
+   },
+   {
+    "t": "10 + (-4)*sqrt(5)",
+    "t_f": 1.0557280900008408,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-24/11 + (16/11)*sqrt(5)",
+    "t_f": 1.0706443309087854,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "92/19 + (-32/19)*sqrt(5)",
+    "t_f": 1.0760960378950912,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1/3 + (1/3)*sqrt(5)",
+    "t_f": 1.0786893258332633,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2 + (-2/5)*sqrt(5)",
+    "t_f": 1.105572809000084,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "-48/29 + (36/29)*sqrt(5)",
+    "t_f": 1.120636109999739,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-19 + (9)*sqrt(5)",
+    "t_f": 1.1246117974981082,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-12/29 + (20/29)*sqrt(5)",
+    "t_f": 1.1283227431033034,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-10/3 + (2)*sqrt(5)",
+    "t_f": 1.1388026216662461,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "9/2 + (-3/2)*sqrt(5)",
+    "t_f": 1.1458980337503153,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "4/19 + (8/19)*sqrt(5)",
+    "t_f": 1.1520286221051745,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "94/31 + (-26/31)*sqrt(5)",
+    "t_f": 1.1568462124195311,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "28 + (-12)*sqrt(5)",
+    "t_f": 1.1671842700025223,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "18/19 + (2/19)*sqrt(5)",
+    "t_f": 1.1827439976315568,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "-54/11 + (30/11)*sqrt(5)",
+    "t_f": 1.1892763022721535,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "40/11 + (-12/11)*sqrt(5)",
+    "t_f": 1.1970167518184112,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "26/3 + (-10/3)*sqrt(5)",
+    "t_f": 1.2131067416673664,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "78/31 + (-18/31)*sqrt(5)",
+    "t_f": 1.2177669808065736,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-1 + (1)*sqrt(5)",
+    "t_f": 1.2360679774997898,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "-62/11 + (34/11)*sqrt(5)",
+    "t_f": 1.275119203181168,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "32/11 + (-8/11)*sqrt(5)",
+    "t_f": 1.2828596527274256,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2/5 + (2/5)*sqrt(5)",
+    "t_f": 1.294427190999916,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-30 + (14)*sqrt(5)",
+    "t_f": 1.3049516849970573,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "4 + (-6/5)*sqrt(5)",
+    "t_f": 1.3167184270002523,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "4/3",
+    "t_f": 1.3333333333333333,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "-4 + (12/5)*sqrt(5)",
+    "t_f": 1.3665631459994954,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "5/2 + (-1/2)*sqrt(5)",
+    "t_f": 1.381966011250105,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "64 + (-28)*sqrt(5)",
+    "t_f": 1.3900966300058855,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2/11 + (6/11)*sqrt(5)",
+    "t_f": 1.4014916240907944,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "36/19 + (-4/19)*sqrt(5)",
+    "t_f": 1.4239856889474125,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-20/11 + (16/11)*sqrt(5)",
+    "t_f": 1.434280694545149,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-8/19 + (16/19)*sqrt(5)",
+    "t_f": 1.4619519810524544,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "6 + (-2)*sqrt(5)",
+    "t_f": 1.5278640450004204,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "-5 + (3)*sqrt(5)",
+    "t_f": 1.7082039324993694,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "0 + (4/5)*sqrt(5)",
+    "t_f": 1.788854381999832,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "10/3 + (-2/3)*sqrt(5)",
+    "t_f": 1.8426213483334737,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "20 + (-8)*sqrt(5)",
+    "t_f": 2.1114561800016816,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-2 + (2)*sqrt(5)",
+    "t_f": 2.4721359549995796,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "12 + (-4)*sqrt(5)",
+    "t_f": 3.055728090000841,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1 + (1)*sqrt(5)",
+    "t_f": 3.23606797749979,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "8",
+    "t_f": 8.0,
+    "what": "side hyperplane through another tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(28 + (-12)*sqrt(5))",
+  "fixed_point_t_f": 1.0803630269509052
+ },
+ {
+  "symbol": "{3,3,5/2}",
+  "name": "grand 600-cell",
+  "density": 191,
+  "counts": [
+   120,
+   720,
+   1200,
+   600
+  ],
+  "g": "28 + (12)*sqrt(5)",
+  "g_f": 54.83281572999748,
+  "walls_t": [
+   "1",
+   "4 + (4/3)*sqrt(5)",
+   "10 + (4)*sqrt(5)",
+   "28 + (12)*sqrt(5)"
+  ],
+  "walls_t_f": [
+   1.0,
+   6.981423969999719,
+   18.94427190999916,
+   54.83281572999748
+  ],
+  "T_chain": {
+   "note": "T sees only the corners: the chain of the convex hull, a 600-cell",
+   "corners": 120
+  },
+  "core": {
+   "first_core_corners": 600,
+   "note": "the hull of the facet centres: a 120-cell; from there the convex cycle (period 2)"
+  },
+  "star_halo": {
+   "corners": 600,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 600,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "[1, 4 + (4/3)*sqrt(5)]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "14 + (6)*sqrt(5)",
+    "turned_partner_f": 27.41640786499874
+   },
+   "phi": {
+    "hop": "[1, 4 + (4/3)*sqrt(5)]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "16 + (8)*sqrt(5)",
+    "turned_partner_f": 33.88854381999832
+   }
+  },
+  "incidences": [
+   {
+    "t": "18/19 + (2/19)*sqrt(5)",
+    "t_f": 1.1827439976315568,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "4/3",
+    "t_f": 1.3333333333333333,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "14/11 + (2/11)*sqrt(5)",
+    "t_f": 1.6792850868181435,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "16/11 + (4/11)*sqrt(5)",
+    "t_f": 2.267661082727196,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "36/19 + (4/19)*sqrt(5)",
+    "t_f": 2.3654879952631136,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "5/3 + (1/3)*sqrt(5)",
+    "t_f": 2.4120226591665967,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2 + (2/5)*sqrt(5)",
+    "t_f": 2.8944271909999157,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "56/29 + (16/29)*sqrt(5)",
+    "t_f": 3.164727159999884,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1 + (1)*sqrt(5)",
+    "t_f": 3.23606797749979,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "60/29 + (16/29)*sqrt(5)",
+    "t_f": 3.3026581944826425,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2 + (2/3)*sqrt(5)",
+    "t_f": 3.4907119849998596,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "5/2 + (1/2)*sqrt(5)",
+    "t_f": 3.618033988749895,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "44/19 + (12/19)*sqrt(5)",
+    "t_f": 3.728042933157762,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "78/31 + (18/31)*sqrt(5)",
+    "t_f": 3.814491083709555,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "26/11 + (10/11)*sqrt(5)",
+    "t_f": 4.396425434090718,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "32/11 + (8/11)*sqrt(5)",
+    "t_f": 4.535322165454392,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "10/3 + (2/3)*sqrt(5)",
+    "t_f": 4.8240453183331935,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "94/31 + (26/31)*sqrt(5)",
+    "t_f": 4.907669916612727,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "3 + (1)*sqrt(5)",
+    "t_f": 5.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "34/11 + (14/11)*sqrt(5)",
+    "t_f": 5.936813789545187,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "40/11 + (12/11)*sqrt(5)",
+    "t_f": 6.075710520908862,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "18/5 + (6/5)*sqrt(5)",
+    "t_f": 6.283281572999748,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2 + (2)*sqrt(5)",
+    "t_f": 6.47213595499958,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "4 + (6/5)*sqrt(5)",
+    "t_f": 6.683281572999748,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "4 + (4/3)*sqrt(5)",
+    "t_f": 6.981423969999719,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "4 + (8/5)*sqrt(5)",
+    "t_f": 7.577708763999664,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "9/2 + (3/2)*sqrt(5)",
+    "t_f": 7.854101966249685,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "8",
+    "t_f": 8.0,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "50/11 + (18/11)*sqrt(5)",
+    "t_f": 8.204474872272383,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "92/19 + (32/19)*sqrt(5)",
+    "t_f": 8.608114488420698,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "52/11 + (20/11)*sqrt(5)",
+    "t_f": 8.792850868181436,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "96/19 + (36/19)*sqrt(5)",
+    "t_f": 9.289391957368021,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "6 + (2)*sqrt(5)",
+    "t_f": 10.47213595499958,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "7 + (3)*sqrt(5)",
+    "t_f": 13.70820393249937,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "8 + (16/5)*sqrt(5)",
+    "t_f": 15.155417527999328,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "26/3 + (10/3)*sqrt(5)",
+    "t_f": 16.120226591665965,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "10 + (4)*sqrt(5)",
+    "t_f": 18.94427190999916,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "12 + (4)*sqrt(5)",
+    "t_f": 20.94427190999916,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "14 + (6)*sqrt(5)",
+    "t_f": 27.41640786499874,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "20 + (8)*sqrt(5)",
+    "t_f": 37.88854381999832,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "21 + (9)*sqrt(5)",
+    "t_f": 41.124611797498105,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "28 + (12)*sqrt(5)",
+    "t_f": 54.83281572999748,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "64 + (28)*sqrt(5)",
+    "t_f": 126.60990336999411,
+    "what": "side hyperplane through another tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(28 + (12)*sqrt(5))",
+  "fixed_point_t_f": 7.404918347287665
+ },
+ {
+  "symbol": "{5/2,5,3}",
+  "name": "small stellated 120-cell",
+  "density": 4,
+  "counts": [
+   120,
+   1200,
+   720,
+   120
+  ],
+  "g": "6 + (-2)*sqrt(5)",
+  "g_f": 1.5278640450004204,
+  "walls_t": [
+   "1",
+   "2 + (-2/5)*sqrt(5)",
+   "9/2 + (-3/2)*sqrt(5)",
+   "6 + (-2)*sqrt(5)"
+  ],
+  "walls_t_f": [
+   1.0,
+   1.105572809000084,
+   1.1458980337503153,
+   1.5278640450004204
+  ],
+  "T_chain": {
+   "note": "T sees only the corners: the chain of the convex hull, a 600-cell",
+   "corners": 120
+  },
+  "core": {
+   "first_core_corners": 120,
+   "note": "the hull of the facet centres: a 600-cell; from there the convex cycle (period 2)"
+  },
+  "star_halo": {
+   "corners": 120,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 120,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "beyond g",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "3 + (-1)*sqrt(5)",
+    "turned_partner_f": 0.7639320225002102
+   },
+   "phi": {
+    "hop": "beyond g",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "-8 + (4)*sqrt(5)",
+    "turned_partner_f": 0.9442719099991592
+   }
+  },
+  "incidences": [
+   {
+    "t": "2 + (-2/5)*sqrt(5)",
+    "t_f": 1.105572809000084,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-1 + (1)*sqrt(5)",
+    "t_f": 1.2360679774997898,
+    "what": "side hyperplane through another corner and tip; it is a facet hyperplane of P (stellation)"
+   },
+   {
+    "t": "5/2 + (-1/2)*sqrt(5)",
+    "t_f": 1.381966011250105,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1 + (1/5)*sqrt(5)",
+    "t_f": 1.4472135954999579,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "6 + (-2)*sqrt(5)",
+    "t_f": 1.5278640450004204,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "1/2 + (1/2)*sqrt(5)",
+    "t_f": 1.618033988749895,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-5 + (3)*sqrt(5)",
+    "t_f": 1.7082039324993694,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "3/2 + (1/2)*sqrt(5)",
+    "t_f": 2.618033988749895,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "1 + (1)*sqrt(5)",
+    "t_f": 3.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(6 + (-2)*sqrt(5))",
+  "fixed_point_t_f": 1.2360679774997896
+ },
+ {
+  "symbol": "{5/2,5,5/2}",
+  "name": "grand stellated 120-cell",
+  "density": 66,
+  "counts": [
+   120,
+   720,
+   720,
+   120
+  ],
+  "g": "6 + (2)*sqrt(5)",
+  "g_f": 10.47213595499958,
+  "walls_t": [
+   "1",
+   "2 + (2/5)*sqrt(5)",
+   "5/2 + (1/2)*sqrt(5)",
+   "6 + (2)*sqrt(5)"
+  ],
+  "walls_t_f": [
+   1.0,
+   2.8944271909999157,
+   3.618033988749895,
+   10.47213595499958
+  ],
+  "T_chain": {
+   "note": "T sees only the corners: the chain of the convex hull, a 600-cell",
+   "corners": 120
+  },
+  "core": {
+   "first_core_corners": 120,
+   "note": "the hull of the facet centres: a 600-cell; from there the convex cycle (period 2)"
+  },
+  "star_halo": {
+   "corners": 120,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 120,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "[1, 2 + (2/5)*sqrt(5)]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "3 + (1)*sqrt(5)",
+    "turned_partner_f": 5.23606797749979
+   },
+   "phi": {
+    "hop": "[1, 2 + (2/5)*sqrt(5)]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "2 + (2)*sqrt(5)",
+    "turned_partner_f": 6.47213595499958
+   }
+  },
+  "incidences": [
+   {
+    "t": "-1 + (1)*sqrt(5)",
+    "t_f": 1.2360679774997898,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "1 + (1/5)*sqrt(5)",
+    "t_f": 1.4472135954999579,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "14/11 + (2/11)*sqrt(5)",
+    "t_f": 1.6792850868181435,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "3/2 + (1/2)*sqrt(5)",
+    "t_f": 2.618033988749895,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "2 + (2/5)*sqrt(5)",
+    "t_f": 2.8944271909999157,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1 + (1)*sqrt(5)",
+    "t_f": 3.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "5/2 + (1/2)*sqrt(5)",
+    "t_f": 3.618033988749895,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "3 + (1)*sqrt(5)",
+    "t_f": 5.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "6 + (2)*sqrt(5)",
+    "t_f": 10.47213595499958,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "7 + (3)*sqrt(5)",
+    "t_f": 13.70820393249937,
+    "what": "side hyperplane through another tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(6 + (2)*sqrt(5))",
+  "fixed_point_t_f": 3.23606797749979
+ },
+ {
+  "symbol": "{5/2,3,3}",
+  "name": "great grand stellated 120-cell",
+  "density": 191,
+  "counts": [
+   600,
+   1200,
+   720,
+   120
+  ],
+  "g": "28 + (12)*sqrt(5)",
+  "g_f": 54.83281572999748,
+  "walls_t": [
+   "1",
+   "2 + (2/5)*sqrt(5)",
+   "9/2 + (3/2)*sqrt(5)",
+   "28 + (12)*sqrt(5)"
+  ],
+  "walls_t_f": [
+   1.0,
+   2.8944271909999157,
+   7.854101966249685,
+   54.83281572999748
+  ],
+  "T_chain": {
+   "note": "T sees only the corners: the chain of the convex hull, a 120-cell",
+   "corners": 600
+  },
+  "core": {
+   "first_core_corners": 120,
+   "note": "the hull of the facet centres: a 600-cell; from there the convex cycle (period 2)"
+  },
+  "star_halo": {
+   "corners": 120,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 120,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "[1, 2 + (2/5)*sqrt(5)]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "14 + (6)*sqrt(5)",
+    "turned_partner_f": 27.41640786499874
+   },
+   "phi": {
+    "hop": "[1, 2 + (2/5)*sqrt(5)]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "16 + (8)*sqrt(5)",
+    "turned_partner_f": 33.88854381999832
+   }
+  },
+  "incidences": [
+   {
+    "t": "2 + (-2/5)*sqrt(5)",
+    "t_f": 1.105572809000084,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "8/11 + (2/11)*sqrt(5)",
+    "t_f": 1.133830541363598,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "-1 + (1)*sqrt(5)",
+    "t_f": 1.2360679774997898,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "20/19 + (2/19)*sqrt(5)",
+    "t_f": 1.2880071555262935,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "4/3",
+    "t_f": 1.3333333333333333,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "1 + (1/5)*sqrt(5)",
+    "t_f": 1.4472135954999579,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "1/2 + (1/2)*sqrt(5)",
+    "t_f": 1.618033988749895,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "14/11 + (2/11)*sqrt(5)",
+    "t_f": 1.6792850868181435,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "5/4 + (1/4)*sqrt(5)",
+    "t_f": 1.8090169943749475,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "16/11 + (4/11)*sqrt(5)",
+    "t_f": 2.267661082727196,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "1 + (3/5)*sqrt(5)",
+    "t_f": 2.341640786499874,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "5/3 + (1/3)*sqrt(5)",
+    "t_f": 2.4120226591665967,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "3/2 + (1/2)*sqrt(5)",
+    "t_f": 2.618033988749895,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "2 + (2/5)*sqrt(5)",
+    "t_f": 2.8944271909999157,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1 + (1)*sqrt(5)",
+    "t_f": 3.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "5/2 + (1/2)*sqrt(5)",
+    "t_f": 3.618033988749895,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "2 + (4/5)*sqrt(5)",
+    "t_f": 3.788854381999832,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "3 + (1)*sqrt(5)",
+    "t_f": 5.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "5 + (1)*sqrt(5)",
+    "t_f": 7.23606797749979,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "6 + (2)*sqrt(5)",
+    "t_f": 10.47213595499958,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "7 + (3)*sqrt(5)",
+    "t_f": 13.70820393249937,
+    "what": "side hyperplane through another corner and tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(28 + (12)*sqrt(5))",
+  "fixed_point_t_f": 7.404918347287665
+ },
+ {
+  "symbol": "{5/2,3,5}",
+  "name": "great stellated 120-cell",
+  "density": 20,
+  "counts": [
+   120,
+   720,
+   720,
+   120
+  ],
+  "g": "4",
+  "g_f": 4.0,
+  "walls_t": [
+   "1",
+   "2 + (-2/5)*sqrt(5)",
+   "5/2 + (-1/2)*sqrt(5)",
+   "4"
+  ],
+  "walls_t_f": [
+   1.0,
+   1.105572809000084,
+   1.381966011250105,
+   4.0
+  ],
+  "T_chain": {
+   "note": "T sees only the corners: the chain of the convex hull, a 600-cell",
+   "corners": 120
+  },
+  "core": {
+   "first_core_corners": 120,
+   "note": "the hull of the facet centres: a 600-cell; from there the convex cycle (period 2)"
+  },
+  "star_halo": {
+   "corners": 120,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 120,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "[5/2 + (-1/2)*sqrt(5), 4]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "2",
+    "turned_partner_f": 2.0
+   },
+   "phi": {
+    "hop": "[5/2 + (-1/2)*sqrt(5), 4]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "-2 + (2)*sqrt(5)",
+    "turned_partner_f": 2.4721359549995796
+   }
+  },
+  "incidences": [
+   {
+    "t": "1/3 + (1/3)*sqrt(5)",
+    "t_f": 1.0786893258332633,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "2 + (-2/5)*sqrt(5)",
+    "t_f": 1.105572809000084,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "8/11 + (2/11)*sqrt(5)",
+    "t_f": 1.133830541363598,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "-1 + (1)*sqrt(5)",
+    "t_f": 1.2360679774997898,
+    "what": "side hyperplane through another corner and tip; it is a facet hyperplane of P (stellation)"
+   },
+   {
+    "t": "4/3",
+    "t_f": 1.3333333333333333,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "5/2 + (-1/2)*sqrt(5)",
+    "t_f": 1.381966011250105,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1 + (1/5)*sqrt(5)",
+    "t_f": 1.4472135954999579,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "6 + (-2)*sqrt(5)",
+    "t_f": 1.5278640450004204,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1/2 + (1/2)*sqrt(5)",
+    "t_f": 1.618033988749895,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "-5 + (3)*sqrt(5)",
+    "t_f": 1.7082039324993694,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "1 + (1)*sqrt(5)",
+    "t_f": 3.23606797749979,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "3 + (1)*sqrt(5)",
+    "t_f": 5.23606797749979,
+    "what": "side hyperplane through another corner"
+   }
+  ],
+  "fixed_point_t": "sqrt(4)",
+  "fixed_point_t_f": 2.0
+ },
+ {
+  "symbol": "{5,5/2,3}",
+  "name": "great grand 120-cell",
+  "density": 76,
+  "counts": [
+   120,
+   1200,
+   720,
+   120
+  ],
+  "g": "6 + (2)*sqrt(5)",
+  "g_f": 10.47213595499958,
+  "walls_t": [
+   "1",
+   "2 + (2/5)*sqrt(5)",
+   "9/2 + (3/2)*sqrt(5)",
+   "6 + (2)*sqrt(5)"
+  ],
+  "walls_t_f": [
+   1.0,
+   2.8944271909999157,
+   7.854101966249685,
+   10.47213595499958
+  ],
+  "T_chain": {
+   "note": "T sees only the corners: the chain of the convex hull, a 600-cell",
+   "corners": 120
+  },
+  "core": {
+   "first_core_corners": 120,
+   "note": "the hull of the facet centres: a 600-cell; from there the convex cycle (period 2)"
+  },
+  "star_halo": {
+   "corners": 120,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 120,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "[1, 2 + (2/5)*sqrt(5)]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "3 + (1)*sqrt(5)",
+    "turned_partner_f": 5.23606797749979
+   },
+   "phi": {
+    "hop": "[1, 2 + (2/5)*sqrt(5)]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "2 + (2)*sqrt(5)",
+    "turned_partner_f": 6.47213595499958
+   }
+  },
+  "incidences": [
+   {
+    "t": "-1 + (1)*sqrt(5)",
+    "t_f": 1.2360679774997898,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "1 + (1/5)*sqrt(5)",
+    "t_f": 1.4472135954999579,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "14/11 + (2/11)*sqrt(5)",
+    "t_f": 1.6792850868181435,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "3/2 + (1/2)*sqrt(5)",
+    "t_f": 2.618033988749895,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "2 + (2/5)*sqrt(5)",
+    "t_f": 2.8944271909999157,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1 + (1)*sqrt(5)",
+    "t_f": 3.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "5/2 + (1/2)*sqrt(5)",
+    "t_f": 3.618033988749895,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "3 + (1)*sqrt(5)",
+    "t_f": 5.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "6 + (2)*sqrt(5)",
+    "t_f": 10.47213595499958,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "7 + (3)*sqrt(5)",
+    "t_f": 13.70820393249937,
+    "what": "side hyperplane through another tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(6 + (2)*sqrt(5))",
+  "fixed_point_t_f": 3.23606797749979
+ },
+ {
+  "symbol": "{5,5/2,5}",
+  "name": "great 120-cell",
+  "density": 6,
+  "counts": [
+   120,
+   720,
+   720,
+   120
+  ],
+  "g": "6 + (-2)*sqrt(5)",
+  "g_f": 1.5278640450004204,
+  "walls_t": [
+   "1",
+   "2 + (-2/5)*sqrt(5)",
+   "5/2 + (-1/2)*sqrt(5)",
+   "6 + (-2)*sqrt(5)"
+  ],
+  "walls_t_f": [
+   1.0,
+   1.105572809000084,
+   1.381966011250105,
+   1.5278640450004204
+  ],
+  "T_chain": {
+   "note": "T sees only the corners: the chain of the convex hull, a 600-cell",
+   "corners": 120
+  },
+  "core": {
+   "first_core_corners": 120,
+   "note": "the hull of the facet centres: a 600-cell; from there the convex cycle (period 2)"
+  },
+  "star_halo": {
+   "corners": 120,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 120,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "beyond g",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "3 + (-1)*sqrt(5)",
+    "turned_partner_f": 0.7639320225002102
+   },
+   "phi": {
+    "hop": "beyond g",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "-8 + (4)*sqrt(5)",
+    "turned_partner_f": 0.9442719099991592
+   }
+  },
+  "incidences": [
+   {
+    "t": "2 + (-2/5)*sqrt(5)",
+    "t_f": 1.105572809000084,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-1 + (1)*sqrt(5)",
+    "t_f": 1.2360679774997898,
+    "what": "side hyperplane through another corner and tip; it is a facet hyperplane of P (stellation)"
+   },
+   {
+    "t": "5/2 + (-1/2)*sqrt(5)",
+    "t_f": 1.381966011250105,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1 + (1/5)*sqrt(5)",
+    "t_f": 1.4472135954999579,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "6 + (-2)*sqrt(5)",
+    "t_f": 1.5278640450004204,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "1/2 + (1/2)*sqrt(5)",
+    "t_f": 1.618033988749895,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-5 + (3)*sqrt(5)",
+    "t_f": 1.7082039324993694,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "3/2 + (1/2)*sqrt(5)",
+    "t_f": 2.618033988749895,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "1 + (1)*sqrt(5)",
+    "t_f": 3.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(6 + (-2)*sqrt(5))",
+  "fixed_point_t_f": 1.2360679774997896
+ },
+ {
+  "symbol": "{5,3,3}",
+  "name": "120-cell",
+  "density": 1,
+  "counts": [
+   600,
+   1200,
+   720,
+   120
+  ],
+  "g": "28 + (-12)*sqrt(5)",
+  "g_f": 1.1671842700025223,
+  "walls_t": [
+   "1",
+   "2 + (-2/5)*sqrt(5)",
+   "9/2 + (-3/2)*sqrt(5)",
+   "28 + (-12)*sqrt(5)"
+  ],
+  "walls_t_f": [
+   1.0,
+   1.105572809000084,
+   1.1458980337503153,
+   1.1671842700025223
+  ],
+  "T_chain": {
+   "period": 2,
+   "gain_radius": "28 + (-12)*sqrt(5)",
+   "corners": [
+    600,
+    120,
+    600
+   ],
+   "exact_check": true
+  },
+  "core": {
+   "cycle_from_turn": 0,
+   "period": 2,
+   "scale_radius_t1": "7/16 + (3/16)*sqrt(5)",
+   "corners": [
+    120,
+    600
+   ],
+   "exact_check": true
+  },
+  "star_halo": {
+   "corners": 120,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 120,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "beyond g",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "14 + (-6)*sqrt(5)",
+    "turned_partner_f": 0.5835921350012612
+   },
+   "phi": {
+    "hop": "beyond g",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "-44 + (20)*sqrt(5)",
+    "turned_partner_f": 0.7213595499957961
+   }
+  },
+  "incidences": [
+   {
+    "t": "2 + (-2/5)*sqrt(5)",
+    "t_f": 1.105572809000084,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "-1 + (1)*sqrt(5)",
+    "t_f": 1.2360679774997898,
+    "what": "side hyperplane through another corner and tip; it is a facet hyperplane of P (stellation)"
+   },
+   {
+    "t": "4/3",
+    "t_f": 1.3333333333333333,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "5/2 + (-1/2)*sqrt(5)",
+    "t_f": 1.381966011250105,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "1 + (1/5)*sqrt(5)",
+    "t_f": 1.4472135954999579,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "6 + (-2)*sqrt(5)",
+    "t_f": 1.5278640450004204,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "1/2 + (1/2)*sqrt(5)",
+    "t_f": 1.618033988749895,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "-5 + (3)*sqrt(5)",
+    "t_f": 1.7082039324993694,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "1 + (1/3)*sqrt(5)",
+    "t_f": 1.7453559924999298,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "5 + (-1)*sqrt(5)",
+    "t_f": 2.76393202250021,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "2 + (2/5)*sqrt(5)",
+    "t_f": 2.8944271909999157,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "1 + (1)*sqrt(5)",
+    "t_f": 3.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "3 + (1)*sqrt(5)",
+    "t_f": 5.23606797749979,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "4 + (2)*sqrt(5)",
+    "t_f": 8.47213595499958,
+    "what": "side hyperplane through another corner"
+   }
+  ],
+  "fixed_point_t": "sqrt(28 + (-12)*sqrt(5))",
+  "fixed_point_t_f": 1.0803630269509052
+ },
+ {
+  "symbol": "{5,3,5/2}",
+  "name": "grand 120-cell",
+  "density": 20,
+  "counts": [
+   120,
+   720,
+   720,
+   120
+  ],
+  "g": "4",
+  "g_f": 4.0,
+  "walls_t": [
+   "1",
+   "2 + (2/5)*sqrt(5)",
+   "5/2 + (1/2)*sqrt(5)",
+   "4"
+  ],
+  "walls_t_f": [
+   1.0,
+   2.8944271909999157,
+   3.618033988749895,
+   4.0
+  ],
+  "T_chain": {
+   "note": "T sees only the corners: the chain of the convex hull, a 600-cell",
+   "corners": 120
+  },
+  "core": {
+   "first_core_corners": 120,
+   "note": "the hull of the facet centres: a 600-cell; from there the convex cycle (period 2)"
+  },
+  "star_halo": {
+   "corners": 120,
+   "note": "hull of t x the facet centres (= the first core)"
+  },
+  "polar_halo": {
+   "corners": 120,
+   "note": "reciprocal: corners at the poles of the facet hyperplanes, R^2/h^2 x the facet centres"
+  },
+  "stars": {
+   "2": {
+    "hop": "[1, 2 + (2/5)*sqrt(5)]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "2",
+    "turned_partner_f": 2.0
+   },
+   "phi": {
+    "hop": "[1, 2 + (2/5)*sqrt(5)]",
+    "on_wall": [],
+    "convex": false,
+    "turned_partner": "-2 + (2)*sqrt(5)",
+    "turned_partner_f": 2.4721359549995796
+   }
+  },
+  "incidences": [
+   {
+    "t": "4/3",
+    "t_f": 1.3333333333333333,
+    "what": "side hyperplane through another corner"
+   },
+   {
+    "t": "1 + (1/5)*sqrt(5)",
+    "t_f": 1.4472135954999579,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "2",
+    "t_f": 2.0,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "3/2 + (1/2)*sqrt(5)",
+    "t_f": 2.618033988749895,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "2 + (2/5)*sqrt(5)",
+    "t_f": 2.8944271909999157,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "1 + (1)*sqrt(5)",
+    "t_f": 3.23606797749979,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "5/2 + (1/2)*sqrt(5)",
+    "t_f": 3.618033988749895,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "4",
+    "t_f": 4.0,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "3 + (1)*sqrt(5)",
+    "t_f": 5.23606797749979,
+    "what": "side hyperplane through another corner and tip"
+   },
+   {
+    "t": "6 + (2)*sqrt(5)",
+    "t_f": 10.47213595499958,
+    "what": "side hyperplane through another tip"
+   },
+   {
+    "t": "7 + (3)*sqrt(5)",
+    "t_f": 13.70820393249937,
+    "what": "side hyperplane through another tip"
+   }
+  ],
+  "fixed_point_t": "sqrt(4)",
+  "fixed_point_t_f": 2.0
+ }
+]

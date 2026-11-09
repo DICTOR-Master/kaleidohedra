@@ -1,0 +1,86 @@
+{3,3} tetrahedron | T 2 9 | core 0 2 1/9 [4, 4] | halo 4 | polar halo 4 | stars {'2': ('convex (kis)', 8, 'inside the T range (1, g)'), 'phi': ('convex (kis)', 8, 'inside the T range (1, g)')} | 0 s
+     t = -3                                       -3.000000  metric: edge-tangent kis: every edge tangent to the midsphere (t < 0: apex beyond the centre)
+     t = 1                                        1.000000  wall: the solid itself (t = 1)
+     t = 9/5                                      1.800000  metric: edge-tangent kis: every edge tangent to the midsphere
+     t = 3                                        3.000000  wall (incidence): join: neighbouring spike sides coplanar (hull = polar of the dual's rectification)
+     t = 3                                        3.000000  turn fixed point (stationary): tips on the circumsphere
+     t = 3                                        3.000000  incidence: spike side through another tip
+     t = 9                                        9.000000  wall (incidence): g: tips at the corners of T(P)
+{4,3} cube | T 2 3 | core 0 2 1/3 [6, 8] | halo 6 | polar halo 6 | stars {'2': ('at the join', 14, 'inside the T range (1, g)'), 'phi': ('convex (kis)', 14, 'inside the T range (1, g)')} | 0 s
+     t = 1                                        1.000000  wall: the solid itself (t = 1)
+     t = 3/2                                      1.500000  metric: edge-tangent kis: every edge tangent to the midsphere
+     t = sqrt(3)                                  1.732051  turn fixed point (stationary): tips on the circumsphere
+     t = 2                                        2.000000  wall (incidence): join: neighbouring spike sides coplanar (hull = polar of the dual's rectification)
+     t = 2                                        2.000000  incidence: spike side through another tip
+     t = 3                                        3.000000  wall (incidence): g: tips at the corners of T(P)
+{3,4} octahedron | T 2 3 | core 0 2 1/3 [8, 6] | halo 8 | polar halo 8 | stars {'2': ('non-convex', 14, 'inside the T range (1, g)'), 'phi': ('non-convex', 14, 'inside the T range (1, g)')} | 1 s
+     t = -3*sqrt(2) - 3                           -7.242641  metric: edge-tangent kis: every edge tangent to the midsphere (t < 0: apex beyond the centre)
+     t = 1                                        1.000000  wall: the solid itself (t = 1)
+     t = -3 + 3*sqrt(2)                           1.242641  metric: edge-tangent kis: every edge tangent to the midsphere
+     t = 3/2                                      1.500000  wall (incidence): join: neighbouring spike sides coplanar (hull = polar of the dual's rectification)
+     t = 3/2                                      1.500000  incidence: spike side through another tip
+     t = sqrt(3)                                  1.732051  turn fixed point (stationary): tips on the circumsphere
+     t = 3                                        3.000000  wall (incidence): g: tips at the corners of T(P)
+     t = 3                                        3.000000  incidence: spike side through another corner and tip; the side lies in a face plane of the solid (stellation)
+{3,5/2} great icosahedron | T 2 15 - 6*sqrt(5) | core 1 2 sqrt(5)*(2 + sqrt(5))/15 [20, 12, 20] | halo 20 | polar halo 20 | stars {'2': ('star (pyramids on star faces)', 12, 'inside the T range (1, g)'), 'phi': ('star (pyramids on star faces)', 12, 'inside the T range (1, g)')} | 7 s
+     t = -12*sqrt(5)/11 - 15/11                   -3.802983  metric: edge-tangent kis: every edge tangent to the midsphere (t < 0: apex beyond the centre)
+     t = 1                                        1.000000  wall: the solid itself (t = 1)
+     t = 3                                        3.000000  metric: edge-tangent kis: every edge tangent to the midsphere
+     t = 3                                        3.000000  incidence: spike side through another corner and tip
+     t = sqrt(6*sqrt(5) + 15)                     5.330704  turn fixed point (stationary): tips on the circumsphere
+     t = 6*sqrt(5)/5 + 3                          5.683282  incidence: spike side through another tip
+     t = 3*sqrt(5)/2 + 9/2                        7.854102  wall (incidence): join: neighbouring spike sides coplanar (hull = polar of the dual's rectification)
+     t = 3*sqrt(5)/2 + 9/2                        7.854102  incidence: spike side through another tip
+     t = 6*sqrt(5) + 15                           28.416408  wall (incidence): g: tips at the corners of T(P)
+     t = 6*sqrt(5) + 15                           28.416408  incidence: spike side through another tip
+{3,5} icosahedron | T 2 15 - 6*sqrt(5) | core 0 2 sqrt(5)*(2 + sqrt(5))/15 [20, 12] | halo 20 | polar halo 20 | stars {'2': ('non-convex', 20, 'beyond T(P): hull = tips only'), 'phi': ('non-convex', 20, 'beyond T(P): hull = tips only')} | 11 s
+     t = 1                                        1.000000  wall: the solid itself (t = 1)
+     t = sqrt(5)/(sqrt(5)/3 + 4/3)                1.075711  metric: edge-tangent kis: every edge tangent to the midsphere
+     t = 9/2 - 3*sqrt(5)/2                        1.145898  wall (incidence): join: neighbouring spike sides coplanar (hull = polar of the dual's rectification)
+     t = 9/2 - 3*sqrt(5)/2                        1.145898  incidence: spike side through another tip
+     t = -(-3*sqrt(3) + sqrt(15))*sqrt(2*sqrt(5) + 10)/4 1.258409  turn fixed point (stationary): tips on the circumsphere
+     t = 3*sqrt(5)/5                              1.341641  incidence: spike side through another corner and tip; the side lies in a face plane of the solid (stellation)
+     t = 15 - 6*sqrt(5)                           1.583592  wall (incidence): g: tips at the corners of T(P)
+     t = 15 - 6*sqrt(5)                           1.583592  incidence: spike side through another tip
+     t = 3                                        3.000000  metric: edge-tangent kis: every edge tangent to the midsphere
+     t = 3                                        3.000000  incidence: spike side through another corner and tip
+{5/2,5} small stellated dodecahedron | T 2 15 - 6*sqrt(5) | core 1 2 sqrt(5)*(2 + sqrt(5))/15 [12, 20, 12] | halo 12 | polar halo 12 | stars {'2': ('star (pyramids on star faces)', 12, 'inside the T range (1, g)'), 'phi': ('star (pyramids on star faces)', 12, 'inside the T range (1, g)')} | 13 s
+     t = -sqrt(5)                                 -2.236068  metric: edge-tangent kis: every edge tangent to the midsphere (t < 0: apex beyond the centre)
+     t = 1                                        1.000000  wall: the solid itself (t = 1)
+     t = -(-3*sqrt(2) + sqrt(10))**3*(-5*sqrt(3*sqrt(5) + 7) - sqrt(5)*sqrt(3*sqrt(5) + 7) + 30*sqrt(2) + 14*sqrt(10))/64 1.180340  metric: edge-tangent kis: every edge tangent to the midsphere
+     t = 5/2 - sqrt(5)/2                          1.381966  wall (incidence): join: neighbouring spike sides coplanar (hull = polar of the dual's rectification)
+     t = 5/2 - sqrt(5)/2                          1.381966  incidence: spike side through another tip
+     t = sqrt(5)                                  2.236068  turn fixed point (stationary): tips on the circumsphere
+     t = sqrt(5)                                  2.236068  incidence: spike side through another corner and tip; the side lies in a face plane of the solid (stellation)
+     t = 5                                        5.000000  wall (incidence): g: tips at the corners of T(P)
+{5/2,3} great stellated dodecahedron | T 2 15 - 6*sqrt(5) | core 1 2 sqrt(5)*(2 + sqrt(5))/15 [12, 20, 12] | halo 12 | polar halo 12 | stars {'2': ('star (pyramids on star faces)', 20, 'inside the T range (1, g)'), 'phi': ('star (pyramids on star faces)', 20, 'inside the T range (1, g)')} | 16 s
+     t = -sqrt(5)                                 -2.236068  metric: edge-tangent kis: every edge tangent to the midsphere (t < 0: apex beyond the centre)
+     t = 1                                        1.000000  wall: the solid itself (t = 1)
+     t = sqrt(5)/(-1/3 + 2*sqrt(5)/3)             1.932011  metric: edge-tangent kis: every edge tangent to the midsphere
+     t = sqrt(5)                                  2.236068  incidence: spike side through another corner and tip
+     t = sqrt(5)/2 + 5/2                          3.618034  wall (incidence): join: neighbouring spike sides coplanar (hull = polar of the dual's rectification)
+     t = sqrt(5)*(5/2 + 5*sqrt(5)/2)/5            3.618034  incidence: spike side through another tip
+     t = (1 + sqrt(5))*sqrt(10 - 2*sqrt(5))*sqrt(6*sqrt(5) + 18)/8 5.330704  turn fixed point (stationary): tips on the circumsphere
+     t = 2*sqrt(5) + 5                            9.472136  incidence: spike side through another corner and tip
+     t = 6*sqrt(5) + 15                           28.416408  wall (incidence): g: tips at the corners of T(P)
+{5,3} dodecahedron | T 2 15 - 6*sqrt(5) | core 0 2 sqrt(5)*(2 + sqrt(5))/15 [12, 20] | halo 12 | polar halo 12 | stars {'2': ('non-convex', 12, 'beyond T(P): hull = tips only'), 'phi': ('non-convex', 12, 'beyond T(P): hull = tips only')} | 19 s
+     t = 1                                        1.000000  wall: the solid itself (t = 1)
+     t = (-301*sqrt(5)*sqrt(6460*sqrt(5) + 14445) + 8*sqrt(5) + 673*sqrt(6460*sqrt(5) + 14445))/19 + 15/19 1.225884  metric: edge-tangent kis: every edge tangent to the midsphere
+     t = -(29 - 13*sqrt(5))*sqrt(18*sqrt(5) + 42)*sqrt(58*sqrt(5) + 130)/8 1.258409  turn fixed point (stationary): tips on the circumsphere
+     t = 5/2 - sqrt(5)/2                          1.381966  wall (incidence): join: neighbouring spike sides coplanar (hull = polar of the dual's rectification)
+     t = 5/2 - sqrt(5)/2                          1.381966  incidence: spike side through another tip
+     t = 15 - 6*sqrt(5)                           1.583592  wall (incidence): g: tips at the corners of T(P)
+     t = sqrt(5)                                  2.236068  metric: edge-tangent kis: every edge tangent to the midsphere
+     t = sqrt(5)                                  2.236068  incidence: spike side through another corner and tip; the side lies in a face plane of the solid (stellation)
+     t = 2*sqrt(5) + 5                            9.472136  incidence: spike side through another corner
+{5,5/2} great dodecahedron | T 2 15 - 6*sqrt(5) | core 1 2 sqrt(5)*(2 + sqrt(5))/15 [12, 20, 12] | halo 12 | polar halo 12 | stars {'2': ('star (pyramids on star faces)', 12, 'inside the T range (1, g)'), 'phi': ('star (pyramids on star faces)', 12, 'inside the T range (1, g)')} | 22 s
+     t = (-47*sqrt(67650*sqrt(5) + 151270) - 4*sqrt(5) + 21*sqrt(5)*sqrt(67650*sqrt(5) + 151270))/2 - 5 -21.180340  metric: edge-tangent kis: every edge tangent to the midsphere (t < 0: apex beyond the centre)
+     t = 1                                        1.000000  wall: the solid itself (t = 1)
+     t = sqrt(5)                                  2.236068  turn fixed point (stationary): tips on the circumsphere
+     t = sqrt(5)                                  2.236068  metric: edge-tangent kis: every edge tangent to the midsphere
+     t = sqrt(5)                                  2.236068  incidence: spike side through another corner and tip
+     t = sqrt(5)/2 + 5/2                          3.618034  wall (incidence): join: neighbouring spike sides coplanar (hull = polar of the dual's rectification)
+     t = sqrt(5)*(5/2 + 5*sqrt(5)/2)/5            3.618034  incidence: spike side through another tip
+     t = 5                                        5.000000  wall (incidence): g: tips at the corners of T(P)
+     t = 2*sqrt(5) + 5                            9.472136  incidence: spike side through another corner and tip
+FINAL ok

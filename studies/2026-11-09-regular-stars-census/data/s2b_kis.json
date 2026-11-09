@@ -1,0 +1,240 @@
+[
+ {
+  "symbol": "{3,3}",
+  "name": "tetrahedron",
+  "t": "-3",
+  "t_f": -3.0,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": true,
+  "polar_edge_lengths": [
+   11.313708498984761,
+   11.313708498984761
+  ],
+  "n_polar_edges": 18
+ },
+ {
+  "symbol": "{3,3}",
+  "name": "tetrahedron",
+  "t": "9/5",
+  "t_f": 1.8,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   3.7712361663282534,
+   3.771236166328254
+  ],
+  "n_polar_edges": 18
+ },
+ {
+  "symbol": "{4,3}",
+  "name": "cube",
+  "t": "3/2",
+  "t_f": 1.5,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   3.771236166328254,
+   3.771236166328254
+  ],
+  "n_polar_edges": 36
+ },
+ {
+  "symbol": "{3,4}",
+  "name": "octahedron",
+  "t": "-3*sqrt(2) - 3",
+  "t_f": -7.242640687119285,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   9.656854249492385,
+   9.656854249492385
+  ],
+  "n_polar_edges": 36
+ },
+ {
+  "symbol": "{3,4}",
+  "name": "octahedron",
+  "t": "-3 + 3*sqrt(2)",
+  "t_f": 1.2426406871192852,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   1.6568542494923806,
+   1.6568542494923808
+  ],
+  "n_polar_edges": 36
+ },
+ {
+  "symbol": "{3,5/2}",
+  "name": "great icosahedron",
+  "t": "-12*sqrt(5)/11 - 15/11",
+  "t_f": -3.802983248181589,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   7.577708763999658,
+   7.577708763999665
+  ],
+  "n_polar_edges": 90
+ },
+ {
+  "symbol": "{3,5/2}",
+  "name": "great icosahedron",
+  "t": "3",
+  "t_f": 3.0,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   3.9999999999999973,
+   4.000000000000001
+  ],
+  "n_polar_edges": 90
+ },
+ {
+  "symbol": "{3,5}",
+  "name": "icosahedron",
+  "t": "sqrt(5)/(sqrt(5)/3 + 4/3)",
+  "t_f": 1.0757105209088615,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   1.1055728090000811,
+   1.1055728090000871
+  ],
+  "n_polar_edges": 90
+ },
+ {
+  "symbol": "{3,5}",
+  "name": "icosahedron",
+  "t": "3",
+  "t_f": 3.0,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   10.472135954999573,
+   10.47213595499958
+  ],
+  "n_polar_edges": 90
+ },
+ {
+  "symbol": "{5/2,5}",
+  "name": "small stellated dodecahedron",
+  "t": "-sqrt(5)",
+  "t_f": -2.23606797749979,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": true,
+  "polar_edge_lengths": [
+   10.47213595499957,
+   10.472135954999581
+  ],
+  "n_polar_edges": 90
+ },
+ {
+  "symbol": "{5/2,5}",
+  "name": "small stellated dodecahedron",
+  "t": "-(-3*sqrt(2) + sqrt(10))**3*(-5*sqrt(3*sqrt(5) + 7) - sqrt(5)*sqrt(3*sqrt(5) + 7) + 30*sqrt(2) + 14*sqrt(10))/64",
+  "t_f": 1.1803398874989486,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   1.105572809000083,
+   1.1055728090000847
+  ],
+  "n_polar_edges": 90
+ },
+ {
+  "symbol": "{5/2,3}",
+  "name": "great stellated dodecahedron",
+  "t": "-sqrt(5)",
+  "t_f": -2.23606797749979,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   6.4721359549995725,
+   6.472135954999581
+  ],
+  "n_polar_edges": 90
+ },
+ {
+  "symbol": "{5/2,3}",
+  "name": "great stellated dodecahedron",
+  "t": "sqrt(5)/(-1/3 + 2*sqrt(5)/3)",
+  "t_f": 1.9320107332894405,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   2.1573786516665248,
+   2.157378651666527
+  ],
+  "n_polar_edges": 90
+ },
+ {
+  "symbol": "{5,3}",
+  "name": "dodecahedron",
+  "t": "(-301*sqrt(5)*sqrt(6460*sqrt(5) + 14445) + 8*sqrt(5) + 673*sqrt(6460*sqrt(5) + 14445))/19 + 15/19",
+  "t_f": 1.2258840035526648,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   3.490711984999855,
+   3.4907119849998627
+  ],
+  "n_polar_edges": 90
+ },
+ {
+  "symbol": "{5,3}",
+  "name": "dodecahedron",
+  "t": "sqrt(5)",
+  "t_f": 2.23606797749979,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   10.472135954999573,
+   10.47213595499958
+  ],
+  "n_polar_edges": 90
+ },
+ {
+  "symbol": "{5,5/2}",
+  "name": "great dodecahedron",
+  "t": "(-47*sqrt(67650*sqrt(5) + 151270) - 4*sqrt(5) + 21*sqrt(5)*sqrt(67650*sqrt(5) + 151270))/2 - 5",
+  "t_f": -21.18033988749895,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": false,
+  "polar_edge_lengths": [
+   12.260990336999406,
+   12.260990336999415
+  ],
+  "n_polar_edges": 90
+ },
+ {
+  "symbol": "{5,5/2}",
+  "name": "great dodecahedron",
+  "t": "sqrt(5)",
+  "t_f": 2.23606797749979,
+  "edges_tangent": true,
+  "polar_edges_equal": true,
+  "apex_on_corner": true,
+  "polar_edge_lengths": [
+   6.472135954999576,
+   6.472135954999581
+  ],
+  "n_polar_edges": 90
+ }
+]
