@@ -1,0 +1,36 @@
+E[t^0] computed (1 terms, 0 s)
+E[t^1] computed (1 terms, 0 s)
+E[t^2] computed (9 terms, 0 s)
+E[t^3] computed (1 terms, 0 s)
+E[t^4] computed (36 terms, 1 s)
+E[t^5] computed (1 terms, 2 s)
+E[t^6] computed (100 terms, 6 s)
+E[t^7] computed (1 terms, 18 s)
+kappa = 175/192 = 0.9114583333333334
+H on the sphere at the axes: H5 = 32/175 0.18285714285714286  H3 = -32/315 -0.10158730158730159  H2 = -2/35 -0.05714285714285714
+z = H(u)H(w) ranges over [H5 H3, max(H5^2, H3^2)] = [ -1024/55125 , 1024/30625 ] = [-0.01857596371882086, 0.03343673469387755]
+E[p] = c (A + kappa z), A = 16/945 = 0.016931216931216932  kappa = 175/192
+extremal orbit: squared values {2*sqrt(5)/15 + 1/3: 30, 1/3 - 2*sqrt(5)/15: 30}
+degree 5: best moment bound m >= 0.774347 (constant 1/m^2 = 1.667741); c = 0.794654
+degree 6: best moment bound m >= 0.783500 (constant 1/m^2 = 1.629003); c = 0.794654
+degree 7: best moment bound m >= 0.794219 (constant 1/m^2 = 1.585331); c = 0.794654
+  ok   |I| = 60 rotations, orthogonal, det 1
+  ok   octahedral cubic certificate mean = (1 - 3m^2)/(9m)
+  ok   1/c^2 = 15 - 6 sqrt5
+  ok   odd moments E[t], E[t^3], E[t^5], E[t^7] vanish identically
+  ok   E[t^2] = |u|^2|w|^2/3
+  ok   E[t^4] = |u|^4|w|^4/5
+  ok   H = Q6 - (6/7)|x|^6 is harmonic
+  ok   H is invariant under the 60 rotations
+  ok   E[t^6] = |u|^6|w|^6/7 + kappa H(u)H(w) identically (orbits are 5-designs, not 6-designs)
+  ok   15 mirror normals (two-fold axes)
+  ok   Jacobian(|x|^2, H, Q10) = nonzero constant * product of the 15 mirror forms
+  ok   on the mirror circle the critical points of H are exactly the 5-, 3-, 2-fold axes
+  ok   H5 = max, H3 = min of H on the sphere (H5 > H2 > H3, H5 > 0 > H3)
+  ok   E[p] = 0 at z = H5 H3 (u on a 5-fold, w on a 3-fold axis)
+  ok   kappa > 0, so A + kappa z >= 0 on the whole range, equality only at z = H5 H3
+  ok   extremal orbit values: t^2 in {c^2, a^2}, 30 each, max t = c
+  ok   share of -c forced to 1/2, then mean <= -c/2 + a/2 < 0 (contradiction)
+  ok   LP: degree 5 gives sqrt(3/5), degree 6 stays below c, degree 7 reaches c
+time 44 s
+FINAL ok

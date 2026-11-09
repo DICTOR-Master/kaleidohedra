@@ -1,0 +1,198 @@
+{
+ "mark": "DICTO #43 Conjecture 1, exact base of Theorem N (icosahedral-line study), 2026-11-09 \u00b7 DICTO \u00b7 dictospheres.com",
+ "k": {
+  "0": {
+   "t_min_float": 1.1335814746814497,
+   "t_min_exact": "445/361+-16/361r5",
+   "exact_max": true,
+   "le_3_over_phi2_exact": true,
+   "target_minus_t_min": 0.01231655906886564,
+   "faces_of_next": 132,
+   "listed_points": 102
+  },
+  "1": {
+   "t_min_float": 1.117381815787224,
+   "t_min_exact": "5941/2071+-1622/2071r5",
+   "exact_max": true,
+   "le_3_over_phi2_exact": true,
+   "target_minus_t_min": 0.028516217963091117,
+   "faces_of_next": 140,
+   "listed_points": 80
+  },
+  "2": {
+   "t_min_float": 1.1031467178391523,
+   "t_min_exact": "247111/11881+-104650/11881r5",
+   "exact_max": true,
+   "le_3_over_phi2_exact": true,
+   "target_minus_t_min": 0.042751315911161214,
+   "faces_of_next": 162,
+   "listed_points": 132
+  },
+  "3": {
+   "t_min_float": 1.1458980337503153,
+   "t_min_exact": "9/2+-3/2r5",
+   "exact_max": true,
+   "le_3_over_phi2_exact": true,
+   "target_minus_t_min": 0.0,
+   "faces_of_next": 200,
+   "listed_points": 140
+  },
+  "4": {
+   "t_min_float": 1.0424406679166784,
+   "t_min_exact": "7/6+-1/18r5",
+   "exact_max": true,
+   "le_3_over_phi2_exact": true,
+   "target_minus_t_min": 0.1034573658336373,
+   "faces_of_next": 252,
+   "listed_points": 162
+  },
+  "5": {
+   "t_min_float": 1.0869024140644257,
+   "t_min_exact": "-51549296082536785663136/552928577063860942591+23322312207191211294937/552928577063860942591r5",
+   "exact_max": true,
+   "le_3_over_phi2_exact": true,
+   "target_minus_t_min": 0.058995619685887846,
+   "faces_of_next": 320,
+   "listed_points": 200
+  },
+  "6": {
+   "t_min_float": 1.025657373202538,
+   "t_min_exact": "1187205721498291123093685/50079013386032899144803+-1523891702227515950170322/150237040158098697434409r5",
+   "exact_max": true,
+   "le_3_over_phi2_exact": true,
+   "target_minus_t_min": 0.12024066054777904,
+   "faces_of_next": 402,
+   "listed_points": 252
+  },
+  "7": {
+   "t_min_float": 1.0595155131007914,
+   "t_min_exact": "-9241617963788950980713767469885440104077044848815679451/83419663493649092292492142738169302584687692526682530+4172503915462470143214908793559803571719816472673810227/83419663493649092292492142738169302584687692526682530r5",
+   "exact_max": true,
+   "le_3_over_phi2_exact": true,
+   "target_minus_t_min": 0.08638252064952212,
+   "faces_of_next": 500,
+   "listed_points": 320
+  },
+  "8": {
+   "t_min_float": 1.1380769181044872,
+   "t_min_exact": "4363820063004842592966660715548809487513091634474447143344748752843532206530740943434599567093865986421195644587765353669370101596677605727883363652450443966507177666494319252919709730463/2468876477214299673105851358985600534947088750606883261490125223461607562134836750439637366004051966485229212237478876965528348094099356960907271938163353396620549855416265329743586890625+-3474958602049645240915907551230246415831795782312736636677309450141433951732925429135081220878451344896422575175343479165733882292458715751189561495655191556776512171711057064577724571958/12344382386071498365529256794928002674735443753034416307450626117308037810674183752198186830020259832426146061187394384827641740470496784804536359690816766983102749277081326648717934453125r5",
+   "exact_max": true,
+   "le_3_over_phi2_exact": true,
+   "target_minus_t_min": 0.00782111564582788,
+   "faces_of_next": 732,
+   "listed_points": 402
+  }
+ },
+ "level": {
+  "0": {
+   "R": 1.6872845790847075,
+   "r": 1.5115226281523415,
+   "five_fold_face_distance": null,
+   "r_on_five_fold_face": false,
+   "new_face_min": null,
+   "face_orbits": 2,
+   "new_face_orbits": 0,
+   "r2_exact_digits": 2,
+   "r2_exact": "7/6+1/2r5"
+  },
+  "1": {
+   "R": 1.5847544039892107,
+   "r": 1.4884546164260979,
+   "five_fold_face_distance": 1.4884546164260979,
+   "r_on_five_fold_face": true,
+   "new_face_min": 1.4884546164260979,
+   "face_orbits": 3,
+   "new_face_orbits": 3,
+   "r2_exact_digits": 10,
+   "r2_exact": "14481/11881+26478/59405r5"
+  },
+  "2": {
+   "R": 1.5022777547117327,
+   "r": 1.4171602385721136,
+   "five_fold_face_distance": null,
+   "r_on_five_fold_face": false,
+   "new_face_min": 1.4171602385721136,
+   "face_orbits": 3,
+   "new_face_orbits": 3,
+   "r2_exact_digits": 14,
+   "r2_exact": "534411/530741+1188468/2653705r5"
+  },
+  "3": {
+   "R": 1.4930894253699958,
+   "r": 1.349280736964602,
+   "five_fold_face_distance": 1.349280736964602,
+   "r_on_five_fold_face": true,
+   "new_face_min": 1.349280736964602,
+   "face_orbits": 4,
+   "new_face_orbits": 4,
+   "r2_exact_digits": 25,
+   "r2_exact": "256432012821/281686009081+573314071698/1408430045405r5"
+  },
+  "4": {
+   "R": 1.3948028706401747,
+   "r": 1.3029862879538996,
+   "five_fold_face_distance": null,
+   "r_on_five_fold_face": false,
+   "new_face_min": 1.3029862879538996,
+   "face_orbits": 4,
+   "new_face_orbits": 4,
+   "r2_exact_digits": 10,
+   "r2_exact": "11421/13448+5103/13448r5"
+  },
+  "5": {
+   "R": 1.3711876984517972,
+   "r": 1.295016878100137,
+   "five_fold_face_distance": 1.349278148565369,
+   "r_on_five_fold_face": false,
+   "new_face_min": 1.295016878100137,
+   "face_orbits": 5,
+   "new_face_orbits": 5,
+   "r2_exact_digits": 13,
+   "r2_exact": "925101/1102736+413343/1102736r5"
+  },
+  "6": {
+   "R": 1.349278148565369,
+   "r": 1.2485545097044553,
+   "five_fold_face_distance": null,
+   "r_on_five_fold_face": false,
+   "new_face_min": 1.2485545097044553,
+   "face_orbits": 6,
+   "new_face_orbits": 6,
+   "r2_exact_digits": 94,
+   "r2_exact": "44447028124154620378613707928912752678209757803/57024002932014378567680704033821295178254122740+1987731452960780023632219319237187679997662261/5702400293201437856768070403382129517825412274r5"
+  },
+  "7": {
+   "R": 1.3322948031467894,
+   "r": 1.2454026797211266,
+   "five_fold_face_distance": 1.3155252268624045,
+   "r_on_five_fold_face": false,
+   "new_face_min": 1.2454026797211266,
+   "face_orbits": 8,
+   "new_face_orbits": 8,
+   "r2_exact_digits": 154,
+   "r2_exact": "14313007246394429456319286422974395465074961980821414525681304800063114271369/18456157335752518974596185239297320096631792172915289591451798327194018532964+1600242775061160952870525656415793199528053860519628774356286990543399248230/4614039333938129743649046309824330024157948043228822397862949581798504633241r5"
+  },
+  "8": {
+   "R": 1.3155252268624045,
+   "r": 1.2331351892829359,
+   "five_fold_face_distance": null,
+   "r_on_five_fold_face": false,
+   "new_face_min": 1.2331351892829359,
+   "face_orbits": 9,
+   "new_face_orbits": 9,
+   "r2_exact_digits": 406,
+   "r2_exact": null
+  },
+  "9": {
+   "R": 1.2905568548956579,
+   "r": 1.155919433858183,
+   "five_fold_face_distance": 1.155919433858183,
+   "r_on_five_fold_face": true,
+   "new_face_min": 1.155919433858183,
+   "face_orbits": 13,
+   "new_face_orbits": 13,
+   "r2_exact_digits": 776,
+   "r2_exact": null
+  }
+ }
+}

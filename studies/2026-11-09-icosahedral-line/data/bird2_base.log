@@ -1,0 +1,48 @@
+D_0: 102 listed points, 80 faces proved exactly, 180 edges, max digits 4 (0 s)
+  D_0: R = 1.687284579, r = 1.511522628, five-fold face nan, new faces 0 of 2 orbits, new-face min nan
+D_1: 80 listed points, 132 faces proved exactly, 210 edges, max digits 6 (0 s)
+  D_1: R = 1.584754404, r = 1.488454616, five-fold face 1.488454616 (carries r), new faces 3 of 3 orbits, new-face min 1.488454616
+  t_min(D_0) = 1.133581474681  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.012317; digits 6)  matches Table 7
+D_2: 132 listed points, 140 faces proved exactly, 270 edges, max digits 7 (0 s)
+  D_2: R = 1.502277755, r = 1.417160239, five-fold face nan, new faces 3 of 3 orbits, new-face min 1.417160239
+  t_min(D_1) = 1.117381815787  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.028516; digits 8)  matches Table 7
+D_3: 140 listed points, 162 faces proved exactly, 300 edges, max digits 14 (0 s)
+  D_3: R = 1.493089425, r = 1.349280737, five-fold face 1.349280737 (carries r), new faces 4 of 4 orbits, new-face min 1.349280737
+  t_min(D_2) = 1.103146717839  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.042751; digits 11)  matches Table 7
+D_4: 162 listed points, 200 faces proved exactly, 360 edges, max digits 18 (0 s)
+  D_4: R = 1.394802871, r = 1.302986288, five-fold face nan, new faces 4 of 4 orbits, new-face min 1.302986288
+  t_min(D_3) = 1.145898033750  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.000000; digits 2)  matches Table 7
+D_5: 200 listed points, 252 faces proved exactly, 450 edges, max digits 25 (0 s)
+  D_5: R = 1.371187698, r = 1.295016878, five-fold face 1.349278149, new faces 5 of 5 orbits, new-face min 1.295016878
+  t_min(D_4) = 1.042440667917  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.103457; digits 3)  matches Table 7
+D_6: 252 listed points, 320 faces proved exactly, 510 edges, max digits 44 (0 s)
+  D_6: R = 1.349278149, r = 1.248554510, five-fold face nan, new faces 6 of 6 orbits, new-face min 1.248554510
+  t_min(D_5) = 1.086902414064  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.058996; digits 44)  matches Table 7
+D_7: 320 listed points, 402 faces proved exactly, 660 edges, max digits 95 (0 s)
+  D_7: R = 1.332294803, r = 1.245402680, five-fold face 1.315525227, new faces 8 of 8 orbits, new-face min 1.245402680
+  t_min(D_6) = 1.025657373203  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.120241; digits 49)  matches Table 7
+D_8: 402 listed points, 500 faces proved exactly, 810 edges, max digits 231 (0 s)
+  D_8: R = 1.315525227, r = 1.233135189, five-fold face nan, new faces 9 of 9 orbits, new-face min 1.233135189
+  t_min(D_7) = 1.059515513101  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.086383; digits 108)  matches Table 7
+D_9: 500 listed points, 732 faces proved exactly, 1230 edges, max digits 567 (2 s)
+  D_9: R = 1.290556855, r = 1.155919434, five-fold face 1.155919434 (carries r), new faces 13 of 13 orbits, new-face min 1.155919434
+  t_min(D_8) = 1.138076918104  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.007821; digits 375)  matches Table 7
+D_10: 732 listed points, 662 faces proved exactly, 1140 edges, max digits 1780 (8 s)
+  D_10: R = 1.243721073, r = 1.156886368, five-fold face 1.156886368 (carries r), new faces 12 of 13 orbits, new-face min 1.165919629
+  t_min(D_9) = 1.076769947694  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.069128; digits 792)
+D_11: 662 listed points, 672 faces proved exactly, 1140 edges, max digits 5804 (36 s)
+  D_11: R = 1.242329981, r = 1.165269366, five-fold face 1.165269366 (carries r), new faces 11 of 12 orbits, new-face min 1.165593860
+  t_min(D_10) = 1.008772389918  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.137126; digits 3096)
+D_12: 672 listed points, 902 faces proved exactly, 1440 edges, max digits 17829 (157 s)
+  D_12: R = 1.237154195, r = 1.179354549, five-fold face 1.179354549 (carries r), new faces 16 of 17 orbits, new-face min 1.181871231
+  t_min(D_11) = 1.018734403814  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.127164; digits 7572)
+info: new faces of D_k above the threshold (exact), k = 1..12: {1: True, 2: True, 3: True, 4: True, 5: True, 6: True, 7: True, 8: True, 9: True, 10: True, 11: True, 12: True}
+threshold (phi^2/3) R(D_11) = 1.084154039; r(D_12) = 1.179354549 (exact r^2 has 18425 digits); margin +8.7811%
+new-face minima nu(D_k): {1: 1.488454616, 2: 1.417160239, 3: 1.349280737, 4: 1.302986288, 5: 1.295016878, 6: 1.24855451, 7: 1.24540268, 8: 1.233135189, 9: 1.155919434, 10: 1.165919629, 11: 1.16559386, 12: 1.181871231}
+  ok   r(D_k) is carried by the five-fold faces for k = 10, 11, 12 (exact)
+  ok   five-fold face distance strictly increasing D_9 < D_10 < D_11 < D_12 (exact)
+  ok   r(D_9) < r(D_10) < r(D_11) < r(D_12) (exact)
+  ok   r(D_12) >= (phi^2/3) R(D_11) (exact, squares)
+  ok   R(D_k) non-increasing k = 0..12 (exact)
+done in 413 s
+FINAL ok

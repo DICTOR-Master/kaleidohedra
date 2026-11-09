@@ -5363,6 +5363,43 @@
     "retry": "never",
     "study": "studies/2026-11-09-dual-sweeps",
     "date": "2026-11-09"
+   },
+   {
+    "question": "Hopscotch sphere row: degree-6 moment certificate for #43 Theorem 2 (15 - 6 sqrt5)",
+    "method": "exact sympy over Q(sqrt5): orbit moments of the 60 rotations to degree 7 with symbolic u, w; degree-6 harmonic H; Jacobian of (|x|^2, H, Q10) = product of 15 mirror forms; mirror-circle critical points; LP for degrees 5-7 (studies/2026-11-09-icosahedral-line, bird1_certificate.py)",
+    "status": "SETTLED",
+    "result": "PROVED-FROM-FRAMEWORK: E[t^6] = 1/7 + (175/192) H(u)H(w), H in [-32/315 (3-fold), 32/175 (5-fold)]; certificate p = (t-c)(t+c)^2(t^2-a^2)^2, c^2,a^2 = (5 +- 2sqrt5)/15, E[p] = c(16/945 + (175/192)H(u)H(w)) >= 0 gives max_g (gu).w >= c, so 15 - 6sqrt5 from moments; degree <= 6 cannot (extremal orbit values +-c, +-a need even roots at -c, +-a); LP degree-6 best 1.629003",
+    "retry": "never",
+    "study": "studies/2026-11-09-icosahedral-line",
+    "date": "2026-11-09"
+   },
+   {
+    "question": "#43 Conjecture 1: New-Face Lemma by invariant-polynomial certificates; exact base r(D_12)",
+    "method": "exact Q(sqrt5) builds D_0..D_12 (og-margin exact_family.py extended with exact face distances, orbit sizes, new-face test) (studies/2026-11-09-icosahedral-line, bird2_base.py)",
+    "status": "UNDECIDED",
+    "result": "BASE EXACT, LEMMA OPEN: r(D_9) < r(D_10) < r(D_11) < r(D_12) exact, all on the five-fold faces (the only surviving orbit at 10-12); r(D_12) = 1.179354549 > (phi^2/3) R(D_11) = 1.084154039 exact (+8.78%); R(D_k) non-increasing k <= 12; new faces of D_1..D_12 all above 1.084154 (min 1.155919 at D_9); Conjecture 1 for k >= 11 now rests only on the New-Face Lemma for j >= 13; certificates on orbits cannot prove it (one orbit covers only to c = 0.7947, need 0.921)",
+    "retry": "only a certified (interval) build of D_13..D_20 or a direct proof of the New-Face Lemma; never certificates on orbits alone",
+    "study": "studies/2026-11-09-icosahedral-line",
+    "date": "2026-11-09",
+    "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "Hopscotch: the turn on the dodecahedron-icosahedron line; does the fixed point maximise t_min",
+    "method": "exact Q(sqrt5): S_lam = {a.x <= phi+2} n {b.x <= lam}, antipol S_{k0/lam}, walls by exact concurrency, per-region maximising pair proved by exact quadratic signs, full enumeration spot checks (studies/2026-11-09-icosahedral-line, bird3_line.py)",
+    "status": "SETTLED",
+    "result": "PROVED: turn mu -> 1/mu (lam -> k0/lam, k0 = (15+3sqrt5)/2), one wall (icosidodecahedron, lam = phi+2) and its image 3; t_min = min(mu/c, 1/(c mu), 10 - sqrt5 - sqrt(k0)(mu + 1/mu)); maximum 10 - sqrt5 - sqrt(30+6sqrt5) = 1.174819 exactly at the turn mu = 1 (= (R/r)^2, all faces tangent); t_min = 3/phi^2 at both walls; ends jump (limit 1, end solids 15 - 6sqrt5)",
+    "retry": "never",
+    "study": "studies/2026-11-09-icosahedral-line",
+    "date": "2026-11-09"
+   },
+   {
+    "question": "Hopscotch: #43 Theorem 3 (beat k <-> 5 - k) as the turn of the beat line",
+    "method": "exact Q(sqrt5): ID, RT, GTI, FPD, c ID, c RT by the T step; Lemma 3 at three radii; inscribed-station lemma; polar(S_k) = S_{5-k}; shell ratios (studies/2026-11-09-icosahedral-line, bird4_beats.py)",
+    "status": "SETTLED",
+    "result": "PROVED-FROM-FRAMEWORK: Lemma 3 + P = T^-1 give pi T pi = T^-1, so polarity reflects the beat line; a station inscribed in the reference sphere has polar = its next beat, so the GTI (corners at radius^2 15 - 5sqrt5) fixes k <-> 5 - k, fixed point 5/2 = antipol GTI|FPD; the ID (radius^2 phi^2) gives the same turn one hop down (1/2, ID|RT); shell ratios t_k = t_{6-k}: fixed shells (5-sqrt5)/2 and 5 - 5sqrt5/3 are the largest, moving shells 3/phi^2",
+    "retry": "never",
+    "study": "studies/2026-11-09-icosahedral-line",
+    "date": "2026-11-09"
    }
   ]
  },

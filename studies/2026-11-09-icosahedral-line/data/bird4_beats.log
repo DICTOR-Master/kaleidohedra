@@ -1,0 +1,31 @@
+corners per beat: [30, 32, 60, 32, 30, 32]
+corner radii^2 per station: [[2.618033988749895], [3.0, 3.618033988749895], [3.819660112501051], [4.032522475023114, 4.863267791677188]]
+shell 0->1 (ID -> RT): t = (5/2) + (-1/2)√5 = 1.381966011
+shell 1->2 (RT -> GTI): t = (9/2) + (-3/2)√5 = 1.145898034
+shell 2->3 (GTI -> FPD): t = (5) + (-5/3)√5 = 1.273220038
+shell 3->4 (FPD -> c ID): t = (9/2) + (-3/2)√5 = 1.145898034
+shell 4->5 (c ID -> c RT): t = (5/2) + (-1/2)√5 = 1.381966011
+largest shell ratio 1.381966011250105 on shells [1, 5]
+prediction "the turn maximises t": the fixed shells are ID->RT (k = 1) and GTI->FPD (k = 3); both >= the moving shells: True
+  ok   ID: 30 corners, circumradius phi, edge 1
+  ok   T step 1: every plane v.x <= v.v is a facet (every corner survives)
+  ok   T step 2: every plane v.x <= v.v is a facet (every corner survives)
+  ok   T step 3: every plane v.x <= v.v is a facet (every corner survives)
+  ok   T step 4: every plane v.x <= v.v is a facet (every corner survives)
+  ok   T step 5: every plane v.x <= v.v is a facet (every corner survives)
+  ok   c = 10/phi^4 = 35 - 15 sqrt5
+  ok   S4 = c S0 and S5 = c S1 (one turn of four beats = the hop by c)
+  ok   P(T(S)) = S at S0..S3 (P = T^-1 on the line)
+  ok   Lemma 3 at radius^2 phi^2: polar(P(S_k)) = T(polar(S_k)), k = 1..3
+  ok   Lemma 3 at radius^2 15 - 5 sqrt5: polar(P(S_k)) = T(polar(S_k)), k = 1..3
+  ok   Lemma 3 at radius^2 1: polar(P(S_k)) = T(polar(S_k)), k = 1..3
+  ok   ID corners on one sphere, radius^2 phi^2; GTI corners on one sphere, radius^2 15 - 5 sqrt5 = c phi^2
+  ok   RT and FPD corners are NOT on one sphere (only the inscribed stations fix the turn)
+  ok   polar_{phi^2}(ID) = T(ID) = RT and polar_{c phi^2}(GTI) = T(GTI) = FPD
+  ok   #43 Theorem 3: polar_rho(S_k) = S_{5-k}, k = 0..5, rho^2 = 15 - 5 sqrt5
+  ok   the companion turn about phi^2: polar(S_k) = S_{1-k} up to the hop (polar_{phi^2}(S_1) = S_0, polar_{phi^2}(S_2) = S_3/c)
+  ok   shell ratios periodic: t_5 = t_1
+  ok   turn symmetry of the shells: t_k = t_{6-k} mod 4 (t_2 = t_4; t_1, t_3 on the fixed shells)
+  ok   shell ratio test recorded (verdict printed above)
+time 2 s
+FINAL ok

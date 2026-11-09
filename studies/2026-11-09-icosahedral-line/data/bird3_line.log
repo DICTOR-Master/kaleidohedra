@@ -1,0 +1,35 @@
+line: lam in (phi^2, k0/phi^2) = (2.618033988749895, 4.145898033750315)  k0 = (15/2) + (3/2)√5 = 10.854101966249685  fixed point sqrt(k0) = 3.294556414185328
+walls of S_lam (exact): [(5/2) + (1/2)√5] [3.618033988749895]
+  wall 3.618033989: 30 corners at the wall (active-plane counts [4]); 60 before, 60 after
+walls of the antipol pair (S_lam, S_lam^v), closed under the turn: [3.0, 3.618033988749895]
+region 0: lam in [2.618034, 3.000000]: t_min = 0 + ((3/2) + (-1/2)√5) lam + (0)/lam   proved max on the closed region: True
+region 1: lam in [3.000000, 3.618034]: t_min = (10) + (-1)√5 + (-1) lam + ((-15/2) + (-3/2)√5)/lam   proved max on the closed region: True
+region 2: lam in [3.618034, 4.145898]: t_min = 0 + (0) lam + ((15/2) + (-3/2)√5)/lam   proved max on the closed region: True
+middle region: t_min = A + B sqrt(k0) s, s = mu + 1/mu; A = (10) + (-1)√5  B sqrt(k0) = sqrt( (15/2) + (3/2)√5 ) * sign -1
+t_min at the fixed point = 1.174819194130; largest on a 20001-point grid 1.174819194054 at lam = 3.294572 (sqrt(k0) = 3.294556)
+t_min at the fixed point = A - 2 sqrt(B^2 k0) = (10) + (-1)√5 - 2 sqrt( (15/2) + (3/2)√5 )
+(R/r)^2 at the fixed point = 1.174819194130; t_min = 1.174819194130
+limit of t_min at the icosahedron end: 1 = 1.0  t_min(icosahedron) = 15 - 6 sqrt5 = 1.5835921350012612
+closed form: t_min(S_lam) = min(lam/phi^2, k0/(phi^2 lam), 10 - sqrt5 - (lam + k0/lam)); unit form t = min(mu/c, 1/(c mu), 10 - sqrt5 - sqrt(k0) (mu + 1/mu))
+maximum at the fixed point mu = 1: 10 - sqrt5 - 2 sqrt(k0) = 10 - sqrt5 - sqrt(30 + 6 sqrt5) = 1.1748191941295545
+  ok   known: t_min(icosahedron) = t_min(dodecahedron) = 15 - 6 sqrt5
+  ok   ends: icosahedron (b.x <= phi^2) corners lie on the five-fold planes; dodecahedron corners on the three-fold planes at k0/phi^2
+  ok   every combinatorial wall of S_lam found exactly (a four-plane concurrency, linear in lam)
+  ok   one wall is the icosidodecahedron (30 corners)
+  ok   region 0: maximising pair proved exactly on the closed region
+  ok   region 0: closed form = full enumeration at two interior points
+  ok   region 1: maximising pair proved exactly on the closed region
+  ok   region 1: closed form = full enumeration at two interior points
+  ok   region 2: maximising pair proved exactly on the closed region
+  ok   region 2: closed form = full enumeration at two interior points
+  ok   turn: t_min(lam) = t_min(k0/lam) (regions exchanged in pairs, the middle one symmetric)
+  ok   middle region: B < 0, so t_min is largest at s = 2 (mu = 1, the fixed point)
+  ok   grid: the largest t_min on the open line is at the fixed point
+  ok   at the fixed point t_min = (R/r)^2 (Theorem 1 equality, all faces tangent to one sphere)
+  ok   limit at the ends < 15 - 6 sqrt5: t_min jumps at the ends (a family stops being facets)
+  ok   region forms: lam/phi^2 | 10 - sqrt5 - (lam + k0/lam) | k0/(phi^2 lam)
+  ok   g = middle - lam/phi^2 vanishes at phi^2 and 3 (concave), so the middle form is >= lam/phi^2 on [phi^2, 3] and <= beyond
+  ok   in mu = lam/sqrt(k0): lam/phi^2 = mu/c, since k0/phi^4 = 15 - 6 sqrt5 = 1/c^2
+  ok   t_min = 3/phi^2 exactly at both walls (lam = 3 and the icosidodecahedron lam = phi + 2)
+time 6 s
+FINAL ok
