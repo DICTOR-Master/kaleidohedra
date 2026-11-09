@@ -5607,6 +5607,15 @@
     "retry": "only with Taylor-model enclosures",
     "study": "2026-11-10-g1-e1-exact",
     "date": "2026-11-10"
+   },
+   {
+    "question": "AB line: what is extremal at the turn?",
+    "method": "ab_extremal.py: edge directions from raw vertex stars, 11 slopes, exact",
+    "status": "SETTLED (proved + checked)",
+    "result": "edge directions balanced only at 1/sqrt2; squares per rhombus (1+2t^2)/(4t) least at 1/sqrt2 (=1/sqrt2), turn-invariant",
+    "retry": "never",
+    "study": "2026-11-10-ab-line",
+    "date": "2026-11-10"
    }
   ]
  },
