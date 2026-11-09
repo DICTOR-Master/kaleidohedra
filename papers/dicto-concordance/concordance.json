@@ -6681,6 +6681,12 @@
     "mess_up": "the Concordance (published v2.1) still called #90 and #91 'draft' and carried other stale 'draft' notes after publication; its paper list lacked #97-#102 — DICTO: 'the document meant to keep us on track isn't on track'",
     "guard": "~/dicto-alerts/concordance_check.py, run by show.sh every session/step: every paper card on the site must be in concordance.json papers with a DOI on that card, not marked draft, and not called '(draft)' anywhere outside ledger/rules; tested with three planted faults (all caught), clean on real data",
     "where": "~/dicto-alerts/concordance_check.py"
+   },
+   {
+    "date": "2026-11-09",
+    "mess_up": "'live' meant only that Vercel reported a deploy; nothing checked that the change was visible, and a failed ship waited until the next window (DICTO: 'we need to always ensure that what is to go live goes live, by hook or by crook')",
+    "guard": "ship.py --queue REPO --expect URL TEXT: after Vercel reports LIVE the run fetches each expected page (checks at +1, +3, +6 min, cache-busted, no polling loop) and counts the ship FAILED until the text is visible; failures stay queued, are retried by cron at +30 and +60 min after each window (12:30, 13:00, 21:30, 22:00), and write ~/dicto-alerts/deploy.txt, shown at every step until fixed. Tested: real text found, a planted missing phrase flagged. First use: the 12:00 ship of 9 Nov (#103 card, Alicia v4, Mandalaspheres)",
+    "where": "~/dicto-deploy/ship.py, expect.json, crontab"
    }
   ],
   "practice": [
