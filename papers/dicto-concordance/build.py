@@ -97,11 +97,17 @@ w('</tbody></table>')
 w('<h2>3. Almanac of Concepts</h2>')
 w(f'<p>{len(D["concepts"])} concepts: operations, constructions, laws, theorems and methods, as distinct from the named shapes. '
   'Each definition is taken from the wording of the paper cited; then the first paper and its date, the papers that use it, its threads, and who proposed it.</p>')
+import re as _re
+def origin(by):
+    """House rule 9 Nov 2026 (DICTO): no running "DICTO proposed" in published text; the concept's origin is stated plainly."""
+    t = _re.sub(r'\bDICTO proposed (the idea|that)?\s*', 'DICTO: ', str(by))
+    return _re.sub(r'\s+', ' ', t).strip()
+
 for c in sorted(D['concepts'], key=lambda c: c['name'].lower()):
     used = ', '.join(f'#{n}' for n in sorted(c['used'], key=key)) or '—'
     th = '; '.join(ST[t]['name'] for t in c['strands'])
     w(f'<div class="cc" id="c-{e(c["id"])}"><p class="df"><b>{e(c["name"])}</b>. {e(c["definition"])}</p>'
-      f'<p class="mt">First: {ref(c["first"], True)} ({when(c["first"])}) · Used in: {used} · Threads: {e(th)} · Proposed: {e(c["by"])}</p></div>')
+      f'<p class="mt">First: {ref(c["first"], True)} ({when(c["first"])}) · Used in: {used} · Threads: {e(th)} · Origin: {e(origin(c["by"]))}</p></div>')
 
 # 4. Singularity
 w('<h2>4. The Singularity: One Triangle</h2>')
