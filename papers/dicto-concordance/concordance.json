@@ -5438,6 +5438,14 @@
     "retry": "minimum ring count over Cleo-sphere orientations; ρ = 45° turn",
     "study": "studies/2026-11-09-golayantra",
     "date": "2026-11-09"
+   },
+   {
+    "question": "one-piece aim: mix_tile follow-up runs (2 4000 6 / 2 4000 12 / 3 6000 20) after the twisted-B3 control (5 Nov)",
+    "status": "METHOD-FAILED",
+    "result": "NEVER RAN: the waiting loop used pgrep -f \"any_tile.py twistedB3\", which matched its own command line, so it waited 4.5 days and was killed 9 Nov by the new orphan check",
+    "retry": "rerun the three mix_tile runs only if the aim still needs them (later studies: #97, hat, waveform, Escher hexagon); wait on a PID, never on pgrep of a string the waiter itself contains",
+    "study": "one-piece aim (11-05 milestone 1)",
+    "date": "2026-11-09"
    }
   ]
  },
@@ -6927,6 +6935,12 @@
     "mess_up": "I promised DICTO in the morning to run the Star and Star Halo census alongside other work and never launched it; DICTO had to remind me ('I thought even before hopscotch we were due to do a global study of regular solids and star cores')",
     "guard": "every 'I'll run/start X' said to DICTO goes into ~/dicto-alerts/followups.list in the same turn (shown at every step until done); the census was launched at once (studies/2026-11-09-regular-stars-census)",
     "where": "followups.list"
+   },
+   {
+    "date": "2026-11-09",
+    "mess_up": "a dbb wait-loop (pgrep -f on a string contained in its own command line) waited 4.5 days for nothing; its follow-on runs never ran; nobody saw it",
+    "guard": "~/dicto-alerts/orphans.sh (run by show.sh): lists any python job on dicto-big-brother older than 30 min not under the crash-alarm wrapper; agent briefs: runs > 5 min go through dbbjob.sh; waits use a PID (wait/kill -0), never pgrep of a string the waiter contains",
+    "where": "~/dicto-alerts/orphans.sh"
    }
   ],
   "practice": [
