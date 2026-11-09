@@ -5487,6 +5487,14 @@
     "retry": "search CLUSTERS of RD cells (not the RD itself) for an exact rep-tile, other scale factors, and fuzzy supertiles",
     "study": "inline check 9 Nov (dbb)",
     "date": "2026-11-09"
+   },
+   {
+    "question": "is the TO a rep-tile on the bcc lattice (k·TO a union of whole TO cells)?",
+    "status": "SETTLED",
+    "result": "no for k = 2..5 at a lattice point, the other kind of point, a square-face centre and a hexagon centre (best: 89 of 125 whole at k = 5)",
+    "retry": "HALVES (DICTO 9 Nov: 'it's half RDs that will double, or TOs, or half TOs'): search half-RD and half-TO (each cutting plane: hexagonal mid-section, square mid-section, etc.) for exact rep-tiles",
+    "study": "inline check 9 Nov (dbb)",
+    "date": "2026-11-09"
    }
   ]
  },
