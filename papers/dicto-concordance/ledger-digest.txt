@@ -1,0 +1,59 @@
+# Concordance ledger digest (generated from concordance.json; full entries: ledger.entries[i])
+
+[0] 2026-11-04 | SETTLED | Tetrahedron sweep: IQ, Mahler, Dehn | retry: never
+[1] 2026-11-04 | SETTLED | Does T(4) minus corners tile alone? | retry: never
+[2] 2026-11-04 | SETTLED | Roundness max on cube ∩ μ·cross in n dims | retry: never
+[3] 2026-11-04 | SETTLED | 4D sweep IQ, Mahler | retry: never
+[4] 2026-11-04 | SETTLED to φ⁻⁸ | Golden Dehn-zero truncated tetrahedra: list | retry: only to extend beyond φ⁻⁸
+[5] 2026-11-04 | SETTLED | Golden truncated tetrahedra: harmonic silence | retry: never
+[6] 2026-11-04 | SETTLED | Census n≤4: (1,1,0,0) | retry: never
+[7] 2026-11-04 | SETTLED | Census: (1,1,1,0) n=3, (2,1,0,0) n=3, (2,1,1,0) n=4, (3,2,0,0) n=5 | retry: never
+[8] 2026-11-04 | OPEN | Census rest: n=4 (2,2,0,0),(3,1,0,0); n=5 others; n=8 golden approximants | retry: with SAT method
+[9] 2026-11-04 | METHOD-FAILED | Dehn screen method v1 (lengths in Q(√2,√5)) | retry: never (replaced by angle-relation method v2)
+[10] 2026-11-04 | SETTLED | OG family Dehn | retry: only for an exact proof
+[11] 2026-11-04 | SETTLED | HexOct pieces Dehn along λ | retry: never
+[12] 2026-11-04 | SETTLED | Narcissus (fixed h-piece, λ ≥ 3/8) tiles alone | retry: never; OPEN: its identity / prior art
+[13] 2026-11-04 | SETTLED | Does an h-piece tile alone for 5/24 ≤ λ < 3/8? | retry: constructive tiling search for the tet h-piece at a sample λ (e.g. 1/4, 1/3)
+[14] 2026-11-04 | SETTLED | Admiral kinds, Delian O(t), CsCl Dehn | retry: never
+[15] 2026-11-04 | SETTLED | Batch IQ/Mahler/Q6 (Delian, CO–RD, OG, Admiral, pyramids, h-piece) | retry: never
+[16] 2026-11-04 | SETTLED | Exact Mahler: A cap (≈9.0002) and h-piece (≈34/3) | retry: never
+[17] 2026-11-04 | SETTLED | HexOct tiles harmonic along λ | retry: never
+[18] 2026-11-04 | SETTLED | Tetrahedron sweep Q6 | retry: never
+[19] 2026-11-04 | UNDECIDED | RT centre pyramids tile? | retry: read result; then aperiodic clue checklist
+[20] 2026-11-04 | OPEN | Interlocking: tetra-sweep tiling (β-tin) and CsCl pair slabs | retry: run
+[21] 2026-11-04 | SETTLED | 600-cell slices: IQ, Mahler, Dehn | retry: only for exact heights
+[22] 2026-11-04 | SETTLED | SAT patch method (census.py --sat, CaDiCaL, seqcounter at-most-one) | retry: never; use SAT for all patch tests
+[23] 2026-11-04 | RUNNING | SAT patch census: all n<=5 + n=8 golden approximants | retry: read result; then periodic test (SAT on tori) only for patch=true
+[24] 2026-11-04 | SETTLED | SAT periodic test (sat_periodic.py) | retry: never
+[25] 2026-11-04 | SETTLED | Periodic test: (1,1,1,0), (2,1,0,0), (2,2,0,0), (2,1,1,0) | retry: never
+[26] 2026-11-04 | OPEN | CONJECTURE: a truncated tetrahedron T(n) minus corners k tiles space iff Σk = n (Dehn zero), always as piece + point-inverse (2 per period); if the construction is uniform in real cuts, the golden pie | retry: read satper-2; extract the two-piece tilings as functions of t; test a golden t directly (real polytopes, overlap + coverage as verify_tiling.py)
+[27] 2026-11-04 | DONE | Periodic test rest of census + n=8 approximants | retry: read
+[28] 2026-11-04 | SETTLED | Lead 1: PDS (CMB) and the 600-cell | retry: never
+[29] 2026-11-04 | SETTLED | Interlocking of the β-tin tiling (and CsCl pairs) | retry: never; only if a layered tiling by the same piece is found
+[30] 2026-11-04 | SETTLED | Does Narcissus fill c (ABC) layers too, i.e. every stacking (incl. Fibonacci)? | retry: never in HexOct; other arrangements unknown (not ruled out)
+[31] 2026-11-04 | SETTLED | Echo (8-corner c-piece, λ ≥ 3/8): two copies per c-tile? achiral? tiles alone? | retry: never
+[32] 2026-11-04 | SETTLED | Narcissus + Echo fill EVERY stacking (incl. Fibonacci → non-periodic by two pieces)? | retry: never; prior art check pending
+[33] 2026-11-04 | SETTLED | Narcissus = half of the twisted cube | retry: never
+[34] 2026-11-04 | OPEN | Two Narcissus glued on the hexagon with a 60° turn: what solid? | retry: identify (library); does it tile?
+[35] 2026-11-04 | SETTLED | DICTO 4 Nov: one single block that fills EVERY stacking (instead of Narcissus + cube)? | retry: never; prior-art check
+[36] 2026-11-04 | SETTLED | DICTO 4 Nov: a cross between the RD and the TRD that fills space alone, aperiodically | retry: verify (a); (c) is a research project — DICTO to decide
+[37] 2026-11-04 | RUNNING | Uniform mirror-pair construction on REAL golden cuts | retry: scan w for the 2-cut golden piece too; if no w works, conjecture may hold only for lattice cuts
+[38] 2026-11-04 | RUNNING | Halves (ortho/gyro) as a test on every family (DICTO: blind spot) | retry: read census; exact check of the twisted-sweep identity
+[39] 2026-11-04 | SETTLED | Narcissus as a split-and-rotate piece | retry: never
+[40] 2026-11-04 | RUNNING | Common dissection of Narcissus and the cube (DICTO: "by being halved") — one piece set for c and h layers | retry: read common.log; stage 2 from near-misses
+[41] 2026-11-04 | SETTLED | CO–RD sweep Dehn zeros (LQG bridge flag) | retry: never
+[42] 2026-11-04 | SETTLED | Dehn screen fragility on HexOct pieces (sums ~1e-10) | retry: never; use exact_dehn.py for all HexOct Dehn questions
+[43] 2026-11-04 | SETTLED | Rejoined halves: Dehn by additivity; hybrids Narcissus + half-RD | retry: tiling search for the two hybrids; rerun the (μ,ν) twist map with the angle count
+[44] 2026-11-08 | SETTLED | #43 Conjecture 2 (octahedral constant 3)
+[45] 2026-11-08 | SETTLED | #53 Obs 1/4: general switch theorem via lifted determinant | retry: never
+[46] 2026-11-08 | METHOD-FAILED | DICTO Yantra (GF1) exact minimal polynomial of u | retry: dicto_exact2.py
+[47] 2026-11-08 | SETTLED | DICTO Yantra (GF1) exact minimal polynomial of u
+[48] 2026-11-09 | SETTLED | Kulaichev–Rao–Pustynski yantra exact minimal polynomial of u
+[49] 2026-11-09 | SETTLED | Claude 8/9 Nov (DICTO: 'good call'): hat monotile as in-plane engine; hat-shaped piece of 8 RD/TRD kite sectors, mirror hat by turning over, one piece | retry: never as layer pieces; only straddling pieces (half-cells of two layers) or a 3-fold-only 2D aperiodic monotile would reopen it
+[50] 2026-11-09 | SETTLED | one-piece aim: hat monotile on RD/TRD sectors (Claude's proposal 9 Nov)
+[51] 2026-11-09 | SETTLED | #53 Obs 2: CsCl <-> zinc blende polynomial coincidence; Obs 3 criterion | retry: never (Obs 2); Obs 3 only toward a closed rule
+[52] 2026-11-09 | UNDECIDED | #43 Conjecture 1 (OG margin): t_min(D_k) <= 3/phi^2 for every k | retry: only a proof of the Inradius Lemma (e.g. via the max-plus convolution form of lemma A, or the shape limit r/R -> 1)
+[53] 2026-11-09 | SETTLED | #38a: do the reciprocal cycle's shells fill by one pattern | retry: never
+[54] 2026-11-09 | SETTLED | #42: what fills between the great star and the Sunstar | retry: only the self-similar lead (trimmed kinds repeating at 1/phi^3)
+[55] 2026-11-09 | UNDECIDED | #43 Conjecture 1 via a gnomon (DICTO's proposal) | retry: only a proof of the New-Face Lemma (an invariant class P maps into itself, or a two-step bound at the 3-fold axes); never monotonicity of r
+[56] 2026-11-09 | SETTLED | one-piece aim: DICTO's ABC waveform (crest waves, golden mix) on Narcissus | retry: route-4 vertical-plane Ammann system only

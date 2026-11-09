@@ -6758,7 +6758,13 @@
    "Errata: every error found goes into the Concordance errata with where, what, the REASON, who/what found it, and its status; fixes cite the entry.",
    "Hygiene: the reading folder holds only what waits for DICTO; drafts disappear at release; transitional files are deleted, not kept.",
    "Japanese and other editions: accuracy first (checked against the English, glossary binding), a title cover in the language's own script, and each edition its own record.",
-   "Every heavy job: pilot first, run through runjob, one heartbeat and a final OK/FAIL/TIMEOUT line; never two multi-GB jobs at once on dicto-big-brother."
+   "Every heavy job: pilot first, run through runjob, one heartbeat and a final OK/FAIL/TIMEOUT line; never two multi-GB jobs at once on dicto-big-brother.",
+   {
+    "date": "2026-11-09",
+    "what": "Agent token thrift with quality kept (DICTO's sparse/latent-attention idea: 'only if it simultaneously maintains quality and reduces agent running token cost')",
+    "how": "agents read ledger-digest.txt (one generated line per ledger attempt, ~7 KB, rebuilt each session by ~/dicto-alerts/ledger_digest.py from concordance.json, never hand-edited) instead of the 260 KB Concordance file, and open a full entry only by its index; briefs never send agents to the 563 KB working notes, only the relevant lines",
+    "why": "quality: every line is generated from the source and the full entry is one step away; cost: agents stop loading files that are mostly irrelevant to their task"
+   }
   ]
  },
  "destinations_2026_11_09": {
