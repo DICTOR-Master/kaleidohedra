@@ -123,16 +123,16 @@ def plate(key, notes, rings_marks, out):
     im.resize((Wd // s, H // s), Image.LANCZOS).save(out)
 
 
-def overview(out):
-    s = 2; cols, rows = 5, 2; tw, th = 520 * s, 700 * s; D = 440 * s; head = 130 * s
+def overview(out, M):
+    s = 2; cols, rows = 5, 2; tw, th = 520 * s, 750 * s; D = 440 * s; head = 130 * s
     im = Image.new('RGB', (cols * tw + 40 * s, head + rows * th), BG); dr = ImageDraw.Draw(im)
     dr.text((30 * s, 30 * s), 'Which yantra is which', font=font(BOLD, 66 * s), fill=INK)
     dr.text((im.width - 30 * s, 50 * s), 'DICTO · dictospheres.com', font=font(FONT, 30 * s), fill=(150, 110, 20), anchor='ra')
     order = ['GF1', 'KRP', 'R1', 'Rh345', 'K1', 'V1', 'PF2', 'G1', 'E1']   # grid left out (not a yantra: Theorem 7)
-    sub = {'GF1': 'Cleo-Antonius; 43 pieces', 'KRP': 'equal great triangles; 45', 'R1': 'every corner a fraction',
-           'Rh345': "DICTO's rhombus, 3-4-5; 45", 'grid': 'one slope; 37 pieces', 'K1': 'Cleo-Icos over stella',
+    sub = {'GF1': 'Cleo-Antonius', 'KRP': 'equal great triangles', 'R1': 'every corner a fraction',
+           'Rh345': "DICTO's rhombus, 3-4-5", 'grid': 'one slope', 'K1': 'Cleo-Icos over stella',
            'V1': 'every condition met', 'PF2': 'stella exact below', 'G1': 'repeats in its own bindu',
-           'E1': 'pieces most even; 43'}
+           'E1': 'pieces most even'}
     for n, key in enumerate(order):
         label, load, col, exact = Y[key]; b, w, a = load()
         c, r = n % cols, n // cols; ox, oy = 20 * s + c * tw, head + r * th
@@ -144,7 +144,14 @@ def overview(out):
         ty = oy + 30 * s + D + 22 * s
         for l in wrap(dr, label, font(BOLD, 34 * s), tw - 50 * s):
             dr.text((ox + 25 * s, ty), l, font=font(BOLD, 34 * s), fill=INK); ty += 42 * s
-        dr.text((ox + 25 * s, ty + 4 * s), sub[key], font=font(FONT, 27 * s), fill=(70, 70, 70)); ty += 46 * s
+        dr.text((ox + 25 * s, ty + 4 * s), sub[key], font=font(FONT, 27 * s), fill=(70, 70, 70)); ty += 40 * s
+        # pieces line, counted from the geometry (DICTO 10 Nov 2026: say plainly which pieces are triangles)
+        n_, t_ = M[key]['n'], M[key]['tri']
+        pl = f'{n_} pieces, all triangles' if n_ == t_ else f'{n_} pieces: {t_} triangles, {n_ - t_} four-sided'
+        fpl = font(BOLD if n_ != t_ else FONT, 27 * s)
+        for l in wrap(dr, pl, fpl, tw - 50 * s):
+            dr.text((ox + 25 * s, ty + 4 * s), l, font=fpl, fill=RED if n_ != t_ else (70, 70, 70)); ty += 36 * s
+        ty += 10 * s
         dr.rounded_rectangle([ox + 25 * s, ty, ox + 25 * s + 190 * s, ty + 40 * s], radius=8 * s,
                              fill=(201, 152, 26) if exact else (140, 140, 150))
         dr.text((ox + 25 * s + 95 * s, ty + 20 * s), 'EXACT' if exact else 'COMPUTED', font=font(BOLD, 26 * s), fill='white', anchor='mm')
@@ -201,7 +208,7 @@ def main(outdir):
             need(not outside or f't{i}' in txt, f'{k}: t{i} lies partly outside the circle but its note does not say so')
     for k, (notes, marks) in P.items():
         plate(k, notes, marks, os.path.join(outdir, f'overlay-{k}.png')); print('wrote', f'overlay-{k}.png:', ' | '.join(notes))
-    overview(os.path.join(outdir, 'which-yantra.png')); print('wrote which-yantra.png')
+    overview(os.path.join(outdir, 'which-yantra.png'), M); print('wrote which-yantra.png')
     print('FINAL ok' if ok else 'FINAL FAIL: a note is not true')
 
 
