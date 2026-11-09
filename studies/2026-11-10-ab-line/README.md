@@ -33,5 +33,22 @@ Turn Theorem (a quantity extreme exactly at the fixed point of the turn).
 at all 11 slopes from 0.55 to 0.9; the diagonal/axis ratio passes 1 between 12/17 (0.998565) and 17/24 (1.001437). (2) follows
 from the tile proportions, which (1) confirms through their edges.
 
-**Next (step 3):** the same on the Fibonacci/Sturmian line (1D cut-and-project with slope α; turn and fixed point at the golden
-mean); then step 4, the 3D golden rhombohedra.
+## Step 3: the Fibonacci line and its hop (fib_hop.py, FINAL ok; DICTO chose option A)
+
+**Theorem (the hop).** On the Sturmian line (s = short tiles per long tile; rational s a crystal, s = 1/φ the Fibonacci
+quasicrystal) the Fibonacci substitution L → LS, S → L carries the crystal at s to the crystal at h(s) = 1/(1+s) (checked exactly for
+all 489 rational slopes with period ≤ 40, up to a cyclic shift). h has the single fixed point 1/φ and carries the approximants
+F(n−1)/F(n) → F(n)/F(n+1), closing in on 1/φ from alternating sides. A line without the 8-fold symmetry has no turn; its
+quasicrystal is the fixed point of a hop instead.
+
+**Extremal at the fixed point (classical).** By Hurwitz (1891) every irrational x has q²|x − p/q| < 1/√5 for infinitely many
+fractions, and 1/√5 is attained only by the golden class: the Fibonacci quasicrystal is the point of its line farthest from every
+crystal. By Markov (1879–80) the next value is 1/√8, the class of √2, which contains the AB turning point 1/√2. Measured on the
+convergents: 0.4472136 (1/φ) and 0.35355339 (1/√2).
+
+**Two kinds of turning point.** With symmetry (AB, 8-fold): the quasicrystal is the fixed point of a turn, an involution pairing
+crystals across it, and turn-invariant quantities are extreme there (step 2). Without symmetry (Fibonacci): it is the fixed point
+of a hop, a contraction carrying each crystal to the next. The two fixed points are the first two points of Markov's spectrum.
+
+**Next (step 4):** 3D: the golden rhombohedra (Ammann–Kramer–Neri / icosahedral cut-and-project from Z⁶): which lines of crystals
+(e.g. Fibonacci-rational cubic approximants 1/1, 2/1, 3/2 …) turn or hop into the icosahedral quasicrystal.
