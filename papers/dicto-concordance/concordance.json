@@ -5133,6 +5133,15 @@
     "retry": "never (Obs 2); Obs 3 only toward a closed rule",
     "study": "2026-11-09-cscl-zincblende",
     "date": "2026-11-09"
+   },
+   {
+    "question": "#43 Conjecture 1 (OG margin): t_min(D_k) <= 3/phi^2 for every k",
+    "method": "exact Q(sqrt5) hulls with proved faces (k <= 11); general lemmas A, F1-F3, tail criterion; float runs to k = 28",
+    "status": "UNDECIDED",
+    "result": "REDUCED: proved exactly for k = 0..11 (D_9 1.076770, D_10 1.008772, D_11 1.018734); every k >= 11 follows from one Inradius Lemma r(D_j) >= (phi^2/3) R(D_11) for j >= 12 (float support to k = 28, margin >= 8.5%); polar form X_{k+1} in (3/phi^2) X_k",
+    "retry": "only a proof of the Inradius Lemma (e.g. via the max-plus convolution form of lemma A, or the shape limit r/R -> 1)",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-09"
    }
   ]
  },
