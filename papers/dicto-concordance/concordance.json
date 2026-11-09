@@ -5562,6 +5562,24 @@
     "retry": "only for the exact minimal polynomial",
     "study": "2026-11-08-sri-yantra",
     "date": "2026-11-10"
+   },
+   {
+    "question": "G1 (Cleo-Octangula with (b),(d)) exact form",
+    "method": "g1_exact.py: Res_S(H1,D), norm Q(√2,√5)→Q, factor",
+    "status": "SETTLED (computed; certificate open)",
+    "result": "t1 corner parameter t: irreducible degree 152, residual 7e-49",
+    "retry": "only to certify",
+    "study": "2026-11-10-g1-e1-exact",
+    "date": "2026-11-10"
+   },
+   {
+    "question": "E1 (most even) exact form",
+    "method": "near-concurrency scan of E1",
+    "status": "OPEN",
+    "result": "E1 on no incidence boundary: fixed by an optimum only; exact form = gradient system, out of reach; next: 50-digit refinement + Hessian",
+    "retry": "refinement only",
+    "study": "2026-11-10-g1-e1-exact",
+    "date": "2026-11-10"
    }
   ]
  },
