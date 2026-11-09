@@ -1,7 +1,7 @@
 """Exact threshold curve T(u, v) = 0 (DICTO 10 Nov 2026). Two-slope family with (b) (natural coordinate t) and (c) (G = 0); the
 threshold meeting C = det(t4 right leg, t5 base, t6 right leg). Eliminate S (Singular), keep the factors through the point
 u = v = u*, then eliminate t (Singular resultant), factor, keep the factor through u = v = u*. Writes curve-T.txt.
-usage: ~/geom/bin/python -u curve_exact.py"""
+usage: python -u curve_exact.py"""
 import sys, time, io, contextlib
 sys.path.insert(0, '.')
 T0 = time.time(); say = lambda *a: print(f'[{time.time() - T0:7.1f} s]', *a, flush=True)

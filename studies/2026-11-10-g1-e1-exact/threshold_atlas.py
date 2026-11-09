@@ -1,7 +1,7 @@
 """Threshold atlas (DICTO 10 Nov 2026: 'prove the threshold curve'). Two-slope family with (b), (c): for each (u, v) solve Q, S,
 then record the odd-piece count, the triangles among them, admissibility, and the sign of C = det(t4 right leg, t5 base, t6 right
 leg). Question: is {45 pieces} exactly {C > 0} on the admissible region, i.e. is the threshold one curve C = 0?
-usage: ~/geom/bin/python -u threshold_atlas.py STEP   (writes atlas-STEP.json; prints FINAL ok when every admissible point agrees)"""
+usage: python -u threshold_atlas.py STEP   (writes atlas-STEP.json; prints FINAL ok when every admissible point agrees)"""
 import sys, json, time
 sys.path.insert(0, '.')
 import mpmath as mp
