@@ -1,0 +1,24 @@
+PARI stack size set to 12000000000 bytes, maximum size set to 12000002048
+[    0.0 s] ok   f is even in u (degree 160)
+[    0.0 s] degree 160, terms 81, largest coefficient 226 digits at u^80, real roots 60, leading (173 digits, not factored), constant (203 digits, not factored)
+[    0.0 s] ok   matches the paper: (degree, terms, digits, at, real roots) = (160, 81, 226, 80, 60)
+[    0.0 s] ok   integer coefficients, content 1 (primitive)
+[    0.0 s] ok   f(u) irreducible over Q by degree patterns mod [3, 43] (0.0 s)
+[    0.0 s]       mod 3: degrees 20^4 + 40^2
+[    0.0 s]       mod 43: degrees 160
+[    0.0 s] ok   g(y) = f(sqrt y) irreducible over Q by degree patterns mod [3, 17, 43] (0.0 s)
+[    0.0 s]       mod 3: degrees 20^2 + 40
+[    0.0 s]       mod 17: degrees 4 + 6^2 + 24 + 40
+[    0.0 s]       mod 43: degrees 80
+[    0.1 s] ok   PARI polisirreducible: f and g irreducible
+[    0.4 s] ok   sage (FLINT/NTL factoring): f and g irreducible
+[    0.4 s] ok   g factors over Q(sqrt5) as degrees [40, 40] (0.0 s)
+[    0.4 s] nearest real root differs from the stored u by 2.454 e-31; next real root is 2.648 e-3 away
+[    0.4 s] ok   the interval agrees with the stored numerical u to all its 30 digits (rounding)
+[    0.5 s] ok   PARI polsturm: exactly one real root of f in [6793185887067746573886503103907545526887/10^40, 6793185887067746573886503103907545526888/10^40]
+[    0.6 s] ok   independent Descartes count (pure Python integers): 1 sign variation(s) on the interval (0.1 s)
+[    0.6 s] ok   f changes sign on the interval
+[    0.7 s] ok   refined: f changes sign on a subinterval of width 3e-1000 inside [a, b] (exact signs), so u0 lies there
+[    0.7 s] ok   g has exactly one real root in [a^2, b^2] (so y0 = u0^2 is isolated too)
+[    0.7 s] u0 = 0.679318588706774657388650310390754552688737765677836046460625...
+FINAL ok

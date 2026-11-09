@@ -1,0 +1,29 @@
+[   15.1 s] G, H1 taken from natural.py (sympy)
+[   15.6 s] D built in Singular
+[   15.6 s] in Singular: degrees in S 2 3 4 ; terms 10 312 1596
+[   15.6 s] R1 = Res_S(G, H1): degrees (t, u, w) 20 78 0
+[   16.0 s] R2 = Res_S(G, D):  degrees (t, u, w) 48 136 0
+[   16.0 s] norms over Q(sqrt5) (case D) done: degrees (t, u) (20, 78) (48, 136)
+[   16.0 s] N1 factored in 0.0 s
+[   16.0 s]    factor degrees (t, u) = (0, 1)^6, relative value at the numerical point 0.143
+[   16.0 s]    factor degrees (t, u) = (0, 1)^6, relative value at the numerical point 1.0
+[   16.0 s]    factor degrees (t, u) = (0, 1)^8, relative value at the numerical point 1.0
+[   16.0 s]    factor degrees (t, u) = (0, 2)^4, relative value at the numerical point 1.0
+[   16.0 s]    factor degrees (t, u) = (20, 50)^1, relative value at the numerical point 5.64e-63
+[   16.0 s]    kept: degrees (20, 50)
+[   16.0 s] N2 factored in 0.0 s
+[   16.0 s]    factor degrees (t, u) = (0, 1)^8, relative value at the numerical point 0.143
+[   16.0 s]    factor degrees (t, u) = (0, 1)^8, relative value at the numerical point 1.0
+[   16.0 s]    factor degrees (t, u) = (1, 1)^12, relative value at the numerical point 0.377
+[   16.0 s]    factor degrees (t, u) = (1, 1)^12, relative value at the numerical point 1.0
+[   16.0 s]    factor degrees (t, u) = (0, 1)^32, relative value at the numerical point 1.0
+[   16.0 s]    factor degrees (t, u) = (1, 1)^2, relative value at the numerical point 0.594
+[   16.0 s]    factor degrees (t, u) = (1, 1)^2, relative value at the numerical point 1.0
+[   16.0 s]    factor degrees (t, u) = (0, 2)^8, relative value at the numerical point 1.0
+[   16.0 s]    factor degrees (t, u) = (20, 44)^1, relative value at the numerical point 4.52e-65
+[   16.0 s]    kept: degrees (20, 44)
+PARI stack size set to 16000000000 bytes, maximum size set to 16000000000
+[   17.6 s] PARI Res_t(a, b): degree 1744 in u (1.6 s)
+[   17.9 s] PARI factored in 0.3 s: [(1, 178), (1, 274), (1, 178), (2, 185), (348, 1), (396, 1)]
+[   17.9 s] the stored f is a factor of Res_t(a, b): True
+FINAL ok

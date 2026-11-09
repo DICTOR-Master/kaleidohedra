@@ -1,0 +1,13 @@
+PARI stack size set to 20000000000 bytes, maximum size set to 20000002048
+[    8.4 s] prime p = 2305843009213710763: g irreducible mod p; 1 non-degenerate solutions in F_q (2 degenerate dropped)
+[  541.7 s] solution 0: lifted to 32000 digits in 533.3 s
+[  658.1 s]    residuals mod p^k are zero: Ec True, Fc True, Eb True, Ed True
+[  659.9 s]    S as z: reconstruction succeeds at k/16, k/8, k/4, k/2, k: [False, False, False, False, False]
+[  660.0 s]    S as z g': reconstruction succeeds at k/16, k/8, k/4, k/2, k: [False, False, False, False, False]
+[  661.9 s]    Q as z: reconstruction succeeds at k/16, k/8, k/4, k/2, k: [False, False, False, False, False]
+[  662.0 s]    Q as z g': reconstruction succeeds at k/16, k/8, k/4, k/2, k: [False, False, False, False, False]
+[  663.8 s]    t as z: reconstruction succeeds at k/16, k/8, k/4, k/2, k: [False, False, False, False, False]
+[  664.0 s]    t as z g': reconstruction succeeds at k/16, k/8, k/4, k/2, k: [False, False, False, False, False]
+[  669.0 s] solution 0: no stable reconstruction up to 32000 digits
+[  669.0 s] solution 0: reconstructions at both precisions agree: False; largest coefficient -1 digits; real embedding S = ?, Q = ?, t = ?; matches the stored yantra: False
+FINAL FAIL: 0 reconstructed solutions match the stored yantra

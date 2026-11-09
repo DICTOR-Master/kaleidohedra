@@ -1,0 +1,20 @@
+GF1    odd pieces 43 rings [14, 10, 10, 8, 1] (triangles 43); t1/t9 corner offset +0.0000 +0.0000; bindu centre offset +0.00e+00; k 0.05498; t3 tip 1.0000
+KRP    odd pieces 45 rings [14, 10, 12, 8, 1] (triangles 41); t1/t9 corner offset -0.0000 +0.0000; bindu centre offset +0.00e+00; k 0.05703; t3 tip 1.0000; two smallest third-ring areas [1e-07, 1e-07]
+R1     odd pieces 43 rings [14, 10, 10, 8, 1] (triangles 43); t1/t9 corner offset -0.0105 -0.0544; bindu centre offset -3.36e-02; k 0.05970; t3 tip 1.0000
+Rh345  odd pieces 45 rings [14, 10, 12, 8, 1] (triangles 41); t1/t9 corner offset +0.0000 +0.0000; bindu centre offset -2.36e-05; k 0.05705; t3 tip 1.0000; two smallest third-ring areas [0.0, 0.0]
+grid   odd pieces 37 rings [12, 9, 6, 9, 1] (triangles 33); t1/t9 corner offset -0.2454 +0.0774; bindu centre offset +1.11e-01; k 0.05556; t3 tip 1.1667
+K1     odd pieces 43 rings [14, 10, 10, 8, 1] (triangles 43); t1/t9 corner offset +0.0000 +0.0000; bindu centre offset -2.02e-02; k 0.05743; t3 tip 1.0000
+V1     odd pieces 43 rings [14, 10, 10, 8, 1] (triangles 43); t1/t9 corner offset +0.0000 +0.0000; bindu centre offset +0.00e+00; k 0.05751; t3 tip 1.0000
+PF2    odd pieces 43 rings [14, 10, 10, 8, 1] (triangles 43); t1/t9 corner offset +0.0000 -0.0000; bindu centre offset +0.00e+00; k 0.05634; t3 tip 1.0000
+G1     odd pieces 43 rings [14, 10, 10, 8, 1] (triangles 43); t1/t9 corner offset +0.0000 -0.0715; bindu centre offset +0.00e+00; k 0.06307; t3 tip 1.0000
+E1     odd pieces 43 rings [14, 10, 10, 8, 1] (triangles 43); t1/t9 corner offset -0.0374 -0.0474; bindu centre offset -8.31e-03; k 0.05651; t3 tip 1.0000
+wrote overlay-KRP.png: 45 pieces, not 43 (ringed: the third ring's two smallest pieces); 28 sandhis, not 24
+wrote overlay-R1.png: small corners inside the circle (t1 by 0.010, t9 by 0.054); bindu not centred (off by 0.034) | t1's base at 3.3/48, not 6/48 as traditionally drawn
+wrote overlay-Rh345.png: 45 pieces, not 43 (ringed: the third ring's two smallest pieces); 28 sandhis | bindu off centre by 2.36·10⁻⁵
+wrote overlay-grid.png: t3's tip outside the circle (depth 1.167); 37 pieces, not 43; no corner touches (Theorem 7)
+wrote overlay-K1.png: bindu not centred (off by 0.020 of the diameter) | COMPUTED: exact form not found
+wrote overlay-V1.png: COMPUTED: exact form not found | slopes 0.7336 / 0.7364: no longer the solids' own (2/φ², 1/√2)
+wrote overlay-PF2.png: COMPUTED: exact form not found | upper slope 0.6959 has no parent solid (Proposition 8)
+wrote overlay-E1.png: small corners inside the circle (t1 by 0.037, t9 by 0.047); 28 sandhis, not 24 | bindu not centred (off by 0.008); COMPUTED: exact form not found
+wrote which-yantra.png
+FINAL ok

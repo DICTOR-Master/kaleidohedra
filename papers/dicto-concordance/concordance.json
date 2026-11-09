@@ -5470,6 +5470,14 @@
     "retry": "",
     "study": "study-runs/2026-11-04-hpiece-tiling (data/mix-runs-extra.log)",
     "date": "2026-11-09"
+   },
+   {
+    "question": "#103 proof audit (external brief): certify Theorems 9 and 10 and the 43/45 piece counts",
+    "status": "SETTLED",
+    "result": "certified: f160 irreducible (mod 43), f348 (patterns mod 7, 11, 13, 19), PARI + FLINT/NTL agree; u² degree 40 over Q(√5); unique roots in rational intervals (width 1e-40, refined to 3e-1000); interval Newton at 520 digits proves one exact solution per box, dropped factors nonzero, so f(u*) = 0; all Huet conditions hold exactly (lemma checked in Singular and sympy); piece counts certified by intervals: DICTO 43 (all triangles, margin 5.2e-6), Kulaichev 45 (41 triangles, margin 5.8e-8); faster independent elimination (1 min / 18 s); repo rerun 31/37 FINAL ok, cleo_cap.py crashes (paper's 'each script ends with a FINAL line' needs fixing)",
+    "retry": "Q, S, b1 in Q(u²): supported, not proved",
+    "study": "studies/2026-11-09-yantra-audit",
+    "date": "2026-11-09"
    }
   ]
  },

@@ -1,0 +1,7 @@
+G(S) = S**2*(u**6*v**4 + 3*u**4*v**4 + u**2*v**4 - 2*u**2*v**2 + 1) + S*(-3*u**4*v**4 - 2*u**2*v**4 + 2*u**2*v**2 - 1) + u**2*v**4
+Q(t) = t*v*(t**3*u**2 - t**2*u**2*v - t*u**2*v**2 + v)/(t**4*u**2*v - t**3*u**2*v**2 - t**3*u**2 - t**2*u**2*v**3 + t**2*u**2*v + t*v**2 + t - u**2*v**3)
+trivial factors: [('v', 2), ('u', 5), ('t*u - 1', 1), ('t*u + 1', 1), ('t - v', 2), ('t + v', 2)]
+H main factor: degree 10 in t, 3 in S, 43 (t,S)-terms
+H main factor irreducible over Q (sympy): True
+natural.py output: ['residuals G, H, Q: 1.6728066993589965e-32 8.75125433444524e-34 3.611230938956527e-31', 'FINAL ok']
+FINAL ok

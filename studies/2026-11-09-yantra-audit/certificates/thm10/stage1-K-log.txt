@@ -1,0 +1,26 @@
+PARI stack size set to 12000000000 bytes, maximum size set to 12000002048
+[    0.0 s] ok   f is even in u (degree 348)
+[    0.0 s] degree 348, terms 175, largest coefficient 33 digits at u^210, real roots 34, leading 26214400 = [2, 20; 5, 2], constant -62208 = [-1, 1; 2, 8; 3, 5]
+[    0.0 s] ok   matches the paper: (degree, terms, digits, at, real roots) = (348, 175, 33, 210, 34)
+[    0.0 s] ok   integer coefficients, content 1 (primitive)
+[    0.1 s] ok   f(u) irreducible over Q by degree patterns mod [7, 11, 13, 19] (0.1 s)
+[    0.1 s]       mod 7: degrees 3^2 + 4^2 + 6 + 11^2 + 16^2 + 18^2 + 28 + 41^2 + 64^2
+[    0.1 s]       mod 11: degrees 2 + 4 + 60 + 141^2
+[    0.1 s]       mod 13: degrees 1^2 + 6 + 10 + 165^2
+[    0.1 s]       mod 19: degrees 1^2 + 26 + 37^2 + 82^3
+[    0.1 s] ok   g(y) = f(sqrt y) irreducible over Q by degree patterns mod [7, 11, 13, 19] (0.0 s)
+[    0.1 s]       mod 7: degrees 3^2 + 4 + 11 + 14 + 16 + 18 + 41 + 64
+[    0.1 s]       mod 11: degrees 1 + 2 + 30 + 141
+[    0.1 s]       mod 13: degrees 1 + 3 + 5 + 165
+[    0.1 s]       mod 19: degrees 1 + 13 + 37 + 41 + 82
+[    0.2 s] ok   PARI polisirreducible: f and g irreducible
+[    0.5 s] ok   sage (FLINT/NTL factoring): f and g irreducible
+[    0.5 s] nearest real root differs from the stored u by 3.913 e-61; next real root is 1.301 e-2 away
+[    0.5 s] ok   the interval agrees with the stored numerical u to all its 60 digits (rounding)
+[    0.6 s] ok   PARI polsturm: exactly one real root of f in [7504385160222140244060846570512345103408/10^40, 7504385160222140244060846570512345103409/10^40]
+[    1.4 s] ok   independent Descartes count (pure Python integers): 1 sign variation(s) on the interval (0.8 s)
+[    1.4 s] ok   f changes sign on the interval
+[    1.9 s] ok   refined: f changes sign on a subinterval of width 3e-1000 inside [a, b] (exact signs), so u0 lies there
+[    1.9 s] ok   g has exactly one real root in [a^2, b^2] (so y0 = u0^2 is isolated too)
+[    1.9 s] u0 = 0.750438516022214024406084657051234510340891003639790315415314...
+FINAL ok

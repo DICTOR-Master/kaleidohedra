@@ -1,0 +1,24 @@
+[    0.6 s] Newton point found; residuals ['0.0', '2.8e-542', '1.61e-545']
+[    0.7 s] ok   Krawczyk: K(X) lies inside the box X (radius 1e-480), so G = H1 = D = 0 has exactly one solution X* in X
+[    0.7 s] ok   N1: the kept factor a (degrees t 20, u 50) contains 0 on the box (consistent)
+[    0.7 s] ok   N1: all 4 dropped factors certified nonzero on the box, so a(t*, u*) = 0
+[    0.7 s] ok   N2: the kept factor b (degrees t 20, u 44) contains 0 on the box (consistent)
+[    0.7 s] ok   N2: all 8 dropped factors certified nonzero on the box, so b(t*, u*) = 0
+PARI stack size set to 8000000000 bytes, maximum size set to 8000000000
+[    0.7 s] ok   the u-range of the box lies inside the isolating interval [a40, b40] of f
+[    0.8 s] ok   R = Res_t(a, b): every factor other than f has no real root in [a40, b40] (PARI polsturm, exact); so f(u*) = 0, u* = u0
+[   15.3 s] ok   denominator of Q(t) nonzero
+[   15.3 s] ok   model.solve in interval arithmetic: all 26 divisions have divisor intervals excluding 0 (every divisor nonzero)
+[   17.1 s] ok   cleared denominator of the closing equation nonzero
+[   17.5 s] ok   the 6 dropped factors of the closing numerator (u, v, tu +- 1, t +- v) nonzero; so H1 = 0 gives the closing equation exactly
+[   17.5 s] ok   denominator of condition (c) nonzero; so G = 0 gives (c) exactly
+[   17.5 s] ok   G is exactly the cleared numerator of condition (c)
+[   17.5 s] ok   signs h > 0, hw > 0, 1/2 - b5 > 0, h - (1/2 - b5) > 0: the squared bindu condition D = 0 gives exactly incircle centre at depth 1/2
+[   17.5 s] ok   all 3 factors of the cleared denominator of the bindu condition nonzero; so D = 0 gives the squared bindu condition exactly
+[   17.5 s] ok   sanity: (b), (c) residual intervals contain 0
+[   17.5 s] ok   sanity: t1's corner from the model is the circle point of t (identity of natural.py)
+[   17.5 s] ok   admissible: bases strictly ordered, half-widths > 0, apexes on the right side, corners of t2, t4, t5, t6, t8 strictly inside the circle (t1, t3, t7, t9 exactly on it)
+[   17.5 s] sanity: every Huet condition interval lies within +-3.77e-533 (exactly 0 by the stage-2 lemma)
+[   17.5 s] ok   rebuilt b1, Q, S agree with the stored values (max difference 3.96e-61)
+[   17.5 s] u* = 0.750438516022214024406084657051234510340891003639790315415314; box widths 5.0e-535, 1.15e-534, 5.19e-535
+FINAL ok

@@ -1,0 +1,23 @@
+[   15.0 s] G, H1 taken from natural.py (sympy)
+[   15.8 s] D built in Singular
+[   15.8 s] in Singular: degrees in S 2 3 4 ; terms 12 212 1250
+[   15.8 s] R1 = Res_S(G, H1): degrees (t, u, w) 20 48 1
+[   18.5 s] R2 = Res_S(G, D):  degrees (t, u, w) 48 84 1
+[   18.5 s] norms over Q(sqrt5) (case D) done: degrees (t, u) (40, 96) (96, 168)
+[   18.5 s] N1 factored in 0.0 s
+[   18.5 s]    factor degrees (t, u) = (0, 1)^56, relative value at the numerical point 1.0
+[   18.5 s]    factor degrees (t, u) = (40, 40)^1, relative value at the numerical point 4.16e-43
+[   18.5 s]    kept: degrees (40, 40)
+[   18.5 s] N2 factored in 0.0 s
+[   18.5 s]    factor degrees (t, u) = (0, 1)^56, relative value at the numerical point 1.0
+[   18.5 s]    factor degrees (t, u) = (1, 1)^4, relative value at the numerical point 0.746
+[   18.5 s]    factor degrees (t, u) = (1, 1)^4, relative value at the numerical point 1.0
+[   18.5 s]    factor degrees (t, u) = (2, 2)^12, relative value at the numerical point 0.992
+[   18.5 s]    factor degrees (t, u) = (2, 2)^12, relative value at the numerical point 0.542
+[   18.5 s]    factor degrees (t, u) = (40, 56)^1, relative value at the numerical point 1.87e-44
+[   18.5 s]    kept: degrees (40, 56)
+PARI stack size set to 16000000000 bytes, maximum size set to 16000000000
+[   61.0 s] PARI Res_t(a, b): degree 2240 in u (42.4 s)
+[   61.6 s] PARI factored in 0.7 s: [(1, 1600), (160, 1), (160, 1), (320, 1)]
+[   61.6 s] the stored f is a factor of Res_t(a, b): True
+FINAL ok

@@ -1,0 +1,14 @@
+G(S) = S**2*u**6*v**4 + 3*S**2*u**4*v**4 + S**2*u**2*v**4 - 2*S**2*u**2*v**2 + S**2 - 3*S*u**4*v**4 - 2*S*u**2*v**4 + 2*S*u**2*v**2 - S + u**2*v**4
+Q(t) = t*v*(t**3*u**2 - t**2*u**2*v - t*u**2*v**2 + v)/(t**4*u**2*v - t**3*u**2*v**2 - t**3*u**2 - t**2*u**2*v**3 + t**2*u**2*v + t*v**2 + t - u**2*v**3)
+H factors (degree in t, degree in S):
+    0 0  multiplicity 2 v
+    0 0  multiplicity 5 u
+    1 0  multiplicity 1 t*u - 1
+    1 0  multiplicity 1 t*u + 1
+    1 0  multiplicity 2 t - v
+    1 0  multiplicity 2 t + v
+    10 3  multiplicity 1 
+check on GF1: G = 1.6728067e-32  H factors: [0.69501404, 0.67931859, -0.85430123, 1.1456988, -0.48053622, 0.90949185, 8.7512543e-34]
+       Q(t) = 0.576510321707840  GF1 Q = 0.576510321707840
+residuals G, H, Q: 1.6728066993589965e-32 8.75125433444524e-34 3.611230938956527e-31
+FINAL ok
