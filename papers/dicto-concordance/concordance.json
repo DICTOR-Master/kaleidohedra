@@ -5503,6 +5503,56 @@
     "retry": "exact-cover (SAT) search of k·half by k³ congruent halves in free positions and orientations (DICTO's hunch)",
     "study": "inline check 9 Nov (dbb)",
     "date": "2026-11-09"
+   },
+   {
+    "question": "#43 Conjecture 1: exact t_min(D_12), t_min(D_13)",
+    "method": "exact_family.py on dicto-big-brother to D_14 (og-exact-13, 14183 s, FINAL ok)",
+    "status": "REDUCED",
+    "result": "t_min(D_12)=1.020352, t_min(D_13)=1.027602 <= 3/phi^2 exactly; Conjecture 1 exact for k<=13; Inradius Lemma need drops to (phi^2/3)R(D_13)=1.078315 for j>=14 (float margin 9.1%); crude mesh route now has room from K=13 (0.93176 vs 0.91177 over j=13..27)",
+    "retry": "prove a theta(D_j) bound for all j>=13 (mesh route); no further exact levels (D_14 took 7048 s)",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-09",
+    "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "Perfect kagome-framed yantra (DICTO's kagome frame): (a) t3 congruent t7, (b) t1 corners on frame, (c) t9 corners on frame, (d) bindu centred",
+    "method": "perfect.py on dicto-big-brother: exact elimination per frame case (16 cases WN x WN x +- x +-), resultant in P (degrees 63-181), every real root validated at 60 digits against the full model (watched job kagome-perfect, FINAL ok)",
+    "status": "SETTLED",
+    "result": "NONE: all 16 cases reduced; every real root fails admissibility (line order, t3 off the frame, t2 corner outside, or zero division). No perfect kagome yantra with (a)-(d); with the circle frame the DICTO Yantra exists, so the kagome frame loses perfection",
+    "retry": "only the family WITHOUT (a) (curve in P, R), or a different frame contact rule",
+    "study": "studies/2026-11-09-kagome-yantra",
+    "date": "2026-11-09",
+    "target": "kagome yantra"
+   },
+   {
+    "question": "#43 Conjecture 1 by a gnomon: does delta_k decay cleanly after k = 13 (float to k = 36)",
+    "method": "gnomon_float.py on dicto-big-brother, watched job og-gnomon-36; out of memory at k = 32",
+    "status": "UNDECIDED",
+    "result": "k <= 31 complete: delta_k <= 0.0371 for k >= 13 (bound 0.136), not monotone, plateau ~0.002 from k = 26; r settles at 1.177477 (k = 30, 31), nearest corner = inradius from k = 31; R/r 1.0102 at k = 31, falling slowly",
+    "retry": "no more float levels (memory); proof only: New-Face Lemma / a bound on delta_k",
+    "study": "studies/2026-11-09-og-gnomon",
+    "date": "2026-11-09",
+    "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 Conjecture 1: certified t_min(D_k) <= 3/phi^2 beyond the exact range (k = 14..22)",
+    "method": "certified_family.py: exact Q(sqrt5) to D_10, then Arb ball arithmetic (600 bits) with the exact I_h label action; faces certified (strict non-members, coplanarity forced by symmetry, closure); validated vs exact k = 10..13 (watched job og-certified-22, FINAL ok)",
+    "status": "REDUCED",
+    "result": "Conjecture 1 CERTIFIED for every k <= 22; Inradius Lemma need drops to (phi^2/3) R(D_22) = 1.040839 for j >= 23 (float margin 13.1%); interval route is rigorous because every coplanarity of D_5.. is I_h-forced (coincidence pilot)",
+    "retry": "extend (og-certified-30 running); the infinite tail needs the New-Face Lemma / delta bound",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-09",
+    "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 Conjecture 1: certified t_min(D_k) <= 3/phi^2 to k = 30",
+    "method": "certified_family.py (exact to D_10, Arb balls 600 bits, I_h label action, all faces certified), watched job og-certified-30, 1981 s, FINAL ok",
+    "status": "REDUCED",
+    "result": "Conjecture 1 CERTIFIED for every k <= 30 (t_min(D_30) <= 1.001014); validated vs exact k = 10..13. Tail reduced (README 9-12): r(D_{k+1}) >= r(D_k) cos gamma_{k+1}; all k follow from a 4-step contraction gamma_max(D_{k+4}) <= 0.95 gamma_max(D_k) for k >= 30 (observed 0.73-0.85)",
+    "retry": "prove the 4-step contraction (corner-cutting/subdivision + ring lemma route); no more certified levels needed",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-09",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },

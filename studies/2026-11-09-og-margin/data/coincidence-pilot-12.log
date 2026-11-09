@@ -1,0 +1,16 @@
+D_0 [rotations+mirrors]: points 102 corners 102 faces 80 (non-triangle 80: forced 0, UNFORCED 80) boundary non-corner points 0 strictly inside 0 | min float gap plane-to-nonmember 1.71e-01 | eg unforced (members, corners, |stab|) [(4, 4, 2), (6, 6, 6)] (0 s)
+D_1 [rotations+mirrors]: points 80 corners 80 faces 132 (non-triangle 12: forced 12, UNFORCED 0) boundary non-corner points 0 strictly inside 0 | min float gap plane-to-nonmember 6.12e-02 | eg unforced (members, corners, |stab|) [] (0 s)
+D_2 [rotations+mirrors]: points 132 corners 132 faces 140 (non-triangle 80: forced 60, UNFORCED 20) boundary non-corner points 0 strictly inside 0 | min float gap plane-to-nonmember 5.81e-03 | eg unforced (members, corners, |stab|) [(6, 6, 6)] (0 s)
+D_3 [rotations+mirrors]: points 140 corners 140 faces 162 (non-triangle 102: forced 72, UNFORCED 30) boundary non-corner points 0 strictly inside 0 | min float gap plane-to-nonmember 1.49e-03 | eg unforced (members, corners, |stab|) [(4, 4, 4)] (0 s)
+D_4 [rotations+mirrors]: points 162 corners 162 faces 200 (non-triangle 80: forced 60, UNFORCED 20) boundary non-corner points 0 strictly inside 0 | min float gap plane-to-nonmember 5.45e-04 | eg unforced (members, corners, |stab|) [(6, 6, 6)] (0 s)
+D_5 [rotations+mirrors]: points 200 corners 200 faces 252 (non-triangle 132: forced 132, UNFORCED 0) boundary non-corner points 0 strictly inside 0 | min float gap plane-to-nonmember 2.71e-04 | eg unforced (members, corners, |stab|) [] (0 s)
+D_6 [rotations+mirrors]: points 252 corners 192 faces 320 (non-triangle 60: forced 60, UNFORCED 0) boundary non-corner points 0 strictly inside 60 | min float gap plane-to-nonmember 8.12e-04 | eg unforced (members, corners, |stab|) [] (0 s)
+D_7 [rotations+mirrors]: points 320 corners 260 faces 402 (non-triangle 102: forced 102, UNFORCED 0) boundary non-corner points 0 strictly inside 60 | min float gap plane-to-nonmember 9.50e-05 | eg unforced (members, corners, |stab|) [] (0 s)
+D_8 [rotations+mirrors]: points 402 corners 312 faces 500 (non-triangle 120: forced 120, UNFORCED 0) boundary non-corner points 0 strictly inside 90 | min float gap plane-to-nonmember 2.13e-05 | eg unforced (members, corners, |stab|) [] (1 s)
+D_9 [rotations+mirrors]: points 500 corners 500 faces 732 (non-triangle 192: forced 192, UNFORCED 0) boundary non-corner points 0 strictly inside 0 | min float gap plane-to-nonmember 7.71e-08 | eg unforced (members, corners, |stab|) [] (5 s)
+D_10 [rotations+mirrors]: points 732 corners 480 faces 662 (non-triangle 182: forced 182, UNFORCED 0) boundary non-corner points 0 strictly inside 252 | min float gap plane-to-nonmember 9.33e-05 | eg unforced (members, corners, |stab|) [] (17 s)
+D_11 [rotations+mirrors]: points 662 corners 470 faces 672 (non-triangle 252: forced 252, UNFORCED 0) boundary non-corner points 0 strictly inside 192 | min float gap plane-to-nonmember 1.12e-03 | eg unforced (members, corners, |stab|) [] (173 s)
+D_12 [rotations+mirrors]: points 672 corners 540 faces 902 (non-triangle 162: forced 162, UNFORCED 0) boundary non-corner points 0 strictly inside 132 | min float gap plane-to-nonmember 4.63e-04 | eg unforced (members, corners, |stab|) [] (262 s)
+VERDICT: 150 unforced coincidences up to D_12: plain interval route not rigorous
+FINAL ok
+[exit 0]

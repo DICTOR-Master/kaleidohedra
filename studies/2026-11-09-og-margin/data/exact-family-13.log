@@ -1,0 +1,32 @@
+D_0: 102 listed points, 80 faces proved exactly, 180 edges, max digits 4 (0 s)
+D_1: 80 listed points, 132 faces proved exactly, 210 edges, max digits 6 (0 s)
+  t_min(D_0) = 1.133581474681  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.012317; digits 6)  matches Table 7
+D_2: 132 listed points, 140 faces proved exactly, 270 edges, max digits 7 (0 s)
+  t_min(D_1) = 1.117381815787  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.028516; digits 8)  matches Table 7
+D_3: 140 listed points, 162 faces proved exactly, 300 edges, max digits 14 (0 s)
+  t_min(D_2) = 1.103146717839  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.042751; digits 11)  matches Table 7
+D_4: 162 listed points, 200 faces proved exactly, 360 edges, max digits 18 (0 s)
+  t_min(D_3) = 1.145898033750  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.000000; digits 2)  matches Table 7
+D_5: 200 listed points, 252 faces proved exactly, 450 edges, max digits 25 (0 s)
+  t_min(D_4) = 1.042440667917  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.103457; digits 3)  matches Table 7
+D_6: 252 listed points, 320 faces proved exactly, 510 edges, max digits 44 (0 s)
+  t_min(D_5) = 1.086902414064  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.058996; digits 44)  matches Table 7
+D_7: 320 listed points, 402 faces proved exactly, 660 edges, max digits 95 (0 s)
+  t_min(D_6) = 1.025657373203  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.120241; digits 49)  matches Table 7
+D_8: 402 listed points, 500 faces proved exactly, 810 edges, max digits 231 (0 s)
+  t_min(D_7) = 1.059515513101  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.086383; digits 108)  matches Table 7
+D_9: 500 listed points, 732 faces proved exactly, 1230 edges, max digits 567 (2 s)
+  t_min(D_8) = 1.138076918104  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.007821; digits 375)  matches Table 7
+D_10: 732 listed points, 662 faces proved exactly, 1140 edges, max digits 1780 (8 s)
+  t_min(D_9) = 1.076769947694  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.069128; digits 792)
+D_11: 662 listed points, 672 faces proved exactly, 1140 edges, max digits 5804 (36 s)
+  t_min(D_10) = 1.008772389918  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.137126; digits 3096)
+D_12: 672 listed points, 902 faces proved exactly, 1440 edges, max digits 17829 (159 s)
+  t_min(D_11) = 1.018734403814  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.127164; digits 7572)
+D_13: 902 listed points, 1092 faces proved exactly, 1740 edges, max digits 31244 (1132 s)
+  t_min(D_12) = 1.020351534966  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.125546; digits 40129)
+D_14: 1092 listed points, 1262 faces proved exactly, 2160 edges, max digits 90928 (7048 s)
+  t_min(D_13) = 1.027602382772  exact max True  <= 3/phi^2 exactly: True  (3/phi^2 - t = +0.118296; digits 29348)
+done in 14183 s
+FINAL ok
+[exit 0]

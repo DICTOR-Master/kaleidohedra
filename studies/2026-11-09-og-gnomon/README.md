@@ -148,3 +148,13 @@ foot points sit in their faces) mapped into itself by P.
 ```
 
 DICTO · dictospheres.com
+
+## 8. Float run k ≤ 31 (og-gnomon-36, 9 Nov; stopped by out-of-memory at k = 32, 265 050 faces at k = 31)
+
+Data: data/gnomon-float-31.json, .log (the watcher raised the alert; k ≤ 31 is complete and saved).
+δ_k for k ≥ 13: largest 0.0371 at k = 13, then 0.028, 0.026, 0.016, 0.013, 0.011, 0.010, 0.0078, 0.0049, 0.0045, 0.0041, 0.0039,
+0.0024, 0.0020, 0.0019, 0.0019, 0.0020, 0.0023, 0.0015 (k = 31): every value is under the gnomon-criterion bound log(3/φ²) = 0.136 by a
+factor ≥ 3.7, but δ is NOT monotone and flattens near 0.002 from k = 26 on (no clean geometric rate).
+r(D_k) settles: 1.177489, 1.177483, 1.177477, 1.177477 (k = 28–31), and from k = 31 the nearest corner is at the inradius
+(ρ_min = r). R/r falls slowly, 1.0104 → 1.0102 (k = 28–31): the limit may be a non-round solid with r ≈ 1.17748, not a sphere.
+Reading for the New-Face Lemma: the needed 1.0783 sits 8.4 % under the settled inradius; the late new faces sit at the inradius itself.
