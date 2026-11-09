@@ -237,3 +237,11 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   conditions only, and the third condition (bindu centred, not imposed) then holds to 1.1·10⁻²⁵⁵ (DICTO Yantra) and 5.1·10⁻²⁶²
   (Kulaichev); every Huet condition (18 marmas, tips on bases, corners) to 5·10⁻²⁶². Pieces of the rebuilt yantras (figure.py):
   DICTO Yantra 14, 10, 10, 8, 1 = 43 (traditional); Kulaichev 14, 10, 12, 8, 1 = 45 (the two extra pieces in the third ring). FINAL ok.
+
+## Rhombus threshold (10 Nov 2026, DICTO: "compute the exact slope")
+scripts/rhombus_threshold.py, data/rhombus-threshold.json. Family u = v with (b), (c). The tiny extra pieces are bounded by
+t4's right leg, t5's base and t6's right leg; these three meet exactly at u* = 0.745996537184295181585859787277476212880247765,
+apex 73.4456°, Q 0.5520379583, S 0.9245700139, admissible. Below u*: 43 odd pieces, all triangles; above: 45 (41 triangles).
+Kulaichev (0.750439) and Rh345 (3/4) lie above u*, the stella (0.7071) below. At u* the bindu is off centre by 2.48e-4
+(Rh345 2.36e-5, Kulaichev 0): (d) holds only above u*, so no rhombus yantra with (b), (c) has both the centred bindu and the
+traditional 43. Numeric to 50 digits; exact minimal polynomial not yet computed. FINAL ok (dicto-big-brother).
