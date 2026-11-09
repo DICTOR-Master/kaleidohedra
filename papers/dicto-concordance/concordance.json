@@ -5643,6 +5643,15 @@
     "retry": "never (next: keys, 3-fold cuts)",
     "study": "2026-11-10-merged-sliders",
     "date": "2026-11-10"
+   },
+   {
+    "question": "c/h keys at the hexagon of half-cells (RD/TRD halves)",
+    "method": "hexagon_keys.py exhaustive 3^6",
+    "status": "SETTLED",
+    "result": "342/728 force c, 0 force h, 0 allow both: h unkeyable at the hexagon; aperiodic forcing needs keys on inter-layer rhombus faces",
+    "retry": "never",
+    "study": "2026-11-10-merged-sliders",
+    "date": "2026-11-10"
    }
   ]
  },
