@@ -50,5 +50,17 @@ convergents: 0.4472136 (1/φ) and 0.35355339 (1/√2).
 crystals across it, and turn-invariant quantities are extreme there (step 2). Without symmetry (Fibonacci): it is the fixed point
 of a hop, a contraction carrying each crystal to the next. The two fixed points are the first two points of Markov's spectrum.
 
-**Next (step 4):** 3D: the golden rhombohedra (Ammann–Kramer–Neri / icosahedral cut-and-project from Z⁶): which lines of crystals
-(e.g. Fibonacci-rational cubic approximants 1/1, 2/1, 3/2 …) turn or hop into the icosahedral quasicrystal.
+## Step 4: the icosahedral line (ico_line.py, FINAL ok)
+
+**Theorem (the icosahedral hop).** With physical star P(x) = [(1,x,0), (−1,x,0), (0,1,x), (0,−1,x), (x,0,1), (−x,0,1)] (x = φ the
+icosahedral quasicrystal of golden rhombohedra; x = F(n+1)/F(n) = 1/1, 2/1, 3/2, 5/3 … the cubic approximants), the integer matrix
+A = [[2,1,1,−1,1,−1], [1,2,1,−1,−1,1], [1,1,2,1,1,1], [−1,−1,1,2,1,1], [1,−1,1,1,2,−1], [−1,1,1,1,−1,2]] (det −1, a map of Z⁶)
+satisfies P(x)·A = (2x+1)·P(g(x)) identically in x, with g(x) = (3x+2)/(2x+1) = h(h(h(x))), h the Fibonacci hop. g has the single
+fixed point φ (scale 2φ+1 = φ³, the classical inflation of the primitive icosahedral lattice) and hops every third approximant:
+2/1 → 8/5 → 34/21, 3/2 → 13/8 → 55/34, 5/3 → 21/13 → 89/55. A was found as the unique solution with physical scale φ³ and internal
+scale (−1/φ)³ (Galois pair), then checked on the whole line symbolically.
+Not yet checked: that the 3D tilings themselves (not only the projection data) are related by inflation along the line.
+
+**Verdict for aim 1 so far.** Ammann–Beenker (8-fold) sits at a TURN; Fibonacci and the icosahedral quasicrystal (no cubic or
+1D symmetry to turn by) sit at HOPS, the icosahedral one at the third power of the Fibonacci hop. Next: the tile-level check in 3D,
+and an extremal property at the icosahedral fixed point (the analogue of steps 2 and 3).
