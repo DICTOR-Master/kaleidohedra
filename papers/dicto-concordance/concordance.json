@@ -5478,6 +5478,15 @@
     "retry": "Q, S, b1 in Q(u²): supported, not proved",
     "study": "studies/2026-11-09-yantra-audit",
     "date": "2026-11-09"
+   },
+   {
+    "question": "is the RD a rep-tile on its own lattice (k·RD a union of whole RD cells)?",
+    "method": "exact cell containment for k = 2, 3, 4, big RD centred on a ball, octahedral hole, tetrahedral hole, edge midpoint, face centre",
+    "status": "SETTLED",
+    "result": "no: in every case some cells are cut by the big boundary (whole cells e.g. 19 of 27 at k = 3 on a ball, 6 of 8 at k = 2 on an octahedral hole); the RD is not a rep-tile for k <= 4 at these centres (DICTO: '8 copies of a cube make a cube, doesn't work with RD')",
+    "retry": "search CLUSTERS of RD cells (not the RD itself) for an exact rep-tile, other scale factors, and fuzzy supertiles",
+    "study": "inline check 9 Nov (dbb)",
+    "date": "2026-11-09"
    }
   ]
  },
