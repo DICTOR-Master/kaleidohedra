@@ -173,9 +173,12 @@ def main(outdir):
                 f"(off by {abs(m['bindu']):.3f})", "t1's base at 3.3/48, not 6/48 as traditionally drawn"], corner_rings(*Y['R1'][1]()[:2]))
     m = M['Rh345']; need(m['n'] == 45 and abs(abs(m['bindu']) - 2.36e-5) < 0.01e-5, 'Rh345')
     P['Rh345'] = (['45 pieces, not 43 (ringed: the third ring\'s two smallest pieces); 28 sandhis', 'bindu off centre by 2.36·10⁻⁵'], [])
-    m = M['grid']; need(m['t3tip'] > 1 and m['n'] == 37, 'grid')
-    P['grid'] = ([f"t3's tip outside the circle (depth {m['t3tip']:.3f}); 37 pieces, not 43; no corner touches (Theorem 7)"],
-                 [(0.0, m['t3tip'], 0.035)])
+    m = M['grid']; need(m['t3tip'] > 1 and m['n'] == 37 and m['off'][9] > 0.05, 'grid')
+    gb, gw = Y['grid'][1]()[:2]
+    P['grid'] = ([f"t3's lower part outside the circle (its tip at depth {m['t3tip']:.3f})",
+                  f"t9's base on the tangent at the bottom, its corners {m['off'][9]:.3f} outside",
+                  "37 pieces, not 43; no corner touches (Theorem 7)"],
+                 [(0.0, m['t3tip'], 0.035), (gw[9], gb[9], 0.035), (-gw[9], gb[9], 0.035)])
     m = M['K1']; need(m['n'] == 43 and abs(m['bindu']) > 1e-4, 'K1')
     P['K1'] = ([f"bindu not centred (off by {abs(m['bindu']):.3f} of the diameter)", 'COMPUTED: exact form not found'], [])
     m = M['V1']; need(m['n'] == 43 and abs(m['bindu']) < 1e-9, 'V1')
