@@ -116,7 +116,7 @@ def main(path, name, out_svg, title):
     X = lambda x: M + (x + 0.5) * S_; Y = lambda d: M + d * S_
     W = S_ + 2 * M
     ring_col = {1: '#e9b44c', 3: '#d1495b', 5: '#7d3c98', 7: '#1f6f8b', 9: '#0b132b'}
-    o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {W + 70}" width="{W}" height="{W + 70}">',
+    o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {W + 96}" width="{W}" height="{W + 96}">',
          '<rect width="100%" height="100%" fill="#fffdf7"/>']
     for poly, cnt in odd:
         o.append('<polygon points="' + ' '.join(f'{X(x):.3f},{Y(y):.3f}' for x, y in poly) + f'" fill="{ring_col[cnt]}" fill-opacity="0.85" stroke="none"/>')
@@ -149,8 +149,10 @@ def main(path, name, out_svg, title):
             o.append(f'<polygon points="{cx:.2f},{cy - 7:.2f} {cx + 7:.2f},{cy:.2f} {cx:.2f},{cy + 7:.2f} {cx - 7:.2f},{cy:.2f}" fill="#1d4ed8" stroke="#fff" stroke-width="1.2"/>')
     o.append(f'<text x="{M}" y="{W + 12}" font-family="Helvetica,Arial,sans-serif" font-size="18" fill="#222">{title}</text>')
     o.append(f'<text x="{M}" y="{W + 40}" font-family="Helvetica,Arial,sans-serif" font-size="17" fill="#333">'
-             f'{len(odd)} odd faces ({", ".join(str(rings[c]) for c in (1, 3, 5, 7, 9))}) shaded by ring; red dots: the 18 marmas; blue diamonds: 6 corner touches; dashed: DICTO\'s rhombus (a kite unless u = v)</text>')
-    o.append(f'<text x="{W - 14}" y="{W + 62}" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="16" fill="#555">DICTO · dictospheres.com</text>')
+             f'{len(odd)} regions ({", ".join(str(rings[c]) for c in (1, 3, 5, 7, 9))}), {n_tri} of them triangles, shaded by ring; red dots: the 18 marmas;</text>')
+    o.append(f'<text x="{M}" y="{W + 62}" font-family="Helvetica,Arial,sans-serif" font-size="17" fill="#333">'
+             f'blue diamonds: corner touches; dashed: DICTO\'s rhombus (a kite unless u = v)</text>')
+    o.append(f'<text x="{W - 14}" y="{W + 88}" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="16" fill="#555">DICTO · dictospheres.com</text>')
     o.append('</svg>')
     open(out_svg, 'w').write('\n'.join(o))
     return n_tri, len(odd), rings
