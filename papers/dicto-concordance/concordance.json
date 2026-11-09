@@ -3637,7 +3637,7 @@
    ],
    [
     "#53 Observation 1 (diagonal swap)",
-    "switch points are walls between regular subdivisions, located by Edelsbrunner–Shah's lifted determinant — PROVED 8 Nov 2026 (studies/2026-11-08-switch-theorem: Theorems A–C; Obs 1 and 4 proved, quadrilateral version disproved, Obs 3 partial, Obs 2 open; placement awaits DICTO)",
+    "switch points are walls between regular subdivisions, located by Edelsbrunner–Shah's lifted determinant — PROVED 8 Nov 2026 (studies/2026-11-08-switch-theorem: Theorems A–C; Obs 1 and 4 proved, quadrilateral version disproved, Obs 3 partial, Obs 2 open; placement awaits DICTO) — Observation 2 PROVED 9 Nov 2026 (studies/2026-11-09-cscl-zincblende, Theorem E)",
     "a general switch theorem for the bonds",
     [
      25
@@ -5123,6 +5123,15 @@
     "result": "closed for the aim: RD hat piece needs its 3D mirror and then forces periodic c stacking (ABC); TRD hat piece tiles no layer; layers independent (at best weakly aperiodic). Lead: only pieces straddling two layers let an in-plane pattern see the c/h lean",
     "retry": "",
     "study": "studies/2026-11-09-hat-sectors",
+    "date": "2026-11-09"
+   },
+   {
+    "question": "#53 Obs 2: CsCl <-> zinc blende polynomial coincidence; Obs 3 criterion",
+    "method": "obs2_proof.py exact cells per interval + face homothety + derivative/pyramid identities; likebirth.py exact LP tau_A, tau_B on 12 nets",
+    "status": "SETTLED (Obs 2); PARTIAL (Obs 3)",
+    "result": "Obs 2 true exactly: ZnS unlike face = s(1,1,1) - 2 x CsCl unlike face (cube slice), so volumes x2 by dV/dlam = sum A/(2d), like faces x1/sqrt2 by 3V = sum hA; flip circuits differ, scaling moves flips to +-4; Obs 3: like bonds born at LP values tau, gradual iff tau_A < -tau_B, switch iff equal; midpoint rule for centrosymmetric pairs",
+    "retry": "never (Obs 2); Obs 3 only toward a closed rule",
+    "study": "2026-11-09-cscl-zincblende",
     "date": "2026-11-09"
    }
   ]

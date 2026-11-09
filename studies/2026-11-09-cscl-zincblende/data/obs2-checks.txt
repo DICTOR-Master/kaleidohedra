@@ -1,0 +1,95 @@
+PASS C1 sanity: fluorite octet circuit (switch-theorem study) S0/SA S0 = -1/8, SA = 1 after scaling alpha by 1/SA, lam* = -1/8 (#53: octet switch -1/8; switch study: S0 = -1/8, SA = 1)
+PASS C1 sanity: bcc flip circuit at -1 S0 = -2, SA = 2, lam* = -1 (#53 flips -1, 1)
+PASS C1 sanity: bcc flip circuit at 1 S0 = 2, SA = 2, lam* = 1 (#53 flips -1, 1)
+PASS C1 sanity: zincblende flip circuit at -1 S0 = 4, SA = -4, lam* = -1 (#53 flips -1, 1)
+PASS C1 sanity: zincblende flip circuit at 1 S0 = 4, SA = 4, lam* = 1 (#53 flips -1, 1)
+PASS C2 cscl A cell on (-3, -1): 6 corners from the 14 nearest planes, constant on the open interval; 26 sites within the safe radius 3.000 all satisfied 
+PASS C2 cscl B cell on (-3, -1): 24 corners from the 14 nearest planes, constant on the open interval; 64 sites within the safe radius 4.182 all satisfied 
+PASS C2 zb A cell on (-3, -1): 4 corners from the 16 nearest planes, constant on the open interval; 34 sites within the safe radius 4.182 all satisfied 
+PASS C2 zb B cell on (-3, -1): 22 corners from the 16 nearest planes, constant on the open interval; 46 sites within the safe radius 4.646 all satisfied 
+PASS C4 LEMMA on (-3, -1): ZnS unlike face = s(1,1,1) - 2 * CsCl unlike face 3 corners; CsCl face corners [['0', '0', 'lam/2 + 3/2'], ['0', 'lam/2 + 3/2', '0'], ['lam/2 + 3/2', '0', '0']]
+PASS C4 on (-3, -1): the CsCl unlike face is the slice x1+x2+x3 = s of the unit cube [0,1]^3 
+PASS C5 bcc big on (-3, -1): volume lam**3/6 + 3*lam**2/2 + 9*lam/2 + 9/2 and the 8 face areas = census (8 faces) 
+PASS C5 bcc small on (-3, -1): volume -lam**3/6 - 3*lam**2/2 - 9*lam/2 + 7/2 and the 14 face areas = census (14 faces) 
+PASS C5 zincblende Zn on (-3, -1): volume lam**3/3 + 3*lam**2 + 9*lam + 9 and the 4 face areas = census (4 faces) 
+PASS C5 zincblende S on (-3, -1): volume -lam**3/3 - 3*lam**2 - 9*lam + 7 and the 16 face areas = census (16 faces) 
+PASS C6 ratios ZnS/CsCl, kind A, (-3, -1): unlike {4}, like no like faces in either, volume 2 face counts CsCl 8+0, ZnS 4+0
+PASS C7 cscl A (-3, -1): dV/dlam = +sum(unlike area)/(2 sqrt3) and 3V = sum h*area 
+PASS C7 zb A (-3, -1): dV/dlam = +sum(unlike area)/(2 sqrt3) and 3V = sum h*area 
+PASS C6 ratios ZnS/CsCl, kind B, (-3, -1): unlike {4}, like {sqrt(2)/2}, volume 2 face counts CsCl 8+6, ZnS 4+12
+PASS C7 cscl B (-3, -1): dV/dlam = -sum(unlike area)/(2 sqrt3) and 3V = sum h*area 
+PASS C7 zb B (-3, -1): dV/dlam = -sum(unlike area)/(2 sqrt3) and 3V = sum h*area 
+PASS C2 cscl A cell on (-1, 1): 24 corners from the 14 nearest planes, constant on the open interval; 26 sites within the safe radius 3.146 all satisfied 
+PASS C2 cscl B cell on (-1, 1): 24 corners from the 14 nearest planes, constant on the open interval; 26 sites within the safe radius 3.146 all satisfied 
+PASS C2 zb A cell on (-1, 1): 16 corners from the 16 nearest planes, constant on the open interval; 34 sites within the safe radius 4.236 all satisfied 
+PASS C2 zb B cell on (-1, 1): 16 corners from the 16 nearest planes, constant on the open interval; 34 sites within the safe radius 4.236 all satisfied 
+PASS C4 LEMMA on (-1, 1): ZnS unlike face = s(1,1,1) - 2 * CsCl unlike face 6 corners; CsCl face corners [['0', '1', 'lam/2 + 1/2'], ['0', 'lam/2 + 1/2', '1'], ['1', '0', 'lam/2 + 1/2'], ['1', 'lam/2 + 1/2', '0'], ['lam/2 + 1/2', '0', '1'], ['lam/2 + 1/2', '1', '0']]
+PASS C4 on (-1, 1): the CsCl unlike face is the slice x1+x2+x3 = s of the unit cube [0,1]^3 
+PASS C5 bcc big on (-1, 1): volume -lam**3/3 + 3*lam + 4 and the 14 face areas = census (14 faces) 
+PASS C5 bcc small on (-1, 1): volume lam**3/3 - 3*lam + 4 and the 14 face areas = census (14 faces) 
+PASS C5 zincblende Zn on (-1, 1): volume -2*lam**3/3 + 6*lam + 8 and the 16 face areas = census (16 faces) 
+PASS C5 zincblende S on (-1, 1): volume 2*lam**3/3 - 6*lam + 8 and the 16 face areas = census (16 faces) 
+PASS C6 ratios ZnS/CsCl, kind A, (-1, 1): unlike {4}, like {sqrt(2)/2}, volume 2 face counts CsCl 8+6, ZnS 4+12
+PASS C7 cscl A (-1, 1): dV/dlam = +sum(unlike area)/(2 sqrt3) and 3V = sum h*area 
+PASS C7 zb A (-1, 1): dV/dlam = +sum(unlike area)/(2 sqrt3) and 3V = sum h*area 
+PASS C6 ratios ZnS/CsCl, kind B, (-1, 1): unlike {4}, like {sqrt(2)/2}, volume 2 face counts CsCl 8+6, ZnS 4+12
+PASS C7 cscl B (-1, 1): dV/dlam = -sum(unlike area)/(2 sqrt3) and 3V = sum h*area 
+PASS C7 zb B (-1, 1): dV/dlam = -sum(unlike area)/(2 sqrt3) and 3V = sum h*area 
+PASS C2 cscl A cell on (1, 3): 24 corners from the 14 nearest planes, constant on the open interval; 64 sites within the safe radius 4.182 all satisfied 
+PASS C2 cscl B cell on (1, 3): 6 corners from the 14 nearest planes, constant on the open interval; 26 sites within the safe radius 3.000 all satisfied 
+PASS C2 zb A cell on (1, 3): 22 corners from the 16 nearest planes, constant on the open interval; 46 sites within the safe radius 4.646 all satisfied 
+PASS C2 zb B cell on (1, 3): 4 corners from the 16 nearest planes, constant on the open interval; 34 sites within the safe radius 4.182 all satisfied 
+PASS C4 LEMMA on (1, 3): ZnS unlike face = s(1,1,1) - 2 * CsCl unlike face 3 corners; CsCl face corners [['1', '1', 'lam/2 - 1/2'], ['1', 'lam/2 - 1/2', '1'], ['lam/2 - 1/2', '1', '1']]
+PASS C4 on (1, 3): the CsCl unlike face is the slice x1+x2+x3 = s of the unit cube [0,1]^3 
+PASS C5 bcc big on (1, 3): volume lam**3/6 - 3*lam**2/2 + 9*lam/2 + 7/2 and the 14 face areas = census (14 faces) 
+PASS C5 bcc small on (1, 3): volume -lam**3/6 + 3*lam**2/2 - 9*lam/2 + 9/2 and the 8 face areas = census (8 faces) 
+PASS C5 zincblende Zn on (1, 3): volume lam**3/3 - 3*lam**2 + 9*lam + 7 and the 16 face areas = census (16 faces) 
+PASS C5 zincblende S on (1, 3): volume -lam**3/3 + 3*lam**2 - 9*lam + 9 and the 4 face areas = census (4 faces) 
+PASS C6 ratios ZnS/CsCl, kind A, (1, 3): unlike {4}, like {sqrt(2)/2}, volume 2 face counts CsCl 8+6, ZnS 4+12
+PASS C7 cscl A (1, 3): dV/dlam = +sum(unlike area)/(2 sqrt3) and 3V = sum h*area 
+PASS C7 zb A (1, 3): dV/dlam = +sum(unlike area)/(2 sqrt3) and 3V = sum h*area 
+PASS C6 ratios ZnS/CsCl, kind B, (1, 3): unlike {4}, like no like faces in either, volume 2 face counts CsCl 8+0, ZnS 4+0
+PASS C7 cscl B (1, 3): dV/dlam = -sum(unlike area)/(2 sqrt3) and 3V = sum h*area 
+PASS C7 zb B (1, 3): dV/dlam = -sum(unlike area)/(2 sqrt3) and 3V = sum h*area 
+PASS C3 cscl: B cell on (-3, -1) = (1,1,1) + A cell(-lam) of (1, 3) 
+PASS C3 zb: B cell on (-3, -1) = (1,1,1) - A cell(-lam) of (1, 3) 
+PASS C3 cscl: B cell on (-1, 1) = (1,1,1) + A cell(-lam) of (-1, 1) 
+PASS C3 zb: B cell on (-1, 1) = (1,1,1) - A cell(-lam) of (-1, 1) 
+PASS C3 cscl: B cell on (1, 3) = (1,1,1) + A cell(-lam) of (-3, -1) 
+PASS C3 zb: B cell on (1, 3) = (1,1,1) - A cell(-lam) of (-3, -1) 
+PASS C7 cscl: A volume -> 0 at lam = -3; B volume -> 0 at lam = 3 
+PASS C7 zb: A volume -> 0 at lam = -3; B volume -> 0 at lam = 3 
+PASS C8 bcc A at lam = -5/2: #53 engine corners = ours (6) 
+PASS C8 bcc B at lam = -5/2: #53 engine corners = ours (24) 
+PASS C8 bcc A at lam = -2: #53 engine corners = ours (6) 
+PASS C8 bcc B at lam = -2: #53 engine corners = ours (24) 
+PASS C8 bcc A at lam = -1/3: #53 engine corners = ours (24) 
+PASS C8 bcc B at lam = -1/3: #53 engine corners = ours (24) 
+PASS C8 bcc A at lam = 0: #53 engine corners = ours (24) 
+PASS C8 bcc B at lam = 0: #53 engine corners = ours (24) 
+PASS C8 bcc A at lam = 1/2: #53 engine corners = ours (24) 
+PASS C8 bcc B at lam = 1/2: #53 engine corners = ours (24) 
+PASS C8 bcc A at lam = 2: #53 engine corners = ours (24) 
+PASS C8 bcc B at lam = 2: #53 engine corners = ours (6) 
+PASS C8 bcc A at lam = 11/4: #53 engine corners = ours (24) 
+PASS C8 bcc B at lam = 11/4: #53 engine corners = ours (6) 
+PASS C8 zincblende A at lam = -5/2: #53 engine corners = ours (4) 
+PASS C8 zincblende B at lam = -5/2: #53 engine corners = ours (22) 
+PASS C8 zincblende A at lam = -2: #53 engine corners = ours (4) 
+PASS C8 zincblende B at lam = -2: #53 engine corners = ours (22) 
+PASS C8 zincblende A at lam = -1/3: #53 engine corners = ours (16) 
+PASS C8 zincblende B at lam = -1/3: #53 engine corners = ours (16) 
+PASS C8 zincblende A at lam = 0: #53 engine corners = ours (16) 
+PASS C8 zincblende B at lam = 0: #53 engine corners = ours (16) 
+PASS C8 zincblende A at lam = 1/2: #53 engine corners = ours (16) 
+PASS C8 zincblende B at lam = 1/2: #53 engine corners = ours (16) 
+PASS C8 zincblende A at lam = 2: #53 engine corners = ours (22) 
+PASS C8 zincblende B at lam = 2: #53 engine corners = ours (4) 
+PASS C8 zincblende A at lam = 11/4: #53 engine corners = ours (22) 
+PASS C8 zincblende B at lam = 11/4: #53 engine corners = ours (4) 
+PASS C9 ZnS dual cell at lam = -1: centre ('1', '-1', '1') is a CsCl small site not in ZnS; its CsCl power 0 < sphere power 4, so the ZnS empty sphere is not empty in CsCl 
+PASS C9 ZnS dual cell at lam = 1: centre ('2', '0', '0') is a CsCl big site not in ZnS; its CsCl power -1 < sphere power 3, so the ZnS empty sphere is not empty in CsCl 
+PASS C9 CsCl at lam = -1: none of the 48 dual cells around the big and small cell corners lies inside the ZnS sites 
+PASS C9 CsCl at lam = 1: none of the 48 dual cells around the big and small cell corners lies inside the ZnS sites 
+PASS C9 CsCl flip circuit at -1 scaled by 2: lam* = -4 (= 4 x -1), not a flip of ZnS 
+PASS C9 CsCl flip circuit at 1 scaled by 2: lam* = 4 (= 4 x 1), not a flip of ZnS 

@@ -1,0 +1,208 @@
+{
+ "intervals": [
+  {
+   "lo": "-3",
+   "hi": "-1",
+   "A": {
+    "vol_cscl": "lam**3/6 + 3*lam**2/2 + 9*lam/2 + 9/2",
+    "vol_zb": "lam**3/3 + 3*lam**2 + 9*lam + 9",
+    "unlike_cscl": "sqrt(3)*(lam**2 + 6*lam + 9)/8",
+    "unlike_zb": "sqrt(3)*(lam**2 + 6*lam + 9)/2",
+    "like_cscl": null,
+    "like_zb": null,
+    "faces_cscl": "8+0",
+    "faces_zb": "4+0"
+   },
+   "B": {
+    "vol_cscl": "-lam**3/6 - 3*lam**2/2 - 9*lam/2 + 7/2",
+    "vol_zb": "-lam**3/3 - 3*lam**2 - 9*lam + 7",
+    "unlike_cscl": "sqrt(3)*(lam**2 + 6*lam + 9)/8",
+    "unlike_zb": "sqrt(3)*(lam**2 + 6*lam + 9)/2",
+    "like_cscl": "-lam**2/2 - 3*lam - 1/2",
+    "like_zb": "sqrt(2)*(-lam**2 - 6*lam - 1)/4",
+    "faces_cscl": "8+6",
+    "faces_zb": "4+12"
+   },
+   "unlike_face_cscl_corners": [
+    [
+     "0",
+     "0",
+     "lam/2 + 3/2"
+    ],
+    [
+     "0",
+     "lam/2 + 3/2",
+     "0"
+    ],
+    [
+     "lam/2 + 3/2",
+     "0",
+     "0"
+    ]
+   ],
+   "unlike_face_zb_corners": [
+    [
+     "-lam/2 - 3/2",
+     "lam/2 + 3/2",
+     "lam/2 + 3/2"
+    ],
+    [
+     "lam/2 + 3/2",
+     "-lam/2 - 3/2",
+     "lam/2 + 3/2"
+    ],
+    [
+     "lam/2 + 3/2",
+     "lam/2 + 3/2",
+     "-lam/2 - 3/2"
+    ]
+   ]
+  },
+  {
+   "lo": "-1",
+   "hi": "1",
+   "A": {
+    "vol_cscl": "-lam**3/3 + 3*lam + 4",
+    "vol_zb": "-2*lam**3/3 + 6*lam + 8",
+    "unlike_cscl": "sqrt(3)*(3 - lam**2)/4",
+    "unlike_zb": "sqrt(3)*(3 - lam**2)",
+    "like_cscl": "lam**2/2 + lam + 1/2",
+    "like_zb": "sqrt(2)*(lam**2 + 2*lam + 1)/4",
+    "faces_cscl": "8+6",
+    "faces_zb": "4+12"
+   },
+   "B": {
+    "vol_cscl": "lam**3/3 - 3*lam + 4",
+    "vol_zb": "2*lam**3/3 - 6*lam + 8",
+    "unlike_cscl": "sqrt(3)*(3 - lam**2)/4",
+    "unlike_zb": "sqrt(3)*(3 - lam**2)",
+    "like_cscl": "lam**2/2 - lam + 1/2",
+    "like_zb": "sqrt(2)*(lam**2 - 2*lam + 1)/4",
+    "faces_cscl": "8+6",
+    "faces_zb": "4+12"
+   },
+   "unlike_face_cscl_corners": [
+    [
+     "0",
+     "1",
+     "lam/2 + 1/2"
+    ],
+    [
+     "0",
+     "lam/2 + 1/2",
+     "1"
+    ],
+    [
+     "1",
+     "0",
+     "lam/2 + 1/2"
+    ],
+    [
+     "1",
+     "lam/2 + 1/2",
+     "0"
+    ],
+    [
+     "lam/2 + 1/2",
+     "0",
+     "1"
+    ],
+    [
+     "lam/2 + 1/2",
+     "1",
+     "0"
+    ]
+   ],
+   "unlike_face_zb_corners": [
+    [
+     "1/2 - lam/2",
+     "lam/2 + 3/2",
+     "lam/2 - 1/2"
+    ],
+    [
+     "1/2 - lam/2",
+     "lam/2 - 1/2",
+     "lam/2 + 3/2"
+    ],
+    [
+     "lam/2 + 3/2",
+     "1/2 - lam/2",
+     "lam/2 - 1/2"
+    ],
+    [
+     "lam/2 + 3/2",
+     "lam/2 - 1/2",
+     "1/2 - lam/2"
+    ],
+    [
+     "lam/2 - 1/2",
+     "1/2 - lam/2",
+     "lam/2 + 3/2"
+    ],
+    [
+     "lam/2 - 1/2",
+     "lam/2 + 3/2",
+     "1/2 - lam/2"
+    ]
+   ]
+  },
+  {
+   "lo": "1",
+   "hi": "3",
+   "A": {
+    "vol_cscl": "lam**3/6 - 3*lam**2/2 + 9*lam/2 + 7/2",
+    "vol_zb": "lam**3/3 - 3*lam**2 + 9*lam + 7",
+    "unlike_cscl": "sqrt(3)*(lam**2 - 6*lam + 9)/8",
+    "unlike_zb": "sqrt(3)*(lam**2 - 6*lam + 9)/2",
+    "like_cscl": "-lam**2/2 + 3*lam - 1/2",
+    "like_zb": "sqrt(2)*(-lam**2 + 6*lam - 1)/4",
+    "faces_cscl": "8+6",
+    "faces_zb": "4+12"
+   },
+   "B": {
+    "vol_cscl": "-lam**3/6 + 3*lam**2/2 - 9*lam/2 + 9/2",
+    "vol_zb": "-lam**3/3 + 3*lam**2 - 9*lam + 9",
+    "unlike_cscl": "sqrt(3)*(lam**2 - 6*lam + 9)/8",
+    "unlike_zb": "sqrt(3)*(lam**2 - 6*lam + 9)/2",
+    "like_cscl": null,
+    "like_zb": null,
+    "faces_cscl": "8+0",
+    "faces_zb": "4+0"
+   },
+   "unlike_face_cscl_corners": [
+    [
+     "1",
+     "1",
+     "lam/2 - 1/2"
+    ],
+    [
+     "1",
+     "lam/2 - 1/2",
+     "1"
+    ],
+    [
+     "lam/2 - 1/2",
+     "1",
+     "1"
+    ]
+   ],
+   "unlike_face_zb_corners": [
+    [
+     "5/2 - lam/2",
+     "lam/2 - 1/2",
+     "lam/2 - 1/2"
+    ],
+    [
+     "lam/2 - 1/2",
+     "5/2 - lam/2",
+     "lam/2 - 1/2"
+    ],
+    [
+     "lam/2 - 1/2",
+     "lam/2 - 1/2",
+     "5/2 - lam/2"
+    ]
+   ]
+  }
+ ]
+}

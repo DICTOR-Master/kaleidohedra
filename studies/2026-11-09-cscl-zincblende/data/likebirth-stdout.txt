@@ -1,0 +1,35 @@
+PASS square: tau_corner = 0 (A-A born at 0 in the walk), tau_centre = 0 (B-B dies at 0); type from tau: switch, from the walk: switch range (-2, 2); minimising pairs: corner l^2 = 4 at x = ['-1', '0'], centre l^2 = 4 at x = ['0', '1']
+PASS square: tau_A + tau_B = 0 <= 0
+PASS square: midpoint rule l^2/4 - delta^2 = pair LP value for every inversion-symmetric like pair (8/8)
+PASS honeycomb: tau_honeycomb = -1/2 (A-A born at -1/2 in the walk), tau_centre = 1/2 (B-B dies at -1/2); type from tau: switch, from the walk: switch range (-1, 1); minimising pairs: honeycomb l^2 = 1 at x = ['0', '-1/2'], centre l^2 = 3 at x = ['-1/2', '1/2']
+PASS honeycomb: tau_A + tau_B = 0 <= 0
+PASS honeycomb: midpoint rule l^2/4 - delta^2 = pair LP value for every inversion-symmetric like pair (12/12)
+PASS kagome: tau_kagome = -1 (A-A born at -1 in the walk), tau_centre = 1 (B-B dies at None); type from tau: one like bond only, from the walk: one like bond only range (-1, 1); minimising pairs: kagome l^2 = 1 at x = ['4/3', '-2/3'], centre l^2 = 4 at x = ['-4/3', '2/3']
+PASS kagome: tau_A + tau_B = 0 <= 0
+PASS kagome: midpoint rule l^2/4 - delta^2 = pair LP value for every inversion-symmetric like pair (6/6)
+PASS bcc: tau_big = -1 (A-A born at -1 in the walk), tau_small = -1 (B-B dies at 1); type from tau: gradual, from the walk: gradual range (-3, 3); minimising pairs: big l^2 = 4 at x = ['-1', '0', '0'], small l^2 = 4 at x = ['0', '1', '1']
+PASS bcc: tau_A + tau_B = -2 <= 0
+PASS bcc: midpoint rule l^2/4 - delta^2 = pair LP value for every inversion-symmetric like pair (12/12)
+PASS delian: tau_tet = -1/8 (A-A born at -1/8 in the walk), tau_oct = 1/8 (B-B dies at -1/8); type from tau: switch, from the walk: switch range (-3/8, 3/8); minimising pairs: tet l^2 = 1/2 at x = ['0', '1', '1'], oct l^2 = 1 at x = ['1', '-1', '0']
+PASS delian: tau_A + tau_B = 0 <= 0
+PASS delian: midpoint rule l^2/4 - delta^2 = pair LP value for every inversion-symmetric like pair (96/96)
+PASS nacl: tau_Na = 0 (A-A born at 0 in the walk), tau_Cl = 0 (B-B dies at 0); type from tau: switch, from the walk: switch range (-1, 1); minimising pairs: Na l^2 = 2 at x = ['-1/2', '-1/2', '-1/2'], Cl l^2 = 2 at x = ['1/2', '-1/2', '-1/2']
+PASS nacl: tau_A + tau_B = 0 <= 0
+PASS nacl: midpoint rule l^2/4 - delta^2 = pair LP value for every inversion-symmetric like pair (96/96)
+PASS zincblende: tau_Zn = -1 (A-A born at -1 in the walk), tau_S = -1 (B-B dies at 1); type from tau: gradual, from the walk: gradual range (-3, 3); minimising pairs: Zn l^2 = 8 at x = ['-1', '-1', '-1'], S l^2 = 8 at x = ['0', '0', '2']
+PASS zincblende: tau_A + tau_B = -2 <= 0
+PASS hcpholes: tau_tet = -11/24 (A-A born at -11/24 in the walk), tau_oct = -5/24 (B-B dies at 5/24); type from tau: gradual, from the walk: gradual range (-11/24, 3/8); minimising pairs: tet l^2 = 1/6 at x = ['0', '0', '1/2'], oct l^2 = 2/3 at x = ['2/3', '2/3', '0']
+PASS hcpholes: tau_A + tau_B = -2/3 <= 0
+PASS a15: tau_Si = 1/4 (A-A born at 1/4 in the walk), tau_Cr = -3/4 (B-B dies at 3/4); type from tau: gradual, from the walk: gradual range (-5/4, 5/4); minimising pairs: Si l^2 = 3 at x = ['-1/2', '-1/2', '-1/2'], Cr l^2 = 1 at x = ['0', '1/2', '1']
+PASS a15: tau_A + tau_B = -1/2 <= 0
+PASS a15: midpoint rule l^2/4 - delta^2 = pair LP value for every inversion-symmetric like pair (24/24)
+PASS c15: tau_Mg = -5 (A-A born at -5 in the walk), tau_Cu = -9 (B-B dies at 9); type from tau: gradual, from the walk: gradual range (-11, 11); minimising pairs: Mg l^2 = 12 at x = ['-1', '-1', '1'], Cu l^2 = 8 at x = ['6', '6', '6']
+PASS c15: tau_A + tau_B = -14 <= 0
+PASS c15: midpoint rule l^2/4 - delta^2 = pair LP value for every inversion-symmetric like pair (32/32)
+PASS hbn: tau_B = 0 (A-A born at 0 in the walk), tau_N = 0 (B-B dies at 0); type from tau: switch, from the walk: switch range (-1, 1); minimising pairs: B l^2 = 3 at x = ['-1', '0'], N l^2 = 3 at x = ['1', '-1']
+PASS hbn: tau_A + tau_B = 0 <= 0
+PASS sodalite: tau_Si = 0 (A-A born at 0 in the walk), tau_Al = 0 (B-B dies at 0); type from tau: switch, from the walk: switch range (-2, 2); minimising pairs: Si l^2 = 4 at x = ['0', '0', '4'], Al l^2 = 4 at x = ['0', '0', '0']
+PASS sodalite: tau_A + tau_B = 0 <= 0
+PASS sodalite: midpoint rule l^2/4 - delta^2 = pair LP value for every inversion-symmetric like pair (24/24)
+33/33 PASS
+FINAL ok
