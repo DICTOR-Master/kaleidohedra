@@ -5589,6 +5589,24 @@
     "retry": "never",
     "study": "2026-11-09-yantra-audit/certificates/rh345",
     "date": "2026-11-10"
+   },
+   {
+    "question": "AB line: is the quasicrystal the turning point of the line of crystals?",
+    "method": "ab_turn_check.py: symbolic map + exact star frequencies on Pell pairs",
+    "status": "SETTLED (proved)",
+    "result": "t <-> 1/(2t) is a 45-degree turn of the whole scheme; single fixed point 1/sqrt2 (AB); Pell pairs 2/3-3/4, 5/7-7/10, 12/17-17/24, 29/41-41/58 identical",
+    "retry": "never",
+    "study": "2026-11-10-ab-line",
+    "date": "2026-11-10"
+   },
+   {
+    "question": "Threshold curve in the two-slope family: certified proof",
+    "method": "triple_signs.py (degeneracy scan) + threshold_cert.py (interval boxes)",
+    "status": "PAUSED",
+    "result": "only ONE degeneracy on drawn segments in [0.6,0.86]^2 (t4 leg through t5 corner, + mirror); certified sweep blocked: 721-term H1 cancellation makes naive/centred intervals too wide (margins down to 5e-6); needs Taylor models",
+    "retry": "only with Taylor-model enclosures",
+    "study": "2026-11-10-g1-e1-exact",
+    "date": "2026-11-10"
    }
   ]
  },
