@@ -1,6 +1,6 @@
 """Natural cap for the spherical yantra (DICTO 11-08: 'leaning towards Cleos'): choose the cap so the upper great triangle t7 is as
 near as possible a face of the spherical icosahedron (the Cleo-Icos seen from its centre: equilateral, angles 72, sides 63.4349).
-Yantra: the perfect one (viewpoint.json V1). For cap angular radius RHO, compute t7's spherical angles and sides; solve tip angle = 72."""
+Yantra: the perfect one (viewpoint.json V1). For cap angular radius RHO, compute t7's spherical angles and sides; show that no cap gives tip angle 72 (the root search of 8 Nov had no sign change)."""
 import json, math
 import numpy as np
 from scipy.optimize import brentq
@@ -17,9 +17,14 @@ def side(A, B): return math.degrees(math.acos(np.clip(np.dot(A, B), -1, 1)))
 def report(rho, i=7):
     L, R, A = tri(i, rho); return ang(A, L, R), ang(L, A, R), side(A, L), side(L, R)
 ICO_SIDE = math.degrees(math.atan(2))          # 63.4349 deg: arc between adjacent icosahedron vertices
-rho = brentq(lambda r: report(r)[0] - 72, math.radians(5), math.radians(89))
-tip, base, s1, s2 = report(rho)
-print(f'cap angular radius {math.degrees(rho):.6f} deg: t7 tip angle {tip:.6f}, base angles {base:.6f}, sides {s1:.6f} and base {s2:.6f}  (icosahedron face: 72, 72, {ICO_SIDE:.4f})')
-L3, R3, A3 = tri(3, rho); print(f'  lower great triangle t3 there: tip {ang(A3, L3, R3):.4f}, base angles {ang(L3, A3, R3):.4f}, sides {side(A3, L3):.4f}, base {side(L3, R3):.4f}')
-json.dump({'rho_deg': math.degrees(rho)}, open('cleo-cap.json', 'w'))
-print('FINAL ok' if abs(tip - 72) < 1e-9 else 'FINAL FAIL: tip angle not 72')
+# Finding (paper #103 sec. 11): no cap works. Scan cap radii 0.01..89 deg: the tip angle starts above 72 (flat limit = flat tip angle)
+# and only grows, and tip minus base angle keeps one sign, so t7 is never an exact spherical icosahedron face.
+flat_tip = math.degrees(2 * math.atan(w[7] / (a[7] - b[7]) if a[7] > b[7] else w[7] / (b[7] - a[7])))
+rows = [(r,) + report(math.radians(r)) for r in np.linspace(0.01, 89, 8901)]
+tips = [t for _, t, *_ in rows]; diffs = [t - bs for _, t, bs, *_ in rows]
+print(f'flat tip angle of t7 {flat_tip:.4f} deg; over caps 0.01..89 deg: tip angle from {min(tips):.4f} to {max(tips):.4f}')
+print(f'tip minus base angle from {min(diffs):.4f} to {max(diffs):.4f} (one sign: never equal)')
+mono = all(t2 >= t1 - 1e-12 for t1, t2 in zip(tips, tips[1:]))
+ok = min(tips) > 72 and mono and (min(diffs) > 0 or max(diffs) < 0) and abs(min(tips) - flat_tip) < 1e-2
+json.dump({'flat_tip_deg': flat_tip, 'tip_min': min(tips), 'tip_max': max(tips), 'monotone': mono}, open('cleo-cap.json', 'w'))
+print('FINAL ok: no cap makes t7 an icosahedron face' if ok else 'FINAL FAIL: scan does not support the claim')
