@@ -5,13 +5,13 @@
   "To check (threads): the seed list of the four-dimensional queens named #64, which is The Swap Rule in Crystals; it is replaced here by #62 and #63. There is no card numbered #82, #46 or #21.",
   "To check (dates): for #8–#38a the local texts carry only the date of their current version (20 October 2026, the licence change); #1–#20, #27 and #31a–#35b have no text of their own in papers/ (findings, book chapters or short records): their lines come from the site cards.",
   "Names: every name is DICTO's choice unless a paper says otherwise (DICTO, 4 November 2026). Fallen Humpty (D102): the DICTOnary gives #62, the name is also in #63. Golden Clasp (D107) first appears in a study, not a paper.",
-  "Name clash: “golden tetrahedra” of #38a (Danzer, Mosseri–Sadoc) are not the Golden Cut Tetrahedra of #88/#89. The TI Star core (D105) is cut at (10 − √5)/19 of each edge (#78 version 3); the DICTOnary draft is corrected, the published Golden Cycle and Star Cores books at their next versions.",
+  "Name clash: “golden tetrahedra” of #38a (Danzer, Mosseri–Sadoc) are not the Golden Cut Tetrahedra of #88/#89. The TI Star core (D105) is cut at (10 − √5)/19 of each edge (#78 version 3); the DICTOnary is corrected (v1.3), the published Golden Cycle and Star Cores books at their next versions.",
   "To check (the triangle): the placement of each thread on page “The Singularity” is the compiler's reading of the papers, for DICTO to confirm.",
   "Part 5B: every outside find was checked against its abstract or a reliable record (column “checked”); none is yet read in full, all stand “to read”. Unrefereed preprints found by the search are left out. Library copies: only Hermann is held so far."
  ],
  "title": "The DICTO Concordance",
- "date": "2026-11-05",
- "version": "version 2",
+ "date": "2026-11-09",
+ "version": "version 2.2",
  "papers": {
   "1": {
    "title": "DICTO skewed rhombic dodecahedron",
@@ -543,17 +543,17 @@
   },
   "90": {
    "title": "Golden on the Octahedron, Silver on the Cube: Six Dimensions and the Golden Cut Cubes",
-   "doi": null,
+   "doi": "23931136",
    "date": "2026-11-04",
    "date_first": true,
-   "draft": true
+   "draft": false
   },
   "91": {
    "title": "Four-Dimensional Solids Whose Every Cell Is a Golden Cut",
-   "doi": null,
+   "doi": "23931389",
    "date": "2026-11-03",
    "date_first": true,
-   "draft": true
+   "draft": false
   },
   "92": {
    "title": "Aristotle's Pyramid in Layers",
@@ -770,7 +770,7 @@
     },
     {
      "n": "91",
-     "adds": "draft: 119 D·I Golden Tight Cycles close at φ, all through golden-cut stations."
+     "adds": "119 D·I Golden Tight Cycles close at φ, all through golden-cut stations."
     }
    ],
    "links": [
@@ -828,7 +828,7 @@
     },
     {
      "n": "91",
-     "adds": "draft: OG = H(μTI) ∩ φ²D*, and the Lesser and Greater Golden OG at the golden levels."
+     "adds": "OG = H(μTI) ∩ φ²D*, and the Lesser and Greater Golden OG at the golden levels."
     },
     {
      "n": "95",
@@ -1119,7 +1119,7 @@
     },
     {
      "n": "91",
-     "adds": "draft: DICTO All-Golden Polytopes in the tesseract family and in the 600-cell × 120-cell family."
+     "adds": "DICTO All-Golden Polytopes in the tesseract family and in the 600-cell × 120-cell family."
     }
    ],
    "links": [
@@ -1151,11 +1151,11 @@
     },
     {
      "n": "90",
-     "adds": "draft: the field obstruction: the Golden Cut Cubes need √2 with √5; they are Galois twins."
+     "adds": "the field obstruction: the Golden Cut Cubes need √2 with √5; they are Galois twins."
     },
     {
      "n": "91",
-     "adds": "draft: four-dimensional solids whose every cell is a golden cut."
+     "adds": "four-dimensional solids whose every cell is a golden cut."
     },
     {
      "n": "94",
@@ -1197,11 +1197,11 @@
     },
     {
      "n": "90",
-     "adds": "draft: the sections of cube × octahedron sweep from the octahedron through both golden pairs to the cube; cut = shadow picks μ = φ."
+     "adds": "the sections of cube × octahedron sweep from the octahedron through both golden pairs to the cube; cut = shadow picks μ = φ."
     },
     {
      "n": "91",
-     "adds": "draft: S(μ) = P ∩ μP*; all ten golden cuts lie on the three sweeps D·I, C·O and T·T."
+     "adds": "S(μ) = P ∩ μP*; all ten golden cuts lie on the three sweeps D·I, C·O and T·T."
     },
     {
      "n": "94",
@@ -1251,7 +1251,7 @@
   {
    "name": "All-Golden Polytopes, DICTO",
    "by": "DICTO",
-   "first": "#91 (draft)"
+   "first": "#91"
   },
   {
    "name": "Antonius",
@@ -1549,7 +1549,7 @@
   {
    "name": "Galois twins",
    "by": "DICTO",
-   "first": "#90 (draft)",
+   "first": "#90",
    "aka": "the Greater and Lesser Golden Cut Cubes (D123, D124)"
   },
   {
@@ -1579,7 +1579,7 @@
   {
    "name": "Golden OGs: Lesser Golden OG, Greater Golden OG",
    "by": "DICTO",
-   "first": "#91 (draft)"
+   "first": "#91"
   },
   {
    "name": "golden tetrahedra (Danzer, Mosseri–Sadoc tiles)",
@@ -1596,7 +1596,7 @@
   {
    "name": "DICTO Golden Tight Cycles",
    "by": "DICTO",
-   "first": "#91 (draft)"
+   "first": "#91"
   },
   {
    "name": "DICTO Golden-Regular Cuts",
@@ -3348,7 +3348,7 @@
     "3D",
     "4D"
    ],
-   "why": "icosahedral nests ×φ³; Lotus seed centres = 600-cell vertex and neighbours (#22); #91 draft"
+   "why": "icosahedral nests ×φ³; Lotus seed centres = 600-cell vertex and neighbours (#22); #91"
   },
   {
    "strand": "og",
@@ -3357,7 +3357,7 @@
     "3D",
     "6D"
    ],
-   "why": "OG in Q(√5); OG as section and hull of the six-dimensional product (#91 draft)"
+   "why": "OG in Q(√5); OG as section and hull of the six-dimensional product (#91)"
   },
   {
    "strand": "fill",
@@ -3413,7 +3413,7 @@
     "6D",
     "8D"
    ],
-   "why": "c_n = 2cos(180°/n) (#88); 4D (#89); Z6 and E8 → H4 (#90 draft)"
+   "why": "c_n = 2cos(180°/n) (#88); 4D (#89); Z6 and E8 → H4 (#90)"
   },
   {
    "strand": "sweep",
@@ -3423,7 +3423,7 @@
     "4D",
     "6D"
    ],
-   "why": "C·O sweep; rectified tesseract (#89); cube × octahedron (#90 draft)"
+   "why": "C·O sweep; rectified tesseract (#89); cube × octahedron (#90)"
   }
  ],
  "gaps": {
@@ -4085,17 +4085,37 @@
    {
     "result": "Narcissus is Goldberg's space-filler type 10-XII (1982), formula 1036-64; half the RD is a different type",
     "study": "2026-11-04-halves / prior art",
-    "goes_to": "Narcissus and Covenant (HexOct chapter), already in the draft"
+    "goes_to": "published in #98, Narcissus and Covenant (HexOct chapter)"
    },
-   "2026-11-06 gap 2 CHECKED (corrected same day): the near-miss 'rectified truncated icosahedron' (60{3}+12{5}+20{6}) is listed in Wikipedia's near-miss table and on McCooey's page. McCooey's form has REGULAR hexagons, regular pentagons and isosceles triangles, 60 short + 120 long edges (long/short = (sqrt15-sqrt3)/2): that is our cut OG on one sphere (#95 Theorem 1, already marked rediscovered). Our ALL-EQUAL-EDGE form (equilateral triangles, regular pentagons, equilateral hexagons 124.72/115.28) is NOT given in either source: arrangement known, this exact solid not found in the sources checked (Wikipedia 'Near-miss Johnson solid', dmccooey.com RectifiedTruncatedIcosahedron). Home: #95 v2 table row 'All-equal-edge version' -> 'arrangement known; this form not found (Wikipedia, McCooey)'.",
-   "2026-11-06 Narcissus vs Goldberg 10-XII: Goldberg 1982 (p.43 caption, read from the free UPC scan) defines 10-XII as 'join of two opposite-hand 7-XXIX at lateral faces'. Narcissus cut on a mirror plane = two mirror-image heptahedra, volume sqrt2/8 each (half.py, float). So Narcissus fits Goldberg's construction form; whether its half is in the 7-XXIX class needs Goldberg 1978 (Geom. Dedicata 7, 175-184; Springer paywall, no legitimate free copy found; UPCommons holds only the 1982 paper). Home: Narcissus and Covenant prior art.",
-   "2026-11-06 Golden OGs (#91 draft): same status as OG: face pattern (20 hexagons + 60 kites, 102 corners) known (Rossiter/McCooey); golden metric forms not found in sources checked (Wikipedia near-miss table, web search 'polyhedron 20 regular hexagons 60 kites 102 vertices').",
-   "2026-11-06 Route (a) step 1 (count): one keyed Narcissus has <= 6 placements per site (3 without mirror copies); Kari x2/3 slabs need 10 tile states per down site, so one piece cannot carry one tile per site. Tile+relay PAIRS need 10 x 3 = 30 states: with mirror copies 36 >= 30 passes; without them it needs >= 4-site clusters. Next: a SAT search for one key pattern with a pair decoding. Home: #97 follow-up (one-piece paper).",
-   "2026-11-06 PUBLISHED The Golden Ladder v2 (record 23990126; concept 10.5281/zenodo.23966554): whole book, 95 pp, map + ch1-2 + 3A #20, 3B #48, 4 #88, 5 #65, 6 #89, 7 #90, 8 #91, 9 E8 closing; ladder cover A by DICTO. Site shelf live 3289355. Open: ORCID line; Collected Works next weekly version lists it.",
+   {
+    "result": "2026-11-06 gap 2 CHECKED (corrected same day): the near-miss 'rectified truncated icosahedron' (60{3}+12{5}+20{6}) is listed in Wikipedia's near-miss table and on McCooey's page. McCooey's form has REGULAR hexagons, regular pentagons and isosceles triangles, 60 short + 120 long edges (long/short = (sqrt15-sqrt3)/2): that is our cut OG on one sphere (#95 Theorem 1, already marked rediscovered). Our ALL-EQUAL-EDGE form (equilateral triangles, regular pentagons, equilateral hexagons 124.72/115.28) is NOT given in either source: arrangement known, this exact solid not found in the sources checked (Wikipedia 'Near-miss Johnson solid', dmccooey.com RectifiedTruncatedIcosahedron). Home: #95 v2 table row 'All-equal-edge version' -> 'arrangement known; this form not found (Wikipedia, McCooey)'.",
+    "study": "",
+    "goes_to": ""
+   },
+   {
+    "result": "2026-11-06 Narcissus vs Goldberg 10-XII: Goldberg 1982 (p.43 caption, read from the free UPC scan) defines 10-XII as 'join of two opposite-hand 7-XXIX at lateral faces'. Narcissus cut on a mirror plane = two mirror-image heptahedra, volume sqrt2/8 each (half.py, float). So Narcissus fits Goldberg's construction form; whether its half is in the 7-XXIX class needs Goldberg 1978 (Geom. Dedicata 7, 175-184; Springer paywall, no legitimate free copy found; UPCommons holds only the 1982 paper). Home: Narcissus and Covenant prior art.",
+    "study": "",
+    "goes_to": ""
+   },
+   {
+    "result": "2026-11-06 Golden OGs (#91, published): same status as OG: face pattern (20 hexagons + 60 kites, 102 corners) known (Rossiter/McCooey); golden metric forms not found in sources checked (Wikipedia near-miss table, web search 'polyhedron 20 regular hexagons 60 kites 102 vertices').",
+    "study": "",
+    "goes_to": ""
+   },
+   {
+    "result": "2026-11-06 Route (a) step 1 (count): one keyed Narcissus has <= 6 placements per site (3 without mirror copies); Kari x2/3 slabs need 10 tile states per down site, so one piece cannot carry one tile per site. Tile+relay PAIRS need 10 x 3 = 30 states: with mirror copies 36 >= 30 passes; without them it needs >= 4-site clusters. Next: a SAT search for one key pattern with a pair decoding. Home: #97 follow-up (one-piece paper).",
+    "study": "",
+    "goes_to": ""
+   },
+   {
+    "result": "2026-11-06 PUBLISHED The Golden Ladder v2 (record 23990126; concept 10.5281/zenodo.23966554): whole book, 95 pp, map + ch1-2 + 3A #20, 3B #48, 4 #88, 5 #65, 6 #89, 7 #90, 8 #91, 9 E8 closing; ladder cover A by DICTO. Site shelf live 3289355. Open: ORCID line; Collected Works next weekly version lists it.",
+    "study": "",
+    "goes_to": ""
+   },
    {
     "what": "#47 open question 1: C + T + O with no connector",
     "result": "YES: octet layers (close-packed planes) and cube layers are flat slabs; stacked they fill space with no connector (checked: 200 000 points, studies/2026-11-06-cto-no-connectors). Never face to face (only the cube has square faces). The slab stack is not 3-periodic; 3-periodic C+T+O open.",
-    "goes_to": "#47 version 3 (draft for DICTO's read)",
+    "goes_to": "#47 version 3 (published)",
     "date": "2026-11-06"
    },
    {
@@ -4113,7 +4133,7 @@
    {
     "what": "#98 Narcissus and Covenant published (also a HexOct chapter)",
     "result": "Zenodo 24005930 (concept 24005929), 6 Nov 2026",
-    "goes_to": "HexOct next version (draft for DICTO's read); site tile (deploy queue, ask)",
+    "goes_to": "HexOct versions 8–11 (published); site tile done",
     "date": "2026-11-06"
    },
    {
@@ -5164,9 +5184,6 @@
  },
  "destinations_2026_11_05": {
   "note": "Sorted 5 Nov 2026 (DICTO: new output does not all go together; the Concordance decides where each result lives).",
-  "OG paper #31, Version 5 (draft in reading folder)": [
-   "→ one-line pointer to Pentagons for the Kites (content lives there)"
-  ],
   "Bull-horns octet paper (2026-10-18-bull-horns), next version": [
    "→ one-line pointer to Pentagons for the Kites (content lives there)"
   ],
@@ -5191,14 +5208,6 @@
   "Watch list, no claim": [
    "C60 / fullerite fcc link to the close-packing work"
   ],
-  "NEW PAPER: Pentagons for the Kites (draft, working title; DICTO to name and number)": [
-   "Story of DICTO's pentagons-for-kites idea: Theorem 1 (OG sphere corners = football edge midpoints), equal-edge and chiral truncated-triangle versions, Dehn and packing, octet kit, Bull-horns adaptor adapted; what it settled, did not settle, opened; shapes on the way. Then disperses as one-line pointers into OG #31 v5, Bull-horns, Golden Bodhi Pyrochlore and gyrated-octet versions (batched).",
-   "Exact Dehn of the cut OG nonzero (PROOF: two Q-independent edge lengths; neither dihedral a rational multiple of π) — replaces the float screen; release item done",
-   "DICTO idea 5 Nov: regular-triangle cut OG on a diamond net; joints on the pyrochlore sites; no overlap; corners miss by 0.0475 edge; twisted hexagonal connector makes joins face to face (float). Gap filling open → candidate for v2 or the GBP thread",
-   "Pyrochlore → bcc TO packing: cut OG inside every other TO (diamond), touching 8 hexagons; other TOs empty and whole; jacket = 8 hexagon rings (L/R) + 6 square pieces; kit of 4 shapes (float). Candidate: v2 of Pentagons for the Kites, or link to GBP / Kelvin-TO thread",
-   "Exact Dehn of the ORIGINAL OG nonzero (proof; kite ridges 156.72°, hexagon rims 156.20° shared with the cut OG): no golden-rhombi-only completion of any OG or cut-OG packing; obstruction lives only on the edges.",
-   "Original OG, complete nearly golden fill (DICTO's 'completely golden' attempt): OGs on a golden rhombohedral lattice of their own five-fold axes; OG + one golden skin + one prolate golden rhombohedron fill space exactly at every brick size; skin halves with the brick edge (2.9% of space at t/96, 93% of the gap golden); never zero by the exact Dehn proof. Float geometry, exact counting."
-  ],
   "Tools (method)": [
    "Spherical-wave imaging (DICTO 5 Nov): waves from the solid, at the network's own wavelength the dark half lies wholly in the gaps (pyrochlore cell: 80% of gaps, 0% of solid). Companion to the harmonic fingerprint (#94).",
    "Wave atoms-bonds-rings-cages (DICTO 5 Nov: 'bonding of atoms and views inside cells'): on the densest cut-OG lattice packing (0.776244), per cell 1 atom, 5 bonds, 5 rings, 1 cage (Morse 0): one gap room per copy opening through 8 windows; one contact pair reads as a window, not a bond (triangle contacts?). Gap = connected network of rooms. Float.",
@@ -5208,13 +5217,6 @@
    "Room COMPLETED (DICTO 'we need to complete'): room = 1055 whole golden rhombohedra + 12172 trimmed golden rhombohedra of one coherent tiling (3 phi-steps); volumes add to the room within 7e-5 (float); tiles pairwise disjoint (exact pair checks). Only trimmed pieces carry the Dehn invariant.",
    "Bull-horns basis (DICTO 5 Nov): the Bull-horns OG adaptor (rebuilt exactly, 0.111898) completed by one coherent golden tiling: 5 phi-steps, 12483 whole golden rhombohedra = 66.3% + 83924 trimmed; sum = adaptor to 3e-5 (float). OG 77.4% of space (bcc double network) → golden share of all space 14.9%.",
    "Completely golden fill: NO (strong numerical) — OG angles (156.20°, 156.72°, cut OG 159.92°) have no integer relation with the golden-tetrahedra angles β, δ and π (PSLQ, 80 digits, ≤10^6); answers #96 §6 → #96 v3 or Pentagons/OG next version; proof would need a Conway–Radin–Sadun-type result."
-  ],
-  "NEW PAPER: Reading the Voids (DICTO's title 5 Nov; draft, 8 pp; number DICTO's)": [
-   "Opens with the resonance/harmonics line (#94, 4D fingerprint, Concordance Part 5, Golden Ladder ch2 + E8 masses) that led to spherical waves",
-   "Theorem 1 (exact): Dehn(OG), Dehn(cut OG) ≠ 0 → also into Pentagons for the Kites (beside its Theorem 2) and the OG paper's next version",
-   "Theorem 2 (exact): room adaptors and the Bull-horns adaptor carry −Dehn(OG) (or a third) → no rational-angle dissection; → Golden Bodhi Pyrochlore (#36) next version",
-   "Toolkit (waves, critical points, harmonics, golden bricks, certificates) → later a method chapter (Quanta of Space / Concordance tools / Golden Ladder harmonics thread)",
-   "Open lead: golden tetrahedra (Ogievetsky–Papadopolos 1999; AXE, CLEO #19) may cancel the OG's Dehn invariant → a completely golden fill"
   ],
   "PUBLISHED 5 Nov": [
    "#95 Pentagons for the Kites v1 + v2 (record 23968770), concept 10.5281/zenodo.23968270",
@@ -5248,6 +5250,24 @@
    "Site: shelf, order, news LIVE 12:00; #95/#96 tiles 21:00",
    "ORCID: 100/100",
    "Collected Works v50 23970302 (86 papers; #94, #95, #96 double-listed)"
+  ],
+  "OG paper #31, Version 5 (published)": [
+   "→ one-line pointer to Pentagons for the Kites (content lives there)"
+  ],
+  "#95 Pentagons for the Kites (published)": [
+   "Story of DICTO's pentagons-for-kites idea: Theorem 1 (OG sphere corners = football edge midpoints), equal-edge and chiral truncated-triangle versions, Dehn and packing, octet kit, Bull-horns adaptor adapted; what it settled, did not settle, opened; shapes on the way. Then disperses as one-line pointers into OG #31 v5, Bull-horns, Golden Bodhi Pyrochlore and gyrated-octet versions (batched).",
+   "Exact Dehn of the cut OG nonzero (PROOF: two Q-independent edge lengths; neither dihedral a rational multiple of π) — replaces the float screen; release item done",
+   "DICTO idea 5 Nov: regular-triangle cut OG on a diamond net; joints on the pyrochlore sites; no overlap; corners miss by 0.0475 edge; twisted hexagonal connector makes joins face to face (float). Gap filling open → candidate for v2 or the GBP thread",
+   "Pyrochlore → bcc TO packing: cut OG inside every other TO (diamond), touching 8 hexagons; other TOs empty and whole; jacket = 8 hexagon rings (L/R) + 6 square pieces; kit of 4 shapes (float). Candidate: v2 of Pentagons for the Kites, or link to GBP / Kelvin-TO thread",
+   "Exact Dehn of the ORIGINAL OG nonzero (proof; kite ridges 156.72°, hexagon rims 156.20° shared with the cut OG): no golden-rhombi-only completion of any OG or cut-OG packing; obstruction lives only on the edges.",
+   "Original OG, complete nearly golden fill (DICTO's 'completely golden' attempt): OGs on a golden rhombohedral lattice of their own five-fold axes; OG + one golden skin + one prolate golden rhombohedron fill space exactly at every brick size; skin halves with the brick edge (2.9% of space at t/96, 93% of the gap golden); never zero by the exact Dehn proof. Float geometry, exact counting."
+  ],
+  "#96 Reading the Voids (published)": [
+   "Opens with the resonance/harmonics line (#94, 4D fingerprint, Concordance Part 5, Golden Ladder ch2 + E8 masses) that led to spherical waves",
+   "Theorem 1 (exact): Dehn(OG), Dehn(cut OG) ≠ 0 → also into Pentagons for the Kites (beside its Theorem 2) and the OG paper's next version",
+   "Theorem 2 (exact): room adaptors and the Bull-horns adaptor carry −Dehn(OG) (or a third) → no rational-angle dissection; → Golden Bodhi Pyrochlore (#36) next version",
+   "Toolkit (waves, critical points, harmonics, golden bricks, certificates) → later a method chapter (Quanta of Space / Concordance tools / Golden Ladder harmonics thread)",
+   "Open lead: golden tetrahedra (Ogievetsky–Papadopolos 1999; AXE, CLEO #19) may cancel the OG's Dehn invariant → a completely golden fill"
   ]
  },
  "house_rules": {
@@ -5899,7 +5919,7 @@
    "what": "\"cosine (7 − 36√5)/109, about 47.6°\"",
    "reason": "arccos((7 − 36√5)/109) = 132.40°; 47.6° is its supplement: a sign dropped between the cosine and the angle",
    "found_by": "Chinese translation check; recomputed",
-   "status": "FIXED in The DICTOnary of Atoms v1.3 draft",
+   "status": "FIXED in The DICTOnary of Atoms v1.3",
    "date": "2026-11-07"
   },
   {
@@ -5908,7 +5928,7 @@
    "what": "\"(12 + φ⁻³)/φ⁶ = 0.6823 per step (68.19%)\"",
    "reason": "the value is 0.68189; 0.6823 is a typing slip (the 68.19% beside it is right)",
    "found_by": "Chinese translation check; recomputed",
-   "status": "FIXED in The DICTOnary of Atoms v1.3 draft",
+   "status": "FIXED in The DICTOnary of Atoms v1.3",
    "date": "2026-11-07"
   },
   {
@@ -5917,7 +5937,7 @@
    "what": "one letter c for two numbers",
    "reason": "c = √((5+2√5)/15) ≈ 0.7947 in Theorem 2 but c = 10/φ⁴ ≈ 1.4590 in Theorem 3 and the Cleo Towers line (c³ ≈ 3.106): two quantities share a symbol",
    "found_by": "Chinese translation check; recomputed",
-   "status": "FIXED in The DICTOnary of Atoms v1.3 draft",
+   "status": "FIXED in The DICTOnary of Atoms v1.3",
    "date": "2026-11-07"
   },
   {
@@ -5926,7 +5946,7 @@
    "what": "status \"first found by Alicia Boole Stott (1900)\"",
    "reason": "text copied from the known shapes Alicia/Unicorn/Bandersnatch (W48/W58/W60); D85 has no W-number: either the status or the list is wrong",
    "found_by": "Chinese translation check",
-   "status": "FIXED in The DICTOnary of Atoms v1.3 draft",
+   "status": "FIXED in The DICTOnary of Atoms v1.3",
    "date": "2026-11-07"
   },
   {
@@ -5935,7 +5955,7 @@
    "what": "\"eighty-nine papers\"",
    "reason": "count not updated: the catalogue cites papers up to #96",
    "found_by": "Chinese translation check",
-   "status": "FIXED in The DICTOnary of Atoms v1.3 draft",
+   "status": "FIXED in The DICTOnary of Atoms v1.3",
    "date": "2026-11-07"
   },
   {
@@ -5944,7 +5964,7 @@
    "what": "\"twelve of DICTO's solids\" includes David, Delilah, Goliath, Icosaxes, Unborn Axes",
    "reason": "some of these were made first by others (known-shapes section)",
    "found_by": "Chinese translation check",
-   "status": "FIXED in The DICTOnary of Atoms v1.3 draft",
+   "status": "FIXED in The DICTOnary of Atoms v1.3",
    "date": "2026-11-07"
   },
   {
@@ -5953,7 +5973,7 @@
    "what": "Delilah counted in both the classical Disc Vacuus and the Isofin census of 21",
    "reason": "possible double count, or two different roles not explained",
    "found_by": "Chinese translation check",
-   "status": "FIXED in The DICTOnary of Atoms v1.3 draft",
+   "status": "FIXED in The DICTOnary of Atoms v1.3",
    "date": "2026-11-07"
   },
   {
@@ -5962,7 +5982,7 @@
    "what": "A.51 before A.50; ATOM-13x13 vs 13×13; phi^2, lambda, tau, deg beside φ, λ, °; hyphen vs en dash; \"Grunbaum\", \"Kovacevic\" without diacritics",
    "reason": "generated text not normalised",
    "found_by": "Chinese translation check",
-   "status": "FIXED in The DICTOnary of Atoms v1.3 draft",
+   "status": "FIXED in The DICTOnary of Atoms v1.3",
    "date": "2026-11-07"
   },
   {
@@ -5971,7 +5991,7 @@
    "what": "D107 cites a study slug instead of a DOI; D2, D3, D106–D109, D133, D134 and some rows lack \"Told in\"",
    "reason": "catalogue fields not filled for late entries",
    "found_by": "Chinese translation check",
-   "status": "FIXED in The DICTOnary of Atoms v1.3 draft",
+   "status": "FIXED in The DICTOnary of Atoms v1.3",
    "date": "2026-11-07"
   },
   {
@@ -5980,7 +6000,7 @@
    "what": "\"Cleo-Ico\" beside \"Cleo-Icos\"",
    "reason": "one shape, two spellings (one name per shape)",
    "found_by": "Japanese and Chinese translation checks",
-   "status": "FIXED in The DICTOnary of Atoms v1.3 draft and Quanta of Space v2.2 draft",
+   "status": "FIXED in The DICTOnary of Atoms v1.3 and Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -5989,7 +6009,7 @@
    "what": "Hexa \"holds as much as six and two-thirds Jewels\" vs \"about eight Jewels in volume\"",
    "reason": "two volume statements disagree",
    "found_by": "Chinese translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -5998,7 +6018,7 @@
    "what": "\"the icosahedron cut into 20 pyramids from its centre, the Cleo-Icos\"",
    "reason": "reads as if the Cleo-Icos were the whole cut icosahedron; it is one pyramid",
    "found_by": "Chinese translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6007,7 +6027,7 @@
    "what": "credits \"the pyrochlore arrangement\" to DICTO",
    "reason": "the entry never mentions a pyrochlore arrangement",
    "found_by": "Chinese translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6016,7 +6036,7 @@
    "what": "lead: ten diamonds, every edge equal; figure: face-diagonal sweep, ten long faces",
    "reason": "lead and figure may show different members (slide φ√2 vs 1)",
    "found_by": "Chinese translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6025,7 +6045,7 @@
    "what": "\"Kepler's stars on every other cell\"",
    "reason": "ambiguous: stella octangula or great stellated dodecahedron",
    "found_by": "Chinese translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6034,7 +6054,7 @@
    "what": "\"pairs are slices … at 1/φ² and 1/φ\"",
    "reason": "ambiguous which pair lies at which depth",
    "found_by": "Chinese translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6043,7 +6063,7 @@
    "what": "exhibition piece \"twelve dodecahedra\" vs Dodeca-13 thirteen",
    "reason": "the centre is not mentioned",
    "found_by": "Chinese translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6052,7 +6072,7 @@
    "what": "\"132 new shapes\"",
    "reason": "count not updated: D1–D134",
    "found_by": "Chinese translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6061,7 +6081,7 @@
    "what": "\"Proved in paper #52\" beside \"not yet published in a paper\"",
    "reason": "sentence left over from before #52 was published",
    "found_by": "Chinese translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6070,7 +6090,7 @@
    "what": "\"Four corners give the diamond network\"",
    "reason": "none of the six hulls listed has four corners",
    "found_by": "Chinese translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6079,7 +6099,7 @@
    "what": "two different DICTO quotations (\"hemispherical really, or…\" / \"hemispherical, or…\"); \"adaptor\" and \"adapter\" mixed",
    "reason": "quotation copied twice from different notes; spelling not normalised",
    "found_by": "Chinese translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6106,7 +6126,7 @@
    "what": "Pell multiplets written \"(0, P_n, P_{n+1})\"",
    "reason": "notation slip: the printed dimensions 112, 4928, 905520, … are (0, P_n, Q_n) with Q = A001333 (as the study README has); the printed notation would give 378, 19656, … and limit 2.547, not 1 + √2",
    "found_by": "OEIS candidate search; recomputed",
-   "status": "FIXED in The Golden Ladder v6 draft",
+   "status": "FIXED in The Golden Ladder v6",
    "date": "2026-11-07"
   },
   {
@@ -6115,7 +6135,7 @@
    "what": "\"20 places/corners where three triangles meet\"",
    "reason": "a solid of 60 triangles, 32 corners, 90 edges has corner degrees summing to 180 = 12×5 + 20×6: the 20 are three-FOLD corners where SIX triangles meet (as #35a itself says later)",
    "found_by": "Farsi translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6124,7 +6144,7 @@
    "what": "\"With the 13 dodecahedra, these 63 pieces…\" reads as 13 + 63",
    "reason": "63 = 13 + 30 + 20 already includes the dodecahedra",
    "found_by": "Farsi translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6133,7 +6153,7 @@
    "what": "\"the tips of the Shields are the corners of … the pentakis dodecahedron\"",
    "reason": "only 20 tips: they are the 20 six-fold corners of its 32",
    "found_by": "Farsi translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6142,7 +6162,7 @@
    "what": "\"30 rhombi and 60 kites\" (90 faces)",
    "reason": "the OG has 102 corners (20 hexagons + 60 kites), so its corner-to-face partner should have 102 faces: 12 pentagons appear to be missing from the sentence",
    "found_by": "Farsi translation check",
-   "status": "CHECKED: text right (KRE 92 corners, 180 edges, 90 faces: hull of og-family-solids.json; the 12 five-fold OG planes touch it at a corner only); clarifying clause added in Quanta of Space v2.2 draft",
+   "status": "CHECKED: text right (KRE 92 corners, 180 edges, 90 faces: hull of og-family-solids.json; the 12 five-fold OG planes touch it at a corner only); clarifying clause added in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6151,7 +6171,7 @@
    "what": "Kyushindo is \"the philosophy\" (#22) and \"the martial art\" (#43) of Kenshiro Abbe",
    "reason": "two descriptions of one thing; it is both (a martial art with its principles)",
    "found_by": "Farsi translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6160,7 +6180,7 @@
    "what": "#89 listed twice with two titles (Bonds section 7 and Four dimensions)",
    "reason": "one paper, one DOI; the Bonds entry is its section",
    "found_by": "Farsi translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6169,7 +6189,7 @@
    "what": "\"the three regular solids that build the octet: the tetrahedron, the octahedron and the cube\"",
    "reason": "the octet is built of tetrahedra and octahedra only; the cube is the other end of the Delian slider",
    "found_by": "Farsi translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6178,7 +6198,7 @@
    "what": "golden ratio written τ (Fig. B2, \"Physical anchors\") and φ elsewhere",
    "reason": "notation not unified",
    "found_by": "Farsi translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6187,7 +6207,7 @@
    "what": "\"trapezoid parallel sides² … (≈ 2.3839 and 1.9781)\"",
    "reason": "the values are the sides; their squares are ≈ 5.683 and 3.913 (height and legs confirm the sides)",
    "found_by": "Farsi translation check",
-   "status": "FIXED in The DICTOnary of Atoms v1.3 draft",
+   "status": "FIXED in The DICTOnary of Atoms v1.3",
    "date": "2026-11-07"
   },
   {
@@ -6196,7 +6216,7 @@
    "what": "\"3/8 − 2^(2/3)/4 ≈ −0.0218\"",
    "reason": "the value is −0.021850…, which rounds to −0.0219",
    "found_by": "Farsi translation check",
-   "status": "FIXED in The DICTOnary of Atoms v1.3 draft",
+   "status": "FIXED in The DICTOnary of Atoms v1.3",
    "date": "2026-11-07"
   },
   {
@@ -6259,7 +6279,7 @@
    "what": "\"(Rovelli and Upadhya, 1998)\" cited in the text but missing from the sources list",
    "reason": "reference not listed",
    "found_by": "Arabic translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6268,7 +6288,7 @@
    "what": "\"the five pyramids that Aristotle argued over\"",
    "reason": "it was his commentators who argued over them, not Aristotle (as the text says earlier)",
    "found_by": "Arabic translation check",
-   "status": "FIXED in Quanta of Space v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6304,7 +6324,7 @@
    "what": "\"the word polytope is credited to her\"",
    "reason": "Reinhold Hoppe coined the German \"Polytop\" (1882); Alicia Boole Stott introduced the word into English",
    "found_by": "Arabic translation check",
-   "status": "FIXED in Quanta v2.2 draft; Queens book and the ja/zh/fa/ar notes at their next versions",
+   "status": "FIXED in Quanta of Space v2.2; Queens book and the ja/zh/fa/ar notes at their next versions",
    "date": "2026-11-07"
   },
   {
@@ -6313,7 +6333,7 @@
    "what": "\"12 capped icosahedra (J11)\"",
    "reason": "J11 (gyroelongated pentagonal pyramid) is the icosahedron with one corner pyramid removed: diminished, not capped",
    "found_by": "Arabic translation check",
-   "status": "FIXED in Quanta v2.2 draft",
+   "status": "FIXED in Quanta of Space v2.2",
    "date": "2026-11-07"
   },
   {
@@ -6571,6 +6591,12 @@
     "mess_up": "hard-wired helper machines kept being 'lost': dicto-node was set up by IP (192.168.0.7) and the router's DHCP moved it to .12; DICTO: 'you keep losing connection with hard wired equipment and how to solve the problem permanently'",
     "guard": "(1) ~/dicto-alerts/findhosts.sh, run by show.sh each session/step: checks dicto-big-brother and dicto-node by ssh name; if one fails, scans the LAN by hostname, rewrites its HostName in ~/.ssh/config and reports (tested: wrong address healed in 6 s). (2) PERMANENT CURE DONE 11-09: avahi enabled on dicto-node by DICTO; both helpers now reached by name (NAME.local).",
     "where": "~/dicto-alerts/findhosts.sh, ~/.ssh/config"
+   },
+   {
+    "date": "2026-11-09",
+    "mess_up": "the Concordance (published v2.1) still called #90 and #91 'draft' and carried other stale 'draft' notes after publication; its paper list lacked #97-#102 — DICTO: 'the document meant to keep us on track isn't on track'",
+    "guard": "~/dicto-alerts/concordance_check.py, run by show.sh every session/step: every paper card on the site must be in concordance.json papers with a DOI on that card, not marked draft, and not called '(draft)' anywhere outside ledger/rules; tested with three planted faults (all caught), clean on real data",
+    "where": "~/dicto-alerts/concordance_check.py"
    }
   ],
   "practice": [

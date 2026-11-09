@@ -155,7 +155,7 @@ for x in D['outside']:
     w(f'<tr><td>{e(x["field"])}</td><td>{e(x["cite"])}</td><td>{e(x["says"])}</td><td>{e(x["touches"])}</td><td>{e(x["kind"])}</td>'
       f'<td>{"yes" if x["lib"] else "to fetch"}</td><td>{e(x["conf"])}</td><td>{e(x["status"])}</td></tr>')
 w('</tbody></table>')
-w('<h3>5.6 Waiting for their volume</h3><p>Results found since the last version, with their study folder and the volume or version they go into (released as soon as DICTO has read them).</p><table class="big"><thead><tr><th>Result</th><th>Study</th><th>Goes to</th></tr></thead><tbody>' + ''.join(f'<tr><td>{e(x["result"])}</td><td>{e(x["study"])}</td><td>{e(x["goes_to"])}</td></tr>' for x in G.get('waiting', [])) + '</tbody></table>')
+w('<h3>5.6 Waiting for their volume</h3><p>Results found since the last version, with their study folder and the volume or version they go into (released as soon as DICTO has read them).</p><table class="big"><thead><tr><th>Result</th><th>Study</th><th>Goes to</th></tr></thead><tbody>' + ''.join(f'<tr><td>{e(str(x.get("result", "")))}</td><td>{e(str(x.get("study", "")))}</td><td>{e(str(x.get("goes_to", "")))}</td></tr>' for x in G.get('waiting', [])) + '</tbody></table>')
 w('<p>Fields not yet consulted, named by the search: dislocation theory (each h ↔ c swap is a partial-dislocation glide); commensurate–incommensurate transitions; '
   'semi-discrete optimal transport (the weight walk); martensitic paths (Burgers, Kurdjumov–Sachs); topological interlocking and architected materials; '
   'realisation spaces of polytopes; hypersimplices (the octahedron is Δ(2, 4)); fulleride and cluster chemistry; multiply-twinned nanoparticles; hyperbolic tilings and holography.</p>')
@@ -172,7 +172,7 @@ if _os.path.exists(_cm):
     w(f'<p>Scanned: {CM["scanned_files"]} study scripts. Only {len(CM["scripts_using_studies_lib"])} import the shared library studies/_lib; most methods exist as copies.</p>')
     w('<table class="big"><thead><tr><th>Method</th><th>Scripts</th><th>Studies</th><th>Studies using it (first 8)</th></tr></thead><tbody>')
     for m, v in CM['methods'].items():
-        w(f'<tr><td>{e(m)}</td><td>{len(v["scripts"])}</td><td>{len(v["studies"])}</td><td>{e(", ".join(v["studies"][:8]))}</td></tr>')
+        w(f'<tr><td>{e(m)}</td><td>{len(v["scripts"])}</td><td>{len(v["studies"])}</td><td>{e(", ".join(v["studies"]))}</td></tr>')
     w('</tbody></table>')
     top = list(CM['duplicated_functions_3plus_studies'].items())[:15]
     w('<p>Functions defined separately in three or more studies (most copied first): ' + e('; '.join(f'{k} ({len(v)})' for k, v in top)) + '.</p>')
