@@ -5553,6 +5553,15 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-09",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "Rhombus yantra (u=v, (b),(c)): at which slope do the two tiny extra pieces appear?",
+    "method": "rhombus_threshold.py, 60-digit continuation + concurrency root",
+    "status": "SETTLED numerically (50 digits); exact polynomial open",
+    "result": "u* = 0.7459965371842951815858597877 (t4 right leg, t5 base, t6 right leg concur); below 43 pieces all triangles, above 45 (41); bindu centred only at 0.75044 > u*: no rhombus yantra with (b),(c),(d) and 43",
+    "retry": "only for the exact minimal polynomial",
+    "study": "2026-11-08-sri-yantra",
+    "date": "2026-11-10"
    }
   ]
  },
