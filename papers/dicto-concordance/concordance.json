@@ -5495,6 +5495,14 @@
     "retry": "HALVES (DICTO 9 Nov: 'it's half RDs that will double, or TOs, or half TOs'): search half-RD and half-TO (each cutting plane: hexagonal mid-section, square mid-section, etc.) for exact rep-tiles",
     "study": "inline check 9 Nov (dbb)",
     "date": "2026-11-09"
+   },
+   {
+    "question": "half-RD / half-TO (hexagonal, square, 2-fold central cuts) as rep-tiles, copies at LATTICE-CELL positions only",
+    "status": "UNDECIDED",
+    "result": "no lattice-position dissection for k = 2, 3, 4 (e.g. half-RD 19 of 27 whole at k = 3); NOT yet tested: copies in any position/orientation (true rep-tile), other anchors (holes)",
+    "retry": "exact-cover (SAT) search of k·half by k³ congruent halves in free positions and orientations (DICTO's hunch)",
+    "study": "inline check 9 Nov (dbb)",
+    "date": "2026-11-09"
    }
   ]
  },
