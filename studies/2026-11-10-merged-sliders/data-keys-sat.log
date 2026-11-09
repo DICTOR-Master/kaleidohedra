@@ -1,0 +1,11 @@
+geometry for 4 words in 4 s
+sanity unmarked: {'c (ABC)': True, 'h (AB)': True, 'chh (ABCB... )': True, 'cchh (ABCACB)': True}
+sanity hexagon c-key: {'c (ABC)': True, 'h (AB)': False, 'chh (ABCB... )': False, 'cchh (ABCACB)': False}
+mixed 1538 patterns allow []  e.g. {('r0', 'T'): -1, ('r0', 'O'): 1, ('r0', 'A1'): -1, ('r1', 'T'): -1, ('r2', 'T'): 1, ('r2', 'A1'): -1, ('r2', 'A2'): -1}
+mixed  462 patterns allow ['c (ABC)', 'h (AB)', 'chh (ABCB... )', 'cchh (ABCACB)']  e.g. {('r0', 'O'): -1, ('r1', 'T'): 1, ('r1', 'O'): -1, ('r1', 'A1'): 1, ('r2', 'O'): 1, ('r2', 'A1'): -1, ('r2', 'A2'): 1}
+same    48 patterns allow ['c (ABC)', 'h (AB)', 'chh (ABCB... )', 'cchh (ABCACB)']  e.g. {('r2', 'T'): -1, ('r2', 'A1'): -1, ('r1', 'T'): -1, ('r1', 'A1'): -1, ('r0', 'T'): -1, ('r0', 'A1'): -1}
+same    32 patterns allow []  e.g. {('r2', 'T'): -1, ('r2', 'O'): -1, ('r2', 'A1'): -1, ('r2', 'A2'): -1, ('r1', 'T'): -1, ('r1', 'O'): -1, ('r1', 'A1'): -1, ('r1', 'A2'): -1, ('r0', 'T'): -1, ('r0', 'O'): -1, ('r0', 'A1'): -1, ('r0', 'A2'): -1}
+patterns that forbid pure c but allow h-words: []
+patterns that allow only the mixed words: []
+total 158 s
+FINAL ok

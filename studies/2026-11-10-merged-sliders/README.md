@@ -43,3 +43,16 @@ so a bump meets a bump), none allows both. So at the hexagon, c is keyable and h
 hexagon is unmarked. A piece forcing an aperiodic c/h word must carry its decisive keys on the faces BETWEEN layers (the rhombi),
 not on the hexagon.
 Next: keys on the inter-layer rhombus faces of the half-cell; which force h, which carry hierarchy.
+
+## Step 2(b): keys on the rhombi between layers (keys_sat.py, FINAL ok; data-keys-sat.log)
+Model: half-cell packings of four stacking words (ABC, AB, ABCB, ABCACB) on a periodic 3 x 3 patch; each half placed in any of 6
+ways; signs on the four corners of each of the piece's three upper rhombi; exact SAT (Glucose) per pattern. Sanity: unmarked piece
+fits every word; the alternating hexagon key fits only c (matches 2(a)); every shared rhombus matches exactly 4 corners.
+**Result: 2080 patterns (80 alike on all three rhombi, 2000 random mixed): 510 allow EVERY word, 1570 allow NONE, 0 allow only some.**
+Keys between layers cannot tell c from h: the inter-layer faces meet the same way whichever letter the next layer takes.
+
+**Theorem (computational, for this model).** No key pattern on a half-cell piece (the upper half of the RD = of the TRD), on its
+hexagon (2(a)) or on its rhombi between layers (2(b)), can force an h layer. Hence no keyed half-cell can force an aperiodic c/h word:
+a piece that does must reach across the layer interface (a whole cell, or a piece straddling the interface such as Narcissus).
+This is the 'impossibility first' step of aim 3 (one piece, any stacking).
+Not covered: keys on the six in-layer side faces; pieces that are not half-cells.
