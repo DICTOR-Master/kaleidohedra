@@ -5625,6 +5625,15 @@
     "retry": "never",
     "study": "2026-11-10-ab-line",
     "date": "2026-11-10"
+   },
+   {
+    "question": "Icosahedral line (cubic approximants): turn or hop?",
+    "method": "ico_line.py: Galois-pair solve for A, symbolic check",
+    "status": "SETTLED (projection level)",
+    "result": "integer A (det -1): P(x)A=(2x+1)P(g(x)), g=h^3 (Fibonacci hop cubed), fixed point phi: a HOP; tile-level check open",
+    "retry": "only the tile-level check",
+    "study": "2026-11-10-ab-line",
+    "date": "2026-11-10"
    }
   ]
  },
