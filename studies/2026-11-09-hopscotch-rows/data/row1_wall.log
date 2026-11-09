@@ -1,0 +1,17 @@
+beta* = (a**2*b*c**2*sqrt(1 - b**2) + a*b**2*c*sqrt(-a**2*c**2 + c**2 + (a - b)**2) - a*c*sqrt(-a**2*c**2 + c**2 + (a - b)**2) - b*c**2*sqrt(1 - b**2) - b*sqrt(1 - b**2)*(a - b)**2)/(-a**2*c**2*sqrt(1 - b**2) - b**2*c*sqrt(-a**2*c**2 + c**2 + (a - b)**2) + c**2*sqrt(1 - b**2) + c*sqrt(-a**2*c**2 + c**2 + (a - b)**2) + sqrt(1 - b**2)*(a - b)**2)
+K1: beta* (one linear wall) = -0.0405464286398567528042933305097 | viewpoint.py root = -0.0405464286398567528042933305097 | closed form -0.0405464286398567528042933305097
+V1 beta* = 4.6044e-41   GF1 beta* = 4.1816e-41
+GF1 preimage: beta_GF = -0.11685233666123018165  wall of preimage = -0.11685233666123018165
+  slopes of the great triangles of the preimage: ['0.38076221708506', '0.308777032986215', '0.618033988749895', '0.273733781070102', '0.44037923531697', '0.39429545522509', '0.76393202250021', '0.381906645663518', '0.285861118149862']
+ok   wall is linear in beta (one root)
+ok   closed form: beta* = -y_H
+ok   K1: beta* = viewpoint.py root (V1)
+ok   K1: closed form = bisector
+ok   K1: image at beta* has Euclidean incentre at the centre
+ok   V1 (centred): beta* = 0
+ok   GF1 DICTO Yantra (centred): beta* = 0
+ok   GF1 preimage: wall = beta_GF
+ok   GF1 preimage has slopes 2/phi^2 and 1/phi (Cleo-Icos, Antonius side)
+ok   200 random bindus: T_beta* centres the Euclidean incircle
+ok   200 random bindus: exactly one centring beta on (-1,1)
+FINAL ok

@@ -1,0 +1,35 @@
+(1) largest |gauge - bilinear| = 5.46e-12
+(2) tetrahedron   R^2 = 3, r^2 = 1/3, t_min = 9
+(2) cube          R^2 = 3, r^2 = 1, t_min = 3
+(2) octahedron    R^2 = 1, r^2 = 1/3, t_min = 3
+(2) dodecahedron  R^2 = 3, r^2 = 2*sqrt(5)/5 + 1, t_min = 3*(3 - sqrt(5))**2*(sqrt(5) + 5)/8
+(2) icosahedron   R^2 = sqrt(5)/2 + 5/2, r^2 = sqrt(5)/2 + 7/6, t_min = 15 - 6*sqrt(5)
+(3) design strengths (generic orbits): {'T': 2, 'T_h': 3, 'O': 3, 'I': 5}
+(3) certificates: 2-design mean m - 1/3 | 3-design mean -(3*m**2 - 1)/(9*m) | 5-design mean -m*(5*m**2 - 3)/15
+(4) wall determinants: square faces vanish -2*(mu - 2) | octahedron corner reaches the cube plane 4*(mu - 1)
+(4) at the turn mu = sqrt3: t_min = (1 - sqrt(3))**2 + 1  R^2 = (1 - sqrt(3))**2 + 1
+ok   (B) t_min = max x.y over S x S^v (300 random polytopes)
+ok   Theorem 1 chain from (B) holds
+ok   R(S^v) = 1/r(P(S)) <= R/r^2
+ok   Lemma A = (B) maximised over x first
+ok   Lemma G: h_P(n_i) >= h_i; pairing (h_i n_i).(n_i/h_i) = 1
+ok   tetrahedron: one face distance, t_min = (R/r)^2 = 9
+ok   cube: one face distance, t_min = (R/r)^2 = 3
+ok   octahedron: one face distance, t_min = (R/r)^2 = 3
+ok   dodecahedron: one face distance, t_min = (R/r)^2 = 15 - 6*sqrt(5)
+ok   icosahedron: one face distance, t_min = (R/r)^2 = 15 - 6*sqrt(5)
+ok   I generated exactly: 60 rotations, orthogonal
+ok   design strengths T 2, T_h 3, O 3, I 5
+ok   2-design: mean (m-t)(1+t) = m - 1/3 -> m >= 1/3 -> constant 9
+ok   3-design: mean = (1-3m^2)/(9m) -> m >= 1/sqrt3 -> constant 3
+ok   5-design: mean = m/5 - m^3/3 -> m >= sqrt(3/5) -> only 5/3
+ok   5/3 > 15 - 6 sqrt5 (moments alone miss the icosahedral constant)
+ok   icosahedral c^2 = (5+2sqrt5)/15, 1/c^2 = 15-6sqrt5
+ok   P_mu^v = P_{3/mu} (same planes, d -> |N|^2/d)
+ok   turn mu -> 3/mu has fixed point sqrt3; there every face is at unit distance (tangent to the sphere)
+ok   wall det linear in mu, root 2 (cuboctahedron); its turn image 3/2 is the same event on S^v
+ok   wall det linear in mu, root 1 (octahedron end); turn image 3 (cube end)
+ok   t_min(P_mu) = min(mu, 3/mu, 5 - mu - 3/mu) at 43 rational mu (exact)
+ok   at the turn: t_min = R^2 = (R/r)^2 = 5 - 2sqrt3 (self-antipol, r = 1)
+ok   5 - mu - 3/mu <= 5 - 2sqrt3, equality only at sqrt3 (AM-GM in the turn-invariant s = mu + 3/mu)
+FINAL ok

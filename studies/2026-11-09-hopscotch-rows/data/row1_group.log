@@ -1,0 +1,26 @@
+c = 1:  x' = 2*A*x/(A**2 + y*(A**2 - 1) + 1),  y' = (A**2 + y*(A**2 + 1) - 1)/(A**2 + y*(A**2 - 1) + 1)
+c = -1:  x' = -2*A*x/(A**2 + y*(A**2 - 1) + 1),  y' = (A**2 + y*(A**2 + 1) - 1)/(A**2 + y*(A**2 - 1) + 1)
+V1: lambda*2/phi^2 = 0.733560546821  (1/sqrt2)/lambda = 0.736382996355
+ok   complement of O,T is E1 (pole of the axis)
+ok   O,T null, <O,T>_J = -2
+ok   c=1: M^T J M = J
+ok   c=1: M is T_beta (times x->1x), beta=(a^2-1)/(a^2+1)
+ok   c=-1: M^T J M = J
+ok   c=-1: M is T_beta (times x->-1x), beta=(a^2-1)/(a^2+1)
+ok   lambda = a = sqrt((1+beta)/(1-beta))
+ok   T_beta matrix keeps J up to scale
+ok   multiplier at O is lambda, at T 1/lambda
+ok   circle kept
+ok   upper slope u -> lambda u (lines through O)
+ok   lower slope v -> v/lambda (lines through T)
+ok   direction (V1 numbers): u_new = lambda*u_old
+ok   z(P) = t on the parametrisation
+ok   slope from T to P is 1/z(P)
+ok   T_beta acts on the circle as z -> lambda z
+ok   cross-ratio (P,Q;T,O) = z_P/z_Q
+ok   u v = (P,Q;T,O) with z_P = u, z_Q = 1/v
+ok   cross-ratio invariant under z -> lambda z
+ok   legs meet on the circle iff u v = 1
+ok   T_beta commutes with polarity
+ok   R T_beta R = T_-beta (turn beta -> -beta, lambda -> 1/lambda)
+FINAL ok
