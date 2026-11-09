@@ -5634,6 +5634,15 @@
     "retry": "only the tile-level check",
     "study": "2026-11-10-ab-line",
     "date": "2026-11-10"
+   },
+   {
+    "question": "Merged sliders (cube-RD x cube-octahedron): where can a single piece fill space?",
+    "method": "dehn_map.py, Dehn invariant L⊗theta on a 0.02 grid",
+    "status": "SETTLED (necessary condition)",
+    "result": "L=0 on the whole cube-RD slider, on the line mu=3lam-3 (26-faced pieces, lam 1.5..2), at the TO; nonzero elsewhere",
+    "retry": "never (next: keys, 3-fold cuts)",
+    "study": "2026-11-10-merged-sliders",
+    "date": "2026-11-10"
    }
   ]
  },
