@@ -5412,6 +5412,15 @@
     "retry": "never",
     "study": "studies/2026-11-09-icosahedral-line",
     "date": "2026-11-09"
+   },
+   {
+    "question": "one-piece aim: Escher stepped hexagon of tilting plates (six tilted plates climbing round the hexagon)",
+    "method": "exact integer plate model on RD/TRD cells; 580,370 scanned pieces + 6 named designs; SAT patches and periodic tori; controls RD c, TRD h, RD+TRD all",
+    "status": "SETTLED",
+    "result": "closed in this form: Lemma A (the interface is a single-valued height function, so the climb must be paid back by risers: Escher's staircase is impossible); Theorem B (a layer of identical copies carrying another: the step is a screw by a multiple of 60°, so the stacking repeats within 6 layers); in-plane contacts are vertical walls carrying no condition, so c/h is only filtered, never correlated. Lead: keys on the vertical walls with the plates (route 4 on the full chiral cell, 12 placements per site); design rule: a forcing piece must make two consecutive identical layers impossible",
+    "retry": "keys on vertical walls (route 4)",
+    "study": "studies/2026-11-09-escher-hexagon",
+    "date": "2026-11-09"
    }
   ]
  },

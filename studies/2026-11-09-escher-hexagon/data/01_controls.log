@@ -1,0 +1,14 @@
+RD relief vs hat-sectors exact (centre sqrt3/2, tips 1/sqrt3, 1/(2sqrt3)): [0, 0, 0]
+RD: valid True  thickness sum 216  volume sqrt(2)/2  (1/sqrt2 = sqrt(2)/2)
+TRD: valid True  thickness sum 216  volume sqrt(2)/2  (1/sqrt2 = sqrt(2)/2)
+RD: 2 distinct placed states; admitted c/h words (5 layers, R=2): ['ccc']
+   periodic (every layer uniform) tilings exist: True; their c/h words of length 4: ['cccc']
+   independent column check: 276 triangle contacts exact
+TRD: 2 distinct placed states; admitted c/h words (5 layers, R=2): ['hhh']
+   periodic (every layer uniform) tilings exist: True; their c/h words of length 4: ['hhhh']
+   independent column check: 288 triangle contacts exact
+RD+TRD: 4 distinct placed states; admitted c/h words (5 layers, R=2): ['ccc', 'cch', 'chc', 'chh', 'hcc', 'hch', 'hhc', 'hhh']
+   periodic (every layer uniform) tilings exist: True; their c/h words of length 4: ['cccc', 'ccch', 'cchc', 'cchh', 'chcc', 'chch', 'chhc', 'chhh', 'hccc', 'hcch', 'hchc', 'hchh', 'hhcc', 'hhch', 'hhhc', 'hhhh']
+   independent column check: 252 triangle contacts exact
+time 0.1s
+FINAL ok
