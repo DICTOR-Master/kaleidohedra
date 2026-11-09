@@ -42,3 +42,17 @@ sphere). Not prior art for #43. Possible borrowing only for a linearised local m
   quasicrystal paper-strip spheres), Moradzadeh & Nejad Ebrahimi 2020 (3D aperiodic girih), Jowers & Moat 2025, Kaplan 2024.
 Sources checked: the agent's OpenAlex and Semantic Scholar queries (cites: filters for Chiodo, Tsiokos, Baake–Grimm, Goldberg works)
 and the Bridges archive search plus year indexes 2019–2026.
+
+## Chapati & Chapati 2026 read (10 Nov 2026) — CREDIT NEEDED in #103
+G. D. Chapati, R. Chapati, "Verified Reconstruction of the Śrī Yantra: Constraint Solving, Feasibility Prediction and Spectral
+Analysis", Zenodo dataset v1.0, 6 Oct 2026, doi 10.5281/zenodo.23188650 (concept 23188649); 45-page report read (§1–2, closing gate).
+- Numerical reconstruction of Huet's construction (residual 1.9e-14, triple points 2.1e-15); states "no closed-form solution".
+  → #103's exact results (Thms 1, 2, 9, 10, certificates) go beyond it; not prior art for them.
+- 43 rule (their §2.1): the 43 = star points, one per convex vertex of each āvaraṇa circuit outline (8, 10, 10, 14) + trikoṇa 1;
+  each tip caps one chamber (by the outline's directions at the tip); verified at four parameter points; Huet's arrangement has
+  74 regions (50 triangles, 24 trapezoids). → DIFFERENT rule from #103 Prop. 3 (odd regions, parity), SAME circuits and counts
+  (14, 10, 10, 8, 1). Prop. 3's parity statement remains new as stated; the circuit counts and a computed enumeration of the 43
+  appeared first in Chapati (6 Oct 2026): credit both (rule: independent ideas count).
+- Feasibility sampling of the four-parameter family (4.3–55 % valid by sampling width; 5,000-instance benchmark) → cite beside
+  #103's open 'admissible region'.
+Action: #103 credit sentence + sources-checked entry (DICTO to choose: Version 4 now, or with the next real version).
