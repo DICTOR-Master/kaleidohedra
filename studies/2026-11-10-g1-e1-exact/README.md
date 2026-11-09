@@ -14,3 +14,14 @@ on no boundary (no near-concurrency beyond Huet's conditions), so no geometric e
 solution of the four gradient equations of spread/mean, with every area in Q(sqrt Delta): far larger than any elimination done.
 Stored only to double precision (even.json, 16 digits; Huet residual 5.9e-17, as #103 says). Feasible next: refine E1 to 50
 digits as a true critical point and certify it a local minimum (Hessian).
+
+## E1 refined (update, same day)
+Not free after all: E1 lies on the edge where t4's right leg passes through t5's corner (lines t4 right leg, t5 base, t6 right
+leg concurrent: the same meeting as the rhombus threshold u*), to 2e-10 at double precision. e1_refine.py: S from that meeting,
+spread minimised over (u, v, Q) by Newton at 90 digits; quadratic convergence (|step| 2.7e-60), Hessian eigenvalues 76.2, 3.61,
+1.63e4 (all > 0: a true minimum on the edge). u 0.77774072453700599930520, v 0.74345883945950976367820, Q 0.54155899281283542323132,
+S 0.87196163834102841888194, spread/mean 0.614193120241354. Exact form: one incidence + three stationarity equations (open).
+
+## Rhombus threshold u* exactly
+threshold_exact.py (33 s): Res_S(G, H1), Res_S(G, C), Res_t (PARI): degree 1928 = ... 8 12^4 180 408. u* is a root of the
+irreducible even factor of degree 180 (91 terms, coefficients up to 12 digits, 26 real roots): threshold-minpoly-u.txt.
