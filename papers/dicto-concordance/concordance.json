@@ -5652,6 +5652,15 @@
     "retry": "never",
     "study": "2026-11-10-merged-sliders",
     "date": "2026-11-10"
+   },
+   {
+    "question": "Can keys on the inter-layer rhombi of a half-cell force h / an aperiodic c/h word?",
+    "method": "keys_sat.py: SAT over 2080 patterns x 4 words",
+    "status": "SETTLED (for half-cells)",
+    "result": "no: every pattern allows all words or none; with 2(a), no keyed half-cell forces h; aperiodic forcing needs pieces across the interface",
+    "retry": "only for in-layer side-face keys or non-half-cell pieces",
+    "study": "2026-11-10-merged-sliders",
+    "date": "2026-11-10"
    }
   ]
  },
