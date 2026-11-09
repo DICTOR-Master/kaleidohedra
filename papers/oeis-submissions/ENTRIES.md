@@ -16,6 +16,10 @@ Nothing has been submitted. DICTO submits these himself from his own OEIS accoun
 8. Links (%H) must be stable: use the Zenodo DOIs; entry 1 and the comments on A002895/A002899 should wait until #102 is released and has its DOI.
 9. The editors may shorten names, ask for a PARI/Mathematica program, or move text between fields; that is normal.
 10. Each program below runs in python3 in under one second and prints exactly the data shown.
+11. Learned on A400949 (editors J. Yuen, M. Marcus, R. C. Lyons, 9 Nov 2026): a work goes in REFERENCES or in LINKS, never both
+    (if it has a DOI/URL, LINKS only); references in alphabetical order of first author; no notes about our own process
+    (no "this program was run on ...", no "the sheet pointed to ..."); no stray characters at the end of the name.
+    Apply these to entries 2-7 before each is submitted.
 
 Order suggested: 1, 2, 3, 4, 5, 6, then the comments, then 7 (optional).
 

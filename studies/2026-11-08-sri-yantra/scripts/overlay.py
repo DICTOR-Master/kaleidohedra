@@ -190,6 +190,13 @@ def main(outdir):
                 f"bindu not centred (off by {abs(m['bindu']):.3f}); COMPUTED: exact form not found"], corner_rings(*Y['E1'][1]()[:2]))
     for k in ('KRP', 'Rh345'):
         P[k] = (P[k][0], tiny_rings(M[k]))
+    # GUARD (DICTO 10 Nov 2026, grid yantra: the note named t3's tip only while t9's base was outside too): every triangle with a
+    # corner or tip outside the circle must be named in its figure's note.
+    for k in P:
+        b_, w_, a_ = Y[k][1]()[:3]; txt = ' '.join(P[k][0])
+        for i in range(1, 10):
+            outside = math.hypot(float(w_[i]), float(b_[i]) - 0.5) - 0.5 > 1e-9 or abs(float(a_[i]) - 0.5) - 0.5 > 1e-9
+            need(not outside or f't{i}' in txt, f'{k}: t{i} lies partly outside the circle but its note does not say so')
     for k, (notes, marks) in P.items():
         plate(k, notes, marks, os.path.join(outdir, f'overlay-{k}.png')); print('wrote', f'overlay-{k}.png:', ' | '.join(notes))
     overview(os.path.join(outdir, 'which-yantra.png')); print('wrote which-yantra.png')
