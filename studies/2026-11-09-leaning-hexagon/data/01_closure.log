@@ -1,0 +1,22 @@
+(a) concurrency determinant of the three wall lines at height z: sqrt(3)*z*(t1 + t2 + t3)/2
+(b) random periodic potential on a 6x6 torus: corner-line / wall-planarity mismatches: 0
+    total cross-section area - torus area, as a polynomial in z: 0
+    corner positions that are not the power vertex (weights -2 z psi): 0 of 36
+    closure equations: 108 wall tilts, rank 71, solution dimension 37 = (#cells-1)+2 = 37
+(c) leaning hexagons with planar sides in the box: 57 classes up to the 24 motions
+    class, layer on some torus (proper), (with mirror copies): count
+      ('P1 shear', True, True): 3
+      ('P3 a2!=0', False, False): 48
+      ('P4 a1!=0,a2=0', False, True): 3
+      ('P4 a1!=0,a2=0', True, True): 3
+    P4 classes that fill a layer (w0, lam, 2*area coefficients, tori proper/mirror, patch R4):
+      w0=(-1, -1) lam=(0, 0, 1, 0, 0, 1) area2=(6, 4, 0) tori 0/83 patch False/True first tori [(1, 0, 2), (2, 0, 1), (2, 1, 1), (1, 0, 4), (2, 0, 2), (2, 1, 2)]
+      w0=(-1, 0) lam=(0, 1, 0, 0, 1, 0) area2=(6, 4, 0) tori 83/83 patch True/True first tori [(1, 0, 2), (2, 0, 1), (2, 1, 1), (1, 0, 4), (2, 0, 2), (2, 1, 2)]
+      w0=(-1, -1) lam=(-1, 0, 0, -1, 0, 0) area2=(6, -4, 0) tori 0/83 patch False/True first tori [(1, 0, 2), (2, 0, 1), (2, 1, 1), (1, 0, 4), (2, 0, 2), (2, 1, 2)]
+      w0=(-1, -1) lam=(0, -1, 0, 0, -1, 0) area2=(6, -4, 0) tori 0/83 patch False/True first tori [(1, 0, 2), (2, 0, 1), (2, 1, 1), (1, 0, 4), (2, 0, 2), (2, 1, 2)]
+      w0=(-1, 0) lam=(0, -1, 0, 0, -1, 0) area2=(6, -4, 0) tori 83/83 patch True/True first tori [(1, 0, 2), (2, 0, 1), (2, 1, 1), (1, 0, 4), (2, 0, 2), (2, 1, 2)]
+      w0=(-1, 0) lam=(-1, 0, 0, -1, 0, 0) area2=(6, -4, 0) tori 83/83 patch True/True first tori [(1, 0, 2), (2, 0, 1), (2, 1, 1), (1, 0, 4), (2, 0, 2), (2, 1, 2)]
+    P4 classes that fill a layer: 6; of stripe type (lam only on one opposite pair of sides): 6
+    patch R4 fillable but no torus of index <= 12 (would be a lead): []
+time 14.8s
+FINAL ok

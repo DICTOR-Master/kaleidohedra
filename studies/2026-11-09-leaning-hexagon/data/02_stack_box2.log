@@ -1,0 +1,158 @@
+reliefs: 32: ['E1h', 'E1u0', 'E1u1', 'E1u10', 'E1u2', 'E1u3', 'E1u4', 'E1u5', 'E1u6', 'E1u7', 'E1u8', 'E1u9', 'E3pu0', 'E3pu1', 'E3pu2', 'E3pu3', 'E3u0', 'E3u1', 'E3u2', 'E3u3', 'E6u0', 'FLAT', 'RD', 'RDE2u0', 'RDE2u1', 'RDE2u2', 'RDE2u3', 'RDEu0', 'RDEu1', 'RDEu2', 'RDEu3', 'TRD']
+control RD: states 2, words ['ccc'], verdict PERIODIC-1
+control TRD: states 2, words ['hhh'], verdict PERIODIC-1
+control RD+TRD: states 4, words ['ccc', 'cch', 'chh', 'chc', 'hhc', 'hhh', 'hch', 'hcc'], verdict PERIODIC-1
+control RD sheared (1,0): states 6, words ['ccc'], verdict PERIODIC-1
+control RD sheared (2,1): states 12, words ['ccc'], verdict PERIODIC-1
+Lemma S: contacts between different shears: 1152 flat, 0 not flat; subset violations 0
+lean menu 861 (stripe u: [(-4, 0), (-3, 0), (-2, 0), (-1, 0), (0, 0), (1, 0), (2, 0), (3, 0), (4, 0), ('raw', ((-2, -2), (-2, -2), (-2, -2), (-2, -4), (-2, -4), (-2, -4))), ('raw', ((-2, -2), (0, -4), (0, -4), (0, -4), (-2, -2), (-2, -2))), ('raw', ((-2, -2), (-2, -2), (0, -2), (0, -2), (0, -2), (-2, -2)))]); tasks 55104
+  heartbeat 0/55104 2s
+  heartbeat 500/55104 2s
+  heartbeat 1000/55104 3s
+  heartbeat 1500/55104 3s
+  heartbeat 2000/55104 3s
+  heartbeat 2500/55104 3s
+  heartbeat 3000/55104 3s
+  heartbeat 3500/55104 3s
+  heartbeat 4000/55104 3s
+  heartbeat 4500/55104 3s
+  heartbeat 5000/55104 4s
+  heartbeat 5500/55104 4s
+  heartbeat 6000/55104 4s
+  heartbeat 6500/55104 4s
+  heartbeat 7000/55104 4s
+  heartbeat 7500/55104 4s
+  heartbeat 8000/55104 4s
+  heartbeat 8500/55104 4s
+  heartbeat 9000/55104 5s
+  heartbeat 9500/55104 5s
+  heartbeat 10000/55104 5s
+  heartbeat 10500/55104 5s
+  heartbeat 11000/55104 5s
+  heartbeat 11500/55104 5s
+  heartbeat 12000/55104 5s
+  heartbeat 12500/55104 5s
+  heartbeat 13000/55104 6s
+  heartbeat 13500/55104 6s
+  heartbeat 14000/55104 6s
+  heartbeat 14500/55104 6s
+  heartbeat 15000/55104 6s
+  heartbeat 15500/55104 6s
+  heartbeat 16000/55104 6s
+  heartbeat 16500/55104 6s
+  heartbeat 17000/55104 7s
+  heartbeat 17500/55104 7s
+  heartbeat 18000/55104 7s
+  heartbeat 18500/55104 7s
+  heartbeat 19000/55104 7s
+  heartbeat 19500/55104 7s
+  heartbeat 20000/55104 7s
+  heartbeat 20500/55104 7s
+  heartbeat 21000/55104 8s
+  heartbeat 21500/55104 8s
+  heartbeat 22000/55104 8s
+  heartbeat 22500/55104 8s
+  heartbeat 23000/55104 8s
+  heartbeat 23500/55104 8s
+  heartbeat 24000/55104 8s
+  heartbeat 24500/55104 8s
+  heartbeat 25000/55104 9s
+  heartbeat 25500/55104 9s
+  heartbeat 26000/55104 9s
+  heartbeat 26500/55104 9s
+  heartbeat 27000/55104 9s
+  heartbeat 27500/55104 9s
+  heartbeat 28000/55104 9s
+  heartbeat 28500/55104 10s
+  heartbeat 29000/55104 10s
+  heartbeat 29500/55104 10s
+  heartbeat 30000/55104 10s
+  heartbeat 30500/55104 10s
+  heartbeat 31000/55104 10s
+  heartbeat 31500/55104 10s
+  heartbeat 32000/55104 11s
+  heartbeat 32500/55104 11s
+  heartbeat 33000/55104 11s
+  heartbeat 33500/55104 11s
+  heartbeat 34000/55104 11s
+  heartbeat 34500/55104 11s
+  heartbeat 35000/55104 11s
+  heartbeat 35500/55104 12s
+  heartbeat 36000/55104 12s
+  heartbeat 36500/55104 13s
+  heartbeat 37000/55104 14s
+  heartbeat 37500/55104 18s
+  heartbeat 38000/55104 20s
+  heartbeat 38500/55104 21s
+  heartbeat 39000/55104 23s
+  heartbeat 39500/55104 23s
+  heartbeat 40000/55104 24s
+  heartbeat 40500/55104 24s
+  heartbeat 41000/55104 24s
+  heartbeat 41500/55104 24s
+  heartbeat 42000/55104 24s
+  heartbeat 42500/55104 25s
+  heartbeat 43000/55104 25s
+  heartbeat 43500/55104 25s
+  heartbeat 44000/55104 25s
+  heartbeat 44500/55104 25s
+  heartbeat 45000/55104 25s
+  heartbeat 45500/55104 25s
+  heartbeat 46000/55104 26s
+  heartbeat 46500/55104 26s
+  heartbeat 47000/55104 26s
+  heartbeat 47500/55104 26s
+  heartbeat 48000/55104 26s
+  heartbeat 48500/55104 26s
+  heartbeat 49000/55104 26s
+  heartbeat 49500/55104 27s
+  heartbeat 50000/55104 27s
+  heartbeat 50500/55104 27s
+  heartbeat 51000/55104 27s
+  heartbeat 51500/55104 27s
+  heartbeat 52000/55104 27s
+  heartbeat 52500/55104 28s
+  heartbeat 53000/55104 28s
+  heartbeat 53500/55104 28s
+  heartbeat 54000/55104 28s
+  heartbeat 54500/55104 29s
+  heartbeat 55000/55104 30s
+lean type, mirrors, verdict, patch words (length 3): count
+   ('V', False, 'PERIODIC', 'ccc') 15
+   ('V', False, 'PERIODIC', 'ccccchchcchhhcchchhhchhh') 2
+   ('V', False, 'PERIODIC', 'hhh') 15
+   ('V', True, 'PERIODIC', 'ccc') 15
+   ('V', True, 'PERIODIC', 'ccccchchcchhhcchchhhchhh') 2
+   ('V', True, 'PERIODIC', 'hhh') 14
+   ('V', True, 'UNDECIDED', 'hhh') 1
+   ('pattern2D', False, 'NO PATCH', '') 3200
+   ('pattern2D', True, 'NO PATCH', '') 3200
+   ('shear', False, 'NO PATCH', '') 253
+   ('shear', False, 'PERIODIC', 'ccc') 58
+   ('shear', False, 'PERIODIC', 'ccccchchcchhhcchchhhchhh') 5
+   ('shear', False, 'PERIODIC', 'ccccchchhhcchhc') 2
+   ('shear', False, 'PERIODIC', 'hhh') 2
+   ('shear', True, 'NO PATCH', '') 250
+   ('shear', True, 'PERIODIC', 'ccc') 58
+   ('shear', True, 'PERIODIC', 'ccccchchcchhhcchchhhchhh') 5
+   ('shear', True, 'PERIODIC', 'ccccchchhhcchhc') 2
+   ('shear', True, 'PERIODIC', 'hhh') 5
+   ('stripe', False, 'NO PATCH', '') 23992
+   ('stripe', False, 'PERIODIC', 'hhh') 8
+   ('stripe', True, 'NO PATCH', '') 23992
+   ('stripe', True, 'PERIODIC', 'hhh') 8
+CANDIDATE / UNDECIDED: 1
+    E1h V (0, 0) True UNDECIDED ['hhh'] [(1, 0, 3), (3, 0, 1), (3, 1, 1), (3, 2, 1)]
+periodic: lean type, smallest period lattice, words of length 4 of those tilings: count
+   ('V', 'PERIODIC-1', 'cccc') 30
+   ('V', 'PERIODIC-1', 'cccc ccch cchc cchh chcc chch chhc chhh hccc hcch hchc hchh hhcc hhch hhhc hhhh') 4
+   ('V', 'PERIODIC-1', 'hhhh') 28
+   ('V', 'PERIODIC-3', 'hhhh') 1
+   ('shear', 'PERIODIC-1', 'cccc') 116
+   ('shear', 'PERIODIC-1', 'cccc ccch cchc cchh chcc chch chhc chhh hccc hcch hchc hchh hhcc hhch hhhc hhhh') 10
+   ('shear', 'PERIODIC-1', 'cccc ccch cchh chhc hccc hhcc') 4
+   ('shear', 'PERIODIC-1', 'hhhh') 7
+   ('stripe', 'PERIODIC-2', 'hhhh') 16
+stripe pieces with a uniform periodic layer (must be 0: a stripe layer is never uniform): 0
+max battery time 4.9s; total 31s
+FINAL ok

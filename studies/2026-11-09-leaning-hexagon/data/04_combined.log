@@ -1,0 +1,69 @@
+carrier RD-shear: 37 crest planes, 1370 designs
+carrier E6u0-shear: 37 crest planes, 1370 designs
+carrier FLAT-shear: 37 crest planes, 1370 designs
+carrier FLAT-stripe: 37 crest planes, 1370 designs
+carrier FLAT-stripe2: 37 crest planes, 1370 designs
+tasks 13700
+  heartbeat 0/13700 1s
+  heartbeat 2000/13700 26s
+  heartbeat 4000/13700 45s
+  heartbeat 6000/13700 79s
+  heartbeat 8000/13700 150s
+  heartbeat 10000/13700 177s
+  heartbeat 12000/13700 203s
+control RD-shear STRICT empty design: PERIODIC-1 words ['ccc']
+control RD-shear BEND empty design: PERIODIC-1 words ['ccc']
+control E6u0-shear STRICT empty design: PERIODIC-1 words ['ccc', 'cch', 'chh', 'hhc', 'hcc']
+control E6u0-shear BEND empty design: PERIODIC-1 words ['ccc', 'cch', 'chh', 'hhc', 'hcc']
+control FLAT-shear STRICT empty design: PERIODIC-1 words ['ccc', 'cch', 'chh', 'chc', 'hhc', 'hhh', 'hch', 'hcc']
+control FLAT-shear BEND empty design: PERIODIC-1 words ['ccc', 'cch', 'chh', 'chc', 'hhc', 'hhh', 'hch', 'hcc']
+control FLAT-stripe STRICT empty design: PERIODIC-2 words ['hhh']
+control FLAT-stripe BEND empty design: PERIODIC-2 words ['hhh']
+control FLAT-stripe2 STRICT empty design: PERIODIC-2 words ['hhh']
+control FLAT-stripe2 BEND empty design: PERIODIC-2 words ['hhh']
+carrier, rule, verdict, patch words (length 3): designs
+   ('E6u0-shear', 'BEND', 'NO PATCH', '') 1357
+   ('E6u0-shear', 'BEND', 'PERIODIC', 'ccc') 9
+   ('E6u0-shear', 'BEND', 'PERIODIC', 'ccc cch chh hcc hhc') 4
+   ('E6u0-shear', 'STRICT', 'NO PATCH', '') 1360
+   ('E6u0-shear', 'STRICT', 'PERIODIC', 'ccc') 7
+   ('E6u0-shear', 'STRICT', 'PERIODIC', 'ccc cch chh hcc hhc') 3
+   ('FLAT-shear', 'BEND', 'NO PATCH', '') 752
+   ('FLAT-shear', 'BEND', 'PERIODIC', 'ccc') 202
+   ('FLAT-shear', 'BEND', 'PERIODIC', 'ccc cch chc chh hcc hch hhc hhh') 248
+   ('FLAT-shear', 'BEND', 'PERIODIC', 'ccc cch chh hcc hhc') 24
+   ('FLAT-shear', 'BEND', 'PERIODIC', 'hhh') 144
+   ('FLAT-shear', 'STRICT', 'NO PATCH', '') 1002
+   ('FLAT-shear', 'STRICT', 'PERIODIC', 'ccc') 220
+   ('FLAT-shear', 'STRICT', 'PERIODIC', 'ccc cch chc chh hcc hch hhc hhh') 82
+   ('FLAT-shear', 'STRICT', 'PERIODIC', 'ccc cch chh hcc hhc') 48
+   ('FLAT-shear', 'STRICT', 'PERIODIC', 'hhh') 18
+   ('FLAT-stripe', 'BEND', 'NO PATCH', '') 1357
+   ('FLAT-stripe', 'BEND', 'PERIODIC', 'hhh') 13
+   ('FLAT-stripe', 'STRICT', 'NO PATCH', '') 1365
+   ('FLAT-stripe', 'STRICT', 'PERIODIC', 'hhh') 5
+   ('FLAT-stripe2', 'BEND', 'NO PATCH', '') 1357
+   ('FLAT-stripe2', 'BEND', 'PERIODIC', 'hhh') 13
+   ('FLAT-stripe2', 'STRICT', 'NO PATCH', '') 1365
+   ('FLAT-stripe2', 'STRICT', 'PERIODIC', 'hhh') 5
+   ('RD-shear', 'BEND', 'NO PATCH', '') 1164
+   ('RD-shear', 'BEND', 'PERIODIC', 'ccc') 206
+   ('RD-shear', 'STRICT', 'NO PATCH', '') 1174
+   ('RD-shear', 'STRICT', 'PERIODIC', 'ccc') 196
+tiling designs: 1447; of these with NO periodic tiling from uniform layers (index-1 lattice dead): 120
+periodic: carrier, smallest lattice, words of length 4: designs
+   ('E6u0-shear', 'PERIODIC-1', 'cccc') 16
+   ('E6u0-shear', 'PERIODIC-1', 'cccc ccch cchh chhc hccc hhcc') 7
+   ('FLAT-shear', 'PERIODIC-1', 'cccc') 378
+   ('FLAT-shear', 'PERIODIC-1', 'cccc ccch cchc cchh chcc chch chhc chhh hccc hcch hchc hchh hhcc hhch hhhc hhhh') 322
+   ('FLAT-shear', 'PERIODIC-1', 'cccc ccch cchh chhc hccc hhcc') 72
+   ('FLAT-shear', 'PERIODIC-1', 'hhhh') 162
+   ('FLAT-shear', 'PERIODIC-2', 'cccc') 44
+   ('FLAT-shear', 'PERIODIC-2', 'cccc ccch cchc cchh chcc chch chhc chhh hccc hcch hchc hchh hhcc hhch hhhc hhhh') 8
+   ('FLAT-stripe', 'PERIODIC-2', 'hhhh') 18
+   ('FLAT-stripe2', 'PERIODIC-2', 'hhhh') 18
+   ('RD-shear', 'PERIODIC-1', 'cccc') 370
+   ('RD-shear', 'PERIODIC-2', 'cccc') 32
+CANDIDATE / UNDECIDED: 0
+max battery 1.3s; total 220s
+FINAL ok

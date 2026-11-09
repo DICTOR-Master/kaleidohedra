@@ -1,0 +1,26 @@
+(A) E6u0 + shear(1, 0), mirrors False, 5 layers: 5 words; vertical model restricted to the 2 placements that keep the lean: 5; vertical with every placement: 8; leaning = union of restricted, and <= all: True
+(A) E6u0 + shear(1, 0), mirrors False, 8 layers: 8 words; vertical model restricted to the 2 placements that keep the lean: 8; vertical with every placement: 64; leaning = union of restricted, and <= all: True
+    interior h-runs [2], interior c-runs []; all-c word present: True; sample ['cccccc', 'ccccch', 'cccchh', 'ccchhc', 'cchhcc', 'chhccc', 'hccccc', 'hhcccc']
+    E6u0 vertical with every placement: 8 words (the lean removes words by locking the orientation)
+(A) E6u0 + shear(1, 0), mirrors True, 5 layers: 5 words; vertical model restricted to the 4 placements that keep the lean: 5; vertical with every placement: 8; leaning = union of restricted, and <= all: True
+(A) E6u0 + shear(1, 0), mirrors True, 8 layers: 8 words; vertical model restricted to the 4 placements that keep the lean: 8; vertical with every placement: 64; leaning = union of restricted, and <= all: True
+    interior h-runs [2], interior c-runs []; all-c word present: True; sample ['cccccc', 'ccccch', 'cccchh', 'ccchhc', 'cchhcc', 'chhccc', 'hccccc', 'hhcccc']
+    E6u0 vertical with every placement: 8 words (the lean removes words by locking the orientation)
+(B) RD, six sides leaning (shear (1,0)), kappa = 1/120: cycle word c, 183 cells, 6 states; non-planar faces 0; volumes all 36: True; winding numbers of 250 random points: {1: 250}
+(B) RD, six sides leaning (shear (1,0)), kappa = 1/30: cycle word c, 183 cells, 6 states; non-planar faces 0; volumes all 36: True; winding numbers of 150 random points: {1: 150}
+(B) E6u0, six sides leaning (shear (1,0)), kappa = 1/120: cycle word c, 183 cells, 12 states; non-planar faces 0; volumes all 36: True; winding numbers of 250 random points: {1: 250}
+(B) E6u0, six sides leaning (shear (1,0)), kappa = 1/30: cycle word c, 183 cells, 12 states; non-planar faces 0; volumes all 36: True; winding numbers of 150 random points: {1: 150}
+(B) FLAT, stripe lean (rows of wedges), kappa = 1/120: cycle word hh, 305 cells, 12 states; non-planar faces 0; volumes all 36: True; winding numbers of 250 random points: {1: 250}
+(B) FLAT, stripe lean (rows of wedges), kappa = 1/30: cycle word hh, 305 cells, 12 states; non-planar faces 0; volumes all 36: True; winding numbers of 150 random points: {1: 150}
+(C) E1h with mirror copies: periodic with in-plane lattice (3, 1, 1), words ['hhhh']
+(D) lean classes that fill a layer: distinct lean states per site -> most different lean states one layer can hold
+    pattern2D mirrors False: [(12, 0), (12, 4)]
+    pattern2D mirrors True: [(12, 4), (24, 4)]
+    shear     mirrors False: [(6, 1), (12, 1)]
+    shear     mirrors True: [(6, 1), (12, 1)]
+    stripe    mirrors False: [(6, 2), (12, 0), (12, 2), (12, 4)]
+    stripe    mirrors True: [(6, 2), (12, 2), (12, 4), (24, 2), (24, 4)]
+    leaning pieces that tile (153): layer-graph steps with the SAME lean orientations above and below 2416, with DIFFERENT ones 1080
+    pieces whose every layer step changes the lean orientations (Theorem B escape in the lean channel): 6 [('FLAT', 'stripe(-1, 0, 0, -1, 0, 0)', [-1, -2], False), ('FLAT', 'stripe(-1, 0, 0, -1, 0, 0)', [-2, -1], False), ('FLAT', 'stripe(-2, 0, 0, -2, 0, 0)', [-2, 0], False), ('FLAT', 'stripe(-2, 0, 0, -2, 0, 0)', [0, -2], False), ('FLAT', 'stripe(-1, 0, 0, -1, 0, 0)', [0, -1], False), ('FLAT', 'stripe(-1, 0, 0, -1, 0, 0)', [-1, 0], False)]
+time 82s
+FINAL ok

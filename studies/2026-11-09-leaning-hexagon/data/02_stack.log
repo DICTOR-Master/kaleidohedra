@@ -1,0 +1,87 @@
+reliefs: 32: ['E1h', 'E1u0', 'E1u1', 'E1u10', 'E1u2', 'E1u3', 'E1u4', 'E1u5', 'E1u6', 'E1u7', 'E1u8', 'E1u9', 'E3pu0', 'E3pu1', 'E3pu2', 'E3pu3', 'E3u0', 'E3u1', 'E3u2', 'E3u3', 'E6u0', 'FLAT', 'RD', 'RDE2u0', 'RDE2u1', 'RDE2u2', 'RDE2u3', 'RDEu0', 'RDEu1', 'RDEu2', 'RDEu3', 'TRD']
+control RD: states 2, words ['ccc'], verdict PERIODIC-1
+control TRD: states 2, words ['hhh'], verdict PERIODIC-1
+control RD+TRD: states 4, words ['ccc', 'cch', 'chh', 'chc', 'hhc', 'hhh', 'hch', 'hcc'], verdict PERIODIC-1
+control RD sheared (1,0): states 6, words ['ccc'], verdict PERIODIC-1
+control RD sheared (2,1): states 12, words ['ccc'], verdict PERIODIC-1
+Lemma S: contacts between different shears: 1152 flat, 0 not flat; subset violations 0
+lean menu 307 (stripe u: [(-4, 0), (-3, 0), (-2, 0), (-1, 0), (0, 0), (1, 0), (2, 0), (3, 0), (4, 0), ('raw', ((-2, -2), (-2, -2), (-2, -2), (-2, -4), (-2, -4), (-2, -4))), ('raw', ((-2, -2), (0, -4), (0, -4), (0, -4), (-2, -2), (-2, -2))), ('raw', ((-2, -2), (-2, -2), (0, -2), (0, -2), (0, -2), (-2, -2)))]); tasks 19648
+  heartbeat 0/19648 2s
+  heartbeat 500/19648 2s
+  heartbeat 1000/19648 2s
+  heartbeat 1500/19648 2s
+  heartbeat 2000/19648 2s
+  heartbeat 2500/19648 2s
+  heartbeat 3000/19648 3s
+  heartbeat 3500/19648 3s
+  heartbeat 4000/19648 3s
+  heartbeat 4500/19648 3s
+  heartbeat 5000/19648 3s
+  heartbeat 5500/19648 3s
+  heartbeat 6000/19648 3s
+  heartbeat 6500/19648 4s
+  heartbeat 7000/19648 4s
+  heartbeat 7500/19648 4s
+  heartbeat 8000/19648 4s
+  heartbeat 8500/19648 4s
+  heartbeat 9000/19648 4s
+  heartbeat 9500/19648 4s
+  heartbeat 10000/19648 5s
+  heartbeat 10500/19648 5s
+  heartbeat 11000/19648 5s
+  heartbeat 11500/19648 5s
+  heartbeat 12000/19648 5s
+  heartbeat 12500/19648 6s
+  heartbeat 13000/19648 6s
+  heartbeat 13500/19648 7s
+  heartbeat 14000/19648 7s
+  heartbeat 14500/19648 8s
+  heartbeat 15000/19648 8s
+  heartbeat 15500/19648 8s
+  heartbeat 16000/19648 8s
+  heartbeat 16500/19648 9s
+  heartbeat 17000/19648 9s
+  heartbeat 17500/19648 9s
+  heartbeat 18000/19648 9s
+  heartbeat 18500/19648 10s
+  heartbeat 19000/19648 10s
+  heartbeat 19500/19648 10s
+lean type, mirrors, verdict, patch words (length 3): count
+   ('V', False, 'PERIODIC', 'ccc') 15
+   ('V', False, 'PERIODIC', 'ccccchchcchhhcchchhhchhh') 2
+   ('V', False, 'PERIODIC', 'hhh') 15
+   ('V', True, 'PERIODIC', 'ccc') 15
+   ('V', True, 'PERIODIC', 'ccccchchcchhhcchchhhchhh') 2
+   ('V', True, 'PERIODIC', 'hhh') 14
+   ('V', True, 'UNDECIDED', 'hhh') 1
+   ('shear', False, 'NO PATCH', '') 152
+   ('shear', False, 'PERIODIC', 'ccc') 35
+   ('shear', False, 'PERIODIC', 'ccccchchcchhhcchchhhchhh') 3
+   ('shear', False, 'PERIODIC', 'ccccchchhhcchhc') 1
+   ('shear', False, 'PERIODIC', 'hhh') 1
+   ('shear', True, 'NO PATCH', '') 150
+   ('shear', True, 'PERIODIC', 'ccc') 35
+   ('shear', True, 'PERIODIC', 'ccccchchcchhhcchchhhchhh') 3
+   ('shear', True, 'PERIODIC', 'ccccchchhhcchhc') 1
+   ('shear', True, 'PERIODIC', 'hhh') 3
+   ('stripe', False, 'NO PATCH', '') 7198
+   ('stripe', False, 'PERIODIC', 'hhh') 2
+   ('stripe', True, 'NO PATCH', '') 7198
+   ('stripe', True, 'PERIODIC', 'hhh') 2
+   ('striperaw', False, 'NO PATCH', '') 2400
+   ('striperaw', True, 'NO PATCH', '') 2400
+CANDIDATE / UNDECIDED: 1
+    E1h V (0, 0) True UNDECIDED ['hhh'] [(1, 0, 3), (3, 0, 1), (3, 1, 1), (3, 2, 1)]
+periodic: lean type, smallest period lattice, words of length 4 of those tilings: count
+   ('V', 'PERIODIC-1', 'cccc') 30
+   ('V', 'PERIODIC-1', 'cccc ccch cchc cchh chcc chch chhc chhh hccc hcch hchc hchh hhcc hhch hhhc hhhh') 4
+   ('V', 'PERIODIC-1', 'hhhh') 28
+   ('V', 'PERIODIC-3', 'hhhh') 1
+   ('shear', 'PERIODIC-1', 'cccc') 70
+   ('shear', 'PERIODIC-1', 'cccc ccch cchc cchh chcc chch chhc chhh hccc hcch hchc hchh hhcc hhch hhhc hhhh') 6
+   ('shear', 'PERIODIC-1', 'cccc ccch cchh chhc hccc hhcc') 2
+   ('shear', 'PERIODIC-1', 'hhhh') 4
+   ('stripe', 'PERIODIC-2', 'hhhh') 4
+stripe pieces with a uniform periodic layer (must be 0: a stripe layer is never uniform): 0
+max battery time 3.1s; total 11s
+FINAL ok
