@@ -35,11 +35,11 @@ Y = {  # key: (label, loader, colour, exact?)
     'KRP': ("Kulaichev's yantra", kulaichev, (199, 21, 133), True),
     'R1': ('R1, in whole-number fractions', lambda: from_json(os.path.join(DAT, 'quadratic-examples.json'), 'R1'), (29, 78, 216), True),
     'Rh345': ('Rh345, the 3-4-5 rhombus', lambda: from_json(os.path.join(DAT, 'rhombus345-coordinates.json'), 'Rh345'), (160, 82, 45), True),
-    'grid': ('The grid yantra', lambda: from_json(os.path.join(FIG, 'grid.json'), 'G1'), (11, 122, 117), True),
+    'grid': ('Why a grid fails', lambda: from_json(os.path.join(FIG, 'grid.json'), 'G1'), (11, 122, 117), True),
     'K1': ('K1, the Cleo-Octangula', lambda: from_json(os.path.join(FIG, 'kites.json'), 'K1'), (31, 111, 139), False),
     'V1': ('V1, K1 from a viewpoint', lambda: from_json(os.path.join(FIG, 'viewpoint.json'), 'V1'), (125, 60, 152), False),
     'PF2': ('PF2, the stella yantra', lambda: from_json(os.path.join(FIG, 'perfect.json'), 'PF2'), (42, 127, 63), False),
-    'G1': ('G1, the gnomon yantra', lambda: from_json(os.path.join(FIG, 'gnomon.json'), 'G1'), (85, 85, 85), False),
+    'G1': ('G1, the gnomon yantra', lambda: from_json(os.path.join(FIG, 'gnomon.json'), 'G1'), (85, 85, 85), True),
     'E1': ('E1, the most even yantra', lambda: from_json(os.path.join(FIG, 'even.json'), 'E1'), (211, 84, 0), False),
 }
 
@@ -104,9 +104,11 @@ def plate(key, notes, rings_marks, out):
     bx = Wd - side - 230 * s; sz = 64
     while dr.textlength(label, font=font(BOLD, sz * s)) > bx - side - 30 * s: sz -= 2
     dr.text((side, 30 * s + (64 - sz) * s // 2), label, font=font(BOLD, sz * s), fill=INK)
-    dr.rounded_rectangle([bx, 44 * s, bx + 230 * s, 90 * s], radius=8 * s, fill=(201, 152, 26) if exact else (140, 140, 150))
-    dr.text((bx + 115 * s, 67 * s), 'EXACT' if exact else 'COMPUTED', font=font(BOLD, 28 * s), fill='white', anchor='mm')
+    if key != 'grid':   # DICTO 10 Nov 2026: the grid figure is the evidence for Theorem 7, not a yantra of the gallery
+        dr.rounded_rectangle([bx, 44 * s, bx + 230 * s, 90 * s], radius=8 * s, fill=(201, 152, 26) if exact else (140, 140, 150))
+        dr.text((bx + 115 * s, 67 * s), 'EXACT' if exact else 'COMPUTED', font=font(BOLD, 28 * s), fill='white', anchor='mm')
     short = label.split(',')[0]; short = short[0].lower() + short[1:] if short.startswith('The ') else short
+    if key == 'grid': short = 'the equilateral grid figure'
     dr.text((side, 122 * s), 'solid grey: the DICTO Yantra;   dotted, in colour: ' + short, font=fs_, fill=(80, 80, 80))
     circle(dr, X, Yd, (90, 90, 90), 3 * s)
     draw_lines(dr, b0, w0, a0, X, Yd, GREY, 4 * s)
@@ -126,7 +128,7 @@ def overview(out):
     im = Image.new('RGB', (cols * tw + 40 * s, head + rows * th), BG); dr = ImageDraw.Draw(im)
     dr.text((30 * s, 30 * s), 'Which yantra is which', font=font(BOLD, 66 * s), fill=INK)
     dr.text((im.width - 30 * s, 50 * s), 'DICTO · dictospheres.com', font=font(FONT, 30 * s), fill=(150, 110, 20), anchor='ra')
-    order = ['GF1', 'KRP', 'R1', 'Rh345', 'grid', 'K1', 'V1', 'PF2', 'G1', 'E1']
+    order = ['GF1', 'KRP', 'R1', 'Rh345', 'K1', 'V1', 'PF2', 'G1', 'E1']   # grid left out (not a yantra: Theorem 7)
     sub = {'GF1': 'Cleo-Antonius; 43 pieces', 'KRP': 'equal great triangles; 45', 'R1': 'every corner a fraction',
            'Rh345': "DICTO's rhombus, 3-4-5; 45", 'grid': 'one slope; 37 pieces', 'K1': 'Cleo-Icos over stella',
            'V1': 'every condition met', 'PF2': 'stella exact below', 'G1': 'repeats in its own bindu',
