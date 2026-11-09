@@ -5616,6 +5616,15 @@
     "retry": "never",
     "study": "2026-11-10-ab-line",
     "date": "2026-11-10"
+   },
+   {
+    "question": "Fibonacci line: quasicrystal as fixed point of the hop",
+    "method": "fib_hop.py exact words (489 slopes) + convergents",
+    "status": "SETTLED",
+    "result": "substitution = hop s->1/(1+s), fixed point 1/phi; Hurwitz: farthest from crystals (1/sqrt5); AB turning point second in Markov spectrum (1/sqrt8)",
+    "retry": "never",
+    "study": "2026-11-10-ab-line",
+    "date": "2026-11-10"
    }
   ]
  },
