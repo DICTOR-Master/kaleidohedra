@@ -1,0 +1,41 @@
+[CO-RD] walls of S(mu): 1 (~1.0000000000), 4/3 (~1.3333333333), 3/2 (~1.5000000000), 2 (~2.0000000000)
+  wall 1: 6 concurrent quadruples (one orbit shown) planes ['cube', 'rhomb', 'rhomb', 'rhomb']: det = -2 + (2) mu, all linear and rooted at the wall: True
+    kind: ['emergence of faces']; faces born (6, ['cube']), died (0, []); bonds lost (0, []), gained (0, [])
+    census {('rhomb', 4): 12} -> {('cube', 4): 6, ('rhomb', 6): 12}; corners (14, 32); Euler (2, 2)
+  wall 4/3: 8 concurrent quadruples (one orbit shown) planes ['oct', 'rhomb', 'rhomb', 'rhomb']: det = -4 + (3) mu, all linear and rooted at the wall: True
+    kind: ['emergence of faces']; faces born (8, ['oct']), died (0, []); bonds lost (0, []), gained (0, [])
+    census {('cube', 4): 6, ('rhomb', 6): 12} -> {('cube', 4): 6, ('oct', 3): 8, ('rhomb', 8): 12}; corners (32, 48); Euler (2, 2)
+  wall 3/2: 24 concurrent quadruples (one orbit shown) planes ['cube', 'oct', 'rhomb', 'rhomb']: det = -3 + (2) mu, all linear and rooted at the wall: True
+    kind: ['jump (bonds between surviving faces dissolve and emerge at once)']; faces born (0, []), died (0, []); bonds lost (24, [('rhomb', 'rhomb')]), gained (24, [('cube', 'oct')])
+    census {('cube', 4): 6, ('oct', 3): 8, ('rhomb', 8): 12} -> {('cube', 8): 6, ('oct', 6): 8, ('rhomb', 4): 12}; corners (48, 48); Euler (2, 2)
+  wall 2: 48 concurrent quadruples (one orbit shown) planes ['cube', 'cube', 'oct', 'rhomb']: det = 2 + (-1) mu, all linear and rooted at the wall: True
+    kind: ['dissolution of faces']; faces born (0, []), died (12, ['rhomb']); bonds lost (0, []), gained (0, [])
+    census {('cube', 8): 6, ('oct', 6): 8, ('rhomb', 4): 12} -> {('cube', 4): 6, ('oct', 3): 8}; corners (48, 12); Euler (2, 2)
+  foot wall mu = 8/5 (~1.6000000000) in (3/2, 2): S^v ['jump (bonds between surviving faces dissolve and emerge at once)']; S^v census {('cube', 4): 6, ('oct', 3): 8, ('rhomb', 8): 12} -> {('cube', 8): 6, ('oct', 6): 8, ('rhomb', 4): 12}
+turn test: c = first*last wall = 2; walls symmetric under mu -> c/mu: True
+all events (S walls + foot walls): [1, 4/3, 3/2, 8/5, 2]; symmetric under 2/mu: False
+midsphere c = (rho_CO/rho_RD)^2 = 9/4: walls symmetric under 9/4: False
+antipol S^v(mu) = S(2/mu) at 6 sample mu: [False, False, False, False, False, False]
+antipol S^v(mu) = TO ∩ (2/mu)RD for mu > 4/3 (TO = cube ∩ (3/2)oct), = cube ∩ (2/mu)RD for mu < 4/3, at 6 sample mu: [True, True, True, True, True, True]
+  [CO-RD] t_min on (1, 4/3): max 3/2 (~1.5000000000) at mu = 1 (~1.0000000000) (end of piece); grid max 1.5000000000
+  [CO-RD] t_min on (4/3, 3/2): max 5/4 (~1.2500000000) at mu = 3/2 (~1.5000000000) (end of piece); grid max 1.2497911445
+  [CO-RD] t_min on (3/2, 8/5): max 9 - 2*sqrt(15) (~1.2540333076) at mu = 2*sqrt(15)/5 (~1.5491933385) interior; grid max 1.2540332996
+  [CO-RD] t_min on (8/5, 2): max 5/4 (~1.2500000000) at mu = 8/5 (~1.6000000000) (end of piece); grid max 1.2492172824
+max t_min on (1, 2): 3/2 (~1.500000000000) at mu = 1 (~1.000000000000)
+t_min at the fixed point sqrt2: (1/2 + 1/2*r2) (~1.207106781187)
+t_min(1) = 2
+t_min(2) = 3/2
+t_min(1/2) = 2
+t_min(3) = 3/2
+squared flag radii of the CO (square centre, triangle centre, edge midpoint, corner): [1, 4/3, 3/2, 2]
+ok   walls of S are 1, 4/3, 3/2, 2
+ok   every wall determinant linear in mu, root at the wall
+ok   Euler 2 on both sides of every wall
+ok   walls of S symmetric under mu -> 2/mu
+ok   antipol leaves the line: S^v(mu) != S(2/mu) at all samples
+ok   antipol = TO ∩ (2/mu)RD (mu > 4/3), cube ∩ (2/mu)RD (mu < 4/3)
+ok   t_min peak is NOT at sqrt2
+ok   walls = squared flag radii of the CO
+ok   flag radii: R^2 h_sq^2 = rho^2 h_tri^2 = 2 (why the walls are 2/mu-symmetric)
+ok   interior t_min max at sqrt(3/2 * 8/5) = sqrt(12/5)
+FINAL ok

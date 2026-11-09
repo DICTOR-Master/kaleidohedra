@@ -3673,7 +3673,7 @@
    ],
    [
     "The second dual sweeps, cuboctahedron–rhombic dodecahedron and icosidodecahedron–triacontahedron",
-    "#91 proves P ∩ μP* holds every corner cut, so #89's golden rhombic cuts must sit on these sweeps — BEGUN 4 Nov 2026 (studies/2026-11-04-co-rd-sweep): CO–RD sweep face census; harmonic Q4 zero once at a non-golden point",
+    "#91 proves P ∩ μP* holds every corner cut, so #89's golden rhombic cuts must sit on these sweeps — BEGUN 4 Nov 2026 (studies/2026-11-04-co-rd-sweep): CO–RD sweep face census; harmonic Q4 zero once at a non-golden point — SETTLED 9 Nov 2026 (studies/2026-11-09-dual-sweeps): walls are the squared flag radii; #89's golden rhombic cuts are NOT on these sweeps (the premise was wrong: #91's theorem covers regular P only); no turn on these lines (a turn exists only for regular P)",
     "the next rung of the dual ladder; tight cycles through the rhombic solids",
     [
      10
@@ -5308,6 +5308,60 @@
     "result": "194/215 exactly computed events explained by one local factor (176 circuit/plane determinants, 16 metric, 2 turned); weight sliders 138/138, slopes 30/32, scale sweeps 42/45; three event types needed: incidence, metric (golden cuts), stationary; turn: t_min largest at the turning point R(S(1))^2 in 3/3 families (D-I 1.174819, x^4-40x^3+530x^2-2480x+2245); octet point (1,-1/8) is a 4-wall multiple point",
     "retry": "uncovered: CO∩μRD Dehn zero 5/3, Ammann-Beenker wall circuits, yantra viewpoint events",
     "study": "studies/2026-11-09-splash-determinants",
+    "date": "2026-11-09"
+   },
+   {
+    "question": "Hopscotch: walls and turn of the second dual sweeps CO ∩ mu RD and ID ∩ mu RT",
+    "method": "exact Q(sqrt2)/Q(sqrt5) polar-line walker (corners affine in mu, next wall = least root), all concurrent quadruples' 4x4 determinants, foot walls of the antipol, exact t_min envelope; known case C-O reproduced (studies/2026-11-09-dual-sweeps)",
+    "status": "SETTLED",
+    "result": "walls = squared flag radii of P: CO-RD 1, 4/3, 3/2, 2; ID-RT 1+2sqrt5/5, 7/6+sqrt5/2, 5/4+sqrt5/2, phi^2; every det linear; kinds emergence, emergence, jump (edge midpoints), dissolution; line = step. NO turn: antipol keeps P cap mu P* on its line iff P has one face distance and one corner radius (regular); CO-RD 2/mu wall symmetry is a coincidence (R^2 h_sq^2 = rho^2 h_tri^2 = 2). t_min interior max at the local turn sqrt(rho^2 f) (f = antipol's jump): CO-RD 9-2sqrt15 at sqrt(12/5), ID-RT at sqrt((165+73sqrt5)/58); on C-O this is the turn sqrt3. C-O line: 3/2 is a foot wall, not a wall of S",
+    "retry": "never; only LEAD 1 (proof that flag radii are the only walls) or LEAD 2 (closed form of the local turn)",
+    "study": "studies/2026-11-09-dual-sweeps",
+    "date": "2026-11-09"
+   },
+   {
+    "question": "#89 golden rhombic cuts on the second dual sweeps (ranked gap: 'must sit on these sweeps')",
+    "method": "exact sympy from #89 Theorem 3 closed forms (Table 2 reproduced); plane-ratio test against CO cap mu RD and ID cap mu RT (studies/2026-11-09-dual-sweeps s3_golden.py)",
+    "status": "SETTLED",
+    "result": "NOT on the sweeps: RD/RT have two corner orbits, cuts form a plane, the sweep is one ray in it. GCRD at t/c = 1.70640 (Greater), 1.62891 (Lesser) vs 2 (degree-8 roots); GCRT ratio factor 1.09710, 1.13244 vs 1. CO-RD octagon hop never alternating (equal corner sides only at (10+sqrt2)/7, past the jump). Gap premise corrected: #91's theorem covers regular P only",
+    "retry": "never; only LEAD 3 (walls of the two-depth plane)",
+    "study": "studies/2026-11-09-dual-sweeps",
+    "date": "2026-11-09"
+   },
+   {
+    "question": "Hopscotch golden-cuts row (#88-#91): golden cuts as walls of S(mu) = P cap mu P*",
+    "method": "exact sympy on the cube-octahedron line: 4x4 determinants with the golden ray of the moving edge (studies/2026-11-09-dual-sweeps s3_golden.py)",
+    "status": "SETTLED",
+    "result": "METRIC, not incidence (agrees with splash-determinants rule 4): golden cuts sit inside hops as roots of linear edge-ratio factors (Unborn Axes 3-phi, Icosaxes phi, Golden Cut Cubes (8 ± (3sqrt2 - 2sqrt5) - sqrt10)/2, matching splash sweep-events.json); a 4x4 form exists only with an auxiliary golden-ray plane outside the normal field. #89 rhombic cuts need two metric factors at once; the equal-corner factor has no root in the octagon hop of CO-RD or ID-RT",
+    "retry": "never; only the D-I and T-T lines (LEAD 1) for completeness",
+    "study": "studies/2026-11-09-dual-sweeps",
+    "date": "2026-11-09"
+   },
+   {
+    "question": "#49 Archimedean stretches as stations of the second dual sweeps",
+    "method": "symmetry argument (members have full O_h / I_h; a segment stretch keeps only its axis stabiliser)",
+    "status": "SETTLED",
+    "result": "NO; only the cuboctahedron (#49's tetrahedron with four caps, not a segment stretch) appears: end mu = 2 of CO-RD and jump wall of C-O",
+    "retry": "never (the stretch listing stays #49's own open question)",
+    "study": "studies/2026-11-09-dual-sweeps",
+    "date": "2026-11-09"
+   },
+   {
+    "question": "2026-11-04 co-rd-sweep LEAD 3: why Q4 is constant on (3/2, 2)",
+    "method": "algebra: corners are images of (1, mu-1, 2-mu) with x = y+z; identity (y+z)^4 + y^4 + z^4 = 2(y^2+yz+z^2)^2",
+    "status": "SETTLED",
+    "result": "sum x^4/|x|^4 = 1/2 for every corner, as for the CO's (1,1,0); so Q4 = CO's value 0.1909 on the whole hop",
+    "retry": "never",
+    "study": "studies/2026-11-09-dual-sweeps",
+    "date": "2026-11-09"
+   },
+   {
+    "question": "splash-determinants prediction: CO ∩ mu RD has a Dehn factor linear in mu with root exactly 5/3; Dehn of ID ∩ mu RT",
+    "method": "exact edge lengths per hop (sweeplib, reusing splash corrd_events.py planes), dihedral angles reduced mod pi Q by PSLQ (60 digits, checked 1e-50) (studies/2026-11-09-dual-sweeps s4_metric_events.py)",
+    "status": "SETTLED",
+    "result": "CONFIRMED: Dehn = 24sqrt2(3mu-5) theta on (3/2,2), theta = arccos(1/sqrt3), root 5/3 (oct-rhomb minus cube-oct total edge length); 0 identically on [1,4/3]; 24sqrt2(3mu-4) theta on (4/3,3/2). ID-RT: two angle classes, component roots never coincide inside a hop: no Dehn zero on the open line",
+    "retry": "never",
+    "study": "studies/2026-11-09-dual-sweeps",
     "date": "2026-11-09"
    }
   ]

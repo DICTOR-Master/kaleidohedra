@@ -1,0 +1,38 @@
+mu=10: {('pent', 5): 12, ('tri', 3): 20}, 30 corners; mu=1: {('rhomb', 4): 30}, 32 corners
+squared flag radii of the ID: pentagon centre (1 + 2/5*r5) (~1.8944271910), triangle centre (7/6 + 1/2*r5) (~2.2847006554), edge midpoint (5/4 + 1/2*r5) (~2.3680339887), corner (3/2 + 1/2*r5) (~2.6180339887)
+[ID-RT] walls of S(mu): (1 + 2/5*r5) (~1.8944271910), (7/6 + 1/2*r5) (~2.2847006554), (5/4 + 1/2*r5) (~2.3680339887), (3/2 + 1/2*r5) (~2.6180339887)
+  wall (1 + 2/5*r5): 12 concurrent quadruples (one orbit shown) planes ['pent', 'rhomb', 'rhomb', 'rhomb']: det = (-11/4 + -5/4*r5) + ((5/4 + 3/4*r5)) mu, all linear and rooted at the wall: True
+    kind: ['emergence of faces']; faces born (12, ['pent']), died (0, []); bonds lost (0, []), gained (0, [])
+    census {('rhomb', 4): 30} -> {('pent', 5): 12, ('rhomb', 6): 30}; corners (32, 80); Euler (2, 2)
+  wall (7/6 + 1/2*r5): 20 concurrent quadruples (one orbit shown) planes ['tri', 'rhomb', 'rhomb', 'rhomb']: det = (9/2 + 2*r5) + ((-9/4 + -3/4*r5)) mu, all linear and rooted at the wall: True
+    kind: ['emergence of faces']; faces born (20, ['tri']), died (0, []); bonds lost (0, []), gained (0, [])
+    census {('pent', 5): 12, ('rhomb', 6): 30} -> {('pent', 5): 12, ('rhomb', 8): 30, ('tri', 3): 20}; corners (80, 120); Euler (2, 2)
+  wall (5/4 + 1/2*r5): 60 concurrent quadruples (one orbit shown) planes ['pent', 'tri', 'rhomb', 'rhomb']: det = (25/4 + 11/4*r5) + ((-3 + -1*r5)) mu, all linear and rooted at the wall: True
+    kind: ['jump (bonds between surviving faces dissolve and emerge at once)']; faces born (0, []), died (0, []); bonds lost (60, [('rhomb', 'rhomb')]), gained (60, [('pent', 'tri')])
+    census {('pent', 5): 12, ('rhomb', 8): 30, ('tri', 3): 20} -> {('pent', 10): 12, ('rhomb', 4): 30, ('tri', 6): 20}; corners (120, 120); Euler (2, 2)
+  wall (3/2 + 1/2*r5): 120 concurrent quadruples (one orbit shown) planes ['pent', 'pent', 'tri', 'rhomb']: det = (-7 + -3*r5) + ((3 + 1*r5)) mu, all linear and rooted at the wall: True
+    kind: ['dissolution of faces']; faces born (0, []), died (30, ['rhomb']); bonds lost (0, []), gained (0, [])
+    census {('pent', 10): 12, ('rhomb', 4): 30, ('tri', 6): 20} -> {('pent', 5): 12, ('tri', 3): 20}; corners (120, 30); Euler (2, 2)
+  foot wall mu = (38/29 + 14/29*r5) (~2.3898259202) in ((5/4 + 1/2*r5), (3/2 + 1/2*r5)): S^v ['jump (bonds between surviving faces dissolve and emerge at once)']; S^v census {('pent', 5): 12, ('rhomb', 8): 30, ('tri', 3): 20} -> {('pent', 10): 12, ('rhomb', 4): 30, ('tri', 6): 20}
+turn test: c = first*last = (5/2 + 11/10*r5); walls symmetric under mu -> c/mu: False; products of mirrored pairs: (5/2 + 11/10*r5) vs (65/24 + 29/24*r5)
+all events (S walls + foot walls): [(1 + 2/5*r5), (7/6 + 1/2*r5), (5/4 + 1/2*r5), (38/29 + 14/29*r5), (3/2 + 1/2*r5)] ~ [1.894427191, 2.2847006554, 2.3680339887, 2.3898259202, 2.6180339887]
+  all events symmetric under (5/2 + 11/10*r5)/mu: False
+antipol at mu ~ 2.326367: census {('pent', 10): 12, ('rhomb', 4): 30, ('tri', 6): 20}
+antipol at mu ~ 2.451367: census {('pent', 5): 12, ('rhomb', 8): 30, ('tri', 3): 20}
+h3^2/h5^2 = (5/6 + 1/6*r5) (~1.2060113296); antipol inverts it to (3/2 + -3/10*r5): the antipol line has a different pentagon:triangle ratio, so it is not this line
+  [ID-RT] t_min on ((1 + 2/5*r5), (7/6 + 1/2*r5)): max 9/2 - 3*sqrt(5)/2 (~1.1458980338) at mu = 2*sqrt(5)/5 + 1 (~1.8944271910) (end of piece); grid max 1.1458980338
+  [ID-RT] t_min on ((7/6 + 1/2*r5), (5/4 + 1/2*r5)): max 11/8 - sqrt(5)/8 (~1.0954915028) at mu = sqrt(5)/2 + 5/4 (~2.3680339887) (end of piece); grid max 1.0954493921
+  [ID-RT] t_min on ((5/4 + 1/2*r5), (38/29 + 14/29*r5)): max -2*sqrt(24*sqrt(5) + 55) + 4*sqrt(5) + 13 (~1.0957101889) at mu = sqrt(11*sqrt(5) + 25)/sqrt(11 - sqrt(5)) (~2.3789050015) interior; grid max 1.0957101889
+  [ID-RT] t_min on ((38/29 + 14/29*r5), (3/2 + 1/2*r5)): max 11/8 - sqrt(5)/8 (~1.0954915028) at mu = 14*sqrt(5)/29 + 38/29 (~2.3898259202) (end of piece); grid max 1.0952293848
+sup t_min on the open line: 9/2 - 3*sqrt(5)/2 (~1.145898033750) at mu = 2*sqrt(5)/5 + 1 (~1.894427191000)
+interior max on ((5/4 + 1/2*r5), (38/29 + 14/29*r5)) at sqrt(11*sqrt(5) + 25)/sqrt(11 - sqrt(5)); geometric mean of the interval ends sqrt(4234*sqrt(5) + 9570)/58 (~2.3789050015); equal: True
+t_min(1) = (5/2 + -1/2*r5) (~1.3819660113)
+t_min(10) = (9/2 + -3/2*r5) (~1.1458980338)
+ok   mu=10 is the ID (30 corners, 12 pentagons, 20 triangles)
+ok   mu=1 is a scaled RT (32 corners, 30 rhombi)
+ok   walls = squared flag radii of the ID
+ok   every wall determinant linear in mu, root at the wall
+ok   Euler 2 on both sides of every wall
+ok   no turn: walls not symmetric under first*last
+ok   antipol leaves the line (h3 != h5)
+FINAL ok

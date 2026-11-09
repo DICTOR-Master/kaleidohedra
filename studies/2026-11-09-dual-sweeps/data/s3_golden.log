@@ -1,0 +1,28 @@
+A. cube-octahedron line, golden cuts as walls of the arrangement + golden rays
+  Unborn Axes (Lesser Golden Cut Octahedron): det = sqrt(5)*mu/5 + mu - 2 (linear True), mu = 5/2 - sqrt(5)/2 (~1.3819660113); hexagon remnant/corner = 1/2 + sqrt(5)/2
+  Icosaxes (Greater Golden Cut Octahedron): det = -mu + sqrt(5)*mu - 2 (linear True), mu = 1/2 + sqrt(5)/2 (~1.6180339887); hexagon remnant/corner = -1/2 + sqrt(5)/2
+  Lesser Golden Cut Cube: mu = (-3*sqrt(2) - sqrt(10) + 2*sqrt(5) + 8)/2 (~2.5336088039); wall det (x=1, y=1, oct, golden plane z = 1-2x_g) linear True, root agrees: True
+  Greater Golden Cut Cube: mu = (-2*sqrt(5) - sqrt(10) + 3*sqrt(2) + 8)/2 (~2.3041135360); wall det (x=1, y=1, oct, golden plane z = 1-2x_g) linear True, root agrees: True
+  none of these four is a wall of S(mu) itself: the face-structure walls are 1, 2, 3 only (s0); the golden cuts sit inside the hops (1,2) and (2,3)
+B. #89 golden rhombic cuts versus the second dual sweeps
+  Greater Golden Cut Rhombic Dodecahedron: y_sharp 0.413095, y_blunt 0.292102 (#89 Table 2: (0.413095, 0.292102)); minimal polynomial of k: 64271*z**8 - 877416*z**7 + 4995324*z**6 - 15466824*z**5 + 28371474*z**4 - 31350456*z**3 + 20143404*z**2 - 6741144*z + 861111; = P_k ∩ nu·RD with P_k = cube ∩ k·oct, k = t/c = (-6515*sqrt(30) - 11501*sqrt(6) - 3258*sqrt(2) + 1608*sqrt(10) + 3969*sqrt(3) + 8364*sqrt(5) + 9759*sqrt(15) + 109677)/64271 (~1.7064018801), nu = (-8724*sqrt(6) - 2796*sqrt(30) - 3170*sqrt(3) + 999*sqrt(2) + 3768*sqrt(10) + 4642*sqrt(15) + 8088*sqrt(5) + 73784)/64271 (~1.2603148509); on CO ∩ mu RD needs k = 2: False
+  Lesser Golden Cut Rhombic Dodecahedron: y_sharp 0.279685, y_blunt 0.197767 (#89 Table 2: (0.279685, 0.197767)); minimal polynomial of k: 64271*z**8 - 877416*z**7 + 4995324*z**6 - 15466824*z**5 + 28371474*z**4 - 31350456*z**3 + 20143404*z**2 - 6741144*z + 861111; = P_k ∩ nu·RD with P_k = cube ∩ k·oct, k = t/c = (-6515*sqrt(30) - 8364*sqrt(5) - 3969*sqrt(3) - 1608*sqrt(10) - 3258*sqrt(2) + 11501*sqrt(6) + 9759*sqrt(15) + 109677)/64271 (~1.6289067994), nu = (-8088*sqrt(5) - 2796*sqrt(30) - 3768*sqrt(10) + 999*sqrt(2) + 3170*sqrt(3) + 4642*sqrt(15) + 8724*sqrt(6) + 73784)/64271 (~1.1625777549); on CO ∩ mu RD needs k = 2: False
+  CO-RD line: equal corner sides only at mu = sqrt(2)/7 + 10/7 (~1.6306019375), outside the octagon hop (4/3, 3/2); there 2(mu-1) - sqrt2(3mu-4) > 0 throughout (values 0.6667 -> 0.2929)
+  RT: acute angle cos = sqrt(5)/5 (~0.4472135955); tan(alpha/2) = 0.6180339887 (1/phi = 0.6180339887)
+  Greater Golden Cut Rhombic Triacontahedron: y_sharp 0.440942, y_blunt 0.272517 (#89 Table 2: (0.440942, 0.272517)); (pentagon plane / triangle plane) divided by the ID ratio h5/h3 = 1.0970971822; on ID ∩ mu RT needs 1
+  Lesser Golden Cut Rhombic Triacontahedron: y_sharp 0.301265, y_blunt 0.186192 (#89 Table 2: (0.301265, 0.186192)); (pentagon plane / triangle plane) divided by the ID ratio h5/h3 = 1.1324355381; on ID ∩ mu RT needs 1
+ok   Unborn Axes (Lesser Golden Cut Octahedron): det linear, golden hexagon
+ok   Icosaxes (Greater Golden Cut Octahedron): det linear, golden hexagon
+ok   Icosaxes at mu = phi, Unborn Axes at mu = 3 - phi
+ok   Lesser Golden Cut Cube: det linear, root = golden cut
+ok   Greater Golden Cut Cube: det linear, root = golden cut
+ok   Greater GCRD matches #89 Table 2
+ok   Greater GCRD is NOT on the CO-RD line (k != 2)
+ok   Lesser GCRD matches #89 Table 2
+ok   Lesser GCRD is NOT on the CO-RD line (k != 2)
+ok   CO-RD: equal corner sides at (10+sqrt2)/7, outside (4/3,3/2)
+ok   Greater GCRT matches #89 Table 2
+ok   Greater GCRT is NOT on the ID-RT line
+ok   Lesser GCRT matches #89 Table 2
+ok   Lesser GCRT is NOT on the ID-RT line
+FINAL ok

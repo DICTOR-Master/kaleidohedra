@@ -1,0 +1,42 @@
+CO ∩ mu RD: Dehn invariant per hop (theta = arccos(1/sqrt3) is the only irrational angle class)
+  [CO-RD] hop (10/9, 11/9): every dihedral angle is a rational multiple of pi, Dehn invariant = 0 identically
+  [CO-RD] hop (25/18, 13/9) Dehn component along angle 2.52611294491941 (mod pi Q): 72*sqrt(2)*mu - 96*sqrt(2); roots [4/3]
+  [CO-RD] hop (5/3, 11/6) Dehn component along angle 2.18627603546528 (mod pi Q): 72*sqrt(2)*mu - 120*sqrt(2); roots [5/3]
+  factor on (3/2, 2): 24*sqrt(2)*(3*mu - 5)
+CO-RD octagon hop (4/3, 3/2) rhomb-octagon sides: at squares A = 2*mu - 2, at triangles B = sqrt(2)*(3*mu - 4), remnant C = sqrt(3)*(3 - 2*mu)
+  [CO-RD] metric factor cube-side - equal*oct-side: root mu = sqrt(2)/7 + 10/7 (~1.63060194) outside
+  [CO-RD] metric factor cube-side - phi*oct-side: root mu = (-11*sqrt(2) - 6*sqrt(5) + 7*sqrt(10) + 98)/62 (~1.47037398) IN the octagon hop
+  [CO-RD] metric factor cube-side - 1/phi*oct-side: root mu = (6*sqrt(5) + 11*sqrt(2) + 7*sqrt(10) + 98)/62 (~2.40497904) outside
+  [CO-RD] metric factor cube-side - equal*rhomb-side: root mu = 7/4 - sqrt(3)/4 (~1.31698730) outside
+  [CO-RD] metric factor cube-side - phi*rhomb-side: root mu = (-2*sqrt(15) - 3*sqrt(5) + 4*sqrt(3) + 13)/4 (~1.36850815) IN the octagon hop
+  [CO-RD] metric factor cube-side - 1/phi*rhomb-side: root mu = (-2*sqrt(15) - 4*sqrt(3) + 3*sqrt(5) + 13)/4 (~1.25850850) outside
+  [CO-RD] metric factor oct-side - equal*rhomb-side: root mu = (sqrt(6) + 6)/6 (~1.40824829) IN the octagon hop
+  [CO-RD] metric factor oct-side - phi*rhomb-side: root mu = (-5*sqrt(6) - sqrt(30) + 6*sqrt(5) + 90)/60 (~1.42819556) IN the octagon hop
+  [CO-RD] metric factor oct-side - 1/phi*rhomb-side: root mu = (-6*sqrt(5) - sqrt(30) + 5*sqrt(6) + 90)/60 (~1.38923025) IN the octagon hop
+C-O golden cuts (this study, mu) vs splash sweep-events.json (m = mu/sqrt3): agree True
+ID ∩ mu RT: Dehn invariant per hop (angle classes found by PSLQ)
+  [ID-RT] hop (13*sqrt(5)/30 + 19/18, 7*sqrt(5)/15 + 10/9) Dehn component along angle 2.58801829469275 (mod pi Q): (-900*mu + 540*sqrt(5)*mu - 180*sqrt(5) - 220)/3 + 40/3; roots [2*sqrt(5)/5 + 1]
+  [ID-RT] hop (sqrt(5)/2 + 43/36, sqrt(5)/2 + 11/9) Dehn component along angle 2.58801829469275 (mod pi Q): sqrt(2)*(-75600*mu*sqrt(57*sqrt(5) + 203) + 38880*sqrt(5)*mu*sqrt(57*sqrt(5) + 203) - 8640*sqrt(5)*sqrt(57*sqrt(5) + 203) - 2160*sqrt(57*sqrt(5) + 203))/2844; roots [2*sqrt(5)/5 + 1]
+  [ID-RT] hop (sqrt(5)/2 + 43/36, sqrt(5)/2 + 11/9) Dehn component along angle 2.77672882547631 (mod pi Q): 360*mu - 420 - 180*sqrt(5); roots [sqrt(5)/2 + 7/6]
+  [ID-RT] hop (sqrt(5)/2 + 4/3, sqrt(5)/2 + 17/12) Dehn component along angle 2.48923451380543 (mod pi Q): 360*mu - 480 - 180*sqrt(5); roots [sqrt(5)/2 + 4/3]
+  [ID-RT] hop (sqrt(5)/2 + 4/3, sqrt(5)/2 + 17/12) Dehn component along angle 2.58801829469275 (mod pi Q): 10*sqrt(2)*(-6*mu*sqrt(sqrt(5) + 3) + 3*sqrt(2)*(2*mu - sqrt(5)) + 3*sqrt(5)*sqrt(sqrt(5) + 3) + 9*sqrt(sqrt(5) + 3)) - 180; roots [(-3*sqrt(sqrt(5) + 3) - sqrt(5)*sqrt(sqrt(5) + 3) + sqrt(10) + 3*sqrt(2))/(2*(-sqrt(sqrt(5) + 3) + sqrt(2)))]
+ID-RT octagon hop rhomb-octagon sides: at pentagons A = sqrt(2)*sqrt(57*sqrt(5) + 203)*(-35*mu + 18*sqrt(5)*mu - 4*sqrt(5) - 1)/79, at triangles B = 6*mu - 7 - 3*sqrt(5), remnant C = sqrt(10 - 2*sqrt(5))*(-4*mu + 2*sqrt(5) + 5)/2
+  [ID-RT] metric factor pent-side - equal*tri-side: root mu = (-4*sqrt(570*sqrt(5) + 2030) - sqrt(114*sqrt(5) + 406) + 237*sqrt(5) + 553)/(-18*sqrt(10)*sqrt(57*sqrt(5) + 203) + 474 + 35*sqrt(2)*sqrt(57*sqrt(5) + 203)) (~2.44003578) outside
+  [ID-RT] metric factor pent-side - phi*tri-side: root mu = (-4*sqrt(570*sqrt(5) + 2030) - sqrt(114*sqrt(5) + 406) + 869 + 395*sqrt(5))/632 (~2.36803399) outside
+  [ID-RT] metric factor pent-side - 1/phi*tri-side: root mu = (-21*sqrt(114*sqrt(5) + 406) - 5*sqrt(570*sqrt(5) + 2030) + 474*sqrt(5) + 1106)/(-55*sqrt(2)*sqrt(57*sqrt(5) + 203) + 948 + 17*sqrt(10)*sqrt(57*sqrt(5) + 203)) (~2.61803399) outside
+  [ID-RT] metric factor pent-side - equal*rhomb-side: root mu = (2*sqrt(57*sqrt(5) + 203) + 8*sqrt(285*sqrt(5) + 1015) + 158*sqrt(25 - 5*sqrt(5)) + 395*sqrt(5 - sqrt(5)))/(-70*sqrt(57*sqrt(5) + 203) + 316*sqrt(5 - sqrt(5)) + 36*sqrt(5)*sqrt(57*sqrt(5) + 203)) (~2.24183186) outside
+  [ID-RT] metric factor pent-side - phi*rhomb-side: root mu = (4*sqrt(57*sqrt(5) + 203) + 16*sqrt(285*sqrt(5) + 1015) + 1185*sqrt(5 - sqrt(5)) + 553*sqrt(25 - 5*sqrt(5)))/(-140*sqrt(57*sqrt(5) + 203) + 316*sqrt(5 - sqrt(5)) + 316*sqrt(5)*sqrt(5 - sqrt(5)) + 72*sqrt(5)*sqrt(57*sqrt(5) + 203)) (~2.28119843) outside
+  [ID-RT] metric factor pent-side - 1/phi*rhomb-side: root mu = (5*sqrt(285*sqrt(5) + 1015) + 21*sqrt(57*sqrt(5) + 203) + 158*sqrt(25 - 5*sqrt(5)) + 395*sqrt(5 - sqrt(5)))/(-17*sqrt(5)*sqrt(57*sqrt(5) + 203) + 316*sqrt(5 - sqrt(5)) + 55*sqrt(57*sqrt(5) + 203)) (~2.19270858) outside
+  [ID-RT] metric factor tri-side - equal*rhomb-side: root mu = (2*sqrt(50 - 10*sqrt(5)) + 5*sqrt(10 - 2*sqrt(5)) + 6*sqrt(5) + 14)/(4*sqrt(2)*sqrt(5 - sqrt(5)) + 12) (~2.32131498) IN the octagon hop
+  [ID-RT] metric factor tri-side - phi*rhomb-side: root mu = (12*sqrt(5) + 28 + 15*sqrt(10 - 2*sqrt(5)) + 7*sqrt(50 - 10*sqrt(5)))/(4*sqrt(2)*sqrt(5 - sqrt(5)) + 4*sqrt(10)*sqrt(5 - sqrt(5)) + 24) (~2.33129212) IN the octagon hop
+  [ID-RT] metric factor tri-side - 1/phi*rhomb-side: root mu = (2*sqrt(50 - 10*sqrt(5)) + 5*sqrt(10 - 2*sqrt(5)) + 22 + 10*sqrt(5))/(6 + 4*sqrt(2)*sqrt(5 - sqrt(5)) + 6*sqrt(5)) (~2.31189313) IN the octagon hop
+ok   corners at 6/5: corrd_events.verts == sweeplib
+ok   corners at 7/5: corrd_events.verts == sweeplib
+ok   corners at 8/5: corrd_events.verts == sweeplib
+ok   Dehn = 0 identically on (1, 4/3)
+ok   Dehn on (3/2, 2): one linear factor, root exactly 5/3
+ok   octagon sides A = 2(mu-1), B = sqrt2(3mu-4), C = sqrt3(3-2mu)
+ok   CO-RD: the equal-corner-side factor A - B has no root in the octagon hop (so no #89 cut)
+ok   C-O golden cuts agree with splash sweep-events.json
+ok   ID-RT: the equal-corner-side factor has no root in the octagon hop (so no #89 cut)
+FINAL ok
