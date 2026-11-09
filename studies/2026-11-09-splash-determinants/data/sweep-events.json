@@ -1,0 +1,396 @@
+{
+ "tetra": {
+  "R": "3",
+  "events": [
+   {
+    "m": "1/3",
+    "m_float": 0.333333333,
+    "minpoly": "3*x - 1",
+    "det_factor": "4*sqrt(3)*(3*m - 1)/9",
+    "facets_below": "(4, [3, 3, 3, 3])",
+    "facets_above": "(12, [3, 3, 3, 3, 6, 6, 6, 6])",
+    "change": true
+   },
+   {
+    "m": "1",
+    "m_float": 1.0,
+    "minpoly": "x - 1",
+    "det_factor": "-8*sqrt(3)*(m - 1)/9",
+    "facets_below": "(12, [3, 3, 3, 3, 6, 6, 6, 6])",
+    "facets_above": "(12, [3, 3, 3, 3, 6, 6, 6, 6])",
+    "change": false
+   },
+   {
+    "m": "3",
+    "m_float": 3.0,
+    "minpoly": "x - 3",
+    "det_factor": "4*sqrt(3)*(m - 3)/9",
+    "facets_below": "(12, [3, 3, 3, 3, 6, 6, 6, 6])",
+    "facets_above": "(4, [3, 3, 3, 3])",
+    "change": true
+   }
+  ],
+  "golden": {
+   "P 3-gon x_G": {
+    "m": "-3 + 2*sqrt(5)",
+    "m_float": 1.4721359549995794,
+    "minpoly": "x**2 + 6*x - 11"
+   },
+   "P 3-gon x_L": {
+    "m": "2*sqrt(5)/5 + 1",
+    "m_float": 1.894427190999916,
+    "minpoly": "5*x**2 - 10*x + 1"
+   },
+   "P* 3-gon x_G": {
+    "m": "3/11 + 2*sqrt(5)/11",
+    "m_float": 0.6792850868181436,
+    "minpoly": "11*x**2 - 6*x - 1"
+   },
+   "P* 3-gon x_L": {
+    "m": "5 - 2*sqrt(5)",
+    "m_float": 0.5278640450004206,
+    "minpoly": "x**2 - 10*x + 5"
+   }
+  },
+  "turn": {
+   "turning_point": "m = 1 (the two plane families at equal distance)",
+   "incidence_pairs": [
+    {
+     "m": "1/3",
+     "m_float": 0.3333333333333333,
+     "partner": "3",
+     "partner_float": 3.0,
+     "partner_is_incidence_event": true
+    },
+    {
+     "m": "1",
+     "m_float": 1.0,
+     "partner": "1",
+     "partner_float": 1.0,
+     "partner_is_incidence_event": true
+    },
+    {
+     "m": "3",
+     "m_float": 3.0,
+     "partner": "1/3",
+     "partner_float": 0.3333333333333333,
+     "partner_is_incidence_event": true
+    }
+   ],
+   "golden_pairs": [
+    {
+     "cut": "P 3-gon x_G",
+     "m_float": 1.4721359549995794,
+     "partner_float": 0.6792850868181436,
+     "partner_is_golden_cut": [
+      "P* 3-gon x_G"
+     ]
+    },
+    {
+     "cut": "P 3-gon x_L",
+     "m_float": 1.894427190999916,
+     "partner_float": 0.5278640450004206,
+     "partner_is_golden_cut": [
+      "P* 3-gon x_L"
+     ]
+    },
+    {
+     "cut": "P* 3-gon x_G",
+     "m_float": 0.6792850868181436,
+     "partner_float": 1.4721359549995794,
+     "partner_is_golden_cut": [
+      "P 3-gon x_G"
+     ]
+    },
+    {
+     "cut": "P* 3-gon x_L",
+     "m_float": 0.5278640450004206,
+     "partner_float": 1.894427190999916,
+     "partner_is_golden_cut": [
+      "P 3-gon x_L"
+     ]
+    }
+   ]
+  },
+  "tmin": {
+   "range": [
+    0.333333333,
+    3.0
+   ],
+   "argmax": 1.0000499997499999,
+   "max": 2.999850008249551,
+   "at_turning_point": "3",
+   "at_turning_point_minpoly": "x - 3",
+   "kinks": [
+    {
+     "kink": 1.0000499997499999,
+     "nearest_event_or_turned_event": 1.0
+    }
+   ],
+   "end_values": [
+    1.000299999,
+    1.0000333344444818
+   ]
+  }
+ },
+ "cube": {
+  "R": "sqrt(3)",
+  "events": [
+   {
+    "m": "sqrt(3)/3",
+    "m_float": 0.577350269,
+    "minpoly": "3*x**2 - 1",
+    "det_factor": "4*(3*m - sqrt(3))/9",
+    "facets_below": "(6, [3, 3, 3, 3, 3, 3, 3, 3])",
+    "facets_above": "(24, [4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6])",
+    "change": true
+   },
+   {
+    "m": "2*sqrt(3)/3",
+    "m_float": 1.154700538,
+    "minpoly": "3*x**2 - 4",
+    "det_factor": "-2*(sqrt(3)*m - 2)/3",
+    "facets_below": "(24, [4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6])",
+    "facets_above": "(24, [3, 3, 3, 3, 3, 3, 3, 3, 8, 8, 8, 8, 8, 8])",
+    "change": true
+   },
+   {
+    "m": "sqrt(3)",
+    "m_float": 1.732050808,
+    "minpoly": "x**2 - 3",
+    "det_factor": "-m + sqrt(3)",
+    "facets_below": "(24, [3, 3, 3, 3, 3, 3, 3, 3, 8, 8, 8, 8, 8, 8])",
+    "facets_above": "(8, [4, 4, 4, 4, 4, 4])",
+    "change": true
+   }
+  ],
+  "golden": {
+   "P 4-gon x_G": {
+    "m": "(-2*sqrt(15) - sqrt(30) + 3*sqrt(6) + 8*sqrt(3))/6",
+    "m_float": 1.3302805702390097,
+    "minpoly": "81*x**8 - 3024*x**6 + 12222*x**4 - 15456*x**2 + 5041"
+   },
+   "P 4-gon x_L": {
+    "m": "(-3*sqrt(6) - sqrt(30) + 2*sqrt(15) + 8*sqrt(3))/6",
+    "m_float": 1.4627797249274428,
+    "minpoly": "81*x**8 - 3024*x**6 + 12222*x**4 - 15456*x**2 + 5041"
+   },
+   "P* 3-gon x_G": {
+    "m": "(sqrt(3) + sqrt(15))/6",
+    "m_float": 0.9341723589627157,
+    "minpoly": "9*x**4 - 9*x**2 + 1"
+   },
+   "P* 3-gon x_L": {
+    "m": "(-sqrt(15) + 5*sqrt(3))/6",
+    "m_float": 0.7978784486061616,
+    "minpoly": "9*x**4 - 45*x**2 + 25"
+   }
+  },
+  "turn": {
+   "turning_point": "m = 1 (the two plane families at equal distance)",
+   "incidence_pairs": [
+    {
+     "m": "sqrt(3)/3",
+     "m_float": 0.5773502691896257,
+     "partner": "sqrt(3)",
+     "partner_float": 1.7320508075688772,
+     "partner_is_incidence_event": true
+    },
+    {
+     "m": "2*sqrt(3)/3",
+     "m_float": 1.1547005383792515,
+     "partner": "sqrt(3)/2",
+     "partner_float": 0.8660254037844386,
+     "partner_is_incidence_event": false
+    },
+    {
+     "m": "sqrt(3)",
+     "m_float": 1.7320508075688772,
+     "partner": "sqrt(3)/3",
+     "partner_float": 0.5773502691896257,
+     "partner_is_incidence_event": true
+    }
+   ],
+   "golden_pairs": [
+    {
+     "cut": "P 4-gon x_G",
+     "m_float": 1.3302805702390097,
+     "partner_float": 0.7517211198689697,
+     "partner_is_golden_cut": []
+    },
+    {
+     "cut": "P 4-gon x_L",
+     "m_float": 1.4627797249274428,
+     "partner_float": 0.6836299293453786,
+     "partner_is_golden_cut": []
+    },
+    {
+     "cut": "P* 3-gon x_G",
+     "m_float": 0.9341723589627157,
+     "partner_float": 1.0704662693192697,
+     "partner_is_golden_cut": []
+    },
+    {
+     "cut": "P* 3-gon x_L",
+     "m_float": 0.7978784486061616,
+     "partner_float": 1.2533237384051803,
+     "partner_is_golden_cut": []
+    }
+   ]
+  },
+  "tmin": {
+   "range": [
+    0.577350269,
+    1.732050808
+   ],
+   "argmax": 0.9999974662740001,
+   "max": 1.535898384851126,
+   "at_turning_point": "5 - 2*sqrt(3)",
+   "at_turning_point_minpoly": "x**2 - 10*x + 13",
+   "kinks": [
+    {
+     "kink": 0.86607540375,
+     "nearest_event_or_turned_event": 0.8660254037844386
+    },
+    {
+     "kink": 1.1549891636347502,
+     "nearest_event_or_turned_event": 1.1547005383792515
+    }
+   ],
+   "end_values": [
+    1.0001732047523155,
+    1.0000577381115072
+   ]
+  }
+ },
+ "dodeca": {
+  "R": "sqrt(15 - 6*sqrt(5))",
+  "events": [
+   {
+    "m": "(1 + sqrt(5))*sqrt(30*sqrt(5) + 150)/60",
+    "m_float": 0.794654472,
+    "minpoly": "45*x**4 - 30*x**2 + 1",
+    "det_factor": "-4*(6*sqrt(5)*m + 30*m - 3*sqrt(6)*sqrt(sqrt(5) + 5) - sqrt(30)*sqrt(sqrt(5) + 5))/(9*(1 + sqrt(5))*(sqrt(2) + sqrt(10))*sqrt(sqrt(5) + 5))",
+    "facets_below": "(12, [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])",
+    "facets_above": "(60, [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6])",
+    "change": true
+   },
+   {
+    "m": "-(sqrt(5) + 5)**(3/2)*(-5*sqrt(6) + sqrt(30))/120",
+    "m_float": 1.098185471,
+    "minpoly": "9*x**4 - 15*x**2 + 5",
+    "det_factor": "-32*(2*sqrt(30)*m*sqrt(sqrt(5) + 5) + 5*sqrt(6)*m*sqrt(sqrt(5) + 5) - 35 - 15*sqrt(5))/(3*(5 + 3*sqrt(5))*(sqrt(2) + sqrt(10))*(sqrt(5) + 5)**(3/2))",
+    "facets_below": "(60, [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6])",
+    "facets_above": "(60, [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10])",
+    "change": true
+   },
+   {
+    "m": "(-sqrt(5)*sqrt(6*sqrt(5) + 30) + 3*sqrt(6*sqrt(5) + 30))/4",
+    "m_float": 1.258408572,
+    "minpoly": "x**4 - 30*x**2 + 45",
+    "det_factor": "-4*(8*sqrt(5)*m + 20*m - 5*sqrt(6)*sqrt(sqrt(5) + 5) - sqrt(30)*sqrt(sqrt(5) + 5))/((sqrt(10) + 5*sqrt(2))*(sqrt(5) + 5)**(3/2))",
+    "facets_below": "(60, [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10])",
+    "facets_above": "(20, [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5])",
+    "change": true
+   }
+  ],
+  "golden": {
+   "P 5-gon x_G": {
+    "m": "sqrt(5 - 2*sqrt(5))*(2*sqrt(6)*sqrt(47 - 21*sqrt(5)) + sqrt(30)*sqrt(47 - 21*sqrt(5)) + 2*sqrt(6)*sqrt(7 - 3*sqrt(5)) + sqrt(30)*sqrt(7 - 3*sqrt(5)) + 12*sqrt(3))/18",
+    "m_float": 1.1515931717183459,
+    "minpoly": "729*x**4 - 4590*x**2 + 4805"
+   },
+   "P 5-gon x_L": {
+    "m": "sqrt(5 - 2*sqrt(5))*(9*sqrt(5)*sqrt(1410 - 630*sqrt(5)) + 25*sqrt(1410 - 630*sqrt(5)) + 9*sqrt(5)*sqrt(210 - 90*sqrt(5)) + 25*sqrt(210 - 90*sqrt(5)) + 30*sqrt(15) + 450*sqrt(3))/660",
+    "m_float": 1.1890183940508294,
+    "minpoly": "1089*x**4 - 3750*x**2 + 3125"
+   },
+   "P* 3-gon x_G": {
+    "m": "sqrt(5 - 2*sqrt(5))*(4*sqrt(3) + 2*sqrt(15))/(-3*sqrt(5) + 3*sqrt(9 - 4*sqrt(5)) + 3*sqrt(5)*sqrt(9 - 4*sqrt(5)) + 15)",
+    "m_float": 1.007352548739389,
+    "minpoly": "1089*x**4 - 1110*x**2 + 5"
+   },
+   "P* 3-gon x_L": {
+    "m": "sqrt(5 - 2*sqrt(5))*(-3*sqrt(15)*sqrt(9 - 4*sqrt(5)) - 5*sqrt(3)*sqrt(9 - 4*sqrt(5)) + 5*sqrt(3) + 5*sqrt(15))/18",
+    "m_float": 0.9379623704253995,
+    "minpoly": "9*x**4 - 150*x**2 + 125"
+   }
+  },
+  "turn": {
+   "turning_point": "m = 1 (the two plane families at equal distance)",
+   "incidence_pairs": [
+    {
+     "m": "(1 + sqrt(5))*sqrt(30*sqrt(5) + 150)/60",
+     "m_float": 0.7946544722917661,
+     "partner": "60/((1 + sqrt(5))*sqrt(30*sqrt(5) + 150))",
+     "partner_float": 1.258408572364819,
+     "partner_is_incidence_event": true
+    },
+    {
+     "m": "-(sqrt(5) + 5)**(3/2)*(-5*sqrt(6) + sqrt(30))/120",
+     "m_float": 1.0981854713951091,
+     "partner": "-120/((sqrt(5) + 5)**(3/2)*(-5*sqrt(6) + sqrt(30)))",
+     "partner_float": 0.9105929973100293,
+     "partner_is_incidence_event": false
+    },
+    {
+     "m": "-sqrt(5)*sqrt(6*sqrt(5) + 30)/4 + 3*sqrt(6*sqrt(5) + 30)/4",
+     "m_float": 1.258408572364819,
+     "partner": "1/(-sqrt(5)*sqrt(6*sqrt(5) + 30)/4 + 3*sqrt(6*sqrt(5) + 30)/4)",
+     "partner_float": 0.7946544722917661,
+     "partner_is_incidence_event": true
+    }
+   ],
+   "golden_pairs": [
+    {
+     "cut": "P 5-gon x_G",
+     "m_float": 1.1515931717183459,
+     "partner_float": 0.8683622172818665,
+     "partner_is_golden_cut": []
+    },
+    {
+     "cut": "P 5-gon x_L",
+     "m_float": 1.1890183940508294,
+     "partner_float": 0.8410298822990714,
+     "partner_is_golden_cut": []
+    },
+    {
+     "cut": "P* 3-gon x_G",
+     "m_float": 1.007352548739389,
+     "partner_float": 0.9927011166561398,
+     "partner_is_golden_cut": []
+    },
+    {
+     "cut": "P* 3-gon x_L",
+     "m_float": 0.9379623704253995,
+     "partner_float": 1.0661408512011672,
+     "partner_is_golden_cut": []
+    }
+   ]
+  },
+  "tmin": {
+   "range": [
+    0.794654472,
+    1.258408572
+   ],
+   "argmax": 0.9999930497749999,
+   "max": 1.1748191939704085,
+   "at_turning_point": "(-9*sqrt(6*sqrt(5) + 30) - 3*sqrt(30*sqrt(5) + 150) - 4*sqrt(5) + sqrt(5)*sqrt(30*sqrt(5) + 150) + 3*sqrt(5)*sqrt(6*sqrt(5) + 30))/4 + 10",
+   "at_turning_point_minpoly": "x**4 - 40*x**3 + 530*x**2 - 2480*x + 2245",
+   "kinks": [
+    {
+     "kink": 0.910642997,
+     "nearest_event_or_turned_event": 0.9105929973100293
+    },
+    {
+     "kink": 1.098266518975,
+     "nearest_event_or_turned_event": 1.0981854713951091
+    }
+   ],
+   "end_values": [
+    1.0001258404900757,
+    1.0000794720524397
+   ]
+  }
+ }
+}

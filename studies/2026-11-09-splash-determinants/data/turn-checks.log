@@ -1,0 +1,69 @@
+PASS AB: t -> 1/(2t) swaps the chamber walls 2/3 and 3/4 and the ends 1/2 and 1, fixes 1/sqrt2 (t^2 = 1/2)
+AB pair t = 1/2 <-> 1: N 7 -> 7 (ratio 1); all star frequencies equal: True
+AB pair t = 12/23 <-> 23/24: N 1921 -> 1921 (ratio 1); all star frequencies equal: True
+AB pair t = 11/21 <-> 21/22: N 1607 -> 1607 (ratio 1); all star frequencies equal: True
+AB pair t = 10/19 <-> 19/20: N 1321 -> 1321 (ratio 1); all star frequencies equal: True
+AB pair t = 9/17 <-> 17/18: N 1063 -> 1063 (ratio 1); all star frequencies equal: True
+AB pair t = 8/15 <-> 15/16: N 833 -> 833 (ratio 1); all star frequencies equal: True
+AB pair t = 7/13 <-> 13/14: N 631 -> 631 (ratio 1); all star frequencies equal: True
+AB pair t = 13/24 <-> 12/13: N 1081 -> 1081 (ratio 1); all star frequencies equal: True
+AB pair t = 6/11 <-> 11/12: N 457 -> 457 (ratio 1); all star frequencies equal: True
+AB pair t = 11/20 <-> 10/11: N 761 -> 761 (ratio 1); all star frequencies equal: True
+AB pair t = 5/9 <-> 9/10: N 311 -> 311 (ratio 1); all star frequencies equal: True
+AB pair t = 9/16 <-> 8/9: N 497 -> 497 (ratio 1); all star frequencies equal: True
+AB pair t = 4/7 <-> 7/8: N 193 -> 193 (ratio 1); all star frequencies equal: True
+AB pair t = 11/19 <-> 19/22: N 1439 -> 1439 (ratio 1); all star frequencies equal: True
+AB pair t = 7/12 <-> 6/7: N 289 -> 289 (ratio 1); all star frequencies equal: True
+AB pair t = 10/17 <-> 17/20: N 1169 -> 1169 (ratio 1); all star frequencies equal: True
+AB pair t = 13/22 <-> 11/13: N 983 -> 983 (ratio 1); all star frequencies equal: True
+AB pair t = 3/5 <-> 5/6: N 103 -> 103 (ratio 1); all star frequencies equal: True
+AB pair t = 11/18 <-> 9/11: N 679 -> 679 (ratio 1); all star frequencies equal: True
+AB pair t = 8/13 <-> 13/16: N 713 -> 713 (ratio 1); all star frequencies equal: True
+AB pair t = 5/8 <-> 4/5: N 137 -> 137 (ratio 1); all star frequencies equal: True
+AB pair t = 12/19 <-> 19/24: N 1561 -> 1561 (ratio 1); all star frequencies equal: True
+AB pair t = 7/11 <-> 11/14: N 527 -> 527 (ratio 1); all star frequencies equal: True
+AB pair t = 9/14 <-> 7/9: N 431 -> 431 (ratio 1); all star frequencies equal: True
+AB pair t = 11/17 <-> 17/22: N 1279 -> 1279 (ratio 1); all star frequencies equal: True
+AB pair t = 13/20 <-> 10/13: N 889 -> 889 (ratio 1); all star frequencies equal: True
+AB pair t = 2/3 <-> 3/4: N 41 -> 41 (ratio 1); all star frequencies equal: True
+AB pair t = 15/22 <-> 11/15: N 1127 -> 1127 (ratio 1); all star frequencies equal: True
+AB pair t = 11/16 <-> 8/11: N 601 -> 601 (ratio 1); all star frequencies equal: True
+AB pair t = 9/13 <-> 13/18: N 799 -> 799 (ratio 1); all star frequencies equal: True
+AB pair t = 7/10 <-> 5/7: N 239 -> 239 (ratio 1); all star frequencies equal: True
+AB pair t = 12/17 <-> 17/24: N 1393 -> 1393 (ratio 1); all star frequencies equal: True
+AB pair t = 41/58 <-> 29/41: N 8119 -> 8119 (ratio 1); all star frequencies equal: True
+AB pair t = 70/99 <-> 99/140: N 47321 -> 47321 (ratio 1); all star frequencies equal: True
+PASS AB PREDICTION: the turn keeps every star frequency (34/34 pairs in the data)
+PASS AB: the turned approximant has the same number of vertices per period in every pair (ratio 1: the same tiling turned by 45°, an element of the 8-fold symmetry; my first guess, ratio 2, was wrong) ['1']
+PASS Sturmian: the kinks of every window are symmetric under a -> 1 - a (turning point a = 1/2)
+walk py_ABC: stops ['-3/8', '-1/4', '1/4', '3/8']; symmetric under lam -> -lam: True; ends symmetric: True; missing partners []
+walk py_AC: stops ['-11/36', '-1/4', '-3/20', '0', '1/8', '1/6', '1/4']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-1/6', '-1/8', '11/36', '3/20']
+walk py_ACBC: stops ['-11/36', '-1/4', '-3/20', '0', '1/8', '1/6', '1/4']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-1/6', '-1/8', '11/36', '3/20']
+walk c15: stops ['-11', '-5', '7', '9', '11']; symmetric under lam -> -lam: False; ends symmetric: True; missing partners ['-7', '-9', '5']
+walk hbn: stops ['-1', '0', '1']; symmetric under lam -> -lam: True; ends symmetric: True; missing partners []
+walk sodalite: stops ['-2', '0', '2']; symmetric under lam -> -lam: True; ends symmetric: True; missing partners []
+walk square: stops ['-2', '0', '2']; symmetric under lam -> -lam: True; ends symmetric: True; missing partners []
+walk honeycomb: stops ['-1', '-1/2', '1']; symmetric under lam -> -lam: False; ends symmetric: True; missing partners ['1/2']
+walk kagome: stops ['-1', '1']; symmetric under lam -> -lam: True; ends symmetric: True; missing partners []
+walk bcc: stops ['-3', '-1', '1', '3']; symmetric under lam -> -lam: True; ends symmetric: True; missing partners []
+walk delian: stops ['-3/8', '-1/8', '3/8']; symmetric under lam -> -lam: False; ends symmetric: True; missing partners ['1/8']
+walk nacl: stops ['-1', '0', '1']; symmetric under lam -> -lam: True; ends symmetric: True; missing partners []
+walk zincblende: stops ['-3', '-1', '1', '3']; symmetric under lam -> -lam: True; ends symmetric: True; missing partners []
+walk hcpholes: stops ['-11/24', '-1/8', '5/24', '3/8']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-3/8', '-5/24', '1/8', '11/24']
+walk a15: stops ['-5/4', '1/4', '3/4', '5/4']; symmetric under lam -> -lam: False; ends symmetric: True; missing partners ['-1/4', '-3/4']
+walk h57_ABC_1: stops ['-3/8', '-1/8', '3/8']; symmetric under lam -> -lam: False; ends symmetric: True; missing partners ['1/8']
+walk h57_AC_1: stops ['-11/24', '-1/8', '5/24', '3/8']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-3/8', '-5/24', '1/8', '11/24']
+walk h57_ABC_1o2: stops ['-5/16', '-11/48', '-7/48', '-1/16', '3/16']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-3/16', '1/16', '11/48', '5/16', '7/48']
+walk h57_AC_1o2: stops ['-19/48', '-11/48', '-7/48', '5/48', '13/48', '17/48']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-13/48', '-17/48', '-5/48', '11/48', '19/48', '7/48']
+walk h57_ABC_2: stops ['-1/2', '-1/4', '-1/12', '1/4', '5/12']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-5/12', '1/12', '1/2']
+walk h57_AC_2: stops ['-7/12', '-1/4', '-1/12', '1/12', '5/12']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-5/12', '1/4', '7/12']
+walk h57_ABC_3o2: stops ['-7/16', '-3/16', '-5/48', '5/16', '19/48']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-19/48', '-5/16', '3/16', '5/48', '7/16']
+walk h57_AC_3o2: stops ['-25/48', '-3/16', '-5/48', '7/48', '19/48']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-19/48', '-7/48', '25/48', '3/16', '5/48']
+walk h57_ABC_3o4: stops ['-11/32', '-17/96', '-13/96', '-3/32', '9/32']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-9/32', '11/32', '13/96', '17/96', '3/32']
+walk h57_AC_3o4: stops ['-41/96', '-17/96', '-13/96', '-1/96', '23/96', '35/96']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-23/96', '-35/96', '1/96', '13/96', '17/96', '41/96']
+walk h57_ABC_5o4: stops ['-13/32', '-5/32', '-11/96', '11/32', '37/96']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-11/32', '-37/96', '11/96', '13/32', '5/32']
+walk h57_AC_5o4: stops ['-47/96', '-5/32', '-11/96', '17/96', '37/96']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-17/96', '-37/96', '11/96', '47/96', '5/32']
+walk h57_ABC_5o8: stops ['-21/64', '-13/64', '-9/64', '-5/64', '15/64']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-15/64', '13/64', '21/64', '5/64', '9/64']
+walk h57_AC_5o8: stops ['-79/192', '-13/64', '-9/64', '3/64', '49/192', '23/64']; symmetric under lam -> -lam: False; ends symmetric: False; missing partners ['-23/64', '-3/64', '-49/192', '13/64', '79/192', '9/64']
+4/4 PASS
+FINAL ok

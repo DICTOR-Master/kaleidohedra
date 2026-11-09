@@ -1,0 +1,14 @@
+  c15: stop -11 (range end (low)): WITNESS MCCCC S0 = -352 SA = 32 root -11, dual cell 13 sites
+  c15: stop -5 (interior): WITNESS MMCCC S0 = 240 SA = -48 root -5, dual cell 8 sites
+  c15: stop 7 (interior): WITNESS MMMCC S0 = 224 SA = 32 root 7, dual cell 5 sites
+  c15: stop 9 (interior): WITNESS MMCCC S0 = 288 SA = 32 root 9, dual cell 8 sites
+  c15: stop 11 (range end (high)): WITNESS MMMMC S0 = 352 SA = 32 root 11, dual cell 7 sites
+  hbn: stop -1 (range end (low)): WITNESS NNBN S0 = -3 SA = 3 root -1, dual cell 4 sites
+  hbn: stop 0 (interior): WITNESS BBNB S0 = 0 SA = -3 root 0, dual cell 6 sites
+  hbn: stop 1 (range end (high)): WITNESS BNBB S0 = 3 SA = 3 root 1, dual cell 4 sites
+  sodalite: stop -2 (range end (low)): WITNESS AASAA S0 = 16 SA = -8 root -2, dual cell 5 sites
+  sodalite: stop 0 (interior): WITNESS SSAAA S0 = 0 SA = 2 root 0, dual cell 24 sites
+  sodalite: stop 2 (range end (high)): WITNESS SSASS S0 = -16 SA = -8 root 2, dual cell 5 sites
+census check failures in new walks: 0
+relay-c15-hbn-sodalite: 11/11 events with a single-circuit witness
+FINAL ok

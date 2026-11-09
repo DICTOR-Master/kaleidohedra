@@ -1,0 +1,56 @@
+tetra: incidence root m = 1/3 = 0.333333, minimal polynomial 3*x - 1; face lattice changes: True
+tetra: incidence root m = 1 = 1.000000, minimal polynomial x - 1; face lattice changes: False
+tetra: incidence root m = 3 = 3.000000, minimal polynomial x - 3; face lattice changes: True
+tetra: golden cut P 3-gon x_G: m = -3 + 2*sqrt(5) = 1.472136, minimal polynomial x**2 + 6*x - 11
+tetra: golden cut P 3-gon x_L: m = 2*sqrt(5)/5 + 1 = 1.894427, minimal polynomial 5*x**2 - 10*x + 1
+tetra: golden cut P* 3-gon x_G: m = 3/11 + 2*sqrt(5)/11 = 0.679285, minimal polynomial 11*x**2 - 6*x - 1
+tetra: golden cut P* 3-gon x_L: m = 5 - 2*sqrt(5) = 0.527864, minimal polynomial x**2 - 10*x + 5
+PASS tetra: the range [0.33333, 3.00000] is turned into itself by m -> 1/m
+tetra: turn pairs incidence m = 0.333333 with 1/m = 3.000000: partner is an incidence event: True
+tetra: turn pairs incidence m = 1.000000 with 1/m = 1.000000: partner is an incidence event: True
+tetra: turn pairs incidence m = 3.000000 with 1/m = 0.333333: partner is an incidence event: True
+tetra: turn pairs golden cut P 3-gon x_G m = 1.472136 with 1/m = 0.679285: partner golden: ['P* 3-gon x_G']
+tetra: turn pairs golden cut P 3-gon x_L m = 1.894427 with 1/m = 0.527864: partner golden: ['P* 3-gon x_L']
+tetra: turn pairs golden cut P* 3-gon x_G m = 0.679285 with 1/m = 1.472136: partner golden: ['P 3-gon x_G']
+tetra: turn pairs golden cut P* 3-gon x_L m = 0.527864 with 1/m = 1.894427: partner golden: ['P 3-gon x_L']
+PASS tetra: every kink of t_min is an incidence event of S or the turn of one (an incidence event of S^∨) [(1.0, 1.0)]
+PASS tetra: t_min by definition (#43) = max x·y over S x S^∨ and t_min(m) = t_min(1/m), 21 grid points
+PASS tetra: PREDICTION t_min is largest at the turning point m = 1, value R(S(1))^2 = 3 = 3.000000 grid max 2.999850 at m = 1.00005
+cube: incidence root m = sqrt(3)/3 = 0.577350, minimal polynomial 3*x**2 - 1; face lattice changes: True
+cube: incidence root m = 2*sqrt(3)/3 = 1.154701, minimal polynomial 3*x**2 - 4; face lattice changes: True
+cube: incidence root m = sqrt(3) = 1.732051, minimal polynomial x**2 - 3; face lattice changes: True
+cube: golden cut P 4-gon x_G: m = (-2*sqrt(15) - sqrt(30) + 3*sqrt(6) + 8*sqrt(3))/6 = 1.330281, minimal polynomial 81*x**8 - 3024*x**6 + 12222*x**4 - 15456*x**2 + 5041
+cube: golden cut P 4-gon x_L: m = (-3*sqrt(6) - sqrt(30) + 2*sqrt(15) + 8*sqrt(3))/6 = 1.462780, minimal polynomial 81*x**8 - 3024*x**6 + 12222*x**4 - 15456*x**2 + 5041
+cube: golden cut P* 3-gon x_G: m = (sqrt(3) + sqrt(15))/6 = 0.934172, minimal polynomial 9*x**4 - 9*x**2 + 1
+cube: golden cut P* 3-gon x_L: m = (-sqrt(15) + 5*sqrt(3))/6 = 0.797878, minimal polynomial 9*x**4 - 45*x**2 + 25
+PASS cube: the range [0.57735, 1.73205] is turned into itself by m -> 1/m
+cube: turn pairs incidence m = 0.577350 with 1/m = 1.732051: partner is an incidence event: True
+cube: turn pairs incidence m = 1.154701 with 1/m = 0.866025: partner is an incidence event: False
+cube: turn pairs incidence m = 1.732051 with 1/m = 0.577350: partner is an incidence event: True
+cube: turn pairs golden cut P 4-gon x_G m = 1.330281 with 1/m = 0.751721: partner golden: []
+cube: turn pairs golden cut P 4-gon x_L m = 1.462780 with 1/m = 0.683630: partner golden: []
+cube: turn pairs golden cut P* 3-gon x_G m = 0.934172 with 1/m = 1.070466: partner golden: []
+cube: turn pairs golden cut P* 3-gon x_L m = 0.797878 with 1/m = 1.253324: partner golden: []
+PASS cube: every kink of t_min is an incidence event of S or the turn of one (an incidence event of S^∨) [(0.8661, 0.866), (1.155, 1.1547)]
+PASS cube: t_min by definition (#43) = max x·y over S x S^∨ and t_min(m) = t_min(1/m), 21 grid points
+PASS cube: PREDICTION t_min is largest at the turning point m = 1, value R(S(1))^2 = 5 - 2*sqrt(3) = 1.535898 grid max 1.535898 at m = 1.00000
+dodeca: incidence root m = (1 + sqrt(5))*sqrt(30*sqrt(5) + 150)/60 = 0.794654, minimal polynomial 45*x**4 - 30*x**2 + 1; face lattice changes: True
+dodeca: incidence root m = -(sqrt(5) + 5)**(3/2)*(-5*sqrt(6) + sqrt(30))/120 = 1.098185, minimal polynomial 9*x**4 - 15*x**2 + 5; face lattice changes: True
+dodeca: incidence root m = (-sqrt(5)*sqrt(6*sqrt(5) + 30) + 3*sqrt(6*sqrt(5) + 30))/4 = 1.258409, minimal polynomial x**4 - 30*x**2 + 45; face lattice changes: True
+dodeca: golden cut P 5-gon x_G: m = sqrt(5 - 2*sqrt(5))*(2*sqrt(6)*sqrt(47 - 21*sqrt(5)) + sqrt(30)*sqrt(47 - 21*sqrt(5)) + 2*sqrt(6)*sqrt(7 - 3*sqrt(5)) + sqrt(30)*sqrt(7 - 3*sqrt(5)) + 12*sqrt(3))/18 = 1.151593, minimal polynomial 729*x**4 - 4590*x**2 + 4805
+dodeca: golden cut P 5-gon x_L: m = sqrt(5 - 2*sqrt(5))*(9*sqrt(5)*sqrt(1410 - 630*sqrt(5)) + 25*sqrt(1410 - 630*sqrt(5)) + 9*sqrt(5)*sqrt(210 - 90*sqrt(5)) + 25*sqrt(210 - 90*sqrt(5)) + 30*sqrt(15) + 450*sqrt(3))/660 = 1.189018, minimal polynomial 1089*x**4 - 3750*x**2 + 3125
+dodeca: golden cut P* 3-gon x_G: m = sqrt(5 - 2*sqrt(5))*(4*sqrt(3) + 2*sqrt(15))/(-3*sqrt(5) + 3*sqrt(9 - 4*sqrt(5)) + 3*sqrt(5)*sqrt(9 - 4*sqrt(5)) + 15) = 1.007353, minimal polynomial 1089*x**4 - 1110*x**2 + 5
+dodeca: golden cut P* 3-gon x_L: m = sqrt(5 - 2*sqrt(5))*(-3*sqrt(15)*sqrt(9 - 4*sqrt(5)) - 5*sqrt(3)*sqrt(9 - 4*sqrt(5)) + 5*sqrt(3) + 5*sqrt(15))/18 = 0.937962, minimal polynomial 9*x**4 - 150*x**2 + 125
+PASS dodeca: the range [0.79465, 1.25841] is turned into itself by m -> 1/m
+dodeca: turn pairs incidence m = 0.794654 with 1/m = 1.258409: partner is an incidence event: True
+dodeca: turn pairs incidence m = 1.098185 with 1/m = 0.910593: partner is an incidence event: False
+dodeca: turn pairs incidence m = 1.258409 with 1/m = 0.794654: partner is an incidence event: True
+dodeca: turn pairs golden cut P 5-gon x_G m = 1.151593 with 1/m = 0.868362: partner golden: []
+dodeca: turn pairs golden cut P 5-gon x_L m = 1.189018 with 1/m = 0.841030: partner golden: []
+dodeca: turn pairs golden cut P* 3-gon x_G m = 1.007353 with 1/m = 0.992701: partner golden: []
+dodeca: turn pairs golden cut P* 3-gon x_L m = 0.937962 with 1/m = 1.066141: partner golden: []
+PASS dodeca: every kink of t_min is an incidence event of S or the turn of one (an incidence event of S^∨) [(0.9106, 0.9106), (1.0983, 1.0982)]
+PASS dodeca: t_min by definition (#43) = max x·y over S x S^∨ and t_min(m) = t_min(1/m), 21 grid points
+PASS dodeca: PREDICTION t_min is largest at the turning point m = 1, value R(S(1))^2 = (-9*sqrt(6*sqrt(5) + 30) - 3*sqrt(30*sqrt(5) + 150) - 4*sqrt(5) + sqrt(5)*sqrt(30*sqrt(5) + 150) + 3*sqrt(5)*sqrt(6*sqrt(5) + 30))/4 + 10 = 1.174819 grid max 1.174819 at m = 0.99999
+12/12 PASS
+FINAL ok
