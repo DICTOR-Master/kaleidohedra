@@ -1,5 +1,5 @@
-"""Close-up of Kulaichev's yantra (DICTO 10 Nov 2026: 'draw the close-up' of the 41 triangles): which of the 45 odd pieces are
-not triangles, and where the two tiny extra pieces lie. Uses figure.py's face arrangement on the stored 60-digit values.
+"""Close-up of Kulaichev's yantra (DICTO 10 Nov 2026: 'draw the close-up' of the 41 triangles): which of the 45 odd regions are
+not triangles, and where the two tiny extra triangles lie. Uses figure.py's face arrangement on the stored 60-digit values.
 usage: python3 kulaichev_closeup.py <out.png>"""
 import sys, os, math
 sys.path.insert(0, os.path.dirname(__file__))
@@ -16,10 +16,10 @@ for f in fs:
     cnt = sum(inside_tri((cx, cy), b, w, a, i) for i in range(1, 10))
     if cnt % 2: odd.append(dict(poly=poly, n=len(corners_of(poly)), depth=cnt, A=-ar, c=(cx, cy)))
 non = [o for o in odd if o['n'] != 3]; tiny = sorted(odd, key=lambda o: o['A'])[:2]
-print(f"odd pieces {len(odd)}, triangles {sum(o['n']==3 for o in odd)}; non-triangles: " +
+print(f"odd regions {len(odd)}, triangles {sum(o['n']==3 for o in odd)}; non-triangles: " +
       ', '.join(f"{o['n']} corners, ring depth {o['depth']}, area {o['A']:.2e}, centre ({o['c'][0]:+.4f}, {o['c'][1]:.4f})" for o in non))
 print('two smallest: ' + ', '.join(f"{o['n']} corners, area {o['A']:.2e}, centre ({o['c'][0]:+.4f}, {o['c'][1]:.4f})" for o in tiny))
-# zoom box round the right-hand tiny piece and its neighbours
+# zoom box round the right-hand tiny region and its neighbours
 t = max(tiny, key=lambda o: o['c'][0]); cx, cy = t['c']
 GOLD, MAG, BLUE, INK = '#e8d9a8', '#c7158a', '#1d4ed8', '#221e19'
 fig, axs = plt.subplots(1, 3, figsize=(15, 5.6), facecolor='#fffdf7')
@@ -52,13 +52,13 @@ corners_marked(axs[1], B1, 5); corners_marked(axs[2], B2, 7)
 sides = []
 for o in non_r:
     c = corners_of(o['poly']); L = [math.dist(c[i], c[(i + 1) % 4]) for i in range(4)]; sides.append(min(L))
-    print('four-sided piece: sides', ['%.4f' % x for x in L])
+    print('four-sided region: sides', ['%.4f' % x for x in L])
 
-axs[0].set_title("Kulaichev's yantra: 45 odd pieces", fontsize=12)
-axs[1].set_title(f"×{1.04/(B1[1]-B1[0]):.0f}: blue pieces A and B, four corners each;\ncorners 1 and 2 almost coincide at the pink triangle", fontsize=10)
-axs[2].set_title(f"×{1.04/(B2[1]-B2[0]):.0f}: the short sides A1–A2 and B1–B2 run down the white\nsliver (an even piece) under the pink triangle; corners 3, 4 lie far off", fontsize=10)
-fig.text(0.5, 0.02, f"Gold: the 41 triangles. Blue: the {len(non)} pieces that are not triangles. Magenta: the two tiny extra pieces "
-         f"(area {tiny[0]['A']:.1e} of a circle of diameter 1). Each blue piece: sides 1–2 short (0.0013–0.0015), the other three 0.07–0.09. Mirror image on the left.  DICTO · dictospheres.com",
+axs[0].set_title("Kulaichev's yantra: 45 odd regions", fontsize=12)
+axs[1].set_title(f"×{1.04/(B1[1]-B1[0]):.0f}: blue regions A and B, four corners each;\ncorners 1 and 2 almost coincide at the pink triangle", fontsize=10)
+axs[2].set_title(f"×{1.04/(B2[1]-B2[0]):.0f}: the short sides A1–A2 and B1–B2 run down the white\nsliver (an even region) under the pink triangle; corners 3, 4 lie far off", fontsize=10)
+fig.text(0.5, 0.02, f"Gold: the 41 triangles. Blue: the {len(non)} regions that are not triangles. Magenta: the two tiny extra triangles "
+         f"(area {tiny[0]['A']:.1e} of a circle of diameter 1). Each blue region: sides 1–2 short (0.0013–0.0015), the other three 0.07–0.09. Mirror image on the left.  DICTO · dictospheres.com",
          ha='center', fontsize=10)
 plt.savefig(sys.argv[1], dpi=150, bbox_inches='tight', facecolor='#fffdf7')
 ok = len(odd) == 45 and sum(o['n'] == 3 for o in odd) == 41

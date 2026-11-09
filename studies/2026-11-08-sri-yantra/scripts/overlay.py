@@ -1,7 +1,7 @@
 """Overlay plates for paper #103 Version 2 (DICTO 9 Nov 2026: "they are all in the same colours and all beautiful, it seems
 unclear"). Each variant yantra is drawn DOTTED in its own colour over the DICTO Yantra (GF1) drawn solid in faint grey, in the
 same circle (diameter 1), with its name in large type and its shortcomings as a red note ON the image. Every note is checked
-here from the stored coordinates (corner offsets from the circle, bindu incircle centre, odd-piece count via figure.py's face
+here from the stored coordinates (corner offsets from the circle, bindu incircle centre, odd-region count via figure.py's face
 arrangement) or quoted from Table 3 / README of this study; the script stops if a measured note is not true.
 Also draws the overview "Which yantra is which" (each yantra small, solid in its colour, name, EXACT or COMPUTED badge).
 usage: python3 overlay.py <outdir>      (writes overlay-*.png and which-yantra.png; prints the checks and a FINAL line)"""
@@ -45,7 +45,7 @@ Y = {  # key: (label, loader, colour, exact?)
 
 
 def measure(b, w, a):
-    """corner offsets from the circle (+ outside), bindu incircle centre offset and k, odd pieces by ring, tiny third-ring pieces"""
+    """corner offsets from the circle (+ outside), bindu incircle centre offset and k, odd regions by ring, tiny third-ring regions"""
     off = {i: math.hypot(w[i], b[i] - 0.5) - 0.5 for i in (1, 9)}
     H = a[1] - b[5]; h = w[1] * (a[1] - b[5]) / (a[1] - b[1])
     r = h * H / (h + math.hypot(h, H)); dc = b[5] + r - 0.5
@@ -132,7 +132,7 @@ def overview(out, M):
     sub = {'GF1': 'Cleo-Antonius', 'KRP': 'equal great triangles', 'R1': 'every corner a fraction',
            'Rh345': "DICTO's rhombus, 3-4-5", 'grid': 'one slope', 'K1': 'Cleo-Icos over stella',
            'V1': 'every condition met', 'PF2': 'stella exact below', 'G1': 'repeats in its own bindu',
-           'E1': 'pieces most even'}
+           'E1': 'regions most even'}
     for n, key in enumerate(order):
         label, load, col, exact = Y[key]; b, w, a = load()
         c, r = n % cols, n // cols; ox, oy = 20 * s + c * tw, head + r * th
@@ -145,9 +145,9 @@ def overview(out, M):
         for l in wrap(dr, label, font(BOLD, 34 * s), tw - 50 * s):
             dr.text((ox + 25 * s, ty), l, font=font(BOLD, 34 * s), fill=INK); ty += 42 * s
         dr.text((ox + 25 * s, ty + 4 * s), sub[key], font=font(FONT, 27 * s), fill=(70, 70, 70)); ty += 40 * s
-        # pieces line, counted from the geometry (DICTO 10 Nov 2026: say plainly which pieces are triangles)
+        # regions line, counted from the geometry (DICTO 10 Nov 2026: say plainly which regions are triangles)
         n_, t_ = M[key]['n'], M[key]['tri']
-        pl = f'{n_} pieces, all triangles' if n_ == t_ else f'{n_} pieces: {t_} triangles, {n_ - t_} four-sided'
+        pl = f'{n_} regions, all triangles' if n_ == t_ else f'{n_} regions: {t_} triangles, {n_ - t_} four-sided'
         fpl = font(BOLD if n_ != t_ else FONT, 27 * s)
         for l in wrap(dr, pl, fpl, tw - 50 * s):
             dr.text((ox + 25 * s, ty + 4 * s), l, font=fpl, fill=RED if n_ != t_ else (70, 70, 70)); ty += 36 * s
@@ -163,7 +163,7 @@ def main(outdir):
     for k in Y:
         M[k] = measure(*Y[k][1]())
         m = M[k]
-        print(f"{k:6s} odd pieces {m['n']} rings {m['rings']} (triangles {m['tri']}); t1/t9 corner offset "
+        print(f"{k:6s} odd regions {m['n']} rings {m['rings']} (triangles {m['tri']}); t1/t9 corner offset "
               f"{m['off'][1]:+.4f} {m['off'][9]:+.4f}; bindu centre offset {m['bindu']:+.2e}; k {m['k']:.5f}; t3 tip {m['t3tip']:.4f}"
               + (f"; two smallest third-ring areas {[round(t[2], 7) for t in m['tiny']]}" if m['tiny'] else ''))
     ok = True
@@ -176,17 +176,17 @@ def main(outdir):
                            [(-t[3][0], t[3][1], 0.03) for t in m['tiny']]
     P = {}
     m = M['KRP']; need(m['n'] == 45 and m['rings'][2] == 12, 'KRP 45')
-    P['KRP'] = (['45 pieces, not 43 (ringed: the third ring\'s two smallest pieces); 28 sandhis, not 24'], [])
+    P['KRP'] = (['45 regions, not 43: 41 triangles and 4 four-sided (ringed: the two tiny extra triangles); 28 sandhis, not 24'], [])
     m = M['R1']; need(m['off'][1] < -1e-3 and m['off'][9] < -1e-3 and abs(m['bindu']) > 1e-3, 'R1')
     P['R1'] = ([f"small corners inside the circle (t1 by {-m['off'][1]:.3f}, t9 by {-m['off'][9]:.3f}); bindu not centred "
                 f"(off by {abs(m['bindu']):.3f})", "t1's base at 3.3/48, not 6/48 as traditionally drawn"], corner_rings(*Y['R1'][1]()[:2]))
     m = M['Rh345']; need(m['n'] == 45 and abs(abs(m['bindu']) - 2.36e-5) < 0.01e-5, 'Rh345')
-    P['Rh345'] = (['45 pieces, not 43 (ringed: the third ring\'s two smallest pieces); 28 sandhis', 'bindu off centre by 2.36·10⁻⁵'], [])
-    m = M['grid']; need(m['t3tip'] > 1 and m['n'] == 37 and m['off'][9] > 0.05, 'grid')
+    P['Rh345'] = (['45 regions, not 43: 41 triangles and 4 four-sided (ringed: the two tiny extra triangles); 28 sandhis', 'bindu off centre by 2.36·10⁻⁵'], [])
+    m = M['grid']; need(m['t3tip'] > 1 and m['n'] == 37 and m['tri'] == 33 and m['off'][9] > 0.05, 'grid')
     gb, gw = Y['grid'][1]()[:2]
     P['grid'] = ([f"t3's lower part outside the circle (its tip at depth {m['t3tip']:.3f})",
                   f"t9's base on the tangent at the bottom, its corners {m['off'][9]:.3f} outside",
-                  "37 pieces, not 43; no corner touches (Theorem 7)"],
+                  "37 regions, not 43, only 33 of them triangles; no corner touches (Theorem 7)"],
                  [(0.0, m['t3tip'], 0.035), (gw[9], gb[9], 0.035), (-gw[9], gb[9], 0.035)])
     m = M['K1']; need(m['n'] == 43 and abs(m['bindu']) > 1e-4, 'K1')
     P['K1'] = ([f"bindu not centred (off by {abs(m['bindu']):.3f} of the diameter)", 'COMPUTED: exact form not found'], [])
