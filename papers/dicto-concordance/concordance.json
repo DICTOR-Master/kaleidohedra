@@ -6178,6 +6178,10 @@
     "rule": "Hygiene",
     "what": "FIRM 11-07: keep unread drafts clear; delete transitional files; tidy.py daily and at release",
     "source": "tools/tidy.py"
+   },
+   {
+    "what": "FIRM 11-09 (DICTO: 'to have to emphatically state that constantly points towards its antithesis'): in papers DICTO is the author; no running 'DICTO proposed…'; credits are two lines (DICTO: ideas, names, constructions and direction / Computation, verification and drafting with Claude (Anthropic)); other people's work is credited by name; new papers and new versions only",
+    "enforced_by": "memory feedback-author-credit; agent briefs"
    }
   ]
  },
