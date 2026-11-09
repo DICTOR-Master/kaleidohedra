@@ -1,0 +1,53 @@
+== cube5: d=5, corners 32, facets 10; h^2 = 1, R^2 = 5, c = h^2 R^2 = 5
+   squared flag radii (corner ... facet): ['5', '4', '3', '2', '1']  ~ [5.0, 4.0, 3.0, 2.0, 1.0]
+   flag Gram identity q_j.q_k = r2[max(j,k)]: True
+   fixed point sqrt(c) = 2.236067977500 in hop [2, 3]; predicted peak t_min = R(S)^2/h^2 = 2.055728090001
+   mu = 1.083333 (13/12): corners 80/160, antipol True, t_min = 1.0833333333 exact 13/12, closed form equal True, turned equal True
+   mu = 1.166667 (7/6): corners 80/160, antipol True, t_min = 1.1666666667 exact 7/6, closed form equal True, turned equal True
+   mu = 1.250000 (5/4): corners 80/80, antipol True, t_min = 1.2500000000 exact 5/4, closed form equal True, turned equal True
+   mu = 1.388889 (25/18): corners 80/320, antipol True, t_min = 1.3888888889 exact 25/18, closed form equal True, turned equal True
+   mu = 1.527778 (55/36): corners 80/320, antipol True, t_min = 1.5277777778 exact 55/36, closed form equal True, turned equal True
+   mu = 1.666667 (5/3): corners 80/80, antipol True, t_min = 1.6666666667 exact 5/3, closed form equal True, turned equal True
+   mu = 1.777778 (16/9): corners 80/240, antipol True, t_min = 1.7777777778 exact 16/9, closed form equal True, turned equal True
+   mu = 1.888889 (17/9): corners 80/240, antipol True, t_min = 1.8888888889 exact 17/9, closed form equal True, turned equal True
+   mu = 2.000000 (2): corners 40/240, antipol True, t_min = 2.0000000000 exact 2, closed form equal True, turned equal True
+   mu = 2.166667 (13/6): corners 240/240, antipol True, t_min = 2.0512820513 exact 80/39, closed form equal True, turned equal True
+   mu = 2.333333 (7/3): corners 240/240, antipol True, t_min = 2.0476190476 exact 43/21, closed form equal True, turned equal True
+   mu = 2.500000 (5/2): corners 240/40, antipol True, t_min = 2.0000000000 exact 2, closed form equal True, turned equal True
+   mu = 2.666667 (8/3): corners 240/80, antipol True, t_min = 1.8750000000 exact 15/8, closed form equal True, turned equal True
+   mu = 2.833333 (17/6): corners 240/80, antipol True, t_min = 1.7647058824 exact 30/17, closed form equal True, turned equal True
+   mu = 3.000000 (3): corners 80/80, antipol True, t_min = 1.6666666667 exact 5/3, closed form equal True, turned equal True
+   mu = 3.333333 (10/3): corners 320/80, antipol True, t_min = 1.5000000000 exact 3/2, closed form equal True, turned equal True
+   mu = 3.666667 (11/3): corners 320/80, antipol True, t_min = 1.3636363636 exact 15/11, closed form equal True, turned equal True
+   mu = 4.000000 (4): corners 80/80, antipol True, t_min = 1.2500000000 exact 5/4, closed form equal True, turned equal True
+   mu = 4.333333 (13/3): corners 160/80, antipol True, t_min = 1.1538461538 exact 15/13, closed form equal True, turned equal True
+   mu = 4.666667 (14/3): corners 160/80, antipol True, t_min = 1.0714285714 exact 15/14, closed form equal True, turned equal True
+   float scan (4001 log-spaced points): argmax 2.236068 vs sqrt(c) 2.236068; max 2.0557280900 vs peak 2.0557280900; scan symmetric under mu -> c/mu: True
+   cube5: ok (11.8 s)
+== cross5: d=5, corners 10, facets 32; h^2 = 1/5, R^2 = 1, c = h^2 R^2 = 1/5
+   squared flag radii (corner ... facet): ['1', '1/2', '1/3', '1/4', '1/5']  ~ [1.0, 0.5, 0.333333, 0.25, 0.2]
+   flag Gram identity q_j.q_k = r2[max(j,k)]: True
+   fixed point sqrt(c) = 0.447213595500 in hop [1/3, 1/2]; predicted peak t_min = R(S)^2/h^2 = 2.055728090001
+   mu = 0.216667 (13/60): corners 160/80, antipol True, t_min = 1.0833333333 exact 13/12, closed form equal True, turned equal True
+   mu = 0.233333 (7/30): corners 160/80, antipol True, t_min = 1.1666666667 exact 7/6, closed form equal True, turned equal True
+   mu = 0.250000 (1/4): corners 80/80, antipol True, t_min = 1.2500000000 exact 5/4, closed form equal True, turned equal True
+   mu = 0.277778 (5/18): corners 320/80, antipol True, t_min = 1.3888888889 exact 25/18, closed form equal True, turned equal True
+   mu = 0.305556 (11/36): corners 320/80, antipol True, t_min = 1.5277777778 exact 55/36, closed form equal True, turned equal True
+   mu = 0.333333 (1/3): corners 80/80, antipol True, t_min = 1.6666666667 exact 5/3, closed form equal True, turned equal True
+   mu = 0.355556 (16/45): corners 240/80, antipol True, t_min = 1.7777777778 exact 16/9, closed form equal True, turned equal True
+   mu = 0.377778 (17/45): corners 240/80, antipol True, t_min = 1.8888888889 exact 17/9, closed form equal True, turned equal True
+   mu = 0.400000 (2/5): corners 240/40, antipol True, t_min = 2.0000000000 exact 2, closed form equal True, turned equal True
+   mu = 0.433333 (13/30): corners 240/240, antipol True, t_min = 2.0512820513 exact 80/39, closed form equal True, turned equal True
+   mu = 0.466667 (7/15): corners 240/240, antipol True, t_min = 2.0476190476 exact 43/21, closed form equal True, turned equal True
+   mu = 0.500000 (1/2): corners 40/240, antipol True, t_min = 2.0000000000 exact 2, closed form equal True, turned equal True
+   mu = 0.533333 (8/15): corners 80/240, antipol True, t_min = 1.8750000000 exact 15/8, closed form equal True, turned equal True
+   mu = 0.566667 (17/30): corners 80/240, antipol True, t_min = 1.7647058824 exact 30/17, closed form equal True, turned equal True
+   mu = 0.600000 (3/5): corners 80/80, antipol True, t_min = 1.6666666667 exact 5/3, closed form equal True, turned equal True
+   mu = 0.666667 (2/3): corners 80/320, antipol True, t_min = 1.5000000000 exact 3/2, closed form equal True, turned equal True
+   mu = 0.733333 (11/15): corners 80/320, antipol True, t_min = 1.3636363636 exact 15/11, closed form equal True, turned equal True
+   mu = 0.800000 (4/5): corners 80/80, antipol True, t_min = 1.2500000000 exact 5/4, closed form equal True, turned equal True
+   mu = 0.866667 (13/15): corners 80/160, antipol True, t_min = 1.1538461538 exact 15/13, closed form equal True, turned equal True
+   mu = 0.933333 (14/15): corners 80/160, antipol True, t_min = 1.0714285714 exact 15/14, closed form equal True, turned equal True
+   float scan (4001 log-spaced points): argmax 0.447214 vs sqrt(c) 0.447214; max 2.0557280900 vs peak 2.0557280900; scan symmetric under mu -> c/mu: True
+   cross5: ok (11.9 s)
+FINAL ok

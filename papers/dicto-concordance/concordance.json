@@ -5421,6 +5421,15 @@
     "retry": "keys on vertical walls (route 4)",
     "study": "studies/2026-11-09-escher-hexagon",
     "date": "2026-11-09"
+   },
+   {
+    "question": "Hopscotch Turn Theorem: on the polar line S(mu) = P cap mu P* of a regular polytope, does the antipol turn mu -> c/mu hold and is t_min largest at its fixed point, in general",
+    "method": "proof: chamber slice by the dominance lemma, flag Gram identity q_j.q_k = rho^2_max(j,k), points as random variables on the squared flag radii, convex order (bracketing two-point law), AM-GM / log-concavity in log mu; exact checks Q(sqrt5) at 171 samples on 13 lines (5 Platonic, 6 regular 4-polytopes, 5-cube, 5-orthoplex) + sympy identities and published closed forms (studies/2026-11-09-turn-theorem)",
+    "status": "SETTLED",
+    "result": "PROVED for every regular convex polytope, any dimension: S(mu)^v = h^-2 S(c/mu), c = h^2R^2; h^2 t_min = E min(U_mu, U_c/mu) (two-point laws on bracketing flag radii) = r + (mu-r)(c/mu-r)/(A-r) in a common hop, min(mu, c/mu) otherwise; log t_min concave in log mu, unique max at mu = hR (all faces tangent), value (R/r)^2 of the tangent solid; walls of S = squared flag radii (dual-sweeps LEAD 1 for regular P), walls of S^v = their turns; t_min breaks at one turned pair (none if rA = c: 5-cell, 24-cell; only hR if a node: T, tesseract, 16-cell). Peaks: D,I 10-sqrt5-sqrt(30+6sqrt5); C,O 5-2sqrt3; T 3; 5-cell 16/5; tesseract/16-cell 2 (24-cell); 24-cell 24-16sqrt2; 600/120-cell 26-2sqrt5-10sqrt2-2sqrt10; d-cube m+(sqrt d-m)^2. Cauchy-Schwarz route fails (cube mu=2); min-of-three form fails when hR is in a middle hop (5-cell, 24-cell, 5-cube)",
+    "retry": "never; only LEAD 1-2 (two-depth / quasi-regular lines) or LEAD 5 (star polytopes)",
+    "study": "studies/2026-11-09-turn-theorem",
+    "date": "2026-11-09"
    }
   ]
  },

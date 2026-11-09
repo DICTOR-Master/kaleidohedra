@@ -1,0 +1,590 @@
+[
+ {
+  "name": "simplex4",
+  "d": 4,
+  "h2": "1/5",
+  "R2": "16/5",
+  "c": "16/25",
+  "r2": [
+   "16/5",
+   "6/5",
+   "8/15",
+   "1/5"
+  ],
+  "sqrt_c": 0.8,
+  "peak": 3.1999999999999997,
+  "rows": [
+   {
+    "mu": "17/60",
+    "mu_f": 0.2833333333333333,
+    "corners": 20,
+    "tmin": "17/12",
+    "tmin_f": 1.4166666666666667,
+    "closed": "17/12",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "11/30",
+    "mu_f": 0.36666666666666664,
+    "corners": 20,
+    "tmin": "11/6",
+    "tmin_f": 1.8333333333333333,
+    "closed": "11/6",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "9/20",
+    "mu_f": 0.45,
+    "corners": 20,
+    "tmin": "9/4",
+    "tmin_f": 2.25,
+    "closed": "9/4",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "8/15",
+    "mu_f": 0.5333333333333333,
+    "corners": 10,
+    "tmin": "8/3",
+    "tmin_f": 2.6666666666666665,
+    "closed": "8/3",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "7/10",
+    "mu_f": 0.7,
+    "corners": 30,
+    "tmin": "22/7",
+    "tmin_f": 3.142857142857143,
+    "closed": "22/7",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "13/15",
+    "mu_f": 0.8666666666666667,
+    "corners": 30,
+    "tmin": "124/39",
+    "tmin_f": 3.1794871794871793,
+    "closed": "124/39",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "31/30",
+    "mu_f": 1.0333333333333334,
+    "corners": 30,
+    "tmin": "278/93",
+    "tmin_f": 2.989247311827957,
+    "closed": "278/93",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "6/5",
+    "mu_f": 1.2,
+    "corners": 10,
+    "tmin": "8/3",
+    "tmin_f": 2.6666666666666665,
+    "closed": "8/3",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "17/10",
+    "mu_f": 1.7,
+    "corners": 20,
+    "tmin": "32/17",
+    "tmin_f": 1.8823529411764706,
+    "closed": "32/17",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "11/5",
+    "mu_f": 2.2,
+    "corners": 20,
+    "tmin": "16/11",
+    "tmin_f": 1.4545454545454546,
+    "closed": "16/11",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "27/10",
+    "mu_f": 2.7,
+    "corners": 20,
+    "tmin": "32/27",
+    "tmin_f": 1.1851851851851851,
+    "closed": "32/27",
+    "antipol": true,
+    "ok": true
+   }
+  ]
+ },
+ {
+  "name": "tesseract",
+  "d": 4,
+  "h2": "1",
+  "R2": "4",
+  "c": "4",
+  "r2": [
+   "4",
+   "3",
+   "2",
+   "1"
+  ],
+  "sqrt_c": 2.0,
+  "peak": 2.0,
+  "rows": [
+   {
+    "mu": "13/12",
+    "mu_f": 1.0833333333333333,
+    "corners": 48,
+    "tmin": "13/12",
+    "tmin_f": 1.0833333333333333,
+    "closed": "13/12",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "7/6",
+    "mu_f": 1.1666666666666667,
+    "corners": 48,
+    "tmin": "7/6",
+    "tmin_f": 1.1666666666666667,
+    "closed": "7/6",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "5/4",
+    "mu_f": 1.25,
+    "corners": 48,
+    "tmin": "5/4",
+    "tmin_f": 1.25,
+    "closed": "5/4",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "4/3",
+    "mu_f": 1.3333333333333333,
+    "corners": 48,
+    "tmin": "4/3",
+    "tmin_f": 1.3333333333333333,
+    "closed": "4/3",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "3/2",
+    "mu_f": 1.5,
+    "corners": 48,
+    "tmin": "3/2",
+    "tmin_f": 1.5,
+    "closed": "3/2",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "5/3",
+    "mu_f": 1.6666666666666667,
+    "corners": 48,
+    "tmin": "5/3",
+    "tmin_f": 1.6666666666666667,
+    "closed": "5/3",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "11/6",
+    "mu_f": 1.8333333333333333,
+    "corners": 48,
+    "tmin": "11/6",
+    "tmin_f": 1.8333333333333333,
+    "closed": "11/6",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "2",
+    "mu_f": 2.0,
+    "corners": 24,
+    "tmin": "2",
+    "tmin_f": 2.0,
+    "closed": "2",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "9/4",
+    "mu_f": 2.25,
+    "corners": 96,
+    "tmin": "16/9",
+    "tmin_f": 1.7777777777777777,
+    "closed": "16/9",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "5/2",
+    "mu_f": 2.5,
+    "corners": 96,
+    "tmin": "8/5",
+    "tmin_f": 1.6,
+    "closed": "8/5",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "11/4",
+    "mu_f": 2.75,
+    "corners": 96,
+    "tmin": "16/11",
+    "tmin_f": 1.4545454545454546,
+    "closed": "16/11",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "3",
+    "mu_f": 3.0,
+    "corners": 32,
+    "tmin": "4/3",
+    "tmin_f": 1.3333333333333333,
+    "closed": "4/3",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "13/4",
+    "mu_f": 3.25,
+    "corners": 64,
+    "tmin": "16/13",
+    "tmin_f": 1.2307692307692308,
+    "closed": "16/13",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "7/2",
+    "mu_f": 3.5,
+    "corners": 64,
+    "tmin": "8/7",
+    "tmin_f": 1.1428571428571428,
+    "closed": "8/7",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "15/4",
+    "mu_f": 3.75,
+    "corners": 64,
+    "tmin": "16/15",
+    "tmin_f": 1.0666666666666667,
+    "closed": "16/15",
+    "antipol": true,
+    "ok": true
+   }
+  ]
+ },
+ {
+  "name": "cross16",
+  "d": 4,
+  "h2": "1/4",
+  "R2": "1",
+  "c": "1/4",
+  "r2": [
+   "1",
+   "1/2",
+   "1/3",
+   "1/4"
+  ],
+  "sqrt_c": 0.5,
+  "peak": 2.0,
+  "rows": [
+   {
+    "mu": "13/48",
+    "mu_f": 0.2708333333333333,
+    "corners": 64,
+    "tmin": "13/12",
+    "tmin_f": 1.0833333333333333,
+    "closed": "13/12",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "7/24",
+    "mu_f": 0.2916666666666667,
+    "corners": 64,
+    "tmin": "7/6",
+    "tmin_f": 1.1666666666666667,
+    "closed": "7/6",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "5/16",
+    "mu_f": 0.3125,
+    "corners": 64,
+    "tmin": "5/4",
+    "tmin_f": 1.25,
+    "closed": "5/4",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "1/3",
+    "mu_f": 0.3333333333333333,
+    "corners": 32,
+    "tmin": "4/3",
+    "tmin_f": 1.3333333333333333,
+    "closed": "4/3",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "3/8",
+    "mu_f": 0.375,
+    "corners": 96,
+    "tmin": "3/2",
+    "tmin_f": 1.5,
+    "closed": "3/2",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "5/12",
+    "mu_f": 0.4166666666666667,
+    "corners": 96,
+    "tmin": "5/3",
+    "tmin_f": 1.6666666666666667,
+    "closed": "5/3",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "11/24",
+    "mu_f": 0.4583333333333333,
+    "corners": 96,
+    "tmin": "11/6",
+    "tmin_f": 1.8333333333333333,
+    "closed": "11/6",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "1/2",
+    "mu_f": 0.5,
+    "corners": 24,
+    "tmin": "2",
+    "tmin_f": 2.0,
+    "closed": "2",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "9/16",
+    "mu_f": 0.5625,
+    "corners": 48,
+    "tmin": "16/9",
+    "tmin_f": 1.7777777777777777,
+    "closed": "16/9",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "5/8",
+    "mu_f": 0.625,
+    "corners": 48,
+    "tmin": "8/5",
+    "tmin_f": 1.6,
+    "closed": "8/5",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "11/16",
+    "mu_f": 0.6875,
+    "corners": 48,
+    "tmin": "16/11",
+    "tmin_f": 1.4545454545454546,
+    "closed": "16/11",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "3/4",
+    "mu_f": 0.75,
+    "corners": 48,
+    "tmin": "4/3",
+    "tmin_f": 1.3333333333333333,
+    "closed": "4/3",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "13/16",
+    "mu_f": 0.8125,
+    "corners": 48,
+    "tmin": "16/13",
+    "tmin_f": 1.2307692307692308,
+    "closed": "16/13",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "7/8",
+    "mu_f": 0.875,
+    "corners": 48,
+    "tmin": "8/7",
+    "tmin_f": 1.1428571428571428,
+    "closed": "8/7",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "15/16",
+    "mu_f": 0.9375,
+    "corners": 48,
+    "tmin": "16/15",
+    "tmin_f": 1.0666666666666667,
+    "closed": "16/15",
+    "antipol": true,
+    "ok": true
+   }
+  ]
+ },
+ {
+  "name": "cell24",
+  "d": 4,
+  "h2": "1",
+  "R2": "2",
+  "c": "2",
+  "r2": [
+   "2",
+   "3/2",
+   "4/3",
+   "1"
+  ],
+  "sqrt_c": 1.4142135623730951,
+  "peak": 1.3725830020304792,
+  "rows": [
+   {
+    "mu": "13/12",
+    "mu_f": 1.0833333333333333,
+    "corners": 192,
+    "tmin": "13/12",
+    "tmin_f": 1.0833333333333333,
+    "closed": "13/12",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "7/6",
+    "mu_f": 1.1666666666666667,
+    "corners": 192,
+    "tmin": "7/6",
+    "tmin_f": 1.1666666666666667,
+    "closed": "7/6",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "5/4",
+    "mu_f": 1.25,
+    "corners": 192,
+    "tmin": "5/4",
+    "tmin_f": 1.25,
+    "closed": "5/4",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "4/3",
+    "mu_f": 1.3333333333333333,
+    "corners": 96,
+    "tmin": "4/3",
+    "tmin_f": 1.3333333333333333,
+    "closed": "4/3",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "11/8",
+    "mu_f": 1.375,
+    "corners": 288,
+    "tmin": "15/11",
+    "tmin_f": 1.3636363636363635,
+    "closed": "15/11",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "17/12",
+    "mu_f": 1.4166666666666667,
+    "corners": 288,
+    "tmin": "70/51",
+    "tmin_f": 1.3725490196078431,
+    "closed": "70/51",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "35/24",
+    "mu_f": 1.4583333333333333,
+    "corners": 288,
+    "tmin": "143/105",
+    "tmin_f": 1.361904761904762,
+    "closed": "143/105",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "3/2",
+    "mu_f": 1.5,
+    "corners": 96,
+    "tmin": "4/3",
+    "tmin_f": 1.3333333333333333,
+    "closed": "4/3",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "13/8",
+    "mu_f": 1.625,
+    "corners": 192,
+    "tmin": "16/13",
+    "tmin_f": 1.2307692307692308,
+    "closed": "16/13",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "7/4",
+    "mu_f": 1.75,
+    "corners": 192,
+    "tmin": "8/7",
+    "tmin_f": 1.1428571428571428,
+    "closed": "8/7",
+    "antipol": true,
+    "ok": true
+   },
+   {
+    "mu": "15/8",
+    "mu_f": 1.875,
+    "corners": 192,
+    "tmin": "16/15",
+    "tmin_f": 1.0666666666666667,
+    "closed": "16/15",
+    "antipol": true,
+    "ok": true
+   }
+  ]
+ }
+]

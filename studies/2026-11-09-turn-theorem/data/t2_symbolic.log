@@ -1,0 +1,61 @@
+(1) identities
+  ok   same hop: F(s,s) - F(sk, s/k) = r (sqrt(sk) - sqrt(s/k))^2/(A - r)
+  ok   cross hop: r + (s - r)^2/(A - r) - s^2/A = r (A - s)^2/(A (A - r))
+  ok   g(mu) - mu = (mu - r)(c/mu - A)/(A - r), g = F(mu, c/mu)
+(2) published closed forms
+  ok   C-O: closed form = min(mu, 3/mu, 5 - mu - 3/mu) on [1, 3/2], [3/2, 2], [2, 3]
+     piece at mu_u = 0.9: closed form - published = mu_u*(-2*sqrt(6*sqrt(5) + 15) - sqrt(15 - 6*sqrt(5)) + sqrt(30*sqrt(5) + 75))  (|.| at 3 points 3.8e-124)
+     piece at mu_u = 1.0: closed form - published = (-65*mu_u**2*sqrt(6*sqrt(5) + 15) - 29*mu_u**2*sqrt(30*sqrt(5) + 75) + 105*mu_u**2*sqrt(6*sqrt(5) + 30)/2 + 47*mu_u**2*sqrt(30*sqrt(5) + 150)/2 - 65*sqrt(6*sqrt(5) + 15) - 29*sqrt(30*sqrt(5) + 75) + 105*sqrt(6*sqrt(5) + 30)/2 + 47*sqrt(30*sqrt(5) + 150)/2)/(mu_u*(105 + 47*sqrt(5)))  (|.| at 3 points 2.3e-16)
+     piece at mu_u = 1.1: closed form - published = 0  (|.| at 3 points 0.0e+00)
+  ok   D-I: closed form = min(mu/c, 1/(c mu), 10 - sqrt5 - sqrt(k0)(mu + 1/mu)) in unit form (bird 3 Theorem 3)
+  ok   T: closed form = 3 min(mu, 1/mu) (the fixed point mu = 1 is the edge wall: the octahedron)
+(3) peak values R(S(sqrt c))^2/h^2, exact
+     D          nodes [1.894427, 2.618034, 3.0], sqrt c = 2.383963 (first hop), peak = -sqrt(30*sqrt(5) + 75) - sqrt(5) + sqrt(6*sqrt(5) + 15) + 10 = 1.1748191941, kinks of t_min at 2.170820, 2.618034 (product 5.683282 = c 5.683282)
+  ok   D: peak = -sqrt(6*sqrt(5) + 30) - sqrt(5) + 10
+  ok   D: corners (slope jumps) of t_min on the open line = [2.171, 2.618], predicted [2.171, 2.618] (a wall of S and its turn, product c)
+  ok   D: min(mu, c/mu, g(mu))/h^2 (g absent when sqrt c is a node) valid on the whole line = True, predicted True
+     I          nodes [2.284701, 2.618034, 3.618034], sqrt c = 2.875087 (last hop), peak = -3*sqrt(66*sqrt(5) + 150)/2 - sqrt(5) + 10 + sqrt(330*sqrt(5) + 750)/2 = 1.1748191941, kinks of t_min at 2.618034, 3.157379 (product 8.266125 = c 8.266125)
+  ok   I: peak = -sqrt(6*sqrt(5) + 30) - sqrt(5) + 10
+  ok   I: corners (slope jumps) of t_min on the open line = [2.618, 3.157], predicted [2.618, 3.157] (a wall of S and its turn, product c)
+  ok   I: min(mu, c/mu, g(mu))/h^2 (g absent when sqrt c is a node) valid on the whole line = True, predicted True
+     C          nodes [1.0, 2.0, 3.0], sqrt c = 1.732051 (first hop), peak = 5 - 2*sqrt(3) = 1.5358983849, kinks of t_min at 1.500000, 2.000000 (product 3.000000 = c 3.000000)
+  ok   C: peak = 5 - 2*sqrt(3)
+  ok   C: corners (slope jumps) of t_min on the open line = [1.5, 2.0], predicted [1.5, 2.0] (a wall of S and its turn, product c)
+  ok   C: min(mu, c/mu, g(mu))/h^2 (g absent when sqrt c is a node) valid on the whole line = True, predicted True
+     T          nodes [0.333333, 1.0, 3.0], sqrt c = 1.000000 (node), peak = 3 = 3.0000000000, kinks of t_min at 1.000000, 1.000000 (product 1.000000 = c 1.000000)
+  ok   T: peak = 3
+  ok   T: corners (slope jumps) of t_min on the open line = [1.0], predicted [1.0] (sqrt c is a node)
+  ok   T: min(mu, c/mu, g(mu))/h^2 (g absent when sqrt c is a node) valid on the whole line = True, predicted True
+     O          nodes [0.333333, 0.5, 1.0], sqrt c = 0.577350 (last hop), peak = 5 - 2*sqrt(3) = 1.5358983849, kinks of t_min at 0.500000, 0.666667 (product 0.333333 = c 0.333333)
+  ok   O: peak = 5 - 2*sqrt(3)
+  ok   O: corners (slope jumps) of t_min on the open line = [0.5, 0.667], predicted [0.5, 0.667] (a wall of S and its turn, product c)
+  ok   O: min(mu, c/mu, g(mu))/h^2 (g absent when sqrt c is a node) valid on the whole line = True, predicted True
+     5-cell     nodes [0.2, 0.533333, 1.2, 3.2], sqrt c = 0.800000 (middle hop), peak = 16/5 = 3.2000000000, kinks of t_min at 0.533333, 1.200000 (product 0.640000 = c 0.640000)
+  ok   5-cell: peak = 16/5
+  ok   5-cell: corners (slope jumps) of t_min on the open line = [], predicted [] (hop of sqrt c turned onto itself: C^1, curvature jumps at r, A)
+  ok   5-cell: min(mu, c/mu, g(mu))/h^2 (g absent when sqrt c is a node) valid on the whole line = False, predicted False
+     tesseract  nodes [1.0, 2.0, 3.0, 4.0], sqrt c = 2.000000 (node), peak = 2 = 2.0000000000, kinks of t_min at 2.000000, 2.000000 (product 4.000000 = c 4.000000)
+  ok   tesseract: peak = 2
+  ok   tesseract: corners (slope jumps) of t_min on the open line = [2.0], predicted [2.0] (sqrt c is a node)
+  ok   tesseract: min(mu, c/mu, g(mu))/h^2 (g absent when sqrt c is a node) valid on the whole line = True, predicted True
+     16-cell    nodes [0.25, 0.333333, 0.5, 1.0], sqrt c = 0.500000 (node), peak = 2 = 2.0000000000, kinks of t_min at 0.500000, 0.500000 (product 0.250000 = c 0.250000)
+  ok   16-cell: peak = 2
+  ok   16-cell: corners (slope jumps) of t_min on the open line = [0.5], predicted [0.5] (sqrt c is a node)
+  ok   16-cell: min(mu, c/mu, g(mu))/h^2 (g absent when sqrt c is a node) valid on the whole line = True, predicted True
+     24-cell    nodes [1.0, 1.333333, 1.5, 2.0], sqrt c = 1.414214 (middle hop), peak = 24 - 16*sqrt(2) = 1.3725830020, kinks of t_min at 1.333333, 1.500000 (product 2.000000 = c 2.000000)
+  ok   24-cell: peak = 24 - 16*sqrt(2)
+  ok   24-cell: corners (slope jumps) of t_min on the open line = [], predicted [] (hop of sqrt c turned onto itself: C^1, curvature jumps at r, A)
+  ok   24-cell: min(mu, c/mu, g(mu))/h^2 (g absent when sqrt c is a node) valid on the whole line = False, predicted False
+     600-cell   nodes [0.856763, 0.872678, 0.904508, 1.0], sqrt c = 0.925615 (last hop), peak = -10*sqrt(3*sqrt(5) + 7) - 2*sqrt(5) + 2*sqrt(15*sqrt(5) + 35) + 26 = 1.0611731009, kinks of t_min at 0.904508, 0.947214 (product 0.856763 = c 0.856763)
+  ok   600-cell: corners (slope jumps) of t_min on the open line = [0.905, 0.947], predicted [0.905, 0.947] (a wall of S and its turn, product c)
+  ok   600-cell: min(mu, c/mu, g(mu))/h^2 (g absent when sqrt c is a node) valid on the whole line = True, predicted True
+     120-cell   nodes [6.854102, 7.577709, 7.854102, 8.0], sqrt c = 7.404918 (first hop), peak = -10*sqrt(3*sqrt(5) + 7) - 2*sqrt(5) + 2*sqrt(15*sqrt(5) + 35) + 26 = 1.0611731009, kinks of t_min at 7.236068, 7.577709 (product 54.832816 = c 54.832816)
+  ok   120-cell: corners (slope jumps) of t_min on the open line = [7.236, 7.578], predicted [7.236, 7.578] (a wall of S and its turn, product c)
+  ok   120-cell: min(mu, c/mu, g(mu))/h^2 (g absent when sqrt c is a node) valid on the whole line = True, predicted True
+(4) fixed-point solid by brute force, five Platonic solids (sympy corners)
+  ok   D: S(sqrt c) has 60 corners, every face tangent to the sphere of radius h: True; t_min = -sqrt(30*sqrt(5) + 75) - sqrt(5) + sqrt(6*sqrt(5) + 15) + 10 (pairs, float 1.174819194130) = closed-form peak
+  ok   I: S(sqrt c) has 60 corners, every face tangent to the sphere of radius h: True; t_min = -3*sqrt(66*sqrt(5) + 150)/2 - sqrt(5) + 10 + sqrt(330*sqrt(5) + 750)/2 (pairs, float 1.174819194130) = closed-form peak
+  ok   C: S(sqrt c) has 24 corners, every face tangent to the sphere of radius h: True; t_min = 5 - 2*sqrt(3) (pairs, float 1.535898384862) = closed-form peak
+  ok   T: S(sqrt c) has 6 corners, every face tangent to the sphere of radius h: True; t_min = 3 (pairs, float 3.000000000000) = closed-form peak
+  ok   O: S(sqrt c) has 24 corners, every face tangent to the sphere of radius h: True; t_min = 5 - 2*sqrt(3) (pairs, float 1.535898384862) = closed-form peak
+FINAL ok

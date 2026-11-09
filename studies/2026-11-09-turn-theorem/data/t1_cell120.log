@@ -1,0 +1,21 @@
+== cell120: d=4, corners 600, facets 120; h^2 = (7/2) + (3/2)√5, R^2 = 8, c = h^2 R^2 = (28) + (12)√5
+   squared flag radii (corner ... facet): ['8', '(9/2) + (3/2)√5', '(4) + (8/5)√5', '(7/2) + (3/2)√5']  ~ [8.0, 7.854102, 7.577709, 6.854102]
+   flag Gram identity q_j.q_k = r2[max(j,k)]: True
+   fixed point sqrt(c) = 7.404918347288 in hop [(7/2) + (3/2)√5, (4) + (8/5)√5]; predicted peak t_min = R(S)^2/h^2 = 1.061173100933
+   mu = 6.896543 ((11/3) + (13/9)√5): corners 1440/2400, antipol True, t_min = 1.0061920100 exact (2) + (-4/9)√5, closed form equal True, turned equal True
+   mu = 6.938983 ((23/6) + (25/18)√5): corners 1440/2400, antipol True, t_min = 1.0123840200 exact (3) + (-8/9)√5, closed form equal True, turned equal True
+   mu = 6.981424 ((4) + (4/3)√5): corners 1440/1200, antipol True, t_min = 1.0185760300 exact (4) + (-4/3)√5, closed form equal True, turned equal True
+   mu = 7.066305 ((13/3) + (11/9)√5): corners 1440/3600, antipol True, t_min = 1.0309600500 exact (6) + (-20/9)√5, closed form equal True, turned equal True
+   mu = 7.151187 ((14/3) + (10/9)√5): corners 1440/3600, antipol True, t_min = 1.0433440700 exact (8) + (-28/9)√5, closed form equal True, turned equal True
+   mu = 7.236068 ((5) + (1)√5): corners 1440/720, antipol True, t_min = 1.0557280900 exact (10) + (-4)√5, closed form equal True, turned equal True
+   mu = 7.349948 ((14/3) + (6/5)√5): corners 1440/1440, antipol True, t_min = 1.0606049467 exact (1367/123) + (-553/123)√5, closed form equal True, turned equal True
+   mu = 7.463829 ((13/3) + (7/5)√5): corners 1440/1440, antipol True, t_min = 1.0605305375 exact (3586/303) + (-1460/303)√5, closed form equal True, turned equal True
+   mu = 7.577709 ((4) + (8/5)√5): corners 720/1440, antipol True, t_min = 1.0557280900 exact (10) + (-4)√5, closed form equal True, turned equal True
+   mu = 7.669840 ((25/6) + (47/30)√5): corners 3600/1440, antipol True, t_min = 1.0430465532 exact (1500/229) + (-564/229)√5, closed form equal True, turned equal True
+   mu = 7.761971 ((13/3) + (23/15)√5): corners 3600/1440, antipol True, t_min = 1.0306660646 exact (390/79) + (-138/79)√5, closed form equal True, turned equal True
+   mu = 7.854102 ((9/2) + (3/2)√5): corners 1200/1440, antipol True, t_min = 1.0185760300 exact (4) + (-4/3)√5, closed form equal True, turned equal True
+   mu = 7.902735 ((17/3) + (1)√5): corners 2400/1440, antipol True, t_min = 1.0123078099 exact (102/61) + (-18/61)√5, closed form equal True, turned equal True
+   mu = 7.951367 ((41/6) + (1/2)√5): corners 2400/1440, antipol True, t_min = 1.0061162660 exact (492/409) + (-36/409)√5, closed form equal True, turned equal True
+   float scan (4001 log-spaced points): argmax 7.404918 vs sqrt(c) 7.404918; max 1.0611731009 vs peak 1.0611731009; scan symmetric under mu -> c/mu: True
+   cell120: ok (180.2 s)
+FINAL ok
