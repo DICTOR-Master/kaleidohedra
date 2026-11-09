@@ -256,3 +256,10 @@ Down (this family): the 5-fold axis faces at k = 9, 10, 13, 17 (19) are TRUNCATE
 ## 16. CERTIFIED to k = 30: FINAL ok (watched job og-certified-30, 1981 s, D_31 built: 265 050 faces, 2305 orbits)
 **t_min(D_k) < 3/φ² certified for every k ≤ 30** (k = 23 … 30: 1.002128, 1.002565, 1.001215, 1.000652, 1.000671, 1.000769, 1.000677,
 1.001014); validation k = 10 … 13 MATCH the exact values. Conjecture 1 for all k now needs only the 4-step contraction (§12) from k = 30.
+
+## 17. Ring lemma data (DICTO "proceed", cheapest safe option; scripts/ring_lemma.py, data/ring-lemma-30.log; plain float, face
+counts drift slightly from the certified ones after k ≈ 20)
+Ratio of angular radii γ across every shared edge: median 1.10–1.20, 99th percentile ≤ 4.1 (k ≥ 20), but the MAXIMUM is unbounded in
+the data (up to 93 at k = 21, 37 at k = 28): tiny faces sit next to ordinary ones, so the classical all-faces ring lemma FAILS.
+The LARGEST face is never far above its neighbours: at most 5.59 (k = 22), ≤ 2.7 at k ≥ 24. Usable form: a ring lemma for the
+largest face only (it is at most a fixed multiple of each neighbour), which is what the 4-step contraction needs.
