@@ -273,3 +273,18 @@ the Decay Lemma (4-step contraction of the largest new face angle γ) becomes: t
 directions shrinks under the map points → their cell's corners. Leads: Delaunay refinement theory (Chew 1989, Ruppert 1995,
 Shewchuk 2002: inserting circumcentres bounds circumradius / shortest edge) for the contraction; the prior-art reading of 10 Nov
 (Demyanov–Ryabova, Buffon) found both processes different (study 2026-11-10-arxiv-scan).
+
+## §18 The linearised hop (route 2, 10 Nov 2026): no built-in contraction; what the rule must be
+In the Voronoi form (§17) the step near the sphere is, to first order in a small patch, the planar map
+points → their Voronoi vertices (circumcentres of the Delaunay triangles). That map does NOT contract gaps: on the triangular
+lattice it gives the honeycomb (circumcentres) and then the triangular lattice again (period 2), with the same covering radius
+a/√3 at every step. So a spectral-gap / linear-operator proof (Buffon-type) cannot give a universal contraction; route 2 is closed.
+The decrease of γ in #43 comes from global effects: the face count grows (F: 116 949 → 152 912 → 198 458 at k = 28–30, ≈ 1.3 per
+level, so the AVERAGE spacing shrinks ≈ 0.88 per level) and curvature; the LARGEST gap lags (γ_new_max 4.590°, 4.599°, 4.282° at
+k = 28–30; ≈ 0.94 per level over k = 22–30; not monotone).
+Target (Proposition C + New-Face chain): Conjecture 1 for all k ⇐ Σ_{k>30} γ_k² < 0.247 rad². From γ_30 = 0.0747 rad a geometric
+decay q per level suffices when γ_30² q²/(1 − q²) < 0.247, i.e. q ≤ ≈ 0.985 (q = 0.98 gives 0.135; q = 0.99 gives 0.275). Observed
+≈ 0.94: a fourfold margin in the rate.
+Rule to prove (route 1): (A) growth: F_{k+1} ≥ λ F_k with λ > 1 (Euler counting + the degeneracy pattern); (B) lag: the largest new
+face is at most C times its neighbours (ring lemma; measured C ≤ 5.6, ≤ 2.7 from k = 24), so the largest gap follows the average
+spacing up to a bounded factor per step. (A) + (B) ⇒ γ_k ≤ γ_30 q^{k−30} with q < 1.
