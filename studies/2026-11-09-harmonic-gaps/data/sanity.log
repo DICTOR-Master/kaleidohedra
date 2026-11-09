@@ -1,0 +1,13 @@
+PASS icosahedron: Q4 4.4e-14 Q6 0.6633 W6^ -0.169754 Q8 6.7e-14
+PASS dodecahedron: Q4 4.0e-14 Q6 0.3685 W6^ +0.169754 Q8 2.7e-14
+quadrature A: 278400 points
+quadrature B: 545664 points
+PASS solid angle 4 pi: 12.566370614359176
+PASS cube volume by ∫ r^3/3 dΩ = 8.000000000000002
+PASS orthonormality of the 961 real Y_lm (l <= 30) under the quadrature: max error 3.1e-15
+PASS sphere r = 1: a00 = 3.544907701811 (sqrt(4pi) 3.544907701811), max P_l (l>0) 1.7e-29
+PASS cube r(u): coefficients agree between quadratures A and B to 6.8e-15
+PASS cube r(u): nonzero degrees [0, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30] (cubic only: no l = 2, no odd l)
+PASS cube: independent grid (720000 rays) agrees on l = 0, 4, 6, 8 to 7.7e-06
+PASS fast real Y_lm recurrence = scipy sph_harm_y up to sign convention: 1.6e-14
+FINAL ok

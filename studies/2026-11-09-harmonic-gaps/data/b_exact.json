@@ -1,0 +1,333 @@
+{
+ "mark": "DICTO harmonic gaps, part B exact, 2026-11-09 \u00b7 DICTO \u00b7 dictospheres.com",
+ "checks": [
+  "PASS B1: 63 stellation cells of CORE (5 s)",
+  "PASS the big Dogstar is 45 of the 63 cells (as #42)",
+  "PASS B2: the small Sunstar is NOT inside the big Dogstar: each small Dogstar has only -3/2|5/6 = 0.363390 of its volume there; the rest reaches into the 6 axis wedges and 12 outer spikes",
+  "PASS GSD - big Dogstar = the 6 axis wedges + 12 spikes (whole stellation cells)",
+  "PASS B3: the cells' gap parts add up to the gap exactly",
+  "PASS B3: the gap is not a union of whole stellation cells of CORE (32 whole, 30 cut)",
+  "PASS B4: the 1/phi^3 lattice pieces' parts inside GSD, summed over all 37 orbits (565 cells), give GSD exactly: the list is complete",
+  "PASS B4: of the 1/phi^3 lattice only the Sunstar's own 7 pieces lie wholly in GSD; every other piece meeting GSD is cut (whole: ['(0, 0, 0)', '(-1, 0, 0)'])"
+ ],
+ "small_dogstar_in_big_dogstar": "-3/2|5/6",
+ "volumes_cells_edge2": {
+  "GSD": "70|-30",
+  "big_Dogstar": "6|-2",
+  "small_Sunstar": "-2598|1162",
+  "gap": "2668|-1192",
+  "gap_minus_rest": "2604|-1164"
+ },
+ "B3": [
+  {
+   "layer": 0,
+   "in_big_dogstar": true,
+   "count": 1,
+   "gap_fraction": "0|0",
+   "cell_vol": "-210|94",
+   "gap_part": "0|0"
+  },
+  {
+   "layer": 1,
+   "in_big_dogstar": true,
+   "count": 12,
+   "gap_fraction": "-5|13/5",
+   "cell_vol": "170/3|-76/3",
+   "gap_part": "-1838/3|274"
+  },
+  {
+   "layer": 2,
+   "in_big_dogstar": false,
+   "count": 6,
+   "gap_fraction": "-60|27",
+   "cell_vol": "-76/3|34/3",
+   "gap_part": "3050|-1364"
+  },
+  {
+   "layer": 2,
+   "in_big_dogstar": true,
+   "count": 24,
+   "gap_fraction": "1|0",
+   "cell_vol": "-76/3|34/3",
+   "gap_part": "-76/3|34/3"
+  },
+  {
+   "layer": 3,
+   "in_big_dogstar": false,
+   "count": 12,
+   "gap_fraction": "-53/3|25/3",
+   "cell_vol": "18|-8",
+   "gap_part": "-1954/3|874/3"
+  },
+  {
+   "layer": 3,
+   "in_big_dogstar": true,
+   "count": 8,
+   "gap_fraction": "1|0",
+   "cell_vol": "18|-8",
+   "gap_part": "18|-8"
+  }
+ ],
+ "B4": {
+  "(0, 0, 0)": {
+   "piece": "dodecahedron",
+   "orbit_size": 1,
+   "fraction_in_GSD": "1|0",
+   "float": 1.0,
+   "vol_in": "-210|94"
+  },
+  "(-1, 0, 0)": {
+   "piece": "Dogstar",
+   "orbit_size": 6,
+   "fraction_in_GSD": "1|0",
+   "float": 1.0,
+   "vol_in": "-398|178"
+  },
+  "(-1, -1, 0)": {
+   "piece": "dodecahedron",
+   "orbit_size": 12,
+   "fraction_in_GSD": "43/12|-79/60",
+   "float": 0.6391771629586103,
+   "vol_in": "-4114/3|1840/3"
+  },
+  "(-1, -1, -1)": {
+   "piece": "Dogstar",
+   "orbit_size": 8,
+   "fraction_in_GSD": "-5/2|3/2",
+   "float": 0.8541019662496847,
+   "vol_in": "2330|-1042"
+  },
+  "(-2, 0, 0)": {
+   "piece": "dodecahedron",
+   "orbit_size": 6,
+   "fraction_in_GSD": "-31/4|217/60",
+   "float": 0.33711251862423985,
+   "vol_in": "9982/3|-1488"
+  },
+  "(-2, -1, 0)": {
+   "piece": "Dogstar",
+   "orbit_size": 12,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-2, 0, -1)": {
+   "piece": "Dogstar",
+   "orbit_size": 12,
+   "fraction_in_GSD": "22/3|-3",
+   "float": 0.6251294008339636,
+   "vol_in": "-16766/3|7498/3"
+  },
+  "(-2, -1, -1)": {
+   "piece": "dodecahedron",
+   "orbit_size": 24,
+   "fraction_in_GSD": "11/2|-73/30",
+   "float": 0.05890125475051189,
+   "vol_in": "-6896/3|1028"
+  },
+  "(-2, -2, 0)": {
+   "piece": "dodecahedron",
+   "orbit_size": 12,
+   "fraction_in_GSD": "-55/12|41/20",
+   "float": 0.0006060205412357078,
+   "vol_in": "1926|-2584/3"
+  },
+  "(-3, 0, 0)": {
+   "piece": "Dogstar",
+   "orbit_size": 6,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-2, -2, -1)": {
+   "piece": "Dogstar",
+   "orbit_size": 24,
+   "fraction_in_GSD": "-29/12|13/12",
+   "float": 0.005740308958105622,
+   "vol_in": "1926|-2584/3"
+  },
+  "(-3, -1, 0)": {
+   "piece": "dodecahedron",
+   "orbit_size": 12,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-3, 0, -1)": {
+   "piece": "dodecahedron",
+   "orbit_size": 12,
+   "fraction_in_GSD": "-73/12|11/4",
+   "float": 0.06585360479108893,
+   "vol_in": "2570|-3448/3"
+  },
+  "(-3, -1, -1)": {
+   "piece": "Dogstar",
+   "orbit_size": 24,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-2, -2, -2)": {
+   "piece": "dodecahedron",
+   "orbit_size": 8,
+   "fraction_in_GSD": "-3/4|7/20",
+   "float": 0.03262379212492639,
+   "vol_in": "322|-144"
+  },
+  "(-3, -2, 0)": {
+   "piece": "Dogstar",
+   "orbit_size": 12,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-3, 0, -2)": {
+   "piece": "Dogstar",
+   "orbit_size": 12,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-3, -2, -1)": {
+   "piece": "dodecahedron",
+   "orbit_size": 24,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-3, -1, -2)": {
+   "piece": "dodecahedron",
+   "orbit_size": 24,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-4, 0, 0)": {
+   "piece": "dodecahedron",
+   "orbit_size": 6,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-4, -1, 0)": {
+   "piece": "Dogstar",
+   "orbit_size": 12,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-4, 0, -1)": {
+   "piece": "Dogstar",
+   "orbit_size": 12,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-3, -2, -2)": {
+   "piece": "Dogstar",
+   "orbit_size": 24,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-4, -1, -1)": {
+   "piece": "dodecahedron",
+   "orbit_size": 24,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-3, -3, 0)": {
+   "piece": "dodecahedron",
+   "orbit_size": 12,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-3, -3, -1)": {
+   "piece": "Dogstar",
+   "orbit_size": 24,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-4, -2, 0)": {
+   "piece": "dodecahedron",
+   "orbit_size": 12,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-4, 0, -2)": {
+   "piece": "dodecahedron",
+   "orbit_size": 12,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-4, -2, -1)": {
+   "piece": "Dogstar",
+   "orbit_size": 24,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-4, -1, -2)": {
+   "piece": "Dogstar",
+   "orbit_size": 24,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-3, -3, -2)": {
+   "piece": "dodecahedron",
+   "orbit_size": 24,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-4, -2, -2)": {
+   "piece": "dodecahedron",
+   "orbit_size": 24,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-4, -3, 0)": {
+   "piece": "Dogstar",
+   "orbit_size": 12,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-4, 0, -3)": {
+   "piece": "Dogstar",
+   "orbit_size": 12,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-4, -3, -1)": {
+   "piece": "dodecahedron",
+   "orbit_size": 24,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-4, -1, -3)": {
+   "piece": "dodecahedron",
+   "orbit_size": 24,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  },
+  "(-3, -3, -3)": {
+   "piece": "Dogstar",
+   "orbit_size": 8,
+   "fraction_in_GSD": "0|0",
+   "float": 0.0,
+   "vol_in": "0|0"
+  }
+ },
+ "seconds": 10.0
+}

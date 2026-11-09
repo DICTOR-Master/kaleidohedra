@@ -1,0 +1,28 @@
+PASS B1: 63 stellation cells of CORE (5 s)
+PASS the big Dogstar is 45 of the 63 cells (as #42)
+PASS B2: the small Sunstar is NOT inside the big Dogstar: each small Dogstar has only -3/2|5/6 = 0.363390 of its volume there; the rest reaches into the 6 axis wedges and 12 outer spikes
+PASS GSD - big Dogstar = the 6 axis wedges + 12 spikes (whole stellation cells)
+   GSD 70|-30 = 2.917961; big Dogstar 1.527864; small Sunstar -2598|1162 = 0.310990; gap 2668|-1192 = 2.606971 (0.8934 of GSD); in units of the small cell (edge 2/phi^3): GSD 27.7254
+   stellation cells of CORE, by kind: (layer, in big Dogstar, part in the gap) -> count, cell volume, gap part volume each
+     layer 0 Dogstar  gap fraction 0|0 = 0.000000   x1  cell -210|94  gap part 0|0
+     layer 1 Dogstar  gap fraction -5|13/5 = 0.813777   x12  cell 170/3|-76/3  gap part -1838/3|274
+     layer 2 outside  gap fraction -60|27 = 0.373835   x6  cell -76/3|34/3  gap part 3050|-1364
+     layer 2 Dogstar  gap fraction 1|0 = 1.000000   x24  cell -76/3|34/3  gap part -76/3|34/3
+     layer 3 outside  gap fraction -53/3|25/3 = 0.967233   x12  cell 18|-8  gap part -1954/3|874/3
+     layer 3 Dogstar  gap fraction 1|0 = 1.000000   x8  cell 18|-8  gap part 18|-8
+PASS B3: the cells' gap parts add up to the gap exactly
+PASS B3: the gap is not a union of whole stellation cells of CORE (32 whole, 30 cut)
+     1/phi^3 lattice dodecahedron at cell (0, 0, 0) (x1): fraction inside GSD 1|0 = 1.000000
+     1/phi^3 lattice Dogstar      at cell (-1, 0, 0) (x6): fraction inside GSD 1|0 = 1.000000
+     1/phi^3 lattice dodecahedron at cell (-1, -1, 0) (x12): fraction inside GSD 43/12|-79/60 = 0.639177
+     1/phi^3 lattice Dogstar      at cell (-1, -1, -1) (x8): fraction inside GSD -5/2|3/2 = 0.854102
+     1/phi^3 lattice dodecahedron at cell (-2, 0, 0) (x6): fraction inside GSD -31/4|217/60 = 0.337113
+     1/phi^3 lattice Dogstar      at cell (-2, 0, -1) (x12): fraction inside GSD 22/3|-3 = 0.625129
+     1/phi^3 lattice dodecahedron at cell (-2, -1, -1) (x24): fraction inside GSD 11/2|-73/30 = 0.058901
+     1/phi^3 lattice dodecahedron at cell (-2, -2, 0) (x12): fraction inside GSD -55/12|41/20 = 0.000606
+     1/phi^3 lattice Dogstar      at cell (-2, -2, -1) (x24): fraction inside GSD -29/12|13/12 = 0.005740
+     1/phi^3 lattice dodecahedron at cell (-3, 0, -1) (x12): fraction inside GSD -73/12|11/4 = 0.065854
+     1/phi^3 lattice dodecahedron at cell (-2, -2, -2) (x8): fraction inside GSD -3/4|7/20 = 0.032624
+PASS B4: the 1/phi^3 lattice pieces' parts inside GSD, summed over all 37 orbits (565 cells), give GSD exactly: the list is complete
+PASS B4: of the 1/phi^3 lattice only the Sunstar's own 7 pieces lie wholly in GSD; every other piece meeting GSD is cut (whole: ['(0, 0, 0)', '(-1, 0, 0)'])
+FINAL ok

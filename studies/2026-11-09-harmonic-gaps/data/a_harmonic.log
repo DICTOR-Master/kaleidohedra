@@ -1,0 +1,14 @@
+PASS GI(I): 20 triangles in I's planes; GD(D1): 12 pentagons in D1's planes, corners I2
+KP-UP shell 1: I -> GSD -> D1        tips 20 floors 12  c6 (tips·core faces, tips·hull corners, floors·core corners, floors·hull faces) = +1.000000, +1.000000, +1.000000, +1.000000   vol 6.545085  p6 1.222154e-02 p10 2.912486e-02 p12 3.637554e-03  conv 8.9e-18
+KP-UP shell 2: D1 -> SSD -> I2       tips 12 floors 20  c6 (tips·core faces, tips·hull corners, floors·core corners, floors·hull faces) = +1.000000, +1.000000, +1.000000, +1.000000   vol 72.586105  p6 1.693302e-02 p10 1.234756e-03 p12 4.945376e-06  conv 3.5e-18
+KP-UP turn 2, shell 1 (x phi^3)      tips 20 floors 12  c6 (tips·core faces, tips·hull corners, floors·core corners, floors·hull faces) = +1.000000, +1.000000, +1.000000, +1.000000   vol 497.512562  p6 1.222154e-02 p10 2.912486e-02 p12 3.637554e-03  conv 2.1e-17
+reciprocal: D1 -> GD(D1) -> I2       tips 12 floors 20  c6 (tips·core faces, tips·hull corners, floors·core corners, floors·hull faces) = +1.000000, +1.000000, +1.000000, +1.000000   vol 117.446784  p6 8.936001e-03 p10 2.631005e-03 p12 1.903135e-03  conv 6.9e-18
+reciprocal: I -> GI(I) -> I2         tips 12 floors 60  c6 (tips·core faces, tips·hull corners, floors·core corners, floors·hull faces) = -1.000000, +1.000000, -1.000000, +1.000000   vol 47.787731  p6 1.706870e-02 p10 9.158738e-03 p12 1.967415e-04  conv 1.4e-17
+PASS quadrature volumes = exact volumes (GSD 3·I, GI 95/4 + 43√5/4, GD 235/4 + 105√5/4)
+PASS every star: solid angle 4π; spectra converged to 1e-10 between two quadratures
+PASS both KP-UP shells: signature (+1, +1, +1, +1), the Cleo pattern's incidences, although their solids differ
+PASS scaling: the next turn has the same radial spectrum to 1e-10 (similar shells, as expected)
+PASS the radial spectrum alone differs between the two KP-UP shells (max |Δp_l| = 0.0279) although #38a proves one pattern: the bare radial fingerprint is not the test; the incidence signature is
+PASS GD(D1): signature (+1, +1, +1, +1), the same as the SSD shell (it is that shell)
+PASS GI(I): signature [-1.0, 1.0, -1.0, 1.0]: drifts, so the Cleo pattern cannot be laid in its shell
+FINAL ok
