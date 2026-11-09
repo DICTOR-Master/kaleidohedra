@@ -26,3 +26,19 @@ FIXED combinatorics each vertex is replaced by an average (centroids of the face
 subdominant eigenspace of the Buffon operator (subspace iteration); the main theorem is the existence of star-shaped 'affine
 B-regular' polyhedra (Colin de Verdière, Lovász). VERDICT: different (linear, fixed vertex count, limit affine-regular, not the
 sphere). Not prior art for #43. Possible borrowing only for a linearised local model near the sphere (spectral gap = contraction).
+
+## Forward citations + Bridges (10 Nov 2026, DICTO: "yes run it")
+- Tsiokos (Chair44) is cited by Flicker 2609.23783, Goodman-Strauss 2609.24779, Kamenetsky 2610.00916 (all in the library, gaps/),
+  and Hartshorn & Romanov, "The Internal Space and Boundary Growth of the Spectre and Tsiokos's Chair44 Tilings" (Research Square,
+  no DOI found) [L]. None treats fcc/hcp or c/h stacking.
+- Śrī Yantra: no outside work since mid-2025 on exact geometry. TO READ BEFORE ANY FURTHER #103 CLAIM: G. D. Chapati & R. Chapati,
+  "Verified Reconstruction of the Śrī Yantra: Constraint Solving, Feasibility Prediction and Spectral Analysis", Zenodo 2026,
+  doi 10.5281/zenodo.23188649 [L] (not a citer of Chiodo in OpenAlex; a direct neighbour).
+- Approximants (citers of Baake–Grimm since 6/2025) [L]: Davies & Thalhammer (Proc. R. Soc. A 2025, supercell vs superspace
+  convergence); Band, Beckus & Pogorzelski (J. Anal. Math. 2026, spectral approximation of substitution systems); Jagannathan (PRB 2026,
+  metallic-mean quasicrystals); Say-awen & Coates (Acta Cryst. A 2026, octagonal tilings, three prototiles). Leads for aim 1.
+- Goldberg: no citers since mid-2025 (latest Ebert, Kim & Akleman, CAD 2024).
+- Bridges 2019–2026: nothing on yantras, RD/golden-rhombohedra sculpture or space-fillers in art; nearest: Djang 2025 (icosahedral
+  quasicrystal paper-strip spheres), Moradzadeh & Nejad Ebrahimi 2020 (3D aperiodic girih), Jowers & Moat 2025, Kaplan 2024.
+Sources checked: the agent's OpenAlex and Semantic Scholar queries (cites: filters for Chiodo, Tsiokos, Baake–Grimm, Goldberg works)
+and the Bridges archive search plus year indexes 2019–2026.
