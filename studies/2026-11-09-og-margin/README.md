@@ -263,3 +263,13 @@ Ratio of angular radii γ across every shared edge: median 1.10–1.20, 99th per
 the data (up to 93 at k = 21, 37 at k = 28): tiny faces sit next to ordinary ones, so the classical all-faces ring lemma FAILS.
 The LARGEST face is never far above its neighbours: at most 5.59 (k = 22), ≤ 2.7 at k ≥ 24. Usable form: a ring lemma for the
 largest face only (it is at most a fixed multiple of each neighbour), which is what the 4-step contraction needs.
+
+## §17 Exact reformulation (10 Nov 2026): the growth rule is a Voronoi step
+T(S) = {x : v·x ≤ v·v for every corner v of S}. The plane v·x = |v|² is the perpendicular bisector of 0 and 2v
+(|x|² = |x − 2v|² ⇔ v·x = |v|²). Hence, exactly: **T(S) = the Voronoi cell of the origin among the points {2v : v a corner of S}**,
+and the corners of T(S) are circumcentres of the Delaunay simplices at the origin. The #43 chain D_{k+1} = T(D_k) is therefore iterated
+"double the corners, take the origin's Voronoi cell". Conjecture 1 (t_min → 1) becomes: the corner DIRECTIONS spread ever more evenly;
+the Decay Lemma (4-step contraction of the largest new face angle γ) becomes: the covering radius (largest empty cap) of the corner
+directions shrinks under the map points → their cell's corners. Leads: Delaunay refinement theory (Chew 1989, Ruppert 1995,
+Shewchuk 2002: inserting circumcentres bounds circumradius / shortest edge) for the contraction; the prior-art reading of 10 Nov
+(Demyanov–Ryabova, Buffon) found both processes different (study 2026-11-10-arxiv-scan).
