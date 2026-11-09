@@ -1,0 +1,8 @@
+designs 1944 (incl. control), runs 7774
+VERDICTS (rule, mirrors, verdict): [(('BEND', False, 'CANDIDATE'), 9), (('BEND', False, 'NO'), 1854), (('BEND', False, 'PERIODIC'), 80), (('BEND', True, 'CANDIDATE'), 3), (('BEND', True, 'NO'), 1838), (('BEND', True, 'PERIODIC'), 102), (('STRICT', False, 'NO'), 1929), (('STRICT', False, 'PERIODIC'), 15), (('STRICT', True, 'NO'), 1928), (('STRICT', True, 'PERIODIC'), 16)]
+TILING RUNS by word set: [('11 words', 2), ('SSSS', 133), ('TTTT', 23), ('all16', 67)]
+runs that tile but exclude both SSSS and TTTT: 0 []
+RESTRICTED C3:b1@-0.3820H BEND True CANDIDATE admitted ['SSSS', 'SSST', 'SSTS', 'SSTT', 'STSS', 'STST', 'TSSS', 'TSST', 'TSTS', 'TSTT', 'TTTT']
+RESTRICTED C3:b1@-0.3820H BEND False CANDIDATE admitted ['SSSS', 'SSST', 'SSTS', 'SSTT', 'STSS', 'STST', 'TSSS', 'TSST', 'TSTS', 'TSTT', 'TTTT']
+candidates 12: [('2:b1@-0.3820H+b2@-0.3820H', 'BEND', True, 16), ('2:b1@-0.3820H+b2@-0.3820H', 'BEND', False, 16), ('2c:b1@-0.3820H+b2@-0.3820H', 'BEND', True, 16), ('2c:b1@-0.3820H+b2@-0.3820H', 'BEND', False, 16), ('C3:b1@-0.3820H', 'BEND', True, 11), ('C3:b1@-0.3820H', 'BEND', False, 11), ('2:b1@-0.3820H+b2@0.0000H', 'BEND', False, 1), ('2:b1@-0.3820H+b2@-0.1667H', 'BEND', False, 1), ('2c:b1@-0.3820H+b2@0.0000H', 'BEND', False, 1), ('2c:b1@-0.3820H+b2@-0.1667H', 'BEND', False, 1), ('2:b1@-0.3820H+c2@0.8333H', 'BEND', False, 1), ('2c:b1@-0.3820H+c2@0.8333H', 'BEND', False, 1)]
+FINAL ok

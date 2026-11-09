@@ -1,0 +1,17 @@
+HEARTBEAT 15s patch structures 16 (K=5, n=5)
+HEARTBEAT 189s tori 1326 (index <= 9)
+  2c:b1@-0.3820H+c2@0.8333H BEND mirrors=no: NO PATCH  words 0/16 []
+  2c:b1@-0.3820H+b2@0.0000H BEND mirrors=no: NO PATCH  words 0/16 []
+  2:b1@-0.3820H+c2@0.8333H BEND mirrors=no: NO PATCH  words 0/16 []
+  2:b1@-0.3820H+b2@0.0000H BEND mirrors=no: NO PATCH  words 0/16 []
+  2:b1@-0.3820H+b2@-0.1667H BEND mirrors=no: NO PATCH  words 0/16 []
+  2c:b1@-0.3820H+b2@-0.1667H BEND mirrors=no: NO PATCH  words 0/16 []
+  2c:b1@-0.3820H+b2@-0.3820H BEND mirrors=no: STILL OPEN  words 4/16 ['TSSS', 'TSST', 'TSTS', 'TSTT']
+  2:b1@-0.3820H+b2@-0.3820H BEND mirrors=no: STILL OPEN  words 4/16 ['TSSS', 'TSST', 'TSTS', 'TSTT']
+  C3:b1@-0.3820H BEND mirrors=no: STILL OPEN  words 4/16 ['TSSS', 'TSST', 'TSTS', 'TSTT']
+  2c:b1@-0.3820H+b2@-0.3820H BEND mirrors=yes: STILL OPEN  words 4/16 ['TSSS', 'TSST', 'TSTS', 'TSTT']
+  2:b1@-0.3820H+b2@-0.3820H BEND mirrors=yes: STILL OPEN  words 4/16 ['TSSS', 'TSST', 'TSTS', 'TSTT']
+  C3:b1@-0.3820H BEND mirrors=yes: STILL OPEN  words 4/16 ['TSSS', 'TSST', 'TSTS', 'TSTT']
+SUMMARY Counter({'NO': 6, 'STILL': 6})
+STILL OPEN 6 [('2c:b1@-0.3820H+b2@-0.3820H', 'BEND', False), ('2:b1@-0.3820H+b2@-0.3820H', 'BEND', False), ('C3:b1@-0.3820H', 'BEND', False), ('2c:b1@-0.3820H+b2@-0.3820H', 'BEND', True), ('2:b1@-0.3820H+b2@-0.3820H', 'BEND', True), ('C3:b1@-0.3820H', 'BEND', True)]
+FINAL ok 806s

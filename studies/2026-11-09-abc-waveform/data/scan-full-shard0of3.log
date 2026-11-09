@@ -1,0 +1,29 @@
+menu planes 67; designs up to symmetry 1944; running 1944; K=5 n=3 PMAX=3 IMAX=3 torus-n=4
+HEARTBEAT 3s tori 57: words ['SS', 'STSTSTSTSTST', 'TTTTTT']
+geometry: max contacts per piece 10, pieces with all 10: 200 of 490
+  d0 control-empty STRICT mirrors=yes: PERIODIC SS/(1, 0, 1)+skew(0,0)  words 16/16 ['SSSS', 'SSST', 'SSTS', 'SSTT', 'STSS', 'STST']
+  d0 control-empty STRICT mirrors=no: PERIODIC SS/(1, 0, 1)+skew(0,0)  words 16/16 ['SSSS', 'SSST', 'SSTS', 'SSTT', 'STSS', 'STST']
+HEARTBEAT 6s 1/648 designs done
+HEARTBEAT 60s 51/648 designs done
+HEARTBEAT 121s 101/648 designs done
+  d153 2:b1@-0.3820H+b2@-0.3820H BEND mirrors=yes: CANDIDATE  words 16/16 ['SSSS', 'SSST', 'SSTS', 'SSTT', 'STSS', 'STST']
+  d153 2:b1@-0.3820H+b2@-0.3820H BEND mirrors=no: CANDIDATE  words 16/16 ['SSSS', 'SSST', 'SSTS', 'SSTT', 'STSS', 'STST']
+HEARTBEAT 166s 151/648 designs done
+HEARTBEAT 222s 201/648 designs done
+HEARTBEAT 280s 251/648 designs done
+HEARTBEAT 316s 301/648 designs done
+HEARTBEAT 355s 351/648 designs done
+HEARTBEAT 398s 401/648 designs done
+  d1092 2c:b1@-0.3820H+b2@-0.3820H BEND mirrors=yes: CANDIDATE  words 16/16 ['SSSS', 'SSST', 'SSTS', 'SSTT', 'STSS', 'STST']
+  d1092 2c:b1@-0.3820H+b2@-0.3820H BEND mirrors=no: CANDIDATE  words 16/16 ['SSSS', 'SSST', 'SSTS', 'SSTT', 'STSS', 'STST']
+  d1338 2c:b1@0.5000H+c2@0.3333H BEND mirrors=yes: PERIODIC SS/(1, 0, 1)+skew(0,0)  words 1/16 ['SSSS']
+HEARTBEAT 437s 451/648 designs done
+HEARTBEAT 474s 501/648 designs done
+HEARTBEAT 512s 551/648 designs done
+HEARTBEAT 548s 601/648 designs done
+  d1917 C3:b1@-0.3820H BEND mirrors=yes: CANDIDATE  words 11/16 ['SSSS', 'SSST', 'SSTS', 'SSTT', 'STSS', 'STST']
+  d1917 C3:b1@-0.3820H BEND mirrors=no: CANDIDATE  words 11/16 ['SSSS', 'SSST', 'SSTS', 'SSTT', 'STSS', 'STST']
+SUMMARY [(('BEND', False, 'CANDIDATE'), 3), (('BEND', False, 'NO'), 616), (('BEND', False, 'PERIODIC'), 28), (('BEND', True, 'CANDIDATE'), 3), (('BEND', True, 'NO'), 608), (('BEND', True, 'PERIODIC'), 36), (('STRICT', False, 'NO'), 639), (('STRICT', False, 'PERIODIC'), 9), (('STRICT', True, 'NO'), 638), (('STRICT', True, 'PERIODIC'), 10)]
+PATCH-WORD COUNTS (mode, mirrors, #words admitted): designs [(('BEND', False, 1), 17), (('BEND', False, 11), 1), (('BEND', False, 16), 13), (('BEND', True, 1), 24), (('BEND', True, 11), 1), (('BEND', True, 16), 14), (('STRICT', False, 1), 6), (('STRICT', False, 16), 3), (('STRICT', True, 1), 7), (('STRICT', True, 16), 3)]
+CANDIDATES 6 [(153, '2:b1@-0.3820H+b2@-0.3820H', 'BEND', True), (153, '2:b1@-0.3820H+b2@-0.3820H', 'BEND', False), (1092, '2c:b1@-0.3820H+b2@-0.3820H', 'BEND', True), (1092, '2c:b1@-0.3820H+b2@-0.3820H', 'BEND', False), (1917, 'C3:b1@-0.3820H', 'BEND', True), (1917, 'C3:b1@-0.3820H', 'BEND', False)]
+FINAL ok 609s
