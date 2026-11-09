@@ -37,7 +37,7 @@ for ax, key, title, h in ((axs[0], 'GF1', 'The DICTO Yantra', 0.0042), (axs[1], 
         if not odd: continue
         isf = len(c) == 4; four += isf and cx > 0 and min(math.dist(v, C5) for v in c) < 0.003
         col = BLUE if isf else PINK if -ar < 1e-6 else GOLD
-        ax.add_patch(Polygon([(x, -y) for x, y in poly], fc=col, ec='none', alpha=0.85 if col != GOLD else 0.55))
+        if not close: ax.add_patch(Polygon([(x, -y) for x, y in poly], fc=col, ec='none', alpha=0.85 if col != GOLD else 0.55))
     for s in segs: ax.plot([s[0][0], s[1][0]], [-s[0][1], -s[1][1]], color='#999', lw=0.4)
     for name, (u0, u1) in L.items():
         col = RED if name == 't4 right leg' else INK
@@ -46,28 +46,23 @@ for ax, key, title, h in ((axs[0], 'GF1', 'The DICTO Yantra', 0.0042), (axs[1], 
         tt = [((box[0]+0.0004)-u0[0])/(u1[0]-u0[0]) if u1[0] != u0[0] else None]
         for t in (0.0, 1.0):
             pass
-        X = [u0[0] + t*(u1[0]-u0[0]) for t in [i/400 for i in range(401)]]; Yv = [u0[1] + t*(u1[1]-u0[1]) for t in [i/400 for i in range(401)]]
+        X = [u0[0] + t*(u1[0]-u0[0]) for t in [i/40000 for i in range(40001)]]; Yv = [u0[1] + t*(u1[1]-u0[1]) for t in [i/40000 for i in range(40001)]]
         ins = [(x, y) for x, y in zip(X, Yv) if box[0]+0.0003 < x < box[1]-0.0003 and box[2]+0.0003 < y < box[3]-0.0003]
         if ins:
-            x, y = ins[0] if name == 't5 base' else ins[len(ins)//4] if name == 't4 right leg' else ins[-1]
+            if close: x, y = ins[{'t5 base': len(ins)//4, 't4 right leg': (len(ins)*13)//20, 't5 right leg': (len(ins)*7)//10, 't6 right leg': (len(ins)*3)//4}[name]]
+            else: x, y = ins[0] if name == 't5 base' else ins[len(ins)//4] if name == 't4 right leg' else ins[-1]
             ax.text(x, -y, ' ' + name, color=col, fontsize=10, weight='bold', zorder=6, ha='left' if name != 't5 base' else 'left', va='bottom')
     ax.plot(C5[0], -C5[1], 'o', ms=4.5, mfc='white', mec=INK, mew=0.9, zorder=7)
     if not (key == 'KRP' and close): ax.annotate("t5's corner", (C5[0], -C5[1]), xytext=(8, -16), textcoords='offset points', fontsize=10, zorder=7)
     if key == 'KRP' and not close:
         ax.text(C5[0] + 0.35*h, -(C5[1] + 0.55*h), 'A', fontsize=16, weight='bold', color=INK, ha='center', zorder=8)
         ax.text(C5[0] - 0.55*h, -(C5[1] + 0.35*h), 'B', fontsize=16, weight='bold', color=INK, ha='center', zorder=8)
-    if key == 'KRP' and close:
-        D = '#0b2a8a'
-        ax.plot([P2[0], C5[0]], [-P2[1], -C5[1]], color='#ff7a00', lw=1.6, zorder=5)
-        ax.plot([P1[0], P2[0]], [-P1[1], -P2[1]], color='#ff7a00', lw=1.6, zorder=5)
-        for P, lab, off in ((C5, "t5's corner", (10, 6)), (P1, '', (0, 0)), (P2, '', (0, 0)), (P3, '', (0, 0))):
+    if key == 'KRP' and close:   # lines only (DICTO 10 Nov 2026): the four named lines and their computed crossing points
+        for P, lab, off in ((C5, 'c', (7, 4)), (P1, 'p', (-16, 6)), (P2, 'q', (-16, -4)), (P3, 'r', (7, 2))):
             ax.plot(P[0], -P[1], 'o', ms=4.5, mfc='white', mec=INK, mew=0.9, zorder=7)
-        ax.annotate("A's short fourth side\n(on t5's right leg)", ((P2[0]+C5[0])/2, -(P2[1]+C5[1])/2), xytext=(60, -95), textcoords='offset points', fontsize=10, color=D, weight='bold', arrowprops=dict(arrowstyle='->', color=D), zorder=9)
-        ax.annotate("B's short fourth side\n(on t4's right leg)", ((P1[0]+P2[0])/2, -(P1[1]+P2[1])/2), xytext=(-215, -150), textcoords='offset points', fontsize=10, color=D, weight='bold', arrowprops=dict(arrowstyle='->', color=D), zorder=9)
-        ax.annotate("A's cut-off tip:\nt4's and t6's legs meet here", (P3[0], -P3[1]), xytext=(-200, 30), textcoords='offset points', fontsize=10, color=D, weight='bold', arrowprops=dict(arrowstyle='->', color=D), zorder=9)
-        ax.annotate("B's cut-off tip: t5's base and\nright leg meet at t5's corner", (C5[0], -C5[1]), xytext=(20, 50), textcoords='offset points', fontsize=10, color=D, weight='bold', arrowprops=dict(arrowstyle='->', color=D), zorder=9)
-        ax.text(box[1] - 0.2*h, -(box[2] + 0.9*h), 'A', fontsize=22, weight='bold', color=INK, ha='center', zorder=8)
-        ax.text(box[0] + 0.2*h, -(box[2] + 0.75*h), 'B', fontsize=22, weight='bold', color=INK, ha='center', zorder=8)
+            ax.annotate(lab, (P[0], -P[1]), xytext=off, textcoords='offset points', fontsize=13, weight='bold', zorder=8)
+        ax.text(box[1] - 0.25*h, -(box[2] + 0.9*h), 'A', fontsize=18, weight='bold', color='#0b2a8a', ha='center', zorder=8)
+        ax.text(box[0] + 0.25*h, -(box[2] + 0.75*h), 'B', fontsize=18, weight='bold', color='#0b2a8a', ha='center', zorder=8)
         ok &= dist < 0 and four == 2
     elif key == 'KRP':
         ok &= dist < 0 and four == 2
@@ -75,8 +70,8 @@ for ax, key, title, h in ((axs[0], 'GF1', 'The DICTO Yantra', 0.0042), (axs[1], 
         ok &= dist > 0 and four == 0
     ax.set_xlim(box[0], box[1]); ax.set_ylim(-box[3], -box[2]); ax.set_aspect('equal'); ax.axis('off')
     side = 'passes beside t5\'s corner' if key == 'GF1' else 'has crossed over t5\'s corner'
-    ax.set_title(f"{title} (×{1.0/(2*h):.0f})\nt4's right leg {side}\nby {abs(dist):.5f} of the diameter" + ('' if close else f"; four-sided regions: {four}"), fontsize=11)
-fig.text(0.5, 0.03, "Fine lines; true scale, centred on t5's corner (where t5's base, t5's right leg and t6's right leg meet). Gold: triangles. Blue: four-sided regions A and B; orange: their short fourth sides. Pink: the tiny extra triangle; "
-         "the white sliver beside it is an even region. Mirror image on the left.  DICTO · dictospheres.com", ha='center', fontsize=9)
+    ax.set_title(f"{title}{' (lines only)' if close else ''} (×{1.0/(2*h):.0f})\nt4's right leg {side}\nby {abs(dist):.5f} of the diameter" + ('' if close else f"; four-sided regions: {four}"), fontsize=11)
+fig.text(0.5, 0.03, "Fine lines, true scale. Gold: triangles; blue: four-sided regions A and B; pink: the tiny extra triangle. Right, lines only: "
+         "c, t5's corner; p, q, r, where t4's right leg crosses t5's base, t5's right leg, t6's right leg (table under Figure 12).  DICTO · dictospheres.com", ha='center', fontsize=9)
 plt.savefig(sys.argv[1], dpi=160, bbox_inches='tight', facecolor='#fffdf7')
 print('FINAL ok' if ok else 'FINAL FAIL: side of the corner or the count is not as stated')
