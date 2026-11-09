@@ -548,10 +548,10 @@ const K_WORLDS = [
   // DICTONIC (DICTO 2026-10-23): the three DICTONIC BONDS of the six DICTONIC SOLIDS (names by DICTO), golden, keyed and Delian,
   // a button each and one slider through the family each bond belongs to; first as the newest work (world-dictonic.js).
   { key: 'dictonic', label: 'DICTONIC', pieces: [{ label: 'DICTONIC', action: 'tool:dictonicWorld' }] },
-  // Mandalaspheres (DICTO 2026-11-08; named by DICTO 2026-11-09): the DICTO Yantra's nine triangles as tetrahedra spinning in nine nested
+  // Golamandalas (DICTO 2026-11-08; named by DICTO 2026-11-09): the DICTO Yantra's nine triangles as tetrahedra spinning in nine nested
   // cones on one big slider with three still stops, the Cleo sphere (twenty yantras) and the 81 sphere; next to DICTONIC as the newest
   // work (world-mandala.js).
-  { key: 'mandala', label: 'Mandalaspheres', pieces: [{ label: 'Mandalaspheres', action: 'tool:mandalaWorld', preview: mandalaPreviewEdges }] },
+  { key: 'mandala', label: 'Golamandalas', pieces: [{ label: 'Golamandalas', action: 'tool:mandalaWorld', preview: mandalaPreviewEdges }] },
   // The Global Web of Bonds (DICTO 2026-10-25; DICTO's idea, paper #53, DICTO DOI 10.5281/zenodo.23631140): square + centres, honeycomb + centres and rock
   // salt, a button each and one weight slider, each handing over at a single switch point; next to DICTONIC, its parent (world-global-web.js).
   { key: 'globalWeb', label: 'The Global Web of Bonds', pieces: [{ label: 'The Global Web of Bonds', action: 'tool:globalWebWorld' }] },

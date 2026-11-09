@@ -231,7 +231,7 @@ let dictonicWorld = null; // DICTONIC: the three DICTONIC BONDS, golden, keyed a
 let globalWebWorld = null; // The Global Web of Bonds: square + centres, honeycomb + centres, rock salt, one weight slider each (DICTO 2026-10-25)
 let stackingsWorld = null; // The Stackings World: the rule of halves on the standard polytypes, one weight slider (DICTO 2026-10-26)
 let hexoctWorld = null; // HexOct: the two layer tiles of #75 stacked into any close-packed stacking, in Kaleidohedra (DICTO 2026-10-31; moved from Polyhedraverse 2026-11-01)
-let mandalaWorld = null; // Mandalaspheres: the DICTO Yantra as spinning tetrahedra in nested cones, the Cleo sphere and the 81 sphere (DICTO 2026-11-08)
+let mandalaWorld = null; // Golamandalas: the DICTO Yantra as spinning tetrahedra in nested cones, the Cleo sphere and the 81 sphere (DICTO 2026-11-08)
 let starCoresWorld = null; // the Star Cores world: a convex solid's star, halo and core, turn after turn, on one slider (DICTO 2026-11-02, #79–#81)
 let hexoctKitWorld = null; // the HexOct kit: the same two tiles placed one at a time, with fill helpers, in Polyhedraverse (DICTO 2026-11-01)
 let whiteQueenWorld = null; // The White Queen 600-cell: the 600-cell's true shadows, the 4D view direction on one slider (DICTO 2026-10-27, #63)
@@ -4401,7 +4401,7 @@ async function init() {
         }
         // HexOct: tool:hexoctWorld:<3C|2H|4H|6H|fib|c/h sequence> picks the fill (DICTO 2026-10-31).
         // The Star Cores world: tool:starCoresWorld:<D-number or key>[:<2|phi>[:<step>]] (DICTO 2026-11-02).
-        // Mandalaspheres: tool:mandalaWorld:<yantra|cleo|81> picks the view (DICTO 2026-11-08).
+        // Golamandalas: tool:mandalaWorld:<yantra|cleo|81> picks the view (DICTO 2026-11-08).
         if (action?.startsWith('tool:mandalaWorld:')) {
           mandalaWorld?.setChain(action.slice('tool:mandalaWorld:'.length));
           action = 'tool:mandalaWorld';
@@ -5039,8 +5039,8 @@ async function init() {
       // DODECAHEDRON … OCTAHEDRON, or registry id), its ✂ Golden Cut at that stop (the Greater Golden Cut when none is given).
       setTimeout(() => openGoldenCut(gcutKeyOf(openGcut[1]), (openGcut[2] ?? 'greater').toLowerCase()), 0);
     } else if (openMandala) {
-      // ?open=mandala[:<yantra|cleo|81>] (DICTO 2026-11-08): Mandalaspheres in Kaleidohedra on that view (the Yantra when none is given).
-      setTimeout(() => dimensionWizard.go(`tool:mandalaWorld${openMandala[1] ? `:${openMandala[1]}` : ''}`, 'kaleidohedra', 'Mandalaspheres'), 0);
+      // ?open=mandala[:<yantra|cleo|81>] (DICTO 2026-11-08): Golamandalas in Kaleidohedra on that view (the Yantra when none is given).
+      setTimeout(() => dimensionWizard.go(`tool:mandalaWorld${openMandala[1] ? `:${openMandala[1]}` : ''}`, 'kaleidohedra', 'Golamandalas'), 0);
     } else if (openStarCores) {
       // ?open=starcores[:<D-number or key>[:<2|phi>[:<step>]]] (DICTO 2026-11-02, the Star Cores book's "View in app"): the Star
       // Cores world in Kaleidohedra on that shape (e.g. starcores:D106, starcores:cube-pearl:phi:3).

@@ -1,4 +1,4 @@
-// Mandalaspheres's geometry (DICTO 2026-11-08), ported from k-research studies/2026-11-08-tetra-yantra (render3d.py, cleo_sphere.py,
+// Golamandalas's geometry (DICTO 2026-11-08), ported from k-research studies/2026-11-08-tetra-yantra (render3d.py, cleo_sphere.py,
 // sphere81.py): the DICTO Yantra (mandala-data.js, GF1) as nine tetrahedra spinning about the vertical axis inside nine nested cones,
 // its nine marma circles, the three still positions (the yantra narrowed to cos 30°, all 18 meetings kept), and the yantra by gnomonic
 // projection on the sphere: twenty in the inscribed circles of the Cleo-Icos' faces (the spherical icosahedron), eighty on the

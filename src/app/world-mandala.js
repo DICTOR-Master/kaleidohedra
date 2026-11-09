@@ -1,4 +1,4 @@
-// Mandalaspheres (DICTO 2026-11-08; named by DICTO 2026-11-09): the DICTO Yantra in three dimensions and on the sphere. DICTO proposed the
+// Golamandalas (DICTO 2026-11-08; named by DICTO 2026-11-09): the DICTO Yantra in three dimensions and on the sphere. DICTO proposed the
 // triangles as tetrahedra, spinning them, the Cleo-Icos sphere and the 81 sphere; the geometry is the DICTO Yantra study's
 // (k-research studies/2026-11-08-sri-yantra, 2026-11-08-tetra-yantra), ported in mandala-geometry.js from the exact data
 // (mandala-data.js, generated from golden_family.json GF1).
