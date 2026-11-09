@@ -158,7 +158,7 @@ k = 3 equality has the clean value 3/φ².
 
 DICTO · dictospheres.com
 
-## 6. Exact run to D_14 (og-exact-13, dicto-big-brother, finished 9 Nov 15:38, FINAL ok, 14 183 s)
+## 6. Exact run to D_14 (og-exact-13, the compute machine, finished 9 Nov 15:38, FINAL ok, 14 183 s)
 
 Log: data/exact-family-13.log. D_0 … D_14 built exactly in Q(√5) (D_13: 1092 faces, D_14: 1262 faces; max 90 928 digits).
 New exact cases: t_min(D_12) = 1.020352, t_min(D_13) = 1.027602, both ≤ 3/φ² exactly (match the float run).

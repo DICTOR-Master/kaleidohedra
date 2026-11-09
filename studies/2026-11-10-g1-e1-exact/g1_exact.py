@@ -3,7 +3,7 @@ v = 1/sqrt2 below) with (b) t1's corners on the circle and (d) the bindu centred
 t1's corner = (t/(1+t^2), t^2/(1+t^2)), so (b) holds by construction; unknowns t, S. Equations: H1(t, S) = 0 (closing equation,
 the degree-10 factor) and D(t, S) = 0 (bindu centred, squared; formulas of the audit's stage4_elim.py). Eliminate S, take the
 norm from Q(sqrt2, sqrt5) to Q, factor, keep the factor through G1's stored t. Writes g1-minpoly-t.txt; FINAL ok/FAIL.
-usage (dicto-big-brother, in a folder holding natural.py and model.py): ~/geom/bin/python -u g1_exact.py"""
+usage (in a folder holding natural.py and model.py): python -u g1_exact.py"""
 import sys, time, io, contextlib
 sys.path.insert(0, '.')
 T0 = time.time(); say = lambda *a: print(f'[{time.time() - T0:7.1f} s]', *a, flush=True)

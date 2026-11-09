@@ -1,7 +1,7 @@
 """Exact slope u* of the rhombus threshold (DICTO 10 Nov 2026). Family u = v with (b) (natural coordinate t) and (c) (G(S) = 0);
 the tiny extra pieces are born where t4's right leg, t5's base and t6's right leg meet: C(u, t, S) = 0 (det3, model.py).
 Eliminate S (Res_S of G with H1 and with C), then t (PARI), factor, keep the factor through u* = 0.745996537184295...
-usage (dicto-big-brother): ~/geom/bin/python -u threshold_exact.py"""
+usage (the compute machine): python -u threshold_exact.py"""
 import sys, time, io, contextlib
 sys.path.insert(0, '.')
 T0 = time.time(); say = lambda *a: print(f'[{time.time() - T0:7.1f} s]', *a, flush=True)

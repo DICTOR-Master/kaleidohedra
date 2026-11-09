@@ -5,7 +5,7 @@ on the circle)  in (Q, S, t), t = b1, is the one of rhombus345_exact.py (which c
 Interval Newton (Krawczyk) at 560 digits proves it has exactly one solution in a small box around the numerical yantra, and
 encloses it. Step 2: every base depth, half-width and apex is rebuilt from that box by model.solve in interval arithmetic and
 written as stage5-K.json (Rh345 has u = v, so the symbolic model of case K applies unchanged). Step 3: certified_counts.py K.
-usage (dicto-big-brother, in ~/yantra-audit/rh345 with model.py): ~/geom/bin/python -u rh345_certify.py"""
+usage (in ~/yantra-audit/rh345 with model.py): python -u rh345_certify.py"""
 import sys, json, time
 sys.path.insert(0, '.')
 T0 = time.time(); say = lambda *a: print(f'[{time.time() - T0:7.1f} s]', *a, flush=True)

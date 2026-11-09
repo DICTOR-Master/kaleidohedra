@@ -2,7 +2,7 @@
 R1 is already exact (Theorem 2 of #103: every coordinate a fraction).
 
 ## G1 (Cleo-Octangula, u = 2/phi^2 = 3 - sqrt5, v = 1/sqrt2, with (b) and (d)) - EXACT
-g1_exact.py (dicto-big-brother, 30 s; log g1-pilot.log, FINAL ok). Natural coordinates: t1's corner (t/(1+t^2), t^2/(1+t^2));
+g1_exact.py (30 s; log g1-pilot.log, FINAL ok). Natural coordinates: t1's corner (t/(1+t^2), t^2/(1+t^2));
 H1(t, S) degrees (10, 3), bindu D(t, S) degrees (24, 4); Res_S degree 110 in t over Q(sqrt2, sqrt5); norm to Q degree 440 =
 1^8 2^6 2^6 2^96 12^2 20^2 152. G1's t is a root of the irreducible factor of degree 152 (153 terms, not even, coefficients up
 to 65 digits, 30 real roots), residual 7.3e-49 at the stored 40 digits: g1-minpoly-t.txt. b1 = t^2/(1+t^2).

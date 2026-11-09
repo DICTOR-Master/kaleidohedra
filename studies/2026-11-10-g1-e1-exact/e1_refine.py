@@ -2,7 +2,7 @@
 rhombus threshold: t4 right leg, t5 base, t6 right leg), to 2e-10 at double precision. So E1 = the most even yantra ON that edge:
 C(u, v, Q, S) = 0 fixes S, and the spread of the 43 areas is minimised over (u, v, Q). Here at 40 digits: S from C = 0 by
 findroot, gradient and Hessian by central differences, Newton steps. Reports the refined E1, its gradient, the Hessian's
-eigenvalues (all > 0: a true minimum on the edge) and the spread. usage: ~/geom/bin/python -u e1_refine.py"""
+eigenvalues (all > 0: a true minimum on the edge) and the spread. usage: python -u e1_refine.py"""
 import sys, json, time
 sys.path.insert(0, '.')
 import mpmath as mp

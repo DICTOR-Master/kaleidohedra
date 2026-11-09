@@ -25,7 +25,7 @@ Sources checked, by name:
 - L. N. Gonçalves, M. Mádr, P. Stříž, *Drawing the Shree Yantra Core with Metapost*, Zpravodaj CSTUG 19 (2009) 212–221, DML-CZ 10338.dmlcz/150096 (abstract page only).
 - B. Tripathi, texample.net/sri-yantra (TikZ, 30 Nov 2025).
 - Web searches: "Pustynski Sri Yantra …", "Huet Sri Yantra Geometry … parameters", and "arXiv Sri Yantra exact construction concurrency algebraic". No arXiv paper was found. Chiodo's bibliography adds Bolton–Macleod 1977, Fonseca 1986, C. S. Rao 1998, Tahta 1992, Santhi et al. 2012 and Tularam 2012. These were not read.
-- The reference library on dicto-big-brother (~/kaleidohedra-references, every MANIFEST.json and text file) was grepped for "yantra" and "Huet". It has no hits.
+- The reference library  (~/kaleidohedra-references, every MANIFEST.json and text file) was grepped for "yantra" and "Huet". It has no hits.
 
 What is known:
 - **Huet (1980s, publ. 2002):** the yantra is an under-determined problem with **4 real parameters**: five starting values tied by one equation, solved by Newton iteration. His "classical" yantra has P, Q, R, S = 0.332, 0.537, 0.602, 0.835 in Chiodo's form.
@@ -129,7 +129,7 @@ with diagonal ratio ≈ 0.8 and top angle ≈ 77°, in the classical range. It i
 - figures/sri-yantra-rational-R1.svg / .png is the main figure. It shows R1 exactly, the 43 triangles shaded by ring, the 18 marmas, the 6 corner touches and DICTO's rhombus dashed.
 - figures/sri-yantra-345-rhombus.svg / .png shows Rh345, with the two extra tiny faces visible near the centre.
 
-## 5. Scripts and data (each script ends with a checked FINAL line; heavy runs on dicto-big-brother)
+## 5. Scripts and data (each script ends with a checked FINAL line; heavy runs )
 model.py (shared model) · quadfield.py (exact ℚ(√D)) · quadratic_family.py → data/quadratic-examples.json, quadratic-family-data.txt ·
 discriminant.py → discriminant-data.txt · rational_search.py → rational-search-data-den40.txt · rational_search2.py → rational-search2-data.txt ·
 kulaichev_numeric.py → kulaichev-numeric-data.txt · kulaichev_exact.py (did not finish) · rhombus.py → rhombus-data.txt, rhombus345-coordinates.json ·
@@ -244,4 +244,4 @@ t4's right leg, t5's base and t6's right leg; these three meet exactly at u* = 0
 apex 73.4456°, Q 0.5520379583, S 0.9245700139, admissible. Below u*: 43 odd pieces, all triangles; above: 45 (41 triangles).
 Kulaichev (0.750439) and Rh345 (3/4) lie above u*, the stella (0.7071) below. At u* the bindu is off centre by 2.48e-4
 (Rh345 2.36e-5, Kulaichev 0): (d) holds only above u*, so no rhombus yantra with (b), (c) has both the centred bindu and the
-traditional 43. Numeric to 50 digits; exact minimal polynomial not yet computed. FINAL ok (dicto-big-brother).
+traditional 43. Numeric to 50 digits; exact minimal polynomial not yet computed. FINAL ok (the compute machine).
