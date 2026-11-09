@@ -5580,6 +5580,15 @@
     "retry": "refinement only",
     "study": "2026-11-10-g1-e1-exact",
     "date": "2026-11-10"
+   },
+   {
+    "question": "Certified count for Rh345 (3-4-5 rhombus yantra)",
+    "method": "rh345_certify.py (Krawczyk 560 digits on core, Eb, Ec) + certified_counts.py K",
+    "status": "SETTLED (certified)",
+    "result": "45 odd regions (14,10,12,8,1), 41 triangles, 18 marmas, 28 sandhis; min margin 4.7e-8",
+    "retry": "never",
+    "study": "2026-11-09-yantra-audit/certificates/rh345",
+    "date": "2026-11-10"
    }
   ]
  },
