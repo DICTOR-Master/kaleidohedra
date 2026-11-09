@@ -32,3 +32,14 @@ Consequence: one piece with fixed keys forces pure c or pure h; an aperiodic c/h
 (Chair44-type), e.g. via Kamenetsky's frame-marking (arXiv 2610.00916, study 2026-11-10-arxiv-scan).
 Next: (a) build the RD-based bump/notch piece across μ and check volume, Dehn and the pure-c forcing on 3-layer stacks; (b) the
 TRD version for pure h; (c) the hierarchy layer.
+
+## Step 2(a): keys at the hexagon of the half-cells (hexagon_keys.py, FINAL ok)
+On the RD alone keys are empty (the RD fills space only as c). The informative base is the half-cell: the RD's upper half equals
+the TRD's upper half (the TRD is the RD with its upper half turned 60°), so in a packing of half-cells c/h is decided INSIDE each
+cell, at the hexagon where its halves meet: lower half = inversion image (RD, c) or mirror image (TRD, h).
+**Result (exhaustive over the 728 nonzero patterns of bumps/notches on the hexagon's six triangles):** 342 patterns force c
+(e.g. alternating bump–notch: the inversion sends triangle k to k+3), NONE forces h (under the mirror each triangle meets itself,
+so a bump meets a bump), none allows both. So at the hexagon, c is keyable and h is not: an h junction exists only where the
+hexagon is unmarked. A piece forcing an aperiodic c/h word must carry its decisive keys on the faces BETWEEN layers (the rhombi),
+not on the hexagon.
+Next: keys on the inter-layer rhombus faces of the half-cell; which force h, which carry hierarchy.
