@@ -5208,6 +5208,15 @@
     "retry": "only the self-similar lead (trimmed kinds repeating at 1/phi^3)",
     "study": "2026-11-09-harmonic-gaps",
     "date": "2026-11-09"
+   },
+   {
+    "question": "#43 Conjecture 1 via a gnomon (DICTO's proposal)",
+    "method": "Lemma G (h_P(S)(n_i) >= h_i, every polytope): surviving faces never move inward; gnomon measure delta_k; float k <= 28",
+    "status": "UNDECIDED",
+    "result": "PARTIAL: no classical gnomon (all D_k combinatorially different); inradius NOT monotone (falls at 8 steps); the recovery D_10..D_14 is the gnomon mechanism on the 12 five-fold faces; Theorem N: Conjecture 1 for all k >= 11 if r(D_12) >= 1.084154 and every new face of D_j (j >= 13) is at distance >= 1.084154 (New-Face Lemma; float min 1.176699)",
+    "retry": "only a proof of the New-Face Lemma (an invariant class P maps into itself, or a two-step bound at the 3-fold axes); never monotonicity of r",
+    "study": "studies/2026-11-09-og-gnomon",
+    "date": "2026-11-09"
    }
   ]
  },
