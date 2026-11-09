@@ -13,3 +13,16 @@ Quick scan, Aug–Nov 2026 (agent report, judged here). [R] abstract read, [L] l
 
 Sources checked: the agent's 13 web queries and 8 arXiv abstract pages (2610.00916, 2609.24779, 2609.23783, 2509.02239, 2603.29540,
 2508.04275, 2610.09990, 2605.09334), icms-conference.org/2026/abstracts/Lee.txt, arXiv API query "Sri Yantra"/"yantra".
+
+## Read for #43 (10 Nov 2026, DICTO: "yes start with the reading")
+**Demyanov–Ryabova (Daniilidis & Petitjean, arXiv 1702.00168, v2 Sep 2017; full text read, §1).** The operation F acts on a
+finite FAMILY of polytopes: for each direction d, Ω(d) = conv of the d-active extreme points of all members; F(ℜ) = {Ω(d)}.
+F never creates new extreme points, so the sequence is finite and must cycle; the conjecture is that the cycle has length 1 or 2
+(proved in 1D, under affine independence (their ref. [7]), and under 'enough well-placed minimal polytopes'). VERDICT: a different
+process (families, no new corners, finite cycles) from DICTO's hop (one solid, antipol then polar, new corners every step,
+conjectured convergence to the sphere). Not prior art for #43; no tool for its Decay Lemma.
+**Buffon transformation (Schreiber, Veselov, Ward, arXiv 1402.5354, 2014; text read).** Linear: on a simplicial polyhedron with
+FIXED combinatorics each vertex is replaced by an average (centroids of the faces round it); the limit shape comes from the
+subdominant eigenspace of the Buffon operator (subspace iteration); the main theorem is the existence of star-shaped 'affine
+B-regular' polyhedra (Colin de Verdière, Lovász). VERDICT: different (linear, fixed vertex count, limit affine-regular, not the
+sphere). Not prior art for #43. Possible borrowing only for a linearised local model near the sphere (spectral gap = contraction).
