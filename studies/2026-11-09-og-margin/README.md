@@ -325,3 +325,14 @@ arXiv 1411.3842; arXiv 2602.20325, origin-symmetric, symmetric difference) do no
 **Verdict: the Santaló route cannot prove Conjecture 1 with known theorems.** The monotone rise of P from k = 9 to 31 stays a
 recorded observation. Sources checked: arXiv 0901.3340, 0909.3742, 1405.5384, 1411.3842, 2602.20325; users.renyi.hu/~carlos
 (zonoid stability, Böröczky–Hug), renyi.hu/~carlos/prekopaleindlerhigh.pdf.
+
+## §22 Cut lemma, the counting step (A1): data k ≤ 22 (10 Nov 2026, cut_lemma.py, data/cut-lemma-22.log, FINAL ok)
+Polar picture: candidate v of X_k is cut iff its foot point is not a corner of D_{k+1}; a cutter is a corner w with w·v > |w|².
+- Every cut candidate has a cutter, and its cutters always include an ACTIVE corner (all levels).
+- Cut fraction at most 0.437 (k = 14); 0.15–0.29 for k ≥ 16; never above a half. So growth (A) holds at every computed level.
+- The matching proofs FAIL: a one-to-one matching of cut candidates to distinct active cutters misses at k = 9, 12, 14, 16, 17,
+  19–22 (e.g. 1920/2300 at k = 22); even letting each active cutter take two fails at k = 14 (420/552), 19 (1292/1412), 20 (1692/1872).
+  Some active corners cut three or more candidates, so "c ≤ active" cannot come from local one-to-one or two-to-one charging.
+Verdict: (A1) holds in the data with margin (≤ 0.44 < 0.5) but needs a global argument (area or angle weighting of the active faces of
+X_{k+1}, or the degeneracy pattern of the icosahedral orbits), not a local matching. Next idea to test: charge each cut candidate to
+the active face of X_{k+1} whose angular cell contains it, weighted by that cell's solid angle.

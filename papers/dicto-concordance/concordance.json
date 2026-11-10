@@ -5688,6 +5688,15 @@
     "retry": "only if a stability theorem with exponent near 1/2 and explicit constant appears",
     "study": "2026-11-09-og-margin",
     "date": "2026-11-10"
+   },
+   {
+    "question": "#43 step (A1) cut lemma: fewer than half the candidates are cut, by matching each cut candidate to its own active cutter",
+    "method": "cut_lemma.py (float family, k <= 22): cutters, bipartite matchings (capacity 1 and 2)",
+    "status": "METHOD-FAILED (matching); data SUPPORT the lemma",
+    "result": "cut fraction <= 0.437 at every level k <= 22; every cut has an active cutter; one-to-one and two-to-one matchings to active cutters fail at several levels",
+    "retry": "global argument only (solid-angle weighting of active faces, orbit degeneracy)",
+    "study": "2026-11-09-og-margin",
+    "date": "2026-11-10"
    }
   ]
  },
