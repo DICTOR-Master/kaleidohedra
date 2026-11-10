@@ -80,3 +80,15 @@ PILOT s = 1/5 (3 hops, 237 s): walls -9/40, -19/120, -1/8.
   continuous at -19/120 (-1/675, -1/1350); BOTH vanish at λ* = -1/8 through (8λ + 1): the switch-off is smooth, not a jump (the grid
   sampled either side and misread it). Guess: λ*(s) = -5s/8 (factor 8λ + 5s), fits every grid bracket at 1/8 … 49/200.
 FULL WALK: job swap61-walls, 6 spacings (walls/w_<s>.txt).
+
+## #61 below 1/4, RESULT of the Hopscotch walk (job swap61-walls, 6 spacings 1/8 … 49/200, FINAL ok; data/swap-walls; check61.py FINAL ok)
+The Swap Rule below s = 1/4 along #61's range, D = V(c|h) + V(h|c) - V(c|c) - V(h|h) per role, outer layers fixed:
+  [λ-(c), -9s/8]          four-layer keys CLASH (pieces reach two gaps; a 6-layer key is needed: open)
+  [-9s/8, -(4-s)/24]      (exists only for s > 1/7)  δ_tet = -(1-4s)^3 / (54s),  δ_oct = (1-4s)^2 (72λ + 8 + 13s) / (108s)
+  [max(-9s/8, -(4-s)/24), -5s/8]   δ_oct = (8λ + 5s)^3 / (64s),  δ_tet = -(8λ + 5s)^2 (8λ + 2 - 3s) / (64s)
+  [-5s/8, U(s)]           δ = 0: the SWAP RULE HOLDS (one more wall inside, at -s/8, where D stays 0)
+δ_tetX = δ_tetY always; every δ is the SAME in all four outer contexts (a constant shift of the rule, never a breakdown);
+continuous at every wall; vanishes smoothly at λ* = -5s/8 (triple root for oct, double for tet); all δ → 0 as s → 1/4 (meets
+#61's Theorem 2). STATUS: exact (every hop a polynomial identity, every wall an exact root) at the six spacings; the s-dependence of
+the closed forms is fitted to them and checked exactly at all six (7 points of s incl. the 9 Nov ones for δ_tet). PROOF FOR ALL s:
+run the walk with s symbolic too (two-parameter Hopscotch) - next if wanted. Grid result superseded (its "jump" was sampling).
