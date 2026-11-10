@@ -5760,6 +5760,15 @@
     "retry": "never; other stages and pictures are new questions",
     "study": "2026-11-10-t600-scutoid",
     "date": "2026-11-10"
+   },
+   {
+    "question": "scutoid swaps in generic sweeps of simple 4-polytopes = h2",
+    "method": "t600_scutoid.py on the 120-cell, truncated 120-cell, bitruncated 600-cell (generic direction)",
+    "status": "CONFIRMED (three polytopes, predictions before counting)",
+    "result": "(births, swaps, deaths) = (h1, h2, h3): 120-cell (116, 366, 116); truncated 120-cell (716, 966, 716); bitruncated 600-cell (716, 2166, 716)",
+    "retry": "never; next: the general proof write-up and prior-art check by a second pass",
+    "study": "2026-11-10-t600-scutoid",
+    "date": "2026-11-10"
    }
   ]
  },

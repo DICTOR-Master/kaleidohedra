@@ -43,3 +43,10 @@ simple 4-polytope hyperplane sweep flips; power diagram secondary fan scutoid; s
   scutoid swaps is h2 (direction-independent). Classical mathematics underneath; the scutoid reading is the new part.
 TEST NEXT: the 120-cell (Red Queen, simple: 4 dodecahedra per corner): predicted h = (1, 116, 366, 116, 1): 366 swaps; truncated
 120-cell (simple): h1 = 720 - 4 = 716, h2 = 2400 - 2 - 1432 = 966.
+
+## The prediction holds on the other simple Queens (t600_scutoid.py stages.py red | trunc120; FINAL ok)
+- 120-cell (Red Queen): 600 corners, 4 cells each; generic sweep: 116 births, 366 swaps, 116 deaths = h (1, 116, 366, 116, 1), predicted.
+- truncated 120-cell: 2400 corners, 4 cells each (3 truncated dodecahedra + 1 tetrahedron); 716 births, 966 swaps, 716 deaths = h
+  (1, 716, 966, 716, 1), predicted.
+- bitruncated 600-cell: 716, 2166, 716 (above). Truncated 600-cell (not simple): no swaps.
+Every simple polytope on the Queens' path is a pure scutoid build with #swaps = h2, predicted before counting.

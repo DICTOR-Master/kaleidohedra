@@ -21,6 +21,22 @@ if STAGE == 'truncated':
         return pt[(a, b)]
     cells = [('ico', frozenset(P(v, w) for w in adj[v])) for v in range(120)] + [('tt', frozenset(P(a, b) for a in c for b in c if a != b)) for c in C]
     NV, NC = 1440, 720
+elif STAGE == 'red':                                     # the 120-cell: corners = 600-cell cell centres; one dodecahedron per 600-cell corner
+    X = [cen(c) for c in C]
+    cells = [('D', frozenset(ci for ci, c in enumerate(C) if v in c)) for v in range(120)]
+    NV, NC = 600, 120
+elif STAGE == 'trunc120':                                # truncated 120-cell: on each Red Queen edge (two 600-cell cells sharing a triangle)
+    s_ = (5 - 5 ** .5) / 10; byf = {}
+    for ci, c in enumerate(C):
+        for f in itertools.combinations(sorted(c), 3): byf.setdefault(f, []).append(ci)
+    def P(a, b):
+        if (a, b) not in pt: pt[(a, b)] = len(X); X.append((1 - s_) * cen(C[a]) + s_ * cen(C[b]))
+        return pt[(a, b)]
+    tri_of = {}
+    for f, (a, b) in byf.items(): P(a, b); P(b, a); tri_of[(a, b)] = f; tri_of[(b, a)] = f
+    cells = [('TD', frozenset(idx for (a, b), idx in pt.items() if v in tri_of[(a, b)])) for v in range(120)] + \
+            [('tet', frozenset(idx for (a, b), idx in pt.items() if a == ci)) for ci in range(600)]
+    NV, NC = 2400, 720
 else:                                                    # bitruncated (atlas: 3/5 of the way from an edge's middle to its triangle's centre)
     def P(t, a, b):
         key = (t, frozenset((a, b)))
