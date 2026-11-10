@@ -91,3 +91,4 @@ window widening (5.0) is running. Full runs launched through the pre-flight gate
 (5.0); plans in the alerts plans folder.
 **Octet spacing 4.81 SETTLED (10 Nov):** UNSAT also with the hidden window widened to 5.0 (radius 2.6, 4.85 M overlap pairs, 447 s,
 1.4 GB). Impossible on both octets so far: 3.89, 4.46, 4.81.
+**Octet spacing 5.38 (10 Nov):** UNSAT at radius 3.3, window 4.0 (7.87 M overlap pairs, 793 s, 2.35 GB); window-5.0 recheck launched.
