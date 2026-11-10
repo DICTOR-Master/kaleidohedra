@@ -93,3 +93,4 @@ window widening (5.0) is running. Full runs launched through the pre-flight gate
 1.4 GB). Impossible on both octets so far: 3.89, 4.46, 4.81.
 **Octet spacing 5.38 (10 Nov):** UNSAT at radius 3.3, window 4.0 (7.87 M overlap pairs, 793 s, 2.35 GB); window-5.0 recheck launched.
 **Octet spacing 6.30 (10 Nov):** UNSAT at radius 4.2, window 4.0 (57 896 candidates, 178.7 M close pairs, 26.3 M overlapping, 2425 s, 8.45 GB); window-5.0 recheck launched with block-wise pairs (known-answer test: same UNSAT and same overlap count at 4.81, 0.43 GB).
+**Octet spacing 5.38 SETTLED (10 Nov):** UNSAT also with the window widened to 5.0 (radius 3.3; 41.4 M overlap clauses, 2460 s, 10.5 GB — the live ceiling raise to 20 GB was needed). Impossible on the octet at both windows: 3.89 (any), 4.46, 4.81, 5.38; 6.30 at window 4.0 (recheck running); gyrated 4.46 impossible, 7.22 running.
