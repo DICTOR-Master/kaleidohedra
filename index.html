@@ -313,6 +313,14 @@
     .wq-lens { position: fixed; z-index: 5; border-radius: 50%; border: 2px solid #d4af37; box-shadow: 0 0 0 1px rgba(0,0,0,0.6), 0 6px 22px rgba(0,0,0,0.45); touch-action: none; cursor: grab; background: transparent; }
     .wq-lens:active { cursor: grabbing; }
     #worldwhiteQueen-panel .wq-sw i { display: inline-block; width: 12px; height: 12px; margin-right: 5px; vertical-align: -1px; border-radius: 2px; }
+    /* The 4D Permutohedron (DICTO 2026-11-10): the rows on one line (scrolling sideways if too narrow), the legend under the caption, a
+       swap's caption in rose like the cells letting go */
+    #worldperm4-panel .pm-row { flex-wrap: nowrap; overflow-x: auto; justify-content: safe center; }
+    #worldperm4-panel .pm-row > * { flex: none; }
+    #worldperm4-panel .pm-kinds { flex-wrap: wrap; justify-content: center; }   /* the three kind buttons wrap onto two lines in the longer languages */
+    #worldperm4-panel .pm-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 12px; order: 11; }
+    #worldperm4-panel .pm-sw i { display: inline-block; width: 12px; height: 12px; margin-right: 5px; vertical-align: -1px; border-radius: 2px; }
+    #worldperm4-panel .ch-param-caption.pm-swap { color: #f0a8b9; }
     /* DICTONIC and The Global Web of Bonds on wide, short screens (TV, landscape; DICTO 2026-10-25): the controls stand in a column on the right, scrolling,
        and the picture is centred in the space to their left (render.js, readPanelCover). Upright tablets and phones keep the bottom panel. */
     @media (min-width: 900px) and (max-height: 900px) and (min-aspect-ratio: 4/3) {

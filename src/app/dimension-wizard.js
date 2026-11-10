@@ -59,6 +59,7 @@ import { TRANSITIONAL_IDS } from '../krp-core/src/polyhedra/transitional.js';
 import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS, mosseriSadocTile, REULEAUX_ADDITION_IDS, STAR_CORES_SOLID_IDS, KAGEMUSHA_CREST_IDS, STAR_CORES_SHAPE_IDS, NARCISSUS_IDS } from '../krp-core/src/polyhedra/index.js';
 import { hexoctPreviewEdges } from './hexoct-geometry.js';
 import { mandalaPreviewEdges } from './mandala-geometry.js';
+import { perm4PreviewEdges } from './world-perm4.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
 import { netEligible, mountNetViewer } from './net-viewer.js';
@@ -548,6 +549,9 @@ const K_WORLDS = [
   // DICTONIC (DICTO 2026-10-23): the three DICTONIC BONDS of the six DICTONIC SOLIDS (names by DICTO), golden, keyed and Delian,
   // a button each and one slider through the family each bond belongs to; first as the newest work (world-dictonic.js).
   { key: 'dictonic', label: 'DICTONIC', pieces: [{ label: 'DICTONIC', action: 'tool:dictonicWorld' }] },
+  // The 4D Permutohedron (DICTO 2026-11-10; working name): DICTO's page as its own world, the 120 orderings of five numbers as a 4D solid,
+  // its Schlegel build and its sweep with every scutoid swap; next to DICTONIC as the newest work (world-perm4.js).
+  { key: 'perm4', label: 'The 4D Permutohedron', pieces: [{ label: 'The 4D Permutohedron', action: 'tool:perm4World', preview: perm4PreviewEdges }] },
   // Golamandalas (DICTO 2026-11-08; named by DICTO 2026-11-09): the DICTO Yantra's nine triangles as tetrahedra spinning in nine nested
   // cones on one big slider with three still stops, the Cleo sphere (twenty yantras) and the 81 sphere; next to DICTONIC as the newest
   // work (world-mandala.js).
@@ -678,7 +682,7 @@ const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'REULEAUX_PLATONIC', 'PLATONIC', 'A
 // DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
 // it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
 // Polyhedraverse pieces gathered from across its families.
-const DICTO_WORK = new Set(['mandala', 'starCores', 'whiteQueen', 'bloom', 'stackings', 'hexoct', 'dictonic', 'globalWeb', 'platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
+const DICTO_WORK = new Set(['perm4', 'mandala', 'starCores', 'whiteQueen', 'bloom', 'stackings', 'hexoct', 'dictonic', 'globalWeb', 'platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 // DICTO's newest first (DICTO 2026-11-02): the four Star Cores solids D106–D109 (named 2026-10-31), then Kagemusha's crests and the other
 // Star Cores shapes not in PV before (D105 down to D22, newest first), each in its own section.
