@@ -3,7 +3,7 @@ test"). The 4D permutohedron honeycomb = the Voronoi cells of the lattice A4* (Z
 hyperplane {u·x = c} is the power diagram of the sites' projections with weights -(u·p - c)^2. For directions u turning from a rational one
 (a repeating slice) to a golden one (non-repeating), count the cells in a ball and the DISTINCT cell shapes (up to congruence: sorted squared
 corner distances, 6 digits). A non-repeating slice with few shapes would be DICTO's aim seen this way. Usage: python slice_test.py [steps]"""
-import sys, itertools, numpy as np
+import sys, os, itertools, numpy as np, networkx as nx
 from scipy.spatial import HalfspaceIntersection, ConvexHull, cKDTree
 from scipy.optimize import linprog
 phi = (1 + 5 ** .5) / 2
@@ -23,7 +23,25 @@ def slice_shapes(u, c=0.1234567, R=2.4):
         nr = np.linalg.norm(A, axis=1); r = linprog(np.r_[0, 0, 0, -1], A_ub=np.c_[A, nr], b_ub=b, bounds=[(None, None)] * 3 + [(0, None)], method='highs')
         if r.status != 0 or r.x[-1] < 1e-7: continue                                          # this site has no piece in the slice
         hs = HalfspaceIntersection(np.c_[A, -b], r.x[:3]); V = np.unique(np.round(hs.intersections, 8), axis=0)
-        D2 = np.sort(np.round(((V[:, None] - V[None]) ** 2).sum(-1)[np.triu_indices(len(V), 1)], 5)); sigs.add((len(V), tuple(D2))); cnt += 1
+        if not np.all(np.isfinite(V)): continue
+        if os.environ.get('TYPES'):                                       # combinatorial type: faces and how they join (DICTO "count shapes by type")
+            # tolerant: merge corners closer than 1e-6 of the cell's size, group hull triangles by plane (normal and offset within 1e-6)
+            sc_ = np.ptp(V, axis=0).max(); keepv = []
+            for v in V:
+                if all(np.linalg.norm(v - w) > 1e-6 * sc_ for w in keepv): keepv.append(v)
+            V = np.array(keepv); hh = ConvexHull(V); planes = []; Fc = []
+            for simp, eq in zip(hh.simplices, hh.equations):
+                for k_, (pe, fs) in enumerate(zip(planes, Fc)):
+                    if np.dot(pe[:3], eq[:3]) > 1 - 1e-6 and abs(pe[3] - eq[3]) < 1e-6 * sc_: fs.update(simp); break
+                else: planes.append(eq); Fc.append(set(simp))
+            Fc = {k_: fs for k_, fs in enumerate(Fc)}
+            G = nx.Graph()
+            for fi, vs in enumerate(Fc.values()):
+                G.add_node(('f', fi), kind=f'face{len(vs)}')
+                for v in vs: G.add_node(('v', int(v)), kind='corner'); G.add_edge(('f', fi), ('v', int(v)))
+            sigs.add(nx.weisfeiler_lehman_graph_hash(G, node_attr='kind', iterations=4)); cnt += 1
+        else:
+            D2 = np.sort(np.round(((V[:, None] - V[None]) ** 2).sum(-1)[np.triu_indices(len(V), 1)], 5)); sigs.add((len(V), tuple(D2))); cnt += 1
     return cnt, len(sigs)
 steps = int(sys.argv[1]) if len(sys.argv) > 1 else 10
 import os

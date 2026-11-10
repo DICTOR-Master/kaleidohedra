@@ -13,3 +13,8 @@ Distinct cell shapes (congruence, 5-digit squared distances) in balls of radius 
 Reading: a non-repeating filling is seen as a golden slice of the repeating 4D permutohedron filling; plain slicing gives no finite shape set
 (yet). NEXT options: count by combinatorial type; the projection (window) route that gives Penrose-type finite tile sets; larger balls for
 the golden slice.
+## Count by combinatorial type (DICTO "yes count shapes by type"): NOT YET TRUSTWORTHY
+Face-corner graph hash per cell (tolerant merging 1e-6). Rational: 1 type (89 / 173 / 265 cells). Generic t = 0.5: 64 / 101 / 137 types.
+Golden: 58 / 98 / 145 types - MORE than its 139 congruence classes at radius 3.4, impossible: golden slices have near-degenerate faces
+(corners nearly meeting) that floating point cannot resolve. First run (no tolerance) gave even more (141 at r 2.4): discarded.
+NEXT: exact golden arithmetic (as #81's chains) for the golden slice's combinatorial types.
