@@ -8,7 +8,9 @@ c2 ([1/7,1/4], -(4-s)/24..-5s/8), d1 ([1/8,1/4], -5s/8..-s/8), d2 ([1/8,1/4], -s
 import sys, os, itertools, time
 from fractions import Fraction as Fr
 import sympy as sp
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/st57/scripts')); sys.path.insert(0, os.path.expanduser('~/kres-tmp/splash'))
+# helper modules from the repository itself (11 Nov 2026, #104 v2 reproducibility): byte-identical to the copies the v1 run used
+_R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
+for _p in ('2026-10-25-stackings/scripts', '2026-10-27-splash-rules/proof', '2026-10-27-splash-rules/scripts'): sys.path.insert(0, os.path.join(_R, _p))
 from engine import Net, Cell, gdot, vsub, order
 from splash import net_for
 from validate import layer_type, ROLE_OF
