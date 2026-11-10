@@ -13,3 +13,13 @@ cells in a row end with 7 sides and half with 5 (each gains two or none), the cl
 All-hexagon tops need a pairing in which every cell sits at the tip of exactly one shrinking edge: open.
 **Next:** (1) DICTO's read of the sketch; (2) search pairings for the all-hexagon top; (3) the octet start (triangles) in place of
 hexagons; (4) 3D cells (prism + transition + prism), their volumes and the stacked space-fill.
+
+## Step 3 (10 Nov, DICTO "scutoids?!"): free edge directions (scripts/free_dirs.py)
+Least squares on a periodic 4 x 4 patch, bottom and middle corners free, conditions: paired edges collapse, every other edge parallel
+between the levels (flat trapezoid side faces), convex cells, edge floors. Every start stalls at the same violation 1.25 = the floor
+penalty of a BOTTOM edge forced towards zero: to keep all side faces flat the solver must collapse an edge that is not paired.
+Same obstruction as the three-direction LP. **Conjecture: with hexagons again at the top (double-row pairing) the side faces cannot all
+be flat, for any edge directions.** (Search evidence, not a proof; a proof would go through the cycle space of the parallel conditions.)
+**The choice for DICTO:** (a) the brick pairing: every side face flat (exact polyhedral cells), top a mix of 5- and 7-sided cells (the
+classic scutoid mix); (b) the double-row pairing: hexagons everywhere at the top, side faces bent (as in living scutoids, whose faces
+are curved). Either gives a space-filling layer stack.
