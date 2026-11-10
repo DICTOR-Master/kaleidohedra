@@ -129,3 +129,5 @@ Exact chain hops with the depth window widened to [2/5, 3/2] (the old [1, 3/2] w
   2e-7: NOT accepted (large denominators fit anything at this precision). Exact form OPEN: it is the wall of a later exact step
   (step 3+, too slow so far). B1 status: #86 done; #61 proved (two-parameter, neighbourhood check running); #80 cube regimes exact
   (1/2, 3/5, 3/4, 1); #81 dodecahedron edges 1, 5/4, 3 - φ exact, s* ≈ 1.08734394 numerical.
+- NEIGHBOURHOOD GAP CLOSED (panel, 10 Nov): job swap61-cells2-D24, all five cells FINAL ok at D^2 = 24 (every extra plane's slack proved
+  >= 0 on the whole cell), largest corner distance rho <= 0.5449 (5% margin 0.5721), bound (√24 - rho)^2 >= rho^2 + 0.35 True on every cell.

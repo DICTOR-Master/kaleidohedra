@@ -5778,6 +5778,24 @@
     "retry": "never; next: 6D or non-simple corrections",
     "study": "2026-11-10-5d-sweep",
     "date": "2026-11-10"
+   },
+   {
+    "question": "#61 two-parameter proof: completeness of the neighbourhood (panel gap)",
+    "method": "swap_cells2.py at D^2 = 24 with a corner-distance bound",
+    "status": "PROVED (gap closed)",
+    "result": "all five cells FINAL ok; rho <= 0.545; (√24 - rho)^2 >= rho^2 + 0.35",
+    "retry": "never",
+    "study": "2026-11-09-b1-walls",
+    "date": "2026-11-10"
+   },
+   {
+    "question": "B1 window edges of #80 / #81",
+    "method": "exact chain hops on a widened window; bisection with chain_num5",
+    "status": "SETTLED except one exact form",
+    "result": "cube 1/2, 3/5 (and 3/4, 1); dodecahedron 1, 5/4, 3 - phi exact; s* = 1.08734394 numerical",
+    "retry": "only: exact step 3+ walls for s*",
+    "study": "2026-11-09-b1-walls",
+    "date": "2026-11-10"
    }
   ]
  },
