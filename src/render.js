@@ -668,7 +668,8 @@ let hudPromptTimer = null;
 // nothing it triggers may show or move.
 let freshProbing = false;
 function showHudPrompt(text, ms = 4000) {
-  if (freshProbing) return;
+  // nothing to say, nothing shown (a world with no entry prompt used to leave an empty pill above its panel for a few seconds)
+  if (freshProbing || !text) return;
   const el = document.getElementById('hud-prompt');
   if (!el) return;
   el.textContent = text;
