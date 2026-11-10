@@ -51,6 +51,6 @@ ax.add_collection3d(Poly3DCollection([[(cg[0] - .7, cg[1] - .6, zw), (cg[0] + .7
 ax.set_xlim(cg[0] - .7, cg[0] + .7); ax.set_ylim(cg[1] - .6, cg[1] + .6); ax.set_zlim(0, (d['lb'] - d['la']) * Z); ax.set_box_aspect((1.4, 1.2, (d['lb'] - d['la']) * Z))
 ax.view_init(elev=12, azim=-70); ax.set_axis_off(); ax.set_title('the three columns, λ upwards\n(red sheet: the wall)', family='serif', fontsize=11)
 fig.suptitle('The 4D scutoid as a 3D build — a vertical cut through the stacking (ACABC, s = 1/5): every hole is a polygon; stacked upwards through\n'
-             'λ (the 4th dimension) each becomes a flat-faced column. At the wall the gold cell gains two green neighbours (red: the new contact).', family='serif', fontsize=11.5)
+             'λ (the 4th dimension) each becomes a flat-faced column. At the wall the gold cell\'s faces to two green cells reach this cut (red); the real change is off the cut.', family='serif', fontsize=11.5)
 fig.text(0.995, 0.01, 'DICTO', ha='right', fontsize=8, color='#888')
 plt.subplots_adjust(left=0.01, right=0.99, top=0.82, bottom=0.03, wspace=0.05); plt.savefig('build3d.png'); print('FINAL ok')

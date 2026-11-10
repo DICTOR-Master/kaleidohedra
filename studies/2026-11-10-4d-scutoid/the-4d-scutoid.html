@@ -38,12 +38,12 @@ button:hover { border-color: var(--muted); } button:focus-visible { outline: 2px
 </style>
 <div class="wrap">
   <h1>The 4D Scutoid</h1>
-  <p class="lede">A vertical cut through a stacking of close-packed holes (ACABC, layer spacing s = 1/5). In the cut every hole's cell is a flat polygon. Standing those polygons up along λ, the weight that lifts the tetrahedral holes into the 4th dimension, turns every hole into a column with flat faces. Move the cut up through λ and watch the gold cell gain two neighbours at the wall.</p>
+  <p class="lede">A vertical cut through a stacking of close-packed holes (ACABC, layer spacing s = 1/5). In the cut every hole's cell is a flat polygon. Standing those polygons up along λ, the weight that lifts the tetrahedral holes into the 4th dimension, turns every hole into a column with flat faces. Move the cut up through λ: at the wall the octahedral cells above and below the gold one (two layers apart) stop touching and tetrahedral holes start touching, away from this cut. In the cut you see the gold cell's faces towards two green cells, there all along, reach the plane exactly at the wall.</p>
   <div class="bench">
     <div class="view"><canvas id="three" aria-label="3D model of the columns; drag to turn"></canvas><div class="tag">the columns · λ upwards · drag to turn</div>
       <div class="readout"><span id="ro1"></span><span id="ro2"></span></div></div>
     <div class="view"><canvas id="plan" aria-label="plan of the cut at the current λ"></canvas><div class="tag">the cut at this λ</div>
-      <div class="readout"><span>gold cell's neighbours: <b id="nb">6</b></span><span id="state"></span></div></div>
+      <div class="readout"><span>gold cell's neighbours in this cut: <b id="nb">6</b></span><span id="state"></span></div></div>
   </div>
   <div class="slider">
     <label for="lam">λ, the 4th dimension <span id="lamv"></span></label>
@@ -51,8 +51,8 @@ button:hover { border-color: var(--muted); } button:focus-visible { outline: 2px
     <div class="scale" id="scale"></div>
     <div class="btns"><button id="play" type="button">Play the sweep</button><button id="below" type="button">Just below the wall</button><button id="above" type="button">Just above the wall</button><button id="reset" type="button">Reset view</button></div>
   </div>
-  <div class="legend"><span style="--c: var(--gold)">the octahedral hole at the centre</span><span style="--c: var(--oct)">octahedral holes</span><span style="--c: var(--tet)">tetrahedral holes</span><span style="--c: var(--new)">the two that reach the gold cell at the wall</span><span style="--c: var(--wall)">the wall λ = −5s/8 = −1/8</span></div>
-  <p class="notes"><b>What is exact.</b> Every power-diagram plane moves linearly with λ, so each column is a polyhedron with flat faces, and its cut at any λ is the hole's cell there. The wall at λ = −5s/8 is proved for every spacing s from 1/8 to 1/4 (#61): below it octahedral holes still touch across a whole layer; at the wall they let go and tetrahedral holes meet instead. In this cut the gold cell keeps its six neighbours and gains two at the wall: the green columns begin as wedges exactly there, the scutoid's Y-corner one dimension up.</p>
+  <div class="legend"><span style="--c: var(--gold)">the octahedral hole at the centre</span><span style="--c: var(--oct)">octahedral holes</span><span style="--c: var(--tet)">tetrahedral holes</span><span style="--c: var(--new)">the two whose faces with the gold cell reach the cut at the wall</span><span style="--c: var(--wall)">the wall λ = −5s/8 = −1/8</span></div>
+  <p class="notes"><b>What is exact.</b> Every power-diagram plane moves linearly with λ, so each column is a polyhedron with flat faces, and its cut at any λ is the hole's cell there. The wall at λ = −5s/8 is proved for every spacing s from 1/8 to 1/4 (#61): below it octahedral holes still touch across a whole layer; at the wall they let go and tetrahedral holes meet instead (the lattice's symmetry makes six cells meet at that point: a rosette-type exchange). In this cut the gold cell's polygon goes from six neighbours to eight because its faces towards two green cells, present throughout, reach the plane at the wall; the green columns begin there as wedges. Corrected 10 Nov after an independent review: earlier text said the gold cell gains two neighbours.</p>
   <div class="mark">DICTO · dictospheres.com</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>

@@ -1,0 +1,8 @@
+START two-parameter proof, cells ['b', 'c1', 'c2', 'd1', 'd2']
+PROGRESS 0.20 cell c2: FINAL ok (cell c2 proved for all s in [1/7, 1/4], neighbourhood D^2 = 24)
+PROGRESS 0.40 cell d2: FINAL ok (cell d2 proved for all s in [1/8, 1/4], neighbourhood D^2 = 24)
+PROGRESS 0.60 cell d1: FINAL ok (cell d1 proved for all s in [1/8, 1/4], neighbourhood D^2 = 24)
+PROGRESS 0.80 cell b: FINAL ok (cell b proved for all s in [1/7, 1/4], neighbourhood D^2 = 24)
+PROGRESS 1.00 cell c1: FINAL ok (cell c1 proved for all s in [1/8, 1/7], neighbourhood D^2 = 24)
+FINAL ok
+[exit 0]

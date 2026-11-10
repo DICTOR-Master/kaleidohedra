@@ -131,3 +131,12 @@ Exact chain hops with the depth window widened to [2/5, 3/2] (the old [1, 3/2] w
   (1/2, 3/5, 3/4, 1); #81 dodecahedron edges 1, 5/4, 3 - φ exact, s* ≈ 1.08734394 numerical.
 - NEIGHBOURHOOD GAP CLOSED (panel, 10 Nov): job swap61-cells2-D24, all five cells FINAL ok at D^2 = 24 (every extra plane's slack proved
   >= 0 on the whole cell), largest corner distance rho <= 0.5449 (5% margin 0.5721), bound (√24 - rho)^2 >= rho^2 + 0.35 True on every cell.
+
+## Corrections after Fable's attack (10 Nov; papers/2026-11-10-scutoids-4d/fable-attack.md, fable-judgement.md)
+- Wall exchange counts in 'each wall's flip' are DOUBLE counts (flips61.py counts each shared face from both cells): faces are 57 <-> 57
+  (-(4-s)/24), 21 <-> 21 (-5s/8), 126 <-> 126 (-s/8), 31 lost / 173 gained (-9s/8), summed over the six words' unit cells.
+- The walls are NOT pure 2-2 scutoid swaps: the lattice's central symmetry forces a loss and a gain onto one point (degenerate 4-4 flip, six
+  cells meeting, the four exchanging holes coplanar with a common midpoint): rosette-type exchanges; 2-2 only in that plane.
+- Exact neighbourhood bound (replaces the grid estimate): every cell within rho < 0.82 of its site (nearest octahedral hole of the nearest
+  gap within sqrt(3/8)), (sqrt24 - 0.82)^2 - 0.82^2 > 15.9 > |lambda|. D^2 = 24 logs filed in data/cells2-D24/.
+- Theorem 3 holds for the six words; for other stackings it assumes pieces are fixed by the four layers round their gap.
