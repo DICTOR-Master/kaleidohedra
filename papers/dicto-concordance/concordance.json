@@ -7316,6 +7316,21 @@
     }
    ],
    "audit": "studies/2026-11-10-run-audit (Fable, read-only): at least 95 run failures of twelve kinds since 11 Oct 2026; largest: caps hit with nothing to show (≥20), empty/silent logs (≥17), tooling faults (≥12). Most were predictable from a pilot or a growth estimate; the guards so far act after a run ends, not before launch."
+  },
+  "principles": {
+   "note": "DICTO 10 Nov 2026: 'maybe make a smaller set of the same universal rules for everything' — 'principles'. The ten principles; the guards below are their gates.",
+   "list": [
+    "See it as DICTO sees it. Nothing is \"done\" until I have opened, read or measured the thing he will see (PDF, page, record, figure, result), at phone and desk size where it applies.",
+    "Every action goes through a gate. Launch, print, publish, deploy only through the tool that checks it (dbbjob.sh + plan, print.mjs, zen_* with post-check, ship.py). A principle without a gate gets a gate.",
+    "Plan, pilot, control, run, watch. Estimate size, memory and time from known growth; pilot of 5 minutes or less; a known-answer control; then the run, watched at every stage. A failure the estimate could have predicted is my mistake.",
+    "Every run ends in an outcome. An answer, or the next method already running, in the same turn. Never \"failed, later\".",
+    "One fault, once. Fix what he sees first; sweep for the same fault everywhere; add a mechanical guard; record it in the Concordance modus operandi; all in the same session.",
+    "Exact before claimed. Claims are checked exactly or certified; values compared by value; every test has a control that it passes and one it fails.",
+    "His words, his ideas, his names. Restate in his words before building; his names; credit others by name; active artist voice; no labelled plainness or banned phrases.",
+    "Ask only what is his to decide. Names, release (\"read ok\"), deploy (\"into the deploy queue?\"), settings. Everything else: decide, do, report what changed in a few lines.",
+    "Nothing he wants drops. Every request and idea goes into open-work at once and stays visible until done or he drops it.",
+    "Never break what runs. Edit running scripts by copy and swap; never push master; never move memory; no machine names or private paths in public text."
+   ]
   }
  },
  "destinations_2026_11_09": {
