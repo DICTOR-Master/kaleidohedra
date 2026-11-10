@@ -5661,6 +5661,15 @@
     "retry": "only for in-layer side-face keys or non-half-cell pieces",
     "study": "2026-11-10-merged-sliders",
     "date": "2026-11-10"
+   },
+   {
+    "question": "#80 cube chain of the growth rule T with the depth as a symbol (s0 = 5/7): does it close (a step similar to an earlier one)?",
+    "method": "chain_sym.py exact symbolic steps (sympy), N = 6",
+    "status": "METHOD-FAILED at step 6",
+    "result": "steps 0-5 exact (corners 32, 42, 80, 102, 110, 216; no closure); step 5 needs a degree-19 hop polynomial and took 10 min; step 6 ran over 3 h (morning run, died silently) and again 25+ min without output (stopped 10 Nov)",
+    "retry": "only with a different method: high-precision numerical steps at several s0 to find the closure step, exact check of that step only",
+    "study": "2026-11-09-b1-walls",
+    "date": "2026-11-10"
    }
   ]
  },

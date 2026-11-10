@@ -10,3 +10,8 @@ check of #86 holds at every wall and at one point of every hop.
 **#80 cube chain:** the sample s0 = 3/4 is itself a wall (the script stops by design); rerun at s0 = 5/7.
 **#81 dodecahedron chain (s0 = 3/4):** steps 0–3: 32 → 60 → 32 → 30 corners, hops (1, (5 − √5)/2) then (1, 3/2); full run restarted.
 **#61 swap rule below 1/4:** waits for its parameter lists (λ values, words) to be rebuilt from #61.
+**10 Nov, attention check:** #80 cube chain (s0 = 5/7) stopped at step 6: the morning run died silently after step 5 (no watcher),
+the watched rerun spent 25+ min in step 6 with no output; step 5 already needed a degree-19 hop polynomial (10 min). Exact symbolic
+stepping is exhausted here (ledger: METHOD-FAILED at step 6). Next method: numerical steps at 60 digits for several s0 in the hop to
+find the closure step, then an exact check of that one step. #81 dodecahedron chain: step 5 running (2.5 GB, 25 min); stop and switch
+method too if no step 5 line by the next check.
