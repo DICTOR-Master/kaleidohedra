@@ -169,7 +169,7 @@ while queue:
         for g in t['faces']:
             if g not in seen and g not in starface and np.linalg.norm(centre(g)) <= RMAX: seen.add(g); queue.append(g)
     done_f = len(seen) - len(queue)
-    if done_f % 500 == 0: print(f'PROGRESS {0.2 * done_f / max(len(seen), 1):.4f} enumerate: faces done {done_f} of {len(seen)} seen, candidates {len(cands)} ({time.time()-T0:.0f} s)', flush=True)
+    if done_f % 500 == 0: print(f'PROGRESS {0.8 * done_f / max(len(seen), 1):.4f} enumerate: faces done {done_f} of {len(seen)} seen, candidates {len(cands)} ({time.time()-T0:.0f} s)', flush=True)
 C = list(cands.values()); n = len(C)
 print(f'candidates {n} ({time.time()-T0:.0f} s)', flush=True)
 byface = {}
@@ -190,7 +190,7 @@ import resource
 def peak_gb(): return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1e6
 print(f'peak memory after enumeration: {peak_gb():.2f} GB', flush=True)
 PAIRS = tree.query_pairs(2.45, output_type='ndarray')      # 11-10: one int64 array, not millions of tuples
-print(f'PROGRESS 0.2000 clauses: {len(PAIRS)} close pairs to test; peak {peak_gb():.2f} GB', flush=True)
+print(f'PROGRESS 0.8000 clauses: {len(PAIRS)} close pairs to test; peak {peak_gb():.2f} GB', flush=True)
 # 11-10 (second fix): the 20-process pool was killed by memory (each fork copied the 10 GB main process). Overlap test now
 # VECTORISED in numpy, batches of 50 000 pairs, in the main process. Same rule as ov(): separating axes = 3 face normals of each tile
 # + 9 edge cross products, normalised, near-zero axes skipped, strict separation with tolerance 1e-7. Checked against ov() on a sample.
@@ -213,9 +213,9 @@ B = 50000
 for q_ in range(0, len(PA), B):
     blk = PA[q_:q_ + B]; hit = vec_overlap(blk[:, 0], blk[:, 1])
     for i, j in blk[hit]: S.add_clause([-(int(i) + 1), -(int(j) + 1)]); npairs += 1
-    print(f'PROGRESS {0.2 + 0.2 * min(q_ + B, len(PA)) / len(PA):.4f} clauses: pairs {min(q_ + B, len(PA))} of {len(PA)} ({time.time()-T0:.0f} s)', flush=True)
+    print(f'PROGRESS {0.8 + 0.1 * min(q_ + B, len(PA)) / len(PA):.4f} clauses: pairs {min(q_ + B, len(PA))} of {len(PA)} ({time.time()-T0:.0f} s)', flush=True)
 print(f'clauses: cover/match {ncl}, overlap pairs {npairs} ({time.time()-T0:.0f} s); solving', flush=True)
-print(f'PROGRESS 0.4000 solve: started; peak {peak_gb():.2f} GB', flush=True)
+print(f'PROGRESS 0.9000 solve: started; peak {peak_gb():.2f} GB', flush=True)
 ok = S.solve()
 print(f'{TAG} m={m_} n={n_} spacing {d_nn:.4f}: ' + ('SAT: a filling exists' if ok else 'UNSAT: no face-to-face filling with prolate rhombohedra') + f' ({time.time()-T0:.0f} s)')
 print(f'peak memory at the end: {peak_gb():.2f} GB', flush=True)
