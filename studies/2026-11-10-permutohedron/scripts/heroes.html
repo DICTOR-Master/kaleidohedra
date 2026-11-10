@@ -45,6 +45,18 @@ if (shot === 'fill') {
     scene.add(solid(vertices, faces, role === 'gsBig' ? GOLD : VIOLET, role === 'gsBig' ? {} : { metal: 0.2, rough: 0.5 }));
   }
   cam.position.copy(n.clone().multiplyScalar(17)).add(new THREE.Vector3(0, 0.4, 0)); cam.lookAt(0, 0, 0);
+} else if (shot === 'apart') {
+  // pulled apart (in the style of the app's Bitruncated pull-apart, DICTO 11 Nov): the cells nearest one central DICTO 1:2 TO, each moved
+  // straight out from the centre so every cell floats free round the gold heart
+  const cells = goldenFamily(2, 0.5), PULL = 1.4;
+  for (const [role, vertices, faces, , { anchor }] of cells) {
+    const c = new THREE.Vector3(...anchor); if (c.length() > 1.7) continue;   // the heart, its 8 partners T(2) and its 6 nearest DICTO 1:2 TOs
+    const sh = c.clone().multiplyScalar(PULL), vs = vertices.map((v) => [v[0] + sh.x, v[1] + sh.y, v[2] + sh.z]);
+    const centre = c.length() < 1e-6;
+    scene.add(solid(vs, faces, role === 'gsBig' ? GOLD : VIOLET, centre ? { lw: 2.6, metal: 0.5, rough: 0.28 } : role === 'gsBig' ? {} : { metal: 0.2, rough: 0.5 }));
+  }
+  const d = new THREE.Vector3(0.82, 0.56, 0.12).normalize(); cam.position.copy(d.multiplyScalar(21.5)); cam.lookAt(0, 0, 0);
+  key.position.copy(cam.position).add(new THREE.Vector3(-2, 7, 4)); rim.position.copy(cam.position).multiplyScalar(-1).add(new THREE.Vector3(0, 3, 0));   // 34 deg from every neighbour: the heart shows
 } else {
   const { vertices, faces } = goldenT(0.5);
   scene.add(solid(vertices, faces, GOLD, { lw: 3.2, metal: 0.45, rough: 0.3 }));
