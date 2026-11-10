@@ -183,7 +183,7 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
     };
     requestAnimationFrame(step);
   }
-  const fit = () => fitView([0, 0, 0], K * Math.max(1.6 * (view.one ? 2.5 : 1.5) * PHI, height() / 2 + 1.5), null, true);   // one world: the 5 x 5 block
+  const fit = () => fitView([0, 0, 0], K * Math.max(1.6 * (view.one ? 1.95 : 1.5) * PHI, height() / 2 + 1.5), null, true);   // one world: the 5 x 5 block
   const redrawAll = () => { for (const s of slabs.values()) drawSlab(s); };
 
   const pieceName = (kind, L = lang()) => t(`pm.piece.${KEY[kind] ?? kind}`, L);
