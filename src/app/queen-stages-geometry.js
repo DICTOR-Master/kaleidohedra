@@ -36,6 +36,9 @@ const TRIANGLES = [], PAIRS = [];
   });
   for (const v of byFace.values()) PAIRS.push(v);
 }
+/** The triangle order the bitruncated corners follow (corner 3t + j sits on triangle t, j = 0, 1, 2 on its edges [0,1], [0,2], [1,2]),
+ *  and each triangle's two cells (indices into the White Queen's CELLS): for the Bitruncated 600-cell world (bitrunc-geometry.js). */
+export { TRIANGLES as STAGE_TRIANGLES, PAIRS as STAGE_TRIANGLE_CELLS };
 const CENTRES = CELLS.map(mean);
 const BUILD = {
   t01: () => EDGES.flatMap(([a, b]) => [mix(VERTICES[a], VERTICES[b], 1 / 3), mix(VERTICES[b], VERTICES[a], 1 / 3)]),
@@ -63,13 +66,15 @@ function shortestPairs(P) {
   return out;
 }
 
-const built = new Map();
+const built = new Map(), cornersBuilt = new Map();
+/** A stage's corners alone (4D, radius 2), without the edges (quick). */
+export function stageCorners(key) {
+  if (!cornersBuilt.has(key)) { const P = BUILD[key](), r = Math.hypot(...P[0]); cornersBuilt.set(key, P.map((p) => p.map((x) => (x * RADIUS) / r))); }
+  return cornersBuilt.get(key);
+}
 /** A stage's corners (4D, radius 2) and edges. */
 export function stage(key) {
-  if (!built.has(key)) {
-    const P = BUILD[key](), r = Math.hypot(...P[0]), V = P.map((p) => p.map((x) => (x * RADIUS) / r));
-    built.set(key, { vertices: V, edges: shortestPairs(V) });
-  }
+  if (!built.has(key)) { const V = stageCorners(key); built.set(key, { vertices: V, edges: shortestPairs(V) }); }
   return built.get(key);
 }
 
