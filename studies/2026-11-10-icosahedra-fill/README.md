@@ -24,3 +24,11 @@ study 2026-10-27-five-pyramids): 20 inner Cleo-Icos = a whole icosahedron, then 
 a whole icosahedron; everything else splits into Cleo-Icos and Antonius. Obstacle: de Bruijn (grid) tilings in the six icosahedral
 directions always contain oblate tiles, so such a filling must be non-zonotopal. Next: exact search for a prolate-only surround of
 one hexecontahedron star (icosahedral orientations, face-to-face).
+
+**Step 2(b) result (10 Nov 2026).** surround.py (prolate tiles only, corners in Z<e1..e6>, nearest-open-face-first, backtracking):
+the hexecontahedron star is surrounded to search radius 1.9/2.2 (+60 tiles), 2.6/3.0 (+180), 3.4 (+320), with almost no backtracking
+(nodes = tiles + 14). verify_exact.py, exact in Q(√5) (separating axes, edge length 1): witnesses 2.6 (200 tiles, 2524 close pairs) and
+3.4 (340 tiles, 4572 pairs): no two tiles overlap; no face is used by more than two tiles; no open face has its centre inside the radius.
+Covered ball: at least radius 3.4 − (half the longest face diagonal, ≈ 0.85) ≈ 2.5 for the 3.4 witness. So locally a whole icosahedron
+(20 Cleo-Icos) sits inside a filling of Cleo-Icos + Antonius. Open: all of space (periodic star arrangement, or a proof the shells close
+for ever). DICTO 10 Nov: "octet and gyrated octet could both be used": restated to him, awaiting his confirmation.
