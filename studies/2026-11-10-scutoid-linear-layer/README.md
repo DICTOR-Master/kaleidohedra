@@ -68,3 +68,14 @@ to V(TK) − V(PD) = 6.4660211935 exactly. Render papers-to-read scutoid-polar-s
 A (inside out, scutoid_sphere.py 0.95 0.90): TD core → ID → TI outside: decagon cells 10 → 5 → 5, triangle cells 3 → 3 → 6;
 every face flat (2.6e-13), all 32 cells one orientation, volumes add to the shell exactly. Render scutoid-inside-out-shell-A.png.
 NEXT (DICTO "can we do a cycle of them"): iterate, outer surface → next core, alternating scutoid move and flip; does it close?
+
+## Step 8: the cycle (DICTO 10 Nov "can we do a cycle of them I wonder what they might yield"; scripts/scutoid_cycle.py)
+The scutoid move is its own inverse (TI → TD → TI), and so is the flip (PD → TK → PD); with the polar swaps they make one square
+TI → TD (scutoid move) → TK (polar) → PD (flip) → TI (polar): period 4. Built as nested shells (flatness holds at any radii):
+- SCUTOID ONION: S (TI 1 → ID 1.18 → TD 1.42) + A (TD 1.42 → ID 1.499 → TI 1.578), repeated at scale λ = 1.42/0.90 = 1.5778 per
+  period. Interfaces match corner for corner (60); over 3 periods the cell volumes = V(TI λ³) − V(TI) = 216.5210825662 exactly.
+  All of space but the centre is filled by FOUR cell shapes (5→5→10, 6→3→3, 10→5→5, 3→3→6) at scales λ^k, k in Z.
+- FLIP ONION: B (PD 1 → RT 1.25 → TK 1.55) + back (TK → RT → PD), λ = 1.55/0.86 = 1.8023. Interfaces 32 corners; 3 periods
+  = V(PD λ³) − V(PD) = 737.4739317134 exactly. Space but the centre filled by TWO shapes (one per shell, all congruent) at scales λ^k.
+Renders papers-to-read scutoid-onion-cycle.png, scutoid-flip-onion-cycle.png (cut in half).
+LEADS: can the back-flip cell be made congruent to the forward one (ONE shape at scales λ^k)? radii giving golden λ (φ or φ²)?
