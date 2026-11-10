@@ -111,7 +111,7 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
       mats[kind] = new THREE.MeshStandardMaterial({ color: colourOf(kind), flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1, roughness: isSolid(kind) ? 0.5 : 0.85 });
       lineMats[kind] = new THREE.LineBasicMaterial({ color: GOLD });
     }
-    const o = isSolid(kind) ? opacity : Math.min(opacity, GLASS);
+    const o = isSolid(kind) ? opacity : Math.min(opacity, view.one ? 0.06 : GLASS);   // one world: helpers a whisper, the jewels lead (DICTO 11-10)
     const m = mats[kind]; m.transparent = o < 1; m.opacity = o; m.depthWrite = o >= 1; m.needsUpdate = true;
     lineMats[kind].color.setHex(skeleton || !isSolid(kind) ? colourOf(kind) : GOLD);
     return m;
