@@ -1,0 +1,56 @@
+<!doctype html><html><head><meta charset="utf-8"><title>DICTO 1:2 Truncated Octahedron heroes</title>
+<style>html,body{margin:0;background:#07080c;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.185.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.185.1/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// Hero renders for the DICTO 1:2 Truncated Octahedron paper (11 Nov 2026), served from the app's root so the app's own geometry is used:
+//   ?shot=fill   the golden-bond filling at x = 1/2 (#48): DICTO 1:2 Truncated Octahedra (gold) with their partners T(2) (violet), a ball cut
+//   ?shot=close  one DICTO 1:2 Truncated Octahedron close up, a hexagon facing the camera (sides 1, 2, 1, 2, 1, 2)
+// Render standard: solid faces with polygon offset, crisp fat edges, no fog.
+import * as THREE from 'three';
+import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
+import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
+import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
+import { goldenFamily, goldenT } from './src/app/world-dictonic.js';
+const shot = new URLSearchParams(location.search).get('shot') ?? 'fill';
+const W = innerWidth, H = innerHeight;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setPixelRatio(devicePixelRatio); renderer.setSize(W, H);
+renderer.setClearColor(0x07080c); renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 0.95; renderer.outputColorSpace = THREE.SRGBColorSpace; document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); const cam = new THREE.PerspectiveCamera(shot === 'close' ? 24 : 30, W / H, 0.01, 200);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x303040, 0.9));
+const key = new THREE.DirectionalLight(0xffffff, 1.6); key.position.set(4, 6, 5); scene.add(key);
+const rim = new THREE.DirectionalLight(0xa8b8ff, 0.9); rim.position.set(-6, -2, -4); scene.add(rim);
+const GOLD = new THREE.Color('#c9a227'), VIOLET = new THREE.Color('#6d4fb8');
+function solid(vertices, faces, colour, opts = {}) {
+  const pos = [], edges = [];
+  for (const f of faces) {
+    for (let m = 1; m + 1 < f.length; m++) for (const i of [f[0], f[m], f[m + 1]]) pos.push(...vertices[i]);
+    for (let k = 0; k < f.length; k++) edges.push(...vertices[f[k]], ...vertices[f[(k + 1) % f.length]]);
+  }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+  const mat = new THREE.MeshStandardMaterial({ color: colour, metalness: opts.metal ?? 0.35, roughness: opts.rough ?? 0.38, flatShading: true,
+    polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1, side: THREE.DoubleSide });
+  const group = new THREE.Group(); group.add(new THREE.Mesh(g, mat));
+  const lg = new LineSegmentsGeometry(); lg.setPositions(edges);
+  const lm = new LineMaterial({ color: opts.edge ?? 0x15120a, linewidth: opts.lw ?? 1.8, resolution: new THREE.Vector2(W * devicePixelRatio, H * devicePixelRatio) });
+  group.add(new LineSegments2(lg, lm)); return group;
+}
+if (shot === 'fill') {
+  const cells = goldenFamily(3, 0.5);
+  // a ball of cells, cut by one plane in front so the inside shows: keep cells whose centre is inside radius R and behind the cut
+  const R = 3.05, n = new THREE.Vector3(1, 0.8, 1.15).normalize();
+  for (const [role, vertices, faces, , { anchor }] of cells) {
+    const c = new THREE.Vector3(...anchor);
+    if (c.length() > R || c.dot(n) > 0.75) continue;
+    scene.add(solid(vertices, faces, role === 'gsBig' ? GOLD : VIOLET, role === 'gsBig' ? {} : { metal: 0.2, rough: 0.5 }));
+  }
+  cam.position.copy(n.clone().multiplyScalar(17)).add(new THREE.Vector3(0, 0.4, 0)); cam.lookAt(0, 0, 0);
+} else {
+  const { vertices, faces } = goldenT(0.5);
+  scene.add(solid(vertices, faces, GOLD, { lw: 3.2, metal: 0.45, rough: 0.3 }));
+  // the hexagon facing (1,1,1); look at it slightly from the side, close
+  const d = new THREE.Vector3(1, 1.25, 1.55).normalize();
+  cam.position.copy(d.multiplyScalar(6.2)); cam.lookAt(0, 0, 0);
+}
+renderer.render(scene, cam); window.__heroDone = true;
+</script></body></html>
