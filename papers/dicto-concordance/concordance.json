@@ -5796,6 +5796,15 @@
     "retry": "only: exact step 3+ walls for s*",
     "study": "2026-11-09-b1-walls",
     "date": "2026-11-10"
+   },
+   {
+    "question": "scutoid sweep law on random irregular simple 4-polytopes",
+    "method": "random4d.py: polars of random hulls, predictions from face counts, three directions each",
+    "status": "CONFIRMED",
+    "result": "(births, swaps, deaths) = (20, 57, 20), (32, 103, 32), (50, 142, 50) as predicted; no symmetry needed",
+    "retry": "never",
+    "study": "2026-11-10-5d-sweep",
+    "date": "2026-11-10"
    }
   ]
  },

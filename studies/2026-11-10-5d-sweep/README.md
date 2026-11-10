@@ -10,3 +10,11 @@ LOST, i = 4 death. Counts h1 .. h_{d-1}, every generic direction. PREDICTED befo
 One dimension up the 4D scutoid swap splits into two separate moves (contact gained / contact lost), each counted by an h-number.
 FLATLAND RECONSTRUCTION (4D): a 3D observer counting a simple 4-polytope's sweep recovers cells = births + 4 and corners = 2 + 2·births + swaps
 (bitruncated 600-cell: 720 and 3600 from 716 and 2166).
+
+## Random irregular simple 4-polytopes (DICTO: "why did we first understand this only in terms of beautiful regular geometry?";
+"test a random irregular simple 4D polytope"; scripts/random4d.py, FINAL ok)
+Random points near the 3-sphere (radii 0.8-1.2) -> hull -> its polar: a simple 4-polytope with no symmetry; cells taken from the construction
+(one per original point). Predicted from face counts alone (h1 = cells - 4, h2 = corners - 2 - 2 h1), counted in three random directions:
+#1 99 corners, 24 cells: 20 / 57 / 20 MATCH; #2 169, 36: 32 / 103 / 32 MATCH; #3 244, 54: 50 / 142 / 50 MATCH. The law needs no regularity.
+(Fault fixed on the way: the ridge test used a float rank check that rejected thin ridges, so a few swaps were seen as halves; in a convex
+polytope two facets sharing >= d - 1 corners share a ridge: rank check removed; the 5D and permutohedron controls still match.)

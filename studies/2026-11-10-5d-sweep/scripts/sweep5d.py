@@ -10,17 +10,19 @@ from collections import Counter
 from scipy.spatial import ConvexHull
 def frame(P):                                             # coordinates in the affine hull
     c = P.mean(0); U, S, Vt = np.linalg.svd(P - c); k = int((S > 1e-9).sum()); return (P - c) @ Vt[:k].T
-def analyse(name, P, predicted):
-    X = frame(np.array(P, float)); d = X.shape[1]; h = ConvexHull(X)
-    F = {}
-    for simp, eq in zip(h.simplices, h.equations): F.setdefault(tuple(np.round(eq, 7)), set()).update(simp)
-    facets = [frozenset(v) for v in F.values()]
+def analyse(name, P, predicted, facets=None):
+    X = frame(np.array(P, float)); d = X.shape[1]
+    if facets is None:
+        h = ConvexHull(X); F = {}
+        for simp, eq in zip(h.simplices, h.equations): F.setdefault(tuple(np.round(eq, 7)), set()).update(simp)
+        facets = [frozenset(v) for v in F.values()]
+    else: facets = [frozenset(f) for f in facets]
     per = Counter(); [per.update(f) for f in facets]
     assert set(per.values()) == {d}, f'{name} not simple: {Counter(per.values())}'
     ridges = {}
     for a, b in itertools.combinations(range(len(facets)), 2):
         sh = facets[a] & facets[b]
-        if len(sh) >= d - 1 and np.linalg.matrix_rank(X[list(sh)] - X[list(sh)][0]) == d - 2: ridges[(a, b)] = sorted(sh)
+        if len(sh) >= d - 1: ridges[(a, b)] = sorted(sh)      # two facets of a convex polytope sharing >= d - 1 corners share a ridge (no float rank test: thin ridges)
     rng = np.random.default_rng(11); out = []
     for t in range(3):
         u = rng.normal(size=d); u /= np.linalg.norm(u); H = X @ u; hs = np.sort(H)
