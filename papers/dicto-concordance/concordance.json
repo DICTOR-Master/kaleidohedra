@@ -7201,6 +7201,12 @@
     "mess_up": "the job launcher was edited in place while two of its waiters ran; bash reads scripts lazily, both waiters died and one job ran unwatched",
     "guard": "guard scripts are changed only by writing a .new file and moving it over (running copies keep the old file); dbbwait.sh re-attaches a waiter to a running job; the attention check confirms every running job has a live waiter",
     "where": "dicto-alerts/dbbjob.sh header, dicto-alerts/dbbwait.sh"
+   },
+   {
+    "date": "2026-11-10",
+    "mess_up": "a 20-process pool forked from a 10 GB process ran the compute machine out of memory; the system killed its desktop session services before the job",
+    "guard": "no fork pools over large data (vectorise in the main process instead); every heavy job runs under a hard memory ceiling (systemd-run --user --scope -p MemoryMax=…) set from the pre-flight estimate, so only that job can die",
+    "where": "study scripts (sat_octet.py, sat_gyro.py); job commands"
    }
   ],
   "practice": [

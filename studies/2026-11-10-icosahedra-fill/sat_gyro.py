@@ -187,9 +187,29 @@ for i, t in enumerate(C):
         S.add_clause([-(i + 1)] + [j + 1 for j in byface[g] if j != i]); ncl += 1
 cen = np.array([t['pts'].mean(0) for t in C]); tree = cKDTree(cen); npairs = 0
 PAIRS = list(tree.query_pairs(2.45)); print(f'PROGRESS 0.2000 clauses: {len(PAIRS)} close pairs to test', flush=True)
-for q_, (i, j) in enumerate(PAIRS):
-    if q_ % 200000 == 0: print(f'PROGRESS {0.2 + 0.2 * q_ / max(len(PAIRS), 1):.4f} clauses: pair {q_} of {len(PAIRS)} ({time.time()-T0:.0f} s)', flush=True)
-    if ov(C[i], C[j]): S.add_clause([-(i + 1), -(j + 1)]); npairs += 1
+# 11-10 (second fix): the 20-process pool was killed by memory (each fork copied the 10 GB main process). Overlap test now
+# VECTORISED in numpy, batches of 50 000 pairs, in the main process. Same rule as ov(): separating axes = 3 face normals of each tile
+# + 9 edge cross products, normalised, near-zero axes skipped, strict separation with tolerance 1e-7. Checked against ov() on a sample.
+PTS = np.array([t['pts'] for t in C])                                   # (n, 8, 3)
+SP = np.array([[vec(x) for x in t['span']] for t in C])                  # (n, 3, 3) edge directions
+NRM = np.stack([np.cross(SP[:, 0], SP[:, 1]), np.cross(SP[:, 0], SP[:, 2]), np.cross(SP[:, 1], SP[:, 2])], 1)
+def vec_overlap(I, J):
+    ax = [NRM[I], NRM[J]] + [np.cross(SP[I][:, a], SP[J][:, b])[:, None, :] for a in range(3) for b in range(3)]
+    ax = np.concatenate(ax, 1)                                           # (b, 15, 3)
+    nn = np.linalg.norm(ax, axis=2); valid = nn > 1e-9; ax = ax / np.where(valid, nn, 1)[:, :, None]
+    pi = np.einsum('bkd,bvd->bkv', ax, PTS[I]); pj = np.einsum('bkd,bvd->bkv', ax, PTS[J])
+    sep = (pi.max(2) <= pj.min(2) + 1e-7) | (pj.max(2) <= pi.min(2) + 1e-7)
+    return ~np.any(sep & valid, axis=1)
+PA = np.array(PAIRS, dtype=np.int64).reshape(-1, 2)
+rng = np.random.default_rng(1); smp = PA[rng.choice(len(PA), min(3000, len(PA)), replace=False)]
+agree = np.array_equal(vec_overlap(smp[:, 0], smp[:, 1]), np.array([ov(C[i], C[j]) for i, j in smp]))
+print(f'vectorised overlap test agrees with the exact routine on {len(smp)} sampled pairs: {agree}', flush=True)
+if not agree: print('FINAL FAIL: vectorised overlap test disagrees'); sys.exit(1)
+B = 50000
+for q_ in range(0, len(PA), B):
+    blk = PA[q_:q_ + B]; hit = vec_overlap(blk[:, 0], blk[:, 1])
+    for i, j in blk[hit]: S.add_clause([-(int(i) + 1), -(int(j) + 1)]); npairs += 1
+    print(f'PROGRESS {0.2 + 0.2 * min(q_ + B, len(PA)) / len(PA):.4f} clauses: pairs {min(q_ + B, len(PA))} of {len(PA)} ({time.time()-T0:.0f} s)', flush=True)
 print(f'clauses: cover/match {ncl}, overlap pairs {npairs} ({time.time()-T0:.0f} s); solving', flush=True)
 print('PROGRESS 0.4000 solve: started', flush=True)
 ok = S.solve()
