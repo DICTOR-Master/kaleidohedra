@@ -33,19 +33,19 @@ input[type=range] { width: 100%; height: 34px; accent-color: var(--accent); }
 </style>
 <div class="wrap">
   <h1>The 4D Permutohedron</h1>
-  <p class="lede">All 120 orderings of five numbers are the corners of a four-dimensional solid: the 4D permutohedron. Its 30 cells are 10 truncated octahedra and 20 hexagonal prisms, four meeting at every corner. Like the truncated octahedron in 3D, it fills its space without gaps.</p>
-  <div class="view"><canvas id="c3" aria-label="the 4D permutohedron in 3D; drag to turn"></canvas><div class="tag" id="tag">build · seen from just outside one truncated octahedron · drag to turn</div><div class="cap" id="cap"></div></div>
+  <p class="lede">All 120 orderings of five numbers are the corners of a four-dimensional solid: the 4D permutohedron. Its 30 cells are 10 three-dimensional permutohedra (the orderings of four values; classically truncated octahedra) and 20 hexagonal prisms, four meeting at every corner. Like the truncated octahedron in 3D, it fills its space without gaps.</p>
+  <div class="view"><canvas id="c3" aria-label="the 4D permutohedron in 3D; drag to turn"></canvas><div class="tag" id="tag">build · seen from just outside one 3D permutohedron · drag to turn</div><div class="cap" id="cap"></div></div>
   <div class="controls">
     <div class="row"><button id="mBuild" aria-pressed="true" type="button">Build</button><button id="mSweep" aria-pressed="false" type="button">Sweep</button>
-      <span style="flex:1"></span><button id="kAll" aria-pressed="true" type="button">All cells</button><button id="kTO" aria-pressed="false" type="button">Truncated octahedra</button><button id="kHP" aria-pressed="false" type="button">Hexagonal prisms</button></div>
+      <span style="flex:1"></span><button id="kAll" aria-pressed="true" type="button">All cells</button><button id="kTO" aria-pressed="false" type="button">3D permutohedra</button><button id="kHP" aria-pressed="false" type="button">Hexagonal prisms</button></div>
     <label for="sl" id="slLab">Pull the cells apart <span id="slVal"></span></label>
     <input id="sl" type="range" min="0" max="1000" value="0" step="1">
     <div class="row" id="sweepBtns" hidden><button id="play" type="button">Play the sweep</button><button id="nextSwap" type="button">Next swap</button></div>
   </div>
-  <div class="legend"><span style="--c: var(--to)">truncated octahedron</span><span style="--c: var(--hp)">hexagonal prism</span><span style="--c: var(--go)">cells letting go</span><span style="--c: var(--meet)">cells meeting</span></div>
+  <div class="legend"><span style="--c: var(--to)">3D permutohedron</span><span style="--c: var(--hp)">hexagonal prism</span><span style="--c: var(--go)">cells letting go</span><span style="--c: var(--meet)">cells meeting</span></div>
   <div class="facts">
     <div><b>Corners 120, edges 240, cells 30.</b> Every corner lies in four cells, so the solid is simple.</div>
-    <div><b>Build.</b> Seen from just outside one truncated octahedron: that cell becomes the outer shell and the other 29 sit inside it, every face still flat (a Schlegel view).</div>
+    <div><b>Build.</b> Seen from just outside one 3D permutohedron: that cell becomes the outer shell and the other 29 sit inside it, every face still flat (a Schlegel view).</div>
     <div><b>Sweep.</b> A flat 3D cut moves through the 4D solid. Its surface is tiled by the cells' cross-sections, and they change only by 26 births, 26 deaths and 66 scutoid swaps, as the h-vector (1, 26, 66, 26, 1) predicts in every direction.</div>
   </div>
   <div class="mark">DICTO · dictospheres.com</div>
@@ -91,7 +91,7 @@ function drawBuild() {
     const col = c.kind === 'TO' ? C.to : C.hp;
     for (const f of c.F) poly(f.map((v) => P[v].map((x, k) => x + shift[k])), col, ci === outer ? 0.10 : 0.95, world);
   });
-  document.getElementById('cap').innerHTML = kind === 'all' ? '30 cells: <b>10 truncated octahedra</b> (one is the outer shell) and <b>20 hexagonal prisms</b>' : kind === 'to' ? '<b>10 truncated octahedra</b>' : '<b>20 hexagonal prisms</b>';
+  document.getElementById('cap').innerHTML = kind === 'all' ? '30 cells: <b>10 permutohedra</b> (one is the outer shell) and <b>20 hexagonal prisms</b>' : kind === 'to' ? '<b>10 permutohedra</b> (3D)' : '<b>20 hexagonal prisms</b>';
 }
 // ---- the sweep: the 3D cut at height h, its surface tiled by the cells' cross-sections
 const sd = D.sweep.d; const H = X.map((x) => dot(x, sd)); const hb = []; { for (const e of [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) { let v = e.map((x, i) => x - dot(e, sd) * sd[i]); for (const b of hb) { const p = dot(v, b); v = v.map((x, i) => x - p * b[i]); } const L = Math.hypot(...v); if (L > 1e-6 && hb.length < 3) hb.push(v.map((x) => x / L)); } }
@@ -129,7 +129,7 @@ const sl = document.getElementById('sl'), slLab = document.getElementById('slLab
 function setMode(m) {
   mode = m; document.getElementById('mBuild').setAttribute('aria-pressed', m === 'build'); document.getElementById('mSweep').setAttribute('aria-pressed', m === 'sweep');
   document.getElementById('sweepBtns').hidden = m !== 'sweep';
-  document.getElementById('tag').textContent = m === 'build' ? 'build · seen from just outside one truncated octahedron · drag to turn' : 'sweep · a 3D cut moving through the 4D solid · drag to turn';
+  document.getElementById('tag').textContent = m === 'build' ? 'build · seen from just outside one 3D permutohedron · drag to turn' : 'sweep · a 3D cut moving through the 4D solid · drag to turn';
   if (m === 'build') { slLab.firstChild.textContent = 'Pull the cells apart '; sl.max = 1000; sl.value = Math.round(pull * 1000); slVal.textContent = Math.round(pull * 100) + '%'; }
   else { slLab.firstChild.textContent = 'Move the cut through the 4th dimension '; sl.max = gaps.length - 1; sl.value = gapK; slVal.textContent = 'corner ' + gapK + ' of 119'; }
   draw();

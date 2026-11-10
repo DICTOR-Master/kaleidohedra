@@ -1,0 +1,100 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Vacuus cutaways</title>
+<style>html,body{margin:0;background:#0b0d12;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.185.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.185.1/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// Cutaways for #105 (DICTO 11 Nov: "I really wanted your beautiful cutaways"), drawn to the render standard: see-through crystal shell,
+// solid parts inside, polygon offset, crisp fat edges, no fog.
+//   ?shot=heart    the permutohedron of 1, 2, 4, 5 (DICTO 1:2 Truncated Octahedron) as a crystal shell; inside, the four regular hexagons
+//                  through its centre where the other four central permutohedra of the 4D permutohedron cross it (#105 Theorem 2)
+//   ?shot=vacuus   its own 3D Vacuus: the 15 central cards (3 octagons, 12 hexagons) that carry its 36 edges, slotted; edges as a gold frame
+//   &az=..&el=..&dist=.. camera
+import * as THREE from 'three';
+import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
+import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
+import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
+const q = new URLSearchParams(location.search), shot = q.get('shot') ?? 'heart';
+const W = innerWidth, H = innerHeight, DPR = devicePixelRatio;
+const R = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); R.setPixelRatio(DPR); R.setSize(W, H);
+R.setClearColor(0x0b0d12); R.toneMapping = THREE.ACESFilmicToneMapping; R.toneMappingExposure = 1.0; R.outputColorSpace = THREE.SRGBColorSpace;
+document.body.appendChild(R.domElement);
+const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(28, W / H, 0.01, 100);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x2a2f3c, 1.0));
+const az = +(q.get('az') ?? -38) * Math.PI / 180, el = +(q.get('el') ?? 24) * Math.PI / 180, dist = +(q.get('dist') ?? 14.5);
+cam.position.set(dist * Math.cos(el) * Math.sin(az), dist * Math.sin(el), dist * Math.cos(el) * Math.cos(az)); cam.lookAt(0, 0, 0);
+const key = new THREE.DirectionalLight(0xffffff, 1.5); key.position.copy(cam.position).add(new THREE.Vector3(-3, 6, 2)); scene.add(key);
+const back = new THREE.DirectionalLight(0x9fb4ff, 0.6); back.position.copy(cam.position).multiplyScalar(-1).add(new THREE.Vector3(0, 4, 0)); scene.add(back);
+// geometry: orderings of four values in the sum-zero 3-space, mapped by the isometry y -> (y1+y2-y3-y4, y1-y2+y3-y4, y1-y2-y3+y4)/2
+const to3 = (y) => [(y[0] + y[1] - y[2] - y[3]) / 2, (y[0] - y[1] + y[2] - y[3]) / 2, (y[0] - y[1] - y[2] + y[3]) / 2];
+function perms(a) { if (a.length < 2) return [a]; const out = []; a.forEach((x, i) => perms([...a.slice(0, i), ...a.slice(i + 1)]).forEach((p) => out.push([x, ...p]))); return out; }
+const VALS = [-2, -1, 1, 2], P = perms(VALS), X = P.map(to3);
+const ord = [...VALS].sort((a, b) => a - b);
+const E = []; for (let i = 0; i < 24; i++) for (let j = i + 1; j < 24; j++) {
+  const d = [0, 1, 2, 3].filter((k) => P[i][k] !== P[j][k]);
+  if (d.length === 2 && P[i][d[0]] === P[j][d[1]] && Math.abs(ord.indexOf(P[i][d[0]]) - ord.indexOf(P[i][d[1]])) === 1) E.push([i, j]);
+}
+// faces: group corners by supporting plane (brute force on the 24 corners)
+const V3 = X.map((p) => new THREE.Vector3(...p)); const faces = []; const seen = new Set();
+for (let a = 0; a < 24; a++) for (let b = a + 1; b < 24; b++) for (let c = b + 1; c < 24; c++) {
+  const n = new THREE.Vector3().subVectors(V3[b], V3[a]).cross(new THREE.Vector3().subVectors(V3[c], V3[a])); if (n.length() < 1e-9) continue; n.normalize();
+  const d0 = n.dot(V3[a]); const s = V3.map((v) => n.dot(v) - d0);
+  if (s.every((x) => x <= 1e-9) || s.every((x) => x >= -1e-9)) {
+    const on = s.map((x, i) => (Math.abs(x) < 1e-9 ? i : -1)).filter((i) => i >= 0); const k = on.join(',');
+    if (!seen.has(k)) { seen.add(k); const ctr = on.reduce((m, i) => m.add(V3[i]), new THREE.Vector3()).multiplyScalar(1 / on.length);
+      const u = new THREE.Vector3().subVectors(V3[on[0]], ctr).normalize(), w = new THREE.Vector3().crossVectors(n, u);
+      on.sort((i, j) => Math.atan2(w.dot(V3[i].clone().sub(ctr)), u.dot(V3[i].clone().sub(ctr))) - Math.atan2(w.dot(V3[j].clone().sub(ctr)), u.dot(V3[j].clone().sub(ctr))));
+      faces.push(on); }
+  }
+}
+function polyMesh(pts, colour, opts = {}) {
+  const pos = []; for (let t = 1; t + 1 < pts.length; t++) for (const p of [pts[0], pts[t], pts[t + 1]]) pos.push(...p);
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+  return new THREE.Mesh(g, new THREE.MeshPhysicalMaterial({ color: colour, roughness: opts.rough ?? 0.35, metalness: opts.metal ?? 0.1,
+    transparent: (opts.opacity ?? 1) < 1, opacity: opts.opacity ?? 1, depthWrite: (opts.opacity ?? 1) >= 1, side: THREE.DoubleSide,
+    polygonOffset: true, polygonOffsetFactor: opts.po ?? 1, polygonOffsetUnits: 1, flatShading: true }));
+}
+function lines(segs, colour, lw, opacity = 1) {
+  const g = new LineSegmentsGeometry(); g.setPositions(segs.flat(2));
+  return new LineSegments2(g, new LineMaterial({ color: colour, linewidth: lw, transparent: opacity < 1, opacity, resolution: new THREE.Vector2(W * DPR, H * DPR) }));
+}
+const viewDir = cam.position.clone().normalize();
+function shell(fill = true) {   // the cutaway shell: faces behind the centre drawn solid and lit, edges in front faint
+  for (const f of faces) {
+    const c = f.reduce((m, i) => m.add(V3[i]), new THREE.Vector3()).multiplyScalar(1 / f.length);
+    if (fill && c.dot(viewDir) < 0) scene.add(polyMesh(f.map((i) => sc(X[i])), f.length === 4 ? GOLD : 0xece4cf, { rough: 0.55, metal: 0.05, po: 3 }));
+  }
+  const front = E.filter(([i, j]) => V3[i].clone().add(V3[j]).dot(viewDir) >= 0), backE = E.filter(([i, j]) => V3[i].clone().add(V3[j]).dot(viewDir) < 0);
+  scene.add(lines(backE.map(([i, j]) => [sc(X[i]), sc(X[j])]), 0x2a2418, 2.0));
+  scene.add(lines(front.map(([i, j]) => [sc(X[i]), sc(X[j])]), 0xe8d9a8, 1.6, 0.55));
+}
+const S = 1 / 2.2;   // scale the solid to radius about 1.6
+const sc = (p) => p.map((c) => c * S * 1.8);
+const GOLD = 0xd4a62a, HEXC = [0x7a4fb5, 0x2f6fb3, 0x3c9a5a, 0xc0392b];
+if (shot === 'heart') {
+  // the four central regular hexagons: other three coordinates the orders of (2, 0, -2), coordinate j = 0
+  for (let j = 0; j < 4; j++) {
+    const pts = []; for (const p of perms([2, 0, -2])) { const y = [...p]; y.splice(j, 0, 0); pts.push(to3(y)); }
+    const c = [0, 0, 0], n = new THREE.Vector3(...pts[1]).sub(new THREE.Vector3(...pts[0])).cross(new THREE.Vector3(...pts[2]).sub(new THREE.Vector3(...pts[0]))).normalize();
+    const u = new THREE.Vector3(...pts[0]).normalize(), w = new THREE.Vector3().crossVectors(n, u);
+    pts.sort((a, b) => Math.atan2(w.dot(new THREE.Vector3(...a)), u.dot(new THREE.Vector3(...a))) - Math.atan2(w.dot(new THREE.Vector3(...b)), u.dot(new THREE.Vector3(...b))));
+    scene.add(polyMesh(pts.map(sc), HEXC[j], { rough: 0.45, metal: 0.05 }));
+    scene.add(lines(pts.map((p, k) => [sc(p), sc(pts[(k + 1) % 6])]), 0x111111, 1.6));
+  }
+  // the crystal shell: squares gold-tinted glass, hexagons clear glass; edges crisp
+  shell();
+} else {
+  const data = await (await fetch('vacuus3d_12.json')).json(); let octN = 0; shell(false);
+  // cards: octagons gold, hexagons violet, as solid card with dark edges
+  for (const c of data.cards) {
+    const pts = c.pts3; const ctr = [0, 0, 0];
+    const n = new THREE.Vector3(...pts[1]).sub(new THREE.Vector3(...pts[0])).cross(new THREE.Vector3(...pts[2]).sub(new THREE.Vector3(...pts[0]))).normalize();
+    const u = new THREE.Vector3(...pts[0]).normalize(), w = new THREE.Vector3().crossVectors(n, u);
+    const sorted = [...pts].sort((a, b) => Math.atan2(w.dot(new THREE.Vector3(...a)), u.dot(new THREE.Vector3(...a))) - Math.atan2(w.dot(new THREE.Vector3(...b)), u.dot(new THREE.Vector3(...b))));
+    const oc = [0xd4a62a, 0x2f8fb3, 0xc0392b][octN % 3]; if (c.corners === 8) octN++;
+    scene.add(polyMesh(sorted.map(sc), c.corners === 8 ? oc : 0x9a82e0, { opacity: c.corners === 8 ? 1.0 : 0.13, rough: 0.4, metal: c.corners === 8 ? 0.2 : 0.0, po: c.corners === 8 ? 1 : 2 }));
+    scene.add(lines(sorted.map((p, k) => [sc(p), sc(sorted[(k + 1) % sorted.length])]), c.corners === 8 ? 0x1a1206 : 0x8a76c8, c.corners === 8 ? 1.8 : 0.9, c.corners === 8 ? 1 : 0.45));
+  }
+
+}
+R.render(scene, cam); window.__done = true;
+</script></body></html>
