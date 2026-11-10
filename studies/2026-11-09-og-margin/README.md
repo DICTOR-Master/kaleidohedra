@@ -336,3 +336,8 @@ Polar picture: candidate v of X_k is cut iff its foot point is not a corner of D
 Verdict: (A1) holds in the data with margin (≤ 0.44 < 0.5) but needs a global argument (area or angle weighting of the active faces of
 X_{k+1}, or the degeneracy pattern of the icosahedral orbits), not a local matching. Next idea to test: charge each cut candidate to
 the active face of X_{k+1} whose angular cell contains it, weighted by that cell's solid angle.
+**Ray charge (10 Nov, same script, k ≤ 18):** charging each cut candidate to the active face of X_{k+1} its own ray meets first
+also fails to be one-to-one: up to 3 cut candidates per face at k = 7, 9, 12, and 5 at k = 14 and 16. The cut candidates come in
+clusters under single active faces (near-coincident candidates of one icosahedral orbit), which is why no local charge works.
+So step (A1) is true in all data (cut ≤ 0.437) but needs a cluster-aware global count: e.g. count clusters (orbit classes of
+near-coincident candidates) instead of candidates, together with the excess e of §19. Logged as the next idea; no further runs now.

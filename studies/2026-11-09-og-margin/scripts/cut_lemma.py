@@ -88,9 +88,19 @@ for k in range(KMAX + 1):
         A2 = csr_matrix((np.ones(2 * len(ra)), (np.concatenate([np.searchsorted(cut, ra)] * 2), np.concatenate([ca, ca + len(W)]))), shape=(nc, 2 * len(W)))
         m2 = int((maximum_bipartite_matching(A2, perm_type='column') >= 0).sum())
     else: matched = ma = m2 = 0; uncut = True
+    # RAY CHARGE (11-10): each cut candidate v -> the active face of X_{k+1} its ray meets first (min |w|^2/(w.u) over active w with w.u > 0)
+    load = {}
+    if nc:
+        AW = X[act]; aw2 = np.einsum('ij,ij->i', AW, AW); idx_act = np.where(act)[0]
+        for i in cut:
+            u = U[i]; dots = AW @ u; okm = dots > 1e-12
+            tt = np.where(okm, aw2 / np.where(okm, dots, 1), np.inf); f = int(np.argmin(tt))
+            load[f] = load.get(f, 0) + 1
+    maxload = max(load.values()) if load else 0
+    # is the candidate's own plane beyond the face it is charged to? (it must be, being cut)
     print(f'PROGRESS {(k + 1) / (KMAX + 1):.3f} level {k}', flush=True)
-    print(f'k {k:3d}: candidates {len(W):6d} active {na:6d} cut {nc:6d} ({nc / len(W):.3f}) | every cut has a cutter: {uncut} | cutters always include an active one: {cutters_active} | matching cut->distinct cutter {matched}/{nc}, ->distinct ACTIVE cutter {ma}/{nc}, with each active cutter taking up to two {m2}/{nc}', flush=True)
-    rows_out.append(dict(k=k, cand=len(W), active=na, cut=nc, matched=matched, matched_active=ma, matched_cap2=m2, has_cutter=uncut))
+    print(f'k {k:3d}: candidates {len(W):6d} active {na:6d} cut {nc:6d} ({nc / len(W):.3f}) | every cut has a cutter: {uncut} | cutters always include an active one: {cutters_active} | matching cut->distinct cutter {matched}/{nc}, ->distinct ACTIVE cutter {ma}/{nc}, with each active cutter taking up to two {m2}/{nc} | ray charge: max cut per active face {maxload}', flush=True)
+    rows_out.append(dict(k=k, cand=len(W), active=na, cut=nc, matched=matched, matched_active=ma, matched_cap2=m2, has_cutter=uncut, ray_maxload=maxload))
     ok_all &= uncut
     V, FF = W, FN
 json.dump(rows_out, open(OUT, 'w'))
