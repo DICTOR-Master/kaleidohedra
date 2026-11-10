@@ -47,3 +47,26 @@ running (plan b1-cube-exact).
 **#80 exact (10 Nov, plan b1-cube-exact, FINAL ok):** chain_sym.py at s0 = 43/50 with the depth as a symbol: CLOSES with period 4
 entered at step 1 (step 5 similar to step 1, exact); the identity holds on the whole hop 3/4 < s < 1 (the script's exact walls),
 matching the numerical regime 0.76–0.98; squared gain 4.409341… at s0 (= 2.0998² as measured), varying with s. Steps take seconds here.
+
+## #61 below s = 1/4: the 9 Nov runs (FOUND UNREAD on 10 Nov; fault logged) - data/swap-out/sw_<s>_<λ>.txt (swap4.py, 6 words)
+D = V(t-,c,h,t+) + V(t-,h,c,t+) - V(t-,c,c,t+) - V(t-,h,h,t+) per role (oct, tetX, tetY), outer contexts cc, ch, hc, hh.
+In #61's range λ in [λ-(c) = -1/4 - s/8, U(s) = min(1/3 + s/24, 3s/8)]:
+- λ = 0: D = 0 at s = 1/8, 1/5, 6/25 (Swap Rule holds).
+- λ = -1/10: D = 0 at s = 1/5, 6/25; D ≠ 0 at s = 1/8.
+- λ = -1/5: D = 0 at s = 1/4, 13/50; D ≠ 0 at s = 49/200 (oct -643/13230000), 47/200, 23/100, 9/40, 21/100, 6/25, 1/5, 11/50
+  and grows as s falls. In EVERY such case D is the SAME for all four outer contexts: the Swap Rule shifts by a constant,
+  V(c|h) + V(h|c) = V(c|c) + V(h|h) + δ(s, λ)  (candidate corrected rule).
+- λ = -27/100 (s = 1/5, 1/8, 6/25): key CLASHES - 4-layer contexts are not enough (pieces reach two gaps): longer words/keys needed.
+- λ = 2/25 at s = 1/8, 1/5 lies ABOVE U(s): outside the range, not counted.
+NEXT: map δ(s, λ) over the range on a grid; boundary λ*(s) where δ starts; closed form of δ; 6-layer keys for the clash corner.
+
+## #61 below 1/4: the grid (10 Nov, job swap61-grid, 48 points, exact; data/swap-grid/g_<s>.txt; scripts/grid61.py)
+Over #61's range λ in [λ-(c), U(s)] (8 values) at s = 1/8, 1/6, 1/5, 9/40, 6/25, 49/200, three zones from the bottom up:
+CLASH (4-layer keys not enough) · CONSTANT SHIFT δ (same in all 4 outer contexts) · SWAP RULE HOLDS (D = 0); the top end λ = U(s) clashes.
+  1/8: clash ≤ -0.18, shift -0.13, -0.09, holds -0.04..0.00 · 1/6: clash ≤ -0.22, shift -0.18, -0.13, holds -0.08..0.02 ·
+  1/5: clash ≤ -0.23, shift -0.18, holds -0.13..0.03 · 9/40, 6/25, 49/200: clash -0.28, shift -0.23, -0.17, holds -0.12..0.04.
+Never "varies": wherever the rule fails without a clash it fails by a CONSTANT.
+CLOSED FORM (fits all 7 spacings s >= 1/5 exactly, independent of λ in the shift zone): δ_tetX = δ_tetY = -(1 - 4s)^3 / (54 s)
+(1/5: -1/1350, 21/100, 9/40: -1/12150, 23/100, 47/200, 6/25: -1/202500, 49/200: -1/1653750). At s = 1/6 reached only at the low λ
+(-1/243 = formula; -5/3087 at λ = -43/336); at 1/8 not reached. δ_oct depends on λ (fit next). The shift switches off with a JUMP at λ*(s).
+NEXT (job swap61-fine): 16 λ in the shift zone at s = 1/5, 9/40, 6/25: fit δ_oct(s, λ), locate λ*(s).
