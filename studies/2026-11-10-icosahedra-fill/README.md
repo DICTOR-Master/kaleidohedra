@@ -32,3 +32,16 @@ the hexecontahedron star is surrounded to search radius 1.9/2.2 (+60 tiles), 2.6
 Covered ball: at least radius 3.4 − (half the longest face diagonal, ≈ 0.85) ≈ 2.5 for the 3.4 witness. So locally a whole icosahedron
 (20 Cleo-Icos) sits inside a filling of Cleo-Icos + Antonius. Open: all of space (periodic star arrangement, or a proof the shells close
 for ever). DICTO 10 Nov: "octet and gyrated octet could both be used": restated to him, awaiting his confirmation.
+
+**Step 3, the icosahedral (gyrated) octet (DICTO 10 Nov 2026, confirmed: "so new pieces for icosahedral gyrated octet").**
+octet_gap.py (exact, sympy). Regular octahedron, corners (±1,0,0)…, edge √2. The regular icosahedron with its 12 corners on the 12 edges,
+each edge divided in the golden ratio: icosahedron edge 3 − √5, volume 70/3 − 10√5 ≈ 0.97265 of the octahedron's 4/3. Eight
+icosahedron faces lie in the eight octahedron faces; the other 12 come in 6 folded pairs, one pair facing each octahedron corner.
+NEW PIECE (placeholder name: corner piece; name is DICTO's): octahedron minus icosahedron = 6 congruent corner pieces, each the octahedron
+corner plus the 4 icosahedron corners on its 4 edges; volume (5√5 − 11)/3 ≈ 0.06011. Faces: 4 triangles in the octahedron faces + 2
+icosahedron faces as a folded base. It is NOT convex: at the fold (an icosahedron edge) its inside angle is 360° − 138.19° = 221.81°.
+It is two mirror-image tetrahedra glued on the triangle (corner, fold edge).
+Filling: octet or gyrated octet, each octahedron = 1 icosahedron + 6 corner pieces, tetrahedra whole. Each octahedron's icosahedron has
+two positions (the two golden divisions); octahedra meet only at corners, so the choice is free per octahedron, in both octets.
+So icosahedra + corner pieces + tetrahedra fill space (immediate, exact). Dehn: the corner pieces carry the icosahedron's golden angles.
+Next: corner piece angles and whether it relates to Cleo-Icos/Antonius; whether tetrahedron + corner pieces merge into nicer pieces.
