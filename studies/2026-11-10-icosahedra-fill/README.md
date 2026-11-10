@@ -68,3 +68,16 @@ Antonius. Proof: in a filling, frequency-weighted Dehn invariants sum to zero (D
 (5/2) Σ a_j ⊗ θ_D must vanish by itself; every term is positive, so there are no pentagonal pyramids. ∎
 A partner with a NEGATIVE θ_D part is needed (as Antonius is the negative θ_I partner of the Cleo-Icos): the #47 connectors.
 DICTO 10 Nov: "they fill an icosidodecahedron together": the centre cut gives 20 triangle pyramids twice the Cleo-Icos height and 12 pentagonal pyramids 2/φ the dodecahedron-pyramid height (the core of the icosahedron + dodecahedron compound); DICTO: "doesnt help icosahedron situation just broadens question": closed as a side note.
+
+**Step 4 job plan (DICTO 11-10: "strategize the job too"; written BEFORE launch, checked at every 20-minute attention check).**
+Lesson from the first SAT launch: candidate enumeration never ended (the golden grid is dense); now bounded by a hidden-space window W.
+Stages per run, each printing PROGRESS lines (fraction of the whole job) so the stall guard can project the finish:
+| stage | what | size from the pilot | budget | on overrun |
+|---|---|---|---|---|
+| 1 enumerate | candidate tiles inside radius and window | control pilot sets it | 20 % of cap | shrink WMARGIN or radius; never let it grow open-ended |
+| 2 clauses | cover/match + overlap pairs (kd-tree, separating axes) | ≈ 30 overlap pairs per candidate | 20 % | parallelise the pair tests |
+| 3 solve | CaDiCaL | unknown: first solve sets it | 60 % | split by the first face's choices (cube-and-conquer) |
+Order: control (must be SAT) → octet 4.81 → 5.38 → 6.30 → gyrated 7.22 → 8.92 → 11.68, launched together only after the control passes.
+Outcomes: SAT → exact check (verify_exact.py) → then the next radius out; UNSAT at window W → widen WMARGIN 0.5 → 1.0 → 1.5 once
+(a filling outside the window is still possible); UNSAT at the widest → record 'no face-to-face filling within window', move on.
+Control failing (UNSAT on a single star to radius 3.4, known fillable) = the window is too tight: widen before anything else runs.
