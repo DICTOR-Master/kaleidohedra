@@ -79,3 +79,21 @@ TI → TD (scutoid move) → TK (polar) → PD (flip) → TI (polar): period 4. 
   = V(PD λ³) − V(PD) = 737.4739317134 exactly. Space but the centre filled by TWO shapes (one per shell, all congruent) at scales λ^k.
 Renders papers-to-read scutoid-onion-cycle.png, scutoid-flip-onion-cycle.png (cut in half).
 LEADS: can the back-flip cell be made congruent to the forward one (ONE shape at scales λ^k)? radii giving golden λ (φ or φ²)?
+
+## Step 9: partial moves, conserve or dissipate (DICTO 10 Nov "whether a more irregular solid might form"; "how geometry conserves or
+dissipates"; scripts/scutoid_partial.py, scutoid_conserve.py)
+Partial move = only some hexagon-hexagon edges shrink and reopen. Faces kept flat by LINEAR conditions: middle edges parallel to their
+core edges, outer edges parallel to their source core edges, every NEW edge along the meeting line of its two faces' core planes (A side
+→ B side; without this a decagon with 5 new edges was not held flat - fixed). Moves applied one at a time on the current faces (moving
+all 30 at once interferes otherwise - fixed). Unique choice: least squares nearest the radial scalings 1.18 / 1.42 (an LP picked
+lopsided optima and faked dissipation: 32 shapes even for the full move - rejected as a solver artefact). New edges held at LNEW × mean.
+Shell after shell, outer surface = next core, each later shell undoes the previous move. Every shell: every face flat (≤3e-13), cell
+volumes add exactly, all positive.
+- ALL 30 (control): 2 shapes every shell, drift 0 (1e-14); period 2 from the start. CONSERVED.
+- SIX (cube-aligned, LNEW 0.4; 0.6 and 1.0 turn an edge over): 3 shapes every shell; pentagons stay exact, hexagon face distances spread
+  3.70% / 4.18% alternately, forever. CONSERVED, irregularity locked in (period 2).
+- ONE edge (LNEW 1.0): 12 shapes every shell; spread 7.4% in the move shells, 0.0487% after each undo: the undo heals 99.3%, a fixed scar
+  stays, period 2. Neither dissipates nor grows.
+Reading: under this rule the number of shapes is fixed by the symmetry of the chosen edge set (Ih 2, Th 3, one edge 12) and is conserved;
+the shape settles at once into a 2-cycle. Caveat: the rule (least squares) is linear, which forces quick settling; other rules
+(e.g. equal volumes, or edges fixed in length) could behave differently - next test of the question.
