@@ -21,6 +21,8 @@ FORM = {'b': ((1 - 4 * S) ** 2 * (72 * L + 8 + 13 * S) / (108 * S), -(1 - 4 * S)
         'c1': ((8 * L + 5 * S) ** 3 / (64 * S), -(8 * L + 5 * S) ** 2 * (8 * L + 2 - 3 * S) / (64 * S))}
 FORM['c2'] = FORM['c1']; FORM['d1'] = FORM['d2'] = (sp.Integer(0), sp.Integer(0))
 cell = sys.argv[1]; sa, sb, lo, hi = CELLS[cell]
+D2 = int(os.environ.get('D2', '12'))   # neighbourhood (squared distance); panel 10 Nov: prove farther sites never cut (rho bound below)
+RHO = [0.0]
 s0 = (sa + sb) / 2; l0 = (lo.subs(S, s0) + hi.subs(S, s0)) / 2
 s0f, l0f = Fr(int(s0.p), int(s0.q)), Fr(int(l0.p), int(l0.q))
 print(f'START cell {cell}: s in [{sa}, {sb}], λ from {lo} to {hi}; sample ({s0}, {l0})', flush=True)
@@ -70,7 +72,7 @@ for w in WORDS:
     n = len(w); spec0 = net_for(w, s0f); net0 = Net(w, spec0['G'], spec0['T'], spec0['motif'], spec0['w']); wc = spec0['w']
     g33 = K.from_sympy(S * sp.Rational(2, 3) * n * n)
     for i in range(3 * n):
-        c = Cell(net0, i, (l0f,), Fr(12)); k = i // 3
+        c = Cell(net0, i, (l0f,), Fr(D2)); k = i // 3
         key = (ROLE_OF[i % 3],) + tuple(layer_type(w, k + j) for j in (-1, 0, 1, 2))
         if c.empty: vol = [K.zero] * 4
         else:
@@ -91,6 +93,14 @@ for w in WORDS:
                     sol = ([sum((rows[r][t] * r0[t] for t in range(3)), K.zero) for r in range(3)],
                            [sum((rows[r][t] * r1[t] for t in range(3)), K.zero) for r in range(3)]); break
                 assert sol is not None; corners.append(sol)
+                # rho: the corner's metric distance from its site over a grid of the cell polygon (for the neighbourhood bound)
+                for ss in [sa + (sb - sa) * q / 8 for q in range(9)]:
+                    l_lo, l_hi = float(lo.subs(S, ss)), float(hi.subs(S, ss)); sf = float(ss)
+                    for ll in [l_lo + (l_hi - l_lo) * q / 8 for q in range(9)]:
+                        ev = lambda e: float(sp.sympify(K.to_sympy(e)).subs(S, ss))
+                        x = [ev(sol[0][r]) + ll * ev(sol[1][r]) for r in range(3)]
+                        dv = [x[r] - float(ci[r]) for r in range(3)]
+                        RHO[0] = max(RHO[0], (dv[0] ** 2 + dv[0] * dv[1] + dv[1] ** 2 + sf * 2 / 3 * n * n * dv[2] ** 2) ** 0.5)
                 for kk, (nv, b0, b1) in enumerate(PL):          # slack = c0 + λ c1 >= 0 on the polygon: check both boundary walls exactly
                     c0 = b0 - sum((nv[r] * sol[0][r] for r in range(3)), K.zero); c1 = b1 - sum((nv[r] * sol[1][r] for r in range(3)), K.zero)
                     if c0 == K.zero and c1 == K.zero: continue
@@ -113,4 +123,9 @@ for r, f in (('oct', fo), ('tetX', ft), ('tetY', ft)):
         D = sp.cancel(V[ks[0]] + V[ks[1]] - V[ks[2]] - V[ks[3]])
         good = sp.cancel(D - f) == 0; ok &= good
         print(f'   {r} {a}{b}: D = {sp.factor(D)}  {"= closed form" if good else "≠ " + str(f)}', flush=True)
-print(f'FINAL ok (cell {cell} proved for all s in [{sa}, {sb}])' if ok else 'FINAL FAIL')
+import math
+Dn = math.sqrt(D2); rho = RHO[0] * 1.05                                   # 5 % margin over the grid maximum
+bound = (Dn - rho) ** 2 >= rho ** 2 + 0.35                                # 0.35 > |w_j - w_i| = |λ| on #61's range
+print(f'neighbourhood: D^2 = {D2}; largest corner distance on the grid {RHO[0]:.4f} (with 5% margin {rho:.4f}); bound (D - rho)^2 >= rho^2 + 0.35: {bound}', flush=True)
+ok &= bound
+print(f'FINAL ok (cell {cell} proved for all s in [{sa}, {sb}], neighbourhood D^2 = {D2})' if ok else 'FINAL FAIL')

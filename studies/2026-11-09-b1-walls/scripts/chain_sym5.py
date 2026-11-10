@@ -115,7 +115,8 @@ if __name__ == '__main__':
     _B = [tuple(kel(sp.Rational(3, 2) * (1 + sp.sqrt(5))) * x for x in v) for v in _A]
     assert similar_sym(_A, _B) is not None, 'similarity test fails its own known-answer control'
     s0 = Fr(sys.argv[1]); N = int(sys.argv[2]); t0 = time.time()
-    lo, hi = sp.Integer(1), sp.Rational(3, 2)
+    import os   # the depth window (10 Nov: was fixed at [1, 3/2], which clipped hops for samples below 1 - the 'artefact' of the 3/4 run)
+    lo, hi = sp.Rational(os.environ.get('LO', '2/5')), sp.Rational(os.environ.get('HI', '3/2'))
     ph = (1 + r5) / 2
     def cyc(v): return [v, (v[1], v[2], v[0]), (v[2], v[0], v[1])]
     five = {tuple(sp.nsimplify(x) for x in w) for a, b in itertools.product((1, -1), repeat=2) for w in cyc((0, a, b * ph))}

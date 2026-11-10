@@ -114,3 +114,18 @@ fallback; about 11 million slack checks, no violation), and D(s, λ) equals the 
 b [1/7, 1/4], c1 [1/8, 1/7], c2 [1/7, 1/4], d1 and d2 [1/8, 1/4]: all FINAL ok. Open: the clash cell (below -9s/8; 6-layer keys)
 and s < 1/8. Fault on the way: the first pilot used sympy simplify and was too slow (stopped); profiled; the Bernstein test cut a site
 from > 4 min to about 15 s.
+
+## B1 window edges (job b1-windows, 10 Nov; windows8081.py; data in windows/ on the compute machine)
+Exact chain hops with the depth window widened to [2/5, 3/2] (the old [1, 3/2] window had clipped the 3/4 run):
+- #80 cube, regime 0.52-0.60: period 4 entered at step 3, proved on 1/2 < s < 3/5 (FINAL ok).
+- #81 dodecahedron, 3/4: period 4 from step 0 with gain (35 - 15√5)^2 for every s, proved on 2/5 <= s <= 1 (FINAL ok): the edge "≈1.00" is s = 1.
+- #81, 29/20: period 2 from step 0, proved on 3 - φ = (5 - √5)/2 <= s <= 3/2 (FINAL ok): the edge "≈1.39" is 3 - φ = 1.381966.
+- #81, 13/10: after step 1 the hop is 5/4 < s < 3 - φ (regime 1.26-1.38: edges 5/4 and 3 - φ); exact steps 3+ took > 30 min: STOPPED by
+  the attention rule (method switched), closure identity there not yet proved exactly.
+- #81, 21/20: after step 2 the hop is (5 + √5)/8 < s < (55 + 5√5)/58 (lower edge of the regime: s = 1 from step 0); step 3 > 30 min: STOPPED.
+  The job's FINAL FAIL is these two deliberate stops. Fallback: job b1-edge81 bisects the one unknown edge (numerically, then exact).
+- EDGE (job b1-edge81, bisect81.py, FINAL ok): the dodecahedron chain closes (period 4 entered at step 3) below and grows without bound
+  above s* = 1.08734394 ± 4e-8 (19 halvings of [1.07, 1.11], chain_num5 12 steps each). nsimplify offered (509 + 122√5)/719 within
+  2e-7: NOT accepted (large denominators fit anything at this precision). Exact form OPEN: it is the wall of a later exact step
+  (step 3+, too slow so far). B1 status: #86 done; #61 proved (two-parameter, neighbourhood check running); #80 cube regimes exact
+  (1/2, 3/5, 3/4, 1); #81 dodecahedron edges 1, 5/4, 3 - φ exact, s* ≈ 1.08734394 numerical.
