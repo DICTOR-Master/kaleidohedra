@@ -53,3 +53,11 @@ number of out-of-order pairs (PASS): 1,4,9,15,20,22,20,15,9,4,1 (Mahonian number
 The web's smallest rings are its 2-faces: squares = two swaps that commute, hexagons = the braid ring s_k s_k+1 s_k = s_k+1 s_k s_k+1.
 Reading for the paper: the 65 Vacuus slices carry every ring of the web, so the 4D Vacuus is the web's RULES made solid (squares =
 independent bonds, hexagons = the braid rule); the five central TOs carry the 30 rings (2,1,2) = the swaps that leave the middle value 3 in place.
+## DICTONIC's golden bond is a walk through permutohedra (DICTO 11 Nov: "looking at DICTONIC in the app ... saw the shape of the permutahedron")
+Paper #48 Theorem 4's T(x) = hull of the signed permutations of (1 + x, x, 0) has square edge sqrt2 x and hexagon-hexagon edge sqrt2: it is
+the permutohedron of four symmetric values (-q, -p, p, q) with x = (q - p)/(2p). Checked exactly (scripts/dictonic_family.py, all 276
+corner distances equal up to scale; both shapes have the full octahedral symmetry; explicit isometry still to write for the paper):
+- x = 1 (Kelvin): values (-3,-1,1,3), equally spaced = the 3D permutohedron itself;
+- x = 1/2: values (-2,-1,1,2) = the five central slices of the 4D permutohedron (1..5 with the middle value 3 taken out);
+- x = tau (golden bond, Icosaxes): values (-tau^3, -1, 1, tau^3) (tau^3 = 1 + 2 tau).
+So the DICTONIC golden slider runs through permutohedra; at x = 1/2 it passes the heart of the 4D one, and T(1/x) = T(2) is its space-filling partner.
