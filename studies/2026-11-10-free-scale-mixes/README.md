@@ -24,3 +24,12 @@ and below, so it keeps two roof-spaces: a cube of edge φ minus its four side ro
 keeps one: a cube minus five roofs (S5); inner Dogstars stay S. (The script labels both 'S5'.) Kit for mixes with D and C, thinnest
 slab: P, Q, A, S4, X (five; Y and S not needed). Names of S4/S5 are DICTO's.
 Next: the D–I bridge (a true meeting of dodecahedra and icosahedra; lead: a flat Chain of Karma); sphere-unit sizes.
+
+## Step 3: RD and CO (10 Nov, mixes_rdco.py, data-rdco-127.log, FINAL ok)
+All 127 mixes of D, I, C, T, O, RD, CO fill space in the two worlds (points covered once, no dodecahedra overlap, every solid used, seam
+face to face). RD (cube + 6 square pyramids) on the alternating cubes of world 1, with or beside the dodecahedra; one new edging helper
+XR (cube minus an RD pyramid); with RD alone the cells between RDs are filled completely by the pyramids. CO in the octet, each = its 8
+tetrahedra + 6 half octahedra (centres spaced 4 apart); touched octahedra keep their other half as P. TO left out (DICTO).
+## Step 4A: the D–I bridge by Karma cells (10 Nov, mixes_karma.py, data-karma-127.log, FINAL ok)
+Every icosahedron in world 1 as a Karma cell (#22: dodecahedron of edge 1 = icosahedron of edge 1/φ + 12 pentagonal pyramids + 30 AXE +
+20 CLEO): all 127 mixes again fill space; D and I now share ONE world (the mix D+I has no octet and no seam); the octet carries T, O, CO.
