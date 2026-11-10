@@ -644,7 +644,10 @@
    "title": "DICTO 1:2 Truncated Octahedron: The 4D Vacuus of the Permutohedron",
    "doi": "24121177",
    "date": "2026-11-11",
-   "date_first": true
+   "date_first": true,
+   "version": 2,
+   "doi_v2": "24122019",
+   "doi_v1": "24121178"
   }
  },
  "strands": [
@@ -5879,6 +5882,15 @@
     "result": "FINAL ok, 5/5 cells, outputs identical to v1 apart from timings, 35,561,184 exact slack sign checks, 44 min",
     "retry": "never",
     "study": "studies/2026-11-09-b1-walls",
+    "date": "2026-11-11"
+   },
+   {
+    "question": "#105 v2 release",
+    "method": "DICTO 'v2 read ok update'; zen_newversion_keep; postcheck",
+    "status": "PUBLISHED",
+    "result": "#105 v2 DOI 10.5281/zenodo.24122019: page hero shots, orderings figure, cutaways, cells named permutohedra",
+    "retry": "never",
+    "study": "papers/2026-11-11-4d-vacuus",
     "date": "2026-11-11"
    }
   ]
