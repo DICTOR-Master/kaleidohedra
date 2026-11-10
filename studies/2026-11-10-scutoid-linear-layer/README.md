@@ -97,3 +97,16 @@ volumes add exactly, all positive.
 Reading: under this rule the number of shapes is fixed by the symmetry of the chosen edge set (Ih 2, Th 3, one edge 12) and is conserved;
 the shape settles at once into a 2-cycle. Caveat: the rule (least squares) is linear, which forces quick settling; other rules
 (e.g. equal volumes, or edges fixed in length) could behave differently - next test of the question.
+
+## Step 10: second rule, equal edges (DICTO: "so they dont exchange freely like regular solids")
+Rule 2 (scutoid_conserve.py ... edges): after the least-squares start, all middle and outer edges as equal as possible (non-linear),
+with barriers: no edge below 0.15 of its core edge, every cell volume ≥ 0.03 (without them cells turned inside out, vol −0.11: rejected).
+Volumes vectorised (the loop version hit its cap at 280 s and was stopped; now 5 s a shell). Every shell: faces flat, volumes exact.
+- ALL 30 (control): face-distance spread stays ~1e-8 for 6 shells: regular solids exchange freely. (Shape counts wobble 2–4 in shells
+  where the volume floor binds: shape counts under this rule are NOT reliable; spread is.)
+- ONE edge: spread grows every round trip: 25/38% → 32/29% → 64/50% → 55/62% → 89/77% → 79/89% → 113/103% → 103/116% (8 shells):
+  the irregularity SPREADS (dissipates outwards), steadily, no sign of settling.
+- SIX edges: spread jumps from 1.8% to ~4–9% and then stays bounded (3.3–4.4% pentagons, 5–9% hexagons, period 2): locked.
+Reading so far: regular → conserved under both rules; a single defect is conserved under the gentle rule but spreads under the
+equal-edge rule; the cube-symmetric defect stays bounded under both. The memory of the defect depends on the rule ("exchange" is free
+only for the regular solids).

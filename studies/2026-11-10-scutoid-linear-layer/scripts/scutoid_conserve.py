@@ -76,6 +76,30 @@ def shell(P, F, C, rm=1.18, ro=1.42):
     x0 = lstsq(A, b)[0]; Nul = null_space(A)
     tgt = np.zeros(m_); tgt[:N] = rm * P.ravel(); tgt[N:2 * N] = ro * P.ravel(); Wd = np.zeros(m_); Wd[:2 * N] = 1
     z = lstsq(Nul * Wd[:, None], (tgt - x0) * Wd)[0]; sol = x0 + Nul @ z
+    if RULE == 'edges':                                   # second rule: all edges of the middle and the outer surface as equal as possible
+        from scipy.optimize import least_squares
+        me = [tuple(e) for e in kept]; oep = [tuple(e) for e in oe]
+        # vectorised cell volumes: every cell's faces as triangles indexing X = [P; M; O]
+        T_, Cid = [], []
+        def addpoly(ids, c):
+            for k in range(1, len(ids) - 1): T_.append((ids[0], ids[k], ids[k + 1])); Cid.append(c)
+        for fi in range(len(F)):
+            f = F[fi]; g = Fo[fi]
+            addpoly([u for u in f][::-1], fi); addpoly([2 * n + u for u in g], fi)
+            for k in range(len(f)): u, w = f[k], f[(k + 1) % len(f)]; addpoly([u, w, n + w, n + u], fi)
+            for k in range(len(g)): u, w = g[k], g[(k + 1) % len(g)]; addpoly([n + u, n + w, 2 * n + w, 2 * n + u], fi)
+        T_ = np.array(T_); Cid = np.array(Cid)
+        def allvols(Mx, Ox):
+            X = np.vstack([P, Mx, Ox]); A_, B_, C_ = X[T_[:, 0]], X[T_[:, 1]], X[T_[:, 2]]
+            return np.bincount(Cid, np.einsum('ij,ij->i', A_, np.cross(B_, C_)) / 6, minlength=len(F))
+        VMIN = 0.03
+        def resid(zz):
+            x = x0 + Nul @ zz; Mx = x[:N].reshape(-1, 3); Ox = x[N:2 * N].reshape(-1, 3)
+            lm = np.array([np.linalg.norm(Mx[b_] - Mx[a_]) for a_, b_ in me]); lo = np.array([np.linalg.norm(Ox[b_] - Ox[a_]) for a_, b_ in oep])
+            sc_ = x[2 * N:]; bar = 50 * np.maximum(0, 0.15 - sc_)
+            vols = allvols(Mx, Ox); bar = np.concatenate([bar, 200 * np.maximum(0, VMIN - vols)])          # barrier: no edge may shrink below 0.15 of its core edge or turn over
+            return np.concatenate([lm - lm.mean(), lo - lo.mean(), 1e-3 * (zz - z), bar])
+        z = least_squares(resid, z, xtol=1e-14, ftol=1e-14, gtol=1e-14, max_nfev=400).x; sol = x0 + Nul @ z
     class R: pass
     res = R(); res.x = np.zeros(nv); res.x[keep] = sol
     tt = sol[2 * N:2 * N + nt]; ss = sol[2 * N + nt:]
@@ -114,7 +138,7 @@ def drift(P, F):
     for k in sorted({x for x, _ in d}):
         vals = np.array([y for x, y in d if x == k]); out.append(f'{k}-gons {len(vals)} spread {np.ptp(vals) / vals.mean():.2e}')
     return '; '.join(out)
-mode = sys.argv[1] if len(sys.argv) > 1 else 'one'; K = int(sys.argv[2]) if len(sys.argv) > 2 else 6; LNEW = float(sys.argv[3]) if len(sys.argv) > 3 else 1.0
+mode = sys.argv[1] if len(sys.argv) > 1 else 'one'; K = int(sys.argv[2]) if len(sys.argv) > 2 else 6; LNEW = float(sys.argv[3]) if len(sys.argv) > 3 else 1.0; RULE = sys.argv[4] if len(sys.argv) > 4 else 'radial'
 P = P0.copy(); F = hull_faces(P); E = edge_faces(F)
 hh = [e for e, fs in E.items() if all(len(F[x]) == 6 for x in fs)]
 mid = lambda e: P[list(e)].mean(0)
