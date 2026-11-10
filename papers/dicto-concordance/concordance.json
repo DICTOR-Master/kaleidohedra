@@ -7228,6 +7228,12 @@
     "mess_up": "the #103 Yantra record (v4) and two older records did not open on their PDF on Zenodo (rule of 17 Oct), unnoticed until DICTO found it",
     "guard": "the nightly BEFORE-ONCE scan checks every published record's default preview against its PDF and raises an alert; fix with papers/zen_preview.py",
     "where": "dicto-alerts/awry_scan.py"
+   },
+   {
+    "date": "2026-11-10",
+    "mess_up": "root cause of the Yantra preview: the keep-files version script only said 'run zen_preview afterwards' in a comment",
+    "guard": "every Zenodo publisher sets the preview itself and runs the shared post-check (preview = PDF, no banned wording); a failure writes an alert shown before every message; Claude Code hooks block raw compute-machine launches and show the working card at session start",
+    "where": "papers/zen_postcheck.py, zen_new*.py, zen_preview.py; ~/.claude/hooks/dbb-launch-guard.sh, session-card.sh"
    }
   ],
   "practice": [
