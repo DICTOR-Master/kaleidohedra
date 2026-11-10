@@ -7216,6 +7216,12 @@
     "mess_up": "a 20-process pool forked from a 10 GB process ran the compute machine out of memory; the system killed its desktop session services before the job",
     "guard": "no fork pools over large data (vectorise in the main process instead); every heavy job runs under a hard memory ceiling (systemd-run --user --scope -p MemoryMax=…) set from the pre-flight estimate, so only that job can die",
     "where": "study scripts (sat_octet.py, sat_gyro.py); job commands"
+   },
+   {
+    "date": "2026-11-10",
+    "mess_up": "the exact similarity test of the B1 growth-rule chains compared field elements with '!=' (how a number is written, not its value), so a real period-4 closure of #81 was reported as 'no closure'; the chains were then run for hours past it",
+    "guard": "values in exact fields are compared by simplifying their difference to zero; every exact test routine runs a known-answer self-control at start (a shape against its own scaled copy) and stops if it fails; plans require a positive control (pre-flight gate)",
+    "where": "studies/2026-11-09-b1-walls/scripts/chain_sym.py, chain_sym5.py; dicto-alerts/preflight.py"
    }
   ],
   "practice": [

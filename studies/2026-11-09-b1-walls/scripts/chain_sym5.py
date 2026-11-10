@@ -106,10 +106,14 @@ def similar_sym(Aa, B):
         if m is None or dot(v, m) == ZERO: return None
         r = dot(v, v) / dot(m, m)
         if g is None: g = r
-        elif r != g: return None
+        elif sp.simplify(K.to_sympy(r - g)) != 0: return None   # 11-10 FIX: compare VALUES; '!=' compared representations and gave false 'not similar'
     return g
 
 if __name__ == '__main__':
+    # SELF-CONTROL (11-10, ONLY HAPPENS ONCE): the similarity test must recognise a shape and its own scaled copy, else stop.
+    _A = [tuple(kel(x) for x in v) for v in ((1, 2, 3), (-2, 1, 0), (0, sp.sqrt(5), 1))]
+    _B = [tuple(kel(sp.Rational(3, 2) * (1 + sp.sqrt(5))) * x for x in v) for v in _A]
+    assert similar_sym(_A, _B) is not None, 'similarity test fails its own known-answer control'
     s0 = Fr(sys.argv[1]); N = int(sys.argv[2]); t0 = time.time()
     lo, hi = sp.Integer(1), sp.Rational(3, 2)
     ph = (1 + r5) / 2
