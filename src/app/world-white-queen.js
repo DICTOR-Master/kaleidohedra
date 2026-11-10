@@ -43,6 +43,8 @@ export const WQ_ARISTOTLE_ACTION = 'tool:aristotleWorld:icosahedron';   // the C
 export const WQ_QUEENS = ['white', 'red'];
 export const RQ_LAYERS = RQG.CELL_LAYERS.length;   // 9
 export const RQ_ARISTOTLE_ACTION = 'tool:aristotleWorld:dodecahedron';
+// The bitruncated stage has its own world (DICTO 2026-11-10, world-bitrunc.js): at that stage one link opens it (the shape lives there)
+export const WQ_BITRUNC_ACTION = 'tool:bitruncWorld';
 // RCP view (DICTO 2026-10-29, the Polyhedraverse exact builds): the shells drawn with the RCP build's own perspective formula,
 // (x, y, z) / (d − w) with the eye at d = 5 × the radius on the seed's side (krp-core rcpBuild.js, VIEW_MARGIN 5), w along the axis
 // through the seed (the White Queen's vertex, as RCP's vertex-first build; the Red Queen's core dodecahedron, as RCP's 120-cell build),
@@ -546,6 +548,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     <div class="w4d-row wq-slice-row"><label class="hull-pick"><span class="wq-slice-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row wq-apart-row"><label class="hull-pick"><span class="wq-apart-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row w4d-options wq-link-row"><button type="button" data-wq-link></button></div>
+    <div class="w4d-row w4d-options wq-bitrunc-row"><button type="button" data-wq-bitrunc></button></div>
     <div class="w4d-row w4d-options wq-lineup-row"><button type="button" data-wq-lineup></button></div>
     <div class="w4d-row st-note wq-legend"></div>
     <div class="w4d-row w4d-options wq-whole-row"><button type="button" data-wq-whole></button><button type="button" data-wq-rcp></button><button type="button" data-wq-dicto-rcp></button><button type="button" data-wq-sectors></button></div>
@@ -596,6 +599,9 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     // at the Cleo core, the back link to the Cleo-Icos in Aristotle's Pyramid (each shape lives in one place, the others link)
     panel.querySelector('.wq-link-row').hidden = !(shells && view.shells === 1 && !view.whole);
     panel.querySelector('[data-wq-link]').textContent = t(red() ? 'rq.link.aristotle' : 'wq.link.aristotle', L);
+    // at the bitruncated stage, the link to its own world
+    panel.querySelector('.wq-bitrunc-row').hidden = !(mid() && stageKey() === 't12');
+    panel.querySelector('[data-wq-bitrunc]').textContent = t('wq.link.bitrunc', L);
     const wb = panel.querySelector('[data-wq-whole]');
     wb.textContent = t('wq.whole', L); wb.classList.toggle('active', view.whole); wb.setAttribute('aria-pressed', String(view.whole));
     panel.querySelector('.wq-whole-row').hidden = !shells;
@@ -684,6 +690,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   // direction that is To swaps the two. Slice: the direction, from its centre.
   panel.addEventListener('click', (e) => {
     if (e.target.closest('[data-wq-link]')) { openAction(red() ? RQ_ARISTOTLE_ACTION : WQ_ARISTOTLE_ACTION); return; }
+    if (e.target.closest('[data-wq-bitrunc]')) { openAction(WQ_BITRUNC_ACTION); return; }
     const qb = e.target.closest('[data-wq-queen]');
     if (qb) { if (qb.dataset.wqQueen === view.queen && !mid()) return; view.queen = qb.dataset.wqQueen; view.stage = red() ? 6 : 0; clampToQueen(); save(); draw(); fit(); return; }
     if (e.target.closest('[data-wq-lens]')) { view.lens = !view.lens; lensToQueen = view.lens; save(); renderPanel(); return; }
