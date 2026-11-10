@@ -12,12 +12,27 @@ E = [(i, j) for i in range(120) for j in adj[i] if j > i]
 T = [(i, j, k) for i, j in E for k in adj[i] & adj[j] if k > j]
 C = [(i, j, k, l) for i, j, k in T for l in adj[i] & adj[j] & adj[k] if l > k]
 assert (len(E), len(T), len(C)) == (720, 1200, 600)
+cen = lambda q: V[list(q)].mean(0)
+STAGE = sys.argv[2] if len(sys.argv) > 2 else 'truncated'
 pt = {}; X = []
-def P(a, b):                                             # the corner at 1/3 along the edge from a towards b
-    if (a, b) not in pt: pt[(a, b)] = len(X); X.append((2 * V[a] + V[b]) / 3)
-    return pt[(a, b)]
-cells = [('ico', frozenset(P(v, w) for w in adj[v])) for v in range(120)] + [('tt', frozenset(P(a, b) for a in c for b in c if a != b)) for c in C]
-X = np.array(X); assert len(X) == 1440 and len(cells) == 720
+if STAGE == 'truncated':
+    def P(a, b):                                         # the corner at 1/3 along the edge from a towards b
+        if (a, b) not in pt: pt[(a, b)] = len(X); X.append((2 * V[a] + V[b]) / 3)
+        return pt[(a, b)]
+    cells = [('ico', frozenset(P(v, w) for w in adj[v])) for v in range(120)] + [('tt', frozenset(P(a, b) for a in c for b in c if a != b)) for c in C]
+    NV, NC = 1440, 720
+else:                                                    # bitruncated (atlas: 3/5 of the way from an edge's middle to its triangle's centre)
+    def P(t, a, b):
+        key = (t, frozenset((a, b)))
+        if key not in pt: pt[key] = len(X); X.append(0.4 * (V[a] + V[b]) / 2 + 0.6 * cen(t))
+        return pt[key]
+    for t in T:
+        for a, b in itertools.combinations(t, 2): P(t, a, b)
+    cells = [('TI', frozenset(idx for (t, e), idx in pt.items() if v in e)) for v in range(120)] + \
+            [('tt', frozenset(idx for (t, e), idx in pt.items() if set(t) <= set(c))) for c in C]
+    NV, NC = 3600, 720
+X = np.array(X); assert len(X) == NV and len(cells) == NC, (len(X), len(cells))
+cnt = Counter(); [cnt.update(S) for _, S in cells]; print('cells per corner:', Counter(cnt.values()), flush=True)
 pairs = []                                               # neighbouring cells and their shared 2D face (corner set)
 by_pt = {}
 for ci, (_, S) in enumerate(cells):
@@ -28,7 +43,7 @@ for p, cs in by_pt.items():
         if (a, b) in seen: continue
         sh = cells[a][1] & cells[b][1]
         if len(sh) >= 3: pairs.append((a, b, tuple(sorted(sh)))); seen.add((a, b))
-print(f'START truncated 600-cell: {len(X)} corners, {len(cells)} cells, {len(pairs)} shared faces '
+print(f'START {STAGE} 600-cell: {len(X)} corners, {len(cells)} cells, {len(pairs)} shared faces '
       f'({Counter((cells[a][0], cells[b][0], len(f)) for a, b, f in pairs)})', flush=True)
 c0 = C[0]; t0 = c0[:3]; rng = np.random.default_rng(7)
 DIRS = {'vertex-first': V[c0[0]], 'edge-first': (V[c0[0]] + V[c0[1]]) / 2, 'face-first': V[list(t0)].mean(0), 'cell-first': V[list(c0)].mean(0),
@@ -54,7 +69,7 @@ for name, d in DIRS.items():
             else: ev[f'neighbour change {q[0]} lost / {q[1]} gained among surviving cells'] += 1
         prev = cur
     results[name] = dict(ev); print(f'{name}: {len(hs)} corner heights; events {dict(ev)}', flush=True)
-json.dump(results, open('t600_scutoid.json', 'w'), indent=1)
+json.dump(results, open(f't600_scutoid_{STAGE}.json', 'w'), indent=1)
 anyswap = sum(r.get('SWAP (scutoid move)', 0) for r in results.values())
 print(f'scutoid moves (swaps among surviving cells) over all directions: {anyswap}')
 print('FINAL ok' if all(results.values()) else 'FINAL FAIL: a direction produced no events')
