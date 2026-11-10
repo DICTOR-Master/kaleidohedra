@@ -45,3 +45,11 @@ Filling: octet or gyrated octet, each octahedron = 1 icosahedron + 6 corner piec
 two positions (the two golden divisions); octahedra meet only at corners, so the choice is free per octahedron, in both octets.
 So icosahedra + corner pieces + tetrahedra fill space (immediate, exact). Dehn: the corner pieces carry the icosahedron's golden angles.
 Next: corner piece angles and whether it relates to Cleo-Icos/Antonius; whether tetrahedron + corner pieces merge into nicer pieces.
+
+**Step 4, stars on the octet and the gyrated octet (DICTO 10 Nov 2026: both, in order, each tested on its own; corner piece aside).**
+octet_stars.py: stars at fcc points x(i,j,k), i+j+k even, cube axes = icosahedron 2-fold axes; x = 2m + 2nφ (unnormalised axis units).
+Star spacings 1.05, 2.41, 2.97: stars overlap. 3.89 (1,1) and 4.46 (3,0): IMPOSSIBLE face to face (search exhausted in 3 nodes; rechecked
+with the faster version). 4.81, 5.38, 6.30: 25-minute runs (oct2-*.log on the compute machine).
+gyro_stars.py: hcp stars (layers ⟂ (1,1,1), ABAB, period c = (4x/3)(1,1,1)). Exact grid condition: every star centre must lie in the
+module of the first star (face-to-face tiles never leave it); c is in the module only when 3 divides both m and n in the tested cases
+((1,1), (0,2), (2,1), (1,2) excluded exactly; (3,0), (0,3), (3,3) pass). Runs: spacings 4.46, 7.22, 8.92, 11.68 (gyro-*.log).
