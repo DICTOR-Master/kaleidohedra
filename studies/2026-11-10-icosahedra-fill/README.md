@@ -85,3 +85,7 @@ Control failing (UNSAT on a single star to radius 3.4, known fillable) = the win
 **Step 4 control PASSED (10 Nov):** SAT method (window 4.0, vectorised overlap test agreeing with the exact routine on 3000 pairs)
 on the single star to radius 3.4: SAT, 320 fill tiles (the known count); witness checked EXACTLY in Q(√5) (verify_exact.py): 340
 tiles, no overlap, no face used thrice, no open face inside 3.4. Real spacings next, each through the pre-flight gate.
+**Octet spacing 4.81 (10 Nov, pilot):** UNSAT at radius 2.6 with the neighbouring stars in place (the radius already reaches where the
+stars meet; a larger radius only adds constraints), window 4.0: 7248 candidates, 1.25 M overlap pairs, 215 s, 0.56 GB. The one
+window widening (5.0) is running. Full runs launched through the pre-flight gate: octet 5.38 (radius 3.3), 6.30 (4.2), gyrated 7.22
+(5.0); plans in the alerts plans folder.

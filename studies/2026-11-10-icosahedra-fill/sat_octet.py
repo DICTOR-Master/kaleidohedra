@@ -165,7 +165,11 @@ for i, t in enumerate(C):
         if g in starface or np.linalg.norm(centre(g)) > RMAX: continue
         S.add_clause([-(i + 1)] + [j + 1 for j in byface[g] if j != i]); ncl += 1
 cen = np.array([t['pts'].mean(0) for t in C]); tree = cKDTree(cen); npairs = 0
-PAIRS = list(tree.query_pairs(2.45)); print(f'PROGRESS 0.2000 clauses: {len(PAIRS)} close pairs to test', flush=True)
+import resource
+def peak_gb(): return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1e6
+print(f'peak memory after enumeration: {peak_gb():.2f} GB', flush=True)
+PAIRS = tree.query_pairs(2.45, output_type='ndarray')      # 11-10: one int64 array, not millions of tuples
+print(f'PROGRESS 0.2000 clauses: {len(PAIRS)} close pairs to test; peak {peak_gb():.2f} GB', flush=True)
 # 11-10 (second fix): the 20-process pool was killed by memory (each fork copied the 10 GB main process). Overlap test now
 # VECTORISED in numpy, batches of 50 000 pairs, in the main process. Same rule as ov(): separating axes = 3 face normals of each tile
 # + 9 edge cross products, normalised, near-zero axes skipped, strict separation with tolerance 1e-7. Checked against ov() on a sample.
@@ -179,7 +183,7 @@ def vec_overlap(I, J):
     pi = np.einsum('bkd,bvd->bkv', ax, PTS[I]); pj = np.einsum('bkd,bvd->bkv', ax, PTS[J])
     sep = (pi.max(2) <= pj.min(2) + 1e-7) | (pj.max(2) <= pi.min(2) + 1e-7)
     return ~np.any(sep & valid, axis=1)
-PA = np.array(PAIRS, dtype=np.int64).reshape(-1, 2)
+PA = PAIRS.astype(np.int64).reshape(-1, 2)
 rng = np.random.default_rng(1); smp = PA[rng.choice(len(PA), min(3000, len(PA)), replace=False)]
 agree = np.array_equal(vec_overlap(smp[:, 0], smp[:, 1]), np.array([ov(C[i], C[j]) for i, j in smp]))
 print(f'vectorised overlap test agrees with the exact routine on {len(smp)} sampled pairs: {agree}', flush=True)
@@ -190,9 +194,10 @@ for q_ in range(0, len(PA), B):
     for i, j in blk[hit]: S.add_clause([-(int(i) + 1), -(int(j) + 1)]); npairs += 1
     print(f'PROGRESS {0.2 + 0.2 * min(q_ + B, len(PA)) / len(PA):.4f} clauses: pairs {min(q_ + B, len(PA))} of {len(PA)} ({time.time()-T0:.0f} s)', flush=True)
 print(f'clauses: cover/match {ncl}, overlap pairs {npairs} ({time.time()-T0:.0f} s); solving', flush=True)
-print('PROGRESS 0.4000 solve: started', flush=True)
+print(f'PROGRESS 0.4000 solve: started; peak {peak_gb():.2f} GB', flush=True)
 ok = S.solve()
 print(f'{TAG} m={m_} n={n_} spacing {d_nn:.4f}: ' + ('SAT: a filling exists' if ok else 'UNSAT: no face-to-face filling with prolate rhombohedra') + f' ({time.time()-T0:.0f} s)')
+print(f'peak memory at the end: {peak_gb():.2f} GB', flush=True)
 if ok:
     import json
     model = set(l for l in S.get_model() if l > 0); used = [C[i] for i in range(n) if i + 1 in model]
