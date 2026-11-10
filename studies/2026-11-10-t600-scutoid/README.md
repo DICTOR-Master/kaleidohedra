@@ -60,3 +60,9 @@ export_bitrunc.py): GENERIC: R-W lets go / R-W meets 964; W-W lets go / R-R meet
 observed; the 2+2 makeup of corners is forced. OPEN: is 601 the same in every generic direction (like h2)? what fixes it? (A proof of the
 balance would make it a law.) Path purity: White, t600, r600 not simple; bitruncated simple (first from the White side); r120 not simple;
 t120 and Red simple.
+- 8 RANDOM DIRECTIONS (kinds_dirs.py, FINAL ok): every one gives R-R→W-W 601, W-W→R-R 601, mixed 964, births 716, deaths 716.
+- PROOF (the balance is a law): every R-R contact (a TI-TI pentagon, 720) appears exactly once in a sweep: at the start corner (1: the four
+  first cells are 2 R + 2 W), at the birth of an R cell (one each: 120 - 2 = 118 R cells born mid-sweep, the newborn touching the corner's other
+  R cell), or by a W-W → R-R swap. Hence #(W-W → R-R) = 720 - 118 - 1 = 601 for every generic direction; deaths give #(R-R → W-W) = 601.
+  Check by the W-W triangles: 1200 = 601 + 598 + 1. Mixed swaps = 2166 - 1202 = 964. In general, for this polytope:
+  #(W-W → R-R) = #(R-R → W-W) = (R-R faces) - (R cells) + 1.
