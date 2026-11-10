@@ -110,3 +110,23 @@ Volumes vectorised (the loop version hit its cap at 280 s and was stopped; now 5
 Reading so far: regular → conserved under both rules; a single defect is conserved under the gentle rule but spreads under the
 equal-edge rule; the cube-symmetric defect stays bounded under both. The memory of the defect depends on the rule ("exchange" is free
 only for the regular solids).
+
+## Step 11: the law (DICTO "it must be indicative of a rule"; "its like a cancer cell"). Defect classes, rule 2, 8 shells
+Spread of face distances AFTER each undo (healed state), round trips 1..4:
+all 30: 0 (conserved) · six (Th): 4–9%, bounded · pair (antipodal): 3.9 → 7.3 → 10.2 → 12.8% (+3%/trip, slowing) ·
+one: 32 → 55 → 79 → 103% (+24%/trip, steady) · r3 (3 random, none sharing a face): 52 → 97 → 141 → 188% (+46%/trip, steady) ·
+r15 (15 random): 60 → 30 → 43 → 64% (large, NOT steadily growing: crowded defects hold each other).
+Candidate law: the exchange is free only for the fully symmetric move; isolated low-symmetry defects grow steadily (additively, not
+explosively), faster the lower the symmetry; symmetric or crowded defect sets stay bounded. Rule 1 (radial) conserves all (fixed
+scars): the ORDERING is rule-independent so far, the growth itself is not.
+
+## Step 12: where does it go? (DICTO's cancer question) Distortion by distance (in faces) from the defect, rule 2
+ONE edge, shells 1..8 (d0 = the 4 defect cells … d4 = the far side):
+  d0 .21→.60 · d1 .11→.39 · d2 .04→.07 (a QUIET BELT) · d3 .09→.32 · d4 .15→.55. The far side is hit from the very first shell, as much
+  as the defect itself; a belt halfway stays almost undisturbed. Not an invasion outward from the defect: a GLOBAL shape mode.
+r3: distortion grows with distance (d3 largest .25→.92).
+Overall shape (long/short axis of the outer shell): one: move shells 1.33 → 1.61 → 1.89 → 2.39, healed shells 1.07 → 1.27 → 1.55 → 1.55;
+r3 healed 1.39 → 1.69 → 1.68 → 1.61 (levels off ~1.6-1.7). The ball STRETCHES INTO AN EGG along the defect's axis, the belt between
+the two ends stays calm; the stretch grows each round trip, then shows signs of levelling (healed shells).
+Caveat: rule 2 (equal edges) acts on the whole shell at once, so a global answer is partly built into the rule; rule 1 kept the scar
+local-ish and fixed. LEADS: a local rule (each cell only sees its neighbours) is the fair test for invasion vs global response.

@@ -142,8 +142,17 @@ mode = sys.argv[1] if len(sys.argv) > 1 else 'one'; K = int(sys.argv[2]) if len(
 P = P0.copy(); F = hull_faces(P); E = edge_faces(F)
 hh = [e for e, fs in E.items() if all(len(F[x]) == 6 for x in fs)]
 mid = lambda e: P[list(e)].mean(0)
-C = hh if mode == 'all' else [e for e in hh if np.sum(np.abs(mid(e) / np.linalg.norm(mid(e))) > 0.999) == 1] if mode == 'six' else [max(hh, key=lambda e: mid(e)[2])]
-ok = True; allcells = []
+if mode == 'all': C = hh
+elif mode == 'six': C = [e for e in hh if np.sum(np.abs(mid(e) / np.linalg.norm(mid(e))) > 0.999) == 1]
+elif mode == 'one': C = [max(hh, key=lambda e: mid(e)[2])]
+elif mode == 'pair': C = [max(hh, key=lambda e: mid(e)[2]), min(hh, key=lambda e: mid(e)[2])]
+elif mode.startswith('r'):                                  # k random edges, no two sharing a face (seed 1)
+    k_ = int(mode[1:]); rng = np.random.default_rng(1); C = []
+    for i_ in rng.permutation(30):
+        e = hh[i_]
+        if all(not (set(E[e]) & set(E[c])) for c in C): C.append(e)
+        if len(C) == k_: break
+ok = True; allcells = []; C0 = list(C)
 for s in range(1, K + 1):
     O, Fo, new, cells, worst, gap, vmin = shell(P, F, C)
     sc = np.linalg.norm(O, axis=1).mean(); O = O / sc                     # each core renormalised to mean radius 1 (shape only)
@@ -152,6 +161,24 @@ for s in range(1, K + 1):
           f'volume check {gap:.0e}; min vol {vmin:.3f}', flush=True)
     print(f'   outer surface: {drift(O, Fo)}', flush=True)
     ok &= worst < 1e-8 and gap < 1e-8 and vmin > 0
+    # LOCALITY (DICTO's cancer question): distortion of each outer face against its distance (in faces) from the first defect
+    if s == 1:
+        adj = {fi: set() for fi in range(len(Fo))}
+        for e_, fs in edge_faces(F).items(): adj[fs[0]].add(fs[1]); adj[fs[1]].add(fs[0])
+        seed = {fi for e_ in C0 for fi in edge_faces(F)[e_]}; ring = {fi: 0 for fi in seed}; fr = list(seed)
+        while fr:
+            nx_ = []
+            for a_ in fr:
+                for b_ in adj[a_]:
+                    if b_ not in ring: ring[b_] = ring[a_] + 1; nx_.append(b_)
+            fr = nx_
+    dd = []
+    for fi, g in enumerate(Fo):
+        c_ = O[g].mean(0); nrm_ = np.cross(O[g[1]] - O[g[0]], O[g[2]] - O[g[0]]); nrm_ /= np.linalg.norm(nrm_); dd.append(abs(c_ @ nrm_))
+    dd = np.array(dd); typ = np.array([len(g) for g in Fo]); dev = np.zeros(len(Fo))
+    for t_ in set(typ): m_ = dd[typ == t_].mean(); dev[typ == t_] = abs(dd[typ == t_] - m_) / m_
+    rings = sorted(set(ring.values()))
+    print('   distortion by distance from the defect: ' + '  '.join(f'd{r_}: {dev[[fi for fi in ring if ring[fi] == r_]].mean():.3f}' for r_ in rings), flush=True)
     allcells.append(cells); P, F, C = O, Fo, new
 json.dump(allcells, open(f'scutoid-conserve-{mode}.json', 'w'))
 print('FINAL ok' if ok else 'FINAL FAIL')
