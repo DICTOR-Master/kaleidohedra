@@ -29,3 +29,17 @@ groups of five) gives group moves and no swap; one stage on, at the midpoint bet
 icosahedron as cell), every change is a clean scutoid move.
 LEADS: the other stages (rectified 600-cell, rectified / truncated 120-cell); a picture (one TI cell's cross-sections through a slice
 sweep, with its swaps marked); compare the swap batches with #61's walls (114, 42, 252).
+
+## The counts are the h-vector (10 Nov; DICTO: "this is history in the making possibly")
+For a simple 4-polytope and a generic height, a corner with i edges going down (index i) is: i = 1 a cell BIRTH, i = 3 a DEATH, i = 2 a
+SWAP (2 | 2 split of its four cells); the number of index-i corners is the h-vector entry h_i, the same for every generic direction
+(classical: Dehn-Sommerville / McMullen; Ziegler, Lectures on Polytopes; flips in toric topology, e.g. Buchstaber invariant of simple
+polytopes, arXiv 0908.3407). Bitruncated 600-cell: h = (1, 716, 2166, 716, 1) (h1 = f3 - 4 = 716, h2 = f0 - 2 - 2 h1 = 2166) = exactly the
+counted births, deaths and swaps. Truncated 600-cell: not simple (6 cells per corner) - no swaps, as found.
+Candidate statement (the bridge; prior art: none found linking scutoids to polytopes or 4D - searches 10 Nov: scutoid 4D polytope slices T1;
+simple 4-polytope hyperplane sweep flips; power diagram secondary fan scutoid; sources seen: Gómez-Gálvez et al. 2018; arXiv 2304.14239
+"The Best Ways to Slice a Polytope"; arXiv 0908.3407; arXiv math/0601746 geometric bistellar flips; Novik cross-flips):
+  in every generic slicing sweep of a simple 4-polytope the cells change only by births, deaths and scutoid swaps, and the number of
+  scutoid swaps is h2 (direction-independent). Classical mathematics underneath; the scutoid reading is the new part.
+TEST NEXT: the 120-cell (Red Queen, simple: 4 dodecahedra per corner): predicted h = (1, 116, 366, 116, 1): 366 swaps; truncated
+120-cell (simple): h1 = 720 - 4 = 716, h2 = 2400 - 2 - 1432 = 966.
