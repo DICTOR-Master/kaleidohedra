@@ -15,3 +15,7 @@ the watched rerun spent 25+ min in step 6 with no output; step 5 already needed 
 stepping is exhausted here (ledger: METHOD-FAILED at step 6). Next method: numerical steps at 60 digits for several s0 in the hop to
 find the closure step, then an exact check of that one step. #81 dodecahedron chain: step 5 running (2.5 GB, 25 min); stop and switch
 method too if no step 5 line by the next check.
+**10 Nov, attention check:** #81 dodecahedron chain stopped at its deadline (step 5: 36 min, no output, 2.5 GB). Steps 0–4 exact; step 4
+repeats step 0's corner count and kinds (32 corners, all 4-valent: {4: 30}) but is NOT similar to it by the exact test: a near-closure
+worth a numerical look (is it the same shape up to a stretch?). Ledger: METHOD-FAILED at step 5. Both chains now wait for the
+numerical-steps method (60 digits, several s0, then one exact check).
