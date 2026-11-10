@@ -166,7 +166,8 @@ while queue:
         cands[key] = t
         for g in t['faces']:
             if g not in seen and g not in starface and np.linalg.norm(centre(g)) <= RMAX: seen.add(g); queue.append(g)
-    if len(cands) % 5000 == 0 and cands: print(f'  heartbeat candidates {len(cands)} queue {len(queue)} {time.time()-T0:.0f} s', flush=True)
+    done_f = len(seen) - len(queue)
+    if done_f % 500 == 0: print(f'PROGRESS {0.2 * done_f / max(len(seen), 1):.4f} enumerate: faces done {done_f} of {len(seen)} seen, candidates {len(cands)} ({time.time()-T0:.0f} s)', flush=True)
 C = list(cands.values()); n = len(C)
 print(f'candidates {n} ({time.time()-T0:.0f} s)', flush=True)
 byface = {}
@@ -183,9 +184,12 @@ for i, t in enumerate(C):
         if g in starface or np.linalg.norm(centre(g)) > RMAX: continue
         S.add_clause([-(i + 1)] + [j + 1 for j in byface[g] if j != i]); ncl += 1
 cen = np.array([t['pts'].mean(0) for t in C]); tree = cKDTree(cen); npairs = 0
-for i, j in tree.query_pairs(2.45):
+PAIRS = list(tree.query_pairs(2.45)); print(f'PROGRESS 0.2000 clauses: {len(PAIRS)} close pairs to test', flush=True)
+for q_, (i, j) in enumerate(PAIRS):
+    if q_ % 200000 == 0: print(f'PROGRESS {0.2 + 0.2 * q_ / max(len(PAIRS), 1):.4f} clauses: pair {q_} of {len(PAIRS)} ({time.time()-T0:.0f} s)', flush=True)
     if ov(C[i], C[j]): S.add_clause([-(i + 1), -(j + 1)]); npairs += 1
 print(f'clauses: cover/match {ncl}, overlap pairs {npairs} ({time.time()-T0:.0f} s); solving', flush=True)
+print('PROGRESS 0.4000 solve: started', flush=True)
 ok = S.solve()
 print(f'{TAG} m={m_} n={n_} spacing {d_nn:.4f}: ' + ('SAT: a filling exists' if ok else 'UNSAT: no face-to-face filling with prolate rhombohedra') + f' ({time.time()-T0:.0f} s)')
 if ok:
