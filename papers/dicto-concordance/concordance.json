@@ -7204,8 +7204,64 @@
   ],
   "running_tests": {
    "note": "DICTO 10 Nov 2026: 'do we need an audit on how to run tests … analyzing all our failed data?' and 'to go in concordance modus operandi'. Checklist and ranked guards from the run audit (studies/2026-11-10-run-audit) go here.",
-   "checklist": [],
-   "status": "audit running"
+   "checklist": [
+    "Is the ledger digest checked and no SETTLED / \"never retry\" / \"no more\" entry covers this question and method?",
+    "Is there a written plan line: stages, size per stage from a pilot, cap per stage, action on each outcome and on overrun?",
+    "Did a pilot of 5 minutes or less finish on the smallest size, and is the cap set from its measured rate (not a habit value)?",
+    "Is the count of objects bounded by a stated rule (window, radius, level), never open-ended (dense grids, growing queues)?",
+    "Is memory estimated from known growth (faces x1.3/level, box = n^6 points) and below `free -g` available, with a per-job ceiling set?",
+    "Will a positive control with a known answer run first and must it pass before the real cases start?",
+    "Will a negative control (known UNSAT / known non-fill / wrong offset) run first and must it fail?",
+    "Does the script print PROGRESS with a FIXED denominator and a BEST value, flushed (python -u or PYTHONUNBUFFERED=1)?",
+    "Does the script write partial results to disk as it goes and end with a FINAL line that is earned by its own check (ok / FAIL / TIMEOUT)?",
+    "Is the command shipped as a file through dbbjob.sh with a run_in_background waiter (no raw nohup, no time promise without it)?",
+    "Do waits and kills use PIDs (kill -0, wait), never pgrep -f / pkill -f on a string?",
+    "Are the data folder and output path created and tested by the pilot from the script's own folder (runjob.py or an equivalent cd)?"
+   ],
+   "status": "checklist adopted 10 Nov 2026; guards being built in ranked order (done the same day: orphan-check pattern fixed for the file-shipped launch; cap files for running jobs)",
+   "guard_proposals": [
+    {
+     "guard": "Pre-flight gate in dbbjob.sh",
+     "would_have_caught": "would have caught about 30: types 1, 2, 6, part of 12"
+    },
+    {
+     "guard": "Unbuffered output and early-silence check",
+     "would_have_caught": "about 20: type 3, part of 1"
+    },
+    {
+     "guard": "Control gate",
+     "would_have_caught": "about 10: type 7, part of 6"
+    },
+    {
+     "guard": "Ledger match at launch",
+     "would_have_caught": "at least 3 confirmed, likely more: type 12"
+    },
+    {
+     "guard": "Plateau and open-ended detector",
+     "would_have_caught": "at least 16: the 9 star runs, the 7 SAT enumerations"
+    },
+    {
+     "guard": "Guard regression for ~/dicto-alerts",
+     "would_have_caught": "type 9 guard rot: empty dbbcheck.sh 11-09, vacuous self-test 11-10, stale orphans.sh regex found today, hook drift found today"
+    },
+    {
+     "guard": "Per-job memory ceiling",
+     "would_have_caught": "type 2 collateral, type 11: Singular 40 GB, 385 MB free"
+    },
+    {
+     "guard": "Earned FINAL line, stricter",
+     "would_have_caught": "type 10"
+    },
+    {
+     "guard": "Numerics calibration",
+     "would_have_caught": "type 8"
+    },
+    {
+     "guard": "Study-close sweep",
+     "would_have_caught": "type 11, type 5"
+    }
+   ],
+   "audit": "studies/2026-11-10-run-audit (Fable, read-only): at least 95 run failures of twelve kinds since 11 Oct 2026; largest: caps hit with nothing to show (≥20), empty/silent logs (≥17), tooling faults (≥12). Most were predictable from a pilot or a growth estimate; the guards so far act after a run ends, not before launch."
   }
  },
  "destinations_2026_11_09": {
