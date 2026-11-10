@@ -57,3 +57,14 @@ Block question ("how many to fill space"): the LP block has 16 different cells (
   makes the scutoid move twice; exact stacking (h = 3.437...). Logged then: skin round a football (B) and an icosahedron-to-football shell.
 What steps 4-6 here add: a FLAT-FACED geometric scutoid (13 faces) and the exact near-sphere shell TI -> ID -> TD (32 cells, every face
 flat for any radii, volumes exact) - this is the 11-06 "skin round a football" idea made exact.
+
+## Step 7: polar swap of the core (DICTO 10 Nov "polar swap of core"; "B first then A"; "disregard shrinking triangle route")
+B (scripts/scutoid_polar.py): the polar of TI → ID → TD is PD (pentakis dodecahedron) → RT (rhombic triacontahedron) → TK (triakis
+icosahedron). On triangle cells the scutoid move cannot run (a triangle losing a side vanishes; route dropped by DICTO). In the polar the
+move becomes a FLIP: each pair of PD triangles across a 6-6 edge flattens into one RT rhombus and folds the other way (TK triangles across
+the 10-10 edge). True polars (PD r3/r5 = 1.026531522 from TI, TK 0.854818176 from TD; RT flat at 0.910592997). 30 cells, one per rhombus,
+ALL CONGRUENT (volume 0.2155 each at RT scale 1.25, TK 1.55), side faces in mirror planes through the centre (flat, 1e-16); the 30 add
+to V(TK) − V(PD) = 6.4660211935 exactly. Render papers-to-read scutoid-polar-shell-B.png.
+A (inside out, scutoid_sphere.py 0.95 0.90): TD core → ID → TI outside: decagon cells 10 → 5 → 5, triangle cells 3 → 3 → 6;
+every face flat (2.6e-13), all 32 cells one orientation, volumes add to the shell exactly. Render scutoid-inside-out-shell-A.png.
+NEXT (DICTO "can we do a cycle of them"): iterate, outer surface → next core, alternating scutoid move and flip; does it close?
