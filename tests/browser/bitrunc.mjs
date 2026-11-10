@@ -3,10 +3,12 @@
 // generic direction at the swap nearest the middle, the four cells lit (two let go, two meet) and captioned "Swap k of 2166: …";
 // the five direction buttons give each sweep's own stops and totals (generic 716 / 716 / 2166, cell-first 1782 = 1782); the big slider
 // at the bottom stops at every corner height and gap middle; Play runs the sweep and stops on a touch. Shadow: From / To and one big
-// slider snapping at both ends, 3600 corners and 7200 edges. Shells: 1, 32, 142, 242, 232, 71 cells, then Cut open. Each view shows
-// only its own rows. ?open=bitrunc[:shadow|shells|whole|cell]; the Queens world's bitruncated stage links here (only there). Every one
+// slider snapping at both ends, 3600 corners and 7200 edges. Shells: 1, 32, 142, 242, 232, 71 cells, then Cut open. Pull apart (Shells
+// and Cut open only), dragged with a finger: every drawn cell moves out from the centre, step by step, and stays on screen; kept
+// across shells, Cut open and the other views. Each view shows only its own rows. ?open=bitrunc[:shadow|shells|whole|cell]; the Queens world's bitruncated stage links here (only there). Every one
 // of the 7 languages at phone width: the rows fit on one line. No console errors. Screenshots ($SHOTS, default /tmp/bitrunc-shots) on
-// a phone (390×844) and a desktop (1280×800): the Sweep at a swap, a cell-first batch, Shadow, Shells and Cut open.
+// a phone (390×844) and a desktop (1280×800): the Sweep at a swap, a cell-first batch, Shadow, Shells and Cut open; and ($APART_SHOTS)
+// Pull apart: Cut open halfway and fully, the first shell (round the core) fully.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
@@ -14,8 +16,10 @@ import * as BT from '../../src/app/bitrunc-geometry.js';
 import { middleSwap } from '../../src/app/world-bitrunc.js';
 import { t, LANG_ORDER } from '../../src/app/i18n.js';
 
-const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/bitrunc-shots';
-mkdirSync(SH, { recursive: true });
+const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/bitrunc-shots', AS = process.env.APART_SHOTS ?? SH;
+mkdirSync(SH, { recursive: true }); mkdirSync(AS, { recursive: true });
+// PARTS (default all): doors, open (?open= and the Queens link), langs, shots; to run the file in pieces
+const PARTS = (process.env.PARTS ?? 'doors,open,langs,shots').split(',');
 const P = '#worldbitrunc-panel', SIZES = [1, 32, 142, 242, 232, 71];
 const b = await chromium.launch();
 let checks = 0;
@@ -26,6 +30,25 @@ async function open(page, query = '') {
   return errors;
 }
 const probe = (page) => page.evaluate(() => window.__bitruncProbe());
+// every drawn corner on screen, above the controls (2 px slack)
+async function onScreen(page, what) {
+  const s = await page.evaluate(() => window.__bitruncScreen());
+  assert.ok(s && s.x0 >= -2 && s.x1 <= s.w + 2 && s.y0 >= -2 && s.y1 <= s.h - s.cover + 2, `${what}: off screen ${JSON.stringify(s)}`);
+}
+// Pull apart with a finger: from the thumb to the value `to`, in `steps` moves, holding still after each while the view refits;
+// each(st) sees the probe at every step
+async function dragApart(page, to, steps, each = async () => {}) {
+  const input = page.locator(`${P} .bt-apart-row input`), box = await input.boundingBox(), y = box.y + box.height / 2;
+  const at = (v) => box.x + 20 + ((box.width - 40) * v) / 1000;   // the thumb is 40 px wide
+  const from = Number(await input.inputValue()), cdp = await page.context().newCDPSession(page);
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: at(from), y }] });
+  for (let i = 1; i <= steps; i++) {
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: at(from + ((to - from) * i) / steps), y }] });
+    await page.waitForTimeout(550); await each(await probe(page));
+  }
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  await page.waitForTimeout(700); await cdp.detach();
+}
 const leave = async (page) => { await page.waitForTimeout(500); if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]'); };
 // a swap stop and a gap stop along the generic direction; a batch along cell-first
 const G = BT.sweep('generic'), C = BT.sweep('cell-first');
@@ -33,7 +56,7 @@ const SWAP_K = G.stops.findIndex((s, k) => k > 1000 && s.level !== undefined && 
 const GAP_K = SWAP_K + 1;
 const BATCH_K = C.stops.findIndex((s) => s.level !== undefined && C.events[s.level].letGo.length > 1 && !C.events[s.level].born.length && !C.events[s.level].died.length);
 
-for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(',')) {
+for (const door of (PARTS.includes('doors') ? process.env.DOORS ?? 'kaleidohedra,rhombiverse' : '').split(',').filter(Boolean)) {
   for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 }, ipad: { width: 820, height: 1180 } })) {
     const page = await b.newPage({ viewport, hasTouch: true, isMobile: true }), tag = `${door}-${dev}`;
     const errors = await open(page, `&site=${door}`);
@@ -56,7 +79,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     // no empty prompt pill above the panel
     assert.ok(!(await page.evaluate(() => { const e = document.getElementById('hud-prompt'); return e.classList.contains('visible') && !e.textContent.trim(); })), `${tag}: no empty prompt`);
     // only the Sweep's rows
-    assert.ok(!(await visible('[data-bt-row="from"]')) && !(await visible('.bt-param-row')) && !(await visible('.bt-shells-row')) && !(await visible('.bt-whole-row')), `${tag}: only Sweep rows`);
+    assert.ok(!(await visible('[data-bt-row="from"]')) && !(await visible('.bt-param-row')) && !(await visible('.bt-shells-row')) && !(await visible('.bt-whole-row')) && !(await visible('.bt-apart-row')), `${tag}: only Sweep rows`);
     for (const k of BT.DIRECTIONS) { const bx = await page.locator(`${P} [data-bt-dir="${k}"]`).boundingBox(); assert.ok(bx.height >= 30 && bx.width >= 44, `${tag}: ${k} touchable`); }
     const slider = page.locator(`${P} .bt-sweep-row input`), sb = await slider.boundingBox();
     assert.ok(sb.width >= viewport.width * 0.8 && sb.height >= 40 && sb.y > viewport.height * 0.6, `${tag}: big slider at the bottom ${JSON.stringify(sb)}`); checks++;
@@ -92,7 +115,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     // Shadow
     await page.tap(`${P} [data-bt-mode="shadow"]`); await page.waitForTimeout(800); st = await probe(page);
     assert.deepEqual([st.mode, st.from, st.to, st.u, st.corners, st.edges], ['shadow', 'vertex-first', 'cell-first', 0, 3600, 7200], `${tag}: Shadow`);
-    assert.ok(!(await visible('[data-bt-row="dir"]')) && !(await visible('.bt-sweep-row')) && !(await visible('.bt-play-row')) && (await visible('[data-bt-row="from"]')), `${tag}: only Shadow rows`);
+    assert.ok(!(await visible('[data-bt-row="dir"]')) && !(await visible('.bt-sweep-row')) && !(await visible('.bt-play-row')) && !(await visible('.bt-apart-row')) && (await visible('[data-bt-row="from"]')), `${tag}: only Shadow rows`);
     assert.ok(!(await visible('[data-bt-to="vertex-first"]')), `${tag}: To hides From's direction`);
     assert.ok((await caption()).includes('3600 corners · 120 truncated icosahedra + 600 truncated tetrahedra'), `${tag}: shadow caption`);
     for (const k of ['edge-first', 'face-first']) { await page.tap(`${P} [data-bt-to="${k}"]`); await page.waitForTimeout(600); st = await probe(page); assert.deepEqual([st.to, st.u, st.stop], [k, 1000, k]); }
@@ -112,6 +135,37 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
       assert.ok(n === 1 ? cap === t('bt.shells.core', 'en') : cap.startsWith(`Shell ${n - 1}${n === 6 ? ', the last' : ''}: ${SIZES[n - 1]} cells`), `${tag}: shells caption ${cap}`);
     }
     checks++;
+    // Pull apart in Shells: big, at the bottom; a finger drags it from closed to full, every drawn cell moving out, all on screen
+    const apart = page.locator(`${P} .bt-apart-row input`), ab = await apart.boundingBox();
+    assert.ok((await visible('.bt-apart-row')) && ab.width >= viewport.width * 0.8 && ab.height >= 40 && ab.y > viewport.height * 0.6, `${tag}: Pull apart big at the bottom ${JSON.stringify(ab)}`);
+    assert.equal(await page.locator(`${P} .bt-apart-label`).textContent(), t('bt.apart', 'en', { p: 0 }));
+    await shl.fill('3'); await page.waitForTimeout(800); st = await probe(page);
+    assert.deepEqual([st.apart, st.drawn], [0, 1 + 32 + 142], `${tag}: three shells, closed`);
+    await onScreen(page, `${tag} three shells closed`);
+    let prev = st;
+    await dragApart(page, 1000, 5, async (q) => {
+      assert.ok(q.apart > prev.apart && q.centres.mean > prev.centres.mean && q.centres.max > prev.centres.max && q.radius > prev.radius, `${tag}: outward ${prev.apart} → ${q.apart}`);
+      assert.equal(q.drawn, 175); prev = q; await onScreen(page, `${tag} pulling, ${q.apart}`);
+    });
+    st = await probe(page);
+    assert.ok(st.apart >= 990, `${tag}: pulled fully (${st.apart})`); await onScreen(page, `${tag} three shells pulled`);
+    assert.ok((await page.locator(`${P} .bt-apart-label`).textContent()).endsWith(`${Math.round(st.apart / 10)}%`), `${tag}: pull label`); checks++;
+    // kept when the shells change, then in Cut open; dragged back halfway, inward and on screen
+    const pulled = st.apart;
+    await shl.fill('5'); await page.waitForTimeout(800); st = await probe(page);
+    assert.deepEqual([st.shells, st.apart], [5, pulled], `${tag}: kept across shells`); await onScreen(page, `${tag} five shells pulled`);
+    await page.tap(`${P} [data-bt-whole]`); await page.waitForTimeout(900); st = await probe(page);
+    assert.ok(st.whole && st.apart === pulled && (await visible('.bt-apart-row')), `${tag}: kept in Cut open`); await onScreen(page, `${tag} Cut open pulled`);
+    prev = st;
+    await dragApart(page, 500, 3, async (q) => { assert.ok(q.apart < prev.apart && q.centres.mean < prev.centres.mean, `${tag}: inward ${prev.apart} → ${q.apart}`); prev = q; await onScreen(page, `${tag} Cut open, ${q.apart}`); });
+    st = await probe(page); assert.ok(Math.abs(st.apart - 500) <= 15, `${tag}: Cut open halfway (${st.apart})`);
+    // kept across the other views; hidden there
+    const half = st.apart;
+    await page.tap(`${P} [data-bt-mode="sweep"]`); await page.waitForTimeout(500); assert.ok(!(await visible('.bt-apart-row')), `${tag}: hidden in Sweep`);
+    await page.tap(`${P} [data-bt-mode="shells"]`); await page.waitForTimeout(800); st = await probe(page);
+    assert.deepEqual([st.whole, st.apart], [true, half], `${tag}: kept across views`); await onScreen(page, `${tag} back in Cut open`);
+    await apart.fill('0'); await page.waitForTimeout(300); await page.tap(`${P} [data-bt-whole]`); await page.waitForTimeout(400);
+    await shl.fill('6'); await page.waitForTimeout(400); checks++;
     await page.tap(`${P} [data-bt-whole]`); await page.waitForTimeout(800); st = await probe(page);
     assert.ok(st.whole && st.wholeKept.length === 6 && st.wholeKept.every((n) => n > 0), `${tag}: Cut open ${JSON.stringify(st.wholeKept)}`);
     assert.ok(!(await visible('.bt-shells-row')), `${tag}: Cut open hides the shells slider`);
@@ -123,7 +177,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
   }
 }
 // ?open=bitrunc[:…]
-for (const [q, want] of [['bitrunc', { mode: 'sweep' }], ['bitrunc:shadow', { mode: 'shadow' }], ['bitrunc:shells', { mode: 'shells', whole: false }], ['bitrunc:whole', { mode: 'shells', whole: true }], ['bitrunc:cell', { mode: 'sweep', dir: 'cell-first' }]]) {
+for (const [q, want] of !PARTS.includes('open') ? [] : [['bitrunc', { mode: 'sweep' }], ['bitrunc:shadow', { mode: 'shadow' }], ['bitrunc:shells', { mode: 'shells', whole: false }], ['bitrunc:whole', { mode: 'shells', whole: true }], ['bitrunc:cell', { mode: 'sweep', dir: 'cell-first' }]]) {
   const page = await b.newPage({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
   const errors = await open(page, `&site=kaleidohedra&open=${q}`);
   await page.waitForSelector(`${P}.visible`, { timeout: 20000 }); await page.waitForTimeout(1200);
@@ -133,7 +187,7 @@ for (const [q, want] of [['bitrunc', { mode: 'sweep' }], ['bitrunc:shadow', { mo
   await page.close();
 }
 // the Queens world: one link, at the bitruncated stage only, opens this world
-{
+if (PARTS.includes('open')) {
   const page = await b.newPage({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
   const errors = await open(page, '&site=kaleidohedra&open=whitequeen:t12');
   await page.waitForSelector('#worldwhiteQueen-panel.visible'); await page.waitForTimeout(1500);
@@ -152,7 +206,7 @@ for (const [q, want] of [['bitrunc', { mode: 'sweep' }], ['bitrunc:shadow', { mo
   await page.close();
 }
 // every language at phone width: the rows fit on one line
-{
+if (PARTS.includes('langs')) {
   const page = await b.newPage({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
   const errors = await open(page, '&site=kaleidohedra&open=bitrunc');
   await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1200);
@@ -165,6 +219,11 @@ for (const [q, want] of [['bitrunc', { mode: 'sweep' }], ['bitrunc:shadow', { mo
       for (const r of rows) assert.ok(r.over <= 1 && r.tall < r.btn * 1.5, `${L} ${mode}: a row overflows ${JSON.stringify(r)}`);
       const cap = await page.locator(`${P} .ch-param-caption`).textContent();
       assert.ok(cap && !/\b(bt|wq|rq)\.[a-z]/.test(cap), `${L} ${mode}: caption translated (${cap})`);
+      if (mode === 'shells') {
+        const r = await page.evaluate((sel) => { const row = document.querySelector(`${sel} .bt-apart-row`), l = row.querySelector('.bt-apart-label'), lh = parseFloat(getComputedStyle(l).lineHeight) || 20;
+          return { text: l.textContent, over: row.scrollWidth - row.clientWidth, lines: l.getBoundingClientRect().height / lh }; }, P);
+        assert.ok(r.text === t('bt.apart', L, { p: 0 }) && r.text !== 'bt.apart' && r.over <= 1 && r.lines < 1.6, `${L}: Pull apart fits ${JSON.stringify(r)}`);
+      }
       if (L === 'ja' && mode === 'sweep') await page.screenshot({ path: `${SH}/phone-ja-sweep.png` });
     }
     checks++;
@@ -174,7 +233,7 @@ for (const [q, want] of [['bitrunc', { mode: 'sweep' }], ['bitrunc:shadow', { mo
   await page.close();
 }
 // screenshots
-for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 }, desktop: { width: 1280, height: 800 } })) {
+for (const [dev, viewport] of Object.entries(!PARTS.includes('shots') ? {} : { phone: { width: 390, height: 844 }, desktop: { width: 1280, height: 800 } })) {
   const page = await b.newPage({ viewport, hasTouch: dev !== 'desktop', isMobile: dev !== 'desktop' });
   const errors = await open(page, '&site=kaleidohedra&open=bitrunc:swap');
   await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1500);
@@ -194,7 +253,13 @@ for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 
   }
   await page.click(`${P} [data-bt-whole]`); await page.waitForTimeout(1500);
   await page.screenshot({ path: `${SH}/${dev}-shells-whole.png` });
-  await page.click(`${P} [data-bt-whole]`);
+  // Pull apart: Cut open halfway and fully, then the first shell round the core fully (fill, then the release that fits the view)
+  const pull = async (v) => { const a = page.locator(`${P} .bt-apart-row input`); await a.fill(String(v)); await a.dispatchEvent('change'); await page.waitForTimeout(1500); await onScreen(page, `${dev} shot at ${v}`); };
+  await pull(500); await page.screenshot({ path: `${AS}/apart-${dev}-cutopen-half.png` });
+  await pull(1000); await page.screenshot({ path: `${AS}/apart-${dev}-cutopen-full.png` });
+  await page.click(`${P} [data-bt-whole]`); await page.locator(`${P} .bt-shells-row input`).fill('2'); await page.waitForTimeout(1500); await onScreen(page, `${dev} the first shell`);
+  await page.screenshot({ path: `${AS}/apart-${dev}-shell1-full.png` });
+  await pull(0);
   assert.deepEqual(errors, [], `${dev} screenshots: console errors`); checks++;
   await page.close();
 }

@@ -6324,6 +6324,17 @@ async function init() {
     window.__bloomProbe = () => bloomWorld?.probe?.() ?? null;
     window.__whiteQueenProbe = () => whiteQueenWorld?.probe?.() ?? null;
     window.__bitruncProbe = () => bitruncWorld?.probe?.() ?? null;
+    // the Bitruncated 600-cell's Pull apart: the screen box (px) of every corner drawn, and the strip the controls cover
+    window.__bitruncScreen = () => {
+      const g = bitruncWorld?.group; if (!g?.visible) return null;
+      const v = new THREE.Vector3(), box = { x0: Infinity, x1: -Infinity, y0: Infinity, y1: -Infinity };
+      g.traverse((o) => {
+        if (!o.isMesh || !o.visible || !o.parent?.visible) return;
+        const a = o.geometry.attributes.position, n = Math.min(a.count, o.geometry.drawRange.count);
+        for (let i = 0; i < n; i++) { const q = toScreen(v.fromBufferAttribute(a, i)); box.x0 = Math.min(box.x0, q.x); box.x1 = Math.max(box.x1, q.x); box.y0 = Math.min(box.y0, q.y); box.y1 = Math.max(box.y1, q.y); }
+      });
+      return { ...box, w: window.innerWidth, h: window.innerHeight, cover: readPanelCover() };
+    };
     window.__perm4Probe = () => perm4World?.probe?.() ?? null;
     window.__hexoctProbe = () => hexoctWorld?.probe?.() ?? null;
     window.__starCoresProbe = () => starCoresWorld?.probe?.() ?? null;

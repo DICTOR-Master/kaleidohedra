@@ -7,7 +7,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import * as BT from '../../src/app/bitrunc-geometry.js';
 import { stage } from '../../src/app/queen-stages-geometry.js';
-import { btSweepCaption, btShadowCaption, btShellsCaption, btShells, middleSwap, bitruncPreviewEdges } from '../../src/app/world-bitrunc.js';
+import { btSweepCaption, btShadowCaption, btShellsCaption, btShells, middleSwap, bitruncPreviewEdges, btShellsModel, btApartShift, btApartRadius, BT_PULL } from '../../src/app/world-bitrunc.js';
 import { t, LANG_ORDER } from '../../src/app/i18n.js';
 
 const M = BT.model();
@@ -116,6 +116,33 @@ test('the Shells perspective draws the core undistorted at its true size', () =>
     return (M.SHELL_EYE * m[0]) / r > r + 1e-12;
   });
   assert.equal(beyond.length, 1);
+});
+test('Pull apart: each cell moves rigidly out from the centre, farther the more it is pulled; the core and the far cell stay', () => {
+  const { CENTRES, farTI } = btShellsModel(), core = M.SHELLS[0][0];
+  for (const ci of [core, farTI]) assert.ok(Math.hypot(...btApartShift(ci, 1000)) < 1e-9, `cell ${ci} stays`);
+  for (let ci = 0; ci < M.CELLS.length; ci++) {
+    const c = CENTRES[ci], r = Math.hypot(...c);
+    if (r < 1e-9) continue;
+    let last = r;
+    for (const a of [0, 250, 500, 750, 1000]) {
+      const s = btApartShift(ci, a), d = Math.hypot(...c.map((x, i) => x + s[i]));
+      // along the line from the centre through the cell's centre, by a/1000 × BT_PULL × its distance
+      assert.ok(Math.abs(d - r * (1 + (BT_PULL * a) / 1000)) < 1e-9 && Math.abs(Math.hypot(...s) - (r * BT_PULL * a) / 1000) < 1e-9, `cell ${ci} at ${a}`);
+      assert.ok(a === 0 ? d === last || Math.abs(d - last) < 1e-12 : d > last, `cell ${ci}: outward`); last = d;
+    }
+  }
+  // a translation: every corner of a cell moves by the same vector, so its edges keep their lengths
+  for (const ci of [M.SHELLS[1][0], M.SHELLS[3][5]]) {
+    const s = btApartShift(ci, 700), { SQ } = btShellsModel(), ks = M.CELLS[ci].corners;
+    for (const [i, j] of [[0, 1], [0, ks.length - 1], [2, 5]]) {
+      const p = SQ[ks[i]].map((x, n) => x + s[n]), q = SQ[ks[j]].map((x, n) => x + s[n]);
+      assert.ok(Math.abs(dist(p, q) - dist(SQ[ks[i]], SQ[ks[j]])) < 1e-12);
+    }
+  }
+  // the camera's radius grows with the pull, from the closed picture's
+  const all = M.SHELLS.flat(), r0 = btApartRadius(all, 0);
+  assert.ok(Math.abs(r0 - Math.max(...all.flatMap((c) => M.CELLS[c].corners).map((k) => Math.hypot(...btShellsModel().SQ[k])))) < 1e-12);
+  let prev = r0; for (const a of [200, 600, 1000]) { const r = btApartRadius(all, a); assert.ok(r > prev); prev = r; }
 });
 test('the cover: the core (90 edges) and the 32 cells round it', () => {
   const e = bitruncPreviewEdges(); assert.equal(e.widths.filter((w) => w === 2).length, 90); assert.ok(e.length > 90 && e.colours.length === e.length);

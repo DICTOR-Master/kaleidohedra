@@ -10,7 +10,8 @@
 //     four main directions (From, To, one big slider), as in the Queens world.
 //   Shells: the 720 cells in shells by graph distance from one truncated icosahedron (the gold core), in perspective from just beyond
 //     the opposite one, so the core is drawn undistorted at its true size; one slider builds them outwards, the newest solid, the inner
-//     ones see-through; Whole shows them all at once, cut open like an onion.
+//     ones see-through; Whole shows them all at once, cut open like an onion. In Shells and Cut open one big slider pulls the cells
+//     apart: each moves rigidly out along the line from the centre through its own centre, the camera keeping them all in view.
 // Words in all 7 languages (i18n bt.*, and the Queens world's wq.* where the words are the same).
 import * as THREE from 'three';
 import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
@@ -41,6 +42,30 @@ const IVORY = 0xefe9dc, BLUE = 0x9fb4c8, OTHER = 0xd8c690;
 const SIDED = { 5: 0xc8504a, 6: 0xd9a441, 7: 0x7fae7a, 8: 0x8b78c4, 9: 0x4fa3a5, 10: 0xd07fb0 };   // the Queens world's shadow faces, by sides
 const SHORT = { vertex: 'vertex-first', edge: 'edge-first', face: 'face-first', cell: 'cell-first' };
 const lang = () => getSettings().language;
+/** Pull apart at full (1000): every cell's centre twice as far from the centre as closed (the cells themselves unchanged). */
+export const BT_PULL = 1;
+
+// the Shells picture, made on first use: the corners in perspective, each cell's centre, and the far truncated icosahedron's shell
+// (opposite the core), which wraps all the others in this perspective
+let shellData = null;
+export function btShellsModel() {
+  if (shellData) return shellData;
+  const M = BT.model(), SQ = M.SHELL_POINTS.map((p) => p.map((c) => c * WS));
+  const CENTRES = M.CELLS.map((c) => [0, 1, 2].map((i) => c.corners.reduce((a, k) => a + SQ[k][i], 0) / c.corners.length));
+  const farTI = M.CELLS.findIndex((c) => c.kind === 'TI' && c.corners.every((k) => M.CORNERS[k][0] < -M.CORE_HEIGHT + 1e-9));
+  shellData = { M, SQ, CENTRES, farTI, FAR: M.SHELLS.findIndex((list) => list.includes(farTI)) };
+  return shellData;
+}
+/** Pulled apart by a (0…1000): the shift of cell ci, along the line from the centre (the core's centre, the Shells picture's origin)
+ *  through its own centre, a/1000 × BT_PULL × that distance; the core and the far truncated icosahedron, centred there, stay. */
+export const btApartShift = (ci, a) => btShellsModel().CENTRES[ci].map((x) => (x * BT_PULL * a) / 1000);
+/** The farthest any corner of the cells in list reaches from the centre, pulled apart by a. */
+export function btApartRadius(list, a) {
+  const { M, SQ } = btShellsModel();
+  let r = 0;
+  for (const ci of list) { const s = btApartShift(ci, a); for (const k of M.CELLS[ci].corners) r = Math.max(r, Math.hypot(SQ[k][0] + s[0], SQ[k][1] + s[1], SQ[k][2] + s[2])); }
+  return r;
+}
 
 export const dirName = (d, L) => t(d === 'generic' ? 'bt.dir.generic' : `wq.dir.${d}`, L);
 const btnName = (d, L) => t(d === 'generic' ? 'bt.btn.generic' : `wq.btn.${d}`, L);
@@ -96,7 +121,7 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
   group.visible = false;
   scene.add(group);
   // k: the sweep's stop; −1 until first drawn (then the swap nearest the middle), so nothing is built while the app starts
-  const view = { mode: 'sweep', dir: 'generic', k: -1, ...BT_DEFAULT, u: 0, shells: 1, whole: false };
+  const view = { mode: 'sweep', dir: 'generic', k: -1, ...BT_DEFAULT, u: 0, shells: 1, whole: false, apart: 0 };
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (BT_MODES.includes(d?.mode)) view.mode = d.mode;
@@ -106,6 +131,7 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
     if (Number.isFinite(d?.u)) view.u = Math.max(0, Math.min(1000, Math.round(d.u)));
     if (Number.isInteger(d?.shells)) view.shells = Math.max(1, d.shells);   // at most the number of shells: kept to it when drawn
     view.whole = d?.whole === true;
+    if (Number.isFinite(d?.apart)) view.apart = Math.max(0, Math.min(1000, Math.round(d.apart)));
   } catch { /* defaults */ }
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(view)); } catch { /* best-effort */ } };
   let active = false, skeleton = false, opacity = 1, shown = null, playing = false, lit = null;
@@ -218,30 +244,24 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
   }
 
   // ---- Shells ----
-  // the Shells picture, made on first use: the corners in perspective, each cell's centre, and the far truncated icosahedron's shell
-  // (opposite the core), which wraps all the others in this perspective
-  let shellData = null;
-  function shellsModel() {
-    if (shellData) return shellData;
-    const M = BT.model(), SQ = M.SHELL_POINTS.map((p) => p.map((c) => c * WS));
-    const CENTRES = M.CELLS.map((c) => [0, 1, 2].map((i) => c.corners.reduce((a, k) => a + SQ[k][i], 0) / c.corners.length));
-    const farTI = M.CELLS.findIndex((c) => c.kind === 'TI' && c.corners.every((k) => M.CORNERS[k][0] < -M.CORE_HEIGHT + 1e-9));
-    shellData = { M, SQ, CENTRES, farTI, FAR: M.SHELLS.findIndex((list) => list.includes(farTI)) };
-    return shellData;
-  }
-  /** Cells as one mesh, each drawn a little smaller about its own centre (shrink) so shared faces never coincide. */
+  const shellsModel = btShellsModel;
+  let drawnCells = [];
+  /** Cells as one mesh, each drawn a little smaller about its own centre (shrink) so shared faces never coincide, and moved out
+   *  rigidly by Pull apart (btApartShift). */
   function cellsMesh(list, hex, { shrink = 1, ...opts } = {}) {
     const { M, SQ, CENTRES } = shellsModel(), pos = [], lines = [];
     for (const ci of list) {
-      const m = CENTRES[ci], at = (k) => SQ[k].map((x, i) => m[i] + shrink * (x - m[i]));
+      const m = CENTRES[ci], s = btApartShift(ci, view.apart), at = (k) => SQ[k].map((x, i) => m[i] + shrink * (x - m[i]) + s[i]);
       for (const fi of M.CELL_FACES[ci]) { const P = M.FACES[fi].loop.map(at); fan(P, pos); ring(P, lines); }
+      drawnCells.push(ci);
     }
     meshFrom(shellsGroup, pos, lines, hex, opts);
   }
   let shellsRadius = 1, wholeKept = [];
-  const radiusOf = (list) => { const { M, SQ } = shellsModel(); return Math.max(...list.flatMap((c) => M.CELLS[c].corners).map((k) => Math.hypot(...SQ[k]))); };
+  const radiusOf = (list) => btApartRadius(list, view.apart);
   function drawShells() {
     clear(shellsGroup);
+    drawnCells = [];
     const { M, CENTRES, FAR, farTI } = shellsModel(), SH = M.SHELLS, N = SH.length;
     view.shells = Math.min(view.shells, N);
     if (view.whole) {
@@ -254,7 +274,8 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
         wholeKept.push(keep.length);
         cellsMesh(keep, shellColour(k, N), wrap ? { opacity: 0.08, edge: 0xffffff, edgeOpacity: 0.25 } : { opacity: 1, edge: 0x1d2027, edgeOpacity: 0.55, glow: 0.12, roughness: 0.45, shrink: 0.94 });
       }
-      shellsRadius = radiusOf(SH[Math.max(0, FAR - 1)]);
+      // the camera's radius: closed, the shell inside the wrapping one (as before); pulled apart, whatever is drawn reaches farthest
+      shellsRadius = Math.max(radiusOf(SH[Math.max(0, FAR - 1)]), view.apart ? radiusOf(drawnCells) : 0);
       shown = { whole: true };
       return;
     }
@@ -268,7 +289,7 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
     if (SH[n - 1].includes(farTI)) cellsMesh([farTI], TI_HEX, { opacity: 0.08, edge: 0xffffff, edgeOpacity: 0.3 });
     cellsMesh(newest.filter((c) => c < BT.TI_COUNT), TI_HEX, solid);
     cellsMesh(newest.filter((c) => c >= BT.TI_COUNT), TT_HEX, solid);
-    shellsRadius = radiusOf(SH[n - 1]);
+    shellsRadius = Math.max(radiusOf(SH[n - 1]), view.apart ? radiusOf(drawnCells) : 0);
     shown = { shells: n };
   }
 
@@ -301,11 +322,12 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
     <div class="w4d-row bt-sweep-row"><label class="hull-pick"><span class="bt-sweep-label"></span> <input type="range" class="st-slider" min="0" max="1" step="1"></label></div>
     <div class="w4d-row bt-param-row"><label class="hull-pick"><span class="bt-param-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row bt-shells-row"><label class="hull-pick"><span class="bt-shells-label"></span> <input type="range" class="st-slider" min="1" max="1" step="1"></label></div>
+    <div class="w4d-row bt-apart-row"><label class="hull-pick"><span class="bt-apart-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row ch-param-caption" aria-live="polite"></div>
     <div class="w4d-row st-note fold"></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'bitrunc');
-  const sweepInput = panel.querySelector('.bt-sweep-row input'), input = panel.querySelector('.bt-param-row input'), shellsInput = panel.querySelector('.bt-shells-row input');
+  const sweepInput = panel.querySelector('.bt-sweep-row input'), input = panel.querySelector('.bt-param-row input'), shellsInput = panel.querySelector('.bt-shells-row input'), apartInput = panel.querySelector('.bt-apart-row input');
   const caption = panel.querySelector('.ch-param-caption'), note = panel.querySelector('.st-note.fold'), legend = panel.querySelector('.bt-legend');
   note.addEventListener('click', () => note.classList.toggle('open'));
   const press = (x, on) => { x.classList.toggle('active', on); x.setAttribute('aria-pressed', String(on)); };
@@ -319,6 +341,7 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
     panel.querySelector('[data-bt-row="from"]').hidden = panel.querySelector('[data-bt-row="to"]').hidden = panel.querySelector('.bt-param-row').hidden = !shadow;
     panel.querySelector('.bt-whole-row').hidden = !shells;
     panel.querySelector('.bt-shells-row').hidden = !shells || view.whole;
+    panel.querySelector('.bt-apart-row').hidden = !shells;   // Shells and Cut open
     panel.querySelectorAll('[data-bt-dir]').forEach((x) => { const k = x.dataset.btDir; x.textContent = btnName(k, L); x.title = dirName(k, L); press(x, k === view.dir); });
     for (const end of ['from', 'to']) {
       panel.querySelector(`[data-bt-label="${end}"]`).textContent = t(`wq.${end}`, L);
@@ -360,6 +383,8 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
     } else {
       panel.querySelector('.bt-shells-label').textContent = t('bt.shells.param', L, { n: view.shells, total: btShells() });
       shellsInput.max = String(btShells()); shellsInput.value = String(view.shells);
+      panel.querySelector('.bt-apart-label').textContent = t('bt.apart', L, { p: Math.round(view.apart / 10) });
+      apartInput.value = String(view.apart);
       caption.textContent = view.whole ? t('bt.shells.whole', L, { n: btShells() }) : btShellsCaption(view.shells, L);
       note.textContent = `${t('bt.note.shells', L)}${view.whole ? '' : ` ${t('wq.note.tapNext', L)}`}`;
     }
@@ -373,6 +398,10 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
     view.u = v; save(); draw();
   });
   shellsInput.addEventListener('input', () => { const n = Number(shellsInput.value); if (n === view.shells) return; view.shells = n; save(); draw(); fit(); });
+  // Pull apart: while dragging the camera only backs off (keeping its turn), so nothing leaves the view; let go, it fits exactly
+  const fitApart = (exact) => fitView([0, 0, 0], fitRadius(), null, exact);
+  apartInput.addEventListener('input', () => { const a = Number(apartInput.value); if (a === view.apart) return; view.apart = a; save(); draw(); fitApart(false); });
+  apartInput.addEventListener('change', () => fitApart(true));
   panel.addEventListener('click', (e) => {
     if (e.target.closest('[data-bt-play]')) { play(!playing); return; }
     if (e.target.closest('[data-bt-whole]')) { view.whole = !view.whole; save(); draw(); fit(); return; }
@@ -420,7 +449,7 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
       draw(); fit();
       setTimeout(() => { if (active) renderPanel(); }, 0);   // after the entry has written the menu's title
     },
-    resetView() { if (playing) play(false); Object.assign(view, { mode: 'sweep', dir: 'generic', k: -1, ...BT_DEFAULT, u: 0, shells: 1, whole: false }); save(); if (active) { draw(); fit(); } },
+    resetView() { if (playing) play(false); Object.assign(view, { mode: 'sweep', dir: 'generic', k: -1, ...BT_DEFAULT, u: 0, shells: 1, whole: false, apart: 0 }); save(); if (active) { draw(); fit(); } },
     setSkeleton(on) { if (on !== skeleton) { skeleton = on; if (active) draw(); } },
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) draw(); } },
     setLatticeView() {},
@@ -436,7 +465,10 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
           event: e ? { born: e.born.length, died: e.died.length, letGo: e.letGo.length, meet: e.meet.length, swapFrom: e.swapFrom } : null, lit: lit ? { letGo: lit.letGo.length, meet: lit.meet.length } : null, totals: { ...sw.totals }, playing, meshes: sweepGroup.children.length };
       }
       if (view.mode === 'shadow') return { mode: 'shadow', from: view.from, to: view.to, u: view.u, stop: view.u === 0 ? view.from : view.u === 1000 ? view.to : null, vertices: shown.vertices.length, corners: shown.P.length, edges: shown.edges.length, faces: shown.faces.length, shell: shell.visible };
-      return { mode: 'shells', whole: view.whole, wholeKept: view.whole ? wholeKept.slice() : null, shells: view.shells, total: btShells(), sizes: BT.model().SHELLS.map((x) => x.length), newest: { k: view.shells - 1, cells: BT.model().SHELLS[view.shells - 1].length }, radius: shellsRadius, meshes: shellsGroup.children.length };
+      // apart: the pull (0…1000) and how far the drawn cells' centres sit from the centre (least, mean, most)
+      const { CENTRES } = shellsModel(), d = drawnCells.map((ci) => Math.hypot(...CENTRES[ci].map((x, i) => x + btApartShift(ci, view.apart)[i])));
+      return { mode: 'shells', whole: view.whole, wholeKept: view.whole ? wholeKept.slice() : null, shells: view.shells, total: btShells(), sizes: BT.model().SHELLS.map((x) => x.length), newest: { k: view.shells - 1, cells: BT.model().SHELLS[view.shells - 1].length }, radius: shellsRadius, meshes: shellsGroup.children.length,
+        apart: view.apart, drawn: drawnCells.length, centres: { min: Math.min(...d), mean: d.reduce((a, x) => a + x, 0) / d.length, max: Math.max(...d) } };
     },
   };
 }
