@@ -18,3 +18,11 @@ Face-corner graph hash per cell (tolerant merging 1e-6). Rational: 1 type (89 / 
 Golden: 58 / 98 / 145 types - MORE than its 139 congruence classes at radius 3.4, impossible: golden slices have near-degenerate faces
 (corners nearly meeting) that floating point cannot resolve. First run (no tolerance) gave even more (141 at r 2.4): discarded.
 NEXT: exact golden arithmetic (as #81's chains) for the golden slice's combinatorial types.
+## The 4D Vacuus (DICTO: "B the 4D vacuus is its form"; scripts/vacuus4d.py, FINAL ok)
+As the 3D Vacuus solids are built from central great polygons carrying all edges (octahedron 3 squares, cuboctahedron 4 hexagons), the 4D
+one is built from central 3D slices carrying all 2-faces. The 4D permutohedron's 150 2-faces (60 hexagons, 90 squares) lie in 65 central
+hyperplanes; the slices: 20 x (24 corners, 14 faces: 6 squares + 8 hexagons, 2 hexagons carried), 13 x (32 corners, 22 faces), 10 x
+(24 corners, 20 faces), 6 x (34), 5 x (36, 30 faces), 5 x (36, 28 faces), 1 x (40), and 5 x (24 corners, 14 faces = TRUNCATED OCTAHEDRA,
+each carrying 6 squares): the 3D permutohedron sits at the centre of the 4D one five times - DICTO's "does it infinitely nest in itself".
+(Slice shapes from float hulls; types by corner and face counts; congruence of the TO slices to be checked exactly.) No build wanted
+(DICTO: "I dont need a build im just in a state of wonder").
