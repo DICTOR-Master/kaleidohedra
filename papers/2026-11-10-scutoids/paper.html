@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Scutoids: Layers, Shells and Cycles</title><link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;width:100%;font-size:8.2pt;margin:2mm 0} td,th{border:0.3pt solid #999;padding:0.8mm 1.2mm;vertical-align:top;text-align:left} th{background:#eee} tr{break-inside:avoid} .box{border:0.4pt solid #b9a46a;background:#fbf8ee;padding:2mm 3mm;margin:2mm 0} figure{margin:3mm 0;text-align:center;break-inside:avoid} figure img{max-width:100%} figcaption{font-size:8.5pt;color:#444;text-align:left} .pair{display:flex;gap:3mm} .pair figure{flex:1}</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt=""><img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Scutoids: Layers, Shells and Cycles<br><span style="font-size:0.72em;font-weight:normal">flat-faced scutoids that fill space, round a truncated icosahedron, through the polar, and what a single defect does</span></h1>
+<div class="meta"><b>DICTO</b> · dictospheres.com · 10 November 2026</div>
+<div class="status">DRAFT for DICTO's read (working title), not published. Gathers the scutoid studies of 17 October, 6–7 November and 10 November 2026. Number, title and publication are DICTO's to decide. Checks: Sections 1 and 4–6 in floating point to about 10⁻¹³ (flatness of Theorems 1–2 also by the symmetry argument); Section 2 float only (Laguerre cells); Section 3 to 400 digits; Section 7 is an experiment, not a theorem.</div>
+
+<p>A scutoid is a cell between two surfaces whose outline changes on the way through: a hexagon at one end, a pentagon at the other, and in between one edge that shrinks to a point and reopens across, so that two cells which touched stop touching and two others start. Gómez-Gálvez and co-workers found the shape in curved living tissue in 2018. Here the scutoid is built as a geometric solid: every face flat, and the cells fill space.</p>
+
+<h2>1. One flat-faced scutoid</h2>
+<p>Take the hexagonal tiling at height 0, shrink every second vertical edge of every second row to a point at height 1 (all cells become pentagons there), and reopen each point across at height 2. Keep every other edge parallel from level to level; then every side face is a flat trapezoid, and a linear program places the corners. A cell that gains nothing at the top is a scutoid: <b>a hexagon below, a pentagon above, the Y-corner halfway, 13 faces, every one flat</b> (to 10⁻¹⁵). With hexagons again at the top, flat side faces could not be reached for any edge directions in our search; there the side faces bend, as in living scutoids (a conjecture, not proved).</p>
+<figure style="max-width:42%;margin-left:auto;margin-right:auto"><img src="figures/scutoid-solid.png" alt="A green translucent column: hexagon base narrowing to a pentagon halfway up and rising to a pentagon top"><figcaption><b>Figure 1.</b> The geometric scutoid: hexagon below, pentagon above, 13 flat faces.</figcaption></figure>
+
+<h2>2. A group of eight that fills a layer (17 October)</h2>
+<p>Eight convex scutoids, every one swapping pentagon and hexagon between its ends, fill one flat layer, and the layers stack straight up: the answer to "how many to fill space in a block". The pieces are chunky (sphericity 0.825–0.835, about that of a cube). Float parameters (Laguerre cells), faces flat by construction. Turned on its side the same group builds a wall whose face is a mosaic of pentagon and hexagon ends, sloped back like an ishigaki castle wall.</p>
+<div class="pair"><figure><img src="figures/red-group.png" alt="Eight interlocking red granite scutoid pieces"><figcaption><b>Figure 2.</b> The eight-piece group in red granite.</figcaption></figure>
+<figure><img src="figures/grey-wall.png" alt="A wall of grey granite stones with pentagon and hexagon faces"><figcaption><b>Figure 3.</b> The castle wall in grey granite.</figcaption></figure></div>
+
+<h2>3. Truncated icosahedra in a crystal (6–7 November)</h2>
+<p>Truncated icosahedra (edge 1) in a layer, every link a pentagon facing a hexagon on one axis, the two link lines at 79.19°; layers stacked as closely as the bridges allow. Space is cut into one cell per ball, and every cell makes the scutoid move twice, below and above its layer's middle plane. The layer spacing is an algebraic number of degree 8, h = 3.43700237509909…, and the four scutoid corners form one orbit at ±0.34113 from the middle plane (computed to 400 digits).</p>
+<figure style="max-width:80%;margin-left:auto;margin-right:auto"><img src="figures/football-slices.png" alt="Slices through the crystal of truncated icosahedra showing cells changing neighbours"><figcaption><b>Figure 4.</b> Slices through the crystal: the cells change neighbours twice per layer.</figcaption></figure>
+
+<h2>4. A scutoid shell round a truncated icosahedron</h2>
+<div class="box"><b>Theorem 1.</b> Shrink every hexagon–hexagon edge of a truncated icosahedron to a point (the surface becomes an icosidodecahedron) and reopen each point across, between the two pentagons (it becomes a truncated dodecahedron). The 32 cells between the three nested surfaces — 12 growing pentagon → pentagon → decagon, 20 shrinking hexagon → triangle → triangle — have every face flat for <i>any</i> three radii that nest, and fill the shell exactly once.</div>
+<p><i>Why flat.</i> Each core edge and the middle edge above it are both perpendicular to the same mirror plane, so they are parallel, and the side face between them is a flat trapezoid; the same holds between the middle and the outside; a shrinking edge gives a triangle. Checked: every face flat to 10⁻¹³, every volume positive, the 32 volumes add to V(outside) − V(core) = 5.6660707968 (radii 1, 1.18, 1.42). Turned inside out (truncated dodecahedron inside) the same holds.</p>
+<div class="pair"><figure><img src="figures/near-sphere.png" alt="A near-spherical shell of gold and green cells with some lifted off"><figcaption><b>Figure 5.</b> The scutoid shell, a few cells lifted.</figcaption></figure>
+<figure><img src="figures/polar-shell.png" alt="A violet shell of identical folded rhombic cells"><figcaption><b>Figure 6.</b> Its polar: the flip shell.</figcaption></figure></div>
+
+<h2>5. The polar: the move becomes a flip</h2>
+<div class="box"><b>Theorem 2.</b> The polar of the sequence in Theorem 1 is pentakis dodecahedron → rhombic triacontahedron → triakis icosahedron: each pair of triangles across a 6–6 edge flattens into a rhombus and folds back along the other diagonal. With the true polars, the shell between pentakis dodecahedron and triakis icosahedron splits into <b>30 congruent cells</b>, one per rhombus, every face flat (the side faces lie in mirror planes through the centre).</div>
+<p>On triangles the plain scutoid move cannot run (a triangle losing a side vanishes); in the polar it becomes a diagonal flip. Checked: 30 equal volumes 0.2155 (rhombi at 1.25, outside at 1.55), adding to V(TK) − V(PD) = 6.4660211935.</p>
+
+<h2>6. The cycle</h2>
+<div class="box"><b>Theorem 3.</b> The scutoid move and the flip each undo themselves, and with the two polar swaps they close a square: truncated icosahedron → truncated dodecahedron → triakis icosahedron → pentakis dodecahedron → truncated icosahedron. As nested shells this fills all space except the centre self-similarly: with <b>four</b> scutoid shapes (scale 1.578 per period), or through the polar with only <b>two</b> flip shapes (scale 1.802).</div>
+<p>Checked over three periods: the corners of each shell's outside are those of the next shell's inside (60 and 32), and the cell volumes add exactly (216.5210825662 and 737.4739317134).</p>
+<div class="pair"><figure><img src="figures/scutoid-onion.png" alt="Half of a nested onion of gold and green scutoid shells"><figcaption><b>Figure 7.</b> The scutoid onion, cut in half.</figcaption></figure>
+<figure><img src="figures/flip-onion.png" alt="Half of a nested onion of alternating violet flip shells in rings"><figcaption><b>Figure 8.</b> The flip onion: rings of two alternating pieces.</figcaption></figure></div>
+
+<h2>7. A single defect (experiment)</h2>
+<p>Move only some edges, keep every face flat by linear conditions (each new edge runs along the meeting line of its two faces' planes), and let each shell's outside be the next core, each shell undoing the last. Regular solids pass back and forth unchanged. Irregular ones carry a memory. Under the rule "closest to even radial growth", every defect is conserved as a fixed scar (one edge: 99.3% heals, 0.05% stays). Under the rule "all edges as equal as possible" (no cell may turn inside out):</p>
+<table><tr><th>Edges moved</th><th>Symmetry</th><th>Spread after each round trip (1 → 4)</th></tr>
+<tr><td>all 30</td><td>full</td><td>0 — conserved</td></tr>
+<tr><td>6, cube-aligned</td><td>24-fold</td><td>4–9%, bounded</td></tr>
+<tr><td>opposite pair</td><td>centre</td><td>3.9 → 7.3 → 10.2 → 12.8%, slowing</td></tr>
+<tr><td>one</td><td>mirror</td><td>32 → 55 → 79 → 103%, steady</td></tr>
+<tr><td>3 random</td><td>almost none</td><td>52 → 97 → 141 → 188%, steady</td></tr>
+<tr><td>15 random</td><td>none</td><td>60 → 30 → 43 → 64%, not growing</td></tr></table>
+<p>Isolated defects of low symmetry grow, faster the less symmetric; symmetric or crowded ones stay bounded. A lone defect does not invade its neighbours: the whole ball stretches into an egg along the defect's axis (long/short 1.07 → 1.55, then levelling), both ends distorted, a quiet belt between. This rule acts on the whole shell at once; a rule in which each cell feels only its neighbours is the open test of spreading cell to cell.</p>
+
+<h2>Sources checked</h2>
+<p class="src">Gómez-Gálvez, Vicente-Munuera, Escudero et al., Scutoids are a geometrical solution to three-dimensional packing of epithelia, Nature Communications 9 (2018) 2960; MathWorld, Scutoid; the 2019 paper on scutoid-like shapes with Voronoi slices (planar faces by Voronoi); Hacktastic, Pairs of packable scutoids (OpenSCAD lofts, 2018); a pentagonal scutoid that tiles with itself (model site). None of these gives the flat-faced shells of Theorems 1–3 or the polar flip. DICTO studies of 17 October, 6–7 November and 10 November 2026.</p>
+<p class="src">DICTO: ideas, names, constructions and direction. Computation, verification and drafting with Claude (Anthropic).</p>
+</body></html>
