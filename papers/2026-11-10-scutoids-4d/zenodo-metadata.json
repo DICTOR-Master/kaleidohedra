@@ -1,0 +1,76 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "subjects": [
+  {
+   "term": "MSC2020 52B05: Combinatorial properties of polytopes and polyhedra",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B05",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52B11: n-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B11",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52C22: Tilings in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+   "scheme": "url"
+  }
+ ],
+ "version": "1",
+ "publication_date": "2026-11-10",
+ "title": "Scutoid Tissues in Four Dimensions",
+ "description": "<p><b>Version 1.</b></p><p>A scutoid is a cell between two surfaces whose outline changes on the way through: two cells that touched stop touching, and two others start. Slice a four-dimensional polytope with a moving hyperplane: its 3-dimensional cells cross the slice as polygons, and as the hyperplane moves the polygons trade neighbours. Each cell is then a flat-faced scutoid, and the boundary of the polytope a closed scutoid tissue.</p><p><b>Theorem 1.</b> In a generic sweep of a simple 4-polytope the tiling changes only by births, scutoid swaps (the classical 2-2 flip) and deaths, h<sub>1</sub>, h<sub>2</sub> and h<sub>3</sub> of them, in every direction. Theorem 1′ gives every dimension (5-cube; 5D permutohedron with the Eulerian numbers; random simple 4-polytopes). <b>Theorem 2:</b> the 120-cell, truncated 120-cell and bitruncated 600-cell sweep with (116, 366, 116), (716, 966, 716) and (716, 2166, 716); <b>Lemma 5:</b> the truncated 600-cell has no pure swap (a rosette tissue). <b>Theorem 4</b> (balance law): in the bitruncated 600-cell the exchanges between its two kinds of cell balance exactly, 601 each way. <b>Theorem 3:</b> the Swap Rule of close packing (#61) below layer spacing 1/4, with closed forms of its defect on a chamber map, proved by an exact computer-assisted two-parameter computation for every spacing in [1/8, 1/4]; at its walls the holes exchange contacts in symmetric rosette-type events. Section 3: the holes' power cells stacked over the weight are 4-dimensional cells whose 3D slices change neighbours at those walls.</p><p>Classical parts credited (the h-vector and its count by a generic height, bistellar flips, the T1 transition as the 2-2 flip). Checked before release by four automated referee passes and one independent attack.</p><p>DICTO: ideas, names, constructions and direction. Computation, verification and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "scutoid",
+  "simple polytope",
+  "h-vector",
+  "bistellar flip",
+  "T1 transition",
+  "120-cell",
+  "600-cell",
+  "bitruncated 600-cell",
+  "power diagram",
+  "close packing",
+  "Swap Rule",
+  "rosette"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23378070",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23529497",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23633365",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5802/crmath.163",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}

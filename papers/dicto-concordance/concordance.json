@@ -5805,6 +5805,24 @@
     "retry": "never",
     "study": "2026-11-10-5d-sweep",
     "date": "2026-11-10"
+   },
+   {
+    "question": "calibrate the wall method on the 2D hat family Tile(a,b)",
+    "method": "float contact counts of two copies along t",
+    "status": "METHOD-FAILED",
+    "result": "noise walls at almost every grid step; thresholds unstable",
+    "retry": "only the exact version in Q(sqrt3)(t)",
+    "study": "2026-11-10-hat-calibration",
+    "date": "2026-11-10"
+   },
+   {
+    "question": "#104 release",
+    "method": "read ok by DICTO ('Scutoid Tissues in Four Dimensions title read ok'); zen_new reserve/publish; postcheck",
+    "status": "PUBLISHED",
+    "result": "#104 Scutoid Tissues in Four Dimensions, DOI 10.5281/zenodo.24111865 (concept 24111864), data at kaleidohedra c6d0a91c",
+    "retry": "never",
+    "study": "papers/2026-11-10-scutoids-4d",
+    "date": "2026-11-10"
    }
   ]
  },
