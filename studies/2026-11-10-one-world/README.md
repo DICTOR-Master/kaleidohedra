@@ -13,3 +13,13 @@ RD cells: cube + 6 square pyramids. Between them the Dogstar-type remainder cell
 No octet and no seam at all. Check (one_world.py, data-one-world.log): random points, every one covered exactly once, every solid of
 each mix present, all 127 mixes: FINAL ok. (Contrast: #47 used four worlds; the free-scale core two worlds with one seam.)
 Note: in a skinned cell the solid sits concentric with Euclid's cube, all in the dodecahedron's own (pyritohedral) frame.
+
+## Sphere-unit sizes (10 Nov, sizes.py, data-sizes.log, FINAL ok; DICTO 22 Oct "about the size of a unit sphere")
+Larger exact choices inside the same dodecahedral cell:
+- O of edge φ²/√2 (corners = the 6 roof-ridge midpoints of the dodecahedron): skin = 8 congruent caps, each 9/32 + 13√5/96 (exact).
+- I of edge 1, Pacioli in that octahedron (= #47's I + six Admiral Caps, each Admiral Cap exactly (1 + √5)/24 = φ/12), also inscribed
+  in Euclid's cube (one edge in each face): skin = 6 Admiral Caps + the 8 caps.
+Surrounding-sphere radii: D, C, T 1.401 (one sphere: Euclid's cube and its tetrahedron are inscribed in the dodecahedron's sphere);
+O 1.309; CO 1.144; I 0.951; RD 1.618. Largest/smallest 2.753 → 1.701.
+Further option (not yet checked): the icosahedron dual to the cell (corners at the 12 face centres, radius 1.114, edge ≈ 1.171);
+RD (1.618) is then the outlier, fixed by the grid.
