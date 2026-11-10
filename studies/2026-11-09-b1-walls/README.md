@@ -70,3 +70,13 @@ CLOSED FORM (fits all 7 spacings s >= 1/5 exactly, independent of λ in the shif
 (1/5: -1/1350, 21/100, 9/40: -1/12150, 23/100, 47/200, 6/25: -1/202500, 49/200: -1/1653750). At s = 1/6 reached only at the low λ
 (-1/243 = formula; -5/3087 at λ = -43/336); at 1/8 not reached. δ_oct depends on λ (fit next). The shift switches off with a JUMP at λ*(s).
 NEXT (job swap61-fine): 16 λ in the shift zone at s = 1/5, 9/40, 6/25: fit δ_oct(s, λ), locate λ*(s).
+
+## #61 the Hopscotch way (DICTO 10 Nov "doesnt follow hopscotch": the grid sampled; this reads the walls). scripts/swap_walls.py
+Every power-diagram plane has a fixed normal and an offset affine in λ, every corner is affine in λ; the type changes only where a
+corner meets another plane (engine Cell.interval). Walk λ hop by hop over #61's range; on each hop D(λ) is an exact polynomial.
+PILOT s = 1/5 (3 hops, 237 s): walls -9/40, -19/120, -1/8.
+  hop (-9/40, -19/120): δ_oct = (360λ + 53)/2700, δ_tetX = δ_tetY = -1/1350 (same in all four outer contexts)
+  hop (-19/120, -1/8):  δ_oct = 5(8λ + 1)^3/64,  δ_tet = -(8λ + 1)^2 (40λ + 7)/64
+  continuous at -19/120 (-1/675, -1/1350); BOTH vanish at λ* = -1/8 through (8λ + 1): the switch-off is smooth, not a jump (the grid
+  sampled either side and misread it). Guess: λ*(s) = -5s/8 (factor 8λ + 5s), fits every grid bracket at 1/8 … 49/200.
+FULL WALK: job swap61-walls, 6 spacings (walls/w_<s>.txt).
