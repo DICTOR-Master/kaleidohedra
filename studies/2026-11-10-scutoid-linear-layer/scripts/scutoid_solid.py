@@ -131,4 +131,50 @@ def planar(F):
 worst = max(planar(F) for F in faces)
 print(f'faces {len(faces)}; largest distance of a corner from its face plane {worst:.2e} (every face flat)')
 json.dump({'V': V3, 'F': faces, 'bottom_n': len(bot), 'top_n': len(top)}, open('scutoid-solid.json', 'w'))
-print('FINAL ok' if worst < 1e-9 and len(bot) == 6 and len(top) == 5 else 'FINAL FAIL')
+# ---- the BLOCK (DICTO "as a block linear group"): top polygons = faces of the actual top tiling, traced geometrically
+adj = {v: set() for v in range(n)}
+for a_, b_ in dtop: adj[a_].add(b_); adj[b_].add(a_)
+order = {v: sorted(adj[v], key=lambda w: np.arctan2(*(T[w] - T[v])[::-1])) for v in adj}
+seen, tfaces = set(), []
+for u in adj:
+    for w in adj[u]:
+        if (u, w) in seen: continue
+        cyc, a_, b_ = [], u, w
+        while (a_, b_) not in seen and len(cyc) < 20:
+            seen.add((a_, b_)); cyc.append(a_); L_ = order[b_]; k_ = L_.index(a_); a_, b_ = b_, L_[(k_ - 1) % len(L_)]
+        P_ = T[cyc]; area = 0.5 * np.sum(P_[:, 0] * np.roll(P_[:, 1], -1) - np.roll(P_[:, 0], -1) * P_[:, 1])
+        if 3 <= len(cyc) <= 9 and area > 0: tfaces.append(cyc)
+def top_of(ij):
+    ids = set(cells[ij]); return max(tfaces, key=lambda F_: len(ids & set(F_)))
+def cell_solid(ij):
+    ids = cells[ij]; tc = top_of(ij)
+    def lift(P, v, z): return [float(P[v][0]), float(P[v][1]), z]
+    faces3 = [[lift(P0, v, 0.0) for v in ids][::-1]]                       # bottom
+    for k in range(6):                                                    # bottom -> middle
+        u, w = ids[k], ids[(k + 1) % 6]; F_ = [lift(P0, u, 0.0), lift(P0, w, 0.0), lift(Q, w, 1.0), lift(Q, u, 1.0)]
+        if np.allclose(Q[u], Q[w]): F_.pop()
+        faces3.append(F_)
+    for k in range(len(tc)):                                              # middle -> top (vertex ids persist; a collapsed pair shares Q)
+        u, w = tc[k], tc[(k + 1) % len(tc)]; F_ = [lift(Q, u, 1.0), lift(Q, w, 1.0), lift(T, w, 2.0), lift(T, u, 2.0)]
+        if np.allclose(Q[u], Q[w]): F_.pop(1)
+        faces3.append(F_)
+    faces3.append([lift(T, v, 2.0) for v in tc])                          # top
+    Vl, F = [], []
+    for F_ in faces3:
+        idx = []
+        for p_ in F_:
+            hit = next((q for q, v_ in enumerate(Vl) if np.allclose(v_, p_, atol=1e-9)), None)
+            if hit is None: Vl.append(p_); hit = len(Vl) - 1
+            idx.append(hit)
+        F.append(idx)
+    return {'V': Vl, 'F': F, 'top_n': len(tc), 'bot_n': 6, 'mid_n': len({tuple(np.round(Q[v], 9)) for v in ids})}
+block = [cell_solid(ij) for ij in sorted(cells) if 2 <= ij[0] <= NX - 3 and 1 <= ij[1] <= NY - 2]
+worst_b = 0.0
+for c_ in block:
+    for F_ in c_['F']:
+        P_ = np.array([c_['V'][q] for q in F_])
+        if len(P_) >= 4:
+            nr = np.cross(P_[1] - P_[0], P_[2] - P_[0]); nr /= np.linalg.norm(nr); worst_b = max(worst_b, float(np.abs((P_ - P_[0]) @ nr).max()))
+json.dump(block, open('scutoid-block.json', 'w'))
+print(f'block: {len(block)} cells; top counts {sorted(set(c_["top_n"] for c_ in block))}; every face flat: {worst_b:.1e}')
+print('FINAL ok' if worst < 1e-9 and len(bot) == 6 and len(top) == 5 and worst_b < 1e-9 else 'FINAL FAIL')

@@ -32,3 +32,9 @@ A cell that gains nothing: bottom hexagon (z = 0) → middle pentagon (z = 1, on
 a GEOMETRIC SCUTOID with 13 faces, every face flat (8.6e-16). Data: data-scutoid-solid.json; render in papers-to-read.
 Next (DICTO: "as a block linear group and as a near sphere"; "as a core a football"): (1) the block: the whole brick layer as a group
 of scutoids; (2) the near sphere: a skin of scutoids round a truncated icosahedron core.
+
+## Step 5: the block (DICTO "as a block linear group")
+Top polygons are now the faces of the actual top tiling, traced geometrically (the earlier bookkeeping put 14 edges that are not in the
+top tiling; fixed). 16 interior cells: bottom hexagon → middle pentagon for all; top 5 (8 cells), 6 (4), 8 (4); average 6 as it must be.
+Every face of every cell flat (7.4e-15). The top polygons tile with no overlap (3.6e-15) and no holes; 42 of 48 convex (the 8-gons are not).
+Data data-scutoid-block.json; render papers-to-read/scutoid-block.png. Next: the near sphere (skin round a truncated icosahedron core).
