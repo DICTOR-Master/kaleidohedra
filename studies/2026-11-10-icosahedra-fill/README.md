@@ -67,4 +67,4 @@ Theorem: no space filling (any sizes, any arrangement, periodic or not) uses dod
 Antonius. Proof: in a filling, frequency-weighted Dehn invariants sum to zero (Debrunner; Lagarias–Moews), and by the lemma the θ_D part
 (5/2) Σ a_j ⊗ θ_D must vanish by itself; every term is positive, so there are no pentagonal pyramids. ∎
 A partner with a NEGATIVE θ_D part is needed (as Antonius is the negative θ_I partner of the Cleo-Icos): the #47 connectors.
-DICTO 10 Nov: "they fill an icosidodecahedron together": being checked (centre cut of the icosidodecahedron vs these pyramids).
+DICTO 10 Nov: "they fill an icosidodecahedron together": the centre cut gives 20 triangle pyramids twice the Cleo-Icos height and 12 pentagonal pyramids 2/φ the dodecahedron-pyramid height (the core of the icosahedron + dodecahedron compound); DICTO: "doesnt help icosahedron situation just broadens question": closed as a side note.
