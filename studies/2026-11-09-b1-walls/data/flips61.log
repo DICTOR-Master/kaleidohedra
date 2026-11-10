@@ -1,0 +1,11 @@
+START flips at s = 1/5, 4 walls
+WALL λ = -9/40 (-9s/8): gained {(('oct', 0), ('tetX', -1)): 28, (('oct', 0), ('tetY', 0)): 84, (('oct', 0), ('tetX', 1)): 42, (('oct', 0), ('tetY', 1)): 28, (('oct', 0), ('tetY', -1)): 42, (('oct', 0), ('tetX', 0)): 84, (('tetX', 0), ('tetY', -1)): 38}; lost {(('oct', -3), ('oct', 0)): 9, (('oct', 0), ('oct', 3)): 9, (('oct', 0), ('oct', 2)): 12, (('oct', -2), ('oct', 0)): 12, (('oct', 0), ('tetX', 2)): 10, (('oct', 0), ('tetY', -2)): 10}
+PROGRESS 0.25
+WALL λ = -19/120 (-(4-s)/24): gained {(('tetX', 0), ('tetY', 0)): 114}; lost {(('oct', 0), ('oct', 0)): 114}
+PROGRESS 0.50
+WALL λ = -1/8 (-5s/8): gained {(('tetX', 0), ('tetY', 0)): 42}; lost {(('oct', 0), ('oct', 2)): 21, (('oct', -2), ('oct', 0)): 21}
+PROGRESS 0.75
+WALL λ = -1/40 (-s/8): gained {(('tetX', -1), ('tetX', 0)): 42, (('tetX', 0), ('tetY', 1)): 84, (('tetX', 0), ('tetX', 1)): 42, (('tetY', 0), ('tetY', 1)): 42, (('tetY', -1), ('tetY', 0)): 42}; lost {(('oct', -1), ('oct', 0)): 42, (('oct', 0), ('tetX', 1)): 84, (('oct', 0), ('tetY', -1)): 84, (('oct', 0), ('oct', 1)): 42}
+PROGRESS 1.00
+FINAL ok
+[exit 0]

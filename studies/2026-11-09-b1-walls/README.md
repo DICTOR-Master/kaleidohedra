@@ -93,3 +93,16 @@ continuous at every wall; vanishes smoothly at λ* = -5s/8 (triple root for oct,
 the closed forms is fitted to them and checked exactly at all six (7 points of s incl. the 9 Nov ones for δ_tet). PROOF FOR ALL s:
 run the walk with s symbolic too (two-parameter Hopscotch) - next if wanted. Grid result superseded (its "jump" was sampling).
 Chamber map: chamber-map-61.png (scripts/chamber_map61.py; also papers-to-read/chamber-map-61-swap-rule.png). All cells close at s = 1/4: λ-(c) meets -9s/8 at (1/4, -9/32); -(4-s)/24 meets -5s/8 at (1/4, -5/32); -(4-s)/24 meets -9s/8 at s = 1/7.
+
+## #61: each wall's flip (job swap61-flips, s = 1/5, λ = wall ± 1/1000, six words; scripts/flips61.py; data/flips61.log; FINAL ok)
+Pairs of holes sharing a face (roles, layer offset), gained / lost crossing each wall upward:
+- -9s/8 (end of the clash zone): octahedral holes LOSE their long contacts (oct-oct 2 and 3 layers away, oct-tet 2 layers away: 62)
+  and GAIN contacts with tetrahedral holes in their own and neighbouring layers (346): above it no cell reaches across two gaps -
+  why the four-layer keys stop clashing there.
+- -(4-s)/24 (linear → cubic shift): a pure swap, 114 oct-oct contacts in one layer ↔ 114 tetX-tetY contacts in one layer.
+- -5s/8 (the Swap Rule switches ON): a pure swap, 42 oct-oct contacts two layers apart (across a whole layer) ↔ 42 tetX-tetY in one
+  layer. The rule holds exactly from the moment the last cross-layer octahedral contact flips away.
+- -s/8 (inside the holding zone, D stays 0): 252 ↔ 252: octahedral holes lose their adjacent-layer contacts (84 oct-oct, 168 oct-tet),
+  tetrahedral holes gain 252 adjacent-layer contacts among themselves.
+Two holes stop touching, two others start: the scutoid move in the power diagram (DICTO: "a 4th dimensional scutoid?!" - each hole's
+cell over λ is a convex 4D polytope whose 3D slices change neighbours at these walls). In secondary-fan terms each wall is a flip.
