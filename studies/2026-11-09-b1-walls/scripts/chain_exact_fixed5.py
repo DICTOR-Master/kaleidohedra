@@ -20,6 +20,6 @@ for k in range(1, 5):
     print(f'step {k}: {len(V)} corners ({time.time()-t0:.0f} s)', flush=True)
 g = similar_sym(hist[0], hist[4])
 target = kel(sp.expand((35 - 15 * r5) ** 2))          # similar_sym returns the ratio of SQUARED lengths
-eq = g is not None and sp.simplify(K.to_sympy(g - target)) == 0
+eq = g is not None and not (g - target).numer
 print('step 4 similar to step 0 (exact):', g is not None, '; squared scale =', sp.nsimplify(sp.simplify(K.to_sympy(g))) if g is not None else None, '; equals (35 - 15 sqrt5)^2:', eq)
 print('FINAL ok' if eq else 'FINAL FAIL: exact closure not confirmed')

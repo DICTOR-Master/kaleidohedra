@@ -19,3 +19,14 @@ method too if no step 5 line by the next check.
 repeats step 0's corner count and kinds (32 corners, all 4-valent: {4: 30}) but is NOT similar to it by the exact test: a near-closure
 worth a numerical look (is it the same shape up to a stretch?). Ledger: METHOD-FAILED at step 5. Both chains now wait for the
 numerical-steps method (60 digits, several s0, then one exact check).
+
+## #81 dodecahedron chain: ANSWER (10 Nov 2026, after the similarity-test fix)
+- **Exact:** chain_sym5.py (depth s as a symbol, fixed value test): the chain CLOSES with period 4 from step 0; step 4 = step 0 scaled
+  by 35 − 15√5 = 10/φ⁴, an identity in s on the combinatorial type at s0 = 3/4 (FINAL ok). chain_exact_fixed5.py confirms at s0 = 3/4
+  in Q(√5). (The script's printed hop [1, (5−√5)/2] is an artefact: its range is clipped to the slider window [1, 3/2].)
+- **Map of the depth (chain_num5.py, steps to 8–16, 0.02 grid):** s 0.40–1.00: period 4 from step 0; 1.02–1.08: period 4 entered
+  at step 3; ≈1.10–1.24: NO closure, the chain grows without bound (corners 440 → 5292 by step 14) and rounds out (r/R → 0.97, the
+  #43 behaviour); 1.26–1.38: period 4 from step 1; 1.40–1.48: period 2 from step 0.
+- Earlier 'no closure' verdicts came from the representation-comparison bug (fixed, guarded, Concordance modus operandi).
+Next: exact walls between the regimes (near 1.01, 1.09, 1.25, 1.39); the cube chain #80 rerun the same way (its 'no closure' had the
+same bug).

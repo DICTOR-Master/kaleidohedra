@@ -94,7 +94,7 @@ def similar_sym(A, B):
         r = dot(v, v) / dot(m, m)
         if dot(v, m) == ZERO: return None
         if g is None: g = r
-        elif sp.simplify(K.to_sympy(r - g)) != 0: return None   # 11-10 FIX: compare VALUES; '!=' compared representations and gave false 'not similar'
+        elif (r - g).numer: return None   # 11-10 FIX: a field element is zero iff its numerator polynomial is zero ('!=' compared representations)
     return g
 
 if __name__ == '__main__':

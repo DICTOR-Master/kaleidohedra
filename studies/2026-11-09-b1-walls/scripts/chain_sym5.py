@@ -106,7 +106,7 @@ def similar_sym(Aa, B):
         if m is None or dot(v, m) == ZERO: return None
         r = dot(v, v) / dot(m, m)
         if g is None: g = r
-        elif sp.simplify(K.to_sympy(r - g)) != 0: return None   # 11-10 FIX: compare VALUES; '!=' compared representations and gave false 'not similar'
+        elif (r - g).numer: return None   # 11-10 FIX: a field element is zero iff its numerator polynomial is zero ('!=' compared representations)
     return g
 
 if __name__ == '__main__':
@@ -135,7 +135,12 @@ if __name__ == '__main__':
         for j, (Aa, ka) in enumerate(hist):
             if ka == kinds:
                 g = similar_sym(Aa, V)
-                if g is not None: closed = dict(enters=j, period=k - j, gain2=str(g.as_expr())); break
+                if g is not None:
+                    # 11-10: the gain is a huge unreduced element; test it against the constant (35 - 15 sqrt5)^k-period form exactly
+                    tgt = kel(sp.expand((35 - 15 * sp.sqrt(5)) ** 2)) ** ((k - j) // 4) if (k - j) % 4 == 0 else None
+                    const = tgt is not None and not (g - tgt).numer
+                    closed = dict(enters=j, period=k - j, gain2=('(35 - 15 sqrt5)^2 for every depth s in the hop' if const else f'not constant; at s0 ~ {float(sp.N(K.to_sympy(g).subs(s, s0))):.12f}'))
+                    break
         hist.append((V, kinds))
         if closed: break
     print('chain hop', HOP, f'~ ({float(HOP[0]):.6f}, {float(HOP[1]):.6f})')
