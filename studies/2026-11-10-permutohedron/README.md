@@ -46,3 +46,10 @@ three-valued = sum over a<c of n!/(a!b!c!); two-valued = 2^(n-1) - 1 (n odd), 2^
 for even n: (a,b,a) and (b/2,2a,b/2) give the same hyperplane when b is even - corrected and rechecked).
 N = 3, 15, 65, 225, 770, 2443, 7761 for n = 3..9 (dimensions 2..8). OEIS 11 Nov: no match for 3,15,65,225,770,2443 nor for the three-valued
 part 3,12,50,210,707,2380 (prior-art search continues before any novelty claim).
+## The skeleton as a web of bonds (DICTO 11 Nov: "B the skeleton as a web of bonds"; scripts/web_of_bonds.py, FINAL ok)
+120 orderings, 240 bonds (swap two neighbouring values), 4 per corner, 10 bond directions (the roots e_i - e_j). Distance from 12345 =
+number of out-of-order pairs (PASS): 1,4,9,15,20,22,20,15,9,4,1 (Mahonian numbers, classical). Shortest routes 12345 -> 54321: 768
+(classical: Stanley 1984, reduced words of the longest permutation). Corners by descents 1,26,66,26,1 = the sweep's h-vector (#104).
+The web's smallest rings are its 2-faces: squares = two swaps that commute, hexagons = the braid ring s_k s_k+1 s_k = s_k+1 s_k s_k+1.
+Reading for the paper: the 65 Vacuus slices carry every ring of the web, so the 4D Vacuus is the web's RULES made solid (squares =
+independent bonds, hexagons = the braid rule); the five central TOs carry the 30 rings (2,1,2) = the swaps that leave the middle value 3 in place.
