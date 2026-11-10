@@ -299,3 +299,10 @@ excess e_k/F_k 0.03–0.07 and falling.
 axes). Route to (A1): a candidate v is cut only if some corner w has w·v > |w|², which forces |w| < |v| (a smaller cutter beside it);
 if cutters are never cut and each cuts a bounded number, c_k < F_{k−1}/2. Next: instrument the family run (who cuts whom) on the
 compute machine to test 'cutters survive' and the cut multiplicity.
+
+## §20 Santaló route (10 Nov 2026, DICTO: "start the Santaló volume test")
+Idea: P = vol(D_k) vol(D_k°)/(4π/3)² ≤ 1 (Blaschke–Santaló; = 1 only for ellipsoids, here the ball by symmetry). If P rises along
+the family, quantitative Santaló stability bounds the distance to the ball, hence t_min. santalo.py pilot (k ≤ 18, float): P = 0.94562
+(k = 0), 0.95022, 0.95008 (k = 3, falls), …, 0.95197 (k = 6, falls), …, 0.95559 (k = 9, falls), then rises at every step k = 9..18 to
+0.99521. Not monotone from the start: the falls sit at k = 3, 6, 9 (the period-3 rhythm of the early family). Full run k ≤ 32 on the
+compute machine (santalo-32.log). Next: monotone from k = 9? a rise lemma for the hop; the stability constant needed.
