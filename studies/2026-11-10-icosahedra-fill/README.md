@@ -81,3 +81,7 @@ Order: control (must be SAT) → octet 4.81 → 5.38 → 6.30 → gyrated 7.22 �
 Outcomes: SAT → exact check (verify_exact.py) → then the next radius out; UNSAT at window W → widen WMARGIN 0.5 → 1.0 → 1.5 once
 (a filling outside the window is still possible); UNSAT at the widest → record 'no face-to-face filling within window', move on.
 Control failing (UNSAT on a single star to radius 3.4, known fillable) = the window is too tight: widen before anything else runs.
+
+**Step 4 control PASSED (10 Nov):** SAT method (window 4.0, vectorised overlap test agreeing with the exact routine on 3000 pairs)
+on the single star to radius 3.4: SAT, 320 fill tiles (the known count); witness checked EXACTLY in Q(√5) (verify_exact.py): 340
+tiles, no overlap, no face used thrice, no open face inside 3.4. Real spacings next, each through the pre-flight gate.

@@ -18,3 +18,8 @@ for cid, open_ in json.load(open(sys.argv[1])).items():
     req(f'https://zenodo.org/api/records/{rid}/draft', 'PUT', {k: d[k] for k in ('metadata', 'files', 'access', 'pids', 'custom_fields') if k in d})
     p = req(f'https://zenodo.org/api/records/{rid}/draft/actions/publish', 'POST')
     print(cid, rid, 'ok' if url in p['metadata']['description'] else 'NOT SAVED', url, flush=True)
+
+# shared post-check (11-10) over every record this run touched
+import subprocess as _sp
+_ids = [a for a in sys.argv[1:] if a.isdigit()]
+if _ids and os.path.basename(__file__) == 'zen_preview.py': _sp.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zen_postcheck.py')] + _ids)

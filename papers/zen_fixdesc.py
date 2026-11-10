@@ -38,3 +38,8 @@ for st in sorted(glob.glob(f'{P}/**/zenodo-state.json', recursive=True)):
     time.sleep(0.3)
 print(f'{"changed" if apply else "would change"}: {changed if apply else "see above"}; manual: {manual}')
 print('FINAL ok' if manual == 0 else 'FINAL FAIL: manual fixes needed')
+
+# shared post-check (11-10) over every record this run touched
+import subprocess as _sp
+_ids = [a for a in sys.argv[1:] if a.isdigit()]
+if _ids and os.path.basename(__file__) == 'zen_preview.py': _sp.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zen_postcheck.py')] + _ids)
