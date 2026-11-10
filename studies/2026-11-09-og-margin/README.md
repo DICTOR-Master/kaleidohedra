@@ -313,3 +313,15 @@ compute machine (santalo-32.log). Next: monotone from k = 9? a rise lemma for th
 Consequence: monotone from k = 9 (to 31) holds; but if the limit is not the ball, stability alone cannot reach t_min → 1; it still
 suffices if the Santaló-stability distance at P ≥ 0.9991 keeps t_min ≤ 3/φ² (margin 0.145). Next: that stability constant (Böröczky
 2010; Ivaki 2015), and a rise lemma for one hop.
+
+## §21 Santaló route: closed for a proof (10 Nov 2026, literature check; DICTO "go ahead with both")
+Stability theorem (K. J. Böröczky, Stability of the Blaschke–Santaló and the affine isoperimetric inequality, Adv. Math. 2010,
+arXiv 0901.3340; K. Ball and K. J. Böröczky, arXiv 0909.3742): in dimension n ≥ 3, vol(K)vol(K°) ≥ (1 − ε)ω_n² gives a Banach–Mazur
+distance to an ellipsoid of at most 1 + γ ε^{1/(6n)} |log ε|^{…}, and the paper states that γ was not made explicit (the exponent
+1/(6n) being likely far from optimal). For n = 3 the exponent is 1/18. Our family: ε = 1 − 0.99916 = 8.4·10⁻⁴ at k = 31, so
+ε^{1/18} ≈ 0.675: even with γ = 1 the bound allows distance ≈ 1.67, far above the 1.146 needed. Two further facts close it: the
+product levels off near 0.9992 (ε does not tend to 0), and the planar or symmetric-difference results (Ivaki, arXiv 1405.5384;
+arXiv 1411.3842; arXiv 2602.20325, origin-symmetric, symmetric difference) do not give the sup-norm closeness t_min needs.
+**Verdict: the Santaló route cannot prove Conjecture 1 with known theorems.** The monotone rise of P from k = 9 to 31 stays a
+recorded observation. Sources checked: arXiv 0901.3340, 0909.3742, 1405.5384, 1411.3842, 2602.20325; users.renyi.hu/~carlos
+(zonoid stability, Böröczky–Hug), renyi.hu/~carlos/prekopaleindlerhigh.pdf.

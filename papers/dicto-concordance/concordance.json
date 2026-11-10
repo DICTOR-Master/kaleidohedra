@@ -5679,6 +5679,15 @@
     "retry": "exact walls between regimes; same treatment for #80",
     "study": "2026-11-09-b1-walls",
     "date": "2026-11-10"
+   },
+   {
+    "question": "#43 Conjecture 1 for all k by the Blaschke–Santaló volume product (monotone rise + stability)",
+    "method": "literature: Böröczky 2010 stability (exponent 1/(6n), constant not explicit), Ball–Böröczky; family data k <= 31",
+    "status": "METHOD-FAILED (for a proof)",
+    "result": "needed distance 1.146; known stability gives at best 1 + gamma*eps^(1/18) ~ 1.67 at eps = 8.4e-4 even with gamma = 1; the product levels off near 0.9992; no explicit constants",
+    "retry": "only if a stability theorem with exponent near 1/2 and explicit constant appears",
+    "study": "2026-11-09-og-margin",
+    "date": "2026-11-10"
    }
   ]
  },
