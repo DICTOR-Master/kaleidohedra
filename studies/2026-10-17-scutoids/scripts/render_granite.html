@@ -63,14 +63,26 @@
   const root = new THREE.Group(); root.position.copy(cen).multiplyScalar(-1); scene.add(root);
   const caption = { group: ['Eight scutoids, one group', 'red granite · pentagon and hexagon ends swap top to bottom'],
     apart: ['The eight pieces, pulled apart', 'every piece is a scutoid: a pentagon at one end, a hexagon at the other, one small triangle face'],
-    layer: ['Nine groups in one layer', 'the same eight pieces repeat side by side'], stack: ['Layers stacked straight up', 'flat top on flat bottom; nothing crosses between layers'] }[MODE];
+    layer: ['Nine groups in one layer', 'the same eight pieces repeat side by side'], stack: ['Layers stacked straight up', 'flat top on flat bottom; nothing crosses between layers'],
+    wall: ['Castle wall', 'the layer turned on its side: pentagon and hexagon ends face out, sloped back like an ishigaki wall'] }[MODE];
   document.getElementById('cap').innerHTML = (STONE === 'red' ? 'Red granite — ' : 'Grey granite — ') + caption[0] + '<small>' + caption[1] + '</small>';
   let dist = 7.5, tgtY = 0.0, el = 0.62;
   if (MODE === 'group') for (const p of J.pieces) root.add(pieceMesh(p, new THREE.Vector3()));
   if (MODE === 'apart') { for (const p of J.pieces) { const d = pcen(p).sub(cen); d.y = 0; root.add(pieceMesh(p, d.multiplyScalar(0.55))); } dist = 9.5; }
   if (MODE === 'layer') { for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) for (const p of J.pieces) root.add(pieceMesh(p, L0.clone().multiplyScalar(i).add(L1.clone().multiplyScalar(j)))); dist = 21; el = 0.8; }
   if (MODE === 'stack') { for (let s = 0; s < 3; s++) for (let i = 0; i <= 1; i++) for (let j = 0; j <= 0; j++) for (const p of J.pieces) root.add(pieceMesh(p, L0.clone().multiplyScalar(i).add(L1.clone().multiplyScalar(j)).add(new THREE.Vector3(0, s * (J.H + 0.18), 0)))); dist = 13; tgtY = 1.1; root.position.add(L0.clone().multiplyScalar(-0.5)); }
-  const az = -0.75; cam.position.set(Math.sin(az) * Math.cos(el) * dist, tgtY + Math.sin(el) * dist, Math.cos(az) * Math.cos(el) * dist); cam.lookAt(0, tgtY, 0);
+  let az = -0.75;
+  if (MODE === 'wall') {                                   // DICTO 11-10: castle wall in grey granite (the 10-17 'horizontal angle variation')
+    const wall = new THREE.Group(); const W = 5.2, HT = 4.6;
+    for (let i = -8; i <= 8; i++) for (let j = -8; j <= 8; j++) {
+      const off = L0.clone().multiplyScalar(i).add(L1.clone().multiplyScalar(j));
+      for (const p of J.pieces) { const c = pcen(p).add(off).sub(cen); if (Math.abs(c.x) < W && c.z > -HT && c.z < HT * 0.15) wall.add(pieceMesh(p, off)); }
+    }
+    const tilt = new THREE.Group(); tilt.add(wall); tilt.rotation.x = Math.PI / 2 - 0.26; root.add(tilt);
+    root.position.set(0, 0, 0); wall.position.copy(cen).multiplyScalar(-1);
+    dist = 21; tgtY = 1.2; el = 0.1; az = -1.05;
+  }
+  void 0; cam.position.set(Math.sin(az) * Math.cos(el) * dist, tgtY + Math.sin(el) * dist, Math.cos(az) * Math.cos(el) * dist); cam.lookAt(0, tgtY, 0);
   renderer.render(scene, cam); document.title = 'ready';
 })();
 </script>
