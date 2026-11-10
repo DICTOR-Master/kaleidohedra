@@ -307,9 +307,9 @@ the family, quantitative Santaló stability bounds the distance to the ball, hen
 0.99521. Not monotone from the start: the falls sit at k = 3, 6, 9 (the period-3 rhythm of the early family). Full run k ≤ 32 on the
 compute machine (santalo-32.log). Next: monotone from k = 9? a rise lemma for the hop; the stability constant needed.
 
-## §20 Santaló route (10 Nov 2026, DICTO: "start the Santaló volume test")
-Idea: P(vol) = vol(D_k) vol(D_k°)/(4π/3)² ≤ 1 (Blaschke–Santaló; = 1 only for ellipsoids, here the ball by symmetry). If P rises along
-the family, quantitative Santaló stability bounds the distance to the ball, hence t_min. santalo.py pilot (k ≤ 18, float): P = 0.94562
-(k = 0), 0.95022, 0.95008 (k = 3, falls), …, 0.95197 (k = 6, falls), …, 0.95559 (k = 9, falls), then rises at every step k = 9..18 to
-0.99521. Not monotone from the start: the falls sit at k = 3, 6, 9 (the period-3 rhythm of the early family). Full run k ≤ 32 on the
-compute machine (santalo-32.log). Next: monotone from k = 9? a rise lemma for the hop; the stability constant needed.
+**Full run (k ≤ 31; k = 32 ran out of memory, exit 137).** P rises at every step from k = 9 to 31: 0.99521 (18), 0.99713 (20), 0.99808
+(22), 0.99860 (24), 0.99889 (26), 0.99906 (28), 0.99914 (30), 0.99916 (31). The rises shrink fast (7.5e-5, 9.8e-5, 5.0e-5, 3.4e-5,
+1.2e-5 for k = 27..31): P may tend to about 0.9992, below 1, which matches the open shape question (limit slightly non-round, r/R ≈ 0.990).
+Consequence: monotone from k = 9 (to 31) holds; but if the limit is not the ball, stability alone cannot reach t_min → 1; it still
+suffices if the Santaló-stability distance at P ≥ 0.9991 keeps t_min ≤ 3/φ² (margin 0.145). Next: that stability constant (Böröczky
+2010; Ivaki 2015), and a rise lemma for one hop.
