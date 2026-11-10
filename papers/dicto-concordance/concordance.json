@@ -7195,6 +7195,12 @@
     "mess_up": "a search window set too tight made a known-fillable case come out impossible",
     "guard": "every decision run carries a positive control with a known answer (and a negative one where available) that must pass before the real cases launch",
     "where": "study job plans (e.g. icosahedra-fill step 4)"
+   },
+   {
+    "date": "2026-11-10",
+    "mess_up": "the job launcher was edited in place while two of its waiters ran; bash reads scripts lazily, both waiters died and one job ran unwatched",
+    "guard": "guard scripts are changed only by writing a .new file and moving it over (running copies keep the old file); dbbwait.sh re-attaches a waiter to a running job; the attention check confirms every running job has a live waiter",
+    "where": "dicto-alerts/dbbjob.sh header, dicto-alerts/dbbwait.sh"
    }
   ],
   "practice": [
