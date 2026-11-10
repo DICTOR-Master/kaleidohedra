@@ -26,3 +26,23 @@ hyperplanes; the slices: 20 x (24 corners, 14 faces: 6 squares + 8 hexagons, 2 h
 each carrying 6 squares): the 3D permutohedron sits at the centre of the 4D one five times - DICTO's "does it infinitely nest in itself".
 (Slice shapes from float hulls; types by corner and face counts; congruence of the TO slices to be checked exactly.) No build wanted
 (DICTO: "I dont need a build im just in a state of wonder").
+## The 4D Vacuus, EXACT (11 Nov; scripts/vacuus4d_exact.py, data-vacuus4d-exact.json, FINAL ok) - SUPERSEDES the float slice types above
+65 central hyperplanes carry the 150 2-faces (each face in exactly one). Under S5 x (+-1) they form FOUR congruence classes (the float run
+split one class by rounding):
+- 30 x normal (8,3,3,-7,-7) [split (1,2,2)]: 32 corners, 52 edges, 22 faces (14 squares, 8 hexagons); carries 2 squares
+- 20 x (9,-1,-1,-1,-6) [split (1,1,3)]: 24 corners, 14 faces (6 sq, 8 hex) = truncated-octahedron TYPE, edges^2 2 and 56/9; carries 2 hexagons
+- 10 x (3,3,-2,-2,-2) [split (1,3,1)]: 24 corners, 42 edges, 20 faces (18 sq, 2 hex); carries 2 hexagons
+-  5 x (4,-1,-1,-1,-1) [split (2,1,2)] = slices "x_i = 3, the middle value" = permutohedron of (1,2,4,5): truncated octahedron TYPE,
+   edges^2 2 (24) and 8 (12): regular squares, hexagons with sides alternating sqrt2, 2sqrt2; carries 6 squares (its own 6 squares).
+Every face of every class verified exactly (plane + all corners strictly on one side), Euler 2.
+## The five central truncated octahedra slot together (scripts/crossing5.py, exact, PASS)
+Two of them (x_i = 3, x_j = 3) cross in the central plane x_i = x_j = 3: no corner or edge of the 4D solid lies on it; the section is a
+REGULAR HEXAGON, corners the permutations of (2, 0, -2) on the other three coordinates, side^2 = radius^2 = 8. Ten such hexagons; three
+central TOs share a segment; all five meet only at the centre.
+## The Vacuus count in every dimension (scripts/vacuus_general.py, brute force n = 3..9, FINAL ok)
+Ridge = ordered split (B1,B2,B3), sizes (a,b,c); its central hyperplane has normal c1 = bc(b+c) on B1, c2 = -ac(a+2b+c) on B2,
+c3 = ab(a+b) on B3 (closed form checked against exact elimination for every ridge). N(n) = three-valued + two-valued:
+three-valued = sum over a<c of n!/(a!b!c!); two-valued = 2^(n-1) - 1 (n odd), 2^(n-2) - 1 (n even) (FIRST formula C(n,b) per a=c FAILED
+for even n: (a,b,a) and (b/2,2a,b/2) give the same hyperplane when b is even - corrected and rechecked).
+N = 3, 15, 65, 225, 770, 2443, 7761 for n = 3..9 (dimensions 2..8). OEIS 11 Nov: no match for 3,15,65,225,770,2443 nor for the three-valued
+part 3,12,50,210,707,2380 (prior-art search continues before any novelty claim).

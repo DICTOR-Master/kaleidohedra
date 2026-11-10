@@ -5829,6 +5829,33 @@
     "retry": "never",
     "study": "papers/2026-11-10-scutoids-4d",
     "date": "2026-11-10"
+   },
+   {
+    "question": "4D Vacuus of the 4D permutohedron, exact",
+    "method": "vacuus4d_exact.py exact faces + S5x(+-1) orbits",
+    "status": "SETTLED",
+    "result": "65 slices, 4 classes 30/20/10/5; 5 central = permutohedron(1,2,4,5) TO-type, squares regular, hexagons sqrt2/2sqrt2; float run's 8 types WRONG (rounding)",
+    "retry": "never",
+    "study": "studies/2026-11-10-permutohedron",
+    "date": "2026-11-11"
+   },
+   {
+    "question": "How the five central TO slices meet",
+    "method": "crossing5.py exact 2-face piercing + majorization",
+    "status": "SETTLED",
+    "result": "pairwise in regular hexagons (side^2 = radius^2 = 8), 10 of them; triples on segments; all five at the centre",
+    "retry": "never",
+    "study": "studies/2026-11-10-permutohedron",
+    "date": "2026-11-11"
+   },
+   {
+    "question": "Vacuus count of the n-permutohedron, every n",
+    "method": "vacuus_general.py closed form vs brute force n=3..9",
+    "status": "SETTLED",
+    "result": "N = 3,15,65,225,770,2443,7761; formula with even-n correction; OEIS no match (11 Nov)",
+    "retry": "never",
+    "study": "studies/2026-11-10-permutohedron",
+    "date": "2026-11-11"
    }
   ]
  },
