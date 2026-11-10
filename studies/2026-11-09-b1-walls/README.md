@@ -92,3 +92,4 @@ continuous at every wall; vanishes smoothly at λ* = -5s/8 (triple root for oct,
 #61's Theorem 2). STATUS: exact (every hop a polynomial identity, every wall an exact root) at the six spacings; the s-dependence of
 the closed forms is fitted to them and checked exactly at all six (7 points of s incl. the 9 Nov ones for δ_tet). PROOF FOR ALL s:
 run the walk with s symbolic too (two-parameter Hopscotch) - next if wanted. Grid result superseded (its "jump" was sampling).
+Chamber map: chamber-map-61.png (scripts/chamber_map61.py; also papers-to-read/chamber-map-61-swap-rule.png). All cells close at s = 1/4: λ-(c) meets -9s/8 at (1/4, -9/32); -(4-s)/24 meets -5s/8 at (1/4, -5/32); -(4-s)/24 meets -9s/8 at s = 1/7.
