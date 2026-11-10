@@ -53,3 +53,18 @@ with the faster version). 4.81, 5.38, 6.30: 25-minute runs (oct2-*.log on the co
 gyro_stars.py: hcp stars (layers ⟂ (1,1,1), ABAB, period c = (4x/3)(1,1,1)). Exact grid condition: every star centre must lie in the
 module of the first star (face-to-face tiles never leave it); c is in the module only when 3 divides both m and n in the tested cases
 ((1,1), (0,2), (2,1), (1,2) excluded exactly; (3,0), (0,3), (3,3) pass). Runs: spacings 4.46, 7.22, 8.92, 11.68 (gyro-*.log).
+
+**Step 5, Dehn check: Cleo-Icos + Antonius + dodecahedron face pyramids (DICTO 10 Nov 2026: "yes add the Dehn check with antonius").**
+Angles: θ_D = arccos(−1/√5) (dodecahedron), θ_I = arccos(−√5/3) (icosahedron). Pentagonal (dodecahedron face) pyramid, base edge a:
+base edges carry θ_D/2, side edges 120° (rational): D = (5a/2) ⊗ θ_D. Cleo-Icos: base θ_I/2, sides 72°: D = (3s/2) ⊗ θ_I. Antonius
+(middle of the golden rhombohedron): angles θ_I/2-type and multiples of 36° only, so D(Antonius) ∈ R ⊗ θ_I (= −2 D(Cleo) at equal size).
+Lemma: θ_D, θ_I, π are linearly independent over Q. Proof: a relation pθ_D + qθ_I = rπ makes z = ((−1+2i)/√5)^p ((−√5+2i)/3)^q a root of
+unity in Q(i, √5). −√5 + 2i and −√5 − 2i have product 9 and are coprime (their difference 4i and sum −2√5 share no factor with 9), so
+(−√5+2i)/3 has valuation +1 at a prime above 3 where its conjugate has −1: q = 0. Then (−1+2i)/√5 would be a root of unity; but
+−1 + 2i = −(1 − 2i) is one prime factor of 5 = (1+2i)(1−2i) and √5 holds both halves, so its valuations above 5 are unequal: p = 0. ∎
+(Numerical check: PSLQ finds no integer relation with coefficients up to 10¹², 80 digits.)
+Theorem: no space filling (any sizes, any arrangement, periodic or not) uses dodecahedron face pyramids together with only Cleo-Icos and
+Antonius. Proof: in a filling, frequency-weighted Dehn invariants sum to zero (Debrunner; Lagarias–Moews), and by the lemma the θ_D part
+(5/2) Σ a_j ⊗ θ_D must vanish by itself; every term is positive, so there are no pentagonal pyramids. ∎
+A partner with a NEGATIVE θ_D part is needed (as Antonius is the negative θ_I partner of the Cleo-Icos): the #47 connectors.
+DICTO 10 Nov: "they fill an icosidodecahedron together": being checked (centre cut of the icosidodecahedron vs these pyramids).
