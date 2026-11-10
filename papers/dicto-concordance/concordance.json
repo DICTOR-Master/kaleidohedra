@@ -7156,6 +7156,36 @@
     "mess_up": "a dbb wait-loop (pgrep -f on a string contained in its own command line) waited 4.5 days for nothing; its follow-on runs never ran; nobody saw it",
     "guard": "~/dicto-alerts/orphans.sh (run by show.sh): lists any python job  older than 30 min not under the crash-alarm wrapper; agent briefs: runs > 5 min go through dbbjob.sh; waits use a PID (wait/kill -0), never pgrep of a string the waiter contains",
     "where": "~/dicto-alerts/orphans.sh"
+   },
+   {
+    "date": "2026-11-10",
+    "mess_up": "search runs hit their 25-minute cap and sat finished and unread for over two hours (a time was promised, nothing woke the worker)",
+    "guard": "every compute-machine job runs through the job launcher, which waits in the background and reports the moment the job ends; a 20-minute attention check reads every running and finished log; no time promise without a watcher",
+    "where": "dicto-alerts/dbbjob.sh; session attention check"
+   },
+   {
+    "date": "2026-11-10",
+    "mess_up": "runs stalled or thrashed for many minutes (same best, set-up phase that could never end) before anyone looked",
+    "guard": "jobs print PROGRESS <fraction> lines; the checker projects the finish and warns on a silent log (15 min), no progress line (10 min) or a projected finish beyond the cap",
+    "where": "dicto-alerts/dbbcheck.sh + dbbcheck_remote.sh"
+   },
+   {
+    "date": "2026-11-10",
+    "mess_up": "job commands silently cut by nested shell quoting, so a guard self-test passed without testing anything",
+    "guard": "the launcher ships each command as a file and the checker runs as a shipped file: no nested quoting; guards are self-tested with a command containing quotes, semicolons and $",
+    "where": "dicto-alerts/dbbjob.sh, dbbcheck.sh"
+   },
+   {
+    "date": "2026-11-10",
+    "mess_up": "predictable failures launched anyway: an enumeration over a dense golden grid that could never end; a family level killed by memory although its growth (x1.3 per level) was known",
+    "guard": "written job plan before launch: stages, sizes from a pilot, budget per stage, likely failure modes, action on each outcome; a failure the estimate could have predicted counts as a mistake, not a result",
+    "where": "study README job plan; memory rule (no time promises)"
+   },
+   {
+    "date": "2026-11-10",
+    "mess_up": "a search window set too tight made a known-fillable case come out impossible",
+    "guard": "every decision run carries a positive control with a known answer (and a negative one where available) that must pass before the real cases launch",
+    "where": "study job plans (e.g. icosahedra-fill step 4)"
    }
   ],
   "practice": [
@@ -7171,7 +7201,12 @@
     "how": "agents read ledger-digest.txt (one generated line per ledger attempt, ~7 KB, rebuilt each session by ~/dicto-alerts/ledger_digest.py from concordance.json, never hand-edited) instead of the 260 KB Concordance file, and open a full entry only by its index; briefs never send agents to the 563 KB working notes, only the relevant lines",
     "why": "quality: every line is generated from the source and the full entry is one step away; cost: agents stop loading files that are mostly irrelevant to their task"
    }
-  ]
+  ],
+  "running_tests": {
+   "note": "DICTO 10 Nov 2026: 'do we need an audit on how to run tests … analyzing all our failed data?' and 'to go in concordance modus operandi'. Checklist and ranked guards from the run audit (studies/2026-11-10-run-audit) go here.",
+   "checklist": [],
+   "status": "audit running"
+  }
  },
  "destinations_2026_11_09": {
   "The Polar Line (unifying framework)": [

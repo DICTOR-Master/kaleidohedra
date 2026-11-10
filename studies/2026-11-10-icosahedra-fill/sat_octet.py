@@ -107,6 +107,7 @@ print(f'octet m={m_} n={n_}: x {x:.4f}, star spacing {d_nn:.4f}, {len(pts)} neig
 if clash:
     print('FINAL ok: spacing too small (stars overlap)' if clash else 'FINAL FAIL'); sys.exit()
 import os
+if os.environ.get('NO_NEIGHBOURS'): stars = stars[:20]; print('control: single star, no neighbours')
 if os.environ.get('RMAX_OVERRIDE'): RMAX = float(os.environ['RMAX_OVERRIDE']); print('RMAX override', RMAX)
 TAG = 'octet'
 # SAT FORM (DICTO 10 Nov 2026): decide outright whether the region between the stars, within radius RMAX of the origin star's
@@ -132,6 +133,7 @@ def hid(z): return np.linalg.norm(np.array(z) @ _C)
 WMARGIN = float(os.environ.get('WMARGIN', '0.5'))
 _starcorners = {q for t in stars for f in t['faces'] for q in f}
 W = max(hid(q) for q in _starcorners) + WMARGIN
+if os.environ.get('WABS'): W = float(os.environ['WABS'])   # absolute window (11-10: the known 3.4 filling needs 3.53)
 print(f'hidden window W = {W:.3f} (star max + {WMARGIN})', flush=True)
 def in_window(t): return all(hid(q) <= W + 1e-9 for f in t['faces'] for q in f)
 def clear_of_stars(t):
