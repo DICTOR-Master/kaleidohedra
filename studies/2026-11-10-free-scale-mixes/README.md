@@ -14,3 +14,13 @@ their own sizes, in TWO worlds (#47 needed four) joined by ONE seam that meets F
   octahedron's equator square (face to face).
 Next (DICTO's 22 Oct list): cubes as cubes in the X/Y edging (fewer helpers); the D–I bridge (a true meeting, Chain of Karma lead);
 sphere-unit sizes (octet scale options); coloured-glass views in the #47 world; random packings joined by adaptors.
+
+## Step 2: cubes as cubes (10 Nov, mixes_cubes.py, data-cubes.log, FINAL ok)
+In every mix with both D and C, each edging cell next to a Dogstar is a PLAIN CUBE (edge φ, a solid of the mix) and that Dogstar keeps
+the roof-space on the edging side; Y disappears. All 31 mixes still fill space (points covered once, no dodecahedra overlap, every solid
+used, seam face to face). Window count: edging cells 26 whole cubes C, 24 X (next to a dodecahedron, its roof pokes in).
+Exact shapes of the kept-roof Dogstars: in the thinnest slab (one layer of dodecahedra, the check above) each Dogstar has edging above
+and below, so it keeps two roof-spaces: a cube of edge φ minus its four side roofs (S4). In a thicker slab a Dogstar next to one edging
+keeps one: a cube minus five roofs (S5); inner Dogstars stay S. (The script labels both 'S5'.) Kit for mixes with D and C, thinnest
+slab: P, Q, A, S4, X (five; Y and S not needed). Names of S4/S5 are DICTO's.
+Next: the D–I bridge (a true meeting of dodecahedra and icosahedra; lead: a flat Chain of Karma); sphere-unit sizes.
