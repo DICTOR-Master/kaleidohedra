@@ -30,3 +30,17 @@ numerical-steps method (60 digits, several s0, then one exact check).
 - Earlier 'no closure' verdicts came from the representation-comparison bug (fixed, guarded, Concordance modus operandi).
 Next: exact walls between the regimes (near 1.01, 1.09, 1.25, 1.39); the cube chain #80 rerun the same way (its 'no closure' had the
 same bug).
+
+## #80 cube chain: map (10 Nov 2026, chain_num.py, numerical; corner counts match the exact steps 0–5 at 5/7)
+| depth s | behaviour | scale per cycle |
+|---|---|---|
+| 0.50 | period 4 from step 0 | 5/2 |
+| 0.52–0.60 | period 4 from step 3 | varies (1.8667 at 0.56) |
+| 0.62–0.74 | NO closure: grows without bound (1122 corners by step 12 at 5/7) | – |
+| 0.76–0.98 | period 4 from step 1 | varies (2.0998 at 0.86, 2.5605 at 0.94) |
+| 1.00 | period 2 from step 0 | 3 |
+The paper's sample depth 5/7 ≈ 0.714 lies in the only non-closing window: that is why the exact chain ran for hours.
+**Common pattern with #81:** the same five regimes in the same order (dodecahedron: ≤1.00 period 4 from 0 with constant scale 10/φ⁴;
+1.02–1.08 from step 3; ≈1.10–1.24 none; 1.26–1.38 from step 1; ≥1.40 period 2). The period-2 scales are #80's gains: 3 (cube) and
+15 − 6√5 = 1.583592… (dodecahedron, numerically 1.583592135), #43's constant. Exact check of the cube's step-1 regime at s = 43/50
+running (plan b1-cube-exact).

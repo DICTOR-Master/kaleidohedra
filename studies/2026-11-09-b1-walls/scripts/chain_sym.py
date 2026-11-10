@@ -119,13 +119,14 @@ if __name__ == '__main__':
         planes = [(v, dot(v, v)) for v in V]
         V, V0, T, polys, kinds = sym_halfspace(planes, s0)
         F = factors(polys); h = hop(F, s0, lo, hi); HOP = (max(HOP[0], h[0]), min(HOP[1], h[1]))
+        print(f'PROGRESS {k / N:.3f} step {k} of {N}', flush=True)
         print(f'step {k}: {len(V)} corners, kinds {kinds}, hop ({h[0]}, {h[1]}) ~ ({float(h[0]):.6f}, {float(h[1]):.6f}), '
               f'{len(F)} wall factors, max degree {max((sp.Poly(f, s).degree() for f in F), default=0)}, {time.time()-t0:.0f}s', flush=True)
         for j, (A, ka) in enumerate(hist):
             if ka == kinds:
                 g = similar_sym(A, V)
                 if g is not None:
-                    closed = dict(enters=j, period=k - j, gain2=str(sp.factor(g.as_expr()))); break
+                    closed = dict(enters=j, period=k - j, gain2=f'{float(sp.N(K.to_sympy(g).subs(s, s0))):.12f} at s0 (exact element, not printed)'); break
         hist.append((V, kinds))
         if closed: break
     print('chain hop', HOP, f'~ ({float(HOP[0]):.6f}, {float(HOP[1]):.6f})')
