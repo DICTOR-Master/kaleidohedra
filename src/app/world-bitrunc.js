@@ -36,7 +36,7 @@ export const BT_CUT = [0.55, 0.45, 1];   // Whole: the cut's normal points at th
 export const btShells = () => BT.model().SHELLS.length;
 const TI_HEX = 0xefe9dc, TT_HEX = 0x9fb4c8;     // the Queens world's ivory and blue
 const LET_GO = 0xd98fa6, MEET = 0x47b07f;        // the swap: the pair letting go rose, the pair meeting green
-const EDGE = 0x3a3f4a, GLOW = 0.3, SHELL = 0.42;
+const EDGE = 0x3a3f4a, EDGE_DARK = 0x1d2027, GLOW = 0.3, SHELL = 0.42;
 const IVORY = 0xefe9dc, BLUE = 0x9fb4c8, OTHER = 0xd8c690;
 const SIDED = { 5: 0xc8504a, 6: 0xd9a441, 7: 0x7fae7a, 8: 0x8b78c4, 9: 0x4fa3a5, 10: 0xd07fb0 };   // the Queens world's shadow faces, by sides
 const SHORT = { vertex: 'vertex-first', edge: 'edge-first', face: 'face-first', cell: 'cell-first' };
@@ -226,7 +226,7 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
     const M = BT.model(), SQ = M.SHELL_POINTS.map((p) => p.map((c) => c * WS));
     const CENTRES = M.CELLS.map((c) => [0, 1, 2].map((i) => c.corners.reduce((a, k) => a + SQ[k][i], 0) / c.corners.length));
     const farTI = M.CELLS.findIndex((c) => c.kind === 'TI' && c.corners.every((k) => M.CORNERS[k][0] < -M.CORE_HEIGHT + 1e-9));
-    shellData = { M, SQ, CENTRES, FAR: M.SHELLS.findIndex((list) => list.includes(farTI)) };
+    shellData = { M, SQ, CENTRES, farTI, FAR: M.SHELLS.findIndex((list) => list.includes(farTI)) };
     return shellData;
   }
   /** Cells as one mesh, each drawn a little smaller about its own centre (shrink) so shared faces never coincide. */
@@ -242,7 +242,7 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
   const radiusOf = (list) => { const { M, SQ } = shellsModel(); return Math.max(...list.flatMap((c) => M.CELLS[c].corners).map((k) => Math.hypot(...SQ[k]))); };
   function drawShells() {
     clear(shellsGroup);
-    const { M, CENTRES, FAR } = shellsModel(), SH = M.SHELLS, N = SH.length;
+    const { M, CENTRES, FAR, farTI } = shellsModel(), SH = M.SHELLS, N = SH.length;
     view.shells = Math.min(view.shells, N);
     if (view.whole) {
       // all the shells at once, cut open: a cell stays when its centre lies behind the cut through the centre; the shell holding the
@@ -258,11 +258,16 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
       shown = { whole: true };
       return;
     }
+    // the inner shells faint in their shell's colour; the newest solid, each cell in its kind's colour (truncated icosahedra ivory,
+    // truncated tetrahedra blue, as in the Sweep) with crisp dark edges, so every cell reads as its own piece
     const n = view.shells;
-    for (let k = 0; k < n; k++) {
-      const newest = k === n - 1;
-      cellsMesh(SH[k], shellColour(k, N), newest ? { opacity: 0.9, edge: 0xf3ead2, edgeOpacity: 0.85, glow: 0.16, roughness: 0.45, shrink: 0.97 } : { opacity: 0.1, edge: 0xffffff, edgeOpacity: 0.12, shrink: 0.97 });
-    }
+    for (let k = 0; k < n - 1; k++) cellsMesh(SH[k], shellColour(k, N), { opacity: 0.1, edge: 0xffffff, edgeOpacity: 0.12, shrink: 0.97 });
+    // the far truncated icosahedron wraps all the others in this perspective: in the last shell it stays see-through, so the shell's
+    // other cells and everything inside show
+    const newest = SH[n - 1].filter((c) => c !== farTI), solid = { opacity: 1, edge: EDGE_DARK, edgeOpacity: 1, glow: 0.14, roughness: 0.5, shrink: 0.97, width: 2 };
+    if (SH[n - 1].includes(farTI)) cellsMesh([farTI], TI_HEX, { opacity: 0.08, edge: 0xffffff, edgeOpacity: 0.3 });
+    cellsMesh(newest.filter((c) => c < BT.TI_COUNT), TI_HEX, solid);
+    cellsMesh(newest.filter((c) => c >= BT.TI_COUNT), TT_HEX, solid);
     shellsRadius = radiusOf(SH[n - 1]);
     shown = { shells: n };
   }
@@ -328,8 +333,12 @@ export function createBitruncWorld({ scene, fitView = () => {} }) {
     pb.textContent = t(playing ? 'bt.pause' : 'bt.play', L); press(pb, playing);
     const wb = panel.querySelector('[data-bt-whole]');
     wb.textContent = t('wq.whole', L); press(wb, view.whole);
-    // the legend (Sweep): the two kinds of cell, and the swap's two colours only where cells let go or meet
-    legend.hidden = !sweepOn;
+    // the legend: the two kinds of cell (Sweep, and the newest shell in Shells), and in the Sweep the swap's two colours
+    legend.hidden = !(sweepOn || (shells && !view.whole));
+    if (shells && !view.whole) {
+      const sw = (hex, key) => `<span class="bt-sw"><i style="background:#${new THREE.Color(hex).getHexString()}"></i>${t(key, L)}</span>`;
+      legend.innerHTML = [sw(TI_HEX, 'bt.legend.ti'), sw(TT_HEX, 'bt.legend.tt')].join('');
+    }
     if (sweepOn) {
       // the swap's two swatches keep their room when no swap is shown (hidden, not removed), so nothing jumps while the sweep plays
       const sw = (hex, key, on = true) => `<span class="bt-sw${on ? '' : ' bt-off'}"><i style="background:#${new THREE.Color(hex).getHexString()}"></i>${t(key, L)}</span>`;

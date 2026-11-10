@@ -53,6 +53,8 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     assert.ok((await caption()).startsWith(`${t('bt.dir.generic', 'en')} · Swap ${st.event.swapFrom + 1} of 2166: two cells let go, two meet`), `${tag}: swap caption ${await caption()}`);
     assert.ok((await caption()).includes(`${st.cells} cells in the slice (${st.ti} TI · ${st.tt} tt)`), `${tag}: live counts`);
     assert.equal(await page.locator(`${P} .bt-legend .bt-sw:not(.bt-off)`).count(), 4, `${tag}: legend with the swap's colours`); checks++;
+    // no empty prompt pill above the panel
+    assert.ok(!(await page.evaluate(() => { const e = document.getElementById('hud-prompt'); return e.classList.contains('visible') && !e.textContent.trim(); })), `${tag}: no empty prompt`);
     // only the Sweep's rows
     assert.ok(!(await visible('[data-bt-row="from"]')) && !(await visible('.bt-param-row')) && !(await visible('.bt-shells-row')) && !(await visible('.bt-whole-row')), `${tag}: only Sweep rows`);
     for (const k of BT.DIRECTIONS) { const bx = await page.locator(`${P} [data-bt-dir="${k}"]`).boundingBox(); assert.ok(bx.height >= 30 && bx.width >= 44, `${tag}: ${k} touchable`); }
@@ -104,6 +106,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     const shl = page.locator(`${P} .bt-shells-row input`);
     for (let n = 1; n <= 6; n++) {
       await shl.fill(String(n)); await page.waitForTimeout(300); st = await probe(page);
+      assert.equal(await page.locator(`${P} .bt-legend .bt-sw`).count(), 2, `${tag}: Shells legend, the two kinds`);
       assert.deepEqual([st.shells, st.total, st.newest.cells], [n, 6, SIZES[n - 1]], `${tag}: ${n} shells`);
       const cap = await caption();
       assert.ok(n === 1 ? cap === t('bt.shells.core', 'en') : cap.startsWith(`Shell ${n - 1}${n === 6 ? ', the last' : ''}: ${SIZES[n - 1]} cells`), `${tag}: shells caption ${cap}`);
