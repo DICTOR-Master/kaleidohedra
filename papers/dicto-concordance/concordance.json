@@ -5697,6 +5697,51 @@
     "retry": "global argument only (solid-angle weighting of active faces, orbit degeneracy)",
     "study": "2026-11-09-og-margin",
     "date": "2026-11-10"
+   },
+   {
+    "question": "#61 Swap Rule below s = 1/4 along λ (one parameter)",
+    "method": "swap_walls.py Hopscotch walk (exact walls = corner/plane roots; D(λ) polynomial per hop) at s = 1/8, 1/6, 1/5, 9/40, 6/25, 49/200; check61.py",
+    "status": "SETTLED (exact at six spacings)",
+    "result": "walls -9s/8, -(4-s)/24 (s > 1/7), -5s/8, -s/8; clash below -9s/8; δ_tet = -(1-4s)^3/(54s), δ_oct = (1-4s)^2(72λ+8+13s)/(108s) on [-9s/8, -(4-s)/24]; δ_oct = (8λ+5s)^3/(64s), δ_tet = -(8λ+5s)^2(8λ+2-3s)/(64s) up to -5s/8; Swap Rule holds from -5s/8 to U(s)",
+    "retry": "never along λ; the grid (swap61-grid) is superseded",
+    "study": "2026-11-09-b1-walls",
+    "date": "2026-11-10"
+   },
+   {
+    "question": "#61 chamber map for all s in [1/8, 1/4] (two parameters)",
+    "method": "swap_cells2.py: corners rational in (s, λ) over QQ(s); every plane slack >= 0 on each whole cell polygon (Bernstein test, exact root count fallback); D(s, λ) = closed form as a rational identity",
+    "status": "PROVED (cells b, c1, c2, d1, d2; ~11 M exact slack checks, no violation)",
+    "result": "the closed forms and walls hold for every s in [1/8, 1/4]; only the clash cell (below -9s/8) is open",
+    "retry": "only: the clash cell with 6-layer keys; s < 1/8",
+    "study": "2026-11-09-b1-walls",
+    "date": "2026-11-10"
+   },
+   {
+    "question": "#61 the flip at each wall (s = 1/5)",
+    "method": "flips61.py: shared faces of all hole pairs at wall ± 1/1000",
+    "status": "SETTLED",
+    "result": "-9s/8: long octahedral contacts lost; -(4-s)/24: 114 oct-oct ↔ 114 tetX-tetY same layer; -5s/8: 42 oct-oct two layers apart ↔ 42 tetX-tetY (the Swap Rule switches on); -s/8: 252 ↔ 252 adjacent layers",
+    "retry": "never",
+    "study": "2026-11-09-b1-walls",
+    "date": "2026-11-10"
+   },
+   {
+    "question": "4D lift of the #61 cells: regular 4D polytopes? corners vs 4D event heights",
+    "method": "lift4d.py periodic lift (4860 lifts, 36 450 cells); comparison with the 4D-section studies",
+    "status": "FAILED (negative)",
+    "result": "no regular 4D polytope; no corner matches a 4D event height (5/32, 9/32 vs Red Queen gaps: rational parts only)",
+    "retry": "only the exact D4 picture with the atoms as sites; a golden stacking",
+    "study": "2026-11-10-4d-lift",
+    "date": "2026-11-10"
+   },
+   {
+    "question": "4D scutoids: hole cells stacked over λ across the -5s/8 wall",
+    "method": "scutoid4d.py: convex 4D polytope {(x, λ): n·x <= b(λ)} per hole, six words, s = 1/5, λ in [-19/120, -1/40]",
+    "status": "SETTLED",
+    "result": "25 holes whose 4D cells have facets ending or beginning exactly at λ = -1/8: octahedral cells' facets to octahedral holes two layers away END there, tetrahedral cells' new facets BEGIN there",
+    "retry": "never; next: render, and the truncated 600-cell slice walk",
+    "study": "2026-11-10-4d-scutoid",
+    "date": "2026-11-10"
    }
   ]
  },

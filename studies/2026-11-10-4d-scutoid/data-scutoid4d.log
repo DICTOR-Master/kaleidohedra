@@ -1,0 +1,64 @@
+holes whose 4D cell has facets that begin or end inside the λ range: 25
+   ('ABC', 0, 'oct', 78, 40) [(('oct', 2), np.float64(-0.1583), np.float64(-0.125)), (('oct', -6), np.float64(-0.1583), np.float64(-0.125)), (('oct', 2), np.float64(-0.1583), np.float64(-0.125)), (('oct', -4), np.float64(-0.1583), np.float64(-0.125)), (('oct', 2), np.float64(-0.1583), np.float64(-0.125)), (('oct', -6), np.float64(-0.1583), np.float64(-0.125)), (('oct', 2), np.float64(-0.1583), np.float64(-0.125)), (('oct', -6), np.float64(-0.1583), np.float64(-0.125))]
+   ('ABC', 1, 'tetX', 30, 15) [(('tetY', -2), np.float64(-0.125), np.float64(-0.025)), (('tetX', -1), np.float64(-0.125), np.float64(-0.025)), (('tetX', -1), np.float64(-0.125), np.float64(-0.025))]
+   ('ABC', 2, 'tetY', 30, 15) [(('tetY', 1), np.float64(-0.125), np.float64(-0.025)), (('tetX', 2), np.float64(-0.125), np.float64(-0.025)), (('tetY', 1), np.float64(-0.125), np.float64(-0.025))]
+   ('ABC', 3, 'oct', 78, 50) [(('oct', 2), np.float64(-0.1583), np.float64(-0.125)), (('oct', -6), np.float64(-0.1583), np.float64(-0.125)), (('oct', 6), np.float64(-0.1583), np.float64(-0.125)), (('oct', -4), np.float64(-0.1583), np.float64(-0.125)), (('oct', 6), np.float64(-0.1583), np.float64(-0.125)), (('oct', 6), np.float64(-0.1583), np.float64(-0.125)), (('oct', -6), np.float64(-0.1583), np.float64(-0.125)), (('oct', -6), np.float64(-0.1583), np.float64(-0.125))]
+   ('ABC', 4, 'tetX', 30, 15) [(('tetY', -2), np.float64(-0.125), np.float64(-0.025)), (('tetY', 0), np.float64(-0.125), np.float64(-0.025)), (('tetY', 0), np.float64(-0.125), np.float64(-0.025))]
+   ('ABC', 5, 'tetY', 30, 13) [(('tetY', 2), np.float64(-0.125), np.float64(-0.025)), (('tetX', 1), np.float64(-0.125), np.float64(-0.025)), (('tetY', 2), np.float64(-0.125), np.float64(-0.025))]
+   ('ABC', 6, 'oct', 78, 39) [(('oct', 4), np.float64(-0.1583), np.float64(-0.125)), (('oct', -2), np.float64(-0.1583), np.float64(-0.125)), (('oct', 6), np.float64(-0.1583), np.float64(-0.125)), (('oct', -2), np.float64(-0.1583), np.float64(-0.125)), (('oct', 6), np.float64(-0.1583), np.float64(-0.125)), (('oct', 4), np.float64(-0.1583), np.float64(-0.125)), (('oct', -2), np.float64(-0.1583), np.float64(-0.125))]
+   ('ABC', 7, 'tetX', 30, 15) [(('tetY', -1), np.float64(-0.125), np.float64(-0.025)), (('tetX', -1), np.float64(-0.125), np.float64(-0.025)), (('tetX', -1), np.float64(-0.125), np.float64(-0.025))]
+   ('ABC', 8, 'tetY', 30, 15) [(('tetY', 2), np.float64(-0.125), np.float64(-0.025)), (('tetX', 2), np.float64(-0.125), np.float64(-0.025)), (('tetY', 2), np.float64(-0.125), np.float64(-0.025))]
+   ('ACABC', 3, 'oct', 48, 26) [(('oct', 2), np.float64(-0.1583), np.float64(-0.125)), (('oct', 2), np.float64(-0.1583), np.float64(-0.125)), (('oct', 2), np.float64(-0.1583), np.float64(-0.125))]
+   ('ACABC', 6, 'oct', 63, 32) [(('oct', 2), np.float64(-0.1583), np.float64(-0.125)), (('oct', 2), np.float64(-0.1583), np.float64(-0.125)), (('oct', 2), np.float64(-0.1583), np.float64(-0.125))]
+   ('ACABC', 7, 'tetX', 30, 13) [(('tetY', -2), np.float64(-0.125), np.float64(-0.025)), (('tetX', -1), np.float64(-0.125), np.float64(-0.025)), (('tetY', -2), np.float64(-0.125), np.float64(-0.025))]
+  facet: neighbour      oct layer -6: 6 corners, λ -0.1583 … -0.1250
+  facet: neighbour      oct layer -6: 6 corners, λ -0.1583 … -0.1250
+  facet: neighbour      oct layer -6: 5 corners, λ -0.1583 … -0.1250
+  facet: neighbour      oct layer -5: 12 corners, whole range
+  facet: neighbour      oct layer -4: 4 corners, λ -0.1583 … -0.1250
+  facet: neighbour      oct layer -4: 16 corners, whole range
+  facet: neighbour      oct layer -3: 11 corners, whole range
+  facet: neighbour      oct layer -3: 10 corners, whole range
+  facet: neighbour      oct layer -1: 12 corners, whole range
+  facet: neighbour      oct layer +1: 11 corners, whole range
+  facet: neighbour      oct layer +2: 6 corners, λ -0.1583 … -0.1250
+  facet: neighbour      oct layer +2: 6 corners, λ -0.1583 … -0.1250
+  facet: neighbour      oct layer +2: 6 corners, λ -0.1583 … -0.1250
+  facet: neighbour      oct layer +2: 6 corners, λ -0.1583 … -0.1250
+  facet: neighbour      oct layer +3: 10 corners, whole range
+  facet: neighbour      oct layer +3: 14 corners, whole range
+  facet: neighbour      oct layer +3: 11 corners, whole range
+  facet: neighbour      oct layer +5: 11 corners, whole range
+  facet: neighbour     tetX layer -2: 4 corners, whole range
+  facet: neighbour     tetX layer -2: 4 corners, whole range
+  facet: neighbour     tetX layer -1: 18 corners, whole range
+  facet: neighbour     tetX layer +0: 10 corners, whole range
+  facet: neighbour     tetX layer +0: 10 corners, whole range
+  facet: neighbour     tetX layer +0: 10 corners, whole range
+  facet: neighbour     tetX layer +1: 8 corners, whole range
+  facet: neighbour     tetX layer +1: 8 corners, whole range
+  facet: neighbour     tetX layer +1: 8 corners, whole range
+  facet: neighbour     tetX layer +2: 4 corners, whole range
+  facet: neighbour     tetX layer +2: 4 corners, whole range
+  facet: neighbour     tetY layer -2: 4 corners, whole range
+  facet: neighbour     tetY layer -2: 4 corners, whole range
+  facet: neighbour     tetY layer -1: 8 corners, whole range
+  facet: neighbour     tetY layer -1: 8 corners, whole range
+  facet: neighbour     tetY layer -1: 8 corners, whole range
+  facet: neighbour     tetY layer +0: 10 corners, whole range
+  facet: neighbour     tetY layer +0: 10 corners, whole range
+  facet: neighbour     tetY layer +0: 10 corners, whole range
+  facet: neighbour     tetY layer +1: 18 corners, whole range
+  facet: neighbour λ bottom layer +0: 48 corners, λ -0.1583 … -0.1583
+  facet: neighbour    λ top layer +0: 12 corners, λ -0.0250 … -0.0250
+     neighbours sharing a face: [('oct', -2), ('oct', -1), ('oct', 1), ('oct', 2), ('tetX', -1), ('tetX', 0), ('tetX', 1), ('tetY', -1), ('tetY', 0), ('tetY', 1)]
+  3D slice just above -(4-s)/24 (λ = -0.1582): 48 corners, 26 faces
+     neighbours sharing a face: [('oct', -2), ('oct', -1), ('oct', 1), ('oct', 2), ('tetX', -1), ('tetX', 0), ('tetX', 1), ('tetY', -1), ('tetY', 0), ('tetY', 1)]
+  3D slice just below the wall -5s/8 (λ = -0.1350): 48 corners, 26 faces
+     neighbours sharing a face: [('oct', -1), ('oct', 1), ('tetX', -1), ('tetX', 0), ('tetX', 1), ('tetY', -1), ('tetY', 0), ('tetY', 1)]
+  3D slice at the wall -5s/8 (λ = -0.1250): 30 corners, 20 faces
+     neighbours sharing a face: [('oct', -1), ('oct', 1), ('tetX', -1), ('tetX', 0), ('tetX', 1), ('tetY', -1), ('tetY', 0), ('tetY', 1)]
+  3D slice just above the wall (λ = -0.1150): 36 corners, 20 faces
+     neighbours sharing a face: [('oct', -1), ('oct', 1), ('tetX', -1), ('tetX', 0), ('tetX', 1), ('tetY', -1), ('tetY', 0), ('tetY', 1)]
+  3D slice just below -s/8 (λ = -0.0251): 36 corners, 47 faces
+FINAL ok

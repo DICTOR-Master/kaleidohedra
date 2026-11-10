@@ -106,3 +106,11 @@ Pairs of holes sharing a face (roles, layer offset), gained / lost crossing each
   tetrahedral holes gain 252 adjacent-layer contacts among themselves.
 Two holes stop touching, two others start: the scutoid move in the power diagram (DICTO: "a 4th dimensional scutoid?!" - each hole's
 cell over λ is a convex 4D polytope whose 3D slices change neighbours at these walls). In secondary-fan terms each wall is a flip.
+
+## #61 PROVED for every s in [1/8, 1/4] (job swap61-cells2, scripts/swap_cells2.py, cells61.py; data/cells2; FINAL ok)
+Two-parameter Hopscotch: s enters only G33, so planes are linear in s and λ and corners rational in (s, λ); on each cell of the chamber
+map every plane's slack was proved >= 0 on the WHOLE polygon (exact: Bernstein sign test over [s_a, s_b], exact root counting as
+fallback; about 11 million slack checks, no violation), and D(s, λ) equals the closed form as a rational identity in s and λ:
+b [1/7, 1/4], c1 [1/8, 1/7], c2 [1/7, 1/4], d1 and d2 [1/8, 1/4]: all FINAL ok. Open: the clash cell (below -9s/8; 6-layer keys)
+and s < 1/8. Fault on the way: the first pilot used sympy simplify and was too slow (stopped); profiled; the Bernstein test cut a site
+from > 4 min to about 15 s.
