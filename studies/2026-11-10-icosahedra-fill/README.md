@@ -96,3 +96,10 @@ window widening (5.0) is running. Full runs launched through the pre-flight gate
 **Octet spacing 5.38 SETTLED (10 Nov):** UNSAT also with the window widened to 5.0 (radius 3.3; 41.4 M overlap clauses, 2460 s, 10.5 GB — the live ceiling raise to 20 GB was needed). Impossible on the octet at both windows: 3.89 (any), 4.46, 4.81, 5.38; 6.30 at window 4.0 (recheck running); gyrated 4.46 impossible, 7.22 running.
 **Gyrated octet spacing 7.22 (10 Nov):** UNSAT at radius 5.0, window 4.0 (105 524 candidates, block-wise pairs, 6.27 GB, 4917 s). Window-5.0 recheck launched (overnight). With the octet: every spacing tested is impossible at the first window; settled at both windows: octet 4.81 and 5.38.
 **Gyrated 7.22 window-5.0 recheck (10 Nov 15:40): stopped by plan.** The search front grew faster than it was processed (faces seen 122 k → 182 k in 20 min; 175 k candidates at a quarter), projecting past its 10 h cap and 30 GB. Outcome: 7.22 impossible at window 4.0; the wider window needs the repeating-cell (fundamental cell) formulation, the plan's named next method.
+**Octet spacing 6.30 SETTLED (10 Nov, 17:22):** UNSAT also with the window widened to 5.0 (radius 4.2; 135 488 candidates, 154.3 M
+overlap clauses, block-wise pairs, 8571 s, 15.8 GB).
+**Summary of step 4 (stars on the octets):** on the octet every spacing tested is impossible, and 4.81, 5.38, 6.30 are settled at both
+windows (3.89 and 4.46 fail at once); on the gyrated octet 4.46 is impossible and 7.22 impossible at window 4.0 (its window-5.0 recheck
+outgrows the radius method; next method: one repeating cell). Picture: wrapped icosahedra on the octets' regular places cannot be
+surrounded by Cleo-Icos and Antonius alone at any spacing tried — evidence that in this family icosahedra appear only irregularly
+(quasicrystal-like), which ties to the periodic ↔ aperiodic bridge aim.
