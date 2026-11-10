@@ -15,3 +15,4 @@ squared distance to the plane); stacked over λ in [-0.155, -0.095] each hole be
 columns (24 octahedral, 18 tetrahedral). The centre (gold) column keeps its six neighbours and GAINS two tetrahedral neighbours exactly at
 the wall λ = -1/8: in the plan views two thin tetrahedral cells push in at its upper corners from the wall on (at the wall: a point where
 four cells meet, red); in 3D the two green columns start as wedges at the wall. Picture build3d.png (papers-to-read/scutoid-4d-as-3d-build.png).
+Interactive page (piece 1 of DICTO's 'all in 3D'): the-4d-scutoid.html, published privately as 'The 4D Scutoid' (https://claude.ai/artifact/1pNG17r8kunHnnkXRaZKWP): turnable columns, λ slider, plan of the cut with the gold cell's neighbour count (6 below the wall, 8 above).
