@@ -5742,6 +5742,24 @@
     "retry": "never; next: render, and the truncated 600-cell slice walk",
     "study": "2026-11-10-4d-scutoid",
     "date": "2026-11-10"
+   },
+   {
+    "question": "truncated 600-cell as a scutoid build (slices)",
+    "method": "t600_scutoid.py: slice tilings below/above every corner height, five directions",
+    "status": "FAILED (no pure swaps)",
+    "result": "six cells per corner (1 icosahedron + 5 truncated tetrahedra); generic: 1↔3 ×118, 2↔0 ×371, 1↔0 ×109, no 2↔2 swap",
+    "retry": "never",
+    "study": "2026-11-10-t600-scutoid",
+    "date": "2026-11-10"
+   },
+   {
+    "question": "bitruncated 600-cell as a scutoid build (slices)",
+    "method": "t600_scutoid.py stages.py bitruncated",
+    "status": "SETTLED (yes)",
+    "result": "four cells per corner; generic slices change only by 716 births, 716 deaths and 2166 pure scutoid swaps; main directions: balanced batches",
+    "retry": "never; other stages and pictures are new questions",
+    "study": "2026-11-10-t600-scutoid",
+    "date": "2026-11-10"
    }
   ]
  },
