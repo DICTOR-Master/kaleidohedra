@@ -18,3 +18,9 @@ period and offset so that icosahedron faces land on the CLEO bases; (3) the full
   = the inradius of the Karma icosahedron (edge 1/φ), so the Karma cells' icosahedra just below touch the plane with a face.
 Next: (4) which skin pieces of the crossed Karma cells the plane cuts (kit consequences); density: one CLEO per φ√2-period cell, one
 octet octahedron face in four sits on a CLEO; (5) the full two-sided layer check by points.
+- **Steps 4–5 (layer_check.py, data-layer-check.log, FINAL ok).** The Karma cell built explicitly (icosahedron + 12 pentagonal pyramids
+  + 30 AXE + 20 CLEO): exact partition (points covered once, volumes add to the dodecahedron). FULL CHECK: all 60 CLEOs in the window
+  meet an icosahedron face exactly, all from ONE octet. KIT: in each crossed Karma cell the icosahedron stays whole (tangent below), and
+  the plane truly cuts 6 AXE, 3 CLEO and 3 pentagonal pyramids; below the plane they leave three truncated shapes: an AXE part
+  (tetrahedron, volume 0.0318305), a CLEO part (tetrahedron, 0.0196723) and a pentagonal-pyramid part (6 corners, volume exactly 1/4).
+  (Pieces that only touch the plane stay whole.) Names of the three truncated pieces are DICTO's.
