@@ -50,3 +50,13 @@ TEST NEXT: the 120-cell (Red Queen, simple: 4 dodecahedra per corner): predicted
   (1, 716, 966, 716, 1), predicted.
 - bitruncated 600-cell: 716, 2166, 716 (above). Truncated 600-cell (not simple): no swaps.
 Every simple polytope on the Queens' path is a pure scutoid build with #swaps = h2, predicted before counting.
+
+## The communicating layer (DICTO 10 Nov: "are the red and white queens each end of the channel and the bitruncated is the communicating layer perhaps?")
+The bitruncated 600-cell (= bitruncated 120-cell) is the one stage where both Queens' cells coexist: 600 truncated tetrahedra (W, the White
+Queen's cells cut back) and 120 truncated icosahedra (R, at the White Queen's corners = the Red Queen's cells), meeting across 2400 hexagons.
+Every corner joins 2 R + 2 W, so every swap is mixed-for-mixed or a same-side pair for the other side's pair. Swaps by kind (data from
+export_bitrunc.py): GENERIC: R-W lets go / R-W meets 964; W-W lets go / R-R meet 601; R-R lets go / W-W meet 601 (= 2166). CELL-FIRST
+(batches): mixed 552, 348 each way. The exchanges between the two Queens' cell kinds balance exactly (601 / 601) in the generic sweep -
+observed; the 2+2 makeup of corners is forced. OPEN: is 601 the same in every generic direction (like h2)? what fixes it? (A proof of the
+balance would make it a law.) Path purity: White, t600, r600 not simple; bitruncated simple (first from the White side); r120 not simple;
+t120 and Red simple.
