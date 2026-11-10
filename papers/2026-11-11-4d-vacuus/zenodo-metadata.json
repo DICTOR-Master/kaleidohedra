@@ -1,0 +1,81 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "subjects": [
+  {
+   "term": "MSC2020 52B05: Combinatorial properties of polytopes and polyhedra",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B05",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52B11: n-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B11",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 05A15: Exact enumeration problems, generating functions",
+   "identifier": "https://zbmath.org/classification/?q=cc:05A15",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52C22: Tilings in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+   "scheme": "url"
+  }
+ ],
+ "version": "1",
+ "publication_date": "2026-11-11",
+ "title": "DICTO 1:2 Truncated Octahedron: The 4D Vacuus of the Permutohedron",
+ "description": "<p><b>Version 1.</b></p><p>Write 1 to 5 in every order and link two orders that differ by exchanging two neighbouring values: the web of exchange, 120 knots and 240 exchanges, is the skeleton of the 4D permutohedron. Its 4D Vacuus is the set of central slices that carry its faces.</p><p><b>Theorem 1.</b> The 150 two-dimensional faces lie in exactly 65 central slices, in four congruence classes (30, 20, 10, 5), each described exactly. <b>Theorem 2.</b> The five slices that hold the middle value fixed are the DICTO 1:2 Truncated Octahedron (squares of side 1, hexagons with sides 1 and 2 in turn); any two cross in a regular hexagon through the centre. <b>Theorem 3.</b> The number of central hyperplanes through the ridges of the permutohedron of 1..n: 3, 15, 65, 225, 770, 2443, 7761 for dimensions 2 to 8, with a closed formula. <b>Theorem 4.</b> The semi-uniform truncated octahedra T(x) of DICTONIC's golden bond (Koca et al. 2015; #48) are the permutohedra of four values placed symmetrically about zero; at x = 1/2 the slider passes through the DICTO 1:2 Truncated Octahedron, whose space-filling partner is the DICTO 2:1 Truncated Octahedron.</p><p>Classical parts credited (the weak order, reduced words, majorization, translation tilings). Checked before release by an in-house panel of four automated referees and one independent attack.</p><p>DICTO: ideas, names, constructions and direction. Computation, verification and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "permutohedron",
+  "4D permutohedron",
+  "truncated octahedron",
+  "DICTO 1:2 Truncated Octahedron",
+  "DICTO 2:1 Truncated Octahedron",
+  "Vacuus",
+  "central sections",
+  "ridges",
+  "weak order",
+  "majorization",
+  "space filling",
+  "DICTONIC"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23378070",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23529497",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23633365",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5802/crmath.163",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}
