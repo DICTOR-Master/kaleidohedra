@@ -23,3 +23,12 @@ be flat, for any edge directions.** (Search evidence, not a proof; a proof would
 **The choice for DICTO:** (a) the brick pairing: every side face flat (exact polyhedral cells), top a mix of 5- and 7-sided cells (the
 classic scutoid mix); (b) the double-row pairing: hexagons everywhere at the top, side faces bent (as in living scutoids, whose faces
 are curved). Either gives a space-filling layer stack.
+
+## Step 4: the geometric scutoid solid (10 Nov, DICTO "did we get a scutoid solid … like a geometric one"; scripts/scutoid_solid.py)
+Brick layer (version a), all side faces flat at both stages: middle by LP (kept edges parallel to the hexagon edges, shortest 0.30),
+top by LP (each collapsed point reopened across into a horizontal edge, every other edge parallel to its middle edge, shortest 0.25),
+each level kept as close as possible to the one below. Top side counts in the patch: 12 pentagons, 12 heptagons.
+A cell that gains nothing: bottom hexagon (z = 0) → middle pentagon (z = 1, one edge shrunk to a point: the Y) → top pentagon (z = 2):
+a GEOMETRIC SCUTOID with 13 faces, every face flat (8.6e-16). Data: data-scutoid-solid.json; render in papers-to-read.
+Next (DICTO: "as a block linear group and as a near sphere"; "as a core a football"): (1) the block: the whole brick layer as a group
+of scutoids; (2) the near sphere: a skin of scutoids round a truncated icosahedron core.
