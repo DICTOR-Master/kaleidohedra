@@ -37,13 +37,13 @@ for ever). DICTO 10 Nov: "octet and gyrated octet could both be used": restated 
 octet_gap.py (exact, sympy). Regular octahedron, corners (±1,0,0)…, edge √2. The regular icosahedron with its 12 corners on the 12 edges,
 each edge divided in the golden ratio: icosahedron edge 3 − √5, volume 70/3 − 10√5 ≈ 0.97265 of the octahedron's 4/3. Eight
 icosahedron faces lie in the eight octahedron faces; the other 12 come in 6 folded pairs, one pair facing each octahedron corner.
-NEW PIECE (placeholder name: corner piece; name is DICTO's): octahedron minus icosahedron = 6 congruent corner pieces, each the octahedron
+PIECE = DICTO's ADMIRAL CAP (A of #47's kit, F21; 'corner piece' was a placeholder before the match was seen, 10 Nov; first name wins): octahedron minus icosahedron = 6 congruent corner pieces, each the octahedron
 corner plus the 4 icosahedron corners on its 4 edges; volume (5√5 − 11)/3 ≈ 0.06011. Faces: 4 triangles in the octahedron faces + 2
 icosahedron faces as a folded base. It is NOT convex: at the fold (an icosahedron edge) its inside angle is 360° − 138.19° = 221.81°.
 It is two mirror-image tetrahedra glued on the triangle (corner, fold edge).
 Filling: octet or gyrated octet, each octahedron = 1 icosahedron + 6 corner pieces, tetrahedra whole. Each octahedron's icosahedron has
 two positions (the two golden divisions); octahedra meet only at corners, so the choice is free per octahedron, in both octets.
-So icosahedra + corner pieces + tetrahedra fill space (immediate, exact). Dehn: the corner pieces carry the icosahedron's golden angles.
+So icosahedra + Admiral Caps + tetrahedra fill space (immediate, exact; this is #47's I world, here in the edge-phi^2/sqrt2 octet). Dehn: the corner pieces carry the icosahedron's golden angles.
 Next: corner piece angles and whether it relates to Cleo-Icos/Antonius; whether tetrahedron + corner pieces merge into nicer pieces.
 
 **Step 4, stars on the octet and the gyrated octet (DICTO 10 Nov 2026: both, in order, each tested on its own; corner piece aside).**
