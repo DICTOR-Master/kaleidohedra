@@ -38,3 +38,12 @@ Top polygons are now the faces of the actual top tiling, traced geometrically (t
 top tiling; fixed). 16 interior cells: bottom hexagon → middle pentagon for all; top 5 (8 cells), 6 (4), 8 (4); average 6 as it must be.
 Every face of every cell flat (7.4e-15). The top polygons tile with no overlap (3.6e-15) and no holes; 42 of 48 convex (the 8-gons are not).
 Data data-scutoid-block.json; render papers-to-read/scutoid-block.png. Next: the near sphere (skin round a truncated icosahedron core).
+
+## Step 6: the near sphere (DICTO "as a near sphere", core a truncated icosahedron; scripts/scutoid_sphere.py)
+Inner truncated icosahedron (circumradius 1) → middle icosidodecahedron (1.18): every hexagon-hexagon edge shrinks to a point (the Y) →
+outer truncated dodecahedron (1.42): each point reopens ACROSS, the new edge now between the two pentagon cells (a true T1).
+32 cells: 12 pentagon scutoids 5 → 5 → 10 (pentagon below, decagon above) and 20 hexagon scutoids 6 → 3 → 3.
+Every face flat (4e-13; by mirror symmetry each inner edge is parallel to its middle edge, so flat for ANY radii); every cell volume
+positive (0.111 .. 0.287); the 32 volumes add to V(TD) − V(TI) = 5.6660707968 exactly (shell filled once). Render papers-to-read/scutoid-near-sphere.png.
+Block question ("how many to fill space"): the LP block has 16 different cells (not forced to repeat); its pattern repeats in tops
+2 pentagons : 1 hexagon : 1 octagon, so the periodic version needs 4 cells (+ mirror layer to return to hexagons). Next: periodic block.
