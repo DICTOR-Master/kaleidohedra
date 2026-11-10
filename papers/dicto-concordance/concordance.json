@@ -7234,6 +7234,12 @@
     "mess_up": "root cause of the Yantra preview: the keep-files version script only said 'run zen_preview afterwards' in a comment",
     "guard": "every Zenodo publisher sets the preview itself and runs the shared post-check (preview = PDF, no banned wording); a failure writes an alert shown before every message; Claude Code hooks block raw compute-machine launches and show the working card at session start",
     "where": "papers/zen_postcheck.py, zen_new*.py, zen_preview.py; ~/.claude/hooks/dbb-launch-guard.sh, session-card.sh"
+   },
+   {
+    "date": "2026-11-10",
+    "mess_up": "the memory index had grown to 259 lines (only ~180 load each session), two links were cut off mid-name and 44 memory files (5 of them rules: push = deploy, render standard, no 'football', Harryhausen look, Star Halo) were linked from no index, so rules silently never applied",
+    "guard": "index kept under 190 lines (older project pointers in a secondary index); a check before every message warns on overflow, cut links or any unlinked memory file",
+    "where": "dicto-alerts/memcheck.py (run by show.sh)"
    }
   ],
   "practice": [
