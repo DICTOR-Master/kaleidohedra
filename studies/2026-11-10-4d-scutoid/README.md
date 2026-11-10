@@ -7,3 +7,4 @@ layers away end there; the tetrahedral cells' new facets towards tetrahedral hol
 wall the cell touches octahedral holes in layers ±1 and ±2; at and above it only ±1. A flat-faced 4D cell whose 3D slices change
 neighbours: a 4D scutoid. The first try (word AC, hole 0) changed nothing (an octahedron × interval) - that hole is not in the flip.
 NEXT: a render (the three slices side by side); the truncated 600-cell slice walk (DICTO: "it could be a scutoid build").
+Render: scutoid4d-strip.png (scripts/render4d.py): slices at λ = -0.155, -0.140, -0.125 (wall), -0.110, -0.060: 17, 17, 14, 14, 14 faces; the 3 gold faces (towards octahedral holes two layers away) shrink and vanish exactly at the wall.
