@@ -189,11 +189,6 @@ cen = np.array([t['pts'].mean(0) for t in C]); tree = cKDTree(cen); npairs = 0
 import resource
 def peak_gb(): return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1e6
 print(f'peak memory after enumeration: {peak_gb():.2f} GB', flush=True)
-PAIRS = tree.query_pairs(2.45, output_type='ndarray')      # 11-10: one int64 array, not millions of tuples
-print(f'PROGRESS 0.8000 clauses: {len(PAIRS)} close pairs to test; peak {peak_gb():.2f} GB', flush=True)
-# 11-10 (second fix): the 20-process pool was killed by memory (each fork copied the 10 GB main process). Overlap test now
-# VECTORISED in numpy, batches of 50 000 pairs, in the main process. Same rule as ov(): separating axes = 3 face normals of each tile
-# + 9 edge cross products, normalised, near-zero axes skipped, strict separation with tolerance 1e-7. Checked against ov() on a sample.
 PTS = np.array([t['pts'] for t in C])                                   # (n, 8, 3)
 SP = np.array([[vec(x) for x in t['span']] for t in C])                  # (n, 3, 3) edge directions
 NRM = np.stack([np.cross(SP[:, 0], SP[:, 1]), np.cross(SP[:, 0], SP[:, 2]), np.cross(SP[:, 1], SP[:, 2])], 1)
@@ -204,16 +199,24 @@ def vec_overlap(I, J):
     pi = np.einsum('bkd,bvd->bkv', ax, PTS[I]); pj = np.einsum('bkd,bvd->bkv', ax, PTS[J])
     sep = (pi.max(2) <= pj.min(2) + 1e-7) | (pj.max(2) <= pi.min(2) + 1e-7)
     return ~np.any(sep & valid, axis=1)
-PA = PAIRS.astype(np.int64).reshape(-1, 2)
-rng = np.random.default_rng(1); smp = PA[rng.choice(len(PA), min(3000, len(PA)), replace=False)]
+# 11-10 (memory): pairs are generated and tested BLOCK BY BLOCK (never all stored; 216 M pairs took ~7 GB as one array + a copy)
+def pairs_block(lo, hi):
+    lists = tree.query_ball_point(cen[lo:hi], 2.45)
+    I_ = np.concatenate([np.full(len(l), lo + t, dtype=np.int32) for t, l in enumerate(lists)]) if lists.size else np.zeros(0, np.int32)
+    J_ = np.concatenate([np.asarray(l, dtype=np.int32) for l in lists]) if lists.size else np.zeros(0, np.int32)
+    keep = J_ > I_; return np.stack([I_[keep], J_[keep]], 1)
+first = pairs_block(0, min(n, 2000))
+rng = np.random.default_rng(1); smp = first[rng.choice(len(first), min(3000, len(first)), replace=False)]
 agree = np.array_equal(vec_overlap(smp[:, 0], smp[:, 1]), np.array([ov(C[i], C[j]) for i, j in smp]))
 print(f'vectorised overlap test agrees with the exact routine on {len(smp)} sampled pairs: {agree}', flush=True)
 if not agree: print('FINAL FAIL: vectorised overlap test disagrees'); sys.exit(1)
-B = 50000
-for q_ in range(0, len(PA), B):
-    blk = PA[q_:q_ + B]; hit = vec_overlap(blk[:, 0], blk[:, 1])
-    for i, j in blk[hit]: S.add_clause([-(int(i) + 1), -(int(j) + 1)]); npairs += 1
-    print(f'PROGRESS {0.8 + 0.1 * min(q_ + B, len(PA)) / len(PA):.4f} clauses: pairs {min(q_ + B, len(PA))} of {len(PA)} ({time.time()-T0:.0f} s)', flush=True)
+BLK = 2000; tested = 0
+for lo in range(0, n, BLK):
+    PA = pairs_block(lo, min(n, lo + BLK)); tested += len(PA)
+    for q_ in range(0, len(PA), 50000):
+        blk = PA[q_:q_ + 50000]; hit = vec_overlap(blk[:, 0], blk[:, 1])
+        for i, j in blk[hit]: S.add_clause([-(int(i) + 1), -(int(j) + 1)]); npairs += 1
+    print(f'PROGRESS {0.8 + 0.1 * min(lo + BLK, n) / n:.4f} clauses: tiles {min(lo + BLK, n)} of {n}, pairs tested {tested}, overlapping {npairs}; peak {peak_gb():.2f} GB ({time.time()-T0:.0f} s)', flush=True)
 print(f'clauses: cover/match {ncl}, overlap pairs {npairs} ({time.time()-T0:.0f} s); solving', flush=True)
 print(f'PROGRESS 0.9000 solve: started; peak {peak_gb():.2f} GB', flush=True)
 ok = S.solve()
