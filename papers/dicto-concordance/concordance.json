@@ -5769,6 +5769,15 @@
     "retry": "never; next: the general proof write-up and prior-art check by a second pass",
     "study": "2026-11-10-t600-scutoid",
     "date": "2026-11-10"
+   },
+   {
+    "question": "5D sweeps of simple 5-polytopes: births, contacts gained, contacts lost, deaths = h1..h4",
+    "method": "sweep5d.py, three random directions each, predictions made first",
+    "status": "CONFIRMED",
+    "result": "5-cube (5, 10, 10, 5); 5D permutohedron (57, 302, 302, 57) = Eulerian numbers; 4D permutohedron control (26, 66 swaps, 26)",
+    "retry": "never; next: 6D or non-simple corrections",
+    "study": "2026-11-10-5d-sweep",
+    "date": "2026-11-10"
    }
   ]
  },
