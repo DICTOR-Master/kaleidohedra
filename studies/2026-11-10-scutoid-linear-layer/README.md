@@ -47,3 +47,13 @@ Every face flat (4e-13; by mirror symmetry each inner edge is parallel to its mi
 positive (0.111 .. 0.287); the 32 volumes add to V(TD) − V(TI) = 5.6660707968 exactly (shell filled once). Render papers-to-read/scutoid-near-sphere.png.
 Block question ("how many to fill space"): the LP block has 16 different cells (not forced to repeat); its pattern repeats in tops
 2 pentagons : 1 hexagon : 1 octagon, so the periodic version needs 4 cells (+ mirror layer to return to hexagons). Next: periodic block.
+
+## Earlier scutoid work (found 10 Nov after DICTO asked; should have been read FIRST)
+- 2026-10-17-scutoids: the 8-piece flat scutoid GROUP that tiles a layer (Fable; every piece swaps 5 <-> 6, convex, chunky ψ 0.825-0.835),
+  DICTO liked it; red granite renders (renders/red-group.png, red-stack.png); queued: grey-granite castle wall (ishigaki). Also the
+  32-cell thick scutoid layer round a truncated icosahedron core (route B). Brief: memory scutoid-bundle-brief.
+  → answers "how many to fill space in a block": 8 pieces (already found).
+- 2026-11-06-football-scutoids: truncated icosahedra on a layer linked pentagon-to-hexagon, space cut into one cell per ball, every cell
+  makes the scutoid move twice; exact stacking (h = 3.437...). Logged then: skin round a football (B) and an icosahedron-to-football shell.
+What steps 4-6 here add: a FLAT-FACED geometric scutoid (13 faces) and the exact near-sphere shell TI -> ID -> TD (32 cells, every face
+flat for any radii, volumes exact) - this is the 11-06 "skin round a football" idea made exact.
