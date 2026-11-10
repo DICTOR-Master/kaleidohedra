@@ -5665,8 +5665,8 @@
    {
     "question": "#80 cube chain of the growth rule T with the depth as a symbol (s0 = 5/7): does it close (a step similar to an earlier one)?",
     "method": "chain_sym.py exact symbolic steps (sympy), N = 6",
-    "status": "ANSWERED (numerical map; exact check running)",
-    "result": "5/7 lies in the only non-closing window (0.62-0.74, unbounded growth); s = 0.50 period 4 (scale 5/2); 0.52-0.60 period 4 from step 3; 0.76-0.98 period 4 from step 1; 1.00 period 2 (scale 3). Same five regimes as #81. Earlier METHOD-FAILED came from the comparison bug and the non-closing depth.",
+    "status": "SETTLED on 3/4 < s < 1 (exact); map numerical",
+    "result": "5/7 lies in the only non-closing window (0.62-0.74, unbounded growth); s = 0.50 period 4 (scale 5/2); 0.52-0.60 period 4 from step 3; 0.76-0.98 period 4 from step 1; 1.00 period 2 (scale 3). Same five regimes as #81. Earlier METHOD-FAILED came from the comparison bug and the non-closing depth. EXACT: period 4 from step 1 as an identity on 3/4 < s < 1 (chain_sym.py at 43/50, FINAL ok).",
     "retry": "only with a different method: high-precision numerical steps at several s0 to find the closure step, exact check of that step only",
     "study": "2026-11-09-b1-walls",
     "date": "2026-11-10"

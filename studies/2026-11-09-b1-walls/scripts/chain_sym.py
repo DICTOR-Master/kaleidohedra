@@ -99,8 +99,8 @@ def similar_sym(A, B):
 
 if __name__ == '__main__':
     # SELF-CONTROL (11-10, ONLY HAPPENS ONCE): the similarity test must recognise a shape and its own scaled copy, else stop.
-    _A = [tuple(kel(x) for x in v) for v in ((1, 2, 3), (-2, 1, 0), (0, sp.sqrt(5), 1))]
-    _B = [tuple(kel(sp.Rational(3, 2) * (1 + sp.sqrt(5))) * x for x in v) for v in _A]
+    _A = [tuple(kel(x) for x in v) for v in ((1, 2, 3), (-2, 1, 0), (0, 7, 1))]   # rational: the cube's field is Q(s)
+    _B = [tuple(kel(sp.Rational(5, 2)) * x for x in v) for v in _A]
     assert similar_sym(_A, _B) is not None, 'similarity test fails its own known-answer control'
     s0 = Fr(sys.argv[1]); N = int(sys.argv[2]); t0 = time.time()
     lo, hi = sp.Rational(1, 2), sp.Rational(1)

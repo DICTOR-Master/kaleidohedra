@@ -44,3 +44,6 @@ The paper's sample depth 5/7 ≈ 0.714 lies in the only non-closing window: that
 1.02–1.08 from step 3; ≈1.10–1.24 none; 1.26–1.38 from step 1; ≥1.40 period 2). The period-2 scales are #80's gains: 3 (cube) and
 15 − 6√5 = 1.583592… (dodecahedron, numerically 1.583592135), #43's constant. Exact check of the cube's step-1 regime at s = 43/50
 running (plan b1-cube-exact).
+**#80 exact (10 Nov, plan b1-cube-exact, FINAL ok):** chain_sym.py at s0 = 43/50 with the depth as a symbol: CLOSES with period 4
+entered at step 1 (step 5 similar to step 1, exact); the identity holds on the whole hop 3/4 < s < 1 (the script's exact walls),
+matching the numerical regime 0.76–0.98; squared gain 4.409341… at s0 (= 2.0998² as measured), varying with s. Steps take seconds here.
