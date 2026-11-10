@@ -140,3 +140,13 @@ Exact chain hops with the depth window widened to [2/5, 3/2] (the old [1, 3/2] w
 - Exact neighbourhood bound (replaces the grid estimate): every cell within rho < 0.82 of its site (nearest octahedral hole of the nearest
   gap within sqrt(3/8)), (sqrt24 - 0.82)^2 - 0.82^2 > 15.9 > |lambda|. D^2 = 24 logs filed in data/cells2-D24/.
 - Theorem 3 holds for the six words; for other stackings it assumes pieces are fixed by the four layers round their gap.
+## Reproducibility from a clean checkout (11 Nov 2026, #104 v2 task T5) - PASSED
+swap_cells2.py now imports its helper modules from the repository (studies/2026-10-25-stackings/scripts/engine.py,
+studies/2026-10-27-splash-rules/scripts/splash.py, studies/2026-10-27-splash-rules/proof/validate.py), byte-identical (md5 c3fb6226...,
+0c04c8d3..., 2b123186...) to the copies the v1 run used. A clean checkout (git archive of commit 5e715483 of those three folders, nothing
+else) on the compute machine, Python 3 with sympy (DomainMatrix over QQ(s)), ran:
+    cd studies/2026-11-09-b1-walls/scripts && D2=24 python -u cells61.py
+Runtime 44 min (five cells in parallel). Summary: FINAL ok; every cell "FINAL ok (cell X proved for all s in ..., neighbourhood D^2 = 24)".
+Cell outputs identical to the v1 run (cells2-D24/) apart from timings, line by line. Slack sign checks per cell (exact): 6,522,918 to
+6,927,432; 35,561,184 in all. Exact steps: corners re-solved over QQ(s), slacks as rational functions, signs by Bernstein bounds with exact
+root counting as fallback; floating point only proposes the cell structure, never decides a sign.

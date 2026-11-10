@@ -5871,6 +5871,15 @@
     "retry": "never",
     "study": "papers/2026-11-11-4d-vacuus",
     "date": "2026-11-11"
+   },
+   {
+    "question": "#104 Theorem 3 proof reproducible from a clean checkout?",
+    "method": "git archive 5e715483 (3 folders) on compute machine, D2=24 cells61.py via dbbjob clean104",
+    "status": "SETTLED",
+    "result": "FINAL ok, 5/5 cells, outputs identical to v1 apart from timings, 35,561,184 exact slack sign checks, 44 min",
+    "retry": "never",
+    "study": "studies/2026-11-09-b1-walls",
+    "date": "2026-11-11"
    }
   ]
  },
