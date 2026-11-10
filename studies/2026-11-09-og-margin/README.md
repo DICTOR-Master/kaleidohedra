@@ -288,3 +288,14 @@ decay q per level suffices when γ_30² q²/(1 − q²) < 0.247, i.e. q ≤ ≈ 
 Rule to prove (route 1): (A) growth: F_{k+1} ≥ λ F_k with λ > 1 (Euler counting + the degeneracy pattern); (B) lag: the largest new
 face is at most C times its neighbours (ring lemma; measured C ≤ 5.6, ≤ 2.7 from k = 24), so the largest gap follows the average
 spacing up to a bounded factor per step. (A) + (B) ⇒ γ_k ≤ γ_30 q^{k−30} with q < 1.
+
+## §19 Step (A), growth of the face count: exact identity and the two lemmas (10 Nov 2026)
+With X = polar(D): faces of X_{k+1} = T(X_k) are the ACTIVE corners of X_k; corners of X_{k+1} are the faces of D_{k+1}. Euler
+(V = 2f − 4 − e, e = Σ(deg − 3)) gives exactly **F_k = 2(F_{k−1} − c_k) − 4 − e_k**, c_k = candidate corners cut off, e_k = excess
+at corners where more than three faces meet. Checked at every level k = 1..25 (float-family-45.log; listed corners = F_{k−1}).
+Data: k ≤ 16 irregular (excess up to 0.86 F; growth 0.904 at k = 10); k ≥ 17: growth 1.22–1.63, cut fraction c_k/F_{k−1} 0.15–0.29,
+excess e_k/F_k 0.03–0.07 and falling.
+(A) for the tail ⇐ (A1) cut lemma c_k ≤ (1/2 − δ) F_{k−1}, and (A2) excess e_k = o(F_k) (degenerate corners only on mirror planes and
+axes). Route to (A1): a candidate v is cut only if some corner w has w·v > |w|², which forces |w| < |v| (a smaller cutter beside it);
+if cutters are never cut and each cuts a bounded number, c_k < F_{k−1}/2. Next: instrument the family run (who cuts whom) on the
+compute machine to test 'cutters survive' and the cut multiplicity.
