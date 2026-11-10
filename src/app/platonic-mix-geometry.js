@@ -128,8 +128,8 @@ const inFoot = (c) => Math.abs(c[0]) < FOOTPRINT && Math.abs(c[1]) < FOOTPRINT;
 /** The 4 face pyramids of a tetrahedron (corners V): each face + the centre. */
 const quarters = (V) => { const g = mean(V); return [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]].map((f) => hullFaces(f.map((i) => V[i]).concat([g]))); };
 
-function dWorld(z0, slab) {
-  const P = [], layers = 3, R = 1, mid = (k) => k > 0 && k < layers - 1, isD = (i, j, k) => mid(k) && (((i + j + k) % 2) + 2) % 2 === 0;
+function dWorld(z0, slab, R = 1) {
+  const P = [], layers = 3, mid = (k) => k > 0 && k < layers - 1, isD = (i, j, k) => mid(k) && (((i + j + k) % 2) + 2) % 2 === 0;
   const cell = (i, j, k) => [i * PHI, j * PHI, z0 + k * PHI + h];
   for (let i = -R; i <= R; i++) for (let j = -R; j <= R; j++) for (let k = 0; k < layers; k++) {
     const c = cell(i, j, k);
@@ -222,3 +222,30 @@ export function helpersOf(pieces) { const k = new Set(pieces.map((p) => p.kind))
 export const pieceVolume = (p) => Math.abs(signedVolume(p.faces));
 /** The templates, for the unit tests. */
 export const TEMPLATES = { D: DOD_F, S: S_F, X: X_F, Y: Y_F, I: ICO_F, A: CAPS_F[0], C: UNIT_F };
+
+/** ONE WORLD (DICTO 2026-11-10, studies 2026-11-10-one-world): every solid inside a skin that makes it a dodecahedral cell, so the whole
+ * mix lives in the dodecahedron slab alone. Each cell of the slab holds one solid at its sphere-unit size (cube edge phi, tetrahedron
+ * edge phi*sqrt2, octahedron edge phi^2/sqrt2 on the roof-ridge midpoints, icosahedron edge 1 in Pacioli's place, dodecahedron the cell),
+ * cycling through the mix in the name's order; the cell is drawn as glass (kind 'cell'), the solid as a jewel (kind 'J' + letter). */
+const JEWEL_V = {
+  D: DOD_V,
+  C: CUBE_V,
+  T: [[h, h, h], [h, -h, -h], [-h, h, -h], [-h, -h, h]],
+  O: [[PHI * PHI / 2, 0, 0], [-PHI * PHI / 2, 0, 0], [0, PHI * PHI / 2, 0], [0, -PHI * PHI / 2, 0], [0, 0, PHI * PHI / 2], [0, 0, -PHI * PHI / 2]],
+  I: [[0, 0.5, PHI / 2], [PHI / 2, 0, 0.5], [0.5, PHI / 2, 0]].flatMap((w) => [1, -1].flatMap((a) => [1, -1].map((b) => w.map((x, i) => (x === 0 ? 0 : x * (i === w.findIndex((y) => y !== 0) ? a : b)))))),
+};
+const JEWEL_F = Object.fromEntries(Object.entries(JEWEL_V).map(([k, V]) => [k, hullFaces(V)]));
+export function oneWorldPieces(mixIn) {
+  const list = WORLDS.filter((w) => String(mixIn).includes(w));
+  const made = dWorld(0, 0, 2);                         // 5 x 5 footprint: 13 cells, room for every solid of a mix
+  if (!list.length) return { pieces: [], top: made.top };
+  const cells = made.pieces.filter((p) => p.kind === 'D').map((p) => ({ p, c: pieceCentre(p) }))
+    .sort((a, b) => a.c[2] - b.c[2] || a.c[1] - b.c[1] || a.c[0] - b.c[0]);
+  const pieces = made.pieces.filter((p) => p.kind !== 'D');
+  cells.forEach(({ p, c }, k) => {
+    const w = list[k % list.length];
+    if (w !== 'D') pieces.push({ kind: 'cell', slab: p.slab, faces: p.faces });
+    pieces.push({ kind: 'J' + w, slab: p.slab, faces: shift(JEWEL_F[w], c) });
+  });
+  return { pieces, top: made.top };
+}

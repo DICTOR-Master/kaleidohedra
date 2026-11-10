@@ -13,7 +13,7 @@ import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey } from './site.js';
-import { WORLDS, PHI, SLAB_ORDER, slabsOf, slabPieces, pieceKey, pieceCentre, helpersOf, isSolid } from './platonic-mix-geometry.js';
+import { WORLDS, PHI, SLAB_ORDER, slabsOf, slabPieces, oneWorldPieces, pieceKey, pieceCentre, helpersOf, isSolid } from './platonic-mix-geometry.js';
 
 // the elements' colours (DICTO): dodecahedron violet, icosahedron blue, cube green, tetrahedron red, octahedron yellow; gold edges
 export const SOLID_COLOURS = { D: 0x8a5cc4, I: 0x3a70cd, C: 0x488e48, T: 0xcd3e28, O: 0xe8c852 };
@@ -29,7 +29,10 @@ const GAP = 1.2;                                         // the slabs' extra spa
 const K = (2 * WS) / ((3 * PHI + 1 + Math.SQRT2 + 1.512 + 3 * GAP) / 2); // one scale for every mix: the whole block, spread, fits
 const DROP = 6;                                          // a new layer falls from this far above its place (edge lengths)
 const ANIM_MS = 550;
-const PRESET = { mix: '', helpers: true, spread: 0, build: false, placed: {} };
+const PRESET = { mix: '', helpers: true, spread: 0, build: false, placed: {}, one: false };
+// One world (DICTO 2026-11-10): each solid a translucent jewel of its element colour inside its glass dodecahedral cell
+const isJewel = (kind) => typeof kind === 'string' && kind[0] === 'J' && kind.length === 2;
+const CELL_GLASS = 0xdfe7f2;
 const lang = () => getSettings().language;
 const cleanMix = (m) => WORLDS.filter((w) => String(m).toUpperCase().includes(w)).join('');
 
@@ -86,8 +89,24 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
   const ghostLineMats = {};                              // a ghost is outlined in its own piece's colour
   const ghostLineMat = (kind) => (ghostLineMats[kind] ??= new THREE.LineBasicMaterial({ color: colourOf(kind), transparent: true, opacity: 0.7, depthWrite: false }));
   const ghostPickMat = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false, colorWrite: false, side: THREE.DoubleSide });
-  const colourOf = (kind) => (isSolid(kind) ? SOLID_COLOURS[kind] : HELPER_COLOURS[kind]);
+  const colourOf = (kind) => (isSolid(kind) ? SOLID_COLOURS[kind] : isJewel(kind) ? SOLID_COLOURS[kind[1]] : kind === 'cell' ? CELL_GLASS : HELPER_COLOURS[kind]);
   function matFor(kind) {
+    if (isJewel(kind)) {                                 // a jewel: translucent, clear-coated, in the element colour, gold edges
+      if (!mats[kind]) {
+        mats[kind] = new THREE.MeshPhysicalMaterial({ color: colourOf(kind), flatShading: true, side: THREE.DoubleSide, transparent: true, opacity: 0.62,
+          roughness: 0.06, metalness: 0.05, clearcoat: 1, clearcoatRoughness: 0.04, ior: 1.7, specularIntensity: 1, depthWrite: false,
+          polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+        lineMats[kind] = new THREE.LineBasicMaterial({ color: GOLD });
+      }
+      mats[kind].opacity = Math.min(0.62, opacity); return mats[kind];
+    }
+    if (kind === 'cell') {                               // the solid's skin: its dodecahedral cell, in clear glass
+      if (!mats[kind]) {
+        mats[kind] = new THREE.MeshStandardMaterial({ color: CELL_GLASS, flatShading: true, side: THREE.DoubleSide, transparent: true, opacity: 0.12, depthWrite: false, roughness: 0.1 });
+        lineMats[kind] = new THREE.LineBasicMaterial({ color: CELL_GLASS, transparent: true, opacity: 0.55 });
+      }
+      return mats[kind];
+    }
     if (!mats[kind]) {
       mats[kind] = new THREE.MeshStandardMaterial({ color: colourOf(kind), flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1, roughness: isSolid(kind) ? 0.5 : 0.85 });
       lineMats[kind] = new THREE.LineBasicMaterial({ color: GOLD });
@@ -97,7 +116,7 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
     lineMats[kind].color.setHex(skeleton || !isSolid(kind) ? colourOf(kind) : GOLD);
     return m;
   }
-  const shownKind = (kind) => isSolid(kind) || view.helpers;
+  const shownKind = (kind) => isSolid(kind) || isJewel(kind) || kind === 'cell' || view.helpers;
   const placedSet = (w) => new Set(view.placed[w] ?? []);
   /** Is this piece placed? Outside Build it yourself every piece is. */
   const isPlaced = (w, key, set = placedSet(w)) => !view.build || set.has(key);
@@ -107,7 +126,7 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
   function makeSlab(w) {
     let s = slabs.get(w);
     if (!s) { s = { world: w, group: new THREE.Group(), y: 0, drawn: [], ghost: null }; group.add(s.group); slabs.set(w, s); }
-    const made = slabPieces(w, view.mix);
+    const made = view.one ? oneWorldPieces(view.mix) : slabPieces(w, view.mix);
     s.pieces = made.pieces; s.top = made.top; s.keys = made.pieces.map(pieceKey);
     if (view.placed[w]) { const ks = new Set(s.keys); view.placed[w] = view.placed[w].filter((k) => ks.has(k)); }
     drawSlab(s);
@@ -136,7 +155,7 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
     }
   }
   function syncSlabs({ animate = false } = {}) {
-    const want = active ? slabsOf(view.mix) : [];
+    const want = !active ? [] : view.one ? (view.mix ? ['D'] : []) : slabsOf(view.mix);
     for (const [w, s] of slabs) if (!want.includes(w)) { disposeSlab(s); group.remove(s.group); slabs.delete(w); }
     const added = [];
     for (const w of want) { if (!slabs.has(w)) added.push(w); makeSlab(w); }
@@ -168,7 +187,7 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
   const redrawAll = () => { for (const s of slabs.values()) drawSlab(s); };
 
   const pieceName = (kind, L = lang()) => t(`pm.piece.${KEY[kind] ?? kind}`, L);
-  const named = (kind) => (isSolid(kind) ? pieceName(kind) : `${kind} ${pieceName(kind)}`);
+  const named = (kind) => (isSolid(kind) ? pieceName(kind) : isJewel(kind) ? pieceName(kind[1]) : kind === 'cell' ? t('pm.piece.cell', lang()) : `${kind} ${pieceName(kind)}`);
   function placePieces(w, keys) {
     const set = placedSet(w); for (const k of keys) set.add(k);
     view.placed[w] = [...set];
@@ -209,7 +228,7 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
   panel.innerHTML = `
     <div class="w4d-row st-note pm-note"></div>
     <div class="w4d-row pm-letters">${WORLDS.map((w) => `<button type="button" data-pm-world="${w}" style="--pm-c:${hex(SOLID_COLOURS[w])}"></button>`).join('')}</div>
-    <div class="w4d-row w4d-options"><button type="button" data-pm="build"></button><button type="button" data-pm="fill"></button><button type="button" data-pm="helpers"></button></div>
+    <div class="w4d-row w4d-options"><button type="button" data-pm="build"></button><button type="button" data-pm="fill"></button><button type="button" data-pm="helpers"></button><button type="button" data-pm="one"></button></div>
     <div class="w4d-row pm-helpers"></div>
     <div class="w4d-row pm-spread-row"><label class="hull-pick"><span class="pm-spread-label"></span> <input type="range" class="st-slider" min="0" max="100" step="1"></label></div>`;
   document.body.appendChild(panel);
@@ -221,14 +240,17 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
     const L = lang(), all = [...slabs.values()].flatMap((s) => s.pieces), used = helpersOf(all), empty = !view.mix;
     const order = ordered().map((s) => (s.world === 'TO' ? ['T', 'O'].filter((x) => view.mix.includes(x)).join('') : s.world)).join(' · ');
     const { total, placed } = counts();
-    panel.querySelector('.pm-note').textContent = empty ? t('pm.hint', L)
+    panel.querySelector('.pm-note').textContent = empty ? t('pm.hint', L) : view.one ? t('pm.one.note', L)
       : view.build ? t('pm.count', L, { placed, total }) : t('pm.note', L, { order, n: slabs.size });
+    const ob = panel.querySelector('[data-pm="one"]');
+    ob.textContent = t(view.one ? 'pm.one.on' : 'pm.one.off', L); ob.classList.toggle('active', view.one); ob.setAttribute('aria-pressed', String(view.one));
     panel.querySelectorAll('[data-pm-world]').forEach((b) => {
       const w = b.dataset.pmWorld, on = view.mix.includes(w);
       b.textContent = w; b.classList.toggle('active', on); b.setAttribute('aria-pressed', String(on));
       b.title = b.ariaLabel = t(`pm.piece.${w}`, L);
     });
     const bb = panel.querySelector('[data-pm="build"]');
+    bb.hidden = view.one;                                // Build it yourself belongs to the layered view
     bb.textContent = t('pm.build', L); bb.classList.toggle('active', view.build); bb.setAttribute('aria-pressed', String(view.build));
     const fb = panel.querySelector('[data-pm="fill"]');
     fb.hidden = !view.build || placed >= total; fb.textContent = t('pm.fill', L);
@@ -267,6 +289,11 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
       return;
     }
     if (b.dataset.pm === 'helpers') { view.helpers = !view.helpers; redrawAll(); renderPanel(); commit(); }
+    if (b.dataset.pm === 'one') {                      // one world: the whole mix in the dodecahedron slab, jewels in glass cells
+      view.one = !view.one; view.build = false; view.placed = {};
+      for (const s of [...slabs.values()]) { disposeSlab(s); group.remove(s.group); } slabs.clear();
+      syncSlabs(); renderPanel(); fit(); commit();
+    }
   });
   slider.addEventListener('input', () => { view.spread = Number(slider.value); place(null); });
   slider.addEventListener('change', () => { commit(); fit(); });
