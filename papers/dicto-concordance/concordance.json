@@ -6139,6 +6139,16 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 step A1: is the cut fraction bounded by roundness? (DICTO 11-11 'run the cut fraction vs roundness test')",
+    "method": "roundness_hop.py, 1280 hops on generic starts (sphere noise, icosahedral, half-spaces, off-centre ellipsoids); R/r from O and t_min",
+    "status": "PARTIAL",
+    "result": "t_min is not roundness (t<=3/phi^2 allows 0.718); non-icosahedral: cut <= 0.412 for R/r < 2; all round over-half hops (R/r 1.03-1.08, up to 0.718) are icosahedral (whole orbits cut together)",
+    "retry": "proof must use the OG orbit structure (DICTO: a sophisticated 4D Vacuus); roundness alone fails for icosahedral sets",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },
