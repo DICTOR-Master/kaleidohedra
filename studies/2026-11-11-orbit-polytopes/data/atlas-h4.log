@@ -1,0 +1,22 @@
+H4: chain [5, 3, 3], order 14400, mirrors 60
+  (0, 0, 0, 1): corners 120 edges 720 codim-2 1200 facets 600 {1: 600} simple False | on mirrors 1200, off 0  (3 s)
+  (0, 0, 1, 0): corners 720 edges 3600 codim-2 3600 facets 720 {1: 600, 4: 120} simple False | on mirrors 1200, off 2400  (2 s)
+  (0, 0, 1, 1): corners 1440 edges 4320 codim-2 3600 facets 720 {1: 600, 4: 120} simple False | on mirrors 1200, off 2400  (2 s)
+  (0, 1, 0, 0): corners 1200 edges 3600 codim-2 3120 facets 720 {1: 600, 4: 120} simple False | on mirrors 720, off 2400  (2 s)
+  (0, 1, 0, 1): corners 3600 edges 10800 codim-2 8640 facets 1440 {1: 600, 3: 720, 4: 120} simple False | on mirrors 1200, off 7440  (2 s)
+  (0, 1, 1, 0): corners 3600 edges 7200 codim-2 4320 facets 720 {1: 600, 4: 120} simple True | on mirrors 1920, off 2400 | h [1, 716, 2166, 716, 1] swaps {'(1, 1)->(4, 4)': 601, '(1, 4)->(1, 4)': 964, '(4, 4)->(1, 1)': 601}  (2 s)
+  (0, 1, 1, 1): corners 7200 edges 14400 codim-2 8640 facets 1440 {1: 600, 3: 720, 4: 120} simple True | on mirrors 1200, off 7440 | h [1, 1436, 4326, 1436, 1] swaps {'(1, 1)->(3, 4)': 601, '(1, 3)->(1, 4)': 1562, '(1, 4)->(1, 3)': 1562, '(3, 4)->(1, 1)': 601}  (2 s)
+  (1, 0, 0, 0): corners 600 edges 1200 codim-2 720 facets 120 {4: 120} simple True | on mirrors 720, off 0 | h [1, 116, 366, 116, 1] swaps {'(4, 4)->(4, 4)': 366}  (2 s)
+  (1, 0, 0, 1): corners 2400 edges 7200 codim-2 7440 facets 2640 {1: 600, 2: 1200, 3: 720, 4: 120} simple False | on mirrors 0, off 7440  (2 s)
+  (1, 0, 1, 0): corners 3600 edges 10800 codim-2 9120 facets 1920 {1: 600, 2: 1200, 4: 120} simple False | on mirrors 720, off 8400  (2 s)
+  (1, 0, 1, 1): corners 7200 edges 18000 codim-2 13440 facets 2640 {1: 600, 2: 1200, 3: 720, 4: 120} simple False | on mirrors 0, off 13440  (2 s)
+  (1, 1, 0, 0): corners 2400 edges 4800 codim-2 3120 facets 720 {1: 600, 4: 120} simple True | on mirrors 720, off 2400 | h [1, 716, 966, 716, 1] swaps {'(1, 4)->(4, 4)': 483, '(4, 4)->(1, 4)': 483}  (2 s)
+  (1, 1, 0, 1): corners 7200 edges 18000 codim-2 13440 facets 2640 {1: 600, 2: 1200, 3: 720, 4: 120} simple False | on mirrors 0, off 13440  (3 s)
+  (1, 1, 1, 0): corners 7200 edges 14400 codim-2 9120 facets 1920 {1: 600, 2: 1200, 4: 120} simple True | on mirrors 720, off 8400 | h [1, 1916, 3366, 1916, 1] swaps {'(1, 2)->(4, 4)': 601, '(1, 4)->(2, 4)': 1082, '(2, 4)->(1, 4)': 1082, '(4, 4)->(1, 2)': 601}  (2 s)
+  (1, 1, 1, 1): corners 14400 edges 28800 codim-2 17040 facets 2640 {1: 600, 2: 1200, 3: 720, 4: 120} simple True | on mirrors 0, off 17040 | h [1, 2636, 9126, 2636, 1] swaps {'(1, 2)->(3, 4)': 601, '(1, 3)->(2, 4)': 2281, '(1, 4)->(2, 3)': 1681, '(2, 3)->(1, 4)': 1681, '(2, 4)->(1, 3)': 2281, '(3, 4)->(1, 2)': 601}  (3 s)
+control H4 (0, 0, 0, 1) 120 720 ok
+control H4 (1, 0, 0, 0) 600 1200 ok
+control H4 (0, 1, 1, 0) 3600 7200 ok
+general balance: 6 simple 4-polytopes, direction-independent 6, every swap type balanced by its reverse 6
+FINAL ok
+[exit 0]

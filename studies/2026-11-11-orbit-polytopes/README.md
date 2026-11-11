@@ -122,3 +122,23 @@ measured on generic sweeps (9 directions each; H4 4):
 | bitruncated 600-cell (control, #104) | 600 TT, 120 TI | 1200, 720 | 601 | 964 |
 The balance law is a property of every chain's middle, not of H4 alone. With the Mirror Law: the swaps W-W <-> R-R exchange contacts
 through faces on the mirrors; the mixed swaps run through the middle-bond faces off them.
+## ATLAS OF THE CHAINS (scripts/atlas.py; data/atlas_A3_B3_H3_A4_B4.json (pilot), atlas_A4_B4_F4.json, atlas_H4.json, atlas-h4.log)
+Every 0/1 seed of A3, B3, H3 (7 each), A4, B4, F4, H4 (15 each): corners, edges, codim-2 faces, facets by node, simple or not, Mirror
+Law split (by face size and the node types of the two facets), and for simple 4-polytopes three generic sweeps (h-vector; swaps by the
+types of the cells that let go and meet). Controls: cuboctahedron, truncated octahedron, icosidodecahedron, 4D permutohedron, 24-cell,
+120-cell, bitruncated 600-cell; FINAL ok.
+OBSERVED: (1) A Vacuus need not be made of mirrors: the cuboctahedron's 4 hexagonal discs are not B3 mirrors (all its edges are "off");
+for the Queens the Vacuus and the mirrors coincide. Mirrors are relative to the generating group (A3's octahedron (0,1,0): 0 on).
+(2) GENERAL BALANCE: in all 26 simple 4-polytopes of A4, B4, F4, H4, every swap type X -> Y is matched by Y -> X, with counts the same
+in every sweep direction.
+THEOREM (general balance law; proof). Let a simple 4-polytope have its cells typed so that every corner sees the same multiset of
+types (m_t cells of type t), e.g. any Wythoff polytope with types = nodes. In any generic sweep: (i) every contact (2-face) of type X is
+created once (at its face's lowest corner) and destroyed once (at its highest); (ii) at a cell's lowest corner (a birth, i = 1) the
+contacts created are its 3 faces there, whose types depend only on the cell's type; likewise at its highest corner (a death, i = 3);
+the first and last corners each create/destroy the 6 faces of one corner. Hence, counting creations,
+in(X) = N_X - sum over cells C of c_X(t_C) + p_X  (c_X(t): faces of type X at a corner involving a given cell of type t; p_X: faces of
+type X at a corner), independent of the direction, and counting destructions gives out(X) = the same number. (iii) The three splits of
+a corner's four edges into two pairs link face types {T(D), T(U)}; for every multiset of four types the resulting graph on face types
+has no cycle of length >= 3 (checked by hand for all five multiset shapes abcd, aabc, aabb, aaab, aaaa), so in(X) = out(X) for all X
+forces s(X -> Y) = s(Y -> X) for every pair. QED. #104 Theorem 4 is the case {W, W, R, R}: in(RR) = N_RR - #R + 1.
+Closed form checked against every simple Atlas row (scripts/balance_formula.py): 84 (polytope, face type) cases, 0 mismatches.

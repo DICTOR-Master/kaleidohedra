@@ -6043,6 +6043,15 @@
     "retry": "never",
     "study": "studies/2026-11-11-orbit-polytopes",
     "date": "2026-11-11"
+   },
+   {
+    "question": "Atlas of the Chains + general balance law",
+    "method": "atlas.py over all 0/1 seeds of A3,B3,H3,A4,B4,F4,H4; sweeps x3; balance_formula.py",
+    "status": "SETTLED (theorem, proof + 84 checks)",
+    "result": "General balance law: in a simple 4-polytope whose corners all see the same cell-type multiset, every swap X->Y is matched by Y->X, count in(X) = N_X - sum c_X + p_X, direction independent (26 simple Wythoff 4-polytopes). #104 Thm 4 = case WWRR. Vacuus != mirrors in general (cuboctahedron)",
+    "retry": "never",
+    "study": "studies/2026-11-11-orbit-polytopes",
+    "date": "2026-11-11"
    }
   ]
  },
