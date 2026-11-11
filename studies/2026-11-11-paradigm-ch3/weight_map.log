@@ -1,0 +1,15 @@
+PASS Kelvin: d = 0, cell = permutohedron with gap ratio outer:middle = 1.00000000000000, d = (g - m)/(g + m)
+PASS DICTO 1:2: d = -1/3, cell = permutohedron with gap ratio outer:middle = 1/2, d = (g - m)/(g + m)
+PASS DICTO 2:1: d = 1/3, cell = permutohedron with gap ratio outer:middle = 2, d = (g - m)/(g + m)
+PASS golden bond: d = -2 + sqrt(5), cell = permutohedron with gap ratio outer:middle = 1/2 + sqrt(5)/2, d = (g - m)/(g + m)
+PASS a generic stop: d = 2/7, cell = permutohedron with gap ratio outer:middle = 9/5, d = (g - m)/(g + m)
+PASS d -> -d sends the gap ratio x to 1/x: the two kinds of site swap their ratios
+PASS inverse: d = (x - 1)/(x + 1) (as in #53, Corollary 1)
+PASS golden bond: d = (tau - 1)/(tau + 1) = 1/tau^3
+PASS d = -99/100: no site within +-8 cuts the 14-wall cell (every corner passes every power inequality)
+PASS d = -1/3: no site within +-8 cuts the 14-wall cell (every corner passes every power inequality)
+PASS d = 0: no site within +-8 cuts the 14-wall cell (every corner passes every power inequality)
+PASS d = (1/2 + sqrt(5)/2)**(-3): no site within +-8 cuts the 14-wall cell (every corner passes every power inequality)
+PASS d = 1/3: no site within +-8 cuts the 14-wall cell (every corner passes every power inequality)
+PASS d = 99/100: no site within +-8 cuts the 14-wall cell (every corner passes every power inequality)
+FINAL ok

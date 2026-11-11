@@ -41,4 +41,17 @@ x = (1 + d) / (1 - d)
 chk(sp.simplify(x.subs(d, -d) * x) == 1, 'd -> -d sends the gap ratio x to 1/x: the two kinds of site swap their ratios')
 chk(sp.simplify(sp.solve(sp.Eq(sp.Symbol('X'), x), d)[0] - (sp.Symbol('X') - 1) / (sp.Symbol('X') + 1)) == 0, 'inverse: d = (x - 1)/(x + 1) (as in #53, Corollary 1)')
 chk(sp.simplify(1 / tau**3 - (tau - 1) / (tau + 1)) == 0, 'golden bond: d = (tau - 1)/(tau + 1) = 1/tau^3')
+# the 14 walls are the only ones: every corner of the A cell satisfies the power inequality against every site within +-8 (exact)
+def no_other_walls(dv):
+    C = cell_corners(sp.nsimplify(dv)); ok = True
+    sites = [(sp.Integer(2*i), sp.Integer(2*j), sp.Integer(2*k), 0) for i in range(-4, 5) for j in range(-4, 5) for k in range(-4, 5)]
+    sites += [(sp.Integer(2*i+1), sp.Integer(2*j+1), sp.Integer(2*k+1), 1) for i in range(-5, 4) for j in range(-5, 4) for k in range(-5, 4)]
+    for y in C:
+        own = sum(v * v for v in y)                      # power to the A site at the origin (weight w_A, take w_A = d, w_B = 0)
+        for (s1, s2, s3, kind) in sites:
+            pw = (y[0] - s1) ** 2 + (y[1] - s2) ** 2 + (y[2] - s3) ** 2 - (0 if kind else sp.nsimplify(dv))
+            if sp.simplify(own - sp.nsimplify(dv) - pw) > 0: ok = False
+    return ok
+for dv in [sp.Rational(-99, 100), sp.Rational(-1, 3), 0, 1 / tau**3, sp.Rational(1, 3), sp.Rational(99, 100)]:
+    chk(no_other_walls(dv), f'd = {dv}: no site within +-8 cuts the 14-wall cell (every corner passes every power inequality)')
 print('FINAL ok' if not fails else f'FINAL FAIL {fails}')

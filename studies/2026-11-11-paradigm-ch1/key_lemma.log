@@ -1,0 +1,17 @@
+PASS alternating exchanges (a b), (b c) close up after six steps (the braid ring)
+   sides: [sqrt(2)*Abs(a - b), sqrt(2)*Abs(b - c), sqrt(2)*Abs(a - b), sqrt(2)*Abs(b - c), sqrt(2)*Abs(a - b), sqrt(2)*Abs(b - c)]
+PASS sides alternate sqrt2(b-a), sqrt2(c-b) (checked at 1,2,4 and symbolically below)
+PASS side formula symbolic
+PASS the six steps are (b-a) and (c-b) times six root directions, each turned 60 degrees from the last: every angle 120 degrees, symbolically
+PASS every equiangular hexagon with alternating sides s, t closes: one shape per (s, t)
+PASS Kelvin: hull faces computed: 8 hexagons sides sqrt2*(1, 1), 6 four-gons sides sqrt2*(1, 1)
+PASS DICTO 1:2: hull faces computed: 8 hexagons sides sqrt2*(1, 2), 6 four-gons sides sqrt2*(1, 1)
+PASS DICTO 2:1: hull faces computed: 8 hexagons sides sqrt2*(2, 4), 6 four-gons sides sqrt2*(4, 4)
+PASS golden bond: hull faces computed: 8 hexagons sides sqrt2*(2, 1 + sqrt(5)), 6 four-gons sides sqrt2*(1 + sqrt(5), 1 + sqrt(5))
+   DICTO 1:2: gaps [1, 2, 1], hexagon gap ratios [2, 1/2], four-gons [(sqrt(2), sqrt(2))]
+PASS DICTO 1:2: hexagons ratio 2 (1:2), four-gons squares
+   golden bond T(tau): gaps [1 + sqrt(5), 2, 1 + sqrt(5)], hexagon gap ratios [-1/2 + sqrt(5)/2, 1/2 + sqrt(5)/2], four-gons [(sqrt(2) + sqrt(10), sqrt(2) + sqrt(10))]
+PASS golden bond: gaps 2tau, 2, 2tau (tau^3 - 1 = 2tau), hexagons golden (ratio tau)
+   Kelvin: gaps [1, 1, 1], hexagon gap ratios [1, 1], four-gons [(sqrt(2), sqrt(2))]
+PASS Kelvin: equal gaps, regular hexagons and squares
+FINAL ok

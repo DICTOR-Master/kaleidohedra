@@ -25,7 +25,7 @@ for ax, (title, vals, names) in zip(axs, cases):
         ax.plot(*P[k], 'o', color='#222', ms=4)
     ax.set_title(title, fontsize=11); ax.set_aspect('equal'); ax.axis('off')
     r = max(np.linalg.norm(p - c) for p in P) + 0.6; ax.set_xlim(c[0] - r, c[0] + r); ax.set_ylim(c[1] - r, c[1] + r)
-axs[0].plot([], [], color='#2f6fb3', lw=3, label='exchange of the first two values'); axs[0].plot([], [], color='#c0392b', lw=3, label='exchange of the last two values')
+axs[0].plot([], [], color='#2f6fb3', lw=3, label='exchange of the two smallest values'); axs[0].plot([], [], color='#c0392b', lw=3, label='exchange of the two largest values')
 fig.legend(loc='lower center', ncol=2, frameon=False, fontsize=9)
 fig.text(0.99, 0.01, 'DICTO · dictospheres.com', ha='right', fontsize=6, color='#999')
 fig.savefig(sys.argv[1], bbox_inches='tight')

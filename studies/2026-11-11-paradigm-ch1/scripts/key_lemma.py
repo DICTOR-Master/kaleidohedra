@@ -27,8 +27,10 @@ chk(all(sp.simplify(sides[k] - sp.sqrt(2) * sp.Abs(b - a)) == 0 for k in (0, 2, 
 def angle(k):
     u = H[k - 1] - H[k]; w = H[(k + 1) % 6] - H[k]
     return sp.simplify((u.T * w)[0] / sp.sqrt((u.T * u)[0] * (w.T * w)[0]))
-cosines = [sp.simplify(angle(k).subs(pos)) for k in range(6)]
-chk(all(x == sp.Rational(-1, 2) for x in cosines), 'every angle 120 degrees (cos = -1/2)')
+steps = [sp.Matrix(v) for v in [(1,-1,0),(1,0,-1),(0,1,-1),(-1,1,0),(-1,0,1),(0,-1,1)]]   # step directions from (a,b,c), values factored out
+turn60 = all((steps[k].T * steps[(k + 1) % 6])[0] == 1 for k in range(6))   # unit-free: dot 1, norms sqrt2 -> 60 degree turns
+real = all(sp.simplify((H[(k + 1) % 6] - H[k]) - steps[k] * ((b - a) if k % 2 == 0 else (c - b))) == sp.zeros(3, 1) for k in range(6))
+chk(turn60 and real, 'the six steps are (b-a) and (c-b) times six root directions, each turned 60 degrees from the last: every angle 120 degrees, symbolically')
 # (2) congruence: an equiangular hexagon with sides s,t,s,t,s,t is fixed up to congruence by s, t (turning by 60 each step)
 s, t = sp.symbols('s t', positive=True)
 dirs = [sp.Matrix([sp.cos(sp.pi * k / 3), sp.sin(sp.pi * k / 3)]) for k in range(6)]
@@ -40,7 +42,27 @@ def faces4(vals):
     hexratios = [sp.nsimplify(sp.simplify(gaps[i + 1] / gaps[i])) for i in range(2)]
     rects = [(sp.sqrt(2) * gaps[0], sp.sqrt(2) * gaps[2])]   # four-gons exchange the first and last pair of values (two disjoint swaps)
     return gaps, hexratios, rects
+import numpy as np
+from scipy.spatial import ConvexHull
+def hull_faces(vals):
+    tv = [float(v) for v in vals]; m = sum(tv) / 4
+    Hm = np.array([[1,1,-1,-1],[1,-1,1,-1],[1,-1,-1,1]]) / 2.0
+    X = np.array([[v - m for v in p] for p in itertools.permutations(tv)]) @ Hm.T
+    h = ConvexHull(X); G = {}
+    for simp, eq in zip(h.simplices, h.equations): G.setdefault(tuple(np.round(eq, 7)), set()).update(simp)
+    out = []
+    for idx in G.values():
+        idx = list(idx); c = X[idx].mean(0); n = np.cross(X[idx[1]] - X[idx[0]], X[idx[2]] - X[idx[0]]); u = X[idx[0]] - c; w = np.cross(n, u)
+        idx.sort(key=lambda i: np.arctan2((X[i] - c) @ w, (X[i] - c) @ u))
+        out.append(sorted(round(float(np.linalg.norm(X[idx[k]] - X[idx[(k + 1) % len(idx)]])), 6) for k in range(len(idx))))
+    return out
 tau = (1 + sp.sqrt(5)) / 2
+for name, vals, hexs, quads in [('Kelvin', (1, 2, 3, 4), (1, 1), (1, 1)), ('DICTO 1:2', (1, 2, 4, 5), (1, 2), (1, 1)), ('DICTO 2:1', (-5, -1, 1, 5), (2, 4), (4, 4)),
+                                ('golden bond', (-tau**3, -1, 1, tau**3), (2, 2 * tau), (2 * tau, 2 * tau))]:
+    F = hull_faces(vals); hx = [f for f in F if len(f) == 6]; qd = [f for f in F if len(f) == 4]
+    eh = sorted([round(float(sp.sqrt(2) * hexs[0]), 6)] * 3 + [round(float(sp.sqrt(2) * hexs[1]), 6)] * 3)
+    eq_ = sorted([round(float(sp.sqrt(2) * quads[0]), 6)] * 2 + [round(float(sp.sqrt(2) * quads[1]), 6)] * 2)
+    chk(len(hx) == 8 and len(qd) == 6 and all(f == eh for f in hx) and all(f == eq_ for f in qd), f'{name}: hull faces computed: 8 hexagons sides sqrt2*{hexs}, 6 four-gons sides sqrt2*{quads}')
 for name, vals in [('DICTO 1:2', (1, 2, 4, 5)), ('golden bond T(tau)', (-tau**3, -1, 1, tau**3)), ('Kelvin', (1, 2, 3, 4))]:
     g, r, rect = faces4(vals)
     g = [sp.simplify(x) for x in g]; r = [sp.simplify(x) for x in r]
