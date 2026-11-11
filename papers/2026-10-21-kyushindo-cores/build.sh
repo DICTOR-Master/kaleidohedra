@@ -10,5 +10,5 @@ open('paper.html', 'w').write(s)
 P
 rsync -a --delete --exclude pg ./ compute-host:kaleidohedra-papers/2026-10-21-kyushindo-cores/
 rsync -a ../paper.css ../dicto-logo.png ../print.mjs compute-host:kaleidohedra-papers/
-ssh compute-host 'cd ~/kaleidohedra-papers && node print.mjs 2026-10-21-kyushindo-cores kyushindo-cores-draft.pdf "DICTO Kyushindo Cores" "reserved" 1'
+ssh compute-host 'cd ~/kaleidohedra-papers && node print.mjs 2026-10-21-kyushindo-cores kyushindo-cores-draft.pdf "DICTO Kyushindo Cores" "reserved" 3'
 rsync -a compute-host:kaleidohedra-papers/2026-10-21-kyushindo-cores/kyushindo-cores-draft.pdf ./
