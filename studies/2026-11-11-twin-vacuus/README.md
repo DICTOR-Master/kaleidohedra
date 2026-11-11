@@ -148,3 +148,9 @@ k = 7 dodecahedron Angelus. No cycle: the OG's thread visits the Platonic Angeli
 OBSERVED (4 decimals, not yet exact): the OG's k = 1 and k = 5 Angeli have the SAME fin angles (12.8684°, 34.1211°) as the Catalan
 pentakis's k = 1 Angelus, and the same golden rectangles (φ²): the OG thread touches the pentakis cycle there. To check exactly
 (cos² 6909/11881 + 1960√5/11881 and 7749/11881 + 176√5/11881 for the Catalan).
+LEVEL-1 MATCH, EXACT (DICTO: "check the level 1 match exactly"; scripts/level1_match.py, FINAL ok): the OG's level-1 and level-5 Angeli
+ARE the Catalan pentakis's level-1 Angelus: identical exact fin classes (cos² 6909/11881 + 1960√5/11881 and 7749/11881 + 176√5/11881, 60
+fins each) and the twin hulls exactly similar (OG k = 1: c = (9 − 3√5)/2 = 3/φ²; OG k = 5: c = (567 − 243√5)/164; same orientation, exact
+point sets). The outsider's thread passes exactly through the pentakis cycle at levels 1 and 5. CAUTION: c depends on the arbitrary size
+of the Catalan start (built from the truncated icosahedron of edge 2), so c = 3/φ² is not yet meaningful; check with a natural common
+normalisation (equal circumradius or insphere of the starts) before reading anything into it.
