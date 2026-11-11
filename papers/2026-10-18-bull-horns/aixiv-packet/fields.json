@@ -1,0 +1,25 @@
+{
+ "fields": {
+  "title": "The DICTO Ogdoecontahedron on the Octet Truss",
+  "authors": "DICTO",
+  "abstract": "Joined hexagon to hexagon, copies of the DICTO Ogdoecontahedron (OG) form a body-centred cubic packing whose gap is treated in a companion paper (DICTO DOI: 10.5281/zenodo.23451210). Here the OG goes the other way: its eight joint hexagons lie exactly on the faces of a regular octahedron |x| + |y| + |z| = 2φ/3, so the OG sits in the octahedra of the octet truss, and the space round it becomes tractable. Exactly, in ℚ(√5), we give four families of space-filling kits. (1) A golden-key octet: the OG's golden envelope (a rhombic triacontahedron) pokes into each neighbouring tetrahedron as a small key whose base corners sit at the golden-section points of the octahedron's edges; keyed octahedron and dented tetrahedron (a left and a right) fill space. (2) A Penrose-core octet: the five-fold stars of neighbouring OGs face each other across every octahedron edge, offset by exactly one star tip radius, and an exact thick Penrose rhombus, with two φ-smaller ones, joins them; the shared middle piece holds three Penrose cores. (3) Golden envelopes on every octahedron never overlap and fill exactly 90 − 40√5 = 10/φ⁶ ≈ 55.73% of space; the rest is one chiral piece, so envelope and grown piece fill space with two shapes, and each envelope lies inside its rhombic dodecahedron touching all 12 faces at golden-section points. (4) One-piece glue: the rhombic dodecahedron round each octet vertex, or the octahedral cell round each edge midpoint, minus the OGs that bite it, fills space with the OG as two shapes with no mirror pair, the sockets being exact OG imprints; the edge-centred piece holds all three Penrose cores and can be keyed with the OG's own kites so that twelve copies lock round one OG. The main kits were proved exactly by an independent engine and checked with millions of sample points.",
+  "primary_category": "math.MG",
+  "categories": [
+   "math.MG",
+   "math.CO"
+  ],
+  "msc_class": "52C22, 52B10, 52C23",
+  "license": "CC BY-SA 4.0",
+  "ai_contribution": "ai-assisted",
+  "ai_models": "Claude Code (Opus), Claude Fable",
+  "ai_statement": "The ideas, choices and names are DICTO's (placing the Ogdoecontahedron in the octet truss, the golden key, the Penrose cores, the one-piece glue). Computation, exact arithmetic in Q(sqrt5) and renders were done with Claude (Anthropic) as a research assistant; the independent exact proofs, the vertex glue W, the identification of the tetartoid and the keyed-glue design are by Claude Fable, with DICTO's go. DICTO read and approved the typeset paper before release on Zenodo. No outside referee has checked it.",
+  "repo_url": "https://github.com/DICTOR-Master/kaleidohedra",
+  "process_summary": "18-20 Oct 2026: DICTO asked how the Ogdoecontahedron (OG) sits in the octet truss; its eight joint hexagons were found to lie exactly on the faces of a regular octahedron, which made the space around it tractable. Four kit families were then built and checked in exact arithmetic (golden key, Penrose core, golden envelope, one-piece glue), each with its own study (studies/2026-10-18-ocd-octet, -ocd-octahedron-caps, -p1-golden-key-octet, -p2-penrose-core-octet, -p3-golden-envelope-octet, -p4-golden-octet-adaptor, -envelope-network on the research branch). Later versions (to v6, 5 Nov 2026) corrected credits, one figure panel and the methods notes; no result changed.",
+  "verification_notes": "Every corner is exact in Q(sqrt5). The main kits were proved exactly by a second, independent engine and checked by sampling millions of random points for gaps and overlaps; the packing fraction 90 - 40 sqrt5 = 10/phi^6 is an exact volume computation. Scripts, data and logs: the studies listed in the process summary (research branch of the repository).",
+  "negative_results": "None recorded as a separate result; the paper's sources section lists the prior-art searches (rhombic triacontahedra in the octet truss, tetartoids and interlocking glue in the octet honeycomb), none of which found these kits.",
+  "external_url": "https://doi.org/10.5281/zenodo.23457016",
+  "comments": "Paper #37 of DICTO's series; Version 6 (10.5281/zenodo.24091154) of Zenodo concept record 10.5281/zenodo.23457016 (this PDF is identical to that version). Licence CC BY-SA 4.0."
+ },
+ "pdf": "dicto-octet-truss.pdf",
+ "zenodo_record": "24091154"
+}

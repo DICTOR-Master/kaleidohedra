@@ -6313,6 +6313,15 @@
     "retry": "never on Narcissus with crest/edge/face decorations; only a carrier with more turns per site (RD bridge, 24) or several pieces",
     "study": "2026-11-09-abc-waveform",
     "date": "2026-11-12"
+   },
+   {
+    "question": "one-piece aim, DICTO 12 Nov 'go ahead with the bridge count': how many marked RDs carry the certified chair hierarchy (Tsiokos/Kamenetsky) onto the fcc RD packing",
+    "method": "isometric bridge (chair unit cubes = conventional fcc cubes, sites = odd-sum points); labels up to 24 turns over level-k supertiles k=3..6 (bridge_count.py)",
+    "status": "SETTLED (count)",
+    "result": "558 marked RDs (7 centre + 551 edge), stable k=4..6; carries strong aperiodicity to the RD packing (all c), not the c/h stacking",
+    "retry": "reductions of the 558 only (relay edges, cell read from neighbours)",
+    "study": "2026-11-12-rd-bridge",
+    "date": "2026-11-12"
    }
   ]
  },

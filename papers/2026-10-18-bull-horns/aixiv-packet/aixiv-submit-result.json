@@ -1,0 +1,74 @@
+{
+ "ok": true,
+ "aixiv_id": "2611.01166",
+ "abs_url": "https://aixiv.online/abs/2611.01166",
+ "pdf_url": "https://aixiv.online/pdf/2611.01166v1",
+ "engine": null,
+ "listed": false,
+ "listing_note": "Live at abs_url with its timestamp and hash. It joins the public listings when its check passes, usually within half an hour; the result is on the paper's page and under `check` in GET /api/v1/papers/<id> with your token.",
+ "record": {
+  "aixiv_id": "2611.01166",
+  "url": "https://aixiv.online/abs/2611.01166",
+  "pdf_url": "https://aixiv.online/pdf/2611.01166",
+  "title": "The DICTO Ogdoecontahedron on the Octet Truss",
+  "abstract": "Joined hexagon to hexagon, copies of the DICTO Ogdoecontahedron (OG) form a body-centred cubic packing whose gap is treated in a companion paper (DICTO DOI: 10.5281/zenodo.23451210). Here the OG goes the other way: its eight joint hexagons lie exactly on the faces of a regular octahedron |x| + |y| + |z| = 2φ/3, so the OG sits in the octahedra of the octet truss, and the space round it becomes tractable. Exactly, in ℚ(√5), we give four families of space-filling kits. (1) A golden-key octet: the OG's golden envelope (a rhombic triacontahedron) pokes into each neighbouring tetrahedron as a small key whose base corners sit at the golden-section points of the octahedron's edges; keyed octahedron and dented tetrahedron (a left and a right) fill space. (2) A Penrose-core octet: the five-fold stars of neighbouring OGs face each other across every octahedron edge, offset by exactly one star tip radius, and an exact thick Penrose rhombus, with two φ-smaller ones, joins them; the shared middle piece holds three Penrose cores. (3) Golden envelopes on every octahedron never overlap and fill exactly 90 − 40√5 = 10/φ⁶ ≈ 55.73% of space; the rest is one chiral piece, so envelope and grown piece fill space with two shapes, and each envelope lies inside its rhombic dodecahedron touching all 12 faces at golden-section points. (4) One-piece glue: the rhombic dodecahedron round each octet vertex, or the octahedral cell round each edge midpoint, minus the OGs that bite it, fills space with the OG as two shapes with no mirror pair, the sockets being exact OG imprints; the edge-centred piece holds all three Penrose cores and can be keyed with the OG's own kites so that twelve copies lock round one OG. The main kits were proved exactly by an independent engine and checked with millions of sample points.",
+  "authors": [
+   "DICTO"
+  ],
+  "primary_category": "math.MG",
+  "categories": [
+   "math.MG",
+   "math.CO"
+  ],
+  "published": "2026-11-11",
+  "updated_at": "2026-11-11T21:46:46.000Z",
+  "latest_version": 1,
+  "license": "CC BY-SA 4.0",
+  "comments": "Paper #37 of DICTO's series; Version 6 (10.5281/zenodo.24091154) of Zenodo concept record 10.5281/zenodo.23457016 (this PDF is identical to that version). Licence CC BY-SA 4.0.",
+  "msc_class": "52C22, 52B10, 52C23",
+  "kind": "native",
+  "withdrawn": false,
+  "listed": false,
+  "withdrawal_reason": null,
+  "fulltext_indexed": true,
+  "claimed_by_author": true,
+  "source": null,
+  "repository": {
+   "url": "https://github.com/DICTOR-Master/kaleidohedra",
+   "verified": true,
+   "stars": 1,
+   "license": "MIT",
+   "last_push": "2026-11-11T21:38:54Z"
+  },
+  "ai_process": {
+   "models": "Claude Code (Opus), Claude Fable",
+   "contribution_level": "ai-assisted",
+   "statement": null,
+   "has_process_summary": true,
+   "has_prompts_harness": false,
+   "has_verification_notes": true,
+   "has_negative_results": true,
+   "trace_url": null
+  },
+  "reproduction_status": "unverified",
+  "editors_pick": false,
+  "editorial_summary": null,
+  "comment_count": 0,
+  "priority_record": {
+   "note": "Each version is timestamped at receipt; the hash is immutable evidence of content at that time.",
+   "versions": [
+    {
+     "version": 1,
+     "submitted_utc": "2026-11-11T21:46:46.000Z",
+     "content_hash": "sha256:6817312bf79aea0c0fb8bb6d6ab8ea7cecf7ab03ad20d8fb2929cdea5a7a70aa",
+     "hash_covers": "pdf-bytes",
+     "has_pdf": true,
+     "source_url": null,
+     "changelog": null
+    }
+   ]
+  }
+ },
+ "sessions": [],
+ "sessions_note": "No session files were sent. Attach the agent sessions behind this paper: `npx aixiv@latest attach --paper 2611.01166` in the project folder, POST /api/v1/traces, or https://aixiv.online/attach/2611.01166."
+}
