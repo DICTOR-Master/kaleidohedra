@@ -6109,6 +6109,16 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 OG family: Penrose / cut-and-project type? Galois twins (sqrt5 -> -sqrt5), Vacuus ratio, twin sheet shapes (DICTO 11-11)",
+    "method": "og_twin.py exact Q(sqrt5) D_0..D_10: twin radii without cancellation, real/twin shared hull edges, twin plane distance / face size, real-order polygons in twin coordinates",
+    "status": "FOUND (structure, not a proof)",
+    "result": "no model set (digits unbounded: 4..1780); twins collapse to the centre (0.628 -> 1.8e-5, ~x0.35/level); real/twin neighbour pairs shared 20% -> under 1% (near-complete exchange); twin planes near the centre (median 0.08-0.12 of face size from k=6; real 0.93-0.99): nearly a Vacuus; non-convex twin faces are all stars (12 pentagrams at k=1,3,5; Kepler-Poinsot type)",
+    "retry": "lead only: does twin contraction track the cut fraction?",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },
