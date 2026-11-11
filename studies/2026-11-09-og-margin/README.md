@@ -400,3 +400,12 @@ k = 9, 10: the twins exchange almost ALL neighbours (scutoid-type exchange is ne
 Reading: one real direction neutral (radius settles), the conjugate direction contracting (like a Pisot unit); the 'window' shrinks
 to a point. Not a proof route yet; lead: does the contraction rate tie to the cut fraction (both come from how far the faces are from
 convex in twin space)?
+**§28a Vacuus and non-convex sheets (DICTO: "its a vacuus", "non convex sheets", "like a prism"; same script, FINAL ok).**
+Vacuus ratio = distance of each face's TWIN plane from O ÷ twin size of that face (0 = a sheet through the centre, as the fins of a
+Vacuus). Real faces: median 0.93–0.99. Twin faces: median 0.87 (k = 0), 0.32–0.40 (k = 1–5), then 0.009, 0.11, 0.12, 0.08, 0.12 (k = 6–10),
+max up to 0.7: the twin faces lie far nearer to sheets through the centre than the real ones (about a tenth of their size off-centre
+from k = 6), but do not tend to 0: nearly a Vacuus, not exactly.
+Sheet shapes (each face's corners in their REAL order, drawn in twin coordinates): NO face is merely non-convex; every non-convex twin
+face is SELF-CROSSING (a star): 12 at k = 1, 3, 5 (the five-fold faces: pentagon → pentagram, the classical Galois swap of
+icosahedral solids ↔ Kepler–Poinsot stars), 72, 60, 72, 32 at k = 7–10; all others convex. So the twin family is a Kepler–Poinsot-type
+star family of sheets packed close round the centre. Lead: DICTO's Kepler–Poinsot papers (#? 2026-10-19-kepler-poinsot-*).
