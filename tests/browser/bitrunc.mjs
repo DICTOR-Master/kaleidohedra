@@ -9,6 +9,12 @@
 // of the 7 languages at phone width: the rows fit on one line. No console errors. Screenshots ($SHOTS, default /tmp/bitrunc-shots) on
 // a phone (390×844) and a desktop (1280×800): the Sweep at a swap, a cell-first batch, Shadow, Shells and Cut open; and ($APART_SHOTS)
 // Pull apart: Cut open halfway and fully, the first shell (round the core) fully.
+// RCP view, RCP v4 and Sectors (DICTO 2026-11-11, PARTS rcp, rcpshots), as in the Queens world's Shells: the three buttons beside Cut
+// open in Shells only, tapped on both doors (phone and iPad): RCP view and RCP v4 exclude each other, RCP v4 reaches further out than
+// RCP view, Cut open goes with either; Sectors cuts the core into its 32 pyramids ("32 sectors · 32 pieces"), its own big slider (no
+// arrows) replaces Pull apart and, dragged with a finger, pulls the sectors out step by step, everything on screen; with more shells,
+// Cut open, RCP view and RCP v4; off again, Pull apart is back. ?open=bitrunc:sectors. Screenshots ($RCP_SHOTS, default $SHOTS) of
+// each new view on a phone and a desktop: rcp-bitrunc-<dev>-*.png.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
@@ -16,10 +22,11 @@ import * as BT from '../../src/app/bitrunc-geometry.js';
 import { middleSwap } from '../../src/app/world-bitrunc.js';
 import { t, LANG_ORDER } from '../../src/app/i18n.js';
 
-const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/bitrunc-shots', AS = process.env.APART_SHOTS ?? SH;
-mkdirSync(SH, { recursive: true }); mkdirSync(AS, { recursive: true });
-// PARTS (default all): doors, open (?open= and the Queens link), langs, shots; to run the file in pieces
-const PARTS = (process.env.PARTS ?? 'doors,open,langs,shots').split(',');
+const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/bitrunc-shots', AS = process.env.APART_SHOTS ?? SH, RS = process.env.RCP_SHOTS ?? SH;
+mkdirSync(SH, { recursive: true }); mkdirSync(AS, { recursive: true }); mkdirSync(RS, { recursive: true });
+// PARTS (default all): doors, rcp (RCP view, RCP v4, Sectors on both doors), open (?open= and the Queens link), langs, shots, rcpshots;
+// to run the file in pieces
+const PARTS = (process.env.PARTS ?? 'doors,rcp,open,langs,shots,rcpshots').split(',');
 const P = '#worldbitrunc-panel', SIZES = [1, 32, 142, 242, 232, 71];
 const b = await chromium.launch();
 let checks = 0;
@@ -37,8 +44,8 @@ async function onScreen(page, what) {
 }
 // Pull apart with a finger: from the thumb to the value `to`, in `steps` moves, holding still after each while the view refits;
 // each(st) sees the probe at every step
-async function dragApart(page, to, steps, each = async () => {}) {
-  const input = page.locator(`${P} .bt-apart-row input`), box = await input.boundingBox(), y = box.y + box.height / 2;
+async function dragApart(page, to, steps, each = async () => {}, row = '.bt-apart-row') {
+  const input = page.locator(`${P} ${row} input`), box = await input.boundingBox(), y = box.y + box.height / 2;
   const at = (v) => box.x + 20 + ((box.width - 40) * v) / 1000;   // the thumb is 40 px wide
   const from = Number(await input.inputValue()), cdp = await page.context().newCDPSession(page);
   await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: at(from), y }] });
@@ -176,13 +183,105 @@ for (const door of (PARTS.includes('doors') ? process.env.DOORS ?? 'kaleidohedra
     console.log('ok', tag); await page.close();
   }
 }
+// RCP view, RCP v4 and Sectors, through the real UI on both doors, phone and iPad, by touch
+for (const door of (PARTS.includes('rcp') ? process.env.DOORS ?? 'kaleidohedra,rhombiverse' : '').split(',').filter(Boolean)) {
+  for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 }, ipad: { width: 820, height: 1180 } })) {
+    const page = await b.newPage({ viewport, hasTouch: true, isMobile: true }), tag = `${door}-${dev} rcp`;
+    const errors = await open(page, `&site=${door}`);
+    await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
+    if (!(await page.locator('[data-action="tool:bitruncWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+    await page.waitForTimeout(500);
+    await page.locator('[data-action="tool:bitruncWorld"]').first().tap(); await leave(page);
+    await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1500);
+    const visible = (sel) => page.locator(`${P} ${sel}`).isVisible(), caption = () => page.locator(`${P} .ch-param-caption`).textContent();
+    const pressed = (sel) => page.getAttribute(`${P} ${sel}`, 'aria-pressed');
+    // not in the Sweep or the Shadow: nothing unnecessary shown
+    for (const m of ['sweep', 'shadow']) {
+      await page.tap(`${P} [data-bt-mode="${m}"]`); await page.waitForTimeout(500);
+      for (const k of ['rcp', 'dicto-rcp', 'sectors']) assert.ok(!(await visible(`[data-bt-${k}]`)), `${tag}: no ${k} in ${m}`);
+    }
+    await page.tap(`${P} [data-bt-mode="shells"]`); await page.waitForTimeout(900);
+    // the Queens world's row: Cut open, RCP view, RCP v4, Sectors; their words; big enough for a finger; all off
+    assert.deepEqual(await page.evaluate((p) => [...document.querySelectorAll(`${p} .bt-whole-row button`)].map((x) => Object.keys(x.dataset)[0]), P), ['btWhole', 'btRcp', 'btDictoRcp', 'btSectors']);
+    assert.deepEqual(await page.evaluate((p) => [...document.querySelectorAll(`${p} .bt-whole-row button`)].map((x) => x.textContent), P), ['Cut open', 'RCP view', 'RCP v4', 'Sectors']);
+    for (const k of ['rcp', 'dicto-rcp', 'sectors']) {
+      const bx = await page.locator(`${P} [data-bt-${k}]`).boundingBox(); assert.ok(bx.height >= 30 && bx.width >= 44 && bx.x >= 0 && bx.x + bx.width <= viewport.width, `${tag}: ${k} touchable, on screen ${JSON.stringify(bx)}`);
+      assert.equal(await pressed(`[data-bt-${k}]`), 'false');
+    }
+    assert.equal(await page.locator(`${P} [data-bt-sectors]`).getAttribute('title'), t('bt.sectors.tip', 'en'));
+    assert.ok(!(await visible('.bt-sectors-row')), `${tag}: the sectors' slider hidden while off`); checks++;
+    const shl = page.locator(`${P} .bt-shells-row input`);
+    await shl.fill('3'); await page.waitForTimeout(900);
+    let st = await probe(page);
+    assert.deepEqual([st.rcp, st.dictoRcp, st.sectors, st.shells], [false, false, null, 3]);
+    const r0 = st.radius;
+    // RCP view
+    await page.tap(`${P} [data-bt-rcp]`); await page.waitForTimeout(1200); st = await probe(page);
+    assert.deepEqual([st.rcp, st.dictoRcp, st.shells, st.drawn], [true, false, 3, 175], `${tag}: RCP view`);
+    assert.ok(Math.abs(st.radius - r0) > 1e-3, `${tag}: the picture changes (${r0} → ${st.radius})`);
+    assert.equal(await pressed('[data-bt-rcp]'), 'true');
+    assert.match(await page.locator(`${P} .st-note.fold`).textContent(), /RCP view draws the shells with the RCP build's own perspective/);
+    await onScreen(page, `${tag} RCP view`);
+    const rcpRadius = st.radius;
+    // RCP v4: turns RCP view off, the third shell reaches further out
+    await page.tap(`${P} [data-bt-dicto-rcp]`); await page.waitForTimeout(1200); st = await probe(page);
+    assert.deepEqual([st.rcp, st.dictoRcp, st.shells], [false, true, 3], `${tag}: RCP v4 excludes RCP view`);
+    assert.deepEqual([await pressed('[data-bt-rcp]'), await pressed('[data-bt-dicto-rcp]')], ['false', 'true']);
+    assert.ok(st.radius > rcpRadius, `${tag}: RCP v4 reaches further (${rcpRadius} → ${st.radius})`);
+    await onScreen(page, `${tag} RCP v4`);
+    // Cut open goes with it
+    await page.tap(`${P} [data-bt-whole]`); await page.waitForTimeout(1500); st = await probe(page);
+    assert.deepEqual([st.whole, st.dictoRcp], [true, true], `${tag}: Cut open + RCP v4`);
+    assert.ok(st.wholeKept.every((n) => n > 0)); await onScreen(page, `${tag} Cut open + RCP v4`);
+    await page.tap(`${P} [data-bt-rcp]`); await page.waitForTimeout(1500); st = await probe(page);
+    assert.deepEqual([st.whole, st.rcp, st.dictoRcp], [true, true, false], `${tag}: Cut open + RCP view`); await onScreen(page, `${tag} Cut open + RCP view`);
+    await page.tap(`${P} [data-bt-rcp]`); await page.waitForTimeout(800); await page.tap(`${P} [data-bt-whole]`); await page.waitForTimeout(800);
+    st = await probe(page); assert.deepEqual([st.whole, st.rcp, st.dictoRcp], [false, false, false], `${tag}: back to the Shells perspective`); checks++;
+    // Sectors: the core in its 32 pyramids
+    await shl.fill('1'); await page.waitForTimeout(800);
+    await page.tap(`${P} [data-bt-sectors]`); await page.waitForTimeout(1200); st = await probe(page);
+    assert.deepEqual([st.sectors.count, st.sectors.wedges, st.sectors.apart], [32, 32, 0], `${tag}: the core in its 32 pieces`);
+    assert.ok((await caption()).endsWith('32 sectors · 32 pieces'), `${tag}: caption ${await caption()}`);
+    assert.match(await page.locator(`${P} .st-note.fold`).textContent(), /falls apart into 32 sectors/);
+    // its own slider, big, at the bottom, no arrows; Pull apart rests
+    const ss = await page.locator(`${P} .bt-sectors-row input`).boundingBox();
+    assert.ok((await visible('.bt-sectors-row')) && !(await visible('.bt-apart-row')), `${tag}: the sectors' slider in place of Pull apart`);
+    assert.ok(ss.width >= viewport.width * 0.8 && ss.height >= 40 && ss.y > viewport.height * 0.6, `${tag}: big slider at the bottom ${JSON.stringify(ss)}`);
+    assert.equal(await page.locator(`${P} .bt-sectors-row button`).count(), 0, `${tag}: no arrows`);
+    assert.equal(await page.locator(`${P} .bt-sectors-label`).textContent(), 'Pull the sectors apart'); checks++;
+    // dragged with a finger: each step further out, on screen
+    let prev = st; const rs0 = st.radius;
+    await dragApart(page, 700, 4, async (q) => {
+      assert.ok(q.sectors.apart > prev.sectors.apart && q.radius > prev.radius, `${tag}: sectors outward ${prev.sectors.apart} → ${q.sectors.apart}`);
+      prev = q; await onScreen(page, `${tag} sectors ${q.sectors.apart}`);
+    }, '.bt-sectors-row');
+    st = await probe(page); assert.ok(Math.abs(st.sectors.apart - 700) <= 15 && st.radius > rs0 * 1.2, `${tag}: pulled (${st.sectors.apart}, ${st.radius})`); checks++;
+    // more shells, Cut open, RCP view and RCP v4, all cut
+    await shl.fill('3'); await page.waitForTimeout(1200); st = await probe(page);
+    assert.ok(st.sectors.wedges > 175, `${tag}: three shells in ${st.sectors.wedges} pieces`); await onScreen(page, `${tag} three shells in sectors`);
+    await page.tap(`${P} [data-bt-whole]`); await page.waitForTimeout(1500); st = await probe(page);
+    assert.ok(st.whole && st.sectors.wedges > 0, `${tag}: Cut open in sectors`); await onScreen(page, `${tag} Cut open in sectors`);
+    for (const k of ['rcp', 'dicto-rcp']) {
+      await page.tap(`${P} [data-bt-${k}]`); await page.waitForTimeout(1500); st = await probe(page);
+      assert.ok((k === 'rcp' ? st.rcp : st.dictoRcp) && st.sectors.count === 32 && st.sectors.wedges > 0, `${tag}: ${k} in sectors`); await onScreen(page, `${tag} ${k} in sectors`);
+    }
+    await page.tap(`${P} [data-bt-dicto-rcp]`); await page.waitForTimeout(800); await page.tap(`${P} [data-bt-whole]`); await page.waitForTimeout(800);
+    // off: the cells whole, Pull apart back
+    await page.tap(`${P} [data-bt-sectors]`); await page.waitForTimeout(1000); st = await probe(page);
+    assert.ok(st.sectors === null && !(await visible('.bt-sectors-row')) && (await visible('.bt-apart-row')), `${tag}: Sectors off`);
+    assert.ok(!(await caption()).includes('sectors'), `${tag}: caption without sectors`); checks++;
+    assert.deepEqual(errors, [], `${tag}: console errors`);
+    console.log('ok', tag); await page.close();
+  }
+}
 // ?open=bitrunc[:…]
-for (const [q, want] of !PARTS.includes('open') ? [] : [['bitrunc', { mode: 'sweep' }], ['bitrunc:shadow', { mode: 'shadow' }], ['bitrunc:shells', { mode: 'shells', whole: false }], ['bitrunc:whole', { mode: 'shells', whole: true }], ['bitrunc:cell', { mode: 'sweep', dir: 'cell-first' }]]) {
+for (const [q, want] of !PARTS.includes('open') ? [] : [['bitrunc', { mode: 'sweep' }], ['bitrunc:shadow', { mode: 'shadow' }], ['bitrunc:shells', { mode: 'shells', whole: false }], ['bitrunc:whole', { mode: 'shells', whole: true }], ['bitrunc:cell', { mode: 'sweep', dir: 'cell-first' }], ['bitrunc:sectors', { mode: 'shells', whole: true }]]) {
   const page = await b.newPage({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
   const errors = await open(page, `&site=kaleidohedra&open=${q}`);
   await page.waitForSelector(`${P}.visible`, { timeout: 20000 }); await page.waitForTimeout(1200);
   const st = await probe(page);
   for (const [k, v] of Object.entries(want)) assert.equal(st[k], v, `?open=${q}: ${k}`);
+  if (q === 'bitrunc:sectors') assert.deepEqual([st.sectors?.count, st.sectors?.apart], [32, 500], `?open=${q}: in sectors pulled apart`);
   assert.deepEqual(errors, [], `?open=${q}: console errors`); checks++;
   await page.close();
 }
@@ -223,6 +322,19 @@ if (PARTS.includes('langs')) {
         const r = await page.evaluate((sel) => { const row = document.querySelector(`${sel} .bt-apart-row`), l = row.querySelector('.bt-apart-label'), lh = parseFloat(getComputedStyle(l).lineHeight) || 20;
           return { text: l.textContent, over: row.scrollWidth - row.clientWidth, lines: l.getBoundingClientRect().height / lh }; }, P);
         assert.ok(r.text === t('bt.apart', L, { p: 0 }) && r.text !== 'bt.apart' && r.over <= 1 && r.lines < 1.6, `${L}: Pull apart fits ${JSON.stringify(r)}`);
+        // Cut open, RCP view, RCP v4 and Sectors: translated, every button on screen (the row may wrap, as the Queens world's), and with
+        // Sectors on its slider's words fit
+        const wr = await page.evaluate((sel) => { const row = document.querySelector(`${sel} .bt-whole-row`); return { over: row.scrollWidth - row.clientWidth, btns: [...row.querySelectorAll('button')].map((x) => { const r = x.getBoundingClientRect(); return [x.textContent, r.left, r.right, r.height]; }) }; }, P);
+        assert.ok(wr.over <= 1 && wr.btns.every(([s, l, r, h]) => s && l >= 0 && r <= 390 && h >= 30), `${L}: the RCP row fits ${JSON.stringify(wr)}`);
+        assert.deepEqual(wr.btns.map(([s]) => s), [t('wq.whole', L), t('wq.rcp', L), t('wq.dictoRcp', L), t('wq.sectors', L)]);
+        await page.tap(`${P} [data-bt-sectors]`); await page.waitForTimeout(600);
+        const sr = await page.evaluate((sel) => { const row = document.querySelector(`${sel} .bt-sectors-row`), l = row.querySelector('.bt-sectors-label'), lh = parseFloat(getComputedStyle(l).lineHeight) || 20;
+          return { text: l.textContent, over: row.scrollWidth - row.clientWidth, lines: l.getBoundingClientRect().height / lh }; }, P);
+        assert.ok(sr.text === t('wq.sectors.param', L) && sr.over <= 1 && sr.lines < 1.6, `${L}: Pull the sectors apart fits ${JSON.stringify(sr)}`);
+        const cap2 = await page.locator(`${P} .ch-param-caption`).textContent();
+        assert.ok(cap2.endsWith(t('wq.sectors.count', L, { n: 32, w: 32 })), `${L}: sectors caption (${cap2})`);
+        if (L === 'ja') await page.screenshot({ path: `${RS}/rcp-bitrunc-phone-ja-sectors.png` });
+        await page.tap(`${P} [data-bt-sectors]`); await page.waitForTimeout(400);
       }
       if (L === 'ja' && mode === 'sweep') await page.screenshot({ path: `${SH}/phone-ja-sweep.png` });
     }
@@ -261,6 +373,29 @@ for (const [dev, viewport] of Object.entries(!PARTS.includes('shots') ? {} : { p
   await page.screenshot({ path: `${AS}/apart-${dev}-shell1-full.png` });
   await pull(0);
   assert.deepEqual(errors, [], `${dev} screenshots: console errors`); checks++;
+  await page.close();
+}
+// screenshots of each new view, phone and desktop
+for (const [dev, viewport] of Object.entries(!PARTS.includes('rcpshots') ? {} : { phone: { width: 390, height: 844 }, desktop: { width: 1280, height: 800 } })) {
+  const page = await b.newPage({ viewport, hasTouch: dev !== 'desktop', isMobile: dev !== 'desktop' });
+  const errors = await open(page, '&site=kaleidohedra&open=bitrunc:shells');
+  await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1500);
+  const shot = async (name) => { await page.waitForTimeout(1500); await onScreen(page, `${dev} ${name}`); await page.screenshot({ path: `${RS}/rcp-bitrunc-${dev}-${name}.png` }); };
+  await page.locator(`${P} .bt-shells-row input`).fill('3'); await page.waitForTimeout(800);
+  await page.click(`${P} [data-bt-rcp]`); await shot('rcp-shells3');
+  await page.click(`${P} [data-bt-whole]`); await shot('rcp-cutopen');
+  await page.click(`${P} [data-bt-dicto-rcp]`); await shot('rcp4-cutopen');
+  await page.click(`${P} [data-bt-whole]`); await shot('rcp4-shells3');
+  await page.click(`${P} [data-bt-dicto-rcp]`); await page.locator(`${P} .bt-shells-row input`).fill('1'); await page.waitForTimeout(600);
+  await page.click(`${P} [data-bt-sectors]`);
+  const pull = async (v) => { const a = page.locator(`${P} .bt-sectors-row input`); await a.fill(String(v)); await a.dispatchEvent('change'); };
+  await pull(500); await shot('sectors-core');
+  await page.locator(`${P} .bt-shells-row input`).fill('3'); await shot('sectors-shells3');
+  await page.click(`${P} [data-bt-whole]`); await shot('sectors-cutopen');
+  await page.click(`${P} [data-bt-rcp]`); await shot('sectors-rcp-cutopen');
+  await page.click(`${P} [data-bt-dicto-rcp]`); await shot('sectors-rcp4-cutopen');
+  await page.click(`${P} [data-bt-dicto-rcp]`); await page.click(`${P} [data-bt-whole]`); await pull(0); await page.click(`${P} [data-bt-sectors]`); await page.waitForTimeout(500);
+  assert.deepEqual(errors, [], `${dev} RCP screenshots: console errors`); checks++;
   await page.close();
 }
 await b.close();

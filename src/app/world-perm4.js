@@ -5,6 +5,11 @@
 //     one big slider pulls the cells apart; All cells / 3D permutohedra / Hexagonal prisms.
 //   Sweep: the 3D cut moving through the 120 corner heights (a stop in every gap), the cells' cross-sections tiling its surface, the
 //     pair letting go rose and the pair meeting green at the last swap; Play the sweep, Next swap.
+//   RCP view, RCP v4 and Sectors in Build (DICTO 2026-11-11, "we didn't put RCP/RCP 4 and sectors buttons on new apps"), as in the
+//     Queens world's Shells view: the cells drawn with the RCP build's own perspective from the seed's side (the seed the 3D
+//     permutohedron at the centre of Build, opposite the outer one) or DICTO's RCP v4 (the eye beyond the far side, the seed at its true
+//     size); Sectors cuts every drawn cell by the planes through the seed's axis over the seed's 14 faces, so the whole falls apart into
+//     14 sectors (8 over its hexagons, 6 over its squares), pulled out along their axes by their own big slider.
 // Colours as on the page: truncated octahedron cream, hexagonal prism teal, letting go rose, meeting green, dark edges.
 // Words in all 7 languages (i18n pm.*).
 import * as THREE from 'three';
@@ -29,7 +34,8 @@ const hex = (c) => `#${new THREE.Color(c).getHexString()}`;
 
 /** The caption, as the page's. */
 export function pmCaption(view, L) {
-  if (view.mode === 'build') return t(`pm.cap.${view.kind}`, L);
+  // in the RCP pictures no cell is the outer shell (the eye is far off)
+  if (view.mode === 'build') return t(view.kind === 'all' && (view.rcp || view.dictoRcp) ? 'pm.cap.all.rcp' : `pm.cap.${view.kind}`, L);
   const s = PM.sweepAt(view.gap, view.kind);
   const what = s.what === 'swap' ? t('pm.sweep.swap', L, { n: s.swap, total: PM.SWAP_TOTAL }) : t(`pm.sweep.${s.what}`, L);
   return t('pm.sweep.cap', L, { k: view.gap, n: PM.GAPS.length, what, cells: s.alive, a: s.to, b: s.hp });
@@ -40,13 +46,17 @@ export function createPerm4World({ scene, fitView = () => {} }) {
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
-  const view = { mode: 'build', kind: 'all', pull: 0, gap: PM_GAP0 };
+  const view = { mode: 'build', kind: 'all', pull: 0, gap: PM_GAP0, rcp: false, dictoRcp: false, sectors: false, sectorsApart: 0 };
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (PM_MODES.includes(d?.mode)) view.mode = d.mode;
     if (PM_KINDS.includes(d?.kind)) view.kind = d.kind;
     if (Number.isFinite(d?.pull)) view.pull = Math.max(0, Math.min(1000, Math.round(d.pull)));
     if (Number.isInteger(d?.gap)) view.gap = Math.max(0, Math.min(PM.GAPS.length - 1, d.gap));
+    view.rcp = d?.rcp === true;
+    view.dictoRcp = d?.dictoRcp === true && !view.rcp;   // one perspective at a time
+    view.sectors = d?.sectors === true;
+    if (Number.isFinite(d?.sectorsApart)) view.sectorsApart = Math.max(0, Math.min(1000, Math.round(d.sectorsApart)));
   } catch { /* defaults */ }
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(view)); } catch { /* best-effort */ } };
   let active = false, skeleton = false, opacity = 1, shown = null, timer = null;
@@ -73,29 +83,52 @@ export function createPerm4World({ scene, fitView = () => {} }) {
     const l = new LineSegments2(new LineSegmentsGeometry(), new LineMaterial({ color: skeleton ? 0xdfe6f0 : PM_COLOURS.edge, linewidth: see ? 1.4 : 1.8, transparent: see, opacity: see ? 0.5 : 1, depthWrite: !see }));
     l.geometry.setPositions(lines); l.frustumCulled = false; group.add(l);
   }
+  // the picture drawn in Build: the Schlegel view, RCP view or RCP v4
+  const pic = () => (view.rcp ? 'rcp' : view.dictoRcp ? 'dictoRcp' : 'build');
+  const wedgeCache = new Map();   // by picture and cell: each cell's wedges, cut once
+  const wedgesOf = (ci) => { const key = `${pic()}:${ci}`; if (!wedgeCache.has(key)) wedgeCache.set(key, PM.cellWedgesIn(ci, pic())); return wedgeCache.get(key); };
+  let radius = 1, sectorsShown = null;
   function draw() {
     if (!active) return;
     clear();
     const see = opacity < 1;   // the app's Translucent view
     if (view.mode === 'build') {
-      const cells = PM.buildCells(view.kind, view.pull / 1000);
-      // the outer shell see-through (0.10 as the page), the other cells solid (0.95 on the page: here solid, the render standard)
+      // with Sectors on the sectors are the pieces, pulled by their own slider (the cells' pull rests, its value kept)
+      const cells = PM.buildCells(view.kind, view.sectors ? 0 : view.pull / 1000, pic());
       const outer = cells.filter((c) => c.outer), inner = cells.filter((c) => !c.outer);
-      for (const k of ['TO', 'HP']) polys(inner.filter((c) => c.kind === k).flatMap((c) => c.faces), k === 'TO' ? PM_COLOURS.to : PM_COLOURS.hp, see ? opacity : 1);
-      polys(outer.flatMap((c) => c.faces), PM_COLOURS.to, 0.1);
+      const reach = (loops) => Math.max(0, ...loops.flat().map((p) => Math.hypot(...p)));
+      if (view.sectors) {
+        // Sectors (as the Queens world's): every cell cut by the planes over the seed's faces, each sector moved out along its own axis
+        // by up to half the radius of what is drawn closed
+        const R0 = reach(cells.flatMap((c) => c.faces)), pull = (view.sectorsApart / 1000) * 0.5 * R0;
+        const piece = (list) => list.flatMap((c) => wedgesOf(c.cell)).map((w) => { const o = PM.SECTOR_CONES[w.sector].axis.map((x) => x * pull); return w.faces.map((f) => f.map((p) => p.map((x, i) => x + o[i]))); });
+        const W = (list) => piece(list).flat();
+        sectorsShown = { count: PM.SECTOR_COUNT, wedges: cells.reduce((n, c) => n + wedgesOf(c.cell).length, 0), apart: view.sectorsApart };
+        for (const k of ['TO', 'HP']) polys(W(inner.filter((c) => c.kind === k)), k === 'TO' ? PM_COLOURS.to : PM_COLOURS.hp, see ? opacity : 1);
+        polys(W(outer), PM_COLOURS.to, 0.1);
+        radius = R0 + pull;
+      } else {
+        sectorsShown = null;
+        // the outer shell see-through (0.10 as the page), the other cells solid (0.95 on the page: here solid, the render standard)
+        for (const k of ['TO', 'HP']) polys(inner.filter((c) => c.kind === k).flatMap((c) => c.faces), k === 'TO' ? PM_COLOURS.to : PM_COLOURS.hp, see ? opacity : 1);
+        polys(outer.flatMap((c) => c.faces), PM_COLOURS.to, 0.1);
+        // Build: radius 1, the cells reaching out to 1 + 0.9 × pull (as before); the RCP pictures: as far as any corner is drawn
+        radius = pic() === 'build' ? 1 + 0.9 * (view.pull / 1000) : reach(cells.flatMap((c) => c.faces));
+      }
       shown = { mode: 'build', cells: cells.length, to: cells.filter((c) => c.kind === 'TO').length, outer: outer.length };
     } else {
       const s = PM.sweepAt(view.gap, view.kind);
       for (const [role, col] of [['go', PM_COLOURS.go], ['meet', PM_COLOURS.meet]]) polys(s.cells.filter((c) => c.role === role).map((c) => c.points), col, see ? opacity : 1);
       for (const k of ['TO', 'HP']) polys(s.cells.filter((c) => !c.role && c.kind === k).map((c) => c.points), k === 'TO' ? PM_COLOURS.to : PM_COLOURS.hp, see ? opacity : 1);
       const ev = s.event;
+      sectorsShown = null;
       shown = { mode: 'sweep', k: s.k, alive: s.alive, to: s.to, hp: s.hp, what: s.what, swap: s.swap, ev: { lost: ev.lost.length, gained: ev.gained.length, born: ev.born.length, died: ev.died.length },
         lit: { go: s.cells.filter((c) => c.role === 'go').length, meet: s.cells.filter((c) => c.role === 'meet').length } };
     }
     renderPanel();
   }
   // the picture fits radius 1 (Build) or 1.15 (Sweep) in model units; pulled apart, the cells reach out to 1 + 0.9 × pull
-  const fitRadius = () => WS * (view.mode === 'build' ? 1 + 0.9 * (view.pull / 1000) : 1.15) * 1.08;
+  const fitRadius = () => WS * (view.mode === 'build' ? radius : 1.15) * 1.08;
   const fit = () => fitView([0, 0, 0], fitRadius(), VIEW_DIR, true);
 
   // ---- panel ----
@@ -105,15 +138,17 @@ export function createPerm4World({ scene, fitView = () => {} }) {
   panel.innerHTML = `
     <div class="w4d-row w4d-options pm-modes">${PM_MODES.map((m) => `<button type="button" data-pm-mode="${m}"></button>`).join('')}</div>
     <div class="w4d-row w4d-options pm-kinds">${PM_KINDS.map((k) => `<button type="button" data-pm-kind="${k}"></button>`).join('')}</div>
+    <div class="w4d-row w4d-options pm-rcp-row"><button type="button" data-pm-rcp></button><button type="button" data-pm-dicto-rcp></button><button type="button" data-pm-sectors></button></div>
     <div class="w4d-row w4d-options pm-sweep-btns"><button type="button" data-pm-play></button><button type="button" data-pm-next></button></div>
     <div class="w4d-row st-note pm-legend"></div>
     <div class="w4d-row pm-pull-row"><label class="hull-pick"><span class="pm-pull-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
+    <div class="w4d-row pm-sectors-row"><label class="hull-pick"><span class="pm-sectors-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row pm-cut-row"><label class="hull-pick"><span class="pm-cut-label"></span> <input type="range" class="st-slider" min="0" max="${PM.GAPS.length - 1}" step="1"></label></div>
     <div class="w4d-row ch-param-caption" aria-live="polite"></div>
     <div class="w4d-row st-note fold"></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'perm4');
-  const pullInput = panel.querySelector('.pm-pull-row input'), cutInput = panel.querySelector('.pm-cut-row input');
+  const pullInput = panel.querySelector('.pm-pull-row input'), cutInput = panel.querySelector('.pm-cut-row input'), sectorsInput = panel.querySelector('.pm-sectors-row input');
   const caption = panel.querySelector('.ch-param-caption'), note = panel.querySelector('.st-note.fold'), legend = panel.querySelector('.pm-legend');
   note.addEventListener('click', () => note.classList.toggle('open'));
   const press = (x, on) => { x.classList.toggle('active', on); x.setAttribute('aria-pressed', String(on)); };
@@ -124,7 +159,16 @@ export function createPerm4World({ scene, fitView = () => {} }) {
     panel.querySelectorAll('[data-pm-mode]').forEach((x) => { x.textContent = t(`pm.view.${x.dataset.pmMode}`, L); press(x, x.dataset.pmMode === view.mode); });
     panel.querySelectorAll('[data-pm-kind]').forEach((x) => { x.textContent = t(`pm.kind.${x.dataset.pmKind}`, L); press(x, x.dataset.pmKind === view.kind); });
     // nothing unnecessary shown: each view only its own slider and buttons
-    panel.querySelector('.pm-pull-row').hidden = !build;
+    panel.querySelector('.pm-pull-row').hidden = !build || view.sectors;
+    panel.querySelector('.pm-rcp-row').hidden = !build;
+    panel.querySelector('.pm-sectors-row').hidden = !(build && view.sectors);
+    // RCP view, RCP v4 and Sectors: the Queens world's buttons and words
+    const rb = panel.querySelector('[data-pm-rcp]'), db = panel.querySelector('[data-pm-dicto-rcp]'), sb = panel.querySelector('[data-pm-sectors]');
+    rb.textContent = t('wq.rcp', L); press(rb, view.rcp);
+    db.textContent = t('wq.dictoRcp', L); press(db, view.dictoRcp);
+    sb.textContent = t('wq.sectors', L); sb.title = t('pm.sectors.tip', L); press(sb, view.sectors);
+    panel.querySelector('.pm-sectors-label').textContent = t('wq.sectors.param', L);
+    sectorsInput.value = String(view.sectorsApart);
     panel.querySelector('.pm-cut-row').hidden = panel.querySelector('.pm-sweep-btns').hidden = build;
     const pb = panel.querySelector('[data-pm-play]');
     pb.textContent = t(timer ? 'pm.pause' : 'pm.play', L); press(pb, !!timer);
@@ -136,13 +180,17 @@ export function createPerm4World({ scene, fitView = () => {} }) {
     pullInput.value = String(view.pull);
     panel.querySelector('.pm-cut-label').textContent = t('pm.cut', L, { k: view.gap, n: PM.GAPS.length });
     cutInput.value = String(view.gap);
-    caption.textContent = pmCaption(view, L);
+    caption.textContent = pmCaption(view, L) + (build && sectorsShown ? ` · ${t('wq.sectors.count', L, { n: sectorsShown.count, w: sectorsShown.wedges })}` : '');
     caption.classList.toggle('pm-swap', !build && shown.what === 'swap');
-    note.textContent = t(build ? 'pm.note.build' : 'pm.note.sweep', L);
+    note.textContent = build ? `${t('pm.note.build', L)} ${t('pm.note.rcp', L)} ${t('pm.note.dictoRcp', L)}${view.sectors ? ` ${t('pm.note.sectors', L)}` : ''}` : t('pm.note.sweep', L);
   }
   function stop() { if (timer) { clearInterval(timer); timer = null; save(); renderPanel(); } }
   pullInput.addEventListener('input', () => { stop(); view.pull = Number(pullInput.value); save(); draw(); });
   pullInput.addEventListener('change', fit);
+  // Pull the sectors apart: the camera backs off while dragging (keeping its turn), so nothing leaves the view; let go, it fits exactly
+  const fitApart = (exact) => fitView([0, 0, 0], fitRadius(), null, exact);
+  sectorsInput.addEventListener('input', () => { const a = Number(sectorsInput.value); if (a === view.sectorsApart) return; view.sectorsApart = a; save(); draw(); fitApart(false); });
+  sectorsInput.addEventListener('change', () => fitApart(true));
   cutInput.addEventListener('input', () => { stop(); const k = Number(cutInput.value); if (k === view.gap) return; view.gap = k; save(); draw(); });
   panel.addEventListener('click', (e) => {
     if (e.target.closest('[data-pm-play]')) {
@@ -152,6 +200,10 @@ export function createPerm4World({ scene, fitView = () => {} }) {
       renderPanel(); return;
     }
     if (e.target.closest('[data-pm-next]')) { stop(); view.gap = PM.nextSwap(view.gap); save(); draw(); return; }
+    // RCP view and RCP v4 exclude each other; Sectors goes with either (as in the Queens world)
+    if (e.target.closest('[data-pm-rcp]')) { view.rcp = !view.rcp; if (view.rcp) view.dictoRcp = false; save(); draw(); fit(); return; }
+    if (e.target.closest('[data-pm-dicto-rcp]')) { view.dictoRcp = !view.dictoRcp; if (view.dictoRcp) view.rcp = false; save(); draw(); fit(); return; }
+    if (e.target.closest('[data-pm-sectors]')) { view.sectors = !view.sectors; save(); draw(); fit(); return; }
     const b = e.target.closest('[data-pm-mode], [data-pm-kind]');
     if (!b) return;
     const { pmMode: mode, pmKind: kind } = b.dataset;
@@ -163,11 +215,13 @@ export function createPerm4World({ scene, fitView = () => {} }) {
 
   return {
     group,
-    /** ?open=perm4[:build|sweep|swap|to|hp]: that view (swap: the Sweep at its first swap after the page's starting cut). */
+    /** ?open=perm4[:build|sweep|swap|to|hp]: that view (swap: the Sweep at its first swap after the page's starting cut);
+     *  ?open=perm4:sectors: Build in its 14 sectors pulled apart (as whitequeen:sectors). */
     setChain(kind) {
       if (PM_MODES.includes(kind)) view.mode = kind;
       else if (kind === 'swap') Object.assign(view, { mode: 'sweep', gap: PM.nextSwap(PM_GAP0 - 1) });
       else if (kind === 'to' || kind === 'hp') Object.assign(view, { mode: 'build', kind });
+      else if (kind === 'sectors') Object.assign(view, { mode: 'build', sectors: true, sectorsApart: 500 });
       else return;
       save();
       if (active) { draw(); fit(); }
@@ -180,7 +234,7 @@ export function createPerm4World({ scene, fitView = () => {} }) {
       draw(); fit();
       setTimeout(() => { if (active) renderPanel(); }, 0);
     },
-    resetView() { stop(); Object.assign(view, { mode: 'build', kind: 'all', pull: 0, gap: PM_GAP0 }); save(); if (active) { draw(); fit(); } },
+    resetView() { stop(); Object.assign(view, { mode: 'build', kind: 'all', pull: 0, gap: PM_GAP0, sectors: false, sectorsApart: 0 }); save(); if (active) { draw(); fit(); } },
     setSkeleton(on) { if (on !== skeleton) { skeleton = on; if (active) draw(); } },
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) draw(); } },
     setLatticeView() {},
@@ -188,7 +242,7 @@ export function createPerm4World({ scene, fitView = () => {} }) {
     get isEmpty() { return true; },
     clear() {},
     /** For the browser tests (?probe). */
-    probe: () => (shown ? { ...shown, kind: view.kind, pull: view.pull, gap: view.gap, playing: !!timer, meshes: group.children.length } : null),
+    probe: () => (shown ? { ...shown, kind: view.kind, pull: view.pull, gap: view.gap, playing: !!timer, meshes: group.children.length, rcp: view.rcp, dictoRcp: view.dictoRcp, sectors: sectorsShown ? { ...sectorsShown } : null, radius } : null),
   };
 }
 

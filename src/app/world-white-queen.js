@@ -25,7 +25,7 @@ import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions
 import { DIRECTIONS, EDGES, CELLS, shadowAt, viewAt, SLICE_STOPS, sliceAt, CLEO_POINTS, CLEO_SHELLS, quadKind, quadKinds } from './white-queen-geometry.js';
 import * as WQG from './white-queen-geometry.js';
 import * as RQG from './red-queen-geometry.js';
-import { farEyePoints } from './dicto-rcp.js';
+import { farEyePoints, seedEyePoints } from './dicto-rcp.js';
 import { STAGE_KEYS, STAGE_FACTS, stageShadowAt, stage as stageModel } from './queen-stages-geometry.js';
 import { sectorCones, cellWedges, cellFaceLoops, SECTOR_COUNT } from './queen-sectors.js';
 
@@ -50,7 +50,7 @@ export const WQ_BITRUNC_ACTION = 'tool:bitruncWorld';
 // through the seed (the White Queen's vertex, as RCP's vertex-first build; the Red Queen's core dodecahedron, as RCP's 120-cell build),
 // scaled by d so the sizes stay those of the model.
 const UP = [[0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]], RCP_MARGIN = 5;
-const rcpPoints = (V, r) => V.map((x) => UP.map((f) => (f.reduce((s, c, i) => s + c * x[i], 0) * RCP_MARGIN * r) / (RCP_MARGIN * r - x[0])));
+const rcpPoints = (V, r) => seedEyePoints(V, r, UP, RCP_MARGIN);
 const RCP_POINTS = { white: rcpPoints(WQG.VERTICES, 2), red: rcpPoints(RQG.VERTICES, RQG.RADIUS) };
 // RCP v4 view (DICTO's adjusted RCP, DICTO 2026-10-31, to try out beside the RCP view): the same axis and d, the eye beyond the FAR side,
 // (x, y, z) / (d + w) (krp-core rcpBuild.js eyeSide 'far'), then scaled so the seed (the core shell's cells) is at its true size,

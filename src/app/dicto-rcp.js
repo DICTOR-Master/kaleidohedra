@@ -18,3 +18,13 @@ export function farEyePoints(V, r, seedCells, frame, margin = 5) {
   const k = seedCells.reduce((s, c) => s + rmsSize(c.map((i) => V[i])), 0) / seedCells.reduce((s, c) => s + rmsSize(c.map((i) => P[i])), 0);
   return P.map((p) => p.map((x) => x * k));
 }
+
+/**
+ * 4D points V seen as the RCP build sees them (krp-core rcpBuild.js, eyeSide 'seed'): w = V[i][0] (the axis through the seed, the
+ * seed at +w), the eye at w = d = margin × r on the seed's side, each point (frame · x) × d / (d − w), so the sizes stay those of
+ * the model (the Queens world's RCP view; the Bitruncated 600-cell's and the 4D Permutohedron's, DICTO 2026-11-11).
+ */
+export function seedEyePoints(V, r, frame, margin = 5) {
+  const d = margin * r;
+  return V.map((x) => frame.map((f) => (f.reduce((s, c, i) => s + c * x[i], 0) * d) / (d - x[0])));
+}

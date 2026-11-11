@@ -27,8 +27,14 @@ function coreFaces(queen) {
  *  through the centre, pointing inwards: the cone is every x with n · x ≥ 0 for all n) }. */
 export function sectorCones(queen) {
   const V = queen === 'red' ? RQG.VERTICES : WQG.VERTICES;
-  return coreFaces(queen).map((loop) => {
-    const P = loop.map((k) => across(V[k])), c = mean(P);
+  return conesOverFaces(coreFaces(queen).map((loop) => loop.map((k) => across(V[k]))));
+}
+/** The cones from the centre over a convex core's faces (each a loop of 3D points, the core round the centre): the same cut for any
+ *  4D world whose pictures all map x to (frame · x) / f(w), w along the axis through the core (DICTO 2026-11-11: the Bitruncated
+ *  600-cell's 32 over its core truncated icosahedron, the 4D Permutohedron's 14 over its seed 3D permutohedron). */
+export function conesOverFaces(loops) {
+  return loops.map((P) => {
+    const c = mean(P);
     const normals = P.map((p, i) => { const n = unit(cross(p, P[(i + 1) % P.length])); return dot(n, c) < 0 ? n.map((x) => -x) : n; });
     return { axis: unit(c), normals };
   });

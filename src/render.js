@@ -5022,8 +5022,8 @@ async function init() {
     const openHexoct = new URLSearchParams(location.search).get('open')?.match(/^hexoct(?::(\w+(?::\w+)?))?$/i);
     const openHexoctKit = new URLSearchParams(location.search).get('open')?.match(/^hexoctkit(?::(\w+(?::\w+)?))?$/i);
     const openMandala = new URLSearchParams(location.search).get('open')?.match(/^mandala(?::(yantra|cleo|81|sphere81))?$/i);
-    const openBitrunc = new URLSearchParams(location.search).get('open')?.match(/^bitrunc(?::(sweep|shadow|shells|whole|swap|vertex|edge|face|cell|generic))?$/i);
-    const openPerm4 = new URLSearchParams(location.search).get('open')?.match(/^perm4(?::(build|sweep|swap|to|hp))?$/i);
+    const openBitrunc = new URLSearchParams(location.search).get('open')?.match(/^bitrunc(?::(sweep|shadow|shells|whole|sectors|swap|vertex|edge|face|cell|generic))?$/i);
+    const openPerm4 = new URLSearchParams(location.search).get('open')?.match(/^perm4(?::(build|sweep|swap|to|hp|sectors))?$/i);
     const openStarCores = new URLSearchParams(location.search).get('open')?.match(/^starcores(?::([\w-]+(?::(?:2|phi)(?::\d+)?)?))?$/i);
     const OPENABLE = ['octet', 'thirteens', 'chains', 'dodeca', 'theaetetus', 'up', 'upFilm', 'kpFilm', 'thirteens', 'octet', 'icosa', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'breathing', 'bodhiPyro', 'doubleVision', 'vajrayana', 'ocdStella', 'octetTruss', 'reuleaux', 'aristotle', 'platonicMix', 'dictonic', 'globalWeb', 'stackings', 'bloom', 'bloom', 'whiteQueen', 'cycles', 'shells', 'golden', 'studies', 'targets'];
     if (openWorld?.[1] === 'whitequeen') openWorld[1] = 'whiteQueen';   // ?open=whitequeen (the paper's link, lower case)
@@ -5062,11 +5062,11 @@ async function init() {
       // DODECAHEDRON … OCTAHEDRON, or registry id), its ✂ Golden Cut at that stop (the Greater Golden Cut when none is given).
       setTimeout(() => openGoldenCut(gcutKeyOf(openGcut[1]), (openGcut[2] ?? 'greater').toLowerCase()), 0);
     } else if (openBitrunc) {
-      // ?open=bitrunc[:<sweep|shadow|shells|whole|swap|vertex|edge|face|cell|generic>] (DICTO 2026-11-10): the Bitruncated 600-cell in
+      // ?open=bitrunc[:<sweep|shadow|shells|whole|sectors|swap|vertex|edge|face|cell|generic>] (DICTO 2026-11-10): the Bitruncated 600-cell in
       // Kaleidohedra on that view (as it was left when none is given).
       setTimeout(() => dimensionWizard.go(`tool:bitruncWorld${openBitrunc[1] ? `:${openBitrunc[1].toLowerCase()}` : ''}`, 'kaleidohedra', 'Bitruncated 600-cell'), 0);
     } else if (openPerm4) {
-      // ?open=perm4[:<build|sweep|swap|to|hp>] (DICTO 2026-11-10): The 4D Permutohedron in Kaleidohedra on that view (as it was left when
+      // ?open=perm4[:<build|sweep|swap|to|hp|sectors>] (DICTO 2026-11-10): The 4D Permutohedron in Kaleidohedra on that view (as it was left when
       // none is given).
       setTimeout(() => dimensionWizard.go(`tool:perm4World${openPerm4[1] ? `:${openPerm4[1].toLowerCase()}` : ''}`, 'kaleidohedra', 'The 4D Permutohedron'), 0);
     } else if (openMandala) {
@@ -6325,17 +6325,21 @@ async function init() {
     window.__whiteQueenProbe = () => whiteQueenWorld?.probe?.() ?? null;
     window.__bitruncProbe = () => bitruncWorld?.probe?.() ?? null;
     // the Bitruncated 600-cell's Pull apart: the screen box (px) of every corner drawn, and the strip the controls cover
-    window.__bitruncScreen = () => {
-      const g = bitruncWorld?.group; if (!g?.visible) return null;
+    // (and the 4D Permutohedron's, __perm4Screen: its sectors pulled apart stay on screen)
+    const screenBox = (g) => {
+      if (!g?.visible) return null;
       const v = new THREE.Vector3(), box = { x0: Infinity, x1: -Infinity, y0: Infinity, y1: -Infinity };
       g.traverse((o) => {
-        if (!o.isMesh || !o.visible || !o.parent?.visible) return;
+        // the meshes' corners (not a fat line's: its position attribute is the template quad every segment is drawn from)
+        if (!o.isMesh || o.isLineSegments2 || !o.visible || !o.parent?.visible) return;
         const a = o.geometry.attributes.position, n = Math.min(a.count, o.geometry.drawRange.count);
-        for (let i = 0; i < n; i++) { const q = toScreen(v.fromBufferAttribute(a, i)); box.x0 = Math.min(box.x0, q.x); box.x1 = Math.max(box.x1, q.x); box.y0 = Math.min(box.y0, q.y); box.y1 = Math.max(box.y1, q.y); }
+        for (let i = 0; i < n; i++) { const q = toScreen(v.fromBufferAttribute(a, i).applyMatrix4(o.matrixWorld)); box.x0 = Math.min(box.x0, q.x); box.x1 = Math.max(box.x1, q.x); box.y0 = Math.min(box.y0, q.y); box.y1 = Math.max(box.y1, q.y); }
       });
       return { ...box, w: window.innerWidth, h: window.innerHeight, cover: readPanelCover() };
     };
+    window.__bitruncScreen = () => screenBox(bitruncWorld?.group);
     window.__perm4Probe = () => perm4World?.probe?.() ?? null;
+    window.__perm4Screen = () => screenBox(perm4World?.group);
     window.__hexoctProbe = () => hexoctWorld?.probe?.() ?? null;
     window.__starCoresProbe = () => starCoresWorld?.probe?.() ?? null;
     window.__mandalaProbe = () => mandalaWorld?.probe?.() ?? null;
