@@ -300,7 +300,9 @@
    "title": "The Golden Split",
    "doi": "23596362",
    "date": "2026-10-23",
-   "date_first": true
+   "date_first": true,
+   "version": 2,
+   "doi_v2": "24123953"
   },
   "49": {
    "title": "The Polyhedral Stretching Theorem",
@@ -324,15 +326,18 @@
    "title": "The Web of Bonds",
    "doi": "23629252",
    "date": "2026-10-25",
-   "date_first": true
+   "date_first": true,
+   "version": 2,
+   "doi_v2": "24123954"
   },
   "53": {
    "title": "The Global Web of Bonds",
    "doi": "23631140",
    "date": "2026-10-25",
    "date_first": true,
-   "version": 2,
-   "doi_v2": "24066437"
+   "version": 3,
+   "doi_v2": "24066437",
+   "doi_v3": "24123962"
   },
   "54": {
    "title": "One Turn Is a Gnomon",
@@ -530,13 +535,17 @@
    "title": "DICTO Vacuus Solids",
    "doi": "23896015",
    "date": "2026-11-03",
-   "date_first": true
+   "date_first": true,
+   "version": 3,
+   "doi_v3": "24123971"
   },
   "88": {
    "title": "Every Platonic Solid Has Exactly Two Golden Cuts",
    "doi": "23896439",
    "date": "2026-11-03",
-   "date_first": false
+   "date_first": false,
+   "version": 4,
+   "doi_v4": "24123978"
   },
   "89": {
    "title": "All Five Golden Pairs Are Slices of Four-Dimensional Solids",
@@ -569,7 +578,9 @@
    "title": "One Double Pyramid, Two Splits",
    "doi": "10.5281/zenodo.23933666",
    "date": "2026-11-04",
-   "date_first": true
+   "date_first": true,
+   "version": 4,
+   "doi_v4": "24123981"
   },
   "94": {
    "title": "The Silent Golden Station",
@@ -5941,6 +5952,15 @@
     "result": "YES: chamfered cubes + cubes (6 cube pyramids each) fill space; per lattice point 14 Hemi RDs + 12 cube pyramids; CC alone not a translation tiler (8-face belt)",
     "retry": "exact proof",
     "study": "studies/2026-11-11-hemi-rd-build",
+    "date": "2026-11-11"
+   },
+   {
+    "question": "Permutohedron realignment of #48, #52, #53, #87, #88, #93",
+    "method": "version line only (no fact or number changes); DICTO 'realign drafts read ok release all six'; zen_newversion_keep; postcheck",
+    "status": "PUBLISHED",
+    "result": "#48 v2 24123953, #52 v2 24123954, #53 v3 24123962, #87 v3 24123971, #88 v4 24123978, #93 v4 24123981",
+    "retry": "never",
+    "study": "papers (six folders)",
     "date": "2026-11-11"
    }
   ]
