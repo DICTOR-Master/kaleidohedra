@@ -1,0 +1,73 @@
+{
+ "ok": true,
+ "aixiv_id": "2611.01167",
+ "abs_url": "https://aixiv.online/abs/2611.01167",
+ "pdf_url": "https://aixiv.online/pdf/2611.01167v1",
+ "engine": null,
+ "listed": false,
+ "listing_note": "Live at abs_url with its timestamp and hash. It joins the public listings when its check passes, usually within half an hour; the result is on the paper's page and under `check` in GET /api/v1/papers/<id> with your token.",
+ "record": {
+  "aixiv_id": "2611.01167",
+  "url": "https://aixiv.online/abs/2611.01167",
+  "pdf_url": "https://aixiv.online/pdf/2611.01167",
+  "title": "The DICTO OG Family: Four Steps Up and Four Down",
+  "abstract": "In Universal PiTet a single rule T builds each solid from the last: every corner v of a solid S gives the face plane v·x = v·v, through v and at right angles to the line from the centre, and T(S) is the solid these planes bound. Started at the icosidodecahedron it closes into a four-step cycle. DICTO proposed running it from the DICTO Ogdoecontahedron (OG), and also running it the other way. The reverse step P takes as new corners the foot points of S's face planes, the points of those planes nearest the centre. From the OG, four steps of T give four solids with 92, 180, 212 and 270 corners, the DICTO KRE, PHE, TPP and DPHP, and four steps of P give four with 80, 132, 140 and 162 corners, the DICTO TPH, TQH, TQP and TQHD. All eight are proved exactly in ℚ(√5), each with the full icosahedral symmetry, and each step of P is undone exactly by T. Several have regular faces: 12 regular pentagons (PHE, TPH, TQP), 20 regular hexagons (PHE, DPHP, TQH, TQHD); the KRE has 30 rhombi and 60 kites. The family does not cycle. It nests as shells for three steps up, OG ⊂ KRE ⊂ PHE ⊂ TPP, and two steps down, TQH ⊂ TPH ⊂ OG, and each of these shells, and also the shell TQHD ⊂ TQP, is filled exactly by one piece per face of the inner solid. Both directions then break in the same way: 60 corners of the TPP stand outside the DPHP, and 60 corners of the TQP outside the TQH. In the plane, T and P are the classical antipedal and pedal constructions; the polyhedral pedal construction was posed as an open problem in 2010. We found the eight solids in no source. Version 2 adds a harmonic fingerprint and the Dehn invariant: all nine solids have Q4 = Q8 = 0 and Ŵ6 = ±0.16975, the icosahedron's value up to sign (exact), the sign splitting them into corner type and face type; all nine have a nonzero Dehn invariant (exact for the OG, numerical for the other eight), so none fills space alone.",
+  "authors": [
+   "DICTO"
+  ],
+  "primary_category": "math.MG",
+  "categories": [
+   "math.MG"
+  ],
+  "published": "2026-11-11",
+  "updated_at": "2026-11-11T23:10:58.000Z",
+  "latest_version": 1,
+  "license": "CC BY-SA 4.0",
+  "comments": "Paper #39 of DICTO's series; Version 2 (10.5281/zenodo.24037758) of Zenodo concept record 10.5281/zenodo.23488944 (this PDF is identical to that version). Licence CC BY-SA 4.0.",
+  "msc_class": "52B10, 52B15, 51M20",
+  "kind": "native",
+  "withdrawn": false,
+  "listed": false,
+  "withdrawal_reason": null,
+  "fulltext_indexed": true,
+  "claimed_by_author": true,
+  "source": null,
+  "repository": {
+   "url": "https://github.com/DICTOR-Master/kaleidohedra",
+   "verified": true,
+   "stars": 1,
+   "license": "MIT",
+   "last_push": "2026-11-11T22:51:03Z"
+  },
+  "ai_process": {
+   "models": "Claude Code (Opus)",
+   "contribution_level": "ai-assisted",
+   "statement": null,
+   "has_process_summary": true,
+   "has_prompts_harness": false,
+   "has_verification_notes": true,
+   "has_negative_results": true,
+   "trace_url": null
+  },
+  "reproduction_status": "unverified",
+  "editors_pick": false,
+  "editorial_summary": null,
+  "comment_count": 0,
+  "priority_record": {
+   "note": "Each version is timestamped at receipt; the hash is immutable evidence of content at that time.",
+   "versions": [
+    {
+     "version": 1,
+     "submitted_utc": "2026-11-11T23:10:58.000Z",
+     "content_hash": "sha256:04bee6d86a9dc2167e80df09293ebce6e593f6fb34c1be72315d59bbb3a4eda0",
+     "hash_covers": "pdf-bytes",
+     "has_pdf": true,
+     "source_url": null,
+     "changelog": null
+    }
+   ]
+  }
+ },
+ "sessions": [],
+ "sessions_note": "No session files were sent. Attach the agent sessions behind this paper: `npx aixiv@latest attach --paper 2611.01167` in the project folder, POST /api/v1/traces, or https://aixiv.online/attach/2611.01167."
+}
