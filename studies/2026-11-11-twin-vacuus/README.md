@@ -128,3 +128,14 @@ So pentakis dodecahedra are CYCLING POINTS of the hop (period 4, like the Univer
 of the real cycle. The OG family is the OUTSIDER: it does not cycle (faces grow without end) and touches the Platonic solids on its
 hidden side only at k = 2, 3, 7. For the Platonic book Chapter 12 (with the Outsider opening). Next to check: the exact scale of the
 4-cycle (D_{k+4} = c·D_k, c in ℚ(√5)) and whether "up to scale" is exact similarity (only face counts and radius pattern compared so far).
+
+## The 4-cycle exactly, and the Angeli thread (DICTO: "check the exact scale of the 4-cycle and angel family thread"; scripts/pentakis_cycle.py, data/pentakis-cycle.json, exact ℚ(√5), FINAL ok)
+EXACT SIMILARITY: D_{k+4} = c · D_k as exact point sets (same orientation) for k = 0 … 4, for each start; c in ℚ(√5), depending on the start:
+Catalan pentakis c = 3549/9701 + (7712/48505)√5 = 0.721359782…; h = 1/5: c = 67300/187167 + (29680/187167)√5 = 0.714156329…;
+h = 1/φ³: c = 158/435 + (14/87)√5 = 0.723045422…. So each pentakis start is a true cycle of the hop up to the scale c (no universal c).
+ANGELI THREAD round the cycle (twin hull Vacuus at k = 0, 1, 2, 3; then it repeats):
+- k ≡ 0: the DODECAHEDRON Angelus, 30 congruent fins, apex 41.8103°, cos² = 5/9 exactly, 15 fin planes — the same for every start;
+- k ≡ 2: the ICOSAHEDRON Angelus, 30 congruent fins, apex 63.4349°, cos² = 1/5 exactly, 15 fin planes — the same for every start;
+- k ≡ 1, 3: a rhombicosidodecahedron-pattern Angelus, 120 fins in 60 planes, two fin classes whose angles depend on the start
+  (Catalan: 12.8684° and 34.1211° at k ≡ 1, 7.0663° and 37.6501° at k ≡ 3; all cos² exact in ℚ(√5), in the json). No discs anywhere.
+The thread: dodecahedron Angelus → rhombicosidodecahedron Angelus → icosahedron Angelus → rhombicosidodecahedron Angelus → (scaled) back.
