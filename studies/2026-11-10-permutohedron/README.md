@@ -67,7 +67,7 @@ Leonardo hollow; great polyhedra central sections 24-cell/600-cell; hyperplane a
 cone over the 2-skeleton / face fan dissection. Top hits: Boole Stott 1900 (sections of the regular 4D solids), Coxeter Regular Polytopes,
 Deza–Grishukhin 2003, Dechant 2013, Wenninger 1971, Garber 2019. Web, 5 searches: Wikipedia Leonardo polyhedron (Boole Stott, Coxeter skew
 polyhedra: struts from 4D Schlegel views), G. Hart Leonardo Project, 24-cell (12 central cuboctahedra), Wikiversity 16-cell/24-cell (central
-octahedra, cuboctahedra), Polytope Wiki hemipolytope, Pfeiffer polychora page, Klitzing, Wolfram 16-cell sections, arXiv 2412.12419,
+octahedra, cuboctahedra), Polytope Wiki hemipolytope, Freire polychora pages (mpifr-bonn), Klitzing, Wolfram 16-cell sections, arXiv 2412.12419,
 2304.14239 (max central sections), Wikipedia omnitruncated 5-cell.
 Known: Leonardo's vacua are 3D hollow frames; 4D analogues of the Leonardo polyhedra (Boole Stott, Coxeter) come FROM 4D polytopes but are 3D
 strut models; central "great" sections (24-cell cuboctahedra, 16-cell octahedra) are classical as slices; hemipolytopes have FACETS
