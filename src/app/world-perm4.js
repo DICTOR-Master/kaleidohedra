@@ -2,7 +2,7 @@
 // model, views and behaviour (perm4-geometry.js), drawn to the app's render standard (docs/RENDER-STANDARD.md: solid faces with polygon
 // offset, crisp antialiased edges).
 //   Build: the Schlegel view from just outside one truncated octahedron, that cell the see-through outer shell, the other 29 solid;
-//     one big slider pulls the cells apart; All cells / Truncated octahedra / Hexagonal prisms.
+//     one big slider pulls the cells apart; All cells / 3D permutohedra / Hexagonal prisms.
 //   Sweep: the 3D cut moving through the 120 corner heights (a stop in every gap), the cells' cross-sections tiling its surface, the
 //     pair letting go rose and the pair meeting green at the last swap; Play the sweep, Next swap.
 // Colours as on the page: truncated octahedron cream, hexagonal prism teal, letting go rose, meeting green, dark edges.

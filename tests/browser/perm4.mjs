@@ -1,6 +1,6 @@
 // The 4D Permutohedron (DICTO 2026-11-10; src/app/world-perm4.js), through the real UI, touch, phone (390×844) and iPad (820×1180), on
 // the Kaleidohedra and Rhombiverse doors (DOORS): right after the Bitruncated 600-cell in DICTO's list (both after DICTONIC); it opens on Build (30 cells, one the outer
-// shell); the pull slider, big and at the bottom, pulls the cells apart; All cells / Truncated octahedra / Hexagonal prisms show 30 / 10 /
+// shell); the pull slider, big and at the bottom, pulls the cells apart; All cells / 3D permutohedra / Hexagonal prisms show 30 / 10 /
 // 20; Sweep: the cut slider over the 119 gaps, Next swap lands on a swap with two cells letting go and two meeting, captioned as the page;
 // Play runs the sweep and Pause holds it; each view only its own controls; no empty prompt pill. ?open=perm4[:sweep|swap]. Every one of
 // the 7 languages at phone width: the rows fit. No console errors. Screenshots ($SHOTS, default /tmp/perm4-shots) on a phone (390×844)
@@ -62,7 +62,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     await page.tap(`${P} [data-pm-next]`); await page.waitForTimeout(300); st = await probe(page);
     const s = PM.sweepAt(SWAP, 'all');
     assert.deepEqual([st.gap, st.what, st.swap, st.lit], [SWAP, 'swap', s.swap, { go: 2, meet: 2 }], `${tag}: Next swap`);
-    assert.equal(await caption(), `corner ${SWAP} of 119 · swap ${s.swap} of 66: two cells let go, two meet · ${s.alive} cells in the cut (${s.to} truncated octahedra, ${s.hp} prisms)`);
+    assert.equal(await caption(), `corner ${SWAP} of 119 · swap ${s.swap} of 66: two cells let go, two meet · ${s.alive} cells in the cut (${s.to} permutohedra, ${s.hp} prisms)`);
     assert.equal(await page.locator(`${P} .pm-legend .pm-sw`).count(), 4); checks++;
     const cut = page.locator(`${P} .pm-cut-row input`);
     await cut.fill('0'); await page.waitForTimeout(300); st = await probe(page); assert.equal(st.gap, 0);

@@ -73,6 +73,6 @@ test('captions and words in all 7 languages', () => {
     for (const key of ['pm.note.build', 'pm.note.sweep', 'wiz.3d.perm4', 'pm.next', 'pm.play']) assert.notEqual(t(key, L), key);
   }
   const k = PM.nextSwap(59), s = PM.sweepAt(k, 'all');
-  assert.equal(pmCaption({ mode: 'sweep', kind: 'all', gap: k }, 'en'), `corner ${k} of 119 · swap ${s.swap} of 66: two cells let go, two meet · ${s.alive} cells in the cut (${s.to} truncated octahedra, ${s.hp} prisms)`);
+  assert.equal(pmCaption({ mode: 'sweep', kind: 'all', gap: k }, 'en'), `corner ${k} of 119 · swap ${s.swap} of 66: two cells let go, two meet · ${s.alive} cells in the cut (${s.to} permutohedra, ${s.hp} prisms)`);
 });
 test('the cover: all 240 edges', () => { const e = perm4PreviewEdges(); assert.equal(e.length, 240); assert.equal(e.colours.length, 240); });
