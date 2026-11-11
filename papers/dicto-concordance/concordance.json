@@ -5924,6 +5924,15 @@
     "retry": "never",
     "study": "papers/2026-11-11-4d-vacuus",
     "date": "2026-11-11"
+   },
+   {
+    "question": "DICTO's PV build RD-Hemi + 13 face-attached: what is it; can cube pyramids fill it (DICTO)",
+    "method": "exact transforms from DICTO's world export; hull, glued faces, sampled dents",
+    "status": "SETTLED (numerical, exact volumes)",
+    "result": "hull = chamfered cube (6 squares + 12 stretched hexagons), volume 15 = 14 halves + six empty cube pyramids under the six squares: DICTO's pyramid filling confirmed; echo with the permutohedron holds for the squares, not the hexagons",
+    "retry": "exact rational version",
+    "study": "studies/2026-11-11-hemi-rd-build",
+    "date": "2026-11-11"
    }
   ]
  },
