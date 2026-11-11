@@ -105,7 +105,19 @@ for k in range(kstart, KMAX + 2):
     if np.linalg.norm(Wf, axis=1).max() > 2: fail(f'D_{k}: a point with |w| > 2 (error bound assumes <= 2)')
     pm = perm_maps(Wf, f'D_{k} points')
     mems, Nf = hull_faces(Wf); F = len(mems)
-    fm = perm_maps(Nf, f'D_{k} face normals', match=1e-9, sep=1e-6)   # normals only group faces into orbits; the proof rests on the point labels + closure (11-11: qhull normals carry ~4e-11)
+    # face action from the EXACT point labels (11-11: at D_29 distinct face normals come within 1.4e-7, so normals cannot label faces):
+    # key(face) = sum of random 64-bit weights of its member points; key(g.face) = same sum over pm[g](members). Keys must be distinct.
+    memb = np.concatenate(mems); offs = np.concatenate([[0], np.cumsum([len(m) for m in mems])[:-1]])
+    wt = np.random.default_rng(k).integers(1, 2 ** 62, N, dtype=np.uint64)
+    fkey = np.add.reduceat(wt[memb], offs); order_ = np.argsort(fkey); sk = fkey[order_]
+    if (np.diff(sk) == 0).any(): fail(f'D_{k}: two faces with the same member key')
+    fm = np.empty((120, F), np.int32)
+    for g in range(120):
+        kg = np.add.reduceat(wt[pm[g][memb]], offs); pos = np.searchsorted(sk, kg)
+        pos[pos >= F] = 0
+        if not (sk[pos] == kg).all(): fail(f'D_{k}: face set not closed under I_h (g {g})')
+        fm[g] = order_[pos]
+        if np.bincount(fm[g], minlength=F).max() != 1: fail(f'D_{k}: g {g} does not permute the faces')
     orbit_min = fm.min(0); reps = np.unique(orbit_min); R = len(reps); ridx = {int(r): i for i, r in enumerate(reps)}
     rep_of = np.array([ridx[int(x)] for x in orbit_min]); gof = -np.ones(F, np.int64)
     for g in range(120):

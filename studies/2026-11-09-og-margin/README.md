@@ -631,3 +631,11 @@ outermost cells fall into that hyperplane — a TRIVIAL coincidence. Non-trivial
 1035 → 943 slices). Rounding of the slice key (1e-8) splits near-coincidences at some special heights (counts above generic):
 counting must use exact or interval comparison. NEXT: exclude lc = −b_i, count by exact parallelism (Q(√5) for k ≤ 10), then the
 slice-type test (cut vs surviving cells).
+
+## §32 Against the 600-cell (11 Nov 2026; DICTO: "I thought every 4D was identified" → "yes test it against the 600-cell"; scripts/og_600cell.py, data/og-600cell.json, FINAL ok)
+Only regular and uniform 4D polytopes are catalogued; the hop's sweep is an irregular icosahedral 4D polytope, new at each level. Test:
+600-cell vertex axis along the slider, its H3 matched to our icosahedral orientation (exact, Kabsch on the 5-fold axes); one slider
+scale s per level for ALL cells (scanned + every s that makes one orbit exact); count orbit classes of cell normals along the 600-cell's
+120 vertex or 600 cell-normal directions (1e-6). Baseline: same directions, random radii per orbit (50 draws).
+Result k = 5 … 12: at most 1 orbit class of 5–17 matches at any single scale, exactly as many as the random baseline (mean 1.00,
+max 1). The one match is an axis orbit fitted by the free scale. Verdict: the sweep is NOT a 600-cell slice or shadow in this sense.

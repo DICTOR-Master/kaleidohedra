@@ -6169,6 +6169,16 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "Is the #43 hop's 4D sweep a 600-cell slice/shadow? (DICTO 11-11)",
+    "method": "og_600cell.py: 600-cell vertex axis = slider, H3 orientation matched exactly; one slider scale per level; orbit classes of cell normals along 600-cell vertex / cell-normal directions; random-radii baseline",
+    "status": "FAILED",
+    "result": "k=5..12: at most 1 orbit class matches at any scale, same as baseline (1.00); no 600-cell alignment",
+    "retry": "only a different embedding (e.g. 120-cell, or slider not along a vertex axis) with a stated reason",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },
