@@ -33,12 +33,16 @@ def rel(A, B):                       # pose of B in A's frame
     gA, tA = A; gB, tB = B; gi = inv(gA); return (mul(gi, gB), act(gi, tuple(b - a for a, b in zip(tA, tB))))
 def absolute(A, r): gA, tA = A; g, t = r; return (mul(gA, g), tuple(a + b for a, b in zip(tA, act(gA, t))))
 # --- all touching poses (paper: 2388)
+def all_touching():
+    out = []
+    for g in B3:
+        for t in itertools.product(range(-4, 6), repeat=3):
+            if touch(base, cubes((g, t))): out.append((g, t))
+    return out
 base = cubes((ID, (0, 0, 0)))
-TOUCH = []
-for g in B3:
-    for t in itertools.product(range(-4, 6), repeat=3):          # wide box (cubes reach -3..3 before the shift 2t)
-        if touch(base, cubes((g, t))): TOUCH.append((g, t))
-print(f'touching lattice-registered poses: {len(TOUCH)} (paper 2388)', flush=True)
+TOUCH = all_touching() if __name__ == '__main__' else []
+_UNUSED = []
+if __name__ == '__main__': print(f'touching lattice-registered poses: {len(TOUCH)} (paper 2388)', flush=True)
 # --- substitution (Theorem 5.1): T0 = translate by (1,1,1); T_v = reflection D_s(v) composed with pi_v, placed in block 2v (scale-2 coords: shift 4v)
 def children(frames):
     out = [(ID, (1, 1, 1))]
@@ -103,16 +107,17 @@ def facets(P):
                     lc = act(gi, tuple(a - 2 * b for a, b in zip(nb, t))); ld = act(gi, tuple(-x for x in d))
                     F.add(((c, d), (lc, ld), g))
     return F
-FR = {(0, 0, 0): (0, 1, 2), (0, 0, 1): (0, 2, 1), (0, 1, 0): (2, 1, 0), (0, 1, 1): (1, 2, 0), (1, 0, 0): (1, 0, 2), (1, 0, 1): (0, 1, 2), (1, 1, 0): (2, 0, 1)}
-ok = True
-for name, fr in (('certified', FR), ('control: child (1,1,0) changed', {**FR, (1, 1, 0): (1, 0, 2)})):
-    CH = children(fr); part = check_partition(CH); homo = all(det(h) == 1 for h, _ in CH)
-    P0 = language(CH); Ps, hist = closure(CH)
-    line = f'{name}: children partition 2C3 {part}; homochiral {homo}; |P0| {len(P0)}; closure {hist}'
-    if Ps is not None:
-        F = facets(Ps); PF = [p for p in TOUCH if (lambda tr: tr and tr <= F)(facets({p}))]
-        line += f'; |P*| {len(Ps)}; |F*| {len(F)}; tight {set(PF) == Ps} ({len(PF)})'
-    print(line, f'({time.time()-t0:.0f}s)', flush=True)
-    if name == 'certified': ok &= part and homo and len(TOUCH) == 2388 and len(P0) == 30 and Ps is not None and len(Ps) == 44 and len(F) == 135 and set(PF) == Ps
-    else: ok &= Ps is None or len(Ps) != 44
-print('FINAL ok: every number reproduced independently and the wrong marking rejected' if ok else 'FINAL FAIL', flush=True)
+if __name__ == '__main__':
+    FR = {(0, 0, 0): (0, 1, 2), (0, 0, 1): (0, 2, 1), (0, 1, 0): (2, 1, 0), (0, 1, 1): (1, 2, 0), (1, 0, 0): (1, 0, 2), (1, 0, 1): (0, 1, 2), (1, 1, 0): (2, 0, 1)}
+    ok = True
+    for name, fr in (('certified', FR), ('control: child (1,1,0) changed', {**FR, (1, 1, 0): (1, 0, 2)})):
+        CH = children(fr); part = check_partition(CH); homo = all(det(h) == 1 for h, _ in CH)
+        P0 = language(CH); Ps, hist = closure(CH)
+        line = f'{name}: children partition 2C3 {part}; homochiral {homo}; |P0| {len(P0)}; closure {hist}'
+        if Ps is not None:
+            F = facets(Ps); PF = [p for p in TOUCH if (lambda tr: tr and tr <= F)(facets({p}))]
+            line += f'; |P*| {len(Ps)}; |F*| {len(F)}; tight {set(PF) == Ps} ({len(PF)})'
+        print(line, f'({time.time()-t0:.0f}s)', flush=True)
+        if name == 'certified': ok &= part and homo and len(TOUCH) == 2388 and len(P0) == 30 and Ps is not None and len(Ps) == 44 and len(F) == 135 and set(PF) == Ps
+        else: ok &= Ps is None or len(Ps) != 44
+    print('FINAL ok: every number reproduced independently and the wrong marking rejected' if ok else 'FINAL FAIL', flush=True)
