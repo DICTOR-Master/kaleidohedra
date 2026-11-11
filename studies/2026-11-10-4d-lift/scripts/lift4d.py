@@ -7,7 +7,7 @@ vertex radii spread, facet vertex counts. A regular 4D polytope shows as: 5-cell
 import itertools, json, sys, os, numpy as np
 from fractions import Fraction as Fr
 from multiprocessing import Pool
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/splash')); from splash import net_for
+sys.path.insert(0, os.path.expanduser('~/work/splash')); from splash import net_for
 from scipy.spatial import HalfspaceIntersection, ConvexHull
 from scipy.optimize import linprog
 WORDS = ['ABC', 'AC']

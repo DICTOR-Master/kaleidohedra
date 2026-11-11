@@ -30,4 +30,4 @@ checks = dict(corners=len(big), faces=len(faces), face_sizes=sorted({len(f) for 
               cube_symmetries_kept=len(sym), proper=sum(1 for M in sym if np.linalg.det(M) > 0), improper=sum(1 for M in sym if np.linalg.det(M) < 0))
 print(json.dumps(checks, indent=1))
 json.dump(dict(mark=MARK, step='p3c-1', checks=checks, corners=[[qs_(x) for x in p] for p in big], corners_float=Cf.tolist(), faces=faces),
-          open(os.path.join(os.path.dirname(os.path.abspath(__file__)) if False else '/home/dicto/kaleidohedra/studies/2026-10-18-p3-golden-envelope-octet/data', 'p3c-dodeca.json'), 'w'), indent=1)
+          open(os.path.join(os.path.dirname(os.path.abspath(__file__)) if False else '~/kaleidohedra/studies/2026-10-18-p3-golden-envelope-octet/data', 'p3c-dodeca.json'), 'w'), indent=1)

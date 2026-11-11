@@ -11,7 +11,7 @@ the slice is coloured by the HexOct piece it belongs to; by DICTO's Rule of Halv
 half nearer layer k belongs to layer k and takes its colour, gold for a c layer, blue for an h layer; tetrahedral pieces
 darker, octahedral lighter (book colours). This study checks ONE chart (4H) before any full pattern.
 
-## Method (`scripts/knit.py`, run on dicto-big-brother)
+## Method (`scripts/knit.py`, run on compute-host)
 
 - Ball spacing a = 1, layer spacing h = √(2/3). Exact integer coordinates x = X/2, y = Y·√3/6, z = Z·h; A sites
   (2m+n, 3n), B = A + (1,1), C = A + (2,2). All slice polygons computed with Fractions in (S, Z), S = −Y (unit √3/6).
@@ -80,7 +80,7 @@ knit-chart-4H.png.
 ## Swatch sheet (added 31 Oct, after DICTO approved a swatch)
 
 `scripts/swatch.py` → `swatch/paper.html`, `swatch/fig/chart.png`, `swatch/fig/slice.png`, `out/swatch-rows.json`;
-printed on dicto-node → `swatch/knit-swatch-4H.pdf` (2 pages; copy in ~/Documents/papers-to-read). One period
+printed on compute-host-2 → `swatch/knit-swatch-4H.pdf` (2 pages; copy in ~/Documents/papers-to-read). One period
 (A B C B A), 24 stitches × 29 rows, chart rows 1–29 with columns taken 6 stitches (half a repeat) later than in
 chart-4H.png so the bobbles sit at stitches 7 and 19, away from the edges. Bias right = decrease at the left edge,
 increase at the right (seen from the RS); 8 bias-right rows (3, 4, 6, 7, 10, 11, 13, 14), 8 bias-left rows (17, 18, 20,

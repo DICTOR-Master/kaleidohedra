@@ -187,7 +187,7 @@ The sphere itself leaves gaps (DICTO); the question is the flat-faced solid (cub
 
 ## Turned cuboctahedral cages (2026-10-14)
 
-`scripts/cubo_cages.py` (run on dicto-node), `cubo-cages.json`: unit cuboctahedra on the 12 corner, 6 square or 8 triangle axes of
+`scripts/cubo_cages.py` (run on compute-host-2), `cubo-cages.json`: unit cuboctahedra on the 12 corner, 6 square or 8 triangle axes of
 a central one, parallel or turned about their own axis (90°, 45°, 60°), slid in until they touch.
 
 | Axes | Turned | Neighbours touch at | Centre that fits | Fill of hull | Flat-ended hull faces |
@@ -283,7 +283,7 @@ icosidodecahedron), and each family runs from that solid's world towards the fla
 
 ## Octahedral cluster, first search (2026-10-14)
 
-`scripts/octa_cluster.py` (dicto-node), `octa-cluster.json`: 8 octahedra, cuboctahedra or rhombicuboctahedra on the 3-fold axes,
+`scripts/octa_cluster.py` (compute-host-2), `octa-cluster.json`: 8 octahedra, cuboctahedra or rhombicuboctahedra on the 3-fold axes,
 parallel, slid in until neighbours touch (so 4 surround each 4-fold axis, as 3 icosahedra surround FUJI). The hull faces on the
 4-fold axes are a square (octahedra), a 12-cornered right-angled cross (cuboctahedra) and a 16-cornered outline
 (rhombicuboctahedra); none is a flat-ended square, so none of these simple cages closes with a square-family member. A wider

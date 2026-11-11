@@ -15,7 +15,7 @@ H4: all 15 ring patterns, cut perpendicular to a 600-cell corner direction, sign
 Honeycomb tiles: every tile of a uniform B4/F4 honeycomb that is not a prism is one of these polytopes; an O_h-symmetric tile
 section must pass perpendicular to such an axis through the tile centre, so tiles are covered (prism tiles: sections parallel
 to the base give the base, a uniform 3D solid; other prism sections were not searched).
-usage (dicto-big-brother): ~/geom/bin/python s9_golden_rhombic.py B4|F4|H4 -> ../data/s9-golden-rhombic-<g>.json
+usage (compute-host): python3 s9_golden_rhombic.py B4|F4|H4 -> ../data/s9-golden-rhombic-<g>.json
 """
 import sys, os, json, itertools
 import numpy as np

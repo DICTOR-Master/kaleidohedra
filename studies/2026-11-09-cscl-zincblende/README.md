@@ -136,7 +136,7 @@ This changes the status of Observation 3. The type is now read from two numbers 
 | `scripts/obs2_proof.py` | C1 sanity (fluorite octet −1/8; CsCl and zinc blende flip circuits ±1); C2 cells = nearest-neighbour polytopes on each interval (exact); C3 symmetries; C4 Theorem E (−2 homothety, cube slice); C5 every face and volume = #53 census; C6 the ratios 4, 1/√2, 2; C7 the two identities; C8 #53 engine corners = ours at 7 λ; C9 circuits and scaling | **95/95 PASS**, FINAL ok |
 | `scripts/likebirth.py` | Proposition D on the 12 networks: τ_A, τ_B by exact LP, against the walks' bond lives; τ_A + τ_B ≤ 0; midpoint rule on inversion-symmetric pairs | **33/33 PASS**, FINAL ok (about 10 min) |
 
-All arithmetic is exact (Fractions, sympy). Floats only order polygon corners, propose LP vertices and size the search radius, with a margin. Heavy runs were done on the research computer with `~/geom/bin/python`. Data: `data/obs2.json`, `data/obs2-checks.txt`, `data/likebirth.json`, `data/likebirth-checks.txt`, `data/likebirth-stdout.txt`.
+All arithmetic is exact (Fractions, sympy). Floats only order polygon corners, propose LP vertices and size the search radius, with a margin. Heavy runs were done on the research computer with `python3`. Data: `data/obs2.json`, `data/obs2-checks.txt`, `data/likebirth.json`, `data/likebirth-checks.txt`, `data/likebirth-stdout.txt`.
 
 ## Findings on #53
 

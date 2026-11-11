@@ -21,7 +21,7 @@ The census walks give, for each crystal network, exact weights λ = w_A − w_B 
   - C15 and A15 like-contact models; hcp-hole site identification (exact coset/neighbour checks); perovskite walls in Goldschmidt coordinates (t, μ_oct = r_B/r_X).
 - **`scripts/compounds.py`**: real compounds with Shannon radii (IR and CR) from the Imperial College transcription (`data/raw/shannon-db/`, 29 element pages fetched 2026-10-25; the 19 pages from Physical Anchors were copied, 10 new). **Same caveat as Physical Anchors: values as transcribed, not checked against the printed table.** Halide and S/Se/Te anion radii exist only for CN VI and are used as proxies for other CN.
 - **`scripts/crossref_check.py`**: every DOI looked up on api.crossref.org (16/16 match title, journal, volume, year).
-- **Runs.** dicto-big-brother, `nice -n 10`, load 0.00–0.01, one job at a time: geometry 4.9 s, compounds < 1 s. Crossref on the Pi.
+- **Runs.** compute-host, `nice -n 10`, load 0.00–0.01, one job at a time: geometry 4.9 s, compounds < 1 s. Crossref on the Pi.
 
 ## Results
 
@@ -211,4 +211,4 @@ DICTO's library first: 5 `ask-library` queries and a keyword search of INDEX.htm
 - `scripts/parse_shannon.py`: turns `data/raw/shannon-db/*.html` into `data/raw/shannon.json`.
 - `scripts/crossref_check.py`: writes `data/raw/crossref.json` and `data/checks/crossref-checks.txt`. `scripts/crossref_find.py`: the DOI lookup helper.
 - `data/raw/ask-library.txt`: the library queries.
-- `scripts/run.sh`: reruns G and C on dicto-big-brother.
+- `scripts/run.sh`: reruns G and C on compute-host.

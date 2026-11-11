@@ -248,7 +248,7 @@ t²(5 + 2√5)/15, against a T period of 4. This study did not recompute them.
 
 ## 7. Files and method
 
-Scripts (scripts/, run on dicto-big-brother with ~/geom/bin/python -u, in the foreground, each under 2 minutes; logs in data/):
+Scripts (scripts/, run on compute-host with python3 -u, in the foreground, each under 2 minutes; logs in data/):
 - regstar.py: the library. Mirrors from a corner set, mirror chains to flags, folding into the chamber, the flag line, t_min\*.
 - s1_flags.py → flags.json: all 25 regular polytopes. Known-case check: exactly Coxeter's list and densities.
 - s2_census3d.py → s2_census3d.json: the 3D census with exactlib (T, core, halos, stars, star-line events). Reproduces #80.

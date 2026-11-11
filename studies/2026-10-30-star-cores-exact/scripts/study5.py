@@ -2,7 +2,7 @@
 # classical convex solids with icosahedral, octahedral and tetrahedral symmetry (Platonic, Archimedean but the snubs, Catalan) are built
 # exactly as orbits of a seed corner (and their polars) and run under DICTO's growth rule T (#38) until they return; the gain over one
 # period is given exactly, with its minimal polynomial and the primes of its norm. The ten dataset solids come from study 1 (study1.json).
-# Usage: ~/geom/bin/python study5.py <dataset solids dir> <exactlib dir> <out json>
+# Usage: python3 study5.py <dataset solids dir> <exactlib dir> <out json>
 import sys, os, json
 SOL, LIB, OUT = sys.argv[1:4]; sys.path.insert(0, LIB)
 from exactlib import *

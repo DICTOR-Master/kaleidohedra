@@ -1,4 +1,4 @@
-# Fable review 3 (2026-10-18), dicto-node part (manifold3d + numpy): OCD + W_OCD (vertex-centred glue) and OCD + W_star (edge-midpoint
+# Fable review 3 (2026-10-18), compute-host-2 part (manifold3d + numpy): OCD + W_OCD (vertex-centred glue) and OCD + W_star (edge-midpoint
 # glue). Float meshes: parts, genus, volume, area, sphericity, dihedral histogram, sharpest edge; dense sampling 2M uniform + 2M near-face
 # points per kit. usage: python3 fable3_node.py INPUT.json OUT.json
 import sys, json, itertools, time, numpy as np, manifold3d as m3

@@ -7,7 +7,7 @@ from fractions import Fraction as Fr
 sys.path.insert(0, 'scripts/_lib') if os.path.isdir('scripts/_lib') else None
 sys.path.insert(0, os.path.expanduser('~/study-runs/2026-11-04-tetra-sweep/scripts/_lib')); sys.path.insert(0, os.path.expanduser('~/study-runs/2026-11-04-dehn-screen/scripts/_lib')); import methods as M
 from scipy.special import sph_harm_y
-HEX = os.path.expanduser('~/kres-tmp/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
+HEX = os.path.expanduser('~/work/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
 import tiles as T
 os.chdir(here); H = math.sqrt(2/3)
 def cart(p): return np.array([float(p[0]) + float(p[1])/2, float(p[1])*math.sqrt(3)/2, float(p[2])*H])

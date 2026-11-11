@@ -11,10 +11,10 @@ RS); colours by Rule-of-Halves piece halves: c layer gold, h layer blue, tetrahe
 takes the colour covering most of it (4 x 4 samples), exact ties go to the dark shade; ball stitches = bobbles; the
 24-stitch window starts half a repeat after a ball so the bobbles sit at stitches 7 and 19.
 
-Usage (dicto-big-brother):
-  ~/geom/bin/python hexknit.py --ch hchc --layers 9 --name 4H
-  ~/geom/bin/python hexknit.py --abc ABC --layers 7 --name 3C
-  ~/geom/bin/python hexknit.py --ch chcchchcchcch --layers 13 --name Fibonacci
+Usage (compute-host):
+  python3 hexknit.py --ch hchc --layers 9 --name 4H
+  python3 hexknit.py --abc ABC --layers 7 --name 3C
+  python3 hexknit.py --ch chcchchcchcch --layers 13 --name Fibonacci
 Options: --outdir DIR (default ../gen), --stitches N (multiple of 12, default 24).
 """
 import os, sys, json, argparse

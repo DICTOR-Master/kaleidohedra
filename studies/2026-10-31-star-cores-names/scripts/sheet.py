@@ -1,5 +1,5 @@
 # Star Cores names (2026-10-31): one sheet of the five shapes proposed for naming, render standard (solid, crisp edges), faces coloured
-# by their number of sides, DICTO mark. Usage: ~/geom/bin/python sheet.py <data dir> <logo png> <out png>
+# by their number of sides, DICTO mark. Usage: python3 sheet.py <data dir> <logo png> <out png>
 import sys, json
 import numpy as np
 import matplotlib; matplotlib.use('Agg')

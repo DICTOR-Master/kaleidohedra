@@ -112,7 +112,7 @@ cube–orthoplex line is t_min = m + (√d − m)². This gives 5 − 2√3 for 
 
 ## 4. Checks (all exact unless marked)
 
-Scripts are in scripts/ and ran on dicto-big-brother (~/geom/bin/python, sympy 1.14, scipy 1.18), in the foreground, each under
+Scripts are in scripts/ and ran on compute-host (python3, sympy 1.14, scipy 1.18), in the foreground, each under
 4 minutes. Logs are in data/. Q(√5) arithmetic comes from q5.py, copied from studies/2026-11-09-icosahedral-line. Corners are found
 by a float half-space intersection, then solved exactly. Each corner is checked exactly against every plane within 10⁻⁶ of it; every
 other plane clears it by more than 10⁻⁶ in floats.

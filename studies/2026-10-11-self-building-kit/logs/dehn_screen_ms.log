@@ -73,12 +73,12 @@ up = phi^2
   C    : ['half-integer', 'integer, sum even', 'integer, sum odd']
   K    : ['half-integer', 'integer, sum even', 'integer, sum odd']
 Traceback (most recent call last):
-  File "/home/dicto/ico13/dehn_screen_ms.py", line 180, in <module>
+  File "~/ico13/dehn_screen_ms.py", line 180, in <module>
     ls = [lift(v) for v in pieces[k][0]]
           ~~~~^^^
-  File "/home/dicto/ico13/dehn_screen_ms.py", line 169, in lift
+  File "~/ico13/dehn_screen_ms.py", line 169, in lift
     rhs = mp.matrix([p[0], p[1], p[2], gal(p[0]), gal(p[1]), gal(p[2])]); n = Mi * rhs
                                                   ~~~^^^^^^
-  File "/home/dicto/ico13/dehn_screen_ms.py", line 163, in gal
+  File "~/ico13/dehn_screen_ms.py", line 163, in gal
     raise ValueError(x)
 ValueError: 0.58778525229247312916870595463907276859765243764315

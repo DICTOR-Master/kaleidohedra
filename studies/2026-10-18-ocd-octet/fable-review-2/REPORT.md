@@ -2,7 +2,7 @@
 
 DICTO · dictospheres.com — independent verification and critical review (Claude Fable 5.1) of `studies/2026-10-18-ocd-octet` Stage 4: golden envelopes in the octet, outer corners, φ⁻² vertex cuboctahedron, plane trick, and the **two-shape kit** (golden envelope + grown piece left/right). Research branch only.
 
-Scripts: `scripts/fable2_exact.py` (own exact Q(√5) engine, `fable2_engine.py` = the engine of `fable-review/`, Pi, 164 s), `scripts/fable2_node.py` (dicto-node: manifold3d meshes, dihedral angles, 8 000 000 sample points), `scripts/fable2_cusp.py` (float, contact points of the outer corners). Data: `data/fable2-exact.json`, `data/fable2-node.json`, `data/fable2-cusp.json`, logs, `data/fable2-input.json`. "Exact" means Q(√5) arithmetic with the same rules as the first review (1e-7 float pre-screen only on which plane triples to solve; every corner, volume and facet re-proved exactly).
+Scripts: `scripts/fable2_exact.py` (own exact Q(√5) engine, `fable2_engine.py` = the engine of `fable-review/`, Pi, 164 s), `scripts/fable2_node.py` (compute-host-2: manifold3d meshes, dihedral angles, 8 000 000 sample points), `scripts/fable2_cusp.py` (float, contact points of the outer corners). Data: `data/fable2-exact.json`, `data/fable2-node.json`, `data/fable2-cusp.json`, logs, `data/fable2-input.json`. "Exact" means Q(√5) arithmetic with the same rules as the first review (1e-7 float pre-screen only on which plane triples to solve; every corner, volume and facet re-proved exactly).
 
 ## 1. Verdict
 
@@ -26,7 +26,7 @@ Scripts: `scripts/fable2_exact.py` (own exact Q(√5) engine, `fable2_engine.py`
 ### 1.2 Chirality (exact)
 Of the 48 cube symmetries about the cube centre, exactly the 12 rotations of the tetrahedral group T map the bite set (centres + 30 RT planes each) to itself; none of the 24 improper ones does, and no improper one even preserves G's 44-corner set. Completeness: conv(G) is the cube with its 4 OCD corners cut off at 2/3 along each edge (10 faces, exact), whose symmetry group is T_d; any isometry of G onto G or onto its mirror image preserves conv(G), hence is one of the 24 T_d operations tested. So **Sym(G) = T** and the T− piece is a genuine mirror partner. (This is forced by the lattice: the tetrahedral sites of Fm3̄ have site symmetry 23.)
 
-### 1.3 Sampling (dicto-node)
+### 1.3 Sampling (compute-host-2)
 | points | kit | n | no piece | exactly one | two or more | in two envelopes |
 |---|---|---|---|---|---|---|
 | uniform | envelope + G | 2 000 000 | 0 | 2 000 000 | 0 | 0 |

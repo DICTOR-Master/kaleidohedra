@@ -1,6 +1,6 @@
 # Figure 1 of #80 (The Gains of DICTO's Growth Rule): two steps of T(S) = {x : v·x <= v·v} for the Platonic pairs.
 # Each corner of S lies on a face of T(S), and T(T(S)) is S scaled by the gain g = (R'/R)^2 (checked below).
-# Usage: ~/geom/bin/python fig_paper_c.py <out png> <logo png>   (rendering helpers as in figs_paper_a.py, render standard: solid, crisp edges)
+# Usage: python3 fig_paper_c.py <out png> <logo png>   (rendering helpers as in figs_paper_a.py, render standard: solid, crisp edges)
 import sys, numpy as np, matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.collections import PolyCollection

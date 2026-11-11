@@ -3,7 +3,7 @@ of Z^6 (primitive icosahedral module). For OG = Q(mu_TI, phi^2) (s4) find the se
 the lattice (in Q^2) of admissible scales; its smallest-|norm| element and the smallest positive integer
 scale, in our frame (D with R^2 = 3) and in the polar-Dharma chain frame (where the bridge study found 171).
 Also the same for the stations S(phi^2), H(mu_TI), the truncated icosahedron S(mu_TI) and the golden cuts, to see where 19 enters.
-usage (dicto-big-brother): ~/geom/bin/python s4b_og_lattice.py -> ../data/s4b-og-lattice.json
+usage (compute-host): python3 s4b_og_lattice.py -> ../data/s4b-og-lattice.json
 """
 from dp_lib import *          # noqa
 import sympy as sp

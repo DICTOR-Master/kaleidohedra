@@ -144,7 +144,7 @@ out('C6e SO(9) (0,F(n+1),F(n),0), n=1..12:', ','.join(str(Bn([0, F[n + 1], F[n],
 # ---------- 7. approximant ladder: tiles per conventional cubic cell ----------
 out('C7 rung F(n+1)/F(n), conventional cubic cell, n=1..12: prolate 4F(3n+2):', ','.join(str(4 * F[3 * n + 2]) for n in range(1, 13)))
 out('   oblate 4F(3n+1):', ','.join(str(4 * F[3 * n + 1]) for n in range(1, 13)), ' total 4F(3n+3):', ','.join(str(4 * F[3 * n + 3]) for n in range(1, 13)))
-prim = [16, 136, 576, 1220, 10336, 43784, 92736, 785672, 3328160, 7049156, 59721408]   # exact_counts.py, rungs 1/1..144/89 (run 2026-11-07 on dicto-big-brother)
+prim = [16, 136, 576, 1220, 10336, 43784, 92736, 785672, 3328160, 7049156, 59721408]   # exact_counts.py, rungs 1/1..144/89 (run 2026-11-07 on compute-host)
 out('C7 check: primitive-cell counts = 4F(3n+3), halved exactly when F(n) and F(n+1) are both odd (n = 1 mod 3):',
     all(prim[n - 1] == 4 * F[3 * n + 3] // (2 if n % 3 == 1 else 1) for n in range(1, 12)))
 out('FINAL ok')

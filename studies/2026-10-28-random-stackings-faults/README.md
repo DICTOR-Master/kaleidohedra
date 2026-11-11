@@ -1,5 +1,5 @@
 # Random stackings and stacking faults under the Hexagonality Law (DICTO 10-28)
-Status 10-28: results 1-3 done; Laves foot-atom test on 7- and 8-layer stackings running (dicto-big-brother).
+Status 10-28: results 1-3 done; Laves foot-atom test on 7- and 8-layer stackings running (compute-host).
 
 ## 1. Random stackings (corollary of #66, wherever its hypothesis holds)
 For ANY stacking, repeating, faulted or random, each kind of piece averages exactly

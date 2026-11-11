@@ -2,12 +2,12 @@
 """Photo-style render of the knitted HexOct rhombic dodecahedron cushion (n = 2 chart, m = 8), 2 November 2026.
 
 Two stages, one file:
-  prep   (~/geom/bin/python rd_knit_render.py prep OUTDIR): uses rd.py (faces, frame, classify, chart_face) to build
+  prep   (python3 rd_knit_render.py prep OUTDIR): uses rd.py (faces, frame, classify, chart_face) to build
          the stuffed cushion mesh, the per-face stitch colour grids (same majority rule as the chart), and a
          stockinette colour + height texture atlas (one tile per face, stitch rows along each face's knitting frame);
          prints the checks (grid of face F0 == chart n = 2; all faces' grids; seam colour comparison).
   render (blender -b -P rd_knit_render.py -- OUTDIR VIEW SAMPLES RES): Cycles scene, one view per call.
-  sheet  (~/geom/bin/python rd_knit_render.py sheet OUTDIR OUT.png): the two views side by side + the DICTO mark.
+  sheet  (python3 rd_knit_render.py sheet OUTDIR OUT.png): the two views side by side + the DICTO mark.
 
 Real size: gauge 22 sts / 10 cm fixes the cubic unit (stitch width = sqrt(6)/12 units = 10/22 cm), so 1 unit = 2.227 cm,
 rows 27.2 / 10 cm, face edge 15.4 cm, the cushion 35.6 cm between opposite 4-valent corners (before stuffing).
@@ -224,7 +224,7 @@ def prep(outdir):
 # ======================================================================= render (inside Blender)
 def render(outdir, view, samples, res):
     import bpy, glob
-    sys.path += glob.glob(os.path.expanduser('~/geom/lib/python3*/site-packages'))   # Blender's system Python has no numpy
+    sys.path += glob.glob(os.path.expanduser('~/pyenv/lib/python3*/site-packages'))   # Blender's system Python has no numpy
     import numpy as np
     from mathutils import Vector
     D = np.load(os.path.join(outdir, 'mesh.npz'))
@@ -319,7 +319,7 @@ def sheet(outdir, out):
     a, b = a.crop((0, ct, W_, H_)), b.crop((0, ct, W_, H_)); H_ -= ct
     S = Image.new('RGB', (2 * W_, H_))
     S.paste(a, (0, 0)); S.paste(b, (W_, 0))
-    lg = Image.open(os.path.expanduser(os.environ.get('LOGO', '~/kres-tmp/dicto-logo.png'))).convert('RGBA')
+    lg = Image.open(os.path.expanduser(os.environ.get('LOGO', '~/work/dicto-logo.png'))).convert('RGBA')
     sz = int(H_ * 0.075); lg = lg.resize((sz, sz), Image.LANCZOS)
     S.paste(lg, (2 * W_ - sz - int(sz * 0.3), H_ - sz - int(sz * 0.3)), lg)
     S.save(out)

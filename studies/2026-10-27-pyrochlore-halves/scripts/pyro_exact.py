@@ -7,11 +7,11 @@
 #   (C) locality: every corner of every central cell within squared distance R2 of its site (reported), which with the weight bound
 #       |λ| <= 11/36 limits the cell to the window's layers (hand step, as #57).
 import itertools, sys, os
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/st57/scripts')); os.chdir(os.path.expanduser('~/kres-tmp/st57/scripts'))
+sys.path.insert(0, os.path.expanduser('~/work/st57/scripts')); os.chdir(os.path.expanduser('~/work/st57/scripts'))
 from fractions import Fraction as Fr
 from engine import Net, Cell, aff_eval, gdot, vsub
 from catalogue import word_for
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/pyro')); from pyro_walk import net_for
+sys.path.insert(0, os.path.expanduser('~/work/pyro')); from pyro_walk import net_for
 _h = open('exact_halves.py').read(); exec(_h[_h.index('def corners_at'):_h.index('# references:')])   # #57's helpers: corners_at, edges, half, fp, cell, layer_types
 def build(word):
     spec = net_for(word); return Net(word, spec['G'], spec['T'], spec['motif'], spec['w']), spec

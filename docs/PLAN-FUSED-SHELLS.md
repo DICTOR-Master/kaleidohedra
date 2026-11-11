@@ -31,6 +31,6 @@ structure's own rotations:
 8. **Paper**: DICTO's, "Capturing the In-betweens: a Study of Transitional Polyhedral Shells". Library first (Kepler 1596, Jamnitzer 1568, Hogan 1976; add Mackay 1962), then a draft; never uploaded
    without DICTO's OK.
 
-Heavy runs (2–3: thousands of unions) go to dicto-node as logged background jobs.
+Heavy runs (2–3: thousands of unions) go to compute-host-2 as logged background jobs.
 
 DICTO · dictospheres.com

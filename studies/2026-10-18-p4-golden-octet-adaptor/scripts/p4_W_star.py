@@ -1,7 +1,7 @@
 # DICTO 2026-10-18 "could the imprint be centred on the Penrose star also?!" -- glue centred on the Penrose link: the middle point m of
 # every octahedron edge, where two OCDs' five-fold stars face each other (the thick Penrose rhombus between them). Sites: the 6 edge
 # midpoints per cell, (R/2)(a,b,c) with exactly two of a,b,c odd. Piece = Voronoi cell of m among these sites, minus the OCDs (exact OCD
-# imprints). Checks (dicto-node): cell shape, one solid?, volume (expect (cell - OCD)/6), sphericity, centrosymmetric about m, does it
+# imprints). Checks (compute-host-2): cell shape, one solid?, volume (expect (cell - OCD)/6), sphericity, centrosymmetric about m, does it
 # contain the whole hull of the two facing stars (the middle piece and its Penrose cores)? usage: python3 p4_W_star.py step10-input.json OUT.json
 import sys, json, itertools, numpy as np, manifold3d as m3
 from scipy.spatial import HalfspaceIntersection, ConvexHull

@@ -99,7 +99,7 @@ def sheet(panels, title, fname, px=520):
         d.text((i * px + px / 2, 50 + px + 8), cap1, font=fs, fill=INK, anchor='mt')
         d.text((i * px + px / 2, 50 + px + 34), cap2, font=fm, fill=(190, 180, 160), anchor='mt')
     try:
-        logo = Image.open('/home/dicto/dictospheres/dicto-logo.png').convert('RGBA').resize((40, 40), Image.LANCZOS)
+        logo = Image.open('~/dictospheres/dicto-logo.png').convert('RGBA').resize((40, 40), Image.LANCZOS)
         S.paste(logo, (W - 250, H - 48), logo)
     except OSError:
         pass

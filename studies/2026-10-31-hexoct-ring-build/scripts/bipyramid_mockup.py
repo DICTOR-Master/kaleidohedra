@@ -2,7 +2,7 @@
 # first 2d drawings were much more accurate"): every big face of 4 rings (double scale, central ring the other way up), zip ties at
 # 1/4 and 3/4 of each shared side. Closed = 24 rings; open = the 6 central rings left out (18 rings: a mini tetrahedron at each tip,
 # a mini square pyramid at each waist corner).
-# Usage (dicto-big-brother): LOGO=<dicto-logo.png> ~/geom/bin/python bipyramid_mockup.py  -> ../out/bipyramid-mockup.png
+# Usage (compute-host): LOGO=<dicto-logo.png> python3 bipyramid_mockup.py  -> ../out/bipyramid-mockup.png
 import os, sys
 import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)

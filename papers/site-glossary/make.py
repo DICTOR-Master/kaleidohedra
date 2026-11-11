@@ -2,7 +2,7 @@
 """Roadmap step 2: jargon -> everyday-picture glossary for dictospheres.com page copy.
 Counts in the last column are measured from the live index.html (local copy) at build time."""
 import re, html, datetime
-SITE = '/home/dicto/dictospheres/index.html'
+SITE = '~/dictospheres/index.html'
 s = open(SITE).read()
 s = re.sub(r'<script.*?</script>|<style.*?</style>', '', s, flags=re.S)
 T = re.sub(r'<[^>]+>', ' ', s)
@@ -111,5 +111,5 @@ out = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Ever
 <li><b>Facts checked:</b> Tetra Pak's first carton (1952) was a tetrahedron; virus shells and the football are icosahedral and truncated icosahedral; garnet grows as rhombic dodecahedra; a bee cell's floor is three rhombi; kagome is the Japanese basket weave (kago, basket; me, eye); pyrochlore turns green in a flame; Dehn 1900 (Hilbert's third problem); Shechtman, Nobel Prize in Chemistry 2011; Viazovska, E8, 2016; Penrose tiling 1974; Kepler, Mysterium Cosmographicum 1596 and Harmonices Mundi 1619.</li>
 </ul>
 </body></html>'''
-open('/home/dicto/k-research/papers/site-glossary/paper.html', 'w').write(out)
+open('~/k-research/papers/site-glossary/paper.html', 'w').write(out)
 print(total, 'entries')

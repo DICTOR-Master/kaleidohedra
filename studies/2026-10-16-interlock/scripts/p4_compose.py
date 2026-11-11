@@ -1,4 +1,4 @@
-# Compose the P4 three.js shots (shoot_p4.mjs on dicto-node -> /tmp/p4) into the paper figures: hero, peel, kit (+ locators).
+# Compose the P4 three.js shots (shoot_p4.mjs on compute-host-2 -> /tmp/p4) into the paper figures: hero, peel, kit (+ locators).
 # Counts, shapes and layers are read from data/interlock-kinds.txt and the S1 table (Tables 1-3), never typed in.
 #   python3 scripts/p4_compose.py <shots dir> <view>  -> renders/p4-hero.png, p4-peel.png, p4-kit-ends.png, p4-kit-middle.png
 import sys, re, collections, json

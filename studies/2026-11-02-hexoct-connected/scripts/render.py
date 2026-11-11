@@ -1,7 +1,7 @@
 # Pictures for the connected HexOct tiles: each chosen pair in three views (c gold, h blue; solid faces, crisp edges, merged
 # faces from exactfaces.union_faces) and small stacks 2H (ABAB), 3C (ABC), 4H (ABCB) built from the chosen tiles, 2 x 2 tiles
 # per layer, 4 layers, drawn apart vertically so each tile reads (z-buffer renderer of the ring-build study, build.py).
-# Usage: LOGO=<dicto-logo.png> ~/geom/bin/python render.py -> figs/*.png
+# Usage: LOGO=<dicto-logo.png> python3 render.py -> figs/*.png
 import os, sys, math, json
 import numpy as np
 from fractions import Fraction as Fr
@@ -15,7 +15,7 @@ from stackings import POS
 import exactfaces as E
 import verify as V
 from connect import shift
-LOGO = os.environ.get('LOGO', os.path.expanduser('~/kres-tmp/dicto-logo.png'))
+LOGO = os.environ.get('LOGO', os.path.expanduser('~/work/dicto-logo.png'))
 OUT = os.path.join(HERE, 'figs'); os.makedirs(OUT, exist_ok=True)
 D = (2 / 3) ** 0.5
 def cart(p): return np.array([float(p[0]) + float(p[1]) / 2, float(p[1]) * 3 ** 0.5 / 2, float(p[2]) * D])

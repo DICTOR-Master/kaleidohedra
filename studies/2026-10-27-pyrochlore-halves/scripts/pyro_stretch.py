@@ -7,12 +7,12 @@
 #  (3) O, Y halves: functions measured from the gap's mid-plane; the stretch is split where a corner crosses it; on each part one g
 #      maps the corners above / on / below and the section points (exact rational functions of λ, sympy) onto the pure half's.
 import itertools, sys, os
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/st57/scripts')); os.chdir(os.path.expanduser('~/kres-tmp/st57/scripts'))
+sys.path.insert(0, os.path.expanduser('~/work/st57/scripts')); os.chdir(os.path.expanduser('~/work/st57/scripts'))
 from fractions import Fraction as Fr
 import sympy as sp
 from engine import Net, Cell, aff_eval, gdot, vsub
 from catalogue import word_for
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/pyro')); from pyro_walk import net_for
+sys.path.insert(0, os.path.expanduser('~/work/pyro')); from pyro_walk import net_for
 _h = open('exact_halves.py').read(); exec(_h[_h.index('def corners_at'):_h.index('# references:')])
 _s = open('exact_stretch.py').read(); exec(_s[_s.index('def ops():'):_s.index('REFN = ')])          # ops/OPS, funcs, apply, side
 def build(word):

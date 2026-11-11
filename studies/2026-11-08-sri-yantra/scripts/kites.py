@@ -33,7 +33,7 @@ for nu, nv in [("Cleo-Icos 2/phi^2", "stella 1/sqrt2"), ("stella 1/sqrt2", "Cleo
     name = "K" + str(len(out) + 1)
     out[name] = {"label": key, "b": {str(i): s(b[i]) for i in range(1, 10)}, "w": {str(i): s(w[i]) for i in range(1, 10)}, "apex": {str(i): s(a[i]) for i in range(1, 10)}}
     json.dump(out, open("kites.json", "w"), indent=1)
-    r = subprocess.run(["/home/dicto/geom/bin/python", "figure.py", "kites.json", name, f"kite-{name}.svg", key], capture_output=True, text=True).stdout
+    r = subprocess.run(["python3", "figure.py", "kites.json", name, f"kite-{name}.svg", key], capture_output=True, text=True).stdout
     line = [l for l in r.splitlines() if "odd" in l][0]
     print(f"{name}  {key}: P,Q,R,S = {[mp.nstr(x, 5) for x in (v**2/(1+v**2), Q, 1/(1+u**2), S)]}  | {line.split(';', 1)[1].strip()}", flush=True)
 print("FINAL ok" if out else "FINAL FAIL: no kite found")

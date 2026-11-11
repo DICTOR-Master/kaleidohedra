@@ -6,7 +6,7 @@ Field K = Q(s), s^2 = 5, embedded with s = +sqrt5.  For one slice and one group 
     vertex coordinates evaluated to 60 digits and checked for embedding (solve_slices.embed_check: distinct
     vertices, no 180-degree edge, clearance between faces);
   * positive-dimensional: reported (dimension, number of components) for separate treatment.
-Usage: ~/geom/bin/python solve_sage.py V30 full
+Usage: python3 solve_sage.py V30 full
 """
 import json
 import sys

@@ -1,4 +1,4 @@
-# DICTO 2026-10-18 octet study -- STEP 22 (dicto-node, manifold3d): the space the golden envelopes leave in the octet (1 - 10/phi^6).
+# DICTO 2026-10-18 octet study -- STEP 22 (compute-host-2, manifold3d): the space the golden envelopes leave in the octet (1 - 10/phi^6).
 # Is it one connected web or separate pieces? If separate: how many kinds per cell, their volumes, sphericity, and are they convex?
 # usage: python3 step22_complement.py step10-input.json step22-input.json OUT.json
 import sys, json, itertools, numpy as np, manifold3d as m3

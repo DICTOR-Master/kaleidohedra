@@ -1,5 +1,5 @@
 # Second dual sweep CO ∩ μ·RD (2026-11-04)
-Concordance gap 2 (first half) + the harmonic detector (study 2026-11-04-harmonic-fingerprint). Script scripts/co_rd_sweep.py (dicto-big-brother), data/co-rd-sweep.log.
+Concordance gap 2 (first half) + the harmonic detector (study 2026-11-04-harmonic-fingerprint). Script scripts/co_rd_sweep.py (compute-host), data/co-rd-sweep.log.
 CO = {|x| ≤ 1, |x|+|y|+|z| ≤ 2}, RD = its polar {|x|+|y| ≤ 1}; μ = 1 gives the RD, μ = 2 the CO.
 Face census: μ in (1, 4/3): 32 corners, 6 squares + 12 hexagons; (4/3, 3/2): 8 triangles, 6 squares, 12 octagons; μ = 3/2: 24 corners, 8 triangles + 18 quadrilaterals
 (rhombicuboctahedron combinatorics; equal edges not checked); (3/2, 2): 48 corners, 12 quadrilaterals, 8 hexagons, 6 octagons (truncated cuboctahedron combinatorics).

@@ -3,7 +3,7 @@
 corner directions, Q_l = sqrt(4pi/(2l+1) sum_m |mean Y_lm|^2) and W_l-hat, for l = 4, 6, 8, 10, 12.
 Validation: fcc (CO) Q4 .191 Q6 .575; hcp (J27) .097/.485; bcc (14) .036/.511; icosahedron Q4 0, Q6 .663 (classical values).
 Then the sweep P_mu = C ∩ mu C* (C = [-1,1]^3) from the octahedron (mu = 1) to the cube (mu = 3), with its named stations,
-looking for where Q4 vanishes or Q6 peaks. Run with ~/geom/bin/python on dicto-big-brother. Output data/fingerprint.json + log."""
+looking for where Q4 vanishes or Q6 peaks. Run with python3 on compute-host. Output data/fingerprint.json + log."""
 import itertools, json, math, os
 import numpy as np
 from scipy.special import sph_harm_y

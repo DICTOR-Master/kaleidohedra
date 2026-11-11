@@ -28,7 +28,7 @@ the new deltahedra variants of regular deltahedra will be different".
   all edge stars (angles adding to 360°). Data: `data/q1-pyramids.json`.
 - `scripts/exact_faces.py`: exact face-matching table (which pieces carry each non-equilateral face). Data:
   `data/face-matching-exact.json`.
-- `scripts/enum_glue.py` (ran on dicto-big-brother, 4 processes): gluing search. A piece is glued whole face to whole
+- `scripts/enum_glue.py` (ran on compute-host, 4 processes): gluing search. A piece is glued whole face to whole
   congruent face (any face, mirror images allowed), interiors disjoint (manifold3d intersection volume), duplicates removed
   by a labelled distance signature. Pieces at the scale where their equilateral faces have edge 1, and the Mosseri–Sadoc
   tiles also at their second scale so tiles meet on their (1,1,τ) and (1,τ,τ) faces. The surface is merged into planar

@@ -1,7 +1,7 @@
 # Render data: a patch of the double network (two interpenetrating hexagon-joined diamond networks = one bcc lattice packing).
 import json, numpy as np, itertools, sys
 from scipy.spatial import ConvexHull
-sys.path.insert(0, '/home/dicto/kaleidohedra/studies/_lib'); import geomcheck as gc
+sys.path.insert(0, '~/kaleidohedra/studies/_lib'); import geomcheck as gc
 N = json.load(open('data/network.json')); T = np.array(N['T']); O = np.array(N['ocd'])
 h = ConvexHull(O); pl = []
 for e in h.equations:

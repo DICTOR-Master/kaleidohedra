@@ -1,4 +1,4 @@
-# DICTO 2026-10-18 Project 1, Golden-key octet -- meshes (dicto-node, manifold3d): the keyed octahedron (octahedron + its 8 golden-envelope
+# DICTO 2026-10-18 Project 1, Golden-key octet -- meshes (compute-host-2, manifold3d): the keyed octahedron (octahedron + its 8 golden-envelope
 # corner keys; the OCD and its 6 caps fused) and the dented tetrahedron T+ (T+ minus the 4 keys entering it); T- is its point reflection.
 # usage: python3 p1_meshes.py step10-input.json OUT.json   (step10-input.json from studies/2026-10-18-ocd-octet/data)
 import sys, json, itertools, numpy as np, manifold3d as m3

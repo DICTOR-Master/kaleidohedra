@@ -2,7 +2,7 @@
 
 Question: is it known that hole/Voronoi-type piece volumes in close-packed polytypes split into own-layer + neighbour-layer parts (Swap Rule), or obey halves when the layer spacing is changed?
 
-## Library (DICTO reference library, 1007 items, semantic search via ask-library on dicto-big-brother; full output data/library-queries.txt)
+## Library (DICTO reference library, 1007 items, semantic search via ask-library on compute-host; full output data/library-queries.txt)
 Queries: "rule of halves Voronoi cell close-packed polytype hexagonal cubic layers"; "power diagram weighted Voronoi tetrahedral octahedral holes stacking sequence"; "Voronoi cell volume depends on neighbouring layers polytypes Jagodzinski"; "compressed close packing layer spacing Voronoi tessellation".
 Top items returned and read for relevance: Hales, "The Dodecahedron as a Voronoi Cell and its (minor) importance for the Kepler conjecture"; Blatov, "Voronoi-Dirichlet polyhedra in crystal chemistry: theory and applications"; Garber, Voronoi's conjecture papers; Hales 1998 overview of the Kepler conjecture; "Organizing principles for dense packings" (arXiv 1206.3716); Wikipedia, tetrahedral-octahedral honeycomb; Koca et al. 2020 (Mosseri–Sadoc tiles); "Dense packing of tetrahedra in cylinders"; Fedorov 1885 ch. 13. None states a layer-additive or halves rule for hole pieces in stackings.
 

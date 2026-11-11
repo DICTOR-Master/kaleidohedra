@@ -202,5 +202,5 @@ DICTO proposed a ladder of lessons with mnemonics as bridges between the steps, 
 <h2>Answers</h2>{ans}
 <p class="small"><b>Sources.</b> Euclid, <i>Elements</i>, Book XIII (the five solids, and the dodecahedron as a cube with roofs); Descartes' theorem on the total angle deficit, 720°; Girard's theorem (a spherical triangle's area is its excess); H. S. M. Coxeter, <i>Regular Polytopes</i> (the mirror triangles, Wythoff's construction); The Golden Ladder, Chapter 1.</p>
 </body></html>'''
-open('/home/dicto/k-research/papers/ladder-study/paper.html','w').write(html)
+open('~/k-research/papers/ladder-study/paper.html','w').write(html)
 print('written',len(html))

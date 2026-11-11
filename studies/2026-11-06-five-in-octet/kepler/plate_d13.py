@@ -1,7 +1,7 @@
 # Figure 2a, plate style: the nested Dodeca-13 (the 120-cell's 1 + 12) down a five-fold axis through two opposite faces of the centre.
 import json, numpy as np
 from davinci import Plate, look, SEPIA
-d = json.load(open('/home/dicto/k-research/studies/2026-11-06-nest-supercells/nest13-aligned.json'))
+d = json.load(open('~/k-research/studies/2026-11-06-nest-supercells/nest13-aligned.json'))
 Ds = [np.array(v) for v in d['dodecahedra']]; Ns = [{k: np.array(v) for k, v in n.items()} for n in d['nests']]
 ci = int(np.argmin([np.linalg.norm(V.mean(0)) for V in Ds])); c = Ds[ci].mean(0)
 n5 = Plate.faces(Ds[ci])[0][0]

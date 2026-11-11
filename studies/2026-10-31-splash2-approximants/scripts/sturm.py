@@ -1,5 +1,5 @@
 # Splash Rules II, approximants, part 1: the Fibonacci chain and its periodic approximants (exact).
-# Run on dicto-big-brother: ~/geom/bin/python sturm.py out/
+# Run on compute-host: python3 sturm.py out/
 # Letters: 0 = L (long tile), 1 = S (short tile); alpha = share of S. Mechanical word s_n = floor((n+1)a + r) - floor(n a + r).
 # For a = p/q (gcd 1) the word has period q (a Christoffel conjugate); r = 1/(2q) is generic (no point n a + r is an integer).
 # Everything is a Fraction or an element of Q(sqrt 5) (qf.QF); no floats in any test.

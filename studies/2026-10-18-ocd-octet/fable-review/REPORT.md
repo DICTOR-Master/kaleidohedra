@@ -2,7 +2,7 @@
 
 DICTO · dictospheres.com — independent verification and critical review (Claude Fable 5.1) of `studies/2026-10-18-ocd-octet` (steps 1–17 + app stage). Research branch only.
 
-Scripts: `scripts/fable_exact.py` (own exact polytope engine in Q(√5), run on the Pi, 37 s), `scripts/fable_node.py` (dicto-node: dense sampling, manifold3d meshes, handedness, improvement variants), `scripts/fable_misc.py` (side checks). Data: `data/fable-exact-checks.json`, `data/fable-node.json`, `data/fable-misc.json`.
+Scripts: `scripts/fable_exact.py` (own exact polytope engine in Q(√5), run on the Pi, 37 s), `scripts/fable_node.py` (compute-host-2: dense sampling, manifold3d meshes, handedness, improvement variants), `scripts/fable_misc.py` (side checks). Data: `data/fable-exact-checks.json`, `data/fable-node.json`, `data/fable-misc.json`.
 
 ## 1. Verdict on 100 % space filling
 
@@ -28,7 +28,7 @@ Let H be the hull of the two facing five-fold stars at an octahedron edge, M = H
 9. **Core**: the prism cross-section is an exact rhombus with cos 72° = (√5−1)/4 at c1 (thick Penrose rhombus — the naming is correct), edges equal, long diagonal = tip radius; core = prism ∩ H − OCD₁ − OCD₂, no key enters it; core (−36734+16658√5)/50787, rest = M − core.
 10. keyed OCD + 6 notched caps + 6 M + notched T+ + notched T− = cell exactly.
 
-### 1.3 Sampling (dicto-node, float, one fundamental cell)
+### 1.3 Sampling (compute-host-2, float, one fundamental cell)
 | points | kit | n | in no piece | in exactly one | in two or more |
 |---|---|---|---|---|---|
 | uniform | keyed kit | 2,000,000 | 0 | 2000000 | 0 |
@@ -42,7 +42,7 @@ Let H be the hull of the two facing five-fold stars at an octahedron edge, M = H
 
 Uniform points: uniform in the lattice cell. Boundary points: uniform points moved onto a random piece face plane and pushed off it by 10^−6…10^−2 (log-uniform), folded back into the cell. Middle pieces found overlapping each other: 0 (uniform), 0 (boundary).
 
-### 1.4 Solidity (manifold3d meshes, dicto-node)
+### 1.4 Solidity (manifold3d meshes, compute-host-2)
 - bare OCD: 1 solid part(s), genus 0, 0 zero-volume sliver(s)
 - keyed OCD: 1 solid part(s), genus 0, 0 zero-volume sliver(s)
 - cap (keyed kit): 1 solid part(s), genus 0, 0 zero-volume sliver(s)

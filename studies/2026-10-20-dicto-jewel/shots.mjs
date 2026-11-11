@@ -1,4 +1,4 @@
-// DICTO 2026-10-20 (Jewel paper, 2x pixel ratio for sharp print): one transparent frame per scene of renders/family.html (dicto-node, Playwright). usage: node cover_shots.mjs <html> <outdir>
+// DICTO 2026-10-20 (Jewel paper, 2x pixel ratio for sharp print): one transparent frame per scene of renders/family.html (compute-host-2, Playwright). usage: node cover_shots.mjs <html> <outdir>
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 const [F, OUT] = process.argv.slice(2); fs.mkdirSync(OUT, { recursive: true });

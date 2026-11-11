@@ -7,7 +7,7 @@ from fractions import Fraction as Fr
 import numpy as np
 from scipy.spatial import ConvexHull
 from validate import Net, Cell, net_for, half, ROLE_OF
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/st57/scripts'))
+sys.path.insert(0, os.path.expanduser('~/work/st57/scripts'))
 from catalogue import word_for
 def det3(a, b, c): return a[0] * (b[1] * c[2] - b[2] * c[1]) - a[1] * (b[0] * c[2] - b[2] * c[0]) + a[2] * (b[0] * c[1] - b[1] * c[0])
 def hull_vol(P):

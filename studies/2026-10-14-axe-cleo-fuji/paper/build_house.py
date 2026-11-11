@@ -1,6 +1,6 @@
 # The AXE, CLEO and FUJI paper in DICTO's house style (copied from Capturing the In-betweens) (papers/paper.css; standing practice 2026-10-14): gold-ruled header with DICTO's credit line,
 # version · date · DOI · licence · data, the gold DICTO logo, the abstract box, a faint logo watermark on every page; the footer
-# (title · DICTO · dictospheres.com · DOI · page) is added when printing (print.mjs). Writes paper-house.html. Run on dicto-node.
+# (title · DICTO · dictospheres.com · DOI · page) is added when printing (print.mjs). Writes paper-house.html. Run on compute-host-2.
 import os, re
 from markdown_it import MarkdownIt
 HERE = os.path.dirname(os.path.abspath(__file__))

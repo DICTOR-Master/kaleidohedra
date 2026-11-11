@@ -2,7 +2,7 @@
 the cube (h = 0), the Lesser Golden Cut Cube (h = 2 x_L), the Greater Golden Cut Cube (h = 2 x_G), the cuboctahedron
 (h = 1, a cell).
 House colours as figs.py (gold = golden octagon, teal = regular square, lilac = corner triangle); DICTO mark.
-usage (dicto-big-brother): python fig6_cubes.py <out dir> <logo png>
+usage (compute-host): python fig6_cubes.py <out dir> <logo png>
 """
 import os, sys, itertools
 import numpy as np

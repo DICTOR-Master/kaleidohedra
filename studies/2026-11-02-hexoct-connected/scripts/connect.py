@@ -11,7 +11,7 @@
 #  4. for each class: exact merged faces (exactfaces.union_faces, coplanar faces merged), surface check (every side used by
 #     exactly two faces = no edge/point pinch), exact volume, convex-hull volume ratio (float), neck = least total contact area
 #     over all ways to split the pieces in two (in unit-triangle areas sqrt(3)/4), symmetry order.
-# Usage: ~/geom/bin/python connect.py <lam> [<lam> ...]  -> data/conn_<lam>.json
+# Usage: python3 connect.py <lam> [<lam> ...]  -> data/conn_<lam>.json
 import itertools, json, os, sys, math
 from fractions import Fraction as Fr
 import numpy as np

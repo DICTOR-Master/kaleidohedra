@@ -3,7 +3,7 @@ front (facing the viewer), back and side-on (flattened), decided exactly by the 
 Exact checks: front and back each tile the shadow once: the sum of the front cells' projected volumes equals the hull
 volume, exactly (volumes in Q(√5), measured in the frame of shadows.Space, metric diag(sp.w)); the same for the back.
 Kinds of front pieces: cells with equal sorted exact squared edge lengths in the shadow.
-Run on dicto-big-brother:  cd ~/kres-tmp/4d/scripts && ~/geom/bin/python front_cells_exact.py
+Run on compute-host:  cd ~/work/4d/scripts && python3 front_cells_exact.py
 """
 import json
 

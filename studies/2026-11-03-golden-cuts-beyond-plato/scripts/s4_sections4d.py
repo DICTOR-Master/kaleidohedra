@@ -84,7 +84,7 @@ rh = json.load(open(os.path.join(DATA, 's2b-rhombic.json')))['rhombic']
 for cat, r in rh.items():
     for c in r['cuts']:
         add(f"{cat} {c['cut'].split()[0]} golden cut", np.array(c['vertices_edge1']), dict(kind='catalan'))
-wk = os.path.expanduser('~/kres-tmp/dataset-v7/solids/dicto-white-knight.json')
+wk = os.path.expanduser('~/work/dataset-v7/solids/dicto-white-knight.json')
 if os.path.exists(wk):
     d = json.load(open(wk)); add('White Knight (dataset, sanity)', np.array([[float(c) for c in v['decimal']] for v in d['vertices']]), dict(kind='sanity'))
 print(len(T), 'targets', flush=True)

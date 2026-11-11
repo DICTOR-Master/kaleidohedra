@@ -128,7 +128,7 @@ The flood fill of the densest packing's gap (`scripts/holes_flood.py` → `data/
 - **Cut envelopes.** Cut at the 8 joint planes, they no longer overlap. The two cut faces at a joint are triangles turned 180°, forming a **six-pointed star** around the joint hexagon; its six points face the gap and lie in a three-fold plane (Cleo-Ico territory).
 - **The three-way split** of the bcc packing: OCD **77.4%**, non-golden shell inside the envelopes **11.8%** (adapters or resin), golden region between envelopes **10.7%** (Bodhi pieces). Exact sections: `renders/three-way-split.png`.
 
-## Step 12 (library scan) is still running on dicto-node.
+## Step 12 (library scan) is still running on compute-host-2.
 
 ## Step 19: cutting the golden region into Bodhi pieces (DICTO; `scripts/golden_cut.py` → `data/golden-cut.txt`)
 
@@ -144,7 +144,7 @@ Each copy of the spatial five-fold chorus gets a golden envelope cut at the join
 
 **Correction (steps 19–20).** The golden cut is not canonical as stated. It stops splitting a piece once the piece is clear of every envelope, rather than cutting by every plane, so the pieces depend on the order the planes are tried. The five-fold fill (`renders/chorus-golden-*.png`) shows this: the region is five-fold symmetric but the pieces are not. Piece counts (30 here, 1624 in the cubic packing) and the Bodhi matches are therefore indicative only. The volumes, and the much smaller number of golden planes crossing the five-fold region, still hold. A canonical cut would split by every plane: more pieces, but symmetric and order-free.
 
-## Step 21: the canonical cut, exact (`scripts/chorus_exact.py` → `data/chorus-exact.txt`; data `chorus-exact.json` on dicto-node, 2.4 MB, not committed)
+## Step 21: the canonical cut, exact (`scripts/chorus_exact.py` → `data/chorus-exact.txt`; data `chorus-exact.json` on compute-host-2, 2.4 MB, not committed)
 
 - **Exact inputs.** All 41 chorus sites snap to exact lattice points in ℚ(√5). The envelope planes, joint cuts and cell walls are exact.
 - **The canonical cut.** 100 distinct envelope planes cross the central copy's cell. Splitting by every one, order-free, gives **16,204 cells**, which sum **exactly** to the cell (2440/2187 + 1288√5/2187, remainder 0). **8,027** of them are golden, with exact volume (22420 − 8972√5)/2187 = 1.078188.
@@ -394,7 +394,7 @@ The paper (`papers/ocd-chorus/`) is a natural stopping point. What could follow,
 
 1. **Prove the thinned spine for every height.** At all four departure points the same three-copy pattern recurs: the core copy, its off-plane rival and the rival's third partner, with the rival's ring margin always a little above the core copy's. That suggests a general lattice argument: minimal removal always keeps the core copy, so the spine is exactly the cut-and-project chain of the ring-clash window [0, t_c). This would turn "checked at four points" into a theorem. It is the strongest candidate for a Version 2 or a short follow-up note.
 2. **The off-plane ring family.** The 11th core ring (distance 1.0042 from the axis, squared distance (13 + 5√5)/2 · φ⁴ times the innermost) lies outside the core plane. It is probably a second cut-and-project family in another plane through the axis. To do: find its plane, lattice and window, exactly.
-3. **The seams.** These are float only, from 66 points per seam. To tell quasiperiodic order from a long-period approximant: a much larger build (radius 15–20 on dicto-node), exact vacancy sets, diffraction with more points, and a slab or window test in the seam's own coordinates.
+3. **The seams.** These are float only, from 66 points per seam. To tell quasiperiodic order from a long-period approximant: a much larger build (radius 15–20 on compute-host-2), exact vacancy sets, diffraction with more points, and a slab or window test in the seam's own coordinates.
 4. **Other solids.** Which other icosahedral solids have five inscribed cubes among their bond directions, and do their choruses give other chains (other windows, other critical distances)? That would make this a family rather than a single case.
 5. **Before any later version:** read in full the four closed-access papers (Katz & Gratias 1993; Sutton 1989 and 1992; Gratias & Thalal 1988), through a library or by purchase.
 

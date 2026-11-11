@@ -102,8 +102,8 @@ def build():
     for nm, cd in codes.items():
         add(nm, tetra_from_edges([phi if ch == 'L' else sp.Integer(1) for ch in cd]), note='Mosseri-Sadoc tile, edges 1 and tau')
     # Weirdstone and Tadpole: exact from the 10-10 study data (Q(sqrt5) coordinates recovered and checked below)
-    import os  # the 10-10 study's data; on dicto-big-brother a copy sits in ~/kres-tmp/pyramids/srcdata/
-    base = next(p for p in [os.environ.get('SRCDATA', ''), os.path.expanduser('~/kres-tmp/pyramids/srcdata/'),
+    import os  # the 10-10 study's data; on compute-host a copy sits in ~/work/pyramids/srcdata/
+    base = next(p for p in [os.environ.get('SRCDATA', ''), os.path.expanduser('~/work/pyramids/srcdata/'),
                             os.path.expanduser('~/k-research/studies/2026-10-10-icosa-networks-3/data/')] if p and os.path.isdir(p))
     for nm, fn in [('Weirdstone', 'tet-corner-cap-unit.json'), ('Tadpole', 'tet-edge-cap-unit.json')]:
         dd = json.load(open(base + fn))

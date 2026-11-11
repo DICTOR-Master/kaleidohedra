@@ -4,7 +4,7 @@ of order 10, 6, 4 split them into great-circle rings; the Hopf map sends each ri
 octet between two (111) layer planes, can a single tetrahedron or octahedron be translated out while its neighbours stay? Kinematic test: a velocity v is free iff
 v·n <= 0 for every face shared with a neighbour (n = the piece's outward normal there); free directions exist iff this cone is not {0}."""
 import itertools, math, json, os, sys
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/_lib')); import methods as M
+sys.path.insert(0, os.path.expanduser('~/work/_lib')); import methods as M
 import numpy as np
 from scipy.optimize import linprog
 phi = M.PHI

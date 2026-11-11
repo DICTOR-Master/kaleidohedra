@@ -6,7 +6,7 @@ again. At t = 2: step k needs (k + 1)δ ≤ 360°. The sharpest dihedral angle (
 #79 valley runs exactly: 14 sharp shapes keep growing (≥ 16.5 % at step 3), 30 round ones add ≤ 4.2 %. Status: draft paper D
 (papers/star-cores-d), not published.
 
-Run on dicto-big-brother (~/kres-tmp/star-cores-d, ~/geom/bin/python, 4 processes, float64), dataset DICTO Solids v6.
+Run on compute-host (~/work/star-cores-d, python3, 4 processes, float64), dataset DICTO Solids v6.
 - scripts/valley_law.py: part 1, α, α′, δ (checked against the face normals, max error 0) and β_k for every edge of the 50 shapes
   of star-valley.json, against its full-spike counts (data/valley-law-predict.json; bound check: 0 violations in 100 runs);
   part 2, the valley rule rebuilt and instrumented for the seven pieces + D7, D29, D40, D41, D89 at t = 2 and φ
@@ -23,7 +23,7 @@ grows on its other 20 faces: by cut-back spikes in its convex 138.19° valleys (
 (step two), and at step three mostly on the ridges of its cap spikes. Corollary for non-convex pieces: a notch whose two centre
 feet lie beyond the edge (α, α′ > 90°) and with β₁ < 0 stays empty for ever. Status: study note; paper D not edited.
 
-Run on dicto-big-brother (~/kres-tmp/star-cores-d, ~/geom/bin/python, one process), dataset DICTO Solids v7 (dicto-shadow-17.json).
+Run on compute-host (~/work/star-cores-d, python3, one process), dataset DICTO Solids v7 (dicto-shadow-17.json).
 - scripts/kagemusha_notches.py → data/kagemusha-notches.json, kagemusha-notches.log. Part 1 exact (sympy, Q(√5)); part 2 the valley
   rule of star_valley.py rebuilt with every spike's volume put to its site; Σ spike volumes = volume gained at every step (to 1e-12).
 
@@ -75,7 +75,7 @@ today's rule) and it keeps growing at both t. With sloping bases it grows less a
 while at t = φ it grows most (×2.715 against ×2.607). Neither notch piece is a named shape: the conjoined piece is an irregular
 combinatorial octahedron, the sloping pair an irregular triangular dipyramid. Status: study only (variants of the rule, not in paper D).
 
-Run on dicto-big-brother (~/kres-tmp/star-cores-d, ~/geom/bin/python, one process, float64), DICTO Solids v7.
+Run on compute-host (~/work/star-cores-d, python3, one process, float64), DICTO Solids v7.
 - scripts/kagemusha_variants.py → data/kagemusha-variants.json (+ step-1 surfaces), kagemusha-variants.log;
   scripts/kagemusha_variants_fig.py → data/kagemusha-variants.png (step-1 surfaces; gold solid, violet cap spikes, teal notch pieces).
 - Notch e = (a, b), notch faces (a, b, c), (a, b, c′), full step-1 tips T, T′. (a) Conjoined: one piece hull(a, b, c, c′, T, T′) per
@@ -111,7 +111,7 @@ order 20 (D5h, Kagemusha's own). It is not similar to any v7 solid (one solid ha
 sequence does not close; it ends after one turn. Maedate's star (still growing) does the same: a decagonal prism, then no core.
 Status: (1) prepared for paper D v2 (paper.html, not published; DICTO reads first); (2) study only.
 
-Run on dicto-big-brother (~/kres-tmp/star-cores-d, ~/geom/bin/python, float64), DICTO Solids v7; one background process per piece and
+Run on compute-host (~/work/star-cores-d, python3, float64), DICTO Solids v7; one background process per piece and
 t for (1), one for (2), all finished.
 - scripts/sloping_six.py → data/sloping-six/<D>-<t>.json, sloping-six.log. Sharp edges: δ ≤ 120° (t = 2), ≤ 142.0786° (t = φ).
   At every step, where the two full spikes at a sharp edge overlap, each keeps a pyramid over its whole face, with its apex moved along

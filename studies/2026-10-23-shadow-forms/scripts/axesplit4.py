@@ -5,8 +5,8 @@ src=open('fuse4.py').read(); exec(src.split("res=json.load")[0])
 exec(open('axesplit2.py').read().split('T=1/phi')[0])
 COL.update({'big':(92,170,96),'small':(236,150,70),'pyr':(40,190,210)})
 F=lambda n,b=False:ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans'+('-Bold' if b else '')+'.ttf',n)
-OUT='/home/dicto/Documents/papers-to-read/golden-split'; os.makedirs(OUT,exist_ok=True)
-logo=Image.open('/home/dicto/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((110,110))
+OUT='~/Documents/papers-to-read/golden-split'; os.makedirs(OUT,exist_ok=True)
+logo=Image.open('~/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((110,110))
 T=1/phi; S=600
 def sheet(title,sub,panels,legend,fn):
     im=Image.new('RGB',(len(panels)*(S+20)+40,S+190),(244,241,234)); d=ImageDraw.Draw(im)

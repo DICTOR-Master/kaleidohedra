@@ -2,7 +2,7 @@
 """Roadmap: art-first homepage hero, PROTOTYPE ONLY. Reads ~/dictospheres/index.html (never writes it),
 writes proto/index.html beside a copy of the site's assets for screenshots. Emblem/nameband untouched."""
 import re, sys
-src = open('/home/dicto/dictospheres/index.html').read()
+src = open('~/dictospheres/index.html').read()
 out = sys.argv[1] if len(sys.argv) > 1 else 'proto-index.html'
 LIVE = '--live' in sys.argv  # live: no video box until DICTO's footage exists
 

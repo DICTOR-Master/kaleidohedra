@@ -2,7 +2,7 @@
 Dehn is zero for all of them by additivity (each half Dehn-zero)."""
 import math, itertools, numpy as np
 from scipy.spatial import ConvexHull
-exec(open('/home/dicto/study-runs/2026-11-04-dehn-screen/scripts/halfcell.py').read().split('print("RD"')[0])
+exec(open('~/study-runs/2026-11-04-dehn-screen/scripts/halfcell.py').read().split('print("RD"')[0])
 s3 = math.sqrt(3); Hh = math.sqrt(2/3)
 def rz(t): return np.array([[math.cos(t), -math.sin(t), 0], [math.sin(t), math.cos(t), 0], [0, 0, 1]])
 def dihedrals(P):

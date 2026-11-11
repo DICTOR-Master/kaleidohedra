@@ -4,7 +4,7 @@ fig1: the three 6D sweeps S(mu) = P cap mu P* (D.I, C.O, T.T), one strip per pai
 fig2: OG and the polar Dharma cycle: the seven stations in the dual-pair families, and the (mu, lambda) map.
 fig3: the 4D sweeps (8D products) as parameter lines with their golden stations.
 fig4: cycles as slices: the 24-cell honeycomb slice y1 = h (two tiles per BCC cell) and the Fibonacci station word.
-usage (dicto-big-brother): python figs.py <out dir> <logo png>
+usage (compute-host): python figs.py <out dir> <logo png>
 """
 import os, sys, itertools, json
 import numpy as np

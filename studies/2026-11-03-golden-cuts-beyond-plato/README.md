@@ -115,7 +115,7 @@ cell-first h/top 0.690983 (not checked exactly). fig5_tesseract.py: the tesserac
 scripts/: gcb.py, gcb_exact.py (geometry), s1 ... s6, figs.py. data/: s1-archimedean.json, s2-catalan.json,
 s2b-rhombic.json (incl. corner coordinates at unit edge), s3-kepler-poinsot.json, s4-sections4d.json (+ run log),
 s5-exact4d.json, s6-spacefill.json, s7-icosaxes-exact.json, s8-sections-bijection.json; every file carries its checks (all pass: 235, 51, 12, 24, -, 7, 10, 10, 4).
-Run on dicto-big-brother with ~/geom/bin/python from scripts/ (s4 and s5 need ~/kres-tmp/dataset-v7 and the #65 atlas code).
+Run on compute-host with python3 from scripts/ (s4 and s5 need ~/work/dataset-v7 and the #65 atlas code).
 
 ## Why not the cubes, and where they live (s9-s11, 2026-11-03 evening)
 

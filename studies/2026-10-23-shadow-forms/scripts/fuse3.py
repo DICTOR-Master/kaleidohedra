@@ -4,7 +4,7 @@
 import numpy as np, json, itertools, sys
 from scipy.spatial import ConvexHull
 exec(open('fuse1.py').read().split('def pieces')[0])
-J=json.load(open('/home/dicto/k-mix/studies/2026-10-10-icosa-networks-3/data/clawed-icosahedron-unit.json'))
+J=json.load(open('~/k-mix/studies/2026-10-10-icosa-networks-3/data/clawed-icosahedron-unit.json'))
 JV=np.array(J['vertices']); JF=J['faces']; JVOL=J['volume']
 assert np.linalg.norm(JV.mean(0))<0.2, JV.mean(0)
 def convex_piece(name,V):

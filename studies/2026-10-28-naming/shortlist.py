@@ -1,11 +1,11 @@
 # Naming shortlist (DICTO approved 10-28): standout slices of the White Queen (#63) and Red Queen (#65) with codes
 # W1-W62 / R1-R124 (appendix rows) and placeholder names. Renders each slice from the exact atlas hulls.
-# Run on dicto-big-brother: ~/geom/bin/python shortlist.py
+# Run on compute-host: python3 shortlist.py
 import json, pickle, os, numpy as np
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-H = os.path.expanduser('~/kres-tmp')
+H = os.path.expanduser('~/work')
 W = pickle.load(open(f'{H}/4d/data/atlas600.pkl', 'rb'))
 R = pickle.load(open(f'{H}/studies/2026-10-27-white-queen-polar/data/atlas120.pkl', 'rb'))
 ORDER = ['vertex-first', 'edge-first', 'face-first', 'cell-first']

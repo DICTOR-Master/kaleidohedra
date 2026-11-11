@@ -1,4 +1,4 @@
-# DICTO 2026-10-18 octet study -- STEP 17b (dicto-node): alternative merge, since the vertex piece (step 17) came out spiky and in 2 parts.
+# DICTO 2026-10-18 octet study -- STEP 17b (compute-host-2): alternative merge, since the vertex piece (step 17) came out spiky and in 2 parts.
 # Cut each middle rest by the mirror plane through its edge and the five-fold axis (x = 0 for the base edge): the two halves face the two
 # tetrahedra on that edge (swapped by the inversion through m). Merge each tetrahedron with the 6 half-rests on its 6 edges.
 # usage: python3 step17b_tet_plus_rests.py step10-input.json step15-input.json OUT.json

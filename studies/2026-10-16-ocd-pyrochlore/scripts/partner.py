@@ -5,7 +5,7 @@
 # if so, list its faces (hexagons? rhombi?).
 import json, itertools, numpy as np, sys
 from scipy.spatial import ConvexHull
-sys.path.insert(0, '/home/dicto/kaleidohedra/studies/_lib'); import geomcheck as gc
+sys.path.insert(0, '~/kaleidohedra/studies/_lib'); import geomcheck as gc
 G = json.load(open('data/gaps.json')); N = json.load(open('data/network.json')); R = json.load(open('data/network-render.json'))
 T = np.array(N['T']); cube = np.array(R['cube'])
 a_half = abs(np.array(G['V']) @ cube[0]).max()                    # distance from the centre to a square face

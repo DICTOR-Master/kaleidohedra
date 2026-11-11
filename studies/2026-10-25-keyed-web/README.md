@@ -33,7 +33,7 @@ Keying adds the same amount to both pieces: 8 · (3 side faces − base) = 6 tan
 
 The frame is #48's (icosahedron edge 1, lattice spacing φ, so the squares match study 2026-10-25-web-of-bonds at x = τ).
 
-**Exact part.** `scripts/keyed_web_exact.py` runs in sympy and Q(√5) on dicto-big-brother. It reuses `../2026-10-23-shadow-forms/polar/keyed_polar_exact.py`, which supplies the exact Tricaps in the corrected, non-mirrored orientation, and requires that script's 15 checks to pass first.
+**Exact part.** `scripts/keyed_web_exact.py` runs in sympy and Q(√5) on compute-host. It reuses `../2026-10-23-shadow-forms/polar/keyed_polar_exact.py`, which supplies the exact Tricaps in the corrected, non-mirrored orientation, and requires that script's 15 checks to pass first.
 - Each piece's boundary is written as a signed sum of convex polygons.
   - Lotus Jewel Axes: the Icosaxes faces, minus the 8 Tricap bases, plus the 8 × 3 side faces.
   - Dodecaxes: the Unborn Axes faces, minus the 8 Tricap bases, plus the 8 × 3 side faces.

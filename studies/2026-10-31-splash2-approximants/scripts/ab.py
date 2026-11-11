@@ -1,5 +1,5 @@
 # Splash Rules II, approximants, part 2: the Ammann-Beenker tiling and its periodic approximants (exact).
-# Run on dicto-big-brother: ~/geom/bin/python ab.py out/  (multiprocessing, 22 workers)
+# Run on compute-host: python3 ab.py out/  (multiprocessing, 22 workers)
 # Z^4, physical star e_k = (cos k pi/4, sin k pi/4), internal eps_k = (cos 3k pi/4, sin 3k pi/4). Approximant planes E' are
 # rational 2-planes with all six Pluecker coordinates positive (same orientation as E, so the AB rhombs and squares fit).
 # Tile {i,j} (i<j): square if j - i = 2, 45-degree rhomb otherwise. Vertex star: the set of the 8 edge directions

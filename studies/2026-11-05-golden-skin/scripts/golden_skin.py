@@ -7,7 +7,7 @@
 import json, itertools, numpy as np, time, sys, manifold3d as m3
 from scipy.spatial import ConvexHull
 t0 = time.time()
-O = np.array(json.load(open("/home/dicto/study-runs/og-pent/og/data/network.json"))["ocd"]); O = O - O.mean(0)
+O = np.array(json.load(open("~/study-runs/og-pent/og/data/network.json"))["ocd"]); O = O - O.mean(0)
 hull = lambda P: m3.Manifold.hull_points(np.asarray(P, float).tolist()); OG = hull(O); VOG = OG.volume()
 r = np.linalg.norm(O, axis=1); tips = O[r > r.max() - 1e-6]; ax = []
 for p in tips/np.linalg.norm(tips, axis=1)[:, None]:

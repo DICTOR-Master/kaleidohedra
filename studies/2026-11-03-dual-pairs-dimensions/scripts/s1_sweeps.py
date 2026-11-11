@@ -8,7 +8,7 @@ cuts on both sides) located at its exact mu (Lemma: a corner cut at edge fractio
 side 1/mu = R*^2 - x e*^2/2); each section built exactly and matched corner to corner (similar()) with the cut solid; the hull at
 the same mu checked to be mu times the polar of the section (exact). Numbers reported: mu, nu = mu/r^2, kappa = mu/rho^2,
 layer height h = 1 - 2x, ratio (corner side / remaining side), phi-power test and field norm.
-usage (dicto-big-brother): ~/geom/bin/python s1_sweeps.py co|di|tt  -> ../data/s1-sweep-<pair>.json
+usage (compute-host): python3 s1_sweeps.py co|di|tt  -> ../data/s1-sweep-<pair>.json
 """
 from dp_lib import *          # noqa
 import sys

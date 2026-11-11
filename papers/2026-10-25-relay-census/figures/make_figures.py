@@ -1,7 +1,7 @@
 # Figures for the relay-census paper draft (#53, The Global Web of Bonds). Data: studies/2026-10-25-relay-census/data/raw
 # (relay-summary.json, perovskite.json). The cell pictures are float power cells of the census site sets (same sites, units and
 # weights as studies/2026-10-25-relay-census/scripts/networks.py), for drawing only; every number printed in a figure comes from
-# the exact study data. Run on dicto-big-brother:  nice -n 10 ~/geom/bin/python make_figures.py <path to data/raw>
+# the exact study data. Run on compute-host:  nice -n 10 python3 make_figures.py <path to data/raw>
 import json, os, sys
 from itertools import product
 import numpy as np

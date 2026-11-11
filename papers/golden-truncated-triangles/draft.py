@@ -1,4 +1,4 @@
-# First draft of "DICTO-Kepler Golden Truncations" / golden truncated triangles (DICTO 11-02) by the local workhorse on dicto-big-brother.
+# First draft of "DICTO-Kepler Golden Truncations" / golden truncated triangles (DICTO 11-02) by the local workhorse on compute-host.
 # DRAFT ONLY: Claude checks every statement and number against trunc-exact.md and fet-exact.md before use.
 import json, pathlib, urllib.request
 H = pathlib.Path(__file__).parent
@@ -18,6 +18,6 @@ RULES = ('Draft a short geometry paper by the artist DICTO, HTML (<h1>,<h2>,<p>,
 key = (pathlib.Path.home() / '.config/dicto/llama-key').read_text().strip()
 body = json.dumps({'messages': [{'role': 'system', 'content': RULES}, {'role': 'user', 'content': FACTS}], 'max_tokens': 4000, 'temperature': 0.3,
                    'chat_template_kwargs': {'enable_thinking': False}}).encode()
-r = urllib.request.Request('http://dicto-big-brother.local:8081/v1/chat/completions', data=body, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key})
+r = urllib.request.Request('http://compute-host:8081/v1/chat/completions', data=body, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key})
 out = json.load(urllib.request.urlopen(r, timeout=2400))['choices'][0]['message']['content']
 (H / 'drafts' / 'draft-1.html').write_text(out); print('draft written', len(out.split()), 'words')

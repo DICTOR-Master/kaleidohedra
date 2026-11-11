@@ -10,7 +10,7 @@ Web (2 standard searches):
 Not found: power/Laguerre cells of the octahedral + tetrahedral holes of polytypes; a catalogue of their pieces; the half-piece rule.
 Status: "not found in the sources checked" — wording only; the local dependence itself is expected from finite reach.
 
-## Fuller check (2026-10-25 ~23:30; library on dicto-big-brother + 3 web searches, one extended) — snippets only, READ before citing
+## Fuller check (2026-10-25 ~23:30; library on compute-host + 3 web searches, one extended) — snippets only, READ before citing
 - Hales, Kepler conjecture: Delaunay stars / hybrid Voronoi–Delaunay decomposition; quasi-regular tetrahedra and octahedra; fcc and hcp
   decomposition stars score exactly the bound (arXiv math/9811071, 9811073, 9811077; formal-proof retrospective arXiv 2402.08032).
   Neighbour: pieces of fcc/hcp between Voronoi (balls) and Delaunay (holes); no stacking-wide rule of halves found there.

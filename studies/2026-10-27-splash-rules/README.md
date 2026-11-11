@@ -14,7 +14,7 @@
 
 **Status:** run 1 + step 1 + map + steps 2–3 (proof) + run 2 (all 14 frameworks decided, below) done. Not yet run: Web of Bonds (#53), keyed web, #56 twinned-octet walk.
 
-## Method (scripts/splash.py, exact, on dicto-big-brother)
+## Method (scripts/splash.py, exact, on compute-host)
 - Family: the #57 hole walk (octahedral hole weight 0, tetrahedral weight λ) on close-packed stackings, layer spacing scaled d² = s·⅔, s ∈ {½, ¾, 1, 3/2, 2}; s = 1 is #57.
 - Stackings: all primitive words up to 6 layers, up to symmetry: 2H (AC), 3C (ABC), 4H (ACBC), 5-layer ACABC, 6-layer ACBCAC and ACBABC. Census engine checks: 0 failures in all 30 walks.
 - Each piece is labelled by its role (octahedral; tetrahedral over the lower layer; under the upper layer) and the layer steps within r gaps of its own gap (mirror-merged). **Locality:** r = 1 fixes every exact volume at every spacing (0 clashes).
@@ -60,7 +60,7 @@ Questions per framework: **halves** = every piece is a whole pure piece or ½ pu
 
 **How each line was decided (all exact; floats only in the picture):**
 - *Single walks* (run2/finder2.py, run2/run2c.log, rerun 2026-10-27 on all 14 frameworks): per window, the distinct piece volumes as polynomials in λ; constant ratios V_i/V_j by exact cancellation; integer relations among [V_1 … V_k, 1] by exact null space, the plain total (counts × volumes = cell) removed. finder2.py now also reads two-weight chamber files (perovskite failed in run2.log for this reason). The two-kind networks show nothing beyond the total; run2.log printed the total itself (filter added for run2b.log).
-- *Pyrochlore mix* (run2/pyro_mix.py, new): #60's walk (~/kres-tmp/pyro/pyro_walk.py net, #57's census engine unchanged, 0 failed census checks on all 6 words) on every primitive stacking up to 6 layers; each piece labelled by role and the 3 layer steps round its gap (0 clashes: 4 layers fix every volume, as #60's locality bound says); each mixed volume fitted as a·V(pure c) + b·V(pure h) by coefficient matching in λ; the Swap identity checked by exact expansion.
+- *Pyrochlore mix* (run2/pyro_mix.py, new): #60's walk (~/work/pyro/pyro_walk.py net, #57's census engine unchanged, 0 failed census checks on all 6 words) on every primitive stacking up to 6 layers; each piece labelled by role and the 3 layer steps round its gap (0 clashes: 4 layers fix every volume, as #60's locality bound says); each mixed volume fitted as a·V(pure c) + b·V(pure h) by coefficient matching in λ; the Swap identity checked by exact expansion.
 - *Delian and hcp holes = run 1's pure pieces:* run 1's pure c (Delian) or pure h (hcp holes) piece at s = 1 (data/s_1.json) divided by the relay volume of the same role is the constant ½ (Delian) or 2 (hcp holes) in every window, all three roles (run2/relay_vs_run1.py); the two runs use different volume units.
 - *Not tested:* the natural c/h partners of zinc blende (wurtzite) and rock salt (NiAs) were not in the run; with them, those two lines become c/h comparisons like the pyrochlore one.
 

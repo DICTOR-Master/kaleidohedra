@@ -1,6 +1,6 @@
 # Aim 2, chunk 2: the canonical form along the cube–octahedron sweep (10 Nov 2026; DICTO "yes 1 then 2")
 S(μ) = cube [-1,1]^3 ∩ μ·octahedron (|x|+|y|+|z| <= 1); Hopscotch walls μ = 1, 2, 3; the turn μ ↦ 3/μ (fixed point √3).
-scripts/canon_sweep.py (exact, sympy; dicto-big-brother) - FINAL ok.
+scripts/canon_sweep.py (exact, sympy; compute-host) - FINAL ok.
 
 1. BRIDGE CHECKED: the canonical form of S(μ) (positive-geometry formula: sum over a triangulation of the simplex forms
    <Z0Z1Z2Z3>^3 / prod <Y ...>, every simplex positively oriented) equals 3!·vol of the polar of S(μ) about the same point, exactly,

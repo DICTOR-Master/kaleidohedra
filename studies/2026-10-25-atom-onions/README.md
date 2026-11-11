@@ -43,7 +43,7 @@ Scripts (`scripts/`):
 - `app_dump.mjs` + `check_app.py` (floats): the app's `goldenT`, `tetPiece`, `octPiece` and stop values, and DICTO's Polyhedraverse
   pieces, against the closed-form shells.
 - `geom.py`, `blender_render.py` (Blender 5.0.1, Cycles), `compose.py` (matplotlib): the figures.
-- `run.sh` reruns everything. The exact part, the renders and the composition ran on dicto-big-brother with `nice -n 10`. The exact
+- `run.sh` reruns everything. The exact part, the renders and the composition ran on compute-host with `nice -n 10`. The exact
   part takes 43 s; each render 0.2–1.5 min at 1400 px.
 
 ### Proof of the nesting (N1, N2)

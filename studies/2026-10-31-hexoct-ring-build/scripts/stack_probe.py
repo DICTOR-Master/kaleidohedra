@@ -1,6 +1,6 @@
 # Probe: which patches of strings (whole strings shifted by lattice vectors) and which layer windows of ABCB are joined
 # over area into ONE piece (every part = h-tile or c-tower). Exact, pairwise facet test of stack.py.
-# Usage (dicto-big-brother): TILES_DIR=~/kres-tmp/endless ~/geom/bin/python stack_probe.py -> stdout (../out/stack_probe.txt)
+# Usage (compute-host): TILES_DIR=~/work/endless python3 stack_probe.py -> stdout (../out/stack_probe.txt)
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import stack as S

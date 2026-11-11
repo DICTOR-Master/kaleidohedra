@@ -1,6 +1,6 @@
 # DICTO 2026-11-04, paper #92 (DICTO's idea: which tilings by the tetrahedron's and octahedron's centre pyramids exist?).
-# Exact checks for the paper. Run with the geom venv on dicto-big-brother:
-#   ~/geom/bin/python3 tiling_checks.py > data/tiling-checks.log
+# Exact checks for the paper. Run with the geom venv on compute-host:
+#   python33 tiling_checks.py > data/tiling-checks.log
 # Part A (sympy): the two pyramids' edges, faces and dihedral angles; alpha/pi irrational; the edge equations.
 # Part B (integers/Fractions): Barlow stacking patches built from layers, cut into pyramids; face pairing, edge and vertex
 #   configurations, h/c vertices against the stacking sequence.  Every coordinate is exact: a point (a, b, c) with integer or

@@ -10,7 +10,7 @@ D. Stabiliser of physical space in B6 (signed permutations g with g P_par = P_pa
 E. E8 -> H4: the icosian ring (Z-span of the 120 unit icosians) with the norm F(q) = a + c, |q|^2 = a + c sqrt5, is an
    even unimodular lattice of rank 8 after doubling (Gram det 1) = E8; its 240 roots are the units and the units / phi,
    i.e. two 600-cells of radii 1 and 1/phi (Elser-Sloane 1987, Moody-Patera 1993). All coordinates lie in Q(sqrt5).
-usage (dicto-big-brother): ~/geom/bin/python s1_sanity_cut_project.py -> ../data/s1-sanity.json
+usage (compute-host): python3 s1_sanity_cut_project.py -> ../data/s1-sanity.json
 """
 from sixd_lib import *          # noqa
 from collections import Counter

@@ -1,7 +1,7 @@
 # Face to face (#77, DICTO 2026-10-30): the one convex deltahedron beyond the tetrahedron that the six-piece search of
 # DICTO's pieces reached: the pentagonal bipyramid (J13) from 4 M-S t1 and 2 Hound Tooth (M-S t2), i.e. two pentagonal
 # pyramids t1 + t2 + t1 (Koca et al. 2020) base to base. Left: assembled; right: pulled apart along the axis and outwards.
-# Run on dicto-big-brother from ~/kres-tmp/pyramids: DEEP=1 ~/geom/bin/python scripts/render_j13.py data/f2f-deep-L6-results.json out.png
+# Run on compute-host from ~/work/pyramids: DEEP=1 python3 scripts/render_j13.py data/f2f-deep-L6-results.json out.png
 import sys, os, json
 import numpy as np
 import matplotlib; matplotlib.use('Agg')

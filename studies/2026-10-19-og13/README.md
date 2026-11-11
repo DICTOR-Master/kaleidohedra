@@ -1,6 +1,6 @@
 # OG-13: twelve OGs round one, no symmetry imposed (DICTO 2026-10-19, float)
 
-DICTO's question was what a 13-cell arrangement of the OG would bring out, aiming to find new arrangements rather than fall back on known symmetries. Method (`og13.py`, run on dicto-node, log `og13.log`, results `data/og13-results.json`):
+DICTO's question was what a 13-cell arrangement of the OG would bring out, aiming to find new arrangements rather than fall back on known symmetries. Method (`og13.py`, run on compute-host-2, log `og13.log`, results `data/og13-results.json`):
 - One OG sits at the centre. Twelve OGs move and turn freely as hard bodies (touching only, no overlap), with Monte Carlo compression towards the centre (energy = Σ|p|², annealed, then cooled).
 - The overlap test checks whether any edge of one OG passes through the other, both ways. It agreed with the full separating-axis test on 3,000 random pairs with no disagreement, and every final cluster was re-checked with the full test.
 - Any symmetry of a cluster must fix the centre OG, so each of the centre's 120 icosahedral operations was tested on all corners, at tolerances 0.01, 0.03 and 0.06.

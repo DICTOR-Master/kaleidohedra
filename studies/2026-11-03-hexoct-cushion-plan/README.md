@@ -23,9 +23,9 @@ Typeset `~/Documents/papers-to-read/hexoct-patch-pattern.pdf` (7 pp), pattern, n
 
 ## Files
 - `scripts/pattern.py <out>` + `scripts/pattern.src.html` → `patch/paper.html`, `patch/figs/*.svg`, `patch/data/check.out` (52 asserted checks),
-  `patch/data/patch.json`. Run on dicto-big-brother with ~/geom/bin/python (stdlib only) in ~/kres-tmp/hexoct-patch; printed in ~/kres-tmp/cw-print:
+  `patch/data/patch.json`. Run on compute-host with python3 (stdlib only) in ~/work/hexoct-patch; printed in ~/work/cw-print:
   `node print.mjs hexoct-patch-pattern hexoct-patch-pattern.pdf "Knitted HexOct Patch: Pattern" "none (pattern, not published)" 1`.
-- `scripts/plan.py <out> [png dir]` → `figs/*.svg`, `data/numbers.json`, `data/check.out` (run on dicto-big-brother, ~/geom/bin/python;
-  run in ~/kres-tmp/hexoct-cushion/study with data/out_*.json beside it). Optional png dir = check renders, scratch only.
+- `scripts/plan.py <out> [png dir]` → `figs/*.svg`, `data/numbers.json`, `data/check.out` (run on compute-host, python3;
+  run in ~/work/hexoct-cushion/study with data/out_*.json beside it). Optional png dir = check renders, scratch only.
 - `data/out_<labels>_<links|full>.json`: mech.py of studies/2026-11-02-hexoct-knit-mechanics, task `blockL:<labels>:frame:<variant>`.
-- Printed in ~/kres-tmp/cw-print: `node print.mjs hexoct-cushion-plan hexoct-cushion-plan.pdf "Knitted HexOct Cushion: Plan" "none (plan for approval, not published)" 1`.
+- Printed in ~/work/cw-print: `node print.mjs hexoct-cushion-plan hexoct-cushion-plan.pdf "Knitted HexOct Cushion: Plan" "none (plan for approval, not published)" 1`.

@@ -1,7 +1,7 @@
 # s6_plate.py -- overview plate: the nine regular solids (5 Platonic, 4 Kepler-Poinsot), each with its doubled star (t = 2, gold
 # solid, violet spikes) inside its Star Halo (grey edges), and the flag-line curves t_min*(mu) of the four Kepler-Poinsot solids against
 # the dodecahedron's (the turn theorem). DICTO mark. Study 2026-11-09-regular-stars-census.
-# Usage: ~/geom/bin/python -u s6_plate.py <flags.json> <s4_starturn.json> <logo png> <out png>
+# Usage: python3 -u s6_plate.py <flags.json> <s4_starturn.json> <logo png> <out png>
 import sys, json
 import numpy as np
 import matplotlib; matplotlib.use('Agg')

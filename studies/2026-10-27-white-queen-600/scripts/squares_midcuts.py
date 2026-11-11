@@ -2,7 +2,7 @@
 edges gives a four-sided face; it is a square exactly when the cut is parallel to two opposite edges of the cell and halfway
 between them (the equator of the cell's midpoint octahedron). For every gap slice of the atlas, count the four-sided faces
 and those that are such mid-cuts, exactly in Q(√5).
-Run on dicto-big-brother:  cd ~/kres-tmp/4d/scripts && ~/geom/bin/python squares_midcuts.py
+Run on compute-host:  cd ~/work/4d/scripts && python3 squares_midcuts.py
 """
 import json
 

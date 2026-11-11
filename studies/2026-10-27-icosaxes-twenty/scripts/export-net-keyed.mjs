@@ -2,7 +2,7 @@
 // Icosaxes a Lotus Jewel Axes (all 8 hexagons dented). NK2: dented only towards its two cluster centres (opposite hexagons), the
 // mirrored Tricap keyed outward on the 6 hexagons facing empty sites. Pieces as triangle meshes (JSON for the overlap check) and OBJ.
 import { writeFileSync } from 'node:fs';
-import { PHI, SIGNS, INTO_BIG, INTO_SMALL, pieceSurface } from '/home/dicto/k-mix/src/krp-core/src/polyhedra/golden-split.js';
+import { PHI, SIGNS, INTO_BIG, INTO_SMALL, pieceSurface } from '~/k-mix/src/krp-core/src/polyhedra/golden-split.js';
 const at = (n) => n.map((c) => (c * PHI) / 2);
 const anchors = [[1, 1, 1], ...[-1, 1].flatMap((x) => [-1, 1].flatMap((y) => [-1, 1].map((z) => [1 + 2 * x, 1 + 2 * y, 1 + 2 * z])))];
 const centre = new Set(anchors.map((a) => a.join()));

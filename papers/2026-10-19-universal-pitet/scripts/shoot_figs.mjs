@@ -1,4 +1,4 @@
-// Shoot the Universal PiTet paper figures (run on dicto-node with the folder served on :8020): node shoot_figs.mjs <out dir>
+// Shoot the Universal PiTet paper figures (run on compute-host-2 with the folder served on :8020): node shoot_figs.mjs <out dir>
 import { chromium } from 'playwright';
 const OUT = process.argv[2];
 const b = await chromium.launch({ args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] });

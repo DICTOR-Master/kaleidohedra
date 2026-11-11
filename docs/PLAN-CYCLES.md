@@ -91,7 +91,7 @@ confirm with DICTO.
    7 languages.
 4. **Builder:** tap-to-add per station, reusing the octet-build tap rules where they fit.
 5. **Polyhedraverse links** for each station's solid (the Transitional Shells group already holds stations 2, 3, 6 and 7).
-6. Browser tests on dicto-node through the real controls (phone and iPad sizes), then one push.
+6. Browser tests on compute-host-2 through the real controls (phone and iPad sizes), then one push.
 
 ## Decided (DICTO, 2026-10-14)
 

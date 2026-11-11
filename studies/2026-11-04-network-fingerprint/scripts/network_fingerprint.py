@@ -4,7 +4,7 @@ Input: data/admiral-network-pieces.json, the I world of paper #47 as built by th
 icosahedra I in Pacioli's position in octahedra, six Admiral Caps A per octahedron, the octet's tetrahedra as face pyramids Q'.
 For every complete node (pieces fill a small sphere round it): edge-neighbour fingerprint Q4, Q6, Q8, W6-hat (Steinhardt et al.; #94),
 the kinds of piece round it, and its vertex star (union of the pieces at the node): convex or not, hull faces. Convex stars are
-candidate solids. Nodes are grouped into types. Run on dicto-big-brother with ~/geom/bin/python."""
+candidate solids. Nodes are grouped into types. Run on compute-host with python3."""
 import json, math, os, sys, itertools
 import numpy as np
 from scipy.special import sph_harm_y

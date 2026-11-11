@@ -32,7 +32,7 @@ This study asks five questions:
   - B3: the contact window equals Pauling's 8-coordination limit, for every compound.
 - **Radii.** `scripts/parse_shannon.py` reads the saved pages in `data/raw/shannon-db/` into `data/raw/shannon.json`. The pages were fetched on 2026-10-25 from the Imperial College *Database of Ionic Radii*, http://abulafia.mt.ic.ac.uk/shannon/, which states that all of its data are taken from Shannon, Acta Cryst. A32 (1976) 751–767. The printed table could not be downloaded (IUCr and Wiley returned 403), so **the values are Shannon's as transcribed by that database and have not been checked against the printed page.** The main values use the effective ionic radii (IR). The crystal radii (CR) are kept as a sensitivity check.
 - **References.** `scripts/crossref_check.py` looks up every cited DOI on api.crossref.org and writes `data/raw/crossref.json`. `data/raw/ask-library.txt` holds the four `ask-library` queries. INDEX.html, README.md and READING-LIST.md were also searched by keyword.
-- **Runs.** All runs were on dicto-big-brother with `nice -n 10`, at load < 0.1. A took 2.4 s and B took 45 s.
+- **Runs.** All runs were on compute-host with `nice -n 10`, at load < 0.1. A took 2.4 s and B took 45 s.
 
 ## Results
 

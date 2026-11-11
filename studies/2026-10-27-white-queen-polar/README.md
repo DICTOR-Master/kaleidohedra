@@ -55,6 +55,6 @@ central slice the polar of the 600-cell's shadow (V, E, F swapped, against #63's
 
 - `scripts/atlas120.py` → `data/atlas120.json` (every slice: height, counts, face sizes, exact face kinds, vertex
   configurations, edge lengths, dihedrals; shadows; checks), `data/atlas120.pkl` (geometry for drawing). Runs in ~6 s on
-  dicto-big-brother (12 processes).
+  compute-host (12 processes).
 - `scripts/render_atlas120.py` → `renders/atlas120-page.png` (one-page atlas), `renders/shadows120.png` (four shadows and
   their front halves).

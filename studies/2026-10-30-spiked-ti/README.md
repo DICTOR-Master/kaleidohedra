@@ -26,4 +26,4 @@ Mirroring a face pyramid in its face puts the tip at twice the face centre, so t
 Stellating or "augmenting" a solid with face pyramids (Kepler; the Catalan and Kleetope constructions) is classical; the pentakis dodecahedron is the Kleetope of the dodecahedron. The two cycles, their pieces and their exact fills are new as far as the sources checked show (the library queries of study 2026-10-30-ti-pyramids; no source treats nested cycles through the truncated icosahedron's outward pyramids).
 
 ## Files
-scripts/spiked.py (spikes, hull, stations), scripts/contacts.py (contacts with the twelve stations at golden scales), scripts/layers.py (SCALE=2 or SCALE=phi: the two layers, volumes, overlaps). data/stations-exact.json from study 2026-10-25-gnomon-shapes. Run on dicto-big-brother (~/kres-tmp/spiked).
+scripts/spiked.py (spikes, hull, stations), scripts/contacts.py (contacts with the twelve stations at golden scales), scripts/layers.py (SCALE=2 or SCALE=phi: the two layers, volumes, overlaps). data/stations-exact.json from study 2026-10-25-gnomon-shapes. Run on compute-host (~/work/spiked).

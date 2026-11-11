@@ -73,15 +73,15 @@ up = phi^2
 
 up = phi^3
 Traceback (most recent call last):
-  File "/home/dicto/ico13/dehn_screen_ortho.py", line 159, in <module>
+  File "~/ico13/dehn_screen_ortho.py", line 159, in <module>
     for t in ORTHO: screen(t, up, ORTHO, 'oL + oS only', sols=1)
                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/dicto/ico13/dehn_screen_ortho.py", line 134, in screen
+  File "~/ico13/dehn_screen_ortho.py", line 134, in screen
     rhs = np.array([float(vt)] + list(dehn(target, up)))
                                       ~~~~^^^^^^^^^^^^
-  File "/home/dicto/ico13/dehn_screen_ortho.py", line 127, in dehn
+  File "~/ico13/dehn_screen_ortho.py", line 127, in dehn
     D += np.outer([float(x) for x in lc(l * T ** s)], [float(x) for x in acoord[mp.nstr(a, 30)]])
                                      ~~^^^^^^^^^^^^
-  File "/home/dicto/ico13/dehn_screen_ortho.py", line 122, in lc
+  File "~/ico13/dehn_screen_ortho.py", line 122, in lc
     raise KeyError(x)
 KeyError: mpf('2.4456949871150571574113860275980481149061774043041213')

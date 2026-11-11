@@ -8,7 +8,7 @@
 #     and every piece of the tile of layer L (copy (0,0)) has interior disjoint from every piece of every other tile copy
 #     (layers L-2..L+2 with the period, in-layer copies -3..3): a separating plane is found exactly (a facet plane of either
 #     piece, else a plane through an edge of each). Disjoint tiles of one cell's volume per cell = a tiling of space.
-# Usage: ~/geom/bin/python verify.py <lam> '<tc json>' '<th json>' [RoH|W]
+# Usage: python3 verify.py <lam> '<tc json>' '<th json>' [RoH|W]
 import itertools, json, sys
 from fractions import Fraction as Fr
 from tiles import tile, types, SYM, image

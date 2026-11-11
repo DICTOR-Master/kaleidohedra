@@ -1,5 +1,5 @@
 #!/bin/bash
-# Run on dicto-big-brother after ANY change to print.mjs (11-07: a guard edit once disabled bracket stripping and flagged every book).
+# Run on compute-host after ANY change to print.mjs (11-07: a guard edit once disabled bracket stripping and flagged every book).
 # Prints each translated book once, on a copy, without its status box, as a final edition would be printed; every line must say "written".
 cd ~/kaleidohedra-check/papers || exit 1
 for b in book-quanta-ja book-dictonary-ja book-quanta-zh book-dictonary-zh book-quanta-fa book-dictonary-fa book-quanta-ar book-dictonary-ar; do

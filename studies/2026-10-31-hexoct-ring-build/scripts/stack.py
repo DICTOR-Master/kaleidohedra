@@ -6,7 +6,7 @@
 #     side by side (all patches of 1, 2 and 3 strings near the first are tried);
 #  3. the ring count of the stack with every shared wall built once: distinct ring triangles and distinct ring sides
 #     (two zip ties per ring side, through all rings meeting there).
-# Usage (dicto-big-brother): TILES_DIR=~/kres-tmp/endless ~/geom/bin/python stack.py -> stdout, ../out/stack.json
+# Usage (compute-host): TILES_DIR=~/work/endless python3 stack.py -> stdout, ../out/stack.json
 import os, sys, json, itertools
 from fractions import Fraction as Fr
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)

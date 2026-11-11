@@ -18,7 +18,7 @@ Paper entries: #10–#39, #44, #45, #47, #48, #49, #51, #53. Missing: #40, #41, 
 ## Next (step 1, with DICTO)
 Confirm list in the running app (not only code), decide one home per item (no crossover), then plan.
 
-# Step 1 (live apps, Playwright DOM probe on dicto-big-brother, 2026-10-25)
+# Step 1 (live apps, Playwright DOM probe on compute-host, 2026-10-25)
 - Kaleidohedra main door: confirms step 0 (present: Samson, Delilah, Icosaxes, Dodecaxes, Sunstar, Dogstar, Reuleaux, Aristotle, Platonic, DICTONIC, Global Web; absent: all #54–#56 items, Goliath/David, keyed -K pairs, zinc blende/A15/C15/perovskite, One Move, Sunstar-Hexa).
 - Polyhedraverse: HAS #43's Aktis and Cleo Towers (so #43 is in the app, in P; correction to step 0). Still absent there: Kyushindo name, One Move, Sunstar-Hexa, OG on every stacking.
 - Rhombiverse: none of the gap items.

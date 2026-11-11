@@ -11,7 +11,7 @@
 #  Star line (t >= 1): the hulls K_t = conv(corners, tips). Walls (exact): t = rho_k^2 / h^2 (the join at k = 1, T(P) at k = 0, g),
 #           the Catalan kis t_C (all edges tangent to the midsphere), and the incidences where a spike side plane passes through a
 #           corner or another tip (stellations, joins).
-# Usage: ~/geom/bin/python -u s2_census3d.py <exactlib dir> <flags.json> <out json>
+# Usage: python3 -u s2_census3d.py <exactlib dir> <flags.json> <out json>
 import sys, os, json, time, itertools
 LIB, FL, OUT = sys.argv[1:4]; sys.path.insert(0, LIB)
 import exactlib as EL

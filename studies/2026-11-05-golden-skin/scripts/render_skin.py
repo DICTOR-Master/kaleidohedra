@@ -2,7 +2,7 @@
 # minus the OG), whole golden rhombohedra (gold). Half of space removed (above a plane through the OG centre) to see inside.
 import json, itertools, numpy as np, manifold3d as m3, matplotlib, sys; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-O = np.array(json.load(open("/home/dicto/study-runs/og-pent/og/data/network.json"))["ocd"]); O = O - O.mean(0)
+O = np.array(json.load(open("~/study-runs/og-pent/og/data/network.json"))["ocd"]); O = O - O.mean(0)
 hull = lambda P: m3.Manifold.hull_points(np.asarray(P, float).tolist()); OG = hull(O)
 m = int(sys.argv[1]) if len(sys.argv) > 1 else 12
 env = np.load(f"touch-m{m}.npy"); D = np.load("skin-m3.npz") if False else None

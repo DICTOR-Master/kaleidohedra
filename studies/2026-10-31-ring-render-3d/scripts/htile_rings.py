@@ -1,9 +1,9 @@
 # Ring triangles of the HexOct h-tile at lambda = -1/8 (48 rings) -> JSON for ringmesh.py.
 # Exact faces from studies/2026-10-31-hexoct-ring-build (build.py, exactfaces.py); the two orientations of ring triangles
 # alternate across every tied side of a face, and the minority orientation counts as 'central' (turned over), as in
-# studies/2026-10-31-ring-photo-render.  Usage (dicto-big-brother):
-#   TILES_DIR=~/kres-tmp/endless RINGBUILD=~/k-research/studies/2026-10-31-hexoct-ring-build/scripts \
-#   ~/geom/bin/python htile_rings.py out.json
+# studies/2026-10-31-ring-photo-render.  Usage (compute-host):
+#   TILES_DIR=~/work/endless RINGBUILD=~/k-research/studies/2026-10-31-hexoct-ring-build/scripts \
+#   python3 htile_rings.py out.json
 import os, sys, json
 import numpy as np
 sys.path.insert(0, os.path.expanduser(os.environ['TILES_DIR'])); sys.path.insert(0, os.path.expanduser(os.environ['RINGBUILD']))

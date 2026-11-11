@@ -3,7 +3,7 @@
 # tetrahedron or an octahedron on its far side (both tried), reject any edge at V whose angle sum exceeds 2pi or any star
 # whose solid angle exceeds 4pi; keep the closed stars. Floats (1e-9) for the search; each star found is then identified
 # exactly by its 12 neighbour vectors (neighbour dot products are small rationals).
-#   ~/geom/bin/python3 vertex_stars.py > data/vertex-stars.log
+#   python33 vertex_stars.py > data/vertex-stars.log
 import numpy as np, itertools, math, json
 from fractions import Fraction as Fr
 EPS = 1e-9

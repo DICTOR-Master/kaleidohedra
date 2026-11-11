@@ -49,7 +49,7 @@ def faces(V, F):
             keep = [i for i in range(len(P)) if np.linalg.norm(np.cross(P[i] - P[i - 1], P[(i + 1) % len(P)] - P[i])) > 1e-9]
             if len(keep) >= 3: out.append(P[keep])
     return out
-base = os.path.expanduser('~/kres-tmp/studies/2026-10-27-icosaxes-twenty/data')
+base = os.path.expanduser('~/work/studies/2026-10-27-icosaxes-twenty/data')
 for f in sorted(glob.glob(base + '/*-union.obj')):
     V, F = read_obj(f); fs = faces(V, F); c = Counter(classify(P) for P in fs)
     print(f"{os.path.basename(f)}: {len(fs)} faces; " + '; '.join(f'{k} ×{v}' for k, v in sorted(c.items(), key=lambda kv: -kv[1])))

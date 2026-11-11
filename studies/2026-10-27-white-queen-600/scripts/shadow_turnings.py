@@ -6,7 +6,7 @@ view u). Between two such events the same cells are in front, so the front tilin
 of #63's one-pattern-per-gap lemma). This script lists, for each of the six turnings, the event angles (cells swapping
 from front to back or back to front) and, in every gap, the shadow hull's vertex and face counts and the number of
 front cells. Floating point (decimal check); exact version to follow.
-Run on dicto-big-brother:  cd ~/kres-tmp/4d/scripts && ~/geom/bin/python shadow_turnings.py ../data/600cell-source.json
+Run on compute-host:  cd ~/work/4d/scripts && python3 shadow_turnings.py ../data/600cell-source.json
 """
 import itertools
 import json

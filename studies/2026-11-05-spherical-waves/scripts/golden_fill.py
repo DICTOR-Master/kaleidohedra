@@ -6,7 +6,7 @@
 # (their Dehn invariant is zero, the gap's is not), so the leftover is the true adaptor.
 import json, itertools, numpy as np, time, sys
 from scipy.special import sph_harm_y
-t0 = time.time(); R = "/home/dicto/study-runs/og-pent/cut/data/"
+t0 = time.time(); R = "~/study-runs/og-pent/cut/data/"
 B = np.array(json.load(open(R + "densest.json"))["B"]); O = np.array(json.load(open(R + "network.json"))["ocd"]); O = O - O.mean(0)
 W = np.load("lattice-wave.npz"); S, F = W["S"], W["F"]; N = S.shape[0]; Bi = np.linalg.inv(B)
 c = B @ np.array([0, .5, .5])

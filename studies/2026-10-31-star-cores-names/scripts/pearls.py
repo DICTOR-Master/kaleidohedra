@@ -1,6 +1,6 @@
 # Star Cores names (2026-10-31): three two- and three-family solids from study 3 that have a property of their own, built from their
 # planes and checked exactly (sympy): the edge-cut cube with all corners on one sphere, its dodecahedral analogue, and the truncated
-# cuboctahedron proportions (1, 1/phi, 3/4) whose chain of T closes. Usage: ~/geom/bin/python pearls.py <out json>
+# cuboctahedron proportions (1, 1/phi, 3/4) whose chain of T closes. Usage: python3 pearls.py <out json>
 import sys, json, itertools
 import numpy as np, sympy as sp
 from scipy.spatial import HalfspaceIntersection, ConvexHull

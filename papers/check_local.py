@@ -1,4 +1,4 @@
-# Claim check by the local model on dicto-big-brother (run there): every factual claim of a draft with the dossier text that supports it,
+# Claim check by the local model on compute-host (run there): every factual claim of a draft with the dossier text that supports it,
 # or UNSUPPORTED. Output <folder>/claims-check.md. Usage: check_local.py <paper folder> [draft file, default draft-local.md]
 import json, pathlib, sys, urllib.request, re
 d = pathlib.Path(sys.argv[1]); draft = (d / (sys.argv[2] if len(sys.argv) > 2 else 'draft-local.md')).read_text()

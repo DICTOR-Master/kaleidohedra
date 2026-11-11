@@ -16,9 +16,9 @@ Pacioli's *De Divina Proportione*), part filled.
 
 ## How
 `scripts/queen_geodes.py` (geometry and z-buffer renderer copied from `papers/book-queens/plates/render_plates.py`, which runs its
-argv at import), `scripts/run.sh` (copies the script to dicto-big-brother, renders there in the foreground, fetches `out/`).
-Inputs on dicto-big-brother: `~/kres-tmp/4d/data/600cell-source.json` (same md5 as `studies/2026-10-27-white-queen-600/data/600cell-source.json`),
-`~/kres-tmp/alicia-plates/dicto-logo.png`. Renderer additions: exact convex clipping of cells by a plane (hull of the corners
+argv at import), `scripts/run.sh` (copies the script to compute-host, renders there in the foreground, fetches `out/`).
+Inputs on compute-host: `~/work/4d/data/600cell-source.json` (same md5 as `studies/2026-10-27-white-queen-600/data/600cell-source.json`),
+`~/work/alicia-plates/dicto-logo.png`. Renderer additions: exact convex clipping of cells by a plane (hull of the corners
 behind the plane and the edge crossings, cut face flagged), per-edge colour, depth-graded line width, parchment ground, caption, sheet.
 Counts drawn are in `out/geodes.json`.
 

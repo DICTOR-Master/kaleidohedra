@@ -1,9 +1,9 @@
 // Dump the app's own pieces and web (k-dshells branch dictonic-shells, src/app/world-dictonic.js) at the study's sample
 // parameters, as floats, for the frame/scale assert and the float cross-check (check_app.py). Run from anywhere:
 //   node --import ./reg.mjs app_dump.mjs > ../data/raw/app-dump.json   (reg.mjs only resolves 'three' for the import)
-import { goldenT, delianFamily, webOf } from '/home/dicto/k-dshells/src/app/world-dictonic.js';
-import { scSites } from '/home/dicto/k-dshells/src/app/world-octet.js';
-import { tetPiece, octPiece, OCTET_FAMILY_STOPS as ST } from '/home/dicto/k-dshells/src/krp-core/src/polyhedra/delian-bond.js';
+import { goldenT, delianFamily, webOf } from '~/k-dshells/src/app/world-dictonic.js';
+import { scSites } from '~/k-dshells/src/app/world-octet.js';
+import { tetPiece, octPiece, OCTET_FAMILY_STOPS as ST } from '~/k-dshells/src/krp-core/src/polyhedra/delian-bond.js';
 const PHI = (1 + Math.sqrt(5)) / 2;
 // goldenCells of world-dictonic.js (not exported): whole T(x) on the lattice points, T(1/x) on the cube centres
 function goldenCells(size, x) {

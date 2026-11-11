@@ -1,6 +1,6 @@
 # DICTO's bottle-strut nodes (31 Oct 2026): the RD node (c layers, octet) and the turned node = trapezo-rhombic dodecahedron (h layers,
 # gyrated octet). Each face = one cap; tie points at the midpoints of the face's edges (DICTO's clock positions, 12 = towards the top).
-# Usage: ~/geom/bin/python nodes.py <out png> <logo png>
+# Usage: python3 nodes.py <out png> <logo png>
 import sys, numpy as np, matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon, Circle

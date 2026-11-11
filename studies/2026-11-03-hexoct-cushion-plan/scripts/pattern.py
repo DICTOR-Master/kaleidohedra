@@ -2,7 +2,7 @@
 # The patch is the plan's trial piece c (A-B-C, 4 x 4 nodes per sheet) on the plan's lattice: a = 8 stitches, node rows every 7 ridges,
 # same offsets and the same rounding as scripts/plan.py. Builds every number, chart, table and figure, asserts the checks, and writes
 #   <out>/paper.html, <out>/figs/*.svg, <out>/data/check.out, <out>/data/patch.json
-# Usage: python pattern.py <out dir>        (run on dicto-big-brother with ~/geom/bin/python; stdlib only)
+# Usage: python pattern.py <out dir>        (run on compute-host with python3; stdlib only)
 import sys, os, json, math, itertools
 
 OUT = os.path.abspath(sys.argv[1]); FIGS, DATA = OUT + '/figs', OUT + '/data'

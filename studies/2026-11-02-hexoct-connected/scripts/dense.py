@@ -2,7 +2,7 @@
 # one face-connected solid with a clean surface (every side in exactly two faces) at every weight of a grid of step 1/480 over the
 # walk -11/24 <= λ <= 3/8 (401 weights; every break point of the ring-build scan is a multiple of 1/96, so all are included), plus
 # 1/10. Also records the least contact area between the towers (unit triangles) and the h-tile's connectivity with no shift.
-# Usage: ~/geom/bin/python dense.py <k0> <k1>  (grid indices k: λ = -11/24 + k/480) -> data/dense_<k0>.jsonl
+# Usage: python3 dense.py <k0> <k1>  (grid indices k: λ = -11/24 + k/480) -> data/dense_<k0>.jsonl
 import json, os, sys, itertools
 from fractions import Fraction as Fr
 from tiles import tile

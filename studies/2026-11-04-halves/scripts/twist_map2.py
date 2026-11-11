@@ -2,7 +2,7 @@
 edge-angle count with coplanar faces merged (angle_hybrids.py). Candidates = twist convex & solid Dehn zero & twist angle count passes."""
 import math, json, itertools, numpy as np
 exec(open('scripts/twist_map.py').read().split("phi = (1")[0])
-src = open('/home/dicto/study-runs/2026-11-04-lqg-bridge/scripts/angle_hybrids.py').read()
+src = open('~/study-runs/2026-11-04-lqg-bridge/scripts/angle_hybrids.py').read()
 exec(src[src.index('def dihedrals'):src.index('N = np.array')])
 phi = (1 + 5**.5)/2
 rows = []; cand = []

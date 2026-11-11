@@ -1,4 +1,4 @@
-// DICTO 2026-10-18 paper figures: screenshots of the study 3D pages (dicto-node, Playwright). usage: node shoot.mjs <root> <out>
+// DICTO 2026-10-18 paper figures: screenshots of the study 3D pages (compute-host-2, Playwright). usage: node shoot.mjs <root> <out>
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 const [ROOT, OUT] = process.argv.slice(2); fs.mkdirSync(OUT, { recursive: true });

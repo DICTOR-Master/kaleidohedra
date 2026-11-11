@@ -4,7 +4,7 @@
 # corner radii and edge lengths up to scale), whether it is the shape of a dataset solid, whether the chain returns to an earlier shape
 # (period) and the gain in radius over one period, recognised where possible in the solid's field. The centre counts only when the
 # symmetry fixes it (a group with inversion or with at least 12 rotations); others are listed separately.
-# Usage: ~/geom/bin/python scripts/survey2.py <solids dir> <out.json>
+# Usage: python3 scripts/survey2.py <solids dir> <out.json>
 import sys, os, json, glob, itertools, numpy as np, sympy as sp
 from scipy.spatial import ConvexHull, HalfspaceIntersection
 SOL, OUT = sys.argv[1], sys.argv[2]

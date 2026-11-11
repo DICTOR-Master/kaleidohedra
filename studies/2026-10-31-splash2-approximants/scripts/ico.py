@@ -2,7 +2,7 @@
 # Z^6 with physical icosahedral star e_i (columns of PHYS with tau irrational); the approximant n/m replaces tau by the Fibonacci
 # ratio F(k+1)/F(k) (1/1, 2/1, 3/2, 5/3, 8/5, 13/8, 21/13). The period lattice is Z^6 cap E' (E' the rational 3-space);
 # in the canonical tiling the number of rhombohedra with edges {e_i, e_j, e_k} per period is |3x3 minor| of a basis of it.
-# ~/geom/bin/python ico.py out/
+# python3 ico.py out/
 import sys, os, json, itertools
 from fractions import Fraction as Fr
 from qf import QF

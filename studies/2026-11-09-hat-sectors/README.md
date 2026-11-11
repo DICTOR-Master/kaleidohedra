@@ -6,7 +6,7 @@
 
 Credit: DICTO proposed the aim (one RD/TRD cross piece forced into an aperiodic stacking; Narcissus). The hat route tested here is Claude's proposal (session 8/9 Nov 2026). DICTO replied "good call".
 
-Files: `scripts/hatgrid.py` (exact kite grid + hat), `01_sectors_exact.py` (sympy, exact), `02_orientation_sat.py` (SAT, pysat Cadical), `03_piece_orientations.py` (all 4^8 sector patterns), `04_figure.py`; logs in `data/`; figure `figures/hat-piece-rd.png`. Everything ran on dicto-big-brother (`~/geom/bin/python`), each in under 5 minutes.
+Files: `scripts/hatgrid.py` (exact kite grid + hat), `01_sectors_exact.py` (sympy, exact), `02_orientation_sat.py` (SAT, pysat Cadical), `03_piece_orientations.py` (all 4^8 sector patterns), `04_figure.py`; logs in `data/`; figure `figures/hat-piece-rd.png`. Everything ran on compute-host (`python3`), each in under 5 minutes.
 
 ## Task 1: exact geometry (01_sectors_exact.py, 17 PASS)
 
@@ -47,7 +47,7 @@ Cited:
 - F. Flicker, "Matching Rules for a Three-Dimensional Strongly Aperiodic Monotile", arXiv:2609.23783 (cited from the 11-08 record, not re-read today).
 
 Checked:
-- **DICTO's library** (dicto-big-brother `~/kaleidohedra-references`, MANIFEST grep for monotile/einstein/spectre/hat/Socolar/Danzer/aperiodic):
+- **DICTO's library** (compute-host `~/kaleidohedra-references`, MANIFEST grep for monotile/einstein/spectre/hat/Socolar/Danzer/aperiodic):
   - SMKG 2023 pdf (full text grep: 3D mentioned only as "a three-dimensional shape" enforcing matching rules, plus the SCD tile; "unreflected tiles come in six orientations" §2; tiles aligned to the [3.4.6.4] Laves grid §3).
   - Baake–Grimm 2012; Baake–Damanik–Grimm 2015; Al-Siyabi–Koca–Koca 2020.
   - expansion/MANIFEST arXiv query "aperiodic monotile OR einstein tile": hat metasurface paper; Ising model on the Smith hat; Schirmann–Franca–Flicker–Grushin (dropped file); translational-tiling undecidability papers.

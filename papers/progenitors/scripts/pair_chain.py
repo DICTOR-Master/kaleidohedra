@@ -3,7 +3,7 @@
 # are in the Chain of Karma: the least s with H ⊂ s·O, the least t with O ⊂ t·H, which corners touch, and the two-step ratio s·t.
 # -> data/pair-chain.txt
 import os, io, sys, contextlib, itertools
-PD = '/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
+PD = '~/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
 sys.argv = ['polar.py', 'data/dharma_cycle.json']
 with contextlib.redirect_stdout(io.StringIO()):
     exec(open('scripts/polar.py').read())

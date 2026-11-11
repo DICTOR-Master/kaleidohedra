@@ -1,7 +1,7 @@
 # Inside each open interval of the walk the face planes and side directions stay fixed (corners move affinely with lambda),
 # so the corner angles are fixed. A face with a corner angle other than 60 or 120 degrees can never be laid with rings
 # anywhere in that interval. This checks one weight inside each interval and at each breakpoint.
-# Usage (dicto-big-brother): TILES_DIR=~/kres-tmp/endless ~/geom/bin/python angles.py  -> stdout (saved as ../out/angles.txt)
+# Usage (compute-host): TILES_DIR=~/work/endless python3 angles.py  -> stdout (saved as ../out/angles.txt)
 import os, sys
 from fractions import Fraction as Fr
 HERE = os.path.dirname(os.path.abspath(__file__))

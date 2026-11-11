@@ -25,11 +25,11 @@ same in every gap, so the walk can only differ through far-layer shapes. Queue i
 - Stackings: all 505 primitive c/h bracelets of length 1–12 (every polytype up to period 12, up to turning over), plus 50 random
   stackings of 48 layers from a two-state Markov chain (P(h|h), P(h|c) ∈ {1/10, 3/10, 1/2, 7/10, 9/10}, seed 20261031; periods
   48–144 layers) so that h and p_hh vary independently. 555 stackings in all.
-- Splash (scripts/splash.py, run on dicto-big-brother, 22 processes, ~5 s): per formula unit, exact Fractions. Each quantity is
+- Splash (scripts/splash.py, run on compute-host, 22 processes, ~5 s): per formula unit, exact Fractions. Each quantity is
   tested as (1) a line in h, (2) a plane in (h, p_hh), (3) a linear form in the frequencies of c/h words of length m, smallest m found
   (exact Gaussian elimination over all 555 rows; no floats). Per-site locality: the smallest window of layer types around a B's gap
   that fixes its value. Swap test for per-gap quantities fixed by the gap's two layers.
-- Figures: scripts/figs.py (matplotlib on dicto-big-brother) → fig/splash2-perovskite.png, fig/shells.png.
+- Figures: scripts/figs.py (matplotlib on compute-host) → fig/splash2-perovskite.png, fig/shells.png.
 - Known polytypes: scripts/table.py → data/known_polytypes.md (Ramsdell symbol recomputed from the letters: all 11 match).
 
 ## Results (data/splash2_perovskite.json, data/splash.log; per B = per ABX3)

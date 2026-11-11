@@ -2,7 +2,7 @@
 (1.11). Bisect with the numerical chain (chain_num5.py, 12 steps) to width 1e-7, then name the edge among simple golden numbers.
 START at once, PROGRESS per halving, FINAL ok with the edge."""
 import subprocess, os, sympy as sp
-PY = os.path.expanduser('~/geom/bin/python')
+PY = os.path.expanduser('python3')
 def closes(s):
     out = subprocess.run([PY, 'chain_num5.py', repr(s), '12'], capture_output=True, text=True).stdout
     return 'closure: (' in out

@@ -4,7 +4,7 @@
 import sys, io, os, contextlib, itertools, numpy as np
 from scipy.spatial import ConvexHull
 from q5 import *
-PD = '/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD); sys.argv = ['polar.py', 'data/dharma_cycle.json']
+PD = '~/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD); sys.argv = ['polar.py', 'data/dharma_cycle.json']
 with contextlib.redirect_stdout(io.StringIO()): exec(open('scripts/polar.py').read())
 os.chdir(here)
 V = [[(x.a, x.b) for x in v] for v in dict(rev)['dual of the Hecatodihedron']]

@@ -1,6 +1,6 @@
 # Camera spec for a model without a photo (e.g. the h-tile): model stands on the table as built (lowest point on z = 0),
 # camera looks at its centre from elevation/azimuth, distance chosen so the bounding sphere fills `fill` of the frame width.
-# Usage: ~/geom/bin/python mkcam.py model.obj out.json [elev_deg az_deg lens_mm fill]
+# Usage: python3 mkcam.py model.obj out.json [elev_deg az_deg lens_mm fill]
 import sys, json, math
 import numpy as np
 objp, outp = sys.argv[1:3]

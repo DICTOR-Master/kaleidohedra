@@ -2,7 +2,7 @@
 
 Question (from DICTO's paper57-analysis-and-development.md): could the Rule of Halves give crystallography a new structural descriptor?
 
-Answer, exact (census_check.py on #57's appendix.json, ALL PASS, 28 checks, sympy on dicto-big-brother):
+Answer, exact (census_check.py on #57's appendix.json, ALL PASS, 28 checks, sympy on compute-host):
 
 1. **Census = pair statistics.** By #57, each layer owns two tetrahedral pieces of its own type (c or h), and each gap owns one octahedral piece fixed by the (below, above) types. So the full piece census of any stacking, at any weight, is fixed by the numbers of c and h layers and of neighbouring pairs cc, ch, hc, hh: the first- and second-order statistics of the Jagodzinski h/c sequence, which crystallography already records. As a *descriptor* the census adds no information.
 2. **Mean rule checked on every interval** of the weight walk: O(c over h) = O(h over c) = (O(cc) + O(hh))/2.

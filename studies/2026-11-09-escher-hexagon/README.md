@@ -138,7 +138,7 @@ The c/h choice is again only filtered (all c, all h, or free), never correlated.
   - "Schmitt Conway Danzer biprism screw aperiodic prototile irrational rotation layers"
   - "Penrose stairs 1958 Impossible objects …"
   - "helicoidal space-filling polyhedron screw tile stacking tiling three dimensions" (also returned Wikipedia "Space-filling polyhedron" and the SCD wiki pages)
-- **Library grep** (dicto-big-brother `~/kaleidohedra-references`, all MANIFEST.json, for danzer, schmitt, escher, penrose stair, helicoid, screw): Danzer 1989 (above), Penrose-tiling titles ("Algebraic theory of Penrose's non-periodic tilings of the plane" I/II, "Constructing Penrose-like tilings from a single prototile …", "Penrose tilings as coverings of congruent decagons"), and "Helical microtubules of graphitic carbon" (not relevant). Nothing on helicoidal or stepped space-fillers.
+- **Library grep** (compute-host `~/kaleidohedra-references`, all MANIFEST.json, for danzer, schmitt, escher, penrose stair, helicoid, screw): Danzer 1989 (above), Penrose-tiling titles ("Algebraic theory of Penrose's non-periodic tilings of the plane" I/II, "Constructing Penrose-like tilings from a single prototile …", "Penrose tilings as coverings of congruent decagons"), and "Helical microtubules of graphitic carbon" (not relevant). Nothing on helicoidal or stepped space-fillers.
 - Not found: any stepped-helicoid piece on close-packed (RD/TRD) cells, or any stacking forced by one.
 - **Also cited for the aim:** Tsiokos arXiv:2609.19214 (Chair44) and Flicker arXiv:2609.23783 (cited from the 8 Nov record, not re-read today).
 
@@ -154,7 +154,7 @@ The c/h choice is again only filtered (all c, all h, or free), never correlated.
   - `05_figure.py`
 - **Data (`data/`):** `*.log` and `*.json`; pilots `03_pilot.log`, `*_pilot.json`.
 - **Figures (`figures/`):** `escher-hexagon-piece.png` and `escher-forced-stack.png` (DICTO mark on both).
-- Everything ran on dicto-big-brother (`~/geom/bin/python`; the longest run, the C3 scan, took 817 s on 22 workers).
+- Everything ran on compute-host (`python3`; the longest run, the C3 scan, took 817 s on 22 workers).
 
 ## Ledger line (ready for concordance.json ledger.entries)
 

@@ -18,5 +18,5 @@ ax.set_xlabel('hexagonality h (share of hexagonal layers)', fontsize=10); ax.set
 ax.set_title('Real polytypes against the straight line (dashed: the line through the two pure stackings)', fontsize=10, loc='left')
 ax.set_xlim(-0.03, 1.36)
 fig.text(0.98, 0.01, 'DICTO', color='#b8962e', fontsize=12, ha='right', family='serif', weight='bold')
-out = os.path.expanduser('~/kres-tmp/fig68'); os.makedirs(out, exist_ok=True)
+out = os.path.expanduser('~/work/fig68'); os.makedirs(out, exist_ok=True)
 fig.savefig(os.path.join(out, 'real-polytypes.png'), bbox_inches='tight', facecolor='white'); print('ok')

@@ -6,7 +6,7 @@ from fractions import Fraction as Fr
 import sympy as sp
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
-D = os.path.expanduser('~/kres-tmp/splash/data'); L = sp.Symbol('lam')
+D = os.path.expanduser('~/work/splash/data'); L = sp.Symbol('lam')
 COL = {'halves': '#4f7cc9', 'swap': '#d97a3a', 'sums': '#4caf6a', 'pairs': '#9a5fc0', 'open': '#d0453b', 'na': '#3b4048'}
 NAME = {'halves': 'rule of halves (#57)', 'swap': 'Swap Rule', 'sums': 'layer sums (reach 2)', 'pairs': 'layer + pair sums (reach 2)',
         'open': 'no rule found', 'na': 'pure stackings missing a piece: not compared'}
@@ -49,4 +49,4 @@ for sp_ in ax.spines.values(): sp_.set_visible(False)
 ax.set_title('Splash Rules map: which exact rule shares out the holes of every close-packed stacking', color='white', fontsize=13)
 fig.legend(handles=[Patch(color=COL[k], label=NAME[k]) for k in COL], loc='lower center', ncol=3, facecolor='#2b2f36', labelcolor='white', fontsize=10)
 fig.text(0.985, 0.015, 'DICTO', color='#c9a646', ha='right', fontsize=16, weight='bold')
-plt.tight_layout(rect=(0, 0.09, 1, 1)); out = os.path.expanduser('~/kres-tmp/splash/splash-map.png'); plt.savefig(out, dpi=140, facecolor=fig.get_facecolor()); print('wrote', out)
+plt.tight_layout(rect=(0, 0.09, 1, 1)); out = os.path.expanduser('~/work/splash/splash-map.png'); plt.savefig(out, dpi=140, facecolor=fig.get_facecolor()); print('wrote', out)

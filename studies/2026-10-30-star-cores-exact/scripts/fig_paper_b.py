@@ -3,7 +3,7 @@
 #   S; the turn (the hull of the five-/four-fold tips and of the three-fold tips, see-through, round the core); the core C(S); C(C(S)),
 #   which is t^2 c^2 S (asserted). Faces on the five-/four-fold axes gold, on the three-fold axes teal. Render standard: solid, crisp edges.
 # Figure 2: study 3's depth windows for the edge-cut cube and dodecahedron (T closes late / early / stays open; cores period two in all).
-# Usage: ~/geom/bin/python fig_paper_b.py <study data dir> <figures dir> <logo png>
+# Usage: python3 fig_paper_b.py <study data dir> <figures dir> <logo png>
 import sys, os, json, numpy as np, matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.collections import PolyCollection

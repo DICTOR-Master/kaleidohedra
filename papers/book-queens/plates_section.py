@@ -1,5 +1,5 @@
 # The Plates section of 'Alicia in Wonderland' version 3 (DICTO 2026-10-31: "full page cards/plates" to give the shapes room).
-# One page per shape: the picture (plates/*.png, made on dicto-big-brother by plates/render_plates.py) and a few exact facts, all
+# One page per shape: the picture (plates/*.png, made on compute-host by plates/render_plates.py) and a few exact facts, all
 # read from plates/plates.json (written by the same script from the DICTO solids dataset v6 and the 600-cell source model) or
 # from the book's own Chapters 6 and 8. Called by assemble.py; the section sits after Chapter 8, before the epilogue.
 import json, os, re, html

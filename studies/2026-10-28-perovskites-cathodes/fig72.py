@@ -22,4 +22,4 @@ b.plot(0, 4.68, 'o', mfc='white', mec='#3a6ea5', ms=5); b.annotate('O3, x = 1', 
 b.set_xlabel('share of O1-type gaps (h)'); b.set_ylabel('Å per CoO$_2$ layer'); b.set_xlim(-0.05, 1.1)
 b.set_title('(b) Li$_x$CoO$_2$ on charge', fontsize=9, loc='left'); b.legend(fontsize=6.8, frameon=False, loc='upper right')
 for ax in (a, b): ax.spines[['top', 'right']].set_visible(False); ax.grid(alpha=0.25, lw=0.5)
-fig.tight_layout(); fig.savefig(os.path.expanduser('~/kres-tmp/oxides.png')); print('ok')
+fig.tight_layout(); fig.savefig(os.path.expanduser('~/work/oxides.png')); print('ok')

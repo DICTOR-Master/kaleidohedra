@@ -1,4 +1,4 @@
-# The Window Law in one picture (dicto-big-brother): ~/geom/bin/python fig_window_law.py <data dir> <out png>
+# The Window Law in one picture (compute-host): python3 fig_window_law.py <data dir> <out png>
 # <data dir> holds splash2_perovskite.json, splash2_fk.json, sturm.json, abfam.json from the three Splash Rules II studies.
 # Every plotted value is exact (Fraction) and every point is asserted to lie on its law before drawing; floats only for drawing.
 import sys, os, json, math
@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 
 IN, OUT = sys.argv[1], sys.argv[2]
-LOGO = plt.imread(os.path.expanduser('~/kres-tmp/dicto-logo.png'))
+LOGO = plt.imread(os.path.expanduser('~/work/dicto-logo.png'))
 GOLD, INK, GREY, BLUE, RED, GREEN, PURPLE = '#b8962e', '#222222', '#9a9a9a', '#2f5d8a', '#a8402e', '#4f7d3a', '#6a4c93'
 plt.rcParams.update({'font.size': 8, 'axes.linewidth': 1.0, 'font.family': 'DejaVu Sans', 'axes.edgecolor': '#555555'})
 def mark(fig):

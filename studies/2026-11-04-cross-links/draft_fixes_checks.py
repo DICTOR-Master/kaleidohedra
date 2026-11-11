@@ -1,5 +1,5 @@
 """Exact checks for the formulas added to drafts #90, #91, #92 by the cross-links fixes (4 November 2026).
-Run on dicto-big-brother: ~/geom/bin/python draft_fixes_checks.py
+Run on compute-host: python3 draft_fixes_checks.py
 """
 import itertools, math, random
 import sympy as sp

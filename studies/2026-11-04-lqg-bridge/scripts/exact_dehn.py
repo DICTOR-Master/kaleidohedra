@@ -7,7 +7,7 @@ import os, sys, math, itertools, numpy as np
 from fractions import Fraction as Fr
 from collections import defaultdict
 from scipy.spatial import ConvexHull
-HEX = os.path.expanduser('~/kres-tmp/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
+HEX = os.path.expanduser('~/work/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
 import tiles as Tl
 os.chdir(here); Hh = math.sqrt(2/3)
 b = math.degrees(math.acos(1/math.sqrt(3)))

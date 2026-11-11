@@ -18,7 +18,7 @@ Surya 2019; Tsuda-Fujiwara 2020; De Felice-Fabri 2001; Blatov 2004. Web: arXiv c
 ECS 236 Paper124142; arXiv 2401.09399, 1111.6938, 1704.00577 (CDT); arXiv 1508.05937, 2303.01761 (Voronoi fcc/hcp).
 
 ## Result 10-28: the Hexagonality Law (placeholder name) — exact check PASSED
-Script scripts/hexlaw.py (+ hexlaw_cdi2.py), on the exact weight walks of Splash Rules run 2 (dbb ~/kres-tmp/splash2/raw),
+Script scripts/hexlaw.py (+ hexlaw_cdi2.py), on the exact weight walks of Splash Rules run 2 (dbb ~/work/splash2/raw),
 every close-packed stacking up to 6 layers, every lam-window, every role:
 total volume of a role over one period = n_c·alpha(lam) + n_h·beta(lam), alpha from ABC, beta from AC, exact (sympy).
 - pyrochlore #60 96/96; rock salt/NiAs 80/80; zinc blende (MU ±1/20, ±1/10) 192+176+176+144; Laves 120/120.

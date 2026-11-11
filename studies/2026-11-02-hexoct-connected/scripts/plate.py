@@ -1,6 +1,6 @@
 # Plate of the HexOct family for the #86 draft: one row per member (pairs.json), c-tile three views (gold) then h-tile three views
 # (blue); thicker edges for print at plate scale. Plus the stack figure: 4H (ABCB) and 2H/3C for the convex member, 4H for the
-# ring-weight member. Usage: LOGO=... ~/geom/bin/python plate.py -> figs/family-plate.png, figs/family-stacks.png
+# ring-weight member. Usage: LOGO=... python3 plate.py -> figs/family-plate.png, figs/family-stacks.png
 import os, numpy as np
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 from render import PAIRS, ref_pieces, chosen_layer, solid_tris, COL, OUT, D

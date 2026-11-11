@@ -1,4 +1,4 @@
-# DICTO 2026-10-18 octet study -- STEP 15 meshes (dicto-node, manifold3d): split the middle piece into the Penrose core and the rest.
+# DICTO 2026-10-18 octet study -- STEP 15 meshes (compute-host-2, manifold3d): split the middle piece into the Penrose core and the rest.
 # usage: python3 step15_mesh.py step10-input.json step15-input.json step10-meshes.json OUT.json
 import sys, json, numpy as np, manifold3d as m3
 D = json.load(open(sys.argv[1])); C = json.load(open(sys.argv[2])); old = json.load(open(sys.argv[3]))

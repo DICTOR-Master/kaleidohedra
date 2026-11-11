@@ -1,6 +1,6 @@
 # Five pyramids study, question 2 (DICTO, 2026-10-27): enumerate small face-to-face gluings of DICTO's pieces (and the
 # regular solids) and keep those whose surface is made of equilateral triangles. Float screening (tolerance 1e-7) on
-# dicto-big-brother; every kept result is re-checked exactly by exact_check.py.
+# compute-host; every kept result is re-checked exactly by exact_check.py.
 #
 # Rules of the search (stated in the README):
 #  * pieces at the scale where their equilateral faces have edge 1, plus the Mosseri-Sadoc tiles also at the scale where

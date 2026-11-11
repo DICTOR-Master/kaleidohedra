@@ -9,7 +9,7 @@
 # Usage: kuwagata_exact.py <dataset-v7 dir> <star-cores.json> <star-cores-d scripts dir> <out json>
 import sys, os, json, itertools, math, types, numpy as np, sympy as sp
 DS, SCJ, DSCR, OUT = sys.argv[1:5]
-sys.argv = [sys.argv[0], DS, SCJ, '/tmp']; sys.path.insert(0, DSCR); sys.path.append(os.path.expanduser('~/kres-tmp/star-cores/scripts'))
+sys.argv = [sys.argv[0], DS, SCJ, '/tmp']; sys.path.insert(0, DSCR); sys.path.append(os.path.expanduser('~/work/star-cores/scripts'))
 src = open(os.path.join(DSCR, 'kagemusha_variants.py')).read()
 p1 = "        for _ in range(12):\n            Qs = [spike(i, s) for i, s in enumerate(S2)]"
 p2 = "        V2 = list(V); F2 = []; B2 = []; added = 0.0"

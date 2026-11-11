@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Harmonic fingerprint (4D, methods.Q4d) of the Red Queen (120-cell) and of the path between the Queens: S(mu) = P ∩ mu P*,
 P = 600-cell (circumradius 1), P* = {y : y·v <= 1 for the 120 corners v} (a 120-cell), mu from r_P^2 (S = mu P*) to 1 (S = P).
-H4 symmetry silences degrees 1..11 everywhere; the readings are Q12 and Q20. dicto-big-brother."""
+H4 symmetry silences degrees 1..11 everywhere; the readings are Q12 and Q20. compute-host."""
 import os, sys, json, itertools, math
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/_lib')); import methods as M
+sys.path.insert(0, os.path.expanduser('~/work/_lib')); import methods as M
 import numpy as np
 from scipy.spatial import ConvexHull, HalfspaceIntersection
 phi = M.PHI

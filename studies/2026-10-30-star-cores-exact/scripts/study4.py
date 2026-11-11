@@ -2,7 +2,7 @@
 # survey (survey2) followed TQHD -> TQP -> TQH -> TPH -> OG and OG -> KRE -> PHE -> TPP -> DPHP, then lost the thread in float noise (its
 # later steps broke the icosahedral symmetry). Here the chain from OG is followed exactly: each step's corners, faces by sides, kinds of
 # corner radius and edge length, whether it is a dataset solid (exact similarity), and whether it returns to an earlier step.
-# Usage: ~/geom/bin/python study4.py <dataset solids dir> <exactlib dir> <out json> [max corners]
+# Usage: python3 study4.py <dataset solids dir> <exactlib dir> <out json> [max corners]
 import sys, os, json
 SOL, LIB, OUT = sys.argv[1:4]; sys.path.insert(0, LIB)
 from exactlib import *

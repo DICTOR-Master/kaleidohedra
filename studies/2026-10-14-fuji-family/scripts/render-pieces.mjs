@@ -1,4 +1,4 @@
-// Screenshot each piece from render-pieces.html (run on dicto-node: node render-pieces.mjs). DICTO · dictospheres.com
+// Screenshot each piece from render-pieces.html (run on compute-host-2: node render-pieces.mjs). DICTO · dictospheres.com
 import { chromium } from 'playwright';
 import fs from 'node:fs'; import path from 'node:path';
 const here = path.dirname(new URL(import.meta.url).pathname);

@@ -12,7 +12,7 @@ def inner(A):
     M = A[:, :-1]; b = -A[:, -1]; nr = np.linalg.norm(M, axis=1)
     r = linprog(np.r_[np.zeros(M.shape[1]), -1], A_ub=np.c_[M, nr], b_ub=b, bounds=[(None, None)] * M.shape[1] + [(0, None)], method='highs')
     return (r.x[:-1], r.x[-1]) if r.status == 0 and r.x[-1] > 1e-7 else (None, 0)
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/b1-walls/swap')); sys.path.insert(0, os.path.expanduser('~/kres-tmp/st57/scripts')); sys.path.insert(0, os.path.expanduser('~/kres-tmp/splash'))
+sys.path.insert(0, os.path.expanduser('~/work/b1-walls/swap')); sys.path.insert(0, os.path.expanduser('~/work/st57/scripts')); sys.path.insert(0, os.path.expanduser('~/work/splash'))
 from validate import Net, Cell, net_for, ROLE_OF
 WORDS = ['ABC', 'AC', 'ACBC', 'ACABC', 'ACBCAC', 'ACBABC']; s, la, lb, wall = Fr(1, 5), Fr(-19, 120), Fr(-1, 40), Fr(-1, 8)
 def cell4d(word, i):

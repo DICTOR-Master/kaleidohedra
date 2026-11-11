@@ -8,7 +8,7 @@
 # 4. The D3d cases: an octahedron with D3d symmetry whose eight faces are equidistant from the centre is regular (Lahdeli);
 #    the Belted Triacontahedron's per-turn squared-radius ratio is constant (exact).
 # 5. #78 Proposition 5: q(TI) q(core) = 1.
-# Usage: ~/geom/bin/python paper_b_checks.py <study data dir>   (prints a report; exits non-zero on any failed check)
+# Usage: python3 paper_b_checks.py <study data dir>   (prints a report; exits non-zero on any failed check)
 import sys, os, json, itertools
 import sympy as sp
 D = sys.argv[1]

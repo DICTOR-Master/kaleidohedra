@@ -9,7 +9,7 @@ Typeset build sheet: `hexoct-ring-build.pdf` (from `paper.html`; also in ~/Docum
 
 ## Method
 
-1. Tiles from the #75 engine (`tiles.py` of studies/2026-10-29-endless-stack-cell; on dicto-big-brother ~/kres-tmp/endless):
+1. Tiles from the #75 engine (`tiles.py` of studies/2026-10-29-endless-stack-cell; on compute-host ~/work/endless):
    c-tile = `tile('ABC', 1, λ)`, h-tile = `tile('AB', 0, λ)`, exact rational corners in lattice units.
 2. `scripts/exactfaces.py`: exact outer faces of the union of the pieces. Facets of each convex piece found exactly; on every
    plane the facets of all pieces are cut by all their edge lines (common refinement), each cell gets +1/−1 per facing
@@ -27,7 +27,7 @@ Typeset build sheet: `hexoct-ring-build.pdf` (from `paper.html`; also in ~/Docum
    crisp edges, ring sides drawn thin; c-tile gold, h-tile blue). Ring drawing helpers from studies/2026-10-31-ring-nets.
 6. `scripts/tables.py` → `out/tables.md`; `scripts/faces_at.py` → `out/faces--1_8.json` (every face, exact corners).
 
-Run on dicto-big-brother: `TILES_DIR=~/kres-tmp/endless LOGO=<dicto-logo.png> ~/geom/bin/python <script>.py`.
+Run on compute-host: `TILES_DIR=~/work/endless LOGO=<dicto-logo.png> python3 <script>.py`.
 
 ## Scan
 

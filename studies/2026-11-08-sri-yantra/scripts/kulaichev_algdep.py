@@ -3,7 +3,7 @@ then let PARI/GP find the minimal polynomial of each key number (u = slope of th
 (algdep), degree up to DMAX. A polynomial is accepted only if (1) it vanishes at the number to far more digits than its
 coefficients need (residual < 10^-(DPS/2)) and (2) the same polynomial is found again at a lower precision (stability).
 Exact proof of the whole system in that field is the next step (by resultants), once the polynomials are known.
-Usage: kulaichev_algdep.py [DPS] [DMAX]   (run on dicto-big-brother with ~/geom/bin/python)"""
+Usage: kulaichev_algdep.py [DPS] [DMAX]   (run on compute-host with python3)"""
 import sys, time, mpmath as mp
 DPS = int(sys.argv[1]) if len(sys.argv) > 1 else 600
 DMAX = int(sys.argv[2]) if len(sys.argv) > 2 else 48

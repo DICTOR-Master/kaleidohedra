@@ -4,7 +4,7 @@ import json, glob, os, sys
 from fractions import Fraction as Fr
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
-D = os.path.expanduser('~/kres-tmp/splash/data')
+D = os.path.expanduser('~/work/splash/data')
 COL = {'swap': '#d97a3a', 'cubic': '#c9a646', 'hex': '#b8c2cc', 'halves': '#4f7cc9', 'thirds': '#4caf6a', 'other': '#9a5fc0', 'same': '#7d8794', 'none': '#d0453b', 'empty': '#3b4048'}
 NAME = {'swap': 'Swap Rule: the 2 mixed = the 2 pure', 'cubic': 'all cubic (pure c)', 'hex': 'all hexagonal (pure h)', 'halves': 'half c + half h', 'thirds': 'thirds (1/3, 2/3)',
         'other': 'other exact mix', 'same': 'c and h pieces equal here', 'none': 'no c/h mix', 'empty': 'absent / nothing to compare'}
@@ -44,5 +44,5 @@ for ax, p in zip(axes, files):
 fig.legend(handles=[Patch(color=COL[k], label=NAME[k]) for k in COL], loc='lower center', ncol=5, facecolor='#2b2f36', labelcolor='white', fontsize=9)
 fig.suptitle('Splash Rules, run 1: hole pieces of close-packed stackings, every piece against the pure cubic and hexagonal ones (exact)', color='white', fontsize=12)
 fig.text(0.99, 0.005, 'DICTO', color='#c9a646', ha='right', fontsize=14, weight='bold')
-plt.tight_layout(rect=(0, 0.03, 1, 0.96)); out = sys.argv[1] if len(sys.argv) > 1 else os.path.expanduser('~/kres-tmp/splash/splash-run1.png')
+plt.tight_layout(rect=(0, 0.03, 1, 0.96)); out = sys.argv[1] if len(sys.argv) > 1 else os.path.expanduser('~/work/splash/splash-run1.png')
 plt.savefig(out, dpi=130, facecolor=fig.get_facecolor()); print('wrote', out)

@@ -1,11 +1,11 @@
 # DICTO 2026-10-20: fill the space the DBT leaves in the gyrated octet (DBT unchanged). As #37 step 27 for the golden envelope:
 # give every leftover point to its nearest site, piece = Voronoi region of the site minus the DBTs. Two choices of site:
 #   tet  the tetrahedron centres (two per cell)          bip  the bipyramid centres = twin-plane face centres (one per cell)
-# Float (manifold3d, dicto-node): volume, parts, sphericity, mirror-symmetric or not, congruence between sites.
+# Float (manifold3d, compute-host-2): volume, parts, sphericity, mirror-symmetric or not, congruence between sites.
 import sys, json, itertools, math, numpy as np, manifold3d as m3
 SOLID, STACK = (sys.argv + ['dbt', 'gyrated'])[1:3]   # dbt | cut8 ; gyrated | octet
 from scipy.spatial import HalfspaceIntersection
-H = '/home/dicto/dbt-exact/2026-10-19-og-gyrated-octet/'
+H = '~/dbt-exact/2026-10-19-og-gyrated-octet/'
 fq = lambda s: (lambda a, b: float(eval(a)) + float(eval(b)) * 5 ** .5)(*s.split('|'))
 DB = np.array([[fq(c) for c in v] for v in json.load(open(H + ('dbt-exact.json' if SOLID == 'dbt' else 'cut8-exact.json')))['V']])
 R = fq(json.load(open(H + '../2026-10-18-ocd-octet/data/step1-ocd-exact.json'))['R'])

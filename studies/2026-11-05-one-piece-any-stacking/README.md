@@ -95,7 +95,7 @@ placements; (b) carrying the row direction through the relays by shape (would al
     without mirror copies 3 x 3 = 9 < 30, and even 3^3 = 27 < 30: it needs clusters of 4 or more sites.
 - DECISION: route (a) continues with mirror copies allowed (6 placements per site) and tile+relay pairs. Next step (2): a SAT search for ONE key
   pattern on N (keys on the 10 faces, with positions, so mirror placements can be told apart) together with a decoding of pair placements to
-  (Kari tile, row direction). Contact compatibility must imply Kari compatibility, and every Kari adjacency must be realised. Pilot first (<= 5 min, dicto-big-brother).
+  (Kari tile, row direction). Contact compatibility must imply Kari compatibility, and every Kari adjacency must be realised. Pilot first (<= 5 min, compute-host).
 
 ## Route (a), step 2 pre-check (11-06): pairs fail per piece
 - Split a tile over a pair: the down piece shows the digit n and takes carry w; the up piece takes m = qn + w, shows s and gives carry e.
@@ -107,7 +107,7 @@ placements; (b) carrying the row direction through the relays by shape (would al
 - So route (a) needs tiles spread over >= 3 sites (carry in bits, using the slab's second direction), or a fix for the Culik zero tile.
   Next: (i) whether a marker can forbid the all-zero periodic tiling in the Culik set (that set fits 6 per piece); (ii) a 3-site split for Kari.
 
-## Route (a)(i) (11-06): repairing the Culik-type set (dicto-big-brother, culik_nozero.py, culik_rule.py; each FINAL in 6-22 s)
+## Route (a)(i) (11-06): repairing the Culik-type set (compute-host, culik_nozero.py, culik_rule.py; each FINAL in 6-22 s)
 - Removing only the all-zero tile: 11 tiles; tori 2x2..6x6 are still SAT, because (n=0,s=0,w=e=1/2) gives an x=0 row. REJECTED.
 - Removing both n=s=0 tiles: tori UNSAT, but the 16x16 square is UNSAT, so the set no longer tiles. REJECTED.
 - KEY "no two side-by-side n=0 in x1/2 rows" (true rows have x >= 2/3, so two steps add >= 1): tori 2x2..6x6 all UNSAT; free squares
@@ -143,7 +143,7 @@ placements; (b) carrying the row direction through the relays by shape (would al
 - What this leaves: (1) a separate down piece per slab type (with up pieces: 4 keyed pieces in all); (2) carries routed through the up pieces
   (zigzag over the quads), where C3v does not act simply transitively and the count differs; (3) multiplier pairs whose carry groups have the
   same sizes in both slab types (none among the scales tried with <= 6 tiles); (4) edge keys where 3+ pieces meet (no one-to-one mating).
-- Step 2b (carry_scan.py, dicto-big-brother, FINAL in 191 s, carry-scan.log): 791 two-branch maps (q1 in {2,3,3/2,4/3,5/2,5/3}, q2 < 1,
+- Step 2b (carry_scan.py, compute-host, FINAL in 191 s, carry-scan.log): 791 two-branch maps (q1 in {2,3,3/2,4/3,5/2,5/3}, q2 < 1,
   7 scales, 5 interval ratios). NONE has <= 6 tiles in both branches without a zero tile (n = s = 0), so the joint carry test never ran.
   Small tile sets come only with zero tiles (as in Culik a = 1/3), and the zero tiles bring back the flag. CONCLUSION (a) so far: in this
   Kari/Culik architecture, one keyed Narcissus is blocked twice, by the carry partitions (2a) and by the zero-tile flag (count); 3-4 keyed pieces is
@@ -161,8 +161,8 @@ placements; (b) carrying the row direction through the relays by shape (would al
   Rods and notches must be spread over both strands in that ratio: 8 such double-spiral designs up to symmetry.
 - Pilot (spiral_keys.py 3 2 2 1, 11 s): control (no key) PATCH + PERIODIC as it must; all 8 designs fill a patch and have no repeat on the
   smallest torus (SS, period 1 in-plane). Too small to mean anything: full run (5 slabs, n=3, stacking periods <= 4, in-plane periods <= 3)
-  running on dicto-big-brother, study-runs/2026-11-06-spiral/spiral-full.log.
-- FULL RUN (spiral_keys.py 5 3 4 3, dicto-big-brother, FINAL in 95 s, log copied here): all 8 double-spiral designs REPEAT, with or
+  running on compute-host, study-runs/2026-11-06-spiral/spiral-full.log.
+- FULL RUN (spiral_keys.py 5 3 4 3, compute-host, FINAL in 95 s, log copied here): all 8 double-spiral designs REPEAT, with or
   without mirror copies: each has a keyed filling of the plain straight stacking (SS) that repeats every 3 sites in the plane (in-plane
   period 3). Control repeats at period 1. RESULT: DICTO's double spiral as edge rods/notches, one strand pair, does not force order; the rods
   settle into a three-site rotation pattern. Next (if pursued): the whole count-feasible edge-key space (~65 000 designs up to symmetry),
@@ -182,7 +182,7 @@ placements; (b) carrying the row direction through the relays by shape (would al
 - Question: is the three-site rotation (in-plane period 3) a general way round every edge key on N? Test: EVERY count-feasible rod/notch
   labelling of the 18 edges (64 967 up to symmetry, spiral_keys.py mode 'all'), repeat test first (stacking periods <= 4, in-plane <= 3),
   then the patch test (5 slabs, every word) only if nothing repeats. Mirror copies first; proper motions only when mirrors already fill.
-- Pilot (1/500 sample, dicto-big-brother): ~4.7 s per design, control repeats, no find in the sample. Full scan: 22 workers,
+- Pilot (1/500 sample, compute-host): ~4.7 s per design, control repeats, no find in the sample. Full scan: 22 workers,
   study-runs/2026-11-06-spiral/all/w*.log, ~3.5 h, each worker ends with FINAL and EXIT.
 - CORRECTION (11-06 evening, independent review REPORT-fable-candidate.md): the periodic test used one vertical translation per in-plane
   sublattice and missed SKEWED periods. Candidate 13931 repeats: three-site rotation with a one-site sideways shift every two slabs

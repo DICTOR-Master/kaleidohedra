@@ -104,7 +104,7 @@ At the ends the formula jumps (t_min = 3 at μ = 1 and μ = 3): there one family
 
 ## 4. Every number and how it was checked
 
-All runs on dicto-big-brother (~/geom/bin/python, sympy 1.14, scipy 1.18), each under 1 minute, logs in data/.
+All runs on compute-host (python3, sympy 1.14, scipy 1.18), each under 1 minute, logs in data/.
 
 | number / claim | value | how checked | script, log |
 |---|---|---|---|
@@ -149,7 +149,7 @@ mark the ends.
   (abstract); the P_μ sweep definition in ~/k-research/papers/2026-11-04-harmonic-fingerprint/paper.html.
 - ~/k-research/studies/2026-10-21-nesting-proof (README.md, covering-lemma.log).
 - Concordance concordance.json: gaps.ranked[4], gaps.weak[1], gaps.loose (#43), strands 6 and 9, ledger (44 entries, none on #43).
-- Reference library (dicto-big-brother ~/library-index/passages.json, 7730 passages), queries "spherical design(s)", "Levenshtein",
+- Reference library (compute-host ~/library-index/passages.json, 7730 passages), queries "spherical design(s)", "Levenshtein",
   "Goethals", "Delsarte", "covering radius", "orbit polytope": 4 hits, none on spherical designs (Dutour Sikirić–Schürmann–Vallentin
   2008, Erdahl–Rybnikov 2001, Etzion 2011, a manifest; all about lattice covering radii or codes). Not in the library and cited from
   memory, to be checked before any paper text: Delsarte, Goethals, Seidel, "Spherical codes and designs", Geom. Dedicata 6 (1977);

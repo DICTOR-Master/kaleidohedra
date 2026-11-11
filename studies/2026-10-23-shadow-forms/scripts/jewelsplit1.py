@@ -5,7 +5,7 @@ import numpy as np, itertools, json, sys
 exec(open('axesplit2.py').read().split('T=1/phi')[0])
 exec(open('fuse3.py').read().split('VOL={')[0].split("exec(open('fuse1.py')")[0])
 src1=open('fuse1.py').read().split('def pieces')[0]; exec(src1)
-J=json.load(open('/home/dicto/k-mix/studies/2026-10-10-icosa-networks-3/data/clawed-icosahedron-unit.json')); JV=np.array(J['vertices']); JVOL=J['volume']
+J=json.load(open('~/k-mix/studies/2026-10-10-icosa-networks-3/data/clawed-icosahedron-unit.json')); JV=np.array(J['vertices']); JVOL=J['volume']
 VD=ConvexHull(D).volume; VT=sum(ConvexHull(t).volume for t in TR)
 print('Jewel %.6f (√5 − ... check: ico − 8 Tricaps = %.6f)  dodeca %.6f  8 Tricaps %.6f'%(JVOL,vol(ico)-VT,VD,VT))
 for t in ([float(x) for x in sys.argv[1:]] or [1/phi]):

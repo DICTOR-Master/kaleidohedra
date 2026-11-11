@@ -1,6 +1,6 @@
 # Five pyramids study, question 1 (DICTO, 2026-10-27): exact face shapes and dihedral angles of the five Platonic face
 # pyramids, exact face-congruence tests between different pyramids, and every edge star (dihedral angles adding to 360
-# degrees round one edge) that the five pyramids can make. Run on dicto-big-brother.
+# degrees round one edge) that the five pyramids can make. Run on compute-host.
 import itertools, json, sys
 import sympy as sp
 sys.path.insert(0, __file__.rsplit('/', 1)[0])

@@ -1,7 +1,7 @@
-// <folder>/paper.html -> <folder>/<pdf> (A4), footer with the DICTO mark and the record's DOI. Run on dicto-node (needs playwright):
+// <folder>/paper.html -> <folder>/<pdf> (A4), footer with the DICTO mark and the record's DOI. Run on compute-host-2 (needs playwright):
 //   node papers/print.mjs <folder> <pdf name> "<short title>" <concept DOI> <version>
 // PAGE_W/PAGE_H (e.g. 8.27in / 11.69in, the Amazon KDP A4 trim) override the A4 page size.
-// After any change here: run papers/guard_regress.sh on dicto-big-brother (every translated book must still print).
+// After any change here: run papers/guard_regress.sh on compute-host (every translated book must still print).
 import { chromium } from 'playwright';
 import path from 'node:path';
 const here = path.dirname(new URL(import.meta.url).pathname);

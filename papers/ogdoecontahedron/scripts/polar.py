@@ -3,8 +3,8 @@
 # reciprocal corner computed exactly. Reports: the reversed chain, edges, phi^3 closure, touching (corners on faces), layer volumes.
 import json, sys, itertools, numpy as np
 from scipy.spatial import ConvexHull
-sys.path.insert(0, '/home/dicto/kaleidohedra/studies/2026-10-15-icosa-star-hollow/scripts')
-src = open('/home/dicto/kaleidohedra/studies/2026-10-15-icosa-star-hollow/scripts/exact.py').read().split('out = []')[0].replace('qmax=48', 'qmax=12')
+sys.path.insert(0, '~/kaleidohedra/studies/2026-10-15-icosa-star-hollow/scripts')
+src = open('~/kaleidohedra/studies/2026-10-15-icosa-star-hollow/scripts/exact.py').read().split('out = []')[0].replace('qmax=48', 'qmax=12')
 exec(src)
 D = json.load(open(sys.argv[1]))
 order = [('icosahedron', ['core']), ('icosidodecahedron', ['npyr5', 'nfru3']), ('dodecahedron', ['npyr3']), ('truncated icosahedron', ['nfru5', 'nt1']),

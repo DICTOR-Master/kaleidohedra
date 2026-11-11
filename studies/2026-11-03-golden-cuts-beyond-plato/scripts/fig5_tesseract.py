@@ -2,7 +2,7 @@
 with the vertex-first section x1+x2+x3+x4 = 2h drawn inside at h = 1/phi^2, 1/2, 1/phi, and the ladder of corner layers.
 Same renderer and house colours as figs.py (gold = golden truncated triangle, teal = regular hexagon, lilac = corner
 triangle); DICTO mark bottom right.
-usage (dicto-big-brother): python fig5_tesseract.py <out dir> <logo png>
+usage (compute-host): python fig5_tesseract.py <out dir> <logo png>
 """
 import os, sys, itertools
 import numpy as np

@@ -4,7 +4,7 @@
 # frequency-4 geodesic icosahedron. Search: one layer, inner cage = all planes at distance 1, outer cage = each Th-orbit of planes pushed
 # by its own factor (overall growth about 1.28 for cells about as tall as wide). Keep the layers whose outer cage again has exactly 12
 # pentagons and no other non-hexagons, with the pentagons MOVED (the 12 inner-pentagon cells become hexagons and 12 others pentagons).
-# Then score every cell (sphericity, height/width). Float. -> data/scutoid-goldberg.txt / .json   (run on dicto-node)
+# Then score every cell (sphericity, height/width). Float. -> data/scutoid-goldberg.txt / .json   (run on compute-host-2)
 import itertools, json, sys, numpy as np
 from scipy.spatial import HalfspaceIntersection, ConvexHull
 phi = (1 + 5 ** .5) / 2

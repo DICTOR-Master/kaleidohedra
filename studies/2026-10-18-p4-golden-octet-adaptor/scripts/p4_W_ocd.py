@@ -1,7 +1,7 @@
 # DICTO 2026-10-18 "like this last Fable W particularly, and face could be exact imprint of OCD?!" -- W with OCD imprints:
 # W_OCD = rhombic dodecahedron round the octet vertex (0,0,R) minus the OCDs biting into it (instead of their envelopes).
 # The vertex RDs tile space, so OCD + W_OCD fill space exactly by construction (every point outside the OCDs lies in exactly one vertex RD).
-# Checks (dicto-node): one solid? volume (expect cell - OCD), sphericity, centrosymmetric (inversion through the vertex), contact faces.
+# Checks (compute-host-2): one solid? volume (expect cell - OCD), sphericity, centrosymmetric (inversion through the vertex), contact faces.
 # usage: python3 p4_W_ocd.py step10-input.json OUT.json
 import sys, json, itertools, numpy as np, manifold3d as m3
 D = json.load(open(sys.argv[1])); V = np.array(D['V']); R = D['R']; L = np.array(D['L'])

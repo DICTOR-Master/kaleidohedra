@@ -1,4 +1,4 @@
-# SA batch print + check job (dicto-node). For each paper: fetch the latest published PDF from Zenodo, take its file name and footer title,
+# SA batch print + check job (compute-host-2). For each paper: fetch the latest published PDF from Zenodo, take its file name and footer title,
 # reprint the edited source with the same name and footer (new version), and diff the two texts page by page.
 import json, os, re, socket, subprocess, urllib.request, difflib
 from pypdf import PdfReader

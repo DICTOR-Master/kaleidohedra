@@ -3,7 +3,7 @@ along the vertex-, edge-, face- and cell-first directions.  Exact in Q(sqrt5); f
 
 Output: data/shadows.json (every solid: counts, face pattern, degree sequence, exact squared edge lengths, exact
 dihedral cosines) and data/solids.pkl (exact data for the comparison step).
-Run on dicto-big-brother:  ~/geom/bin/python shadows.py
+Run on compute-host:  python3 shadows.py
 """
 import json
 import math

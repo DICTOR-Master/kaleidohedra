@@ -29,7 +29,7 @@ for n, (name, role) in enumerate(PANEL.items(), 1):
     t0 = time.time()
     body = json.dumps({'model': 'workhorse', 'messages': [{'role': 'system', 'content': role + ' ' + COMMON}, {'role': 'user', 'content': 'PAPER:\n' + txt}],
                        'max_tokens': 5000, 'temperature': 0.2, 'chat_template_kwargs': {'enable_thinking': False}}).encode()
-    r = urllib.request.Request('http://dicto-big-brother.local:8081/v1/chat/completions', data=body, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key})
+    r = urllib.request.Request('http://compute-host:8081/v1/chat/completions', data=body, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key})
     out = json.load(urllib.request.urlopen(r, timeout=5400))['choices'][0]['message']['content'].strip()
     (d / f'panel-{name}.md').write_text(out + '\n')
     print(f'PROGRESS {n / len(PANEL):.2f} reviewer {name} done ({time.time() - t0:.0f} s, {len(out)} chars)', flush=True)

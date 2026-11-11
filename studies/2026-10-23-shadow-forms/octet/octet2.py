@@ -1,11 +1,11 @@
 # Pictures: the octet family (tetrahedron piece gold, octahedron piece blue) and the factor-x family (T(x) green, T(1/x) orange).
 import os
-os.chdir('/home/dicto/shadow-fusions'); src=open('fuse4.py').read(); exec(src.split("res=json.load")[0]); os.chdir('octet')
+os.chdir('~/shadow-fusions'); src=open('fuse4.py').read(); exec(src.split("res=json.load")[0]); os.chdir('octet')
 exec(open('octet1.py').read().split('ts=[')[0])
 COL.update({'tet':(232,186,64),'oct':(70,130,180),'big':(92,170,96),'small':(236,150,70)})
 F=lambda n,b=False:ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans'+('-Bold' if b else '')+'.ttf',n)
-logo=Image.open('/home/dicto/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((100,100))
-OUT='/home/dicto/Documents/papers-to-read/golden-split'; SZ=330
+logo=Image.open('~/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((100,100))
+OUT='~/Documents/papers-to-read/golden-split'; SZ=330
 def strip(title,sub,cols,fn):
     im=Image.new('RGB',(len(cols)*SZ+40,2*SZ+200),(244,241,234)); d=ImageDraw.Draw(im)
     d.text((24,20),title,font=F(32,True),fill=(43,38,32)); d.text((24,64),sub,font=F(19),fill=(109,101,86))

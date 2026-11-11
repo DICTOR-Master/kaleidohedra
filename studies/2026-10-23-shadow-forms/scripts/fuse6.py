@@ -5,7 +5,7 @@ import numpy as np, json, itertools
 from scipy.spatial import ConvexHull
 phi=(1+5**.5)/2; h=phi/2
 ico=np.array([p for s1 in (1,-1) for s2 in (1,-1) for p in [(0,s1*.5,s2*phi/2),(s1*.5,s2*phi/2,0),(s2*phi/2,0,s1*.5)]])
-H=np.array(json.load(open('/home/dicto/k-mix/studies/2026-10-10-icosa-networks-2/data/sc-star-H-unit.json'))['vertices'])
+H=np.array(json.load(open('~/k-mix/studies/2026-10-10-icosa-networks-2/data/sc-star-H-unit.json'))['vertices'])
 cube=np.array([(h+a,h+b,h+c) for a in (-.5,.5) for b in (-.5,.5) for c in (-.5,.5)]); D=np.vstack([H,cube])
 axe=np.array([(-.5,h,0),(.5,h,0),(0,h+.5/phi,h),(0,h-.5/phi,h)])
 axes={}

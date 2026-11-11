@@ -4,7 +4,7 @@ renders/atlas120-page.png : every slice pattern, centre to tip, in four directio
                             number of sides; gold labels: slices that are uniform solids (checked exactly).
 renders/shadows120.png    : the four shadows (pentagon faces red, faces that are side-on cells flattened gold) and,
                             below, the front half of each: the front cells, which tile the shadow once.
-usage (dicto-big-brother):  cd scripts && nice ~/geom/bin/python render_atlas120.py
+usage (compute-host):  cd scripts && nice python3 render_atlas120.py
 """
 import json
 import os

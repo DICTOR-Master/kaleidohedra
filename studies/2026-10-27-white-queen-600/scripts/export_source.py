@@ -5,7 +5,7 @@ the 96 even permutations of (±φ,±1,±1/φ,0)); edges, triangles and tetrahedr
 their cliques), never typed in. Every check below is exact arithmetic in Q(√5); the script stops at the first failure.
 Output data/600cell-source.json: each coordinate as [a, b] meaning a + b√5 (a, b rational strings), floats for drawing,
 edges, triangles, cells, the four direction elements, and the check log.
-Run on dicto-big-brother:  cd ~/kres-tmp/4d/scripts && ~/geom/bin/python export_source.py
+Run on compute-host:  cd ~/work/4d/scripts && python3 export_source.py
 """
 import json
 from collections import Counter

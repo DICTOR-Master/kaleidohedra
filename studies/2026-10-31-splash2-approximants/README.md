@@ -27,7 +27,7 @@ types (3D acceptance arrangement; only if DICTO wants it).
   Square approximants t = a/b (rows (b, a, 0, −a), (0, a, b, a)), 1/2 ≤ t ≤ 1, b ≤ 40 (246) + Pell ones to 99/140; 240 random
   planes of the same orientation. AB limit in Q(√2).
 - 3D, scripts/ico.py: Z⁶, icosahedral star; φ → F(k+1)/F(k) for 1/1 … 55/34; tile counts = |3×3 minors| of Λ; sign check.
-- scripts/figs.py (matplotlib, dicto-big-brother): fig/splash2-approximants.png, fig/patches.png. All runs on dicto-big-brother
+- scripts/figs.py (matplotlib, compute-host): fig/splash2-approximants.png, fig/patches.png. All runs on compute-host
   (~/studies/splash2-approximants), seconds each.
 
 ## Results (data/*.log, data/*.json)

@@ -1,4 +1,4 @@
-# Fable review 2026-10-18 -- fill the REPORT.md placeholders from data/fable-node.json (run after the dicto-node job).
+# Fable review 2026-10-18 -- fill the REPORT.md placeholders from data/fable-node.json (run after the compute-host-2 job).
 import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); D = json.load(open(os.path.join(HERE, '..', 'data', 'fable-node.json')))
 rep = open(os.path.join(HERE, '..', 'REPORT.md')).read()

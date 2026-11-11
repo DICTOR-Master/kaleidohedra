@@ -1,7 +1,7 @@
 # Photo / render pairs for the three views of the bipyramid, DICTO mark on each render, "photo © DICTO" note.
 # The output contains DICTO's photos: write it only outside the repository.
-# Usage: ~/geom/bin/python sheet.py photodir renderdir logo out.png [title-suffix]
-#    or: ~/geom/bin/python sheet.py mark render.png logo out.png
+# Usage: python3 sheet.py photodir renderdir logo out.png [title-suffix]
+#    or: python3 sheet.py mark render.png logo out.png
 import sys, os
 from PIL import Image, ImageDraw, ImageFont
 if sys.argv[1] == 'mark':                       # sheet.py mark render.png logo out.png : DICTO mark on a single render

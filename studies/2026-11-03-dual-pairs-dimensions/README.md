@@ -4,8 +4,8 @@ DICTO proposed: "can we find out similar interactions with the other Platonic so
 Follow-ups proposed the same day: OG and the D·I interactions, new golden cycles, hyper-lattice cycles, RD/TO cycles, and the
 golden cut rhombic dodecahedra as 4D slices. This study follows the 6D study (studies/2026-11-03-6d-golden-cubes; its
 cubes_lib.py and sixd_lib.py are copied here unchanged). The results note (typeset, 9 pages) is
-`~/Documents/papers-to-read/dual-pairs-through-dimensions.pdf`, from `note/paper.html`, printed on dicto-big-brother with
-~/kres-tmp/cw-print/print.mjs (footer "study, not published").
+`~/Documents/papers-to-read/dual-pairs-through-dimensions.pdf`, from `note/paper.html`, printed on compute-host with
+~/work/cw-print/print.mjs (footer "study, not published").
 
 Setting: P = {n.x <= 1}, P* = conv(n). The sections of P x P* by y = x/mu are S(mu) = P cap mu P*. Their polars are the hulls
 H(mu) = conv(P cup mu P*) = mu polar(S(mu)). nu = mu/r^2.
@@ -125,5 +125,5 @@ Naming candidates (for DICTO):
 - mock-up of the proposed Dual-Pair Cycles world (11-03, not built): scripts/mockup_render.py (exact renders) and
   scripts/mockup_page.py (app-style pages) -> ~/Documents/papers-to-read/dual-pair-cycles-mockup.pdf (footer "mock-up, not built").
 
-Run on dicto-big-brother (~/kres-tmp/dual-pairs) with ~/geom/bin/python, each step under 170 s. Arguments:
+Run on compute-host (~/work/dual-pairs) with python3, each step under 170 s. Arguments:
 s1/s6 `co|di|tt` (s6 also takes max path length 6), s4c `L|G`, s9 `B4|F4|H4`, s9b `F4|H4`; figs: `python figs.py <out> <logo>`.

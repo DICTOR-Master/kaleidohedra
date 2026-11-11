@@ -65,6 +65,6 @@ for k,(r,ps) in enumerate(sorted(geo,key=lambda g:-g[0]['fill'])):
     im=draw(ps,S,rot(0.6,0.45)); sheet.paste(im,(x,y))
     t=' + '.join(r['pieces']); d.text((x+8,y+S+6),t,font=F(20),fill=(43,38,32))
     d.text((x+8,y+S+34),'%s · fill %.1f%% · vol %.4f'%(NET[r['network']],100*r['fill'],r['vol']),font=F(17),fill=(109,101,86))
-logo=Image.open('/home/dicto/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((140,140)); sheet.paste(logo,(sheet.width-180,20),logo)
+logo=Image.open('~/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((140,140)); sheet.paste(logo,(sheet.width-180,20),logo)
 d.text((sheet.width-330,sheet.height-40),'DICTO · dictospheres.com',font=F(20),fill=(109,101,86))
-sheet.save('/home/dicto/Documents/papers-to-read/shadow-fusions-chunky.png'); print(len(geo),'drawn',sheet.size)
+sheet.save('~/Documents/papers-to-read/shadow-fusions-chunky.png'); print(len(geo),'drawn',sheet.size)

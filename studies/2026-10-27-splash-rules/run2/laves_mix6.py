@@ -1,6 +1,6 @@
 # Splash Rules run 2, Laves phases, 6-layer context (the big atom at the foot of a gap reaches past 4 layers above lam = 17/96) (DICTO 2026-10-28, 'start the Laves phases run'): run 1's c/h test on the Laves network of every
 # stacking (laves_net.py: big atoms Mg weight lam on the diamond-type sites, small atoms Cu/Zn weight 0, 3 kagome + 1 per gap;
-# ABC = MgCu2 C15, AC = MgZn2 C14, ACBC = MgNi2 C36); 6 sites per gap; copied from pyro_mix.py; ~/kres-tmp/pyro/pyro_walk.py net, #57's census engine unchanged, exact rational arithmetic).
+# ABC = MgCu2 C15, AC = MgZn2 C14, ACBC = MgNi2 C36); 6 sites per gap; copied from pyro_mix.py; ~/work/pyro/pyro_walk.py net, #57's census engine unchanged, exact rational arithmetic).
 # Words: every primitive close-packed stacking up to 6 layers, up to symmetry (as scripts/splash.py). For each lam-window:
 #   LOCALITY: role + the 3 layer steps round the piece's gap (4 layers) fixes the exact volume (clash count);
 #   HALVES:   each volume = a V(pure c) + b V(pure h), constant rational a, b (coefficient matching in lam);
@@ -27,7 +27,7 @@ STEP = {('A', 'B'): 1, ('B', 'C'): 1, ('C', 'A'): 1, ('B', 'A'): -1, ('C', 'B'):
 def steps(word): n = len(word); return [STEP[(word[k], word[(k + 1) % n])] for k in range(n)]
 ROLE = ['M0', 'M1', 'K1', 'K2', 'K3', 'T']                # motif order per gap (laves net_for)
 if sys.argv[1] == 'walk':
-    E57 = os.path.expanduser('~/kres-tmp/st57/scripts'); sys.path.insert(0, E57); os.chdir(E57)
+    E57 = os.path.expanduser('~/work/st57/scripts'); sys.path.insert(0, E57); os.chdir(E57)
     sys.path.insert(0, HERE); from laves_net import laves
     def net_for(w):
         G, big, small = laves(w); n = len(w); motif = []

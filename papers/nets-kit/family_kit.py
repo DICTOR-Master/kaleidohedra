@@ -2,7 +2,7 @@
 one A4 page each, one colour per solid, every cut edge numbered on both sides so matching edges are easy to find.
 Geometry and net search copied from studies/2026-11-06-five-in-octet/cardkit/nest_kit.py (spanning-tree unfolding,
 shapely overlap check). Every net is checked: no overlap, each cut edge has exactly one glue tab, fits the page.
-Run on dicto-big-brother with ~/geom/bin/python.  Usage: family_kit.py [edge_mm] [out.pdf]"""
+Run on compute-host with python3.  Usage: family_kit.py [edge_mm] [out.pdf]"""
 import sys, math, itertools, numpy as np
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt

@@ -1,7 +1,7 @@
 # DICTO 2026-10-18 octet study -- STEP 15: the Penrose core = central thick Penrose prism (step 13) trimmed to the middle piece.
 # Exact: prism side planes contain the axis a and the rhombus edges (all in Q(sqrt5)); core = prism & H - OCD1 - OCD2 (keys clear, step 14,
 # checked exactly here), so vol core = vol(prism & H) - vol(prism & H & OCD1) - vol(prism & H & OCD2). -> data/step15-core.json
-# Also writes data/step15-input.json (float) for the mesh split on dicto-node (step15_mesh.py).
+# Also writes data/step15-input.json (float) for the mesh split on compute-host-2 (step15_mesh.py).
 import json as js, numpy as np
 from exactpoly import *
 S1 = load('step1-ocd-exact.json'); S5 = load('step5-keyed-octet.json')

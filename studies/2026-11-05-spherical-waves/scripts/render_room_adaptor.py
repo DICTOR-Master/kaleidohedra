@@ -4,7 +4,7 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 from matplotlib.colors import LightSource
 from scipy.spatial import ConvexHull
 D = np.load("adaptor-mesh.npz"); V, T, c, B = D["v"], D["t"], D["c"], D["B"]
-O = np.array(json.load(open("/home/dicto/study-runs/og-pent/cut/data/network.json"))["ocd"]); O = O - O.mean(0)
+O = np.array(json.load(open("~/study-runs/og-pent/cut/data/network.json"))["ocd"]); O = O - O.mean(0)
 tris = V[T] - c; ls = LightSource(azdeg=315, altdeg=40)
 def shade(tr, col):
     n = np.cross(tr[:, 1] - tr[:, 0], tr[:, 2] - tr[:, 0]); n /= np.linalg.norm(n, axis=1)[:, None] + 1e-12

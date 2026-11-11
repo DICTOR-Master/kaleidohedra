@@ -3,12 +3,12 @@ vertex-first; Greater and Lesser Golden Cut Dodecahedra, cell-first) are proved 
 explicit bijection of corners that scales every squared distance by one factor, checked exactly in Q(sqrt5)
 (q5.Q5; floats only propose the bijection). s5 compared sorted distance lists, which is necessary but not by itself
 sufficient for congruence. Same method as s7_icosaxes_exact.py.
-usage (dicto-big-brother): ~/geom/bin/python s8_sections_bijection.py -> ../data/s8-sections-bijection.json
+usage (compute-host): python3 s8_sections_bijection.py -> ../data/s8-sections-bijection.json
 """
 import sys, os, json, itertools
 from fractions import Fraction as Fr
 HERE = os.path.dirname(os.path.abspath(__file__)); DATA = os.path.join(HERE, '..', 'data')
-SC = os.path.expanduser('~/kres-tmp/studies/2026-10-27-white-queen-polar/scripts')
+SC = os.path.expanduser('~/work/studies/2026-10-27-white-queen-polar/scripts')
 sys.path.insert(0, SC); cwd = os.getcwd(); os.chdir(SC)
 import atlas120 as A
 os.chdir(cwd)

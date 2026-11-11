@@ -6,7 +6,7 @@
     matching the Greater and Lesser Golden Cut Dodecahedra; exact slices from the #65 atlas code (atlas120.py cut()),
     heights identified from the float match and confirmed by exact scale-free congruence (all pairwise squared distances
     over their sum, sorted, equal in Q(sqrt5)), as #88's exact_cmp.py.
-usage (dicto-big-brother): python s5_exact4d.py -> ../data/s5-exact4d.json
+usage (compute-host): python s5_exact4d.py -> ../data/s5-exact4d.json
 """
 import sys, os, json, itertools
 import sympy as sp
@@ -67,7 +67,7 @@ for h, x, lab in ((1 / G ** 2, xG['tetrahedron'], 'Greater Golden Cut Tetrahedro
 out['tesseract'] = rows
 
 # (b) 120-cell via the #65 atlas
-SC = os.path.expanduser('~/kres-tmp/studies/2026-10-27-white-queen-polar/scripts')
+SC = os.path.expanduser('~/work/studies/2026-10-27-white-queen-polar/scripts')
 sys.path.insert(0, SC); cwd = os.getcwd(); os.chdir(SC)
 import atlas120 as A
 os.chdir(cwd)

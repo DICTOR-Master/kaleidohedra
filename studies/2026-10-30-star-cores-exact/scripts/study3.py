@@ -4,7 +4,7 @@
 # swept as the contrast. Each is run under DICTO's growth rule T (#38) until it returns, and its cores (#78, Proposition 5) are turned
 # until they return. Main statement: two families give hulls of period four (two for one family) and cores of period two.
 # A solid with planes at the feet s*n (n an axis vector) is T of the points s*n: halfspace_solid([(s n, s^2 n.n)]).
-# Usage: ~/geom/bin/python study3.py <exactlib dir> <out json> [fine]
+# Usage: python3 study3.py <exactlib dir> <out json> [fine]
 import sys, os, json
 LIB, OUT = sys.argv[1:3]; sys.path.insert(0, LIB)
 from exactlib import *

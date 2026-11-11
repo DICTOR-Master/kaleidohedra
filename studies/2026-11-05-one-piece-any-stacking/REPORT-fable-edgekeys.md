@@ -1,6 +1,6 @@
 # Edge keys against the three relays of paper #97: 17 cannot become 14
 
-Fable, 6 November 2026. Nothing in the study or the paper was edited; scratch scripts in `/tmp/edgekeys` (Pi and dicto-big-brother), logs there.
+Fable, 6 November 2026. Nothing in the study or the paper was edited; scratch scripts in `/tmp/edgekeys` (Pi and compute-host), logs there.
 
 ## Verdict
 
@@ -22,7 +22,7 @@ Edge-key additions were designed and discarded on paper before any run (Obstruct
 
 ## Checks
 
-Script `/tmp/edgekeys/tworow_sat.py MODEL patch|torus ...` (CaDiCaL through PySAT, dicto-big-brother, each run under 3 min except the last, heartbeat per case, FINAL line). Torus test: for every primitive periodic stacking word up to PMAX joins and its double, every in-plane sublattice of index <= IMAX in Hermite normal form and EVERY skew representative (the gap found in the spiral scan is closed here), sites are identified by the translation group and the SAT question is whether a keyed filling repeats. Rotated translates in one class are handled by naming placements by their rotation matrix.
+Script `/tmp/edgekeys/tworow_sat.py MODEL patch|torus ...` (CaDiCaL through PySAT, compute-host, each run under 3 min except the last, heartbeat per case, FINAL line). Torus test: for every primitive periodic stacking word up to PMAX joins and its double, every in-plane sublattice of index <= IMAX in Hermite normal form and EVERY skew representative (the gap found in the spiral scan is closed here), sites are identified by the translation group and the SAT question is whether a keyed filling repeats. Rotated translates in one class are handled by naming placements by their rotation matrix.
 
 | Run | Result |
 |---|---|
@@ -58,5 +58,5 @@ What would change the count: counting a keyed piece and its mirror image as one 
 
 ## Scripts and logs
 
-- `/tmp/edgekeys/tworow_sat.py` (Pi and dicto-big-brother): models k17, k14, k14q; `patch W D m` and `torus PMAX IMAX [MULT]`; uses `n_slabs.py` copied beside it.
-- Logs on dicto-big-brother `/tmp/edgekeys/`: `k14-patch.log`, `k14q-patch.log`, `k17-torus-pilot.log`, `k14-torus.log`, `k14q-torus.log`, `k17-torus-3-3.log`. No job of mine is left running.
+- `/tmp/edgekeys/tworow_sat.py` (Pi and compute-host): models k17, k14, k14q; `patch W D m` and `torus PMAX IMAX [MULT]`; uses `n_slabs.py` copied beside it.
+- Logs on compute-host `/tmp/edgekeys/`: `k14-patch.log`, `k14q-patch.log`, `k17-torus-pilot.log`, `k14-torus.log`, `k14q-torus.log`, `k17-torus-3-3.log`. No job of mine is left running.

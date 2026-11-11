@@ -6,7 +6,7 @@
 # -> data/scutoid-survey.txt
 import json, numpy as np
 from scipy.spatial import ConvexHull
-D = '/home/dicto/kaleidohedra/studies/'
+D = '~/kaleidohedra/studies/'
 SRC = [('Spheres of Dharma', D + '2026-10-16-interlock/data/orig-pieces.json'), ('Inverted Shells', D + '2026-10-16-interlock/data/flip-ends-pieces.json'),
        ('Vajrayana closing layers', D + '2026-10-16-progenitors/data/gap-pieces.json')]
 def faces(V):
@@ -42,4 +42,4 @@ for name, path in SRC:
             found += k == 'scutoid'
             out.append(f'     {k}: bases (inner, outer) sides {list(b)}, {fr} free corner(s), {nc} corners, {nf} faces, {lt} side triangles; {len(sigs)} shape(s){mark}')
 out.append(f'\nscutoid kinds found: {found}')
-print('\n'.join(out)); open('/home/dicto/kaleidohedra/studies/2026-10-17-scutoids/data/scutoid-survey.txt', 'w').write('\n'.join(out) + '\n')
+print('\n'.join(out)); open('~/kaleidohedra/studies/2026-10-17-scutoids/data/scutoid-survey.txt', 'w').write('\n'.join(out) + '\n')

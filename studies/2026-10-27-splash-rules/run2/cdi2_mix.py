@@ -1,7 +1,7 @@
 # Splash Rules run 2, CdCl2 / CdI2 (DICTO 2026-10-28, 'more halved and swap data sets'): rock salt with the octahedral holes filled in
 # every other gap only: balls S weight lam, octahedral atoms O weight lam in even gaps (empty, weight 0, in odd gaps), tetrahedral holes
 # C + Y weight 0 (3C ABC... doubled = CdCl2, 2H AC = CdI2); odd words are doubled so the filling alternates; roles carry the gap parity;
-# copied from rocksalt_mix.py; ~/kres-tmp/pyro/pyro_walk.py net, #57's census engine unchanged, exact rational arithmetic).
+# copied from rocksalt_mix.py; ~/work/pyro/pyro_walk.py net, #57's census engine unchanged, exact rational arithmetic).
 # Words: every primitive close-packed stacking up to 6 layers, up to symmetry (as scripts/splash.py). For each lam-window:
 #   LOCALITY: role + the 3 layer steps round the piece's gap (4 layers) fixes the exact volume (clash count);
 #   HALVES:   each volume = a V(pure c) + b V(pure h), constant rational a, b (coefficient matching in lam);
@@ -28,8 +28,8 @@ STEP = {('A', 'B'): 1, ('B', 'C'): 1, ('C', 'A'): 1, ('B', 'A'): -1, ('C', 'B'):
 def steps(word): n = len(word); return [STEP[(word[k], word[(k + 1) % n])] for k in range(n)]
 ROLE = ['S', 'C', 'O', 'Y']                             # motif order per gap in pyro_walk.net_for
 if sys.argv[1] == 'walk':
-    E57 = os.path.expanduser('~/kres-tmp/st57/scripts'); sys.path.insert(0, E57); os.chdir(E57)
-    sys.path.insert(0, os.path.expanduser('~/kres-tmp/pyro')); from pyro_walk import net_for
+    E57 = os.path.expanduser('~/work/st57/scripts'); sys.path.insert(0, E57); os.chdir(E57)
+    sys.path.insert(0, os.path.expanduser('~/work/pyro')); from pyro_walk import net_for
     _nf = net_for
     def net_for(w):                                    # same motif and order (S, C, O, Y); O becomes an atom, C a hole
         d = _nf(w); kinds = ['atom', 'hole', 'atom', 'hole']

@@ -3,9 +3,9 @@
 # method rules, no personal facts); (3) dated correction / incident lines from the work log. Output: commits.csv, commit-summary.md,
 # rules.csv, corrections.csv, README-data.md. Keyword classes are a first sort, to be checked by hand before any use.
 import subprocess, re, csv, os, glob, collections
-H = os.path.expanduser('~'); MEM = H + '/.claude/projects/-home-dicto-Downloads-pet-bottle-rhombiverse/memory'
+H = os.path.expanduser('~'); MEM = H + '/.claude/projects/<project>/memory'
 # k-research, k-mix and kaleidohedra are worktrees of ONE repository: listed once (--all covers every branch)
-REPOS = {'kaleidohedra (research, apps, papers)': H + '/kaleidohedra', 'dictospheres (site)': H + '/dictospheres', 'rhombiverse': H + '/Downloads/pet-bottle-rhombiverse', 'references': H + '/Documents/kaleidohedra-references'}
+REPOS = {'kaleidohedra (research, apps, papers)': H + '/kaleidohedra', 'dictospheres (site)': H + '/dictospheres', 'rhombiverse': H + '/<project>', 'references': H + '/Documents/kaleidohedra-references'}
 CLS = [('withdrawal', r'\bwithdr'), ('correction', r'\bcorrect|\bwrong\b|\bmisread|\berratum|\bfix(e[ds])?\b.*\b(claim|number|caption|text|order|credit)'),
        ('bug fix', r'\bfix|\bbug\b|\brevert'), ('rename', r'\brenam'), ('publish/release', r'\bpublish|\brelease|\bzenodo|\bdoi\b'),
        ('verification', r'\bcheck|\bverif|\baudit|\bexact\b|\bproof\b|\bprove'), ('new work', r'.')]

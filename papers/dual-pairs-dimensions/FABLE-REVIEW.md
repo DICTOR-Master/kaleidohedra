@@ -1,6 +1,6 @@
 # Referee report: draft #91, Main Theorem (a) and (b)
 
-Scope: Main Theorem (a) (Lemma 1) and (b) (tesseract × 16-cell), Section 3, with the proof and the s5 checks. Own exact recomputation on dicto-big-brother (sympy): vertices of K ∩ μK* derived from the 24 halfspaces at μ = 5/4, 3/2, 2, 9/4, 5/2, 27/10, 3, 7/2, φ², 2 + 1/φ²; cells and corner matching by explicit construction in the same frame.
+Scope: Main Theorem (a) (Lemma 1) and (b) (tesseract × 16-cell), Section 3, with the proof and the s5 checks. Own exact recomputation on compute-host (sympy): vertices of K ∩ μK* derived from the 24 halfspaces at μ = 5/4, 3/2, 2, 9/4, 5/2, 27/10, 3, 7/2, φ², 2 + 1/φ²; cells and corner matching by explicit construction in the same frame.
 
 ## Verdict
 

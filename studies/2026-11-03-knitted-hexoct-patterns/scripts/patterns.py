@@ -1,6 +1,6 @@
 # Knitted HexOct: Patterns (DICTO's Knitted HexOct, spec of 2026-11-02). Builds every number, chart, table and figure of the
 # pattern booklet from the spec's formulas, with exact checks, and writes paper.html, figs/*.svg and data/check.out.
-# Run on dicto-big-brother with ~/geom/bin/python:  python patterns.py <out dir> <dir holding tiles.py, engine.py, stackings.py>
+# Run on compute-host with python3:  python patterns.py <out dir> <dir holding tiles.py, engine.py, stackings.py>
 # (the #75 scripts of studies/2026-10-29-endless-stack-cell, as for the spec's check.py).
 import itertools, math, os, sys
 from fractions import Fraction as Fr

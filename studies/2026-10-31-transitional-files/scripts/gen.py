@@ -1,10 +1,10 @@
 import json, os, collections, html
 INV = os.path.dirname(os.path.abspath(__file__))
 SP = os.path.dirname(INV)
-OUT = '/home/dicto/k-research/studies/2026-10-31-transitional-files'
+OUT = '~/k-research/studies/2026-10-31-transitional-files'
 items = json.load(open(os.path.join(INV, 'items.json')))
-MN = {'pi': 'Pi', 'node': 'dicto-node', 'dbb': 'dicto-big-brother'}
-SCRIPT = {'pi': 'pi', 'node': 'dicto-node', 'dbb': 'dicto-big-brother'}
+MN = {'pi': 'Pi', 'node': 'compute-host-2', 'dbb': 'compute-host'}
+SCRIPT = {'pi': 'pi', 'node': 'compute-host-2', 'dbb': 'compute-host'}
 
 def fmt(kb):
     if kb >= 1024 * 1024: return '%.1f GB' % (kb / 1048576)
@@ -20,7 +20,7 @@ for m in MN:
          '# Generated read-only; nothing has been deleted yet.']
     if m == 'pi':
         L.append('# Tracked files in ~/k-research (drafts, old versions) will show as deleted in git status;')
-        L.append('# commit their removal afterwards (git -C /home/dicto/k-research add -u <paths>; commit).')
+        L.append('# commit their removal afterwards (git -C ~/k-research add -u <paths>; commit).')
     if m != 'pi':
         L.append('# Run on %s itself (copy it there, then: bash cleanup-%s.sh).' % (MN[m], SCRIPT[m]))
     L.append('')
@@ -29,7 +29,7 @@ for m in MN:
         tot += x['kb']
         L.append('# %s · %s · permanent copy: %s' % (fmt(x['kb']), x['why'], x['where']))
         if x['kind'] == 'worktree':
-            L.append("git -C /home/dicto/kaleidohedra worktree remove --force '%s'" % x['path'])
+            L.append("git -C ~/kaleidohedra worktree remove --force '%s'" % x['path'])
         else:
             L.append("rm -rf -- '%s'" % x['path'])
     L.insert(4, '# Total: %s' % fmt(tot))
@@ -44,7 +44,7 @@ for x in items:
     tot[(x['machine'], x['conf'])][1] += x['kb']
 E = html.escape
 def short(p):
-    return p.replace('/home/dicto/', '~/').replace('/tmp/claude-1000/-home-dicto-Downloads-pet-bottle-rhombiverse/', '/tmp/claude-1000/…/')
+    return p.replace('~/', '~/').replace('/tmp/claude-1000/<project>/', '/tmp/claude-1000/…/')
 
 rows = []
 rows.append('<table><tr><th>Machine</th><th class="n">SAFE</th><th class="n">CHECK</th><th class="n">KEEP</th><th class="n">All</th></tr>')
@@ -105,7 +105,7 @@ page = '''<!doctype html>
 <h2>1. Totals</h2>
 <p>DICTO's rule of 31 October: a transitional file goes once its content is kept for good, on Zenodo, in git, or rebuildable from committed sources. Nothing has been deleted. SAFE means the permanent copy was checked; CHECK means it is likely transitional but needs DICTO's word; KEEP means there is no other copy, so it should move to the LaCie.</p>
 %s
-<p>The SAFE items are in three scripts, one per machine, in the session scratchpad: <code>cleanup-pi.sh</code>, <code>cleanup-dicto-node.sh</code>, <code>cleanup-dicto-big-brother.sh</code>. Each line is one literal path with its size and reason. The Pi has 4.2 GB free of 29 GB; its SAFE items free about %s. Most of the space is on dicto-node and dicto-big-brother, which have 868 GB and 1.7 TB free.</p>
+<p>The SAFE items are in three scripts, one per machine, in the session scratchpad: <code>cleanup-pi.sh</code>, <code>cleanup-compute-host-2.sh</code>, <code>cleanup-compute-host.sh</code>. Each line is one literal path with its size and reason. The Pi has 4.2 GB free of 29 GB; its SAFE items free about %s. Most of the space is on compute-host-2 and compute-host, which have 868 GB and 1.7 TB free.</p>
 
 <h2>2. The ten largest items</h2>
 %s

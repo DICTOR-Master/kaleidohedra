@@ -1,6 +1,6 @@
 import os, subprocess, json
 INV = os.path.dirname(os.path.abspath(__file__))
-H = '/home/dicto'
+H = '~'
 KR = H + '/k-research'
 
 def tsv(name, key=0, val=2):
@@ -130,7 +130,7 @@ add('pi', 'SAFE', H + '/.npm/_cacache', 'npm download cache', 'refilled by npm o
 add('pi', 'SAFE', H + '/.cache/thumbnails', 'desktop thumbnail cache', 'refilled on demand')
 add('pi', 'SAFE', H + '/__pycache__', 'Python bytecode cache', 'rebuilt on import')
 for s in ['ff9ee5b8-e526-41f8-8f5b-c551bab3dbbe', 'ddbf200a-bb62-4bd6-b8d7-210cc531c23f']:
-    add('pi', 'SAFE', '/tmp/claude-1000/-home-dicto-Downloads-pet-bottle-rhombiverse/' + s, 'scratch of a finished session (RAM disk)', 'none needed: scratch')
+    add('pi', 'SAFE', '/tmp/claude-1000/<project>/' + s, 'scratch of a finished session (RAM disk)', 'none needed: scratch')
 
 # Pi CHECK
 add('pi', 'CHECK', H + '/k-mix-star-step', 'worktree of star-step; merged into master and clean, but committed today before the 12:00 ship', 'git: star-step 3c9bcc44 is in master', kind='worktree')
@@ -151,14 +151,14 @@ add('pi', 'CHECK', H + '/kaleidohedra/node_modules', 'second node_modules (k-mix
 add('pi', 'CHECK', H + '/Pictures/Screenshots', 'desktop screenshots 10-18 to 10-30', 'none: looked at')
 add('pi', 'CHECK', H + '/Downloads/dictoroids_round5_test.ARCHIVED-2026-07-29', 'archived July test', 'unknown')
 add('pi', 'CHECK', H + '/Downloads/pbr-patches', 'old patch files (September)', 'likely applied in rhombiverse git')
-add('pi', 'CHECK', '/tmp/claude-1000/-home-dicto-Downloads-pet-bottle-rhombiverse/998f9583-0bbe-48af-a44e-674289f2a28d/scratchpad', 'scratch of the running session (RAM disk; holds these scripts)', 'clears at reboot; delete after this session')
+add('pi', 'CHECK', '/tmp/claude-1000/<project>/998f9583-0bbe-48af-a44e-674289f2a28d/scratchpad', 'scratch of the running session (RAM disk; holds these scripts)', 'clears at reboot; delete after this session')
 
 # Pi KEEP
-proj = H + '/.claude/projects/-home-dicto-Downloads-pet-bottle-rhombiverse/'
+proj = H + '/.claude/projects/<project>/'
 for p in ['Downloads/sculpture-photos.zip', 'Downloads/sculpture-photos-only.zip', 'Downloads/KPR-photos']:
     add('pi', 'KEEP', H + '/' + p, "DICTO's own photos", 'no other copy found: move to LaCie')
 
-# ---------------- dicto-node ----------------
+# ---------------- compute-host-2 ----------------
 N = H
 node_safe = {
  'k-mix-lens': 'test copy of branch queens-lens (merged); every file in Pi git',
@@ -256,7 +256,7 @@ for n, (why, where) in node_check.items():
 add('node', 'KEEP', N + '/dicto-notes', 'git repo with no copy on the Pi or GitHub found', 'move to LaCie')
 add('node', 'KEEP', N + '/dphotos', "DICTO's photos (IMG_*.jpeg)", 'no other copy found: move to LaCie')
 
-# ---------------- dicto-big-brother ----------------
+# ---------------- compute-host ----------------
 B = H
 dbb_safe = {
  'k-mix': 'test copy (10-27); every file in Pi git',
@@ -296,7 +296,7 @@ kres_safe = {
  'parity': 'two probe scripts', 'old-methods': 'empty helper script', 'focus': 'print scratch',
 }
 for n, why in kres_safe.items():
-    add('dbb', 'SAFE', B + '/kres-tmp/' + n, why,
+    add('dbb', 'SAFE', B + '/work/' + n, why,
         'rebuildable: npm run build' if 'dist' in n else 'none needed: screenshots' if 'shots' in n else 'git on the Pi; Zenodo for zips' if n in ('papers', 'series') else 'rebuildable by committed cover scripts' if 'cover' in n else 'git on the Pi (every file hashed and found)')
 kres_check = {
  'pyramids': ('raw search data (10-30): f2f-deep-level5.pkl 71 MB, q2 results', 'no other copy of the raw data; results in k-research?'),
@@ -331,7 +331,7 @@ kres_check = {
  'print': ('empty', 'none'),
 }
 for n, (why, where) in kres_check.items():
-    add('dbb', 'CHECK', B + '/kres-tmp/' + n, why, where)
+    add('dbb', 'CHECK', B + '/work/' + n, why, where)
 for n, why, where in [
     ('og-poly', 'Heikegani renders (10-24): 3 scene HTML of 27 MB + shots', 'in the nightly LaCie backup; the stylings PDF was delivered'),
     ('runs', 'scale-anomalies sources (IAEA, NIST PDFs) and test renders', 'sources: add to library first'),

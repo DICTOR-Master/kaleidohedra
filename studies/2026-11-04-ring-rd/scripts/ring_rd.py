@@ -3,7 +3,7 @@
 12 rings, one per rhombic face, each squeezed to the rhombus proportion (sqrt2 : 1, the ellipse touching the four side midpoints)
 and bowed onto the ball through the edge midpoints, so it reads as a fat crescent; 8 notches (outer lugs) evenly round each ring;
 a tie where two rings touch (24, one per edge); open gaps at the 14 corners. Illustration, not an exact ring-flex model.
-Writes figures/ring-rd.png (two views). Run with ~/geom/bin/python on dicto-big-brother."""
+Writes figures/ring-rd.png (two views). Run with python3 on compute-host."""
 import itertools, math, os
 import numpy as np
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt

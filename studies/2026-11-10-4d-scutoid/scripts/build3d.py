@@ -7,7 +7,7 @@ import sys, os, json, itertools, numpy as np
 from fractions import Fraction as Fr
 from scipy.spatial import HalfspaceIntersection, ConvexHull
 from scipy.optimize import linprog
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/b1-walls/swap')); sys.path.insert(0, os.path.expanduser('~/kres-tmp/st57/scripts')); sys.path.insert(0, os.path.expanduser('~/kres-tmp/splash'))
+sys.path.insert(0, os.path.expanduser('~/work/b1-walls/swap')); sys.path.insert(0, os.path.expanduser('~/work/st57/scripts')); sys.path.insert(0, os.path.expanduser('~/work/splash'))
 from validate import net_for, ROLE_OF
 word, s = 'ACABC', Fr(1, 5); la, lb, wall = -0.155, -0.095, -0.125
 spec = net_for(word, s); n = len(word); G = np.array(spec['G'], float); L = np.linalg.cholesky(G).T

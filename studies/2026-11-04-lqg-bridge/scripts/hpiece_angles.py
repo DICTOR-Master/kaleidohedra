@@ -3,7 +3,7 @@ import os, sys, math, numpy as np
 from fractions import Fraction as Fr
 from collections import Counter
 exec(open('scripts/bridge.py').read().split("FAM = {")[0])
-HEX = os.path.expanduser('~/kres-tmp/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
+HEX = os.path.expanduser('~/work/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
 import tiles as Tl
 os.chdir(here); Hh = math.sqrt(2/3)
 def cart(p): return np.array([float(p[0]) + float(p[1])/2, float(p[1])*math.sqrt(3)/2, float(p[2])*Hh])

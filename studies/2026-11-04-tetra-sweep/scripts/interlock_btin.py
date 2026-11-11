@@ -3,7 +3,7 @@
 Slab = tiles whose centroids lie within half a period of a plane through the origin, for normals (0,0,1), (1,1,1), (1,1,0); inner tiles (lateral distance < 3) tested,
 the rest fixed. Same calibration line as the original (Dyskin tetrahedra) is run first by the imported module."""
 import os, sys, json, itertools, numpy as np
-here = os.getcwd(); IL = os.path.expanduser('~/kres-tmp/2026-11-04-hopf-interlock')
+here = os.getcwd(); IL = os.path.expanduser('~/work/2026-11-04-hopf-interlock')
 g = {'__file__': os.path.join(IL, 'interlock_rot.py')}; exec(open(os.path.join(IL, 'interlock_rot.py')).read().split("# calibration: Dyskin tetrahedra")[0], g)
 d = json.load(open('data/tiling-N20.json'))
 B = np.array([(1,1,0),(1,0,1),(0,1,1)], float).T; L = B @ np.array([[10,1,4],[0,2,1],[0,0,1]], float)

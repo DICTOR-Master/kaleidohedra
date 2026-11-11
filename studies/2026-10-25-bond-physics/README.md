@@ -19,7 +19,7 @@ The web of bonds gives the exact area of every shared face ("bond") of the two D
   - G5 asks which cell contains the midpoint of the ⟨100⟩ anion hop in fluorite (between two neighbouring tet sites), exactly, by minimal power.
 - **Part P, `scripts/links.py` (floats).** Spearman rank correlations with **exact permutation p-values** (all n! orderings). Where a measured quantity is a range (two references disagree), every endpoint combination is tried and the range of ρ_S is reported, with the p-value of the most extreme choice.
 - **References.** `scripts/crossref_check.py` checks every DOI on api.crossref.org (title, journal, year, volume, pages; `data/raw/crossref.json`). DICTO's library first: five `ask-library` queries (`data/raw/ask-library.txt`) plus keyword search of INDEX.html / README.md / READING-LIST.md for O'Keeffe, coordination number, solid angle, superionic, fluorite, bond valence, Cauchy, elastic constant, Richard, Finney, force chain, ionic conduct. **Nothing relevant was found in the library** (the only hit is the earlier bond-web note on Richards' 1974 method B). Web searches and Crossref queries were then used.
-- **Runs.** Part G on dicto-big-brother, `nice -n 10`, load 2.7 at start, 154.9 s. (A duplicate run was started by mistake and stopped before it wrote anything; its output was not used.) Part P and the Crossref check on the Pi, under 2 s.
+- **Runs.** Part G on compute-host, `nice -n 10`, load 2.7 at start, 154.9 s. (A duplicate run was started by mistake and stopped before it wrote anything; its output was not used.) Part P and the Crossref check on the Pi, under 2 s.
 
 ## Results
 

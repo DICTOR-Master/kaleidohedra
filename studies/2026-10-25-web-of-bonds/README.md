@@ -170,7 +170,7 @@ These may well be easy consequences of the standard theory. A web search is need
 | C app float cross-check (frame, areas, counts, float findings) | C1–C4 | 105 | 0 |
 | **total** | | **371** | **0** |
 
-Run times on dicto-big-brother (load < 0.4, `nice -n 10`):
+Run times on compute-host (load < 0.4, `nice -n 10`):
 - A: 13.8 s
 - B: 30.2 s
 

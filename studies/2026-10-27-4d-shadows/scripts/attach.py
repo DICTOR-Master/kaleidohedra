@@ -5,7 +5,7 @@ shadow patterns.  Exact (sympy); floats only to screen angle sums.
 Variants (from shadows.py):
   TBP-5  : 5-cell edge-first (= face-first) shadow, graph of the triangular bipyramid J12
   OCT-16 : 16-cell edge-first shadow (= its central slice), graph of the octahedron
-Run on dicto-big-brother after shadows.py:  ~/geom/bin/python attach.py
+Run on compute-host after shadows.py:  python3 attach.py
 """
 import itertools
 import json

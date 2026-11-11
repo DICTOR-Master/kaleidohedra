@@ -3,7 +3,7 @@
 # neighbouring rings sit side by side), the zip ties as short dark bars across each shared side at 1/4 and 3/4, the optional
 # extra tie where the two c-towers touch. Painter's order (rings and ties sorted by depth); rings seen from behind drawn
 # lighter, so one sees through the open centres to the rings behind.
-# Usage (dicto-big-brother): TILES_DIR=~/kres-tmp/endless LOGO=<dicto-logo.png> ~/geom/bin/python mockup.py
+# Usage (compute-host): TILES_DIR=~/work/endless LOGO=<dicto-logo.png> python3 mockup.py
 #   -> ../out/mockup-c.png, mockup-h.png, mockup-sheet.png
 import os, sys, math
 import numpy as np

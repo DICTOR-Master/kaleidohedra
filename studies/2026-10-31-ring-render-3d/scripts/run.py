@@ -1,5 +1,5 @@
 # Driver: builds scene specs from camera fits + look settings and renders with Blender.
-# Usage (dicto-big-brother, in the work dir): ~/geom/bin/python run.py look.json view... (view = 1|2|3|clean|open|htile)
+# Usage (compute-host, in the work dir): python3 run.py look.json view... (view = 1|2|3|clean|open|htile)
 # look.json: {samples, res, ring{}, wood{}, world{}, exposure, light{...}, views{"1": {light{}, cam, obj}}, ...}
 import json, sys, subprocess, os, copy
 HERE = os.path.dirname(os.path.abspath(__file__))

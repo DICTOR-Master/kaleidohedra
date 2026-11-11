@@ -10,8 +10,8 @@
 #   output       = RGBA cut-out per ring rotated so one corner points up, + JSON of its three corners in cut-out pixels;
 #                  zip-tie patches cut across the ring-ring boundaries where the boundary is whitest
 # The photo is DICTO's own and PRIVATE: inputs and outputs live outside any git repo (PHOTO, OUTDIR env vars).
-# Usage (dicto-big-brother): PHOTO=~/kres-tmp/ringphoto/2026-10-31-tetra-nets.jpg OUTDIR=~/kres-tmp/ringphoto/derived \
-#        ~/geom/bin/python cutout.py
+# Usage (compute-host): PHOTO=~/work/ringphoto/2026-10-31-tetra-nets.jpg OUTDIR=~/work/ringphoto/derived \
+#        python3 cutout.py
 import os, json, math
 import numpy as np
 from PIL import Image

@@ -12,7 +12,7 @@ Part D. Uniform polytopes of the B4 and F4 families: every section perpendicular
   Corner-cut-cube gaps: exact depth range; golden hits located exactly and matched corner to corner (as s8).
 Part E. Uniform polytopes of the H4 family: the only O_h sections are central, perpendicular to a 120-cell corner
   direction (Part B); each checked (floating point classification; any cube-like hit would be checked exactly).
-usage (dicto-big-brother): ~/geom/bin/python s9_why_not_cubes.py [A|B|C|D|E ...] -> ../data/s9-why-not-cubes-<part>.json
+usage (compute-host): python3 s9_why_not_cubes.py [A|B|C|D|E ...] -> ../data/s9-why-not-cubes-<part>.json
 """
 import sys, os, json, itertools, time, math
 from fractions import Fraction as Fr

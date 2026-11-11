@@ -9,4 +9,4 @@ DICTO's request (2026-10-31): "star cores cover for book 9x9?! matching current 
 - Initials (DICTO's idea; right): Star Halo, TI Star core, Alice, Red King, Chucky, OG, Red Knight, ED F16 (stand-in: no study shape starts with E), Samson.
 - Letters: HexOct LED letters (DSEG14 Classic, OFL) in the opposite palette colour (gold/violet, teal/red, blue/orange, green/rose; dark letter on the silver star).
 - Title panel: STAR CORES (gold), SPIKES HALOS AND CYCLES (teal), ◆ DICTO ◆ (violet).
-- scripts/star_square.py (SET=initials, LETTERS=opposite), scripts/cover_title.py (SQUARE, OUT); run on dicto-big-brother.
+- scripts/star_square.py (SET=initials, LETTERS=opposite), scripts/cover_title.py (SQUARE, OUT); run on compute-host.

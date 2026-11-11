@@ -1,6 +1,6 @@
 # All views of the ring h-tile (DICTO 2026-10-31 "i need all views of 3D object"), drawn with the first mock-up's rings, coloured by
 # part: the double pyramid's 18 outside rings (gold), the two half-octahedra's 15 rings each (blue, violet). Same scale as DICTO's
-# build (a tetrahedron = 16 rings). Usage (dicto-big-brother): LOGO=<dicto-logo.png> ~/geom/bin/python htile_views.py
+# build (a tetrahedron = 16 rings). Usage (compute-host): LOGO=<dicto-logo.png> python3 htile_views.py
 import os, sys, inspect
 import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)

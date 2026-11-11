@@ -3,7 +3,7 @@
 # Float: share of space, the leftover pieces (global, across cells), their volumes and sphericity, and the solid's faces.
 import json, itertools, math, numpy as np, manifold3d as m3
 from scipy.spatial import HalfspaceIntersection, ConvexHull
-H = '/home/dicto/dbt-exact/2026-10-19-og-gyrated-octet/'
+H = '~/dbt-exact/2026-10-19-og-gyrated-octet/'
 fq = lambda s: (lambda a, b: float(eval(a)) + float(eval(b)) * 5 ** .5)(*s.split('|'))
 DB = np.array([[fq(c) for c in v] for v in json.load(open(H + 'dbt-exact.json'))['V']])
 D = json.load(open(H + '../2026-10-18-ocd-octet/data/step1-ocd-exact.json')); R = fq(D['R'])

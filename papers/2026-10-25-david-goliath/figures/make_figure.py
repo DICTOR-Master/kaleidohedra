@@ -1,5 +1,5 @@
 # Figure 1 of the David and Goliath paper: Goliath, David, and Goliath clad by its 12 Davids (float rendering of the exact cells).
-# Run: ~/geom/bin/python make_figure.py  (dicto-big-brother; needs ../../dicto-logo.png)
+# Run: python3 make_figure.py  (compute-host; needs ../../dicto-logo.png)
 import numpy as np, itertools, os
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt

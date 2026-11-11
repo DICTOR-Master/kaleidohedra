@@ -1,5 +1,5 @@
 # Fable, GBPC pass 4 (2026-10-16): export the exact geometry of G' (Q(sqrt5) numbers as "a|b" = a + b*sqrt5) so the search engine
-# (gbpc_search.py, numpy + fractions only) can run on dicto-node. Also exports the five Bodhi pieces exactly (block coordinates p + q*phi
+# (gbpc_search.py, numpy + fractions only) can run on compute-host-2. Also exports the five Bodhi pieces exactly (block coordinates p + q*phi
 # from studies/2026-10-12-bodhi-pieces/data/bodhi-B*-raw.json, faces as vertex triples).
 import sys, io, os, contextlib, itertools, json, re, numpy as np
 from fractions import Fraction as Fr
@@ -19,7 +19,7 @@ def parse(sx):
     s = re.sub(r'(\d+)', r'Q(\1)', sx)
     s = re.sub(r'\)φ', r')*P', s).replace('φ', 'P')
     return eval(s, {'P': phi, 'Q': Q})
-BD = '/home/dicto/kaleidohedra/studies/2026-10-12-bodhi-pieces/data'
+BD = '~/kaleidohedra/studies/2026-10-12-bodhi-pieces/data'
 bodhi = {}
 for b, nm in [('B1', 'Vajra (fine)'), ('B2', 'Chatra'), ('B3', 'Mudra'), ('B4', 'Crown Jewel'), ('B5', 'Diadem')]:
     d = json.load(open(f'{BD}/bodhi-{b}-raw.json'))

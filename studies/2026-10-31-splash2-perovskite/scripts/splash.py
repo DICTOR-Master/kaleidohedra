@@ -3,7 +3,7 @@
 # whose block frequencies fit it exactly. Also: per-site locality (smallest window that fixes each site's value) and the
 # Swap Rule F(c,h) + F(h,c) = F(c,c) + F(h,h) for per-gap quantities fixed by the gap's two layers.
 # Exact rational arithmetic throughout (fractions.Fraction); no floats in any test.
-# Usage (dicto-big-brother): python3 splash.py <outdir>
+# Usage (compute-host): python3 splash.py <outdir>
 import sys, os, json, itertools, random
 from fractions import Fraction as Fr
 from collections import Counter, defaultdict

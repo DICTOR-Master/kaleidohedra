@@ -3,8 +3,8 @@
 out of #22's title (it stays in the card's DOI badge). Usage: apply_first_lines.py <index.html> (edits in place)."""
 import re, sys, importlib.util, html
 p = sys.argv[1]; s = open(p).read()
-spec = importlib.util.spec_from_file_location('fl', '/home/dicto/k-research/papers/card-first-lines/make.py')
-src = open('/home/dicto/k-research/papers/card-first-lines/make.py').read()
+spec = importlib.util.spec_from_file_location('fl', '~/k-research/papers/card-first-lines/make.py')
+src = open('~/k-research/papers/card-first-lines/make.py').read()
 NEW = {}; exec(src[src.index('NEW = {'):src.index('ORDER =')], {}, ns := {}); NEW = ns['NEW']
 n = 0
 for k, line in NEW.items():

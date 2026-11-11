@@ -4,7 +4,7 @@ v' face the eye and wrap the outside; the other 580 cells nest inside without ov
 EXACT check: in every shell, all cells have the same sorted list of six squared edge lengths in this view (Q(√5)), and the
 core cells are the icosahedron's central pyramid (apex at the centre, base vertices on a regular icosahedron).
 Picture: renders/cleo-shells.png, one panel per shell (that shell solid, the shells inside it faint), core in gold.
-Run on dicto-big-brother:  cd ~/kres-tmp/4d/scripts && ~/geom/bin/python cleo_shells.py
+Run on compute-host:  cd ~/work/4d/scripts && python3 cleo_shells.py
 """
 import json
 from collections import defaultdict

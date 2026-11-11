@@ -1,4 +1,4 @@
-// Shoots render_p4.html on dicto-node (served from ~/cleo-hold on :8001, files under interlock/): node shoot_p4.mjs <job> -> /tmp/p4/*.png
+// Shoots render_p4.html on compute-host-2 (served from ~/cleo-hold on :8001, files under interlock/): node shoot_p4.mjs <job> -> /tmp/p4/*.png
 //   job hero: 3 bearings x 2 settings; job set <view>: the peel layers, kit pieces and locators for the chosen bearing
 import { chromium } from 'playwright'; import fs from 'node:fs';
 const [job, view = 'A'] = process.argv.slice(2); fs.mkdirSync('/tmp/p4', { recursive: true });

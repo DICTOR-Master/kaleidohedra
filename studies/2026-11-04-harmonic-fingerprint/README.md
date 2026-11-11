@@ -1,6 +1,6 @@
 # Harmonic fingerprint (2026-11-04)
 DICTO: "start the harmonic fingerprint test" (Concordance 5.5, spherical harmonics find: Steinhardt–Nelson–Ronchetti 1983).
-Method: Q_l and W_l-hat of a solid's corner directions, l = 4…12 (scripts/fingerprint.py, dicto-big-brother, data/fingerprint.log/json).
+Method: Q_l and W_l-hat of a solid's corner directions, l = 4…12 (scripts/fingerprint.py, compute-host, data/fingerprint.log/json).
 Validation: CO (fcc) .191/.575, J27 (hcp) .097/.485, bcc .036/.511, icosahedron Q4 0 Q6 .663 = the classical values.
 
 ## Results

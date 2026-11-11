@@ -1,5 +1,5 @@
 # DICTO 2026-11-04, paper #92: figures (float copies of the exact constructions of tiling_checks.py), matplotlib.
-#   ~/geom/bin/python3 figs.py   -> figures/*.png
+#   python33 figs.py   -> figures/*.png
 import itertools, math
 import numpy as np
 import matplotlib

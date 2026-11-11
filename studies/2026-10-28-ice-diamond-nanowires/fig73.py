@@ -33,6 +33,6 @@ for (k, j), c in zip(J.items(), cols):
 b.set_xlabel('hexagonality h'); b.set_ylabel('energy above 3C, scaled by 2H')
 b.set_title('(b) Tetrahedral elements: distance from the law', fontsize=9, loc='left'); b.legend(fontsize=6.8, frameon=False, loc='upper left')
 for ax in (a, b): ax.spines[['top', 'right']].set_visible(False); ax.grid(alpha=0.25, lw=0.5)
-fig.tight_layout(); fig.savefig(os.path.expanduser('~/kres-tmp/tetra.png'))
+fig.tight_layout(); fig.savefig(os.path.expanduser('~/work/tetra.png'))
 for k, j in J.items():
     e0 = E(POLY['3C'], j); print(k, {p: round(E(POLY[p], j)-e0, 3) for p in POLY}, 'meV/bilayer')

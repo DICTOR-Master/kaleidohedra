@@ -2,8 +2,8 @@
 # Uses the atlas's own exact cut; compares scale-free invariants: (edge^2 / circumradius^2) for every edge, the sorted list of all
 # pairwise squared distances / circumradius^2, and face kinds.
 import sys, os, json, numpy as np
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/studies/2026-10-27-white-queen-polar/scripts'))
-os.chdir(os.path.expanduser('~/kres-tmp/studies/2026-10-27-white-queen-polar/scripts'))
+sys.path.insert(0, os.path.expanduser('~/work/studies/2026-10-27-white-queen-polar/scripts'))
+os.chdir(os.path.expanduser('~/work/studies/2026-10-27-white-queen-polar/scripts'))
 import atlas120 as A
 target = None
 for t in A.slice_tasks():
@@ -15,7 +15,7 @@ def inv(P):
     r2 = (np.linalg.norm(P, axis=1) ** 2); R2 = r2.mean()
     D = np.sort(np.round(((P[:, None] - P[None]) ** 2).sum(-1)[np.triu_indices(len(P), 1)] / R2, 6))
     return R2, r2.std() / R2, D
-w = json.load(open(os.path.expanduser('~/kres-tmp/dataset-v7/solids/dicto-white-knight.json')))
+w = json.load(open(os.path.expanduser('~/work/dataset-v7/solids/dicto-white-knight.json')))
 W = np.array([[float(c) for c in v['decimal']] for v in w['vertices']]); W -= W.mean(0)
 Rs, ss, Ds = inv(P); Rw, sw, Dw = inv(W)
 print('slice: corners', len(P), 'radius spread', ss, '| White Knight: corners', len(W), 'radius spread', sw)

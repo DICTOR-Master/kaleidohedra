@@ -1,6 +1,6 @@
 # Shared accuracy checks for the geometry studies (DICTO's request, 2026-10-16, after the polar Dharma slips). Each check raises on
 # failure, so a study script stops instead of printing a wrong table. Use:
-#     sys.path.insert(0, '/home/dicto/kaleidohedra/studies/_lib'); import geomcheck as gc
+#     sys.path.insert(0, '~/kaleidohedra/studies/_lib'); import geomcheck as gc
 # Rules (see the study README "Accuracy rules"):
 #   1 frame      every generated solid must share the chain's symmetry axes            gc.frame(V, axes) / gc.orient(V, axes)
 #   2 orders     test both nestings of a pair; polar reversal swaps a dual pair's order gc.both_orders(f, X, Y)

@@ -5,7 +5,7 @@
 import sys, os, json, numpy as np, multiprocessing as mp
 from scipy.spatial import cKDTree
 DS, SLUG, DN, T, OUT = sys.argv[1:6]; sys.argv = [sys.argv[0], DS, '/tmp', '/tmp']
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/star-cores/scripts'))
+sys.path.insert(0, os.path.expanduser('~/work/star-cores/scripts'))
 from star_core import faces_info, polyvol, vol, load
 from star_core import axes
 from star_valley import geo as geo0

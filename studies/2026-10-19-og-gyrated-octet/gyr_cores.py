@@ -1,4 +1,4 @@
-# DICTO 2026-10-20: do the Penrose-core (P2) middle pieces still work in the gyrated octet? Float first (manifold3d, dicto-node).
+# DICTO 2026-10-20: do the Penrose-core (P2) middle pieces still work in the gyrated octet? Float first (manifold3d, compute-host-2).
 # Lower layer = the #37 octet (OG at the origin, octahedron |x|+|y|+|z| <= R); twin plane x+y+z = R; upper layer = its mirror image.
 # Only edges lying in the twin plane change neighbours: round them the cells run O T | T O (the two OGs are mirror images across a
 # shared face) instead of O T O T (two OGs facing by inversion through the edge midpoint, the P2 middle piece).

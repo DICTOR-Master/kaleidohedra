@@ -2,7 +2,7 @@
 # of the octahedral pieces; where it is constant, the pieces shrink together (end of the walk) and the face-count rule predicts it.
 import json, glob, os, sympy as sp
 from fractions import Fraction as Fr
-D = os.path.expanduser('~/kres-tmp/splash/data')
+D = os.path.expanduser('~/work/splash/data')
 for p in sorted(glob.glob(f'{D}/s_*.json'), key=lambda p: Fr(json.load(open(p))['s'])):
     d = json.load(open(p))
     if int(d['rmin']) != 1: print(d['s'], 'reach 2: skipped'); continue

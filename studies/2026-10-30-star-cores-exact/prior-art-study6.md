@@ -1,7 +1,7 @@
 # Prior-art search, study 6 (star cores, exact): A1, A2, B, C
 
 Date: 2026-10-31. Searcher: Claude (subagent), for DICTO.
-Method: local reference library first (`~/bin/ask-library "QUERY" 8`, which runs on dicto-big-brother over the 302-reference library; note: the script lives on this machine at `~/bin/ask-library` and ssh-es to dicto-big-brother itself, so `ssh dicto-big-brother '~/bin/ask-library …'` fails because `~/bin` does not exist there), then web searches and page reads.
+Method: local reference library first (`~/bin/ask-library "QUERY" 8`, which runs on compute-host over the 302-reference library; note: the script lives on this machine at `~/bin/ask-library` and ssh-es to compute-host itself, so `ssh compute-host '~/bin/ask-library …'` fails because `~/bin` does not exist there), then web searches and page reads.
 Marking: **read** = text of the source read by me; **abstract/snippet only** = only an abstract, search snippet or secondary description seen.
 
 Setting recalled: T(S) = {x : v·x ≤ v·v for every corner v}. Each face plane of T(S) passes through a corner v perpendicular to Ov. T(S) is the Voronoi cell of O among the points 2v.

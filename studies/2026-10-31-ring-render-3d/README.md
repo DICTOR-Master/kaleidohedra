@@ -5,12 +5,12 @@ two points per side with small clear zip ties; double scale: 4 rings per unit tr
 checked against his photos of the first finished piece, the double tetrahedral pyramid (triangular bipyramid, 24 rings).
 
 **Privacy:** the photos are DICTO's own and private. They, the photo/render sheets and every image made from them live only
-in `~/Documents/ring-photos/`, `~/Documents/papers-to-read/` and on dicto-big-brother `~/kres-tmp/ring3d/`. This folder holds
+in `~/Documents/ring-photos/`, `~/Documents/papers-to-read/` and on compute-host `~/work/ring3d/`. This folder holds
 code and the look settings only.
 
 ## Method
 
-Renderer: **Blender 5.0.1, Cycles (CPU, 24 threads) on dicto-big-brother** (real subsurface scattering and transmission;
+Renderer: **Blender 5.0.1, Cycles (CPU, 24 threads) on compute-host** (real subsurface scattering and transmission;
 the apt build has no denoiser, so 400 samples with indirect clamp 2).
 
 1. `scripts/ringmesh.py` — true 3D mesh of every ring: rounded-triangle centreline in the face plane (straight parts on the
@@ -34,7 +34,7 @@ the apt build has no denoiser, so 400 samples with indirect clamp 2).
    fill, AgX medium-high contrast. `scripts/run.py` builds the specs from `look.json`; `scripts/mkcam.py` makes a camera for
    a model without a photo (h-tile); `scripts/sheet.py` makes the photo/render sheet and puts the DICTO mark on renders.
 
-Run (dicto-big-brother, `~/kres-tmp/ring3d`): `ringmesh.py bipyramid bip.obj`; `REST=0,8,6,15,18 FROMX=camN.old.json
+Run (compute-host, `~/work/ring3d`): `ringmesh.py bipyramid bip.obj`; `REST=0,8,6,15,18 FROMX=camN.old.json
 fitcam.py photo.jpg bip.obj camN_rest.json`; `run.py look.json 1 2 3 clean open htile`; `sheet.py ...`.
 
 ## Measured parameters (units of the ring side s ≈ 40 mm)

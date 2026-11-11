@@ -3,7 +3,7 @@
 import os, sys, json
 from fractions import Fraction as Fr
 import sympy as sp
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/splash2'))
+sys.path.insert(0, os.path.expanduser('~/work/splash2'))
 import hexlaw as H
 roles = ['M0', 'M1', 'K1', 'K2', 'K3', 'T']
 W = sys.argv[1:]

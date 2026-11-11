@@ -15,7 +15,7 @@ B. What the icosahedral Z^6 does select (exact): with u_1..u_6 the six 5-fold ax
      D6   {|x_i| + |x_j| <= 1}                   -> rhombic triacontahedron (the hull at the rectified stage)
    and shadows of the shortest shells: Z^6 norm 1 -> icosahedron; D6 roots -> two icosidodecahedra (ratio phi);
    (+-1/2)^6 -> the 32 corners of a rhombic triacontahedron (20 + 12) plus interior points.
-usage (dicto-big-brother): ~/geom/bin/python s2_di_lattice.py -> ../data/s2-di-lattice.json
+usage (compute-host): python3 s2_di_lattice.py -> ../data/s2-di-lattice.json
 """
 from dp_lib import *          # noqa
 out = {}

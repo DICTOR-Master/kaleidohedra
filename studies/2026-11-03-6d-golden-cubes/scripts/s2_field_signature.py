@@ -12,7 +12,7 @@ C. Corner modules: M = Z-span of the corners. Rank (over Z) and golden inflation
 D. The octahedron's pair as compounds: Icosaxes corners = all permutations of (+-phi, +-1, 0) = the corners of the two
    pyritohedral twin icosahedra (UC46, compound of two icosahedra); Unborn Axes corners = all permutations of
    (+-phi^2, +-1, 0) = the 24 corners of the two twin dodecahedra that are not cube corners.
-usage (dicto-big-brother): ~/geom/bin/python s2_field_signature.py -> ../data/s2-field-signature.json
+usage (compute-host): python3 s2_field_signature.py -> ../data/s2-field-signature.json
 """
 from sixd_lib import *          # noqa
 import sympy as sp

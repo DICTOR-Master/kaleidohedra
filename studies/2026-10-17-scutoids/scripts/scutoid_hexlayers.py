@@ -4,7 +4,7 @@
 # directions perpendicular to the diagonal (1,1,1), layers stacked along it. All grow together until they meet (x goes to the bundle that
 # reaches it first, inside a bundle to the plane that reaches it last). Every cell of the result is a whole piece of one repeating pattern, so
 # it tiles space. A piece cut by a meeting surface (a "damaged" one) is measured on its own AND joined whole with the piece facing it across
-# the surface (one whole piece crossing the tile boundary). Voxel prototype on dicto-node; ψ calibrated as in scutoid_interlock.py.
+# the surface (one whole piece crossing the tile boundary). Voxel prototype on compute-host-2; ψ calibrated as in scutoid_interlock.py.
 # -> data/scutoid-hexlayers.txt
 import sys, json, numpy as np
 from scipy import ndimage

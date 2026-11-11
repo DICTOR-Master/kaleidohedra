@@ -1,4 +1,4 @@
-# Japanese title + abstract drafts (DICTO 2026-10-27), local workhorse model on dicto-big-brother. A DRAFT: Claude checks every one
+# Japanese title + abstract drafts (DICTO 2026-10-27), local workhorse model on compute-host. A DRAFT: Claude checks every one
 # (numbers, formulas, DOIs, DICTO's names) before DICTO sees it; nothing goes public from here. Usage: translate.py <id> [<id> ...]
 import json, pathlib, sys, urllib.request
 here = pathlib.Path(__file__).parent; key = (pathlib.Path.home() / '.config/dicto/llama-key').read_text().strip()

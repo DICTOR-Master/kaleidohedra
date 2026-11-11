@@ -2,7 +2,7 @@
 # exactly, for the ten solids of study 1. Does the core come back, and after how many turns? The core is the intersection of the hulls of
 # the spike tips family by family (a family = faces with the same number of sides at the same distance from the centre). The tips sit at
 # t x the feet of the face perpendiculars; t only scales the core, so the run uses t = 1 and the gain at t is t^period x the gain given.
-# Usage: ~/geom/bin/python study2.py <dataset solids dir> <exactlib dir> <out json>
+# Usage: python3 study2.py <dataset solids dir> <exactlib dir> <out json>
 import sys, os, json
 SOL, LIB, OUT = sys.argv[1:4]; sys.path.insert(0, LIB)
 from exactlib import *

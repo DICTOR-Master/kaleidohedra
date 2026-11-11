@@ -3,7 +3,7 @@ Greater Golden Cut on top, Lesser Golden Cut below, in D.I.C.T.O order, each col
 home: dodecahedra and icosahedra 120-cell, cubes rectified tesseract, tetrahedra tesseract, octahedra (Icosaxes,
 Unborn Axes) 24-cell. Reuses the renderer and house colours of figs.py (gold = golden face, lilac = corner face);
 dark background as the #78 and #76 cards; DICTO mark bottom right.
-usage (dicto-big-brother): python card89.py <out.jpg> <logo png>
+usage (compute-host): python card89.py <out.jpg> <logo png>
 """
 import os, sys
 import numpy as np

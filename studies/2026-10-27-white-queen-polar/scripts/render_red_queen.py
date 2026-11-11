@@ -8,7 +8,7 @@ import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection, Line3DCollection
 from scipy.spatial import ConvexHull
-sys.path.insert(0, os.path.expanduser("~/kres-tmp/4d/scripts")); from render import BG, GOLD, mark
+sys.path.insert(0, os.path.expanduser("~/work/4d/scripts")); from render import BG, GOLD, mark
 S = json.load(open(sys.argv[1])); V = np.array(S["vertices"], float); cells = S["cells"]
 R = np.array([V[c].mean(0) for c in cells])                       # Red Queen corners = White Queen cell centres
 cov = defaultdict(list); [cov[i].append(ci) for ci, c in enumerate(cells) for i in c]

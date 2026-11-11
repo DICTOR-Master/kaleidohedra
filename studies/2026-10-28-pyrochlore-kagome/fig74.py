@@ -21,4 +21,4 @@ for k, h in H.items():
 b.set_xlabel('hexagonality h'); b.set_ylabel('kagome planes through each Mn'); b.set_ylim(0.5, 4.6); b.set_xlim(-0.05, 1.12)
 b.set_title('(b) Kagome magnets: from 3D to 2D kagome', fontsize=9, loc='left'); b.legend(fontsize=6.8, frameon=False, loc='upper right')
 for ax in (a, b): ax.spines[['top', 'right']].set_visible(False); ax.grid(alpha=0.25, lw=0.5)
-fig.tight_layout(); fig.savefig(os.path.expanduser('~/kres-tmp/magnets.png')); print('ok')
+fig.tight_layout(); fig.savefig(os.path.expanduser('~/work/magnets.png')); print('ok')

@@ -24,5 +24,5 @@ ax.set_xlabel('pressure (GPa)', fontsize=10); ax.set_ylabel('margin of cubic 3C 
 ax.set_title('The volume term under pressure, first order: SiC gains, Si and Ge lose margin', fontsize=10, loc='left')
 ax.set_xlim(0, 36)
 fig.text(0.98, 0.01, 'DICTO', color='#b8962e', fontsize=12, ha='right', family='serif', weight='bold')
-out = os.path.expanduser('~/kres-tmp/fig70'); os.makedirs(out, exist_ok=True)
+out = os.path.expanduser('~/work/fig70'); os.makedirs(out, exist_ok=True)
 fig.savefig(os.path.join(out, 'pressure-margins.png'), bbox_inches='tight', facecolor='white'); print('ok')

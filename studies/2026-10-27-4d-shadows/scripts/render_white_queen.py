@@ -1,7 +1,7 @@
 """The White Queen 600-cell: every slice of the 600-cell at a vertex layer, from the centre out to the tip, in its
 four main directions (vertex-, edge-, face-, cell-first). Ivory faces on the dark background; the two slices with an
 exact equilateral form named in #62 are ringed in gold (Shadow-17, Slice-48).
-Run on dicto-big-brother after shadows.py:  ~/geom/bin/python scripts/render_white_queen.py
+Run on compute-host after shadows.py:  python3 scripts/render_white_queen.py
 """
 import pickle
 

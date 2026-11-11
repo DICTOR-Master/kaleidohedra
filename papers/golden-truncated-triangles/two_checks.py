@@ -1,13 +1,13 @@
 # Exact checks: (1) Icosaxes = 120-cell vertex-first section at height (phi/2) x tip (atlas120 exact cut); (2) Cube Pearl = 24-cell section
 # perpendicular to a corner, at 1/6 of the way to the tip (exact coordinates in Q(sqrt2): the 24-cell corner direction (1,1,0,0)).
 import sys, os, json, itertools, numpy as np, sympy as sp
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/studies/2026-10-27-white-queen-polar/scripts')); os.chdir(os.path.expanduser('~/kres-tmp/studies/2026-10-27-white-queen-polar/scripts'))
+sys.path.insert(0, os.path.expanduser('~/work/studies/2026-10-27-white-queen-polar/scripts')); os.chdir(os.path.expanduser('~/work/studies/2026-10-27-white-queen-polar/scripts'))
 import atlas120 as A
 from fractions import Fraction as Fr
 def inv(P):
     P = P - P.mean(0); R2 = (P ** 2).sum(1).mean(); return np.sort(((P[:, None] - P[None]) ** 2).sum(-1)[np.triu_indices(len(P), 1)] / R2)
 def ds(name):
-    w = json.load(open(os.path.expanduser(f'~/kres-tmp/dataset-v7/solids/{name}.json'))); return np.array([[float(c) for c in v['decimal']] for v in w['vertices']])
+    w = json.load(open(os.path.expanduser(f'~/work/dataset-v7/solids/{name}.json'))); return np.array([[float(c) for c in v['decimal']] for v in w['vertices']])
 lab = 'vertex-first'; d = A.DIRS[lab][0]; hs = sorted(set(A.dot(p, d) for p in A.R), key=float); tip = hs[-1]
 h = A.Q5(Fr(1, 4), Fr(1, 4)) * tip            # phi/2 = 1/4 + sqrt5/4
 item, keep, _ = A.cut((lab, h, any(x == h for x in hs), tip))

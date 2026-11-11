@@ -1,6 +1,6 @@
 """Step 4c: golden relatives of OG: Q(mu, phi^2) = H(mu) cap phi^2 D* at the golden mu of the icosahedron side (neutral labels).
 Face signature, regular hexagons / kites test, and the smallest integer scale putting the corners in the Z^6 shadow module M.
-usage: ~/geom/bin/python s4c_relatives.py L|G -> ../data/s4c-relatives-<L|G>.json
+usage: python3 s4c_relatives.py L|G -> ../data/s4c-relatives-<L|G>.json
 """
 from dp_lib import *          # noqa
 import sys, sympy as sp, numpy as np, math

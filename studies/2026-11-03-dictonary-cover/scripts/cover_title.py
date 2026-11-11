@@ -6,7 +6,7 @@
 # in "Dictionary"): in capitals as every line, with the five letters of DICTO at the large initial size and "NARY" at the small size, so
 # the coinage shows. Each line is shrunk if needed to fit 0.92 of the width; the main title stays on one line. The panel keeps the
 # height of the first draft (0.4 N, cover 1800 x 2520) with the spare height shared between the gaps.
-# Functions glyph/word/paste/fit copied from the DICTONIC Bonds cover script (2026-11-03-bonds-cover). Run on dicto-big-brother.
+# Functions glyph/word/paste/fit copied from the DICTONIC Bonds cover script (2026-11-03-bonds-cover). Run on compute-host.
 import os, numpy as np
 from scipy import ndimage
 from PIL import Image, ImageDraw, ImageFont

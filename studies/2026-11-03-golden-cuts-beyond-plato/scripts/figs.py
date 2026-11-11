@@ -1,7 +1,7 @@
 """Figures for the results note (house colours and renderer of the Star Cores figures, figs_paper_a.py: orthographic
 painter, Lambert shading, dark edges; DICTO mark bottom right). Faces: gold = an original face that became a golden
 truncated polygon (ratio phi); teal = an original face that became a regular polygon; lilac = a corner face.
-usage (dicto-big-brother): python figs.py <out dir> <logo png>
+usage (compute-host): python figs.py <out dir> <logo png>
 """
 import json, os, sys
 import numpy as np
@@ -66,7 +66,7 @@ xL3, xG5 = 1 / (G + 2), 1 / 3
 fig, axs = plt.subplots(2, 3, figsize=(10.5, 7.2), gridspec_kw=dict(wspace=0.22, hspace=0.2))
 render(axs[0, 0], cutA('icosidodecahedron', xL3), 'Lesser Golden Cut Icosidodecahedron\nx = 1/(φ√5): triangles golden, decagons regular')
 render(axs[0, 1], cutA('icosidodecahedron', xG5), 'Greater Golden Cut Icosidodecahedron\nx = 1/3: pentagons golden, hexagons regular')
-wk = json.load(open(os.path.expanduser('~/kres-tmp/dataset-v7/solids/dicto-white-knight.json')))
+wk = json.load(open(os.path.expanduser('~/work/dataset-v7/solids/dicto-white-knight.json')))
 render(axs[0, 2], np.array([[float(c) for c in v['decimal']] for v in wk['vertices']]), "White Knight (DICTO)\nsame faces, rectangles turned")
 render(axs[1, 0], cutA('snub dodecahedron', xL3), 'Lesser Golden Cut Snub Dodecahedron\nx = 1/(φ√5): triangles golden, decagons regular')
 render(axs[1, 1], cutA('snub dodecahedron', xG5), 'Greater Golden Cut Snub Dodecahedron\nx = 1/3: pentagons golden, hexagons regular')

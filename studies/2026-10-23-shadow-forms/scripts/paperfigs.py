@@ -3,8 +3,8 @@ import os
 exec(open('axesplit4.py').read().split('R1,R2=')[0])
 exec(open('jewelsplit1.py').read().split('VD=ConvexHull')[0].split("exec(open('axesplit2.py')")[1].split('\n',1)[1])
 COL.update({'dodecahedron':(230,180,60)})
-OUT='/home/dicto/k-research/papers/2026-10-23-golden-split/figures'; T=1/phi; S=700
-exec(open('/home/dicto/shadow-fusions/solidraw.py').read())
+OUT='~/k-research/papers/2026-10-23-golden-split/figures'; T=1/phi; S=700
+exec(open('~/shadow-fusions/solidraw.py').read())
 def fig(panels,fn):
     im=Image.new('RGB',(len(panels)*S,S),(255,255,255))
     for i,(ps,R) in enumerate(panels):

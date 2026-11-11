@@ -5,7 +5,7 @@ one height inside every open interval between consecutive vertex heights (the mi
 vertex crosses the cutting space, so the slice keeps one combinatorial type over the whole interval: one cut per
 interval gives every type. Each slice's hull is computed exactly (q5.exact_hull3), and its face sizes, vertex count and
 symmetry-relevant data are recorded. Uses the modules of study 2026-10-27-4d-shadows (run from its scripts folder).
-Run on dicto-big-brother:  cd ~/kres-tmp/4d/scripts && ~/geom/bin/python atlas600.py
+Run on compute-host:  cd ~/work/4d/scripts && python3 atlas600.py
 """
 import json
 import pickle

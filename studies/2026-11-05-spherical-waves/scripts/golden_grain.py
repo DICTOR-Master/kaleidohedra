@@ -4,7 +4,7 @@
 # cut OG: separating plane among the cut OG's faces or the tile's faces (edge-edge cases, rare and tiny, ignored: float screen).
 import json, itertools, numpy as np, time, sys
 from scipy.spatial import ConvexHull, HalfspaceIntersection
-t0 = time.time(); R = "/home/dicto/study-runs/og-pent/cut/data/"
+t0 = time.time(); R = "~/study-runs/og-pent/cut/data/"
 B = np.array(json.load(open(R + "densest.json"))["B"]); O = np.array(json.load(open(R + "network.json"))["ocd"]); O = O - O.mean(0)
 H = ConvexHull(O); EQ = []
 for e in H.equations:

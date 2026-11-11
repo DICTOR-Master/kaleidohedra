@@ -3,7 +3,7 @@
 Ring = one per FACE (12: 6 rhombi, 6 trapezoids); tie = one per EDGE MIDPOINT (24); open gap = at each CORNER (14).
 Each ring is drawn flat in its face through the 4 edge midpoints (ellipse with the Varignon half-diagonals as conjugate radii), 8 notches.
 Cells from the hcp / fcc neighbour shells (the Voronoi cell = planes halfway to the 12 neighbours). Axis vertical (c-axis / three-fold axis).
-Run on dicto-big-brother with ~/geom/bin/python. Writes figures/trd-ring.png and prints the corner degrees."""
+Run on compute-host with python3. Writes figures/trd-ring.png and prints the corner degrees."""
 import itertools, math, os
 import numpy as np
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt

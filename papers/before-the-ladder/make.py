@@ -105,5 +105,5 @@ html = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Bef
 <ol style="font-size:13pt">{''.join(f'<li>{l[0]}</li>' for l in LESSONS)}</ol>
 {''.join(pages)}
 </body></html>'''
-open('/home/dicto/k-research/papers/before-the-ladder/paper.html', 'w').write(html)
+open('~/k-research/papers/before-the-ladder/paper.html', 'w').write(html)
 print('ok', len(LESSONS))
