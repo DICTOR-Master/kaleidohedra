@@ -674,3 +674,23 @@ Validation: every t_min(D_k), k = 10 … 30, MATCHES certified-30 to 1e−9. **C
 (D_38: 1 873 742 faces, 15 844 orbits; t_min(D_37) ≤ 1.000083). Stops on the way: D_27 (normal match tolerance), D_29 (distinct
 normals 1.4e−7 apart: faces now labelled by exact point keys) — both tooling, fixed. D_39: one face orbit with ≥ 4 coplanar members
 not forced by symmetry → refused (balls cannot prove an equality); diagnosis job og-diag-39 decides: float merge vs genuine.
+
+## §35 Derive and reduce (11 Nov 2026; DICTO: "derive and reduce possibilities")
+What remains of #43 Conjecture 1 for all k: certified k ≤ 37 (§34, run to 40 resumed); for k > 37 the 4-step contraction (§12), whose
+step (A) is "cut < half" (step A1) at every hop.
+ELIMINATED today (ledger entries 139 on): local charges of every kind (matching, ray, sweep flow, any plane speeds, exchange budgets);
+single-face tests (lean of the Vacuus pyramid, area, solid angle, distance); all linear balance laws (only Euler survives); roundness
+alone (icosahedral sets break it); the 600-cell / 120-cell (no alignment); hidden silences (only the odd waves, = central symmetry).
+REDUCED (exact, Euler at the top of the sweep, a simple slice with Σ sides = 6n − 12): c(6 − m_c) = a(m_a − 6) + 12, so
+   step A1 (c < a)  ⇔  6 − m_c  >  m_a − 6 + 12/a,
+m_c, m_a = mean sides at the top of the sweep of the faces that die / survive. The total deficit of the dying faces always exceeds the
+total excess of the survivors by exactly 12; A1 asks that it is spread over FEWER faces. Data: deficit 0.35–1.80 vs excess 0.08–0.56
+(least margin k = 14: 0.35 vs 0.27). The top slice depends on X_k alone (D_k with its corners split by the weights |X_j|²), so the whole
+question is now a statement about ONE polytope per level.
+POSSIBILITIES LEFT (three, in order of promise):
+ (P1) TOP-SLICE RULE: survivors are nearly hexagonal at the top (m_a ≤ 6.5 seen) and the dying faces are pentagons/quadrilaterals
+      (m_c ≤ 5.65); find the rule that decides death from the top slice (sides in D_k + extra sides from corner splits).
+ (P2) BORDER SHEETS (§31a): every survivor–cut wall lies on a concyclic sheet of its own; bound cut cells by border circles.
+ (P3) ORBITS: whole orbits die together; with orbit sizes 12, 20, 30, 60 and the census bound (≤ 1/2, equality Icosaxes Hexa), a
+      count by orbit types.
+NEXT: (P1) per orbit at the top slice: sides in D_k, extra sides from splits, die/survive; look for the exact rule.

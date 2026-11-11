@@ -67,6 +67,32 @@ def hull_faces(Wf, tol=1e-9):
     same = np.abs(E[a] - E[b]).max(1) < tol
     G = coo_matrix((np.ones(int(same.sum())), (a[same], b[same])), shape=(n, n))
     nc, lab = connected_components(G, directed=False)
+    # 11-11 (D_39): a merged group whose members are not flat to 1e-13 is two faces with a nearly flat fold (ball check found a corner
+    # 1.16e-12 off the plane); re-split such groups by re-merging their triangles with tolerance 1e-13. Ball checks verify afterwards.
+    cnt_tri = np.bincount(lab, minlength=nc); big = np.where(cnt_tri > 1)[0]
+    if len(big):
+        resplit = 0
+        for c_ in big:
+            tri = np.where(lab == c_)[0]; P = Wf[np.unique(h.simplices[tri].ravel())]
+            if len(P) < 4: continue
+            c0 = P.mean(0); res_ = np.abs((P - c0) @ np.linalg.svd(P - c0)[2][2]).max()
+            if res_ <= 1e-13: continue
+            resplit += 1; sub = {int(t): int(t) for t in tri}
+            def fd(x):
+                while sub[x] != x: sub[x] = sub[sub[x]]; x = sub[x]
+                return x
+            for t in tri:
+                for u in h.neighbors[t]:
+                    if int(u) in sub and np.abs(E[t] - E[u]).max() < 1e-13: sub[fd(int(t))] = fd(int(u))
+            roots = {}
+            for t in tri:
+                r_ = fd(int(t))
+                if r_ != fd(int(tri[0])): roots.setdefault(r_, nc + len(roots))
+            for t in tri:
+                r_ = fd(int(t))
+                if r_ in roots: lab[t] = roots[r_]
+            nc += len(roots)
+        if resplit: print(f'  re-split {resplit} non-flat merged groups', flush=True)
     pairs = np.unique(np.stack([np.repeat(lab, 3), h.simplices.ravel()], 1), axis=0)
     split = np.searchsorted(pairs[:, 0], np.arange(1, nc))
     mems = np.split(pairs[:, 1], split)
