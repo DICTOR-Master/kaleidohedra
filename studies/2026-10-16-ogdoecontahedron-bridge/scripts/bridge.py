@@ -10,8 +10,8 @@ import sys, io, contextlib, itertools, json, numpy as np
 from fractions import Fraction as Fr
 from scipy.spatial import ConvexHull
 from scipy.optimize import linprog
-sys.path.insert(0, '/home/dicto/kaleidohedra/studies/_lib'); import geomcheck as gc
-PD = '/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma'
+sys.path.insert(0, '~/kaleidohedra/studies/_lib'); import geomcheck as gc
+PD = '~/kaleidohedra/studies/2026-10-16-polar-dharma'
 sys.argv = ['polar.py', PD + '/data/dharma_cycle.json']
 import os; _cwd = os.getcwd(); os.chdir(PD)
 with contextlib.redirect_stdout(io.StringIO()):

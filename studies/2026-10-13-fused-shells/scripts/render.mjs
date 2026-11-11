@@ -1,5 +1,5 @@
 // Every catalogued stage as a PNG (900 px, the catalogue's own look), with an index of its facts: renders/index.json.
-// For the paper (Fable selects). Run on dicto-node with the catalogue served: BASE_URL=http://localhost:8000 node render.mjs
+// For the paper (Fable selects). Run on compute-host-2 with the catalogue served: BASE_URL=http://localhost:8000 node render.mjs
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 const OUT = process.env.OUT ?? 'renders';

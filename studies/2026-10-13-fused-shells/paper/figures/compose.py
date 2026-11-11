@@ -1,5 +1,5 @@
 # Compose the paper's figure plates from the study's renders (renders/*.png, 900 px, the catalogue's look).
-# Run on dicto-node: python compose.py <renders dir> <out dir>. Output: fig1..fig6 as JPEG (modest size). DICTO · dictospheres.com
+# Run on compute-host-2: python compose.py <renders dir> <out dir>. Output: fig1..fig6 as JPEG (modest size). DICTO · dictospheres.com
 import sys, os
 from PIL import Image, ImageDraw, ImageFont, ImageChops
 R, OUT = sys.argv[1], sys.argv[2]

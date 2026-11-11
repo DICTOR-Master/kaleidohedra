@@ -35,7 +35,7 @@ for (const [name, opts] of [['phone', { viewport: { width: 390, height: 844 }, h
   const expect = [['star', 60, 32], ['halo', 60, 32], ['next', 32, 60]];
   for (const [i, [phase, v, f]] of expect.entries()) {
     await press('.poly-star-go');
-    // ~0.6 s of animation; headless Chromium on dicto-node can starve frames, so wait for it to settle rather than a fixed time
+    // ~0.6 s of animation; headless Chromium on compute-host-2 can starve frames, so wait for it to settle rather than a fixed time
     await page.waitForFunction(() => window.__starStepProbe()?.animating === false, null, { timeout: 15000 }); await page.waitForTimeout(300);
     st = await probe();
     assert.deepEqual([st.n, st.phase, st.corners, st.faces, st.animating], [i + 1, phase, v, f, false], `${name}: tap ${i + 1}`);

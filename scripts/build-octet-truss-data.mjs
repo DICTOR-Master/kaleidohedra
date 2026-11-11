@@ -3,7 +3,7 @@
 // -p2-penrose-core-octet, -p3-golden-envelope-octet, -p4-golden-octet-adaptor), read straight from the pages' scenes so the app shows
 // the paper's geometry: each kit's "round one OG" assembly as placed there, and from it one lattice cell's worth of pieces (items that
 // differ by an fcc vector R(a, b, c), a + b + c even, are the same item), which the world repeats to grow the network.
-// Usage (dicto-node, needs Playwright): node scripts/build-octet-truss-data.mjs <research checkout root> [out]
+// Usage (compute-host-2, needs Playwright): node scripts/build-octet-truss-data.mjs <research checkout root> [out]
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 const [ROOT, OUT = 'src/app/octet-truss-data.js'] = process.argv.slice(2);

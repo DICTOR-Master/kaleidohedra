@@ -52,7 +52,7 @@ Then polyhedraverse.dictospheres.com becomes the third front door of this repo.
 ## Stages
 
 Each stage ships on its own (commit, push, CI, changelog when user-facing) and is checked on
-dicto-node, phone first. Until D6 the new space is reached from DICTO in the other two doors.
+compute-host-2, phone first. Until D6 the new space is reached from DICTO in the other two doors.
 
 1. **D1 Core.** P's `app/lib` logic into krp-core (new minor version); the Next.js site switches to
    it; all 312 shapes and P's checks identical.

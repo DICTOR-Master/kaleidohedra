@@ -9,7 +9,7 @@
 #     ball), listed counter-clockwise seen from outside.
 # Meshes: manifold3d sphere intersection (as the study, studies/2026-10-21-reuleaux-platonic/reuleaux_platonic.py), then each patch
 # simplified on its own with its border kept (pyfqmr), so the seams stay exact and the data stays small. Coordinates as integers x 1e4.
-# Needs manifold3d, pyfqmr, numpy (run on dicto-node). Usage: python3 scripts/build-reuleaux-data.py [repo root]
+# Needs manifold3d, pyfqmr, numpy (run on compute-host-2). Usage: python3 scripts/build-reuleaux-data.py [repo root]
 import itertools, json, os, sys
 import numpy as np, manifold3d as m3, pyfqmr
 ROOT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')

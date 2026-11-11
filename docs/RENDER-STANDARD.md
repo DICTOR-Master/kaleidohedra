@@ -13,7 +13,7 @@ were drawn with far less definition than the Polyhedraverse Kepler–Poinsot sta
 3. **No haze.** No milky emissive washes on faces or glass; glass opacity chosen so the faces still read as facets.
 4. **Light.** The app's key + fill lights; metal surfaces get an environment map for reflections.
 5. **Resolution.** Renderer pixel ratio follows the device (render.js quality settings); never below 1 × devicePixelRatio on "high".
-6. **Compare before shipping.** Each new or changed world is screenshotted on dicto-node beside the reference star at the same size,
+6. **Compare before shipping.** Each new or changed world is screenshotted on compute-host-2 beside the reference star at the same size,
    the pictures are looked at, and only then is "into the deploy queue?" asked.
 7. **Audit.** Existing worlds are checked against this list; shortfalls are logged in open-work and fixed one by one.
 

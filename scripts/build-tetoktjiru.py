@@ -8,7 +8,7 @@
 # legs): the up bodies and the side of every leg facing them in deep coral, the down bodies and the side facing them in pale coral.
 # One Oktjiru shape (all translates); the Tetjiru in its two turns. Meshed coarser than the study's figures, for the app.
 # Study: kaleidohedra research branch, studies/2026-10-20-double-octet/jacks_octet.py + jacks_twotone_figs.py (args 0.14 0.05 0.24 0.08,
-# TET_LEN 0.72). Needs manifold3d, scikit-image, scipy, pyfqmr (run on dicto-node).
+# TET_LEN 0.72). Needs manifold3d, scikit-image, scipy, pyfqmr (run on compute-host-2).
 # Usage: python3 scripts/build-tetoktjiru.py [repo root]
 import itertools, json, os, sys
 import numpy as np, manifold3d as m3

@@ -1,4 +1,4 @@
-// paper.html -> paper.pdf (A4, as laid out by build_pdf.py's print CSS). Run on dicto-node: node print.mjs (needs playwright).
+// paper.html -> paper.pdf (A4, as laid out by build_pdf.py's print CSS). Run on compute-host-2: node print.mjs (needs playwright).
 import { chromium } from 'playwright';
 import path from 'node:path';
 const here = path.dirname(new URL(import.meta.url).pathname);
