@@ -649,9 +649,10 @@
    "doi": "24121177",
    "date": "2026-11-11",
    "date_first": true,
-   "version": 2,
+   "version": 3,
    "doi_v2": "24122019",
-   "doi_v1": "24121178"
+   "doi_v1": "24121178",
+   "doi_v3": "24122514"
   }
  },
  "strands": [
@@ -5913,6 +5914,15 @@
     "result": "#104 v3 DOI 10.5281/zenodo.24122364",
     "retry": "never",
     "study": "papers/2026-11-10-scutoids-4d",
+    "date": "2026-11-11"
+   },
+   {
+    "question": "#105 v3 release",
+    "method": "verified refs + path analysis + gallery search; DICTO '#105 v3 read ok'; zen_newversion_keep; postcheck",
+    "status": "PUBLISHED",
+    "result": "#105 v3 DOI 10.5281/zenodo.24122514",
+    "retry": "never",
+    "study": "papers/2026-11-11-4d-vacuus",
     "date": "2026-11-11"
    }
   ]
