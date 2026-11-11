@@ -47,3 +47,15 @@ CORRECTION: the script labels the discs "perp mirror/other" because it tests aga
 Galois-conjugate icosahedral group (its matrices conjugated), whose five-fold axes point elsewhere. The discs are perpendicular to the
 twin's five-fold axes.
 DICTO (11 Nov): "I feel like these vacuus shapes are like angels".
+
+## Are the twin hulls exactly regular? (DICTO: "check if the twin hulls are exactly regular"; scripts/twin_regular.py, data/twin-regular.json, FINAL ok)
+EXACTLY uniform (all faces regular, one edge length, corners on one sphere): k = 2 REGULAR ICOSAHEDRON; k = 3 and k = 7 REGULAR
+DODECAHEDRON. The hidden (twin) side of the OG family passes through the true Platonic solids.
+Archimedean PATTERNS with stretched faces (corners on one sphere, every face equiangular):
+- k = 1, 5: rhombicosidodecahedron type; triangles and pentagons regular, the 30 squares are golden rectangles, sides φ² = 2.618034 : 1.
+- k = 6: same type, rectangles 3.168859 : 1 (not yet identified exactly).
+- k = 8: truncated-icosahedron type; pentagons regular, hexagons equiangular with alternating sides 1.054533 (truncated triangles).
+- k = 10: truncated-icosidodecahedron type; rectangles (3.317083), truncated triangles and alternating-sided decagons, all equiangular.
+Not equiangular: k = 0 (4 edge lengths, max/min 3.472136 = 2√5 − 1), k = 4 (3 edge lengths, max/min exactly 3; pentagons regular),
+k = 9 (5 edge lengths, corners on two spheres).
+DICTO (11 Nov): "the numbers run beautifully at least".
