@@ -77,7 +77,7 @@ for q in range(len(levels)):
     dp.rectangle([x0, y - 2, x0 + w, y + 2], fill=(212, 175, 55) if q in peaks else (150, 150, 160))
 dp.text((x0, y1 + 14), 'hidden fins present (0 … ' + str(m) + ' of ' + str(nhid) + ')', fill=(60, 60, 70), font=fsp)
 dp.text((14, y0 - 40), 'slider height', fill=(60, 60, 70), font=fsp); dp.text((40, y0 - 10), f'{top:.2f}', fill=(90, 90, 100), font=fsp); dp.text((70, y1 - 12), '0', fill=(90, 90, 100), font=fsp)
-dp.text((x0 + 10, y0 - 10), 'top world', fill=(120, 120, 130), font=fsp); dp.text((x0 + 10, y1 - 34), 'bottom world', fill=(120, 120, 130), font=fsp)
+dp.text((x0 + 10, y0 - 10), 'top world', fill=(120, 120, 130), font=fsp); dp.text((x0 + 10, y1 + 40), 'bottom world at height 0', fill=(120, 120, 130), font=fsp)
 panels.insert(0, (prof, 'the bands: hidden fins present at each height', 'gold = the two slices shown'))
 im = Image.new('RGB', (len(panels) * (PX + 40) - 40, PX + 120), 'white'); dr = ImageDraw.Draw(im)
 try: ft = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 30); fs = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 20)

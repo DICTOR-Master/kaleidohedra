@@ -96,3 +96,8 @@ of hidden fins present against slider height (0 … 0.48) and the slices at the 
 0.13–0.20) hold 250–320 hidden fins; a dense stack sits just above the bottom world (0 … 0.02) with up to 930. At the two band slices
 shown (0.0185 and 0.0046) EVERY fin of the slice is hidden (630 of 630, 930 of 930): whole hidden worlds, not mixtures. (Figure note:
 the "bottom world" label overlaps the lowest bars.)
+Hop 5's bands (DICTO: "render the hidden worlds for hop 5"; figures/hidden-bands-hop-5.png; label overlap fixed): bands at heights
+about 0.2–1.0 (90–200 hidden fins) and one strong band just above the bottom (0.0466: 210 of 390). Unlike hop 9, these slices are
+MIXED: 0.4367 holds 120 hidden fins among 300 (hidden fins scattered as single orbits through a visible-looking world); 0.0466 holds 210
+hidden among 330, the hidden fins fanning round the five-fold directions in broad sheets. Hop 9 had wholly hidden worlds; hop 5 still
+has its hidden fins woven into visible ones: the hidden share per slice grows with the hop.
