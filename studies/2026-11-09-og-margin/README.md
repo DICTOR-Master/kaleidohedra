@@ -511,3 +511,107 @@ R/r ≥ 2. ALL 8 round over-half hops (R/r 1.03–1.08, cut 0.508–0.718) are I
 Verdict: for generic shapes the data show a roundness law (cut ≤ 0.41 for R/r < 2); icosahedral symmetry is what breaks it, so
 step A1 for the OG must use the OG's own orbit structure, not roundness alone. DICTO (11 Nov): "most likely a 4D Vacuus that is
 very sophisticated but that should narrow it down".
+
+## §27 Scutoid exchanges in the hop (DICTO 11 Nov; "nothing from exchange of communication of scutoids helps?", then "shape of cells how many walls" and "a or c, the sheets are continuous"; scripts/og_exchanges.py, data/og-exchanges-5-16.*, data/og-exchanges-17-18.*, local, both runs FINAL ok)
+
+**Conclusion: exchanges do not bound the cut.** c ≤ s holds at every level k = 5 … 18, with equality at k = 7, but s is not a
+fixed number of the hop (it changes with the tie-break), and s reaches 1.16 n (k = 5), so no inequality in s gives c < n/2. What the
+scutoid view does give exactly: cut < active ⇔ the dying cells start with fewer sides than the survivors, in the precise amount
+below (Euler at the top of the sweep, checked at every level). Cut cells have fewer walls on average than active cells at every
+level, but the two ranges overlap.
+
+**Method.** Same hop and slider as §23: P = {(y, λ) : X_j·y − λ ≤ |X_j|², 0 ≤ λ ≤ Λ}, Λ = 4 max|X_j|² (checked: every event lies
+below Λ/4; all n candidates are faces of the top slice). Vertices of P by halfspace intersection in 4D; facets tight within 10⁻⁹
+(the gap to the next facet is ≥ 2.8·10⁻⁷ at every level). A vertex with 4 facets has 4 edges; going down in λ, 3 up + 1 down = a
+triangle dies, 2 + 2 = an exchange (two faces lose a side, two gain one), 1 + 3 = a birth (none found). Symmetric clusters
+(5 to 15 facets at one point) and degenerate slice corners (axis corners, persistent over λ) are resolved by a symbolic random
+perturbation in three orders: offsets δε_j, then a tilt ηξ_j of the plane normals, then the cross term δη; each cluster is resolved
+locally from its tight facets only, so no precision is lost. The tilt is needed because some faces die along a horizontal edge
+(a four-sided face collapsing to a segment: the 30-orbit at k = 7), which an offset perturbation cannot break. Each run uses two
+random tie-breaks. Cells and walls are read from the unperturbed slices between consecutive event levels.
+
+Controls, every level k = 5 … 18, both tie-breaks: deaths = cut set of the hull (§22); tracked side counts = resolved slices at
+the bottom and at up to 6 well-separated levels; every face dies as a triangle; Σ(top sides − 3) over dying faces = lost to
+exchanges + lost to neighbour deaths − gained in exchanges; Σ sides = 2E, V − E + F = 2, 3V = 2E in every resolved slice (Σ = 6n − 12
+at the top, 6a − 12 at the bottom); unperturbed slices: Euler, all faces present at the top, faces just above λ = 0 = active set;
+every wall is a single λ-interval; cells of one orbit agree.
+
+**Per level** (s = exchanges, tie-breaks 1 and 2; s_min = net side gains / 2 between unperturbed event levels, a lower bound for
+any tie-break; m_c, m_a = mean top sides of dying and active faces; cl = exchanges at cluster points / at generic points):
+
+| k | n | c | a | s | s_min | c/s | s/n | m_c | m_a | cl / gen | deaths in clusters |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 5 | 252 | 60 | 192 | 291, 284 | 150 | 0.21 | 1.155 | 4.20 | 6.50 | 291 / 0 | 60 |
+| 6 | 320 | 60 | 260 | 270, 270 | 180 | 0.22 | 0.844 | 5.00 | 6.18 | 210 / 60 | 60 |
+| 7 | 402 | 90 | 312 | 90, 90 | 0 | **1.00** | 0.224 | 4.67 | 6.35 | 60 / 30 | 60 |
+| 8 | 500 | 0 | 500 | 300, 300 | 180 | 0 | 0.600 | – | 5.98 | 300 / 0 | 0 |
+| 9 | 732 | 252 | 480 | 474, 474 | 360 | 0.53 | 0.648 | 5.00 | 6.50 | 174 / 300 | 12 |
+| 10 | 662 | 192 | 470 | 444, 444 | 180 | 0.43 | 0.671 | 5.31 | 6.26 | 444 / 0 | 132 |
+| 11 | 672 | 132 | 540 | 204, 204 | 120 | 0.65 | 0.304 | 5.45 | 6.11 | 24 / 180 | 12 |
+| 12 | 902 | 252 | 650 | 511, 510 | 360 | 0.49 | 0.567 | 5.00 | 6.37 | 151 / 360 | 72 |
+| 13 | 1092 | 192 | 900 | 384, 384 | 240 | 0.50 | 0.352 | 5.63 | 6.07 | 144 / 240 | 72 |
+| 14 | 1262 | 552 | 710 | 934, 940 | 660 | 0.59 | 0.740 | 5.65 | 6.25 | 274 / 660 | 252 |
+| 15 | 1392 | 0 | 1392 | 120, 120 | 120 | 0 | 0.086 | – | 5.99 | 0 / 120 | 0 |
+| 16 | 2360 | 560 | 1800 | 1602, 1598 | 780 | 0.35 | 0.679 | 5.44 | 6.17 | 1122 / 480 | 360 |
+| 17 | 2882 | 810 | 2072 | 1950, 1950 | 1560 | 0.42 | 0.677 | 5.19 | 6.31 | 720 / 1230 | 180 |
+| 18 | 3780 | 720 | 3060 | 1158, 1168 | 900 | 0.62 | 0.306 | 4.32 | 6.39 | 198 / 960 | 120 |
+
+Sides lost by the dying faces (tie-break 1), Σ(top sides − 3) = via exchanges + via neighbour deaths − gained:
+k = 5: 72 = 88 + 25 − 41; 6: 120 = 99 + 21 − 0; 7: 150 = 120 + 30 − 0; 9: 504 = 444 + 180 − 120; 10: 444 = 444 + 60 − 60;
+11: 324 = 204 + 180 − 60; 12: 504 = 520 + 195 − 211; 13: 504 = 324 + 240 − 60; 14: 1464 = 1388 + 836 − 760;
+16: 1368 = 1294 + 716 − 642; 17: 1770 = 1890 + 900 − 1020; 18: 948 = 811 + 251 − 114. Exchanges carry 63–122 % of the net loss.
+Top sides of dying faces: 3 to 9 (k = 9: 20 for the twelve 5-fold faces); the dying face is a triangle only at the end.
+
+**Laws tested.**
+- c ≤ s/2: FAILS at k = 7, 9, 11, 13, 14, 18.
+- c ≤ s: holds at every level, equality at k = 7 (no margin). Not usable: s depends on the tie-break (291 vs 284 at k = 5, 934 vs
+  940 at k = 14), the tie-break-free bound s_min gives c ≤ s_min FALSE at k = 7 (90 > 0), 10 (192 > 180) and 11 (132 > 120), and
+  s/n reaches 1.155, so c ≤ s cannot give c < n/2. Exchanges are not bounded relative to the cut in either direction (k = 8, 15:
+  300 and 120 exchanges with no cut at all).
+- **Exact (Euler at the top, a simple slice with Σ sides = 6n − 12):** c/a = (m_a − 6 + 12/a)/(6 − m_c), equal to the data at every
+  level. So cut < active ⇔ m_a − 6 + 12/a < 6 − m_c: the survivors' excess over six sides is smaller than the dying faces' deficit.
+  Excess vs deficit: 0.56 vs 1.80 (k = 5), 0.23 vs 1.00, 0.38 vs 1.33, –, 0.53 vs 1.00, 0.28 vs 0.69, 0.13 vs 0.55, 0.39 vs 1.00,
+  0.08 vs 0.38, **0.27 vs 0.35 (k = 14, least margin)**, –, 0.17 vs 0.56, 0.32 vs 0.82, 0.40 vs 1.68 (k = 18). This is the
+  growth identity of §19 seen from the top of the sweep, not a new inequality, but it moves the question to the top slice alone.
+- Clusters: at k = 11–14, where the flow tests of §23 failed, exchanges sit mostly at GENERIC points (24 of 204, 151 of 511, 144 of
+  384, 274 of 934 at clusters); what concentrates there is deaths (k = 14: 252 of 552 deaths in clusters). Exchanges dominate the
+  clusters at k = 5, 6, 8, 10, 16 instead.
+
+**Cells (DICTO "shape of cells how many walls").** Each candidate's facet of P is a 3D cell: walls = distinct neighbours over the
+sweep + top cap + bottom cap if active; corners = vertices of P on it; edges = walls + corners − 2. Kinds: PRISM (same walls top to
+bottom), TRUNCATED PRISM (walls lost only to dying neighbours), SCUTOID (an exchange changes its walls), PYRAMID (cut; "exchanged" if an
+exchange touched it before death). Counts per orbit class: the orbit lines in the logs (5 to 63 orbits per level). Mean walls,
+active vs cut: 8.88 / 4.0 (k = 5), 8.23 / 5.0, 8.15 / 5.67, 7.64 / –, 8.75 / 6.48, 8.64 / 6.0, 8.11 / 6.91, 8.83 / 6.24, 7.6 / 6.62,
+9.61 / 7.52 (k = 14), 7.56 / –, 8.53 / 6.36, 9.27 / 7.22, 8.75 / 5.25 (k = 18). **Cut cells have fewer walls on average at every
+level**, but not cell by cell: active cells have 5–23 walls, cut cells 4–21 (k = 14: cut up to 10, active down to 5). Kinds at
+k = 14: 470 scutoids, 240 prisms, 540 pyramids after exchanges, 12 plain pyramids; at k = 18: 1740 scutoids, 1080 prisms, 240 truncated
+prisms, 540 + 180 pyramids. The commonest cut cell is a 5-walled pyramid (a four-sided top, 6 corners: one exchange, then the
+death point); the smallest is the tetrahedron (4 walls, 4 corners).
+
+**Walls as sheets (DICTO "a or c, the sheets are continuous").** Every wall between cells i and j is one λ-interval at every level
+(control passed: convexity of P). Per level, walls full height / start partway (born at an exchange) / end partway (at an exchange
+or a death) / both: k = 5: 330/180/240/0 of 750 (44 % full); 6: 480/180/270/0 (52 %); 7: 780/30/360/0 (67 %); 8: 1050/180/180/0
+(74 %); 9: 840/300/1110/60 (36 %); 10: 960/180/900/0 (47 %); 11: 1320/120/540/60 (65 %); 12: 1500/240/1020/120 (52 %);
+13: 1920/240/840/60 (63 %); 14: 1740/360/2040/360 (39 %); 15: 3630/120/120/0 (94 %); 16: 4020/660/2550/150 (54 %);
+17: 4860/990/3600/600 (48 %); 18: 7770/900/3120/60 (66 %). The cut cells are exactly the cells none of whose walls reaches λ = 0
+(every level; this is the definition of cut seen from the walls, a control rather than a law). Parallel pairs: the two caps of an
+active cell are parallel by construction; parallel SIDE walls (normals ±parallel inside the cell) occur only once: one 60-orbit
+of active scutoids at k = 9, one pair each. So the cells are not prisms with parallel ends in the side walls; the sheets are flat
+and continuous but tilted.
+
+**Verdict.** The scutoid exchanges do not prove step (A1): their number is not intrinsic and is not bounded by, nor bounds, the cut
+with any margin. The usable exact form is the top-slice identity: cut < active ⇔ dying faces' side deficit > survivors' excess
+(least margin 0.35 vs 0.27 at k = 14).
+
+**LEADS.**
+1. The top slice is fixed by X_k alone: at large λ, T_λ/λ → {X_j·y ≤ 1} = polar of X_k, with ties broken by the offsets |X_j|², i.e.
+   a regular (lifted) triangulation of the non-triangular faces of X_k. So top sides of j = number of edges at corner X_j of X_k
+   after that triangulation (expected; to check). The law to prove becomes: corners of X_k that get cut have few edges (mean
+   ≤ 5.65) and survivors have mean below 6 + deficit − 12/a. A degree lemma on X_k, not a sweep lemma.
+2. Test whether "cut ⇒ top sides ≤ 5" holds per orbit (k = 9 has twelve 20-sided cut faces on the 5-fold axes, so it needs the
+   axis exception of §24).
+3. If pursued: the area-weighted version (§25 verdict) on the top slice only.
+
+Concordance ledger line (ready): 2026-11-11 · #43 Conj. 1 step (A1) · scutoid exchanges in the hop sweep, k = 5–18 · c ≤ s holds
+(equality k = 7) but s is tie-break dependent and up to 1.16 n; c ≤ s/2 and c ≤ s_min fail · exact top identity
+c/a = (m_a − 6 + 12/a)/(6 − m_c) · cut cells fewer walls on average, ranges overlap · route closed for a counting proof; lead: degree lemma on X_k.

@@ -6149,6 +6149,16 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 step A1 via scutoid exchanges in the sweep (DICTO 11-11: 'exchange of communication of scutoids', cells/walls, continuous sheets)",
+    "method": "og_exchanges.py: 4D vertex enumeration k=5..18, deaths vs 2-2 exchanges (two random tie-breaks), side budget, cell walls, wall lam-ranges",
+    "status": "FAILED (no bound) + LEAD",
+    "result": "c <= s/2 fails (k=7,9,11,13,14,18); c <= s holds but s depends on tie-break and s_min fails; exact law c/a = (m_a - 6 + 12/a)/(6 - m_c) restates the growth identity; cut cells have fewer walls on average (k=14: 7.5 vs 9.6) but ranges overlap; every wall one unbroken lam-range; cut cells = cells with no wall reaching lam=0",
+    "retry": "lead: corner-degree lemma on X_k (cut corners have few edges, mean <= 5.65)",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },
