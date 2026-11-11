@@ -109,3 +109,9 @@ Hop 7's UPPER bands (DICTO: "render an upper band of hop 7"; render_bands.py wit
 figures/hidden-bands-hop-7-upper.png): height 0.1724: 270 fins, 210 hidden — the slice has 152 corners, 120 faces (60 four-sided,
 60 pentagons); height 0.0857: a WHOLLY hidden world of 90 fins — the slice has 32 corners, 60 triangles, 90 edges: the combinatorics of
 the PENTAKIS DODECAHEDRON (a Catalan solid; whether its shape is exactly Catalan is not checked).
+Is the hidden pentakis world exactly Catalan? (DICTO: "check if the hidden pentakis world is exactly Catalan"; scripts/pentakis_check.py,
+FINAL ok) NO. (1) All 60 triangles ARE tangent to one sphere (face distances equal to machine precision: one symmetry orbit), and the
+shape only scales within its band. (2) But its dual (hull of the 60 face directions) is a truncated-icosahedron PATTERN whose hexagons
+have alternating sides 6.1468 : 1 (Catalan needs a regular truncated icosahedron, 1 : 1). The world has 3 edge lengths (the Catalan
+pentakis has 2), long/short 1.1703 against the Catalan 1.1273, corner radii 0.8525 : 1 against 0.9742 : 1. It is a pentakis
+dodecahedron with an insphere and congruent faces, but not the Catalan one.
