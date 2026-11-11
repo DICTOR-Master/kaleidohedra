@@ -1,0 +1,142 @@
+      SECTION D_10 ∩ P: edges 32 = mirror-face edges 28 + D_k edges in P 4 = corners in P 8 + symmetric edges 24 (control True) | e/sqrt(n) 1.244 | edge angles deg min 1.2038 median 6.8440 max 31.0562
+PROGRESS 0.034 level 10
+k 10: n      662 mirror    240 axis  62 | mu 0.4562 | M/sqrt(n) 9.3 | gamma_M 12.924 deg, mean mirror cap 7.548, mean cap 7.099 | size ratio 1.147 | bound 7.598 (1 s)
+      hop 10: cut share 0.290 | generic classes dying 0.333 | mirror classes dying 0.25
+      RECURSION hop 10: corners of D_11 in P 20 <= mirror faces of D_10 28 (True) | new symmetric edges x = 24 = 0.750 * e(S_10) | e(S_11)/e(S_10) = 1.375
+      SECTION D_11 ∩ P: edges 44 = mirror-face edges 32 + D_k edges in P 12 = corners in P 20 + symmetric edges 24 (control True) | e/sqrt(n) 1.697 | edge angles deg min 0.6502 median 5.7320 max 17.7008
+PROGRESS 0.069 level 11
+k 11: n      672 mirror    420 axis  12 | mu 0.6429 | M/sqrt(n) 16.2 | gamma_M 14.538 deg, mean mirror cap 10.021, mean cap 8.071 | size ratio 0.715 | bound 5.305 (0 s)
+      hop 11: cut share 0.196 | generic classes dying 0.0 | mirror classes dying 0.286
+      RECURSION hop 11: corners of D_12 in P 20 <= mirror faces of D_11 32 (True) | new symmetric edges x = 24 = 0.545 * e(S_11) | e(S_12)/e(S_11) = 1.000
+      SECTION D_12 ∩ P: edges 44 = mirror-face edges 36 + D_k edges in P 8 = corners in P 20 + symmetric edges 24 (control True) | e/sqrt(n) 1.465 | edge angles deg min 1.0561 median 7.7367 max 13.4092
+PROGRESS 0.103 level 12
+k 12: n      902 mirror    360 axis  62 | mu 0.4678 | M/sqrt(n) 12.0 | gamma_M 10.783 deg, mean mirror cap 8.459, mean cap 7.207 | size ratio 0.794 | bound 4.446 (1 s)
+      hop 12: cut share 0.279 | generic classes dying 0.25 | mirror classes dying 0.333
+      RECURSION hop 12: corners of D_13 in P 24 <= mirror faces of D_12 36 (True) | new symmetric edges x = 20 = 0.455 * e(S_12) | e(S_13)/e(S_12) = 1.000
+      SECTION D_13 ∩ P: edges 44 = mirror-face edges 28 + D_k edges in P 16 = corners in P 24 + symmetric edges 20 (control True) | e/sqrt(n) 1.332 | edge angles deg min 3.2492 median 6.5073 max 13.1056
+PROGRESS 0.138 level 13
+k 13: n     1092 mirror    360 axis  12 | mu 0.3407 | M/sqrt(n) 10.9 | gamma_M  8.599 deg, mean mirror cap 6.238, mean cap 7.572 | size ratio 0.996 | bound 4.472 (0 s)
+      hop 13: cut share 0.176 | generic classes dying 0.0 | mirror classes dying 0.5
+      RECURSION hop 13: corners of D_14 in P 12 <= mirror faces of D_13 28 (True) | new symmetric edges x = 48 = 1.091 * e(S_13) | e(S_14)/e(S_13) = 1.364
+      SECTION D_14 ∩ P: edges 60 = mirror-face edges 60 + D_k edges in P 0 = corners in P 12 + symmetric edges 48 (control True) | e/sqrt(n) 1.689 | edge angles deg min 0.1017 median 4.7920 max 18.6487
+PROGRESS 0.172 level 14
+k 14: n     1262 mirror    720 axis  62 | mu 0.6197 | M/sqrt(n) 20.3 | gamma_M 10.468 deg, mean mirror cap 6.049, mean cap 5.747 | size ratio 0.891 | bound 4.822 (1 s)
+      hop 14: cut share 0.437 | generic classes dying 0.25 | mirror classes dying 0.583
+      RECURSION hop 14: corners of D_15 in P 28 <= mirror faces of D_14 60 (True) | new symmetric edges x = 16 = 0.267 * e(S_14) | e(S_15)/e(S_14) = 0.733
+      SECTION D_15 ∩ P: edges 44 = mirror-face edges 32 + D_k edges in P 12 = corners in P 28 + symmetric edges 16 (control True) | e/sqrt(n) 1.179 | edge angles deg min 0.6690 median 7.8002 max 17.4875
+PROGRESS 0.207 level 15
+k 15: n     1392 mirror    420 axis  12 | mu 0.3103 | M/sqrt(n) 11.3 | gamma_M 11.671 deg, mean mirror cap 6.846, mean cap 5.945 | size ratio 0.659 | bound 3.963 (0 s)
+      hop 15: cut share 0.000 | generic classes dying 0.0 | mirror classes dying 0.0
+      RECURSION hop 15: corners of D_16 in P 32 <= mirror faces of D_15 32 (True) | new symmetric edges x = 42 = 0.955 * e(S_15) | e(S_16)/e(S_15) = 1.682
+      SECTION D_16 ∩ P: edges 74 = mirror-face edges 56 + D_k edges in P 18 = corners in P 32 + symmetric edges 42 (control True) | e/sqrt(n) 1.523 | edge angles deg min 0.6496 median 3.3932 max 16.7255
+PROGRESS 0.241 level 16
+k 16: n     2360 mirror    780 axis  20 | mu 0.3390 | M/sqrt(n) 16.1 | gamma_M 10.131 deg, mean mirror cap 4.037, mean cap 4.834 | size ratio 1.316 | bound 6.863 (1 s)
+      hop 16: cut share 0.237 | generic classes dying 0.077 | mirror classes dying 0.538
+      RECURSION hop 16: corners of D_17 in P 24 <= mirror faces of D_16 56 (True) | new symmetric edges x = 64 = 0.865 * e(S_16) | e(S_17)/e(S_16) = 1.189
+      SECTION D_17 ∩ P: edges 88 = mirror-face edges 80 + D_k edges in P 8 = corners in P 24 + symmetric edges 64 (control True) | e/sqrt(n) 1.639 | edge angles deg min 0.1573 median 3.0573 max 13.0965
+PROGRESS 0.276 level 17
+k 17: n     2882 mirror   1020 axis  62 | mu 0.3754 | M/sqrt(n) 19.0 | gamma_M  8.739 deg, mean mirror cap 4.024, mean cap 4.506 | size ratio 1.095 | bound 4.957 (1 s)
+      hop 17: cut share 0.281 | generic classes dying 0.267 | mirror classes dying 0.294
+      RECURSION hop 17: corners of D_18 in P 56 <= mirror faces of D_17 80 (True) | new symmetric edges x = 50 = 0.568 * e(S_17) | e(S_18)/e(S_17) = 1.205
+      SECTION D_18 ∩ P: edges 106 = mirror-face edges 76 + D_k edges in P 30 = corners in P 56 + symmetric edges 50 (control True) | e/sqrt(n) 1.724 | edge angles deg min 0.0923 median 3.0418 max 10.6852
+PROGRESS 0.310 level 18
+k 18: n     3780 mirror   1140 axis   0 | mu 0.3016 | M/sqrt(n) 18.5 | gamma_M  7.122 deg, mean mirror cap 3.627, mean cap 3.988 | size ratio 0.809 | bound 3.002 (1 s)
+      hop 18: cut share 0.190 | generic classes dying 0.136 | mirror classes dying 0.316
+      RECURSION hop 18: corners of D_19 in P 52 <= mirror faces of D_18 76 (True) | new symmetric edges x = 58 = 0.547 * e(S_18) | e(S_19)/e(S_18) = 1.038
+      SECTION D_19 ∩ P: edges 110 = mirror-face edges 84 + D_k edges in P 26 = corners in P 52 + symmetric edges 58 (control True) | e/sqrt(n) 1.468 | edge angles deg min 0.2566 median 2.5000 max 7.7856
+PROGRESS 0.345 level 19
+k 19: n     5612 mirror   1140 axis  32 | mu 0.2088 | M/sqrt(n) 15.2 | gamma_M  4.718 deg, mean mirror cap 2.718, mean cap 3.300 | size ratio 0.755 | bound 1.868 (1 s)
+      hop 19: cut share 0.252 | generic classes dying 0.27 | mirror classes dying 0.158
+      RECURSION hop 19: corners of D_20 in P 64 <= mirror faces of D_19 84 (True) | new symmetric edges x = 62 = 0.564 * e(S_19) | e(S_20)/e(S_19) = 1.145
+      SECTION D_20 ∩ P: edges 126 = mirror-face edges 96 + D_k edges in P 30 = corners in P 64 + symmetric edges 62 (control True) | e/sqrt(n) 1.413 | edge angles deg min 0.0268 median 2.4108 max 7.4469
+PROGRESS 0.379 level 20
+k 20: n     7952 mirror   1320 axis  32 | mu 0.1700 | M/sqrt(n) 14.8 | gamma_M  5.192 deg, mean mirror cap 3.088, mean cap 2.699 | size ratio 0.470 | bound 1.278 (1 s)
+      hop 20: cut share 0.235 | generic classes dying 0.218 | mirror classes dying 0.318
+      RECURSION hop 20: corners of D_21 in P 64 <= mirror faces of D_20 96 (True) | new symmetric edges x = 88 = 0.698 * e(S_20) | e(S_21)/e(S_20) = 1.206
+      SECTION D_21 ∩ P: edges 152 = mirror-face edges 120 + D_k edges in P 32 = corners in P 64 + symmetric edges 88 (control True) | e/sqrt(n) 1.429 | edge angles deg min 0.0022 median 2.0176 max 6.8089
+PROGRESS 0.414 level 21
+k 21: n    11322 mirror   1680 axis  42 | mu 0.1521 | M/sqrt(n) 15.8 | gamma_M  4.616 deg, mean mirror cap 2.578, mean cap 2.257 | size ratio 0.534 | bound 1.291 (1 s)
+      hop 21: cut share 0.286 | generic classes dying 0.25 | mirror classes dying 0.5
+      RECURSION hop 21: corners of D_22 in P 64 <= mirror faces of D_21 120 (True) | new symmetric edges x = 76 = 0.500 * e(S_21) | e(S_22)/e(S_21) = 0.921
+      SECTION D_22 ∩ P: edges 140 = mirror-face edges 108 + D_k edges in P 32 = corners in P 64 + symmetric edges 76 (control True) | e/sqrt(n) 1.125 | edge angles deg min 0.1561 median 2.3833 max 7.1624
+PROGRESS 0.448 level 22
+k 22: n    15500 mirror   1560 axis  20 | mu 0.1019 | M/sqrt(n) 12.5 | gamma_M  4.167 deg, mean mirror cap 2.055, mean cap 1.977 | size ratio 0.687 | bound 1.497 (1 s)
+      hop 22: cut share 0.148 | generic classes dying 0.129 | mirror classes dying 0.308
+      RECURSION hop 22: corners of D_23 in P 72 <= mirror faces of D_22 108 (True) | new symmetric edges x = 116 = 0.829 * e(S_22) | e(S_23)/e(S_22) = 1.343
+      SECTION D_23 ∩ P: edges 188 = mirror-face edges 156 + D_k edges in P 32 = corners in P 72 + symmetric edges 116 (control True) | e/sqrt(n) 1.183 | edge angles deg min 0.0834 median 1.4862 max 6.1626
+PROGRESS 0.483 level 23
+k 23: n    25262 mirror   2160 axis  62 | mu 0.0880 | M/sqrt(n) 13.6 | gamma_M  4.109 deg, mean mirror cap 1.904, mean cap 1.580 | size ratio 0.430 | bound 0.924 (2 s)
+      hop 23: cut share 0.282 | generic classes dying 0.25 | mirror classes dying 0.611
+      RECURSION hop 23: corners of D_24 in P 60 <= mirror faces of D_23 156 (True) | new symmetric edges x = 206 = 1.096 * e(S_23) | e(S_24)/e(S_23) = 1.415
+      SECTION D_24 ∩ P: edges 266 = mirror-face edges 260 + D_k edges in P 6 = corners in P 60 + symmetric edges 206 (control True) | e/sqrt(n) 1.443 | edge angles deg min 0.0358 median 1.1942 max 4.2928
+PROGRESS 0.517 level 24
+k 24: n    33980 mirror   3840 axis  20 | mu 0.1136 | M/sqrt(n) 20.8 | gamma_M  2.802 deg, mean mirror cap 1.543, mean cap 1.339 | size ratio 0.530 | bound 0.779 (2 s)
+      hop 24: cut share 0.286 | generic classes dying 0.267 | mirror classes dying 0.438
+      RECURSION hop 24: corners of D_25 in P 148 <= mirror faces of D_24 260 (True) | new symmetric edges x = 150 = 0.564 * e(S_24) | e(S_25)/e(S_24) = 1.120
+      SECTION D_25 ∩ P: edges 298 = mirror-face edges 204 + D_k edges in P 94 = corners in P 148 + symmetric edges 150 (control True) | e/sqrt(n) 1.374 | edge angles deg min 0.0054 median 0.8447 max 6.0138
+PROGRESS 0.552 level 25
+k 25: n    47052 mirror   3000 axis  12 | mu 0.0640 | M/sqrt(n) 13.8 | gamma_M  4.010 deg, mean mirror cap 1.154, mean cap 1.156 | size ratio 0.620 | bound 1.298 (3 s)
+      hop 25: cut share 0.259 | generic classes dying 0.243 | mirror classes dying 0.5
+      RECURSION hop 25: corners of D_26 in P 100 <= mirror faces of D_25 204 (True) | new symmetric edges x = 264 = 0.886 * e(S_25) | e(S_26)/e(S_25) = 1.221
+      SECTION D_26 ∩ P: edges 364 = mirror-face edges 312 + D_k edges in P 52 = corners in P 100 + symmetric edges 264 (control True) | e/sqrt(n) 1.412 | edge angles deg min 0.0113 median 0.8038 max 4.3234
+PROGRESS 0.586 level 26
+k 26: n    66482 mirror   4500 axis  62 | mu 0.0686 | M/sqrt(n) 17.5 | gamma_M  2.883 deg, mean mirror cap 0.951, mean cap 1.006 | size ratio 0.711 | bound 1.072 (4 s)
+      hop 26: cut share 0.303 | generic classes dying 0.283 | mirror classes dying 0.573
+      RECURSION hop 26: corners of D_27 in P 132 <= mirror faces of D_26 312 (True) | new symmetric edges x = 260 = 0.714 * e(S_26) | e(S_27)/e(S_26) = 1.077
+      SECTION D_27 ∩ P: edges 392 = mirror-face edges 324 + D_k edges in P 68 = corners in P 132 + symmetric edges 260 (control True) | e/sqrt(n) 1.309 | edge angles deg min 0.0125 median 0.7335 max 4.0577
+PROGRESS 0.621 level 27
+k 27: n    89742 mirror   4740 axis  42 | mu 0.0533 | M/sqrt(n) 15.8 | gamma_M  2.263 deg, mean mirror cap 0.951, mean cap 0.884 | size ratio 0.457 | bound 0.542 (5 s)
+      hop 27: cut share 0.365 | generic classes dying 0.355 | mirror classes dying 0.544
+      RECURSION hop 27: corners of D_28 in P 144 <= mirror faces of D_27 324 (True) | new symmetric edges x = 290 = 0.740 * e(S_27) | e(S_28)/e(S_27) = 1.107
+      SECTION D_28 ∩ P: edges 434 = mirror-face edges 360 + D_k edges in P 74 = corners in P 144 + symmetric edges 290 (control True) | e/sqrt(n) 1.305 | edge angles deg min 0.0011 median 0.5835 max 3.3457
+PROGRESS 0.655 level 28
+k 28: n   110672 mirror   5280 axis  32 | mu 0.0480 | M/sqrt(n) 15.9 | gamma_M  2.230 deg, mean mirror cap 0.959, mean cap 0.773 | size ratio 0.379 | bound 0.443 (6 s)
+      hop 28: cut share 0.296 | generic classes dying 0.285 | mirror classes dying 0.511
+      RECURSION hop 28: corners of D_29 in P 176 <= mirror faces of D_28 360 (True) | new symmetric edges x = 342 = 0.788 * e(S_28) | e(S_29)/e(S_28) = 1.194
+      SECTION D_29 ∩ P: edges 518 = mirror-face edges 432 + D_k edges in P 86 = corners in P 176 + symmetric edges 342 (control True) | e/sqrt(n) 1.328 | edge angles deg min 0.0012 median 0.5400 max 3.3893
+PROGRESS 0.690 level 29
+k 29: n   152112 mirror   6420 axis  12 | mu 0.0423 | M/sqrt(n) 16.5 | gamma_M  1.979 deg, mean mirror cap 0.797, mean cap 0.643 | size ratio 0.330 | bound 0.342 (9 s)
+      hop 29: cut share 0.328 | generic classes dying 0.32 | mirror classes dying 0.505
+      RECURSION hop 29: corners of D_30 in P 212 <= mirror faces of D_29 432 (True) | new symmetric edges x = 440 = 0.849 * e(S_29) | e(S_30)/e(S_29) = 1.259
+      SECTION D_30 ∩ P: edges 652 = mirror-face edges 548 + D_k edges in P 104 = corners in P 212 + symmetric edges 440 (control True) | e/sqrt(n) 1.460 | edge angles deg min 0.0015 median 0.3752 max 2.6106
+PROGRESS 0.724 level 30
+k 30: n   199382 mirror   8040 axis  62 | mu 0.0406 | M/sqrt(n) 18.0 | gamma_M  1.721 deg, mean mirror cap 0.764, mean cap 0.579 | size ratio 0.389 | bound 0.350 (12 s)
+      hop 30: cut share 0.322 | generic classes dying 0.312 | mirror classes dying 0.545
+      RECURSION hop 30: corners of D_31 in P 248 <= mirror faces of D_30 548 (True) | new symmetric edges x = 500 = 0.767 * e(S_30) | e(S_31)/e(S_30) = 1.147
+      SECTION D_31 ∩ P: edges 748 = mirror-face edges 616 + D_k edges in P 132 = corners in P 248 + symmetric edges 500 (control True) | e/sqrt(n) 1.454 | edge angles deg min 0.0027 median 0.3191 max 2.5527
+PROGRESS 0.759 level 31
+k 31: n   264642 mirror   9120 axis  42 | mu 0.0346 | M/sqrt(n) 17.7 | gamma_M  2.115 deg, mean mirror cap 0.629, mean cap 0.503 | size ratio 0.371 | bound 0.411 (16 s)
+      hop 31: cut share 0.334 | generic classes dying 0.325 | mirror classes dying 0.599
+      RECURSION hop 31: corners of D_32 in P 248 <= mirror faces of D_31 616 (True) | new symmetric edges x = 636 = 0.850 * e(S_31) | e(S_32)/e(S_31) = 1.182
+      SECTION D_32 ∩ P: edges 884 = mirror-face edges 768 + D_k edges in P 116 = corners in P 248 + symmetric edges 636 (control True) | e/sqrt(n) 1.505 | edge angles deg min 0.0029 median 0.2732 max 2.1419
+PROGRESS 0.793 level 32
+k 32: n   344930 mirror  11400 axis  50 | mu 0.0332 | M/sqrt(n) 19.4 | gamma_M  1.547 deg, mean mirror cap 0.500, mean cap 0.451 | size ratio 0.416 | bound 0.337 (22 s)
+      hop 32: cut share 0.375 | generic classes dying 0.37 | mirror classes dying 0.516
+      RECURSION hop 32: corners of D_33 in P 368 <= mirror faces of D_32 768 (True) | new symmetric edges x = 628 = 0.710 * e(S_32) | e(S_33)/e(S_32) = 1.127
+      SECTION D_33 ∩ P: edges 996 = mirror-face edges 796 + D_k edges in P 200 = corners in P 368 + symmetric edges 628 (control True) | e/sqrt(n) 1.529 | edge angles deg min 0.0000 median 0.2752 max 1.8114
+PROGRESS 0.828 level 33
+k 33: n   424142 mirror  11760 axis  62 | mu 0.0279 | M/sqrt(n) 18.1 | gamma_M  1.180 deg, mean mirror cap 0.496, mean cap 0.410 | size ratio 0.446 | bound 0.276 (28 s)
+      hop 33: cut share 0.363 | generic classes dying 0.356 | mirror classes dying 0.587
+      RECURSION hop 33: corners of D_34 in P 324 <= mirror faces of D_33 796 (True) | new symmetric edges x = 708 = 0.711 * e(S_33) | e(S_34)/e(S_33) = 1.036
+      SECTION D_34 ∩ P: edges 1032 = mirror-face edges 860 + D_k edges in P 172 = corners in P 324 + symmetric edges 708 (control True) | e/sqrt(n) 1.415 | edge angles deg min 0.0011 median 0.2569 max 4.9144
+PROGRESS 0.862 level 34
+k 34: n   532262 mirror  12720 axis  62 | mu 0.0240 | M/sqrt(n) 17.4 | gamma_M  3.194 deg, mean mirror cap 0.504, mean cap 0.353 | size ratio 0.230 | bound 0.384 (38 s)
+      hop 34: cut share 0.297 | generic classes dying 0.293 | mirror classes dying 0.439
+      RECURSION hop 34: corners of D_35 in P 476 <= mirror faces of D_34 860 (True) | new symmetric edges x = 748 = 0.725 * e(S_34) | e(S_35)/e(S_34) = 1.186
+      SECTION D_35 ∩ P: edges 1224 = mirror-face edges 940 + D_k edges in P 284 = corners in P 476 + symmetric edges 748 (control True) | e/sqrt(n) 1.423 | edge angles deg min 0.0006 median 0.2241 max 4.6578
+PROGRESS 0.897 level 35
+k 35: n   740102 mirror  13920 axis  62 | mu 0.0189 | M/sqrt(n) 16.2 | gamma_M  2.430 deg, mean mirror cap 0.528, mean cap 0.302 | size ratio 0.227 | bound 0.289 (58 s)
+      hop 35: cut share 0.292 | generic classes dying 0.285 | mirror classes dying 0.616
+      RECURSION hop 35: corners of D_36 in P 356 <= mirror faces of D_35 940 (True) | new symmetric edges x = 1060 = 0.866 * e(S_35) | e(S_36)/e(S_35) = 1.157
+      SECTION D_36 ∩ P: edges 1416 = mirror-face edges 1240 + D_k edges in P 176 = corners in P 356 + symmetric edges 1060 (control True) | e/sqrt(n) 1.392 | edge angles deg min 0.0025 median 0.1707 max 4.7586
+PROGRESS 0.931 level 36
+k 36: n  1035242 mirror  18420 axis  62 | mu 0.0179 | M/sqrt(n) 18.1 | gamma_M  2.380 deg, mean mirror cap 0.476, mean cap 0.251 | size ratio 0.204 | bound 0.254 (79 s)
+      hop 36: cut share 0.310 | generic classes dying 0.304 | mirror classes dying 0.596
+      RECURSION hop 36: corners of D_37 in P 496 <= mirror faces of D_36 1240 (True) | new symmetric edges x = 1220 = 0.862 * e(S_36) | e(S_37)/e(S_36) = 1.212
+      SECTION D_37 ∩ P: edges 1716 = mirror-face edges 1468 + D_k edges in P 248 = corners in P 496 + symmetric edges 1220 (control True) | e/sqrt(n) 1.443 | edge angles deg min 0.0034 median 0.1458 max 3.5841
+PROGRESS 0.966 level 37
+k 37: n  1414622 mirror  21840 axis  62 | mu 0.0155 | M/sqrt(n) 18.4 | gamma_M  2.032 deg, mean mirror cap 0.489, mean cap 0.214 | size ratio 0.171 | bound 0.182 (123 s)
+      hop 37: cut share 0.331 | generic classes dying 0.327 | mirror classes dying 0.632
+levels where the §38 bound alone proves mu < 1/4: [37]
+FINAL ok
+[exit 0]

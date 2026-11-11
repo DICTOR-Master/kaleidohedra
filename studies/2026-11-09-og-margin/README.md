@@ -786,3 +786,7 @@ Sources checked (11 Nov 2026):
 - Library check: neither ~/kaleidohedra-references nor ~/Documents/reference-library holds Gardner, Schneider or Thompson.
 Queries: "polar body section projection duality Gardner Geometric Tomography"; "polar of a section equals projection of the polar
 convex body subspace lemma".
+**§38e Recursion ratios to k = 37 (section_track.py, og-section-37 second run, FINAL ok).** Hops 27–36: corners of D_{k+1} in P are
+0.41–0.53 of the mirror faces of D_k (the mirror foot points that survive: 1 − mirror death share), symmetric edges 0.71–0.87 × e(S_k),
+section growth e(S_{k+1})/e(S_k) = 1.04–1.26 (faces grow 1.23–1.41). Sharper recursion: e(S_{k+1}) = c_P + x_P with c_P ≤ (1 − mirror
+death share)·m_P(D_k); the open term is still x_P (symmetric edges), steady near 0.8 × e(S_k).
