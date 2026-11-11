@@ -172,3 +172,18 @@ its twin c′ (the hidden side's scale per turn):
 One large root (the visible shrink per turn) and one tiny root (the twin collapse per turn), as φ and −1/φ. The OG has no gnomon polynomial:
 no step or run of steps of its family is a classical gnomon (og-margin §3); it only approaches one (gnomon defect δ_k → 0). Open: a
 polynomial for the OG family's LIMIT, and c as a function of the pyramid height h.
+
+## Tracing the cross-occurrences: the OG is a truncated Catalan pentakis (DICTO: "fit c as a function of the pyramid height; could we tie any of these phenomena together by tracing back instances of cross occurrence at lower levels"; scripts/cross_trace.py, exact ℚ(√5), FINAL ok)
+(1) SHARED PLANES: with the same five-fold corners (Catalan start scaled by s = (9 + 3√5)/2), ALL 60 kite planes of the OG are exactly the
+60 face planes of the Catalan pentakis dodecahedron. The OG = the Catalan pentakis with its 20 six-fold corners cut off by the 20
+hexagon planes (each kite = a pentakis triangle without its far tip).
+(2) TRACE of exact twin-hull similarities (OG level k ↔ Catalan cycle step j): k = 1 ↔ j = 1 (c = 1, identical), k = 2 ↔ j = 2
+(c = 1, identical), k = 3 ↔ j = 0 (c = (81 − 27√5)/164), k = 5 ↔ j = 1 (same c), k = 7 ↔ j = 0 (exact, long). Real side: the OG's level 1
+CONTAINS ALL 60 corners of the Catalan's level 1 (shared kite/triangle planes give the same 60 foot points); levels 0 and 2 share the 12
+five-fold corners. The 20 hexagon foot points are the outsider's extra; their twins lie inside the twin hull at levels 1 and 2 (identical
+twin hulls), later they spread and the match returns only scaled (3, 5, 7). Ties: the shared Angelus, the Platonic Angeli of the OG at
+2, 3, 7, and the kite echo all trace back to the OG = pentakis ∩ 20 hexagon planes.
+(3) c(h), pentakis heights h = 1/20, 1/10, 3/20, 1/5, 1/4, 3/10: c = 0.680023, 0.696830, 0.688231, 0.714156, 0.724324, 0.719649 (exact in
+ℚ(√5), in the log): NOT monotone; no smooth fit found (next: check whether the in-between solids change combinatorial type with h). The
+pentakis shape at k = 2 equals that at k = 0 (radius ratio identical): the REAL cycle has period 2 up to a scale √c that lies OUTSIDE
+ℚ(√5); the twin cannot follow a non-golden scale, so on the hidden side the cycle shows period 4 (dodecahedron and icosahedron alternate).
