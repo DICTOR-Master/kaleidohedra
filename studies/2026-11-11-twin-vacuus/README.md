@@ -162,3 +162,13 @@ field. In-field normalisation: the 12 five-fold corners of the two starts made t
 the same five-fold corners have IDENTICAL level-1 twin hulls, hence the identical level-1 Angelus (and the OG's level 5 gives it again,
 scaled). The outsider and the clockwork meet in one identical hidden form.
 Render (DICTO: "render the identical level 1 Angelus"; scripts/render_shared_angelus.py, figures/shared-level1-angelus.png, FINAL ok = the two level-1 twin hulls equal as exact point sets): left the OG (60 kites purple, 20 hexagons teal), middle the Catalan pentakis scaled to the same five-fold corners (60 triangles), right their common level-1 Angelus (120 fins, 60 planes, 12.87° and 34.12°). First render showed the fill triangles inside the OG faces; fixed (one outline per face).
+
+## The gnomon polynomial (DICTO: "are we any closer to finding a polynomial" → "a gnomon", 11 Nov)
+Each pentakis start is an exact GNOMON of the hop: D_{k+4} = c·D_k, c in ℚ(√5), so c is a root of a quadratic over ℤ, whose other root is
+its twin c′ (the hidden side's scale per turn):
+- Catalan pentakis: 48505 c² − 35490 c + 361 = 0 (c = 0.721359782, c′ = 0.010317364);
+- pyramid height 1/φ³: 6525 c² − 4740 c + 16 = 0 (c = 0.723045422, c′ = 0.003391360);
+- pyramid height 1/5: 561501 c² − 403800 c + 2000 = 0 (c = 0.714156329, c′ = 0.004987537).
+One large root (the visible shrink per turn) and one tiny root (the twin collapse per turn), as φ and −1/φ. The OG has no gnomon polynomial:
+no step or run of steps of its family is a classical gnomon (og-margin §3); it only approaches one (gnomon defect δ_k → 0). Open: a
+polynomial for the OG family's LIMIT, and c as a function of the pyramid height h.
