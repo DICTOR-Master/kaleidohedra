@@ -73,3 +73,13 @@ Known: Leonardo's vacua are 3D hollow frames; 4D analogues of the Leonardo polyh
 strut models; central "great" sections (24-cell cuboctahedra, 16-cell octahedra) are classical as slices; hemipolytopes have FACETS
 through the centre. Not found: a 4D solid built from central 3D slices carrying ALL its 2-faces (the 4D Vacuus), the 65 slices of the
 4D permutohedron and their four classes, the count N = 3, 15, 65, 225, 770, ... (OEIS no match 11 Nov). Verdict: new within these checks.
+## The heart in every dimension (12 Nov, #105 lead 3; scripts/heart_every_dim.py, data/heart_every_dim.log, FINAL ok)
+Permutohedron of 1..n, n = 2m+1, centre value c = m+1. The k-fold crossing of the central slices x_i = c (k coordinates all = c) is
+EXACTLY the permutohedron of n-k values (majorization, Rado 1952; checked for n = 3, 5, 7, 9, every k: all permutations inside, support
+functions agree in 200 directions). RULE (checked every case): k = 2j-1 removes the middle 2j-1 values of 1..n; k = 2j removes the middle
+2j+1 values and puts the centre c back. E.g. n = 7: k 1 (1,2,3,5,6,7), k 2 (1,2,4,6,7), k 3 (1,2,6,7), k 4 (1,4,7) = REGULAR HEXAGON,
+k 5 (1,7). n = 9: (1,2,3,4,6,7,8,9), (1,2,3,5,7,8,9), (1,2,3,7,8,9), (1,2,5,8,9), (1,2,8,9), (1,5,9) regular hexagon, (1,9).
+So every heart nests: the (n-3)-fold crossings are regular hexagons (1, c, n) in every odd dimension (#105 Theorem 2 is n = 5), and every
+even-k crossing is equally spaced across its gap (c in the middle). Controls: n = 5 matches #105; the verifier rejects 3/3 wrong value sets.
+Lesson (one fault once): three first negative controls were not negatives (x1 = 4; x1 = x2 = 5/2; the slice x1 + x2 = 6): EVERY
+coordinate fix of a permutohedron is again a permutohedron, at any values (majorization); so the novelty is the explicit centre pattern.

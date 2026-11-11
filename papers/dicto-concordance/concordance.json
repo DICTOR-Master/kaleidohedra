@@ -6285,6 +6285,16 @@
     "retry": "only with new sources",
     "study": "2026-11-10-permutohedron",
     "date": "2026-11-12"
+   },
+   {
+    "question": "#105 lead 3: how the heart's central slices cross in every odd dimension",
+    "method": "heart_every_dim.py, majorization + LP support, exact, n = 3..9",
+    "status": "SETTLED",
+    "result": "k-fold crossing x_i = c = Perm of n-k values: odd k=2j-1 removes middle 2j-1 values; even k=2j removes middle 2j+1 and restores c; (n-3)-fold = regular hexagon (1,c,n) in every odd dimension",
+    "retry": "never",
+    "study": "2026-11-10-permutohedron",
+    "date": "2026-11-12",
+    "destination": "#105 Version 4"
    }
   ]
  },
