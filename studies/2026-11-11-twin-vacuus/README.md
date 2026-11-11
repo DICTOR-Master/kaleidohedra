@@ -187,3 +187,16 @@ twin hulls), later they spread and the match returns only scaled (3, 5, 7). Ties
 ℚ(√5), in the log): NOT monotone; no smooth fit found (next: check whether the in-between solids change combinatorial type with h). The
 pentakis shape at k = 2 equals that at k = 0 (radius ratio identical): the REAL cycle has period 2 up to a scale √c that lies OUTSIDE
 ℚ(√5); the twin cannot follow a non-golden scale, so on the hidden side the cycle shows period 4 (dodecahedron and icosahedron alternate).
+
+## The cut-depth family: the OG is the critical cut (DICTO: "set up the cut-depth family and it only has two edge lengths", "and a kite like the yantra", "regular hexagons"; scripts/cut_family.py, exact ℚ(√5), FINAL ok)
+Catalan pentakis (same five-fold corners as the OG) with its 20 six-fold corners cut by planes ⊥ the three-fold axes at λ × the corner
+radius. The OG's hexagon planes sit at λ* = 1/2 + √5/6 = φ²/3 exactly (the reciprocal of the margin constant 3/φ², here from the geometry).
+λ = 0.95, 0.90: 132 corners, 60 pentagons + 20 hexagons, 3 edge lengths. λ = φ²/3: 102 corners, 60 KITES + 20 hexagons, 2 EDGE LENGTHS
+(= the OG exactly, control). λ = 0.85, 0.80: 132 corners, 80 triangles + 60 pentagons, 4 edge lengths. λ = 0.75: the cuts overrun the
+neighbours. Hexagons are regular at every depth in range (forced by the three-fold symmetry), so they do not single out the OG.
+RESULT: the OG is the Catalan pentakis dodecahedron cut at its six-fold corners EXACTLY UNTIL THE CUTS TOUCH: there the dodecahedron edge
+between two six-fold corners shrinks to zero, each pentagon becomes a kite and the edge lengths drop to the minimum, two (the rectification
+move, as icosahedron → icosidodecahedron). No cut depth keeps the 4-cycle. The OG = the most economical break of the clockwork.
+KITE vs YANTRA: in the Śrī Yantra the kite O-E-T-E appears where the legs of the great triangles meet; in the OG where the two corner
+cuts meet. The shapes differ: OG kite 68.62°, 117.85°, 55.69°, 117.85° vs the classical yantra kites ≈ 78°, 106°, 70°, 106° (Huet, Kavi
+Mahesh; sri-yantra study table).
