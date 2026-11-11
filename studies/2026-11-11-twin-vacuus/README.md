@@ -79,3 +79,8 @@ Levels 1 and 4 (figures/angeli-levels-1-4.png, one colour per fin plane): level 
 type): 120 fins, apex 12.8684° and 34.1211°, 60 fin planes. Level 4 Angelus (140 triangles + 12 pentagons): 240 fins, apex 11.8246°,
 24.2136° and 36°, 66 fin planes (60 + the six disc planes). DICTO (11 Nov): "sometimes extra fins are hidden in 4D bodies".
 DICTO (11 Nov): "never born and never dying suits angels". Precisely: each hidden fin is born at one exchange and ends at another, both inside the sweep, so neither its birth nor its end is ever seen from either 3D world; and in the twin sweeps no fin runs from top to bottom at all (top and bottom slices share 0 edges at every hop).
+Render (DICTO: "render the hidden fins of the twin sweep"; scripts/render_hidden_fins.py, figures/hidden-fins-hops-0-1.png): the 3D slice
+of the twin sweep at the slider height where most hidden walls are present; every edge of the slice is a wall, its fin = triangle
+(centre, edge); hidden fins gold, the others grey, ghost of the slice. Hop 0 (height 0.4595 of 0.996 … 0): 150 fins, ALL 60 hidden
+walls present at once. Hop 1 (height 0.3894 of 1.428 … 0): 330 fins, ALL 180 hidden walls present at once. So the hidden fins of a
+hop live together in one middle band of the sweep: one hidden 3D world between the two visible ones.
