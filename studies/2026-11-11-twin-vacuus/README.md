@@ -69,3 +69,9 @@ Controls reproduced: k = 0: 2√5 − 1; k = 1, 5: (3 + √5)/2 = φ²; k = 4: 3
 - k = 10 (rectangles of the truncated-icosidodecahedron-type twin hull): exact in ℚ(√5) with numerators and denominators of about
   500 digits (= 3.317083246…), stored in the json.
 Script note: the first run printed the negative square root for k = 0 and 6 (1 − 2√5, (19 − 17√5)/6); fixed to take the positive root.
+
+## Render: the Angeli at levels 2 and 3 (DICTO: "render the twin hull Angeli for levels 2 and 3"; scripts/render_angeli_levels.py, figures/angeli-levels-2-3.png)
+Level 2 Angelus = Vacuus of the regular icosahedron (twin hull): 30 fins, all congruent, apex 63.4349° (cos = 1/√5), 15 fin planes
+(opposite fins coplanar). Level 3 Angelus = Vacuus of the regular dodecahedron: 30 fins, apex 41.8103° (cos = √5/3), 15 fin planes.
+These are the classical Vacuus of the two solids (also in the #87 census), here arising on the twin side of the OG family. Fins
+coloured by their plane through the centre (12-colour palette, so 3 colours repeat among the 15 planes).
