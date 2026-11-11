@@ -158,3 +158,14 @@ B4 rectified 16-cell, cantellated 16-cell, cantitruncated 16-cell (8 discs x 8):
 these are F4 mirrors (the scan DETECTS HIDDEN LARGER SYMMETRY); A4 runcinated 5-cell (1,0,0,1) (5 discs x 14) and the 4D permutohedron
 (1,1,1,1) (5 discs x 6): the five slices of #105's heart (the central DICTO 1:2 Truncated Octahedra), genuinely beyond mirrors.
 NONE in F4 or H4: the Queens' Vacuus is exactly their mirrors. So the heart of #105 is the 4D permutohedron's only non-mirror Vacuus.
+## STRICT INHABITANCE (DICTO 11 Nov): exact Platonic solids among the corners of every Atlas polytope (scripts/inhabitance.py; data/
+inhabitance_*.json, inhab-h4.log). Ways: cell, vertex figure, hidden (any size; every corner of the solid a corner of the polytope).
+Controls: cube 2 T; dodecahedron 5 C + 10 T; 24-cell O cells + C vertex figure; 600-cell 600 T cells + I vertex figure; 120-cell 120 D
+cells: all ok.
+LAW OF RESIDENTS (observed over all 0/1 seeds): the A4 family houses only T and O; the B4 and F4 families only C, T, O; EVERY one of the
+15 H4 polytopes houses all five, D, I, C, T, O. (3D: cube C, T; octahedron O; dodecahedron D, C, T; icosahedron I; icosidodecahedron 5 O.)
+Dodecahedra and icosahedra live only in the Queens' family.
+Highlights (counts of distinct solids, D I C T O): 600-cell 120, 240 (two sizes), 600, 3000 (600 cells + 2400 hidden), 900; 120-cell
+1560 (120 cells + 1440 hidden), 2400, 7200, 34200, 8100; bitruncated 600-cell (cells only TT, TI) 7200, 14400, 36000, 180000, 56400:
+the Queens' middle houses every Platonic solid though none is its cell; omnitruncated 120-cell 28800 D (40 through each corner).
+A4 bitruncated 5-cell: 60 hidden T (edge sqrt20) + 5 O; the 4D permutohedron: 60 hidden regular tetrahedra (edge sqrt20).

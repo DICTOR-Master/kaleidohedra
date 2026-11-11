@@ -6052,6 +6052,15 @@
     "retry": "never",
     "study": "studies/2026-11-11-orbit-polytopes",
     "date": "2026-11-11"
+   },
+   {
+    "question": "Strict inhabitance: exact Platonic solids among the corners of every Atlas polytope",
+    "method": "inhabitance.py: cells, vertex figures, hidden solids via frame from three neighbours, all corners checked; controls",
+    "status": "SETTLED (float, controls)",
+    "result": "A4 family: T, O only; B4, F4: C, T, O; every H4 polytope: all five D I C T O. 600-cell hides 120 D, 240 I, 600 C, 2400 T, 900 O; bitruncated 600-cell houses all five though its cells are TT, TI",
+    "retry": "never",
+    "study": "studies/2026-11-11-orbit-polytopes",
+    "date": "2026-11-11"
    }
   ]
  },
