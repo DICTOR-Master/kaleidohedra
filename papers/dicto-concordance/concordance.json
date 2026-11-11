@@ -6099,6 +6099,16 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 step A1: a balancing 4D shadow (DICTO) - plane speeds s_j = |X_j|^q in the sweep of the hop",
+    "method": "og_sweep_speeds.py: q = 0, 0.5, 1, 1.5, 1.8 to k = 22; controls top (all faces), sweep = hull, mass conserved; best-flow c*",
+    "status": "FAILED",
+    "result": "q in [0,1] valid, c* identical for all three at every level (worst 4.50 at k=21); q = 1.5, 1.8 (and q < 0) not valid shapes; the overload is fixed by the bottom, independent of the order of deaths",
+    "retry": "never retry speed or death-order variants; only weighted (solid angle / area) averaging",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },

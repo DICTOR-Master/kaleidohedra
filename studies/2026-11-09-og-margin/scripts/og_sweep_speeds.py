@@ -51,6 +51,7 @@ def death(X, x2, sp, i):
 def analyse(X, x2, act, perms, reps, sp):
     n = len(X); na = int(act.sum())
     top_ok = len(ConvexHull(X / sp[:, None]).vertices) == n                  # CONTROL 0: every face present at the top
+    if not top_ok: return dict(top_ok=False, agree=None, cons=None, orphans=None, eq_max=float('nan'), cstar=float('nan'))  # not a valid shape
     lam = np.full(n, -np.inf); tight = {}; scale = np.abs(x2).max()
     for i in reps:
         li, yi = death(X, x2, sp, i)
@@ -107,12 +108,12 @@ for k in range(KMAX + 1):
     row = dict(k=k, cand=n, active=int(act.sum()), cut=int((~act).sum()), q={})
     for q in QS:
         r = analyse(X, x2, act, perms, reps, xn ** q); row['q'][str(q)] = r
-        ok_all &= r['top_ok'] and r['agree'] and r['cons']
+        if r['top_ok']: ok_all &= r['agree'] and r['cons']                  # invalid speeds are recorded, not failures
         print(f'k {k:3d} q {q:+.2f}: cut {row["cut"]:6d}/{n:6d} | top all faces {r["top_ok"]} | sweep=hull {r["agree"]} | conserved {r["cons"]} | equal-split max {r["eq_max"]:.3f} | BEST c* {r["cstar"]:.3f} | {time.time() - t0:.0f}s', flush=True)
     print(f'PROGRESS {(k + 1) / (KMAX + 1):.3f} level {k}', flush=True)
     rows_out.append(row); V, FF = W, FN
 json.dump({'mark': 'DICTO #43 sweep speeds (balancing 4D shadow), 2026-11-11 · DICTO · dictospheres.com', 'k': rows_out}, open(OUT, 'w'))
 for q in QS:
-    cs = [r['q'][str(q)]['cstar'] for r in rows_out]
-    print(f'q {q:+.2f}: worst c* {max(cs):.3f} | c* < 2 at every level: {all(c < 2 for c in cs)} | by level {[round(c, 2) for c in cs]}')
+    cs = [r['q'][str(q)]['cstar'] for r in rows_out]; valid = all(c == c for c in cs)
+    print(f'q {q:+.2f}: valid at every level {valid} | worst c* {max(cs):.3f} | c* < 2 at every level: {valid and all(c < 2 for c in cs)} | by level {[round(c, 2) for c in cs]}')
 print('FINAL ok' if ok_all else 'FINAL FAIL: a control failed')

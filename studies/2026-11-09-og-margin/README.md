@@ -364,3 +364,11 @@ Result k ≤ 14: the hop renews EVERY face except, from k = 10, the 12 faces on 
 deaths are exchanged completely at each hop (corners ↔ faces, the polarity), cut ≤ born holds trivially (born ≈ all), and the 12
 survivors are exactly 'cut' in the polar sense (their foot point lies inside the surviving face, Lemma G). The count reduces to the
 step-(A) identity F_k = 2(F_{k−1} − c_k) − 4 − e_k: no new inequality from this reading.
+
+## §25 A balancing 4D shadow? plane speeds (11 Nov 2026; DICTO: "is it possibly a different 4D shadow", "a balancing one"; scripts/og_sweep_speeds.py, data/og-speeds-22.*, watched job og-speeds-22, FINAL ok)
+Same hop, plane j moving at speed s_j = |X_j|^q: every valid q has the same top (all faces) and bottom (X_{k+1}) but a different 4D shape.
+Valid: q ∈ [0, 1] at every level; q = 1.5 and 1.8 lose faces at the top from k = 5–6 (not valid shapes; q < 0 also invalid, local pilot).
+Result: best-flow c* is IDENTICAL for q = 0, 0.5, 1 at every k ≤ 22 (worst 4.50 at k = 21). The overload does not depend on the speeds:
+it is fixed at the bottom (groups of active faces that are the only possible outlet for many cut faces whatever the order of deaths).
+Verdict: no balancing speed exists in this family; next form of the idea (if pursued): per-orbit speeds cannot help either where the
+outlet set is forced by tightness at λ = 0 itself, so a balancing argument must weight faces (solid angle / area), not reorder deaths.
