@@ -808,3 +808,11 @@ Late hops (k ≥ 4, F > 5000): mean 0.310, range 0.245–0.359, growth mean 1.38
 Verdict: the cut share of the hop on fine near-round polytopes tends to an equilibrium near 0.32 (growth ≈ 1.36) whatever the start;
 it does not creep toward 1/2. The OG's generic classes (§38b, g ≈ 0.29–0.33 at hops 34–37) sit at the same equilibrium. (G) is thus a
 statement about ONE map: prove that the hop's cut share on fine near-round polytopes stays below 1/2 (observed ≈ 0.32, max 0.36).
+
+## §40 Truncated triangles and decagons to k = 37 (11 Nov 2026; DICTO: "any truncated triangles", "decagons"; scripts/axis_shapes.py, data/og-axis-37.*, FINAL ok)
+Three-fold axis face = TRUNCATED TRIANGLE (6 sides alternating, all angles 120°) at k = 10 (long/short 4.516518), 16 (2.356103),
+22 (1.751818), 23 (1.838215), 30 (1.503188), 34 (3.763617), 36 (2.927037), 37 (2.050658); also in the UP shell X_21 (1.751818 = the
+down face of D_22: the corner of D_21 on the axis becomes the face of D_22, axis rule R1, and its polar carries the same shape).
+Five-fold axis face = TRUNCATED PENTAGON (decagon, sides alternating, all angles 144°) at k = 10 (31.055994), 13 (8.020054), 17 (1.615005),
+19 (19.092134), 34 (1.068128), 37 (1.406655). Other levels: triangle, pentagon, a corner, or (up) a 9-gon. No period; ratios do not
+settle (k ≤ 27 values agree with the certified axis walk §14).
