@@ -733,3 +733,9 @@ k = 20). Reasons: γ_M (largest mirror cap, 5.2° at k = 20) is about twice the 
 REDUCTION: (M) ⇐ the mirror faces shrink: γ_M ≲ 0.5° (with size ratio ≈ 0.5–1) makes the bound < 1/4. Since the mirror faces of P are
 the edges of the section polygon D_k ∩ P, this is a 2D question: do the edges of the 15 section polygons keep getting finer?
 Next: track γ_M and the section polygon's edge count/lengths to k = 37 (certified checkpoints), and the 2D dynamics of D_k ∩ P.
+**§38a Mirror growth to k = 27 (og_orbits.py, watched job og-orbits-30; stopped by memory at k = 28, exit 137, levels ≤ 27 in data/og-orbits-30.log).**
+Mirror faces M (k = 20 … 27): 1320, 1680, 1560, 2160, 3840, 3000, 4500, 4740 against n = 7952 … 89 742; fit M ∝ n^0.53 (k = 20 … 27), M/√n
+between 13 and 21: the √n law expected from 15 mirror circles holds in the data. μ (mirror + axis) = 0.053 at k = 27.
+CORRECTION to §37: the generic death share g reaches 0.355 at k = 27 (0.283 at k = 26), so "g ≤ 1/3" is false; the reduction needs
+μ < (1/2 − g)/(1 − g) (= 0.225 for g = 0.355), still true with a wide margin at k = 27 (μ = 0.053). (G) must be stated with a bound
+below 1/2, not 1/3. Cut shares 0.259, 0.303, 0.365 at k = 25–27.
