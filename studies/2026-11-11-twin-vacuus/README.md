@@ -140,3 +140,11 @@ ANGELI THREAD round the cycle (twin hull Vacuus at k = 0, 1, 2, 3; then it repea
   (Catalan: 12.8684° and 34.1211° at k ≡ 1, 7.0663° and 37.6501° at k ≡ 3; all cos² exact in ℚ(√5), in the json). No discs anywhere.
 The thread: dodecahedron Angelus → rhombicosidodecahedron Angelus → icosahedron Angelus → rhombicosidodecahedron Angelus → (scaled) back.
 Render (DICTO: "render the Angeli thread for the Catalan pentakis"; scripts/render_thread.py, figures/angeli-thread-catalan.png): the four Angeli of one turn, 2 x 2, fins coloured by plane: k = 0 dodecahedron Angelus (30 fins, 41.81°), k = 1 rhombicosidodecahedron Angelus (120 fins, 12.87° and 34.12°), k = 2 icosahedron Angelus (30 fins, 63.43°), k = 3 rhombicosidodecahedron Angelus (120 fins, 7.07° and 37.65°); then the cycle returns scaled by c = 0.7214.
+Render (DICTO: "render the Angeli thread for the OG levels 0 to 7"; scripts/render_thread_og.py, figures/angeli-thread-og-0-7.png): 2 x 4
+panels, fins coloured by plane. k = 0 twin OG Angelus (300 fins, 81 planes, six discs); k = 1 rhombicosidodecahedron Angelus (120 fins,
+12.87° and 34.12°); k = 2 icosahedron Angelus (30, 63.43°); k = 3 dodecahedron Angelus (30, 41.81°); k = 4 the 140 + 12 Angelus (240 fins,
+66 planes, six discs); k = 5 = the k = 1 kind (12.87°, 34.12°); k = 6 rhombicosidodecahedron Angelus with new angles 10.98° and 35.28°;
+k = 7 dodecahedron Angelus. No cycle: the OG's thread visits the Platonic Angeli irregularly (I at 2; D at 3, 7).
+OBSERVED (4 decimals, not yet exact): the OG's k = 1 and k = 5 Angeli have the SAME fin angles (12.8684°, 34.1211°) as the Catalan
+pentakis's k = 1 Angelus, and the same golden rectangles (φ²): the OG thread touches the pentakis cycle there. To check exactly
+(cos² 6909/11881 + 1960√5/11881 and 7749/11881 + 176√5/11881 for the Catalan).
