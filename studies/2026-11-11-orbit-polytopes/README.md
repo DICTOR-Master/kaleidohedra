@@ -169,3 +169,8 @@ Highlights (counts of distinct solids, D I C T O): 600-cell 120, 240 (two sizes)
 1560 (120 cells + 1440 hidden), 2400, 7200, 34200, 8100; bitruncated 600-cell (cells only TT, TI) 7200, 14400, 36000, 180000, 56400:
 the Queens' middle houses every Platonic solid though none is its cell; omnitruncated 120-cell 28800 D (40 through each corner).
 A4 bitruncated 5-cell: 60 hidden T (edge sqrt20) + 5 O; the 4D permutohedron: 60 hidden regular tetrahedra (edge sqrt20).
+## The One World sizes inside the 600-cell (scripts/one_world_600.py; DICTO 11 Nov, after reading One World)
+In the 600-cell (edge 1) every hidden dodecahedron has edge 1, and exactly 2 of its 5 Euclid cubes (edge phi, Elements XIII.17) have
+all 8 corners among the 600-cell's corners, with the tetrahedra inside them (edge phi sqrt2): the dodecahedron-cube-tetrahedron
+nesting of One World, at One World's sizes (D 1, C phi, T phi sqrt2). No icosahedron or octahedron is concentric with such a
+dodecahedron. A link for the Atlas (Observation 5), not a change to One World's results.
