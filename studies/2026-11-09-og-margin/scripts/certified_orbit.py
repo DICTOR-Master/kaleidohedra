@@ -43,7 +43,7 @@ bdot = lambda u, v: u[0] * v[0] + u[1] * v[1] + u[2] * v[2]
 bsub = lambda u, v: (u[0] - v[0], u[1] - v[1], u[2] - v[2])
 bcross = lambda u, v: (u[1] * v[2] - u[2] * v[1], u[2] * v[0] - u[0] * v[2], u[0] * v[1] - u[1] * v[0])
 bapp = lambda M, v: tuple(M[i][0] * v[0] + M[i][1] * v[1] + M[i][2] * v[2] for i in range(3))
-SEP, MATCH_TOL, EPS, ERR_T = 1e-8, 1e-11, 1e-10, 1e-10
+SEP, MATCH_TOL, EPS, ERR_T = 1e-10, 1e-11, 1e-10, 1e-10   # SEP was 1e-8; 11-11 D_40 has distinct points 1.09e-9 apart (float error ~1e-13, matches within 1e-11)
 def fail(msg): print('FINAL FAIL:', msg, flush=True); sys.exit(1)
 t0 = time.time()
 
