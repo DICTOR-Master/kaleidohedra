@@ -386,3 +386,17 @@ to φ^kρ_k = φρ_{k+1}/ρ_k − 1): never negative (Cor. 1 control); range 0.4
 16→17: the shell tends to an EVEN layer of relative thickness 1/φ = 0.618. Exactly 0.6180 on many axes at many levels (ρ unchanged:
 Lemma G equality). Unscaled shell: D_{k+1} inside D_k on 55–100 % of rays; out at most 1.8 %, in at most 13 % of the mean radius;
 from k = 10 within ±2.6 %, mean −0.2 … −0.5 %: the two surfaces interleave almost on top of each other.
+
+## §28 The Galois twins (11 Nov 2026; DICTO: "maybe a 5D penrose type", "yes run the twin test", "maybe there is a scutoid type exchange between twins"; scripts/og_twin.py, data/og-twin-10.json, exact Q(√5), the compute machine, FINAL ok)
+Penrose = cut-and-project from 5D; icosahedral = 6D, and the twin (√5 → −√5) is the perpendicular-space coordinate. Exact corners of
+D_0 … D_10, twin computed without cancellation as (a² − 5b²)/(a + b√5). Coordinates' digits 4, 6, 7, 14, 18, 25, 44, 78, 231, 567, 1780:
+no fixed lattice (unbounded denominators), so no model set in the usual sense. But the twins COLLAPSE to the centre: largest twin radius
+0.628, 0.544, 0.471, 0.218, 0.078, 0.068, 0.028, 2.1e−3, 3.3e−4, 7.1e−5, 1.8e−5 (k = 0 … 10; about ×0.35 per level, irregular), while the
+real radius settles near 1.2. Why: Galois conjugation commutes with the foot-point formula p = (n·a / n·n) n, so the twin family is the
+SAME hop on the twin points with the faces chosen by the real hull; in twin space those member sets are not convex faces (twin hull
+has only 12–180 of 80–500 points as corners), their planes pass near the centre, and the pedal step contracts.
+Exchange between the twins: real neighbour pairs (hull edges) that are also twin hull edges: 20 % (k = 0, 1), then 0–5 %, 0.2–0.8 % at
+k = 9, 10: the twins exchange almost ALL neighbours (scutoid-type exchange is nearly complete).
+Reading: one real direction neutral (radius settles), the conjugate direction contracting (like a Pisot unit); the 'window' shrinks
+to a point. Not a proof route yet; lead: does the contraction rate tie to the cut fraction (both come from how far the faces are from
+convex in twin space)?
