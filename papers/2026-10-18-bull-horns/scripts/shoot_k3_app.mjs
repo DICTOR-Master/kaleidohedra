@@ -3,7 +3,7 @@
 // overlapping wrong copies (its cell sums to 5.5079, not 2.5103). The app's kit (Kaleidohedra scripts/build-octet-truss-data.mjs,
 // kits.cores.round, exported to app-cores-round.json) keeps the right copies: 1 OG, 6 caps, 12 central and 24 flanking cores,
 // 12 rests, 4 + 4 tetrahedra. Same page, camera, colours and pull-apart as the other panels; only the pieces are swapped.
-// Run on dicto-node: node shoot_k3_app.mjs <repo root> <out dir>
+// Run on compute-host-2: node shoot_k3_app.mjs <repo root> <out dir>
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 const [ROOT, OUT] = process.argv.slice(2);

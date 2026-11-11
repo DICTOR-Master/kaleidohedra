@@ -4,7 +4,7 @@
 #   (rho² = φ²/4 and 3φ²/4) which stations the two cycles share at any turn; then every rho² that makes two stations coincide.
 # -> data/lineup-c-step1.txt
 import os, io, sys, contextlib, itertools
-PD = '/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
+PD = '~/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
 sys.argv = ['polar.py', 'data/dharma_cycle.json']
 with contextlib.redirect_stdout(io.StringIO()):
     exec(open('scripts/polar.py').read())

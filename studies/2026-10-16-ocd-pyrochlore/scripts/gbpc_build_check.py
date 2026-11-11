@@ -1,6 +1,6 @@
 # Fable, FLOAT independent check of data/gbpc-build.json (2026-10-16): random points in one bcc cell; fraction free, covered by tiles (all lattice translates), covered twice, and covered while inside an RT.
 import sys, io, os, contextlib, json, numpy as np
-os.chdir('/home/dicto/kaleidohedra/studies/2026-10-16-ocd-pyrochlore')
+os.chdir('~/kaleidohedra/studies/2026-10-16-ocd-pyrochlore')
 src = open('scripts/golden_fill.py').read().split('# ---- all bodies')[0]
 with contextlib.redirect_stdout(io.StringIO()): exec(src)
 Nn = np.array([fl(n) for n, d in RT['H']]); Dd = np.array([d.f() for n, d in RT['H']])

@@ -1,4 +1,4 @@
-# DICTO 2026-10-18 octet study -- STEP 25 (dicto-node, manifold3d): meshes of the refined envelope kit for the 3D page: the phi^-2 vertex
+# DICTO 2026-10-18 octet study -- STEP 25 (compute-host-2, manifold3d): meshes of the refined envelope kit for the 3D page: the phi^-2 vertex
 # cuboctahedron at (0,0,R), the two wedges of the +z outer corner, and the tetrahedron T+ minus its 4 key dents and its 4 phi^-2 corners.
 # usage: python3 step25_refined_meshes.py step10-input.json step22-input.json OUT.json
 import sys, json, itertools, numpy as np, manifold3d as m3

@@ -79,7 +79,7 @@ want scheduled backups:
 
 ```
 # Hourly, logging output for troubleshooting:
-0 * * * * /home/dicto/rhombiverse/scripts/backup.sh >> /home/dicto/rhombiverse-backups/backup.log 2>&1
+0 * * * * ~/rhombiverse/scripts/backup.sh >> ~/rhombiverse-backups/backup.log 2>&1
 ```
 
 ## Commit granularity

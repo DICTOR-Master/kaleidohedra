@@ -6,9 +6,9 @@
 import json, itertools, numpy as np, sys
 from scipy.spatial import ConvexHull
 from scipy.optimize import linprog
-sys.path.insert(0, '/home/dicto/kaleidohedra/studies/_lib'); import geomcheck as gc
+sys.path.insert(0, '~/kaleidohedra/studies/_lib'); import geomcheck as gc
 N = json.load(open('data/network.json')); T = np.array(N['T']); O = np.array(N['ocd']); Z = np.array(json.load(open('data/conflict.json'))['zone'])
-C = json.load(open('/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma/data/reversed-chain.json')) if False else None
+C = json.load(open('~/kaleidohedra/studies/2026-10-16-polar-dharma/data/reversed-chain.json')) if False else None
 ax5 = gc.icosa_axes(np.array([v for v in O if abs(np.linalg.norm(v) - np.linalg.norm(O, axis=1).max()) < 1e-9]))['5'] if False else None
 # five-fold axes of the OCD: its 12 outer corners
 r = np.linalg.norm(O, axis=1); A5 = O[np.abs(r - r.max()) < 1e-9]; A5 = A5 / np.linalg.norm(A5, axis=1)[:, None]

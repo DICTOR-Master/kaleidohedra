@@ -1,4 +1,4 @@
-// Print paper.html to PDF (A4) with the DICTO footer. Run on dicto-node: node print_pdf.mjs <paper.html> <out.pdf>
+// Print paper.html to PDF (A4) with the DICTO footer. Run on compute-host-2: node print_pdf.mjs <paper.html> <out.pdf>
 import { chromium } from 'playwright';
 import { pathToFileURL } from 'url';
 const [src, out] = process.argv.slice(2);

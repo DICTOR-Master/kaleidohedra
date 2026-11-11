@@ -8,7 +8,7 @@
 #              notched; left and right tetrahedra. Exact volumes, study steps 6-15.
 # Cells are in the octet world's frame (octahedra at (a/2)n, a = phi^2): scale 3phi/4. Each piece: [role, vertices, triangles, outline]
 # (outline = its edges between faces that are not flat, so the triangulation does not show).
-# Inputs (research checkout): studies/2026-10-18-ocd-octet/data/{step10-input,step15-input}.json. Needs manifold3d (dicto-node).
+# Inputs (research checkout): studies/2026-10-18-ocd-octet/data/{step10-input,step15-input}.json. Needs manifold3d (compute-host-2).
 # Usage: python3 <this> <research checkout> <out.js>
 import sys, json, itertools, numpy as np, manifold3d as m3
 ROOT = sys.argv[1].rstrip('/') + '/studies/2026-10-18-ocd-octet/data/'

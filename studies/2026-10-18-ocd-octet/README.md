@@ -78,7 +78,7 @@ Related: bcc golden kit `studies/2026-10-18-bcc-golden-kit` (steps 1–5: slabs,
 - With the 6 middle-piece notches as well (step 8 set): no mirror holds (the stars' 36° twist makes the notches twist), only the 3-fold turns → **T+ and T− are mirror images**, a left and a right tetrahedron.
 - Step 8 check done (`data/step8-trimmed.json`, 300 000 samples in one cell): Ms on different edges never overlap (0); every point assigned exactly once (0 unassigned, 0 twice); M is one piece (one big component, the rest single-voxel specks). Per cell: keyed OCD 1.2214, 6 M 0.4417 (one ≈0.0736), 6 notched caps 0.3496 (one ≈0.0583), 2 notched tetrahedra 0.4975 (one ≈0.2488).
 
-### Step 10 — the pieces as solid meshes and a 3D page (`step10_piece_meshes.py` on dicto-node with manifold3d → `data/step10-meshes.json`; `draw_step10.py` + `step10_template.html` → `renders/step10-pieces.html`)
+### Step 10 — the pieces as solid meshes and a 3D page (`step10_piece_meshes.py` on compute-host-2 with manifold3d → `data/step10-meshes.json`; `draw_step10.py` + `step10_template.html` → `renders/step10-pieces.html`)
 - Mesh volumes: keyed OCD 1.223113 and dented tetrahedron 0.382754 (both = the exact step-5 values), unnotched cap 0.086940 (= exact step 2); middle piece 0.073291, notched cap 0.058072, notched tetrahedron 0.249486 — agree with the step-8 sampling.
 - All pieces are single solids without holes (the notched cap shows 4 zero-volume boolean slivers, ignored). Per cell 1.2231 + 6×0.0581 + 6×0.0733 + 2×0.2495 = 2.5102 ≈ cell 2.5103.
 - **Final set with middle pieces: keyed OCD, notched cap, middle piece, left tetrahedron, right tetrahedron** (5 shapes; 4 if a mirror-image pair counts as one).
@@ -120,7 +120,7 @@ Related: bcc golden kit `studies/2026-10-18-bcc-golden-kit` (steps 1–5: slabs,
 ### Step 15 — DICTO 10-18: "1, keep the central prism trimmed"
 - The middle piece splits into a **Penrose core** (central thick-rhombus prism ∩ middle piece) and the rest of the middle piece.
 - Exact (`step15_penrose_core.py` → `data/step15-core.json`): core = prism ∩ H − OCD1 − OCD2; no key enters it (exact). **Penrose core (−36734 + 16658√5)/50787 = 0.010129** (13.8% of the middle piece); **rest of the middle piece (47668/50787 − 99416√5/253935) = 0.063162**. The two OCD cuts are equal (symmetric through m).
-- Meshes (`step15_mesh.py` on dicto-node → `data/step15-meshes.json`): core and rest are **each one solid**; volumes equal the exact values.
+- Meshes (`step15_mesh.py` on compute-host-2 → `data/step15-meshes.json`): core and rest are **each one solid**; volumes equal the exact values.
 - 3D page updated (same link, claude.ai/artifact/Fx4WGWm6udtt6EEPKsaMua): buttons for the Penrose core and the rest; the assembly shows each middle piece as core + rest.
 - **Set now: keyed OCD, notched cap, Penrose core, middle rest, left and right tetrahedra** (6 shapes; 5 counting the mirror pair as one).
 
@@ -133,7 +133,7 @@ Related: bcc golden kit `studies/2026-10-18-bcc-golden-kit` (steps 1–5: slabs,
 ### Step 17 — DICTO 10-18: "merge caps with middle rests" (after the comparison: octet = finished kit, not a denser packing; aim now fewer, chunkier pieces)
 - A middle rest is shared by 2 octahedra and touches caps at both ends of its edge, so a whole rest can't go to one cap without breaking the symmetry (more shapes). Instead (Claude's construction): cut each rest in half by the plane through m perpendicular to its edge (the halves are congruent, swapped by the inversion through m), and merge round each octet vertex: **vertex piece = the 6 caps meeting at a lattice vertex + the 12 half-rests on the 12 edges there.** One vertex per cell, so the set becomes: keyed OCD, vertex piece, Penrose core, left + right tetrahedra.
 - Chunkiness scored by sphericity ψ = π^(1/3)(6V)^(2/3)/A (1 = ball; cube 0.806, regular tetrahedron 0.671).
-- Result (`step17_vertex_piece.py` on dicto-node → `data/step17-vertex.json`): **vertex piece volume 0.727404 (= 6 caps + 6 rests ✓) but it falls into 2 separate solids and is very spiky: ψ = 0.213.** Not a usable single piece; not chunkier.
+- Result (`step17_vertex_piece.py` on compute-host-2 → `data/step17-vertex.json`): **vertex piece volume 0.727404 (= 6 caps + 6 rests ✓) but it falls into 2 separate solids and is very spiky: ψ = 0.213.** Not a usable single piece; not chunkier.
 - Alternative tried (`step17b_tet_plus_rests.py` → `data/step17b-tet-rests.json`): cut each rest by the mirror plane through its edge and axis, merge each tetrahedron with its 6 half-rests: **one solid, volume 0.438972 ✓, but ψ = 0.357**, less chunky than the tetrahedron alone (0.460).
 - Sphericity of the current pieces: bare OCD 0.979; **keyed OCD 0.696** (the overhanging key plates cost a lot); **Penrose core 0.752** (the chunkiest new piece); notched cap 0.494; notched tetrahedron 0.460; middle rest 0.385.
 - **Reading: the middle rests are thin collars round the stars; merging them into anything makes it less chunky.** The thin pieces come from the octet's spacing itself, not from how the pieces are grouped. Keep the step-15 set; do not merge.
@@ -156,14 +156,14 @@ Decisions (DICTO, 10-18, asked before any app edit):
 - Re-run of the step-14 fit with no keys (`step18_no_keys_flanks.py` → `data/step18-fit.json`): the **flanking Penrose prisms are now clear** (nothing to hit); like the central one they are closed by both OCDs at every column, but ≈22% of their columns (central ≈12%) leave the hull, so they would be trimmed to it as the central core is. Three prisms together ≈0.021.
 - App (research branch 94eb7d2) still shows keys in "Octet with OCD and Penrose cores"; to update to the keyless kit when app work resumes. The keyed kit row ("Octet with OCD") is unchanged unless DICTO says.
 
-### Step 19 — the flanking Penrose cores, keyless kit (`step19_flank_cores.py` → `data/step19-flank-cores.json` exact; `step19_mesh.py` on dicto-node → `data/step19-mesh.json`)
+### Step 19 — the flanking Penrose cores, keyless kit (`step19_flank_cores.py` → `data/step19-flank-cores.json` exact; `step19_mesh.py` on compute-host-2 → `data/step19-mesh.json`)
 - DICTO 10-18: "compute the flanking cores and check them".
 - Exact: keyless middle piece **M₀ = (310 + 26√5)/4617 = 0.079735**. Cores: central (−36734 + 16658√5)/50787 = 0.010129 (unchanged, no key ever entered it); **each flanking core 4114/1539 − 9182√5/7695 = 0.004993**, the two exactly equal. The three prisms are pairwise interior-disjoint inside H (exact 0). Three cores = 25.2% of M₀; **rest = −231380/50787 + 524152√5/253935 = 0.059620**.
 - Meshes: every core and the rest are **single solids**; volumes equal the exact ones. Sphericity: central core 0.752, flanking core 0.729, rest 0.377 (M₀ whole 0.579).
 - **The two flanking cores are mirror images** (a left and a right): no rotation takes one onto the other; the mirror of one does.
 - So with flanking cores the full keyless kit is: OCD, notched cap, central core, left + right flanking core, rest, left + right tetrahedron (7 shapes; 5 counting mirror pairs as one).
 
-### Step 20 — the keyless kit with three cores on the 3D page (`step20_keyless_meshes.py` on dicto-node → `data/step20-keyless-meshes.json`)
+### Step 20 — the keyless kit with three cores on the 3D page (`step20_keyless_meshes.py` on compute-host-2 → `data/step20-keyless-meshes.json`)
 - Meshes: plain OCD 1.151868, notched cap 0.058072 (unchanged: keys never entered the octahedron), **keyless notched tetrahedron 0.265776**, central core 0.010129, flanking cores 0.004993 each, rest 0.059620. Per cell 1.151868 + 6×0.058072 + 6×0.079735 + 2×0.265776 = 2.510263 = cell ✓.
 - Page (same link): button "Keyless kit, 3 Penrose cores" (assembly round one OCD: 6 caps, 12 middle pieces each as central core + 2 flanking cores + rest, 4 left + 4 right tetrahedra), and single-piece buttons for the flanking cores (left, right), the rest and the keyless tetrahedron.
 
@@ -175,14 +175,14 @@ Decisions (DICTO, 10-18, asked before any app edit):
 - What is left: in each octahedron, the corners outside the envelope ((224/27 − 32√5/9) per octahedron, 6 corner pieces), and each tetrahedron minus the 4 envelope corners (64/27 − 8√5/9, the step-5 dented tetrahedron, chiral).
 - So a kit **"golden envelope + 6 outer corners + left/right dented tetrahedra"** fills space with the golden envelope (a golden zonohedron, buildable from golden rhombohedra) as the big piece; the OCD sits inside it. Next: the outer corners and dented tetrahedra — can they be cut into golden/Penrose pieces?
 
-### Step 22 — what the envelopes leave (`step22_complement.py` on dicto-node → `data/step22-complement.json`)
+### Step 22 — what the envelopes leave (`step22_complement.py` on compute-host-2 → `data/step22-complement.json`)
 - The space outside the envelopes is **one connected web** (round every lattice vertex, tetrahedron and edge it runs on), so it has to be cut; the octet frame gives the cuts.
 - **The octahedron minus its envelope falls into exactly 6 separate, congruent pieces**, one per octahedron corner — no cone cuts needed (cone cuts would leave two 0.00029 slivers each). Each **outer corner = 112/81 − 16√5/27 = 0.057639** (exact from step 21: (224/27 − 32√5/9)/6), non-convex, ψ 0.456.
 - Each tetrahedron minus its 4 envelope corners = the step-5 dented tetrahedron (64/27 − 8√5/9 = 0.382754), chiral (left/right), ψ 0.620.
 - The envelope (RT) ψ 0.961.
 - **Envelope kit: golden envelope (OCD inside) + 6 outer corners + left/right dented tetrahedra — 4 shapes (3 counting the mirror pair), and 10/φ⁶ = 55.73% of space is in the golden piece.** Fills space exactly (frame + RT = octahedron part + 8 keys, step 21). The fewest shapes of any kit so far; Penrose does not appear in it (the Penrose cores straddle the envelope surfaces).
 
-### Step 23 — the envelope kit in 3D (`step23_envelope_meshes.py` on dicto-node → `data/step23-envelope-meshes.json`)
+### Step 23 — the envelope kit in 3D (`step23_envelope_meshes.py` on compute-host-2 → `data/step23-envelope-meshes.json`)
 - Meshes: envelope 1.398921, outer corner 0.057639, dented tetrahedron 0.382754, OCD 1.151868 (all = the exact values).
 - 3D page (same link): "Envelope kit (4 shapes)" assembly round one OCD — glass golden envelope with the gold OCD inside, 6 outer corners (blue), 4 left + 4 right dented tetrahedra; buttons for the envelope and the outer corner alone.
 
@@ -192,7 +192,7 @@ Decisions (DICTO, 10-18, asked before any app edit):
 - **Vertex cuboctahedron (Claude's observation, exact):** at each lattice vertex the 6 φ⁻² pyramids of the octahedra and the φ⁻² corners of the 8 tetrahedra make a **cuboctahedron scaled by φ⁻²** (the octet's vertex figure, edge R√2/φ² = 0.582688). Exact: the small tetrahedron corners lie outside every envelope and meet no key except at points (the keys' base corners sit exactly at the golden-section points, 6 of them on its corners). **Its volume (−320 + 160√5)/81 is exactly 1/3 of the envelope's**, so it fills (10/φ⁶)/3 = 18.576% of space.
 - So the envelope kit refines to: **golden envelope (55.73%) + φ⁻² vertex cuboctahedron (18.58%) + 12 wedges per cell (2.63%) + left/right tetrahedra with 4 key dents and 4 corners cut off (256/81 − 104√5/81 = 0.289494 each)**. 74.3% of space is in the two golden-scaled pieces.
 
-### Step 25 — the refined envelope kit in 3D (`step25_refined_meshes.py` on dicto-node → `data/step25-refined-meshes.json`)
+### Step 25 — the refined envelope kit in 3D (`step25_refined_meshes.py` on compute-host-2 → `data/step25-refined-meshes.json`)
 - Meshes: φ⁻² vertex cuboctahedron 0.466307, wedges 0.005504 each, cut-down tetrahedron 0.289493 (= the exact values of step 24).
 - 3D page (same link): "Refined envelope kit" — glass envelope with the OCD, the 6 vertex cuboctahedra at its octahedron's corners (orange; each is shared by the 6 octahedra meeting there), 12 wedges (red), 4 left + 4 right cut-down tetrahedra; single-piece buttons for the cuboctahedron, a wedge and the cut-down tetrahedron.
 
@@ -202,7 +202,7 @@ Decisions (DICTO, 10-18, asked before any app edit):
 - **The central cell is a dodecahedron with 12 pentagonal faces and 20 corners** (volume 0.058537, 20% of the cut-down tetrahedron), centred at the tetrahedron's centre; its pentagons are irregular (several edge lengths) and it keeps only the tetrahedron's turns — the shape of a tetartoid (float description; exact face analysis still to do).
 - Reading: the key planes are the wrong knife for the tetrahedra (too many small pieces). The tetrahedra stay the non-golden part of the refined kit; the central dodecahedral cell is a lead worth a closer look.
 
-### Step 27 — expanding the core dodecahedron (DICTO 10-18: "could this core dodecahedron be expanded to form a smaller kit with the ocd"; `step27_expanded_core.py` on dicto-node, `step27b_chirality.py` → `data/step27-expanded.json`)
+### Step 27 — expanding the core dodecahedron (DICTO 10-18: "could this core dodecahedron be expanded to form a smaller kit with the ocd"; `step27_expanded_core.py` on compute-host-2, `step27b_chirality.py` → `data/step27-expanded.json`)
 - Grow each tetrahedron-centred piece as far as it goes: every point outside the golden envelopes goes to its nearest tetrahedron centre. The centres (R/2)(odd, odd, odd) form a simple cubic lattice of spacing R, so each region is **a cube of edge R** (corners: 4 OCD centres and 4 octet vertices, alternating). **Expanded piece = that cube minus the envelopes.**
 - Results: **one solid**; volume 0.555671 = (1 − 10/φ⁶) × cell / 2 (the two tetrahedron sites per cell share the whole non-golden space); sphericity 0.602 (envelope 0.961). The piece at a T− site is the point reflection of the one at T+, and no turn of the cube maps the piece onto its mirror image → **left and right**.
 - **Smallest kit so far: golden envelope (with the OCD inside) + expanded piece, left and right — 2 shapes (3 counting the mirror pair).** Envelope 55.73%, expanded pieces 44.27% of space. It contains the step-26 core dodecahedron at its centre.

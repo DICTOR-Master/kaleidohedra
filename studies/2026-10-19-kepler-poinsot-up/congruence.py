@@ -12,7 +12,7 @@ def same_shape(P, Q, tol=1e-6):
     return False
 def load(f):
     s = open(f).read(); return json.loads(s[s.index('{'):s.rindex('}') + 1])
-seeds = load('/home/dicto/k-master/src/app/seeds-data.js'); upd = load('/home/dicto/k-master/src/app/up-data.js')
+seeds = load('~/k-master/src/app/seeds-data.js'); upd = load('~/k-master/src/app/up-data.js')
 def first(d, role):
     out = []
     def walk(x):

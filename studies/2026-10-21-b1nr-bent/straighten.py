@@ -1,6 +1,6 @@
 import numpy as np, itertools
 from scipy.optimize import least_squares
-src = open('/tmp/claude-1000/-home-dicto-Downloads-pet-bottle-rhombiverse/7eb40546-e88a-4dc6-81d1-ac55e6f94c23/scratchpad/kres/studies/2026-10-21-b1nr-bent/b1nr_bent.py').read()
+src = open('/tmp/claude-1000/<project>/7eb40546-e88a-4dc6-81d1-ac55e6f94c23/scratchpad/kres/studies/2026-10-21-b1nr-bent/b1nr_bent.py').read()
 exec(src[:src.index('def mvc')])
 V0 = V.copy()
 # vertex orbit by J51 edge type: 0 = end-triangle edge (6), 1 = lateral prism edge (3), 2 = apex edge (12)

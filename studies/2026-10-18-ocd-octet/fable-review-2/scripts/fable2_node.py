@@ -1,4 +1,4 @@
-# Fable review 2 (2026-10-18), dicto-node part (manifold3d + numpy): float meshes and dense sampling for steps 21-27.
+# Fable review 2 (2026-10-18), compute-host-2 part (manifold3d + numpy): float meshes and dense sampling for steps 21-27.
 # G = cube(R) at the tetrahedron centre minus the golden envelopes (step 27); W = fcc rhombic dodecahedron at the octet vertex minus the
 # envelopes (Fable's achiral alternative); G' = G minus the four phi^-2 vertex cuboctahedra (step-24 style refinement of G).
 # For each: solid parts, volume, area, sphericity, genus, dihedral angles (sharpest edges), slivers. Sampling: 2M uniform + 2M near-face

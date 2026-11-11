@@ -5,12 +5,12 @@
 import sys, io, os, contextlib, itertools, json, numpy as np
 RAD = float(sys.argv[1]) if len(sys.argv) > 1 else 5.0          # read before polar.py replaces sys.argv
 from scipy.spatial import ConvexHull
-PD = '/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
+PD = '~/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
 sys.argv = ['polar.py', 'data/dharma_cycle.json']
 with contextlib.redirect_stdout(io.StringIO()):
     exec(open('scripts/polar.py').read())
 os.chdir(here)
-sys.path.insert(0, '/home/dicto/kaleidohedra/studies/_lib'); import geomcheck as gc
+sys.path.insert(0, '~/kaleidohedra/studies/_lib'); import geomcheck as gc
 f = lambda v: np.array([x.f() for x in v]); F = lambda V: np.array([f(v) for v in V])
 dot = lambda a, b: sum((a[i] * b[i] for i in range(3)), Q(0))
 cross = lambda u, w: [u[1] * w[2] - u[2] * w[1], u[2] * w[0] - u[0] * w[2], u[0] * w[1] - u[1] * w[0]]

@@ -4,7 +4,7 @@ DICTO · dictospheres.com — DICTO: "I want this piece if possible to have the 
 
 **3D page:** `renders/p4-keyed-W.html` (study renders; copy here in `renders/`) — published at https://claude.ai/artifact/9WH92CtD2ZLovmrqjY369u (private until DICTO shares it). Views: one keyed W · bump meets dent (pull apart along the face normal) · 12 round one OCD · the set · unkeyed W for comparison · network.
 
-Scripts: `scripts/explore_face.py` (what the bump face looks like: socket rim, OCD shadow, kite shape, where the star's edges pierce the face), `scripts/fable4_keyed_W.py` (the geometry, from exact OCD data → `data/keyed-W-geometry.json`), `scripts/fable4_node.py` (dicto-node, manifold3d: build + checks + 6 000 000 sample points → `data/fable4-node.json`), `scripts/fable4_page.py` (the page).
+Scripts: `scripts/explore_face.py` (what the bump face looks like: socket rim, OCD shadow, kite shape, where the star's edges pierce the face), `scripts/fable4_keyed_W.py` (the geometry, from exact OCD data → `data/keyed-W-geometry.json`), `scripts/fable4_node.py` (compute-host-2, manifold3d: build + checks + 6 000 000 sample points → `data/fable4-node.json`), `scripts/fable4_page.py` (the page).
 
 ## 1. The design, and why
 - **Which faces bump, which dent.** The 8 flat W–W faces of the star-centred W pair bipartitely across the structure (p4_key_pairing): across a face F the neighbour is g(W) with g a 3-fold turn about the OCD centre, and the face it presents is g(F′) with F′ in the other class. Bump faces = the four containing an edge end together with the OCD centre of the same side (A0E0T±, A1E1T±); dent faces = A0E1T±, A1E0T±. The pattern is defined on one bump face and carried to the other three by W's own 2/m symmetry (mirror x = 0, inversion through the edge midpoint); each dent is the g⁻¹-image of the bump of its partner face. That is the only choice that keeps **one identical piece** whose bump fills its neighbour's dent exactly, for every placement of the piece in the structure (the pattern's 2/m invariance makes the placement unique up to the site symmetry).
@@ -12,7 +12,7 @@ Scripts: `scripts/explore_face.py` (what the bump face looks like: socket rim, O
 - **Clearances, honestly.** The continued edge line is also the OCD's silhouette in that face plane, so a kite exactly on it would touch the OCD. The kite stands **1.4 mm beside** the line (parallel), its apex **2.0 mm** along the line from the rim, and it is **turned 4°** so that it keeps 1.4 mm from the piece's edges and 1.3 mm from the OCD (grid search over shift / clearance / turn; an exact 0° continuation leaves < 1 mm somewhere). The step-8/9 lattice drawings are not used.
 - **Relief.** Bump = kite frustum, height 2.0 mm (0.05), walls 30° off the face normal (the top kite is 70 % of the base, long edge 6.5 mm); dent = the same frustum sunk. Sloped walls are what lets the pieces be pushed together one by one.
 
-## 2. Checks (dicto-node, manifold3d)
+## 2. Checks (compute-host-2, manifold3d)
 - Keyed W: **one solid, genus 0**, volume = unkeyed W to 1e-15 (bumps 0.006035 = dents 0.006035, one key 0.001509), 108 corners, ψ 0.647; sharpest edge 75.4° (the cell's own edge, unchanged), no slivers.
 - Pair across a face (W and g(W)): overlap 0, union = both cells minus the OCDs, gap 0 — the bump fills the dent exactly.
 - 12 keyed W round one OCD: 66 pairs, max overlap 2e-19, union = 12 W + OCD exactly.

@@ -1,5 +1,5 @@
 # Facts for every stage (the same counting as steps.py): the whole-ring stages (stages.json) and the partial-ring stages
-# (partials.json). Written to stages-facts.json. Runs on dicto-node (thousands of unions); progress to stdout.
+# (partials.json). Written to stages-facts.json. Runs on compute-host-2 (thousands of unions); progress to stdout.
 import os, sys, json
 import numpy as np
 from multiprocessing import Pool

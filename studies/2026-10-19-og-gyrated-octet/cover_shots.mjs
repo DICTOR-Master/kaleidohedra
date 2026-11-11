@@ -1,4 +1,4 @@
-// DICTO 2026-10-20: one transparent frame per piece of renders/lineup.html (dicto-node, Playwright). usage: node cover_shots.mjs <html> <outdir>
+// DICTO 2026-10-20: one transparent frame per piece of renders/lineup.html (compute-host-2, Playwright). usage: node cover_shots.mjs <html> <outdir>
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 const [F, OUT] = process.argv.slice(2); fs.mkdirSync(OUT, { recursive: true });

@@ -4,7 +4,7 @@
 # origin with every fill piece that touches it (and the neighbouring solids' count). -> renders/kits-data.json
 import json, itertools, math, numpy as np, manifold3d as m3
 from scipy.spatial import HalfspaceIntersection
-H = '/home/dicto/dbt-exact/2026-10-19-og-gyrated-octet/'
+H = '~/dbt-exact/2026-10-19-og-gyrated-octet/'
 fq = lambda s: (lambda a, b: float(eval(a)) + float(eval(b)) * 5 ** .5)(*s.split('|'))
 R = fq(json.load(open(H + '../2026-10-18-ocd-octet/data/step1-ocd-exact.json'))['R'])
 SOL = {k: np.array([[fq(c) for c in v] for v in json.load(open(H + f))['V']]) for k, f in (('dbt', 'dbt-exact.json'), ('cut8', 'cut8-exact.json'))}

@@ -10,7 +10,7 @@ Scale **unit** = icosahedron edge 1 (`data/*-unit.json`; `*-raw.json` = unit / (
 closed, consistently wound, Euler 2, no overlap by separating axes over every pair of convex parts, exact golden
 volumes, point tests over a cell. Scripts with the working copy: `octet-all.mjs` (§1, §2, §3; `octet.log`,
 `results-octet.json`), `cells.mjs` (§4, §5; `cells.log`, `results-cells.json`), `quasi-diamond.mjs` (§6, ran on
-dicto-node, 64 s; `quasi.log`, `results-quasi-diamond.json`), `render.mjs`, `render-all.sh`.
+compute-host-2, 64 s; `quasi.log`, `results-quasi-diamond.json`), `render.mjs`, `render-all.sh`.
 
 
 > **Filed 2026-10-10.** DICTO's decisions: record in DISCOVERIES (#21 the icosahedral octet; the 138.19° joint in

@@ -1,4 +1,4 @@
-# DICTO 2026-10-18 octet study -- STEP 24 check (dicto-node): outer corner minus the phi^-2 half-octahedron, split into connected parts.
+# DICTO 2026-10-18 octet study -- STEP 24 check (compute-host-2): outer corner minus the phi^-2 half-octahedron, split into connected parts.
 import sys, json, numpy as np, manifold3d as m3
 D = json.load(open(sys.argv[1])); RT = np.array(json.load(open(sys.argv[2]))['RT']); R = D['R']
 hull = lambda P: m3.Manifold.hull_points(np.asarray(P, float)); env = hull(RT)

@@ -1,7 +1,7 @@
 # DICTO 2026-10-17: does the OCD sit in a regular octahedron (8 joint hexagons on its faces) like the icosahedron + 6 Admiral Caps? fill ratio, five-fold corners vs edges, shell components.
 import sys, io, os, contextlib, itertools, numpy as np
 from scipy.spatial import ConvexHull, HalfspaceIntersection
-PD='/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma'; here=os.getcwd(); os.chdir(PD)
+PD='~/kaleidohedra/studies/2026-10-16-polar-dharma'; here=os.getcwd(); os.chdir(PD)
 sys.argv=['polar.py','data/dharma_cycle.json']
 with contextlib.redirect_stdout(io.StringIO()): exec(open('scripts/polar.py').read())
 os.chdir(here)

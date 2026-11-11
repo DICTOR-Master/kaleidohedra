@@ -3,7 +3,7 @@
 # the cube diagonals, the Hd planes). The sweep runs over 38 planes: the 32 cage planes (in T they only touch it: their d1 is T's support)
 # and the 6 square planes (in B they only touch it: d0 is B's support). T tiles space on the bcc lattice, so the whole bundle does. Exact.
 import itertools, numpy as np
-exec(open('/home/dicto/kaleidohedra/studies/2026-10-17-scutoids/scripts/scutoid_exact.py').read().split("out = ['DICTO")[0])
+exec(open('~/kaleidohedra/studies/2026-10-17-scutoids/scripts/scutoid_exact.py').read().split("out = ['DICTO")[0])
 from scipy.spatial import HalfspaceIntersection, ConvexHull
 SQ = [[Q(1), Q(0), Q(0)], [Q(-1), Q(0), Q(0)], [Q(0), Q(1), Q(0)], [Q(0), Q(-1), Q(0)], [Q(0), Q(0), Q(1)], [Q(0), Q(0), Q(-1)]]
 NN = N + SQ; GG = GROUP + ['Sq'] * 6
@@ -73,4 +73,4 @@ volT = volT / 6; layer = volT - cage_vol(dB)
 out.append(f'closing layer B -> T: cells {tot} = T − B {layer}: {tot == layer}; cells with no volume: {missing}')
 for k, vs in sorted(kinds.items()): out.append(f'   {k[0]}: {len(vs)} cells, inner {k[1]}-gon, outer {k[2]}-gon, {k[3]} free corner(s), {k[4]} corners; congruent: {len(set(vs)) == 1}')
 out.append(f'the bundle (core A, scutoid layer A -> B, closing layer B -> T) = T, which tiles space on the bcc lattice (translations t·(4,0,0)-type and t·(2,2,2)-type)')
-print('\n'.join(out)); open('/home/dicto/kaleidohedra/studies/2026-10-17-scutoids/data/scutoid-close.txt', 'w').write('\n'.join(out) + '\n')
+print('\n'.join(out)); open('~/kaleidohedra/studies/2026-10-17-scutoids/data/scutoid-close.txt', 'w').write('\n'.join(out) + '\n')

@@ -4,7 +4,7 @@
 import sys, io, os, contextlib, json, numpy as np
 from scipy.spatial import ConvexHull
 DATA = sys.argv[1] if len(sys.argv) > 1 else 'data/chorus-exact-r8.json'
-PD = '/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
+PD = '~/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
 sys.argv = ['polar.py', 'data/dharma_cycle.json']
 with contextlib.redirect_stdout(io.StringIO()):
     exec(open('scripts/polar.py').read())

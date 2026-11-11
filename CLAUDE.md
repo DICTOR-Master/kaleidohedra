@@ -87,7 +87,7 @@ yet diverged for Kaleidohedra's own slider/export model.
 - **Checks:** in the app, `npm run verify:i18n | verify:copy | verify:about |
   verify:targets | verify:catalogue | verify:rhombis-i18n`. The geometry's
   own checks run in krp-core (`cd src/krp-core && npm test && npm run verify`).
-- **Browser automation:** run Playwright on `dicto-node` (192.168.0.7,
+- **Browser automation:** run Playwright on `compute-host-2` (compute-host,
   SSH), not the dev Pi. Sync first, with `--delete` for tests. Headless
   Chromium there can starve timers, so hold simulated long-presses 1.5 s+.
 - After every push, check CI (`gh run list -L 1`) and fix a red run.

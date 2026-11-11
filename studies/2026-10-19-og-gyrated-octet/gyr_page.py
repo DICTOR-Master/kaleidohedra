@@ -1,5 +1,5 @@
 # DICTO 2026-10-20 gyrated octet: meshes (manifold3d, float from the exact data) + 3D page for the companion paper's figures.
-# usage (dicto-node): ~/plotenv/bin/python3 gyr_page.py  ->  renders/gyrated-octet.html
+# usage (compute-host-2): ~/plotenv/bin/python3 gyr_page.py  ->  renders/gyrated-octet.html
 import os, json, itertools, math, numpy as np, manifold3d as m3
 H = os.path.dirname(os.path.abspath(__file__)); os.makedirs(os.path.join(H, 'renders'), exist_ok=True)
 D = json.load(open(os.path.join(H, '..', '2026-10-18-ocd-octet', 'data', 'step1-ocd-exact.json')))

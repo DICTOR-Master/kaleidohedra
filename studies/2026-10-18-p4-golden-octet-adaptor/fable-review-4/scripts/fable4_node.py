@@ -1,4 +1,4 @@
-# Fable review 4 (2026-10-18), dicto-node part (manifold3d + numpy): build the keyed star-centred W from data/keyed-W-geometry.json and check it.
+# Fable review 4 (2026-10-18), compute-host-2 part (manifold3d + numpy): build the keyed star-centred W from data/keyed-W-geometry.json and check it.
 # Keyed W = cell − OCD0 − OCD1 − dents + bumps. Checks: one solid, genus, volume (= W_star), dihedrals; the pair across face 1 (neighbour
 # g(W)): no overlap, union = both cells minus OCDs (bump fills dent exactly); the 12 W round one OCD: pairwise overlaps, union; separation
 # directions (pair and ring); dense sampling of the periodic tiling OCD + keyed W. Meshes for the page. usage: fable4_node.py GEOM.json OUT.json

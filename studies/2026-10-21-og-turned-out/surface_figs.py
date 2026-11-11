@@ -1,7 +1,7 @@
 # DICTO 2026-10-21: pictures of the surface patterns (float copies of the exact solids in surface-patterns.json and golden-exact.json),
 # #18 standard. Scenes: the nine boundary solids, faces coloured by kind (orbit of the 60 rotations), all seen the same way; then the
 # ribbons of phi^2 TQH: the shell-3 towers on its 60 trapezoids on the TQH, and one ribbon (two trapezoids) with its two towers close up.
-# Run on dicto-node (manifold3d); renderer and camera as golden_figs.py. Then: node shots.mjs renders/surface.html renders/surface-shots;
+# Run on compute-host-2 (manifold3d); renderer and camera as golden_figs.py. Then: node shots.mjs renders/surface.html renders/surface-shots;
 # python3 surface_compose.py.
 import os, json
 import numpy as np, manifold3d as m3

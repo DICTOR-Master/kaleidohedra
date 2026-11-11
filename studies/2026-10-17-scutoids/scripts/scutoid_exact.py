@@ -1,9 +1,9 @@
 # Exact check (Q(√5)) of the golden scutoid layers of scutoid_layers.py: every corner of every cell solved exactly from three of its planes,
 # every cell checked against all its half-spaces exactly, its faces counted exactly, and the cell volumes summed exactly against the layer.
 import json, itertools, numpy as np, sys
-sys.path.insert(0, '/home/dicto/kaleidohedra/papers/intro-solids/scripts')
+sys.path.insert(0, '~/kaleidohedra/papers/intro-solids/scripts')
 from fractions import Fraction as Fr
-exec(open('/home/dicto/kaleidohedra/papers/intro-solids/scripts/hull_family_exact.py').read().split("def member(")[0])
+exec(open('~/kaleidohedra/papers/intro-solids/scripts/hull_family_exact.py').read().split("def member(")[0])
 from scipy.spatial import ConvexHull
 # the 32 directions exactly (unnormalised: the 12 icosahedron corners and the 20 dodecahedron corners in dual position)
 P5 = ICO; D3 = DOD
@@ -74,4 +74,4 @@ for name, d0, d1 in (('layer 1: A -> B', dA, dB), ('layer 2: B -> φ²A', dB, dA
     out.append(f'{name}: cells {tot} = layer {layer}: {tot == layer}')
     for k, vs in sorted(kinds.items()):
         out.append(f'   {k[0]}: {len(vs)} cells, inner {k[1]}-gon, outer {k[2]}-gon, {k[3]} Y-corner(s), {k[4]} corners; all congruent volume: {len(set(vs)) == 1} ({vs[0]})')
-print('\n'.join(out)); open('/home/dicto/kaleidohedra/studies/2026-10-17-scutoids/data/scutoid-exact.txt', 'w').write('\n'.join(out) + '\n')
+print('\n'.join(out)); open('~/kaleidohedra/studies/2026-10-17-scutoids/data/scutoid-exact.txt', 'w').write('\n'.join(out) + '\n')

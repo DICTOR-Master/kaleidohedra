@@ -1,7 +1,7 @@
 # Fable review 4 (2026-10-18): exploration of the W_star bump face 1 = (A0, E0, T+) in the plane z = x: socket rim (OCD section), OCD shadow
 # (projection along the face normal), kite shape, where the star's kite edges pierce the plane. Float from exact data. -> data/explore-face.json
 import sys, os, json, math, itertools, numpy as np
-sys.path.insert(0, '/home/dicto/kaleidohedra/studies/2026-10-18-p4-golden-octet-adaptor/fable-review-3/scripts')
+sys.path.insert(0, '~/kaleidohedra/studies/2026-10-18-p4-golden-octet-adaptor/fable-review-3/scripts')
 from fable3_engine import *
 from fable3_engine import loadS, f3, qv, hull_poly, Poly
 from q5 import *

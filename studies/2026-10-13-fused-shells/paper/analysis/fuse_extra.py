@@ -1,4 +1,4 @@
-# Fused outer solids for the stages the paper examines (run on dicto-node; uses the study's scripts/build_transitional.py functions
+# Fused outer solids for the stages the paper examines (run on compute-host-2; uses the study's scripts/build_transitional.py functions
 # without writing transitional.js). Output: data/fused-extra.json. DICTO · dictospheres.com
 import sys, os, json
 sys.path.insert(0, os.path.expanduser('~/fused-shells/scripts'))

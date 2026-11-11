@@ -1,4 +1,4 @@
-# DICTO 2026-10-18 octet study -- STEP 19 meshes (dicto-node, manifold3d): keyless middle piece M0 split into the three Penrose cores
+# DICTO 2026-10-18 octet study -- STEP 19 meshes (compute-host-2, manifold3d): keyless middle piece M0 split into the three Penrose cores
 # and the rest. Checks: volumes vs the exact values, is the rest one solid (and its genus), sphericity of each piece, and are the two
 # flanking cores the same piece or mirror images (search for a proper rotation taking one onto the other, Kabsch on vertex triples).
 # usage: python3 step19_mesh.py step10-input.json step19-input.json OUT.json

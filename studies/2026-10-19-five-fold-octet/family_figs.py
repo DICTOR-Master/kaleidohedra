@@ -3,7 +3,7 @@
 #   scenes 0-8   the nine solids alone, true relative size, faces coloured by number of sides
 #   scenes 9-10  the two breaks: DICTO TPP inside DICTO DPHP (glass), DICTO TQP inside DICTO TQH (glass), corners poking out in red
 #   scenes 11-16 the six shells that fill exactly: the inner solid with the shell pieces placed on the faces round one five-fold axis
-# Shots: shots.mjs (Playwright, dicto-node); compose: family_compose.py.
+# Shots: shots.mjs (Playwright, compute-host-2); compose: family_compose.py.
 import json, os
 import numpy as np, manifold3d as m3
 HERE = os.path.dirname(os.path.abspath(__file__))

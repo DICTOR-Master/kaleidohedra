@@ -111,7 +111,7 @@ Checked 2026-10-15 against `papers/ocd-chorus/paper.html` (the PDF text matches 
 12. Dates: the paper is dated 15 October, but the study folder and the companion draft carry 16 October.
 13. Reproducibility:
     - The radius-10 site file `data/chorus-exact-r10.json`, which §5–7 scripts read, is not committed. `chorus_exact_big.py 10.0` regenerates it; say so in §11.
-    - The scripts hard-code `/home/dicto/kaleidohedra/...` and need `studies/2026-10-16-polar-dharma` and `studies/_lib`. Both are tracked; mention them.
+    - The scripts hard-code `~/kaleidohedra/...` and need `studies/2026-10-16-polar-dharma` and `studies/_lib`. Both are tracked; mention them.
 14. Fig. 5 caption: "[0, L)" should be "[0, Lcan)" (see B7).
 
 ---

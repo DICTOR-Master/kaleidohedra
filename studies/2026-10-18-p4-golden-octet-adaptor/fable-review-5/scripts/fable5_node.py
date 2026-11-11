@@ -1,4 +1,4 @@
-# Fable review 5, PHASE 2, dicto-node (manifold3d): build the W with the continuous creased-kite relief from data/relief-geometry.json and
+# Fable review 5, PHASE 2, compute-host-2 (manifold3d): build the W with the continuous creased-kite relief from data/relief-geometry.json and
 # check: one solid, identical W (2/m symmetry of the piece: sigma and iota images), 12 round one OCD without overlap (union = 12 W + OCD),
 # OCD + W fills space (1M uniform + 0.5M near-face points, 0/0). Meshes for the page. usage: fable5_node.py GEOM.json OUT.json
 import sys, json, itertools, time, numpy as np, manifold3d as m3
