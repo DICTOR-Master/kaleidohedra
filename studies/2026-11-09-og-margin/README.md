@@ -496,3 +496,10 @@ The books and papers are cited from standard knowledge and were NOT re-opened th
 before publication. The web sources above were opened through search results.
 
 **Judged (11 Nov, main session):** accepted. One correction: the icosahedral counterexample (0.628 at hop 6) started from 20 % radial noise (generic-hop-s1.log, class I, s = 0.20), so 'near-round' overstates it; its roundness at that hop was not measured. Conclusion stands: cut < 1/2 is not a general law of the hop; a proof needs the OG's own roundness (t_min ≤ 3/φ²) and orbit structure, e.g. c ≤ g(t)·F with g(3/φ²) < 1/2. Next test for that form: cut fraction against t_min over the generic runs.
+
+## §29 Leaning Vacuus pyramids? (11 Nov 2026; DICTO: "we did vacuus survey earlier of all the shapes"; scripts/og_vacuus_lean.py, data/og-vacuus-lean-14.json, local, FINAL ok)
+In D_k's Vacuus (#87) each face has its centre pyramid; the foot point d n lies inside its own face (upright) or outside (leaning).
+Test cut ⇔ leaning, k ≤ 14: FALSE. Cut but upright at every level with cuts (60, 60, 30, 72, 72, 132, 72, 192, 192 for k = 5 … 14,
+including the 12 five-fold faces whose foot point is the face centre: lean −0.8090 = −cos 36°, cut in the polar sense of §24);
+survive though leaning: 60 … 720. Lean of cut faces from −0.85 to positive; of survivors up to +1.93. The Vacuus lean does not
+decide the cut (the cut is a property of the foot points together, not of one pyramid).

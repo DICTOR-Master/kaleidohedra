@@ -6129,6 +6129,16 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 step A1: are the cut faces the LEANING centre pyramids of D_k's Vacuus (#87)? (DICTO 11-11)",
+    "method": "og_vacuus_lean.py: foot point inside/outside its own face polygon, k<=14, cut counts as control",
+    "status": "FAILED",
+    "result": "no: cut-but-upright and survive-though-leaning at every level with cuts (e.g. k=13: 192 cut all upright, 720 leaning survivors)",
+    "retry": "never retry single-pyramid criteria; the cut depends on the foot points jointly",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },

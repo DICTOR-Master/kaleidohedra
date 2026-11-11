@@ -235,6 +235,31 @@ for k in range(KMAX + 1):
                walls_active_hist={int(w): wa.count(w) for w in sorted(set(wa))}, walls_cut_hist={int(w): wc.count(w) for w in sorted(set(wc))},
                walls_active_mean=float(np.mean(wa)), walls_cut_mean=float(np.mean(wc)) if wc else None, cell_kinds=kinds_, cells_orbit_consistent=cell_ok)
     if not (euler0 and top_ok and bot_ok and cell_ok): ok_all = False; fails.append(f'k{k}: unperturbed slice/cell control')
+    # ---- WALLS as sheets (DICTO "a or c, the sheets are continuous"): wall (i, j) = 2D face of P; its lam-range must be ONE interval
+    span = {}
+    for q, pr in enumerate(adj):
+        for w in pr: span.setdefault(w, []).append(q)
+    contiguous = all(qs == list(range(qs[0], qs[-1] + 1)) for qs in span.values())
+    wtype = {}
+    for w, qs in span.items():
+        st, en = qs[0] == 0, qs[-1] == len(adj) - 1                         # present at top / reaches the slice just above 0
+        wtype[w] = 'full' if st and en else 'ends' if st else 'starts' if en else 'both'
+    wcount = {t: sum(1 for v in wtype.values() if v == t) for t in ('full', 'starts', 'ends', 'both')}
+    per_cell = np.zeros((n, 4), int); tix = {'full': 0, 'starts': 1, 'ends': 2, 'both': 3}
+    for (i, j), t in wtype.items(): per_cell[i, tix[t]] += 1; per_cell[j, tix[t]] += 1
+    all_end = set(np.where((per_cell[:, 0] + per_cell[:, 1] == 0))[0].tolist())   # no wall reaches lam = 0
+    cut_eq_allend = all_end == set(np.where(~act)[0].tolist())
+    Arow = np.hstack([X, -np.ones((n, 1))]); par_pairs = np.zeros(n, int)
+    for i in range(n):
+        Ni = sorted(nb[i]); a = Arow[i] / np.linalg.norm(Arow[i])
+        U = Arow[Ni] - np.outer(Arow[Ni] @ a, a); U /= np.linalg.norm(U, axis=1)[:, None]
+        G_ = U @ U.T; par_pairs[i] = int((np.triu(G_, 1) < -1 + 1e-9).sum() + (np.triu(G_, 1) > 1 - 1e-9).sum())
+    for o, i in enumerate(reps):
+        orbit_cells[o].update(walls_full=int(per_cell[i, 0]), walls_start=int(per_cell[i, 1]), walls_end=int(per_cell[i, 2]),
+                              walls_both=int(per_cell[i, 3]), parallel_side_wall_pairs=int(par_pairs[i]))
+    row.update(walls_total=len(span), walls_by_type=wcount, walls_one_interval=contiguous, cut_equals_all_walls_end=cut_eq_allend,
+               cells_with_parallel_side_walls=int((par_pairs > 0).sum()), parallel_side_wall_pairs=int(par_pairs.sum()))
+    if not (contiguous and cut_eq_allend): ok_all = False; fails.append(f'k{k}: wall control (one interval / cut = all walls end)')
     # ---------------- generic resolution (symbolic offsets) ----------------
     per = []
     for seed in SEEDS:
@@ -298,9 +323,11 @@ for k in range(KMAX + 1):
           f"via deaths {g1['dying_lost_via_deaths']} gained {g1['dying_gained_via_flips']} | flips clusters/generic {g1['flips_at_clusters']}/{g1['flips_at_generic_points']} "
           f"deaths in clusters {g1['deaths_in_clusters']} | tight sizes {row['tight_size_hist']} gap {gap0:.1e} | walls active mean {row['walls_active_mean']:.2f} "
           f"cut mean {row['walls_cut_mean'] if row['walls_cut_mean'] is None else round(row['walls_cut_mean'], 2)} | kinds {row['cell_kinds']} | "
-          f"controls {all(all(p_['controls'].values()) for p_ in per) and euler0 and top_ok and bot_ok and cell_ok} | {time.time() - t0:.0f}s", flush=True)
+          f"walls {row['walls_total']} {row['walls_by_type']} one-interval {row['walls_one_interval']} cut=all-walls-end {row['cut_equals_all_walls_end']} "
+          f"parallel side-wall pairs {row['parallel_side_wall_pairs']} | "
+          f"controls {all(all(p_['controls'].values()) for p_ in per) and euler0 and top_ok and bot_ok and cell_ok and contiguous and cut_eq_allend} | {time.time() - t0:.0f}s", flush=True)
     for c in orbit_cells:
-        print(f"    orbit size {c['size']:3d} {'active' if c['active'] else 'cut   '} walls {c['walls']:3d} corners {c['corners']:3d} edges {c['edges']:3d} {c['kind']}", flush=True)
+        print(f"    orbit size {c['size']:3d} {'active' if c['active'] else 'cut   '} walls {c['walls']:3d} corners {c['corners']:3d} edges {c['edges']:3d} {c['kind']:20s} walls full/start/end/both {c['walls_full']}/{c['walls_start']}/{c['walls_end']}/{c['walls_both']} parallel {c['parallel_side_wall_pairs']}", flush=True)
     V, FF = W, FN
 json.dump({'mark': 'DICTO #43 scutoid exchanges, 2026-11-11 · DICTO · dictospheres.com', 'k': rows},
           open(OUT, 'w'), default=lambda o: o.item() if hasattr(o, 'item') else str(o))
