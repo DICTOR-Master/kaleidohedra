@@ -2841,7 +2841,7 @@
    "strands": [
     "pyr"
    ],
-   "by": "Aristotle's pyramid (classical); DICTO proposed pyramidise as one operation on any such solid (#87)"
+   "by": "Aristotle's pyramid (classical); DICTO: pyramidise as one operation on any such solid (#87)"
   },
   {
    "id": "star",
@@ -2922,7 +2922,7 @@
    "strands": [
     "og"
    ],
-   "by": "DICTO proposed running the rule the other way (#39)"
+   "by": "DICTO: running the rule the other way (#39)"
   },
   {
    "id": "polar-reciprocation",
@@ -2959,7 +2959,7 @@
     "sweep",
     "cuts"
    ],
-   "by": "DICTO proposed cube × octahedron as the six-dimensional home of the pair (#90) and following each solid with its dual through the dimensions (#91)"
+   "by": "DICTO: cube × octahedron as the six-dimensional home of the pair (#90) and following each solid with its dual through the dimensions (#91)"
   },
   {
    "id": "weight-walk",
@@ -3035,7 +3035,7 @@
    "strands": [
     "bonds"
    ],
-   "by": "DICTO proposed the approach and named Samson and Delilah; doubling is the ancient Delian problem (#51)"
+   "by": "DICTO: the approach and the names Samson and Delilah; doubling is the ancient Delian problem (#51)"
   },
   {
    "id": "golden-split",
@@ -3268,7 +3268,7 @@
    "strands": [
     "stack"
    ],
-   "by": "DICTO proposed true simple pieces (#86)"
+   "by": "DICTO: true simple pieces (#86)"
   },
   {
    "id": "knitting-slice",
@@ -3279,7 +3279,7 @@
    "strands": [
     "stack"
    ],
-   "by": "DICTO proposed the idea (#83)"
+   "by": "DICTO: the idea (#83)"
   },
   {
    "id": "face-to-face",
@@ -3293,7 +3293,7 @@
     "pyr",
     "stack"
    ],
-   "by": "DICTO proposed the face-to-face case (#77)"
+   "by": "DICTO: the face-to-face case (#77)"
   },
   {
    "id": "vacuus",
@@ -4343,8 +4343,8 @@
     "date": "2026-11-06"
    },
    {
-    "what": "Football layer (scutoid project A)",
-    "result": "pentagon-hexagon linked football layer at 79.19 deg; two orientations -> chains only. studies/2026-11-06-football-scutoids",
+    "what": "Truncated-icosahedron layer (scutoid project A)",
+    "result": "pentagon-hexagon linked truncated-icosahedron layer at 79.19 deg; two orientations -> chains only. studies/2026-11-06-football-scutoids",
     "goes_to": "scutoid paper",
     "date": "2026-11-06"
    },
@@ -6249,6 +6249,16 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 step A1 part (G): does the hop's cut share settle below 1/2 on fine near-round polytopes independent of the start? (DICTO 11-11)",
+    "method": "g_equilibrium.py: 16 hops, starts U/F (noise 0.1%, 5%) and OG level 18 nudged 1e-7, up to 1.3 M faces; identity c = F - (F'+4)/2 as control",
+    "status": "FOUND (evidence)",
+    "result": "equilibrium: cut share 0.31-0.33 at hops 10-15 for every start, growth 1.35-1.37; nudged OG 0.31-0.36 -> 0.313; never creeps toward 1/2",
+    "retry": "prove the equilibrium bound (cut < 1/2) for the hop on fine near-round polytopes; identify the limit constant (~0.32, growth ~1.36)",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },
@@ -6380,7 +6390,7 @@
    "→ one-line pointer to Pentagons for the Kites (content lives there)"
   ],
   "#95 Pentagons for the Kites (published)": [
-   "Story of DICTO's pentagons-for-kites idea: Theorem 1 (OG sphere corners = football edge midpoints), equal-edge and chiral truncated-triangle versions, Dehn and packing, octet kit, Bull-horns adaptor adapted; what it settled, did not settle, opened; shapes on the way. Then disperses as one-line pointers into OG #31 v5, Bull-horns, Golden Bodhi Pyrochlore and gyrated-octet versions (batched).",
+   "Story of DICTO's pentagons-for-kites idea: Theorem 1 (OG sphere corners = truncated icosahedron edge midpoints), equal-edge and chiral truncated-triangle versions, Dehn and packing, octet kit, Bull-horns adaptor adapted; what it settled, did not settle, opened; shapes on the way. Then disperses as one-line pointers into OG #31 v5, Bull-horns, Golden Bodhi Pyrochlore and gyrated-octet versions (batched).",
    "Exact Dehn of the cut OG nonzero (PROOF: two Q-independent edge lengths; neither dihedral a rational multiple of π) — replaces the float screen; release item done",
    "DICTO idea 5 Nov: regular-triangle cut OG on a diamond net; joints on the pyrochlore sites; no overlap; corners miss by 0.0475 edge; twisted hexagonal connector makes joins face to face (float). Gap filling open → candidate for v2 or the GBP thread",
    "Pyrochlore → bcc TO packing: cut OG inside every other TO (diamond), touching 8 hexagons; other TOs empty and whole; jacket = 8 hexagon rings (L/R) + 6 square pieces; kit of 4 shapes (float). Candidate: v2 of Pentagons for the Kites, or link to GBP / Kelvin-TO thread",

@@ -70,7 +70,7 @@ Totals: **LANDED 15 · PENDING 38 · STALE 7**.
 | 56 | Nested Dodeca-13, 600-cell corner 14.1%, UNITY heart 2/√5; Dodeca-13 fits at ×1/3 | LANDED | #99 v2 | "leave 14.1% of their hull open"; "edge exactly 2/√5 at UNITY's heart"; "fits inside its own central dodecahedron at exactly 1/3" |
 | 57 | Cut-and-project rungs; seats; spacing 4.5346; diffraction 0.916 → quasilattice | LANDED | #99 v2 | Table "754 + 466 = 1220"; "√3 φ² = 4.5346". The paper has 0.9969 at 8/5 and 0.9974 at 13/8, not "0.9974 (8/5)" as the waiting item says. The paper is newer |
 | 58 | Rock-salt pieces: cubes/truncated cubes + regular octahedra 2(3/8−λ); freedom in 2 deformed pieces | PENDING | HexOct vol. (and #47 pointer) | Not in a paper. Float only; still to do: exact forms, DICTO's names for the deformed pieces, prior art |
-| 59 | Football layer at 79.19°, two orientations; chains only | PENDING | Scutoid paper (new) | Not in a paper. Study in progress (step 3 on 7 Nov), so not complete |
+| 59 | Truncated-icosahedron layer at 79.19°, two orientations; chains only | PENDING | Scutoid paper (new) | Not in a paper. Study in progress (step 3 on 7 Nov), so not complete |
 | 60 | Zenodo 24012440 (#99 v1), site tile; Sheriff and Lone-star named | STALE | — | Admin note; the names are already in #99 v2 |
 
 ## PENDING by destination (38), suggested order

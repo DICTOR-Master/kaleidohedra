@@ -797,3 +797,14 @@ so the up shells have about HALF as many faces. Up mirror share μ_up 0.047 (k =
 Up section edges = down section edges at EVERY level 10 … 37 (Remark §38d: projection = section for mirror-symmetric bodies, plus
 projection–section duality); e_up/√(up faces) = 1.8–2.15, i.e. e ≈ 1.44 √(down faces) ≈ 2.0 √(up faces), the same √n law on both sides.
 Classes of up faces: mirror (60) classes grow 14 → 124, generic (120) classes 144 → 5893; axis classes occasional.
+
+## §39 (G): the hop has an equilibrium cut share ≈ 0.32 (11 Nov 2026; DICTO: "yes go ahead with G"; scripts/g_equilibrium.py, data/og-g-equilibrium.*, watched job, FINAL ok)
+Long runs of the hop on starts with NO symmetry, 16 hops each, up to 1.3 M faces: uniform random (U) and Fibonacci-spread (F) points on
+the sphere, radial noise 0.1 % and 5 %, and the OG's level 18 with its symmetry broken by a 1e−7 nudge. The identity c = F − (F′ + 4)/2
+(generic sets: no corner excess) holds exactly at every hop (control).
+Cut share rises from 0.13–0.17 (hop 0) and SETTLES: hops 10–15 give 0.316–0.321 (U, 0.1 %), 0.306–0.321 (F, 0.1 %), 0.312–0.319 (U, 5 %),
+0.317–0.326 (F, 5 %); growth settles at 1.35–1.37. The nudged OG wanders 0.31–0.36 (mean 0.336) and comes down to 0.313 at hop 15.
+Late hops (k ≥ 4, F > 5000): mean 0.310, range 0.245–0.359, growth mean 1.380. Roundness keeps improving (R/r → 1.002–1.025).
+Verdict: the cut share of the hop on fine near-round polytopes tends to an equilibrium near 0.32 (growth ≈ 1.36) whatever the start;
+it does not creep toward 1/2. The OG's generic classes (§38b, g ≈ 0.29–0.33 at hops 34–37) sit at the same equilibrium. (G) is thus a
+statement about ONE map: prove that the hop's cut share on fine near-round polytopes stays below 1/2 (observed ≈ 0.32, max 0.36).

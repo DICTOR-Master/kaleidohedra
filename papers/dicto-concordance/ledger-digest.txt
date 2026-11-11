@@ -155,3 +155,4 @@
 [152] 2026-11-11 | FOUND | #43 step A1, possibility P3: count cuts by I_h symmetry classes (DICTO 11-11) | retry: prove (M) (mirror faces ~ sqrt n along 15 mirror circles) and (G) for generic classes
 [153] 2026-11-11 | PARTIAL | #43 step A1 part (M): mirror faces a vanishing share (DICTO 11-11 'yes prove M') | retry: (M) <= 2D refinement of the 15 section polygons (gamma_M -> 0); track gamma_M to k=37 from certified checkpoints
 [154] 2026-11-11 | FOUND | #43 step A1: mirror faces and death shares to k=37; why the generic share rose (DICTO 11-11) | retry: (M): count section-polygon edges; (G): growth ratio stays > 1 (refinement never stops)
+[155] 2026-11-11 | FOUND | #43 step A1 part (G): does the hop's cut share settle below 1/2 on fine near-round polytopes independent of the start? (DICTO 11-11) | retry: prove the equilibrium bound (cut < 1/2) for the hop on fine near-round polytopes; identify the limit constant (~0.32, growth ~1.36)
