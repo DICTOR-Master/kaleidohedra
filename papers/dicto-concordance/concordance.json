@@ -5962,6 +5962,15 @@
     "retry": "never",
     "study": "papers (six folders)",
     "date": "2026-11-11"
+   },
+   {
+    "question": "Which registry solids are reflection-group orbit polytopes (DICTO: one corner -> group and seed)?",
+    "method": "orbit_id.py: symmetry group of outer corners, reflections, generated group, single-orbit test, seed labels; 11 controls PASS",
+    "status": "SETTLED (float, controls)",
+    "result": "389 solids: 42 orbits (37 convex). DICTO orbits: Icosaxes, Unborn Axes (B3, labels exchanged), Delilah (B3), Lotus Jewel Axes, Hexa-Key, Dodeca-13 (H3), Cleo (D3), Dogstar (to check); 59 DICTO solids not orbits",
+    "retry": "exact labels; Dogstar check; 4D groups",
+    "study": "studies/2026-11-11-orbit-polytopes",
+    "date": "2026-11-11"
    }
   ]
  },
