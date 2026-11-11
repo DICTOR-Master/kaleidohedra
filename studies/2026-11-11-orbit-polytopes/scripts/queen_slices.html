@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset="utf-8"><title>The Queens' Vacuus</title>
-<style>html,body{margin:0;background:#0b0d12;overflow:hidden}canvas{display:block}</style>
+<style>html,body{margin:0;background:#f3f0e8;overflow:hidden}canvas{display:block}</style>
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.185.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.185.1/examples/jsm/"}}</script>
 </head><body>
 <script type="module">
@@ -16,7 +16,7 @@ import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
 const q = new URLSearchParams(location.search), shot = q.get('shot') ?? 'heart';
 const W = innerWidth, H = innerHeight, DPR = devicePixelRatio;
 const R2 = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); R2.setPixelRatio(DPR); R2.setSize(W, H);
-R2.setClearColor(0x0b0d12); R2.toneMapping = THREE.ACESFilmicToneMapping; R2.toneMappingExposure = 1.0; R2.outputColorSpace = THREE.SRGBColorSpace;
+R2.setClearColor(0xf3f0e8); R2.toneMapping = THREE.ACESFilmicToneMapping; R2.toneMappingExposure = 1.0; R2.outputColorSpace = THREE.SRGBColorSpace;
 document.body.appendChild(R2.domElement);
 const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(28, W / H, 0.01, 100);
 scene.add(new THREE.HemisphereLight(0xffffff, 0x2a2f3c, 1.0));
@@ -45,16 +45,16 @@ const sc = (p) => [p[0] * k, p[1] * k, p[2] * k];
 // the slice: back half as faint glass (a cutaway), all its edges thin
 for (const f of data.hull) {
   const c = f.reduce((m, p) => m.add(new THREE.Vector3(...p)), new THREE.Vector3()).multiplyScalar(1 / f.length);
-  if (c.dot(viewDir) < 0) scene.add(polyMesh(f.map(sc), 0xe8e4d8, { opacity: 0.12, rough: 0.2, po: 3 }));
+  if (c.dot(viewDir) < 0) scene.add(polyMesh(f.map(sc), 0x8f9bb0, { opacity: 0.30, rough: 0.3, po: 3 }));
 }
 const segs = []; for (const f of data.hull) for (let i = 0; i < f.length; i++) segs.push([sc(f[i]), sc(f[(i + 1) % f.length])]);
-scene.add(lines(segs, 0xd9d2b8, 0.9, 0.35));
+scene.add(lines(segs, 0x3d4250, 1.0, 0.55));
 // the faces the mirror carries: triangles pale (White Queen), pentagons red (Red Queen)
 for (const f of data.carried) {
-  const col = f.length === 3 ? 0xf2efe6 : 0xc0392b;
+  const col = f.length === 3 ? 0x2f6db5 : 0xc0392b;
   scene.add(polyMesh(f.map(sc), col, { rough: 0.45, metal: 0.05, po: 1 }));
   const s2 = []; for (let i = 0; i < f.length; i++) s2.push([sc(f[i]), sc(f[(i + 1) % f.length])]);
-  scene.add(lines(s2, f.length === 3 ? 0x5a5446 : 0x4a0d06, 1.8));
+  scene.add(lines(s2, f.length === 3 ? 0x0e2a4f : 0x4a0d06, 2.0));
 }
 R2.render(scene, cam); window.__done = true;
 </script></body></html>
