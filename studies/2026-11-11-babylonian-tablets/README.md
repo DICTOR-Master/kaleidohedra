@@ -25,3 +25,8 @@ of mass at least 0.5 mm inside; drops = rolling from random orientations.
 - Old Babylonian mathematical tablets (13): rounder (sag 0.25 / 0.31), yet more of them rest on an edge (8 of 13, 18 % of drops).
 This block is mostly of unknown genre; the archive genres (Ur III administrative, legal) are needed to test DICTO's stacking idea.
 NEXT: a block rich in Ur III administrative tablets (choose by HS numbers from the catalogue).
+## Correction and leads (11 Nov)
+The "13 mathematical tablets" of part 02 are about 7 tablets: HS 270b-f are fragments of one (TMH 8, 76), HS 271a-d of another
+(TMH 8, 17); the catalogue join ignored letter suffixes. Exclude fragments in the next stacking pass.
+LATER (DICTO: "note them for later"): (1) read their CDLI transliterations and check the arithmetic (errors show how tables were
+computed); (2) look in the 3D scans for wiped and rewritten areas (working tablets vs archive copies).
