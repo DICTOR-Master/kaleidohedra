@@ -17,3 +17,17 @@ EXACT COINCIDENCE: the star twin's large fin angle equals the OG kite's tip angl
 the OG kite's tip angle reappears as the angle at the centre between the twin images of a kite–kite edge.
 Figure: three panels (OG Vacuus, twin hull Vacuus, star twin Vacuus), fins coloured by apex angle; quick study figure, not a print
 render (render standard not applied).
+
+## Render and exact values (DICTO: "render the twin hull vacuus with the discs", "what are its laws")
+figures/twin-hull-vacuus-discs.png (scripts/render_twin_discs.py, the #87 census renderer: own z-buffer, 3x supersampled, edges ≥ 2 px):
+left, the 300 fins with the 60 disc fins in gold; right, the six decagonal discs alone in six colours inside a ghost of the hull.
+EXACT (ℚ(√5), from the exact OG):
+- Corners: 90 at radius² 3/2 − √5/2 = 1/φ² (radius 1/φ; the twins of the OG's 90 corners at radius² φ²), 12 at radius²
+  (585 − 198√5)/361 (twins of the OG's 12 five-fold corners at (585 + 198√5)/361).
+- Faces: 200 triangles; edges 300; corner degrees: 72 corners of degree 5, 30 of degree 8 (Euler 102 − 300 + 200 = 2).
+- Fin apex angles: cos² = 17/18 + √5/90 (10.0928°, 60 fins), 547/648 + 11√5/216 (11.8246°, 60), 7/12 + √5/9 (24.2136°, 120),
+  3/8 + √5/8 = cos² 36° (60 fins, exactly 36°).
+- DISC LAW: the 60 fins of exactly 36° lie in six planes through O, ten per plane, and close into six complete decagonal discs, one
+  perpendicular to each five-fold axis.
+- Star twin: its large fin angle equals the OG kite's tip angle, cos² = 43/72 − √5/8 (exact).
+Open: is the disc law a property of every twin level (the twins of D_1, D_2, …) or of the OG alone? Is the twin hull a known solid?
