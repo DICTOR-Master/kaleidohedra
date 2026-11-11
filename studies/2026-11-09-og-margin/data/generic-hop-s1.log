@@ -1,0 +1,31 @@
+S n   100 s 0.01 | hops 8 F 186->3260 | cut fractions 0.151 0.253 0.193 0.264 0.233 0.299 0.299 0.308 | min cut depth 2.7e-08 dups 0 | max 0.308 (robust hops, cut depth > 1e-6: 0.264) load 1.45 | euler True | 0s
+S n   100 s 0.20 | hops 8 F 90->1488 | cut fractions 0.211 0.188 0.236 0.247 0.248 0.298 0.281 0.302 | min cut depth 5.7e-07 dups 0 | max 0.302 (robust hops, cut depth > 1e-6: 0.298) load 1.43 | euler True | 1s
+S n   500 s 0.05 | hops 8 F 360->6676 | cut fractions 0.117 0.234 0.218 0.261 0.269 0.269 0.295 0.295 | min cut depth 1.2e-08 dups 0 | max 0.295 (robust hops, cut depth > 1e-6: 0.269) load 1.42 | euler True | 2s
+S n   500 s 0.20 | hops 8 F 198->3518 | cut fractions 0.177 0.174 0.223 0.270 0.293 0.251 0.298 0.300 | min cut depth 7.2e-09 dups 0 | max 0.300 (robust hops, cut depth > 1e-6: 0.293) load 1.43 | euler True | 2s
+S n  2000 s 0.01 | hops 5 F 1578->9624 | cut fractions 0.165 0.206 0.242 0.239 0.264 | min cut depth 6.9e-09 dups 0 | max 0.264 (robust hops, cut depth > 1e-6: 0.000) load 1.36 | euler True | 4s
+S n  2000 s 0.10 | hops 5 F 514->3104 | cut fractions 0.167 0.209 0.230 0.248 0.243 | min cut depth 3.1e-08 dups 0 | max 0.248 (robust hops, cut depth > 1e-6: 0.230) load 1.33 | euler True | 5s
+I n   100 s 0.01 | hops 8 F 92->1172 | cut fractions 0.130 0.091 0.000 0.000 0.441 0.261 0.406 0.410 | min cut depth 5.7e-07 dups 0 | max 0.441 (robust hops, cut depth > 1e-6: 0.441) load 1.79 | euler True | 8s
+I n   100 s 0.20 | hops 8 F 92->1100 | cut fractions 0.000 0.333 0.057 0.038 0.156 0.628 0.000 0.109 | min cut depth 1.7e-05 dups 0 | max 0.628 (robust hops, cut depth > 1e-6: 0.628) load 2.69 | euler True | 17s
+I n   500 s 0.05 | hops 8 F 452->2852 | cut fractions 0.177 0.243 0.275 0.278 0.218 0.567 0.523 0.323 | min cut depth 7.3e-07 dups 0 | max 0.567 (robust hops, cut depth > 1e-6: 0.567) load 2.31 | euler True | 30s
+I n   500 s 0.20 | hops 8 F 212->3332 | cut fractions 0.057 0.355 0.044 0.372 0.202 0.151 0.378 0.294 | min cut depth 2.3e-05 dups 0 | max 0.378 (robust hops, cut depth > 1e-6: 0.378) load 1.61 | euler True | 39s
+I n  2000 s 0.01 | hops 5 F 1652->9612 | cut fractions 0.254 0.024 0.218 0.354 0.251 | min cut depth 1.5e-07 dups 0 | max 0.354 (robust hops, cut depth > 1e-6: 0.254) load 1.55 | euler True | 65s
+I n  2000 s 0.10 | hops 5 F 452->3092 | cut fractions 0.177 0.108 0.139 0.297 0.155 | min cut depth 3.1e-05 dups 0 | max 0.297 (robust hops, cut depth > 1e-6: 0.297) load 1.42 | euler True | 72s
+H n   100 s 0.20 | hops 8 F 55->1176 | cut fractions 0.055 0.160 0.256 0.229 0.260 0.273 0.242 0.269 | min cut depth 3.1e-07 dups 0 | max 0.273 (robust hops, cut depth > 1e-6: 0.273) load 1.38 | euler True | 72s
+H n   100 s 0.80 | hops 8 F 21->338 | cut fractions 0.286 0.038 0.283 0.194 0.208 0.236 0.230 0.299 | min cut depth 5.3e-06 dups 0 | max 0.299 (robust hops, cut depth > 1e-6: 0.299) load 1.43 | euler True | 72s
+H n   500 s 0.40 | hops 8 F 71->1778 | cut fractions 0.070 0.109 0.214 0.227 0.225 0.269 0.258 0.296 | min cut depth 4.4e-07 dups 0 | max 0.296 (robust hops, cut depth > 1e-6: 0.296) load 1.42 | euler True | 72s
+H n   500 s 0.80 | hops 8 F 28->592 | cut fractions 0.036 0.240 0.167 0.241 0.285 0.202 0.220 0.253 | min cut depth 1.9e-06 dups 0 | max 0.285 (robust hops, cut depth > 1e-6: 0.285) load 1.40 | euler True | 72s
+H n  2000 s 0.20 | hops 5 F 225->1820 | cut fractions 0.067 0.111 0.183 0.239 0.238 | min cut depth 2.3e-07 dups 0 | max 0.239 (robust hops, cut depth > 1e-6: 0.183) load 1.31 | euler True | 72s
+H n  2000 s 0.60 | hops 5 F 114->828 | cut fractions 0.079 0.136 0.207 0.249 0.231 | min cut depth 2.1e-08 dups 0 | max 0.249 (robust hops, cut depth > 1e-6: 0.249) load 1.33 | euler True | 72s
+E n   100 s 0.10 | hops 8 F 196->444 | cut fractions 0.199 0.571 0.603 0.412 0.428 0.353 0.341 0.304 | min cut depth 6.9e-08 dups 0 | max 0.603 (robust hops, cut depth > 1e-6: 0.603) load 2.52 | euler True | 74s
+E n   100 s 1.00 | hops 8 F 196->162 | cut fractions 0.791 0.692 0.545 0.250 0.320 0.156 0.202 0.284 | min cut depth 1.2e-05 dups 0 | max 0.791 (robust hops, cut depth > 1e-6: 0.791) load 4.78 | euler True | 76s
+E n   500 s 0.30 | hops 8 F 996->676 | cut fractions 0.670 0.641 0.549 0.519 0.424 0.389 0.380 0.306 | min cut depth 3.9e-07 dups 0 | max 0.670 (robust hops, cut depth > 1e-6: 0.670) load 3.03 | euler True | 93s
+E n   500 s 1.00 | hops 8 F 996->310 | cut fractions 0.890 0.630 0.462 0.524 0.375 0.344 0.346 0.281 | min cut depth 5.3e-05 dups 0 | max 0.890 (robust hops, cut depth > 1e-6: 0.890) load 9.05 | euler True | 104s
+E n  2000 s 0.10 | hops 5 F 3996->4710 | cut fractions 0.245 0.545 0.593 0.471 0.439 | min cut depth 2.5e-09 dups 0 | max 0.593 (robust hops, cut depth > 1e-6: 0.000) load 2.46 | euler True | 106s
+E n  2000 s 0.50 | hops 5 F 3996->798 | cut fractions 0.815 0.645 0.564 0.555 0.430 | min cut depth 6.5e-08 dups 0 | max 0.815 (robust hops, cut depth > 1e-6: 0.645) load 5.41 | euler True | 113s
+worst robust: E n 500 s 1.0 max cut fraction 0.890; above 1/2 anywhere: True
+S max robust cut fraction 0.29784366576819404 max mean load 1.4456762749445675
+I max robust cut fraction 0.627906976744186 max mean load 2.6875
+H max robust cut fraction 0.2988165680473373 max mean load 1.4261603375527425
+E max robust cut fraction 0.8895582329317269 max mean load 9.054545454545455
+over-half hops LP-verified (F <= 1000): 14 all agree
+FINAL ok

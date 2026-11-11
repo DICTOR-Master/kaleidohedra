@@ -6119,6 +6119,16 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 step A1 vs balance laws of polytopes (DICTO 11-11: 'check all the different balance laws for all the 4D polytopes ... a new law?')",
+    "method": "survey (Euler, Dehn-Sommerville, Bayer-Billera/cd-index, g/UBT/LBT, Minkowski, Gram/Sommerville/Perles-Shephard, Descartes, Steiner/Alexandrov-Fenchel, Dehn invariant); weighted splits on OG k<=14 (balance_weights.py); 48 generic starts x 5-8 hops (generic_hop.py, hop_counterexample.py)",
+    "status": "FAILED (no law)",
+    "result": "linear laws cannot give the inequality; area/defect-weighted versions fail (cut faces are LARGER: area share 0.71 at k=6); generic starts exceed 1/2 (icosahedral 20% noise 0.628, off-centre ellipsoid 0.901, smallest 6 of 10 faces); near-sphere central starts settle near 0.30; so step A1 needs OG-specific roundness + orbits",
+    "retry": "only a roundness-dependent bound c <= g(t) F with g(3/phi^2) < 1/2 (test cut fraction vs t_min on generic runs)",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },

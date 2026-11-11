@@ -409,3 +409,90 @@ Sheet shapes (each face's corners in their REAL order, drawn in twin coordinates
 face is SELF-CROSSING (a star): 12 at k = 1, 3, 5 (the five-fold faces: pentagon → pentagram, the classical Galois swap of
 icosahedral solids ↔ Kepler–Poinsot stars), 72, 60, 72, 32 at k = 7–10; all others convex. So the twin family is a Kepler–Poinsot-type
 star family of sheets packed close round the centre. Lead: DICTO's Kepler–Poinsot papers (#? 2026-10-19-kepler-poinsot-*).
+
+## §26 Balance laws (DICTO 11 Nov) — DRAFT, not yet in the README
+DICTO: "can you check all the different balance laws for all the 4D polytopes and figure out if this may be an expression of a new law".
+Scripts: scripts/balance_weights.py (data/balance-weights-14.*, FINAL ok), scripts/generic_hop.py (data/generic-hop-s1.*, -s2.*,
+FINAL ok both), scripts/hop_counterexample.py (data/hop-counterexample.log, data/hop-counterexample-small.log, FINAL ok both). All local, float.
+
+**Conclusion: "cut < half" is NOT a law of the hop. It fails for generic convex polytopes (origin off centre: up to 0.90 cut; a
+10-face polytope with 6 cut), and even for near-round, icosahedrally symmetric starts (0.628). Every known balance law holds for those
+counterexamples, so no combination of known laws can prove step A1; the proof must use what is special to the OG family.**
+**Status: A1 stays open (true in OG data ≤ 0.437); the "new law" reading is REFUTED; a weaker limit law (≈ 0.30 for fine near-round
+polytopes with the origin central) is a candidate observation only.**
+
+### 26.1 The laws, one line each
+(a) one solid D_k; (b) the swept 4D polytope of §23; (c) the pair D_k → D_{k+1}. "Ineq.?" = can it bound the cut fraction?
+
+| Law | Statement | (a) | (b) | (c) | Ineq.? |
+|---|---|---|---|---|---|
+| Euler–Poincaré | Σ(−1)^i f_i = 1 − (−1)^d (3D: V − E + F = 2) | yes | yes | gives F_{k+1} = 2(F_k − c) − 4 − e (§19) | no: an identity; c stays free |
+| Dehn–Sommerville | h_i = h_{d−i} (simplicial/simple) | only if simple | yes (capped sweep, §23) | no | no: gives Euler again (§23) |
+| Bayer–Billera / cd-index | all linear relations on flag f-vectors; cd-index coefficients ≥ 0 (Stanley, polytopes) | yes | yes | no | nonnegativity is an inequality but on one polytope's flags, not on c |
+| g-theorem, UBT, LBT | g-vector conditions; f_i ≤ cyclic polytope; f ≥ stacked | yes | yes | no | bounds F against V of ONE polytope; c compares two polytopes |
+| Minkowski balance | Σ A_i n_i = 0; facet data determine P up to translation | yes | (4D) yes | no | metric but symmetric (OG: = 0 trivially); measured below |
+| Gram / Brianchon–Gram | Σ(−1)^i Σ_faces interior angle = 0 | yes | yes | no | metric terms; measured below (τ) |
+| Sommerville, Perles–Shephard | angle sums of simplicial polytopes, DS-type; with Gram they are all linear relations on angle sums (Höhn) | if simplicial | yes | no | linear: same obstacle |
+| Descartes / Gauss–Bonnet | Σ corner defects = 4π | yes (X_k) | 4D analogue | no | metric; measured below (ω) |
+| Steiner / quermassintegrals, Alexandrov–Fenchel | V(K + tB) polynomial; V(K,L,…)² ≥ … | yes | yes | pair as K, L possible | inequalities, but on volumes, not on counts |
+| Blaschke–Santaló | vol K · vol K° ≤ ω_n² | done §20–21 | – | – | closed |
+| Dehn invariant | Σ ℓ_e ⊗ θ_e ∈ ℝ ⊗ ℝ/πℚ (scissors class) | yes | yes | no | not order-valued: no inequality possible |
+
+Why the linear combinatorial laws cannot bound c: c = F(D_k) − V(D_{k+1}) mixes two polytopes. Each law constrains one polytope
+(or one 4D sweep). Decisive form (§26.3): there are honest convex polytopes with c > F/2. They obey every law in the table, so no
+combination of these laws implies c ≤ F/2.
+
+### 26.2 Weighted laws split cut vs active on the OG family (k ≤ 14; checks Σω = 4π, Minkowski, cone volumes = volume, Gram ≈ 1e-12, all pass)
+Share of each weight carried by the CUT candidates (faces of D_k). Weights: area A (Minkowski), ω = solid angle the face subtends = Descartes
+defect of X_k at the polar corner, τ = interior solid angle of X_k at that corner (Gram term), cone volume.
+k: count | A | ω | τ | vol | mean d cut/active
+5: 0.238 | 0.355 | 0.359 | 0.229 | 0.352 | 0.985 · 6: 0.188 | **0.710** | **0.719** | 0.162 | 0.706 | 0.973 · 7: 0.224 | 0.121 | 0.126 | 0.232 | 0.119 | 0.986
+9: 0.344 | **0.685** | **0.697** | 0.339 | 0.678 | 0.992 · 10: 0.290 | 0.554 | 0.561 | 0.276 | 0.552 | 0.986 · 11: 0.196 | 0.333 | 0.341 | 0.190 | 0.325 | 0.957
+12: 0.279 | 0.351 | 0.356 | 0.276 | 0.348 | 0.986 · 13: 0.176 | 0.226 | 0.230 | 0.175 | 0.224 | 0.986 · 14: 0.437 | 0.506 | 0.510 | 0.438 | 0.503 | 0.989
+(k = 0–4, 8: nothing cut.)
+- Cut faces are not the small ones. They are LARGER on average (area/ω share above the count share at every level except k = 7), so
+  "Σ_cut A ≤ Σ_active A" and "Σ_cut ω ≤ 2π" FAIL (k = 6, 9, 10, 14).
+- τ (Gram) share ≈ count share (τ ≈ 2π for these nearly flat corners): it repeats the count and adds nothing.
+- Best surviving weighted statement: **cut faces sit nearer the origin on average**: mean d(cut) / mean d(active) = 0.957–0.992 at every
+  level with cuts. But no threshold: max d(cut) > min d(active) at k = 9, 10, 12 (and a tie at k = 5).
+  The general fact behind it: the face of largest d is always active.
+  No weighted form found that holds with margin at every level.
+
+### 26.3 New-law test: generic starts (48 runs, 5–8 hops each; Euler identity, no duplicate foot points; every over-half hop with
+F ≤ 1000 re-checked candidate by candidate by LP, 24 hops, all agree)
+| start class | max cut fraction | max mean load | last-hop fraction |
+|---|---|---|---|
+| S near-sphere points, noise 1–20 %, origin central | 0.308 | 1.45 | 0.24–0.31 |
+| H random half-spaces, offsets in [1−s, 1] | 0.344 | 1.53 | 0.23–0.33 |
+| I icosahedral (60 rotations), noise 1–20 % | **0.628** (n = 100, 20 %, hop 5: 540 of 860; LP-verified) | 2.69 | 0.11–0.41 |
+| E ellipsoid, origin off centre | **0.901** | 10.06 | 0.22–0.44 |
+Smallest counterexample found (random search, 80 000 trials): a flat polytope with 7 corners and 10 faces, origin near two of its faces;
+the hop cuts 6 of 10 faces (LP-verified, depth 4.6e-2; corners in data/hop-counterexample.log). Since P(D) has ≥ 4 corners, F ≥ 9 is needed
+for c > F/2, so 9 faces may be possible; not found.
+**Verdict: no general law.** Off-centre origins break it at once. Symmetry alone does not save it: whole 60-orbits are cut together, so the
+fraction jumps. What is left as a candidate observation: after many hops, starts that are fine and near-round with the origin central
+settle near 0.30 cut (mean load ≈ 1.43). The hop rounds even the E starts back toward this (0.9 → 0.3 in 8 hops). The OG family
+(≤ 0.437, period-3 spikes) behaves like the I class.
+So step A1 for the OG needs OG-specific input: the near-roundness from #43 (t_min ≤ 3/φ² keeps the origin central) together with the orbit
+structure, e.g. "if D is within factor t of round, then c ≤ g(t)·F", with g(3/φ²) < 1/2. The E runs give the right shape of test for g.
+
+### 26.4 Prior art
+Planar pedal polygons and iterated pedal triangles are studied (chaotic, a full shift on four symbols: J. C. Alexander, Math. Mag. 66 (1993) 147–158;
+A. Manning, Bull. LMS 42 (2010) 673–679; arXiv 1312.0281; arXiv 2108.08293 "Topics on pedal polygons"). These keep every foot point
+and take no hull, so they say nothing about redundancy. No source found on the 3D "hull of the foot points" map, its iteration, or a
+"half the facets are redundant" bound. Random Voronoi-cell f-vector work (arXiv 1909.13335, 2506.02607, 1612.03029) gives expected facet
+counts but no redundancy fraction for this map.
+Queries run: "pedal polytope foot points of facet hyperplanes convex hull iterated pedal body"; "iterated pedal polygon convergence";
+"fraction of redundant constraints Voronoi cell of origin random points expected number of facets half"; "pedal convex body polar
+Voronoi cell map iteration polytope sphere convergence circumcentres Delaunay"; "Perles Shephard angle sums … Gram relation …
+complete"; "Manning pedal triangle ergodic full shift".
+Laws sources: Ziegler, Lectures on Polytopes, ch. 8 (f-vectors, Dehn–Sommerville, UBT, g-theorem). Grünbaum, Convex Polytopes,
+ch. 8 (Euler), 9 (Dehn–Sommerville), 10 (UBT/LBT), 14 (angle sums: Gram, Sommerville, Perles–Shephard). Bayer–Billera, Invent. Math. 79
+(1985) (generalized DS). Bayer–Klapper, Discrete Comput. Geom. 6 (1991) (cd-index). Stanley 1980 and Billera–Lee 1981 (g-theorem).
+Barnette 1973 (LBT). Schneider, Convex Bodies: The Brunn–Minkowski Theory (2nd ed. 2014): ch. 5 (mixed volumes), §7.3
+(Alexandrov–Fenchel), §8.2 (Minkowski existence/uniqueness). Perles–Shephard, Math. Scand. 21 (1967); Shephard, Canad. J. Math.
+19 (1967); Camenga, arXiv math/0607469 (Höhn: Gram + Perles are all linear angle-sum relations). Sydler 1965 (Dehn invariant).
+The books and papers are cited from standard knowledge and were NOT re-opened this session. Section numbers should be checked
+before publication. The web sources above were opened through search results.
+
+**Judged (11 Nov, main session):** accepted. One correction: the icosahedral counterexample (0.628 at hop 6) started from 20 % radial noise (generic-hop-s1.log, class I, s = 0.20), so 'near-round' overstates it; its roundness at that hop was not measured. Conclusion stands: cut < 1/2 is not a general law of the hop; a proof needs the OG's own roundness (t_min ≤ 3/φ²) and orbit structure, e.g. c ≤ g(t)·F with g(3/φ²) < 1/2. Next test for that form: cut fraction against t_min over the generic runs.
