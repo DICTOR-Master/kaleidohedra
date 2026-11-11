@@ -59,3 +59,13 @@ Archimedean PATTERNS with stretched faces (corners on one sphere, every face equ
 Not equiangular: k = 0 (4 edge lengths, max/min 3.472136 = 2√5 − 1), k = 4 (3 edge lengths, max/min exactly 3; pentagons regular),
 k = 9 (5 edge lengths, corners on two spheres).
 DICTO (11 Nov): "the numbers run beautifully at least".
+
+## The three ratios, exactly (DICTO: "identify the three ratios exactly"; scripts/twin_ratios_exact.py, data/twin-ratios-exact.json, exact ℚ(√5), FINAL ok)
+Squared side lengths are exact in ℚ(√5); each ratio's square turned out to be a square in ℚ(√5), so the ratio itself is in ℚ(√5).
+Controls reproduced: k = 0: 2√5 − 1; k = 1, 5: (3 + √5)/2 = φ²; k = 4: 3.
+- k = 6 (rectangles of the rhombicosidodecahedron-type twin hull): **(17√5 − 19)/6 = 3.168859270…**
+- k = 8 (the truncated-triangle hexagons): exact but not simple: p + q√5 with p = 3044292428786136875631557/3499264300708543451073182,
+  q = 288809153275608825089507/3499264300708543451073182 (= 1.054532899…): numbers of 25 digits, as the coordinates of D_8 grow.
+- k = 10 (rectangles of the truncated-icosidodecahedron-type twin hull): exact in ℚ(√5) with numerators and denominators of about
+  500 digits (= 3.317083246…), stored in the json.
+Script note: the first run printed the negative square root for k = 0 and 6 (1 − 2√5, (19 − 17√5)/6); fixed to take the positive root.
