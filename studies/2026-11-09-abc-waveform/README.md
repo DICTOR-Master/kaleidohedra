@@ -163,3 +163,21 @@ The underlying wall is the per-site capacity: one piece has at most 6 placements
 ```json
 {"question": "DICTO 9 Nov: ABC waveform on the surfaces (crests at seats A,B,C, reciprocal underneath, golden mix of waves; Ammann-style phases per orientation) to force aperiodic c/h stacking with ONE Narcissus", "method": "crest planes in Narcissus (6 tilted close-packed families + horizontal, offsets H/6 steps + golden phases; 1944 designs up to symmetry: singles, one- and two-colour pairs, C3/C3v closures); rules STRICT (planes continue) and BEND (crest lines match, lean back); mirror copies yes/no; SAT patch K=5 n=3 + skewed tori index<=3, candidates to n=5/index<=9 and n=7; hexagon-only reliefs exhaustive (165); three lemmas", "status": "SETTLED (closed for the aim in this form)", "result": "7774 runs: 7549 no patch, 213 periodic, 12 candidates all die by n=7 (golden-phase crests: finite-patch artefacts); every filling run admits SSSS or TTTT (none excludes both); word sets only all/SSSS/TTTT (+1 transient). Lemma 1: a golden two-wave relief needs infinitely many phases, one piece shows <=6. Lemma 2: hexagon-only relief couples one pair per interface, words = all words over admitted bits (checked on 165 reliefs). Lemma 3: BEND + mirror copies always admits all-S (h) by mirroring a slab (all 105 such runs confirm). Straight tilted crests (STRICT) force TTTT (keep leaning), periodic", "retry": "never as face/crest decorations of one Narcissus; only a chiral, non-reflection-symmetric key, the vertical-plane (route 4) Ammann system with several pieces, or two slab thicknesses in golden ratio", "study": "2026-11-09-abc-waveform", "date": "2026-11-09"}
 ```
+
+## Lead 2 run: the vertical-plane wave (12 Nov 2026, DICTO: "go ahead with the vertical plane wave pilot")
+**Conclusion:** CLOSED. A two-family crest grid on one Narcissus, seen in the vertical plane across the rows, forces no non-repeating stacking.
+- Design (`scripts/vplane.py`): the two lean families that share the row direction a1, b1 (lean B-ward) and c1 (lean C-ward); in the
+  vertical plane with normal a1 they are the two crossing zigzag line directions and the layers are the rows, so the crest-spacing word
+  up the stack is the stacking word (an Ammann grid in that plane). New against 9 Nov: SEVERAL crests per family in one piece (1-2 of
+  the 8 b1 offsets x 1-2 of the 7 c1 offsets, H*j/6), one wave or two waves (colours): 2016 designs up to symmetry; rules STRICT / BEND
+  x mirror copies yes / no = 8064 runs; K = 5, n = 3 patch, 57 skewed tori (PMAX 3, IMAX 3).
+- Controls: empty decoration -> all 16 words, periodic; C3:c1@H/3 STRICT -> TTTT only, as on 9 Nov (pilot and all 4 shards).
+- Result (dbb job vplane-wave, 4 shards, 33-36 min each, all FINAL ok; data/vplane-shard*.log, vplane-K5-n3-P3-I3-shard*.json):
+  STRICT (crests run straight, the Ammann rule): 0 of 2016 designs fill even the n = 3 patch, with or without mirror copies.
+  BEND: 36 designs fill (the same 36 with and without mirrors); 34 force SSSS (h) only, 2 allow all 16 words; every one has a torus.
+  CANDIDATES 0. No word set lacks both constant words.
+- Why (the wall, now with a name): without mirror copies Narcissus has 3 placements per site, so any marking is a Wang-type system with
+  very few tiles per site; Jeandel and Rao (2015) showed no Wang set of 10 tiles or fewer is aperiodic. Not a proof here (the contacts
+  are not square Wang edges), but the same capacity wall as the edge keys (6 Nov) and the face waves (9 Nov). Kamenetsky's frame
+  marking (arXiv 2610.00916) makes it exact: a marking can carry only as many states as the piece has turns at a site (chair 24,
+  RD 24, Narcissus 3). The one-piece aim moves to the RD bridge (studies/2026-11-12-rd-bridge).

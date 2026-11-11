@@ -6304,6 +6304,15 @@
     "retry": "never",
     "study": "2026-11-10-permutohedron",
     "date": "2026-11-12"
+   },
+   {
+    "question": "one-piece aim, DICTO 12 Nov 'go ahead with the vertical plane wave pilot' (ledger retry route 4): two-family crest grid (b1 + c1, 1-2 crests each) on one Narcissus, crest-spacing word = stacking word",
+    "method": "SAT scan vplane.py: 2016 designs x STRICT/BEND x mirrors yes/no, K=5 n=3 patch, 57 skewed tori; controls empty and C3:c1@H/3",
+    "status": "SETTLED (closed for the aim)",
+    "result": "STRICT: 0/2016 fill a patch; BEND: 36 fill, 34 force SSSS, 2 allow all words, all periodic; 0 candidates. Capacity wall: 3 placements per site (cf. Jeandel-Rao <=10 Wang tiles never aperiodic; Kamenetsky frame marking: states <= turns at a site)",
+    "retry": "never on Narcissus with crest/edge/face decorations; only a carrier with more turns per site (RD bridge, 24) or several pieces",
+    "study": "2026-11-09-abc-waveform",
+    "date": "2026-11-12"
    }
   ]
  },

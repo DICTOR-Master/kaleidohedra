@@ -1,0 +1,63 @@
+offsets b1 8 c1 7; designs up to symmetry 2018; running 506; K=5 n=3 PMAX=3 IMAX=3 torus-n=2
+HEARTBEAT 1s tori 57: words ['SS', 'STSTSTSTSTST', 'TTTTTT']
+geometry: max contacts per piece 10, pieces with all 10: 200 of 490
+  d0 control-empty STRICT mirrors=yes: PERIODIC SS/(1, 0, 1)+skew(0,0)  words 16/16 ['SSSS', 'SSST', 'SSTS', 'SSTT', 'STSS', 'STST']
+  d0 control-empty STRICT mirrors=no: PERIODIC SS/(1, 0, 1)+skew(0,0)  words 16/16 ['SSSS', 'SSST', 'SSTS', 'SSTT', 'STSS', 'STST']
+HEARTBEAT 4s 1/506 designs done
+PROGRESS 0.002 designs
+HEARTBEAT 63s 21/506 designs done
+PROGRESS 0.042 designs
+HEARTBEAT 129s 41/506 designs done
+PROGRESS 0.081 designs
+HEARTBEAT 194s 61/506 designs done
+PROGRESS 0.121 designs
+HEARTBEAT 263s 81/506 designs done
+PROGRESS 0.160 designs
+HEARTBEAT 343s 101/506 designs done
+PROGRESS 0.200 designs
+HEARTBEAT 418s 121/506 designs done
+PROGRESS 0.239 designs
+HEARTBEAT 491s 141/506 designs done
+PROGRESS 0.279 designs
+HEARTBEAT 563s 161/506 designs done
+PROGRESS 0.318 designs
+HEARTBEAT 639s 181/506 designs done
+PROGRESS 0.358 designs
+HEARTBEAT 726s 201/506 designs done
+PROGRESS 0.397 designs
+HEARTBEAT 820s 221/506 designs done
+PROGRESS 0.437 designs
+HEARTBEAT 934s 241/506 designs done
+PROGRESS 0.476 designs
+HEARTBEAT 1041s 261/506 designs done
+PROGRESS 0.516 designs
+HEARTBEAT 1148s 281/506 designs done
+PROGRESS 0.555 designs
+HEARTBEAT 1246s 301/506 designs done
+PROGRESS 0.595 designs
+HEARTBEAT 1359s 321/506 designs done
+PROGRESS 0.634 designs
+HEARTBEAT 1461s 341/506 designs done
+PROGRESS 0.674 designs
+HEARTBEAT 1554s 361/506 designs done
+PROGRESS 0.713 designs
+HEARTBEAT 1670s 381/506 designs done
+PROGRESS 0.753 designs
+HEARTBEAT 1771s 401/506 designs done
+PROGRESS 0.792 designs
+HEARTBEAT 1883s 421/506 designs done
+PROGRESS 0.832 designs
+HEARTBEAT 1973s 441/506 designs done
+PROGRESS 0.872 designs
+HEARTBEAT 2036s 461/506 designs done
+PROGRESS 0.911 designs
+HEARTBEAT 2097s 481/506 designs done
+PROGRESS 0.951 designs
+HEARTBEAT 2147s 501/506 designs done
+PROGRESS 0.990 designs
+SUMMARY [(('BEND', False, 'NO'), 494), (('BEND', False, 'PERIODIC'), 11), (('BEND', True, 'NO'), 494), (('BEND', True, 'PERIODIC'), 11), (('STRICT', False, 'NO'), 504), (('STRICT', False, 'PERIODIC'), 2), (('STRICT', True, 'NO'), 504), (('STRICT', True, 'PERIODIC'), 2)]
+PATCH-WORD COUNTS (mode, mirrors, #words admitted): designs [(('BEND', False, 1), 9), (('BEND', False, 16), 2), (('BEND', True, 1), 9), (('BEND', True, 16), 2), (('STRICT', False, 1), 1), (('STRICT', False, 16), 1), (('STRICT', True, 1), 1), (('STRICT', True, 16), 1)]
+CONTROL C3:c1 STRICT words [['TTTT'], ['TTTT']]
+WORD SETS WITHOUT BOTH CONSTANT WORDS (the only possible non-repeating signals): []
+CANDIDATES 0 []
+FINAL ok 2160s
