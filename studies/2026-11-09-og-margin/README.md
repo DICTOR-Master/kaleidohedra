@@ -765,3 +765,24 @@ mirror image [v, σv]; hence the vertices of S_k are the corners of D_k in P plu
 PILOT of the recursion (k = 10 … 16): corners in P ≤ mirror faces of the previous level at every hop (true); but x_P(D_{k+1}) is 0.27 –
 1.09 × e(S_k), so the crude recursion allows doubling per hop: too weak against face growth ≈ 1.3. (M) needs a bound on the symmetric
 edges x_P of the kind x_P(D_{k+1}) ≤ (λ − 1 − ε)·e(S_k) on average over a few hops, or a direct √n bound. Full ratios to k = 37 running.
+
+**Remark (§38d, the mirror sections of the up and down families are polar polygons).** Let P be a mirror plane of I_h and σ its
+reflection. (a) For a convex body K with σK = K, the orthogonal projection of K onto P equals the section K ∩ P: if (p, h) ∈ K then
+(p, −h) = σ(p, h) ∈ K, so the midpoint (p, 0) ∈ K. (b) Projection–section duality: for a convex body K with the origin in its interior
+and a linear subspace E, the polar within E of K ∩ E is the orthogonal projection of K° onto E. Applied to D_k (σ-symmetric) and
+X_k = polar(D_k) (#43 Lemma 3): X_k ∩ P = proj_P(X_k) = (D_k ∩ P)°, the polar within P of the down section. A polygon and its polar
+have equally many edges, so the mirror sections of the up and down families have the same edge count at every level (observed:
+32 = 32, 44 = 44, …, 126 = 126 for k = 10 … 20, up_track.py). Not a new result: (a) is elementary, (b) is classical; only its use for
+the OG family is ours. Consequence: the √n question for (M) is one 2D problem, not two.
+Sources checked (11 Nov 2026):
+- S. Arya, D. M. Mount, "Cauchy's Surface Area Formula in the Funk Geometry", arXiv:2601.16468v2 — Lemma 2.1 (Projection–Section
+  Duality), stated exactly as (b): "(K ∩ E)°_E = K°|E" (opened, read).
+- A. C. Thompson, Minkowski Geometry, Encyclopedia of Mathematics and its Applications 63, Cambridge University Press, 1996,
+  Theorem 2.2.9 and Corollary 2.2.10 — the source Arya–Mount cite for the proof (their ref. [35]); not opened here.
+- A. Jensen, "Self-polar polytopes", arXiv:1902.00784v1 (2019), Lemma 5.3: for a polytope P and a subspace H, (proj_H P)° = P° ∩ H
+  (polar in H), with proof (opened, read).
+- R. J. Gardner, Geometric Tomography (2nd ed., Cambridge University Press, 2006), Section 0.8, relation (0.38), used to convert
+  projection results to central-section results "or vice versa" (from the publisher's chapter page via search; book not opened).
+- Library check: neither ~/kaleidohedra-references nor ~/Documents/reference-library holds Gardner, Schneider or Thompson.
+Queries: "polar body section projection duality Gardner Geometric Tomography"; "polar of a section equals projection of the polar
+convex body subspace lemma".
