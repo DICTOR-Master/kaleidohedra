@@ -24,3 +24,10 @@ covered exactly once; volume 16 = 15 + 1 per lattice point. In DICTO's pieces: p
 (6 in the dents under the squares, 6 forming the cube between squares). Numerical check with exact volumes; exact proof (rational
 coordinates, face-to-face) is the next step. The chamfered cube alone does not tile by translations (its belt round an axis has 8 faces;
 Venkov's belt condition needs 4 or 6).
+## EXACT proof of the filling (scripts/exact_fill.py, rational arithmetic, FINAL ok)
+Z = zonohedron with generators e1, e2, e3 and the four half body diagonals (32 vertices, volume exactly 15) = DICTO's closed build
+(the hull of his 14 Hemi RDs, matched in analyse_build.py: 6 squares side 1, 12 hexagons sides 1 and sqrt3/2, volume 15).
+Z + L and unit cubes Q + (2,0,0) + L (L = even points with a+b+c = 0 mod 4, det 16) tile space: 487 pairs of pieces within reach, each
+separated by an exact separating axis (facet normals and edge cross products); densities 15 + 1 = 16 = det L; a packing of density 1 by
+convex bodies is a tiling. So DICTO's 14 Hemi RDs + 12 cube pyramids per lattice point fill space. THEOREM (DICTO's construction and
+idea; exact).

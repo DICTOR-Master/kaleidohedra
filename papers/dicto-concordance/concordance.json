@@ -5998,6 +5998,15 @@
     "retry": "never",
     "study": "studies/2026-11-11-orbit-polytopes",
     "date": "2026-11-11"
+   },
+   {
+    "question": "Exact proof: the chamfered cube (DICTO's closed Hemi RD build) fills space with cube pyramids",
+    "method": "exact_fill.py: zonotope Z exact (vol 15), separating axes for 487 piece pairs in rationals, density 15+1 = det 16",
+    "status": "SETTLED (exact theorem)",
+    "result": "Z + L and unit cubes at (2,0,0)+L tile space; per lattice point 14 Hemi RDs + 12 cube pyramids",
+    "retry": "never",
+    "study": "studies/2026-11-11-hemi-rd-build",
+    "date": "2026-11-11"
    }
   ]
  },
