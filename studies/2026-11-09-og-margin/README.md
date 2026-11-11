@@ -720,3 +720,16 @@ step A1 holds whenever μ < 1/4 — true from k = 19 on in the data (μ = 0.209,
 (M) mirror faces become a vanishing share (they lie along the 15 mirror great circles, a one-dimensional family, so about √n of n:
 the 15 vertical sheets of the 4D Vacuus, §31a). (M) is geometric and looks provable; (G) is the remaining core, now only for generic
 classes (where the generic-shape roundness law of §30 also gave ≤ 0.41).
+
+## §38 Proving (M): mirror faces (11 Nov 2026; DICTO: "yes prove M"; scripts/og_mirror_bound.py, data/og-mirror-bound.json, FINAL ok)
+LEMMA (exact). Let P be one of the 15 mirror planes. A face F of D_k with normal in P satisfies σF = F, so F ∩ P is an edge of the
+section polygon D_k ∩ P, and F's cap of directions meets the great circle of P. Caps of distinct faces are disjoint. Hence the mirror
+faces of P fill at most the band of half-width 2γ_M (γ_M = largest cap radius of a mirror face), and
+   μ_k ≤ 15 · sin(2γ_M) · (mean solid angle of all faces / mean solid angle of mirror faces) + 62/n_k.
+Edges of D_k ∩ P = the mirror faces of P plus the edges of D_k lying in P (the σ-pairs of faces meet P only there).
+DATA k = 0 … 20: the bound holds at every level (control) but is far too weak: 14.9 … 1.28 against the needed 1/4 (actual μ 0.17 at
+k = 20). Reasons: γ_M (largest mirror cap, 5.2° at k = 20) is about twice the mean cap (2.7°), and mirror faces are LARGER than average
+(size ratio 0.47–0.8 from k = 18): the vulnerable faces of §37 are the big ones on the mirror circles.
+REDUCTION: (M) ⇐ the mirror faces shrink: γ_M ≲ 0.5° (with size ratio ≈ 0.5–1) makes the bound < 1/4. Since the mirror faces of P are
+the edges of the section polygon D_k ∩ P, this is a 2D question: do the edges of the 15 section polygons keep getting finer?
+Next: track γ_M and the section polygon's edge count/lengths to k = 37 (certified checkpoints), and the 2D dynamics of D_k ∩ P.
