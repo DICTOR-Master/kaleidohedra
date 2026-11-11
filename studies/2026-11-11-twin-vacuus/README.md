@@ -154,3 +154,10 @@ fins each) and the twin hulls exactly similar (OG k = 1: c = (9 − 3√5)/2 = 3
 point sets). The outsider's thread passes exactly through the pentakis cycle at levels 1 and 5. CAUTION: c depends on the arbitrary size
 of the Catalan start (built from the truncated icosahedron of edge 2), so c = 3/φ² is not yet meaningful; check with a natural common
 normalisation (equal circumradius or insphere of the starts) before reading anything into it.
+SCALE NORMALISED (DICTO: "check the 3/φ² scale with a common normalisation"; scripts/scale_norm.py, data/scale-norm.json, FINAL ok):
+scaling a start by s scales its twin family by s' = conj(s), so only scales in ℚ(√5) keep the twin comparison. Equal circumradius
+(s² = 21195/722 + 9423√5/722) and equal inradius (s² = 169/6 + 25√5/2) are NOT squares in ℚ(√5): those normalisations leave the golden
+field. In-field normalisation: the 12 five-fold corners of the two starts made to coincide (s = (9 + 3√5)/2): then c = 1 EXACTLY. The
+3/φ² was an artefact of the Catalan start's arbitrary size (its twin (9 − 3√5)/2). RESULT: an OG and a Catalan pentakis dodecahedron with
+the same five-fold corners have IDENTICAL level-1 twin hulls, hence the identical level-1 Angelus (and the OG's level 5 gives it again,
+scaled). The outsider and the clockwork meet in one identical hidden form.
