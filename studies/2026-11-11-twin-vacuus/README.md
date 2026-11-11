@@ -115,3 +115,16 @@ shape only scales within its band. (2) But its dual (hull of the 60 face directi
 have alternating sides 6.1468 : 1 (Catalan needs a regular truncated icosahedron, 1 : 1). The world has 3 edge lengths (the Catalan
 pentakis has 2), long/short 1.1703 against the Catalan 1.1273, corner radii 0.8525 : 1 against 0.9742 : 1. It is a pentakis
 dodecahedron with an insphere and congruent faces, but not the Catalan one.
+
+## Other pentakis dodecahedra as starts (DICTO: "i wonder if other pentakis produce dodecahedrons, icosahedrons and rhombicosidodecahedrons"; scripts/pentakis_family.py, data/pentakis-family.json, exact ℚ(√5), FINAL ok)
+Starts: the Catalan pentakis dodecahedron (polar dual of the regular truncated icosahedron) and regular dodecahedra with a pyramid on each
+face, apex heights h = 1/20, 1/10, 1/5, 3/10 and 1/φ³ of the face distance. For EVERY start, levels 0–9:
+- twin hulls cycle with period 4: REGULAR DODECAHEDRON (k ≡ 0) → rhombicosidodecahedron pattern (k ≡ 1) → REGULAR ICOSAHEDRON (k ≡ 2) →
+  rhombicosidodecahedron pattern (k ≡ 3) → …; rectangle ratios repeat (Catalan: φ² = 2.618034 at k ≡ 1, 2φ² = 5.236068 at k ≡ 3;
+  h = 1/φ³: 7.854102 and 1.723607; the others, all exact in ℚ(√5), in the json).
+- the real family cycles too: pentakis (32 corners, 60 triangles, corners on 2 spheres) ↔ a 60-corner, 32-face solid with all corners
+  on ONE sphere (truncated-icosahedron type), and D_{k+4} = D_k up to scale (same face count and corner-radius pattern) at every level.
+So pentakis dodecahedra are CYCLING POINTS of the hop (period 4, like the Universal PiTet beats), and the twin cycle is the Galois image
+of the real cycle. The OG family is the OUTSIDER: it does not cycle (faces grow without end) and touches the Platonic solids on its
+hidden side only at k = 2, 3, 7. For the Platonic book Chapter 12 (with the Outsider opening). Next to check: the exact scale of the
+4-cycle (D_{k+4} = c·D_k, c in ℚ(√5)) and whether "up to scale" is exact similarity (only face counts and radius pattern compared so far).
