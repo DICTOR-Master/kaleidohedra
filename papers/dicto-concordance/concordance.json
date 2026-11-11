@@ -6025,6 +6025,15 @@
     "retry": "never",
     "study": "studies/2026-11-11-orbit-polytopes",
     "date": "2026-11-11"
+   },
+   {
+    "question": "Prove the middle-bond law of the Vacuus",
+    "method": "Wythoff faces F_J; central hyperplane span(x, alpha_J); sign coherence of root coefficients; mirror_law.py checks criterion vs direct test on all 0/1 seeds of A3,B3,H3,A4,B4,F4,H4 (228 cases)",
+    "status": "SETTLED (theorem, proof + 0 mismatches)",
+    "result": "Mirror Law: faces of type J lie on mirrors iff the unringed nodes' root subsystem has a root orthogonal to alpha_J. Corollaries: middle-bond faces of every (0,1,1,0) leave the mirrors, all others on them; unlike cells iff diagram not end-symmetric; regular polytopes all faces on mirrors; T(x) 3D Vacuus split",
+    "retry": "never",
+    "study": "studies/2026-11-11-orbit-polytopes",
+    "date": "2026-11-11"
    }
   ]
  },

@@ -92,3 +92,22 @@ self-dual (B4, H4) the middle-bond faces are exactly those between unlike cells,
 self-dual chains (A4, F4) all cells are alike and the middle-bond faces still leave the mirrors. Off-mirror faces sit 1-2 per central
 plane (plane grouping at 6 digits splits a few; vacuus_queens.py gives exactly 2 per plane for H4). To prove: the stabiliser of a
 middle-bond face fixes no root orthogonal to it (lead).
+## THE MIRROR LAW: proved (scripts/mirror_law.py checks the criterion against direct measurement: 228 cases, 0 mismatches, FINAL ok)
+Setting: a finite reflection group with simple roots alpha_1..alpha_n, seed x with labels lambda_i = alpha_i . x >= 0 (Wythoff), ringed
+set S = {i : lambda_i > 0}. Faces of codimension 2 (edges in 3D, 2-faces in 4D) are the images g F_J of F_J = conv(W_J x), |J| = n-2,
+for J whose every Coxeter-graph component meets S (Coxeter's rule). The central hyperplane of F_J is span(x, alpha_J).
+LEMMA. span(x, alpha_J) is a mirror iff some root r is orthogonal to x and to every alpha_j, j in J. (A hyperplane is a mirror iff its
+normal is a root; the normal is orthogonal to x and alpha_J; images under g carry mirrors to mirrors.)
+THEOREM (Mirror Law). The faces of type J lie on mirrors iff the root subsystem of the UNRINGED nodes contains a root orthogonal to
+alpha_J. Proof: write r = sum c_l alpha_l; all c_l have one sign (simple systems); r . x = sum lambda_l c_l with lambda_l > 0 on S, so
+r . x = 0 iff c_l = 0 on S, i.e. r lies in the subsystem spanned by the unringed roots. QED.
+COROLLARY (the middles). For a linear 4-chain 1-2-3-4 and seed support {2,3} (e.g. (0,1,1,0)): the face types are J = {1,2}, {2,3},
+{3,4}; the unringed subsystem is {+-alpha_1, +-alpha_4} (nodes 1, 4 not joined). alpha_4 is orthogonal to alpha_1, alpha_2, so the
+{1,2} faces lie on mirrors; alpha_1 is orthogonal to alpha_3, alpha_4, so the {3,4} faces do; neither is orthogonal to both alpha_2 and
+alpha_3, so the middle-bond faces {2,3} (the 2m-gons) lie on no mirror. In every A4, B4, F4, H4 middle. QED.
+WHY "unlike" in B4 and H4: a middle-bond face lies between the cells of types {1,2,3} and {2,3,4}; these are congruent exactly when the
+diagram has the end-to-end symmetry (A4 3-3-3, F4 3-4-3: one cell kind) and different otherwise (B4: TO and TT; H4: TI and TT).
+COROLLARY (regular ends): seed support {1}: the only face type {1,2}; alpha_4 (n = 4) or alpha_3 (n = 3) is unringed and orthogonal to
+it, so every face of a regular polytope lies on a mirror (the octahedron's 3 discs, the 600-cell's 60 slices). The same law gives the 3D
+Vacuus of T(x) (seed (0,x,1), unringed {1}): edges of type {3} on mirrors (alpha_1 orthogonal to alpha_3), type {2} off: the 12 + 24
+split of #105's 3D Vacuus and of the Icosaxes / Unborn Axes.
