@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Orderings of Four: Kelvin's Cell, the Slider and the 1:2</title><link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;width:100%;font-size:8.6pt;margin:2mm 0} td,th{border:0.3pt solid #999;padding:0.8mm 1.4mm;vertical-align:top;text-align:left} th{background:#eee} .box{border:0.4pt solid #b9a46a;background:#fbf8ee;padding:2mm 3mm;margin:2mm 0;break-inside:avoid} figure{margin:3mm 0;text-align:center;break-inside:avoid} figure img{max-width:100%} figcaption{font-size:8.5pt;color:#444;text-align:left} .proof{font-size:9.6pt}</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt=""><img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Orderings of Four: Kelvin's Cell, the Slider and the 1:2<br><span style="font-size:0.72em;font-weight:normal">The Permutohedron Paradigm, Chapter 2: the solids of DICTONIC's golden loop are the permutohedra of four values spaced symmetrically, and each fills space with its reciprocal, in one way only</span></h1>
+<div class="meta"><b>DICTO</b> (artist and geometer, Osaka, Japan) · dictospheres.com · contact@dictospheres.com · ORCID 0009-0001-2620-2036<br>
+DICTO: ideas, names, constructions and direction.<br>Computation, verification and drafting with Claude (Anthropic).</div>
+<div class="status">DRAFT chapter for DICTO's read. Checks: studies/2026-11-11-paradigm-ch2 (symmetry.py with log, exact, FINAL ok); the identification of T(x) is #105 Theorem 4 (dictonic_family.py there).</div>
+
+<p>The 24 orders of 1, 2, 3, 4 are the corners of Kelvin's truncated octahedron. Space the four values differently and the corners move, but the solid keeps its 6 four-sided faces and 8 hexagons (Chapter 1). Most spacings break its symmetry. This chapter shows which spacings keep all of it, and that those are exactly the solids of DICTONIC's golden loop.</p>
+
+<div class="box"><b>Proposition 2.1.</b> The permutohedron of four values v₁ &lt; v₂ &lt; v₃ &lt; v₄ has the 24 symmetries of the regular tetrahedron for every choice of values, and the 48 symmetries of the cube exactly when the values are symmetric about their mean (v₁ + v₄ = v₂ + v₃, gaps g : m : g).</div>
+<p class="proof"><i>Proof.</i> Permuting the four coordinates maps the set of orders to itself: 24 symmetries. The solid is a truncated octahedron combinatorially, whose combinatorial symmetries number 48, so there are 24 or 48. A group of 48 orthogonal maps containing the tetrahedral group is the full octahedral group, which contains the central inversion x ↦ −x (mean at the origin); so all 48 occur exactly when the inversion is a symmetry, that is, when −v₁, …, −v₄ are again v₁, …, v₄: the values are symmetric about their mean. ∎ (Checked by computing the full symmetry group of the corners for four symmetric and three non-symmetric spacings: symmetry.py.)</p>
+
+<div class="box"><b>Theorem 2.2</b> (#48, Theorem 4; #105, Theorem 4; #93, Theorem A). Let T(x), x &gt; 0, be the permutohedron of four values with gaps x : 1 : x (the hull of the signed orders of (1 + x, x, 0); Koca et al.'s orbit). Then copies of T(x) at the points of a cubic lattice and of T(1/x) at the centres of its cubes fill space, face to face, and every tiling by copies of the two is this one.</div>
+<p class="proof"><i>Proof.</i> The filling is #48, Theorem 4; the identification of #48's T(x) with the permutohedron of gaps x : 1 : x is #105, Theorem 4; the uniqueness is #93, Theorem A, where T(x) and T(1/x) are P<sub>μ</sub> and Q<sub>μ</sub> with μ = 1 + x/(1 + x) (#90, Proposition 6). ∎</p>
+
+<figure><img src="figures/fig-dictonic.png" alt="Three truncated octahedra at x = 1/2, 1 and tau, gold squares and blue hexagons, each above a line showing its four values"><figcaption><b>Figure 1.</b> Three stops of the slider, each the permutohedron of the four values on the line beneath it (red mark: the mean). From #105.</figcaption></figure>
+
+<table><tr><th>x</th><th>T(x)</th><th>partner T(1/x)</th><th>source</th></tr>
+<tr><td>→ 0</td><td>the octahedron</td><td>the cuboctahedron</td><td>#48; #53, Corollary 1</td></tr>
+<tr><td>1/2</td><td>DICTO 1:2 Truncated Octahedron (values 1, 2, 4, 5)</td><td>DICTO 2:1 Truncated Octahedron</td><td>#105</td></tr>
+<tr><td>1</td><td>Kelvin's truncated octahedron (1, 2, 3, 4)</td><td>itself</td><td>#48</td></tr>
+<tr><td>τ</td><td>Icosaxes (−τ³, −1, 1, τ³)</td><td>Unborn Axes</td><td>#48</td></tr></table>
+<p>This is why the loop runs only through symmetric spacings: each site of the two cube lattices in Theorem 2.2 has all 48 symmetries of the cube, so its cell must have them too, and by Proposition 2.1 that forces the values to be symmetric about their mean. Chapter 3 shows that the weight between the two kinds of site measures the spacing itself.</p>
+
+<h2>Sources</h2>
+<p class="src">DICTO: #48 The Golden Split (Theorem 4); #53 The Global Web of Bonds (Corollary 1); #90 Golden on the Octahedron, Silver on the Cube (Proposition 6); #93 One Double Pyramid, Two Splits (Theorem A); #105 DICTO 1:2 Truncated Octahedron: The 4D Vacuus of the Permutohedron (Theorem 4, Figure 5). M. Koca, N. O. Koca, M. Al-Mukhaini and A. Al-Qanobi, arXiv:1506.04600 (2015), eq. 49 (T(x)); W. Thomson (Lord Kelvin), Phil. Mag. (5) 24 (1887) 503–514. The filling and its uniqueness are #48's and #93's; the reading of the loop as the symmetric spacings of four values is this book's.</p>
+</body></html>
