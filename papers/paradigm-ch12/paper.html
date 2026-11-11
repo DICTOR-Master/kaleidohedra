@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>The Golden Slice</title><link rel="stylesheet" href="../paper.css">
+<style>.box{border:0.4pt solid #b9a46a;background:#fbf8ee;padding:2mm 3mm;margin:2mm 0;break-inside:avoid} .proof{font-size:9.6pt} table{border-collapse:collapse;width:100%;font-size:8.6pt;margin:2mm 0} td,th{border:0.3pt solid #999;padding:0.8mm 1.4mm;text-align:left} th{background:#eee}</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt=""><img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>The Golden Slice<br><span style="font-size:0.72em;font-weight:normal">The Permutohedron Paradigm, Chapter 12: cutting the 4D permutohedron filling in the golden direction gives a non-repeating filling of space by cells of exactly 35 kinds, in endlessly many shapes</span></h1>
+<div class="meta"><b>DICTO</b> (artist and geometer, Osaka, Japan) · dictospheres.com · contact@dictospheres.com · ORCID 0009-0001-2620-2036<br>
+DICTO: ideas, names, constructions and direction.<br>Computation, verification and drafting with Claude (Anthropic).</div>
+<div class="status">DRAFT chapter for DICTO's read. New; answers #105's lead 2. Checks: studies/2026-11-11-paradigm-ch12 (golden_types.py with log: corner heights exact in ℤ[φ], types by graph isomorphism, FINAL ok); the float slice test of 10 November (studies/2026-11-10-permutohedron) is superseded.</div>
+
+<p>The 4D permutohedra fill four-dimensional space, every one a translate of the same cell. Cut that filling by a three-dimensional slice and the cells it crosses fill the slice. In a rational direction the cut repeats; DICTO proposed cutting in the golden direction u = (1, φ, φ², φ³, φ⁴).</p>
+
+<div class="box"><b>Theorem 12.1.</b> Cut the permutohedron filling by the hyperplanes u · x = c with u = (1, φ, φ², φ³, φ⁴), at a generic offset c. Then: (i) the cells of the slice are sections of one permutohedron at heights that are dense, so the slice repeats nowhere and its cells come in infinitely many shapes; (ii) they come in exactly 35 combinatorial types, each occurring infinitely often. The 120 corners of the permutohedron lie at only 70 distinct golden heights: 50 coincide because φ² = φ + 1.</div>
+<p class="proof"><i>Proof.</i> A cell's section is P ∩ {u · x = c − u · λ}, λ in the lattice; since u · λ runs over a set containing integers and integer multiples of φ, the offsets are dense, which gives (i). The combinatorial type of a section is the set of faces of P that straddle the level, with their containments; it is constant between consecutive corner heights. The heights u · σ over the 120 orderings σ of −2, …, 2 were computed exactly in ℤ[φ] (φ<sup>i</sup> = F<sub>i−1</sub> + F<sub>i</sub>φ): 70 distinct values, 69 open bands; their straddling-face graphs fall into 35 isomorphism classes, and density puts cells in every band. ∎ (golden_types.py)</p>
+
+<table><tr><th>direction</th><th>distinct corner heights</th><th>bands</th><th>combinatorial types</th></tr>
+<tr><td>rational (1, −1, 0, 0, 0)</td><td>8</td><td>7</td><td>3 possible; at one offset a single one, the repeating one-piece filling</td></tr>
+<tr><td>generic</td><td>120</td><td>119</td><td>60 (bands pair up under the central symmetry)</td></tr>
+<tr><td><b>golden</b> (1, φ, φ², φ³, φ⁴)</td><td><b>70</b> (50 ties)</td><td><b>69</b></td><td><b>35</b></td></tr></table>
+<p>The golden direction sits between the two: not repeating, as a rational cut does, but with far fewer kinds than a generic cut, because the golden ratio makes corners meet at the same height. This is the permutohedron's own version of the passage from crystal to quasicrystal: a finite set of kinds, never repeating. Whether the 35 kinds can be cut down to finitely many <i>shapes</i> by the projection (window) method that gives Penrose-type tilings is open.</p>
+
+<h2>Sources</h2>
+<p class="src">DICTO: #105 (lead 2; the permutohedron filling); the slice test of 10 November 2026. J. H. Conway and N. J. A. Sloane, <i>Sphere Packings, Lattices and Groups</i>, 3rd ed., Springer (1999) (the lattice A<sub>4</sub>* and its Voronoi cell); M.-C. Brandenburg, J. A. De Loera and C. Meroni, The best ways to slice a polytope, <i>Math. Comp.</i> 94 (2025) 1003–1042, doi:10.1090/mcom/4006.</p>
+<p class="src"><b>Further reading.</b> M. Baake and U. Grimm, <i>Aperiodic Order</i>, vol. 1, Cambridge University Press (2013) (cut-and-project sets); N. G. de Bruijn, Algebraic theory of Penrose's non-periodic tilings of the plane, <i>Indag. Math.</i> 43 (1981) 39–66; G. M. Ziegler, <i>Lectures on Polytopes</i> (1995), doi:10.1007/978-1-4613-8431-1.</p>
+</body></html>
