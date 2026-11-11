@@ -6016,6 +6016,15 @@
     "retry": "never",
     "study": "studies/2026-11-11-orbit-polytopes",
     "date": "2026-11-11"
+   },
+   {
+    "question": "Vacuus of the middles (0,1,1,0) of A4, B4, F4, H4 (and the regular ends)",
+    "method": "vacuus_middles.py: Wythoff orbit, cells by fundamental-weight directions, 2-faces, mirror test; H4 control = vacuus_queens.py",
+    "status": "SETTLED (float, H4 control) / law to prove",
+    "result": "Ends: every face on a mirror. Middles: exactly the middle-bond faces (hexagons A4/B4/H4, octagons F4) leave the mirrors, all others lie on them; in B4/H4 these are the unlike-cell faces",
+    "retry": "never",
+    "study": "studies/2026-11-11-orbit-polytopes",
+    "date": "2026-11-11"
    }
   ]
  },

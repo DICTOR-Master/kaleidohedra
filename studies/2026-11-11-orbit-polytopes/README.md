@@ -78,3 +78,17 @@ The 60 central slices of both Queens are exactly the 60 mirror hyperplanes of H4
 600-cell each mirror carries the White Queen's 20 (triangles, between truncated tetrahedra) AND the Red Queen's 12 (pentagons, between
 truncated icosahedra) together: the faces between like cells lie on the mirrors; the 2400 hexagons between unlike cells (where #104's
 exchanges happen) scatter, two per slice. Slice shapes per class in the log.
+## The Vacuus of every chain's ends and middle (scripts/vacuus_middles.py; data/vacuus_middles.log; FINAL ok; H4 control repeats
+vacuus_queens.py: 3600 corners, 720 cells, 60 mirrors x (20 triangles + 12 pentagons), 2400 hexagons off the mirrors)
+Every 2-face of the ends (regular polytopes) lies on a mirror. At the middle (0,1,1,0):
+| chain | middle | on the mirrors | off the mirrors |
+| A4 3-3-3 | bitruncated 5-cell (10 truncated tetrahedra) | 20 triangles (2 per mirror) | 20 hexagons |
+| B4 4-3-3 | bitruncated tesseract (8 TO + 16 TT) | 32 triangles TT-TT, 24 squares TO-TO | 64 hexagons TO-TT |
+| F4 3-4-3 | bitruncated 24-cell (48 truncated cubes) | 192 triangles (8 per mirror) | 144 octagons |
+| H4 5-3-3 | bitruncated 600-cell (600 TT + 120 TI) | 1200 triangles, 720 pentagons | 2400 hexagons TT-TI |
+LAW (observed in all four chains): at the middle, the faces of the MIDDLE BOND (the 2m-gons where both ringed nodes meet: hexagons
+for bond 3, octagons for bond 4) are exactly the faces off the mirrors; every other face lies on a mirror. Where the chain is not
+self-dual (B4, H4) the middle-bond faces are exactly those between unlike cells, so "like on the mirrors, unlike off" holds there; in the
+self-dual chains (A4, F4) all cells are alike and the middle-bond faces still leave the mirrors. Off-mirror faces sit 1-2 per central
+plane (plane grouping at 6 digits splits a few; vacuus_queens.py gives exactly 2 per plane for H4). To prove: the stabiliser of a
+middle-bond face fixes no root orthogonal to it (lead).
