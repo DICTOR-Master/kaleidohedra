@@ -161,3 +161,4 @@ field. In-field normalisation: the 12 five-fold corners of the two starts made t
 3/φ² was an artefact of the Catalan start's arbitrary size (its twin (9 − 3√5)/2). RESULT: an OG and a Catalan pentakis dodecahedron with
 the same five-fold corners have IDENTICAL level-1 twin hulls, hence the identical level-1 Angelus (and the OG's level 5 gives it again,
 scaled). The outsider and the clockwork meet in one identical hidden form.
+Render (DICTO: "render the identical level 1 Angelus"; scripts/render_shared_angelus.py, figures/shared-level1-angelus.png, FINAL ok = the two level-1 twin hulls equal as exact point sets): left the OG (60 kites purple, 20 hexagons teal), middle the Catalan pentakis scaled to the same five-fold corners (60 triangles), right their common level-1 Angelus (120 fins, 60 planes, 12.87° and 34.12°). First render showed the fill triangles inside the OG faces; fixed (one outline per face).
