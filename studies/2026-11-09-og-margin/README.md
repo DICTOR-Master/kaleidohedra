@@ -503,3 +503,11 @@ Test cut ⇔ leaning, k ≤ 14: FALSE. Cut but upright at every level with cuts 
 including the 12 five-fold faces whose foot point is the face centre: lean −0.8090 = −cos 36°, cut in the polar sense of §24);
 survive though leaning: 60 … 720. Lean of cut faces from −0.85 to positive; of survivors up to +1.93. The Vacuus lean does not
 decide the cut (the cut is a property of the foot points together, not of one pyramid).
+
+## §30 Cut fraction vs roundness (11 Nov 2026; DICTO: "run the cut fraction vs roundness test"; scripts/roundness_hop.py, data/og-roundness.*, watched job og-roundness, 40 seeds × 4 start kinds × 8 hops = 1280 hops, FINAL ok)
+#43's t (D inside t·P(D)) is NOT a roundness measure: t ≤ 3/φ² still allows cut 0.718 (pilot: t 1.143 with cut 0.853 at R/r 5.4).
+Roundness R/r (from O): non-icosahedral starts never exceed cut 0.405 for R/r < 1.5 and 0.412 for R/r < 2; over 1/2 only when
+R/r ≥ 2. ALL 8 round over-half hops (R/r 1.03–1.08, cut 0.508–0.718) are ICOSAHEDRAL starts: whole 60-orbits cut together.
+Verdict: for generic shapes the data show a roundness law (cut ≤ 0.41 for R/r < 2); icosahedral symmetry is what breaks it, so
+step A1 for the OG must use the OG's own orbit structure, not roundness alone. DICTO (11 Nov): "most likely a 4D Vacuus that is
+very sophisticated but that should narrow it down".

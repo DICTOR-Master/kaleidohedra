@@ -1,0 +1,67 @@
+PROGRESS 0.025 seed 100 hops so far 32 15s
+PROGRESS 0.050 seed 101 hops so far 64 19s
+PROGRESS 0.075 seed 102 hops so far 96 21s
+PROGRESS 0.100 seed 103 hops so far 128 25s
+PROGRESS 0.125 seed 104 hops so far 160 28s
+PROGRESS 0.150 seed 105 hops so far 192 31s
+PROGRESS 0.175 seed 106 hops so far 224 34s
+PROGRESS 0.200 seed 107 hops so far 256 46s
+PROGRESS 0.225 seed 108 hops so far 288 54s
+PROGRESS 0.250 seed 109 hops so far 320 56s
+PROGRESS 0.275 seed 110 hops so far 352 58s
+PROGRESS 0.300 seed 111 hops so far 384 61s
+PROGRESS 0.325 seed 112 hops so far 416 64s
+PROGRESS 0.350 seed 113 hops so far 448 65s
+PROGRESS 0.375 seed 114 hops so far 480 69s
+PROGRESS 0.400 seed 115 hops so far 512 72s
+PROGRESS 0.425 seed 116 hops so far 544 73s
+PROGRESS 0.450 seed 117 hops so far 576 77s
+PROGRESS 0.475 seed 118 hops so far 608 89s
+PROGRESS 0.500 seed 119 hops so far 640 92s
+PROGRESS 0.525 seed 120 hops so far 672 95s
+PROGRESS 0.550 seed 121 hops so far 704 96s
+PROGRESS 0.575 seed 122 hops so far 736 99s
+PROGRESS 0.600 seed 123 hops so far 768 102s
+PROGRESS 0.625 seed 124 hops so far 800 106s
+PROGRESS 0.650 seed 125 hops so far 832 110s
+PROGRESS 0.675 seed 126 hops so far 864 112s
+PROGRESS 0.700 seed 127 hops so far 896 114s
+PROGRESS 0.725 seed 128 hops so far 928 122s
+PROGRESS 0.750 seed 129 hops so far 960 124s
+PROGRESS 0.775 seed 130 hops so far 992 126s
+PROGRESS 0.800 seed 131 hops so far 1024 127s
+PROGRESS 0.825 seed 132 hops so far 1056 129s
+PROGRESS 0.850 seed 133 hops so far 1088 133s
+PROGRESS 0.875 seed 134 hops so far 1120 134s
+PROGRESS 0.900 seed 135 hops so far 1152 136s
+PROGRESS 0.925 seed 136 hops so far 1184 140s
+PROGRESS 0.950 seed 137 hops so far 1216 141s
+PROGRESS 0.975 seed 138 hops so far 1248 147s
+PROGRESS 1.000 seed 139 hops so far 1280 150s
+hops: 1280 (robust 1165)
+max cut fraction by t = t_min(D) (bin: max cut, hops):
+   [1.0000, 1.0200): max 0.718  mean 0.247  hops 96
+   [1.0200, 1.0500): max 0.623  mean 0.227  hops 127
+   [1.0500, 1.1000): max 0.700  mean 0.234  hops 161
+   [1.1000, 1.1459): max 0.662  mean 0.266  hops 99
+   [1.1459, 1.2000): max 0.822  mean 0.274  hops 94
+   [1.2000, 1.3000): max 0.891  mean 0.281  hops 131
+   [1.3000, 1.5000): max 0.897  mean 0.298  hops 170
+   [1.5000, 2.0000): max 0.821  mean 0.269  hops 168
+   [2.0000, 3.0000): max 0.764  mean 0.271  hops 73
+   [3.0000, 1000000000.0000): max 0.733  mean 0.302  hops 46
+max cut fraction by R/r (bin: max cut, hops):
+   [1.0000, 1.0200): max 0.410  mean 0.256  hops 27
+   [1.0200, 1.0500): max 0.532  mean 0.215  hops 146
+   [1.0500, 1.1000): max 0.718  mean 0.188  hops 116
+   [1.1000, 1.1500): max 0.398  mean 0.161  hops 40
+   [1.1500, 1.2000): max 0.623  mean 0.245  hops 48
+   [1.2000, 1.3000): max 0.339  mean 0.245  hops 95
+   [1.3000, 1.5000): max 0.405  mean 0.235  hops 158
+   [1.5000, 2.0000): max 0.412  mean 0.239  hops 245
+   [2.0000, 3.0000): max 0.512  mean 0.273  hops 131
+   [3.0000, 1000000000.0000): max 0.897  mean 0.476  hops 159
+KEY: hops with t <= 3/phi^2 = 1.1459: 483, max cut fraction 0.718, above 1/2: 20
+roundest over-half hop: t 1.0102 R/r 1.0304
+FINAL ok
+[exit 0]
