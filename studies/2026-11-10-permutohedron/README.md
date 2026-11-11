@@ -90,3 +90,5 @@ hexagons its Vacuus (#87), checked exactly. Scaled to one corner radius, 5, 7, 9
 (hexagon sides 1 : 2, 1 : 4, 1 : 6), so the shell tends to an octahedron round the same cuboctahedron Vacuus. 7 values = #105 v4 Figure 3b.
 11 values (12 Nov, ?shot=heart11, figures/cut-heart11*.png): seven slices cross in Perm(1,2,10,11) (hexagon sides 1 : 8), eight in the
 regular hexagons (1,6,11), nine in segments (1,11); checked exactly (heart_every_dim functions, n = 11, k = 7, 8, 9: rule holds).
+13 values (12 Nov, ?shot=heart13, figures/cut-heart13*.png): nine slices cross in Perm(1,2,12,13) (hexagon sides 1 : 10), ten in the
+regular hexagons (1,7,13), eleven in segments (1,13); checked exactly (n = 13, k = 9, 10, 11: rule holds).
