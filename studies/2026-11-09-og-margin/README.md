@@ -694,3 +694,16 @@ POSSIBILITIES LEFT (three, in order of promise):
  (P3) ORBITS: whole orbits die together; with orbit sizes 12, 20, 30, 60 and the census bound (≤ 1/2, equality Icosaxes Hexa), a
       count by orbit types.
 NEXT: (P1) per orbit at the top slice: sides in D_k, extra sides from splits, die/survive; look for the exact rule.
+
+## §36 Possibility 1: a top-slice rule? (11 Nov 2026; DICTO: "yes run possibility 1"; scripts/og_topslice.py, data/og-topslice.json, the compute machine, FINAL ok)
+Per orbit class, k = 5 … 14: sides in D_k, sides at the top of the sweep, extra sides from corner splits, dies or survives.
+NO side rule decides death. Same (D_k → top) types both die and survive (3→5, 3→7, 4→4, 4→6 at k = 7, 9, 11, 12, 14). Tested rules:
+"top sides ≤ 5" (right 1206, wrongly flagged 2642, missed 576), "no extra sides" (606 / 722 / 1176), "fewer top than D_k sides"
+(12 / 0 / 1770: only the five-fold faces), "triangle in D_k" (960 / 3980 / 822).
+Note: without a random tie-break the symmetric corners stay degenerate, so the top slice is simple only at k = 14 (where the §27 margin
+0.348 vs 0.270 is reproduced); the identity of §35 needs the perturbed slice.
+What does separate (partly): the RADIUS |X_i| = 1/(distance of face i of D_k). Dying faces are the faces NEAREST the centre at
+k = 5–8 (|X| = max), and dying and surviving radii are fully separated at k = 11 (dying ≥ 0.9995 > 0.9824), 13 (≥ 0.9873 > 0.9869),
+14 (≥ 0.9943 > 0.9921), but overlap at k = 9, 10, 12. The 12 five-fold faces die at every level 9–14 (foot point at the face centre).
+Verdict (P1): no combinatorial rule; the radial order is the strongest single signal but not a rule. P1 joins P2/P3 as a tool, not a
+proof. Next: (P3) orbit counting, or (P1') radial threshold per level against the census and generic sets.

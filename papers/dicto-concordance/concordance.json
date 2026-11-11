@@ -6209,6 +6209,16 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 step A1, possibility P1: does a top-slice side rule decide which faces die? (DICTO 11-11)",
+    "method": "og_topslice.py k=5..14: sides in D_k, sides at the top of the sweep, extra sides, die/survive per orbit",
+    "status": "FAILED (no rule) + signal",
+    "result": "no side rule (same types die and survive); radius |X| = 1/face distance separates dying (nearest the centre) from survivors at k=5-8, 11, 13, 14 but overlaps at 9, 10, 12; the 12 five-fold faces die at every level 9-14",
+    "retry": "P3 orbit counting, or a radial threshold per level",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },
