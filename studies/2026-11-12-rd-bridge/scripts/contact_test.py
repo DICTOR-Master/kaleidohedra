@@ -32,25 +32,43 @@ for x in sites:
             R = ROT[r]
             for q in Rb: allowed[(a, apply(R, d))].add((b, RI[compose(ROT[q], inverse(R))]))
 print(f'{SCH}: {len(tid)} types, rules from level {K}', flush=True)
+import itertools as _it
 def partitions(items):
     if not items: yield []; return
     first, rest = items[0], items[1:]
     for p in partitions(rest):
         for i in range(len(p)): yield p[:i] + [[first] + p[i]] + p[i + 1:]
         yield [[first]] + p
+TYPES = {a: L for L, a in tid.items()}
 def options(x, own):
-    """possible (type, R-index tuple) at site x given the known cubes; unknown cubes grouped every way"""
-    cs = cubes_of(x); unk = [c for c in cs if c not in own]; out = set()
-    for part in partitions(unk):
-        cid = {c: ('U', k) for k, grp in enumerate(part) for c in grp}
-        E = []
-        for c in cs:
-            if c in own: ch, g, u = own[c]; E.append((vsub(c, x), g, u, ch))
-            else: E.append((vsub(c, x), None, None, cid[c]))
-        try: E2 = f(E)
-        except Exception: continue
-        L, arg = canon(E2)
-        if L in tid: out.add((tid[L], tuple(sorted(RI[R] for R in arg))))
+    """possible (type, R-index) at site x: every type label and turn whose world picture agrees with the known cubes (12 Nov: generic;
+    the first version enumerated groupings of the unknown cubes and so handled sharing-only edge labels alone). A label entry
+    (o, g, u, i) seen from turn R (world -> canonical) sits at cube x + R^-1(o) with chair frame R^-1 g; known cubes must match frame,
+    cell and grouping (known chairs A and B never share an id with each other or with unknown cubes)."""
+    cs = set(cubes_of(x)); out = set()
+    for a, L in TYPES.items():
+        if len(L) != len(cs) and not (len(L) == 0): continue
+        for r, R in enumerate(ROT):
+            Ri = inverse(R); ok = True; idmap = {}; used = set(); cub = set()
+            for o, g, u, i in L:
+                c = vadd(x, apply(Ri, o)); cub.add(c)
+                if c not in cs: ok = False; break
+                if c in own:
+                    ch, gw, uw = own[c]
+                    if g is not None and compose(Ri, g) != gw: ok = False; break
+                    if u is not None and u != uw: ok = False; break
+                    if i is not None:
+                        if idmap.setdefault(i, ch) != ch: ok = False; break
+                elif i is not None:
+                    if idmap.setdefault(i, ('U', i)) != ('U', i): ok = False; break
+            if ok and L and cub != cs: ok = False
+            if ok and L:
+                # a known chair's cubes at this site must all carry the same id
+                ids = {}
+                for o, g, u, i in L:
+                    c = vadd(x, apply(Ri, o))
+                    if c in own and i is not None and ids.setdefault(own[c][0], i) != i: ok = False; break
+            if ok: out.add((a, (r,)))
     return out
 def sat_for(own):
     """True if some choice of marked RDs round the chairs in own obeys every pair rule"""
@@ -98,13 +116,17 @@ if ENCL and P0p <= Pp and not Pp <= Psp:
     # the allowed set P' that uses a contact OUTSIDE P* must be dead (no complete second shell). Every contact of a tiling lies in the
     # enclosure of one of its two chairs, so then every P'-tiling is a P*-tiling and Theorem A applies (given whole chairs).
     from cert6 import HCert
+    # Test per extra contact (12 Nov: enumerating all enclosures under 99 poses ran > 35 min silently): place chair E in the extra pose
+    # beside the reference chair T and ask Kamenetsky's live() for a complete, pairwise-admissible first shell round BOTH T and E. If an
+    # extra contact occurred in any tiling, that tiling would supply such a shell, so DEAD for every extra pose means no tiling obeying
+    # the scheme uses a contact outside P*: it is a P*-tiling, and Theorem A applies (given whole chairs). A node-limit hit counts as live.
     Hc = HCert(C, subgroup(3, 'trivial'), Pp, node_limit=200000, use_prop=False)
-    enc = Hc.enclosures_given(Hc.origin, []); extra = [E for E in enc if any(Hc.canon_pose(t) not in Psp for t in E)]
-    print(f'enclosures under P\': {len(enc)}; using a contact outside P*: {len(extra)}', flush=True)
-    live_extra = 0; t3 = time.time()
-    for k, E in enumerate(extra):
-        if Hc.live([Hc.origin] + list(E)): live_extra += 1
-        if k % 20 == 0: print(f'PROGRESS {k / max(1, len(extra)):.2f} enclosures, live with extra so far {live_extra} ({time.time()-t3:.0f}s)', flush=True)
-    print(f'live enclosures with a contact outside P*: {live_extra} of {len(extra)}; node limit hit {Hc.stats["limit"]} times', flush=True)
-    print('VERDICT2', 'CERTIFIED: extra contacts never survive two shells, so every tiling is a P*-tiling (Theorem A, given whole chairs)' if live_extra == 0 and Hc.stats['limit'] == 0 else 'NOT CERTIFIED at two shells', flush=True)
+    extra = sorted(Pp - Psp); live_extra = []; t3 = time.time()
+    for k, e in enumerate(extra):
+        if Hc.live([Hc.origin, e]): live_extra.append(e)
+        print(f'PROGRESS {(k + 1) / len(extra):.2f} extra contacts, live so far {len(live_extra)} ({time.time()-t3:.0f}s)', flush=True)
+    ctrl = [p for p in sorted(P0p)[:5] if not Hc.live([Hc.origin, p])]
+    print(f'control: occurring contacts found live {5 - len(ctrl)} of 5', flush=True)
+    print(f'extra contacts that survive a full shell round both chairs: {len(live_extra)} of {len(extra)}; node limit hit {Hc.stats["limit"]} times', flush=True)
+    print('VERDICT2', 'CERTIFIED: no contact outside P* survives one full shell, so every tiling is a P*-tiling (Theorem A, given whole chairs)' if not live_extra and Hc.stats['limit'] == 0 and not ctrl else 'NOT CERTIFIED at this depth: ' + str(live_extra[:5]), flush=True)
 print('FINAL ok' if P0p <= Pp else 'FINAL FAIL', flush=True)

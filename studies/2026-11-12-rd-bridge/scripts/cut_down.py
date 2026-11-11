@@ -45,6 +45,8 @@ SCHEMES = {
  'CELL+EPC':    lambda E: [(o, None, u, i) for o, g, u, i in E],                                           # cells + which share a chair
  'FRAME':       lambda E: [(o, g, None, None) for o, g, u, i in E] if len(E) == 1 else [],                 # centre: chair frame only
  'FRAME+EFR':   lambda E: [(o, g, None, i) for o, g, u, i in E],                                           # frames + sharing, no cells
+ 'CF+ECELL':    lambda E: [(o, g, u, None) for o, g, u, i in E] if len(E) == 1 else [(o, None, u, i) for o, g, u, i in E],   # edge: sharing + cells
+ 'CF+EFRAME':   lambda E: [(o, g, u, None) for o, g, u, i in E] if len(E) == 1 else [(o, g, None, i) for o, g, u, i in E],   # edge: sharing + chair turns
  'CELLFRAME':   lambda E: [(o, g, u, None) for o, g, u, i in E] if len(E) == 1 else [(o, None, None, i) for o, g, u, i in E],
 }
 want = sys.argv[4].split(',') if len(sys.argv) > 4 else list(SCHEMES)
