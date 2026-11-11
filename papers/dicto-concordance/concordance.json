@@ -639,9 +639,10 @@
    "doi": "24111864",
    "date": "2026-11-10",
    "date_first": true,
-   "version": 2,
+   "version": 3,
    "doi_v2": "24122272",
-   "doi_v1": "24111865"
+   "doi_v1": "24111865",
+   "doi_v3": "24122364"
   },
   "105": {
    "title": "DICTO 1:2 Truncated Octahedron: The 4D Vacuus of the Permutohedron",
@@ -5901,6 +5902,15 @@
     "method": "external review plan T1-T8 + clean-checkout rerun; DICTO '#104 v2 read ok'; zen_newversion_keep; postcheck",
     "status": "PUBLISHED",
     "result": "#104 v2 DOI 10.5281/zenodo.24122272",
+    "retry": "never",
+    "study": "papers/2026-11-10-scutoids-4d",
+    "date": "2026-11-11"
+   },
+   {
+    "question": "#104 v3 release",
+    "method": "references verified + gallery search; DICTO '#104 v3 read ok'; zen_newversion_keep; postcheck",
+    "status": "PUBLISHED",
+    "result": "#104 v3 DOI 10.5281/zenodo.24122364",
     "retry": "never",
     "study": "papers/2026-11-10-scutoids-4d",
     "date": "2026-11-11"
