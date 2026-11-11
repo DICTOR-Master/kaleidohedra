@@ -94,3 +94,6 @@ regular hexagons (1,6,11), nine in segments (1,11); checked exactly (heart_every
 regular hexagons (1,7,13), eleven in segments (1,13); checked exactly (n = 13, k = 9, 10, 11: rule holds).
 15 values (12 Nov, ?shot=heart15, figures/cut-heart15*.png): eleven slices cross in Perm(1,2,14,15) (hexagon sides 1 : 12), twelve in
 the regular hexagons (1,8,15), thirteen in segments (1,15); checked exactly (n = 15, k = 11, 12, 13: rule holds).
+17, 19, 21 values (12 Nov; DICTO: "3 rows of 3 would be a good stopping point"): rendered (?shot=heart17/19/21); crossings k = n-4,
+n-3, n-2 checked for n = 15..21 with scripts/heart_check_big.py (Birkhoff form x = Bv, B doubly stochastic; agrees with
+heart_every_dim at n = 15; wrong set rejected; FINAL ok). #105 v4 Figure 3b = 3 x 3 grid, 5 to 21 values. STOPPED here (DICTO).
