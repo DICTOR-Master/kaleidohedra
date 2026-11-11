@@ -15,3 +15,17 @@ Cleo (D3). The other 59 are not orbits (e.g. Unborn, Samson, Dodecaxes, AXE, FUJ
 fall into several kinds.
 NEXT: Dynkin-ordered labels and exact recognition; check Dogstar; 4D (A4, B4, F4, H4: the permutohedra, the Queens, the bitruncated
 600-cell); then the uniform family chased seed by seed for each group, with DICTO's solids placed in it.
+## 4D (scripts/orbit4d.py; data/orbit4d_results_queens.json, log data/orbits4d.log, FINAL ok)
+Controls PASS: tesseract and 16-cell (B4, chain 3-3-4), 24-cell (F4, 1152, chain 3-4-3), 4D permutohedron (A4, chain 3-3-3, ALL FOUR seed
+labels equal and nonzero: the orders of 1..5), and two non-orbits (24-cell + 16-cell; a 600-cell with one corner moved).
+The Queens and the stages between them, built by truncation (not as orbits), are all orbits of H4 (60 mirrors, 14400 symmetries; Coxeter
+chain 5-3-3), read from one corner. Seed = which mirrors are used (chain ends: W at the 3-end, R at the 5-end):
+| solid | corners | mirrors used (chain 5-3-3, nodes R . . W) |
+| 600-cell (White Queen) | 120 | one, at the W end |
+| truncated 600-cell | 1440 | the W end and its neighbour, equal labels |
+| bitruncated 600-cell (the midpoint) | 3600 | the two MIDDLE nodes, equal labels |
+| truncated 120-cell | 2400 | the R end and its neighbour (joined by the 5), equal labels |
+| 120-cell (Red Queen) | 600 | one, at the R end |
+So the path between the Queens (#76, #104) is the seed sliding along the chain from one end to the other, and the bitruncated 600-cell,
+the scutoid tissue with the balance law 601/601 (#104), is the exact middle of the chain. The 4D permutohedron (#105) is the A4 analogue
+with every mirror used. #104 and #105 sit in one frame: orbit polytopes of reflection groups, read from one corner.

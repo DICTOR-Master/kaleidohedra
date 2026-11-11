@@ -5971,6 +5971,15 @@
     "retry": "exact labels; Dogstar check; 4D groups",
     "study": "studies/2026-11-11-orbit-polytopes",
     "date": "2026-11-11"
+   },
+   {
+    "question": "Are the Queens and the stages between them H4 orbits, and with which seeds (one corner)?",
+    "method": "orbit4d.py on truncation-built corners; controls B4, F4, A4 orbits and two non-orbits PASS",
+    "status": "SETTLED (float, controls)",
+    "result": "all five H4 orbits; seeds: W end (600-cell), W end+neighbour (trunc 600), two middle nodes (bitruncated 600, the midpoint), R end+neighbour (trunc 120), R end (120-cell); 4D permutohedron = A4 with all four labels equal",
+    "retry": "exact labels",
+    "study": "studies/2026-11-11-orbit-polytopes",
+    "date": "2026-11-11"
    }
   ]
  },
