@@ -372,3 +372,17 @@ Result: best-flow c* is IDENTICAL for q = 0, 0.5, 1 at every k ≤ 22 (worst 4.5
 it is fixed at the bottom (groups of active faces that are the only possible outlet for many cut faces whatever the order of deaths).
 Verdict: no balancing speed exists in this family; next form of the idea (if pursued): per-orbit speeds cannot help either where the
 outlet set is forced by tightness at λ = 0 itself, so a balancing argument must weight faces (solid angle / area), not reorder deaths.
+
+## §25a Wall spacing in the sweep (11 Nov 2026; DICTO: "what is the distance between walls if they are cell walls"; scripts/og_walls.py, local, k ≤ 14)
+Walls = slider heights λ where cut faces die (scutoid reading: faces = cells between the top slice and X_{k+1}), in units of R(X_k)²
+(scale-free). One wall per orbit class of dying faces: 1 (k = 5, 6), 2 (7), 4 (9), 3 (10, 11), 4 (12, 13), 9 (14). Heights k = 14:
+0.0066, 0.0132, 0.0559, 0.2144, 0.5402, 0.7356, 0.8341, 0.8585, 0.9348. Gaps irregular (0.0065 … 0.4626), no constant spacing or
+ratio. Walls very near the bottom (0.0066–0.0089 at k = 9, 14) = faces that only just die; k = 14 has both the most walls and the
+largest cut fraction (0.437).
+
+## §25b Shell thickness (11 Nov 2026; DICTO: "measure the shell thickness too"; scripts/og_shell.py, data/og-shell-16.json, local, FINAL ok)
+Along 20 000 rays + the axes, ρ_k = distance O→boundary of D_k. Gnomon shell of the grown family (φ^{k+1}ρ_{k+1} − φ^kρ_k, relative
+to φ^kρ_k = φρ_{k+1}/ρ_k − 1): never negative (Cor. 1 control); range 0.43–0.62 at 0→1, narrowing to 0.600–0.626 (mean 0.614) at
+16→17: the shell tends to an EVEN layer of relative thickness 1/φ = 0.618. Exactly 0.6180 on many axes at many levels (ρ unchanged:
+Lemma G equality). Unscaled shell: D_{k+1} inside D_k on 55–100 % of rays; out at most 1.8 %, in at most 13 % of the mean radius;
+from k = 10 within ±2.6 %, mean −0.2 … −0.5 %: the two surfaces interleave almost on top of each other.
