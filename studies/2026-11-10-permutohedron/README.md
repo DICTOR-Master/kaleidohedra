@@ -83,3 +83,8 @@ So every heart nests: the (n-3)-fold crossings are regular hexagons (1, c, n) in
 even-k crossing is equally spaced across its gap (c in the middle). Controls: n = 5 matches #105; the verifier rejects 3/3 wrong value sets.
 Lesson (one fault once): three first negative controls were not negatives (x1 = 4; x1 = x2 = 5/2; the slice x1 + x2 = 6): EVERY
 coordinate fix of a permutohedron is again a permutohedron, at any values (majorization); so the novelty is the explicit centre pattern.
+## The heart rendered for 7 and 9 values (12 Nov; scripts/cutaways.html ?shot=heart7 / heart9 / heartN, figures/cut-heart7*.png, cut-heart9*.png)
+Shown: the 3D crossing (n - 4 central slices: Perm(1,2,6,7), Perm(1,2,8,9)), inside it the four regular hexagons (1,c,n) of the
+(n - 3)-fold crossings and the six segments of the (n - 2)-fold ones. The 12 hexagon corners are M(e_a - e_b), a cuboctahedron, the four
+hexagons its Vacuus (#87), checked exactly. Scaled to one corner radius, 5, 7, 9 values differ only in the shell: the squares shrink
+(hexagon sides 1 : 2, 1 : 4, 1 : 6), so the shell tends to an octahedron round the same cuboctahedron Vacuus. 7 values = #105 v4 Figure 3b.

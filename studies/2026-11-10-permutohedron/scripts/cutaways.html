@@ -10,6 +10,8 @@
 //   ?shot=heart7   (12 Nov, #105 v4 Theorem 2b) seven values: where three of the seven central slices p_i = 4 of the 6D permutohedron cross,
 //                  the 3D permutohedron of 1, 2, 6, 7 (crystal shell); inside, the four regular hexagons of 1, 4, 7 where a fourth crosses,
 //                  and the six segments (white) where a fifth crosses: each the shared diameter of two hexagons
+//   ?shot=heart9   (12 Nov) the same for nine values: five slices cross in the 3D permutohedron of 1, 2, 8, 9; six in the regular
+//                  hexagons of 1, 5, 9; seven in segments. (heartN for any odd N >= 5: values centred, M = (N - 1) / 2)
 //   ?shot=vacuus   its own 3D Vacuus: the 15 central cards (3 octagons, 12 hexagons) that carry its 36 edges, slotted; edges as a gold frame
 //   &az=..&el=..&dist=.. camera
 import * as THREE from 'three';
@@ -30,7 +32,7 @@ const back = new THREE.DirectionalLight(0x9fb4ff, 0.6); back.position.copy(cam.p
 // geometry: orderings of four values in the sum-zero 3-space, mapped by the isometry y -> (y1+y2-y3-y4, y1-y2+y3-y4, y1-y2-y3+y4)/2
 const to3 = (y) => [(y[0] + y[1] - y[2] - y[3]) / 2, (y[0] - y[1] + y[2] - y[3]) / 2, (y[0] - y[1] - y[2] + y[3]) / 2];
 function perms(a) { if (a.length < 2) return [a]; const out = []; a.forEach((x, i) => perms([...a.slice(0, i), ...a.slice(i + 1)]).forEach((p) => out.push([x, ...p]))); return out; }
-const H7 = shot === 'heart7', VALS = H7 ? [-3, -2, 2, 3] : [-2, -1, 1, 2], P = perms(VALS), X = P.map(to3);
+const HN = /^heart\d+$/.test(shot) ? +shot.slice(5) : 0, H7 = HN >= 7, M = (HN - 1) / 2, VALS = H7 ? [-M, -(M - 1), M - 1, M] : [-2, -1, 1, 2], P = perms(VALS), X = P.map(to3);
 const ord = [...VALS].sort((a, b) => a - b);
 const E = []; for (let i = 0; i < 24; i++) for (let j = i + 1; j < 24; j++) {
   const d = [0, 1, 2, 3].filter((k) => P[i][k] !== P[j][k]);
@@ -75,7 +77,7 @@ const SC = S * 1.8 * Math.sqrt(10) / Math.hypot(...VALS), sc = (p) => p.map((c) 
 const GOLD = 0xd4a62a, HEXC = [0x7a4fb5, 0x2f6fb3, 0x3c9a5a, 0xc0392b];
 if (shot === 'heart' || H7) {
   // the four central regular hexagons: other three coordinates the orders of (2, 0, -2) (heart7: (3, 0, -3) = 1, 4, 7), coordinate j = 0
-  const HV = H7 ? [3, 0, -3] : [2, 0, -2];
+  const HV = H7 ? [M, 0, -M] : [2, 0, -2];
   for (let j = 0; j < 4; j++) {
     const pts = []; for (const p of perms(HV)) { const y = [...p]; y.splice(j, 0, 0); pts.push(to3(y)); }
     const c = [0, 0, 0], n = new THREE.Vector3(...pts[1]).sub(new THREE.Vector3(...pts[0])).cross(new THREE.Vector3(...pts[2]).sub(new THREE.Vector3(...pts[0]))).normalize();
@@ -86,7 +88,7 @@ if (shot === 'heart' || H7) {
   }
   if (H7) {   // the six segments: two coordinates 0, the other two 3 and -3 (values 1 and 7)
     const segs = []; for (let j = 0; j < 4; j++) for (let l = j + 1; l < 4; l++) {
-      const o = [0, 1, 2, 3].filter((k) => k !== j && k !== l), a = [0, 0, 0, 0], b = [0, 0, 0, 0]; a[o[0]] = 3; a[o[1]] = -3; b[o[0]] = -3; b[o[1]] = 3;
+      const o = [0, 1, 2, 3].filter((k) => k !== j && k !== l), a = [0, 0, 0, 0], b = [0, 0, 0, 0]; a[o[0]] = M; a[o[1]] = -M; b[o[0]] = -M; b[o[1]] = M;
       segs.push([sc(to3(a)), sc(to3(b))]); }
     const sl = lines(segs, 0xffffff, 3.0); sl.material.depthTest = false; sl.renderOrder = 10; scene.add(sl);   // drawn over the hexagon cards
     const dots = new THREE.Mesh(new THREE.SphereGeometry(0.05, 16, 12), new THREE.MeshBasicMaterial({ color: 0xffffff, depthTest: false })); dots.renderOrder = 11; scene.add(dots);   // the centre: all six crossings meet here
