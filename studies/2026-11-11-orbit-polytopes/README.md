@@ -54,3 +54,16 @@ Dodeca-13 3 kinds of 60 (group 120).
 Its 138 edges lie on 27 central planes: 12 planes carry 8 edges each and 3 planes carry 6 each (114 of 138 edges on 15 central discs),
 12 planes carry 2. Only 1 of its 84 faces is central. A concentrated Vacuus, near the octahedron's few-disc pattern (control:
 cuboctahedron, 4 planes x 6 edges). Hexa-Key: 70 planes, one carrying 36 edges.
+## Vacuus census of the registry (scripts/vacuus_census.py; data/vacuus_census.json; controls: octahedron D8 3 x 4, cuboctahedron 4 x 6,
+icosidodecahedron 6 x 10, matching #87)
+A disc = a central plane carrying at least 3 edges. 389 solids: 21 have a COMPLETE disc Vacuus (every edge on a disc), 281 have no disc.
+Complete: octahedron, cuboctahedron, icosidodecahedron, the rhombic dodecahedron and triacontahedron, several Catalan solids (triakis
+octahedron, tetrakis hexahedron, deltoidal icositetrahedron, disdyakis dodecahedron, triakis icosahedron, pentakis dodecahedron,
+deltoidal hexecontahedron, disdyakis triacontahedron), two Johnson solids, and among DICTO's: Delilah (3 x 4, a regular octahedron), the
+dodecahedron seamed for Dogstars (51 discs, every edge), a Spheroid-13 RD centre piece, the Reuleaux octahedron.
+DICTO's solids ranked by share of edges on discs: Sunstar tetrahedral cluster 94%, Dogstar 83% (15 discs: the 15 mirror planes of the
+icosahedral group, 3 coordinate + 12 golden), Hexa-Key 80%, Sunstar octahedral cluster 79%, Hexa 76%, Lotus Jewel Axes 71%, Jewel
+clusters 48-70%, Icosaxes and Unborn Axes 33% (3 discs of 4 edges + 12 planes of 2: the same pattern as the DICTO 1:2's 3D Vacuus in
+#105, the whole T(x) family); 37 of 66 DICTO solids have no disc.
+Figure: figures/dogstar-vacuus.png (scripts/dogstar_vacuus.html): Dogstar's 15 discs as fins, the 3 coordinate discs gold, the 12
+golden discs violet, Dogstar a cut-away glass shell.

@@ -5989,6 +5989,15 @@
     "retry": "never",
     "study": "studies/2026-11-11-orbit-polytopes",
     "date": "2026-11-11"
+   },
+   {
+    "question": "Vacuus census of all registry solids (DICTO: will other orbit groups be Vacuus; have the rest been tested)",
+    "method": "vacuus_census.py: edges -> central planes; disc = plane with >= 3 edges; controls octahedron, cuboctahedron, icosidodecahedron",
+    "status": "SETTLED (float, controls)",
+    "result": "389 solids: 21 complete disc Vacuus (incl. Delilah, seamed dodecahedron, Catalan solids), 281 none; Dogstar 83% on its 15 discs = the 15 icosahedral mirror planes; Icosaxes/Unborn Axes share the 1:2 pattern",
+    "retry": "never",
+    "study": "studies/2026-11-11-orbit-polytopes",
+    "date": "2026-11-11"
    }
   ]
  },
