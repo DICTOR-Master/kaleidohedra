@@ -151,3 +151,10 @@ its edge graph: 600-cell 720 - 120 + 1 = 601 (= 120-cell's F - C + 1 = 720 - 120
 polytope's cells and RR faces over its 2-faces, so F - C + 1, = E - V + 1 by Euler (V - E + F - C = 0). The other three rows (cantitruncated,
 omnitruncated): same formula, the counted faces and cells again those of a regular end polytope (checked numerically: all equal).
 Lead (outside the plan): loops of the Queens' skeleton <-> the Loop Equality's loop counts (#102).
+## Second Vacuus: central slices OFF the mirrors carrying >= 3 faces (scripts/atlas2.py, all 7 groups, every 0/1 seed)
+Found only in: A3 octahedron (0,1,0) and truncated octahedron (1,1,1) (3 discs: these are B3 mirrors, a larger symmetry); A3/B3
+cuboctahedron (4 discs x 6 edges) and H3 icosidodecahedron (6 x 10): the quasi-regular great polygons, genuinely beyond mirrors;
+B4 rectified 16-cell, cantellated 16-cell, cantitruncated 16-cell (8 discs x 8): = 24-cell, rectified 24-cell, truncated 24-cell, so
+these are F4 mirrors (the scan DETECTS HIDDEN LARGER SYMMETRY); A4 runcinated 5-cell (1,0,0,1) (5 discs x 14) and the 4D permutohedron
+(1,1,1,1) (5 discs x 6): the five slices of #105's heart (the central DICTO 1:2 Truncated Octahedra), genuinely beyond mirrors.
+NONE in F4 or H4: the Queens' Vacuus is exactly their mirrors. So the heart of #105 is the 4D permutohedron's only non-mirror Vacuus.
