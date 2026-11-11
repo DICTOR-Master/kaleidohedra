@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>The Permutohedron Paradigm: book outline</title><link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;width:100%;font-size:8.4pt;margin:2mm 0} td,th{border:0.3pt solid #999;padding:0.8mm 1.4mm;vertical-align:top;text-align:left} th{background:#eee} tr{break-inside:avoid} .box{border:0.4pt solid #b9a46a;background:#fbf8ee;padding:2mm 3mm;margin:2mm 0;break-inside:avoid} .proof{font-size:9.6pt} h3{margin-bottom:1mm}</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt=""><img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>The Permutohedron Paradigm<br><span style="font-size:0.72em;font-weight:normal">book outline: DICTO's solids retold as orderings, from the truncated triangle to the 4D Vacuus</span></h1>
+<div class="meta"><b>DICTO</b> (artist and geometer, Osaka, Japan) · dictospheres.com · contact@dictospheres.com · ORCID 0009-0001-2620-2036<br>
+DICTO: ideas, names, constructions and direction.<br>Computation, verification and drafting with Claude (Anthropic).</div>
+<div class="status">OUTLINE for DICTO's read, not a publication. Working title (the title is DICTO's). The book retells earlier results through the permutohedron (DICTO 11 Nov: "now we have the permutahedron paradigm everything earlier reconfigures slightly"): re-edited chapters, each citing its original paper, with new connecting text; the papers stay where they are. Each chapter below gives its claim through the new lens, its sources, what must be newly written or proved, and its status.</div>
+
+<h2>The idea</h2>
+<p>Write the values 1, 2, 3 in every order and join two orders that differ by exchanging neighbouring values: the six orders are the corners of a hexagon. With 1, 2, 3, 4 they are the 24 corners of the truncated octahedron; with 1, …, 5 the 120 corners of a four-dimensional solid. That is the permutohedron, and seen through it much of DICTO's earlier work turns out to be one story: the truncated triangle is the permutohedron of three values, Kelvin's cell and the whole golden-bond slider are permutohedra of four values, and the 4D Vacuus is held together by permutohedra of four values at the heart of the permutohedron of five.</p>
+
+<div class="box"><b>The key lemma (to be written out in Chapter 1).</b> For values a &lt; b &lt; c, the six orders of (a, b, c) span a hexagon with every angle 120° whose sides alternate √2(b − a) and √2(c − b): a truncated triangle. It is regular exactly when b − a = c − b, and every truncated triangle arises this way. So a truncated triangle with side ratio r is the permutohedron of three values whose gaps are in the ratio r: the golden cuts of #88 (ratio φ), the hexagons of the DICTO 1:2 Truncated Octahedron (ratio 2).</div>
+
+<h2>Part One: three dimensions</h2>
+<table><tr><th>Chapter</th><th>Claim through the new lens</th><th>Sources</th><th>New writing / proof</th><th>Status</th></tr>
+<tr><td>1. Orderings of three: the truncated triangle</td><td>Every truncated triangle is the permutohedron of three values; the golden cuts are the gaps in the ratio φ.</td><td>#88; #95 (truncated triangles in a chiral family); #105</td><td>The key lemma with proof; the golden cuts retold as gap ratios</td><td>new text, short</td></tr>
+<tr><td>2. Orderings of four: Kelvin's cell, the slider and the 1:2</td><td>The golden-bond family T(x) is the permutohedra of four values placed symmetrically, x = (q − p)/(2p); Kelvin at equal gaps, the golden pair at x = τ, the DICTO 1:2 and 2:1 at x = 1/2 and 2; the pair fills space in one way only.</td><td>#48; #105 §5 (Theorem 4); #93 (Theorem A); Koca et al. 2015</td><td>Re-edit; the four-value reading made the frame of the chapter</td><td>published parts</td></tr>
+<tr><td>3. The bonds as spacing</td><td>The weight walk of the web of bonds slides the spacing of the four values; each stop is a pair of permutohedra.</td><td>#51, #52, #53, #58</td><td>The explicit map between #52's weight difference and the spacing (q − p)/(2p), to be derived and checked</td><td>to prove</td></tr>
+<tr><td>4. The RD taken apart, and the chamfered cube</td><td>The rhombic dodecahedron is a cube with six pyramids; its halves rejoined give the chamfered cube, the stretched-hexagon zonohedron that is not a permutohedron, and with cube pyramids it fills space.</td><td>Rhombiverse and Polyhedraverse; #87 (Proposition 2); #58; the Hemi RD study of 11 Nov</td><td>Exact proof of the filling (now numerical with exact volumes)</td><td>to prove</td></tr>
+<tr><td>5. Scutoids in 3D</td><td>The scutoid solid, its shells and cycles; the conserve / dissipate rule.</td><td>Draft "Scutoid Layers, Shells and Cycles"</td><td>Retell with the swap as an exchange of neighbours</td><td>draft, awaits DICTO's read</td></tr></table>
+
+<h2>Part Two: four dimensions</h2>
+<table><tr><th>Chapter</th><th>Claim through the new lens</th><th>Sources</th><th>New writing / proof</th><th>Status</th></tr>
+<tr><td>6. The web of exchange and the 4D Vacuus</td><td>The 120 orders of five values; 65 central slices in four shapes; five DICTO 1:2 Truncated Octahedra slotted along ten regular hexagons.</td><td>#105 v3</td><td>Re-edit</td><td>published</td></tr>
+<tr><td>7. Scutoid tissues</td><td>A sweep of a simple 4-polytope is a scutoid tissue counted by its h-vector; for the permutohedron the counts are the Eulerian numbers 1, 26, 66, 26, 1; the balance law between the Queens.</td><td>#104 v3</td><td>Re-edit; the permutohedron sweep as the worked example</td><td>published</td></tr>
+<tr><td>8. Rosette tissues</td><td>Which uniform 4-polytopes give clean swaps and which only rosettes; where the balance law holds.</td><td>#104 Lemma 5</td><td>New paper</td><td>to prove</td></tr>
+<tr><td>9. The Swap Rule and the Boulder</td><td>The Swap Rule of close packing below s = 1/4, its walls as rosette exchanges; the Boulder closed.</td><td>#61; #104 §2; the B1 note</td><td>The closing note</td><td>part published, note to write</td></tr>
+<tr><td>10. The Vacuus of the Queens</td><td>The central slices of the 600-cell, the 120-cell and the bitruncated 600-cell.</td><td>#63, #65, #76; #105 lead 1</td><td>New paper</td><td>to prove</td></tr></table>
+
+<h2>Part Three: every dimension</h2>
+<table><tr><th>Chapter</th><th>Claim through the new lens</th><th>Sources</th><th>New writing / proof</th><th>Status</th></tr>
+<tr><td>11. The Vacuus count and the sweep</td><td>N(n) = 3, 15, 65, 225, 770, 2443, 7761 central slices; the sweep of the permutohedron of n values counted by the Eulerian numbers in every dimension.</td><td>#105 §4; #104 Theorem 1′</td><td>Re-edit</td><td>published</td></tr>
+<tr><td>12. The golden slice</td><td>A non-repeating 3D filling as a golden slice of the 4D permutohedron honeycomb.</td><td>#105 lead 2; slice study of 10 Nov</td><td>Exact shape count first</td><td>open</td></tr>
+<tr><td>Coda. The path here</td><td>From the RD taken apart in Rhombiverse, through the bonds and the golden cuts, to the 4D heart.</td><td>#105 §6</td><td>Re-edit</td><td>published</td></tr></table>
+
+<h2>Around the book</h2>
+<p><b>Prequels, linked, not copied:</b> DICTONIC Bonds (the bonds in full), The Golden Ladder (the golden cuts and their ladders), HexOct (#93 and the stackings), Space-Fillers and Lattice Moves. <b>A companion to finish separately:</b> The Centre Pyramids: from Plato to Kepler (#44 and #87), which the book cites for the Vacuus. <b>Order of work:</b> the key lemma (Chapter 1) and the map of Chapter 3 first, since they carry the reframing; then the new papers (Chapters 4, 8, 10) as they are proved; the book is assembled when every chapter is either published or written.</p>
+</body></html>
