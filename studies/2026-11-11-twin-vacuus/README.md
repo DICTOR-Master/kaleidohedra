@@ -201,3 +201,39 @@ KITE vs YANTRA: in the Śrī Yantra the kite O-E-T-E appears where the legs of t
 cuts meet. The shapes differ: OG kite 68.62°, 117.85°, 55.69°, 117.85° vs the classical yantra kites ≈ 78°, 106°, 70°, 106° (Huet, Kavi
 Mahesh; sri-yantra study table).
 Render (DICTO: "render the OG cut family with the kites"; scripts/render_cut_family.py, figures/og-cut-family.png, FINAL ok = the φ²/3 cut is the OG): uncut Catalan pentakis (60 triangles) → 0.95 (small hexagons, 60 pentagons) → 0.90 (larger hexagons) → φ²/3 the OG (pentagons become kites, purple) → 0.85 (the cuts overrun: 80 triangles + 60 pentagons). Faces coloured triangles gold, kites purple, pentagons orange, hexagons teal.
+
+## Prior-art search: the OG as the cut Catalan pentakis (11 Nov night)
+
+**Verdict: not found as such; partial (the same cut, at a shallower depth, is catalogued).** No source checked shows a convex icosahedral solid with 60 congruent kites + 20 regular hexagons (102 vertices, 180 edges, 80 faces, two edge lengths, kite ratio 1.20676). The closest relative is McCooey's **6-Truncated Pentakis Dodecahedron (canonical)**: the same operation (cut only the 20 six-fold vertices of the pentakis dodecahedron), but at the canonical depth. There the cuts do not touch, so each pentakis triangle becomes a **pentagon**: 132 vertices, 210 edges (150 short + 60 long), 80 faces = **60 pentagons + 20 hexagons** (counted from his data file), with coordinates in Q(√3, √5). The OG is the limit of that cut, where the 30 short edges left on the six-fold-to-six-fold pentakis edges shrink to zero (132 − 30 = 102 vertices, 210 − 30 = 180 edges) and the pentagons become kites. Its coordinates lie in Q(√5) alone. In Conway terms the canonical solid is t6kD. Hart's page says that tn fixes only the topology, so "t6kD" does not name the OG's combinatorics. Our own derivation from the operator matrices on the Wikipedia Conway-notation page gives the OG's combinatorial type as dL0D, the dual of the joined-lace dodecahedron (L0D: 12 pentagons + 30 quads + 60 triangles, 80 vertices). No source showed dL0D for the dodecahedron seed, and none showed it in this geometry.
+
+**Other relatives checked (with face counts):**
+- Pentakis dodecahedron kD: 60 triangles, 32 vertices (the parent).
+- Truncated pentakis dodecahedron tkD (all 32 vertices cut) = Goldberg GP(3,0): 12 pentagons + 80 hexagons = 92 faces, 180 vertices.
+- Chamfered dodecahedron cD: 12 pentagons + 30 hexagons, 80 vertices.
+- Rectified truncated icosahedron: 60 triangles + 12 pentagons + 20 hexagons, 90 vertices.
+- Deltoidal hexecontahedron oD: 60 kites, 62 vertices (kites, but no hexagons).
+- Hexapentakis truncated icosahedron: dual of tkD, triangles and hexagons.
+- McCooey's Joined Truncated Icosahedron (Archimedean–Catalan hull of tI + kD): the convex hull, not the OG (the OG lies inside; its hexagon planes are the tI hexagon planes of the canonical tI/kD compound, which pass through the midpoints of the kD six-to-six edges).
+- Near-miss Johnson solids (icosahedral entries): chamfered dodecahedron, rectified truncated icosahedron, truncated truncated icosahedron, expanded truncated icosahedron, snub rectified truncated icosahedron. None has kites or 102 vertices.
+- Tetrated dodecahedron, Goldberg polyhedra in general: no kites.
+
+**Sources checked**
+- Local library: ~/Documents/reference-library holds only README.md, WHERE-IS-THE-LIBRARY.txt, INDEX.pdf and one PDF. The full library is on the other machine and was not reachable from here (no ssh by instruction); ~/kaleidohedra-references does not exist locally. We grepped the README/txt files for pentakis, "truncated pentakis", "102 vertices", "60 kites", ogdoecontahedron, "rectified pentakis", "kites and hexagons", tkD: no hits. We grepped the INDEX.pdf text (12,132 lines) for pentakis, kite, "102 vert", ogdoe, rectif, Catalan, Conway, Hart, McCooey, near-miss, chamfer, Goldberg: no pentakis/kite/102 entries. It lists only Hart's Virtual Polyhedra, Conway–Burgiel–Goodman-Strauss, Antiprism `conway`, Goldberg 1937 and the Goldberg space-filler series, none about this solid. **The library MANIFEST.json files on the other machine still need a grep.**
+- https://dmccooey.com/polyhedra/ (index), TruncatedCatalan.html, 6TruncatedPentakisDodecahedron2.html + .txt (vertex/face data counted), Hull.html, Derived.html (incl. Expanded Joined Truncated Pentakis Dodecahedron: not this solid)
+- https://en.wikipedia.org/wiki/Truncated_pentakis_dodecahedron, https://mathworld.wolfram.com/TruncatedPentakisDodecahedron.html (via search results), https://en.wikipedia.org/wiki/Hexapentakis_truncated_icosahedron (via search results)
+- https://en.wikipedia.org/wiki/Near-miss_Johnson_solid
+- https://en.wikipedia.org/wiki/Solids_with_icosahedral_symmetry
+- https://en.wikipedia.org/wiki/Conway_polyhedron_notation (operator matrices, both parts)
+- https://georgehart.com/virtual-polyhedra/conway_notation.html (tn semantics)
+- https://geogebra.org/m/uej4qnte (series of truncations of the biscribed pentakis dodecahedron: no face data given; not resolved)
+- Search results seen but not opened: AMS Visual Insight "Rectified truncated icosahedron", Virtual Math Museum icosahedron page, Paul Bourke uniform polyhedra, robertlovespi.net ("180 kites" polyhedron page, a different solid), polytope wiki Pentakis dodecahedron.
+
+**Web queries (standard mode):** "truncated pentakis dodecahedron kites hexagons"; polyhedron "60 kites" "20 hexagons" icosahedral; "dmccooey polyhedra pentakis dodecahedron truncated variants"; "t6kD" polyhedron conway notation; "polyhedron 102 vertices 180 edges 80 faces icosahedral kites hexagons"; "near-miss Johnson solid kites regular hexagons icosahedral Kaplan Hart" (returned only aviation results); "robertlovespi kites regular hexagons icosahedral polyhedron pentakis dodecahedron truncated"; "joined-lace" dodecahedron polyhedron conway L0 dual. We did not use extended mode.
+
+**Still open:** grep the full library manifests on the other machine. Robert Austin's blog (robertlovespi.net) has thousands of polyhedra and was not searched page by page, so it is the likeliest place for an unnoticed match. Polyhedronisme and Antiprism `conway` were not run.
+Judged (main session, 11 Nov night): accepted. Verdict PARTIAL: no published convex solid with 60 kites + 20 regular hexagons found; the
+SHALLOWER cut is catalogued (McCooey, "6-Truncated Pentakis Dodecahedron (canonical)": same 20 six-fold vertices cut, cuts not touching,
+60 pentagons + 20 hexagons, 132 vertices, coordinates in ℚ(√3, √5)); the OG is its touching limit (ℚ(√5) only). The Conway form "dL0D"
+is the agent's own derivation, NOT in any source: check before quoting. Library gap closed here: the full library on the compute machine
+has no cut-pentakis entry (its three pentakis entries are the Catalan solid, the TI–pentakis compound and the hexapentakis TI).
+Open gaps: robertlovespi.net not searched page by page; Polyhedronisme/Antiprism not run; extended web search not used.
