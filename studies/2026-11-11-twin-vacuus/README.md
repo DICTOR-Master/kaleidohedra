@@ -78,3 +78,4 @@ coloured by their plane through the centre (12-colour palette, so 3 colours repe
 Levels 1 and 4 (figures/angeli-levels-1-4.png, one colour per fin plane): level 1 Angelus (golden-rectangle rhombicosidodecahedron
 type): 120 fins, apex 12.8684° and 34.1211°, 60 fin planes. Level 4 Angelus (140 triangles + 12 pentagons): 240 fins, apex 11.8246°,
 24.2136° and 36°, 66 fin planes (60 + the six disc planes). DICTO (11 Nov): "sometimes extra fins are hidden in 4D bodies".
+DICTO (11 Nov): "never born and never dying suits angels". Precisely: each hidden fin is born at one exchange and ends at another, both inside the sweep, so neither its birth nor its end is ever seen from either 3D world; and in the twin sweeps no fin runs from top to bottom at all (top and bottom slices share 0 edges at every hop).
