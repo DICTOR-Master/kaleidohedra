@@ -37,9 +37,10 @@ for k in range(max(LEVELS) + 1):
         adj = [set(tuple(sorted(p)) for p in adjacency(X, b, l)[0]) for l in levels]
         hidden = set().union(*adj) - adj[0] - adj[-1]
         present = [len(adj[q] & hidden) for q in range(len(levels))]
-        mids = list(range(1, len(levels) - 1)); order = sorted(mids, key=lambda q: -present[q]); peaks = [order[0]]
+        MINH = float(os.environ.get('MINH', '0'))                          # 11-11: pick bands above this height (upper bands)
+        mids = [q for q in range(1, len(levels) - 1) if levels[q] > MINH]; order = sorted(mids, key=lambda q: -present[q]); peaks = [order[0]]
         for q in order[1:]:
-            if all(abs(q - p) > max(3, len(levels) // 8) for p in peaks): peaks.append(q)
+            if all(abs(levels[q] - levels[p]) > 0.15 * (levels[0] - MINH) for p in peaks): peaks.append(q)   # separate by HEIGHT (11-11)
             if len(peaks) == 2: break
         profile = (levels, present, peaks, len(hidden))
         for q in sorted(peaks, key=lambda q: -levels[q]):

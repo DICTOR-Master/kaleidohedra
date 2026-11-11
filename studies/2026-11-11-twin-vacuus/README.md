@@ -105,3 +105,7 @@ Hop 7's bands (DICTO: "render the hidden worlds for hop 7"; figures/hidden-bands
 (150–330 hidden fins) and a dense stack within 0.002 of the bottom world. The two strongest slices (0.0013 and 0.0012; the band
 picker separates by index, so both fall in the bottom stack) are WHOLLY hidden: 420 of 420 and 660 of 660 fins, fanned round the
 centre. So whole hidden worlds appear by hop 7 (hop 5: mixed; hops 7, 9: wholly hidden worlds just above the bottom world).
+Hop 7's UPPER bands (DICTO: "render an upper band of hop 7"; render_bands.py with MINH = 0.05, bands now separated by height;
+figures/hidden-bands-hop-7-upper.png): height 0.1724: 270 fins, 210 hidden — the slice has 152 corners, 120 faces (60 four-sided,
+60 pentagons); height 0.0857: a WHOLLY hidden world of 90 fins — the slice has 32 corners, 60 triangles, 90 edges: the combinatorics of
+the PENTAKIS DODECAHEDRON (a Catalan solid; whether its shape is exactly Catalan is not checked).
