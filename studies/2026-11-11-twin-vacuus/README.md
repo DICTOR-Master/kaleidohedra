@@ -200,3 +200,4 @@ move, as icosahedron → icosidodecahedron). No cut depth keeps the 4-cycle. The
 KITE vs YANTRA: in the Śrī Yantra the kite O-E-T-E appears where the legs of the great triangles meet; in the OG where the two corner
 cuts meet. The shapes differ: OG kite 68.62°, 117.85°, 55.69°, 117.85° vs the classical yantra kites ≈ 78°, 106°, 70°, 106° (Huet, Kavi
 Mahesh; sri-yantra study table).
+Render (DICTO: "render the OG cut family with the kites"; scripts/render_cut_family.py, figures/og-cut-family.png, FINAL ok = the φ²/3 cut is the OG): uncut Catalan pentakis (60 triangles) → 0.95 (small hexagons, 60 pentagons) → 0.90 (larger hexagons) → φ²/3 the OG (pentagons become kites, purple) → 0.85 (the cuts overrun: 80 triangles + 60 pentagons). Faces coloured triangles gold, kites purple, pentagons orange, hexagons teal.
