@@ -31,15 +31,12 @@ for k in KS:
     lo = min(min(c) for c in owner); hi = max(max(c) for c in owner)
     span = hi - lo; inner = lambda x: all(lo + 0.3 * span <= v <= hi - 0.3 * span for v in x)   # central part, away from the patch rim
     def label(x, cubes):
-        """canonical label of the RD at site x: min over the 24 turns R about x of the sorted (R(cube - x), R*g_chair, cell, chair id)"""
+        """canonical label of the RD at site x: min over the 24 turns R about x of the offset-sorted (R(cube - x), R*g_chair, cell,
+        chair id renumbered by first appearance) (fixed 12 Nov: chair ids had followed the world order of the cubes)"""
         best = None
         for R in ROT:
-            ids = {}; L = []
-            for c in cubes:
-                ti, ui = owner[c]; g, t = tiles[ti]
-                L.append((apply(R, vsub(c, x)), compose(R, g), ui, ids.setdefault(ti, len(ids))))
-            # relative translation between chairs is fixed by (cube offset, frame, cell), so this is the full local picture
-            L = tuple(sorted(L))
+            rows = sorted(((apply(R, vsub(c, x)), compose(R, tiles[owner[c][0]][0]), owner[c][1], owner[c][0]) for c in cubes), key=lambda r: r[0])
+            ren = {}; L = tuple((o, g, u, ren.setdefault(ti, len(ren))) for o, g, u, ti in rows)
             if best is None or L < best: best = L
         return best
     cen = Counter(); edg = Counter(); nchairs = Counter(); bad = 0

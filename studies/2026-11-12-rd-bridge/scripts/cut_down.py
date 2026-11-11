@@ -49,10 +49,14 @@ SCHEMES = {
 }
 want = sys.argv[4].split(',') if len(sys.argv) > 4 else list(SCHEMES)
 def canon(L):
-    """min over turns R of the R-image of the entry list; returns (label, list of R achieving it). Frames written relative: R*g."""
+    """min over turns R of the R-image of the entry list; returns (label, list of R achieving it). Frames written relative: R*g.
+    Chair ids are renumbered by first appearance after sorting by cube offset (fixed 12 Nov: ids had followed the world order of
+    the cubes, so one configuration could give two labels)."""
     best = None; arg = []
     for R in ROT:
-        key = tuple(sorted((apply(R, o), None if g is None else compose(R, g), u, i) for o, g, u, i in L))
+        rows = sorted(((apply(R, o), None if g is None else compose(R, g), u, i) for o, g, u, i in L), key=lambda r: r[0])
+        ren = {}
+        key = tuple((o, g, u, None if i is None else ren.setdefault(i, len(ren))) for o, g, u, i in rows)
         if best is None or key < best: best, arg = key, [R]
         elif key == best: arg.append(R)
     return best, arg
