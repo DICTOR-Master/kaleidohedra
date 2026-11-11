@@ -790,3 +790,10 @@ convex body subspace lemma".
 0.41–0.53 of the mirror faces of D_k (the mirror foot points that survive: 1 − mirror death share), symmetric edges 0.71–0.87 × e(S_k),
 section growth e(S_{k+1})/e(S_k) = 1.04–1.26 (faces grow 1.23–1.41). Sharper recursion: e(S_{k+1}) = c_P + x_P with c_P ≤ (1 − mirror
 death share)·m_P(D_k); the open term is still x_P (symmetric edges), steady near 0.8 × e(S_k).
+
+## §38f The up family counted to k = 37 (11 Nov 2026; DICTO: "yes run the up family counts"; scripts/up_track.py, data/og-up-37.*, watched job og-up-37, FINAL ok)
+Up shells X_k = polar(D_k): faces = corners of D_k. Up faces / down faces → 0.505 (k = 37; 0.51–0.73 earlier): D_k is almost all triangles,
+so the up shells have about HALF as many faces. Up mirror share μ_up 0.047 (k = 24) → 0.0104 (k = 37), the same order as μ_down (0.0155).
+Up section edges = down section edges at EVERY level 10 … 37 (Remark §38d: projection = section for mirror-symmetric bodies, plus
+projection–section duality); e_up/√(up faces) = 1.8–2.15, i.e. e ≈ 1.44 √(down faces) ≈ 2.0 √(up faces), the same √n law on both sides.
+Classes of up faces: mirror (60) classes grow 14 → 124, generic (120) classes 144 → 5893; axis classes occasional.
