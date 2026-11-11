@@ -88,3 +88,5 @@ Shown: the 3D crossing (n - 4 central slices: Perm(1,2,6,7), Perm(1,2,8,9)), ins
 (n - 3)-fold crossings and the six segments of the (n - 2)-fold ones. The 12 hexagon corners are M(e_a - e_b), a cuboctahedron, the four
 hexagons its Vacuus (#87), checked exactly. Scaled to one corner radius, 5, 7, 9 values differ only in the shell: the squares shrink
 (hexagon sides 1 : 2, 1 : 4, 1 : 6), so the shell tends to an octahedron round the same cuboctahedron Vacuus. 7 values = #105 v4 Figure 3b.
+11 values (12 Nov, ?shot=heart11, figures/cut-heart11*.png): seven slices cross in Perm(1,2,10,11) (hexagon sides 1 : 8), eight in the
+regular hexagons (1,6,11), nine in segments (1,11); checked exactly (heart_every_dim functions, n = 11, k = 7, 8, 9: rule holds).
