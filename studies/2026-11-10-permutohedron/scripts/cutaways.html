@@ -32,7 +32,7 @@ const back = new THREE.DirectionalLight(0x9fb4ff, 0.6); back.position.copy(cam.p
 // geometry: orderings of four values in the sum-zero 3-space, mapped by the isometry y -> (y1+y2-y3-y4, y1-y2+y3-y4, y1-y2-y3+y4)/2
 const to3 = (y) => [(y[0] + y[1] - y[2] - y[3]) / 2, (y[0] - y[1] + y[2] - y[3]) / 2, (y[0] - y[1] - y[2] + y[3]) / 2];
 function perms(a) { if (a.length < 2) return [a]; const out = []; a.forEach((x, i) => perms([...a.slice(0, i), ...a.slice(i + 1)]).forEach((p) => out.push([x, ...p]))); return out; }
-const HN = /^heart\d+$/.test(shot) ? +shot.slice(5) : 0, H7 = HN >= 7, M = (HN - 1) / 2, VALS = H7 ? [-M, -(M - 1), M - 1, M] : [-2, -1, 1, 2], P = perms(VALS), X = P.map(to3);
+const HN = /^heart\d+$/.test(shot) ? +shot.slice(5) : 0, H7 = HN >= 5, M = (HN - 1) / 2, VALS = H7 ? [-M, -(M - 1), M - 1, M] : [-2, -1, 1, 2], P = perms(VALS), X = P.map(to3);
 const ord = [...VALS].sort((a, b) => a - b);
 const E = []; for (let i = 0; i < 24; i++) for (let j = i + 1; j < 24; j++) {
   const d = [0, 1, 2, 3].filter((k) => P[i][k] !== P[j][k]);
