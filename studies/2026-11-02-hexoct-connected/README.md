@@ -9,7 +9,7 @@ placeholder name **HexOct II** (DICTO names it).
 **Status:** exact enumeration over 16 weights done; exact fill check over all 42 stackings of period ≤ 6 for the five pairs (0 overlaps);
 sheet `hexoct-connected-tiles.pdf` (also in ~/Documents/papers-to-read), awaiting DICTO's read. Not for publication.
 
-## Method (dicto-big-brother, ~/kres-tmp/hexoct-connect, ~/geom/bin/python; tiles.py etc. from studies/2026-10-29-endless-stack-cell, exactfaces.py from studies/2026-10-31-hexoct-ring-build)
+## Method (compute-host, ~/work/hexoct-connect, python3; tiles.py etc. from studies/2026-10-29-endless-stack-cell, exactfaces.py from studies/2026-10-31-hexoct-ring-build)
 1. `scripts/connect.py <λ>`: per tile type, piece 0 fixed, pieces 1–3 shifted by (a, b), −2 ≤ a, b ≤ 2 (15 625 choices; 25 at the walk's
    ends where a tile has 2 pieces). Exact face contacts (coplanar opposite facets, positive-area overlap). Keep face-connected choices;
    merge congruent ones (12 lattice symmetries × z-flip × shift); exact merged faces, surface check (every side in exactly two faces),

@@ -1,4 +1,4 @@
-# DICTO 2026-10-18 octet study -- STEP 10: the pieces as solid meshes (manifold3d booleans; run on dicto-node, ~/plotenv).
+# DICTO 2026-10-18 octet study -- STEP 10: the pieces as solid meshes (manifold3d booleans; run on compute-host-2, ~/plotenv).
 # keyed OCD = OCD + 8 keys; M = hull(two stars) - both OCDs - their keys; cap (+z corner) = corner region of the octahedron - OCD -
 # the Ms there; tetrahedron T+ = T+ - its 4 keys (step 5) and - its 6 Ms (step 8). Volumes from the meshes cross-check steps 2/5/8.
 # usage: python3 step10_piece_meshes.py IN.json OUT.json  (IN = float geometry written by the export block below when run locally)

@@ -1,7 +1,7 @@
 """V42 with the rotation group T: the reduced system has a 1-dimensional solution set.  Decompose it (minimal
 associated primes, Singular), describe each 1-dimensional component, and sample real points on it (adding one linear
 equation at many levels), checking every real sample for embedding.
-Usage: ~/geom/bin/python curve_v42.py
+Usage: python3 curve_v42.py
 """
 import json
 import pickle

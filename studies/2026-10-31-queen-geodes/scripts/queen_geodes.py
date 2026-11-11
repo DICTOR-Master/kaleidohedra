@@ -14,7 +14,7 @@ The geode cut: every drawn cell is a convex polyhedron in the 3D picture; the ri
 the hull of their corners behind the plane and the points where their edges cross it) and their cut faces are drawn as polished
 stone; the crystal cells are kept whole when they lie wholly behind a second plane a little below the cut, so the cavity floor is
 the jagged face of the inner shells, points up. Floats for drawing only; counts are checked and written to geodes.json.
-Run on dicto-big-brother:  ~/geom/bin/python queen_geodes.py <600cell-source.json> <dicto-logo.png> <out dir> [font.ttf]
+Run on compute-host:  python3 queen_geodes.py <600cell-source.json> <dicto-logo.png> <out dir> [font.ttf]
 """
 import json, os, sys
 from collections import defaultdict

@@ -17,7 +17,7 @@ of conics (cross-ratio on a conic, pole and polar), polar bodies and the bipolar
 Ledger: the 57 entries have no attempt on either row (entries 44 and 52/55 touch #43, on Conjectures 2 and 1, not on these
 derivations). Nothing here retries an earlier attempt.
 
-Scripts (all on dicto-big-brother, ~/geom/bin/python, sympy 1.14; each under 2 min; logs in data/; every one ends FINAL ok):
+Scripts (all on compute-host, python3, sympy 1.14; each under 2 min; logs in data/; every one ends FINAL ok):
 scripts/row1_group.py (data/row1_group.log), scripts/row1_wall.py (data/row1_wall.log), scripts/row2_sphere.py (data/row2_sphere.log).
 Input copies: data/kites.json, viewpoint.json, golden_family.json (from studies/2026-11-08-sri-yantra/figures, 40 digits).
 

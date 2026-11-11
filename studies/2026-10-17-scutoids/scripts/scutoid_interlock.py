@@ -6,7 +6,7 @@
 # inside a bundle to the plane that reaches it last (the sweep cell). So the outer pieces cross the half-cube boundary on every side and
 # interlock with the neighbours'; no closing layer, no container wall. Not convex in general, so this is a VOXEL prototype: volume by count,
 # surface by marching cubes, sphericity ψ = π^(1/3)(6V)^(2/3)/A, calibrated on a cube and a ball at the same resolution. Two ways to cut
-# the pieces: the scutoid and its outer growth as separate pieces, or as one piece. -> data/scutoid-interlock.txt (run on dicto-node)
+# the pieces: the scutoid and its outer growth as separate pieces, or as one piece. -> data/scutoid-interlock.txt (run on compute-host-2)
 import itertools, sys, json, numpy as np
 from scipy import ndimage
 from skimage.measure import marching_cubes, mesh_surface_area

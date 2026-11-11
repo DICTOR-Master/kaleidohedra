@@ -10,7 +10,7 @@
 3. The three regular honeycombs {4,3,3,4}, {3,3,4,3}, {3,4,3,3}: every tile of a hyperplane section is a hyperplane
    section of a tesseract, 16-cell or 24-cell, which has no octagonal face (s9 Part A), so no section contains a cube cut
    at its corners, in any direction.
-usage (dicto-big-brother): ~/geom/bin/python s10_honeycomb_cubes.py -> ../data/s10-honeycomb-cubes.json
+usage (compute-host): python3 s10_honeycomb_cubes.py -> ../data/s10-honeycomb-cubes.json
 """
 import sys, os, json, itertools
 from fractions import Fraction as Fr

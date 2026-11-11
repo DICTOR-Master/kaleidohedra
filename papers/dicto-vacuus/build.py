@@ -1,5 +1,5 @@
 # Paper #87 DICTO Vacuus Solids (DRAFT): builds paper.html and figures/ from the two studies.
-# Usage: python3 build.py   (then print with print.mjs on dicto-big-brother, ~/kres-tmp/cw-print)
+# Usage: python3 build.py   (then print with print.mjs on compute-host, ~/work/cw-print)
 import json, html, os, shutil, math
 HERE = os.path.dirname(os.path.abspath(__file__))
 ST = os.path.join(HERE, '../../studies/2026-11-02-dicto-vacuus')

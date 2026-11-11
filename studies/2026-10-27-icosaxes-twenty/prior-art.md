@@ -1,5 +1,5 @@
 # Prior art for #59 The Icosaxes Hexa: Bloom, Bud and Seed — sources checked (2026-10-27)
-Method: library search by meaning (ask-library on dicto-big-brother, 302 references), then web search (standard). "Seen" = title and
+Method: library search by meaning (ask-library on compute-host, 302 references), then web search (standard). "Seen" = title and
 abstract or snippet seen; "read" = the page or paper itself opened and read.
 
 ## Library queries and hits

@@ -3,7 +3,7 @@ from fractions import Fraction as Fr
 from collections import Counter
 lams = sys.argv[1:]; sys.argv = sys.argv[:1] + ['x', '8', '300']
 exec(open('scripts/dehn.py').read().split("if __name__")[0])
-HEX = os.path.expanduser('~/kres-tmp/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
+HEX = os.path.expanduser('~/work/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
 import tiles as T
 os.chdir(here); H = math.sqrt(2/3)
 def cart(p): return np.array([float(p[0]) + float(p[1])/2, float(p[1])*math.sqrt(3)/2, float(p[2])*H])

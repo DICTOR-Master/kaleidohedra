@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Figure for #94: Q4, Q6, Q8 along the cube–octahedron sweep and the CO–RD sweep, stations marked. dicto-big-brother."""
+"""Figure for #94: Q4, Q6, Q8 along the cube–octahedron sweep and the CO–RD sweep, stations marked. compute-host."""
 import itertools, math, os, numpy as np
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 from scipy.special import sph_harm_y

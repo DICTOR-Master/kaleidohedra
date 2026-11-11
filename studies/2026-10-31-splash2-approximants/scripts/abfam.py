@@ -1,5 +1,5 @@
 # Square approximants of Ammann-Beenker: t = a/b in [1/2, 1], b <= 40; chambers where every vertex-star count is a linear
-# form in (R, Q) = (rhombs, squares) per period. ~/geom/bin/python abfam.py out/
+# form in (R, Q) = (rhombs, squares) per period. python3 abfam.py out/
 import sys, os, json, random
 from fractions import Fraction as Fr
 from multiprocessing import Pool

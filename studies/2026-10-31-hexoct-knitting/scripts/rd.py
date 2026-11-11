@@ -7,7 +7,7 @@ the four other corners are octahedron centres (an octahedron = centre o and its 
 RD of scale m = Voronoi cell of the FCC of spacing m (centre at the origin): faces N.x = m for the 12 N = (+-1, +-1, 0)
 (permuted); 4-valent corners m*e_i, 3-valent corners (m/2)(+-1, +-1, +-1).
 Writes ../rd/*.png, ../rd/rd.json; prints every check.
-Usage (dicto-big-brother): ~/geom/bin/python rd.py
+Usage (compute-host): python3 rd.py
 """
 import os, json, math, itertools
 from fractions import Fraction as F
@@ -20,7 +20,7 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, '../rd'); os.makedirs(OUT, exist_ok=True)
-LOGO = os.path.expanduser(os.environ.get('LOGO', '~/kres-tmp/dicto-logo.png'))
+LOGO = os.path.expanduser(os.environ.get('LOGO', '~/work/dicto-logo.png'))
 GOLD_D, GOLD_L, EDGE = '#d9a521', '#f1d98a', '#1d1d24'
 NN = math.sqrt(2)                       # ball spacing in cubic units
 H = math.sqrt(2 / 3) * NN               # layer spacing

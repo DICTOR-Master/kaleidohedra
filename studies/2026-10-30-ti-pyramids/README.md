@@ -27,4 +27,4 @@
 - New here: the angle identities of the two hexagonal pyramids (Cleo-Icos θ_I/2, Q's α/2), the bipyramid, and the face-to-face exclusion of TI's pyramids.
 
 ## Files
-scripts/pyramids.py (exact data, edge test), scripts/figure.py (figures/ti-pyramids.png). Run on dicto-big-brother (~/kres-tmp/TI).
+scripts/pyramids.py (exact data, edge test), scripts/figure.py (figures/ti-pyramids.png). Run on compute-host (~/work/TI).

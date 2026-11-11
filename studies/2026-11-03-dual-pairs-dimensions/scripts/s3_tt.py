@@ -10,7 +10,7 @@ B. Lattice selection (as the 6D study's part E): Z^3 + Z^3 with the diagonal T_d
    t = (mu - 1)/2 (1 < mu < 3); dual side |w| = a(1, s, s), s = (1 - mu)/(2 mu) (1/3 < mu < 1). Each condition is a
    polynomial of degree <= 2 in mu: either a sweep orbit or rational / quadratic mu. Search: all v in {-2..2}^6 up to the
    diagonal signed permutations.
-usage (dicto-big-brother): ~/geom/bin/python s3_tt.py -> ../data/s3-tt.json
+usage (compute-host): python3 s3_tt.py -> ../data/s3-tt.json
 """
 from dp_lib import *          # noqa
 import sympy as sp

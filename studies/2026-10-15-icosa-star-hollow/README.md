@@ -21,7 +21,7 @@ face pyramids from its centre) standing on the icosidodecahedron's triangles, po
 - Volumes: shell (45 + 17√5)/6 = 13.835526; core and the 20 Cleo-Icos 2.181695 each (the holders are a second edge-1 icosahedron, cut
   into its 20 face pyramids); empty exactly 5 + 2√5 = 9.472136.
 
-Renders (`renders/`, `scripts/render.html` + `shoot.mjs` on dicto-node): closed in the glass shell, cut in half, shell removed, pulled apart.
+Renders (`renders/`, `scripts/render.html` + `shoot.mjs` on compute-host-2): closed in the glass shell, cut in half, shell removed, pulled apart.
 Status: a study; the app's hollow view still shows the 2026-10-12 version. Not claimed; no prior-art search yet.
 
 **In the app (DICTO 2026-10-15, "Cleo-Icos + 12 flat pyramids"):** the hollow view now holds the edge-1 core with the 20 Cleo-Icos

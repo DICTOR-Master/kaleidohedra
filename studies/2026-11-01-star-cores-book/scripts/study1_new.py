@@ -6,7 +6,7 @@
 # are k times the corners of step 0, k the radius gain), and the gain given exactly.
 # Part 2, the polar-spike fill (results report, conclusion 1), checked exactly on the same solids: tips at the poles of the face planes in
 # the sphere rho^2 = t R^2; every piece (solid, spike, corner pyramid, edge tetrahedron) has positive volume, and the pieces add up to the
-# halo exactly.  Usage: ~/geom/bin/python study1.py <dataset solids dir> <exactlib dir> <out json>
+# halo exactly.  Usage: python3 study1.py <dataset solids dir> <exactlib dir> <out json>
 import sys, os, json
 SOL, LIB, OUT = sys.argv[1:4]; sys.path.insert(0, LIB)
 from exactlib import *

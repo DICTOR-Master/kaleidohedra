@@ -11,7 +11,7 @@ from scipy.spatial import ConvexHull, Delaunay
 from pysat.solvers import Cadical153
 from pysat.card import CardEnc, EncType
 sys.path.insert(0, os.path.expanduser('~/study-runs/2026-11-04-tetra-sweep/scripts/_lib')); import methods as M
-HEX = os.path.expanduser('~/kres-tmp/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
+HEX = os.path.expanduser('~/work/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
 import tiles as Tl
 os.chdir(here)
 kind, lam, n, NS = sys.argv[1], Fr(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4])

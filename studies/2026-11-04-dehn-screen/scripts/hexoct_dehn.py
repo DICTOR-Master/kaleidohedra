@@ -5,7 +5,7 @@ import os, sys, math, json, numpy as np
 from fractions import Fraction as Fr
 sys.argv = sys.argv[:1] + ['x', '8', '300']
 src = open('scripts/dehn.py').read().split("if __name__")[0]; exec(src)
-HEX = os.path.expanduser('~/kres-tmp/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
+HEX = os.path.expanduser('~/work/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
 import tiles as T
 os.chdir(here)
 H = math.sqrt(2/3)

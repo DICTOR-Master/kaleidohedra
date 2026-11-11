@@ -13,7 +13,7 @@ Golden stations (exact):
   t24  self-dual point mu = sqrt2: bitruncated 24-cell, cells truncated cubes (C.O sweep at 1 + sqrt2);
        mu = phi and mu = 1 + 1/(3 - phi): octahedral cells = Icosaxes / Unborn Axes, with cubes (truncated 24-cell stage).
   t120 golden cells on each stage, computed from the 3D D.I and T.T sweeps.
-usage (dicto-big-brother): ~/geom/bin/python s5_fourd.py -> ../data/s5-fourd.json
+usage (compute-host): python3 s5_fourd.py -> ../data/s5-fourd.json
 """
 from dp_lib import *          # noqa
 import numpy as np

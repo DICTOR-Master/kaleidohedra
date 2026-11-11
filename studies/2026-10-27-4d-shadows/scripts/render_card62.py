@@ -1,5 +1,5 @@
 """Card picture for #62 on dictospheres.com (1440 x 1080): Shadow-17 (two J11 glued on their pentagons) and
-Slice-48, the two equal-edged solids from the 600-cell. Run on dicto-big-brother:  ~/geom/bin/python scripts/render_card62.py
+Slice-48, the two equal-edged solids from the 600-cell. Run on compute-host:  python3 scripts/render_card62.py
 """
 import pickle
 

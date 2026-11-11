@@ -7,7 +7,7 @@ import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection, Line3DCollection
 from scipy.spatial import ConvexHull
-sys.path.insert(0, os.path.expanduser("~/kres-tmp/4d/scripts")); from render import BG, GOLD, mark
+sys.path.insert(0, os.path.expanduser("~/work/4d/scripts")); from render import BG, GOLD, mark
 p = (1 + 5 ** .5) / 2
 def perms_even(v):
     out = []

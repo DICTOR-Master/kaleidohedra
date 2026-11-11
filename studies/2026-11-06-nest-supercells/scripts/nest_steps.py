@@ -22,7 +22,7 @@ print(f"1. heart icosahedron (edge {np.linalg.norm(apex[0]-apex[np.argsort(np.li
 vH = ConvexHull(apex).volume; vID = ConvexHull(ID).volume; vcaps = sum(ConvexHull(c).volume for c in caps)
 print(f"   ID {vID:.6f} = caps {vcaps:.6f} + heart {vH:.6f} + rest of core {vID - vcaps - vH:.6f}")
 # 2. gaps
-d13 = json.load(open('/home/dicto/k-research/studies/2026-10-09-dodeca-13/data/c13-parts-pieces-unit.json'))['parts']
+d13 = json.load(open('~/k-research/studies/2026-10-09-dodeca-13/data/c13-parts-pieces-unit.json'))['parts']
 vw = sum(ConvexHull(np.array(p['vertices'])).volume for p in d13 if p['role'] != 'dodeca')
 vd = sum(ConvexHull(np.array(p['vertices'])).volume for p in d13 if p['role'] == 'dodeca')
 print(f"2. Dodeca-13: dodecahedra {vd:.6f}, wedges + needles {vw:.6f} ({vw/(vd+vw):.4f} of the filled cluster)")

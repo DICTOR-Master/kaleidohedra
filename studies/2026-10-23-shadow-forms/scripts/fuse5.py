@@ -3,8 +3,8 @@ import os
 src=open('fuse4.py').read(); exec(src.split("F=lambda")[0])
 F=lambda n,b=False:ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans'+('-Bold' if b else '')+'.ttf',n)
 NET={'icoUnborn':'Icosahedra and Unborn','jewelDodeca':'Lotus Jewel network','four':'Jewel | Tricap | Unborn | AXE'}
-OUT='/home/dicto/Documents/papers-to-read/shadow-shapes'; os.makedirs(OUT,exist_ok=True)
-logo=Image.open('/home/dicto/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((110,110))
+OUT='~/Documents/papers-to-read/shadow-shapes'; os.makedirs(OUT,exist_ok=True)
+logo=Image.open('~/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((110,110))
 S=760
 def card(ps,title,line2,fn):
     im=Image.new('RGB',(2*S+60,S+190),(244,241,234)); d=ImageDraw.Draw(im)

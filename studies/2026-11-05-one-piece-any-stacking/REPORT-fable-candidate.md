@@ -1,6 +1,6 @@
 # Independent check of candidate 13931 (edge key `0R0000N0NN0NN00R00`, mirror copies allowed)
 
-Fable, 6 Nov 2026, as the skeptic. Nothing in the study was edited; scratch scripts live in `/tmp/cand` on dicto-big-brother.
+Fable, 6 Nov 2026, as the skeptic. Nothing in the study was edited; scratch scripts live in `/tmp/cand` on compute-host.
 
 ## Verdict: PERIODIC FOUND (a gap in the periodic test, not a geometry bug)
 
@@ -64,6 +64,6 @@ settle into the same shifted three-site rotation. Expect every CANDIDATE of the 
 
 ## Sources and scripts
 
-- Study: `README.md`, `scripts/spiral_keys.py`, `scripts/n_slabs.py`, `scripts/edge_census.py` (this folder); `spiral_keys_hnf.py` on dicto-big-brother is byte-identical to `spiral_keys.py`.
+- Study: `README.md`, `scripts/spiral_keys.py`, `scripts/n_slabs.py`, `scripts/edge_census.py` (this folder); `spiral_keys_hnf.py` on compute-host is byte-identical to `spiral_keys.py`.
 - Logs read: `~/study-runs/2026-11-06-spiral/cand13931.log`, `cand13931-hnf.log`, `cand13931-big.log`, `cand13931-hnf30.log` (running), `control-hnf.log`, `all/w*.log`.
-- Scratch (dicto-big-brother `/tmp/cand`): `cand_lib.py` (model copied from spiral_keys.py plus `classes_for_skew`), `audit_geom.py` + logs, `skew.py` + `cand-skew6.log`, `describe.py`, `spot.log`, `scan-cands.txt`. No job of mine is left running.
+- Scratch (compute-host `/tmp/cand`): `cand_lib.py` (model copied from spiral_keys.py plus `classes_for_skew`), `audit_geom.py` + logs, `skew.py` + `cand-skew6.log`, `describe.py`, `spot.log`, `scan-cands.txt`. No job of mine is left running.

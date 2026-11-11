@@ -4,7 +4,7 @@ DICTO proposed that "6D would seem to be a natural home for a cube octahedron": 
 carries the icosahedral (golden) cut-and-project. Separate study, not part of #89 (paper draft
 papers/golden-cuts-beyond-plato; study studies/2026-11-03-golden-cuts-beyond-plato, whose cubes_lib.py is copied here
 unchanged). Results note (typeset, 7 pages): `~/Documents/papers-to-read/6d-golden-cubes.pdf` (source `note/paper.html`,
-printed on dicto-big-brother with ~/kres-tmp/cw-print/print.mjs, footer "study, not published").
+printed on compute-host with ~/work/cw-print/print.mjs, footer "study, not published").
 
 **Answer.** Octahedron side: yes. Cube side: no, for an arithmetic reason (the square's diagonal √2).
 
@@ -81,4 +81,4 @@ the Galois pairing of the Golden Cut Cubes, the cube x octahedron sections with 
 scripts/: cubes_lib.py (copied from #89 study), sixd_lib.py, s1_sanity_cut_project.py, s2_field_signature.py, s3_six_d.py,
 s4_min_norm.py, figs.py. data/: s1-sanity.json (13), s2-field-signature.json (16), s3-six-d.json (24), s4-min-norm.json (8);
 every file carries its checks, all pass (61). figures/: fig1-cube-octahedron-6d.png, fig2-cut-and-project.png.
-Run on dicto-big-brother from scripts/ with ~/geom/bin/python (each step < 170 s); figs: `python figs.py <out> <logo png>`.
+Run on compute-host from scripts/ with python3 (each step < 170 s); figs: `python figs.py <out> <logo png>`.

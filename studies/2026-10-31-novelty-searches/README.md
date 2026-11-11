@@ -8,7 +8,7 @@ Requested by the main session for DICTO's decision: decide, as firmly as the evi
 
 ## Method
 
-- DICTO's library: `ask-library` on dicto-big-brother, 21 queries (`data/library-queries.txt`, full output `data/library-results.txt`). dicto-big-brother answered ping but not SSH at first, so the 115 local PDFs of `~/Documents/kaleidohedra-references` were also searched by keyword after `pdftotext` (text kept in the session scratchpad only, not in git).
+- DICTO's library: `ask-library` on compute-host, 21 queries (`data/library-queries.txt`, full output `data/library-results.txt`). compute-host answered ping but not SSH at first, so the 115 local PDFs of `~/Documents/kaleidohedra-references` were also searched by keyword after `pdftotext` (text kept in the session scratchpad only, not in git).
 - Web: 30 searches (two in Japanese), 14 pages read. Every query and page is listed in the report, item by item.
 - Not reached: zbMATH (HTTP 403), J-PlatPat (one Japanese patent-word web search stood in), Google Scholar (no direct access). Coxeter's *Regular Polytopes*, Socolar–Steinhardt 1986 and Katz 1988 are in copyright and were not read.
 

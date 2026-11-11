@@ -1,12 +1,12 @@
 # Figures for paper #51 The Delian Bond (white background, true faces, small DICTO mark).
 import os
-os.chdir('/home/dicto/shadow-fusions'); src=open('fuse4.py').read(); exec(src.split("res=json.load")[0]); os.chdir('octet')
+os.chdir('~/shadow-fusions'); src=open('fuse4.py').read(); exec(src.split("res=json.load")[0]); os.chdir('octet')
 exec(open('octet1.py').read().split('ts=[')[0])
-exec(open('/home/dicto/shadow-fusions/solidraw.py').read())
+exec(open('~/shadow-fusions/solidraw.py').read())
 COL.update({'samson':(205,150,60),'delilah':(80,135,190),'tet':(205,150,60),'oct':(80,135,190),'cone':(150,150,150)})
 F=lambda n,b=False:ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans'+('-Bold' if b else '')+'.ttf',n)
-OUT='/home/dicto/k-research/papers/2026-10-24-delian-bond/figures'; W=(255,255,255)
-logo=Image.open('/home/dicto/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((64,64))
+OUT='~/k-research/papers/2026-10-24-delian-bond/figures'; W=(255,255,255)
+logo=Image.open('~/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((64,64))
 def sheet(panels,SZ,fn,labels=None,rows=1):
     cols=(len(panels)+rows-1)//rows; im=Image.new('RGB',(cols*SZ,rows*SZ+(40 if labels else 0)*rows),W); d=ImageDraw.Draw(im)
     for i,(ps,R) in enumerate(panels):

@@ -45,4 +45,4 @@ cellular automaton, and the filling is forced layer by layer. With two states an
 
 ## Files
 scripts/clock_contacts.py (per context; contacts.py, tiles.py and the census engine copied from studies/2026-10-29-keyed-hexoct);
-run on dicto-big-brother, 16 in parallel; out/ctx_0..31.jsonl, out/summary.txt.
+run on compute-host, 16 in parallel; out/ctx_0..31.jsonl, out/summary.txt.

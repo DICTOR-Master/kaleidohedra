@@ -1,6 +1,6 @@
 import re,html,json,statistics
 from collections import Counter
-exec(open('/tmp/claude-1000/-home-dicto-Downloads-pet-bottle-rhombiverse/51e0eb9e-694a-43f8-bd1f-4b85585fb441/scratchpad/audit.py').read().split('rows=[]')[0])
+exec(open('/tmp/claude-1000/<project>/51e0eb9e-694a-43f8-bd1f-4b85585fb441/scratchpad/audit.py').read().split('rows=[]')[0])
 rows=[]
 for m in re.finditer(r'<div class="paper[^"]*"[^>]*>(.*?)</div>',body,re.S):
     c=m.group(1)

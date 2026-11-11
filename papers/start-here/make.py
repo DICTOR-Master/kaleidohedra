@@ -185,7 +185,7 @@ main{{max-width:760px;margin:0 auto;padding:24px 16px 64px}}
 {nets}
 </section>
 </main></body></html>'''
-open('/home/dicto/k-research/papers/start-here/paper.html', 'w').write(page)
+open('~/k-research/papers/start-here/paper.html', 'w').write(page)
 import re as _re
 live = _re.sub(r'<div class="status">.*?</div>\n', '', page, flags=_re.S)
 live = _re.sub(r'<div class="photo">.*?</div>\n', '', live, flags=_re.S)
@@ -193,5 +193,5 @@ live = _re.sub(r'<li>[^\n]*\(in preparation\)</span></li>\n', '', live)
 live = live.replace('<title>Start Here · DICTO</title>', '<title>Start Here · DICTO</title>\n<meta name="description" content="Start here: DICTO\'s geometry in three rules, five perfect shapes, filling space with no gaps, and layers that stack in any order, with nets to print and build.">\n<link rel="canonical" href="https://dictospheres.com/start-here/">\n<link rel="icon" href="../favicon.png">')
 live = live.replace('src="../dicto-logo.png"', 'src="../dicto-logo.png?v=2"').replace('<p class="small">DICTO · dictospheres.com</p>', '<p class="small"><a href="../">DICTO · dictospheres.com</a></p>')
 assert 'status' not in live.split('</style>')[1] and 'class="photo"' not in live.split('</style>')[1] and 'in preparation' not in live
-open('/home/dicto/k-research/papers/start-here/live-index.html', 'w').write(live)
+open('~/k-research/papers/start-here/live-index.html', 'w').write(live)
 print('ok', len(page))

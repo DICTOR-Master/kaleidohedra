@@ -1,7 +1,7 @@
 # Ring nets (DICTO 2026-10-31): the HexOct pieces as nets of rounded triangles, one PET-bottle-cap security ring each, tied at
 # six points (two per side, at 1/4 and 3/4 of the side). Pieces: tetrahedron (4 rings), octahedron (8), and the close-packed
 # layer as a hexagon of 6 rings. Shared edges: matching tie points join the two rings (shown as small dots, same colour per edge).
-# Usage: ~/geom/bin/python ring_nets.py <out png> <logo png>
+# Usage: python3 ring_nets.py <out png> <logo png>
 import sys, numpy as np, matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import PathPatch

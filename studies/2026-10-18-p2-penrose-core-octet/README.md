@@ -5,7 +5,7 @@ DICTO · dictospheres.com
 Scope: studies/2026-10-18-kit-projects/SCOPE.md. Source: studies/2026-10-18-ocd-octet (keyless kit, steps 18–20; Fable review ba28bd0). DICTO: whole middle piece (minimal set). Octahedron edge for printing: 60 mm.
 **Minimal set: notched octahedron + middle piece + notched tetrahedron (left and right) — 3 shapes (+ mirror).**
 
-## Step 1 — the pieces (`scripts/p2_meshes.py` on dicto-node → `data/p2-meshes.json`; exact from the octet study)
+## Step 1 — the pieces (`scripts/p2_meshes.py` on compute-host-2 → `data/p2-meshes.json`; exact from the octet study)
 - **Notched octahedron** = OCD + its 6 notched caps fused = octahedron minus its 12 middle-piece shares: exact **8/57 + 104√5/171 = 1.500299**; one solid; sphericity 0.621.
 - **Middle piece** M₀ = hull of two facing five-kite stars minus both OCDs: exact **(310 + 26√5)/4617 = 0.079735**; one solid; sphericity 0.579; one per octahedron edge (6 per cell). The OCD's stars still shape it although the OCD is fused away. Its Penrose prisms (central thick rhombus + two flanking) are not cut out in this set.
 - **Notched tetrahedron** = T+ minus its 6 middle-piece shares: exact **26/81 − 2√5/81 = 0.265776**; one solid; sphericity 0.517; left and right.

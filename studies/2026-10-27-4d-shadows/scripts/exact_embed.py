@@ -11,7 +11,7 @@ true form.  Tests:
     opposite vertices with the shared edge, or opposite sides when coplanar);
   * all edges equal: |edge|^2 - 1 < 1e-50.
 Prints the smallest |predicate| that decided a test (the margin).
-Usage: ~/geom/bin/python exact_embed.py data/eig_V48_full.json 36
+Usage: python3 exact_embed.py data/eig_V48_full.json 36
 """
 import itertools
 import json

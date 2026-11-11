@@ -1,7 +1,7 @@
 # DICTO 2026-10-18 octet study -- STEP 27: "could this core dodecahedron be expanded to form a smaller kit with the OCD?"
 # Grow each tetrahedron-centred piece as far as it can go: give every point outside the golden envelopes to its nearest tetrahedron
 # centre. The tetrahedron centres (R/2)(odd, odd, odd) form a simple cubic lattice of spacing R, so the nearest-centre regions are cubes
-# of edge R (corners at OCD centres and octet vertices). Piece = that cube minus the envelopes. Checks (dicto-node, manifold3d): one solid?
+# of edge R (corners at OCD centres and octet vertices). Piece = that cube minus the envelopes. Checks (compute-host-2, manifold3d): one solid?
 # volume (expect (1 - 10/phi^6) x cell / 2), sphericity, does it contain the step-26 core dodecahedron, and is it chiral.
 # usage: python3 step27_expanded_core.py step10-input.json step22-input.json OUT.json
 import sys, json, itertools, numpy as np, manifold3d as m3

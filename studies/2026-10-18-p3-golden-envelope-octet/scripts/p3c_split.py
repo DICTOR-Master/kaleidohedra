@@ -1,5 +1,5 @@
 # DICTO 2026-10-18 Project 3c -- split the cut-down tetrahedron (octet step 25) into the central tetartoid-like dodecahedron + the shell
-# (dicto-node, manifold3d). Is the shell one solid? volumes, sphericity.
+# (compute-host-2, manifold3d). Is the shell one solid? volumes, sphericity.
 # usage: python3 p3c_split.py step25-refined-meshes.json p3c-dodeca.json step10-input.json OUT.json
 import sys, json, numpy as np, manifold3d as m3
 T = json.load(open(sys.argv[1]))['tet_trunc']; Dd = json.load(open(sys.argv[2])); D = json.load(open(sys.argv[3]))

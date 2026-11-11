@@ -1,7 +1,7 @@
 # Figure 2b, plate style: UNITY with nests, down a five-fold axis (through a pentagon of the icosidodecahedron).
 import json, numpy as np
 from davinci import Plate, look, SEPIA
-d = json.load(open('/home/dicto/k-research/studies/2026-11-06-nest-supercells/unity-nests.json'))
+d = json.load(open('~/k-research/studies/2026-11-06-nest-supercells/unity-nests.json'))
 ID = np.array(d['ID']); Is = [np.array(v) for v in d['icos']]; Ns = [{k: np.array(v) for k, v in n.items()} for n in d['nests']]
 caps = [np.array(v) for v in d['caps']]; heart = np.array([c[-1] for c in caps])
 n5 = Is[0].mean(0) / np.linalg.norm(Is[0].mean(0))

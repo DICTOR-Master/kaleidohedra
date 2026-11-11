@@ -2,7 +2,7 @@
 
 DICTO · dictospheres.com — independent exact verification and critical review (Claude Fable 5.1) of `studies/2026-10-18-p4-golden-octet-adaptor` steps 6–7: glue pieces with exact OCD imprints, centred on the octet vertices (W_OCD) and on the octahedron-edge midpoints / Penrose stars (W_star). Research branch only.
 
-Scripts: `scripts/fable3_exact.py` (W_OCD, exact Q(√5), Pi 127 s), `scripts/fable3_star_exact.py` (W_star, exact, Pi 49 s), `scripts/fable3_exact_lib.py` + `fable3_engine.py` (the engine of the earlier reviews, unchanged), `scripts/fable3_node.py` (dicto-node: manifold3d meshes, dihedral histograms, W_star thickness map, 8 000 000 sample points). Data: `data/fable3-exact.json`, `data/fable3-star-exact.json`, `data/fable3-node.json`, logs, `data/fable3-input.json`. Exactness rules as in the earlier reviews. Scale for buildability: 60 mm octahedron edge ⇒ 1 unit = 39.33 mm (R = 42.4 mm).
+Scripts: `scripts/fable3_exact.py` (W_OCD, exact Q(√5), Pi 127 s), `scripts/fable3_star_exact.py` (W_star, exact, Pi 49 s), `scripts/fable3_exact_lib.py` + `fable3_engine.py` (the engine of the earlier reviews, unchanged), `scripts/fable3_node.py` (compute-host-2: manifold3d meshes, dihedral histograms, W_star thickness map, 8 000 000 sample points). Data: `data/fable3-exact.json`, `data/fable3-star-exact.json`, `data/fable3-node.json`, logs, `data/fable3-input.json`. Exactness rules as in the earlier reviews. Scale for buildability: 60 mm octahedron edge ⇒ 1 unit = 39.33 mm (R = 42.4 mm).
 
 ## 1. Verdicts
 

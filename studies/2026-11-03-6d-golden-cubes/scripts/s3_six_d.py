@@ -21,7 +21,7 @@ E. Selection by lattice orbits (exact, sympy): every v in {-2..2}^6 (up to the d
    quadratic mu only. Expected: mu_G, mu_L (degree 4) never isolated.
 F. Golden heights in mu between the layers octahedron (1), cuboctahedron (2), cube (3), and mu_G, mu_L written as
    golden heights a + (b - a)/phi^2 with a, b in Q(sqrt2) (unique).
-usage (dicto-big-brother): ~/geom/bin/python s3_six_d.py -> ../data/s3-six-d.json
+usage (compute-host): python3 s3_six_d.py -> ../data/s3-six-d.json
 """
 from sixd_lib import *          # noqa
 from collections import Counter

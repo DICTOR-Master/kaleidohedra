@@ -4,7 +4,7 @@
 Crop: chart rows 1-29, columns taken half a repeat (6 stitches) later than in chart-4H.png so the ball stitches sit in
 columns 7 and 19, away from the edges (the pattern repeats every 12 stitches, so this is the same fabric).
 Writes ../swatch/fig/chart.png, ../swatch/fig/slice.png, ../swatch/paper.html, ../out/swatch-rows.json.
-Usage (dicto-big-brother): LOGO=~/kres-tmp/dicto-logo.png ~/geom/bin/python swatch.py
+Usage (compute-host): LOGO=~/work/dicto-logo.png python3 swatch.py
 """
 import os, json
 import knit

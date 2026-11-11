@@ -1,7 +1,7 @@
-# Blender (dicto-big-brother): Swap Rule figure. Top row together, bottom row drawn apart at the gap's mid-plane:
+# Blender (compute-host): Swap Rule figure. Top row together, bottom row drawn apart at the gap's mid-plane:
 # pure cubic tetrahedral piece | mixed piece (cubic layer below, hexagonal above) | pure hexagonal piece. d^2 = 3/4 * 2/3, lam = 1/10.
 import bpy, math, os
-D = os.path.expanduser('~/kres-tmp/splash/fig')
+D = os.path.expanduser('~/work/splash/fig')
 bpy.ops.wm.read_factory_settings(use_empty=True)
 sc = bpy.context.scene; sc.render.engine = 'CYCLES'; sc.cycles.samples = 64; sc.render.resolution_x = 2400; sc.render.resolution_y = 1250
 sc.world = bpy.data.worlds.new('w'); sc.world.use_nodes = True; sc.world.node_tree.nodes['Background'].inputs[0].default_value = (0.06, 0.07, 0.09, 1)
@@ -32,4 +32,4 @@ label('DICTO', 8.9, -5.0, 0.35, dmark)
 cam = bpy.data.objects.new('cam', bpy.data.cameras.new('cam')); sc.collection.objects.link(cam); cam.location = (0, -24, 0); cam.rotation_euler = (math.radians(90), 0, 0); sc.camera = cam; cam.data.lens = 40
 for loc, e in (((-10, -12, 14), 1100), ((12, -10, 8), 600), ((0, 10, 10), 300)):
     l = bpy.data.objects.new('l', bpy.data.lights.new('l', 'AREA')); l.data.energy = e; l.data.size = 8; l.location = loc; sc.collection.objects.link(l)
-sc.render.filepath = os.path.expanduser('~/kres-tmp/splash/swap-rule.png'); bpy.ops.render.render(write_still=True)
+sc.render.filepath = os.path.expanduser('~/work/splash/swap-rule.png'); bpy.ops.render.render(write_still=True)

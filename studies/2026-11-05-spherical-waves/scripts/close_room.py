@@ -3,7 +3,7 @@
 # Adaptor = Voronoi cell of the room centres (a lattice parallelohedron) minus every cut-OG copy. One room per copy -> one adaptor per copy.
 import json, itertools, numpy as np, manifold3d as m3
 from scipy.spatial import ConvexHull, HalfspaceIntersection
-R = "/home/dicto/study-runs/og-pent/cut/data/"
+R = "~/study-runs/og-pent/cut/data/"
 B = np.array(json.load(open(R + "densest.json"))["B"]); O = np.array(json.load(open(R + "network.json"))["ocd"]); O = O - O.mean(0)
 hull = lambda P: m3.Manifold.hull_points(np.asarray(P, float).tolist())
 OG = hull(O); VOL = OG.volume(); cell = abs(np.linalg.det(B))

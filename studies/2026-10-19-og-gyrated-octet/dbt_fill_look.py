@@ -1,7 +1,7 @@
 # quick look at the grown bipyramid piece (dbt-fill-bip.json): faces after merging coplanar triangles, smallest dihedral angles, a render
 import json, numpy as np, math, matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-H = '/home/dicto/dbt-exact/2026-10-19-og-gyrated-octet/'; D = json.load(open(H + 'dbt-fill-bip.json')); P = np.array(D['v']); T = np.array(D['t'])
+H = '~/dbt-exact/2026-10-19-og-gyrated-octet/'; D = json.load(open(H + 'dbt-fill-bip.json')); P = np.array(D['v']); T = np.array(D['t'])
 N = np.cross(P[T[:, 1]] - P[T[:, 0]], P[T[:, 2]] - P[T[:, 0]]); A = np.linalg.norm(N, axis=1); keep = A > 1e-12; N = N[keep] / A[keep, None]; T = T[keep]; A = A[keep]
 d = np.einsum('ij,ij->i', N, P[T[:, 0]])
 planes = []

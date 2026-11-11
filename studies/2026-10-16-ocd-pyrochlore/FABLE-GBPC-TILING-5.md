@@ -26,7 +26,7 @@ Full write-up: `FABLE-GBPC-COUNT-CHECK.md`.
 **Overlap test.** The exact separating-axis test from pass 4, shared code with `gbpc_search.py`.
 
 **Run.**
-- Job on dicto-node, single process: `~/gbpc4/logs/lns-RB-51.log`.
+- Job on compute-host-2, single process: `~/gbpc4/logs/lns-RB-51.log`.
 - Best build: `~/gbpc4/data/lns-RB-51.json`. It is rewritten on every strict gain, with the exact volume and the exact gap.
 - The run stops by itself at 09:30 JST on 2026-10-18.
 

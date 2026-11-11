@@ -3,7 +3,7 @@
 # run the star step of #78: spikes over the faces with tips at t times the foot of the perpendicular from the centre (flag a foot outside
 # its face), hull of the tips, exact fill of both layers by corner pyramids and edge tetrahedra (by volume), and the star chain S0 -> S1 ->
 # ... up to 8 steps, recording whether a shape repeats (period) and whether a hull has the shape of any solid of the dataset.
-# Usage: ~/geom/bin/python scripts/census.py <dataset solids dir> <out.json>
+# Usage: python3 scripts/census.py <dataset solids dir> <out.json>
 import sys, os, json, glob, itertools, numpy as np
 from scipy.spatial import ConvexHull
 phi = (1 + 5 ** .5) / 2

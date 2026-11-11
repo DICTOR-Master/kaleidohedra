@@ -1,7 +1,7 @@
 # Splash Rules run 2: the relay census's Delian (fcc + all tetrahedral holes) and hcp-holes walks against run 1's pure c and pure h
 # pieces at s = 1 (data/s_1.json). For every run-1 window inside a relay interval and every role (oct, tet over X, tet under Y): the
 # exact ratio run-1 volume / relay volume. A constant in every window means the same volume functions up to the volume unit.
-# Usage (on dicto-big-brother, in ~/kres-tmp/splash2): python relay_vs_run1.py > relay_vs_run1.log
+# Usage (on compute-host, in ~/work/splash2): python relay_vs_run1.py > relay_vs_run1.log
 import json, sympy as sp
 from fractions import Fraction as Fr
 s1 = json.load(open('../splash/data/s_1.json'))

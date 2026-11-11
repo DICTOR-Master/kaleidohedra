@@ -4,7 +4,7 @@
 # OCD frame: joint hexagons on |x|+|y|+|z| = R (R = 2phi/3); bcc cube edge a = 4R/3; OCD sites (a/2)(i,j,k), all even or all odd.
 # 6-OCD holes (bcc octahedral holes) = (a/2)(i,j,k) with one or two odd entries (3 per OCD): the narrow pair at a/2 (across a slab),
 # four at a/sqrt2. Piece = Voronoi cell of the hole among all holes, minus the OCDs. Checks: one solid? volume = gap/3 per OCD,
-# sphericity, symmetry. dicto-node, manifold3d. usage: python3 hole_piece.py step10-input.json OUT.json
+# sphericity, symmetry. compute-host-2, manifold3d. usage: python3 hole_piece.py step10-input.json OUT.json
 import sys, json, itertools, numpy as np, manifold3d as m3
 from scipy.spatial import HalfspaceIntersection
 D = json.load(open(sys.argv[1])); V = np.array(D['V']); R = D['R']; V = V - V.mean(0); _r = np.linalg.norm(V, axis=1); V = V[_r < _r.max() - 1e-6] if len(sys.argv) > 3 and sys.argv[3] == 'cut' else V; print('corners used', len(V)); a = 4 * R / 3

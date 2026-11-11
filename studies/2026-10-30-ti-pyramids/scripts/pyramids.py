@@ -1,7 +1,7 @@
 # TI Pyramids (DICTO, 2026-10-30): fill the truncated icosahedron ("TI", the midpoint cell of #76) from its centre with
 # its 12 pentagonal and 20 hexagonal face pyramids; compare with the truncated tetrahedron's pyramids (the other midpoint cell);
 # test which faces can meet, and whether the four pyramids can tile space face to face (the #77 argument).
-# Exact in sympy; edge 1. Writes data/pyramids.json. Run on dicto-big-brother: ~/geom/bin/python scripts/pyramids.py
+# Exact in sympy; edge 1. Writes data/pyramids.json. Run on compute-host: python3 scripts/pyramids.py
 import itertools, json, math
 import sympy as sp
 r5 = sp.sqrt(5); phi = (1 + r5) / 2; r2 = sp.sqrt(2)

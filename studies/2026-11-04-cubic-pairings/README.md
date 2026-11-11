@@ -14,7 +14,7 @@ DICTO's idea: carry the method of #92 (edge lengths, face shapes, dihedral angle
 ## Files
 - pairing_checks.py -> data/pairing-checks.log (67 PASS, 0 FAIL), data/pairing-checks.json.
 - figs.py -> figures/ (matplotlib; float copies).
-Run on dicto-big-brother: ~/geom/bin/python <script>.
+Run on compute-host: python3 <script>.
 
 ## Prior art
 #90, #48, #51-#53, #44 Lemma 1, #77, #92; Gabbrielli-Jiao-Torquato 2012 (angle sums); Wikipedia RD / RD honeycomb /

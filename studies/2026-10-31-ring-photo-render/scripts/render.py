@@ -19,9 +19,9 @@
 #   shading   = face normal against one light (darker when turned away; faces seen from inside dimmer)
 #   ties      = zip-tie patches cut from the photo, folded over the shared side at 0.32 and 0.68 (half on each ring), on top
 #   shadow    = all points projected to the ground along the light, blurred twice (contact + soft), plain light ground
-# Usage (dicto-big-brother): CUTDIR=~/kres-tmp/ringphoto/derived OUTDIR=~/kres-tmp/ringphoto/derived \
-#   TILES_DIR=~/kres-tmp/endless RINGBUILD=~/k-research/studies/2026-10-31-hexoct-ring-build/scripts \
-#   ~/geom/bin/python render.py [flat] [tetra] [htile]
+# Usage (compute-host): CUTDIR=~/work/ringphoto/derived OUTDIR=~/work/ringphoto/derived \
+#   TILES_DIR=~/work/endless RINGBUILD=~/k-research/studies/2026-10-31-hexoct-ring-build/scripts \
+#   python3 render.py [flat] [tetra] [htile]
 import os, sys, json, math
 import numpy as np
 from PIL import Image

@@ -2,7 +2,7 @@
 # one parity p is tested against  T_p = f_p(c) n_c[p] + f_p(h) n_h[p] + g_p(c) n_c[p'] + g_p(h) n_h[p']
 # where n_t[q] counts layers of type t and parity q (layer g lies below gap g). Four unknowns, solved exactly from
 # all words together; the system has more words than unknowns, so consistency is the test.
-# Run on dicto-big-brother: cd ~/kres-tmp/splash2 && ~/geom/bin/python hexlaw_cdi2.py
+# Run on compute-host: cd ~/work/splash2 && python3 hexlaw_cdi2.py
 import os, json
 from fractions import Fraction as Fr
 import sympy as sp

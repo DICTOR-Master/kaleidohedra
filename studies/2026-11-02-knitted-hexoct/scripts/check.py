@@ -1,5 +1,5 @@
 # Knitted HexOct (DICTO's idea, 2026-11-02): exact checks of the link geometry and of the test pieces.
-# Run on dicto-big-brother with ~/geom/bin/python, in a folder that also holds tiles.py, engine.py, stackings.py
+# Run on compute-host with python3, in a folder that also holds tiles.py, engine.py, stackings.py
 # (studies/2026-10-29-endless-stack-cell/scripts). Node spacing a = 1, sheet spacing d = sqrt(2/3).
 import itertools, random, sympy as sp
 from fractions import Fraction as Fr

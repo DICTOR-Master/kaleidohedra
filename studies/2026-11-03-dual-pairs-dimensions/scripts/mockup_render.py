@@ -6,7 +6,7 @@ and checked against the s1 / s4 data. Floats are used only to draw.
 Look (house protocols): solid faces, crisp edges 2 px (>= 1.5), app dark background (#05050a), pair colours (P green = the
 Polyhedraverse piece colour, P* violet), gold for golden stations, see-through crystal outer shells round a solid innermost station.
 Outputs (transparent PNG, 2x device pixels) + mockup-data.json (stations, exact mu, gold flags) into <out dir>.
-usage (dicto-big-brother): ~/geom/bin/python mockup_render.py <out dir>
+usage (compute-host): python3 mockup_render.py <out dir>
 DICTO · dictospheres.com
 """
 import os, sys, json, itertools
@@ -271,7 +271,7 @@ ax.set_xlim(-2.2 * s3, 2.2 * s3); ax.set_ylim(-1.6, 2.6); ax.set_aspect('equal')
 save(fig, 'r-slice-diagram.png')
 
 # ------------------------------------------------------------------ fig 6: overview filmstrips (white, for paper #91 too)
-LOGO = os.path.expanduser('~/kres-tmp/dicto-logo.png')
+LOGO = os.path.expanduser('~/work/dicto-logo.png')
 fig = plt.figure(figsize=(10.0, 6.9), dpi=200)
 plt.rcParams['font.family'] = 'DejaVu Sans'
 fig.text(0.012, 0.965, 'Dual-pair sweeps  S(μ) = P ∩ μP*  (station films)', fontsize=11, weight='bold', color='#1d1d24')

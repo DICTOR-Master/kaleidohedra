@@ -1,5 +1,5 @@
 # DICTO 2026-10-18 -- Fable's glue W (fable-review-2, I1) for the 3D page: the rhombic dodecahedron round the octet vertex v = (0,0,R)
-# minus the golden envelopes biting into it (dicto-node, manifold3d). usage: python3 p4_W.py step22-input.json step10-input.json OUT.json
+# minus the golden envelopes biting into it (compute-host-2, manifold3d). usage: python3 p4_W.py step22-input.json step10-input.json OUT.json
 import sys, json, itertools, numpy as np, manifold3d as m3
 RT = np.array(json.load(open(sys.argv[1]))['RT']); D = json.load(open(sys.argv[2])); R = D['R']; L = np.array(D['L'])
 hull = lambda P: m3.Manifold.hull_points(np.asarray(P, float)); U = lambda ms: m3.Manifold.batch_boolean(ms, m3.OpType.Add)

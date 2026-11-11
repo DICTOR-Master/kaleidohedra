@@ -1,5 +1,5 @@
 # Halo Fillers: the typeset study note (HTML for papers/print.mjs) from data/*.json and figs/.
-# Usage: typeset.py <study dir> <out dir>   (then on dicto-big-brother: node print.mjs <out dir name> halo-fillers.pdf "Halo Fillers" "none (study note)" 1)
+# Usage: typeset.py <study dir> <out dir>   (then on compute-host: node print.mjs <out dir name> halo-fillers.pdf "Halo Fillers" "none (study note)" 1)
 import json, os, shutil, sys, html
 ST, OUT = sys.argv[1:3]; os.makedirs(OUT + '/figs', exist_ok=True)
 L = lambda f: json.load(open(os.path.join(ST, 'data', f)))

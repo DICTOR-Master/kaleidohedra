@@ -2,7 +2,7 @@
 """Roadmap: an everyday first line for the ten hardest paper cards (audit, section 3). The card text stays as it is;
 the new line goes above it. Current card text is read live from ~/dictospheres/index.html (whole, never cut)."""
 import re, html
-s = open('/home/dicto/dictospheres/index.html').read()
+s = open('~/dictospheres/index.html').read()
 NEW = {
  '#38a': "Two of Kepler's spiky stars, one inside the other like Russian dolls, and the nesting goes on for ever, each doll the same golden step larger.",
  '#31a': "Around one of DICTO's Ogdoecontahedra, packed in its crystal, small golden pieces gather into a 50-faced star, the OCD Stella; copies of it fill about 87% of a room.",
@@ -35,5 +35,5 @@ out = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Ever
 <p>How to read each card: the gold line is new and would open the card; the grey text below is the card as it is today, unchanged. The pictures come from the everyday-words glossary: Russian dolls, a loaf of bread, a football, onion rings, a seashell, water ice, a climbing frame.</p>
 {rows}
 </body></html>'''
-open('/home/dicto/k-research/papers/card-first-lines/paper.html', 'w').write(out)
+open('~/k-research/papers/card-first-lines/paper.html', 'w').write(out)
 print('ok', len(cards))

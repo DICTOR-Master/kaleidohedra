@@ -9,7 +9,7 @@ W = diag(w)):
   3. unknowns = coordinates of one vertex per orbit inside its fixed subspace; equations = one per edge orbit,
      |edge|^2 = 1; solved exactly (sympy Groebner basis over Q(sqrt5)), for G and for its rotation subgroup G+;
   4. each real solution checked: distinct vertices, no face degenerate, no 180-degree edge, no self-intersection.
-Run on dicto-big-brother after shadows.py:  ~/geom/bin/python large_slices.py [label]
+Run on compute-host after shadows.py:  python3 large_slices.py [label]
 """
 import json
 import pickle

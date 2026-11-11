@@ -10,7 +10,7 @@ B. Every station of the polar Dharma cycle located exactly: c D, S(phi^2), Q(mu_
 C. (moved to s4c_relatives.py) Golden relatives Q(mu, phi^2) at the golden mu of the icosahedron side (neutral labels, face signatures).
 D. (moved to s4b_og_lattice.py) Lattice: the ideal {lam in Q(sqrt5): lam * OG corners in the icosahedral module M = Z-span(0, +-1, +-phi) cyclic}; its
    generator and the smallest integer scale, in our frame and in the chain frame (the bridge study found 171 there).
-usage (dicto-big-brother): ~/geom/bin/python s4_og_dharma.py -> ../data/s4-og-dharma.json
+usage (compute-host): python3 s4_og_dharma.py -> ../data/s4-og-dharma.json
 """
 from dp_lib import *          # noqa
 import numpy as np, sympy as sp

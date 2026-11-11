@@ -9,7 +9,7 @@ Pieces: classical Delaunay cells of the close packing (= HexOct pieces at lambda
 octahedra in every gap; each cut at the gap mid-plane (Rule of Halves) into a lower half (layer below) and an upper half.
 All slice polygons are computed exactly with Fractions in (S, Z); drawing converts to true lengths.
 
-Usage (dicto-big-brother): LOGO=~/kres-tmp/dicto-logo.png ~/geom/bin/python knit.py  -> ../out/slice-4H.png, chart-4H.png, slice-4H.json
+Usage (compute-host): LOGO=~/work/dicto-logo.png python3 knit.py  -> ../out/slice-4H.png, chart-4H.png, slice-4H.json
 """
 import os, json, math, itertools
 from fractions import Fraction as F

@@ -3,7 +3,7 @@
 # float result ("core returns" only for GTI D40 and TI Star core D105: it asked only whether core(core(S)) = S) with study 2's finding
 # that cores settle into period 2. exactlib.hull is replaced by study 5's exact gift-wrapping hull (float angle ordering fails on short
 # edges). Per-solid limit STUDY2B_LIMIT s (default 900, signal.alarm), recorded as 'timeout'.
-# Usage: ~/geom/bin/python study2b.py <dataset solids dir> <exactlib dir> <star-cores.json> <out json> [start end]
+# Usage: python3 study2b.py <dataset solids dir> <exactlib dir> <star-cores.json> <out json> [start end]
 import sys, os, json, signal, time
 SOL, LIB, SC, OUT = sys.argv[1:5]; sys.path.insert(0, LIB)
 LO, HI = (int(sys.argv[5]), int(sys.argv[6])) if len(sys.argv) > 6 else (0, 10**9)

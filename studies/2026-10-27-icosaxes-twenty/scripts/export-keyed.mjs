@@ -3,7 +3,7 @@
 // hexagon facing the middle dented (the Dodecaxes' key fills it), the 7 outer hexagons keyed outward (the mirrored Tricap, INTO_SMALL),
 // as the Hexa's outward roofs. Triangle meshes (pieces need not be convex), sites scaled by phi/2.
 import { writeFileSync } from 'node:fs';
-import { PHI, SIGNS, INTO_BIG, INTO_SMALL, pieceSurface } from '/home/dicto/k-mix/src/krp-core/src/polyhedra/golden-split.js';
+import { PHI, SIGNS, INTO_BIG, INTO_SMALL, pieceSurface } from '~/k-mix/src/krp-core/src/polyhedra/golden-split.js';
 const at = (n) => n.map((c) => (c * PHI) / 2);
 const corners = [[0, 0, 0], [2, 0, 0], [0, 2, 0], [0, 0, 2], [2, 2, 0], [2, 0, 2], [0, 2, 2], [2, 2, 2]];
 const inward = (n) => SIGNS.findIndex((s) => s.every((x, i) => x === Math.sign(1 - n[i])));

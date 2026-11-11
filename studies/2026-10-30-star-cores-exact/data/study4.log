@@ -9,12 +9,12 @@ library 45
 {'step': 8, 'corners': 1352, 'faces': {'3': 240, '4': 180, '5': 480, '13': 60}, 'radius_kinds': 19, 'edge_kinds': 26, 'seconds': 871}
 {'step': 9, 'corners': 2240, 'faces': {'3': 60, '4': 180, '5': 252, '6': 360, '7': 120, '9': 180}, 'radius_kinds': 24, 'edge_kinds': 35, 'seconds': 8418}
 Traceback (most recent call last):
-  File "/home/dicto/kres-tmp/star-cores-exact/scripts/study4.py", line 102, in <module>
+  File "~/work/star-cores-exact/scripts/study4.py", line 102, in <module>
     t0 = time.time(); S, SF = ustep(S); r2 = rad2(S)
                               ~~~~~^^^
-  File "/home/dicto/kres-tmp/dataset-v6/build/exactlib.py", line 449, in ustep
+  File "~/work/dataset-v6/build/exactlib.py", line 449, in ustep
     return halfspace_solid([(v, dot(v, v)) for v in V])
-  File "/home/dicto/kres-tmp/dataset-v6/build/exactlib.py", line 434, in halfspace_solid
+  File "~/work/dataset-v6/build/exactlib.py", line 434, in halfspace_solid
     assert all((dot(n, c) - h).sign() <= 0 for n, h in planes), 'corner outside'
            ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError: corner outside

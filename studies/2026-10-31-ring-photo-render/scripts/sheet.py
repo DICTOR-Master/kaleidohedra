@@ -1,6 +1,6 @@
 # Comparison sheet for the photo-real ring render test (2026-10-31): DICTO's photo of one real big triangle beside the render
 # of the same 4-ring face, then the 16-ring tetrahedron and the 48-ring h-tile; DICTO mark in the bottom-right corner.
-# Usage (dicto-big-brother): PHOTO=... CUTDIR=... OUTDIR=... LOGO=~/kres-tmp/dicto-logo.png ~/geom/bin/python sheet.py
+# Usage (compute-host): PHOTO=... CUTDIR=... OUTDIR=... LOGO=~/work/dicto-logo.png python3 sheet.py
 import os, json
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont

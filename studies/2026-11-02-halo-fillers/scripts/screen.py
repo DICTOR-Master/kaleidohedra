@@ -2,10 +2,10 @@
 # pieces of a set S: at an interior point of an edge of a piece with dihedral angle a, the pieces around it contribute their dihedral
 # angles (a point on their edge) or pi (a point inside their face), total 2 pi; so 2 pi - a, or pi - a, must be a sum of dihedral
 # angles of the pieces of S (non-negative integer combination). Here: numeric screen (1e-7 rad), survivors are re-proved exactly.
-# Usage: screen.py <out json>   (env HALO_CENSUS, DATASET: data dirs; defaults on dicto-big-brother)
+# Usage: screen.py <out json>   (env HALO_CENSUS, DATASET: data dirs; defaults on compute-host)
 import json, os, sys, math, itertools, numpy as np
 TOL = 1e-7; TAU = 2 * math.pi
-HC = os.environ.get('HALO_CENSUS', os.path.expanduser('~/kres-tmp/halo-census/data')); DS = os.environ.get('DATASET', os.path.expanduser('~/kres-tmp/dataset-v7'))
+HC = os.environ.get('HALO_CENSUS', os.path.expanduser('~/work/halo-census/data')); DS = os.environ.get('DATASET', os.path.expanduser('~/work/dataset-v7'))
 
 def dihedrals(P, F=None):
     """dihedral angle at every edge of the convex hull of P (facets merged by plane; edge = two facets sharing two corners)."""

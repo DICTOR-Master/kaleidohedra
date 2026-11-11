@@ -8,7 +8,7 @@ In the octet (tetrahedral-octahedral honeycomb) of edge 1:
    sits the Archimedean truncated tetrahedron (corners cut at 1/3, edge 1/3).
 3. Hence the octet carries all five Platonic solids (and the truncated tetrahedron) in every cell, and the arrangement is periodic in three
    directions. The gap C - T is four copies of O's own centre pyramid scaled by 2/3.
-Exact verification in Q(sqrt2, sqrt5): proof/exact_nest.py -> proof/exact_nest.out (all items True; sympy on dicto-big-brother).
+Exact verification in Q(sqrt2, sqrt5): proof/exact_nest.py -> proof/exact_nest.out (all items True; sympy on compute-host).
 Proof (outline): (1) Pacioli + duality; t = 1/(3 sqrt2) computed exactly equals O's face-centre coordinate; (2) midpoint octahedron and
 truncation are classical; (3) the octet is periodic; scaling by 1/2 is the octet's self-similarity.
 Prior art to check before claiming: each inscription is classical (Euclid XIII, Pacioli 1509, Kepler); the identity "the cube on the

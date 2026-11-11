@@ -6,7 +6,7 @@
 # image is closest to 'straight down' with the camera above the table (phone held upright) -- or forced with SUPPORT=.
 # CAM_ELEV=<deg> instead sets the table square to gravity seen by an upright camera at that elevation.
 # Writes a camera spec (JSON) for scene.py.  The photo is read only; nothing derived from it is written except numbers.
-# Usage (dicto-big-brother): ~/geom/bin/python fitcam.py photo.jpg model.obj out.json [support-index]
+# Usage (compute-host): python3 fitcam.py photo.jpg model.obj out.json [support-index]
 import sys, json, math
 import numpy as np
 from PIL import Image

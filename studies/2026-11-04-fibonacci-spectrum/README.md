@@ -1,5 +1,5 @@
 # Spectrum of the Fibonacci stacking (#69), 4 Nov 2026 — DICTO: "can fibonacci be harmonized to any degree" / "run the fibonacci spectrum"
-fib_spectrum.py, fib-spectrum.json (dicto-big-brother; word length F_28 = 317811).
+fib_spectrum.py, fib-spectrum.json (compute-host; word length F_28 = 317811).
 (1) The c/h word (h density 1/φ²): pure point. Every peak sits at q/φ² (mod 1) and its amplitude is EXACTLY |sin(πq/φ²)|/(πq) —
     checked to 5 decimals on the 12 strongest (q = ±1, ±2, ±4, ±3, ±6, ±7). Brightest pair: the two golden frequencies 1/φ² and 1/φ.
     So the word is harmonized to every degree, each harmonic with a closed-form strength.

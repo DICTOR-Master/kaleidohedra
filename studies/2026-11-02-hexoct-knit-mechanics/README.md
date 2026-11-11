@@ -49,7 +49,7 @@ bottom plane.
 Limits: idealised straight rods, no yarn mechanics (no loops, friction, compaction or yarn buckling in tension). The
 model is linear-elastic except for the strut-buckling plateau. No Stokes or Darcy permeability solve.
 
-## Files (run on dicto-big-brother, ~/geom/bin/python: numpy 2.5.4, scipy 1.18.1)
+## Files (run on compute-host, python3: numpy 2.5.4, scipy 1.18.1)
 - `scripts/lattice.py`: geometry, word from c/h labels, check of 3 + 3 links and 6 in-sheet members per node.
 - `scripts/mech.py`: pin and frame models, block tests, periodic C, rigidity ranks, buckling-event energy proxy.
 - `scripts/check_octet.py` → `data/check_octet.out`: frame-element rigid-rotation check and octet E[100] = ρ̄/9.
@@ -57,7 +57,7 @@ model is linear-elastic except for the strut-buckling plateau. No Stokes or Darc
 - `scripts/flow.py`, `scripts/run_flow.sh` → `data/flow/*.json` and `*_openmask.npy` (16 runs).
 - `scripts/summarize.py` → `data/summary.json`, `data/tables.txt`, `figs/fig1-line-of-sight.png`,
   `figs/fig2-sheet-sweep.png`, `figs/fig3-hagg.png`.
-- `results/paper.html` → `results/hexoct-knit-mechanics.pdf` (printed on dicto-big-brother with playwright; footer
+- `results/paper.html` → `results/hexoct-knit-mechanics.pdf` (printed on compute-host with playwright; footer
   "study, not published").
 
 ## Sources checked (2026-11-02)

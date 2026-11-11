@@ -4,7 +4,7 @@ DICTO · dictospheres.com
 
 The goal of this pass was to push the exact, overlap-free fill of G′ (the golden region minus the 24 GBPCs per bcc cell) past 46.5%, test the Bodhi pieces, and measure what is left.
 
-Everything is exact in ℚ(√5) unless marked FLOAT. All searches ran on dicto-node as logged background jobs (`~/gbpc4/logs`). The full body lists stay on the node (`~/gbpc4/data/search-*.json`, 0.2–0.5 MB each). λ = φ|v|/9, the length of the 36° convex edges.
+Everything is exact in ℚ(√5) unless marked FLOAT. All searches ran on compute-host-2 as logged background jobs (`~/gbpc4/logs`). The full body lists stay on the node (`~/gbpc4/data/search-*.json`, 0.2–0.5 MB each). λ = φ|v|/9, the length of the 36° convex edges.
 
 ## Results first
 

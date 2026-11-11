@@ -1,4 +1,4 @@
-# DICTO 2026-10-18 Project 2, Penrose-core octet (keyless; whole middle piece, DICTO) -- meshes (dicto-node, manifold3d):
+# DICTO 2026-10-18 Project 2, Penrose-core octet (keyless; whole middle piece, DICTO) -- meshes (compute-host-2, manifold3d):
 # notched octahedron (OCD + its 6 notched caps fused = octahedron minus its 12 middle-piece shares), middle piece M0 = H - both OCDs
 # (H = hull of two facing five-kite stars), notched tetrahedron T+ (T+ minus its 6 middle-piece shares); T- is its mirror image.
 # usage: python3 p2_meshes.py step10-input.json OUT.json

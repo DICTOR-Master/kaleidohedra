@@ -8,7 +8,7 @@ The books describe several classical space-fillers by cutting and gluing: shave 
 
 - `data/*.json`: one file per shape (the ED file holds the whole family). Each has exact and decimal corners, faces, the move in a form you can replay (`move_exact`), the lattice, the classical constructions (`classical_exact`), the published values compared (`expected`), credits and checks.
 - `exact.py`: exact arithmetic in Q(√2), Q(√3) and Q(√5). Nothing is decided by floating point.
-- `build.py` builds everything (93 of 93 build checks pass). `check.py` re-checks everything from the JSON alone. It prints **223 of 223 checks pass; corrupted copies caught: 54 of 54**. Six kinds of corruption are made in each of 9 solids. The run was on dicto-node; output is in `check.log`.
+- `build.py` builds everything (93 of 93 build checks pass). `check.py` re-checks everything from the JSON alone. It prints **223 of 223 checks pass; corrupted copies caught: 54 of 54**. Six kinds of corruption are made in each of 9 solids. The run was on compute-host-2; output is in `check.log`.
 - `app_crosscheck.mjs`: the app's own krp-core code (pinned e5e5dbc), set to these slider values, gives the same cells: 12 of 12 (`app_crosscheck.log`).
 - `renders/*.png`: each solid beside its classical construction, in the Targets-world colours: squares blue, rhombi pink, regular hexagons gold, other hexagons purple. Classical pieces are gold or purple.
 

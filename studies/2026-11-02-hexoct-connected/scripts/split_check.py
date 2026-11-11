@@ -3,7 +3,7 @@
 # Halves), the tetrahedral piece with its base on layer g (tip at g+1) and the one with its base on layer g+1. Exact test: for
 # every gap in words covering all contexts, the shape of each whole piece (up to lattice symmetry about its site, z kept or
 # flipped) is recorded with the types (T[g], T[g+1]); a piece can be given to a layer only if its shape is fixed by that layer's
-# type alone. Usage: ~/geom/bin/python split_check.py <lam> ...
+# type alone. Usage: python3 split_check.py <lam> ...
 import itertools, sys
 from fractions import Fraction as Fr
 from engine import Cell

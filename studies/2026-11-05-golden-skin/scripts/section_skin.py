@@ -1,7 +1,7 @@
 # Cross-sections through the OG centre of the complete golden fill at three brick sizes (DICTO 5 Nov 2026): OG teal, skin orange, golden bricks gold.
 import json, itertools, numpy as np, manifold3d as m3, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon
-O = np.array(json.load(open("/home/dicto/study-runs/og-pent/og/data/network.json"))["ocd"]); O = O - O.mean(0)
+O = np.array(json.load(open("~/study-runs/og-pent/og/data/network.json"))["ocd"]); O = O - O.mean(0)
 hull = lambda P: m3.Manifold.hull_points(np.asarray(P, float).tolist()); OG = hull(O); r = np.linalg.norm(O, axis=1)
 tips = O[r > r.max() - 1e-6]; ax = []
 for p in tips/np.linalg.norm(tips, axis=1)[:, None]:

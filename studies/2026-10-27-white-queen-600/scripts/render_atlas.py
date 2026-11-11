@@ -2,7 +2,7 @@
 renders/atlas600.png : every slice type, centre to tip, in four directions; vertex-height slices and the slices between
                        them alternate; triangles ivory, squares silver-blue; one scale throughout.
 renders/shadows600.png: the four shadows; Humpty Dumpty (the real 48-vertex slice) beside Fallen Humpty (its equal-edged form, Slice-48 of #62).
-Run on dicto-big-brother:  cd ~/kres-tmp/4d/scripts && ~/geom/bin/python render_atlas.py
+Run on compute-host:  cd ~/work/4d/scripts && python3 render_atlas.py
 """
 import pickle
 

@@ -1,14 +1,14 @@
 # Export the Swap Rule figure pieces (OBJ, cartesian): at d^2 = s*2/3, lam: pure cubic tet (ABC), pure hexagonal tet (AC), and a mixed
 # c|h tet (lower layer c, upper h) split at its gap's mid-plane into bottom and top parts. Also prints exact volumes of the parts.
 import sys, os, itertools
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/st57/scripts')); os.chdir(os.path.expanduser('~/kres-tmp/st57/scripts'))
+sys.path.insert(0, os.path.expanduser('~/work/st57/scripts')); os.chdir(os.path.expanduser('~/work/st57/scripts'))
 from fractions import Fraction as Fr
 import numpy as np
 from scipy.spatial import ConvexHull
 from engine import Net, Cell, aff_eval
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/splash')); from splash import net_for, steps
+sys.path.insert(0, os.path.expanduser('~/work/splash')); from splash import net_for, steps
 _h = open('exact_halves.py').read(); exec(_h[_h.index('def corners_at'):_h.index('def fp(')])
-s, lam = Fr(sys.argv[1]), Fr(sys.argv[2]); OUT = os.path.expanduser('~/kres-tmp/splash/fig'); os.makedirs(OUT, exist_ok=True)
+s, lam = Fr(sys.argv[1]), Fr(sys.argv[2]); OUT = os.path.expanduser('~/work/splash/fig'); os.makedirs(OUT, exist_ok=True)
 def build(word): spec = net_for(word, s); return Net(word, spec['G'], spec['T'], spec['motif'], spec['w']), spec
 def cart(G, pts):
     B = np.array([[1, 0, 0], [0.5, 3 ** .5 / 2, 0], [0, 0, float(G[2][2]) ** .5]]); return np.array([[float(x) for x in p] for p in pts]) @ B

@@ -1,4 +1,4 @@
-# Line-up C copy of studies/2026-10-16-interlock/scripts/interlock.py (inputs from c_chains.py). Interlock step 2 (run on dicto-node, ~/plotenv): the common refinement of the two cycles. Every piece P of the original turn
+# Line-up C copy of studies/2026-10-16-interlock/scripts/interlock.py (inputs from c_chains.py). Interlock step 2 (run on compute-host-2, ~/plotenv): the common refinement of the two cycles. Every piece P of the original turn
 # (cone cut, convex) is intersected with every piece Q of the flipped cycle (turns 0 and 1, which together cover the original turn
 # exactly in the ends setting). Each nonempty P ∩ Q is convex and lies in one layer of each cycle: the interlock pieces.
 # Checks: for every P, the volumes of its parts add back to vol(P); kinds counted by symmetry orbit (geomcheck).

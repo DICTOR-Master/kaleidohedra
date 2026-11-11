@@ -2,7 +2,7 @@
 
 Every number in paper.src.html checked. Sources: **G** = studies/2026-10-24-gnomon-cycle (gnomon-all12.txt, gnomon-exact.txt, gnomon-table.txt, README),
 **K** = studies/2026-10-23-shadow-forms/polar (keyed-polar-exact.txt, keyed_polar1.py output, polarfill1.txt), **C** = this folder's checks.txt
-(26 PASS, ALL PASS), **P** = papers #34/#35/#28/#48 and collected/collected.html (DOIs). All scripts re-run on dicto-big-brother 2026-10-25.
+(26 PASS, ALL PASS), **P** = papers #34/#35/#28/#48 and collected/collected.html (DOIs). All scripts re-run on compute-host 2026-10-25.
 
 | # | Number in the paper | Where | Source | Result |
 |---|---|---|---|---|
@@ -43,7 +43,7 @@ Every number in paper.src.html checked. Sources: **G** = studies/2026-10-24-gnom
 Notes: saved gnomon-table.txt has one extra line ("RT/I x phi^2 = 81 + 0 sqrt5") not printed by gnomon_table.py; the value is check #9.
 Wording (re-audited v1b): "DICTO proposed that the polar has no spikes over the dents" (was "doubted"); grep doubt|ask|question|wonder: only the tool name ask-library remains; no "asked"/"question" for DICTO's ideas; no "new"; Júlia Pimentel credited as "the gnomon method as described to DICTO" (no published source recorded — flagged for DICTO).
 
-## Version 2 (2026-10-25): Part A rebuilt on studies/2026-10-25-gnomon-shapes (**S** = gnomon-shapes.txt / README; re-run on dicto-big-brother, output IDENTICAL, 63 PASS)
+## Version 2 (2026-10-25): Part A rebuilt on studies/2026-10-25-gnomon-shapes (**S** = gnomon-shapes.txt / README; re-run on compute-host, output IDENTICAL, 63 PASS)
 
 | # | Number / claim in v2 | Where | Source | Result |
 |---|---|---|---|---|

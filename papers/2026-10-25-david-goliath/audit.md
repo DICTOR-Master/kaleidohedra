@@ -1,7 +1,7 @@
 # Number audit — "David and Goliath" (draft, #54 or #55), 2026-10-25
 
 Every number and checkable claim in paper.src.html checked against: **E** = studies/2026-10-25-david-goliath/exact_a15.txt (Fraction, exact);
-**P** = checks/exact_pairs.txt (exact, Q(√3); 22 PASS 0 FAIL, run on dicto-big-brother); **PA** = study prior-art.md; **R53** = relay-census README
+**P** = checks/exact_pairs.txt (exact, Q(√3); 22 PASS 0 FAIL, run on compute-host); **PA** = study prior-art.md; **R53** = relay-census README
 "Results"/"Lives of the bonds"; **J** = relay-census data/raw/<net>.json stops; **CR** = Crossref lookup 2026-10-25 (this audit or PA/#53); **hand** = recomputed here.
 
 | # | Claim / number | Where | Source | Result |

@@ -54,7 +54,7 @@ chk('for the rhombohedron of 60° it gives the regular tetrahedra and octahedron
 SS = rd('papers/2026-10-20-dicto-sunstar/paper.src.html')
 chk('the dodecahedra take (5 + √5)/8 of it' in SS and inn('(5 + √5)/8 ≈ 90.45%') and f'{(5 + 5 ** .5) / 8 * 100:.2f}' == '90.45', 'Sunstar: (5 + sqrt5)/8 = 90.45%')
 chk('alternate cubes of a cubic lattice' in SS and inn('alternate cubes of a cubic lattice') and 'stellation 8' in SS, 'Sunstar lattice, Hart stellation 8')
-D = open('/home/dicto/kaleidohedra/DISCOVERIES.md').read() if os.path.exists('/home/dicto/kaleidohedra/DISCOVERIES.md') else rd('DISCOVERIES.md')
+D = open('~/kaleidohedra/DISCOVERIES.md').read() if os.path.exists('~/kaleidohedra/DISCOVERIES.md') else rd('DISCOVERIES.md')
 f21 = D[D.index('## F21.'):D.index('## F21.') + 4000]
 chk('(175 − 75√5)/12 = 60.79%' in f21 and inn('(175 − 75√5)/12 ≈ 60.79%') and f'{(175 - 75 * 5 ** .5) / 12 * 100:.2f}' == '60.79', 'F21: 60.79%')
 chk('one of edge **1/2** + 4 corner' in f21 and 'is the regular octahedron' in f21 and inn('icosahedra of edge 1/2 with corner and edge caps'), 'F21: edge 1/2, caps, regular octahedron')

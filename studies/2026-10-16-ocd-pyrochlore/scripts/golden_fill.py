@@ -5,7 +5,7 @@
 #   check exactly that the adapters fit (no overlaps), that afterwards every wall is golden, and list the convex edges of the
 #   remaining region G' by axis type (a fill needs piece edges along each convex edge direction).
 import sys, io, os, contextlib, itertools, json, numpy as np
-PD = '/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
+PD = '~/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
 sys.argv = ['polar.py', 'data/dharma_cycle.json']
 with contextlib.redirect_stdout(io.StringIO()):
     exec(open('scripts/polar.py').read())
@@ -349,7 +349,7 @@ for lam, nm in [(phi / 9, 'phi/9 (one brick edge per convex edge)'), (Q(Fr(1, 9)
     say(f"brick edge {nm} x|v|: G' per cell = {m} oblate-units + {n} phi-units, i.e. p prolate + o oblate needs o + phi*p = {m} + {n} phi "
         f"-> p = {n}, o = {m}: " + ('whole and non-negative' if m.denominator == 1 and n.denominator == 1 and m >= 0 and n >= 0 else 'NOT whole/non-negative'))
 # ---- Bodhi pieces: edge types implied by their dihedrals (golden planes: 36/72/108/144 -> 5-fold edge, 60/120 -> 3-fold, 90 -> 2-fold)
-BD = '/home/dicto/kaleidohedra/studies/2026-10-12-bodhi-pieces/data'
+BD = '~/kaleidohedra/studies/2026-10-12-bodhi-pieces/data'
 say('\n== Bodhi pieces (FLOAT data from the Bodhi study): dihedral angles; edge type follows exactly from the angle between golden planes')
 for b, nm in [('B1', 'Vajra (fine)'), ('B2', 'Chatra'), ('B3', 'Mudra'), ('B4', 'Crown Jewel'), ('B5', 'Diadem')]:
     D = json.load(open(f'{BD}/bodhi-{b}-unit.json')); ang = sorted({round(x) for x in D['dihedralDegrees'].values()})

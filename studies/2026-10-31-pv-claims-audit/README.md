@@ -13,9 +13,9 @@ edge collapse without citing Hoppe 1996; "proved" for a finite check (composite-
 "duoprism" for a polyhedral prism.
 **Status:** report done (report.html, PDF in ~/Documents/papers-to-read/pv-claims-audit.pdf); nothing in
 ~/polyhedraverse changed. Legal name: 12 occurrences fixed locally in 567b37f, not public (repository archived);
-jamesbaker08@gmail.com still in PRIVACY/SECURITY/TERMS/CODE_OF_CONDUCT; git history (cd847fb, 556a536, dee53eb, 16ddf9d) unchanged.
+contact@dictospheres.com still in PRIVACY/SECURITY/TERMS/CODE_OF_CONDUCT; git history (cd847fb, 556a536, dee53eb, 16ddf9d) unchanged.
 
 ## How
 Read the files listed in report section 11, read the engine and test code, and ran
-verify:radial-projection, verify:rcp-build and verify:stellations on dicto-node (all passed).
-Printed with `~/kres-print/print.mjs` on dicto-node (the report is copied to paper.html there).
+verify:radial-projection, verify:rcp-build and verify:stellations on compute-host-2 (all passed).
+Printed with `~/kres-print/print.mjs` on compute-host-2 (the report is copied to paper.html there).

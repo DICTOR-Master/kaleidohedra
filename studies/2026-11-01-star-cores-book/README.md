@@ -7,7 +7,7 @@ for D106-D108, test not run on Ophelia's 1722 pieces); exact cores period two (D
 turn 2, scale t^2(5 + 2 sqrt5)/15); valley rule over steps 2-3: Cube Pearl x1.72 (phi) x1.91 (2), Golden Clasp x1.71 (phi) x1.45 (2);
 sharpest dihedral angles 120 (exactly), 125.264, 160.151, 161.095 degrees. Status: in the book draft for DICTO's reading; not in a paper.
 
-Run on dicto-big-brother (~/kres-tmp/star-cores-book, ~/geom/bin/python, float64 unless stated), DICTO Solids v7 (~/kres-tmp/dataset-v7).
+Run on compute-host (~/work/star-cores-book, python3, float64 unless stated), DICTO Solids v7 (~/work/dataset-v7).
 - scripts/cards.py: the 60 card pictures (2 x 2 panels; convex: solid, centre-rule star t = phi, polar star rho^2 = phi R^2, polar
   halo; non-convex: solid, centre-rule stars at phi and 2, solid from below; Maedate and Kuwagata: one piece, Kagemusha with five, star
   step one at t = 2 and phi). Imports figs_paper_a.py, star_core.py (study 2026-10-30-star-cores). Piece volumes check against

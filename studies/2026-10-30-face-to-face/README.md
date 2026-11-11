@@ -7,7 +7,7 @@ bipyramid J13 (4 M-S t1 + 2 Hound Tooth, at both tile scales) = two Koca et al. 
 
 **Status:** done; paper #77 drafted (papers/face-to-face, DRAFT-77-face-to-face.pdf in papers-to-read).
 
-- scripts/enum_glue.py: the five-pyramids search with evaluation in the workers (run on dicto-big-brother as
-  ~/kres-tmp/pyramids/scripts/enum_glue_f2f.py, `DEEP=1 ... 6 12`, 4165 s). Counts 191, 1834, 25683, 363319, 5143972.
+- scripts/enum_glue.py: the five-pyramids search with evaluation in the workers (run on compute-host as
+  ~/work/pyramids/scripts/enum_glue_f2f.py, `DEEP=1 ... 6 12`, 4165 s). Counts 191, 1834, 25683, 363319, 5143972.
 - scripts/render_j13.py: Figure 2. data/f2f-deep-L4/L6-results.json: results with positions and merged faces.
 - J13 check: equator coplanar, edges 1 to 2e-16, volume (5+√5)/12; each piece on one side of the equator.

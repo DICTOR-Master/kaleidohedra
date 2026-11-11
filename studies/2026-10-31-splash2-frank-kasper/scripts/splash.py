@@ -1,6 +1,6 @@
 # Splash Rules II, Frank-Kasper run (DICTO 2026-10-31). Driver: builds every structure, computes the exact census
-# (scripts/fk.py), and tests every count for exact straight lines. Run on dicto-big-brother:
-#   ~/geom/bin/python splash.py <rawdir with CIFs> <outdir>
+# (scripts/fk.py), and tests every count for exact straight lines. Run on compute-host:
+#   python3 splash.py <rawdir with CIFs> <outdir>
 # Exact Fractions in every test; floats only inside the Delaunay step of fk.py.
 import sys, os, json, itertools, random
 from fractions import Fraction as Fr

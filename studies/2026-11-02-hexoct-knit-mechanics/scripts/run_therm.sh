@@ -1,6 +1,6 @@
 #!/bin/bash
-# comfort proxies for every sequence (dicto-big-brother); outputs data/therm/<seq>_h<h>_r<r>.json and therm-summary.md
-cd "$(dirname "$0")"; mkdir -p ../data/therm; export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1; PY=~/geom/bin/python; T=()
+# comfort proxies for every sequence (compute-host); outputs data/therm/<seq>_h<h>_r<r>.json and therm-summary.md
+cd "$(dirname "$0")"; mkdir -p ../data/therm; export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1; PY=python3; T=()
 for s in 3C 2H 4H 6H Fibonacci "Graded c-top/h-bottom" "Graded h-top/c-bottom"; do T+=("$s|0.025|0.05" "$s|0.025|0.1"); done
 T+=("3C|0.0167|0.05" "2H|0.0167|0.05")
 printf '%s\n' "${T[@]}" | xargs -P 8 -I{} sh -c 'IFS="|" read s h r <<X

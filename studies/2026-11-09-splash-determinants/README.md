@@ -25,7 +25,7 @@ DICTO proposed reading the splash patterns for coverage: the areas where local r
 
   `scripts/corrd_events.py` does the same for CO ∩ μ·RD, exactly in Q.
 - **Turn and table.** `scripts/turn_checks.py` covers the turn on Ammann–Beenker and Sturmian approximants (data of splash2-approximants) and λ ↦ −λ on every walk. `scripts/aggregate.py` adds the events of earlier studies, checks each factor in sympy, and writes the table, the coverage, the s-family wall lines and both figures.
-- **Where it ran.** All on dicto-big-brother (`~/geom/bin/python`), each run under 10 minutes.
+- **Where it ran.** All on compute-host (`python3`), each run under 10 minutes.
 - **Two slips caught and fixed in this study.** (1) The first icosahedron was set up in the orientation that is not dual to the dodecahedron (a 90° turn), which gave a false dodecahedral sweep. The fix: dual orientation, with the range now closed under m ↦ 1/m, which is checked. (2) One stop (AC at s = 2, λ = 5/12) first came back "no witness". The cause was the candidate budget, not the geometry. A float empty-sphere pre-filter is now standard, and the witness was then found (ttott, 7 sites).
 
 ## 2. Coverage map

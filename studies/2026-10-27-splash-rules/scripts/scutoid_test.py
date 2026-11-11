@@ -4,10 +4,10 @@
 # above the lower plane and just below the upper plane (sides = faces crossing; neighbours = the sites behind those faces), and every
 # corner strictly inside the slab where the set of crossing faces changes. Exact (rational corners at rational lambda).
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/st57/scripts')); os.chdir(os.path.expanduser('~/kres-tmp/st57/scripts'))
+sys.path.insert(0, os.path.expanduser('~/work/st57/scripts')); os.chdir(os.path.expanduser('~/work/st57/scripts'))
 from fractions import Fraction as Fr
 from engine import Net, Cell, aff_eval
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/splash')); from splash import net_for, steps
+sys.path.insert(0, os.path.expanduser('~/work/splash')); from splash import net_for, steps
 def ltype(st, k): n = len(st); return 'c' if st[(k - 1) % n] == st[k % n] else 'h'
 def crossing(c, Z, h):
     out = []

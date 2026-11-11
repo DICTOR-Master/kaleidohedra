@@ -1,6 +1,6 @@
 # Face list of both tiles at one weight (default the chosen lambda = -1/8): corners, sides (in units of the ball spacing),
 # ring count, and which part (solid) of the tile each face belongs to.
-# Usage (dicto-big-brother): TILES_DIR=~/kres-tmp/endless ~/geom/bin/python faces_at.py [lambda] -> stdout, ../out/faces-<lam>.json
+# Usage (compute-host): TILES_DIR=~/work/endless python3 faces_at.py [lambda] -> stdout, ../out/faces-<lam>.json
 import os, sys, json
 from fractions import Fraction as Fr
 HERE = os.path.dirname(os.path.abspath(__file__))

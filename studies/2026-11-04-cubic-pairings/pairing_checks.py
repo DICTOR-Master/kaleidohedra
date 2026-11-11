@@ -1,6 +1,6 @@
 # DICTO 2026-11-04, paper #93 (DICTO's idea: carry the method of #92 over to the cubic pairings).
-# Checks for the paper.  Run with the geom venv on dicto-big-brother:
-#   ~/geom/bin/python pairing_checks.py > data/pairing-checks.log
+# Checks for the paper.  Run with the geom venv on compute-host:
+#   python3 pairing_checks.py > data/pairing-checks.log
 # Part A  the angle algebra: dihedral cosines of every piece (sympy, exact), alpha/pi irrational, and the complete
 #         list of wedge combinations round an edge (2*pi) or on a face (pi) for each set of pieces (exact integers).
 # Part B  the CsCl walk C n muC* / C n (3-mu)C* (#90, Prop. 6): face shapes, edge lengths and dihedral angles with mu

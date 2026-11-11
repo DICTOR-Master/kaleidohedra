@@ -1,4 +1,4 @@
-# Figures for Splash Rules II, approximants (dicto-big-brother): ~/geom/bin/python figs.py ../out ../fig
+# Figures for Splash Rules II, approximants (compute-host): python3 figs.py ../out ../fig
 # Floats only for drawing; every plotted value is an exact rational (or Q(sqrt2), Q(sqrt5) number) from sturm.py / abfam.py.
 import sys, os, json, math, itertools
 from fractions import Fraction as Fr
@@ -9,7 +9,7 @@ from matplotlib.patches import Polygon
 from zono import int_kernel, zonogon
 
 IN, OUT = sys.argv[1], sys.argv[2]; os.makedirs(OUT, exist_ok=True)
-LOGO = plt.imread(os.path.expanduser('~/kres-tmp/dicto-logo.png'))
+LOGO = plt.imread(os.path.expanduser('~/work/dicto-logo.png'))
 GOLD, INK, GREY, BLUE, RED, GREEN = '#b8962e', '#222222', '#9a9a9a', '#2f5d8a', '#a8402e', '#4f7d3a'
 plt.rcParams.update({'font.size': 8, 'axes.linewidth': 1.0, 'font.family': 'DejaVu Sans', 'axes.edgecolor': '#555555'})
 def mark(fig):

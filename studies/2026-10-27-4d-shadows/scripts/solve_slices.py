@@ -6,7 +6,7 @@ For one slice label and one group ('full' or 'rotations'):
     solutions are exactly the real roots of f: counted exactly by a Sturm sequence over Q(sqrt5) (exact signs);
   * every real solution is evaluated at 60 digits and the embedding checked (distinct vertices, no 180-degree edge,
     no self-intersection, positive volume), with the margins printed.
-Usage: ~/geom/bin/python solve_slices.py V72 full
+Usage: python3 solve_slices.py V72 full
 """
 import json
 import pickle

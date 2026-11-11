@@ -184,7 +184,7 @@ Results of the second run:
 - **Figures (`figures/`), both with the DICTO mark:**
   - `leaning-hexagon-piece.png`: the E6 staircase with six sides leaning, from above and below, and the stripe pair (upright and turned over);
   - `leaning-hexagon-cluster.png`: a layer of seven with copies above, and the stripe rows over two layers.
-- Everything ran on dicto-big-brother (`~/geom/bin/python`, 22 workers). The longest run, 04, took 220 s.
+- Everything ran on compute-host (`python3`, 22 workers). The longest run, 04, took 220 s.
 - The figures use matplotlib's depth sorting, which is imperfect at a few overlaps; the geometry itself is checked in 03 (B).
 
 ## Ledger line (ready for concordance.json ledger.entries)

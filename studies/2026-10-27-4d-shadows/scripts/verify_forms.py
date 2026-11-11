@@ -5,7 +5,7 @@ For each pair that shares one vertex v: minimum distance between the two triangl
 (barycentric weight of v at most 0.8), which is positive exactly when the faces meet only at v near that corner.
 For each pair sharing an edge: the dihedral angle's distance from 0 and 360 degrees (faces folding onto each other).
 Floats (the solutions are known to 60 digits); the margins are printed so they can be judged.
-Usage: ~/geom/bin/python verify_forms.py data/solve_V28_full.json
+Usage: python3 verify_forms.py data/solve_V28_full.json
 """
 import itertools
 import json

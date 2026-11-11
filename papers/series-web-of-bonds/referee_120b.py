@@ -1,4 +1,4 @@
-# Referee attack on the series paper by the local workhorse on dicto-big-brother. Claude judges every point before anything changes.
+# Referee attack on the series paper by the local workhorse on compute-host. Claude judges every point before anything changes.
 import json, pathlib, re, html, urllib.request
 d = pathlib.Path(__file__).parent; key = (pathlib.Path.home() / '.config/dicto/llama-key').read_text().strip()
 txt = html.unescape(re.sub(r'<[^>]+>', ' ', (d / 'paper.src.html').read_text())); txt = re.sub(r'\s+', ' ', txt)
@@ -9,7 +9,7 @@ rules = ('You are a hard, fair referee. Attack this short paper. Check EVERY fac
 user = 'PAPER:\n' + txt + '\n\nDOSSIER (JSON):\n' + (d / 'dossier.json').read_text()
 body = json.dumps({'model': 'workhorse', 'messages': [{'role': 'system', 'content': rules}, {'role': 'user', 'content': user}],
                    'max_tokens': 8000, 'temperature': 0.2, 'chat_template_kwargs': {'enable_thinking': False}}).encode()
-r = urllib.request.Request('http://dicto-big-brother.local:8081/v1/chat/completions', data=body,
+r = urllib.request.Request('http://compute-host:8081/v1/chat/completions', data=body,
                            headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key})
 (d / 'referee-v3-120b.md').write_text(json.load(urllib.request.urlopen(r, timeout=5400))['choices'][0]['message']['content'].strip() + '\n')
 print('referee-v3-120b.md written')

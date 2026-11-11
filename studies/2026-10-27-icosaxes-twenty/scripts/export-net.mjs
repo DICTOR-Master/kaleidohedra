@@ -2,7 +2,7 @@
 // (1,1,1) + <(2,2,-2), (2,-2,2), (-2,2,2)>; the middle cluster and its 8 neighbours, each Icosaxes written once (every one is shared by
 // two clusters). Sites scaled by phi/2.
 import { writeFileSync } from 'node:fs';
-import { PHI, FLAT, pieceSurface, toPolygons } from '/home/dicto/k-mix/src/krp-core/src/polyhedra/golden-split.js';
+import { PHI, FLAT, pieceSurface, toPolygons } from '~/k-mix/src/krp-core/src/polyhedra/golden-split.js';
 const I = toPolygons(pieceSurface(true, Array(8).fill(FLAT))), U = toPolygons(pieceSurface(false, Array(8).fill(FLAT)));
 const at = (n) => n.map((c) => (c * PHI) / 2);
 const anchors = [[1, 1, 1], ...[-1, 1].flatMap((x) => [-1, 1].flatMap((y) => [-1, 1].map((z) => [1 + 2 * x, 1 + 2 * y, 1 + 2 * z])))];

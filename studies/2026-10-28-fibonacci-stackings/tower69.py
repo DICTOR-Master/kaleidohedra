@@ -56,7 +56,7 @@ fig.text(0.02, 0.93, 'A Fibonacci crystal: rock salt on the 16-layer Fibonacci s
 fig.text(0.02, 0.885, 'balls: cubic layer blue, hexagonal layer gold · octahedral atoms between layers: cubic–cubic pale blue, cubic–hexagonal and hexagonal–cubic rose · never hexagonal–hexagonal',
          color='#bdb8a8', fontsize=10.5)
 fig.text(0.98, 0.03, 'DICTO', color='#d4af37', fontsize=18, ha='right', family='serif', weight='bold')
-out = os.path.expanduser('~/kres-tmp/fig69'); os.makedirs(out, exist_ok=True)
+out = os.path.expanduser('~/work/fig69'); os.makedirs(out, exist_ok=True)
 fig.savefig(os.path.join(out, 'fibonacci-tower.png'), dpi=240, facecolor=fig.get_facecolor())
 # check: kinds present, and each kind one volume; ball kinds against the run's pure pieces (halves: ball = pure piece of its own type)
 ex = json.load(open(sys.argv[1])); wv = next(w for w in ex['windows'] if F(w['lo']) < F(1, 3) < F(w['hi']))

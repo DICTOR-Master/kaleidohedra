@@ -9,7 +9,7 @@
 #           turn t -> g/t, DICTO's t = 2 and phi placed in their hops, and the incidences where the side hyperplane of a facet
 #           pyramid (through a ridge and the tip) passes through a corner or another tip, flagged when it is a facet hyperplane
 #           of P (a stellation). Known checks: tesseract at t = 2 -> 24-cell; small stellated 120-cell = 120-cell star at t = 2/phi.
-# Usage: ~/geom/bin/python -u s3_census4d.py <flags.json> <out json>
+# Usage: python3 -u s3_census4d.py <flags.json> <out json>
 import sys, json, time
 from regstar import *
 import turnlib as TL

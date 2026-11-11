@@ -233,7 +233,7 @@ Coordination numbers per piece, for every interval and stop, are in `data/raw/ta
 
 Several of these may be easy, or already known in the radical-tessellation and crystallography literature. Koch 1973 and the radical-tessellation papers should be read, and a web search made, before any novelty claim.
 
-## Run times (dicto-big-brother, `nice -n 10`, load < 1 throughout, one job at a time)
+## Run times (compute-host, `nice -n 10`, load < 1 throughout, one job at a time)
 
 | step | time |
 |---|---|
@@ -259,4 +259,4 @@ Several of these may be easy, or already known in the radical-tessellation and c
 - `scripts/crosscheck.py`: float cross-check and exact hinge dual cells. Writes `data/checks/crosscheck-checks.txt`.
 - `scripts/walls.py`: exact check at the midpoints of the five interior perovskite wall segments. Writes `data/checks/perovskite-walls-checks.txt`.
 - `scripts/tables.py`: writes `data/raw/tables.md`, the full tables of cells and bonds per interval and stop.
-- `scripts/run.sh`: reruns everything on dicto-big-brother.
+- `scripts/run.sh`: reruns everything on compute-host.

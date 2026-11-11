@@ -24,11 +24,11 @@ no coordinates in reach). Not run: volumes (weight walk) — counts only, as for
 - Families: scripts/sqtri.py (square–triangle row tilings, Sullivan / Sadoc–Mosseri Z16-free decoration; S = A15, T = Z, ST = H,
   STT = J); scripts/fk59.py (kagome slabs, steps t ∈ {0,+,−}: ± Laves slab, 0 Z slab; + = C15, +− = C14, 0 = Z, 0+ = μ,
   0+0− = K7Cs6), rules read off AFLOW C14, C36, Zr4Al3, Fe7W6 and COD 9R. Ideal coordinates.
-- Splash (scripts/splash.py, dicto-big-brother, 22 processes, ~30 s): 18 real phases + 62 square–triangle words (all primitive up
+- Splash (scripts/splash.py, compute-host, 22 processes, ~30 s): 18 real phases + 62 square–triangle words (all primitive up
   to 7 + 30 random of 20) + 119 kagome words (all up to 6 + 40 random of 14) = 199 TCP structures; 4 non-TCP checks. Per-atom
   global fits (constant / line in Z̄ / line in x12 / plane (x12, a0) / site-additive); per-unit window fits over unit words (exact
   elimination); scripts/report.py (tables, checks, stacking-blindness); scripts/relations.py, relations2.py (sympy nullspaces);
-  scripts/figs.py (matplotlib on dicto-big-brother).
+  scripts/figs.py (matplotlib on compute-host).
 
 ## Sources of coordinates (data/cif/)
 AFLOW prototype encyclopedia CIFs: A3B_cP8_223_c_a-001 (A15 Cr3Si), A2B_cF24_227_c_b-001 (C15 MgCu2), AB2_hP12_194_f_ah-001 (C14

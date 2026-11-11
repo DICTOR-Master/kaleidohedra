@@ -10,13 +10,13 @@ Method (all arithmetic exact in Q(sqrt5), q5.Q5 over Fractions; floats only prop
     |f(p) - f(q)|^2 = lam |p - q|^2 for all pairs. A bijection of finite point sets scaling all distances by one factor
     is a similarity (it extends to an isometry of the affine hulls after scaling), so this proves congruence up to scale.
     Also the house invariant (sorted squared distances over their sum) is compared exactly.
-usage (dicto-big-brother): ~/geom/bin/python s7_icosaxes_exact.py -> ../data/s7-icosaxes-exact.json
+usage (compute-host): python3 s7_icosaxes_exact.py -> ../data/s7-icosaxes-exact.json
 """
 import sys, os, json, itertools
 from fractions import Fraction as Fr
 import sympy as sp
 HERE = os.path.dirname(os.path.abspath(__file__)); DATA = os.path.join(HERE, '..', 'data')
-SC = os.path.expanduser('~/kres-tmp/studies/2026-10-27-white-queen-polar/scripts')
+SC = os.path.expanduser('~/work/studies/2026-10-27-white-queen-polar/scripts')
 sys.path.insert(0, SC); cwd = os.getcwd(); os.chdir(SC)
 import atlas120 as A
 os.chdir(cwd)
@@ -56,7 +56,7 @@ check(f'section corners: {len(on)} 120-cell corners on the hyperplane + {len(cro
 check('all section points lie on the hyperplane (exact)', all(A.dot(p, d) == h for p in S))
 
 # 2. targets, exact
-w = json.load(open(os.path.expanduser('~/kres-tmp/dataset-v7/solids/dicto-icosaxes.json')))
+w = json.load(open(os.path.expanduser('~/work/dataset-v7/solids/dicto-icosaxes.json')))
 ICX = [tuple(to_q5(c) for c in v['exact']) for v in w['vertices']]
 g2 = Q5(Fr(3, 2), Fr(-1, 2))                            # 1/phi^2 = (3 - sqrt5)/2
 OCT = [tuple(Q5(s if i == k else 0) for k in range(3)) for i in range(3) for s in (1, -1)]

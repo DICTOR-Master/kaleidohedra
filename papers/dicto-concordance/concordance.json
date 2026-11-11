@@ -7532,7 +7532,7 @@
    },
    {
     "date": "2026-11-09",
-    "mess_up": "hard-wired helper machines kept being 'lost': the print machine was set up by IP (192.168.0.7) and the router's DHCP moved it to .12; DICTO: 'you keep losing connection with hard wired equipment and how to solve the problem permanently'",
+    "mess_up": "hard-wired helper machines kept being 'lost': the print machine was set up by IP (compute-host) and the router's DHCP moved it to .12; DICTO: 'you keep losing connection with hard wired equipment and how to solve the problem permanently'",
     "guard": "(1) ~/dicto-alerts/findhosts.sh, run by show.sh each session/step: checks the compute machine and the print machine by ssh name; if one fails, scans the LAN by hostname, rewrites its HostName in ~/.ssh/config and reports (tested: wrong address healed in 6 s). (2) PERMANENT CURE DONE 11-09: avahi enabled on the print machine by DICTO; both helpers now reached by name (NAME.local).",
     "where": "~/dicto-alerts/findhosts.sh, ~/.ssh/config"
    },

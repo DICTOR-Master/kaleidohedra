@@ -3,7 +3,7 @@ prints its steps' exact hops (walls) and the chain hop on which the closure iden
 START at once, PROGRESS per run finished, FINAL ok when every run has ended (FINAL FAIL lines inside are results too: listed)."""
 import subprocess, os
 from concurrent.futures import ThreadPoolExecutor
-PY = os.path.expanduser('~/geom/bin/python')
+PY = os.path.expanduser('python3')
 RUNS = [('d-3o4', ['chain_sym5.py', '3/4', '5']), ('d-21o20', ['chain_sym5.py', '21/20', '8']), ('d-13o10', ['chain_sym5.py', '13/10', '6']),
         ('d-29o20', ['chain_sym5.py', '29/20', '3']), ('c-14o25', ['chain_sym.py', '14/25', '8'])]
 os.makedirs('windows', exist_ok=True); done = [0]

@@ -5,7 +5,7 @@
 #  W: layer L's tile = its two tetrahedra (bases on layer L) + the WHOLE octahedron of the gap above (depends on L's letter only:
 #     tetrahedra over pos(L-1) and pos(L+1), octahedron over the third position of L, L+1);
 #  G: the whole gap slab between layers L and L+1 (octahedron + both tetrahedra): ONE tile for every stacking (no c/h).
-# Usage: ~/geom/bin/python alt_split.py -> data/alt_split.json
+# Usage: python3 alt_split.py -> data/alt_split.json
 import json, os, sys
 from fractions import Fraction as Fr
 from engine import Cell

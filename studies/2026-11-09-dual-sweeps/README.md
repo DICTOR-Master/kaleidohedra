@@ -62,7 +62,7 @@ every corner. The CO's corners (1, 1, 0) satisfy the same relation, so Q4 equals
 Ledger: entries 15 and 41 (CO–RD Q6 and Dehn) and 58 (sphere row) touch these lines; none attempted walls, turn or golden placement.
 Nothing here retries an earlier attempt.
 
-Scripts: scripts/, all run on dicto-big-brother with ~/geom/bin/python and sympy 1.14. Each takes under 3 min and ends FINAL ok; the
+Scripts: scripts/, all run on compute-host with python3 and sympy 1.14. Each takes under 3 min and ends FINAL ok; the
 logs are in data/. sweeplib.py is an exact Q(√d) field plus a polar-line walker: corners are found in floating point, then re-solved
 and certified exactly. On a hop every corner is p + μq, and the next wall is the smallest root of a·(p + μq) = b(μ). drive.py
 finds walls, kinds, foot walls and the exact t_min envelope. s0_cube_oct_known.py is the known case. s1_co_rd.py and s2_id_rt.py are

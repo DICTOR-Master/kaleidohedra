@@ -82,4 +82,4 @@ eight round an Unborn Axes make the Icosaxes Hexa, the perfect Kagome node of th
 
 ## Data
 `data/*-union.obj`: joined solids (manifold3d), sites scaled ×φ/2; `*.json`: pieces as vertices + triangles. Scripts need
-krp-core from ~/k-mix and ~/geom (numpy, scipy, sympy, manifold3d, trimesh) on dicto-big-brother.
+krp-core from ~/k-mix and ~/pyenv (numpy, scipy, sympy, manifold3d, trimesh) on compute-host.

@@ -1,5 +1,5 @@
 // DICTO 2026-10-19: clean renders for the octet paper (no page captions, house background, fixed square stage), from the study 3D pages.
-// Run on dicto-node: node shoot_clean.mjs <repo root> <out dir> [only-name ...]
+// Run on compute-host-2: node shoot_clean.mjs <repo root> <out dir> [only-name ...]
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 const [ROOT, OUT, ...ONLY] = process.argv.slice(2); fs.mkdirSync(OUT, { recursive: true });

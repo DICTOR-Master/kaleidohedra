@@ -7,7 +7,7 @@ Part A (exact): for each pair, (i) the sweep cycle  P* -> golden/Archimedean sec
   Archimedean truncation of P*); tight closure exact.
 Part B (search): all tight cycles through <= 5 intermediate stations from P back to P; floating point search, every reported
   hit re-checked exactly. Targets: phi^k, (1 + sqrt2)^k, 2, 3, (R/r)^2.
-usage (dicto-big-brother): ~/geom/bin/python s6_cycles.py co|di|tt -> ../data/s6-cycles-<pair>.json
+usage (compute-host): python3 s6_cycles.py co|di|tt -> ../data/s6-cycles-<pair>.json
 """
 from dp_lib import *          # noqa
 import sys, numpy as np

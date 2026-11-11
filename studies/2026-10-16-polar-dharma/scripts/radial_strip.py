@@ -1,4 +1,4 @@
-# Radial strip (DICTO, 2026-10-16): the up-down toggle at a glance (matplotlib; run with ~/plotenv/bin/python on dicto-node).
+# Radial strip (DICTO, 2026-10-16): the up-down toggle at a glance (matplotlib; run with ~/plotenv/bin/python on compute-host-2).
 # Radius on a log scale. Top row: the original Spheres of Dharma, each station a dot at the geometric mean of its face distance d
 # and corner radius R, with a thin line from d to R; repeated by phi^3. Bottom row: its polar image in the toggle sphere; station
 # X goes to rho^2/R .. rho^2/d. Dashed: the mirror spheres rho * phi^(3k/2). Grey links join each station to its image. Black:

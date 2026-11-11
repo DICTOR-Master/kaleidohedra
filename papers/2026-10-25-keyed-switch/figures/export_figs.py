@@ -1,4 +1,4 @@
-# OBJs for the #56 figures (run on dicto-big-brother in a folder holding proof.py, app-solids.json, keyed_gyrated.py and the census).
+# OBJs for the #56 figures (run on compute-host in a folder holding proof.py, app-solids.json, keyed_gyrated.py and the census).
 # fig1: dodecahedron = cube + roofs, Dogstar = cube − roofs, one roof; fig2: the two walks' pieces (octet: Samson, Delilah, cube;
 # twinned: Sonsam, Lahdeli, Ian Dury, rhombohedron, Blockhead).
 import os, itertools, json, numpy as np, trimesh, manifold3d as m3

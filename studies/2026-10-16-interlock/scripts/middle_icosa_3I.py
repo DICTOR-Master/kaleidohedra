@@ -2,7 +2,7 @@
 # icosahedron whose edge thirds are the truncated icosahedron's corners (TI plus its 12 caps, an in-between Dharma stage), with its
 # 12 corners among the triacontahedron's corners. All in Q(sqrt5), no floats in the comparisons. -> data/middle-icosa-3I.txt
 import os, io, sys, contextlib, itertools
-PD = '/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
+PD = '~/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
 sys.argv = ['polar.py', 'data/dharma_cycle.json']
 with contextlib.redirect_stdout(io.StringIO()):
     exec(open('scripts/polar.py').read())

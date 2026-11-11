@@ -1,5 +1,5 @@
 # First drafts of the unwritten chapters of "The Centre Pyramids: from Plato to Kepler" (DICTO), written by the local
-# workhorse on dicto-big-brother (token-free). DRAFTS ONLY: Claude checks every fact, name and number before use.
+# workhorse on compute-host (token-free). DRAFTS ONLY: Claude checks every fact, name and number before use.
 # Usage: python3 draft_chapters.py   (writes drafts/ch<N>-<name>.html and drafts/LOG.txt)
 import json, re, pathlib, urllib.request, time
 H = pathlib.Path(__file__).parent; D = H / 'drafts'
@@ -40,7 +40,7 @@ for name, brief, src in JOBS:
     t0 = time.time()
     body = json.dumps({'messages': [{'role': 'system', 'content': RULES}, {'role': 'user', 'content': brief + '\n\nSOURCE TEXT (for facts):\n' + src}],
                        'max_tokens': 2600, 'temperature': 0.3, 'chat_template_kwargs': {'enable_thinking': False}}).encode()
-    r = urllib.request.Request('http://dicto-big-brother.local:8081/v1/chat/completions', data=body,
+    r = urllib.request.Request('http://compute-host:8081/v1/chat/completions', data=body,
                                headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key})
     try:
         out = json.load(urllib.request.urlopen(r, timeout=1800))['choices'][0]['message']['content']

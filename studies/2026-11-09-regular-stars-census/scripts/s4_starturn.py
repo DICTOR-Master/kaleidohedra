@@ -8,7 +8,7 @@
 #  (c) control: for the convex polytopes t_min* equals the closed form of the turn theorem, E min(U_mu, U_c/mu)/h^2, exactly;
 #  (d) a 4001-point float scan in log mu: argmax, symmetry, concavity of log t_min* in log mu, and the unfolded value (g = 1 only,
 #      the convex formula applied to the star's own flag radii) for comparison.
-# Usage: ~/geom/bin/python -u s4_starturn.py <flags.json> <out json>
+# Usage: python3 -u s4_starturn.py <flags.json> <out json>
 import sys, json, time, math
 import numpy as np
 from regstar import *

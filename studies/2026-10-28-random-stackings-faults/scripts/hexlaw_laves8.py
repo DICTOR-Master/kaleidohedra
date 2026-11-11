@@ -1,6 +1,6 @@
 # Hexagonality Law for the Laves phases on every close-packed stacking up to EIGHT layers (15 words), every lam-window, every role,
 # including the foot atom M0, which above lam = 17/96 reads three layer types (#64) and for which the law is not proved (#66).
-# Run on dicto-big-brother: cd ~/kres-tmp/splash2 && ~/geom/bin/python hexlaw_laves8.py
+# Run on compute-host: cd ~/work/splash2 && python3 hexlaw_laves8.py
 import os, json
 from fractions import Fraction as Fr
 import sympy as sp

@@ -4,7 +4,7 @@
 # Checks: every corner solved exactly and inside all its half-spaces; cell volumes sum to vol T − vol A exactly; the scutoids (inner and
 # outer face sides differ, a free corner); congruence classes by exact volume. -> data/scutoid-bundle-exact.txt
 import itertools, numpy as np
-exec(open('/home/dicto/kaleidohedra/studies/2026-10-17-scutoids/scripts/scutoid_exact.py').read().split("out = ['DICTO")[0])
+exec(open('~/kaleidohedra/studies/2026-10-17-scutoids/scripts/scutoid_exact.py').read().split("out = ['DICTO")[0])
 from scipy.spatial import HalfspaceIntersection, ConvexHull
 s, p, k, q = Q(Fr(27, 20)), Q(Fr(13, 20)), Q(Fr(33, 25)), Q(Fr(1, 50))
 SQ = [[Q(1), Q(0), Q(0)], [Q(-1), Q(0), Q(0)], [Q(0), Q(1), Q(0)], [Q(0), Q(-1), Q(0)], [Q(0), Q(0), Q(1)], [Q(0), Q(0), Q(-1)]]
@@ -75,4 +75,4 @@ for key, vs in sorted(kinds.items()):
     sc = tag == 'layer' and inn > 2 and outn > 2 and inn != outn and free > 0; nsc += len(vs) if sc else 0
     out.append(f'  {tag} {g}: {len(vs)} cells, inner {inn}, outer {outn}, free corners {free}, corners {nc}; volume classes {len(set(vs))}' + ('  SCUTOID' if sc else ''))
 out.append(f'scutoids: {nsc}; the bundle T tiles space on the bcc lattice')
-print('\n'.join(out)); open('/home/dicto/kaleidohedra/studies/2026-10-17-scutoids/data/scutoid-bundle-exact.txt', 'w').write('\n'.join(out) + '\n')
+print('\n'.join(out)); open('~/kaleidohedra/studies/2026-10-17-scutoids/data/scutoid-bundle-exact.txt', 'w').write('\n'.join(out) + '\n')

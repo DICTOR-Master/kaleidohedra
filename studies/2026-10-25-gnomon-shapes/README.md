@@ -17,7 +17,7 @@ per face of A (B ∩ cone over the face, outside its plane; faces of A lying in 
 from three exact planes and checked against all half-spaces; volumes are exact determinant sums; the pieces of each step add up exactly
 to the layer. Step 1 is the 20 spikes; step 2 is DICTO's published fill (#35 Table 2). Similarity is tested exactly on *all* squared
 corner distances (a full corner-to-corner correspondence, mirror allowed; handedness reported) — between all piece kinds of all steps,
-between pieces and stations, and between all stations. Run on dicto-big-brother → `gnomon-shapes.txt`, `pieces.json`;
+between pieces and stations, and between all stations. Run on compute-host → `gnomon-shapes.txt`, `pieces.json`;
 figure `fig_steps.py` → `gnomon-shapes.png`.
 
 ## Results (volumes as multiples of the volume of I)

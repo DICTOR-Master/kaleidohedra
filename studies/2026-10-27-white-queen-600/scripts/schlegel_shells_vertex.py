@@ -4,7 +4,7 @@ through the outer cell and the central cell). Within a shell, cells are sorted i
 depend on the eye distance: the sorted list of (height, distance from the axis) of their four vertices (equal for cells
 related by a symmetry round the axis, mirrors included). Also: adjacency shells (steps from the central cell), as a check.
 Decimal check (rounded to 1e-9); exact version to follow.
-Run on dicto-big-brother:  cd ~/kres-tmp/4d/scripts && ~/geom/bin/python schlegel_shells.py ../data/600cell-source.json
+Run on compute-host:  cd ~/work/4d/scripts && python3 schlegel_shells.py ../data/600cell-source.json
 """
 import json
 import sys

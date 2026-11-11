@@ -1,6 +1,6 @@
 Traceback (most recent call last):
-  File "/home/dicto/yantra-audit/rerun/2026-11-08-tetra-yantra/cleo_cap.py", line 20, in <module>
+  File "~/yantra-audit/rerun/2026-11-08-tetra-yantra/cleo_cap.py", line 20, in <module>
     rho = brentq(lambda r: report(r)[0] - 72, math.radians(5), math.radians(89))
-  File "/home/dicto/geom/lib/python3.14/site-packages/scipy/optimize/_zeros_py.py", line 858, in brentq
+  File "~/pyenv/lib/python3.14/site-packages/scipy/optimize/_zeros_py.py", line 858, in brentq
     r = _zeros._brentq(f, a, b, xtol, rtol, maxiter, args, full_output, disp)
 ValueError: f(a) and f(b) must have different signs

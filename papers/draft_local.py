@@ -1,4 +1,4 @@
-# Draft a paper with the local workhorse model on dicto-big-brother (run there). A DRAFT only: Claude checks every claim against the
+# Draft a paper with the local workhorse model on compute-host (run there). A DRAFT only: Claude checks every claim against the
 # dossier and the studies before anything reaches DICTO. Usage: draft_local.py <paper folder> "<title>"
 # Less invention (DICTO 2026-10-27, "modify DBB to hallucinate less"): reasoning on (with room for it), temperature 0.1, one outline
 # section per call; then check_local.py lists every claim with the dossier line behind it.

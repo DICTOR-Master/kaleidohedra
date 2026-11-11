@@ -7,7 +7,7 @@
   * every candidate refined by Newton on the exact equations at 120 digits; distinct refined solutions counted;
     if that count equals N, every solution is simple and none is missing (complete);
   * real solutions (|imaginary part| < 1e-80) checked for embedding (solve_slices.embed_check).
-Usage: ~/geom/bin/python solve_eig.py V30 full
+Usage: python3 solve_eig.py V30 full
 """
 import json
 import pickle

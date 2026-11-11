@@ -39,7 +39,7 @@ rhombic faces of Conway's join. So the theorem is the "thick" version of the joi
 **Exact check:** for all ten solids above, at ×2 (and ×φ for the Q(√5) solids), every piece has nonzero volume of one orientation per kind,
 and the pieces add up exactly to the halo's volume (data/study1.json, `polar`).
 
-Files: scripts/study1.py (exact, uses the dataset's exactlib), scripts/gains.py; data/study1.json, study1.log, gains.txt. Run on dicto-big-brother.
+Files: scripts/study1.py (exact, uses the dataset's exactlib), scripts/gains.py; data/study1.json, study1.log, gains.txt. Run on compute-host.
 
 ## 3. Prior art for the theorem (searched 2026-10-30)
 

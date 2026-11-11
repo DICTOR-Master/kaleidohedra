@@ -31,7 +31,7 @@ DICTO asked what could explain these misfits: gravity, pressure, temperature, sl
 
 ## Method
 
-**`scripts/anomalies.py`** (sympy + floats). It runs on dicto-big-brother with `nice -n 10`, at load 0.8, in 1.6 s. It reads the anchors study's `shannon.json` and `compounds.json`. It recomputes every ρ and asserts that each one equals the anchors value.
+**`scripts/anomalies.py`** (sympy + floats). It runs on compute-host with `nice -n 10`, at load 0.8, in 1.6 s. It reads the anchors study's `shannon.json` and `compounds.json`. It recomputes every ρ and asserts that each one equals the anchors value.
 - **E: exact.** Window edges and the octet stop as surds.
 - **Q1: required radius changes (exact).** For every compound, the exact radius each ion would need to put it on the nearest window edge, and (Delian) on the octet stop. Each ion is moved alone, and also both ions together by equal relative amounts. These are compared with:
   - IR vs crystal radii (CR);
@@ -234,6 +234,6 @@ Every DOI below was checked on api.crossref.org: the title, journal, year, volum
 
 - `scripts/anomalies.py`: everything above. Writes `data/raw/anomalies.json` and `data/checks/anomalies-checks.txt`.
 - `scripts/crossref_check.py`: writes `data/raw/crossref.json`.
-- `scripts/run.sh`: reruns everything (Crossref on the Pi, the analysis on dicto-big-brother).
+- `scripts/run.sh`: reruns everything (Crossref on the Pi, the analysis on compute-host).
 - `data/raw/values.json`: every external number, with its source and how it was read.
 - `data/raw/sources/`: `george2020-pmc.txt` and `wang2014-pmc.txt` (full texts from PMC), `iaea-tecdoc-1496-excerpt.txt` (UO₂ expansion and the λ transition), `nist-srm-674a-table3.txt` (the CeO₂ lattice parameter).

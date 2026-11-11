@@ -5,7 +5,7 @@ proportions intact). Faces: convex hull, each face's corners ordered counter-clo
 import os, sys, math, json, numpy as np
 from fractions import Fraction as Fr
 from scipy.spatial import ConvexHull
-HEX = os.path.expanduser('~/kres-tmp/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
+HEX = os.path.expanduser('~/work/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
 import tiles as T
 os.chdir(here); H = math.sqrt(2/3)
 def cart(p): return np.array([float(p[0]) + float(p[1])/2, float(p[1])*math.sqrt(3)/2, float(p[2])*H])

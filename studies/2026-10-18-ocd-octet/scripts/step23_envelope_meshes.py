@@ -1,4 +1,4 @@
-# DICTO 2026-10-18 octet study -- STEP 23 (dicto-node, manifold3d): meshes of the envelope kit for the 3D page: the golden envelope (RT),
+# DICTO 2026-10-18 octet study -- STEP 23 (compute-host-2, manifold3d): meshes of the envelope kit for the 3D page: the golden envelope (RT),
 # the outer corner at the +z vertex (octahedron minus envelope, connected part), the dented tetrahedron T+ (T+ minus the 4 envelopes).
 # usage: python3 step23_envelope_meshes.py step10-input.json step22-input.json OUT.json
 import sys, json, itertools, numpy as np, manifold3d as m3

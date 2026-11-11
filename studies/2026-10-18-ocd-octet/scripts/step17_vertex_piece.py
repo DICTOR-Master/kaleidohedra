@@ -1,4 +1,4 @@
-# DICTO 2026-10-18 octet study -- STEP 17 (dicto-node, manifold3d): merge caps with middle rests into one vertex piece per octet vertex,
+# DICTO 2026-10-18 octet study -- STEP 17 (compute-host-2, manifold3d): merge caps with middle rests into one vertex piece per octet vertex,
 # then score every piece's chunkiness by sphericity psi = pi^(1/3) (6V)^(2/3) / A.
 # usage: python3 step17_vertex_piece.py step10-input.json step15-input.json OUT.json
 import sys, json, itertools, numpy as np, manifold3d as m3

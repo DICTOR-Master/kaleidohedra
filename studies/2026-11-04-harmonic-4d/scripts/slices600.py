@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Harmonic fingerprint (3D, #94) of the slices of the 600-cell (White Queen) perpendicular to a corner axis and to a cell axis.
 Slice at height h: the points where edges of the 600-cell cross the hyperplane x·n = h (plus corners lying on it); fingerprint = Q4, Q6, Q8 of
-their directions from the slice centre. Reports zeros along h. dicto-big-brother."""
+their directions from the slice centre. Reports zeros along h. compute-host."""
 import itertools, math, json, os
 import numpy as np
 phi = (1 + 5**.5)/2

@@ -2,7 +2,7 @@
 the section over its whole stage: square side s(h), triangle side t(h), octagon-octagon side b(h). A golden cut RD needs
 s = t (= a, all corner sides equal) AND b/a = phi or 1/phi at the same h. Floating point scan (2000 heights per stage) with
 root bracketing; the nearest approach is reported.
-usage: ~/geom/bin/python s9b_rhombic_ratios.py F4|H4 -> ../data/s9b-rhombic-ratios-<g>.json
+usage: python3 s9b_rhombic_ratios.py F4|H4 -> ../data/s9b-rhombic-ratios-<g>.json
 (H4: golden cut RT, signature {3: 20, 5: 12, 8: 30}, needs triangle side = pentagon side = a and b/a = phi^+-1.)
 """
 import json, os, itertools, numpy as np

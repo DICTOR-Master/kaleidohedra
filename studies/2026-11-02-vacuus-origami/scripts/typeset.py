@@ -131,7 +131,7 @@ the exact fold dihedrals and closure check, and the printable nets for DICTO's s
 </ul>
 <p><b>Sources checked</b> (2 November 2026):</p>
 <ul>
-<li><i>Reference library</i> (ask-library on dicto-big-brother, top 6 + page hits per query). Eight queries:
+<li><i>Reference library</i> (ask-library on compute-host, top 6 + page hits per query). Eight queries:
 "modular origami units polyhedra Tomoko Fuse Sonobe unit"; "paper models of polyhedra nets glue tabs Wenninger"; "pyramid units star units origami polyhedral cones";
 "computational origami Mitani design of folded paper"; "Lang TreeMaker origami design circle packing"; "excavated polyhedra non-convex solids paper model construction";
 "dissection of a polyhedron into pyramids from the centre over the faces model"; "developable cone folded from a flat sector fan of triangles". Relevant catalogue hits:

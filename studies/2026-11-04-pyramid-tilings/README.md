@@ -21,7 +21,7 @@ DICTO's idea: the tilings left open in #44 (Aristotle's Pyramid) are decided by 
   (Part B), Fractions for the cube (Part C).
 - vertex_stars.py -> data/vertex-stars.log/.json: float search of all closed vertex stars; finds exactly two.
 - figs.py -> figures/ (matplotlib; float copies of the same constructions).
-Run on dicto-big-brother: ~/geom/bin/python3 <script> (sympy, numpy, matplotlib).
+Run on compute-host: python33 <script> (sympy, numpy, matplotlib).
 
 ## Prior art
 Barlow (1883); Gabbrielli, Jiao, Torquato, PRE 86 (2012) 041141 (state f2f = Barlow without proof; sliding;

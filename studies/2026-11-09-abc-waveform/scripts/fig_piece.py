@@ -1,5 +1,5 @@
 """Figure: Narcissus with DICTO's ABC wave (crest planes of one design drawn as crest lines on the faces), top view of the
-hexagon with the seat points A, B, C, and (optional) a decorated stack from a SAT model. Runs on dicto-big-brother.
+hexagon with the seat points A, B, C, and (optional) a decorated stack from a SAT model. Runs on compute-host.
 Usage: fig_piece.py design_json_index out.png  (design taken from data/figure-design.json written by forced.py)"""
 import sys, os, json, numpy as np
 import matplotlib; matplotlib.use('Agg')

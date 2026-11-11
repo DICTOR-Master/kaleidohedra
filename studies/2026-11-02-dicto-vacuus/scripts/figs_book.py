@@ -4,7 +4,7 @@
 # Usage: figs_book.py <star-cores scripts dir> <census json> <out dir>
 import sys, os, json, numpy as np
 SC, CEN, OUT = [os.path.abspath(x) for x in sys.argv[1:4]]; sys.path.insert(0, SC)
-sys.argv = [sys.argv[0], '.', OUT, os.path.expanduser('~/kres-tmp/book/dicto-logo.png')]
+sys.argv = [sys.argv[0], '.', OUT, os.path.expanduser('~/work/book/dicto-logo.png')]
 import figs_paper_a as A
 import matplotlib.pyplot as plt
 

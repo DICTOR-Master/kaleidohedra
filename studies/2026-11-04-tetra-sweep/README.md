@@ -2,7 +2,7 @@
 
 DICTO 4 Nov: "try recorded concordance gaps with interesting leads, and a combinatory approach of new and current methods".
 Row 3 of the tests × families grid (tetrahedron sweep T ∩ μ(−T)) had only the harmonic test; the 4D sweep had no roundness or Mahler entry.
-Scripts on dicto-big-brother (~/study-runs/2026-11-04-tetra-sweep, ~/geom/bin/python); data/ holds every output.
+Scripts on compute-host (~/study-runs/2026-11-04-tetra-sweep, python3); data/ holds every output.
 
 ## 1. Tetrahedron sweep: three outside tests (scripts/measures.py, data/measures.json)
 T = {−v·x ≤ 1}, −T = {v·x ≤ 1}, v the corners of a regular tetrahedron; μ ∈ (1/3, 3); octahedron at μ = 1; S(1/μ) = −S(μ)/μ (symmetry μ ↔ 1/μ).

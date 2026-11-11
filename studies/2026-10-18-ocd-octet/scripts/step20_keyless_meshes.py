@@ -1,4 +1,4 @@
-# DICTO 2026-10-18 octet study -- STEP 20 (dicto-node, manifold3d): meshes of the keyless full kit with the three Penrose cores, for the
+# DICTO 2026-10-18 octet study -- STEP 20 (compute-host-2, manifold3d): meshes of the keyless full kit with the three Penrose cores, for the
 # 3D page: plain OCD, notched cap, notched tetrahedron (no key dents), central core, flanking cores (left, right), rest.
 # usage: python3 step20_keyless_meshes.py step10-input.json step19-input.json OUT.json
 import sys, json, itertools, numpy as np, manifold3d as m3

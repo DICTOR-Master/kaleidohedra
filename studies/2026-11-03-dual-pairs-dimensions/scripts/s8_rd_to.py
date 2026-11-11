@@ -5,7 +5,7 @@ A. Space-filler cycles: every tight cycle that starts and ends at the cube and v
    Unborn Axes} (each fills space on its own; Icosaxes and Unborn Axes each fill space, #48/#89), exact closures.
 B. Tight cycles (<= 4 links) through all C.O stations of s6 that contain the RD or the TO, with closure in {phi^k, (1+sqrt2)^k,
    2, 3, 4}: counts and the shortest examples, exact.
-usage (dicto-big-brother): ~/geom/bin/python s8_rd_to.py -> ../data/s8-rd-to.json
+usage (compute-host): python3 s8_rd_to.py -> ../data/s8-rd-to.json
 """
 from dp_lib import *          # noqa
 import numpy as np

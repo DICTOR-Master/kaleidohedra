@@ -55,7 +55,7 @@ of each face, every edge in exactly two faces, Euler characteristic 2).
   `data/attachability.json`.
 - `scripts/render.py`: the two renders.
 
-Run on dicto-big-brother: `cd ~/kres-tmp/4d && PYTHONPATH=scripts ~/geom/bin/python scripts/shadows.py` then
+Run on compute-host: `cd ~/work/4d && PYTHONPATH=scripts python3 scripts/shadows.py` then
 `classify.py`, `attach.py`, `render.py` the same way.
 
 ## Results

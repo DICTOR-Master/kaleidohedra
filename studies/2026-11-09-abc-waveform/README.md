@@ -72,7 +72,7 @@ Credit: DICTO proposed an ABC waveform on the surfaces, a golden mix of waves: c
 
 ## 3. Results (numbers)
 
-Full scan, 3 shards on dicto-big-brother, 609 + 572 + 534 s, `data/scan-full-shard*.log`; merged by `scripts/merge.py` into `data/merge.log`.
+Full scan, 3 shards on compute-host, 609 + 572 + 534 s, `data/scan-full-shard*.log`; merged by `scripts/merge.py` into `data/merge.log`.
 
 **Control (empty decoration):** PATCH with all 16 words and PERIODIC at index 1, under both placement rules. The test catches it, as it must.
 
@@ -135,7 +135,7 @@ The underlying wall is the per-site capacity: one piece has at most 6 placements
   - J. E. S. Socolar, P. J. Steinhardt, "Quasicrystals. II. Unit-cell configurations", Phys. Rev. B 34 (1986) 617: library entry (link only, not read); abstract via search.
   - C. Hann, J. E. S. Socolar, P. J. Steinhardt, "Local growth of icosahedral quasicrystalline tilings" (2016), library pdf, read §II: Ammann rhombohedra with chiral matching decorations, both enantiomorphs needed, "at least weak matching rules"; perfect matching rules not proved.
   - Web: arXiv 2603.13553 (matching rules as cocycle conditions; Ammann icosahedral tiling).
-- **Socolar–Taylor:** digest of arXiv 1003.4279 and 1009.1419 from 5 Nov (dicto-big-brother `study-runs/2026-11-05-one-piece/digest.md`). Their 3D tile stacks corrugated slabs *periodically*, which is the same lesson as here. Also in the library: Resnikoff 2015 (arXiv 1504.06823), not re-read.
+- **Socolar–Taylor:** digest of arXiv 1003.4279 and 1009.1419 from 5 Nov (compute-host `study-runs/2026-11-05-one-piece/digest.md`). Their 3D tile stacks corrugated slabs *periodically*, which is the same lesson as here. Also in the library: Resnikoff 2015 (arXiv 1504.06823), not re-read.
 - **3D monotiles:** I. Tsiokos, arXiv 2609.19214 (Chair44) and F. Flicker, arXiv 2609.23783 (cited from the 8 Nov record, not re-read today). Both use cubic chair carriers, not close-packed stacking. Also in the library: D. Kamenetsky, arXiv 2610.00916, title only.
 - **Close-packed stacking:**
   - Web query "matching rules force aperiodic stacking sequence close-packed layers Fibonacci polytype fcc hcp tiling" found background only: arXiv 1706.07852 (finite-range layer interactions); arXiv 0707.4263 (hybrid close packings); arXiv 2102.08418 (Markov stacking disorder); F. Gähler lecture notes (PIMS) on perfect matching rules and non-local decorations.
@@ -143,7 +143,7 @@ The underlying wall is the per-site capacity: one piece has at most 6 placements
 - **Other web queries:**
   - "Ammann planes three dimensions Fibonacci spacing matching rules Socolar Steinhardt 1986 icosahedral"
   - "Grünbaum Shephard Tilings and Patterns section 10.6 Ammann bars Penrose musical sequence long short Fibonacci" (section number not confirmed)
-- **Library grep** (dicto-big-brother `~/kaleidohedra-references`, all MANIFEST.json, for Ammann/Socolar/Steinhardt/Grünbaum/Tsiokos/Flicker): the items named above, plus Jagannathan–Duneau 2023 (Ammann–Beenker approximants, not relevant), Levine–Steinhardt 1986, Fu–Steinhardt et al. 2015 (sphere packings in cylinders, not relevant).
+- **Library grep** (compute-host `~/kaleidohedra-references`, all MANIFEST.json, for Ammann/Socolar/Steinhardt/Grünbaum/Tsiokos/Flicker): the items named above, plus Jagannathan–Duneau 2023 (Ammann–Beenker approximants, not relevant), Levine–Steinhardt 1986, Fu–Steinhardt et al. 2015 (sphere packings in cylinders, not relevant).
 
 ## Files
 
@@ -156,7 +156,7 @@ The underlying wall is the per-site capacity: one piece has at most 6 placements
   - `scripts/forced.py`
   - `scripts/fig_piece.py`
   - `scripts/n_slabs.py`: copy
-- **Logs and data:** `data/*.log`, `data/*.json`. Pilot runs: `data/scan-K4-*-pilot.json`. The structure caches (`*.pkl`) stay on dicto-big-brother only.
+- **Logs and data:** `data/*.log`, `data/*.json`. Pilot runs: `data/scan-K4-*-pilot.json`. The structure caches (`*.pkl`) stay on compute-host only.
 
 ## Ledger line (ready for concordance.json ledger.entries)
 

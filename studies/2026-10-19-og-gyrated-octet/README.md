@@ -42,7 +42,7 @@ The golden envelope (rhombic triacontahedron round the OG, #37 frame) cut flat b
 - It holds the OG (the OG lies inside the octahedron) and sits in every octahedron of the gyrated octet: flat on the twin faces, keyed on the six side faces.
 - To make exact; name to propose to DICTO.
 
-## DBT exact (2026-10-20, `dbt_exact.py` on dicto-node → `dbt-exact.log`, `dbt-exact.json`; 18 PASS, 0 FAIL)
+## DBT exact (2026-10-20, `dbt_exact.py` on compute-host-2 → `dbt-exact.log`, `dbt-exact.json`; 18 PASS, 0 FAIL)
 The DICTO Belted Triacontahedron is a rhombic triacontahedron (inradius 2/3, #37 frame) truncated at its two three-fold corners on (1,1,1). It began as the golden envelope round the OG; from here it is named as a solid of its own.
 - No new corners: it keeps 30 of the RT's 32 corners and loses only the two pole corners. 60 edges, 32 faces: 24 rhombi, 6 half-rhombi, 2 equilateral pole triangles (side² = 8/3 − 8√5/9, side 0.824045).
 - Each cut runs along a rhombus's LONG diagonal (diagonal ratio² = φ²).
@@ -51,7 +51,7 @@ The DICTO Belted Triacontahedron is a rhombic triacontahedron (inradius 2/3, #37
 - The OG lies inside; 36 of its corners touch the DBT's surface.
 - Float only: surface 6.253707, sphericity 0.9590.
 
-## Penrose-core (P2) middle pieces in the gyrated octet (2026-10-20, `gyr_cores.py` on dicto-node → `gyr-cores.log`; float)
+## Penrose-core (P2) middle pieces in the gyrated octet (2026-10-20, `gyr_cores.py` on compute-host-2 → `gyr-cores.log`; float)
 Only edges lying in the twin plane change: round them the cells run O T | T O, so the OG across the edge is the mirror twin, not the octet partner.
 - Lower-layer P2 pieces never cross the twin plane (0 volume), so every piece off the plane is unchanged.
 - **The old P2 piece fails at a plane edge:** half of it (0.0399) lies above the plane, 0.0198 of that inside the twin OG.
@@ -59,7 +59,7 @@ Only edges lying in the twin plane change: round them the cells run O T | T O, s
 - **A mirror middle piece works:** Mg = hull(star + its mirror image) − both OGs: one solid, volume 0.049215 (P2 piece 0.079735), sphericity 0.520, mirror-symmetric (so not left/right), split evenly by the plane. No overlap with any of 43 neighbouring pieces or with any OG.
 - So a gyrated Penrose-core kit = the P2 set + Mg at twin-plane edges; octahedra and tetrahedra touching a twin plane get different notches on that face (new boundary shapes, not yet computed).
 
-## Exact round-up for the companion paper (2026-10-20, dicto-node)
+## Exact round-up for the companion paper (2026-10-20, compute-host-2)
 **OCD Stella (`stella_twin_exact.py` → `stella-twin.log`, 9 PASS).** Built exactly with the pyrochlore study's script, whose bcc lattice sits in a golden orientation; turned into the #37 frame by the lattice's own cube axes (the rotation carries that study's OCD exactly onto the #37 OG). Then: the Stella lies in the octahedron; each face holds its equilateral joint triangle (side² 8/3 − 8√5/9); share of the octahedron (604 − 267√5)/9 ≈ 77.44%; joint triangle = (7 − 3√5) ≈ 29.18% of a face; mirror twin = the Stella turned 60° (spinel law, as the OG); twins meet on the whole triangle. (A first exact run in the wrong frame failed; the 10-19 float numbers stand.)
 **`gyr_exact.py` → `gyr-exact.log` (9 PASS):**
 - Joint hexagon regular, side² 2/9 − 2√5/27; hexagon = (7 − 3√5)/2 ≈ 14.59% of a face, so a cap meets its twin across (3√5 − 5)/2 ≈ 85.41% of the face. (The Stella's joint triangle is exactly twice the OG's joint hexagon.)
@@ -67,27 +67,27 @@ Only edges lying in the twin plane change: round them the cells run O T | T O, s
 - Mirror middle piece Mg exact: hull of a star and its mirror (2 + 2√5)/81, meets each OG in (−155 + 101√5)/4617; **Mg = (424 − 88√5)/4617 ≈ 0.049215** (matches the float run).
 - **DBT in the gyrated octet:** its mirror in a pole face = the DBT turned 60° (true twin); it lies between its two twin planes; with a DBT in every octahedron (layer by translation, the layers above and below as mirror images), **no DBT overlaps the central one** (18 + 19 + 19 neighbours, exact separating planes).
 
-## Penrose-core boundary pieces at twin planes (2026-10-20, `gyr_boundary.py` on dicto-node → `gyr-boundary.log`; float)
+## Penrose-core boundary pieces at twin planes (2026-10-20, `gyr_boundary.py` on compute-host-2 → `gyr-boundary.log`; float)
 The #37 keyless Penrose-core kit (OG, 6 vertex caps per octahedron, a middle piece on every edge, tetrahedra; caps and tetrahedra notched by the middle pieces), with each edge's middle piece = hull of the two OGs' nearest five-fold stars minus both OGs. Run for the octet, a single twin plane and the gyrated octet.
 - Octet (sanity): notched cap 0.058072, notched tetrahedron 0.265776, middle piece 0.079735, as #37.
 - At a twin plane only three shapes change: **middle piece Mg 0.049215** (in place of 0.079735; no Penrose cores), **boundary cap 0.055477** (a cap whose vertex lies on a twin plane; sphericity 0.579 vs 0.587), **boundary tetrahedron 0.319340** (a tetrahedron with its face on a twin plane; sphericity 0.587 vs 0.517; left and right hands as before).
 - A piece only feels the one layer plane it touches: with a single twin plane the 3 caps on that side are boundary caps and the other 3 octet caps; the 3 tetrahedra with a face there are boundary tetrahedra, the others octet. So **any stacking uses the octet kit plus these three shapes.**
 - Gyrated octet: every cap and every tetrahedron is a boundary piece (6 caps congruent, 3 + 3 mirror images; tetrahedra 3 + 3 mirror images); per cell 3 middle pieces M0 (with their Penrose cores) and 3 Mg. Origin octahedron: OG + 6 caps + middle pieces inside = 1.673508 = octahedron. Per cell 1.151868 + 6(0.055477) + 3(0.079735) + 3(0.049215) + 2(0.319340) = 2.510263 = cell.
 - Middle pieces reach at most 0.5542 from their edge midpoints. To make exact.
-**Exact (`gyr_boundary_exact.py` on dicto-node → `gyr-boundary-exact.log`, `gyr-boundary-exact.json`; 17 PASS, 0 FAIL).** By convex pieces in ℚ(√5), for the octet, a single twin plane and the gyrated octet:
+**Exact (`gyr_boundary_exact.py` on compute-host-2 → `gyr-boundary-exact.log`, `gyr-boundary-exact.json`; 17 PASS, 0 FAIL).** By convex pieces in ℚ(√5), for the octet, a single twin plane and the gyrated octet:
 - Middle pieces: M0 = (310 + 26√5)/4617, Mg = (424 − 88√5)/4617; near the origin octahedron no two overlap and none enters a third OG (exact).
 - **Boundary cap 23/162 − 47√5/1215 ≈ 0.055477** (octet cap (32 − 8√5)/243 minus (−25 + 14√5)/2430 ≈ 0.002595).
 - **Boundary tetrahedron 41/162 + 4√5/135 ≈ 0.319340** (octet keyless tetrahedron (26 − 2√5)/81 plus (−55 + 44√5)/810 ≈ 0.053564).
 - Octet run gives #37's cap and keyless tetrahedron; single twin plane: exactly the 3 caps and 3 tetrahedra on the plane are boundary pieces; gyrated: all 6 caps and all 6 tetrahedra are; origin octahedron and one gyrated cell sum exactly.
 - (Congruence of equal-volume pieces and their hands: float overlap test, `gyr_boundary.py`.)
 
-## The DBT's spaces, and growing it (DICTO 2026-10-20: "volume is very low", option 1; float, `dbt_spaces.py`, `dbt_grow.py` on dicto-node)
+## The DBT's spaces, and growing it (DICTO 2026-10-20: "volume is very low", option 1; float, `dbt_spaces.py`, `dbt_grow.py` on compute-host-2)
 - In its octahedron the DBT touches each of the 12 edges at one golden point (1/φ² of the way along), leaving 6 separate corner spaces of (112 − 48√5)/81 ≈ 0.0576 each, sphericity 0.33.
 - Option 1: the DBT's rhombic triacontahedron scaled by s about the OG centre, cut by the bisector planes to its neighbours (the twin planes stay the pole cuts). It meets 8 neighbours (2 across the twin planes, 6 in its layer). Share of space: s 1.00 55.0% · 1.04 61.1% · 1.08 67.1% · 1.12 72.9% · 1.16 78.4% · 1.20 83.4% · 1.25 88.9% · 1.30 93.0% · about 1.6 → 100% (the solid becomes the whole cell). All 30 rhombus planes survive up to s ≈ 1.16; 24 at 1.2.
 - **But the leftover gets thinner, not chunkier:** it is one thin skin between the grown solids. Its sphericity per cell falls from 0.33 (s = 1) to 0.28 (1.08), 0.22 (1.16), 0.17 (1.25), 0.10 (1.30), and above 1.32 it breaks into slivers. So option 1 raises the share but gives no buildable leftover pieces.
 - DICTO 2026-10-20: **keep the DBT as it is** (option 1 dropped). Also noted: the RT has 20 identical cut sites (its three-fold corners); 8 point through the octahedron faces (the keys), the DBT cuts 2; cutting all 8 gives (−608 + 320√5)/81 ≈ 1.3277 (52.9%) inside the octahedron, all 20 the icosahedron of the five-fold corners (reasoned, not yet checked).
 
-## Filling the DBT's space (DICTO 2026-10-20 "keep filling the space"; `dbt_fill.py` on dicto-node, float)
+## Filling the DBT's space (DICTO 2026-10-20 "keep filling the space"; `dbt_fill.py` on compute-host-2, float)
 As #37 step 27: every leftover point goes to its nearest site; piece = the site's Voronoi region minus the DBTs.
 - **Tetrahedron centres (2 per cell):** each piece one solid, 0.564576 (= leftover / 2), sphericity 0.509, not mirror-symmetric.
 - **Bipyramid centres (the twin-plane face centres, 1 per cell): each piece one solid, 1.129153 = the whole leftover of a cell ((968 − 392√5)/81), sphericity 0.586, mirror-symmetric in its twin plane.** So the gyrated DBT kit could be **DBT + one grown-bipyramid piece: 2 shapes.** 71 faces (flat Voronoi cuts plus the DBT's golden faces; some small, smallest ≈ 0.0023). Quick render `renders/dbt-fill-bip.png`.
@@ -100,7 +100,7 @@ As #37 step 27: every leftover point goes to its nearest site; piece = the site'
 - s = φ²/3 ≈ 0.873: the 8 keys just touch the faces (no cut). s = 1: the 12 five-fold corners lie exactly on the 12 octahedron edges and the cuts run along long diagonals (no new corners).
 - 1 < s < φ²/√5 ≈ 1.1708: deeper cuts make 60 corners, 48 of them new. At s = φ²/√5 the 12 other three-fold corners reach the octahedron faces (62.44%); above it the solid is the octahedron with its 6 corners cut by rhombus planes (corner spaces = 6 pyramids). s = φ: the whole octahedron (66.67%).
 - Fill sphericity, gyrated / octet: s 1.00 0.612 / 0.638 · 1.10 0.602 / 0.619 · 1.17 0.522 / 0.622 · 1.25 0.537 / 0.631 · 1.40 0.501 / 0.652 · φ (plain octahedron) – / 0.671.
-**3D page (2026-10-20):** `kits_page_data.py` (dicto-node) → `renders/kits-data.json`; `kits_page_template.html` → `renders/dbt-8cut-kits.html`, claude.ai/artifact/Eo6sAjAc3btvK1LvhAEaMy. DBT kit (gyrated), 8-cut kit (gyrated, octet): set and cluster (solid + the 6 / 6 / 8 fill pieces touching it), pull apart.
+**3D page (2026-10-20):** `kits_page_data.py` (compute-host-2) → `renders/kits-data.json`; `kits_page_template.html` → `renders/dbt-8cut-kits.html`, claude.ai/artifact/Eo6sAjAc3btvK1LvhAEaMy. DBT kit (gyrated), 8-cut kit (gyrated, octet): set and cluster (solid + the 6 / 6 / 8 fill pieces touching it), pull apart.
 **Prior art check (2026-10-20):** library: Kabai's 54-faced space-filler (RT minus 8 half oblate rhombohedra, bcc), Kabai's RT clusters, a dimpled RT (rhombohedra removed at 4 corners) — all remove whole or half rhombohedra, none cuts flat at the key sites. Web: truncated RTs found cut the 12 five-fold corners (42 faces, Ih); a list of convex golden-rhombus polyhedra (orchidpalms) has only band-reduced and expanded RTs. No source found for the RT cut at 2 (D3d) or 8 (Th) three-fold corners, i.e. the RT cut by an octahedron.
 
 **Fill-set names (DICTO OK 2026-10-20):** DICTO Fill set 1 (DBT): F1 (grown bipyramid, gyrated octet). DICTO Fill set 2 (OTT): F1 (grown bipyramid, gyrated octet), F2 and F3 (grown tetrahedron, left and right, octet; hands as #37 step 27, to confirm).
@@ -115,7 +115,7 @@ For every fill piece touching the central solid (6 / 6 / 8): volume = Voronoi re
 ## Cover line-up for #37a V3 (2026-10-20; `cover_lineup.py`, `cover_shots.mjs`, `cover_compose.py` → `figures/cover-lineup.jpg`)
 OG, OCD Stella, DBT, OTT over Fill set 1 F1, Fill set 2 F1, F2, F3; true relative size, one view (three-fold axis up). Shown to DICTO, not yet in the paper.
 
-## How densely do the solids pack by themselves? (DICTO 2026-10-20; `lattice_pack.py` on dicto-node → `lattice-pack.log`, `lattice-pack.json`; float)
+## How densely do the solids pack by themselves? (DICTO 2026-10-20; `lattice_pack.py` on compute-host-2 → `lattice-pack.log`, `lattice-pack.json`; float)
 Densest **lattice** packing (one translate per lattice point), found by search: minimise the cell over Minkowski-reduced bases such that every lattice vector lies outside 2K (both solids are centrally symmetric); checked with lattice vectors up to coefficient 3 and mesh overlaps with the 26 nearest copies (none).
 - Checks: octahedron 0.947368 (= Minkowski's 18/19); rhombic triacontahedron 0.801787 (literature 0.801741, Torquato–Jiao; ours 0.00005 higher, within float search noise or a small improvement; not claimed).
 - **DICTO OTT 0.906282** (cell 1.464969), 6 contact pairs; **DICTO DBT 0.828621** (cell 1.666757), 6 contact pairs.

@@ -1,4 +1,4 @@
-// Shoot the Kepler–Poinsot–PiTet figures (dicto-node, folder served on :8020): node shoot_kp.mjs <out dir>
+// Shoot the Kepler–Poinsot–PiTet figures (compute-host-2, folder served on :8020): node shoot_kp.mjs <out dir>
 import { chromium } from 'playwright';
 const OUT = process.argv[2];
 const b = await chromium.launch({ args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] });

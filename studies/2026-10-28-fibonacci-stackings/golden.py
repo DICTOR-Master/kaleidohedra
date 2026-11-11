@@ -14,7 +14,7 @@ c = Counter(w[k:k + 2] for k in range(n - 1))
 print('share h', w.count('h') / n, ' 1/phi^2 =', 1 / phi ** 2)
 print('pairs', {k: round(v / (n - 1), 6) for k, v in c.items()}, ' 1/phi^3 =', round(1 / phi ** 3, 6), ' 1/phi^2 =', round(1 / phi ** 2, 6))
 # rock salt / NiAs at lam = 1/3 (exact volumes of #64's run): per-layer averages in Q(sqrt5), written a + b sqrt5
-d = json.load(open('/home/dicto/k-research/studies/2026-10-27-splash-rules/run2/out/rocksalt_mix.json'))
+d = json.load(open('~/k-research/studies/2026-10-27-splash-rules/run2/out/rocksalt_mix.json'))
 lam = F(1, 3); win = next(x for x in d['windows'] if F(x['lo']) < lam < F(x['hi']))
 ev = lambda e: eval(e.replace('lam', '(F(1,3))').replace('/', '*F(1,1)/'), {'F': F})
 res = {}

@@ -3,7 +3,7 @@
 # that pierce the face, 61.62 deg and 118.38 deg in the face) is continued as a rhombus lattice over the free part of each flat face.
 # Bump faces {0,1,6,7} (exact pairing, data/p4-key-pairing.json) carry every other rhombus raised by H; each neighbouring W (the same
 # piece, moved by a symmetry of the structure) pushes its raised rhombi into this W's dent faces {2,3,4,5}. All W stay identical.
-# dicto-node, manifold3d. usage: python3 p4_keyed_W.py step10-input.json OUT.json
+# compute-host-2, manifold3d. usage: python3 p4_keyed_W.py step10-input.json OUT.json
 import sys, json, itertools, numpy as np, manifold3d as m3
 from scipy.spatial import HalfspaceIntersection
 D = json.load(open(sys.argv[1])); V = np.array(D['V']); R = D['R']; L = np.array(D['L'])

@@ -2,7 +2,7 @@
 renders/variants.png   : 5-cell edge-first shadow vs regular J12; 16-cell edge-first shadow vs regular octahedron
 renders/icosahedral.png: 600-cell vertex-first shadow vs its equilateral form (12-dented icosahedron);
                          600-cell vertex-first slice at height 2 vs its equilateral form (augmented dodecahedron)
-Run on dicto-big-brother after shadows.py:  ~/geom/bin/python render.py
+Run on compute-host after shadows.py:  python3 render.py
 """
 import math
 import pickle

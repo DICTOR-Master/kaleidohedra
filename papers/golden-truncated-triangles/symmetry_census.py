@@ -1,7 +1,7 @@
 # Referee's independent census: every hexagonal face of every dataset solid, symmetry group of the hexagon (as a planar polygon),
 # truncated-triangle test, exact ratio; plus cutting depths for the six solids of Section 7.
 import glob, json, os, itertools, numpy as np, sympy as sp
-DS = os.path.expanduser('~/kres-tmp/dataset-v7/solids')
+DS = os.path.expanduser('~/work/dataset-v7/solids')
 g = (1+5**.5)/2
 def hex_sym(P):
     # symmetry of planar hexagon P (6x3, cyclic order): count isometries of the plane mapping the vertex cycle to itself

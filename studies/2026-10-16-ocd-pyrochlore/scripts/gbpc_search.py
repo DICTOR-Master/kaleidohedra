@@ -1,5 +1,5 @@
 # Fable, GBPC pass 4 (2026-10-16): exact fill search for G' (golden region minus the 24 GBPCs per bcc cell), numpy + fractions only,
-# so it runs on dicto-node. Input: data/gbpc-geom-exact.json (gbpc_export.py). Numbers a + b*sqrt5 are pairs of Fractions.
+# so it runs on compute-host-2. Input: data/gbpc-geom-exact.json (gbpc_export.py). Numbers a + b*sqrt5 are pairs of Fractions.
 # Bodies: the uncut RTs on the bcc sites (G' = space minus their union, pass 1), golden rhombohedra (edges along five-fold axes),
 # optionally the five Bodhi pieces. Overlap test: separating axes = all face normals and all cross products of edge directions of the
 # bodies in play. All edge directions are symmetry axes (checked), so a fixed axis list makes the test exact and complete.

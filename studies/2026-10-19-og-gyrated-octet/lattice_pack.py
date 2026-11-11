@@ -6,7 +6,7 @@
 import json, sys, itertools, math, numpy as np, manifold3d as m3
 from scipy.spatial import ConvexHull
 from scipy.optimize import minimize
-H = '/home/dicto/dbt-exact/2026-10-19-og-gyrated-octet/'
+H = '~/dbt-exact/2026-10-19-og-gyrated-octet/'
 fq = lambda s: (lambda a, b: float(eval(a)) + float(eval(b)) * 5 ** .5)(*s.split('|'))
 def load(f): return np.array([[fq(c) for c in v] for v in json.load(open(H + f))['V']])
 DB = load('dbt-exact.json'); OT = load('cut8-exact.json')

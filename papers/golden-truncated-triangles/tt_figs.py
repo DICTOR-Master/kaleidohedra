@@ -2,7 +2,7 @@
 # Same renderer as the Star Cores / #87 figures. Usage: tt_figs.py <dataset dir> <star-cores scripts dir> <out dir>
 import sys, os, glob, numpy as np
 DS, SC, OUT = [os.path.abspath(x) for x in sys.argv[1:4]]; sys.path.insert(0, SC)
-sys.argv = [sys.argv[0], DS, OUT, os.path.expanduser('~/kres-tmp/book/dicto-logo.png')]
+sys.argv = [sys.argv[0], DS, OUT, os.path.expanduser('~/work/book/dicto-logo.png')]
 import figs_paper_a as A
 from star_core import load
 import matplotlib.pyplot as plt

@@ -4,8 +4,8 @@ import os
 src=open('fuse4.py').read(); exec(src.split("res=json.load")[0])
 COL.update({'unit1':(214,96,77),'unit2':(70,130,180)})
 F=lambda n,b=False:ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans'+('-Bold' if b else '')+'.ttf',n)
-OUT='/home/dicto/Documents/papers-to-read/flat-layer-units'; os.makedirs(OUT,exist_ok=True)
-logo=Image.open('/home/dicto/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((110,110))
+OUT='~/Documents/papers-to-read/flat-layer-units'; os.makedirs(OUT,exist_ok=True)
+logo=Image.open('~/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((110,110))
 res=json.load(open('flat2-units.json')); S=620
 for k,(name,r) in enumerate(res.items()):
     U=[{'name':n,'V':np.array(P)} for n,P in r['unit']]

@@ -7,7 +7,7 @@ ONE shape up to similarity (flag for DICTO). No star equals a stellation in the 
 operations themselves are classical (Kleetope / kis, polar reciprocation); the new objects are the halos and stars of DICTO's new
 solids. Status: study note (stars-and-halos-census.pdf in DICTO's reading folder); not in a paper.
 
-Run on dicto-big-brother (~/kres-tmp/halo-census, ~/geom/bin/python), DICTO Solids v7. census.py ran as background processes, 8 at a
+Run on compute-host (~/work/halo-census, python3), DICTO Solids v7. census.py ran as background processes, 8 at a
 time via xargs, one per shape, then collect.py as one process; all finished and nothing is left running.
 - data/slugs.txt: the 58 card solids (star-cores.json of 2026-10-30-star-cores + star-cores-new4.json of 2026-11-01-star-cores-book).
   The notch cards Maedate and Kuwagata are pieces, not solids with a star treatment: not included.
@@ -15,7 +15,7 @@ time via xargs, one per shape, then collect.py as one process; all finished and 
   polar halo (convex solids with O inside every face plane: the polar reciprocal; independent of rho), stars t = 2 and phi (solid
   + face pyramids as a surface, coplanar neighbours merged). Exact in Q(sqrt5) / Q (210 of 226 objects: every hull facet checked
   exactly; star faces merged only when exactly coplanar); the 4 solids in Q(t), Q(2^(1/3)), Q(sqrt3) float64 (16 objects).
-  Per-shape output data/shapes/<slug>.json stays on dicto-big-brother (47 MB, not in git).
+  Per-shape output data/shapes/<slug>.json stays on compute-host (47 MB, not in git).
 - scripts/collect.py <dataset> <data>: matches (same corner count and, for halos, faces by sides; same sorted scaled squared distances
   1e-6; explicit orthogonal map of the corner sets 1e-6; mirror images count as the same) against DICTO Solids v7, the classical
   families (data/classical-krp.json, exported from krp-core's POLYHEDRA registry: 5 Platonic, 13 Archimedean, 13 Catalan, 92 Johnson,

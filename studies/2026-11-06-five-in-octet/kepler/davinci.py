@@ -62,7 +62,7 @@ class Plate:
         except Exception: F = None
         d.text((self.W // 4, self.W // 2 - 52), caption, fill=SEPIA, font=F, anchor='mm')
         try:
-            logo = Image.open('/home/dicto/k-research/papers/dicto-logo.png').convert('RGBA').resize((70, 70)); logo.putalpha(logo.split()[3].point(lambda a: int(a * 0.5)))
+            logo = Image.open('~/k-research/papers/dicto-logo.png').convert('RGBA').resize((70, 70)); logo.putalpha(logo.split()[3].point(lambda a: int(a * 0.5)))
             img.paste(logo, (self.W // 2 - 100, self.W // 2 - 100), logo)
         except Exception: pass
         img.save(out)

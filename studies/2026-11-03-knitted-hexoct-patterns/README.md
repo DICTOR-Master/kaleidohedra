@@ -16,10 +16,10 @@ Every number generated and checked by script: 27 nodes, 42 links, node stitches 
 (55 m per sheet, 1 m per cord).
 
 ## Files
-- `scripts/patterns.py` → `paper.html`, `figs/*.svg`, `data/check.out`. Run on dicto-big-brother with ~/geom/bin/python:
-  `python patterns.py <out dir> <dir with tiles.py, engine.py, stackings.py>` (the #75 scripts; used: ~/kres-tmp/knitted-hexoct);
-  out dir ~/kres-tmp/knitted-hexoct-patterns/print/papers/knitted-hexoct-patterns.
+- `scripts/patterns.py` → `paper.html`, `figs/*.svg`, `data/check.out`. Run on compute-host with python3:
+  `python patterns.py <out dir> <dir with tiles.py, engine.py, stackings.py>` (the #75 scripts; used: ~/work/knitted-hexoct);
+  out dir ~/work/knitted-hexoct-patterns/print/papers/knitted-hexoct-patterns.
 - Printed there with `node print.mjs knitted-hexoct-patterns knitted-hexoct-patterns.pdf "Knitted HexOct: Patterns" "pattern, not published"`
-  (in ~/kres-tmp/knitted-hexoct-patterns/print/papers).
+  (in ~/work/knitted-hexoct-patterns/print/papers).
 - Figures: `chart.svg` the sheet; `nk`, `mark`, `icord`, `attach`, `lace`, `hang`, `measure`, `card` technique drawings; per piece
   `piece-*`, `side-*`, `layout-*`, `stage1-3-*`, `cells-*`; `ch.svg` c against h; `seq-<name>-side/3d.svg` the sequences.

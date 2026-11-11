@@ -8,7 +8,7 @@ Unit spheres (neighbour distance 1). Checks:
  4. Faces: 6 rhombi congruent to the RD's, 6 isosceles trapezoids; each trapezoid = two half-rhombi (triangles) of the RD, mirror pair.
  5. Centre pyramids: TRD = 6 rhombic pyramids R12 (as #93) + 6 trapezoid pyramids, each = 2 half-R12 tetrahedra (mirror images).
  6. The 12 face-centre directions = the 12 neighbour directions: DICTO's TRD DICTOnode ports (elevation +-arctan(sqrt2)... checked vs node script).
-Run with ~/geom/bin/python on dicto-big-brother. Writes data/trd-checks.json."""
+Run with python3 on compute-host. Writes data/trd-checks.json."""
 import itertools, json, math, os
 import numpy as np
 from scipy.spatial import ConvexHull, HalfspaceIntersection

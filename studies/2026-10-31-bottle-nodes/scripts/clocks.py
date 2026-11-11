@@ -1,6 +1,6 @@
 # The two bottle nodes as clock faces (DICTO 31 Oct 2026): every cap drawn as a true circle with the numbers 1-12; 12 o'clock points
 # to the top of the node (the 3-fold axis). Tie points at the clock positions of the face's edge midpoints, each labelled with the cap it
-# ties to. Caps: T1-T3 top, W1-W6 waist, B1-B3 bottom. Usage: ~/geom/bin/python clocks.py <out png> <logo png>
+# ties to. Caps: T1-T3 top, W1-W6 waist, B1-B3 bottom. Usage: python3 clocks.py <out png> <logo png>
 import sys, numpy as np, matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle

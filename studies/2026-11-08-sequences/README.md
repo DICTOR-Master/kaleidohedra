@@ -4,7 +4,7 @@ DICTO asked whether famous OEIS sequences (Recamán A005132, Busy Beaver A060843
 A000043/A000668, Fibonacci A000045) explain or fill gaps. DICTO: keep the useful ones, leave the purely beautiful or decorative
 ones (Recamán, Mersenne: only 31 = 2^5 - 1 mixes of the five solids).
 
-1. Fibonacci/Lucas (fib_lucas.py, data-fib-lucas.txt, run on dicto-big-brother over dataset v8): phi^n = (L_n + F_n sqrt5)/2.
+1. Fibonacci/Lucas (fib_lucas.py, data-fib-lucas.txt, run on compute-host over dataset v8): phi^n = (L_n + F_n sqrt5)/2.
    8 of the 78 volumes in Q or Q(sqrt5) are exactly a rational multiple of a power of phi: Dodeca-13 Wedge 1/20 phi^3,
    Metaxyhexecontahedron 20/81 phi^10 (L10 = 123, F10 = 55), Palintriacontahedron 100/9 phi^2, DICTO Jewel 3/2 phi^3,
    Unborn Axes 2/3 phi^2, Keyaxes phi^2, Lion 160/3 phi^3, DICTO skewed rhombic dodecahedron phi^2 (all exact, re-multiplied).

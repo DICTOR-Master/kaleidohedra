@@ -5,7 +5,7 @@
 import json, itertools, numpy as np, time, sys
 from scipy.spatial import ConvexHull
 from scipy import ndimage, optimize
-t0 = time.time(); R = "/home/dicto/study-runs/og-pent/cut/data/"
+t0 = time.time(); R = "~/study-runs/og-pent/cut/data/"
 B = np.array(json.load(open(R + "densest.json"))["B"]); O = np.array(json.load(open(R + "network.json"))["ocd"]); O = O - O.mean(0)
 H = ConvexHull(O); A, b = H.equations[:, :3], H.equations[:, 3]; VOL = H.volume
 N = int(sys.argv[1]) if len(sys.argv) > 1 else 64

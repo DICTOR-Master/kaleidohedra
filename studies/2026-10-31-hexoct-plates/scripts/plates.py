@@ -7,7 +7,7 @@
 # Render standard (DICTO, firm): solid shaded faces, crisp dark edges, no haze, antialiased. Done here with an exact z-buffer:
 # every visible face is found per pixel (3x supersampled), edges are drawn where the visible face changes, then averaged down.
 # Each picture is 180 x 200 mm (one full A4 page inside the book's margins, ~70% of the page) and carries the DICTO mark.
-# Usage (dicto-big-brother): ~/geom/bin/python plates.py [name ...]   -> ../out/plate-<name>.png and ../out/facts.txt
+# Usage (compute-host): python3 plates.py [name ...]   -> ../out/plate-<name>.png and ../out/facts.txt
 import sys, os, math, random, json
 import numpy as np
 from fractions import Fraction as Fr

@@ -2,7 +2,7 @@
 # sorted pairwise distances first (necessary), then an explicit isometry found from matched corners and checked on
 # every corner and face (sufficient). Float coordinates of the exact hulls (metric frame), tolerance 1e-9.
 import json, pickle, os, itertools, numpy as np
-H = os.path.expanduser('~/kres-tmp')
+H = os.path.expanduser('~/work')
 K = pickle.load(open(f'{H}/4d/data/atlas600.pkl', 'rb'))
 A = json.load(open(f'{H}/4d/data/atlas600.json'))
 ORDER = ['vertex-first', 'edge-first', 'face-first', 'cell-first']; code = {}; n = 0

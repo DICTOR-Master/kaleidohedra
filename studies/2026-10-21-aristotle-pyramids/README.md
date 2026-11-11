@@ -35,7 +35,7 @@ arithmetic (via cos^2 and the sign of cos), the facts fed to the Conway-Radin-Sa
 4/5, 20/9 not integers, so no angle is a rational multiple of pi), the h test over all 31 sets of face pyramids (only {cube},
 {tetrahedron, octahedron} and {cube, tetrahedron, octahedron} pass), the octet cell (octahedron 4/3 + 2 x 1/3 = 2; 8 + 8 pyramids)
 and Cleo-Icos + Antonius + Cleo-Icos (volumes 1 : 4 : 1; Antonius 110.91 deg at its triangle edges). Figures: `aristotle_figs.py`
-(viewer of 2026-10-19-five-fold-octet), `jewel-shots.mjs` on dicto-node, `aristotle_compose.py` -> figures/.
+(viewer of 2026-10-19-five-fold-octet), `jewel-shots.mjs` on compute-host-2, `aristotle_compose.py` -> figures/.
 
 DICTO · dictospheres.com
 

@@ -5,7 +5,7 @@
 # Completeness check: kept tiles + leftover pieces = room volume; tiles overlap 0; leftover overlaps tiles 0. Float booleans.
 import json, itertools, numpy as np, time, sys, manifold3d as m3
 from scipy.spatial import ConvexHull, HalfspaceIntersection
-t0 = time.time(); R = "/home/dicto/study-runs/og-pent/cut/data/"
+t0 = time.time(); R = "~/study-runs/og-pent/cut/data/"
 STEPS = int(sys.argv[1]) if len(sys.argv) > 1 else 2; S0 = float(sys.argv[2]) if len(sys.argv) > 2 else 0.2; LIM = float(sys.argv[3]) if len(sys.argv) > 3 else 280
 B = np.array(json.load(open(R + "densest.json"))["B"]); O = np.array(json.load(open(R + "network.json"))["ocd"]); O = O - O.mean(0)
 hull = lambda P: m3.Manifold.hull_points(np.asarray(P, float).tolist())

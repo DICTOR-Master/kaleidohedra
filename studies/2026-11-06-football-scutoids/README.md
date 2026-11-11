@@ -70,7 +70,7 @@ NEXT: closed forms (corner: quadratic from the edge; stacking: radicals); the ce
 the figure redrawn at the closest stacking with the four corners marked.
 
 ### Step 3c (2026-11-07): the scutoid corner in closed form
-`scripts/corner_exact.py` → `data-corner-exact.txt` (400 digits, dicto-big-brother).
+`scripts/corner_exact.py` → `data-corner-exact.txt` (400 digits, compute-host).
 - Stacking re-solved at 400 digits from its three contact planes: h = 3.43700237509909317669058644566430344928616…, a = 1/2, b = 0.56107350871014989597369051168900062028549….
 - Each corner is fixed by one pentagon face, two hexagon faces (of three balls) and one hexagon–hexagon edge (of the fourth ball). The three faces give a line x = x0 + d·y; the edge gives one quadratic 3.04500785634… d² − 12.15998481223… d + 9.26972568335… = 0 (coefficients are exact expressions in the football vertices and h, b).
 - Corner distance d = 1.02582881966528960124366112081972407434574…; height ±0.09925264880305105652734701278104346859 of a period = ±0.34113158967096264879560039701871851411 from the middle plane. All four corners agree to 380 digits (one orbit). Every face foot lies inside its polygon; the edge foot sits at 0.0998715 of the edge.

@@ -5,7 +5,7 @@
 import sys, os, numpy as np
 from scipy.spatial import ConvexHull
 SC, OUTP = os.path.abspath(sys.argv[1]), os.path.abspath(sys.argv[2]); sys.path.insert(0, SC)
-sys.argv = [sys.argv[0], '.', os.path.dirname(OUTP), os.path.expanduser('~/kres-tmp/book/dicto-logo.png')]
+sys.argv = [sys.argv[0], '.', os.path.dirname(OUTP), os.path.expanduser('~/work/book/dicto-logo.png')]
 import figs_paper_a as A
 import matplotlib.pyplot as plt
 

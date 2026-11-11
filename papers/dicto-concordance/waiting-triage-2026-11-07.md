@@ -95,4 +95,4 @@ Order: largest coherent group first. Where a paper already exists, a new version
 - Seven STALE items (10, 40, 49, 51, 52, 53, 60) and fifteen LANDED items could leave `gaps.waiting`.
 - Item 57's diffraction numbers in the waiting list do not match #99 v2. The paper should be treated as correct.
 - Item 34's correction affects only the Concordance wording of items 13 and 16 and the `mahler-sweep` README. Published #94 v1 has no √3 claim.
-- Item 27: the RT overnight result is not in the study README or the ledger ("UNDECIDED"). Fetch it from dicto-big-brother before writing.
+- Item 27: the RT overnight result is not in the study README or the ledger ("UNDECIDED"). Fetch it from compute-host before writing.

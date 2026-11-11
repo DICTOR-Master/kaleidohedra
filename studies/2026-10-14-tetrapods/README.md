@@ -2,7 +2,7 @@
 
 DICTO's group: shapes that close exactly **four meeting at a point**, or **four round one**; near misses noted. Every Polyhedraverse
 shape (378). DICTO's two examples: rhombic dodecahedra (four at a point) and truncated octahedra (four round one).
-`scripts/tetrapods.py` → `tetrapods.json` (run on dicto-node).
+`scripts/tetrapods.py` → `tetrapods.json` (run on compute-host-2).
 
 ## Four meeting at a point: 38 exact
 

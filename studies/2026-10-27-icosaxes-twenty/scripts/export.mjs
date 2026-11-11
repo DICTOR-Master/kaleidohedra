@@ -2,7 +2,7 @@
 // at (1,1,1) (Unborn + 8 Tricaps, each Tricap also in its icosahedron: they pass through each other, as the Jewels in the Hexa), and
 // the 2 AXE on each of the block's 6 faces. Writes one OBJ per variant, a group per piece, sites scaled by phi/2.
 import { writeFileSync } from 'node:fs';
-const { default: O } = await import('/home/dicto/k-mix/src/app/octet-data.js');
+const { default: O } = await import('~/k-mix/src/app/octet-data.js');
 const C = O.cells, PHI = O.phi, at = (n) => n.map((c) => (c * PHI) / 2);
 const put = (cell, t) => cell.map(([r, V, F]) => [r, V.map((v) => v.map((x, i) => x + t[i])), F]);
 const ctr = (V) => V.reduce((t, v) => t.map((x, i) => x + v[i] / V.length), [0, 0, 0]);

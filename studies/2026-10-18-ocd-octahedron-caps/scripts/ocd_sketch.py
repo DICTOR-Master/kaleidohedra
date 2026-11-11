@@ -1,7 +1,7 @@
 # DICTO 2026-10-17: Admiral Cap analog -- the OCD in the regular octahedron of its 8 joint hexagons: z=0 section, top view, the cap at +z, the golden key on a joint hexagon. -> data/ocd-octa-sketch.json
 import sys, io, os, contextlib, itertools, json, numpy as np
 from scipy.spatial import ConvexHull, HalfspaceIntersection
-PD='/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma'; here=os.getcwd(); os.chdir(PD)
+PD='~/kaleidohedra/studies/2026-10-16-polar-dharma'; here=os.getcwd(); os.chdir(PD)
 sys.argv=['polar.py','data/dharma_cycle.json']
 with contextlib.redirect_stdout(io.StringIO()): exec(open('scripts/polar.py').read())
 os.chdir(here)

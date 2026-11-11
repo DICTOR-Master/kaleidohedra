@@ -2,7 +2,7 @@
 positive-dimensional solution set): many random starts, Levenberg-Marquardt on the exact equations, then the
 Jacobian rank at each real solution (rank < n marks a point on a curve of solutions) and the embedding check.
 Numerical only: it can find embedded forms on the curve but cannot prove there are none.
-Usage: ~/geom/bin/python explore_real.py V42 rotations 3000
+Usage: python3 explore_real.py V42 rotations 3000
 """
 import json
 import pickle

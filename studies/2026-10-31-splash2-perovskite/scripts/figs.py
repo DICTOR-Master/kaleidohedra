@@ -1,4 +1,4 @@
-# Splash figures for Splash Rules II (run on dicto-big-brother): python3 figs.py out/splash2_perovskite.json <figdir>
+# Splash figures for Splash Rules II (run on compute-host): python3 figs.py out/splash2_perovskite.json <figdir>
 # Floats only for drawing; every value plotted is an exact rational from splash.py.
 import sys, os, json
 from fractions import Fraction as Fr
@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 D = json.load(open(sys.argv[1])); out = sys.argv[2]; os.makedirs(out, exist_ok=True)
 HERE = os.path.dirname(os.path.abspath(__file__))
-LOGO = plt.imread(next(p for p in (os.path.join(HERE, 'dicto-logo.png'), os.path.expanduser('~/kres-tmp/dicto-logo.png'), os.path.expanduser('~/k-research/papers/dicto-logo.png')) if os.path.exists(p)))
+LOGO = plt.imread(next(p for p in (os.path.join(HERE, 'dicto-logo.png'), os.path.expanduser('~/work/dicto-logo.png'), os.path.expanduser('~/k-research/papers/dicto-logo.png')) if os.path.exists(p)))
 GOLD, INK, GREY, BLUE, RED, GREEN = '#b8962e', '#222222', '#9a9a9a', '#2f5d8a', '#a8402e', '#4b7a3a'
 plt.rcParams.update({'font.size': 8, 'axes.linewidth': 1.0, 'font.family': 'DejaVu Sans'})
 W = D['words']; KN = {k['word']: k['name'] for k in D['known']}

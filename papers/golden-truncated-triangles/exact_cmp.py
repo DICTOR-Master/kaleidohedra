@@ -1,7 +1,7 @@
 # Exact (sympy, Q(sqrt5)) scale-free congruence: atlas slice vs dataset solid / exact golden-cut icosahedron.
 import sys, os, json, itertools, sympy as sp
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/studies/2026-10-27-white-queen-polar/scripts'))
-os.chdir(os.path.expanduser('~/kres-tmp/studies/2026-10-27-white-queen-polar/scripts'))
+sys.path.insert(0, os.path.expanduser('~/work/studies/2026-10-27-white-queen-polar/scripts'))
+os.chdir(os.path.expanduser('~/work/studies/2026-10-27-white-queen-polar/scripts'))
 import atlas120 as A
 from fractions import Fraction as Fr
 s5 = sp.sqrt(5); G = (1+s5)/2
@@ -30,7 +30,7 @@ def item_pts(keep, lab, h, at, tip):
     out = [p for p in pts if tuple(round(float(c), 9) for c in p) in set(fV)]
     assert len(out) == len(fV), (len(out), len(fV)); return out
 def ds(name):
-    w = json.load(open(os.path.expanduser(f'~/kres-tmp/dataset-v7/solids/{name}.json'))); return [[sp.sympify(c) for c in v['exact']] for v in w['vertices']]
+    w = json.load(open(os.path.expanduser(f'~/work/dataset-v7/solids/{name}.json'))); return [[sp.sympify(c) for c in v['exact']] for v in w['vertices']]
 def golden_icosa(x):
     P = [sp.Matrix(p)/2 for a in (-1,1) for b in (-1,1) for p in ([0,a,b*G],[a,b*G,0],[b*G,0,a])]
     E = [(i,j) for i,j in itertools.combinations(range(12),2) if sp.simplify((P[i]-P[j]).dot(P[i]-P[j])-1)==0]

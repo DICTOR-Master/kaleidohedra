@@ -5,7 +5,7 @@ its characteristic polynomial chi(u) has the values of l at the solutions as roo
 squarefree part of chi gives the number of distinct values, and its real roots (isolated exactly over the real
 algebraic numbers) the number of real values.  A second random form is used to confirm that l separates the
 solutions (same counts).
-Usage: ~/geom/bin/python count_exact.py V42 rotations [sat:t0_0]
+Usage: python3 count_exact.py V42 rotations [sat:t0_0]
 """
 import json
 import pickle

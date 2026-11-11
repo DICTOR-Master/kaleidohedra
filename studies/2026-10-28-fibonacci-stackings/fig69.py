@@ -23,5 +23,5 @@ ax.text(0, 0.15, 'pieces between neighbouring layers: cubic–cubic 1/φ³ ≈ 0
         fontsize=9, color=INK)
 ax.set_xlim(-0.2, 34.2); ax.set_ylim(0, 2.5)
 fig.text(0.99, 0.02, 'DICTO', color='#b8962e', fontsize=11, ha='right', family='serif', weight='bold')
-out = os.path.expanduser('~/kres-tmp/fig69'); os.makedirs(out, exist_ok=True)
+out = os.path.expanduser('~/work/fig69'); os.makedirs(out, exist_ok=True)
 fig.savefig(os.path.join(out, 'fibonacci-stacking.png'), bbox_inches='tight', facecolor='white'); print('ok')

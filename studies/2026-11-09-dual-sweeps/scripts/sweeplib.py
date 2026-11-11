@@ -5,7 +5,7 @@ re-derived and certified exactly (exact solve, exact feasibility, exact tight se
 Walls are found by walking the line: on an open interval every corner is affine in mu,
 x(mu) = p + mu q, and the next wall is the smallest root > s of a_k.x(mu) = b_k(mu) over all
 corners and all planes not already tight, which is exactly the 4x4 concurrency determinant.
-dicto-big-brother, ~/geom/bin/python. Study 2026-11-09-dual-sweeps.
+compute-host, python3. Study 2026-11-09-dual-sweeps.
 """
 from fractions import Fraction as Q
 import itertools, math

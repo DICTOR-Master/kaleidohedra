@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Second dual sweep (Concordance gap 2) with the harmonic detector: S(mu) = CO ∩ mu·RD, CO = {|x|<=1, |x|+|y|+|z|<=2}, RD = polar(CO) = {|x|+|y|<=1}.
-mu = 1: RD; mu = 2: CO. Reports the corner set, face census and Q4 along mu; finds zeros of Q4. dicto-big-brother, ~/geom/bin/python."""
+mu = 1: RD; mu = 2: CO. Reports the corner set, face census and Q4 along mu; finds zeros of Q4. compute-host, python3."""
 import itertools, json, math, os, sys
 import numpy as np
 from scipy.spatial import HalfspaceIntersection, ConvexHull

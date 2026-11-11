@@ -8,8 +8,8 @@ reading folder); not in a paper.
 Counts: 84 new halos (42 centre, 42 polar) from 2026-11-02-halo-census. Test 1 (edges): 0 / 84 alone, 0 / 3486 halo + halo,
 14 / 1008 halo + known set pass. Test 2 (corners): 14 / 14 pass. Tests 3 (balance) and 4 (keyed bond): 0 / 14 pass.
 
-Run on dicto-big-brother (~/kres-tmp/halo-fillers, ~/geom/bin/python), one foreground process per step; nothing left running.
-Inputs: ~/kres-tmp/halo-census/data (census.json + shapes/<slug>.json, corners and faces of each halo), ~/kres-tmp/dataset-v7.
+Run on compute-host (~/work/halo-fillers, python3), one foreground process per step; nothing left running.
+Inputs: ~/work/halo-census/data (census.json + shapes/<slug>.json, corners and faces of each halo), ~/work/dataset-v7.
 - scripts/screen.py data/screen.json: test 1. At a point inside an edge of dihedral angle a, the other pieces add their dihedral
   angles or pi, total 2 pi; so 2 pi - a or pi - a must be a non-negative integer sum of the set's dihedral angles. Floats, 1e-7 rad.
   Also checks each known filler set passes on its own angles (dihedrals of the non-convex keyed pieces from oriented faces, reflex
@@ -28,7 +28,7 @@ Inputs: ~/kres-tmp/halo-census/data (census.json + shapes/<slug>.json, corners a
 - scripts/sanity.py data/sanity.json: test 1 passes cube, RD, TO; fails RT, dodecahedron, icosahedron, octahedron, tetrahedron;
   fails all 26 known/repeated census halos; face counts of the hulls used match the census for all 110 halos.
 - scripts/describe.py: faces (sides, lengths, corner angles, distance) of the survivors and partners (construction step input).
-- scripts/typeset.py: the PDF (printed on dicto-big-brother with papers/print.mjs). figs/: the four halos that passed test 1
+- scripts/typeset.py: the PDF (printed on compute-host with papers/print.mjs). figs/: the four halos that passed test 1
   (census thumbnails).
 - Prior art: no filler found, so no construction and no prior-art check. The balance argument is classical, not claimed as new.
 - Limits: partners are the 12 sets above only; tests are necessary conditions (that is why survivors would have gone to construction);

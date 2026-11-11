@@ -1,4 +1,4 @@
-# DICTO 2026-10-20: the Penrose-core kit's boundary pieces at twin planes (float first; manifold3d, dicto-node).
+# DICTO 2026-10-20: the Penrose-core kit's boundary pieces at twin planes (float first; manifold3d, compute-host-2).
 # #37 keyless Penrose-core kit: OG, 6 vertex caps per octahedron, a middle piece on every octet edge, tetrahedra; caps and tetrahedra
 # notched by the middle pieces. Every edge is shared by two octahedra; its middle piece = hull(the two OGs' five-fold stars nearest the
 # edge) minus both OGs. In the octet the second star is the first turned through the edge midpoint (M0); at a twin-plane edge it is

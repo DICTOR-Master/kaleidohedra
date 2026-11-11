@@ -2,7 +2,7 @@
 whose shadow orbit on F_mu is the section's corner set (search box {-4..4}^6 in floating point, every hit then confirmed
 exactly in K). Sweep vectors (shadow = section for every mu) are excluded: a hit must fail at mu +- 0.01.
 Expected: Icosaxes (phi) norm 2 (the mixed D6 roots); Golden Cut Cubes: no vector at all (s3: degree argument).
-usage (dicto-big-brother): ~/geom/bin/python s4_min_norm.py -> ../data/s4-min-norm.json
+usage (compute-host): python3 s4_min_norm.py -> ../data/s4-min-norm.json
 """
 from sixd_lib import *          # noqa
 import numpy as np

@@ -13,7 +13,7 @@ DICTO's idea (3 November 2026): "perhaps every single reference paper and book c
 | Newly filed (library `cited/`) | 219 entries: 122 copies (70 + 4 arXiv, 35 Wikipedia pages, 4 US patents, 9 open-access, public-domain or institutional copies), 97 link entries |
 | Too vague to file | 26 author–year mentions in prior-art notes (`data/vague-mentions.json`) |
 | DICTO's own | 65 records (papers by number, books, data set) in `cited/dicto-own.json`, DICTO DOIs, not copied |
-| Disk | Pi: 191 MB in `cited/`. dicto-big-brother: 29 MB (Heath 1921, over the 20 MB limit) in `~/reference-library-incoming/cited/`, entry written as if in place, with `copy_on` |
+| Disk | Pi: 191 MB in `cited/`. compute-host: 29 MB (Heath 1921, over the 20 MB limit) in `~/reference-library-incoming/cited/`, entry written as if in place, with `copy_on` |
 
 The draft bibliography is `bibliography-draft.html` (Part A: 290 works cited in reference lists; Part B: 111 identified works named only in prior-art checks; Part C: 65 of DICTO's own works). Not published.
 
@@ -23,7 +23,7 @@ The draft bibliography is `bibliography-draft.html` (Part A: 290 works cited in 
 2. `normalise.py` → `data/works.json`: one work per DOI / arXiv id / US patent / Wikipedia article / DICTO Zenodo record, otherwise first author + year + title words; works sharing an identifier are merged; hand merges in `data/overrides.json`. "Sources checked" items attach to known works by identifier or author + year; the rest stay in `data/checked-unresolved.json` (mostly search phrases and web pages).
 3. `match.py` → `data/matched.json`: held / link / missing / own against every manifest of the library as it was before this study.
 4. `fetch.py resolve | plan | download N | manifest`: arXiv API and OpenAlex metadata (cached in `data/cache/`, not committed); legal-copy decision per work (`data/plan.json`; hand-found copies in `data/manual-copies.json`); downloads one at a time with 3 s pauses (`data/downloads.json`, sha256 per file); writes `cited/MANIFEST.json` and `cited/dicto-own.json` in the library.
-5. In the library: `python3 -I tools/build_index.py` (new sections "Cited in DICTO's papers" and "DICTO's own papers, as cited"); INDEX.pdf printed on dicto-big-brother with `tools/print_pdf.mjs` (219 pages).
+5. In the library: `python3 -I tools/build_index.py` (new sections "Cited in DICTO's papers" and "DICTO's own papers, as cited"); INDEX.pdf printed on compute-host with `tools/print_pdf.mjs` (219 pages).
 6. `bibliography.py` → `bibliography-draft.html`.
 
 Legal sources only: arXiv; repository or CC-licensed open-access copies listed by OpenAlex; public-domain scans; US patents (Google Patents images); Wikipedia (CC BY-SA, its own PDF service). No shadow libraries. Everything in copyright is a link entry.
@@ -37,4 +37,4 @@ Legal sources only: arXiv; repository or CC-licensed open-access copies listed b
 
 ## Decisions
 
-- DICTO: every cited work goes into the library (3 November 2026). Coordinator, for DICTO, same day: files over 20 MB and all further files to dicto-big-brother; the library is moving there.
+- DICTO: every cited work goes into the library (3 November 2026). Coordinator, for DICTO, same day: files over 20 MB and all further files to compute-host; the library is moving there.

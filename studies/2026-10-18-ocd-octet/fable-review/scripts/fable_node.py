@@ -1,4 +1,4 @@
-# Fable review 2026-10-18 -- dicto-node job (numpy + manifold3d): (1) dense float sampling of one fundamental cell for BOTH kits,
+# Fable review 2026-10-18 -- compute-host-2 job (numpy + manifold3d): (1) dense float sampling of one fundamental cell for BOTH kits,
 # uniform points plus points pushed close to piece faces; (2) solid meshes of every piece: parts, genus, volume, area, sphericity;
 # (3) mirror/rotation tests of the dented and notched tetrahedra; (4) sphericity of two improvement variants:
 #     A = keys cut down to the hexagonal prism over the joint hexagon,  B = full kit without keys (OCD bare, M0 = H - two OCDs).

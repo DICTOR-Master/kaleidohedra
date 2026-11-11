@@ -13,7 +13,7 @@ is the set of interfaces between neighbouring pyramids: for each edge AB, the fl
 a cube from his PET-bottle system B1NR, which showed the cube as six pyramids. On 2026-11-02 he also asked for two views of every Vacuus:
 **SHEETS** (the fins) and **STRUTS** (rods O→every corner, optionally with the solid's edges), because he builds with bottles and struts.
 
-Run on dicto-big-brother (~/kres-tmp/vacuus, ~/geom/bin/python). vacuus.py ran as background processes, 16 at a time via xargs, one per
+Run on compute-host (~/work/vacuus, python3). vacuus.py ran as background processes, 16 at a time via xargs, one per
 solid; collect.py, render.py (9 at a time) and typeset.py ran after that. Everything finished, and nothing is left running.
 - scripts/qf.py: exact arithmetic in Q(√d) (d = 2, 3, 5) with exact sign, and the exact rational-π test. If cos 2θ lies in a quadratic
   field, θ/π is rational only for cos 2θ ∈ {0, ±1/2, ±1, (±1±√5)/4, ±√2/2, ±√3/2}.
@@ -27,7 +27,7 @@ solid; collect.py, render.py (9 at a time) and typeset.py ran after that. Everyt
     (n−2)π + solid angle round a pyramid, total 4π;
   - flat sheets and central discs;
   - struts: count, exact length classes, edge lengths, frame lengths.
-  The per-solid JSON (data/shapes, 9 MB) stays on dicto-big-brother and is not in git.
+  The per-solid JSON (data/shapes, 9 MB) stays on compute-host and is not in git.
 - scripts/collect.py: writes data/vacuus-census.json (one row per solid with all classes, exact strings) and data/collect.log (the flag
   lists). It also runs the polar check over the 92 convex solids. With P* the polar about O:
   - apex(P*) = π − dihedral(P), largest error 4.4e-16;

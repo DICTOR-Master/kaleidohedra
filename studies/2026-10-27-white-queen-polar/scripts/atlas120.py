@@ -17,7 +17,7 @@ centre, a cell centre of the 120-cell (= the 600-cell's cell-, face-, edge- and 
    direction (V <-> F swapped), and the central slice of the 120-cell is the polar of the 600-cell's shadow.
 Faces of every slice and shadow are named exactly (regular, equilateral, equiangular; triangle and quadrilateral kinds;
 centrally symmetric even polygons).
-usage (dicto-big-brother):  cd scripts && nice ~/geom/bin/python atlas120.py [nproc]
+usage (compute-host):  cd scripts && nice python3 atlas120.py [nproc]
 """
 import json
 import os
@@ -29,7 +29,7 @@ from fractions import Fraction as Fr
 from itertools import combinations
 from multiprocessing import Pool
 
-for p in (os.path.expanduser("~/kres-tmp/4d/scripts"), os.path.expanduser("~/k-research/studies/2026-10-27-4d-shadows/scripts")):
+for p in (os.path.expanduser("~/work/4d/scripts"), os.path.expanduser("~/k-research/studies/2026-10-27-4d-shadows/scripts")):
     if os.path.isdir(p):
         sys.path.insert(0, p); break
 from q5 import Q5, ZERO, dot, sub, add, scal, cross, exact_hull3, q5str  # noqa: E402
@@ -41,7 +41,7 @@ LOG = []
 
 
 def find_data(name, study):
-    for p in (os.path.join(DATA, name), os.path.expanduser("~/kres-tmp/4d/data/" + name),
+    for p in (os.path.join(DATA, name), os.path.expanduser("~/work/4d/data/" + name),
               os.path.join(HERE, "../..", study, "data", name)):
         if os.path.exists(p):
             return p

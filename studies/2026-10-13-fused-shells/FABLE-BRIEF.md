@@ -68,5 +68,5 @@ face counts on large builds). Start with the library and the literature; before 
 
 ## Conventions (DICTO)
 Dated study folder (this one); data raw + with checks; figures in the app's style; a short report of what was checked and how;
-DICTO · dictospheres.com on every figure, net and PDF. Heavy computation goes to dicto-node (`ssh 192.168.0.7`; Python with numpy,
+DICTO · dictospheres.com on every figure, net and PDF. Heavy computation goes to compute-host-2 (`ssh compute-host`; Python with numpy,
 scipy, shapely in `~/fusedenv`; this folder mirrored at `~/fused-shells`). Commit to the local repo only; do not push.

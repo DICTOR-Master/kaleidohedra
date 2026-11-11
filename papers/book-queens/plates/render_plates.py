@@ -9,7 +9,7 @@ plate's printed size, antialiased by 3x supersampling, no haze; the book's dark 
      grouped by the height of their centre along v, perspective from just beyond the opposite cell (as render_red_queen.py).
 Colours of groups 2 and 3 as the book's Figures 6.3 and 8.1 (viridis from 0.15 to 0.95, core gold); the shells inside the one shown
 are drawn in dark grey so the nesting can be seen. Floats for drawing only; every count is checked here and written to plates.json.
-Run on dicto-big-brother:  ~/geom/bin/python render_plates.py <dataset-v6 dir> <600cell-source.json> <dicto-logo.png> <out dir>
+Run on compute-host:  python3 render_plates.py <dataset-v6 dir> <600cell-source.json> <dicto-logo.png> <out dir>
 """
 import csv, json, os, sys
 from collections import defaultdict

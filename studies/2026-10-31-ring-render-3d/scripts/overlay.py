@@ -1,5 +1,5 @@
 # Check of a camera fit: draws the bipyramid's edges (red), apices A/B and the equator vertices E1-E3 on the photo.
-# Output is photo-derived: write it outside the repository.  Usage: ~/geom/bin/python overlay.py photo.jpg cam.json out.jpg
+# Output is photo-derived: write it outside the repository.  Usage: python3 overlay.py photo.jpg cam.json out.jpg
 import sys, json, math
 import numpy as np
 from PIL import Image, ImageDraw

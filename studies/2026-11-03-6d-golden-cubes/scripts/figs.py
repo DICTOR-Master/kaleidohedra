@@ -3,7 +3,7 @@ blue = octahedron / other); DICTO mark. Geometry in floating point for drawing o
 fig1: sections of cube x octahedron (6D) by the flats F_mu, with the mu-line coloured by the field of mu.
 fig2: (a) shadow of the 6-cube = rhombic triacontahedron, (b) central section = dodecahedron, (c) Icosaxes with its two twin
       icosahedra, (d) Unborn Axes with the two twin dodecahedra (the 24 non-cube corners).
-usage (dicto-big-brother): python figs.py <out dir> <logo png>
+usage (compute-host): python figs.py <out dir> <logo png>
 """
 import os, sys, itertools
 import numpy as np

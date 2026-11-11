@@ -11,10 +11,10 @@ place); at λ = −1/8 the #75 tile pieces are exactly the fabric's cells (tetra
 **Status:** spec typeset `knitted-hexoct-spec.pdf` (also ~/Documents/papers-to-read), awaiting DICTO's read; nothing knitted yet.
 
 ## Files
-- `scripts/check.py` → `data/check.out` (dicto-big-brother, ~/geom/bin/python, in a folder with the #75 scripts of
+- `scripts/check.py` → `data/check.out` (compute-host, python3, in a folder with the #75 scripts of
   studies/2026-10-29-endless-stack-cell): link offsets/lengths/tilts (exact), c collinear / h mirror, self-centring (random shifts),
   test-piece node and link counts, λ = −1/8 tile pieces vs fabric cells (5 layers: ABC, AB, ABCB ×2, ABCACB).
 - `scripts/fig.py` → `figs/section.svg`, `figs/plan.svg` (construction schematics, line drawings only).
-- `paper.html` → `knitted-hexoct-spec.pdf`, printed on dicto-big-brother with papers/print.mjs (footer text changed to
+- `paper.html` → `knitted-hexoct-spec.pdf`, printed on compute-host with papers/print.mjs (footer text changed to
   "specification, not published" in the copy used; no DOI).
 Background: studies/2026-11-02-knitted-octet (research note). No new source search for this spec.

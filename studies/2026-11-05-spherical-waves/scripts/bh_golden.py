@@ -6,7 +6,7 @@
 # Completeness check: kept tiles + leftover pieces = room volume; tiles overlap 0; leftover overlaps tiles 0. Float booleans.
 import json, itertools, numpy as np, time, sys, manifold3d as m3
 from scipy.spatial import ConvexHull, HalfspaceIntersection
-t0 = time.time(); R = "/home/dicto/study-runs/og-pent/cut/data/"
+t0 = time.time(); R = "~/study-runs/og-pent/cut/data/"
 STEPS = int(sys.argv[1]) if len(sys.argv) > 1 else 2; S0 = float(sys.argv[2]) if len(sys.argv) > 2 else 0.2; LIM = float(sys.argv[3]) if len(sys.argv) > 3 else 280
 B = np.array(json.load(open(R + "densest.json"))["B"]); O = np.array(json.load(open(R + "network.json"))["ocd"]); O = O - O.mean(0)
 hull = lambda P: m3.Manifold.hull_points(np.asarray(P, float).tolist())
@@ -18,7 +18,7 @@ for k, v in pl.items():
         p = np.array(k[:3]); p /= np.linalg.norm(p)
         if not any(abs(abs(p @ q) - 1) < 1e-3 for q in ax5): ax5.append(p)
 E6 = np.array(ax5)
-DD = json.load(open("/home/dicto/study-runs/og-pent/step10-input.json")); VV = np.array(DD["V"]); Rr = DD["R"]; aa = 4*Rr/3
+DD = json.load(open("~/study-runs/og-pent/step10-input.json")); VV = np.array(DD["V"]); Rr = DD["R"]; aa = 4*Rr/3
 h0 = np.array([aa/2, 0, 0])
 holes = [np.array(q)*aa/2 for q in itertools.product(range(-5, 6), repeat=3) if sum(x % 2 for x in q) in (1, 2)]
 hh = [np.r_[p - h0, -(p - h0) @ ((p + h0)/2)] for p in holes if 1e-9 < np.linalg.norm(p - h0) < 3*aa]

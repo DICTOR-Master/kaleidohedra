@@ -1,7 +1,7 @@
 # Scan of the hole weight lambda over the walk -11/24 <= lambda <= 3/8: the outer faces of the c-tile (ABC, layer 1) and the
 # h-tile (AB, layer 0) as ONE solid each, exact, and how many of the faces can be laid with rings.
 # Ring = security ring pulled into a triangle of side 1/2 (build at double scale: a unit triangle = 4 rings).
-# Usage (dicto-big-brother): TILES_DIR=~/kres-tmp/endless ~/geom/bin/python scan.py [lambda ...]  -> ../out/scan.tsv, ../out/scan.txt
+# Usage (compute-host): TILES_DIR=~/work/endless python3 scan.py [lambda ...]  -> ../out/scan.tsv, ../out/scan.txt
 import os, sys, json
 from fractions import Fraction as Fr
 from collections import Counter

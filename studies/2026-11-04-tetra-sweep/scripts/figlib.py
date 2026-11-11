@@ -1,5 +1,5 @@
 """Small painter's-algorithm renderer for convex solids (orthographic), house look of DICTO's papers.
-Used by fig_*.py (paper #100, 2026-11-07-dehn-tilers). Run on dicto-big-brother with ~/geom/bin/python."""
+Used by fig_*.py (paper #100, 2026-11-07-dehn-tilers). Run on compute-host with python3."""
 import numpy as np
 from scipy.spatial import ConvexHull, HalfspaceIntersection
 from matplotlib.patches import Polygon

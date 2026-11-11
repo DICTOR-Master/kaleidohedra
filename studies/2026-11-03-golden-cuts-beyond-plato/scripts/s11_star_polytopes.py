@@ -11,7 +11,7 @@ heights searched. Golden Cut Cubes: the only O_h sections are central in the A3 
 Search: floating point, 3000 heights per chord class, scale-free comparison of corner sets (sorted squared distances over
 the mean squared radius) for sets with the target's corner count; local minima refined; any match is then checked
 exactly in K (corner-to-corner, s8 method).
-usage (dicto-big-brother): ~/geom/bin/python s11_star_polytopes.py -> ../data/s11-star-polytopes.json
+usage (compute-host): python3 s11_star_polytopes.py -> ../data/s11-star-polytopes.json
 """
 import sys, os, json, itertools, time
 import numpy as np

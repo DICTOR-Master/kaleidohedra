@@ -1,6 +1,6 @@
 """Render: the 600-cell cell-first slice with 48 vertices (convex, unequal edges) beside its equilateral form
 Slice-48 (placeholder name), two views of the form.  Dark background, gold DICTO mark.
-Run on dicto-big-brother:  ~/geom/bin/python render_slice48.py
+Run on compute-host:  python3 render_slice48.py
 """
 import pickle
 

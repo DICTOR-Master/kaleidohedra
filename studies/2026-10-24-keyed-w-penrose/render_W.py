@@ -26,4 +26,4 @@ sheet = Image.new('RGB', (1960, 720), (246, 244, 239)); [sheet.paste(t, (10 + i 
 d = ImageDraw.Draw(sheet); f = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 18)
 d.text((20, 670), 'Option 2: the Penrose rhomb pattern (picture A) as lines; every W the same; ridge height about 1 mm at print scale, walls 30°', font=f, fill=(107, 114, 128))
 d.text((1860, 690), 'DICTO', font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 20), fill=(150, 150, 150))
-sheet.save('/home/dicto/Documents/papers-to-read/keyed-w-penrose-lines.png'); print('saved')
+sheet.save('~/Documents/papers-to-read/keyed-w-penrose-lines.png'); print('saved')

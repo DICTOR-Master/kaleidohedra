@@ -4,7 +4,7 @@ import math, numpy as np
 from fractions import Fraction as Fr
 from scipy.spatial import ConvexHull
 exec(open('scripts/exact_dehn.py').read().split("if __name__")[0])
-exec(open('/home/dicto/study-runs/2026-11-04-dehn-screen/scripts/halfcell.py').read().split('print("RD"')[0])
+exec(open('~/study-runs/2026-11-04-dehn-screen/scripts/halfcell.py').read().split('print("RD"')[0])
 s3 = math.sqrt(3)
 def to_lat(p):
     u = p[0] - p[1]/s3; v = 2*p[1]/s3; z = p[2]/Hh

@@ -1,4 +1,4 @@
-// DICTO 2026-10-20: screenshots of every view of renders/gyrated-octet.html (dicto-node, Playwright). usage: node shoot.mjs <html> <outdir>
+// DICTO 2026-10-20: screenshots of every view of renders/gyrated-octet.html (compute-host-2, Playwright). usage: node shoot.mjs <html> <outdir>
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 const [F, OUT] = process.argv.slice(2); fs.mkdirSync(OUT, { recursive: true });

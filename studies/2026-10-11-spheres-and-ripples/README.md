@@ -1,7 +1,7 @@
 # Spheres and ripples on the Lotus seed (DICTO, 2026-10-11)
 
 DICTO's classical parallels to the resin method, tested on the Lotus seed (DICTO Icosa-13; its 113-piece division:
-13 icosahedra, 20 FUJI, 60 AXE, 20 CLEO). Scripts in `scripts/`, run on dicto-node.
+13 icosahedra, 20 FUJI, 60 AXE, 20 CLEO). Scripts in `scripts/`, run on compute-host-2.
 
 ## 1. Golden-ladder spheres (`spheres2.py`, data `lotus-spheres.json`)
 Spheres placed where there is most room, with all 120 icosahedral copies, each level φ times smaller.

@@ -9,7 +9,7 @@ Source: studies/2026-10-18-p3-golden-envelope-octet (golden envelopes in the oct
 - Give every point to its nearest envelope centre: the fcc Voronoi cell, the **rhombic dodecahedron** |x|+|y|, |y|+|z|, |z|+|x| ≤ R (R = 2φ/3), volume = the cell (32 + 16√5)/27.
 - **The golden envelope lies inside its rhombic dodecahedron (exact) and touches each of its 12 faces at one corner** — the 12 golden-section corners on the octahedron edges ((2/3, (√5 − 1)/3, 0) and its turns).
 - **Adaptor = rhombic dodecahedron − envelope: 352/27 − 16√5/3 = 1.111341** (44.27% of space).
-## Step 2 — the adaptor as a piece (`scripts/p4_mesh.py` on dicto-node → `data/p4-mesh.json`)
+## Step 2 — the adaptor as a piece (`scripts/p4_mesh.py` on compute-host-2 → `data/p4-mesh.json`)
 - One solid, centrosymmetric (no left/right), but a **closed shell (cavity)**: the envelope is sealed inside. To assemble, it **opens in two identical halves along z = 0** (each 0.555671, one solid, sphericity 0.37; the half-turn about the x axis maps one onto the other). (Each half has the same volume as a grown core piece of set 3.)
 - Sets: **one-piece golden octet** = rhombic dodecahedron with the envelope fused: one shape, fills space alone (fcc). **Two-shape golden octet** = solid envelope + adaptor half (×2): 2 shapes, no mirror images. **Adaptor for any golden-envelope solid**: the cavity takes any solid whose golden envelope it is (the OCD, the envelope itself, …).
 ## Step 3 — 3D page (`scripts/p4_page.py` → `renders/p4-golden-octet-adaptor.html`, claude.ai/artifact/3Qw1XztMnTGiUuN1ntq1L9)
@@ -28,18 +28,18 @@ Source: studies/2026-10-18-p3-golden-envelope-octet (golden envelopes in the oct
 - DICTO: "this could be a half RD pyrochlore network of any golden adaptable solid … I meant figuratively, with RD equivalent". Recorded as the general system: **RD-equivalent cells (golden envelope + adaptor), each cell full or half-open (adaptor half kept on one side), arranged in any network on the fcc lattice; any solid whose golden envelope this is can sit in each socket.** The chamber (step 4) is one instance.
 - Two RD-equivalents are now known: the **envelope-centred** rhombic dodecahedron (adaptor shell round one envelope, opens in two halves; this project) and Fable's **vertex-centred** rhombic dodecahedron minus its 6 envelope bites (W, one solid glue piece, achiral; octet fable-review-2).
 
-## Step 5 — envelope + W in 3D (`scripts/p4_W.py` on dicto-node → `data/p4-W.json`)
+## Step 5 — envelope + W in 3D (`scripts/p4_W.py` on compute-host-2 → `data/p4-W.json`)
 - W = rhombic dodecahedron round the octet vertex (0, 0, R) minus the envelopes biting into it: volume 1.111341 (= the exact (352 − 144√5)/27), one solid, sphericity 0.574 (Fable's numbers confirmed).
 - 3D page (same link): "Envelope + W" (one envelope with the 6 W at its octahedron corners), "the set", and "network" (envelopes on the octahedron sites, W on the octet vertices).
 
-## Step 6 — W with exact OCD imprints (DICTO 10-18: "like this last Fable W particularly, and face could be exact imprint of OCD?!"; `scripts/p4_W_ocd.py` on dicto-node → `data/p4-W-ocd.json`)
+## Step 6 — W with exact OCD imprints (DICTO 10-18: "like this last Fable W particularly, and face could be exact imprint of OCD?!"; `scripts/p4_W_ocd.py` on compute-host-2 → `data/p4-W-ocd.json`)
 - **W_OCD = rhombic dodecahedron round each octet vertex minus the 6 OCDs biting into it** (OCD-shaped sockets instead of envelope-shaped).
 - Space filling by construction: the vertex rhombic dodecahedra tile space (fcc), so every point outside the OCDs lies in exactly one W_OCD; **kit OCD + W_OCD fills space exactly**.
 - Exact volume = cell − OCD = **(2824 − 328√5)/1539 = 1.358395**; one solid (genus 0); **centrosymmetric — no mirror pair**; **sphericity 0.648** (chunkier than the envelope W, 0.574); the OCD stays whole (0.979).
 - **So: OCD + W_OCD — two shapes, no mirror images, both chunky; the 6 sockets of each W are exact OCD imprints.** (Fable check to do.)
 - 3D page (same link): "OCD + W with OCD imprints", "the set", "network".
 
-## Step 7 — W centred on the Penrose star (DICTO 10-18: "could the imprint be centred on the Penrose star also?!"; `scripts/p4_W_star.py` on dicto-node → `data/p4-W-star.json`)
+## Step 7 — W centred on the Penrose star (DICTO 10-18: "could the imprint be centred on the Penrose star also?!"; `scripts/p4_W_star.py` on compute-host-2 → `data/p4-W-star.json`)
 - Sites: the midpoints m of the octahedron edges, where two OCDs' five-fold stars face each other and the thick Penrose rhombus joins them ((R/2)(a,b,c), exactly two of a,b,c odd; 6 per cell).
 - **Their Voronoi cell is an octahedron with corners at the two OCD centres, the two edge ends and the two tetrahedron centres** (e.g. 0, (0,R,R), (0,R,0), (0,0,R), (±R/2, R/2, R/2)), volume = the octet tetrahedron's (16 + 8√5)/81 = cell/6.
 - **Star-centred W = that octahedron minus its 2 OCDs** (imprints at two opposite corners): (cell − OCD)/6 = (1412 − 164√5)/4617 = **0.226399**; one solid (genus 0); centrosymmetric about m (no mirror pair); **sphericity 0.690** (the chunkiest glue so far); holds 97.7% of the middle piece between the facing stars (so nearly all the Penrose link region).

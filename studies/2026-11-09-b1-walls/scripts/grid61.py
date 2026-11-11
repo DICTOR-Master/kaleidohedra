@@ -12,7 +12,7 @@ print(f'START {len(S)} spacings x 8 λ, one process per spacing', flush=True)   
 def run(s):
     L = lams(s); f = f'grid/g_{s.numerator}o{s.denominator}.txt'
     with open(f, 'w') as out:
-        subprocess.run([os.path.expanduser('~/geom/bin/python'), 'swap4.py', str(s), ','.join(str(x) for x in L)], stdout=out, stderr=subprocess.STDOUT, cwd='.')
+        subprocess.run([os.path.expanduser('python3'), 'swap4.py', str(s), ','.join(str(x) for x in L)], stdout=out, stderr=subprocess.STDOUT, cwd='.')
     done[0] += 1; print(f'PROGRESS {done[0] / total:.2f} spacing {s} done', flush=True); return f
 with ThreadPoolExecutor(6) as ex: files = list(ex.map(run, S))
 rows = 0

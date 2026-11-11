@@ -1,4 +1,4 @@
-# DICTO 2026-10-18 golden octet adaptor -- mesh (dicto-node, manifold3d): adaptor = rhombic dodecahedron minus the golden envelope.
+# DICTO 2026-10-18 golden octet adaptor -- mesh (compute-host-2, manifold3d): adaptor = rhombic dodecahedron minus the golden envelope.
 # One solid? genus (holes), sphericity; symmetry check of the inversion (achiral). usage: python3 p4_mesh.py step22-input.json R OUT.json
 import sys, json, itertools, numpy as np, manifold3d as m3
 RT = np.array(json.load(open(sys.argv[1]))['RT']); R = float(sys.argv[2])

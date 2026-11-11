@@ -2,15 +2,15 @@
 """Hygiene (DICTO 2026-11-07: "keep unread drafts clear, and remove/delete unneeded transitional files ... otherwise we will need a
 512gb clearout of rubbish"). Run daily by cron, and by zen_new.py / zen_newversion.py right after every release (--folder).
 
-  tidy.py                 daily sweep (this machine + dicto-big-brother)
-  tidy.py --folder DIR    after a release of DIR: delete every DRAFT*.pdf of that paper here and on dicto-big-brother
+  tidy.py                 daily sweep (this machine + compute-host)
+  tidy.py --folder DIR    after a release of DIR: delete every DRAFT*.pdf of that paper here and on compute-host
   tidy.py --dry           report only
 
 Rules:
  1. A DRAFT*.pdf is transitional: deleted once its paper is released (--folder), and anywhere when older than 14 days.
  2. papers-to-read/read-earlier: DRAFT files are deleted at once (the published PDF is the record); everything else after 14 days.
  3. papers-to-read (top) holds only what waits for DICTO; items older than 1 day are reported as stale (DICTO 11-07: stale content).
- 4. Runjob scratch (<data>.txt/.json + .part/.FAILED, untracked) older than 2 days is deleted; /tmp scratch of ours on dicto-big-brother older than 2 days too.
+ 4. Runjob scratch (<data>.txt/.json + .part/.FAILED, untracked) older than 2 days is deleted; /tmp scratch of ours on compute-host older than 2 days too.
 Never touches .git, memory folders, published PDFs (dicto-*.pdf), data files or sources, nor ANY file tracked by git."""
 import os, sys, time, subprocess, glob
 DRY = '--dry' in sys.argv; NOW = time.time(); DAY = 86400
@@ -34,12 +34,12 @@ def walk(root, pat):
         for f in files:
             if glob.fnmatch.fnmatch(f, pat): yield os.path.join(d, f)
 def remote(cmd):
-    return subprocess.run(['ssh', '-n', '-o', 'ConnectTimeout=10', 'dicto-big-brother', cmd], stdin=subprocess.DEVNULL, capture_output=True, text=True).stdout   # -n: never eat the caller's stdin (11-07: a release loop lost 8 of 10 items)
+    return subprocess.run(['ssh', '-n', '-o', 'ConnectTimeout=10', 'compute-host', cmd], stdin=subprocess.DEVNULL, capture_output=True, text=True).stdout   # -n: never eat the caller's stdin (11-07: a release loop lost 8 of 10 items)
 if '--folder' in sys.argv:
     folder = os.path.abspath(sys.argv[sys.argv.index('--folder') + 1]); name = os.path.basename(folder)
     for p in [q for pat in ('DRAFT*.pdf', '*draft*.pdf') for q in glob.glob(os.path.join(folder, pat))]: rm(p, 'released')
     out = remote(f'find ~/kaleidohedra-check/papers/{name} -maxdepth 1 -iname "*draft*.pdf" {"-print" if DRY else "-print -delete"}')
-    log += [f'delete dicto-big-brother:{l} (released)' for l in out.split()]
+    log += [f'delete compute-host:{l} (released)' for l in out.split()]
     for p in glob.glob(os.path.join(READ, f'DRAFT*')):
         pass   # drafts in the reading folder are moved by the release step itself (read ok = read)
 else:
@@ -56,7 +56,7 @@ else:
             elif NOW - os.path.getmtime(p) > 14 * DAY: rm(p, 'read-earlier item older than 14 days')
     out = remote(f'find ~/kaleidohedra-check/papers -iname "*draft*.pdf" -mtime +14 {"-print" if DRY else "-print -delete"}; '
                  f'find /tmp -maxdepth 1 -user $USER \\( -name "*.png" -o -name "*.pdf" -o -name "*.json" -o -name "zz-*" \\) -mtime +2 {"-print" if DRY else "-print -delete"} 2>/dev/null')
-    log += [f'delete dicto-big-brother:{l}' for l in out.split()]
+    log += [f'delete compute-host:{l}' for l in out.split()]
     if os.path.isdir(READ):
         stale = [f for f in os.listdir(READ) if f != 'read-earlier' and NOW - os.path.getmtime(os.path.join(READ, f)) > 1 * DAY]
         waiting = [f for f in os.listdir(READ) if f != 'read-earlier']

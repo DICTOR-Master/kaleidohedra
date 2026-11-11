@@ -1,6 +1,6 @@
 #!/bin/sh
-# paper.src.html -> paper.html (study commit $1; DOI given as $2, else "reserved on publication"), then print on dicto-big-brother in
-# ~/kres-tmp/relay-census (node_modules -> ~/kaleidohedra-check/node_modules, as for #52).
+# paper.src.html -> paper.html (study commit $1; DOI given as $2, else "reserved on publication"), then print on compute-host in
+# ~/work/relay-census (node_modules -> ~/kaleidohedra-check/node_modules, as for #52).
 # Appendix C (__WALKTABLES__) is generated here from the study's data/raw/tables.md, so the walk tables are never retyped.
 #   sh build.sh <study commit> [DOI] [pdf name] [version]
 set -e
@@ -33,7 +33,7 @@ doi = ('DICTO DOI: ' + sys.argv[2]) if sys.argv[2] else 'DICTO DOI: reserved on 
 s = s.replace('__DOI__', doi).replace('__COMMIT__', sys.argv[1])
 open('paper.html', 'w').write(s)
 P
-rsync -a --delete --exclude pg ./ ${PRINT_NODE:-dicto-big-brother}:kres-tmp/relay-census/2026-10-25-relay-census/
-rsync -a ../paper.css ../dicto-logo.png ../print.mjs ${PRINT_NODE:-dicto-big-brother}:kres-tmp/relay-census/
-ssh ${PRINT_NODE:-dicto-big-brother} "cd ~/kres-tmp/relay-census && ln -sfn ~/kaleidohedra-check/node_modules node_modules && nice -n 10 node print.mjs 2026-10-25-relay-census ${3:-relay-census-draft.pdf} 'The Global Web of Bonds' '${2:-reserved}' ${4:-1}"
-rsync -a ${PRINT_NODE:-dicto-big-brother}:kres-tmp/relay-census/2026-10-25-relay-census/${3:-relay-census-draft.pdf} ./
+rsync -a --delete --exclude pg ./ ${PRINT_NODE:-compute-host}:work/relay-census/2026-10-25-relay-census/
+rsync -a ../paper.css ../dicto-logo.png ../print.mjs ${PRINT_NODE:-compute-host}:work/relay-census/
+ssh ${PRINT_NODE:-compute-host} "cd ~/work/relay-census && ln -sfn ~/kaleidohedra-check/node_modules node_modules && nice -n 10 node print.mjs 2026-10-25-relay-census ${3:-relay-census-draft.pdf} 'The Global Web of Bonds' '${2:-reserved}' ${4:-1}"
+rsync -a ${PRINT_NODE:-compute-host}:work/relay-census/2026-10-25-relay-census/${3:-relay-census-draft.pdf} ./

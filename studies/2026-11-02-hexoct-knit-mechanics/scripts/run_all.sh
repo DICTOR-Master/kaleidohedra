@@ -1,7 +1,7 @@
 #!/bin/bash
-# runs every mechanics task in parallel on dicto-big-brother (one thread each); outputs data/mech/<task>.json
+# runs every mechanics task in parallel on compute-host (one thread each); outputs data/mech/<task>.json
 cd "$(dirname "$0")"; mkdir -p ../data/mech; export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
-PY=~/geom/bin/python; T=()
+PY=python3; T=()
 for s in 3C 2H 4H 6H; do for j in pin frame; do for v in links stiff full; do T+=("periodic:$s:$j:$v"); done; done; done
 for s in 3C 2H 4H 6H Fibonacci "Graded c-top/h-bottom" "Graded h-top/c-bottom"; do
   for j in pin frame; do for v in links stiff full; do T+=("block:$s:$j:$v"); done; done

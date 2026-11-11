@@ -3,7 +3,7 @@
 # zip-tie totals, lowest points. Drawings: layer-by-layer assembly (tiles drawn apart by layer, book colours: c gold,
 # h blue, tetrahedral pieces darker, octahedron halves lighter; layer letters A/B/C) and a ring mock-up (three-quarter and
 # side view, style of mockup.py).
-# Usage (dicto-big-brother): TILES_DIR=~/kres-tmp/endless LOGO=<logo> ~/geom/bin/python stack_build.py
+# Usage (compute-host): TILES_DIR=~/work/endless LOGO=<logo> python3 stack_build.py
 #   -> ../out/stack-build.json, stack-assembly.png, stack-mockup.png, stack-walls.png
 import os, sys, json, math
 import numpy as np

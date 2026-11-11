@@ -3,7 +3,7 @@
 # in the toggle sphere rho^2 = phi^2/4 (the ends setting: the cycles share I and D), inner to outer, as a chain for the cone cut.
 import sys, io, os, contextlib, json, numpy as np
 from scipy.spatial import ConvexHull
-PD = '/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
+PD = '~/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
 sys.argv = ['polar.py', 'data/dharma_cycle.json']
 with contextlib.redirect_stdout(io.StringIO()):
     exec(open('scripts/polar.py').read())

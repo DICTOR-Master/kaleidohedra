@@ -2,7 +2,7 @@
 # Input: the fused solids of krp-core transitional.js (the same shapes as Polyhedraverse's group), passed as trans.json.
 # Each solid is unfolded into as few pieces as fit an A4 page (greedy, compact), checked for overlaps (faces and tabs),
 # glue tabs numbered in pairs, folds marked mountain (dashed) or valley (dash-dot) from the 3D dihedral, then packed onto
-# A4 pages as SVG. Writes nets.html (print with print_pdf.mjs) and nets-checks.json. Run on dicto-node (shapely).
+# A4 pages as SVG. Writes nets.html (print with print_pdf.mjs) and nets-checks.json. Run on compute-host-2 (shapely).
 # DICTO · dictospheres.com
 import json, math, sys, os, itertools
 import numpy as np

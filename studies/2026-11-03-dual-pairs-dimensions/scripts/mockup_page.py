@@ -1,7 +1,7 @@
 """Mock-up pages for the proposed "Dual-Pair Cycles" world (PROPOSAL ONLY, nothing is built): writes paper.html that composes the
 real renders of mockup_render.py with UI drawn in HTML/CSS to match Polyhedraverse (colours sampled from the Golden Cut screenshots,
 the ∞ player's own SVG and CSS from src/app/infinity-player.js, tokens from src/app/tokens.css). Printed with
-~/kres-tmp/cw-print/print.mjs (footer "mock-up, not built").
+~/work/cw-print/print.mjs (footer "mock-up, not built").
 usage: python mockup_page.py <render dir (mockup-data.json, r-*.png)> <out folder> <logo png>
 DICTO · dictospheres.com
 """

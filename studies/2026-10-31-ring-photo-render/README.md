@@ -5,7 +5,7 @@ seen as it would look before it is built. First test on one photo (three big tri
 
 **Privacy:** the photo is DICTO's own and private. It, the cut-outs, the renders and the sheet live only in
 `~/Documents/ring-photos/` (derived files in `derived/`), `~/Documents/papers-to-read/ring-photo-test.png` and on
-dicto-big-brother `~/kres-tmp/ringphoto/`. This folder holds the scripts only; no image made from the photo may be added here.
+compute-host `~/work/ringphoto/`. This folder holds the scripts only; no image made from the photo may be added here.
 
 ## Method
 
@@ -23,7 +23,7 @@ dicto-big-brother `~/kres-tmp/ringphoto/`. This folder holds the scripts only; n
    Shading by face normal (interior dimmer), zip-tie patches folded over shared sides, ground shadow along the light.
 3. `scripts/sheet.py` — comparison sheet with the DICTO mark.
 
-Run on dicto-big-brother (env vars in each script header).
+Run on compute-host (env vars in each script header).
 
 ## Findings
 

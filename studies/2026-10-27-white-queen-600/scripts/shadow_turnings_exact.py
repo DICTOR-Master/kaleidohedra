@@ -6,7 +6,7 @@ coefficients have the same strict sign. Two events coincide when their (α, β) 
 an event from A is given exactly as cos² = (u·a)² / ((u·u)(a·a)) and, for reading, in degrees. In each gap a direction
 strictly inside (the sum of the two boundary directions, each scaled to the same 'a'-coefficient-free form) is used to
 count front cells exactly and to compute the shadow hull exactly (q5.exact_hull3, shadows.describe).
-Run on dicto-big-brother:  cd ~/kres-tmp/4d/scripts && ~/geom/bin/python shadow_turnings_exact.py
+Run on compute-host:  cd ~/work/4d/scripts && python3 shadow_turnings_exact.py
 """
 import itertools
 import json

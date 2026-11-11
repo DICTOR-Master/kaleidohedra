@@ -36,7 +36,7 @@
   stops: -1, 0, 1
 === perovskite.json: perovskite ABX3 (A cube corner, B body centre, X face centres)
 Traceback (most recent call last):
-  File "/home/dicto/kres-tmp/splash2/finder2.py", line 13, in <module>
+  File "~/work/splash2/finder2.py", line 13, in <module>
     for iv in d['intervals']:
               ~^^^^^^^^^^^^^
 KeyError: 'intervals'

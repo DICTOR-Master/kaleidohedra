@@ -1,7 +1,7 @@
 # DICTO 2026-10-20: float check that DICTO Fill set 2 (OTT) F2 has no mirror symmetry of its own (so F2 and F3 are true left and
 # right hands): the piece against its image under every improper map of the cube's 48 (about its centre); smallest mismatch reported.
 import json, itertools, numpy as np, manifold3d as m3
-H = '/home/dicto/dbt-exact/2026-10-19-og-gyrated-octet/'; d = json.load(open(H + 'fill-cut8-octet-tet.json'))
+H = '~/dbt-exact/2026-10-19-og-gyrated-octet/'; d = json.load(open(H + 'fill-cut8-octet-tet.json'))
 mf = m3.Manifold(m3.Mesh(vert_properties=np.ascontiguousarray(d['v'], dtype=np.float32), tri_verts=np.ascontiguousarray(d['t'], dtype=np.uint32)))
 c = np.array(d['c']); best = []
 for p in itertools.permutations(range(3)):

@@ -35,10 +35,10 @@ CITED = os.path.join(LIB, "cited")
 UA = {"User-Agent": "DICTO-reference-library/1.0 (private study library; one request at a time)"}
 PAUSE = 3.0
 MAX_FILE = 60e6          # larger copies stay link entries
-LOCAL_FILE = 20e6        # copies above this go to dicto-big-brother (DICTO 2026-11-03: the Pi's card is 87% full)
-MAX_TOTAL = 500e6        # local total; past it every copy goes to dicto-big-brother
-REMOTE = "dicto-big-brother"
-REMOTE_DIR = "reference-library-incoming/cited"   # DICTO 2026-11-03: the library moves to dicto-big-brother
+LOCAL_FILE = 20e6        # copies above this go to compute-host (DICTO 2026-11-03: the Pi's card is 87% full)
+MAX_TOTAL = 500e6        # local total; past it every copy goes to compute-host
+REMOTE = "compute-host"
+REMOTE_DIR = "reference-library-incoming/cited"   # DICTO 2026-11-03: the library moves to compute-host
 TODAY = time.strftime("%Y-%m-%d")
 
 S = requests.Session()
@@ -350,13 +350,13 @@ def manifest():
         d = log.get(e["key"], {})
         ok = d.get("ok")
         if ok and d.get("remote"):
-            e = dict(e, licence=e["licence"] + "; copy waiting on dicto-big-brother: " + d["remote"].split(":", 1)[1])
+            e = dict(e, licence=e["licence"] + "; copy waiting on compute-host: " + d["remote"].split(":", 1)[1])
         status = e["licence"] if ok else (e["licence"] if e["action"] == "link" else f"link only: copy not fetched ({d.get('error', 'not tried')})")
         if not ok and e["action"] == "download" and e.get("licence", "").startswith(("arXiv", "US patent", "CC BY-SA")):
             status = f"link only: free copy at the link (fetch failed: {d.get('error', 'not tried')})"
         e = dict(e, **(d.get("meta") or {}))
         entries.append({
-            "file": d.get("file") if ok else None,   # remote copies: path as if in place (library moving to dicto-big-brother)
+            "file": d.get("file") if ok else None,   # remote copies: path as if in place (library moving to compute-host)
             "authors": e.get("authors") or "", "year": e.get("year"), "title": e.get("title") or e["citation"][:120],
             "venue": e.get("venue") or "", "doi_or_url": e.get("url"), "source_url": d.get("source_url") if ok else None, **({"copy_on": d["remote"]} if d.get("remote") else {}),
             "licence_or_status": status, "citation": e["citation"],

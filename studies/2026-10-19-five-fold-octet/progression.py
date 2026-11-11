@@ -15,7 +15,7 @@ u5 = I / np.linalg.norm(I, axis=1)[:, None]
 D = np.array([I[f].mean(0) for f in ConvexHull(I).simplices]); D *= PHI ** 2 / 3 ** .5 / np.linalg.norm(D[0])   # the Cleo star's D'
 u3 = D / np.linalg.norm(D, axis=1)[:, None]
 # Known case (rule 3): D' radius phi^2/sqrt3 is the Cleo star's hull in the app (theaetetus-data.js, view cleostar).
-app = '/home/dicto/kaleidohedra/src/app/theaetetus-data.js'
+app = '~/kaleidohedra/src/app/theaetetus-data.js'
 if os.path.exists(app):
     s = open(app).read(); V = json.loads(s[s.index('{'):s.rindex('}') + 1])['theaetetus']['views']['cleostar']
     Dapp = np.array([p[1] for p in V if p[0] == 'dprime'][0]); assert abs(np.linalg.norm(Dapp[0]) - np.linalg.norm(D[0])) < 1e-5   # app data has 6 decimals

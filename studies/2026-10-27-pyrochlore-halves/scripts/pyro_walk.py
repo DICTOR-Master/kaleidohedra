@@ -3,7 +3,7 @@
 # octahedral hole O over Z at 1/2, the tetrahedral hole Y over Y at 1/4. Kinds: 'atom' (S, C) weight lam, 'hole' (O, Y) weight 0.
 # Exact rational arithmetic in the lattice basis. Usage: python pyro_walk.py ABC AB ABAC ABCACB
 import sys, json, os
-E57 = os.path.expanduser('~/kres-tmp/st57/scripts'); sys.path.insert(0, E57); os.chdir(E57)
+E57 = os.path.expanduser('~/work/st57/scripts'); sys.path.insert(0, E57); os.chdir(E57)
 from fractions import Fraction as Fr
 import networks, census
 from networks import NETS
@@ -29,4 +29,4 @@ if __name__ == '__main__':
                 sig = 'vanished' if x.get('vanished') else f"{x['corners']} corners, faces {sorted(x['face_sizes'])}"
                 seen[(x['kind'], sig)] = seen.get((x['kind'], sig), 0) + 1
             for (k, sig), c in seen.items(): print(f'   {s["lam"]:>8}  {c} x {k}: {sig}', flush=True)
-    json.dump(out, open(os.path.expanduser('~/kres-tmp/pyro/pyro_walk.json'), 'w'), indent=1, default=str)
+    json.dump(out, open(os.path.expanduser('~/work/pyro/pyro_walk.json'), 'w'), indent=1, default=str)

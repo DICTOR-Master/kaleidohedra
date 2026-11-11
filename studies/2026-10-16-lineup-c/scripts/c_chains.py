@@ -7,7 +7,7 @@ import os, io, sys, contextlib, json, numpy as np
 from scipy.spatial import ConvexHull, HalfspaceIntersection
 from scipy.optimize import linprog
 LINEUP = sys.argv[1] if len(sys.argv) > 1 else 'C'            # 'B': P4's line-up (the Hecatodihedron), a known-case check that must give 174 and 154 pieces
-PD = '/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
+PD = '~/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
 sys.argv = ['polar.py', 'data/dharma_cycle.json']
 with contextlib.redirect_stdout(io.StringIO()):
     exec(open('scripts/polar.py').read())

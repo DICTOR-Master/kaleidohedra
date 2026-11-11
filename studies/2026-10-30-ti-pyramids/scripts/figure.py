@@ -1,6 +1,6 @@
 # TI Pyramids figure: left, TI cut from its centre into 12 pentagonal (gold) and 20 hexagonal (violet) pyramids,
 # drawn apart; right, the hexagonal bipyramid: TI's hexagonal pyramid (violet) on the truncated tetrahedron's (teal).
-# Run on dicto-big-brother: ~/geom/bin/python scripts/figure.py
+# Run on compute-host: python3 scripts/figure.py
 import itertools, numpy as np
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt

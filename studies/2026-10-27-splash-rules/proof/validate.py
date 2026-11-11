@@ -11,9 +11,9 @@ import numpy as np
 from scipy.optimize import linprog
 from scipy.spatial import HalfspaceIntersection
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/st57/scripts')); sys.path.insert(0, os.path.expanduser('~/kres-tmp/splash'))
+sys.path.insert(0, os.path.expanduser('~/work/st57/scripts')); sys.path.insert(0, os.path.expanduser('~/work/splash'))
 from swapgeom import sites, row, ROLE, MIRROR, _solve, Qf
-_cwd = os.getcwd(); os.chdir(os.path.expanduser('~/kres-tmp/st57/scripts'))
+_cwd = os.getcwd(); os.chdir(os.path.expanduser('~/work/st57/scripts'))
 from engine import Net, Cell, gdot, vsub, aff_eval
 from splash import net_for
 _h = open('exact_halves.py').read(); exec(_h[_h.index('def corners_at'):_h.index('def cell(')])

@@ -4,7 +4,7 @@ named triangulations; test the other face patterns for an equilateral (deltahedr
 Exact parts: graph isomorphism (networkx, combinatorial), edge-length and dihedral data (from shadows.py).
 Numerical part (marked so in the output): Levenberg-Marquardt search for an equilateral realisation, the method of
 Tsuruta et al. 2014, started from the shadow itself, then float checks for self-intersection and flat edges.
-Run on dicto-big-brother after shadows.py:  ~/geom/bin/python classify.py
+Run on compute-host after shadows.py:  python3 classify.py
 """
 import json
 import math

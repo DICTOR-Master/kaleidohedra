@@ -5,7 +5,7 @@ import os, sys, math, json, itertools, numpy as np
 from fractions import Fraction as Fr
 from scipy.spatial import ConvexHull
 sys.path.insert(0, 'scripts/_lib'); import methods as Mt
-HEX = os.path.expanduser('~/kres-tmp/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
+HEX = os.path.expanduser('~/work/hexoct-scripts'); sys.path.insert(0, HEX); here = os.getcwd(); os.chdir(HEX)
 import tiles as T
 os.chdir(here); H = math.sqrt(2/3); s3 = math.sqrt(3)
 W = json.load(open('data/narcissus-together.json'))['word'][:9]

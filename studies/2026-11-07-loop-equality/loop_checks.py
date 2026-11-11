@@ -1,6 +1,6 @@
 """Loop Equality (#74) as a theorem (paper #102): numerical re-verification on many stackings, exact integers.
 Usage: python3 loop_checks.py [L_WALK L_NB L_PYRO L_CP [PART]] > data-loop-checks.txt
-  (dicto-big-brother: 30 24 14 12 tetra, about 2.5 min; 30 24 14 12 other, about 1 min)
+  (compute-host: 30 24 14 12 tetra, about 2.5 min; 30 24 14 12 other, about 1 min)
 Graphs: the tetrahedral (diamond-type) network of a stacking, with the bond rule of loops2.py / oeis_checks.py
 (bilayer k = lower atom u=0 and upper atom u=1 at the in-plane position of letter seq[k]; the upper atom of bilayer k bonds
 to the three lower atoms of bilayer k+1 at in-plane distance 1/sqrt3); its line graph, the pyrochlore network (#60);

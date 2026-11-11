@@ -99,7 +99,7 @@ Both choices of layer 2 (gap 1) and of layer −2 (gap −2) are listed explicit
 - `additive.py`, `additive_proof.py`: Part II (defect tables; threshold s1 and certificates).
 - `explore_bad.py`: exploration of where outside holes cut at fixed q (used to find the U(s) bound).
 - `logs/`: all run outputs. `prior-art.md`, `data/library-queries.txt`: prior art.
-- Machine: dicto-big-brother, `~/geom/bin/python`, work directory `~/kres-tmp/swap/`. The engine is in `~/kres-tmp/st57/scripts/`.
+- Machine: compute-host, `python3`, work directory `~/work/swap/`. The engine is in `~/work/st57/scripts/`.
 
 ## Part II — the volume Swap Rule for 1/4 ≤ s < 1/2 (proved): additivity, not halves
 

@@ -3,7 +3,7 @@
 import json, itertools, numpy as np, manifold3d as m3, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 from scipy.spatial import HalfspaceIntersection
-DD = json.load(open("/home/dicto/study-runs/og-pent/step10-input.json")); VV = np.array(DD["V"]); aa = 4*DD["R"]/3
+DD = json.load(open("~/study-runs/og-pent/step10-input.json")); VV = np.array(DD["V"]); aa = 4*DD["R"]/3
 hull = lambda P: m3.Manifold.hull_points(np.asarray(P, float).tolist())
 h0 = np.array([aa/2, 0, 0]); holes = [np.array(q)*aa/2 for q in itertools.product(range(-5, 6), repeat=3) if sum(x % 2 for x in q) in (1, 2)]
 hh = [np.r_[p - h0, -(p - h0) @ ((p + h0)/2)] for p in holes if 1e-9 < np.linalg.norm(p - h0) < 3*aa]

@@ -1,6 +1,6 @@
 # s5_table.py -- the census table (CSV + JSON) of the 25 regular polytopes in 3D and 4D, from data/flags.json,
 # s2_census3d.json, s3_census4d.json, s4_starturn.json. Study 2026-11-09-regular-stars-census.
-# Usage: ~/geom/bin/python -u s5_table.py <data dir>
+# Usage: python3 -u s5_table.py <data dir>
 import sys, json, csv, os
 D = sys.argv[1]
 fl = json.load(open(os.path.join(D, 'flags.json'))); c3 = {r['symbol']: r for r in json.load(open(os.path.join(D, 's2_census3d.json')))}

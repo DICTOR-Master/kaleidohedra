@@ -1,6 +1,6 @@
 # Blender (Cycles) scene for the ring renders: imports the ring OBJ (ringmesh.py), places it on a procedural wood table,
 # camera and light from a JSON spec, renders a PNG.
-# Usage (dicto-big-brother): blender -b -P scene.py -- spec.json
+# Usage (compute-host): blender -b -P scene.py -- spec.json
 # spec keys: obj, out, res [w,h], samples, M_obj (4x4 object->world, table = plane z=0), cam (4x4 Blender matrix_world),
 #   lens_mm (36 mm sensor width), light {az, el, dist, size, power, color}, world {color, strength},
 #   ring {color, rough, sss, sss_scale}, wood {scale, c1, c2, c3, rough, rot}, exposure

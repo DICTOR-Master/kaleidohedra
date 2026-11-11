@@ -7,7 +7,7 @@ Library (ask-library, 4 queries): Gabbrielli–Jiao–Torquato 2012 PRE 86 04114
 Web: OD theory (Dornberger-Schiff & Grell-Niemann 1961; IUCr B 2025 dk5140; vicinity condition) — layers as building units with local stacking rules: the closest frame, credit it. arXiv 1407.0692 (fcc/hcp split between layers into tet/oct by triangle). Radical-Voronoi interstitial work (arXiv 2010.01354; Sci Data 2020 CAVD): no layer tiles of hole pieces.
 Own: #57 (rule of halves), book The Laws of Stacking: no layer-tile statement found.
 Verdict: layer-units framework known (OD theory); two layer tiles of the halves for all stackings and all λ not found.
-## Result (29 Oct, dicto-big-brother, scripts/tiles.py → tiles.out)
+## Result (29 Oct, compute-host, scripts/tiles.py → tiles.out)
 Exact, 32 five-layer contexts (types of layers L−2..L+2 fix the tile: its two gaps depend on layers L−3..L+3, #57 Step 1) × 10 sample λ = 320 cases.
 - One motion per tile: 320/320 — the whole tile (4 pieces) is carried onto the pure c-tile (ABC) or h-tile (AB) by one lattice symmetry about the layer's ball, z kept. So every close-packed stacking = a string of two tiles.
 - Joint: the octahedral section on the cut plane is one shape at each λ, shared by c and h — any tile sits on any tile.

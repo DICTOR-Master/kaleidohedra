@@ -3,8 +3,8 @@
 #     T(word) = n_c * alpha(lam) + n_h * beta(lam)
 # (n_c, n_h = numbers of cubic and hexagonal layers in the period), i.e. linear in the hexagonality n_h / n?
 # alpha from the pure cubic stacking ABC, beta from the pure hexagonal AC; every other word is a test.
-# Reads the raw weight walks of run 2 (exact rational volumes, polynomials in lam). Run on dicto-big-brother:
-#   cd ~/kres-tmp/splash2 && ~/geom/bin/python hexlaw.py
+# Reads the raw weight walks of run 2 (exact rational volumes, polynomials in lam). Run on compute-host:
+#   cd ~/work/splash2 && python3 hexlaw.py
 import os, json, itertools
 from fractions import Fraction as Fr
 import sympy as sp

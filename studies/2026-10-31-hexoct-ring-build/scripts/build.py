@@ -5,7 +5,7 @@
 # tree of the faces (random trees, first rejected if two faces overlap, then the most compact kept), counts, and a 3D drawing
 # (z-buffer renderer in the style of studies/2026-10-31-hexoct-plates/scripts/plates.py: solid faces, crisp edges, ring
 # sides drawn thin on the faces). Ring drawing helpers rounded() and ties() are those of studies/2026-10-31-ring-nets.
-# Usage (dicto-big-brother): TILES_DIR=~/kres-tmp/endless LOGO=<dicto-logo.png> ~/geom/bin/python build.py -> ../out/*.png, counts.json
+# Usage (compute-host): TILES_DIR=~/work/endless LOGO=<dicto-logo.png> python3 build.py -> ../out/*.png, counts.json
 import os, sys, json, math, random
 import numpy as np
 from fractions import Fraction as Fr

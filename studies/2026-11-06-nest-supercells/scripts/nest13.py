@@ -4,7 +4,7 @@ D > I (D's face centres) > O (six of I's edge midpoints) > C (O's face centres) 
 each inside the next, every nest inside its own dodecahedron, nests of different dodecahedra disjoint; volumes."""
 import json, itertools, numpy as np
 from scipy.spatial import ConvexHull
-d = json.load(open('/home/dicto/k-research/studies/2026-10-09-dodeca-13/data/c13-parts-pieces-unit.json'))
+d = json.load(open('~/k-research/studies/2026-10-09-dodeca-13/data/c13-parts-pieces-unit.json'))
 parts = [(p['role'], np.array(p['vertices'], float)) for p in d['parts']]
 def faces(V):
     h = ConvexHull(V); F = {}

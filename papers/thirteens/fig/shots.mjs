@@ -1,4 +1,4 @@
-// Figures for the DICTO 13-Atom Clusters paper (run on dicto-node: node shots.mjs in papers/thirteens/fig).
+// Figures for the DICTO 13-Atom Clusters paper (run on compute-host-2: node shots.mjs in papers/thirteens/fig).
 import { chromium } from 'playwright';
 import http from 'http'; import fs from 'fs'; import path from 'path';
 const srv = http.createServer((q, r) => { const f = path.join(process.cwd(), q.url.split('?')[0]); fs.readFile(f, (e, d) => { if (e) { r.writeHead(404); r.end(); return; } r.writeHead(200); r.end(d); }); }).listen(8098);

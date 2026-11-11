@@ -14,7 +14,7 @@ D. T.T: tesseractic honeycomb Z^4 (unit cubes), vertex-first slice x1+x2+x3+x4 =
 E. Tilted slice (first look, coding only): local heights h_k = {k/phi} of successive tile rows; the coding "below / above
    the Unborn Axes height 1/phi" is the Fibonacci word (exact integer test, first 300 letters, against the substitution
    a -> ab, b -> a). The tiles of a tilted slice are oblique sections, NOT the stations; only the coding is exact.
-usage (dicto-big-brother): ~/geom/bin/python s7_hyper.py -> ../data/s7-hyper.json
+usage (compute-host): python3 s7_hyper.py -> ../data/s7-hyper.json
 """
 from dp_lib import *          # noqa
 import math, sympy as sp

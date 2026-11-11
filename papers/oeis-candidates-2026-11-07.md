@@ -200,7 +200,7 @@ A033887 (F(3n+1)) and A014445 (F(3n)). Multiples by 4 are not worth new entries;
 **Source.** Paper #99 *All Five in the Octet* (papers/2026-11-06-five-in-octet, DICTO DOI 10.5281/zenodo.24012439), Theorem 3
 and its table; study 2026-11-06-approximant-ladder (scripts/exact_counts.py).
 
-**How checked.** exact_counts.py extended to 11 rungs (1/1 .. 144/89) on dicto-big-brother, about 1 min; every count matches
+**How checked.** exact_counts.py extended to 11 rungs (1/1 .. 144/89) on compute-host, about 1 min; every count matches
 the formula with the halving rule (C7).
 
 **Lead:** this answers part of #99's open point "the body-centred and simple cubic alternation of the rungs as a theorem":

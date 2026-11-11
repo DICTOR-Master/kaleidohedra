@@ -6,7 +6,7 @@
 # (so the polytope has the full symmetry; proper subgroups give the convex polytopes of the smaller groups, found under their own
 # G). Counts (corners, edges, faces, cells) are orbit sizes of the flag points; the density is the number of chambers inside the
 # flag cone. Known-case check: the convex list (5 + 6) and Coxeter's star list (4 Kepler-Poinsot + 10 Schlafli-Hess) must come out.
-# Usage: ~/geom/bin/python -u s1_flags.py <out json>
+# Usage: python3 -u s1_flags.py <out json>
 import sys, json, time
 import numpy as np
 from regstar import *

@@ -33,4 +33,4 @@ for i in range(1, 6):
 mark(a, phi**2, '', '', GOLD); mark(a, 2 + 1/phi**2, '', '', GOLD); a.text(phi**2 + 0.03, 0.75, 'All-Golden (8 Icosaxes)', ha='left', fontsize=8, color=GOLD); a.text(2 + 1/phi**2 - 0.03, 0.75, 'All-Golden (8 Unborn Axes)', ha='right', fontsize=8, color=GOLD)
 a.text(1.02, -0.95, 'gold dots: Fibonacci multiplets (0, F_n, F_{n+1}, 0) of SO(9): 1650, 27027, 1527552, …', fontsize=7.5, color=INK)
 fig.text(0.99, 0.01, 'DICTO · dictospheres.com', ha='right', fontsize=8, color='#888')
-out = os.path.expanduser('~/kres-tmp/gl2-fig1-ladders.png'); fig.savefig(out, dpi=180, bbox_inches='tight'); print(out)
+out = os.path.expanduser('~/work/gl2-fig1-ladders.png'); fig.savefig(out, dpi=180, bbox_inches='tight'); print(out)

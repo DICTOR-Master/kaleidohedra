@@ -132,6 +132,6 @@ Every render is drawn from float corners of exact pieces. Every caption says so 
 1. Fix M1 and M2: the version label, and the exact bend range with a #32 citation, re-derived once exactly.
 2. Add the S1 per-layer table to §6 and reword the abstract and §5 as in S1; say "per turn" (S2).
 3. Add the credits: Kion / *Theaetetus* (S3); Kepler 1596, Dechant et al. 2014 and a dual-compound clause (S4). Add the Ih and φᵏ clauses (S5, S6).
-4. On dicto-node, as one logged background job: tag kinds in the render JSON; add the `wedge`, `layer`, `hi` and `s` parameters; swap in the house palette; shoot Figs. 1–4.
+4. On compute-host-2, as one logged background job: tag kinds in the render JSON; add the `wedge`, `layer`, `hi` and `s` parameters; swap in the house palette; shoot Figs. 1–4.
 5. DICTO picks among the renders, especially the hero bearing, before the captions are final.
 6. Rebuild the PDF, check every number against Tables 1–2 and #32, publish, then the Collected Works version (standing rule).

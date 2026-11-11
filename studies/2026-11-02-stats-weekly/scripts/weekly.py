@@ -1,5 +1,5 @@
 # DICTO stats, recent days and weeks compared (DICTO 2026-11-02). Reads ~/dicto-stats/history.json (copied), writes a 2-page PDF.
-# Usage (dicto-big-brother): ~/geom/bin/python weekly.py history.json dicto-logo.png out.pdf
+# Usage (compute-host): python3 weekly.py history.json dicto-logo.png out.pdf
 import sys, json, datetime as dt
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages

@@ -2,7 +2,7 @@
 # kis in the midsphere uniform (all its edges equal)? Is the apex on a corner (degenerate)? Floats (1e-9). Study 2026-11-09-regular-stars-census.
 # Polar: each kis triangle (apex t.c_f, a, b) -> its pole; kis edge ab (between faces f, g) -> polar edge (pole(f,ab), pole(g,ab));
 # kis edge (apex_f, a) -> polar edge between the poles of the two triangles of f at a.
-# Usage: ~/geom/bin/python -u s2b_kis_check.py <flags.json> <s2_census3d.json> <out json>
+# Usage: python3 -u s2b_kis_check.py <flags.json> <s2_census3d.json> <out json>
 import sys, json, itertools
 import numpy as np, sympy as sp
 from regstar import *

@@ -5,9 +5,9 @@ triangular lattice; inner tiles tested against slides and twists (interlock_rot.
 import os, sys, math, json, itertools
 import numpy as np
 from fractions import Fraction as Fr
-HEX = os.path.expanduser('~/kres-tmp/hexoct-scripts'); sys.path.insert(0, HEX); os.chdir(HEX)
+HEX = os.path.expanduser('~/work/hexoct-scripts'); sys.path.insert(0, HEX); os.chdir(HEX)
 import tiles as T
-here = os.path.expanduser('~/kres-tmp/2026-11-04-hopf-interlock')
+here = os.path.expanduser('~/work/2026-11-04-hopf-interlock')
 src = open(os.path.join(here, 'interlock_rot.py')).read()
 g = {'__file__': os.path.join(here, 'interlock_rot.py')}; exec(src.split("# calibration: Dyskin tetrahedra")[0], g)
 H = math.sqrt(2/3)

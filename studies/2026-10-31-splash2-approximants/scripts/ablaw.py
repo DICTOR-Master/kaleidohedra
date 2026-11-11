@@ -1,5 +1,5 @@
 # Laws in the Ammann-Beenker splash: which counts are linear forms in the tile counts (Pluecker coordinates), and where.
-# ~/geom/bin/python ablaw.py out/ab.json > out/ablaw.log
+# python3 ablaw.py out/ab.json > out/ablaw.log
 import sys, json
 from fractions import Fraction as Fr
 import sympy as sp

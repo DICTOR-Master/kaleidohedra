@@ -4,8 +4,8 @@ import os, sys
 src=open('fuse4.py').read(); exec(src.split("res=json.load")[0])
 COL.update({'unit1':(214,96,77),'unit2':(70,130,180)})
 F=lambda n,b=False:ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans'+('-Bold' if b else '')+'.ttf',n)
-OUT='/home/dicto/Documents/papers-to-read/flat-layer-units'; os.makedirs(OUT,exist_ok=True)
-logo=Image.open('/home/dicto/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((110,110))
+OUT='~/Documents/papers-to-read/flat-layer-units'; os.makedirs(OUT,exist_ok=True)
+logo=Image.open('~/k-research/papers/dicto-logo.png').convert('RGBA'); logo.thumbnail((110,110))
 LN={'A':'icosahedron middle to middle','B':'icosahedron middle to Unborn middle','C':'Unborn middle to middle'}
 SUB={'x even':lambda a,b:a%2==0,'y even':lambda a,b:b%2==0,'checker':lambda a,b:(a+b)%2==0}
 FL={(-1,1,1):'mirror across x',(1,-1,1):'mirror across y',(-1,-1,1):'half-turn about the upright axis',(1,1,-1):'mirror top↔bottom',

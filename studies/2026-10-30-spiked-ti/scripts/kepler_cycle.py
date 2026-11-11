@@ -48,7 +48,7 @@ def rd(p):
     L = [l.split('#')[0].strip() for l in open(p)]; L = [l for l in L if l]; n = int(L[1].split()[0]); A = np.array([[float(x) for x in L[2 + i].split()[:3]] for i in range(n)]); return A - A.mean(0)
 import os
 refs = {'Star Halo': starhalo, 'Catalan pentakis': catalan, 'core (1/phi^3)': core}
-for nm, f in [('FPD / Palintriacontahedron', '/home/dicto/kres-tmp/census/solids/dicto-fpd.off'), ('GTI', '/home/dicto/kres-tmp/census/solids/dicto-gti.off')]:
+for nm, f in [('FPD / Palintriacontahedron', '~/work/census/solids/dicto-fpd.off'), ('GTI', '~/work/census/solids/dicto-gti.off')]:
     if os.path.exists(f): refs[nm] = rd(f)
 def layer(S, nxt):
     V, FL = facelist(S); T = ktips(V, FL)

@@ -28,7 +28,7 @@ Ledger: entry 58 (hopscotch-rows) has the retry "only a degree-6 moment certific
 line": birds 1 and 3 are exactly that retry. Entries 52 and 55 (#43 Conjecture 1) have the retry "only a proof of the New-Face Lemma":
 bird 2 attempts it through certificates (structural failure, §2) and makes its base exact. No other entry touches these questions.
 
-All computation ran on the large machine (~/geom/bin/python, sympy 1.14, scipy 1.18), in the foreground, and every script ends with a
+All computation ran on the large machine (python3, sympy 1.14, scipy 1.18), in the foreground, and every script ends with a
 conditional FINAL line. The four scripts and their logs: scripts/bird1_certificate.py (data/bird1_certificate.log, 45 s),
 scripts/bird2_base.py (data/bird2_base.log, data/bird2_base.json; pilot data/bird2_pilot.log), scripts/bird3_line.py
 (data/bird3_line.log, 6 s), scripts/bird4_beats.py (data/bird4_beats.log, 2 s). Shared exact Q(√5) arithmetic and exact corners from
