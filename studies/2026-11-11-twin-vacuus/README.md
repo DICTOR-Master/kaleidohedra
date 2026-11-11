@@ -91,3 +91,8 @@ All hidden walls of a twin hop present together in one slice? Hops 0, 1: YES (60
 from hop 5 the fullest slice sits low, close to the bottom world (heights 0.047, 0.14, 0.001, 0.007, 0.005 against tops 0.5–2.3).
 Verdict: one middle world only at the first two hops; later the hidden fins live in several overlapping bands (at least 2, up to
 about 2.4 slices' worth), crowding toward the bottom. Law (9) holds for hops 0 and 1 only.
+Render of hop 9's bands (DICTO: "render the hidden fin bands for hop 9"; scripts/render_bands.py, figures/hidden-bands-hop-9.png): profile
+of hidden fins present against slider height (0 … 0.48) and the slices at the two strongest bands. The upper bands (heights about
+0.13–0.20) hold 250–320 hidden fins; a dense stack sits just above the bottom world (0 … 0.02) with up to 930. At the two band slices
+shown (0.0185 and 0.0046) EVERY fin of the slice is hidden (630 of 630, 930 of 930): whole hidden worlds, not mixtures. (Figure note:
+the "bottom world" label overlaps the lowest bars.)
