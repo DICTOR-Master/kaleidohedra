@@ -61,3 +61,15 @@ corner distances equal up to scale; both shapes have the full octahedral symmetr
 - x = 1/2: values (-2,-1,1,2) = the five central slices of the 4D permutohedron (1..5 with the middle value 3 taken out);
 - x = tau (golden bond, Icosaxes): values (-tau^3, -1, 1, tau^3) (tau^3 = 1 + 2 tau).
 So the DICTONIC golden slider runs through permutohedra; at x = 1/2 it passes the heart of the 4D one, and T(1/x) = T(2) is its space-filling partner.
+## Prior art for the 4D Vacuus (12 Nov, DICTO: "has anyone else identified vacuus forms in the fourth dimension")
+Sources checked: library (ask-library) 5 queries: central hyperplane sections of 4-polytopes containing 2-faces; skeletal 4D models /
+Leonardo hollow; great polyhedra central sections 24-cell/600-cell; hyperplane arrangement through centre of the permutohedron 2-faces;
+cone over the 2-skeleton / face fan dissection. Top hits: Boole Stott 1900 (sections of the regular 4D solids), Coxeter Regular Polytopes,
+Deza–Grishukhin 2003, Dechant 2013, Wenninger 1971, Garber 2019. Web, 5 searches: Wikipedia Leonardo polyhedron (Boole Stott, Coxeter skew
+polyhedra: struts from 4D Schlegel views), G. Hart Leonardo Project, 24-cell (12 central cuboctahedra), Wikiversity 16-cell/24-cell (central
+octahedra, cuboctahedra), Polytope Wiki hemipolytope, Pfeiffer polychora page, Klitzing, Wolfram 16-cell sections, arXiv 2412.12419,
+2304.14239 (max central sections), Wikipedia omnitruncated 5-cell.
+Known: Leonardo's vacua are 3D hollow frames; 4D analogues of the Leonardo polyhedra (Boole Stott, Coxeter) come FROM 4D polytopes but are 3D
+strut models; central "great" sections (24-cell cuboctahedra, 16-cell octahedra) are classical as slices; hemipolytopes have FACETS
+through the centre. Not found: a 4D solid built from central 3D slices carrying ALL its 2-faces (the 4D Vacuus), the 65 slices of the
+4D permutohedron and their four classes, the count N = 3, 15, 65, 225, 770, ... (OEIS no match 11 Nov). Verdict: new within these checks.
