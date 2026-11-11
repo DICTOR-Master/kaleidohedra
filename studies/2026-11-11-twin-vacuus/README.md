@@ -75,3 +75,6 @@ Level 2 Angelus = Vacuus of the regular icosahedron (twin hull): 30 fins, all co
 (opposite fins coplanar). Level 3 Angelus = Vacuus of the regular dodecahedron: 30 fins, apex 41.8103° (cos = √5/3), 15 fin planes.
 These are the classical Vacuus of the two solids (also in the #87 census), here arising on the twin side of the OG family. Fins
 coloured by their plane through the centre (12-colour palette, so 3 colours repeat among the 15 planes).
+Levels 1 and 4 (figures/angeli-levels-1-4.png, one colour per fin plane): level 1 Angelus (golden-rectangle rhombicosidodecahedron
+type): 120 fins, apex 12.8684° and 34.1211°, 60 fin planes. Level 4 Angelus (140 triangles + 12 pentagons): 240 fins, apex 11.8246°,
+24.2136° and 36°, 66 fin planes (60 + the six disc planes). DICTO (11 Nov): "sometimes extra fins are hidden in 4D bodies".

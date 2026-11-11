@@ -9,7 +9,12 @@ sys.argv = [sys.argv[0], D, '0', '/dev/null']; exec(open(os.path.join(here, 'exa
 cwd = os.getcwd(); sys.argv = ['x', '.', '.', LOGO]; exec(open(RENDER).read().split('def plate(')[0]); os.chdir(cwd)
 from scipy.spatial import ConvexHull
 from PIL import Image, ImageDraw, ImageFont
-NAMES = {2: 'level 2: regular icosahedron', 3: 'level 3: regular dodecahedron'}
+NAMES = {2: 'level 2: regular icosahedron', 3: 'level 3: regular dodecahedron', 1: 'level 1: rhombicosidodecahedron type, golden rectangles',
+         4: 'level 4: 140 triangles + 12 pentagons, six decagonal discs'}
+import colorsys
+def pcol(j, n):                                                              # distinct colour per plane (golden-angle hues), 11-11
+    h = (j * 0.618033988749895) % 1.0; s_ = 0.55 + 0.25 * ((j * 7) % 3) / 2; v = 0.62 + 0.28 * ((j * 5) % 4) / 3
+    return np.array(colorsys.hsv_to_rgb(h, s_, v))
 def twinf(x):
     re = float(x.a) + float(x.b) * S5
     return float(x.a) - float(x.b) * S5 if abs(re) < 1e-6 or x.b == 0 else float(x.a * x.a - 5 * x.b * x.b) / re
@@ -40,7 +45,7 @@ for k in range(max(LEVELS) + 1):
         apex = sorted(set(round(float(np.degrees(np.arccos(T[a] @ T[b] / (np.linalg.norm(T[a]) * np.linalg.norm(T[b]))))), 4) for a, b in E))
         M = rot(20, 24); Wv = T @ M.T; lim = 1.08; O = np.zeros(3); C = Canvas(lim)
         for i, (a, b) in enumerate(E):
-            tri = np.array([O, Wv[a], Wv[b]]); C.tri(tri, shade(rgb(PAL[pidx[i] % len(PAL)]), np.cross(tri[1], tri[2])), i)
+            tri = np.array([O, Wv[a], Wv[b]]); C.tri(tri, shade(pcol(pidx[i], len(planes)), np.cross(tri[1], tri[2])), i)
         NF = []
         for f in faces:
             nv = np.zeros(3)
