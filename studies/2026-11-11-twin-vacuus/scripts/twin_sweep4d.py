@@ -7,7 +7,7 @@
 # hidden walls. Control: real hop 0 bottom = active set of the hull test; slices pass Euler (og_exchanges.slice_sides).
 # usage: python -u twin_sweep4d.py <five-fold-octet dir> <K> <out.json>
 import sys, os, json, time
-ARGS = list(sys.argv); here = os.path.expanduser('~/k-research/studies/2026-11-09-og-margin/scripts')
+ARGS = list(sys.argv); ARGS[3] = os.path.abspath(ARGS[3]); here = os.path.expanduser('~/k-research/studies/2026-11-09-og-margin/scripts')
 sys.argv = [ARGS[0], ARGS[1], '0', '0', '/dev/null']
 exec(open(os.path.join(here, 'og_exchanges.py')).read().split('for k in range(KMAX + 1):')[0])
 _keep = dict(faces=faces, symmetrise=symmetrise)
