@@ -752,3 +752,16 @@ the mean mirror cap stays ≈ 0.5° while the mean cap falls (0.45° → 0.21°)
 0.297, 0.292, 0.310, 0.331. The rise to 0.37 was two growth dips plus the vanishing excess term (gap 0.068 → 0.010 from hop 18 to 32:
 degenerate corners disappear); g returns to ≈ 0.30 — the generic near-round equilibrium of §26 (≈ 0.30), not a drift to 1/2.
 Equivalent form of A1 (from the identity): c < F/2 ⇔ F_{k+1} > F_k − 4 − e_k: step A1 says only that the face count does not shrink.
+
+## §38c Section polygons to k = 37 and the 2D derivation (11 Nov 2026; DICTO: "count the section polygon edges", "derive the 2D bound for the section polygons"; scripts/section_track.py, data/og-section-37*, watched job og-section-37, FINAL ok)
+COUNT: e(S_k) = edges of D_k ∩ P (one mirror plane) = mirror-face edges + edges of D_k in P (control exact at every level): 32 (k = 10),
+126 (20), 652 (30), 1716 (37); e/√n between 1.12 and 1.53 for k = 10 … 37 (1.44 at k = 37). Median edge angle 6.8° → 0.15°, longest
+3.6° at k = 37, shortest down to 1e−3°: the polygon refines on average, unevenly.
+DERIVATION (exact): (1) an edge of D crossing P meets P in one point and σ maps it to an edge through the same point, so it is its own
+mirror image [v, σv]; hence the vertices of S_k are the corners of D_k in P plus the symmetric edges: e(S_k) = c_P(D_k) + x_P(D_k).
+(2) A foot point d·n lies in P iff n lies in P, so c_P(D_{k+1}) ≤ (mirror faces of D_k in P) ≤ e(S_k). Hence
+   e(S_{k+1}) ≤ e(S_k) + x_P(D_{k+1}).
+(3) Crofton: averaged over planes through O, the section edge count = (1/π)·Σ_F (mean angular width of F) ≤ (2/√π)·√(average aspect)·√n.
+PILOT of the recursion (k = 10 … 16): corners in P ≤ mirror faces of the previous level at every hop (true); but x_P(D_{k+1}) is 0.27 –
+1.09 × e(S_k), so the crude recursion allows doubling per hop: too weak against face growth ≈ 1.3. (M) needs a bound on the symmetric
+edges x_P of the kind x_P(D_{k+1}) ≤ (λ − 1 − ε)·e(S_k) on average over a few hops, or a direct √n bound. Full ratios to k = 37 running.
