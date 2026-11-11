@@ -1,0 +1,15 @@
+A4 (5-cell chain): chain [3, 3, 3], order 120, mirrors 10
+  seed (1, 0, 0, 0): 5 corners, 5 cells (corners per cell {4: 5}), 10 2-faces; on mirrors 10 [3-gons between cells 4+4: 10] per mirror {1: 10}; scattered 0 [] on 0 planes, per plane {}
+  seed (0, 1, 1, 0): 30 corners, 10 cells (corners per cell {12: 10}), 40 2-faces; on mirrors 20 [3-gons between cells 12+12: 20] per mirror {2: 10}; scattered 20 [6-gons between cells 12+12: 20] on 10 planes, per plane {2: 10}
+  seed (0, 0, 0, 1): 5 corners, 5 cells (corners per cell {4: 5}), 10 2-faces; on mirrors 10 [3-gons between cells 4+4: 10] per mirror {1: 10}; scattered 0 [] on 0 planes, per plane {}
+B4 (tesseract chain): chain [4, 3, 3], order 384, mirrors 16
+  seed (1, 0, 0, 0): 16 corners, 8 cells (corners per cell {8: 8}), 24 2-faces; on mirrors 24 [4-gons between cells 8+8: 24] per mirror {2: 12}; scattered 0 [] on 0 planes, per plane {}
+  seed (0, 1, 1, 0): 96 corners, 24 cells (corners per cell {24: 8, 12: 16}), 120 2-faces; on mirrors 56 [3-gons between cells 12+12: 32, 4-gons between cells 24+24: 24] per mirror {2: 12, 8: 4}; scattered 64 [6-gons between cells 12+24: 64] on 32 planes, per plane {2: 32}
+  seed (0, 0, 0, 1): 8 corners, 16 cells (corners per cell {4: 16}), 32 2-faces; on mirrors 32 [3-gons between cells 4+4: 32] per mirror {8: 4}; scattered 0 [] on 0 planes, per plane {}
+F4 (24-cell chain): chain [3, 4, 3], order 1152, mirrors 24
+  seed (1, 0, 0, 0): 24 corners, 24 cells (corners per cell {6: 24}), 96 2-faces; on mirrors 96 [3-gons between cells 6+6: 96] per mirror {8: 12}; scattered 0 [] on 0 planes, per plane {}
+  seed (0, 1, 1, 0): 288 corners, 48 cells (corners per cell {24: 48}), 336 2-faces; on mirrors 192 [3-gons between cells 24+24: 192] per mirror {8: 24}; scattered 144 [8-gons between cells 24+24: 144] on 84 planes, per plane {2: 60, 1: 24}
+  seed (0, 0, 0, 1): 24 corners, 24 cells (corners per cell {6: 24}), 96 2-faces; on mirrors 96 [3-gons between cells 6+6: 96] per mirror {8: 12}; scattered 0 [] on 0 planes, per plane {}
+H4 (Queens, control): chain [5, 3, 3], order 14400, mirrors 60
+  seed (0, 1, 1, 0): 3600 corners, 720 cells (corners per cell {12: 600, 60: 120}), 4320 2-faces; on mirrors 1920 [3-gons between cells 12+12: 1200, 5-gons between cells 60+60: 720] per mirror {32: 60}; scattered 2400 [6-gons between cells 12+60: 2400] on 1212 planes, per plane {2: 1188, 1: 24}
+FINAL ok

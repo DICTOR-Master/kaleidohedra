@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset="utf-8"><title>The Queens' Vacuus</title>
+<style>html,body{margin:0;background:#f3f0e8;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.185.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.185.1/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// Cutaways for #105 (DICTO 11 Nov: "I really wanted your beautiful cutaways"), drawn to the render standard: see-through crystal shell,
+// solid parts inside, polygon offset, crisp fat edges, no fog.
+//   ?shot=heart    the permutohedron of 1, 2, 4, 5 (DICTO 1:2 Truncated Octahedron) as a crystal shell; inside, the four regular hexagons
+//                  through its centre where the other four central permutohedra of the 4D permutohedron cross it (#105 Theorem 2)
+//   ?shot=vacuus   its own 3D Vacuus: the 15 central cards (3 octagons, 12 hexagons) that carry its 36 edges, slotted; edges as a gold frame
+//   &az=..&el=..&dist=.. camera
+import * as THREE from 'three';
+import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
+import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
+import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
+const q = new URLSearchParams(location.search), shot = q.get('shot') ?? 'heart';
+const W = innerWidth, H = innerHeight, DPR = devicePixelRatio;
+const R2 = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); R2.setPixelRatio(DPR); R2.setSize(W, H);
+R2.setClearColor(0xf3f0e8); R2.toneMapping = THREE.ACESFilmicToneMapping; R2.toneMappingExposure = 1.0; R2.outputColorSpace = THREE.SRGBColorSpace;
+document.body.appendChild(R2.domElement);
+const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(28, W / H, 0.01, 100);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x2a2f3c, 1.0));
+const az = +(q.get('az') ?? -38) * Math.PI / 180, el = +(q.get('el') ?? 24) * Math.PI / 180, dist = +(q.get('dist') ?? 14.5);
+cam.position.set(dist * Math.cos(el) * Math.sin(az), dist * Math.sin(el), dist * Math.cos(el) * Math.cos(az)); cam.lookAt(0, 0, 0);
+const key = new THREE.DirectionalLight(0xffffff, 1.5); key.position.copy(cam.position).add(new THREE.Vector3(-3, 6, 2)); scene.add(key);
+const back = new THREE.DirectionalLight(0x9fb4ff, 0.6); back.position.copy(cam.position).multiplyScalar(-1).add(new THREE.Vector3(0, 4, 0)); scene.add(back);
+function polyMesh(pts, colour, opts = {}) {
+  const pos = []; for (let t = 1; t + 1 < pts.length; t++) for (const p of [pts[0], pts[t], pts[t + 1]]) pos.push(...p);
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+  return new THREE.Mesh(g, new THREE.MeshPhysicalMaterial({ color: colour, roughness: opts.rough ?? 0.35, metalness: opts.metal ?? 0.1,
+    transparent: (opts.opacity ?? 1) < 1, opacity: opts.opacity ?? 1, depthWrite: (opts.opacity ?? 1) >= 1, side: THREE.DoubleSide,
+    polygonOffset: true, polygonOffsetFactor: opts.po ?? 1, polygonOffsetUnits: 1, flatShading: true }));
+}
+function lines(segs, colour, lw, opacity = 1) {
+  const g = new LineSegmentsGeometry(); g.setPositions(segs.flat(2));
+  return new LineSegments2(g, new LineMaterial({ color: colour, linewidth: lw, transparent: opacity < 1, opacity, resolution: new THREE.Vector2(W * DPR, H * DPR) }));
+}
+
+
+const all = await (await fetch('queen_slices.json')).json();
+const which = q.get('shot') ?? '600-cell'; const data = all[which];
+const viewDir = cam.position.clone().normalize();
+let R0 = 0; for (const f of data.hull) for (const p of f) R0 = Math.max(R0, Math.hypot(...p)); const k = 2.2 / R0;
+const sc = (p) => [p[0] * k, p[1] * k, p[2] * k];
+// the slice: back half as faint glass (a cutaway), all its edges thin
+for (const f of data.hull) {
+  const c = f.reduce((m, p) => m.add(new THREE.Vector3(...p)), new THREE.Vector3()).multiplyScalar(1 / f.length);
+  if (c.dot(viewDir) < 0) scene.add(polyMesh(f.map(sc), 0x8f9bb0, { opacity: 0.30, rough: 0.3, po: 3 }));
+}
+const segs = []; for (const f of data.hull) for (let i = 0; i < f.length; i++) segs.push([sc(f[i]), sc(f[(i + 1) % f.length])]);
+scene.add(lines(segs, 0x3d4250, 1.0, 0.55));
+// the faces the mirror carries: triangles pale (White Queen), pentagons red (Red Queen)
+for (const f of data.carried) {
+  const col = f.length === 3 ? 0x2f6db5 : 0xc0392b;
+  scene.add(polyMesh(f.map(sc), col, { rough: 0.45, metal: 0.05, po: 1 }));
+  const s2 = []; for (let i = 0; i < f.length; i++) s2.push([sc(f[i]), sc(f[(i + 1) % f.length])]);
+  scene.add(lines(s2, f.length === 3 ? 0x0e2a4f : 0x4a0d06, 2.0));
+}
+R2.render(scene, cam); window.__done = true;
+</script></body></html>

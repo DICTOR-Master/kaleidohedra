@@ -1,0 +1,731 @@
+{
+ "H4 (0, 0, 0, 1)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   0,
+   0,
+   0,
+   1
+  ],
+  "f": null,
+  "corners": 120,
+  "edges": 720,
+  "codim2_faces": 1200,
+  "facets": 600,
+  "facets_by_node": {
+   "1": 600
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "4": 600
+   }
+  },
+  "simple": false,
+  "degrees": {
+   "12": 120
+  },
+  "mirror_split": {
+   "on 3-gon/edge between types 1+1": 1200
+  }
+ },
+ "H4 (0, 0, 1, 0)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   0,
+   0,
+   1,
+   0
+  ],
+  "f": null,
+  "corners": 720,
+  "edges": 3600,
+  "codim2_faces": 3600,
+  "facets": 720,
+  "facets_by_node": {
+   "1": 600,
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "6": 600
+   },
+   "4": {
+    "12": 120
+   }
+  },
+  "simple": false,
+  "degrees": {
+   "10": 720
+  },
+  "mirror_split": {
+   "off 3-gon/edge between types 1+4": 2400,
+   "on 3-gon/edge between types 1+1": 1200
+  }
+ },
+ "H4 (0, 0, 1, 1)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   0,
+   0,
+   1,
+   1
+  ],
+  "f": null,
+  "corners": 1440,
+  "edges": 4320,
+  "codim2_faces": 3600,
+  "facets": 720,
+  "facets_by_node": {
+   "1": 600,
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "12": 600
+   },
+   "4": {
+    "12": 120
+   }
+  },
+  "simple": false,
+  "degrees": {
+   "6": 1440
+  },
+  "mirror_split": {
+   "off 3-gon/edge between types 1+4": 2400,
+   "on 6-gon/edge between types 1+1": 1200
+  }
+ },
+ "H4 (0, 1, 0, 0)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   0,
+   1,
+   0,
+   0
+  ],
+  "f": null,
+  "corners": 1200,
+  "edges": 3600,
+  "codim2_faces": 3120,
+  "facets": 720,
+  "facets_by_node": {
+   "1": 600,
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "4": 600
+   },
+   "4": {
+    "30": 120
+   }
+  },
+  "simple": false,
+  "degrees": {
+   "6": 1200
+  },
+  "mirror_split": {
+   "off 3-gon/edge between types 1+4": 2400,
+   "on 5-gon/edge between types 4+4": 720
+  }
+ },
+ "H4 (0, 1, 0, 1)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   0,
+   1,
+   0,
+   1
+  ],
+  "f": null,
+  "corners": 3600,
+  "edges": 10800,
+  "codim2_faces": 8640,
+  "facets": 1440,
+  "facets_by_node": {
+   "1": 600,
+   "3": 720,
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "12": 600
+   },
+   "3": {
+    "10": 720
+   },
+   "4": {
+    "30": 120
+   }
+  },
+  "simple": false,
+  "degrees": {
+   "6": 3600
+  },
+  "mirror_split": {
+   "off 3-gon/edge between types 1+4": 2400,
+   "off 4-gon/edge between types 1+3": 3600,
+   "off 5-gon/edge between types 3+4": 1440,
+   "on 3-gon/edge between types 1+1": 1200
+  }
+ },
+ "H4 (0, 1, 1, 0)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   0,
+   1,
+   1,
+   0
+  ],
+  "f": null,
+  "corners": 3600,
+  "edges": 7200,
+  "codim2_faces": 4320,
+  "facets": 720,
+  "facets_by_node": {
+   "1": 600,
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "12": 600
+   },
+   "4": {
+    "60": 120
+   }
+  },
+  "simple": true,
+  "degrees": {
+   "4": 3600
+  },
+  "mirror_split": {
+   "off 6-gon/edge between types 1+4": 2400,
+   "on 3-gon/edge between types 1+1": 1200,
+   "on 5-gon/edge between types 4+4": 720
+  },
+  "h": [
+   1,
+   716,
+   2166,
+   716,
+   1
+  ],
+  "swaps": {
+   "(1, 1)->(4, 4)": 601,
+   "(1, 4)->(1, 4)": 964,
+   "(4, 4)->(1, 1)": 601
+  },
+  "swaps_direction_independent": true,
+  "swaps_reverse_balanced": true
+ },
+ "H4 (0, 1, 1, 1)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   0,
+   1,
+   1,
+   1
+  ],
+  "f": null,
+  "corners": 7200,
+  "edges": 14400,
+  "codim2_faces": 8640,
+  "facets": 1440,
+  "facets_by_node": {
+   "1": 600,
+   "3": 720,
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "24": 600
+   },
+   "3": {
+    "10": 720
+   },
+   "4": {
+    "60": 120
+   }
+  },
+  "simple": true,
+  "degrees": {
+   "4": 7200
+  },
+  "mirror_split": {
+   "off 4-gon/edge between types 1+3": 3600,
+   "off 5-gon/edge between types 3+4": 1440,
+   "off 6-gon/edge between types 1+4": 2400,
+   "on 6-gon/edge between types 1+1": 1200
+  },
+  "h": [
+   1,
+   1436,
+   4326,
+   1436,
+   1
+  ],
+  "swaps": {
+   "(1, 1)->(3, 4)": 601,
+   "(1, 3)->(1, 4)": 1562,
+   "(1, 4)->(1, 3)": 1562,
+   "(3, 4)->(1, 1)": 601
+  },
+  "swaps_direction_independent": true,
+  "swaps_reverse_balanced": true
+ },
+ "H4 (1, 0, 0, 0)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   1,
+   0,
+   0,
+   0
+  ],
+  "f": null,
+  "corners": 600,
+  "edges": 1200,
+  "codim2_faces": 720,
+  "facets": 120,
+  "facets_by_node": {
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "4": {
+    "20": 120
+   }
+  },
+  "simple": true,
+  "degrees": {
+   "4": 600
+  },
+  "mirror_split": {
+   "on 5-gon/edge between types 4+4": 720
+  },
+  "h": [
+   1,
+   116,
+   366,
+   116,
+   1
+  ],
+  "swaps": {
+   "(4, 4)->(4, 4)": 366
+  },
+  "swaps_direction_independent": true,
+  "swaps_reverse_balanced": true
+ },
+ "H4 (1, 0, 0, 1)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   1,
+   0,
+   0,
+   1
+  ],
+  "f": null,
+  "corners": 2400,
+  "edges": 7200,
+  "codim2_faces": 7440,
+  "facets": 2640,
+  "facets_by_node": {
+   "1": 600,
+   "2": 1200,
+   "3": 720,
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "4": 600
+   },
+   "2": {
+    "6": 1200
+   },
+   "3": {
+    "10": 720
+   },
+   "4": {
+    "20": 120
+   }
+  },
+  "simple": false,
+  "degrees": {
+   "6": 2400
+  },
+  "mirror_split": {
+   "off 3-gon/edge between types 1+2": 2400,
+   "off 4-gon/edge between types 2+3": 3600,
+   "off 5-gon/edge between types 3+4": 1440
+  }
+ },
+ "H4 (1, 0, 1, 0)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   1,
+   0,
+   1,
+   0
+  ],
+  "f": null,
+  "corners": 3600,
+  "edges": 10800,
+  "codim2_faces": 9120,
+  "facets": 1920,
+  "facets_by_node": {
+   "1": 600,
+   "2": 1200,
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "6": 600
+   },
+   "2": {
+    "6": 1200
+   },
+   "4": {
+    "60": 120
+   }
+  },
+  "simple": false,
+  "degrees": {
+   "6": 3600
+  },
+  "mirror_split": {
+   "off 3-gon/edge between types 1+2": 2400,
+   "off 3-gon/edge between types 1+4": 2400,
+   "off 4-gon/edge between types 2+4": 3600,
+   "on 5-gon/edge between types 4+4": 720
+  }
+ },
+ "H4 (1, 0, 1, 1)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   1,
+   0,
+   1,
+   1
+  ],
+  "f": null,
+  "corners": 7200,
+  "edges": 18000,
+  "codim2_faces": 13440,
+  "facets": 2640,
+  "facets_by_node": {
+   "1": 600,
+   "2": 1200,
+   "3": 720,
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "12": 600
+   },
+   "2": {
+    "12": 1200
+   },
+   "3": {
+    "10": 720
+   },
+   "4": {
+    "60": 120
+   }
+  },
+  "simple": false,
+  "degrees": {
+   "5": 7200
+  },
+  "mirror_split": {
+   "off 3-gon/edge between types 1+4": 2400,
+   "off 4-gon/edge between types 2+3": 3600,
+   "off 4-gon/edge between types 2+4": 3600,
+   "off 5-gon/edge between types 3+4": 1440,
+   "off 6-gon/edge between types 1+2": 2400
+  }
+ },
+ "H4 (1, 1, 0, 0)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   1,
+   1,
+   0,
+   0
+  ],
+  "f": null,
+  "corners": 2400,
+  "edges": 4800,
+  "codim2_faces": 3120,
+  "facets": 720,
+  "facets_by_node": {
+   "1": 600,
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "4": 600
+   },
+   "4": {
+    "60": 120
+   }
+  },
+  "simple": true,
+  "degrees": {
+   "4": 2400
+  },
+  "mirror_split": {
+   "off 3-gon/edge between types 1+4": 2400,
+   "on 10-gon/edge between types 4+4": 720
+  },
+  "h": [
+   1,
+   716,
+   966,
+   716,
+   1
+  ],
+  "swaps": {
+   "(1, 4)->(4, 4)": 483,
+   "(4, 4)->(1, 4)": 483
+  },
+  "swaps_direction_independent": true,
+  "swaps_reverse_balanced": true
+ },
+ "H4 (1, 1, 0, 1)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   1,
+   1,
+   0,
+   1
+  ],
+  "f": null,
+  "corners": 7200,
+  "edges": 18000,
+  "codim2_faces": 13440,
+  "facets": 2640,
+  "facets_by_node": {
+   "1": 600,
+   "2": 1200,
+   "3": 720,
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "12": 600
+   },
+   "2": {
+    "6": 1200
+   },
+   "3": {
+    "20": 720
+   },
+   "4": {
+    "60": 120
+   }
+  },
+  "simple": false,
+  "degrees": {
+   "5": 7200
+  },
+  "mirror_split": {
+   "off 3-gon/edge between types 1+2": 2400,
+   "off 3-gon/edge between types 1+4": 2400,
+   "off 4-gon/edge between types 1+3": 3600,
+   "off 4-gon/edge between types 2+3": 3600,
+   "off 10-gon/edge between types 3+4": 1440
+  }
+ },
+ "H4 (1, 1, 1, 0)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   1,
+   1,
+   1,
+   0
+  ],
+  "f": null,
+  "corners": 7200,
+  "edges": 14400,
+  "codim2_faces": 9120,
+  "facets": 1920,
+  "facets_by_node": {
+   "1": 600,
+   "2": 1200,
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "12": 600
+   },
+   "2": {
+    "6": 1200
+   },
+   "4": {
+    "120": 120
+   }
+  },
+  "simple": true,
+  "degrees": {
+   "4": 7200
+  },
+  "mirror_split": {
+   "off 3-gon/edge between types 1+2": 2400,
+   "off 4-gon/edge between types 2+4": 3600,
+   "off 6-gon/edge between types 1+4": 2400,
+   "on 10-gon/edge between types 4+4": 720
+  },
+  "h": [
+   1,
+   1916,
+   3366,
+   1916,
+   1
+  ],
+  "swaps": {
+   "(1, 2)->(4, 4)": 601,
+   "(1, 4)->(2, 4)": 1082,
+   "(2, 4)->(1, 4)": 1082,
+   "(4, 4)->(1, 2)": 601
+  },
+  "swaps_direction_independent": true,
+  "swaps_reverse_balanced": true
+ },
+ "H4 (1, 1, 1, 1)": {
+  "group": "H4",
+  "chain": [
+   5,
+   3,
+   3
+  ],
+  "seed": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "f": null,
+  "corners": 14400,
+  "edges": 28800,
+  "codim2_faces": 17040,
+  "facets": 2640,
+  "facets_by_node": {
+   "1": 600,
+   "2": 1200,
+   "3": 720,
+   "4": 120
+  },
+  "facet_sizes_by_node": {
+   "1": {
+    "24": 600
+   },
+   "2": {
+    "12": 1200
+   },
+   "3": {
+    "20": 720
+   },
+   "4": {
+    "120": 120
+   }
+  },
+  "simple": true,
+  "degrees": {
+   "4": 14400
+  },
+  "mirror_split": {
+   "off 4-gon/edge between types 1+3": 3600,
+   "off 4-gon/edge between types 2+3": 3600,
+   "off 4-gon/edge between types 2+4": 3600,
+   "off 6-gon/edge between types 1+2": 2400,
+   "off 6-gon/edge between types 1+4": 2400,
+   "off 10-gon/edge between types 3+4": 1440
+  },
+  "h": [
+   1,
+   2636,
+   9126,
+   2636,
+   1
+  ],
+  "swaps": {
+   "(1, 2)->(3, 4)": 601,
+   "(1, 3)->(2, 4)": 2281,
+   "(1, 4)->(2, 3)": 1681,
+   "(2, 3)->(1, 4)": 1681,
+   "(2, 4)->(1, 3)": 2281,
+   "(3, 4)->(1, 2)": 601
+  },
+  "swaps_direction_independent": true,
+  "swaps_reverse_balanced": true
+ }
+}
