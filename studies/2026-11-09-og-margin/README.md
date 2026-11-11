@@ -341,3 +341,19 @@ also fails to be one-to-one: up to 3 cut candidates per face at k = 7, 9, 12, an
 clusters under single active faces (near-coincident candidates of one icosahedral orbit), which is why no local charge works.
 So step (A1) is true in all data (cut ≤ 0.437) but needs a cluster-aware global count: e.g. count clusters (orbit classes of
 near-coincident candidates) instead of candidates, together with the excess e of §19. Logged as the next idea; no further runs now.
+
+## §23 The #104 sweep applied to the hop (11 Nov 2026; DICTO: "could we not use anything from permutahedron studies" → "yes start the pilot"; scripts/og_sweep.py, data/og-sweep-22.*, watched jobs og-sweep-16 and og-sweep-22, FINAL ok)
+Slider T_λ = {y : X_j·y ≤ |X_j|² + λ} over the candidates X_j (corners of X_k): stacked over λ it is ONE convex 4D polyhedron (as the
+power cells of #104); each facet's λ-range is [λ_i, ∞), so faces only die going down, exactly once, and cut ⇔ λ_i > 0 (one LP per
+orbit). Controls at every k ≤ 22: sweep cut set = hull cut set; mass conserved; no orphans. Deaths are mostly generic (dies among 3),
+with symmetric clusters up to 15 at one point.
+Note: the sweep's h-vector relation (Dehn–Sommerville on the capped 4D polytope) gives only deaths = F_top − F_bottom, i.e. Euler again
+(same as the g-theorem in 3D); the content has to come from geometry, hence the flow tests.
+- Equal-split mass flow (dying face → faces it dies among that outlive it): max active mass < 2 FAILS (3.2–3.7 at k = 11–13, 7.56 at
+  k = 14, 6.92 at k = 21); mean ≤ 1.78 at every k (= the cut fraction ≤ 0.437).
+- BEST flow (max-flow, least possible max active load c*): c* = 1, 1, 1, 1, 1, 1.5, 1.5, 1.5, 1, 1.75, 1.73, **3.20**, 2.29, 3.20, 3.20,
+  1, 3.00, 2.58, 2.00, 2.33, 2.00, **4.50**, 2.45 (k = 0…22). c* ≥ 2 at k = 11–14, 16–22: some sets of active faces are the only outlet
+  for more than twice their number (Hall violations, e.g. 16 into 5 at c* = 16/5, 9 into 2 at k = 21).
+**Verdict: no charging along the sweep's own neighbour relation proves cut < active; step (A1) is a global (average) fact, as §22
+found for the hull's cutters.** Sweep route closed for a local proof. What stays: the exact one-death-per-face structure and the
+λ-ordering (usable for an averaging argument: e.g. a solid-angle or area-weighted count of the 4D facets).

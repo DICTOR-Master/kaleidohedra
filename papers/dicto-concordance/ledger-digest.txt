@@ -90,3 +90,53 @@
 [87] 2026-11-10 | SETTLED | G1 (Cleo-Octangula with (b),(d)) exact form | retry: only to certify
 [88] 2026-11-10 | OPEN | E1 (most even) exact form | retry: refinement only
 [89] 2026-11-10 | SETTLED | Certified count for Rh345 (3-4-5 rhombus yantra) | retry: never
+[90] 2026-11-10 | SETTLED | AB line: is the quasicrystal the turning point of the line of crystals? | retry: never
+[91] 2026-11-10 | PAUSED | Threshold curve in the two-slope family: certified proof | retry: only with Taylor-model enclosures
+[92] 2026-11-10 | SETTLED | AB line: what is extremal at the turn? | retry: never
+[93] 2026-11-10 | SETTLED | Fibonacci line: quasicrystal as fixed point of the hop | retry: never
+[94] 2026-11-10 | SETTLED | Icosahedral line (cubic approximants): turn or hop? | retry: only the tile-level check
+[95] 2026-11-10 | SETTLED | Merged sliders (cube-RD x cube-octahedron): where can a single piece fill space? | retry: never (next: keys, 3-fold cuts)
+[96] 2026-11-10 | SETTLED | c/h keys at the hexagon of half-cells (RD/TRD halves) | retry: never
+[97] 2026-11-10 | SETTLED | Can keys on the inter-layer rhombi of a half-cell force h / an aperiodic c/h word? | retry: only for in-layer side-face keys or non-half-cell pieces
+[98] 2026-11-10 | SETTLED on 3/4 < s < 1 | #80 cube chain of the growth rule T with the depth as a symbol (s0 = 5/7): does it close (a step similar to an earlier one)? | retry: only with a different method: high-precision numerical steps at several s0 to find the closure step, exact check of that step only
+[99] 2026-11-10 | SETTLED | #81 dodecahedron chain of the growth rule T with the depth as a symbol (s0 = 3/4): does it close? | retry: exact walls between regimes; same treatment for #80
+[100] 2026-11-10 | METHOD-FAILED | #43 Conjecture 1 for all k by the Blaschke–Santaló volume product (monotone rise + stability) | retry: only if a stability theorem with exponent near 1/2 and explicit constant appears
+[101] 2026-11-10 | METHOD-FAILED | #43 step (A1) cut lemma: fewer than half the candidates are cut, by matching each cut candidate to its own active cutter | retry: global argument only (solid-angle weighting of active faces, orbit degeneracy)
+[102] 2026-11-10 | SETTLED | #61 Swap Rule below s = 1/4 along λ (one parameter) | retry: never along λ; the grid (swap61-grid) is superseded
+[103] 2026-11-10 | PROVED | #61 chamber map for all s in [1/8, 1/4] (two parameters) | retry: only: the clash cell with 6-layer keys; s < 1/8
+[104] 2026-11-10 | SETTLED | #61 the flip at each wall (s = 1/5) | retry: never
+[105] 2026-11-10 | FAILED | 4D lift of the #61 cells: regular 4D polytopes? corners vs 4D event heights | retry: only the exact D4 picture with the atoms as sites; a golden stacking
+[106] 2026-11-10 | SETTLED | 4D scutoids: hole cells stacked over λ across the -5s/8 wall | retry: never; next: render, and the truncated 600-cell slice walk
+[107] 2026-11-10 | FAILED | truncated 600-cell as a scutoid build (slices) | retry: never
+[108] 2026-11-10 | SETTLED | bitruncated 600-cell as a scutoid build (slices) | retry: never; other stages and pictures are new questions
+[109] 2026-11-10 | CONFIRMED | scutoid swaps in generic sweeps of simple 4-polytopes = h2 | retry: never; next: the general proof write-up and prior-art check by a second pass
+[110] 2026-11-10 | CONFIRMED | 5D sweeps of simple 5-polytopes: births, contacts gained, contacts lost, deaths = h1..h4 | retry: never; next: 6D or non-simple corrections
+[111] 2026-11-10 | PROVED | #61 two-parameter proof: completeness of the neighbourhood (panel gap) | retry: never
+[112] 2026-11-10 | SETTLED except one exact form | B1 window edges of #80 / #81 | retry: only: exact step 3+ walls for s*
+[113] 2026-11-10 | CONFIRMED | scutoid sweep law on random irregular simple 4-polytopes | retry: never
+[114] 2026-11-10 | METHOD-FAILED | calibrate the wall method on the 2D hat family Tile(a,b) | retry: only the exact version in Q(sqrt3)(t)
+[115] 2026-11-10 | PUBLISHED | #104 release | retry: never
+[116] 2026-11-11 | SETTLED | 4D Vacuus of the 4D permutohedron, exact | retry: never
+[117] 2026-11-11 | SETTLED | How the five central TO slices meet | retry: never
+[118] 2026-11-11 | SETTLED | Vacuus count of the n-permutohedron, every n | retry: never
+[119] 2026-11-11 | PUBLISHED | #105 release | retry: never
+[120] 2026-11-11 | SETTLED | #104 Theorem 3 proof reproducible from a clean checkout? | retry: never
+[121] 2026-11-11 | PUBLISHED | #105 v2 release | retry: never
+[122] 2026-11-11 | PUBLISHED | #104 v2 release | retry: never
+[123] 2026-11-11 | PUBLISHED | #104 v3 release | retry: never
+[124] 2026-11-11 | PUBLISHED | #105 v3 release | retry: never
+[125] 2026-11-11 | SETTLED | DICTO's PV build RD-Hemi + 13 face-attached: what is it; can cube pyramids fill it (DICTO) | retry: exact rational version
+[126] 2026-11-11 | SETTLED | Does the chamfered cube (DICTO's closed Hemi RD build) fill space with cube pyramids? | retry: exact proof
+[127] 2026-11-11 | PUBLISHED | Permutohedron realignment of #48, #52, #53, #87, #88, #93 | retry: never
+[128] 2026-11-11 | SETTLED | Which registry solids are reflection-group orbit polytopes (DICTO: one corner -> group and seed)? | retry: exact labels; Dogstar check; 4D groups
+[129] 2026-11-11 | SETTLED | Are the Queens and the stages between them H4 orbits, and with which seeds (one corner)? | retry: exact labels
+[130] 2026-11-11 | SETTLED | Exact seeds of the orbit polytopes; Dogstar check; Dogstar's Vacuus | retry: never
+[131] 2026-11-11 | SETTLED | Vacuus census of all registry solids (DICTO: will other orbit groups be Vacuus; have the rest been tested) | retry: never
+[132] 2026-11-11 | SETTLED | Exact proof: the chamfered cube (DICTO's closed Hemi RD build) fills space with cube pyramids | retry: never
+[133] 2026-11-11 | SETTLED | The Vacuus of the Queens: central hyperplanes of the 2-faces of the five H4 stages | retry: never
+[134] 2026-11-11 | SETTLED | Vacuus of the middles (0,1,1,0) of A4, B4, F4, H4 (and the regular ends) | retry: never
+[135] 2026-11-11 | SETTLED | Prove the middle-bond law of the Vacuus | retry: never
+[136] 2026-11-11 | SETTLED | Balance law (#104 Thm 4) in B4 and every chain's middle | retry: never
+[137] 2026-11-11 | SETTLED | Atlas of the Chains + general balance law | retry: never
+[138] 2026-11-11 | SETTLED | Strict inhabitance: exact Platonic solids among the corners of every Atlas polytope | retry: never
+[139] 2026-11-11 | FAILED | #43 step A1 (cut lemma, cut < active) by the #104 sweep: 4D stacking of the hop over a slider, mass flow down the sweep | retry: only an averaging (weighted, global) count, e.g. solid-angle or area weights of the 4D facets; never retry local charges (matching, ray, sweep flow)

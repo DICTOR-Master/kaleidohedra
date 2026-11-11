@@ -1,0 +1,73 @@
+k   0: BEST FLOW least max active load c* = 1.0000 (mean 1.0000)
+PROGRESS 0.043 level 0
+k   0: cand     80 active     80 cut      0 (0.000) | sweep=hull True | mass conserved True (orphans 0) | active mass max 1.0000 mean 1.0000 | max carried by a dying face 0.0000 | tight-set sizes at deaths {} | lam range of deaths [0.000e+00, 0.000e+00] | 2 orbit LPs | 0s
+k   1: BEST FLOW least max active load c* = 1.0000 (mean 1.0000)
+PROGRESS 0.087 level 1
+k   1: cand    132 active    132 cut      0 (0.000) | sweep=hull True | mass conserved True (orphans 0) | active mass max 1.0000 mean 1.0000 | max carried by a dying face 0.0000 | tight-set sizes at deaths {} | lam range of deaths [0.000e+00, 0.000e+00] | 3 orbit LPs | 0s
+k   2: BEST FLOW least max active load c* = 1.0000 (mean 1.0000)
+PROGRESS 0.130 level 2
+k   2: cand    140 active    140 cut      0 (0.000) | sweep=hull True | mass conserved True (orphans 0) | active mass max 1.0000 mean 1.0000 | max carried by a dying face 0.0000 | tight-set sizes at deaths {} | lam range of deaths [0.000e+00, 0.000e+00] | 3 orbit LPs | 0s
+k   3: BEST FLOW least max active load c* = 1.0000 (mean 1.0000)
+PROGRESS 0.174 level 3
+k   3: cand    162 active    162 cut      0 (0.000) | sweep=hull True | mass conserved True (orphans 0) | active mass max 1.0000 mean 1.0000 | max carried by a dying face 0.0000 | tight-set sizes at deaths {} | lam range of deaths [0.000e+00, 0.000e+00] | 4 orbit LPs | 0s
+k   4: BEST FLOW least max active load c* = 1.0000 (mean 1.0000)
+PROGRESS 0.217 level 4
+k   4: cand    200 active    200 cut      0 (0.000) | sweep=hull True | mass conserved True (orphans 0) | active mass max 1.0000 mean 1.0000 | max carried by a dying face 0.0000 | tight-set sizes at deaths {} | lam range of deaths [0.000e+00, 0.000e+00] | 4 orbit LPs | 0s
+k   5: BEST FLOW least max active load c* = 1.5000 (mean 1.3125)
+PROGRESS 0.261 level 5
+k   5: cand    252 active    192 cut     60 (0.238) | sweep=hull True | mass conserved True (orphans 0) | active mass max 1.5000 mean 1.3125 | max carried by a dying face 1.0000 | tight-set sizes at deaths {9: 60} | lam range of deaths [1.904e-01, 1.904e-01] | 5 orbit LPs | 0s
+k   6: BEST FLOW least max active load c* = 1.5000 (mean 1.2308)
+PROGRESS 0.304 level 6
+k   6: cand    320 active    260 cut     60 (0.188) | sweep=hull True | mass conserved True (orphans 0) | active mass max 1.5000 mean 1.2308 | max carried by a dying face 1.0000 | tight-set sizes at deaths {6: 60} | lam range of deaths [4.528e-01, 4.528e-01] | 6 orbit LPs | 0s
+k   7: BEST FLOW least max active load c* = 1.5001 (mean 1.2885)
+PROGRESS 0.348 level 7
+k   7: cand    402 active    312 cut     90 (0.224) | sweep=hull True | mass conserved True (orphans 0) | active mass max 2.0000 mean 1.2885 | max carried by a dying face 1.0000 | tight-set sizes at deaths {3: 30, 5: 60} | lam range of deaths [3.542e-01, 3.670e-01] | 8 orbit LPs | 1s
+k   8: BEST FLOW least max active load c* = 1.0000 (mean 1.0000)
+PROGRESS 0.391 level 8
+k   8: cand    500 active    500 cut      0 (0.000) | sweep=hull True | mass conserved True (orphans 0) | active mass max 1.0000 mean 1.0000 | max carried by a dying face 0.0000 | tight-set sizes at deaths {} | lam range of deaths [0.000e+00, 0.000e+00] | 9 orbit LPs | 1s
+k   9: BEST FLOW least max active load c* = 1.7503 (mean 1.5250)
+PROGRESS 0.435 level 9
+k   9: cand    732 active    480 cut    252 (0.344) | sweep=hull True | mass conserved True (orphans 0) | active mass max 2.2222 mean 1.5250 | max carried by a dying face 2.6667 | tight-set sizes at deaths {4: 240, 11: 12} | lam range of deaths [6.632e-03, 2.964e-01] | 13 orbit LPs | 1s
+k  10: BEST FLOW least max active load c* = 1.7344 (mean 1.4085)
+PROGRESS 0.478 level 10
+k  10: cand    662 active    470 cut    192 (0.290) | sweep=hull True | mass conserved True (orphans 0) | active mass max 2.2000 mean 1.4085 | max carried by a dying face 1.0000 | tight-set sizes at deaths {4: 60, 6: 132} | lam range of deaths [2.170e-01, 6.421e-01] | 13 orbit LPs | 1s
+k  11: BEST FLOW least max active load c* = 3.2003 (mean 1.2444)
+PROGRESS 0.522 level 11
+k  11: cand    672 active    540 cut    132 (0.196) | sweep=hull True | mass conserved True (orphans 0) | active mass max 3.2000 mean 1.2444 | max carried by a dying face 4.8889 | tight-set sizes at deaths {4: 120, 6: 12} | lam range of deaths [3.685e-01, 4.666e-01] | 12 orbit LPs | 1s
+k  12: BEST FLOW least max active load c* = 2.2861 (mean 1.3877)
+PROGRESS 0.565 level 12
+k  12: cand    902 active    650 cut    252 (0.279) | sweep=hull True | mass conserved True (orphans 0) | active mass max 3.6667 mean 1.3877 | max carried by a dying face 1.3333 | tight-set sizes at deaths {4: 180, 6: 12, 15: 60} | lam range of deaths [2.134e-01, 4.754e-01] | 17 orbit LPs | 2s
+k  13: BEST FLOW least max active load c* = 3.2003 (mean 1.2133)
+PROGRESS 0.609 level 13
+k  13: cand   1092 active    900 cut    192 (0.176) | sweep=hull True | mass conserved True (orphans 0) | active mass max 3.2000 mean 1.2133 | max carried by a dying face 4.8889 | tight-set sizes at deaths {4: 120, 6: 72} | lam range of deaths [5.231e-02, 4.541e-01] | 19 orbit LPs | 2s
+k  14: BEST FLOW least max active load c* = 3.2000 (mean 1.7775)
+PROGRESS 0.652 level 14
+k  14: cand   1262 active    710 cut    552 (0.437) | sweep=hull True | mass conserved True (orphans 0) | active mass max 7.5556 mean 1.7775 | max carried by a dying face 2.2000 | tight-set sizes at deaths {4: 300, 5: 120, 6: 12, 10: 120} | lam range of deaths [4.719e-03, 6.653e-01] | 23 orbit LPs | 2s
+k  15: BEST FLOW least max active load c* = 1.0000 (mean 1.0000)
+PROGRESS 0.696 level 15
+k  15: cand   1392 active   1392 cut      0 (0.000) | sweep=hull True | mass conserved True (orphans 0) | active mass max 1.0000 mean 1.0000 | max carried by a dying face 0.0000 | tight-set sizes at deaths {} | lam range of deaths [0.000e+00, 0.000e+00] | 24 orbit LPs | 3s
+k  16: BEST FLOW least max active load c* = 3.0001 (mean 1.3111)
+PROGRESS 0.739 level 16
+k  16: cand   2360 active   1800 cut    560 (0.237) | sweep=hull True | mass conserved True (orphans 0) | active mass max 3.2500 mean 1.3111 | max carried by a dying face 4.0000 | tight-set sizes at deaths {4: 200, 5: 60, 6: 120, 10: 120, 15: 60} | lam range of deaths [1.813e-02, 5.552e-01] | 40 orbit LPs | 4s
+k  17: BEST FLOW least max active load c* = 2.5844 (mean 1.3909)
+PROGRESS 0.783 level 17
+k  17: cand   2882 active   2072 cut    810 (0.281) | sweep=hull True | mass conserved True (orphans 0) | active mass max 3.2654 mean 1.3909 | max carried by a dying face 2.7315 | tight-set sizes at deaths {3: 30, 4: 600, 5: 180} | lam range of deaths [1.080e-02, 6.692e-01] | 50 orbit LPs | 5s
+k  18: BEST FLOW least max active load c* = 2.0006 (mean 1.2353)
+PROGRESS 0.826 level 18
+k  18: cand   3780 active   3060 cut    720 (0.190) | sweep=hull True | mass conserved True (orphans 0) | active mass max 2.4444 mean 1.2353 | max carried by a dying face 1.3333 | tight-set sizes at deaths {4: 600, 5: 60, 15: 60} | lam range of deaths [3.316e-02, 4.033e-01] | 63 orbit LPs | 6s
+k  19: BEST FLOW least max active load c* = 2.3346 (mean 1.3362)
+PROGRESS 0.870 level 19
+k  19: cand   5612 active   4200 cut   1412 (0.252) | sweep=hull True | mass conserved True (orphans 0) | active mass max 2.6296 mean 1.3362 | max carried by a dying face 1.7778 | tight-set sizes at deaths {4: 1100, 5: 300, 6: 12} | lam range of deaths [9.963e-03, 7.055e-01] | 95 orbit LPs | 9s
+k  20: BEST FLOW least max active load c* = 2.0004 (mean 1.3079)
+PROGRESS 0.913 level 20
+k  20: cand   7952 active   6080 cut   1872 (0.235) | sweep=hull True | mass conserved True (orphans 0) | active mass max 2.7778 mean 1.3079 | max carried by a dying face 2.0000 | tight-set sizes at deaths {4: 1500, 5: 300, 6: 72} | lam range of deaths [9.002e-04, 5.514e-01] | 134 orbit LPs | 14s
+k  21: BEST FLOW least max active load c* = 4.5002 (mean 1.4009)
+PROGRESS 0.957 level 21
+k  21: cand  11322 active   8082 cut   3240 (0.286) | sweep=hull True | mass conserved True (orphans 0) | active mass max 6.9193 mean 1.4009 | max carried by a dying face 3.5521 | tight-set sizes at deaths {4: 1740, 5: 540, 6: 960} | lam range of deaths [5.121e-03, 5.325e-01] | 190 orbit LPs | 22s
+k  22: BEST FLOW least max active load c* = 2.4453 (mean 1.1742)
+PROGRESS 1.000 level 22
+k  22: cand  15500 active  13200 cut   2300 (0.148) | sweep=hull True | mass conserved True (orphans 0) | active mass max 3.1111 mean 1.1742 | max carried by a dying face 2.1111 | tight-set sizes at deaths {4: 1500, 5: 420, 6: 360, 7: 20} | lam range of deaths [1.295e-02, 6.668e-01] | 259 orbit LPs | 36s
+every level: every active face carries mass < 2 (=> cut < active): False
+every level: BEST FLOW c* < 2: False | c* by level [1.0, 1.0, 1.0, 1.0, 1.0, 1.5, 1.5, 1.5, 1.0, 1.75, 1.734, 3.2, 2.286, 3.2, 3.2, 1.0, 3.0, 2.584, 2.001, 2.335, 2.0, 4.5, 2.445]
+FINAL ok
+[exit 0]

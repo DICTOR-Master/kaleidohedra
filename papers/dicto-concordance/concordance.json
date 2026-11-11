@@ -6089,6 +6089,16 @@
     "retry": "never",
     "study": "studies/2026-11-11-orbit-polytopes",
     "date": "2026-11-11"
+   },
+   {
+    "question": "#43 step A1 (cut lemma, cut < active) by the #104 sweep: 4D stacking of the hop over a slider, mass flow down the sweep",
+    "method": "slider T_lam = {y: X_j.y <= |X_j|^2 + lam}; death height per face by LP (orbit reps); equal-split mass flow and best flow (max-flow, least max active load c*); controls sweep cut set = hull cut set, mass conserved",
+    "status": "FAILED",
+    "result": "controls ok k <= 22; one death per face (exact structure); equal split max mass up to 7.56 (k=14); best flow c* >= 2 at k = 11-14, 16-22 (max 4.50 at k=21): Hall violations, so no local charge along the sweep proves cut < active; mean <= 1.78 holds; Dehn-Sommerville on the swept 4D polytope gives only Euler",
+    "retry": "only an averaging (weighted, global) count, e.g. solid-angle or area weights of the 4D facets; never retry local charges (matching, ray, sweep flow)",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },
