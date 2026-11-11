@@ -739,3 +739,16 @@ between 12.5 and 20.8: the √n law expected from 15 mirror circles holds in the
 CORRECTION to §37: the generic death share g reaches 0.355 at k = 27 (0.283 at k = 26), so "g ≤ 1/3" is false; the reduction needs
 μ < (1/2 − g)/(1 − g) (= 0.225 for g = 0.355), still true with a wide margin at k = 27 (μ = 0.053). (G) must be stated with a bound
 below 1/2, not 1/3. Cut shares 0.259, 0.303, 0.365 at k = 25–27.
+
+## §38b Mirror faces and death shares to k = 37 (11 Nov 2026; DICTO: "track the mirror faces to level 37", "why is the generic share rising"; scripts/mirror_track.py, data/og-mirror-37.{json,log}, watched job og-mirror-37, FINAL ok)
+Float companion of certified_orbit.py (foot points pinned to their stabiliser after a first run stopped at D_34 on float drift). Face
+counts agree with the certified run to within 240 faces at k = 32, 35 (near-degenerate merges; the certified counts stand).
+(M): μ = 0.0332, 0.0279, 0.0240, 0.0189, 0.0179, 0.0155 (k = 32 … 37); mirror faces M/√n = 16–19 (√n law to k = 37). The §38 bound proves
+μ < 1/4 by itself only at k = 37 (0.182): the largest mirror cap does NOT shrink steadily (1.18° at k = 33, 3.19° at 34, 2.03° at 37) and
+the mean mirror cap stays ≈ 0.5° while the mean cap falls (0.45° → 0.21°): mirror faces are long thin faces across the mirror circles
+(spacing along the circle ≈ 0.25°). So (M) holds by COUNT (~18√n), not by size; the right lemma counts edges of the section polygons.
+(G) and the identity cut share = 1 − growth/2 − (4 + e)/(2F) (§19): growth ratios 1.42 (k ≈ 20) → 1.23 (dips at hops 27, 32) → 1.25,
+1.39, 1.40, 1.37 (hops 33–36). Generic death share g = 0.37, 0.36 (hops 32, 33) then 0.293, 0.285, 0.304, 0.327 (hops 34–37); cut share
+0.297, 0.292, 0.310, 0.331. The rise to 0.37 was two growth dips plus the vanishing excess term (gap 0.068 → 0.010 from hop 18 to 32:
+degenerate corners disappear); g returns to ≈ 0.30 — the generic near-round equilibrium of §26 (≈ 0.30), not a drift to 1/2.
+Equivalent form of A1 (from the identity): c < F/2 ⇔ F_{k+1} > F_k − 4 − e_k: step A1 says only that the face count does not shrink.

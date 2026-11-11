@@ -154,3 +154,4 @@
 [151] 2026-11-11 | FAILED | #43 step A1, possibility P1: does a top-slice side rule decide which faces die? (DICTO 11-11) | retry: P3 orbit counting, or a radial threshold per level
 [152] 2026-11-11 | FOUND | #43 step A1, possibility P3: count cuts by I_h symmetry classes (DICTO 11-11) | retry: prove (M) (mirror faces ~ sqrt n along 15 mirror circles) and (G) for generic classes
 [153] 2026-11-11 | PARTIAL | #43 step A1 part (M): mirror faces a vanishing share (DICTO 11-11 'yes prove M') | retry: (M) <= 2D refinement of the 15 section polygons (gamma_M -> 0); track gamma_M to k=37 from certified checkpoints
+[154] 2026-11-11 | FOUND | #43 step A1: mirror faces and death shares to k=37; why the generic share rose (DICTO 11-11) | retry: (M): count section-polygon edges; (G): growth ratio stays > 1 (refinement never stops)

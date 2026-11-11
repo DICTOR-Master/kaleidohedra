@@ -6239,6 +6239,16 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 step A1: mirror faces and death shares to k=37; why the generic share rose (DICTO 11-11)",
+    "method": "mirror_track.py (float orbit storage, foot points pinned to stabilisers) k=10..37",
+    "status": "FOUND (data) + reduction",
+    "result": "mu 0.0155 at k=37, M ~ 18 sqrt(n); mirror faces long and thin (mean cap ~0.5 deg constant) so (M) holds by count not size; g back to ~0.30 at hops 34-37 after dips 0.37 (growth dips 1.23 + vanishing corner excess); A1 <=> F_{k+1} > F_k - 4 - e_k",
+    "retry": "(M): count section-polygon edges; (G): growth ratio stays > 1 (refinement never stops)",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },
