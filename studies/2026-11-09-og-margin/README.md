@@ -716,7 +716,7 @@ survives whole (checked). k = 0 … 24:
 - Axis classes: the five-fold class dies at k = 9–14, 19, 20; at most 62 faces in all.
 - Shares of the faces: mirror + axis faces fall from 0.62 (k = 14) to about 0.11 (k = 24); generic faces rise to about 0.89.
 REDUCTION: c/n ≤ g·(1 − μ) + μ, with g = dying share of generic classes, μ = share of faces on mirror planes or axes. With g ≤ 1/3,
-step A1 holds whenever μ < 1/4 — true from k ≈ 18 on in the data. So A1 for the tail ⇐ (G) generic classes: at most a third die, and
+step A1 holds whenever μ < 1/4 — true from k = 19 on in the data (μ = 0.209, 0.170, 0.152, 0.102, 0.088, 0.114 for k = 19 … 24). So A1 for the tail ⇐ (G) generic classes: at most a third die, and
 (M) mirror faces become a vanishing share (they lie along the 15 mirror great circles, a one-dimensional family, so about √n of n:
 the 15 vertical sheets of the 4D Vacuus, §31a). (M) is geometric and looks provable; (G) is the remaining core, now only for generic
 classes (where the generic-shape roundness law of §30 also gave ≤ 0.41).
