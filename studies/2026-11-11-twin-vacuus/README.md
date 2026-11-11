@@ -1,5 +1,6 @@
-# The twin Vacuus of the OG (11 Nov 2026)
+# The twin Vacuus of the OG — the Angeli family (11 Nov 2026)
 DICTO: "it has perfect truncated triangles and penrose stars... what would a vacuus form of the og look like" → "do the twin vacuus".
+DICTO named the twin Vacuus forms the **Angeli family** ("Angeli family, Angelus for one", 11 Nov 2026; twin forms only, not the #87 census Vacuus solids). The twin hull Vacuus below is the **twin OG Angelus**.
 The OG's own Vacuus is in the #87 census (180 fins, 45 fin planes, 120 sheets, 2 strut lengths; reproduced here as control).
 Twin = Galois swap √5 → −√5 on the exact OG coordinates (the "perpendicular" side of the 6D picture, og-margin §28).
 scripts/twin_vacuus.py (exact OG coordinates from the five-fold-octet tools), data/twin-vacuus.json, figures/twin-vacuus.png. FINAL ok.
