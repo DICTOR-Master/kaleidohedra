@@ -84,3 +84,10 @@ of the twin sweep at the slider height where most hidden walls are present; ever
 (centre, edge); hidden fins gold, the others grey, ghost of the slice. Hop 0 (height 0.4595 of 0.996 … 0): 150 fins, ALL 60 hidden
 walls present at once. Hop 1 (height 0.3894 of 1.428 … 0): 330 fins, ALL 180 hidden walls present at once. So the hidden fins of a
 hop live together in one middle band of the sweep: one hidden 3D world between the two visible ones.
+
+## The middle world on hops 0–9 (DICTO: "yes test the middle world on hops 2–9"; scripts/middle_world.py, data/middle-world.json, FINAL ok)
+All hidden walls of a twin hop present together in one slice? Hops 0, 1: YES (60/60, 180/180; a band of heights 0.41–0.46 and
+0.29–0.39). Hops 2–9: NO. The most present at once: 180/240, 300/360, 120/270, 210/390, 600/1020, 660/1410, 450/960, 930/2250 (hops 2–9);
+from hop 5 the fullest slice sits low, close to the bottom world (heights 0.047, 0.14, 0.001, 0.007, 0.005 against tops 0.5–2.3).
+Verdict: one middle world only at the first two hops; later the hidden fins live in several overlapping bands (at least 2, up to
+about 2.4 slices' worth), crowding toward the bottom. Law (9) holds for hops 0 and 1 only.
