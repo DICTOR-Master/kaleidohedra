@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Scutoids in Three Dimensions</title><link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;width:100%;font-size:8.6pt;margin:2mm 0} td,th{border:0.3pt solid #999;padding:0.8mm 1.4mm;vertical-align:top;text-align:left} th{background:#eee} .box{border:0.4pt solid #b9a46a;background:#fbf8ee;padding:2mm 3mm;margin:2mm 0;break-inside:avoid} figure{margin:3mm 0;text-align:center;break-inside:avoid} figure img{max-width:100%} figcaption{font-size:8.5pt;color:#444;text-align:left} .proof{font-size:9.6pt} .two{display:flex;gap:3mm} .two figure{flex:1}</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt=""><img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Scutoids in Three Dimensions<br><span style="font-size:0.72em;font-weight:normal">The Permutohedron Paradigm, Chapter 5: the exchange of neighbours, from the orderings of five things to flat-faced scutoid shells, their polar flip and the cycle that fills space</span></h1>
+<div class="meta"><b>DICTO</b> (artist and geometer, Osaka, Japan) · dictospheres.com · contact@dictospheres.com · ORCID 0009-0001-2620-2036<br>
+DICTO: ideas, names, constructions and direction.<br>Computation, verification and drafting with Claude (Anthropic).</div>
+<div class="status">DRAFT chapter for DICTO's read. Re-edited from the draft Scutoids: Layers, Shells and Cycles (10 November; its block of eight, castle wall and defect experiment stay there). New here: Section 1 (studies/2026-11-11-paradigm-ch5, swap_orderings.py with log, exact, FINAL ok). Theorems 5.2–5.4 checked as in that draft (faces flat to 10⁻¹³, volumes adding exactly).</div>
+
+<p>A scutoid is a cell whose outline changes on the way through: two cells that touched stop touching, and two others start (Gómez-Gálvez et al. 2018). In this book's language it is an <i>exchange of neighbours</i>, the move that joins two orderings on an edge of the permutohedron, seen in a slice.</p>
+
+<h2>1. Where the exchanges happen</h2>
+<div class="box"><b>Proposition 5.1.</b> Sweep the 4D permutohedron, whose corners are the 120 orderings of 1, …, 5, by the height f(x) = u · x with u<sub>1</sub> &lt; u<sub>2</sub> &lt; … &lt; u<sub>5</sub>. The edge from an ordering to the one with the values k and k + 1 exchanged goes down exactly when k stands to the left of k + 1. So a corner has as many edges below as there are such k, and the corners with 0, 1, 2, 3, 4 edges below number 1, 26, 66, 26, 1. The scutoid exchanges of the slice happen at the 66 orderings in which exactly two values k stand to the left of k + 1.</div>
+<p class="proof"><i>Proof.</i> Exchanging k (at position p) and k + 1 (at position q) changes f by u<sub>p</sub> − u<sub>q</sub>, negative exactly when p &lt; q. A corner with two edges below is where the slice makes an exchange of neighbours (#104, Theorem 1); with one, a cell is born; with three, one dies. The counts are the Eulerian numbers, checked by listing all 120 orderings for three directions u (swap_orderings.py). ∎</p>
+
+<h2>2. A flat-faced scutoid</h2>
+<p>Take the hexagonal tiling, shrink every second vertical edge of every second row to a point and reopen it across: a cell that is a hexagon below and a pentagon above, with the Y-corner halfway and 13 faces, every one of them flat (Figure 1).</p>
+
+<div class="box"><b>Theorem 5.2</b> (the scutoid shell). Shrink every hexagon–hexagon edge of a truncated icosahedron to a point (the surface becomes an icosidodecahedron) and reopen each point across, between the two pentagons (it becomes a truncated dodecahedron). The 32 cells between the three nested surfaces, 12 growing pentagon → pentagon → decagon and 20 shrinking hexagon → triangle → triangle, have every face flat for any three radii that nest, and fill the shell exactly once.</div>
+<p class="proof"><i>Why flat.</i> Each core edge and the middle edge above it are perpendicular to the same mirror plane, so they are parallel and the side face between them is a flat trapezoid; a shrinking edge gives a triangle. Checked: every face flat to 10⁻¹³, the 32 volumes add to V(outside) − V(core).</p>
+
+<div class="box"><b>Theorem 5.3</b> (the polar flip). The polar of that sequence is pentakis dodecahedron → rhombic triacontahedron → triakis icosahedron: each pair of triangles across a 6–6 edge flattens into a rhombus and folds back along the other diagonal. The shell between the outer two splits into 30 congruent cells, one per rhombus, every face flat. On triangles the scutoid move cannot run; in the polar it becomes a diagonal flip.</div>
+
+<div class="box"><b>Theorem 5.4</b> (the cycle). The scutoid move and the flip each undo themselves, and with the two polar swaps they close a square: truncated icosahedron → truncated dodecahedron → triakis icosahedron → pentakis dodecahedron → truncated icosahedron. As nested shells this fills all space except the centre, self-similarly: with four scutoid shapes (scale 1.578 per period), or through the polar with two flip shapes (scale 1.802).</div>
+
+<div class="two"><figure><img src="figures/scutoid-solid.png" alt="A green translucent column: hexagon base narrowing to a pentagon halfway up and rising to a pentagon top"><figcaption><b>Figure 1.</b> The flat-faced scutoid.</figcaption></figure>
+<figure><img src="figures/polar-shell.png" alt="A violet shell of identical folded rhombic cells"><figcaption><b>Figure 2.</b> The polar flip shell (Theorem 5.3).</figcaption></figure>
+<figure><img src="figures/scutoid-onion.png" alt="Half of a nested onion of gold and green scutoid shells"><figcaption><b>Figure 3.</b> The cycle as an onion (Theorem 5.4), cut in half.</figcaption></figure></div>
+
+<p><b>Back to the book.</b> In the 4D permutohedron the exchanges of neighbours come one at a time, 66 of them, each at an ordering (Proposition 5.1); round the truncated icosahedron they come all at once, 30 in one shell, held flat by its mirrors (Theorem 5.2). Chapter 7 counts them in four dimensions for every simple polytope.</p>
+
+<h2>Sources</h2>
+<p class="src">P. Gómez-Gálvez, P. Vicente-Munuera, A. Tagua, C. Forja, A. M. Castro, M. Letrán, A. Valencia-Expósito, C. Grima, M. Bermúdez-Gallardo, Ó. Serrano-Pérez-Higueras, F. Cavodeassi, S. Sotillos, M. D. Martín-Bermudo, A. Márquez, J. Buceta and L. M. Escudero, Scutoids are a geometrical solution to three-dimensional packing of epithelia, <i>Nature Communications</i> 9 (2018) 2960, doi:10.1038/s41467-018-05376-1. DICTO: Scutoids: Layers, Shells and Cycles (draft of 10 November 2026; studies of 17 October, 6–7 and 10 November); #104 Scutoid Tissues in Four Dimensions (Theorem 1 and the Eulerian counts of Theorem 1′).</p>
+</body></html>
