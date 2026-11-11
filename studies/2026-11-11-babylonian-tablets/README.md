@@ -16,3 +16,12 @@ Hilprecht Collection (Jena), 3D-scanned; the catalogue gives each tablet's measu
 ## Next (DICTO's lead: "maybe stacking friendly shapes")
 From the 3D meshes: the flatness and curvature of obverse and reverse separately, how each tablet rests on a table (stable resting face,
 contact area), and whether tablets of one archive and type would stack or nest. Needs the PLY meshes (dataset part 02, 5.6 GB, first).
+## Stacking, first block of meshes (scripts/tablet_stacking.py, stacking_summary.py; part 02, 100 tablets, HS 0239-0661; FINAL ok)
+Controls: a box rests stably on its 6 sides, an ellipsoid on its 2 faces only. Stable resting positions = hull faces holding the centre
+of mass at least 0.5 mm inside; drops = rolling from random orientations.
+- Every tablet has a flatter face (sag 0.195 of the thickness, median) and a rounder one (0.243): obverse and reverse differ.
+- Median 4 stable positions; dropped at random a tablet lands on a face 91 % of the time, about half on each; 39 of 100 can also rest
+  on an edge, but only from 9 % of drops: standing on edge is possible for many, comfortable for few.
+- Old Babylonian mathematical tablets (13): rounder (sag 0.25 / 0.31), yet more of them rest on an edge (8 of 13, 18 % of drops).
+This block is mostly of unknown genre; the archive genres (Ur III administrative, legal) are needed to test DICTO's stacking idea.
+NEXT: a block rich in Ur III administrative tablets (choose by HS numbers from the catalogue).
