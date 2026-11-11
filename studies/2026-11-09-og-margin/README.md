@@ -653,3 +653,24 @@ Sign flips between hops (the corner ↔ face swap heard as waves): 4–13 even d
 1→2, 3→4, 8→9, 13→14 — no fixed period; no single resonant mode.
 Verdict: the spectrum holds no hidden silence beyond central symmetry; leads: (1) a silence may appear for the TWIN family (§28) or in
 the sweep's 4D waves; (2) look for silences in the hop's change f_{k+1} − f_k rather than in f_k.
+
+## §31a 4D Vacuus, EXACT — centred and centre-free (11 Nov 2026; DICTO: "do the exact 4D vacuus count next", "a sheets without a centre", "so look for either"; scripts/og_vacuus4d_exact.py, og_vacuus4d_free.py, data/og-vacuus4d*.{json,log}, watched jobs, both FINAL ok)
+Exact coordinates (Q(√5) → 60 digits); every coincidence and non-coincidence decided with a printed gap (≥ 1.3e−3 against 1e−40).
+CENTRED (centre on the slider axis, k = 5 … 11): generic slice counts 465, 615, 1035, 1095, 1875, 1635, 1695 for 750 … 2310 walls;
+hundreds of special heights (138 … 1088 non-trivial; trivial ones with the centre on a cell's hyperplane excluded); each merges whole
+orbits (48 or 60 slices). At the strongest heights no slice ever mixes a survivor–cut wall with another wall type.
+CENTRE-FREE: walls of different cells share a 3D sheet ⇔ their four cells' candidate points lie on ONE CIRCLE (h_m = (X_m, −1, −|X_m|²)
+dependent ⇔ the paraboloid lifts are affinely dependent). k = 5 … 11: 3857, 5375, 5983, 8975, 14203, 12343, 11231 sheets; all float
+hits confirmed exactly (0 rejected). Sheets meet the slider axis at 45 … 215 different heights (one height per orbit class): NO common
+centre. In every level exactly 15 VERTICAL sheets (they contain the slider direction, 45 at k = 5) = the 15 MIRROR PLANES of I_h ×
+the slider; they carry the most walls (14, 22, 10, 22, 30, 28, 24). Every cell, cut or surviving, lies on some sheet.
+SEPARATION (both versions, every level): a sheet carrying a SURVIVOR–CUT wall carries only survivor–cut walls; the only mixed sheets
+are the 15 mirror sheets at k = 6, 9, 10 combining cut–cut with survivor–survivor walls. The border between cut and surviving cells
+lives on sheets of its own. Lead for step A1: count border sheets (circles through two survivor and two cut candidates).
+
+## §34 Certified run toward 40 (11 Nov 2026; DICTO "yes take it to 40"; scripts/certified_orbit.py, data/og-certified-40*.{json,log}, watched job og-certified-40)
+Orbit storage + float with a proved error bound (1e−12) + balls for close calls (2–15 per level from D_35) + exact point labels.
+Validation: every t_min(D_k), k = 10 … 30, MATCHES certified-30 to 1e−9. **Certified t_min(D_k) < 3/φ² for every k ≤ 37**
+(D_38: 1 873 742 faces, 15 844 orbits; t_min(D_37) ≤ 1.000083). Stops on the way: D_27 (normal match tolerance), D_29 (distinct
+normals 1.4e−7 apart: faces now labelled by exact point keys) — both tooling, fixed. D_39: one face orbit with ≥ 4 coplanar members
+not forced by symmetry → refused (balls cannot prove an equality); diagnosis job og-diag-39 decides: float merge vs genuine.

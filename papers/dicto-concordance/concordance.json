@@ -6189,6 +6189,26 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 hop sweep: exact 4D Vacuus, centred and centre-free (DICTO 11-11)",
+    "method": "og_vacuus4d_exact.py / og_vacuus4d_free.py, k=5..11, 60 digits from Q(sqrt5)",
+    "status": "FOUND (structure)",
+    "result": "centre-free sheets <=> four candidates concyclic; 15 vertical sheets = mirror planes x slider; no common centre (45-215 axis heights); survivor-cut walls never share a sheet with other wall types (both versions)",
+    "retry": "lead: count border sheets for step A1",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 Conjecture 1 certified toward k = 40 (DICTO 11-11)",
+    "method": "certified_orbit.py (orbit storage, proved float error bound, balls for close calls, exact point labels)",
+    "status": "PARTIAL",
+    "result": "t_min(D_k) < 3/phi^2 certified for every k <= 37 (k<=30 matches certified-30); stopped at D_39 on one unforced coplanar orbit",
+    "retry": "diagnose D_39 (og-diag-39); split merged face or exact check of that orbit",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },

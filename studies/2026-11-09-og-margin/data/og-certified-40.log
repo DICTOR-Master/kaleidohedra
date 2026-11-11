@@ -1,0 +1,43 @@
+RESUMED at D_29
+  t_min(D_28) <= 1.000769427658 certified < 3/phi^2: True  certified-30 1.000769427558 MATCH
+D_29: 110672 points, 152112 faces certified (1322 orbits, all coplanarities forced), 230070 edges, 1 close calls in balls (7 s)
+PROGRESS 0.625 level 29
+  next: 152112 foot points from 1322 orbit balls, largest ball radius 1.2e-114
+  t_min(D_29) <= 1.000676898654 certified < 3/phi^2: True  certified-30 1.000676898554 MATCH
+D_30: 152112 points, 199382 faces certified (1731 orbits, all coplanarities forced), 301560 edges, 0 close calls in balls (12 s)
+PROGRESS 0.656 level 30
+  next: 199382 foot points from 1731 orbit balls, largest ball radius 2.6e-110
+  t_min(D_30) <= 1.001013526989 certified < 3/phi^2: True  certified-30 1.001013526889 MATCH
+D_31: 199382 points, 264642 faces certified (2283 orbits, all coplanarities forced), 399840 edges, 0 close calls in balls (20 s)
+PROGRESS 0.688 level 31
+  next: 264642 foot points from 2283 orbit balls, largest ball radius 9.3e-106
+  t_min(D_31) <= 1.000272781544 certified < 3/phi^2: True
+D_32: 264642 points, 345170 faces certified (2973 orbits, all coplanarities forced), 521520 edges, 0 close calls in balls (33 s)
+PROGRESS 0.719 level 32
+  next: 345170 foot points from 2973 orbit balls, largest ball radius 1.4e-101
+  t_min(D_32) <= 1.000259830354 certified < 3/phi^2: True
+D_33: 345170 points, 424142 faces certified (3635 orbits, all coplanarities forced), 639660 edges, 0 close calls in balls (50 s)
+PROGRESS 0.750 level 33
+  next: 424142 foot points from 3635 orbit balls, largest ball radius 4.5e-97
+  t_min(D_33) <= 1.000187217971 certified < 3/phi^2: True
+D_34: 424142 points, 532262 faces certified (4544 orbits, all coplanarities forced), 802560 edges, 1 close calls in balls (73 s)
+PROGRESS 0.781 level 34
+  next: 532262 foot points from 4544 orbit balls, largest ball radius 4.7e-93
+  t_min(D_34) <= 1.000145831576 certified < 3/phi^2: True
+D_35: 532262 points, 739862 faces certified (6284 orbits, all coplanarities forced), 1113960 edges, 2 close calls in balls (128 s)
+PROGRESS 0.812 level 35
+  next: 739862 foot points from 6284 orbit balls, largest ball radius 2.2e-88
+  t_min(D_35) <= 1.000113341556 certified < 3/phi^2: True
+D_36: 739862 points, 1034522 faces certified (8777 orbits, all coplanarities forced), 1558380 edges, 0 close calls in balls (241 s)
+PROGRESS 0.844 level 36
+  next: 1034522 foot points from 8777 orbit balls, largest ball radius 3.5e-83
+  t_min(D_36) <= 1.000142671671 certified < 3/phi^2: True
+D_37: 1034522 points, 1411742 faces certified (11949 orbits, all coplanarities forced), 2124900 edges, 4 close calls in balls (444 s)
+PROGRESS 0.875 level 37
+  next: 1411742 foot points from 11949 orbit balls, largest ball radius 3.3e-79
+  t_min(D_37) <= 1.000083439971 certified < 3/phi^2: True
+D_38: 1411742 points, 1873742 faces certified (15844 orbits, all coplanarities forced), 2819880 edges, 15 close calls in balls (788 s)
+PROGRESS 0.906 level 38
+  next: 1873742 foot points from 15844 orbit balls, largest ball radius 1.4e-74
+FINAL FAIL: D_39: 1 coplanar face orbits not forced by symmetry
+[exit 1]
