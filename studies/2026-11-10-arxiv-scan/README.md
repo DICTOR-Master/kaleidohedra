@@ -83,3 +83,12 @@ VERDICT for aim 1 (one RD/TRD piece forcing a non-repeating c/h stacking):
    the control first.
 4. The c/h aim breaks their lattice registration on purpose (hcp sites are not one lattice): it sits exactly on their open item 2.
 Credit: any use of the frame formalism or certificate is Kamenetsky's (and the mechanism Tsiokos's).
+**Rerun of Kamenetsky's certificate (12 Nov 2026, DICTO: "rerun kamenetsky's certificate while it runs").** Code github.com/dimkadimon/
+Monotile-RN at commit b174f72 (MIT), cloned to a scratch folder, imports read first (standard library only; it writes only its own
+cert6_<tag>.pkl; the shipped .pkl files were NOT loaded). Pi, python3.
+- Theorem A, the certified 3D frame assignment: closure 30 -> 44 -> 44, supertile poses = 2P* exactly, |P*| 44, |F*| 135 facet triples,
+  2388 touching poses, tight (P_F* = 44), 33 enclosures = 18 dead + 15 live, 15/15 one supertile, 14 presence checks, 0 failures:
+  CERTIFIED=True in 2.0 s. Every number in the paper's Table 1 reproduced.
+- Negative controls (wrong assignments must fail): the canonical assignment: closure 26 -> 62 -> 398, offset poses admitted, FAIL;
+  the certified one with ONE child's frame changed (child (1,1,0): (2,0,1) -> (1,0,2)): 47 -> 256 -> 1250, offsets, FAIL.
+VERDICT: the tool works as stated and rejects wrong markings; usable as the engine for the bridge count (next: how many marked RDs).
