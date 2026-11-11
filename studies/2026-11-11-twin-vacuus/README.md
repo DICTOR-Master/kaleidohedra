@@ -31,3 +31,18 @@ EXACT (ℚ(√5), from the exact OG):
   perpendicular to each five-fold axis.
 - Star twin: its large fin angle equals the OG kite's tip angle, cos² = 43/72 − √5/8 (exact).
 Open: is the disc law a property of every twin level (the twins of D_1, D_2, …) or of the OG alone? Is the twin hull a known solid?
+
+## Disc law on levels 0–10 (DICTO: "yes test the disc law on levels 1–10"; scripts/twin_disc_levels.py, data/twin-disc-levels.json, FINAL ok)
+Twin hull of D_k (exact corners, twins without cancellation), its Vacuus, discs = coplanar fins through O adding to 360°.
+k = 0: 102 hull corners, 200 triangles, 6 discs of ten 36° fins (control). k = 4: 90 corners, 140 triangles + 12 pentagons, again
+6 discs of ten 36° fins. All other levels: no discs. The other twin hulls are, by face counts, the classical icosahedral solids:
+k = 2 icosahedron (12 corners, 20 triangles); k = 3, 7 dodecahedron (20, 12 pentagons); k = 1, 5, 6 rhombicosidodecahedron type (60;
+20 triangles, 30 squares, 12 pentagons); k = 8 truncated-icosahedron type (60; 12 pentagons, 20 hexagons); k = 10 truncated-
+icosidodecahedron type (120; 30 squares, 20 hexagons, 12 decagons); k = 9: 180 corners, 20 triangles, 120 squares, 12 decagons.
+Reading: the twins collapse inward (og-margin §28) and the outermost twin points form ONE symmetry orbit at most levels; the hull of one
+icosahedral orbit is a Wythoff-type orbit polytope, hence the classical face counts. Discs need ten corners evenly round O in one
+plane, which happens at k = 0 and 4, the two levels whose hull uses two orbits. Whether the faces are exactly regular: not yet checked.
+CORRECTION: the script labels the discs "perp mirror/other" because it tests against the OG's own axes; the twin's symmetry is the
+Galois-conjugate icosahedral group (its matrices conjugated), whose five-fold axes point elsewhere. The discs are perpendicular to the
+twin's five-fold axes.
+DICTO (11 Nov): "I feel like these vacuus shapes are like angels".
