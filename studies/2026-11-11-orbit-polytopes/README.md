@@ -174,3 +174,9 @@ In the 600-cell (edge 1) every hidden dodecahedron has edge 1, and exactly 2 of 
 all 8 corners among the 600-cell's corners, with the tetrahedra inside them (edge phi sqrt2): the dodecahedron-cube-tetrahedron
 nesting of One World, at One World's sizes (D 1, C phi, T phi sqrt2). No icosahedron or octahedron is concentric with such a
 dodecahedron. A link for the Atlas (Observation 5), not a change to One World's results.
+## Residents of the Queens, EXACT (scripts/residents_exact.py; data/residents_exact.json; FINAL ok) - Platonic book, Chapter 11
+Every solid found through a corner was rebuilt from exact coordinates over Q(sqrt5) (600-cell: the standard 120 corners; 120-cell: the
+centres of the 600-cell's 600 tetrahedra) and its squared distances matched exactly, class by class, with the regular solid's. All found
+solids pass. Totals (D, I, C, T, O): 600-cell 120, 240, 600, 3000 (600 of them its cells), 900; 120-cell 1560 (120 of them its cells),
+2400, 7200, 34200, 8100. (Counts = solids through one corner x corners / corners per solid; the float search through the corner is the
+enumeration, the exact check confirms each.)
