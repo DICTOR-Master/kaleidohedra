@@ -1,0 +1,93 @@
+{
+ "og": {
+  "tag": "OG (control: census 180 fins, 45 planes, 120 sheets, 2 strut lengths)",
+  "corners": 102,
+  "edges": 180,
+  "faces": 80,
+  "face_types": {
+   "4": 60,
+   "6": 20
+  },
+  "face_shapes": {
+   "4-gon convex": 60,
+   "6-gon convex": 20
+  },
+  "fins": 180,
+  "fin_classes": {
+   "16.4722": 60,
+   "20.5544": 120
+  },
+  "fin_planes": 45,
+  "flat_sheets": 120,
+  "sheet_sizes": {
+   "1": 60,
+   "2": 60
+  },
+  "strut_lengths": 2,
+  "struts": [
+   1.61803399,
+   1.68728458
+  ]
+ },
+ "twin_hull": {
+  "tag": "(i) TWIN HULL",
+  "corners": 102,
+  "edges": 300,
+  "faces": 200,
+  "face_types": {
+   "3": 200
+  },
+  "face_shapes": {
+   "3-gon convex": 200
+  },
+  "fins": 300,
+  "fin_classes": {
+   "10.0928": 60,
+   "11.8246": 60,
+   "24.2136": 120,
+   "36.0": 60
+  },
+  "fin_planes": 81,
+  "flat_sheets": 186,
+  "sheet_sizes": {
+   "1": 120,
+   "2": 60,
+   "10": 6
+  },
+  "strut_lengths": 2,
+  "struts": [
+   0.61803399,
+   0.62774834
+  ]
+ },
+ "star_twin": {
+  "tag": "(ii) STAR TWIN (OG faces on twin points)",
+  "corners": 102,
+  "edges": 180,
+  "faces": 80,
+  "face_types": {
+   "4": 60,
+   "6": 20
+  },
+  "face_shapes": {
+   "4-gon convex": 60,
+   "6-gon convex": 20
+  },
+  "fins": 180,
+  "fin_classes": {
+   "10.0928": 60,
+   "55.6906": 120
+  },
+  "fin_planes": 45,
+  "flat_sheets": 120,
+  "sheet_sizes": {
+   "1": 60,
+   "2": 60
+  },
+  "strut_lengths": 2,
+  "struts": [
+   0.61803399,
+   0.62774834
+  ]
+ }
+}
