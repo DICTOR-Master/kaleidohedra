@@ -5,7 +5,7 @@
 # Directions: 20 000 quasi-uniform (Fibonacci sphere), plus the 5-, 3-, 2-fold axes. Control: thickness (2) >= 0 (Cor. 1), and
 # rho at a corner direction equals that corner's distance.
 import sys, os, json, numpy as np
-here = '/home/dicto/k-research/studies/2026-11-09-og-margin/scripts'
+here = os.path.expanduser('~/k-research/studies/2026-11-09-og-margin/scripts')
 src = open(here + '/og_sweep.py').read().split('rows_out = []')[0]
 KM = int(sys.argv[2]); OUTJ = os.path.abspath(sys.argv[3])
 sys.argv = ['x', sys.argv[1], '0', '/dev/null']; exec(src)

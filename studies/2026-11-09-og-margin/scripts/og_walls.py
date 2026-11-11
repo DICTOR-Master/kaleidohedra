@@ -1,7 +1,7 @@
-import sys, numpy as np
-here = '/home/dicto/k-research/studies/2026-11-09-og-margin/scripts'
+import sys, os, numpy as np
+here = os.path.expanduser('~/k-research/studies/2026-11-09-og-margin/scripts')
 src = open(here + '/og_sweep.py').read().split('rows_out = []')[0]
-sys.argv = ['x', '/home/dicto/k-research/studies/2026-10-19-five-fold-octet', '0', '/dev/null']; exec(src)
+sys.argv = ['x', os.path.expanduser('~/k-research/studies/2026-10-19-five-fold-octet'), '0', '/dev/null']; exec(src)
 from scipy.spatial import cKDTree
 V = OGf; FF = faces(V)
 for k in range(15):

@@ -54,5 +54,5 @@ PROGRESS 0.871
 k 26: n  66482 cut 20142 (0.303) | classes [all, dying]: 12:(1, 1) 20:(1, 0) 30:(1, 1) 60:(75, 43) 120:(516, 146) | share of 120-classes dying 0.283, of 60-classes 0.573 | A1 margin n/2 - c = 13099
 PROGRESS 0.903
 k 27: n  89742 cut 32742 (0.365) | classes [all, dying]: 12:(1, 1) 20:(0, 0) 30:(1, 1) 60:(79, 43) 120:(708, 251) | share of 120-classes dying 0.355, of 60-classes 0.544 | A1 margin n/2 - c = 12129
-/home/dicto/dbb-logs/og-orbits-30.cmd: line 1: 911932 Killed                     systemd-run --user --scope -p MemoryMax=16G -q ~/geom/bin/python -u og_orbits.py ~/k-research/studies/2026-10-19-five-fold-octet 30 ~/kres-tmp/og-orbits-30.json
+~/dbb-logs/og-orbits-30.cmd: line 1: 911932 Killed                     systemd-run --user --scope -p MemoryMax=16G -q python3 -u og_orbits.py ~/k-research/studies/2026-10-19-five-fold-octet 30 ~/work/og-orbits-30.json
 [exit 137]
