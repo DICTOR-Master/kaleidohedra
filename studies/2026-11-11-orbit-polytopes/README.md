@@ -142,3 +142,12 @@ a corner's four edges into two pairs link face types {T(D), T(U)}; for every mul
 has no cycle of length >= 3 (checked by hand for all five multiset shapes abcd, aabc, aabb, aaab, aaaa), so in(X) = out(X) for all X
 forces s(X -> Y) = s(Y -> X) for every pair. QED. #104 Theorem 4 is the case {W, W, R, R}: in(RR) = N_RR - #R + 1.
 Closed form checked against every simple Atlas row (scripts/balance_formula.py): 84 (polytope, face type) cases, 0 mismatches.
+## The balance number is the loop count of the Queen's skeleton (data/atlas_simple_table.json)
+Across each family the end-to-end balanced swap count repeats: H4 601 (bitruncated 600-cell (1,1)<->(4,4); cantitruncated 600-cell
+(1,1)<->(3,4); cantitruncated 120-cell (1,2)<->(4,4); omnitruncated (1,2)<->(3,4)); F4 73; B4 17; A4 6 (four polytopes each, three in A4
+for the end pair). COROLLARY: it equals E - V + 1 of the regular polytope of the chain = the cycle rank (number of independent loops) of
+its edge graph: 600-cell 720 - 120 + 1 = 601 (= 120-cell's F - C + 1 = 720 - 120 + 1), 24-cell 96 - 24 + 1 = 73, tesseract/16-cell
+32 - 16 + 1 = 24 - 8 + 1 = 17, 5-cell 10 - 5 + 1 = 6. Proof for the middle: in(RR) = N_RR - #R + 1 with R the cells over the regular
+polytope's cells and RR faces over its 2-faces, so F - C + 1, = E - V + 1 by Euler (V - E + F - C = 0). The other three rows (cantitruncated,
+omnitruncated): same formula, the counted faces and cells again those of a regular end polytope (checked numerically: all equal).
+Lead (outside the plan): loops of the Queens' skeleton <-> the Loop Equality's loop counts (#102).
