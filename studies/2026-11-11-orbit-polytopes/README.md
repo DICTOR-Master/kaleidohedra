@@ -111,3 +111,14 @@ COROLLARY (regular ends): seed support {1}: the only face type {1,2}; alpha_4 (n
 it, so every face of a regular polytope lies on a mirror (the octahedron's 3 discs, the 600-cell's 60 slices). The same law gives the 3D
 Vacuus of T(x) (seed (0,x,1), unringed {1}): edges of type {3} on mirrors (alpha_1 orthogonal to alpha_3), type {2} off: the 12 + 24
 split of #105's 3D Vacuus and of the Icosaxes / Unborn Axes.
+## The balance law at every chain's middle (scripts/balance_middles.py; FINAL ok)
+#104 Theorem 4 applies to every middle (0,1,1,0): each corner has 2 cells of type {1,2,3} (W) and 2 of type {2,3,4} (R) (the two
+Wythoff end types; congruent in A4, F4). Predicted swaps each way = (R-R faces) - (R cells) + 1 = (W-W faces) - (W cells) + 1;
+measured on generic sweeps (9 directions each; H4 4):
+| middle | W, R cells | W-W, R-R faces | predicted = swept, each way | mixed (W-R -> W-R) swaps |
+| bitruncated 5-cell | 5, 5 | 10, 10 | 6 | 4 |
+| bitruncated tesseract | 16 TT, 8 TO | 32, 24 | 17 | 20 |
+| bitruncated 24-cell | 24, 24 | 96, 96 | 73 | 52 |
+| bitruncated 600-cell (control, #104) | 600 TT, 120 TI | 1200, 720 | 601 | 964 |
+The balance law is a property of every chain's middle, not of H4 alone. With the Mirror Law: the swaps W-W <-> R-R exchange contacts
+through faces on the mirrors; the mixed swaps run through the middle-bond faces off them.
