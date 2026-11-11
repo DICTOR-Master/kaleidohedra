@@ -1,0 +1,85 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "subjects": [
+  {
+   "term": "MSC2020 52B11: n-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B11",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 51F15: Reflection groups, reflection geometries",
+   "identifier": "https://zbmath.org/classification/?q=cc:51F15",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 20F55: Reflection and Coxeter groups",
+   "identifier": "https://zbmath.org/classification/?q=cc:20F55",
+   "scheme": "url"
+  }
+ ],
+ "version": "1",
+ "publication_date": "2026-11-11",
+ "title": "The Vacuus of the Queens",
+ "description": "<p>Which faces of a reflection polytope lie on its mirrors, read from its Coxeter chain; the 600-cell and the 120-cell share the 60 mirrors of their group, and the bitruncated middle carries both Queens' faces on every mirror.</p><p><b>Theorem 1 (the Mirror Law).</b> Let P be the Wythoff polytope of a seed <i>x</i>, and J a node set of size <i>n</i> − 2 giving faces of P (so they have dimension <i>n</i> − 2: edges in three dimensions, 2-faces in four). The faces of type J lie on mirrors of the group if and only if the roots of the <i>unringed</i> nodes include one orthogonal to α<sub>j</sub> for every <i>j</i> in J.</p><p><b>Corollary 2 (the Queens).</b> Every face of a regular polytope lies on a mirror. The 1200 triangles of the 600-cell and the 720 pentagons of the 120-cell lie on the same 60 central slices, the 60 mirrors of H<sub>4</sub>: 20 triangles on each, and 12 pentagons on each.</p><p><b>Corollary 3 (the middles).</b> For a four-node chain 1–2–3–4 and the seed (0, 1, 1, 0), the faces of the two end bonds lie on mirrors and the faces of the middle bond (2<i>m</i>-gons, <i>m</i> its label) lie on none. In B<sub>4</sub> and H<sub>4</sub> these are exactly the faces between cells of different kinds.</p><p><b>Corollary 4.</b> For the golden loop T(<i>x</i>), the B<sub>3</sub> seed (0, <i>x</i>, 1), the 12 edges of type {3} lie on the three coordinate mirrors and the 24 edges of type {2} lie on none.</p><p>DICTO: ideas, names, constructions and direction. Computation, verification and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "DICTO",
+  "Vacuus",
+  "600-cell",
+  "120-cell",
+  "bitruncated 600-cell",
+  "Coxeter group",
+  "Wythoff construction",
+  "mirror",
+  "H4",
+  "reflection group",
+  "root system"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23690856",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23716140",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23780068",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23896015",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24111864",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24121177",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}

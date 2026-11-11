@@ -1,0 +1,95 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "subjects": [
+  {
+   "term": "MSC2020 52B11: n-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B11",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52B05: Combinatorial properties of polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B05",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 20F55: Reflection and Coxeter groups",
+   "identifier": "https://zbmath.org/classification/?q=cc:20F55",
+   "scheme": "url"
+  }
+ ],
+ "version": "1",
+ "publication_date": "2026-11-11",
+ "title": "The Atlas of the Chains",
+ "description": "<p>Every polytope of the seven reflection-group chains read from its seed: one balance law for every sweep, the Queens' 601 as a count of loops, the second Vacuus, and which Platonic solids live in which networks.</p><p><b>Theorem 1 (the balance law).</b> Let P be a simple 4-polytope whose cells carry types so that every corner sees the same multiset of types. In every generic sweep of P, for every two pairs of types X ≠ Y, the swaps X → Y are exactly as many as the swaps Y → X. The number of swaps that make a contact of kind X is\n    in(X) = N<sub>X</sub> − Σ<sub>cells C</sub> c<sub>X</sub>(type of C) + p<sub>X</sub>,\nwhere N<sub>X</sub> is the number of 2-faces of P between cells of kind X, c<sub>X</sub>(t) the number of faces of kind X at a corner that belong to a given cell of type t there, and p<sub>X</sub> the number of faces of kind X at a corner. It does not depend on the direction of the sweep.</p><p><b>Theorem 3.</b> In each four-node chain, for the seeds (0, 1, 1, 0), (0, 1, 1, 1), (1, 1, 1, 0) and (1, 1, 1, 1), the balanced swap between the contacts of the two end families occurs E − V + 1 times each way, where E and V are the edges and corners of the chain's regular polytope: the number of independent loops of its skeleton. A<sub>4</sub>: 10 − 5 + 1 = <b>6</b>; B<sub>4</sub>: 32 − 16 + 1 = <b>17</b>; F<sub>4</sub>: 96 − 24 + 1 = <b>73</b>; H<sub>4</sub>: 720 − 120 + 1 = <b>601</b>.</p><p><b>Observation 4 (the second Vacuus).</b> A central slice that is not a mirror of the group yet carries three or more faces occurs in only these: the cuboctahedron (4 hexagons) and the icosidodecahedron (6 decagons), the quasi-regular great polygons; and, in four dimensions, only the runcinated 5-cell and the 4D permutohedron, whose five such slices are the five DICTO 1:2 Truncated Octahedra at the heart of #105. The B<sub>4</sub> polytopes that showed such slices are the 24-cell, the rectified 24-cell and the truncated 24-cell in disguise, whose slices are F<sub>4</sub> mirrors: the scan detects hidden symmetry. The F<sub>4</sub> and H<sub>4</sub> families have none: the Queens' Vacuus is exactly their 60 mirrors.</p><p><b>Observation 5 (the residents).</b> Counting every exact Platonic solid whose corners are corners of the polytope (as a cell, as the vertex figure, or hidden among the corners, of any size): the A<sub>4</sub> family houses only tetrahedra and octahedra; the B<sub>4</sub> and F<sub>4</sub> families only cubes, tetrahedra and octahedra; every one of the 15 H<sub>4</sub> polytopes houses all five. The 600-cell hides 120 dodecahedra, 240 icosahedra (two sizes), 600 cubes, 2400 tetrahedra besides its 600 cells, and 900 octahedra; the bitruncated 600-cell, whose cells are truncated tetrahedra and truncated icosahedra, houses 7200 dodecahedra, 14 400 icosahedra, 36 000 cubes, 180 000 tetrahedra and 56 400 octahedra; the 4D permutohedron hides 60 regular tetrahedra.</p><p>DICTO: ideas, names, constructions and direction. Computation, verification and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "DICTO",
+  "Wythoff construction",
+  "uniform polytopes",
+  "balance law",
+  "sweep",
+  "h-vector",
+  "600-cell",
+  "cycle rank",
+  "Vacuus",
+  "Platonic solids",
+  "Coxeter group"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24126800",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23690856",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23716140",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23780068",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23896015",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24111864",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24121177",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.37236/553",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}
