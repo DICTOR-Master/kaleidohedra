@@ -6266,6 +6266,16 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 Conjecture 1 certified to k = 40 (DICTO 11-11 'yes take it to 40')",
+    "method": "certified_orbit.py: orbit storage, float with proved error bound, balls for close calls, exact point labels, re-split of non-flat merges",
+    "status": "PROVED (finite range)",
+    "result": "t_min(D_k) < 3/phi^2 certified for every k <= 40 (exact k <= 13); t_min(D_40) <= 1.000108; D_41 4517522 faces; stops on the way were tooling (tolerances, label separation, a float merge of a nearly flat fold), each fixed and resumed",
+    "retry": "no further levels planned (cost x1.35/level, precision limit near 42); the all-k proof needs step A1 (hop equilibrium ~0.32)",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },
