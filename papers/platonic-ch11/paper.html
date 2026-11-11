@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Where the Five Live</title><link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;width:100%;font-size:8.6pt;margin:2mm 0} td,th{border:0.3pt solid #999;padding:0.8mm 1.4mm;vertical-align:top;text-align:left} th{background:#eee} .box{border:0.4pt solid #b9a46a;background:#fbf8ee;padding:2mm 3mm;margin:2mm 0;break-inside:avoid} .proof{font-size:9.6pt}</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt=""><img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Where the Five Live<br><span style="font-size:0.72em;font-weight:normal">The Platonic book, Chapter 11: sharing space in four dimensions. Four of the five fill curved space alone, the icosahedron only with the tetrahedron, and all five live together among the corners of the Queens</span></h1>
+<div class="meta"><b>DICTO</b> (artist and geometer, Osaka, Japan) · dictospheres.com · contact@dictospheres.com · ORCID 0009-0001-2620-2036<br>
+DICTO: ideas, names, constructions and direction.<br>Computation, verification and drafting with Claude (Anthropic).</div>
+<div class="status">DRAFT chapter for DICTO's read. Checks: studies/2026-11-11-platonic-ch11 (snub24.py with log, FINAL ok); the residents exact over ℚ(√5) (studies/2026-11-11-orbit-polytopes, residents_exact.py, FINAL ok); #108 Observation 5.</div>
+
+<p>In three dimensions only the cube fills space alone, and of the pairs only the tetrahedron with the octahedron (Part Two). One dimension up the room curves: the cells of a four-dimensional polytope fill the three-dimensional sphere that bounds it, and there the five behave differently.</p>
+
+<h2>11.1 Four of the five fill curved space alone</h2>
+<table><tr><th>solid</th><th>fills the 3-sphere alone as</th><th>cells</th></tr>
+<tr><td>D dodecahedron</td><td>the 120-cell (the Red Queen)</td><td>120</td></tr>
+<tr><td>I icosahedron</td><td>never</td><td>–</td></tr>
+<tr><td>C cube</td><td>the tesseract</td><td>8</td></tr>
+<tr><td>T tetrahedron</td><td>the 5-cell, the 16-cell, the 600-cell (the White Queen)</td><td>5, 16, 600</td></tr>
+<tr><td>O octahedron</td><td>the 24-cell</td><td>24</td></tr></table>
+<p>These are the six regular 4-polytopes (Schläfli; Coxeter 1973). No regular 4-polytope has icosahedral cells: the icosahedron's corner angle is too wide for three of them to close round an edge in curved space as well as flat.</p>
+
+<h2>11.2 The icosahedron needs the tetrahedron</h2>
+<div class="box"><b>Proposition 11.1</b> (Gosset 1900; Conway and Guy 1965). Remove from the 600-cell's 120 corners the 24 corners of an inscribed 24-cell. The other 96 corners span the snub 24-cell, whose cells are 24 regular icosahedra and 120 regular tetrahedra.</div>
+<p class="proof">Checked by building the 600-cell's corners, removing those of its 24-cell, and taking the hull of the rest: 24 icosahedra and 120 tetrahedra, every one regular; the full 600-cell gives 600 tetrahedra (snub24.py). So the icosahedra are carved out of the White Queen: each sits round one removed corner, where twenty of the 600-cell's tetrahedra met.</p>
+
+<h2>11.3 All five together</h2>
+<p>Counting every exact Platonic solid whose corners are corners of the Queens, found as cells, as corner figures or hidden among the corners, each confirmed in exact arithmetic over ℚ(√5) (#108, Observation 5):</p>
+<table><tr><th></th><th>D</th><th>I</th><th>C</th><th>T</th><th>O</th></tr>
+<tr><td>600-cell (White Queen)</td><td>120</td><td>240</td><td>600</td><td>3000 (600 its cells)</td><td>900</td></tr>
+<tr><td>120-cell (Red Queen)</td><td>1560 (120 its cells)</td><td>2400</td><td>7200</td><td>34 200</td><td>8100</td></tr></table>
+<p>Of all the polytopes the reflection groups build, only the Queens' family houses all five; the families of the 5-cell hold only tetrahedra and octahedra, those of the tesseract and the 24-cell only cubes, tetrahedra and octahedra (#108). Among the 600-cell's corners lies also the nesting of One World (#106) at its own sizes: a dodecahedron of edge 1, Euclid's cube of edge φ inside it, and that cube's tetrahedron of edge φ√2, two of the five Euclid cubes of each dodecahedron (XIII.17) being made of the 600-cell's corners.</p>
+
+<h2>Sources</h2>
+<p class="src">DICTO: #63, #65 (the Queens); #106 One World for the Platonic Solids; #108 The Atlas of the Chains (Observation 5). T. Gosset, On the regular and semi-regular figures in space of n dimensions, <i>Messenger of Mathematics</i> 29 (1900) 43–48; J. H. Conway and M. J. T. Guy, Four-dimensional Archimedean polytopes (1965); H. S. M. Coxeter, <i>Regular Polytopes</i>, 3rd ed., Dover (1973); L. Schläfli, Theorie der vielfachen Kontinuität (1852, published 1901).</p>
+</body></html>
