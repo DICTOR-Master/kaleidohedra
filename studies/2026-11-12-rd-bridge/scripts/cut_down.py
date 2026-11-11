@@ -127,7 +127,7 @@ for name in want:
         for i in range(len(S)):
             lits = [var(i, a, r) for a in range(ntypes) for r in range(24)]
             s.add_clause(lits)                                                     # each site: at least one marked RD in one turn
-            enc = CardEnc.atmost(lits, 1, top_id=top, encoding=EncType.seqcounter); top = enc.nv
+            enc = CardEnc.atmost(lits, 1, top_id=top, encoding=EncType.seqcounter); top = max(top, enc.nv)   # (a one-literal list returns nv 0)
             for cl in enc.clauses: s.add_clause(cl)                                # ... and at most one (fixed 12 Nov: was missing)
         for i, x in enumerate(S):
             for d in NB:

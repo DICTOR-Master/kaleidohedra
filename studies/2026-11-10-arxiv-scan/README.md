@@ -92,3 +92,16 @@ cert6_<tag>.pkl; the shipped .pkl files were NOT loaded). Pi, python3.
 - Negative controls (wrong assignments must fail): the canonical assignment: closure 26 -> 62 -> 398, offset poses admitted, FAIL;
   the certified one with ONE child's frame changed (child (1,1,0): (2,0,1) -> (1,0,2)): 47 -> 256 -> 1250, offsets, FAIL.
 VERDICT: the tool works as stated and rejects wrong markings; usable as the engine for the bridge count (next: how many marked RDs).
+
+## Second scan, 12 Nov 2026 (DICTO: "how did audit on gaps against new math go"; "aixiv good place to look")
+Agent report (window 1 Sep - 12 Nov, arXiv + aiXiv API, every query listed): scan-2026-11-12-agent-report.md. Judged here:
+- Gap 1 (one piece): Grogan, aiXiv 2610.01307 (Zenodo 23197680): keyed chair rules in odd prime dimensions and a 5D keyed monotile
+  (Lean-checked per its abstract; aiXiv unverified) = a second recipe, after Kamenetsky's, for turning a marked chair into ONE keyed
+  shape: READ in full next for the RD bridge's keying step. Demaine-Langerman arXiv 2610.12392: one-polycube translational tiling is
+  undecidable in 3D: every one-piece claim needs its own certificate (cite). OpenAI aiXiv 2610.00861 (translational tile with no fully
+  periodic tiling in Z^3): AI-authored, unverified; weak aperiodicity only; note, do not build on it yet.
+- Gap 4 (polar sweeps): OpenAI aiXiv 2610.00573 / 00542 claim the Mahler conjecture (general and symmetric). Unverified, AI-authored,
+  no independent confirmation found: use only as a sanity check for P ∩ μP* sweeps, never as a citation for now. Follow up later.
+- Gap 5 / Star Halo: Hoehner arXiv 2611.10777: the 32-vertex maximum-volume inscribed polytope is a pentakis dodecahedron (hull of an
+  icosahedron and its normalised face centres): compare with DICTO's Star Halo and the pentakis family (studies/2026-11-11-twin-vacuus).
+- Nothing new for gaps 2, 3, 6, 7, 8 (golden slice, centre pyramids, stacking statistics, 4D slices, golden higher-dimensional).
