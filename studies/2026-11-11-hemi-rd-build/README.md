@@ -16,3 +16,11 @@ sides opposite (11 Nov); "that can be filled with pyramids derived from a cube";
   diagonals in the permutohedron. So the echo is in the squares, not in the hexagons.
 NEXT (open): exact version (rational coordinates); does the chamfered cube fill space with the cube pyramids or with RD halves (#58 says
 an earlier Polyhedraverse build of RD halves, a slightly irregular truncated octahedron, did).
+## It fills space with cube pyramids (DICTO 11 Nov: "does the chamfered cube fill space with the pyramids") - YES (scripts/fill_test.py, FINAL ok)
+The closed build is the zonohedron with generators the three unit axis vectors and the four half body diagonals (volume 1 + 6 + 6 + 2 = 15).
+Chamfered cubes at the lattice 2*FCC (contact on hexagons by (2,2,0); cell volume 16) plus a unit cube at each lattice point + (2,0,0)
+(the cube of six cube pyramids lying between six squares, one from each of six chamfered cubes) fill space: 20,000 random points each
+covered exactly once; volume 16 = 15 + 1 per lattice point. In DICTO's pieces: per lattice point, his 14 Hemi RDs + 12 cube pyramids
+(6 in the dents under the squares, 6 forming the cube between squares). Numerical check with exact volumes; exact proof (rational
+coordinates, face-to-face) is the next step. The chamfered cube alone does not tile by translations (its belt round an axis has 8 faces;
+Venkov's belt condition needs 4 or 6).

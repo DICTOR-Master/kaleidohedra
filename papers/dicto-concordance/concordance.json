@@ -5933,6 +5933,15 @@
     "retry": "exact rational version",
     "study": "studies/2026-11-11-hemi-rd-build",
     "date": "2026-11-11"
+   },
+   {
+    "question": "Does the chamfered cube (DICTO's closed Hemi RD build) fill space with cube pyramids?",
+    "method": "fill_test.py: CC on 2*FCC + unit cubes at (2,0,0)+lattice; covering counts at 20,000 points; volume",
+    "status": "SETTLED (numerical, exact volumes)",
+    "result": "YES: chamfered cubes + cubes (6 cube pyramids each) fill space; per lattice point 14 Hemi RDs + 12 cube pyramids; CC alone not a translation tiler (8-face belt)",
+    "retry": "exact proof",
+    "study": "studies/2026-11-11-hemi-rd-build",
+    "date": "2026-11-11"
    }
   ]
  },
