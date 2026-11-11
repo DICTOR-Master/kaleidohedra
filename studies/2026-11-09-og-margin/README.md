@@ -615,3 +615,19 @@ with any margin. The usable exact form is the top-slice identity: cut < active �
 Concordance ledger line (ready): 2026-11-11 · #43 Conj. 1 step (A1) · scutoid exchanges in the hop sweep, k = 5–18 · c ≤ s holds
 (equality k = 7) but s is tie-break dependent and up to 1.16 n; c ≤ s/2 and c ≤ s_min fail · exact top identity
 c/a = (m_a − 6 + 12/a)/(6 − m_c) · cut cells fewer walls on average, ranges overlap · route closed for a counting proof; lead: degree lemma on X_k.
+
+## §30a The census solids as starts (11 Nov 2026; DICTO: "yes add the census shapes"; scripts/census_hop.py, census-list.txt, data/og-census-hop.*, watched job, FINAL ok)
+The 100 solids of the #87 Vacuus census (classical + DICTO solids), 8 hops each: 98 run (Dodeca-13 Needle and Wedge: origin not
+inside), 784 hops (770 robust). NO hop cuts more than half. The maximum is EXACTLY 1/2 (Icosaxes Hexa, hop 1, R/r 1.3–1.5); next
+0.482 (Unicorn), 0.444, 0.429 (White Rabbit), 0.411 (Jabberwock); means 0.02–0.21. So random icosahedral starts break the bound
+(§30) but none of the real (crafted) solids does, and Icosaxes Hexa attains it: a candidate EQUALITY case for 'cut ≤ F/2'.
+Lead: what do the census solids share that the random icosahedral sets lack (rational/Q(√5) coordinates? few orbits?).
+
+## §31 4D Vacuus of the sweep — pilot (11 Nov 2026; DICTO: "c the permutahedron 4D vacuus", "yes go ahead"; scripts/og_vacuus4d.py, local, k = 5–7, FINAL ok)
+Central slice through c = (O, lc) containing wall (i, j): normal (lc + b_j)(X_i, −1) − (lc + b_i)(X_j, −1), linear in lc; special
+heights = exact common roots of the 2×2 minors. Walls 750, 930, 1170; generic slice counts 465, 615, 1035 (same at three generic
+heights). The biggest drops sit at lc = −b_i (−1 = −max b): there the centre lies on cell i's own hyperplane and all walls of the
+outermost cells fall into that hyperplane — a TRIVIAL coincidence. Non-trivial drop: k = 7, lc = −0.896234 (2237 coinciding pairs,
+1035 → 943 slices). Rounding of the slice key (1e-8) splits near-coincidences at some special heights (counts above generic):
+counting must use exact or interval comparison. NEXT: exclude lc = −b_i, count by exact parallelism (Q(√5) for k ≤ 10), then the
+slice-type test (cut vs surviving cells).

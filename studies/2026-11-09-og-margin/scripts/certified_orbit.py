@@ -47,14 +47,15 @@ SEP, MATCH_TOL, EPS, ERR_T = 1e-8, 1e-11, 1e-10, 1e-10
 def fail(msg): print('FINAL FAIL:', msg, flush=True); sys.exit(1)
 t0 = time.time()
 
-def perm_maps(P, what):
+def perm_maps(P, what, match=None, sep=None):
     """I_h action on the rows of P (points or unit normals) as int32 arrays (120, n); exact by separation (guarantee 2)."""
+    match = MATCH_TOL if match is None else match; sep = SEP if sep is None else sep
     tr = cKDTree(P); dd = tr.query(P, k=2, workers=-1)[0][:, 1]
-    if dd.min() <= SEP: fail(f'{what}: two entries closer than {SEP} ({dd.min():.2e})')
+    if dd.min() <= sep: fail(f'{what}: two entries closer than {sep} ({dd.min():.2e})')
     out = np.empty((120, len(P)), np.int32)
     for g in range(120):
         d, j = tr.query(P @ FULLF[g].T, workers=-1)
-        if d.max() > MATCH_TOL: fail(f'{what}: not closed under I_h (g {g}, miss {d.max():.2e})')
+        if d.max() > match: fail(f'{what}: not closed under I_h (g {g}, miss {d.max():.2e})')
         if np.bincount(j, minlength=len(P)).max() != 1: fail(f'{what}: g {g} is not a permutation')
         out[g] = j
     return out
@@ -104,7 +105,7 @@ for k in range(kstart, KMAX + 2):
     if np.linalg.norm(Wf, axis=1).max() > 2: fail(f'D_{k}: a point with |w| > 2 (error bound assumes <= 2)')
     pm = perm_maps(Wf, f'D_{k} points')
     mems, Nf = hull_faces(Wf); F = len(mems)
-    fm = perm_maps(Nf, f'D_{k} face normals')
+    fm = perm_maps(Nf, f'D_{k} face normals', match=1e-9, sep=1e-6)   # normals only group faces into orbits; the proof rests on the point labels + closure (11-11: qhull normals carry ~4e-11)
     orbit_min = fm.min(0); reps = np.unique(orbit_min); R = len(reps); ridx = {int(r): i for i, r in enumerate(reps)}
     rep_of = np.array([ridx[int(x)] for x in orbit_min]); gof = -np.ones(F, np.int64)
     for g in range(120):

@@ -6159,6 +6159,16 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 step A1 on real solids: the 100 #87 census solids as hop starts (DICTO 11-11)",
+    "method": "census_hop.py, 98 solids x 8 hops",
+    "status": "FOUND (evidence)",
+    "result": "no hop cuts more than half among 784 hops; maximum exactly 1/2 (Icosaxes Hexa hop 1); random icosahedral sets break it (§30) but crafted solids do not",
+    "retry": "lead: what separates the census solids from random icosahedral sets; Icosaxes Hexa as the equality case",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },
