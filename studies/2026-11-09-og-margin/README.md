@@ -639,3 +639,17 @@ scale s per level for ALL cells (scanned + every s that makes one orbit exact); 
 120 vertex or 600 cell-normal directions (1e-6). Baseline: same directions, random radii per orbit (50 draws).
 Result k = 5 … 12: at most 1 orbit class of 5–17 matches at any single scale, exactly as many as the random baseline (mean 1.00,
 max 1). The one match is an axis orbit fitted by the free scale. Verdict: the sweep is NOT a 600-cell slice or shadow in this sense.
+**§32a Remaining 600-cell direction families (DICTO "try it").** The icosahedral group sits in H4 only as the stabiliser of a 600-cell
+vertex (= 120-cell cell centre), so the slider axis is forced; tested also the 600-cell's 720 edge midpoints and 1200 triangle centres
+(= 120-cell edge directions), k = 5 … 12: again at most 1 orbit class per level, equal to the random baseline. No 600-cell/120-cell structure.
+
+## §33 Listening for silences (11 Nov 2026; DICTO: "can we use resonance or spherical wave tech", "og family has icosahedral so listen for silences"; scripts/og_silences.py, data/og-silences-14.json, the compute machine, FINAL ok)
+log ρ_k expanded in spherical harmonics to degree 40 (30 000 rays). Degrees allowed by the rotation group I: 6, 10, 12, 15, 16, 18, 20,
+21, 22, 24–28, 30 (×2), 31–35, 36 (×2), 37–39, 40 (×2); forbidden energy ≤ 8e−7 of the total (control).
+SILENT at every level k = 0 … 14: exactly the ODD allowed degrees 15, 21, 25, 27, 31, 33, 35, 37, 39 (energy 2e−5 … 4e−4 of the median,
+the quadrature floor). Explained: the OG family is centrally symmetric (full I_h ∋ −1), and a centrally symmetric shape has no odd
+waves. Every EVEN allowed degree sounds at every level: no unexplained silence up to degree 40.
+Sign flips between hops (the corner ↔ face swap heard as waves): 4–13 even degrees flip at each hop (13 at hop 7→8), degree 6 at hops
+1→2, 3→4, 8→9, 13→14 — no fixed period; no single resonant mode.
+Verdict: the spectrum holds no hidden silence beyond central symmetry; leads: (1) a silence may appear for the TWIN family (§28) or in
+the sweep's 4D waves; (2) look for silences in the hop's change f_{k+1} − f_k rather than in f_k.

@@ -6179,6 +6179,16 @@
     "study": "studies/2026-11-09-og-margin",
     "date": "2026-11-11",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "#43 OG family: silences in the spherical-wave spectrum (DICTO 11-11 'listen for silences')",
+    "method": "og_silences.py: log rho_k in real spherical harmonics to l=40, k=0..14; allowed degrees for I; silence = allowed degree < 1e-3 of median",
+    "status": "FAILED (no unexplained silence)",
+    "result": "only the odd allowed degrees (15,21,25,...,39) are silent at every level = central symmetry (I_h); all even allowed degrees sound; even waves flip sign irregularly between hops",
+    "retry": "silences in the twin family or in f_{k+1}-f_k; 600-cell: also edge-midpoint/triangle-centre families tested, no structure (§32a)",
+    "study": "studies/2026-11-09-og-margin",
+    "date": "2026-11-11",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },

@@ -33,7 +33,17 @@ for a in range(120):
         if E[b, c] and E[b, d] and E[c, d]: cells.add(tuple(sorted((a, b, c, d))))
 assert len(cells) == 600, len(cells)
 C600 = np.array([V600[list(c)].mean(0) for c in cells]); C600 /= np.linalg.norm(C600, axis=1)[:, None]
-DIRS = {'vertices': V600, 'cell normals': C600}
+EM = np.array([(V600[a] + V600[b]) / 2 for a in range(120) for b in range(a + 1, 120) if E[a, b]]); assert len(EM) == 720, len(EM)
+EM /= np.linalg.norm(EM, axis=1)[:, None]
+TRI = set()
+for a in range(120):
+    for b, c in itertools.combinations(np.where(E[a])[0], 2):
+        if E[b, c]: TRI.add(tuple(sorted((a, b, c))))
+assert len(TRI) == 1200, len(TRI)
+FC = np.array([V600[list(t)].mean(0) for t in TRI]); FC /= np.linalg.norm(FC, axis=1)[:, None]
+# 11-11 'try it': the H3 inside H4 is unique up to conjugacy (stabiliser of a 600-cell vertex = 120-cell cell centre), so the slider must
+# lie on that axis; the remaining direction families: 600-cell edge midpoints (720) and triangle centres (1200 = 120-cell edge directions)
+DIRS = {'vertices': V600, 'cell normals': C600, 'edge midpoints': EM, 'triangle centres': FC}
 # vertex axis = (0,0,0,1); its H3 acts on the first three coordinates; standard 5-fold axes there: neighbours of (0,0,0,1) projected
 nbr = V600[E[np.where((V600 == [0, 0, 0, 1]).all(1))[0][0]]][:, :3]; std5 = nbr / np.linalg.norm(nbr, axis=1)[:, None]   # 12 icosahedron dirs
 def axes5():
