@@ -638,7 +638,10 @@
    "title": "Scutoid Tissues in Four Dimensions",
    "doi": "24111864",
    "date": "2026-11-10",
-   "date_first": true
+   "date_first": true,
+   "version": 2,
+   "doi_v2": "24122272",
+   "doi_v1": "24111865"
   },
   "105": {
    "title": "DICTO 1:2 Truncated Octahedron: The 4D Vacuus of the Permutohedron",
@@ -5891,6 +5894,15 @@
     "result": "#105 v2 DOI 10.5281/zenodo.24122019: page hero shots, orderings figure, cutaways, cells named permutohedra",
     "retry": "never",
     "study": "papers/2026-11-11-4d-vacuus",
+    "date": "2026-11-11"
+   },
+   {
+    "question": "#104 v2 release",
+    "method": "external review plan T1-T8 + clean-checkout rerun; DICTO '#104 v2 read ok'; zen_newversion_keep; postcheck",
+    "status": "PUBLISHED",
+    "result": "#104 v2 DOI 10.5281/zenodo.24122272",
+    "retry": "never",
+    "study": "papers/2026-11-10-scutoids-4d",
     "date": "2026-11-11"
    }
   ]
