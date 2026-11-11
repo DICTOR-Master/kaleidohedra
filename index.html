@@ -978,6 +978,17 @@
     .poly-shape canvas { display: block; width: 34px; height: 34px; }
     .poly-shape.chosen { background: rgba(var(--accent-rgb), 0.4); border-color: var(--accent-strong); }
     .poly-more { padding: 0 12px; }
+    /* Copy build (DICTO 2026-11-11): a full touch target; when the clipboard is out of reach, the record in a small dialog to copy by hand. */
+    .poly-golden .poly-copy-build { min-height: var(--touch); padding: 4px 14px; }
+    #poly-copy-dialog { position: fixed; inset: 0; z-index: 3000; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.55); padding: 16px; }
+    #poly-copy-dialog .leave-card { max-width: 520px; width: 100%; padding: 18px; border-radius: var(--radius-m);
+      background: rgba(15, 15, 25, 0.97); border: 1px solid rgba(var(--accent-rgb), 0.5); color: #e6e9f0; font: var(--text-m) var(--font-ui); }
+    #poly-copy-dialog p { margin: 0 0 10px; }
+    #poly-copy-dialog textarea { box-sizing: border-box; width: 100%; margin: 0 0 12px; font: 16px/1.3 ui-monospace, monospace; color: #e6e9f0; background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-s); }
+    #poly-copy-dialog .leave-btns { display: flex; }
+    #poly-copy-dialog button { flex: 1 1 auto; min-height: max(var(--touch), 52px); border-radius: var(--radius-s); cursor: pointer; touch-action: manipulation;
+      background: rgba(var(--accent-rgb), 0.3); border: 1px solid var(--accent-strong); color: #fff; font: var(--text-m) var(--font-ui); }
     /* ★ Star step (the Star Cores papers): full touch targets, the caption under them. */
     .poly-star button, .poly-star select { min-height: var(--touch); padding: 4px 14px; }
     .poly-star .poly-star-go, .poly-star .poly-vac-go { border-color: rgba(var(--accent-rgb), 0.7); }

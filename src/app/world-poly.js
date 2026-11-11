@@ -12,6 +12,7 @@ import { faceAttachOptions } from '../krp-core/src/assembly/faceAttach.js';
 import { rankFaceAttachOptions, isConvex, convexOverlap } from '../krp-core/src/assembly/faceRegistration.js';
 import { familyIds } from '../krp-core/src/polyhedra/families.js';
 import { describeAssembly } from '../krp-core/src/assembly/assemblyNaming.js';
+import { buildRecord, hasAttached, copyText } from './poly-build-record.js';
 import { goldenStatus, isGoldenBuild, withNextSafePiece } from '../krp-core/src/assembly/goldenHelper.js';
 import { GOLDEN_BUILDS, withNextRecipePiece } from '../krp-core/src/assembly/goldenBuilds.js';
 import { matchRewriteVertices, REWRITE_TARGET } from '../krp-core/src/polyhedra/rewrite.js';
@@ -1116,6 +1117,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     const hasRcp = active && !spherical && rcpRoot() && nodes.length === 1;
     const hasHintRow = active && !spherical && hasHints();
     const hasBestRow = active && !spherical && nodes.length > 0;
+    const hasCopy = hasBestRow && hasAttached(nodes, connections);
     const hasStar = !!starTarget() || (active && starStep.on);
     const hasVac = !!vacTarget() || (active && vacuus.on);
     const hasGcut = !!gcutTarget() || (active && gcut.on);
@@ -1133,7 +1135,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
       ${lastTurns && nodes.some((x) => x.id === lastTurns.node) ? `<button type="button" class="poly-more" data-turn>${t('poly.turn', L)}</button>` : ''}
       ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
-      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${kitOn() ? `<div class="poly-golden poly-kit-row"><span>${t(kitDone() ? 'poly.kit.done' : 'poly.kit', L, { name: KITS13[view.kit].label })}</span>${kitCells() ? `<button type="button" data-cells aria-pressed="${!!view.cells}" title="${t('poly.cells.title', L)}">${t('poly.cells', L)}</button>` : ''}${kitIco() ? `<button type="button" data-pacioli aria-pressed="${!!view.pacioli}" title="${t('poly.pacioli.title', L)}">${t('poly.pacioli', L)}</button>` : ''}<button type="button" data-kit-off title="${t('poly.kit.off', L)}">✕</button></div>` : ''}${hasHintRow || hasBestRow ? `<div class="poly-golden">${hasHintRow ? `<button type="button" data-hints aria-pressed="${view.hints && !view.bestFits}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button>` : ''}${hasBestRow ? `<button type="button" data-best aria-pressed="${view.bestFits}" title="${t('poly.best.title', L)}">${t('poly.best', L)}</button>` : ''}</div>${hasBestRow && view.bestFits ? bestRow(L) : ''}` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}${hasStar ? starRow(L) : ''}${hasVac ? vacEntry(L) : ''}${hasGcut ? gcutEntry(L) : ''}`;
+      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${kitOn() ? `<div class="poly-golden poly-kit-row"><span>${t(kitDone() ? 'poly.kit.done' : 'poly.kit', L, { name: KITS13[view.kit].label })}</span>${kitCells() ? `<button type="button" data-cells aria-pressed="${!!view.cells}" title="${t('poly.cells.title', L)}">${t('poly.cells', L)}</button>` : ''}${kitIco() ? `<button type="button" data-pacioli aria-pressed="${!!view.pacioli}" title="${t('poly.pacioli.title', L)}">${t('poly.pacioli', L)}</button>` : ''}<button type="button" data-kit-off title="${t('poly.kit.off', L)}">✕</button></div>` : ''}${hasHintRow || hasBestRow ? `<div class="poly-golden">${hasHintRow ? `<button type="button" data-hints aria-pressed="${view.hints && !view.bestFits}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button>` : ''}${hasBestRow ? `<button type="button" data-best aria-pressed="${view.bestFits}" title="${t('poly.best.title', L)}">${t('poly.best', L)}</button>` : ''}${hasCopy ? `<button type="button" class="poly-copy-build" data-copy-build title="${t('poly.copyBuild.title', L)}">${t('poly.copyBuild', L)}</button>` : ''}</div>${hasBestRow && view.bestFits ? bestRow(L) : ''}` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}${hasStar ? starRow(L) : ''}${hasVac ? vacEntry(L) : ''}${hasGcut ? gcutEntry(L) : ''}`;
     stripBody.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
   }
   panel.addEventListener('change', (e) => {
@@ -1190,6 +1192,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if ('cells' in b.dataset) { view.cells = !view.cells; save(); rebuild(); renderPanel(); return; }
     if ('pacioli' in b.dataset) { view.pacioli = !view.pacioli; save(); rebuild(); renderPanel(); return; }
     if ('kitOff' in b.dataset) { view.kit = null; save(); rebuild(); renderPanel(); return; }
+    if ('copyBuild' in b.dataset) { copyBuild(); return; }
     if ('best' in b.dataset) { view.bestFits = !view.bestFits; save(); rebuild(); renderPanel(); return; }
     if ('bestPick' in b.dataset) { placeSlot(Number(b.dataset.bestPick)); return; }
     if ('transform' in b.dataset && selection) { transform(selection.node); return; }
@@ -1211,6 +1214,32 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       else { chosen = chosen === id ? null : id; renderPanel(); }
     }
   });
+
+  // ---- Copy build (DICTO 2026-11-11): the build's exact record as JSON on the clipboard, for research (poly-build-record.js).
+  // Copied: a short note; not copied (no clipboard): a small dialog with the text selected, to copy by hand.
+  const record = () => buildRecord(nodes, connections, POLYHEDRA, nodes.length > 1 ? describeAssembly(nodes, connections) : (nodes[0] ? polyShapeName(nodes[0].shape, 'en').replaceAll('_', ' ') : ''));
+  if (typeof window !== 'undefined') window.__polyBuild = record;
+  async function copyBuild() {
+    const text = JSON.stringify(record());
+    if (await copyText(text)) { showHudPrompt(t('poly.copyBuild.done', lang()), 2000); return; }
+    copyDialog(text);
+  }
+  function copyDialog(text) {
+    const L = lang();
+    document.getElementById('poly-copy-dialog')?.remove();
+    const d = document.createElement('div');
+    d.id = 'poly-copy-dialog';
+    d.setAttribute('role', 'dialog');
+    d.setAttribute('aria-modal', 'true');
+    d.innerHTML = `<div class="leave-card"><p></p><textarea readonly rows="8"></textarea><div class="leave-btns"><button type="button" class="first" data-close></button></div></div>`;
+    d.querySelector('p').textContent = t('poly.copyBuild.manual', L);
+    d.querySelector('[data-close]').textContent = t('poly.copyBuild.close', L);
+    const ta = d.querySelector('textarea');
+    ta.value = text;
+    d.addEventListener('click', (e) => { if (e.target === d || e.target.closest('[data-close]')) d.remove(); });
+    document.body.appendChild(d);
+    ta.focus(); ta.select(); ta.setSelectionRange(0, text.length);
+  }
 
   // ---- the running build name (D3b): one shortened line under the dimension label; a tap shows it
   // whole. Named builds are recognised (DICTO-Star, Stella Octangula, …), else the pieces listed.
