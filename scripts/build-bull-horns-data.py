@@ -2,7 +2,7 @@
 # the Golden Bodhi Pyrochlore Networks world's double view: the resin round the OG (Ogdoecontahedron) double network cut at the holes
 # between 6 OGs -- one piece shape, 3 per OG, filling the gap exactly (OGs 77.4332 %, adaptors 22.5668 %, exact in the study).
 # Frame = the world's cube 0 (sites M.q, q integer, all one parity): holes = M.h with h having one or two odd entries; each OG owns the
-# holes M.(q + e_k), k = 0, 1, 2. Piece = Voronoi cell of the hole among all holes minus the OGs (manifold3d; run on dicto-node).
+# holes M.(q + e_k), k = 0, 1, 2. Piece = Voronoi cell of the hole among all holes minus the OGs (manifold3d; run on compute-host-2).
 # Usage: python3 scripts/build-bull-horns-data.py   (reads src/app/bodhi-pyro-data.js, writes src/app/bull-horns-data.js)
 import json, itertools, numpy as np, manifold3d as m3
 from scipy.spatial import HalfspaceIntersection

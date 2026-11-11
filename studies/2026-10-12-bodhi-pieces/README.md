@@ -161,4 +161,4 @@ Edge-length values: 1.051462 = √(2 − 2/√5) (two 5-fold unit vectors apart)
 - `data/bodhi-kit-{A,B}-all-pieces.json`: every piece of each kit. `data/bodhi-seed-solids.json`: the 14 solids.
   `data/pieces-*.pkl`: MILP output.
 - `renders/`: piece-types, inner-cavity, kit-A, kit-B (assembled cut-away + exploded), outer-pocket-3fold.
-- Heavy runs were done on dicto-node (`~/bodhi`).
+- Heavy runs were done on compute-host-2 (`~/bodhi`).

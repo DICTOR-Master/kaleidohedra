@@ -5,7 +5,7 @@
 #        2-fold axes); its chain of T closes with period four, while the Archimedean truncated cuboctahedron's does not.
 #   D108 Hamlet and D109 Ophelia: steps 5 and 6 of the chain of DICTO's growth rule T (#38) from the Ogdoecontahedron (OG), after
 #        KRE, PHE, TPP and DPHP (studies/2026-10-30-star-cores-exact, study 4).
-# Usage (dicto-big-brother, in a copy of dataset-v6 as dataset-v7): ~/geom/bin/python build/build_v7.py
+# Usage (compute-host, in a copy of dataset-v6 as dataset-v7): python3 build/build_v7.py
 import json, os, sys, glob, itertools
 from fractions import Fraction as Fr
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)

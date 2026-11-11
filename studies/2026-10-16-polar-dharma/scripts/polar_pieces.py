@@ -3,7 +3,7 @@
 # against the layer; then which neighbouring pieces fuse without a dent.
 import json, itertools, sys, numpy as np
 from scipy.spatial import ConvexHull, HalfspaceIntersection
-sys.path.insert(0, '/home/dicto/kaleidohedra/studies/_lib'); import geomcheck as gc   # accuracy rules: kinds by symmetry orbit
+sys.path.insert(0, '~/kaleidohedra/studies/_lib'); import geomcheck as gc   # accuracy rules: kinds by symmetry orbit
 IN, TXT, OUT = (sys.argv[1:4] + ['data/reversed-chain.json', 'data/polar-step2.txt', 'data/polar-pieces.json'][len(sys.argv) - 1:])[:3]
 CL = json.load(open(IN)); names = [n for n, _ in CL]; C = {n: V for n, V in CL}
 def faces(P):

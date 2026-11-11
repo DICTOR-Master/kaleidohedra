@@ -1,4 +1,4 @@
-# Build paper.html from paper.md (markdown-it-py) for printing to paper.pdf (headless Chromium, print.mjs). Run on dicto-node.
+# Build paper.html from paper.md (markdown-it-py) for printing to paper.pdf (headless Chromium, print.mjs). Run on compute-host-2.
 # DICTO · dictospheres.com
 import sys, os
 from markdown_it import MarkdownIt

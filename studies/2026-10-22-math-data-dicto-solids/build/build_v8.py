@@ -14,7 +14,7 @@
 #        (Q(xi), xi^3 - 2 xi = phi; one file per D-number, one hand; the other hand is its mirror image).
 #   #96 (D133 DICTO Void Keeper, D134 DICTO Golden Skin): left out; the paper states their exact forms are still open (Section 6).
 # Every solid is checked against the numbers its paper (and the paper's own study data) prints; see build_v8.log.json.
-# Usage (dicto-big-brother, in a copy of dataset-v7 as dataset-v8): ~/geom/bin/python build/build_v8.py
+# Usage (compute-host, in a copy of dataset-v7 as dataset-v8): python3 build/build_v8.py
 import json, os, sys, itertools, math
 from fractions import Fraction as Fr
 from collections import Counter

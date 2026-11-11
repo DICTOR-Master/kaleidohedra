@@ -50,7 +50,7 @@ it waits for DICTO's reading.
 
 ### Checks
 
-- **check.py on dicto-big-brother: TOTAL: 1062 checks, 1062 passed, 0 failed; 44 solids, 6 packings (fills), 4 packings (not fills).**
+- **check.py on compute-host: TOTAL: 1062 checks, 1062 passed, 0 failed; 44 solids, 6 packings (fills), 4 packings (not fills).**
   New: Ganesha 21, Shadow-17 21 (non-convex: no convexity check), Humpty Dumpty 22. The other 998 checks are those of version 3, all passing.
 - **Build log** `build/build_v4.log.json`: 22 PASS, 0 FAIL (every published value: f-vectors, faces, squared edges, symmetry order and
   class; Ganesha's two halves at its gap's mid-plane are 0.058005 and 0.196269 at ball spacing 1, as #61 Figure 1, and add up exactly;
@@ -136,7 +136,7 @@ not pushed) and is **not released**: it waits for DICTO's reading.
 
 ### Checks
 
-- **check.py on dicto-big-brother: TOTAL: 998 checks, 998 passed, 0 failed; 41 solids, 6 packings (fills), 4 packings (not fills)**
+- **check.py on compute-host: TOTAL: 998 checks, 998 passed, 0 failed; 41 solids, 6 packings (fills), 4 packings (not fills)**
   (1 min 51 s). New: 9 convex solids × 22 (Sonsam and Lahdeli 23, with the field check), Keyaxes and Icosaxes Hexa 29, Lotus Hexa 28 (7
   composition checks each; no published value for the Lotus Hexa).
 - **Versions 1 and 2 unchanged**: the committed check.py (version 2) and the new one, run with `-v` on the version 1 + 2 files alone, give
@@ -226,7 +226,7 @@ same branch (local only, not pushed) and is **not released**: it waits for DICTO
 
 ### Checks
 
-- **check.py on dicto-big-brother: TOTAL: 712 checks, 712 passed, 0 failed; 29 solids, 6 packings (fills), 4 packings (not fills)**
+- **check.py on compute-host: TOTAL: 712 checks, 712 passed, 0 failed; 29 solids, 6 packings (fills), 4 packings (not fills)**
   (80 s). Version 1's 550 checks are all still there and pass unchanged; new: 6 solids × 22, 7 decomposition checks each for the Lotus
   Jewel Axes and the Dodecaxes, 5 + 5 for the golden and Delian bonds, 6 for the keyed bond.
 - The keyed bond is proved without a convex split: the golden bond tiles (exact, convex pieces), the keyed bond has the same lattice and
@@ -319,7 +319,7 @@ this dataset**; with 6 fills and 4 non-filling packings.
 - **3 packings** (published fills): the skewed RD (DICTO FCC) and both skewed EDs, each tiling space by translation.
 - **4 packings that do not fill space** (published): OG bcc 77.43%, OCD Stella bcc 87.12%, DBT gyrated octet 55.02%, OTT octet 52.89%.
 - **A unit-volume copy of every solid** (JSON key `unit_volume` + `-unit-volume.off`).
-- **check.py: 550 checks, 550 passed, 0 failed** (23 solids, 3 fills, 4 non-fills, unit-volume copies; about 2 minutes on dicto-node).
+- **check.py: 550 checks, 550 passed, 0 failed** (23 solids, 3 fills, 4 non-fills, unit-volume copies; about 2 minutes on compute-host-2).
   It also failed, as it should, on corrupted copies (reversed face, moved corner, wrong group order, an extra overlapping piece; and
   on 2026-10-23 a shrunken non-filling lattice, a wrong published percentage, a moved unit-volume corner: 9 checks failed).
 

@@ -4,7 +4,7 @@ DICTO · dictospheres.com
 
 ## Inputs
 - Six fused solids: `src/krp-core/src/polyhedra/transitional.js`. These are Polyhedraverse's "DICTO Transitional Shells". When generated, each was checked for simple faces and for volume equal to the fused pieces' volume.
-- Seven more fused stages, made with the same functions (`analysis/fuse_extra.py`, run on dicto-node): `analysis/data/fused-extra.json`. Every one has fused volume equal to its pieces' volume, except Dharma stage 5 (11.922 against 12.462), which is not used in the paper.
+- Seven more fused stages, made with the same functions (`analysis/fuse_extra.py`, run on compute-host-2): `analysis/data/fused-extra.json`. Every one has fused volume equal to its pieces' volume, except Dharma stage 5 (11.922 against 12.462), which is not used in the paper.
 - Pieces: `../pieces.json`. Stage facts: `../steps.json`, `../stages.json`, `../partials.json`, `../renders/index.json`. The counts 107/5,569, 7/124 and 10/363 were taken from these files, not recomputed.
 
 ## Identifications (`analysis/identify.py`, 25 PASS, 0 FAIL, `analysis/identify.log`)
@@ -41,7 +41,7 @@ Not checked directly:
 - As a result, symmetric stages get asymmetric counts. Lotus 2, for example, is counted as 16 triangles + 12 hexagons + 4 decagons on 12 equivalent planes, and Lotus 3 as 56 triangles instead of 60.
 - The paper uses the `transitional.js` convention. **Suggested fix:** never merge across a corner-only contact.
 
-## Nets (`nets/nets.py`, `nets/nets-checks.json`; ran on dicto-node)
+## Nets (`nets/nets.py`, `nets/nets-checks.json`; ran on compute-host-2)
 | Shell | Scale | Pieces | Glue pairs | Mountain / valley folds | Worst overlap | All edges folded or paired | All tabs present |
 |---|---|---|---|---|---|---|---|
 | Lotus 2 (GSD) | 44 mm/unit | 5 | 35 | 40 / 15 (+15 valley glue edges) | 6e-13 mm² | yes | yes |
@@ -55,7 +55,7 @@ How the nets were checked:
 - **Page fit.** No piece leaves the printable area, and pieces do not overlap on a page (assertions in `svg_pages`).
 - **Folds.** Fold kind comes from the 3D dihedral: mountain where the solid is convex, valley where it is reflex.
 - **Unfolding.** Pieces never close the ring of faces round a corner whose angle defect is below 40°. For the convex 80-corner solid we used a steepest-edge cut tree (best of the random directions tried).
-- **Not done.** No net has been printed and folded by hand yet. The PDF was rendered with headless Chromium on dicto-node; the pages were looked at as 45 dpi previews.
+- **Not done.** No net has been printed and folded by hand yet. The PDF was rendered with headless Chromium on compute-host-2; the pages were looked at as 45 dpi previews.
 
 ## References
 - DOIs were checked against Crossref (`api.crossref.org`) on 2026-10-13.

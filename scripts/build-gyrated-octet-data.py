@@ -6,7 +6,7 @@
 # R(a,b,c), a+b+c = 0, repeated by R(1,-1,0) and R(0,1,-1)) together with that cell mirrored in x+y+z = R (layer 1 of the gyrated octet;
 # a mirrored left cap is a right cap). The world stacks layers: octet = layer 0 moved by R(1,1,0) per layer; gyrated = layers 0 and 1
 # alternating, moved by (4R/3)(1,1,1) per two layers.
-# Usage (dicto-node, manifold3d): python3 scripts/build-gyrated-octet-data.py <study folder> [out]
+# Usage (compute-host-2, manifold3d): python3 scripts/build-gyrated-octet-data.py <study folder> [out]
 import sys, os, json, math, itertools, numpy as np, manifold3d as m3
 STUDY = sys.argv[1]; OUT = sys.argv[2] if len(sys.argv) > 2 else 'src/app/gyrated-octet-data.js'
 OCTET = os.path.join(STUDY, '..', '2026-10-18-ocd-octet', 'data', 'step1-ocd-exact.json')

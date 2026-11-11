@@ -1,4 +1,4 @@
-// <folder>/paper.html -> <folder>/<pdf> (A4), footer with the DICTO mark and the record's DOI. Run on dicto-node (needs playwright):
+// <folder>/paper.html -> <folder>/<pdf> (A4), footer with the DICTO mark and the record's DOI. Run on compute-host-2 (needs playwright):
 //   node papers/print.mjs <folder> <pdf name> "<short title>" <concept DOI> <version>
 import { chromium } from 'playwright';
 import path from 'node:path';

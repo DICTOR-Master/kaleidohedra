@@ -15,8 +15,8 @@ Checks on every result: closed (every edge in two faces), consistently wound, Eu
 axes over every pair of convex parts (a Stella-Corona is 225 parts, a Kepler Star 12), volumes in exact golden
 form, repeated pieces congruent. Space fillings are also checked by point tests (every grid point in exactly one
 piece) and the gaps by periodic voxel flood fills. Scripts (kept with the study's working copy, not in the repo):
-`ekp.mjs` (§2, §3, writes `data/`), `diadem-net.mjs` (§4, §5, §6; the cut-and-project patch ran on dicto-node),
-`gap.mjs` (§6, flood fills, dicto-node), `render.mjs`; logs `ekp.log`, `diadem.log`, `patch.log`, `patch-ball.log`,
+`ekp.mjs` (§2, §3, writes `data/`), `diadem-net.mjs` (§4, §5, §6; the cut-and-project patch ran on compute-host-2),
+`gap.mjs` (§6, flood fills, compute-host-2), `render.mjs`; logs `ekp.log`, `diadem.log`, `patch.log`, `patch-ball.log`,
 `gap48.log`, `gap72.log`, and the numbers in `results-*.json`.
 
 > **Filed 2026-10-10.** Names for the new shapes are still DICTO's to give (§8 keeps working labels); his
@@ -279,7 +279,7 @@ spikes orange-red).
 ## 10. The infinite network
 
 Question: §5 checked a finite patch of 93 coronas. Is the whole infinite model set clean? `infinite.mjs` answers
-this exactly, by finite local complexity, not by sampling. Run on dicto-node, 62 s (`infinite.log`,
+this exactly, by finite local complexity, not by sampling. Run on compute-host-2, 62 s (`infinite.log`,
 `results-infinite.json`).
 
 **The argument.** Sites are x(n), n ∈ ℤ⁶, kept when the perpendicular image y(n) lies in the closed ball W of radius
@@ -326,7 +326,7 @@ occur. The finite patch's coordination 2 (§5) was its edge. Mean 4.8820, matchi
 
 Question: two bare coronas at the two-fold distance (15 + 7√5)/5 = 6.130495 (1.051462 bonds) face each other with two
 bare pentagrams each; is there a shared piece that fills or bridges the gap? Scripts `bridge-probe.mjs`,
-`bridge-probe2.mjs`, `bridge-search.mjs`, `bridge-piece.mjs`, `infinite-bridge.mjs` (the last on dicto-node, 82 s);
+`bridge-probe2.mjs`, `bridge-search.mjs`, `bridge-piece.mjs`, `infinite-bridge.mjs` (the last on compute-host-2, 82 s);
 data `data/twofold-bridge` (unit + raw), `data/twofold-pair-bridge-parts`, `results-bridge-search.json`,
 `infinite-bridge.log`, `results-infinite-bridge.json`. Credit: DICTO (design study, 2026-10-11).
 

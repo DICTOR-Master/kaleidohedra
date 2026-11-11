@@ -6,7 +6,7 @@
 # (2) MIX: each label's volume as a*V(pure c) + b*V(pure h) with constant rational a, b (pure c = ABC, pure h = AB), exact.
 # Usage: python splash.py <s> [maxlen]   ->  ../data/s_<s>.json
 import sys, os, json, itertools
-sys.path.insert(0, os.path.expanduser('~/kres-tmp/st57/scripts')); os.chdir(os.path.expanduser('~/kres-tmp/st57/scripts'))
+sys.path.insert(0, os.path.expanduser('~/work/st57/scripts')); os.chdir(os.path.expanduser('~/work/st57/scripts'))
 from fractions import Fraction as Fr
 import sympy as sp
 import census, networks
@@ -91,6 +91,6 @@ if __name__ == '__main__':
             fit = 'none' if not sol else {k.name: str(sp.nsimplify(val)) for k, val in sol[0].items()}
         res['mix'].setdefault(lo, []).append({'role': role, 'ctx': ''.join('+' if x > 0 else '-' for x in ctx), 'volume': str(sp.factor(v)), 'fit': fit})
     res['rmin'] = rmin
-    os.makedirs(os.path.expanduser('~/kres-tmp/splash/data'), exist_ok=True)
-    json.dump(res, open(os.path.expanduser(f'~/kres-tmp/splash/data/s_{str(s).replace("/", "_")}.json'), 'w'), indent=1, default=str)
+    os.makedirs(os.path.expanduser('~/work/splash/data'), exist_ok=True)
+    json.dump(res, open(os.path.expanduser(f'~/work/splash/data/s_{str(s).replace("/", "_")}.json'), 'w'), indent=1, default=str)
     print('done rmin', rmin, flush=True)

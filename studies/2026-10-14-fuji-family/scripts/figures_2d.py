@@ -1,4 +1,4 @@
-# 2D figures for the FUJI family paper (DICTO, 2026-10-14): Odom's construction and the antiprism members. Run on dicto-node.
+# 2D figures for the FUJI family paper (DICTO, 2026-10-14): Odom's construction and the antiprism members. Run on compute-host-2.
 # DICTO · dictospheres.com
 import math, os
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
