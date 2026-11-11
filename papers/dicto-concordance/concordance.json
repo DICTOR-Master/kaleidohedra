@@ -6007,6 +6007,15 @@
     "retry": "never",
     "study": "studies/2026-11-11-hemi-rd-build",
     "date": "2026-11-11"
+   },
+   {
+    "question": "The Vacuus of the Queens: central hyperplanes of the 2-faces of the five H4 stages",
+    "method": "vacuus_queens.py (faces grouped by central hyperplane, classes under H4, slice shapes); mirror_check.py",
+    "status": "SETTLED (float, counts exact)",
+    "result": "Both Queens: 60 slices = the 60 H4 mirrors (20 triangles / 12 pentagons each). Bitruncated 600-cell: each mirror carries 20 triangles + 12 pentagons (both Queens' faces); the 2400 TT-TI hexagons scatter 2 per slice on 1200 slices. Truncations: mirrors carry the hexagons/decagons, triangles scatter",
+    "retry": "never",
+    "study": "studies/2026-11-11-orbit-polytopes",
+    "date": "2026-11-11"
    }
   ]
  },

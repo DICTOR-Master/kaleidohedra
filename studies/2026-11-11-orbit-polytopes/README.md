@@ -67,3 +67,14 @@ clusters 48-70%, Icosaxes and Unborn Axes 33% (3 discs of 4 edges + 12 planes of
 #105, the whole T(x) family); 37 of 66 DICTO solids have no disc.
 Figure: figures/dogstar-vacuus.png (scripts/dogstar_vacuus.html): Dogstar's 15 discs as fins, the 3 coordinate discs gold, the 12
 golden discs violet, Dogstar a cut-away glass shell.
+## The Vacuus of the Queens (scripts/vacuus_queens.py, mirror_check.py; data/vqueens.log; FINAL ok, every 2-face carried once)
+| stage | 2-faces | on the 60 H4 mirrors | scattered (2 per slice, 1200 slices) |
+| 600-cell | 1200 triangles | 20 triangles each (all) | none |
+| truncated 600-cell | 2400 triangles, 1200 hexagons | 20 hexagons each | the 2400 triangles |
+| bitruncated 600-cell | 1200 triangles, 720 pentagons, 2400 hexagons | 20 triangles + 12 pentagons each | the 2400 hexagons |
+| truncated 120-cell | 2400 triangles, 720 decagons | 12 decagons each | the 2400 triangles |
+| 120-cell | 720 pentagons | 12 pentagons each (all) | none |
+The 60 central slices of both Queens are exactly the 60 mirror hyperplanes of H4 (mirror_check.py, both ways). At the bitruncated
+600-cell each mirror carries the White Queen's 20 (triangles, between truncated tetrahedra) AND the Red Queen's 12 (pentagons, between
+truncated icosahedra) together: the faces between like cells lie on the mirrors; the 2400 hexagons between unlike cells (where #104's
+exchanges happen) scatter, two per slice. Slice shapes per class in the log.
