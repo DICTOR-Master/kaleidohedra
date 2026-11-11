@@ -139,3 +139,4 @@ ANGELI THREAD round the cycle (twin hull Vacuus at k = 0, 1, 2, 3; then it repea
 - k ≡ 1, 3: a rhombicosidodecahedron-pattern Angelus, 120 fins in 60 planes, two fin classes whose angles depend on the start
   (Catalan: 12.8684° and 34.1211° at k ≡ 1, 7.0663° and 37.6501° at k ≡ 3; all cos² exact in ℚ(√5), in the json). No discs anywhere.
 The thread: dodecahedron Angelus → rhombicosidodecahedron Angelus → icosahedron Angelus → rhombicosidodecahedron Angelus → (scaled) back.
+Render (DICTO: "render the Angeli thread for the Catalan pentakis"; scripts/render_thread.py, figures/angeli-thread-catalan.png): the four Angeli of one turn, 2 x 2, fins coloured by plane: k = 0 dodecahedron Angelus (30 fins, 41.81°), k = 1 rhombicosidodecahedron Angelus (120 fins, 12.87° and 34.12°), k = 2 icosahedron Angelus (30 fins, 63.43°), k = 3 rhombicosidodecahedron Angelus (120 fins, 7.07° and 37.65°); then the cycle returns scaled by c = 0.7214.
