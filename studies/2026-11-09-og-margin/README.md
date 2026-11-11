@@ -357,3 +357,10 @@ Note: the sweep's h-vector relation (Dehn–Sommerville on the capped 4D polytop
 **Verdict: no charging along the sweep's own neighbour relation proves cut < active; step (A1) is a global (average) fact, as §22
 found for the hull's cutters.** Sweep route closed for a local proof. What stays: the exact one-death-per-face structure and the
 λ-ordering (usable for an averaging argument: e.g. a solid-angle or area-weighted count of the 4D facets).
+
+## §24 Births and deaths exchanged between hops (11 Nov 2026; DICTO: "or the number of births to deaths being exchanged"; scripts/og_born_die.py, data/og-born-die-14.json, local, FINAL ok)
+Faces of D_k classed as BORN at hop k−1 (normal not a face normal of D_{k−1}) or SURVIVING; CUT at hop k = foot point not a corner of D_{k+1}.
+Result k ≤ 14: the hop renews EVERY face except, from k = 10, the 12 faces on the 5-fold axes (k ≤ 9: all faces born). So births and
+deaths are exchanged completely at each hop (corners ↔ faces, the polarity), cut ≤ born holds trivially (born ≈ all), and the 12
+survivors are exactly 'cut' in the polar sense (their foot point lies inside the surviving face, Lemma G). The count reduces to the
+step-(A) identity F_k = 2(F_{k−1} − c_k) − 4 − e_k: no new inequality from this reading.
