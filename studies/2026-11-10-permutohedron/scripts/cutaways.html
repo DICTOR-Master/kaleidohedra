@@ -7,6 +7,9 @@
 // solid parts inside, polygon offset, crisp fat edges, no fog.
 //   ?shot=heart    the permutohedron of 1, 2, 4, 5 (DICTO 1:2 Truncated Octahedron) as a crystal shell; inside, the four regular hexagons
 //                  through its centre where the other four central permutohedra of the 4D permutohedron cross it (#105 Theorem 2)
+//   ?shot=heart7   (12 Nov, #105 v4 Theorem 2b) seven values: where three of the seven central slices p_i = 4 of the 6D permutohedron cross,
+//                  the 3D permutohedron of 1, 2, 6, 7 (crystal shell); inside, the four regular hexagons of 1, 4, 7 where a fourth crosses,
+//                  and the six segments (white) where a fifth crosses: each the shared diameter of two hexagons
 //   ?shot=vacuus   its own 3D Vacuus: the 15 central cards (3 octagons, 12 hexagons) that carry its 36 edges, slotted; edges as a gold frame
 //   &az=..&el=..&dist=.. camera
 import * as THREE from 'three';
@@ -27,7 +30,7 @@ const back = new THREE.DirectionalLight(0x9fb4ff, 0.6); back.position.copy(cam.p
 // geometry: orderings of four values in the sum-zero 3-space, mapped by the isometry y -> (y1+y2-y3-y4, y1-y2+y3-y4, y1-y2-y3+y4)/2
 const to3 = (y) => [(y[0] + y[1] - y[2] - y[3]) / 2, (y[0] - y[1] + y[2] - y[3]) / 2, (y[0] - y[1] - y[2] + y[3]) / 2];
 function perms(a) { if (a.length < 2) return [a]; const out = []; a.forEach((x, i) => perms([...a.slice(0, i), ...a.slice(i + 1)]).forEach((p) => out.push([x, ...p]))); return out; }
-const VALS = [-2, -1, 1, 2], P = perms(VALS), X = P.map(to3);
+const H7 = shot === 'heart7', VALS = H7 ? [-3, -2, 2, 3] : [-2, -1, 1, 2], P = perms(VALS), X = P.map(to3);
 const ord = [...VALS].sort((a, b) => a - b);
 const E = []; for (let i = 0; i < 24; i++) for (let j = i + 1; j < 24; j++) {
   const d = [0, 1, 2, 3].filter((k) => P[i][k] !== P[j][k]);
@@ -67,18 +70,26 @@ function shell(fill = true) {   // the cutaway shell: faces behind the centre dr
   scene.add(lines(backE.map(([i, j]) => [sc(X[i]), sc(X[j])]), 0x2a2418, 2.0));
   scene.add(lines(front.map(([i, j]) => [sc(X[i]), sc(X[j])]), 0xe8d9a8, 1.6, 0.55));
 }
-const S = 1 / 2.2;   // scale the solid to radius about 1.6
-const sc = (p) => p.map((c) => c * S * 1.8);
+const S = 1 / 2.2;   // scale the solid to radius about 1.6 (heart7: the same corner radius as the heart)
+const SC = S * 1.8 * Math.sqrt(10) / Math.hypot(...VALS), sc = (p) => p.map((c) => c * SC);
 const GOLD = 0xd4a62a, HEXC = [0x7a4fb5, 0x2f6fb3, 0x3c9a5a, 0xc0392b];
-if (shot === 'heart') {
-  // the four central regular hexagons: other three coordinates the orders of (2, 0, -2), coordinate j = 0
+if (shot === 'heart' || H7) {
+  // the four central regular hexagons: other three coordinates the orders of (2, 0, -2) (heart7: (3, 0, -3) = 1, 4, 7), coordinate j = 0
+  const HV = H7 ? [3, 0, -3] : [2, 0, -2];
   for (let j = 0; j < 4; j++) {
-    const pts = []; for (const p of perms([2, 0, -2])) { const y = [...p]; y.splice(j, 0, 0); pts.push(to3(y)); }
+    const pts = []; for (const p of perms(HV)) { const y = [...p]; y.splice(j, 0, 0); pts.push(to3(y)); }
     const c = [0, 0, 0], n = new THREE.Vector3(...pts[1]).sub(new THREE.Vector3(...pts[0])).cross(new THREE.Vector3(...pts[2]).sub(new THREE.Vector3(...pts[0]))).normalize();
     const u = new THREE.Vector3(...pts[0]).normalize(), w = new THREE.Vector3().crossVectors(n, u);
     pts.sort((a, b) => Math.atan2(w.dot(new THREE.Vector3(...a)), u.dot(new THREE.Vector3(...a))) - Math.atan2(w.dot(new THREE.Vector3(...b)), u.dot(new THREE.Vector3(...b))));
     scene.add(polyMesh(pts.map(sc), HEXC[j], { rough: 0.45, metal: 0.05 }));
     scene.add(lines(pts.map((p, k) => [sc(p), sc(pts[(k + 1) % 6])]), 0x111111, 1.6));
+  }
+  if (H7) {   // the six segments: two coordinates 0, the other two 3 and -3 (values 1 and 7)
+    const segs = []; for (let j = 0; j < 4; j++) for (let l = j + 1; l < 4; l++) {
+      const o = [0, 1, 2, 3].filter((k) => k !== j && k !== l), a = [0, 0, 0, 0], b = [0, 0, 0, 0]; a[o[0]] = 3; a[o[1]] = -3; b[o[0]] = -3; b[o[1]] = 3;
+      segs.push([sc(to3(a)), sc(to3(b))]); }
+    const sl = lines(segs, 0xffffff, 3.0); sl.material.depthTest = false; sl.renderOrder = 10; scene.add(sl);   // drawn over the hexagon cards
+    const dots = new THREE.Mesh(new THREE.SphereGeometry(0.05, 16, 12), new THREE.MeshBasicMaterial({ color: 0xffffff, depthTest: false })); dots.renderOrder = 11; scene.add(dots);   // the centre: all six crossings meet here
   }
   // the crystal shell: squares gold-tinted glass, hexagons clear glass; edges crisp
   shell();
