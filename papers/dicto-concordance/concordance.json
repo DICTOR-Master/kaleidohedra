@@ -5980,6 +5980,15 @@
     "retry": "exact labels",
     "study": "studies/2026-11-11-orbit-polytopes",
     "date": "2026-11-11"
+   },
+   {
+    "question": "Exact seeds of the orbit polytopes; Dogstar check; Dogstar's Vacuus",
+    "method": "exact_seeds.py: Coxeter-chain order, exact recognition in Q(sqrt2,sqrt5), PROOF by rebuilding corners; corner kinds; central planes of edges",
+    "status": "SETTLED",
+    "result": "T(x) seed (0,x,1) (Kelvin, 1:2, 2:1, Icosaxes (0,phi,1), Unborn Axes (0,1,phi)); Delilah = regular octahedron (0,0,1); 4D permutohedron (1,1,1,1); H4: 120-cell (1,0,0,0), trunc 120 (1,1,0,0), bitruncated 600 (0,1,1,0), trunc 600 (0,0,1,1), 600-cell (0,0,0,1). Dogstar: hull = cube, 4 corner kinds, group 24; Vacuus 114/138 edges on 15 central discs",
+    "retry": "never",
+    "study": "studies/2026-11-11-orbit-polytopes",
+    "date": "2026-11-11"
    }
   ]
  },

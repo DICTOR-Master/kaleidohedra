@@ -8,11 +8,12 @@ Controls (11, all PASS): 7 Platonic/Archimedean orbits of B3 and H3; snub cube (
 ## Census of the app's registry (389 solids; data/orbit_results_hull.json, log data/orbits2.log, FINAL ok)
 332 convex. 42 orbit polytopes (37 convex): B3 16, H3 11, A3 7, dihedral/prism groups 8. First pass (registry vertex lists incl. inner
 points) kept for the record in data/orbit_results.json; superseded by the outer-corner pass.
-DICTO's solids that ARE orbits (8 of 67): Icosaxes and Unborn Axes (B3, two mirrors, labels exchanged: the partner pair from the seed side);
-Delilah (B3, one mirror); Lotus Jewel Axes (outer corners = an Icosaxes-type orbit); Dogstar (outer corners, B3 by this test: TO CHECK, a
-dodecahedral solid is expected to show H3 or pyritohedral symmetry); DICTO Hexa-Key (outer corners, B3); DICTO Dodeca-13 (outer corners, H3);
-Cleo (D3). The other 59 are not orbits (e.g. Unborn, Samson, Dodecaxes, AXE, FUJI, Jewels, Hexa, Spheroid-13 RD pieces): their corners
-fall into several kinds.
+CORRECTION (11 Nov, Dogstar check): for a non-convex solid the outer-corner test identifies its convex HULL, not the solid. Dogstar's
+outer corners are a cube's 8 corners (its spikes end at a cube's corners), Hexa-Key's hull is a cube, Dodeca-13's hull has 60 corners and
+32 faces (truncated-icosahedron type), Lotus Jewel Axes' hull is an Icosaxes-type truncated octahedron.
+DICTO's solids that ARE orbit polytopes (convex): Icosaxes and Unborn Axes (B3, labels exchanged: the partner pair from the seed side),
+Delilah (B3, one mirror), Cleo (D3). Non-convex ones are described by their kinds of corner (exact_seeds.py). The other DICTO solids are
+not orbits: their corners fall into several kinds.
 NEXT: Dynkin-ordered labels and exact recognition; check Dogstar; 4D (A4, B4, F4, H4: the permutohedra, the Queens, the bitruncated
 600-cell); then the uniform family chased seed by seed for each group, with DICTO's solids placed in it.
 ## 4D (scripts/orbit4d.py; data/orbit4d_results_queens.json, log data/orbits4d.log, FINAL ok)
@@ -29,3 +30,27 @@ chain 5-3-3), read from one corner. Seed = which mirrors are used (chain ends: W
 So the path between the Queens (#76, #104) is the seed sliding along the chain from one end to the other, and the bitruncated 600-cell,
 the scutoid tissue with the balance law 601/601 (#104), is the exact middle of the chain. The 4D permutohedron (#105) is the A4 analogue
 with every mirror used. #104 and #105 sit in one frame: orbit polytopes of reflection groups, read from one corner.
+## Exact seeds, each PROVED by rebuilding every corner from the exact seed (scripts/exact_seeds.py, registry_seeds.py; data/seeds.log)
+Seeds in Coxeter-chain order, scaled so the smallest nonzero label is 1 (B3 chain 4-3 read from the 4-end; H4 chain 5-3-3 read from the 5-end):
+| solid | group | seed |
+| Kelvin's truncated octahedron T(1) | B3 | (0, 1, 1) |
+| DICTO 1:2 Truncated Octahedron T(1/2) | B3 | (0, 1, 2) = (0, 1/2, 1) |
+| DICTO 2:1 Truncated Octahedron T(2) | B3 | (0, 2, 1) |
+| Icosaxes T(tau) | B3 | (0, phi, 1) (registry precision, mismatch < 1e-9) |
+| Unborn Axes T(1/tau) | B3 | (0, 1, phi) |
+| Delilah (regular octahedron, edge 2^(-1/3)) | B3 | (0, 0, 1) |
+| 4D permutohedron | A4 | (1, 1, 1, 1) |
+| 120-cell (Red Queen) | H4 | (1, 0, 0, 0) |
+| truncated 120-cell | H4 | (1, 1, 0, 0) |
+| bitruncated 600-cell | H4 | (0, 1, 1, 0) |
+| truncated 600-cell | H4 | (0, 0, 1, 1) |
+| 600-cell (White Queen) | H4 | (0, 0, 0, 1) |
+So T(x) has the seed (0, x, 1): the golden loop is one B3 seed whose middle label is the gap ratio x (Paradigm Chs 2-3; Koca's
+(1, x, 0) read from the other end). The Queens' path is the seed sliding along the H4 chain; the bitruncated 600-cell is (0, 1, 1, 0),
+the exact middle. Corner kinds of non-convex solids (orbits of their full symmetry group): Dogstar 4 kinds (12, 12, 24, 8; group 24,
+pyritohedral; the 8 outermost = a cube); Hexa-Key 7 kinds (group 24); Lotus Jewel Axes 2 kinds (8 + 24 on an Icosaxes; group 48);
+Dodeca-13 3 kinds of 60 (group 120).
+## Dogstar's Vacuus (DICTO 11 Nov: "maybe dogstar has a vacuus form")
+Its 138 edges lie on 27 central planes: 12 planes carry 8 edges each and 3 planes carry 6 each (114 of 138 edges on 15 central discs),
+12 planes carry 2. Only 1 of its 84 faces is central. A concentrated Vacuus, near the octahedron's few-disc pattern (control:
+cuboctahedron, 4 planes x 6 edges). Hexa-Key: 70 planes, one carrying 36 edges.

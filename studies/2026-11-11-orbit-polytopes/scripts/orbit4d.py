@@ -18,8 +18,10 @@ def sym_group(V):
     for j in sorted(nb[v0]):
         if np.linalg.matrix_rank(V[frame + [j]], tol=1e-7) == len(frame) + 1: frame.append(j)
         if len(frame) == d: break
-    if len(frame) < d:                                     # fall back: add second neighbours
-        for j in sorted(set().union(*[nb[k] for k in nb[v0]]) - set(frame)):
+    if len(frame) < d:                                     # fall back: further corners by distance from v0 until the frame spans
+        for j in np.argsort(np.linalg.norm(V - V[v0], axis=1)):
+            j = int(j)
+            if j in frame: continue
             if np.linalg.matrix_rank(V[frame + [j]], tol=1e-7) == len(frame) + 1: frame.append(j)
             if len(frame) == d: break
     F = V[frame]; G = F @ F.T; Finv = np.linalg.inv(F)

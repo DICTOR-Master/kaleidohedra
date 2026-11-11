@@ -1,0 +1,262 @@
+{
+ "seeds": [
+  {
+   "name": "Kelvin T(1)",
+   "chain_bonds": [
+    4,
+    3
+   ],
+   "labels_exact": [
+    "0",
+    "1",
+    "1"
+   ],
+   "rebuilt_from_exact_seed": true
+  },
+  {
+   "name": "DICTO 1:2 = T(1/2)",
+   "chain_bonds": [
+    4,
+    3
+   ],
+   "labels_exact": [
+    "0",
+    "1",
+    "2"
+   ],
+   "rebuilt_from_exact_seed": true
+  },
+  {
+   "name": "DICTO 2:1 = T(2)",
+   "chain_bonds": [
+    4,
+    3
+   ],
+   "labels_exact": [
+    "0",
+    "2",
+    "1"
+   ],
+   "rebuilt_from_exact_seed": true
+  },
+  {
+   "name": "Icosaxes",
+   "chain_bonds": [
+    4,
+    3
+   ],
+   "labels_exact": [
+    "0",
+    "None",
+    "1"
+   ],
+   "rebuilt_from_exact_seed": false
+  },
+  {
+   "name": "Unborn Axes",
+   "chain_bonds": [
+    4,
+    3
+   ],
+   "labels_exact": [
+    "0",
+    "1",
+    "None"
+   ],
+   "rebuilt_from_exact_seed": false
+  },
+  {
+   "name": "Delilah",
+   "chain_bonds": [
+    4,
+    3
+   ],
+   "labels_exact": [
+    "0",
+    "0",
+    "1"
+   ],
+   "rebuilt_from_exact_seed": true
+  },
+  {
+   "name": "4D permutohedron",
+   "chain_bonds": [
+    3,
+    3,
+    3
+   ],
+   "labels_exact": [
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "rebuilt_from_exact_seed": true
+  },
+  {
+   "name": "600-cell",
+   "chain_bonds": [
+    5,
+    3,
+    3
+   ],
+   "labels_exact": [
+    "0",
+    "0",
+    "0",
+    "1"
+   ],
+   "rebuilt_from_exact_seed": true
+  },
+  {
+   "name": "truncated 600-cell",
+   "chain_bonds": [
+    5,
+    3,
+    3
+   ],
+   "labels_exact": [
+    "0",
+    "0",
+    "1",
+    "1"
+   ],
+   "rebuilt_from_exact_seed": true
+  },
+  {
+   "name": "bitruncated 600-cell",
+   "chain_bonds": [
+    5,
+    3,
+    3
+   ],
+   "labels_exact": [
+    "0",
+    "1",
+    "1",
+    "0"
+   ],
+   "rebuilt_from_exact_seed": true
+  },
+  {
+   "name": "truncated 120-cell",
+   "chain_bonds": [
+    5,
+    3,
+    3
+   ],
+   "labels_exact": [
+    "1",
+    "1",
+    "0",
+    "0"
+   ],
+   "rebuilt_from_exact_seed": true
+  },
+  {
+   "name": "120-cell",
+   "chain_bonds": [
+    5,
+    3,
+    3
+   ],
+   "labels_exact": [
+    "1",
+    "0",
+    "0",
+    "0"
+   ],
+   "rebuilt_from_exact_seed": true
+  }
+ ],
+ "kinds": [
+  {
+   "name": "Dogstar",
+   "sym": 24,
+   "kinds": [
+    [
+     8,
+     1.40126
+    ],
+    [
+     24,
+     0.85291
+    ],
+    [
+     12,
+     0.58779
+    ],
+    [
+     12,
+     0.33079
+    ]
+   ]
+  },
+  {
+   "name": "DICTO Hexa-Key",
+   "sym": 24,
+   "kinds": [
+    [
+     8,
+     2.80252
+    ],
+    [
+     12,
+     2.28825
+    ],
+    [
+     24,
+     1.98168
+    ],
+    [
+     6,
+     1.61803
+    ],
+    [
+     24,
+     1.90211
+    ],
+    [
+     24,
+     1.61803
+    ],
+    [
+     24,
+     1.41421
+    ]
+   ]
+  },
+  {
+   "name": "Lotus Jewel Axes",
+   "sym": 48,
+   "kinds": [
+    [
+     24,
+     0.95106
+    ],
+    [
+     8,
+     0.53523
+    ]
+   ]
+  },
+  {
+   "name": "DICTO Dodeca-13",
+   "sym": 120,
+   "kinds": [
+    [
+     60,
+     3.44715
+    ],
+    [
+     60,
+     2.845
+    ],
+    [
+     60,
+     2.39841
+    ]
+   ]
+  }
+ ]
+}
