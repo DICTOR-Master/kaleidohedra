@@ -1,0 +1,24 @@
+{
+ "fields": {
+  "title": "The Atlas of the Chains",
+  "authors": "DICTO",
+  "abstract": "Every polytope of the seven reflection-group chains (A3, B3, H3, A4, B4, F4, H4) read from its seed. Theorem 1 (the balance law): for a simple 4-polytope whose cells carry types so that every corner sees the same multiset of types, in every generic sweep the swaps X->Y and Y->X between two contact kinds are equally many, and their number in(X) is given by a closed formula in the face and corner counts, independent of the sweep direction. Theorem 3: in each four-node chain, for the seeds (0,1,1,0), (0,1,1,1), (1,1,1,0) and (1,1,1,1), the balanced swap between the contacts of the two end families occurs E - V + 1 times each way, the cycle rank of the skeleton of the chain's regular polytope: 6 (A4), 17 (B4), 73 (F4), 601 (H4). Observation 4 (the second Vacuus): a central slice that is not a mirror yet carries three or more faces occurs only in the cuboctahedron, the icosidodecahedron, the runcinated 5-cell and the 4D permutohedron; the scan also detects hidden symmetry (three B4 polytopes are F4 polytopes). Observation 5: exact Platonic solids among the corners of every polytope in the atlas; dodecahedra and icosahedra occur only in the H4 family, where every polytope houses all five.",
+  "primary_category": "math.CO",
+  "categories": [
+   "math.CO",
+   "math.MG"
+  ],
+  "msc_class": "52B11, 52B05, 20F55",
+  "license": "CC BY-SA 4.0",
+  "ai_contribution": "ai-assisted",
+  "ai_models": "Claude Code (Opus)",
+  "ai_statement": "The questions (the sweeps of the Queens, their Vacuus, which Platonic solids live in which polytopes) and the names are DICTO's. Claude built the atlas, found and proved the balance law and the cycle-rank theorem, ran the scans and drafted the text. DICTO read and approved the typeset paper before release on Zenodo. No outside referee has checked the proofs, and they are not formally verified.",
+  "repo_url": "https://github.com/DICTOR-Master/kaleidohedra",
+  "process_summary": "11 Nov 2026: Claude read the seed of every polytope in DICTO's registry back from its corners, then built the atlas of all 0/1 seeds of the seven chains: sweeps (h-vectors, swaps), central slices (mirrors and off-mirror), and exact Platonic solids among the corners. The balance law was found in the sweep counts and proved; the swap numbers were matched to the cycle rank E - V + 1 and proved. Released as Version 1 after DICTO read it.",
+  "verification_notes": "atlas.py and atlas2.py over every 0/1 seed of the seven groups; balance_formula.py checks the closed form against every simple atlas row (84 cases, 0 mismatches); inhabitance.py and residents_exact.py count Platonic solids exactly, with controls (cube, dodecahedron, 24-cell, 600-cell, 120-cell). Scripts end with FINAL ok/FAIL. Observations 4 and 5 are computational results over the atlas, not general theorems. Human reading: DICTO read the typeset paper. No outside referee; no formal proof. Data, scripts and checks at the exact commit: https://github.com/DICTOR-Master/kaleidohedra/tree/5745409f/studies/2026-11-11-orbit-polytopes",
+  "negative_results": "An early orbit pass was superseded by an outer-corner pass. The B4 slices first seen as off-mirror turned out to be F4 mirrors (hidden symmetry), which is reported as such.",
+  "external_url": "https://doi.org/10.5281/zenodo.24126802",
+  "comments": "Paper #108 of DICTO's series; Version 1 (10.5281/zenodo.24126803) of Zenodo concept record 10.5281/zenodo.24126802 (this PDF is identical to that version). Licence CC BY-SA 4.0."
+ },
+ "pdf": "dicto-108-atlas-chains.pdf"
+}

@@ -1,0 +1,25 @@
+{
+ "fields": {
+  "title": "The Vacuus of the Queens",
+  "authors": "DICTO",
+  "abstract": "Which faces of a reflection polytope lie on the mirrors of its group can be read from its Coxeter chain. Theorem 1 (the Mirror Law): for the Wythoff polytope of a seed x and a node set J of size n-2 giving its (n-2)-faces, the faces of type J lie on mirrors exactly when the roots of the unringed nodes include one orthogonal to every simple root in J; checked against direct measurement in 228 cases across A3, B3, H3, A4, B4, F4 and H4. Corollary 2: every face of a regular polytope lies on a mirror; the 1200 triangles of the 600-cell and the 720 pentagons of the 120-cell (DICTO's White and Red Queens) lie on the same 60 central slices, the mirrors of H4, 20 triangles and 12 pentagons on each. Corollary 3: for a four-node chain and the seed (0,1,1,0) the faces of the end bonds lie on mirrors and the faces of the middle bond on none; in B4 and H4 these are exactly the faces between cells of different kinds. Corollary 4 places the edges of DICTONIC's golden loop T(x) on or off the three coordinate mirrors. The central slices carrying a polytope's faces are its Vacuus, DICTO's construction.",
+  "primary_category": "math.MG",
+  "categories": [
+   "math.MG",
+   "math.GR",
+   "math.CO"
+  ],
+  "msc_class": "52B11, 51F15, 20F55",
+  "license": "CC BY-SA 4.0",
+  "ai_contribution": "ai-assisted",
+  "ai_models": "Claude Code (Opus)",
+  "ai_statement": "The Vacuus construction, the question of the Queens' Vacuus and the names (the Queens, DICTONIC) are DICTO's. Claude found and proved the Mirror Law and its corollaries, ran the checks and drafted the text. DICTO read and approved the typeset paper before release on Zenodo. No outside referee has checked the proofs, and they are not formally verified.",
+  "repo_url": "https://github.com/DICTOR-Master/kaleidohedra",
+  "process_summary": "11 Nov 2026: the Vacuus of the 600-cell and 120-cell was computed (every 2-face's central hyperplane); both turned out to use exactly the 60 mirrors of H4. Claude looked for the reason, stated the Mirror Law, proved it from the sign property of roots, and checked it against direct measurement for every 0/1 seed and face type in seven reflection groups. Released as Version 1 after DICTO read it.",
+  "verification_notes": "mirror_law.py: the criterion against the normal of span(x, alpha_J) compared with every root, for every seed of zeros and ones and every face type in A3, B3, H3, A4, B4, F4, H4: 228 cases, 0 mismatches. mirror_check.py: every central hyperplane of every face of both Queens computed; both use all 60 mirrors and no other slice. vacuus_middles.py and vacuus_queens.py for the corollaries. Scripts end with FINAL ok/FAIL. Human reading: DICTO read the typeset paper. No outside referee; no formal proof. Data, scripts and checks at the exact commit: https://github.com/DICTOR-Master/kaleidohedra/tree/5745409f/studies/2026-11-11-orbit-polytopes",
+  "negative_results": "An early orbit pass (floating point, inner points) was superseded by an outer-corner pass. No failed attempts at the law itself are recorded.",
+  "external_url": "https://doi.org/10.5281/zenodo.24126800",
+  "comments": "Paper #107 of DICTO's series; Version 1 (10.5281/zenodo.24126801) of Zenodo concept record 10.5281/zenodo.24126800 (this PDF is identical to that version). Licence CC BY-SA 4.0."
+ },
+ "pdf": "dicto-107-queens-vacuus.pdf"
+}

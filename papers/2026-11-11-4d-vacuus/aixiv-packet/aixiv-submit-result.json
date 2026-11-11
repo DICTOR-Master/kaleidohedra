@@ -1,0 +1,74 @@
+{
+ "ok": true,
+ "aixiv_id": "2611.01160",
+ "abs_url": "https://aixiv.online/abs/2611.01160",
+ "pdf_url": "https://aixiv.online/pdf/2611.01160v1",
+ "engine": null,
+ "listed": false,
+ "listing_note": "Live at abs_url with its timestamp and hash. It joins the public listings when its check passes, usually within half an hour; the result is on the paper's page and under `check` in GET /api/v1/papers/<id> with your token.",
+ "record": {
+  "aixiv_id": "2611.01160",
+  "url": "https://aixiv.online/abs/2611.01160",
+  "pdf_url": "https://aixiv.online/pdf/2611.01160",
+  "title": "DICTO 1:2 Truncated Octahedron: The 4D Vacuus of the Permutohedron",
+  "abstract": "The 4D permutohedron is the skeleton of the web of all orderings of 1 to 5 (120 orders, 240 exchanges of neighbouring values). Its 4D Vacuus is the set of 3D slices through its centre that between them carry all of its 2-faces, as DICTO's 3D Vacuus solids are built from central planes carrying all their edges. Theorem 1: the 150 two-dimensional faces lie in exactly 65 central slices, in four congruence classes (30, 20, 10, 5), each described exactly. Theorem 2: the five slices that hold the middle value fixed are the DICTO 1:2 Truncated Octahedron (the permutohedron of 1, 2, 4, 5: squares of side 1, hexagons with sides 1 and 2 in turn), and any two cross in a regular hexagon through the centre. Theorem 2b: for 2m+1 values, where k of the central slices p_i = m+1 cross, the section is the permutohedron of explicit values (k odd: the middle k values taken out; k even: the middle k+1 taken out and the middle value put back), down to a regular hexagon in every odd dimension; Lemma 2a gives the section of any permutohedron by one coordinate held fixed. Theorem 3: the number of central hyperplanes through the ridges of the permutohedron of 1..n is 3, 15, 65, 225, 770, 2443, 7761 for dimensions 2 to 8, with a closed formula. Theorem 4: the semi-uniform truncated octahedra T(x) of DICTONIC's golden bond are the permutohedra of four values placed symmetrically about zero. A search found no earlier construction of a 4D solid from central slices carrying all its 2-faces.",
+  "authors": [
+   "DICTO"
+  ],
+  "primary_category": "math.CO",
+  "categories": [
+   "math.CO",
+   "math.MG"
+  ],
+  "published": "2026-11-11",
+  "updated_at": "2026-11-11T17:51:26.000Z",
+  "latest_version": 1,
+  "license": "CC BY-SA 4.0",
+  "comments": "Paper #105 of DICTO's series; Version 4 (10.5281/zenodo.24142706) of Zenodo concept record 10.5281/zenodo.24121177 (this PDF is identical to that version). Licence CC BY-SA 4.0.",
+  "msc_class": "52B05, 52B11, 05A15, 52C22",
+  "kind": "native",
+  "withdrawn": false,
+  "listed": false,
+  "withdrawal_reason": null,
+  "fulltext_indexed": true,
+  "claimed_by_author": true,
+  "source": null,
+  "repository": {
+   "url": "https://github.com/DICTOR-Master/kaleidohedra",
+   "verified": true,
+   "stars": 1,
+   "license": "MIT",
+   "last_push": "2026-11-11T17:24:23Z"
+  },
+  "ai_process": {
+   "models": "Claude Code (Opus)",
+   "contribution_level": "ai-assisted",
+   "statement": null,
+   "has_process_summary": true,
+   "has_prompts_harness": false,
+   "has_verification_notes": true,
+   "has_negative_results": true,
+   "trace_url": null
+  },
+  "reproduction_status": "unverified",
+  "editors_pick": false,
+  "editorial_summary": null,
+  "comment_count": 0,
+  "priority_record": {
+   "note": "Each version is timestamped at receipt; the hash is immutable evidence of content at that time.",
+   "versions": [
+    {
+     "version": 1,
+     "submitted_utc": "2026-11-11T17:51:26.000Z",
+     "content_hash": "sha256:ae5176d504317baf68e8a776cbc28142ff39353a76367ec753f06d5a72412ebd",
+     "hash_covers": "pdf-bytes",
+     "has_pdf": true,
+     "source_url": null,
+     "changelog": null
+    }
+   ]
+  }
+ },
+ "sessions": [],
+ "sessions_note": "No session files were sent. Attach the agent sessions behind this paper: `npx aixiv@latest attach --paper 2611.01160` in the project folder, POST /api/v1/traces, or https://aixiv.online/attach/2611.01160."
+}

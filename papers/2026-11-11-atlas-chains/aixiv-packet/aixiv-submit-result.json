@@ -1,0 +1,74 @@
+{
+ "ok": true,
+ "aixiv_id": "2611.01163",
+ "abs_url": "https://aixiv.online/abs/2611.01163",
+ "pdf_url": "https://aixiv.online/pdf/2611.01163v1",
+ "engine": null,
+ "listed": false,
+ "listing_note": "Live at abs_url with its timestamp and hash. It joins the public listings when its check passes, usually within half an hour; the result is on the paper's page and under `check` in GET /api/v1/papers/<id> with your token.",
+ "record": {
+  "aixiv_id": "2611.01163",
+  "url": "https://aixiv.online/abs/2611.01163",
+  "pdf_url": "https://aixiv.online/pdf/2611.01163",
+  "title": "The Atlas of the Chains",
+  "abstract": "Every polytope of the seven reflection-group chains (A3, B3, H3, A4, B4, F4, H4) read from its seed. Theorem 1 (the balance law): for a simple 4-polytope whose cells carry types so that every corner sees the same multiset of types, in every generic sweep the swaps X->Y and Y->X between two contact kinds are equally many, and their number in(X) is given by a closed formula in the face and corner counts, independent of the sweep direction. Theorem 3: in each four-node chain, for the seeds (0,1,1,0), (0,1,1,1), (1,1,1,0) and (1,1,1,1), the balanced swap between the contacts of the two end families occurs E - V + 1 times each way, the cycle rank of the skeleton of the chain's regular polytope: 6 (A4), 17 (B4), 73 (F4), 601 (H4). Observation 4 (the second Vacuus): a central slice that is not a mirror yet carries three or more faces occurs only in the cuboctahedron, the icosidodecahedron, the runcinated 5-cell and the 4D permutohedron; the scan also detects hidden symmetry (three B4 polytopes are F4 polytopes). Observation 5: exact Platonic solids among the corners of every polytope in the atlas; dodecahedra and icosahedra occur only in the H4 family, where every polytope houses all five.",
+  "authors": [
+   "DICTO"
+  ],
+  "primary_category": "math.CO",
+  "categories": [
+   "math.CO",
+   "math.MG"
+  ],
+  "published": "2026-11-11",
+  "updated_at": "2026-11-11T18:14:26.000Z",
+  "latest_version": 1,
+  "license": "CC BY-SA 4.0",
+  "comments": "Paper #108 of DICTO's series; Version 1 (10.5281/zenodo.24126803) of Zenodo concept record 10.5281/zenodo.24126802 (this PDF is identical to that version). Licence CC BY-SA 4.0.",
+  "msc_class": "52B11, 52B05, 20F55",
+  "kind": "native",
+  "withdrawn": false,
+  "listed": false,
+  "withdrawal_reason": null,
+  "fulltext_indexed": true,
+  "claimed_by_author": true,
+  "source": null,
+  "repository": {
+   "url": "https://github.com/DICTOR-Master/kaleidohedra",
+   "verified": true,
+   "stars": 1,
+   "license": "MIT",
+   "last_push": "2026-11-11T17:24:23Z"
+  },
+  "ai_process": {
+   "models": "Claude Code (Opus)",
+   "contribution_level": "ai-assisted",
+   "statement": null,
+   "has_process_summary": true,
+   "has_prompts_harness": false,
+   "has_verification_notes": true,
+   "has_negative_results": true,
+   "trace_url": null
+  },
+  "reproduction_status": "unverified",
+  "editors_pick": false,
+  "editorial_summary": null,
+  "comment_count": 0,
+  "priority_record": {
+   "note": "Each version is timestamped at receipt; the hash is immutable evidence of content at that time.",
+   "versions": [
+    {
+     "version": 1,
+     "submitted_utc": "2026-11-11T18:14:26.000Z",
+     "content_hash": "sha256:2add47e7b193a4f7f2372a0918bd6c0dd2a627017878da817aa0a8403ae6f5ef",
+     "hash_covers": "pdf-bytes",
+     "has_pdf": true,
+     "source_url": null,
+     "changelog": null
+    }
+   ]
+  }
+ },
+ "sessions": [],
+ "sessions_note": "No session files were sent. Attach the agent sessions behind this paper: `npx aixiv@latest attach --paper 2611.01163` in the project folder, POST /api/v1/traces, or https://aixiv.online/attach/2611.01163."
+}

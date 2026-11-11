@@ -1,0 +1,75 @@
+{
+ "ok": true,
+ "aixiv_id": "2611.01162",
+ "abs_url": "https://aixiv.online/abs/2611.01162",
+ "pdf_url": "https://aixiv.online/pdf/2611.01162v1",
+ "engine": null,
+ "listed": false,
+ "listing_note": "Live at abs_url with its timestamp and hash. It joins the public listings when its check passes, usually within half an hour; the result is on the paper's page and under `check` in GET /api/v1/papers/<id> with your token.",
+ "record": {
+  "aixiv_id": "2611.01162",
+  "url": "https://aixiv.online/abs/2611.01162",
+  "pdf_url": "https://aixiv.online/pdf/2611.01162",
+  "title": "The Vacuus of the Queens",
+  "abstract": "Which faces of a reflection polytope lie on the mirrors of its group can be read from its Coxeter chain. Theorem 1 (the Mirror Law): for the Wythoff polytope of a seed x and a node set J of size n-2 giving its (n-2)-faces, the faces of type J lie on mirrors exactly when the roots of the unringed nodes include one orthogonal to every simple root in J; checked against direct measurement in 228 cases across A3, B3, H3, A4, B4, F4 and H4. Corollary 2: every face of a regular polytope lies on a mirror; the 1200 triangles of the 600-cell and the 720 pentagons of the 120-cell (DICTO's White and Red Queens) lie on the same 60 central slices, the mirrors of H4, 20 triangles and 12 pentagons on each. Corollary 3: for a four-node chain and the seed (0,1,1,0) the faces of the end bonds lie on mirrors and the faces of the middle bond on none; in B4 and H4 these are exactly the faces between cells of different kinds. Corollary 4 places the edges of DICTONIC's golden loop T(x) on or off the three coordinate mirrors. The central slices carrying a polytope's faces are its Vacuus, DICTO's construction.",
+  "authors": [
+   "DICTO"
+  ],
+  "primary_category": "math.MG",
+  "categories": [
+   "math.MG",
+   "math.GR",
+   "math.CO"
+  ],
+  "published": "2026-11-11",
+  "updated_at": "2026-11-11T18:03:03.000Z",
+  "latest_version": 1,
+  "license": "CC BY-SA 4.0",
+  "comments": "Paper #107 of DICTO's series; Version 1 (10.5281/zenodo.24126801) of Zenodo concept record 10.5281/zenodo.24126800 (this PDF is identical to that version). Licence CC BY-SA 4.0.",
+  "msc_class": "52B11, 51F15, 20F55",
+  "kind": "native",
+  "withdrawn": false,
+  "listed": false,
+  "withdrawal_reason": null,
+  "fulltext_indexed": true,
+  "claimed_by_author": true,
+  "source": null,
+  "repository": {
+   "url": "https://github.com/DICTOR-Master/kaleidohedra",
+   "verified": true,
+   "stars": 1,
+   "license": "MIT",
+   "last_push": "2026-11-11T17:24:23Z"
+  },
+  "ai_process": {
+   "models": "Claude Code (Opus)",
+   "contribution_level": "ai-assisted",
+   "statement": null,
+   "has_process_summary": true,
+   "has_prompts_harness": false,
+   "has_verification_notes": true,
+   "has_negative_results": true,
+   "trace_url": null
+  },
+  "reproduction_status": "unverified",
+  "editors_pick": false,
+  "editorial_summary": null,
+  "comment_count": 0,
+  "priority_record": {
+   "note": "Each version is timestamped at receipt; the hash is immutable evidence of content at that time.",
+   "versions": [
+    {
+     "version": 1,
+     "submitted_utc": "2026-11-11T18:03:03.000Z",
+     "content_hash": "sha256:a63897ac26d94dfffdee6fb219bde96d1c9235d636dc4549f4e9b72d14148e2e",
+     "hash_covers": "pdf-bytes",
+     "has_pdf": true,
+     "source_url": null,
+     "changelog": null
+    }
+   ]
+  }
+ },
+ "sessions": [],
+ "sessions_note": "No session files were sent. Attach the agent sessions behind this paper: `npx aixiv@latest attach --paper 2611.01162` in the project folder, POST /api/v1/traces, or https://aixiv.online/attach/2611.01162."
+}
