@@ -47,7 +47,7 @@ html=f'''<!doctype html>
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
 <h1>The Golden Ladder · Rung 0<br><span style="font-size:0.72em;font-weight:normal">From a Point to the Triangle of Mirrors</span></h1>
 <div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · dictospheres.com · A study companion to The Golden Ladder (DICTO DOI: 10.5281/zenodo.23966554) · Sample, version 2 · 8 November 2026<br>
-DICTO proposed a ladder of lessons with mnemonics as bridges, to be climbed up and down. Drafting with Claude (Anthropic).</div>
+DICTO: a ladder of lessons with mnemonics as bridges, to be climbed up and down. Drafting with Claude (Anthropic).</div>
 <div class="status">Draft for DICTO's reading: sample of the format, simpler second try (one idea per step, no formulas). Not a record.</div>
 <p class="hook">Thirteen small steps from a dot on paper to the first rung of the Ladder. Each step: one idea, one picture, one phrase to remember, what comes next, what it rests on, and something to try with your hands. Going down, read from 13 back to 1.</p>
 {body}

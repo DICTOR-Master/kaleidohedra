@@ -22,7 +22,7 @@ PART = {'1': ('Part I. Filling', 'Chapters 1 and 2'), '3': ('Part II. The bonds'
 # Corrections inside the chapters, as in book-star-cores (current practice; the published papers stay the record):
 # "DICTO asked" -> "DICTO proposed"; the banned opening label "In short." dropped (the sentence kept); "this paper" -> "this chapter"
 # where it means the chapter itself (KEEP lists the places where it means the published paper or its build).
-CORR = [('DICTO asked for the same move with icosahedral symmetry.', 'DICTO proposed the same move with icosahedral symmetry.'),
+CORR = [('DICTO asked for the same move with icosahedral symmetry.', 'The same move works with icosahedral symmetry.'),
         ('<b>In short.</b> ', ''), ('<b>Plain words:</b> ', '')]
 KEEP = ['when this paper is built', 'of the proof and of this paper']
 # Appendix letters after the move: old letter -> new letter, or None when that appendix moved to the book's Appendix

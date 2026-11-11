@@ -9,7 +9,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); P = os.path.dirname(HERE); RO
 CH = [('1', 'spiked-ti', 78), ('2', 'star-cores-a', 79), ('3', 'star-cores-b', 81), ('4', 'star-cores-c', 80), ('5', 'star-cores-d', 85)]
 PART = {'1': 'Part I. The TI Star', '2': 'Part II. The star of every solid', '5': 'Part III. Eccentric pieces'}
 CORR = [('and asked whether such factors form a series.', 'and proposed that such factors might form a series.'),
-        ('DICTO asked whether his sloping bases also stop the six convex pieces.', 'DICTO proposed his sloping bases for the six convex pieces as well.')]
+        ('DICTO asked whether his sloping bases also stop the six convex pieces.', "DICTO's sloping bases serve the six convex pieces as well.")]
 INDEX_TERMS = ['TI Star', 'Star Halo', 'TI Star core', 'truncated icosahedron', 'icosahedron', 'dodecahedron', 'icosidodecahedron',
     'rhombic triacontahedron', 'pentakis dodecahedron', 'Platonic', 'Archimedean', 'Catalan', 'polar', 'polar spikes', 'halo', 'core',
     'star chain', 'growth rule', 'Universal PiTet', 'gnomon', 'Cleo star', 'golden ratio', 'golden spike', 'doubling', 'Conway', 'join',

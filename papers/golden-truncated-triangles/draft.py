@@ -12,7 +12,7 @@ Established today (exact, sympy over Q(sqrt5), from the DICTO Solids dataset v7)
 RULES = ('Draft a short geometry paper by the artist DICTO, HTML (<h1>,<h2>,<p>,<table>). Title: "DICTO-Kepler Golden Truncations: Archimedean Patterns '
  'Cut at Golden Depths". Structure: plain 3-sentence opening for non-mathematicians; Main Theorem stated first (from the facts); definitions (truncated '
  'triangle, cutting depth); results table; the two cross-links; classical background; what is DICTO\'s; conclusion. Use ONLY the facts given; never invent '
- 'numbers or references; mark any unsupported historical point [CHECK]. "DICTO proposed" for his ideas, never "asked"; "we" for joint work. Platonic solids '
+ 'numbers or references; mark any unsupported historical point [CHECK]. State his ideas directly, no running credit ("DICTO proposed", "asked"); "we" for joint work. Platonic solids '
  'in DICTO order (dodecahedron, icosahedron, cube, tetrahedron, octahedron). Never write "flat-ended" (except inside the cited title of #20), "book", '
  '"in plain words", "simply put". Mark figures as <p class="fig">[FIGURE: ...]</p>. About 1500 words.')
 key = (pathlib.Path.home() / '.config/dicto/llama-key').read_text().strip()

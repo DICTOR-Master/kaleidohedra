@@ -58,7 +58,7 @@ def link_html(h):
         else: out.append(p if inA else link_text(p))
     return ''.join(out)
 CORR=[('<div class="abstract"><b>In short.</b> ','<div class="abstract">'),   # v8: banned label (print guard)
-      ('DICTO asked whether they belong to that one structure or to stacking itself.','DICTO proposed that they belong not to that one structure but to stacking itself.'),   # v8: banned phrase (print guard)
+      ('DICTO asked whether they belong to that one structure or to stacking itself.','They belong not to that one structure but to stacking itself.'),   # v8: banned phrase (print guard)
       ('With this paper the series on real materials (#68, #70–#73) is complete.','The series on real materials (Chapters 8 to 12) was followed by a companion on magnets, Chapter 13.'),
       ('This study closes the line of work on materials.','This chapter closes the series on single materials; Part IV returns to the perovskites and adds the Frank–Kasper phases and the approximants of quasicrystals, under one theorem (Chapter 15).')]
 INDEX_TERMS=['trapezo-rhombic dodecahedron','anticuboctahedron','Dyskin','Thue–Morse','Window Law','Swap defect','Frank–Kasper','Yarmolyuk','quasicrystal','approximant','Ammann–Beenker','HexOct','HexOct-K','Wang','silicon carbide','silicon','germanium','diamond','lonsdaleite','ice','tin','cobalt','iron','titanium','zirconium','magnesium','hydrogen','CrCoNi','perovskite','BaRuO','BaMnO','LiCoO','cathode','GaAs','InP','nanowire','spin ice','kagome','pyrochlore','Mn<sub>3</sub>Sn','Mn<sub>3</sub>Ir','rock salt','cadmium iodide','zinc blende','Laves','Fibonacci','golden ratio','ANNNI','stacking fault','Pauling','Onsager','Jagodzinski','Ganesha','Janus','octet','rhombic dodecahedron']

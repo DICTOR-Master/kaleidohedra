@@ -19,8 +19,8 @@ G = [
  ("cube", r"\bcubes?\b", "A sugar cube; the ordinary die.", "6 squares, three at each corner."),
  ("tetrahedron", r"[Tt]etrahedr", "The original Tetra Pak milk carton; a pyramid on a triangle.", "4 triangles, three at each corner; the simplest solid."),
  ("octahedron", r"[Oo]ctahedr", "Two pyramids glued base to base; many natural diamond crystals.", "8 triangles, four at each corner."),
- ("Archimedean / Catalan solids", r"Archimedean|Catalan", "A football is Archimedean.", "Archimedean: faces of two or more regular kinds, every corner alike (13 of them). Catalan: their duals (see dual)."),
- ("truncated", r"[Tt]runcat", "Slicing the corners off a cheese cube; the football is a truncated icosahedron.", "Corners cut off flat, so each corner becomes a new small face."),
+ ("Archimedean / Catalan solids", r"Archimedean|Catalan", "The truncated icosahedron is Archimedean.", "Archimedean: faces of two or more regular kinds, every corner alike (13 of them). Catalan: their duals (see dual)."),
+ ("truncated", r"[Tt]runcat", "Slicing the corners off a cheese cube; C<sub>60</sub>, the carbon cage, is a truncated icosahedron.", "Corners cut off flat, so each corner becomes a new small face."),
  ("rhombic dodecahedron", r"rhombic dodecahedr", "Garnet crystals; the three-diamond floor of a bee's cell is part of one.", "12 identical diamond-shaped faces; fills space with copies of itself."),
  ("cuboctahedron", r"[Cc]uboctahedr", "Halfway between a cube and an octahedron: cut a cube's corners to the edge midpoints.", "8 triangles and 6 squares; the shape around one orange in a tight stack."),
  ("stellation", r"[Ss]tellat", "A Christmas star ornament.", "Extend the faces of a solid outward until they meet again; the result is a star."),
@@ -53,7 +53,7 @@ G = [
  ("pyrochlore", r"[Pp]yrochlore", "A climbing frame of pyramids touching only at their tips.", "Kagome's 3D cousin: tetrahedra joined corner to corner. Named after a mineral that turns green in a flame (Greek pyr, fire; chloros, green)."),
  ("spin ice", r"[Ss]pin ice", "Tiny compass needles at every corner, two pointing in and two out at each pyramid.", "Magnets on a pyrochlore network that obey the same two-in, two-out rule as hydrogen in water ice."),
  ("perovskite", r"[Pp]erovskite", "The crystal family behind the newest solar cells.", "A large family of crystals with one shared layout of atoms."),
- ("icosahedral", r"[Ii]cosahedral", "Shaped like the 20-sided die: virus shells, footballs.", "Having the symmetry of the icosahedron, including five-fold turns."),
+ ("icosahedral", r"[Ii]cosahedral", "Shaped like the 20-sided die: virus shells, the C<sub>60</sub> carbon cage.", "Having the symmetry of the icosahedron, including five-fold turns."),
  ("quasicrystal · aperiodic", r"[Qq]uasicrystal|[Aa]periodic", "Islamic girih tilework: strict rules, yet the pattern never repeats.", "Ordered by a rule, but never repeating by shifting. Found in real alloys (Shechtman, Nobel Prize 2011)."),
  ("Penrose tiling", r"Penrose", "Two diamond-shaped tiles that cover a floor without the pattern ever repeating.", "The best-known aperiodic tiling (Roger Penrose, 1974)."),
  ("approximant", r"[Aa]pproximant", "As 22/7 comes close to π.", "A repeating crystal that comes very close to a quasicrystal."),
@@ -108,7 +108,7 @@ out = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Ever
 <ul>
 <li><b>Knitting.</b> The roadmap's "row-by-row patterns used in sweaters" is decoration, a pattern knitted into a fabric. Knitting Crystals (#83) is structural: the knitted sheets are the close-packed layers, and the linking yarns run straight on at a c layer and turn back at an h layer, so the fabric is the crystal. The glossary uses DICTO's version only.</li>
 <li><b>Platonic order.</b> The five solids are always listed Dodeca, Icosa, Cube, Tetra, Octa: D·I·C·T·O.</li>
-<li><b>Facts checked:</b> Tetra Pak's first carton (1952) was a tetrahedron; virus shells and the football are icosahedral and truncated icosahedral; garnet grows as rhombic dodecahedra; a bee cell's floor is three rhombi; kagome is the Japanese basket weave (kago, basket; me, eye); pyrochlore turns green in a flame; Dehn 1900 (Hilbert's third problem); Shechtman, Nobel Prize in Chemistry 2011; Viazovska, E8, 2016; Penrose tiling 1974; Kepler, Mysterium Cosmographicum 1596 and Harmonices Mundi 1619.</li>
+<li><b>Facts checked:</b> Tetra Pak's first carton (1952) was a tetrahedron; virus shells and the C<sub>60</sub> carbon cage are icosahedral and truncated icosahedral; garnet grows as rhombic dodecahedra; a bee cell's floor is three rhombi; kagome is the Japanese basket weave (kago, basket; me, eye); pyrochlore turns green in a flame; Dehn 1900 (Hilbert's third problem); Shechtman, Nobel Prize in Chemistry 2011; Viazovska, E8, 2016; Penrose tiling 1974; Kepler, Mysterium Cosmographicum 1596 and Harmonices Mundi 1619.</li>
 </ul>
 </body></html>'''
 open('~/k-research/papers/site-glossary/paper.html', 'w').write(out)

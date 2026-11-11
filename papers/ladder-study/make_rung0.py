@@ -189,7 +189,7 @@ table.t{{border-collapse:collapse;font-size:9pt;margin:3mm 0;width:100%}} table.
 <h1>The Golden Ladder · Rung 0<br><span style="font-size:0.72em;font-weight:normal">From a Point to the Triangle of Mirrors</span></h1>
 <div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
 A study companion to The Golden Ladder (DICTO DOI: 10.5281/zenodo.23966554) · Sample lesson · 8 November 2026<br>
-DICTO proposed a ladder of lessons with mnemonics as bridges between the steps, to be climbed upwards and downwards. Drafting with Claude (Anthropic).</div>
+DICTO: a ladder of lessons with mnemonics as bridges between the steps, to be climbed upwards and downwards. Drafting with Claude (Anthropic).</div>
 <div class="status">Draft for DICTO's reading: a sample of the format, not a record. If the format works, the same pattern continues rung by rung through the book, with each step's place in the Concordance added.</div>
 
 <p class="hook">The Golden Ladder starts at one small triangle of mirrors. Why there, and why should anyone see that as a first step? This lesson climbs to it from nothing: from a point, through the kinds of triangle, the floor, the mirror and the fold, to the ball and its three mirror triangles. Every step has a mnemonic, a bridge to the step above and a bridge to the step below, so the ladder can be climbed both ways.</p>

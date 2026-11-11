@@ -8,7 +8,7 @@ NEW = {
  '#31a': "Around one of DICTO's Ogdoecontahedra, packed in its crystal, small golden pieces gather into a 50-faced star, the OCD Stella; copies of it fill about 87% of a room.",
  '#91': "Grow a shape inside its partner shape and watch the overlap change: DICTO played this game into four dimensions, where it gives solids that are golden in every cell.",
  '#89': "Slice a four-dimensional solid like a loaf of bread, and the golden pairs of the five perfect shapes turn up among the slices: DICTO found all five.",
- '#78': "Cut the football shape from its centre into 32 pyramids, turn them inside out, and you have a star; DICTO found the football and the star in one endless cycle.",
+ '#78': "Cut the truncated icosahedron from its centre into 32 pyramids, turn them inside out, and you have a star; DICTO found the truncated icosahedron and the star in one endless cycle.",
  '#74': "Tiny magnets in spin ice keep a two-in, two-out rule, like the hydrogen in water ice; DICTO showed their loops, and so their frozen-in disorder, stay the same however the layers are stacked.",
  '#54': "A gnomon is the piece that turns a shape into a bigger copy of itself, as each new chamber of a seashell does; DICTO carried it into three dimensions.",
  '#22': "An icosahedron and a dodecahedron, each filling the shell around the other, again and again like Russian dolls without end; DICTO built it to 20,497 pieces.",
