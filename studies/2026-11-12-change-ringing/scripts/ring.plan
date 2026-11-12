@@ -1,0 +1,13 @@
+question: change ringing on the permutohedron (Paradigm chapter): Hamiltonian cycles of the 4-bell change graph and truncated octahedron, CCCBR method plain courses, Doubles callings, Minor extents, geodesics rounds to backrounds
+answer_looks_like: ok/FAIL lines with counts (Hamiltonian cycles, orbits, callings, geodesic counts), data/ring-pilot.json, FINAL ok/FAIL
+pilot: ring-pilot 18.5 s; first full run (ring) 21.4 s FINAL ok; this rerun only adds the names of the stage 3, 5, 6 extents to the data
+size_estimate: pilot sizes plus all 9267 stage 3-6 methods of the collection (plain courses of at most 720 rows each), figures
+memory_estimate_gb: 1 (cage 2 GB)
+time_estimate_h: 0.2
+bounded_by: fixed task list; Doubles searches capped at 900 s each, Minor at 600 s each; whole job capped at 1 h
+control: positive: Hamiltonian cycles hexagon 1, K4 3, cube 6, dodecahedron 30; Stanley's reduced-word counts 2, 16, 768, 292864; face counts of the permutohedra; CCCBR lead heads for every method; Plain Bob Minimus plain course a 24-row extent; Wenham's Grandsire Doubles PBPBPS x2; negative: Petersen graph 0 cycles, Plain Bob Minimus with lead end 14 or 34 and the Plain Bob Doubles plain course rung to 120 must fail as extents
+progress: PROGRESS k/12 per stage
+ledger_checked: no ledger entry on change ringing, bells or Hamiltonian cycles of the permutohedron
+ledger_override: none
+if_ok: chapter 13 of the Permutohedron book (draft PDF to papers-to-read), study README, ledger and Concordance, commit and push research-fig3
+if_fail_or_cap: fix the failing line and rerun the pilot; the counts that passed stand

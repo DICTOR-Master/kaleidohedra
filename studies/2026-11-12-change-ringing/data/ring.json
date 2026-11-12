@@ -1,0 +1,10164 @@
+{
+ "changes_count": {
+  "2": 1,
+  "3": 2,
+  "4": 4,
+  "5": 7,
+  "6": 12,
+  "7": 20,
+  "8": 33,
+  "9": 54,
+  "10": 88,
+  "11": 143,
+  "12": 232
+ },
+ "faces": {
+  "3": {
+   "corners": 6,
+   "edges": 6,
+   "hexagons": 1,
+   "squares": 0
+  },
+  "4": {
+   "corners": 24,
+   "edges": 36,
+   "hexagons": 8,
+   "squares": 6
+  },
+  "5": {
+   "corners": 120,
+   "edges": 240,
+   "hexagons": 60,
+   "squares": 90
+  },
+  "6": {
+   "corners": 720,
+   "edges": 1800,
+   "hexagons": 480,
+   "squares": 1080
+  }
+ },
+ "ham": {
+  "P3": 1,
+  "R3": 1,
+  "P4": 44,
+  "R4": 5396
+ },
+ "aut": {
+  "P4": 48,
+  "R4": 48
+ },
+ "census4": {
+  "P4": {
+   "cycles": 44,
+   "orbits": 4,
+   "orbits_by_symmetry_order": {
+    "2": 1,
+    "4": 1,
+    "12": 2
+   },
+   "cycles_by_cross_changes": {
+    "0": 44
+   },
+   "cycles_by_word_period": {
+    "8": 8,
+    "12": 12,
+    "24": 24
+   },
+   "cycles_backrounds_antipodal": 12
+  },
+  "R4": {
+   "cycles": 5396,
+   "orbits": 162,
+   "orbits_by_symmetry_order": {
+    "1": 75,
+    "2": 67,
+    "4": 11,
+    "6": 4,
+    "8": 2,
+    "12": 3
+   },
+   "cycles_by_cross_changes": {
+    "0": 44,
+    "2": 504,
+    "4": 1560,
+    "6": 2016,
+    "8": 1044,
+    "10": 216,
+    "12": 12
+   },
+   "cycles_by_word_period": {
+    "6": 12,
+    "8": 44,
+    "12": 96,
+    "24": 5244
+   },
+   "cycles_backrounds_antipodal": 288
+  }
+ },
+ "most_symmetric": {
+  "P4": [
+   {
+    "name": "most symmetric, orbit of 4",
+    "n": 4,
+    "rows": 24,
+    "closes": true,
+    "true": true,
+    "extent": true,
+    "word": "(14.34.14.12.14.12.14.34)^3",
+    "period": 8,
+    "parts": 3,
+    "swaps_hist": {
+     "1": 24
+    },
+    "edges_used": 24,
+    "squares_crossed": 0,
+    "higher_cubes_crossed": 0,
+    "squares_turned": 0,
+    "hexagons_turned": 6,
+    "backrounds_at": 12,
+    "backrounds_antipodal": true,
+    "symmetry_order": 12,
+    "symmetry_direction_preserving": 6,
+    "central_inversion": true,
+    "symmetry_type": {
+     "improper order 2": 4,
+     "improper order 6": 2,
+     "proper order 1": 1,
+     "proper order 2": 3,
+     "proper order 3": 2
+    },
+    "symmetry_elements": [
+     [
+      "1234",
+      false
+     ],
+     [
+      "1234",
+      true
+     ],
+     [
+      "1243",
+      false
+     ],
+     [
+      "1243",
+      true
+     ],
+     [
+      "1324",
+      false
+     ],
+     [
+      "1324",
+      true
+     ],
+     [
+      "1342",
+      false
+     ],
+     [
+      "1342",
+      true
+     ],
+     [
+      "1423",
+      false
+     ],
+     [
+      "1423",
+      true
+     ],
+     [
+      "1432",
+      false
+     ],
+     [
+      "1432",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "most symmetric, orbit of 4",
+    "n": 4,
+    "rows": 24,
+    "closes": true,
+    "true": true,
+    "extent": true,
+    "word": "(14.12.34.12.14.34.12.34)^3",
+    "period": 8,
+    "parts": 3,
+    "swaps_hist": {
+     "1": 24
+    },
+    "edges_used": 24,
+    "squares_crossed": 0,
+    "higher_cubes_crossed": 0,
+    "squares_turned": 6,
+    "hexagons_turned": 6,
+    "backrounds_at": 12,
+    "backrounds_antipodal": true,
+    "symmetry_order": 12,
+    "symmetry_direction_preserving": 6,
+    "central_inversion": true,
+    "symmetry_type": {
+     "improper order 2": 4,
+     "improper order 6": 2,
+     "proper order 1": 1,
+     "proper order 2": 3,
+     "proper order 3": 2
+    },
+    "symmetry_elements": [
+     [
+      "1234",
+      false
+     ],
+     [
+      "1234",
+      true
+     ],
+     [
+      "1243",
+      false
+     ],
+     [
+      "1243",
+      true
+     ],
+     [
+      "3214",
+      false
+     ],
+     [
+      "3214",
+      true
+     ],
+     [
+      "3241",
+      false
+     ],
+     [
+      "3241",
+      true
+     ],
+     [
+      "4213",
+      false
+     ],
+     [
+      "4213",
+      true
+     ],
+     [
+      "4231",
+      false
+     ],
+     [
+      "4231",
+      true
+     ]
+    ]
+   }
+  ],
+  "R4": [
+   {
+    "name": "most symmetric, orbit of 4",
+    "n": 4,
+    "rows": 24,
+    "closes": true,
+    "true": true,
+    "extent": true,
+    "word": "(34.x.14.x.12.x.14.x)^3",
+    "period": 8,
+    "parts": 3,
+    "swaps_hist": {
+     "1": 12,
+     "2": 12
+    },
+    "edges_used": 12,
+    "squares_crossed": 6,
+    "higher_cubes_crossed": 0,
+    "squares_turned": 0,
+    "hexagons_turned": 0,
+    "backrounds_at": 12,
+    "backrounds_antipodal": true,
+    "symmetry_order": 12,
+    "symmetry_direction_preserving": 6,
+    "central_inversion": true,
+    "symmetry_type": {
+     "improper order 2": 4,
+     "improper order 6": 2,
+     "proper order 1": 1,
+     "proper order 2": 3,
+     "proper order 3": 2
+    },
+    "symmetry_elements": [
+     [
+      "1234",
+      false
+     ],
+     [
+      "1234",
+      true
+     ],
+     [
+      "1324",
+      false
+     ],
+     [
+      "1324",
+      true
+     ],
+     [
+      "2134",
+      false
+     ],
+     [
+      "2134",
+      true
+     ],
+     [
+      "2314",
+      false
+     ],
+     [
+      "2314",
+      true
+     ],
+     [
+      "3124",
+      false
+     ],
+     [
+      "3124",
+      true
+     ],
+     [
+      "3214",
+      false
+     ],
+     [
+      "3214",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "most symmetric, orbit of 4",
+    "n": 4,
+    "rows": 24,
+    "closes": true,
+    "true": true,
+    "extent": true,
+    "word": "(14.34.14.12.14.12.14.34)^3",
+    "period": 8,
+    "parts": 3,
+    "swaps_hist": {
+     "1": 24
+    },
+    "edges_used": 24,
+    "squares_crossed": 0,
+    "higher_cubes_crossed": 0,
+    "squares_turned": 0,
+    "hexagons_turned": 6,
+    "backrounds_at": 12,
+    "backrounds_antipodal": true,
+    "symmetry_order": 12,
+    "symmetry_direction_preserving": 6,
+    "central_inversion": true,
+    "symmetry_type": {
+     "improper order 2": 4,
+     "improper order 6": 2,
+     "proper order 1": 1,
+     "proper order 2": 3,
+     "proper order 3": 2
+    },
+    "symmetry_elements": [
+     [
+      "1234",
+      false
+     ],
+     [
+      "1234",
+      true
+     ],
+     [
+      "1243",
+      false
+     ],
+     [
+      "1243",
+      true
+     ],
+     [
+      "1324",
+      false
+     ],
+     [
+      "1324",
+      true
+     ],
+     [
+      "1342",
+      false
+     ],
+     [
+      "1342",
+      true
+     ],
+     [
+      "1423",
+      false
+     ],
+     [
+      "1423",
+      true
+     ],
+     [
+      "1432",
+      false
+     ],
+     [
+      "1432",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "most symmetric, orbit of 4",
+    "n": 4,
+    "rows": 24,
+    "closes": true,
+    "true": true,
+    "extent": true,
+    "word": "(14.12.34.12.14.34.12.34)^3",
+    "period": 8,
+    "parts": 3,
+    "swaps_hist": {
+     "1": 24
+    },
+    "edges_used": 24,
+    "squares_crossed": 0,
+    "higher_cubes_crossed": 0,
+    "squares_turned": 6,
+    "hexagons_turned": 6,
+    "backrounds_at": 12,
+    "backrounds_antipodal": true,
+    "symmetry_order": 12,
+    "symmetry_direction_preserving": 6,
+    "central_inversion": true,
+    "symmetry_type": {
+     "improper order 2": 4,
+     "improper order 6": 2,
+     "proper order 1": 1,
+     "proper order 2": 3,
+     "proper order 3": 2
+    },
+    "symmetry_elements": [
+     [
+      "1234",
+      false
+     ],
+     [
+      "1234",
+      true
+     ],
+     [
+      "1243",
+      false
+     ],
+     [
+      "1243",
+      true
+     ],
+     [
+      "3214",
+      false
+     ],
+     [
+      "3214",
+      true
+     ],
+     [
+      "3241",
+      false
+     ],
+     [
+      "3241",
+      true
+     ],
+     [
+      "4213",
+      false
+     ],
+     [
+      "4213",
+      true
+     ],
+     [
+      "4231",
+      false
+     ],
+     [
+      "4231",
+      true
+     ]
+    ]
+   }
+  ]
+ },
+ "most_symmetric_rows": {
+  "P4": [
+   [
+    "1234",
+    "1324",
+    "3124",
+    "3214",
+    "3241",
+    "3421",
+    "3412",
+    "3142",
+    "1342",
+    "1432",
+    "4132",
+    "4312",
+    "4321",
+    "4231",
+    "4213",
+    "4123",
+    "1423",
+    "1243",
+    "2143",
+    "2413",
+    "2431",
+    "2341",
+    "2314",
+    "2134"
+   ],
+   [
+    "1234",
+    "1324",
+    "1342",
+    "3142",
+    "3124",
+    "3214",
+    "2314",
+    "2341",
+    "3241",
+    "3421",
+    "3412",
+    "4312",
+    "4321",
+    "4231",
+    "2431",
+    "2413",
+    "4213",
+    "4123",
+    "4132",
+    "1432",
+    "1423",
+    "1243",
+    "2143",
+    "2134"
+   ]
+  ],
+  "R4": [
+   [
+    "1234",
+    "2134",
+    "1243",
+    "1423",
+    "4132",
+    "4123",
+    "1432",
+    "1342",
+    "3124",
+    "1324",
+    "3142",
+    "3412",
+    "4321",
+    "4312",
+    "3421",
+    "3241",
+    "2314",
+    "3214",
+    "2341",
+    "2431",
+    "4213",
+    "4231",
+    "2413",
+    "2143"
+   ],
+   [
+    "1234",
+    "1324",
+    "3124",
+    "3214",
+    "3241",
+    "3421",
+    "3412",
+    "3142",
+    "1342",
+    "1432",
+    "4132",
+    "4312",
+    "4321",
+    "4231",
+    "4213",
+    "4123",
+    "1423",
+    "1243",
+    "2143",
+    "2413",
+    "2431",
+    "2341",
+    "2314",
+    "2134"
+   ],
+   [
+    "1234",
+    "1324",
+    "1342",
+    "3142",
+    "3124",
+    "3214",
+    "2314",
+    "2341",
+    "3241",
+    "3421",
+    "3412",
+    "4312",
+    "4321",
+    "4231",
+    "2431",
+    "2413",
+    "4213",
+    "4123",
+    "4132",
+    "1432",
+    "1423",
+    "1243",
+    "2143",
+    "2134"
+   ]
+  ]
+ },
+ "cccbr": {
+  "parsed": 9057,
+  "lead_heads_match": 9057,
+  "lead_head_mismatch": [],
+  "skipped": {
+   "no swap": 210
+  },
+  "by_stage": {
+   "3": {
+    "methods": 85,
+    "true plain course": 2,
+    "plain course is an extent": 2,
+    "extent using edges only": 2
+   },
+   "4": {
+    "methods": 1415,
+    "true plain course": 193,
+    "plain course is an extent": 139,
+    "extent using edges only": 5
+   },
+   "5": {
+    "methods": 1226,
+    "true plain course": 1198,
+    "plain course is an extent": 184,
+    "extent using edges only": 2
+   },
+   "6": {
+    "methods": 6331,
+    "true plain course": 6232,
+    "plain course is an extent": 1
+   }
+  },
+  "skipped_by_stage": {
+   "3": 132,
+   "4": 76,
+   "5": 1,
+   "6": 1
+  },
+  "extent_names": {
+   "3": [
+    "Original Singles [edges only]",
+    "Reverse Original Singles [edges only]"
+   ],
+   "5": [
+    "Crambo Doubles [edges only]",
+    "Historic Imber Treble Place Doubles [edges only]",
+    "... 184 in all"
+   ],
+   "6": [
+    "I Can't Believe It's Not Plain Bob Treble Place Minor"
+   ]
+  }
+ },
+ "minimus_named_orbits": {
+  "named_orbits": 43,
+  "of": 162,
+  "methods": 139,
+  "groups": [
+   [
+    "A Snake Treble Place Minimus",
+    "Badgers Treble Place Minimus",
+    "Chaddleworth Treble Place Minimus",
+    "Give You Up Treble Place Minimus",
+    "Run Around Treble Place Minimus",
+    "Stanford Dingley Treble Place Minimus"
+   ],
+   [
+    "Angela Schuyler Treble Place Minimus",
+    "Dorton Treble Place Minimus",
+    "Elysium Treble Place Minimus",
+    "Isle of Avalon Treble Place Minimus",
+    "Run to the Hills Treble Place Minimus",
+    "Transylvania Treble Place Minimus"
+   ],
+   [
+    "Annabeth Chase Treble Place Minimus",
+    "Hazel Levesque Treble Place Minimus",
+    "Hel Treble Place Minimus",
+    "Reverse Spirolux Treble Place Minimus",
+    "Spirolux Treble Place Minimus",
+    "Ur\u00f0r Treble Place Minimus"
+   ],
+   [
+    "Ashbury Court Treble Place Minimus",
+    "Millfield Court Treble Place Minimus",
+    "Reverse Ashbury Court Treble Place Minimus",
+    "Reverse Millfield Court Treble Place Minimus",
+    "Reverse Steeping Court Treble Place Minimus",
+    "Steeping Court Treble Place Minimus"
+   ],
+   [
+    "Asphodel Treble Place Minimus",
+    "El Dorado Treble Place Minimus",
+    "Elizabeth Schuyler Treble Place Minimus",
+    "Heavy Metal Soul Music Treble Place Minimus",
+    "Lismore Treble Place Minimus",
+    "Paschendale Treble Place Minimus"
+   ],
+   [
+    "Aston Cantlow Treble Place Minimus",
+    "Edstone Treble Place Minimus",
+    "Enigma Treble Place Minimus",
+    "Gosty Hill Treble Place Minimus",
+    "Higgledy Piggledy Treble Place Minimus",
+    "Ryder's Green Treble Place Minimus"
+   ],
+   [
+    "Barkham Treble Place Minimus",
+    "Frank Zhang Treble Place Minimus",
+    "F\u00f3lkvangr Treble Place Minimus",
+    "Leo Valdez Treble Place Minimus",
+    "Lower Basildon Treble Place Minimus",
+    "Ver\u00f0andi Treble Place Minimus"
+   ],
+   [
+    "Bayswater Treble Place Minimus",
+    "Fear of the Dark Treble Place Minimus",
+    "Margaret Schuyler Treble Place Minimus",
+    "Montsegur Treble Place Minimus",
+    "Tartarus Treble Place Minimus",
+    "Topsy Turvy Treble Place Minimus"
+   ],
+   [
+    "Beans on Toast Treble Place Minimus",
+    "Chaotic Treble Place Minimus",
+    "Dragicorn Treble Place Minimus",
+    "Guisborough Treble Place Minimus",
+    "Otachic Treble Place Minimus",
+    "Tchoaic Treble Place Minimus"
+   ],
+   [
+    "Boxford Treble Place Minimus",
+    "Netherton Treble Place Minimus",
+    "Nimrod Treble Place Minimus",
+    "Piglet Treble Place Minimus",
+    "The Crow Treble Place Minimus",
+    "Yarningale Treble Place Minimus"
+   ],
+   [
+    "Coseley Treble Place Minimus",
+    "Coughton Treble Place Minimus",
+    "Farmer's Bridge Treble Place Minimus",
+    "Nigel Farage for Prime Minimus Treble Place Minimus",
+    "Ufton Nervet Treble Place Minimus",
+    "Wootton Treble Place Minimus"
+   ],
+   [
+    "Jason Grace Treble Place Minimus",
+    "Newtown Treble Place Minimus",
+    "Nico Di Angelo Treble Place Minimus",
+    "Skuld Treble Place Minimus",
+    "St Denys' Pleasure Treble Place Minimus",
+    "Valh\u01ebll Treble Place Minimus"
+   ],
+   [
+    "Brayford Court Treble Place Minimus",
+    "Reverse Brayford Court Treble Place Minimus",
+    "Reverse St Hugh's Court Treble Place Minimus",
+    "St Hugh's Court Treble Place Minimus",
+    "Swanpool Court Treble Place Minimus"
+   ],
+   [
+    "Dunholme Court Treble Place Minimus",
+    "Reverse St Mary-Le-Wigford Court Treble Place Minimus",
+    "Reverse Wigford Court Treble Place Minimus",
+    "St Mary-le-Wigford Court Treble Place Minimus",
+    "Wigford Court Treble Place Minimus"
+   ],
+   [
+    "Ermine Court Treble Place Minimus",
+    "Lincoln Court Treble Place Minimus",
+    "Lindum Court Treble Place Minimus",
+    "Reverse Lincoln Court Treble Place Minimus",
+    "Reverse Lindum Court Treble Place Minimus"
+   ],
+   [
+    "Audrey Minimus",
+    "Elsie Mary Minimus",
+    "Ethel Minimus",
+    "Ma Minimus"
+   ],
+   [
+    "Ayston Minimus",
+    "Morcott Minimus",
+    "Reverse Tinwell Minimus",
+    "Tinwell Minimus"
+   ],
+   [
+    "Lindisfarne Minimus",
+    "Reverse Lindisfarne Minimus",
+    "Reverse Stanton Minimus",
+    "Stanton Minimus"
+   ],
+   [
+    "Brimpton Treble Place Minimus",
+    "Let You Down Treble Place Minimus",
+    "Mushroom Treble Place Minimus"
+   ],
+   [
+    "Double Steeping Court Treble Place Minimus",
+    "Icknield Court Treble Place Minimus",
+    "Meadow Court Treble Place Minimus"
+   ],
+   [
+    "Double Wooly-Back Treble Place Minimus",
+    "Wooly Mammoth Treble Place Minimus",
+    "Wooly Rhinoceros Treble Place Minimus"
+   ],
+   [
+    "Ada Minimus",
+    "Flat Rock Minimus"
+   ],
+   [
+    "Baines Johnson Minimus",
+    "Lyndon Minimus"
+   ],
+   [
+    "Canterbury Place Minimus",
+    "Reverse Canterbury Place Minimus"
+   ],
+   [
+    "Daisy Minimus",
+    "Ridlington Minimus"
+   ],
+   [
+    "Erin Minimus",
+    "Reverse Erin Minimus"
+   ],
+   [
+    "Gertrude Minimus",
+    "Ulu\u1e5fu Minimus"
+   ],
+   [
+    "Plain Bob Minimus",
+    "Reverse Bob Minimus"
+   ],
+   [
+    "Reverse Court Place Minimus",
+    "Single Court Place Minimus"
+   ],
+   [
+    "Reverse St Nicholas Bob Minimus",
+    "St Nicholas Bob Minimus"
+   ],
+   [
+    "Burnt Oak Treble Place Minimus"
+   ],
+   [
+    "Crossbank Minimus"
+   ],
+   [
+    "Dockyard Minimus"
+   ],
+   [
+    "Double Bob Minimus"
+   ],
+   [
+    "Double Canterbury Place Minimus"
+   ],
+   [
+    "Double Court Place Minimus"
+   ],
+   [
+    "Freight Treble Place Minimus"
+   ],
+   [
+    "Landbeach Treble Place Minimus"
+   ],
+   [
+    "Platinum Pink Treble Place Minimus"
+   ],
+   [
+    "Shipping Container Treble Place Minimus"
+   ],
+   [
+    "Somerville College Treble Place Minimus"
+   ],
+   [
+    "St Swithun Minimus"
+   ],
+   [
+    "Teesport Treble Place Minimus"
+   ]
+  ],
+  "edges_only": [
+   "Lyndon Minimus",
+   "Baines Johnson Minimus",
+   "Double Court Place Minimus",
+   "Double Canterbury Place Minimus",
+   "Landbeach Treble Place Minimus"
+  ],
+  "orbits_by_period": {
+   "6": 2,
+   "8": 7,
+   "12": 6,
+   "24": 147
+  },
+  "named_orbits_by_period": {
+   "6": 2,
+   "8": 7,
+   "12": 6,
+   "24": 28
+  }
+ },
+ "top_orbits_named": {
+  "(34.x.14.x.12.x.14.x)^3": [
+   "Double Bob Minimus"
+  ],
+  "(14.34.14.12.14.12.14.34)^3": [
+   "Double Court Place Minimus"
+  ],
+  "(14.12.34.12.14.34.12.34)^3": [
+   "Double Canterbury Place Minimus"
+  ]
+ },
+ "plain_changes_4_orbit_symmetry": 12,
+ "plain_changes_4_named_as": [
+  "Double Canterbury Place Minimus"
+ ],
+ "minimus_analyses": {
+  "Reverse Erin Minimus": {
+   "name": "Reverse Erin Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(x.12.14.12.14.12)^4",
+   "period": 6,
+   "parts": 4,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 4,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 8,
+   "symmetry_direction_preserving": 4,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "improper order 4": 2,
+    "proper order 1": 1,
+    "proper order 2": 3
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "2143",
+     false
+    ],
+    [
+     "2413",
+     false
+    ],
+    [
+     "3142",
+     false
+    ],
+    [
+     "3412",
+     false
+    ],
+    [
+     "4231",
+     false
+    ],
+    [
+     "4321",
+     false
+    ]
+   ],
+   "orbit_size": 6,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Erin Minimus": {
+   "name": "Erin Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(x.34.14.34.14.34)^4",
+   "period": 6,
+   "parts": 4,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 4,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 8,
+   "symmetry_direction_preserving": 4,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "improper order 4": 2,
+    "proper order 1": 1,
+    "proper order 2": 3
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "2143",
+     false
+    ],
+    [
+     "2413",
+     false
+    ],
+    [
+     "3142",
+     false
+    ],
+    [
+     "3412",
+     false
+    ],
+    [
+     "4231",
+     false
+    ],
+    [
+     "4321",
+     false
+    ]
+   ],
+   "orbit_size": 6,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Reverse Stanton Minimus": {
+   "name": "Reverse Stanton Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(12.x.12.14.34.14)^4",
+   "period": 6,
+   "parts": 4,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 8,
+   "backrounds_at": 15,
+   "backrounds_antipodal": false,
+   "symmetry_order": 8,
+   "symmetry_direction_preserving": 4,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "improper order 4": 2,
+    "proper order 1": 1,
+    "proper order 2": 3
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ],
+    [
+     "2143",
+     false
+    ],
+    [
+     "2341",
+     false
+    ],
+    [
+     "3214",
+     false
+    ],
+    [
+     "3412",
+     false
+    ],
+    [
+     "4123",
+     false
+    ],
+    [
+     "4321",
+     false
+    ]
+   ],
+   "orbit_size": 6,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Stanton Minimus": {
+   "name": "Stanton Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(34.x.34.14.12.14)^4",
+   "period": 6,
+   "parts": 4,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 8,
+   "backrounds_at": 15,
+   "backrounds_antipodal": false,
+   "symmetry_order": 8,
+   "symmetry_direction_preserving": 4,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "improper order 4": 2,
+    "proper order 1": 1,
+    "proper order 2": 3
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ],
+    [
+     "2143",
+     false
+    ],
+    [
+     "2341",
+     false
+    ],
+    [
+     "3214",
+     false
+    ],
+    [
+     "3412",
+     false
+    ],
+    [
+     "4123",
+     false
+    ],
+    [
+     "4321",
+     false
+    ]
+   ],
+   "orbit_size": 6,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Lindisfarne Minimus": {
+   "name": "Lindisfarne Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(34.14.12.14.34.x)^4",
+   "period": 6,
+   "parts": 4,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 8,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 8,
+   "symmetry_direction_preserving": 4,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "improper order 4": 2,
+    "proper order 1": 1,
+    "proper order 2": 3
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "2143",
+     false
+    ],
+    [
+     "2413",
+     false
+    ],
+    [
+     "3142",
+     false
+    ],
+    [
+     "3412",
+     false
+    ],
+    [
+     "4231",
+     false
+    ],
+    [
+     "4321",
+     false
+    ]
+   ],
+   "orbit_size": 6,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Reverse Lindisfarne Minimus": {
+   "name": "Reverse Lindisfarne Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(12.14.34.14.12.x)^4",
+   "period": 6,
+   "parts": 4,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 8,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 8,
+   "symmetry_direction_preserving": 4,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "improper order 4": 2,
+    "proper order 1": 1,
+    "proper order 2": 3
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "2143",
+     false
+    ],
+    [
+     "2413",
+     false
+    ],
+    [
+     "3142",
+     false
+    ],
+    [
+     "3412",
+     false
+    ],
+    [
+     "4231",
+     false
+    ],
+    [
+     "4321",
+     false
+    ]
+   ],
+   "orbit_size": 6,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Ayston Minimus": {
+   "name": "Ayston Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(12.14.x.14.34.14.12.14.x.14.12.14)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 17,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "2143",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Tinwell Minimus": {
+   "name": "Tinwell Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(12.14.x.14.34.14.34.14.x.14.34.14)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 17,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "2143",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Reverse Tinwell Minimus": {
+   "name": "Reverse Tinwell Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(34.14.x.14.12.14.12.14.x.14.12.14)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 17,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "2143",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Morcott Minimus": {
+   "name": "Morcott Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(34.14.x.14.12.14.34.14.x.14.34.14)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 17,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "2143",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Lyndon Minimus": {
+   "name": "Lyndon Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(12.14.12.14.34.14.34.14.12.14.34.14)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 24
+   },
+   "edges_used": 24,
+   "squares_crossed": 0,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 8,
+   "backrounds_at": 18,
+   "backrounds_antipodal": false,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1,
+    "proper order 2": 3
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     true
+    ],
+    [
+     "2134",
+     true
+    ],
+    [
+     "2143",
+     false
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Ridlington Minimus": {
+   "name": "Ridlington Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(34.14.34.x.34.14.34.14.12.x.12.14)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 8,
+   "backrounds_at": 7,
+   "backrounds_antipodal": false,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1,
+    "proper order 2": 3
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "2143",
+     false
+    ],
+    [
+     "3412",
+     false
+    ],
+    [
+     "4321",
+     false
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Daisy Minimus": {
+   "name": "Daisy Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(14.34.x.34.14.12.14.12.x.12.14.12)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 8,
+   "backrounds_at": 17,
+   "backrounds_antipodal": false,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1,
+    "proper order 2": 3
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "2143",
+     false
+    ],
+    [
+     "3412",
+     false
+    ],
+    [
+     "4321",
+     false
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Baines Johnson Minimus": {
+   "name": "Baines Johnson Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(12.14.34.14.12.14.34.14.34.14.12.14)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 24
+   },
+   "edges_used": 24,
+   "squares_crossed": 0,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 8,
+   "backrounds_at": 6,
+   "backrounds_antipodal": false,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1,
+    "proper order 2": 3
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     true
+    ],
+    [
+     "2134",
+     true
+    ],
+    [
+     "2143",
+     false
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Principle",
+   "flags": ""
+  },
+  "Plain Bob Minimus": {
+   "name": "Plain Bob Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(x.14.x.14.x.14.x.12)^3",
+   "period": 8,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 12,
+    "2": 12
+   },
+   "edges_used": 12,
+   "squares_crossed": 6,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 0,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false,
+   "symmetry_order": 6,
+   "symmetry_direction_preserving": 3,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 3,
+    "proper order 1": 1,
+    "proper order 3": 2
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1342",
+     false
+    ],
+    [
+     "1423",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 8,
+   "class": "Bob",
+   "flags": "plain"
+  },
+  "Double Bob Minimus": {
+   "name": "Double Bob Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(x.14.x.34.x.14.x.12)^3",
+   "period": 8,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 12,
+    "2": 12
+   },
+   "edges_used": 12,
+   "squares_crossed": 6,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 0,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 12,
+   "symmetry_direction_preserving": 6,
+   "central_inversion": true,
+   "symmetry_type": {
+    "improper order 2": 4,
+    "improper order 6": 2,
+    "proper order 1": 1,
+    "proper order 2": 3,
+    "proper order 3": 2
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1234",
+     true
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1243",
+     true
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1324",
+     true
+    ],
+    [
+     "1342",
+     false
+    ],
+    [
+     "1342",
+     true
+    ],
+    [
+     "1423",
+     false
+    ],
+    [
+     "1423",
+     true
+    ],
+    [
+     "1432",
+     false
+    ],
+    [
+     "1432",
+     true
+    ]
+   ],
+   "orbit_size": 4,
+   "class": "Bob",
+   "flags": "plain"
+  },
+  "Reverse Bob Minimus": {
+   "name": "Reverse Bob Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(x.14.x.34.x.14.x.14)^3",
+   "period": 8,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 12,
+    "2": 12
+   },
+   "edges_used": 12,
+   "squares_crossed": 6,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 0,
+   "backrounds_at": 20,
+   "backrounds_antipodal": false,
+   "symmetry_order": 6,
+   "symmetry_direction_preserving": 3,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 3,
+    "proper order 1": 1,
+    "proper order 3": 2
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1342",
+     false
+    ],
+    [
+     "1423",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 8,
+   "class": "Bob",
+   "flags": "plain"
+  },
+  "Reverse St Nicholas Bob Minimus": {
+   "name": "Reverse St Nicholas Bob Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(x.14.12.34.12.14.x.12)^3",
+   "period": 8,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 3,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 6,
+   "symmetry_direction_preserving": 3,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 3,
+    "proper order 1": 1,
+    "proper order 3": 2
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1342",
+     false
+    ],
+    [
+     "1423",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 8,
+   "class": "Bob",
+   "flags": "plain"
+  },
+  "St Nicholas Bob Minimus": {
+   "name": "St Nicholas Bob Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(34.14.x.34.x.14.34.12)^3",
+   "period": 8,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 3,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 6,
+   "symmetry_direction_preserving": 3,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 3,
+    "proper order 1": 1,
+    "proper order 3": 2
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1342",
+     false
+    ],
+    [
+     "1423",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 8,
+   "class": "Bob",
+   "flags": "plain"
+  },
+  "Reverse Court Place Minimus": {
+   "name": "Reverse Court Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(x.14.12.14.12.14.x.14)^3",
+   "period": 8,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 3,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 6,
+   "symmetry_direction_preserving": 3,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 3,
+    "proper order 1": 1,
+    "proper order 3": 2
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1342",
+     false
+    ],
+    [
+     "1423",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 8,
+   "class": "Place",
+   "flags": "plain"
+  },
+  "Canterbury Place Minimus": {
+   "name": "Canterbury Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(x.14.12.34.12.14.x.14)^3",
+   "period": 8,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 3,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 6,
+   "symmetry_direction_preserving": 3,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 3,
+    "proper order 1": 1,
+    "proper order 3": 2
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1342",
+     false
+    ],
+    [
+     "1423",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 8,
+   "class": "Place",
+   "flags": "plain"
+  },
+  "Reverse Canterbury Place Minimus": {
+   "name": "Reverse Canterbury Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(34.14.x.14.x.14.34.12)^3",
+   "period": 8,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 3,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 6,
+   "symmetry_direction_preserving": 3,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 3,
+    "proper order 1": 1,
+    "proper order 3": 2
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1342",
+     false
+    ],
+    [
+     "1423",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 8,
+   "class": "Place",
+   "flags": "plain"
+  },
+  "Single Court Place Minimus": {
+   "name": "Single Court Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(34.14.x.14.x.14.34.14)^3",
+   "period": 8,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 3,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 6,
+   "symmetry_direction_preserving": 3,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 3,
+    "proper order 1": 1,
+    "proper order 3": 2
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1342",
+     false
+    ],
+    [
+     "1423",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 8,
+   "class": "Place",
+   "flags": "plain"
+  },
+  "Double Court Place Minimus": {
+   "name": "Double Court Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(34.14.12.14.12.14.34.14)^3",
+   "period": 8,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 24
+   },
+   "edges_used": 24,
+   "squares_crossed": 0,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 12,
+   "symmetry_direction_preserving": 6,
+   "central_inversion": true,
+   "symmetry_type": {
+    "improper order 2": 4,
+    "improper order 6": 2,
+    "proper order 1": 1,
+    "proper order 2": 3,
+    "proper order 3": 2
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1234",
+     true
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1243",
+     true
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1324",
+     true
+    ],
+    [
+     "1342",
+     false
+    ],
+    [
+     "1342",
+     true
+    ],
+    [
+     "1423",
+     false
+    ],
+    [
+     "1423",
+     true
+    ],
+    [
+     "1432",
+     false
+    ],
+    [
+     "1432",
+     true
+    ]
+   ],
+   "orbit_size": 4,
+   "class": "Place",
+   "flags": "plain"
+  },
+  "Double Canterbury Place Minimus": {
+   "name": "Double Canterbury Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(34.14.12.34.12.14.34.12)^3",
+   "period": 8,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 24
+   },
+   "edges_used": 24,
+   "squares_crossed": 0,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 6,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 12,
+   "symmetry_direction_preserving": 6,
+   "central_inversion": true,
+   "symmetry_type": {
+    "improper order 2": 4,
+    "improper order 6": 2,
+    "proper order 1": 1,
+    "proper order 2": 3,
+    "proper order 3": 2
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1234",
+     true
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1243",
+     true
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1324",
+     true
+    ],
+    [
+     "1342",
+     false
+    ],
+    [
+     "1342",
+     true
+    ],
+    [
+     "1423",
+     false
+    ],
+    [
+     "1423",
+     true
+    ],
+    [
+     "1432",
+     false
+    ],
+    [
+     "1432",
+     true
+    ]
+   ],
+   "orbit_size": 4,
+   "class": "Place",
+   "flags": "plain"
+  },
+  "Ada Minimus": {
+   "name": "Ada Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(12.x.12.14.12.14.12.x.12.14.x.14)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 4,
+   "backrounds_at": 18,
+   "backrounds_antipodal": false,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ],
+    [
+     "3214",
+     false
+    ],
+    [
+     "3412",
+     false
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Hybrid",
+   "flags": ""
+  },
+  "Gertrude Minimus": {
+   "name": "Gertrude Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(12.x.12.14.x.14.12.x.12.14.34.14)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 6,
+   "backrounds_antipodal": false,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ],
+    [
+     "3214",
+     false
+    ],
+    [
+     "3412",
+     false
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Hybrid",
+   "flags": ""
+  },
+  "Ethel Minimus": {
+   "name": "Ethel Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(12.x.12.14.12.14.34.x.34.14.x.14)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 18,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Hybrid",
+   "flags": ""
+  },
+  "Ma Minimus": {
+   "name": "Ma Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(12.x.12.14.x.14.34.x.34.14.34.14)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 6,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Hybrid",
+   "flags": ""
+  },
+  "Elsie Mary Minimus": {
+   "name": "Elsie Mary Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(14.34.14.34.x.34.14.x.14.12.x.12)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 18,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Hybrid",
+   "flags": ""
+  },
+  "Audrey Minimus": {
+   "name": "Audrey Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(14.x.14.34.x.34.14.12.14.12.x.12)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 6,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Hybrid",
+   "flags": ""
+  },
+  "Flat Rock Minimus": {
+   "name": "Flat Rock Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(34.14.34.x.34.14.x.14.34.x.34.14)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 4,
+   "backrounds_at": 18,
+   "backrounds_antipodal": false,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "2134",
+     false
+    ],
+    [
+     "2143",
+     false
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Hybrid",
+   "flags": ""
+  },
+  "Ulu\u1e5fu Minimus": {
+   "name": "Ulu\u1e5fu Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(14.34.x.34.14.x.14.34.x.34.14.12)^2",
+   "period": 12,
+   "parts": 2,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 6,
+   "backrounds_antipodal": false,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "2134",
+     false
+    ],
+    [
+     "2143",
+     false
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Hybrid",
+   "flags": ""
+  },
+  "Dockyard Minimus": {
+   "name": "Dockyard Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "12.14.x.12.x.14.x.34.x.14.12.x.12.14.x.34.x.14.x.12.x.14.12.x",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 6,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 4,
+   "backrounds_at": 13,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "2143",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Hybrid",
+   "flags": ""
+  },
+  "Shipping Container Treble Place Minimus": {
+   "name": "Shipping Container Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "12.14.34.14.x.34.x.14.12.14.12.34.12.14.12.14.x.34.x.14.34.14.12.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 5,
+   "backrounds_at": 17,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Freight Treble Place Minimus": {
+   "name": "Freight Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.12.x.14.x.14.34.x.34.14.x.34.x.14.34.x.34.14.x.14.x.12.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 6,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 3,
+   "backrounds_at": 8,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "St Swithun Minimus": {
+   "name": "St Swithun Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.34.12.34.14.12.14.34.14.x.14.34.12.34.14.12.14.x.14.34.12.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 22,
+    "2": 2
+   },
+   "edges_used": 22,
+   "squares_crossed": 1,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 6,
+   "backrounds_at": 15,
+   "backrounds_antipodal": false,
+   "symmetry_order": 1,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ]
+   ],
+   "orbit_size": 48,
+   "class": "Hybrid",
+   "flags": ""
+  },
+  "Dunholme Court Treble Place Minimus": {
+   "name": "Dunholme Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.x.14.x.14.34.14.x.14.x.14.34.14.x.14.x.14.x.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 3,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Ermine Court Treble Place Minimus": {
+   "name": "Ermine Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.14.x.14.x.14.34.14.x.14.x.14.34.14.x.14.x.14.12.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Lismore Treble Place Minimus": {
+   "name": "Lismore Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.14.x.14.34.12.34.14.x.14.x.14.34.12.34.14.x.14.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 3,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "St Mary-le-Wigford Court Treble Place Minimus": {
+   "name": "St Mary-le-Wigford Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.14.x.14.34.14.34.14.x.14.x.14.x.14.34.14.x.14.x.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 3,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Wigford Court Treble Place Minimus": {
+   "name": "Wigford Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.x.14.34.14.x.14.x.14.x.14.34.14.34.14.x.14.x.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 3,
+   "backrounds_at": 20,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Lincoln Court Treble Place Minimus": {
+   "name": "Lincoln Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.14.12.14.34.14.34.14.12.14.x.14.x.14.34.14.x.14.x.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 5,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Lindum Court Treble Place Minimus": {
+   "name": "Lindum Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.x.14.34.14.x.14.x.14.12.14.34.14.34.14.12.14.x.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 5,
+   "backrounds_at": 20,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Brayford Court Treble Place Minimus": {
+   "name": "Brayford Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.12.14.34.14.34.14.12.14.x.14.34.14.34.14.x.14.x.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Swanpool Court Treble Place Minimus": {
+   "name": "Swanpool Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.14.x.14.34.14.34.14.x.14.x.14.34.14.34.14.x.14.12.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 5,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "St Hugh's Court Treble Place Minimus": {
+   "name": "St Hugh's Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.x.14.34.14.34.14.x.14.12.14.34.14.34.14.12.14.x.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Spirolux Treble Place Minimus": {
+   "name": "Spirolux Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.34.12.34.14.x.34.x.14.34.12.34.14.x.34.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 3,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Reverse Spirolux Treble Place Minimus": {
+   "name": "Reverse Spirolux Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.x.12.x.14.x.34.x.14.x.12.x.14.12.34.12.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 3,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Stanford Dingley Treble Place Minimus": {
+   "name": "Stanford Dingley Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.34.12.14.34.12.34.14.x.34.x.14.34.12.34.14.12.34.12.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 22,
+    "2": 2
+   },
+   "edges_used": 22,
+   "squares_crossed": 1,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 5,
+   "hexagons_turned": 6,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Ufton Nervet Treble Place Minimus": {
+   "name": "Ufton Nervet Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.x.14.x.12.x.14.x.14.x.14.x.12.x.14.x.14.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 2,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Higgledy Piggledy Treble Place Minimus": {
+   "name": "Higgledy Piggledy Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.12.14.x.12.x.14.x.14.x.14.x.12.x.14.12.14.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 4,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Topsy Turvy Treble Place Minimus": {
+   "name": "Topsy Turvy Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.14.12.14.34.12.34.14.x.14.x.14.34.12.34.14.12.14.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 5,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Newtown Treble Place Minimus": {
+   "name": "Newtown Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.34.12.34.14.12.34.12.14.34.12.34.14.x.34.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Chaotic Treble Place Minimus": {
+   "name": "Chaotic Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.34.x.14.x.12.x.14.x.34.x.14.x.12.x.14.x.34.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 2,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Barkham Treble Place Minimus": {
+   "name": "Barkham Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.34.x.14.34.12.34.14.12.34.12.14.34.12.34.14.x.34.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 4,
+   "hexagons_turned": 5,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Lower Basildon Treble Place Minimus": {
+   "name": "Lower Basildon Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.34.12.14.x.12.x.14.12.34.12.14.x.12.x.14.12.34.12.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 4,
+   "hexagons_turned": 5,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "St Denys' Pleasure Treble Place Minimus": {
+   "name": "St Denys' Pleasure Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.34.12.14.x.12.x.14.x.34.x.14.x.12.x.14.12.34.12.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Brimpton Treble Place Minimus": {
+   "name": "Brimpton Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.34.12.34.14.x.34.x.14.34.12.34.14.12.34.12.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 4,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": true,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1234",
+     true
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1243",
+     true
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Chaddleworth Treble Place Minimus": {
+   "name": "Chaddleworth Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.34.12.34.14.12.34.12.14.34.12.34.14.12.34.12.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 22,
+    "2": 2
+   },
+   "edges_used": 22,
+   "squares_crossed": 1,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 5,
+   "hexagons_turned": 6,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Boxford Treble Place Minimus": {
+   "name": "Boxford Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.14.12.14.x.12.x.14.x.14.x.14.x.12.x.14.12.14.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 2,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Dorton Treble Place Minimus": {
+   "name": "Dorton Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.12.14.34.12.34.14.x.14.x.14.34.12.34.14.12.14.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 5,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Double Wooly-Back Treble Place Minimus": {
+   "name": "Double Wooly-Back Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.34.x.14.x.12.x.14.12.34.12.14.x.12.x.14.x.34.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 4,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": true,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1234",
+     true
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1243",
+     true
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Guisborough Treble Place Minimus": {
+   "name": "Guisborough Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.x.12.x.14.12.34.12.14.x.12.x.14.x.34.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 2,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Piglet Treble Place Minimus": {
+   "name": "Piglet Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.34.14.x.14.x.34.x.14.x.14.34.14.x.34.x.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 2,
+   "backrounds_at": 20,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Heavy Metal Soul Music Treble Place Minimus": {
+   "name": "Heavy Metal Soul Music Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.x.14.x.14.x.34.x.14.x.14.x.14.12.34.12.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 3,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Aston Cantlow Treble Place Minimus": {
+   "name": "Aston Cantlow Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.34.14.x.14.12.34.12.14.x.14.34.14.x.34.x.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 4,
+   "backrounds_at": 20,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Run to the Hills Treble Place Minimus": {
+   "name": "Run to the Hills Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.34.14.x.14.12.34.12.14.x.14.34.14.12.34.12.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 5,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Fear of the Dark Treble Place Minimus": {
+   "name": "Fear of the Dark Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.34.14.x.14.x.34.x.14.x.14.34.14.12.34.12.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 5,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Coughton Treble Place Minimus": {
+   "name": "Coughton Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.x.14.x.14.12.34.12.14.x.14.x.14.x.34.x.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 2,
+   "backrounds_at": 20,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Steeping Court Treble Place Minimus": {
+   "name": "Steeping Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.12.14.34.14.34.14.12.14.12.14.34.14.34.14.12.14.x.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 22,
+    "2": 2
+   },
+   "edges_used": 22,
+   "squares_crossed": 1,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Reverse Steeping Court Treble Place Minimus": {
+   "name": "Reverse Steeping Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.14.12.14.34.14.x.14.12.14.12.14.x.14.34.14.12.14.12.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 22,
+    "2": 2
+   },
+   "edges_used": 22,
+   "squares_crossed": 1,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Double Steeping Court Treble Place Minimus": {
+   "name": "Double Steeping Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.12.14.34.14.x.14.12.14.12.14.x.14.34.14.12.14.x.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": true,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1234",
+     true
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1324",
+     true
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Somerville College Treble Place Minimus": {
+   "name": "Somerville College Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.34.12.34.14.12.34.12.14.34.12.34.14.x.34.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 4,
+   "hexagons_turned": 6,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     true
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Burnt Oak Treble Place Minimus": {
+   "name": "Burnt Oak Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.34.12.34.14.x.34.x.14.x.12.x.14.x.34.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 4,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     true
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Nigel Farage for Prime Minimus Treble Place Minimus": {
+   "name": "Nigel Farage for Prime Minimus Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.14.x.14.x.12.x.14.x.14.x.14.34.12.34.14.x.14.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 2,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Millfield Court Treble Place Minimus": {
+   "name": "Millfield Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.14.12.14.34.14.34.14.12.14.x.14.34.14.34.14.x.14.12.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 22,
+    "2": 2
+   },
+   "edges_used": 22,
+   "squares_crossed": 1,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Reverse Millfield Court Treble Place Minimus": {
+   "name": "Reverse Millfield Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.14.12.14.x.14.34.14.12.14.12.14.34.14.34.14.12.14.12.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 22,
+    "2": 2
+   },
+   "edges_used": 22,
+   "squares_crossed": 1,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Icknield Court Treble Place Minimus": {
+   "name": "Icknield Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.14.12.14.x.14.34.14.12.14.x.14.34.14.34.14.x.14.12.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": true,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1234",
+     true
+    ],
+    [
+     "1243",
+     false
+    ],
+    [
+     "1243",
+     true
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Ashbury Court Treble Place Minimus": {
+   "name": "Ashbury Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.14.x.14.34.14.34.14.x.14.12.14.34.14.34.14.12.14.12.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 22,
+    "2": 2
+   },
+   "edges_used": 22,
+   "squares_crossed": 1,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Reverse Ashbury Court Treble Place Minimus": {
+   "name": "Reverse Ashbury Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.14.12.14.34.14.34.14.12.14.12.14.34.14.x.14.12.14.12.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 22,
+    "2": 2
+   },
+   "edges_used": 22,
+   "squares_crossed": 1,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Meadow Court Treble Place Minimus": {
+   "name": "Meadow Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.14.x.14.34.14.34.14.x.14.12.14.34.14.x.14.12.14.12.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": true,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1234",
+     true
+    ],
+    [
+     "1432",
+     false
+    ],
+    [
+     "1432",
+     true
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Reverse Brayford Court Treble Place Minimus": {
+   "name": "Reverse Brayford Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.14.12.14.34.14.x.14.12.14.12.14.x.14.x.14.12.14.12.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Reverse St Mary-Le-Wigford Court Treble Place Minimus": {
+   "name": "Reverse St Mary-Le-Wigford Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.14.12.14.x.14.x.14.x.14.12.14.x.14.x.14.12.14.x.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 3,
+   "backrounds_at": 20,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Reverse Lincoln Court Treble Place Minimus": {
+   "name": "Reverse Lincoln Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.14.12.14.34.14.x.14.x.14.12.14.x.14.x.14.12.14.x.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 5,
+   "backrounds_at": 20,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Reverse St Hugh's Court Treble Place Minimus": {
+   "name": "Reverse St Hugh's Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.14.12.14.x.14.x.14.12.14.12.14.x.14.34.14.12.14.12.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Reverse Wigford Court Treble Place Minimus": {
+   "name": "Reverse Wigford Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.14.12.14.x.14.x.14.12.14.x.14.x.14.x.14.12.14.12.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 3,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Reverse Lindum Court Treble Place Minimus": {
+   "name": "Reverse Lindum Court Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.14.12.14.x.14.x.14.12.14.x.14.x.14.34.14.12.14.12.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 5,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Yarningale Treble Place Minimus": {
+   "name": "Yarningale Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.14.x.14.x.12.x.14.x.14.12.14.x.12.x.14.x.14.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 2,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Wootton Treble Place Minimus": {
+   "name": "Wootton Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.14.x.14.34.12.34.14.x.14.x.14.x.12.x.14.x.14.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 2,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Edstone Treble Place Minimus": {
+   "name": "Edstone Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.14.x.14.34.12.34.14.x.14.12.14.x.12.x.14.x.14.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 4,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Nimrod Treble Place Minimus": {
+   "name": "Nimrod Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.14.x.14.x.12.x.14.12.14.x.14.x.12.x.14.x.14.12.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 2,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Enigma Treble Place Minimus": {
+   "name": "Enigma Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.14.x.14.x.12.x.14.12.14.x.14.34.12.34.14.x.14.12.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 4,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Farmer's Bridge Treble Place Minimus": {
+   "name": "Farmer's Bridge Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.x.14.x.14.x.34.x.14.x.14.x.14.12.34.12.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 2,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "The Crow Treble Place Minimus": {
+   "name": "The Crow Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.34.x.14.x.14.x.14.x.34.x.14.34.14.x.14.x.34.x.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 2,
+   "backrounds_at": 20,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Ryder's Green Treble Place Minimus": {
+   "name": "Ryder's Green Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.34.x.14.x.14.x.14.x.34.x.14.34.14.x.14.12.34.12.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 4,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Coseley Treble Place Minimus": {
+   "name": "Coseley Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.x.14.x.14.x.34.x.14.x.14.x.14.x.34.x.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 2,
+   "backrounds_at": 20,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Netherton Treble Place Minimus": {
+   "name": "Netherton Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.x.14.34.14.x.34.x.14.x.14.x.14.x.34.x.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 2,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Gosty Hill Treble Place Minimus": {
+   "name": "Gosty Hill Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.x.14.34.14.x.34.x.14.x.14.x.14.x.34.x.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 4,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "El Dorado Treble Place Minimus": {
+   "name": "El Dorado Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.x.14.x.14.12.34.12.14.x.14.x.14.x.34.x.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 3,
+   "backrounds_at": 20,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Isle of Avalon Treble Place Minimus": {
+   "name": "Isle of Avalon Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.34.12.14.x.14.x.14.12.34.12.14.34.14.x.14.12.34.12.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 5,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Montsegur Treble Place Minimus": {
+   "name": "Montsegur Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.34.12.14.x.14.x.14.12.34.12.14.34.14.x.14.x.34.x.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 5,
+   "backrounds_at": 20,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1243",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Paschendale Treble Place Minimus": {
+   "name": "Paschendale Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.x.14.x.14.12.34.12.14.x.14.x.14.12.34.12.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 3,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Transylvania Treble Place Minimus": {
+   "name": "Transylvania Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.x.14.34.14.12.34.12.14.x.14.x.14.12.34.12.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 5,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Bayswater Treble Place Minimus": {
+   "name": "Bayswater Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.x.14.34.14.12.34.12.14.x.14.x.14.12.34.12.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 5,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Angela Schuyler Treble Place Minimus": {
+   "name": "Angela Schuyler Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.x.14.34.12.34.14.12.14.x.14.34.12.34.14.x.14.12.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 5,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Elizabeth Schuyler Treble Place Minimus": {
+   "name": "Elizabeth Schuyler Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.x.14.34.12.34.14.x.14.x.14.x.12.x.14.x.14.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 3,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Margaret Schuyler Treble Place Minimus": {
+   "name": "Margaret Schuyler Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.x.14.34.12.34.14.12.14.x.14.x.12.x.14.x.14.12.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 5,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Elysium Treble Place Minimus": {
+   "name": "Elysium Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.14.x.14.34.12.34.14.x.14.12.14.34.12.34.14.x.14.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 5,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Asphodel Treble Place Minimus": {
+   "name": "Asphodel Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.14.x.14.x.12.x.14.x.14.x.14.34.12.34.14.x.14.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 3,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Tartarus Treble Place Minimus": {
+   "name": "Tartarus Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.14.x.14.x.12.x.14.x.14.12.14.34.12.34.14.x.14.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 5,
+   "backrounds_at": 19,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Give You Up Treble Place Minimus": {
+   "name": "Give You Up Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.34.12.14.34.12.34.14.12.34.12.14.34.12.34.14.x.34.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 22,
+    "2": 2
+   },
+   "edges_used": 22,
+   "squares_crossed": 1,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 5,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Let You Down Treble Place Minimus": {
+   "name": "Let You Down Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.34.12.14.x.12.x.14.12.34.12.14.34.12.34.14.x.34.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 4,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": true,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1234",
+     true
+    ],
+    [
+     "1432",
+     false
+    ],
+    [
+     "1432",
+     true
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Run Around Treble Place Minimus": {
+   "name": "Run Around Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.34.12.14.x.12.x.14.12.34.12.14.34.12.34.14.12.34.12.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 22,
+    "2": 2
+   },
+   "edges_used": 22,
+   "squares_crossed": 1,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 5,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Badgers Treble Place Minimus": {
+   "name": "Badgers Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.34.x.14.34.12.34.14.12.34.12.14.34.12.34.14.12.34.12.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 22,
+    "2": 2
+   },
+   "edges_used": 22,
+   "squares_crossed": 1,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 5,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Mushroom Treble Place Minimus": {
+   "name": "Mushroom Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.34.x.14.34.12.34.14.12.34.12.14.x.12.x.14.12.34.12.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 4,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": true,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1234",
+     true
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1324",
+     true
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "A Snake Treble Place Minimus": {
+   "name": "A Snake Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.34.12.14.34.12.34.14.12.34.12.14.x.12.x.14.12.34.12.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 22,
+    "2": 2
+   },
+   "edges_used": 22,
+   "squares_crossed": 1,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 5,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Hel Treble Place Minimus": {
+   "name": "Hel Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.34.x.14.x.12.x.14.x.34.x.14.34.12.34.14.x.34.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 3,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "F\u00f3lkvangr Treble Place Minimus": {
+   "name": "F\u00f3lkvangr Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.34.x.14.34.12.34.14.x.34.x.14.34.12.34.14.12.34.12.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 4,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Valh\u01ebll Treble Place Minimus": {
+   "name": "Valh\u01ebll Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.34.x.14.x.12.x.14.x.34.x.14.34.12.34.14.12.34.12.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Ur\u00f0r Treble Place Minimus": {
+   "name": "Ur\u00f0r Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.34.x.14.34.12.34.14.x.34.x.14.x.12.x.14.x.34.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 3,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Ver\u00f0andi Treble Place Minimus": {
+   "name": "Ver\u00f0andi Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.34.12.14.34.12.34.14.x.34.x.14.34.12.34.14.x.34.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 4,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Skuld Treble Place Minimus": {
+   "name": "Skuld Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.34.12.14.34.12.34.14.x.34.x.14.x.12.x.14.x.34.x.14.34.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Frank Zhang Treble Place Minimus": {
+   "name": "Frank Zhang Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.x.12.x.14.12.34.12.14.34.12.34.14.12.34.12.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 4,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Hazel Levesque Treble Place Minimus": {
+   "name": "Hazel Levesque Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.x.12.x.14.12.34.12.14.x.12.x.14.x.34.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 3,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Jason Grace Treble Place Minimus": {
+   "name": "Jason Grace Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.34.12.34.14.12.34.12.14.x.12.x.14.x.34.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Leo Valdez Treble Place Minimus": {
+   "name": "Leo Valdez Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.34.12.34.14.12.34.12.14.x.12.x.14.12.34.12.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 4,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Annabeth Chase Treble Place Minimus": {
+   "name": "Annabeth Chase Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.x.12.x.14.12.34.12.14.x.12.x.14.12.34.12.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 3,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Nico Di Angelo Treble Place Minimus": {
+   "name": "Nico Di Angelo Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.x.12.x.14.12.34.12.14.34.12.34.14.12.34.12.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 3,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 5,
+   "backrounds_at": 11,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Dragicorn Treble Place Minimus": {
+   "name": "Dragicorn Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.x.12.x.14.x.34.x.14.x.12.x.14.x.34.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 2,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Wooly Mammoth Treble Place Minimus": {
+   "name": "Wooly Mammoth Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.34.12.14.x.12.x.14.x.34.x.14.34.12.34.14.x.34.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 4,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": true,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1234",
+     true
+    ],
+    [
+     "1432",
+     false
+    ],
+    [
+     "1432",
+     true
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Otachic Treble Place Minimus": {
+   "name": "Otachic Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.x.12.x.14.x.34.x.14.34.12.34.14.x.34.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 2,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1432",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Beans on Toast Treble Place Minimus": {
+   "name": "Beans on Toast Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.x.12.x.14.x.34.x.14.x.12.x.14.12.34.12.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 2,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Wooly Rhinoceros Treble Place Minimus": {
+   "name": "Wooly Rhinoceros Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.34.12.34.14.x.34.x.14.x.12.x.14.12.34.12.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 16,
+    "2": 8
+   },
+   "edges_used": 16,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 4,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 4,
+   "symmetry_direction_preserving": 2,
+   "central_inversion": true,
+   "symmetry_type": {
+    "improper order 2": 2,
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1234",
+     true
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1324",
+     true
+    ]
+   ],
+   "orbit_size": 12,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Tchoaic Treble Place Minimus": {
+   "name": "Tchoaic Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.34.x.14.34.12.34.14.x.34.x.14.x.12.x.14.x.34.x.14.x.12",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 5,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 1,
+   "hexagons_turned": 2,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Crossbank Minimus": {
+   "name": "Crossbank Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.x.14.12.x.12.14.x.12.x.14.34.x.34.14.x.14.x.34.x.14.x.34",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 14,
+    "2": 10
+   },
+   "edges_used": 14,
+   "squares_crossed": 6,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 4,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false,
+   "symmetry_order": 1,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ]
+   ],
+   "orbit_size": 48,
+   "class": "Hybrid",
+   "flags": ""
+  },
+  "Landbeach Treble Place Minimus": {
+   "name": "Landbeach Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.12.14.34.12.34.14.34.14.34.12.34.14.34.14.34.12.34.14.12.14.34.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 24
+   },
+   "edges_used": 24,
+   "squares_crossed": 0,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 3,
+   "hexagons_turned": 6,
+   "backrounds_at": 18,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 1,
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1324",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Teesport Treble Place Minimus": {
+   "name": "Teesport Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "34.14.x.34.x.14.34.12.34.14.34.x.34.14.34.12.34.14.x.34.x.14.34.x",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 18,
+    "2": 6
+   },
+   "edges_used": 18,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 2,
+   "hexagons_turned": 4,
+   "backrounds_at": 13,
+   "backrounds_antipodal": false,
+   "symmetry_order": 2,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1,
+    "proper order 2": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "2143",
+     false
+    ]
+   ],
+   "orbit_size": 24,
+   "class": "Treble Place",
+   "flags": ""
+  },
+  "Platinum Pink Treble Place Minimus": {
+   "name": "Platinum Pink Treble Place Minimus",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "x.14.12.14.12.14.x.14.12.14.x.14.12.14.34.14.12.14.12.14.34.14.x.14",
+   "period": 24,
+   "parts": 1,
+   "swaps_hist": {
+    "1": 20,
+    "2": 4
+   },
+   "edges_used": 20,
+   "squares_crossed": 2,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 6,
+   "backrounds_at": 15,
+   "backrounds_antipodal": false,
+   "symmetry_order": 1,
+   "symmetry_direction_preserving": 1,
+   "central_inversion": false,
+   "symmetry_type": {
+    "proper order 1": 1
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ]
+   ],
+   "orbit_size": 48,
+   "class": "Treble Place",
+   "flags": ""
+  }
+ },
+ "doubles": {
+  "Plain Bob Doubles": {
+   "callings": 12,
+   "by_calls_used": {
+    "B": 4,
+    "BS": 4,
+    "S": 4
+   },
+   "fewest_calls": 3,
+   "up_to_rotation": 3,
+   "plain_course_rows": 40,
+   "timed_out": false,
+   "example": {
+    "name": "Plain Bob Doubles, calling BPPPBPPPBPPP",
+    "n": 5,
+    "rows": 120,
+    "closes": true,
+    "true": true,
+    "extent": true,
+    "word": "(5.1.5.1.5.1.5.1.5.145.5.1.5.1.5.1.5.1.5.125.5.1.5.1.5.1.5.1.5.125.5.1.5.1.5.1.5.1.5.125)^3",
+    "period": 40,
+    "parts": 3,
+    "swaps_hist": {
+     "1": 12,
+     "2": 108
+    },
+    "edges_used": 12,
+    "squares_crossed": 54,
+    "higher_cubes_crossed": 0,
+    "squares_turned": 0,
+    "hexagons_turned": 0,
+    "backrounds_at": 5,
+    "backrounds_antipodal": false,
+    "symmetry_order": 6,
+    "symmetry_direction_preserving": 3,
+    "central_inversion": false,
+    "symmetry_type": {
+     "improper order 2": 3,
+     "proper order 1": 1,
+     "proper order 3": 2
+    },
+    "symmetry_elements": [
+     [
+      "12345",
+      false
+     ],
+     [
+      "12543",
+      false
+     ],
+     [
+      "13245",
+      false
+     ],
+     [
+      "13542",
+      false
+     ],
+     [
+      "15243",
+      false
+     ],
+     [
+      "15342",
+      false
+     ]
+    ]
+   },
+   "example_calling": "BPPPBPPPBPPP",
+   "distinct_cycles": 12
+  },
+  "Grandsire Doubles": {
+   "callings": 10,
+   "by_calls_used": {
+    "BS": 10
+   },
+   "fewest_calls": 6,
+   "up_to_rotation": 2,
+   "plain_course_rows": 30,
+   "timed_out": false,
+   "example": {
+    "name": "Grandsire Doubles, calling BPBPSPBPBPSP",
+    "n": 5,
+    "rows": 120,
+    "closes": true,
+    "true": true,
+    "extent": true,
+    "word": "(3.1.5.1.5.1.5.1.3.1.3.1.5.1.5.1.5.1.5.1.3.1.5.1.5.1.5.1.3.1.3.1.5.1.5.1.5.1.5.1.3.1.5.1.5.1.5.1.3.123.3.1.5.1.5.1.5.1.5.1)^2",
+    "period": 60,
+    "parts": 2,
+    "swaps_hist": {
+     "1": 2,
+     "2": 118
+    },
+    "edges_used": 2,
+    "squares_crossed": 59,
+    "higher_cubes_crossed": 0,
+    "squares_turned": 0,
+    "hexagons_turned": 0,
+    "backrounds_at": 115,
+    "backrounds_antipodal": false,
+    "symmetry_order": 2,
+    "symmetry_direction_preserving": 2,
+    "central_inversion": false,
+    "symmetry_type": {
+     "improper order 2": 1,
+     "proper order 1": 1
+    },
+    "symmetry_elements": [
+     [
+      "12345",
+      false
+     ],
+     [
+      "14325",
+      false
+     ]
+    ]
+   },
+   "example_calling": "BPBPSPBPBPSP",
+   "distinct_cycles": 10
+  },
+  "Stedman Doubles": {
+   "callings": 10,
+   "by_calls_used": {
+    "S": 5,
+    "T": 5
+   },
+   "fewest_calls": 2,
+   "up_to_rotation": 2,
+   "plain_course_rows": 60,
+   "timed_out": false,
+   "example": {
+    "name": "Stedman Doubles, calling PPPPSPPPPS",
+    "n": 5,
+    "rows": 120,
+    "closes": true,
+    "true": true,
+    "extent": true,
+    "word": "(3.1.5.3.1.3.1.3.5.1.3.1.3.1.5.3.1.3.1.3.5.1.3.1.3.1.5.3.1.3.1.3.5.1.3.1.3.1.5.3.1.3.1.3.5.1.3.1.3.1.345.3.1.3.1.3.5.1.3.1)^2",
+    "period": 60,
+    "parts": 2,
+    "swaps_hist": {
+     "1": 2,
+     "2": 118
+    },
+    "edges_used": 2,
+    "squares_crossed": 73,
+    "higher_cubes_crossed": 0,
+    "squares_turned": 0,
+    "hexagons_turned": 0,
+    "backrounds_at": 11,
+    "backrounds_antipodal": false,
+    "symmetry_order": 2,
+    "symmetry_direction_preserving": 2,
+    "central_inversion": false,
+    "symmetry_type": {
+     "improper order 2": 1,
+     "proper order 1": 1
+    },
+    "symmetry_elements": [
+     [
+      "12345",
+      false
+     ],
+     [
+      "12435",
+      false
+     ]
+    ]
+   },
+   "example_calling": "PPPPSPPPPS",
+   "distinct_cycles": 10
+  }
+ },
+ "minor": {
+  "bobs only": {
+   "found": [],
+   "timed_out": false
+  },
+  "bobs and singles": {
+   "found": [
+    "PPPPBPPPPBPPPPSPPPPBPPPPBPPPBPPPPBPPSPPPSSPPPPSPPSPPPPSSSPBS"
+   ],
+   "timed_out": false,
+   "analysis": {
+    "name": "Plain Bob Minor, bobs and singles, calling PPPPBPPPPBPPPPSPPPPBPPPPBPPPBPPPPBPPSPPPSSPPPPSPPSPPPPSSSPBS",
+    "n": 6,
+    "rows": 720,
+    "closes": true,
+    "true": true,
+    "extent": true,
+    "word": "x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.1234",
+    "period": 720,
+    "parts": 1,
+    "swaps_hist": {
+     "1": 10,
+     "2": 350,
+     "3": 360
+    },
+    "edges_used": 10,
+    "squares_crossed": 178,
+    "higher_cubes_crossed": 90,
+    "squares_turned": 0,
+    "hexagons_turned": 0,
+    "backrounds_at": 6,
+    "backrounds_antipodal": false
+   }
+  }
+ },
+ "geodesics": {
+  "P3": {
+   "distance": 3,
+   "geodesics": 2,
+   "diameter": 3,
+   "farthest": [
+    "321"
+   ]
+  },
+  "R3": {
+   "distance": 3,
+   "geodesics": 2,
+   "diameter": 3,
+   "farthest": [
+    "321"
+   ]
+  },
+  "P4": {
+   "distance": 6,
+   "geodesics": 16,
+   "diameter": 6,
+   "farthest": [
+    "4321"
+   ]
+  },
+  "R4": {
+   "distance": 4,
+   "geodesics": 2,
+   "diameter": 4,
+   "farthest": [
+    "3421",
+    "4312",
+    "4321"
+   ]
+  },
+  "P5": {
+   "distance": 10,
+   "geodesics": 768,
+   "diameter": 10,
+   "farthest": [
+    "54321"
+   ]
+  },
+  "R5": {
+   "distance": 5,
+   "geodesics": 2,
+   "diameter": 5,
+   "farthest": [
+    "34521",
+    "35421",
+    "43521"
+   ]
+  },
+  "P6": {
+   "distance": 15,
+   "geodesics": 292864,
+   "diameter": 15,
+   "farthest": [
+    "654321"
+   ]
+  },
+  "R6": {
+   "distance": 6,
+   "geodesics": 2,
+   "diameter": 6,
+   "farthest": [
+    "345621",
+    "346521",
+    "354621"
+   ]
+  }
+ },
+ "figures": {
+  "Plain Bob Minimus": [
+   "1234",
+   "2143",
+   "2413",
+   "4231",
+   "4321",
+   "3412",
+   "3142",
+   "1324",
+   "1342",
+   "3124",
+   "3214",
+   "2341",
+   "2431",
+   "4213",
+   "4123",
+   "1432",
+   "1423",
+   "4132",
+   "4312",
+   "3421",
+   "3241",
+   "2314",
+   "2134",
+   "1243",
+   "1234"
+  ],
+  "Plain changes on 4": [
+   "1234",
+   "1243",
+   "1423",
+   "4123",
+   "4132",
+   "1432",
+   "1342",
+   "1324",
+   "3124",
+   "3142",
+   "3412",
+   "4312",
+   "4321",
+   "3421",
+   "3241",
+   "3214",
+   "2314",
+   "2341",
+   "2431",
+   "4231",
+   "4213",
+   "2413",
+   "2143",
+   "2134",
+   "1234"
+  ],
+  "Plain hunt on 4": [
+   "1234",
+   "2143",
+   "2413",
+   "4231",
+   "4321",
+   "3412",
+   "3142",
+   "1324",
+   "1234"
+  ],
+  "CCCBR Plain Bob Minimus": [
+   "1234",
+   "2143",
+   "2413",
+   "4231",
+   "4321",
+   "3412",
+   "3142",
+   "1324",
+   "1342",
+   "3124",
+   "3214",
+   "2341",
+   "2431",
+   "4213",
+   "4123",
+   "1432",
+   "1423",
+   "4132",
+   "4312",
+   "3421",
+   "3241",
+   "2314",
+   "2134",
+   "1243",
+   "1234"
+  ],
+  "CCCBR Double Bob Minimus": [
+   "1234",
+   "2143",
+   "2413",
+   "4231",
+   "2431",
+   "4213",
+   "4123",
+   "1432",
+   "1423",
+   "4132",
+   "4312",
+   "3421",
+   "4321",
+   "3412",
+   "3142",
+   "1324",
+   "1342",
+   "3124",
+   "3214",
+   "2341",
+   "3241",
+   "2314",
+   "2134",
+   "1243",
+   "1234"
+  ],
+  "CCCBR Double Court Place Minimus": [
+   "1234",
+   "2134",
+   "2314",
+   "2341",
+   "2431",
+   "2413",
+   "2143",
+   "1243",
+   "1423",
+   "4123",
+   "4213",
+   "4231",
+   "4321",
+   "4312",
+   "4132",
+   "1432",
+   "1342",
+   "3142",
+   "3412",
+   "3421",
+   "3241",
+   "3214",
+   "3124",
+   "1324",
+   "1234"
+  ],
+  "most symmetric P4": [
+   [
+    "1234",
+    "1324",
+    "3124",
+    "3214",
+    "3241",
+    "3421",
+    "3412",
+    "3142",
+    "1342",
+    "1432",
+    "4132",
+    "4312",
+    "4321",
+    "4231",
+    "4213",
+    "4123",
+    "1423",
+    "1243",
+    "2143",
+    "2413",
+    "2431",
+    "2341",
+    "2314",
+    "2134"
+   ],
+   [
+    "1234",
+    "1324",
+    "1342",
+    "3142",
+    "3124",
+    "3214",
+    "2314",
+    "2341",
+    "3241",
+    "3421",
+    "3412",
+    "4312",
+    "4321",
+    "4231",
+    "2431",
+    "2413",
+    "4213",
+    "4123",
+    "4132",
+    "1432",
+    "1423",
+    "1243",
+    "2143",
+    "2134"
+   ]
+  ],
+  "most symmetric R4": [
+   [
+    "1234",
+    "2134",
+    "1243",
+    "1423",
+    "4132",
+    "4123",
+    "1432",
+    "1342",
+    "3124",
+    "1324",
+    "3142",
+    "3412",
+    "4321",
+    "4312",
+    "3421",
+    "3241",
+    "2314",
+    "3214",
+    "2341",
+    "2431",
+    "4213",
+    "4231",
+    "2413",
+    "2143"
+   ],
+   [
+    "1234",
+    "1324",
+    "3124",
+    "3214",
+    "3241",
+    "3421",
+    "3412",
+    "3142",
+    "1342",
+    "1432",
+    "4132",
+    "4312",
+    "4321",
+    "4231",
+    "4213",
+    "4123",
+    "1423",
+    "1243",
+    "2143",
+    "2413",
+    "2431",
+    "2341",
+    "2314",
+    "2134"
+   ],
+   [
+    "1234",
+    "1324",
+    "1342",
+    "3142",
+    "3124",
+    "3214",
+    "2314",
+    "2341",
+    "3241",
+    "3421",
+    "3412",
+    "4312",
+    "4321",
+    "4231",
+    "2431",
+    "2413",
+    "4213",
+    "4123",
+    "4132",
+    "1432",
+    "1423",
+    "1243",
+    "2143",
+    "2134"
+   ]
+  ],
+  "strips": {
+   "Plain Bob Minimus": [
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ]
+   ],
+   "Plain changes on 4": [
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     2
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     0
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     2
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     0
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     2
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     0
+    ]
+   ],
+   "Plain Bob Doubles": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ]
+   ],
+   "Grandsire Doubles": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "Stedman Doubles": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "Plain changes on 5": [
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     3
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     3
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     0
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     3
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     3
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     0
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     3
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     3
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     0
+    ]
+   ]
+  }
+ },
+ "named": {
+  "Plain changes on 4 (Steinhaus-Johnson-Trotter order)": {
+   "name": "Plain changes on 4 (Steinhaus-Johnson-Trotter order)",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(12.14.34.12.34.14.12.34)^3",
+   "period": 8,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 24
+   },
+   "edges_used": 24,
+   "squares_crossed": 0,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 6,
+   "hexagons_turned": 6,
+   "backrounds_at": 12,
+   "backrounds_antipodal": true,
+   "symmetry_order": 12,
+   "symmetry_direction_preserving": 6,
+   "central_inversion": true,
+   "symmetry_type": {
+    "improper order 2": 4,
+    "improper order 6": 2,
+    "proper order 1": 1,
+    "proper order 2": 3,
+    "proper order 3": 2
+   },
+   "symmetry_elements": [
+    [
+     "1234",
+     false
+    ],
+    [
+     "1234",
+     true
+    ],
+    [
+     "1324",
+     false
+    ],
+    [
+     "1324",
+     true
+    ],
+    [
+     "2134",
+     false
+    ],
+    [
+     "2134",
+     true
+    ],
+    [
+     "2314",
+     false
+    ],
+    [
+     "2314",
+     true
+    ],
+    [
+     "3124",
+     false
+    ],
+    [
+     "3124",
+     true
+    ],
+    [
+     "3214",
+     false
+    ],
+    [
+     "3214",
+     true
+    ]
+   ]
+  },
+  "Plain changes on 5 (Steinhaus-Johnson-Trotter order)": {
+   "name": "Plain changes on 5 (Steinhaus-Johnson-Trotter order)",
+   "n": 5,
+   "rows": 120,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(123.125.145.345.123.345.145.125.123.145.123.125.145.345.145.345.145.125.123.125.123.125.145.345.145.345.145.125.123.145.123.125.145.345.123.345.145.125.123.345)^3",
+   "period": 40,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 120
+   },
+   "edges_used": 120,
+   "squares_crossed": 0,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 15,
+   "hexagons_turned": 36,
+   "backrounds_at": 64,
+   "backrounds_antipodal": false,
+   "symmetry_order": 6,
+   "symmetry_direction_preserving": 3,
+   "central_inversion": false,
+   "symmetry_type": {
+    "improper order 2": 3,
+    "proper order 1": 1,
+    "proper order 3": 2
+   },
+   "symmetry_elements": [
+    [
+     "12345",
+     false
+    ],
+    [
+     "13245",
+     false
+    ],
+    [
+     "21345",
+     false
+    ],
+    [
+     "23145",
+     false
+    ],
+    [
+     "31245",
+     false
+    ],
+    [
+     "32145",
+     false
+    ]
+   ]
+  },
+  "Plain changes on 6 (Steinhaus-Johnson-Trotter order)": {
+   "name": "Plain changes on 6 (Steinhaus-Johnson-Trotter order)",
+   "n": 6,
+   "rows": 720,
+   "closes": true,
+   "true": true,
+   "extent": true,
+   "word": "(1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1456.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1456.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.3456)^3",
+   "period": 240,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 720
+   },
+   "edges_used": 720,
+   "squares_crossed": 0,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 120,
+   "hexagons_turned": 240,
+   "backrounds_at": 389,
+   "backrounds_antipodal": false
+  },
+  "Plain hunt on 4": {
+   "name": "Plain hunt on 4",
+   "n": 4,
+   "rows": 8,
+   "closes": true,
+   "true": true,
+   "extent": false,
+   "word": "(x.14)^4",
+   "period": 2,
+   "parts": 4,
+   "swaps_hist": {
+    "1": 4,
+    "2": 4
+   },
+   "edges_used": 4,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 0,
+   "backrounds_at": 4,
+   "backrounds_antipodal": true
+  },
+  "Plain hunt on 5": {
+   "name": "Plain hunt on 5",
+   "n": 5,
+   "rows": 10,
+   "closes": true,
+   "true": true,
+   "extent": false,
+   "word": "(5.1)^5",
+   "period": 2,
+   "parts": 5,
+   "swaps_hist": {
+    "2": 10
+   },
+   "edges_used": 0,
+   "squares_crossed": 10,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 0,
+   "backrounds_at": 5,
+   "backrounds_antipodal": true
+  },
+  "Plain hunt on 6": {
+   "name": "Plain hunt on 6",
+   "n": 6,
+   "rows": 12,
+   "closes": true,
+   "true": true,
+   "extent": false,
+   "word": "(x.16)^6",
+   "period": 2,
+   "parts": 6,
+   "swaps_hist": {
+    "2": 6,
+    "3": 6
+   },
+   "edges_used": 0,
+   "squares_crossed": 6,
+   "higher_cubes_crossed": 6,
+   "squares_turned": 0,
+   "hexagons_turned": 0,
+   "backrounds_at": 6,
+   "backrounds_antipodal": true
+  },
+  "broken: Plain Bob Minimus with lead end 14 (= plain hunt)": {
+   "name": "broken: Plain Bob Minimus with lead end 14 (= plain hunt)",
+   "n": 4,
+   "rows": 24,
+   "closes": true,
+   "true": false,
+   "extent": false,
+   "word": "(x.14)^12",
+   "period": 2,
+   "parts": 12,
+   "swaps_hist": {
+    "1": 12,
+    "2": 12
+   },
+   "edges_used": 12,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 0,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false
+  },
+  "broken: Plain Bob Minimus with lead end x (two crosses in a row repeat a row)": {
+   "name": "broken: Plain Bob Minimus with lead end x (two crosses in a row repeat a row)",
+   "n": 4,
+   "rows": 24,
+   "closes": false,
+   "true": false,
+   "extent": false,
+   "word": "(x.14.x.14.x.14.x.x)^3",
+   "period": 8,
+   "parts": 3,
+   "swaps_hist": {
+    "1": 9,
+    "2": 15
+   },
+   "edges_used": 9,
+   "squares_crossed": 4,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 0,
+   "backrounds_at": 4,
+   "backrounds_antipodal": false
+  },
+  "broken: Plain Bob Doubles plain course rung for 120 rows": {
+   "name": "broken: Plain Bob Doubles plain course rung for 120 rows",
+   "n": 5,
+   "rows": 120,
+   "closes": true,
+   "true": false,
+   "extent": false,
+   "word": "(5.1.5.1.5.1.5.1.5.125)^12",
+   "period": 10,
+   "parts": 12,
+   "swaps_hist": {
+    "1": 12,
+    "2": 108
+   },
+   "edges_used": 12,
+   "squares_crossed": 28,
+   "higher_cubes_crossed": 0,
+   "squares_turned": 0,
+   "hexagons_turned": 0,
+   "backrounds_at": 5,
+   "backrounds_antipodal": false
+  }
+ }
+}

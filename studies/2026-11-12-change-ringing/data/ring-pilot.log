@@ -1,0 +1,268 @@
+collection date 2026-11-10
+methods by stage {'3': 217, '4': 1491, '5': 1227, '6': 6332}
+extract ok
+PROGRESS 0/12 changes and faces  (0.0 s)
+ok   number of changes on 2 bells = F(3) - 1 = 1  1
+ok   number of changes on 3 bells = F(4) - 1 = 2  2
+ok   number of changes on 4 bells = F(5) - 1 = 4  4
+ok   number of changes on 5 bells = F(6) - 1 = 7  7
+ok   number of changes on 6 bells = F(7) - 1 = 12  12
+ok   number of changes on 7 bells = F(8) - 1 = 20  20
+ok   number of changes on 8 bells = F(9) - 1 = 33  33
+ok   number of changes on 9 bells = F(10) - 1 = 54  54
+ok   number of changes on 10 bells = F(11) - 1 = 88  88
+ok   number of changes on 11 bells = F(12) - 1 = 143  143
+ok   number of changes on 12 bells = F(13) - 1 = 232  232
+ok   P3: 6 corners, edges 6 = (n-1)n!/2, hexagons 1 = (n-2)n!/6, squares 0 = C(n-2,2)n!/4
+ok   P4: 24 corners, edges 36 = (n-1)n!/2, hexagons 8 = (n-2)n!/6, squares 6 = C(n-2,2)n!/4
+ok   P5: 120 corners, edges 240 = (n-1)n!/2, hexagons 60 = (n-2)n!/6, squares 90 = C(n-2,2)n!/4
+ok   P6: 720 corners, edges 1800 = (n-1)n!/2, hexagons 480 = (n-2)n!/6, squares 1080 = C(n-2,2)n!/4
+ok   truncated octahedron: 24 corners, 36 edges, 8 hexagons, 6 squares
+ok   4D permutohedron: 120 corners, 240 edges, 60 hexagons + 90 squares = 150 two-faces
+ok   n=4: every k-swap change moves the point by sqrt(2k) to the opposite corner of a k-cube face
+ok   n=5: every k-swap change moves the point by sqrt(2k) to the opposite corner of a k-cube face
+ok   n=6: every k-swap change moves the point by sqrt(2k) to the opposite corner of a k-cube face
+PROGRESS 1/12 Hamiltonian counter controls  (0.1 s)
+ok   control: Hamiltonian cycles of the hexagon = 1  1
+ok   control: Hamiltonian cycles of the K4 = 3  3
+ok   control: Hamiltonian cycles of the cube = 6  6
+ok   control: Hamiltonian cycles of the dodecahedron (Hamilton) = 30  30
+ok   control: Hamiltonian cycles of the Petersen (none) = 0  0
+ok   control: dodecahedron graph is 3-regular on 20 vertices
+PROGRESS 2/12 all extents on 3 and 4 bells  (0.2 s)
+ok   3 bells: the change graph is the hexagon; one extent (plain hunt on three)
+ok   R4 cycle count small enough to list (<= 400000)  5396
+  Hamiltonian cycles: truncated octahedron P4 44; change graph R4 5396
+ok   every P4 cycle is also an R4 cycle (count P4 <= R4)
+ok   the automorphism group of the truncated-octahedron graph has order 48  48
+ok   the 48 symmetries (relabel bells, read backwards) are automorphisms of R4
+  automorphisms of the change graph R4: 48
+PROGRESS 3/12 orbits of the 4-bell extents  (0.6 s)
+ok   P4: orbit sizes divide 48
+ok   R4: orbit sizes divide 48
+  P4 census {'cycles': 44, 'orbits': 4, 'orbits_by_symmetry_order': {2: 1, 4: 1, 12: 2}, 'cycles_by_cross_changes': {0: 44}, 'cycles_by_word_period': {8: 8, 12: 12, 24: 24}, 'cycles_backrounds_antipodal': 12}
+  R4 census {'cycles': 5396, 'orbits': 162, 'orbits_by_symmetry_order': {1: 75, 2: 67, 4: 11, 6: 4, 8: 2, 12: 3}, 'cycles_by_cross_changes': {0: 44, 2: 504, 4: 1560, 6: 2016, 8: 1044, 10: 216, 12: 12}, 'cycles_by_word_period': {6: 12, 8: 44, 12: 96, 24: 5244}, 'cycles_backrounds_antipodal': 288}
+ok   P4 cycles are exactly the R4 cycles with no cross change
+  highest symmetry order: P4 12 (2 orbits); R4 12 (3 orbits)
+  name=most symmetric, orbit of 4; rows=24; true=True; extent=True; word=(14.34.14.12.14.12.14.34)^3; period=8; parts=3; swaps_hist={'1': 24}; squares_crossed=0; higher_cubes_crossed=0; squares_turned=0; hexagons_turned=6; backrounds_at=12; backrounds_antipodal=True; symmetry_order=12; symmetry_direction_preserving=6; central_inversion=True
+  name=most symmetric, orbit of 4; rows=24; true=True; extent=True; word=(14.12.34.12.14.34.12.34)^3; period=8; parts=3; swaps_hist={'1': 24}; squares_crossed=0; higher_cubes_crossed=0; squares_turned=6; hexagons_turned=6; backrounds_at=12; backrounds_antipodal=True; symmetry_order=12; symmetry_direction_preserving=6; central_inversion=True
+  name=most symmetric, orbit of 4; rows=24; true=True; extent=True; word=(34.x.14.x.12.x.14.x)^3; period=8; parts=3; swaps_hist={'1': 12, '2': 12}; squares_crossed=6; higher_cubes_crossed=0; squares_turned=0; hexagons_turned=0; backrounds_at=12; backrounds_antipodal=True; symmetry_order=12; symmetry_direction_preserving=6; central_inversion=True
+  name=most symmetric, orbit of 4; rows=24; true=True; extent=True; word=(14.34.14.12.14.12.14.34)^3; period=8; parts=3; swaps_hist={'1': 24}; squares_crossed=0; higher_cubes_crossed=0; squares_turned=0; hexagons_turned=6; backrounds_at=12; backrounds_antipodal=True; symmetry_order=12; symmetry_direction_preserving=6; central_inversion=True
+  name=most symmetric, orbit of 4; rows=24; true=True; extent=True; word=(14.12.34.12.14.34.12.34)^3; period=8; parts=3; swaps_hist={'1': 24}; squares_crossed=0; higher_cubes_crossed=0; squares_turned=6; hexagons_turned=6; backrounds_at=12; backrounds_antipodal=True; symmetry_order=12; symmetry_direction_preserving=6; central_inversion=True
+PROGRESS 4/12 CCCBR collection  (14.3 s)
+  CCCBR {'parsed': 1700, 'lead_heads_match': 1700, 'lead_head_mismatch': [], 'skipped': {'no swap': 208}, 'by_stage': {3: {'methods': 85, 'true plain course': 2, 'plain course is an extent': 2, 'extent using edges only': 2}, 4: {'methods': 1415, 'true plain course': 193, 'plain course is an extent': 139, 'extent using edges only': 5}, 5: {'methods': 200, 'true plain course': 200, 'plain course is an extent': 153, 'extent using edges only': 1}}}
+ok   every parsed CCCBR method gives the lead head the collection lists  1700 of 1700
+ok   Reverse Erin Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Erin Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Stanton Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Stanton Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Lindisfarne Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Lindisfarne Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Ayston Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Tinwell Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Tinwell Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Morcott Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Lyndon Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Ridlington Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Daisy Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Baines Johnson Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Plain Bob Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Double Bob Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Bob Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse St Nicholas Bob Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   St Nicholas Bob Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Court Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Canterbury Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Canterbury Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Single Court Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Double Court Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Double Canterbury Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Ada Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Gertrude Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Ethel Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Ma Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Elsie Mary Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Audrey Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Flat Rock Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Uluṟu Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Dockyard Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Shipping Container Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Freight Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   St Swithun Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Dunholme Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Ermine Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Lismore Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   St Mary-le-Wigford Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Wigford Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Lincoln Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Lindum Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Brayford Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Swanpool Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   St Hugh's Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Spirolux Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Spirolux Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Stanford Dingley Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Ufton Nervet Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Higgledy Piggledy Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Topsy Turvy Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Newtown Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Chaotic Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Barkham Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Lower Basildon Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   St Denys' Pleasure Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Brimpton Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Chaddleworth Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Boxford Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Dorton Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Double Wooly-Back Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Guisborough Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Piglet Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Heavy Metal Soul Music Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Aston Cantlow Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Run to the Hills Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Fear of the Dark Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Coughton Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Steeping Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Steeping Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Double Steeping Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Somerville College Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Burnt Oak Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Nigel Farage for Prime Minimus Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Millfield Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Millfield Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Icknield Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Ashbury Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Ashbury Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Meadow Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Brayford Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse St Mary-Le-Wigford Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Lincoln Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse St Hugh's Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Wigford Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Reverse Lindum Court Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Yarningale Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Wootton Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Edstone Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Nimrod Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Enigma Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Farmer's Bridge Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   The Crow Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Ryder's Green Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Coseley Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Netherton Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Gosty Hill Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   El Dorado Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Isle of Avalon Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Montsegur Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Paschendale Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Transylvania Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Bayswater Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Angela Schuyler Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Elizabeth Schuyler Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Margaret Schuyler Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Elysium Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Asphodel Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Tartarus Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Give You Up Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Let You Down Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Run Around Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Badgers Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Mushroom Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   A Snake Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Hel Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Fólkvangr Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Valhǫll Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Urðr Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Verðandi Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Skuld Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Frank Zhang Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Hazel Levesque Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Jason Grace Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Leo Valdez Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Annabeth Chase Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Nico Di Angelo Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Dragicorn Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Wooly Mammoth Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Otachic Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Beans on Toast Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Wooly Rhinoceros Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Tchoaic Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Crossbank Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Landbeach Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Teesport Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+ok   Platinum Pink Treble Place Minimus: plain course is a Hamiltonian cycle of R4 (in the enumeration)
+  Minimus extents by orbit: {'named_orbits': 43, 'of': 162, 'methods': 139, 'groups': [['A Snake Treble Place Minimus', 'Badgers Treble Place Minimus', 'Chaddleworth Treble Place Minimus', 'Give You Up Treble Place Minimus', 'Run Around Treble Place Minimus', 'Stanford Dingley Treble Place Minimus'], ['Angela Schuyler Treble Place Minimus', 'Dorton Treble Place Minimus', 'Elysium Treble Place Minimus', 'Isle of Avalon Treble Place Minimus', 'Run to the Hills Treble Place Minimus', 'Transylvania Treble Place Minimus'], ['Annabeth Chase Treble Place Minimus', 'Hazel Levesque Treble Place Minimus', 'Hel Treble Place Minimus', 'Reverse Spirolux Treble Place Minimus', 'Spirolux Treble Place Minimus', 'Urðr Treble Place Minimus'], ['Ashbury Court Treble Place Minimus', 'Millfield Court Treble Place Minimus', 'Reverse Ashbury Court Treble Place Minimus', 'Reverse Millfield Court Treble Place Minimus', 'Reverse Steeping Court Treble Place Minimus', 'Steeping Court Treble Place Minimus'], ['Asphodel Treble Place Minimus', 'El Dorado Treble Place Minimus', 'Elizabeth Schuyler Treble Place Minimus', 'Heavy Metal Soul Music Treble Place Minimus', 'Lismore Treble Place Minimus', 'Paschendale Treble Place Minimus'], ['Aston Cantlow Treble Place Minimus', 'Edstone Treble Place Minimus', 'Enigma Treble Place Minimus', 'Gosty Hill Treble Place Minimus', 'Higgledy Piggledy Treble Place Minimus', "Ryder's Green Treble Place Minimus"], ['Barkham Treble Place Minimus', 'Frank Zhang Treble Place Minimus', 'Fólkvangr Treble Place Minimus', 'Leo Valdez Treble Place Minimus', 'Lower Basildon Treble Place Minimus', 'Verðandi Treble Place Minimus'], ['Bayswater Treble Place Minimus', 'Fear of the Dark Treble Place Minimus', 'Margaret Schuyler Treble Place Minimus', 'Montsegur Treble Place Minimus', 'Tartarus Treble Place Minimus', 'Topsy Turvy Treble Place Minimus'], ['Beans on Toast Treble Place Minimus', 'Chaotic Treble Place Minimus', 'Dragicorn Treble Place Minimus', 'Guisborough Treble Place Minimus', 'Otachic Treble Place Minimus', 'Tchoaic Treble Place Minimus'], ['Boxford Treble Place Minimus', 'Netherton Treble Place Minimus', 'Nimrod Treble Place Minimus', 'Piglet Treble Place Minimus', 'The Crow Treble Place Minimus', 'Yarningale Treble Place Minimus'], ['Coseley Treble Place Minimus', 'Coughton Treble Place Minimus', "Farmer's Bridge Treble Place Minimus", 'Nigel Farage for Prime Minimus Treble Place Minimus', 'Ufton Nervet Treble Place Minimus', 'Wootton Treble Place Minimus'], ['Jason Grace Treble Place Minimus', 'Newtown Treble Place Minimus', 'Nico Di Angelo Treble Place Minimus', 'Skuld Treble Place Minimus', "St Denys' Pleasure Treble Place Minimus", 'Valhǫll Treble Place Minimus'], ['Brayford Court Treble Place Minimus', 'Reverse Brayford Court Treble Place Minimus', "Reverse St Hugh's Court Treble Place Minimus", "St Hugh's Court Treble Place Minimus", 'Swanpool Court Treble Place Minimus'], ['Dunholme Court Treble Place Minimus', 'Reverse St Mary-Le-Wigford Court Treble Place Minimus', 'Reverse Wigford Court Treble Place Minimus', 'St Mary-le-Wigford Court Treble Place Minimus', 'Wigford Court Treble Place Minimus'], ['Ermine Court Treble Place Minimus', 'Lincoln Court Treble Place Minimus', 'Lindum Court Treble Place Minimus', 'Reverse Lincoln Court Treble Place Minimus', 'Reverse Lindum Court Treble Place Minimus'], ['Audrey Minimus', 'Elsie Mary Minimus', 'Ethel Minimus', 'Ma Minimus'], ['Ayston Minimus', 'Morcott Minimus', 'Reverse Tinwell Minimus', 'Tinwell Minimus'], ['Lindisfarne Minimus', 'Reverse Lindisfarne Minimus', 'Reverse Stanton Minimus', 'Stanton Minimus'], ['Brimpton Treble Place Minimus', 'Let You Down Treble Place Minimus', 'Mushroom Treble Place Minimus'], ['Double Steeping Court Treble Place Minimus', 'Icknield Court Treble Place Minimus', 'Meadow Court Treble Place Minimus'], ['Double Wooly-Back Treble Place Minimus', 'Wooly Mammoth Treble Place Minimus', 'Wooly Rhinoceros Treble Place Minimus'], ['Ada Minimus', 'Flat Rock Minimus'], ['Baines Johnson Minimus', 'Lyndon Minimus'], ['Canterbury Place Minimus', 'Reverse Canterbury Place Minimus'], ['Daisy Minimus', 'Ridlington Minimus'], ['Erin Minimus', 'Reverse Erin Minimus'], ['Gertrude Minimus', 'Uluṟu Minimus'], ['Plain Bob Minimus', 'Reverse Bob Minimus'], ['Reverse Court Place Minimus', 'Single Court Place Minimus'], ['Reverse St Nicholas Bob Minimus', 'St Nicholas Bob Minimus'], ['Burnt Oak Treble Place Minimus'], ['Crossbank Minimus'], ['Dockyard Minimus'], ['Double Bob Minimus'], ['Double Canterbury Place Minimus'], ['Double Court Place Minimus'], ['Freight Treble Place Minimus'], ['Landbeach Treble Place Minimus'], ['Platinum Pink Treble Place Minimus'], ['Shipping Container Treble Place Minimus'], ['Somerville College Treble Place Minimus'], ['St Swithun Minimus'], ['Teesport Treble Place Minimus']], 'edges_only': ['Lyndon Minimus', 'Baines Johnson Minimus', 'Double Court Place Minimus', 'Double Canterbury Place Minimus', 'Landbeach Treble Place Minimus']}
+ok   control (CCCBR): Plain Bob Minimus plain course = 24 rows, a true extent, lead head 1342
+  name=Plain Bob Minimus; rows=24; true=True; extent=True; word=(x.14.x.14.x.14.x.12)^3; period=8; parts=3; swaps_hist={'1': 12, '2': 12}; squares_crossed=6; higher_cubes_crossed=0; squares_turned=0; hexagons_turned=0; backrounds_at=4; backrounds_antipodal=False; symmetry_order=6; symmetry_direction_preserving=3; central_inversion=False
+PROGRESS 5/12 plain hunt, plain changes, broken controls  (14.9 s)
+ok   plain changes on 4: the closing step is one swap
+  name=Plain changes on 4 (Steinhaus-Johnson-Trotter order); rows=24; true=True; extent=True; word=(12.14.34.12.34.14.12.34)^3; period=8; parts=3; swaps_hist={'1': 24}; squares_crossed=0; higher_cubes_crossed=0; squares_turned=6; hexagons_turned=6; backrounds_at=12; backrounds_antipodal=True; symmetry_order=12; symmetry_direction_preserving=6; central_inversion=True
+ok   plain changes on 4 are an extent using edges only (a Hamiltonian cycle of the permutohedron)
+ok   plain changes on 5: the closing step is one swap
+  name=Plain changes on 5 (Steinhaus-Johnson-Trotter order); rows=120; true=True; extent=True; word=(123.125.145.345.123.345.145.125.123.145.123.125.145.345.145.345.145.125.123.125.123.125.145.345.145.345.145.125.123.145.123.125.145.345.123.345.145.125.123.345)^3; period=40; parts=3; swaps_hist={'1': 120}; squares_crossed=0; higher_cubes_crossed=0; squares_turned=15; hexagons_turned=36; backrounds_at=64; backrounds_antipodal=False; symmetry_order=6; symmetry_direction_preserving=3; central_inversion=False
+ok   plain changes on 5 are an extent using edges only (a Hamiltonian cycle of the permutohedron)
+ok   plain changes on 6: the closing step is one swap
+  name=Plain changes on 6 (Steinhaus-Johnson-Trotter order); rows=720; true=True; extent=True; word=(1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1456.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1456.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.3456.1234.1236.1256.1456.3456.1256.3456.1456.1256.1236.1234.1256.1234.1236.1256.1456.3456.1234.3456.1456.1256.1236.1234.3456)^3; period=240; parts=3; swaps_hist={'1': 720}; squares_crossed=0; higher_cubes_crossed=0; squares_turned=120; hexagons_turned=240; backrounds_at=389; backrounds_antipodal=False
+ok   plain changes on 6 are an extent using edges only (a Hamiltonian cycle of the permutohedron)
+  name=Plain hunt on 4; rows=8; true=True; extent=False; word=(x.14)^4; period=2; parts=4; swaps_hist={'1': 4, '2': 4}; squares_crossed=4; higher_cubes_crossed=0; squares_turned=0; hexagons_turned=0; backrounds_at=4; backrounds_antipodal=True
+ok   plain hunt on 4: true, 8 rows, backrounds after 4 changes (antipodal)
+  name=Plain hunt on 5; rows=10; true=True; extent=False; word=(5.1)^5; period=2; parts=5; swaps_hist={'2': 10}; squares_crossed=10; higher_cubes_crossed=0; squares_turned=0; hexagons_turned=0; backrounds_at=5; backrounds_antipodal=True
+ok   plain hunt on 5: true, 10 rows, backrounds after 5 changes (antipodal)
+  name=Plain hunt on 6; rows=12; true=True; extent=False; word=(x.16)^6; period=2; parts=6; swaps_hist={'2': 6, '3': 6}; squares_crossed=6; higher_cubes_crossed=6; squares_turned=0; hexagons_turned=0; backrounds_at=6; backrounds_antipodal=True
+ok   plain hunt on 6: true, 12 rows, backrounds after 6 changes (antipodal)
+ok   negative control fails as an extent: broken: Plain Bob Minimus with lead end 14 (= plain hunt)  rows 24, true False
+FAIL negative control fails as an extent: broken: Plain Bob Minimus with lead end 34  rows 24, true True
+ok   negative control fails as an extent: broken: Plain Bob Doubles plain course rung for 120 rows  rows 120, true False
+PROGRESS 6/12 Doubles callings  (14.9 s)
+ok   CCCBR notation: Plain Bob Doubles lead = 5.1.5.1.5,125 expanded
+ok   CCCBR notation: Grandsire Doubles lead = 3,1.5.1.5.1 expanded
+ok   CCCBR notation: Stedman Doubles lead = 3.1.5.3.1.3,1 expanded
+  Plain Bob Doubles: plain course 40 rows
+  Plain Bob Doubles: 12 callings found, 1600 nodes, 0.1 s, timed out False
+  name=Plain Bob Doubles, calling BPPPBPPPBPPP; rows=120; true=True; extent=True; word=(5.1.5.1.5.1.5.1.5.145.5.1.5.1.5.1.5.1.5.125.5.1.5.1.5.1.5.1.5.125.5.1.5.1.5.1.5.1.5.125)^3; period=40; parts=3; swaps_hist={'1': 12, '2': 108}; squares_crossed=54; higher_cubes_crossed=0; squares_turned=0; hexagons_turned=0; backrounds_at=5; backrounds_antipodal=False; symmetry_order=6; symmetry_direction_preserving=3; central_inversion=False
+  Plain Bob Doubles: {'callings': 12, 'by_calls_used': {'B': 4, 'BS': 4, 'S': 4}, 'fewest_calls': 3, 'up_to_rotation': 3, 'plain_course_rows': 40, 'timed_out': False, 'example_calling': 'BPPPBPPPBPPP', 'distinct_cycles': 12}
+  Grandsire Doubles: plain course 30 rows
+  Grandsire Doubles: 10 callings found, 702 nodes, 0.0 s, timed out False
+  name=Grandsire Doubles, calling BPBPSPBPBPSP; rows=120; true=True; extent=True; word=(3.1.5.1.5.1.5.1.3.1.3.1.5.1.5.1.5.1.5.1.3.1.5.1.5.1.5.1.3.1.3.1.5.1.5.1.5.1.5.1.3.1.5.1.5.1.5.1.3.123.3.1.5.1.5.1.5.1.5.1)^2; period=60; parts=2; swaps_hist={'1': 2, '2': 118}; squares_crossed=59; higher_cubes_crossed=0; squares_turned=0; hexagons_turned=0; backrounds_at=115; backrounds_antipodal=False; symmetry_order=2; symmetry_direction_preserving=2; central_inversion=False
+  Grandsire Doubles: {'callings': 10, 'by_calls_used': {'BS': 10}, 'fewest_calls': 6, 'up_to_rotation': 2, 'plain_course_rows': 30, 'timed_out': False, 'example_calling': 'BPBPSPBPBPSP', 'distinct_cycles': 10}
+  Stedman Doubles: plain course 60 rows
+  Stedman Doubles: 10 callings found, 284 nodes, 0.0 s, timed out False
+  name=Stedman Doubles, calling PPPPSPPPPS; rows=120; true=True; extent=True; word=(3.1.5.3.1.3.1.3.5.1.3.1.3.1.5.3.1.3.1.3.5.1.3.1.3.1.5.3.1.3.1.3.5.1.3.1.3.1.5.3.1.3.1.3.5.1.3.1.3.1.345.3.1.3.1.3.5.1.3.1)^2; period=60; parts=2; swaps_hist={'1': 2, '2': 118}; squares_crossed=73; higher_cubes_crossed=0; squares_turned=0; hexagons_turned=0; backrounds_at=11; backrounds_antipodal=False; symmetry_order=2; symmetry_direction_preserving=2; central_inversion=False
+  Stedman Doubles: {'callings': 10, 'by_calls_used': {'S': 5, 'T': 5}, 'fewest_calls': 2, 'up_to_rotation': 2, 'plain_course_rows': 60, 'timed_out': False, 'example_calling': 'PPPPSPPPPS', 'distinct_cycles': 10}
+ok   Plain Bob Doubles plain course = 40 rows
+ok   Grandsire Doubles plain course = 30 rows
+ok   Stedman Doubles plain course = 60 rows
+ok   control (Wenham): Grandsire Doubles P B P B P S repeated is an extent
+ok   Grandsire Doubles has no extent with bobs only
+ok   Plain Bob Doubles: search finished within its cap
+ok   Grandsire Doubles: search finished within its cap
+ok   Stedman Doubles: search finished within its cap
+PROGRESS 7/12 Plain Bob Minor  (15.1 s)
+ok   CCCBR notation: Plain Bob Minor lead = -16-16-16,12 expanded
+  Plain Bob Minor bobs only: 0 callings found, 58379 nodes, 3.2 s, timed out False
+  Plain Bob Minor bobs and singles: 1 callings found, 1193 nodes, 0.1 s, timed out False
+  name=Plain Bob Minor, bobs and singles, calling PPPPBPPPPBPPPPSPPPPBPPPPBPPPBPPPPBPPSPPPSSPPPPSPPSPPPPSSSPBS; rows=720; true=True; extent=True; word=x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.1234.x.16.x.16.x.16.x.16.x.16.x.12.x.16.x.16.x.16.x.16.x.16.x.14.x.16.x.16.x.16.x.16.x.16.x.1234; period=720; parts=1; swaps_hist={'1': 10, '2': 350, '3': 360}; squares_crossed=178; higher_cubes_crossed=90; squares_turned=0; hexagons_turned=0; backrounds_at=6; backrounds_antipodal=False
+ok   Plain Bob Minor bobs and singles: the found calling is a true 720
+PROGRESS 8/12 geodesics  (18.5 s)
+  P3: rounds->backrounds distance 3, geodesics 2, eccentricity of rounds 3
+  R3: rounds->backrounds distance 3, geodesics 2, eccentricity of rounds 3
+ok   control (Stanley 1984): 2 shortest edge paths rounds -> backrounds on P3, length C(n,2)
+ok   R3: backrounds is the farthest row, at distance n = 3
+  P4: rounds->backrounds distance 6, geodesics 16, eccentricity of rounds 6
+  R4: rounds->backrounds distance 4, geodesics 2, eccentricity of rounds 4
+ok   control (Stanley 1984): 16 shortest edge paths rounds -> backrounds on P4, length C(n,2)
+ok   R4: backrounds is the farthest row, at distance n = 4
+  P5: rounds->backrounds distance 10, geodesics 768, eccentricity of rounds 10
+  R5: rounds->backrounds distance 5, geodesics 2, eccentricity of rounds 5
+ok   control (Stanley 1984): 768 shortest edge paths rounds -> backrounds on P5, length C(n,2)
+ok   R5: backrounds is the farthest row, at distance n = 5
+  P6: rounds->backrounds distance 15, geodesics 292864, eccentricity of rounds 15
+  R6: rounds->backrounds distance 6, geodesics 2, eccentricity of rounds 6
+ok   control (Stanley 1984): 292864 shortest edge paths rounds -> backrounds on P6, length C(n,2)
+ok   R6: backrounds is the farthest row, at distance n = 6
+PROGRESS 9/12 figure data  (18.5 s)
+PROGRESS 10/12 write  (18.5 s)
+PROGRESS 12/12 done  (18.5 s)
+time 18.5 s
+FINAL FAIL
+[exit 0]

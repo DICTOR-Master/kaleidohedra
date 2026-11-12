@@ -1,0 +1,13 @@
+question: redraw the four figures of the change-ringing chapter from data/ring.json (layout only: titles, sizes); no new computation
+answer_looks_like: four SVG files written, FINAL ok
+pilot: figs.py already ran inside the ring job (under 1 s)
+size_estimate: 4 SVG files from stored rows
+memory_estimate_gb: 0.1 (cage 2 GB)
+time_estimate_h: 0.01
+bounded_by: fixed list of four figures
+control: none: drawing only; the rows drawn are the checked rows of ring.json, and the figures are looked at page by page in the PDF
+progress: none needed (under a second)
+ledger_checked: change-ringing study of 12 Nov (this session)
+ledger_override: none
+if_ok: copy figures to papers/paradigm-ch13, reprint the chapter, look at every figure page
+if_fail_or_cap: keep the earlier figures (already drawn, titles overlapping) and fix the script

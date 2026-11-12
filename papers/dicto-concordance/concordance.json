@@ -4361,6 +4361,12 @@
     "result": "Zenodo 24012440 (concept 24012439), 6 Nov 2026; Sheriff and Lone-star named",
     "goes_to": "site tile (deploy queue); book 'Platonic lattices' plan",
     "date": "2026-11-06"
+   },
+   {
+    "what": "Permutohedron Paradigm Chapter 13 'Change, Rhythm, Harmony' (change ringing on the permutohedron; the three Kyushindo principles of #43) drafted",
+    "result": "extents = Hamiltonian cycles of the change graph R_n (changes = cube-face diagonals, F(n+1)-1 per row); 4 bells: 44 edge tours / 5396 tours, 162 classes; the three double Minimus methods are the most symmetric (D3d); plain hunt = shortest way across; Doubles and Minor extent searches; study 2026-11-12-change-ringing",
+    "goes_to": "The Permutohedron Paradigm, Part Three, Chapter 13 (before the Coda); DRAFT PDF in papers-to-read for DICTO's read; not published",
+    "date": "2026-11-12"
    }
   ]
  },
@@ -6523,6 +6529,24 @@
     "result": "#103's 28 counts each 4-line point (t4's leg through the corner touch (5,5,6)) as 3 sandhis: the stored 16-digit E1 lies just across the edge on its 45-region side, where t4's leg crosses t5's base, t5's leg and t6's leg separately (22 + 2x3 = 28, two tiny extra triangles); the 43-region side gives 22 + 2 = 24; on the edge E1 has 22 sandhis, two 4-line points, 43 triangles. v5 wording: 'E1 keeps 43 regions and 18 marmas; it has 22 sandhis and two points where four sides meet'; answer added to #103's status box",
     "retry": "never",
     "study": "studies/2026-11-12-yantra-regions-45",
+    "date": "2026-11-12"
+   },
+   {
+    "question": "Change ringing on the permutohedron (Paradigm Ch. 13): Hamiltonian cycles of the 4-bell change graph and of the truncated octahedron; CCCBR plain courses that are extents; Doubles extent callings; Plain Bob Minor bobs-only; rounds-backrounds geodesics",
+    "method": "ring.py + hamcount.c exhaustive (two independent counters; controls cube 6, dodecahedron 30, Petersen 0, Stanley 2/16/768/292864, CCCBR lead heads of 9057 methods, Wenham's Grandsire extent; negative: broken Plain Bob variants)",
+    "status": "SETTLED",
+    "result": "P4 44 Hamiltonian cycles (4 classes), R4 5396 (162 classes; Aut R4 = 48); 139 CCCBR Minimus plain-course extents fill 43 classes incl. all 15 periodic and all 4 edge-only; max symmetry 12 (D3d) = Double Bob, Double Court, Double Canterbury (= plain changes); R_n distance rounds-backrounds = n (proof), exactly 2 geodesics (plain hunt) n<=6; Doubles extent callings PB 12, Grandsire 10 (all need B and S), Stedman 10 (min 2 singles); Plain Bob Minor: no bobs-only extent",
+    "retry": "never (only to extend: R5 Hamiltonian count is out of reach by plain search)",
+    "study": "2026-11-12-change-ringing",
+    "date": "2026-11-12"
+   },
+   {
+    "question": "Change ringing Conjecture 13.1: the two halves of the plain hunt are the only shortest rounds-to-backrounds paths in the change graph R_n for every n >= 3",
+    "method": "breadth-first count n = 3..6 (2 each)",
+    "status": "OPEN",
+    "result": "true for n <= 6 (computed); distance n proved for all n >= 3",
+    "retry": "a proof (bell 1 and bell n each move at every change but one), or the same count for n = 7, 8",
+    "study": "2026-11-12-change-ringing",
     "date": "2026-11-12"
    }
   ]
