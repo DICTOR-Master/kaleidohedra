@@ -1,0 +1,233 @@
+{
+ "r2": "(7/16+3/16r5)",
+ "walls": [
+  "(1+0r5)",
+  "(5/8+1/8r5)",
+  "(1/2+1/6r5)",
+  "(7/16+3/16r5)"
+ ],
+ "hops": {
+  "truncated 600-cell hop": {
+   "mu0": "3809/4000",
+   "corners": 1440,
+   "facets_per_corner": [
+    6
+   ],
+   "simplices": 4320,
+   "P12_corner_poly_degree": 12,
+   "design19_stations": [
+    [
+     "0.924138673238867458601238076667",
+     "1048576*m**20 - 13107200*m**19 + 69468160*m**18 - 195952640*m**17 + 278528000*m**16 - 20480000*m**15 - 683458560*m**14 + 1317437440*m**13 - 1168629760*m**12 + 290048000*m**11 + 501350400*m**10 - 656972800*m**9 + 384408320*m**8 - 117126400*m**7 + 9318400*m**6 + 6118400*m**5 - 2304080*m**4 + 318600*m**3 - 12000*m**2 - 900*m + 45",
+     20
+    ]
+   ],
+   "Omega0": "1440*(-105 + 47*sqrt(5))/mu",
+   "B": "(88983946588160/7 - 198974153478144*sqrt(5)/35)*(mu**12 + mu**11*(3068184899*sqrt(5)/19159646596 + 7076216875/19159646596) + mu**10*(8406428895/38319293192 + 3913406279*sqrt(5)/38319293192) + mu**9*(7223942165/76638586384 + 3306396577*sqrt(5)/76638586384) + mu**8*(-187490045/19159646596 - 20769619*sqrt(5)/4789911649) + mu**7*(-5757391635*sqrt(5)/153277172768 - 12869166405/153277172768) + mu**6*(-17162387615*sqrt(5)/306554345536 - 38375593575/306554345536) + mu**5*(-167005649195/1226217382144 - 74686956939*sqrt(5)/1226217382144) + mu**4*(-303253385155/2452434764288 - 135618993419*sqrt(5)/2452434764288) + mu**3*(-211391189345*sqrt(5)/4904869528576 - 472685014725/4904869528576) + mu**2*(-139389564349*sqrt(5)/4904869528576 - 311684532285/4904869528576) + mu*(-162860647005/4904869528576 - 18208373715*sqrt(5)/1226217382144) - 54286882335/4904869528576 - 6069457905*sqrt(5)/1226217382144)/mu**13",
+   "B_zeros": [
+    "0.921449634428905791812131090257"
+   ],
+   "B_at_fixed_point": "-4.29713341974990361421036197091",
+   "B_sign_at_ends": [
+    "1",
+    "-1"
+   ]
+  },
+  "middle hop": {
+   "mu0": "88859/100000",
+   "corners": 3600,
+   "facets_per_corner": [
+    4
+   ],
+   "simplices": 3600,
+   "P12_corner_poly_degree": 12,
+   "design19_stations": [],
+   "Omega0": "1800*(-29 + 13*sqrt(5))/mu**2",
+   "B": "(29742124090368/7 - 13301082252288*sqrt(5)/7)*(mu**12 + mu**11*(105261661*sqrt(5)/302437383 + 245336983/302437383) + mu**10*(1085031793/1209749532 + 245475583*sqrt(5)/604874766) + mu**9*(511417627/604874766 + 114758191*sqrt(5)/302437383) + mu**8*(535287507/806499688 + 1436655337*sqrt(5)/4838998128) + mu**7*(859072597*sqrt(5)/4838998128 + 1921160051/4838998128) + mu**6*(4369330*sqrt(5)/100812461 + 625315487/6451997504) + mu**5*(-1799515487/9677996256 - 402382619*sqrt(5)/4838998128) + mu**4*(-10510839541/25807990016 - 1175147339*sqrt(5)/6451997504) + mu**3*(-9253922635*sqrt(5)/38711985024 - 20692399609/38711985024) + mu**2*(-76248836299*sqrt(5)/309695880192 - 42624395051/77423970048) + mu*(-140844360535/309695880192 - 62987512853*sqrt(5)/309695880192) - 108271800185/412927840256 - 18157732885*sqrt(5)/154847940096)/mu**14",
+   "B_zeros": [],
+   "B_sign_at_ends": [
+    "1",
+    "1"
+   ]
+  },
+  "truncated 120-cell hop": {
+   "mu0": "10809/12500",
+   "corners": 2400,
+   "facets_per_corner": [
+    4
+   ],
+   "simplices": 2400,
+   "P12_corner_poly_degree": 12,
+   "design19_stations": [],
+   "Omega0": "600*(-11 + 5*sqrt(5))/mu**3",
+   "B": "(470978969600 - 210628198400*sqrt(5))*(mu**12 + mu**11*(9*sqrt(5)/16 + 21/16) + mu**10*(69/32 + 31*sqrt(5)/32) + mu**9*(943/320 + 2111*sqrt(5)/1600) + mu**8*(44613/12800 + 19953*sqrt(5)/12800) + mu**7*(41657*sqrt(5)/25600 + 93149/25600) + mu**6*(132813*sqrt(5)/89600 + 593959/179200) + mu**5*(1770771/716800 + 791913*sqrt(5)/716800) + mu**4*(1604837/1433600 + 143541*sqrt(5)/286720) + mu**3*(-61377*sqrt(5)/204800 - 480351/716800) + mu**2*(-1784073*sqrt(5)/1433600 - 7978617/2867200) + mu*(-29063099/5734400 - 12997413*sqrt(5)/5734400) - 36167431/4915200 - 2358791*sqrt(5)/716800)/mu**15",
+   "B_zeros": [],
+   "B_sign_at_ends": [
+    "1",
+    "1"
+   ]
+  }
+ },
+ "checks": [
+  [
+   "C-O mu=1/2: Omega(S;0) = 48/mu^3",
+   true
+  ],
+  [
+   "C-O mu=3/2: Omega(S;0) = 48/mu^2",
+   true
+  ],
+  [
+   "C-O (1,2): c2/c0 = (mu^2+2mu+7)/(3mu^2) (chunk 3)",
+   true
+  ],
+  [
+   "C-O (1,2): order-4 anisotropy/c0 = +-2(mu^4+2mu^3+mu^2-4mu-14)/(9mu^4) (chunk 3 root 1.692590)",
+   true
+  ],
+  [
+   "C-O mu=5/2: Omega(S;0) = 24/mu^1",
+   true
+  ],
+  [
+   "600-cell: 120 corners, all |v| = 1",
+   true
+  ],
+  [
+   "600-cell: 720 edges (12 neighbours each, exact)",
+   true
+  ],
+  [
+   "600 cells; facet normals w with w.v = 1 on the cell",
+   true
+  ],
+  [
+   "inradius r^2 equal for all 600 facets",
+   true
+  ],
+  [
+   "cell centre radius^2 = r^2",
+   true
+  ],
+  [
+   "White Queen: sum (v.y)^k = 120 E_k |y|^k for k = 2..10 (11-design, Silent Queens)",
+   true
+  ],
+  [
+   "P12 = sum (v.y)^12 - 120 E_12 |y|^12 is harmonic (Laplacian 0) and nonzero",
+   true
+  ],
+  [
+   "Red Queen (600 normals): 11-design k = 2..10 exact; degree 12 sounds",
+   true
+  ],
+  [
+   "left and right multiplication by two icosians permute the 120 corners",
+   true
+  ],
+  [
+   "corner count changes only across the walls rho1^2, rho2^2",
+   true
+  ],
+  [
+   "truncated 600-cell hop: every facet of S* has the same 3-volume (one corner orbit, no simplex missing)",
+   true
+  ],
+  [
+   "truncated 600-cell hop: P12 equal at every corner (float, all 1440; exact, 6)",
+   true
+  ],
+  [
+   "truncated 600-cell hop: the fixed point mu = r is NOT a 19-design station (exact: minimal polynomials differ)",
+   true
+  ],
+  [
+   "book value 0.924165 (400-point grid, step 2.4e-4) agrees within one grid step; exact value corrects it",
+   true
+  ],
+  [
+   "NEG: mu* + 1/1000 is not a station",
+   true
+  ],
+  [
+   "numerical: 1440 corners at mu* silent to 1e-12 in degrees 2..18, degree 20 sounds (> 1e-10)",
+   true
+  ],
+  [
+   "truncated 600-cell hop: odd orders vanish",
+   true
+  ],
+  [
+   "truncated 600-cell hop: Omega isotropic at orders 2..10 (three directions, exact)",
+   true
+  ],
+  [
+   "NEG truncated 600-cell hop: one simplex dropped breaks order-2 isotropy",
+   true
+  ],
+  [
+   "truncated 600-cell hop: order 12 = A + B P12(u) (third direction agrees exactly)",
+   true
+  ],
+  [
+   "truncated 600-cell hop: B(r) != 0 at the fixed point",
+   true
+  ],
+  [
+   "middle hop: every facet of S* has the same 3-volume (one corner orbit, no simplex missing)",
+   true
+  ],
+  [
+   "middle hop: P12 equal at every corner (float, all 3600; exact, 6)",
+   true
+  ],
+  [
+   "middle hop: odd orders vanish",
+   true
+  ],
+  [
+   "middle hop: Omega isotropic at orders 2..10 (three directions, exact)",
+   true
+  ],
+  [
+   "NEG middle hop: one simplex dropped breaks order-2 isotropy",
+   true
+  ],
+  [
+   "middle hop: order 12 = A + B P12(u) (third direction agrees exactly)",
+   true
+  ],
+  [
+   "truncated 120-cell hop: every facet of S* has the same 3-volume (one corner orbit, no simplex missing)",
+   true
+  ],
+  [
+   "truncated 120-cell hop: P12 equal at every corner (float, all 2400; exact, 6)",
+   true
+  ],
+  [
+   "truncated 120-cell hop: odd orders vanish",
+   true
+  ],
+  [
+   "truncated 120-cell hop: Omega isotropic at orders 2..10 (three directions, exact)",
+   true
+  ],
+  [
+   "NEG truncated 120-cell hop: one simplex dropped breaks order-2 isotropy",
+   true
+  ],
+  [
+   "truncated 120-cell hop: order 12 = A + B P12(u) (third direction agrees exactly)",
+   true
+  ],
+  [
+   "the turn does not send a 19-design station to a station (50 digits)",
+   true
+  ],
+  [
+   "NEG: B4 line at mu = 3/2: order-2 isotropic but order-4 anisotropic (code sees anisotropy where the group allows it)",
+   true
+  ]
+ ]
+}

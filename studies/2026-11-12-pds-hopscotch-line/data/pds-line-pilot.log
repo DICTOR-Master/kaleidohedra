@@ -1,0 +1,39 @@
+== control: cube-octahedron line (chunks 2, 3)
+ok   C-O mu=1/2: Omega(S;0) = 48/mu^3 48*nu**3
+ok   C-O mu=3/2: Omega(S;0) = 48/mu^2 48*nu**2
+ok   C-O (1,2): c2/c0 = (mu^2+2mu+7)/(3mu^2) (chunk 3) 
+ok   C-O (1,2): order-4 anisotropy/c0 = +-2(mu^4+2mu^3+mu^2-4mu-14)/(9mu^4) (chunk 3 root 1.692590) 1
+ok   C-O mu=5/2: Omega(S;0) = 24/mu^1 24*nu
+PROGRESS 0.10 3D control done (0s)
+== H4: 600-cell (White Queen), 120-cell (Red Queen)
+ok   600-cell: 120 corners, all |v| = 1 
+ok   600-cell: 720 edges (12 neighbours each, exact) 
+ok   600 cells; facet normals w with w.v = 1 on the cell 
+ok   inradius r^2 equal for all 600 facets r^2 = (7/16+3/16r5) = 0.856762745781
+squared flag radii (walls): ['(1+0r5) = 1.000000000', '(5/8+1/8r5) = 0.904508497', '(1/2+1/6r5) = 0.872677996', '(7/16+3/16r5) = 0.856762746']
+ok   cell centre radius^2 = r^2 
+ok   White Queen: sum (v.y)^k = 120 E_k |y|^k for k = 2..10 (11-design, Silent Queens) [pilot: k<=4] 
+ok   P12 = sum (v.y)^12 - 120 E_12 |y|^12 is harmonic (Laplacian 0) and nonzero 
+ok   left and right multiplication by two icosians permute the 120 corners 
+PROGRESS 0.25 H4 data and Silent Queens checks (17s)
+corner counts along the line (float scan): [(np.float64(0.8569), 2400), (np.float64(0.8688), 2400), (np.float64(0.8807), 3600), (np.float64(0.8926), 3600), (np.float64(0.9045), 1440), (np.float64(0.9165), 1440), (np.float64(0.9284), 1440), (np.float64(0.9403), 1440), (np.float64(0.9522), 1440), (np.float64(0.9641), 1440), (np.float64(0.9761), 1440), (np.float64(0.988), 1440), (np.float64(0.9999), 1440)]
+ok   corner count changes only across the walls rho1^2, rho2^2 [(np.float64(0.8687825169661096), np.float64(0.8807022881510088)), (np.float64(0.892622059335908), np.float64(0.904541830520807))]
+== truncated 600-cell hop (0.904508, 1.000000), sample mu = 3809/4000: 1440 corners, facets per corner [6], 4320 simplices, min float margin 3.65e-02 (25s)
+ok   truncated 600-cell hop: every facet of S* has the same 3-volume (one corner orbit, no simplex missing) 
+ok   truncated 600-cell hop: P12 equal at every corner (float, all 1440; exact, 6) 
+   19-design station mu* = 0.924138673238867458601238076667; minimal polynomial over Q (degree 20): 1048576*m**20 - 13107200*m**19 + 69468160*m**18 - 195952640*m**17 + 278528000*m**16 - 20480000*m**15 - 683458560*m**14 + 1317437440*m**13 - 1168629760*m**12 + 290048000*m**11 + 501350400*m**10 - 656972800*m**9 + 384408320*m**8 - 117126400*m**7 + 9318400*m**6 + 6118400*m**5 - 2304080*m**4 + 318600*m**3 - 12000*m**2 - 900*m + 45
+   its turn image r^2/mu* = 0.92709327137936814214
+ok   truncated 600-cell hop: the fixed point mu = r is NOT a 19-design station (exact: minimal polynomials differ) r = 0.92561479341095805980, minpoly(r) = 64*m**4 - 56*m**2 + 1
+FAIL book value 0.924165 reproduced 
+ok   NEG: mu* + 1/1000 is not a station 
+   float moment deviations at mu*: {2: '3.9e-16', 4: '2.2e-16', 6: '2.5e-16', 8: '1.1e-16', 10: '4.9e-17', 12: '5.6e-17', 14: '5.6e-17', 16: '5.2e-17', 18: '4.9e-17', 20: '8.2e-08'}
+FAIL numerical: 1440 corners at mu* silent to 1e-12 in degrees 2..18, degree 20 sounds (> 1e-6) 
+   expansion to order 4 along 3 directions: 4s
+ok   truncated 600-cell hop: odd orders vanish 
+ok   truncated 600-cell hop: Omega isotropic at orders 2..4 (three directions, exact) 
+   Omega(S;0) = 4! vol(S*) = 1440*(-105 + 47*sqrt(5))/mu
+ok   NEG truncated 600-cell hop: one simplex dropped breaks order-2 isotropy 
+PROGRESS 0.45 truncated 600-cell hop done (49s)
+ok   NEG: B4 line at mu = 3/2: order-2 isotropic but order-4 anisotropic (code sees anisotropy where the group allows it) 
+24 checks, 2 failed, 50s
+FINAL FAIL

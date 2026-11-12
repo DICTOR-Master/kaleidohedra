@@ -1,0 +1,126 @@
+{
+ "r2": "(7/16+3/16r5)",
+ "walls": [
+  "(1+0r5)",
+  "(5/8+1/8r5)",
+  "(1/2+1/6r5)",
+  "(7/16+3/16r5)"
+ ],
+ "hops": {
+  "truncated 600-cell hop": {
+   "mu0": "3809/4000",
+   "corners": 1440,
+   "facets_per_corner": [
+    6
+   ],
+   "simplices": 4320,
+   "P12_corner_poly_degree": 12,
+   "design19_stations": [
+    [
+     "0.924138673238867458601238076667",
+     "1048576*m**20 - 13107200*m**19 + 69468160*m**18 - 195952640*m**17 + 278528000*m**16 - 20480000*m**15 - 683458560*m**14 + 1317437440*m**13 - 1168629760*m**12 + 290048000*m**11 + 501350400*m**10 - 656972800*m**9 + 384408320*m**8 - 117126400*m**7 + 9318400*m**6 + 6118400*m**5 - 2304080*m**4 + 318600*m**3 - 12000*m**2 - 900*m + 45",
+     20
+    ]
+   ],
+   "Omega0": "1440*(-105 + 47*sqrt(5))/mu"
+  }
+ },
+ "checks": [
+  [
+   "C-O mu=1/2: Omega(S;0) = 48/mu^3",
+   true
+  ],
+  [
+   "C-O mu=3/2: Omega(S;0) = 48/mu^2",
+   true
+  ],
+  [
+   "C-O (1,2): c2/c0 = (mu^2+2mu+7)/(3mu^2) (chunk 3)",
+   true
+  ],
+  [
+   "C-O (1,2): order-4 anisotropy/c0 = +-2(mu^4+2mu^3+mu^2-4mu-14)/(9mu^4) (chunk 3 root 1.692590)",
+   true
+  ],
+  [
+   "C-O mu=5/2: Omega(S;0) = 24/mu^1",
+   true
+  ],
+  [
+   "600-cell: 120 corners, all |v| = 1",
+   true
+  ],
+  [
+   "600-cell: 720 edges (12 neighbours each, exact)",
+   true
+  ],
+  [
+   "600 cells; facet normals w with w.v = 1 on the cell",
+   true
+  ],
+  [
+   "inradius r^2 equal for all 600 facets",
+   true
+  ],
+  [
+   "cell centre radius^2 = r^2",
+   true
+  ],
+  [
+   "White Queen: sum (v.y)^k = 120 E_k |y|^k for k = 2..10 (11-design, Silent Queens) [pilot: k<=4]",
+   true
+  ],
+  [
+   "P12 = sum (v.y)^12 - 120 E_12 |y|^12 is harmonic (Laplacian 0) and nonzero",
+   true
+  ],
+  [
+   "left and right multiplication by two icosians permute the 120 corners",
+   true
+  ],
+  [
+   "corner count changes only across the walls rho1^2, rho2^2",
+   true
+  ],
+  [
+   "truncated 600-cell hop: every facet of S* has the same 3-volume (one corner orbit, no simplex missing)",
+   true
+  ],
+  [
+   "truncated 600-cell hop: P12 equal at every corner (float, all 1440; exact, 6)",
+   true
+  ],
+  [
+   "truncated 600-cell hop: the fixed point mu = r is NOT a 19-design station (exact: minimal polynomials differ)",
+   true
+  ],
+  [
+   "book value 0.924165 reproduced",
+   false
+  ],
+  [
+   "NEG: mu* + 1/1000 is not a station",
+   true
+  ],
+  [
+   "numerical: 1440 corners at mu* silent to 1e-12 in degrees 2..18, degree 20 sounds (> 1e-6)",
+   false
+  ],
+  [
+   "truncated 600-cell hop: odd orders vanish",
+   true
+  ],
+  [
+   "truncated 600-cell hop: Omega isotropic at orders 2..4 (three directions, exact)",
+   true
+  ],
+  [
+   "NEG truncated 600-cell hop: one simplex dropped breaks order-2 isotropy",
+   true
+  ],
+  [
+   "NEG: B4 line at mu = 3/2: order-2 isotropic but order-4 anisotropic (code sees anisotropy where the group allows it)",
+   true
+  ]
+ ]
+}
