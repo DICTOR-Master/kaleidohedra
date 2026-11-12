@@ -1,0 +1,1057 @@
+{
+ "mark": "DICTO OG Galois-twin window test, 2026-11-12 \u00b7 DICTO \u00b7 dictospheres.com",
+ "K0": 7,
+ "KMAX": 33,
+ "rows": [
+  {
+   "k": 0,
+   "listed": 102,
+   "corners": 102,
+   "twin_R": 0.6277483405791195,
+   "twin_r_min": 0.6180339887498948,
+   "spread": 0.9845250856095248,
+   "step_ratio": null,
+   "twin_hull": {
+    "corners": 102,
+    "faces": {
+     "3": 200
+    },
+    "h": {
+     "5": 1.0,
+     "3": 0.919716,
+     "2": 0.984525
+    },
+    "R_over_r": 1.087292
+   },
+   "twin_hull_orbits": null,
+   "covering_ratio": 0.9728009821349801,
+   "nested_in_previous": null,
+   "sym_ok": true,
+   "exact_twin_R2": "585/361+-198/361r5",
+   "exact_max_ok": true,
+   "step_lemma_exact": true,
+   "max_digits": 4,
+   "match_og_twin_10": true
+  },
+  {
+   "k": 1,
+   "listed": 80,
+   "corners": 80,
+   "twin_R": 0.5439604108555015,
+   "twin_r_min": 0.22052817941653582,
+   "spread": 0.40541218628338244,
+   "step_ratio": 0.8665262425921815,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "h": {
+     "5": 0.866526,
+     "3": 0.991593,
+     "2": 0.949405
+    },
+    "R_over_r": 1.154033
+   },
+   "twin_hull_orbits": null,
+   "covering_ratio": 0.4961936884562423,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "exact_twin_R2": "153/109+-54/109r5",
+   "exact_max_ok": true,
+   "step_lemma_exact": true,
+   "max_digits": 6,
+   "match_og_twin_10": true
+  },
+  {
+   "k": 2,
+   "listed": 132,
+   "corners": 132,
+   "twin_R": 0.47135597093751674,
+   "twin_r_min": 0.21917937055928052,
+   "spread": 0.46499754765668405,
+   "step_ratio": 0.866526242592181,
+   "twin_hull": {
+    "corners": 12,
+    "faces": {
+     "3": 20
+    },
+    "h": {
+     "5": 1.0,
+     "3": 0.794654,
+     "2": 0.850651
+    },
+    "R_over_r": 1.258409
+   },
+   "twin_hull_orbits": null,
+   "covering_ratio": 0.4545527362045336,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "exact_twin_R2": "14481/11881+-26478/59405r5",
+   "exact_max_ok": true,
+   "step_lemma_exact": true,
+   "max_digits": 7,
+   "match_og_twin_10": true
+  },
+  {
+   "k": 3,
+   "listed": 140,
+   "corners": 140,
+   "twin_R": 0.21783881137487077,
+   "twin_r_min": 0.07407144725394696,
+   "spread": 0.3400286973035312,
+   "step_ratio": 0.46215349927909927,
+   "twin_hull": {
+    "corners": 20,
+    "faces": {
+     "5": 12
+    },
+    "h": {
+     "5": 0.794654,
+     "3": 1.0,
+     "2": 0.934172
+    },
+    "R_over_r": 1.258409
+   },
+   "twin_hull_orbits": null,
+   "covering_ratio": 0.46898061488473686,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "exact_twin_R2": "15309/13448+-6561/13448r5",
+   "exact_max_ok": true,
+   "step_lemma_exact": true,
+   "max_digits": 14,
+   "match_og_twin_10": true
+  },
+  {
+   "k": 4,
+   "listed": 162,
+   "corners": 162,
+   "twin_R": 0.07772969990846734,
+   "twin_r_min": 0.011639991082284506,
+   "spread": 0.14974959501955476,
+   "step_ratio": 0.35682208977308993,
+   "twin_hull": {
+    "corners": 90,
+    "faces": {
+     "3": 140,
+     "5": 12
+    },
+    "h": {
+     "5": 0.984525,
+     "3": 0.934172,
+     "2": 1.0
+    },
+    "R_over_r": 1.070466
+   },
+   "twin_hull_orbits": null,
+   "covering_ratio": 0.4063973399388667,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "exact_twin_R2": "6561/6724+-729/1681r5",
+   "exact_max_ok": true,
+   "step_lemma_exact": true,
+   "max_digits": 18,
+   "match_og_twin_10": true
+  },
+  {
+   "k": 5,
+   "listed": 200,
+   "corners": 200,
+   "twin_R": 0.0684135181358048,
+   "twin_r_min": 0.007476456742330738,
+   "spread": 0.10928332508042544,
+   "step_ratio": 0.8801464332985582,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "h": {
+     "5": 0.866526,
+     "3": 0.991593,
+     "2": 0.949405
+    },
+    "R_over_r": 1.154033
+   },
+   "twin_hull_orbits": null,
+   "covering_ratio": 0.49619368845624257,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "exact_twin_R2": "1371249/1465832+-610173/1465832r5",
+   "exact_max_ok": true,
+   "step_lemma_exact": true,
+   "max_digits": 25,
+   "match_og_twin_10": true
+  },
+  {
+   "k": 6,
+   "listed": 252,
+   "corners": 192,
+   "twin_R": 0.02756603521783661,
+   "twin_r_min": 0.0022417552842531373,
+   "spread": 0.08132309439997411,
+   "step_ratio": 0.4029325777855252,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "h": {
+     "5": 0.856833,
+     "3": 0.993884,
+     "2": 0.948161
+    },
+    "R_over_r": 1.167089
+   },
+   "twin_hull_orbits": null,
+   "covering_ratio": 0.5253387757274661,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "exact_twin_R2": "925101/1102736+-413343/1102736r5",
+   "exact_max_ok": true,
+   "step_lemma_exact": true,
+   "max_digits": 44,
+   "match_og_twin_10": true
+  },
+  {
+   "k": 7,
+   "listed": 320,
+   "corners": 260,
+   "twin_R": 0.002122514434625272,
+   "twin_r_min": 0.00025611685242998323,
+   "spread": 0.1206667187991117,
+   "step_ratio": 0.07699745058919094,
+   "twin_hull": {
+    "corners": 20,
+    "faces": {
+     "5": 12
+    },
+    "h": {
+     "5": 0.794654,
+     "3": 1.0,
+     "2": 0.934172
+    },
+    "R_over_r": 1.258409
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.5028268054597331,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[0.00212251443463 +/- 4.73e-15]",
+   "faces": 402,
+   "orbits": 7,
+   "close_calls": 0,
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "4.2e-175",
+   "match_og_twin_10": true
+  },
+  {
+   "k": 8,
+   "listed": 402,
+   "corners": 312,
+   "twin_R": 0.0003269375541215683,
+   "twin_r_min": 2.244008106432231e-05,
+   "spread": 0.06863720848654235,
+   "step_ratio": 0.15403313578844466,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "h": {
+     "5": 0.941629,
+     "3": 0.913608,
+     "2": 0.977986
+    },
+    "R_over_r": 1.094562
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.3966186842999006,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[0.000326937554122 +/- 4.32e-16]",
+   "faces": 500,
+   "orbits": 6,
+   "close_calls": 0,
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "4.5e-174",
+   "match_og_twin_10": true
+  },
+  {
+   "k": 9,
+   "listed": 500,
+   "corners": 500,
+   "twin_R": 7.067180460443072e-05,
+   "twin_r_min": 3.2886440066192136e-06,
+   "spread": 0.046534031853674135,
+   "step_ratio": 0.2161630064013758,
+   "twin_hull": {
+    "corners": 180,
+    "faces": {
+     "3": 20,
+     "4": 120,
+     "10": 12
+    },
+    "h": {
+     "5": 0.952224,
+     "3": 0.987756,
+     "2": 0.967644
+    },
+    "R_over_r": 1.050173
+   },
+   "twin_hull_orbits": 2,
+   "covering_ratio": 0.39771790227814263,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[7.06718046044e-5 +/- 3.08e-17]",
+   "faces": 732,
+   "orbits": 9,
+   "close_calls": 0,
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "1.8e-171",
+   "match_og_twin_10": true
+  },
+  {
+   "k": 10,
+   "listed": 732,
+   "corners": 480,
+   "twin_R": 1.7852532263295645e-05,
+   "twin_r_min": 2.8265495114069113e-06,
+   "spread": 0.1583276517706245,
+   "step_ratio": 0.2526118069748058,
+   "twin_hull": {
+    "corners": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "h": {
+     "5": 0.957077,
+     "3": 0.925964,
+     "2": 0.960552
+    },
+    "R_over_r": 1.079956
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.4333584708801123,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[1.78525322633e-5 +/- 4.36e-18]",
+   "faces": 662,
+   "orbits": 10,
+   "close_calls": 0,
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "9.4e-170",
+   "match_og_twin_10": true
+  },
+  {
+   "k": 11,
+   "listed": 662,
+   "corners": 470,
+   "twin_R": 2.1361948385315357e-06,
+   "twin_r_min": 9.619343277189394e-08,
+   "spread": 0.045030271132954935,
+   "step_ratio": 0.11965780579618379,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "h": {
+     "5": 0.9972,
+     "3": 0.829154,
+     "2": 0.887582
+    },
+    "R_over_r": 1.206048
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.39364066752799554,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[2.13619483853e-6 +/- 1.54e-18]",
+   "faces": 672,
+   "orbits": 10,
+   "close_calls": 0,
+   "real_check": "real t_min(D_10) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "2.0e-167"
+  },
+  {
+   "k": 12,
+   "listed": 672,
+   "corners": 540,
+   "twin_R": 5.384240616196437e-07,
+   "twin_r_min": 3.8734899734956435e-09,
+   "spread": 0.00719412494650355,
+   "step_ratio": 0.25204819893196984,
+   "twin_hull": {
+    "corners": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "h": {
+     "5": 0.862157,
+     "3": 0.990878,
+     "2": 0.96454
+    },
+    "R_over_r": 1.159881
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.2801074240833354,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[5.38424061620e-7 +/- 3.57e-19]",
+   "faces": 902,
+   "orbits": 13,
+   "close_calls": 0,
+   "real_check": "real t_min(D_11) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "2.9e-165"
+  },
+  {
+   "k": 13,
+   "listed": 902,
+   "corners": 650,
+   "twin_R": 3.964563215280658e-07,
+   "twin_r_min": 2.627095309891806e-09,
+   "spread": 0.006626443235325811,
+   "step_ratio": 0.7363272739622333,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "h": {
+     "5": 0.993111,
+     "3": 0.846729,
+     "2": 0.906395
+    },
+    "R_over_r": 1.181015
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.2978304146050404,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[3.96456321528e-7 +/- 6.58e-20]",
+   "faces": 1092,
+   "orbits": 13,
+   "close_calls": 0,
+   "real_check": "real t_min(D_12) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "6.8e-163"
+  },
+  {
+   "k": 14,
+   "listed": 1092,
+   "corners": 900,
+   "twin_R": 1.4663228905821708e-07,
+   "twin_r_min": 2.2064075994722582e-10,
+   "spread": 0.0015047215136880618,
+   "step_ratio": 0.3698573615702499,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "h": {
+     "5": 0.979619,
+     "3": 0.900396,
+     "2": 0.918747
+    },
+    "R_over_r": 1.110622
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.4395170618823194,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[1.46632289058e-7 +/- 2.18e-19]",
+   "faces": 1262,
+   "orbits": 19,
+   "close_calls": 0,
+   "real_check": "real t_min(D_13) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "5.6e-160"
+  },
+  {
+   "k": 15,
+   "listed": 1262,
+   "corners": 710,
+   "twin_R": 1.3202714078539793e-07,
+   "twin_r_min": 3.2201310218991695e-11,
+   "spread": 0.0002438991712418658,
+   "step_ratio": 0.9003960971582425,
+   "twin_hull": {
+    "corners": 20,
+    "faces": {
+     "5": 12
+    },
+    "h": {
+     "5": 0.794654,
+     "3": 1.0,
+     "2": 0.934172
+    },
+    "R_over_r": 1.258409
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.600022426817214,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[1.32027140785e-7 +/- 3.98e-19]",
+   "faces": 1392,
+   "orbits": 16,
+   "close_calls": 0,
+   "real_check": "real t_min(D_14) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "1.6e-156"
+  },
+  {
+   "k": 16,
+   "listed": 1392,
+   "corners": 1392,
+   "twin_R": 2.4489407723764125e-09,
+   "twin_r_min": 3.013395919361222e-12,
+   "spread": 0.0012304895052390637,
+   "step_ratio": 0.018548767759479216,
+   "twin_hull": {
+    "corners": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "h": {
+     "5": 0.903544,
+     "3": 0.948816,
+     "2": 0.991378
+    },
+    "R_over_r": 1.106754
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.36366887310053075,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[2.44894077238e-9 +/- 3.59e-21]",
+   "faces": 2360,
+   "orbits": 27,
+   "close_calls": 0,
+   "real_check": "real t_min(D_15) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "4.1e-154"
+  },
+  {
+   "k": 17,
+   "listed": 2360,
+   "corners": 1800,
+   "twin_R": 6.664649859112567e-10,
+   "twin_r_min": 1.1103600240960204e-13,
+   "spread": 0.00016660440496777586,
+   "step_ratio": 0.2721441830806426,
+   "twin_hull": {
+    "corners": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "h": {
+     "5": 0.977875,
+     "3": 0.884604,
+     "2": 0.941558
+    },
+    "R_over_r": 1.130449
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.4621389619290957,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[6.66464985911e-10 +/- 2.57e-22]",
+   "faces": 2882,
+   "orbits": 35,
+   "close_calls": 0,
+   "real_check": "real t_min(D_16) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "1.1e-150"
+  },
+  {
+   "k": 18,
+   "listed": 2882,
+   "corners": 2072,
+   "twin_R": 3.4608943989687076e-11,
+   "twin_r_min": 1.5907223930100167e-16,
+   "spread": 4.596275441065255e-06,
+   "step_ratio": 0.05192912564246164,
+   "twin_hull": {
+    "corners": 180,
+    "faces": {
+     "3": 60,
+     "4": 90,
+     "5": 12,
+     "6": 20
+    },
+    "h": {
+     "5": 0.903105,
+     "3": 0.935013,
+     "2": 0.995661
+    },
+    "R_over_r": 1.107291
+   },
+   "twin_hull_orbits": 2,
+   "covering_ratio": 0.24236693827095832,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[3.46089439897e-11 +/- 1.30e-23]",
+   "faces": 3780,
+   "orbits": 41,
+   "close_calls": 0,
+   "real_check": "real t_min(D_17) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "1.1e-147"
+  },
+  {
+   "k": 19,
+   "listed": 3780,
+   "corners": 3060,
+   "twin_R": 3.29362026445186e-11,
+   "twin_r_min": 4.3261799990328695e-18,
+   "spread": 1.3135029698855866e-07,
+   "step_ratio": 0.9516673682483081,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "h": {
+     "5": 0.978929,
+     "3": 0.901872,
+     "2": 0.919578
+    },
+    "R_over_r": 1.108804
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.41189157375725244,
+   "nested_in_previous": false,
+   "sym_ok": true,
+   "twin_R_certified": "[3.29362026445e-11 +/- 1.86e-23]",
+   "faces": 5612,
+   "orbits": 58,
+   "close_calls": 0,
+   "real_check": "real t_min(D_18) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "6.6e-144"
+  },
+  {
+   "k": 20,
+   "listed": 5612,
+   "corners": 4200,
+   "twin_R": 1.864543900020012e-12,
+   "twin_r_min": 2.200116221518593e-20,
+   "spread": 1.1799755540724887e-08,
+   "step_ratio": 0.056610773261996504,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "h": {
+     "5": 0.900021,
+     "3": 0.92926,
+     "2": 0.994742
+    },
+    "R_over_r": 1.111086
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.4078515036841104,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[1.86454390002e-12 +/- 1.25e-26]",
+   "faces": 7952,
+   "orbits": 79,
+   "close_calls": 0,
+   "real_check": "real t_min(D_19) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "1.8e-136"
+  },
+  {
+   "k": 21,
+   "listed": 7952,
+   "corners": 6080,
+   "twin_R": 1.6627857628885388e-12,
+   "twin_r_min": 2.801316840588955e-22,
+   "spread": 1.684713029850939e-10,
+   "step_ratio": 0.8917922301913579,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "h": {
+     "5": 0.999828,
+     "3": 0.805764,
+     "2": 0.858384
+    },
+    "R_over_r": 1.241058
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.5147007797648852,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[1.66278576289e-12 +/- 1.47e-24]",
+   "faces": 11322,
+   "orbits": 110,
+   "close_calls": 0,
+   "real_check": "real t_min(D_20) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "2.2e-131"
+  },
+  {
+   "k": 22,
+   "listed": 11322,
+   "corners": 8082,
+   "twin_R": 1.6777682282906577e-13,
+   "twin_r_min": 2.333626784083805e-27,
+   "spread": 1.390911297957614e-14,
+   "step_ratio": 0.10090104604793415,
+   "twin_hull": {
+    "corners": 240,
+    "faces": {
+     "4": 150,
+     "6": 20,
+     "10": 12
+    },
+    "h": {
+     "5": 0.847442,
+     "3": 0.995554,
+     "2": 0.958314
+    },
+    "R_over_r": 1.180022
+   },
+   "twin_hull_orbits": 2,
+   "covering_ratio": 0.5825905182660476,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[1.67776822829e-13 +/- 6.58e-26]",
+   "faces": 15500,
+   "orbits": 143,
+   "close_calls": 0,
+   "real_check": "real t_min(D_21) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "3.1e-122"
+  },
+  {
+   "k": 23,
+   "listed": 15500,
+   "corners": 13200,
+   "twin_R": 9.90448335037906e-16,
+   "twin_r_min": 1.4170402197205413e-31,
+   "spread": 1.4307058425882548e-16,
+   "step_ratio": 0.005903368047724886,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "h": {
+     "5": 0.849096,
+     "3": 0.954027,
+     "2": 0.998173
+    },
+    "R_over_r": 1.177723
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.33582388319844486,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[9.90448335038e-16 +/- 9.42e-29]",
+   "faces": 25262,
+   "orbits": 231,
+   "close_calls": 0,
+   "real_check": "real t_min(D_22) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "3.9e-118"
+  },
+  {
+   "k": 24,
+   "listed": 25262,
+   "corners": 18132,
+   "twin_R": 3.0021172864358654e-16,
+   "twin_r_min": 8.440109314382955e-34,
+   "spread": 2.8113856019273356e-18,
+   "step_ratio": 0.30310690424059017,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "h": {
+     "5": 0.95352,
+     "3": 0.905709,
+     "2": 0.969531
+    },
+    "R_over_r": 1.104107
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.5289810040306515,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[3.00211728644e-16 +/- 4.14e-28]",
+   "faces": 33980,
+   "orbits": 316,
+   "close_calls": 0,
+   "real_check": "real t_min(D_23) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "1.1e-106"
+  },
+  {
+   "k": 25,
+   "listed": 33980,
+   "corners": 24260,
+   "twin_R": 1.725596267333888e-16,
+   "twin_r_min": 5.531264003711407e-38,
+   "spread": 3.205421863978311e-22,
+   "step_ratio": 0.5747930885746733,
+   "twin_hull": {
+    "corners": 20,
+    "faces": {
+     "5": 12
+    },
+    "h": {
+     "5": 0.794654,
+     "3": 1.0,
+     "2": 0.934172
+    },
+    "R_over_r": 1.258409
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.6070519573852744,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[1.72559626733e-16 +/- 3.89e-28]",
+   "faces": 47052,
+   "orbits": 418,
+   "close_calls": 0,
+   "real_check": "real t_min(D_24) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "3.7e-100"
+  },
+  {
+   "k": 26,
+   "listed": 47052,
+   "corners": 34860,
+   "twin_R": 1.115402178939474e-18,
+   "twin_r_min": 2.6230823498412043e-42,
+   "spread": 2.3516919720698722e-24,
+   "step_ratio": 0.006463865274018082,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "h": {
+     "5": 0.983439,
+     "3": 0.870505,
+     "2": 0.931846
+    },
+    "R_over_r": 1.148758
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.5315304266301841,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[1.11540217894e-18 +/- 5.27e-31]",
+   "faces": 66482,
+   "orbits": 594,
+   "close_calls": 0,
+   "real_check": "real t_min(D_25) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "4.0e-92"
+  },
+  {
+   "k": 27,
+   "listed": 66482,
+   "corners": 46340,
+   "twin_R": 7.209809411010968e-21,
+   "twin_r_min": 6.221611025305681e-47,
+   "spread": 8.629369613854023e-27,
+   "step_ratio": 0.006463865274018081,
+   "twin_hull": {
+    "corners": 20,
+    "faces": {
+     "5": 12
+    },
+    "h": {
+     "5": 0.794654,
+     "3": 1.0,
+     "2": 0.934172
+    },
+    "R_over_r": 1.258409
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.3848402514776333,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[7.20980941101e-21 +/- 9.70e-34]",
+   "faces": 89742,
+   "orbits": 789,
+   "close_calls": 0,
+   "real_check": "real t_min(D_26) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "1.7e-84"
+  },
+  {
+   "k": 28,
+   "listed": 89742,
+   "corners": 57000,
+   "twin_R": 4.541133748822481e-27,
+   "twin_r_min": 4.472915330659089e-53,
+   "spread": 9.84977668147061e-27,
+   "step_ratio": 6.298548949001576e-07,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "h": {
+     "5": 0.8505,
+     "3": 0.940722,
+     "2": 0.999823
+    },
+    "R_over_r": 1.175779
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.5574791984036823,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[4.54113374882e-27 +/- 2.49e-39]",
+   "faces": 110672,
+   "orbits": 968,
+   "close_calls": 0,
+   "real_check": "real t_min(D_27) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "2.8e-68"
+  },
+  {
+   "k": 29,
+   "listed": 110672,
+   "corners": 77960,
+   "twin_R": 4.21095749571034e-27,
+   "twin_r_min": 1.1593356294191098e-56,
+   "spread": 2.7531401839133105e-30,
+   "step_ratio": 0.9272921099939512,
+   "twin_hull": {
+    "corners": 20,
+    "faces": {
+     "5": 12
+    },
+    "h": {
+     "5": 0.794654,
+     "3": 1.0,
+     "2": 0.934172
+    },
+    "R_over_r": 1.258409
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.6171601742979614,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[4.21095749571e-27 +/- 3.40e-40]",
+   "faces": 152112,
+   "orbits": 1322,
+   "close_calls": 1,
+   "real_check": "real t_min(D_28) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "1.8e-64"
+  },
+  {
+   "k": 30,
+   "listed": 152112,
+   "corners": 102180,
+   "twin_R": 3.9272330047974347e-31,
+   "twin_r_min": 1.2782318175087873e-60,
+   "spread": 3.254789863365181e-30,
+   "step_ratio": 9.326223332337283e-05,
+   "twin_hull": {
+    "corners": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "h": {
+     "5": 0.86082,
+     "3": 0.992877,
+     "2": 0.952951
+    },
+    "R_over_r": 1.161683
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.30328475540624533,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[3.92723300480e-31 +/- 2.57e-43]",
+   "faces": 199382,
+   "orbits": 1731,
+   "close_calls": 0,
+   "real_check": "real t_min(D_29) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "1.6e-47"
+  },
+  {
+   "k": 31,
+   "listed": 199382,
+   "corners": 135200,
+   "twin_R": 5.781256258501768e-33,
+   "twin_r_min": 3.0701803960881306e-70,
+   "spread": 5.310576557773583e-38,
+   "step_ratio": 0.014720940294195668,
+   "twin_hull": {
+    "corners": 60,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "h": {
+     "5": 0.980377,
+     "3": 0.898731,
+     "2": 0.917803
+    },
+    "R_over_r": 1.11268
+   },
+   "twin_hull_orbits": 1,
+   "covering_ratio": 0.4315378428543563,
+   "nested_in_previous": true,
+   "sym_ok": true,
+   "twin_R_certified": "[5.78125625850e-33 +/- 1.77e-45]",
+   "faces": 264642,
+   "orbits": 2283,
+   "close_calls": 0,
+   "real_check": "real t_min(D_30) MATCH certified-30",
+   "step_lemma_violations": 0,
+   "twin_rel_ball_radius": "2.4e-43"
+  }
+ ]
+}

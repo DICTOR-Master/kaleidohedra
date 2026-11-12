@@ -1,0 +1,47 @@
+P1 Fibonacci chain: class WINDOW (want WINDOW) ok | twin radius by level ['0.992', '0.999', '1', '1', '1'] | covering ratio ['0.0082', '0.00192', '0.000453', '0.000107', '2.53e-05']
+  P1 window length 1.617993 (model set: phi = 1.618034)
+P2 Fibonacci cube: class WINDOW (want WINDOW) ok | twin radius by level ['1.48', '1.64', '1.64', '1.7'] | covering ratio ['0.165', '0.092', '0.0473', '0.0206']
+  P2 twin hull: 8 corners, faces {4: 6} (cube: 8 corners, 6 four-sided)
+  P3 lattice box +-5: no window point on the box edge within real radius 12.0: True
+P3 icosahedral (Z^6, triacontahedron window): class WINDOW (want WINDOW) ok | twin radius by level ['2.83', '2.83', '2.83', '2.83'] | covering ratio ['0.435', '0.222', '0.206', '0.102']
+  P3 twin hull: 32 corners, faces {4: 30}, support h5:h3:h2 = {5: 1.0, 3: 0.910593, 2: 0.850651} | window itself: 32 corners, faces {4: 30}, h {5: 1.0, 3: 0.910593, 2: 0.850651}
+N1 progression n*phi: class UNBOUNDED (want UNBOUNDED) ok | twin radius by level ['5.56', '61.2', '617', '6.18e+03'] | covering ratio ['0.111', '0.0101', '0.001', '0.0001']
+N2 powers phi^n (Pisot): class COLLAPSE (want COLLAPSE) ok | twin radius by level ['0.618', '0.00813', '6.61e-05', '4.37e-09', '1.91e-17'] | covering ratio ['nan', 'nan', 'nan', 'nan', 'nan']
+controls done in 4 s
+CONTROLS ok
+sigma(I_h): 120 matrices orthogonal: True
+k  0: listed     102 corners     102 | TWIN R 6.277483e-01 (r_min 6.180e-01, spread 0.985) step None | twin hull 102 corners, faces {3: 200}, h5:h3:h2 1.0000:0.9197:0.9845, R/r 1.0873, None orbits | cover 0.973 | nested None | sym True | og-twin-10 MATCH | exact_twin_R2=585/361+-198/361r5 exact_max_ok=True step_lemma_exact=True max_digits=4 | 0 s
+PROGRESS 0.067 level 0
+k  1: listed      80 corners      80 | TWIN R 5.439604e-01 (r_min 2.205e-01, spread 0.405) step 0.866526 | twin hull 60 corners, faces {3: 20, 4: 30, 5: 12}, h5:h3:h2 0.8665:0.9916:0.9494, R/r 1.1540, None orbits | cover 0.496 | nested True | sym True | og-twin-10 MATCH | exact_twin_R2=153/109+-54/109r5 exact_max_ok=True step_lemma_exact=True max_digits=6 | 1 s
+PROGRESS 0.133 level 1
+k  2: listed     132 corners     132 | TWIN R 4.713560e-01 (r_min 2.192e-01, spread 0.465) step 0.866526 | twin hull 12 corners, faces {3: 20}, h5:h3:h2 1.0000:0.7947:0.8507, R/r 1.2584, None orbits | cover 0.455 | nested True | sym True | og-twin-10 MATCH | exact_twin_R2=14481/11881+-26478/59405r5 exact_max_ok=True step_lemma_exact=True max_digits=7 | 1 s
+PROGRESS 0.200 level 2
+k  3: listed     140 corners     140 | TWIN R 2.178388e-01 (r_min 7.407e-02, spread 0.340) step 0.462153 | twin hull 20 corners, faces {5: 12}, h5:h3:h2 0.7947:1.0000:0.9342, R/r 1.2584, None orbits | cover 0.469 | nested True | sym True | og-twin-10 MATCH | exact_twin_R2=15309/13448+-6561/13448r5 exact_max_ok=True step_lemma_exact=True max_digits=14 | 1 s
+PROGRESS 0.267 level 3
+k  4: listed     162 corners     162 | TWIN R 7.772970e-02 (r_min 1.164e-02, spread 0.150) step 0.356822 | twin hull 90 corners, faces {3: 140, 5: 12}, h5:h3:h2 0.9845:0.9342:1.0000, R/r 1.0705, None orbits | cover 0.406 | nested True | sym True | og-twin-10 MATCH | exact_twin_R2=6561/6724+-729/1681r5 exact_max_ok=True step_lemma_exact=True max_digits=18 | 1 s
+PROGRESS 0.333 level 4
+k  5: listed     200 corners     200 | TWIN R 6.841352e-02 (r_min 7.476e-03, spread 0.109) step 0.880146 | twin hull 60 corners, faces {3: 20, 4: 30, 5: 12}, h5:h3:h2 0.8665:0.9916:0.9494, R/r 1.1540, None orbits | cover 0.496 | nested True | sym True | og-twin-10 MATCH | exact_twin_R2=1371249/1465832+-610173/1465832r5 exact_max_ok=True step_lemma_exact=True max_digits=25 | 2 s
+PROGRESS 0.400 level 5
+k  6: listed     252 corners     192 | TWIN R 2.756604e-02 (r_min 2.242e-03, spread 0.081) step 0.402933 | twin hull 60 corners, faces {3: 20, 4: 30, 5: 12}, h5:h3:h2 0.8568:0.9939:0.9482, R/r 1.1671, None orbits | cover 0.525 | nested True | sym True | og-twin-10 MATCH | exact_twin_R2=925101/1102736+-413343/1102736r5 exact_max_ok=True step_lemma_exact=True max_digits=44 | 2 s
+PROGRESS 0.467 level 6
+k  7: listed     320 corners     260 | TWIN R 2.122514e-03 (r_min 2.561e-04, spread 0.121) step 0.076997 | twin hull 20 corners, faces {5: 12}, h5:h3:h2 0.7947:1.0000:0.9342, R/r 1.2584, 1 orbits | cover 0.503 | nested True | sym True | og-twin-10 MATCH | twin_R_certified=[0.00212251443463 +/- 4.73e-15] faces=402 orbits=7 close_calls=0 step_lemma_violations=0 twin_rel_ball_radius=4.2e-175 | 3 s
+PROGRESS 0.533 level 7 (0 s)
+k  8: listed     402 corners     312 | TWIN R 3.269376e-04 (r_min 2.244e-05, spread 0.069) step 0.154033 | twin hull 60 corners, faces {5: 12, 6: 20}, h5:h3:h2 0.9416:0.9136:0.9780, R/r 1.0946, 1 orbits | cover 0.397 | nested True | sym True | og-twin-10 MATCH | twin_R_certified=[0.000326937554122 +/- 4.32e-16] faces=500 orbits=6 close_calls=0 step_lemma_violations=0 twin_rel_ball_radius=4.5e-174 | 3 s
+PROGRESS 0.600 level 8 (0 s)
+k  9: listed     500 corners     500 | TWIN R 7.067180e-05 (r_min 3.289e-06, spread 0.047) step 0.216163 | twin hull 180 corners, faces {3: 20, 4: 120, 10: 12}, h5:h3:h2 0.9522:0.9878:0.9676, R/r 1.0502, 2 orbits | cover 0.398 | nested True | sym True | og-twin-10 MATCH | twin_R_certified=[7.06718046044e-5 +/- 3.08e-17] faces=732 orbits=9 close_calls=0 step_lemma_violations=0 twin_rel_ball_radius=1.8e-171 | 4 s
+PROGRESS 0.667 level 9 (1 s)
+k 10: listed     732 corners     480 | TWIN R 1.785253e-05 (r_min 2.827e-06, spread 0.158) step 0.252612 | twin hull 120 corners, faces {4: 30, 6: 20, 10: 12}, h5:h3:h2 0.9571:0.9260:0.9606, R/r 1.0800, 1 orbits | cover 0.433 | nested True | sym True | og-twin-10 MATCH | twin_R_certified=[1.78525322633e-5 +/- 4.36e-18] faces=662 orbits=10 close_calls=0 step_lemma_violations=0 twin_rel_ball_radius=9.4e-170 | 4 s
+PROGRESS 0.733 level 10 (1 s)
+k 11: listed     662 corners     470 | TWIN R 2.136195e-06 (r_min 9.619e-08, spread 0.045) step 0.119658 | twin hull 60 corners, faces {5: 12, 6: 20}, h5:h3:h2 0.9972:0.8292:0.8876, R/r 1.2060, 1 orbits | cover 0.394 | nested True | sym True | twin_R_certified=[2.13619483853e-6 +/- 1.54e-18] faces=672 orbits=10 close_calls=0 real_check=real t_min(D_10) MATCH certified-30 step_lemma_violations=0 twin_rel_ball_radius=2.0e-167 | 5 s
+PROGRESS 0.800 level 11 (0 s)
+k 12: listed     672 corners     540 | TWIN R 5.384241e-07 (r_min 3.873e-09, spread 0.007) step 0.252048 | twin hull 120 corners, faces {4: 30, 6: 20, 10: 12}, h5:h3:h2 0.8622:0.9909:0.9645, R/r 1.1599, 1 orbits | cover 0.280 | nested True | sym True | twin_R_certified=[5.38424061620e-7 +/- 3.57e-19] faces=902 orbits=13 close_calls=0 real_check=real t_min(D_11) MATCH certified-30 step_lemma_violations=0 twin_rel_ball_radius=2.9e-165 | 5 s
+PROGRESS 0.867 level 12 (0 s)
+k 13: listed     902 corners     650 | TWIN R 3.964563e-07 (r_min 2.627e-09, spread 0.007) step 0.736327 | twin hull 60 corners, faces {5: 12, 6: 20}, h5:h3:h2 0.9931:0.8467:0.9064, R/r 1.1810, 1 orbits | cover 0.298 | nested True | sym True | twin_R_certified=[3.96456321528e-7 +/- 6.58e-20] faces=1092 orbits=13 close_calls=0 real_check=real t_min(D_12) MATCH certified-30 step_lemma_violations=0 twin_rel_ball_radius=6.8e-163 | 5 s
+PROGRESS 0.933 level 13 (0 s)
+k 14: listed    1092 corners     900 | TWIN R 1.466323e-07 (r_min 2.206e-10, spread 0.002) step 0.369857 | twin hull 60 corners, faces {3: 20, 4: 30, 5: 12}, h5:h3:h2 0.9796:0.9004:0.9187, R/r 1.1106, 1 orbits | cover 0.440 | nested True | sym True | twin_R_certified=[1.46632289058e-7 +/- 2.18e-19] faces=1262 orbits=19 close_calls=0 real_check=real t_min(D_13) MATCH certified-30 step_lemma_violations=0 twin_rel_ball_radius=5.6e-160 | 6 s
+PROGRESS 1.000 level 14 (0 s)
+CLASS COLLAPSE | twin R first 6.2775e-01 last 1.4663e-07 (x2.336e-07) | geometric mean step over the last 10 levels 0.2676 (1/phi = 0.6180, 1/phi^2 = 0.3820) | max step 0.8801
+twin radius non-increasing at every level: True
+done in 9 s
+FINAL ok
+[exit 0]
