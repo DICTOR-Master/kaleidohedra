@@ -3835,7 +3835,7 @@
    ],
    [
     "Archimedean stretches (#49)",
-    "the Polyhedral Stretching Theorem covers every equal-edged solid; listing and prior-art check remain",
+    "the Polyhedral Stretching Theorem covers every equal-edged solid; listing and prior-art check remain — LISTED 12 Nov 2026 within the permutohedron route (studies/2026-11-12-permutohedron-equal-edges): every equal-edged member of the A3, B3, H3 Coxeter permutohedron deformation cones (Postnikov; Ardila–Castillo–Eur–Postnikov), exact: 17, 101, 4427 solids; Platonic/Archimedean stretches only in B3 along cube axes (T, O, CO, TT, TO; 8 non-regular-faced); new atoms 2 (A3/B3) and 367 (H3), prior art pending (Subbotin RR-polyhedra)",
     "new equal-edged solids",
     []
    ],
@@ -4367,6 +4367,11 @@
     "result": "extents = Hamiltonian cycles of the change graph R_n (changes = cube-face diagonals, F(n+1)-1 per row); 4 bells: 44 edge tours / 5396 tours, 162 classes; the three double Minimus methods are the most symmetric (D3d); plain hunt = shortest way across; Doubles and Minor extent searches; study 2026-11-12-change-ringing",
     "goes_to": "The Permutohedron Paradigm, Part Three, Chapter 13 (before the Coda); DRAFT PDF in papers-to-read for DICTO's read; not published",
     "date": "2026-11-12"
+   },
+   {
+    "result": "Equal-edged solids of the A3/B3/H3 permutohedron cones listed exactly (17/101/4427); Archimedean stretches along cube axes; 369 new atoms (prior art pending)",
+    "study": "2026-11-12-permutohedron-equal-edges",
+    "goes_to": "#49 next version (Archimedean stretches, open question 1)"
    }
   ]
  },
@@ -6547,6 +6552,15 @@
     "result": "true for n <= 6 (computed); distance n proved for all n >= 3",
     "retry": "a proof (bell 1 and bell n each move at every change but one), or the same count for n = 7, 8",
     "study": "2026-11-12-change-ringing",
+    "date": "2026-11-12"
+   },
+   {
+    "question": "Gap 'Archimedean stretches (#49)' by the permutohedron route (DICTO approved): every equal-edged member of the deformation cones of the A3, B3, H3 Coxeter permutohedra (TO, truncated cuboctahedron, truncated icosidodecahedron); compare with #49's theorem and list",
+    "method": "studies/2026-11-12-permutohedron-equal-edges: edge lengths are linear on the cone, so equal edges = 0/1 wall labels closing round every face (exact, Q(sqrt2)/Q(sqrt5)); complete C enumeration with orbit representatives, exact rebuild of every orbit (faces, edges = 1 exactly, Euler), Minkowski atoms, cyclic corner names; controls: Wythoff solids (7 per group) and #49's CO, TT, J3, J15, stretched cube found and named; cube (A3), RD (B3), #49 five-fold stretched dodecahedron (H3) fail the cone; ranks R-3; all FINAL ok (setup 46/46, analysis 50/50)",
+    "status": "SETTLED",
+    "result": "A3 162 members / 17 solids, B3 1296 / 101 solids, H3 390970 / 4427 solids. Known: all 16 non-snub Platonic/Archimedean, J1 J3 J4 J8 J15 J19 J28, J2 J5 J6 J11 J31 J32 J62 J63 J76 J80 J81 J83 J91 J92, octagonal prism, pentagonal antiprism. Platonic/Archimedean stretches exist only in B3 along cube axes (T, O, CO, TT, TO by 1-3 axes; 8 not regular-faced); none in H3 (every one has edges in all 15 directions). #49 theorem covers 3180 segment-summand orbits + zonohedra; caps 158; theorem extends: P+P' equal-edged iff no wall carries both. NEW: atoms not regular-faced: A3/B3 2 (O+T known; 13-corner octet solid A3-16), H3 367; plus 54 atom sums and 13 pentagon caps",
+    "retry": "never for these cones; leads: prior art of the H3 atoms (Subbotin RR-polyhedra), finer fan for five-fold/three-fold stretches, 4D (A4 B4 F4 H4), tiling",
+    "study": "2026-11-12-permutohedron-equal-edges",
     "date": "2026-11-12"
    }
   ]

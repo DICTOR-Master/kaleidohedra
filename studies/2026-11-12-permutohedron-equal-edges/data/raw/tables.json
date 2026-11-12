@@ -1,0 +1,5966 @@
+{
+ "tables": {
+  "A3": {
+   "solid_orbits": 17,
+   "distinct_solids": 17,
+   "kinds": {
+    "regular-faced": 7,
+    "#49 stretch (segment summand)": 3,
+    "new atom (indecomposable, not regular-faced)": 2,
+    "zonohedron": 5
+   },
+   "atoms_by_dim": {
+    "1": 1,
+    "2": 1,
+    "3": 5
+   },
+   "regular_faced": [
+    [
+     "J1 square pyramid",
+     6
+    ],
+    [
+     "J3 triangular cupola",
+     13
+    ],
+    [
+     "cuboctahedron",
+     19
+    ],
+    [
+     "octahedron",
+     8
+    ],
+    [
+     "tetrahedron",
+     7
+    ],
+    [
+     "truncated octahedron",
+     22
+    ],
+    [
+     "truncated tetrahedron",
+     18
+    ]
+   ],
+   "stretches": [],
+   "new_atoms": [
+    {
+     "id": 10,
+     "V": 7,
+     "E": 12,
+     "F": 7,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 3
+     },
+     "orbit": 8
+    },
+    {
+     "id": 16,
+     "V": 13,
+     "E": 24,
+     "F": 13,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 4,
+      "4-gon regular": 5
+     },
+     "orbit": 6
+    }
+   ]
+  },
+  "B3": {
+   "solid_orbits": 103,
+   "distinct_solids": 101,
+   "kinds": {
+    "regular-faced": 18,
+    "#49 stretch (segment summand)": 32,
+    "stretch of a Platonic/Archimedean solid": 8,
+    "zonohedron": 43,
+    "new atom (indecomposable, not regular-faced)": 2
+   },
+   "atoms_by_dim": {
+    "1": 2,
+    "2": 1,
+    "3": 5
+   },
+   "regular_faced": [
+    [
+     "8-gonal prism",
+     74
+    ],
+    [
+     "J1 square pyramid",
+     17
+    ],
+    [
+     "J15 elongated square bipyramid",
+     51
+    ],
+    [
+     "J19 elongated square cupola",
+     83
+    ],
+    [
+     "J28 square orthobicupola",
+     79
+    ],
+    [
+     "J3 triangular cupola",
+     24
+    ],
+    [
+     "J4 square cupola",
+     59
+    ],
+    [
+     "J8 elongated square pyramid",
+     35
+    ],
+    [
+     "cube",
+     25
+    ],
+    [
+     "cube",
+     26
+    ],
+    [
+     "cuboctahedron",
+     27
+    ],
+    [
+     "octahedron",
+     28
+    ],
+    [
+     "rhombicuboctahedron",
+     100
+    ],
+    [
+     "tetrahedron",
+     13
+    ],
+    [
+     "truncated cube",
+     97
+    ],
+    [
+     "truncated cuboctahedron",
+     115
+    ],
+    [
+     "truncated octahedron",
+     101
+    ],
+    [
+     "truncated tetrahedron",
+     63
+    ]
+   ],
+   "stretches": [
+    {
+     "id": 16,
+     "core": "tetrahedron",
+     "segments": 1,
+     "V": 8,
+     "E": 14,
+     "F": 8,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 45/135": 4
+     }
+    },
+    {
+     "id": 32,
+     "core": "tetrahedron",
+     "segments": 2,
+     "V": 12,
+     "E": 20,
+     "F": 10,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 45/135": 4,
+      "6-gon 90/135": 2
+     }
+    },
+    {
+     "id": 49,
+     "core": "cuboctahedron",
+     "segments": 1,
+     "V": 16,
+     "E": 28,
+     "F": 14,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon regular": 2,
+      "6-gon 90/135": 4
+     }
+    },
+    {
+     "id": 58,
+     "core": "tetrahedron",
+     "segments": 3,
+     "V": 16,
+     "E": 24,
+     "F": 10,
+     "faces": {
+      "3-gon regular": 4,
+      "6-gon 90/135": 6
+     }
+    },
+    {
+     "id": 75,
+     "core": "cuboctahedron",
+     "segments": 2,
+     "V": 20,
+     "E": 32,
+     "F": 14,
+     "faces": {
+      "3-gon regular": 8,
+      "6-gon 90/135": 4,
+      "8-gon regular": 2
+     }
+    },
+    {
+     "id": 87,
+     "core": "truncated tetrahedron",
+     "segments": 1,
+     "V": 20,
+     "E": 34,
+     "F": 16,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 45/135": 4,
+      "4-gon regular": 4,
+      "6-gon regular": 4
+     }
+    },
+    {
+     "id": 105,
+     "core": "truncated tetrahedron",
+     "segments": 2,
+     "V": 28,
+     "E": 48,
+     "F": 22,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 45/135": 4,
+      "4-gon regular": 8,
+      "6-gon 90/135": 2,
+      "6-gon regular": 4
+     }
+    },
+    {
+     "id": 112,
+     "core": "truncated tetrahedron",
+     "segments": 3,
+     "V": 36,
+     "E": 60,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon regular": 12,
+      "6-gon 90/135": 6,
+      "6-gon regular": 4
+     }
+    }
+   ],
+   "new_atoms": [
+    {
+     "id": 19,
+     "V": 7,
+     "E": 12,
+     "F": 7,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 3
+     },
+     "orbit": 8
+    },
+    {
+     "id": 36,
+     "V": 13,
+     "E": 24,
+     "F": 13,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 4,
+      "4-gon regular": 5
+     },
+     "orbit": 6
+    }
+   ]
+  },
+  "H3": {
+   "solid_orbits": 4427,
+   "distinct_solids": 4427,
+   "kinds": {
+    "#49 stretch (segment summand)": 3137,
+    "new atom (indecomposable, not regular-faced)": 367,
+    "regular-faced": 23,
+    "zonohedron": 675,
+    "#49 cap (triangle or tetrahedron summand)": 158,
+    "pentagon cap (regular pentagon summand)": 13,
+    "sum of atoms (no segment, polygon or tetrahedron summand)": 54
+   },
+   "atoms_by_dim": {
+    "1": 1,
+    "2": 2,
+    "3": 379
+   },
+   "regular_faced": [
+    [
+     "5-gonal antiprism",
+     106
+    ],
+    [
+     "J11 gyroelongated pentagonal pyramid (diminished icosahedron)",
+     185
+    ],
+    [
+     "J2 pentagonal pyramid",
+     17
+    ],
+    [
+     "J31 pentagonal gyrobicupola",
+     650
+    ],
+    [
+     "J32 pentagonal orthocupolarotunda",
+     402
+    ],
+    [
+     "J5 pentagonal cupola",
+     399
+    ],
+    [
+     "J6 pentagonal rotunda",
+     317
+    ],
+    [
+     "J62 metabidiminished icosahedron",
+     105
+    ],
+    [
+     "J63 tridiminished icosahedron",
+     50
+    ],
+    [
+     "J76 diminished rhombicosidodecahedron",
+     4054
+    ],
+    [
+     "J80 parabidiminished rhombicosidodecahedron",
+     3799
+    ],
+    [
+     "J81 metabidiminished rhombicosidodecahedron",
+     3798
+    ],
+    [
+     "J83 tridiminished rhombicosidodecahedron",
+     3412
+    ],
+    [
+     "J91 bilunabirotunda",
+     110
+    ],
+    [
+     "J92 triangular hebesphenorotunda",
+     373
+    ],
+    [
+     "cube",
+     30
+    ],
+    [
+     "dodecahedron",
+     322
+    ],
+    [
+     "icosahedron",
+     320
+    ],
+    [
+     "icosidodecahedron",
+     321
+    ],
+    [
+     "rhombicosidodecahedron",
+     4231
+    ],
+    [
+     "truncated dodecahedron",
+     4232
+    ],
+    [
+     "truncated icosahedron",
+     4228
+    ],
+    [
+     "truncated icosidodecahedron",
+     4439
+    ]
+   ],
+   "stretches": [],
+   "new_atoms": [
+    {
+     "id": 16,
+     "V": 11,
+     "E": 20,
+     "F": 11,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 5,
+      "5-gon regular": 1
+     },
+     "orbit": 12
+    },
+    {
+     "id": 47,
+     "V": 12,
+     "E": 20,
+     "F": 10,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 1,
+      "4-gon 72/108": 1,
+      "5-gon regular": 1,
+      "6-gon 72/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 48,
+     "V": 9,
+     "E": 16,
+     "F": 9,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 72/108": 3,
+      "5-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 49,
+     "V": 10,
+     "E": 16,
+     "F": 8,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon regular": 1,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 81,
+     "V": 10,
+     "E": 21,
+     "F": 13,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 72/108": 3
+     },
+     "orbit": 20
+    },
+    {
+     "id": 96,
+     "V": 16,
+     "E": 28,
+     "F": 14,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "5-gon regular": 1,
+      "6-gon 72/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 97,
+     "V": 11,
+     "E": 20,
+     "F": 11,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 1,
+      "4-gon regular": 1,
+      "5-gon regular": 1,
+      "6-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 98,
+     "V": 11,
+     "E": 19,
+     "F": 10,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 2,
+      "4-gon regular": 1,
+      "5-gon regular": 1,
+      "6-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 99,
+     "V": 11,
+     "E": 19,
+     "F": 10,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 2,
+      "4-gon regular": 1,
+      "5-gon regular": 1,
+      "6-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 100,
+     "V": 16,
+     "E": 29,
+     "F": 15,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 5,
+      "4-gon regular": 1,
+      "5-gon regular": 1,
+      "6-gon 72/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 101,
+     "V": 15,
+     "E": 27,
+     "F": 14,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 5,
+      "4-gon 60/120": 3,
+      "5-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 102,
+     "V": 14,
+     "E": 25,
+     "F": 13,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 1,
+      "4-gon 72/108": 2,
+      "4-gon regular": 3,
+      "5-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 103,
+     "V": 13,
+     "E": 22,
+     "F": 11,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 72/108": 2,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "6-gon 72/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 104,
+     "V": 14,
+     "E": 25,
+     "F": 13,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 3,
+      "4-gon regular": 2,
+      "5-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 107,
+     "V": 20,
+     "E": 40,
+     "F": 22,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 72/108": 10,
+      "5-gon regular": 2
+     },
+     "orbit": 6
+    },
+    {
+     "id": 108,
+     "V": 15,
+     "E": 24,
+     "F": 11,
+     "faces": {
+      "3-gon regular": 5,
+      "5-gon regular": 3,
+      "6-gon 72/144": 3
+     },
+     "orbit": 20
+    },
+    {
+     "id": 109,
+     "V": 16,
+     "E": 29,
+     "F": 15,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 4,
+      "4-gon regular": 2,
+      "5-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 114,
+     "V": 19,
+     "E": 36,
+     "F": 19,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 72/108": 7,
+      "4-gon regular": 2,
+      "5-gon regular": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 155,
+     "V": 12,
+     "E": 24,
+     "F": 14,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 2,
+      "4-gon regular": 1,
+      "6-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 161,
+     "V": 17,
+     "E": 31,
+     "F": 16,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 162,
+     "V": 17,
+     "E": 32,
+     "F": 17,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 1,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 171,
+     "V": 16,
+     "E": 29,
+     "F": 15,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 72/108": 4,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 173,
+     "V": 16,
+     "E": 31,
+     "F": 17,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 5,
+      "4-gon 60/120": 4,
+      "5-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 174,
+     "V": 16,
+     "E": 30,
+     "F": 16,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 5,
+      "4-gon 60/120": 5,
+      "5-gon regular": 1
+     },
+     "orbit": 12
+    },
+    {
+     "id": 176,
+     "V": 15,
+     "E": 29,
+     "F": 16,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 3,
+      "5-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 177,
+     "V": 15,
+     "E": 28,
+     "F": 15,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 2,
+      "4-gon regular": 3,
+      "5-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 178,
+     "V": 15,
+     "E": 29,
+     "F": 16,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 3,
+      "5-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 179,
+     "V": 21,
+     "E": 40,
+     "F": 21,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 8,
+      "4-gon regular": 2,
+      "5-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 186,
+     "V": 21,
+     "E": 40,
+     "F": 21,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 10,
+      "5-gon regular": 1
+     },
+     "orbit": 12
+    },
+    {
+     "id": 187,
+     "V": 20,
+     "E": 35,
+     "F": 17,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 72/108": 5,
+      "5-gon regular": 7
+     },
+     "orbit": 12
+    },
+    {
+     "id": 188,
+     "V": 16,
+     "E": 26,
+     "F": 12,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 3,
+      "5-gon regular": 2,
+      "6-gon 72/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 189,
+     "V": 17,
+     "E": 30,
+     "F": 15,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 4,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 191,
+     "V": 15,
+     "E": 26,
+     "F": 13,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 1,
+      "4-gon 72/108": 1,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 192,
+     "V": 17,
+     "E": 31,
+     "F": 16,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 1,
+      "4-gon regular": 3,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 194,
+     "V": 17,
+     "E": 30,
+     "F": 15,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 195,
+     "V": 16,
+     "E": 27,
+     "F": 13,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 1,
+      "4-gon regular": 1,
+      "5-gon regular": 2,
+      "6-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 196,
+     "V": 19,
+     "E": 34,
+     "F": 17,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 1,
+      "4-gon 72/108": 1,
+      "4-gon regular": 2,
+      "5-gon regular": 3,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 197,
+     "V": 15,
+     "E": 29,
+     "F": 16,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 2,
+      "4-gon regular": 2,
+      "5-gon regular": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 199,
+     "V": 19,
+     "E": 34,
+     "F": 17,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 6,
+      "5-gon regular": 2,
+      "6-gon 72/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 200,
+     "V": 20,
+     "E": 37,
+     "F": 19,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 7,
+      "4-gon regular": 2,
+      "5-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 202,
+     "V": 17,
+     "E": 32,
+     "F": 17,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 5,
+      "5-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 205,
+     "V": 18,
+     "E": 35,
+     "F": 19,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 206,
+     "V": 22,
+     "E": 39,
+     "F": 19,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 4,
+      "4-gon regular": 2,
+      "5-gon regular": 1,
+      "6-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 217,
+     "V": 17,
+     "E": 35,
+     "F": 20,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 36/144": 5,
+      "4-gon 60/120": 5
+     },
+     "orbit": 12
+    },
+    {
+     "id": 223,
+     "V": 16,
+     "E": 33,
+     "F": 19,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 2,
+      "4-gon regular": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 290,
+     "V": 20,
+     "E": 37,
+     "F": 19,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 1,
+      "4-gon 72/108": 1,
+      "4-gon regular": 6,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 297,
+     "V": 20,
+     "E": 38,
+     "F": 20,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 36/144": 2,
+      "4-gon regular": 6,
+      "5-gon regular": 4
+     },
+     "orbit": 30
+    },
+    {
+     "id": 304,
+     "V": 20,
+     "E": 37,
+     "F": 19,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 5,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 319,
+     "V": 21,
+     "E": 35,
+     "F": 16,
+     "faces": {
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 5,
+      "5-gon regular": 6
+     },
+     "orbit": 12
+    },
+    {
+     "id": 323,
+     "V": 17,
+     "E": 32,
+     "F": 17,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 72/108": 2,
+      "4-gon regular": 3,
+      "5-gon regular": 1,
+      "6-gon 72/144": 1,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 337,
+     "V": 18,
+     "E": 35,
+     "F": 19,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 3,
+      "4-gon regular": 6,
+      "5-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 344,
+     "V": 23,
+     "E": 42,
+     "F": 21,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 72/108": 4,
+      "4-gon regular": 5,
+      "5-gon regular": 3,
+      "6-gon 72/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 345,
+     "V": 22,
+     "E": 38,
+     "F": 18,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 72/108": 4,
+      "4-gon regular": 3,
+      "5-gon regular": 3,
+      "6-gon 108/144": 2,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 347,
+     "V": 21,
+     "E": 38,
+     "F": 19,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 4,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "6-gon 72/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 349,
+     "V": 21,
+     "E": 40,
+     "F": 21,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 4,
+      "4-gon regular": 4,
+      "5-gon regular": 2,
+      "6-gon 72/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 353,
+     "V": 21,
+     "E": 39,
+     "F": 20,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 36/144": 4,
+      "4-gon 60/120": 2,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 354,
+     "V": 20,
+     "E": 36,
+     "F": 18,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 1,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 355,
+     "V": 20,
+     "E": 36,
+     "F": 18,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 1,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 356,
+     "V": 20,
+     "E": 35,
+     "F": 17,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 1,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 357,
+     "V": 20,
+     "E": 36,
+     "F": 18,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 2,
+      "4-gon regular": 5,
+      "5-gon regular": 2,
+      "6-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 359,
+     "V": 22,
+     "E": 42,
+     "F": 22,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 3,
+      "4-gon regular": 6,
+      "5-gon regular": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 360,
+     "V": 21,
+     "E": 39,
+     "F": 20,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 4,
+      "4-gon regular": 3,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 367,
+     "V": 24,
+     "E": 42,
+     "F": 20,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 5,
+      "4-gon regular": 2,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 368,
+     "V": 24,
+     "E": 44,
+     "F": 22,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 3,
+      "4-gon regular": 2,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 369,
+     "V": 24,
+     "E": 45,
+     "F": 23,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 1,
+      "4-gon 72/108": 3,
+      "4-gon regular": 5,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 370,
+     "V": 24,
+     "E": 41,
+     "F": 19,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 72/108": 4,
+      "4-gon regular": 3,
+      "5-gon regular": 3,
+      "6-gon 108/144": 2,
+      "6-gon 72/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 371,
+     "V": 24,
+     "E": 46,
+     "F": 24,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 72/108": 2,
+      "4-gon regular": 5,
+      "5-gon regular": 5,
+      "6-gon 72/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 372,
+     "V": 24,
+     "E": 44,
+     "F": 22,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 3,
+      "4-gon regular": 5,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 374,
+     "V": 18,
+     "E": 33,
+     "F": 17,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 3,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 375,
+     "V": 20,
+     "E": 35,
+     "F": 17,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 7,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 376,
+     "V": 30,
+     "E": 60,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 17,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 9
+     },
+     "orbit": 20
+    },
+    {
+     "id": 378,
+     "V": 24,
+     "E": 44,
+     "F": 22,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 6,
+      "4-gon 60/120": 2,
+      "4-gon regular": 7,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 380,
+     "V": 22,
+     "E": 42,
+     "F": 22,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 381,
+     "V": 22,
+     "E": 44,
+     "F": 24,
+     "faces": {
+      "3-gon regular": 12,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 4
+     },
+     "orbit": 30
+    },
+    {
+     "id": 383,
+     "V": 22,
+     "E": 42,
+     "F": 22,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 384,
+     "V": 22,
+     "E": 40,
+     "F": 20,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 4
+     },
+     "orbit": 30
+    },
+    {
+     "id": 390,
+     "V": 21,
+     "E": 40,
+     "F": 21,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 1,
+      "4-gon regular": 6,
+      "5-gon regular": 1,
+      "6-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 392,
+     "V": 21,
+     "E": 40,
+     "F": 21,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 3,
+      "4-gon regular": 6,
+      "5-gon regular": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 394,
+     "V": 19,
+     "E": 34,
+     "F": 17,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 2,
+      "4-gon regular": 7,
+      "5-gon regular": 1,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 397,
+     "V": 25,
+     "E": 43,
+     "F": 20,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 4,
+      "4-gon regular": 3,
+      "5-gon regular": 1,
+      "6-gon 108/144": 4,
+      "6-gon 72/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 398,
+     "V": 25,
+     "E": 48,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 1,
+      "4-gon regular": 5,
+      "5-gon regular": 5,
+      "6-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 400,
+     "V": 21,
+     "E": 36,
+     "F": 17,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 7,
+      "4-gon 60/120": 4,
+      "5-gon regular": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 401,
+     "V": 21,
+     "E": 35,
+     "F": 16,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 5,
+      "4-gon 60/120": 5,
+      "5-gon regular": 5
+     },
+     "orbit": 12
+    },
+    {
+     "id": 404,
+     "V": 31,
+     "E": 60,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 15,
+      "4-gon 60/120": 5,
+      "5-gon regular": 11
+     },
+     "orbit": 12
+    },
+    {
+     "id": 405,
+     "V": 30,
+     "E": 55,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 15,
+      "5-gon regular": 7,
+      "6-gon 108/144": 5
+     },
+     "orbit": 12
+    },
+    {
+     "id": 487,
+     "V": 19,
+     "E": 39,
+     "F": 22,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 3,
+      "4-gon regular": 6
+     },
+     "orbit": 40
+    },
+    {
+     "id": 519,
+     "V": 25,
+     "E": 47,
+     "F": 24,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 8,
+      "5-gon regular": 2,
+      "6-gon 72/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 524,
+     "V": 24,
+     "E": 46,
+     "F": 24,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 72/108": 5,
+      "4-gon regular": 8,
+      "5-gon regular": 2,
+      "6-gon 72/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 533,
+     "V": 23,
+     "E": 41,
+     "F": 20,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 3,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "6-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 534,
+     "V": 23,
+     "E": 39,
+     "F": 18,
+     "faces": {
+      "3-gon regular": 2,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 2,
+      "4-gon regular": 2,
+      "5-gon regular": 4,
+      "6-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 537,
+     "V": 28,
+     "E": 52,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 4,
+      "4-gon regular": 2,
+      "5-gon regular": 6,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 541,
+     "V": 22,
+     "E": 33,
+     "F": 13,
+     "faces": {
+      "4-gon regular": 3,
+      "5-gon regular": 6,
+      "6-gon 108/144": 3,
+      "6-gon regular": 1
+     },
+     "orbit": 20
+    },
+    {
+     "id": 543,
+     "V": 31,
+     "E": 60,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 3,
+      "4-gon regular": 6,
+      "5-gon regular": 6
+     },
+     "orbit": 20
+    },
+    {
+     "id": 544,
+     "V": 30,
+     "E": 60,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 14,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 6
+     },
+     "orbit": 60
+    },
+    {
+     "id": 545,
+     "V": 30,
+     "E": 60,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 14,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 6
+     },
+     "orbit": 30
+    },
+    {
+     "id": 546,
+     "V": 30,
+     "E": 60,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 14,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 6
+     },
+     "orbit": 10
+    },
+    {
+     "id": 574,
+     "V": 22,
+     "E": 43,
+     "F": 23,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 5,
+      "4-gon regular": 7,
+      "5-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 575,
+     "V": 22,
+     "E": 44,
+     "F": 24,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 5,
+      "4-gon regular": 7,
+      "5-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 581,
+     "V": 26,
+     "E": 47,
+     "F": 23,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 3,
+      "5-gon regular": 3,
+      "6-gon 108/144": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 586,
+     "V": 25,
+     "E": 46,
+     "F": 23,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 6,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 587,
+     "V": 25,
+     "E": 45,
+     "F": 22,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 7,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 596,
+     "V": 25,
+     "E": 46,
+     "F": 23,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 3,
+      "4-gon regular": 5,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 597,
+     "V": 25,
+     "E": 47,
+     "F": 24,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 3,
+      "4-gon regular": 5,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 598,
+     "V": 25,
+     "E": 46,
+     "F": 23,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 3,
+      "4-gon regular": 5,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 599,
+     "V": 25,
+     "E": 47,
+     "F": 24,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 4,
+      "4-gon regular": 6,
+      "5-gon regular": 2,
+      "6-gon 72/144": 1,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 600,
+     "V": 25,
+     "E": 47,
+     "F": 24,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 2,
+      "4-gon regular": 5,
+      "5-gon regular": 4,
+      "6-gon 72/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 601,
+     "V": 25,
+     "E": 47,
+     "F": 24,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 2,
+      "4-gon regular": 5,
+      "5-gon regular": 4,
+      "6-gon 72/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 602,
+     "V": 25,
+     "E": 47,
+     "F": 24,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 2,
+      "4-gon regular": 5,
+      "5-gon regular": 4,
+      "6-gon 72/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 605,
+     "V": 19,
+     "E": 38,
+     "F": 21,
+     "faces": {
+      "3-gon regular": 12,
+      "4-gon 60/120": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 2,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 610,
+     "V": 24,
+     "E": 42,
+     "F": 20,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 1,
+      "4-gon regular": 3,
+      "5-gon regular": 4,
+      "6-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 612,
+     "V": 25,
+     "E": 48,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 4,
+      "4-gon regular": 8,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 613,
+     "V": 25,
+     "E": 48,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 4,
+      "4-gon regular": 8,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 614,
+     "V": 30,
+     "E": 53,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 36/144": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 2,
+      "5-gon regular": 2,
+      "6-gon 108/144": 4,
+      "6-gon 72/144": 2,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 617,
+     "V": 25,
+     "E": 50,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 12,
+      "4-gon 72/108": 3,
+      "4-gon regular": 8,
+      "5-gon regular": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 618,
+     "V": 31,
+     "E": 60,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 12,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 8
+     },
+     "orbit": 60
+    },
+    {
+     "id": 619,
+     "V": 31,
+     "E": 60,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 12,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 8
+     },
+     "orbit": 60
+    },
+    {
+     "id": 620,
+     "V": 30,
+     "E": 55,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 12,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 4,
+      "6-gon 108/144": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 621,
+     "V": 31,
+     "E": 61,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 14,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 8
+     },
+     "orbit": 60
+    },
+    {
+     "id": 622,
+     "V": 30,
+     "E": 55,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 12,
+      "4-gon 72/108": 2,
+      "4-gon regular": 3,
+      "5-gon regular": 6,
+      "6-gon 108/144": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 623,
+     "V": 27,
+     "E": 48,
+     "F": 23,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 1,
+      "4-gon regular": 4,
+      "5-gon regular": 3,
+      "6-gon 72/144": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 625,
+     "V": 23,
+     "E": 46,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 626,
+     "V": 23,
+     "E": 45,
+     "F": 24,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 629,
+     "V": 23,
+     "E": 44,
+     "F": 23,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 7,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 631,
+     "V": 28,
+     "E": 53,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 7,
+      "4-gon regular": 5,
+      "5-gon regular": 3,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 632,
+     "V": 28,
+     "E": 52,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 7,
+      "4-gon regular": 5,
+      "5-gon regular": 3,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 633,
+     "V": 28,
+     "E": 52,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 7,
+      "4-gon regular": 5,
+      "5-gon regular": 3,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 634,
+     "V": 28,
+     "E": 52,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 5,
+      "4-gon regular": 4,
+      "5-gon regular": 3,
+      "6-gon 108/144": 2,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 635,
+     "V": 28,
+     "E": 51,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 36/144": 3,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 3,
+      "6-gon 108/144": 2,
+      "6-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 636,
+     "V": 31,
+     "E": 60,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 6,
+      "4-gon regular": 9,
+      "5-gon regular": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 637,
+     "V": 31,
+     "E": 60,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 6,
+      "4-gon regular": 9,
+      "5-gon regular": 3
+     },
+     "orbit": 20
+    },
+    {
+     "id": 638,
+     "V": 30,
+     "E": 60,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 72/108": 9,
+      "4-gon regular": 9,
+      "5-gon regular": 3
+     },
+     "orbit": 40
+    },
+    {
+     "id": 639,
+     "V": 30,
+     "E": 60,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 72/108": 9,
+      "4-gon regular": 9,
+      "5-gon regular": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 644,
+     "V": 32,
+     "E": 58,
+     "F": 28,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 5,
+      "5-gon regular": 4,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 646,
+     "V": 26,
+     "E": 49,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 1,
+      "4-gon regular": 5,
+      "5-gon regular": 4,
+      "6-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 647,
+     "V": 26,
+     "E": 50,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 1,
+      "4-gon regular": 5,
+      "5-gon regular": 4,
+      "6-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 648,
+     "V": 26,
+     "E": 48,
+     "F": 24,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 7,
+      "4-gon 72/108": 1,
+      "4-gon regular": 5,
+      "5-gon regular": 4,
+      "6-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 652,
+     "V": 22,
+     "E": 37,
+     "F": 17,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 4,
+      "4-gon 60/120": 8,
+      "5-gon regular": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 653,
+     "V": 26,
+     "E": 51,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 12,
+      "4-gon 60/120": 4,
+      "4-gon regular": 5,
+      "5-gon regular": 6
+     },
+     "orbit": 60
+    },
+    {
+     "id": 654,
+     "V": 26,
+     "E": 50,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 5,
+      "4-gon regular": 5,
+      "5-gon regular": 6
+     },
+     "orbit": 12
+    },
+    {
+     "id": 656,
+     "V": 32,
+     "E": 60,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 10,
+      "5-gon regular": 10
+     },
+     "orbit": 6
+    },
+    {
+     "id": 657,
+     "V": 32,
+     "E": 60,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 10,
+      "5-gon regular": 10
+     },
+     "orbit": 30
+    },
+    {
+     "id": 658,
+     "V": 31,
+     "E": 55,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 5,
+      "5-gon regular": 6,
+      "6-gon 108/144": 5
+     },
+     "orbit": 12
+    },
+    {
+     "id": 659,
+     "V": 31,
+     "E": 55,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 5,
+      "5-gon regular": 6,
+      "6-gon 108/144": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 661,
+     "V": 23,
+     "E": 42,
+     "F": 21,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 4,
+      "4-gon 60/120": 3,
+      "4-gon regular": 7,
+      "5-gon regular": 1,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 669,
+     "V": 24,
+     "E": 45,
+     "F": 23,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 36/144": 4,
+      "4-gon 60/120": 2,
+      "4-gon regular": 5,
+      "5-gon regular": 1,
+      "6-gon regular": 1,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 671,
+     "V": 26,
+     "E": 50,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 2,
+      "4-gon regular": 8,
+      "5-gon regular": 1,
+      "6-gon 72/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 673,
+     "V": 25,
+     "E": 48,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 5,
+      "4-gon regular": 8,
+      "5-gon regular": 1,
+      "6-gon 72/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 676,
+     "V": 23,
+     "E": 43,
+     "F": 22,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 4,
+      "4-gon regular": 7,
+      "5-gon regular": 1,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 677,
+     "V": 29,
+     "E": 52,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 8,
+      "4-gon 72/108": 4,
+      "4-gon regular": 2,
+      "5-gon regular": 5,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 678,
+     "V": 29,
+     "E": 52,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 8,
+      "4-gon 72/108": 4,
+      "4-gon regular": 2,
+      "5-gon regular": 5,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 679,
+     "V": 28,
+     "E": 47,
+     "F": 21,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 2,
+      "4-gon regular": 2,
+      "5-gon regular": 5,
+      "6-gon 108/144": 3,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 680,
+     "V": 29,
+     "E": 53,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 7,
+      "4-gon 72/108": 4,
+      "4-gon regular": 2,
+      "5-gon regular": 5,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 681,
+     "V": 28,
+     "E": 47,
+     "F": 21,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 4,
+      "4-gon regular": 2,
+      "5-gon regular": 1,
+      "6-gon 108/144": 5,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 689,
+     "V": 32,
+     "E": 60,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 8,
+      "4-gon 72/108": 3,
+      "4-gon regular": 6,
+      "5-gon regular": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 690,
+     "V": 31,
+     "E": 55,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 2,
+      "4-gon regular": 6,
+      "5-gon regular": 3,
+      "6-gon 108/144": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 691,
+     "V": 32,
+     "E": 62,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 3,
+      "4-gon regular": 6,
+      "5-gon regular": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 692,
+     "V": 31,
+     "E": 60,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 5
+     },
+     "orbit": 120
+    },
+    {
+     "id": 694,
+     "V": 31,
+     "E": 61,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 5
+     },
+     "orbit": 120
+    },
+    {
+     "id": 695,
+     "V": 31,
+     "E": 61,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 5
+     },
+     "orbit": 120
+    },
+    {
+     "id": 696,
+     "V": 31,
+     "E": 61,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 697,
+     "V": 31,
+     "E": 60,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 698,
+     "V": 30,
+     "E": 55,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 72/108": 4,
+      "4-gon regular": 6,
+      "5-gon regular": 5,
+      "6-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 699,
+     "V": 31,
+     "E": 61,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 700,
+     "V": 31,
+     "E": 62,
+     "F": 33,
+     "faces": {
+      "3-gon regular": 13,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 786,
+     "V": 28,
+     "E": 52,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 1,
+      "4-gon regular": 8,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 848,
+     "V": 23,
+     "E": 47,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 5,
+      "4-gon regular": 7
+     },
+     "orbit": 60
+    },
+    {
+     "id": 896,
+     "V": 32,
+     "E": 57,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 4,
+      "4-gon regular": 2,
+      "5-gon regular": 6,
+      "6-gon 108/144": 4,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 951,
+     "V": 26,
+     "E": 51,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 4,
+      "4-gon regular": 8,
+      "5-gon regular": 1,
+      "6-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 962,
+     "V": 26,
+     "E": 51,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 3,
+      "4-gon regular": 8,
+      "5-gon regular": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 963,
+     "V": 26,
+     "E": 52,
+     "F": 28,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 3,
+      "4-gon regular": 8,
+      "5-gon regular": 3
+     },
+     "orbit": 120
+    },
+    {
+     "id": 966,
+     "V": 32,
+     "E": 61,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 9,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 7
+     },
+     "orbit": 120
+    },
+    {
+     "id": 967,
+     "V": 32,
+     "E": 60,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 10,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 7
+     },
+     "orbit": 60
+    },
+    {
+     "id": 968,
+     "V": 31,
+     "E": 55,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 2,
+      "4-gon regular": 3,
+      "5-gon regular": 5,
+      "6-gon 108/144": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 969,
+     "V": 31,
+     "E": 56,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 3,
+      "6-gon 108/144": 5
+     },
+     "orbit": 120
+    },
+    {
+     "id": 970,
+     "V": 32,
+     "E": 60,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 10,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 7
+     },
+     "orbit": 60
+    },
+    {
+     "id": 971,
+     "V": 31,
+     "E": 55,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 2,
+      "4-gon regular": 3,
+      "5-gon regular": 5,
+      "6-gon 108/144": 4
+     },
+     "orbit": 120
+    },
+    {
+     "id": 972,
+     "V": 31,
+     "E": 55,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 3,
+      "6-gon 108/144": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 973,
+     "V": 32,
+     "E": 62,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 60/120": 8,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 7
+     },
+     "orbit": 60
+    },
+    {
+     "id": 974,
+     "V": 32,
+     "E": 61,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 9,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 7
+     },
+     "orbit": 60
+    },
+    {
+     "id": 975,
+     "V": 31,
+     "E": 56,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 2,
+      "4-gon regular": 3,
+      "5-gon regular": 5,
+      "6-gon 108/144": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 978,
+     "V": 29,
+     "E": 53,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 1,
+      "4-gon 72/108": 2,
+      "4-gon regular": 6,
+      "5-gon regular": 2,
+      "6-gon 72/144": 2,
+      "6-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1001,
+     "V": 28,
+     "E": 48,
+     "F": 22,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 4,
+      "4-gon regular": 5,
+      "5-gon regular": 4,
+      "6-gon 108/144": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1012,
+     "V": 34,
+     "E": 60,
+     "F": 28,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 2,
+      "6-gon 72/144": 4,
+      "8-gon 108/144": 2
+     },
+     "orbit": 30
+    },
+    {
+     "id": 1015,
+     "V": 32,
+     "E": 63,
+     "F": 33,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 6,
+      "4-gon regular": 9,
+      "5-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1018,
+     "V": 24,
+     "E": 48,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 8,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 2
+     },
+     "orbit": 30
+    },
+    {
+     "id": 1019,
+     "V": 29,
+     "E": 55,
+     "F": 28,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 5,
+      "4-gon regular": 4,
+      "5-gon regular": 2,
+      "6-gon 108/144": 2,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1021,
+     "V": 31,
+     "E": 61,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 9,
+      "4-gon regular": 9,
+      "5-gon regular": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1022,
+     "V": 31,
+     "E": 62,
+     "F": 33,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 9,
+      "4-gon regular": 9,
+      "5-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1023,
+     "V": 31,
+     "E": 62,
+     "F": 33,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 9,
+      "4-gon regular": 9,
+      "5-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1024,
+     "V": 31,
+     "E": 61,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 9,
+      "4-gon regular": 9,
+      "5-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1025,
+     "V": 34,
+     "E": 60,
+     "F": 28,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 2,
+      "6-gon 108/144": 8
+     },
+     "orbit": 30
+    },
+    {
+     "id": 1029,
+     "V": 33,
+     "E": 59,
+     "F": 28,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 2,
+      "4-gon regular": 5,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 4
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1033,
+     "V": 33,
+     "E": 60,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 3,
+      "4-gon regular": 7,
+      "5-gon regular": 3,
+      "6-gon 108/144": 2,
+      "6-gon 72/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1035,
+     "V": 27,
+     "E": 51,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 9,
+      "4-gon 72/108": 1,
+      "4-gon regular": 5,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1037,
+     "V": 32,
+     "E": 58,
+     "F": 28,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 2,
+      "4-gon regular": 5,
+      "5-gon regular": 5,
+      "6-gon 108/144": 3,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1038,
+     "V": 32,
+     "E": 58,
+     "F": 28,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 3,
+      "4-gon regular": 5,
+      "5-gon regular": 3,
+      "6-gon 108/144": 4,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1039,
+     "V": 32,
+     "E": 57,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 3,
+      "4-gon regular": 5,
+      "5-gon regular": 3,
+      "6-gon 108/144": 4,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1040,
+     "V": 32,
+     "E": 57,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 2,
+      "4-gon regular": 5,
+      "5-gon regular": 5,
+      "6-gon 108/144": 3,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1041,
+     "V": 32,
+     "E": 57,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 3,
+      "4-gon regular": 5,
+      "5-gon regular": 3,
+      "6-gon 108/144": 4,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1042,
+     "V": 27,
+     "E": 52,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 8,
+      "4-gon regular": 5,
+      "5-gon regular": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1043,
+     "V": 27,
+     "E": 52,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 8,
+      "4-gon 72/108": 1,
+      "4-gon regular": 5,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1044,
+     "V": 33,
+     "E": 60,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 15,
+      "5-gon regular": 9
+     },
+     "orbit": 20
+    },
+    {
+     "id": 1045,
+     "V": 32,
+     "E": 55,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 10,
+      "5-gon regular": 5,
+      "6-gon 108/144": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1048,
+     "V": 32,
+     "E": 59,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 4,
+      "4-gon regular": 8,
+      "5-gon regular": 2,
+      "6-gon 108/144": 2,
+      "6-gon 72/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1051,
+     "V": 29,
+     "E": 53,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 6,
+      "4-gon regular": 4,
+      "5-gon regular": 4,
+      "6-gon regular": 1,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1053,
+     "V": 30,
+     "E": 54,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 11,
+      "4-gon 72/108": 4,
+      "4-gon regular": 2,
+      "5-gon regular": 4,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1055,
+     "V": 30,
+     "E": 53,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 1,
+      "4-gon regular": 6,
+      "5-gon regular": 4,
+      "6-gon regular": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1057,
+     "V": 30,
+     "E": 53,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 3,
+      "4-gon regular": 7,
+      "5-gon regular": 2,
+      "6-gon 108/144": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1059,
+     "V": 33,
+     "E": 64,
+     "F": 33,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 9,
+      "4-gon 72/108": 3,
+      "4-gon regular": 6,
+      "5-gon regular": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1060,
+     "V": 33,
+     "E": 62,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 11,
+      "4-gon 72/108": 3,
+      "4-gon regular": 6,
+      "5-gon regular": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1064,
+     "V": 32,
+     "E": 62,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 8,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1065,
+     "V": 32,
+     "E": 61,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 9,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 4
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1066,
+     "V": 32,
+     "E": 62,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 8,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 4
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1068,
+     "V": 32,
+     "E": 62,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 8,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1069,
+     "V": 32,
+     "E": 63,
+     "F": 33,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 7,
+      "4-gon 72/108": 6,
+      "4-gon regular": 6,
+      "5-gon regular": 4
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1071,
+     "V": 31,
+     "E": 55,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 4,
+      "4-gon regular": 6,
+      "5-gon regular": 4,
+      "6-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1076,
+     "V": 31,
+     "E": 57,
+     "F": 28,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 4,
+      "4-gon regular": 6,
+      "5-gon regular": 4,
+      "6-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1080,
+     "V": 29,
+     "E": 54,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 1,
+      "4-gon regular": 8,
+      "5-gon regular": 1,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1081,
+     "V": 29,
+     "E": 55,
+     "F": 28,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 2,
+      "4-gon regular": 10,
+      "5-gon regular": 1,
+      "6-gon 108/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1090,
+     "V": 28,
+     "E": 51,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 3,
+      "4-gon regular": 7,
+      "5-gon regular": 1,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 3,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1098,
+     "V": 34,
+     "E": 62,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 1,
+      "4-gon regular": 5,
+      "5-gon regular": 5,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 2,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1105,
+     "V": 27,
+     "E": 49,
+     "F": 24,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 2,
+      "4-gon regular": 7,
+      "5-gon regular": 1,
+      "6-gon 108/144": 4,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1106,
+     "V": 33,
+     "E": 57,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 9,
+      "4-gon regular": 2,
+      "5-gon regular": 5,
+      "6-gon 108/144": 4,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1107,
+     "V": 33,
+     "E": 57,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 9,
+      "4-gon regular": 2,
+      "5-gon regular": 5,
+      "6-gon 108/144": 4,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1116,
+     "V": 34,
+     "E": 61,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 1,
+      "4-gon 72/108": 3,
+      "4-gon regular": 7,
+      "5-gon regular": 3,
+      "6-gon 108/144": 6
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1317,
+     "V": 32,
+     "E": 59,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 5,
+      "4-gon regular": 8,
+      "5-gon regular": 2,
+      "6-gon 108/144": 3,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1341,
+     "V": 27,
+     "E": 54,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 3,
+      "4-gon regular": 8,
+      "5-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1342,
+     "V": 27,
+     "E": 54,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 4,
+      "4-gon regular": 8,
+      "6-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1345,
+     "V": 34,
+     "E": 57,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 72/108": 2,
+      "4-gon regular": 3,
+      "5-gon regular": 2,
+      "6-gon 108/144": 5,
+      "8-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1347,
+     "V": 33,
+     "E": 62,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 13,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 6
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1349,
+     "V": 33,
+     "E": 60,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 2,
+      "4-gon 60/120": 15,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 6
+     },
+     "orbit": 20
+    },
+    {
+     "id": 1351,
+     "V": 33,
+     "E": 63,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 12,
+      "4-gon 72/108": 3,
+      "4-gon regular": 3,
+      "5-gon regular": 6
+     },
+     "orbit": 20
+    },
+    {
+     "id": 1352,
+     "V": 34,
+     "E": 57,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon regular": 3,
+      "5-gon regular": 6,
+      "6-gon 108/144": 3,
+      "8-gon 108/144": 3
+     },
+     "orbit": 20
+    },
+    {
+     "id": 1362,
+     "V": 30,
+     "E": 57,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 5,
+      "4-gon regular": 8,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1405,
+     "V": 33,
+     "E": 66,
+     "F": 35,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 7,
+      "4-gon 72/108": 6,
+      "4-gon regular": 9,
+      "5-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1408,
+     "V": 30,
+     "E": 58,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 2,
+      "4-gon regular": 9,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1435,
+     "V": 34,
+     "E": 63,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 4,
+      "4-gon regular": 8,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 2,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1439,
+     "V": 32,
+     "E": 52,
+     "F": 22,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon regular": 6,
+      "5-gon regular": 4,
+      "6-gon 72/144": 6,
+      "6-gon regular": 2
+     },
+     "orbit": 30
+    },
+    {
+     "id": 1446,
+     "V": 33,
+     "E": 59,
+     "F": 28,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 7,
+      "4-gon 72/108": 2,
+      "4-gon regular": 5,
+      "5-gon regular": 4,
+      "6-gon 108/144": 3,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1461,
+     "V": 34,
+     "E": 62,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 72/108": 4,
+      "4-gon regular": 10,
+      "5-gon regular": 4,
+      "6-gon 108/144": 4
+     },
+     "orbit": 15
+    },
+    {
+     "id": 1462,
+     "V": 34,
+     "E": 64,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 4,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 2,
+      "4-gon regular": 11,
+      "5-gon regular": 3,
+      "6-gon 72/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1463,
+     "V": 30,
+     "E": 54,
+     "F": 26,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 10,
+      "4-gon regular": 4,
+      "5-gon regular": 3,
+      "6-gon regular": 1,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1465,
+     "V": 31,
+     "E": 58,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 1,
+      "4-gon regular": 6,
+      "5-gon regular": 3,
+      "6-gon regular": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1466,
+     "V": 36,
+     "E": 63,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 7,
+      "4-gon 72/108": 1,
+      "4-gon regular": 4,
+      "5-gon regular": 3,
+      "6-gon 72/144": 2,
+      "6-gon regular": 1,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1467,
+     "V": 37,
+     "E": 66,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 3,
+      "4-gon regular": 6,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 2,
+      "6-gon regular": 1,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1469,
+     "V": 34,
+     "E": 66,
+     "F": 34,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 12,
+      "4-gon 72/108": 3,
+      "4-gon regular": 6,
+      "5-gon regular": 3
+     },
+     "orbit": 20
+    },
+    {
+     "id": 1472,
+     "V": 34,
+     "E": 57,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 72/108": 2,
+      "4-gon regular": 6,
+      "5-gon regular": 5,
+      "6-gon 108/144": 2,
+      "8-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1474,
+     "V": 34,
+     "E": 57,
+     "F": 25,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 72/108": 3,
+      "4-gon regular": 6,
+      "5-gon regular": 3,
+      "6-gon 108/144": 3,
+      "8-gon 108/144": 3
+     },
+     "orbit": 20
+    },
+    {
+     "id": 1479,
+     "V": 36,
+     "E": 65,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 4,
+      "4-gon regular": 10,
+      "5-gon regular": 2,
+      "6-gon 108/144": 3,
+      "6-gon 72/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1480,
+     "V": 35,
+     "E": 62,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 11,
+      "4-gon 72/108": 1,
+      "4-gon regular": 5,
+      "5-gon regular": 4,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 2,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1482,
+     "V": 35,
+     "E": 63,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 10,
+      "4-gon 72/108": 1,
+      "4-gon regular": 5,
+      "5-gon regular": 4,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 2,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1483,
+     "V": 34,
+     "E": 59,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 3,
+      "4-gon regular": 6,
+      "5-gon regular": 2,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 3,
+      "6-gon regular": 1,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1492,
+     "V": 36,
+     "E": 66,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 36/144": 6,
+      "4-gon 60/120": 4,
+      "4-gon regular": 9,
+      "5-gon regular": 2,
+      "6-gon 72/144": 1,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1501,
+     "V": 35,
+     "E": 61,
+     "F": 28,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 3,
+      "4-gon regular": 7,
+      "5-gon regular": 2,
+      "6-gon 108/144": 6
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1510,
+     "V": 35,
+     "E": 67,
+     "F": 34,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 4,
+      "4-gon 60/120": 7,
+      "4-gon 72/108": 2,
+      "4-gon regular": 11,
+      "5-gon regular": 1,
+      "6-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1531,
+     "V": 33,
+     "E": 61,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 8,
+      "4-gon 72/108": 2,
+      "4-gon regular": 9,
+      "5-gon regular": 3,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1533,
+     "V": 32,
+     "E": 59,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 36/144": 4,
+      "4-gon 60/120": 5,
+      "4-gon regular": 7,
+      "5-gon regular": 1,
+      "6-gon regular": 1,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1537,
+     "V": 33,
+     "E": 62,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 2,
+      "4-gon regular": 9,
+      "5-gon regular": 1,
+      "6-gon 108/144": 1,
+      "6-gon regular": 1,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1554,
+     "V": 37,
+     "E": 66,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 5,
+      "6-gon 108/144": 2,
+      "6-gon regular": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1805,
+     "V": 35,
+     "E": 57,
+     "F": 24,
+     "faces": {
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 3,
+      "4-gon regular": 9,
+      "5-gon regular": 6,
+      "8-gon 108/144": 3
+     },
+     "orbit": 20
+    },
+    {
+     "id": 1811,
+     "V": 34,
+     "E": 69,
+     "F": 37,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 9,
+      "4-gon 72/108": 6,
+      "4-gon regular": 9
+     },
+     "orbit": 20
+    },
+    {
+     "id": 1828,
+     "V": 37,
+     "E": 68,
+     "F": 33,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 3,
+      "4-gon regular": 9,
+      "5-gon regular": 2,
+      "6-gon 108/144": 5
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1845,
+     "V": 34,
+     "E": 62,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 6,
+      "4-gon regular": 7,
+      "5-gon regular": 3,
+      "6-gon 72/144": 2,
+      "6-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1890,
+     "V": 40,
+     "E": 70,
+     "F": 32,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 5,
+      "4-gon 60/120": 5,
+      "4-gon regular": 5,
+      "5-gon regular": 7,
+      "6-gon regular": 5
+     },
+     "orbit": 12
+    },
+    {
+     "id": 1938,
+     "V": 37,
+     "E": 64,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 1,
+      "4-gon 72/108": 2,
+      "4-gon regular": 9,
+      "5-gon regular": 4,
+      "6-gon 72/144": 2,
+      "6-gon regular": 1,
+      "8-gon 108/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1945,
+     "V": 38,
+     "E": 66,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 1,
+      "4-gon regular": 10,
+      "5-gon regular": 4,
+      "6-gon 108/144": 2,
+      "8-gon 108/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 1954,
+     "V": 37,
+     "E": 68,
+     "F": 33,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 5,
+      "4-gon regular": 7,
+      "5-gon regular": 2,
+      "6-gon 108/144": 2,
+      "6-gon regular": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1972,
+     "V": 40,
+     "E": 68,
+     "F": 30,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 9,
+      "4-gon 60/120": 2,
+      "4-gon regular": 7,
+      "5-gon regular": 3,
+      "6-gon 108/144": 3,
+      "6-gon 72/144": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1975,
+     "V": 38,
+     "E": 65,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 2,
+      "4-gon regular": 8,
+      "5-gon regular": 2,
+      "6-gon 108/144": 2,
+      "6-gon 72/144": 2,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1983,
+     "V": 37,
+     "E": 62,
+     "F": 27,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 3,
+      "4-gon regular": 8,
+      "5-gon regular": 4,
+      "6-gon 108/144": 2,
+      "6-gon regular": 2,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1985,
+     "V": 38,
+     "E": 66,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 12,
+      "4-gon regular": 4,
+      "5-gon regular": 4,
+      "6-gon regular": 2,
+      "8-gon 108/144": 2
+     },
+     "orbit": 30
+    },
+    {
+     "id": 1998,
+     "V": 41,
+     "E": 75,
+     "F": 36,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 36/144": 3,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 2,
+      "4-gon regular": 11,
+      "5-gon regular": 2,
+      "6-gon 108/144": 4,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 1999,
+     "V": 41,
+     "E": 75,
+     "F": 36,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 8,
+      "4-gon 36/144": 6,
+      "4-gon 60/120": 6,
+      "4-gon regular": 10,
+      "5-gon regular": 2,
+      "6-gon 72/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2005,
+     "V": 38,
+     "E": 66,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 4,
+      "4-gon regular": 8,
+      "5-gon regular": 2,
+      "6-gon 108/144": 3,
+      "6-gon regular": 1,
+      "8-gon 108/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 2008,
+     "V": 38,
+     "E": 66,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 6,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 3,
+      "4-gon regular": 8,
+      "5-gon regular": 4,
+      "6-gon 108/144": 2,
+      "6-gon regular": 1,
+      "8-gon 108/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 2289,
+     "V": 41,
+     "E": 70,
+     "F": 31,
+     "faces": {
+      "4-gon 36/144": 5,
+      "4-gon 60/120": 10,
+      "4-gon regular": 5,
+      "5-gon regular": 6,
+      "6-gon regular": 5
+     },
+     "orbit": 12
+    },
+    {
+     "id": 2362,
+     "V": 41,
+     "E": 75,
+     "F": 36,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 36/144": 5,
+      "4-gon 60/120": 5,
+      "4-gon regular": 5,
+      "5-gon regular": 6,
+      "6-gon regular": 5
+     },
+     "orbit": 12
+    },
+    {
+     "id": 2447,
+     "V": 43,
+     "E": 74,
+     "F": 33,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 1,
+      "4-gon regular": 12,
+      "5-gon regular": 4,
+      "6-gon 108/144": 2,
+      "6-gon 72/144": 2,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2451,
+     "V": 41,
+     "E": 71,
+     "F": 32,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 8,
+      "4-gon 60/120": 3,
+      "4-gon regular": 10,
+      "5-gon regular": 4,
+      "6-gon 108/144": 2,
+      "6-gon 72/144": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2454,
+     "V": 45,
+     "E": 78,
+     "F": 35,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 7,
+      "4-gon regular": 12,
+      "5-gon regular": 4,
+      "6-gon 108/144": 3,
+      "6-gon 72/144": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2455,
+     "V": 42,
+     "E": 73,
+     "F": 33,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 72/108": 2,
+      "4-gon regular": 12,
+      "5-gon regular": 4,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 3,
+      "6-gon regular": 1,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2460,
+     "V": 42,
+     "E": 74,
+     "F": 34,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 12,
+      "5-gon regular": 4,
+      "6-gon 108/144": 4,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2461,
+     "V": 42,
+     "E": 74,
+     "F": 34,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 12,
+      "5-gon regular": 4,
+      "6-gon 108/144": 4,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2468,
+     "V": 38,
+     "E": 65,
+     "F": 29,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 3,
+      "4-gon regular": 9,
+      "5-gon regular": 5,
+      "6-gon regular": 3,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2469,
+     "V": 42,
+     "E": 75,
+     "F": 35,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 3,
+      "4-gon 72/108": 3,
+      "4-gon regular": 15,
+      "5-gon regular": 3,
+      "6-gon 72/144": 3,
+      "6-gon regular": 3
+     },
+     "orbit": 20
+    },
+    {
+     "id": 2470,
+     "V": 46,
+     "E": 87,
+     "F": 43,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 6,
+      "4-gon 60/120": 9,
+      "4-gon regular": 15,
+      "5-gon regular": 3,
+      "6-gon 72/144": 3
+     },
+     "orbit": 20
+    },
+    {
+     "id": 2500,
+     "V": 40,
+     "E": 78,
+     "F": 40,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 8,
+      "4-gon 72/108": 4,
+      "4-gon regular": 14,
+      "5-gon regular": 2,
+      "6-gon 108/144": 2
+     },
+     "orbit": 30
+    },
+    {
+     "id": 2504,
+     "V": 43,
+     "E": 75,
+     "F": 34,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 5,
+      "4-gon regular": 9,
+      "5-gon regular": 2,
+      "6-gon 72/144": 2,
+      "6-gon regular": 2,
+      "8-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2520,
+     "V": 44,
+     "E": 70,
+     "F": 28,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 2,
+      "4-gon regular": 4,
+      "5-gon regular": 2,
+      "6-gon 108/144": 2,
+      "8-gon 108/144": 8
+     },
+     "orbit": 30
+    },
+    {
+     "id": 2537,
+     "V": 41,
+     "E": 73,
+     "F": 34,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 3,
+      "4-gon regular": 10,
+      "5-gon regular": 5,
+      "6-gon 108/144": 1,
+      "6-gon regular": 3,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 2594,
+     "V": 42,
+     "E": 75,
+     "F": 35,
+     "faces": {
+      "3-gon regular": 5,
+      "4-gon 36/144": 5,
+      "4-gon 60/120": 10,
+      "4-gon regular": 5,
+      "5-gon regular": 5,
+      "6-gon regular": 5
+     },
+     "orbit": 12
+    },
+    {
+     "id": 2867,
+     "V": 46,
+     "E": 75,
+     "F": 31,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 3,
+      "4-gon regular": 6,
+      "8-gon 108/144": 9
+     },
+     "orbit": 40
+    },
+    {
+     "id": 2929,
+     "V": 43,
+     "E": 77,
+     "F": 36,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 13,
+      "5-gon regular": 5,
+      "6-gon 108/144": 2,
+      "6-gon regular": 1,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2935,
+     "V": 40,
+     "E": 69,
+     "F": 31,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 5,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 3,
+      "4-gon regular": 7,
+      "5-gon regular": 5,
+      "6-gon regular": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2937,
+     "V": 44,
+     "E": 72,
+     "F": 30,
+     "faces": {
+      "3-gon regular": 4,
+      "4-gon 60/120": 6,
+      "4-gon regular": 9,
+      "5-gon regular": 4,
+      "6-gon 72/144": 2,
+      "8-gon 108/144": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2959,
+     "V": 46,
+     "E": 81,
+     "F": 37,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 2,
+      "4-gon regular": 13,
+      "5-gon regular": 4,
+      "6-gon 108/144": 2,
+      "8-gon 108/144": 4
+     },
+     "orbit": 120
+    },
+    {
+     "id": 2964,
+     "V": 46,
+     "E": 82,
+     "F": 38,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 2,
+      "4-gon regular": 15,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 3,
+      "6-gon regular": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 2965,
+     "V": 44,
+     "E": 76,
+     "F": 34,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 2,
+      "4-gon regular": 12,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 2,
+      "6-gon regular": 3,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2966,
+     "V": 46,
+     "E": 82,
+     "F": 38,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 1,
+      "4-gon regular": 14,
+      "5-gon regular": 3,
+      "6-gon 108/144": 3,
+      "6-gon 72/144": 1,
+      "6-gon regular": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 2975,
+     "V": 45,
+     "E": 72,
+     "F": 29,
+     "faces": {
+      "10-gon regular": 3,
+      "3-gon regular": 5,
+      "4-gon 60/120": 3,
+      "4-gon regular": 9,
+      "5-gon regular": 3,
+      "6-gon 108/144": 6
+     },
+     "orbit": 20
+    },
+    {
+     "id": 2977,
+     "V": 47,
+     "E": 78,
+     "F": 33,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 9,
+      "4-gon 60/120": 3,
+      "4-gon regular": 9,
+      "5-gon regular": 3,
+      "6-gon 108/144": 4,
+      "8-gon 108/144": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 2987,
+     "V": 49,
+     "E": 86,
+     "F": 39,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 5,
+      "4-gon regular": 13,
+      "5-gon regular": 4,
+      "6-gon 108/144": 3,
+      "6-gon regular": 1,
+      "8-gon 108/144": 3
+     },
+     "orbit": 120
+    },
+    {
+     "id": 2996,
+     "V": 46,
+     "E": 88,
+     "F": 44,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 36/144": 4,
+      "4-gon 60/120": 7,
+      "4-gon 72/108": 2,
+      "4-gon regular": 15,
+      "5-gon regular": 2,
+      "6-gon 108/144": 2,
+      "6-gon regular": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3313,
+     "V": 45,
+     "E": 84,
+     "F": 41,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 3,
+      "4-gon regular": 12,
+      "5-gon regular": 6,
+      "6-gon regular": 4
+     },
+     "orbit": 20
+    },
+    {
+     "id": 3318,
+     "V": 51,
+     "E": 90,
+     "F": 41,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 7,
+      "4-gon 72/108": 2,
+      "4-gon regular": 12,
+      "5-gon regular": 4,
+      "6-gon 108/144": 4,
+      "6-gon regular": 2,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3320,
+     "V": 45,
+     "E": 75,
+     "F": 32,
+     "faces": {
+      "10-gon regular": 3,
+      "3-gon regular": 8,
+      "4-gon regular": 12,
+      "5-gon regular": 6,
+      "6-gon 108/144": 3
+     },
+     "orbit": 20
+    },
+    {
+     "id": 3321,
+     "V": 45,
+     "E": 74,
+     "F": 31,
+     "faces": {
+      "10-gon regular": 3,
+      "3-gon regular": 6,
+      "4-gon 60/120": 1,
+      "4-gon regular": 12,
+      "5-gon regular": 6,
+      "6-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3333,
+     "V": 49,
+     "E": 88,
+     "F": 41,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 1,
+      "4-gon regular": 16,
+      "5-gon regular": 5,
+      "6-gon 108/144": 1,
+      "6-gon regular": 1,
+      "8-gon 108/144": 3
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3383,
+     "V": 50,
+     "E": 86,
+     "F": 38,
+     "faces": {
+      "10-gon regular": 2,
+      "3-gon regular": 8,
+      "4-gon 60/120": 4,
+      "4-gon regular": 14,
+      "5-gon regular": 4,
+      "6-gon 108/144": 6
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3384,
+     "V": 50,
+     "E": 87,
+     "F": 39,
+     "faces": {
+      "10-gon regular": 2,
+      "3-gon regular": 10,
+      "4-gon 60/120": 3,
+      "4-gon regular": 14,
+      "5-gon regular": 4,
+      "6-gon 108/144": 6
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3385,
+     "V": 50,
+     "E": 86,
+     "F": 38,
+     "faces": {
+      "10-gon regular": 2,
+      "3-gon regular": 8,
+      "4-gon 60/120": 4,
+      "4-gon regular": 14,
+      "5-gon regular": 4,
+      "6-gon 108/144": 6
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3386,
+     "V": 50,
+     "E": 88,
+     "F": 40,
+     "faces": {
+      "10-gon regular": 2,
+      "3-gon regular": 12,
+      "4-gon 60/120": 2,
+      "4-gon regular": 14,
+      "5-gon regular": 4,
+      "6-gon 108/144": 6
+     },
+     "orbit": 30
+    },
+    {
+     "id": 3388,
+     "V": 50,
+     "E": 86,
+     "F": 38,
+     "faces": {
+      "10-gon regular": 2,
+      "3-gon regular": 8,
+      "4-gon 60/120": 4,
+      "4-gon regular": 14,
+      "5-gon regular": 4,
+      "6-gon 108/144": 6
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3395,
+     "V": 52,
+     "E": 94,
+     "F": 44,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 7,
+      "4-gon 72/108": 2,
+      "4-gon regular": 17,
+      "5-gon regular": 3,
+      "6-gon 108/144": 3,
+      "6-gon regular": 1,
+      "8-gon 108/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3398,
+     "V": 50,
+     "E": 90,
+     "F": 42,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 9,
+      "4-gon 36/144": 4,
+      "4-gon 60/120": 4,
+      "4-gon 72/108": 1,
+      "4-gon regular": 15,
+      "5-gon regular": 3,
+      "6-gon 108/144": 2,
+      "6-gon regular": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3399,
+     "V": 50,
+     "E": 89,
+     "F": 41,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 7,
+      "4-gon 36/144": 4,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 1,
+      "4-gon regular": 15,
+      "5-gon regular": 3,
+      "6-gon 108/144": 2,
+      "6-gon regular": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3402,
+     "V": 52,
+     "E": 95,
+     "F": 45,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 2,
+      "4-gon regular": 17,
+      "5-gon regular": 3,
+      "6-gon 108/144": 3,
+      "6-gon regular": 1,
+      "8-gon 108/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3404,
+     "V": 50,
+     "E": 82,
+     "F": 34,
+     "faces": {
+      "10-gon regular": 2,
+      "3-gon regular": 9,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 1,
+      "4-gon regular": 10,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1,
+      "8-gon 108/144": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3405,
+     "V": 51,
+     "E": 92,
+     "F": 43,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 3,
+      "4-gon regular": 15,
+      "5-gon regular": 5,
+      "6-gon 108/144": 2,
+      "6-gon regular": 2,
+      "8-gon 108/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3406,
+     "V": 51,
+     "E": 91,
+     "F": 42,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 4,
+      "4-gon regular": 15,
+      "5-gon regular": 3,
+      "6-gon 108/144": 3,
+      "6-gon regular": 2,
+      "8-gon 108/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3407,
+     "V": 51,
+     "E": 92,
+     "F": 43,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 5,
+      "4-gon 72/108": 4,
+      "4-gon regular": 15,
+      "5-gon regular": 3,
+      "6-gon 108/144": 3,
+      "6-gon regular": 2,
+      "8-gon 108/144": 2
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3408,
+     "V": 51,
+     "E": 91,
+     "F": 42,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 4,
+      "4-gon regular": 15,
+      "5-gon regular": 3,
+      "6-gon 108/144": 3,
+      "6-gon regular": 2,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3409,
+     "V": 51,
+     "E": 91,
+     "F": 42,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 3,
+      "4-gon regular": 15,
+      "5-gon regular": 5,
+      "6-gon 108/144": 2,
+      "6-gon regular": 2,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3486,
+     "V": 55,
+     "E": 100,
+     "F": 47,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 4,
+      "4-gon 60/120": 9,
+      "4-gon regular": 17,
+      "5-gon regular": 3,
+      "6-gon 108/144": 4,
+      "6-gon regular": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3516,
+     "V": 50,
+     "E": 87,
+     "F": 39,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 7,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 4,
+      "4-gon regular": 12,
+      "5-gon regular": 5,
+      "6-gon 108/144": 2,
+      "6-gon regular": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3520,
+     "V": 50,
+     "E": 88,
+     "F": 40,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 9,
+      "4-gon 60/120": 2,
+      "4-gon 72/108": 4,
+      "4-gon regular": 12,
+      "5-gon regular": 5,
+      "6-gon 108/144": 2,
+      "6-gon regular": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3521,
+     "V": 55,
+     "E": 93,
+     "F": 40,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 9,
+      "4-gon 60/120": 7,
+      "4-gon regular": 12,
+      "5-gon regular": 3,
+      "6-gon 108/144": 3,
+      "8-gon 108/144": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3523,
+     "V": 50,
+     "E": 89,
+     "F": 41,
+     "faces": {
+      "10-gon regular": 2,
+      "3-gon regular": 11,
+      "4-gon 60/120": 1,
+      "4-gon regular": 17,
+      "5-gon regular": 7,
+      "6-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3524,
+     "V": 50,
+     "E": 88,
+     "F": 40,
+     "faces": {
+      "10-gon regular": 2,
+      "3-gon regular": 9,
+      "4-gon 60/120": 2,
+      "4-gon regular": 17,
+      "5-gon regular": 7,
+      "6-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3525,
+     "V": 50,
+     "E": 88,
+     "F": 40,
+     "faces": {
+      "10-gon regular": 2,
+      "3-gon regular": 9,
+      "4-gon 60/120": 2,
+      "4-gon regular": 17,
+      "5-gon regular": 7,
+      "6-gon 108/144": 3
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3526,
+     "V": 50,
+     "E": 87,
+     "F": 39,
+     "faces": {
+      "10-gon regular": 2,
+      "3-gon regular": 7,
+      "4-gon 60/120": 3,
+      "4-gon regular": 17,
+      "5-gon regular": 7,
+      "6-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3527,
+     "V": 50,
+     "E": 87,
+     "F": 39,
+     "faces": {
+      "10-gon regular": 2,
+      "3-gon regular": 7,
+      "4-gon 60/120": 3,
+      "4-gon regular": 17,
+      "5-gon regular": 7,
+      "6-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3753,
+     "V": 55,
+     "E": 98,
+     "F": 45,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 9,
+      "4-gon 60/120": 4,
+      "4-gon regular": 19,
+      "5-gon regular": 5,
+      "6-gon 108/144": 3,
+      "6-gon 72/144": 3,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3770,
+     "V": 55,
+     "E": 99,
+     "F": 46,
+     "faces": {
+      "3-gon regular": 9,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 3,
+      "4-gon regular": 14,
+      "5-gon regular": 5,
+      "6-gon 108/144": 4,
+      "6-gon regular": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3772,
+     "V": 55,
+     "E": 100,
+     "F": 47,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 11,
+      "4-gon 60/120": 5,
+      "4-gon regular": 19,
+      "5-gon regular": 5,
+      "6-gon 108/144": 6
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3773,
+     "V": 55,
+     "E": 100,
+     "F": 47,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 11,
+      "4-gon 60/120": 5,
+      "4-gon regular": 19,
+      "5-gon regular": 5,
+      "6-gon 108/144": 6
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3774,
+     "V": 55,
+     "E": 101,
+     "F": 48,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 13,
+      "4-gon 60/120": 4,
+      "4-gon regular": 19,
+      "5-gon regular": 5,
+      "6-gon 108/144": 6
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3775,
+     "V": 55,
+     "E": 100,
+     "F": 47,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 11,
+      "4-gon 60/120": 5,
+      "4-gon regular": 19,
+      "5-gon regular": 5,
+      "6-gon 108/144": 6
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3776,
+     "V": 55,
+     "E": 100,
+     "F": 47,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 11,
+      "4-gon 60/120": 5,
+      "4-gon regular": 19,
+      "5-gon regular": 5,
+      "6-gon 108/144": 6
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3778,
+     "V": 55,
+     "E": 99,
+     "F": 46,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 9,
+      "4-gon 60/120": 6,
+      "4-gon regular": 19,
+      "5-gon regular": 5,
+      "6-gon 108/144": 6
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3781,
+     "V": 55,
+     "E": 103,
+     "F": 50,
+     "faces": {
+      "3-gon regular": 10,
+      "4-gon 36/144": 4,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 1,
+      "4-gon regular": 20,
+      "5-gon regular": 4,
+      "6-gon 108/144": 2,
+      "6-gon regular": 2,
+      "8-gon 108/144": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3786,
+     "V": 55,
+     "E": 94,
+     "F": 41,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 8,
+      "4-gon 60/120": 6,
+      "4-gon 72/108": 1,
+      "4-gon regular": 15,
+      "5-gon regular": 4,
+      "6-gon 108/144": 1,
+      "8-gon 108/144": 5
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3801,
+     "V": 55,
+     "E": 97,
+     "F": 44,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 7,
+      "4-gon 36/144": 2,
+      "4-gon 60/120": 9,
+      "4-gon regular": 16,
+      "5-gon regular": 3,
+      "6-gon 108/144": 1,
+      "6-gon 72/144": 2,
+      "6-gon regular": 1,
+      "8-gon 108/144": 2
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3804,
+     "V": 60,
+     "E": 108,
+     "F": 50,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 9,
+      "4-gon regular": 21,
+      "5-gon regular": 3,
+      "6-gon 108/144": 6,
+      "6-gon 72/144": 3,
+      "6-gon regular": 1
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3806,
+     "V": 56,
+     "E": 99,
+     "F": 45,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 7,
+      "4-gon 60/120": 9,
+      "4-gon regular": 17,
+      "5-gon regular": 3,
+      "6-gon 108/144": 7,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3807,
+     "V": 56,
+     "E": 99,
+     "F": 45,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 7,
+      "4-gon 60/120": 9,
+      "4-gon regular": 17,
+      "5-gon regular": 3,
+      "6-gon 108/144": 7,
+      "6-gon regular": 1
+     },
+     "orbit": 120
+    },
+    {
+     "id": 3813,
+     "V": 55,
+     "E": 91,
+     "F": 38,
+     "faces": {
+      "10-gon regular": 3,
+      "3-gon regular": 11,
+      "4-gon 60/120": 4,
+      "4-gon regular": 11,
+      "5-gon regular": 3,
+      "6-gon 108/144": 2,
+      "8-gon 108/144": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3816,
+     "V": 60,
+     "E": 111,
+     "F": 53,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 60/120": 9,
+      "4-gon regular": 21,
+      "5-gon regular": 3,
+      "6-gon 108/144": 9
+     },
+     "orbit": 40
+    },
+    {
+     "id": 3830,
+     "V": 60,
+     "E": 105,
+     "F": 47,
+     "faces": {
+      "3-gon regular": 8,
+      "4-gon 60/120": 10,
+      "4-gon 72/108": 1,
+      "4-gon regular": 17,
+      "5-gon regular": 2,
+      "6-gon 108/144": 4,
+      "8-gon 108/144": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3848,
+     "V": 57,
+     "E": 97,
+     "F": 42,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 8,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 6,
+      "4-gon regular": 14,
+      "5-gon regular": 4,
+      "6-gon 108/144": 2,
+      "6-gon regular": 2,
+      "8-gon 108/144": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3849,
+     "V": 55,
+     "E": 102,
+     "F": 49,
+     "faces": {
+      "3-gon regular": 12,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 4,
+      "4-gon regular": 17,
+      "5-gon regular": 6,
+      "6-gon 108/144": 2,
+      "6-gon regular": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3850,
+     "V": 55,
+     "E": 102,
+     "F": 49,
+     "faces": {
+      "3-gon regular": 12,
+      "4-gon 60/120": 3,
+      "4-gon 72/108": 5,
+      "4-gon regular": 17,
+      "5-gon regular": 4,
+      "6-gon 108/144": 3,
+      "6-gon regular": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3852,
+     "V": 60,
+     "E": 107,
+     "F": 49,
+     "faces": {
+      "3-gon regular": 12,
+      "4-gon 60/120": 8,
+      "4-gon regular": 17,
+      "5-gon regular": 4,
+      "6-gon 108/144": 3,
+      "8-gon 108/144": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3853,
+     "V": 55,
+     "E": 103,
+     "F": 50,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 14,
+      "4-gon 60/120": 2,
+      "4-gon regular": 22,
+      "5-gon regular": 8,
+      "6-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3854,
+     "V": 55,
+     "E": 102,
+     "F": 49,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 12,
+      "4-gon 60/120": 3,
+      "4-gon regular": 22,
+      "5-gon regular": 8,
+      "6-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 3855,
+     "V": 55,
+     "E": 102,
+     "F": 49,
+     "faces": {
+      "10-gon regular": 1,
+      "3-gon regular": 12,
+      "4-gon 60/120": 3,
+      "4-gon regular": 22,
+      "5-gon regular": 8,
+      "6-gon 108/144": 3
+     },
+     "orbit": 60
+    },
+    {
+     "id": 4030,
+     "V": 60,
+     "E": 114,
+     "F": 56,
+     "faces": {
+      "3-gon regular": 14,
+      "4-gon 60/120": 6,
+      "4-gon regular": 24,
+      "5-gon regular": 6,
+      "6-gon 108/144": 6
+     },
+     "orbit": 10
+    },
+    {
+     "id": 4031,
+     "V": 60,
+     "E": 114,
+     "F": 56,
+     "faces": {
+      "3-gon regular": 14,
+      "4-gon 60/120": 6,
+      "4-gon regular": 24,
+      "5-gon regular": 6,
+      "6-gon 108/144": 6
+     },
+     "orbit": 30
+    },
+    {
+     "id": 4032,
+     "V": 60,
+     "E": 114,
+     "F": 56,
+     "faces": {
+      "3-gon regular": 14,
+      "4-gon 60/120": 6,
+      "4-gon regular": 24,
+      "5-gon regular": 6,
+      "6-gon 108/144": 6
+     },
+     "orbit": 60
+    },
+    {
+     "id": 4039,
+     "V": 60,
+     "E": 108,
+     "F": 50,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 60/120": 7,
+      "4-gon 72/108": 1,
+      "4-gon regular": 20,
+      "5-gon regular": 5,
+      "6-gon 108/144": 1,
+      "8-gon 108/144": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 4067,
+     "V": 62,
+     "E": 109,
+     "F": 49,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 9,
+      "4-gon 72/108": 1,
+      "4-gon regular": 19,
+      "5-gon regular": 3,
+      "6-gon 108/144": 3,
+      "6-gon regular": 2,
+      "8-gon 108/144": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 4068,
+     "V": 61,
+     "E": 107,
+     "F": 48,
+     "faces": {
+      "3-gon regular": 7,
+      "4-gon 60/120": 13,
+      "4-gon regular": 17,
+      "5-gon regular": 3,
+      "6-gon 108/144": 3,
+      "8-gon 108/144": 5
+     },
+     "orbit": 60
+    },
+    {
+     "id": 4070,
+     "V": 62,
+     "E": 111,
+     "F": 51,
+     "faces": {
+      "3-gon regular": 11,
+      "4-gon 36/144": 1,
+      "4-gon 60/120": 7,
+      "4-gon regular": 19,
+      "5-gon regular": 5,
+      "6-gon 108/144": 2,
+      "6-gon regular": 2,
+      "8-gon 108/144": 4
+     },
+     "orbit": 60
+    },
+    {
+     "id": 4071,
+     "V": 60,
+     "E": 117,
+     "F": 59,
+     "faces": {
+      "3-gon regular": 17,
+      "4-gon 60/120": 3,
+      "4-gon regular": 27,
+      "5-gon regular": 9,
+      "6-gon 108/144": 3
+     },
+     "orbit": 20
+    },
+    {
+     "id": 4072,
+     "V": 61,
+     "E": 102,
+     "F": 43,
+     "faces": {
+      "10-gon regular": 3,
+      "3-gon regular": 13,
+      "4-gon 60/120": 6,
+      "4-gon regular": 12,
+      "5-gon regular": 3,
+      "8-gon 108/144": 6
+     },
+     "orbit": 20
+    },
+    {
+     "id": 4073,
+     "V": 61,
+     "E": 99,
+     "F": 40,
+     "faces": {
+      "10-gon regular": 3,
+      "3-gon regular": 7,
+      "4-gon 60/120": 9,
+      "4-gon regular": 12,
+      "5-gon regular": 3,
+      "8-gon 108/144": 6
+     },
+     "orbit": 60
+    },
+    {
+     "id": 4092,
+     "V": 60,
+     "E": 94,
+     "F": 36,
+     "faces": {
+      "10-gon regular": 6,
+      "3-gon regular": 10,
+      "4-gon 60/120": 6,
+      "4-gon regular": 8,
+      "5-gon regular": 2,
+      "8-gon 108/144": 4
+     },
+     "orbit": 30
+    }
+   ]
+  }
+ },
+ "checks": [
+  [
+   "named checks resolved (J28/J29, J30/J31, J32/J33, J80/J81 by cyclic corners; no unresolved names)",
+   true
+  ]
+ ]
+}

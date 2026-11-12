@@ -1,0 +1,959 @@
+[
+{
+"id": 0,
+"bits": "0",
+"orbit": 1,
+"dim": 0,
+"corners": 1,
+"closes": true,
+"used_roots": [],
+"atom": false,
+"segments": 0,
+"core": 0,
+"core_dim": 0,
+"label": "point"
+},
+{
+"id": 1,
+"bits": "1850c00",
+"orbit": 6,
+"dim": 1,
+"corners": 2,
+"closes": true,
+"used_roots": [
+5
+],
+"atom": true,
+"segments": 1,
+"core": 0,
+"core_dim": 0,
+"label": "segment"
+},
+{
+"id": 2,
+"bits": "19a11081",
+"orbit": 8,
+"dim": 2,
+"corners": 3,
+"closes": true,
+"used_roots": [
+0,
+4,
+5
+],
+"polygon": 3,
+"regular": true,
+"atom": true,
+"segments": 0,
+"core": 2,
+"core_dim": 2,
+"label": "regular triangle"
+},
+{
+"id": 3,
+"bits": "19a52d40",
+"orbit": 12,
+"dim": 2,
+"corners": 4,
+"closes": true,
+"used_roots": [
+4,
+5
+],
+"polygon": 4,
+"regular": false,
+"atom": false,
+"segments": 2,
+"core": 0,
+"core_dim": 0,
+"label": "equal-edged rhombus"
+},
+{
+"id": 4,
+"bits": "138606168",
+"orbit": 3,
+"dim": 2,
+"corners": 4,
+"closes": true,
+"used_roots": [
+3,
+4
+],
+"polygon": 4,
+"regular": true,
+"atom": false,
+"segments": 2,
+"core": 0,
+"core_dim": 0,
+"label": "regular rhombus"
+},
+{
+"id": 5,
+"bits": "361d5cc3c",
+"orbit": 4,
+"dim": 2,
+"corners": 6,
+"closes": true,
+"used_roots": [
+2,
+3,
+5
+],
+"polygon": 6,
+"regular": true,
+"atom": false,
+"segments": 3,
+"core": 0,
+"core_dim": 0,
+"label": "regular hexagon"
+},
+{
+"id": 6,
+"bits": "138e0910a",
+"orbit": 6,
+"dim": 3,
+"corners": 5,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5
+],
+"V": 5,
+"E": 8,
+"F": 5,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon regular": 1
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 4,
+"4": 1
+},
+"corner_kinds": {
+"3.3.3.3": 1,
+"3.3.4": 4
+},
+"corner_profiles": 2,
+"invariant": "-6574874217270254074",
+"name": "J1 square pyramid",
+"atom": true,
+"segments": 0,
+"core": 6,
+"core_dim": 3,
+"atoms_in": [
+6
+],
+"label": "J1 square pyramid",
+"class": "regular-faced (known: J1 square pyramid)",
+"corner_cycles": {
+"3.3.4": 4,
+"3.3.3.3": 1
+},
+"kind": "regular-faced"
+},
+{
+"id": 7,
+"bits": "2512942a1",
+"orbit": 2,
+"dim": 3,
+"corners": 4,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5
+],
+"V": 4,
+"E": 6,
+"F": 4,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 4
+},
+"corner_kinds": {
+"3.3.3": 4
+},
+"corner_profiles": 1,
+"invariant": "-2055431300469218433",
+"name": "tetrahedron",
+"atom": true,
+"segments": 0,
+"core": 7,
+"core_dim": 3,
+"atoms_in": [
+7
+],
+"label": "tetrahedron",
+"class": "regular-faced (known: tetrahedron)",
+"corner_cycles": {
+"3.3.3": 4
+},
+"kind": "regular-faced"
+},
+{
+"id": 8,
+"bits": "50a90990a",
+"orbit": 1,
+"dim": 3,
+"corners": 6,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5
+],
+"V": 6,
+"E": 12,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 8
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 8
+},
+"corner_kinds": {
+"3.3.3.3": 6
+},
+"corner_profiles": 1,
+"invariant": "-210280983095424954",
+"name": "octahedron",
+"atom": true,
+"segments": 0,
+"core": 8,
+"core_dim": 3,
+"atoms_in": [
+8
+],
+"label": "octahedron",
+"class": "regular-faced (known: octahedron)",
+"corner_cycles": {
+"3.3.3.3": 6
+},
+"kind": "regular-faced"
+},
+{
+"id": 9,
+"bits": "138e4a554",
+"orbit": 24,
+"dim": 3,
+"corners": 6,
+"closes": true,
+"used_roots": [
+2,
+3,
+4,
+5
+],
+"V": 6,
+"E": 9,
+"F": 5,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 60/120": 2,
+"4-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 3
+},
+"corner_kinds": {
+"3.4.4": 6
+},
+"corner_profiles": 4,
+"invariant": "-7304789383681289945",
+"name": null,
+"atom": false,
+"segments": 1,
+"core": 2,
+"core_dim": 2,
+"atoms_in": [
+1,
+2
+],
+"label": "A3-9",
+"class": "#49 stretch: core regular triangle + 1 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 10,
+"bits": "259b1990a",
+"orbit": 8,
+"dim": 3,
+"corners": 7,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5
+],
+"V": 7,
+"E": 12,
+"F": 7,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 60/120": 3
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 3
+},
+"corner_kinds": {
+"3.3.3.4": 3,
+"3.4.4": 3,
+"4.4.4": 1
+},
+"corner_profiles": 3,
+"invariant": "-5048222088667335548",
+"name": null,
+"atom": true,
+"segments": 0,
+"core": 10,
+"core_dim": 3,
+"atoms_in": [
+10
+],
+"label": "A3-10",
+"class": "beyond #49: A3-10",
+"kind": "new atom (indecomposable, not regular-faced)"
+},
+{
+"id": 11,
+"bits": "139e56d68",
+"orbit": 12,
+"dim": 3,
+"corners": 8,
+"closes": true,
+"used_roots": [
+3,
+4,
+5
+],
+"V": 8,
+"E": 12,
+"F": 6,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 4,
+"4-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6
+},
+"corner_kinds": {
+"4.4.4": 8
+},
+"corner_profiles": 3,
+"invariant": "-8822204596839494845",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1
+],
+"label": "A3-11",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 12,
+"bits": "259b5ad54",
+"orbit": 4,
+"dim": 3,
+"corners": 8,
+"closes": true,
+"used_roots": [
+2,
+4,
+5
+],
+"V": 8,
+"E": 12,
+"F": 6,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 6
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6
+},
+"corner_kinds": {
+"4.4.4": 8
+},
+"corner_profiles": 2,
+"invariant": "82875641671579594",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1
+],
+"label": "A3-12",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 13,
+"bits": "371edc6b5",
+"orbit": 8,
+"dim": 3,
+"corners": 9,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5
+],
+"V": 9,
+"E": 15,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon regular": 3,
+"6-gon regular": 1
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 4,
+"4": 3,
+"6": 1
+},
+"corner_kinds": {
+"3.3.4.4": 3,
+"3.4.6": 6
+},
+"corner_profiles": 2,
+"invariant": "-6828947983250769629",
+"name": "J3 triangular cupola",
+"atom": false,
+"segments": 0,
+"core": 13,
+"core_dim": 3,
+"atoms_in": [
+2,
+7
+],
+"label": "J3 triangular cupola",
+"class": "regular-faced (known: J3 triangular cupola)",
+"controls": [
+"#49: tetrahedron with three caps on a triangle (T + triangle)"
+],
+"corner_cycles": {
+"3.4.6": 6,
+"3.4.3.4": 3
+},
+"kind": "regular-faced"
+},
+{
+"id": 14,
+"bits": "371edcf2a",
+"orbit": 24,
+"dim": 3,
+"corners": 10,
+"closes": true,
+"used_roots": [
+1,
+2,
+3,
+4,
+5
+],
+"V": 10,
+"E": 16,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 2,
+"6-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 5,
+"6": 1
+},
+"corner_kinds": {
+"3.4.4.4": 2,
+"3.4.6": 4,
+"4.4.4": 2,
+"4.4.6": 2
+},
+"corner_profiles": 6,
+"invariant": "-7395862441696188479",
+"name": null,
+"atom": false,
+"segments": 2,
+"core": 2,
+"core_dim": 2,
+"atoms_in": [
+1,
+1,
+2
+],
+"label": "A3-14",
+"class": "#49 stretch: core regular triangle + 2 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 15,
+"bits": "379f5ed7c",
+"orbit": 12,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+2,
+3,
+4,
+5
+],
+"V": 12,
+"E": 18,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 4,
+"4-gon regular": 2,
+"6-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6,
+"6": 2
+},
+"corner_kinds": {
+"4.4.6": 12
+},
+"corner_profiles": 3,
+"invariant": "-5240839770083366125",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1
+],
+"label": "A3-15",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 16,
+"bits": "53def66f5",
+"orbit": 6,
+"dim": 3,
+"corners": 13,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5
+],
+"V": 13,
+"E": 24,
+"F": 13,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 60/120": 4,
+"4-gon regular": 5
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 9
+},
+"corner_kinds": {
+"3.3.4.4": 4,
+"3.4.4.4": 4,
+"4.4.4": 4,
+"4.4.4.4": 1
+},
+"corner_profiles": 4,
+"invariant": "6272804637285362918",
+"name": null,
+"atom": true,
+"segments": 0,
+"core": 16,
+"core_dim": 3,
+"atoms_in": [
+16
+],
+"label": "A3-16",
+"class": "beyond #49: A3-16",
+"kind": "new atom (indecomposable, not regular-faced)"
+},
+{
+"id": 17,
+"bits": "53def6f6a",
+"orbit": 3,
+"dim": 3,
+"corners": 14,
+"closes": true,
+"used_roots": [
+1,
+3,
+4,
+5
+],
+"V": 14,
+"E": 24,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 8,
+"4-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12
+},
+"corner_kinds": {
+"4.4.4": 8,
+"4.4.4.4": 6
+},
+"corner_profiles": 3,
+"invariant": "-2242862052845400894",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1
+],
+"label": "A3-17",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 18,
+"bits": "75bb9dbab",
+"orbit": 2,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5
+],
+"V": 12,
+"E": 18,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"6-gon regular": 4
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 4,
+"6": 4
+},
+"corner_kinds": {
+"3.6.6": 12
+},
+"corner_profiles": 1,
+"invariant": "-3115733994121180329",
+"name": "truncated tetrahedron",
+"atom": false,
+"segments": 0,
+"core": 18,
+"core_dim": 3,
+"atoms_in": [
+2,
+10
+],
+"label": "truncated tetrahedron",
+"class": "regular-faced (known: truncated tetrahedron)",
+"controls": [
+"#49: octahedron with four caps (O + T)",
+"#49: octahedron with four caps (O + reversed T)"
+],
+"corner_cycles": {
+"3.6.6": 12
+},
+"kind": "regular-faced"
+},
+{
+"id": 19,
+"bits": "af56f66f5",
+"orbit": 1,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5
+],
+"V": 12,
+"E": 24,
+"F": 14,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 8,
+"4-gon regular": 6
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 8,
+"4": 6
+},
+"corner_kinds": {
+"3.3.4.4": 12
+},
+"corner_profiles": 1,
+"invariant": "-8287606262021793754",
+"name": "cuboctahedron",
+"atom": false,
+"segments": 0,
+"core": 19,
+"core_dim": 3,
+"atoms_in": [
+7,
+7
+],
+"label": "cuboctahedron",
+"class": "regular-faced (known: cuboctahedron)",
+"controls": [
+"#49: tetrahedron with four caps (T + reversed T)"
+],
+"corner_cycles": {
+"3.4.3.4": 12
+},
+"kind": "regular-faced"
+},
+{
+"id": 20,
+"bits": "75bbdeff5",
+"orbit": 8,
+"dim": 3,
+"corners": 15,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5
+],
+"V": 15,
+"E": 24,
+"F": 11,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 3,
+"6-gon regular": 3
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 6,
+"6": 3
+},
+"corner_kinds": {
+"3.4.4.4": 3,
+"3.6.6": 3,
+"4.4.6": 6,
+"4.6.6": 3
+},
+"corner_profiles": 4,
+"invariant": "-5971774219205428163",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 2,
+"core_dim": 2,
+"atoms_in": [
+1,
+1,
+1,
+2
+],
+"label": "A3-20",
+"class": "#49 stretch: core regular triangle + 3 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 21,
+"bits": "77dffef7e",
+"orbit": 6,
+"dim": 3,
+"corners": 18,
+"closes": true,
+"used_roots": [
+1,
+2,
+3,
+4,
+5
+],
+"V": 18,
+"E": 28,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 4,
+"4-gon regular": 4,
+"6-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 8,
+"6": 4
+},
+"corner_kinds": {
+"4.4.4.4": 2,
+"4.4.6": 8,
+"4.6.6": 8
+},
+"corner_profiles": 4,
+"invariant": "-4980111879991995605",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+1
+],
+"label": "A3-21",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 22,
+"bits": "fffffffff",
+"orbit": 1,
+"dim": 3,
+"corners": 24,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5
+],
+"V": 24,
+"E": 36,
+"F": 14,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon regular": 6,
+"6-gon regular": 8
+},
+"regular_faced": true,
+"ngon_counts": {
+"4": 6,
+"6": 8
+},
+"corner_kinds": {
+"4.6.6": 24
+},
+"corner_profiles": 1,
+"invariant": "3623089578095177201",
+"name": "truncated octahedron",
+"atom": false,
+"segments": 6,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+1,
+1
+],
+"label": "truncated octahedron",
+"class": "regular-faced (known: truncated octahedron)",
+"corner_cycles": {
+"4.6.6": 24
+},
+"kind": "regular-faced"
+}
+]

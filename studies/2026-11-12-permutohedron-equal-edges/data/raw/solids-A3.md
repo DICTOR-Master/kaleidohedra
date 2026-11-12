@@ -1,0 +1,23 @@
+# Equal-edged members of the A3 permutohedron deformation cone (one per orbit)
+
+Faces: "n-gon a/b" = equal-edged n-gon with angles a and b degrees. Built from = one exact split into atoms.
+
+| id | orbit | V | E | F | faces | kind | built from |
+|---|---|---|---|---|---|---|---|
+| A3-6 | 6 | 5 | 8 | 5 | 4 3-gon regular, 1 4-gon regular | regular-faced = J1 square pyramid | J1 square pyramid |
+| A3-7 | 2 | 4 | 6 | 4 | 4 3-gon regular | regular-faced = tetrahedron | tetrahedron |
+| A3-8 | 1 | 6 | 12 | 8 | 8 3-gon regular | regular-faced = octahedron | octahedron |
+| A3-9 | 24 | 6 | 9 | 5 | 2 3-gon regular, 2 4-gon 60/120, 1 4-gon regular | #49 stretch (segment summand) | segment + regular triangle |
+| A3-10 | 8 | 7 | 12 | 7 | 4 3-gon regular, 3 4-gon 60/120 | new atom (indecomposable, not regular-faced) | A3-10 |
+| A3-11 | 12 | 8 | 12 | 6 | 4 4-gon 60/120, 2 4-gon regular | zonohedron | segment + segment + segment |
+| A3-12 | 4 | 8 | 12 | 6 | 6 4-gon 60/120 | zonohedron | segment + segment + segment |
+| A3-13 | 8 | 9 | 15 | 8 | 4 3-gon regular, 3 4-gon regular, 1 6-gon regular | regular-faced = J3 triangular cupola | regular triangle + tetrahedron |
+| A3-14 | 24 | 10 | 16 | 8 | 2 3-gon regular, 3 4-gon 60/120, 2 4-gon regular, 1 6-gon regular | #49 stretch (segment summand) | segment + segment + regular triangle |
+| A3-15 | 12 | 12 | 18 | 8 | 4 4-gon 60/120, 2 4-gon regular, 2 6-gon regular | zonohedron | segment + segment + segment + segment |
+| A3-16 | 6 | 13 | 24 | 13 | 4 3-gon regular, 4 4-gon 60/120, 5 4-gon regular | new atom (indecomposable, not regular-faced) | A3-16 |
+| A3-17 | 3 | 14 | 24 | 12 | 8 4-gon 60/120, 4 4-gon regular | zonohedron | segment + segment + segment + segment |
+| A3-18 | 2 | 12 | 18 | 8 | 4 3-gon regular, 4 6-gon regular | regular-faced = truncated tetrahedron | regular triangle + A3-10 |
+| A3-19 | 1 | 12 | 24 | 14 | 8 3-gon regular, 6 4-gon regular | regular-faced = cuboctahedron | tetrahedron + tetrahedron |
+| A3-20 | 8 | 15 | 24 | 11 | 2 3-gon regular, 3 4-gon 60/120, 3 4-gon regular, 3 6-gon regular | #49 stretch (segment summand) | segment + segment + segment + regular triangle |
+| A3-21 | 6 | 18 | 28 | 12 | 4 4-gon 60/120, 4 4-gon regular, 4 6-gon regular | zonohedron | segment + segment + segment + segment + segment |
+| A3-22 | 1 | 24 | 36 | 14 | 6 4-gon regular, 8 6-gon regular | regular-faced = truncated octahedron | segment + segment + segment + segment + segment + segment |

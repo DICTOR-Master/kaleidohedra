@@ -1,0 +1,5830 @@
+[
+{
+"id": 0,
+"bits": "0",
+"orbit": 1,
+"dim": 0,
+"corners": 1,
+"closes": true,
+"used_roots": [],
+"atom": false,
+"segments": 0,
+"core": 0,
+"core_dim": 0,
+"label": "point"
+},
+{
+"id": 1,
+"bits": "c300c1800000",
+"orbit": 6,
+"dim": 1,
+"corners": 2,
+"closes": true,
+"used_roots": [
+8
+],
+"atom": true,
+"segments": 1,
+"core": 0,
+"core_dim": 0,
+"label": "segment"
+},
+{
+"id": 2,
+"bits": "1021002200440400",
+"orbit": 3,
+"dim": 1,
+"corners": 2,
+"closes": true,
+"used_roots": [
+6
+],
+"atom": true,
+"segments": 1,
+"core": 0,
+"core_dim": 0,
+"label": "segment"
+},
+{
+"id": 3,
+"bits": "888c600a0080202",
+"orbit": 8,
+"dim": 2,
+"corners": 3,
+"closes": true,
+"used_roots": [
+1,
+7,
+8
+],
+"polygon": 3,
+"regular": true,
+"atom": true,
+"segments": 0,
+"core": 3,
+"core_dim": 2,
+"label": "regular triangle"
+},
+{
+"id": 4,
+"bits": "888c700d1910800",
+"orbit": 12,
+"dim": 2,
+"corners": 4,
+"closes": true,
+"used_roots": [
+7,
+8
+],
+"polygon": 4,
+"regular": false,
+"atom": false,
+"segments": 2,
+"core": 0,
+"core_dim": 0,
+"label": "equal-edged rhombus"
+},
+{
+"id": 5,
+"bits": "1021c322c1c40400",
+"orbit": 12,
+"dim": 2,
+"corners": 4,
+"closes": true,
+"used_roots": [
+6,
+8
+],
+"polygon": 4,
+"regular": false,
+"atom": false,
+"segments": 2,
+"core": 0,
+"core_dim": 0,
+"label": "equal-edged rhombus"
+},
+{
+"id": 6,
+"bits": "9123003600648500",
+"orbit": 6,
+"dim": 2,
+"corners": 4,
+"closes": true,
+"used_roots": [
+5,
+6
+],
+"polygon": 4,
+"regular": true,
+"atom": false,
+"segments": 2,
+"core": 0,
+"core_dim": 0,
+"label": "regular rhombus"
+},
+{
+"id": 7,
+"bits": "11461082208462440",
+"orbit": 3,
+"dim": 2,
+"corners": 4,
+"closes": true,
+"used_roots": [
+4,
+6
+],
+"polygon": 4,
+"regular": true,
+"atom": false,
+"segments": 2,
+"core": 0,
+"core_dim": 0,
+"label": "regular rhombus"
+},
+{
+"id": 8,
+"bits": "120a88044810114828",
+"orbit": 3,
+"dim": 2,
+"corners": 4,
+"closes": true,
+"used_roots": [
+3,
+7
+],
+"polygon": 4,
+"regular": true,
+"atom": false,
+"segments": 2,
+"core": 0,
+"core_dim": 0,
+"label": "regular rhombus"
+},
+{
+"id": 9,
+"bits": "11461cb22c9c62440",
+"orbit": 6,
+"dim": 2,
+"corners": 6,
+"closes": true,
+"used_roots": [
+4,
+6,
+8
+],
+"polygon": 6,
+"regular": false,
+"atom": false,
+"segments": 3,
+"core": 0,
+"core_dim": 0,
+"label": "equal-edged hexagon"
+},
+{
+"id": 10,
+"bits": "121aa9046a10554c28",
+"orbit": 6,
+"dim": 2,
+"corners": 6,
+"closes": true,
+"used_roots": [
+3,
+6,
+7
+],
+"polygon": 6,
+"regular": false,
+"atom": false,
+"segments": 3,
+"core": 0,
+"core_dim": 0,
+"label": "equal-edged hexagon"
+},
+{
+"id": 11,
+"bits": "128302c35cc1a0c128",
+"orbit": 4,
+"dim": 2,
+"corners": 6,
+"closes": true,
+"used_roots": [
+3,
+5,
+8
+],
+"polygon": 6,
+"regular": true,
+"atom": false,
+"segments": 3,
+"core": 0,
+"core_dim": 0,
+"label": "regular hexagon"
+},
+{
+"id": 12,
+"bits": "3a1aa924eb12554c3c",
+"orbit": 3,
+"dim": 2,
+"corners": 8,
+"closes": true,
+"used_roots": [
+2,
+3,
+6,
+7
+],
+"polygon": 8,
+"regular": true,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"label": "regular octagon"
+},
+{
+"id": 13,
+"bits": "890c82082000100a",
+"orbit": 2,
+"dim": 3,
+"corners": 4,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+7,
+8
+],
+"V": 4,
+"E": 6,
+"F": 4,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 4
+},
+"corner_kinds": {
+"3.3.3": 4
+},
+"corner_profiles": 1,
+"invariant": "-2055431300469218433",
+"name": "tetrahedron",
+"atom": true,
+"segments": 0,
+"core": 13,
+"core_dim": 3,
+"atoms_in": [
+13
+],
+"label": "tetrahedron",
+"class": "regular-faced (known: tetrahedron)",
+"corner_cycles": {
+"3.3.3": 4
+},
+"kind": "regular-faced"
+},
+{
+"id": 14,
+"bits": "18a9c622a04c0602",
+"orbit": 24,
+"dim": 3,
+"corners": 6,
+"closes": true,
+"used_roots": [
+1,
+6,
+7,
+8
+],
+"V": 6,
+"E": 9,
+"F": 5,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 45/135": 2,
+"4-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 3
+},
+"corner_kinds": {
+"3.4.4": 6
+},
+"corner_profiles": 4,
+"invariant": "1247146666454277371",
+"name": null,
+"atom": false,
+"segments": 1,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+2,
+3
+],
+"label": "B3-14",
+"class": "#49 stretch: core regular triangle + 1 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 15,
+"bits": "890cc304d1a11081",
+"orbit": 24,
+"dim": 3,
+"corners": 6,
+"closes": true,
+"used_roots": [
+0,
+5,
+7,
+8
+],
+"V": 6,
+"E": 9,
+"F": 5,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 60/120": 2,
+"4-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 3
+},
+"corner_kinds": {
+"3.4.4": 6
+},
+"corner_profiles": 4,
+"invariant": "-7304789383681289945",
+"name": null,
+"atom": false,
+"segments": 1,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+3
+],
+"label": "B3-15",
+"class": "#49 stretch: core regular triangle + 1 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 16,
+"bits": "992d822a2044140a",
+"orbit": 6,
+"dim": 3,
+"corners": 8,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+6,
+7,
+8
+],
+"V": 8,
+"E": 14,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 45/135": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 4
+},
+"corner_kinds": {
+"3.3.4.4": 4,
+"3.4.4": 4
+},
+"corner_profiles": 2,
+"invariant": "6917704130640827763",
+"name": null,
+"atom": false,
+"segments": 1,
+"core": 13,
+"core_dim": 3,
+"atoms_in": [
+2,
+13
+],
+"label": "B3-16",
+"class": "#49 stretch: core tetrahedron + 1 segment(s)",
+"kind": "stretch of a Platonic/Archimedean solid"
+},
+{
+"id": 17,
+"bits": "120a884444902942a1",
+"orbit": 6,
+"dim": 3,
+"corners": 5,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+7,
+8
+],
+"V": 5,
+"E": 8,
+"F": 5,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon regular": 1
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 4,
+"4": 1
+},
+"corner_kinds": {
+"3.3.3.3": 1,
+"3.3.4": 4
+},
+"corner_profiles": 2,
+"invariant": "-6574874217270254074",
+"name": "J1 square pyramid",
+"atom": true,
+"segments": 0,
+"core": 17,
+"core_dim": 3,
+"atoms_in": [
+17
+],
+"label": "J1 square pyramid",
+"class": "regular-faced (known: J1 square pyramid)",
+"corner_cycles": {
+"3.3.4": 4,
+"3.3.3.3": 1
+},
+"kind": "regular-faced"
+},
+{
+"id": 18,
+"bits": "18a9c722d1d50c00",
+"orbit": 12,
+"dim": 3,
+"corners": 8,
+"closes": true,
+"used_roots": [
+6,
+7,
+8
+],
+"V": 8,
+"E": 12,
+"F": 6,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 4,
+"4-gon 60/120": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6
+},
+"corner_kinds": {
+"4.4.4": 8
+},
+"corner_profiles": 3,
+"invariant": "-6477304187516610991",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+2
+],
+"label": "B3-18",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 19,
+"bits": "898ac714912942a1",
+"orbit": 8,
+"dim": 3,
+"corners": 7,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+7,
+8
+],
+"V": 7,
+"E": 12,
+"F": 7,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 60/120": 3
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 3
+},
+"corner_kinds": {
+"3.3.3.4": 3,
+"3.4.4": 3,
+"4.4.4": 1
+},
+"corner_profiles": 3,
+"invariant": "-5048222088667335548",
+"name": null,
+"atom": true,
+"segments": 0,
+"core": 19,
+"core_dim": 3,
+"atoms_in": [
+19
+],
+"label": "B3-19",
+"class": "beyond #49: B3-19",
+"kind": "new atom (indecomposable, not regular-faced)"
+},
+{
+"id": 20,
+"bits": "898ac714d1b18900",
+"orbit": 4,
+"dim": 3,
+"corners": 8,
+"closes": true,
+"used_roots": [
+5,
+7,
+8
+],
+"V": 8,
+"E": 12,
+"F": 6,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 6
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6
+},
+"corner_kinds": {
+"4.4.4": 8
+},
+"corner_profiles": 2,
+"invariant": "82875641671579594",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1
+],
+"label": "B3-20",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 21,
+"bits": "9123c336c1e48500",
+"orbit": 24,
+"dim": 3,
+"corners": 8,
+"closes": true,
+"used_roots": [
+5,
+6,
+8
+],
+"V": 8,
+"E": 12,
+"F": 6,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 2,
+"4-gon 60/120": 2,
+"4-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6
+},
+"corner_kinds": {
+"4.4.4": 8
+},
+"corner_profiles": 4,
+"invariant": "2414653156566121748",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+2
+],
+"label": "B3-21",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 22,
+"bits": "11ce90c2218572c40",
+"orbit": 12,
+"dim": 3,
+"corners": 8,
+"closes": true,
+"used_roots": [
+4,
+6,
+7
+],
+"V": 8,
+"E": 12,
+"F": 6,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 2,
+"4-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6
+},
+"corner_kinds": {
+"4.4.4": 8
+},
+"corner_profiles": 2,
+"invariant": "7566506083522424322",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+2,
+2
+],
+"label": "B3-22",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 23,
+"bits": "120a88c748d1914828",
+"orbit": 12,
+"dim": 3,
+"corners": 8,
+"closes": true,
+"used_roots": [
+3,
+7,
+8
+],
+"V": 8,
+"E": 12,
+"F": 6,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 4,
+"4-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6
+},
+"corner_kinds": {
+"4.4.4": 8
+},
+"corner_profiles": 3,
+"invariant": "-8822204596839494845",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1
+],
+"label": "B3-23",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 24,
+"bits": "128b0cc24ce0a0910a",
+"orbit": 8,
+"dim": 3,
+"corners": 9,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+7,
+8
+],
+"V": 9,
+"E": 15,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon regular": 3,
+"6-gon regular": 1
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 4,
+"4": 3,
+"6": 1
+},
+"corner_kinds": {
+"3.3.4.4": 3,
+"3.4.6": 6
+},
+"corner_profiles": 2,
+"invariant": "-6828947983250769629",
+"name": "J3 triangular cupola",
+"atom": false,
+"segments": 0,
+"core": 24,
+"core_dim": 3,
+"atoms_in": [
+3,
+13
+],
+"label": "J3 triangular cupola",
+"class": "regular-faced (known: J3 triangular cupola)",
+"corner_cycles": {
+"3.4.6": 6,
+"3.4.3.4": 3
+},
+"kind": "regular-faced"
+},
+{
+"id": 25,
+"bits": "130ec80c4818136868",
+"orbit": 3,
+"dim": 3,
+"corners": 8,
+"closes": true,
+"used_roots": [
+3,
+4,
+7
+],
+"V": 8,
+"E": 12,
+"F": 6,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon regular": 6
+},
+"regular_faced": true,
+"ngon_counts": {
+"4": 6
+},
+"corner_kinds": {
+"4.4.4": 8
+},
+"corner_profiles": 1,
+"invariant": "5253648636133819583",
+"name": "cube",
+"atom": false,
+"segments": 3,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+2
+],
+"label": "cube",
+"class": "regular-faced (known: cube)",
+"corner_cycles": {
+"4.4.4": 8
+},
+"kind": "regular-faced"
+},
+{
+"id": 26,
+"bits": "29146128a30a462454",
+"orbit": 1,
+"dim": 3,
+"corners": 8,
+"closes": true,
+"used_roots": [
+2,
+4,
+6
+],
+"V": 8,
+"E": 12,
+"F": 6,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon regular": 6
+},
+"regular_faced": true,
+"ngon_counts": {
+"4": 6
+},
+"corner_kinds": {
+"4.4.4": 8
+},
+"corner_profiles": 1,
+"invariant": "5253648636133819583",
+"name": "cube",
+"atom": false,
+"segments": 3,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+2,
+2,
+2
+],
+"label": "cube",
+"class": "regular-faced (known: cube)",
+"same_solid_as": 25,
+"corner_cycles": {
+"4.4.4": 8
+},
+"kind": "regular-faced"
+},
+{
+"id": 27,
+"bits": "50c90c92486490990a",
+"orbit": 1,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+7,
+8
+],
+"V": 12,
+"E": 24,
+"F": 14,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 8,
+"4-gon regular": 6
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 8,
+"4": 6
+},
+"corner_kinds": {
+"3.3.4.4": 12
+},
+"corner_profiles": 1,
+"invariant": "-8287606262021793754",
+"name": "cuboctahedron",
+"atom": false,
+"segments": 0,
+"core": 27,
+"core_dim": 3,
+"atoms_in": [
+13,
+13
+],
+"label": "cuboctahedron",
+"class": "regular-faced (known: cuboctahedron)",
+"corner_cycles": {
+"3.4.3.4": 12
+},
+"kind": "regular-faced"
+},
+{
+"id": 28,
+"bits": "8622924514912942a1",
+"orbit": 1,
+"dim": 3,
+"corners": 6,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+7,
+8
+],
+"V": 6,
+"E": 12,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 8
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 8
+},
+"corner_kinds": {
+"3.3.3.3": 6
+},
+"corner_profiles": 1,
+"invariant": "-210280983095424954",
+"name": "octahedron",
+"atom": true,
+"segments": 0,
+"core": 28,
+"core_dim": 3,
+"atoms_in": [
+28
+],
+"label": "octahedron",
+"class": "regular-faced (known: octahedron)",
+"corner_cycles": {
+"3.3.3.3": 6
+},
+"kind": "regular-faced"
+},
+{
+"id": 29,
+"bits": "992dc326d1e51481",
+"orbit": 48,
+"dim": 3,
+"corners": 10,
+"closes": true,
+"used_roots": [
+0,
+5,
+6,
+7,
+8
+],
+"V": 10,
+"E": 16,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 45/135": 2,
+"4-gon 60/120": 2,
+"4-gon regular": 1,
+"6-gon 90/135": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 5,
+"6": 1
+},
+"corner_kinds": {
+"3.4.4.4": 2,
+"3.4.6": 4,
+"4.4.4": 2,
+"4.4.6": 2
+},
+"corner_profiles": 10,
+"invariant": "-7325548235916600405",
+"name": null,
+"atom": false,
+"segments": 2,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+2,
+3
+],
+"label": "B3-29",
+"class": "#49 stretch: core regular triangle + 2 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 30,
+"bits": "99abc636a06c8702",
+"orbit": 24,
+"dim": 3,
+"corners": 11,
+"closes": true,
+"used_roots": [
+1,
+5,
+6,
+7,
+8
+],
+"V": 11,
+"E": 19,
+"F": 10,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 45/135": 2,
+"4-gon 60/120": 2,
+"4-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 8
+},
+"corner_kinds": {
+"3.4.4": 2,
+"3.4.4.4": 4,
+"4.4.4": 4,
+"4.4.4.4": 1
+},
+"corner_profiles": 7,
+"invariant": "-6310976713596996472",
+"name": null,
+"atom": false,
+"segments": 2,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+2,
+3
+],
+"label": "B3-30",
+"class": "#49 stretch: core regular triangle + 2 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 31,
+"bits": "11ce9ce22a84e2642",
+"orbit": 24,
+"dim": 3,
+"corners": 10,
+"closes": true,
+"used_roots": [
+1,
+4,
+6,
+7,
+8
+],
+"V": 10,
+"E": 16,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 45/135": 2,
+"4-gon regular": 3,
+"6-gon 90/135": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 5,
+"6": 1
+},
+"corner_kinds": {
+"3.4.4.4": 2,
+"3.4.6": 4,
+"4.4.4": 2,
+"4.4.6": 2
+},
+"corner_profiles": 6,
+"invariant": "8860505161940007687",
+"name": null,
+"atom": false,
+"segments": 2,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+2,
+2,
+3
+],
+"label": "B3-31",
+"class": "#49 stretch: core regular triangle + 2 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 32,
+"bits": "19d6d8a2a2846344a",
+"orbit": 6,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 12,
+"E": 20,
+"F": 10,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 45/135": 4,
+"6-gon 90/135": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 4,
+"6": 2
+},
+"corner_kinds": {
+"3.4.4.6": 4,
+"3.4.6": 8
+},
+"corner_profiles": 2,
+"invariant": "-58428815734031057",
+"name": null,
+"atom": false,
+"segments": 2,
+"core": 13,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+13
+],
+"label": "B3-32",
+"class": "#49 stretch: core tetrahedron + 2 segment(s)",
+"kind": "stretch of a Platonic/Archimedean solid"
+},
+{
+"id": 33,
+"bits": "121aa94466906d46a1",
+"orbit": 12,
+"dim": 3,
+"corners": 8,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+6,
+7,
+8
+],
+"V": 8,
+"E": 13,
+"F": 7,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon regular": 2,
+"6-gon 90/135": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 2,
+"6": 1
+},
+"corner_kinds": {
+"3.3.4.4": 2,
+"3.3.6": 2,
+"3.4.6": 4
+},
+"corner_profiles": 3,
+"invariant": "1513303498317442095",
+"name": null,
+"atom": false,
+"segments": 1,
+"core": 17,
+"core_dim": 3,
+"atoms_in": [
+2,
+17
+],
+"label": "B3-33",
+"class": "#49 stretch: core J1 square pyramid + 1 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 34,
+"bits": "128b0cc34cd1a150a9",
+"orbit": 24,
+"dim": 3,
+"corners": 10,
+"closes": true,
+"used_roots": [
+0,
+3,
+5,
+7,
+8
+],
+"V": 10,
+"E": 16,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 2,
+"6-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 5,
+"6": 1
+},
+"corner_kinds": {
+"3.4.4.4": 2,
+"3.4.6": 4,
+"4.4.4": 2,
+"4.4.6": 2
+},
+"corner_profiles": 6,
+"invariant": "-7395862441696188479",
+"name": null,
+"atom": false,
+"segments": 2,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+1,
+3
+],
+"label": "B3-34",
+"class": "#49 stretch: core regular triangle + 2 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 35,
+"bits": "130ec84c44982b62e1",
+"orbit": 6,
+"dim": 3,
+"corners": 9,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+4,
+5,
+7,
+8
+],
+"V": 9,
+"E": 16,
+"F": 9,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon regular": 5
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 4,
+"4": 5
+},
+"corner_kinds": {
+"3.3.3.3": 1,
+"3.3.4.4": 4,
+"4.4.4": 4
+},
+"corner_profiles": 3,
+"invariant": "7351133476709089825",
+"name": "J8 elongated square pyramid",
+"atom": false,
+"segments": 1,
+"core": 17,
+"core_dim": 3,
+"atoms_in": [
+2,
+17
+],
+"label": "J8 elongated square pyramid",
+"class": "regular-faced (known: J8 elongated square pyramid)",
+"corner_cycles": {
+"3.3.4.4": 4,
+"3.3.3.3": 1,
+"4.4.4": 4
+},
+"kind": "regular-faced"
+},
+{
+"id": 36,
+"bits": "50c90c9348559158a9",
+"orbit": 6,
+"dim": 3,
+"corners": 13,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+7,
+8
+],
+"V": 13,
+"E": 24,
+"F": 13,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 60/120": 4,
+"4-gon regular": 5
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 9
+},
+"corner_kinds": {
+"3.3.4.4": 4,
+"3.4.4.4": 4,
+"4.4.4": 4,
+"4.4.4.4": 1
+},
+"corner_profiles": 4,
+"invariant": "6272804637285362918",
+"name": null,
+"atom": true,
+"segments": 0,
+"core": 36,
+"core_dim": 3,
+"atoms_in": [
+36
+],
+"label": "B3-36",
+"class": "beyond #49: B3-36",
+"kind": "new atom (indecomposable, not regular-faced)"
+},
+{
+"id": 37,
+"bits": "99abc736916d46a1",
+"orbit": 24,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+6,
+7,
+8
+],
+"V": 12,
+"E": 22,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 45/135": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 3
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 8
+},
+"corner_kinds": {
+"3.3.3.4": 1,
+"3.3.4.4": 2,
+"3.4.4": 1,
+"3.4.4.4": 4,
+"4.4.4": 3,
+"4.4.4.4": 1
+},
+"corner_profiles": 8,
+"invariant": "-2558945155676303612",
+"name": null,
+"atom": false,
+"segments": 1,
+"core": 19,
+"core_dim": 3,
+"atoms_in": [
+2,
+19
+],
+"label": "B3-37",
+"class": "#49 stretch: core B3-19 + 1 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 38,
+"bits": "99abc736d1f58d00",
+"orbit": 12,
+"dim": 3,
+"corners": 14,
+"closes": true,
+"used_roots": [
+5,
+6,
+7,
+8
+],
+"V": 14,
+"E": 24,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 4,
+"4-gon 60/120": 6,
+"4-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12
+},
+"corner_kinds": {
+"4.4.4": 8,
+"4.4.4.4": 6
+},
+"corner_profiles": 5,
+"invariant": "6764462538049721046",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+2
+],
+"label": "B3-38",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 39,
+"bits": "11ce9cf22d9d72c40",
+"orbit": 24,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+4,
+6,
+7,
+8
+],
+"V": 12,
+"E": 18,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 2,
+"4-gon 60/120": 2,
+"4-gon regular": 2,
+"6-gon 90/135": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6,
+"6": 2
+},
+"corner_kinds": {
+"4.4.6": 12
+},
+"corner_profiles": 6,
+"invariant": "5225105689177868098",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+2,
+2
+],
+"label": "B3-39",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 40,
+"bits": "19deb0c361877ad40",
+"orbit": 12,
+"dim": 3,
+"corners": 14,
+"closes": true,
+"used_roots": [
+4,
+5,
+6,
+7
+],
+"V": 14,
+"E": 24,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 4,
+"4-gon 60/120": 2,
+"4-gon regular": 6
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12
+},
+"corner_kinds": {
+"4.4.4": 8,
+"4.4.4.4": 6
+},
+"corner_profiles": 5,
+"invariant": "-8585064986446808984",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+2,
+2
+],
+"label": "B3-40",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 41,
+"bits": "121aa9c76ad1d54c28",
+"orbit": 12,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+3,
+6,
+7,
+8
+],
+"V": 12,
+"E": 18,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 2,
+"4-gon 60/120": 4,
+"6-gon 90/135": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6,
+"6": 2
+},
+"corner_kinds": {
+"4.4.6": 12
+},
+"corner_profiles": 4,
+"invariant": "-7101620704478796410",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+2
+],
+"label": "B3-41",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 42,
+"bits": "128b8ac75cd1b1c928",
+"orbit": 12,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+3,
+5,
+7,
+8
+],
+"V": 12,
+"E": 18,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 4,
+"4-gon regular": 2,
+"6-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6,
+"6": 2
+},
+"corner_kinds": {
+"4.4.6": 12
+},
+"corner_profiles": 3,
+"invariant": "-5240839770083366125",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1
+],
+"label": "B3-42",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 43,
+"bits": "129323c37ec1e4c528",
+"orbit": 12,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+3,
+5,
+6,
+8
+],
+"V": 12,
+"E": 18,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 4,
+"4-gon regular": 2,
+"6-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6,
+"6": 2
+},
+"corner_kinds": {
+"4.4.6": 12
+},
+"corner_profiles": 3,
+"invariant": "-4243693032044781259",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+2
+],
+"label": "B3-43",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 44,
+"bits": "129b2dc26ee0e4950a",
+"orbit": 24,
+"dim": 3,
+"corners": 14,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+6,
+7,
+8
+],
+"V": 14,
+"E": 23,
+"F": 11,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 45/135": 2,
+"4-gon regular": 2,
+"6-gon 90/135": 2,
+"6-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 4,
+"6": 3
+},
+"corner_kinds": {
+"3.3.4.6": 2,
+"3.4.4.4": 2,
+"3.4.6": 2,
+"3.6.6": 4,
+"4.4.6": 2,
+"4.6.6": 2
+},
+"corner_profiles": 8,
+"invariant": "1345767649176724985",
+"name": null,
+"atom": false,
+"segments": 1,
+"core": 24,
+"core_dim": 3,
+"atoms_in": [
+2,
+3,
+13
+],
+"label": "B3-44",
+"class": "#49 stretch: core J3 triangular cupola + 1 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 45,
+"bits": "129bab047e1075cd28",
+"orbit": 12,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+3,
+5,
+6,
+7
+],
+"V": 12,
+"E": 18,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 4,
+"4-gon regular": 2,
+"6-gon 90/135": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6,
+"6": 2
+},
+"corner_kinds": {
+"4.4.6": 12
+},
+"corner_profiles": 3,
+"invariant": "-2916518258164371615",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+2
+],
+"label": "B3-45",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 46,
+"bits": "130ec8cf48d9936868",
+"orbit": 12,
+"dim": 3,
+"corners": 14,
+"closes": true,
+"used_roots": [
+3,
+4,
+7,
+8
+],
+"V": 14,
+"E": 24,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 2,
+"4-gon 60/120": 4,
+"4-gon regular": 6
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12
+},
+"corner_kinds": {
+"4.4.4": 8,
+"4.4.4.4": 6
+},
+"corner_profiles": 5,
+"invariant": "5266968394852607793",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+2
+],
+"label": "B3-46",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 47,
+"bits": "131ee90c6a18576c68",
+"orbit": 6,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+3,
+4,
+6,
+7
+],
+"V": 12,
+"E": 18,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon regular": 6,
+"6-gon 90/135": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6,
+"6": 2
+},
+"corner_kinds": {
+"4.4.6": 12
+},
+"corner_profiles": 2,
+"invariant": "-5406682202424601158",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+2,
+2
+],
+"label": "B3-47",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 48,
+"bits": "291461eba3cbc62454",
+"orbit": 6,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+2,
+4,
+6,
+8
+],
+"V": 12,
+"E": 18,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon regular": 6,
+"6-gon 90/135": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6,
+"6": 2
+},
+"corner_kinds": {
+"4.4.6": 12
+},
+"corner_profiles": 2,
+"invariant": "-5406682202424601158",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+2,
+2,
+2
+],
+"label": "B3-48",
+"class": "zonohedron",
+"controls": [
+"#49: cube stretched along a face diagonal"
+],
+"same_solid_as": 47,
+"kind": "zonohedron"
+},
+{
+"id": 49,
+"bits": "50d92d926a64d49d0a",
+"orbit": 3,
+"dim": 3,
+"corners": 16,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+6,
+7,
+8
+],
+"V": 16,
+"E": 28,
+"F": 14,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 8,
+"4-gon regular": 2,
+"6-gon 90/135": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 8,
+"4": 2,
+"6": 4
+},
+"corner_kinds": {
+"3.3.4.6": 8,
+"3.6.6": 8
+},
+"corner_profiles": 2,
+"invariant": "2920821127939502749",
+"name": null,
+"atom": false,
+"segments": 1,
+"core": 27,
+"core_dim": 3,
+"atoms_in": [
+2,
+13,
+13
+],
+"label": "B3-49",
+"class": "#49 stretch: core cuboctahedron + 1 segment(s)",
+"kind": "stretch of a Platonic/Archimedean solid"
+},
+{
+"id": 50,
+"bits": "52ab9a145c3039cb2a",
+"orbit": 3,
+"dim": 3,
+"corners": 14,
+"closes": true,
+"used_roots": [
+1,
+3,
+5,
+7
+],
+"V": 14,
+"E": 24,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 8,
+"4-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12
+},
+"corner_kinds": {
+"4.4.4": 8,
+"4.4.4.4": 6
+},
+"corner_profiles": 3,
+"invariant": "-2242862052845400894",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1
+],
+"label": "B3-50",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 51,
+"bits": "8632b34536916d46a1",
+"orbit": 3,
+"dim": 3,
+"corners": 10,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+6,
+7,
+8
+],
+"V": 10,
+"E": 20,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 8,
+"4-gon regular": 4
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 8,
+"4": 4
+},
+"corner_kinds": {
+"3.3.3.3": 2,
+"3.3.4.4": 8
+},
+"corner_profiles": 2,
+"invariant": "-8977200235116735648",
+"name": "J15 elongated square bipyramid",
+"atom": false,
+"segments": 1,
+"core": 28,
+"core_dim": 3,
+"atoms_in": [
+2,
+28
+],
+"label": "J15 elongated square bipyramid",
+"class": "regular-faced (known: J15 elongated square bipyramid)",
+"controls": [
+"#49: octahedron stretched through a corner"
+],
+"corner_cycles": {
+"3.3.3.3": 2,
+"3.3.4.4": 8
+},
+"kind": "regular-faced"
+},
+{
+"id": 52,
+"bits": "19d6dcb26d9e734c1",
+"orbit": 24,
+"dim": 3,
+"corners": 14,
+"closes": true,
+"used_roots": [
+0,
+4,
+5,
+6,
+7,
+8
+],
+"V": 14,
+"E": 22,
+"F": 10,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 45/135": 2,
+"4-gon 60/120": 2,
+"4-gon regular": 2,
+"6-gon 90/135": 1,
+"8-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 6,
+"6": 1,
+"8": 1
+},
+"corner_kinds": {
+"3.4.4.6": 2,
+"3.4.8": 4,
+"4.4.6": 4,
+"4.4.8": 4
+},
+"corner_profiles": 8,
+"invariant": "-8679594461704985208",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+2,
+2,
+3
+],
+"label": "B3-52",
+"class": "#49 stretch: core regular triangle + 3 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 53,
+"bits": "19deb8f3a19576c68",
+"orbit": 48,
+"dim": 3,
+"corners": 16,
+"closes": true,
+"used_roots": [
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 16,
+"E": 27,
+"F": 13,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 45/135": 2,
+"4-gon 60/120": 2,
+"4-gon regular": 5,
+"6-gon 90/135": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 9,
+"6": 2
+},
+"corner_kinds": {
+"3.4.4.4": 3,
+"3.4.4.6": 1,
+"3.4.6": 1,
+"3.6.6": 1,
+"4.4.4": 2,
+"4.4.4.4": 1,
+"4.4.4.6": 1,
+"4.4.6": 5,
+"4.6.6": 1
+},
+"corner_profiles": 16,
+"invariant": "2179122509463513238",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+2,
+2,
+3
+],
+"label": "B3-53",
+"class": "#49 stretch: core regular triangle + 3 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 54,
+"bits": "129b2dc36ed1e554a9",
+"orbit": 24,
+"dim": 3,
+"corners": 15,
+"closes": true,
+"used_roots": [
+0,
+3,
+5,
+6,
+7,
+8
+],
+"V": 15,
+"E": 24,
+"F": 11,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 45/135": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 1,
+"6-gon 90/135": 2,
+"6-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 6,
+"6": 3
+},
+"corner_kinds": {
+"3.4.4.4": 3,
+"3.6.6": 3,
+"4.4.6": 6,
+"4.6.6": 3
+},
+"corner_profiles": 9,
+"invariant": "-6194364896884380189",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+1,
+2,
+3
+],
+"label": "B3-54",
+"class": "#49 stretch: core regular triangle + 3 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 55,
+"bits": "129babc67ea06cc72a",
+"orbit": 48,
+"dim": 3,
+"corners": 16,
+"closes": true,
+"used_roots": [
+1,
+3,
+5,
+6,
+7,
+8
+],
+"V": 16,
+"E": 27,
+"F": 13,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 45/135": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 4,
+"6-gon 90/135": 1,
+"6-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 9,
+"6": 2
+},
+"corner_kinds": {
+"3.4.4.4": 2,
+"3.4.4.6": 2,
+"3.4.6": 2,
+"4.4.4": 2,
+"4.4.4.4": 2,
+"4.4.6": 4,
+"4.6.6": 2
+},
+"corner_profiles": 16,
+"invariant": "-1809779900591921122",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+1,
+2,
+3
+],
+"label": "B3-55",
+"class": "#49 stretch: core regular triangle + 3 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 56,
+"bits": "131ee94c66986f66e1",
+"orbit": 12,
+"dim": 3,
+"corners": 14,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 14,
+"E": 25,
+"F": 13,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon regular": 8,
+"6-gon 90/135": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 8,
+"6": 1
+},
+"corner_kinds": {
+"3.3.4.4": 4,
+"3.4.4.4": 4,
+"4.4.6": 6
+},
+"corner_profiles": 5,
+"invariant": "2690653394503888614",
+"name": null,
+"atom": false,
+"segments": 2,
+"core": 17,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+17
+],
+"label": "B3-56",
+"class": "#49 stretch: core J1 square pyramid + 2 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 57,
+"bits": "291ce9eea3aa4e2656",
+"orbit": 8,
+"dim": 3,
+"corners": 15,
+"closes": true,
+"used_roots": [
+1,
+2,
+4,
+6,
+7,
+8
+],
+"V": 15,
+"E": 24,
+"F": 11,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon regular": 6,
+"6-gon 90/135": 3
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 6,
+"6": 3
+},
+"corner_kinds": {
+"3.4.4.4": 3,
+"3.6.6": 3,
+"4.4.6": 6,
+"4.6.6": 3
+},
+"corner_profiles": 4,
+"invariant": "-5457473636779160932",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+2,
+2,
+2,
+3
+],
+"label": "B3-57",
+"class": "#49 stretch: core regular triangle + 3 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 58,
+"bits": "299d6daaab2a46345e",
+"orbit": 2,
+"dim": 3,
+"corners": 16,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 16,
+"E": 24,
+"F": 10,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"6-gon 90/135": 6
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"6": 6
+},
+"corner_kinds": {
+"3.6.6": 12,
+"6.6.6": 4
+},
+"corner_profiles": 2,
+"invariant": "-8897454709619343451",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 13,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+2,
+13
+],
+"label": "B3-58",
+"class": "#49 stretch: core tetrahedron + 3 segment(s)",
+"kind": "stretch of a Platonic/Archimedean solid"
+},
+{
+"id": 59,
+"bits": "3a1aa964e7926d46b5",
+"orbit": 6,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+5,
+6,
+7,
+8
+],
+"V": 12,
+"E": 20,
+"F": 10,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon regular": 5,
+"8-gon regular": 1
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 4,
+"4": 5,
+"8": 1
+},
+"corner_kinds": {
+"3.4.4.4": 4,
+"3.4.8": 8
+},
+"corner_profiles": 2,
+"invariant": "603159806635705353",
+"name": "J4 square cupola",
+"atom": false,
+"segments": 2,
+"core": 17,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+17
+],
+"label": "J4 square cupola",
+"class": "regular-faced (known: J4 square cupola)",
+"corner_cycles": {
+"3.4.8": 8,
+"3.4.4.4": 4
+},
+"kind": "regular-faced"
+},
+{
+"id": 60,
+"bits": "50c98ad754d5b9cba1",
+"orbit": 8,
+"dim": 3,
+"corners": 15,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+7,
+8
+],
+"V": 15,
+"E": 24,
+"F": 11,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 3,
+"6-gon regular": 3
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 6,
+"6": 3
+},
+"corner_kinds": {
+"3.4.4.4": 3,
+"3.6.6": 3,
+"4.4.6": 6,
+"4.6.6": 3
+},
+"corner_profiles": 4,
+"invariant": "-5971774219205428163",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+1,
+1,
+3
+],
+"label": "B3-60",
+"class": "#49 stretch: core regular triangle + 3 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 61,
+"bits": "50d92d936a55d55ca9",
+"orbit": 6,
+"dim": 3,
+"corners": 17,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+6,
+7,
+8
+],
+"V": 17,
+"E": 28,
+"F": 13,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 60/120": 4,
+"4-gon regular": 1,
+"6-gon 90/135": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 5,
+"6": 4
+},
+"corner_kinds": {
+"3.3.4.6": 4,
+"3.6.6": 4,
+"4.4.4.4": 1,
+"4.4.6": 4,
+"4.6.6": 4
+},
+"corner_profiles": 5,
+"invariant": "4929458369749208364",
+"name": null,
+"atom": false,
+"segments": 1,
+"core": 36,
+"core_dim": 3,
+"atoms_in": [
+2,
+36
+],
+"label": "B3-61",
+"class": "#49 stretch: core B3-36 + 1 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 62,
+"bits": "50d92dd266e4ec9783",
+"orbit": 12,
+"dim": 3,
+"corners": 18,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+6,
+7,
+8
+],
+"V": 18,
+"E": 31,
+"F": 15,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 60/120": 4,
+"4-gon regular": 4,
+"6-gon 90/135": 3
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 8,
+"6": 3
+},
+"corner_kinds": {
+"3.3.4.6": 2,
+"3.4.4.6": 4,
+"3.6.6": 4,
+"4.4.4": 2,
+"4.4.4.4": 2,
+"4.4.6": 4
+},
+"corner_profiles": 6,
+"invariant": "-2758024502123728439",
+"name": null,
+"atom": false,
+"segments": 1,
+"core": 36,
+"core_dim": 3,
+"atoms_in": [
+2,
+36
+],
+"label": "B3-62",
+"class": "#49 stretch: core B3-36 + 1 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 63,
+"bits": "86ab9ec71cb12952ab",
+"orbit": 2,
+"dim": 3,
+"corners": 12,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+7,
+8
+],
+"V": 12,
+"E": 18,
+"F": 8,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"6-gon regular": 4
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 4,
+"6": 4
+},
+"corner_kinds": {
+"3.6.6": 12
+},
+"corner_profiles": 1,
+"invariant": "-3115733994121180329",
+"name": "truncated tetrahedron",
+"atom": false,
+"segments": 0,
+"core": 63,
+"core_dim": 3,
+"atoms_in": [
+3,
+19
+],
+"label": "truncated tetrahedron",
+"class": "regular-faced (known: truncated tetrahedron)",
+"corner_cycles": {
+"3.6.6": 12
+},
+"kind": "regular-faced"
+},
+{
+"id": 64,
+"bits": "19debcf36996f66e1",
+"orbit": 24,
+"dim": 3,
+"corners": 18,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 18,
+"E": 33,
+"F": 17,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 45/135": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 7,
+"6-gon 90/135": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 12,
+"6": 1
+},
+"corner_kinds": {
+"3.3.4.4": 2,
+"3.4.4.4": 7,
+"3.4.4.6": 1,
+"4.4.4": 2,
+"4.4.4.4": 1,
+"4.4.4.6": 1,
+"4.4.6": 4
+},
+"corner_profiles": 11,
+"invariant": "4410794000626615823",
+"name": null,
+"atom": false,
+"segments": 2,
+"core": 19,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+19
+],
+"label": "B3-64",
+"class": "#49 stretch: core B3-19 + 2 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 65,
+"bits": "19debcf36d9f7ad40",
+"orbit": 12,
+"dim": 3,
+"corners": 20,
+"closes": true,
+"used_roots": [
+4,
+5,
+6,
+7,
+8
+],
+"V": 20,
+"E": 34,
+"F": 16,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 4,
+"4-gon 60/120": 6,
+"4-gon regular": 4,
+"6-gon 90/135": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 14,
+"6": 2
+},
+"corner_kinds": {
+"4.4.4": 4,
+"4.4.4.4": 4,
+"4.4.4.6": 4,
+"4.4.6": 8
+},
+"corner_profiles": 6,
+"invariant": "4239178368644507030",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+2,
+2
+],
+"label": "B3-65",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 66,
+"bits": "129babc77ed1f5cd28",
+"orbit": 24,
+"dim": 3,
+"corners": 18,
+"closes": true,
+"used_roots": [
+3,
+5,
+6,
+7,
+8
+],
+"V": 18,
+"E": 28,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 2,
+"4-gon 60/120": 4,
+"4-gon regular": 2,
+"6-gon 90/135": 2,
+"6-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 8,
+"6": 4
+},
+"corner_kinds": {
+"4.4.4.4": 2,
+"4.4.6": 8,
+"4.6.6": 8
+},
+"corner_profiles": 9,
+"invariant": "4955243810187414022",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+2
+],
+"label": "B3-66",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 67,
+"bits": "131ee9cf6ad9d76c68",
+"orbit": 12,
+"dim": 3,
+"corners": 18,
+"closes": true,
+"used_roots": [
+3,
+4,
+6,
+7,
+8
+],
+"V": 18,
+"E": 28,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 4,
+"4-gon regular": 4,
+"6-gon 90/135": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 8,
+"6": 4
+},
+"corner_kinds": {
+"4.4.4.4": 2,
+"4.4.6": 8,
+"4.6.6": 8
+},
+"corner_profiles": 6,
+"invariant": "8512481845381418433",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+2,
+2
+],
+"label": "B3-67",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 68,
+"bits": "138fcacf5cd9b3e968",
+"orbit": 12,
+"dim": 3,
+"corners": 20,
+"closes": true,
+"used_roots": [
+3,
+4,
+5,
+7,
+8
+],
+"V": 20,
+"E": 34,
+"F": 16,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 4,
+"4-gon 60/120": 4,
+"4-gon regular": 6,
+"6-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 14,
+"6": 2
+},
+"corner_kinds": {
+"4.4.4": 4,
+"4.4.4.4": 4,
+"4.4.4.6": 4,
+"4.4.6": 8
+},
+"corner_profiles": 5,
+"invariant": "-6568254216168115806",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+2
+],
+"label": "B3-68",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 69,
+"bits": "139763cb7ec9e6e568",
+"orbit": 12,
+"dim": 3,
+"corners": 18,
+"closes": true,
+"used_roots": [
+3,
+4,
+5,
+6,
+8
+],
+"V": 18,
+"E": 28,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 4,
+"4-gon regular": 4,
+"6-gon 90/135": 2,
+"6-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 8,
+"6": 4
+},
+"corner_kinds": {
+"4.4.4.4": 2,
+"4.4.6": 8,
+"4.6.6": 8
+},
+"corner_profiles": 5,
+"invariant": "-755619916666882693",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+2,
+2
+],
+"label": "B3-69",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 70,
+"bits": "139f6dca6ee8e6b54a",
+"orbit": 24,
+"dim": 3,
+"corners": 19,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 19,
+"E": 30,
+"F": 13,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 45/135": 2,
+"4-gon regular": 2,
+"6-gon 90/135": 3,
+"6-gon regular": 1,
+"8-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 4,
+"6": 4,
+"8": 1
+},
+"corner_kinds": {
+"3.3.6.6": 1,
+"3.4.4.6": 2,
+"3.4.8": 2,
+"3.6.6": 2,
+"3.6.8": 4,
+"4.4.6": 2,
+"4.6.6": 4,
+"4.6.8": 2
+},
+"corner_profiles": 10,
+"invariant": "-2520628163677189480",
+"name": null,
+"atom": false,
+"segments": 2,
+"core": 24,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+3,
+13
+],
+"label": "B3-70",
+"class": "#49 stretch: core J3 triangular cupola + 2 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 71,
+"bits": "139feb0c7e1877ed68",
+"orbit": 12,
+"dim": 3,
+"corners": 20,
+"closes": true,
+"used_roots": [
+3,
+4,
+5,
+6,
+7
+],
+"V": 20,
+"E": 34,
+"F": 16,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 2,
+"4-gon 60/120": 4,
+"4-gon regular": 8,
+"6-gon 90/135": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 14,
+"6": 2
+},
+"corner_kinds": {
+"4.4.4": 4,
+"4.4.4.4": 4,
+"4.4.4.6": 4,
+"4.4.6": 8
+},
+"corner_profiles": 5,
+"invariant": "-5788146531171123112",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+2,
+2
+],
+"label": "B3-71",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 72,
+"bits": "291ce9efa3dbd72c54",
+"orbit": 12,
+"dim": 3,
+"corners": 18,
+"closes": true,
+"used_roots": [
+2,
+4,
+6,
+7,
+8
+],
+"V": 18,
+"E": 28,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 2,
+"4-gon regular": 6,
+"6-gon 90/135": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 8,
+"6": 4
+},
+"corner_kinds": {
+"4.4.4.4": 2,
+"4.4.6": 8,
+"4.6.6": 8
+},
+"corner_profiles": 6,
+"invariant": "8295781075513873467",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+2,
+2,
+2
+],
+"label": "B3-72",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 73,
+"bits": "3a1aa9e7ebd3d54c3c",
+"orbit": 12,
+"dim": 3,
+"corners": 16,
+"closes": true,
+"used_roots": [
+2,
+3,
+6,
+7,
+8
+],
+"V": 16,
+"E": 24,
+"F": 10,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 2,
+"4-gon 60/120": 4,
+"4-gon regular": 2,
+"8-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 8,
+"8": 2
+},
+"corner_kinds": {
+"4.4.8": 16
+},
+"corner_profiles": 4,
+"invariant": "2705275563145471418",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+2,
+2
+],
+"label": "B3-73",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 74,
+"bits": "3b1ee92ceb1a576c7c",
+"orbit": 3,
+"dim": 3,
+"corners": 16,
+"closes": true,
+"used_roots": [
+2,
+3,
+4,
+6,
+7
+],
+"V": 16,
+"E": 24,
+"F": 10,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon regular": 8,
+"8-gon regular": 2
+},
+"regular_faced": true,
+"ngon_counts": {
+"4": 8,
+"8": 2
+},
+"corner_kinds": {
+"4.4.8": 16
+},
+"corner_profiles": 1,
+"invariant": "1149121425058835947",
+"name": "8-gonal prism",
+"atom": false,
+"segments": 5,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+2,
+2,
+2
+],
+"label": "8-gonal prism",
+"class": "regular-faced (known: 8-gonal prism)",
+"corner_cycles": {
+"4.4.8": 16
+},
+"kind": "regular-faced"
+},
+{
+"id": 75,
+"bits": "51dd6d9a6a6cd6bd4a",
+"orbit": 3,
+"dim": 3,
+"corners": 20,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 20,
+"E": 32,
+"F": 14,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 8,
+"6-gon 90/135": 4,
+"8-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 8,
+"6": 4,
+"8": 2
+},
+"corner_kinds": {
+"3.3.6.6": 4,
+"3.6.8": 16
+},
+"corner_profiles": 2,
+"invariant": "5471111181394215235",
+"name": null,
+"atom": false,
+"segments": 2,
+"core": 27,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+13,
+13
+],
+"label": "B3-75",
+"class": "#49 stretch: core cuboctahedron + 2 segment(s)",
+"kind": "stretch of a Platonic/Archimedean solid"
+},
+{
+"id": 76,
+"bits": "52ab9ad75cf1b9cb2a",
+"orbit": 6,
+"dim": 3,
+"corners": 18,
+"closes": true,
+"used_roots": [
+1,
+3,
+5,
+7,
+8
+],
+"V": 18,
+"E": 28,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 4,
+"4-gon regular": 4,
+"6-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 8,
+"6": 4
+},
+"corner_kinds": {
+"4.4.4.4": 2,
+"4.4.6": 8,
+"4.6.6": 8
+},
+"corner_profiles": 4,
+"invariant": "-4980111879991995605",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+1
+],
+"label": "B3-76",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 77,
+"bits": "52bbbb147e307dcf2a",
+"orbit": 6,
+"dim": 3,
+"corners": 20,
+"closes": true,
+"used_roots": [
+1,
+3,
+5,
+6,
+7
+],
+"V": 20,
+"E": 34,
+"F": 16,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 8,
+"4-gon regular": 6,
+"6-gon 90/135": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 14,
+"6": 2
+},
+"corner_kinds": {
+"4.4.4": 4,
+"4.4.4.4": 4,
+"4.4.4.6": 4,
+"4.4.6": 8
+},
+"corner_profiles": 4,
+"invariant": "4557212941415209474",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+2
+],
+"label": "B3-77",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 78,
+"bits": "7aab9a34dd3239cb3e",
+"orbit": 3,
+"dim": 3,
+"corners": 18,
+"closes": true,
+"used_roots": [
+1,
+2,
+3,
+5,
+7
+],
+"V": 18,
+"E": 28,
+"F": 12,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 8,
+"6-gon 90/135": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 8,
+"6": 4
+},
+"corner_kinds": {
+"4.4.4.4": 2,
+"4.4.6": 8,
+"4.6.6": 8
+},
+"corner_profiles": 3,
+"invariant": "8936476954722475720",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+2
+],
+"label": "B3-78",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 79,
+"bits": "8736f34d36996f66e1",
+"orbit": 3,
+"dim": 3,
+"corners": 16,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 16,
+"E": 32,
+"F": 18,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 8,
+"4-gon regular": 10
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 8,
+"4": 10
+},
+"corner_kinds": {
+"3.3.4.4": 8,
+"3.4.4.4": 8
+},
+"corner_profiles": 2,
+"invariant": "438847562918322349",
+"name": "J28 square orthobicupola",
+"atom": false,
+"segments": 2,
+"core": 28,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+28
+],
+"label": "J28 square orthobicupola",
+"class": "regular-faced (known: J28 square orthobicupola)",
+"corner_cycles": {
+"3.3.4.4": 8,
+"3.4.4.4": 8
+},
+"kind": "regular-faced"
+},
+{
+"id": 80,
+"bits": "139f6dcb6ed9e774e9",
+"orbit": 48,
+"dim": 3,
+"corners": 21,
+"closes": true,
+"used_roots": [
+0,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 21,
+"E": 34,
+"F": 15,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 45/135": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 4,
+"6-gon 90/135": 2,
+"6-gon regular": 1,
+"8-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 9,
+"6": 3,
+"8": 1
+},
+"corner_kinds": {
+"3.4.4.4": 2,
+"3.4.4.6": 2,
+"3.4.8": 1,
+"3.6.8": 1,
+"4.4.4.4": 1,
+"4.4.6": 4,
+"4.4.8": 3,
+"4.6.6": 4,
+"4.6.8": 3
+},
+"corner_profiles": 21,
+"invariant": "5689512183207362216",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+1,
+2,
+2,
+3
+],
+"label": "B3-80",
+"class": "#49 stretch: core regular triangle + 4 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 81,
+"bits": "139febce7ea86ee76a",
+"orbit": 24,
+"dim": 3,
+"corners": 23,
+"closes": true,
+"used_roots": [
+1,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 23,
+"E": 39,
+"F": 18,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 45/135": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 7,
+"6-gon 90/135": 3,
+"6-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 12,
+"6": 4
+},
+"corner_kinds": {
+"3.4.4.4": 1,
+"3.4.4.6": 2,
+"3.4.6.6": 1,
+"3.6.6": 2,
+"4.4.4": 2,
+"4.4.4.4": 3,
+"4.4.4.6": 2,
+"4.4.6": 6,
+"4.6.6": 4
+},
+"corner_profiles": 13,
+"invariant": "-6733813297696202888",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+1,
+2,
+2,
+3
+],
+"label": "B3-81",
+"class": "#49 stretch: core regular triangle + 4 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 82,
+"bits": "299d6deba7dbe734d5",
+"orbit": 24,
+"dim": 3,
+"corners": 21,
+"closes": true,
+"used_roots": [
+0,
+2,
+4,
+5,
+6,
+7,
+8
+],
+"V": 21,
+"E": 34,
+"F": 15,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 60/120": 2,
+"4-gon regular": 7,
+"6-gon 90/135": 3,
+"8-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 9,
+"6": 3,
+"8": 1
+},
+"corner_kinds": {
+"3.4.4.4": 2,
+"3.4.4.6": 1,
+"3.6.6": 1,
+"3.6.8": 2,
+"4.4.4.4": 2,
+"4.4.6": 4,
+"4.4.8": 4,
+"4.6.6": 2,
+"4.6.8": 2,
+"6.6.6": 1
+},
+"corner_profiles": 12,
+"invariant": "-9174061005103299037",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+2,
+2,
+2,
+3
+],
+"label": "B3-82",
+"class": "#49 stretch: core regular triangle + 4 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 83,
+"bits": "3b1ee96ce79a6f66f5",
+"orbit": 6,
+"dim": 3,
+"corners": 20,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 20,
+"E": 36,
+"F": 18,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon regular": 13,
+"8-gon regular": 1
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 4,
+"4": 13,
+"8": 1
+},
+"corner_kinds": {
+"3.4.4.4": 12,
+"4.4.8": 8
+},
+"corner_profiles": 3,
+"invariant": "-419635910351039676",
+"name": "J19 elongated square cupola",
+"atom": false,
+"segments": 3,
+"core": 17,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+2,
+17
+],
+"label": "J19 elongated square cupola",
+"class": "regular-faced (known: J19 elongated square cupola)",
+"corner_cycles": {
+"3.4.4.4": 12,
+"4.4.8": 8
+},
+"kind": "regular-faced"
+},
+{
+"id": 84,
+"bits": "50d9abd776d5fdcfa1",
+"orbit": 24,
+"dim": 3,
+"corners": 22,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+6,
+7,
+8
+],
+"V": 22,
+"E": 36,
+"F": 16,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 45/135": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 4,
+"6-gon 90/135": 2,
+"6-gon regular": 3
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 9,
+"6": 5
+},
+"corner_kinds": {
+"3.4.4.6": 4,
+"3.6.6": 2,
+"4.4.4.6": 2,
+"4.4.6": 8,
+"4.6.6": 6
+},
+"corner_profiles": 13,
+"invariant": "1750663947951050896",
+"name": null,
+"atom": false,
+"segments": 4,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+1,
+1,
+2,
+3
+],
+"label": "B3-84",
+"class": "#49 stretch: core regular triangle + 4 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 85,
+"bits": "51dd6d9b6a5dd77ce9",
+"orbit": 12,
+"dim": 3,
+"corners": 22,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 22,
+"E": 35,
+"F": 15,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 60/120": 4,
+"4-gon regular": 2,
+"6-gon 90/135": 3,
+"8-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 6,
+"6": 3,
+"8": 2
+},
+"corner_kinds": {
+"3.3.6.6": 2,
+"3.6.8": 8,
+"4.4.4.4": 2,
+"4.4.6": 2,
+"4.4.8": 4,
+"4.6.8": 4
+},
+"corner_profiles": 7,
+"invariant": "2074445228929523237",
+"name": null,
+"atom": false,
+"segments": 2,
+"core": 36,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+36
+],
+"label": "B3-85",
+"class": "#49 stretch: core B3-36 + 2 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 86,
+"bits": "51ddeb9e7a2c5eef6a",
+"orbit": 6,
+"dim": 3,
+"corners": 24,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 24,
+"E": 40,
+"F": 18,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 60/120": 4,
+"4-gon regular": 5,
+"6-gon 90/135": 4,
+"8-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 9,
+"6": 4,
+"8": 1
+},
+"corner_kinds": {
+"3.4.6.6": 4,
+"3.6.8": 8,
+"4.4.4.4": 4,
+"4.4.6": 8
+},
+"corner_profiles": 4,
+"invariant": "5907709208284885866",
+"name": null,
+"atom": false,
+"segments": 2,
+"core": 36,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+36
+],
+"label": "B3-86",
+"class": "#49 stretch: core B3-36 + 2 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 87,
+"bits": "86bbbfc73eb16d56ab",
+"orbit": 6,
+"dim": 3,
+"corners": 20,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+6,
+7,
+8
+],
+"V": 20,
+"E": 34,
+"F": 16,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 45/135": 4,
+"4-gon regular": 4,
+"6-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 8,
+"6": 4
+},
+"corner_kinds": {
+"3.4.4.6": 8,
+"3.6.6": 4,
+"4.4.6": 8
+},
+"corner_profiles": 3,
+"invariant": "-2097069200235975380",
+"name": null,
+"atom": false,
+"segments": 1,
+"core": 63,
+"core_dim": 3,
+"atoms_in": [
+2,
+3,
+19
+],
+"label": "B3-87",
+"class": "#49 stretch: core truncated tetrahedron + 1 segment(s)",
+"kind": "stretch of a Platonic/Archimedean solid"
+},
+{
+"id": 88,
+"bits": "139febcf7ed9f7ed68",
+"orbit": 24,
+"dim": 3,
+"corners": 26,
+"closes": true,
+"used_roots": [
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 26,
+"E": 42,
+"F": 18,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 2,
+"4-gon 60/120": 4,
+"4-gon regular": 6,
+"6-gon 90/135": 4,
+"6-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12,
+"6": 6
+},
+"corner_kinds": {
+"4.4.4": 2,
+"4.4.4.6": 6,
+"4.4.6": 6,
+"4.6.6": 12
+},
+"corner_profiles": 13,
+"invariant": "-8005164640928548230",
+"name": null,
+"atom": false,
+"segments": 6,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+2,
+2
+],
+"label": "B3-88",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 89,
+"bits": "299debefb79b6f66f5",
+"orbit": 8,
+"dim": 3,
+"corners": 25,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 25,
+"E": 45,
+"F": 22,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 60/120": 3,
+"4-gon regular": 12,
+"6-gon 90/135": 3
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 15,
+"6": 3
+},
+"corner_kinds": {
+"3.4.4.4": 9,
+"3.4.4.6": 3,
+"4.4.4.4": 3,
+"4.4.6": 6,
+"4.6.6": 3,
+"6.6.6": 1
+},
+"corner_profiles": 7,
+"invariant": "8089513614588753103",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 19,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+2,
+19
+],
+"label": "B3-89",
+"class": "#49 stretch: core B3-19 + 3 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 90,
+"bits": "299debefb7dbf7ad54",
+"orbit": 4,
+"dim": 3,
+"corners": 26,
+"closes": true,
+"used_roots": [
+2,
+4,
+5,
+6,
+7,
+8
+],
+"V": 26,
+"E": 42,
+"F": 18,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 6,
+"4-gon regular": 6,
+"6-gon 90/135": 6
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12,
+"6": 6
+},
+"corner_kinds": {
+"4.4.4.6": 6,
+"4.4.6": 12,
+"4.6.6": 6,
+"6.6.6": 2
+},
+"corner_profiles": 4,
+"invariant": "1227854194294764928",
+"name": null,
+"atom": false,
+"segments": 6,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+2,
+2,
+2
+],
+"label": "B3-90",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 91,
+"bits": "3a9babe7ffd3f5cd3c",
+"orbit": 12,
+"dim": 3,
+"corners": 24,
+"closes": true,
+"used_roots": [
+2,
+3,
+5,
+6,
+7,
+8
+],
+"V": 24,
+"E": 38,
+"F": 16,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 4,
+"4-gon 60/120": 4,
+"4-gon regular": 4,
+"6-gon regular": 2,
+"8-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12,
+"6": 2,
+"8": 2
+},
+"corner_kinds": {
+"4.4.4.4": 4,
+"4.4.6": 4,
+"4.4.8": 8,
+"4.6.8": 8
+},
+"corner_profiles": 6,
+"invariant": "5180378494714266504",
+"name": null,
+"atom": false,
+"segments": 6,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+2,
+2
+],
+"label": "B3-91",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 92,
+"bits": "3b1ee9efebdbd76c7c",
+"orbit": 12,
+"dim": 3,
+"corners": 24,
+"closes": true,
+"used_roots": [
+2,
+3,
+4,
+6,
+7,
+8
+],
+"V": 24,
+"E": 38,
+"F": 16,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 4,
+"4-gon regular": 8,
+"6-gon 90/135": 2,
+"8-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12,
+"6": 2,
+"8": 2
+},
+"corner_kinds": {
+"4.4.4.4": 4,
+"4.4.6": 4,
+"4.4.8": 8,
+"4.6.8": 8
+},
+"corner_profiles": 6,
+"invariant": "5352750486080434688",
+"name": null,
+"atom": false,
+"segments": 6,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+2,
+2,
+2
+],
+"label": "B3-92",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 93,
+"bits": "3b9763ebffcbe6e57c",
+"orbit": 4,
+"dim": 3,
+"corners": 24,
+"closes": true,
+"used_roots": [
+2,
+3,
+4,
+5,
+6,
+8
+],
+"V": 24,
+"E": 36,
+"F": 14,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon regular": 6,
+"6-gon 90/135": 6,
+"6-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6,
+"6": 8
+},
+"corner_kinds": {
+"4.6.6": 24
+},
+"corner_profiles": 2,
+"invariant": "-1750588389931117011",
+"name": null,
+"atom": false,
+"segments": 6,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+2,
+2,
+2
+],
+"label": "B3-93",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 94,
+"bits": "3b9f6deaefeae6b55e",
+"orbit": 8,
+"dim": 3,
+"corners": 24,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 24,
+"E": 36,
+"F": 14,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon regular": 3,
+"6-gon 90/135": 3,
+"6-gon regular": 1,
+"8-gon regular": 3
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 3,
+"6": 4,
+"8": 3
+},
+"corner_kinds": {
+"3.6.8": 6,
+"3.8.8": 6,
+"4.6.6": 6,
+"4.6.8": 6
+},
+"corner_profiles": 5,
+"invariant": "-268006649196219576",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 24,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+2,
+3,
+13
+],
+"label": "B3-94",
+"class": "#49 stretch: core J3 triangular cupola + 3 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 95,
+"bits": "52bbbbd77ef1fdcf2a",
+"orbit": 12,
+"dim": 3,
+"corners": 26,
+"closes": true,
+"used_roots": [
+1,
+3,
+5,
+6,
+7,
+8
+],
+"V": 26,
+"E": 42,
+"F": 18,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 2,
+"4-gon 60/120": 4,
+"4-gon regular": 6,
+"6-gon 90/135": 2,
+"6-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12,
+"6": 6
+},
+"corner_kinds": {
+"4.4.4.6": 6,
+"4.4.6": 12,
+"4.6.6": 6,
+"6.6.6": 2
+},
+"corner_profiles": 8,
+"invariant": "4173805412405475450",
+"name": null,
+"atom": false,
+"segments": 6,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+1,
+2
+],
+"label": "B3-95",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 96,
+"bits": "53bffb1c7e387fef6a",
+"orbit": 3,
+"dim": 3,
+"corners": 28,
+"closes": true,
+"used_roots": [
+1,
+3,
+4,
+5,
+6,
+7
+],
+"V": 28,
+"E": 48,
+"F": 22,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 8,
+"4-gon regular": 10,
+"6-gon 90/135": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 18,
+"6": 4
+},
+"corner_kinds": {
+"4.4.4.4": 8,
+"4.4.6": 16,
+"4.4.6.6": 4
+},
+"corner_profiles": 3,
+"invariant": "4265715398047425524",
+"name": null,
+"atom": false,
+"segments": 6,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+2,
+2
+],
+"label": "B3-96",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 97,
+"bits": "79dd6dbaeb6ed6bd5e",
+"orbit": 1,
+"dim": 3,
+"corners": 24,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 24,
+"E": 36,
+"F": 14,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 8,
+"8-gon regular": 6
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 8,
+"8": 6
+},
+"corner_kinds": {
+"3.8.8": 24
+},
+"corner_profiles": 1,
+"invariant": "31216953766041907",
+"name": "truncated cube",
+"atom": false,
+"segments": 3,
+"core": 27,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+2,
+13,
+13
+],
+"label": "truncated cube",
+"class": "regular-faced (known: truncated cube)",
+"corner_cycles": {
+"3.8.8": 24
+},
+"kind": "regular-faced"
+},
+{
+"id": 98,
+"bits": "7aab9af7ddf3b9cb3e",
+"orbit": 6,
+"dim": 3,
+"corners": 24,
+"closes": true,
+"used_roots": [
+1,
+2,
+3,
+5,
+7,
+8
+],
+"V": 24,
+"E": 36,
+"F": 14,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 4,
+"4-gon regular": 2,
+"6-gon 90/135": 4,
+"6-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6,
+"6": 8
+},
+"corner_kinds": {
+"4.6.6": 24
+},
+"corner_profiles": 4,
+"invariant": "-1109297382245738990",
+"name": null,
+"atom": false,
+"segments": 6,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+1,
+2
+],
+"label": "B3-98",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 99,
+"bits": "7abbbb34ff327dcf3e",
+"orbit": 6,
+"dim": 3,
+"corners": 24,
+"closes": true,
+"used_roots": [
+1,
+2,
+3,
+5,
+6,
+7
+],
+"V": 24,
+"E": 38,
+"F": 16,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 8,
+"4-gon regular": 4,
+"6-gon 90/135": 2,
+"8-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12,
+"6": 2,
+"8": 2
+},
+"corner_kinds": {
+"4.4.4.4": 4,
+"4.4.6": 4,
+"4.4.8": 8,
+"4.6.8": 8
+},
+"corner_profiles": 4,
+"invariant": "1858913156195365502",
+"name": null,
+"atom": false,
+"segments": 6,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+2,
+2
+],
+"label": "B3-99",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 100,
+"bits": "af36f36db79b6f66f5",
+"orbit": 1,
+"dim": 3,
+"corners": 24,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 24,
+"E": 48,
+"F": 26,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 8,
+"4-gon regular": 18
+},
+"regular_faced": true,
+"ngon_counts": {
+"3": 8,
+"4": 18
+},
+"corner_kinds": {
+"3.4.4.4": 24
+},
+"corner_profiles": 1,
+"invariant": "-3329864743062355617",
+"name": "rhombicuboctahedron",
+"atom": false,
+"segments": 3,
+"core": 28,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+2,
+28
+],
+"label": "rhombicuboctahedron",
+"class": "regular-faced (known: rhombicuboctahedron)",
+"corner_cycles": {
+"3.4.4.4": 24
+},
+"kind": "regular-faced"
+},
+{
+"id": 101,
+"bits": "d6eb9ed75cf5b9dbab",
+"orbit": 1,
+"dim": 3,
+"corners": 24,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+7,
+8
+],
+"V": 24,
+"E": 36,
+"F": 14,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon regular": 6,
+"6-gon regular": 8
+},
+"regular_faced": true,
+"ngon_counts": {
+"4": 6,
+"6": 8
+},
+"corner_kinds": {
+"4.6.6": 24
+},
+"corner_profiles": 1,
+"invariant": "3623089578095177201",
+"name": "truncated octahedron",
+"atom": false,
+"segments": 6,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+1,
+1
+],
+"label": "truncated octahedron",
+"class": "regular-faced (known: truncated octahedron)",
+"corner_cycles": {
+"4.6.6": 24
+},
+"kind": "regular-faced"
+},
+{
+"id": 102,
+"bits": "3b9f6debefdbe774fd",
+"orbit": 24,
+"dim": 3,
+"corners": 28,
+"closes": true,
+"used_roots": [
+0,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 28,
+"E": 45,
+"F": 19,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 8,
+"6-gon 90/135": 3,
+"6-gon regular": 1,
+"8-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 11,
+"6": 4,
+"8": 2
+},
+"corner_kinds": {
+"3.4.4.4": 1,
+"3.4.4.6": 2,
+"3.6.8": 2,
+"3.8.8": 1,
+"4.4.4.4": 3,
+"4.4.6": 2,
+"4.4.8": 4,
+"4.6.6": 6,
+"4.6.8": 6,
+"4.8.8": 1
+},
+"corner_profiles": 16,
+"invariant": "-4185315561484518795",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+1,
+2,
+2,
+2,
+3
+],
+"label": "B3-102",
+"class": "#49 stretch: core regular triangle + 5 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 103,
+"bits": "51ddebdf76ddffefe1",
+"orbit": 24,
+"dim": 3,
+"corners": 29,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 29,
+"E": 47,
+"F": 20,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 45/135": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 6,
+"6-gon 90/135": 3,
+"6-gon regular": 3,
+"8-gon regular": 1
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 11,
+"6": 6,
+"8": 1
+},
+"corner_kinds": {
+"3.4.4.6": 3,
+"3.4.6.6": 1,
+"3.6.8": 2,
+"4.4.4.6": 3,
+"4.4.6": 6,
+"4.4.8": 2,
+"4.6.6": 8,
+"4.6.8": 4
+},
+"corner_profiles": 16,
+"invariant": "-2332282243473919867",
+"name": null,
+"atom": false,
+"segments": 5,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+1,
+1,
+2,
+2,
+3
+],
+"label": "B3-103",
+"class": "#49 stretch: core regular triangle + 5 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 104,
+"bits": "79dd6dbbeb5fd77cfd",
+"orbit": 6,
+"dim": 3,
+"corners": 28,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 28,
+"E": 44,
+"F": 18,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 60/120": 4,
+"4-gon regular": 5,
+"8-gon regular": 5
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 9,
+"8": 5
+},
+"corner_kinds": {
+"3.8.8": 12,
+"4.4.4.4": 4,
+"4.4.8": 8,
+"4.8.8": 4
+},
+"corner_profiles": 5,
+"invariant": "-7400950041607530824",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 36,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+2,
+36
+],
+"label": "B3-104",
+"class": "#49 stretch: core B3-36 + 3 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 105,
+"bits": "87bfffcf3eb96f76eb",
+"orbit": 6,
+"dim": 3,
+"corners": 28,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 28,
+"E": 48,
+"F": 22,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon 45/135": 4,
+"4-gon regular": 8,
+"6-gon 90/135": 2,
+"6-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 12,
+"6": 6
+},
+"corner_kinds": {
+"3.4.4.6": 12,
+"4.4.6": 8,
+"4.6.6": 8
+},
+"corner_profiles": 4,
+"invariant": "-7899297145524646226",
+"name": null,
+"atom": false,
+"segments": 2,
+"core": 63,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+3,
+19
+],
+"label": "B3-105",
+"class": "#49 stretch: core truncated tetrahedron + 2 segment(s)",
+"kind": "stretch of a Platonic/Archimedean solid"
+},
+{
+"id": 106,
+"bits": "3b9febefffdbf7ed7c",
+"orbit": 12,
+"dim": 3,
+"corners": 32,
+"closes": true,
+"used_roots": [
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 32,
+"E": 50,
+"F": 20,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 4,
+"4-gon regular": 8,
+"6-gon 90/135": 4,
+"6-gon regular": 2,
+"8-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12,
+"6": 6,
+"8": 2
+},
+"corner_kinds": {
+"4.4.4.6": 4,
+"4.4.6": 4,
+"4.4.8": 4,
+"4.6.6": 8,
+"4.6.8": 12
+},
+"corner_profiles": 8,
+"invariant": "8422159887664470882",
+"name": null,
+"atom": false,
+"segments": 7,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+2,
+2,
+2
+],
+"label": "B3-106",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 107,
+"bits": "53bffbdf7ef9ffef6a",
+"orbit": 6,
+"dim": 3,
+"corners": 34,
+"closes": true,
+"used_roots": [
+1,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 34,
+"E": 54,
+"F": 22,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 4,
+"4-gon regular": 8,
+"6-gon 90/135": 6,
+"6-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12,
+"6": 10
+},
+"corner_kinds": {
+"4.4.4.6": 4,
+"4.4.6": 8,
+"4.4.6.6": 2,
+"4.6.6": 16,
+"6.6.6": 4
+},
+"corner_profiles": 6,
+"invariant": "2949589802100080983",
+"name": null,
+"atom": false,
+"segments": 7,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+1,
+2,
+2
+],
+"label": "B3-107",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 108,
+"bits": "7abbbbf7fff3fdcf3e",
+"orbit": 12,
+"dim": 3,
+"corners": 32,
+"closes": true,
+"used_roots": [
+1,
+2,
+3,
+5,
+6,
+7,
+8
+],
+"V": 32,
+"E": 50,
+"F": 20,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 45/135": 2,
+"4-gon 60/120": 4,
+"4-gon regular": 6,
+"6-gon 90/135": 2,
+"6-gon regular": 4,
+"8-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 12,
+"6": 6,
+"8": 2
+},
+"corner_kinds": {
+"4.4.4.6": 4,
+"4.4.6": 4,
+"4.4.8": 4,
+"4.6.6": 8,
+"4.6.8": 12
+},
+"corner_profiles": 8,
+"invariant": "-527760812770611642",
+"name": null,
+"atom": false,
+"segments": 7,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+1,
+2,
+2
+],
+"label": "B3-108",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 109,
+"bits": "7bbffb3cff3a7fef7e",
+"orbit": 3,
+"dim": 3,
+"corners": 32,
+"closes": true,
+"used_roots": [
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"V": 32,
+"E": 52,
+"F": 22,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 8,
+"4-gon regular": 10,
+"8-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 18,
+"8": 4
+},
+"corner_kinds": {
+"4.4.4.4": 8,
+"4.4.8": 16,
+"4.8.8": 8
+},
+"corner_profiles": 3,
+"invariant": "-3164292786745246814",
+"name": null,
+"atom": false,
+"segments": 7,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+2,
+2,
+2
+],
+"label": "B3-109",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 110,
+"bits": "d6fbbfd77ef5fddfab",
+"orbit": 3,
+"dim": 3,
+"corners": 32,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+5,
+6,
+7,
+8
+],
+"V": 32,
+"E": 48,
+"F": 18,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon regular": 6,
+"6-gon 90/135": 4,
+"6-gon regular": 8
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 6,
+"6": 12
+},
+"corner_kinds": {
+"4.6.6": 24,
+"6.6.6": 8
+},
+"corner_profiles": 3,
+"invariant": "-1899611818678276230",
+"name": null,
+"atom": false,
+"segments": 7,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+1,
+1,
+2
+],
+"label": "B3-110",
+"class": "zonohedron",
+"controls": [
+"truncated octahedron stretched along a four-fold axis"
+],
+"kind": "zonohedron"
+},
+{
+"id": 111,
+"bits": "79ddebfff7dfffeff5",
+"orbit": 8,
+"dim": 3,
+"corners": 36,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 36,
+"E": 57,
+"F": 23,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 2,
+"4-gon 60/120": 3,
+"4-gon regular": 9,
+"6-gon 90/135": 3,
+"6-gon regular": 3,
+"8-gon regular": 3
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 2,
+"4": 12,
+"6": 6,
+"8": 3
+},
+"corner_kinds": {
+"3.4.4.6": 3,
+"3.8.8": 3,
+"4.4.4.6": 3,
+"4.4.8": 6,
+"4.6.6": 12,
+"4.6.8": 6,
+"4.8.8": 3
+},
+"corner_profiles": 8,
+"invariant": "4300552914839131810",
+"name": null,
+"atom": false,
+"segments": 6,
+"core": 3,
+"core_dim": 2,
+"atoms_in": [
+1,
+1,
+1,
+2,
+2,
+2,
+3
+],
+"label": "B3-111",
+"class": "#49 stretch: core regular triangle + 6 segment(s)",
+"kind": "#49 stretch (segment summand)"
+},
+{
+"id": 112,
+"bits": "afbfffefbfbb6f76ff",
+"orbit": 2,
+"dim": 3,
+"corners": 36,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 36,
+"E": 60,
+"F": 26,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"3-gon regular": 4,
+"4-gon regular": 12,
+"6-gon 90/135": 6,
+"6-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"3": 4,
+"4": 12,
+"6": 10
+},
+"corner_kinds": {
+"3.4.4.6": 12,
+"4.6.6": 24
+},
+"corner_profiles": 2,
+"invariant": "-5841223876284965002",
+"name": null,
+"atom": false,
+"segments": 3,
+"core": 63,
+"core_dim": 3,
+"atoms_in": [
+2,
+2,
+2,
+3,
+19
+],
+"label": "B3-112",
+"class": "#49 stretch: core truncated tetrahedron + 3 segment(s)",
+"kind": "stretch of a Platonic/Archimedean solid"
+},
+{
+"id": 113,
+"bits": "7bbffbfffffbffef7e",
+"orbit": 6,
+"dim": 3,
+"corners": 40,
+"closes": true,
+"used_roots": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 40,
+"E": 62,
+"F": 24,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon 60/120": 4,
+"4-gon regular": 10,
+"6-gon 90/135": 2,
+"6-gon regular": 4,
+"8-gon regular": 4
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 14,
+"6": 6,
+"8": 4
+},
+"corner_kinds": {
+"4.4.4.6": 4,
+"4.4.8": 8,
+"4.6.6": 8,
+"4.6.8": 16,
+"4.8.8": 4
+},
+"corner_profiles": 6,
+"invariant": "3531408258340363710",
+"name": null,
+"atom": false,
+"segments": 8,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+1,
+2,
+2,
+2
+],
+"label": "B3-113",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 114,
+"bits": "d7ffffdf7efdffffeb",
+"orbit": 3,
+"dim": 3,
+"corners": 40,
+"closes": true,
+"used_roots": [
+0,
+1,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 40,
+"E": 60,
+"F": 22,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon regular": 8,
+"6-gon 90/135": 4,
+"6-gon regular": 8,
+"8-gon regular": 2
+},
+"regular_faced": false,
+"ngon_counts": {
+"4": 8,
+"6": 12,
+"8": 2
+},
+"corner_kinds": {
+"4.6.6": 16,
+"4.6.8": 16,
+"6.6.6": 8
+},
+"corner_profiles": 3,
+"invariant": "-5314804487465968561",
+"name": null,
+"atom": false,
+"segments": 8,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+1,
+1,
+2,
+2
+],
+"label": "B3-114",
+"class": "zonohedron",
+"kind": "zonohedron"
+},
+{
+"id": 115,
+"bits": "ffffffffffffffffff",
+"orbit": 1,
+"dim": 3,
+"corners": 48,
+"closes": true,
+"used_roots": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"V": 48,
+"E": 72,
+"F": 26,
+"euler": true,
+"all_edges_1": true,
+"face_kinds": {
+"4-gon regular": 12,
+"6-gon regular": 8,
+"8-gon regular": 6
+},
+"regular_faced": true,
+"ngon_counts": {
+"4": 12,
+"6": 8,
+"8": 6
+},
+"corner_kinds": {
+"4.6.8": 48
+},
+"corner_profiles": 1,
+"invariant": "7223179805281054105",
+"name": "truncated cuboctahedron",
+"atom": false,
+"segments": 9,
+"core": 0,
+"core_dim": 0,
+"atoms_in": [
+1,
+1,
+1,
+1,
+1,
+1,
+2,
+2,
+2
+],
+"label": "truncated cuboctahedron",
+"class": "regular-faced (known: truncated cuboctahedron)",
+"corner_cycles": {
+"4.6.8": 48
+},
+"kind": "regular-faced"
+}
+]

@@ -1,0 +1,231 @@
+{
+ "summary": {
+  "A3": {
+   "rays": 14,
+   "walls": 36,
+   "chambers": 24,
+   "faces": 14,
+   "roots": 6,
+   "cone_dim": 11,
+   "group": 48,
+   "allowed_per_face_size": {
+    "4": 4,
+    "6": 10
+   }
+  },
+  "B3": {
+   "rays": 26,
+   "walls": 72,
+   "chambers": 48,
+   "faces": 26,
+   "roots": 9,
+   "cone_dim": 23,
+   "group": 48,
+   "allowed_per_face_size": {
+    "4": 4,
+    "6": 10,
+    "8": 16
+   }
+  },
+  "H3": {
+   "rays": 62,
+   "walls": 180,
+   "chambers": 120,
+   "faces": 62,
+   "roots": 15,
+   "cone_dim": 59,
+   "group": 120,
+   "allowed_per_face_size": {
+    "4": 4,
+    "6": 10,
+    "10": 34
+   }
+  }
+ },
+ "checks": [
+  [
+   "A3 Coxeter m(1,2)=3",
+   true
+  ],
+  [
+   "A3 Coxeter m(2,3)=3",
+   true
+  ],
+  [
+   "A3 Coxeter m(1,3)=2",
+   true
+  ],
+  [
+   "A3 |a1|=1",
+   true
+  ],
+  [
+   "A3 |a2|=1",
+   true
+  ],
+  [
+   "A3 |a3|=1",
+   true
+  ],
+  [
+   "A3 |W| = 24",
+   true
+  ],
+  [
+   "A3 every wall on exactly 2 faces",
+   true
+  ],
+  [
+   "A3 Euler V-E+F = 24-36+14 = 2",
+   true
+  ],
+  [
+   "A3 rank of h -> l is R - 3 = 11 (kernel = translations)",
+   true
+  ],
+  [
+   "A3 face closures hold on every h (K.L = 0)",
+   true
+  ],
+  [
+   "A3 closure space has dim E - rank K = 11 = R - 3: face closures cut out exactly the realisable lengths",
+   true
+  ],
+  [
+   "A3 positive control: a generic A3-permutohedron (24 corners) has all 36 wall lengths > 0",
+   true
+  ],
+  [
+   "A3 negative control: the cube (edges along the axes, not A3 roots) fails the cone inequalities (12 of 36 wall lengths < 0)",
+   true
+  ],
+  [
+   "A3 symmetry group order 48, every element permutes walls and preserves the face closures",
+   true
+  ],
+  [
+   "B3 Coxeter m(1,2)=3",
+   true
+  ],
+  [
+   "B3 Coxeter m(2,3)=4",
+   true
+  ],
+  [
+   "B3 Coxeter m(1,3)=2",
+   true
+  ],
+  [
+   "B3 |a1|=1",
+   true
+  ],
+  [
+   "B3 |a2|=1",
+   true
+  ],
+  [
+   "B3 |a3|=1",
+   true
+  ],
+  [
+   "B3 |W| = 48",
+   true
+  ],
+  [
+   "B3 every wall on exactly 2 faces",
+   true
+  ],
+  [
+   "B3 Euler V-E+F = 48-72+26 = 2",
+   true
+  ],
+  [
+   "B3 rank of h -> l is R - 3 = 23 (kernel = translations)",
+   true
+  ],
+  [
+   "B3 face closures hold on every h (K.L = 0)",
+   true
+  ],
+  [
+   "B3 closure space has dim E - rank K = 23 = R - 3: face closures cut out exactly the realisable lengths",
+   true
+  ],
+  [
+   "B3 positive control: a generic B3-permutohedron (48 corners) has all 72 wall lengths > 0",
+   true
+  ],
+  [
+   "B3 negative control: the rhombic dodecahedron (edges along body diagonals, not B3 roots) fails the cone inequalities (24 of 72 wall lengths < 0)",
+   true
+  ],
+  [
+   "B3 symmetry group order 48, every element permutes walls and preserves the face closures",
+   true
+  ],
+  [
+   "H3 Coxeter m(1,2)=5",
+   true
+  ],
+  [
+   "H3 Coxeter m(2,3)=3",
+   true
+  ],
+  [
+   "H3 Coxeter m(1,3)=2",
+   true
+  ],
+  [
+   "H3 |a1|=1",
+   true
+  ],
+  [
+   "H3 |a2|=1",
+   true
+  ],
+  [
+   "H3 |a3|=1",
+   true
+  ],
+  [
+   "H3 |W| = 120",
+   true
+  ],
+  [
+   "H3 every wall on exactly 2 faces",
+   true
+  ],
+  [
+   "H3 Euler V-E+F = 120-180+62 = 2",
+   true
+  ],
+  [
+   "H3 rank of h -> l is R - 3 = 59 (kernel = translations)",
+   true
+  ],
+  [
+   "H3 face closures hold on every h (K.L = 0)",
+   true
+  ],
+  [
+   "H3 closure space has dim E - rank K = 59 = R - 3: face closures cut out exactly the realisable lengths",
+   true
+  ],
+  [
+   "H3 positive control: a generic H3-permutohedron (120 corners) has all 180 wall lengths > 0",
+   true
+  ],
+  [
+   "H3 the dodecahedron (orbit of w1, 20 corners) is in the cone (all wall lengths >= 0); u = w3 is normal to a pentagon",
+   true
+  ],
+  [
+   "H3 negative control: the #49's dodecahedron stretched along a five-fold axis (telescoped) fails the cone inequalities (10 of 180 wall lengths < 0)",
+   true
+  ],
+  [
+   "H3 symmetry group order 120, every element permutes walls and preserves the face closures",
+   true
+  ]
+ ]
+}

@@ -1,0 +1,133 @@
+CHECK ok   A3 Coxeter m(1,2)=3
+CHECK ok   A3 Coxeter m(2,3)=3
+CHECK ok   A3 Coxeter m(1,3)=2
+CHECK ok   A3 |a1|=1
+CHECK ok   A3 |a2|=1
+CHECK ok   A3 |a3|=1
+CHECK ok   A3 |W| = 24
+CHECK ok   A3 every wall on exactly 2 faces
+CHECK ok   A3 Euler V-E+F = 24-36+14 = 2
+A3: rays 14, walls 36, chambers 24, faces 14, positive roots 6
+CHECK ok   A3 rank of h -> l is R - 3 = 11 (kernel = translations)
+CHECK ok   A3 face closures hold on every h (K.L = 0)
+CHECK ok   A3 closure space has dim E - rank K = 11 = R - 3: face closures cut out exactly the realisable lengths
+PROGRESS 0.167 A3 ranks done (0s)
+CHECK ok   A3 positive control: a generic A3-permutohedron (24 corners) has all 36 wall lengths > 0
+CHECK ok   A3 negative control: the cube (edges along the axes, not A3 roots) fails the cone inequalities (12 of 36 wall lengths < 0)
+CHECK ok   A3 symmetry group order 48, every element permutes walls and preserves the face closures
+A3 summary {'rays': 14, 'walls': 36, 'chambers': 24, 'faces': 14, 'roots': 6, 'cone_dim': 11, 'group': 48, 'allowed_per_face_size': {'4': 4, '6': 10}}
+PROGRESS 0.333 A3 written (1s)
+CHECK ok   B3 Coxeter m(1,2)=3
+CHECK ok   B3 Coxeter m(2,3)=4
+CHECK ok   B3 Coxeter m(1,3)=2
+CHECK ok   B3 |a1|=1
+CHECK ok   B3 |a2|=1
+CHECK ok   B3 |a3|=1
+CHECK ok   B3 |W| = 48
+CHECK ok   B3 every wall on exactly 2 faces
+CHECK ok   B3 Euler V-E+F = 48-72+26 = 2
+B3: rays 26, walls 72, chambers 48, faces 26, positive roots 9
+CHECK ok   B3 rank of h -> l is R - 3 = 23 (kernel = translations)
+CHECK ok   B3 face closures hold on every h (K.L = 0)
+CHECK ok   B3 closure space has dim E - rank K = 23 = R - 3: face closures cut out exactly the realisable lengths
+PROGRESS 0.500 B3 ranks done (3s)
+CHECK ok   B3 positive control: a generic B3-permutohedron (48 corners) has all 72 wall lengths > 0
+CHECK ok   B3 negative control: the rhombic dodecahedron (edges along body diagonals, not B3 roots) fails the cone inequalities (24 of 72 wall lengths < 0)
+CHECK ok   B3 symmetry group order 48, every element permutes walls and preserves the face closures
+B3 summary {'rays': 26, 'walls': 72, 'chambers': 48, 'faces': 26, 'roots': 9, 'cone_dim': 23, 'group': 48, 'allowed_per_face_size': {'4': 4, '6': 10, '8': 16}}
+PROGRESS 0.667 B3 written (3s)
+CHECK ok   H3 Coxeter m(1,2)=5
+CHECK ok   H3 Coxeter m(2,3)=3
+CHECK ok   H3 Coxeter m(1,3)=2
+CHECK ok   H3 |a1|=1
+CHECK ok   H3 |a2|=1
+CHECK ok   H3 |a3|=1
+CHECK ok   H3 |W| = 120
+CHECK ok   H3 every wall on exactly 2 faces
+CHECK ok   H3 Euler V-E+F = 120-180+62 = 2
+H3: rays 62, walls 180, chambers 120, faces 62, positive roots 15
+CHECK ok   H3 rank of h -> l is R - 3 = 59 (kernel = translations)
+CHECK ok   H3 face closures hold on every h (K.L = 0)
+CHECK ok   H3 closure space has dim E - rank K = 59 = R - 3: face closures cut out exactly the realisable lengths
+PROGRESS 0.833 H3 ranks done (28s)
+CHECK ok   H3 positive control: a generic H3-permutohedron (120 corners) has all 180 wall lengths > 0
+CHECK ok   H3 the dodecahedron (orbit of w1, 20 corners) is in the cone (all wall lengths >= 0); u = w3 is normal to a pentagon
+CHECK ok   H3 negative control: the #49's dodecahedron stretched along a five-fold axis (telescoped) fails the cone inequalities (10 of 180 wall lengths < 0)
+CHECK ok   H3 symmetry group order 120, every element permutes walls and preserves the face closures
+H3 summary {'rays': 62, 'walls': 180, 'chambers': 120, 'faces': 62, 'roots': 15, 'cone_dim': 59, 'group': 120, 'allowed_per_face_size': {'4': 4, '6': 10, '10': 34}}
+PROGRESS 1.000 H3 written (30s)
+setup checks 46/46 ok
+PROGRESS 0.0000 shard 0 start, 50 split branches
+SHARD 0 done: solutions 162 (dims 0..3: 1 6 27 128) reps 1 1 4 17 in 0s
+sub done: 23 reps
+PROGRESS 0.2 A3 enumerated
+PROGRESS 0.0000 shard 0 start, 80 split branches
+SHARD 0 done: solutions 1296 (dims 0..3: 1 9 63 1223) reps 1 2 10 103 in 0s
+sub done: 116 reps
+PROGRESS 0.2 B3 enumerated
+PROGRESS 0.0000 shard 0 start, 170 split branches
+SHARD 0 done: solutions 390970 (dims 0..3: 1 15 243 390711) reps 1 1 11 4427 in 4s
+sub done: 4440 reps
+PROGRESS 0.2 H3 enumerated
+CHECK ok   A3 orbit sizes add up to the solution count (162)
+CHECK ok   A3 representatives are distinct and canonical
+PROGRESS 0.233 A3 exact rebuild of 23 reps (0s)
+CHECK ok   A3 every member rebuilds exactly (chamber walk closes)
+CHECK ok   A3 dimension from root ranks (C, float-free table) = exact corner rank
+CHECK ok   A3 every solid: Euler holds and every edge has squared length exactly 1
+CHECK ok   A3 every solid splits into atoms exactly
+CHECK ok   A3 positive control: Wythoff (0,) built independently is found and named tetrahedron
+CHECK ok   A3 positive control: Wythoff (1,) built independently is found and named octahedron
+CHECK ok   A3 positive control: Wythoff (2,) built independently is found and named tetrahedron
+CHECK ok   A3 positive control: Wythoff (0, 1) built independently is found and named truncated tetrahedron
+CHECK ok   A3 positive control: Wythoff (1, 2) built independently is found and named truncated tetrahedron
+CHECK ok   A3 positive control: Wythoff (0, 2) built independently is found and named cuboctahedron
+CHECK ok   A3 positive control: Wythoff (0, 1, 2) built independently is found and named truncated octahedron
+CHECK ok   A3 positive control: #49: tetrahedron with four caps (T + reversed T) is found and named cuboctahedron [regular-faced (known: cuboctahedron); {'3-gon regular': 8, '4-gon regular': 6}]
+CHECK ok   A3 positive control: #49: octahedron with four caps (O + T) is found and named truncated tetrahedron [regular-faced (known: truncated tetrahedron); {'3-gon regular': 4, '6-gon regular': 4}]
+CHECK ok   A3 positive control: #49: octahedron with four caps (O + reversed T) is found and named truncated tetrahedron [regular-faced (known: truncated tetrahedron); {'3-gon regular': 4, '6-gon regular': 4}]
+CHECK ok   A3 positive control: #49: tetrahedron with three caps on a triangle (T + triangle) is found and named J3 triangular cupola [regular-faced (known: J3 triangular cupola); {'3-gon regular': 4, '4-gon regular': 3, '6-gon regular': 1}]
+CHECK ok   A3 no two solid orbits are congruent (pairwise-distance invariant distinct; 0 clashes)
+A3 SUMMARY {"solutions": 162, "solutions_by_dim": [1, 6, 27, 128], "orbits_by_dim": [1, 1, 4, 17], "solid_orbits": 17, "classes": {"regular-faced": 7, "#49 stretch": 3, "beyond #49": 2, "zonohedron": 5}, "named": ["J1 square pyramid", "J3 triangular cupola", "cuboctahedron", "octahedron", "tetrahedron", "truncated octahedron", "truncated tetrahedron"], "atoms": [{"id": 1, "label": "segment", "dim": 1, "V": null, "face_kinds": null}, {"id": 2, "label": "regular triangle", "dim": 2, "V": null, "face_kinds": null}, {"id": 6, "label": "J1 square pyramid", "dim": 3, "V": 5, "face_kinds": {"3-gon regular": 4, "4-gon regular": 1}}, {"id": 7, "label": "tetrahedron", "dim": 3, "V": 4, "face_kinds": {"3-gon regular": 4}}, {"id": 8, "label": "octahedron", "dim": 3, "V": 6, "face_kinds": {"3-gon regular": 8}}, {"id": 10, "label": "A3-10", "dim": 3, "V": 7, "face_kinds": {"3-gon regular": 4, "4-gon 60/120": 3}}, {"id": 16, "label": "A3-16", "dim": 3, "V": 13, "face_kinds": {"3-gon regular": 4, "4-gon 60/120": 4, "4-gon regular": 5}}]}
+PROGRESS 0.333 A3 done (0s)
+CHECK ok   B3 orbit sizes add up to the solution count (1296)
+CHECK ok   B3 representatives are distinct and canonical
+PROGRESS 0.567 B3 exact rebuild of 116 reps (2s)
+CHECK ok   B3 every member rebuilds exactly (chamber walk closes)
+CHECK ok   B3 dimension from root ranks (C, float-free table) = exact corner rank
+CHECK ok   B3 every solid: Euler holds and every edge has squared length exactly 1
+CHECK ok   B3 every solid splits into atoms exactly
+CHECK ok   B3 positive control: Wythoff (0,) built independently is found and named octahedron
+CHECK ok   B3 positive control: Wythoff (1,) built independently is found and named cuboctahedron
+CHECK ok   B3 positive control: Wythoff (2,) built independently is found and named cube
+CHECK ok   B3 positive control: Wythoff (0, 1) built independently is found and named truncated octahedron
+CHECK ok   B3 positive control: Wythoff (1, 2) built independently is found and named truncated cube
+CHECK ok   B3 positive control: Wythoff (0, 2) built independently is found and named rhombicuboctahedron
+CHECK ok   B3 positive control: Wythoff (0, 1, 2) built independently is found and named truncated cuboctahedron
+CHECK ok   B3 positive control: #49: octahedron stretched through a corner is found and named J15 elongated square bipyramid [regular-faced (known: J15 elongated square bipyramid); {'3-gon regular': 8, '4-gon regular': 4}]
+CHECK ok   B3 positive control: #49: cube stretched along a face diagonal is found [zonohedron; {'4-gon regular': 6, '6-gon 90/135': 2}]
+CHECK ok   B3 positive control: truncated octahedron stretched along a four-fold axis is found [zonohedron; {'4-gon regular': 6, '6-gon 90/135': 4, '6-gon regular': 8}]
+CHECK FAIL B3 no two solid orbits are congruent (pairwise-distance invariant distinct; 2 clashes)
+B3 SUMMARY {"solutions": 1296, "solutions_by_dim": [1, 9, 63, 1223], "orbits_by_dim": [1, 2, 10, 103], "solid_orbits": 103, "classes": {"regular-faced": 18, "#49 stretch": 40, "zonohedron": 43, "beyond #49": 2}, "named": ["8-gonal prism", "J1 square pyramid", "J15 elongated square bipyramid", "J19 elongated square cupola", "J28/J29 square ortho/gyrobicupola", "J3 triangular cupola", "J4 square cupola", "J8 elongated square pyramid", "cube", "cuboctahedron", "octahedron", "rhombicuboctahedron", "tetrahedron", "truncated cube", "truncated cuboctahedron", "truncated octahedron", "truncated tetrahedron"], "atoms": [{"id": 1, "label": "segment", "dim": 1, "V": null, "face_kinds": null}, {"id": 2, "label": "segment", "dim": 1, "V": null, "face_kinds": null}, {"id": 3, "label": "regular triangle", "dim": 2, "V": null, "face_kinds": null}, {"id": 13, "label": "tetrahedron", "dim": 3, "V": 4, "face_kinds": {"3-gon regular": 4}}, {"id": 17, "label": "J1 square pyramid", "dim": 3, "V": 5, "face_kinds": {"3-gon regular": 4, "4-gon regular": 1}}, {"id": 19, "label": "B3-19", "dim": 3, "V": 7, "face_kinds": {"3-gon regular": 4, "4-gon 60/120": 3}}, {"id": 28, "label": "octahedron", "dim": 3, "V": 6, "face_kinds": {"3-gon regular": 8}}, {"id": 36, "label": "B3-36", "dim": 3, "V": 13, "face_kinds": {"3-gon regular": 4, "4-gon 60/120": 4, "4-gon regular": 5}}]}
+PROGRESS 0.667 B3 done (2s)
+CHECK pilot-skip H3 orbit sizes add up to the solution count (390970)
+CHECK ok   H3 representatives are distinct and canonical
+PROGRESS 0.900 H3 exact rebuild of 200 reps (4s)
+CHECK ok   H3 every member rebuilds exactly (chamber walk closes)
+CHECK ok   H3 dimension from root ranks (C, float-free table) = exact corner rank
+CHECK ok   H3 every solid: Euler holds and every edge has squared length exactly 1
+CHECK ok   H3 every solid splits into atoms exactly
+CHECK pilot-skip H3 positive control: Wythoff (0,) built independently is found and named dodecahedron
+CHECK pilot-skip H3 positive control: Wythoff (1,) built independently is found and named icosidodecahedron
+CHECK pilot-skip H3 positive control: Wythoff (2,) built independently is found and named icosahedron
+CHECK pilot-skip H3 positive control: Wythoff (0, 1) built independently is found and named truncated dodecahedron
+CHECK pilot-skip H3 positive control: Wythoff (1, 2) built independently is found and named truncated icosahedron
+CHECK pilot-skip H3 positive control: Wythoff (0, 2) built independently is found and named rhombicosidodecahedron
+CHECK pilot-skip H3 positive control: Wythoff (0, 1, 2) built independently is found and named truncated icosidodecahedron
+CHECK ok   H3 no two solid orbits are congruent (pairwise-distance invariant distinct; 0 clashes)
+H3 SUMMARY {"solutions": 390970, "solutions_by_dim": [1, 15, 243, 390711], "orbits_by_dim": [1, 1, 11, 4427], "solid_orbits": 187, "classes": {"#49 stretch": 92, "beyond #49": 39, "regular-faced": 7, "zonohedron": 40, "cap type": 9}, "named": ["J11 gyroelongated pentagonal pyramid (diminished icosahedron)", "J2 pentagonal pyramid", "J62 metabidiminished icosahedron", "J63 tridiminished icosahedron", "cube", "regular-faced, not in the table"], "atoms": [{"id": 1, "label": "segment", "dim": 1, "V": null, "face_kinds": null}, {"id": 2, "label": "regular triangle", "dim": 2, "V": null, "face_kinds": null}, {"id": 7, "label": "regular pentagon", "dim": 2, "V": null, "face_kinds": null}, {"id": 16, "label": "H3-16", "dim": 3, "V": 11, "face_kinds": {"3-gon regular": 5, "4-gon 36/144": 5, "5-gon regular": 1}}, {"id": 17, "label": "J2 pentagonal pyramid", "dim": 3, "V": 6, "face_kinds": {"3-gon regular": 5, "5-gon regular": 1}}, {"id": 47, "label": "H3-47", "dim": 3, "V": 12, "face_kinds": {"3-gon regular": 5, "4-gon 36/144": 1, "4-gon 72/108": 1, "5-gon regular": 1, "6-gon 72/144": 2}}, {"id": 48, "label": "H3-48", "dim": 3, "V": 9, "face_kinds": {"3-gon regular": 5, "4-gon 72/108": 3, "5-gon regular": 1}}, {"id": 49, "label": "H3-49", "dim": 3, "V": 10, "face_kinds": {"3-gon regular": 4, "4-gon regular": 1, "5-gon regular": 2, "6-gon 108/144": 1}}, {"id": 50, "label": "J63 tridiminished icosahedron", "dim": 3, "V": 9, "face_kinds": {"3-gon regular": 5, "5-gon regular": 3}}, {"id": 81, "label": "H3-81", "dim": 3, "V": 10, "face_kinds": {"3-gon regular": 10, "4-gon 72/108": 3}}, {"id": 96, "label": "H3-96", "dim": 3, "V": 16, "face_kinds": {"3-gon regular": 5, "4-gon 36/144": 2, "4-gon 60/120": 2, "4-gon 72/108": 2, "5-gon regular": 1, "6-gon 72/144": 2}}, {"id": 97, "label": "H3-97", "dim": 3, "V": 11, "face_kinds": {"3-gon regular": 7, "4-gon 60/120": 1, "4-gon regular": 1, "5-gon regular": 1, "6-gon 108/144": 1}}, {"id": 98, "label": "H3-98", "dim": 3, "V": 11, "face_kinds": {"3-gon regular": 5, "4-gon 60/120": 2, "4-gon regular": 1, "5-gon regular": 1, "6-gon 108/144": 1}}, {"id": 99, "label": "H3-99", "dim": 3, "V": 11, "face_kinds": {"3-gon regular": 5, "4-gon 60/120": 2, "4-gon regular": 1, "5-gon regular": 1, "6-gon 108/144": 1}}, {"id": 100, "label": "H3-100", "dim": 3, "V": 16, "face_kinds": {"3-gon regular": 5, "4-gon 60/120": 2, "4-gon 72/108": 5, "4-gon regular": 1, "5-gon regular": 1, "6-gon 72/144": 1}}, {"id": 101, "label": "H3-101", "dim": 3, "V": 15, "face_kinds": {"3-gon regular": 4, "4-gon 36/144": 5, "4-gon 60/120": 3, "5-gon regular": 2}}, {"id": 102, "label": "H3-102", "dim": 3, "V": 14, "face_kinds": {"3-gon regular": 4, "4-gon 36/144": 1, "4-gon 60/120": 1, "4-gon 72/108": 2, "4-gon regular": 3, "5-gon regular": 2}}, {"id": 103, "label": "H3-103", "dim": 3, "V": 13, "face_kinds": {"3-gon regular": 4, "4-gon 72/108": 2, "4-gon regular": 2, "5-gon regular": 2, "6-gon 72/144": 1}}, {"id": 104, "label": "H3-104", "dim": 3, "V": 14, "face_kinds": {"3-gon regular": 4, "4-gon 60/120": 2, "4-gon 72/108": 3, "4-gon regular": 2, "5-gon regular": 2}}, {"id": 105, "label": "J62 metabidiminished icosahedron", "dim": 3, "V": 10, "face_kinds": {"3-gon regular": 10, "5-gon regular": 2}}, {"id": 106, "label": "J62 metabidiminished icosahedron", "dim": 3, "V": 10, "face_kinds": {"3-gon regular": 10, "5-gon regular": 2}}, {"id": 107, "label": "H3-107", "dim": 3, "V": 20, "face_kinds": {"3-gon regular": 10, "4-gon 72/108": 10, "5-gon regular": 2}}, {"id": 108, "label": "H3-108", "dim": 3, "V": 15, "face_kinds": {"3-gon regular": 5, "5-gon regular": 3, "6-gon 72/144": 3}}, {"id": 109, "label": "H3-109", "dim": 3, "V": 16, "face_kinds": {"3-gon regular": 4, "4-gon 36/144": 1, "4-gon 60/120": 2, "4-gon 72/108": 4, "4-gon regular": 2, "5-gon regular": 2}}, {"id": 110, "label": "regular-faced, not in the table", "dim": 3, "V": 14, "face_kinds": {"3-gon regular": 8, "4-gon regular": 2, "5-gon regular": 4}}, {"id": 114, "label": "H3-114", "dim": 3, "V": 19, "face_kinds": {"3-gon regular": 7, "4-gon 72/108": 7, "4-gon regular": 2, "5-gon regular": 3}}, {"id": 155, "label": "H3-155", "dim": 3, "V": 12, "face_kinds": {"3-gon regular": 10, "4-gon 60/120": 2, "4-gon regular": 1, "6-gon 108/144": 1}}, {"id": 161, "label": "H3-161", "dim": 3, "V": 17, "face_kinds": {"3-gon regular": 4, "4-gon 36/144": 2, "4-gon 60/120": 2, "4-gon 72/108": 2, "4-gon regular": 4, "5-gon regular": 2}}, {"id": 162, "label": "H3-162", "dim": 3, "V": 17, "face_kinds": {"3-gon regular": 6, "4-gon 36/144": 2, "4-gon 60/120": 1, "4-gon 72/108": 2, "4-gon regular": 4, "5-gon regular": 2}}, {"id": 171, "label": "H3-171", "dim": 3, "V": 16, "face_kinds": {"3-gon regular": 6, "4-gon 72/108": 4, "4-gon regular": 2, "5-gon regular": 2, "6-gon regular": 1}}, {"id": 173, "label": "H3-173", "dim": 3, "V": 16, "face_kinds": {"3-gon regular": 7, "4-gon 36/144": 5, "4-gon 60/120": 4, "5-gon regular": 1}}, {"id": 174, "label": "H3-174", "dim": 3, "V": 16, "face_kinds": {"3-gon regular": 5, "4-gon 36/144": 5, "4-gon 60/120": 5, "5-gon regular": 1}}, {"id": 176, "label": "H3-176", "dim": 3, "V": 15, "face_kinds": {"3-gon regular": 7, "4-gon 36/144": 1, "4-gon 60/120": 2, "4-gon 72/108": 2, "4-gon regular": 3, "5-gon regular": 1}}, {"id": 177, "label": "H3-177", "dim": 3, "V": 15, "face_kinds": {"3-gon regular": 5, "4-gon 36/144": 1, "4-gon 60/120": 3, "4-gon 72/108": 2, "4-gon regular": 3, "5-gon regular": 1}}, {"id": 178, "label": "H3-178", "dim": 3, "V": 15, "face_kinds": {"3-gon regular": 7, "4-gon 36/144": 1, "4-gon 60/120": 2, "4-gon 72/108": 2, "4-gon regular": 3, "5-gon regular": 1}}, {"id": 179, "label": "H3-179", "dim": 3, "V": 21, "face_kinds": {"3-gon regular": 5, "4-gon 36/144": 2, "4-gon 60/120": 3, "4-gon 72/108": 8, "4-gon regular": 2, "5-gon regular": 1}}, {"id": 185, "label": "J11 gyroelongated pentagonal pyramid (diminished icosahedron)", "dim": 3, "V": 11, "face_kinds": {"3-gon regular": 15, "5-gon regular": 1}}, {"id": 186, "label": "H3-186", "dim": 3, "V": 21, "face_kinds": {"3-gon regular": 5, "4-gon 60/120": 5, "4-gon 72/108": 10, "5-gon regular": 1}}, {"id": 187, "label": "H3-187", "dim": 3, "V": 20, "face_kinds": {"3-gon regular": 5, "4-gon 72/108": 5, "5-gon regular": 7}}, {"id": 188, "label": "H3-188", "dim": 3, "V": 16, "face_kinds": {"3-gon regular": 4, "4-gon 60/120": 3, "5-gon regular": 2, "6-gon 72/144": 3}}, {"id": 189, "label": "H3-189", "dim": 3, "V": 17, "face_kinds": {"3-gon regular": 4, "4-gon 36/144": 2, "4-gon 60/120": 4, "4-gon regular": 2, "5-gon regular": 2, "6-gon 108/144": 1}}, {"id": 191, "label": "H3-191", "dim": 3, "V": 15, "face_kinds": {"3-gon regular": 6, "4-gon 60/120": 1, "4-gon 72/108": 1, "4-gon regular": 2, "5-gon regular": 2, "8-gon 108/144": 1}}, {"id": 192, "label": "H3-192", "dim": 3, "V": 17, "face_kinds": {"3-gon regular": 6, "4-gon 36/144": 1, "4-gon 60/120": 2, "4-gon 72/108": 1, "4-gon regular": 3, "5-gon regular": 2, "6-gon 108/144": 1}}, {"id": 194, "label": "H3-194", "dim": 3, "V": 17, "face_kinds": {"3-gon regular": 4, "4-gon 36/144": 2, "4-gon 60/120": 2, "4-gon regular": 4, "5-gon regular": 2, "6-gon 108/144": 1}}, {"id": 195, "label": "H3-195", "dim": 3, "V": 16, "face_kinds": {"3-gon regular": 4, "4-gon 60/120": 3, "4-gon 72/108": 1, "4-gon regular": 1, "5-gon regular": 2, "6-gon 108/144": 2}}, {"id": 196, "label": "H3-196", "dim": 3, "V": 19, "face_kinds": {"3-gon regular": 7, "4-gon 36/144": 2, "4-gon 60/120": 1, "4-gon 72/108": 1, "4-gon regular": 2, "5-gon regular": 3, "8-gon 108/144": 1}}, {"id": 197, "label": "H3-197", "dim": 3, "V": 15, "face_kinds": {"3-gon regular": 9, "4-gon 60/120": 2, "4-gon regular": 2, "5-gon regular": 3}}, {"id": 199, "label": "H3-199", "dim": 3, "V": 19, "face_kinds": {"3-gon regular": 4, "4-gon 36/144": 2, "4-gon 72/108": 2, "4-gon regular": 6, "5-gon regular": 2, "6-gon 72/144": 1}}]}
+PROGRESS 1.000 H3 done (4s)
+analysis checks 40/41 ok
+ANALYSIS FAIL ['B3 no two solid orbits are congruent (pairwise-distance invariant distinct; 2 clashes)']
+FINAL FAIL pilot2
+[exit 0]
