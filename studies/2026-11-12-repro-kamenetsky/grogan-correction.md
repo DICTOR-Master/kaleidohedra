@@ -1,3 +1,5 @@
+**SUPERSEDED 12 Nov 2026 (do not post):** the full check now covers all 26 claims; scope gate STATUS Reproduced. Use grogan-proof-check/PASTE_TEXTS.md instead.
+
 # Grogan 2610.01307: scope correction to our reproduction report (12 Nov 2026)
 
 Our report covered Proposition E only, but the paper page shows "Reproduced". Full reproduction would need his Lean proof rerun (a Lean
