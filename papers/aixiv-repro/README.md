@@ -28,3 +28,4 @@ does not reproduce, write to the author on the paper's discussion first. Filing 
 | 2026-11-12 | Winter 2610.00447 | B: proof checked + our 108-polytope test | https://aixiv.online/abs/2610.00447 |
 | 2026-11-12 | Hofscheier–Nill 2611.00775 | B: independent exact recomputation, Theorems 2.1 and 2.2 | https://aixiv.online/abs/2611.00775 |
 | 2026-11-12 | Cremer 2610.01289 | B: our own max-clique search on all 7 colourings + DS1.18 table check | https://aixiv.online/abs/2610.01289 |
+| 2026-11-12 | OpenAI 2610.00950 | B: every proof checked + every claim recomputed exactly | https://aixiv.online/abs/2610.00950 |
