@@ -1,0 +1,27 @@
+zip entries 12241, subjects with a sacrum file 102
+fetched 102 subjects, 108 range requests
+FETCH ok
+ok control cone: triangle IoU > 0.99 0.9932
+ok control cone: apex angle 53.13 +- 0.6 deg 53.262
+ok control cone: width/height 1 +- 0.01 1.0000
+ok control sphere: circle R 50 +- 0.3 mm 49.992 rms 0.003
+ok control sphere: log-spiral |b| < 0.03 (a circle) -0.0001
+ok control golden spiral arc (69 deg): b recovered within 0.01 0.3063 vs 0.3063
+ok control chance model tol 0.01: Monte Carlo = exact union MC 0.1871 exact 0.1881
+ok control chance model tol 0.02: Monte Carlo = exact union MC 0.3360 exact 0.3374
+ok control phantom: left axis = -x (RAS) [-1.0, 0.0, -0.0]
+ok control phantom: anterior axis ~ +y 
+DIAG phantom profile: n 107 c range -109.0 -4.0 distance to the true centre minus 110: mean -0.03 min -0.25 max 0.34
+DIAG profile sample [[-109.0, 14.7], [-102.0, 11.0], [-94.0, 7.1], [-86.0, 4.0], [-78.0, 1.7], [-70.0, -0.2], [-62.0, -1.2], [-54.0, -1.7], [-46.0, -1.7], [-38.0, -1.3], [-29.0, 0.1], [-21.0, 2.0], [-13.0, 4.4], [-5.0, 7.8]]
+DIAG true centre in chord frame -50.17 108.02 fit {'centre': [-50.14905199521892, 108.94288691926965], 'R': 110.84662200861611, 'rms': 0.09394880942890461, 'max_abs': 0.2754885779157945}
+ok control phantom: anterior radius 110 +- 1.5 mm 110.85 rms 0.09
+ok control phantom: 4 foramen pairs found 4 (blobs 8)
+ok control phantom: foramen centres within 1.5 mm max 0.95 mm
+ok control phantom: segment ratio errors within the propagated 1 mm level uncertainty (z < 1) max z 0.84
+ok control phantom: frontal auricular wedge within 2 deg -38.48 vs -39.04
+ok control phantom: axial auricular wedge within 2 deg -8.34 vs -8.64
+ok BodyParts3D sacrum: 4 foramen pairs found 4
+ok BodyParts3D sacrum: end plate area 800-2500 mm2 1224
+population used 60 of 102; checks 18/18 ok; 523s
+FINAL ok
+[exit 0]

@@ -6562,6 +6562,15 @@
     "retry": "never for these cones; leads: prior art of the H3 atoms (Subbotin RR-polyhedra), finer fan for five-fold/three-fold stretches, 4D (A4 B4 F4 H4), tiling",
     "study": "2026-11-12-permutohedron-equal-edges",
     "date": "2026-11-12"
+   },
+   {
+    "question": "DICTO 12 Nov: special geometry of the human sacrum (the 'sacred bone'): outline (triangle / curved triangle / wedge), S1-S5 proportions from the four foramen pairs, curvature (circle vs log spiral), auricular wedge angles; is any proportion at phi or another notable constant beyond chance; which tradition claims are documented and which geometric ones hold",
+    "method": "studies/2026-11-12-sacrum-geometry: sacrum_geom.py on the BodyParts3D sacrum (1 specimen, DBCLS, CC BY 4.0) and 60 TotalSegmentator CT sacra (masks -> marching cubes; Zenodo 10047263, CC BY 4.0, fetched by HTTP range); frame from hip bones + L5; front depth map, IoU fits, foramen pits paired L/R, midline profile circle vs log spiral (BIC, bootstrap), auricular plane fits; 12-constant 'near' test vs chance (log-uniform) and vs L5/L4/hip/scapula shape battery; controls cone, sphere, golden-spiral arc, chance Monte Carlo, voxel phantom (R 110, 4 hole pairs, known wedge), all 18 ok, FINAL ok; Part C by web sources (list in README)",
+    "status": "SETTLED",
+    "result": "Triangle real but approximate (IoU 0.82 +- 0.04; curved triangle 0.87-0.90), apex 52.3 +- 5.5 deg (not equilateral); wedged downward (auricular planes converge downward 18 +- 10 deg) but wider in front (converge backward 32 +- 15 deg: no horizontal keystone); front curve ~circular arc (BodyParts3D R 64.9 mm, CI 63.2-66.4; spiral b 0.007, golden 0.306 excluded; CT: circle preferred by BIC in 65 %); BodyParts3D S2-S4 equal steps (18.2, 19.3, 17.9 +- 1.4 mm), foramina mirror-exact to 0.1 mm; no ratio at phi: near-any-constant rate 29.5 % sacral vs 33.7 % chance vs 28.2 % L5, phi 2.5 % vs 3.2 % chance. Name: Greek hieron osteon (Hippocratic On Joints 45 before Galen, per LSJ); reason for 'sacred' unsettled (sacrifice / 'mighty' have evidence; resurrection and genital-protection are later); yoga texts never name the sacrum; djed = sacrum only as a contested bull-anatomy thesis (Gordon & Schwabe 2004); luz texts say spine/coccyx, never sacrum (Brewer 1895 conflation)",
+    "retry": "never for phi/golden claims with this data; leads: coccyx separated (sacral index, S5), higher-resolution CT for all four foramen pairs in a population, next bones (hyoid, patella, skull, pelvis, whole spine)",
+    "study": "2026-11-12-sacrum-geometry",
+    "date": "2026-11-12"
    }
   ]
  },
@@ -8264,6 +8273,9 @@
    "Lead 6 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY. #43 Theorem 3 is now a turn row of the bridge table: polar about c^m·ρ² (ρ² = 15 − 5√5) sends beat S_k to S_{5+4m−k}, so the turn is k ↦ 5 − k with fixed point 5/2, and the turn centres are exactly 1/2 + 2ℤ. At the fixed point sits the antipol pair GTI|FPD, the GTI inscribed in the reference sphere and the FPD circumscribed about it (no station is self-antipol); the shell ratios read the same from either end, the fixed shells largest. Table in the hopscotch-rows README and the polar-line outline.",
    "Lead 3 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY, the answer is no. At the turn u = v the conditions (b), (c), (d) have exactly one admissible yantra, Kulaichev's own. The full elimination keeps every factor: the only curves of the system are t = ±u, ±1/u (never admissible), and of the 18 isolated real candidates one is Kulaichev's (f348, all 60 stored digits), two fail only admissibility (t1's corner on the wrong side), seven meet only the squared bindu condition (an excircle), eight have no real yantra. So the (d) wall and the turn u = v meet on exactly one viewpoint orbit.",
    "Lead 7 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY. Kulaichev's (b) and (c) are one 6 × 6 conic determinant each, with the same five circle points O, T and the great corners: Δ = κ·XᵀJX with κ = 128u³v(uv − 1)(uv + 1)/((1 + u²)⁴(1 + v²)²), and (c)'s determinant is exactly 4κ times natural.py's G. On a viewpoint orbit every circle form is multiplied by λ²/(d + λ²(1 − d))² > 0, so (b) and (c) hold on whole orbits: the (b)(c) yantras form a union of orbits u·v = p, and on each orbit the only walls are (d) and the turn u = v, the outline's 'walls of one determinant family' made exact for the yantra."
+  ],
+  "Bones and skeleton": [
+   "DICTO 12 Nov 2026: special geometries of the human bones and skeleton, starting with the sacrum ('sacred position in several ancient spiritual and even geometric traditions'). Study 1 (studies/2026-11-12-sacrum-geometry, SETTLED): the sacrum is a downward wedge and an approximate inverted triangle (apex 52 deg), curved on a near-circular arc, wider in front than behind; no golden ratio beyond chance (tested against lumbar vertebrae and random numbers); the name 'sacred bone' is Greek and older than Galen, its reason unsettled. Next bones: coccyx, hyoid, patella, skull, pelvis, whole spine."
   ]
  }
 }
