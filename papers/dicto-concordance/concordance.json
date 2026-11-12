@@ -6729,6 +6729,15 @@
     "retry": "never for these counts; leads: transverse golden sequence modulo the period plane, fully non-repeating golden filling (codimension 2, 6D/E8), figures of the 30 tile pairs, inflation, exact period group of the section tiling",
     "status": "SETTLED (exact)",
     "study": "studies/2026-11-13-golden-slice-window"
+   },
+   {
+    "date": "2026-11-13",
+    "question": "Paradigm Open question 8.2: the balance law for rosette tissues - in a sweep of a non-simple 4-polytope (corners on more than four edges), is every corner event (contacts lost/made, cells dying/born, by kind) matched by its reverse, as #108 Theorem 1 gives for simple ones; does a toric h-vector or cd-index govern non-simple sweeps?",
+    "method": "studies/2026-11-13-rosette-balance/scripts/rosette_balance.py: exact (rationals, Q(sqrt5)); all 60 Wythoff rows of A4, B4, F4, H4 built from their seeds, corner figure with cell types and contact kinds, ledgers in 2-3 exact random directions, coarse and fine (stabiliser orbit) reversal, corner-by-corner toric h of the dual vs the global formula; 46 moved 16-cells / 600-cells (combinatorics checked exactly) as rosette tissues without symmetry, 8060 sweeps; smallest-witness search; exact nullspace of the 16-cell ledgers (invariants.py); controls = Chapter 7 / #108 h-vectors and swaps (601/964, 6/16/11, 483, 73/52); compute node via job gate (rosette-pilot, rosette), FINAL ok",
+    "result": "PROVED + COUNTEREXAMPLE. (1) Every edge of a Wythoff polytope is parallel to a root, so every generic sweep has the same ledger (Lemma 1), and reversing the height reverses it: every event class balances exactly, in every direction, for every Wythoff polytope of every finite reflection group (Theorem 2) - all 34 rosette rows of the Atlas (e.g. truncated 600-cell 118/118, 109/109, 371/371). (2) FALSE without symmetry: 16-cell with corners (10,2,-1,0),(-10,1,0,1),(1,8,-2,0),(1,-10,1,-1),(0,-2,10,2),(-1,2,-9,-2),(-1,-2,1,9),(-2,-1,1,-8), height -3x1+x4: two corners with four births, one with four deaths. (3) Same face lattice as the regular 16-cell, so no face-lattice invariant (toric h, cd-index, flag vector) decides balance. (4) Every polytope keeps conservation (each contact made/lost once, each cell born/dies once, one lowest/highest corner); the toric h of the dual is their corner-by-corner sum; 16-cell tissues: N1 + N5 = NQ + 2, balanced iff N1 = N5, and no other linear law",
+    "retry": "never for these; leads: closed formulas for rosette ledgers (W-descent statistics), non-uniform symmetric polytopes, no-pure-exchange rows as a theorem, 5D rosettes, Lee's local cd-index terms",
+    "status": "SETTLED (exact)",
+    "study": "studies/2026-11-13-rosette-balance"
    }
   ]
  },

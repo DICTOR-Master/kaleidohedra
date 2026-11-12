@@ -1,0 +1,15 @@
+classes (down, lost, made, die, born) and min..max count over 8000 sweeps:
+   (0, 0, 12, 0, 8) 1 .. 1 mean 1.0
+   (1, 0, 8, 0, 4) 1 .. 2 mean 1.000375
+   (2, 1, 5, 0, 2) 0 .. 2 mean 1.0185
+   (3, 2, 2, 0, 0) 0 .. 2 mean 0.00075
+   (3, 3, 3, 1, 1) 0 .. 2 mean 1.9615
+   (4, 5, 1, 2, 0) 0 .. 2 mean 1.0185
+   (5, 8, 0, 4, 0) 1 .. 2 mean 1.000375
+   (6, 12, 0, 8, 0) 1 .. 1 mean 1.0
+counting functionals (with one lowest and one highest corner) rank 5 ; ledger invariants (nullspace) dim 5
+  invariant {'(0, 0, 12, 0, 8)': '1'} =  1  counting combination: True
+  invariant {'(1, 0, 8, 0, 4)': '4', '(2, 1, 5, 0, 2)': '2', '(3, 3, 3, 1, 1)': '1'} =  8  counting combination: True
+  invariant {'(1, 0, 8, 0, 4)': '-4', '(2, 1, 5, 0, 2)': '-1', '(3, 2, 2, 0, 0)': '2', '(4, 5, 1, 2, 0)': '1'} =  -4  counting combination: True
+  invariant {'(1, 0, 8, 0, 4)': '1', '(3, 2, 2, 0, 0)': '-1', '(5, 8, 0, 4, 0)': '1'} =  2  counting combination: True
+  invariant {'(6, 12, 0, 8, 0)': '1'} =  1  counting combination: True
