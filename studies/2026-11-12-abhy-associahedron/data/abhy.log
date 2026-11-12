@@ -1,0 +1,69 @@
+ok   n=7: 42 triangulations = Catalan(5) = 42
+ok   n=7: (V) every triangulation gives a feasible simple vertex (42 vertices)
+ok   n=7: (D) every vertex |det| = 1
+ok   n=7: (V) all 1001 facet subsets: no vertex outside the triangulations
+ok   n=7: (A) Omega = m_n exactly at 3 random rational interior points
+ok   n=7: (N2) m_n with one tree dropped differs from Omega
+ok   n=7: (T) triangulation formula (148 simplices) = Omega
+n=7: done in 3.1s, 42 trees, 14 facets, dimension 4
+PROGRESS 0.11 cases
+ok   n=6: 14 triangulations = Catalan(4) = 14
+ok   n=6: (V) every triangulation gives a feasible simple vertex (14 vertices)
+ok   n=6: (D) every vertex |det| = 1
+ok   n=6: (V) all 84 facet subsets: no vertex outside the triangulations
+ok   n=6: (A) Omega = m_n exactly at 3 random rational interior points
+ok   n=6: (N2) m_n with one tree dropped differs from Omega
+ok   n=6: (A) Omega = m_n identically (symbolic y)
+ok   n=6: (T) triangulation formula (17 simplices) = Omega
+n=6: done in 0.2s, 14 trees, 9 facets, dimension 3
+PROGRESS 0.22 cases
+ok   n=5: 5 triangulations = Catalan(3) = 5
+ok   n=5: (V) every triangulation gives a feasible simple vertex (5 vertices)
+ok   n=5: (D) every vertex |det| = 1
+ok   n=5: (V) all 10 facet subsets: no vertex outside the triangulations
+ok   n=5: (A) Omega = m_n exactly at 3 random rational interior points
+ok   n=5: (N2) m_n with one tree dropped differs from Omega
+ok   n=5: (A) Omega = m_n identically (symbolic y)
+ok   n=5: (T) triangulation formula (3 simplices) = Omega
+n=5: done in 0.0s, 5 trees, 5 facets, dimension 2
+PROGRESS 0.33 cases
+ok   n=4: 2 triangulations = Catalan(2) = 2
+ok   n=4: (V) every triangulation gives a feasible simple vertex (2 vertices)
+ok   n=4: (D) every vertex |det| = 1
+ok   n=4: (V) all 2 facet subsets: no vertex outside the triangulations
+ok   n=4: (A) Omega = m_n exactly at 3 random rational interior points
+ok   n=4: (N2) m_n with one tree dropped differs from Omega
+ok   n=4: (A) Omega = m_n identically (symbolic y)
+n=4: done in 0.0s, 2 trees, 2 facets, dimension 1
+PROGRESS 0.44 cases
+ok   n=6 (tilted slice): (N1) tilted slice: some vertex |det| != 1 or Omega != m_n (must hold: not the ABHY realisation)
+      tilted slice: vertices 14, feasible True, simple True, dets ['1', '2']
+n=6 tilted: done in 0.0s, 14 trees, 9 facets, dimension 3
+PROGRESS 0.56 cases
+ok   n=7 (tilted slice): (N1) tilted slice: some vertex |det| != 1 or Omega != m_n (must hold: not the ABHY realisation)
+      tilted slice: vertices 42, feasible True, simple True, dets ['1', '2']
+n=7 tilted: done in 0.2s, 42 trees, 14 facets, dimension 4
+PROGRESS 0.67 cases
+ok   n=9: 429 triangulations = Catalan(7) = 429
+ok   n=9: (V) every triangulation gives a feasible simple vertex (429 vertices)
+ok   n=9: (D) every vertex |det| = 1
+ok   n=9: (A) Omega = m_n exactly at 3 random rational interior points
+ok   n=9: (N2) m_n with one tree dropped differs from Omega
+n=9: done in 8.0s, 429 trees, 27 facets, dimension 6
+PROGRESS 0.78 cases
+ok   n=8: 132 triangulations = Catalan(6) = 132
+ok   n=8: (V) every triangulation gives a feasible simple vertex (132 vertices)
+ok   n=8: (D) every vertex |det| = 1
+ok   n=8: (V) all 15504 facet subsets: no vertex outside the triangulations
+ok   n=8: (A) Omega = m_n exactly at 3 random rational interior points
+ok   n=8: (N2) m_n with one tree dropped differs from Omega
+n=8: done in 24.3s, 132 trees, 20 facets, dimension 5
+PROGRESS 0.89 cases
+ok   n=10: 1430 triangulations = Catalan(8) = 1430
+ok   n=10: (V) every triangulation gives a feasible simple vertex (1430 vertices)
+ok   n=10: (D) every vertex |det| = 1
+ok   n=10: (A) Omega = m_n exactly at 3 random rational interior points
+ok   n=10: (N2) m_n with one tree dropped differs from Omega
+n=10: done in 37.2s, 1430 trees, 35 facets, dimension 7
+PROGRESS 1.00 cases
+FINAL ok: all checks and controls held

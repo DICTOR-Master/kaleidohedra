@@ -1,0 +1,23 @@
+PROGRESS 0.3 series along the vertex axis
+PROGRESS 0.3 series along the face axis
+c0 = nu*(420 - 180*sqrt(5))
+c2 = nu*(200 - 80*sqrt(5))*(nu**2 + nu*(1 - sqrt(5)/5) - 41*sqrt(5)/10 + 19/2)
+order-6 anisotropy (vertex axis minus face axis) = nu*(640/9 - 128*sqrt(5)/9)*(nu**6 + nu**5*(1 - sqrt(5)/5) + nu**4*(-17/5 + 8*sqrt(5)/5) + nu**3*(-58/5 + 26*sqrt(5)/5) + nu**2*(114/5 - 51*sqrt(5)/5) + nu*(-47/5 + 21*sqrt(5)/5) - 4698/5 + 2101*sqrt(5)/5)
+ok   (C1) nu-polynomials = the raw chunk-3 sums exactly at mu = 27/10
+ok   (C1) nu-polynomials = the raw chunk-3 sums exactly at mu = 3
+ok   (C1) nu-polynomials = the raw chunk-3 sums exactly at mu = 7/2
+PROGRESS 0.6 exact polynomials
+mu* = 2.89179265903082504284788634294: 1/mu* is a root of 25*nu**12 + 50*nu**11 - 150*nu**10 - 670*nu**9 + 789*nu**8 + 52*nu**7 - 47052*nu**6 - 26016*nu**5 - 8365*nu**4 - 1298*nu**3 + 370*nu**2 + 402*nu + 199 (irreducible over Q, degree 12); mu* is a root of 199*mu**12 + 402*mu**11 + 370*mu**10 - 1298*mu**9 - 8365*mu**8 - 26016*mu**7 - 47052*mu**6 + 52*mu**5 + 789*mu**4 - 670*mu**3 - 150*mu**2 + 50*mu + 25
+ok   (C2) mu* agrees with chunk 3 (2.891792659030825) to 1e-12
+ok   (C3) its minimal polynomial is irreducible over Q
+   over Q(sqrt5): 1/mu* is a root of nu**6 - sqrt(5)*nu**5/5 + nu**5 - 17*nu**4/5 + 8*sqrt(5)*nu**4/5 - 58*nu**3/5 + 26*sqrt(5)*nu**3/5 - 51*sqrt(5)*nu**2/5 + 114*nu**2/5 - 47*nu/5 + 21*sqrt(5)*nu/5 - 4698/5 + 2101*sqrt(5)/5
+c2/c0 at the fixed point = -(-318*sqrt(11*sqrt(5) + 25) - 14*sqrt(6) + 6*sqrt(30) + 142*sqrt(5)*sqrt(11*sqrt(5) + 25))/(3*(7 - 3*sqrt(5))*sqrt(11*sqrt(5) + 25)) = 0.77831712503722743534; minimal polynomial 405*x**4 - 12960*x**3 + 107820*x**2 - 105840*x + 23024
+ok   (C2) c2/c0 agrees with chunk 3 (0.778317125037227) to 1e-12
+ok   (C3) its minimal polynomial vanishes there (1e-30) and is irreducible
+ok   (N) the perturbed polynomial (constant + 1) does not vanish there
+anisotropy/c0 at the fixed point = (-504147235995483398437500000000000000*sqrt(5)*(11*sqrt(5) + 25)**(3/2) - 455637350819091796875000000000000000*sqrt(11*sqrt(5) + 25) - 140126044921875000000000000000000*sqrt(30) - 140126044921875000000000000000000*sqrt(6) + 203795816583251953125000000000000000*sqrt(5)*sqrt(11*sqrt(5) + 25) + 1127308776669799804687500000000000000*(11*sqrt(5) + 25)**(3/2))/(324365844726562500000000*(225*sqrt(5)*sqrt(11*sqrt(5) + 25) + 1125*sqrt(11*sqrt(5) + 25))*(3000*sqrt(5)*sqrt(11*sqrt(5) + 25) + 6750*sqrt(11*sqrt(5) + 25))*(-4725*sqrt(11*sqrt(5) + 25) + 2025*sqrt(5)*sqrt(11*sqrt(5) + 25))) = 0.00043171736833096702232; minimal polynomial 5189853515625*x**4 - 712524600000000*x**3 + 22113819590400000*x**2 + 81386864640000*x - 39257636864
+ok   (C2) anisotropy/c0 agrees with chunk 3 (0.000431717368330967) to 1e-12
+ok   (C3) its minimal polynomial vanishes there (1e-30) and is irreducible
+ok   (N) the perturbed polynomial (constant + 1) does not vanish there
+PROGRESS 1.0 closed forms
+FINAL ok: all controls held

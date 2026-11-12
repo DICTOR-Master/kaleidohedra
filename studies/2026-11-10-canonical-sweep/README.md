@@ -53,3 +53,18 @@ near the fixed point, not on it. Faults fixed on the way: the octahedron/icosahe
 nested radicals defeated two exact comparisons (squares compared; unnormalised axes); exact one-fraction forms over Q(√5) did not
 finish in 2 h (replaced by exact checks at sample μ plus a numeric scan); the first run's root filter missed the cube zero.
 NEXT (chunk 4): the associahedron sanity case (bi-adjoint scalar amplitudes).
+
+### Chunk 3, closed forms of the icosahedral numbers (12 Nov 2026; `scripts/canon_closed.py`, log `data/canon-closed.log`, FINAL ok)
+In the chamber (φ², (5+√5)/2) every facet of S has b = 1 or b = μ, so each expansion coefficient is a polynomial in ν = 1/μ over
+Q(√5), built exactly (controls: equal to the chunk-3 sums at μ = 27/10, 3, 7/2; values equal to the chunk-3 numbers to 1e-12;
+minimal polynomials irreducible and vanishing to 1e-30; a perturbed polynomial does not vanish):
+- Ω(S;0) = c0 = (420 − 180√5)·ν; c2 = (200 − 80√5)·ν·(ν² + (1 − √5/5)ν + 19/2 − 41√5/10) (along a unit axis);
+- order-6 anisotropy (vertex axis minus face axis) = (640 − 128√5)/9 · ν · Q(ν), Q(ν) = ν⁶ + (1 − √5/5)ν⁵ + (−17/5 + 8√5/5)ν⁴
+  + (−58/5 + 26√5/5)ν³ + (114/5 − 51√5/5)ν² + (−47/5 + 21√5/5)ν − 4698/5 + 2101√5/5;
+- **the roundest point μ* = 2.891792659030825043 is 1/ν* for the root ν* of Q in (2/(5+√5), 1/φ²); over Q, μ* is a root of the
+  irreducible 199μ¹² + 402μ¹¹ + 370μ¹⁰ − 1298μ⁹ − 8365μ⁸ − 26016μ⁷ − 47052μ⁶ + 52μ⁵ + 789μ⁴ − 670μ³ − 150μ² + 50μ + 25;**
+- **at the turn's fixed point μ = √((25+11√5)/6): c2/c0 = 0.778317125037227435, root of 405x⁴ − 12960x³ + 107820x² − 105840x
+  + 23024; anisotropy/c0 = 0.000431717368330967, root of 5189853515625x⁴ − 712524600000000x³ + 22113819590400000x² +
+  81386864640000x − 39257636864** (both irreducible, degree 4).
+So μ* is an algebraic number of degree 12, not the fixed point (degree 4: (6μ² − 25)² = 605) and not in Q(√5): the closeness of the
+two is not an identity.

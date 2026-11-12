@@ -6366,6 +6366,20 @@
     "status": "ANSWERED",
     "result": "fixed point = insphere point (proved for any polar pair) and the only mu where S(turn mu) is similar to S(mu); the turn keeps neither the walls (middle wall goes off: 2 -> 3/2; phi^2 -> (5+2sqrt5)/3) nor Omega(S;0) (icosahedral pieces new: 20(3+sqrt5)/mu^3, 60(3-sqrt5)/mu^2, 60(7-3sqrt5)/mu, 12(25-11sqrt5)); anisotropy zero of Omega at the centre near but not at the fixed point (cube 1.692590 vs sqrt3; icosahedron 2.891793 vs 2.875087)",
     "retry": "no (answered); next chunk 4 associahedron sanity case"
+   },
+   {
+    "question": "aim 2 chunk 4: do our canonical-form tools reproduce the ABHY theorem (kinematic associahedron canonical form = bi-adjoint scalar amplitude m_n)?",
+    "method": "studies/2026-11-12-abhy-associahedron/scripts/abhy.py: Warren vertex formula + chunk-2 triangulation formula, exact sympy, n = 4..10, 4 cores",
+    "status": "REPRODUCED (known theorem, Arkani-Hamed-Bai-He-Yan 2017)",
+    "result": "n = 4..10: Catalan vertices, all simple, all |det| = 1, Omega = m_n exactly (identically for n <= 6), triangulation formula agrees n = 5..7; negative controls: dropped tree, non-unimodular tilted slice (|det| 2, Omega != m_n)",
+    "retry": "no; next chunk 5"
+   },
+   {
+    "question": "chunk 3 closed forms: exact values of the icosahedral roundest point mu* and of c2/c0, anisotropy/c0 at the turn's fixed point",
+    "method": "studies/2026-11-10-canonical-sweep/scripts/canon_closed.py: coefficients as exact polynomials in nu = 1/mu over Q(sqrt5); norm polynomial; minimal polynomials",
+    "status": "FOUND",
+    "result": "mu* = 2.891792659030825 is a root of the irreducible degree-12 integer polynomial 199mu^12 + ... + 25 (not in Q(sqrt5), not the fixed point); at the fixed point c2/c0 root of 405x^4 - 12960x^3 + 107820x^2 - 105840x + 23024, anisotropy/c0 root of an irreducible quartic",
+    "retry": "no"
    }
   ]
  },
@@ -8042,7 +8056,8 @@
   ],
   "SECOND ULTIMATE GOAL: geometry gives laws": [
    "DICTO 9 Nov 2026: one geometric object that hands out laws (as the amplituhedron does for particle scattering, Arkani-Hamed–Trnka 2013). Bridge: the canonical form of a polytope = the volume of its polar (the antipol of the DICTO Hopscotch). Chunks: 1 read and map; 2 canonical forms on the cube–octahedron line vs walls; 3 the turn in canonical-form language; 4 associahedron sanity case; 5 DICTO's solids as positive geometries; 6 Poincaré dodecahedral space; 7 E8 at the Golden Ladder's top. Long horizon; early prize = chunks 2–4.",
-   "Chunk 3 (12 Nov 2026, studies/2026-11-10-canonical-sweep §chunk 3): the turn's fixed point is the insphere point of S(mu) = P ∩ mu P* (all poles of the canonical form at one distance) and the only mu where S(turn mu) is a copy of S(mu); the turn is not a symmetry of the canonical forms, of Omega at the centre, or of the walls; the roundest point (anisotropy zero) lies near, not on, the fixed point (cube and icosahedral sweeps). Next: chunk 4, associahedron."
+   "Chunk 3 (12 Nov 2026, studies/2026-11-10-canonical-sweep §chunk 3): the turn's fixed point is the insphere point of S(mu) = P ∩ mu P* (all poles of the canonical form at one distance) and the only mu where S(turn mu) is a copy of S(mu); the turn is not a symmetry of the canonical forms, of Omega at the centre, or of the walls; the roundest point (anisotropy zero) lies near, not on, the fixed point (cube and icosahedral sweeps). Next: chunk 4, associahedron.",
+   "Chunk 4 (12 Nov 2026, studies/2026-11-12-abhy-associahedron): our tools reproduce Arkani-Hamed-Bai-He-Yan exactly for n = 4..10 (canonical form of the kinematic associahedron = bi-adjoint scalar amplitude; unimodular vertices; a non-unimodular slice fails). Chunk 3 closed forms: the icosahedral roundest point is algebraic of degree 12, the fixed point of degree 4: near, not equal. Next: chunk 5, DICTO's solids as positive geometries."
   ],
   "Popular book of the one study: DICTO's working title A Brief Geometry of Space (was A Brief History of Space)": [
    "DICTO 9 Nov 2026, after Stephen Hawking: the popular book of the one study (the three aims as one story: pieces, crystals, the quasicrystal at the turn, the law-giving geometry); Quanta of Space essay as its first chapter; title clash check pending (subtitle likely).",
