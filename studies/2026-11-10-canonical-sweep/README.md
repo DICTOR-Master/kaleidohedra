@@ -17,3 +17,39 @@ scripts/canon_sweep.py (exact, sympy; compute-host) - FINAL ok.
 DICTO 10 Nov during this step: "is it possible that the paradigm has the shape of a polyhedra"; "walls could be cell walls":
 the #61 walls in the (s, λ) plane are lines (λ = −9s/8, −5s/8, −s/8, 3s/8 through the origin, and λ = −(4−s)/24): its chambers are
 polygons - cells of a fan. NEXT: figure of the #61 chamber map; chunk 3 (the turn in canonical-form language); the icosahedral sweep.
+
+## Aim 2, chunk 3: the turn in canonical-form language (12 Nov 2026; `scripts/canon_turn.py`, log `data/canon-turn.log`, FINAL ok)
+Both sweeps S(μ) = P ∩ μ·P* of a polar pair: cube/octahedron (as in chunk 2) and, new, icosahedron (0, ±1, ±φ)/its polar
+dodecahedron. Canonical form by Warren's vertex formula (fan over the dual polygon at a vertex on more than three facets).
+Controls (all held, 39 checks): cube form 8/∏(1−y_i²); Warren = the chunk-2 triangulation formula at a generic point for μ = 1/2,
+3/2, 5/2, 5 (octahedron end included); one dropped vertex term is caught; Ω(S;0) = 3!·vol(S*) exactly in all 8 chambers; odd orders
+vanish and the order-2 term is isotropic; for the icosahedral group the order-4 term is isotropic too; a wrong turn μ ↦ 2/μ does not
+fix the insphere point; cube walls = 1, 2, 3.
+
+1. **The turn's fixed point is the insphere point (proved, any polar pair).** P = {a·x ≤ 1} with all facets at distance r and all
+   vertices at distance R: the sweep runs from μ_lo = r² (S = μP*) to μ_hi = R² (S = P); the turn is μ ↦ r²R²/μ; S(μ) has all its
+   facets at one distance exactly at μ = rR, its fixed point. Cube: 1, 3, turn 3/μ, fixed point √3. Icosahedron: μ_lo = (7+3√5)/6,
+   μ_hi = (5+√5)/2, turn constant (25+11√5)/6, fixed point √((25+11√5)/6) = 2.875087.
+2. **S(turn μ) is similar to S(μ) only at the fixed point** (exact, both sweeps). A similarity keeps the two facet types (6 vs 8, 20
+   vs 12 facets), so it keeps the ratio ρ(μ) = μ/(rR) of their distances, and ρ(turn μ) = 1/ρ(μ). Since a canonical form determines
+   its polytope (its poles are the facet planes), Ω(S(turn μ)) is never a turned or rescaled copy of Ω(S(μ)) except at μ = rR.
+3. **The turn does not keep the walls.** Cube walls 1, 2, 3 go to 3, 3/2, 1; icosahedral walls (7+3√5)/6, φ² = (3+√5)/2,
+   (5+√5)/2 go to (5+√5)/2, (5+2√5)/3, (7+3√5)/6. The ends swap; the middle (rectified) wall goes off the wall set in both.
+4. **Ω(S;0), one power of μ per chamber (exact; the icosahedral sweep is new):** cube 48/μ³, 48/μ², 24/μ, 8 (chunk 2);
+   icosahedron 20(3+√5)/μ³, 60(3−√5)/μ², 60(7−3√5)/μ, 12(25−11√5). Under the turn no weighted form μ^k·Ω(S;0), k = 0..3, is
+   symmetric along the sweep; the only symmetric samples lie where μ and turn μ are both in the fixed point's own chamber, where
+   μ^k·Ω is constant (cube k = 2 on (3/2, 2); icosahedron k = 1). Nothing more than that.
+5. **Expansion at the centre** Ω(S(μ); t·u) = c0 + c2 t² + c4 t⁴ + …, anisotropy = difference between two axes at the first order
+   where the group allows one. Cube (exact): c2/c0 = 10/(3μ²), (μ²+2μ+7)/(3μ²), (2μ²+2μ+3)/(3μ²), 1; order-4 anisotropy/c0 =
+   −28/(9μ⁴), 2(μ⁴+2μ³+μ²−4μ−14)/(9μ⁴), (3μ⁴+2μ³−2μ²−8μ−12)/(9μ⁴), 1/3. It vanishes once on the sweep, at the root μ = 1.692590
+   of μ⁴+2μ³+μ²−4μ−14 in (1, 2): near the fixed point √3 = 1.732051 but NOT at it. At √3: c2/c0 = (10+2√3)/9, anisotropy/c0 =
+   4(√3−1)/81, slope 4/27 + 100√3/243 ≠ 0 (no extremum). Icosahedron (order 6; checked exactly at 5 rational μ per chamber, zeros
+   and values in 40-digit arithmetic): the order-6 anisotropy changes sign once (400-point scan per chamber), at μ = 2.891793 in (φ², (5+√5)/2): again near the fixed
+   point 2.875087 but not at it; at the fixed point c2/c0 = 0.778317, anisotropy/c0 = 0.000432, slope −0.0263.
+**Conclusion.** In canonical-form language the turn's fixed point is special only as the insphere point (all poles of Ω at one
+distance) and the one μ where S(turn μ) is a copy of S(μ); the turn is not a symmetry of the canonical forms, of their values at the
+centre, or of the walls. The point where Ω is roundest (anisotropy zero) and the Mahler maximum (chunk 2, μ = 1.631) both fall
+near the fixed point, not on it. Faults fixed on the way: the octahedron/icosahedron ends are not simple (fan over the dual polygon);
+nested radicals defeated two exact comparisons (squares compared; unnormalised axes); exact one-fraction forms over Q(√5) did not
+finish in 2 h (replaced by exact checks at sample μ plus a numeric scan); the first run's root filter missed the cube zero.
+NEXT (chunk 4): the associahedron sanity case (bi-adjoint scalar amplitudes).

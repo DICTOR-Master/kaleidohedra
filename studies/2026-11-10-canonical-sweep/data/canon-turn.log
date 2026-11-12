@@ -1,0 +1,85 @@
+ok   (P1) Warren on the cube = prod 2/(1 - y_i^2)
+ok   (P2) cube sweep mu = 1/2: Warren = triangulation formula at a generic point
+ok   (P2) cube sweep mu = 3/2: Warren = triangulation formula at a generic point
+ok   (P2) cube sweep mu = 5/2: Warren = triangulation formula at a generic point
+ok   (P2) cube sweep mu = 5: Warren = triangulation formula at a generic point
+ok   (N1) Warren with one vertex term dropped is caught by the triangulation check
+PROGRESS 0.2 controls
+
+===== cube / octahedron =====
+P: inradius r = 1, circumradius R = sqrt(3); sweep from mu_lo = r^2 = 1 (S = mu P*) to mu_hi = R^2 = 3 (S = P); turn mu -> 3/mu, fixed point rR = sqrt(3)
+ok   cube / octahedron: the turn constant given (3) equals mu_lo*mu_hi
+ok   cube / octahedron: S(mu) has all facets at one distance iff mu = rR = turn fixed point
+ok   cube / octahedron: (N2) the wrong turn mu -> 2/mu does NOT fix the insphere point
+ok   cube: walls in [1, 3] are exactly 1, 2, 3 (chunk 2)
+walls in [mu_lo, mu_hi]: [1, 2, 3] = [1.0, 2.0, 3.0]
+walls under the turn: [3, 3/2, 1]; walls mapped onto walls: [True, False, True]
+ok   cube / octahedron: (P3) mu in chamber at 0.5000 (6 vertices): Omega(S;0) = 3! vol(S*) = 48/mu**3
+ok   cube / octahedron: (P3) mu in chamber at 1.5000 (24 vertices): Omega(S;0) = 3! vol(S*) = 48/mu**2
+ok   cube / octahedron: (P3) mu in chamber at 2.5000 (24 vertices): Omega(S;0) = 3! vol(S*) = 24/mu
+ok   cube / octahedron: (P3) mu in chamber at 4.5000 (8 vertices): Omega(S;0) = 3! vol(S*) = 8
+Omega(S(mu); 0) per chamber: [(0.0, 1.0, 48/mu**3), (1.0, 2.0, 48/mu**2), (2.0, 3.0, 24/mu), (3.0, 'inf', 8)]
+   mu^0·Omega(S(mu);0) turn-symmetric at samples [1.2857, 1.5714, 1.8571, 2.1111, 2.7143] (turn images [2.3333, 1.9091, 1.6154, 1.4211, 1.1053]): [False, False, False, False, False]
+   mu^1·Omega(S(mu);0) turn-symmetric at samples [1.2857, 1.5714, 1.8571, 2.1111, 2.7143] (turn images [2.3333, 1.9091, 1.6154, 1.4211, 1.1053]): [False, False, False, False, False]
+   mu^2·Omega(S(mu);0) turn-symmetric at samples [1.2857, 1.5714, 1.8571, 2.1111, 2.7143] (turn images [2.3333, 1.9091, 1.6154, 1.4211, 1.1053]): [False, True, True, False, False]
+   mu^3·Omega(S(mu);0) turn-symmetric at samples [1.2857, 1.5714, 1.8571, 2.1111, 2.7143] (turn images [2.3333, 1.9091, 1.6154, 1.4211, 1.1053]): [False, False, False, False, False]
+similarity: facet-distance ratio rho(mu) = sqrt(3)*mu/3; rho(mu) = rho(turn mu) only at mu = [sqrt(3)]
+ok   cube / octahedron: S(turn mu) is similar to S(mu) only at the fixed point
+expansion of Omega(S(mu); t u) at the centre (orders 0..4), directions ['face axis', 'corner axis']:
+ok   cube: (P4) odd orders vanish and the order-2 term is isotropic
+  chamber (0.0, 1.0): c0 = 48/mu**3; c2/c0 = 10/(3*mu**2) (isotropic: True); order-4 anisotropy/c0 = -28/(9*mu**4); its real zeros in the chamber: []
+PROGRESS cube chamber done (0s)
+ok   cube: (P4) odd orders vanish and the order-2 term is isotropic
+  chamber (1.0, 2.0): c0 = 48/mu**2; c2/c0 = (mu**2 + 2*mu + 7)/(3*mu**2) (isotropic: True); order-4 anisotropy/c0 = (2*mu**4 + 4*mu**3 + 2*mu**2 - 8*mu - 28)/(9*mu**4); its real zeros in the chamber: [1.6925900339238809]
+    at the fixed point mu = 1.73205080756888: c2/c0 = 1.49601129057086 (d/dmu -1.12032264096164); anisotropy/c0 = 0.0361506571638952 (d/dmu 0.860926258258797)
+PROGRESS cube chamber done (1s)
+ok   cube: (P4) odd orders vanish and the order-2 term is isotropic
+  chamber (2.0, 3.0): c0 = 24/mu; c2/c0 = (2*mu**2 + 2*mu + 3)/(3*mu**2) (isotropic: True); order-4 anisotropy/c0 = (3*mu**4 + 2*mu**3 - 2*mu**2 - 8*mu - 12)/(9*mu**4); its real zeros in the chamber: []
+PROGRESS cube chamber done (1s)
+ok   cube: (P4) odd orders vanish and the order-2 term is isotropic
+  chamber (3.0, inf): c0 = 8; c2/c0 = 1 (isotropic: True); order-4 anisotropy/c0 = 1/3; its real zeros in the chamber: []
+PROGRESS cube chamber done (1s)
+PROGRESS 0.6 cube sweep
+
+===== icosahedron / dodecahedron =====
+P: inradius r = sqrt(sqrt(5)/2 + 7/6), circumradius R = sqrt(2*sqrt(5) + 10)/2; sweep from mu_lo = r^2 = 4/(3*(3 - sqrt(5))**2) (S = mu P*) to mu_hi = R^2 = sqrt(5)/2 + 5/2 (S = P); turn mu -> 11*sqrt(5)/6 + 25/6/mu, fixed point rR = sqrt(5)*sqrt(6*sqrt(5) + 30)/12 + sqrt(6*sqrt(5) + 30)/4
+ok   icosahedron / dodecahedron: the turn constant given ((1/2 + sqrt(5)/2)**4*(sqrt(5)/2 + 5/2)/3) equals mu_lo*mu_hi
+ok   icosahedron / dodecahedron: S(mu) has all facets at one distance iff mu = rR = turn fixed point
+ok   icosahedron / dodecahedron: (N2) the wrong turn mu -> 2/mu does NOT fix the insphere point
+walls in [mu_lo, mu_hi]: [sqrt(5)/2 + 7/6, sqrt(5)/2 + 3/2, sqrt(5)/2 + 5/2] = [2.284701, 2.618034, 3.618034]
+walls under the turn: [sqrt(5)/2 + 5/2, 2*sqrt(5)/3 + 5/3, 4/(3*(3 - sqrt(5))**2)]; walls mapped onto walls: [True, False, True]
+ok   icosahedron / dodecahedron: (P3) mu in chamber at 1.1424 (20 vertices): Omega(S;0) = 3! vol(S*) = 20*(sqrt(5) + 3)/mu**3
+ok   icosahedron / dodecahedron: (P3) mu in chamber at 2.4514 (60 vertices): Omega(S;0) = 3! vol(S*) = -60*(-3 + sqrt(5))/mu**2
+ok   icosahedron / dodecahedron: (P3) mu in chamber at 3.1180 (60 vertices): Omega(S;0) = 3! vol(S*) = -60*(-7 + 3*sqrt(5))/mu
+ok   icosahedron / dodecahedron: (P3) mu in chamber at 5.4271 (12 vertices): Omega(S;0) = 3! vol(S*) = -12*(-25 + 11*sqrt(5))
+Omega(S(mu); 0) per chamber: [(0.0, 2.2847, 20*(sqrt(5) + 3)/mu**3), (2.2847, 2.618, -60*(-3 + sqrt(5))/mu**2), (2.618, 3.618, -60*(-7 + 3*sqrt(5))/mu), (3.618, 'inf', -12*(-25 + 11*sqrt(5)))]
+   mu^0·Omega(S(mu);0) turn-symmetric at samples [2.4752, 2.6657, 2.8561, 3.0254, 3.4276] (turn images [3.3396, 3.101, 2.8942, 2.7322, 2.4117]): [False, False, False, False, False]
+   mu^1·Omega(S(mu);0) turn-symmetric at samples [2.4752, 2.6657, 2.8561, 3.0254, 3.4276] (turn images [3.3396, 3.101, 2.8942, 2.7322, 2.4117]): [False, True, True, True, False]
+   mu^2·Omega(S(mu);0) turn-symmetric at samples [2.4752, 2.6657, 2.8561, 3.0254, 3.4276] (turn images [3.3396, 3.101, 2.8942, 2.7322, 2.4117]): [False, False, False, False, False]
+   mu^3·Omega(S(mu);0) turn-symmetric at samples [2.4752, 2.6657, 2.8561, 3.0254, 3.4276] (turn images [3.3396, 3.101, 2.8942, 2.7322, 2.4117]): [False, False, False, False, False]
+similarity: facet-distance ratio rho(mu) = sqrt(3)*mu*(3 - sqrt(5))/sqrt(4 + (1 + sqrt(5))**2); rho(mu) = rho(turn mu) only at mu = [sqrt(3*sqrt(5) + 15)/(3*sqrt(7 - 3*sqrt(5)))]
+ok   icosahedron / dodecahedron: S(turn mu) is similar to S(mu) only at the fixed point
+expansion of Omega(S(mu); t u) at the centre (orders 0..6), directions ['vertex axis', 'face axis'] [exact at sample mu, numeric elsewhere]:
+ok   icosahedron: (P4) odd orders vanish and the order-2 term is isotropic (exact at sample mu)
+ok   icosahedron: (P5) the order-4 term is isotropic (exact at 5 sample mu)
+ok   icosahedron: (P3b) the order-0 term equals Omega(S;0) of the chamber (exact at 5 sample mu)
+  chamber (0.0, 2.2847): c0 = 20*(sqrt(5) + 3)/mu**3; c2/c0 at sample mu [0.297011085204153, 0.708257203179134, 1.14235032770828]: [59.355362131073484, 10.438143808690343, 4.012422480060573]; order-6 anisotropy/c0 sign + at the left end; real zeros in the chamber (numeric): []
+PROGRESS icosahedron chamber done (15s)
+ok   icosahedron: (P4) odd orders vanish and the order-2 term is isotropic (exact at sample mu)
+ok   icosahedron: (P5) the order-4 term is isotropic (exact at 5 sample mu)
+ok   icosahedron: (P3b) the order-0 term equals Omega(S;0) of the chamber (exact at 5 sample mu)
+  chamber (2.2847, 2.618): c0 = -60*(-3 + sqrt(5))/mu**2; c2/c0 at sample mu [2.32803398874989, 2.38803398874989, 2.45136732208323]: [0.9768213085507433, 0.942605722556508, 0.9089964278370225]; order-6 anisotropy/c0 sign + at the left end; real zeros in the chamber (numeric): []
+PROGRESS icosahedron chamber done (27s)
+ok   icosahedron: (P4) odd orders vanish and the order-2 term is isotropic (exact at sample mu)
+ok   icosahedron: (P5) the order-4 term is isotropic (exact at 5 sample mu)
+ok   icosahedron: (P3b) the order-0 term equals Omega(S;0) of the chamber (exact at 5 sample mu)
+  chamber (2.618, 3.618): c0 = -60*(-7 + 3*sqrt(5))/mu; c2/c0 at sample mu [2.74803398874989, 2.92803398874989, 3.11803398874989]: [0.8028405553013578, 0.7688953475570053, 0.7383999636884503]; order-6 anisotropy/c0 sign + at the left end; real zeros in the chamber (numeric): [2.891792659030825]
+    at the fixed point mu = 2.87508689006372: c2/c0 = 0.778317125037227 (d/dmu -0.182141666516921); anisotropy/c0 = 0.000431717368330967 (d/dmu -0.0263191579611159) [numeric, 40-digit arithmetic]
+PROGRESS icosahedron chamber done (35s)
+ok   icosahedron: (P4) odd orders vanish and the order-2 term is isotropic (exact at sample mu)
+ok   icosahedron: (P5) the order-4 term is isotropic (exact at 5 sample mu)
+ok   icosahedron: (P3b) the order-0 term equals Omega(S;0) of the chamber (exact at 5 sample mu)
+  chamber (3.618, inf): c0 = -12*(-25 + 11*sqrt(5)); c2/c0 at sample mu [4.55872282582487, 5.86121506177483, 7.23606797749979]: [0.6769352435004066, 0.6769352435004066, 0.6769352435004066]; order-6 anisotropy/c0 sign - at the left end; real zeros in the chamber (numeric): []
+PROGRESS icosahedron chamber done (40s)
+PROGRESS 1.0 icosahedral sweep
+FINAL ok: all controls held

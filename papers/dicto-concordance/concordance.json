@@ -6359,6 +6359,13 @@
     "retry": "lattice registration for bumped RDs; exact keying to cut 90 down",
     "study": "2026-11-12-rd-bridge",
     "date": "2026-11-12"
+   },
+   {
+    "question": "aim 2 chunk 3: what does the turn mu -> mu_lo*mu_hi/mu do to the canonical form of S(mu) = P ∩ mu P* (cube/octahedron, icosahedron/dodecahedron); is its fixed point special there?",
+    "method": "studies/2026-11-10-canonical-sweep/scripts/canon_turn.py: Warren vertex formula (fan at non-simple vertices), exact sympy; controls P1-P5, N1, N2 (39 checks, FINAL ok)",
+    "status": "ANSWERED",
+    "result": "fixed point = insphere point (proved for any polar pair) and the only mu where S(turn mu) is similar to S(mu); the turn keeps neither the walls (middle wall goes off: 2 -> 3/2; phi^2 -> (5+2sqrt5)/3) nor Omega(S;0) (icosahedral pieces new: 20(3+sqrt5)/mu^3, 60(3-sqrt5)/mu^2, 60(7-3sqrt5)/mu, 12(25-11sqrt5)); anisotropy zero of Omega at the centre near but not at the fixed point (cube 1.692590 vs sqrt3; icosahedron 2.891793 vs 2.875087)",
+    "retry": "no (answered); next chunk 4 associahedron sanity case"
    }
   ]
  },
@@ -8034,7 +8041,8 @@
    "Collected Works v51 published 9 Nov with a fifth chapter, Mandalas and yantras; Name Roots to DE-DICTO Issue 1; Hopscotch: outline now, paper next week; #103 v3 after the audit"
   ],
   "SECOND ULTIMATE GOAL: geometry gives laws": [
-   "DICTO 9 Nov 2026: one geometric object that hands out laws (as the amplituhedron does for particle scattering, Arkani-Hamed–Trnka 2013). Bridge: the canonical form of a polytope = the volume of its polar (the antipol of the DICTO Hopscotch). Chunks: 1 read and map; 2 canonical forms on the cube–octahedron line vs walls; 3 the turn in canonical-form language; 4 associahedron sanity case; 5 DICTO's solids as positive geometries; 6 Poincaré dodecahedral space; 7 E8 at the Golden Ladder's top. Long horizon; early prize = chunks 2–4."
+   "DICTO 9 Nov 2026: one geometric object that hands out laws (as the amplituhedron does for particle scattering, Arkani-Hamed–Trnka 2013). Bridge: the canonical form of a polytope = the volume of its polar (the antipol of the DICTO Hopscotch). Chunks: 1 read and map; 2 canonical forms on the cube–octahedron line vs walls; 3 the turn in canonical-form language; 4 associahedron sanity case; 5 DICTO's solids as positive geometries; 6 Poincaré dodecahedral space; 7 E8 at the Golden Ladder's top. Long horizon; early prize = chunks 2–4.",
+   "Chunk 3 (12 Nov 2026, studies/2026-11-10-canonical-sweep §chunk 3): the turn's fixed point is the insphere point of S(mu) = P ∩ mu P* (all poles of the canonical form at one distance) and the only mu where S(turn mu) is a copy of S(mu); the turn is not a symmetry of the canonical forms, of Omega at the centre, or of the walls; the roundest point (anisotropy zero) lies near, not on, the fixed point (cube and icosahedral sweeps). Next: chunk 4, associahedron."
   ],
   "Popular book of the one study: DICTO's working title A Brief Geometry of Space (was A Brief History of Space)": [
    "DICTO 9 Nov 2026, after Stephen Hawking: the popular book of the one study (the three aims as one story: pieces, crystals, the quasicrystal at the turn, the law-giving geometry); Quanta of Space essay as its first chapter; title clash check pending (subtitle likely).",
