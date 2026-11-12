@@ -1,0 +1,150 @@
+chunk 5c: 5 tasks on 4 cores
+ok   lemma: 2 lines through a point, alternate sectors: sum = 2 x (alternate sectors of a half-turn) != 0
+ok   lemma: 3 lines through a point, alternate sectors: both sums are 0 (symbolic rays)
+ok   lemma: 4 lines through a point, alternate sectors: sum = 2 x (alternate sectors of a half-turn) != 0
+ok   lemma: 5 lines through a point, alternate sectors: both sums are 0 (symbolic rays)
+ok   lemma: sectors add (Pluecker): Omega(a,b) + Omega(b,c) = Omega(a,c)
+ok   positive control: plain triangle: vertex = fan = 1/(xy(1-x-y))
+ok   positive control: plain triangle: 2 * polar area at (1/3, 1/3) = 27 = Omega
+ok   positive control: a triangle cut in four by its midlines sums back to the triangle (symbolic)
+ok   negative control: the same with the middle piece subtracted does not sum back
+PROGRESS 0.20 lemmas
+R1: 74 bounded faces: 43 regions (odd), 31 even faces inside the yantra, 0 outside every triangle
+R1: regions by ring (c = 1,3,5,7,9): [14, 10, 10, 8, 1]; regions by number of sides {3: 43}; even faces by sides {3: 10, 4: 21}
+ok   R1: every face of the arrangement is convex
+ok   R1: parity lemma: across every wall the count changes by exactly 1, so no two regions share a wall (0 exceptions, 0 odd-odd walls)
+ok   R1: each of the 43 regions: vertex formula = fan triangulation at all 676 grid points (grid lemma: identity of forms)
+ok   R1: every face: Omega > 0 inside and Omega = 2 * area of the polar at its centroid (chunk-2 bridge)
+ok   R1: positive control (known region sum): in each of the nine triangles the faces sum to the triangle's form (every inner wall cancels), all grid points
+ok   R1: valuation identity: sum of the 43 regions = sum over I of (-2)^(|I|-1) Omega(cap T_I) (511 nonempty intersections, by size [9, 36, 84, 126, 126, 84, 36, 9, 1]), all 676 grid points (grid lemma)
+ok   R1: sum of the nine triangles = sum of faces weighted by c
+ok   R1: negative control: one region with its sign flipped breaks the valuation identity
+ok   R1: negative control: one flipped normal breaks vertex = fan
+ok   R1: numerator N of the whole-yantra form has degree 24 (bound 24 from 27 lines)
+ok   R1: every one of the 27 sides is a pole line of the whole-yantra form (27)
+R1:   corner touch             lines through it m = 3, N vanishes to order k = 1: 6 points
+R1:   marma                    lines through it m = 3, N vanishes to order k = 2: 18 points
+R1:   outside crossing         lines through it m = 2, N vanishes to order k = 1: 68 points
+R1:   partly outside crossing  lines through it m = 2, N vanishes to order k = 1: 94 points
+R1:   sandhi                   lines through it m = 2, N vanishes to order k = 0: 24 points
+R1:   tip on a base            lines through it m = 3, N vanishes to order k = 1: 7 points
+R1:   triangle corner          lines through it m = 2, N vanishes to order k = 0: 14 points
+R1:   point residue |Res| at triangle corners (m = 2, k = 0): {1.0: 14}
+R1:   point residue |Res| at sandhis (m = 2, k = 0): {2.0: 24}
+R1:   22 crossings of extended side lines lie beyond the box |x| <= 3, |y - 1/2| <= 3 (not classified)
+ok   R1: at every crossing of extended lines off the drawn sides (in the box) N vanishes (order >= 1: no point residue, the adjoint zeros)
+ok   R1: traditional counts: 18 marmas, 24 sandhis (18, 24)
+ok   R1: at every marma N vanishes to order exactly 2 (the three alternate sectors cancel: no point residue)
+ok   R1: at every sandhi the point residue is 2 (the two opposite regions add)
+ok   R1: wall control: region + its even neighbour: pole exponent on the shared wall 0.000 (cancels); neighbour moved 1/1000 off the wall: 1.000 (pole left, negative control)
+R1: at the circle centre (0, 1/2): Omega(bindu region) = 5510.46736842, Omega_Y = 1649.82565609
+R1: 33 s
+PROGRESS 0.40 R1
+u isolated exactly by a sign change of the degree-160 polynomial on an interval of width 1e-280: yes; u = 0.6793185887067746573886503103907545526887
+GF1 rebuilt: bindu centring (not imposed) misses by 1.47e-294; worst Huet condition 4.67e-302; agrees with the stored 40 digits to 4.46e-41
+ok   GF1: DICTO Yantra rebuilt from its degree-160 polynomial at 300 digits
+GF1: 74 bounded faces: 43 regions (odd), 31 even faces inside the yantra, 0 outside every triangle
+GF1: regions by ring (c = 1,3,5,7,9): [14, 10, 10, 8, 1]; regions by number of sides {3: 43}; even faces by sides {3: 10, 4: 21}
+GF1: point merging: largest spread inside one merged point 1.87e-301 (tolerance 1e-150)
+ok   GF1: every face of the arrangement is convex
+ok   GF1: parity lemma: across every wall the count changes by exactly 1, so no two regions share a wall (0 exceptions, 0 odd-odd walls)
+ok   GF1: each of the 43 regions: vertex formula = fan triangulation at all 676 grid points (grid lemma: identity of forms)
+ok   GF1: every face: Omega > 0 inside and Omega = 2 * area of the polar at its centroid (chunk-2 bridge)
+ok   GF1: positive control (known region sum): in each of the nine triangles the faces sum to the triangle's form (every inner wall cancels), all grid points
+ok   GF1: valuation identity: sum of the 43 regions = sum over I of (-2)^(|I|-1) Omega(cap T_I) (511 nonempty intersections, by size [9, 36, 84, 126, 126, 84, 36, 9, 1]), all 676 grid points (grid lemma)
+ok   GF1: sum of the nine triangles = sum of faces weighted by c
+ok   GF1: negative control: one region with its sign flipped breaks the valuation identity
+ok   GF1: negative control: one flipped normal breaks vertex = fan
+ok   GF1: numerator N of the whole-yantra form has degree 24 (bound 24 from 27 lines)
+ok   GF1: every one of the 27 sides is a pole line of the whole-yantra form (27)
+GF1:   corner touch             lines through it m = 3, N vanishes to order k = 1: 6 points
+GF1:   marma                    lines through it m = 3, N vanishes to order k = 2: 18 points
+GF1:   outside crossing         lines through it m = 2, N vanishes to order k = 1: 74 points
+GF1:   partly outside crossing  lines through it m = 2, N vanishes to order k = 1: 94 points
+GF1:   sandhi                   lines through it m = 2, N vanishes to order k = 0: 24 points
+GF1:   tip on a base            lines through it m = 3, N vanishes to order k = 1: 7 points
+GF1:   triangle corner          lines through it m = 2, N vanishes to order k = 0: 14 points
+GF1:   point residue |Res| at triangle corners (m = 2, k = 0): {1.0: 14}
+GF1:   point residue |Res| at sandhis (m = 2, k = 0): {2.0: 24}
+GF1:   16 crossings of extended side lines lie beyond the box |x| <= 3, |y - 1/2| <= 3 (not classified)
+ok   GF1: at every crossing of extended lines off the drawn sides (in the box) N vanishes (order >= 1: no point residue, the adjoint zeros)
+ok   GF1: traditional counts: 18 marmas, 24 sandhis (18, 24)
+ok   GF1: at every marma N vanishes to order exactly 2 (the three alternate sectors cancel: no point residue)
+ok   GF1: at every sandhi the point residue is 2 (the two opposite regions add)
+ok   GF1: wall control: region + its even neighbour: pole exponent on the shared wall 0.000 (cancels); neighbour moved 1/1000 off the wall: 1.000 (pole left, negative control)
+GF1: at the circle centre (0, 1/2): Omega(bindu region) = 3356.78358951, Omega_Y = -86.0797258976
+GF1: 45 s
+PROGRESS 0.60 GF1
+u isolated exactly by a sign change of the degree-160 polynomial on an interval of width 1e-580: yes; u = 0.6793185887067746573886503103907545526887
+GF1 rebuilt: bindu centring (not imposed) misses by 1.86e-593; worst Huet condition 3.48e-602; agrees with the stored 40 digits to 4.46e-41
+ok   GF1: DICTO Yantra rebuilt from its degree-160 polynomial at 600 digits
+GF1: 74 bounded faces: 43 regions (odd), 31 even faces inside the yantra, 0 outside every triangle
+GF1: regions by ring (c = 1,3,5,7,9): [14, 10, 10, 8, 1]; regions by number of sides {3: 43}; even faces by sides {3: 10, 4: 21}
+GF1: point merging: largest spread inside one merged point 2.79e-601 (tolerance 1e-300)
+ok   GF1: every face of the arrangement is convex
+ok   GF1: parity lemma: across every wall the count changes by exactly 1, so no two regions share a wall (0 exceptions, 0 odd-odd walls)
+ok   GF1: each of the 43 regions: vertex formula = fan triangulation at all 676 grid points (grid lemma: identity of forms)
+ok   GF1: every face: Omega > 0 inside and Omega = 2 * area of the polar at its centroid (chunk-2 bridge)
+ok   GF1: positive control (known region sum): in each of the nine triangles the faces sum to the triangle's form (every inner wall cancels), all grid points
+ok   GF1: valuation identity: sum of the 43 regions = sum over I of (-2)^(|I|-1) Omega(cap T_I) (511 nonempty intersections, by size [9, 36, 84, 126, 126, 84, 36, 9, 1]), all 676 grid points (grid lemma)
+ok   GF1: sum of the nine triangles = sum of faces weighted by c
+ok   GF1: negative control: one region with its sign flipped breaks the valuation identity
+ok   GF1: negative control: one flipped normal breaks vertex = fan
+ok   GF1: numerator N of the whole-yantra form has degree 24 (bound 24 from 27 lines)
+ok   GF1: every one of the 27 sides is a pole line of the whole-yantra form (27)
+GF1:   corner touch             lines through it m = 3, N vanishes to order k = 1: 6 points
+GF1:   marma                    lines through it m = 3, N vanishes to order k = 2: 18 points
+GF1:   outside crossing         lines through it m = 2, N vanishes to order k = 1: 74 points
+GF1:   partly outside crossing  lines through it m = 2, N vanishes to order k = 1: 94 points
+GF1:   sandhi                   lines through it m = 2, N vanishes to order k = 0: 24 points
+GF1:   tip on a base            lines through it m = 3, N vanishes to order k = 1: 7 points
+GF1:   triangle corner          lines through it m = 2, N vanishes to order k = 0: 14 points
+GF1:   point residue |Res| at triangle corners (m = 2, k = 0): {1.0: 14}
+GF1:   point residue |Res| at sandhis (m = 2, k = 0): {2.0: 24}
+GF1:   16 crossings of extended side lines lie beyond the box |x| <= 3, |y - 1/2| <= 3 (not classified)
+ok   GF1: at every crossing of extended lines off the drawn sides (in the box) N vanishes (order >= 1: no point residue, the adjoint zeros)
+ok   GF1: traditional counts: 18 marmas, 24 sandhis (18, 24)
+ok   GF1: at every marma N vanishes to order exactly 2 (the three alternate sectors cancel: no point residue)
+ok   GF1: at every sandhi the point residue is 2 (the two opposite regions add)
+ok   GF1: wall control: region + its even neighbour: pole exponent on the shared wall 0.000 (cancels); neighbour moved 1/1000 off the wall: 1.000 (pole left, negative control)
+GF1: at the circle centre (0, 1/2): Omega(bindu region) = 3356.78358951, Omega_Y = -86.0797258976
+GF1: 61 s
+PROGRESS 0.80 GF1
+     [broken figure, not asserted] R1-broken: 79 bounded faces: 47 regions (odd), 32 even faces inside the yantra, 0 outside every triangle
+     [broken figure, not asserted] R1-broken: regions by ring (c = 1,3,5,7,9): [16, 12, 10, 8, 1]; regions by number of sides {3: 39, 4: 7, 6: 1}; even faces by sides {3: 7, 4: 19, 5: 4, 7: 2}
+     [broken figure, not asserted] FAIL R1-broken: every face of the arrangement is convex (3 non-convex: a corner pokes into a face, sides [6, 7, 7])
+     [broken figure, not asserted] ok   R1-broken: parity lemma: across every wall the count changes by exactly 1, so no two regions share a wall (0 exceptions, 0 odd-odd walls)
+     [broken figure, not asserted] FAIL R1-broken: each of the 47 regions: vertex formula = fan triangulation at all 676 grid points (grid lemma: identity of forms)
+     [broken figure, not asserted] ok   R1-broken: every face: Omega > 0 inside and Omega = 2 * area of the polar at its centroid (chunk-2 bridge)
+     [broken figure, not asserted] ok   R1-broken: positive control (known region sum): in each of the nine triangles the faces sum to the triangle's form (every inner wall cancels), all grid points
+     [broken figure, not asserted] ok   R1-broken: valuation identity: sum of the 47 regions = sum over I of (-2)^(|I|-1) Omega(cap T_I) (511 nonempty intersections, by size [9, 36, 84, 126, 126, 84, 36, 9, 1]), all 676 grid points (grid lemma)
+     [broken figure, not asserted] ok   R1-broken: sum of the nine triangles = sum of faces weighted by c
+     [broken figure, not asserted] ok   R1-broken: negative control: one region with its sign flipped breaks the valuation identity
+     [broken figure, not asserted] ok   R1-broken: negative control: one flipped normal breaks vertex = fan
+     [broken figure, not asserted] ok   R1-broken: numerator N of the whole-yantra form has degree 24 (bound 24 from 27 lines)
+     [broken figure, not asserted] ok   R1-broken: every one of the 27 sides is a pole line of the whole-yantra form (27)
+     [broken figure, not asserted] R1-broken:   corner touch             lines through it m = 3, N vanishes to order k = 1: 4 points
+     [broken figure, not asserted] R1-broken:   marma                    lines through it m = 3, N vanishes to order k = 2: 12 points
+     [broken figure, not asserted] R1-broken:   outside crossing         lines through it m = 2, N vanishes to order k = 1: 68 points
+     [broken figure, not asserted] R1-broken:   partly outside crossing  lines through it m = 2, N vanishes to order k = 1: 98 points
+     [broken figure, not asserted] R1-broken:   sandhi                   lines through it m = 2, N vanishes to order k = 0: 44 points
+     [broken figure, not asserted] R1-broken:   tip on a base            lines through it m = 3, N vanishes to order k = 1: 6 points
+     [broken figure, not asserted] R1-broken:   triangle corner          lines through it m = 2, N vanishes to order k = 0: 17 points
+     [broken figure, not asserted] R1-broken:   point residue |Res| at triangle corners (m = 2, k = 0): {1.0: 17}
+     [broken figure, not asserted] R1-broken:   point residue |Res| at sandhis (m = 2, k = 0): {2.0: 44}
+     [broken figure, not asserted] R1-broken:   22 crossings of extended side lines lie beyond the box |x| <= 3, |y - 1/2| <= 3 (not classified)
+     [broken figure, not asserted] ok   R1-broken: at every crossing of extended lines off the drawn sides (in the box) N vanishes (order >= 1: no point residue, the adjoint zeros)
+     [broken figure, not asserted] FAIL R1-broken: traditional counts: 12 marmas, 44 sandhis (18, 24)
+     [broken figure, not asserted] ok   R1-broken: at every marma N vanishes to order exactly 2 (the three alternate sectors cancel: no point residue)
+     [broken figure, not asserted] ok   R1-broken: at every sandhi the point residue is 2 (the two opposite regions add)
+     [broken figure, not asserted] ok   R1-broken: wall control: region + its even neighbour: pole exponent on the shared wall 0.000 (cancels); neighbour moved 1/1000 off the wall: 1.000 (pole left, negative control)
+     [broken figure, not asserted] R1-broken: at the circle centre (0, 1/2): Omega(bindu region) = 5510.46736842, Omega_Y = 1653.49893359
+     [broken figure] near the old marma (1,2,7): sandhi, sides ((1, 2), (2, 0)), k = 0, |Res| = 2.0
+     [broken figure] near the old marma (1,2,7): sandhi, sides ((1, 2), (7, 2)), k = 0, |Res| = 2.0
+     [broken figure] near the old marma (1,2,7): sandhi, sides ((2, 0), (7, 2)), k = 0, |Res| = 2.0
+ok   negative control (broken marma): R1 with t2's base moved 1/1000: 12 marmas left (18 before); within 1/100 of the old marma (1,2,7) 3 separate crossings, no triple point, and every two-side crossing there is a genuine point pole (k = 0, nonzero residue): the order-2 zero needs exact concurrency
+PROGRESS 1.00 R1-broken
+ok   R1 and the DICTO Yantra have the same crossing pattern (all 74 faces with their triangles and side lines; every point on the drawn sides with its type, m and k): the exact R1 results carry over as structure
+ok   DICTO Yantra at 300 and 600 digits: same pattern and point table; values agree to 6.67e-292, residues to 5.68e-282
+total 62 s
+FINAL ok

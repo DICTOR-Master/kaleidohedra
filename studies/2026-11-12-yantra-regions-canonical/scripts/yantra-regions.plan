@@ -1,0 +1,13 @@
+question: aim 2 chunk 5c FULL - canonical forms of the flat DICTO Yantra 43 regions: per-region positive geometry, wall cancellation (valuation identity), marma points as zeros of the numerator
+answer_looks_like: ok/FAIL lines (lemmas, R1 exact, GF1 at 80 digits: counts, parity, region sums, valuation identity, point table with orders k and residues, wall control); FINAL ok/FAIL
+pilot: yregions-pilot 39 s on 4 cores, FINAL ok (R1 exact 33 s, GF1 at 150 digits 39 s) after two fixes (tolerance below 100 digits; far crossings of extended lines boxed)
+size_estimate: 5 tasks: lemmas, R1 exact, GF1 at 300 and 600 digits, R1 broken-marma control (exact)
+memory_estimate_gb: 1
+time_estimate_h: 0.15
+bounded_by: fixed task list, timeout 0.5 h, 12 GB cage
+control: positive: plain triangle (1/(xy(1-x-y)), polar area 27/2), triangle in four by midlines, faces in each of the nine triangles sum to it; negative: mis-joined wall leaves a pole, one region sign-flipped breaks the valuation identity, flipped normal, middle piece subtracted
+progress: PROGRESS <done/tasks> per task
+ledger_checked: [176] chunk 5b (lead: Omega of the 2D yantra's 43 odd regions); [169] chunk 5; [89] Rh345 certified count; no settled or failed entry on region forms
+ledger_override: none
+if_ok: README conclusion, ledger entry, Concordance line under geometry gives laws, commit and push research-fig3, aim memory
+if_fail_or_cap: the pilot verdict stands (R1 exact + GF1 at 150 digits, all checks ok); read the failing line, fix, rerun
