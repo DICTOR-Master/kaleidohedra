@@ -23,3 +23,4 @@ Surrounding-sphere radii: D, C, T 1.401 (one sphere: Euclid's cube and its tetra
 O 1.309; CO 1.144; I 0.951; RD 1.618. Largest/smallest 2.753 → 1.701.
 Further option (not yet checked): the icosahedron dual to the cell (corners at the 12 face centres, radius 1.114, edge ≈ 1.171);
 RD (1.618) is then the outlier, fixed by the grid.
+- 13 Nov 2026 cover_render.py (Platonic book cover, DICTO's choice of #106 Figure 1): the skins row re-rendered at 7200 x 1440 px (one-world sizes, D·I·C·T·O, element colours, crisp edges); controls (edge lengths, corners inside the cell) pass, FINAL ok; job platonic-cover on the compute host. Output: papers/book-platonic/cover/cover-skins.png.
