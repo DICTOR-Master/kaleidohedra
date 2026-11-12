@@ -1,0 +1,43 @@
+level 4: chairs 4096, complete sites 108640 (1s)
+full labels done (18s)
+  closure it0: |P|=30 supertile poses=44 new=14
+  closure it1: |P|=44 supertile poses=44 new=0
+P0 30, P* 44 (closed) (0s)
+H28: 14 types, rules from level 4
+PROGRESS 0.00 poses (0s)
+PROGRESS 0.08 poses (23s)
+PROGRESS 0.17 poses (53s)
+PROGRESS 0.25 poses (81s)
+PROGRESS 0.34 poses (109s)
+PROGRESS 0.42 poses (134s)
+PROGRESS 0.50 poses (156s)
+PROGRESS 0.59 poses (182s)
+PROGRESS 0.67 poses (206s)
+PROGRESS 0.75 poses (237s)
+PROGRESS 0.84 poses (264s)
+PROGRESS 0.92 poses (299s)
+touching proper poses 1194; allowed by H28: 51; P0 (proper) 30 all allowed: True; inside P*: False; P* proper 44; allowed outside P*: 19; P* poses refused: 12
+VERDICT NOT ENOUGH: contacts outside P* allowed
+PROGRESS 0.05 extra contacts, live so far 1 (0s)
+PROGRESS 0.11 extra contacts, live so far 2 (0s)
+PROGRESS 0.16 extra contacts, live so far 3 (0s)
+PROGRESS 0.21 extra contacts, live so far 4 (0s)
+PROGRESS 0.26 extra contacts, live so far 5 (0s)
+PROGRESS 0.32 extra contacts, live so far 6 (0s)
+PROGRESS 0.37 extra contacts, live so far 7 (0s)
+PROGRESS 0.42 extra contacts, live so far 8 (0s)
+PROGRESS 0.47 extra contacts, live so far 9 (0s)
+PROGRESS 0.53 extra contacts, live so far 10 (0s)
+PROGRESS 0.58 extra contacts, live so far 11 (0s)
+PROGRESS 0.63 extra contacts, live so far 12 (0s)
+PROGRESS 0.68 extra contacts, live so far 13 (0s)
+PROGRESS 0.74 extra contacts, live so far 14 (0s)
+PROGRESS 0.79 extra contacts, live so far 15 (0s)
+PROGRESS 0.84 extra contacts, live so far 16 (0s)
+PROGRESS 0.89 extra contacts, live so far 17 (0s)
+PROGRESS 0.95 extra contacts, live so far 18 (0s)
+PROGRESS 1.00 extra contacts, live so far 19 (0s)
+control: occurring contacts found live 5 of 5
+extra contacts that survive a full shell round both chairs: 19 of 19; node limit hit 0 times
+VERDICT2 NOT CERTIFIED at this depth: [(((0, 2, 1), (-1, -1, -1)), (0, 2, 2)), (((0, 2, 1), (-1, -1, -1)), (2, 0, 2)), (((0, 2, 1), (-1, -1, -1)), (2, 2, 0)), (((0, 2, 1), (-1, 1, 1)), (0, 0, 0)), (((0, 2, 1), (1, -1, 1)), (0, 0, 0))]
+FINAL ok

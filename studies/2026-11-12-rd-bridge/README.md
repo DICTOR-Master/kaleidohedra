@@ -74,3 +74,13 @@ Same contact verdict for CF+EFRAME (96) and CF+ECELL (102); FULL (118) the contr
 certified assignment and Theorem A Kamenetsky; the RD bridge, the reductions and the tests ours. The c/h stacking is NOT touched
 (all layers c). Next: search between 12 and 90 for the smallest certified set; then a keyed RD shape (Grogan's / Kamenetsky's key
 constructions as templates).
+
+## The 12-90 search (12 Nov; `scripts/search_H.sh`, dbb job rd-searchH, FINAL ok; summary data/searchH-summary.txt)
+Edge RDs told each touching chair's turn only up to a subgroup H of the 24 rotations (centre RDs keep the full turn). All 30 subgroups:
+contact test (one shell), and for those with no contact outside P* the whole-chair test at R = 2. Controls held: H00 (trivial) = the
+90-type set certified; H29 (all 24) = 6 types, 115 contacts outside P*.
+- Certified (contacts inside P* AND whole chairs forced): H00 90, H01 90, H03 90, H02 87, H05 83, H07 83, **H18 62** (H18 = the
+  quarter turns about the y axis, the axis of the certified assignment's own (02) symmetry).
+- Contacts inside P* but whole chairs NOT forced at R = 2: 11 schemes of 35-85 types (H25, H26 35; H22, H23 36; H24 43; H15, H19 48;
+  H17 50; H04, H06 52; H08 57; and 69-85). Retest at R = 3 running (job rd-searchR3), with the rule check of H18.
+- Contacts outside P*: H13 28 (10), H21 15 (10), H27 32 (2), H28 14 (19), H29 6 (115).
