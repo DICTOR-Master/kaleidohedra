@@ -79,8 +79,7 @@ directions. Those are not roots, so they lie outside these cones (shown by the n
 
 **What the theorem already covers.** Every member with a segment summand is a #49 stretch, P ⊕ segment with P equal-edged. That is
 3 + 40 + 3137 orbits here, plus the zonohedra. Every member with a triangle or tetrahedron summand is a #49 cap form (158). In these cones #49's
-theorem extends with the same proof: **P ⊕ P′ is equal-edged exactly when P and P′ are equal-edged and no wall of the fan carries an
-edge of both** (edge lengths add on the cone). This covers the pentagon caps and every sum of atoms.
+theorem extends with the same proof: **if P and P′ are equal-edged (unit edges) and no wall of the fan carries an edge of both, then P ⊕ P′ is equal-edged** (the converse fails as stated: P = P′ = ½Q sums to Q; corrected 12 Nov 2026) (edge lengths add on the cone). This covers the pentagon caps and every sum of atoms.
 
 **New (the goal of the gap).** The *atoms* are equal-edged members with no equal-edged Minkowski summand other than a point and themselves.
 - A3 = B3: A3-10, the octahedron with a tetrahedron on one face (4 triangles, 3 rhombi 60/120, 7 corners). This shape is known (the 60° rhombohedron
