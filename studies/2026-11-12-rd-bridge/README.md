@@ -82,5 +82,7 @@ contact test (one shell), and for those with no contact outside P* the whole-cha
 - Certified (contacts inside P* AND whole chairs forced): H00 90, H01 90, H03 90, H02 87, H05 83, H07 83, **H18 62** (H18 = the
   quarter turns about the y axis, the axis of the certified assignment's own (02) symmetry).
 - Contacts inside P* but whole chairs NOT forced at R = 2: 11 schemes of 35-85 types (H25, H26 35; H22, H23 36; H24 43; H15, H19 48;
-  H17 50; H04, H06 52; H08 57; and 69-85). Retest at R = 3 running (job rd-searchR3), with the rule check of H18.
+  H17 50; H04, H06 52; H08 57; and 69-85). Retest at R = 3 (job rd-searchR3, FINAL ok): all 11 of 35-57 types NOT forced (grid check 0, positive control ok; the solver finds rule-obeying fillings that break the chair grouping round c0).
+- **H18 (62 types) rules complete by level 4** (2104-type check repeated: types and pair rules equal at levels 4 and 5).
+**Result: the smallest certified set among the 30 subgroup schemes has 62 marked RDs (H18): each edge RD knows each touching chair's turn up to quarter turns about the y axis, and which of its cubes share a chair; each centre RD its chair's full turn.** It is strongly aperiodic by the same chain as the 90-type set (grid, whole chairs at R = 2, contacts = the 30 occurring, Theorem A).
 - Contacts outside P*: H13 28 (10), H21 15 (10), H27 32 (2), H28 14 (19), H29 6 (115).
