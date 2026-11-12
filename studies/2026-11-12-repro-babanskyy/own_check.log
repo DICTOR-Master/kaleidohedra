@@ -1,0 +1,18 @@
+ok   (1) P038 has 15 linear extensions (paper 15)
+ok   (1) |H| = 8, |K| = 6, |HK| = 24, |H tau K| = 24, disjoint: True, |A| = 48 (paper 24 + 24 = 48)
+ok   (1) the 720 products a.w cover 720 of 720 permutations, multiplicities [1] (paper: all 720 once)
+ok   (1) negative control (tau = identity): covers 360 of 720 -> not a tiling
+ok   (2) n = 1: 1 posets up to isomorphism, 1 tile, 0 not series-parallel; tiler <=> series-parallel for 1 of 1
+ok   (2) n = 2: 2 posets up to isomorphism, 2 tile, 0 not series-parallel; tiler <=> series-parallel for 2 of 2
+ok   (2) n = 3: 5 posets up to isomorphism, 5 tile, 0 not series-parallel; tiler <=> series-parallel for 5 of 5
+ok   (2) n = 4: 16 posets up to isomorphism, 15 tile, 1 not series-parallel; tiler <=> series-parallel for 16 of 16
+ok   (2) n = 5: 63 posets up to isomorphism, 48 tile, 15 not series-parallel; tiler <=> series-parallel for 63 of 63
+ok   (2) census sizes 1, 2, 5, 16, 63 (OEIS A000112)
+ok   (2) controls: antichain and chain on 5 tile; N on 4 does not
+ok   (3) Ehrhart values m = 0..6: [1, 13, 77, 302, 917, 2338, 5250] (paper 1, 13, 77, 302, 917, 2338, 5250)
+ok   (3) h* = [1, 6, 7, 1, 0, 0, 0] (paper 1 + 6t + 7t^2 + t^3), h*(1) = 15 = |L| = 15
+ok   (3) vertices (order ideals) 13 (paper 13)
+ok   (3) 10 facets, all of dimension [5] (paper 10 facets of dimension 5)
+ok   (3) boundary f-vector [13, 50, 88, 81, 40, 10] (paper 13, 50, 88, 81, 40, 10)
+(1s)
+FINAL ok: every claim in scope confirmed
