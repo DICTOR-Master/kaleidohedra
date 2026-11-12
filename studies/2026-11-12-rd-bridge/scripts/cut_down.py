@@ -103,9 +103,15 @@ def torus_sites(gens):
     G = np.array(gens, float).T; Gi = np.linalg.inv(G)
     def red(v):
         f = Gi @ np.array(v, float); f = f - np.floor(f + 1e-9); return tuple(np.round(f, 6))
-    reps = {}
-    for x in itertools.product(range(-4, 5), repeat=3):
-        if sum(x) % 2 == 1: reps.setdefault(red(x), x)
+    # 12 Nov fix: the fixed box [-4,4]^3 missed cosets above index 8 (KeyError); walk the 12 neighbour steps to closure instead.
+    # (Results up to index 8 stand: a missed coset would have raised the same KeyError, and none did.)
+    x0 = next(x for x in itertools.product(range(-1, 2), repeat=3) if sum(x) % 2 == 1)
+    reps = {red(x0): x0}; todo = [x0]
+    while todo:
+        x = todo.pop()
+        for d in NB:
+            y = vadd(x, d); k = red(y)
+            if k not in reps: reps[k] = y; todo.append(y)
     return list(reps.values()), red
 res = {}
 from pysat.solvers import Cadical153
@@ -143,6 +149,7 @@ for name in want:
     tori = []; per = None
     for n, gens in sublattices(IMAX):
         S, red = torus_sites(gens); idx = {red(x): i for i, x in enumerate(S)}
+        assert len(S) == n, (n, len(S), gens)   # one site per coset: the torus has exactly n RDs
         s = Cadical153(); var = lambda i, a, r: 1 + (i * ntypes + a) * 24 + r
         top = var(len(S), 0, 0)
         for i in range(len(S)):
