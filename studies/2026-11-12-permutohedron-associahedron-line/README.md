@@ -51,7 +51,7 @@ generalized permutohedron's fan. A straight line from the interior of the deform
 only at its end. In type-cone language (Padrol–Pilaud–Ritter; Padrol–Palu–Pilaud–Plamondon), the open line lies in the interior of the braid fan's type
 cone, and t = 1 is the face that is the sylvester fan's type cone. Along A every non-interval facet shrinks to zero size **linearly**, (1 − t)·(a polynomial with no root at 1), except 135 in 4D,
 which shrinks to an edge as (1 − t)²(3t + 1); the facet-size polynomials are in the json. On the **equal-speed line B every non-interval facet S vanishes
-exactly at s = D_S** (checked for every facet, n = 4, 5). The stations of line B all stay generalized permutohedra (these are the
+exactly at s = D_S** (checked for every facet, n = 4, 5). For n = 4, 5 the stations of line B all stay generalized permutohedra (not for n = 6: see the section of 13 Nov below) (these are the
 removahedra between Π and L; Pilaud–Pons permutreehedra and Albertin–Pilaud–Ritter study this family combinatorially). In 4D line B is **not simple**
 for 1 < s < 3.
 
@@ -159,3 +159,11 @@ f-vectors of the table above reproduced exactly, Ω(Π) = 16/3, 10/3 and Ω(L) =
 at the ends, unimodular vertex cones of Π, Catalan(6) = 132 triangulations; negative: m_N with one tree dropped differs. A first n = 6 run ended
 FINAL FAIL only because the generalized-permutohedron test was written as a control; it is a finding, now reported, and the rerun is FINAL ok.
 (At n = 5 the station s = 1 itself is also not simple, besides 1 < s < 3.) LEAD 1 above is answered.
+
+**Reader's recheck (13 Nov 2026).** Both proofs above read line by line by an independent reader: no gap. The job `perm-proof-check`
+(compute node, 2 GB cage, one core) reran `gp_enum 6` (1420 candidates, identical to `data/lineb-cand-n6.txt`), `gp_line_b.py 6`
+(station data identical to `data/lineb-n6.json`; LINEB ok), `conj1_witness.py 11` (3797 facets; WITNESS ok) and the change-ringing
+`geodesics.py 8` (GEO ok), plus a separately written `scripts/reader_check.py`: the flag sum vs 2^(n-1) n/(n-1)! for n = 3..9, m_6, m_7,
+m_8 = 2288/5625 at the Loday centre by recursion over triangulations, the n = 6, s = 2 edge (1,6,1,2,7,4)-(2,5,1,2,8,3) confirmed an edge
+(direction (1,-1,0,0,1,-1), not a root), its own BFS for the ringing count n = 3..8, and the even-n placement step of the Conjecture 13.1
+proof. FINAL ok; log `data/reader-check.log`. Both results are written into the Permutohedron Family draft as Theorem 1 (iii), (iv) with proofs.

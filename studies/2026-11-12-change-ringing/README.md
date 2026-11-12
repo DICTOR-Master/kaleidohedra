@@ -67,3 +67,12 @@ edge paths C(n, 2) steps with Stanley's counts 2, 16, 768, 292864, 1100742656, 4
 negative: a 7-change way across on 5 bells with a detour obeys the identity with rests 11, u = 1, not the shortest-way pattern.
 The first pilot's FINAL FAIL was a wrong check of mine (it required backrounds to be the only row at distance n); the rows at distance n
 from rounds number 1, 3, 15, 61, 391, 2053 for n = 3..8, and no row is farther than n. Fixed and rerun: FINAL ok.
+
+**Reader's recheck (13 Nov 2026).** The proof above read line by line by an independent reader. One gap, closed in the chapter: in the
+even case "exactly n/2 x changes, alternating" does not follow from the count alone (for n = 6 the x may stand at changes 1, 3, 6 or
+1, 4, 6). The repair: n/2 non-consecutive x among n changes leave no run of other changes longer than two (none longer than one at either
+end), so each other change stands next to an x, shares no pair with it and is 1n; two 1n changes share the pair 23 (u = 0 forbids it),
+so x and 1n alternate. The placement fact is checked for n = 4..12 in `../2026-11-12-permutohedron-associahedron-line/scripts/reader_check.py`,
+which also recounts the shortest ways n = 3..8 with its own BFS; `geodesics.py 8` rerun in the same job: GEO ok (log
+`../2026-11-12-permutohedron-associahedron-line/data/reader-check.log`). The chapter now states the result inside Theorem 13.7 with the
+full proof, including why the plain hunt reaches backrounds in n changes. Status: SETTLED.
