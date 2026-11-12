@@ -192,6 +192,26 @@ same β = −0.040546428639856752804, slopes 0.733560546791499 / 0.7363829963840
 (data/lead1_viewpoint_rerun.log). Direction from the stored data alone (data/lead1_direction.log): u_V1 − λu_K1 = 2.2·10⁻³³ and
 v_V1 = v_K1/λ (β is stored to 30 digits); NEGATIVE, the old form u/λ misses by 0.062.
 
+**LEAD 6 CONCLUSION (12 Nov 2026): CLOSED EXACTLY; #43 Theorem 3 is the turn row of the beat line: polar about c^m·ρ² (ρ² = 15 − 5√5) sends S_k to S_{5+4m−k}, so the turn is k ↦ 5 − k with fixed point 5/2, and the turn centres are exactly 1/2 + 2ℤ (scripts/lead6_beat_row.py, 16 checks, FINAL ok).**
+The proof is bird 4 of studies/2026-11-09-icosahedral-line (ledger [70], not retried); the run checks the row's own entries in Q(√5).
+Antipol rule for m = −1, 0, 1 and k = −4..9 (42 cases); the turn conjugates T to T⁻¹; the φ² companion (centre 1/2) is the same turn
+class. Fixed point 5/2: no station is self-antipol, the antipol PAIR GTI|FPD is the GTI inscribed in the reference sphere (every
+corner at radius² ρ²) and the FPD circumscribed about it (every facet at distance² ρ²), the discrete form of "every face tangent"; one
+hop down, ID inscribed and RT circumscribed in φ². Classification: the four residues ID, RT, GTI, FPD are pairwise non-homothetic
+(exact; RT and FPD share 32 corners and the radius ratio but are not homothetic), and polar(S_k) is homothetic to S_j exactly when
+j ≡ 5 − k (mod 4), so there is no turn centred at 3/2 + 2ℤ. Measure: t_k = t_{6−k} (k = −2..7), t₁ = (5 − √5)/2, t₂ = t₄ = 3/φ²,
+t₃ = 5 − 5√5/3, the fixed shells largest. Controls: POSITIVE, the C–O row by the same code (antipol(P_μ) = P_{3/μ} at four μ);
+NEGATIVE, k ↦ 4 − k fails at every k, the unit sphere maps no station onto a station.
+
+**The bridge table (turn rows, 12 Nov 2026).**
+
+| line | antipol rule | turn | fixed point | what sits there | at the turn |
+|---|---|---|---|---|---|
+| cube–octahedron P_μ (#81) | P_μ^∨ = P_{3/μ} | μ ↦ 3/μ | √3 | P_√3, every face tangent (self-antipol) | t_min = 5 − 2√3, largest |
+| dodecahedron–icosahedron S_λ (lead 5) | S_λ^∨ = S_{1/λ} | λ ↦ 1/λ | 1 | S_1, every face tangent (self-antipol) | t_min = 10 − √5 − √(30 + 6√5), largest |
+| beat line of Universal PiTet (#43 Theorem 3, lead 6) | polar_{c^m ρ²}(S_k) = S_{5+4m−k} | k ↦ 5 − k | 5/2 (centres 1/2 + 2ℤ) | the pair GTI|FPD, GTI inscribed, FPD circumscribed | shell ratios t_k = t_{6−k}, fixed shells largest |
+| yantra viewpoint line (#103, row 1) | R T_β R = T_{−β} | β ↦ −β | 0, the frontal view | on each orbit u·v = p: u = v, Kulaichev's (a) | (d) one wall, linear in β |
+
 ## LEADS
 
 1. [CLOSED 12 Nov, see above] Correct the direction in studies/2026-11-08-sri-yantra/README.md (line 175) and viewpoint.py's docstring: u → λu, v → v/λ
@@ -204,7 +224,7 @@ v_V1 = v_K1/λ (β is stored to 30 digits); NEGATIVE, the old form u/λ misses b
    so the moment route covers all three constants (same as octahedral-constant LEAD 4).
 5. [WORKED 12 Nov, see above: yes, exact] The outline's prediction "the fixed point of a polar turn maximises t_min": on the C–O line it follows from s = μ + 3/μ ≥ 2√3; test
    the icosahedral two-family line (dodecahedron ∩ μ·icosahedron, turn μ ↦ c/μ) for the same closed form min(·, ·, a − b·s).
-6. #43 Theorem 3 (beat k ↔ 5 − k) as the turn of the Universal PiTet line, fixed point k = 5/2: write it as a row of the table.
+6. [CLOSED 12 Nov, see above] #43 Theorem 3 (beat k ↔ 5 − k) as the turn of the Universal PiTet line, fixed point k = 5/2: write it as a row of the table.
 7. Projective row and the outline's yantra prediction ("the yantra's conditions are walls of one determinant family"): (d) is now a
    linear wall in β; (b) and (c) are walls in the slope plane; the next step is to write (b), (c) as determinants in (u, v) on one orbit.
 

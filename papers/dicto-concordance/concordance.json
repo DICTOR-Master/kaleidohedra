@@ -6416,6 +6416,15 @@
     "retry": "never",
     "study": "studies/2026-11-09-hopscotch-rows",
     "date": "2026-11-12"
+   },
+   {
+    "question": "Aim 1 lead 6: #43 Theorem 3 (beat k <-> 5 - k, fixed point 5/2) written as a turn row of the bridge table, every entry checked exactly",
+    "method": "studies/2026-11-09-hopscotch-rows/scripts/lead6_beat_row.py: exact Q(sqrt5) stations (bird 4 construction, q5.py), S_k for all k by the hop; antipol rule for m = -1,0,1, k = -4..9; exact homothety classification of polar(S_k); inscribed/circumscribed test; shell ratios k = -2..7; controls: C-O row antipol(P_mu) = P_(3/mu) (positive), k -> 4-k, unit sphere, 3/2 centre (negative); 16 checks",
+    "status": "SETTLED (exact)",
+    "result": "row: line S_k (hop S_(k+4) = c S_k, c = 35 - 15sqrt5); antipol polar_(c^m rho^2)(S_k) = S_(5+4m-k), rho^2 = 15 - 5sqrt5; turn k -> 5 - k; fixed point 5/2 = antipol pair GTI|FPD (GTI inscribed, FPD circumscribed; no station self-antipol); turn centres exactly 1/2 + 2Z (polar(S_k) homothetic to S_j iff j = 5 - k mod 4; RT, FPD share signature but are not homothetic); shell ratios t_k = t_(6-k), fixed shells largest. Row added to the outline table and the hopscotch-rows bridge table",
+    "retry": "never",
+    "study": "studies/2026-11-09-hopscotch-rows",
+    "date": "2026-11-12"
    }
   ]
  },
@@ -8107,7 +8116,8 @@
   ],
   "FIRST AIM: the periodic-aperiodic bridge (the Hopscotch turn)": [
    "Lead 4 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY. The icosahedral constant 15 − 6√5 of #43 Theorem 2 now follows from orbit moments plus the one degree-6 invariant harmonic with no numerical step: the harmonic is √5·f6 − (5 + 2√5)/21 on the sphere, f6 a cubic in (x², y², z²), whose critical points are all found over Q(√5); its extremes sit at the five-fold and three-fold axes. With lead 5 (the turn's fixed point maximises t_min on the icosahedral two-family line, exact), the sphere row of the Hopscotch is now proved from the framework for all three Platonic symmetry types.",
-   "Lead 1 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED. The sri-yantra study now writes the viewpoint turn as the projective row proves it: u → λu, v → v/λ with λ = √((1 + β)/(1 − β)), the turn β ↦ −β; the rerun of viewpoint.py is numerically identical and the stored K1 → V1 data confirm the direction."
+   "Lead 1 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED. The sri-yantra study now writes the viewpoint turn as the projective row proves it: u → λu, v → v/λ with λ = √((1 + β)/(1 − β)), the turn β ↦ −β; the rerun of viewpoint.py is numerically identical and the stored K1 → V1 data confirm the direction.",
+   "Lead 6 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY. #43 Theorem 3 is now a turn row of the bridge table: polar about c^m·ρ² (ρ² = 15 − 5√5) sends beat S_k to S_{5+4m−k}, so the turn is k ↦ 5 − k with fixed point 5/2, and the turn centres are exactly 1/2 + 2ℤ. At the fixed point sits the antipol pair GTI|FPD, the GTI inscribed in the reference sphere and the FPD circumscribed about it (no station is self-antipol); the shell ratios read the same from either end, the fixed shells largest. Table in the hopscotch-rows README and the polar-line outline."
   ]
  }
 }

@@ -1,0 +1,26 @@
+corners per residue: {'ID': 30, 'RT': 32, 'GTI': 60, 'FPD': 32}
+signatures (corner count, squared radii / largest): {'ID': (30, [1.0]), 'RT': (32, [0.8291796067500631, 1.0]), 'GTI': (60, [1.0]), 'FPD': (32, [0.8291796067500631, 1.0])}
+   RT and FPD share the signature (32 corners, same radius ratio): True -- the exact homothety test decides
+polar_1(S_k) homothetic to S_j: [(0, 1), (1, 0), (2, 3), (3, 2)]
+shell 0->1: t = (5/2) + (-1/2)√5 = 1.381966011
+shell 1->2: t = (9/2) + (-3/2)√5 = 1.145898034
+shell 2->3: t = (5) + (-5/3)√5 = 1.273220038
+shell 3->4: t = (9/2) + (-3/2)√5 = 1.145898034
+  ok   hop: T(S_3) = c S_0 (so S_k is defined for all k by S_{k+4} = c S_k)
+  ok   antipol rule polar_(c^m rho^2)(S_k) = S_(5+4m-k), rho^2 = 15 - 5 sqrt5, m = -1, 0, 1, k = -4..9 (42 cases)
+  ok   turn k -> 5 - k is an involution on the line and conjugates T to T^-1: polar(T(S_k)) = T^-1(polar(S_k)), k = 0..5
+  ok   companion: polar_(phi^2)(S_k) = S_(1-k), k = -3..4 (centre 1/2 = 5/2 - 2: the same turn class)
+  ok   fixed point 5/2: GTI inscribed (every corner at radius^2 rho^2) and FPD circumscribed (every facet at distance^2 rho^2)
+  ok   the same pair one hop down: ID inscribed in phi^2, RT circumscribed about it (centre 1/2)
+  ok   the four residues ID, RT, GTI, FPD are pairwise non-homothetic (exact homothety test, positive scale)
+  ok   polar(S_k) ~ S_j exactly when j = 5 - k mod 4: every turn of the line is k -> 5 + 4m - k, centres 1/2 + 2Z only
+  ok   NEGATIVE: no turn centre at 3/2 (polar(RT) not homothetic to GTI; polar(ID) not homothetic to FPD)
+  ok   NEGATIVE: no station is self-antipol (5 - k = k has no integer solution; polar_rho(S_k) != S_k, k = 0..5)
+  ok   NEGATIVE: the wrong turn k -> 4 - k fails at every k = 0..4
+  ok   NEGATIVE: about the unit sphere no station maps onto a station (k, j in -4..9)
+  ok   shell ratios: t_k = t_(6-k) for k = -2..7 (the turn reflects the shells)
+  ok   shell values exact: t_1 = (5 - sqrt5)/2, t_2 = t_4 = 3/phi^2, t_3 = 5 - 5 sqrt5/3
+  ok   the fixed shells (centres 1/2 and 5/2) carry the two largest ratios
+  ok   POSITIVE control (C-O row): antipol(P_mu) = P_(3/mu) at mu = 5/4, 3/2, 2, 5/2
+time 12 s
+FINAL ok
