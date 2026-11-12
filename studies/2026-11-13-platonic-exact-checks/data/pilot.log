@@ -1,0 +1,28 @@
+== PART C controls: discs of convex solids (exact; both definitions)
+ok   C0 POSITIVE octahedron: 6 corners, 12 edges; #87 discs {4: 3} and planes with >= 3 edges {4: 3} (expect {4: 3}) 
+ok   C0 NEGATIVE cube: 8 corners, 12 edges; #87 discs {} and planes with >= 3 edges {} (expect {}) 
+ok   C0 POSITIVE cuboctahedron: 12 corners, 24 edges; #87 discs {6: 4} and planes with >= 3 edges {6: 4} (expect {6: 4}) 
+ok   C0 POSITIVE icosidodecahedron: 30 corners, 60 edges; #87 discs {10: 6} and planes with >= 3 edges {10: 6} (expect {10: 6}) 
+ok   C0 NEGATIVE dodecahedron: 20 corners, 30 edges; #87 discs {} and planes with >= 3 edges {} (expect {}) 
+PROGRESS 0.10 disc controls (1 s)
+== PART A: crossed-nest cores (exact)
+ok   A0 stella: 2 regular tetrahedra on the cube corners 
+ok   A0 stella core is a regular octahedron (corners [(-1.0, 0.0, 0.0), (0.0, -1.0, 0.0)]...)
+ok   A1 dodecahedron: 20 corners, 12 pentagons, one edge length, one radius 
+ok   A1 exactly 10 regular tetrahedra on the 20 corners 
+ok   A1 exactly 5 cubes (each the union T u -T of two of the ten tetrahedra; every inscribed cube is of this form) 
+ok   A1 core of the 5 cubes is a rhombic triacontahedron (32 corners, 30 congruent golden rhombi, 60 equal edges, corners on 2 spheres) (diagonal^2 ratio 3/2 + (1/2)√5; corner radius^2 ['9/2 + (-3/2)√5', '5/2 + (-1/2)√5'])
+ok   A1 core of the 10 tetrahedra is a regular icosahedron (edge^2 / dodecahedron edge^2 = 3/2 + (-1/2)√5 = 1/phi^2: True)
+ok   A1 its edge is exactly 1/phi times the dodecahedron edge 
+ok   A1 the 10-tetrahedra core icosahedron has its corners on the dodecahedron face axes (the dual position) 
+ok   A1 exactly 2 ways to take 5 of the 10 tetrahedra using all 20 corners (the chiral pair) 
+ok   A1 each chiral five has the SAME core icosahedron as the ten 
+ok   A2 icosahedron: 12 corners, 20 triangles, regular 
+ok   A2 30 edge midpoints, all at one radius 
+ok   A2 exactly 5 octahedra (three mutually orthogonal antipodal pairs) on the 30 midpoints 
+ok   A2 core of the 5 octahedra is a regular icosahedron 
+ok   A2 the core is lam x the icosahedron itself (same orientation), lam exact (lam = -1/2 + (1/2)√5 = 0.618034)
+ok   A2 lam = 1/phi: the golden loop shrinks by 1/phi per turn 
+PROGRESS 0.30 part A (4 s)
+22 checks, 0 failed, 4 s
+FINAL ok: all checks and controls held

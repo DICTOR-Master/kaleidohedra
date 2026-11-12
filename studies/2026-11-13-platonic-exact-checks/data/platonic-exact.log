@@ -1,0 +1,83 @@
+== PART C controls: discs of convex solids (exact; both definitions)
+ok   C0 POSITIVE octahedron: 6 corners, 12 edges; #87 discs {4: 3} and planes with >= 3 edges {4: 3} (expect {4: 3}) 
+ok   C0 NEGATIVE cube: 8 corners, 12 edges; #87 discs {} and planes with >= 3 edges {} (expect {}) 
+ok   C0 POSITIVE cuboctahedron: 12 corners, 24 edges; #87 discs {6: 4} and planes with >= 3 edges {6: 4} (expect {6: 4}) 
+ok   C0 POSITIVE icosidodecahedron: 30 corners, 60 edges; #87 discs {10: 6} and planes with >= 3 edges {10: 6} (expect {10: 6}) 
+ok   C0 NEGATIVE dodecahedron: 20 corners, 30 edges; #87 discs {} and planes with >= 3 edges {} (expect {}) 
+PROGRESS 0.10 disc controls (1 s)
+== PART A: crossed-nest cores (exact)
+ok   A0 stella: 2 regular tetrahedra on the cube corners 
+ok   A0 stella core is a regular octahedron (corners [(-1.0, 0.0, 0.0), (0.0, -1.0, 0.0)]...)
+ok   A1 dodecahedron: 20 corners, 12 pentagons, one edge length, one radius 
+ok   A1 exactly 10 regular tetrahedra on the 20 corners 
+ok   A1 exactly 5 cubes (each the union T u -T of two of the ten tetrahedra; every inscribed cube is of this form) 
+ok   A1 core of the 5 cubes is a rhombic triacontahedron (32 corners, 30 congruent golden rhombi, 60 equal edges, corners on 2 spheres) (diagonal^2 ratio 3/2 + (1/2)√5; corner radius^2 ['9/2 + (-3/2)√5', '5/2 + (-1/2)√5'])
+ok   A1 core of the 10 tetrahedra is a regular icosahedron (edge^2 / dodecahedron edge^2 = 3/2 + (-1/2)√5 = 1/phi^2: True)
+ok   A1 its edge is exactly 1/phi times the dodecahedron edge 
+ok   A1 the 10-tetrahedra core icosahedron has its corners on the dodecahedron face axes (the dual position) 
+ok   A1 exactly 2 ways to take 5 of the 10 tetrahedra using all 20 corners (the chiral pair) 
+ok   A1 each chiral five has the SAME core icosahedron as the ten 
+ok   A2 icosahedron: 12 corners, 20 triangles, regular 
+ok   A2 30 edge midpoints, all at one radius 
+ok   A2 exactly 5 octahedra (three mutually orthogonal antipodal pairs) on the 30 midpoints 
+ok   A2 core of the 5 octahedra is a regular icosahedron 
+ok   A2 the core is lam x the icosahedron itself (same orientation), lam exact (lam = -1/2 + (1/2)√5 = 0.618034)
+ok   A2 lam = 1/phi: the golden loop shrinks by 1/phi per turn 
+PROGRESS 0.30 part A (4 s)
+== PART B: octet thresholds (exact; cube side 2, sites on L = even-sum integer vectors; range 0 < s <= 3)
+ok   B0 Pacioli icosahedron: corners divide the octahedron edges in the golden ratio (|x|_1 = 1, ratio phi) 
+ok   B0 icosahedron: 20 facets 
+ok   B0 s = 1: 8 faces lie in the octahedron face planes |x|+|y|+|z| = 1 (the octet layer planes) 
+ok   B0 s = 1: the 4 corners with x = 0 form a golden rectangle in the cube plane x = 0 through the site (side ratio phi) 
+ok   B0 nest dodecahedron (face centres of the icosahedron): 20 corners, 12 pentagons, regular 
+ok   B0 gauge control: every corner of K has gauge exactly 1 
+   icosahedra: touch values <= 3 (s, offsets, shell): (1/2)√5 = 1.118034 x12 ['(1,1,0)']; 1/2 + (1/2)√5 = 1.618034 x6 ['(2,0,0)']; 2 = 2.000000 x24 ['(2,1,1)']; (1)√5 = 2.236068 x12 ['(2,2,0)']; 3/4 + (3/4)√5 = 2.427051 x12 ['(3,1,0)']; 1/2 + (1)√5 = 2.736068 x12 ['(3,1,0)']; 3 = 3.000000 x32 ['(2,2,2)', '(3,2,1)']
+ok   B1 icosahedra first touch at s = sqrt5/2 exactly (minimum over all cells; the bound |v|^2 <= 36 R^2 leaves 176 offsets) (s = (1/2)√5)
+ok   B1 first contact is face to face with a 2-dimensional overlap (one facet pair attains the gauge) (offsets 12 of shell ['(1,1,0)'], facet normal ['-1/2 + (-1/2)√5', '1/2 + (-1/2)√5', '0'], contact polygon of 4 corners, dim 2)
+   dodecahedra: touch values <= 3 (s, offsets, shell): 3/2 = 1.500000 x12 ['(1,1,0)']; -3/2 + (3/2)√5 = 1.854102 x6 ['(2,0,0)']; 3/4 + (3/4)√5 = 2.427051 x24 ['(2,1,1)']; -9/4 + (9/4)√5 = 2.781153 x12 ['(3,1,0)']; 3 = 3.000000 x20 ['(2,2,0)', '(2,2,2)']
+ok   B6 dodecahedra first touch at s = 3/2 exactly (s = 3/2; 12 offsets ['(1,1,0)']; contact dim 2, 4 corners; facets attaining 1)
+PROGRESS 0.45 touch thresholds (7 s)
+ok   B2 tetrahedral-hole centres (both kinds) are first reached at s = 3/2 exactly (reached by 4 cells at once: the 4 octahedra sharing a face with the hole)
+ok   B2 the hole centre lies on a grown layer face (normal (+-1,+-1,+-1)), in its interior (one facet attains the gauge) 
+ok   B3 (i) the octahedron corners have gauge exactly phi: O subset of phi I, so at s = phi every octahedron is covered 
+ok   B3 (ii) each of the 4 cones of a tetrahedral hole lies in the grown icosahedron of its face-neighbour at s = phi (corners <= phi) (largest corner gauge 1/2 + (1/2)√5)
+ok   B3 (iii) the octet corners are reached only at s = phi (by their 6 neighbouring cells): below phi they are uncovered 
+ok   B3 (iv) no edge of the octahedron lies on a facet of phi I, and the hole centre is at 3/2 < phi: the octet corners are the ONLY last points covered 
+PROGRESS 0.60 cover threshold (7 s)
+   icosahedra golden faces (12 per cell): coplanar faces first meet at s = 3/2 + (1/2)√5 = 2.618034 with [2] neighbours; contact ['corner to corner']; all meet values <= 3: ['3/2 + (1/2)√5']
+ok   B4 icosahedra golden faces: coplanar neighbouring faces first meet at s = 3/2 + (1/2)√5 exactly (every face of the family) (found ['3/2 + (1/2)√5']; contact ['corner to corner'])
+   icosahedra layer faces (8 per cell): coplanar faces first meet at s = 1 + (1/2)√5 = 2.118034 with [6] neighbours; contact ['corner on edge, at 3/2 + (-1/2)√5 of the edge from its nearer end']; all meet values <= 3: ['1 + (1/2)√5']
+ok   B4 icosahedra layer faces: coplanar neighbouring faces first meet at s = 1 + (1/2)√5 exactly (every face of the family) (found ['1 + (1/2)√5']; contact ['corner on edge, at 3/2 + (-1/2)√5 of the edge from its nearer end'])
+ok   B4 icosahedra: every face (20) has coplanar neighbours and falls into the families above 
+   dodecahedra all faces (12 per cell): coplanar faces first meet at s = 3 = 3.000000 with [2] neighbours; contact ['corner to corner']; all meet values <= 3: ['3']
+ok   B4 dodecahedra all faces: coplanar neighbouring faces first meet at s = 3 exactly (every face of the family) (found ['3']; contact ['corner to corner'])
+ok   B4 dodecahedra: every face (12) has coplanar neighbours and falls into the families above 
+PROGRESS 0.80 coplanar faces (8 s)
+PROGRESS 0.85 part B (8 s)
+== PART C: Dogstar (exact)
+ok   C1 all 168 coordinates recognised uniquely as (a + b sqrt5)/4 (|registry - exact| < 1e-9) 
+ok   C1 56 distinct corners, centroid exactly 0 
+ok   C1 every one of the 84 faces is exactly planar 
+ok   C1 closed oriented surface: each of the 138 edges in exactly 2 faces, opposite directions; V - E + F = 2 
+ok   C1 volume exactly phi/2 = cube of edge phi minus the six roofs of the neighbouring dodecahedra (2 phi^3 - (15 + 7 sqrt5)/4) (volume 1/4 + (1/4)√5)
+ok   C1 every face cone from O has positive volume (O on the inner side of every face plane; #87 Theorem 1: the Vacuus is well defined) 
+ok   C1 identity: every face lies on a face plane of the cube or of one of the six neighbouring dodecahedra (all of one orientation) (orientation a: dodecahedra with corners (phi/2) x cyclic(0, +-1/phi, +-phi))
+ok   C1 central faces (face plane through O): exactly 0 (the draft says 1; the 11-11 census JSON already had 0) (central faces = 0)
+ok   C1 symmetry: exactly 24 signed permutations keep the Dogstar (pyritohedral group, order 24; not the full octahedral 48) 
+   Dogstar: 27 central edge planes, edges per plane {2: 12, 6: 3, 8: 12}; edges through O 0; planes with >= 3 edges: 15 carrying 114
+   Dogstar #87: 54 flat sheets; central discs (closed, winding once) {}; float apex sums agree with the exact test: True
+ok   C2 11-11 count: 27 central planes; 12 carry 8 edges, 3 carry 6, 12 carry 2; 114 of 138 edges on the 15 planes with >= 3 edges (found 27, {2: 12, 6: 3, 8: 12}, 114)
+ok   C2 #87 definition: the central discs (closed sheets, apex angles summing to 2 pi) = {}: 0 discs carrying 0 of 138 edges
+ok   C2 the #87 exact test agrees with the float apex-angle sum on every sheet 
+   FINDING: the #87 discs and the 15 planes with >= 3 edges coincide: False (0 #87 discs vs 15 planes)
+   anatomy: 12 plane(s) with 8 edges -> 2 flat sheets (fins, open ends, degrees swept, exact opening) [(4, 2, 138.19, 'cos = -sqrt(5/9)'), (4, 2, 138.19, 'cos = -sqrt(5/9)')]; fins sweep 276.38 deg of 360 in all
+   anatomy: 3 plane(s) with 6 edges -> 2 flat sheets (fins, open ends, degrees swept, exact opening) [(3, 2, 116.565, 'cos = -sqrt(1/5)'), (3, 2, 116.565, 'cos = -sqrt(1/5)')]; fins sweep 233.13 deg of 360 in all
+ok   C2 every fan opening (exact cos of the angle between its end rays) equals the sum of its fin angles (float, 1e-9; 30 fans) 
+ok   C2 every Dogstar plane with >= 3 edges has open sheets only (no closed loop of fins round O) 
+   Dogstar: planes with >= 3 edges that are #87 discs, by size: {8: '0 of 12', 6: '0 of 3'}
+ok   C3 the 15 disc planes are exactly the 15 mirror planes of one icosahedral group containing the Dogstar's group (the group of the icosahedron cyclic(0, +-phi, +-1))
+ok   C3 3 of them are the coordinate planes (the 6-edge planes) and 12 are golden (the 8-edge planes) 
+ok   C3 only the 3 coordinate planes are mirrors of the Dogstar itself (3 mirrors among the 15)
+PROGRESS 0.97 part C Dogstar (9 s)
+59 checks, 0 failed, 9 s
+FINAL ok: all checks and controls held

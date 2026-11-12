@@ -1,0 +1,235 @@
+{
+ "C_controls": {
+  "octahedron": {
+   "corners": 6,
+   "edges": 12,
+   "planes_per_edges": {
+    "4": 3
+   },
+   "discs87": {
+    "4": 3
+   }
+  },
+  "cube": {
+   "corners": 8,
+   "edges": 12,
+   "planes_per_edges": {
+    "2": 6
+   },
+   "discs87": {}
+  },
+  "cuboctahedron": {
+   "corners": 12,
+   "edges": 24,
+   "planes_per_edges": {
+    "6": 4
+   },
+   "discs87": {
+    "6": 4
+   }
+  },
+  "icosidodecahedron": {
+   "corners": 30,
+   "edges": 60,
+   "planes_per_edges": {
+    "10": 6
+   },
+   "discs87": {
+    "10": 6
+   }
+  },
+  "dodecahedron": {
+   "corners": 20,
+   "edges": 30,
+   "planes_per_edges": {
+    "2": 15
+   },
+   "discs87": {}
+  }
+ },
+ "A": {
+  "stella": {
+   "core": "octahedron",
+   "corners": 6
+  },
+  "five_cubes": {
+   "core": "rhombic triacontahedron",
+   "corners": 32,
+   "faces": {
+    "4": 30
+   },
+   "edge2": "5 + (-2)\u221a5",
+   "radius2": [
+    "9/2 + (-3/2)\u221a5",
+    "5/2 + (-1/2)\u221a5"
+   ],
+   "edge_over_dodeca_edge_sq": "5/8 + (-1/8)\u221a5"
+  },
+  "ten_tetrahedra": {
+   "core": "icosahedron",
+   "edge_over_dodeca_edge": "-1/2 + (1/2)\u221a5",
+   "orientation": "corners on the dodecahedron face axes"
+  },
+  "chiral_fives": {
+   "count": 2,
+   "core_same_as_ten": true
+  },
+  "five_octahedra": {
+   "core": "icosahedron",
+   "scale": "-1/2 + (1/2)\u221a5",
+   "same_orientation": true
+  }
+ },
+ "B": {
+  "ico_touch": {
+   "s": "(1/2)\u221a5",
+   "offsets": 12,
+   "shell": [
+    "(1,1,0)"
+   ],
+   "contact": "4-gon face to face",
+   "facet_normal": [
+    "-1/2 + (-1/2)\u221a5",
+    "1/2 + (-1/2)\u221a5",
+    "0"
+   ],
+   "later_values": [
+    "1/2 + (1/2)\u221a5",
+    "2",
+    "(1)\u221a5",
+    "3/4 + (3/4)\u221a5",
+    "1/2 + (1)\u221a5",
+    "3"
+   ]
+  },
+  "dod_touch": {
+   "s": "3/2",
+   "offsets": 12,
+   "shell": [
+    "(1,1,0)"
+   ],
+   "contact_dim": 2,
+   "contact_corners": 4,
+   "later_values": [
+    "-3/2 + (3/2)\u221a5",
+    "3/4 + (3/4)\u221a5",
+    "-9/4 + (9/4)\u221a5",
+    "3"
+   ]
+  },
+  "hole_centres": {
+   "s": "3/2",
+   "cells": 4,
+   "on": "a layer-plane face (centre of the grown face)"
+  },
+  "cover": {
+   "s": "1/2 + (1/2)\u221a5",
+   "last_points": "the octet corners only (each reached by 6 cells at once)"
+  },
+  "icosahedra_golden_meet": {
+   "s": "3/2 + (1/2)\u221a5",
+   "faces": 12,
+   "neighbours_meeting": [
+    2
+   ],
+   "contact": [
+    "corner to corner"
+   ],
+   "all_values_le_3": [
+    "3/2 + (1/2)\u221a5"
+   ]
+  },
+  "icosahedra_layer_meet": {
+   "s": "1 + (1/2)\u221a5",
+   "faces": 8,
+   "neighbours_meeting": [
+    6
+   ],
+   "contact": [
+    "corner on edge, at 3/2 + (-1/2)\u221a5 of the edge from its nearer end"
+   ],
+   "all_values_le_3": [
+    "1 + (1/2)\u221a5"
+   ]
+  },
+  "dodecahedra_all_meet": {
+   "s": "3",
+   "faces": 12,
+   "neighbours_meeting": [
+    2
+   ],
+   "contact": [
+    "corner to corner"
+   ],
+   "all_values_le_3": [
+    "3"
+   ]
+  }
+ },
+ "C_dogstar_anatomy": [
+  {
+   "planes": 12,
+   "edges": 8,
+   "sheets": [
+    {
+     "fins": 4,
+     "open_ends": 2,
+     "degrees": 138.19,
+     "opening": "cos = -sqrt(5/9)"
+    },
+    {
+     "fins": 4,
+     "open_ends": 2,
+     "degrees": 138.19,
+     "opening": "cos = -sqrt(5/9)"
+    }
+   ],
+   "degrees_swept": 276.38
+  },
+  {
+   "planes": 3,
+   "edges": 6,
+   "sheets": [
+    {
+     "fins": 3,
+     "open_ends": 2,
+     "degrees": 116.565,
+     "opening": "cos = -sqrt(1/5)"
+    },
+    {
+     "fins": 3,
+     "open_ends": 2,
+     "degrees": 116.565,
+     "opening": "cos = -sqrt(1/5)"
+    }
+   ],
+   "degrees_swept": 233.13
+  }
+ ],
+ "C_dogstar": {
+  "corners": 56,
+  "edges": 138,
+  "faces": 84,
+  "faces_by_size": {
+   "3": 60,
+   "4": 24
+  },
+  "volume": "1/4 + (1/4)\u221a5",
+  "central_faces": 0,
+  "symmetry_order": 24,
+  "central_planes": 27,
+  "edges_per_plane": {
+   "2": 12,
+   "6": 3,
+   "8": 12
+  },
+  "discs_1111": 15,
+  "edges_on_discs": 114,
+  "share": "19/23 = 0.8261",
+  "discs_87": {},
+  "discs_87_equal_plane_discs": false,
+  "mirror_planes": "icosahedral group of orientation b",
+  "own_mirrors": 3,
+  "dodecahedra_orientation": "a"
+ }
+}

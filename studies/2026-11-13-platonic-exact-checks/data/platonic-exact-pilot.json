@@ -1,0 +1,83 @@
+{
+ "C_controls": {
+  "octahedron": {
+   "corners": 6,
+   "edges": 12,
+   "planes_per_edges": {
+    "4": 3
+   },
+   "discs87": {
+    "4": 3
+   }
+  },
+  "cube": {
+   "corners": 8,
+   "edges": 12,
+   "planes_per_edges": {
+    "2": 6
+   },
+   "discs87": {}
+  },
+  "cuboctahedron": {
+   "corners": 12,
+   "edges": 24,
+   "planes_per_edges": {
+    "6": 4
+   },
+   "discs87": {
+    "6": 4
+   }
+  },
+  "icosidodecahedron": {
+   "corners": 30,
+   "edges": 60,
+   "planes_per_edges": {
+    "10": 6
+   },
+   "discs87": {
+    "10": 6
+   }
+  },
+  "dodecahedron": {
+   "corners": 20,
+   "edges": 30,
+   "planes_per_edges": {
+    "2": 15
+   },
+   "discs87": {}
+  }
+ },
+ "A": {
+  "stella": {
+   "core": "octahedron",
+   "corners": 6
+  },
+  "five_cubes": {
+   "core": "rhombic triacontahedron",
+   "corners": 32,
+   "faces": {
+    "4": 30
+   },
+   "edge2": "5 + (-2)\u221a5",
+   "radius2": [
+    "9/2 + (-3/2)\u221a5",
+    "5/2 + (-1/2)\u221a5"
+   ],
+   "edge_over_dodeca_edge_sq": "5/8 + (-1/8)\u221a5"
+  },
+  "ten_tetrahedra": {
+   "core": "icosahedron",
+   "edge_over_dodeca_edge": "-1/2 + (1/2)\u221a5",
+   "orientation": "corners on the dodecahedron face axes"
+  },
+  "chiral_fives": {
+   "count": 2,
+   "core_same_as_ten": true
+  },
+  "five_octahedra": {
+   "core": "icosahedron",
+   "scale": "-1/2 + (1/2)\u221a5",
+   "same_orientation": true
+  }
+ }
+}

@@ -6711,6 +6711,15 @@
     "retry": "never as a lattice-sum/critical-point test; only LEADS: proof of the zonotope r^-6 law (adjoint contains the plane at infinity twice), an orientation-stable regularisation (residues on lattice rows in the extended planes) as a NEW hypothesis",
     "study": "studies/2026-11-13-amplitude-at-distance",
     "date": "2026-11-13"
+   },
+   {
+    "date": "2026-11-13",
+    "method": "studies/2026-11-13-platonic-exact-checks: platonic_exact.py, exact in Q(sqrt5) (field class qf.py of the #87 study, executed from its file): crossed-nest cores by exact half-space intersection; octet thresholds as exact gauge minima over ALL cells with norm bounds making every list finite, full event lists to s = 3, exact contact sets, cover proof at phi; Dogstar corners recognised in Q(sqrt5)/4 then planarity, closed surface, volume phi/2, symmetry, discs under both the 11-11 plane rule and the #87 closed-sheet rule; controls octahedron 3x4, cuboctahedron 4x6, icosidodecahedron 6x10, cube 0, dodecahedron 0; compute machine via job gate (platexact-pilot, platexact), 59 checks, FINAL ok",
+    "question": "Platonic book draft: make exact the three floating-point results (Ch 1 crossed-nest cores; Ch 10 octet thresholds sqrt5/2, 3/2, phi, 1+sqrt5/2, phi^2, 3; Ch 4 Dogstar's 15 discs)",
+    "result": "Crossed-nest cores EXACT as drafted (RT; icosahedron edge 1/phi x dodecahedron's, on its face axes; chiral fives same core; 5 octahedra -> icosahedron x 1/phi, same orientation). Octet: all six thresholds EXACT and each the first of its kind (complete lists to s = 3; icosahedra also meet their (2,0,0) neighbours at phi); cover at phi PROVED, octet corners the only last points; BUT coplanar faces never meet edge to edge: layer faces corner on edge at the golden point 1/phi^2, golden faces and dodecahedra corner to corner. Dogstar: 27 planes, 12x8 + 3x6 + 12x2 exact, 114/138 on the 15 icosahedral mirror planes; CENTRAL FACES 0 (draft: 1); under the #87 disc definition 0 DISCS: each plane holds two open fans (openings arccos(-sqrt5/3), arccos(-1/sqrt5)).",
+    "status": "SETTLED",
+    "retry": "never; lead only: rerun the 11-11 Vacuus census share ranking with the #87 closed-sheet rule",
+    "study": "studies/2026-11-13-platonic-exact-checks"
    }
   ]
  },
