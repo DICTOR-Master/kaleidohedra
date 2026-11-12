@@ -255,7 +255,7 @@ circle and G is not covariant under it; the old direction (u/λ, vλ) is not the
 
 1. [CLOSED 12 Nov, see above] Correct the direction in studies/2026-11-08-sri-yantra/README.md (line 175) and viewpoint.py's docstring: u → λu, v → v/λ
    (one-word fix each; the paper is right).
-2. #103: the uniqueness statement "every symmetric yantra has exactly one centring viewpoint, β\* = −y_H" can go into Theorem 5 or a
+2. [PLACED 12 Nov, DICTO: in Theorem 5, #103 v5 draft c30894f1] #103: the uniqueness statement "every symmetric yantra has exactly one centring viewpoint, β\* = −y_H" can go into Theorem 5 or a
    remark; destination: a #103 version line (DICTO's choice where).
 3. [CLOSED 12 Nov, see above: none besides Kulaichev's] Kulaichev's equal great triangles = the turn of its viewpoint orbit: is there a yantra meeting (b), (c), (d) AND sitting at the
    turn (u = v) besides Kulaichev's own? (Kulaichev = equal slopes + (b) + (c), (d) then holds to 10⁻²⁵⁵ per #103.)

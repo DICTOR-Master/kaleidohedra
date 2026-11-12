@@ -24,9 +24,10 @@ t1 = time.time()
 f = SCHEMES[SCH]; lab = {}; tid = {}
 for x in sites:
     L, arg = canon(f(entries(x))); lab[x] = (tid.setdefault(L, len(tid)), tuple(sorted(RI[R] for R in arg)))
-TYPES = {a: L for L, a in tid.items()}
+exec(open(__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), 'refine_snip.py')).read())   # REFINE=n: exact-keying refinement (12 Nov)
+TYPES = BASEL   # base label per (possibly refined) type
 allowed = defaultdict(set); seen = set()
-for x in sites:
+for x in lab:
     for d in NB:
         y = vadd(x, d)
         if y not in lab or (lab[x], lab[y], d) in seen: continue
@@ -34,6 +35,12 @@ for x in sites:
         for r in Ra:
             R = ROT[r]
             for q in Rb: allowed[(a, apply(R, d))].add((b, RI[compose(ROT[q], inverse(R))]))
+if os.environ.get('RULES'):                 # 12 Nov: rules = the fitting relation of the keyed RD (bumps and dents), not the marking's
+    import json as _j; _K = _j.load(open(os.environ['RULES']))
+    assert _K['type_labels'] == [repr(L) for L in tid], 'keyed file made from another type list'
+    allowed = defaultdict(set)
+    for a, e, b, q in _K['fit_relation']: allowed[(a, tuple(e))].add((b, q))
+    print(f"RULES from {os.environ['RULES']}: {len(_K['fit_relation'])} fitting face pairs (keyed geometry)", flush=True)
 print(f'{SCH}: {len(tid)} types ({sum(1 for L in TYPES.values() if len(L) == 1)} centre, {sum(1 for L in TYPES.values() if len(L) == 4)} edge, {sum(1 for L in TYPES.values() if len(L) == 0)} blank)', flush=True)
 def world(a, r, x):
     """world picture of type a in turn r at site x: list of (cube, frame or None, cell or None, id or None)"""

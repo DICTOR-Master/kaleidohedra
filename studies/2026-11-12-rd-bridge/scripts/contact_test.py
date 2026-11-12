@@ -22,8 +22,9 @@ print(f'P0 {len(P0)}, P* {len(Pstar)} ({status}) ({time.time()-t1:.0f}s)', flush
 f = SCHEMES[SCH]; lab = {}; tid = {}
 for x in sites:
     L, arg = canon(f(entries(x))); lab[x] = (tid.setdefault(L, len(tid)), tuple(sorted(RI[R] for R in arg)))
+exec(open(__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), 'refine_snip.py')).read())   # REFINE=n: exact-keying refinement (12 Nov)
 allowed = defaultdict(set); seen = set()
-for x in sites:
+for x in lab:
     for d in NB:
         y = vadd(x, d)
         if y not in lab or (lab[x], lab[y], d) in seen: continue
@@ -31,6 +32,12 @@ for x in sites:
         for r in Ra:
             R = ROT[r]
             for q in Rb: allowed[(a, apply(R, d))].add((b, RI[compose(ROT[q], inverse(R))]))
+if os.environ.get('RULES'):                 # 12 Nov: rules = the fitting relation of the keyed RD (bumps and dents), not the marking's
+    import json as _j; _K = _j.load(open(os.environ['RULES']))
+    assert _K['type_labels'] == [repr(L) for L in tid], 'keyed file made from another type list'
+    allowed = defaultdict(set)
+    for a, e, b, q in _K['fit_relation']: allowed[(a, tuple(e))].add((b, q))
+    print(f"RULES from {os.environ['RULES']}: {len(_K['fit_relation'])} fitting face pairs (keyed geometry)", flush=True)
 print(f'{SCH}: {len(tid)} types, rules from level {K}', flush=True)
 import itertools as _it
 def partitions(items):
@@ -39,7 +46,7 @@ def partitions(items):
     for p in partitions(rest):
         for i in range(len(p)): yield p[:i] + [[first] + p[i]] + p[i + 1:]
         yield [[first]] + p
-TYPES = {a: L for L, a in tid.items()}
+TYPES = BASEL   # base label per (possibly refined) type
 def options(x, own):
     """possible (type, R-index) at site x: every type label and turn whose world picture agrees with the known cubes (12 Nov: generic;
     the first version enumerated groupings of the unknown cubes and so handled sharing-only edge labels alone). A label entry
