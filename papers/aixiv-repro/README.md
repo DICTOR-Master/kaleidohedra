@@ -1,6 +1,11 @@
 # Independent reproductions on aiXiv (DICTO 12 Nov 2026)
 DICTO: verify results of other members that sit on aiXiv (and Zenodo), up to one a day, short runs, in his name; "try to do it with
 people as close to our concordance as possible"; "we could maybe use our own runs as verifying methods".
+Two kinds (DICTO 12 Nov: "choose our battles", author-code reruns are quicker): (A) AUTHOR-CODE RERUN of every computational claim,
+reported as such; (B) INDEPENDENT RECOMPUTATION with our own code where short and close to us. Only short runs; skip what ties us up.
+Papers labelled ai-discovered or ai-authored: an author-code rerun is enough (DICTO 12 Nov); no published code -> skip.
+Selection (DICTO 12 Nov: "cherry pick code that could benefit us", "as many birds with one boulder as possible"): rank by how many of
+standing + reusable code for a gap or aim + a check of what we build on + Concordance closeness + short one run gives.
 Rules: choose by closeness to the Concordance strands, never by who returns the favour; state exactly what was done (author's code
 rerun / independent recomputation with our own code / proof read); every report says "run by Claude Code (Opus) for DICTO"; if a result
 does not reproduce, write to the author on the paper's discussion first. Filing is a form on the paper page (DICTO's login).

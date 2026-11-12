@@ -54,4 +54,23 @@ Controls held (FULL no torus, PLAIN periodic). Two solver faults found and fixed
 pysat one-literal encoding returns nv 0) before any result was used.
 **Chair contacts (`scripts/contact_test.py`):** under the 12-type rules two chairs may touch in 99 of the 1194 proper touching poses:
 all 30 that occur in hierarchical tilings, 32 of Kamenetsky's 44, and 67 OUTSIDE his certified set. So Theorem A does not apply at once.
-Running: the two-shell test (do the 67 extra contacts ever survive a full second shell of chairs?), dbb job rd-encl.
+Two-shell test (Kamenetsky's live(), per extra contact): 49 of the 67 extra contacts survive a full shell round both chairs, so the
+12-type set is NOT certified this way.
+
+## The 90-type set is strongly aperiodic (12 Nov; DICTO: "second first", "go ahead with the whole chair test")
+Scheme FRAME+EFR: every RD is told the turn (frame) of each chair whose cubes it touches and which of its cubes share a chair; no
+cells. 90 marked RDs (1 centre kind, 89 edge kinds), each placed in any of its 24 turns; rules = the face-to-face pairs (type,
+direction, type, relative turn) of a hierarchical tiling: 2104 pair rules, the same at levels 4 and 5 (`scripts/rule_stability.py`).
+The chain:
+1. Tiling exists: the hierarchical chair tilings, read through the bridge, obey the rules (rules complete by level 4).
+2. Grid (`scripts/integrity_test.py` part G): no allowed pair places cubes on two different grids, so every filling has one cube grid.
+3. Whole chairs (part C, ball of radius 2 grid steps: 665 sites, 387 480 choices): no rule-obeying filling fails to read a whole chair,
+   turned as its RDs say, round a cube (UNSAT). Controls: a filling with a whole chair exists; with blank edges (FRAME) whole chairs
+   are NOT forced.
+4. Contacts (`scripts/contact_test.py`): two whole chairs may touch only in the 30 contacts that occur, all inside Kamenetsky's P*.
+5. So every filling by the 90 marked RDs is a P*-tiling of marked chairs, hence uniquely hierarchical (Kamenetsky's Theorem A, which we
+   reproduced with our own code, studies/2026-11-12-repro-kamenetsky), hence strongly aperiodic: no translation, no screw motion.
+Same contact verdict for CF+EFRAME (96) and CF+ECELL (102); FULL (118) the control. Credit: mechanism Tsiokos; frame marking,
+certified assignment and Theorem A Kamenetsky; the RD bridge, the reductions and the tests ours. The c/h stacking is NOT touched
+(all layers c). Next: search between 12 and 90 for the smallest certified set; then a keyed RD shape (Grogan's / Kamenetsky's key
+constructions as templates).

@@ -6322,6 +6322,24 @@
     "retry": "reductions of the 558 only (relay edges, cell read from neighbours)",
     "study": "2026-11-12-rd-bridge",
     "date": "2026-11-12"
+   },
+   {
+    "question": "one-piece aim, DICTO 12 Nov ('second first', 'whole chair test'): smallest RD marking that carries the certified chair hierarchy",
+    "method": "coarse schemes; contact_test (chair contacts allowed vs Kamenetsky P*), integrity_test (grid + whole chairs, SAT ball R=2), rule_stability (levels 4=5)",
+    "status": "FOUND (90-type set certified)",
+    "result": "FRAME+EFR: 90 marked RDs (frames of touching chairs + sharing, no cells), 2104 pair rules complete by level 4; only the 30 occurring chair contacts allowed; whole chairs forced (UNSAT, controls ok) -> every filling uniquely hierarchical (Kamenetsky Thm A, reproduced by us) -> strongly aperiodic RD set on the fcc packing (all c). 12-type CELLFRAME not certified (67 extra contacts, 49 survive a shell)",
+    "retry": "search between 12 and 90; keyed RD shape",
+    "study": "2026-11-12-rd-bridge",
+    "date": "2026-11-12"
+   },
+   {
+    "question": "aiXiv reproductions (DICTO 12 Nov): Kamenetsky 2610.00139 and Grogan 2610.01307",
+    "method": "own code from the papers' definitions (recount, enclosures, theoremB, grogan_pN)",
+    "status": "REPRODUCED",
+    "result": "Kamenetsky Thm A (2388, 30, 30->44->44, 135, tight; 33/18/15, U, Pr) and Thm B (3 closed / 6 offset / 2178 capped; Sigma values; min 44 by 3) all match; Grogan Prop E: p=3 30 (= Kamenetsky's marking up to axis relabelling), p=5 116 and p=7 318 identical to his data files",
+    "retry": "none",
+    "study": "2026-11-12-repro-kamenetsky",
+    "date": "2026-11-12"
    }
   ]
  },
