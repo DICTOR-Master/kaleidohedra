@@ -6648,6 +6648,15 @@
     "study": "studies/2026-11-12-og-galois-window",
     "date": "2026-11-13",
     "target": "#43 OG family; aim 1 (periodic-aperiodic bridge via windows)"
+   },
+   {
+    "question": "one-piece aim, leads of [191] (13 Nov): unkeyed poly-RDs of 8 cells; a directed (counterexample-guided) search for keyed RDs with no symmetry; keyed poly-RDs >= 6 cells",
+    "method": "studies/2026-11-12-hopeful-piece (PAUSED section): poly8.py, all 144 158 free 8-RD clusters, tori to 4 pieces per period (index 32) then 5-8 pieces for survivors, control = hp-main counts n<=6 reproduced; keysearch.py: one SAT model for piece + ball R2 filling, periods of index 1, 2 excluded completely, every torus period (index <= 32) learned as a clause in all 48 turns, control 31/31; deep re-checks to index 48 / R5 and 64 / R8; fit-table equivariance check, orientation and neighbour-pair counting LPs. dbb jobs hp2-pilot(b), hp-n8, hp-ks, hp-ksdeep, hp-ksdeep2",
+    "status": "PAUSED",
+    "result": "8-RD clusters COMPLETE: all periodic (8: 61 413, 16: 82 391, 24: 167, 32: 185; 2 survivors of 32 killed at 40 and 48). Directed keyed search PARTIAL (stopped by DICTO, 0/81 cubes exhausted): 5970 candidates, 841 untileable, killed at 3: 15, 4: 1133, 6: 99, 8: 2375, 12: 136, 16: 889, 24: 141, 32: 120; 221 passed index 32. Deep re-check PARTIAL: 83 checked, none periodic to 48 (fill R5); 73 of 82 classes fill R8 with no torus to 64; counting LPs feasible for all 83 (no counting obstruction). Not claimed aperiodic. Keyed poly-RDs not started",
+    "retry": "only on DICTO's word (13 Nov: 'pause the RDs search indefinitely'); never for 8-RD clusters; if resumed: finish deep2, deep3 (box tori to 128, R10) and the 138 later survivors",
+    "study": "2026-11-12-hopeful-piece",
+    "date": "2026-11-13"
    }
   ]
  },
@@ -6728,7 +6737,8 @@
   "Aim: one piece, any stacking (research open)": [
    "Step 2: four routes, two closed (layer bit; irrational screw), two open (Socolar–Taylor in-layer key, Narcissus achiral; in-layer + vertical coupling); Socolar–Taylor digest on DBB",
    "11-05 step 3: Route 3 alone closed (Socolar–Taylor 3D stacks periodically); step 3a: Kari-tile key on its side (rows = layers, x2 = c, x2/3 = h) forces an aperiodic c/h word: no tori to 10x10 (overnight to 30x30 clean so far), allowed words = Kari orbit words (+1 tie); step 3b: key on Narcissus faces (straight/turned join = c/h), ~14 keyed copies; 3c (one piece) open",
-   "12 Nov hopeful-piece hunt (keying paused): no single piece found; symmetric keyed RDs (6.4 M, exhaustive for |G|>=3) and poly-RDs to 7 cells are all untileable or periodic (tileable keyed RDs repeat by index 8, poly-RDs by 4 pieces per period); one RD carries at most 48 states, below every bridge marking without small periods; open: no-symmetry keyed RD by directed search, keyed poly-RDs (studies/2026-11-12-hopeful-piece)"
+   "12 Nov hopeful-piece hunt (keying paused): no single piece found; symmetric keyed RDs (6.4 M, exhaustive for |G|>=3) and poly-RDs to 7 cells are all untileable or periodic (tileable keyed RDs repeat by index 8, poly-RDs by 4 pieces per period); one RD carries at most 48 states, below every bridge marking without small periods; open: no-symmetry keyed RD by directed search, keyed poly-RDs (studies/2026-11-12-hopeful-piece)",
+   "13 Nov hopeful-piece leads, PAUSED by DICTO ('pause the RDs search indefinitely'): all 144 158 8-RD clusters periodic (worst 6 pieces per period); directed keyed-RD search partial (5970 candidates, periods pushed to 12-32, 221 past index 32; 73 classes fill R8 with no torus to 64, no counting obstruction, not claimed aperiodic); ledger [197]"
   ],
   "Watch list, no claim": [
    "C60 / fullerite fcc link to the close-packing work"

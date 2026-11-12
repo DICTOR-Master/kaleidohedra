@@ -8,6 +8,42 @@ paired ones, and all 14 102 unkeyed poly-RDs up to 7 cells, every piece is eithe
 a ball of radius 2 repeats with at most 8 pieces per period; every poly-RD up to 7 cells repeats with at most 4 pieces per period.
 Status: SETTLED for these families (a closed route, not a proof for keyed RDs with no symmetry). Keying stays paused.
 
+## PAUSED 13 Nov (DICTO): "pause the RDs search indefinitely"
+Leads 1 and 2 were run on 13 Nov; jobs hp-ks and hp-ksdeep2 were stopped cleanly at DICTO's word. Lead 3 (keyed poly-RDs of 6 or
+more cells) was not started. Retry only on DICTO's word.
+
+**One-line conclusion:** all 144 158 unkeyed 8-RD clusters are periodic (COMPLETE); the directed keyed-RD search was PARTIAL. It found
+221 keyed RDs with no torus up to index 32. Of these, 83 were re-checked: none has a torus up to index 48, and 73 of 82 congruence
+classes fill the ball R8 with no torus up to index 64. Nothing is claimed aperiodic: these are unexplained candidates, not hopeful
+pieces.
+
+| family | candidates | untileable | killed (periodic) at torus index | passed the cap |
+|---|---|---|---|---|
+| P8 poly-RD, no keys, n = 8, COMPLETE (job hp-n8, FINAL ok) | 144 158 free pieces | 0 | 8: 61 413, 16: 82 391, 24: 167, 32: 185; the 2 that passed 32 were killed at 40 and 48 | 0 |
+| KS keyed RD, heights -1..1, no symmetry assumed, directed search, PARTIAL (hp-ks stopped after about 2 h of its 2.5 h cap; 0 of 81 cubes exhausted) | 5970 | 841 (840 R3, 1 R4) | 3: 15, 4: 1133, 6: 99, 8: 2375, 12: 136, 16: 889, 24: 141, 32: 120 | 221 (no torus <= 32, fill R4) |
+| KS deep, PARTIAL (hp-ksdeep, FINAL ok, on the 83 logged by then; hp-ksdeep2 stopped at 92%) | 83 (82 up to congruence) | 0 to R5; 0 to R8 among 73 checked | none to index 48; none to index 64 among 73 checked | 73 classes fill R8 with no torus to 64; 9 classes unfinished; 138 later survivors unchecked |
+
+- **Lead 1, cap.** Pieces per period for n <= 7 grew to 4 (index 28 at n = 7), so the cap was set in pieces per period, not cells:
+  4 pieces (index 32) for all of n = 8, then 5 to 8 pieces (index 40 to 64) for the survivors. The worst case grew again to 6 pieces
+  (index 48), so a ninth-cell run would need a cap of at least 8 to 12 pieces. Faster engine `poly8.py` (integer torus reduction); control: it
+  reproduced hp-main's counts for n <= 6 exactly before the run (data/n8/ctl6.log).
+- **Lead 2, method** (`keysearch.py`). One SAT model asks for the piece and a filling of the ball R2 together. Periods of index 1 and
+  2 are excluded completely. Each period met on a torus (index <= 32) becomes a learned clause, "some contact of this pattern fails",
+  added in all 48 turns. Control (data/ks/ctl.log): 31/31 test pieces agree; a blocked witness refuses its piece. The search drives
+  periods up: symmetric keyed RDs repeat by index 8 (hp-main), while here periods of 12 to 32 are common.
+- **Checks on the 83 deep candidates (13 Nov).** The fit table is symmetric and O_h-equivariant, which licenses one torus per orbit
+  and the fixed centre turn. All 1325 tori to index 12, with no orbit reduction: no filling (3 pieces, `check_equiv.py`). Every candidate
+  has 48 viable turns, 1 to 32 partners per face and no symmetry; the sum of heights is 0. Counting tests (`lp_check.py`): the
+  orientation-frequency LP and the neighbour-pair LP are feasible for all 83. So no counting obstruction is known; periods above 64,
+  or untileability beyond R8, stay open.
+- Pilot fault fixed (13 Nov): the first keysearch control reused one model for its blocking tests, so an earlier witness (rightly)
+  blocked later control pieces. Each blocking test now uses a fresh model (hp2-pilotb, 31/31).
+- Data: data/n8 (counts, survivors, deep), data/ks (shard logs, counts at the stop), data/ksdeep (deep48 json, deep2 logs, LP).
+  Scripts: poly8.py, keysearch.py, run_n8.sh, run_ks.sh, run_ksdeep.sh, run_ksdeep2.sh, check_equiv.py, lp_check.py,
+  inspect_surv.py, deep3.py (written, not run: box tori of index 65..128 and the ball R10).
+- Next if DICTO resumes: finish deep2 (9 classes) and deep2 for the 138 later survivors; deep3; a 2x2-patch LP; then report any piece
+  still standing to DICTO first (not keyed).
+
 ## Plan (written before computing)
 Ledger read first (concordance.json): Narcissus with crest, edge or face decorations is CLOSED ([160]: "never on Narcissus ...; only a
 carrier with more turns per site (RD bridge, 24) or several pieces"); keys on half-cells at the hexagon or the inter-layer rhombi are
