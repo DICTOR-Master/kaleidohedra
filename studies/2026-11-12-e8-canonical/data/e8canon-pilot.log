@@ -1,0 +1,61 @@
+chunk 7: E8 at the top rung; pilot=True; cores=8
+A2: 6 roots, conv = 6 vertices / 6 facets; Voronoi volume (simple-root coords) = 1; det = 3; F1 simplices 6; qhull 1.000000000000
+ok   A2: Omega(conv roots; 0) = 2! sqrt(det) <=> coordinate Voronoi volume = 1 (exact)
+ok   A2: qhull polar volume = 1 (numerical, 1e-9)
+ok   A2: F1 = F2 at 2 generic points (exact)
+ok   A2: vol(conv roots) by F2 = qhull (9.0000000000)
+A3: 12 roots, conv = 12 vertices / 14 facets; Voronoi volume (simple-root coords) = 1; det = 4; F1 simplices 24; qhull 1.000000000000
+ok   A3: Omega(conv roots; 0) = 3! sqrt(det) <=> coordinate Voronoi volume = 1 (exact)
+ok   A3: qhull polar volume = 1 (numerical, 1e-9)
+ok   A3: F1 = F2 at 2 generic points (exact)
+ok   A3: vol(conv roots) by F2 = qhull (13.3333333333)
+D4: 24 roots, conv = 24 vertices / 24 facets; Voronoi volume (simple-root coords) = 1; det = 4; F1 simplices 96; qhull 1.000000000000
+ok   D4: Omega(conv roots; 0) = 4! sqrt(det) <=> coordinate Voronoi volume = 1 (exact)
+ok   D4: qhull polar volume = 1 (numerical, 1e-9)
+ok   D4: F1 = F2 at 2 generic points (exact)
+ok   D4: vol(conv roots) by F2 = qhull (16.0000000000)
+ok   24-cell (D4 roots, norm 2): Omega(0) = 4! * vol(Voronoi 24-cell of edge 1) = 4! * 2 = 48
+PROGRESS 0.20 lattice chain (0 s)
+bcc: {'short only (8)': (Fraction(9, 16), 6), 'all relevant (14)': (Fraction(1, 2), 24)}
+ok   NEG bcc, shortest 8 only: Omega(0)/3! = 9/16 != covolume 1/2 (missing square walls of the truncated octahedron)
+ok   bcc, all 14 relevant vectors: polar = truncated octahedron, volume 1/2 = covolume (Omega(0) = 3)
+ok   NEG D4 with one pulled child dropped: volume 95/96 != 1
+PROGRESS 0.30 negatives (0 s)
+ok   E8: 2160 deep holes + 17280 shallow holes = 19440 facets of 4_21 (2160 + 17280)
+ok   E8: every facet normal n has n.r <= 1 on all 240 roots (exact integers)
+ok   E8: deep holes touch 14 roots (beta7), shallow 8 (alpha7)
+ok   E8: facets span rank 8 (samples of both types)
+ok   E8: each root lies on 702 facets (576 alpha7 + 126 beta7): {702}
+E8 polar facet at root 0: 56 facets (edges at the root), 44 pulled children
+PROGRESS 0.700 E8 child 0:0 simplices 1088 (0 s)
+E8 root 0: pulled triangulation of its polar facet: 1088 simplices; 240 x cone volume = 1/28 (pilot: one child only)
+PROGRESS 0.75 E8 (1 s)
+ok   icosian map: the 240 standard roots go exactly onto the 240 icosian roots (120 units + 120 units/phi)
+ok   icosian map is an isometry: B(q(x), q(y)) = x.y on 243 pairs (exact)
+ok   icosian map: B(q(n), q(r)) <= 1 with equality exactly on incidences (sample of 50 x 240, exact)
+shadow of 4_21 in E_par (roots q): 120 vertices (squared radii [1]), 600 facets (vertices per facet [4]); vol_coord = (-25/8 + 25/8*sqrt5) = 3.8627124297; vol_coord(polar) = (-6300 + 2820*sqrt5) = 5.7116965494; F1 3240 / F2 600 simplices
+ok   shadow of 4_21 in E_par (roots q): exact volumes = qhull (1e-9)
+ok   shadow of 4_21 in E_par (roots q): F1 = F2 at a generic Q(sqrt5) point (exact)
+ok   NEG shadow of 4_21 in E_par (roots q): one F1 term sign-flipped breaks F1 = F2
+shadow of 4_21 in E_perp (roots sigma q): 120 vertices (squared radii [(3/2 + 1/2*sqrt5)]), 600 facets (vertices per facet [4]); vol_coord = (25/2 + 25/4*sqrt5) = 26.4754248594; vol_coord(polar) = (-43200 + 19320*sqrt5) = 0.8333252959; F1 3240 / F2 600 simplices
+ok   shadow of 4_21 in E_perp (roots sigma q): exact volumes = qhull (1e-9)
+ok   shadow of 4_21 in E_perp (roots sigma q): F1 = F2 at a generic Q(sqrt5) point (exact)
+ok   NEG shadow of 4_21 in E_perp (roots sigma q): one F1 term sign-flipped breaks F1 = F2
+window W_perp = pi_perp(Voronoi): 137 vertices (squared radii [(7/9 + 1/3*sqrt5), (7/8 + 3/8*sqrt5)]), 650 facets (vertices per facet [4, 5]); vol_coord = (52217/9216 + 23417/9216*sqrt5) = 11.3475481585; vol_coord(polar) = (-55761857/12 + 24937471/12*sqrt5) = 1.9452441381; F1 3480 / F2 651 simplices
+ok   window W_perp = pi_perp(Voronoi): exact volumes = qhull (1e-9)
+ok   window W_perp = pi_perp(Voronoi): F1 = F2 at a generic Q(sqrt5) point (exact)
+ok   NEG window W_perp = pi_perp(Voronoi): one F1 term sign-flipped breaks F1 = F2
+twin window W_par = pi_par(Voronoi): 134 vertices (squared radii [(1/3 + 1/9*sqrt5), (3/8 + 1/8*sqrt5)]), 642 facets (vertices per facet [4]); vol_coord = (893/1152 + 907/2304*sqrt5) = 1.6554312741; vol_coord(polar) = (-4081757/6 + 1825453/6*sqrt5) = 13.3329551540; F1 3441 / F2 642 simplices
+ok   twin window W_par = pi_par(Voronoi): exact volumes = qhull (1e-9)
+ok   twin window W_par = pi_par(Voronoi): F1 = F2 at a generic Q(sqrt5) point (exact)
+ok   NEG twin window W_par = pi_par(Voronoi): one F1 term sign-flipped breaks F1 = F2
+ok   E_par shadow = 600-cell of radius 1 (120 vertices, 600 tetrahedra)
+ok   600-cell: Omega(0) = 4! vol(polar) and the polar is a 120-cell: vol = (15/4)(105+47 sqrt5) a^4 with a^2 = (94 - 42*sqrt5) (exact)
+Omega_coord(600-cell; 0) = 24 vol(120-cell) = (-151200 + 67680*sqrt5) = 137.0807171858
+ok   E_perp shadow = 600-cell of radius phi (the twin of the 1/phi cell)
+window W_perp = pi_perp(Voronoi): true volume = density of the quasicrystal = (19783/11520 + 9017/11520*sqrt5) = 3.467502166069; Omega_true(W; 0) = 4! vol(4_21 cap E_perp) = (-53247770 + 23813195*sqrt5) = 152.7814581096; Omega_true(4_21 cap E_perp; 0) = 4! density = (19783/480 + 9017/480*sqrt5) = 83.2200519857
+twin window W_par = pi_par(Voronoi): true volume = density of the quasicrystal = (9893/5760 + 4507/5760*sqrt5) = 3.467180273367; Omega_true(W; 0) = 4! vol(4_21 cap E_par) = (-53431340 + 23895290*sqrt5) = 152.7820709497; Omega_true(4_21 cap E_par; 0) = 4! density = (9893/240 + 4507/240*sqrt5) = 83.2123265608
+PROGRESS 0.90 H4 (10 s)
+PROGRESS 1.00 done (10 s)
+FINAL ok
+[exit 0]

@@ -1,0 +1,193 @@
+chunk 7: E8 at the top rung; pilot=False; cores=12
+A2: 6 roots, conv = 6 vertices / 6 facets; Voronoi volume (simple-root coords) = 1; det = 3; F1 simplices 6; qhull 1.000000000000
+ok   A2: Omega(conv roots; 0) = 2! sqrt(det) <=> coordinate Voronoi volume = 1 (exact)
+ok   A2: qhull polar volume = 1 (numerical, 1e-9)
+ok   A2: F1 = F2 at 2 generic points (exact)
+ok   A2: vol(conv roots) by F2 = qhull (9.0000000000)
+A3: 12 roots, conv = 12 vertices / 14 facets; Voronoi volume (simple-root coords) = 1; det = 4; F1 simplices 24; qhull 1.000000000000
+ok   A3: Omega(conv roots; 0) = 3! sqrt(det) <=> coordinate Voronoi volume = 1 (exact)
+ok   A3: qhull polar volume = 1 (numerical, 1e-9)
+ok   A3: F1 = F2 at 2 generic points (exact)
+ok   A3: vol(conv roots) by F2 = qhull (13.3333333333)
+A4: 20 roots, conv = 20 vertices / 30 facets; Voronoi volume (simple-root coords) = 1; det = 5; F1 simplices 120; qhull 1.000000000000
+ok   A4: Omega(conv roots; 0) = 4! sqrt(det) <=> coordinate Voronoi volume = 1 (exact)
+ok   A4: qhull polar volume = 1 (numerical, 1e-9)
+ok   A4: F1 = F2 at 2 generic points (exact)
+ok   A4: vol(conv roots) by F2 = qhull (14.5833333333)
+D4: 24 roots, conv = 24 vertices / 24 facets; Voronoi volume (simple-root coords) = 1; det = 4; F1 simplices 96; qhull 1.000000000000
+ok   D4: Omega(conv roots; 0) = 4! sqrt(det) <=> coordinate Voronoi volume = 1 (exact)
+ok   D4: qhull polar volume = 1 (numerical, 1e-9)
+ok   D4: F1 = F2 at 2 generic points (exact)
+ok   D4: vol(conv roots) by F2 = qhull (16.0000000000)
+D5: 40 roots, conv = 40 vertices / 42 facets; Voronoi volume (simple-root coords) = 1; det = 4; F1 simplices 480; qhull 1.000000000000
+ok   D5: Omega(conv roots; 0) = 5! sqrt(det) <=> coordinate Voronoi volume = 1 (exact)
+ok   D5: qhull polar volume = 1 (numerical, 1e-9)
+ok   D5: F1 = F2 at 2 generic points (exact)
+ok   D5: vol(conv roots) by F2 = qhull (14.4000000000)
+E6: 72 roots, conv = 72 vertices / 54 facets; Voronoi volume (simple-root coords) = 1; det = 3; F1 simplices 2160; qhull 1.000000000000
+ok   E6: Omega(conv roots; 0) = 6! sqrt(det) <=> coordinate Voronoi volume = 1 (exact)
+ok   E6: qhull polar volume = 1 (numerical, 1e-9)
+ok   E6: F1 = F2 at 2 generic points (exact)
+ok   E6: vol(conv roots) by F2 = qhull (11.7000000000)
+E7: 126 roots, conv = 126 vertices / 632 facets; Voronoi volume (simple-root coords) = 1; det = 2; F1 simplices 131040; qhull 1.000000000000
+ok   E7: Omega(conv roots; 0) = 7! sqrt(det) <=> coordinate Voronoi volume = 1 (exact)
+ok   E7: qhull polar volume = 1 (numerical, 1e-9)
+ok   24-cell (D4 roots, norm 2): Omega(0) = 4! * vol(Voronoi 24-cell of edge 1) = 4! * 2 = 48
+PROGRESS 0.20 lattice chain (12 s)
+bcc: {'short only (8)': (Fraction(9, 16), 6), 'all relevant (14)': (Fraction(1, 2), 24)}
+ok   NEG bcc, shortest 8 only: Omega(0)/3! = 9/16 != covolume 1/2 (missing square walls of the truncated octahedron)
+ok   bcc, all 14 relevant vectors: polar = truncated octahedron, volume 1/2 = covolume (Omega(0) = 3)
+ok   NEG D4 with one pulled child dropped: volume 95/96 != 1
+PROGRESS 0.30 negatives (12 s)
+ok   E8: 2160 deep holes + 17280 shallow holes = 19440 facets of 4_21 (2160 + 17280)
+ok   E8: every facet normal n has n.r <= 1 on all 240 roots (exact integers)
+ok   E8: deep holes touch 14 roots (beta7), shallow 8 (alpha7)
+ok   E8: facets span rank 8 (samples of both types)
+ok   E8: each root lies on 702 facets (576 alpha7 + 126 beta7): {702}
+E8 polar facet at root 0: 56 facets (edges at the root), 44 pulled children
+E8 polar facet at root 112: 56 facets (edges at the root), 44 pulled children
+PROGRESS 0.305 E8 child 0:0 simplices 1088 (0 s)
+PROGRESS 0.309 E8 child 0:6 simplices 1088 (0 s)
+PROGRESS 0.314 E8 child 0:3 simplices 1088 (0 s)
+PROGRESS 0.318 E8 child 0:5 simplices 1088 (0 s)
+PROGRESS 0.323 E8 child 0:7 simplices 1088 (0 s)
+PROGRESS 0.327 E8 child 0:4 simplices 1088 (0 s)
+PROGRESS 0.332 E8 child 0:12 simplices 1088 (0 s)
+PROGRESS 0.336 E8 child 0:9 simplices 1088 (0 s)
+PROGRESS 0.341 E8 child 0:1 simplices 1088 (0 s)
+PROGRESS 0.345 E8 child 0:13 simplices 1088 (0 s)
+PROGRESS 0.350 E8 child 0:8 simplices 1088 (0 s)
+PROGRESS 0.355 E8 child 0:10 simplices 1088 (0 s)
+PROGRESS 0.359 E8 child 0:18 simplices 1088 (0 s)
+PROGRESS 0.364 E8 child 0:20 simplices 1088 (0 s)
+PROGRESS 0.368 E8 child 0:21 simplices 1088 (0 s)
+PROGRESS 0.373 E8 child 0:2 simplices 1088 (0 s)
+PROGRESS 0.377 E8 child 0:11 simplices 1088 (0 s)
+PROGRESS 0.382 E8 child 0:24 simplices 1088 (0 s)
+PROGRESS 0.386 E8 child 0:16 simplices 1088 (0 s)
+PROGRESS 0.391 E8 child 0:14 simplices 1088 (0 s)
+PROGRESS 0.395 E8 child 0:17 simplices 1088 (0 s)
+PROGRESS 0.400 E8 child 0:15 simplices 1088 (0 s)
+PROGRESS 0.405 E8 child 0:25 simplices 1088 (0 s)
+PROGRESS 0.409 E8 child 0:19 simplices 1088 (0 s)
+PROGRESS 0.414 E8 child 0:26 simplices 1088 (0 s)
+PROGRESS 0.418 E8 child 0:23 simplices 1088 (0 s)
+PROGRESS 0.423 E8 child 0:29 simplices 1088 (0 s)
+PROGRESS 0.427 E8 child 0:22 simplices 1088 (0 s)
+PROGRESS 0.432 E8 child 0:34 simplices 1088 (0 s)
+PROGRESS 0.436 E8 child 0:36 simplices 1088 (0 s)
+PROGRESS 0.441 E8 child 0:38 simplices 1088 (0 s)
+PROGRESS 0.445 E8 child 0:40 simplices 1088 (0 s)
+PROGRESS 0.450 E8 child 0:30 simplices 1088 (0 s)
+PROGRESS 0.455 E8 child 0:41 simplices 1088 (0 s)
+PROGRESS 0.459 E8 child 0:33 simplices 1088 (0 s)
+PROGRESS 0.464 E8 child 0:32 simplices 1088 (0 s)
+PROGRESS 0.468 E8 child 0:35 simplices 1088 (0 s)
+PROGRESS 0.473 E8 child 0:27 simplices 1088 (0 s)
+PROGRESS 0.477 E8 child 0:28 simplices 1088 (0 s)
+PROGRESS 0.482 E8 child 0:42 simplices 1088 (0 s)
+PROGRESS 0.486 E8 child 0:37 simplices 1088 (0 s)
+PROGRESS 0.491 E8 child 0:31 simplices 1088 (0 s)
+PROGRESS 0.495 E8 child 0:43 simplices 1088 (0 s)
+PROGRESS 0.500 E8 child 0:39 simplices 1088 (0 s)
+PROGRESS 0.505 E8 child 112:1 simplices 1088 (0 s)
+PROGRESS 0.509 E8 child 112:7 simplices 1088 (1 s)
+PROGRESS 0.514 E8 child 112:0 simplices 1088 (1 s)
+PROGRESS 0.518 E8 child 112:10 simplices 1088 (1 s)
+PROGRESS 0.523 E8 child 112:12 simplices 1088 (1 s)
+PROGRESS 0.527 E8 child 112:2 simplices 1088 (1 s)
+PROGRESS 0.532 E8 child 112:3 simplices 1088 (1 s)
+PROGRESS 0.536 E8 child 112:4 simplices 1088 (1 s)
+PROGRESS 0.541 E8 child 112:8 simplices 1088 (1 s)
+PROGRESS 0.545 E8 child 112:11 simplices 1088 (1 s)
+PROGRESS 0.550 E8 child 112:13 simplices 1088 (1 s)
+PROGRESS 0.555 E8 child 112:15 simplices 1088 (1 s)
+PROGRESS 0.559 E8 child 112:16 simplices 1088 (1 s)
+PROGRESS 0.564 E8 child 112:5 simplices 1088 (1 s)
+PROGRESS 0.568 E8 child 112:6 simplices 1088 (1 s)
+PROGRESS 0.573 E8 child 112:9 simplices 1088 (1 s)
+PROGRESS 0.577 E8 child 112:14 simplices 1088 (1 s)
+PROGRESS 0.582 E8 child 112:17 simplices 1088 (1 s)
+PROGRESS 0.586 E8 child 112:18 simplices 1088 (1 s)
+PROGRESS 0.591 E8 child 112:19 simplices 1088 (1 s)
+PROGRESS 0.595 E8 child 112:22 simplices 1088 (1 s)
+PROGRESS 0.600 E8 child 112:20 simplices 1088 (1 s)
+PROGRESS 0.605 E8 child 112:21 simplices 1088 (1 s)
+PROGRESS 0.609 E8 child 112:23 simplices 1088 (1 s)
+PROGRESS 0.614 E8 child 112:24 simplices 1088 (1 s)
+PROGRESS 0.618 E8 child 112:28 simplices 1088 (1 s)
+PROGRESS 0.623 E8 child 112:29 simplices 1088 (1 s)
+PROGRESS 0.627 E8 child 112:30 simplices 1088 (1 s)
+PROGRESS 0.632 E8 child 112:32 simplices 1088 (1 s)
+PROGRESS 0.636 E8 child 112:31 simplices 1088 (1 s)
+PROGRESS 0.641 E8 child 112:35 simplices 1088 (1 s)
+PROGRESS 0.645 E8 child 112:36 simplices 1088 (1 s)
+PROGRESS 0.650 E8 child 112:27 simplices 1088 (1 s)
+PROGRESS 0.655 E8 child 112:25 simplices 1088 (1 s)
+PROGRESS 0.659 E8 child 112:26 simplices 1088 (1 s)
+PROGRESS 0.664 E8 child 112:33 simplices 1088 (1 s)
+PROGRESS 0.668 E8 child 112:34 simplices 1088 (1 s)
+PROGRESS 0.673 E8 child 112:40 simplices 1088 (1 s)
+PROGRESS 0.677 E8 child 112:42 simplices 1088 (1 s)
+PROGRESS 0.682 E8 child 112:43 simplices 1088 (1 s)
+PROGRESS 0.686 E8 child 112:38 simplices 1088 (1 s)
+PROGRESS 0.691 E8 child 112:37 simplices 1088 (1 s)
+PROGRESS 0.695 E8 child 112:41 simplices 1088 (1 s)
+PROGRESS 0.700 E8 child 112:39 simplices 1088 (1 s)
+E8 root 0: pulled triangulation of its polar facet: 47872 simplices; 240 x cone volume = 1
+ok   E8: vol(Voronoi cell) = 1 from root 0 (exact) => Omega(4_21; 0) = 8! = 40320
+E8 root 112: pulled triangulation of its polar facet: 47872 simplices; 240 x cone volume = 1
+ok   E8: vol(Voronoi cell) = 1 from root 112 (exact) => Omega(4_21; 0) = 8! = 40320
+vol(4_21), roots of norm 2: 57/7 = 8.142857142857
+ok   E8: vol(4_21) = 17280 alpha7 cones (1/13440 each) + 2160 beta7 cones; Mahler product vol(4_21) vol(Voronoi) = vol(4_21) < ball bound (pi^4/24)^2 = 16.473144
+Omega(Voronoi E8; 0) = 8! vol(4_21) = 328320; Mahler/ball = 0.494311
+PROGRESS 0.75 E8 (17 s)
+ok   icosian map: the 240 standard roots go exactly onto the 240 icosian roots (120 units + 120 units/phi)
+ok   icosian map is an isometry: B(q(x), q(y)) = x.y on 243 pairs (exact)
+ok   icosian map: B(q(n), q(r)) <= 1 with equality exactly on incidences (sample of 50 x 240, exact)
+shadow of 4_21 in E_par (roots q): 120 vertices (squared radii [1]), 600 facets (vertices per facet [4]); vol_coord = (-25/8 + 25/8*sqrt5) = 3.8627124297; vol_coord(polar) = (-6300 + 2820*sqrt5) = 5.7116965494; F1 3240 / F2 600 simplices
+   vertices by squared radius: [((Fraction(1, 1), Fraction(0, 1)), 120)]; facets per vertex: [(20, 120)]; polar vertices (squared radius, vertices of the dual facet): [(((Fraction(28, 1), Fraction(-12, 1)), 4), 600)]
+ok   shadow of 4_21 in E_par (roots q): exact volumes = qhull (1e-9)
+ok   shadow of 4_21 in E_par (roots q): F1 = F2 at a generic Q(sqrt5) point (exact)
+ok   NEG shadow of 4_21 in E_par (roots q): one F1 term sign-flipped breaks F1 = F2
+shadow of 4_21 in E_perp (roots sigma q): 120 vertices (squared radii [(3/2 + 1/2*sqrt5)]), 600 facets (vertices per facet [4]); vol_coord = (25/2 + 25/4*sqrt5) = 26.4754248594; vol_coord(polar) = (-43200 + 19320*sqrt5) = 0.8333252959; F1 3240 / F2 600 simplices
+   vertices by squared radius: [((Fraction(3, 2), Fraction(1, 2)), 120)]; facets per vertex: [(20, 120)]; polar vertices (squared radius, vertices of the dual facet): [(((Fraction(72, 1), Fraction(-32, 1)), 4), 600)]
+ok   shadow of 4_21 in E_perp (roots sigma q): exact volumes = qhull (1e-9)
+ok   shadow of 4_21 in E_perp (roots sigma q): F1 = F2 at a generic Q(sqrt5) point (exact)
+ok   NEG shadow of 4_21 in E_perp (roots sigma q): one F1 term sign-flipped breaks F1 = F2
+window W_perp = pi_perp(Voronoi): 720 vertices (squared radii [(7/9 + 1/3*sqrt5), (7/8 + 3/8*sqrt5)]), 1200 facets (vertices per facet [5]); vol_coord = (275/48 + 125/48*sqrt5) = 11.5522603581; vol_coord(polar) = (-1533650 + 685870*sqrt5) = 1.9437277808; F1 6360 / F2 2400 simplices
+   vertices by squared radius: [((Fraction(7, 9), Fraction(1, 3)), 600), ((Fraction(7, 8), Fraction(3, 8)), 120)]; facets per vertex: [(4, 600), (30, 120)]; polar vertices (squared radius, vertices of the dual facet): [(((Fraction(108, 1), Fraction(-48, 1)), 5), 1200)]
+ok   window W_perp = pi_perp(Voronoi): exact volumes = qhull (1e-9)
+ok   window W_perp = pi_perp(Voronoi): F1 = F2 at a generic Q(sqrt5) point (exact)
+ok   NEG window W_perp = pi_perp(Voronoi): one F1 term sign-flipped breaks F1 = F2
+twin window W_par = pi_par(Voronoi): 720 vertices (squared radii [(1/3 + 1/9*sqrt5), (3/8 + 1/8*sqrt5)]), 1200 facets (vertices per facet [5]); vol_coord = (25/48 + 25/48*sqrt5) = 1.6854520716; vol_coord(polar) = (-223750 + 100070*sqrt5) = 13.3225084040; F1 6360 / F2 2400 simplices
+   vertices by squared radius: [((Fraction(1, 3), Fraction(1, 9)), 600), ((Fraction(3, 8), Fraction(1, 8)), 120)]; facets per vertex: [(4, 600), (30, 120)]; polar vertices (squared radius, vertices of the dual facet): [(((Fraction(42, 1), Fraction(-18, 1)), 5), 1200)]
+ok   twin window W_par = pi_par(Voronoi): exact volumes = qhull (1e-9)
+ok   twin window W_par = pi_par(Voronoi): F1 = F2 at a generic Q(sqrt5) point (exact)
+ok   NEG twin window W_par = pi_par(Voronoi): one F1 term sign-flipped breaks F1 = F2
+ok   E_par shadow = 600-cell of radius 1 (120 vertices, 600 tetrahedra)
+ok   600-cell: Omega(0) = 4! vol(polar) and the polar is a 120-cell: vol = (15/4)(105+47 sqrt5) a^4 with a^2 = (94 - 42*sqrt5) (exact)
+Omega_coord(600-cell; 0) = 24 vol(120-cell) = (-151200 + 67680*sqrt5) = 137.0807171858
+ok   E_perp shadow = 600-cell of radius phi (the twin of the 1/phi cell)
+shadow of 4_21 in E_par (roots q): Omega_true(shadow; 0) = 4! vol(Voronoi cap E_par) = (-495000 + 221400*sqrt5) = 65.4502184535; vol_true(Voronoi cap E_par) = (-20625 + 9225*sqrt5) (a 120-cell); vol_true(shadow) = (5/2 + 5/2*sqrt5) = 8.0901699437
+shadow of 4_21 in E_perp (roots sigma q): Omega_true(shadow; 0) = 4! vol(Voronoi cap E_perp) = (-495000 + 221400*sqrt5) = 65.4502184535; vol_true(Voronoi cap E_perp) = (-20625 + 9225*sqrt5) (a 120-cell); vol_true(shadow) = (5/2 + 5/2*sqrt5) = 8.0901699437
+window W_perp = pi_perp(Voronoi): true volume = density of the quasicrystal = (5/3 + 5/6*sqrt5) = 3.530056647916; Omega_true(W; 0) = 4! vol(4_21 cap E_perp) = (-17574000 + 7859400*sqrt5) = 152.6623618491; Omega_true(4_21 cap E_perp; 0) = 4! density = (40 + 20*sqrt5) = 84.7213595500
+twin window W_par = pi_par(Voronoi): true volume = density of the quasicrystal = (5/3 + 5/6*sqrt5) = 3.530056647916; Omega_true(W; 0) = 4! vol(4_21 cap E_par) = (-17574000 + 7859400*sqrt5) = 152.6623618491; Omega_true(4_21 cap E_par; 0) = 4! density = (40 + 20*sqrt5) = 84.7213595500
+PROGRESS 0.90 H4 (86 s)
+W_perp: closest lattice point to the shifted window boundary: 2.44e-06 (generic shift, no ties)
+W_perp: lattice points with |par| <= 3: closed window 1561 (ratio 1.1063; boundary points have positive density), generically shifted window 1561 (ratio 1.1063); density x ball = 1411.0
+W_perp: lattice points with |par| <= 4: closed window 6121 (ratio 1.3726; boundary points have positive density), generically shifted window 4797 (ratio 1.0757); density x ball = 4459.6
+W_perp: lattice points with |par| <= 5: closed window 12001 (ratio 1.1023; boundary points have positive density), generically shifted window 10677 (ratio 0.9807); density x ball = 10887.6
+ok   W_perp: shifted-window count / (density x ball) within 5% at radius 5 (numerical)
+ok   NEG W_perp: scale factors swapped predicts 74625, off by more than 30%
+W_par: closest lattice point to the shifted window boundary: 7.75e-06 (generic shift, no ties)
+W_par: lattice points with |par| <= 3: closed window 1561 (ratio 1.1063; boundary points have positive density), generically shifted window 1561 (ratio 1.1063); density x ball = 1411.0
+W_par: lattice points with |par| <= 4: closed window 6121 (ratio 1.3726; boundary points have positive density), generically shifted window 4793 (ratio 1.0748); density x ball = 4459.6
+W_par: lattice points with |par| <= 5: closed window 12001 (ratio 1.1023; boundary points have positive density), generically shifted window 10673 (ratio 0.9803); density x ball = 10887.6
+ok   W_par: shifted-window count / (density x ball) within 5% at radius 5 (numerical)
+ok   NEG W_par: scale factors swapped predicts 1588, off by more than 30%
+ok   NEG window = shadow of the roots (600-cell of radius phi) instead of pi_perp(Voronoi): count 27721 vs 12001, ratio 2.310 (must differ by > 15%)
+ok   Fibonacci control: Z^2 points in the window per unit length = |W| = 1.376382 (count 551, expected 550.6, 1%)
+PROGRESS 1.00 done (87 s)
+FINAL ok
+[exit 0]
