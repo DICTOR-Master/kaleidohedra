@@ -37,7 +37,7 @@ for x in sites:
 print(f'{SCH}: {len(tid)} types ({sum(1 for L in TYPES.values() if len(L) == 1)} centre, {sum(1 for L in TYPES.values() if len(L) == 4)} edge, {sum(1 for L in TYPES.values() if len(L) == 0)} blank)', flush=True)
 def world(a, r, x):
     """world picture of type a in turn r at site x: list of (cube, frame or None, cell or None, id or None)"""
-    Ri = inverse(ROT[r]); return [(vadd(x, apply(Ri, o)), None if g is None else compose(Ri, g), u, i) for o, g, u, i in TYPES[a]]
+    Ri = inverse(ROT[r]); return [(vadd(x, apply(Ri, o)), rot_frame(Ri, g), u, i) for o, g, u, i in TYPES[a]]
 # ---- (G) grid consistency over every allowed pair
 badG = 0
 for (a, dl), S in allowed.items():

@@ -49,14 +49,33 @@ SCHEMES = {
  'CF+EFRAME':   lambda E: [(o, g, u, None) for o, g, u, i in E] if len(E) == 1 else [(o, g, None, i) for o, g, u, i in E],   # edge: sharing + chair turns
  'CELLFRAME':   lambda E: [(o, g, u, None) for o, g, u, i in E] if len(E) == 1 else [(o, None, None, i) for o, g, u, i in E],
 }
+def _close(gens):
+    S = {C.id}; fr = [C.id]
+    while fr:
+        a = fr.pop(); 
+        for b in gens:
+            c = compose(a, b)
+            if c not in S: S.add(c); fr.append(c)
+    return frozenset(S)
+SUBGROUPS = sorted({_close([a, b]) for a in ROT for b in ROT}, key=lambda H: (len(H), sorted(H)))
+assert len(SUBGROUPS) == 30, len(SUBGROUPS)
+def _coset(g, H): return tuple(sorted(compose(g, h) for h in H))
+for _k, _H in enumerate(SUBGROUPS):    # centre: full chair frame + sharing; edge: sharing + chair frame known only up to H
+    SCHEMES[f'H{_k:02d}'] = (lambda H: (lambda E: [(o, g, None, i) for o, g, u, i in E] if len(E) == 1 else [(o, _coset(g, H), None, i) for o, g, u, i in E]))(_H)
 want = sys.argv[4].split(',') if len(sys.argv) > 4 else list(SCHEMES)
+def is_coset(g): return isinstance(g, tuple) and len(g) > 0 and isinstance(g[0], tuple) and len(g[0]) > 0 and isinstance(g[0][0], tuple)
+def rot_frame(R, g):
+    """R applied to a frame, or to a coset gH stored as a sorted tuple of frames (12 Nov: coarse frames for the 12-90 search)"""
+    if g is None: return None
+    if is_coset(g): return tuple(sorted(compose(R, x) for x in g))
+    return compose(R, g)
 def canon(L):
     """min over turns R of the R-image of the entry list; returns (label, list of R achieving it). Frames written relative: R*g.
     Chair ids are renumbered by first appearance after sorting by cube offset (fixed 12 Nov: ids had followed the world order of
     the cubes, so one configuration could give two labels)."""
     best = None; arg = []
     for R in ROT:
-        rows = sorted(((apply(R, o), None if g is None else compose(R, g), u, i) for o, g, u, i in L), key=lambda r: r[0])
+        rows = sorted(((apply(R, o), rot_frame(R, g), u, i) for o, g, u, i in L), key=lambda r: r[0])
         ren = {}
         key = tuple((o, g, u, None if i is None else ren.setdefault(i, len(ren))) for o, g, u, i in rows)
         if best is None or key < best: best, arg = key, [R]

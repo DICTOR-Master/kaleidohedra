@@ -55,7 +55,7 @@ def options(x, own):
                 if c not in cs: ok = False; break
                 if c in own:
                     ch, gw, uw = own[c]
-                    if g is not None and compose(Ri, g) != gw: ok = False; break
+                    if g is not None and ((gw not in rot_frame(Ri, g)) if is_coset(g) else (compose(Ri, g) != gw)): ok = False; break
                     if u is not None and u != uw: ok = False; break
                     if i is not None:
                         if idmap.setdefault(i, ch) != ch: ok = False; break
