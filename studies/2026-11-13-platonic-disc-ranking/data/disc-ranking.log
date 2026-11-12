@@ -1,0 +1,191 @@
+PROGRESS 0.033 TRUNCATED_OCTAHEDRON: 11-11 3 discs (33%); #87 0 discs (0%) (0 s)
+PROGRESS 0.067 J3_TRIANGULAR_CUPOLA: 11-11 0 discs (0%); #87 0 discs (0%) (1 s)
+PROGRESS 0.100 J22_GYROELONGATED_TRIANGULAR_CUPOLA: 11-11 0 discs (0%); #87 0 discs (0%) (1 s)
+PROGRESS 0.134 J63_TRIDIMINISHED_ICOSAHEDRON: 11-11 0 discs (0%); #87 0 discs (0%) (1 s)
+PROGRESS 0.167 J66_AUGMENTED_TRUNCATED_CUBE: 11-11 0 discs (0%); #87 0 discs (0%) (2 s)
+PROGRESS 0.201 J90_DISPHENOCINGULUM: 11-11 2 discs (16%); #87 0 discs (0%) (2 s)
+PROGRESS 0.234 J37_ELONGATED_SQUARE_GYROBICUPOLA: 11-11 0 discs (0%); #87 0 discs (0%) (2 s)
+PROGRESS 0.267 J28_SQUARE_ORTHOBICUPOLA: 11-11 1 discs (25%); #87 1 discs (25%) (2 s)
+PROGRESS 0.301 DISDYAKIS_DODECAHEDRON: 11-11 9 discs (100%); #87 9 discs (100%) (3 s)
+PROGRESS 0.334 PRISM_10: 11-11 0 discs (0%); #87 0 discs (0%) (3 s)
+PROGRESS 0.368 PYRAMID_SQUARE_G2: 11-11 0 discs (0%); #87 0 discs (0%) (3 s)
+PROGRESS 0.401 RVCMG_V2_DH_KITE_TO_UHEX: 11-11 0 discs (0%); #87 0 discs (0%) (4 s)
+PROGRESS 0.434 DICTO_FLATTENED_RHOMBOHEDRON: 11-11 0 discs (0%); #87 0 discs (0%) (4 s)
+PROGRESS 0.468 RD_TARGET_4: 11-11 6 discs (100%); #87 0 discs (0%) (4 s)
+PROGRESS 0.501 RD_TARGET_17: 11-11 3 discs (50%); #87 0 discs (0%) (4 s)
+PROGRESS 0.535 HEX_TARGET_6: 11-11 0 discs (0%); #87 0 discs (0%) (4 s)
+PROGRESS 0.568 HEX_TARGET_19: 11-11 0 discs (0%); #87 0 discs (0%) (4 s)
+PROGRESS 0.602 PENROSE_PRISM_THICK: 11-11 0 discs (0%); #87 0 discs (0%) (4 s)
+PROGRESS 0.635 DICTO_HEXA_DIAMOND_CLUSTER: 11-11 155 discs (31%); #87 0 discs (0%) (12 s)
+PROGRESS 0.668 DICTO_DODECAXES: 11-11 3 discs (14%); #87 0 discs (0%) (13 s)
+PROGRESS 0.702 KIT13_BODHI_B4: 11-11 0 discs (0%); #87 0 discs (0%) (13 s)
+PROGRESS 0.735 KIT13_RD13_RDA_T35_M: 11-11 0 discs (0%); #87 0 discs (0%) (13 s)
+PROGRESS 0.769 KIT13_RD13_RDCENTRE_T25F: 11-11 0 discs (0%); #87 0 discs (0%) (13 s)
+PROGRESS 0.802 TRANS_DCHAIN_4: 11-11 0 discs (0%); #87 0 discs (0%) (13 s)
+PROGRESS 0.835 STELLATION_DODECAHEDRON_4: 11-11 5 discs (50%); #87 0 discs (0%) (14 s)
+PROGRESS 0.869 STELLATION_TRIAKIS_TETRAHEDRON_1: 11-11 0 discs (0%); #87 0 discs (0%) (14 s)
+PROGRESS 0.902 STELLATION_DELTOIDAL_ICOSITETRAHEDRON_2: 11-11 0 discs (0%); #87 0 discs (0%) (14 s)
+PROGRESS 0.936 STELLATION_TRIAKIS_ICOSAHEDRON_3: 11-11 0 discs (0%); #87 0 discs (0%) (14 s)
+PROGRESS 0.969 STELLATION_DISDYAKIS_TRIACONTAHEDRON_4_L: 11-11 0 discs (0%); #87 0 discs (0%) (14 s)
+PROGRESS 1.000 STELLATION_PENTAGONAL_HEXECONTAHEDRON_4: 11-11 1 discs (9%); #87 0 discs (0%) (15 s)
+ok   R1 rule 11-11 reproduces the 11-11 census (discs, edges on discs, edges) for all 389 solids  [[]]
+ok   R2 #87 control octahedron: disc sizes {'4': 3} (expect {'4': 3})
+ok   R2 #87 control cube: disc sizes {} (expect {})
+ok   R2 #87 control cuboctahedron: disc sizes {'6': 4} (expect {'6': 4})
+ok   R2 #87 control icosidodecahedron: disc sizes {'10': 6} (expect {'10': 6})
+ok   R2 #87 control dodecahedron: disc sizes {} (expect {})
+ok   R3 #87 Dogstar: 0 discs (exact study: 0); 11-11 rule: 15 planes, 114 of 138 edges (exact study: 15, 114)
+ok   R4 #87 apex-sum test and closed-cycle test agree on every sheet of every solid
+note: coplanar fin pairs with an ambiguous side test (|side| < 1e-4), skipped: {}
+ok   R5 #87 result unchanged at tolerances 1e-5, 1e-6, 1e-7 for every solid
+ok   R6 every #87 disc lies on a plane that the 11-11 rule counts (#87 share <= 11-11 share)
+
+RANK DICTO solids (id or name contains DICTO, the DICTO Jewel family, Dogstar, the Sunstar clusters, the seamed dodecahedron)
+RANK name | edges | 11-11: discs, share | #87: discs, share | #87 disc sizes
+RANK Delilah | 12 | 3, 100.0% | 3, 100.0% | {'4': 3}
+RANK DICTO Hexa-Key | 360 | 30, 80.0% | 9, 26.7% | {'8': 3, '12': 6}
+RANK DICTO Jewel tetrahedral cluster | 360 | 28, 70.0% | 3, 6.7% | {'8': 3}
+RANK DICTO Hexa | 408 | 41, 75.5% | 3, 5.9% | {'8': 3}
+RANK DICTO Hexa rhombohedral cluster | 2616 | 232, 72.5% | 3, 2.8% | {'24': 3}
+RANK Dodecahedron, seamed for Dogstars | 282 | 51, 100.0% | 0, 0.0% | {}
+RANK Sunstar tetrahedral cluster (4 dodecahedra) | 984 | 115, 93.9% | 0, 0.0% | {}
+RANK Dogstar | 138 | 15, 82.6% | 0, 0.0% | {}
+RANK Sunstar octahedral cluster (6 dodecahedra round a Dogstar) | 1208 | 304, 78.8% | 0, 0.0% | {}
+RANK Lotus Jewel Axes | 84 | 15, 71.4% | 0, 0.0% | {}
+RANK DICTO Jewel | 96 | 9, 50.0% | 0, 0.0% | {}
+RANK DICTO Jewel octahedral cluster | 456 | 28, 48.2% | 0, 0.0% | {}
+RANK Admiral Cap | 9 | 1, 33.3% | 0, 0.0% | {}
+RANK DICTO skewed rhombic dodecahedron | 24 | 2, 33.3% | 0, 0.0% | {}
+RANK Icosaxes | 36 | 3, 33.3% | 0, 0.0% | {}
+RANK Unborn Axes | 36 | 3, 33.3% | 0, 0.0% | {}
+RANK DICTO Hexa diamond cluster | 2148 | 155, 31.2% | 0, 0.0% | {}
+RANK DICTO skewed elongated dodecahedron (16) | 28 | 2, 28.6% | 0, 0.0% | {}
+RANK DICTO Dodeca-13 | 330 | 15, 27.3% | 0, 0.0% | {}
+RANK DICTO Truncated-Icosahedral Hecatodihedron: truncated icosahedron + 20 Shields (Spheres of Dharma, stage 7) | 180 | 12, 26.7% | 0, 0.0% | {}
+RANK DICTO Dodeca-13 Unit | 75 | 5, 20.0% | 0, 0.0% | {}
+RANK Dodecaxes | 84 | 3, 14.3% | 0, 0.0% | {}
+RANK DICTO Hexa trimmed Jewel | 96 | 3, 13.5% | 0, 0.0% | {}
+RANK DICTO Dodeca-13 Needle | 6 | 0, 0.0% | 0, 0.0% | {}
+RANK DICTO Dodeca-13 Star | 33 | 0, 0.0% | 0, 0.0% | {}
+RANK DICTO Dodeca-13 Wedge | 12 | 0, 0.0% | 0, 0.0% | {}
+RANK DICTO Hexa roof | 20 | 0, 0.0% | 0, 0.0% | {}
+RANK DICTO all-rhombus block | 12 | 0, 0.0% | 0, 0.0% | {}
+RANK DICTO flattened rhombohedron | 12 | 0, 0.0% | 0, 0.0% | {}
+RANK DICTO leaning hexagonal prism | 18 | 0, 0.0% | 0, 0.0% | {}
+RANK DICTO skewed elongated dodecahedron (18) | 28 | 0, 0.0% | 0, 0.0% | {}
+RANK DICTO square-faced block | 12 | 0, 0.0% | 0, 0.0% | {}
+RANK Samson | 24 | 0, 0.0% | 0, 0.0% | {}
+RANK Unborn | 30 | 0, 0.0% | 0, 0.0% | {}
+
+ALL registry solids with a disc under either rule
+ALL DICTO_DELILAH | Delilah | 12 | 3, 100.0% | 3, 100.0% | {'4': 3}
+ALL REULEAUX_OCTAHEDRON | Reuleaux octahedron | 12 | 3, 100.0% | 3, 100.0% | {'4': 3}
+ALL CUBOCTAHEDRON | cuboctahedron | 24 | 4, 100.0% | 4, 100.0% | {'6': 4}
+ALL DISDYAKIS_DODECAHEDRON | disdyakis_dodecahedron | 72 | 9, 100.0% | 9, 100.0% | {'8': 9}
+ALL DISDYAKIS_TRIACONTAHEDRON | disdyakis_triacontahedron | 180 | 15, 100.0% | 15, 100.0% | {'12': 15}
+ALL ICOSIDODECAHEDRON | icosidodecahedron | 60 | 6, 100.0% | 6, 100.0% | {'10': 6}
+ALL D8 | octahedron | 12 | 3, 100.0% | 3, 100.0% | {'4': 3}
+ALL TETRAKIS_HEXAHEDRON | tetrakis_hexahedron | 36 | 6, 100.0% | 6, 100.0% | {'6': 6}
+ALL J15_ELONGATED_SQUARE_BIPYRAMID | elongated_square_bipyramid | 20 | 2, 60.0% | 2, 60.0% | {'6': 2}
+ALL DELTOIDAL_ICOSITETRAHEDRON | deltoidal_icositetrahedron | 48 | 9, 100.0% | 3, 50.0% | {'8': 3}
+ALL J91_BILUNABIROTUNDA | bilunabirotunda | 26 | 2, 46.2% | 2, 46.2% | {'6': 2}
+ALL TRIAKIS_OCTAHEDRON | triakis_octahedron | 36 | 9, 100.0% | 3, 33.3% | {'4': 3}
+ALL STELLA_OCTANGULA | Stella octangula | 72 | 9, 66.7% | 3, 33.3% | {'8': 3}
+ALL D10 | pentagonal_bipyramid | 15 | 1, 33.3% | 1, 33.3% | {'5': 1}
+ALL D6 | triangular_bipyramid | 9 | 1, 33.3% | 1, 33.3% | {'3': 1}
+ALL J26_GYROBIFASTIGIUM | gyrobifastigium | 14 | 1, 28.6% | 1, 28.6% | {'4': 1}
+ALL DICTO_HEXA_KEY | DICTO Hexa-Key | 360 | 30, 80.0% | 9, 26.7% | {'8': 3, '12': 6}
+ALL J27_TRIANGULAR_ORTHOBICUPOLA | triangular_orthobicupola | 24 | 7, 100.0% | 1, 25.0% | {'6': 1}
+ALL J31_PENTAGONAL_GYROBICUPOLA | pentagonal_gyrobicupola | 40 | 6, 75.0% | 1, 25.0% | {'10': 1}
+ALL J30_PENTAGONAL_ORTHOBICUPOLA | pentagonal_orthobicupola | 40 | 1, 25.0% | 1, 25.0% | {'10': 1}
+ALL J29_SQUARE_GYROBICUPOLA | square_gyrobicupola | 32 | 1, 25.0% | 1, 25.0% | {'8': 1}
+ALL J28_SQUARE_ORTHOBICUPOLA | square_orthobicupola | 32 | 1, 25.0% | 1, 25.0% | {'8': 1}
+ALL KIT13_OCTET_TADPOLE | Tadpole | 13 | 1, 23.1% | 1, 23.1% | {'3': 1}
+ALL KIT13_OCTET_TADPOLE_M | Tadpole (mirror) | 13 | 1, 23.1% | 1, 23.1% | {'3': 1}
+ALL J34_PENTAGONAL_ORTHOBIROTUNDA | pentagonal_orthobirotunda | 60 | 11, 100.0% | 1, 16.7% | {'10': 1}
+ALL DJ_TETRAHEDRAL_CLUSTER | DICTO Jewel tetrahedral cluster | 360 | 28, 70.0% | 3, 6.7% | {'8': 3}
+ALL DICTO_HEXA | DICTO Hexa | 408 | 41, 75.5% | 3, 5.9% | {'8': 3}
+ALL DICTO_HEXA_RHOMBO_CLUSTER | DICTO Hexa rhombohedral cluster | 2616 | 232, 72.5% | 3, 2.8% | {'24': 3}
+ALL BAIN_RD | Bain rhombic dodecahedron | 24 | 6, 100.0% | 0, 0.0% | {}
+ALL SEAMED_DODECAHEDRON | Dodecahedron, seamed for Dogstars | 282 | 51, 100.0% | 0, 0.0% | {}
+ALL RD_TARGET_4 | Rhombic dodecahedron target 4 | 24 | 6, 100.0% | 0, 0.0% | {}
+ALL KIT13_RD13_RDCENTRE_T35 | Spheroid-13 RD centre (0.35, exact RD centre) | 24 | 6, 100.0% | 0, 0.0% | {}
+ALL DELTOIDAL_HEXECONTAHEDRON | deltoidal_hexecontahedron | 120 | 15, 100.0% | 0, 0.0% | {}
+ALL PENTAKIS_DODECAHEDRON | pentakis_dodecahedron | 90 | 15, 100.0% | 0, 0.0% | {}
+ALL RHOMBIC_DODECAHEDRON | rhombic_dodecahedron | 24 | 6, 100.0% | 0, 0.0% | {}
+ALL RHOMBIC_TRIACONTAHEDRON | rhombic_triacontahedron | 60 | 15, 100.0% | 0, 0.0% | {}
+ALL TRIAKIS_ICOSAHEDRON | triakis_icosahedron | 90 | 15, 100.0% | 0, 0.0% | {}
+ALL DODECA_TETRAHEDRAL_CLUSTER | Sunstar tetrahedral cluster (4 dodecahedra) | 984 | 115, 93.9% | 0, 0.0% | {}
+ALL KIT13_RD13_RDCENTRE_T15 | Spheroid-13 RD centre (0.15, exact RD centre) | 24 | 5, 83.3% | 0, 0.0% | {}
+ALL DOGSTAR | Dogstar | 138 | 15, 82.6% | 0, 0.0% | {}
+ALL DODECA_OCTAHEDRAL_CLUSTER | Sunstar octahedral cluster (6 dodecahedra round a Dogstar) | 1208 | 304, 78.8% | 0, 0.0% | {}
+ALL DICTO_LOTUS_JEWEL_AXES | Lotus Jewel Axes | 84 | 15, 71.4% | 0, 0.0% | {}
+ALL TRIAKIS_TETRAHEDRON | triakis_tetrahedron | 18 | 4, 66.7% | 0, 0.0% | {}
+ALL J16_ELONGATED_PENTAGONAL_BIPYRAMID | elongated_pentagonal_bipyramid | 25 | 5, 60.0% | 0, 0.0% | {}
+ALL J14_ELONGATED_TRIANGULAR_BIPYRAMID | elongated_triangular_bipyramid | 15 | 3, 60.0% | 0, 0.0% | {}
+ALL DRAGON_JEWEL | DICTO Jewel | 96 | 9, 50.0% | 0, 0.0% | {}
+ALL RD_TARGET_11 | Rhombic dodecahedron target 11 | 24 | 3, 50.0% | 0, 0.0% | {}
+ALL RD_TARGET_17 | Rhombic dodecahedron target 17 | 24 | 3, 50.0% | 0, 0.0% | {}
+ALL RD_TARGET_2 | Rhombic dodecahedron target 2 | 24 | 3, 50.0% | 0, 0.0% | {}
+ALL RD_TARGET_26 | Rhombic dodecahedron target 26 | 24 | 3, 50.0% | 0, 0.0% | {}
+ALL RD_TARGET_5 | Rhombic dodecahedron target 5 | 24 | 3, 50.0% | 0, 0.0% | {}
+ALL STELLATION_DODECAHEDRON_4 | dodecahedron stellation 4 (third stellation: great stellated dodecahedron) | 30 | 5, 50.0% | 0, 0.0% | {}
+ALL J8_ELONGATED_SQUARE_PYRAMID | elongated_square_pyramid | 16 | 2, 50.0% | 0, 0.0% | {}
+ALL J59_PARABIAUGMENTED_DODECAHEDRON | parabiaugmented_dodecahedron | 40 | 5, 50.0% | 0, 0.0% | {}
+ALL DJ_OCTAHEDRAL_CLUSTER | DICTO Jewel octahedral cluster | 456 | 28, 48.2% | 0, 0.0% | {}
+ALL STELLATION_TETRAKIS_HEXAHEDRON_3 | tetrakis hexahedron stellation 3 (second stellation) | 15 | 1, 46.7% | 0, 0.0% | {}
+ALL J58_AUGMENTED_DODECAHEDRON | augmented_dodecahedron | 35 | 5, 42.9% | 0, 0.0% | {}
+ALL DICTO_EDGE_ROOF | Admiral Cap | 9 | 1, 33.3% | 0, 0.0% | {}
+ALL KIT13_BILINSKI13_BILINSKI13CENTRE | Bilinski dodecahedron | 24 | 2, 33.3% | 0, 0.0% | {}
+ALL DICTO_SKEWED_RD | DICTO skewed rhombic dodecahedron | 24 | 2, 33.3% | 0, 0.0% | {}
+ALL DICTO_ICOSAXES | Icosaxes | 36 | 3, 33.3% | 0, 0.0% | {}
+ALL RD_TARGET_1 | Rhombic dodecahedron target 1 | 24 | 2, 33.3% | 0, 0.0% | {}
+ALL RD_TARGET_13 | Rhombic dodecahedron target 13 | 24 | 2, 33.3% | 0, 0.0% | {}
+ALL RD_TARGET_14 | Rhombic dodecahedron target 14 | 24 | 2, 33.3% | 0, 0.0% | {}
+ALL RD_TARGET_16 | Rhombic dodecahedron target 16 | 24 | 2, 33.3% | 0, 0.0% | {}
+ALL RD_TARGET_19 | Rhombic dodecahedron target 19 | 24 | 2, 33.3% | 0, 0.0% | {}
+ALL RD_TARGET_21 | Rhombic dodecahedron target 21 | 24 | 2, 33.3% | 0, 0.0% | {}
+ALL RD_TARGET_9 | Rhombic dodecahedron target 9 | 24 | 2, 33.3% | 0, 0.0% | {}
+ALL KIT13_BODHI_COPY | Rhombic triacontahedron (edge 1.000) | 60 | 6, 33.3% | 0, 0.0% | {}
+ALL DICTO_UNBORN_AXES | Unborn Axes | 36 | 3, 33.3% | 0, 0.0% | {}
+ALL D12 | snub_disphenoid | 18 | 2, 33.3% | 0, 0.0% | {}
+ALL TRUNCATED_OCTAHEDRON | truncated_octahedron | 36 | 3, 33.3% | 0, 0.0% | {}
+ALL DICTO_HEXA_DIAMOND_CLUSTER | DICTO Hexa diamond cluster | 2148 | 155, 31.2% | 0, 0.0% | {}
+ALL J55_PARABIAUGMENTED_HEXAGONAL_PRISM | parabiaugmented_hexagonal_prism | 26 | 2, 30.8% | 0, 0.0% | {}
+ALL BAIN_ED | Bain elongated dodecahedron | 28 | 2, 28.6% | 0, 0.0% | {}
+ALL DICTO_SKEWED_ED_16 | DICTO skewed elongated dodecahedron (16) | 28 | 2, 28.6% | 0, 0.0% | {}
+ALL REGULAR_HEX_ED | Regular-hexagon elongated dodecahedron | 28 | 2, 28.6% | 0, 0.0% | {}
+ALL ELONGATED_DODECAHEDRON | elongated dodecahedron | 28 | 2, 28.6% | 0, 0.0% | {}
+ALL STELLATION_RHOMBIC_TRIACONTAHEDRON_4 | rhombic triacontahedron stellation 4 (third stellation) | 28 | 2, 28.6% | 0, 0.0% | {}
+ALL KIT13_ICOSA13_HASU | Hasu | 75 | 5, 28.0% | 0, 0.0% | {}
+ALL DICTO_DODECA13 | DICTO Dodeca-13 | 330 | 15, 27.3% | 0, 0.0% | {}
+ALL TRANS_DHARMA_80 | DICTO Truncated-Icosahedral Hecatodihedron: truncated icosahedron + 20 Shields (Spheres of Dharma, stage 7) | 180 | 12, 26.7% | 0, 0.0% | {}
+ALL TRANS_BODHI_B2 | Rhombic hexecontahedron: triacontahedron + 60 Vajras (Bodhi Seed Kit B, stage 2) | 120 | 9, 25.0% | 0, 0.0% | {}
+ALL DICTO_DODECA13_UNIT | DICTO Dodeca-13 Unit | 75 | 5, 20.0% | 0, 0.0% | {}
+ALL J61_TRIAUGMENTED_DODECAHEDRON | triaugmented_dodecahedron | 45 | 3, 20.0% | 0, 0.0% | {}
+ALL J88_SPHENOMEGACORONA | sphenomegacorona | 28 | 1, 17.9% | 0, 0.0% | {}
+ALL RD_TARGET_10 | Rhombic dodecahedron target 10 | 24 | 1, 16.7% | 0, 0.0% | {}
+ALL RD_TARGET_12 | Rhombic dodecahedron target 12 | 24 | 1, 16.7% | 0, 0.0% | {}
+ALL RD_TARGET_18 | Rhombic dodecahedron target 18 | 24 | 1, 16.7% | 0, 0.0% | {}
+ALL RD_TARGET_20 | Rhombic dodecahedron target 20 | 24 | 1, 16.7% | 0, 0.0% | {}
+ALL RD_TARGET_23 | Rhombic dodecahedron target 23 | 24 | 1, 16.7% | 0, 0.0% | {}
+ALL RD_TARGET_24 | Rhombic dodecahedron target 24 | 24 | 1, 16.7% | 0, 0.0% | {}
+ALL RD_TARGET_3 | Rhombic dodecahedron target 3 | 24 | 1, 16.7% | 0, 0.0% | {}
+ALL RD_TARGET_6 | Rhombic dodecahedron target 6 | 24 | 1, 16.7% | 0, 0.0% | {}
+ALL RD_TARGET_7 | Rhombic dodecahedron target 7 | 24 | 1, 16.7% | 0, 0.0% | {}
+ALL RD_TARGET_8 | Rhombic dodecahedron target 8 | 24 | 1, 16.7% | 0, 0.0% | {}
+ALL J90_DISPHENOCINGULUM | disphenocingulum | 38 | 2, 15.8% | 0, 0.0% | {}
+ALL DICTO_DODECAXES | Dodecaxes | 84 | 3, 14.3% | 0, 0.0% | {}
+ALL STELLATION_DELTOIDAL_HEXECONTAHEDRON_4 | deltoidal hexecontahedron stellation 4 (third stellation) | 28 | 1, 14.3% | 0, 0.0% | {}
+ALL J86_SPHENOCORONA | sphenocorona | 22 | 1, 13.6% | 0, 0.0% | {}
+ALL DICTO_HEXA_TRIMMED_JEWEL | DICTO Hexa trimmed Jewel | 96 | 3, 13.5% | 0, 0.0% | {}
+ALL STELLATION_DELTOIDAL_ICOSITETRAHEDRON_4 | deltoidal icositetrahedron stellation 4 (third stellation) | 27 | 1, 11.1% | 0, 0.0% | {}
+ALL J60_METABIAUGMENTED_DODECAHEDRON | metabiaugmented_dodecahedron | 40 | 1, 10.0% | 0, 0.0% | {}
+ALL STELLATION_PENTAGONAL_HEXECONTAHEDRON_4 | pentagonal hexecontahedron stellation 4 (third stellation) | 34 | 1, 8.8% | 0, 0.0% | {}
+ALL TRANS_LOTUS_3 | Excavated dodecahedron: + 30 AXE (Lotus seed and Dodecahedral Chain, stage 3) | 90 | 1, 6.7% | 0, 0.0% | {}
+ALL TRANS_LOTUS_4 | Lotus seed, stage 4: + 12 icosahedra | 270 | 4, 5.6% | 0, 0.0% | {}
+ALL TRANS_LOTUS_2 | Great stellated dodecahedron: icosahedron + 20 CLEO (Lotus seed and Dodecahedral Chain, stage 2) | 90 | 1, 3.3% | 0, 0.0% | {}
+ALL TRANS_LOTUS_5 | Lotus seed, stage 5: + 30 AXE | 270 | 1, 1.1% | 0, 0.0% | {}
+SUMMARY {'n': 389, 'complete11': 21, 'complete87': 8, 'nodisc11': 281, 'nodisc87': 361, 'dicto': 34, 'dicto_nodisc11': 11, 'dicto_nodisc87': 29}
+10 checks, 0 failed, 15 s
+FINAL ok

@@ -1,0 +1,1740 @@
+{
+ "results": [
+  {
+   "name": "cube",
+   "d": 3,
+   "V": 8,
+   "F": 6,
+   "simplices": 8,
+   "cs": true,
+   "info": {
+    "kind": "zonotope"
+   },
+   "e_per_dir": [
+    3,
+    3,
+    3
+   ],
+   "e": 3,
+   "decay": "r^-6",
+   "c_float": [
+    [
+     0.0,
+     0.0,
+     0.0,
+     -2.0,
+     0.0,
+     -4.5,
+     0.0,
+     -7.125
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     -0.0015432098765432098,
+     0.0,
+     -0.00036704818244170093,
+     0.0,
+     -6.28910492041038e-05
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     -0.00010204081632653062,
+     0.0,
+     -7.758486047480217e-06,
+     0.0,
+     -4.1028957494857583e-07
+    ]
+   ],
+   "dirs": [
+    [
+     "1",
+     "-2",
+     "-1"
+    ],
+    [
+     "-3",
+     "-3",
+     "8"
+    ],
+    [
+     "-5",
+     "-7",
+     "8"
+    ]
+   ],
+   "zero_pattern": [
+    [
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ]
+   ],
+   "c0_zero": true,
+   "cs_parity_ok": true,
+   "zono_formula_ok": true,
+   "polar_check": true,
+   "series_check": true,
+   "pairing": true,
+   "all_faces_cs": true,
+   "predicted_e_3d": 3,
+   "local": [
+    [
+     2,
+     0.0,
+     0.0
+    ],
+    [
+     2,
+     0.0,
+     0.0
+    ],
+    [
+     2,
+     0.0,
+     0.0
+    ]
+   ],
+   "seconds": 0.01
+  },
+  {
+   "name": "rhombic dodecahedron",
+   "d": 3,
+   "V": 14,
+   "F": 12,
+   "simplices": 20,
+   "cs": true,
+   "info": {
+    "kind": "zonotope"
+   },
+   "e_per_dir": [
+    3,
+    3,
+    3
+   ],
+   "e": 3,
+   "decay": "r^-6",
+   "c_float": [
+    [
+     0.0,
+     0.0,
+     0.0,
+     -0.2011111111111111,
+     0.0,
+     -1.0018382716049383,
+     0.0,
+     -4.201323787379972
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     -0.16886440159167432,
+     0.0,
+     -2.623809134897406,
+     0.0,
+     -41.466283829602915
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     -1.0191383219954648,
+     0.0,
+     -14.004176786421295,
+     0.0,
+     -203.68416977634496
+    ]
+   ],
+   "dirs": [
+    [
+     "6",
+     "2",
+     "4"
+    ],
+    [
+     "8",
+     "-4",
+     "-7"
+    ],
+    [
+     "5",
+     "-2",
+     "-3"
+    ]
+   ],
+   "zero_pattern": [
+    [
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ]
+   ],
+   "c0_zero": true,
+   "cs_parity_ok": true,
+   "zono_formula_ok": true,
+   "polar_check": true,
+   "series_check": true,
+   "pairing": true,
+   "all_faces_cs": true,
+   "predicted_e_3d": 3,
+   "local": [
+    [
+     2,
+     0.0,
+     0.0
+    ],
+    [
+     2,
+     0.0,
+     0.0
+    ],
+    [
+     2,
+     0.0,
+     0.0
+    ],
+    [
+     2,
+     0.0,
+     0.0
+    ],
+    [
+     2,
+     0.0,
+     0.0
+    ],
+    [
+     2,
+     0.0,
+     0.0
+    ]
+   ],
+   "seconds": 0.02
+  },
+  {
+   "name": "truncated octahedron",
+   "d": 3,
+   "V": 24,
+   "F": 14,
+   "simplices": 24,
+   "cs": true,
+   "info": {
+    "kind": "zonotope"
+   },
+   "e_per_dir": [
+    3,
+    3,
+    3
+   ],
+   "e": 3,
+   "decay": "r^-6",
+   "c_float": [
+    [
+     0.0,
+     0.0,
+     0.0,
+     -0.2772535080760189,
+     0.0,
+     -3.2221406114405573,
+     0.0,
+     -44.34678108206685
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     -0.7650648740758631,
+     0.0,
+     -26.835859684219933,
+     0.0,
+     -959.4159746399021
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     -0.3574233644074914,
+     0.0,
+     -12.647550982396261,
+     0.0,
+     -454.48893470584085
+    ]
+   ],
+   "dirs": [
+    [
+     "-1",
+     "-7",
+     "-3"
+    ],
+    [
+     "-4",
+     "-7",
+     "-2"
+    ],
+    [
+     "-8",
+     "3",
+     "-4"
+    ]
+   ],
+   "zero_pattern": [
+    [
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ]
+   ],
+   "c0_zero": true,
+   "cs_parity_ok": true,
+   "zono_formula_ok": true,
+   "polar_check": true,
+   "series_check": true,
+   "pairing": true,
+   "all_faces_cs": true,
+   "predicted_e_3d": 3,
+   "local": [
+    [
+     2,
+     0.0,
+     0.0
+    ],
+    [
+     2,
+     0.0,
+     0.0
+    ],
+    [
+     2,
+     0.0,
+     0.0
+    ],
+    [
+     2,
+     0.0,
+     0.0
+    ],
+    [
+     2,
+     0.0,
+     0.0
+    ],
+    [
+     2,
+     0.0,
+     0.0
+    ],
+    [
+     2,
+     0.0,
+     0.0
+    ]
+   ],
+   "seconds": 0.04
+  },
+  {
+   "name": "rhombic triacontahedron",
+   "d": 3,
+   "V": 32,
+   "F": 30,
+   "simplices": 56,
+   "cs": true,
+   "info": {
+    "kind": "zonotope"
+   },
+   "e_per_dir": [
+    3,
+    3,
+    3
+   ],
+   "e": 3,
+   "decay": "r^-6",
+   "c_float": [
+    [
+     0.0,
+     0.0,
+     0.0,
+     -22.261256847634527,
+     0.0,
+     -8826.303427874715,
+     0.0,
+     -4284416.060162088
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     -0.20361238353492184,
+     0.0,
+     -34.39203478941718,
+     0.0,
+     -6446.698413773688
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     -1.747386753002692,
+     0.0,
+     -626.1804447959216,
+     0.0,
+     -301850.9795626599
+    ]
+   ],
+   "dirs": [
+    [
+     "5",
+     "1",
+     "1"
+    ],
+    [
+     "9",
+     "-5",
+     "-7"
+    ],
+    [
+     "1",
+     "7",
+     "-3"
+    ]
+   ],
+   "zero_pattern": [
+    [
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ]
+   ],
+   "c0_zero": true,
+   "cs_parity_ok": true,
+   "zono_formula_ok": true,
+   "pairing": true,
+   "all_faces_cs": true,
+   "predicted_e_3d": 3,
+   "seconds": 0.14
+  },
+  {
+   "name": "tetrahedron",
+   "d": 3,
+   "V": 4,
+   "F": 4,
+   "simplices": 4,
+   "cs": false,
+   "info": {},
+   "e_per_dir": [
+    1,
+    1,
+    1
+   ],
+   "e": 1,
+   "decay": "r^-4",
+   "c_float": [
+    [
+     0.0,
+     0.016666666666666666,
+     -0.0038888888888888888,
+     0.0031990740740740742,
+     -0.0012811728395061728,
+     0.0007214519032921811,
+     -0.0003404491169410151,
+     0.00017530539516175125
+    ],
+    [
+     0.0,
+     -0.06274509803921569,
+     0.12598231449442523,
+     -0.189469449909914,
+     0.25296047535025196,
+     -0.3164525113749428,
+     0.37994457058078485,
+     -0.4434366339315157
+    ],
+    [
+     0.0,
+     -0.0037426900584795323,
+     0.0017159467870455868,
+     -0.0005713576487072245,
+     0.0001632135863983499,
+     -4.282744744263581e-05,
+     1.0644959420027531e-05,
+     -2.5496903020053284e-06
+    ]
+   ],
+   "dirs": [
+    [
+     "7",
+     "-4",
+     "-1"
+    ],
+    [
+     "-8",
+     "-8",
+     "-1"
+    ],
+    [
+     "5",
+     "7",
+     "-7"
+    ]
+   ],
+   "zero_pattern": [
+    [
+     true,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    [
+     true,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    [
+     true,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ]
+   ],
+   "c0_zero": true,
+   "polar_check": true,
+   "series_check": true,
+   "pairing": false,
+   "all_faces_cs": false,
+   "predicted_e_3d": 1,
+   "local": [
+    [
+     1,
+     -1.9636363636482526,
+     -7.8545454547356774
+    ],
+    [
+     1,
+     0.09523809523801134,
+     0.38095238095103856
+    ],
+    [
+     1,
+     -0.8640000000015552,
+     -3.456000000024883
+    ],
+    [
+     1,
+     -0.4153846153852337,
+     -1.6615384615483542
+    ]
+   ],
+   "seconds": 0.0
+  },
+  {
+   "name": "octahedron",
+   "d": 3,
+   "V": 6,
+   "F": 8,
+   "simplices": 12,
+   "cs": true,
+   "info": {},
+   "e_per_dir": [
+    1,
+    1,
+    1
+   ],
+   "e": 1,
+   "decay": "r^-4",
+   "c_float": [
+    [
+     0.0,
+     0.007142857142857143,
+     0.0,
+     0.0013043002915451895,
+     0.0,
+     0.0002984084198548224,
+     0.0,
+     7.290318390232053e-05
+    ],
+    [
+     0.0,
+     0.25396825396825395,
+     0.0,
+     0.1785264370298384,
+     0.0,
+     0.16802849227610514,
+     0.0,
+     0.16681888007932938
+    ],
+    [
+     0.0,
+     -0.003196803196803197,
+     0.0,
+     -0.0003546962547921629,
+     0.0,
+     -1.9035930314565845e-05,
+     0.0,
+     -8.555818622883586e-07
+    ]
+   ],
+   "dirs": [
+    [
+     "3",
+     "8",
+     "9"
+    ],
+    [
+     "-2",
+     "2",
+     "3"
+    ],
+    [
+     "1",
+     "9",
+     "3"
+    ]
+   ],
+   "zero_pattern": [
+    [
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ]
+   ],
+   "c0_zero": true,
+   "cs_parity_ok": true,
+   "polar_check": true,
+   "series_check": true,
+   "pairing": false,
+   "all_faces_cs": false,
+   "predicted_e_3d": 1,
+   "local": [
+    [
+     2,
+     2.7000000000042523,
+     0.0
+    ],
+    [
+     2,
+     0.015882352941179897,
+     0.0
+    ],
+    [
+     2,
+     -0.016666666666663263,
+     0.0
+    ],
+    [
+     2,
+     -0.0999999999999475,
+     0.0
+    ]
+   ],
+   "seconds": 0.01
+  },
+  {
+   "name": "cuboctahedron",
+   "d": 3,
+   "V": 12,
+   "F": 14,
+   "simplices": 24,
+   "cs": true,
+   "info": {},
+   "e_per_dir": [
+    1,
+    1,
+    1
+   ],
+   "e": 1,
+   "decay": "r^-4",
+   "c_float": [
+    [
+     0.0,
+     -0.005,
+     0.0,
+     -0.0051618827160493826,
+     0.0,
+     -0.005015411146357262,
+     0.0,
+     -0.005001109127390347
+    ],
+    [
+     0.0,
+     -0.0078125,
+     0.0,
+     -0.003594292534722222,
+     0.0,
+     -0.0009664135214723186,
+     0.0,
+     -0.00024383552934570732
+    ],
+    [
+     0.0,
+     -0.027777777777777776,
+     0.0,
+     -0.0326466049382716,
+     0.0,
+     -0.029382370970507544,
+     0.0,
+     -0.028203841467930764
+    ]
+   ],
+   "dirs": [
+    [
+     "-5",
+     "-9",
+     "6"
+    ],
+    [
+     "-6",
+     "6",
+     "4"
+    ],
+    [
+     "-3",
+     "-5",
+     "4"
+    ]
+   ],
+   "zero_pattern": [
+    [
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ]
+   ],
+   "c0_zero": true,
+   "cs_parity_ok": true,
+   "polar_check": true,
+   "series_check": true,
+   "pairing": false,
+   "all_faces_cs": false,
+   "predicted_e_3d": 1,
+   "local": [
+    [
+     2,
+     0.17532467532459592,
+     0.0
+    ],
+    [
+     2,
+     0.3333333333331389,
+     0.0
+    ],
+    [
+     2,
+     0.2159999999999028,
+     0.0
+    ],
+    [
+     2,
+     -3.375000000003797,
+     0.0
+    ],
+    [
+     2,
+     5.289256198347107e-13,
+     0.0
+    ],
+    [
+     2,
+     5.289256198347107e-13,
+     0.0
+    ],
+    [
+     2,
+     1.4512471655328798e-13,
+     0.0
+    ]
+   ],
+   "seconds": 0.01
+  },
+  {
+   "name": "icosahedron",
+   "d": 3,
+   "V": 12,
+   "F": 20,
+   "simplices": 36,
+   "cs": true,
+   "info": {},
+   "e_per_dir": [
+    1,
+    1,
+    1
+   ],
+   "e": 1,
+   "decay": "r^-4",
+   "c_float": [
+    [
+     0.0,
+     0.02024559234946874,
+     0.0,
+     -0.2845832069659048,
+     0.0,
+     -5.061334982267754,
+     0.0,
+     -69.46836466138689
+    ],
+    [
+     0.0,
+     -0.03789714263991936,
+     0.0,
+     -0.8135057728916932,
+     0.0,
+     -18.221658396603935,
+     0.0,
+     -435.7476656147219
+    ],
+    [
+     0.0,
+     -0.009636834567171603,
+     0.0,
+     -0.013669633195995082,
+     0.0,
+     -0.011598766286902925,
+     0.0,
+     -0.009098105439728138
+    ]
+   ],
+   "dirs": [
+    [
+     "-2",
+     "4",
+     "-7"
+    ],
+    [
+     "-3",
+     "-7",
+     "9"
+    ],
+    [
+     "-6",
+     "0",
+     "-9"
+    ]
+   ],
+   "zero_pattern": [
+    [
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ],
+    [
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false
+    ]
+   ],
+   "c0_zero": true,
+   "cs_parity_ok": true,
+   "pairing": false,
+   "all_faces_cs": false,
+   "predicted_e_3d": 1,
+   "seconds": 0.05
+  },
+  {
+   "name": "TRD (hcp Voronoi cell)",
+   "d": 3,
+   "V": 14,
+   "F": 12,
+   "simplices": 20,
+   "cs": false,
+   "info": {},
+   "e_per_dir": [
+    2,
+    2,
+    2
+   ],
+   "e": 2,
+   "decay": "r^-5",
+   "c_float": [
+    [
+     0.0,
+     0.0,
+     0.0006053109949213845,
+     -0.001994069742987492,
+     0.001295449731192825,
+     -0.001612131726066176,
+     0.0014748954273482312,
+     -0.0015322128505336778
+    ],
+    [
+     0.0,
+     0.0,
+     0.03496786042240588,
+     -0.01583087440057137,
+     0.042538901588816715,
+     -0.019551331606301382,
+     0.0444201635548678,
+     -0.020492733483678104
+    ],
+    [
+     0.0,
+     0.0,
+     -0.01786741015765959,
+     -0.010100586296876778,
+     -0.011599647499712826,
+     -0.008779984926997815,
+     -0.008942350488487415,
+     -0.00816805465946484
+    ]
+   ],
+   "dirs": [
+    [
+     "3",
+     "7",
+     "-4"
+    ],
+    [
+     "-6",
+     "5",
+     "4"
+    ],
+    [
+     "-4",
+     "5",
+     "-2"
+    ]
+   ],
+   "zero_pattern": [
+    [
+     true,
+     true,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    [
+     true,
+     true,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    [
+     true,
+     true,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ]
+   ],
+   "c0_zero": true,
+   "polar_check": true,
+   "series_check": true,
+   "pairing": true,
+   "all_faces_cs": false,
+   "predicted_e_3d": 2,
+   "local": [
+    [
+     2,
+     0.0,
+     0.20317460317460317
+    ],
+    [
+     2,
+     0.0,
+     -0.002777777777777778
+    ],
+    [
+     1,
+     0.0,
+     -3.555555555541308e-14
+    ],
+    [
+     1,
+     0.0,
+     -5.555555555543545e-14
+    ],
+    [
+     1,
+     0.0,
+     -5.25969756739729e-15
+    ],
+    [
+     2,
+     0.0,
+     -0.011111111111111112
+    ],
+    [
+     1,
+     0.0,
+     -4.081632653057659e-16
+    ],
+    [
+     1,
+     0.0,
+     -2.2160664820033338e-14
+    ],
+    [
+     1,
+     0.0,
+     -6.611570247907341e-14
+    ]
+   ],
+   "seconds": 0.02
+  },
+  {
+   "name": "triangular prism",
+   "d": 3,
+   "V": 6,
+   "F": 5,
+   "simplices": 6,
+   "cs": false,
+   "info": {
+    "prod": [
+     1,
+     1
+    ]
+   },
+   "e_per_dir": [
+    2,
+    2,
+    2
+   ],
+   "e": 2,
+   "decay": "r^-5",
+   "c_float": [
+    [
+     0.0,
+     0.0,
+     0.00022862368541380886,
+     -5.503903537739843e-05,
+     1.9600796074572092e-05,
+     -4.50963500797192e-06,
+     1.2117271285222777e-06,
+     -2.737872615536511e-07
+    ],
+    [
+     0.0,
+     0.0,
+     -0.0003919263178522438,
+     -0.00011508947428994461,
+     -3.863471198278921e-05,
+     -9.962657688588917e-06,
+     -2.5793187516526033e-06,
+     -6.211413548228925e-07
+    ],
+    [
+     0.0,
+     0.0,
+     -0.0054869684499314125,
+     -0.004267642127724432,
+     -0.0033870175616860575,
+     -0.0023633855874876045,
+     -0.0016282773315068528,
+     -0.0010991777980023148
+    ]
+   ],
+   "dirs": [
+    [
+     "9",
+     "9",
+     "-6"
+    ],
+    [
+     "9",
+     "-3",
+     "-9"
+    ],
+    [
+     "4",
+     "-1",
+     "9"
+    ]
+   ],
+   "zero_pattern": [
+    [
+     true,
+     true,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    [
+     true,
+     true,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    [
+     true,
+     true,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ]
+   ],
+   "c0_zero": true,
+   "polar_check": true,
+   "series_check": true,
+   "pairing": true,
+   "all_faces_cs": false,
+   "predicted_e_3d": 2,
+   "local": [
+    [
+     2,
+     0.0,
+     -7.714285714285714
+    ],
+    [
+     1,
+     0.0,
+     -1.0000000000005e-12
+    ],
+    [
+     1,
+     0.0,
+     -1.2500000000002083e-12
+    ],
+    [
+     1,
+     0.0,
+     -3.950617283952373e-13
+    ]
+   ],
+   "seconds": 0.0
+  },
+  {
+   "name": "tesseract",
+   "d": 4,
+   "V": 16,
+   "F": 8,
+   "simplices": 16,
+   "cs": true,
+   "info": {
+    "kind": "zonotope"
+   },
+   "e_per_dir": [
+    4,
+    4,
+    4
+   ],
+   "e": 4,
+   "decay": "r^-8",
+   "c_float": [
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     4.9768421314570635e-05,
+     0.0,
+     5.201295329121668e-05,
+     0.0,
+     5.20815165460466e-05,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0013717421124828531,
+     0.0,
+     0.0006858710562414266,
+     0.0,
+     0.00023179901437788954,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.02194787379972565,
+     0.0,
+     0.04660536164880015,
+     0.0,
+     0.07156726292811014,
+     0.0
+    ]
+   ],
+   "dirs": [
+    [
+     "1",
+     "7",
+     "9",
+     "-9"
+    ],
+    [
+     "3",
+     "6",
+     "3",
+     "-2"
+    ],
+    [
+     "-1",
+     "-3",
+     "-1",
+     "9"
+    ]
+   ],
+   "zero_pattern": [
+    [
+     true,
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true
+    ]
+   ],
+   "c0_zero": true,
+   "cs_parity_ok": true,
+   "zono_formula_ok": true,
+   "polar_check": true,
+   "series_check": true,
+   "seconds": 0.01
+  },
+  {
+   "name": "16-cell",
+   "d": 4,
+   "V": 8,
+   "F": 16,
+   "simplices": 48,
+   "cs": true,
+   "info": {},
+   "e_per_dir": [
+    2,
+    2,
+    2
+   ],
+   "e": 2,
+   "decay": "r^-6",
+   "c_float": [
+    [
+     0.0,
+     0.0,
+     0.0035246913580246914,
+     0.0,
+     0.0005613203017832647,
+     0.0,
+     5.73908193301326e-05,
+     0.0,
+     4.952882722929262e-06,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.9578784148580067,
+     0.0,
+     1.9912485453616353,
+     0.0,
+     2.998593500684554,
+     0.0,
+     3.999794830070028,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -0.0018333333333333333,
+     0.0,
+     -0.00045694444444444444,
+     0.0,
+     -0.00011239661779835391,
+     0.0,
+     -2.7954102866369455e-05,
+     0.0
+    ]
+   ],
+   "dirs": [
+    [
+     "0",
+     "-3",
+     "1",
+     "-8"
+    ],
+    [
+     "0",
+     "4",
+     "2",
+     "-1"
+    ],
+    [
+     "-5",
+     "-4",
+     "-7",
+     "-4"
+    ]
+   ],
+   "zero_pattern": [
+    [
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true
+    ],
+    [
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true
+    ],
+    [
+     true,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true,
+     false,
+     true
+    ]
+   ],
+   "c0_zero": true,
+   "cs_parity_ok": true,
+   "polar_check": true,
+   "series_check": true,
+   "seconds": 0.01
+  },
+  {
+   "name": "triangle x square",
+   "d": 4,
+   "V": 12,
+   "F": 7,
+   "simplices": 12,
+   "cs": false,
+   "info": {
+    "prod": [
+     1,
+     2
+    ]
+   },
+   "e_per_dir": [
+    3,
+    3,
+    3
+   ],
+   "e": 3,
+   "decay": "r^-7",
+   "c_float": [
+    [
+     0.0,
+     0.0,
+     0.0,
+     -6.377551020408164e-05,
+     6.448412698412699e-05,
+     -6.749865065546249e-05,
+     6.754001888270006e-05,
+     -6.76364420702845e-05,
+     6.763797308600474e-05,
+     -6.764057962445189e-05
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.002564102564102564,
+     0.0018277449046679817,
+     0.001748010755407205,
+     0.0011934209474112373,
+     0.00087268060923018,
+     0.0005862080085198267,
+     0.0004006153185711645
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     2.6666666666666665,
+     6.222222222222222,
+     17.48148148148148,
+     37.23456790123457,
+     81.58024691358025,
+     167.04526748971193,
+     343.1257430269776
+    ]
+   ],
+   "dirs": [
+    [
+     "-7",
+     "6",
+     "-7",
+     "-8"
+    ],
+    [
+     "6",
+     "-1",
+     "-4",
+     "-3"
+    ],
+    [
+     "0",
+     "1",
+     "-1",
+     "-3"
+    ]
+   ],
+   "zero_pattern": [
+    [
+     true,
+     true,
+     true,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    [
+     true,
+     true,
+     true,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    [
+     true,
+     true,
+     true,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ]
+   ],
+   "c0_zero": true,
+   "polar_check": true,
+   "series_check": true,
+   "seconds": 0.0
+  }
+ ],
+ "checks": [
+  [
+   "M1 Omega_cube(0) = 64 for the cube [-1/2,1/2]^3 (known value)",
+   true
+  ],
+  [
+   "M2 cube: vertex formula = product formula prod 1/((1/2 - x_i)(1/2 + x_i)) exactly at an interior point",
+   true
+  ],
+  [
+   "M3 products: Omega_PxQ = Omega_P Omega_Q exactly at 11 random points (2D x 2D, 3D x 1D, 4D x 1D)",
+   true
+  ],
+  [
+   "M4 every solid built with exact facets",
+   true
+  ],
+  [
+   "M5 c_0 = 0 exactly at every direction (complete-fan identity)",
+   true
+  ],
+  [
+   "M6 Omega(x0) = d! vol((P - x0)\u00b0) at an interior point (float polar hull, 1e-9) for 11 rational solids",
+   true
+  ],
+  [
+   "M7 exact Omega(10^6 u) agrees with the series c_0..c_K to relative 1e-12 for 11 rational solids",
+   true
+  ],
+  [
+   "M8 e is the same at all 3 directions for every solid",
+   true
+  ],
+  [
+   "T3 zonotopes (5): c_k = 0 for k < d and c_d = the explicit formula, exactly, at every direction",
+   true
+  ],
+  [
+   "T3 zonotopes: e = d (decay r^-2d) for every zonotope",
+   true
+  ],
+  [
+   "T2 centrally symmetric solids (9): c_k = 0 whenever d + k is odd (k <= K)",
+   true
+  ],
+  [
+   "T5 3D trichotomy (10 solids): e = 1 / 2 / 3 exactly as the facet predicate says (pairing; all faces centrally symmetric)",
+   true
+  ],
+  [
+   "T5 3D: decay orders only r^-4, r^-5, r^-6",
+   true
+  ],
+  [
+   "T4 local: w c_1 -> 0 at every facet hyperplane when e >= 2, w^2 c_2 -> 0 when e = 3 (44 facet lines, eps 1e-12)",
+   true
+  ],
+  [
+   "T4 local NEGATIVE: for e = 2 solids some facet line has a true double pole of c_2 (w^2 c_2 not -> 0)",
+   true
+  ],
+  [
+   "T6 products (2): e(P x Q) = e(P) + e(Q)",
+   true
+  ],
+  [
+   "T7 Minkowski lineality bound (0): e >= r",
+   true
+  ],
+  [
+   "H brief hypothesis \"centrally symmetric => r^-(d+2)\" REFUTED in 3D: centrally symmetric non-zonotopes decay like r^-4 (e = 1): octahedron, cuboctahedron, icosahedron",
+   true
+  ],
+  [
+   "H brief hypothesis \"all 2-faces symmetric => r^-(d+3)\" REFUTED in 4D: zonotopes decay like r^-8 = r^-2d, not r^-7",
+   true
+  ],
+  [
+   "C conjecture e(P) <= d with equality only for zonotopes: holds on every non-zonotope tested in 4D/5D (16-cell e=2, triangle x square e=3)",
+   true
+  ]
+ ]
+}

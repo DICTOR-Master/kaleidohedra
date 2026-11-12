@@ -1,0 +1,31 @@
+PROGRESS 0.419 D20: 11-11 0 discs (0%); #87 0 discs (0%) (0 s)
+PROGRESS 0.839 J2_PENTAGONAL_PYRAMID: 11-11 0 discs (0%); #87 0 discs (0%) (1 s)
+PROGRESS 1.000 J7_ELONGATED_TRIANGULAR_PYRAMID: 11-11 0 discs (0%); #87 0 discs (0%) (1 s)
+ok   R1 rule 11-11 reproduces the 11-11 census (discs, edges on discs, edges) for all 31 solids  [[]]
+ok   R2 #87 control octahedron: disc sizes {'4': 3} (expect {'4': 3})
+ok   R2 #87 control cube: disc sizes {} (expect {})
+ok   R2 #87 control cuboctahedron: disc sizes {'6': 4} (expect {'6': 4})
+ok   R2 #87 control icosidodecahedron: disc sizes {'10': 6} (expect {'10': 6})
+ok   R2 #87 control dodecahedron: disc sizes {} (expect {})
+ok   R3 #87 Dogstar: 0 discs (exact study: 0); 11-11 rule: 15 planes, 114 of 138 edges (exact study: 15, 114)
+ok   R4 #87 apex-sum test and closed-cycle test agree on every sheet of every solid
+note: coplanar fin pairs with an ambiguous side test (|side| < 1e-4), skipped: {}
+ok   R5 #87 result unchanged at tolerances 1e-5, 1e-6, 1e-7 for every solid
+ok   R6 every #87 disc lies on a plane that the 11-11 rule counts (#87 share <= 11-11 share)
+
+RANK DICTO solids (id or name contains DICTO, the DICTO Jewel family, Dogstar, the Sunstar clusters, the seamed dodecahedron)
+RANK name | edges | 11-11: discs, share | #87: discs, share | #87 disc sizes
+RANK Dogstar | 138 | 15, 82.6% | 0, 0.0% | {}
+
+ALL registry solids with a disc under either rule
+ALL CUBOCTAHEDRON | cuboctahedron | 24 | 4, 100.0% | 4, 100.0% | {'6': 4}
+ALL ICOSIDODECAHEDRON | icosidodecahedron | 60 | 6, 100.0% | 6, 100.0% | {'10': 6}
+ALL D8 | octahedron | 12 | 3, 100.0% | 3, 100.0% | {'4': 3}
+ALL D10 | pentagonal_bipyramid | 15 | 1, 33.3% | 1, 33.3% | {'5': 1}
+ALL D6 | triangular_bipyramid | 9 | 1, 33.3% | 1, 33.3% | {'3': 1}
+ALL DOGSTAR | Dogstar | 138 | 15, 82.6% | 0, 0.0% | {}
+ALL D12 | snub_disphenoid | 18 | 2, 33.3% | 0, 0.0% | {}
+ALL TRUNCATED_OCTAHEDRON | truncated_octahedron | 36 | 3, 33.3% | 0, 0.0% | {}
+SUMMARY {'n': 31, 'complete11': 3, 'complete87': 3, 'nodisc11': 23, 'nodisc87': 26, 'dicto': 1, 'dicto_nodisc11': 0, 'dicto_nodisc87': 1}
+10 checks, 0 failed, 1 s
+FINAL ok

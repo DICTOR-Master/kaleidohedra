@@ -1,0 +1,6508 @@
+[
+ {
+  "id": "D4",
+  "name": "tetrahedron",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "D6",
+  "name": "triangular_bipyramid",
+  "edges": 9,
+  "planes": 4,
+  "discs": 1,
+  "edges_on_discs": 3,
+  "share": 0.333,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "2": 3,
+   "3": 1
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "D8",
+  "name": "octahedron",
+  "edges": 12,
+  "planes": 3,
+  "discs": 3,
+  "edges_on_discs": 12,
+  "share": 1.0,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "4": 3
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "D10",
+  "name": "pentagonal_bipyramid",
+  "edges": 15,
+  "planes": 6,
+  "discs": 1,
+  "edges_on_discs": 5,
+  "share": 0.333,
+  "largest_disc": 5,
+  "edges_per_plane": {
+   "2": 5,
+   "5": 1
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "D12",
+  "name": "snub_disphenoid",
+  "edges": 18,
+  "planes": 14,
+  "discs": 2,
+  "edges_on_discs": 6,
+  "share": 0.333,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 12,
+   "3": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "D14",
+  "name": "triaugmented_triangular_prism",
+  "edges": 21,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 9,
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "D16",
+  "name": "gyroelongated_square_bipyramid",
+  "edges": 24,
+  "planes": 20,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 16,
+   "2": 4
+  },
+  "central_faces": 0,
+  "faces": 16,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "D20",
+  "name": "icosahedron",
+  "edges": 30,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 15
+  },
+  "central_faces": 0,
+  "faces": 20,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "CUBE",
+  "name": "cube",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DODECAHEDRON",
+  "name": "dodecahedron",
+  "edges": 30,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 15
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "CUBOCTAHEDRON",
+  "name": "cuboctahedron",
+  "edges": 24,
+  "planes": 4,
+  "discs": 4,
+  "edges_on_discs": 24,
+  "share": 1.0,
+  "largest_disc": 6,
+  "edges_per_plane": {
+   "6": 4
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRUNCATED_TETRAHEDRON",
+  "name": "truncated_tetrahedron",
+  "edges": 18,
+  "planes": 18,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 18
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRUNCATED_OCTAHEDRON",
+  "name": "truncated_octahedron",
+  "edges": 36,
+  "planes": 15,
+  "discs": 3,
+  "edges_on_discs": 12,
+  "share": 0.333,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 12,
+   "4": 3
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRUNCATED_CUBE",
+  "name": "truncated_cube",
+  "edges": 36,
+  "planes": 18,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 18
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRUNCATED_DODECAHEDRON",
+  "name": "truncated_dodecahedron",
+  "edges": 90,
+  "planes": 45,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 45
+  },
+  "central_faces": 0,
+  "faces": 32,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRUNCATED_ICOSAHEDRON",
+  "name": "truncated_icosahedron",
+  "edges": 90,
+  "planes": 45,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 45
+  },
+  "central_faces": 0,
+  "faces": 32,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRUNCATED_CUBOCTAHEDRON",
+  "name": "truncated_cuboctahedron",
+  "edges": 72,
+  "planes": 36,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 36
+  },
+  "central_faces": 0,
+  "faces": 26,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRUNCATED_ICOSIDODECAHEDRON",
+  "name": "truncated_icosidodecahedron",
+  "edges": 180,
+  "planes": 90,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 90
+  },
+  "central_faces": 0,
+  "faces": 62,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "ICOSIDODECAHEDRON",
+  "name": "icosidodecahedron",
+  "edges": 60,
+  "planes": 6,
+  "discs": 6,
+  "edges_on_discs": 60,
+  "share": 1.0,
+  "largest_disc": 10,
+  "edges_per_plane": {
+   "10": 6
+  },
+  "central_faces": 0,
+  "faces": 32,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RHOMBICUBOCTAHEDRON",
+  "name": "rhombicuboctahedron",
+  "edges": 48,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 24
+  },
+  "central_faces": 0,
+  "faces": 26,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RHOMBICOSIDODECAHEDRON",
+  "name": "rhombicosidodecahedron",
+  "edges": 120,
+  "planes": 60,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 60
+  },
+  "central_faces": 0,
+  "faces": 62,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "SNUB_CUBE",
+  "name": "snub_cube",
+  "edges": 60,
+  "planes": 48,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 36,
+   "2": 12
+  },
+  "central_faces": 0,
+  "faces": 38,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "SNUB_DODECAHEDRON",
+  "name": "snub_dodecahedron",
+  "edges": 150,
+  "planes": 150,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 150
+  },
+  "central_faces": 0,
+  "faces": 92,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J1_SQUARE_PYRAMID",
+  "name": "square_pyramid",
+  "edges": 8,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 4,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J2_PENTAGONAL_PYRAMID",
+  "name": "pentagonal_pyramid",
+  "edges": 10,
+  "planes": 10,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 10
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J3_TRIANGULAR_CUPOLA",
+  "name": "triangular_cupola",
+  "edges": 15,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 15
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J4_SQUARE_CUPOLA",
+  "name": "square_cupola",
+  "edges": 20,
+  "planes": 20,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 20
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J5_PENTAGONAL_CUPOLA",
+  "name": "pentagonal_cupola",
+  "edges": 25,
+  "planes": 25,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 25
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J6_PENTAGONAL_ROTUNDA",
+  "name": "pentagonal_rotunda",
+  "edges": 35,
+  "planes": 35,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 35
+  },
+  "central_faces": 0,
+  "faces": 17,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J7_ELONGATED_TRIANGULAR_PYRAMID",
+  "name": "elongated_triangular_pyramid",
+  "edges": 12,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 6,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 7,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J8_ELONGATED_SQUARE_PYRAMID",
+  "name": "elongated_square_pyramid",
+  "edges": 16,
+  "planes": 10,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.5,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "1": 8,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 9,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J9_ELONGATED_PENTAGONAL_PYRAMID",
+  "name": "elongated_pentagonal_pyramid",
+  "edges": 20,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 10,
+   "2": 5
+  },
+  "central_faces": 0,
+  "faces": 11,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J10_GYROELONGATED_SQUARE_PYRAMID",
+  "name": "gyroelongated_square_pyramid",
+  "edges": 20,
+  "planes": 18,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 16,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 13,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J11_GYROELONGATED_PENTAGONAL_PYRAMID",
+  "name": "gyroelongated_pentagonal_pyramid",
+  "edges": 25,
+  "planes": 25,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 25
+  },
+  "central_faces": 0,
+  "faces": 16,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J18_ELONGATED_TRIANGULAR_CUPOLA",
+  "name": "elongated_triangular_cupola",
+  "edges": 27,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 21,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J19_ELONGATED_SQUARE_CUPOLA",
+  "name": "elongated_square_cupola",
+  "edges": 36,
+  "planes": 32,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 28,
+   "2": 4
+  },
+  "central_faces": 0,
+  "faces": 18,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J20_ELONGATED_PENTAGONAL_CUPOLA",
+  "name": "elongated_pentagonal_cupola",
+  "edges": 45,
+  "planes": 40,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 35,
+   "2": 5
+  },
+  "central_faces": 0,
+  "faces": 22,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J21_ELONGATED_PENTAGONAL_ROTUNDA",
+  "name": "elongated_pentagonal_rotunda",
+  "edges": 55,
+  "planes": 50,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 45,
+   "2": 5
+  },
+  "central_faces": 0,
+  "faces": 27,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J22_GYROELONGATED_TRIANGULAR_CUPOLA",
+  "name": "gyroelongated_triangular_cupola",
+  "edges": 33,
+  "planes": 33,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 33
+  },
+  "central_faces": 0,
+  "faces": 20,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J23_GYROELONGATED_SQUARE_CUPOLA",
+  "name": "gyroelongated_square_cupola",
+  "edges": 44,
+  "planes": 44,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 44
+  },
+  "central_faces": 0,
+  "faces": 26,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J24_GYROELONGATED_PENTAGONAL_CUPOLA",
+  "name": "gyroelongated_pentagonal_cupola",
+  "edges": 55,
+  "planes": 55,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 55
+  },
+  "central_faces": 0,
+  "faces": 32,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J25_GYROELONGATED_PENTAGONAL_ROTUNDA",
+  "name": "gyroelongated_pentagonal_rotunda",
+  "edges": 65,
+  "planes": 65,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 65
+  },
+  "central_faces": 0,
+  "faces": 37,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J14_ELONGATED_TRIANGULAR_BIPYRAMID",
+  "name": "elongated_triangular_bipyramid",
+  "edges": 15,
+  "planes": 9,
+  "discs": 3,
+  "edges_on_discs": 9,
+  "share": 0.6,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 6,
+   "3": 3
+  },
+  "central_faces": 0,
+  "faces": 9,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J15_ELONGATED_SQUARE_BIPYRAMID",
+  "name": "elongated_square_bipyramid",
+  "edges": 20,
+  "planes": 6,
+  "discs": 2,
+  "edges_on_discs": 12,
+  "share": 0.6,
+  "largest_disc": 6,
+  "edges_per_plane": {
+   "2": 4,
+   "6": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J16_ELONGATED_PENTAGONAL_BIPYRAMID",
+  "name": "elongated_pentagonal_bipyramid",
+  "edges": 25,
+  "planes": 15,
+  "discs": 5,
+  "edges_on_discs": 15,
+  "share": 0.6,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 10,
+   "3": 5
+  },
+  "central_faces": 0,
+  "faces": 15,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J26_GYROBIFASTIGIUM",
+  "name": "gyrobifastigium",
+  "edges": 14,
+  "planes": 7,
+  "discs": 1,
+  "edges_on_discs": 4,
+  "share": 0.286,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "1": 2,
+   "2": 4,
+   "4": 1
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J58_AUGMENTED_DODECAHEDRON",
+  "name": "augmented_dodecahedron",
+  "edges": 35,
+  "planes": 25,
+  "discs": 5,
+  "edges_on_discs": 15,
+  "share": 0.429,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 20,
+   "3": 5
+  },
+  "central_faces": 0,
+  "faces": 16,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J59_PARABIAUGMENTED_DODECAHEDRON",
+  "name": "parabiaugmented_dodecahedron",
+  "edges": 40,
+  "planes": 15,
+  "discs": 5,
+  "edges_on_discs": 20,
+  "share": 0.5,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 5
+  },
+  "central_faces": 0,
+  "faces": 20,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J60_METABIAUGMENTED_DODECAHEDRON",
+  "name": "metabiaugmented_dodecahedron",
+  "edges": 40,
+  "planes": 36,
+  "discs": 1,
+  "edges_on_discs": 4,
+  "share": 0.1,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "1": 34,
+   "2": 1,
+   "4": 1
+  },
+  "central_faces": 0,
+  "faces": 20,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J61_TRIAUGMENTED_DODECAHEDRON",
+  "name": "triaugmented_dodecahedron",
+  "edges": 45,
+  "planes": 39,
+  "discs": 3,
+  "edges_on_discs": 9,
+  "share": 0.2,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 36,
+   "3": 3
+  },
+  "central_faces": 0,
+  "faces": 24,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J62_METABIDIMINISHED_ICOSAHEDRON",
+  "name": "metabidiminished_icosahedron",
+  "edges": 20,
+  "planes": 19,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 18,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J63_TRIDIMINISHED_ICOSAHEDRON",
+  "name": "tridiminished_icosahedron",
+  "edges": 15,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 15
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J65_AUGMENTED_TRUNCATED_TETRAHEDRON",
+  "name": "augmented_truncated_tetrahedron",
+  "edges": 27,
+  "planes": 27,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 27
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J72_GYRATE_RHOMBICOSIDODECAHEDRON",
+  "name": "gyrate_rhombicosidodecahedron",
+  "edges": 120,
+  "planes": 75,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 30,
+   "2": 45
+  },
+  "central_faces": 0,
+  "faces": 62,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J73_PARABIGYRATE_RHOMBICOSIDODECAHEDRON",
+  "name": "parabigyrate_rhombicosidodecahedron",
+  "edges": 120,
+  "planes": 60,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 60
+  },
+  "central_faces": 0,
+  "faces": 62,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J74_METABIGYRATE_RHOMBICOSIDODECAHEDRON",
+  "name": "metabigyrate_rhombicosidodecahedron",
+  "edges": 120,
+  "planes": 88,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 56,
+   "2": 32
+  },
+  "central_faces": 0,
+  "faces": 62,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J75_TRIGYRATE_RHOMBICOSIDODECAHEDRON",
+  "name": "trigyrate_rhombicosidodecahedron",
+  "edges": 120,
+  "planes": 99,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 78,
+   "2": 21
+  },
+  "central_faces": 0,
+  "faces": 62,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J76_DIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "name": "diminished_rhombicosidodecahedron",
+  "edges": 105,
+  "planes": 105,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 105
+  },
+  "central_faces": 0,
+  "faces": 52,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J77_PARAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "name": "paragyrate_diminished_rhombicosidodecahedron",
+  "edges": 105,
+  "planes": 105,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 105
+  },
+  "central_faces": 0,
+  "faces": 52,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J78_METAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "name": "metagyrate_diminished_rhombicosidodecahedron",
+  "edges": 105,
+  "planes": 105,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 105
+  },
+  "central_faces": 0,
+  "faces": 52,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J80_PARABIDIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "name": "parabidiminished_rhombicosidodecahedron",
+  "edges": 90,
+  "planes": 45,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 45
+  },
+  "central_faces": 0,
+  "faces": 42,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J81_METABIDIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "name": "metabidiminished_rhombicosidodecahedron",
+  "edges": 90,
+  "planes": 88,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 86,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 42,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J82_GYRATE_BIDIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "name": "gyrate_bidiminished_rhombicosidodecahedron",
+  "edges": 90,
+  "planes": 88,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 86,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 42,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J83_TRIDIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "name": "tridiminished_rhombicosidodecahedron",
+  "edges": 75,
+  "planes": 75,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 75
+  },
+  "central_faces": 0,
+  "faces": 32,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J66_AUGMENTED_TRUNCATED_CUBE",
+  "name": "augmented_truncated_cube",
+  "edges": 48,
+  "planes": 46,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 44,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 22,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J67_BIAUGMENTED_TRUNCATED_CUBE",
+  "name": "biaugmented_truncated_cube",
+  "edges": 60,
+  "planes": 32,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 4,
+   "2": 28
+  },
+  "central_faces": 0,
+  "faces": 30,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J68_AUGMENTED_TRUNCATED_DODECAHEDRON",
+  "name": "augmented_truncated_dodecahedron",
+  "edges": 105,
+  "planes": 100,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 95,
+   "2": 5
+  },
+  "central_faces": 0,
+  "faces": 42,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J69_PARABIAUGMENTED_TRUNCATED_DODECAHEDRON",
+  "name": "parabiaugmented_truncated_dodecahedron",
+  "edges": 120,
+  "planes": 60,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 60
+  },
+  "central_faces": 0,
+  "faces": 52,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J70_METABIAUGMENTED_TRUNCATED_DODECAHEDRON",
+  "name": "metabiaugmented_truncated_dodecahedron",
+  "edges": 120,
+  "planes": 116,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 112,
+   "2": 4
+  },
+  "central_faces": 0,
+  "faces": 52,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J71_TRIAUGMENTED_TRUNCATED_DODECAHEDRON",
+  "name": "triaugmented_truncated_dodecahedron",
+  "edges": 135,
+  "planes": 132,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 129,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 62,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J64_AUGMENTED_TRIDIMINISHED_ICOSAHEDRON",
+  "name": "augmented_tridiminished_icosahedron",
+  "edges": 18,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 12,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J79_BIGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "name": "bigyrate_diminished_rhombicosidodecahedron",
+  "edges": 105,
+  "planes": 105,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 105
+  },
+  "central_faces": 0,
+  "faces": 52,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J85_SNUB_SQUARE_ANTIPRISM",
+  "name": "snub_square_antiprism",
+  "edges": 40,
+  "planes": 37,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 34,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 26,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J86_SPHENOCORONA",
+  "name": "sphenocorona",
+  "edges": 22,
+  "planes": 20,
+  "discs": 1,
+  "edges_on_discs": 3,
+  "share": 0.136,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 19,
+   "3": 1
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J87_AUGMENTED_SPHENOCORONA",
+  "name": "augmented_sphenocorona",
+  "edges": 26,
+  "planes": 26,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 26
+  },
+  "central_faces": 0,
+  "faces": 17,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J88_SPHENOMEGACORONA",
+  "name": "sphenomegacorona",
+  "edges": 28,
+  "planes": 24,
+  "discs": 1,
+  "edges_on_discs": 5,
+  "share": 0.179,
+  "largest_disc": 5,
+  "edges_per_plane": {
+   "1": 23,
+   "5": 1
+  },
+  "central_faces": 0,
+  "faces": 18,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J89_HEBESPHENOMEGACORONA",
+  "name": "hebesphenomegacorona",
+  "edges": 33,
+  "planes": 32,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 31,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 21,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J90_DISPHENOCINGULUM",
+  "name": "disphenocingulum",
+  "edges": 38,
+  "planes": 34,
+  "discs": 2,
+  "edges_on_discs": 6,
+  "share": 0.158,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 32,
+   "3": 2
+  },
+  "central_faces": 0,
+  "faces": 24,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J91_BILUNABIROTUNDA",
+  "name": "bilunabirotunda",
+  "edges": 26,
+  "planes": 9,
+  "discs": 2,
+  "edges_on_discs": 12,
+  "share": 0.462,
+  "largest_disc": 6,
+  "edges_per_plane": {
+   "2": 7,
+   "6": 2
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J92_TRIANGULAR_HEBESPHENOROTUNDA",
+  "name": "triangular_hebesphenorotunda",
+  "edges": 36,
+  "planes": 36,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 36
+  },
+  "central_faces": 0,
+  "faces": 20,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J49_AUGMENTED_TRIANGULAR_PRISM",
+  "name": "augmented_triangular_prism",
+  "edges": 13,
+  "planes": 11,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 9,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J50_BIAUGMENTED_TRIANGULAR_PRISM",
+  "name": "biaugmented_triangular_prism",
+  "edges": 17,
+  "planes": 17,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 17
+  },
+  "central_faces": 0,
+  "faces": 11,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J52_AUGMENTED_PENTAGONAL_PRISM",
+  "name": "augmented_pentagonal_prism",
+  "edges": 19,
+  "planes": 17,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 15,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J53_BIAUGMENTED_PENTAGONAL_PRISM",
+  "name": "biaugmented_pentagonal_prism",
+  "edges": 23,
+  "planes": 23,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 23
+  },
+  "central_faces": 0,
+  "faces": 13,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J54_AUGMENTED_HEXAGONAL_PRISM",
+  "name": "augmented_hexagonal_prism",
+  "edges": 22,
+  "planes": 20,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 18,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 11,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J55_PARABIAUGMENTED_HEXAGONAL_PRISM",
+  "name": "parabiaugmented_hexagonal_prism",
+  "edges": 26,
+  "planes": 11,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.308,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 9,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J56_METABIAUGMENTED_HEXAGONAL_PRISM",
+  "name": "metabiaugmented_hexagonal_prism",
+  "edges": 26,
+  "planes": 26,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 26
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J57_TRIAUGMENTED_HEXAGONAL_PRISM",
+  "name": "triaugmented_hexagonal_prism",
+  "edges": 30,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 15
+  },
+  "central_faces": 0,
+  "faces": 17,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J35_ELONGATED_TRIANGULAR_ORTHOBICUPOLA",
+  "name": "elongated_triangular_orthobicupola",
+  "edges": 36,
+  "planes": 27,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 18,
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 20,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J36_ELONGATED_TRIANGULAR_GYROBICUPOLA",
+  "name": "elongated_triangular_gyrobicupola",
+  "edges": 36,
+  "planes": 18,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 18
+  },
+  "central_faces": 0,
+  "faces": 20,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J37_ELONGATED_SQUARE_GYROBICUPOLA",
+  "name": "elongated_square_gyrobicupola",
+  "edges": 48,
+  "planes": 36,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 24,
+   "2": 12
+  },
+  "central_faces": 0,
+  "faces": 26,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J38_ELONGATED_PENTAGONAL_ORTHOBICUPOLA",
+  "name": "elongated_pentagonal_orthobicupola",
+  "edges": 60,
+  "planes": 45,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 30,
+   "2": 15
+  },
+  "central_faces": 0,
+  "faces": 32,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J39_ELONGATED_PENTAGONAL_GYROBICUPOLA",
+  "name": "elongated_pentagonal_gyrobicupola",
+  "edges": 60,
+  "planes": 30,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 30
+  },
+  "central_faces": 0,
+  "faces": 32,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J40_ELONGATED_PENTAGONAL_ORTHOCUPOLAROTUNDA",
+  "name": "elongated_pentagonal_orthocupolarotunda",
+  "edges": 70,
+  "planes": 65,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 60,
+   "2": 5
+  },
+  "central_faces": 0,
+  "faces": 37,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J41_ELONGATED_PENTAGONAL_GYROCUPOLAROTUNDA",
+  "name": "elongated_pentagonal_gyrocupolarotunda",
+  "edges": 70,
+  "planes": 65,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 60,
+   "2": 5
+  },
+  "central_faces": 0,
+  "faces": 37,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J42_ELONGATED_PENTAGONAL_ORTHOBIROTUNDA",
+  "name": "elongated_pentagonal_orthobirotunda",
+  "edges": 80,
+  "planes": 65,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 50,
+   "2": 15
+  },
+  "central_faces": 0,
+  "faces": 42,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J43_ELONGATED_PENTAGONAL_GYROBIROTUNDA",
+  "name": "elongated_pentagonal_gyrobirotunda",
+  "edges": 80,
+  "planes": 40,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 40
+  },
+  "central_faces": 0,
+  "faces": 42,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J44_GYROELONGATED_TRIANGULAR_BICUPOLA",
+  "name": "gyroelongated_triangular_bicupola",
+  "edges": 42,
+  "planes": 42,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 42
+  },
+  "central_faces": 0,
+  "faces": 26,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J45_GYROELONGATED_SQUARE_BICUPOLA",
+  "name": "gyroelongated_square_bicupola",
+  "edges": 56,
+  "planes": 56,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 56
+  },
+  "central_faces": 0,
+  "faces": 34,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J46_GYROELONGATED_PENTAGONAL_BICUPOLA",
+  "name": "gyroelongated_pentagonal_bicupola",
+  "edges": 70,
+  "planes": 70,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 70
+  },
+  "central_faces": 0,
+  "faces": 42,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J47_GYROELONGATED_PENTAGONAL_CUPOLAROTUNDA",
+  "name": "gyroelongated_pentagonal_cupolarotunda",
+  "edges": 80,
+  "planes": 80,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 80
+  },
+  "central_faces": 0,
+  "faces": 47,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J48_GYROELONGATED_PENTAGONAL_BIROTUNDA",
+  "name": "gyroelongated_pentagonal_birotunda",
+  "edges": 90,
+  "planes": 90,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 90
+  },
+  "central_faces": 0,
+  "faces": 52,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J27_TRIANGULAR_ORTHOBICUPOLA",
+  "name": "triangular_orthobicupola",
+  "edges": 24,
+  "planes": 7,
+  "discs": 7,
+  "edges_on_discs": 24,
+  "share": 1.0,
+  "largest_disc": 6,
+  "edges_per_plane": {
+   "3": 6,
+   "6": 1
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J28_SQUARE_ORTHOBICUPOLA",
+  "name": "square_orthobicupola",
+  "edges": 32,
+  "planes": 13,
+  "discs": 1,
+  "edges_on_discs": 8,
+  "share": 0.25,
+  "largest_disc": 8,
+  "edges_per_plane": {
+   "2": 12,
+   "8": 1
+  },
+  "central_faces": 0,
+  "faces": 18,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J29_SQUARE_GYROBICUPOLA",
+  "name": "square_gyrobicupola",
+  "edges": 32,
+  "planes": 17,
+  "discs": 1,
+  "edges_on_discs": 8,
+  "share": 0.25,
+  "largest_disc": 8,
+  "edges_per_plane": {
+   "1": 8,
+   "2": 8,
+   "8": 1
+  },
+  "central_faces": 0,
+  "faces": 18,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J30_PENTAGONAL_ORTHOBICUPOLA",
+  "name": "pentagonal_orthobicupola",
+  "edges": 40,
+  "planes": 21,
+  "discs": 1,
+  "edges_on_discs": 10,
+  "share": 0.25,
+  "largest_disc": 10,
+  "edges_per_plane": {
+   "1": 10,
+   "2": 10,
+   "10": 1
+  },
+  "central_faces": 0,
+  "faces": 22,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J31_PENTAGONAL_GYROBICUPOLA",
+  "name": "pentagonal_gyrobicupola",
+  "edges": 40,
+  "planes": 11,
+  "discs": 6,
+  "edges_on_discs": 30,
+  "share": 0.75,
+  "largest_disc": 10,
+  "edges_per_plane": {
+   "2": 5,
+   "4": 5,
+   "10": 1
+  },
+  "central_faces": 0,
+  "faces": 22,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J32_PENTAGONAL_ORTHOCUPOLAROTUNDA",
+  "name": "pentagonal_orthocupolarotunda",
+  "edges": 50,
+  "planes": 50,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 50
+  },
+  "central_faces": 0,
+  "faces": 27,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J33_PENTAGONAL_GYROCUPOLAROTUNDA",
+  "name": "pentagonal_gyrocupolarotunda",
+  "edges": 50,
+  "planes": 50,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 50
+  },
+  "central_faces": 0,
+  "faces": 27,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "J34_PENTAGONAL_ORTHOBIROTUNDA",
+  "name": "pentagonal_orthobirotunda",
+  "edges": 60,
+  "planes": 11,
+  "discs": 11,
+  "edges_on_discs": 60,
+  "share": 1.0,
+  "largest_disc": 10,
+  "edges_per_plane": {
+   "5": 10,
+   "10": 1
+  },
+  "central_faces": 0,
+  "faces": 32,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RHOMBIC_DODECAHEDRON",
+  "name": "rhombic_dodecahedron",
+  "edges": 24,
+  "planes": 6,
+  "discs": 6,
+  "edges_on_discs": 24,
+  "share": 1.0,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "4": 6
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RHOMBIC_TRIACONTAHEDRON",
+  "name": "rhombic_triacontahedron",
+  "edges": 60,
+  "planes": 15,
+  "discs": 15,
+  "edges_on_discs": 60,
+  "share": 1.0,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "4": 15
+  },
+  "central_faces": 0,
+  "faces": 30,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRIAKIS_TETRAHEDRON",
+  "name": "triakis_tetrahedron",
+  "edges": 18,
+  "planes": 8,
+  "discs": 4,
+  "edges_on_discs": 12,
+  "share": 0.667,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 2,
+   "2": 2,
+   "3": 4
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRIAKIS_OCTAHEDRON",
+  "name": "triakis_octahedron",
+  "edges": 36,
+  "planes": 9,
+  "discs": 9,
+  "edges_on_discs": 36,
+  "share": 1.0,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "4": 9
+  },
+  "central_faces": 0,
+  "faces": 24,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TETRAKIS_HEXAHEDRON",
+  "name": "tetrakis_hexahedron",
+  "edges": 36,
+  "planes": 6,
+  "discs": 6,
+  "edges_on_discs": 36,
+  "share": 1.0,
+  "largest_disc": 6,
+  "edges_per_plane": {
+   "6": 6
+  },
+  "central_faces": 0,
+  "faces": 24,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DELTOIDAL_ICOSITETRAHEDRON",
+  "name": "deltoidal_icositetrahedron",
+  "edges": 48,
+  "planes": 9,
+  "discs": 9,
+  "edges_on_discs": 48,
+  "share": 1.0,
+  "largest_disc": 8,
+  "edges_per_plane": {
+   "4": 6,
+   "8": 3
+  },
+  "central_faces": 0,
+  "faces": 24,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DISDYAKIS_DODECAHEDRON",
+  "name": "disdyakis_dodecahedron",
+  "edges": 72,
+  "planes": 9,
+  "discs": 9,
+  "edges_on_discs": 72,
+  "share": 1.0,
+  "largest_disc": 8,
+  "edges_per_plane": {
+   "8": 9
+  },
+  "central_faces": 0,
+  "faces": 48,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRIAKIS_ICOSAHEDRON",
+  "name": "triakis_icosahedron",
+  "edges": 90,
+  "planes": 15,
+  "discs": 15,
+  "edges_on_discs": 90,
+  "share": 1.0,
+  "largest_disc": 6,
+  "edges_per_plane": {
+   "6": 15
+  },
+  "central_faces": 0,
+  "faces": 60,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PENTAKIS_DODECAHEDRON",
+  "name": "pentakis_dodecahedron",
+  "edges": 90,
+  "planes": 15,
+  "discs": 15,
+  "edges_on_discs": 90,
+  "share": 1.0,
+  "largest_disc": 6,
+  "edges_per_plane": {
+   "6": 15
+  },
+  "central_faces": 0,
+  "faces": 60,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DELTOIDAL_HEXECONTAHEDRON",
+  "name": "deltoidal_hexecontahedron",
+  "edges": 120,
+  "planes": 15,
+  "discs": 15,
+  "edges_on_discs": 120,
+  "share": 1.0,
+  "largest_disc": 8,
+  "edges_per_plane": {
+   "8": 15
+  },
+  "central_faces": 0,
+  "faces": 60,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DISDYAKIS_TRIACONTAHEDRON",
+  "name": "disdyakis_triacontahedron",
+  "edges": 180,
+  "planes": 15,
+  "discs": 15,
+  "edges_on_discs": 180,
+  "share": 1.0,
+  "largest_disc": 12,
+  "edges_per_plane": {
+   "12": 15
+  },
+  "central_faces": 0,
+  "faces": 120,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PENTAGONAL_ICOSITETRAHEDRON",
+  "name": "pentagonal_icositetrahedron",
+  "edges": 60,
+  "planes": 48,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 36,
+   "2": 12
+  },
+  "central_faces": 0,
+  "faces": 24,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PENTAGONAL_HEXECONTAHEDRON",
+  "name": "pentagonal_hexecontahedron",
+  "edges": 150,
+  "planes": 150,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 150
+  },
+  "central_faces": 0,
+  "faces": 60,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PRISM_3",
+  "name": "3-gonal prism",
+  "edges": 9,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 9
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PRISM_5",
+  "name": "5-gonal prism",
+  "edges": 15,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 15
+  },
+  "central_faces": 0,
+  "faces": 7,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PRISM_6",
+  "name": "6-gonal prism",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PRISM_7",
+  "name": "7-gonal prism",
+  "edges": 21,
+  "planes": 21,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 21
+  },
+  "central_faces": 0,
+  "faces": 9,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PRISM_8",
+  "name": "8-gonal prism",
+  "edges": 24,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 12
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PRISM_9",
+  "name": "9-gonal prism",
+  "edges": 27,
+  "planes": 27,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 27
+  },
+  "central_faces": 0,
+  "faces": 11,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PRISM_10",
+  "name": "10-gonal prism",
+  "edges": 30,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 15
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "ANTIPRISM_4",
+  "name": "4-gonal antiprism",
+  "edges": 16,
+  "planes": 16,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 16
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "ANTIPRISM_5",
+  "name": "5-gonal antiprism",
+  "edges": 20,
+  "planes": 10,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 10
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "ANTIPRISM_6",
+  "name": "6-gonal antiprism",
+  "edges": 24,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 24
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "ANTIPRISM_7",
+  "name": "7-gonal antiprism",
+  "edges": 28,
+  "planes": 14,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 14
+  },
+  "central_faces": 0,
+  "faces": 16,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "ANTIPRISM_8",
+  "name": "8-gonal antiprism",
+  "edges": 32,
+  "planes": 32,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 32
+  },
+  "central_faces": 0,
+  "faces": 18,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "ANTIPRISM_9",
+  "name": "9-gonal antiprism",
+  "edges": 36,
+  "planes": 18,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 18
+  },
+  "central_faces": 0,
+  "faces": 20,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "ANTIPRISM_10",
+  "name": "10-gonal antiprism",
+  "edges": 40,
+  "planes": 40,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 40
+  },
+  "central_faces": 0,
+  "faces": 22,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PYRAMID_TRI_G1",
+  "name": "low triangular pyramid (grade 1)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PYRAMID_TRI_G2",
+  "name": "standard triangular pyramid (grade 2)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PYRAMID_TRI_G3",
+  "name": "tall triangular pyramid (grade 3)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PYRAMID_TRI_G4",
+  "name": "sharp triangular pyramid (grade 4)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PYRAMID_SQUARE_G1",
+  "name": "low square pyramid (grade 1)",
+  "edges": 8,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 4,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PYRAMID_SQUARE_G2",
+  "name": "standard square pyramid (grade 2)",
+  "edges": 8,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 4,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PYRAMID_SQUARE_G3",
+  "name": "tall square pyramid (grade 3)",
+  "edges": 8,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 4,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PYRAMID_SQUARE_G4",
+  "name": "sharp square pyramid (grade 4)",
+  "edges": 8,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 4,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PYRAMID_PENTAGON_G1",
+  "name": "low pentagonal pyramid (grade 1)",
+  "edges": 10,
+  "planes": 10,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 10
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PYRAMID_PENTAGON_G2",
+  "name": "standard pentagonal pyramid (grade 2)",
+  "edges": 10,
+  "planes": 10,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 10
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PYRAMID_PENTAGON_G3",
+  "name": "tall pentagonal pyramid (grade 3)",
+  "edges": 10,
+  "planes": 10,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 10
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PYRAMID_PENTAGON_G4",
+  "name": "sharp pentagonal pyramid (grade 4)",
+  "edges": 10,
+  "planes": 10,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 10
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RVCMG_V2_TRIANGLE_TO_UHEX",
+  "name": "triangle to U-Hex adapter",
+  "edges": 18,
+  "planes": 18,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 18
+  },
+  "central_faces": 0,
+  "faces": 11,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RVCMG_V2_SQUARE_TO_UHEX",
+  "name": "square to U-Hex adapter",
+  "edges": 20,
+  "planes": 19,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 18,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RVCMG_V2_PENTAGON_TO_UHEX",
+  "name": "pentagon to U-Hex adapter",
+  "edges": 22,
+  "planes": 22,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 22
+  },
+  "central_faces": 0,
+  "faces": 13,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RVCMG_V2_GOLDEN_RHOMBUS_TO_UHEX",
+  "name": "golden rhombus to U-Hex adapter",
+  "edges": 20,
+  "planes": 19,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 18,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RVCMG_V2_RD_NATIVE_RHOMBUS_TO_UHEX",
+  "name": "RD-native rhombus to U-Hex adapter",
+  "edges": 20,
+  "planes": 19,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 18,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RVCMG_V2_DI_KITE_TO_UHEX",
+  "name": "DI-kite to U-Hex adapter",
+  "edges": 20,
+  "planes": 20,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 20
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RVCMG_V2_DH_KITE_TO_UHEX",
+  "name": "DH-kite to U-Hex adapter",
+  "edges": 20,
+  "planes": 19,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 18,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RVCMG_V2_REGULAR_HEX_TO_UHEX",
+  "name": "regular hexagon to U-Hex adapter",
+  "edges": 24,
+  "planes": 21,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 18,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RVCMG_V2_UHEX_SPACER",
+  "name": "U-Hex spacer prism (square sides)",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "QUAD_PRISM_RD_RHOMBUS",
+  "name": "RD-rhombus prism (square sides)",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "QUAD_PRISM_RT_GOLDEN_RHOMBUS",
+  "name": "golden rhombus prism (square sides)",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "QUAD_PRISM_DI_KITE",
+  "name": "DI-kite prism (2 square + 2 rectangle sides)",
+  "edges": 12,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 12
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "QUAD_PRISM_DH_KITE",
+  "name": "DH-kite prism (2 square + 2 rectangle sides)",
+  "edges": 12,
+  "planes": 11,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 10,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RHOMBOHEDRON",
+  "name": "rhombohedron",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "ELONGATED_DODECAHEDRON",
+  "name": "elongated dodecahedron",
+  "edges": 28,
+  "planes": 12,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.286,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_LEANING_HEX_PRISM",
+  "name": "DICTO leaning hexagonal prism",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_SQUARE_FACED_BLOCK",
+  "name": "DICTO square-faced block",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_ALL_RHOMBUS_BLOCK",
+  "name": "DICTO all-rhombus block",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_SKEWED_RD",
+  "name": "DICTO skewed rhombic dodecahedron",
+  "edges": 24,
+  "planes": 10,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.333,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 8,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_FLATTENED_RHOMBOHEDRON",
+  "name": "DICTO flattened rhombohedron",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_SKEWED_ED_16",
+  "name": "DICTO skewed elongated dodecahedron (16)",
+  "edges": 28,
+  "planes": 12,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.286,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_SKEWED_ED_18",
+  "name": "DICTO skewed elongated dodecahedron (18)",
+  "edges": 28,
+  "planes": 14,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 14
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "BAIN_RD",
+  "name": "Bain rhombic dodecahedron",
+  "edges": 24,
+  "planes": 6,
+  "discs": 6,
+  "edges_on_discs": 24,
+  "share": 1.0,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "4": 6
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "REGULAR_HEX_ED",
+  "name": "Regular-hexagon elongated dodecahedron",
+  "edges": 28,
+  "planes": 12,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.286,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "BAIN_ED",
+  "name": "Bain elongated dodecahedron",
+  "edges": 28,
+  "planes": 12,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.286,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RHOMBOHEDRON_60",
+  "name": "60\u00b0 rhombohedron",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RHOMBIC_PRISM_60",
+  "name": "60\u00b0 rhombic prism",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "LEANING_SQUARE_PRISM",
+  "name": "Leaning square prism",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "LEANING_HEX_PRISM_60",
+  "name": "60\u00b0 leaning hexagonal prism",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_1",
+  "name": "Rhombic dodecahedron target 1",
+  "edges": 24,
+  "planes": 10,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.333,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 8,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_2",
+  "name": "Rhombic dodecahedron target 2",
+  "edges": 24,
+  "planes": 9,
+  "discs": 3,
+  "edges_on_discs": 12,
+  "share": 0.5,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 6,
+   "4": 3
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_3",
+  "name": "Rhombic dodecahedron target 3",
+  "edges": 24,
+  "planes": 11,
+  "discs": 1,
+  "edges_on_discs": 4,
+  "share": 0.167,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_4",
+  "name": "Rhombic dodecahedron target 4",
+  "edges": 24,
+  "planes": 6,
+  "discs": 6,
+  "edges_on_discs": 24,
+  "share": 1.0,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "4": 6
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_5",
+  "name": "Rhombic dodecahedron target 5",
+  "edges": 24,
+  "planes": 9,
+  "discs": 3,
+  "edges_on_discs": 12,
+  "share": 0.5,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 6,
+   "4": 3
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_6",
+  "name": "Rhombic dodecahedron target 6",
+  "edges": 24,
+  "planes": 11,
+  "discs": 1,
+  "edges_on_discs": 4,
+  "share": 0.167,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_7",
+  "name": "Rhombic dodecahedron target 7",
+  "edges": 24,
+  "planes": 11,
+  "discs": 1,
+  "edges_on_discs": 4,
+  "share": 0.167,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_8",
+  "name": "Rhombic dodecahedron target 8",
+  "edges": 24,
+  "planes": 11,
+  "discs": 1,
+  "edges_on_discs": 4,
+  "share": 0.167,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_9",
+  "name": "Rhombic dodecahedron target 9",
+  "edges": 24,
+  "planes": 10,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.333,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 8,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_10",
+  "name": "Rhombic dodecahedron target 10",
+  "edges": 24,
+  "planes": 11,
+  "discs": 1,
+  "edges_on_discs": 4,
+  "share": 0.167,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_11",
+  "name": "Rhombic dodecahedron target 11",
+  "edges": 24,
+  "planes": 9,
+  "discs": 3,
+  "edges_on_discs": 12,
+  "share": 0.5,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 6,
+   "4": 3
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_12",
+  "name": "Rhombic dodecahedron target 12",
+  "edges": 24,
+  "planes": 11,
+  "discs": 1,
+  "edges_on_discs": 4,
+  "share": 0.167,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_13",
+  "name": "Rhombic dodecahedron target 13",
+  "edges": 24,
+  "planes": 10,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.333,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 8,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_14",
+  "name": "Rhombic dodecahedron target 14",
+  "edges": 24,
+  "planes": 10,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.333,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 8,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_15",
+  "name": "Rhombic dodecahedron target 15",
+  "edges": 24,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 12
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_16",
+  "name": "Rhombic dodecahedron target 16",
+  "edges": 24,
+  "planes": 10,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.333,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 8,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_17",
+  "name": "Rhombic dodecahedron target 17",
+  "edges": 24,
+  "planes": 9,
+  "discs": 3,
+  "edges_on_discs": 12,
+  "share": 0.5,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 6,
+   "4": 3
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_18",
+  "name": "Rhombic dodecahedron target 18",
+  "edges": 24,
+  "planes": 11,
+  "discs": 1,
+  "edges_on_discs": 4,
+  "share": 0.167,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_19",
+  "name": "Rhombic dodecahedron target 19",
+  "edges": 24,
+  "planes": 10,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.333,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 8,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_20",
+  "name": "Rhombic dodecahedron target 20",
+  "edges": 24,
+  "planes": 11,
+  "discs": 1,
+  "edges_on_discs": 4,
+  "share": 0.167,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_21",
+  "name": "Rhombic dodecahedron target 21",
+  "edges": 24,
+  "planes": 10,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.333,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 8,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_23",
+  "name": "Rhombic dodecahedron target 23",
+  "edges": 24,
+  "planes": 11,
+  "discs": 1,
+  "edges_on_discs": 4,
+  "share": 0.167,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_24",
+  "name": "Rhombic dodecahedron target 24",
+  "edges": 24,
+  "planes": 11,
+  "discs": 1,
+  "edges_on_discs": 4,
+  "share": 0.167,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 10,
+   "4": 1
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RD_TARGET_26",
+  "name": "Rhombic dodecahedron target 26",
+  "edges": 24,
+  "planes": 9,
+  "discs": 3,
+  "edges_on_discs": 12,
+  "share": 0.5,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 6,
+   "4": 3
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_1",
+  "name": "Hexagonal prism target 1",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_2",
+  "name": "Hexagonal prism target 2",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_3",
+  "name": "Hexagonal prism target 3",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_4",
+  "name": "Hexagonal prism target 4",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_5",
+  "name": "Hexagonal prism target 5",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_6",
+  "name": "Hexagonal prism target 6",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_7",
+  "name": "Hexagonal prism target 7",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_8",
+  "name": "Hexagonal prism target 8",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_9",
+  "name": "Hexagonal prism target 9",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_10",
+  "name": "Hexagonal prism target 10",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_11",
+  "name": "Hexagonal prism target 11",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_12",
+  "name": "Hexagonal prism target 12",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_13",
+  "name": "Hexagonal prism target 13",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_14",
+  "name": "Hexagonal prism target 14",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_15",
+  "name": "Hexagonal prism target 15",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_16",
+  "name": "Hexagonal prism target 16",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_17",
+  "name": "Hexagonal prism target 17",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_18",
+  "name": "Hexagonal prism target 18",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_19",
+  "name": "Hexagonal prism target 19",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_20",
+  "name": "Hexagonal prism target 20",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_21",
+  "name": "Hexagonal prism target 21",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_22",
+  "name": "Hexagonal prism target 22",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_23",
+  "name": "Hexagonal prism target 23",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_24",
+  "name": "Hexagonal prism target 24",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_25",
+  "name": "Hexagonal prism target 25",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_26",
+  "name": "Hexagonal prism target 26",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_27",
+  "name": "Hexagonal prism target 27",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HEX_TARGET_29",
+  "name": "Hexagonal prism target 29",
+  "edges": 18,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 9
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RVCMG_RD_HEMI",
+  "name": "RD-Hemi (bare)",
+  "edges": 16,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 14,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "GOLDEN_RHOMBOHEDRON_PROLATE",
+  "name": "prolate golden rhombohedron",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "GOLDEN_RHOMBOHEDRON_OBLATE",
+  "name": "oblate golden rhombohedron",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PENROSE_PRISM_THICK",
+  "name": "thick Penrose rhombus prism",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "PENROSE_PRISM_THIN",
+  "name": "thin Penrose rhombus prism",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DRAGON_JEWEL",
+  "name": "DICTO Jewel",
+  "edges": 96,
+  "planes": 33,
+  "discs": 9,
+  "edges_on_discs": 48,
+  "share": 0.5,
+  "largest_disc": 8,
+  "edges_per_plane": {
+   "2": 24,
+   "4": 6,
+   "8": 3
+  },
+  "central_faces": 0,
+  "faces": 60,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLA_OCTANGULA",
+  "name": "Stella octangula",
+  "edges": 72,
+  "planes": 21,
+  "discs": 9,
+  "edges_on_discs": 48,
+  "share": 0.667,
+  "largest_disc": 8,
+  "edges_per_plane": {
+   "2": 12,
+   "4": 6,
+   "8": 3
+  },
+  "central_faces": 0,
+  "faces": 48,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DJ_TETRAHEDRAL_CLUSTER",
+  "name": "DICTO Jewel tetrahedral cluster",
+  "edges": 360,
+  "planes": 88,
+  "discs": 28,
+  "edges_on_discs": 252,
+  "share": 0.7,
+  "largest_disc": 36,
+  "edges_per_plane": {
+   "1": 48,
+   "2": 12,
+   "4": 13,
+   "6": 6,
+   "7": 1,
+   "8": 3,
+   "11": 1,
+   "25": 1,
+   "29": 1,
+   "32": 1,
+   "36": 1
+  },
+  "central_faces": 72,
+  "faces": 228,
+  "edges_through_centre": 36
+ },
+ {
+  "id": "DJ_OCTAHEDRAL_CLUSTER",
+  "name": "DICTO Jewel octahedral cluster",
+  "edges": 456,
+  "planes": 146,
+  "discs": 28,
+  "edges_on_discs": 220,
+  "share": 0.482,
+  "largest_disc": 24,
+  "edges_per_plane": {
+   "2": 118,
+   "4": 13,
+   "8": 12,
+   "24": 3
+  },
+  "central_faces": 0,
+  "faces": 288,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "SEAMED_DODECAHEDRON",
+  "name": "Dodecahedron, seamed for Dogstars",
+  "edges": 282,
+  "planes": 51,
+  "discs": 51,
+  "edges_on_discs": 282,
+  "share": 1.0,
+  "largest_disc": 6,
+  "edges_per_plane": {
+   "4": 12,
+   "6": 39
+  },
+  "central_faces": 0,
+  "faces": 168,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DOGSTAR",
+  "name": "Dogstar",
+  "edges": 138,
+  "planes": 27,
+  "discs": 15,
+  "edges_on_discs": 114,
+  "share": 0.826,
+  "largest_disc": 8,
+  "edges_per_plane": {
+   "2": 12,
+   "6": 3,
+   "8": 12
+  },
+  "central_faces": 0,
+  "faces": 84,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DODECA_TETRAHEDRAL_CLUSTER",
+  "name": "Sunstar tetrahedral cluster (4 dodecahedra)",
+  "edges": 984,
+  "planes": 127,
+  "discs": 115,
+  "edges_on_discs": 924,
+  "share": 0.939,
+  "largest_disc": 42,
+  "edges_per_plane": {
+   "2": 12,
+   "3": 84,
+   "6": 1,
+   "11": 13,
+   "15": 2,
+   "19": 1,
+   "24": 1,
+   "28": 6,
+   "30": 1,
+   "42": 6
+  },
+  "central_faces": 72,
+  "faces": 588,
+  "edges_through_centre": 36
+ },
+ {
+  "id": "DODECA_OCTAHEDRAL_CLUSTER",
+  "name": "Sunstar octahedral cluster (6 dodecahedra round a Dogstar)",
+  "edges": 1208,
+  "planes": 460,
+  "discs": 304,
+  "edges_on_discs": 952,
+  "share": 0.788,
+  "largest_disc": 18,
+  "edges_per_plane": {
+   "1": 56,
+   "2": 100,
+   "3": 298,
+   "6": 4,
+   "16": 1,
+   "18": 1
+  },
+  "central_faces": 0,
+  "faces": 722,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_HEXA",
+  "name": "DICTO Hexa",
+  "edges": 408,
+  "planes": 91,
+  "discs": 41,
+  "edges_on_discs": 308,
+  "share": 0.755,
+  "largest_disc": 36,
+  "edges_per_plane": {
+   "2": 50,
+   "3": 1,
+   "4": 24,
+   "5": 1,
+   "6": 3,
+   "8": 6,
+   "13": 1,
+   "14": 1,
+   "22": 1,
+   "23": 1,
+   "30": 1,
+   "36": 1
+  },
+  "central_faces": 48,
+  "faces": 264,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_HEXA_KEY",
+  "name": "DICTO Hexa-Key",
+  "edges": 360,
+  "planes": 70,
+  "discs": 30,
+  "edges_on_discs": 288,
+  "share": 0.8,
+  "largest_disc": 36,
+  "edges_per_plane": {
+   "1": 8,
+   "2": 32,
+   "4": 14,
+   "5": 1,
+   "8": 5,
+   "12": 4,
+   "15": 1,
+   "16": 1,
+   "20": 1,
+   "21": 1,
+   "31": 1,
+   "36": 1
+  },
+  "central_faces": 48,
+  "faces": 240,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_HEXA_RHOMBO_CLUSTER",
+  "name": "DICTO Hexa rhombohedral cluster",
+  "edges": 2616,
+  "planes": 593,
+  "discs": 232,
+  "edges_on_discs": 1897,
+  "share": 0.725,
+  "largest_disc": 87,
+  "edges_per_plane": {
+   "1": 3,
+   "2": 358,
+   "3": 5,
+   "4": 123,
+   "5": 6,
+   "6": 14,
+   "7": 3,
+   "8": 37,
+   "9": 1,
+   "10": 4,
+   "12": 10,
+   "13": 1,
+   "16": 12,
+   "17": 1,
+   "19": 1,
+   "20": 3,
+   "21": 2,
+   "24": 3,
+   "26": 1,
+   "40": 1,
+   "68": 1,
+   "72": 1,
+   "82": 1,
+   "87": 1
+  },
+  "central_faces": 132,
+  "faces": 1704,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_HEXA_DIAMOND_CLUSTER",
+  "name": "DICTO Hexa diamond cluster",
+  "edges": 2148,
+  "planes": 1264,
+  "discs": 155,
+  "edges_on_discs": 671,
+  "share": 0.312,
+  "largest_disc": 15,
+  "edges_per_plane": {
+   "1": 741,
+   "2": 368,
+   "3": 45,
+   "4": 86,
+   "5": 8,
+   "6": 3,
+   "7": 1,
+   "8": 6,
+   "12": 3,
+   "13": 1,
+   "15": 2
+  },
+  "central_faces": 0,
+  "faces": 1392,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_HEXA_TRIMMED_JEWEL",
+  "name": "DICTO Hexa trimmed Jewel",
+  "edges": 96,
+  "planes": 68,
+  "discs": 3,
+  "edges_on_discs": 13,
+  "share": 0.135,
+  "largest_disc": 5,
+  "edges_per_plane": {
+   "1": 47,
+   "2": 18,
+   "4": 2,
+   "5": 1
+  },
+  "central_faces": 0,
+  "faces": 63,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_HEXA_ROOF",
+  "name": "DICTO Hexa roof",
+  "edges": 20,
+  "planes": 16,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 12,
+   "2": 4
+  },
+  "central_faces": 0,
+  "faces": 13,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_DODECA13",
+  "name": "DICTO Dodeca-13",
+  "edges": 330,
+  "planes": 135,
+  "discs": 15,
+  "edges_on_discs": 90,
+  "share": 0.273,
+  "largest_disc": 6,
+  "edges_per_plane": {
+   "2": 120,
+   "6": 15
+  },
+  "central_faces": 0,
+  "faces": 152,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_DODECA13_STAR",
+  "name": "DICTO Dodeca-13 Star",
+  "edges": 33,
+  "planes": 30,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 27,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 16,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_DODECA13_UNIT",
+  "name": "DICTO Dodeca-13 Unit",
+  "edges": 75,
+  "planes": 65,
+  "discs": 5,
+  "edges_on_discs": 15,
+  "share": 0.2,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 60,
+   "3": 5
+  },
+  "central_faces": 0,
+  "faces": 37,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_DODECA13_WEDGE",
+  "name": "DICTO Dodeca-13 Wedge",
+  "edges": 12,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 12
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_DODECA13_NEEDLE",
+  "name": "DICTO Dodeca-13 Needle",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_EDGE_ROOF",
+  "name": "Admiral Cap",
+  "edges": 9,
+  "planes": 6,
+  "discs": 1,
+  "edges_on_discs": 3,
+  "share": 0.333,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 4,
+   "2": 1,
+   "3": 1
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_UNBORN",
+  "name": "Unborn",
+  "edges": 30,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 15
+  },
+  "central_faces": 0,
+  "faces": 20,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_ICOSAXES",
+  "name": "Icosaxes",
+  "edges": 36,
+  "planes": 15,
+  "discs": 3,
+  "edges_on_discs": 12,
+  "share": 0.333,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 12,
+   "4": 3
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_UNBORN_AXES",
+  "name": "Unborn Axes",
+  "edges": 36,
+  "planes": 15,
+  "discs": 3,
+  "edges_on_discs": 12,
+  "share": 0.333,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 12,
+   "4": 3
+  },
+  "central_faces": 0,
+  "faces": 14,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_LOTUS_JEWEL_AXES",
+  "name": "Lotus Jewel Axes",
+  "edges": 84,
+  "planes": 27,
+  "discs": 15,
+  "edges_on_discs": 60,
+  "share": 0.714,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 12,
+   "4": 15
+  },
+  "central_faces": 0,
+  "faces": 54,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_DODECAXES",
+  "name": "Dodecaxes",
+  "edges": 84,
+  "planes": 39,
+  "discs": 3,
+  "edges_on_discs": 12,
+  "share": 0.143,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 36,
+   "4": 3
+  },
+  "central_faces": 0,
+  "faces": 54,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_SAMSON",
+  "name": "Samson",
+  "edges": 24,
+  "planes": 18,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 12,
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "DICTO_DELILAH",
+  "name": "Delilah",
+  "edges": 12,
+  "planes": 3,
+  "discs": 3,
+  "edges_on_discs": 12,
+  "share": 1.0,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "4": 3
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_ICOSA13_ICO",
+  "name": "Icosahedron (edge 0.618)",
+  "edges": 30,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 15
+  },
+  "central_faces": 0,
+  "faces": 20,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_ICOSA13_AXE",
+  "name": "AXE",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_ICOSA13_FUJI",
+  "name": "FUJI",
+  "edges": 12,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 12
+  },
+  "central_faces": 0,
+  "faces": 7,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_ICOSA13_CLEO",
+  "name": "Cleo",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_ICOSA13_HASU",
+  "name": "Hasu",
+  "edges": 75,
+  "planes": 59,
+  "discs": 5,
+  "edges_on_discs": 21,
+  "share": 0.28,
+  "largest_disc": 5,
+  "edges_per_plane": {
+   "1": 54,
+   "4": 4,
+   "5": 1
+  },
+  "central_faces": 0,
+  "faces": 45,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_UNITY_VAJRA",
+  "name": "VAJRA",
+  "edges": 12,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 12
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_BODHI_COPY",
+  "name": "Rhombic triacontahedron (edge 1.000)",
+  "edges": 60,
+  "planes": 36,
+  "discs": 6,
+  "edges_on_discs": 20,
+  "share": 0.333,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "1": 20,
+   "2": 10,
+   "3": 4,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 30,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_BODHI_B1",
+  "name": "Vajra (fine)",
+  "edges": 9,
+  "planes": 8,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 7,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_BODHI_B2",
+  "name": "Chatra",
+  "edges": 11,
+  "planes": 10,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 9,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_BODHI_B3",
+  "name": "Mudra",
+  "edges": 8,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 4,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_BODHI_B4",
+  "name": "Crown Jewel",
+  "edges": 21,
+  "planes": 20,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 19,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 9,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_BODHI_B5L",
+  "name": "Diadem L",
+  "edges": 9,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 9
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_BODHI_B5L_M",
+  "name": "Diadem R",
+  "edges": 9,
+  "planes": 9,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 9
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_BILINSKI13_BILINSKI13CENTRE",
+  "name": "Bilinski dodecahedron",
+  "edges": 24,
+  "planes": 10,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.333,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 8,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDCENTRE_T15",
+  "name": "Spheroid-13 RD centre (0.15, exact RD centre)",
+  "edges": 24,
+  "planes": 7,
+  "discs": 5,
+  "edges_on_discs": 20,
+  "share": 0.833,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "2": 2,
+   "4": 5
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDA_T15",
+  "name": "Spheroid-13 RD outer A (0.15, exact RD centre)",
+  "edges": 24,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 24
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDB_T15",
+  "name": "Spheroid-13 RD outer B (0.15, exact RD centre)",
+  "edges": 24,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 24
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDB_T15_M",
+  "name": "Spheroid-13 RD outer B (0.15, exact RD centre) (mirror)",
+  "edges": 24,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 24
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDA_T15_M",
+  "name": "Spheroid-13 RD outer A (0.15, exact RD centre) (mirror)",
+  "edges": 24,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 24
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDCENTRE_T35",
+  "name": "Spheroid-13 RD centre (0.35, exact RD centre)",
+  "edges": 24,
+  "planes": 6,
+  "discs": 6,
+  "edges_on_discs": 24,
+  "share": 1.0,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "4": 6
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDA_T35",
+  "name": "Spheroid-13 RD outer A (0.35, exact RD centre)",
+  "edges": 24,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 24
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDB_T35",
+  "name": "Spheroid-13 RD outer B (0.35, exact RD centre)",
+  "edges": 24,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 24
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDB_T35_M",
+  "name": "Spheroid-13 RD outer B (0.35, exact RD centre) (mirror)",
+  "edges": 24,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 24
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDA_T35_M",
+  "name": "Spheroid-13 RD outer A (0.35, exact RD centre) (mirror)",
+  "edges": 24,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 24
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDCENTRE_T15F",
+  "name": "Spheroid-13 RD centre (0.15, free centre)",
+  "edges": 24,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 12
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDA_T15F",
+  "name": "Spheroid-13 RD outer A (0.15, free centre)",
+  "edges": 24,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 24
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDB_T15F",
+  "name": "Spheroid-13 RD outer B (0.15, free centre)",
+  "edges": 24,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 24
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDB_T15F_M",
+  "name": "Spheroid-13 RD outer B (0.15, free centre) (mirror)",
+  "edges": 24,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 24
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDA_T15F_M",
+  "name": "Spheroid-13 RD outer A (0.15, free centre) (mirror)",
+  "edges": 24,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 24
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_OCTET_ICOSMALL",
+  "name": "Icosahedron (edge 0.500)",
+  "edges": 30,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 15
+  },
+  "central_faces": 0,
+  "faces": 20,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_OCTET_TADPOLE",
+  "name": "Tadpole",
+  "edges": 13,
+  "planes": 10,
+  "discs": 1,
+  "edges_on_discs": 3,
+  "share": 0.231,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 8,
+   "2": 1,
+   "3": 1
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_OCTET_WEIRDSTONE",
+  "name": "Weirdstone",
+  "edges": 12,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 12
+  },
+  "central_faces": 0,
+  "faces": 7,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_OCTET_TET",
+  "name": "Octet tetrahedron (edge 1.851)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_OCTET_TADPOLE_M",
+  "name": "Tadpole (mirror)",
+  "edges": 13,
+  "planes": 10,
+  "discs": 1,
+  "edges_on_discs": 3,
+  "share": 0.231,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 8,
+   "2": 1,
+   "3": 1
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_OCTET_WEIRDSTONE_M",
+  "name": "Weirdstone (mirror)",
+  "edges": 12,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 12
+  },
+  "central_faces": 0,
+  "faces": 7,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDCENTRE_T08F",
+  "name": "Spheroid-13 RD free centre (0.08)",
+  "edges": 24,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 12
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDCENTRE_T25F",
+  "name": "Spheroid-13 RD free centre (0.25)",
+  "edges": 24,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 12
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "KIT13_RD13_RDCENTRE_T35F",
+  "name": "Spheroid-13 RD free centre (0.35)",
+  "edges": 24,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 12
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "MS_T1",
+  "name": "M-S t1",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "MS_T5",
+  "name": "M-S t5",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "HOUND_TOOTH",
+  "name": "Hound Tooth",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRICAP",
+  "name": "Tricap",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "REULEAUX_TETRAHEDRON",
+  "name": "Reuleaux tetrahedron",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "REULEAUX_OCTAHEDRON",
+  "name": "Reuleaux octahedron",
+  "edges": 12,
+  "planes": 3,
+  "discs": 3,
+  "edges_on_discs": 12,
+  "share": 1.0,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "4": 3
+  },
+  "central_faces": 0,
+  "faces": 8,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "REULEAUX_CUBE",
+  "name": "Reuleaux cube",
+  "edges": 12,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 6
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "REULEAUX_ICOSAHEDRON",
+  "name": "Reuleaux icosahedron",
+  "edges": 30,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 15
+  },
+  "central_faces": 0,
+  "faces": 20,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "REULEAUX_DODECAHEDRON",
+  "name": "Reuleaux dodecahedron",
+  "edges": 30,
+  "planes": 15,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 15
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRANS_LOTUS_2",
+  "name": "Great stellated dodecahedron: icosahedron + 20 CLEO (Lotus seed and Dodecahedral Chain, stage 2)",
+  "edges": 90,
+  "planes": 82,
+  "discs": 1,
+  "edges_on_discs": 3,
+  "share": 0.033,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 75,
+   "2": 6,
+   "3": 1
+  },
+  "central_faces": 0,
+  "faces": 60,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRANS_LOTUS_3",
+  "name": "Excavated dodecahedron: + 30 AXE (Lotus seed and Dodecahedral Chain, stage 3)",
+  "edges": 90,
+  "planes": 81,
+  "discs": 1,
+  "edges_on_discs": 6,
+  "share": 0.067,
+  "largest_disc": 6,
+  "edges_per_plane": {
+   "1": 76,
+   "2": 4,
+   "6": 1
+  },
+  "central_faces": 0,
+  "faces": 60,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRANS_DCHAIN_4",
+  "name": "Dodecahedron: + 12 caps (Dodecahedral Chain, stage 4)",
+  "edges": 30,
+  "planes": 28,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 26,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRANS_LOTUS_4",
+  "name": "Lotus seed, stage 4: + 12 icosahedra",
+  "edges": 270,
+  "planes": 221,
+  "discs": 4,
+  "edges_on_discs": 15,
+  "share": 0.056,
+  "largest_disc": 5,
+  "edges_per_plane": {
+   "1": 179,
+   "2": 38,
+   "3": 2,
+   "4": 1,
+   "5": 1
+  },
+  "central_faces": 0,
+  "faces": 180,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRANS_LOTUS_5",
+  "name": "Lotus seed, stage 5: + 30 AXE",
+  "edges": 270,
+  "planes": 262,
+  "discs": 1,
+  "edges_on_discs": 3,
+  "share": 0.011,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 255,
+   "2": 6,
+   "3": 1
+  },
+  "central_faces": 0,
+  "faces": 180,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRANS_BODHI_B2",
+  "name": "Rhombic hexecontahedron: triacontahedron + 60 Vajras (Bodhi Seed Kit B, stage 2)",
+  "edges": 120,
+  "planes": 83,
+  "discs": 9,
+  "edges_on_discs": 30,
+  "share": 0.25,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "1": 58,
+   "2": 16,
+   "3": 6,
+   "4": 3
+  },
+  "central_faces": 0,
+  "faces": 60,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "TRANS_DHARMA_80",
+  "name": "DICTO Truncated-Icosahedral Hecatodihedron: truncated icosahedron + 20 Shields (Spheres of Dharma, stage 7)",
+  "edges": 180,
+  "planes": 82,
+  "discs": 12,
+  "edges_on_discs": 48,
+  "share": 0.267,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "1": 8,
+   "2": 62,
+   "4": 12
+  },
+  "central_faces": 0,
+  "faces": 102,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "RHOMBIC_ICOSAHEDRON",
+  "name": "rhombic icosahedron",
+  "edges": 40,
+  "planes": 20,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "2": 20
+  },
+  "central_faces": 0,
+  "faces": 20,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_D4_1",
+  "name": "tetrahedron stellation 1 (flat: cube)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_CUBE_1",
+  "name": "cube stellation 1 (flat: rhombic dodecahedron)",
+  "edges": 8,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 4,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_D8_1",
+  "name": "octahedron stellation 1 (flat: rhombic dodecahedron)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_D8_2",
+  "name": "octahedron stellation 2 (first stellation: stella octangula)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DODECAHEDRON_1",
+  "name": "dodecahedron stellation 1 (flat: rhombic triacontahedron)",
+  "edges": 10,
+  "planes": 10,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 10
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DODECAHEDRON_2",
+  "name": "dodecahedron stellation 2 (first stellation: small stellated dodecahedron)",
+  "edges": 10,
+  "planes": 10,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 10
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DODECAHEDRON_3",
+  "name": "dodecahedron stellation 3 (second stellation: great dodecahedron)",
+  "edges": 25,
+  "planes": 20,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 15,
+   "2": 5
+  },
+  "central_faces": 0,
+  "faces": 16,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DODECAHEDRON_4",
+  "name": "dodecahedron stellation 4 (third stellation: great stellated dodecahedron)",
+  "edges": 30,
+  "planes": 20,
+  "discs": 5,
+  "edges_on_discs": 15,
+  "share": 0.5,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 15,
+   "3": 5
+  },
+  "central_faces": 0,
+  "faces": 16,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_D20_1",
+  "name": "icosahedron stellation 1 (flat: rhombic triacontahedron)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_D20_2",
+  "name": "icosahedron stellation 2 (first stellation: small triambic icosahedron)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_D20_3",
+  "name": "icosahedron stellation 3 (second stellation: compound of five octahedra)",
+  "edges": 15,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 9,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_D20_4",
+  "name": "icosahedron stellation 4 (third stellation)",
+  "edges": 21,
+  "planes": 18,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 15,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 13,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_RHOMBIC_DODECAHEDRON_1",
+  "name": "rhombic dodecahedron stellation 1 (flat)",
+  "edges": 8,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 4,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_RHOMBIC_DODECAHEDRON_2",
+  "name": "rhombic dodecahedron stellation 2 (first stellation: Escher's solid)",
+  "edges": 8,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 4,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_RHOMBIC_DODECAHEDRON_3",
+  "name": "rhombic dodecahedron stellation 3 (second stellation)",
+  "edges": 20,
+  "planes": 16,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 12,
+   "2": 4
+  },
+  "central_faces": 0,
+  "faces": 13,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_RHOMBIC_DODECAHEDRON_4",
+  "name": "rhombic dodecahedron stellation 4 (third stellation)",
+  "edges": 20,
+  "planes": 18,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 16,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 11,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_RHOMBIC_TRIACONTAHEDRON_1",
+  "name": "rhombic triacontahedron stellation 1 (flat)",
+  "edges": 8,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 4,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_RHOMBIC_TRIACONTAHEDRON_2",
+  "name": "rhombic triacontahedron stellation 2 (first stellation)",
+  "edges": 8,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 4,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_RHOMBIC_TRIACONTAHEDRON_3",
+  "name": "rhombic triacontahedron stellation 3 (second stellation)",
+  "edges": 20,
+  "planes": 16,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 12,
+   "2": 4
+  },
+  "central_faces": 0,
+  "faces": 13,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_RHOMBIC_TRIACONTAHEDRON_4",
+  "name": "rhombic triacontahedron stellation 4 (third stellation)",
+  "edges": 28,
+  "planes": 16,
+  "discs": 2,
+  "edges_on_discs": 8,
+  "share": 0.286,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "1": 8,
+   "2": 6,
+   "4": 2
+  },
+  "central_faces": 0,
+  "faces": 17,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TRIAKIS_TETRAHEDRON_1",
+  "name": "triakis tetrahedron stellation 1 (flat)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TRIAKIS_TETRAHEDRON_2",
+  "name": "triakis tetrahedron stellation 2 (first stellation)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TRIAKIS_TETRAHEDRON_3",
+  "name": "triakis tetrahedron stellation 3 (second stellation)",
+  "edges": 15,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 9,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TRIAKIS_TETRAHEDRON_4",
+  "name": "triakis tetrahedron stellation 4 (third stellation)",
+  "edges": 19,
+  "planes": 16,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 13,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 11,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TRIAKIS_OCTAHEDRON_1",
+  "name": "triakis octahedron stellation 1 (flat)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TRIAKIS_OCTAHEDRON_2",
+  "name": "triakis octahedron stellation 2 (first stellation)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TRIAKIS_OCTAHEDRON_3",
+  "name": "triakis octahedron stellation 3 (second stellation)",
+  "edges": 15,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 9,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TRIAKIS_OCTAHEDRON_4",
+  "name": "triakis octahedron stellation 4 (third stellation)",
+  "edges": 19,
+  "planes": 17,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 15,
+   "2": 2
+  },
+  "central_faces": 0,
+  "faces": 11,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TETRAKIS_HEXAHEDRON_1",
+  "name": "tetrakis hexahedron stellation 1 (flat)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TETRAKIS_HEXAHEDRON_2",
+  "name": "tetrakis hexahedron stellation 2 (first stellation)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TETRAKIS_HEXAHEDRON_3",
+  "name": "tetrakis hexahedron stellation 3 (second stellation)",
+  "edges": 15,
+  "planes": 8,
+  "discs": 1,
+  "edges_on_discs": 7,
+  "share": 0.467,
+  "largest_disc": 7,
+  "edges_per_plane": {
+   "1": 6,
+   "2": 1,
+   "7": 1
+  },
+  "central_faces": 2,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TETRAKIS_HEXAHEDRON_4",
+  "name": "tetrakis hexahedron stellation 4 (third stellation)",
+  "edges": 19,
+  "planes": 19,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 19
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DELTOIDAL_ICOSITETRAHEDRON_1",
+  "name": "deltoidal icositetrahedron stellation 1 (flat)",
+  "edges": 8,
+  "planes": 7,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 6,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DELTOIDAL_ICOSITETRAHEDRON_2",
+  "name": "deltoidal icositetrahedron stellation 2 (first stellation)",
+  "edges": 8,
+  "planes": 7,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 6,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DELTOIDAL_ICOSITETRAHEDRON_3",
+  "name": "deltoidal icositetrahedron stellation 3 (second stellation)",
+  "edges": 20,
+  "planes": 17,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 14,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 13,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DELTOIDAL_ICOSITETRAHEDRON_4",
+  "name": "deltoidal icositetrahedron stellation 4 (third stellation)",
+  "edges": 27,
+  "planes": 21,
+  "discs": 1,
+  "edges_on_discs": 3,
+  "share": 0.111,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 16,
+   "2": 4,
+   "3": 1
+  },
+  "central_faces": 0,
+  "faces": 16,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_DODECAHEDRON_1_L",
+  "name": "disdyakis dodecahedron stellation 1 (flat, left)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_DODECAHEDRON_2_L",
+  "name": "disdyakis dodecahedron stellation 2 (first stellation, left)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_DODECAHEDRON_3_L",
+  "name": "disdyakis dodecahedron stellation 3 (second stellation, left)",
+  "edges": 15,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 9,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_DODECAHEDRON_4_L",
+  "name": "disdyakis dodecahedron stellation 4 (third stellation, left)",
+  "edges": 19,
+  "planes": 19,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 19
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_DODECAHEDRON_1_R",
+  "name": "disdyakis dodecahedron stellation 1 (flat, right)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_DODECAHEDRON_2_R",
+  "name": "disdyakis dodecahedron stellation 2 (first stellation, right)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_DODECAHEDRON_3_R",
+  "name": "disdyakis dodecahedron stellation 3 (second stellation, right)",
+  "edges": 15,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 9,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_DODECAHEDRON_4_R",
+  "name": "disdyakis dodecahedron stellation 4 (third stellation, right)",
+  "edges": 19,
+  "planes": 19,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 19
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TRIAKIS_ICOSAHEDRON_1",
+  "name": "triakis icosahedron stellation 1 (flat)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TRIAKIS_ICOSAHEDRON_2",
+  "name": "triakis icosahedron stellation 2 (first stellation)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TRIAKIS_ICOSAHEDRON_3",
+  "name": "triakis icosahedron stellation 3 (second stellation)",
+  "edges": 15,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 9,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_TRIAKIS_ICOSAHEDRON_4",
+  "name": "triakis icosahedron stellation 4 (third stellation)",
+  "edges": 19,
+  "planes": 16,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 13,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 11,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_PENTAKIS_DODECAHEDRON_1",
+  "name": "pentakis dodecahedron stellation 1 (flat)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_PENTAKIS_DODECAHEDRON_2",
+  "name": "pentakis dodecahedron stellation 2 (first stellation)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_PENTAKIS_DODECAHEDRON_3",
+  "name": "pentakis dodecahedron stellation 3 (second stellation)",
+  "edges": 15,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 9,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_PENTAKIS_DODECAHEDRON_4",
+  "name": "pentakis dodecahedron stellation 4 (third stellation)",
+  "edges": 21,
+  "planes": 20,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 19,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 13,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DELTOIDAL_HEXECONTAHEDRON_1",
+  "name": "deltoidal hexecontahedron stellation 1 (flat)",
+  "edges": 8,
+  "planes": 7,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 6,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DELTOIDAL_HEXECONTAHEDRON_2",
+  "name": "deltoidal hexecontahedron stellation 2 (first stellation)",
+  "edges": 8,
+  "planes": 7,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 6,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 5,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DELTOIDAL_HEXECONTAHEDRON_3",
+  "name": "deltoidal hexecontahedron stellation 3 (second stellation)",
+  "edges": 20,
+  "planes": 17,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 14,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 13,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DELTOIDAL_HEXECONTAHEDRON_4",
+  "name": "deltoidal hexecontahedron stellation 4 (third stellation)",
+  "edges": 28,
+  "planes": 21,
+  "discs": 1,
+  "edges_on_discs": 4,
+  "share": 0.143,
+  "largest_disc": 4,
+  "edges_per_plane": {
+   "1": 16,
+   "2": 4,
+   "4": 1
+  },
+  "central_faces": 0,
+  "faces": 17,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_TRIACONTAHEDRON_1_L",
+  "name": "disdyakis triacontahedron stellation 1 (flat, left)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_TRIACONTAHEDRON_2_L",
+  "name": "disdyakis triacontahedron stellation 2 (first stellation, left)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_TRIACONTAHEDRON_3_L",
+  "name": "disdyakis triacontahedron stellation 3 (second stellation, left)",
+  "edges": 15,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 9,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_TRIACONTAHEDRON_4_L",
+  "name": "disdyakis triacontahedron stellation 4 (third stellation, left)",
+  "edges": 19,
+  "planes": 19,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 19
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_TRIACONTAHEDRON_1_R",
+  "name": "disdyakis triacontahedron stellation 1 (flat, right)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_TRIACONTAHEDRON_2_R",
+  "name": "disdyakis triacontahedron stellation 2 (first stellation, right)",
+  "edges": 6,
+  "planes": 6,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 6
+  },
+  "central_faces": 0,
+  "faces": 4,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_TRIACONTAHEDRON_3_R",
+  "name": "disdyakis triacontahedron stellation 3 (second stellation, right)",
+  "edges": 15,
+  "planes": 12,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 9,
+   "2": 3
+  },
+  "central_faces": 0,
+  "faces": 10,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_DISDYAKIS_TRIACONTAHEDRON_4_R",
+  "name": "disdyakis triacontahedron stellation 4 (third stellation, right)",
+  "edges": 19,
+  "planes": 19,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 19
+  },
+  "central_faces": 0,
+  "faces": 12,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_PENTAGONAL_ICOSITETRAHEDRON_1",
+  "name": "pentagonal icositetrahedron stellation 1 (flat)",
+  "edges": 10,
+  "planes": 10,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 10
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_PENTAGONAL_ICOSITETRAHEDRON_2",
+  "name": "pentagonal icositetrahedron stellation 2 (first stellation)",
+  "edges": 10,
+  "planes": 10,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 10
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_PENTAGONAL_ICOSITETRAHEDRON_3",
+  "name": "pentagonal icositetrahedron stellation 3 (second stellation)",
+  "edges": 25,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 23,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 16,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_PENTAGONAL_ICOSITETRAHEDRON_4",
+  "name": "pentagonal icositetrahedron stellation 4 (third stellation)",
+  "edges": 33,
+  "planes": 26,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 19,
+   "2": 7
+  },
+  "central_faces": 0,
+  "faces": 17,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_PENTAGONAL_HEXECONTAHEDRON_1",
+  "name": "pentagonal hexecontahedron stellation 1 (flat)",
+  "edges": 10,
+  "planes": 10,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 10
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_PENTAGONAL_HEXECONTAHEDRON_2",
+  "name": "pentagonal hexecontahedron stellation 2 (first stellation)",
+  "edges": 10,
+  "planes": 10,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 1,
+  "edges_per_plane": {
+   "1": 10
+  },
+  "central_faces": 0,
+  "faces": 6,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_PENTAGONAL_HEXECONTAHEDRON_3",
+  "name": "pentagonal hexecontahedron stellation 3 (second stellation)",
+  "edges": 25,
+  "planes": 24,
+  "discs": 0,
+  "edges_on_discs": 0,
+  "share": 0.0,
+  "largest_disc": 2,
+  "edges_per_plane": {
+   "1": 23,
+   "2": 1
+  },
+  "central_faces": 0,
+  "faces": 16,
+  "edges_through_centre": 0
+ },
+ {
+  "id": "STELLATION_PENTAGONAL_HEXECONTAHEDRON_4",
+  "name": "pentagonal hexecontahedron stellation 4 (third stellation)",
+  "edges": 34,
+  "planes": 26,
+  "discs": 1,
+  "edges_on_discs": 3,
+  "share": 0.088,
+  "largest_disc": 3,
+  "edges_per_plane": {
+   "1": 19,
+   "2": 6,
+   "3": 1
+  },
+  "central_faces": 0,
+  "faces": 18,
+  "edges_through_centre": 0
+ }
+]

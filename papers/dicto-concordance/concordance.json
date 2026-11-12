@@ -6747,6 +6747,24 @@
     "status": "SETTLED (catalogue + verdict; checks exact)",
     "retry": "never as a catalogue; LEADS: Mirror <-> Hexagonality (queued 11 Nov), parity/Dehn and wall area at the site-swap of the ten #53 networks, the pure swap class i = 3 of the 6-permutohedron (2416 corners: balance?), A4/F4 palindromic middles (Theorem B: ON predicted), SSD/GD minimum at the turn, K9 near miss, self-dual honeycombs (faces-not-corners), share h = 1/2",
     "study": "studies/2026-11-13-swaps-and-fixed-points"
+   },
+   {
+    "date": "2026-11-13",
+    "question": "Zonotope fall-off law (lead 1 of amplitude-at-distance): prove or correct 'Omega_P decays r^-(d+1) generically, r^-(d+2) if centrally symmetric, r^-(d+3) if all 2-faces symmetric'",
+    "method": "studies/2026-11-13-zonotope-falloff: exact c_k (Q, Q(sqrt5)) at 3 directions for 45 solids in 3D/4D/5D, vertex formula with pulling triangulations, exact facets; proofs via Laplace transform INT exp(x.y - h_P) and Brion/Lawrence lineality; job gate zonofall-pilot, zonofall, 20 checks, FINAL ok",
+    "result": "LAW HOLDS BUT KNOWN: decay r^-(d+e), 1 <= e <= d, e = d (r^-2d) iff zonotope; 3D only r^-4/-5/-6 (r^-5 iff opposite facets have equal edge asymmetry, not zonotope) = Baumbach-Freyer-Weigert-Winter arXiv:2508.04275 (drop = e-1; Thms 3.5, 4.5, 6.4). Brief's hypothesis REFUTED: octahedron/icosahedron r^-4; 4D zonotopes r^-8 not r^-7. NEW as far as checked: c_k = ((-1)^k/k!) L[h_P^k] with lineality proof; explicit positive zonotope leading coefficient c_d = (-1)^d 2^d sum_S |det G_S|^(2d-1)/prod det(G_S, g_i->u)^2",
+    "status": "SETTLED (known theorem identified; new formulas proved and checked exactly)",
+    "retry": "never; LEADS: BFWW Sec 7 for the top coefficient; sharpness of the Minkowski lineality bound; correct amplitude study 'proof open' -> BFWW Thm 4.5",
+    "study": "studies/2026-11-13-zonotope-falloff"
+   },
+   {
+    "date": "2026-11-13",
+    "question": "Platonic book Ch 4: rerun the share ranking of solids under the #87 closed-disc rule, side by side with the 11-11 rule (>= 3 edges on a central plane)",
+    "method": "studies/2026-11-13-platonic-disc-ranking: disc_ranking.py on the 389-solid registry export, both rules, #87 decided by apex sum and by closed cycle (agree), tolerances 1e-5/1e-6/1e-7 stable; 11-11 census reproduced for all 389; #87 controls + 40-solid agreement with #87's own census; job gate discrank-pilot, discrank, FINAL ok",
+    "result": "Under #87 only 5 of 34 DICTO solids have a disc: Delilah 100%, Hexa-Key 26.7% (3x8, 6x12), Jewel tetrahedral cluster 6.7%, Hexa 5.9%, Hexa rhombohedral cluster 2.8%; Sunstar tetrahedral 93.9% -> 0, Dogstar 82.6% -> 0, Sunstar octahedral 78.8% -> 0, Lotus Jewel Axes, Icosaxes, Unborn Axes -> 0. Registry: complete 21 -> 8; no disc 281 -> 361; RD, RT, pentakis, triakis icosahedron, deltoidal hexecontahedron complete under 11-11, 0 under #87 (float, registry 1e-8)",
+    "status": "SETTLED (float census, controls exact)",
+    "retry": "never; LEADS: Hexa-Key discs exact; open fans on RD/RT planes; record DICTO-solid list (the 11-11 '66' was not recorded)",
+    "study": "studies/2026-11-13-platonic-disc-ranking"
    }
   ]
  },

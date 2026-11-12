@@ -1,0 +1,1162 @@
+{
+ "summary": {
+  "n": 31,
+  "complete11": 3,
+  "complete87": 3,
+  "nodisc11": 23,
+  "nodisc87": 26,
+  "dicto": 1,
+  "dicto_nodisc11": 0,
+  "dicto_nodisc87": 1
+ },
+ "solids": [
+  {
+   "id": "CUBOCTAHEDRON",
+   "name": "cuboctahedron",
+   "edges": 24,
+   "planes11": 4,
+   "discs11": 4,
+   "on11": 24,
+   "share11": 1.0,
+   "per_plane11": {
+    "6": 4
+   },
+   "sheets87": 4,
+   "discs87": 4,
+   "disc_sizes87": {
+    "6": 4
+   },
+   "on87": 24,
+   "share87": 1.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     4,
+     24
+    ],
+    "1e-05": [
+     4,
+     24
+    ],
+    "1e-07": [
+     4,
+     24
+    ]
+   }
+  },
+  {
+   "id": "ICOSIDODECAHEDRON",
+   "name": "icosidodecahedron",
+   "edges": 60,
+   "planes11": 6,
+   "discs11": 6,
+   "on11": 60,
+   "share11": 1.0,
+   "per_plane11": {
+    "10": 6
+   },
+   "sheets87": 6,
+   "discs87": 6,
+   "disc_sizes87": {
+    "10": 6
+   },
+   "on87": 60,
+   "share87": 1.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     6,
+     60
+    ],
+    "1e-05": [
+     6,
+     60
+    ],
+    "1e-07": [
+     6,
+     60
+    ]
+   }
+  },
+  {
+   "id": "D8",
+   "name": "octahedron",
+   "edges": 12,
+   "planes11": 3,
+   "discs11": 3,
+   "on11": 12,
+   "share11": 1.0,
+   "per_plane11": {
+    "4": 3
+   },
+   "sheets87": 3,
+   "discs87": 3,
+   "disc_sizes87": {
+    "4": 3
+   },
+   "on87": 12,
+   "share87": 1.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     3,
+     12
+    ],
+    "1e-05": [
+     3,
+     12
+    ],
+    "1e-07": [
+     3,
+     12
+    ]
+   }
+  },
+  {
+   "id": "D10",
+   "name": "pentagonal_bipyramid",
+   "edges": 15,
+   "planes11": 6,
+   "discs11": 1,
+   "on11": 5,
+   "share11": 0.3333333333333333,
+   "per_plane11": {
+    "2": 5,
+    "5": 1
+   },
+   "sheets87": 6,
+   "discs87": 1,
+   "disc_sizes87": {
+    "5": 1
+   },
+   "on87": 5,
+   "share87": 0.3333333333333333,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     1,
+     5
+    ],
+    "1e-05": [
+     1,
+     5
+    ],
+    "1e-07": [
+     1,
+     5
+    ]
+   }
+  },
+  {
+   "id": "D6",
+   "name": "triangular_bipyramid",
+   "edges": 9,
+   "planes11": 4,
+   "discs11": 1,
+   "on11": 3,
+   "share11": 0.3333333333333333,
+   "per_plane11": {
+    "2": 3,
+    "3": 1
+   },
+   "sheets87": 4,
+   "discs87": 1,
+   "disc_sizes87": {
+    "3": 1
+   },
+   "on87": 3,
+   "share87": 0.3333333333333333,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     1,
+     3
+    ],
+    "1e-05": [
+     1,
+     3
+    ],
+    "1e-07": [
+     1,
+     3
+    ]
+   }
+  },
+  {
+   "id": "DOGSTAR",
+   "name": "Dogstar",
+   "edges": 138,
+   "planes11": 27,
+   "discs11": 15,
+   "on11": 114,
+   "share11": 0.8260869565217391,
+   "per_plane11": {
+    "2": 12,
+    "6": 3,
+    "8": 12
+   },
+   "sheets87": 54,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "D12",
+   "name": "snub_disphenoid",
+   "edges": 18,
+   "planes11": 14,
+   "discs11": 2,
+   "on11": 6,
+   "share11": 0.3333333333333333,
+   "per_plane11": {
+    "1": 12,
+    "3": 2
+   },
+   "sheets87": 14,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "TRUNCATED_OCTAHEDRON",
+   "name": "truncated_octahedron",
+   "edges": 36,
+   "planes11": 15,
+   "discs11": 3,
+   "on11": 12,
+   "share11": 0.3333333333333333,
+   "per_plane11": {
+    "2": 12,
+    "4": 3
+   },
+   "sheets87": 36,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "CUBE",
+   "name": "cube",
+   "edges": 12,
+   "planes11": 6,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "2": 6
+   },
+   "sheets87": 12,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "DODECAHEDRON",
+   "name": "dodecahedron",
+   "edges": 30,
+   "planes11": 15,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "2": 15
+   },
+   "sheets87": 30,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "J7_ELONGATED_TRIANGULAR_PYRAMID",
+   "name": "elongated_triangular_pyramid",
+   "edges": 12,
+   "planes11": 9,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "1": 6,
+    "2": 3
+   },
+   "sheets87": 9,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "D16",
+   "name": "gyroelongated_square_bipyramid",
+   "edges": 24,
+   "planes11": 20,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "1": 16,
+    "2": 4
+   },
+   "sheets87": 20,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "D20",
+   "name": "icosahedron",
+   "edges": 30,
+   "planes11": 15,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "2": 15
+   },
+   "sheets87": 30,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "J5_PENTAGONAL_CUPOLA",
+   "name": "pentagonal_cupola",
+   "edges": 25,
+   "planes11": 25,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "1": 25
+   },
+   "sheets87": 25,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "J2_PENTAGONAL_PYRAMID",
+   "name": "pentagonal_pyramid",
+   "edges": 10,
+   "planes11": 10,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "1": 10
+   },
+   "sheets87": 10,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "J6_PENTAGONAL_ROTUNDA",
+   "name": "pentagonal_rotunda",
+   "edges": 35,
+   "planes11": 35,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "1": 35
+   },
+   "sheets87": 35,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "RHOMBICOSIDODECAHEDRON",
+   "name": "rhombicosidodecahedron",
+   "edges": 120,
+   "planes11": 60,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "2": 60
+   },
+   "sheets87": 120,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "RHOMBICUBOCTAHEDRON",
+   "name": "rhombicuboctahedron",
+   "edges": 48,
+   "planes11": 24,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "2": 24
+   },
+   "sheets87": 48,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "SNUB_CUBE",
+   "name": "snub_cube",
+   "edges": 60,
+   "planes11": 48,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "1": 36,
+    "2": 12
+   },
+   "sheets87": 60,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "SNUB_DODECAHEDRON",
+   "name": "snub_dodecahedron",
+   "edges": 150,
+   "planes11": 150,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "1": 150
+   },
+   "sheets87": 150,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "J4_SQUARE_CUPOLA",
+   "name": "square_cupola",
+   "edges": 20,
+   "planes11": 20,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "1": 20
+   },
+   "sheets87": 20,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "J1_SQUARE_PYRAMID",
+   "name": "square_pyramid",
+   "edges": 8,
+   "planes11": 6,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "1": 4,
+    "2": 2
+   },
+   "sheets87": 6,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "D4",
+   "name": "tetrahedron",
+   "edges": 6,
+   "planes11": 6,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "1": 6
+   },
+   "sheets87": 6,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "J3_TRIANGULAR_CUPOLA",
+   "name": "triangular_cupola",
+   "edges": 15,
+   "planes11": 15,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "1": 15
+   },
+   "sheets87": 15,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "D14",
+   "name": "triaugmented_triangular_prism",
+   "edges": 21,
+   "planes11": 15,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "1": 9,
+    "2": 6
+   },
+   "sheets87": 15,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "TRUNCATED_CUBE",
+   "name": "truncated_cube",
+   "edges": 36,
+   "planes11": 18,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "2": 18
+   },
+   "sheets87": 36,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "TRUNCATED_CUBOCTAHEDRON",
+   "name": "truncated_cuboctahedron",
+   "edges": 72,
+   "planes11": 36,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "2": 36
+   },
+   "sheets87": 72,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "TRUNCATED_DODECAHEDRON",
+   "name": "truncated_dodecahedron",
+   "edges": 90,
+   "planes11": 45,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "2": 45
+   },
+   "sheets87": 90,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "TRUNCATED_ICOSAHEDRON",
+   "name": "truncated_icosahedron",
+   "edges": 90,
+   "planes11": 45,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "2": 45
+   },
+   "sheets87": 90,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "TRUNCATED_ICOSIDODECAHEDRON",
+   "name": "truncated_icosidodecahedron",
+   "edges": 180,
+   "planes11": 90,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "2": 90
+   },
+   "sheets87": 180,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "TRUNCATED_TETRAHEDRON",
+   "name": "truncated_tetrahedron",
+   "edges": 18,
+   "planes11": 18,
+   "discs11": 0,
+   "on11": 0,
+   "share11": 0.0,
+   "per_plane11": {
+    "1": 18
+   },
+   "sheets87": 18,
+   "discs87": 0,
+   "disc_sizes87": {},
+   "on87": 0,
+   "share87": 0.0,
+   "apex_vs_cycle_disagree": 0,
+   "ambiguous_side": 0,
+   "through": 0,
+   "stable": true,
+   "by_tol": {
+    "1e-06": [
+     0,
+     0
+    ],
+    "1e-05": [
+     0,
+     0
+    ],
+    "1e-07": [
+     0,
+     0
+    ]
+   }
+  }
+ ],
+ "checks": [
+  [
+   "R1 rule 11-11 reproduces the 11-11 census (discs, edges on discs, edges) for all 31 solids",
+   true
+  ],
+  [
+   "R2 #87 control octahedron: disc sizes {'4': 3} (expect {'4': 3})",
+   true
+  ],
+  [
+   "R2 #87 control cube: disc sizes {} (expect {})",
+   true
+  ],
+  [
+   "R2 #87 control cuboctahedron: disc sizes {'6': 4} (expect {'6': 4})",
+   true
+  ],
+  [
+   "R2 #87 control icosidodecahedron: disc sizes {'10': 6} (expect {'10': 6})",
+   true
+  ],
+  [
+   "R2 #87 control dodecahedron: disc sizes {} (expect {})",
+   true
+  ],
+  [
+   "R3 #87 Dogstar: 0 discs (exact study: 0); 11-11 rule: 15 planes, 114 of 138 edges (exact study: 15, 114)",
+   true
+  ],
+  [
+   "R4 #87 apex-sum test and closed-cycle test agree on every sheet of every solid",
+   true
+  ],
+  [
+   "R5 #87 result unchanged at tolerances 1e-5, 1e-6, 1e-7 for every solid",
+   true
+  ],
+  [
+   "R6 every #87 disc lies on a plane that the 11-11 rule counts (#87 share <= 11-11 share)",
+   true
+  ]
+ ]
+}

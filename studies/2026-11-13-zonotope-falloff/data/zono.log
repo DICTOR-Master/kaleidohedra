@@ -1,0 +1,116 @@
+zono_falloff FULL workers=12
+ok   M1 Omega_cube(0) = 64 for the cube [-1/2,1/2]^3 (known value)
+ok   M2 cube: vertex formula = product formula prod 1/((1/2 - x_i)(1/2 + x_i)) exactly at an interior point
+ok   M3 products: Omega_PxQ = Omega_P Omega_Q exactly at 14 random points (2D x 2D, 3D x 1D, 4D x 1D)
+PROGRESS 0.050 method checks (0 s)
+PROGRESS 0.070 cube: d=3 V=8 F=6 e=3 decay r^-6 (0.01 s) (0 s)
+PROGRESS 0.090 rhombic dodecahedron: d=3 V=14 F=12 e=3 decay r^-6 (0.04 s) (0 s)
+PROGRESS 0.110 truncated octahedron: d=3 V=24 F=14 e=3 decay r^-6 (0.04 s) (0 s)
+PROGRESS 0.130 hexagonal prism (affine): d=3 V=12 F=8 e=3 decay r^-6 (0.01 s) (0 s)
+PROGRESS 0.150 generic parallelepiped: d=3 V=8 F=6 e=3 decay r^-6 (0.01 s) (0 s)
+PROGRESS 0.170 generic 4-zonotope: d=3 V=14 F=12 e=3 decay r^-6 (0.04 s) (0 s)
+PROGRESS 0.190 generic 5-zonotope: d=3 V=22 F=20 e=3 decay r^-6 (0.09 s) (0 s)
+PROGRESS 0.210 truncated cuboctahedron: d=3 V=48 F=26 e=3 decay r^-6 (0.17 s) (1 s)
+PROGRESS 0.230 rhombic triacontahedron: d=3 V=32 F=30 e=3 decay r^-6 (0.19 s) (1 s)
+PROGRESS 0.250 rhombic icosahedron: d=3 V=22 F=20 e=3 decay r^-6 (0.19 s) (1 s)
+PROGRESS 0.270 tetrahedron: d=3 V=4 F=4 e=1 decay r^-4 (0.01 s) (1 s)
+PROGRESS 0.290 octahedron: d=3 V=6 F=8 e=1 decay r^-4 (0.02 s) (1 s)
+PROGRESS 0.310 cuboctahedron: d=3 V=12 F=14 e=1 decay r^-4 (0.02 s) (1 s)
+PROGRESS 0.330 icosahedron: d=3 V=12 F=20 e=1 decay r^-4 (0.14 s) (1 s)
+PROGRESS 0.350 TRD (hcp Voronoi cell): d=3 V=14 F=12 e=2 decay r^-5 (0.05 s) (1 s)
+PROGRESS 0.370 triangular prism: d=3 V=6 F=5 e=2 decay r^-5 (0.01 s) (1 s)
+PROGRESS 0.390 dodecahedron: d=3 V=20 F=12 e=1 decay r^-4 (0.12 s) (1 s)
+PROGRESS 0.410 truncated tetrahedron: d=3 V=12 F=8 e=1 decay r^-4 (0.02 s) (1 s)
+PROGRESS 0.430 cube with corners cut at 1/3 (truncated-cube type): d=3 V=24 F=14 e=1 decay r^-4 (0.03 s) (1 s)
+PROGRESS 0.450 rhombicuboctahedron: d=3 V=24 F=26 e=1 decay r^-4 (0.08 s) (1 s)
+PROGRESS 0.470 pentagonal prism (irregular): d=3 V=10 F=7 e=2 decay r^-5 (0.01 s) (1 s)
+PROGRESS 0.490 oblique triangular prism: d=3 V=6 F=5 e=2 decay r^-5 (0.01 s) (1 s)
+PROGRESS 0.510 triangular frustum: d=3 V=6 F=5 e=1 decay r^-4 (0.01 s) (1 s)
+PROGRESS 0.530 square antiprism (rational): d=3 V=8 F=10 e=1 decay r^-4 (0.02 s) (1 s)
+PROGRESS 0.550 triangle + generic 3-zonotope: d=3 V=18 F=17 e=2 decay r^-5 (0.06 s) (1 s)
+PROGRESS 0.570 tetrahedron + cube: d=3 V=16 F=10 e=1 decay r^-4 (0.01 s) (1 s)
+PROGRESS 0.590 corner-cut cube: d=3 V=10 F=7 e=1 decay r^-4 (0.01 s) (1 s)
+PROGRESS 0.610 random hull (12 points): d=3 V=12 F=20 e=1 decay r^-4 (0.08 s) (1 s)
+PROGRESS 0.630 tesseract: d=4 V=16 F=8 e=4 decay r^-8 (0.01 s) (1 s)
+PROGRESS 0.650 generic 5-zonotope (4D): d=4 V=30 F=20 e=4 decay r^-8 (0.09 s) (1 s)
+PROGRESS 0.670 A4 permutohedron (10 generators): d=4 V=120 F=30 e=4 decay r^-8 (0.35 s) (1 s)
+PROGRESS 0.690 4-simplex: d=4 V=5 F=5 e=1 decay r^-5 (0.0 s) (1 s)
+PROGRESS 0.710 16-cell: d=4 V=8 F=16 e=2 decay r^-6 (0.02 s) (1 s)
+PROGRESS 0.730 24-cell: d=4 V=24 F=24 e=2 decay r^-6 (0.07 s) (1 s)
+PROGRESS 0.750 triangle x square: d=4 V=12 F=7 e=3 decay r^-7 (0.01 s) (1 s)
+PROGRESS 0.770 triangle x triangle: d=4 V=9 F=6 e=2 decay r^-6 (0.0 s) (1 s)
+PROGRESS 0.790 tetrahedron x segment: d=4 V=8 F=6 e=2 decay r^-6 (0.0 s) (1 s)
+PROGRESS 0.810 octahedron x segment: d=4 V=12 F=10 e=2 decay r^-6 (0.02 s) (1 s)
+PROGRESS 0.830 TRD x segment: d=4 V=28 F=14 e=3 decay r^-7 (0.04 s) (1 s)
+PROGRESS 0.850 triangle + generic 4-zonotope: d=4 V=36 F=22 e=3 decay r^-7 (0.05 s) (1 s)
+PROGRESS 0.870 5-cube: d=5 V=32 F=10 e=5 decay r^-10 (0.06 s) (1 s)
+PROGRESS 0.890 generic 6-zonotope (5D): d=5 V=62 F=30 e=5 decay r^-10 (0.27 s) (1 s)
+PROGRESS 0.910 5-simplex: d=5 V=6 F=6 e=1 decay r^-6 (0.0 s) (1 s)
+PROGRESS 0.930 5-cross-polytope: d=5 V=10 F=32 e=1 decay r^-6 (0.08 s) (1 s)
+PROGRESS 0.950 triangle x triangle x segment: d=5 V=18 F=8 e=3 decay r^-8 (0.01 s) (1 s)
+ok   M4 every solid built with exact facets
+ok   M5 c_0 = 0 exactly at every direction (complete-fan identity)
+ok   M6 Omega(x0) = d! vol((P - x0)°) at an interior point (float polar hull, 1e-9) for 41 rational solids
+ok   M7 exact Omega(10^6 u) agrees with the series c_0..c_K to relative 1e-12 for 41 rational solids
+ok   M8 e is the same at all 3 directions for every solid
+ok   T3 zonotopes (15): c_k = 0 for k < d and c_d = the explicit formula, exactly, at every direction
+ok   T3 zonotopes: e = d (decay r^-2d) for every zonotope
+ok   T2 centrally symmetric solids (25): c_k = 0 whenever d + k is odd (k <= K)
+ok   T5 3D trichotomy (28 solids): e = 1 / 2 / 3 exactly as the facet predicate says (pairing; all faces centrally symmetric)
+ok   T5 3D: decay orders only r^-4, r^-5, r^-6
+ok   T4 local: w c_1 -> 0 at every facet hyperplane when e >= 2, w^2 c_2 -> 0 when e = 3 (171 facet lines, eps 1e-12)
+ok   T4 local NEGATIVE: for e = 2 solids some facet line has a true double pole of c_2 (w^2 c_2 not -> 0)
+ok   T6 products (8): e(P x Q) = e(P) + e(Q)
+ok   T7 Minkowski lineality bound (3): e >= r
+ok   H brief hypothesis "centrally symmetric => r^-(d+2)" REFUTED in 3D: centrally symmetric non-zonotopes decay like r^-4 (e = 1): octahedron, cuboctahedron, icosahedron, dodecahedron, cube with corners cut at 1/3 (truncated-cube type), rhombicuboctahedron
+ok   H brief hypothesis "all 2-faces symmetric => r^-(d+3)" REFUTED in 4D: zonotopes decay like r^-8 = r^-2d, not r^-7
+ok   C conjecture e(P) <= d with equality only for zonotopes: holds on every non-zonotope tested in 4D/5D (4-simplex e=1, 16-cell e=2, 24-cell e=2, triangle x square e=3, triangle x triangle e=2, tetrahedron x segment e=2, octahedron x segment e=2, TRD x segment e=3, triangle + generic 4-zonotope e=3, 5-simplex e=1, 5-cross-polytope e=1, triangle x triangle x segment e=3)
+
+TABLE  name | d | V | F | e | decay | cs | 3D pairing | all faces cs
+TABLE  cube | 3 | 8 | 6 | 3 | r^-6 | True | True | True
+TABLE  rhombic dodecahedron | 3 | 14 | 12 | 3 | r^-6 | True | True | True
+TABLE  truncated octahedron | 3 | 24 | 14 | 3 | r^-6 | True | True | True
+TABLE  hexagonal prism (affine) | 3 | 12 | 8 | 3 | r^-6 | True | True | True
+TABLE  generic parallelepiped | 3 | 8 | 6 | 3 | r^-6 | True | True | True
+TABLE  generic 4-zonotope | 3 | 14 | 12 | 3 | r^-6 | True | True | True
+TABLE  generic 5-zonotope | 3 | 22 | 20 | 3 | r^-6 | True | True | True
+TABLE  truncated cuboctahedron | 3 | 48 | 26 | 3 | r^-6 | True | True | True
+TABLE  rhombic triacontahedron | 3 | 32 | 30 | 3 | r^-6 | True | True | True
+TABLE  rhombic icosahedron | 3 | 22 | 20 | 3 | r^-6 | True | True | True
+TABLE  tetrahedron | 3 | 4 | 4 | 1 | r^-4 | False | False | False
+TABLE  octahedron | 3 | 6 | 8 | 1 | r^-4 | True | False | False
+TABLE  cuboctahedron | 3 | 12 | 14 | 1 | r^-4 | True | False | False
+TABLE  icosahedron | 3 | 12 | 20 | 1 | r^-4 | True | False | False
+TABLE  TRD (hcp Voronoi cell) | 3 | 14 | 12 | 2 | r^-5 | False | True | False
+TABLE  triangular prism | 3 | 6 | 5 | 2 | r^-5 | False | True | False
+TABLE  dodecahedron | 3 | 20 | 12 | 1 | r^-4 | True | False | False
+TABLE  truncated tetrahedron | 3 | 12 | 8 | 1 | r^-4 | False | False | False
+TABLE  cube with corners cut at 1/3 (truncated-cube type) | 3 | 24 | 14 | 1 | r^-4 | True | False | False
+TABLE  rhombicuboctahedron | 3 | 24 | 26 | 1 | r^-4 | True | False | False
+TABLE  pentagonal prism (irregular) | 3 | 10 | 7 | 2 | r^-5 | False | True | False
+TABLE  oblique triangular prism | 3 | 6 | 5 | 2 | r^-5 | False | True | False
+TABLE  triangular frustum | 3 | 6 | 5 | 1 | r^-4 | False | False | False
+TABLE  square antiprism (rational) | 3 | 8 | 10 | 1 | r^-4 | False | False | False
+TABLE  triangle + generic 3-zonotope | 3 | 18 | 17 | 2 | r^-5 | False | True | False
+TABLE  tetrahedron + cube | 3 | 16 | 10 | 1 | r^-4 | False | False | False
+TABLE  corner-cut cube | 3 | 10 | 7 | 1 | r^-4 | False | False | False
+TABLE  random hull (12 points) | 3 | 12 | 20 | 1 | r^-4 | False | False | False
+TABLE  tesseract | 4 | 16 | 8 | 4 | r^-8 | True | - | -
+TABLE  generic 5-zonotope (4D) | 4 | 30 | 20 | 4 | r^-8 | True | - | -
+TABLE  A4 permutohedron (10 generators) | 4 | 120 | 30 | 4 | r^-8 | True | - | -
+TABLE  4-simplex | 4 | 5 | 5 | 1 | r^-5 | False | - | -
+TABLE  16-cell | 4 | 8 | 16 | 2 | r^-6 | True | - | -
+TABLE  24-cell | 4 | 24 | 24 | 2 | r^-6 | True | - | -
+TABLE  triangle x square | 4 | 12 | 7 | 3 | r^-7 | False | - | -
+TABLE  triangle x triangle | 4 | 9 | 6 | 2 | r^-6 | False | - | -
+TABLE  tetrahedron x segment | 4 | 8 | 6 | 2 | r^-6 | False | - | -
+TABLE  octahedron x segment | 4 | 12 | 10 | 2 | r^-6 | True | - | -
+TABLE  TRD x segment | 4 | 28 | 14 | 3 | r^-7 | False | - | -
+TABLE  triangle + generic 4-zonotope | 4 | 36 | 22 | 3 | r^-7 | False | - | -
+TABLE  5-cube | 5 | 32 | 10 | 5 | r^-10 | True | - | -
+TABLE  generic 6-zonotope (5D) | 5 | 62 | 30 | 5 | r^-10 | True | - | -
+TABLE  5-simplex | 5 | 6 | 6 | 1 | r^-6 | False | - | -
+TABLE  5-cross-polytope | 5 | 10 | 32 | 1 | r^-6 | True | - | -
+TABLE  triangle x triangle x segment | 5 | 18 | 8 | 3 | r^-8 | False | - | -
+20 checks, 0 failed, 1 s
+FINAL ok

@@ -1,0 +1,52 @@
+zono_falloff PILOT workers=2
+ok   M1 Omega_cube(0) = 64 for the cube [-1/2,1/2]^3 (known value)
+ok   M2 cube: vertex formula = product formula prod 1/((1/2 - x_i)(1/2 + x_i)) exactly at an interior point
+ok   M3 products: Omega_PxQ = Omega_P Omega_Q exactly at 11 random points (2D x 2D, 3D x 1D, 4D x 1D)
+PROGRESS 0.050 method checks (0 s)
+PROGRESS 0.119 cube: d=3 V=8 F=6 e=3 decay r^-6 (0.01 s) (0 s)
+PROGRESS 0.188 rhombic dodecahedron: d=3 V=14 F=12 e=3 decay r^-6 (0.02 s) (0 s)
+PROGRESS 0.258 truncated octahedron: d=3 V=24 F=14 e=3 decay r^-6 (0.04 s) (0 s)
+PROGRESS 0.327 rhombic triacontahedron: d=3 V=32 F=30 e=3 decay r^-6 (0.14 s) (0 s)
+PROGRESS 0.396 tetrahedron: d=3 V=4 F=4 e=1 decay r^-4 (0.0 s) (0 s)
+PROGRESS 0.465 octahedron: d=3 V=6 F=8 e=1 decay r^-4 (0.01 s) (0 s)
+PROGRESS 0.535 cuboctahedron: d=3 V=12 F=14 e=1 decay r^-4 (0.01 s) (0 s)
+PROGRESS 0.604 icosahedron: d=3 V=12 F=20 e=1 decay r^-4 (0.05 s) (0 s)
+PROGRESS 0.673 TRD (hcp Voronoi cell): d=3 V=14 F=12 e=2 decay r^-5 (0.02 s) (0 s)
+PROGRESS 0.742 triangular prism: d=3 V=6 F=5 e=2 decay r^-5 (0.0 s) (0 s)
+PROGRESS 0.812 tesseract: d=4 V=16 F=8 e=4 decay r^-8 (0.01 s) (0 s)
+PROGRESS 0.881 16-cell: d=4 V=8 F=16 e=2 decay r^-6 (0.01 s) (0 s)
+PROGRESS 0.950 triangle x square: d=4 V=12 F=7 e=3 decay r^-7 (0.0 s) (0 s)
+ok   M4 every solid built with exact facets
+ok   M5 c_0 = 0 exactly at every direction (complete-fan identity)
+ok   M6 Omega(x0) = d! vol((P - x0)°) at an interior point (float polar hull, 1e-9) for 11 rational solids
+ok   M7 exact Omega(10^6 u) agrees with the series c_0..c_K to relative 1e-12 for 11 rational solids
+ok   M8 e is the same at all 3 directions for every solid
+ok   T3 zonotopes (5): c_k = 0 for k < d and c_d = the explicit formula, exactly, at every direction
+ok   T3 zonotopes: e = d (decay r^-2d) for every zonotope
+ok   T2 centrally symmetric solids (9): c_k = 0 whenever d + k is odd (k <= K)
+ok   T5 3D trichotomy (10 solids): e = 1 / 2 / 3 exactly as the facet predicate says (pairing; all faces centrally symmetric)
+ok   T5 3D: decay orders only r^-4, r^-5, r^-6
+ok   T4 local: w c_1 -> 0 at every facet hyperplane when e >= 2, w^2 c_2 -> 0 when e = 3 (44 facet lines, eps 1e-12)
+ok   T4 local NEGATIVE: for e = 2 solids some facet line has a true double pole of c_2 (w^2 c_2 not -> 0)
+ok   T6 products (2): e(P x Q) = e(P) + e(Q)
+ok   T7 Minkowski lineality bound (0): e >= r
+ok   H brief hypothesis "centrally symmetric => r^-(d+2)" REFUTED in 3D: centrally symmetric non-zonotopes decay like r^-4 (e = 1): octahedron, cuboctahedron, icosahedron
+ok   H brief hypothesis "all 2-faces symmetric => r^-(d+3)" REFUTED in 4D: zonotopes decay like r^-8 = r^-2d, not r^-7
+ok   C conjecture e(P) <= d with equality only for zonotopes: holds on every non-zonotope tested in 4D/5D (16-cell e=2, triangle x square e=3)
+
+TABLE  name | d | V | F | e | decay | cs | 3D pairing | all faces cs
+TABLE  cube | 3 | 8 | 6 | 3 | r^-6 | True | True | True
+TABLE  rhombic dodecahedron | 3 | 14 | 12 | 3 | r^-6 | True | True | True
+TABLE  truncated octahedron | 3 | 24 | 14 | 3 | r^-6 | True | True | True
+TABLE  rhombic triacontahedron | 3 | 32 | 30 | 3 | r^-6 | True | True | True
+TABLE  tetrahedron | 3 | 4 | 4 | 1 | r^-4 | False | False | False
+TABLE  octahedron | 3 | 6 | 8 | 1 | r^-4 | True | False | False
+TABLE  cuboctahedron | 3 | 12 | 14 | 1 | r^-4 | True | False | False
+TABLE  icosahedron | 3 | 12 | 20 | 1 | r^-4 | True | False | False
+TABLE  TRD (hcp Voronoi cell) | 3 | 14 | 12 | 2 | r^-5 | False | True | False
+TABLE  triangular prism | 3 | 6 | 5 | 2 | r^-5 | False | True | False
+TABLE  tesseract | 4 | 16 | 8 | 4 | r^-8 | True | - | -
+TABLE  16-cell | 4 | 8 | 16 | 2 | r^-6 | True | - | -
+TABLE  triangle x square | 4 | 12 | 7 | 3 | r^-7 | False | - | -
+20 checks, 0 failed, 0 s
+FINAL ok
