@@ -165,7 +165,7 @@ for label, fn, part in CH:
     title = html.unescape(re.sub('<[^>]+>', '', re.search(r'<h1[^>]*>(.*?)</h1>', src, re.S).group(1))).strip()
     chapters.append((label, part, src)); toc.append((label, title))
 # study figures used by the hand-written text: <img src="study:<folder>/<path>"> is copied to figures/ch<label>/
-out = []
+out = []; coda = ''
 for label, part, src in chapters:
     src = re.sub(r'src="study:([^"]+)"', lambda mo: 'src="' + copyfig(os.path.join(ST, mo.group(1)), '', label) + '"', src)
     src = re.sub(r'src="paper:([^"]+)"', lambda mo: 'src="' + copyfig(os.path.join(P, mo.group(1)), '', label) + '"', src)
@@ -174,6 +174,7 @@ for label, part, src in chapters:
         if re.search(r'\b' + re.escape(term) + r'(s|es)?\b', plain): INDEX.setdefault(term, []).append(label)
     src = link_html(src)
     if part: out.append(f'<div class="part"><h1 class="partt">{part}</h1></div>')
+    if label == 'Coda': coda = f'<section class="ch" id="ch{label}">{src}</section>'; continue   # the Coda comes after the Epilogue (arc of 13 Nov)
     out.append(f'<section class="ch" id="ch{label}">{src}</section>')
 body = ''.join(out)
 front = link_html(open(os.path.join(HERE, 'front.html'), encoding='utf8').read())
@@ -200,15 +201,21 @@ inbook = ('<section class="app" id="papers"><h1 class="chapter">Papers in this b
           '</table><h2 id="refs">Papers referred to</h2><p style="font-size:9pt">DICTO\'s papers named in the text that are not drawn on as a source.</p><table class="toc">' +
           ''.join(f'<tr><td>#{n}</td><td>{html.escape(PAPERS[n][0])}</td><td><a href="https://doi.org/{PAPERS[n][1]}">{PAPERS[n][1]}</a></td></tr>' for n in sorted(REFERRED)) +
           '</table></section>')
+# the shared series page of The Five Orders of Space (M19 of plan-meta-paradigm), word for word at the back of every book;
+# made by another session as ../series-five-orders/series-page.html. Hook: included when the file exists, else left out and reported.
+SERIES_FILE = os.path.join(P, 'series-five-orders', 'series-page.html'); SERIES = ''
+if os.path.exists(SERIES_FILE):   # a self-contained fragment (own section, page break and scoped style), included word for word
+    SERIES = re.sub(r'^\s*<!--.*?-->\s*', '', open(SERIES_FILE, encoding='utf8').read(), flags=re.S).replace('<section class="five-orders"', '<section id="series" class="five-orders"', 1)
+SERIES_TOC = '<tr><td><a href="#series">The Five Orders of Space</a></td></tr>'
 def nice(t): return re.sub('<[^>]+>', '', t)
 idx = ('<section class="app" id="index"><h1 class="chapter">Index</h1><p style="font-size:9pt">Chapters in which each term appears.</p><table class="idx">' +
        ''.join(f'<tr><td>{nice(t)}</td><td>{", ".join(dict.fromkeys(v))}</td></tr>' for t, v in sorted(INDEX.items(), key=lambda kv: kv[0].lower())) + '</table></section>')
 tochtml = ('<h2>Contents</h2><table class="toc"><tr><td><a href="#opening">Opening. The Outsider</a></td></tr>' +
-           ''.join((f'<tr><td class="tp">{p}</td></tr>' if p else '') + f'<tr><td><a href="#ch{l}">{"Coda" if l == "Coda" else "Chapter " + l}. {html.escape(t.split(". ", 1)[-1] if t.startswith(("Chapter", "Coda")) else t)}</a></td></tr>'
+           ''.join((f'<tr><td class="tp">{p}</td></tr>' if p else '') + ('<tr><td><a href="#epilogue">Epilogue. What has been shown</a></td></tr>' if l == 'Coda' else '') + f'<tr><td><a href="#ch{l}">{"Coda" if l == "Coda" else "Chapter " + l}. {html.escape(t.split(". ", 1)[-1] if t.startswith(("Chapter", "Coda")) else t)}</a></td></tr>'
                    for (l, t), (_, _, p) in zip(toc, CH)) +
-           '<tr><td><a href="#epilogue">Epilogue. What has been shown</a></td></tr><tr><td><a href="#app">Appendix. Sources by chapter</a></td></tr>'
+           '<tr><td><a href="#app">Appendix. Sources by chapter</a></td></tr>'
            '<tr><td><a href="#papers">Papers in this book, and papers referred to</a></td></tr><tr><td><a href="#classical">References</a></td></tr>'
-           '<tr><td><a href="#index">Index</a></td></tr><tr><td><a href="#about">About the author</a></td></tr></table>')
+           '<tr><td><a href="#index">Index</a></td></tr><tr><td><a href="#about">About the author</a></td></tr>' + (SERIES_TOC if SERIES else '') + '</table>')
 def scope(num, css):
     """prefix every selector of a paper's own stylesheet with div.inc, so it styles only that paper's included text"""
     css = re.sub(r'/\*.*?\*/', '', css, flags=re.S); css = re.sub(r'@page[^{]*\{[^}]*\}', '', css)
@@ -239,7 +246,9 @@ table{max-width:100%} td,th{overflow-wrap:break-word !important;word-break:norma
 div.inc table{width:100%} table.five{width:100%} table.five td:first-child{white-space:nowrap}
 figure.plate img{width:72%;margin:0 auto;display:block}
 figure.mark{position:relative} figure.mark img.fm{position:absolute;width:14mm;right:2mm;opacity:.9;border:none}
-p.note{font-size:9pt;color:#444;border-left:2px solid #ccc;padding-left:2mm}'''
+p.note{font-size:9pt;color:#444;border-left:2px solid #ccc;padding-left:2mm}
+p.from.also{color:#8a6d12}
+table.rank{width:100%;font-size:8.2pt;border-collapse:collapse} table.rank td,table.rank th{padding:0.5mm 1mm;border-bottom:0.3pt solid #ddd;text-align:left}'''
 doc = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>The Five Solids (working title)</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
@@ -247,13 +256,15 @@ doc = f'''<!doctype html>
 {front.replace('__TOC__', tochtml)}
 {body}
 <section class="epi" id="epilogue">{epi}</section>
+{coda}
 {apphtml}
 {inbook}
 {refs}
 {idx}
 {about}
+{SERIES}
 </body></html>'''
 hits = [doc_m.group(0) for doc_m in BANNED.finditer(re.sub('<[^>]+>', ' ', doc))]
 open(os.path.join(HERE, 'paper.html'), 'w', encoding='utf8').write(doc)
 print('chapters', len(chapters), 'papers in book', len(sources), 'referred', len(REFERRED), 'figures', sum(len(fs) for _, _, fs in os.walk(os.path.join(HERE, 'figures'))),
-      'chars', len(doc), 'BANNED' if hits else 'banned 0', hits[:20])
+      'chars', len(doc), 'BANNED' if hits else 'banned 0', hits[:20], 'series page ' + ('included' if SERIES else 'MISSING (hook left: ' + SERIES_FILE + ')'))
