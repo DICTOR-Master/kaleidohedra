@@ -6,6 +6,7 @@ reported as such; (B) INDEPENDENT RECOMPUTATION with our own code where short an
 Papers labelled ai-discovered or ai-authored: an author-code rerun is enough (DICTO 12 Nov); no published code -> skip.
 Selection (DICTO 12 Nov: "cherry pick code that could benefit us", "as many birds with one boulder as possible"): rank by how many of
 standing + reusable code for a gap or aim + a check of what we build on + Concordance closeness + short one run gives.
+GATE (11-12, after four over-labelled reports): before any report text run the scope gate (repro_scope_gate.py: lists every numbered claim of the paper; "Reproduced" only if all are covered) and use the STATUS it prints.
 Rules: choose by closeness to the Concordance strands, never by who returns the favour; state exactly what was done (author's code
 rerun / independent recomputation with our own code / proof read); every report says "run by Claude Code (Opus) for DICTO"; if a result
 does not reproduce, write to the author on the paper's discussion first. Filing is a form on the paper page (DICTO's login).

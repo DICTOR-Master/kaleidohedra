@@ -142,3 +142,9 @@ Controls held in every set: every allowed pair fits (keyed_rd FINAL ok), registr
 for H00) let the solver break the chair grouping. The 90 keyed RDs (H00) remain the smallest certified keyed set. The extras are the
 cost of cancel-keying (faces sharing a partner fit each other's partners), so the next step is EXACT keying: split face classes until
 fit = allowed (or the extras left are harmless), then retest these sets. Logs: data/keyed-cut-*.log.
+
+## CELLFRAME (12 types) on larger tori (12 Nov; job rd-cut16s, 20 shards, FINAL ok)
+No fcc torus of index 11-16 admits a CELLFRAME filling (2224 tori; shards checked to sum to the unsharded count at index <= 6),
+and none of index <= 10 before (737 tori). Control under the same code: CELL+EPART periodic at index 4. Not a proof of
+aperiodicity (49 extra chair contacts survive a shell, above); it says the 12-type set has no small period.
+Fault fixed first: the torus coset routine missed cosets above index 8 (fixed box); now a neighbour walk with a site-count assert.

@@ -9,7 +9,7 @@
 # Controls: FULL (558 types) must be UNSAT on every torus; PLAIN (one unmarked RD) must be SAT at index 1.
 # Tori: row Hermite forms (a,0,0), (b,d,0), (c,e,f) with 0<=b,c<a, 0<=e<d, index a*d*f, in the fcc basis (1,1,0),(1,0,1),(0,1,1).
 # usage: python3 cut_down.py <level k> <IMAX> <out.json> [schemes comma list]
-import sys, os, json, itertools, time
+import os, sys, os, json, itertools, time
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'vendor'))
 from chairN import Chair, apply, compose, inverse, make_group, det, vsub, vadd
 from collections import defaultdict
@@ -147,7 +147,11 @@ for name in want:
                 R = ROT[r]
                 for q in Rb: allowed[(a, apply(R, d))].add((b, RI[compose(ROT[q], inverse(R))]))
     tori = []; per = None
-    for n, gens in sublattices(IMAX):
+    # 12 Nov: SHARD=k/S (env) tests only tori number t with t % S == k; IMIN (env) skips index < IMIN (already tested). The shards'
+    # union = every torus in [IMIN, IMAX]; a scheme is periodic iff some shard finds a SAT torus.
+    _sh = os.environ.get('SHARD'); _k, _S = map(int, _sh.split('/')) if _sh else (0, 1); _imin = int(os.environ.get('IMIN', '1'))
+    for _t, (n, gens) in enumerate(sublattices(IMAX)):
+        if _t % _S != _k or n < _imin: continue
         S, red = torus_sites(gens); idx = {red(x): i for i, x in enumerate(S)}
         assert len(S) == n, (n, len(S), gens)   # one site per coset: the torus has exactly n RDs
         s = Cadical153(); var = lambda i, a, r: 1 + (i * ntypes + a) * 24 + r
@@ -167,6 +171,7 @@ for name in want:
         sat = s.solve(); s.delete(); tori.append((n, sat))
         if sat: per = (n, gens); break
     verdict = f'PERIODIC (torus index {per[0]})' if per else f'CANDIDATE (no torus up to index {IMAX})'
+    if _sh: verdict += f' [shard {_sh}, index >= {_imin}]'
     res[name] = dict(types=ntypes, recover_r1=(clash == 0), clashes=clash, tori_tested=len(tori), verdict=verdict)
     print(f'{name:12s} types {ntypes:5d}  recover(r=1) {"yes" if clash == 0 else "NO (" + str(clash) + " clashes)"}  {verdict}  ({len(tori)} tori, {time.time()-t0:.0f}s)', flush=True)
 ok = ('FULL' not in res or res['FULL']['verdict'].startswith('CAND')) and ('PLAIN' not in res or res['PLAIN']['verdict'].startswith('PERIODIC'))
