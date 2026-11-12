@@ -6684,6 +6684,15 @@
     "retry": "only LEADS: corner comparison for the tied rows and H3-81; Subbotin's figure-only lists",
     "study": "studies/2026-11-12-permutohedron-equal-edges (PRIOR-ART.md)",
     "date": "2026-11-13"
+   },
+   {
+    "date": "2026-11-13",
+    "method": "studies/2026-11-13-platonic-residents-exact/scripts/residents.py: exact Z[phi]/Z[sqrt2] frame enumeration through one corner (any resident labelled with that corner as p0 is found), all corners checked, full distance matrix checked; totals = through-corner x V / k; 600-cell and 120-cell: closure under [3,3,5], orbits under the group and its rotation subgroup, search repeated from every corner equals the closure; field argument for D, I; controls (Coxeter cells and vertex figures, 25 24-cells, 75 16-cells, 675 16-cells in the 120-cell, 3D solids, |W|/|W_J|); compute node via job gate (residents-pilot, residents), 199 checks FINAL ok",
+    "question": "Platonic book Ch 11 (Atlas Observation 5) made exact: every regular D, I, C, T, O on the corners of the 600-cell, the 120-cell and every 0/1-seed polytope of A3, B3, H3, A4, B4, F4, H4 (plus H3 prisms, snub 24-cell, grand antiprism); only the Queens house all five?; One World nesting in the 600-cell",
+    "result": "EXACT and complete. 600-cell: D 120 (1 orbit, edge 1), I 240 (120 vertex figures + 120 edge phi), C 600 (1 orbit = cells of the 75 tesseracts), T 3000 (600 cells + 600 edge phi + 1200 edge phi sqrt2 + 600 edge phi^2), O 900 (600 cells of the 25 24-cells + 300 central). 120-cell: 1560, 2400, 7200, 34200, 8100. Draft counts confirmed. A4 only T, O; B4, F4 only C, T, O; all 15 H4 hold all five; no D or I outside H4 PROVED (coordinates in Q(sqrt2), pentagon needs phi^2). H3 prisms, snub 24-cell (no D), grand antiprism (no I) never hold all five; duoprisms not checked. CORRECTION: each dodecahedron has all 5 Euclid cubes and 10 tetrahedra on the corners (draft said 2); the 600 cubes are exactly these Euclid cubes; no I or O concentric with any D, One World O and I sizes absent (I edge 1 only as vertex figures): One World nesting holds for D, C, T only. 120-cell also: 840 regular 5-cells (120 + 720), 225 24-cells, 675 16-cells, 675 tesseracts",
+    "retry": "never; leads: duoprisms; residents of the other H4 polytopes by orbit",
+    "status": "SETTLED (exact)",
+    "study": "studies/2026-11-13-platonic-residents-exact"
    }
   ]
  },

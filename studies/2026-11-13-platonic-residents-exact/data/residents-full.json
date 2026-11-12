@@ -1,0 +1,4858 @@
+{
+ "mode": "full",
+ "polytopes": [
+  {
+   "group": "H4",
+   "seed": "-",
+   "kind": "grand",
+   "name": "grand antiprism",
+   "corners": 100,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 120,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 4,
+     "total": 20,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 20
+     }
+    },
+    "C": {
+     "through_corner": 16,
+     "total": 200,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3/2 + 1/2*sqrt5": 200
+     }
+    },
+    "T": {
+     "through_corner": 64,
+     "total": 1600,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 300,
+      "3/2 + 1/2*sqrt5": 200,
+      "3 + 1*sqrt5": 800,
+      "7/2 + 3/2*sqrt5": 300
+     }
+    },
+    "O": {
+     "through_corner": 18,
+     "total": 300,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3/2 + 1/2*sqrt5": 100,
+      "3 + 1*sqrt5": 200
+     }
+    }
+   },
+   "seconds": 5.7
+  },
+  {
+   "group": "H3",
+   "seed": "001",
+   "kind": "prism",
+   "name": "icosahedron prism",
+   "corners": 24,
+   "field": "Q(sqrt5)",
+   "group_order": 240,
+   "stabiliser_order": 10,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {
+    "I": {
+     "through_corner": 1,
+     "total": 2,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "H3",
+   "seed": "010",
+   "kind": "prism",
+   "name": "rectified dodecahedron prism",
+   "corners": 60,
+   "field": "Q(sqrt5)",
+   "group_order": 240,
+   "stabiliser_order": 4,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {
+    "O": {
+     "through_corner": 1,
+     "total": 10,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3 + 1*sqrt5": 1
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "H3",
+   "seed": "011",
+   "kind": "prism",
+   "name": "truncated icosahedron prism",
+   "corners": 120,
+   "field": "Q(sqrt5)",
+   "group_order": 240,
+   "stabiliser_order": 2,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.0
+  },
+  {
+   "group": "H3",
+   "seed": "100",
+   "kind": "prism",
+   "name": "dodecahedron prism",
+   "corners": 40,
+   "field": "Q(sqrt5)",
+   "group_order": 240,
+   "stabiliser_order": 6,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 1,
+     "total": 2,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1
+     }
+    },
+    "C": {
+     "through_corner": 2,
+     "total": 10,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3/2 + 1/2*sqrt5": 2
+     }
+    },
+    "T": {
+     "through_corner": 2,
+     "total": 20,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3 + 1*sqrt5": 2
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "H3",
+   "seed": "101",
+   "kind": "prism",
+   "name": "cantellated dodecahedron prism",
+   "corners": 120,
+   "field": "Q(sqrt5)",
+   "group_order": 240,
+   "stabiliser_order": 2,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 2,
+     "total": 30,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 2
+     }
+    },
+    "T": {
+     "through_corner": 2,
+     "total": 60,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 2
+     }
+    },
+    "O": {
+     "through_corner": 3,
+     "total": 60,
+     "edge2_over_polytope_edge2_through_corner": {
+      "6 + 2*sqrt5": 3
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "H3",
+   "seed": "110",
+   "kind": "prism",
+   "name": "truncated dodecahedron prism",
+   "corners": 120,
+   "field": "Q(sqrt5)",
+   "group_order": 240,
+   "stabiliser_order": 2,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.0
+  },
+  {
+   "group": "H3",
+   "seed": "111",
+   "kind": "prism",
+   "name": "omnitruncated dodecahedron prism",
+   "corners": 240,
+   "field": "Q(sqrt5)",
+   "group_order": 240,
+   "stabiliser_order": 1,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 1,
+     "total": 30,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1
+     }
+    },
+    "T": {
+     "through_corner": 1,
+     "total": 60,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 1
+     }
+    },
+    "O": {
+     "through_corner": 2,
+     "total": 80,
+     "edge2_over_polytope_edge2_through_corner": {
+      "16 + 6*sqrt5": 2
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "H4",
+   "seed": "-",
+   "kind": "snub24",
+   "name": "snub 24-cell",
+   "corners": 96,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 120,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "I": {
+     "through_corner": 6,
+     "total": 48,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 24,
+      "3/2 + 1/2*sqrt5": 24
+     }
+    },
+    "C": {
+     "through_corner": 16,
+     "total": 192,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3/2 + 1/2*sqrt5": 192
+     }
+    },
+    "T": {
+     "through_corner": 39,
+     "total": 936,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 120,
+      "3/2 + 1/2*sqrt5": 312,
+      "3 + 1*sqrt5": 384,
+      "7/2 + 3/2*sqrt5": 120
+     }
+    },
+    "O": {
+     "through_corner": 27,
+     "total": 432,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3/2 + 1/2*sqrt5": 288,
+      "3 + 1*sqrt5": 144
+     }
+    }
+   },
+   "seconds": 5.4
+  },
+  {
+   "group": "A3",
+   "seed": "001",
+   "kind": "wythoff",
+   "name": "tetrahedron",
+   "corners": 4,
+   "field": "Q(sqrt2)",
+   "group_order": 24,
+   "stabiliser_order": 6,
+   "bonds": [
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 1,
+     "total": 1,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "A3",
+   "seed": "010",
+   "kind": "wythoff",
+   "name": "rectified tetrahedron",
+   "corners": 6,
+   "field": "Q(sqrt2)",
+   "group_order": 24,
+   "stabiliser_order": 4,
+   "bonds": [
+    3,
+    3
+   ],
+   "residents": {
+    "O": {
+     "through_corner": 1,
+     "total": 1,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "A3",
+   "seed": "011",
+   "kind": "wythoff",
+   "name": "truncated tetrahedron",
+   "corners": 12,
+   "field": "Q(sqrt2)",
+   "group_order": 24,
+   "stabiliser_order": 2,
+   "bonds": [
+    3,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.0
+  },
+  {
+   "group": "A3",
+   "seed": "100",
+   "kind": "wythoff",
+   "name": "tetrahedron",
+   "corners": 4,
+   "field": "Q(sqrt2)",
+   "group_order": 24,
+   "stabiliser_order": 6,
+   "bonds": [
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 1,
+     "total": 1,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "A3",
+   "seed": "101",
+   "kind": "wythoff",
+   "name": "cantellated tetrahedron",
+   "corners": 12,
+   "field": "Q(sqrt2)",
+   "group_order": 24,
+   "stabiliser_order": 2,
+   "bonds": [
+    3,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.0
+  },
+  {
+   "group": "A3",
+   "seed": "110",
+   "kind": "wythoff",
+   "name": "truncated tetrahedron",
+   "corners": 12,
+   "field": "Q(sqrt2)",
+   "group_order": 24,
+   "stabiliser_order": 2,
+   "bonds": [
+    3,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.0
+  },
+  {
+   "group": "A3",
+   "seed": "111",
+   "kind": "wythoff",
+   "name": "omnitruncated tetrahedron",
+   "corners": 24,
+   "field": "Q(sqrt2)",
+   "group_order": 24,
+   "stabiliser_order": 1,
+   "bonds": [
+    3,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.0
+  },
+  {
+   "group": "A4",
+   "seed": "0001",
+   "kind": "wythoff",
+   "name": "5-cell",
+   "corners": 5,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 24,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 4,
+     "total": 5,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 4
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "A4",
+   "seed": "0010",
+   "kind": "wythoff",
+   "name": "rectified 5-cell",
+   "corners": 10,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 12,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 2,
+     "total": 5,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 2
+     }
+    },
+    "O": {
+     "through_corner": 3,
+     "total": 5,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 3
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "A4",
+   "seed": "0011",
+   "kind": "wythoff",
+   "name": "truncated 5-cell",
+   "corners": 20,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 6,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 2,
+     "total": 10,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "4": 1
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "A4",
+   "seed": "0100",
+   "kind": "wythoff",
+   "name": "rectified 5-cell",
+   "corners": 10,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 12,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 2,
+     "total": 5,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 2
+     }
+    },
+    "O": {
+     "through_corner": 3,
+     "total": 5,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 3
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "A4",
+   "seed": "0101",
+   "kind": "wythoff",
+   "name": "cantellated 5-cell",
+   "corners": 30,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 4,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {
+    "O": {
+     "through_corner": 1,
+     "total": 5,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "A4",
+   "seed": "0110",
+   "kind": "wythoff",
+   "name": "bitruncated 5-cell",
+   "corners": 30,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 4,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 8,
+     "total": 60,
+     "edge2_over_polytope_edge2_through_corner": {
+      "5": 8
+     }
+    },
+    "O": {
+     "through_corner": 1,
+     "total": 5,
+     "edge2_over_polytope_edge2_through_corner": {
+      "4": 1
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "A4",
+   "seed": "0111",
+   "kind": "wythoff",
+   "name": "cantitruncated 5-cell",
+   "corners": 60,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 2,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.1
+  },
+  {
+   "group": "A4",
+   "seed": "1000",
+   "kind": "wythoff",
+   "name": "5-cell",
+   "corners": 5,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 24,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 4,
+     "total": 5,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 4
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "A4",
+   "seed": "1001",
+   "kind": "wythoff",
+   "name": "runcinated 5-cell",
+   "corners": 20,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 6,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 2,
+     "total": 10,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 2
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "A4",
+   "seed": "1010",
+   "kind": "wythoff",
+   "name": "cantellated 5-cell",
+   "corners": 30,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 4,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {
+    "O": {
+     "through_corner": 1,
+     "total": 5,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "A4",
+   "seed": "1011",
+   "kind": "wythoff",
+   "name": "runcitruncated 5-cell",
+   "corners": 60,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 2,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.1
+  },
+  {
+   "group": "A4",
+   "seed": "1100",
+   "kind": "wythoff",
+   "name": "truncated 5-cell",
+   "corners": 20,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 6,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 2,
+     "total": 10,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "4": 1
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "A4",
+   "seed": "1101",
+   "kind": "wythoff",
+   "name": "runcitruncated 5-cell",
+   "corners": 60,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 2,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.1
+  },
+  {
+   "group": "A4",
+   "seed": "1110",
+   "kind": "wythoff",
+   "name": "cantitruncated 5-cell",
+   "corners": 60,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 2,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.1
+  },
+  {
+   "group": "A4",
+   "seed": "1111",
+   "kind": "wythoff",
+   "name": "omnitruncated 5-cell",
+   "corners": 120,
+   "field": "Q(sqrt2)",
+   "group_order": 120,
+   "stabiliser_order": 1,
+   "bonds": [
+    3,
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 2,
+     "total": 60,
+     "edge2_over_polytope_edge2_through_corner": {
+      "5": 2
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B3",
+   "seed": "001",
+   "kind": "wythoff",
+   "name": "octahedron",
+   "corners": 6,
+   "field": "Q(sqrt2)",
+   "group_order": 48,
+   "stabiliser_order": 8,
+   "bonds": [
+    4,
+    3
+   ],
+   "residents": {
+    "O": {
+     "through_corner": 1,
+     "total": 1,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "B3",
+   "seed": "010",
+   "kind": "wythoff",
+   "name": "rectified cube",
+   "corners": 12,
+   "field": "Q(sqrt2)",
+   "group_order": 48,
+   "stabiliser_order": 4,
+   "bonds": [
+    4,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.0
+  },
+  {
+   "group": "B3",
+   "seed": "011",
+   "kind": "wythoff",
+   "name": "truncated octahedron",
+   "corners": 24,
+   "field": "Q(sqrt2)",
+   "group_order": 48,
+   "stabiliser_order": 2,
+   "bonds": [
+    4,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.0
+  },
+  {
+   "group": "B3",
+   "seed": "100",
+   "kind": "wythoff",
+   "name": "cube",
+   "corners": 8,
+   "field": "Q(sqrt2)",
+   "group_order": 48,
+   "stabiliser_order": 6,
+   "bonds": [
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 1,
+     "total": 1,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1
+     }
+    },
+    "T": {
+     "through_corner": 1,
+     "total": 2,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 1
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "B3",
+   "seed": "101",
+   "kind": "wythoff",
+   "name": "cantellated cube",
+   "corners": 24,
+   "field": "Q(sqrt2)",
+   "group_order": 48,
+   "stabiliser_order": 2,
+   "bonds": [
+    4,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.0
+  },
+  {
+   "group": "B3",
+   "seed": "110",
+   "kind": "wythoff",
+   "name": "truncated cube",
+   "corners": 24,
+   "field": "Q(sqrt2)",
+   "group_order": 48,
+   "stabiliser_order": 2,
+   "bonds": [
+    4,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.0
+  },
+  {
+   "group": "B3",
+   "seed": "111",
+   "kind": "wythoff",
+   "name": "omnitruncated cube",
+   "corners": 48,
+   "field": "Q(sqrt2)",
+   "group_order": 48,
+   "stabiliser_order": 1,
+   "bonds": [
+    4,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.0
+  },
+  {
+   "group": "B4",
+   "seed": "0001",
+   "kind": "wythoff",
+   "name": "16-cell",
+   "corners": 8,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 48,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 8,
+     "total": 16,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 8
+     }
+    },
+    "O": {
+     "through_corner": 3,
+     "total": 4,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 3
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "0010",
+   "kind": "wythoff",
+   "name": "rectified 16-cell",
+   "corners": 24,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 16,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 8,
+     "total": 24,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 8
+     }
+    },
+    "T": {
+     "through_corner": 8,
+     "total": 48,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 8
+     }
+    },
+    "O": {
+     "through_corner": 9,
+     "total": 36,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 6,
+      "2": 3
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "0011",
+   "kind": "wythoff",
+   "name": "truncated 16-cell",
+   "corners": 48,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 8,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 16,
+     "total": 192,
+     "edge2_over_polytope_edge2_through_corner": {
+      "5": 16
+     }
+    },
+    "O": {
+     "through_corner": 8,
+     "total": 64,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "4": 1,
+      "5": 6
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "0100",
+   "kind": "wythoff",
+   "name": "rectified tesseract",
+   "corners": 32,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 12,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 1,
+     "total": 4,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 1
+     }
+    },
+    "T": {
+     "through_corner": 19,
+     "total": 152,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 2,
+      "3": 16,
+      "4": 1
+     }
+    },
+    "O": {
+     "through_corner": 6,
+     "total": 32,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3": 6
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "0101",
+   "kind": "wythoff",
+   "name": "cantellated 16-cell",
+   "corners": 96,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 4,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 19,
+     "total": 228,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 2,
+      "3": 16,
+      "4": 1
+     }
+    },
+    "T": {
+     "through_corner": 19,
+     "total": 456,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 2,
+      "6": 16,
+      "8": 1
+     }
+    },
+    "O": {
+     "through_corner": 18,
+     "total": 288,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3": 12,
+      "6": 6
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "0110",
+   "kind": "wythoff",
+   "name": "bitruncated tesseract",
+   "corners": 96,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 4,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 16,
+     "total": 384,
+     "edge2_over_polytope_edge2_through_corner": {
+      "9": 16
+     }
+    },
+    "O": {
+     "through_corner": 7,
+     "total": 112,
+     "edge2_over_polytope_edge2_through_corner": {
+      "9": 7
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "0111",
+   "kind": "wythoff",
+   "name": "cantitruncated 16-cell",
+   "corners": 192,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 2,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 23,
+     "total": 552,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "4": 1,
+      "7": 16,
+      "9": 5
+     }
+    },
+    "T": {
+     "through_corner": 23,
+     "total": 1104,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 1,
+      "8": 1,
+      "14": 16,
+      "18": 5
+     }
+    },
+    "O": {
+     "through_corner": 18,
+     "total": 576,
+     "edge2_over_polytope_edge2_through_corner": {
+      "7": 12,
+      "14": 6
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "1000",
+   "kind": "wythoff",
+   "name": "tesseract",
+   "corners": 16,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 24,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 4,
+     "total": 8,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 4
+     }
+    },
+    "T": {
+     "through_corner": 8,
+     "total": 32,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 8
+     }
+    },
+    "O": {
+     "through_corner": 3,
+     "total": 8,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 3
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "1001",
+   "kind": "wythoff",
+   "name": "runcinated tesseract",
+   "corners": 64,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 6,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 4,
+     "total": 32,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 4
+     }
+    },
+    "T": {
+     "through_corner": 22,
+     "total": 352,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "2": 4,
+      "3 + 1*sqrt2": 16,
+      "3 + 2*sqrt2": 1
+     }
+    },
+    "O": {
+     "through_corner": 6,
+     "total": 64,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3 + 1*sqrt2": 6
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "1010",
+   "kind": "wythoff",
+   "name": "cantellated tesseract",
+   "corners": 96,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 4,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 8,
+     "total": 96,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2 + 1*sqrt2": 8
+     }
+    },
+    "T": {
+     "through_corner": 32,
+     "total": 768,
+     "edge2_over_polytope_edge2_through_corner": {
+      "4 + 2*sqrt2": 32
+     }
+    },
+    "O": {
+     "through_corner": 14,
+     "total": 224,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "3 + 2*sqrt2": 1,
+      "4 + 2*sqrt2": 12
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "1011",
+   "kind": "wythoff",
+   "name": "runcitruncated 16-cell",
+   "corners": 192,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 2,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 1,
+     "total": 24,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1
+     }
+    },
+    "T": {
+     "through_corner": 17,
+     "total": 816,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 1,
+      "7 + 3*sqrt2": 16
+     }
+    },
+    "O": {
+     "through_corner": 6,
+     "total": 192,
+     "edge2_over_polytope_edge2_through_corner": {
+      "7 + 3*sqrt2": 6
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "1100",
+   "kind": "wythoff",
+   "name": "truncated tesseract",
+   "corners": 64,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 6,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 4,
+     "total": 32,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3 + 2*sqrt2": 4
+     }
+    },
+    "T": {
+     "through_corner": 22,
+     "total": 352,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "3 + 2*sqrt2": 1,
+      "5 + 3*sqrt2": 16,
+      "6 + 4*sqrt2": 4
+     }
+    },
+    "O": {
+     "through_corner": 6,
+     "total": 64,
+     "edge2_over_polytope_edge2_through_corner": {
+      "5 + 3*sqrt2": 6
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "1101",
+   "kind": "wythoff",
+   "name": "runcitruncated tesseract",
+   "corners": 192,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 2,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 8,
+     "total": 192,
+     "edge2_over_polytope_edge2_through_corner": {
+      "4 + 2*sqrt2": 8
+     }
+    },
+    "T": {
+     "through_corner": 16,
+     "total": 768,
+     "edge2_over_polytope_edge2_through_corner": {
+      "8 + 4*sqrt2": 16
+     }
+    },
+    "O": {
+     "through_corner": 6,
+     "total": 192,
+     "edge2_over_polytope_edge2_through_corner": {
+      "8 + 4*sqrt2": 6
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "1110",
+   "kind": "wythoff",
+   "name": "cantitruncated tesseract",
+   "corners": 192,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 2,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "T": {
+     "through_corner": 16,
+     "total": 768,
+     "edge2_over_polytope_edge2_through_corner": {
+      "11 + 5*sqrt2": 16
+     }
+    },
+    "O": {
+     "through_corner": 6,
+     "total": 192,
+     "edge2_over_polytope_edge2_through_corner": {
+      "11 + 5*sqrt2": 6
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "B4",
+   "seed": "1111",
+   "kind": "wythoff",
+   "name": "omnitruncated tesseract",
+   "corners": 384,
+   "field": "Q(sqrt2)",
+   "group_order": 384,
+   "stabiliser_order": 1,
+   "bonds": [
+    4,
+    3,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 8,
+     "total": 384,
+     "edge2_over_polytope_edge2_through_corner": {
+      "8 + 3*sqrt2": 8
+     }
+    },
+    "T": {
+     "through_corner": 16,
+     "total": 1536,
+     "edge2_over_polytope_edge2_through_corner": {
+      "16 + 6*sqrt2": 16
+     }
+    },
+    "O": {
+     "through_corner": 6,
+     "total": 384,
+     "edge2_over_polytope_edge2_through_corner": {
+      "16 + 6*sqrt2": 6
+     }
+    }
+   },
+   "seconds": 0.2
+  },
+  {
+   "group": "F4",
+   "seed": "0001",
+   "kind": "wythoff",
+   "name": "24-cell",
+   "corners": 24,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 48,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 8,
+     "total": 24,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 8
+     }
+    },
+    "T": {
+     "through_corner": 8,
+     "total": 48,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 8
+     }
+    },
+    "O": {
+     "through_corner": 9,
+     "total": 36,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 6,
+      "2": 3
+     }
+    }
+   },
+   "seconds": 0.3
+  },
+  {
+   "group": "F4",
+   "seed": "0010",
+   "kind": "wythoff",
+   "name": "rectified 24-cell",
+   "corners": 96,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 12,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 19,
+     "total": 228,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 2,
+      "3": 16,
+      "4": 1
+     }
+    },
+    "T": {
+     "through_corner": 19,
+     "total": 456,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 2,
+      "6": 16,
+      "8": 1
+     }
+    },
+    "O": {
+     "through_corner": 18,
+     "total": 288,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3": 12,
+      "6": 6
+     }
+    }
+   },
+   "seconds": 0.3
+  },
+  {
+   "group": "F4",
+   "seed": "0011",
+   "kind": "wythoff",
+   "name": "truncated 24-cell",
+   "corners": 192,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 6,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 23,
+     "total": 552,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "4": 1,
+      "7": 16,
+      "9": 5
+     }
+    },
+    "T": {
+     "through_corner": 23,
+     "total": 1104,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 1,
+      "8": 1,
+      "14": 16,
+      "18": 5
+     }
+    },
+    "O": {
+     "through_corner": 18,
+     "total": 576,
+     "edge2_over_polytope_edge2_through_corner": {
+      "7": 12,
+      "14": 6
+     }
+    }
+   },
+   "seconds": 0.3
+  },
+  {
+   "group": "F4",
+   "seed": "0100",
+   "kind": "wythoff",
+   "name": "rectified 24-cell",
+   "corners": 96,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 12,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 19,
+     "total": 228,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 2,
+      "3": 16,
+      "4": 1
+     }
+    },
+    "T": {
+     "through_corner": 19,
+     "total": 456,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 2,
+      "6": 16,
+      "8": 1
+     }
+    },
+    "O": {
+     "through_corner": 18,
+     "total": 288,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3": 12,
+      "6": 6
+     }
+    }
+   },
+   "seconds": 0.2
+  },
+  {
+   "group": "F4",
+   "seed": "0101",
+   "kind": "wythoff",
+   "name": "cantellated 24-cell",
+   "corners": 288,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 4,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 16,
+     "total": 576,
+     "edge2_over_polytope_edge2_through_corner": {
+      "4 + 2*sqrt2": 16
+     }
+    },
+    "T": {
+     "through_corner": 16,
+     "total": 1152,
+     "edge2_over_polytope_edge2_through_corner": {
+      "8 + 4*sqrt2": 16
+     }
+    },
+    "O": {
+     "through_corner": 18,
+     "total": 864,
+     "edge2_over_polytope_edge2_through_corner": {
+      "4 + 2*sqrt2": 12,
+      "8 + 4*sqrt2": 6
+     }
+    }
+   },
+   "seconds": 0.3
+  },
+  {
+   "group": "F4",
+   "seed": "0110",
+   "kind": "wythoff",
+   "name": "bitruncated 24-cell",
+   "corners": 288,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 4,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 20,
+     "total": 720,
+     "edge2_over_polytope_edge2_through_corner": {
+      "6 + 4*sqrt2": 20
+     }
+    },
+    "T": {
+     "through_corner": 56,
+     "total": 4032,
+     "edge2_over_polytope_edge2_through_corner": {
+      "12 + 8*sqrt2": 56
+     }
+    },
+    "O": {
+     "through_corner": 33,
+     "total": 1584,
+     "edge2_over_polytope_edge2_through_corner": {
+      "6 + 4*sqrt2": 12,
+      "12 + 8*sqrt2": 21
+     }
+    }
+   },
+   "seconds": 0.3
+  },
+  {
+   "group": "F4",
+   "seed": "0111",
+   "kind": "wythoff",
+   "name": "cantitruncated 24-cell",
+   "corners": 576,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 2,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 17,
+     "total": 1224,
+     "edge2_over_polytope_edge2_through_corner": {
+      "6 + 4*sqrt2": 1,
+      "10 + 6*sqrt2": 16
+     }
+    },
+    "T": {
+     "through_corner": 17,
+     "total": 2448,
+     "edge2_over_polytope_edge2_through_corner": {
+      "12 + 8*sqrt2": 1,
+      "20 + 12*sqrt2": 16
+     }
+    },
+    "O": {
+     "through_corner": 18,
+     "total": 1728,
+     "edge2_over_polytope_edge2_through_corner": {
+      "10 + 6*sqrt2": 12,
+      "20 + 12*sqrt2": 6
+     }
+    }
+   },
+   "seconds": 0.4
+  },
+  {
+   "group": "F4",
+   "seed": "1000",
+   "kind": "wythoff",
+   "name": "24-cell",
+   "corners": 24,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 48,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 8,
+     "total": 24,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 8
+     }
+    },
+    "T": {
+     "through_corner": 8,
+     "total": 48,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 8
+     }
+    },
+    "O": {
+     "through_corner": 9,
+     "total": 36,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 6,
+      "2": 3
+     }
+    }
+   },
+   "seconds": 0.2
+  },
+  {
+   "group": "F4",
+   "seed": "1001",
+   "kind": "wythoff",
+   "name": "runcinated 24-cell",
+   "corners": 144,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 8,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 16,
+     "total": 288,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2 + 1*sqrt2": 16
+     }
+    },
+    "T": {
+     "through_corner": 48,
+     "total": 1728,
+     "edge2_over_polytope_edge2_through_corner": {
+      "4 + 2*sqrt2": 48
+     }
+    },
+    "O": {
+     "through_corner": 34,
+     "total": 816,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 2,
+      "2 + 1*sqrt2": 12,
+      "3 + 2*sqrt2": 2,
+      "4 + 2*sqrt2": 18
+     }
+    }
+   },
+   "seconds": 0.3
+  },
+  {
+   "group": "F4",
+   "seed": "1010",
+   "kind": "wythoff",
+   "name": "cantellated 24-cell",
+   "corners": 288,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 4,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 16,
+     "total": 576,
+     "edge2_over_polytope_edge2_through_corner": {
+      "4 + 2*sqrt2": 16
+     }
+    },
+    "T": {
+     "through_corner": 16,
+     "total": 1152,
+     "edge2_over_polytope_edge2_through_corner": {
+      "8 + 4*sqrt2": 16
+     }
+    },
+    "O": {
+     "through_corner": 18,
+     "total": 864,
+     "edge2_over_polytope_edge2_through_corner": {
+      "4 + 2*sqrt2": 12,
+      "8 + 4*sqrt2": 6
+     }
+    }
+   },
+   "seconds": 0.3
+  },
+  {
+   "group": "F4",
+   "seed": "1011",
+   "kind": "wythoff",
+   "name": "runcitruncated 24-cell",
+   "corners": 576,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 2,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 16,
+     "total": 1152,
+     "edge2_over_polytope_edge2_through_corner": {
+      "8 + 3*sqrt2": 16
+     }
+    },
+    "T": {
+     "through_corner": 16,
+     "total": 2304,
+     "edge2_over_polytope_edge2_through_corner": {
+      "16 + 6*sqrt2": 16
+     }
+    },
+    "O": {
+     "through_corner": 18,
+     "total": 1728,
+     "edge2_over_polytope_edge2_through_corner": {
+      "8 + 3*sqrt2": 12,
+      "16 + 6*sqrt2": 6
+     }
+    }
+   },
+   "seconds": 0.4
+  },
+  {
+   "group": "F4",
+   "seed": "1100",
+   "kind": "wythoff",
+   "name": "truncated 24-cell",
+   "corners": 192,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 6,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 23,
+     "total": 552,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "4": 1,
+      "7": 16,
+      "9": 5
+     }
+    },
+    "T": {
+     "through_corner": 23,
+     "total": 1104,
+     "edge2_over_polytope_edge2_through_corner": {
+      "2": 1,
+      "8": 1,
+      "14": 16,
+      "18": 5
+     }
+    },
+    "O": {
+     "through_corner": 18,
+     "total": 576,
+     "edge2_over_polytope_edge2_through_corner": {
+      "7": 12,
+      "14": 6
+     }
+    }
+   },
+   "seconds": 0.3
+  },
+  {
+   "group": "F4",
+   "seed": "1101",
+   "kind": "wythoff",
+   "name": "runcitruncated 24-cell",
+   "corners": 576,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 2,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 16,
+     "total": 1152,
+     "edge2_over_polytope_edge2_through_corner": {
+      "8 + 3*sqrt2": 16
+     }
+    },
+    "T": {
+     "through_corner": 16,
+     "total": 2304,
+     "edge2_over_polytope_edge2_through_corner": {
+      "16 + 6*sqrt2": 16
+     }
+    },
+    "O": {
+     "through_corner": 18,
+     "total": 1728,
+     "edge2_over_polytope_edge2_through_corner": {
+      "8 + 3*sqrt2": 12,
+      "16 + 6*sqrt2": 6
+     }
+    }
+   },
+   "seconds": 0.4
+  },
+  {
+   "group": "F4",
+   "seed": "1110",
+   "kind": "wythoff",
+   "name": "cantitruncated 24-cell",
+   "corners": 576,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 2,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 17,
+     "total": 1224,
+     "edge2_over_polytope_edge2_through_corner": {
+      "6 + 4*sqrt2": 1,
+      "10 + 6*sqrt2": 16
+     }
+    },
+    "T": {
+     "through_corner": 17,
+     "total": 2448,
+     "edge2_over_polytope_edge2_through_corner": {
+      "12 + 8*sqrt2": 1,
+      "20 + 12*sqrt2": 16
+     }
+    },
+    "O": {
+     "through_corner": 18,
+     "total": 1728,
+     "edge2_over_polytope_edge2_through_corner": {
+      "10 + 6*sqrt2": 12,
+      "20 + 12*sqrt2": 6
+     }
+    }
+   },
+   "seconds": 0.3
+  },
+  {
+   "group": "F4",
+   "seed": "1111",
+   "kind": "wythoff",
+   "name": "omnitruncated 24-cell",
+   "corners": 1152,
+   "field": "Q(sqrt2)",
+   "group_order": 1152,
+   "stabiliser_order": 1,
+   "bonds": [
+    3,
+    4,
+    3
+   ],
+   "residents": {
+    "C": {
+     "through_corner": 20,
+     "total": 2880,
+     "edge2_over_polytope_edge2_through_corner": {
+      "14 + 9*sqrt2": 20
+     }
+    },
+    "T": {
+     "through_corner": 72,
+     "total": 20736,
+     "edge2_over_polytope_edge2_through_corner": {
+      "28 + 18*sqrt2": 72
+     }
+    },
+    "O": {
+     "through_corner": 41,
+     "total": 7872,
+     "edge2_over_polytope_edge2_through_corner": {
+      "11 + 6*sqrt2": 2,
+      "14 + 9*sqrt2": 12,
+      "28 + 18*sqrt2": 27
+     }
+    }
+   },
+   "seconds": 0.5
+  },
+  {
+   "group": "H3",
+   "seed": "001",
+   "kind": "wythoff",
+   "name": "icosahedron",
+   "corners": 12,
+   "field": "Q(sqrt5)",
+   "group_order": 120,
+   "stabiliser_order": 10,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {
+    "I": {
+     "through_corner": 1,
+     "total": 1,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "H3",
+   "seed": "010",
+   "kind": "wythoff",
+   "name": "rectified dodecahedron",
+   "corners": 30,
+   "field": "Q(sqrt5)",
+   "group_order": 120,
+   "stabiliser_order": 4,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {
+    "O": {
+     "through_corner": 1,
+     "total": 5,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3 + 1*sqrt5": 1
+     }
+    }
+   },
+   "seconds": 0.0
+  },
+  {
+   "group": "H3",
+   "seed": "011",
+   "kind": "wythoff",
+   "name": "truncated icosahedron",
+   "corners": 60,
+   "field": "Q(sqrt5)",
+   "group_order": 120,
+   "stabiliser_order": 2,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.1
+  },
+  {
+   "group": "H3",
+   "seed": "100",
+   "kind": "wythoff",
+   "name": "dodecahedron",
+   "corners": 20,
+   "field": "Q(sqrt5)",
+   "group_order": 120,
+   "stabiliser_order": 6,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 1,
+     "total": 1,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1
+     }
+    },
+    "C": {
+     "through_corner": 2,
+     "total": 5,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3/2 + 1/2*sqrt5": 2
+     }
+    },
+    "T": {
+     "through_corner": 2,
+     "total": 10,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3 + 1*sqrt5": 2
+     }
+    }
+   },
+   "seconds": 0.1
+  },
+  {
+   "group": "H3",
+   "seed": "101",
+   "kind": "wythoff",
+   "name": "cantellated dodecahedron",
+   "corners": 60,
+   "field": "Q(sqrt5)",
+   "group_order": 120,
+   "stabiliser_order": 2,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.0
+  },
+  {
+   "group": "H3",
+   "seed": "110",
+   "kind": "wythoff",
+   "name": "truncated dodecahedron",
+   "corners": 60,
+   "field": "Q(sqrt5)",
+   "group_order": 120,
+   "stabiliser_order": 2,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.0
+  },
+  {
+   "group": "H3",
+   "seed": "111",
+   "kind": "wythoff",
+   "name": "omnitruncated dodecahedron",
+   "corners": 120,
+   "field": "Q(sqrt5)",
+   "group_order": 120,
+   "stabiliser_order": 1,
+   "bonds": [
+    5,
+    3
+   ],
+   "residents": {},
+   "seconds": 0.1
+  },
+  {
+   "group": "H4",
+   "seed": "0001",
+   "kind": "wythoff",
+   "name": "600-cell",
+   "corners": 120,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 120,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 20,
+     "total": 120,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 20
+     }
+    },
+    "I": {
+     "through_corner": 24,
+     "total": 240,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 12,
+      "3/2 + 1/2*sqrt5": 12
+     }
+    },
+    "C": {
+     "through_corner": 40,
+     "total": 600,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3/2 + 1/2*sqrt5": 40
+     }
+    },
+    "T": {
+     "through_corner": 100,
+     "total": 3000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 20,
+      "3/2 + 1/2*sqrt5": 20,
+      "3 + 1*sqrt5": 40,
+      "7/2 + 3/2*sqrt5": 20
+     }
+    },
+    "O": {
+     "through_corner": 45,
+     "total": 900,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3/2 + 1/2*sqrt5": 30,
+      "3 + 1*sqrt5": 15
+     }
+    }
+   },
+   "seconds": 3.1
+  },
+  {
+   "group": "H4",
+   "seed": "0010",
+   "kind": "wythoff",
+   "name": "rectified 600-cell",
+   "corners": 720,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 20,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 40,
+     "total": 1440,
+     "edge2_over_polytope_edge2_through_corner": {
+      "5/2 + 1/2*sqrt5": 40
+     }
+    },
+    "I": {
+     "through_corner": 58,
+     "total": 3480,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 2,
+      "5/2 + 1/2*sqrt5": 24,
+      "7/2 + 3/2*sqrt5": 2,
+      "5 + 2*sqrt5": 24,
+      "6 + 2*sqrt5": 6
+     }
+    },
+    "C": {
+     "through_corner": 80,
+     "total": 7200,
+     "edge2_over_polytope_edge2_through_corner": {
+      "5 + 2*sqrt5": 80
+     }
+    },
+    "T": {
+     "through_corner": 200,
+     "total": 36000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "5/2 + 1/2*sqrt5": 40,
+      "5 + 2*sqrt5": 40,
+      "10 + 4*sqrt5": 80,
+      "25/2 + 11/2*sqrt5": 40
+     }
+    },
+    "O": {
+     "through_corner": 110,
+     "total": 13200,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 5,
+      "3 + 1*sqrt5": 5,
+      "5 + 2*sqrt5": 60,
+      "7 + 3*sqrt5": 5,
+      "9 + 4*sqrt5": 5,
+      "10 + 4*sqrt5": 30
+     }
+    }
+   },
+   "seconds": 3.4
+  },
+  {
+   "group": "H4",
+   "seed": "0011",
+   "kind": "wythoff",
+   "name": "truncated 600-cell",
+   "corners": 1440,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 10,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 40,
+     "total": 2880,
+     "edge2_over_polytope_edge2_through_corner": {
+      "6 + 1*sqrt5": 40
+     }
+    },
+    "I": {
+     "through_corner": 53,
+     "total": 6360,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "4": 1,
+      "6 + 1*sqrt5": 24,
+      "15/2 + 5/2*sqrt5": 1,
+      "9 + 4*sqrt5": 1,
+      "23/2 + 9/2*sqrt5": 24,
+      "27/2 + 9/2*sqrt5": 1
+     }
+    },
+    "C": {
+     "through_corner": 80,
+     "total": 14400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "23/2 + 9/2*sqrt5": 80
+     }
+    },
+    "T": {
+     "through_corner": 200,
+     "total": 72000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "6 + 1*sqrt5": 40,
+      "23/2 + 9/2*sqrt5": 40,
+      "23 + 9*sqrt5": 80,
+      "57/2 + 25/2*sqrt5": 40
+     }
+    },
+    "O": {
+     "through_corner": 90,
+     "total": 21600,
+     "edge2_over_polytope_edge2_through_corner": {
+      "23/2 + 9/2*sqrt5": 60,
+      "23 + 9*sqrt5": 30
+     }
+    }
+   },
+   "seconds": 2.8
+  },
+  {
+   "group": "H4",
+   "seed": "0100",
+   "kind": "wythoff",
+   "name": "rectified 120-cell",
+   "corners": 1200,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 12,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 48,
+     "total": 2880,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3/2 + 1/2*sqrt5": 2,
+      "9/2 + 3/2*sqrt5": 40,
+      "6 + 2*sqrt5": 6
+     }
+    },
+    "I": {
+     "through_corner": 48,
+     "total": 4800,
+     "edge2_over_polytope_edge2_through_corner": {
+      "9/2 + 3/2*sqrt5": 24,
+      "21/2 + 9/2*sqrt5": 24
+     }
+    },
+    "C": {
+     "through_corner": 94,
+     "total": 14100,
+     "edge2_over_polytope_edge2_through_corner": {
+      "7/2 + 3/2*sqrt5": 4,
+      "21/2 + 9/2*sqrt5": 80,
+      "14 + 6*sqrt5": 10
+     }
+    },
+    "T": {
+     "through_corner": 232,
+     "total": 69600,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 2,
+      "9/2 + 3/2*sqrt5": 40,
+      "7 + 3*sqrt5": 4,
+      "21/2 + 9/2*sqrt5": 40,
+      "35/2 + 15/2*sqrt5": 14,
+      "21 + 9*sqrt5": 80,
+      "47/2 + 21/2*sqrt5": 2,
+      "27 + 12*sqrt5": 40,
+      "28 + 12*sqrt5": 10
+     }
+    },
+    "O": {
+     "through_corner": 120,
+     "total": 24000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3 + 1*sqrt5": 3,
+      "7/2 + 3/2*sqrt5": 3,
+      "21/2 + 9/2*sqrt5": 60,
+      "35/2 + 15/2*sqrt5": 21,
+      "18 + 8*sqrt5": 3,
+      "21 + 9*sqrt5": 30
+     }
+    }
+   },
+   "seconds": 2.8
+  },
+  {
+   "group": "H4",
+   "seed": "0101",
+   "kind": "wythoff",
+   "name": "cantellated 600-cell",
+   "corners": 3600,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 4,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 40,
+     "total": 7200,
+     "edge2_over_polytope_edge2_through_corner": {
+      "17/2 + 5/2*sqrt5": 40
+     }
+    },
+    "I": {
+     "through_corner": 50,
+     "total": 15000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "6 + 2*sqrt5": 2,
+      "17/2 + 5/2*sqrt5": 24,
+      "19 + 8*sqrt5": 24
+     }
+    },
+    "C": {
+     "through_corner": 80,
+     "total": 36000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "19 + 8*sqrt5": 80
+     }
+    },
+    "T": {
+     "through_corner": 200,
+     "total": 180000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "17/2 + 5/2*sqrt5": 40,
+      "19 + 8*sqrt5": 40,
+      "38 + 16*sqrt5": 80,
+      "97/2 + 43/2*sqrt5": 40
+     }
+    },
+    "O": {
+     "through_corner": 94,
+     "total": 56400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3 + 1*sqrt5": 1,
+      "9 + 4*sqrt5": 1,
+      "19 + 8*sqrt5": 60,
+      "29 + 12*sqrt5": 1,
+      "35 + 15*sqrt5": 1,
+      "38 + 16*sqrt5": 30
+     }
+    }
+   },
+   "seconds": 4.3
+  },
+  {
+   "group": "H4",
+   "seed": "0110",
+   "kind": "wythoff",
+   "name": "bitruncated 120-cell",
+   "corners": 3600,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 4,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 40,
+     "total": 7200,
+     "edge2_over_polytope_edge2_through_corner": {
+      "13 + 4*sqrt5": 40
+     }
+    },
+    "I": {
+     "through_corner": 48,
+     "total": 14400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "13 + 4*sqrt5": 24,
+      "59/2 + 25/2*sqrt5": 24
+     }
+    },
+    "C": {
+     "through_corner": 80,
+     "total": 36000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "59/2 + 25/2*sqrt5": 80
+     }
+    },
+    "T": {
+     "through_corner": 200,
+     "total": 180000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "13 + 4*sqrt5": 40,
+      "59/2 + 25/2*sqrt5": 40,
+      "59 + 25*sqrt5": 80,
+      "151/2 + 67/2*sqrt5": 40
+     }
+    },
+    "O": {
+     "through_corner": 94,
+     "total": 56400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "15/2 + 5/2*sqrt5": 1,
+      "12 + 4*sqrt5": 1,
+      "59/2 + 25/2*sqrt5": 60,
+      "103/2 + 45/2*sqrt5": 1,
+      "47 + 21*sqrt5": 1,
+      "59 + 25*sqrt5": 30
+     }
+    }
+   },
+   "seconds": 3.3
+  },
+  {
+   "group": "H4",
+   "seed": "0111",
+   "kind": "wythoff",
+   "name": "cantitruncated 600-cell",
+   "corners": 7200,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 2,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 40,
+     "total": 14400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "39/2 + 11/2*sqrt5": 40
+     }
+    },
+    "I": {
+     "through_corner": 48,
+     "total": 28800,
+     "edge2_over_polytope_edge2_through_corner": {
+      "39/2 + 11/2*sqrt5": 24,
+      "43 + 18*sqrt5": 24
+     }
+    },
+    "C": {
+     "through_corner": 80,
+     "total": 72000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "43 + 18*sqrt5": 80
+     }
+    },
+    "T": {
+     "through_corner": 200,
+     "total": 360000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "39/2 + 11/2*sqrt5": 40,
+      "43 + 18*sqrt5": 40,
+      "86 + 36*sqrt5": 80,
+      "219/2 + 97/2*sqrt5": 40
+     }
+    },
+    "O": {
+     "through_corner": 90,
+     "total": 108000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "43 + 18*sqrt5": 60,
+      "86 + 36*sqrt5": 30
+     }
+    }
+   },
+   "seconds": 4.2
+  },
+  {
+   "group": "H4",
+   "seed": "1000",
+   "kind": "wythoff",
+   "name": "120-cell",
+   "corners": 600,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 24,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 52,
+     "total": 1560,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 4,
+      "3/2 + 1/2*sqrt5": 4,
+      "3 + 1*sqrt5": 40,
+      "7/2 + 3/2*sqrt5": 4
+     }
+    },
+    "I": {
+     "through_corner": 48,
+     "total": 2400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3 + 1*sqrt5": 24,
+      "7 + 3*sqrt5": 24
+     }
+    },
+    "C": {
+     "through_corner": 96,
+     "total": 7200,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3/2 + 1/2*sqrt5": 8,
+      "7/2 + 3/2*sqrt5": 8,
+      "7 + 3*sqrt5": 72,
+      "9 + 4*sqrt5": 8
+     }
+    },
+    "T": {
+     "through_corner": 228,
+     "total": 34200,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3/2 + 1/2*sqrt5": 4,
+      "3 + 1*sqrt5": 40,
+      "7 + 3*sqrt5": 40,
+      "9 + 4*sqrt5": 4,
+      "14 + 6*sqrt5": 72,
+      "35/2 + 15/2*sqrt5": 28,
+      "18 + 8*sqrt5": 40
+     }
+    },
+    "O": {
+     "through_corner": 81,
+     "total": 8100,
+     "edge2_over_polytope_edge2_through_corner": {
+      "7 + 3*sqrt5": 54,
+      "14 + 6*sqrt5": 27
+     }
+    }
+   },
+   "seconds": 2.7
+  },
+  {
+   "group": "H4",
+   "seed": "1001",
+   "kind": "wythoff",
+   "name": "runcinated 120-cell",
+   "corners": 2400,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 6,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 49,
+     "total": 5880,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "7/2 + 3/2*sqrt5": 1,
+      "6 + 2*sqrt5": 40,
+      "15/2 + 5/2*sqrt5": 7
+     }
+    },
+    "I": {
+     "through_corner": 54,
+     "total": 10800,
+     "edge2_over_polytope_edge2_through_corner": {
+      "6 + 2*sqrt5": 27,
+      "14 + 6*sqrt5": 27
+     }
+    },
+    "C": {
+     "through_corner": 98,
+     "total": 29400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "3/2 + 1/2*sqrt5": 2,
+      "9 + 4*sqrt5": 2,
+      "14 + 6*sqrt5": 80,
+      "35/2 + 15/2*sqrt5": 14
+     }
+    },
+    "T": {
+     "through_corner": 254,
+     "total": 152400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "3 + 1*sqrt5": 2,
+      "6 + 2*sqrt5": 45,
+      "14 + 6*sqrt5": 53,
+      "18 + 8*sqrt5": 2,
+      "47/2 + 21/2*sqrt5": 1,
+      "28 + 12*sqrt5": 80,
+      "63/2 + 27/2*sqrt5": 11,
+      "35 + 15*sqrt5": 14,
+      "36 + 16*sqrt5": 45
+     }
+    },
+    "O": {
+     "through_corner": 99,
+     "total": 39600,
+     "edge2_over_polytope_edge2_through_corner": {
+      "14 + 6*sqrt5": 66,
+      "28 + 12*sqrt5": 33
+     }
+    }
+   },
+   "seconds": 3.9
+  },
+  {
+   "group": "H4",
+   "seed": "1010",
+   "kind": "wythoff",
+   "name": "cantellated 120-cell",
+   "corners": 3600,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 4,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 40,
+     "total": 7200,
+     "edge2_over_polytope_edge2_through_corner": {
+      "19/2 + 7/2*sqrt5": 40
+     }
+    },
+    "I": {
+     "through_corner": 48,
+     "total": 14400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "19/2 + 7/2*sqrt5": 24,
+      "23 + 10*sqrt5": 24
+     }
+    },
+    "C": {
+     "through_corner": 80,
+     "total": 36000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "23 + 10*sqrt5": 80
+     }
+    },
+    "T": {
+     "through_corner": 200,
+     "total": 180000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "19/2 + 7/2*sqrt5": 40,
+      "23 + 10*sqrt5": 40,
+      "46 + 20*sqrt5": 80,
+      "119/2 + 53/2*sqrt5": 40
+     }
+    },
+    "O": {
+     "through_corner": 104,
+     "total": 62400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "18 + 8*sqrt5": 1,
+      "23 + 10*sqrt5": 60,
+      "28 + 12*sqrt5": 5,
+      "45 + 20*sqrt5": 7,
+      "46 + 20*sqrt5": 30
+     }
+    }
+   },
+   "seconds": 4.6
+  },
+  {
+   "group": "H4",
+   "seed": "1011",
+   "kind": "wythoff",
+   "name": "runcitruncated 600-cell",
+   "corners": 7200,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 2,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 40,
+     "total": 14400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "15 + 5*sqrt5": 40
+     }
+    },
+    "I": {
+     "through_corner": 48,
+     "total": 28800,
+     "edge2_over_polytope_edge2_through_corner": {
+      "15 + 5*sqrt5": 24,
+      "35 + 15*sqrt5": 24
+     }
+    },
+    "C": {
+     "through_corner": 80,
+     "total": 72000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "35 + 15*sqrt5": 80
+     }
+    },
+    "T": {
+     "through_corner": 218,
+     "total": 392400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "15 + 5*sqrt5": 40,
+      "35 + 15*sqrt5": 48,
+      "45 + 20*sqrt5": 2,
+      "70 + 30*sqrt5": 88,
+      "90 + 40*sqrt5": 40
+     }
+    },
+    "O": {
+     "through_corner": 93,
+     "total": 111600,
+     "edge2_over_polytope_edge2_through_corner": {
+      "35 + 15*sqrt5": 60,
+      "70 + 30*sqrt5": 33
+     }
+    }
+   },
+   "seconds": 5.4
+  },
+  {
+   "group": "H4",
+   "seed": "1100",
+   "kind": "wythoff",
+   "name": "truncated 120-cell",
+   "corners": 2400,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 6,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 43,
+     "total": 5160,
+     "edge2_over_polytope_edge2_through_corner": {
+      "7/2 + 3/2*sqrt5": 1,
+      "6 + 2*sqrt5": 1,
+      "27/2 + 11/2*sqrt5": 40,
+      "35/2 + 15/2*sqrt5": 1
+     }
+    },
+    "I": {
+     "through_corner": 51,
+     "total": 10200,
+     "edge2_over_polytope_edge2_through_corner": {
+      "27/2 + 11/2*sqrt5": 24,
+      "34 + 15*sqrt5": 24,
+      "36 + 16*sqrt5": 3
+     }
+    },
+    "C": {
+     "through_corner": 86,
+     "total": 25800,
+     "edge2_over_polytope_edge2_through_corner": {
+      "9 + 4*sqrt5": 2,
+      "14 + 6*sqrt5": 2,
+      "34 + 15*sqrt5": 80,
+      "45 + 20*sqrt5": 2
+     }
+    },
+    "T": {
+     "through_corner": 218,
+     "total": 130800,
+     "edge2_over_polytope_edge2_through_corner": {
+      "1": 1,
+      "7/2 + 3/2*sqrt5": 1,
+      "27/2 + 11/2*sqrt5": 40,
+      "18 + 8*sqrt5": 2,
+      "28 + 12*sqrt5": 2,
+      "34 + 15*sqrt5": 40,
+      "103/2 + 45/2*sqrt5": 1,
+      "123/2 + 55/2*sqrt5": 1,
+      "68 + 30*sqrt5": 80,
+      "147/2 + 65/2*sqrt5": 1,
+      "81 + 36*sqrt5": 7,
+      "177/2 + 79/2*sqrt5": 40,
+      "90 + 40*sqrt5": 2
+     }
+    },
+    "O": {
+     "through_corner": 90,
+     "total": 36000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "34 + 15*sqrt5": 60,
+      "68 + 30*sqrt5": 30
+     }
+    }
+   },
+   "seconds": 3.8
+  },
+  {
+   "group": "H4",
+   "seed": "1101",
+   "kind": "wythoff",
+   "name": "runcitruncated 120-cell",
+   "corners": 7200,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 2,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 40,
+     "total": 14400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "39/2 + 15/2*sqrt5": 40
+     }
+    },
+    "I": {
+     "through_corner": 48,
+     "total": 28800,
+     "edge2_over_polytope_edge2_through_corner": {
+      "39/2 + 15/2*sqrt5": 24,
+      "48 + 21*sqrt5": 24
+     }
+    },
+    "C": {
+     "through_corner": 80,
+     "total": 72000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "48 + 21*sqrt5": 80
+     }
+    },
+    "T": {
+     "through_corner": 240,
+     "total": 432000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "39/2 + 15/2*sqrt5": 48,
+      "48 + 21*sqrt5": 40,
+      "96 + 42*sqrt5": 112,
+      "249/2 + 111/2*sqrt5": 40
+     }
+    },
+    "O": {
+     "through_corner": 102,
+     "total": 122400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "48 + 21*sqrt5": 60,
+      "96 + 42*sqrt5": 42
+     }
+    }
+   },
+   "seconds": 4.3
+  },
+  {
+   "group": "H4",
+   "seed": "1110",
+   "kind": "wythoff",
+   "name": "cantitruncated 120-cell",
+   "corners": 7200,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 2,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 40,
+     "total": 14400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "26 + 10*sqrt5": 40
+     }
+    },
+    "I": {
+     "through_corner": 49,
+     "total": 29400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "26 + 10*sqrt5": 24,
+      "64 + 28*sqrt5": 24,
+      "70 + 30*sqrt5": 1
+     }
+    },
+    "C": {
+     "through_corner": 80,
+     "total": 72000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "64 + 28*sqrt5": 80
+     }
+    },
+    "T": {
+     "through_corner": 208,
+     "total": 374400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "26 + 10*sqrt5": 40,
+      "64 + 28*sqrt5": 40,
+      "128 + 56*sqrt5": 80,
+      "166 + 74*sqrt5": 48
+     }
+    },
+    "O": {
+     "through_corner": 90,
+     "total": 108000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "64 + 28*sqrt5": 60,
+      "128 + 56*sqrt5": 30
+     }
+    }
+   },
+   "seconds": 5.1
+  },
+  {
+   "group": "H4",
+   "seed": "1111",
+   "kind": "wythoff",
+   "name": "omnitruncated 120-cell",
+   "corners": 14400,
+   "field": "Q(sqrt5)",
+   "group_order": 14400,
+   "stabiliser_order": 1,
+   "bonds": [
+    5,
+    3,
+    3
+   ],
+   "residents": {
+    "D": {
+     "through_corner": 40,
+     "total": 28800,
+     "edge2_over_polytope_edge2_through_corner": {
+      "69/2 + 25/2*sqrt5": 40
+     }
+    },
+    "I": {
+     "through_corner": 48,
+     "total": 57600,
+     "edge2_over_polytope_edge2_through_corner": {
+      "69/2 + 25/2*sqrt5": 24,
+      "83 + 36*sqrt5": 24
+     }
+    },
+    "C": {
+     "through_corner": 80,
+     "total": 144000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "83 + 36*sqrt5": 80
+     }
+    },
+    "T": {
+     "through_corner": 204,
+     "total": 734400,
+     "edge2_over_polytope_edge2_through_corner": {
+      "69/2 + 25/2*sqrt5": 40,
+      "83 + 36*sqrt5": 40,
+      "235/2 + 105/2*sqrt5": 1,
+      "315/2 + 135/2*sqrt5": 2,
+      "166 + 72*sqrt5": 80,
+      "201 + 88*sqrt5": 1,
+      "429/2 + 191/2*sqrt5": 40
+     }
+    },
+    "O": {
+     "through_corner": 90,
+     "total": 216000,
+     "edge2_over_polytope_edge2_through_corner": {
+      "83 + 36*sqrt5": 60,
+      "166 + 72*sqrt5": 30
+     }
+    }
+   },
+   "seconds": 7.3
+  }
+ ],
+ "queens": {
+  "600-cell": {
+   "polytope": "600-cell",
+   "corners": 120,
+   "types": {
+    "D": {
+     "through_corner": 20,
+     "total": 120,
+     "orbits": [
+      {
+       "size": 120,
+       "stabiliser": 120,
+       "edge2_over_polytope_edge2": "1",
+       "edge2_phi_form": "1",
+       "centre_dist2_over_R2": "1/4",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      120
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "I": {
+     "through_corner": 24,
+     "total": 240,
+     "orbits": [
+      {
+       "size": 120,
+       "stabiliser": 120,
+       "edge2_over_polytope_edge2": "1",
+       "edge2_phi_form": "1",
+       "centre_dist2_over_R2": "3/8 + 1/8*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": true,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 120,
+       "stabiliser": 120,
+       "edge2_over_polytope_edge2": "3/2 + 1/2*sqrt5",
+       "edge2_phi_form": "1*phi^2",
+       "centre_dist2_over_R2": "3/8 - 1/8*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      120,
+      120
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "C": {
+     "through_corner": 40,
+     "total": 600,
+     "orbits": [
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "3/2 + 1/2*sqrt5",
+       "edge2_phi_form": "1*phi^2",
+       "centre_dist2_over_R2": "1/4",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      600
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "T": {
+     "through_corner": 100,
+     "total": 3000,
+     "orbits": [
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "1",
+       "edge2_phi_form": "1",
+       "centre_dist2_over_R2": "7/16 + 3/16*sqrt5",
+       "central": false,
+       "cell": true,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "3/2 + 1/2*sqrt5",
+       "edge2_phi_form": "1*phi^2",
+       "centre_dist2_over_R2": "5/8",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 1200,
+       "stabiliser": 12,
+       "edge2_over_polytope_edge2": "3 + 1*sqrt5",
+       "edge2_phi_form": "2*phi^2",
+       "centre_dist2_over_R2": "1/4",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "7/2 + 3/2*sqrt5",
+       "edge2_phi_form": "1*phi^4",
+       "centre_dist2_over_R2": "7/16 - 3/16*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      600,
+      600,
+      600,
+      600,
+      600
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "O": {
+     "through_corner": 45,
+     "total": 900,
+     "orbits": [
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "3/2 + 1/2*sqrt5",
+       "edge2_phi_form": "1*phi^2",
+       "centre_dist2_over_R2": "1/2",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 300,
+       "stabiliser": 48,
+       "edge2_over_polytope_edge2": "3 + 1*sqrt5",
+       "edge2_phi_form": "2*phi^2",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      300,
+      600
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "16-cell": {
+     "through_corner": 5,
+     "total": 75,
+     "orbits": [
+      {
+       "size": 75,
+       "stabiliser": 192,
+       "edge2_over_polytope_edge2": "3 + 1*sqrt5",
+       "edge2_phi_form": "2*phi^2",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      75
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "tesseract": {
+     "through_corner": 10,
+     "total": 75,
+     "orbits": [
+      {
+       "size": 75,
+       "stabiliser": 192,
+       "edge2_over_polytope_edge2": "3/2 + 1/2*sqrt5",
+       "edge2_phi_form": "1*phi^2",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      75
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "24-cell": {
+     "through_corner": 5,
+     "total": 25,
+     "orbits": [
+      {
+       "size": 25,
+       "stabiliser": 576,
+       "edge2_over_polytope_edge2": "3/2 + 1/2*sqrt5",
+       "edge2_phi_form": "1*phi^2",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      25
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "5-cell": {
+     "total": 0
+    }
+   },
+   "one_world_containment": {
+    "C lying in exactly 1 dodecahedra": 600,
+    "T lying in exactly 1 dodecahedra": 1200,
+    "C lying in exactly 0 dodecahedra": 0,
+    "T of edge phi sqrt2 lying in exactly 0 dodecahedra": 0
+   },
+   "one_world": {
+    "per_dodecahedron (cubes on its corners, tetrahedra in them, concentric I, concentric O)": {
+     "(5, 10, 0, 0)": 120
+    },
+    "edge2 ratios (summed over all D)": {
+     "C/D 3/2 + 1/2*sqrt5": 600,
+     "T/D 3 + 1*sqrt5": 1200
+    },
+    "one_world_sizes_present (count of solids of that edge, D edge = 1)": {
+     "C phi": 600,
+     "T phi sqrt2": 1200,
+     "O phi/sqrt2": 0,
+     "O phi^2/sqrt2": 0,
+     "I 1/phi": 0,
+     "I 1": 120
+    }
+   },
+   "seconds": 19.6
+  },
+  "120-cell": {
+   "polytope": "120-cell",
+   "corners": 600,
+   "types": {
+    "D": {
+     "through_corner": 52,
+     "total": 1560,
+     "orbits": [
+      {
+       "size": 120,
+       "stabiliser": 120,
+       "edge2_over_polytope_edge2": "1",
+       "edge2_phi_form": "1",
+       "centre_dist2_over_R2": "7/16 + 3/16*sqrt5",
+       "central": false,
+       "cell": true,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 120,
+       "stabiliser": 120,
+       "edge2_over_polytope_edge2": "3/2 + 1/2*sqrt5",
+       "edge2_phi_form": "1*phi^2",
+       "centre_dist2_over_R2": "5/8",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 1200,
+       "stabiliser": 12,
+       "edge2_over_polytope_edge2": "3 + 1*sqrt5",
+       "edge2_phi_form": "2*phi^2",
+       "centre_dist2_over_R2": "1/4",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 120,
+       "stabiliser": 120,
+       "edge2_over_polytope_edge2": "7/2 + 3/2*sqrt5",
+       "edge2_phi_form": "1*phi^4",
+       "centre_dist2_over_R2": "7/16 - 3/16*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      120,
+      120,
+      120,
+      600,
+      600
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "I": {
+     "through_corner": 48,
+     "total": 2400,
+     "orbits": [
+      {
+       "size": 1200,
+       "stabiliser": 12,
+       "edge2_over_polytope_edge2": "3 + 1*sqrt5",
+       "edge2_phi_form": "2*phi^2",
+       "centre_dist2_over_R2": "3/8 + 1/8*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 1200,
+       "stabiliser": 12,
+       "edge2_over_polytope_edge2": "7 + 3*sqrt5",
+       "edge2_phi_form": "2*phi^4",
+       "centre_dist2_over_R2": "3/8 - 1/8*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      600,
+      600,
+      600,
+      600
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "C": {
+     "through_corner": 96,
+     "total": 7200,
+     "orbits": [
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "3/2 + 1/2*sqrt5",
+       "edge2_phi_form": "1*phi^2",
+       "centre_dist2_over_R2": "7/16 + 3/16*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "7/2 + 3/2*sqrt5",
+       "edge2_phi_form": "1*phi^4",
+       "centre_dist2_over_R2": "5/8",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 4800,
+       "stabiliser": 3,
+       "edge2_over_polytope_edge2": "7 + 3*sqrt5",
+       "edge2_phi_form": "2*phi^4",
+       "centre_dist2_over_R2": "1/4",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "7 + 3*sqrt5",
+       "edge2_phi_form": "2*phi^4",
+       "centre_dist2_over_R2": "1/4",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "9 + 4*sqrt5",
+       "edge2_phi_form": "1*phi^6",
+       "centre_dist2_over_R2": "7/16 - 3/16*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      600,
+      600,
+      600,
+      600,
+      2400,
+      2400
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "T": {
+     "through_corner": 228,
+     "total": 34200,
+     "orbits": [
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "3/2 + 1/2*sqrt5",
+       "edge2_phi_form": "1*phi^2",
+       "centre_dist2_over_R2": "23/32 + 3/32*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": true,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 1200,
+       "stabiliser": 12,
+       "edge2_over_polytope_edge2": "3 + 1*sqrt5",
+       "edge2_phi_form": "2*phi^2",
+       "centre_dist2_over_R2": "7/16 + 3/16*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 4800,
+       "stabiliser": 3,
+       "edge2_over_polytope_edge2": "3 + 1*sqrt5",
+       "edge2_phi_form": "2*phi^2",
+       "centre_dist2_over_R2": "7/16 + 3/16*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 4800,
+       "stabiliser": 3,
+       "edge2_over_polytope_edge2": "7 + 3*sqrt5",
+       "edge2_phi_form": "2*phi^4",
+       "centre_dist2_over_R2": "5/8",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 1200,
+       "stabiliser": 12,
+       "edge2_over_polytope_edge2": "7 + 3*sqrt5",
+       "edge2_phi_form": "2*phi^4",
+       "centre_dist2_over_R2": "5/8",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "9 + 4*sqrt5",
+       "edge2_phi_form": "1*phi^6",
+       "centre_dist2_over_R2": "23/32 - 3/32*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 4800,
+       "stabiliser": 3,
+       "edge2_over_polytope_edge2": "14 + 6*sqrt5",
+       "edge2_phi_form": "4*phi^4",
+       "centre_dist2_over_R2": "1/4",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 4800,
+       "stabiliser": 3,
+       "edge2_over_polytope_edge2": "14 + 6*sqrt5",
+       "edge2_phi_form": "4*phi^4",
+       "centre_dist2_over_R2": "1/4",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "14 + 6*sqrt5",
+       "edge2_phi_form": "4*phi^4",
+       "centre_dist2_over_R2": "1/4",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "14 + 6*sqrt5",
+       "edge2_phi_form": "4*phi^4",
+       "centre_dist2_over_R2": "1/4",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 3600,
+       "stabiliser": 4,
+       "edge2_over_polytope_edge2": "35/2 + 15/2*sqrt5",
+       "edge2_phi_form": "5*phi^4",
+       "centre_dist2_over_R2": "1/16",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "35/2 + 15/2*sqrt5",
+       "edge2_phi_form": "5*phi^4",
+       "centre_dist2_over_R2": "1/16",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 4800,
+       "stabiliser": 3,
+       "edge2_over_polytope_edge2": "18 + 8*sqrt5",
+       "edge2_phi_form": "2*phi^6",
+       "centre_dist2_over_R2": "7/16 - 3/16*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 1200,
+       "stabiliser": 12,
+       "edge2_over_polytope_edge2": "18 + 8*sqrt5",
+       "edge2_phi_form": "2*phi^6",
+       "centre_dist2_over_R2": "7/16 - 3/16*sqrt5",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      600,
+      600,
+      600,
+      600,
+      600,
+      600,
+      600,
+      600,
+      600,
+      600,
+      600,
+      2400,
+      2400,
+      2400,
+      2400,
+      2400,
+      2400,
+      2400,
+      2400,
+      2400,
+      2400,
+      3600
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "O": {
+     "through_corner": 81,
+     "total": 8100,
+     "orbits": [
+      {
+       "size": 4800,
+       "stabiliser": 3,
+       "edge2_over_polytope_edge2": "7 + 3*sqrt5",
+       "edge2_phi_form": "2*phi^4",
+       "centre_dist2_over_R2": "1/2",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "7 + 3*sqrt5",
+       "edge2_phi_form": "2*phi^4",
+       "centre_dist2_over_R2": "1/2",
+       "central": false,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 2400,
+       "stabiliser": 6,
+       "edge2_over_polytope_edge2": "14 + 6*sqrt5",
+       "edge2_phi_form": "4*phi^4",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 300,
+       "stabiliser": 48,
+       "edge2_over_polytope_edge2": "14 + 6*sqrt5",
+       "edge2_phi_form": "4*phi^4",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      300,
+      600,
+      1200,
+      1200,
+      2400,
+      2400
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "16-cell": {
+     "through_corner": 9,
+     "total": 675,
+     "orbits": [
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "14 + 6*sqrt5",
+       "edge2_phi_form": "4*phi^4",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 75,
+       "stabiliser": 192,
+       "edge2_over_polytope_edge2": "14 + 6*sqrt5",
+       "edge2_phi_form": "4*phi^4",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      75,
+      300,
+      300
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "tesseract": {
+     "through_corner": 18,
+     "total": 675,
+     "orbits": [
+      {
+       "size": 600,
+       "stabiliser": 24,
+       "edge2_over_polytope_edge2": "7 + 3*sqrt5",
+       "edge2_phi_form": "2*phi^4",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 75,
+       "stabiliser": 192,
+       "edge2_over_polytope_edge2": "7 + 3*sqrt5",
+       "edge2_phi_form": "2*phi^4",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      75,
+      300,
+      300
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "24-cell": {
+     "through_corner": 9,
+     "total": 225,
+     "orbits": [
+      {
+       "size": 200,
+       "stabiliser": 72,
+       "edge2_over_polytope_edge2": "7 + 3*sqrt5",
+       "edge2_phi_form": "2*phi^4",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 2
+      },
+      {
+       "size": 25,
+       "stabiliser": 576,
+       "edge2_over_polytope_edge2": "7 + 3*sqrt5",
+       "edge2_phi_form": "2*phi^4",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      25,
+      100,
+      100
+     ],
+     "search_from_every_corner_equals_closure": true
+    },
+    "5-cell": {
+     "through_corner": 7,
+     "total": 840,
+     "orbits": [
+      {
+       "size": 720,
+       "stabiliser": 20,
+       "edge2_over_polytope_edge2": "35/2 + 15/2*sqrt5",
+       "edge2_phi_form": "5*phi^4",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      },
+      {
+       "size": 120,
+       "stabiliser": 120,
+       "edge2_over_polytope_edge2": "35/2 + 15/2*sqrt5",
+       "edge2_phi_form": "5*phi^4",
+       "centre_dist2_over_R2": "0",
+       "central": true,
+       "cell": false,
+       "vertex_figure": false,
+       "rotation_orbits": 1
+      }
+     ],
+     "orbit_sizes_rotation_group": [
+      120,
+      720
+     ],
+     "search_from_every_corner_equals_closure": true
+    }
+   },
+   "seconds": 286.2
+  }
+ },
+ "checks": [
+  [
+   "prism corners 001 = 2 x |W|/|W_J|",
+   true
+  ],
+  [
+   "prism corners 010 = 2 x |W|/|W_J|",
+   true
+  ],
+  [
+   "prism corners 011 = 2 x |W|/|W_J|",
+   true
+  ],
+  [
+   "prism corners 100 = 2 x |W|/|W_J|",
+   true
+  ],
+  [
+   "prism corners 101 = 2 x |W|/|W_J|",
+   true
+  ],
+  [
+   "prism corners 110 = 2 x |W|/|W_J|",
+   true
+  ],
+  [
+   "prism corners 111 = 2 x |W|/|W_J|",
+   true
+  ],
+  [
+   "group order A3 = 24",
+   true
+  ],
+  [
+   "corners A3 001 = |W|/|W_J| = 4",
+   true
+  ],
+  [
+   "group order A3 = 24",
+   true
+  ],
+  [
+   "corners A3 010 = |W|/|W_J| = 6",
+   true
+  ],
+  [
+   "group order A3 = 24",
+   true
+  ],
+  [
+   "corners A3 011 = |W|/|W_J| = 12",
+   true
+  ],
+  [
+   "group order A3 = 24",
+   true
+  ],
+  [
+   "corners A3 100 = |W|/|W_J| = 4",
+   true
+  ],
+  [
+   "group order A3 = 24",
+   true
+  ],
+  [
+   "corners A3 101 = |W|/|W_J| = 12",
+   true
+  ],
+  [
+   "group order A3 = 24",
+   true
+  ],
+  [
+   "corners A3 110 = |W|/|W_J| = 12",
+   true
+  ],
+  [
+   "group order A3 = 24",
+   true
+  ],
+  [
+   "corners A3 111 = |W|/|W_J| = 24",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 0001 = |W|/|W_J| = 5",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 0010 = |W|/|W_J| = 10",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 0011 = |W|/|W_J| = 20",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 0100 = |W|/|W_J| = 10",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 0101 = |W|/|W_J| = 30",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 0110 = |W|/|W_J| = 30",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 0111 = |W|/|W_J| = 60",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 1000 = |W|/|W_J| = 5",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 1001 = |W|/|W_J| = 20",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 1010 = |W|/|W_J| = 30",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 1011 = |W|/|W_J| = 60",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 1100 = |W|/|W_J| = 20",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 1101 = |W|/|W_J| = 60",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 1110 = |W|/|W_J| = 60",
+   true
+  ],
+  [
+   "group order A4 = 120",
+   true
+  ],
+  [
+   "corners A4 1111 = |W|/|W_J| = 120",
+   true
+  ],
+  [
+   "group order B3 = 48",
+   true
+  ],
+  [
+   "corners B3 001 = |W|/|W_J| = 6",
+   true
+  ],
+  [
+   "group order B3 = 48",
+   true
+  ],
+  [
+   "corners B3 010 = |W|/|W_J| = 12",
+   true
+  ],
+  [
+   "group order B3 = 48",
+   true
+  ],
+  [
+   "corners B3 011 = |W|/|W_J| = 24",
+   true
+  ],
+  [
+   "group order B3 = 48",
+   true
+  ],
+  [
+   "corners B3 100 = |W|/|W_J| = 8",
+   true
+  ],
+  [
+   "group order B3 = 48",
+   true
+  ],
+  [
+   "corners B3 101 = |W|/|W_J| = 24",
+   true
+  ],
+  [
+   "group order B3 = 48",
+   true
+  ],
+  [
+   "corners B3 110 = |W|/|W_J| = 24",
+   true
+  ],
+  [
+   "group order B3 = 48",
+   true
+  ],
+  [
+   "corners B3 111 = |W|/|W_J| = 48",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 0001 = |W|/|W_J| = 8",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 0010 = |W|/|W_J| = 24",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 0011 = |W|/|W_J| = 48",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 0100 = |W|/|W_J| = 32",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 0101 = |W|/|W_J| = 96",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 0110 = |W|/|W_J| = 96",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 0111 = |W|/|W_J| = 192",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 1000 = |W|/|W_J| = 16",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 1001 = |W|/|W_J| = 64",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 1010 = |W|/|W_J| = 96",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 1011 = |W|/|W_J| = 192",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 1100 = |W|/|W_J| = 64",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 1101 = |W|/|W_J| = 192",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 1110 = |W|/|W_J| = 192",
+   true
+  ],
+  [
+   "group order B4 = 384",
+   true
+  ],
+  [
+   "corners B4 1111 = |W|/|W_J| = 384",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 0001 = |W|/|W_J| = 24",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 0010 = |W|/|W_J| = 96",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 0011 = |W|/|W_J| = 192",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 0100 = |W|/|W_J| = 96",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 0101 = |W|/|W_J| = 288",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 0110 = |W|/|W_J| = 288",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 0111 = |W|/|W_J| = 576",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 1000 = |W|/|W_J| = 24",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 1001 = |W|/|W_J| = 144",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 1010 = |W|/|W_J| = 288",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 1011 = |W|/|W_J| = 576",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 1100 = |W|/|W_J| = 192",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 1101 = |W|/|W_J| = 576",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 1110 = |W|/|W_J| = 576",
+   true
+  ],
+  [
+   "group order F4 = 1152",
+   true
+  ],
+  [
+   "corners F4 1111 = |W|/|W_J| = 1152",
+   true
+  ],
+  [
+   "group order H3 = 120",
+   true
+  ],
+  [
+   "corners H3 001 = |W|/|W_J| = 12",
+   true
+  ],
+  [
+   "group order H3 = 120",
+   true
+  ],
+  [
+   "corners H3 010 = |W|/|W_J| = 30",
+   true
+  ],
+  [
+   "group order H3 = 120",
+   true
+  ],
+  [
+   "corners H3 011 = |W|/|W_J| = 60",
+   true
+  ],
+  [
+   "group order H3 = 120",
+   true
+  ],
+  [
+   "corners H3 100 = |W|/|W_J| = 20",
+   true
+  ],
+  [
+   "group order H3 = 120",
+   true
+  ],
+  [
+   "corners H3 101 = |W|/|W_J| = 60",
+   true
+  ],
+  [
+   "group order H3 = 120",
+   true
+  ],
+  [
+   "corners H3 110 = |W|/|W_J| = 60",
+   true
+  ],
+  [
+   "group order H3 = 120",
+   true
+  ],
+  [
+   "corners H3 111 = |W|/|W_J| = 120",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 0001 = |W|/|W_J| = 120",
+   true
+  ],
+  [
+   "corners H4 0001 = 120 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 0010 = |W|/|W_J| = 720",
+   true
+  ],
+  [
+   "corners H4 0010 = 720 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 0011 = |W|/|W_J| = 1440",
+   true
+  ],
+  [
+   "corners H4 0011 = 1440 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 0100 = |W|/|W_J| = 1200",
+   true
+  ],
+  [
+   "corners H4 0100 = 1200 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 0101 = |W|/|W_J| = 3600",
+   true
+  ],
+  [
+   "corners H4 0101 = 3600 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 0110 = |W|/|W_J| = 3600",
+   true
+  ],
+  [
+   "corners H4 0110 = 3600 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 0111 = |W|/|W_J| = 7200",
+   true
+  ],
+  [
+   "corners H4 0111 = 7200 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 1000 = |W|/|W_J| = 600",
+   true
+  ],
+  [
+   "corners H4 1000 = 600 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 1001 = |W|/|W_J| = 2400",
+   true
+  ],
+  [
+   "corners H4 1001 = 2400 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 1010 = |W|/|W_J| = 3600",
+   true
+  ],
+  [
+   "corners H4 1010 = 3600 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 1011 = |W|/|W_J| = 7200",
+   true
+  ],
+  [
+   "corners H4 1011 = 7200 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 1100 = |W|/|W_J| = 2400",
+   true
+  ],
+  [
+   "corners H4 1100 = 2400 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 1101 = |W|/|W_J| = 7200",
+   true
+  ],
+  [
+   "corners H4 1101 = 7200 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 1110 = |W|/|W_J| = 7200",
+   true
+  ],
+  [
+   "corners H4 1110 = 7200 (Coxeter)",
+   true
+  ],
+  [
+   "group order H4 = 14400",
+   true
+  ],
+  [
+   "corners H4 1111 = |W|/|W_J| = 14400",
+   true
+  ],
+  [
+   "corners H4 1111 = 14400 (Coxeter)",
+   true
+  ],
+  [
+   "control: tetrahedron holds T 1 only",
+   true
+  ],
+  [
+   "control: cube holds C 1, T 2 only",
+   true
+  ],
+  [
+   "control: octahedron holds O 1 only",
+   true
+  ],
+  [
+   "control: dodecahedron holds D 1, C 5, T 10 only (Euclid XIII.17; Kepler)",
+   true
+  ],
+  [
+   "control: icosahedron holds I 1 only",
+   true
+  ],
+  [
+   "control: icosidodecahedron holds O 5 only",
+   true
+  ],
+  [
+   "control: 600-cell 600 tetrahedral cells (Coxeter)",
+   true
+  ],
+  [
+   "control: 600-cell 120 icosahedral vertex figures (Coxeter)",
+   true
+  ],
+  [
+   "control: 600-cell 25 inscribed 24-cells",
+   true
+  ],
+  [
+   "control: 600-cell 75 inscribed 16-cells",
+   true
+  ],
+  [
+   "control: 120-cell 120 dodecahedral cells (Coxeter)",
+   true
+  ],
+  [
+   "control: 120-cell 5-cells in two orbits, 120 (full stabiliser S5, the regular compound of 120 5-cells) and 720",
+   true
+  ],
+  [
+   "control: 120-cell 675 inscribed 16-cells",
+   true
+  ],
+  [
+   "no D or I in any A4, B4, F4 polytope (and the field argument)",
+   true
+  ],
+  [
+   "every H4 polytope houses all five",
+   true
+  ]
+ ]
+}
