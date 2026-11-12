@@ -31,7 +31,7 @@
  "version": "1",
  "publication_date": "2026-11-07",
  "title": "Space-Fillers and Lattice Moves: Which Solids Fill Space, Which Only Together, and Which Hold by Shape Alone",
- "description": "<p>Space-Fillers and Lattice Moves, Version 1: the volume that gathers DICTO's results on which solids fill space alone, which only together, and which hold by shape alone. Opening: <i>What This Book Shows</i>. Chapter 1, <i>The Dehn Test Picks Out the Lone Tilers of Two Sweeps</i>: on the sweep from the octahedron to the cube the Dehn invariant is 24√2(3 − 2μ) ⊗ β and then −24√2(3 − μ) ⊗ β, zero exactly at Kelvin's truncated octahedron and the cube; on the sweep from the rhombic dodecahedron to the cuboctahedron it vanishes for 1 ≤ μ ≤ 4/3 and at the B3 permutohedron (μ = 5/3), and the local count of edge angles leaves only the rhombic dodecahedron; on the tetrahedron sweep it picks the known β-tin tiler. Chapter 2, <i>Truncated Tetrahedra That Fill Space: Dehn Zero Is the Octet's Own Ratio</i>: a tetrahedron with corner cuts c is Dehn-zero exactly when Σc = 1, which is the tetrahedron cut by a translate of twice its inverse, and for whole-layer cuts exactly the octet's ratio of two tetrahedra per octahedron; all twelve integer cases with n ≤ 5 and one at n = 8 tile space, two pieces per period (SAT exact cover); conjecture for every rational cut; the seven golden Dehn-zero cuts listed exactly. Chapter 3, <i>The Admiral Cap Network: Only the Mixture Fills, and Never Face to Face</i>: the face pyramid, the icosahedron and DICTO's Admiral Cap each have nonzero Dehn invariant; at most 8 of 12 shared edges match round any corner; the best arrangements are layers with one free flip per layer. Chapter 4, <i>Held by Shape Alone</i>: in a (111) layer of the octet every octahedron is locked and every tetrahedron free; in the Admiral layer of #47 every Admiral Cap and icosahedron is locked against small slides and twists. Appendix: the Dehn screen, exact cover on the octet and the interlocking test, with their calibrations.</p>",
+ "description": "<p>Space-Fillers and Lattice Moves, Version 1: the volume that gathers DICTO's results on which solids fill space alone, which only together, and which hold by shape alone. Part I, Alone. Chapter 1, <i>The Dehn Test Picks Out the Lone Tilers of Two Sweeps</i> (#100): on the sweep from the octahedron to the cube the Dehn invariant vanishes exactly at Kelvin's truncated octahedron and the cube; on the sweep from the cuboctahedron to the rhombic dodecahedron it vanishes for 1 ≤ μ ≤ 4/3 and at the B3 permutohedron, and the count of angles round an edge leaves only the rhombic dodecahedron. Chapter 2, <i>Truncated Tetrahedra That Fill Space</i> (#100): a tetrahedron with corner cuts is Dehn-zero exactly when the cuts add up to one edge, the octet's own ratio of two tetrahedra to every octahedron; all twelve integer cases with n ≤ 5, and one at n = 8, tile space, two pieces per period; conjecture for every rational cut; the seven golden cuts listed exactly. Chapter 3, <i>One Move Each</i> (#50): the classical space-fillers, each from one setting of Kaleidohedra's three lattice moves. Chapter 4, <i>Blocks of Thirteen</i> (#25, #26): a rhombic dodecahedron with its twelve face neighbours fills space by translation alone (8 of the 183 index-13 sublattices of fcc). Part II, Together. Chapter 5, <i>The DICTO Jewel and the Stella Octangula</i> (#41); Chapter 6, <i>The Sunstar: Dodecahedra and Dogstars</i> (#42); Chapter 7, <i>One Level Up: Kagome Hulls and the DICTO Hexa</i> (#17, #18); Chapter 8, <i>Every Mix of the Platonic Solids Fills Space</i> (#47, version 3); Chapter 9, <i>The Admiral Cap Network: Only the Mixture Fills, and Never Face to Face</i> (new): none of its three pieces fills space alone, at most 8 of 12 shared edges match round any corner, and the best arrangements are layers with one free flip per layer. Part III, Held. Chapter 10, <i>Held by Shape Alone</i> (#101): in a (111) layer of the octet every octahedron is locked and every tetrahedron free; in the Admiral layer of #47 every Admiral Cap and icosahedron is locked. Atlas: 28 plates, one for each space-filling of the series that lives in another book or paper, with its DICTO DOI and home. Appendix: the Dehn screen, exact cover on the octet and the interlocking test, with their calibrations. Cover by DICTO.</p>",
  "keywords": [
   "DICTO",
   "space-filling polyhedra",
@@ -42,7 +42,13 @@
   "Admiral Caps",
   "B3 permutohedron",
   "topological interlocking",
-  "frustration"
+  "frustration",
+  "DICTO Jewel",
+  "Sunstar",
+  "Dogstar",
+  "DICTO Hexa",
+  "lattice moves",
+  "rhombic dodecahedron"
  ],
  "related_identifiers": [
   {
@@ -52,11 +58,6 @@
   },
   {
    "identifier": "10.5281/zenodo.23284390",
-   "relation": "references",
-   "scheme": "doi"
-  },
-  {
-   "identifier": "10.5281/zenodo.23551326",
    "relation": "references",
    "scheme": "doi"
   },
@@ -94,7 +95,57 @@
    "identifier": "https://dictospheres.com",
    "relation": "isDocumentedBy",
    "scheme": "url"
+  },
+  {
+   "identifier": "10.5281/zenodo.24030326",
+   "relation": "hasPart",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24030328",
+   "relation": "hasPart",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23606894",
+   "relation": "hasPart",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23332821",
+   "relation": "hasPart",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23333183",
+   "relation": "hasPart",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23496353",
+   "relation": "hasPart",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23497702",
+   "relation": "hasPart",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23376317",
+   "relation": "hasPart",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23376320",
+   "relation": "hasPart",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23551326",
+   "relation": "hasPart",
+   "scheme": "doi"
   }
  ],
- "notes": "Version 1: first version. Cover by DICTO to follow."
+ "notes": "Version 1: first version. Cover by DICTO."
 }
