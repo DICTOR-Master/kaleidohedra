@@ -139,6 +139,35 @@ give 5/3. On the cube–octahedron line P_μ the antipol of P_μ is P_{3/μ}: #8
 point √3 the solid whose faces all touch the sphere, where t_min = R² = 5 − 2√3 is largest, and t_min = min(μ, 3/μ, 5 − μ − 3/μ)
 reads the same from either end.
 
+## LEADS 4 and 5 worked (12 Nov 2026; scripts/lead4_cert.py, scripts/lead5_exact.py, logs data/lead4_cert.log, data/lead5_exact.log, both FINAL ok)
+
+**LEAD 4: the icosahedral constant from moments plus one invariant harmonic. CLOSED, with one numerically checked step.**
+Certificate p(t) = (t − c)(t + c)²(t² − c′²)², degree 7, where ±c, ±c′ (c² = (5 + 2√5)/15, c′² = (5 − 2√5)/15) are the only inner
+products between the orbit of a five-fold axis (the 12 icosahedron vertices) and a three-fold axis. p ≤ 0 on [−1, c]. Its mean over
+an I-orbit, for unit u, w, uses the 5-design property, the vanishing degree-7 harmonic part (exact) and the degree-6 invariant
+harmonic h(u, w) = mean_g ((gu)·w)⁶ − 1/7:  mean p = A + p₆ h(u, w), A = 4(√30 + 5√6)√(5 + √5)/14175, p₆ > 0.
+Exact: h has rank one (28 × 28 coefficient matrix, rank 1), h = Φ(u)Φ(w)/Φ(x₀); mean p = 0 at the extremal pair, where
+h = −16/945; Φ at the five-fold axis 16/21 + 32√5/105, at the three-fold axis −80/189 − 32√5/189.
+Numerical (400 000 points + 80 local refinements, agreement 10⁻¹²): these two axis values are the maximum and minimum of Φ on the
+sphere, so h ≥ −16/945 everywhere and mean p ≥ 0 for all unit u, w. Hence max_g (gu)·w ≥ c for every pair, c is attained, and the
+constant is 1/c² = 15 − 6√5 (#43 Theorem 2) by the moment route. Open for a full proof: an exact proof that the degree-6 invariant
+harmonic takes its extremes on the sphere at the five-fold and three-fold axes.
+Controls: POSITIVE, the tetrahedral group with its degree-3 invariant (xyz) gives by the same construction c = 1/3, constant 9,
+with the range of xyz exact (AM–GM); NEGATIVE, treating the I-orbit as a 6-design (h = 0) contradicts the exact orbit mean at the
+extremal pair (A ≠ 0), so the harmonic term is essential; moments up to degree 5 give only √(3/5) < c. Sanity: 20 000 random unit
+pairs never go below c.
+
+**LEAD 5: the icosahedral two-family line. YES, the turn's fixed point maximises t_min, with the same closed form shape.**
+S_λ = {a·x ≤ 1 (12 unit five-fold normals, dodecahedron faces), b·x ≤ λ (20 unit three-fold normals, icosahedron faces)}; inverting
+the distances gives S_λ^∨ = S_{1/λ}, so the turn is λ ↦ 1/λ with fixed point λ = 1 (every face tangent to the unit sphere). The line
+runs from the icosahedron (λ = 1/ρ) to the dodecahedron (λ = ρ), ρ² = 15 − 6√5. Wall (four-plane determinant, linear in λ): the
+icosidodecahedron at λ_w = √(30 + 6√5)/6 ≈ 1.0982, its turn image 1/λ_w the same event on S^∨. Exact closed form
+  t_min(S_λ) = min(ρλ, ρ/λ, 10 − √5 − 3λ_w·s),  s = λ + 1/λ,
+checked exactly at 22 rational λ across the line, each against the maximum of all 3600 corner pairs (the 60 corners are one
+I-orbit in each chamber). The middle piece is linear in s, so t(1) − t(λ) = 3λ_w(s − 2) ≥ 0 (AM–GM) for every λ: the maximum is
+exactly at the fixed point, t_min = 10 − √5 − √(30 + 6√5) = R² of the self-antipol S_1, as on the cube–octahedron line
+(min(μ, 3/μ, 5 − s)). Controls: the corner types checked on both sides of the wall; the ends meet the middle piece exactly at the walls.
+
 ## LEADS
 
 1. Correct the direction in studies/2026-11-08-sri-yantra/README.md (line 175) and viewpoint.py's docstring: u → λu, v → v/λ
@@ -147,9 +176,9 @@ reads the same from either end.
    remark; destination: a #103 version line (DICTO's choice where).
 3. Kulaichev's equal great triangles = the turn of its viewpoint orbit: is there a yantra meeting (b), (c), (d) AND sitting at the
    turn (u = v) besides Kulaichev's own? (Kulaichev = equal slopes + (b) + (c), (d) then holds to 10⁻²⁵⁵ per #103.)
-4. Icosahedral constant from the framework: find the degree-6 certificate (I's first invariant harmonic) that closes 5/3 → 15 − 6√5,
+4. [WORKED 12 Nov, see above: closed up to a numerically checked range step] Icosahedral constant from the framework: find the degree-6 certificate (I's first invariant harmonic) that closes 5/3 → 15 − 6√5,
    so the moment route covers all three constants (same as octahedral-constant LEAD 4).
-5. The outline's prediction "the fixed point of a polar turn maximises t_min": on the C–O line it follows from s = μ + 3/μ ≥ 2√3; test
+5. [WORKED 12 Nov, see above: yes, exact] The outline's prediction "the fixed point of a polar turn maximises t_min": on the C–O line it follows from s = μ + 3/μ ≥ 2√3; test
    the icosahedral two-family line (dodecahedron ∩ μ·icosahedron, turn μ ↦ c/μ) for the same closed form min(·, ·, a − b·s).
 6. #43 Theorem 3 (beat k ↔ 5 − k) as the turn of the Universal PiTet line, fixed point k = 5/2: write it as a row of the table.
 7. Projective row and the outline's yantra prediction ("the yantra's conditions are walls of one determinant family"): (d) is now a

@@ -1,0 +1,35 @@
+ok   groups: I 60 exact rotations, T 12
+--- T (positive control): harmonic degree 3
+ok   T (positive control): degree-3 mean has a nonzero invariant-harmonic part
+ok   T (positive control): h(u, w) has rank one (coefficient matrix 10x10, exact rank 1)
+ok   T (positive control): extremal pair max = c with c^2 = 1/9
+T (positive control): distinct inner products 2: [-1, 1/3]; certificate degree 3
+ok   T (positive control): certificate degree 3 <= 4 (only the degree-3 harmonic enters)
+ok   T (positive control): at the extremal pair mean p = A + p_k h = 0 (and = the direct orbit mean 0)
+T (positive control): A = 2/9 ~ 0.222222, p_k = 1 ~ 1.000000, h(extremal) = -2/9 ~ -0.222222
+ok   T (positive control): NEGATIVE CONTROL: treating the orbit as a design of degree 3 (h = 0) contradicts the exact orbit mean at the extremal pair (A = 0.222222 != 0): the harmonic term is essential
+T (positive control): Phi range on the sphere (numeric) [-1.154700538379252, 1.154700538379252]; extreme of h needed (min) -0.222222222222223; h at the extremal pair -0.222222222222222
+ok   T (positive control): the extremal pair attains the min of h on the sphere (numeric, 1e-12)
+T (positive control): Phi exact at the extremal u axis 2*sqrt(3)/3 ~ 1.154700538379251, at the extremal w axis -2*sqrt(3)/3 ~ -1.154700538379251
+ok   T (positive control): the numeric range ends of Phi on the sphere are the exact values at the two extremal axes (1e-12)
+ok   T (positive control): range of Phi on the sphere exact: |xyz| <= 3^(-3/2), AM-GM
+ok   T (positive control): sanity, 20000 random unit pairs: min over pairs of max_g (gu).w = 0.425589678 >= c = 0.333333333
+ok   T: constant 1/c^2 = 9 recovered
+--- I: harmonic degree 6
+ok   I: degree-6 mean has a nonzero invariant-harmonic part
+ok   I: h(u, w) has rank one (coefficient matrix 28x28, exact rank 1)
+ok   I: extremal pair max = c with c^2 = 2*sqrt(5)/15 + 1/3
+I: distinct inner products 4: [sqrt(2*sqrt(5)/15 + 1/3), -sqrt(2*sqrt(5)/15 + 1/3), -sqrt(1/3 - 2*sqrt(5)/15), sqrt(1/3 - 2*sqrt(5)/15)]; certificate degree 7
+ok   I: certificate degree 7 <= 7 (only the degree-6 harmonic enters)
+ok   I: degree-7 mean has no harmonic part (equals the uniform value)
+ok   I: at the extremal pair mean p = A + p_k h = 0 (and = the direct orbit mean 0)
+I: A = 4*(sqrt(30) + 5*sqrt(6))*sqrt(sqrt(5) + 5)/14175 ~ 0.013454, p_k = (sqrt(30)*sqrt(sqrt(5) + 5) + 5*sqrt(6)*sqrt(sqrt(5) + 5))/60 ~ 0.794654, h(extremal) = -16/945 ~ -0.0169312
+ok   I: NEGATIVE CONTROL: treating the orbit as a design of degree 6 (h = 0) contradicts the exact orbit mean at the extremal pair (A = 0.0134545 != 0): the harmonic term is essential
+I: Phi range on the sphere (numeric) [-0.801873943280389, 1.443373097904700]; extreme of h needed (min) -0.016931216931217; h at the extremal pair -0.0169312169312169
+ok   I: the extremal pair attains the min of h on the sphere (numeric, 1e-12)
+I: Phi exact at the extremal u axis 32*sqrt(5)/105 + 16/21 ~ 1.443373097904698, at the extremal w axis -80/189 - 32*sqrt(5)/189 ~ -0.801873943280388
+ok   I: the numeric range ends of Phi on the sphere are the exact values at the two extremal axes (1e-12)
+ok   I: sanity, 20000 random unit pairs: min over pairs of max_g (gu).w = 0.829145971 >= c = 0.794654472
+ok   I: constant 1/c^2 = 15 - 6sqrt5 (Theorem 2 of #43) from moments + the degree-6 harmonic
+ok   I: moments alone give only sqrt(3/5) < c (5/3 > 15 - 6sqrt5)
+FINAL ok

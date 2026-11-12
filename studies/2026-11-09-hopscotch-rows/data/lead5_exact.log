@@ -1,0 +1,26 @@
+ok   12 five-fold vectors |A|^2 = phi + 2, 20 three-fold vectors |B|^2 = 3
+ok   dodecahedron: 30 edges (adjacent five-fold pairs)
+wall det (2 A + 2 B planes on one edge): 2*(2*sqrt(3)*lam - sqrt(2)*sqrt(sqrt(5) + 5))  roots [sqrt(6*sqrt(5) + 30)/6]
+wall det degree in lam: 1
+ok   the type wall (icosidodecahedron): one root lam_w in the line, 1 < lam_w < rho (its turn image 1/lam_w is the same event on S^v)
+lam_w = sqrt(6*sqrt(5) + 30)/6 = 1.09818547139511  1/lam_w = (5 - sqrt(5))*sqrt(6*sqrt(5) + 30)/20
+ok   I: 60 exact rotations
+ok   corner types: 1A+2B (icosahedron end, lam -> 1/rho) for lam < lam_w, 2A+1B (dodecahedron end) for lam > lam_w (float at 7 points)
+ok   end piece t_min = rho*lam (rho^2 = 15 - 6sqrt5) for 1/rho < lam <= 1/lam_w, exact at the samples below 1/lam_w, and t(1/lam) = t(lam)
+middle piece candidates winning at the samples: [0]  expression: -lam*sqrt(6*sqrt(5) + 30)/2 - sqrt(5) + 10 - sqrt(6*sqrt(5) + 30)/(2*lam)
+ok   middle piece: one expression wins at every middle sample
+ok   middle piece equals the exact t_min (max of 3600 pairs) at 9 rational lam in (1/lam_w, lam_w)
+middle piece in s: -s*sqrt(6*sqrt(5) + 30)/2 - sqrt(5) + 10 | turn-invariant: True
+ok   middle piece is turn-invariant (a function of s = lam + 1/lam)
+middle piece linear in s: True
+ok   fixed point lam = 1 is a critical point of the middle piece
+t_min at the fixed point: -sqrt(6*sqrt(5) + 30) - sqrt(5) + 10 = 1.17481919412955 ; R^2 of S_1: -sqrt(6*sqrt(5) + 30) - sqrt(5) + 10
+ok   at the fixed point t_min = R^2 of the self-antipol S_1
+t(1) - middle(s) = sqrt(6)*sqrt(sqrt(5) + 5)*(s - 2)/2
+ok   t(1) - middle >= 0 on 2 < s <= s_w (exact at 40 points) and = 0 only at s = 2
+ok   ends meet the middle at the walls: rho/lam_w = middle(1/lam_w) < t(1)
+ok   b = sqrt(30 + 6sqrt5)/2 = 3*lam_w
+ok   closed form t_min = min(rho*lam, rho/lam, 10 - sqrt5 - 3 lam_w s) at 23 rational lam across (1/rho, rho), exact
+ok   max at the fixed point holds for EVERY lam: t(1) - middle = 3 lam_w (s - 2) >= 0 (s >= 2 by AM-GM), ends below the middle
+RESULT: t_min = rho*lam (1/rho < lam <= 1/lam_w), middle piece above (1/lam_w <= lam <= lam_w), rho/lam beyond; linear in s: True
+FINAL ok
