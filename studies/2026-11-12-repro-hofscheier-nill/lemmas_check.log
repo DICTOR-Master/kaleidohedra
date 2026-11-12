@@ -1,0 +1,8 @@
+ok   Lemma 3.1: all 18 unit partitions with m <= 3 give a reflexive simplex with sum v_i/k_i = 0 (failures [])
+ok   Lemma 3.1 instance (6,3,2), paper's triangle: reflexive, weights
+ok   Lemma 3.1 instance (42,7,3,2), paper's simplex: reflexive, weights
+ok   Lemma 3.2: 120 random bases with facet distances dividing k0: all reflexive with |F(B)| + m facets (120/120)
+ok   control: a base with a facet distance not dividing k0 = 6 (divides: False) is NOT reflexive
+ok   Lemma 4.1: h = 2..3000: vertices, 2 tau(h) + 1 facets, the listed lines, distances divide h^2 (failures [])
+ok   Theorem 4.5 step: B_h o B_h has (2 tau(h) + 1)^2 facets, all lattice distances dividing h^2, h = 2..60 (failures [])
+FINAL ok

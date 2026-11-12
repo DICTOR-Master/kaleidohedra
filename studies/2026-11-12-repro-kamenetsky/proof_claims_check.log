@@ -1,0 +1,39 @@
+ok   N=2 Lemma 4.2 (1): volume 3 = 2^N - 1
+ok   N=2 Lemma 4.2 (3): 8 panels = N 2^N, 6 maximal flat facets = 3N
+ok   N=2 Lemma 4.2 (2): segments from kernel points to every cube centre avoid (1,2]^N (sampled)
+ok   N=2 Theorem 5.1: 4 children = 2^N, disjoint (12 cubes, 12 distinct), union = 2C_N (12 cubes)
+ok   N=2 Theorem 5.1: every child has 2^N - 1 cubes
+ok   N=2 (used for Prop. 7.1): central child shares a panel with every other child
+ok   N=3 Lemma 4.2 (1): volume 7 = 2^N - 1
+ok   N=3 Lemma 4.2 (3): 24 panels = N 2^N, 9 maximal flat facets = 3N
+ok   N=3 Lemma 4.2 (2): segments from kernel points to every cube centre avoid (1,2]^N (sampled)
+ok   N=3 Theorem 5.1: 8 children = 2^N, disjoint (56 cubes, 56 distinct), union = 2C_N (56 cubes)
+ok   N=3 Theorem 5.1: every child has 2^N - 1 cubes
+ok   N=3 (used for Prop. 7.1): central child shares a panel with every other child
+ok   N=4 Lemma 4.2 (1): volume 15 = 2^N - 1
+ok   N=4 Lemma 4.2 (3): 64 panels = N 2^N, 12 maximal flat facets = 3N
+ok   N=4 Lemma 4.2 (2): segments from kernel points to every cube centre avoid (1,2]^N (sampled)
+ok   N=4 Theorem 5.1: 16 children = 2^N, disjoint (240 cubes, 240 distinct), union = 2C_N (240 cubes)
+ok   N=4 Theorem 5.1: every child has 2^N - 1 cubes
+ok   N=4 (used for Prop. 7.1): central child shares a panel with every other child
+ok   N=5 Lemma 4.2 (1): volume 31 = 2^N - 1
+ok   N=5 Lemma 4.2 (3): 160 panels = N 2^N, 15 maximal flat facets = 3N
+ok   N=5 Lemma 4.2 (2): segments from kernel points to every cube centre avoid (1,2]^N (sampled)
+ok   N=5 Theorem 5.1: 32 children = 2^N, disjoint (992 cubes, 992 distinct), union = 2C_N (992 cubes)
+ok   N=5 Theorem 5.1: every child has 2^N - 1 cubes
+ok   N=5 (used for Prop. 7.1): central child shares a panel with every other child
+ok   N=6 Lemma 4.2 (1): volume 63 = 2^N - 1
+ok   N=6 Lemma 4.2 (3): 384 panels = N 2^N, 18 maximal flat facets = 3N
+ok   N=6 Lemma 4.2 (2): segments from kernel points to every cube centre avoid (1,2]^N (sampled)
+ok   N=6 Theorem 5.1: 64 children = 2^N, disjoint (4032 cubes, 4032 distinct), union = 2C_N (4032 cubes)
+ok   N=6 Theorem 5.1: every child has 2^N - 1 cubes
+ok   N=6 (used for Prop. 7.1): central child shares a panel with every other child
+ok   N=7 Lemma 4.2 (1): volume 127 = 2^N - 1
+ok   N=7 Lemma 4.2 (3): 896 panels = N 2^N, 21 maximal flat facets = 3N
+ok   N=7 Lemma 4.2 (2): segments from kernel points to every cube centre avoid (1,2]^N (sampled)
+ok   N=7 Theorem 5.1: 128 children = 2^N, disjoint (16256 cubes, 16256 distinct), union = 2C_N (16256 cubes)
+ok   N=7 Theorem 5.1: every child has 2^N - 1 cubes
+ok   N=7 (used for Prop. 7.1): central child shares a panel with every other child
+ok   control: children without the reflection do NOT dissect 2C_3
+ok   control: a cube set missing a cube does NOT give N 2^N panels
+FINAL ok
