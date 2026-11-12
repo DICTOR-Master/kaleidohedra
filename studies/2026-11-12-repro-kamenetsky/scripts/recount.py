@@ -41,6 +41,7 @@ def all_touching():
     return out
 base = cubes((ID, (0, 0, 0)))
 TOUCH = all_touching() if __name__ == '__main__' else []
+assert all(-4 < x < 5 for g, t in TOUCH for x in t), 'GUARD: a touching pose on the edge of the search box: widen it'   # once-only guard (12 Nov)
 _UNUSED = []
 if __name__ == '__main__': print(f'touching lattice-registered poses: {len(TOUCH)} (paper 2388)', flush=True)
 # --- substitution (Theorem 5.1): T0 = translate by (1,1,1); T_v = reflection D_s(v) composed with pi_v, placed in block 2v (scale-2 coords: shift 4v)
