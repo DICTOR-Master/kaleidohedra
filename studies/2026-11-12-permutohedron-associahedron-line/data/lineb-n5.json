@@ -1,0 +1,376 @@
+{
+ "n": 5,
+ "stations": [
+  {
+   "s": "0",
+   "f_vector": [
+    120,
+    240,
+    150,
+    30
+   ],
+   "facets": 30,
+   "euler": true,
+   "simple": true,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": []
+  },
+  {
+   "s": "1/2",
+   "f_vector": [
+    120,
+    240,
+    150,
+    30
+   ],
+   "facets": 30,
+   "euler": true,
+   "simple": true,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": []
+  },
+  {
+   "s": "1",
+   "f_vector": [
+    82,
+    166,
+    108,
+    24
+   ],
+   "facets": 24,
+   "euler": true,
+   "simple": false,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": [
+    "13",
+    "14",
+    "15",
+    "24",
+    "25",
+    "35"
+   ]
+  },
+  {
+   "s": "3/2",
+   "f_vector": [
+    82,
+    166,
+    108,
+    24
+   ],
+   "facets": 24,
+   "euler": true,
+   "simple": false,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": [
+    "13",
+    "14",
+    "15",
+    "24",
+    "25",
+    "35"
+   ]
+  },
+  {
+   "s": "2",
+   "f_vector": [
+    58,
+    118,
+    78,
+    18
+   ],
+   "facets": 18,
+   "euler": true,
+   "simple": false,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": [
+    "124",
+    "125",
+    "13",
+    "134",
+    "14",
+    "145",
+    "15",
+    "235",
+    "24",
+    "245",
+    "25",
+    "35"
+   ]
+  },
+  {
+   "s": "5/2",
+   "f_vector": [
+    58,
+    118,
+    78,
+    18
+   ],
+   "facets": 18,
+   "euler": true,
+   "simple": false,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": [
+    "124",
+    "125",
+    "13",
+    "134",
+    "14",
+    "145",
+    "15",
+    "235",
+    "24",
+    "245",
+    "25",
+    "35"
+   ]
+  },
+  {
+   "s": "3",
+   "f_vector": [
+    46,
+    92,
+    61,
+    15
+   ],
+   "facets": 15,
+   "euler": true,
+   "simple": true,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": [
+    "1235",
+    "124",
+    "125",
+    "13",
+    "134",
+    "1345",
+    "135",
+    "14",
+    "145",
+    "15",
+    "235",
+    "24",
+    "245",
+    "25",
+    "35"
+   ]
+  },
+  {
+   "s": "7/2",
+   "f_vector": [
+    46,
+    92,
+    61,
+    15
+   ],
+   "facets": 15,
+   "euler": true,
+   "simple": true,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": [
+    "1235",
+    "124",
+    "125",
+    "13",
+    "134",
+    "1345",
+    "135",
+    "14",
+    "145",
+    "15",
+    "235",
+    "24",
+    "245",
+    "25",
+    "35"
+   ]
+  },
+  {
+   "s": "4",
+   "f_vector": [
+    42,
+    84,
+    56,
+    14
+   ],
+   "facets": 14,
+   "euler": true,
+   "simple": true,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": [
+    "1235",
+    "124",
+    "1245",
+    "125",
+    "13",
+    "134",
+    "1345",
+    "135",
+    "14",
+    "145",
+    "15",
+    "235",
+    "24",
+    "245",
+    "25",
+    "35"
+   ]
+  }
+ ],
+ "walls": [
+  {
+   "s": "1",
+   "f_before": [
+    120,
+    240,
+    150,
+    30
+   ],
+   "f_at": [
+    82,
+    166,
+    108,
+    24
+   ],
+   "f_after": [
+    82,
+    166,
+    108,
+    24
+   ],
+   "vanish_here": [
+    "13",
+    "14",
+    "15",
+    "24",
+    "25",
+    "35"
+   ]
+  },
+  {
+   "s": "2",
+   "f_before": [
+    82,
+    166,
+    108,
+    24
+   ],
+   "f_at": [
+    58,
+    118,
+    78,
+    18
+   ],
+   "f_after": [
+    58,
+    118,
+    78,
+    18
+   ],
+   "vanish_here": [
+    "124",
+    "125",
+    "134",
+    "145",
+    "235",
+    "245"
+   ]
+  },
+  {
+   "s": "3",
+   "f_before": [
+    58,
+    118,
+    78,
+    18
+   ],
+   "f_at": [
+    46,
+    92,
+    61,
+    15
+   ],
+   "f_after": [
+    46,
+    92,
+    61,
+    15
+   ],
+   "vanish_here": [
+    "1235",
+    "1345",
+    "135"
+   ]
+  },
+  {
+   "s": "4",
+   "f_before": [
+    46,
+    92,
+    61,
+    15
+   ],
+   "f_at": [
+    42,
+    84,
+    56,
+    14
+   ],
+   "f_after": [
+    42,
+    84,
+    56,
+    14
+   ],
+   "vanish_here": [
+    "1245"
+   ]
+  }
+ ],
+ "D_values": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "nonsimple_stations": [
+  "1",
+  "3/2",
+  "2",
+  "5/2"
+ ],
+ "omega_Pi_centre": "10/3",
+ "closed_form": "10/3",
+ "omega_Loday_centre": "49/36",
+ "m_N": "49/36",
+ "N": 7,
+ "candidates": 210,
+ "all_ok": true
+}

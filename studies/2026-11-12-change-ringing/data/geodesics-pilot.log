@@ -1,0 +1,42 @@
+ok   R3: 6 = 3! rows reached; 2 changes per row = F(4) - 1 = 2
+  R3: distance rounds -> backrounds 3, shortest ways 2, eccentricity of rounds 3 (farthest rows 1), ways: ['1.3.1', '3.1.3']
+ok   R3: rounds -> backrounds is exactly n = 3 changes, and no row is farther from rounds (eccentricity n; 1 rows at distance n)
+ok   R3 (Conjecture 13.1): exactly two shortest ways, and they are the two halves of the plain hunt
+ok   R3: proof identity sum r_b + 4u = n on both ways (every bell rests once, u = 0)
+PROGRESS 1/8 R3 done  (0.0 s)
+ok   R4: 24 = 4! rows reached; 4 changes per row = F(5) - 1 = 4
+  R4: distance rounds -> backrounds 4, shortest ways 2, eccentricity of rounds 4 (farthest rows 3), ways: ['14.x.14.x', 'x.14.x.14']
+ok   R4: rounds -> backrounds is exactly n = 4 changes, and no row is farther from rounds (eccentricity n; 3 rows at distance n)
+ok   R4 (Conjecture 13.1): exactly two shortest ways, and they are the two halves of the plain hunt
+ok   R4: proof identity sum r_b + 4u = n on both ways (every bell rests once, u = 0)
+PROGRESS 2/8 R4 done  (0.0 s)
+ok   R5: 120 = 5! rows reached; 7 changes per row = F(6) - 1 = 7
+  R5: distance rounds -> backrounds 5, shortest ways 2, eccentricity of rounds 5 (farthest rows 15), ways: ['1.5.1.5.1', '5.1.5.1.5']
+ok   R5: rounds -> backrounds is exactly n = 5 changes, and no row is farther from rounds (eccentricity n; 15 rows at distance n)
+ok   R5 (Conjecture 13.1): exactly two shortest ways, and they are the two halves of the plain hunt
+ok   R5: proof identity sum r_b + 4u = n on both ways (every bell rests once, u = 0)
+PROGRESS 3/8 R5 done  (0.0 s)
+ok   R6: 720 = 6! rows reached; 12 changes per row = F(7) - 1 = 12
+  R6: distance rounds -> backrounds 6, shortest ways 2, eccentricity of rounds 6 (farthest rows 61), ways: ['16.x.16.x.16.x', 'x.16.x.16.x.16']
+ok   R6: rounds -> backrounds is exactly n = 6 changes, and no row is farther from rounds (eccentricity n; 61 rows at distance n)
+ok   R6 (Conjecture 13.1): exactly two shortest ways, and they are the two halves of the plain hunt
+ok   R6: proof identity sum r_b + 4u = n on both ways (every bell rests once, u = 0)
+PROGRESS 4/8 R6 done  (0.0 s)
+  P3: distance 3, shortest paths 2
+ok   control P3: C(3,2) = 3 steps, 2 shortest paths (Stanley 1984; ring.log 2)
+PROGRESS 5/8 P3 done  (0.0 s)
+  P4: distance 6, shortest paths 16
+ok   control P4: C(4,2) = 6 steps, 16 shortest paths (Stanley 1984; ring.log 16)
+PROGRESS 6/8 P4 done  (0.0 s)
+  P5: distance 10, shortest paths 768
+ok   control P5: C(5,2) = 10 steps, 768 shortest paths (Stanley 1984; ring.log 768)
+PROGRESS 7/8 P5 done  (0.0 s)
+  P6: distance 15, shortest paths 292864
+ok   control P6: C(6,2) = 15 steps, 292864 shortest paths (Stanley 1984; ring.log 292864)
+PROGRESS 8/8 P6 done  (0.0 s)
+ok   negative: a 7-change way rounds -> backrounds (detour) obeys the identity (rests 11, u 1) but not rests = n, u = 0
+result {'R3': {'distance': 3, 'ways': 2, 'eccentricity': 3, 'rows_at_distance_n': 1, 'words': ['1.3.1', '3.1.3']}, 'R4': {'distance': 4, 'ways': 2, 'eccentricity': 4, 'rows_at_distance_n': 3, 'words': ['14.x.14.x', 'x.14.x.14']}, 'R5': {'distance': 5, 'ways': 2, 'eccentricity': 5, 'rows_at_distance_n': 15, 'words': ['1.5.1.5.1', '5.1.5.1.5']}, 'R6': {'distance': 6, 'ways': 2, 'eccentricity': 6, 'rows_at_distance_n': 61, 'words': ['16.x.16.x.16.x', 'x.16.x.16.x.16']}, 'P3': {'distance': 3, 'ways': 2}, 'P4': {'distance': 6, 'ways': 16}, 'P5': {'distance': 10, 'ways': 768}, 'P6': {'distance': 15, 'ways': 292864}}
+total 0.0 s
+GEO ok
+FINAL ok
+[exit 0]

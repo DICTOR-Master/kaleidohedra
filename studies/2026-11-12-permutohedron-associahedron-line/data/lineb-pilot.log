@@ -1,0 +1,107 @@
+n=4 d=3 M=14 smax=2
+PROGRESS 19/364 subsets, 14 nonsingular, 2 candidates
+PROGRESS 38/364 subsets, 26 nonsingular, 7 candidates
+PROGRESS 57/364 subsets, 36 nonsingular, 8 candidates
+PROGRESS 76/364 subsets, 48 nonsingular, 13 candidates
+PROGRESS 95/364 subsets, 59 nonsingular, 16 candidates
+PROGRESS 114/364 subsets, 70 nonsingular, 17 candidates
+PROGRESS 133/364 subsets, 82 nonsingular, 20 candidates
+PROGRESS 152/364 subsets, 92 nonsingular, 22 candidates
+PROGRESS 171/364 subsets, 106 nonsingular, 22 candidates
+PROGRESS 190/364 subsets, 119 nonsingular, 22 candidates
+PROGRESS 209/364 subsets, 130 nonsingular, 24 candidates
+PROGRESS 228/364 subsets, 141 nonsingular, 26 candidates
+PROGRESS 247/364 subsets, 153 nonsingular, 28 candidates
+PROGRESS 266/364 subsets, 165 nonsingular, 28 candidates
+PROGRESS 285/364 subsets, 176 nonsingular, 28 candidates
+PROGRESS 304/364 subsets, 187 nonsingular, 28 candidates
+PROGRESS 323/364 subsets, 197 nonsingular, 28 candidates
+PROGRESS 342/364 subsets, 212 nonsingular, 32 candidates
+PROGRESS 361/364 subsets, 229 nonsingular, 34 candidates
+ENUM done n=4: 364 subsets, 232 nonsingular, 34 candidates (vertex on a nonempty s-interval)
+n=4: 34 candidates, 3 interval end points ['0', '1', '2'], 5 stations, smax 2
+PROGRESS 1/7 s = 0: f-vector (24, 36, 14), facets 14, simple True, gp True, Euler True  (0.0 s)
+PROGRESS 2/7 s = 1/2: f-vector (24, 36, 14), facets 14, simple True, gp True, Euler True  (0.0 s)
+PROGRESS 3/7 s = 1: f-vector (18, 27, 11), facets 11, simple True, gp True, Euler True  (0.0 s)
+PROGRESS 4/7 s = 3/2: f-vector (18, 27, 11), facets 11, simple True, gp True, Euler True  (0.0 s)
+PROGRESS 5/7 s = 2: f-vector (14, 21, 9), facets 9, simple True, gp True, Euler True  (0.0 s)
+  wall s = 1: (24, 36, 14) -> (18, 27, 11) (after (18, 27, 11)); facets vanishing: 13, 14, 24
+  wall s = 2: (18, 27, 11) -> (14, 21, 9) (after (14, 21, 9)); facets vanishing: 124, 134
+ok   n=4: C1 (Conjecture 1): every non-interval facet S present exactly for s < D_S, at all 5 stations; interval facets always present  [[]]
+ok   n=4: walls are exactly the values of D_S: [1, 2]  [['1', '2']]
+ok   n=4: Euler relation at every station
+ok   n=4: every station is a generalized permutohedron (every edge parallel to some e_i - e_j)
+  non-simple stations: []
+ok   n=4: start: n! = 24 vertices, simple, all 14 facets
+ok   n=4: end s = 2: Catalan(4) = 14 vertices, simple, exactly the 9 interval facets
+PROGRESS 6/7 canonical forms  (0.0 s)
+ok   n=4: C2 (Conjecture 2): Omega(Pi; centre) by the vertex formula = 16/3 = 2^(n-1) n/(n-1)! = 16/3 = flag sum 16/3
+ok   n=4: control: every vertex cone of Pi is unimodular (|det| = 1)
+ok   n=4: control: Catalan(4) = 14 triangulations of the 6-gon
+ok   n=4: C3: Omega(Loday; centre) by the vertex formula = 88/27 = m_6(X = Loday facet values) = 88/27
+ok   n=4: negative: m_N with one tree dropped differs
+PROGRESS 7/7 json written  (0.0 s)
+n=4: total 0.0 s
+LINEB ok
+n=5 d=4 M=30 smax=4
+PROGRESS 1371/27405 subsets, 704 nonsingular, 35 candidates
+PROGRESS 2742/27405 subsets, 1413 nonsingular, 55 candidates
+PROGRESS 4113/27405 subsets, 2098 nonsingular, 84 candidates
+PROGRESS 5484/27405 subsets, 2809 nonsingular, 101 candidates
+PROGRESS 6855/27405 subsets, 3497 nonsingular, 121 candidates
+PROGRESS 8226/27405 subsets, 4298 nonsingular, 121 candidates
+PROGRESS 9597/27405 subsets, 5083 nonsingular, 121 candidates
+PROGRESS 10968/27405 subsets, 5803 nonsingular, 139 candidates
+PROGRESS 12339/27405 subsets, 6480 nonsingular, 159 candidates
+PROGRESS 13710/27405 subsets, 7257 nonsingular, 160 candidates
+PROGRESS 15081/27405 subsets, 8035 nonsingular, 160 candidates
+PROGRESS 16452/27405 subsets, 8800 nonsingular, 160 candidates
+PROGRESS 17823/27405 subsets, 9601 nonsingular, 160 candidates
+PROGRESS 19194/27405 subsets, 10345 nonsingular, 176 candidates
+PROGRESS 20565/27405 subsets, 11072 nonsingular, 184 candidates
+PROGRESS 21936/27405 subsets, 11842 nonsingular, 184 candidates
+PROGRESS 23307/27405 subsets, 12624 nonsingular, 184 candidates
+PROGRESS 24678/27405 subsets, 13352 nonsingular, 184 candidates
+PROGRESS 26049/27405 subsets, 14107 nonsingular, 184 candidates
+ENUM done n=5: 27405 subsets, 15040 nonsingular, 210 candidates (vertex on a nonempty s-interval)
+n=5: 210 candidates, 5 interval end points ['0', '1', '2', '3', '4'], 9 stations, smax 4
+PROGRESS 1/11 s = 0: f-vector (120, 240, 150, 30), facets 30, simple True, gp True, Euler True  (0.1 s)
+PROGRESS 2/11 s = 1/2: f-vector (120, 240, 150, 30), facets 30, simple True, gp True, Euler True  (0.2 s)
+PROGRESS 3/11 s = 1: f-vector (82, 166, 108, 24), facets 24, simple False, gp True, Euler True  (0.3 s)
+PROGRESS 4/11 s = 3/2: f-vector (82, 166, 108, 24), facets 24, simple False, gp True, Euler True  (0.4 s)
+PROGRESS 5/11 s = 2: f-vector (58, 118, 78, 18), facets 18, simple False, gp True, Euler True  (0.4 s)
+PROGRESS 6/11 s = 5/2: f-vector (58, 118, 78, 18), facets 18, simple False, gp True, Euler True  (0.5 s)
+PROGRESS 7/11 s = 3: f-vector (46, 92, 61, 15), facets 15, simple True, gp True, Euler True  (0.5 s)
+PROGRESS 8/11 s = 7/2: f-vector (46, 92, 61, 15), facets 15, simple True, gp True, Euler True  (0.6 s)
+PROGRESS 9/11 s = 4: f-vector (42, 84, 56, 14), facets 14, simple True, gp True, Euler True  (0.6 s)
+  wall s = 1: (120, 240, 150, 30) -> (82, 166, 108, 24) (after (82, 166, 108, 24)); facets vanishing: 13, 14, 15, 24, 25, 35
+  wall s = 2: (82, 166, 108, 24) -> (58, 118, 78, 18) (after (58, 118, 78, 18)); facets vanishing: 124, 125, 134, 145, 235, 245
+  wall s = 3: (58, 118, 78, 18) -> (46, 92, 61, 15) (after (46, 92, 61, 15)); facets vanishing: 1235, 1345, 135
+  wall s = 4: (46, 92, 61, 15) -> (42, 84, 56, 14) (after (42, 84, 56, 14)); facets vanishing: 1245
+ok   n=5: C1 (Conjecture 1): every non-interval facet S present exactly for s < D_S, at all 9 stations; interval facets always present  [[]]
+ok   n=5: walls are exactly the values of D_S: [1, 2, 3, 4]  [['1', '2', '3', '4']]
+ok   n=5: Euler relation at every station
+ok   n=5: every station is a generalized permutohedron (every edge parallel to some e_i - e_j)
+  non-simple stations: ['1', '3/2', '2', '5/2']
+ok   n=5: start: n! = 120 vertices, simple, all 30 facets
+ok   n=5: end s = 4: Catalan(5) = 42 vertices, simple, exactly the 14 interval facets
+PROGRESS 10/11 canonical forms  (0.6 s)
+ok   n=5: C2 (Conjecture 2): Omega(Pi; centre) by the vertex formula = 10/3 = 2^(n-1) n/(n-1)! = 10/3 = flag sum 10/3
+ok   n=5: control: every vertex cone of Pi is unimodular (|det| = 1)
+ok   n=5: control: Catalan(5) = 42 triangulations of the 7-gon
+ok   n=5: C3: Omega(Loday; centre) by the vertex formula = 49/36 = m_7(X = Loday facet values) = 49/36
+ok   n=5: negative: m_N with one tree dropped differs
+PROGRESS 11/11 json written  (0.6 s)
+n=5: total 0.6 s
+LINEB ok
+PROGRESS 1/7 n=3: 1 non-interval facets, witness valid for 1; negative control (extras off the gaps) fails for 0  (0.0 s)
+PROGRESS 2/7 n=4: 5 non-interval facets, witness valid for 5; negative control (extras off the gaps) fails for 1  (0.0 s)
+PROGRESS 3/7 n=5: 16 non-interval facets, witness valid for 16; negative control (extras off the gaps) fails for 5  (0.0 s)
+PROGRESS 4/7 n=6: 42 non-interval facets, witness valid for 42; negative control (extras off the gaps) fails for 18  (0.0 s)
+PROGRESS 5/7 n=7: 99 non-interval facets, witness valid for 99; negative control (extras off the gaps) fails for 48  (0.0 s)
+PROGRESS 6/7 n=8: 219 non-interval facets, witness valid for 219; negative control (extras off the gaps) fails for 121  (0.0 s)
+PROGRESS 7/7 n=9: 466 non-interval facets, witness valid for 466; negative control (extras off the gaps) fails for 282  (0.2 s)
+848 non-interval facets checked, n = 3..9
+WITNESS ok
+FINAL ok
+[exit 0]

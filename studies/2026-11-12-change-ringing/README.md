@@ -35,3 +35,35 @@ single 123 (ringing-theory list, Aug 2010); Grandsire Doubles bob 3.1, single 3.
 (P. D. Wenham, Bell Ringing by Instalments 05, 2021). Sources checked are listed in the chapter (papers/paradigm-ch13).
 Topic: DICTO 12 Nov 2026, "chapter in the permutohedron book, go ahead on node": the three Kyushindo principles (Change, Rhythm, Harmony,
 as in #43) read through change ringing.
+
+## Conjecture 13.1 proved (13 Nov 2026): the plain hunt is the only shortest way across, for every n >= 3
+
+**Conclusion.** For every n >= 3 the two halves of the plain hunt are the only shortest ways from rounds to backrounds in R_n. Exact
+breadth-first search confirms it for n = 7 (5040 rows, 20 changes per row) and n = 8 (40320 rows, 33 changes per row): distance n, exactly
+two shortest ways, 1.7.1.7.1.7.1 / 7.1.7.1.7.1.7 and x.18.x.18.x.18.x.18 / 18.x.18.x.18.x.18.x. Status: SETTLED (proof below; computed n = 3..8).
+
+**Proof.** Take a way of L changes from rounds to backrounds. Let r_b be the number of changes at which bell b makes a place (rests),
+S the total number of swaps, and u the number of swaps that undo a crossing (swap a pair that is already in reverse order). Each change
+fixes n - 2k places when it swaps k pairs, so 2S = nL - sum_b r_b. Every swap changes the number of inverted pairs by 1, and backrounds
+has all C(n, 2) pairs inverted, so S = C(n, 2) + 2u. Together: **sum_b r_b + 4u = n(L - n + 1).**
+(i) L >= n. If L <= n - 1 the right side is <= 0, so L = n - 1, nobody rests and u = 0. For odd n a change always fixes a place, a
+contradiction. For even n every change is x, and two x in a row undo each other (u > 0), a contradiction since L = n - 1 >= 3.
+(ii) L = n. Bell b moves n - r_b times by one place and travels |n + 1 - 2b|, so n - r_b has the parity of n + 1: r_b is odd, r_b >= 1.
+Then sum_b r_b + 4u = n forces r_b = 1 for every bell and u = 0. With u = 0, two consecutive changes share no swapped pair (the same two
+bells would swap back). Let F_t be the set of places made at change t; sum_t |F_t| = sum_b r_b = n and |F_t| has the parity of n.
+- n odd: |F_t| >= 1 is odd, so every change makes exactly one place p_t (p_t odd). If p_t < p_{t+1}, both changes swap the pairs left of
+  p_t and the pairs right of p_{t+1}; since they share no pair, p_t = 1 and p_{t+1} = n (and the mirror case). So the places alternate
+  1, n, 1, ... or n, 1, n, ...
+- n even: |F_t| is even; two x cannot be consecutive (shared pairs), so at most n/2 changes are x and the others have |F_t| >= 2; the sum n
+  forces exactly n/2 x changes, alternating, and |F_t| = 2 for the others. A change next to an x shares no pair with it, so it swaps only
+  pairs 23, 45, ..., (n-2)(n-1) and makes places 1 and n: it is 1n. So the changes alternate x, 1n, ... or 1n, x, ...
+These are the two halves of the plain hunt, and both reach backrounds in n changes. ∎
+
+**Script** `scripts/geodesics.py` (stdlib, Python integers): R_n and P_n by breadth-first search with shortest-way counts, every shortest way
+of R_n listed backwards from backrounds and compared with the two plain-hunt halves, the identity sum r_b + 4u = n checked on each way.
+Log `data/geodesics.log` (main, n = 3..8, 1.2 s), `data/geodesics-pilot.log` (n = 3..6). Run on the compute node through the job gate, plans
+`ring78-pilot`, `ring78`. **Controls:** n = 3..6 as in `ring.log` (distance n, 2 ways); changes per row F(n+1) - 1 = 20, 33; P_n shortest
+edge paths C(n, 2) steps with Stanley's counts 2, 16, 768, 292864, 1100742656, 48608795688960 (n = 3..8; Stanley 1984, OEIS A005118);
+negative: a 7-change way across on 5 bells with a detour obeys the identity with rests 11, u = 1, not the shortest-way pattern.
+The first pilot's FINAL FAIL was a wrong check of mine (it required backrounds to be the only row at distance n); the rows at distance n
+from rounds number 1, 3, 15, 61, 391, 2053 for n = 3..8, and no row is farther than n. Fixed and rerun: FINAL ok.

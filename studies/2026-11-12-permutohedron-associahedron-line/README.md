@@ -111,3 +111,51 @@ Credit: Postnikov; Ardila–Castillo–Eur–Postnikov; Arkani-Hamed–Bai–He�
 5. Read Ω_Π = Σ over flags ∏ 1/X_S against Early's m(I_n, I_n) boundary formula and the in-in correlator; is the line-A family Ω(t) a one-parameter
    family of amplitudes?
 6. The app: the json files hold every station exactly, so build the slider (A, B, C) with facet colours by S and the wall marks.
+
+## Conjectures 1 and 2 proved; n = 6 computed (13 Nov 2026)
+
+**Conclusion.** Both conjectures of the Permutohedron Family draft are proved for every n, and both hold exactly at n = 6 (5D).
+Conjecture 1: on the equal-speed line B, facet S is present for every s < D_S and gone from s = D_S on, so the walls are exactly the values
+of D_S (n = 6: s = 1, 2, 3, 4, 5, 6). Conjecture 2: Ω(Π; centre) = 2^{n−1} n/(n−1)! (n = 6: 8/5). At the Loday end Ω(L; centre) = m_8 =
+2288/5625 at n = 6. **New at n = 6:** the stations of line B are **not** all generalized permutohedra: for 1 < s < 5 the shape has 16 edges
+off the root directions e_i − e_j (e.g. at s = 2 the edge from (1, 6, 1, 2, 7, 4) to (2, 5, 1, 2, 8, 3), direction (−1, 1, 0, 0, −1, 1)),
+so the earlier remark "the stations of line B all stay generalized permutohedra" holds for n = 4, 5 only. Status: SETTLED.
+
+**Proof of Conjecture 1 (every n).** The proved half (S gone at s = D_S, and for s > D_S the plane misses P) is in the draft. For the other
+half fix a non-interval S and let ε*(s) be the largest ε such that some x has x(S) = z_S(s), x([n]) = z_[n] and x(U) ≥ z_U(s) + ε for
+every other U. S is a facet at s exactly when ε*(s) > 0 (a relative-interior point of a facet lies on no other supporting plane, since all
+normals are distinct; conversely such a point spans a (d−1)-face). The constraints are linear in (s, x, ε) jointly, so ε* is concave in s.
+ε*(0) > 0 (every S is a facet of Π). If ε*(D_S) ≥ 0, concavity gives ε*(s) ≥ (1 − s/D_S) ε*(0) > 0 for all s < D_S. So it is enough to
+give one point x of P(z(D_S)) with x(S) = z_L(S). Let S have blocks b_1 < … < b_m (lengths k_1..k_m, K = Σ k_p, D = D_S = Σ_{p<q} k_p k_q),
+complement G. Put the values 1..k_p on block b_p, the values K+1..n on G, and add E_p = k_p(k_{p+1} + … + k_m) to the first element of
+the gap after b_p (Σ E_p = D). Then x(S) = Σ C(k_p+1, 2) = z_L(S) and x([n]) = C(n+1, 2). For any U with u_p = |U ∩ b_p|, u_T = Σ u_p,
+u_G = |U ∩ G|: x(U) − C(|U|+1, 2) ≥ (K − u_T) u_G − Σ_{p<q} u_p u_q + E(U), using x(U ∩ b_p) ≥ C(u_p+1, 2) and the smallest u_G values of
+G. This is ≥ −D, so every non-interval inequality x(U) ≥ C(|U|+1, 2) − D holds. If U is an interval meeting blocks i..j it contains the gaps
+between them, so E(U) ≥ Σ_{p=i}^{j−1} E_p ≥ Σ_{i≤p<q≤j} k_p k_q ≥ Σ u_p u_q, and x(U) ≥ C(|U|+1, 2). ∎
+`scripts/conj1_witness.py` checks this point for every non-interval S, n = 3..13 (15 914 facets, all valid); negative control: the same
+point with all the extras on the last complement element fails for some S at every n ≥ 4 (the gap placement is needed).
+
+**Proof of Conjecture 2 (every n).** Π is simple and every vertex cone is unimodular (the normals of a flag ∅ ⊂ T_1 ⊂ … ⊂ T_{n−1} form a
+triangular 0/±1 matrix), so Ω(Π; Y) = Σ over the n! flags of ∏_k 1/X_{T_k} (Arkani-Hamed–Bai–Lam §10). At the centre Y = ((n+1)/2, …),
+X_T = |T|(n+1)/2 − C(|T|+1, 2) = |T|(n − |T|)/2 depends only on |T|, so every flag gives ∏_{k=1}^{n−1} 2/(k(n−k)) = 2^{n−1}/((n−1)!)², and
+Ω = n! · 2^{n−1}/((n−1)!)² = 2^{n−1} n/(n−1)!. ∎
+
+**n = 6 on line B (exact).** f-vectors (vertices, edges, 2-faces, 3-faces, facets): (720, 1800, 1560, 540, 62) for 0 ≤ s < 1;
+at s = 1 (452, 1150, 1034, 386, 52); (468, 1182, 1054, 390, 52) on 1 < s < 2; (332, 842, 758, 286, 40) on [2, 3); (236, 590, 528, 202, 30)
+on [3, 4); (176, 440, 398, 157, 25) on [4, 5); (152, 380, 344, 136, 22) on [5, 6); Loday (132, 330, 300, 120, 20) at s = 6.
+Facets vanishing: s = 1: 13 14 15 16 24 25 26 35 36 46; s = 2: 124 125 126 134 145 156 235 236 245 256 346 356; s = 3: 135 136 146 246 1235
+1236 1345 1456 2346 2456; s = 4: 1245 1256 2356 12346 13456; s = 5: 1246 1346 1356; s = 6: 12356 12456 (each exactly its D_S). Not simple for
+1 ≤ s < 3, simple from s = 3 on; not a generalized permutohedron for 1 < s < 5 (16 edges off the root directions at every
+station there, each confirmed as an edge independently by the rank of the common facet normals). Euler at every station.
+
+**Method.** `scripts/gp_enum.c` (C, integer arithmetic): every d-subset of the 2^n − 2 inequalities (n = 6: 6 471 002 subsets, 3 337 152
+nonsingular), its vertex u(s) = (P0 + s P1)/det by Cramer and the exact closed s-interval on which it is a vertex; 1420 candidates at n = 6.
+`scripts/gp_line_b.py` (stdlib, Fractions): stations at every interval end point (s = 0, 1, …, 6) and every midpoint; vertices, tight sets,
+facets by affine rank, face lattice by closure and grading, f-vector, Euler, simplicity, edge directions; forms by Warren's vertex formula and
+the flag sum; m_{n+2} over the Catalan triangulations (interval [i, j] ↔ diagonal (i, j+2)). Data: `data/lineb-cand-n{4,5,6}.txt`,
+`data/lineb-n{4,5,6}.json`, logs `data/lineb.log`, `data/lineb-pilot.log`. Run on the compute node through the job gate (plans `pa-line6-pilot`,
+`pa-line6`; 2.5 GB cage, one core; n = 6 in 13 s after the enumeration). **Controls:** the n = 4, 5 walls (1, 2 / 1, 2, 3, 4), facet lists and
+f-vectors of the table above reproduced exactly, Ω(Π) = 16/3, 10/3 and Ω(L) = m_6 = 88/27, m_7 = 49/36 reproduced; n! and Catalan(n) vertices
+at the ends, unimodular vertex cones of Π, Catalan(6) = 132 triangulations; negative: m_N with one tree dropped differs. A first n = 6 run ended
+FINAL FAIL only because the generalized-permutohedron test was written as a control; it is a finding, now reported, and the rerun is FINAL ok.
+(At n = 5 the station s = 1 itself is also not simple, besides 1 < s < 3.) LEAD 1 above is answered.

@@ -1,0 +1,158 @@
+{
+ "n": 4,
+ "stations": [
+  {
+   "s": "0",
+   "f_vector": [
+    24,
+    36,
+    14
+   ],
+   "facets": 14,
+   "euler": true,
+   "simple": true,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": []
+  },
+  {
+   "s": "1/2",
+   "f_vector": [
+    24,
+    36,
+    14
+   ],
+   "facets": 14,
+   "euler": true,
+   "simple": true,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": []
+  },
+  {
+   "s": "1",
+   "f_vector": [
+    18,
+    27,
+    11
+   ],
+   "facets": 11,
+   "euler": true,
+   "simple": true,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": [
+    "13",
+    "14",
+    "24"
+   ]
+  },
+  {
+   "s": "3/2",
+   "f_vector": [
+    18,
+    27,
+    11
+   ],
+   "facets": 11,
+   "euler": true,
+   "simple": true,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": [
+    "13",
+    "14",
+    "24"
+   ]
+  },
+  {
+   "s": "2",
+   "f_vector": [
+    14,
+    21,
+    9
+   ],
+   "facets": 9,
+   "euler": true,
+   "simple": true,
+   "gp": true,
+   "nongp_edges": 0,
+   "nongp_confirmed": true,
+   "nongp_example": null,
+   "vanished_non_interval": [
+    "124",
+    "13",
+    "134",
+    "14",
+    "24"
+   ]
+  }
+ ],
+ "walls": [
+  {
+   "s": "1",
+   "f_before": [
+    24,
+    36,
+    14
+   ],
+   "f_at": [
+    18,
+    27,
+    11
+   ],
+   "f_after": [
+    18,
+    27,
+    11
+   ],
+   "vanish_here": [
+    "13",
+    "14",
+    "24"
+   ]
+  },
+  {
+   "s": "2",
+   "f_before": [
+    18,
+    27,
+    11
+   ],
+   "f_at": [
+    14,
+    21,
+    9
+   ],
+   "f_after": [
+    14,
+    21,
+    9
+   ],
+   "vanish_here": [
+    "124",
+    "134"
+   ]
+  }
+ ],
+ "D_values": [
+  1,
+  2
+ ],
+ "nonsimple_stations": [],
+ "omega_Pi_centre": "16/3",
+ "closed_form": "16/3",
+ "omega_Loday_centre": "88/27",
+ "m_N": "88/27",
+ "N": 6,
+ "candidates": 34,
+ "all_ok": true
+}

@@ -6547,12 +6547,12 @@
    },
    {
     "question": "Change ringing Conjecture 13.1: the two halves of the plain hunt are the only shortest rounds-to-backrounds paths in the change graph R_n for every n >= 3",
-    "method": "breadth-first count n = 3..6 (2 each)",
-    "status": "OPEN",
-    "result": "true for n <= 6 (computed); distance n proved for all n >= 3",
-    "retry": "a proof (bell 1 and bell n each move at every change but one), or the same count for n = 7, 8",
+    "method": "breadth-first count n = 3..6 (ring.py); 13 Nov: geodesics.py exact BFS n = 3..8 on R_n and P_n, every shortest way listed (controls ring.log n <= 6, Stanley/OEIS A005118 P_7, P_8, detour negative), compute node via job gate, FINAL ok; proof by counting rests and undone swaps (sum_b r_b + 4u = n(L - n + 1))",
+    "status": "SETTLED",
+    "result": "PROVED for every n >= 3 (README section 'Conjecture 13.1 proved'); computed n = 3..8: distance n, exactly 2 shortest ways (plain hunt halves); rows at distance n: 1, 3, 15, 61, 391, 2053",
+    "retry": "never",
     "study": "2026-11-12-change-ringing",
-    "date": "2026-11-12"
+    "date": "2026-11-13"
    },
    {
     "question": "Gap 'Archimedean stretches (#49)' by the permutohedron route (DICTO approved): every equal-edged member of the deformation cones of the A3, B3, H3 Coxeter permutohedra (TO, truncated cuboctahedron, truncated icosidodecahedron); compare with #49's theorem and list",
@@ -6656,6 +6656,15 @@
     "result": "8-RD clusters COMPLETE: all periodic (8: 61 413, 16: 82 391, 24: 167, 32: 185; 2 survivors of 32 killed at 40 and 48). Directed keyed search PARTIAL (stopped by DICTO, 0/81 cubes exhausted): 5970 candidates, 841 untileable, killed at 3: 15, 4: 1133, 6: 99, 8: 2375, 12: 136, 16: 889, 24: 141, 32: 120; 221 passed index 32. Deep re-check PARTIAL: 83 checked, none periodic to 48 (fill R5); 73 of 82 classes fill R8 with no torus to 64; counting LPs feasible for all 83 (no counting obstruction). Not claimed aperiodic. Keyed poly-RDs not started",
     "retry": "only on DICTO's word (13 Nov: 'pause the RDs search indefinitely'); never for 8-RD clusters; if resumed: finish deep2, deep3 (box tori to 128, R10) and the 138 later survivors",
     "study": "2026-11-12-hopeful-piece",
+    "date": "2026-11-13"
+   },
+   {
+    "question": "Permutohedron Family Conjectures 1 and 2: on the equal-speed line Pi -> Loday is facet S present exactly for s < D_S (every n); is Omega(Pi; centre) = 2^(n-1) n/(n-1)! (every n); n = 6 exact, and Omega(Loday) = m_8 at n = 6",
+    "method": "studies/2026-11-12-permutohedron-associahedron-line: gp_enum.c (all 6 471 002 5-subsets, exact integer s-intervals) + gp_line_b.py (stations at every end point and midpoint, facets by affine rank, face lattice, Warren forms, m_8 over 132 triangulations); conj1_witness.py (proof's point, n = 3..13); controls n = 4, 5 walls/f-vectors/forms reproduced, negative tree-dropped m_N and off-gap witness; compute node via job gate (pa-line6-pilot, pa-line6), FINAL ok",
+    "status": "SETTLED",
+    "result": "PROVED for every n: Conjecture 1 (concavity of the facet margin + explicit point on S at s = D_S) and Conjecture 2 (each flag term 2^(n-1)/((n-1)!)^2 at the centre). n = 6 exact: walls s = 1..6 each exactly at D_S, f-vectors (720,1800,1560,540,62) -> ... -> (132,330,300,120,20), Omega(Pi) = 8/5, Omega(L) = m_8 = 2288/5625. NEW: at n = 6 line B leaves the generalized permutohedra for 1 < s < 5 (16 edges off the root directions); non-simple for 1 <= s < 3",
+    "retry": "never; leads: which line-B stations are GPs for n >= 7; Omega(s) on line B at n = 6",
+    "study": "2026-11-12-permutohedron-associahedron-line",
     "date": "2026-11-13"
    }
   ]
