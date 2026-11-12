@@ -1,0 +1,9473 @@
+{
+ "pilot": true,
+ "shapes": {
+  "RD": {
+   "corners": 14,
+   "facets": 12,
+   "terms": 20,
+   "vol": "2"
+  },
+  "TRD": {
+   "corners": 14,
+   "facets": 12,
+   "terms": 20,
+   "vol": "2"
+  },
+  "cube": {
+   "corners": 8,
+   "facets": 6,
+   "terms": 8,
+   "vol": "1"
+  },
+  "TO": {
+   "corners": 24,
+   "facets": 14,
+   "terms": 24,
+   "vol": "1/2"
+  },
+  "HP": {
+   "corners": 12,
+   "facets": 8,
+   "terms": 12,
+   "vol": "(0+1*sqrt6)"
+  },
+  "icosahedron": {
+   "corners": 12,
+   "facets": 20,
+   "terms": 36,
+   "vol": "(10+10/3*sqrt5)"
+  },
+  "dodecahedron": {
+   "corners": 20,
+   "facets": 12,
+   "terms": 20,
+   "vol": "(10+2*sqrt5)"
+  },
+  "RD-perturbed": {
+   "corners": 16,
+   "facets": 12,
+   "terms": 20,
+   "vol": "97141/48000"
+  }
+ },
+ "decay_census": {
+  "octahedron (cs, not zonotope, no tiling)": {
+   "decay_power": 4,
+   "facets": {
+    "3": 8
+   },
+   "centrally_symmetric": true
+  },
+  "cuboctahedron (cs, not zonotope, no tiling)": {
+   "decay_power": 4,
+   "facets": {
+    "4": 6,
+    "3": 8
+   },
+   "centrally_symmetric": true
+  },
+  "tetrahedron (no tiling)": {
+   "decay_power": 4,
+   "facets": {
+    "3": 4
+   },
+   "centrally_symmetric": false
+  },
+  "triangular prism (tiles, not cs)": {
+   "decay_power": 5,
+   "facets": {
+    "3": 2,
+    "4": 3
+   },
+   "centrally_symmetric": false
+  },
+  "generic parallelepiped (zonotope, tiles)": {
+   "decay_power": 6,
+   "facets": {
+    "4": 6
+   },
+   "centrally_symmetric": true
+  },
+  "generic 4-generator zonotope (tiling not claimed)": {
+   "decay_power": 6,
+   "facets": {
+    "4": 6,
+    "6": 2
+   },
+   "centrally_symmetric": true
+  },
+  "generic 5-generator zonotope (tiling not claimed)": {
+   "decay_power": 6,
+   "facets": {
+    "4": 20
+   },
+   "centrally_symmetric": true
+  },
+  "rhombic triacontahedron (zonotope, no tiling)": {
+   "decay_power": 6,
+   "facets": {
+    "4": 30
+   },
+   "centrally_symmetric": true
+  },
+  "rhombic icosahedron (zonotope, no tiling)": {
+   "decay_power": 6,
+   "facets": {
+    "4": 20
+   },
+   "centrally_symmetric": true
+  },
+  "corner-cut cube (cs, not zonotope)": {
+   "decay_power": 4,
+   "facets": {
+    "8": 6,
+    "3": 8
+   },
+   "centrally_symmetric": true
+  },
+  "RD": {
+   "decay_power": 6
+  },
+  "TRD": {
+   "decay_power": 5
+  },
+  "cube": {
+   "decay_power": 6
+  },
+  "TO": {
+   "decay_power": 6
+  },
+  "HP": {
+   "decay_power": 6
+  },
+  "icosahedron": {
+   "decay_power": 4
+  },
+  "dodecahedron": {
+   "decay_power": 4
+  },
+  "RD-perturbed": {
+   "decay_power": 4
+  }
+ },
+ "far_field_order": {
+  "RD": 6,
+  "TRD": 5,
+  "cube": 6,
+  "TO": 6,
+  "HP": 6,
+  "icosahedron": 4,
+  "dodecahedron": 4,
+  "RD-perturbed": 4
+ },
+ "T2": {
+  "RD": {
+   "neighbours_far": [
+    {
+     "facet": 0,
+     "normal": [
+      "-1",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "-1",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "0",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "0",
+      "1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 8,
+     "normal": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 9,
+     "normal": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 10,
+     "normal": [
+      "1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 11,
+     "normal": [
+      "1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "1",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    }
+   ],
+   "neighbours_sphere": [
+    {
+     "facet": 0,
+     "normal": [
+      "-1",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "-1",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "0",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "0",
+      "1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 8,
+     "normal": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 9,
+     "normal": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 10,
+     "normal": [
+      "1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 11,
+     "normal": [
+      "1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "1",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    }
+   ],
+   "axes_far": {
+    "4-fold (1,0,0)": {
+     "kind": "pole",
+     "order": -2
+    },
+    "3-fold (1,1,1)": {
+     "kind": "pole",
+     "order": -4
+    },
+    "2-fold (1,1,0)": {
+     "kind": "pole",
+     "order": -2
+    }
+   }
+  },
+  "TRD": {
+   "neighbours_far": [
+    {
+     "facet": 0,
+     "normal": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "0",
+      "1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 8,
+     "normal": [
+      "1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "1",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 9,
+     "normal": [
+      "-1/3",
+      "-4/3",
+      "-1/3"
+     ],
+     "point": [
+      "-1/3",
+      "-4/3",
+      "-1/3"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 10,
+     "normal": [
+      "-4/3",
+      "-1/3",
+      "-1/3"
+     ],
+     "point": [
+      "-4/3",
+      "-1/3",
+      "-1/3"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 11,
+     "normal": [
+      "-1/3",
+      "-1/3",
+      "-4/3"
+     ],
+     "point": [
+      "-1/3",
+      "-1/3",
+      "-4/3"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    }
+   ],
+   "neighbours_sphere": [
+    {
+     "facet": 0,
+     "normal": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "0",
+      "1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 8,
+     "normal": [
+      "1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "1",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 9,
+     "normal": [
+      "-1/3",
+      "-4/3",
+      "-1/3"
+     ],
+     "point": [
+      "-1/3",
+      "-4/3",
+      "-1/3"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 10,
+     "normal": [
+      "-4/3",
+      "-1/3",
+      "-1/3"
+     ],
+     "point": [
+      "-4/3",
+      "-1/3",
+      "-1/3"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 11,
+     "normal": [
+      "-1/3",
+      "-1/3",
+      "-4/3"
+     ],
+     "point": [
+      "-1/3",
+      "-1/3",
+      "-4/3"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    }
+   ],
+   "axes_far": {
+    "c-axis (1,1,1)": {
+     "kind": "pole",
+     "order": -3
+    },
+    "in-plane a (1,-1,0)": {
+     "kind": "pole",
+     "order": -1
+    },
+    "in-plane (1,1,-2)": {
+     "kind": "pole",
+     "order": -2
+    }
+   }
+  },
+  "cube": {
+   "neighbours_far": [
+    {
+     "facet": 0,
+     "normal": [
+      "1",
+      "0",
+      "0"
+     ],
+     "point": [
+      "1",
+      "0",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -4
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "-1",
+      "0",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -4
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "0",
+      "1",
+      "0"
+     ],
+     "point": [
+      "0",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -4
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "0",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -4
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "0",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -4
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "0",
+      "0",
+      "1"
+     ],
+     "point": [
+      "0",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -4
+    }
+   ],
+   "neighbours_sphere": [
+    {
+     "facet": 0,
+     "normal": [
+      "1",
+      "0",
+      "0"
+     ],
+     "point": [
+      "1",
+      "0",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -21.333333333333332,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "-1",
+      "0",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -21.333333333333332,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "0",
+      "1",
+      "0"
+     ],
+     "point": [
+      "0",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -21.333333333333332,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "0",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -21.333333333333332,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "0",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -21.333333333333332,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "0",
+      "0",
+      "1"
+     ],
+     "point": [
+      "0",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -21.333333333333332,
+     "sign": -1,
+     "zero": false
+    }
+   ],
+   "axes_far": {
+    "4-fold (1,0,0)": {
+     "kind": "pole",
+     "order": -4
+    },
+    "3-fold (1,1,1)": {
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0,
+     "sign": -1,
+     "zero": false
+    },
+    "2-fold (1,1,0)": {
+     "kind": "pole",
+     "order": -2
+    }
+   }
+  },
+  "TO": {
+   "neighbours_far": [
+    {
+     "facet": 0,
+     "normal": [
+      "1",
+      "0",
+      "0"
+     ],
+     "point": [
+      "1",
+      "0",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "-1",
+      "0",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "0",
+      "1",
+      "0"
+     ],
+     "point": [
+      "0",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "0",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "0",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "0",
+      "0",
+      "1"
+     ],
+     "point": [
+      "0",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "-1",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "-1/2",
+      "1/2",
+      "-1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "critical",
+     "type": "max",
+     "value": -96.0,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "-1",
+      "1",
+      "1"
+     ],
+     "point": [
+      "-1/2",
+      "1/2",
+      "1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "critical",
+     "type": "max",
+     "value": -96.0,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 8,
+     "normal": [
+      "-1",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "-1/2",
+      "-1/2",
+      "-1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "critical",
+     "type": "max",
+     "value": -96.0,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 9,
+     "normal": [
+      "1",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "1/2",
+      "-1/2",
+      "1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "critical",
+     "type": "max",
+     "value": -96.0,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 10,
+     "normal": [
+      "-1",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "-1/2",
+      "-1/2",
+      "1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "critical",
+     "type": "max",
+     "value": -96.0,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 11,
+     "normal": [
+      "1",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "1/2",
+      "-1/2",
+      "-1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "critical",
+     "type": "max",
+     "value": -96.0,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 12,
+     "normal": [
+      "1",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "1/2",
+      "1/2",
+      "-1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "critical",
+     "type": "max",
+     "value": -96.0,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 13,
+     "normal": [
+      "1",
+      "1",
+      "1"
+     ],
+     "point": [
+      "1/2",
+      "1/2",
+      "1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "critical",
+     "type": "max",
+     "value": -96.0,
+     "sign": -1,
+     "zero": false
+    }
+   ],
+   "neighbours_sphere": [
+    {
+     "facet": 0,
+     "normal": [
+      "1",
+      "0",
+      "0"
+     ],
+     "point": [
+      "1",
+      "0",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -66.17687074829932,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "-1",
+      "0",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -66.17687074829932,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "0",
+      "1",
+      "0"
+     ],
+     "point": [
+      "0",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -66.17687074829932,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "0",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -66.17687074829932,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "0",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -66.17687074829932,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "0",
+      "0",
+      "1"
+     ],
+     "point": [
+      "0",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -66.17687074829932,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "-1",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "-1/2",
+      "1/2",
+      "-1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "-1",
+      "1",
+      "1"
+     ],
+     "point": [
+      "-1/2",
+      "1/2",
+      "1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 8,
+     "normal": [
+      "-1",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "-1/2",
+      "-1/2",
+      "-1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 9,
+     "normal": [
+      "1",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "1/2",
+      "-1/2",
+      "1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 10,
+     "normal": [
+      "-1",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "-1/2",
+      "-1/2",
+      "1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 11,
+     "normal": [
+      "1",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "1/2",
+      "-1/2",
+      "-1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 12,
+     "normal": [
+      "1",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "1/2",
+      "1/2",
+      "-1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 13,
+     "normal": [
+      "1",
+      "1",
+      "1"
+     ],
+     "point": [
+      "1/2",
+      "1/2",
+      "1/2"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -1
+    }
+   ],
+   "axes_far": {
+    "4-fold (1,0,0)": {
+     "kind": "pole",
+     "order": -2
+    },
+    "3-fold (1,1,1)": {
+     "kind": "critical",
+     "type": "max",
+     "value": -1.5,
+     "sign": -1,
+     "zero": false
+    },
+    "2-fold (1,1,0)": {
+     "kind": "pole",
+     "order": -4
+    }
+   }
+  },
+  "HP": {
+   "neighbours_far": [
+    {
+     "facet": 0,
+     "normal": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 2,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "planes_through_point": 2,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 2,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 2,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "planes_through_point": 2,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 2,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "1",
+      "1",
+      "1"
+     ],
+     "point": [
+      "(0+1/3*sqrt6)",
+      "(0+1/3*sqrt6)",
+      "(0+1/3*sqrt6)"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -4
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "-1",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "(0-1/3*sqrt6)",
+      "(0-1/3*sqrt6)",
+      "(0-1/3*sqrt6)"
+     ],
+     "planes_through_point": 0,
+     "kind": "pole",
+     "order": -4
+    }
+   ],
+   "neighbours_sphere": [
+    {
+     "facet": 0,
+     "normal": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 2,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8164965809277259,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "planes_through_point": 2,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8164965809277259,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 2,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8164965809277259,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 2,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8164965809277259,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "planes_through_point": 2,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8164965809277259,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 2,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8164965809277259,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "1",
+      "1",
+      "1"
+     ],
+     "point": [
+      "(0+1/3*sqrt6)",
+      "(0+1/3*sqrt6)",
+      "(0+1/3*sqrt6)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -9.797958971132712,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "-1",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "(0-1/3*sqrt6)",
+      "(0-1/3*sqrt6)",
+      "(0-1/3*sqrt6)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -9.797958971132712,
+     "sign": -1,
+     "zero": false
+    }
+   ],
+   "axes_far": {
+    "c-axis (1,1,1)": {
+     "kind": "pole",
+     "order": -4
+    },
+    "in-plane a (1,-1,0)": {
+     "kind": "pole",
+     "order": -2
+    },
+    "in-plane (1,1,-2)": {
+     "kind": "pole",
+     "order": -4
+    }
+   }
+  },
+  "icosahedron": {
+   "neighbours_far": [
+    {
+     "facet": 0,
+     "normal": [
+      "-1",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "(-1-1/3*sqrt5)",
+      "(1+1/3*sqrt5)",
+      "(-1-1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "-1",
+      "1",
+      "1"
+     ],
+     "point": [
+      "(-1-1/3*sqrt5)",
+      "(1+1/3*sqrt5)",
+      "(1+1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "-1",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "(-1-1/3*sqrt5)",
+      "(-1-1/3*sqrt5)",
+      "(-1-1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "1",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "(1+1/3*sqrt5)",
+      "(-1-1/3*sqrt5)",
+      "(1+1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "-1",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "(-1-1/3*sqrt5)",
+      "(-1-1/3*sqrt5)",
+      "(1+1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "1",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "(1+1/3*sqrt5)",
+      "(-1-1/3*sqrt5)",
+      "(-1-1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "1",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "(1+1/3*sqrt5)",
+      "(1+1/3*sqrt5)",
+      "(-1-1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "1",
+      "1",
+      "1"
+     ],
+     "point": [
+      "(1+1/3*sqrt5)",
+      "(1+1/3*sqrt5)",
+      "(1+1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 8,
+     "normal": [
+      "0",
+      "(1/2+1/2*sqrt5)",
+      "(-1/2+1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(4/3+2/3*sqrt5)",
+      "(1/3+1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 9,
+     "normal": [
+      "(1/2+1/2*sqrt5)",
+      "(-1/2+1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(4/3+2/3*sqrt5)",
+      "(1/3+1/3*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 10,
+     "normal": [
+      "(-1/2+1/2*sqrt5)",
+      "0",
+      "(1/2+1/2*sqrt5)"
+     ],
+     "point": [
+      "(1/3+1/3*sqrt5)",
+      "0",
+      "(4/3+2/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 11,
+     "normal": [
+      "0",
+      "(1/2+1/2*sqrt5)",
+      "(1/2-1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(4/3+2/3*sqrt5)",
+      "(-1/3-1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 12,
+     "normal": [
+      "(1/2+1/2*sqrt5)",
+      "(1/2-1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(4/3+2/3*sqrt5)",
+      "(-1/3-1/3*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 13,
+     "normal": [
+      "(1/2-1/2*sqrt5)",
+      "0",
+      "(1/2+1/2*sqrt5)"
+     ],
+     "point": [
+      "(-1/3-1/3*sqrt5)",
+      "0",
+      "(4/3+2/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 14,
+     "normal": [
+      "0",
+      "(-1/2-1/2*sqrt5)",
+      "(-1/2+1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(-4/3-2/3*sqrt5)",
+      "(1/3+1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 15,
+     "normal": [
+      "(-1/2-1/2*sqrt5)",
+      "(-1/2+1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(-4/3-2/3*sqrt5)",
+      "(1/3+1/3*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 16,
+     "normal": [
+      "(-1/2+1/2*sqrt5)",
+      "0",
+      "(-1/2-1/2*sqrt5)"
+     ],
+     "point": [
+      "(1/3+1/3*sqrt5)",
+      "0",
+      "(-4/3-2/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 17,
+     "normal": [
+      "0",
+      "(-1/2-1/2*sqrt5)",
+      "(1/2-1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(-4/3-2/3*sqrt5)",
+      "(-1/3-1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 18,
+     "normal": [
+      "(-1/2-1/2*sqrt5)",
+      "(1/2-1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(-4/3-2/3*sqrt5)",
+      "(-1/3-1/3*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 19,
+     "normal": [
+      "(1/2-1/2*sqrt5)",
+      "0",
+      "(-1/2-1/2*sqrt5)"
+     ],
+     "point": [
+      "(-1/3-1/3*sqrt5)",
+      "0",
+      "(-4/3-2/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.8995922065315654,
+     "sign": -1,
+     "zero": false
+    }
+   ],
+   "neighbours_sphere": [
+    {
+     "facet": 0,
+     "normal": [
+      "-1",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "(-1-1/3*sqrt5)",
+      "(1+1/3*sqrt5)",
+      "(-1-1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "-1",
+      "1",
+      "1"
+     ],
+     "point": [
+      "(-1-1/3*sqrt5)",
+      "(1+1/3*sqrt5)",
+      "(1+1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "-1",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "(-1-1/3*sqrt5)",
+      "(-1-1/3*sqrt5)",
+      "(-1-1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "1",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "(1+1/3*sqrt5)",
+      "(-1-1/3*sqrt5)",
+      "(1+1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "-1",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "(-1-1/3*sqrt5)",
+      "(-1-1/3*sqrt5)",
+      "(1+1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "1",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "(1+1/3*sqrt5)",
+      "(-1-1/3*sqrt5)",
+      "(-1-1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "1",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "(1+1/3*sqrt5)",
+      "(1+1/3*sqrt5)",
+      "(-1-1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "1",
+      "1",
+      "1"
+     ],
+     "point": [
+      "(1+1/3*sqrt5)",
+      "(1+1/3*sqrt5)",
+      "(1+1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 8,
+     "normal": [
+      "0",
+      "(1/2+1/2*sqrt5)",
+      "(-1/2+1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(4/3+2/3*sqrt5)",
+      "(1/3+1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 9,
+     "normal": [
+      "(1/2+1/2*sqrt5)",
+      "(-1/2+1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(4/3+2/3*sqrt5)",
+      "(1/3+1/3*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 10,
+     "normal": [
+      "(-1/2+1/2*sqrt5)",
+      "0",
+      "(1/2+1/2*sqrt5)"
+     ],
+     "point": [
+      "(1/3+1/3*sqrt5)",
+      "0",
+      "(4/3+2/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 11,
+     "normal": [
+      "0",
+      "(1/2+1/2*sqrt5)",
+      "(1/2-1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(4/3+2/3*sqrt5)",
+      "(-1/3-1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 12,
+     "normal": [
+      "(1/2+1/2*sqrt5)",
+      "(1/2-1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(4/3+2/3*sqrt5)",
+      "(-1/3-1/3*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 13,
+     "normal": [
+      "(1/2-1/2*sqrt5)",
+      "0",
+      "(1/2+1/2*sqrt5)"
+     ],
+     "point": [
+      "(-1/3-1/3*sqrt5)",
+      "0",
+      "(4/3+2/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 14,
+     "normal": [
+      "0",
+      "(-1/2-1/2*sqrt5)",
+      "(-1/2+1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(-4/3-2/3*sqrt5)",
+      "(1/3+1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 15,
+     "normal": [
+      "(-1/2-1/2*sqrt5)",
+      "(-1/2+1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(-4/3-2/3*sqrt5)",
+      "(1/3+1/3*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 16,
+     "normal": [
+      "(-1/2+1/2*sqrt5)",
+      "0",
+      "(-1/2-1/2*sqrt5)"
+     ],
+     "point": [
+      "(1/3+1/3*sqrt5)",
+      "0",
+      "(-4/3-2/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 17,
+     "normal": [
+      "0",
+      "(-1/2-1/2*sqrt5)",
+      "(1/2-1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(-4/3-2/3*sqrt5)",
+      "(-1/3-1/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 18,
+     "normal": [
+      "(-1/2-1/2*sqrt5)",
+      "(1/2-1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(-4/3-2/3*sqrt5)",
+      "(-1/3-1/3*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 19,
+     "normal": [
+      "(1/2-1/2*sqrt5)",
+      "0",
+      "(-1/2-1/2*sqrt5)"
+     ],
+     "point": [
+      "(-1/3-1/3*sqrt5)",
+      "0",
+      "(-4/3-2/3*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -1.0738960274886153,
+     "sign": -1,
+     "zero": false
+    }
+   ],
+   "axes_far": {
+    "2-fold (1,0,0)": {
+     "kind": "pole",
+     "order": -2
+    },
+    "3-fold (1,1,1)": {
+     "kind": "critical",
+     "type": "max",
+     "value": -8.347987115999215,
+     "sign": -1,
+     "zero": false
+    },
+    "5-fold (0,1,phi)": {
+     "kind": "critical",
+     "type": "min",
+     "value": 20.498447189992433,
+     "sign": 1,
+     "zero": false
+    }
+   }
+  },
+  "dodecahedron": {
+   "neighbours_far": [
+    {
+     "facet": 0,
+     "normal": [
+      "0",
+      "1",
+      "(1/2+1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(1+1/5*sqrt5)",
+      "(1+3/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.43052317185791367,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "1",
+      "(1/2+1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(1+1/5*sqrt5)",
+      "(1+3/5*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.43052317185791367,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "(1/2+1/2*sqrt5)",
+      "0",
+      "1"
+     ],
+     "point": [
+      "(1+3/5*sqrt5)",
+      "0",
+      "(1+1/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.43052317185791367,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "0",
+      "1",
+      "(-1/2-1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(1+1/5*sqrt5)",
+      "(-1-3/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.43052317185791367,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "1",
+      "(-1/2-1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(1+1/5*sqrt5)",
+      "(-1-3/5*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.43052317185791367,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "(-1/2-1/2*sqrt5)",
+      "0",
+      "1"
+     ],
+     "point": [
+      "(-1-3/5*sqrt5)",
+      "0",
+      "(1+1/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.43052317185791367,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "0",
+      "-1",
+      "(1/2+1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(-1-1/5*sqrt5)",
+      "(1+3/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.43052317185791367,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "-1",
+      "(1/2+1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(-1-1/5*sqrt5)",
+      "(1+3/5*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.43052317185791367,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 8,
+     "normal": [
+      "(1/2+1/2*sqrt5)",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "(1+3/5*sqrt5)",
+      "0",
+      "(-1-1/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.43052317185791367,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 9,
+     "normal": [
+      "0",
+      "-1",
+      "(-1/2-1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(-1-1/5*sqrt5)",
+      "(-1-3/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.43052317185791367,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 10,
+     "normal": [
+      "-1",
+      "(-1/2-1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(-1-1/5*sqrt5)",
+      "(-1-3/5*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.43052317185791367,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 11,
+     "normal": [
+      "(-1/2-1/2*sqrt5)",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "(-1-3/5*sqrt5)",
+      "0",
+      "(-1-1/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.43052317185791367,
+     "sign": -1,
+     "zero": false
+    }
+   ],
+   "neighbours_sphere": [
+    {
+     "facet": 0,
+     "normal": [
+      "0",
+      "1",
+      "(1/2+1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(1+1/5*sqrt5)",
+      "(1+3/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -57.81717224974045,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "1",
+      "(1/2+1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(1+1/5*sqrt5)",
+      "(1+3/5*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -57.81717224974045,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "(1/2+1/2*sqrt5)",
+      "0",
+      "1"
+     ],
+     "point": [
+      "(1+3/5*sqrt5)",
+      "0",
+      "(1+1/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -57.81717224974045,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "0",
+      "1",
+      "(-1/2-1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(1+1/5*sqrt5)",
+      "(-1-3/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -57.81717224974045,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "1",
+      "(-1/2-1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(1+1/5*sqrt5)",
+      "(-1-3/5*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -57.81717224974045,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "(-1/2-1/2*sqrt5)",
+      "0",
+      "1"
+     ],
+     "point": [
+      "(-1-3/5*sqrt5)",
+      "0",
+      "(1+1/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -57.81717224974045,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "0",
+      "-1",
+      "(1/2+1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(-1-1/5*sqrt5)",
+      "(1+3/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -57.81717224974045,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "-1",
+      "(1/2+1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(-1-1/5*sqrt5)",
+      "(1+3/5*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -57.81717224974045,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 8,
+     "normal": [
+      "(1/2+1/2*sqrt5)",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "(1+3/5*sqrt5)",
+      "0",
+      "(-1-1/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -57.81717224974045,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 9,
+     "normal": [
+      "0",
+      "-1",
+      "(-1/2-1/2*sqrt5)"
+     ],
+     "point": [
+      "0",
+      "(-1-1/5*sqrt5)",
+      "(-1-3/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -57.81717224974045,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 10,
+     "normal": [
+      "-1",
+      "(-1/2-1/2*sqrt5)",
+      "0"
+     ],
+     "point": [
+      "(-1-1/5*sqrt5)",
+      "(-1-3/5*sqrt5)",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -57.81717224974045,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 11,
+     "normal": [
+      "(-1/2-1/2*sqrt5)",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "(-1-3/5*sqrt5)",
+      "0",
+      "(-1-1/5*sqrt5)"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -57.81717224974045,
+     "sign": -1,
+     "zero": false
+    }
+   ],
+   "axes_far": {
+    "2-fold (1,0,0)": {
+     "kind": "pole",
+     "order": -2
+    },
+    "3-fold (1,1,1)": {
+     "kind": "critical",
+     "type": "min",
+     "value": 14.832815729997478,
+     "sign": 1,
+     "zero": false
+    },
+    "5-fold (0,1,phi)": {
+     "kind": "critical",
+     "type": "max",
+     "value": -1.8885438199983184,
+     "sign": -1,
+     "zero": false
+    }
+   }
+  },
+  "RD-perturbed": {
+   "neighbours_far": [
+    {
+     "facet": 0,
+     "normal": [
+      "-1",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.1,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "-1",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.1,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "0",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "0",
+      "1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "1"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 8,
+     "normal": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.1,
+     "sign": -1,
+     "zero": false
+    },
+    {
+     "facet": 9,
+     "normal": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 10,
+     "normal": [
+      "1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -1
+    },
+    {
+     "facet": 11,
+     "normal": [
+      "1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "21/20",
+      "21/20",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -0.0822702474791882,
+     "sign": -1,
+     "zero": false
+    }
+   ],
+   "neighbours_sphere": [
+    {
+     "facet": 0,
+     "normal": [
+      "-1",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 1,
+     "normal": [
+      "-1",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 2,
+     "normal": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 3,
+     "normal": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "-1",
+      "1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 4,
+     "normal": [
+      "0",
+      "-1",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "-1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 5,
+     "normal": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "-1",
+      "1"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 6,
+     "normal": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 7,
+     "normal": [
+      "0",
+      "1",
+      "1"
+     ],
+     "point": [
+      "0",
+      "1",
+      "1"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 8,
+     "normal": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "point": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "planes_through_point": 4,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 9,
+     "normal": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 10,
+     "normal": [
+      "1",
+      "0",
+      "1"
+     ],
+     "point": [
+      "1",
+      "0",
+      "1"
+     ],
+     "planes_through_point": 3,
+     "kind": "pole",
+     "order": -2
+    },
+    {
+     "facet": 11,
+     "normal": [
+      "1",
+      "1",
+      "0"
+     ],
+     "point": [
+      "21/20",
+      "21/20",
+      "0"
+     ],
+     "planes_through_point": 0,
+     "kind": "critical",
+     "type": "max",
+     "value": -762.6504229524705,
+     "sign": -1,
+     "zero": false
+    }
+   ],
+   "axes_far": {
+    "4-fold (1,0,0)": {
+     "kind": "pole",
+     "order": -2
+    },
+    "3-fold (1,1,1)": {
+     "kind": "pole",
+     "order": -2
+    },
+    "2-fold (1,1,0)": {
+     "kind": "critical",
+     "type": "max",
+     "value": -0.1,
+     "sign": -1,
+     "zero": false
+    }
+   }
+  }
+ },
+ "T3": {
+  "RD": [
+   {
+    "facet": 0,
+    "normal": [
+     "-1",
+     "-1",
+     "0"
+    ],
+    "point": [
+     "-1",
+     "-1",
+     "0"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 1,
+    "normal": [
+     "-1",
+     "0",
+     "-1"
+    ],
+    "point": [
+     "-1",
+     "0",
+     "-1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 2,
+    "normal": [
+     "-1",
+     "0",
+     "1"
+    ],
+    "point": [
+     "-1",
+     "0",
+     "1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 3,
+    "normal": [
+     "-1",
+     "1",
+     "0"
+    ],
+    "point": [
+     "-1",
+     "1",
+     "0"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 4,
+    "normal": [
+     "0",
+     "-1",
+     "-1"
+    ],
+    "point": [
+     "0",
+     "-1",
+     "-1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 5,
+    "normal": [
+     "0",
+     "-1",
+     "1"
+    ],
+    "point": [
+     "0",
+     "-1",
+     "1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 6,
+    "normal": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "point": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 7,
+    "normal": [
+     "0",
+     "1",
+     "1"
+    ],
+    "point": [
+     "0",
+     "1",
+     "1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 8,
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "point": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 9,
+    "normal": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "point": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 10,
+    "normal": [
+     "1",
+     "0",
+     "1"
+    ],
+    "point": [
+     "1",
+     "0",
+     "1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 11,
+    "normal": [
+     "1",
+     "1",
+     "0"
+    ],
+    "point": [
+     "1",
+     "1",
+     "0"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   }
+  ],
+  "TRD": [
+   {
+    "facet": 0,
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "point": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 1,
+    "normal": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "point": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 2,
+    "normal": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "point": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 3,
+    "normal": [
+     "-1",
+     "1",
+     "0"
+    ],
+    "point": [
+     "-1",
+     "1",
+     "0"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 4,
+    "normal": [
+     "0",
+     "-1",
+     "1"
+    ],
+    "point": [
+     "0",
+     "-1",
+     "1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 5,
+    "normal": [
+     "-1",
+     "0",
+     "1"
+    ],
+    "point": [
+     "-1",
+     "0",
+     "1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 6,
+    "normal": [
+     "1",
+     "0",
+     "1"
+    ],
+    "point": [
+     "1",
+     "0",
+     "1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 7,
+    "normal": [
+     "0",
+     "1",
+     "1"
+    ],
+    "point": [
+     "0",
+     "1",
+     "1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 8,
+    "normal": [
+     "1",
+     "1",
+     "0"
+    ],
+    "point": [
+     "1",
+     "1",
+     "0"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 9,
+    "normal": [
+     "-1/3",
+     "-4/3",
+     "-1/3"
+    ],
+    "point": [
+     "-1/3",
+     "-4/3",
+     "-1/3"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 10,
+    "normal": [
+     "-4/3",
+     "-1/3",
+     "-1/3"
+    ],
+    "point": [
+     "-4/3",
+     "-1/3",
+     "-1/3"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 11,
+    "normal": [
+     "-1/3",
+     "-1/3",
+     "-4/3"
+    ],
+    "point": [
+     "-1/3",
+     "-1/3",
+     "-4/3"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   }
+  ],
+  "cube": [
+   {
+    "facet": 0,
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "point": [
+     "1",
+     "0",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -21.333333333333332,
+    "slope_sign": 1
+   },
+   {
+    "facet": 1,
+    "normal": [
+     "-1",
+     "0",
+     "0"
+    ],
+    "point": [
+     "-1",
+     "0",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -21.333333333333332,
+    "slope_sign": 1
+   },
+   {
+    "facet": 2,
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "point": [
+     "0",
+     "1",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -21.333333333333332,
+    "slope_sign": 1
+   },
+   {
+    "facet": 3,
+    "normal": [
+     "0",
+     "0",
+     "-1"
+    ],
+    "point": [
+     "0",
+     "0",
+     "-1"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -21.333333333333332,
+    "slope_sign": 1
+   },
+   {
+    "facet": 4,
+    "normal": [
+     "0",
+     "-1",
+     "0"
+    ],
+    "point": [
+     "0",
+     "-1",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -21.333333333333332,
+    "slope_sign": 1
+   },
+   {
+    "facet": 5,
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "point": [
+     "0",
+     "0",
+     "1"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -21.333333333333332,
+    "slope_sign": 1
+   }
+  ],
+  "TO": [
+   {
+    "facet": 0,
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "point": [
+     "1",
+     "0",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -66.17687074829932,
+    "slope_sign": 1
+   },
+   {
+    "facet": 1,
+    "normal": [
+     "-1",
+     "0",
+     "0"
+    ],
+    "point": [
+     "-1",
+     "0",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -66.17687074829932,
+    "slope_sign": 1
+   },
+   {
+    "facet": 2,
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "point": [
+     "0",
+     "1",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -66.17687074829932,
+    "slope_sign": 1
+   },
+   {
+    "facet": 3,
+    "normal": [
+     "0",
+     "0",
+     "-1"
+    ],
+    "point": [
+     "0",
+     "0",
+     "-1"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -66.17687074829932,
+    "slope_sign": 1
+   },
+   {
+    "facet": 4,
+    "normal": [
+     "0",
+     "-1",
+     "0"
+    ],
+    "point": [
+     "0",
+     "-1",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -66.17687074829932,
+    "slope_sign": 1
+   },
+   {
+    "facet": 5,
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "point": [
+     "0",
+     "0",
+     "1"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -66.17687074829932,
+    "slope_sign": 1
+   },
+   {
+    "facet": 6,
+    "normal": [
+     "-1",
+     "1",
+     "-1"
+    ],
+    "point": [
+     "-1/2",
+     "1/2",
+     "-1/2"
+    ],
+    "planes_through_point": 3,
+    "kind": "pole",
+    "order": -1
+   },
+   {
+    "facet": 7,
+    "normal": [
+     "-1",
+     "1",
+     "1"
+    ],
+    "point": [
+     "-1/2",
+     "1/2",
+     "1/2"
+    ],
+    "planes_through_point": 3,
+    "kind": "pole",
+    "order": -1
+   },
+   {
+    "facet": 8,
+    "normal": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "point": [
+     "-1/2",
+     "-1/2",
+     "-1/2"
+    ],
+    "planes_through_point": 3,
+    "kind": "pole",
+    "order": -1
+   },
+   {
+    "facet": 9,
+    "normal": [
+     "1",
+     "-1",
+     "1"
+    ],
+    "point": [
+     "1/2",
+     "-1/2",
+     "1/2"
+    ],
+    "planes_through_point": 3,
+    "kind": "pole",
+    "order": -1
+   },
+   {
+    "facet": 10,
+    "normal": [
+     "-1",
+     "-1",
+     "1"
+    ],
+    "point": [
+     "-1/2",
+     "-1/2",
+     "1/2"
+    ],
+    "planes_through_point": 3,
+    "kind": "pole",
+    "order": -1
+   },
+   {
+    "facet": 11,
+    "normal": [
+     "1",
+     "-1",
+     "-1"
+    ],
+    "point": [
+     "1/2",
+     "-1/2",
+     "-1/2"
+    ],
+    "planes_through_point": 3,
+    "kind": "pole",
+    "order": -1
+   },
+   {
+    "facet": 12,
+    "normal": [
+     "1",
+     "1",
+     "-1"
+    ],
+    "point": [
+     "1/2",
+     "1/2",
+     "-1/2"
+    ],
+    "planes_through_point": 3,
+    "kind": "pole",
+    "order": -1
+   },
+   {
+    "facet": 13,
+    "normal": [
+     "1",
+     "1",
+     "1"
+    ],
+    "point": [
+     "1/2",
+     "1/2",
+     "1/2"
+    ],
+    "planes_through_point": 3,
+    "kind": "pole",
+    "order": -1
+   }
+  ],
+  "HP": [
+   {
+    "facet": 0,
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "point": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "planes_through_point": 2,
+    "kind": "pole",
+    "order": -1
+   },
+   {
+    "facet": 1,
+    "normal": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "point": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "planes_through_point": 2,
+    "kind": "pole",
+    "order": -1
+   },
+   {
+    "facet": 2,
+    "normal": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "point": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "planes_through_point": 2,
+    "kind": "pole",
+    "order": -1
+   },
+   {
+    "facet": 3,
+    "normal": [
+     "-1",
+     "1",
+     "0"
+    ],
+    "point": [
+     "-1",
+     "1",
+     "0"
+    ],
+    "planes_through_point": 2,
+    "kind": "pole",
+    "order": -1
+   },
+   {
+    "facet": 4,
+    "normal": [
+     "0",
+     "-1",
+     "1"
+    ],
+    "point": [
+     "0",
+     "-1",
+     "1"
+    ],
+    "planes_through_point": 2,
+    "kind": "pole",
+    "order": -1
+   },
+   {
+    "facet": 5,
+    "normal": [
+     "-1",
+     "0",
+     "1"
+    ],
+    "point": [
+     "-1",
+     "0",
+     "1"
+    ],
+    "planes_through_point": 2,
+    "kind": "pole",
+    "order": -1
+   },
+   {
+    "facet": 6,
+    "normal": [
+     "1",
+     "1",
+     "1"
+    ],
+    "point": [
+     "(0+1/3*sqrt6)",
+     "(0+1/3*sqrt6)",
+     "(0+1/3*sqrt6)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -9.797958971132712,
+    "slope_sign": 1
+   },
+   {
+    "facet": 7,
+    "normal": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "point": [
+     "(0-1/3*sqrt6)",
+     "(0-1/3*sqrt6)",
+     "(0-1/3*sqrt6)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -9.797958971132712,
+    "slope_sign": 1
+   }
+  ],
+  "icosahedron": [
+   {
+    "facet": 0,
+    "normal": [
+     "-1",
+     "1",
+     "-1"
+    ],
+    "point": [
+     "(-1-1/3*sqrt5)",
+     "(1+1/3*sqrt5)",
+     "(-1-1/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 1,
+    "normal": [
+     "-1",
+     "1",
+     "1"
+    ],
+    "point": [
+     "(-1-1/3*sqrt5)",
+     "(1+1/3*sqrt5)",
+     "(1+1/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 2,
+    "normal": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "point": [
+     "(-1-1/3*sqrt5)",
+     "(-1-1/3*sqrt5)",
+     "(-1-1/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 3,
+    "normal": [
+     "1",
+     "-1",
+     "1"
+    ],
+    "point": [
+     "(1+1/3*sqrt5)",
+     "(-1-1/3*sqrt5)",
+     "(1+1/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 4,
+    "normal": [
+     "-1",
+     "-1",
+     "1"
+    ],
+    "point": [
+     "(-1-1/3*sqrt5)",
+     "(-1-1/3*sqrt5)",
+     "(1+1/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 5,
+    "normal": [
+     "1",
+     "-1",
+     "-1"
+    ],
+    "point": [
+     "(1+1/3*sqrt5)",
+     "(-1-1/3*sqrt5)",
+     "(-1-1/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 6,
+    "normal": [
+     "1",
+     "1",
+     "-1"
+    ],
+    "point": [
+     "(1+1/3*sqrt5)",
+     "(1+1/3*sqrt5)",
+     "(-1-1/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 7,
+    "normal": [
+     "1",
+     "1",
+     "1"
+    ],
+    "point": [
+     "(1+1/3*sqrt5)",
+     "(1+1/3*sqrt5)",
+     "(1+1/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 8,
+    "normal": [
+     "0",
+     "(1/2+1/2*sqrt5)",
+     "(-1/2+1/2*sqrt5)"
+    ],
+    "point": [
+     "0",
+     "(4/3+2/3*sqrt5)",
+     "(1/3+1/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 9,
+    "normal": [
+     "(1/2+1/2*sqrt5)",
+     "(-1/2+1/2*sqrt5)",
+     "0"
+    ],
+    "point": [
+     "(4/3+2/3*sqrt5)",
+     "(1/3+1/3*sqrt5)",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 10,
+    "normal": [
+     "(-1/2+1/2*sqrt5)",
+     "0",
+     "(1/2+1/2*sqrt5)"
+    ],
+    "point": [
+     "(1/3+1/3*sqrt5)",
+     "0",
+     "(4/3+2/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 11,
+    "normal": [
+     "0",
+     "(1/2+1/2*sqrt5)",
+     "(1/2-1/2*sqrt5)"
+    ],
+    "point": [
+     "0",
+     "(4/3+2/3*sqrt5)",
+     "(-1/3-1/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 12,
+    "normal": [
+     "(1/2+1/2*sqrt5)",
+     "(1/2-1/2*sqrt5)",
+     "0"
+    ],
+    "point": [
+     "(4/3+2/3*sqrt5)",
+     "(-1/3-1/3*sqrt5)",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 13,
+    "normal": [
+     "(1/2-1/2*sqrt5)",
+     "0",
+     "(1/2+1/2*sqrt5)"
+    ],
+    "point": [
+     "(-1/3-1/3*sqrt5)",
+     "0",
+     "(4/3+2/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 14,
+    "normal": [
+     "0",
+     "(-1/2-1/2*sqrt5)",
+     "(-1/2+1/2*sqrt5)"
+    ],
+    "point": [
+     "0",
+     "(-4/3-2/3*sqrt5)",
+     "(1/3+1/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 15,
+    "normal": [
+     "(-1/2-1/2*sqrt5)",
+     "(-1/2+1/2*sqrt5)",
+     "0"
+    ],
+    "point": [
+     "(-4/3-2/3*sqrt5)",
+     "(1/3+1/3*sqrt5)",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 16,
+    "normal": [
+     "(-1/2+1/2*sqrt5)",
+     "0",
+     "(-1/2-1/2*sqrt5)"
+    ],
+    "point": [
+     "(1/3+1/3*sqrt5)",
+     "0",
+     "(-4/3-2/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 17,
+    "normal": [
+     "0",
+     "(-1/2-1/2*sqrt5)",
+     "(1/2-1/2*sqrt5)"
+    ],
+    "point": [
+     "0",
+     "(-4/3-2/3*sqrt5)",
+     "(-1/3-1/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 18,
+    "normal": [
+     "(-1/2-1/2*sqrt5)",
+     "(1/2-1/2*sqrt5)",
+     "0"
+    ],
+    "point": [
+     "(-4/3-2/3*sqrt5)",
+     "(-1/3-1/3*sqrt5)",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   },
+   {
+    "facet": 19,
+    "normal": [
+     "(1/2-1/2*sqrt5)",
+     "0",
+     "(-1/2-1/2*sqrt5)"
+    ],
+    "point": [
+     "(-1/3-1/3*sqrt5)",
+     "0",
+     "(-4/3-2/3*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -1.0738960274886153,
+    "slope_sign": -1
+   }
+  ],
+  "dodecahedron": [
+   {
+    "facet": 0,
+    "normal": [
+     "0",
+     "1",
+     "(1/2+1/2*sqrt5)"
+    ],
+    "point": [
+     "0",
+     "(1+1/5*sqrt5)",
+     "(1+3/5*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -57.81717224974045,
+    "slope_sign": -1
+   },
+   {
+    "facet": 1,
+    "normal": [
+     "1",
+     "(1/2+1/2*sqrt5)",
+     "0"
+    ],
+    "point": [
+     "(1+1/5*sqrt5)",
+     "(1+3/5*sqrt5)",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -57.81717224974045,
+    "slope_sign": -1
+   },
+   {
+    "facet": 2,
+    "normal": [
+     "(1/2+1/2*sqrt5)",
+     "0",
+     "1"
+    ],
+    "point": [
+     "(1+3/5*sqrt5)",
+     "0",
+     "(1+1/5*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -57.81717224974045,
+    "slope_sign": -1
+   },
+   {
+    "facet": 3,
+    "normal": [
+     "0",
+     "1",
+     "(-1/2-1/2*sqrt5)"
+    ],
+    "point": [
+     "0",
+     "(1+1/5*sqrt5)",
+     "(-1-3/5*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -57.81717224974045,
+    "slope_sign": -1
+   },
+   {
+    "facet": 4,
+    "normal": [
+     "1",
+     "(-1/2-1/2*sqrt5)",
+     "0"
+    ],
+    "point": [
+     "(1+1/5*sqrt5)",
+     "(-1-3/5*sqrt5)",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -57.81717224974045,
+    "slope_sign": -1
+   },
+   {
+    "facet": 5,
+    "normal": [
+     "(-1/2-1/2*sqrt5)",
+     "0",
+     "1"
+    ],
+    "point": [
+     "(-1-3/5*sqrt5)",
+     "0",
+     "(1+1/5*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -57.81717224974045,
+    "slope_sign": -1
+   },
+   {
+    "facet": 6,
+    "normal": [
+     "0",
+     "-1",
+     "(1/2+1/2*sqrt5)"
+    ],
+    "point": [
+     "0",
+     "(-1-1/5*sqrt5)",
+     "(1+3/5*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -57.81717224974045,
+    "slope_sign": -1
+   },
+   {
+    "facet": 7,
+    "normal": [
+     "-1",
+     "(1/2+1/2*sqrt5)",
+     "0"
+    ],
+    "point": [
+     "(-1-1/5*sqrt5)",
+     "(1+3/5*sqrt5)",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -57.81717224974045,
+    "slope_sign": -1
+   },
+   {
+    "facet": 8,
+    "normal": [
+     "(1/2+1/2*sqrt5)",
+     "0",
+     "-1"
+    ],
+    "point": [
+     "(1+3/5*sqrt5)",
+     "0",
+     "(-1-1/5*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -57.81717224974045,
+    "slope_sign": -1
+   },
+   {
+    "facet": 9,
+    "normal": [
+     "0",
+     "-1",
+     "(-1/2-1/2*sqrt5)"
+    ],
+    "point": [
+     "0",
+     "(-1-1/5*sqrt5)",
+     "(-1-3/5*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -57.81717224974045,
+    "slope_sign": -1
+   },
+   {
+    "facet": 10,
+    "normal": [
+     "-1",
+     "(-1/2-1/2*sqrt5)",
+     "0"
+    ],
+    "point": [
+     "(-1-1/5*sqrt5)",
+     "(-1-3/5*sqrt5)",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -57.81717224974045,
+    "slope_sign": -1
+   },
+   {
+    "facet": 11,
+    "normal": [
+     "(-1/2-1/2*sqrt5)",
+     "0",
+     "-1"
+    ],
+    "point": [
+     "(-1-3/5*sqrt5)",
+     "0",
+     "(-1-1/5*sqrt5)"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -57.81717224974045,
+    "slope_sign": -1
+   }
+  ],
+  "RD-perturbed": [
+   {
+    "facet": 0,
+    "normal": [
+     "-1",
+     "-1",
+     "0"
+    ],
+    "point": [
+     "-1",
+     "-1",
+     "0"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 1,
+    "normal": [
+     "-1",
+     "0",
+     "-1"
+    ],
+    "point": [
+     "-1",
+     "0",
+     "-1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 2,
+    "normal": [
+     "-1",
+     "0",
+     "1"
+    ],
+    "point": [
+     "-1",
+     "0",
+     "1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 3,
+    "normal": [
+     "-1",
+     "1",
+     "0"
+    ],
+    "point": [
+     "-1",
+     "1",
+     "0"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 4,
+    "normal": [
+     "0",
+     "-1",
+     "-1"
+    ],
+    "point": [
+     "0",
+     "-1",
+     "-1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 5,
+    "normal": [
+     "0",
+     "-1",
+     "1"
+    ],
+    "point": [
+     "0",
+     "-1",
+     "1"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 6,
+    "normal": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "point": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "planes_through_point": 3,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 7,
+    "normal": [
+     "0",
+     "1",
+     "1"
+    ],
+    "point": [
+     "0",
+     "1",
+     "1"
+    ],
+    "planes_through_point": 3,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 8,
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "point": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "planes_through_point": 4,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 9,
+    "normal": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "point": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "planes_through_point": 3,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 10,
+    "normal": [
+     "1",
+     "0",
+     "1"
+    ],
+    "point": [
+     "1",
+     "0",
+     "1"
+    ],
+    "planes_through_point": 3,
+    "kind": "pole",
+    "order": -2
+   },
+   {
+    "facet": 11,
+    "normal": [
+     "1",
+     "1",
+     "0"
+    ],
+    "point": [
+     "21/20",
+     "21/20",
+     "0"
+    ],
+    "planes_through_point": 0,
+    "kind": "regular",
+    "value": -762.6504229524705,
+    "slope_sign": 1
+   }
+  ]
+ },
+ "T3_explore": {
+  "RD": [
+   {
+    "facet": 0,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 1,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 2,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 3,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 4,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 5,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 6,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 7,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 8,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 9,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 10,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 11,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   }
+  ],
+  "TRD": [
+   {
+    "facet": 0,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 1,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 2,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 3,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 4,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 5,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1622
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6623
+    ]
+   },
+   {
+    "facet": 6,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     2.785
+    ],
+    "crit_s_over_s0": [
+     1.451,
+     3.1834
+    ]
+   },
+   {
+    "facet": 7,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     2.785
+    ],
+    "crit_s_over_s0": [
+     1.451,
+     3.1834
+    ]
+   },
+   {
+    "facet": 8,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     2.785
+    ],
+    "crit_s_over_s0": [
+     1.451,
+     3.1834
+    ]
+   },
+   {
+    "facet": 9,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     2.785
+    ],
+    "crit_s_over_s0": [
+     1.451,
+     3.1834
+    ]
+   },
+   {
+    "facet": 10,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     2.785
+    ],
+    "crit_s_over_s0": [
+     1.451,
+     3.1834
+    ]
+   },
+   {
+    "facet": 11,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     2.785
+    ],
+    "crit_s_over_s0": [
+     1.451,
+     3.1834
+    ]
+   }
+  ],
+  "cube": [
+   {
+    "facet": 0,
+    "poles_s_over_s0": [],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": []
+   },
+   {
+    "facet": 1,
+    "poles_s_over_s0": [],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": []
+   },
+   {
+    "facet": 2,
+    "poles_s_over_s0": [],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": []
+   },
+   {
+    "facet": 3,
+    "poles_s_over_s0": [],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": []
+   },
+   {
+    "facet": 4,
+    "poles_s_over_s0": [],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": []
+   },
+   {
+    "facet": 5,
+    "poles_s_over_s0": [],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": []
+   }
+  ],
+  "TO": [
+   {
+    "facet": 0,
+    "poles_s_over_s0": [
+     1.5
+    ],
+    "zeros_s_over_s0": [
+     3.6742
+    ],
+    "crit_s_over_s0": [
+     1.1943,
+     4.3958
+    ]
+   },
+   {
+    "facet": 1,
+    "poles_s_over_s0": [
+     1.5
+    ],
+    "zeros_s_over_s0": [
+     3.6742
+    ],
+    "crit_s_over_s0": [
+     1.1943,
+     4.3958
+    ]
+   },
+   {
+    "facet": 2,
+    "poles_s_over_s0": [
+     1.5
+    ],
+    "zeros_s_over_s0": [
+     3.6742
+    ],
+    "crit_s_over_s0": [
+     1.1943,
+     4.3958
+    ]
+   },
+   {
+    "facet": 3,
+    "poles_s_over_s0": [
+     1.5
+    ],
+    "zeros_s_over_s0": [
+     3.6742
+    ],
+    "crit_s_over_s0": [
+     1.1943,
+     4.3958
+    ]
+   },
+   {
+    "facet": 4,
+    "poles_s_over_s0": [
+     1.5
+    ],
+    "zeros_s_over_s0": [
+     3.6742
+    ],
+    "crit_s_over_s0": [
+     1.1943,
+     4.3958
+    ]
+   },
+   {
+    "facet": 5,
+    "poles_s_over_s0": [
+     1.5
+    ],
+    "zeros_s_over_s0": [
+     3.6742
+    ],
+    "crit_s_over_s0": [
+     1.1943,
+     4.3958
+    ]
+   },
+   {
+    "facet": 6,
+    "poles_s_over_s0": [
+     2.0,
+     3.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5275,
+     2.6458
+    ]
+   },
+   {
+    "facet": 7,
+    "poles_s_over_s0": [
+     2.0,
+     3.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5275,
+     2.6458
+    ]
+   },
+   {
+    "facet": 8,
+    "poles_s_over_s0": [
+     2.0,
+     3.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5275,
+     2.6458
+    ]
+   },
+   {
+    "facet": 9,
+    "poles_s_over_s0": [
+     2.0,
+     3.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5275,
+     2.6458
+    ]
+   },
+   {
+    "facet": 10,
+    "poles_s_over_s0": [
+     2.0,
+     3.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5275,
+     2.6458
+    ]
+   },
+   {
+    "facet": 11,
+    "poles_s_over_s0": [
+     2.0,
+     3.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5275,
+     2.6458
+    ]
+   },
+   {
+    "facet": 12,
+    "poles_s_over_s0": [
+     2.0,
+     3.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5275,
+     2.6458
+    ]
+   },
+   {
+    "facet": 13,
+    "poles_s_over_s0": [
+     2.0,
+     3.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5275,
+     2.6458
+    ]
+   }
+  ],
+  "HP": [
+   {
+    "facet": 0,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5811
+    ]
+   },
+   {
+    "facet": 1,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5811
+    ]
+   },
+   {
+    "facet": 2,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5811
+    ]
+   },
+   {
+    "facet": 3,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5811
+    ]
+   },
+   {
+    "facet": 4,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5811
+    ]
+   },
+   {
+    "facet": 5,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5811
+    ]
+   },
+   {
+    "facet": 6,
+    "poles_s_over_s0": [],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": []
+   },
+   {
+    "facet": 7,
+    "poles_s_over_s0": [],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": []
+   }
+  ],
+  "icosahedron": [
+   {
+    "facet": 0,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 1,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 2,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 3,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 4,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 5,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 6,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 7,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 8,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 9,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 10,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 11,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 12,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 13,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 14,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 15,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 16,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 17,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 18,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   },
+   {
+    "facet": 19,
+    "poles_s_over_s0": [
+     1.341640786,
+     3.0
+    ],
+    "zeros_s_over_s0": [
+     1.8278
+    ],
+    "crit_s_over_s0": [
+     1.1897
+    ]
+   }
+  ],
+  "dodecahedron": [
+   {
+    "facet": 0,
+    "poles_s_over_s0": [
+     2.236067977
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5112
+    ]
+   },
+   {
+    "facet": 1,
+    "poles_s_over_s0": [
+     2.236067977
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5112
+    ]
+   },
+   {
+    "facet": 2,
+    "poles_s_over_s0": [
+     2.236067977
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5112
+    ]
+   },
+   {
+    "facet": 3,
+    "poles_s_over_s0": [
+     2.236067977
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5112
+    ]
+   },
+   {
+    "facet": 4,
+    "poles_s_over_s0": [
+     2.236067977
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5112
+    ]
+   },
+   {
+    "facet": 5,
+    "poles_s_over_s0": [
+     2.236067977
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5112
+    ]
+   },
+   {
+    "facet": 6,
+    "poles_s_over_s0": [
+     2.236067977
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5112
+    ]
+   },
+   {
+    "facet": 7,
+    "poles_s_over_s0": [
+     2.236067977
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5112
+    ]
+   },
+   {
+    "facet": 8,
+    "poles_s_over_s0": [
+     2.236067977
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5112
+    ]
+   },
+   {
+    "facet": 9,
+    "poles_s_over_s0": [
+     2.236067977
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5112
+    ]
+   },
+   {
+    "facet": 10,
+    "poles_s_over_s0": [
+     2.236067977
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5112
+    ]
+   },
+   {
+    "facet": 11,
+    "poles_s_over_s0": [
+     2.236067977
+    ],
+    "zeros_s_over_s0": [],
+    "crit_s_over_s0": [
+     1.5112
+    ]
+   }
+  ],
+  "RD-perturbed": [
+   {
+    "facet": 0,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.165
+    ],
+    "crit_s_over_s0": [
+     1.4449,
+     3.6652
+    ]
+   },
+   {
+    "facet": 1,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1387
+    ],
+    "crit_s_over_s0": [
+     1.4447,
+     3.6337
+    ]
+   },
+   {
+    "facet": 2,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1387
+    ],
+    "crit_s_over_s0": [
+     1.4447,
+     3.6337
+    ]
+   },
+   {
+    "facet": 3,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.3086
+    ],
+    "crit_s_over_s0": [
+     1.4415,
+     3.8527
+    ]
+   },
+   {
+    "facet": 4,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1387
+    ],
+    "crit_s_over_s0": [
+     1.4447,
+     3.6337
+    ]
+   },
+   {
+    "facet": 5,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.1387
+    ],
+    "crit_s_over_s0": [
+     1.4447,
+     3.6337
+    ]
+   },
+   {
+    "facet": 6,
+    "poles_s_over_s0": [
+     2.0,
+     2.1
+    ],
+    "zeros_s_over_s0": [
+     2.0493,
+     3.1757
+    ],
+    "crit_s_over_s0": [
+     1.4565,
+     3.6716
+    ]
+   },
+   {
+    "facet": 7,
+    "poles_s_over_s0": [
+     2.0,
+     2.1
+    ],
+    "zeros_s_over_s0": [
+     2.0493,
+     3.1757
+    ],
+    "crit_s_over_s0": [
+     1.4565,
+     3.6716
+    ]
+   },
+   {
+    "facet": 8,
+    "poles_s_over_s0": [
+     2.0
+    ],
+    "zeros_s_over_s0": [
+     3.3086
+    ],
+    "crit_s_over_s0": [
+     1.4415,
+     3.8527
+    ]
+   },
+   {
+    "facet": 9,
+    "poles_s_over_s0": [
+     2.0,
+     2.1
+    ],
+    "zeros_s_over_s0": [
+     2.0493,
+     3.1757
+    ],
+    "crit_s_over_s0": [
+     1.4565,
+     3.6716
+    ]
+   },
+   {
+    "facet": 10,
+    "poles_s_over_s0": [
+     2.0,
+     2.1
+    ],
+    "zeros_s_over_s0": [
+     2.0493,
+     3.1757
+    ],
+    "crit_s_over_s0": [
+     1.4565,
+     3.6716
+    ]
+   },
+   {
+    "facet": 11,
+    "poles_s_over_s0": [
+     1.904761905
+    ],
+    "zeros_s_over_s0": [
+     3.2096
+    ],
+    "crit_s_over_s0": [
+     1.3925,
+     3.7442
+    ]
+   }
+  ]
+ },
+ "T1_incidence": {
+  "RD": {
+   "fcc": {
+    "lambda3": "1",
+    "planes_hit": 12,
+    "decided": true,
+    "reason": "",
+    "incident": true
+   },
+   "hcp": {
+    "lambda3": "1",
+    "planes_hit": 12,
+    "decided": true,
+    "reason": "",
+    "incident": true
+   },
+   "dhcp": {
+    "lambda3": "1",
+    "planes_hit": 12,
+    "decided": true,
+    "reason": "",
+    "incident": true
+   },
+   "bcc": {
+    "lambda3": "4",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sc": {
+    "lambda3": "2",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sh": {
+    "lambda3": "sqrt(6)/3",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   }
+  },
+  "TRD": {
+   "fcc": {
+    "lambda3": "1",
+    "planes_hit": 12,
+    "decided": true,
+    "reason": "",
+    "incident": true
+   },
+   "hcp": {
+    "lambda3": "1",
+    "planes_hit": 12,
+    "decided": true,
+    "reason": "",
+    "incident": true
+   },
+   "dhcp": {
+    "lambda3": "1",
+    "planes_hit": 12,
+    "decided": true,
+    "reason": "",
+    "incident": true
+   },
+   "bcc": {
+    "lambda3": "4",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sc": {
+    "lambda3": "2",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sh": {
+    "lambda3": "sqrt(6)/3",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   }
+  },
+  "cube": {
+   "fcc": {
+    "lambda3": "1/2",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "hcp": {
+    "lambda3": "1/2",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "dhcp": {
+    "lambda3": "1/2",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "bcc": {
+    "lambda3": "2",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sc": {
+    "lambda3": "1",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "",
+    "incident": false
+   },
+   "sh": {
+    "lambda3": "sqrt(6)/6",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   }
+  },
+  "TO": {
+   "fcc": {
+    "lambda3": "1/4",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "hcp": {
+    "lambda3": "1/4",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "dhcp": {
+    "lambda3": "1/4",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "bcc": {
+    "lambda3": "1",
+    "planes_hit": 6,
+    "decided": true,
+    "reason": "",
+    "incident": true
+   },
+   "sc": {
+    "lambda3": "1/2",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sh": {
+    "lambda3": "sqrt(6)/12",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   }
+  },
+  "HP": {
+   "fcc": {
+    "lambda3": "sqrt(6)/2",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "hcp": {
+    "lambda3": "sqrt(6)/2",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "dhcp": {
+    "lambda3": "sqrt(6)/2",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "bcc": {
+    "lambda3": "2*sqrt(6)",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sc": {
+    "lambda3": "sqrt(6)",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sh": {
+    "lambda3": "1",
+    "planes_hit": 6,
+    "decided": true,
+    "reason": "",
+    "incident": true
+   }
+  },
+  "icosahedron": {
+   "fcc": {
+    "lambda3": "5*sqrt(5)/3 + 5",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "hcp": {
+    "lambda3": "5*sqrt(5)/3 + 5",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "dhcp": {
+    "lambda3": "5*sqrt(5)/3 + 5",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "bcc": {
+    "lambda3": "20*sqrt(5)/3 + 20",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sc": {
+    "lambda3": "10*sqrt(5)/3 + 10",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sh": {
+    "lambda3": "sqrt(6)*(10*sqrt(5)/3 + 10)/6",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 12 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   }
+  },
+  "dodecahedron": {
+   "fcc": {
+    "lambda3": "sqrt(5) + 5",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "hcp": {
+    "lambda3": "sqrt(5) + 5",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "dhcp": {
+    "lambda3": "sqrt(5) + 5",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "bcc": {
+    "lambda3": "4*sqrt(5) + 20",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sc": {
+    "lambda3": "2*sqrt(5) + 10",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sh": {
+    "lambda3": "sqrt(6)*(2*sqrt(5) + 10)/6",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 12 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   }
+  },
+  "RD-perturbed": {
+   "fcc": {
+    "lambda3": "97141/96000",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "hcp": {
+    "lambda3": "97141/96000",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "dhcp": {
+    "lambda3": "97141/96000",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "bcc": {
+    "lambda3": "97141/24000",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sc": {
+    "lambda3": "97141/48000",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 3 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   },
+   "sh": {
+    "lambda3": "97141*sqrt(6)/288000",
+    "planes_hit": 0,
+    "decided": true,
+    "reason": "b/lambda has degree 6 (not in Q(sqrt2,sqrt3,sqrt5))",
+    "incident": false
+   }
+  }
+ },
+ "T1_sums": {
+  "icosahedron": {
+   "hcp": {
+    "P": "icosahedron",
+    "L": "hcp",
+    "n_points": 7164,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.003294656363599824,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -134.24596711235444,
+     -311.9599086672706,
+     -318.5954379943833,
+     -326.1356465575908
+    ],
+    "E_deleted": [
+     [
+      -134.24596711235444,
+      8.898069568692711e-10
+     ],
+     [
+      -311.9599086672706,
+      3.4338299744794534e-08
+     ],
+     [
+      -318.5954379943833,
+      3.855314597762236e-08
+     ],
+     [
+      -326.1356465575908,
+      4.065080545451471e-08
+     ]
+    ],
+    "rand": [
+     [
+      1240.7219727891468,
+      0,
+      0.00016151754890891823
+     ],
+     [
+      397.4480537552397,
+      0,
+      5.9606902202524736e-05
+     ]
+    ],
+    "secs": 1.356978178024292,
+    "E_deleted_inf": -326.1356465575908,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "fcc": {
+    "P": "icosahedron",
+    "L": "fcc",
+    "n_points": 7154,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.04153932587714371,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -16.583442452556287,
+     -16.845933016335692,
+     -18.834153201875715,
+     -19.401390521226983
+    ],
+    "E_deleted": [
+     [
+      -16.583442452556287,
+      1.9135347350525836e-10
+     ],
+     [
+      -16.845933016335692,
+      2.4625159061057184e-10
+     ],
+     [
+      -18.834153201875715,
+      3.8970306329328193e-10
+     ],
+     [
+      -19.401390521226983,
+      6.151070974266212e-10
+     ]
+    ],
+    "rand": [
+     [
+      126.01435306252291,
+      0,
+      8.594110269699584e-05
+     ],
+     [
+      -857.3652613199268,
+      0,
+      0.00014195049746668076
+     ]
+    ],
+    "secs": 1.356978416442871,
+    "E_deleted_inf": -19.401390521226983,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "dhcp": {
+    "P": "icosahedron",
+    "L": "dhcp",
+    "n_points": 7164,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.003294656363599824,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -28.78239016911491,
+     -195.49838865619037,
+     -201.16901071162718,
+     -198.9373215160591
+    ],
+    "E_deleted": [
+     [
+      -28.78239016911491,
+      7.579139903151914e-10
+     ],
+     [
+      -195.49838865619037,
+      3.424240769246635e-08
+     ],
+     [
+      -201.16901071162718,
+      3.612624198101428e-08
+     ],
+     [
+      -198.9373215160591,
+      3.7065158898052923e-08
+     ]
+    ],
+    "rand": [
+     [
+      1810.320884592037,
+      0,
+      0.00010561237432860082
+     ],
+     [
+      -3741.006593373668,
+      0,
+      5.6690445596530026e-05
+     ]
+    ],
+    "secs": 1.2062184810638428,
+    "E_deleted_inf": -198.9373215160591,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "bcc": {
+    "P": "icosahedron",
+    "L": "bcc",
+    "n_points": 7238,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.12137407946536749,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     8.087824678913858,
+     10.715953481741947,
+     11.248868832122916,
+     11.55665229529117
+    ],
+    "E_deleted": [
+     [
+      8.087824678913858,
+      1.090686465118253e-10
+     ],
+     [
+      10.715953481741947,
+      1.815636451713759e-10
+     ],
+     [
+      11.248868832122916,
+      2.596309019732193e-10
+     ],
+     [
+      11.55665229529117,
+      3.243017109225e-10
+     ]
+    ],
+    "rand": [
+     [
+      -204.05957644503982,
+      0,
+      0.00014481725696757763
+     ],
+     [
+      -139.85264636596045,
+      0,
+      0.0002648973374856922
+     ]
+    ],
+    "secs": 1.3008661270141602,
+    "E_deleted_inf": 11.55665229529117,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sc": {
+    "P": "icosahedron",
+    "L": "sc",
+    "n_points": 7152,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.02408554197955759,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -10775.501322619151,
+     -10740.222862793686,
+     -10700.959831425764,
+     -10718.671642543948
+    ],
+    "E_deleted": [
+     [
+      -10775.501322619151,
+      2.3194861200581036e-07
+     ],
+     [
+      -10740.222862793686,
+      2.9582424907878806e-07
+     ],
+     [
+      -10700.959831425764,
+      3.322495143425448e-07
+     ],
+     [
+      -10718.671642543948,
+      3.70058371031169e-07
+     ]
+    ],
+    "rand": [
+     [
+      -589674.4644280435,
+      0,
+      2.280498547646559e-05
+     ],
+     [
+      -50.985351785814984,
+      0,
+      0.00016007315770272257
+     ]
+    ],
+    "secs": 1.2344183921813965,
+    "E_deleted_inf": -10718.671642543948,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sh": {
+    "P": "icosahedron",
+    "L": "sh",
+    "n_points": 7252,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.0015164663184679128,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     35.81594575782081,
+     29.440985231417258,
+     81.58017440162712,
+     78.12808402581868
+    ],
+    "E_deleted": [
+     [
+      35.81594575782081,
+      7.509663856748205e-10
+     ],
+     [
+      29.440985231417258,
+      1.1609333774869447e-09
+     ],
+     [
+      81.58017440162712,
+      2.4262352698534687e-08
+     ],
+     [
+      78.12808402581868,
+      4.141401842051803e-08
+     ]
+    ],
+    "rand": [
+     [
+      66.83176101556333,
+      0,
+      0.0002726845059437544
+     ],
+     [
+      4624.719176725845,
+      0,
+      0.00030381732993989274
+     ]
+    ],
+    "secs": 1.2068538665771484,
+    "E_deleted_inf": 78.12808402581868,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   }
+  },
+  "TO": {
+   "fcc": {
+    "P": "TO",
+    "L": "fcc",
+    "n_points": 7154,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.12996052494743626,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -596.7141368158074,
+     -614.5295975172357,
+     -622.9935805616083,
+     -630.3971337011676
+    ],
+    "E_deleted": [
+     [
+      -596.7141368158074,
+      6.351321276530145e-10
+     ],
+     [
+      -614.5295975172357,
+      9.374174174152621e-10
+     ],
+     [
+      -622.9935805616083,
+      1.3098677254601062e-09
+     ],
+     [
+      -630.3971337011676,
+      1.7526490841005446e-09
+     ]
+    ],
+    "rand": [
+     [
+      -5790385.791663212,
+      0,
+      8.733000556815362e-06
+     ],
+     [
+      -2048.68240782037,
+      0,
+      5.857305770967658e-05
+     ]
+    ],
+    "secs": 0.7709529399871826,
+    "E_deleted_inf": -630.3971337011676,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "hcp": {
+    "P": "TO",
+    "L": "hcp",
+    "n_points": 7164,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.08002631670170846,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -122.90162213687344,
+     -140.78780469970306,
+     -147.26766690588678,
+     -150.24629850479266
+    ],
+    "E_deleted": [
+     [
+      -122.90162213687344,
+      2.0611493265814645e-09
+     ],
+     [
+      -140.78780469970306,
+      2.8266106852943916e-09
+     ],
+     [
+      -147.26766690588678,
+      3.974499211197689e-09
+     ],
+     [
+      -150.24629850479266,
+      5.294948165546355e-09
+     ]
+    ],
+    "rand": [
+     [
+      1112.9251857726204,
+      0,
+      4.21307341050281e-05
+     ],
+     [
+      71655.9270276747,
+      0,
+      6.491908172456817e-05
+     ]
+    ],
+    "secs": 0.756140947341919,
+    "E_deleted_inf": -150.24629850479266,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "dhcp": {
+    "P": "TO",
+    "L": "dhcp",
+    "n_points": 7164,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.0800263167017084,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -433.091921816176,
+     -442.21034541790175,
+     -444.0480562205748,
+     -450.40079882766514
+    ],
+    "E_deleted": [
+     [
+      -433.091921816176,
+      1.7782148745786293e-09
+     ],
+     [
+      -442.21034541790175,
+      2.549075197129236e-09
+     ],
+     [
+      -444.0480562205748,
+      3.657561143974631e-09
+     ],
+     [
+      -450.40079882766514,
+      4.75867290675937e-09
+     ]
+    ],
+    "rand": [
+     [
+      2142.8683281612584,
+      0,
+      2.994468883521506e-05
+     ],
+     [
+      1812.6710254970005,
+      0,
+      1.7076514752578653e-05
+     ]
+    ],
+    "secs": 0.7417495250701904,
+    "E_deleted_inf": -450.40079882766514,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "bcc": {
+    "P": "TO",
+    "L": "bcc",
+    "n_points": 7238,
+    "on_plane_within_R": 1448,
+    "min_abs_f_offplane": 0.25,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "E_deleted": [
+     [
+      -591.0841532660562,
+      5.017234621615055e-10
+     ],
+     [
+      -605.6458443993525,
+      7.565409498524017e-10
+     ],
+     [
+      -618.2132484853946,
+      1.160966020425155e-09
+     ],
+     [
+      -623.277498980004,
+      1.5913126075488908e-09
+     ]
+    ],
+    "rand": [
+     [
+      -1519.800855927462,
+      0,
+      1.7897504231978445e-05
+     ],
+     [
+      -1665.6563694827585,
+      0,
+      9.233594913560239e-06
+     ]
+    ],
+    "secs": 0.7990555763244629,
+    "E_deleted_inf": -623.277498980004,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sc": {
+    "P": "TO",
+    "L": "sc",
+    "n_points": 7152,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.04370052598409924,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -46030.498751979125,
+     -46851.58877047058,
+     -47140.73482362794,
+     -47336.20930330645
+    ],
+    "E_deleted": [
+     [
+      -46030.498751979125,
+      5.598582796385997e-08
+     ],
+     [
+      -46851.58877047058,
+      7.957324593815906e-08
+     ],
+     [
+      -47140.73482362794,
+      1.0117938393851566e-07
+     ],
+     [
+      -47336.20930330645,
+      1.274447265604883e-07
+     ]
+    ],
+    "rand": [
+     [
+      2013.9496572603803,
+      0,
+      4.1155228946765376e-05
+     ],
+     [
+      -2666.4141907327826,
+      0,
+      4.253993913738707e-05
+     ]
+    ],
+    "secs": 0.7041945457458496,
+    "E_deleted_inf": -47336.20930330645,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sh": {
+    "P": "TO",
+    "L": "sh",
+    "n_points": 7252,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.004592415923935,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -3766.7384609556475,
+     -3723.4575318934403,
+     -3693.6103141785197,
+     -3677.047773142044
+    ],
+    "E_deleted": [
+     [
+      -3766.7384609556475,
+      8.40407593324429e-08
+     ],
+     [
+      -3723.4575318934403,
+      1.0053351220072816e-07
+     ],
+     [
+      -3693.6103141785197,
+      1.1679917601158524e-07
+     ],
+     [
+      -3677.047773142044,
+      1.282522319860113e-07
+     ]
+    ],
+    "rand": [
+     [
+      -15214.568041311475,
+      0,
+      6.429286807829726e-05
+     ],
+     [
+      -140.45037126201038,
+      0,
+      2.0277776435762007e-06
+     ]
+    ],
+    "secs": 0.7207345962524414,
+    "E_deleted_inf": -3677.047773142044,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   }
+  },
+  "RD": {
+   "fcc": {
+    "P": "RD",
+    "L": "fcc",
+    "n_points": 7154,
+    "on_plane_within_R": 2388,
+    "min_abs_f_offplane": 1.0,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "E_deleted": [
+     [
+      -6.416324814207651,
+      1.7892489546947277e-11
+     ],
+     [
+      -6.28719687008947,
+      2.7528488466334102e-11
+     ],
+     [
+      -6.9252756140553196,
+      4.157959745787738e-11
+     ],
+     [
+      -7.2137903373294305,
+      5.769215359743952e-11
+     ]
+    ],
+    "rand": [
+     [
+      -923.6309953576849,
+      0,
+      0.00012925021887699728
+     ],
+     [
+      53612.922494680955,
+      0,
+      1.523039525608283e-06
+     ]
+    ],
+    "secs": 0.5848298072814941,
+    "E_deleted_inf": -7.2137903373294305,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "hcp": {
+    "P": "RD",
+    "L": "hcp",
+    "n_points": 7164,
+    "on_plane_within_R": 1788,
+    "min_abs_f_offplane": 0.33333333333333215,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "E_deleted": [
+     [
+      -33.65808156073165,
+      4.4541809381363026e-11
+     ],
+     [
+      -36.46333227977116,
+      7.446745438212903e-11
+     ],
+     [
+      -37.5737120118115,
+      1.0753778906052443e-10
+     ],
+     [
+      -38.199749145997394,
+      1.4408168113902504e-10
+     ]
+    ],
+    "rand": [
+     [
+      1169.8864285760365,
+      0,
+      6.426439113926818e-05
+     ],
+     [
+      -234.4024988286104,
+      0,
+      2.5151980922899497e-05
+     ]
+    ],
+    "secs": 0.5804378986358643,
+    "E_deleted_inf": -38.199749145997394,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "dhcp": {
+    "P": "RD",
+    "L": "dhcp",
+    "n_points": 7164,
+    "on_plane_within_R": 1776,
+    "min_abs_f_offplane": 0.33333333333333215,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "E_deleted": [
+     [
+      -14.37346140869158,
+      3.6917565586378155e-11
+     ],
+     [
+      -16.538794430425778,
+      6.396025324518509e-11
+     ],
+     [
+      -17.969400012543456,
+      9.364321942526348e-11
+     ],
+     [
+      -18.559843251974133,
+      1.2495687495393293e-10
+     ]
+    ],
+    "rand": [
+     [
+      452.49484840067606,
+      0,
+      0.00011938131657984741
+     ],
+     [
+      349.27536701792997,
+      0,
+      5.488347060556009e-05
+     ]
+    ],
+    "secs": 0.6519222259521484,
+    "E_deleted_inf": -18.559843251974133,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "bcc": {
+    "P": "RD",
+    "L": "bcc",
+    "n_points": 7238,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.5874010519681967,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -131.52195470995835,
+     -135.16499436112977,
+     -137.34367675306285,
+     -138.32577744513765
+    ],
+    "E_deleted": [
+     [
+      -131.52195470995835,
+      9.455721670661487e-11
+     ],
+     [
+      -135.16499436112977,
+      1.4331093735720865e-10
+     ],
+     [
+      -137.34367675306285,
+      2.1132306788024884e-10
+     ],
+     [
+      -138.32577744513765,
+      2.9010589657067284e-10
+     ]
+    ],
+    "rand": [
+     [
+      226.49314088189436,
+      0,
+      1.7889781778634983e-05
+     ],
+     [
+      -1783.1353404058073,
+      0,
+      3.083453761121291e-05
+     ]
+    ],
+    "secs": 0.6591224670410156,
+    "E_deleted_inf": -138.32577744513765,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sc": {
+    "P": "RD",
+    "L": "sc",
+    "n_points": 7144,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.2599210498948725,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -1054.4978857855292,
+     -1067.2025173871496,
+     -1076.7948729164993,
+     -1081.86056497134
+    ],
+    "E_deleted": [
+     [
+      -1054.4978857855292,
+      4.743525235012888e-10
+     ],
+     [
+      -1067.2025173871496,
+      7.242663474887319e-10
+     ],
+     [
+      -1076.7948729164993,
+      1.0938605851561996e-09
+     ],
+     [
+      -1081.86056497134,
+      1.563487582075335e-09
+     ]
+    ],
+    "rand": [
+     [
+      1578.9243093477933,
+      0,
+      0.00015055239864336656
+     ],
+     [
+      940.1872156229867,
+      0,
+      1.5581984655455017e-05
+     ]
+    ],
+    "secs": 0.5670526027679443,
+    "E_deleted_inf": -1081.86056497134,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sh": {
+    "P": "RD",
+    "L": "sh",
+    "n_points": 7252,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.029074620891075043,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -4090.333667984784,
+     -4099.00532584669,
+     -4110.010730469213,
+     -4096.906847184014
+    ],
+    "E_deleted": [
+     [
+      -4090.333667984784,
+      3.511492294791687e-09
+     ],
+     [
+      -4099.00532584669,
+      5.060734184155469e-09
+     ],
+     [
+      -4110.010730469213,
+      7.207606629899105e-09
+     ],
+     [
+      -4096.906847184014,
+      1.3134975458418599e-08
+     ]
+    ],
+    "rand": [
+     [
+      12266.316799840448,
+      0,
+      3.666391458878593e-06
+     ],
+     [
+      2344.3853195776805,
+      0,
+      4.8480698233266395e-05
+     ]
+    ],
+    "secs": 0.5701766014099121,
+    "E_deleted_inf": -4096.906847184014,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   }
+  },
+  "TRD": {
+   "fcc": {
+    "P": "TRD",
+    "L": "fcc",
+    "n_points": 7154,
+    "on_plane_within_R": 2028,
+    "min_abs_f_offplane": 0.33333333333333304,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "E_deleted": [
+     [
+      -29.498386010329163,
+      3.385020922755755e-11
+     ],
+     [
+      -30.661710110896042,
+      5.432345467980218e-11
+     ],
+     [
+      -31.7716022664351,
+      8.400255393865231e-11
+     ],
+     [
+      -32.24048545126589,
+      1.2115212943759162e-10
+     ]
+    ],
+    "rand": [
+     [
+      686.5353252361725,
+      0,
+      2.0167530847103876e-05
+     ],
+     [
+      1458.07997036851,
+      0,
+      1.3417907327450962e-05
+     ]
+    ],
+    "secs": 0.5484745502471924,
+    "E_deleted_inf": -32.24048545126589,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "hcp": {
+    "P": "TRD",
+    "L": "hcp",
+    "n_points": 7164,
+    "on_plane_within_R": 1767,
+    "min_abs_f_offplane": 0.33333333333333215,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "E_deleted": [
+     [
+      -23.811190563749566,
+      4.266354828684889e-11
+     ],
+     [
+      -27.166985298093458,
+      7.61457508556644e-11
+     ],
+     [
+      -28.55221712271515,
+      1.1136530254771696e-10
+     ],
+     [
+      -29.27287730375051,
+      1.4868124601081948e-10
+     ]
+    ],
+    "rand": [
+     [
+      1706.7050097408003,
+      0,
+      0.00018320538571181544
+     ],
+     [
+      46.178302025949534,
+      0,
+      1.2793687197865111e-05
+     ]
+    ],
+    "secs": 0.5431816577911377,
+    "E_deleted_inf": -29.27287730375051,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "dhcp": {
+    "P": "TRD",
+    "L": "dhcp",
+    "n_points": 7164,
+    "on_plane_within_R": 1731,
+    "min_abs_f_offplane": 0.33333333333333215,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "E_deleted": [
+     [
+      -34.82710461610766,
+      4.629218787143359e-11
+     ],
+     [
+      -37.53406656811574,
+      7.964470993375587e-11
+     ],
+     [
+      -38.60830722026248,
+      1.1708928157256516e-10
+     ],
+     [
+      -39.22172321144835,
+      1.601008777181471e-10
+     ]
+    ],
+    "rand": [
+     [
+      2275.567312463898,
+      0,
+      3.00715024743603e-05
+     ],
+     [
+      -3746.018519335186,
+      0,
+      5.179426236878726e-05
+     ]
+    ],
+    "secs": 0.6126308441162109,
+    "E_deleted_inf": -39.22172321144835,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "bcc": {
+    "P": "TRD",
+    "L": "bcc",
+    "n_points": 7238,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.058267367978797946,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -2257.207514137638,
+     -2280.2784933120415,
+     -2293.2918245090864,
+     -2302.550926110964
+    ],
+    "E_deleted": [
+     [
+      -2257.207514137638,
+      1.5753520434084446e-09
+     ],
+     [
+      -2280.2784933120415,
+      2.2760121523790204e-09
+     ],
+     [
+      -2293.2918245090864,
+      3.1994369862966627e-09
+     ],
+     [
+      -2302.550926110964,
+      4.329076401177264e-09
+     ]
+    ],
+    "rand": [
+     [
+      -10972.317354212015,
+      0,
+      1.0101484249958048e-05
+     ],
+     [
+      -9040.17970080648,
+      0,
+      3.217928949972304e-05
+     ]
+    ],
+    "secs": 0.6824154853820801,
+    "E_deleted_inf": -2302.550926110964,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sc": {
+    "P": "TRD",
+    "L": "sc",
+    "n_points": 7144,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.16005263340341702,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -696.0632432655291,
+     -706.8152488000973,
+     -714.1025685090476,
+     -718.1244130768728
+    ],
+    "E_deleted": [
+     [
+      -696.0632432655291,
+      4.4717752328906814e-10
+     ],
+     [
+      -706.8152488000973,
+      6.845479993108937e-10
+     ],
+     [
+      -714.1025685090476,
+      1.0171785209958744e-09
+     ],
+     [
+      -718.1244130768728,
+      1.4177859769997944e-09
+     ]
+    ],
+    "rand": [
+     [
+      -3946.144902838319,
+      0,
+      2.507515521210646e-05
+     ],
+     [
+      -1422.5009112134182,
+      0,
+      0.00024116352668634988
+     ]
+    ],
+    "secs": 0.5922434329986572,
+    "E_deleted_inf": -718.1244130768728,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sh": {
+    "P": "TRD",
+    "L": "sh",
+    "n_points": 7252,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.0290746208910746,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -4090.333667984783,
+     -4099.005325846688,
+     -4110.010730469214,
+     -4096.906847184014
+    ],
+    "E_deleted": [
+     [
+      -4090.333667984783,
+      3.5537469402382562e-09
+     ],
+     [
+      -4099.005325846688,
+      5.114245537283979e-09
+     ],
+     [
+      -4110.010730469214,
+      7.329095196929265e-09
+     ],
+     [
+      -4096.906847184014,
+      1.4148587214351908e-08
+     ]
+    ],
+    "rand": [
+     [
+      -2710.447078855305,
+      0,
+      3.600182422447418e-05
+     ],
+     [
+      771.6963324704865,
+      0,
+      2.9428495016858847e-05
+     ]
+    ],
+    "secs": 0.582348108291626,
+    "E_deleted_inf": -4096.906847184014,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   }
+  },
+  "dodecahedron": {
+   "fcc": {
+    "P": "dodecahedron",
+    "L": "fcc",
+    "n_points": 7154,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.052827552369805186,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -10.575504865080838,
+     -8.649462329960816,
+     -4.970770871624206,
+     -5.695743089123475
+    ],
+    "E_deleted": [
+     [
+      -10.575504865080838,
+      4.2409547516931474e-10
+     ],
+     [
+      -8.649462329960816,
+      4.881815050953044e-10
+     ],
+     [
+      -4.970770871624206,
+      6.982251941771068e-10
+     ],
+     [
+      -5.695743089123475,
+      8.582950233694499e-10
+     ]
+    ],
+    "rand": [
+     [
+      -1496.0744413183827,
+      0,
+      0.0002647412134431093
+     ],
+     [
+      313.2616101204043,
+      0,
+      0.0006776785978326316
+     ]
+    ],
+    "secs": 0.5958986282348633,
+    "E_deleted_inf": -5.695743089123475,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "hcp": {
+    "P": "dodecahedron",
+    "L": "hcp",
+    "n_points": 7164,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.0031739062096227677,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -56.86373835093344,
+     -61.98068894929039,
+     -64.5192757011816,
+     -67.94163832092671
+    ],
+    "E_deleted": [
+     [
+      -56.86373835093344,
+      1.5451760204676427e-08
+     ],
+     [
+      -61.98068894929039,
+      1.589371967652836e-08
+     ],
+     [
+      -64.5192757011816,
+      1.8706249981084966e-08
+     ],
+     [
+      -67.94163832092671,
+      2.2914828168702978e-08
+     ]
+    ],
+    "rand": [
+     [
+      -44.040624018045676,
+      0,
+      8.332888429052332e-06
+     ],
+     [
+      1253.7023277840879,
+      0,
+      0.0006060060142889512
+     ]
+    ],
+    "secs": 0.5338146686553955,
+    "E_deleted_inf": -67.94163832092671,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "dhcp": {
+    "P": "dodecahedron",
+    "L": "dhcp",
+    "n_points": 7164,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.0031739062096227677,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -128.81084185447162,
+     -134.87123576483125,
+     -135.33970329178763,
+     -138.67296629455026
+    ],
+    "E_deleted": [
+     [
+      -128.81084185447162,
+      2.7262070681719928e-08
+     ],
+     [
+      -134.87123576483125,
+      2.7740196978657022e-08
+     ],
+     [
+      -135.33970329178763,
+      2.795450498129599e-08
+     ],
+     [
+      -138.67296629455026,
+      3.157415467106298e-08
+     ]
+    ],
+    "rand": [
+     [
+      -766.5282713466531,
+      0,
+      0.0003502555882839431
+     ],
+     [
+      6.366789812484267,
+      0,
+      0.0004292767117686225
+     ]
+    ],
+    "secs": 0.6287667751312256,
+    "E_deleted_inf": -138.67296629455026,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "bcc": {
+    "P": "dodecahedron",
+    "L": "bcc",
+    "n_points": 7238,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.004355918725127417,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     29.443139022361898,
+     -7.8955662746123565,
+     10.983412220734753,
+     30.46886362858381
+    ],
+    "E_deleted": [
+     [
+      29.443139022361898,
+      7.781165820673262e-11
+     ],
+     [
+      -7.8955662746123565,
+      2.481253851592131e-08
+     ],
+     [
+      10.983412220734753,
+      3.613800179058363e-08
+     ],
+     [
+      30.46886362858381,
+      6.307801403710255e-08
+     ]
+    ],
+    "rand": [
+     [
+      132.63723103706144,
+      0,
+      0.00017756740501972956
+     ],
+     [
+      17.420914722232002,
+      0,
+      0.00016641309443166108
+     ]
+    ],
+    "secs": 0.7323193550109863,
+    "E_deleted_inf": 30.46886362858381,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sc": {
+    "P": "dodecahedron",
+    "L": "sc",
+    "n_points": 7152,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.038640928959805976,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     20.814837129397283,
+     19.344539512301232,
+     16.2229220917711,
+     17.284589995471478
+    ],
+    "E_deleted": [
+     [
+      20.814837129397283,
+      1.169649441512391e-10
+     ],
+     [
+      19.344539512301232,
+      1.689692598123871e-10
+     ],
+     [
+      16.2229220917711,
+      6.334815234570258e-10
+     ],
+     [
+      17.284589995471478,
+      7.981235117377968e-10
+     ]
+    ],
+    "rand": [
+     [
+      35.144195640265536,
+      0,
+      0.00027689599592095604
+     ],
+     [
+      104.2880005063431,
+      0,
+      3.4173932115244554e-06
+     ]
+    ],
+    "secs": 0.5936672687530518,
+    "E_deleted_inf": 17.284589995471478,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sh": {
+    "P": "dodecahedron",
+    "L": "sh",
+    "n_points": 7252,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.0024504251528698617,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     36.40418728485202,
+     39.404912616465,
+     40.006887009532335,
+     43.70812198488983
+    ],
+    "E_deleted": [
+     [
+      36.40418728485202,
+      3.733195089601849e-10
+     ],
+     [
+      39.404912616465,
+      2.076886430129897e-09
+     ],
+     [
+      40.006887009532335,
+      3.2538231605641577e-09
+     ],
+     [
+      43.70812198488983,
+      6.487292645404744e-09
+     ]
+    ],
+    "rand": [
+     [
+      1297.9456134164116,
+      0,
+      8.18951749259611e-06
+     ],
+     [
+      165.2874401591593,
+      0,
+      0.0001189363434161983
+     ]
+    ],
+    "secs": 0.5820667743682861,
+    "E_deleted_inf": 43.70812198488983,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   }
+  },
+  "RD-perturbed": {
+   "fcc": {
+    "P": "RD-perturbed",
+    "L": "fcc",
+    "n_points": 7154,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.003946212478375344,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -1841820.4676672139,
+     -1892777.0080383338,
+     -1906943.7861311056,
+     -1927403.2207912577
+    ],
+    "E_deleted": [
+     [
+      -1841820.4676672139,
+      3.0321694319313547e-05
+     ],
+     [
+      -1892777.0080383338,
+      3.924747659114016e-05
+     ],
+     [
+      -1906943.7861311056,
+      4.5340830172572175e-05
+     ],
+     [
+      -1927403.2207912577,
+      5.7186623965913874e-05
+     ]
+    ],
+    "rand": [
+     [
+      821.7845496556221,
+      0,
+      7.00562822775197e-06
+     ],
+     [
+      1271.1773402585352,
+      0,
+      7.376484045518161e-05
+     ]
+    ],
+    "secs": 0.6191418170928955,
+    "E_deleted_inf": -1927403.2207912577,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "hcp": {
+    "P": "RD-perturbed",
+    "L": "hcp",
+    "n_points": 7164,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.003946212478375344,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -1507219.7428525272,
+     -1516436.7586162412,
+     -1522134.8426755327,
+     -1529680.9380530033
+    ],
+    "E_deleted": [
+     [
+      -1507219.7428525272,
+      1.4715758076224828e-05
+     ],
+     [
+      -1516436.7586162412,
+      1.6641551621228024e-05
+     ],
+     [
+      -1522134.8426755327,
+      2.0097158413959485e-05
+     ],
+     [
+      -1529680.9380530033,
+      2.5566087470214166e-05
+     ]
+    ],
+    "rand": [
+     [
+      -3488.7451005425305,
+      0,
+      0.00012008107908734189
+     ],
+     [
+      5540.109303045341,
+      0,
+      0.00010799977272135663
+     ]
+    ],
+    "secs": 0.5639827251434326,
+    "E_deleted_inf": -1529680.9380530033,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "dhcp": {
+    "P": "RD-perturbed",
+    "L": "dhcp",
+    "n_points": 7164,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.003946212478375344,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -1691143.616768935,
+     -1700736.7255541058,
+     -1706021.4142268952,
+     -1712231.0778803243
+    ],
+    "E_deleted": [
+     [
+      -1691143.616768935,
+      1.9090863477631473e-05
+     ],
+     [
+      -1700736.7255541058,
+      2.035066011883221e-05
+     ],
+     [
+      -1706021.4142268952,
+      2.3093513648113423e-05
+     ],
+     [
+      -1712231.0778803243,
+      2.6802516238078163e-05
+     ]
+    ],
+    "rand": [
+     [
+      -19591.95201039557,
+      0,
+      2.5825040735671934e-05
+     ],
+     [
+      -641.835177925476,
+      0,
+      0.0001993972453453452
+     ]
+    ],
+    "secs": 0.6382102966308594,
+    "E_deleted_inf": -1712231.0778803243,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "bcc": {
+    "P": "RD-perturbed",
+    "L": "bcc",
+    "n_points": 7238,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.5436652738076659,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -128.2357843267175,
+     -131.82513020637867,
+     -133.95837065286352,
+     -134.9289504025339
+    ],
+    "E_deleted": [
+     [
+      -128.2357843267175,
+      9.328654729609071e-11
+     ],
+     [
+      -131.82513020637867,
+      1.4125935730240544e-10
+     ],
+     [
+      -133.95837065286352,
+      2.0814509301058585e-10
+     ],
+     [
+      -134.9289504025339,
+      2.8555893085836763e-10
+     ]
+    ],
+    "rand": [
+     [
+      -6337.229299449939,
+      0,
+      0.00019751238925280745
+     ],
+     [
+      -136.61972506634353,
+      0,
+      0.00025250910712903973
+     ]
+    ],
+    "secs": 0.7335085868835449,
+    "E_deleted_inf": -134.9289504025339,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sc": {
+    "P": "RD-perturbed",
+    "L": "sc",
+    "n_points": 7152,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.21489296606373887,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -1032.5747160745138,
+     -1045.3360428544854,
+     -1054.8938108371176,
+     -1059.9421551724354
+    ],
+    "E_deleted": [
+     [
+      -1032.5747160745138,
+      4.684502174376892e-10
+     ],
+     [
+      -1045.3360428544854,
+      7.127602637996414e-10
+     ],
+     [
+      -1054.8938108371176,
+      1.0757734105662887e-09
+     ],
+     [
+      -1059.9421551724354,
+      1.5375234168626973e-09
+     ]
+    ],
+    "rand": [
+     [
+      -9153.233188994336,
+      0,
+      7.332127840609104e-05
+     ],
+     [
+      1859.966579275219,
+      0,
+      0.00010263789222353381
+     ]
+    ],
+    "secs": 0.5981271266937256,
+    "E_deleted_inf": -1059.9421551724354,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sh": {
+    "P": "RD-perturbed",
+    "L": "sh",
+    "n_points": 7252,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.016864431998781848,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -4177.596721970691,
+     -4184.966712923321,
+     -4193.575719208436,
+     -4160.345606048577
+    ],
+    "E_deleted": [
+     [
+      -4177.596721970691,
+      3.7829931454123126e-09
+     ],
+     [
+      -4184.966712923321,
+      5.373529408898488e-09
+     ],
+     [
+      -4193.575719208436,
+      7.636017794100466e-09
+     ],
+     [
+      -4160.345606048577,
+      1.4135190887242718e-08
+     ]
+    ],
+    "rand": [
+     [
+      1105.6525500536175,
+      0,
+      5.571588842201436e-05
+     ],
+     [
+      -811.6885408468609,
+      0,
+      0.0002666481380537711
+     ]
+    ],
+    "secs": 0.6241052150726318,
+    "E_deleted_inf": -4160.345606048577,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   }
+  },
+  "HP": {
+   "fcc": {
+    "P": "HP",
+    "L": "fcc",
+    "n_points": 7154,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.06991319393366169,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -2967.943793483163,
+     -3035.5416397131294,
+     -3058.556763515074,
+     -3086.556531270464
+    ],
+    "E_deleted": [
+     [
+      -2967.943793483163,
+      2.0755200263540623e-09
+     ],
+     [
+      -3035.5416397131294,
+      3.1437873688263143e-09
+     ],
+     [
+      -3058.556763515074,
+      4.450782842269074e-09
+     ],
+     [
+      -3086.556531270464,
+      6.329407871791147e-09
+     ]
+    ],
+    "rand": [
+     [
+      -655.0817508429824,
+      0,
+      0.00014665696540250295
+     ],
+     [
+      498.0981909196553,
+      0,
+      0.00010098420451898349
+     ]
+    ],
+    "secs": 0.36595726013183594,
+    "E_deleted_inf": -3086.556531270464,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "hcp": {
+    "P": "HP",
+    "L": "hcp",
+    "n_points": 7164,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.06991319393365991,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -2634.535768163339,
+     -2679.3018737361417,
+     -2705.7005853246837,
+     -2733.7048036504502
+    ],
+    "E_deleted": [
+     [
+      -2634.535768163339,
+      1.8494348695971145e-09
+     ],
+     [
+      -2679.3018737361417,
+      2.776587016400591e-09
+     ],
+     [
+      -2705.7005853246837,
+      3.99363321132475e-09
+     ],
+     [
+      -2733.7048036504502,
+      5.757071073837552e-09
+     ]
+    ],
+    "rand": [
+     [
+      892.1714616784997,
+      0,
+      7.150863543081698e-05
+     ],
+     [
+      -443.9563908860856,
+      0,
+      8.784895118041369e-05
+     ]
+    ],
+    "secs": 0.3340871334075928,
+    "E_deleted_inf": -2733.7048036504502,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "dhcp": {
+    "P": "HP",
+    "L": "dhcp",
+    "n_points": 7164,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.06991319393365991,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -2634.5357681633395,
+     -2679.301873736142,
+     -2705.7005853246847,
+     -2733.70480365045
+    ],
+    "E_deleted": [
+     [
+      -2634.5357681633395,
+      1.7983613606012307e-09
+     ],
+     [
+      -2679.301873736142,
+      2.7326220450987516e-09
+     ],
+     [
+      -2705.7005853246847,
+      3.946358100092991e-09
+     ],
+     [
+      -2733.70480365045,
+      5.710134594176034e-09
+     ]
+    ],
+    "rand": [
+     [
+      4469.403101283426,
+      0,
+      0.00012915360776410978
+     ],
+     [
+      493.55228192629716,
+      0,
+      4.242755531258524e-05
+     ]
+    ],
+    "secs": 0.3952922821044922,
+    "E_deleted_inf": -2733.70480365045,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sc": {
+    "P": "HP",
+    "L": "sc",
+    "n_points": 7152,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.12326128320568741,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -604.6938519885988,
+     -615.7590225499212,
+     -619.1894961283587,
+     -623.6508758835951
+    ],
+    "E_deleted": [
+     [
+      -604.6938519885988,
+      5.237046073150376e-10
+     ],
+     [
+      -615.7590225499212,
+      7.662243537580417e-10
+     ],
+     [
+      -619.1894961283587,
+      1.0846877109944868e-09
+     ],
+     [
+      -623.6508758835951,
+      1.5228797001318844e-09
+     ]
+    ],
+    "rand": [
+     [
+      988.5468134119866,
+      0,
+      5.4490875764034996e-05
+     ],
+     [
+      -510.81797127560606,
+      0,
+      4.6952514903608744e-05
+     ]
+    ],
+    "secs": 0.34217262268066406,
+    "E_deleted_inf": -623.6508758835951,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "bcc": {
+    "P": "HP",
+    "L": "bcc",
+    "n_points": 7238,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.37555420660911265,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -21.40410544705819,
+     -22.26368413270911,
+     -22.695742541543527,
+     -22.900267087825263
+    ],
+    "E_deleted": [
+     [
+      -21.40410544705819,
+      6.851635121197574e-11
+     ],
+     [
+      -22.26368413270911,
+      1.0370193614399445e-10
+     ],
+     [
+      -22.695742541543527,
+      1.568325894331755e-10
+     ],
+     [
+      -22.900267087825263,
+      2.1985922390227587e-10
+     ]
+    ],
+    "rand": [
+     [
+      1720.6734155907463,
+      0,
+      0.00016720595389152493
+     ],
+     [
+      -1938.4748397539884,
+      0,
+      0.00017060843808902604
+     ]
+    ],
+    "secs": 0.49921512603759766,
+    "E_deleted_inf": -22.900267087825263,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sh": {
+    "P": "HP",
+    "L": "sh",
+    "n_points": 7252,
+    "on_plane_within_R": 1290,
+    "min_abs_f_offplane": 0.9999999999999991,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "E_deleted": [
+     [
+      -26.756444923865544,
+      1.982282136722882e-11
+     ],
+     [
+      -27.45222946378413,
+      3.472439675454468e-11
+     ],
+     [
+      -27.86181664544149,
+      5.447988588253713e-11
+     ],
+     [
+      -28.10791958493391,
+      8.389714841907778e-11
+     ]
+    ],
+    "rand": [
+     [
+      582.1565891550081,
+      0,
+      0.00019967405131104954
+     ],
+     [
+      1991.7383502526436,
+      0,
+      0.000386015650358118
+     ]
+    ],
+    "secs": 0.3610994815826416,
+    "E_deleted_inf": -28.10791958493391,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   }
+  },
+  "cube": {
+   "fcc": {
+    "P": "cube",
+    "L": "fcc",
+    "n_points": 7154,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.29370052598409946,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     246.83139711899938,
+     242.7239465421297,
+     239.8732023113348,
+     241.41026231187888
+    ],
+    "E_deleted": [
+     [
+      246.83139711899938,
+      1.2592147132169472e-10
+     ],
+     [
+      242.7239465421297,
+      2.3178999292163598e-10
+     ],
+     [
+      239.8732023113348,
+      4.0797685389853045e-10
+     ],
+     [
+      241.41026231187888,
+      6.489772456392515e-10
+     ]
+    ],
+    "rand": [
+     [
+      42316.62212141453,
+      0,
+      0.00029875703983028856
+     ],
+     [
+      3633.085034872738,
+      0,
+      1.934568072453624e-05
+     ]
+    ],
+    "secs": 0.2691676616668701,
+    "E_deleted_inf": 241.41026231187888,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "dhcp": {
+    "P": "cube",
+    "L": "dhcp",
+    "n_points": 7164,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.029133683989399195,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -751.2213645919037,
+     -822.4638211184102,
+     -839.0324591736327,
+     -831.1448466121834
+    ],
+    "E_deleted": [
+     [
+      -751.2213645919037,
+      4.11515611606423e-09
+     ],
+     [
+      -822.4638211184102,
+      6.052581283846171e-09
+     ],
+     [
+      -839.0324591736327,
+      6.972733419126863e-09
+     ],
+     [
+      -831.1448466121834,
+      8.331533831898048e-09
+     ]
+    ],
+    "rand": [
+     [
+      905.7127946945027,
+      0,
+      0.00016350348755556077
+     ],
+     [
+      -144.20748437467898,
+      0,
+      0.00015515165468615866
+     ]
+    ],
+    "secs": 0.20600128173828125,
+    "E_deleted_inf": -831.1448466121834,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "hcp": {
+    "P": "cube",
+    "L": "hcp",
+    "n_points": 7164,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.029133683989399195,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -1049.2009918291278,
+     -1068.3901274641214,
+     -1079.9714663354548,
+     -1077.7234343858456
+    ],
+    "E_deleted": [
+     [
+      -1049.2009918291278,
+      4.871794778336378e-09
+     ],
+     [
+      -1068.3901274641214,
+      6.3276677387976175e-09
+     ],
+     [
+      -1079.9714663354548,
+      7.333476002718445e-09
+     ],
+     [
+      -1077.7234343858456,
+      8.800993930176019e-09
+     ]
+    ],
+    "rand": [
+     [
+      -1025.255282081474,
+      0,
+      0.00031994680997343705
+     ],
+     [
+      -1508.2475259786154,
+      0,
+      0.00010201749802030147
+     ]
+    ],
+    "secs": 0.5562944412231445,
+    "E_deleted_inf": -1077.7234343858456,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "bcc": {
+    "P": "cube",
+    "L": "bcc",
+    "n_points": 7238,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.12996052494743593,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -3160.208986060349,
+     -3192.52465348784,
+     -3226.7626420491847,
+     -3238.7492013380675
+    ],
+    "E_deleted": [
+     [
+      -3160.208986060349,
+      7.044159461194413e-10
+     ],
+     [
+      -3192.52465348784,
+      1.2377516673224478e-09
+     ],
+     [
+      -3226.7626420491847,
+      2.1854676845198496e-09
+     ],
+     [
+      -3238.7492013380675,
+      3.373019859754809e-09
+     ]
+    ],
+    "rand": [
+     [
+      -5181.290775551272,
+      0,
+      7.304638773519834e-05
+     ],
+     [
+      -151.8082515020513,
+      0,
+      0.0002614915813765051
+     ]
+    ],
+    "secs": 0.34813976287841797,
+    "E_deleted_inf": -3238.7492013380675,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sc": {
+    "P": "cube",
+    "L": "sc",
+    "n_points": 7152,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.5,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -66.59180662119438,
+     -65.48282106698042,
+     -64.90165144987154,
+     -64.66520879275444
+    ],
+    "E_deleted": [
+     [
+      -66.59180662119438,
+      7.579439620741053e-11
+     ],
+     [
+      -65.48282106698042,
+      1.4483270405988148e-10
+     ],
+     [
+      -64.90165144987154,
+      2.566232911261217e-10
+     ],
+     [
+      -64.66520879275444,
+      4.1307657585661845e-10
+     ]
+    ],
+    "rand": [
+     [
+      -595.4826770247595,
+      0,
+      8.360814167596153e-05
+     ],
+     [
+      -69.51004346800737,
+      0,
+      3.219879960125738e-05
+     ]
+    ],
+    "secs": 0.2622499465942383,
+    "E_deleted_inf": -64.66520879275444,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   },
+   "sh": {
+    "P": "cube",
+    "L": "sh",
+    "n_points": 7252,
+    "on_plane_within_R": 0,
+    "min_abs_f_offplane": 0.016670773773200587,
+    "R": [
+     6,
+     8,
+     10,
+     12
+    ],
+    "E_full": [
+     -1896.3713799106654,
+     -1902.5729632482082,
+     -1946.17195492672,
+     -1993.350781430846
+    ],
+    "E_deleted": [
+     [
+      -1896.3713799106654,
+      1.889708030659819e-09
+     ],
+     [
+      -1902.5729632482082,
+      2.6007125200874184e-09
+     ],
+     [
+      -1946.17195492672,
+      3.788282718667791e-09
+     ],
+     [
+      -1993.350781430846,
+      6.033318082201428e-09
+     ]
+    ],
+    "rand": [
+     [
+      -91.55586997955254,
+      0,
+      7.339371876707856e-05
+     ],
+     [
+      2733.3741663189594,
+      0,
+      0.00017223649261716156
+     ]
+    ],
+    "secs": 0.2429511547088623,
+    "E_deleted_inf": -1993.350781430846,
+    "E_deleted_err": NaN,
+    "tail_a": NaN
+   }
+  }
+ },
+ "T1_verdict_data": {
+  "RD": {
+   "own": "fcc",
+   "own_E_defined": false,
+   "own_is_min_deleted": false,
+   "own_is_max_deleted": true,
+   "own_is_min_finite": false,
+   "own_is_max_finite": false,
+   "incident_lattices": [
+    "fcc",
+    "hcp",
+    "dhcp"
+   ],
+   "argmin_deleted": "sh",
+   "argmax_deleted": "fcc"
+  },
+  "TRD": {
+   "own": "hcp",
+   "own_E_defined": false,
+   "own_is_min_deleted": false,
+   "own_is_max_deleted": true,
+   "own_is_min_finite": false,
+   "own_is_max_finite": false,
+   "incident_lattices": [
+    "fcc",
+    "hcp",
+    "dhcp"
+   ],
+   "argmin_deleted": "sh",
+   "argmax_deleted": "hcp"
+  },
+  "cube": {
+   "own": "sc",
+   "own_E_defined": true,
+   "own_is_min_deleted": false,
+   "own_is_max_deleted": false,
+   "own_is_min_finite": false,
+   "own_is_max_finite": false,
+   "incident_lattices": [],
+   "argmin_deleted": "bcc",
+   "argmax_deleted": "fcc"
+  },
+  "TO": {
+   "own": "bcc",
+   "own_E_defined": false,
+   "own_is_min_deleted": false,
+   "own_is_max_deleted": false,
+   "own_is_min_finite": false,
+   "own_is_max_finite": false,
+   "incident_lattices": [
+    "bcc"
+   ],
+   "argmin_deleted": "sc",
+   "argmax_deleted": "hcp"
+  },
+  "HP": {
+   "own": "sh",
+   "own_E_defined": false,
+   "own_is_min_deleted": false,
+   "own_is_max_deleted": false,
+   "own_is_min_finite": false,
+   "own_is_max_finite": false,
+   "incident_lattices": [
+    "sh"
+   ],
+   "argmin_deleted": "fcc",
+   "argmax_deleted": "bcc"
+  },
+  "icosahedron": {
+   "argmin_deleted": "sc",
+   "argmax_deleted": "sh",
+   "incident_lattices": []
+  },
+  "dodecahedron": {
+   "argmin_deleted": "dhcp",
+   "argmax_deleted": "sh",
+   "incident_lattices": []
+  },
+  "RD-perturbed": {
+   "argmin_deleted": "fcc",
+   "argmax_deleted": "bcc",
+   "incident_lattices": []
+  }
+ },
+ "T1_result": {
+  "C1": false,
+  "C1_deleted": false,
+  "C2": false
+ },
+ "checks": 93,
+ "secs": 167.92749214172363
+}

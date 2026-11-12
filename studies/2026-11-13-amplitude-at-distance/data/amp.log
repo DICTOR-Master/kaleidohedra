@@ -1,0 +1,200 @@
+amp_dist.py FULL
+  RD: 14 corners, 12 facets {4: 12}, 20 Warren terms, vol = 2
+  TRD: 14 corners, 12 facets {4: 12}, 20 Warren terms, vol = 2
+  cube: 8 corners, 6 facets {4: 6}, 8 Warren terms, vol = 1
+  TO: 24 corners, 14 facets {4: 6, 6: 8}, 24 Warren terms, vol = 1/2
+  HP: 12 corners, 8 facets {4: 6, 6: 2}, 12 Warren terms, vol = (0+1*sqrt6)
+  icosahedron: 12 corners, 20 facets {3: 20}, 36 Warren terms, vol = (10+10/3*sqrt5)
+  dodecahedron: 20 corners, 12 facets {5: 12}, 20 Warren terms, vol = (10+2*sqrt5)
+  RD-perturbed: 16 corners, 12 facets {4: 8, 5: 4}, 20 Warren terms, vol = 97141/48000
+ok   volumes: RD 2, TRD 2, cube 1, TO 1/2, HP sqrt6 (= covolumes of fcc, hcp, sc, bcc, sh)
+ok   face counts: RD 12 rhombi, TRD 12, cube 6, TO 14, HP 8, icosahedron 20, dodecahedron 12, perturbed RD 12
+ok   central symmetry: RD, cube, TO, HP yes; TRD no (it tiles hcp in two orientations); perturbed RD no (so no translation tiling, Minkowski)
+PROGRESS 0.03 shapes built (1 s)
+ok   T0 RD: vertex formula = 3! vol(polar) at 2 interior points (exact)
+ok   T0 RD: vertex formula = triangulation formula at 2 exterior points (exact)
+ok   T0 RD: complete-fan identity sum d/(w w w) = 0 (the r^-3 terms cancel)
+      RD: far field Omega ~ a_3(u) r^-6 (a_0 .. a_2 vanish exactly at two generic directions)
+ok   T0 RD: r^6 Omega(r u) -> a_3(u) (Richardson from r = 1000, 2000: -1119.24 vs -1119.25)
+ok   T0 RD: Laurent order -1 at a generic point of a facet plane (simple pole)
+ok   T0 TRD: vertex formula = 3! vol(polar) at 2 interior points (exact)
+ok   T0 TRD: vertex formula = triangulation formula at 2 exterior points (exact)
+ok   T0 TRD: complete-fan identity sum d/(w w w) = 0 (the r^-3 terms cancel)
+      TRD: far field Omega ~ a_2(u) r^-5 (a_0 .. a_1 vanish exactly at two generic directions)
+ok   T0 TRD: r^5 Omega(r u) -> a_2(u) (Richardson from r = 1000, 2000: -6.94452 vs -6.94479)
+ok   T0 TRD: Laurent order -1 at a generic point of a facet plane (simple pole)
+ok   T0 cube: vertex formula = 3! vol(polar) at 2 interior points (exact)
+ok   T0 cube: vertex formula = triangulation formula at 2 exterior points (exact)
+ok   T0 cube: complete-fan identity sum d/(w w w) = 0 (the r^-3 terms cancel)
+      cube: far field Omega ~ a_3(u) r^-6 (a_0 .. a_2 vanish exactly at two generic directions)
+ok   T0 cube: r^6 Omega(r u) -> a_3(u) (Richardson from r = 1000, 2000: -51.8627 vs -51.8628)
+ok   T0 cube: Laurent order -1 at a generic point of a facet plane (simple pole)
+ok   T0 TO: vertex formula = 3! vol(polar) at 2 interior points (exact)
+ok   T0 TO: vertex formula = triangulation formula at 2 exterior points (exact)
+ok   T0 TO: complete-fan identity sum d/(w w w) = 0 (the r^-3 terms cancel)
+      TO: far field Omega ~ a_3(u) r^-6 (a_0 .. a_2 vanish exactly at two generic directions)
+ok   T0 TO: r^6 Omega(r u) -> a_3(u) (Richardson from r = 1000, 2000: -552.307 vs -552.319)
+ok   T0 TO: Laurent order -1 at a generic point of a facet plane (simple pole)
+ok   T0 HP: vertex formula = 3! vol(polar) at 2 interior points (exact)
+ok   T0 HP: vertex formula = triangulation formula at 2 exterior points (exact)
+ok   T0 HP: complete-fan identity sum d/(w w w) = 0 (the r^-3 terms cancel)
+      HP: far field Omega ~ a_3(u) r^-6 (a_0 .. a_2 vanish exactly at two generic directions)
+ok   T0 HP: r^6 Omega(r u) -> a_3(u) (Richardson from r = 1000, 2000: -255.314 vs -255.315)
+ok   T0 HP: Laurent order -1 at a generic point of a facet plane (simple pole)
+ok   T0 icosahedron: vertex formula = 3! vol(polar) at 2 interior points (exact)
+ok   T0 icosahedron: vertex formula = triangulation formula at 2 exterior points (exact)
+ok   T0 icosahedron: complete-fan identity sum d/(w w w) = 0 (the r^-3 terms cancel)
+      icosahedron: far field Omega ~ a_1(u) r^-4 (a_0 .. a_0 vanish exactly at two generic directions)
+ok   T0 icosahedron: r^4 Omega(r u) -> a_1(u) (Richardson from r = 1000, 2000: -291.195 vs -291.284)
+ok   T0 icosahedron: Laurent order -1 at a generic point of a facet plane (simple pole)
+ok   T0 dodecahedron: vertex formula = 3! vol(polar) at 2 interior points (exact)
+ok   T0 dodecahedron: vertex formula = triangulation formula at 2 exterior points (exact)
+ok   T0 dodecahedron: complete-fan identity sum d/(w w w) = 0 (the r^-3 terms cancel)
+      dodecahedron: far field Omega ~ a_1(u) r^-4 (a_0 .. a_0 vanish exactly at two generic directions)
+ok   T0 dodecahedron: r^4 Omega(r u) -> a_1(u) (Richardson from r = 1000, 2000: -80.7365 vs -80.7458)
+ok   T0 dodecahedron: Laurent order -1 at a generic point of a facet plane (simple pole)
+ok   T0 RD-perturbed: vertex formula = 3! vol(polar) at 2 interior points (exact)
+ok   T0 RD-perturbed: vertex formula = triangulation formula at 2 exterior points (exact)
+ok   T0 RD-perturbed: complete-fan identity sum d/(w w w) = 0 (the r^-3 terms cancel)
+      RD-perturbed: far field Omega ~ a_1(u) r^-4 (a_0 .. a_0 vanish exactly at two generic directions)
+ok   T0 RD-perturbed: r^4 Omega(r u) -> a_1(u) (Richardson from r = 1000, 2000: -0.717039 vs -0.717604)
+ok   T0 RD-perturbed: Laurent order -1 at a generic point of a facet plane (simple pole)
+ok   T0 known values: Omega_cube(0) = 64, Omega_RD(0) = 40
+ok   T0 NEGATIVE: dropping one Warren term breaks the polar identity (TO)
+DECAY census: octahedron (cs, not zonotope, no tiling): Omega ~ r^-4 (faces {3: 8}, centrally symmetric True)
+DECAY census: cuboctahedron (cs, not zonotope, no tiling): Omega ~ r^-4 (faces {4: 6, 3: 8}, centrally symmetric True)
+DECAY census: tetrahedron (no tiling): Omega ~ r^-4 (faces {3: 4}, centrally symmetric False)
+DECAY census: triangular prism (tiles, not cs): Omega ~ r^-5 (faces {3: 2, 4: 3}, centrally symmetric False)
+DECAY census: generic parallelepiped (zonotope, tiles): Omega ~ r^-6 (faces {4: 6}, centrally symmetric True)
+DECAY census: generic 4-generator zonotope (tiling not claimed): Omega ~ r^-6 (faces {4: 6, 6: 2}, centrally symmetric True)
+DECAY census: generic 5-generator zonotope (tiling not claimed): Omega ~ r^-6 (faces {4: 20}, centrally symmetric True)
+DECAY census: rhombic triacontahedron (zonotope, no tiling): Omega ~ r^-6 (faces {4: 30}, centrally symmetric True)
+DECAY census: rhombic icosahedron (zonotope, no tiling): Omega ~ r^-6 (faces {4: 20}, centrally symmetric True)
+DECAY census: corner-cut cube (cs, not zonotope): Omega ~ r^-4 (faces {8: 6, 3: 8}, centrally symmetric True)
+PROGRESS 0.10 T0 done (7 s)
+T2/T3 RD: far-field at neighbour dirs {'pole/order-2': 12}; sphere {'pole/order-2': 12}; line at 2h {'pole/order-2': 12}; planes through the 2h points [4]
+      axes (far field): 4-fold (1,0,0): pole; 3-fold (1,1,1): pole; 2-fold (1,1,0): pole
+PROGRESS 0.13 T2/T3 RD (17 s)
+T2/T3 TRD: far-field at neighbour dirs {'pole/order-1': 6, 'pole/order-2': 6}; sphere {'pole/order-2': 12}; line at 2h {'pole/order-2': 12}; planes through the 2h points [4]
+      axes (far field): c-axis (1,1,1): pole; in-plane a (1,-1,0): pole; in-plane (1,1,-2): pole
+PROGRESS 0.16 T2/T3 TRD (21 s)
+T2/T3 cube: far-field at neighbour dirs {'pole/order-4': 6}; sphere {'critical/max': 6}; line at 2h {'regular': 6}; planes through the 2h points [0]
+      axes (far field): 4-fold (1,0,0): pole; 3-fold (1,1,1): critical/max; 2-fold (1,1,0): pole
+PROGRESS 0.19 T2/T3 cube (24 s)
+T2/T3 TO: far-field at neighbour dirs {'pole/order-2': 6, 'critical/max': 8}; sphere {'critical/max': 6, 'pole/order-1': 8}; line at 2h {'regular': 6, 'pole/order-1': 8}; planes through the 2h points [0, 3]
+      axes (far field): 4-fold (1,0,0): pole; 3-fold (1,1,1): critical/max; 2-fold (1,1,0): pole
+PROGRESS 0.23 T2/T3 TO (76 s)
+T2/T3 HP: far-field at neighbour dirs {'pole/order-2': 6, 'pole/order-4': 2}; sphere {'critical/max': 8}; line at 2h {'pole/order-1': 6, 'regular': 2}; planes through the 2h points [0, 2]
+      axes (far field): c-axis (1,1,1): pole; in-plane a (1,-1,0): pole; in-plane (1,1,-2): pole
+PROGRESS 0.26 T2/T3 HP (80 s)
+T2/T3 icosahedron: far-field at neighbour dirs {'critical/max': 20}; sphere {'critical/max': 20}; line at 2h {'regular': 20}; planes through the 2h points [0]
+      axes (far field): 2-fold (1,0,0): pole; 3-fold (1,1,1): critical/max; 5-fold (0,1,phi): critical/min
+PROGRESS 0.29 T2/T3 icosahedron (112 s)
+T2/T3 dodecahedron: far-field at neighbour dirs {'critical/max': 12}; sphere {'critical/max': 12}; line at 2h {'regular': 12}; planes through the 2h points [0]
+      axes (far field): 2-fold (1,0,0): pole; 3-fold (1,1,1): critical/min; 5-fold (0,1,phi): critical/max
+PROGRESS 0.32 T2/T3 dodecahedron (123 s)
+T2/T3 RD-perturbed: far-field at neighbour dirs {'critical/max': 4, 'pole/order-1': 8}; sphere {'pole/order-2': 11, 'critical/max': 1}; line at 2h {'pole/order-2': 11, 'regular': 1}; planes through the 2h points [0, 3, 4]
+      axes (far field): 4-fold (1,0,0): pole; 3-fold (1,1,1): pole; 2-fold (1,1,0): critical/max
+PROGRESS 0.35 T2/T3 RD-perturbed (127 s)
+T3x RD: 1 distinct line profiles: {"poles_s_over_s0": [2.0], "zeros_s_over_s0": [3.1622], "crit_s_over_s0": [1.4449, 3.6623]}
+T3x TRD: 2 distinct line profiles: {"poles_s_over_s0": [2.0], "zeros_s_over_s0": [2.785], "crit_s_over_s0": [1.451, 3.1834]} | {"poles_s_over_s0": [2.0], "zeros_s_over_s0": [3.1622], "crit_s_over_s0": [1.4449, 3.6623]}
+T3x cube: 1 distinct line profiles: {"poles_s_over_s0": [], "zeros_s_over_s0": [], "crit_s_over_s0": []}
+T3x TO: 2 distinct line profiles: {"poles_s_over_s0": [1.5], "zeros_s_over_s0": [3.6742], "crit_s_over_s0": [1.1943, 4.3958]} | {"poles_s_over_s0": [2.0, 3.0], "zeros_s_over_s0": [], "crit_s_over_s0": [1.5275, 2.6458]}
+T3x HP: 2 distinct line profiles: {"poles_s_over_s0": [2.0], "zeros_s_over_s0": [], "crit_s_over_s0": [1.5811]} | {"poles_s_over_s0": [], "zeros_s_over_s0": [], "crit_s_over_s0": []}
+T3x icosahedron: 1 distinct line profiles: {"poles_s_over_s0": [1.341640786, 3.0], "zeros_s_over_s0": [1.8278], "crit_s_over_s0": [1.1897]}
+T3x dodecahedron: 1 distinct line profiles: {"poles_s_over_s0": [2.236067977], "zeros_s_over_s0": [], "crit_s_over_s0": [1.5112]}
+T3x RD-perturbed: 5 distinct line profiles: {"poles_s_over_s0": [1.904761905], "zeros_s_over_s0": [3.2096], "crit_s_over_s0": [1.3925, 3.7442]} | {"poles_s_over_s0": [2.0, 2.1], "zeros_s_over_s0": [2.0493, 3.1757], "crit_s_over_s0": [1.4565, 3.6716]} | {"poles_s_over_s0": [2.0], "zeros_s_over_s0": [3.1387], "crit_s_over_s0": [1.4447, 3.6337]} | {"poles_s_over_s0": [2.0], "zeros_s_over_s0": [3.165], "crit_s_over_s0": [1.4449, 3.6652]} | {"poles_s_over_s0": [2.0], "zeros_s_over_s0": [3.3086], "crit_s_over_s0": [1.4415, 3.8527]}
+PROGRESS 0.40 T2/T3 exact done (155 s)
+T1 incidence RD: fcc: HIT 12 planes, hcp: HIT 12 planes, dhcp: HIT 12 planes, bcc: none, sc: none, sh: none
+PROGRESS 0.42 incidence RD (155 s)
+T1 incidence TRD: fcc: HIT 12 planes, hcp: HIT 12 planes, dhcp: HIT 12 planes, bcc: none, sc: none, sh: none
+PROGRESS 0.44 incidence TRD (155 s)
+T1 incidence cube: fcc: none, hcp: none, dhcp: none, bcc: none, sc: none, sh: none
+PROGRESS 0.46 incidence cube (156 s)
+T1 incidence TO: fcc: none, hcp: none, dhcp: none, bcc: HIT 6 planes, sc: none, sh: none
+PROGRESS 0.48 incidence TO (156 s)
+T1 incidence HP: fcc: none, hcp: none, dhcp: none, bcc: none, sc: none, sh: HIT 6 planes
+PROGRESS 0.49 incidence HP (156 s)
+T1 incidence icosahedron: fcc: none, hcp: none, dhcp: none, bcc: none, sc: none, sh: none
+PROGRESS 0.51 incidence icosahedron (156 s)
+T1 incidence dodecahedron: fcc: none, hcp: none, dhcp: none, bcc: none, sc: none, sh: none
+PROGRESS 0.53 incidence dodecahedron (156 s)
+T1 incidence RD-perturbed: fcc: none, hcp: none, dhcp: none, bcc: none, sc: none, sh: none
+PROGRESS 0.55 incidence RD-perturbed (157 s)
+PROGRESS 0.60 lattice sums 6/48 (last icosahedron/sh 13 s) (200 s)
+PROGRESS 0.65 lattice sums 12/48 (last TO/sh 9 s) (228 s)
+PROGRESS 0.70 lattice sums 18/48 (last RD/sh 7 s) (251 s)
+PROGRESS 0.75 lattice sums 24/48 (last TRD/sh 8 s) (275 s)
+PROGRESS 0.80 lattice sums 30/48 (last RD-perturbed/fcc 8 s) (302 s)
+PROGRESS 0.85 lattice sums 36/48 (last HP/fcc 4 s) (322 s)
+PROGRESS 0.90 lattice sums 42/48 (last HP/sh 4 s) (335 s)
+PROGRESS 0.95 lattice sums 48/48 (last cube/sh 2 s) (343 s)
+ok   T1 icosahedron/fcc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 icosahedron/hcp: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 icosahedron/dhcp: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 icosahedron/bcc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 icosahedron/sc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 icosahedron/sh: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 TO/fcc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 TO/hcp: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 TO/dhcp: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 TO/bcc: float on-plane points (18248) agree with the exact incidence (True)
+ok   T1 TO/sc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 TO/sh: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 RD/fcc: float on-plane points (31932) agree with the exact incidence (True)
+ok   T1 RD/hcp: float on-plane points (21723) agree with the exact incidence (True)
+ok   T1 RD/dhcp: float on-plane points (21666) agree with the exact incidence (True)
+ok   T1 RD/bcc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 RD/sc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 RD/sh: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 TRD/fcc: float on-plane points (26673) agree with the exact incidence (True)
+ok   T1 TRD/hcp: float on-plane points (21579) agree with the exact incidence (True)
+ok   T1 TRD/dhcp: float on-plane points (21540) agree with the exact incidence (True)
+ok   T1 TRD/bcc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 TRD/sc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 TRD/sh: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 dodecahedron/fcc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 dodecahedron/hcp: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 dodecahedron/dhcp: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 dodecahedron/bcc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 dodecahedron/sc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 RD-perturbed/fcc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 dodecahedron/sh: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 RD-perturbed/hcp: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 RD-perturbed/dhcp: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 RD-perturbed/bcc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 RD-perturbed/sc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 HP/fcc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 RD-perturbed/sh: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 HP/hcp: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 HP/dhcp: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 HP/bcc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 HP/sc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 HP/sh: float on-plane points (15402) agree with the exact incidence (True)
+ok   T1 cube/fcc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 cube/hcp: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 cube/dhcp: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 cube/bcc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 cube/sc: float on-plane points (0) agree with the exact incidence (False)
+ok   T1 cube/sh: float on-plane points (0) agree with the exact incidence (False)
+T1 lattice sums (pole-deleted E'; "inf" = own points on facet planes, E undefined):
+  RD: fcc: POLE -8.4282 +- 0.085 [rand -1.62e+04..5.36e+04]; hcp: POLE -41.926 +- 0.27 [rand -1e+04..3.89e+03]; dhcp: POLE -22.27 +- 0.46 [rand -4.42e+05..1.33e+04]; bcc: -145.44 +- 0.12 [rand -6.66e+04..1.46e+04]; sc: -1110.3 +- 0.025 [rand -5.27e+04..2.62e+04]; sh: -5070.4 +- 1.8e+02 [rand -7.2e+03..1.23e+04]
+  RD verdict data: {'own': 'fcc', 'own_E_defined': False, 'own_is_min_deleted': False, 'own_is_max_deleted': True, 'own_is_min_finite': False, 'own_is_max_finite': False, 'incident_lattices': ['fcc', 'hcp', 'dhcp'], 'argmin_deleted': 'sh', 'argmax_deleted': 'fcc'}
+  TRD: fcc: POLE -34.693 +- 0.17 [rand -3.31e+03..4.48e+04]; hcp: POLE -33.189 +- 0.3 [rand -2.24e+03..1.98e+04]; dhcp: POLE -42.982 +- 0.26 [rand -1.2e+04..2.02e+05]; bcc: -2353.7 +- 3.8 [rand -6.51e+04..5.37e+03]; sc: -740.11 +- 0.047 [rand -2.8e+05..2.24e+03]; sh: -5070.4 +- 1.8e+02 [rand -3.6e+03..7.26e+03]
+  TRD verdict data: {'own': 'hcp', 'own_E_defined': False, 'own_is_min_deleted': False, 'own_is_max_deleted': True, 'own_is_min_finite': False, 'own_is_max_finite': False, 'incident_lattices': ['fcc', 'hcp', 'dhcp'], 'argmin_deleted': 'sh', 'argmax_deleted': 'hcp'}
+  cube: fcc: 237.76 +- 1.2 [rand -2.6e+04..4.23e+04]; hcp: -1268.1 +- 60 [rand -1.05e+04..2.82e+03]; dhcp: -1013.7 +- 77 [rand -1.31e+04..4.71e+03]; bcc: -3325.6 +- 6.1 [rand -1.24e+05..1.3e+04]; sc: -64.01 +- 0.13 [rand -1.65e+04..1.6e+05]; sh: -2984.1 +- 3.3e+02 [rand -3.89e+04..8.67e+03]
+  cube verdict data: {'own': 'sc', 'own_E_defined': True, 'own_is_min_deleted': False, 'own_is_max_deleted': False, 'own_is_min_finite': False, 'own_is_max_finite': False, 'incident_lattices': [], 'argmin_deleted': 'bcc', 'argmax_deleted': 'fcc'}
+  TO: fcc: -664.21 +- 0.076 [rand -5.79e+06..1.44e+05]; hcp: -171.24 +- 0.22 [rand -1.27e+04..7.17e+04]; dhcp: -465.71 +- 3.9 [rand -9.01e+04..9.7e+04]; bcc: POLE -653.56 +- 0.83 [rand -6.02e+04..1.27e+04]; sc: -48619 +- 56 [rand -7.07e+05..9.9e+04]; sh: -3583.8 +- 6.3 [rand -5.03e+04..1.32e+05]
+  TO verdict data: {'own': 'bcc', 'own_E_defined': False, 'own_is_min_deleted': False, 'own_is_max_deleted': False, 'own_is_min_finite': False, 'own_is_max_finite': False, 'incident_lattices': ['bcc'], 'argmin_deleted': 'sc', 'argmax_deleted': 'hcp'}
+  HP: fcc: -3188.6 +- 0.3 [rand -3.14e+03..6.61e+04]; hcp: -2815.4 +- 1.2 [rand -3.15e+03..6.93e+05]; dhcp: -2815.4 +- 1.2 [rand -5.64e+03..4.47e+03]; bcc: -24.463 +- 0.028 [rand -1.94e+03..1.33e+05]; sc: -645.48 +- 0.65 [rand -2.77e+03..7.62e+03]; sh: POLE -29.309 +- 0.014 [rand -4.06e+03..2.14e+06]
+  HP verdict data: {'own': 'sh', 'own_E_defined': False, 'own_is_min_deleted': False, 'own_is_max_deleted': False, 'own_is_min_finite': False, 'own_is_max_finite': False, 'incident_lattices': ['sh'], 'argmin_deleted': 'fcc', 'argmax_deleted': 'bcc'}
+  icosahedron: fcc: -13.375 +- 1.2 [rand -968..1.49e+03]; hcp: -325.18 +- 0.087 [rand -147..1.21e+05]; dhcp: -196.85 +- 0.78 [rand -3.74e+03..1.81e+03]; bcc: 22.633 +- 3.6 [rand -2.45e+03..123]; sc: -10662 +- 15 [rand -5.9e+05..533]; sh: 83.282 +- 1.5 [rand -427..4.62e+03]
+  icosahedron verdict data: {'argmin_deleted': 'sc', 'argmax_deleted': 'sh', 'incident_lattices': []}
+  dodecahedron: fcc: -3.4615 +- 0.36 [rand -1.5e+03..6.13e+03]; hcp: -71.424 +- 0.26 [rand -3.69e+03..1.39e+04]; dhcp: -141.59 +- 1.2 [rand -767..1.34e+03]; bcc: 18.008 +- 2.4 [rand -2.18e+04..540]; sc: 13.974 +- 3.4 [rand -2.33e+03..231]; sh: 197.94 +- 46 [rand -1.37e+03..1.52e+03]
+  dodecahedron verdict data: {'argmin_deleted': 'dhcp', 'argmax_deleted': 'sh', 'incident_lattices': []}
+  RD-perturbed: fcc: -1.9999e+06 +- 6.9e+02 [rand -4.14e+04..1.27e+03]; hcp: -1.5633e+06 +- 1.1e+03 [rand -8.86e+03..5.54e+03]; dhcp: -1.7455e+06 +- 2.7e+03 [rand -1.96e+04..1.94e+04]; bcc: -141.92 +- 0.12 [rand -7.68e+04..1.79e+05]; sc: -1088.3 +- 0.021 [rand -3.8e+04..1.79e+04]; sh: -10866 +- 1.1e+03 [rand -2.57e+03..1.45e+04]
+  RD-perturbed verdict data: {'argmin_deleted': 'fcc', 'argmax_deleted': 'bcc', 'incident_lattices': []}
+T1 RESULT: C1 FAIL; C1' (pole-deleted) FAIL; C2 (own lattice the unique one on the poles) FAIL
+PROGRESS 0.99 written (343 s)
+93 checks, 343 s
+FINAL ok
