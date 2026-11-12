@@ -1,0 +1,52 @@
+{
+  "started_utc": "2026-11-12T02:19:08.168642+00:00",
+  "manifest_files_checked": 574,
+  "commands": [
+    {
+      "command": [
+        "fourier_s/certificate_independent/independent_checks.py"
+      ],
+      "returncode": 0,
+      "seconds": 11.338040440925397,
+      "log": "step_1.log"
+    },
+    {
+      "command": [
+        "fourier_s/certificate_independent/verify_residual.py"
+      ],
+      "returncode": 0,
+      "seconds": 3.776998971006833,
+      "log": "step_2.log"
+    },
+    {
+      "command": [
+        "fourier_s/certificate_independent/verify_label_uniqueness.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.040614617988467216,
+      "log": "step_3.log"
+    },
+    {
+      "command": [
+        "fourier_s/fourier74_agent/certify_full74_S.py",
+        "--balls",
+        "fourier_s/certificate_independent/full74_certified_balls_512_alternate.json",
+        "--output",
+        "fourier_s/certificate_independent/full74_S_exact_certificate_512_alternate.json"
+      ],
+      "returncode": 0,
+      "seconds": 0.24168818909674883,
+      "log": "step_4.log"
+    }
+  ],
+  "network_required": false,
+  "original_inputs_modified": false,
+  "result": "PASS",
+  "rank": 74,
+  "entries_certified": 5476,
+  "separation_threshold_fraction": "1/5503765708800000000",
+  "global_error_upper_readable": "[3.4216428916800281331449796375362055011286534033119104765058871479715156964020417872224390597308188044329480491348525620903806329880886788746535257540917749440724241537773976402577292801032884018375649687454353060845944596640454857e-140 +/- 2.88e-370]",
+  "exact_rotation_sha256": "3ac47edaa9af0dd177f1285e808c073b5c1df6fe3042fad8d5400d288da9dd8f",
+  "finished_utc": "2026-11-12T02:19:23.596176+00:00",
+  "seconds": 15.42757029097993
+}

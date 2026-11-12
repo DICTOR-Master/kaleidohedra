@@ -1,0 +1,15 @@
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.prefix, expected <workdir>/venv, got <workdir>/Lusztig_Fourier_Conjecture/../venv
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.exec_prefix, expected <workdir>/venv, got <workdir>/Lusztig_Fourier_Conjecture/../venv
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-11-12T02:30:12.338217+00:00",
+  "input_sha256": "302ed4d575a5735a50ab9b10e6ea17b9134fb1cdec476eb04248ec51d440a41a",
+  "exact_dimension_homomorphism_products": 576,
+  "all_dimensions_positive": true,
+  "global_dimension": "480*sqrt(5) + 1080",
+  "a_b_generate_full_ring": true,
+  "a_and_b_squares_contain_themselves": true,
+  "A3_dimension": "240*sqrt(5) + 540",
+  "B3_longest_object_squared_dimension_minus_whole_D": "1809 + 812*sqrt(5)",
+  "preferred_A3_forcing": "actual involution forces equal path exponents k; finite Coxeter Gram determinant 1-2*cos(pi/k)^2>0 forces k=3"
+}

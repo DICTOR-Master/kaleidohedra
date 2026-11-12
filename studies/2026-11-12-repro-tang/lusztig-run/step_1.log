@@ -1,0 +1,225 @@
+EXACT_ROTATE 0 morphisms 9 seconds 0.02
+EXACT_ROTATE 1 morphisms 15 seconds 0.02
+EXACT_ROTATE 2 morphisms 23 seconds 0.03
+EXACT_ROTATE 3 morphisms 29 seconds 0.03
+EXACT_ROTATE 4 morphisms 34 seconds 0.03
+EXACT_ROTATE 5 morphisms 48 seconds 0.04
+EXACT_ROTATE 6 morphisms 53 seconds 0.04
+EXACT_ROTATE 7 morphisms 58 seconds 0.04
+EXACT_ROTATE 8 morphisms 63 seconds 0.05
+EXACT_ROTATE 9 morphisms 76 seconds 0.06
+EXACT_ROTATE 10 morphisms 86 seconds 0.07
+EXACT_ROTATE 11 morphisms 98 seconds 0.08
+EXACT_ROTATE 12 morphisms 110 seconds 0.1
+EXACT_ROTATE 13 morphisms 123 seconds 0.11
+EXACT_ROTATE 14 morphisms 133 seconds 0.12
+EXACT_ROTATE 15 morphisms 155 seconds 0.18
+EXACT_ROTATE 16 morphisms 177 seconds 0.23
+EXACT_ROTATE 17 morphisms 199 seconds 0.28
+EXACT_ROTATE 18 morphisms 224 seconds 0.35
+EXACT_ROTATE 19 morphisms 246 seconds 0.4
+EXACT_ROTATE 20 morphisms 295 seconds 0.67
+EXACT_ROTATE 21 morphisms 344 seconds 0.92
+EXACT_ROTATE 22 morphisms 393 seconds 1.19
+EXACT_ROTATE 23 morphisms 523 seconds 2.62
+EXACT_ROTATE 24 morphisms 532 seconds 2.62
+EXACT_ROTATE 25 morphisms 538 seconds 2.63
+EXACT_ROTATE 26 morphisms 546 seconds 2.63
+EXACT_ROTATE 27 morphisms 552 seconds 2.63
+EXACT_ROTATE 28 morphisms 557 seconds 2.63
+EXACT_ROTATE 29 morphisms 571 seconds 2.64
+EXACT_ROTATE 30 morphisms 576 seconds 2.64
+EXACT_ROTATE 31 morphisms 581 seconds 2.65
+EXACT_ROTATE 32 morphisms 586 seconds 2.65
+EXACT_ROTATE 33 morphisms 599 seconds 2.67
+EXACT_ROTATE 34 morphisms 609 seconds 2.68
+EXACT_ROTATE 35 morphisms 621 seconds 2.7
+EXACT_ROTATE 36 morphisms 633 seconds 2.71
+EXACT_ROTATE 37 morphisms 646 seconds 2.73
+EXACT_ROTATE 38 morphisms 656 seconds 2.74
+EXACT_ROTATE 39 morphisms 678 seconds 2.81
+EXACT_ROTATE 40 morphisms 700 seconds 2.87
+EXACT_ROTATE 41 morphisms 722 seconds 2.94
+EXACT_ROTATE 42 morphisms 747 seconds 3.02
+EXACT_ROTATE 43 morphisms 769 seconds 3.08
+EXACT_ROTATE 44 morphisms 818 seconds 3.45
+EXACT_ROTATE 45 morphisms 867 seconds 3.78
+EXACT_ROTATE 46 morphisms 916 seconds 4.14
+EXACT_ROTATE 47 morphisms 1046 seconds 6.2
+EXACT_ROTATION_PASS rank 148 R4=1 seconds 6.41
+CERTIFIED_PRIMITIVES 74 seconds 2.992
+CERTIFIED_DIMENSIONS 138 seconds 2.996
+CERTIFIED_S_ENCLOSURES 74 seconds 3.198
+{
+  "integer_bounds": {
+    "0": {
+      "table_integer": 278,
+      "commutator_coefficient": 556,
+      "selected_commutator_sum": 255204,
+      "selected_lift_difference": 510408,
+      "full_commutator_times_kernel": 14546628,
+      "H_times_kernel": 26163,
+      "odd_physical_basis": 26163,
+      "Q_inverse_identity": 459,
+      "H_square": 459,
+      "twist_to_crossed_coordinates": 1377,
+      "center_multiplication": 169148190384,
+      "regular_and_boundary_trace": 2225634084
+    },
+    "1": {
+      "table_integer": 262,
+      "commutator_coefficient": 524,
+      "selected_commutator_sum": 240516,
+      "selected_lift_difference": 481032,
+      "full_commutator_times_kernel": 2886192,
+      "H_times_kernel": 5508,
+      "odd_physical_basis": 5508,
+      "Q_inverse_identity": 459,
+      "H_square": 459,
+      "twist_to_crossed_coordinates": 1377,
+      "center_multiplication": 7065398016,
+      "regular_and_boundary_trace": 441587376
+    }
+  },
+  "all_bounds_strictly_less_than_int64_limit": true,
+  "regular_and_boundary_traces_recomputed_with_python_integers": true,
+  "missing_ideal_exact_surjective_witness_ranks": {
+    "right_module": 752,
+    "24": 52,
+    "26": 136,
+    "29": 128,
+    "35": 256
+  },
+  "all_three_T60_operators_rechecked_exactly": true,
+  "global_dimension_recomputed_from_48_simples_Qa": [
+    1560,
+    960
+  ],
+  "all48_actual_unit_and_twist_restrictions_rechecked": true,
+  "full_rank_nonseed_frame_labels": [
+    1,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    25,
+    27,
+    28,
+    30,
+    31,
+    32,
+    33,
+    34,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "fresh_actual_rotation_matches_saved_exactly": true,
+  "fresh_rotation_morphisms": 1046,
+  "fresh_rotation_coordinate_rank": 148,
+  "R2_identity_rechecked_exactly": true,
+  "live_object_serialization_containment_checks": 16650,
+  "alternate_separating_weights": [
+    2,
+    -4,
+    -2,
+    -1,
+    4,
+    -6,
+    3,
+    9,
+    -2,
+    1,
+    -6,
+    4,
+    -6,
+    -4,
+    7,
+    -4,
+    9,
+    -8,
+    8,
+    -5,
+    -6,
+    -8,
+    -5,
+    -1,
+    -9,
+    -9,
+    2,
+    9,
+    -7,
+    6,
+    -4,
+    -5,
+    2,
+    -3,
+    9,
+    -2,
+    -1,
+    -6,
+    -1,
+    3,
+    5,
+    -1,
+    -5,
+    -2,
+    -9,
+    5,
+    -7,
+    -9,
+    -6,
+    -2,
+    -1,
+    -1,
+    8,
+    6,
+    0,
+    3,
+    -8,
+    -9,
+    -9,
+    -2,
+    -4,
+    9,
+    -4,
+    6,
+    7,
+    -2,
+    8,
+    -9,
+    5,
+    -7,
+    -9,
+    9,
+    1,
+    0
+  ],
+  "ball_precision_bits": 512,
+  "source_input_sha256": "33ed6c8ab2ce0bc55d35069a84d59e89202a9d40d9edff0a5d16ed6791750f40",
+  "final_rotation_sha256": "3ac47edaa9af0dd177f1285e808c073b5c1df6fe3042fad8d5400d288da9dd8f",
+  "seconds": 11.125056028366089
+}

@@ -18,3 +18,12 @@ does not reproduce, write to the author on the paper's discussion first. Filing 
 | 2610.00447 | Winter, A relation between Mahler volume and flag number for convex polytopes | polar sweep (aim 2) | check the relation on our exact sweep solids |
 | 2611.00413 | Akhmedova, Lam, Yost-Wolff, Two examples in amplituhedron tilings | laws (aim 2) | small cell counts, checkable |
 | 2609.00642 | Yaskin, Polyhedral Subspaces of L_p and Polars of Zonotopes | polar | read first |
+
+## Filed
+| date | paper | kind | link |
+|---|---|---|---|
+| 2026-11-12 | Kamenetsky 2610.00139 | B: independent recomputation, Theorems A and B complete (author's code also rerun) | https://aixiv.online/abs/2610.00139 |
+| 2026-11-12 | Grogan 2610.01307 | B: independent recomputation, scope Proposition E (p = 3, 5, 7) | https://aixiv.online/abs/2610.01307 |
+| 2026-11-12 | Tsiokos 2609.02383 (Chair44) | A: author's replay (all gates except the off-lattice packet, archive not public) + B: our census 2388 -> 44 | https://aixiv.online/abs/2609.02383 |
+| 2026-11-12 | Winter 2610.00447 | B: proof checked + our 108-polytope test | https://aixiv.online/abs/2610.00447 |
+| 2026-11-12 | Hofscheier–Nill 2611.00775 | B: independent exact recomputation, Theorems 2.1 and 2.2 | https://aixiv.online/abs/2611.00775 |

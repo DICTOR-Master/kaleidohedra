@@ -1,0 +1,25 @@
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.prefix, expected <workdir>/venv, got <workdir>/Lusztig_Fourier_Conjecture/../venv
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.exec_prefix, expected <workdir>/venv, got <workdir>/Lusztig_Fourier_Conjecture/../venv
+REBUILT 1 seconds 0.448
+REBUILT 2 seconds 0.912
+REBUILT 3 seconds 1.37
+REBUILT 678 seconds 38.249
+{
+  "result": "PASS",
+  "direct_categorical_generator_actions_rebuilt": [
+    1,
+    2,
+    3
+  ],
+  "actual_annular_twist_action_rebuilt": 678,
+  "corner_dimension": 778,
+  "active_kernel_support_columns": 774,
+  "maximum_raw_integer_coefficients": {
+    "1": 3,
+    "2": 5,
+    "3": 5,
+    "678": 2584
+  },
+  "all_actions_match_saved_exactly": true,
+  "seconds": 38.279581785202026
+}

@@ -1,0 +1,28 @@
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.prefix, expected <workdir>/venv, got <workdir>/Lusztig_Fourier_Conjecture/../venv
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.exec_prefix, expected <workdir>/venv, got <workdir>/Lusztig_Fourier_Conjecture/../venv
+{
+  "arithmetic": "Exact integer pairs for Q(phi); no project imports",
+  "root_count": 120,
+  "positive_root_count": 60,
+  "longest_length": 60,
+  "longest_is_negative_identity_and_central": true,
+  "elements": {
+    "232": {
+      "length": 3,
+      "involution": true
+    },
+    "232123": {
+      "length": 6,
+      "involution": true
+    },
+    "w0(232123)": {
+      "length": 54,
+      "involution": true
+    },
+    "w0(232)": {
+      "length": 57,
+      "involution": true
+    }
+  },
+  "scope": "Lengths and involutions only; this does not establish cell membership"
+}

@@ -1,0 +1,328 @@
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.prefix, expected <workdir>/venv, got <workdir>/Lusztig_Fourier_Conjecture/../venv
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.exec_prefix, expected <workdir>/venv, got <workdir>/Lusztig_Fourier_Conjecture/../venv
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-11-12T02:30:12.706912+00:00",
+  "implementation": "Independent permutation-path symbolic reconstruction; no ancillary imports",
+  "certificates": [
+    {
+      "m": 2,
+      "group_order": 4,
+      "gauge_phase_order": [
+        [
+          "k",
+          0,
+          0,
+          []
+        ],
+        [
+          "k",
+          0,
+          0,
+          [
+            1
+          ]
+        ],
+        [
+          "h",
+          0,
+          1,
+          []
+        ],
+        [
+          "h",
+          1,
+          0,
+          []
+        ],
+        [
+          "k",
+          1,
+          1,
+          []
+        ],
+        [
+          "k",
+          1,
+          1,
+          [
+            0
+          ]
+        ]
+      ],
+      "gauge_matrix": [
+        [
+          -1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          -1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          -1,
+          1,
+          1,
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "residual_q_row": 5,
+      "normalized_phase_HNF_is_identity": true,
+      "intrinsic_all_loop_coefficient": "1",
+      "nonzero_symbolic_residuals": 12,
+      "witness": {
+        "input_word": [
+          1
+        ],
+        "right_colour": 0,
+        "row_zero_based": 3,
+        "column_zero_based": 3,
+        "left": "1",
+        "right": "q",
+        "residual": "1 - q"
+      },
+      "all_residuals_vanish_at_q1": true
+    },
+    {
+      "m": 3,
+      "group_order": 6,
+      "gauge_phase_order": [
+        [
+          "k",
+          0,
+          0,
+          []
+        ],
+        [
+          "h",
+          0,
+          0,
+          [
+            1
+          ]
+        ],
+        [
+          "h",
+          0,
+          1,
+          []
+        ],
+        [
+          "k",
+          0,
+          1,
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          "h",
+          1,
+          0,
+          []
+        ],
+        [
+          "k",
+          1,
+          0,
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "k",
+          1,
+          1,
+          []
+        ],
+        [
+          "h",
+          1,
+          1,
+          [
+            0
+          ]
+        ]
+      ],
+      "gauge_matrix": [
+        [
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          -1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          -1,
+          1,
+          0,
+          1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          -1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1
+        ]
+      ],
+      "residual_q_row": 7,
+      "normalized_phase_HNF_is_identity": true,
+      "intrinsic_all_loop_coefficient": "1/2 - sqrt(5)/2",
+      "nonzero_symbolic_residuals": 31,
+      "witness": {
+        "input_word": [
+          1,
+          0
+        ],
+        "right_colour": 1,
+        "row_zero_based": 4,
+        "column_zero_based": 4,
+        "left": "1",
+        "right": "q",
+        "residual": "1 - q"
+      },
+      "all_residuals_vanish_at_q1": true
+    }
+  ]
+}

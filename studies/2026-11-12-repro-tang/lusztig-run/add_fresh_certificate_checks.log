@@ -1,0 +1,70 @@
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.prefix, expected <workdir>/venv, got <workdir>/Lusztig_Fourier_Conjecture/../venv
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.exec_prefix, expected <workdir>/venv, got <workdir>/Lusztig_Fourier_Conjecture/../venv
+{
+  "scope": "Independent semantic audit of saved exact center data; no package verifier imported.",
+  "components": {
+    "0": {
+      "basis_size": 40,
+      "even_tube_size": 153,
+      "full_centrality_equations": 936360,
+      "full_central_products_reconstructed": 1600,
+      "coordinates_per_product": 153,
+      "maximum_table_coefficient": 278,
+      "maximum_center_basis_coefficient": 57,
+      "python_integer_bounds": {
+        "selected_commutator_lift": 510408,
+        "full_commutator_kernel": 14546628,
+        "H_kernel_and_odd_basis": 26163,
+        "Q_inverse_product": 459,
+        "H_square": 459,
+        "twist_coordinates": 1377,
+        "center_product_intermediates": 169148190384,
+        "trace_intermediates": 2225634084
+      }
+    },
+    "1": {
+      "basis_size": 32,
+      "even_tube_size": 153,
+      "full_centrality_equations": 749088,
+      "full_central_products_reconstructed": 1024,
+      "coordinates_per_product": 153,
+      "maximum_table_coefficient": 262,
+      "maximum_center_basis_coefficient": 12,
+      "python_integer_bounds": {
+        "selected_commutator_lift": 481032,
+        "full_commutator_kernel": 2886192,
+        "H_kernel_and_odd_basis": 5508,
+        "Q_inverse_product": 459,
+        "H_square": 459,
+        "twist_coordinates": 1377,
+        "center_product_intermediates": 7065398016,
+        "trace_intermediates": 441587376
+      }
+    }
+  },
+  "CHEVIE_source": {
+    "source_sha256": "e8cc39ad84fa4a007aa1df635ffad68b986269dcc694c60ffdb356f57c405b2f",
+    "matrix_entries_reparsed": 5476,
+    "distinct_source_scalar_expressions": 65,
+    "target_both_embeddings_orthogonal_with_python_integers": true,
+    "twists_reparsed": 74,
+    "twist_order": 60
+  },
+  "ball_input_assembly": {
+    "component_sizes": [
+      40,
+      32,
+      2
+    ],
+    "multiplication_slots_compared": 405224,
+    "all_unit_trace_dimension_twist_and_rotation_inputs_matched": true,
+    "boundary_trace_functionals_checked": 9
+  },
+  "norm_separation": {
+    "field_degree": 16,
+    "norm_D_in_Qsqrt5": 14400,
+    "threshold": "1/5503765708800000000"
+  },
+  "seconds": 2.601921558380127,
+  "result": "PASS"
+}
