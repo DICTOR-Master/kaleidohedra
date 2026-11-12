@@ -6720,6 +6720,15 @@
     "status": "SETTLED",
     "retry": "never; lead only: rerun the 11-11 Vacuus census share ranking with the #87 closed-sheet rule",
     "study": "studies/2026-11-13-platonic-exact-checks"
+   },
+   {
+    "date": "2026-11-13",
+    "question": "Paradigm Open question 12.2: golden slice by the window method - can the golden slice of the 4D permutohedron honeycomb (u = (1, phi, .., phi^4); 35 kinds, 69 bands) be cut down to finitely many shapes by cut-and-project (window = projection of the cell, local shapes = window regions)?",
+    "method": "studies/2026-11-13-golden-slice-window/scripts/slice_window.py: exact Q(phi); window W = l(P) = (-3-7phi, 3+7phi); Lawrence formula for section volumes (Brion identities checked); velocity test; dual window tiling = projected Delaunay tetrahedra (power diagram / regular triangulation, Oguey-Duneau-Katz, Kramer-Schlottmann dualisation); vertex stars per band, colour refinement + backtracking isomorphism; patch radius 50 (face matching, covering 1, volume balance identity); controls Fibonacci, rational, generic Q(phi), determinant identity; compute node via job gate (slicewin-pilot, slicewin), 40 checks FINAL ok",
+    "result": "PROVED. (A) The slice itself: section volume non-constant in all 69 bands (degree 3; middle band 2), heights dense -> infinitely many shapes in each of the 35 kinds, even up to congruence; the window method fixes only the kind. (B) Window version: tiles = projected Delaunay tetrahedra, a face-to-face tiling; 60 tile shapes up to translation, 30 up to point reflection = up to congruence; 6 tiles per vertex; exactly 69 corner configurations = 69 window regions, 35 up to point reflection = the 35 kinds (each = band + mirror band); 187 first coronas. (C) CORRECTION to Theorem 12.1 (i): l(L) = 5Z + phi Z, L cap E = 5Z(1,0,-2,1,0) + 5Z(0,1,0,-2,1): slice and window tiling repeat along a plane, non-periodic in one direction only; unavoidable for any u in Q(phi)^5",
+    "retry": "never for these counts; leads: transverse golden sequence modulo the period plane, fully non-repeating golden filling (codimension 2, 6D/E8), figures of the 30 tile pairs, inflation, exact period group of the section tiling",
+    "status": "SETTLED (exact)",
+    "study": "studies/2026-11-13-golden-slice-window"
    }
   ]
  },
