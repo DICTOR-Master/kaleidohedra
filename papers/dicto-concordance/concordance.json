@@ -6589,6 +6589,15 @@
     "retry": "never for n = 4, 5; new: prove s = D_S for all n, n = 6, non-simple stretch closed form, which GPs tile, P cap mu P* Hopscotch",
     "study": "2026-11-12-permutohedron-associahedron-line",
     "date": "2026-11-12"
+   },
+   {
+    "question": "one-piece aim, DICTO 12 Nov 'put more work on dbb aim 3' (keying paused): is there a hopeful piece, ONE piece whose shape alone (bumps and dents on an RD, or an unkeyed poly-RD) admits no periodic filling?",
+    "method": "studies/2026-11-12-hopeful-piece: hunt.py; keyed RD = height field on 48 face points (one free O_h orbit), registration theorem puts fillings on the fcc lattice, 48 orientations (mirrors allowed); exhaustive per symmetry class (|G|=4,3 heights -1..1; |G|>=6 heights -2..2; one representative per congruence class x bump<->dent), 40 000 random paired no-symmetry pieces; all free poly-RDs n<=7; kill test arc consistency, index 1, SAT (Cadical153) on every fcc torus to index 16 (one per O_h orbit; poly-RD multiples of n to min(24, 8n), survivors 28-56), balls R2-R4. Controls: plain RD 1, all-bump untileable, 2961 tori, CELL+EPART 4, CELLFRAME and certified FRAME+EFR no torus to 16, shell untileable. dbb jobs hp-pilot, hp-main, hp-deep, all FINAL ok",
+    "status": "SETTLED",
+    "result": "no hopeful piece: 6 385 243 symmetric keyed RDs + 40 000 paired: all untileable or periodic (every tileable one at torus index <= 8); 14 102 poly-RDs n<=7: all periodic (<= 4 pieces per period; 6 heptominoes passed index 21 and were killed at 28). Capacity bound: one RD carries <= 48 states per site, so no bridge marking without small periods (CELLFRAME 288, FRAME+EFR 2160 states) transfers onto one keyed RD by a radius-0 relabelling",
+    "retry": "never for symmetric keyed RDs (|G|>=3, these alphabets) or poly-RDs n<=7; only: keyed RD with no symmetry by a directed (not random) search, keyed poly-RDs >= 6 cells, or poly-RDs n = 8",
+    "study": "2026-11-12-hopeful-piece",
+    "date": "2026-11-12"
    }
   ]
  },
@@ -6668,7 +6677,8 @@
   ],
   "Aim: one piece, any stacking (research open)": [
    "Step 2: four routes, two closed (layer bit; irrational screw), two open (Socolar–Taylor in-layer key, Narcissus achiral; in-layer + vertical coupling); Socolar–Taylor digest on DBB",
-   "11-05 step 3: Route 3 alone closed (Socolar–Taylor 3D stacks periodically); step 3a: Kari-tile key on its side (rows = layers, x2 = c, x2/3 = h) forces an aperiodic c/h word: no tori to 10x10 (overnight to 30x30 clean so far), allowed words = Kari orbit words (+1 tie); step 3b: key on Narcissus faces (straight/turned join = c/h), ~14 keyed copies; 3c (one piece) open"
+   "11-05 step 3: Route 3 alone closed (Socolar–Taylor 3D stacks periodically); step 3a: Kari-tile key on its side (rows = layers, x2 = c, x2/3 = h) forces an aperiodic c/h word: no tori to 10x10 (overnight to 30x30 clean so far), allowed words = Kari orbit words (+1 tie); step 3b: key on Narcissus faces (straight/turned join = c/h), ~14 keyed copies; 3c (one piece) open",
+   "12 Nov hopeful-piece hunt (keying paused): no single piece found; symmetric keyed RDs (6.4 M, exhaustive for |G|>=3) and poly-RDs to 7 cells are all untileable or periodic (tileable keyed RDs repeat by index 8, poly-RDs by 4 pieces per period); one RD carries at most 48 states, below every bridge marking without small periods; open: no-symmetry keyed RD by directed search, keyed poly-RDs (studies/2026-11-12-hopeful-piece)"
   ],
   "Watch list, no claim": [
    "C60 / fullerite fcc link to the close-packing work"
