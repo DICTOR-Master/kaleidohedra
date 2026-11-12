@@ -1,0 +1,32 @@
+ok   Prop 5 d=2: |T|=1/2, |PiT|=3, R=6
+ok   Prop 5 d=3: |T|=1/6, |PiT|=1/2, R=18
+ok   Prop 5 d=4: |T|=1/24, |PiT|=5/1296, R=160/3
+ok   Prop 5 d=5: |T|=1/120, |PiT|=1/1327104, R=625/4
+ok   Prop 5 d=6: |T|=1/720, |PiT|=7/2985984000000, R=2268/5
+ok   Prop 3 / product test r=2, s=2: R direct = c_r c_s, R/c_n = closed form 27/40
+ok   Prop 3 / product test r=2, s=3: R direct = c_r c_s, R/c_n = closed form 432/625
+ok   Prop 3 / product test r=2, s=4: R direct = c_r c_s, R/c_n = closed form 400/567
+ok   Prop 3 / product test r=2, s=5: R direct = c_r c_s, R/c_n = closed form 84375/117649
+ok   Prop 3 / product test r=3, s=3: R direct = c_r c_s, R/c_n = closed form 5/7
+ok   Prop 3 / product test r=3, s=4: R direct = c_r c_s, R/c_n = closed form 86400/117649
+ok   Lemma 4 d=3: random simplex R = c_d
+ok   Lemma 4 d=3: random simplex R = c_d
+ok   Lemma 4 d=3: random simplex R = c_d
+ok   Lemma 4 d=4: random simplex R = c_d
+ok   Lemma 4 d=4: random simplex R = c_d
+ok   Lemma 4 d=4: random simplex R = c_d
+ok   Lemma 4 d=5: random simplex R = c_d
+ok   Lemma 4 d=5: random simplex R = c_d
+ok   Lemma 4 d=5: random simplex R = c_d
+ok   Lemma 4 + Prop 3: random triangle x random tetrahedron R = c2 c3
+ok   Theorem 1 integers: C(20,10) = 184756, 121*184756 - 21*2^20 = 335380
+ok   Theorem 1: c10^2/c20 = 22355476/22020096
+ok   Cor 6: ratios of the tail terms 1/j! (j >= 3) are < 1/3
+ok   Cor 6: 5/2 + (1/6) sum 3^-j = 11/4
+ok   Cor 6: e < 11/4 (numerically 2.71828 < 2.75)
+ok   Cor 6: c10 = 17187500/567
+ok   Cor 6: A = c10/beta^10 = 1638400000000/1336956340797 = 1638400000000/1336956340797 > 1
+ok   Cor 6: c_n < (n+1) beta^n for n = 2..200 (exact)
+ok   Cor 6: lambda = 1.001 < A^(1/10)
+ok   Cor 6 explicit: with lambda = 1.001, R_n(K_n)/R_n(T_n) >= lambda^n fails last at n = 20; holds for every n in [21, 2999]
+FINAL ok: every claim of the paper confirmed exactly
