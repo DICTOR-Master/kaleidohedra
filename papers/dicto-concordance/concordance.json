@@ -6407,6 +6407,15 @@
     "retry": "never",
     "study": "studies/2026-11-09-hopscotch-rows",
     "date": "2026-11-12"
+   },
+   {
+    "question": "Aim 1 lead 1: the sri-yantra README and viewpoint.py wrote the viewpoint turn backwards (u -> u/lambda, v -> v lambda); correct to the turn as proved in the Hopscotch projective row",
+    "method": "copy-and-swap text edits (README line 175, viewpoint.py docstring); rerun of viewpoint.py on the compute host; studies/2026-11-09-hopscotch-rows/scripts/lead1_direction.py reads K1 and V1 from the stored 40-digit data (positive: u_V1 = lambda u_K1, v_V1 = v_K1/lambda; negative: old form misses by 0.062)",
+    "status": "CLOSED (text fix; rerun identical)",
+    "result": "turn now written u -> lambda u, v -> v/lambda, lambda = sqrt((1+beta)/(1-beta)), turn beta -> -beta; viewpoint.json byte-identical after the rerun, stdout identical to the yantra-audit rerun; direction confirmed from the data to 2.2e-33",
+    "retry": "never",
+    "study": "studies/2026-11-09-hopscotch-rows",
+    "date": "2026-11-12"
    }
   ]
  },
@@ -8097,7 +8106,8 @@
    "DICTO (11 Nov): figure 'One Angelus, two parents' (OG + Catalan pentakis with the same five-fold corners, identical level-1 Angelus) goes to the Outsider opening (studies/2026-11-11-twin-vacuus/figures/shared-level1-angelus.png)."
   ],
   "FIRST AIM: the periodic-aperiodic bridge (the Hopscotch turn)": [
-   "Lead 4 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY. The icosahedral constant 15 − 6√5 of #43 Theorem 2 now follows from orbit moments plus the one degree-6 invariant harmonic with no numerical step: the harmonic is √5·f6 − (5 + 2√5)/21 on the sphere, f6 a cubic in (x², y², z²), whose critical points are all found over Q(√5); its extremes sit at the five-fold and three-fold axes. With lead 5 (the turn's fixed point maximises t_min on the icosahedral two-family line, exact), the sphere row of the Hopscotch is now proved from the framework for all three Platonic symmetry types."
+   "Lead 4 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY. The icosahedral constant 15 − 6√5 of #43 Theorem 2 now follows from orbit moments plus the one degree-6 invariant harmonic with no numerical step: the harmonic is √5·f6 − (5 + 2√5)/21 on the sphere, f6 a cubic in (x², y², z²), whose critical points are all found over Q(√5); its extremes sit at the five-fold and three-fold axes. With lead 5 (the turn's fixed point maximises t_min on the icosahedral two-family line, exact), the sphere row of the Hopscotch is now proved from the framework for all three Platonic symmetry types.",
+   "Lead 1 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED. The sri-yantra study now writes the viewpoint turn as the projective row proves it: u → λu, v → v/λ with λ = √((1 + β)/(1 − β)), the turn β ↦ −β; the rerun of viewpoint.py is numerically identical and the stored K1 → V1 data confirm the direction."
   ]
  }
 }

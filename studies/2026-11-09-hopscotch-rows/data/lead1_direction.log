@@ -1,0 +1,11 @@
+beta = -0.04054642863985675280429333, lambda = 0.960243222153051524335204
+K1: u = 0.76393202250021030359, v = 0.7071067811865475244;  V1: u = 0.73356054679149939813, v = 0.73638299638405881329
+lambda u_K1 - u_V1 = 2.2e-33;  u_K1/lambda - u_V1 = 0.0620004
+  ok   K1 slopes are 2/phi^2 and 1/sqrt2
+  ok   POSITIVE: u_V1 = lambda u_K1
+  ok   POSITIVE: v_V1 = v_K1 / lambda
+  ok   u v kept
+  ok   turn beta -> -beta (lambda -> 1/lambda) sends V1 back to K1
+  ok   NEGATIVE: the old form u -> u/lambda misses by > 1e-3
+  ok   NEGATIVE: the old form v -> v lambda misses by > 1e-3
+FINAL ok

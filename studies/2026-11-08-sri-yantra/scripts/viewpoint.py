@@ -2,7 +2,7 @@
 maps that keep the yantra's circle as a circle and keep the vertical axis are the hyperbolic translations of Klein's model along the
 axis: in the unit disc (y up) T_beta(x, y) = (x sqrt(1 - beta^2)/(1 + beta y), (y + beta)/(1 + beta y)). They keep lines straight
 and every concurrency (18 marmas, 24 sandhis, 43 triangles), every level base level, every corner on the circle; the slopes go
-u -> u/lambda, v -> v*lambda (u v invariant). Take the DICTO Yantra (Cleo-Octangula: u = 2/phi^2, v = 1/sqrt2, t1 and t9 corners on
+u -> lambda*u, v -> v/lambda, lambda = sqrt((1 + beta)/(1 - beta)) (u v invariant). Take the DICTO Yantra (Cleo-Octangula: u = 2/phi^2, v = 1/sqrt2, t1 and t9 corners on
 the circle), find beta that centres the bindu's incircle, and check everything in the image directly from its lines."""
 import json, mpmath as mp, itertools
 mp.mp.dps = 50

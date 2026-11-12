@@ -44,8 +44,8 @@ Corollary: u·v = 1 exactly when the two legs meet on the circle (P = Q), checke
 
 **Direction.** u ↦ λu (upper slope), v ↦ v/λ (lower), λ = √((1 + β)/(1 − β)), as in #103 Theorem 5. Checked against the computed
 V1: K1 at β = −0.0405464286 (λ = 0.9602432222) gives λ·(2/φ²) = 0.733560546821 and (1/√2)/λ = 0.736382996355, the published V1
-slopes. **The sri-yantra study README (line 175, "u -> u/lambda, v -> v*lambda") and the docstring of its viewpoint.py still have
-the direction backwards;** the paper is right. Not changed here (not this study's file).
+slopes. The sri-yantra study README (line 175) and the docstring of its viewpoint.py had the direction backwards ("u -> u/lambda,
+v -> v*lambda"); both corrected 12 Nov (LEAD 1 below); the paper was right.
 
 **(c) Kulaichev's (d) is ONE wall on the β-line, linear in β.** T_β sends p_β = (0, −β) to the centre. In Klein's model a Euclidean
 circle about the centre is a hyperbolic circle about the centre, so the image of the bindu has its incircle centred exactly when
@@ -184,9 +184,17 @@ I-orbit in each chamber). The middle piece is linear in s, so t(1) − t(λ) = 3
 exactly at the fixed point, t_min = 10 − √5 − √(30 + 6√5) = R² of the self-antipol S_1, as on the cube–octahedron line
 (min(μ, 3/μ, 5 − s)). Controls: the corner types checked on both sides of the wall; the ends meet the middle piece exactly at the walls.
 
+## LEADS 1, 3, 6, 7 worked (12 Nov 2026)
+
+**LEAD 1 CONCLUSION (12 Nov 2026): CLOSED; the sri-yantra README and viewpoint.py now write the turn u → λu, v → v/λ, λ = √((1 + β)/(1 − β)), and the rerun is numerically identical (viewpoint.json byte-identical, stdout equal to the audit rerun; scripts/lead1_direction.py FINAL ok).**
+Edits by copy and swap, one phrase each (README line 175 also names the turn β ↦ −β). Rerun on the compute host: viewpoint.py prints the
+same β = −0.040546428639856752804, slopes 0.733560546791499 / 0.736382996384059, residuals and FINAL ok as the yantra-audit rerun
+(data/lead1_viewpoint_rerun.log). Direction from the stored data alone (data/lead1_direction.log): u_V1 − λu_K1 = 2.2·10⁻³³ and
+v_V1 = v_K1/λ (β is stored to 30 digits); NEGATIVE, the old form u/λ misses by 0.062.
+
 ## LEADS
 
-1. Correct the direction in studies/2026-11-08-sri-yantra/README.md (line 175) and viewpoint.py's docstring: u → λu, v → v/λ
+1. [CLOSED 12 Nov, see above] Correct the direction in studies/2026-11-08-sri-yantra/README.md (line 175) and viewpoint.py's docstring: u → λu, v → v/λ
    (one-word fix each; the paper is right).
 2. #103: the uniqueness statement "every symmetric yantra has exactly one centring viewpoint, β\* = −y_H" can go into Theorem 5 or a
    remark; destination: a #103 version line (DICTO's choice where).
