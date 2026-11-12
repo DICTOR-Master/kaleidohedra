@@ -1,0 +1,21 @@
+ok   control: N has 5 extensions acbd acdb cabd cadb cdab
+ok   ideals ['0', 'a', 'abc', 'abcd', 'ac', 'acd', 'c', 'cd'] = paper
+ok   filters ['0', 'ab', 'abcd', 'abd', 'b', 'bcd', 'bd', 'd'] = paper
+ok   valid profiles: 20 (paper 20)
+ok   control: D = {b} (not an ideal) is rejected
+ok   |L| per profile = the Lemma 5.2 matrix (our reading of it): True
+ok   isomorphism classes: 15 (paper 15)
+ok   |L| multiset [5, 5, 7, 7, 8, 9, 9, 11, 14, 14, 16, 16, 18, 18, 25] = 5,5,7,7,8,9,9,11,14,14,16,16,18,18,25
+ok   isomorphism ('ac', 'b') ~ ('abc', '0') by (b x): explicit relabeling True, same class True
+ok   isomorphism ('0', 'bcd') ~ ('c', 'bd') by (c x): explicit relabeling True, same class True
+ok   isomorphism ('0', 'abd') ~ ('acd', '0') by (a d b x c): explicit relabeling True, same class True
+ok   isomorphism ('c', 'd') ~ ('cd', '0') by (d x): explicit relabeling True, same class True
+ok   isomorphism ('0', 'ab') ~ ('a', 'b') by (a x): explicit relabeling True, same class True
+ok   the only identifications are the five stated
+ok   Appendix A: (|L|, lower/upper multiset) distinct across the 15 classes
+ok   Corollary 5.3: classes with |L| | 120: [5, 5, 8] = [5, 5, 8]
+ok   Lemma 5.5 extensions ['cxabd', 'cxadb', 'cxdab', 'xacbd', 'xacdb', 'xcabd', 'xcadb', 'xcdab']
+ok   Lemma 5.5 counts: x 5, c 3, xc 3, xa 2, cx 3 = 5, 3, 3, 2, 3
+ok   5a + 3b = 24 solutions [(0, 8), (3, 3)] = [(0, 8), (3, 3)]
+ok   |L| = 5 classes are (abcd, 0) [all end with x] and (0, abcd) [all begin with x]
+FINAL ok

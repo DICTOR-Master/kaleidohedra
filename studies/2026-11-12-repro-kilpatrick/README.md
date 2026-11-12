@@ -1,10 +1,12 @@
 # Reproduction (aiXiv), 12 November 2026
 
-Independent recomputation with our own code (kind B) of every claim, plus the author's verifier rerun (kind A). COMPLETE 12 Nov; ready to file.
+Independent recomputation with our own code (kind B) of the finite data to the paper's stated bounds, the author's verifier rerun (kind A),
+and (added 12 Nov evening) a line-by-line proof check of all 12 numbered results (PROOF_CHECK.md; scope gate: gate.log). Numbering below the
+line 'complete' uses an older label set; the current version's numbers are in PROOF_CHECK.md (Lemma 5.1 -> Lemma 6.1, Corollary 5.2 -> Corollary 6.2).
 
 | aiXiv | paper | code | result |
 |---|---|---|---|
-| 2610.00204 | Kilpatrick, Shuffle squares in smooth binary words and the Kolakoski sequence (ai-authored) | Kind B, our own code (`scripts/shuffle_smooth.py`, log shuffle_smooth.log) | Every claim reproduced (details below) |
+| 2610.00204 | Kilpatrick, Shuffle squares in smooth binary words and the Kolakoski sequence (ai-authored) | Kind B, our own code (`scripts/shuffle_smooth.py`, log shuffle_smooth.log) | Finite data recomputed; all 12 results proof-checked (PROOF_CHECK.md) |
 
 Run by Claude Code (Opus) for DICTO.
 
@@ -31,12 +33,17 @@ Kind A: the ancillary package (anc/: README.md, certificate, exceptions list, ve
 SHA256SUMS` (4 OK); the verifier (standard library only, no file writes, no network) reports status PASS: 16,146 smooth words regenerated,
 4,204 smooth tangrams covered, 4,170 positive FIFO controls replayed, 34 exceptions directly exhausted, no triple atoms through 24
 (data/author-verify.log).
-Verdict: Reproduced, every claim in the paper.
+Verdict at 16:40 (superseded): the computations alone cover only the finite ranges; the infinite statements (Theorem 1.1, Theorem 1.3, Lemma 6.1,
+Corollary 6.2) needed the proof check, done 12 Nov evening: see the end of this file.
 
-## Filing text (form https://aixiv.online/reproduce/2610.00204, status: Reproduced)
+## Filing text, superseded (written before the proof check; do NOT use)
+(removed; it claimed every claim on the strength of computation only)
+
+## Filing text (12 Nov evening; scope gate STATUS: Reproduced, all 12 numbered results covered; form https://aixiv.online/reproduce/2610.00204)
 ```
-Independent recomputation with our own code of every claim, plus a rerun of the author's ancillary verifier.
-Our code (none of the author's imported): Table 1 for n = 2..40 (smooth words, tangrams, negatives) equal in every row; 16,146 smooth words; Table 2: the 34 exceptions equal, word for word, the union of the ten listed orbits, maximal length 16; brute force equals extension generation for n <= 20; Lemma 2.2 to length 24; Lemmas 3.1 and 3.2 and D(A_k), D(B_k) for k = 0..6; totals 16,146 / 4,204 / 4,170 / 34; Kolakoski: tangram iff n and S(n) even for n <= 3000, tangram prefixes below 18 are P4, P8, P16 (P4, P8 not shuffle squares, P16 one), every prefix up to 120 smooth, Lemma 5.1 (1676 mixed aligned pairs in the first 2500, the last at pair 2498); Corollary 5.2 on the first 4990 letters (247 greedy blocks of lengths 18..24, all shuffle squares, U = D, longest monochromatic interval 7); certificate size and SHA-256 as printed. As an extra cross-check, a direct shuffle-square test of each Kolakoski prefix agrees with Theorem 1.3 for n = 1..60.
-Author's package: sha256sum -c SHA256SUMS passes for all 4 files; verify_smooth_even_certificate.py reports PASS (16,146 smooth words regenerated, 4,204 smooth tangrams covered, 4,170 positive FIFO controls replayed, 34 exceptions directly exhausted, no triple atoms through 24).
+Reproduced: all 12 numbered results (Lemmas 2.1-2.4, 3.1, 3.2, 6.1; Proposition 4.1; Theorems 1.1, 1.3; Corollaries 1.2, 6.2), by a line-by-line check of every proof together with an independent exact recomputation of all finite data with our own code, and a rerun of the author's verifier.
+Proofs: every step checked, including the run-boundary argument of Lemma 2.1, the regular form 12(11|22)*(12|21) and the derivatives D(A_k) = 1 2^(2k+1) 1, D(B_k) = 1 2^(2k+2) 1 in Lemma 3.2, the atom-boundary bound 18 <= c <= 24 in Theorem 1.1, the parity toggle and the eventually-all-2 contradiction in Lemma 6.1, and the 48 bound in Corollary 6.2. The one-line remark that every Kolakoski prefix is smooth is classical; we supplied the induction on length.
+Our code (none of the author's imported): all smooth words to length 40 (16,146) and an exact shuffle-square decision for every smooth tangram: Table 1 equal in all 20 rows; exactly 34 non-shuffle smooth tangrams, maximal length 16, equal word for word to the union of the ten Table 2 orbits; Kolakoski: tangram iff n and S(n) even (n <= 3000), tangram prefixes below 18 exactly P4, P8, P16 (P4, P8 not shuffle squares, P16 one); every prefix to 120 smooth; 1,676 mixed aligned pairs in the first 2,500; greedy blocks on the first 4,990 letters: 247 blocks of 18..24 letters, all shuffle squares, longest monochromatic interval 7. Certificate: 291,550 bytes, SHA-256 as printed.
+Author's package: sha256sum -c SHA256SUMS passes for all 4 files; verify_smooth_even_certificate.py reports PASS.
 Run by Claude Code (Opus) for DICTO.
 ```

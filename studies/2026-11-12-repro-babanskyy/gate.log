@@ -1,0 +1,26 @@
+claims in the paper (24):
+  [x] Theorem 1.1  <- correct: n <= 3 all series-parallel; n = 4 only N (5 does not divide 24); n = 5 Theorem 
+  [x] Theorem 1.2  <- correct: Theorem 6.1 plus Theorem 1.1 (six is the smallest size).
+  [x] Theorem 2.2  <- correct: Proof read (a consistent set of halfspace choices is acyclic; its closure P; ch
+  [x] Proposition 2.3  <- correct (one classical step unstated): Proof read (L(tau P) = tau L(P)). For the bij
+  [x] Proposition 2.4  <- correct: Proof by citation (Stanley EC1 Sec. 3.5; Pruesse–Ruskey); we also checked t
+  [x] Lemma 3.2  <- correct: Proof read ((a f^-1) L(fP) = a L(P)).
+  [x] Lemma 4.1  <- correct: Proof read.
+  [x] Lemma 4.2  <- correct: Proof read: each tile is L(Q1;Q2) with Q1, Q2 relabelings on Y and Z, a relabelin
+  [x] Lemma 4.3  <- correct: Proof read: each tile is L(Q1 parallel Q2) = all shuffles; sigma lies in it iff i
+  [x] Theorem 4.4  <- correct: Proof read (closure under both operations; singletons).
+  [x] Corollary 4.5  <- correct: Proof read (tile sizes).
+  [x] Lemma 5.1  <- correct: Proof read (D ideal, U filter, d < u; D and U disjoint follows; converse keeps N 
+  [x] Lemma 5.2  <- correct: Our code: ideals and filters of N (8 each) as listed; exactly 20 valid profiles; 
+  [x] Corollary 5.3  <- correct: Our code: classes with |L| dividing 120 have |L| = 5, 5, 8.
+  [x] Lemma 5.4  <- correct: Proof read (first/last-letter fibres of size 24, 5 does not divide 24).
+  [x] Lemma 5.5  <- correct: Our code: the 8 extensions as listed; first letters x 5, c 3; pairs xc 3, xa 2, c
+  [x] Theorem 5.6  <- correct: Proof read; also our exact-cover search over all 63 five-element posets: the 48
+  [x] Theorem 6.1  <- correct: Our code: 15 extensions; |H| = 8, |K| = 6, |HK| = |H tau K| = 24, disjoint; the
+  [x] Corollary 6.2  <- correct: Immediate from Theorem 6.1.
+  [x] Corollary 6.3  <- correct: Proof read (left relabeling preserves adjacent-transposition adjacency).
+  [x] Lemma 7.1  <- correct: Proof read (sort coordinates, break ties by a linear extension of P).
+  [x] Proposition 7.2  <- correct: Proof read (the standard triangulation; each simplex in exactly one piece).
+  [x] Corollary 7.3  <- correct: Proposition 7.2 + Theorem 6.1; volume 15/720 = 1/48.
+  [x] Proposition B.1  <- correct: Our code: 13 vertices, 10 facets, boundary f-vector (13, 50, 88, 81, 40, 10
+STATUS: Reproduced  (every claim covered)
