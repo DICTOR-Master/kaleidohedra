@@ -1,0 +1,88 @@
+DICTO Yantra GF1, u = 0.679318588706774657388650310391 (degree 160): nine cones (apex, base, half-width) as exact 40-digit rationals
+  cone 1: apex 0.5765103217 base 0.0439777261 w 0.2050455698 apex up
+  cone 2: apex 0.9682686075 base 0.2085565872 w 0.2616035705 apex up
+  cone 3: apex 1.0000000000 base 0.3257114053 w 0.4686400386 apex up
+  cone 4: apex 0.8099409973 base 0.3970408583 w 0.1210161839 apex up
+  cone 5: apex 0.6842408243 base 0.4725080774 w 0.0967706734 apex up
+  cone 6: apex 0.2085565872 base 0.5765103217 w 0.1349002827 apex down
+  cone 7: apex 0.0000000000 base 0.6842408243 w 0.4648175111 apex down
+  cone 8: apex 0.0439777261 base 0.8099409973 w 0.2625421450 apex down
+  cone 9: apex 0.3257114053 base 0.9682686075 w 0.1752840873 apex down
+ok   U1 one critical point of Omega(H0) inside
+ok   U2 it is a minimum (leading minors of the Hessian of log Omega: [16/3, 256/3, 16384/9])
+ok   U3 least point {x: 0, y: sqrt(3)/4, z: 1/4}, Omega_min = 256*sqrt(3)/9, Omega_min*vol/3! = 64*sqrt(3)*pi/81 = 4.29937627077741
+PROGRESS 0.10 universal
+ok   C1 ABL half-disc: Res(y=0) = segment form 2/(1-x^2)
+ok   C1b ... its residues at x = -1, 1 are +-1
+ok   C2 M-R (55) at a = 1/2: residue code gives c = [sqrt(3)] (expect sqrt3)
+ok   generic Z1 annulus: only N = 0 (disc and full cone: numerator degree < 0, Omega = 0 outright)
+PROGRESS 0.15 task 1/17 (1 s)
+ok   generic A1 Res(yantra plane) = triangle form
+ok   generic A1b Q on the yantra plane = product of the two legs
+ok   generic A2 Res(base) = half-disc form
+ok   generic A3 Res(cone) = (dm/m) ^ ruling segment form (ratio -1)
+ok   generic A5 half-cone = half-disc cone x ray (|det| w)
+PROGRESS 0.21 task 2/17 (1 s)
+ok   N1 wrong constant 3wh^2: base residue minus half-disc form = -w/(y*(-w**2 + x**2 + y**2)) (nonzero: caught)
+ok   N2 a level cut gives a circle, not a triangle (quadratic part definite, no real line factors) (caught)
+ok   N3 mis-joined halves (apex moved 1/7) leave a pole on the yantra plane: residue at a sample point = -110000/10101 (caught)
+ok   Z3 H+ + H- = 0 identically: the pole on the cut cancels and the full cone has Omega = 0
+PROGRESS 0.26 task 3/17 (1 s)
+ok   cone 7 A1 Res(yantra plane) = triangle form
+ok   cone 7 A1b Q on the yantra plane = product of the two legs
+ok   cone 7 A2 Res(base) = half-disc form
+ok   cone 7 A3 Res(cone) = (dm/m) ^ ruling segment form (ratio -1)
+ok   cone 7 A4 Omega > 0 inside
+ok   cone 7 A5 half-cone = half-disc cone x ray (|det| 4648175111241396496140120214096437431639/10000000000000000000000000000000000000000)
+ok   cone 7 U4 least point at (0, w sqrt3/4, b - h/4), Omega_min*vol/3! = 64 sqrt3 pi/81
+PROGRESS 0.31 task 4/17 (1 s)
+ok   cone 3 A1 Res(yantra plane) = triangle form
+ok   cone 3 A1b Q on the yantra plane = product of the two legs
+ok   cone 3 A2 Res(base) = half-disc form
+ok   cone 3 A3 Res(cone) = (dm/m) ^ ruling segment form (ratio 1)
+ok   cone 3 A4 Omega > 0 inside
+ok   cone 3 A5 half-cone = half-disc cone x ray (|det| 4686400385700504698899621660803989888289/10000000000000000000000000000000000000000)
+ok   cone 3 U4 least point at (0, w sqrt3/4, b - h/4), Omega_min*vol/3! = 64 sqrt3 pi/81
+PROGRESS 0.36 task 5/17 (1 s)
+ok   cones 1,2 Z2 ring between two cones: residue-zero conditions leave only N = 0 (nullity 0)
+PROGRESS 0.42 task 6/17 (1 s)
+PROGRESS 0.47 task 7/17 (2 s)
+ok   generic S8 the three 120-degree slices (the three stella positions, #103 Prop. 4) sum to 0
+PROGRESS 0.52 task 8/17 (2 s)
+PROGRESS 0.58 task 9/17 (2 s)
+PROGRESS 0.63 task 10/17 (2 s)
+PROGRESS 0.68 task 11/17 (3 s)
+ok   cone 3 S0 every sector ansatz solved uniquely (residues on both half-planes = right triangles)
+ok   cone 3 S1 pizza slice: Res(circle) = arc form m in [0,1/2] (ratio -1)
+ok   cone 3 S2 pizza slice: Res(radius) = segment [0, w] (ratio 1)
+ok   cone 3 S3 slice: Res(cone) = arc form ^ ruling segment form (ratio 1)
+ok   cone 3 S4 joins: S(e1,p) + S(p,e2) = S(e1,e2) (pole on the inner half-plane cancels)
+ok   cone 3 S5 joins: S(e1,p) + S(p,q) = S(e1,q)
+ok   cone 3 S6 two quarter slices = half-cone
+ok   cone 3 S7 four quarter slices round the axis sum to 0
+PROGRESS 0.74 task 12/17 (3 s)
+PROGRESS 0.79 task 13/17 (3 s)
+ok   generic S0 every sector ansatz solved uniquely (residues on both half-planes = right triangles)
+ok   generic S1 pizza slice: Res(circle) = arc form m in [0,1/2] (ratio -1)
+ok   generic S2 pizza slice: Res(radius) = segment [0, w] (ratio 1)
+ok   generic S3 slice: Res(cone) = arc form ^ ruling segment form (ratio -1)
+ok   generic S4 joins: S(e1,p) + S(p,e2) = S(e1,e2) (pole on the inner half-plane cancels)
+ok   generic S5 joins: S(e1,p) + S(p,q) = S(e1,q)
+ok   generic S6 two quarter slices = half-cone
+ok   generic S7 four quarter slices round the axis sum to 0
+PROGRESS 0.84 task 14/17 (3 s)
+PROGRESS 0.89 task 15/17 (4 s)
+PROGRESS 0.95 task 16/17 (4 s)
+PROGRESS 1.00 task 17/17 (4 s)
+Part D, dual volumes (NUMERICAL ONLY, mpmath 12 digits; tolerance 1.0e-6):
+ok   D half-MR at x = ('0.1', '0.3', '1'): integral 7.40740740740694 vs Omega 7.40740740740785, rel diff 1.23e-13 (matches)
+ok   D half-flip at x = ('0.1', '0.3', '1'): integral 8.84227271457712 vs Omega 7.40740740740785, rel diff 0.194 (must NOT match (negative control))
+ok   D half-plain at x = ('0.1', '0.3', '1'): integral 11.8043171964709 vs Omega 7.40740740740785, rel diff 0.594 (must NOT match (negative control))
+ok   D lorentz at x = ('0.1', '0.2', '1'): integral 6.78569695505848 vs Omega 6.78569695505848, rel diff 0.0 (matches)
+ok   D lorentz at x = ('0.3', '-0.1', '1'): integral 7.35895427095966 vs Omega 7.35895427096057, rel diff 1.24e-13 (matches)
+ok   D pizza-MR at x = ('0.2', '0.4', '1'): integral 2.40562612619442 vs Omega 2.4056261216233, rel diff 1.9e-9 (matches)
+ok   D pizza-plain at x = ('0.2', '0.4', '1'): integral 9.20031185176413 vs Omega 2.4056261216233, rel diff 2.82 (must NOT match (negative control))
+ok   D triangle at x = ('0.1', '0.2', '1'): integral 3.49650349650346 vs Omega 3.49650349650437, rel diff 2.6e-13 (matches)
+time 4 s
+PROGRESS 1.00 done
+FINAL ok: all checks and controls held

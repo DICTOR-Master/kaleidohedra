@@ -1,0 +1,13 @@
+question: aim 2 chunk 5b FULL - DICTO Yantra cones (curved quadric boundaries) as positive geometries: half-cone and slice forms, residues, zero theorem, dual measure
+answer_looks_like: ok/FAIL lines (generic proofs, controls, negatives, cones 3 and 7, dual integrals at 12 digits); FINAL ok/FAIL
+pilot: ycones-pilot 4 s on 4 cores, FINAL ok after fixes (float stereographic parameter; cancel before restricting; negatives now print their nonzero residues)
+size_estimate: 5 generic tasks, 9 cone instances, 3 slice instances, 1 ring, 15 dual integrals at 20 digits
+memory_estimate_gb: 1
+time_estimate_h: 0.1
+bounded_by: fixed task list, timeout 0.3 h, 3 GB cage
+control: positive: ABL half-disc residues, M-R (55) constant sqrt3, Lorentz cone 2pi/q^1.5, triangle cone, M-R measure (61); negative: wrong constant, level cut, mis-joined halves, plain dual volume, flipped measure
+progress: PROGRESS 0.10 .. 1.00 per task
+ledger_checked: chunk 5 entry (retry: Yantra cones queued as chunk 5b); chunks 2-4; no settled or failed entry on curved boundaries
+ledger_override: none
+if_ok: README conclusion, ledger entry, Concordance line under geometry gives laws, commit and push research-fig3, aim memory, followups line DONE
+if_fail_or_cap: the pilot verdict stands for generic identities and cones 3, 7; read the failing line, fix, rerun
