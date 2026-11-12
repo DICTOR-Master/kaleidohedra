@@ -673,7 +673,8 @@ Orbit storage + float with a proved error bound (1e−12) + balls for close call
 Validation: every t_min(D_k), k = 10 … 30, MATCHES certified-30 to 1e−9. **Certified t_min(D_k) < 3/φ² for every k ≤ 40 — RUN COMPLETE, FINAL ok** (t_min(D_39) ≤ 1.000083, t_min(D_40) ≤ 1.000108; D_41: 4 517 522 faces, 38 014 orbits, 43 close calls in balls, 4799 s; D_40: 3 412 382 faces; earlier milestones k ≤ 37, 38, 39)
 (D_38: 1 873 742 faces, 15 844 orbits; t_min(D_37) ≤ 1.000083). Stops on the way: D_27 (normal match tolerance), D_29 (distinct
 normals 1.4e−7 apart: faces now labelled by exact point keys) — both tooling, fixed. D_39: one face orbit with ≥ 4 coplanar members
-not forced by symmetry → refused (balls cannot prove an equality); diagnosis job og-diag-39 decides: float merge vs genuine.
+not forced by symmetry → refused (balls cannot prove an equality); diagnosis (certified_orbit_diag.py, og-diag-39): FLOAT MERGE, not genuine: the 4-member group has its 4th corner 1.16e−12 off the plane of the other three, certified non-zero, so it is two triangles with a nearly flat fold. Fix: hull_faces re-splits any merged group not flat to 1e−13; the ball checks then certify the 4th corner strictly inside each triangle. The run then passed D_39 and, resumed, D_40 and D_41 (data/og-certified-40-final.log, FINAL ok).
+**Record (12 Nov 2026, DICTO read ok of #43 v3):** the log of the run that passed D_39 was overwritten when the job resumed; so the whole chain k = 10 … 40 is RERUN from scratch with one kept log (watched job og-certified-40-clean) before #43 v3 is published (DICTO: "if we do something do it properly").
 
 ## §35 Derive and reduce (11 Nov 2026; DICTO: "derive and reduce possibilities")
 What remains of #43 Conjecture 1 for all k: certified k ≤ 37 (§34, run to 40 resumed); for k > 37 the 4-step contraction (§12), whose
