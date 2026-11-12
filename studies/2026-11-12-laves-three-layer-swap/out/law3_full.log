@@ -1,0 +1,38 @@
+law3 full: raw = run 2 Laves walks
+  span check: rank(defects) 3, rank(short cycles) 3, rank(both) 3 (expect 3, 3, 3)
+  theorem check on 801 cyclic c/h words up to 12 layers: prediction = observation in 600/600 tables; positives (one-letter + coboundary) on the line 200/200; pair counts with a Swap defect off the line 190
+  stackings: 18 {'AC': 'hh', 'ABC': 'ccc', 'ACBC': 'hchc', 'ACABC': 'hhccc', 'ACBABC': 'hcchcc', 'ACBCAC': 'hchchh', 'ACABABC': 'hhchhcc', 'ACACABC': 'hhhhccc', 'ACBCABC': 'hchcccc', 'ACABCABC': 'hhcccccc', 'ACBABCAC': 'hcchcchh', 'ACBACABC': 'hccchccc', 'ACBCACAC': 'hchchhhh', 'ACBCBABC': 'hchhchcc', 'ACBCBCAC': 'hchhhchh', 'ABACBCACBABCBAC': 'chcchchcchchcch', 'ABACBCACBABCACBC': 'chcchchcchcchchc', 'ABACBCACBABCACBCABACABCBAC': 'chcchchcchcchchcchchcchcch'}
+PROGRESS 1/30 window (-11/32, -5/32) M0: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 2/30 window (-11/32, -5/32) M1: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 3/30 window (-11/32, -5/32) K1: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 4/30 window (-11/32, -5/32) K2: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 5/30 window (-11/32, -5/32) K3: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 6/30 window (-11/32, -5/32) T: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 7/30 window (-5/32, 17/96) M0: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 8/30 window (-5/32, 17/96) M1: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 9/30 window (-5/32, 17/96) K1: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 10/30 window (-5/32, 17/96) K2: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 11/30 window (-5/32, 17/96) K3: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 12/30 window (-5/32, 17/96) T: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 13/30 window (17/96, 7/32) M0: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 14/30 window (17/96, 7/32) M1: fixed by 1 layer types (offset 1); defects zero: True; law on 16 stackings: True
+PROGRESS 15/30 window (17/96, 7/32) K1: fixed by 1 layer types (offset 0); defects zero: True; law on 16 stackings: True
+PROGRESS 16/30 window (17/96, 7/32) K2: fixed by 1 layer types (offset 0); defects zero: True; law on 16 stackings: True
+PROGRESS 17/30 window (17/96, 7/32) K3: fixed by 1 layer types (offset 0); defects zero: True; law on 16 stackings: True
+PROGRESS 18/30 window (17/96, 7/32) T: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 19/30 window (7/32, 9/32) M0: fixed by 2 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 20/30 window (7/32, 9/32) M1: fixed by 2 layer types (offset 0); defects zero: True; law on 16 stackings: True
+PROGRESS 21/30 window (7/32, 9/32) K1: fixed by 1 layer types (offset 0); defects zero: True; law on 16 stackings: True
+PROGRESS 22/30 window (7/32, 9/32) K2: fixed by 1 layer types (offset 0); defects zero: True; law on 16 stackings: True
+PROGRESS 23/30 window (7/32, 9/32) K3: fixed by 1 layer types (offset 0); defects zero: True; law on 16 stackings: True
+PROGRESS 24/30 window (7/32, 9/32) T: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 25/30 window (9/32, 11/32) M0: fixed by 2 layer types (offset -1); defects zero: True; law on 16 stackings: True
+PROGRESS 26/30 window (9/32, 11/32) M1: fixed by 2 layer types (offset 0); defects zero: True; law on 16 stackings: True
+PROGRESS 27/30 window (9/32, 11/32) K1: fixed by 1 layer types (offset 0); defects zero: True; law on 16 stackings: True
+PROGRESS 28/30 window (9/32, 11/32) K2: fixed by 1 layer types (offset 0); defects zero: True; law on 16 stackings: True
+PROGRESS 29/30 window (9/32, 11/32) K3: fixed by 1 layer types (offset 0); defects zero: True; law on 16 stackings: True
+PROGRESS 30/30 window (9/32, 11/32) T: fixed by 1 layer types (offset -1); defects zero: True; law on 16 stackings: True
+M0 by window (lo, hi, layer types read, three-layer Swap Rule holds, law on all tested, stackings): [('-11/32', '-5/32', 1, True, True, 18), ('-5/32', '17/96', 1, True, True, 18), ('17/96', '7/32', 1, True, True, 18), ('7/32', '9/32', 2, True, True, 18), ('9/32', '11/32', 2, True, True, 18)]
+negative controls (name, window, predicted line, observed line): [('M0 only at chc', '-11/32', False, False), ('M1 only in mixed gaps', '-11/32', False, False), ('M0 only at chc', '-5/32', False, False), ('M1 only in mixed gaps', '-5/32', False, False), ('M0 only at chc', '17/96', False, False), ('M1 only in mixed gaps', '17/96', False, False), ('M0 only at chc', '7/32', False, False), ('M1 only in mixed gaps', '7/32', False, False), ('M0 only at chc', '9/32', False, False), ('M1 only in mixed gaps', '9/32', False, False)]
+FINAL ok full: prediction = observation in every window and role (mismatches 0); M0 reads three layer types in 0 windows; three-layer Swap Rule holds in 0 of them; negatives off the line 10/10
+[exit 0]

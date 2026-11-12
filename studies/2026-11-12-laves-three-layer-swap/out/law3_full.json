@@ -1,0 +1,1305 @@
+{
+ "mode": "full",
+ "stackings": {
+  "AC": "hh",
+  "ABC": "ccc",
+  "ACBC": "hchc",
+  "ACABC": "hhccc",
+  "ACBABC": "hcchcc",
+  "ACBCAC": "hchchh",
+  "ACABABC": "hhchhcc",
+  "ACACABC": "hhhhccc",
+  "ACBCABC": "hchcccc",
+  "ACABCABC": "hhcccccc",
+  "ACBABCAC": "hcchcchh",
+  "ACBACABC": "hccchccc",
+  "ACBCACAC": "hchchhhh",
+  "ACBCBABC": "hchhchcc",
+  "ACBCBCAC": "hchhhchh",
+  "ABACBCACBABCBAC": "chcchchcchchcch",
+  "ABACBCACBABCACBC": "chcchchcchcchchc",
+  "ABACBCACBABCACBCABACABCBAC": "chcchchcchcchchcchchcchcch"
+ },
+ "windows": [
+  {
+   "lo": "-11/32",
+   "hi": "-5/32",
+   "roles": {
+    "M0": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(32*lam + 11)**3/5760",
+      "cch": "(32*lam + 11)**3/5760",
+      "chc": "(32*lam + 11)**3/5760",
+      "chh": "(32*lam + 11)**3/5760",
+      "hcc": "(32*lam + 11)**3/5760",
+      "hch": "(32*lam + 11)**3/5760",
+      "hhc": "(32*lam + 11)**3/5760",
+      "hhh": "(32*lam + 11)**3/5760"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true,
+     "six_layer_contexts_seen": "16 of 16"
+    },
+    "M1": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(32*lam + 11)**3/5760",
+      "cch": "(32*lam + 11)**3/5760",
+      "chc": "(32*lam + 11)**3/5760",
+      "chh": "(32*lam + 11)**3/5760",
+      "hcc": "(32*lam + 11)**3/5760",
+      "hch": "(32*lam + 11)**3/5760",
+      "hhc": "(32*lam + 11)**3/5760",
+      "hhh": "(32*lam + 11)**3/5760"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K1": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "cch": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "chc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "chh": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hcc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hch": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hhc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hhh": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K2": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "cch": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "chc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "chh": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hcc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hch": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hhc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hhh": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K3": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "cch": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "chc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "chh": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hcc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hch": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hhc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hhh": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "T": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "cch": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "chc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "chh": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hcc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hch": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hhc": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520",
+      "hhh": "-(32768*lam**3 + 33792*lam**2 + 11616*lam - 1549)/11520"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    }
+   }
+  },
+  {
+   "lo": "-5/32",
+   "hi": "17/96",
+   "roles": {
+    "M0": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "cch": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "chc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "chh": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "hcc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "hch": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "hhc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "hhh": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true,
+     "six_layer_contexts_seen": "16 of 16"
+    },
+    "M1": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "cch": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "chc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "chh": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "hcc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "hch": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "hhc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "hhh": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K1": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "cch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "chc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "chh": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hcc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hhc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hhh": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K2": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "cch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "chc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "chh": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hcc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hhc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hhh": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K3": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "cch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "chc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "chh": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hcc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hhc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hhh": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "T": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "cch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "chc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "chh": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hcc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hhc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hhh": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    }
+   }
+  },
+  {
+   "lo": "17/96",
+   "hi": "7/32",
+   "roles": {
+    "M0": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "cch": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "chc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "chh": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "hcc": "-(4489216*lam**3 - 1729536*lam**2 - 205728*lam - 84923)/368640",
+      "hch": "-(4489216*lam**3 - 1729536*lam**2 - 205728*lam - 84923)/368640",
+      "hhc": "-(4489216*lam**3 - 1729536*lam**2 - 205728*lam - 84923)/368640",
+      "hhh": "-(4489216*lam**3 - 1729536*lam**2 - 205728*lam - 84923)/368640"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true,
+     "six_layer_contexts_seen": "16 of 16"
+    },
+    "M1": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": 1,
+      "all_offsets_ok": [
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "cch": "-(4489216*lam**3 - 1729536*lam**2 - 205728*lam - 84923)/368640",
+      "chc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "chh": "-(4489216*lam**3 - 1729536*lam**2 - 205728*lam - 84923)/368640",
+      "hcc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "hch": "-(4489216*lam**3 - 1729536*lam**2 - 205728*lam - 84923)/368640",
+      "hhc": "-(229376*lam**3 - 39936*lam**2 - 56928*lam - 8773)/46080",
+      "hhh": "-(4489216*lam**3 - 1729536*lam**2 - 205728*lam - 84923)/368640"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K1": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": 0,
+      "all_offsets_ok": [
+       [
+        1,
+        0
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "cch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "chc": "(1343488*lam**3 - 549888*lam**2 - 30624*lam + 23621)/184320",
+      "chh": "(1343488*lam**3 - 549888*lam**2 - 30624*lam + 23621)/184320",
+      "hcc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hhc": "(1343488*lam**3 - 549888*lam**2 - 30624*lam + 23621)/184320",
+      "hhh": "(1343488*lam**3 - 549888*lam**2 - 30624*lam + 23621)/184320"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K2": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": 0,
+      "all_offsets_ok": [
+       [
+        1,
+        0
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "cch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "chc": "(1343488*lam**3 - 549888*lam**2 - 30624*lam + 23621)/184320",
+      "chh": "(1343488*lam**3 - 549888*lam**2 - 30624*lam + 23621)/184320",
+      "hcc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hhc": "(1343488*lam**3 - 549888*lam**2 - 30624*lam + 23621)/184320",
+      "hhh": "(1343488*lam**3 - 549888*lam**2 - 30624*lam + 23621)/184320"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K3": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": 0,
+      "all_offsets_ok": [
+       [
+        1,
+        0
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "cch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "chc": "(1343488*lam**3 - 549888*lam**2 - 30624*lam + 23621)/184320",
+      "chh": "(1343488*lam**3 - 549888*lam**2 - 30624*lam + 23621)/184320",
+      "hcc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hhc": "(1343488*lam**3 - 549888*lam**2 - 30624*lam + 23621)/184320",
+      "hhh": "(1343488*lam**3 - 549888*lam**2 - 30624*lam + 23621)/184320"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "T": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "cch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "chc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "chh": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hcc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hch": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hhc": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160",
+      "hhh": "(229376*lam**3 - 39936*lam**2 - 56928*lam + 14267)/92160"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    }
+   }
+  },
+  {
+   "lo": "7/32",
+   "hi": "9/32",
+   "roles": {
+    "M0": {
+     "fixing_window": {
+      "layers": 2,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        2,
+        -1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-3*(32768*lam**3 - 17408*lam**2 + 1376*lam - 579)/5120",
+      "cch": "-3*(32768*lam**3 - 17408*lam**2 + 1376*lam - 579)/5120",
+      "chc": "-(425984*lam**3 - 205824*lam**2 + 1248*lam - 8707)/30720",
+      "chh": "-(425984*lam**3 - 205824*lam**2 + 1248*lam - 8707)/30720",
+      "hcc": "-(1277952*lam**3 - 433152*lam**2 - 99936*lam - 26021)/122880",
+      "hch": "-(1277952*lam**3 - 433152*lam**2 - 99936*lam - 26021)/122880",
+      "hhc": "-(622592*lam**3 - 3072*lam**2 - 194016*lam - 19161)/122880",
+      "hhh": "-(622592*lam**3 - 3072*lam**2 - 194016*lam - 19161)/122880"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true,
+     "six_layer_contexts_seen": "16 of 16"
+    },
+    "M1": {
+     "fixing_window": {
+      "layers": 2,
+      "offset": 0,
+      "all_offsets_ok": [
+       [
+        2,
+        0
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-3*(32768*lam**3 - 17408*lam**2 + 1376*lam - 579)/5120",
+      "cch": "-(1277952*lam**3 - 433152*lam**2 - 99936*lam - 26021)/122880",
+      "chc": "-(425984*lam**3 - 205824*lam**2 + 1248*lam - 8707)/30720",
+      "chh": "-(622592*lam**3 - 3072*lam**2 - 194016*lam - 19161)/122880",
+      "hcc": "-3*(32768*lam**3 - 17408*lam**2 + 1376*lam - 579)/5120",
+      "hch": "-(1277952*lam**3 - 433152*lam**2 - 99936*lam - 26021)/122880",
+      "hhc": "-(425984*lam**3 - 205824*lam**2 + 1248*lam - 8707)/30720",
+      "hhh": "-(622592*lam**3 - 3072*lam**2 - 194016*lam - 19161)/122880"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K1": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": 0,
+      "all_offsets_ok": [
+       [
+        1,
+        0
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "cch": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "chc": "(32768*lam**3 + 310272*lam**2 - 218784*lam + 37341)/184320",
+      "chh": "(32768*lam**3 + 310272*lam**2 - 218784*lam + 37341)/184320",
+      "hcc": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "hch": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "hhc": "(32768*lam**3 + 310272*lam**2 - 218784*lam + 37341)/184320",
+      "hhh": "(32768*lam**3 + 310272*lam**2 - 218784*lam + 37341)/184320"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K2": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": 0,
+      "all_offsets_ok": [
+       [
+        1,
+        0
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "cch": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "chc": "(32768*lam**3 + 310272*lam**2 - 218784*lam + 37341)/184320",
+      "chh": "(32768*lam**3 + 310272*lam**2 - 218784*lam + 37341)/184320",
+      "hcc": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "hch": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "hhc": "(32768*lam**3 + 310272*lam**2 - 218784*lam + 37341)/184320",
+      "hhh": "(32768*lam**3 + 310272*lam**2 - 218784*lam + 37341)/184320"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K3": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": 0,
+      "all_offsets_ok": [
+       [
+        1,
+        0
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "cch": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "chc": "(32768*lam**3 + 310272*lam**2 - 218784*lam + 37341)/184320",
+      "chh": "(32768*lam**3 + 310272*lam**2 - 218784*lam + 37341)/184320",
+      "hcc": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "hch": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "hhc": "(32768*lam**3 + 310272*lam**2 - 218784*lam + 37341)/184320",
+      "hhh": "(32768*lam**3 + 310272*lam**2 - 218784*lam + 37341)/184320"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "T": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "cch": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "chc": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "chh": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "hcc": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "hch": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "hhc": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240",
+      "hhh": "(98304*lam**3 - 52224*lam**2 + 4128*lam + 823)/10240"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    }
+   }
+  },
+  {
+   "lo": "9/32",
+   "hi": "11/32",
+   "roles": {
+    "M0": {
+     "fixing_window": {
+      "layers": 2,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        2,
+        -1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(32*lam - 3)*(1024*lam**2 - 960*lam + 273)/1024",
+      "cch": "(32*lam - 3)*(1024*lam**2 - 960*lam + 273)/1024",
+      "chc": "(98304*lam**3 - 113664*lam**2 + 43296*lam - 2341)/6144",
+      "chh": "(98304*lam**3 - 113664*lam**2 + 43296*lam - 2341)/6144",
+      "hcc": "(688128*lam**3 - 709632*lam**2 + 243936*lam - 15791)/24576",
+      "hch": "(688128*lam**3 - 709632*lam**2 + 243936*lam - 15791)/24576",
+      "hhc": "(98304*lam**3 - 117760*lam**2 + 46112*lam - 1833)/8192",
+      "hhh": "(98304*lam**3 - 117760*lam**2 + 46112*lam - 1833)/8192"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true,
+     "six_layer_contexts_seen": "16 of 16"
+    },
+    "M1": {
+     "fixing_window": {
+      "layers": 2,
+      "offset": 0,
+      "all_offsets_ok": [
+       [
+        2,
+        0
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "(32*lam - 3)*(1024*lam**2 - 960*lam + 273)/1024",
+      "cch": "(688128*lam**3 - 709632*lam**2 + 243936*lam - 15791)/24576",
+      "chc": "(98304*lam**3 - 113664*lam**2 + 43296*lam - 2341)/6144",
+      "chh": "(98304*lam**3 - 117760*lam**2 + 46112*lam - 1833)/8192",
+      "hcc": "(32*lam - 3)*(1024*lam**2 - 960*lam + 273)/1024",
+      "hch": "(688128*lam**3 - 709632*lam**2 + 243936*lam - 15791)/24576",
+      "hhc": "(98304*lam**3 - 113664*lam**2 + 43296*lam - 2341)/6144",
+      "hhh": "(98304*lam**3 - 117760*lam**2 + 46112*lam - 1833)/8192"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K1": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": 0,
+      "all_offsets_ok": [
+       [
+        1,
+        0
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-(32*lam - 11)**3/2048",
+      "cch": "-(32*lam - 11)**3/2048",
+      "chc": "-(32*lam - 27)*(32*lam - 11)**2/12288",
+      "chh": "-(32*lam - 27)*(32*lam - 11)**2/12288",
+      "hcc": "-(32*lam - 11)**3/2048",
+      "hch": "-(32*lam - 11)**3/2048",
+      "hhc": "-(32*lam - 27)*(32*lam - 11)**2/12288",
+      "hhh": "-(32*lam - 27)*(32*lam - 11)**2/12288"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K2": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": 0,
+      "all_offsets_ok": [
+       [
+        1,
+        0
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-(32*lam - 11)**3/2048",
+      "cch": "-(32*lam - 11)**3/2048",
+      "chc": "-(32*lam - 27)*(32*lam - 11)**2/12288",
+      "chh": "-(32*lam - 27)*(32*lam - 11)**2/12288",
+      "hcc": "-(32*lam - 11)**3/2048",
+      "hch": "-(32*lam - 11)**3/2048",
+      "hhc": "-(32*lam - 27)*(32*lam - 11)**2/12288",
+      "hhh": "-(32*lam - 27)*(32*lam - 11)**2/12288"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "K3": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": 0,
+      "all_offsets_ok": [
+       [
+        1,
+        0
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-(32*lam - 11)**3/2048",
+      "cch": "-(32*lam - 11)**3/2048",
+      "chc": "-(32*lam - 27)*(32*lam - 11)**2/12288",
+      "chh": "-(32*lam - 27)*(32*lam - 11)**2/12288",
+      "hcc": "-(32*lam - 11)**3/2048",
+      "hch": "-(32*lam - 11)**3/2048",
+      "hhc": "-(32*lam - 27)*(32*lam - 11)**2/12288",
+      "hhh": "-(32*lam - 27)*(32*lam - 11)**2/12288"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    },
+    "T": {
+     "fixing_window": {
+      "layers": 1,
+      "offset": -1,
+      "all_offsets_ok": [
+       [
+        1,
+        -1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "stackings": 18,
+     "F": {
+      "ccc": "-(32*lam - 11)**3/2048",
+      "cch": "-(32*lam - 11)**3/2048",
+      "chc": "-(32*lam - 11)**3/2048",
+      "chh": "-(32*lam - 11)**3/2048",
+      "hcc": "-(32*lam - 11)**3/2048",
+      "hch": "-(32*lam - 11)**3/2048",
+      "hhc": "-(32*lam - 11)**3/2048",
+      "hhh": "-(32*lam - 11)**3/2048"
+     },
+     "Delta_c": "0",
+     "Delta_h": "0",
+     "Delta_pair": "0",
+     "short_cycles": {
+      "ch": "0",
+      "cch": "0",
+      "chh": "0"
+     },
+     "law_all_tested": true,
+     "law_fails_on": [],
+     "predicted_line": true
+    }
+   }
+  }
+ ],
+ "M0": [
+  [
+   "-11/32",
+   "-5/32",
+   1,
+   true,
+   true,
+   18
+  ],
+  [
+   "-5/32",
+   "17/96",
+   1,
+   true,
+   true,
+   18
+  ],
+  [
+   "17/96",
+   "7/32",
+   1,
+   true,
+   true,
+   18
+  ],
+  [
+   "7/32",
+   "9/32",
+   2,
+   true,
+   true,
+   18
+  ],
+  [
+   "9/32",
+   "11/32",
+   2,
+   true,
+   true,
+   18
+  ]
+ ],
+ "negative_controls": [
+  [
+   "M0 only at chc",
+   "-11/32",
+   false,
+   false
+  ],
+  [
+   "M1 only in mixed gaps",
+   "-11/32",
+   false,
+   false
+  ],
+  [
+   "M0 only at chc",
+   "-5/32",
+   false,
+   false
+  ],
+  [
+   "M1 only in mixed gaps",
+   "-5/32",
+   false,
+   false
+  ],
+  [
+   "M0 only at chc",
+   "17/96",
+   false,
+   false
+  ],
+  [
+   "M1 only in mixed gaps",
+   "17/96",
+   false,
+   false
+  ],
+  [
+   "M0 only at chc",
+   "7/32",
+   false,
+   false
+  ],
+  [
+   "M1 only in mixed gaps",
+   "7/32",
+   false,
+   false
+  ],
+  [
+   "M0 only at chc",
+   "9/32",
+   false,
+   false
+  ],
+  [
+   "M1 only in mixed gaps",
+   "9/32",
+   false,
+   false
+  ]
+ ],
+ "fails": []
+}

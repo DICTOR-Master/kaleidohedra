@@ -3782,7 +3782,7 @@
    ],
    [
     "The Hexagonality Law for the Laves big atom (#66, #67)",
-    "#84 shows the Swap Rule is the condition to stay on the line; check it on the three-layer window",
+    "#84 shows the Swap Rule is the condition to stay on the line; check it on the three-layer window — SETTLED 12 Nov 2026 (studies/2026-11-12-laves-three-layer-swap): not a three-layer piece; the big atom M0 sits in layer k and its piece is fixed by two layer types, its own layer and the layer below (only the layer below between 17/96 and 7/32), on all 18 computed stackings, all 16 six-layer neighbourhoods; on that pair the Swap Rule holds exactly in lam in every window, the three-layer Swap defects (#84 (c), g = 3) all vanish, 480/480 exact law tests (Fibonacci approximants included); so #66's proof covers M0 as it covers the other Laves roles; open only the locality of the Laves pieces (no certificate yet, for all six roles)",
     "the last exception of the law explained",
     [
      16
@@ -6496,6 +6496,15 @@
     "result": "45-region yantras: 41 triangles + 4 four-sided (mirror pairs in the inner ten and the eight), all 78 faces convex, 18 marmas order-2 zeros, residue 2 at all 28 sandhis, centre positive (Kulaichev +27.45, Rh345 +26.17, Q3 +83.37); degree 24, residues and the 511-term signed sum unchanged from 43 (only 24 -> 28 sandhis and 2 more regions); exact through Q3. DICTO Yantra zero curve: irreducible, genus 207 = 253 - 18 nodes (marmas, isolated real points) - 28 (ordinary 8-fold point at (1:0:0) where the 9 bases meet, 8 real horizontal asymptotes); 10 real projective components (numerical); misses the bindu centre, 26 simple real points on the circle; exact for R1 (11 components), high precision for GF1. E1: 43 triangles, 18 order-2 marmas, 22 sandhis residue 2, two 4-line points (order 2), centre +343.29; most-even not in residues, but exactly in the forms: Omega_min = 27/(2 area) per triangle, so E1 has the most equal least form values (1/Omega_min spread 0.614 vs DICTO 0.866, Kulaichev 0.782)",
     "retry": "never; leads: exact instance on E1's edge; parallel families -> (k-1)-fold points at infinity (genus as a pattern count); why only the DICTO Yantra has a negative centre",
     "study": "2026-11-12-yantra-regions-45",
+    "date": "2026-11-12"
+   },
+   {
+    "question": "Gap row 'Hexagonality Law for the Laves big atom (#66, #67)': does the big atom M0, said to read three layer types above lam = 17/96, obey the three-layer Swap Rule of the Window Law (#84 (c), g = 3), and does the law hold exactly where it does?",
+    "method": "studies/2026-11-12-laves-three-layer-swap: law3.py on #64's 18 exact Laves walks (run 2 raw, census checks passed; 15 stackings up to 8 layers + Fibonacci approximants 15, 16, 26): shortest no-clash window of layer types per role and lam-window (lengths 1-4, every offset), exact defects Delta_c, Delta_h, pair defect and short-cycle sums, direct law tests; controls: five two-layer roles + M0 below 17/96 (positive), one-letter + coboundary tables and random tables on all 801 cyclic c/h words up to 12 layers, M0-only-at-chc and M1-only-in-mixed-gaps counts (negative); pilot + full run on the compute machine, FINAL ok",
+    "status": "SETTLED",
+    "result": "M0 is a two-layer piece: fixed by the types of its own layer k and the layer below (only the layer below in (17/96, 7/32); constant below 17/96), no other window position works; #64 keyed it to the pair (k, k+1), hence 'three types'. Swap Rule exact on that pair in every window; three-layer defects zero; 480/480 law tests; prediction = observation 30/30 role-windows; negatives 10/10 off the line; theorem check 600/600",
+    "retry": "never; leads: Farkas locality certificates for the six Laves roles (as #61 step 2) to make the Laves law a theorem on every stacking; errata lines for #66 and #67 next versions",
+    "study": "2026-11-12-laves-three-layer-swap",
     "date": "2026-11-12"
    }
   ]
