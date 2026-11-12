@@ -6,7 +6,7 @@ member with a segment summand, and its caps corollary covers those with a triang
 367 in H3 (with 54 sums of them and 13 pentagon caps). Within these cones the only Platonic or Archimedean solids that can be stretched along a cone direction are the
 tetrahedron, octahedron, cuboctahedron, truncated tetrahedron and truncated octahedron (B3, along the cube axes). No H3 solid can.
 
-Status: listing done for these three cones. Prior art: none found for the 367 + 2 new atoms. One lead to check: Subbotin's RR-polyhedra.
+Status: listing done for these three cones. Prior art checked 13 Nov 2026 (PRIOR-ART.md): A3-16 (DICTO 13-Corner Octet Atom) is KNOWN as the augmented cuboctahedron (P3,35 = S20; Stewart 1970), and A3-10 is the augmented octahedron (P3,33). Of the 367 H3 atoms, 28 are known or matched by counts (13 in the complete Timofeenko list of 78, 14 in Kaufman's 108° rhombi list, and H3-16 = Subbotin's 5-rhombic pyramid). 339 H3 atoms were not found in the sources checked. Their role as atoms of the cones is new as far as those sources show.
 
 ## Question and route (DICTO approved the permutohedron route)
 #49 (The Polyhedral Stretching Theorem) proves that sliding any equal-edged solid one edge-length gives an equal-edged solid, and leaves
@@ -83,7 +83,7 @@ theorem extends with the same proof: **if P and P′ are equal-edged (unit edges
 
 **New (the goal of the gap).** The *atoms* are equal-edged members with no equal-edged Minkowski summand other than a point and themselves.
 - A3 = B3: A3-10, the octahedron with a tetrahedron on one face (4 triangles, 3 rhombi 60/120, 7 corners). This shape is known (the 60° rhombohedron
-  with one corner cut). A3-16 is a 13-corner solid on the octet lattice (4 triangles, 4 rhombi 60/120, 5 squares, 24 edges) that we did not find named; DICTO named it the **DICTO 13-Corner Octet Atom** (12 Nov 2026): a square cupola (J4) whose octagon is closed by four 60° rhombi meeting at one apex; not centrally symmetric (6 of 13 faces in parallel pairs). Render: figures/a3-16-render.png (scripts/render_a316.py, exact corners in the log).
+  with one corner cut). A3-16 is a 13-corner solid on the octet lattice (4 triangles, 4 rhombi 60/120, 5 squares, 24 edges) that is the known augmented cuboctahedron (P3,35 / S20, Stewart 1970; see PRIOR-ART.md); as the A3 atom DICTO named it the **DICTO 13-Corner Octet Atom** (12 Nov 2026): a square cupola (J4) whose octagon is closed by four 60° rhombi meeting at one apex; not centrally symmetric (6 of 13 faces in parallel pairs). Render: figures/a3-16-render.png (scripts/render_a316.py, exact corners in the log).
 - H3: 367 atoms, mostly pieces with regular triangles and pentagons together with rhombi of 36/144, 60/120 and 72/108 and hexagons of
   72/144 and 108/144 (e.g. H3-16: 5 triangles, 5 rhombi 36/144, 1 pentagon, 11 corners; H3-81: 10 triangles, 3 rhombi 72/108, 10
   corners). Full list: `data/raw/solids-H3.csv`, `data/raw/tables.json` (new_atoms), exact labels in `data/raw/members-H3.json`.

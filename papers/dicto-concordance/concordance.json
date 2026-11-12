@@ -3835,7 +3835,7 @@
    ],
    [
     "Archimedean stretches (#49)",
-    "the Polyhedral Stretching Theorem covers every equal-edged solid; listing and prior-art check remain — LISTED 12 Nov 2026 within the permutohedron route (studies/2026-11-12-permutohedron-equal-edges): every equal-edged member of the A3, B3, H3 Coxeter permutohedron deformation cones (Postnikov; Ardila–Castillo–Eur–Postnikov), exact: 17, 101, 4427 solids; Platonic/Archimedean stretches only in B3 along cube axes (T, O, CO, TT, TO; 8 non-regular-faced); new atoms 2 (A3/B3) and 367 (H3), prior art pending (Subbotin RR-polyhedra)",
+    "the Polyhedral Stretching Theorem covers every equal-edged solid; listing and prior-art check remain — LISTED 12 Nov 2026 within the permutohedron route (studies/2026-11-12-permutohedron-equal-edges): every equal-edged member of the A3, B3, H3 Coxeter permutohedron deformation cones (Postnikov; Ardila–Castillo–Eur–Postnikov), exact: 17, 101, 4427 solids; Platonic/Archimedean stretches only in B3 along cube axes (T, O, CO, TT, TO; 8 non-regular-faced); new atoms 2 (A3/B3) and 367 (H3); PRIOR ART CHECKED 13 Nov 2026: A3/B3 atoms known (augmented cuboctahedron P3,35, augmented octahedron P3,33), 28 H3 atoms known or count-matched, 339 H3 atoms not found (PRIOR-ART.md)",
     "new equal-edged solids",
     []
    ],
@@ -6674,6 +6674,15 @@
     "result": "'never on' is FALSE in general. Theorem A (proved): P self-dual by isometry g with H o g^-1 = eps H gives f(-s) = eps f(s) on the whole line; eps = -1 forces ON: square, tetrahedron (S(1) = octahedron), 5-cell (4/5), 24-cell (1/sqrt2), all polygons and simplices. Theorem B (proved): ON whenever Sym(S(hR)) has no degree-k invariant harmonic: also B4 (S(2) = 24-cell). Off (exact, unique zeros): cube 1.692590 / corner phi (two icosahedra, 5-design), icosahedral 2.891793 / 2.911240, B5 2.306956 / 2.420861, B6 2.605767 / 2.632456, 600-cell mu_Omega / mu*. Displacement log(mu/hR) = -f(0)/f'(0) to 0.5-7% (f(0) even part, f'(0) odd slope), Kantorovich-certified on all five. Not a law of nearness: B_d corner station ~ (d+2)/3 vs sqrt d (equal only d = 1, 4), form offset grows -2.3%, 0, +3.2%, +6.4% (d = 3..6); two-ends model and radial bound rejected. Tetrahedron 2nd tone (eps +1): corner pair 0.553810, 1.805674 (product 1). 'Canonical Law' not earned.",
     "retry": "never for these lines; only LEADS: converse of Theorem B, weighted-design reason for small f(0)/f'(0), star and quasi-regular lines, B9/B16",
     "study": "studies/2026-11-13-near-but-never-on",
+    "date": "2026-11-13"
+   },
+   {
+    "question": "Prior art for the DICTO 13-Corner Octet Atom (A3-16) and the 369 new atoms of the A3/B3/H3 permutohedron cones",
+    "method": "literature only (no computation): Subbotin RR-polyhedra 2020-2026 (six full texts), Tupelo-Schneck table of 78 (Timofeenko / Gurin-Zalgaller numbering), Kaufman-Doskey-Waterman diamond-regular (71) and 108-degree-rhombi (86) lists, Wikipedia, MathWorld, OEIS, Hart, McCooey, zonohedra (Fedorov, Coxeter, Grunbaum), Postnikov / ACEP / Castillo-Liu / Padrol-Poullot, library manifests; matched by face counts against solids-*.csv, A3-16 also against its corners",
+    "status": "SETTLED (A3-16, A3-10 known; 28 H3 atoms known or count-matched; 339 not found)",
+    "result": "A3-16 = augmented cuboctahedron, P3,35 = S20 (Stewart 1970; Doskey-Kaufman-Waterman 2006; Timofeenko complete list), corners checked: shape NOT new, only its role as A3 atom; A3-10 = augmented octahedron P3,33. H3: 13 atoms with 60/120 rhombi lie in the complete list of 78 (6 unique, 7 tied); 14 atoms with 72/108 rhombi match Kaufman's 108-degree list by counts (6 unique, 8 tied; H3-81 also = Subbotin 2021 13-faced RR-polyhedron, paper prints 2pi/3); H3-16 = Subbotin 2022 5-rhombic pyramid (alpha = 36 exact). 339 H3 atoms new as far as the sources checked show",
+    "retry": "only LEADS: corner comparison for the tied rows and H3-81; Subbotin's figure-only lists",
+    "study": "studies/2026-11-12-permutohedron-equal-edges (PRIOR-ART.md)",
     "date": "2026-11-13"
    }
   ]
