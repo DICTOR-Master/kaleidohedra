@@ -71,9 +71,13 @@ def sections(body):
 
 def include(num, keys, lead, label):
     folder = FOLDER[num]; s = open(os.path.join(P, folder, FILE.get(num, 'paper.html')), encoding='utf8').read()
-    for st in re.findall(r'<style>(.*?)</style>', s, re.S): styles.add(st.strip())
+    for st in re.findall(r'<style>(.*?)</style>', s, re.S): styles.add((num, st.strip()))
     doi = DOI.get(num) or re.search(r'DICTO DOI: (10\.5281/zenodo\.\d+)', s).group(1)
     title = PAPERS.get(num, (None,))[0] or html.unescape(re.sub('<[^>]+>', '', re.search(r'<title>(.*?)</title>', s, re.S).group(1)))
+    # captions written as paragraphs (#19's house style) become figures, so they renumber like the others
+    s = re.sub(r'<p>\s*(<img [^>]*?)/?>\s*</p>\s*<p><strong>((?:Figure|Fig\.) \d+\.)</strong>(.*?)</p>', r'<figure>\1><figcaption><b>\2</b>\3</figcaption></figure>', s, flags=re.S)
+    s = re.sub(r'(<img class="lead"[^>]*>)\s*<p class="cap">(.*?)</p>', r'<figure>\1<figcaption>\2</figcaption></figure>', s, flags=re.S)
+    s = re.sub(r'<p class="(?:small|cap)">(\s*<b>(?:Figure|Fig\.) \d+.*?)</p>', r'<figcaption>\1</figcaption>', s, flags=re.S)
     body = s[s.index('<body'):s.rindex('</body>')]
     body = body[body.index('>') + 1:]
     secs = sections(body)
@@ -105,6 +109,7 @@ def include(num, keys, lead, label):
         out.append(b)
     blk = ''.join(out)
     blk = re.sub(r'<p class="prec">.*?</p>', '', blk, flags=re.S)
+    blk = blk.replace('class="status"', 'class="note"')   # one status box in the book: a paper's own boxes become notes
     # figures: copy, renumber through the chapter
     blk = re.sub(r'<img ([^>]*?)src="([^"]+)"', lambda mo: f'<img {mo.group(1)}src="{copyfig(mo.group(2), folder, label)}"', blk)
     caps = re.findall(r'<figcaption[^>]*>\s*(?:<b>)?\s*(Figure|Fig\.|Plate)s? (\d+)(?:[–-](\d+))?', blk)
@@ -122,7 +127,7 @@ def include(num, keys, lead, label):
     blk = blk.replace('this paper', f'#{num}').replace('This paper', f'Paper #{num}')
     note = (f'<p class="from">The sections below are from #{num}, <i>{html.escape(title)}</i> (DICTO DOI: {doi}), word for word; figures are '
             f'renumbered through the chapter, and numbers in square brackets refer to the references of #{num} (Appendix).</p>')
-    return note + f'<div class="inc">{blk}</div>'
+    return note + f'<div class="inc p{num}">{blk}</div>'
 
 def link_text(t):
     def r(mo):
@@ -204,7 +209,16 @@ tochtml = ('<h2>Contents</h2><table class="toc"><tr><td><a href="#opening">Openi
            '<tr><td><a href="#epilogue">Epilogue. What has been shown</a></td></tr><tr><td><a href="#app">Appendix. Sources by chapter</a></td></tr>'
            '<tr><td><a href="#papers">Papers in this book, and papers referred to</a></td></tr><tr><td><a href="#classical">References</a></td></tr>'
            '<tr><td><a href="#index">Index</a></td></tr><tr><td><a href="#about">About the author</a></td></tr></table>')
-css = '\n'.join(sorted(styles)) + '''
+def scope(num, css):
+    """prefix every selector of a paper's own stylesheet with div.inc, so it styles only that paper's included text"""
+    css = re.sub(r'/\*.*?\*/', '', css, flags=re.S); css = re.sub(r'@page[^{]*\{[^}]*\}', '', css)
+    out = []
+    for sel, body in re.findall(r'([^{}]+)\{([^{}]*)\}', css):
+        sel = sel.strip()
+        if not sel or sel.startswith('@'): continue
+        out.append(','.join(f'div.p{num} ' + x.strip() if x.strip() not in ('body', 'html') else f'div.p{num}' for x in sel.split(',')) + '{' + body + '}')
+    return '\n'.join(out)
+css = '\n'.join(scope(n, x) for n, x in sorted(styles)) + '''
 h1.chapter{break-before:page;font-size:19pt;margin-top:0} p.from{font-size:8.3pt;color:#777;margin:1mm 0 2mm;font-family:"DejaVu Sans",sans-serif}
 h3.from{font:600 10.5pt "DejaVu Sans",sans-serif;color:#6b5310;margin:10pt 0 3pt;break-after:avoid}
 div.inc{border-left:2px solid #e6dcc0;padding-left:3mm;margin:2mm 0 4mm}
@@ -221,7 +235,11 @@ span.D{background:#8a5cc4} span.I{background:#3a70cd} span.C{background:#488e48}
 .coverph{height:250mm;display:flex;align-items:center;justify-content:center;border:1.5px dashed #b8962e;color:#8a7440;font:16pt "DejaVu Sans",sans-serif;box-sizing:border-box}
 body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status{font-family:"DejaVu Sans","Liberation Sans",sans-serif}
 body{font-size:10pt}
-table{max-width:100%} td,th{overflow-wrap:anywhere}'''
+table{max-width:100%} td,th{overflow-wrap:break-word !important;word-break:normal !important}
+div.inc table{width:100%} table.five{width:100%} table.five td:first-child{white-space:nowrap}
+figure.plate img{width:72%;margin:0 auto;display:block}
+figure.mark{position:relative} figure.mark img.fm{position:absolute;width:14mm;right:2mm;opacity:.9;border:none}
+p.note{font-size:9pt;color:#444;border-left:2px solid #ccc;padding-left:2mm}'''
 doc = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>The Five Solids (working title)</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
