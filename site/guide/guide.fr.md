@@ -129,7 +129,7 @@ Dans **Paramètres** :
 
 # Kaleidohedra {#kaleidohedra}
 
-Dans Kaleidohedra, vous construisez sur un réseau puis vous déplacez le réseau lui-même : le panneau ⟋ Shear le fait glisser et le plie, et chaque pièce posée bouge avec lui. Il a les réseaux 3D+, les mondes de DICTO, Nets (2D+) et deux mondes à lui, Studies et Targets. 1D+, 4D, 5D et 6D sont dans Rhombiverse.
+Dans Kaleidohedra, vous construisez sur un réseau puis vous déplacez le réseau lui-même : le panneau ⟋ Shear le fait glisser et le plie, et chaque pièce posée bouge avec lui. Il a les réseaux 3D+, les mondes de DICTO, Nets (2D+) et trois mondes à lui : Generalized Permutohedra, Studies et Targets. 1D+, 4D, 5D et 6D sont dans Rhombiverse.
 
 ## Cisailler le réseau
 
@@ -173,6 +173,10 @@ Un monde 3D+ de constructions exactes sur la cellule Euclid–Kepler–Pacioli, 
 ## Targets
 
 Une galerie 3D des 160 cellules cibles : toute cellule qui remplit l'espace, à arêtes toutes égales, dont les arêtes ne se rencontrent qu'à des angles particuliers (36°, 45°, 60°, 70,53°, 72° et 90°), trouvées par une recherche exacte menée de deux façons (voir [TARGETS.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/TARGETS.md)). Choisissez-le dans l'écran 3D+ de DICTO. Choisissez un **Type** (parallélépipède, prisme hexagonal, dodécaèdre rhombique, dodécaèdre allongé ou octaèdre tronqué) et une cellule. Chacune est nommée par son type, son numéro dans TARGETS.md et ses angles ; ✓ marque celles déjà dans Polyhedraverse. **Afficher** dessine la cellule seule, avec ses voisines par les faces, ou en bloc 3×3×3 de son réseau, pour la voir remplir l'espace. Les faces sont colorées par sorte : carrés en bleu, losanges en rose, hexagones réguliers en or, autres hexagones en violet. **Info** donne ses faces, les angles entre ses directions d'arêtes, son volume (arête 1), le réseau selon lequel elle pave, et si elle est déjà dans Polyhedraverse. Rien ne se construit ici, et le panneau Shear se cache pour que les angles restent exacts.
+
+## Generalized Permutohedra
+
+Un monde 3D (DICTO → 3D+ → Generalized Permutohedra) des formes que Postnikov (2009) a appelées permutoèdres généralisés : tout ce que devient le permutoèdre (l'octaèdre tronqué) quand ses 14 faces glissent vers l'intérieur ou l'extérieur, chacune restant parallèle à elle-même, tant qu'aucune face n'en croise une autre ; une face peut se réduire à une arête ou un sommet et disparaître. Le grand curseur du bas se déplace en ligne droite du **Permutoèdre** à l'**Associaèdre** de Loday ; la marque sur sa piste est le mur de la ligne, où des faces disparaissent (ici seulement au bout de l'associaèdre, où 5 des 14 disparaissent à la fois). Les arrêts **Simplexe**, **Cube**, **Hypersimplexe**, **Cycloèdre**, **Associaèdre** et **Permutoèdre** sautent à ces membres ; la légende compte sommets, arêtes et faces. Le badge indique en direct si la forme affichée pave l'espace par des copies translatées (le test de Venkov–McMullen : centralement symétrique, faces centralement symétriques, chaque ceinture de 4 ou 6 faces). Les faces sont colorées selon le nombre des quatre nombres 1, 2, 3, 4 auxquels elles appartiennent. Crédits dans la note du panneau : Postnikov, Loday, Ardila–Castillo–Eur–Postnikov, Venkov et McMullen.
 
 # Rhombiverse {#rhombiverse}
 

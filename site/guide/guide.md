@@ -127,7 +127,7 @@ In **Settings**:
 
 # Kaleidohedra {#kaleidohedra}
 
-In Kaleidohedra you build on a lattice and then move the lattice itself: the ⟋ Shear panel slides and bends it, and every piece you placed moves with it. It has the 3D+ lattices, DICTO's worlds, Nets (2D+), and two worlds of its own, Studies and Targets. 1D+, 4D, 5D and 6D are Rhombiverse's.
+In Kaleidohedra you build on a lattice and then move the lattice itself: the ⟋ Shear panel slides and bends it, and every piece you placed moves with it. It has the 3D+ lattices, DICTO's worlds, Nets (2D+), and three worlds of its own: Generalized Permutohedra, Studies and Targets. 1D+, 4D, 5D and 6D are Rhombiverse's.
 
 ## Shearing the lattice
 
@@ -171,6 +171,10 @@ A 3D+ world of exact constructions on the Euclid–Kepler–Pacioli cell, shown 
 ## Targets
 
 A 3D gallery of the 160 target cells: every space-filling cell with all edges equal whose edges meet only at special angles (36°, 45°, 60°, 70.53°, 72° and 90°), found by an exact search done two ways (see [TARGETS.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/TARGETS.md)). Choose it in DICTO's 3D+ screen. Pick a **Type** (parallelepiped, hexagonal prism, rhombic dodecahedron, elongated dodecahedron or truncated octahedron) and a cell. Each is named by its type, its number in TARGETS.md and its angles; ✓ marks the ones already in Polyhedraverse. **Show** draws the cell alone, with its face neighbours, or as a 3×3×3 block of its lattice, so you can see it fill space. Faces are coloured by kind: squares blue, rhombi pink, regular hexagons gold, other hexagons purple. **Info** lists its faces, the angles between its edge directions, its volume (edge 1), the lattice it tiles as, and whether it is in Polyhedraverse yet. Nothing is built here, and the Shear panel hides, so the angles stay exact.
+
+## Generalized Permutohedra
+
+A 3D world (DICTO → 3D+ → Generalized Permutohedra) of the shapes Postnikov (2009) called generalized permutohedra: everything the permutohedron (the truncated octahedron) becomes when its 14 faces slide in or out, each staying parallel to itself, as long as no face crosses over; a face may shrink to an edge or a corner and vanish. The big slider at the bottom moves along a straight line from the **Permutohedron** to Loday's **Associahedron**; the mark on its track is the line's wall, where faces vanish (here only at the associahedron end, where 5 of the 14 vanish at once). The stops **Simplex**, **Cube**, **Hypersimplex**, **Cyclohedron**, **Associahedron** and **Permutohedron** jump to those members; the caption counts corners, edges and faces. The badge says, live, whether the shape shown fills space by translated copies (the Venkov–McMullen test: centrally symmetric, faces centrally symmetric, every belt of 4 or 6 faces). Faces are coloured by how many of the four numbers 1, 2, 3, 4 they belong to. Credits in the panel's note: Postnikov, Loday, Ardila–Castillo–Eur–Postnikov, Venkov and McMullen.
 
 # Rhombiverse {#rhombiverse}
 

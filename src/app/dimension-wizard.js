@@ -61,6 +61,7 @@ import { hexoctPreviewEdges } from './hexoct-geometry.js';
 import { mandalaPreviewEdges } from './mandala-geometry.js';
 import { bitruncPreviewEdges } from './world-bitrunc.js';
 import { perm4PreviewEdges } from './world-perm4.js';
+import { gpermPreviewEdges } from './world-gperm.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
 import { netEligible, mountNetViewer } from './net-viewer.js';
@@ -557,6 +558,10 @@ const K_WORLDS = [
   // its Schlegel build and its sweep with every scutoid swap; right after the Bitruncated 600-cell, both after DICTONIC as the newest
   // work (world-perm4.js).
   { key: 'perm4', label: 'The 4D Permutohedron', pieces: [{ label: 'The 4D Permutohedron', action: 'tool:perm4World', preview: perm4PreviewEdges }] },
+  // Generalized Permutohedra (Postnikov 2009; DICTO's choice of world, 2026-11-12): the 3D permutohedron's deformation cone, one big slider
+  // to Loday's associahedron with its walls, six stops and a fills-space badge; right after The 4D Permutohedron. Not DICTO's own
+  // mathematics, so not in DICTO_WORK: it shows in Kaleidohedra's block, first among its worlds (world-gperm.js).
+  { key: 'gperm', label: 'Generalized Permutohedra', pieces: [{ label: 'Generalized Permutohedra', action: 'tool:gpermWorld', preview: gpermPreviewEdges }] },
   // Golamandalas (DICTO 2026-11-08; named by DICTO 2026-11-09): the DICTO Yantra's nine triangles as tetrahedra spinning in nine nested
   // cones on one big slider with three still stops, the Cleo sphere (twenty yantras) and the 81 sphere; next to DICTONIC as the newest
   // work (world-mandala.js).
@@ -955,7 +960,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     // absence): one row, so each app stays in sight with no list repeated (DICTO 2026-10-09).
     // Rhombiverse's row opens its choice of lattices (DICTO 2026-10-31: the original app, not a jump to FCC).
     if (dim === '3D') for (const app of ['kaleidohedra', 'rhombiverse']) {
-      if (app === SITE || !passes(app, filter) || entries.some((e) => e.app === app)) continue;
+      // (an app block holding only worlds of its own, such as Generalized Permutohedra, still gets the row: its lattices are the door's)
+      if (app === SITE || !passes(app, filter) || entries.some((e) => e.app === app && e.kind === 'lattice')) continue;
       entries.push({ app, kind: 'family', fam: { id: 'otherApp', label: t(`wiz.other.${app}`, L), action: 'tool:pieceType:rd', preview: () => pieceEdges('tool:pieceType:rd'), lattices: app === 'rhombiverse' } });
     }
     entries.sort((x, y) => rank(x.app) - rank(y.app)); // stable: each block keeps its own order

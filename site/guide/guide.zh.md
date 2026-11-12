@@ -129,7 +129,7 @@ DICTO 是 DICTO 的三个应用，共用同一套几何。**Rhombiverse** 是**�
 
 # Kaleidohedra {#kaleidohedra}
 
-在 Kaleidohedra 里，你先在晶格上搭建，再移动晶格本身：⟋ Shear 面板让它滑动、弯曲，你放下的每个部件都随之移动。这里有 3D+ 晶格、DICTO 的世界、Nets（2D+），以及它自己的两个世界 Studies 和 Targets。1D+、4D、5D 和 6D 在 Rhombiverse 中。
+在 Kaleidohedra 里，你先在晶格上搭建，再移动晶格本身：⟋ Shear 面板让它滑动、弯曲，你放下的每个部件都随之移动。这里有 3D+ 晶格、DICTO 的世界、Nets（2D+），以及它自己的三个世界 Generalized Permutohedra、Studies 和 Targets。1D+、4D、5D 和 6D 在 Rhombiverse 中。
 
 ## 剪切晶格
 
@@ -173,6 +173,10 @@ DICTO 自己的 3D+ 世界，来自他的想法和论文；每篇论文在 Alman
 ## Targets
 
 160 个目标单元的 3D 图库：所有棱长相等、棱只以特殊角度（36°、45°、60°、70.53°、72° 和 90°）相交的空间填充单元，由两种方式的精确搜索找到（见 [TARGETS.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/TARGETS.md)）。在 DICTO 的 3D+ 页面中选择它。选一个**类型**（平行六面体、六棱柱、菱形十二面体、长菱形十二面体或截角八面体）和一个单元。每个单元以类型、在 TARGETS.md 中的编号和角度命名；✓ 表示已收入 Polyhedraverse。**显示**可单独画出单元、连同面相邻的单元，或画出其晶格的 3×3×3 块，看它如何填满空间。面按种类着色：正方形蓝色、菱形粉色、正六边形金色、其他六边形紫色。**Info** 列出它的面、棱方向之间的角、体积（棱长 1）、铺满所用的晶格，以及是否已收入 Polyhedraverse。这里不搭建任何东西，剪切面板也会隐藏，使角度保持精确。
+
+## Generalized Permutohedra
+
+一个 3D 世界（DICTO → 3D+ → Generalized Permutohedra），展示 Postnikov（2009）所称的广义置换多面体：把置换多面体（截角八面体）的 14 个面各自保持平行地向内或向外滑动、只要没有面越过别的面，所得到的全部形状；一个面可以缩成一条棱或一个顶点而消失。底部的大滑块沿直线从**置换多面体**移到 Loday 的**结合多面体**；轨道上的标记是这条线的壁，在那里有面消失（这里只在结合多面体那一端，14 个面中有 5 个同时消失）。停靠点**单纯形**、**立方体**、**超单纯形**、**循环多面体**、**结合多面体**和**置换多面体**直接跳到这些成员；说明文字给出顶点、棱和面的数目。徽章实时显示所示形状能否用平移副本填满空间（Venkov–McMullen 判定：中心对称，面中心对称，每条带有 4 或 6 个面）。各面按它属于四个数 1, 2, 3, 4 中的几个来着色。出处见面板的注释：Postnikov、Loday、Ardila–Castillo–Eur–Postnikov、Venkov 和 McMullen。
 
 # Rhombiverse {#rhombiverse}
 

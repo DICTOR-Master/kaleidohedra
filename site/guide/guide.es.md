@@ -129,7 +129,7 @@ En **Ajustes**:
 
 # Kaleidohedra {#kaleidohedra}
 
-En Kaleidohedra construyes sobre una red y luego mueves la propia red: el panel ⟋ Shear la desliza y la dobla, y cada pieza que colocaste se mueve con ella. Tiene las redes 3D+, los mundos de DICTO, Nets (2D+) y dos mundos propios, Studies y Targets. 1D+, 4D, 5D y 6D son de Rhombiverse.
+En Kaleidohedra construyes sobre una red y luego mueves la propia red: el panel ⟋ Shear la desliza y la dobla, y cada pieza que colocaste se mueve con ella. Tiene las redes 3D+, los mundos de DICTO, Nets (2D+) y tres mundos propios: Generalized Permutohedra, Studies y Targets. 1D+, 4D, 5D y 6D son de Rhombiverse.
 
 ## Cizallar la red
 
@@ -173,6 +173,10 @@ Un mundo 3D+ de construcciones exactas sobre la celda Euclid–Kepler–Pacioli,
 ## Targets
 
 Una galería 3D de las 160 celdas objetivo: toda celda que llena el espacio con todas las aristas iguales y cuyas aristas solo se encuentran en ángulos especiales (36°, 45°, 60°, 70,53°, 72° y 90°), halladas con una búsqueda exacta hecha de dos maneras (véase [TARGETS.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/TARGETS.md)). Elígelo en la pantalla 3D+ de DICTO. Escoge un **Tipo** (paralelepípedo, prisma hexagonal, dodecaedro rómbico, dodecaedro alargado u octaedro truncado) y una celda. Cada una se nombra por su tipo, su número en TARGETS.md y sus ángulos; ✓ marca las que ya están en Polyhedraverse. **Mostrar** dibuja la celda sola, con sus vecinas de cara o como un bloque 3×3×3 de su red, para verla llenar el espacio. Las caras se colorean por tipo: cuadrados en azul, rombos en rosa, hexágonos regulares en dorado y otros hexágonos en morado. **Info** muestra sus caras, los ángulos entre las direcciones de sus aristas, su volumen (arista 1), la red con la que tesela y si ya está en Polyhedraverse. Aquí no se construye nada, y el panel Shear se oculta para que los ángulos sigan siendo exactos.
+
+## Generalized Permutohedra
+
+Un mundo 3D (DICTO → 3D+ → Generalized Permutohedra) de las formas que Postnikov (2009) llamó permutoedros generalizados: todo aquello en que se convierte el permutoedro (el octaedro truncado) cuando sus 14 caras se deslizan hacia dentro o hacia fuera, cada una paralela a sí misma, siempre que ninguna cara cruce a otra; una cara puede encogerse hasta una arista o un vértice y desaparecer. El deslizador grande de abajo se mueve en línea recta del **Permutoedro** al **Asociaedro** de Loday; la marca de su pista es la pared de la línea, donde desaparecen caras (aquí solo en el extremo del asociaedro, donde desaparecen 5 de las 14 a la vez). Las paradas **Símplice**, **Cubo**, **Hipersímplice**, **Cicloedro**, **Asociaedro** y **Permutoedro** saltan a esos miembros; el texto cuenta vértices, aristas y caras. La insignia indica en vivo si la forma mostrada llena el espacio con copias trasladadas (la prueba de Venkov–McMullen: centralmente simétrica, caras centralmente simétricas, cada cinturón de 4 o 6 caras). Las caras se colorean según a cuántos de los cuatro números 1, 2, 3, 4 pertenecen. Créditos en la nota del panel: Postnikov, Loday, Ardila–Castillo–Eur–Postnikov, Venkov y McMullen.
 
 # Rhombiverse {#rhombiverse}
 
