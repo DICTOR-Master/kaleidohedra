@@ -1,0 +1,13 @@
+ok   600-cell: 120 vertices, all of norm 1
+ok   (P2) P12 is harmonic (exact)
+ok   (P2) P12 is invariant under left multiplication by the icosian (1+i+j+k)/2 (exact)
+ok   v, w adjacent: v.w = phi/2 (1/4 + sqrt(5)/4)
+P12(x(mu)) = polynomial of degree 12 in mu over Q(sqrt5) (56 s)
+ok   (P3) at mu = 1 (600-cell vertex) P12 != 0
+ok   (P3) at mu = (5+sqrt5)/8 (edge midpoint, end of the hop) P12 != 0
+   station mu = 0.924138673238867458601238076667 (isolating interval width 4.5e-41); factor of the norm: 1048576*m**20 - 13107200*m**19 + 69468160*m**18 - 195952640*m**17 + 278528000*m**16 - 20480000*m**15 - 683458560*m**14 + 1317437440*m**13 - 1168629760*m**12 + 290048000*m**11 + 501350400*m**10 - 656972800*m**9 + 384408320*m**8 - 117126400*m**7 + 9318400*m**6 + 6118400*m**5 - 2304080*m**4 + 318600*m**3 - 12000*m**2 - 900*m + 45
+ok   (P1) exactly one 19-design station in the hop, mu* = 0.924138673238867458601238076667, factor = the degree-20 minimal polynomial
+ok   (N1) the sum without the sphere-mean term has no zero in the hop
+THEOREM: among all 1440-point orbits of W(H4) exactly one is a spherical 19-design: the corners of S(mu*)
+time 59 s
+FINAL ok: all controls held

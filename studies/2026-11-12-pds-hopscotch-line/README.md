@@ -142,3 +142,22 @@ Lam 2017), as in chunks 2–5. The reference library was not searched for a publ
 design tables were not checked; check them before any paper text.
 
 DICTO · dictospheres.com
+
+## Closing items for the aim 2 paper (12 Nov 2026, late)
+**Exact count of 19-design stations among all 1440-point W(H4) orbits** (`scripts/pds_unique.py`, log `data/pds-unique.log`, FINAL ok,
+58 s on the compute machine). A 1440-point orbit has a point stabiliser of order 10, which is parabolic (Steinberg) and so of type I2(5);
+its fixed cone in a chamber runs from a 600-cell vertex v to the midpoint of an edge vw. So the 1440-point orbits are exactly the corner
+sets of S(μ) in the truncated-600-cell hop, x(μ) = v + s(w − v), s = (1 − μ)/(1 − φ/2), (5+√5)/8 < μ < 1. P12(x(μ)) (P12 built from the
+120 vertices, harmonic and icosian-invariant, checked exactly) is a degree-12 polynomial over Q(√5); counted with the exact counter of
+canon_unique.py: **exactly one zero, μ* = 0.924138673238867458601238076667, with the degree-20 minimal polynomial above (exact). Hence
+there is exactly one 1440-point W(H4) orbit that is a spherical 19-design.** Controls: P1 root and minimal polynomial = pds_line.py;
+P2 harmonic, icosian-invariant; P3 nonzero at both ends of the hop (600-cell, rectified 600-cell); N1 without the sphere-mean term no zero.
+**Literature (read 12 Nov):** de la Harpe, Pache and Venkov, "Construction of spherical cubature formulas using lattices" (arXiv
+math/0505510, §1 and Table 7): "any orbit of this group is a spherical design of strength 11, but there is a special orbit of size 1440
+which is of strength 19; see [GoeSei81, Section 5]", and a 720-point cubature formula of strength 19 (weighted; 600-cell vertices plus
+the 600 face centres) of Salihov 1975. By the uniqueness above, Goethals and Seidel's special orbit is the corner set at μ* (their paper
+itself was not read: bibliographic record only). Sloane, Hardin and Cara 2003 ("Spherical designs in four dimensions", read): their
+4D table stops at N = 100 (plus N = 120, the 600-cell, strength 11) and states Sobolev's theorem with the "unique invariant of degree
+t + 1" corollary used here. Hardin and Sloane 1996 ("McLaren's improved snub cube", read) and their online library cover S² only.
+So no Hardin–Sloane table lists a 1440-point design on S³; the 19-design station is classical (Goethals–Seidel) and what is new here
+is its exact place on DICTO's line (μ*, degree 20) and the exact uniqueness.

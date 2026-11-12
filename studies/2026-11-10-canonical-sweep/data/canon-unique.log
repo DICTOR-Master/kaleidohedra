@@ -1,0 +1,35 @@
+ok   (P3) synthetic (x-(1+sqrt5)/8)(x-3/7)^2(x^2-2) on (0,1): 2 distinct roots (expect 2) at [0.428571, 0.404508]
+ok   (N1) x-(3+sqrt5)/4 on (0,1): 0 roots (expect 0; its conjugate (3-sqrt5)/4 = 0.191 lies inside)
+ok   (P2) cube line: exactly one zero of the order-4 anisotropy, at [1.69259] (expect 1.692590)
+PROGRESS 0.05 counter controls (2 s)
+chamber mu < (7+3sqrt5)/6 (S = mu P*): 20 vertices; c0 = 20*nu**3*(sqrt(5) + 3); A(nu) = 128*nu**9*(113*sqrt(5) + 255)/135 (1 s)
+ok   (C1) mu < (7+3sqrt5)/6 (S = mu P*): A equals the raw canon_turn series exactly at mu = 2
+ok   (C0) mu < (7+3sqrt5)/6 (S = mu P*): c0 > 0 at mu = 2
+   mu < (7+3sqrt5)/6 (S = mu P*): 0 zero(s) of the order-6 anisotropy inside the chamber (exact)
+PROGRESS 0.25 chamber 1/4 (5 s)
+chamber (7+3sqrt5)/6 < mu < phi^2: 60 vertices; c0 = 60*nu**2*(3 - sqrt(5)); A(nu) = nu**2*(1664*sqrt(5)/45 + 128)*(nu**6 + nu**5*(16/59 - 2*sqrt(5)/59) + nu**4*(-205/59 + 92*sqrt(5)/59) + nu**3*(-184/59 + 82*sqrt(5)/59) + nu**2*(1945/59 - 870*sqrt(5)/59) + nu*(-4555/59 + 2037*sqrt(5)/59) - 46830/59 + 20943*sqrt(5)/59) (2 s)
+ok   (C1) (7+3sqrt5)/6 < mu < phi^2: A equals the raw canon_turn series exactly at mu = 49/20
+ok   (C0) (7+3sqrt5)/6 < mu < phi^2: c0 > 0 at mu = 49/20
+   (7+3sqrt5)/6 < mu < phi^2: 0 zero(s) of the order-6 anisotropy inside the chamber (exact)
+PROGRESS 0.50 chamber 2/4 (12 s)
+chamber phi^2 < mu < (5+sqrt5)/2: 60 vertices; c0 = 60*nu*(7 - 3*sqrt(5)); A(nu) = nu*(640/9 - 128*sqrt(5)/9)*(nu**6 + nu**5*(1 - sqrt(5)/5) + nu**4*(-17/5 + 8*sqrt(5)/5) + nu**3*(-58/5 + 26*sqrt(5)/5) + nu**2*(114/5 - 51*sqrt(5)/5) + nu*(-47/5 + 21*sqrt(5)/5) - 4698/5 + 2101*sqrt(5)/5) (3 s)
+ok   (C1) phi^2 < mu < (5+sqrt5)/2: A equals the raw canon_turn series exactly at mu = 1559/500
+ok   (C0) phi^2 < mu < (5+sqrt5)/2: c0 > 0 at mu = 1559/500
+ok   (C2) phi^2 < mu < (5+sqrt5)/2: vertex-minus-edge anisotropy = (27/32) x A, a constant (one degree-6 harmonic invariant)
+   root nu = 0.345806258577040155375225147850, mu = 2.89179265903082504284788634294, isolating interval width 4.1e-41, factor of N: 25*nu**12 + 50*nu**11 - 150*nu**10 - 670*nu**9 + 789*nu**8 + 52*nu**7 - 47052*nu**6 - 26016*nu**5 - 8365*nu**4 - 1298*nu**3 + 370*nu**2 + 402*nu + 199
+   phi^2 < mu < (5+sqrt5)/2: 1 zero(s) of the order-6 anisotropy inside the chamber (exact)
+ok   (P1) phi^2 < mu < (5+sqrt5)/2: exactly one zero, mu* = 2.891792659030825, with the known degree-12 factor
+PROGRESS 0.75 chamber 3/4 (20 s)
+chamber mu > (5+sqrt5)/2 (S = P): 12 vertices; c0 = 12*(25 - 11*sqrt(5)); A(nu) = 128*(-24599 + 11001*sqrt(5))/45 (1 s)
+ok   (C1) mu > (5+sqrt5)/2 (S = P): A equals the raw canon_turn series exactly at mu = 4
+ok   (C0) mu > (5+sqrt5)/2 (S = P): c0 > 0 at mu = 4
+   A is the constant -3148672/45 + 469376*sqrt(5)/15: zeros []
+ok   mu > (5+sqrt5)/2 (S = P): A is a nonzero constant
+   mu > (5+sqrt5)/2 (S = P): 0 zero(s) of the order-6 anisotropy inside the chamber (exact)
+PROGRESS 1.00 chamber 4/4 (23 s)
+ok   (C3) wall mu = (7+3sqrt5)/6: A continuous (724082737536 - 1619098222464*sqrt(5)/5 from both sides) and nonzero there
+ok   (C3) wall mu = phi^2: A continuous (-250624 + 5043712*sqrt(5)/45 from both sides) and nonzero there
+ok   (C3) wall mu = (5+sqrt5)/2: A continuous (-3148672/45 + 469376*sqrt(5)/15 from both sides) and nonzero there
+ok   THEOREM: on the whole icosahedral line (0 < mu < infinity) the order-6 anisotropy has exactly one zero, mu* = 2.891792659030825 (found: [('phi^2 < mu < (5+sqrt5)/2', 2.891792659031)])
+time 24 s
+FINAL ok: all controls held, uniqueness proved exactly

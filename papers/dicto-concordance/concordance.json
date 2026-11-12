@@ -6608,6 +6608,26 @@
     "study": "studies/2026-11-12-hop-4d-vacuus",
     "date": "2026-11-12",
     "target": "#43 Conjecture 1 (the OG's margin)"
+   },
+   {
+    "question": "aim 2 paper item 3: is the icosahedral roundest point mu* = 2.8917926590 (zero of the order-6 anisotropy of Omega(S(mu); t u)) the only zero on the whole icosahedral line (0 < mu < infinity)? (was a 400-point float scan per chamber)",
+    "method": "studies/2026-11-10-canonical-sweep/scripts/canon_unique.py: anisotropy A(nu) exact over Q(sqrt5) in all four chambers; norm P^2 - 5R^2 over Q factored; exact real-root isolation (width < 1e-40) compared exactly with the walls; sign of gcd(A, F) over Q(sqrt5) at rational endpoints; continuity and nonvanishing at the walls exact; controls P1 known root, P2 cube line (one zero 1.692590), P3 synthetic double root, N1 conjugate root not counted, C1 raw series, C2 one degree-6 harmonic invariant; compute machine, 24 s, FINAL ok",
+    "status": "SETTLED (exact)",
+    "result": "zero counts 0, 0, 1, 0 per chamber; mu* = 2.89179265903082504284788634294 is the unique zero on the whole line; A nonzero and continuous at the three walls",
+    "retry": "never",
+    "study": "studies/2026-11-10-canonical-sweep",
+    "date": "2026-11-12",
+    "target": "aim 2 paper (Geometry Gives Laws), Theorem 1(iii)"
+   },
+   {
+    "question": "aim 2 paper item 4: is the 19-design station of the Queens' line (1440 corners at mu* = 0.92413867) known, and is it the only 1440-point W(H4) orbit that is a 19-design?",
+    "method": "studies/2026-11-12-pds-hopscotch-line/scripts/pds_unique.py: every 1440-point orbit has an I2(5) stabiliser, so it is a corner set of the truncated-600-cell hop; P12(x(mu)) exact over Q(sqrt5) from the 120 vertices (harmonic, icosian-invariant checked); exact zero count with the canon_unique counter; literature: de la Harpe-Pache-Venkov arXiv math/0505510 (read), Sloane-Hardin-Cara 2003 and Hardin-Sloane 1996 tables (read), Goethals-Seidel 1981 (not obtained)",
+    "status": "SETTLED (exact)",
+    "result": "exactly one 1440-point W(H4) orbit is a spherical 19-design, the corners at mu* (degree 20); de la Harpe-Pache-Venkov report a special 1440-point orbit of strength 19 in Goethals-Seidel 1981 Sect. 5, which is therefore this one: the design is classical, its exact place on DICTO's line and the uniqueness are new; no Hardin-Sloane table reaches 1440 points on S^3",
+    "retry": "never",
+    "study": "studies/2026-11-12-pds-hopscotch-line",
+    "date": "2026-11-12",
+    "target": "aim 2 paper, Remark 1; Alicia book Ch. 9 (credit Goethals-Seidel at the next version)"
    }
   ]
  },

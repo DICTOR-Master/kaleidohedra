@@ -68,3 +68,20 @@ minimal polynomials irreducible and vanishing to 1e-30; a perturbed polynomial d
   81386864640000x − 39257636864** (both irreducible, degree 4).
 So μ* is an algebraic number of degree 12, not the fixed point (degree 4: (6μ² − 25)² = 605) and not in Q(√5): the closeness of the
 two is not an identity.
+
+### Chunk 3, uniqueness of the icosahedral roundest point made EXACT (12 Nov 2026; `scripts/canon_unique.py`, log `data/canon-unique.log`, FINAL ok)
+Replaces the 400-point float scan. In each of the four chambers of the icosahedral line (μ < (7+3√5)/6, S = μP*; the two inner chambers;
+μ > (5+√5)/2, S = P) every facet has b = 1 or μ, so the order-6 anisotropy A (vertex axis minus face axis) is a polynomial in ν = 1/μ over
+Q(√5). Write A = P + √5R; every zero of A is a zero of its norm N = P² − 5R² ∈ Q[ν]. For each irreducible factor F of N, G = gcd(A, F) over
+Q(√5); the real roots of F are isolated exactly (rational intervals of width < 10⁻⁴⁰, compared exactly with the walls in Q(√5)), and a root
+is a zero of A iff G changes sign on its interval (signs decided exactly in Q(√5)). Result (exact):
+- μ < (7+3√5)/6: A = 128ν⁹(255 + 113√5)/135, no zero; (7+3√5)/6 < μ < φ²: A = ν²(128 + 1664√5/45)·(degree 6), no zero in the chamber;
+  φ² < μ < (5+√5)/2: exactly one zero, μ* = 2.89179265903082504284788634294, factor of N = the known degree-12 polynomial;
+  μ > (5+√5)/2: A is the nonzero constant −3148672/45 + 469376√5/15.
+- At the three walls A is continuous (equal from both sides, exactly) and nonzero.
+**So μ* is the only zero of the order-6 anisotropy on the whole line, 0 < μ < ∞ (exact).** The degree-6 harmonic invariants of the
+icosahedral group form a line (control C2: vertex-minus-edge anisotropy = (27/32)·A), so "A = 0" is "the order-6 part is isotropic".
+Controls (all held): P1 the known root and factor; P2 the cube line's order-4 anisotropy, one zero at 1.692590; P3 a synthetic polynomial
+with a double root (2 distinct roots); N1 ν − (3+√5)/4 on (0, 1): 0 roots although the conjugate root lies inside; C1 A equals the raw
+canon_turn series exactly at one rational μ per chamber; C0 c0 > 0. Run on the compute machine, 24 s (pilot 10 s, first pilot failed only
+on a print-precision tolerance, fixed by isolating to 10⁻⁴⁰).
