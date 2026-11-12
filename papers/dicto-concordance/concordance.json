@@ -6425,6 +6425,15 @@
     "retry": "never",
     "study": "studies/2026-11-09-hopscotch-rows",
     "date": "2026-11-12"
+   },
+   {
+    "question": "Aim 1 lead 3: besides Kulaichev's, is there a yantra at the turn u = v (Kulaichev's (a)) that meets (b) t1 corners on the circle, (c) t9 corners on the circle, (d) bindu incircle centred?",
+    "method": "studies/2026-11-09-hopscotch-rows/scripts/lead3_turn_yantras.py: exact reduction (admissible => 0<u<1, t>0, Q = Q(t), all cleared denominators positive) to G = H = D = 0 with v = u; elimination keeping EVERY factor (Singular via sage: Res_S of G with every factor of H and D; PARI Res_t of every t-dependent pair, factored); shared factors classified; all real roots in (0,1) isolated (polrootsreal + exact rational re-isolation by polsturm), refined to 300 digits; every candidate rebuilt by model.solve and tested (all Huet conditions, unsquared (d), admissibility); pilot 60 digits and full 300 digits both FINAL ok",
+    "status": "SETTLED (exact elimination; candidates decided at 300 digits, margins >= 1e-50)",
+    "result": "NONE besides Kulaichev: curves of the system only t = +-u, +-1/u (b1 = P, b1 = R, or w1 < 0: not admissible); 11 u-factors (deg 1,1,1,2,2,2,6,8,8,348,396), 17 real roots in (0,1), 18 candidate points: 1 admissible = Kulaichev (u to 60 stored digits, f348), 2 polynomial solutions with t < 0 (u = 0.62597, 0.88894; w1 < 0), 7 squared-(d)-only roots (excircle; misses 0.12-1.83), 8 roots of f396 with no real (t,S); u = 3/4 (Rh345) is no root (exact)",
+    "retry": "never",
+    "study": "studies/2026-11-09-hopscotch-rows",
+    "date": "2026-11-12"
    }
   ]
  },
@@ -8117,7 +8126,8 @@
   "FIRST AIM: the periodic-aperiodic bridge (the Hopscotch turn)": [
    "Lead 4 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY. The icosahedral constant 15 − 6√5 of #43 Theorem 2 now follows from orbit moments plus the one degree-6 invariant harmonic with no numerical step: the harmonic is √5·f6 − (5 + 2√5)/21 on the sphere, f6 a cubic in (x², y², z²), whose critical points are all found over Q(√5); its extremes sit at the five-fold and three-fold axes. With lead 5 (the turn's fixed point maximises t_min on the icosahedral two-family line, exact), the sphere row of the Hopscotch is now proved from the framework for all three Platonic symmetry types.",
    "Lead 1 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED. The sri-yantra study now writes the viewpoint turn as the projective row proves it: u → λu, v → v/λ with λ = √((1 + β)/(1 − β)), the turn β ↦ −β; the rerun of viewpoint.py is numerically identical and the stored K1 → V1 data confirm the direction.",
-   "Lead 6 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY. #43 Theorem 3 is now a turn row of the bridge table: polar about c^m·ρ² (ρ² = 15 − 5√5) sends beat S_k to S_{5+4m−k}, so the turn is k ↦ 5 − k with fixed point 5/2, and the turn centres are exactly 1/2 + 2ℤ. At the fixed point sits the antipol pair GTI|FPD, the GTI inscribed in the reference sphere and the FPD circumscribed about it (no station is self-antipol); the shell ratios read the same from either end, the fixed shells largest. Table in the hopscotch-rows README and the polar-line outline."
+   "Lead 6 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY. #43 Theorem 3 is now a turn row of the bridge table: polar about c^m·ρ² (ρ² = 15 − 5√5) sends beat S_k to S_{5+4m−k}, so the turn is k ↦ 5 − k with fixed point 5/2, and the turn centres are exactly 1/2 + 2ℤ. At the fixed point sits the antipol pair GTI|FPD, the GTI inscribed in the reference sphere and the FPD circumscribed about it (no station is self-antipol); the shell ratios read the same from either end, the fixed shells largest. Table in the hopscotch-rows README and the polar-line outline.",
+   "Lead 3 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY, the answer is no. At the turn u = v the conditions (b), (c), (d) have exactly one admissible yantra, Kulaichev's own. The full elimination keeps every factor: the only curves of the system are t = ±u, ±1/u (never admissible), and of the 18 isolated real candidates one is Kulaichev's (f348, all 60 stored digits), two fail only admissibility (t1's corner on the wrong side), seven meet only the squared bindu condition (an excircle), eight have no real yantra. So the (d) wall and the turn u = v meet on exactly one viewpoint orbit."
   ]
  }
 }

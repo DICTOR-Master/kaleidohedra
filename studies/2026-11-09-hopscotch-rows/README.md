@@ -192,6 +192,29 @@ same β = −0.040546428639856752804, slopes 0.733560546791499 / 0.7363829963840
 (data/lead1_viewpoint_rerun.log). Direction from the stored data alone (data/lead1_direction.log): u_V1 − λu_K1 = 2.2·10⁻³³ and
 v_V1 = v_K1/λ (β is stored to 30 digits); NEGATIVE, the old form u/λ misses by 0.062.
 
+**LEAD 3 CONCLUSION (12 Nov 2026): CLOSED EXACTLY, NO OTHER YANTRA; at the turn u = v the conditions (b), (c), (d) have exactly one admissible solution, Kulaichev's yantra (full elimination with every factor kept, 18 candidates decided; scripts/lead3_turn_yantras.py, FINAL ok at 60 and at 300 digits).**
+Definitions (studies/2026-11-08-sri-yantra): (a) t3 ≅ t7 ⇔ u = v (the turn); (b) t1's base corners on the circle; (c) t9's base
+corners on the circle; (d) the bindu's incircle centred; a yantra is admissible in the sense of model.order_ok. Exact reduction:
+admissible at u = v forces 0 < u < 1 (b3 < b7 ⇔ u² < 1); (b) with w1 > 0 ⇔ t1's corner is the circle point (t/(1+t²), t²/(1+t²))
+with t > 0; the (1,3,8) marma then gives Q = Q(t) (its coefficient vanishes only at b1 = P, b1 = R or w1 = 0); every cleared
+denominator (R − P, S − P, Q − b1, m1 + k9, m1 + k7, the b4 weights) is positive on an admissible yantra. So every solution is a
+real zero of G(u, S) (c), H(u, t, S) (closing equation, ALL factors) and D(u, t, S) ((d) squared), and the elimination keeps every
+factor (earlier runs kept only the factor through the known point). Result:
+- Curves of the polynomial system: exactly the four shared factors t = u, t = −u, t = 1/u, t = −1/u; none admissible (t = u gives
+  b1 = P, t1's base on t3's; t = 1/u gives b1 = R, on t7's; t < 0 gives w1 < 0). Everything else is isolated.
+- 11 distinct u-factors (degrees 1, 1, 1, 2, 2, 2, 6, 8, 8, 348, 396); the stored f348 is one of them (exact); u = 3/4 (Rh345) is a
+  root of none (exact). Real roots in (0, 1): 17 (8 of f348, 8 of f396, one of a degree-8 factor), each isolated in an exact rational
+  interval and refined to 300 digits.
+- The 18 candidate points: ONE admissible yantra with (a)(b)(c)(d), u = 0.7504385160222140244060847 = Kulaichev's (all 60 stored
+  digits; smallest admissibility margin 0.053, b3 < b4); TWO solutions of (a)(b)(c)(d) that fail only admissibility (u = 0.62597,
+  0.88894, both with t < 0, w1 < 0 by 0.499 and 0.071); SEVEN roots of the squared (d) only (the incircle condition met by an excircle:
+  unsquared (d) misses by 0.12 to 1.83; two of them are the degree-8 factor's point on the excluded curve t = −1/u); EIGHT roots of
+  f396 with no real (t, S). Every rejection margin exceeds 10⁻⁵⁰; the decision threshold is 10⁻¹⁰⁰ at 300 digits.
+So Kulaichev's equal great triangles are the one place where the turn of the viewpoint line meets the (d) wall on the (b)(c)
+surface: on every orbit u·v = p the (d) wall and the turn u = v each cut once, and they coincide on exactly one orbit, Kulaichev's
+(p = u² = 0.563158...). Controls: POSITIVE, f348 among the factors, Kulaichev's u to 60 digits, admissible with (d) unsquared;
+NEGATIVE, u = 3/4 no root, three real solutions without the admissibility test, the perturbed point fails.
+
 **LEAD 6 CONCLUSION (12 Nov 2026): CLOSED EXACTLY; #43 Theorem 3 is the turn row of the beat line: polar about c^m·ρ² (ρ² = 15 − 5√5) sends S_k to S_{5+4m−k}, so the turn is k ↦ 5 − k with fixed point 5/2, and the turn centres are exactly 1/2 + 2ℤ (scripts/lead6_beat_row.py, 16 checks, FINAL ok).**
 The proof is bird 4 of studies/2026-11-09-icosahedral-line (ledger [70], not retried); the run checks the row's own entries in Q(√5).
 Antipol rule for m = −1, 0, 1 and k = −4..9 (42 cases); the turn conjugates T to T⁻¹; the φ² companion (centre 1/2) is the same turn
@@ -218,7 +241,7 @@ NEGATIVE, k ↦ 4 − k fails at every k, the unit sphere maps no station onto a
    (one-word fix each; the paper is right).
 2. #103: the uniqueness statement "every symmetric yantra has exactly one centring viewpoint, β\* = −y_H" can go into Theorem 5 or a
    remark; destination: a #103 version line (DICTO's choice where).
-3. Kulaichev's equal great triangles = the turn of its viewpoint orbit: is there a yantra meeting (b), (c), (d) AND sitting at the
+3. [CLOSED 12 Nov, see above: none besides Kulaichev's] Kulaichev's equal great triangles = the turn of its viewpoint orbit: is there a yantra meeting (b), (c), (d) AND sitting at the
    turn (u = v) besides Kulaichev's own? (Kulaichev = equal slopes + (b) + (c), (d) then holds to 10⁻²⁵⁵ per #103.)
 4. [CLOSED EXACTLY 12 Nov, see above; range step proved in scripts/lead4_range.py] Icosahedral constant from the framework: find the degree-6 certificate (I's first invariant harmonic) that closes 5/3 → 15 − 6√5,
    so the moment route covers all three constants (same as octahedral-constant LEAD 4).

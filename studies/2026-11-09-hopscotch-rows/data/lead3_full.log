@@ -1,0 +1,103 @@
+PARI stack size set to 3000000000 bytes, maximum size set to 3000000512
+[   68.3 s] G, H with v = u: degrees in (u, t, S) [10, 0, 2] [37, 16, 3]
+[   68.4 s] D: degrees in (u, t, S) [54, 24, 4]
+[   68.4 s] factors of G [((10, 0, 2), 1)]
+[   68.4 s] factors of H [((1, 1, 0), 2), ((1, 1, 0), 2), ((1, 0, 0), 8), ((1, 1, 0), 1), ((1, 1, 0), 1), ((23, 10, 3), 1)]
+[   68.4 s] factors of D [((1, 1, 0), 6), ((1, 1, 0), 6), ((1, 0, 0), 12), ((1, 1, 0), 1), ((1, 1, 0), 1), ((2, 0, 1), 2), ((24, 10, 2), 1)]
+[   68.4 s] 25 (H-side, D-side) factor pairs; 14 u-only factors
+PROGRESS 0.040 resultants
+PROGRESS 0.120 resultants
+PROGRESS 0.160 resultants
+PROGRESS 0.200 resultants
+PROGRESS 0.240 resultants
+PROGRESS 0.280 resultants
+PROGRESS 0.360 resultants
+PROGRESS 0.400 resultants
+PROGRESS 0.440 resultants
+PROGRESS 0.480 resultants
+PROGRESS 0.520 resultants
+PROGRESS 0.600 resultants
+PROGRESS 0.640 resultants
+PROGRESS 0.680 resultants
+PROGRESS 0.720 resultants
+PROGRESS 0.760 resultants
+PROGRESS 0.800 resultants
+PROGRESS 0.840 resultants
+PROGRESS 0.880 resultants
+PROGRESS 0.920 resultants
+PROGRESS 0.960 resultants
+[   74.8 s] curves of solutions from shared factors: ['-u + t', 'u + t', 'u*t + 1', 'u*t - 1']
+[   74.8 s]    -u + t: t = u: b1 = u^2/(1+u^2) = P = b3 (t1 base on t3 base) -> not admissible (exact)
+[   74.8 s]    u + t: t = -u < 0: w1 < 0 -> not admissible (exact)
+[   74.8 s]    u*t + 1: t = -1/u < 0: w1 < 0 -> not admissible (exact)
+[   74.8 s]    u*t - 1: t = 1/u: b1 = 1/(1+u^2) = R = b7 (t1 base on t7 base) -> not admissible (exact)
+[   74.8 s] ok   every curve of the polynomial system lies on t = +-u or t = +-1/u, none admissible (exact): the admissible solutions are isolated
+[   74.8 s] ok   b1(t = u) = P and b1(t = 1/u) = R at v = u (exact)
+[   74.8 s] 11 distinct u-factors; degrees [1, 1, 1, 2, 2, 2, 6, 8, 8, 348, 396]
+[   74.8 s] ok   POSITIVE: the stored Kulaichev polynomial f348 is one of the u-factors (exact)
+[   74.8 s] ok   NEGATIVE: the 3-4-5 rhombus u = 3/4 is a root of no u-factor (exact)
+[   81.0 s] 17 real roots in (0, 1) (certified isolation, PARI polrootsreal); u-factor degrees involved [8, 348, 396]
+PROGRESS 0.059 candidates
+PROGRESS 0.118 candidates
+PROGRESS 0.176 candidates
+PROGRESS 0.235 candidates
+PROGRESS 0.294 candidates
+PROGRESS 0.353 candidates
+PROGRESS 0.412 candidates
+PROGRESS 0.471 candidates
+PROGRESS 0.529 candidates
+PROGRESS 0.588 candidates
+PROGRESS 0.647 candidates
+PROGRESS 0.706 candidates
+PROGRESS 0.765 candidates
+PROGRESS 0.824 candidates
+PROGRESS 0.882 candidates
+PROGRESS 0.941 candidates
+PROGRESS 1.000 candidates
+
+ALL CANDIDATES (u in (0, 1), every u-factor):
+  u = 0.5631697138682190668486274  (u-factor degree 348), t = 1.94268147249739, S = 0.996144027640226
+      -> squared-form root only: unsquared (d) misses by 0.396365 (or a condition residual 3.57e-311)
+  u = 0.6259734744712326142235652  (u-factor degree 348), t = -1.0682420061424, S = 0.0730961534811935
+      -> meets (a)(b)(c)(d) but NOT admissible: t = -1.068242 < 0, so w1 = t/(1+t^2) < 0 (by 0.498913)
+  u = 0.6538878968678789562513071  (u-factor degree 348), t = -5.00804556411842, S = 0.980880347597265
+      -> squared-form root only: unsquared (d) misses by 0.232056 (or a condition residual 8.76e-312)
+  u = 0.6686563154019351106724814  (u-factor degree 348), t = 0.126000122635037, S = 0.975716252612539
+      -> squared-form root only: unsquared (d) misses by 0.119919 (or a condition residual 2.77e-311)
+  u = 0.6861089766452851783026079  (u-factor degree 348), t = -11.3262309649336, S = 0.968061390844795
+      -> squared-form root only: unsquared (d) misses by 0.30223 (or a condition residual 7.6e-312)
+  u = 0.7374303623179098042497768  (u-factor degree 348), t = -1.12829467716386, S = 0.196085612558489
+      -> squared-form root only: unsquared (d) misses by -1.83308 (or a condition residual 7.79e-306)
+  u = 0.7504385160222140244060847  (u-factor degree 348), t = 0.339356690208841, S = 0.920060145909596
+      -> ADMISSIBLE yantra with (a)(b)(c)(d); smallest admissibility margin 0.052964 (base order b3 < b4)
+  u = 0.8889408984209506591260503  (u-factor degree 348), t = -0.0709968512796976, S = 0.695967092140895
+      -> meets (a)(b)(c)(d) but NOT admissible: t = -0.070996851 < 0, so w1 = t/(1+t^2) < 0 (by 0.0706408)
+  u = 0.4058361969797382236438268  (u-factor degree 396)
+      -> no real (t, S) with G = H = D = 0 at this u (complex t or S)
+  u = 0.630832138536930226280267  (u-factor degree 396)
+      -> no real (t, S) with G = H = D = 0 at this u (complex t or S)
+  u = 0.6593005212602185740156072  (u-factor degree 396)
+      -> no real (t, S) with G = H = D = 0 at this u (complex t or S)
+  u = 0.6977919842450005206639651  (u-factor degree 396)
+      -> no real (t, S) with G = H = D = 0 at this u (complex t or S)
+  u = 0.7359631438468860992085898  (u-factor degree 396)
+      -> no real (t, S) with G = H = D = 0 at this u (complex t or S)
+  u = 0.7667201101167337254721394  (u-factor degree 396)
+      -> no real (t, S) with G = H = D = 0 at this u (complex t or S)
+  u = 0.7808334922403059989988257  (u-factor degree 396)
+      -> no real (t, S) with G = H = D = 0 at this u (complex t or S)
+  u = 0.8903075864970948014303726  (u-factor degree 396)
+      -> no real (t, S) with G = H = D = 0 at this u (complex t or S)
+  u = 0.7455823028019248607036843  (u-factor degree 8), t = -1.34123355160385, S = 0.207893850047064
+      -> squared-form root only: unsquared (d) misses by 0.142718 (or a condition residual 5.88e+648)
+  u = 0.7455823028019248607036843  (u-factor degree 8), t = -1.34123355160385, S = 0.924980654505831
+      -> squared-form root only: unsquared (d) misses by 0.142718 (or a condition residual 5.88e+648)
+[   99.9 s] ok   exactly one admissible yantra with (a)(b)(c)(d) among all 18 candidates
+[   99.9 s] ok   POSITIVE: it is Kulaichev's yantra (u agrees with the stored 60 digits)
+[   99.9 s] ok   its u-factor has degree 348
+[   99.9 s] ok   NEGATIVE: without the admissibility test 3 real solutions of (a)(b)(c)(d) remain (the test does real work)
+[   99.9 s] ok   NEGATIVE: the perturbed Kulaichev point (u + 1e-12 u) fails the condition test
+[   99.9 s] smallest failing admissibility margin 0.070641 ; smallest unsquared-(d) miss 0.11992 ; working precision 300 digits, decision threshold 1e-100
+[   99.9 s] ok   every rejection margin exceeds 1e-50 (far above the 1e-100 threshold)
+[   99.9 s] time 100 s
+FINAL ok
