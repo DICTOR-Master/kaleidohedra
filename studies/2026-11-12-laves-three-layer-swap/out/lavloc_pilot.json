@@ -1,0 +1,754 @@
+{
+ "mode": "pilot",
+ "controls": {
+  "C3": {
+   "ABC": {
+    "faces_equal": 30,
+    "of": 30,
+    "ratio_min": 2.121320343559641,
+    "ratio_max": 2.121320343559644
+   },
+   "AC": {
+    "faces_equal": 30,
+    "of": 30,
+    "ratio_min": 1.414213562373093,
+    "ratio_max": 1.4142135623730965
+   }
+  },
+  "C2": {
+   "17/96,7/32,BCABCA": {
+    "pass": 278,
+    "fail": 1,
+    "cuts": [
+     {
+      "kind": "near_dn",
+      "j": [
+       "0",
+       "0",
+       "-5/4",
+       1
+      ],
+      "witness_lam_x_y_zeta": [
+       "7/32",
+       "0",
+       "0",
+       "-27/40"
+      ],
+      "value": "9/8",
+      "beta": "25/24"
+     }
+    ],
+    "unresolved": []
+   },
+   "17/96,7/32,ACACAC": {
+    "pass": 277,
+    "fail": 1,
+    "cuts": [
+     {
+      "kind": "near_dn",
+      "j": [
+       "0",
+       "0",
+       "-5/4",
+       1
+      ],
+      "witness_lam_x_y_zeta": [
+       "7/32",
+       "0",
+       "0",
+       "-27/40"
+      ],
+      "value": "9/8",
+      "beta": "25/24"
+     }
+    ],
+    "unresolved": []
+   },
+   "17/96,7/32,BCACBA": {
+    "pass": 278,
+    "fail": 1,
+    "cuts": [
+     {
+      "kind": "near_dn",
+      "j": [
+       "0",
+       "0",
+       "-5/4",
+       1
+      ],
+      "witness_lam_x_y_zeta": [
+       "7/32",
+       "0",
+       "0",
+       "-27/40"
+      ],
+      "value": "9/8",
+      "beta": "25/24"
+     }
+    ],
+    "unresolved": []
+   },
+   "17/96,7/32,CBABCA": {
+    "pass": 278,
+    "fail": 1,
+    "cuts": [
+     {
+      "kind": "near_dn",
+      "j": [
+       "0",
+       "0",
+       "-5/4",
+       1
+      ],
+      "witness_lam_x_y_zeta": [
+       "7/32",
+       "0",
+       "0",
+       "-27/40"
+      ],
+      "value": "9/8",
+      "beta": "25/24"
+     }
+    ],
+    "unresolved": []
+   },
+   "7/32,9/32,BCABCA": {
+    "pass": 278,
+    "fail": 1,
+    "cuts": [
+     {
+      "kind": "near_dn",
+      "j": [
+       "0",
+       "0",
+       "-5/4",
+       1
+      ],
+      "witness_lam_x_y_zeta": [
+       "9/32",
+       "0",
+       "0",
+       "-3/4"
+      ],
+      "value": "5/4",
+      "beta": "25/24"
+     }
+    ],
+    "unresolved": []
+   },
+   "7/32,9/32,ACACAC": {
+    "pass": 277,
+    "fail": 1,
+    "cuts": [
+     {
+      "kind": "near_dn",
+      "j": [
+       "0",
+       "0",
+       "-5/4",
+       1
+      ],
+      "witness_lam_x_y_zeta": [
+       "9/32",
+       "0",
+       "0",
+       "-3/4"
+      ],
+      "value": "5/4",
+      "beta": "25/24"
+     }
+    ],
+    "unresolved": []
+   },
+   "7/32,9/32,BCACBA": {
+    "pass": 278,
+    "fail": 1,
+    "cuts": [
+     {
+      "kind": "near_dn",
+      "j": [
+       "0",
+       "0",
+       "-5/4",
+       1
+      ],
+      "witness_lam_x_y_zeta": [
+       "9/32",
+       "0",
+       "0",
+       "-3/4"
+      ],
+      "value": "5/4",
+      "beta": "25/24"
+     }
+    ],
+    "unresolved": []
+   },
+   "7/32,9/32,CBABCA": {
+    "pass": 278,
+    "fail": 1,
+    "cuts": [
+     {
+      "kind": "near_dn",
+      "j": [
+       "0",
+       "0",
+       "-5/4",
+       1
+      ],
+      "witness_lam_x_y_zeta": [
+       "9/32",
+       "0",
+       "0",
+       "-3/4"
+      ],
+      "value": "5/4",
+      "beta": "25/24"
+     }
+    ],
+    "unresolved": []
+   }
+  },
+  "C1": {
+   "pass": 1070,
+   "fail": 0
+  }
+ },
+ "cases": [
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "M0",
+    "BCABCA"
+   ],
+   "pass": 278,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "M0",
+    "ACACAC"
+   ],
+   "pass": 279,
+   "fail": 0,
+   "inside_sites": 188
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "M0",
+    "BCACBA"
+   ],
+   "pass": 278,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "M0",
+    "CBABCA"
+   ],
+   "pass": 278,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "M1",
+    "BCABCA"
+   ],
+   "pass": 278,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "M1",
+    "ACACAC"
+   ],
+   "pass": 279,
+   "fail": 0,
+   "inside_sites": 188
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "M1",
+    "BCACBA"
+   ],
+   "pass": 278,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "M1",
+    "CBABCA"
+   ],
+   "pass": 278,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "K1",
+    "BCABCA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "K1",
+    "ACACAC"
+   ],
+   "pass": 251,
+   "fail": 0,
+   "inside_sites": 171
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "K1",
+    "BCACBA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "K1",
+    "CBABCA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "K2",
+    "BCABCA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "K2",
+    "ACACAC"
+   ],
+   "pass": 251,
+   "fail": 0,
+   "inside_sites": 171
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "K2",
+    "BCACBA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "K2",
+    "CBABCA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "K3",
+    "BCABCA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "K3",
+    "ACACAC"
+   ],
+   "pass": 251,
+   "fail": 0,
+   "inside_sites": 171
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "K3",
+    "BCACBA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "K3",
+    "CBABCA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "T",
+    "BCABCA"
+   ],
+   "pass": 279,
+   "fail": 0,
+   "inside_sites": 190
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "T",
+    "ACACAC"
+   ],
+   "pass": 279,
+   "fail": 0,
+   "inside_sites": 196
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "T",
+    "BCACBA"
+   ],
+   "pass": 279,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "17/96",
+    "7/32",
+    "T",
+    "CBABCA"
+   ],
+   "pass": 279,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "M0",
+    "BCABCA"
+   ],
+   "pass": 278,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "M0",
+    "ACACAC"
+   ],
+   "pass": 279,
+   "fail": 0,
+   "inside_sites": 188
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "M0",
+    "BCACBA"
+   ],
+   "pass": 278,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "M0",
+    "CBABCA"
+   ],
+   "pass": 278,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "M1",
+    "BCABCA"
+   ],
+   "pass": 278,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "M1",
+    "ACACAC"
+   ],
+   "pass": 279,
+   "fail": 0,
+   "inside_sites": 188
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "M1",
+    "BCACBA"
+   ],
+   "pass": 278,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "M1",
+    "CBABCA"
+   ],
+   "pass": 278,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "K1",
+    "BCABCA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "K1",
+    "ACACAC"
+   ],
+   "pass": 251,
+   "fail": 0,
+   "inside_sites": 171
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "K1",
+    "BCACBA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "K1",
+    "CBABCA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "K2",
+    "BCABCA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "K2",
+    "ACACAC"
+   ],
+   "pass": 251,
+   "fail": 0,
+   "inside_sites": 171
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "K2",
+    "BCACBA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "K2",
+    "CBABCA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "K3",
+    "BCABCA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "K3",
+    "ACACAC"
+   ],
+   "pass": 251,
+   "fail": 0,
+   "inside_sites": 171
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "K3",
+    "BCACBA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "K3",
+    "CBABCA"
+   ],
+   "pass": 248,
+   "fail": 0,
+   "inside_sites": 172
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "T",
+    "BCABCA"
+   ],
+   "pass": 279,
+   "fail": 0,
+   "inside_sites": 190
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "T",
+    "ACACAC"
+   ],
+   "pass": 279,
+   "fail": 0,
+   "inside_sites": 196
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "T",
+    "BCACBA"
+   ],
+   "pass": 279,
+   "fail": 0,
+   "inside_sites": 191
+  },
+  {
+   "case": [
+    "9/32",
+    "11/32",
+    "T",
+    "CBABCA"
+   ],
+   "pass": 279,
+   "fail": 0,
+   "inside_sites": 191
+  }
+ ],
+ "total_pass": 12654,
+ "total_fail": 0,
+ "cuts": [],
+ "n_cuts": 0,
+ "unresolved": [],
+ "n_unresolved": 0,
+ "seconds": 93.4578104019165
+}

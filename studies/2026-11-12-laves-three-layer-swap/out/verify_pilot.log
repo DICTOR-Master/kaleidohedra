@@ -1,0 +1,9 @@
+verify pilot: 12654 certificates in 48 cases
+PROGRESS 0.208 cases 10/48: certificates 2489 ok 0 bad; coverage 160 ok 0 bad
+PROGRESS 0.417 cases 20/48: certificates 5211 ok 0 bad; coverage 320 ok 0 bad
+PROGRESS 0.625 cases 30/48: certificates 7821 ok 0 bad; coverage 480 ok 0 bad
+PROGRESS 0.833 cases 40/48: certificates 10425 ok 0 bad; coverage 640 ok 0 bad
+PROGRESS 1.000 cases 48/48: certificates 12654 ok 0 bad; coverage 768 ok 0 bad
+TOTAL certificates re-checked 12654 ok, 0 bad (lavloc reported 12654 PASS); coverage of every continuation 768 ok, 0 bad
+  checker control: tampered certificate (first multiplier doubled) rejected: True
+FINAL ok

@@ -3782,7 +3782,7 @@
    ],
    [
     "The Hexagonality Law for the Laves big atom (#66, #67)",
-    "#84 shows the Swap Rule is the condition to stay on the line; check it on the three-layer window — SETTLED 12 Nov 2026 (studies/2026-11-12-laves-three-layer-swap): not a three-layer piece; the big atom M0 sits in layer k and its piece is fixed by two layer types, its own layer and the layer below (only the layer below between 17/96 and 7/32), on all 18 computed stackings, all 16 six-layer neighbourhoods; on that pair the Swap Rule holds exactly in lam in every window, the three-layer Swap defects (#84 (c), g = 3) all vanish, 480/480 exact law tests (Fibonacci approximants included); so #66's proof covers M0 as it covers the other Laves roles; open only the locality of the Laves pieces (no certificate yet, for all six roles)",
+    "#84 shows the Swap Rule is the condition to stay on the line; check it on the three-layer window — SETTLED 12 Nov 2026 (studies/2026-11-12-laves-three-layer-swap): not a three-layer piece; the big atom M0 sits in layer k and its piece is fixed by two layer types, its own layer and the layer below (only the layer below between 17/96 and 7/32), on all 18 computed stackings, all 16 six-layer neighbourhoods; on that pair the Swap Rule holds exactly in lam in every window, the three-layer Swap defects (#84 (c), g = 3) all vanish, 480/480 exact law tests (Fibonacci approximants included); so #66's proof covers M0 as it covers the other Laves roles; CLOSED 12 Nov 2026 (same study, Part II): locality of all six Laves pieces proved by 253440 exact Farkas certificates (5 lam-windows x 6 roles x 32 six-layer neighbourhoods, no site beyond the six layers round a gap cuts any cell; independent verifier; #61 step 2 reproduced as control, four-layer M0 cell cut exactly as negative control), so the Hexagonality Law for the Laves phases, M0 included, is a theorem on every stacking",
     "the last exception of the law explained",
     [
      16
@@ -3982,7 +3982,7 @@
    {
     "src": "#66, #67",
     "what": "Hexagonality Law for the Laves big atom on every stacking (exact to 6 layers)",
-    "status": "open"
+    "status": "CLOSED 12 Nov 2026 (studies/2026-11-12-laves-three-layer-swap: two-layer piece + Swap Rule, Part I; locality certified for all six roles, Part II): a theorem on every stacking; erratum wording for #66, #67, #69 in the study README, versions DICTO's call"
    },
    {
     "src": "#74",
@@ -6561,6 +6561,15 @@
     "result": "A3 162 members / 17 solids, B3 1296 / 101 solids, H3 390970 / 4427 solids. Known: all 16 non-snub Platonic/Archimedean, J1 J3 J4 J8 J15 J19 J28, J2 J5 J6 J11 J31 J32 J62 J63 J76 J80 J81 J83 J91 J92, octagonal prism, pentagonal antiprism. Platonic/Archimedean stretches exist only in B3 along cube axes (T, O, CO, TT, TO by 1-3 axes; 8 not regular-faced); none in H3 (every one has edges in all 15 directions). #49 theorem covers 3180 segment-summand orbits + zonohedra; caps 158; theorem extends: P+P' equal-edged iff no wall carries both. NEW: atoms not regular-faced: A3/B3 2 (O+T known; 13-corner octet solid A3-16), H3 367; plus 54 atom sums and 13 pentagon caps",
     "retry": "never for these cones; leads: prior art of the H3 atoms (Subbotin RR-polyhedra), finer fan for five-fold/three-fold stretches, 4D (A4 B4 F4 H4), tiling",
     "study": "2026-11-12-permutohedron-equal-edges",
+    "date": "2026-11-12"
+   },
+   {
+    "question": "LEAD 1 of 2026-11-12-laves-three-layer-swap: is every Laves piece (six roles, M0 included) fixed by the six layers round its gap, in every lam-window, i.e. local, so that the Hexagonality Law for the Laves phases is a theorem on every stacking?",
+    "method": "studies/2026-11-12-laves-three-layer-swap Part II: #61 step 2 method (splash-rules/proof/locality.py) adapted: linearised power bisectors in (lam, x, y, zeta), one exact Farkas certificate per outside site (gap +-3 all continuations, supersets of gaps +-4) and zeta bounds, on the cell against all sites fixed by the six layers, over each closed lam-window; lateral and vertical dominance for completeness; lavloc.py (exact rational certificates, float LP only proposes bases), verify_lavloc.py independent (sites rebuilt from #64's laves_net.py on concrete stackings, Gram-matrix rows); controls #61 reproduced 1070/0, four-layer M0 cell must be cut (exact witness), model = census engine faces 60/60 and constant volume ratio; pilot + full run on the compute machine via dbbjob, FINAL ok",
+    "status": "SETTLED",
+    "result": "LOCAL: 253440 certificates PASS, 0 FAIL, 0 unresolved over 5 windows x 6 roles x 32 neighbourhoods; independent re-check 253440/253440 ok, coverage 15360/15360 (case, continuation) ok; negative control: the four-layer M0 cell is cut exactly by the M1 site of gap k-2 (witness lam = 7/32, zeta = -27/40; lam = 9/32, zeta = -3/4). With Part I and #66: the Laves law, M0 included, holds on every stacking in every window (theorem)",
+    "retry": "never; leads: erratum lines for #66 (end of 3), #67 (5), #69 (4) in the study README, DICTO decides the versions; picture of the M0 cell (LEAD 3)",
+    "study": "2026-11-12-laves-three-layer-swap",
     "date": "2026-11-12"
    },
    {

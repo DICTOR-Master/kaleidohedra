@@ -1,0 +1,28 @@
+lavloc pilot: Laves locality certificates, six roles, 2 lam-windows
+  (C3) model vs engine on ABC: face counts equal 30/30; volume ratio model/engine 2.121320344 .. 2.121320344 (spread 1.6e-15)
+  (C3) model vs engine on AC: face counts equal 30/30; volume ratio model/engine 1.414213562 .. 1.414213562 (spread 2.4e-15)
+  (C2) M0 cell against layers -1..2, window (17/96, 7/32), neighbourhood BCABCA: 278 PASS 1 FAIL, exact cuts by near sites 1; e.g. site ['0', '0', '-5/4', 1] at (lam, x, y, zeta) = ['7/32', '0', '0', '-27/40']
+  (C2) M0 cell against layers -1..2, window (17/96, 7/32), neighbourhood ACACAC: 277 PASS 1 FAIL, exact cuts by near sites 1; e.g. site ['0', '0', '-5/4', 1] at (lam, x, y, zeta) = ['7/32', '0', '0', '-27/40']
+  (C2) M0 cell against layers -1..2, window (17/96, 7/32), neighbourhood BCACBA: 278 PASS 1 FAIL, exact cuts by near sites 1; e.g. site ['0', '0', '-5/4', 1] at (lam, x, y, zeta) = ['7/32', '0', '0', '-27/40']
+  (C2) M0 cell against layers -1..2, window (17/96, 7/32), neighbourhood CBABCA: 278 PASS 1 FAIL, exact cuts by near sites 1; e.g. site ['0', '0', '-5/4', 1] at (lam, x, y, zeta) = ['7/32', '0', '0', '-27/40']
+  (C2) M0 cell against layers -1..2, window (7/32, 9/32), neighbourhood BCABCA: 278 PASS 1 FAIL, exact cuts by near sites 1; e.g. site ['0', '0', '-5/4', 1] at (lam, x, y, zeta) = ['9/32', '0', '0', '-3/4']
+  (C2) M0 cell against layers -1..2, window (7/32, 9/32), neighbourhood ACACAC: 277 PASS 1 FAIL, exact cuts by near sites 1; e.g. site ['0', '0', '-5/4', 1] at (lam, x, y, zeta) = ['9/32', '0', '0', '-3/4']
+  (C2) M0 cell against layers -1..2, window (7/32, 9/32), neighbourhood BCACBA: 278 PASS 1 FAIL, exact cuts by near sites 1; e.g. site ['0', '0', '-5/4', 1] at (lam, x, y, zeta) = ['9/32', '0', '0', '-3/4']
+  (C2) M0 cell against layers -1..2, window (7/32, 9/32), neighbourhood CBABCA: 278 PASS 1 FAIL, exact cuts by near sites 1; e.g. site ['0', '0', '-5/4', 1] at (lam, x, y, zeta) = ['9/32', '0', '0', '-3/4']
+  (C1) #61 step 2 reproduced: 1070 PASS 0 FAIL (published: 1070 PASS, 0 FAIL), 4 s
+PROGRESS 0.05 controls done (20 s)
+PROGRESS 0.129 window (17/96, 7/32) M0: 4 neighbourhoods, 1113 certificates PASS, 0 FAIL (27 s)
+PROGRESS 0.208 window (17/96, 7/32) M1: 4 neighbourhoods, 1113 certificates PASS, 0 FAIL (33 s)
+PROGRESS 0.287 window (17/96, 7/32) K1: 4 neighbourhoods, 995 certificates PASS, 0 FAIL (39 s)
+PROGRESS 0.367 window (17/96, 7/32) K2: 4 neighbourhoods, 995 certificates PASS, 0 FAIL (45 s)
+PROGRESS 0.446 window (17/96, 7/32) K3: 4 neighbourhoods, 995 certificates PASS, 0 FAIL (50 s)
+PROGRESS 0.525 window (17/96, 7/32) T: 4 neighbourhoods, 1116 certificates PASS, 0 FAIL (57 s)
+PROGRESS 0.604 window (9/32, 11/32) M0: 4 neighbourhoods, 1113 certificates PASS, 0 FAIL (63 s)
+PROGRESS 0.683 window (9/32, 11/32) M1: 4 neighbourhoods, 1113 certificates PASS, 0 FAIL (70 s)
+PROGRESS 0.762 window (9/32, 11/32) K1: 4 neighbourhoods, 995 certificates PASS, 0 FAIL (76 s)
+PROGRESS 0.842 window (9/32, 11/32) K2: 4 neighbourhoods, 995 certificates PASS, 0 FAIL (81 s)
+PROGRESS 0.921 window (9/32, 11/32) K3: 4 neighbourhoods, 995 certificates PASS, 0 FAIL (87 s)
+PROGRESS 1.000 window (9/32, 11/32) T: 4 neighbourhoods, 1116 certificates PASS, 0 FAIL (93 s)
+TOTAL 12654 certificates PASS, 0 FAIL; exact cuts 0; unresolved 0; 93 s
+VERDICT LOCAL: every role, every window, every neighbourhood certified
+FINAL ok
