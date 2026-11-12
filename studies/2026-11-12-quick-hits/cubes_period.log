@@ -1,0 +1,4 @@
+least period = m/3 if 9|m else m: tested m <= 2000 (all T for m <= 400, divisors beyond): mismatches 0 []
+criterion (period iff m | 3T and m | T^3): every T tested for m <= 600: mismatches 0 []
+translated/reflected +-(n+a)^3+c, four (a,c,sign), m <= 300: mismatches 0 []
+FINAL ok
