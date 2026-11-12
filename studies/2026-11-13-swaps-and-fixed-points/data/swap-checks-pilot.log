@@ -1,0 +1,66 @@
+PROGRESS 0.00 K1 cube-octahedron line, Lindelof (0.0 s)
+ok   K1 engine = closed form at mu = 11/10 | V=664/375, A=3/25 + 118*sqrt(3)/25
+ok   K1 engine = closed form at mu = 5/4 | V=61/24, A=3/4 + 11*sqrt(3)/2
+ok   K1 engine = closed form at mu = 3/2 | V=4, A=3 + 6*sqrt(3)
+ok   K1 engine = closed form at mu = 7/4 | V=131/24, A=27/4 + 11*sqrt(3)/2
+ok   K1 engine = closed form at mu = 19/10 | V=2336/375, A=118*sqrt(3)/25 + 243/25
+ok   K1 d(V^2/A^3)/dmu = 0 at mu = sqrt3 (Lindelof: all faces tangent to the unit sphere) | 2V'A - 3VA' = -96*mu*(mu - 1)*(mu - sqrt(3))
+ok   K1 the only stationary point in (1,2) is sqrt3 | [sqrt(3)]
+ok   K1 it is a maximum (sign + before, - after)
+PROGRESS 0.11 K2 self-dual tetrahedron line (1.4 s)
+ok   K2 S(3/2) = 3/2 * (-S(1/3/2)) exactly (corner sets) | 12 corners
+ok   K2 IQ(3/2) = IQ(1/3/2)
+ok   K2 S(2) = 2 * (-S(1/2)) exactly (corner sets) | 12 corners
+ok   K2 IQ(2) = IQ(1/2)
+ok   K2 S(5/2) = 5/2 * (-S(1/5/2)) exactly (corner sets) | 12 corners
+ok   K2 IQ(5/2) = IQ(1/5/2)
+ok   K2 closed form at mu = 3/2
+ok   K2 closed form at mu = 2
+ok   K2 closed form at mu = 5/2
+ok   K2 IQ strictly decreasing on (1,3), stationary at mu = 1: with IQ(mu) = IQ(1/mu) the maximum on the whole line is mu = 1, the octahedron (smooth) | 2V'A-3VA' = 8*sqrt(3)*(mu - 3)*(mu - 1)
+PROGRESS 0.22 K3 CsCl pair swap and Kelvin (1.8 s)
+ok   K3 A cell + B cell = lattice cell (volume 8) at mu = 6/5 | 284/125 + 716/125
+ok   K3 B cell = A cell of 3 - mu (swap) at mu = 6/5
+ok   K3 A cell + B cell = lattice cell (volume 8) at mu = 3/2 | 4 + 4
+ok   K3 B cell = A cell of 3 - mu (swap) at mu = 3/2
+ok   K3 A cell + B cell = lattice cell (volume 8) at mu = 9/5 | 716/125 + 284/125
+ok   K3 B cell = A cell of 3 - mu (swap) at mu = 9/5
+ok   K3 W(mu) = W(3 - mu)
+ok   K3 A'' = 24 - 16 sqrt3 < 0, so W is concave on [1,2] and its maximum is the fixed point 3/2
+ok   K3 W(3/2) = (3 + 6 sqrt3)/8 = 1.67404 (Kelvin), W(1) = (3 + 2 sqrt3)/4 | 1.674038105676658
+PROGRESS 0.33 K4 Dehn invariant on the pair (3.1 s)
+ok   K4 L_hh - L_sh/2 = 12 sqrt2 (3 - 2 mu) at mu = 6/5 (no square-square edges) | {'hh': 48*sqrt(2)/5, 'hs': 24*sqrt(2)/5, 'ss': 0}
+ok   K4 L_hh - L_sh/2 = 12 sqrt2 (3 - 2 mu) at mu = 3/2 (no square-square edges) | {'hh': 6*sqrt(2), 'hs': 12*sqrt(2), 'ss': 0}
+ok   K4 L_hh - L_sh/2 = 12 sqrt2 (3 - 2 mu) at mu = 7/4 (no square-square edges) | {'hh': 3*sqrt(2), 'hs': 18*sqrt(2), 'ss': 0}
+ok   K4 2 theta_sh + theta_hh = 2 pi exactly, so theta_sh = -theta_hh/2 mod pi and D = (L_hh - L_sh/2) (x) theta_hh, zero only at mu = 3/2 | 1
+ok   K4 the Dehn coefficient is odd under mu -> 3 - mu: D(P_mu) + D(P_{3-mu}) = 0, so at the fixed point 2D = 0, D = 0
+PROGRESS 0.44 K5 turn law on the C-O line (3.7 s)
+ok   K5 max x.y over corners of S(6/5) x S(5/2) = closed form = closed form at the turn | 6/5
+ok   K5 max x.y over corners of S(3/2) x S(2) = closed form = closed form at the turn | 3/2
+ok   K5 max x.y over corners of S(8/5) x S(15/8) = closed form = closed form at the turn | 61/40
+ok   K5 max x.y over corners of S(7/4) x S(12/7) = closed form = closed form at the turn | 43/28
+ok   K5 max x.y over corners of S(2) x S(3/2) = closed form = closed form at the turn | 3/2
+ok   K5 max x.y over corners of S(5/2) x S(6/5) = closed form = closed form at the turn | 6/5
+ok   K5 middle piece 5 - mu - 3/mu: turn-invariant, unique maximum at sqrt3, value 5 - 2 sqrt3
+PROGRESS 0.56 K6 Galois swap on the ten golden cuts (6.0 s)
+ok   K6 exactly one golden cut is fixed by the Galois swap: the dodecahedron greater cut x1 = 1/3 | [('D', 1)]
+ok   K6 the cube pair is swapped: sigma(x1) = x2
+ok   K6 dodecahedron lesser cut goes to (7 + sqrt5)/22 (the phi^3 cut)
+ok   K6 triangle-faced solids: both twins exceed 1/2 (over-cut, no solid) | [(sqrt(5) + 3)/2, (sqrt(5) + 5)/10]
+PROGRESS 0.67 K7 Ammann-Beenker line (6.2 s)
+ok   K7 squares per rhombus is invariant under t -> 1/(2t)
+ok   K7 least at the fixed point 1/sqrt2, value 1/sqrt2
+PROGRESS 0.78 K8 reversal of corner events, Eulerian h-vectors (6.2 s)
+ok   K8 permutohedron of dimension 2: h symmetric (i -> d - i), self-reverse middle class exists: 4
+ok   K8 permutohedron of dimension 3: h symmetric (i -> d - i), self-reverse middle class absent
+ok   K8 permutohedron of dimension 4: h symmetric (i -> d - i), self-reverse middle class exists: 66
+ok   K8 permutohedron of dimension 5: h symmetric (i -> d - i), self-reverse middle class absent
+ok   K8 permutohedron of dimension 6: h symmetric (i -> d - i), self-reverse middle class exists: 2416
+ok   K8 permutohedron of dimension 7: h symmetric (i -> d - i), self-reverse middle class absent
+ok   K8 d = 4 gives births, swaps, deaths 26, 66, 26 (#104, #105); d = 5 gives 57, 302, 302, 57 (no pure swap)
+PROGRESS 0.89 K9 degree-6 tone along the dodecahedron cut line (6.2 s)
+ok   K9 control: tone at x = 0 (the dodecahedron) and x = 1/2 (the icosidodecahedron) both nonzero (neither is a 6-design) | {'1/3': -9.920527743499541, 'x2': -22.258228046661195, '(7+sqrt5)/22': 0.03137086766148895, '1/2': 9.483828083683148, '0': -39.6}
+ok   K9 RESULT: the Galois-fixed cut x = 1/3 is not silent in degree 6; zeros of the tone in (0,1/2): 0.4195538882 | factors (12177/40 - 1353*sqrt(5)/10, [(x**6 + x**5*(84*sqrt(5)/41 + 192/41) + x**4*(-1080/41 - 408*sqrt(5)/41) + x**3*(160/41 - 24*sqrt(5)/41) + x**2*(960/41 + 480*sqrt(5)/41) + x*(288*sqrt(5)/41 + 672/41) - 432/41 - 192*sqrt(5)/41, 1)])
+PROGRESS 1.00 done (8.3 s)
+54 checks, 0 failed, 8.3 s
+FINAL ok
