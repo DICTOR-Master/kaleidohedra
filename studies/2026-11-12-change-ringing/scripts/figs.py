@@ -101,7 +101,8 @@ def solid(svg, ox, oy, scale, theta, phi, tour, title, labels=True, sub_title=''
         svg.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{rad}" fill="{"#7a5c00" if r in ("1234", "4321") else ("#222" if vis else "#888")}"/>')
         if labels or r in ('1234', '4321'):
             dx, dy = x - cx, y - cy; l = math.hypot(dx, dy) or 1
-            tx, ty = x + 15 * k * dx / l, y + 15 * k * dy / l + 3.5 * k
+            off = (26 if r in ('1234', '4321') else 15) * k   # 13 Nov: rounds and backrounds sit further out, clear of their larger dots
+            tx, ty = x + off * dx / l, y + off * dy / l + 3.5 * k
             wt = 'bold' if r in ('1234', '4321') else 'normal'
             svg.append(f'<text x="{tx:.1f}" y="{ty:.1f}" font-size="{(12.5 if r in ("1234", "4321") else 10.5) * k:.1f}" font-weight="{wt}" text-anchor="middle" fill="{"#222" if vis else "#8a8a8a"}" font-family="Helvetica, Arial, sans-serif">{r}</text>')
     svg.append(f'<text x="{ox}" y="{oy - 2.24 * scale - 42 * k:.1f}" font-size="{15 * k:.1f}" font-weight="bold" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">{title}</text>')
