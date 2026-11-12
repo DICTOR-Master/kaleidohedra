@@ -16,7 +16,8 @@ pk = json.load(open(f'{B}/{d}/aixiv-packet/fields.json')); f = dict(pk['fields']
 P = open(os.path.expanduser('~/dicto-alerts/privacy-pattern.txt')).read().strip()   # private list, same as the commit guard
 bad = re.findall(P, json.dumps(f, ensure_ascii=False))
 if bad: sys.exit(f'STOP privacy: {bad}')
-assert f['ai_contribution'] == 'ai-assisted' and f['license'] == 'CC BY-SA 4.0' and f['external_url'].startswith('https://doi.org/10.5281/zenodo.')
+Q0 = json.load(open(Q)); want = next(e['label'] for e in Q0['queue'] if e['n'] == n)   # DICTO's label for this paper (queue.json)
+assert f['ai_contribution'] == want and f['license'] == 'CC BY-SA 4.0' and f['external_url'].startswith('https://doi.org/10.5281/zenodo.')
 hits = get('https://aixiv.online/api/v1/papers?' + urllib.parse.urlencode({'q': f['title'], 'limit': 20}))
 L = hits.get('papers', hits) if isinstance(hits, dict) else hits
 same = [p.get('id') or p.get('aixiv_id') for p in L if (p.get('title') or '').strip().lower() == f['title'].strip().lower()]
