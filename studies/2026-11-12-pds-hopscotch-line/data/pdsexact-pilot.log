@@ -1,0 +1,37 @@
+ok   (P2) counter: (x-(1+sqrt5)/8)(x-3/7)^2(x^2-2) on (0,1) has 2 distinct roots (expect 2)
+ok   (P2) counter: x-(3+sqrt5)/4 on (0,1): 0 roots (expect 0; conjugate (3-sqrt5)/4 inside, not counted)
+PROGRESS 0.05 counter controls (2 s)
+== H4: 600-cell (White Queen), 120-cell (Red Queen)
+ok   600-cell: 120 corners, all |v| = 1 
+ok   600-cell: 720 edges (12 neighbours each, exact) 
+ok   600 cells; facet normals w with w.v = 1 on the cell 
+ok   inradius r^2 equal for all 600 facets r^2 = (7/16+3/16r5) = 0.856762745781
+squared flag radii (walls): ['(1+0r5) = 1.000000000', '(5/8+1/8r5) = 0.904508497', '(1/2+1/6r5) = 0.872677996', '(7/16+3/16r5) = 0.856762746']
+ok   cell centre radius^2 = r^2 
+ok   White Queen: sum (v.y)^k = 120 E_k |y|^k for k = 2..10 (11-design, Silent Queens) [pilot: k<=4] 
+ok   P12 = sum (v.y)^12 - 120 E_12 |y|^12 is harmonic (Laplacian 0) and nonzero 
+ok   left and right multiplication by two icosians permute the 120 corners 
+PROGRESS 0.25 H4 data and Silent Queens checks (24s)
+ok   walls exact: [1, sqrt(5)/8 + 5/8, sqrt(5)/6 + 1/2, 3*sqrt(5)/16 + 7/16]
+== truncated 600-cell hop (0.904508497, 1.000000000): 1440 corners; P12(x(mu)) degree 12 over Q(sqrt5) (34 s)
+ok   truncated 600-cell hop: P12(corner) != 0 at the lower wall (exact)
+ok   truncated 600-cell hop: P12(corner) != 0 at the upper wall (exact)
+   19-design station mu = 0.924138673238867458601238076667 (interval width 4.5e-41); norm factor degree 20
+ok   (P1) truncated-600-cell hop: exactly one station, mu* = 0.924138673238867458601238076667, factor = the degree-20 minimal polynomial
+   B = numerator (degree 12 over Q(sqrt5)) / 167646907715*mu**13
+ok   truncated 600-cell hop: B != 0 at the lower wall (exact)
+ok   truncated 600-cell hop: B != 0 at the upper wall (exact)
+ok   (P3) truncated 600-cell hop: exact signs of B at the hop ends [1, -1] = pds_line log ['1', '-1']
+   B = 0 at mu = 0.921449634428905791812131090257 (interval width 7.4e-41); minimal polynomial over Q (norm factor, degree 24): 5022586397261824*mu**24 + 3709975592960000*mu**23 + 2244796609986560*mu**22 + 939337469788160*mu**21 - 115797127659520*mu**20 - 858398037442560*mu**19 - 1268308442726400*mu**18 - 1374471869931520*mu**17 - 1244315060285440*mu**16 - 966890456279040*mu**15 - 634953012101120*mu**14 - 329196583444480*mu**13 - 106991519265280*mu**12 + 3202175406080*mu**11 + 1761116701120*mu**10 + 254353449280*mu**9 - 1299380880*mu**8 - 3876625760*mu**7 - 85011780*mu**6 + 53454100*mu**5 - 70070*mu**4 - 1558200*mu**3 - 40425*mu**2 + 66150*mu + 11025
+ok   (P3) truncated-600-cell hop: B has exactly one zero, mu_Omega, equal to pds_line's 30 digits
+ok   mu_Omega is not a root of the fixed point's minimal polynomial 64m^4 - 56m^2 + 1 nor of mu*'s (exact)
+ok   (P3) B(r) = -4.29713341974990361421036197091 agrees with the log -4.29713341974
+PROGRESS 0.40 truncated 600-cell hop done (65 s)
+ok   exact order: mu_Omega < mu* (disjoint isolating intervals, 0.921449634429 < 0.924138673239)
+ok   exact: mu_Omega below r, mu* below r; so r is neither, and B(r) != 0, P12(corner(r)) != 0 exactly
+ok   exact: B(r) < 0 (B changes sign only at mu_Omega < r and B < 0 at the upper wall mu = 1)
+ok   exact: turn image r^2/mu_Omega lies in the truncated-600-cell hop (0.929799..0.929799) and is not mu_Omega (since mu_Omega != r); by the uniqueness above it is not a station of the same kind
+ok   exact: turn image r^2/mu* lies in the truncated-600-cell hop (0.927093..0.927093) and is not mu* (since mu* != r); by the uniqueness above it is not a station of the same kind
+pilot controls held
+time 65 s
+FINAL ok: all controls held

@@ -161,3 +161,21 @@ itself was not read: bibliographic record only). Sloane, Hardin and Cara 2003 ("
 t + 1" corollary used here. Hardin and Sloane 1996 ("McLaren's improved snub cube", read) and their online library cover S² only.
 So no Hardin–Sloane table lists a 1440-point design on S³; the 19-design station is classical (Goethals–Seidel) and what is new here
 is its exact place on DICTO's line (μ*, degree 20) and the exact uniqueness.
+
+## Exact isolation on the whole line (12 Nov 2026, late; `scripts/pds_exact.py`, log `data/pdsexact.log`, `data/pds-exact.json`, pilot `data/pdsexact-pilot.log`; FINAL ok, 93 s on the compute machine, 2 cores)
+**Conclusion: EXACT.** The two inner hops and the silent point no longer rest on 40-digit root location. In each of the three hops the
+corner polynomial P12(x(μ)) (corner from the exact chamber at the same sample μ as pds_line.py) and the numerator of B(μ) (exact, from
+data/pds-line.json) are counted with the counter of canon_unique.py: norm over Q, exact real-root isolation (rational intervals of width
+below 10⁻⁴⁰), sign of gcd(A, F) over Q(√5) at the rational endpoints; both are evaluated exactly at all four walls (nonzero).
+- Corners: exactly one 19-design station on the whole line, μ* (re-isolated, its factor = the degree-20 minimal polynomial); none in the
+  middle hop, none in the truncated-120-cell hop.
+- Canonical form: B has exactly one zero on the whole line, **μ_Ω = 0.921449634428905791812131090257**, in the truncated-600-cell hop.
+  Its minimal polynomial over Q has degree 24 (the norm of the degree-12 factor over Q(√5); in data/pds-exact.json):
+  5022586397261824μ²⁴ + 3709975592960000μ²³ + … + 66150μ + 11025. B > 0 on the middle and truncated-120-cell hops (exact sign at a
+  rational point, no zero, nonzero at the walls).
+- Order and the turn (exact, by disjoint isolating intervals and squares compared in Q(√5)): μ_Ω < μ* < r; B(r) < 0 and P12(corner(r))
+  ≠ 0; the turn images r²/μ_Ω, r²/μ* lie in the same hop and are not stations (each station is the only one of its kind).
+Controls: (P1) μ* and its degree-20 polynomial re-isolated; (P2) the counter's synthetic controls (double root counted once, conjugate
+root not counted); (P3) μ_Ω equals pds_line's 30 digits, the exact end signs of B equal the logged ones, B(r) = −4.2971334197 as logged;
+(N1) B_num − B_num(q) at a rational q inside each inner hop has a root there (the counter sees roots in those hops); (N2) the three hops'
+corner polynomials differ.

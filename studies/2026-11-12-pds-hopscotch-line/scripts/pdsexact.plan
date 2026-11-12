@@ -1,0 +1,13 @@
+question: aim 2 paper - exact root isolation on the 600-cell Queens line: P12 corner stations and zeros of the order-12 tone B per hop (replaces 40-digit root location)
+answer_looks_like: ok/FAIL lines: mu* re-isolated (degree 20), mu_Omega isolated exactly with its minimal polynomial over Q; FINAL ok/FAIL
+pilot: pdsexact-pilot run first (see its log: time and controls)
+size_estimate: three hops: three exact chambers (1440, 3600, 2400 corners), six degree-12 polynomials over Q(sqrt5), exact isolation
+memory_estimate_gb: 2 (cage 6G)
+time_estimate_h: 0.3
+bounded_by: fixed task list (three hops), timeout 1 h, 6 GB cage, 2 cores (taskset)
+control: positive: known degree-20 station mu* = 0.9241386732388674586 re-isolated with its minimal polynomial; mu_Omega equals pds_line's 30 digits; counter synthetic controls (double root counted once, conjugate root not counted); B end signs and B(r) match the log
+progress: PROGRESS 0.05 counter controls, then 0.40, 0.70, 1.00 after each hop
+ledger_checked: chunk 6 entry (pds-hopscotch-line: mu* exact, mu_Omega 40-digit); [193]/[194] canon_unique / pds_unique exact counters; no entry isolates the inner hops exactly
+ledger_override: same settled question, now made exact (40-digit location -> exact isolation); not a retry of a failed method
+if_ok: record in the study README and data/pds-exact.json; paper Theorem 1 and its proof state the inner hops and mu_Omega as exact
+if_fail_or_cap: read the failing line, fix, rerun the pilot; the paper keeps the 40-digit wording until then
