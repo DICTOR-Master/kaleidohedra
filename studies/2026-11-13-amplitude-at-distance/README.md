@@ -1,6 +1,6 @@
 # Amplitude at a distance (13 Nov 2026; aim 2, test of DICTO's proposition)
 
-**Conclusion (13 Nov 2026): NOT SUPPORTED as stated. All three pre-registered tests fail (T1 choice, T2 direction, T3 position), and the controls behave like the space-fillers wherever a signature appears. What the canonical form does carry at a distance is its pole set, the extended facet planes; where neighbours sit on it, that is Voronoi bisector geometry, not the form's values. One new exact-looking law turned up outside the plan: far from P, Omega decays like r^-6 for every zonotope (so every 3D parallelohedron), r^-5 for the TRD and the triangular prism, and r^-4 otherwise. It follows face symmetry, not tiling: the rhombic triacontahedron, which does not tile, also decays like r^-6.**
+**Conclusion (13 Nov 2026): NOT SUPPORTED as stated. All three pre-registered tests fail (T1 choice, T2 direction, T3 position), and the controls behave like the space-fillers wherever a signature appears. What the canonical form does carry at a distance is its pole set, the extended facet planes; where neighbours sit on it, that is Voronoi bisector geometry, not the form's values. One exact law turned up outside the plan (KNOWN: it is Theorem 4.5 of Baumbach, Freyer, Weigert and Winter, arXiv:2508.04275 (2025), proved in every dimension there; see studies/2026-11-13-zonotope-falloff): far from P, Omega decays like r^-6 for every zonotope (so every 3D parallelohedron), r^-5 for the TRD and the triangular prism, and r^-4 otherwise. It follows face symmetry, not tiling: the rhombic triacontahedron, which does not tile, also decays like r^-6.**
 
 DICTO's proposition (13 Nov 2026, confirmed): "law giving shapes act at a distance governed by their amplitude", amplitude = the
 canonical form of aim 2 (Geometry Gives Laws). Working statement tested here: a law-giving (space-filling) shape P acts at a distance
@@ -106,7 +106,7 @@ So the fast decay marks zonotopes (every face centrally symmetric), not space-fi
 (Minkowski, Venkov, McMullen), so all of them decay like r^-6. Several zonotopes that do not tile do the same. Reading: Omega =
 A/prod f_i with the adjoint A of degree F - 4 (Warren); decay r^-(4+m) means A contains the plane at infinity m times. Parallel facets
 and zones put residual intersections at infinity, which the adjoint must pass through. Central symmetry kills the odd coefficients
-(a_0, a_2), so m is even there. The proof that m = 2 for every zonotope is open (LEAD 1).
+(a_0, a_2), so m is even there. Proved in general by Baumbach, Freyer, Weigert and Winter (arXiv:2508.04275, 2025, Theorem 4.5); not new here (LEAD 1 closed 13 Nov, studies/2026-11-13-zonotope-falloff).
 
 ### T1 Choice: FAIL (C1, C1', C2 and C3 all fail)
 Exact incidence: which of the six groupings (equal density, fixed orientation) have points ON facet planes of P, where Omega has a
@@ -198,7 +198,7 @@ dodecahedron pole sqrt5. Nothing sits at 2 apart from the poles above.
 2. Own lattice points lie on these poles iff the grouping has isosceles neighbour triangles (RD, TRD, TO, HP yes; cube no). This
    is Voronoi geometry (bisector planes), so the canonical form adds nothing to it.
 3. Far-field decay r^-6 for zonotopes, r^-5 for the TRD and the triangular prism, r^-4 otherwise (exact at two generic directions
-   per solid; proof open). This is the one place where the form tells space-fillers from the icosahedron, dodecahedron and perturbed
+   per solid; KNOWN, proved by Baumbach-Freyer-Weigert-Winter 2025, Thm 4.5). This is the one place where the form tells space-fillers from the icosahedron, dodecahedron and perturbed
    RD, but it is a zonotope law, not a tiling law: the rhombic triacontahedron does not tile and decays like r^-6.
 
 **Verdict by the pre-registered rule: not supported** (T1 fails, T2 fails, T3 fails; the controls share every signature found).
