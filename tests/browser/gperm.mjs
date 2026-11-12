@@ -1,7 +1,8 @@
 // Generalized Permutohedra (src/app/world-gperm.js), through the real UI, by touch, on a phone (390×844) and an iPad (820×1180), on the
 // Kaleidohedra and Rhombiverse doors: listed in Kaleidohedra's block, first among its worlds; opens on the permutohedron (24, 36, 14,
-// fills space); the big slider at the bottom, its wall marked on the track; dragged with a finger the shape stays 14-faced and the badge
-// turns to "does not"; at the end the associahedron (14, 21, 9) with the wall's 5 faces named; each stop tapped gives its known counts and
+// fills space); the big slider at the bottom with its 5 walls marked on the track (one face vanishing at each, DICTO's staged route);
+// dragged with a finger the badge turns to "does not" and the caption names the stage; at a wall that face is named and gone; at the end
+// the associahedron (14, 21, 9); each stop tapped gives its known counts and
 // the right badge; ?open=gperm:cyclohedron. Every one of the 7 languages at phone width: the stop buttons on screen, no raw keys.
 // No console errors. Screenshots ($SHOTS, default /tmp/gperm-shots): phone and desktop, at each stop and halfway.
 // DICTO · dictospheres.com
@@ -28,10 +29,10 @@ async function onScreen(page, what) {
   const s = await page.evaluate(() => window.__gpermScreen());
   assert.ok(s && s.x0 >= -2 && s.x1 <= s.w + 2 && s.y0 >= -2 && s.y1 <= s.h - s.cover + 2, `${what}: off screen ${JSON.stringify(s)}`);
 }
-// the slider dragged with a finger from its thumb to `to` (0..1000)
+// the slider dragged with a finger from its thumb to `to` (0..700, its max)
 async function drag(page, to, steps = 6) {
   const input = page.locator(`${P} .gp-line-row input`), box = await input.boundingBox(), y = box.y + box.height / 2;
-  const at = (v) => box.x + 20 + ((box.width - 40) * v) / 1000;
+  const at = (v) => box.x + 20 + ((box.width - 40) * v) / 700;
   const from = Number(await input.inputValue()), cdp = await page.context().newCDPSession(page);
   await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: at(from), y }] });
   for (let i = 1; i <= steps; i++) { await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: at(from + ((to - from) * i) / steps), y }] }); await page.waitForTimeout(250); }
@@ -64,28 +65,33 @@ for (const door of (PARTS.includes('doors') ? process.env.DOORS ?? 'kaleidohedra
     assert.deepEqual([st.stop, st.onLine, st.s, st.f, st.fills, st.inFamily], ['permutohedron', true, 0, [24, 36, 14], true, true], `${tag}: opens on the permutohedron`);
     assert.equal(await page.locator(`${P} .gp-badge`).textContent(), t('gp.badge.yes', 'en'));
     assert.equal(await page.locator(`${P} [data-gp-stop="permutohedron"]`).getAttribute('aria-pressed'), 'true');
-    // the big slider at the bottom, its wall marked at the associahedron end
+    // the big slider at the bottom, its 5 walls marked where each face vanishes (s = 1, 2, 3, 5, 7 of 7)
     const slider = page.locator(`${P} .gp-line-row input`), sb = await slider.boundingBox();
     assert.ok(sb.width >= viewport.width * 0.8 && sb.height >= 40 && sb.y > viewport.height * 0.6, `${tag}: big slider at the bottom ${JSON.stringify(sb)}`);
-    const wall = await page.locator(`${P} .gp-wall`).boundingBox();
-    assert.equal(await page.locator(`${P} .gp-wall`).count(), 1, `${tag}: one wall`);
-    assert.ok(Math.abs(wall.x + wall.width / 2 - (sb.x + sb.width - 20)) < 3, `${tag}: the wall at the associahedron end ${JSON.stringify({ wall, sb })}`);
-    assert.deepEqual(st.walls.map((w) => [w.t, w.faces.length, w.source]), [[1, 5, 'live']]);
+    assert.equal(await page.locator(`${P} .gp-wall`).count(), 5, `${tag}: five walls`);
+    const wallX = await page.evaluate((sel) => [...document.querySelectorAll(`${sel} .gp-wall`)].map((w) => { const r = w.getBoundingClientRect(); return r.x + r.width / 2; }), P);
+    [1, 2, 3, 5, 7].forEach((s, i) => assert.ok(Math.abs(wallX[i] - (sb.x + 20 + ((sb.width - 40) * s) / 7)) < 3, `${tag}: wall ${i} at ${s}/7`));
+    assert.deepEqual(st.walls.map((w) => [w.at, w.face]), [[100, '{1,3}'], [200, '{1,4}'], [300, '{2,4}'], [500, '{1,2,4}'], [700, '{1,3,4}']]);
     for (const k of G.PRESET_KEYS) { const bx = await page.locator(`${P} [data-gp-stop="${k}"]`).boundingBox(); assert.ok(bx.height >= 30 && bx.width >= 44 && bx.x >= 0 && bx.x + bx.width <= viewport.width, `${tag}: ${k} touchable, on screen`); }
     await onScreen(page, `${tag} permutohedron`);
     checks++;
-    // a finger drags halfway: still 14 faces, no longer centrally symmetric
-    await drag(page, 500); st = await probe(page);
-    assert.ok(st.onLine && st.s > 400 && st.s < 600 && !st.stop, `${tag}: halfway ${st.s}`);
-    assert.deepEqual([st.f, st.fills, st.symmetric, st.inFamily], [[24, 36, 14], false, false, true], `${tag}: halfway shape`);
+    // a finger drags into stage 1: the face {1,3} sliding out, no longer centrally symmetric
+    await drag(page, 50); st = await probe(page);
+    assert.ok(st.onLine && st.s > 20 && st.s < 90 && !st.stop && st.stage === 1, `${tag}: stage 1 (${st.s})`);
+    assert.deepEqual([st.f, st.fills, st.symmetric, st.inFamily], [[24, 36, 14], false, false, true], `${tag}: stage 1 shape`);
     assert.equal(await page.locator(`${P} .gp-badge`).textContent(), t('gp.badge.no', 'en'));
-    assert.ok((await page.locator(`${P} .ch-param-caption`).textContent()).includes('of the way to the associahedron'), `${tag}: caption between`);
-    await onScreen(page, `${tag} halfway`);
-    // to the end: the associahedron, the wall's 5 faces named
-    await drag(page, 1015); st = await probe(page);
-    assert.deepEqual([st.stop, st.s, st.f], ['associahedron', 1000, [14, 21, 9]], `${tag}: the end`);
-    const cap = await page.locator(`${P} .ch-param-caption`).textContent();
-    assert.ok(cap.includes('5 faces vanish here') && cap.includes('{1,3}') && cap.includes('{1,3,4}'), `${tag}: wall caption (${cap})`);
+    assert.ok((await page.locator(`${P} .ch-param-caption`).textContent()).startsWith('stage 1 of 5: the face {1,3} slides out'), `${tag}: stage caption`);
+    // on to stage 4 by finger: three faces gone, {1,2,4} sliding
+    await drag(page, 400); st = await probe(page);
+    assert.ok(st.stage === 4 && st.f[2] === 11, `${tag}: stage 4 ${JSON.stringify([st.s, st.f])}`);
+    await onScreen(page, `${tag} stage 4`);
+    // a wall exactly (the slider's value set): the face {2,4} named and gone
+    await slider.fill('300'); await page.waitForTimeout(300); st = await probe(page);
+    assert.deepEqual([st.wall?.face, st.f, st.faces.includes('{2,4}')], ['{2,4}', [15, 24, 11], false], `${tag}: the {2,4} wall`);
+    assert.ok((await page.locator(`${P} .ch-param-caption`).textContent()).includes('wall: the face {2,4} vanishes here'));
+    // to the end by finger: the associahedron, its last wall
+    await drag(page, 715); st = await probe(page);
+    assert.deepEqual([st.stop, st.s, st.f, st.wall?.face], ['associahedron', 700, [14, 21, 9], '{1,3,4}'], `${tag}: the end`);
     checks++;
     // every stop by a tap
     for (const k of G.PRESET_KEYS) {
@@ -98,8 +104,8 @@ for (const door of (PARTS.includes('doors') ? process.env.DOORS ?? 'kaleidohedra
     checks++;
     // off the line, the slider brings you back to it
     await page.tap(`${P} [data-gp-stop="simplex"]`); await page.waitForTimeout(200);
-    await drag(page, 300); st = await probe(page);
-    assert.ok(st.onLine && st.stop === null && st.f[2] === 14, `${tag}: back on the line`); checks++;
+    await drag(page, 50); st = await probe(page);
+    assert.ok(st.onLine && st.stop === null && st.f[2] === 14, `${tag}: back on the route`); checks++;
     assert.ok(!(await page.locator('#hud-quick-lattice-view').isVisible()), `${tag}: no lattice view`);
     assert.deepEqual(errors, [], `${tag}: console errors`);
     console.log('ok', tag); await page.close();
@@ -136,8 +142,7 @@ for (const [dev, viewport] of Object.entries(!PARTS.includes('shots') ? {} : { p
   const errors = await open(page, '&site=kaleidohedra&open=gperm:permutohedron');
   await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1500);
   for (const k of G.PRESET_KEYS) { await page.click(`${P} [data-gp-stop="${k}"]`); await page.waitForTimeout(900); await page.screenshot({ path: `${SH}/${dev}-${k}.png` }); }
-  await page.click(`${P} [data-gp-stop="permutohedron"]`); await page.locator(`${P} .gp-line-row input`).fill('500'); await page.waitForTimeout(900);
-  await page.screenshot({ path: `${SH}/${dev}-halfway.png` });
+  await page.click(`${P} [data-gp-stop="permutohedron"]`); for (const v of [50, 150, 250, 400, 600]) { await page.locator(`${P} .gp-line-row input`).fill(String(v)); await page.waitForTimeout(900); await page.screenshot({ path: `${SH}/${dev}-stage-${v}.png` }); }
   assert.deepEqual(errors, [], `${dev} screenshots: console errors`); checks++;
   await page.close();
 }

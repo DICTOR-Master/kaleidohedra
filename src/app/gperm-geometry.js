@@ -84,6 +84,27 @@ export function lineWalls() {
 }
 function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) [a, b] = [b, a % b]; return a; }
 
+// ---- the staged route (DICTO's choice, 2026-11-12): one face at a time from the permutohedron to the associahedron ----
+// The 5 faces whose subsets are not intervals ({1,3}, {1,4}, {2,4}, {1,2,4}, {1,3,4}) slide out, one stage each, from the permutohedron's
+// height to the associahedron's while the others hold, all at the same speed (a stage as long as its height change, the deficit D_S:
+// 1, 1, 1, 2, 2). Of the 120 orders, 16 stay in the family throughout; {1,2,4} and {1,3,4} can never go first. This one takes the pairs
+// first. Membership is convex and every stage straight, so the stage ends being in the family proves the whole route is (unit test).
+export const STAGE_ORDER = [bits(1, 3), bits(1, 4), bits(2, 4), bits(1, 2, 4), bits(1, 3, 4)];
+const Z_PI = zFromY(PRESETS.permutohedron), Z_LO = zFromY(PRESETS.associahedron);
+export const STAGE_DEFICITS = STAGE_ORDER.map((S) => Z_PI[S] - Z_LO[S]);
+export const STAGE_TOTAL = STAGE_DEFICITS.reduce((a, b) => a + b, 0);   // 7
+/** The walls: after stage k (s = the heights moved so far) the face STAGE_ORDER[k] has vanished. */
+export const STAGE_WALLS = STAGE_ORDER.map((S, k) => ({ s: STAGE_DEFICITS.slice(0, k + 1).reduce((a, b) => a + b, 0), face: S }));
+/** The heights at s in [0, STAGE_TOTAL]: earlier stages done, the current face part way, later ones still at the permutohedron's. */
+export function stagedZ(s) {
+  const z = [...Z_PI];
+  let left = Math.max(0, Math.min(STAGE_TOTAL, s));
+  STAGE_ORDER.forEach((S, k) => { const d = Math.min(left, STAGE_DEFICITS[k]); z[S] -= d; left -= d; });
+  return z;
+}
+/** The stage s lies in (0-based; the last stage at the very end). */
+export function stageAt(s) { const k = STAGE_WALLS.findIndex((w) => s < w.s); return k < 0 ? STAGE_ORDER.length - 1 : k; }
+
 // ---- the polytope of z: corners, faces, edges ----
 const PERMS = [];
 (function perms(p, rest) { if (!rest.length) { PERMS.push(p); return; } rest.forEach((r, i) => perms([...p, r], rest.filter((_, j) => j !== i))); })([], [0, 1, 2, 3]);
@@ -149,8 +170,9 @@ export function fillsSpace(poly, eps = 1e-7) {
   return { fills: symmetric && facesSymmetric && beltsOk, symmetric, facesSymmetric, beltsOk, belts: [...new Set(belts)].sort((a, b) => a - b) };
 }
 
-/** Everything the world shows for y: { z, inFamily, poly, fill }. */
-export function shapeOf(y) {
-  const z = zFromY(y), ok = inFamily(z), poly = polytope(z);
+/** Everything the world shows for y (or heights z): { z, inFamily, poly, fill }. */
+export function shapeOf(y) { return shapeOfZ(zFromY(y)); }
+export function shapeOfZ(z) {
+  const ok = inFamily(z), poly = polytope(z);
   return { z, inFamily: ok, poly, fill: fillsSpace(poly) };
 }

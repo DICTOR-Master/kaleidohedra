@@ -1,9 +1,9 @@
 // Generalized Permutohedra (Postnikov 2009): the deformation cone of the 3D permutohedron as its own world, beside The 4D Permutohedron.
 // DICTO · dictospheres.com
 // Every shape you get from the permutohedron by sliding its 14 faces in or out, each staying parallel to itself (gperm-geometry.js).
-//   One big slider at the bottom moves along the straight line in Postnikov's y-coordinates from the permutohedron to Loday's
-//     associahedron, its walls (where faces vanish) marked on the track: exact, computed live (gperm-geometry.js lineWalls), or the
-//     k-research study's when its data is in gperm-walls.js.
+//   One big slider at the bottom walks from the permutohedron to Loday's associahedron one face at a time (DICTO's choice, 2026-11-12):
+//     the five faces over non-interval subsets slide out in turn, each to nothing, every point in the family (gperm-geometry.js
+//     STAGE_ORDER); a wall mark on the track at each vanishing. The heights are the k-research study's (gperm-walls.js, unit-tested).
 //   Stops, a tap each: simplex, cube, hypersimplex, cyclohedron, associahedron, permutohedron (DICTO's order). No step arrows.
 //   A live badge: fills space by translation or not (the Venkov–McMullen test on the shape drawn).
 // Drawn to the app's render standard (docs/RENDER-STANDARD.md): solid faces with polygon offset, crisp antialiased edges. The faces are
@@ -18,25 +18,18 @@ import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey } from './site.js';
 import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import * as G from './gperm-geometry.js';
-import { STUDY_WALLS } from './gperm-walls.js';
 
 export const GP_TITLE = 'Generalized Permutohedra';
 export const GP_STOPS = G.PRESET_KEYS;
-export const GP_COLOURS = { 1: 0xe7d9b4, 2: 0x5fa6b8, 3: 0xe07a92, edge: 0x111318 };
-const STEPS = 1000;                               // the slider's steps along the line
+export const GP_COLOURS = { 1: 0xe7d9b4, 2: 0x5fa6b8, 3: 0xe07a92, edge: 0xf4f1e6 };   // light edges, as the reference Kepler–Poinsot stars: the outline reads on the dark sky
+const PER = 100;                                   // slider steps per unit of height moved
+const STEPS = G.STAGE_TOTAL * PER;                // 700: the walls fall on whole steps
 const VIEW_DIR = [3.2, 2.1, 4.0];
 const lang = () => getSettings().language;
 const hex = (c) => `#${new THREE.Color(c).getHexString()}`;
 
-/** The line's walls: the study's exact data when it is in, else computed here; each { t, exact, faces: ['{1,3}', …] }. */
-export function gpWalls() {
-  if (STUDY_WALLS?.length) return STUDY_WALLS.map((w) => ({ ...w, source: 'study' }));
-  return G.lineWalls().map((w) => {
-    const before = new Set(G.shapeOf(G.lineY(Math.max(0, w.t - 1e-6))).poly.faces.map((f) => f.S));
-    const at = new Set(G.shapeOf(G.lineY(w.t)).poly.faces.map((f) => f.S));
-    return { t: w.t, exact: w.exact, faces: G.SUBSETS.filter((S) => before.has(S) && !at.has(S)).map(G.setLabel), source: 'live' };
-  });
-}
+/** The staged route's walls: { t (0..1 along the slider), at (slider step), face ('{1,3}') }. */
+export function gpWalls() { return G.STAGE_WALLS.map((w) => ({ t: w.s / G.STAGE_TOTAL, at: w.s * PER, face: G.setLabel(w.face) })); }
 
 /** Corners centred and scaled to radius 1 (the picture keeps its size along the slider and at every stop). */
 function normalised(P3) {
@@ -50,7 +43,7 @@ export function createGpermWorld({ scene, fitView = () => {} }) {
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
-  // stop: a named member off the line, or null on the line at position s (0 the permutohedron … STEPS the associahedron)
+  // stop: a named member off the route, or null on the route at step s (0 the permutohedron … STEPS the associahedron)
   const view = { stop: null, s: 0 };
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
@@ -63,7 +56,7 @@ export function createGpermWorld({ scene, fitView = () => {} }) {
 
   /** The stop shown: a named member, the line's ends by name, or null between. */
   const stopShown = () => view.stop ?? (view.s === 0 ? 'permutohedron' : view.s === STEPS ? 'associahedron' : null);
-  const yNow = () => (view.stop ? G.PRESETS[view.stop] : G.lineY(view.s / STEPS));
+  const shapeNow = () => (view.stop ? G.shapeOf(G.PRESETS[view.stop]) : G.shapeOfZ(G.stagedZ(view.s / PER)));
 
   const clear = () => { for (const c of [...group.children]) { group.remove(c); c.geometry.dispose(); c.material.dispose(); } };
   /** Polygons (3D loops, radius 1) in one colour as one mesh, and their crisp edges. */
@@ -81,15 +74,15 @@ export function createGpermWorld({ scene, fitView = () => {} }) {
   function draw() {
     if (!active) return;
     clear();
-    const y = yNow(), sh = G.shapeOf(y), P = normalised(sh.poly.P3);
+    const sh = shapeNow(), P = normalised(sh.poly.P3);
     for (const k of [1, 2, 3]) polys(sh.poly.faces.filter((f) => G.popcount(f.S) === k).map((f) => f.loop.map((i) => P[i])), GP_COLOURS[k], opacity);
     const lines = sh.poly.edges.flatMap(([a, b]) => [...P[a].map((x) => x * WS), ...P[b].map((x) => x * WS)]);
     const see = opacity < 1 || skeleton;
     const l = new LineSegments2(new LineSegmentsGeometry(), new LineMaterial({ color: skeleton ? 0xdfe6f0 : GP_COLOURS.edge, linewidth: 1.8, transparent: opacity < 1, opacity: opacity < 1 ? 0.8 : 1, depthWrite: !see }));
     l.geometry.setPositions(lines); l.frustumCulled = false; group.add(l);
-    const wallHere = view.stop ? null : walls.find((w) => Math.abs(w.t - view.s / STEPS) < 0.5 / STEPS) ?? null;
+    const wallHere = view.stop ? null : walls.find((w) => w.at === view.s) ?? null;
     shown = { stop: stopShown(), onLine: !view.stop, s: view.s, f: sh.poly.f, faces: sh.poly.faces.map((f) => G.setLabel(f.S)), inFamily: sh.inFamily,
-      fills: sh.fill.fills, symmetric: sh.fill.symmetric, facesSymmetric: sh.fill.facesSymmetric, belts: sh.fill.belts, wall: wallHere };
+      stage: view.stop || view.s === 0 ? null : G.stageAt(view.s / PER) + 1, fills: sh.fill.fills, symmetric: sh.fill.symmetric, facesSymmetric: sh.fill.facesSymmetric, belts: sh.fill.belts, wall: wallHere };
     renderPanel();
   }
   const fit = () => fitView([0, 0, 0], WS * 1.08, VIEW_DIR, true);
@@ -121,15 +114,15 @@ export function createGpermWorld({ scene, fitView = () => {} }) {
     badge.title = t('gp.badge.tip', L);
     badge.classList.toggle('gp-fills', shown.fills);
     badge.dataset.fills = String(shown.fills);
-    const name = stop ? t(`gp.stop.${stop}`, L) : t('gp.cap.between', L, { p: Math.round((view.s / STEPS) * 100) });
+    const k = G.stageAt(view.s / PER), name = stop ? t(`gp.stop.${stop}`, L) : t('gp.cap.stage', L, { k: k + 1, n: walls.length, face: walls[k].face });
     const [v, e, f] = shown.f;
-    caption.textContent = t('gp.cap', L, { name, v, e, f }) + (view.stop ? ` · ${t('gp.cap.off', L)}` : '') + (shown.wall ? ` · ${t('gp.cap.wall', L, { n: shown.wall.faces.length, list: shown.wall.faces.join(' ') })}` : '');
+    caption.textContent = t('gp.cap', L, { name, v, e, f }) + (view.stop ? ` · ${t('gp.cap.off', L)}` : '') + (shown.wall ? ` · ${t('gp.cap.wall', L, { face: shown.wall.face })}` : '');
     const sw = (k) => `<span class="gp-sw"><i style="background:${hex(GP_COLOURS[k])}"></i>${t(`gp.legend.${k}`, L)}</span>`;
     legend.innerHTML = [1, 2, 3].map(sw).join('');
     panel.querySelector('.gp-line-label').textContent = t('gp.line', L, { p: Math.round((view.s / STEPS) * 100) });
     lineInput.value = String(view.s);
     lineInput.setAttribute('aria-label', t('gp.line', L, { p: Math.round((view.s / STEPS) * 100) }));
-    note.textContent = `${t('gp.note', L)} ${t('gp.note.line', L, { n: walls.length })} ${t('gp.note.fill', L)} ${t('gp.note.credits', L)}`;
+    note.textContent = `${t('gp.note', L)} ${t('gp.note.line', L)} ${t('gp.note.fill', L)} ${t('gp.note.credits', L)}`;
   }
   // the slider is the line: moving it leaves any off-line stop
   lineInput.addEventListener('input', () => { const s = Number(lineInput.value); if (s === view.s && !view.stop) return; view.s = s; view.stop = null; save(); draw(); });
@@ -167,12 +160,12 @@ export function createGpermWorld({ scene, fitView = () => {} }) {
     get isEmpty() { return true; },
     clear() {},
     /** For the browser tests (?probe). */
-    probe: () => (shown ? { ...shown, walls: walls.map((w) => ({ t: w.t, faces: w.faces, source: w.source })), meshes: group.children.length } : null),
+    probe: () => (shown ? { ...shown, walls, meshes: group.children.length } : null),
   };
 }
 
-/** The world's cover in the DICTO menu: the edges of the shape halfway along the line. */
+/** The world's cover in the DICTO menu: the edges of the shape halfway along the route. */
 export function gpermPreviewEdges() {
-  const { poly } = G.shapeOf(G.lineY(0.5)), P = normalised(poly.P3);
+  const { poly } = G.shapeOfZ(G.stagedZ(G.STAGE_TOTAL / 2)), P = normalised(poly.P3);
   return poly.edges.map(([a, b]) => [P[a], P[b]]);
 }

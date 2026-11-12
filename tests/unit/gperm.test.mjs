@@ -5,7 +5,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import * as G from '../../src/app/gperm-geometry.js';
-import { STUDY_WALLS } from '../../src/app/gperm-walls.js';
+import { STUDY } from '../../src/app/gperm-walls.js';
 
 const euler = ([v, e, f]) => v - e + f;
 
@@ -96,9 +96,63 @@ test('the line from the permutohedron to the associahedron: exact walls, checked
   assert.deepEqual(G.SUBSETS.filter((S) => !at1.has(S)).map(G.setLabel), ['{1,3}', '{1,4}', '{2,4}', '{1,2,4}', '{1,3,4}']);
 });
 
-test('the study\'s wall data, when it is there, agrees with the live computation', () => {
-  if (!STUDY_WALLS) return;
-  const live = G.lineWalls().map((w) => w.t);
-  assert.equal(STUDY_WALLS.length, live.length);
-  STUDY_WALLS.forEach((w, i) => assert.ok(Math.abs(w.t - live[i]) < 1e-12, `wall ${i}`));
+test('the staged route: one face at a time, every point in the family, exact walls and face counts', () => {
+  const lab = G.STAGE_ORDER.map(G.setLabel);
+  assert.deepEqual(lab, ['{1,3}', '{1,4}', '{2,4}', '{1,2,4}', '{1,3,4}']);
+  assert.deepEqual(G.STAGE_DEFICITS, [1, 1, 1, 2, 2]);
+  assert.deepEqual(G.STAGE_WALLS.map((w) => w.s), [1, 2, 3, 5, 7]);
+  // exactly in the family: the heights are integers at every stage end and the 24 wall forms (exact integers) are >= 0 there;
+  // membership is convex and each stage is a straight segment, so the whole route is in the family
+  const ends = [0, ...G.STAGE_WALLS.map((w) => w.s)];
+  for (const s of ends) { const z = G.stagedZ(s); assert.ok(z.every(Number.isInteger)); assert.ok(G.WALL_FORMS.every((f) => G.wallValue(z, f) >= 0), `s = ${s}`); }
+  // and densely, as a check of the code path
+  for (let v = 0; v <= 700; v++) assert.ok(G.inFamily(G.stagedZ(v / 100)), `v = ${v}`);
+  // each stage moves only its face; the others hold
+  for (let k = 0; k < 5; k++) {
+    const a = G.stagedZ(ends[k]), b = G.stagedZ(ends[k + 1]);
+    assert.deepEqual(G.SUBSETS.filter((S) => a[S] !== b[S]), [G.STAGE_ORDER[k]]);
+  }
+  // face counts at the stage ends, and that the stage's face holds until its wall and vanishes there
+  const F = [[24, 36, 14], [21, 32, 13], [18, 28, 12], [15, 24, 11], [15, 23, 10], [14, 21, 9]];
+  ends.forEach((s, k) => assert.deepEqual(G.polytope(G.stagedZ(s)).f, F[k], `stage end ${k}`));
+  for (let k = 0; k < 5; k++) {
+    const S = G.STAGE_ORDER[k], before = G.polytope(G.stagedZ(ends[k + 1] - 1e-3)), at = G.polytope(G.stagedZ(ends[k + 1]));
+    assert.equal(before.faces.length, 14 - k); assert.ok(before.faces.some((f) => f.S === S));
+    assert.equal(at.faces.length, 13 - k); assert.ok(!at.faces.some((f) => f.S === S));
+    const z = G.stagedZ(ends[k + 1]), tight = at.X.filter((x) => Math.abs(x.reduce((t, v, j) => t + (S & (1 << j) ? v : 0), 0) - z[S]) < 1e-9);
+    // the three pair faces (squares) shrink to a corner, the two triple faces to an edge
+    assert.equal(tight.length, G.popcount(S) === 2 ? 1 : 2, `${G.setLabel(S)} shrinks to a ${G.popcount(S) === 2 ? 'corner' : 'edge'}`);
+  }
+  // the end is the associahedron; only the permutohedron end fills space
+  assert.deepEqual(G.stagedZ(7), G.zFromY(G.PRESETS.associahedron));
+  assert.ok(G.shapeOfZ(G.stagedZ(0)).fill.fills);
+  for (let v = 1; v <= 700; v += 7) assert.ok(!G.shapeOfZ(G.stagedZ(v / 100)).fill.fills);
+});
+
+test('which orders work: 16 of 120, and {1,2,4}, {1,3,4} can never go first', () => {
+  const zP = G.zFromY(G.PRESETS.permutohedron), zL = G.zFromY(G.PRESETS.associahedron), NI = G.STAGE_ORDER;
+  const ok = (z) => G.WALL_FORMS.every((f) => G.wallValue(z, f) >= 0);
+  const perms = (a) => (a.length ? a.flatMap((x, i) => perms([...a.slice(0, i), ...a.slice(i + 1)]).map((p) => [x, ...p])) : [[]]);
+  const good = perms(NI).filter((ord) => { const z = [...zP]; return ord.every((S) => { z[S] = zL[S]; return ok(z); }); });
+  assert.equal(good.length, 16);
+  for (const S of NI) { const z = [...zP]; z[S] = zL[S]; assert.equal(ok(z), G.popcount(S) === 2, `${G.setLabel(S)} alone first`); }
+});
+
+test('the k-research study (gperm-walls.js) agrees with this geometry', () => {
+  assert.ok(STUDY.allChecksOk);
+  const zP = G.zFromY(G.PRESETS.permutohedron), zL = G.zFromY(G.PRESETS.associahedron), fr = (x) => { const [a, b = '1'] = String(x).split('/'); return Number(a) / Number(b); };
+  for (const S of [...G.SUBSETS, G.FULL]) {
+    const L = G.setLabel(S), n = G.popcount(S);
+    // the study's frame is this one moved by (1, 1, 1, 1): each height + |S|
+    assert.equal(fr(STUDY.zStart[L]), zP[S] + n, `start ${L}`); assert.equal(fr(STUDY.zEnd[L]), zL[S] + n, `end ${L}`);
+    if (S !== G.FULL) assert.equal(STUDY.interval[L], zP[S] === zL[S], `interval ${L}`);
+  }
+  // its straight line: one wall at t = 1, the same 5 faces, the same face counts as here
+  assert.deepEqual(STUDY.lineA.map((w) => w.param), ['1']);
+  assert.deepEqual(G.lineWalls().map((w) => w.exact), ['1/1']);
+  assert.deepEqual([...STUDY.lineA[0].faces].sort(), G.STAGE_ORDER.map(G.setLabel).sort());
+  assert.deepEqual(STUDY.lineA[0].fAt, G.KNOWN_F.associahedron);
+  // its equal-speed line: the faces with deficit 1 go at s = 1, those with 2 at s = 2 (the same deficits the staged route uses)
+  assert.deepEqual(STUDY.lineB.map((w) => [w.param, [...w.faces].sort()]), [['1', ['{1,3}', '{1,4}', '{2,4}']], ['2', ['{1,2,4}', '{1,3,4}']]]);
+  G.STAGE_ORDER.forEach((S, k) => assert.equal(G.STAGE_DEFICITS[k], fr(STUDY.zStart[G.setLabel(S)]) - fr(STUDY.zEnd[G.setLabel(S)])));
 });
