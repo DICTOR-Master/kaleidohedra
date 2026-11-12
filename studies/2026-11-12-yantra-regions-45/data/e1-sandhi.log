@@ -1,0 +1,38 @@
+counts.py on #103 figures/even.json E1 (16 digits stored): tolerance 1e-30 as written (meant for 40-digit data): (up, down, marmas, sandhis) = (4, 5, 0, 86); tolerance 1e-12 (fits 16 digits): (4, 5, 18, 28)
+ok   #103 reproduced: counts.py's rule at the stored 16 digits gives 18 marmas and 28 sandhis for E1: (4, 5, 18, 28)
+ok   counts.py control row K1 = (4, 5, 18, 24): (4, 5, 18, 24)
+FIND {'name': 'E1 on edge', 'dS': '0', 'incidence_residual': '2.92e-303', 'sandhis': 22, 'classes': {('corner', 2): 14, ('free', 2): 22, ('corner', 3): 11, ('free', 3): 18, ('corner', 4): 2}, 'four_line_points': [('-0.129095195831782', '0.463431412519515'), ('0.129095195831782', '0.463431412519515')], 'odd_regions': (43, {3: 43})}
+FIND {'name': 'GF1', 'dS': '0', 'incidence_residual': '0', 'sandhis': 24, 'classes': {('corner', 2): 14, ('free', 2): 24, ('corner', 3): 13, ('free', 3): 18}, 'four_line_points': [], 'odd_regions': (43, {3: 43})}
+FIND {'name': 'E1 S+1e-10', 'dS': '1e-10', 'incidence_residual': '5.59e-13', 'sandhis': 24, 'classes': {('corner', 2): 14, ('free', 2): 24, ('corner', 3): 13, ('free', 3): 18}, 'four_line_points': [], 'odd_regions': (43, {3: 43})}
+FIND {'name': 'E1 S-1e-10', 'dS': '-1e-10', 'incidence_residual': '5.59e-13', 'sandhis': 28, 'classes': {('corner', 2): 14, ('free', 2): 28, ('corner', 3): 13, ('free', 3): 18}, 'four_line_points': [], 'odd_regions': (45, {3: 41, 4: 4})}
+FIND {'name': 'E1 S+1e-30', 'dS': '1e-30', 'incidence_residual': '5.59e-33', 'sandhis': 24, 'classes': {('corner', 2): 14, ('free', 2): 24, ('corner', 3): 13, ('free', 3): 18}, 'four_line_points': [], 'odd_regions': (43, {3: 43})}
+FIND {'name': 'E1 S-1e-30', 'dS': '-1e-30', 'incidence_residual': '5.59e-33', 'sandhis': 28, 'classes': {('corner', 2): 14, ('free', 2): 28, ('corner', 3): 13, ('free', 3): 18}, 'four_line_points': [], 'odd_regions': (45, {3: 41, 4: 4})}
+FIND {'name': 'E1 S+1e-60', 'dS': '1e-60', 'incidence_residual': '5.59e-63', 'sandhis': 24, 'classes': {('corner', 2): 14, ('free', 2): 24, ('corner', 3): 13, ('free', 3): 18}, 'four_line_points': [], 'odd_regions': (43, {3: 43})}
+FIND {'name': 'E1 S-1e-60', 'dS': '-1e-60', 'incidence_residual': '5.59e-63', 'sandhis': 28, 'classes': {('corner', 2): 14, ('free', 2): 28, ('corner', 3): 13, ('free', 3): 18}, 'four_line_points': [], 'odd_regions': (45, {3: 41, 4: 4})}
+ok   control: the DICTO Yantra by the same rule: 24 sandhis (#103: 24), (43, {3: 43})
+ok   E1 on its exact edge: 22 sandhis, 2 points where four drawn sides meet, odd regions (43, {3: 43})
+  4-line point (-0.129095195832, 0.46343141252): corner True; sides ['t4 left leg', 't5 base', 't5 left leg', 't6 left leg']
+  4-line point (0.129095195832, 0.46343141252): corner True; sides ['t4 right leg', 't5 base', 't5 right leg', 't6 right leg']
+E1 S+1e-10: sandhis 24, odd regions (43, {3: 43})
+   near (-0.1290952, 0.46343141): [(2, False, ['t4 left leg', 't6 left leg']), (3, True, ['t5 base', 't5 left leg', 't6 left leg'])]
+   near (0.1290952, 0.46343141): [(2, False, ['t4 right leg', 't6 right leg']), (3, True, ['t5 base', 't5 right leg', 't6 right leg'])]
+E1 S-1e-10: sandhis 28, odd regions (45, {3: 41, 4: 4})
+   near (-0.1290952, 0.46343141): [(2, False, ['t4 left leg', 't5 base']), (2, False, ['t4 left leg', 't5 left leg']), (2, False, ['t4 left leg', 't6 left leg']), (3, True, ['t5 base', 't5 left leg', 't6 left leg'])]
+   near (0.1290952, 0.46343141): [(2, False, ['t4 right leg', 't5 base']), (2, False, ['t4 right leg', 't5 right leg']), (2, False, ['t4 right leg', 't6 right leg']), (3, True, ['t5 base', 't5 right leg', 't6 right leg'])]
+E1 S+1e-30: sandhis 24, odd regions (43, {3: 43})
+   near (-0.1290952, 0.46343141): [(2, False, ['t4 left leg', 't6 left leg']), (3, True, ['t5 base', 't5 left leg', 't6 left leg'])]
+   near (0.1290952, 0.46343141): [(2, False, ['t4 right leg', 't6 right leg']), (3, True, ['t5 base', 't5 right leg', 't6 right leg'])]
+E1 S-1e-30: sandhis 28, odd regions (45, {3: 41, 4: 4})
+   near (-0.1290952, 0.46343141): [(2, False, ['t4 left leg', 't5 base']), (2, False, ['t4 left leg', 't5 left leg']), (2, False, ['t4 left leg', 't6 left leg']), (3, True, ['t5 base', 't5 left leg', 't6 left leg'])]
+   near (0.1290952, 0.46343141): [(2, False, ['t4 right leg', 't5 base']), (2, False, ['t4 right leg', 't5 right leg']), (2, False, ['t4 right leg', 't6 right leg']), (3, True, ['t5 base', 't5 right leg', 't6 right leg'])]
+E1 S+1e-60: sandhis 24, odd regions (43, {3: 43})
+   near (-0.1290952, 0.46343141): [(2, False, ['t4 left leg', 't6 left leg']), (3, True, ['t5 base', 't5 left leg', 't6 left leg'])]
+   near (0.1290952, 0.46343141): [(2, False, ['t4 right leg', 't6 right leg']), (3, True, ['t5 base', 't5 right leg', 't6 right leg'])]
+E1 S-1e-60: sandhis 28, odd regions (45, {3: 41, 4: 4})
+   near (-0.1290952, 0.46343141): [(2, False, ['t4 left leg', 't5 base']), (2, False, ['t4 left leg', 't5 left leg']), (2, False, ['t4 left leg', 't6 left leg']), (3, True, ['t5 base', 't5 left leg', 't6 left leg'])]
+   near (0.1290952, 0.46343141): [(2, False, ['t4 right leg', 't5 base']), (2, False, ['t4 right leg', 't5 right leg']), (2, False, ['t4 right leg', 't6 right leg']), (3, True, ['t5 base', 't5 right leg', 't6 right leg'])]
+side counts: {'E1 S+1e-10': 24, 'E1 S-1e-10': 28, 'E1 S+1e-30': 24, 'E1 S-1e-30': 28, 'E1 S+1e-60': 24, 'E1 S-1e-60': 28}
+ok   each 4-line point splits off the edge into a corner touch (3 sides, a corner) plus 3 two-side crossings on one side of the edge (22 + 2 x 3 = 28)
+ok   NEG off the edge the split points are not merged: 4-line points [0, 0, 0, 0, 0, 0] (all 0)
+total 2 s
+FINAL ok

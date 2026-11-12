@@ -1,0 +1,13 @@
+question: chunk 7 window vs Koca-Koca-Al-Ajmi 2011 PILOT - is the E8 -> H4 window (pi_perp of the Voronoi cell) the dual of the rectified 120-cell (our exact hull: 720 vertices, 1200 five-vertex cells) or the dual of the rectified 600-cell (Koca 2011 sec. 5.3: 720 pentagonal dipyramids)
+answer_looks_like: ok/FAIL lines: both candidates' f-vectors, cell types, radius ratios (1.061, 1.023); FINAL ok/FAIL
+pilot: this is the pilot, cap 0.08 h (candidates only, no 19440-point hull)
+size_estimate: 2 tasks: Wythoff orbits of 1200 and 720 points, exact hulls, face lattices
+memory_estimate_gb: 1
+time_estimate_h: 0.05
+bounded_by: fixed task list, timeout 0.08 h, 3 GB cage
+control: positive: each candidate reproduces Koca's own counts (720 vertices; 1200 triangular / 720 pentagonal dipyramids; radius ratios 1.061 / 1.023); negative: the window must match exactly one candidate
+progress: none (2 short tasks)
+ledger_checked: chunk 7 entry (65f7dfcc: window 720 vertices, 1200 facets of 5 vertices); no settled entry on the window's name
+ledger_override: none
+if_ok: full run e8koca (with the window hull)
+if_fail_or_cap: read the failing line, fix, rerun the pilot

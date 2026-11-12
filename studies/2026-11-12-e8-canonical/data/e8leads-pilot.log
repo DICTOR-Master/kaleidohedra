@@ -1,0 +1,25 @@
+chunk 7 leads 1, 2: pilot=True; setup 4 s; 2160 Voronoi vertices mapped
+ok   icosian map on all 240 roots (exact)
+PROGRESS 0.33 twin (22 s)
+PROGRESS 0.67 slice (28 s)
+PROGRESS 1.00 controls (31 s)
+control 600-cell (E_perp shadow of the roots): f = (120, 720, 1200, 600), radii2 [((Fraction(3, 2), Fraction(1, 2)),)], edge2 [(((Fraction(1, 1), Fraction(0, 1)),), 720)], degree [(12, 120)], 2-faces [(3, 1200)], cells [((4, 6, ((3, 4),)), 600)], symmetry {'npos': 60, 'nsimple': 4, 'root_system_closed': True, 'invariant': True, 'orbit_v0': 120, 'stab_reflections': 15, 'stab_gram': [(((Fraction(0, 1), Fraction(0, 1)),), 15), (((Fraction(1, 4), Fraction(0, 1)),), 30), (((Fraction(3, 8), Fraction(-1, 8)),), 30), (((Fraction(3, 8), Fraction(1, 8)),), 30)], 'coxeter': [2, 2, 2, 3, 3, 5]}, Wythoff (120, True, 1/4)
+control 120-cell (its polar): f = (600, 1200, 720, 120), radii2 [((Fraction(72, 1), Fraction(-32, 1)),)], edge2 [(((Fraction(246, 1), Fraction(-110, 1)),), 1200)], degree [(4, 600)], 2-faces [(5, 720)], cells [((20, 30, ((5, 12),)), 120)], symmetry {'npos': 60, 'nsimple': 4, 'root_system_closed': True, 'invariant': True, 'orbit_v0': 600, 'stab_reflections': 6, 'stab_gram': [(((Fraction(0, 1), Fraction(0, 1)),), 3), (((Fraction(1, 4), Fraction(0, 1)),), 12)], 'coxeter': [2, 2, 2, 3, 3, 5]}, Wythoff (600, True, (123/2 - 55/2*sqrt5))
+ok   H4 order: free orbit of a generic point under the 4 simple reflections = 14400 (expect 14400)
+ok   POS 600-cell: f = (120, 720, 1200, 600), one radius, one edge length, 2-faces triangles, cells regular tetrahedra, H4-transitive, stabilizer H3 (15 reflections), Wythoff o5o3o3x
+ok   POS 120-cell: f = (600, 1200, 720, 120), one radius, one edge length, pentagons, 20-vertex cells, H4-transitive, stabilizer A3 (6), Wythoff x5o3o3o
+ok   NEG 600-cell against the wrong ring (5-end node): not its Wythoff orbit
+window W_perp: 2160 distinct shadows of the 19440 Voronoi vertices; hull 120 vertices, 600 facets (6 s)
+slice analysis done (24 s)
+slice S: f = (600, 1200, 720, 120), radii2 [((Fraction(752, 1), Fraction(-336, 1)),)], edge2 [(((Fraction(2576, 1), Fraction(-1152, 1)),), 1200)], degree [(4, 600)], 2-faces [(5, 720)] (cycles True), cells [((20, 30, ((5, 12),)), 120)], icosidodecahedron vertex/edge config {}
+slice S symmetry: {'npos': 60, 'nsimple': 4, 'root_system_closed': True, 'invariant': True, 'orbit_v0': 600, 'stab_reflections': 6, 'stab_gram': [(((Fraction(0, 1), Fraction(0, 1)),), 3), (((Fraction(1, 4), Fraction(0, 1)),), 12)], 'coxeter': [2, 2, 2, 3, 3, 5]}; Wythoff o5x3o3o: orbit 1200, equal to S up to scale False, |v0|^2/|wythoff point|^2 = None
+window W: f = (120, 720, 1200, 600), radii2 [((Fraction(7, 8), Fraction(3, 8)),)], edge2 [(((Fraction(3, 8), Fraction(1, 8)),), 720)], degree [(12, 120)], 2-faces [(3, 1200)], cells [((4, 6, ((3, 4),)), 600)]; symmetry {'npos': 60, 'nsimple': 4, 'root_system_closed': True, 'invariant': True, 'orbit_v0': 120, 'stab_reflections': 15, 'stab_gram': [(((Fraction(0, 1), Fraction(0, 1)),), 15), (((Fraction(1, 4), Fraction(0, 1)),), 30), (((Fraction(3, 8), Fraction(-1, 8)),), 30), (((Fraction(3, 8), Fraction(1, 8)),), 30)], 'coxeter': [2, 2, 2, 3, 3, 5]}
+twin: {'n_good': 192, 'parity': [(1, 192)], 'neg': (False, False), 'P': ((0, 1, 3, 2), (1, 1, 1, 1)), 'orthogonal': True, 'roots_to_roots': True, 'det': Fraction(1, 1), 'order': 4, 'swaps_spaces': True, 'vor_to_vor': True, 'Wpar_eq_image': True, 'metric': (True, False), 't': 17.47707176208496}
+ok   LEAD 2: Psi = phi^-1 P sigma maps the 240 icosian roots onto themselves for 192 signed permutations P (parity [(1, 192)])
+ok   NEG Psi without P (phi^-1 sigma) and Psi with phi instead of phi^-1 do NOT preserve the roots
+ok   LEAD 2: Psi in standard E8 coordinates is an orthogonal rational matrix (det 1, order 4) mapping the 240 roots onto themselves: an automorphism of E8
+ok   LEAD 2: Psi maps the Voronoi vertices onto themselves and swaps the golden spaces: par(Psi x) = phi^-1 P perp(x), perp(Psi x) = -phi P par(x) (exact)
+ok   LEAD 2: phi^-1 P maps the 19440 shadows in E_perp exactly onto those in E_par, so W_par = phi^-1 P W_perp
+ok   LEAD 2: phi^-2 c_par = c_perp exactly (phi^-1 P is an isometry E_perp -> E_par in the true metric); NEG phi^2 c_par != c_perp
+total 31 s
+FINAL ok

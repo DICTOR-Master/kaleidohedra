@@ -165,3 +165,32 @@ pattern count (253 − marmas − Σ C(k − 1, 2))? (c) Why the centre sign is 
 Credit: positive geometries and canonical forms: Arkani-Hamed, Bai, Lam (2017); the Śrī Yantra conditions: Huet (2002), Chiodo (2021);
 Kulaichev's yantra: Kulaichev (1984), Rao (1998), Pustynski (2014); Rh345, the DICTO Yantra and its name are DICTO's; R1, Q3 from the
 sri-yantra study (8 Nov 2026).
+
+## #103's E1 sandhi count settled (`scripts/e1_sandhi.py`, logs `data/e1-sandhi-pilot.log`, `data/e1-sandhi.log`, FINAL ok)
+
+**Question.** #103 (Proposition 3, Table 3, §10) lists 28 two-line crossings (sandhis) for E1; above, on E1's exact edge, the count is
+22 sandhis plus two 4-line points. Which counting gives 28, and what should #103 Version 5 say?
+
+**Method.** #103's own rule (counts.py: points where exactly two drawn sides cross, corners left out), run (1) with counts.py itself on
+#103's stored E1 (`figures/even.json`, 16 digits); (2) at 300 digits on E1's exact edge (S re-solved from the incidence, as in
+e1_regions.py); (3) at 300 digits just off the edge, S → S ± δ with δ = 10⁻¹⁰, 10⁻³⁰, 10⁻⁶⁰, listing the clusters at each 4-line point and
+recounting the odd regions. Controls: counts.py's own K1 row (4, 5, 18, 24) and the DICTO Yantra (24 sandhis) by the same rule (positive);
+off the edge the split points must not merge into 4-line points (negative). All held.
+
+**Result.**
+1. **The 4-line points.** On the exact edge the two points are t4's right leg + t5's base + t5's right leg + t6's right leg, and the mirror
+   image (left legs): t5's corner touch (5,5,6) with t4's leg through it. They are corners, so #103's rule counts neither.
+2. **The 28 counts each 4-line point as 3 sandhis.** counts.py as written (tolerance 10⁻³⁰, meant for 40-digit data) gives 0 marmas and
+   86 sandhis on the 16-digit even.json, i.e. nothing merges; with a tolerance that fits 16 digits (10⁻¹²) it gives exactly #103's
+   18 marmas and **28** sandhis. The stored E1 lies just across the edge, on the side where t4's leg cuts off t5's corner: each 4-line point
+   splits into the corner touch (3 sides, a corner) plus three separate crossings of t4's leg with t5's base, t5's leg and t6's leg, so
+   22 + 2 × 3 = **28**; on that side the two tiny extra triangles also appear (45 odd regions, 41 triangles + 4 four-sided). On the other
+   side t4's leg passes outside t5's corner and crosses only t6's leg: 22 + 2 × 1 = **24**, 43 regions. Same at δ = 10⁻¹⁰, 10⁻³⁰, 10⁻⁶⁰.
+3. **On the edge (E1 itself): 22 sandhis, two 4-line points, 43 regions, all triangles.** E1 sits exactly where the count jumps 24 → 28
+   and the regions 43 → 45.
+
+**Correct wording for #103 Version 5:** "E1 keeps 43 regions and 18 marmas; it has 22 sandhis and two points where four sides meet (t4's
+leg through the corner touch (5,5,6), and its mirror image)." Proposition 3 ("the sandhis number 24 in all of them except E1"), Table 3
+(E1 row: 22 + two 4-line points) and §10 to be changed to match; the answer is recorded in #103's status box (To check for Version 5).
+Precision: E1 itself has no exact form, so items 1 and 3 are high precision (300 digits, incidence to 3·10⁻³⁰³); item 2 for #103's
+stored data is exact (Fractions).

@@ -1,0 +1,13 @@
+question: aim 2 chunk 7 leads 1 and 2 PILOT - is the golden slice of 4_21 the uniform rectified 120-cell (exact over Q(sqrt5)); are the two golden windows congruent (E8 automorphism phi^-1 P sigma)
+answer_looks_like: ok/FAIL lines (600-cell and 120-cell controls, H4 order 14400, twin map on roots and deep holes); FINAL ok/FAIL
+pilot: this is the pilot, cap 0.08 h (deep holes only; slice checks gated off)
+size_estimate: 3 tasks; hull of 2160 projected points, 600/120-cell analysis, 14400-point orbit, 384 signed permutations
+memory_estimate_gb: 1
+time_estimate_h: 0.05
+bounded_by: fixed task list, timeout 0.08 h, 3 GB cage
+control: positive: 600-cell f=(120,720,1200,600) Wythoff o5o3o3x, 120-cell f=(600,1200,720,120) Wythoff x5o3o3o, H4 order 14400; negative: wrong Wythoff ring, Psi without P, Psi with phi instead of 1/phi
+progress: PROGRESS <done/3> per task
+ledger_checked: chunk 7 entry (65f7dfcc), leads 1 and 2 open; no settled or failed entry on the slice shape or twin congruence
+ledger_override: none
+if_ok: full run e8leads (all 19440 Voronoi vertices)
+if_fail_or_cap: read the failing line, fix, rerun the pilot

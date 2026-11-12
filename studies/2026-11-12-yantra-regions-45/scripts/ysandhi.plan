@@ -1,0 +1,13 @@
+question: #103 E1 sandhi count FULL - which counting gives #103's 28 two-line crossings for E1: counts.py on the stored 16-digit E1, E1 on its exact edge, and just off the edge on both sides
+answer_looks_like: ok/FAIL/FIND lines at 300 digits; FINAL ok/FAIL
+pilot: ysandhi-pilot (see its log)
+size_estimate: 6 tasks, 27 sides, 351 pairs each, plus one arrangement each
+memory_estimate_gb: 1
+time_estimate_h: 0.1
+bounded_by: fixed task list, timeout 0.5 h, 3 GB cage
+control: positive: counts.py reproduces 28 for stored E1 and its own K1 row (4,5,18,24); DICTO Yantra 24 sandhis; negative: off-edge split points must not merge into 4-line points
+progress: PROGRESS none (4 short tasks); FIND lines
+ledger_checked: E1 region study entry (1bb55954: 22 sandhis + two 4-line points); #103 status box item fe03b13e; no settled entry on which count #103 means
+ledger_override: none
+if_ok: README section, ledger entry, Concordance line, one line in #103 status box, commit and push research-fig3
+if_fail_or_cap: read the failing line; fix and rerun

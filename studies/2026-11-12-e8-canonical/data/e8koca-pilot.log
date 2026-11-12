@@ -1,0 +1,6 @@
+dual rectified 120-cell (Koca 5.2): f = (720, 3120, 3600, 1200), radii2 [(Fraction(2, 1), Fraction(-8, 9)), (Fraction(9, 4), Fraction(-1, 1))], radius ratio 1.0607, edge2 classes 2, 2-faces [(3, 3600)], cells [((5, 9, ((3, 6),)), 1200)]
+dual rectified 600-cell (Koca 5.3): f = (720, 3600, 3600, 720), radii2 [(Fraction(7, 10), Fraction(-3, 10)), (Fraction(9, 2), Fraction(-2, 1))], radius ratio 1.0233, edge2 classes 2, 2-faces [(3, 3600)], cells [((7, 15, ((3, 10),)), 720)]
+ok   control Koca 5.2: 720 vertices, 1200 cells, all triangular dipyramids (5 vertices, 9 edges, 6 triangles), radius ratio 1.061
+ok   control Koca 5.3: 720 vertices, 720 cells, all pentagonal dipyramids (7 vertices, 15 edges, 10 triangles), radius ratio 1.023
+pilot: candidates only
+FINAL ok
