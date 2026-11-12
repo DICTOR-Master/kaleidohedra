@@ -1,0 +1,90 @@
+n=4: d=3, 14 inequalities, 232 nonsingular 3-subsets
+PROGRESS 0.077 line A: 2 candidate break points
+PROGRESS 0.154 line A: 9 stations built
+PROGRESS 0.231 line A: stations, tiling tests and canonical forms done
+--- line A (Postnikov line Pi -> Loday), parameter 0..1: 1 walls; 3.8s
+    WALL at 1 (= 1.000000): facets shrinking to nothing ['13', '14', '24', '124', '134'] (to faces of dim {'13': 1, '14': 1, '24': 1, '124': 1, '134': 1}); f [24, 36, 14] -> [14, 21, 9] -> None
+    station        0: f [24, 36, 14] simple True GP True tiles True (parallelohedron, belts {6: 6}) Omega(Y) = 16/3 (5.33333)
+    station      1/8: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 736/153 (4.81046)
+    station      1/4: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 358/81 (4.41975)
+    station      3/8: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 704/171 (4.11696)
+    station      1/2: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 872/225 (3.87556)
+    station      5/8: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 7648/2079 (3.67869)
+    station      3/4: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 116/33 (3.51515)
+    station      7/8: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 9088/2691 (3.37718)
+    station        1: f [14, 21, 9] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 88/27 (3.25926)
+    Omega on [0, 1]: 8*(8*p**2 + 33*p + 36)/(9*(p + 2)*(4*p + 3))
+PROGRESS 0.308 line B: 3 candidate break points
+PROGRESS 0.385 line B: 9 stations built
+PROGRESS 0.462 line B: stations, tiling tests and canonical forms done
+--- line B (equal-speed line Pi -> Loday), parameter 0..2: 2 walls; 3.2s
+    WALL at 1 (= 1.000000): facets shrinking to nothing ['13', '14', '24'] (to faces of dim {'13': 1, '14': 1, '24': 1}); f [24, 36, 14] -> [18, 27, 11] -> [18, 27, 11]
+    WALL at 2 (= 2.000000): facets shrinking to nothing ['124', '134'] (to faces of dim {'124': 1, '134': 1}); f [18, 27, 11] -> [14, 21, 9] -> None
+    station        0: f [24, 36, 14] simple True GP True tiles True (parallelohedron, belts {6: 6}) Omega(Y) = 16/3 (5.33333)
+    station      1/4: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 2656/567 (4.6843)
+    station      1/2: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 38/9 (4.22222)
+    station      3/4: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 128/33 (3.87879)
+    station        1: f [18, 27, 11] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 488/135 (3.61481)
+    station      5/4: f [18, 27, 11] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 1040/297 (3.50168)
+    station      3/2: f [18, 27, 11] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 92/27 (3.40741)
+    station      7/4: f [18, 27, 11] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 1168/351 (3.32764)
+    station        2: f [14, 21, 9] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 88/27 (3.25926)
+    Omega on [0, 1]: 8*(4*p**2 + 21*p + 36)/(9*(p + 2)*(2*p + 3))
+    Omega on [1, 2]: 8*(16*p + 45)/(27*(2*p + 3))
+PROGRESS 0.538 line C: 2 candidate break points
+PROGRESS 0.615 line C: 9 stations built
+PROGRESS 0.692 line C: stations, tiling tests and canonical forms done
+--- line C (ABHY line Pi -> kinematic associahedron (chunk 4 c)), parameter 0..1: 1 walls; 1.9s
+    WALL at 1 (= 1.000000): facets shrinking to nothing ['13', '14', '24', '124', '134'] (to faces of dim {'13': 1, '14': 1, '24': 1, '124': 1, '134': 1}); f [24, 36, 14] -> [14, 21, 9] -> None
+    station        0: f [24, 36, 14] simple True GP True tiles True (parallelohedron, belts {6: 6}) Omega(Y) = 16/3 (5.33333)
+    station      1/8: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 22013591165939943275210068786381644800/7727404258455315339238881603381332721 (2.84877)
+    station      1/4: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 2503680584214361562285972156432000/1399720748542318339930988777620467 (1.7887)
+    station      3/8: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 1083182746271716526862602229760/881664778905979532353506612567 (1.22857)
+    station      1/2: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 2166489539597726650941637421824/2422507955737846522242405961395 (0.894317)
+    station      5/8: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 16117100584235991788515354835968/23759461390390041271847926556115 (0.678345)
+    station      3/4: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 971871339170245087653749229754600/1831394159970712891267306187020257 (0.530673)
+    station      7/8: f [24, 36, 14] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 169355552681208963453728000/398190758586196720682024487 (0.425313)
+    station        1: f [14, 21, 9] simple True GP True tiles False (not centrally symmetric) Omega(Y) = 9975377538924805000/28698442127814498633 (0.347593)
+    Omega on [0, 1]: 1920800*(9069781049196893301672976*p**11 + 89521171185326254608839794*p**10 + 343917133388925353619288689*p**9 + 720082940157723942220859956*p**8 + 937166507924163593582988860*p**7 + 807598667758125834716935600*p**6 + 474509111800031262347344000*p**5 + 191274688991977262174160000*p**4 + 52066897965603053366400000*p**3 + 9143820461768961024000000*p**2 + 934490675011138560000000*p + 42173328695500800000000)/(3*(8*p + 105)*(16*p + 35)*(41*p + 42)*(59*p + 56)*(85*p + 42)*(97*p + 35)*(100*p + 21)*(291*p + 280)*(307*p + 280)*(409*p + 140)*(409*p + 210)*(487*p + 140)*(661*p + 280)*(683*p + 210))
+PROGRESS 0.769 line Z: 2 candidate break points
+PROGRESS 0.846 line Z: 9 stations built
+PROGRESS 0.923 line Z: stations, tiling tests and canonical forms done
+--- line Z (control line Pi0 -> cube (graphic zonotopes)), parameter 0..1: 1 walls; 12.3s
+    WALL at 1 (= 1.000000): facets shrinking to nothing ['2', '3', '13', '14', '23', '24', '124', '134'] (to faces of dim {'2': 1, '3': 1, '13': 0, '14': 1, '23': 1, '24': 0, '124': 1, '134': 1}); f [24, 36, 14] -> [8, 12, 6] -> None
+    station        0: f [24, 36, 14] simple True GP True tiles True (parallelohedron, belts {6: 6}) Omega(Y) = 16/3 (5.33333)
+    station      1/8: f [24, 36, 14] simple True GP True tiles True (parallelohedron, belts {6: 6}) Omega(Y) = 5595725824/863161365 (6.48283)
+    station      1/4: f [24, 36, 14] simple True GP True tiles True (parallelohedron, belts {6: 6}) Omega(Y) = 11036672/1376375 (8.01865)
+    station      3/8: f [24, 36, 14] simple True GP True tiles True (parallelohedron, belts {6: 6}) Omega(Y) = 348717056/34415199 (10.1326)
+    station      1/2: f [24, 36, 14] simple True GP True tiles True (parallelohedron, belts {6: 6}) Omega(Y) = 34528/2625 (13.1535)
+    station      5/8: f [24, 36, 14] simple True GP True tiles True (parallelohedron, belts {6: 6}) Omega(Y) = 175505408/9923529 (17.6858)
+    station      3/4: f [24, 36, 14] simple True GP True tiles True (parallelohedron, belts {6: 6}) Omega(Y) = 919552/36855 (24.9505)
+    station      7/8: f [24, 36, 14] simple True GP True tiles True (parallelohedron, belts {6: 6}) Omega(Y) = 675217408/17881875 (37.7599)
+    station        1: f [8, 12, 6] simple True GP True tiles True (parallelohedron, belts {4: 3}) Omega(Y) = 64 (64)
+    Omega on [0, 1]: -32*(24*p**4 - 203*p**3 + 635*p**2 - 864*p + 432)/((p - 4)*(p - 3)**2*(p - 2)*(2*p - 3)**2*(3*p - 4))
+ok   n=4: Pi has n! = 24 vertices, simple, Euler
+ok   n=4: Loday end has Catalan(4) = 14 vertices; B ends at Loday too; ABHY end has 14
+ok   n=4: CONTROL: the permutohedron passes the Venkov-McMullen parallelohedron test: parallelohedron, belts {6: 6}
+ok   n=4: CONTROL: Loday's associahedron fails it (not centrally symmetric)
+ok   n=4: CONTROL: the ABHY associahedron fails it (not centrally symmetric)
+ok   n=4: CONTROL line Z: every station Pi0 -> cube tiles (graphic zonotopes)
+ok   n=4: Omega(Pi; centre) = 2^(n-1) n/(n-1)! = 16/3
+ok   n=4: Euler relation at every station of every line
+ok   n=4: triangulation formula = Warren vertex formula at every simple station
+ok   n=4: Y interior at every station
+ok   n=4: greedy vertices = enumerated vertices on lines A, C, Z (generalized permutohedra)
+ok   n=4: lines A, C, Z stay generalized permutohedra (edge test) at every station
+ok   n=4: Omega closed forms continuous at every wall and end
+ok   n=4: Loday's heights satisfy the ABHY mesh relations with every c = 1 (found [Fraction(1, 1)])
+ok   n=4: Omega(Loday; Y) = m_6(X = Loday facet values at Y) = 88/27
+ok   n=4: Omega(ABHY; Y) = chunk 4 amplitude m_6 at the same point = 9975377538924805000/28698442127814498633
+ok   n=4: negative: chunk 4 amplitude with one tree dropped differs
+ok   n=4: facet sizes along A are polynomials of degree <= d-1 (checked on all 9 stations)
+ok   n=4: along A exactly the non-interval facets reach size 0, all at t = 1
+    A facet 13: size/size(0) = -(t - 1)*(t + 1) (vanishes to order 1 at t = 1)
+    A facet 14: size/size(0) = -(t - 1)*(3*t + 1) (vanishes to order 1 at t = 1)
+    A facet 24: size/size(0) = -(t - 1)*(t + 1) (vanishes to order 1 at t = 1)
+    A facet 124: size/size(0) = (t - 3)*(t - 1)/3 (vanishes to order 1 at t = 1)
+    A facet 134: size/size(0) = (t - 3)*(t - 1)/3 (vanishes to order 1 at t = 1)
+PROGRESS 1.000 json written
+n=4: total 22.1s, json gp-line-n4.json
+FINAL ok: all checks and controls held
