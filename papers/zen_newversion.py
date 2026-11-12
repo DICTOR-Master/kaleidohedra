@@ -1,5 +1,5 @@
 # New version of an existing Zenodo record (legacy deposit API, IPv4 only): replaces the files with the given PDF and applies a metadata edit.
-#   python3 papers/zen_newversion.py <latest record id> <pdf> <metadata.json>
+#   python3 papers/zen_newversion.py <latest record id> <pdf> <metadata.json> [extra files, e.g. the study zip]
 # Afterwards: python3 papers/zen_preview.py <new record id>
 import json, urllib.request, socket, os, sys
 orig = socket.getaddrinfo; socket.getaddrinfo = lambda *a, **k: [x for x in orig(*a, **k) if x[0] == socket.AF_INET]
@@ -13,7 +13,8 @@ def req(url, method='GET', body=None, raw=None, ctype='application/json'):
 rid, pdf, meta = sys.argv[1], sys.argv[2], json.load(open(sys.argv[3]))
 nv = req(f'{API}/{rid}/actions/newversion', 'POST'); draft = req(nv['links']['latest_draft'])
 for f in draft.get('files', []): req(f"{API}/{draft['id']}/files/{f['id']}", 'DELETE')
-req(f"{draft['links']['bucket']}/{os.path.basename(pdf)}", 'PUT', raw=open(pdf, 'rb').read(), ctype='application/octet-stream')
+for up in [pdf] + sys.argv[4:]:   # 11-12: extra files (study zip) attached in the same version
+    req(f"{draft['links']['bucket']}/{os.path.basename(up)}", 'PUT', raw=open(up, 'rb').read(), ctype='application/octet-stream')
 req(f"{API}/{draft['id']}", 'PUT', {'metadata': meta})
 p = req(f"{API}/{draft['id']}/actions/publish", 'POST'); print('published', p['id'], p['doi'], p['links']['html'])
 __import__('subprocess').run(stdin=__import__('subprocess').DEVNULL, args=[sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zen_preview.py'), str(p['id'])])   # PDF preview (DICTO rule 10-17), automatic since 11-07 (it had been skipped twice)
