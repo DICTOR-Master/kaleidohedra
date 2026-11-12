@@ -817,3 +817,6 @@ down face of D_22: the corner of D_21 on the axis becomes the face of D_22, axis
 Five-fold axis face = TRUNCATED PENTAGON (decagon, sides alternating, all angles 144°) at k = 10 (31.055994), 13 (8.020054), 17 (1.615005),
 19 (19.092134), 34 (1.068128), 37 (1.406655). Other levels: triangle, pentagon, a corner, or (up) a 9-gon. No period; ratios do not
 settle (k ≤ 27 values agree with the certified axis walk §14).
+
+### Clean rerun to k = 40 (12 Nov 2026): FINAL ok
+`data/og-certified-40-clean.log`: certified_orbit.py from level 10 with the re-split fix (non-flat merged groups split at 1e-13), run in one go. Every level D_10 ... D_41 certified, all coplanarities forced; t_min(D_k) < 3/phi^2 for every k <= 40 (k = 39: <= 1.000083103976, k = 40: <= 1.000108439733); D_41 has 4517522 faces; 10918 s; FINAL ok, exit 0. This log replaces the overwritten level-39 pass log as the record behind #43 v3 Theorem 5 and Table 10 (values checked row by row).
