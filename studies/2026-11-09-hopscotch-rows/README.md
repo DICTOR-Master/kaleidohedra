@@ -226,6 +226,22 @@ j ≡ 5 − k (mod 4), so there is no turn centred at 3/2 + 2ℤ. Measure: t_k =
 t₃ = 5 − 5√5/3, the fixed shells largest. Controls: POSITIVE, the C–O row by the same code (antipol(P_μ) = P_{3/μ} at four μ);
 NEGATIVE, k ↦ 4 − k fails at every k, the unit sphere maps no station onto a station.
 
+**LEAD 7 CONCLUSION (12 Nov 2026): CLOSED EXACTLY; (b) and (c) are 6 × 6 conic determinants with the same five circle points, Δ = κ(u, v)·XᵀJX, and on every viewpoint orbit each is multiplied by a positive factor, so (b) and (c) are constant along orbits: the only walls ON an orbit are (d) and the turn (scripts/lead7_determinants.py, 29 checks, FINAL ok).**
+With V(X) = (x², xy, y², xw, yw, w²) and the five circle points O, T, C7± (t7's corners), C3+ (t3's corner):
+  Δ(X) = det[V(O); V(T); V(C7+); V(C7−); V(C3+); V(X)] = κ·XᵀJX,  κ = 128u³v(uv − 1)(uv + 1)/((1 + u²)⁴(1 + v²)²),
+an identity in X (κ ≠ 0 on every admissible yantra, where uv < 1). (c) is Δ_c = Δ(X9) = 4κ(w9² + S² − S), and the numerator of
+w9² + S² − S is exactly natural.py's G(u, v, S); (b) is Δ_b = Δ(X1) = 4κ(w1² + b1² − b1), with X1 from the (1,3,8) marma. On one
+orbit, M_λ = [[2λ, 0, 0], [0, λ² + 1, λ² − 1], [0, λ² − 1, λ² + 1]] (= T_β, det 8λ³, MᵀJM = 4λ²J) maps O, T to themselves, C7(u) to
+C7(λu), C3(v) to C3(v/λ), depths by d ↦ d/(d + λ²(1 − d)), and the corner constructions are equivariant (M·X9, M·X1 are the image
+yantra's corners); Δ(MX₁, …, MX₆) = (det M)⁴Δ(X₁, …, X₆); and every level point's circle form is multiplied by
+μ(d) = λ²/(d + λ²(1 − d))² > 0, so G(λu, v/λ, S′) = μ(S)·G(u, v, S) exactly and (b) likewise with μ(b1). Reading: in the
+four-parameter space (u, v, Q, S) the (b)(c) surface is a union of whole viewpoint orbits u·v = p; on an orbit the walls are (d)
+(one, linear in β) and the turn u = v, which is why lead 3 reduces to one curve meeting one line. Controls: POSITIVE, the 6 × 6
+determinants from the stored corners of K1, V1 (one orbit, uv equal to 10⁻³⁵) and GF1 vanish to 10⁻⁴⁰ relative; R1 (rational)
+gives exact nonzero Δ_c = 27747541871230976/64483747256812455, Δ_b = 147208433240050237440/1698634908615044520289, both equal to 4κ
+times its circle forms. NEGATIVE, the off-circle point (1, 1, 1) gives Δ = κ ≠ 0; the vertical stretch diag(1, 2, 1) takes C7 off the
+circle and G is not covariant under it; the old direction (u/λ, vλ) is not the image.
+
 **The bridge table (turn rows, 12 Nov 2026).**
 
 | line | antipol rule | turn | fixed point | what sits there | at the turn |
@@ -248,7 +264,7 @@ NEGATIVE, k ↦ 4 − k fails at every k, the unit sphere maps no station onto a
 5. [WORKED 12 Nov, see above: yes, exact] The outline's prediction "the fixed point of a polar turn maximises t_min": on the C–O line it follows from s = μ + 3/μ ≥ 2√3; test
    the icosahedral two-family line (dodecahedron ∩ μ·icosahedron, turn μ ↦ c/μ) for the same closed form min(·, ·, a − b·s).
 6. [CLOSED 12 Nov, see above] #43 Theorem 3 (beat k ↔ 5 − k) as the turn of the Universal PiTet line, fixed point k = 5/2: write it as a row of the table.
-7. Projective row and the outline's yantra prediction ("the yantra's conditions are walls of one determinant family"): (d) is now a
+7. [CLOSED 12 Nov, see above] Projective row and the outline's yantra prediction ("the yantra's conditions are walls of one determinant family"): (d) is now a
    linear wall in β; (b) and (c) are walls in the slope plane; the next step is to write (b), (c) as determinants in (u, v) on one orbit.
 
 ## Ready Concordance ledger lines

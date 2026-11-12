@@ -6434,6 +6434,15 @@
     "retry": "never",
     "study": "studies/2026-11-09-hopscotch-rows",
     "date": "2026-11-12"
+   },
+   {
+    "question": "Aim 1 lead 7: write Kulaichev's (b) and (c) as determinants in (u, v) and verify how they behave on one viewpoint orbit (u, v) -> (lambda u, v/lambda)",
+    "method": "studies/2026-11-09-hopscotch-rows/scripts/lead7_determinants.py: exact sympy; 6 x 6 conic (Veronese) determinant with the five circle points O, T, C7+-, C3+ via cofactors of polynomial 5 x 5 minors; identities with natural.py's G; Klein translation M_lambda (polynomial entries), equivariance of the corner constructions X9, X1, Sym2 determinant, circle-form lemma; controls: K1, V1, GF1 stored corners (positive), R1 exact rational, off-circle point, vertical stretch, old direction (negative); 29 checks",
+    "status": "SETTLED (exact)",
+    "result": "Delta(X) = kappa X^T J X, kappa = 128 u^3 v (uv-1)(uv+1)/((1+u^2)^4 (1+v^2)^2) (nonzero on admissible yantras, uv < 1); (c): Delta_c = 4 kappa (w9^2 + S^2 - S), numerator = G exactly; (b): Delta_b = 4 kappa (w1^2 + b1^2 - b1); on an orbit M maps the yantra's corners to the image yantra's corners and multiplies every circle form by mu(d) = lambda^2/(d + lambda^2 (1-d))^2 > 0, so G(lambda u, v/lambda, S') = mu(S) G(u, v, S): (b), (c) are constant on orbits; the (b)(c) surface is a union of orbits; the walls on an orbit are only (d) and the turn u = v",
+    "retry": "never",
+    "study": "studies/2026-11-09-hopscotch-rows",
+    "date": "2026-11-12"
    }
   ]
  },
@@ -8127,7 +8136,8 @@
    "Lead 4 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY. The icosahedral constant 15 − 6√5 of #43 Theorem 2 now follows from orbit moments plus the one degree-6 invariant harmonic with no numerical step: the harmonic is √5·f6 − (5 + 2√5)/21 on the sphere, f6 a cubic in (x², y², z²), whose critical points are all found over Q(√5); its extremes sit at the five-fold and three-fold axes. With lead 5 (the turn's fixed point maximises t_min on the icosahedral two-family line, exact), the sphere row of the Hopscotch is now proved from the framework for all three Platonic symmetry types.",
    "Lead 1 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED. The sri-yantra study now writes the viewpoint turn as the projective row proves it: u → λu, v → v/λ with λ = √((1 + β)/(1 − β)), the turn β ↦ −β; the rerun of viewpoint.py is numerically identical and the stored K1 → V1 data confirm the direction.",
    "Lead 6 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY. #43 Theorem 3 is now a turn row of the bridge table: polar about c^m·ρ² (ρ² = 15 − 5√5) sends beat S_k to S_{5+4m−k}, so the turn is k ↦ 5 − k with fixed point 5/2, and the turn centres are exactly 1/2 + 2ℤ. At the fixed point sits the antipol pair GTI|FPD, the GTI inscribed in the reference sphere and the FPD circumscribed about it (no station is self-antipol); the shell ratios read the same from either end, the fixed shells largest. Table in the hopscotch-rows README and the polar-line outline.",
-   "Lead 3 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY, the answer is no. At the turn u = v the conditions (b), (c), (d) have exactly one admissible yantra, Kulaichev's own. The full elimination keeps every factor: the only curves of the system are t = ±u, ±1/u (never admissible), and of the 18 isolated real candidates one is Kulaichev's (f348, all 60 stored digits), two fail only admissibility (t1's corner on the wrong side), seven meet only the squared bindu condition (an excircle), eight have no real yantra. So the (d) wall and the turn u = v meet on exactly one viewpoint orbit."
+   "Lead 3 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY, the answer is no. At the turn u = v the conditions (b), (c), (d) have exactly one admissible yantra, Kulaichev's own. The full elimination keeps every factor: the only curves of the system are t = ±u, ±1/u (never admissible), and of the 18 isolated real candidates one is Kulaichev's (f348, all 60 stored digits), two fail only admissibility (t1's corner on the wrong side), seven meet only the squared bindu condition (an excircle), eight have no real yantra. So the (d) wall and the turn u = v meet on exactly one viewpoint orbit.",
+   "Lead 7 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY. Kulaichev's (b) and (c) are one 6 × 6 conic determinant each, with the same five circle points O, T and the great corners: Δ = κ·XᵀJX with κ = 128u³v(uv − 1)(uv + 1)/((1 + u²)⁴(1 + v²)²), and (c)'s determinant is exactly 4κ times natural.py's G. On a viewpoint orbit every circle form is multiplied by λ²/(d + λ²(1 − d))² > 0, so (b) and (c) hold on whole orbits: the (b)(c) yantras form a union of orbits u·v = p, and on each orbit the only walls are (d) and the turn u = v, the outline's 'walls of one determinant family' made exact for the yantra."
   ]
  }
 }

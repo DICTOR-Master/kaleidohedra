@@ -1,0 +1,40 @@
+kappa(u, v) = 128*u**3*v*(u*v - 1)*(u*v + 1)/((u**2 + 1)**4*(v**2 + 1)**2)
+   factors of kappa (numerator and denominator): [(v, 1), (u, 3), (u*v - 1, 1), (u*v + 1, 1), (v**2 + 1, 2), (u**2 + 1, 4)]
+   numerator(circle_9) / G = 1
+   (b): w1^2 + b1^2 - b1 = B/den with B = Q**2*b1**4*u**4*v**4 + 2*Q**2*b1**4*u**4*v**2 + Q**2*b1**4*u**4 + 2*Q**2*b1**4*u**2*v**4 + 4*Q**2*b1**4*u**2*v**2 + 2*Q**2*b1**4*u**2 + Q**2*b1**4*v**4 + 2*Q**2*b1**4*v**2 + Q**2*b1**4 - Q**2*b1**3*u**4*v**4 - 2*Q**2*b1**3*u**4*v**2 - Q**2*b1**3*u**4 - 4*Q**2*b1**3*u**2*v**4 - 8*Q**2*b1**3*u**2*v**2 - 4*Q**2*b1**3*u**2 - 3*Q**2*b1**3*v**4 - 6*Q**2*b1**3*v**2 - 3*Q**2*b1**3 + Q**2*b1**2*u**4*v**6 + 2*Q**2*b1**2*u**4*v**4 + Q**2*b1**2*u**4*v**2 + 2*Q**2*b1**2*u**2*v**4 + 4*Q**2*b1**2*u**2*v**2 + 2*Q**2*b1**2*u**2 + 3*Q**2*b1**2*v**4 + 6*Q**2*b1**2*v**2 + 3*Q**2*b1**2 - 2*Q**2*b1*u**4*v**6 - 2*Q**2*b1*u**4*v**4 - Q**2*b1*v**4 - 2*Q**2*b1*v**2 - Q**2*b1 + Q**2*u**4*v**6 - 2*Q*b1**4*u**4*v**4 - 2*Q*b1**4*u**4*v**2 - 4*Q*b1**4*u**2*v**4 - 4*Q*b1**4*u**2*v**2 - 2*Q*b1**4*v**4 - 2*Q*b1**4*v**2 - 2*Q*b1**3*u**4*v**6 - 2*Q*b1**3*u**4*v**4 + 8*Q*b1**3*u**2*v**4 + 8*Q*b1**3*u**2*v**2 + 6*Q*b1**3*v**4 + 6*Q*b1**3*v**2 + 4*Q*b1**2*u**4*v**6 + 4*Q*b1**2*u**4*v**4 - 4*Q*b1**2*u**2*v**4 - 4*Q*b1**2*u**2*v**2 - 6*Q*b1**2*v**4 - 6*Q*b1**2*v**2 - 2*Q*b1*u**4*v**6 + 2*Q*b1*v**4 + 2*Q*b1*v**2 + b1**4*u**4*v**6 + 3*b1**4*u**4*v**4 + b1**4*u**4*v**2 + 2*b1**4*u**2*v**4 + b1**4*v**4 - 2*b1**3*u**4*v**6 - 3*b1**3*u**4*v**4 - 4*b1**3*u**2*v**4 - 3*b1**3*v**4 + b1**2*u**4*v**6 + 2*b1**2*u**2*v**4 + 3*b1**2*v**4 - b1*v**4    den = (Q*v**2 + Q - v**2)**2*(b1*u**2 + b1 - 1)**2
+   (c): w9^2 + S^2 - S = G/den with G = S**2*u**6*v**4 + 3*S**2*u**4*v**4 + S**2*u**2*v**4 - 2*S**2*u**2*v**2 + S**2 - 3*S*u**4*v**4 - 2*S*u**2*v**4 + 2*S*u**2*v**2 - S + u**2*v**4
+   G(lambda u, v/lambda, S') / G(u, v, S) = lambda**2/(S*lambda**2 - S - lambda**2)**2
+   K1: |Delta_c|/|kappa| = 5.33e-41, |Delta_b|/|kappa| = 6.63e-41, u v = 0.540181513475453
+   V1: |Delta_c|/|kappa| = 2.7e-41, |Delta_b|/|kappa| = 1.19e-40, u v = 0.540181513475453
+   GF1: |Delta_c|/|kappa| = 6.17e-41, |Delta_b|/|kappa| = 1.5e-40, u v = 0.472135954999579
+   R1 (exact): Delta_c = 27747541871230976/64483747256812455  Delta_b = 147208433240050237440/1698634908615044520289
+  ok   (1) polynomial representatives: C7 = (2u, u^2 - 1, u^2 + 1)/(1 + u^2), C3 = (2v, 1 - v^2, 1 + v^2)/(1 + v^2)
+  ok   (1) Delta(X) = kappa(u, v) X^T J X identically in X (cofactors = kappa (1, 0, 1, 0, 0, -1))
+  ok   (1) kappa != 0 for u, v > 0, u v != 1 (factors: u, v, u v - 1 and positive polynomials); admissible yantras have u v < 1
+  ok   (2) Delta_c = 4 kappa (w9^2 + S^2 - S)
+  ok   (2) numerator(w9^2 + S^2 - S) = (constant or u, v monomial) x G of natural.py
+  ok   (2) Delta_b = 4 kappa (w1^2 + b1^2 - b1)
+  ok   (3) det M = 8 lambda^3 and M^T J M = 4 lambda^2 J
+  ok   (3) sqrt(1 - beta^2) = 2 lambda/(lambda^2 + 1)
+  ok   (3) M is T_beta with beta = (lambda^2 - 1)/(lambda^2 + 1) (on a generic point)
+  ok   (3) depth map d -> d/(d + lambda^2 (1 - d)) (levels stay level)
+  ok   (3) M O ~ O, M T ~ T
+  ok   (3) M C7(u) ~ C7(lambda u), M C3(v) ~ C3(v/lambda) (slopes u -> lambda u, v -> v/lambda)
+  ok   (3) NEGATIVE: the old direction (u/lambda, v lambda) is not the image
+  ok   (3) equivariance of (c): M X9(u, v, S) ~ X9(lambda u, v/lambda, S')
+  ok   (3) equivariance of (b): M X1(u, v, Q, b1) ~ X1(lambda u, v/lambda, Q', b1')
+  ok   (3) V(M X) = Sym2(M) V(X) and det Sym2(M) = (det M)^4, so Delta(M X_1, ..., M X_6) = (det M)^4 Delta(X_1, ..., X_6)
+  ok   (3) third coordinate of M (2x, 1 - 2d, 1) is 2 (d + lambda^2 (1 - d))
+  ok   (3) (c) on the orbit: w9'^2 + S'^2 - S' = mu(S) (w9^2 + S^2 - S), mu(S) = lambda^2/(S + lambda^2 (1 - S))^2 > 0
+  ok   (3) hence G(lambda u, v/lambda, S') = mu_c G(u, v, S) with mu_c = lambda^2/(S + lambda^2 (1 - S))^2 (exact)
+  ok   (3) lemma: for every level point the image circle form is mu(d) times the circle form
+  ok   (3) (b) on the orbit: w1'^2 + b1'^2 - b1' = mu(b1) (w1^2 + b1^2 - b1) (lemma + equivariance of X1)
+  ok   NEGATIVE: the point (1, 1, 1) off the circle gives Delta = kappa != 0
+  ok   NEGATIVE: the vertical stretch diag(1, 2, 1) takes C7 off the circle
+  ok   NEGATIVE: under the stretch (depth image of S, slopes kept) G is not a multiple of G
+  ok   POSITIVE: K1, V1 (same orbit), GF1 have Delta_b = Delta_c = 0 to 1e-30
+  ok   POSITIVE: K1 and V1 lie on one orbit (u v equal to 1e-35)
+  ok   R1 exact: P, R, w3, w7 from (u, v) = (19/24, 2/3) match its stored b3, b7, w3, w7
+  ok   R1 exact: the model corners X9, X1 reproduce its stored w9, w1 (the formulas are the yantra's own lines)
+  ok   R1 exact: Delta_c, Delta_b rational and nonzero (R1 has neither (b) nor (c)); equal to 4 kappa (circle form)
+FINAL ok
