@@ -6628,6 +6628,16 @@
     "study": "studies/2026-11-12-pds-hopscotch-line",
     "date": "2026-11-12",
     "target": "aim 2 paper, Remark 1; Alicia book Ch. 9 (credit Goethals-Seidel at the next version)"
+   },
+   {
+    "question": "aim 2 paper, status flag: are the 600-cell line's two inner hops (no 19-design station, B > 0) and the silent point mu_Omega = 0.92144963 (only zero of the order-12 tone B) exact, not 40-digit root location?",
+    "method": "studies/2026-11-12-pds-hopscotch-line/scripts/pds_exact.py: per hop the corner polynomial P12(x(mu)) (exact chamber, same sample mu as pds_line) and B's numerator (exact, pds-line.json) counted with the canon_unique counter (norm over Q, exact real-root isolation, sign of gcd over Q(sqrt5)); exact values at the four walls; controls: mu* re-isolated with its degree-20 polynomial, synthetic counter controls, B end signs and B(r) as logged, B - B(q) has a root in each inner hop (negative), three distinct corner polynomials",
+    "status": "SETTLED (exact)",
+    "result": "exactly one 19-design station (mu*) and exactly one zero of B (mu_Omega = 0.921449634428905791812131090257, minimal polynomial over Q of degree 24) on the whole 600-cell line; none in the middle or truncated-120-cell hop, where B > 0; mu_Omega < mu* < r exactly, B(r) < 0; the turn images are not stations",
+    "retry": "never",
+    "study": "studies/2026-11-12-pds-hopscotch-line",
+    "date": "2026-11-12",
+    "target": "aim 2 paper, Theorem 1(iii) and its proof"
    }
   ]
  },
