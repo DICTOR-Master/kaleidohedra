@@ -1,0 +1,27 @@
+ok   R1 S(2) has 12 corners, all at the edge midpoints of the cube (cuboctahedron)
+ok   R1 S(3/2) = S(2)^v has 24 corners and one edge length (squared {1/2}): the uniform truncated octahedron
+ok   NEG R1 S(5/3) has two edge lengths {2/9, 8/9} (not uniform)
+ok   R1 polar of S(2) (the rhombic dodecahedron) has volume 2, so Omega(S(2); 0) = 12 = Table 1 value 24/2
+ok   R1 the feet hull of S(3/2) is the same rhombic dodecahedron (volume 2)
+ok   R1 mu = 3/2: Omega(S(mu); 0) = 3! vol(polar) = 64/3 = 3! vol(feet hull of S(3/mu)) = 64/3 = Table 1 64/3
+PROGRESS 1/5 R1 (2 s)
+ok   R2 vol((cube - y)polar) = int over the octahedron of (1 - x.y)^-4 dx, Taylor coefficients equal through order 6 (exact)
+ok   NEG R2 exponent -3 instead of -4 fails
+PROGRESS 2/5 R2 (2 s)
+ok   R3 Table 1 (600-cell) continuous at 1/2 + sqrt5/6 and (5 + sqrt5)/8 (exact)
+ok   R3 mu < r^2: Omega = 4! vol(600-cell, circumradius 1)/mu^4 = 75(sqrt5 - 1)/mu^4, and it meets 600(5 sqrt5 - 11)/mu^3 at r^2 (exact)
+ok   R3 mu > 1: Omega = 1440(47 sqrt5 - 105) = -151200 + 67680 sqrt5, the study value 4! vol(120-cell polar)
+ok   R3 turn images r^2/((5+sqrt5)/8) = sqrt(5)/5 + 1/2 = (5+2sqrt5)/10 and r^2/(1/2+sqrt5/6) = 3*sqrt(5)/16 + 9/16 = (9+3sqrt5)/16, neither a wall
+PROGRESS 3/5 R3 (3 s)
+ok   R4 cube line: ranks per corner (facet normals, corner normals) by chamber [(0.5, [(0, 3)]), (1.5, [(1, 2)]), (2.5, [(2, 1)]), (3.5, [(3, 0)])] = power of 1/mu
+ok   NEG R4 at the wall mu = 2 the meet is not transversal (ranks add to more than 3) ([(2, 2)])
+ok   R4 icosahedral line: ranks by chamber [(2.0562, [(0, 3)]), (2.4514, [(1, 2)]), (3.118, [(2, 1)]), (3.9798, [(3, 0)])] = power of 1/mu
+PROGRESS 4/5 R4 (3 s)
+ok   R5 m = 3 lines, alternate sectors: sum of the in-sector forms = 0; all 2m sectors sum to 0 (exact)
+ok   NEG R5 m = 3 with one in-sector swapped for its neighbour: nonzero
+ok   R5 a cone and its antipode have the same form (m = 3, sectors 0 and 3)
+ok   R5 m = 5 lines, alternate sectors: sum of the in-sector forms = 0; all 2m sectors sum to 0 (exact)
+ok   R5 m = 2: the two opposite in-sectors have equal forms and their sum times the two line forms is the constant -29/120, twice one cone (point residue 2 in absolute value)
+PROGRESS 5/5 R5 (3 s)
+total 3 s
+FINAL ok
