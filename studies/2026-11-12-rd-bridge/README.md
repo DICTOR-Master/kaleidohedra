@@ -96,8 +96,49 @@ admits extra face fits; the test is whether the extras still let anything non-hi
 |---|---|---|---|---|---|
 | H18 | 62 | 2907 | 6996 (4089) | 45 allowed, 15 outside P*, 0 survive a shell (certified) | NOT forced at R = 2 or 3 |
 | **H00** | **90** | **2104** | **2413 (309)** | **30, all occurring, 0 outside P*** | **FORCED at R = 2** |
-| FULL | 118 | 2280 | 2338 (58) | (running) | (running) |
+| FULL | 118 | 2280 | 2338 (58) | 30, all occurring, 0 outside P* | FORCED at R = 2 (UNSAT, 63 s) |
 **Result.** The 90 keyed RDs (H00: frames of touching chairs + sharing; bumps and dents as above) admit a tiling (every allowed
 pair fits) and every tiling by them is a P*-tiling of whole marked chairs, hence uniquely hierarchical (Kamenetsky's Theorem A,
 reproduced by us) and strongly aperiodic. ASSUMPTION, as in Kamenetsky's model: the pieces sit on the RD (fcc) lattice; for tiny
 bumps on RDs that registration still needs its own argument (open item). Next: that registration argument; exact keying to cut 90 down.
+
+## Registration: keyed RDs must sit on one fcc lattice (12 Nov; `scripts/registration_check.py`, exact)
+This closes the ASSUMPTION above for the keyed sets (shape fixed here: on each face, square pyramids with sides along the face's
+diagonals, half-side s = 1/40 in units where the RD is {x : |x_i| + |x_j| <= 1}, centred at the keyed_rd.py positions; class c has
+height c * s / (2 * number of classes), so every pyramid has height at most s/2).
+**Theorem (registration).** In any tiling of space by congruent copies of keyed RDs of this kind, the RD cores of the pieces are the
+translates of one RD by one fcc lattice, neighbouring pieces meet whole face to whole face, and all pieces have the same hand.
+Proof. (1) Every dihedral angle of the RD is exactly 120 degrees (R1). Near every crease of a pyramid the surface bends by at most
+theta = arccos(4/5) < 37 degrees (height <= s/2), and the pyramids keep a flat margin from every face edge (R3). (2) Sector lemma (R4):
+at a generic point of a line lying in the boundaries of several pieces, their sectors fill 360 degrees; each sector is 120 (an RD edge)
+or 180 +- theta (a face or a pyramid crease); the only filling containing a 120 is 120 + 120 + 120. So every edge of a piece lies along
+RD edges of exactly two other pieces, and no RD edge of one piece can lie in the flat part of another piece's face (120 + 180 leaves 60).
+(3) Take a face F of piece A and the piece B whose 120-degree wedge sits beside F along an edge l of F: B has a face G in the plane of F
+on the same side of l. If an end of G's edge on l lay strictly inside F's edge, or G were the rhombus turned end for end, an edge of G
+would run into the flat margin of F, which (2) forbids; so G = F. (4) The RD with a given rhombic face on a given side is unique (R2:
+the face's stabiliser has 4 elements and realises all 4 symmetries of the rhombus), so B's core is A's core moved by the lattice vector
+across F. Going from face to face, the cores are one RD moved by all fcc lattice vectors; these already fill space, so there are no other
+pieces. (5) Hand: no mirrored keyed piece fits flush beside an unmirrored one on any face in any of the 24 turns (M: 0 such pairs; the
+recount of unmirrored fits with our own rotations agrees with keyed_rd.py: 2413 for H00, 2338 for FULL), so every piece has the hand of
+its face neighbours, hence of all. With registration, two face neighbours fit with neither overlap nor gap exactly when every bump meets
+a dent of the same size, which is the fit relation keyed_rd.py tested; the certification chain of the 90 keyed RDs then stands
+without the assumption.
+CONTROLS: (R4) negative control: with the cube's 90-degree edges the filling 90 + 90 + 180 exists, which is how cube layers slide; the
+lemma is not vacuous. (M) positive control: the unmirrored recount above. Logs: data/registration-H00.log, data/registration-FULL.log.
+Note: this argument uses only the RD core (all dihedral angles 120 degrees); plain RDs have the same rigidity, so the bumps carry the
+marking, not the registration.
+
+## Cutting the keyed 90 down: the smaller certified markings as shapes (12 Nov; `scripts/keyed_cutdown.sh`, dbb job rd-keyedcut, FINAL ok)
+Same keying as above (one orbit of 4 positions per face), lattice registration and hand checked per set (registration_check.py).
+| set | types | allowed face pairs | fitting (extra) | mirrors | chair contacts | whole chairs |
+|---|---|---|---|---|---|---|
+| H02 | 87 | 2473 | 4233 (1760) | none fit | 30, 0 outside P* | NOT forced at R = 2, 3 |
+| H05 | 83 | 2233 | 3867 (1634) | none fit | 30, 0 outside P* | NOT forced at R = 2, 3 |
+| H07 | 83 | 2233 | 3867 (1634) | none fit | 30, 0 outside P* | NOT forced at R = 2, 3 |
+| H01 | 90 | 2445 | 4731 (2286) | none fit | 30, 0 outside P* | NOT forced at R = 2, 3 |
+| H03 | 90 | 2445 | 4731 (2286) | none fit | 30, 0 outside P* | NOT forced at R = 2, 3 |
+Controls held in every set: every allowed pair fits (keyed_rd FINAL ok), registration FINAL ok, a filling with a whole chair exists.
+**Result:** as shapes with simple cancel-keying, none of the smaller markings certifies; the extra face fits (1634-2286, against 309
+for H00) let the solver break the chair grouping. The 90 keyed RDs (H00) remain the smallest certified keyed set. The extras are the
+cost of cancel-keying (faces sharing a partner fit each other's partners), so the next step is EXACT keying: split face classes until
+fit = allowed (or the extras left are harmless), then retest these sets. Logs: data/keyed-cut-*.log.

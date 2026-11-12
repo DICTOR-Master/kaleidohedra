@@ -1,0 +1,31 @@
+level 4: chairs 4096, complete sites 108640 (0s)
+full labels done (21s)
+H05: 83 types, 2233 allowed (type, face, type, turn) pairs; symmetric types 7
+classes 632 (sizes 1..632), flat positions 0 of 3984
+pairs that fit: 3867; allowed: 2233; allowed but not fitting: 0; fitting but NOT allowed: 1634
+VERDICT NOT YET: the features accept forbidden pairs (more positions or a finer scheme needed)
+FINAL ok
+ok   (R1) RD: 14 corners, 24 edges, cos(normal angle) over all edges = [Fraction(1, 2)] (1/2 = dihedral 120)
+ok   (R2) stabiliser of face (1, 1, 0) (and its side): 4 elements, 4 distinct actions on the rhombus (its full group has 4)
+ok   (R3) face corners as computed are the RD corners of the face
+ok   (R3) 4 positions per face, inside the rhombus: True; squared distance to the boundary >= 841/29400 (0.1691); squares of half-side s = 1/40 stay at least half that distance from the boundary and are disjoint
+ok   (R3) heights: class c gets height c * 1/50560 (s/2 / 632 classes), so every pyramid has height <= s/2; creases bend <= 36.87 degrees < 60
+ok   (R4) RD: fillings of 360 by (k edges of 120, m near-flat sectors): [(0, 2), (3, 0)]; the only one with an RD edge is (3, 0)
+ok   (R4) NEGATIVE CONTROL cube: fillings [(0, 2), (2, 1), (4, 0)] include an edge beside a flat sector (k >= 1, m >= 1): sliding possible
+ok   (M) CONTROL unmirrored fits recounted with our own rotations: 3867 (keyed_rd.py: 3867)
+(M) faces with no bump or dent: 0; fitting (type, face, MIRRORED type, turn) pairs: 0
+VERDICT MIRRORS: no mirrored piece fits beside an unmirrored one (a tiling is all one hand)
+FINAL ok
+touching proper poses 1194; allowed by H05: 30; P0 (proper) 30 all allowed: True; inside P*: True; P* proper 44; allowed outside P*: 0; P* poses refused: 14
+VERDICT CERTIFIED BY THEOREM A (given whole chairs)
+R2 (G) allowed pairs claiming cubes on two different grids: 0
+R2 control (1): rule-obeying filling with a whole chair round c0 exists: True
+R2 (C) ball R=2: 665 sites, 357240 choices, 7 candidate chairs for c0 (59s)
+R2 (C) a rule-obeying filling WITHOUT a whole chair round c0 exists (59s)
+R2 VERDICT NOT FORCED
+R3 (G) allowed pairs claiming cubes on two different grids: 0
+R3 control (1): rule-obeying filling with a whole chair round c0 exists: True
+R3 (C) ball R=3: 1687 sites, 889896 choices, 7 candidate chairs for c0 (112s)
+R3 (C) a rule-obeying filling WITHOUT a whole chair round c0 exists (112s)
+R3 VERDICT NOT FORCED
+DONE H05
