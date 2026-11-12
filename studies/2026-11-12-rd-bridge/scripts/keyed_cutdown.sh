@@ -3,7 +3,7 @@
 # H07 83) and the 90-type H01, H03 as shapes. Per scheme: keyed_rd.py (bumps/dents; must admit every allowed pair: FINAL ok),
 # registration_check.py (lattice + mirrors), contact_test.py (chair contacts vs Kamenetsky's P*), integrity_test.py (whole chairs, R 2
 # then 3). Controls: keyed_rd FINAL ok and registration FINAL ok for every scheme, integrity positive control true; else FINAL FAIL.
-cd "$(dirname "$0")"; D=../data; PY=~/geom/bin/python; S="H02 H05 H07 H01 H03"
+cd "$(dirname "$0")"; D=../data; PY=${PY:-python3};   # the job sets PY to the study environment S="H02 H05 H07 H01 H03"
 run() {
   s=$1; K=$D/keyed-$s-K1.json; L=$D/keyed-cut-$s.log; : > $L
   $PY -W ignore -u keyed_rd.py 4 $s 1 $K >> $L 2>&1
