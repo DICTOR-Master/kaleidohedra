@@ -6349,6 +6349,15 @@
     "retry": "other coarsenings (not subgroup cosets: per-edge-type information), or a keyed RD shape from the 62",
     "study": "2026-11-12-rd-bridge",
     "date": "2026-11-12"
+   },
+   {
+    "question": "one-piece aim (DICTO 12 Nov 'go with the keyed RD'): can the certified marked RD sets be realised as SHAPES (Chair44-style bumps and dents on the RD faces)?",
+    "method": "keyed_rd.py (4 pyramids per face, sign-linked height classes), then contact_test and integrity_test with the keyed fitting relation as rules",
+    "status": "FOUND (90 keyed RDs certify)",
+    "result": "H00 (90 types): 2413 fitting face pairs (309 beyond the 2104 allowed), yet only the 30 occurring chair contacts and whole chairs forced (R=2) -> strongly aperiodic set of 90 keyed RD shapes, given fcc lattice registration (open). H18 (62): contacts fine, whole chairs not forced (R=2,3). FULL (118): running",
+    "retry": "lattice registration for bumped RDs; exact keying to cut 90 down",
+    "study": "2026-11-12-rd-bridge",
+    "date": "2026-11-12"
    }
   ]
  },

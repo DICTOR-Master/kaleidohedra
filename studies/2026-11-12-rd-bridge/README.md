@@ -86,3 +86,18 @@ contact test (one shell), and for those with no contact outside P* the whole-cha
 - **H18 (62 types) rules complete by level 4** (2104-type check repeated: types and pair rules equal at levels 4 and 5).
 **Result: the smallest certified set among the 30 subgroup schemes has 62 marked RDs (H18): each edge RD knows each touching chair's turn up to quarter turns about the y axis, and which of its cubes share a chair; each centre RD its chair's full turn.** It is strongly aperiodic by the same chain as the 90-type set (grid, whole chairs at R = 2, contacts = the 30 occurring, Theorem A).
 - Contacts outside P*: H13 28 (10), H21 15 (10), H27 32 (2), H28 14 (19), H29 6 (115).
+
+## Keyed shapes: the 90 keyed RDs certify (12 Nov; `scripts/keyed_rd.py`, dbb jobs rd-keyed, rd-keyed2)
+Chair44-style keying: on each rhombic face of each marked RD, 4 square pyramids at positions symmetric under the rhombus's own
+symmetries; heights from a sign-linked class system (allowed face pairs must cancel exactly, h_A + h_B = 0); each class its own size.
+Simple cancel-keying cannot be exact when two faces share a partner (they then fit each other's partners too), so every keyed set
+admits extra face fits; the test is whether the extras still let anything non-hierarchical through.
+| set | types | allowed face pairs | fitting face pairs (extra) | chair contacts | whole chairs |
+|---|---|---|---|---|---|
+| H18 | 62 | 2907 | 6996 (4089) | 45 allowed, 15 outside P*, 0 survive a shell (certified) | NOT forced at R = 2 or 3 |
+| **H00** | **90** | **2104** | **2413 (309)** | **30, all occurring, 0 outside P*** | **FORCED at R = 2** |
+| FULL | 118 | 2280 | 2338 (58) | (running) | (running) |
+**Result.** The 90 keyed RDs (H00: frames of touching chairs + sharing; bumps and dents as above) admit a tiling (every allowed
+pair fits) and every tiling by them is a P*-tiling of whole marked chairs, hence uniquely hierarchical (Kamenetsky's Theorem A,
+reproduced by us) and strongly aperiodic. ASSUMPTION, as in Kamenetsky's model: the pieces sit on the RD (fcc) lattice; for tiny
+bumps on RDs that registration still needs its own argument (open item). Next: that registration argument; exact keying to cut 90 down.
