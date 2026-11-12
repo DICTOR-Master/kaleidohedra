@@ -1,0 +1,65 @@
+chunk 5c lead (b): 4 tasks
+PARI stack size set to 2000000000 bytes, maximum size set to 2000003072
+PARI stack size set to 2000000000 bytes, maximum size set to 2000003072
+PARI stack size set to 2000000000 bytes, maximum size set to 2000003072
+PARI stack size set to 2000000000 bytes, maximum size set to 2000003072
+ok   R1: N has degree 24 and is even in x (N(x, y) = M(x^2, y); mirror symmetry)
+FIND R1: leading coefficient of N in y: -113989974511309924514216487726486624770 (a constant: no vertical asymptotes)
+FIND R1: points at infinity: top form N24 = y^8 * (degree 16 in t = x/y; y^24 coefficient nonzero: 1); its 16 finite roots are distinct (min distance 0.00694) and nonzero: 16 simple points at infinity, 12 of them real; the factor y^8 is the horizontal point (1:0:0), where the 9 parallel bases meet
+FIND R1: at (1:0:0) N = 0 has a point of multiplicity 8 (deg_x N = 16); its 8 tangent lines are the horizontal lines y = r with Lx(r) = 0 (Lx = coefficient of x^16), distinct (exact gcd), 8 real: an ordinary 8-fold point (delta = 28), the lemma of 5c at infinity (9 lines through one point, alternate sectors cancel: order 9 - 1 = 8); the real tangents are horizontal asymptotes
+FIND R1: EXACT: Res_y(M, M_y) degree 248, Res_y(M_s, M_y) degree 225, their gcd G degree 9, factors (degree, power) [(1, 1), (1, 1), (1, 1), (1, 1), (1, 1), (1, 1), (1, 1), (1, 1), (1, 1)] (94 s)
+FIND R1: EXACT: singular points of M off the axis: 9; marmas (x^2, y) on the right half: 9; the two sets are equal: True
+FIND R1: EXACT: on the axis x = 0, N(0, y) is squarefree: True (no singular point on the axis)
+FIND R1: the singular points of N = 0 (affine and at infinity, real and complex) are the 18 marmas, each an ordinary double point (order 2, Hessian definite: 5c point table), and the ordinary 8-fold point (1:0:0). Irreducible over C: components of degrees a + b = 24 meet in ab points counted with multiplicity, all at singular points; the nodes give at most 18 and (1:0:0) at most m_A m_B <= 16, so ab <= 34, which leaves only a = 1, a line; a non-horizontal line misses (1:0:0) and would need 23 nodes, a horizontal line holds at most 2 marmas (mirror pairs) and gets 7 from (1:0:0): 9 < 23. Genus = 253 - 18 - 28 = 207
+FIND R1: real picture (numerical, 120 digits, 82 critical x values, 0 count mismatches): 27 connected pieces in the plane, 7 of them closed ovals, 20 running to infinity (20 + 20 ends); in the projective plane 11 real components of one dimension (16 ends on horizontal asymptotes, all joined at (1:0:0)), plus the 18 marmas as isolated real points
+FIND R1: N at the circle centre (0, 1/2) = -6.81881e-23 (not zero: the curve misses the bindu centre); on the circle N has 26 real zeros (degree 48 in the circle parameter), all simple: True
+R1: 142 s
+PROGRESS 0.25 R1
+ok   R1num@300: N has degree 24 and is even in x (N(x, y) = M(x^2, y); mirror symmetry)
+FIND R1num@300: leading coefficient of N in y: -1.0195516534690204920414396862318427855 (a constant: no vertical asymptotes)
+FIND R1num@300: points at infinity: top form N24 = y^8 * (degree 16 in t = x/y; y^24 coefficient nonzero: 1); its 16 finite roots are distinct (min distance 0.00694) and nonzero: 16 simple points at infinity, 12 of them real; the factor y^8 is the horizontal point (1:0:0), where the 9 parallel bases meet
+FIND R1num@300: at (1:0:0) N = 0 has a point of multiplicity 8 (deg_x N = 16); its 8 tangent lines are the horizontal lines y = r with Lx(r) = 0 (Lx = coefficient of x^16), distinct, 8 real: an ordinary 8-fold point (delta = 28), the lemma of 5c at infinity (9 lines through one point, alternate sectors cancel: order 9 - 1 = 8); the real tangents are horizontal asymptotes
+FIND R1num@300: Res_y(M, M_y) degree 248, Res_y(M_s, M_y) degree 225 (exact resultants of M rounded to 60 digits, used only for starting points, 62 s)
+FIND R1num@300: singular points of M off the axis (M = M_s = M_y = 0, s != 0; 3147 candidates from the roots of Res_y(M_s, M_y), refined by Newton): 9, of which 9 are (x^2, y) of the 9 right-hand marmas (each gives the two mirror marmas)
+FIND R1num@300: on the axis x = 0: the 24 roots of N(0, y) are distinct (min distance 0.0252): no singular point on the axis
+FIND R1num@300: the singular points of N = 0 (affine and at infinity, real and complex) are the 18 marmas, each an ordinary double point (order 2, Hessian definite: 5c point table), and the ordinary 8-fold point (1:0:0). Irreducible over C: components of degrees a + b = 24 meet in ab points counted with multiplicity, all at singular points; the nodes give at most 18 and (1:0:0) at most m_A m_B <= 16, so ab <= 34, which leaves only a = 1, a line; a non-horizontal line misses (1:0:0) and would need 23 nodes, a horizontal line holds at most 2 marmas (mirror pairs) and gets 7 from (1:0:0): 9 < 23. Genus = 253 - 18 - 28 = 207
+FIND R1num@300: real picture (numerical, 120 digits, 82 critical x values, 0 count mismatches): 27 connected pieces in the plane, 7 of them closed ovals, 20 running to infinity (20 + 20 ends); in the projective plane 11 real components of one dimension (16 ends on horizontal asymptotes, all joined at (1:0:0)), plus the 18 marmas as isolated real points
+FIND R1num@300: N at the circle centre (0, 1/2) = -6.81881e-23 (not zero: the curve misses the bindu centre); on the circle N has 26 real zeros (degree 48 in the circle parameter), all simple: True
+R1num@300: 266 s
+PROGRESS 0.50 R1num@300
+u isolated exactly by a sign change of the degree-160 polynomial on an interval of width 1e-280: yes; u = 0.6793185887067746573886503103907545526887
+GF1 rebuilt: bindu centring (not imposed) misses by 1.47e-294; worst Huet condition 4.67e-302; agrees with the stored 40 digits to 4.46e-41
+ok   GF1@300: DICTO Yantra rebuilt from its degree-160 polynomial
+ok   GF1@300: N has degree 24 and is even in x (N(x, y) = M(x^2, y); mirror symmetry)
+FIND GF1@300: leading coefficient of N in y: -1.3970868182885336123513131675134351752 (a constant: no vertical asymptotes)
+FIND GF1@300: points at infinity: top form N24 = y^8 * (degree 16 in t = x/y; y^24 coefficient nonzero: 1); its 16 finite roots are distinct (min distance 0.00814) and nonzero: 16 simple points at infinity, 16 of them real; the factor y^8 is the horizontal point (1:0:0), where the 9 parallel bases meet
+FIND GF1@300: at (1:0:0) N = 0 has a point of multiplicity 8 (deg_x N = 16); its 8 tangent lines are the horizontal lines y = r with Lx(r) = 0 (Lx = coefficient of x^16), distinct, 8 real: an ordinary 8-fold point (delta = 28), the lemma of 5c at infinity (9 lines through one point, alternate sectors cancel: order 9 - 1 = 8); the real tangents are horizontal asymptotes
+FIND GF1@300: Res_y(M, M_y) degree 248, Res_y(M_s, M_y) degree 225 (exact resultants of M rounded to 60 digits, used only for starting points, 61 s)
+FIND GF1@300: singular points of M off the axis (M = M_s = M_y = 0, s != 0; 3043 candidates from the roots of Res_y(M_s, M_y), refined by Newton): 9, of which 9 are (x^2, y) of the 9 right-hand marmas (each gives the two mirror marmas)
+FIND GF1@300: on the axis x = 0: the 24 roots of N(0, y) are distinct (min distance 0.017): no singular point on the axis
+FIND GF1@300: the singular points of N = 0 (affine and at infinity, real and complex) are the 18 marmas, each an ordinary double point (order 2, Hessian definite: 5c point table), and the ordinary 8-fold point (1:0:0). Irreducible over C: components of degrees a + b = 24 meet in ab points counted with multiplicity, all at singular points; the nodes give at most 18 and (1:0:0) at most m_A m_B <= 16, so ab <= 34, which leaves only a = 1, a line; a non-horizontal line misses (1:0:0) and would need 23 nodes, a horizontal line holds at most 2 marmas (mirror pairs) and gets 7 from (1:0:0): 9 < 23. Genus = 253 - 18 - 28 = 207
+FIND GF1@300: real picture (numerical, 120 digits, 62 critical x values, 0 count mismatches): 31 connected pieces in the plane, 7 of them closed ovals, 24 running to infinity (24 + 24 ends); in the projective plane 10 real components of one dimension (16 ends on horizontal asymptotes, all joined at (1:0:0)), plus the 18 marmas as isolated real points
+FIND GF1@300: N at the circle centre (0, 1/2) = 4.59077e-24 (not zero: the curve misses the bindu centre); on the circle N has 26 real zeros (degree 48 in the circle parameter), all simple: True
+GF1@300: 222 s
+PROGRESS 0.75 GF1@300
+u isolated exactly by a sign change of the degree-160 polynomial on an interval of width 1e-580: yes; u = 0.6793185887067746573886503103907545526887
+GF1 rebuilt: bindu centring (not imposed) misses by 1.86e-593; worst Huet condition 3.48e-602; agrees with the stored 40 digits to 4.46e-41
+ok   GF1@600: DICTO Yantra rebuilt from its degree-160 polynomial
+ok   GF1@600: N has degree 24 and is even in x (N(x, y) = M(x^2, y); mirror symmetry)
+FIND GF1@600: leading coefficient of N in y: -1.3970868182885336123513131675134351752 (a constant: no vertical asymptotes)
+FIND GF1@600: points at infinity: top form N24 = y^8 * (degree 16 in t = x/y; y^24 coefficient nonzero: 1); its 16 finite roots are distinct (min distance 0.00814) and nonzero: 16 simple points at infinity, 16 of them real; the factor y^8 is the horizontal point (1:0:0), where the 9 parallel bases meet
+FIND GF1@600: at (1:0:0) N = 0 has a point of multiplicity 8 (deg_x N = 16); its 8 tangent lines are the horizontal lines y = r with Lx(r) = 0 (Lx = coefficient of x^16), distinct, 8 real: an ordinary 8-fold point (delta = 28), the lemma of 5c at infinity (9 lines through one point, alternate sectors cancel: order 9 - 1 = 8); the real tangents are horizontal asymptotes
+FIND GF1@600: Res_y(M, M_y) degree 248, Res_y(M_s, M_y) degree 225 (exact resultants of M rounded to 60 digits, used only for starting points, 62 s)
+FIND GF1@600: singular points of M off the axis (M = M_s = M_y = 0, s != 0; 3043 candidates from the roots of Res_y(M_s, M_y), refined by Newton): 9, of which 9 are (x^2, y) of the 9 right-hand marmas (each gives the two mirror marmas)
+FIND GF1@600: on the axis x = 0: the 24 roots of N(0, y) are distinct (min distance 0.017): no singular point on the axis
+FIND GF1@600: the singular points of N = 0 (affine and at infinity, real and complex) are the 18 marmas, each an ordinary double point (order 2, Hessian definite: 5c point table), and the ordinary 8-fold point (1:0:0). Irreducible over C: components of degrees a + b = 24 meet in ab points counted with multiplicity, all at singular points; the nodes give at most 18 and (1:0:0) at most m_A m_B <= 16, so ab <= 34, which leaves only a = 1, a line; a non-horizontal line misses (1:0:0) and would need 23 nodes, a horizontal line holds at most 2 marmas (mirror pairs) and gets 7 from (1:0:0): 9 < 23. Genus = 253 - 18 - 28 = 207
+FIND GF1@600: real picture (numerical, 120 digits, 62 critical x values, 0 count mismatches): 31 connected pieces in the plane, 7 of them closed ovals, 24 running to infinity (24 + 24 ends); in the projective plane 10 real components of one dimension (16 ends on horizontal asymptotes, all joined at (1:0:0)), plus the 18 marmas as isolated real points
+FIND GF1@600: N at the circle centre (0, 1/2) = 4.59077e-24 (not zero: the curve misses the bindu centre); on the circle N has 26 real zeros (degree 48 in the circle parameter), all simple: True
+GF1@600: 385 s
+PROGRESS 1.00 GF1@600
+ok   positive control: R1 through the numerical route gives the exact R1 answer (the 18 marmas only, genus, same real picture)
+ok   DICTO Yantra: the only singular points found are the 18 marmas (each precision)
+ok   DICTO Yantra at 300 and 600 digits: same resultant degrees, singular points, real picture, circle zeros
+R1 (exact singular points) genus 207, real {'affine': 27, 'ovals': 7, 'unbounded': 20, 'projective': 11, 'mismatch': 0, 'ends': (20, 20)}; DICTO Yantra genus 207, real {'affine': 31, 'ovals': 7, 'unbounded': 24, 'projective': 10, 'mismatch': 0, 'ends': (24, 24)}
+total 385 s
+FINAL ok

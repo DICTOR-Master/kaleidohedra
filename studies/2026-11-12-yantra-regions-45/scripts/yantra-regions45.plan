@@ -1,0 +1,13 @@
+question: aim 2 chunk 5c lead (a) FULL - canonical forms of the 45-region yantras (Kulaichev, Rh345; Q3 exact): triangles, convexity, marma zeros, sandhi residues, centre sign, compared with the 43-region DICTO Yantra
+answer_looks_like: ok/FAIL/FIND lines (lemmas; R1 exact; Q3 exact full; Rh345 and Kulaichev at 300 and 600 digits; rhombus at u* -1e-4 and +1e-4 at 150 digits); FINAL ok/FAIL
+pilot: yreg45-pilot 40 s on 4 cores, FINAL ok (R1 exact 33 s, Rh345 and Kulaichev at 120 digits 40 s each; Q3 exact probe: 7.8 ms per exact vertex form, about 61 min estimated for Q3 plus interpolation)
+size_estimate: 9 tasks: Q3 exact (about 1-1.5 h, one core), 8 others under 3 min each
+memory_estimate_gb: 2 (cage 3 GB so a second job fits on the machine)
+time_estimate_h: 1.5
+bounded_by: fixed task list, timeout 3 h, 3 GB cage
+control: positive: known counts (45 Kulaichev/Rh345/Q3, 43 below u*), faces in each of the nine triangles sum to it, vertex = fan; negative: mis-joined wall leaves a pole, sign-flipped region breaks the valuation identity, flipped normal breaks vertex = fan
+progress: PROGRESS <done/tasks> per task
+ledger_checked: chunk 5c entry (2366ec88: 43-region DICTO Yantra, lead (a) = this); [89] Rh345 certified count 45; no settled or failed entry on 45-region forms
+ledger_override: none
+if_ok: README conclusion, ledger entry, Concordance line under geometry gives laws, commit and push research-fig3, aim memory
+if_fail_or_cap: the pilot verdict stands (Rh345, Kulaichev at 120 digits, all checks ok); if only Q3 exact fails to finish, report the 45 results as high precision only (two precisions) and rerun Q3 alone with a longer cap

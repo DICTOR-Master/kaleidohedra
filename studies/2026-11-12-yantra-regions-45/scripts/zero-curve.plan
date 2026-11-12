@@ -1,0 +1,13 @@
+question: aim 2 chunk 5c lead (b) FULL - zero curve N = 0 (degree 24) of the DICTO Yantra whole-yantra form: genus, singular points, real components, passage through marmas, bindu centre, circle
+answer_looks_like: ok/FAIL/FIND lines (R1 exact resultants and gcd; R1 through the numerical route as positive control; GF1 at 300 and 600 digits); FINAL ok/FAIL
+pilot: yzero-pilot 166 s, FINAL ok, rerun after adding the point (1:0:0) at infinity (FINAL ok; R1 exact 90 s, R1 numerical route = exact answer, GF1 at 150 digits 129 s); the horizontal-asymptote test was then fixed in the Python-side topology only
+size_estimate: 4 tasks; resultants of degree 248 and 225 in s = x^2; 320 Sylvester determinants of size 47 per resultant
+memory_estimate_gb: 3 (cage 4 GB)
+time_estimate_h: 0.3
+bounded_by: fixed task list, timeout 1 h, 4 GB cage
+control: positive: the 18 marmas must come out as singular points (known order-2 zeros from 5c), N even in x (mirror), R1 exact result must agree with the numerical route; negative: none beyond the marma recovery (the singular-point search must not return the order-1 points: tips, corner touches)
+progress: PROGRESS <done/tasks> per task
+ledger_checked: chunk 5c entry (2366ec88), lead (b) = this; no settled or failed entry on the zero curve
+ledger_override: none
+if_ok: README lead (b) section, ledger entry, Concordance line, commit and push research-fig3, aim memory
+if_fail_or_cap: the exact R1 result (genus 235, only the 18 marmas singular) stands; the DICTO Yantra genus is then reported as not settled, with the failing line

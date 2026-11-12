@@ -1,0 +1,13 @@
+question: aim 2 chunk 5c lead (b) PILOT - zero curve N = 0 (degree 24) of the DICTO Yantra whole-yantra form: genus, singular points, real components, passage through marmas, bindu centre, circle
+answer_looks_like: ok/FAIL/FIND lines (R1 exact resultants and gcd, GF1 at 150 digits by evaluation; singular points, genus, real picture, circle zeros); FINAL ok/FAIL
+pilot: this is the pilot (after the first full run: the point (1:0:0) at infinity, where the 9 bases meet, was missed; now analysed), cap 0.08 h
+size_estimate: 2 tasks; degree-24 curve; resultants of degree up to 276 in s = x^2
+memory_estimate_gb: 2
+time_estimate_h: 0.05
+bounded_by: fixed task list, timeout 0.08 h, 4 GB cage
+control: positive: the 18 marmas must come out as singular points (known order-2 zeros from 5c), N even in x (mirror), R1 exact result must agree with the numerical route; negative: none beyond the marma recovery (the singular-point search must not return the order-1 points: tips, corner touches)
+progress: PROGRESS <done/tasks> per task
+ledger_checked: chunk 5c entry (2366ec88), lead (b) = this; no settled or failed entry on the zero curve
+ledger_override: none
+if_ok: full run yzero (R1 exact, GF1 at 300 and 600 digits)
+if_fail_or_cap: read the failing line, fix the script, rerun the pilot; if the exact R1 resultant is too slow, drop it and use the numerical route for R1 too

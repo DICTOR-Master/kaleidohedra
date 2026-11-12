@@ -1,0 +1,13 @@
+question: aim 2 chunk 5c lead (a) PILOT - canonical forms of the 45-region yantras (Kulaichev, Rh345; Q3 exact): triangles, convexity, marma zeros, sandhi residues, centre sign, compared with the 43-region DICTO Yantra
+answer_looks_like: ok/FAIL/FIND lines (R1 exact full, Rh345 and Kulaichev at 120 digits full, rhombus just below u* at 120 digits, Q3 exact pattern + timing probe); FINAL ok/FAIL
+pilot: this is the pilot, cap 0.08 h
+size_estimate: 5 tasks; per yantra about 75 faces, 26x26 grid, up to 511 intersections, about 350 line crossings
+memory_estimate_gb: 1
+time_estimate_h: 0.05
+bounded_by: fixed task list, timeout 0.08 h, 12 GB cage
+control: positive: known counts (45 Kulaichev/Rh345/Q3, 43 below u*), faces in each of the nine triangles sum to it, vertex = fan; negative: mis-joined wall leaves a pole, sign-flipped region breaks the valuation identity, flipped normal breaks vertex = fan
+progress: PROGRESS <done/tasks> per task
+ledger_checked: chunk 5c entry (2366ec88: 43-region DICTO Yantra, lead (a) = this); [89] Rh345 certified count 45; no settled or failed entry on 45-region forms
+ledger_override: none
+if_ok: full run yreg45 (Q3 exact full, Rh345 and Kulaichev at 300 and 600 digits, lemmas, both sides of u*)
+if_fail_or_cap: read the failing line, fix the script, rerun the pilot

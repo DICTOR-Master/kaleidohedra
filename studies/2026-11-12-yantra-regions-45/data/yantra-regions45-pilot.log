@@ -1,0 +1,159 @@
+chunk 5c lead (a): 5 tasks on 4 cores
+Q3-probe: 78 faces, 45 regions, sides [4, 4, 4, 4] (non-triangles), arrangement 1 s
+Q3-probe: 7.8 ms per exact vertex form; 511 intersections; full Q3 estimate 61 min plus interpolation
+PROGRESS 0.20 Q3-probe
+FIND R1: 74 bounded faces: 43 regions, 31 even faces inside the yantra, 0 outside every triangle
+FIND R1: regions by ring (c = 1,3,5,7,9): [14, 10, 10, 8, 1]; regions by number of sides {3: 43}; even faces by sides {3: 10, 4: 21}
+FIND R1:   smallest regions: 3 sides, t2346789 (ring 7), sides on t5 leg, t6 base, t9 leg, area 6.915e-04
+FIND R1:   smallest regions: 3 sides, t2346789 (ring 7), sides on t5 leg, t9 leg, t6 base, area 6.915e-04
+FIND R1: convex faces: 74 of 74 (all convex)
+ok   R1: parity lemma: across every wall the count changes by exactly 1, so no two regions share a wall (0 exceptions, 0 odd-odd walls)
+ok   R1: each of the 43 regions: vertex formula = fan triangulation at all 676 grid points (grid lemma)
+ok   R1: every face: Omega > 0 inside and Omega = 2 * area of the polar at an inside point (chunk-2 bridge)
+ok   R1: positive control (known region sum): in each of the nine triangles the faces sum to the triangle's form, all grid points
+ok   R1: valuation identity: sum of the 43 regions = sum over I of (-2)^(|I|-1) Omega(cap T_I) (511 nonempty intersections, by size [9, 36, 84, 126, 126, 84, 36, 9, 1]), all grid points (grid lemma)
+ok   R1: sum of the nine triangles = sum of faces weighted by c
+ok   R1: negative control: one region with its sign flipped breaks the valuation identity
+ok   R1: negative control: one flipped normal breaks vertex = fan
+ok   R1: numerator N of the whole-yantra form has degree 24 (bound 24 from 27 lines)
+FIND R1: N is even in x (mirror symmetry): True
+FIND R1: pole lines of the whole-yantra form: 27 of the 27 sides
+FIND R1:   corner touch             lines through it m = 3, N vanishes to order k = 1: 6 points
+FIND R1:   marma                    lines through it m = 3, N vanishes to order k = 2: 18 points
+FIND R1:   outside crossing         lines through it m = 2, N vanishes to order k = 1: 68 points
+FIND R1:   partly outside crossing  lines through it m = 2, N vanishes to order k = 1: 94 points
+FIND R1:   sandhi                   lines through it m = 2, N vanishes to order k = 0: 24 points
+FIND R1:   tip on a base            lines through it m = 3, N vanishes to order k = 1: 7 points
+FIND R1:   triangle corner          lines through it m = 2, N vanishes to order k = 0: 14 points
+FIND R1:   point residue |Res| at triangle corners (m = 2, k = 0): {1.0: 14}
+FIND R1:   point residue |Res| at sandhis (m = 2, k = 0): {2.0: 24}
+FIND R1:   N = 0 at the marmas (tangent cone of the order-2 zero): {'isolated real point': 18}
+R1:   22 crossings of extended side lines lie beyond the box |x| <= 3, |y - 1/2| <= 3 (not classified)
+FIND R1: 18 marmas, 24 sandhis; order of N at the marmas: [2]; |Res| at sandhis: [2.0]; off-figure crossings with k = 0: 0
+ok   R1: wall control: region + its even neighbour: pole exponent 0.000 on the shared wall (cancels); neighbour moved 1/1000 off: 1.000 (pole left)
+FIND R1: at the circle centre (0, 1/2) (inside the bindu region: True): Omega(bindu region) = 5510.46736842, Omega_Y = 1649.82565609
+R1: 33 s
+PROGRESS 0.40 R1
+Rh345: rebuilt with u = v = 0.75, Q = 0.550836066924408061157694751885, S = 0.920514060908054173523222345217; worst Huet condition 9.68e-122; bindu centring (Kulaichev's (d), not imposed) off by -2.35564e-5
+ok   Rh345 at 120 digits: S = (21464 + 56 sqrt 56869)/37825 to 1.08e-121; Q = b6 and b1 isolated exactly by sign changes of their degree-20 minimal polynomials on intervals of width 1e-80: True, True; stored 50 digits agree to 4.99e-51; (d) misses by 2.36e-5 as recorded
+FIND Rh345@120: 78 bounded faces: 45 regions, 33 even faces inside the yantra, 0 outside every triangle
+FIND Rh345@120: regions by ring (c = 1,3,5,7,9): [14, 10, 12, 8, 1]; regions by number of sides {3: 41, 4: 4}; even faces by sides {3: 12, 4: 21}
+FIND Rh345@120:   region with 4 sides: t2345678 (ring 7), sides on t4 leg, t5 base, t9 leg, t5 leg; area 2.278e-03; centroid (-0.0985, 0.4868)
+FIND Rh345@120:   region with 4 sides: t23678 (ring 5), sides on t4 leg, t6 base, t6 leg, t5 leg; area 3.425e-03; centroid (-0.1320, 0.5114)
+FIND Rh345@120:   region with 4 sides: t2345678 (ring 7), sides on t4 leg, t5 leg, t9 leg, t5 base; area 2.278e-03; centroid (0.0985, 0.4868)
+FIND Rh345@120:   region with 4 sides: t23678 (ring 5), sides on t4 leg, t5 leg, t6 leg, t6 base; area 3.425e-03; centroid (0.1320, 0.5114)
+FIND Rh345@120:   smallest regions: 3 sides, t23678 (ring 5), sides on t4 leg, t5 base, t6 leg, area 4.672e-08
+FIND Rh345@120:   smallest regions: 3 sides, t23678 (ring 5), sides on t4 leg, t6 leg, t5 base, area 4.672e-08
+Rh345@120: point merging: largest spread inside one merged point 1.94e-121 (tolerance 1e-60)
+FIND Rh345@120: convex faces: 78 of 78 (all convex)
+ok   Rh345@120: parity lemma: across every wall the count changes by exactly 1, so no two regions share a wall (0 exceptions, 0 odd-odd walls)
+ok   Rh345@120: each of the 45 regions: vertex formula = fan triangulation at all 676 grid points (grid lemma)
+ok   Rh345@120: every face: Omega > 0 inside and Omega = 2 * area of the polar at an inside point (chunk-2 bridge)
+ok   Rh345@120: positive control (known region sum): in each of the nine triangles the faces sum to the triangle's form, all grid points
+ok   Rh345@120: valuation identity: sum of the 45 regions = sum over I of (-2)^(|I|-1) Omega(cap T_I) (511 nonempty intersections, by size [9, 36, 84, 126, 126, 84, 36, 9, 1]), all grid points (grid lemma)
+ok   Rh345@120: sum of the nine triangles = sum of faces weighted by c
+ok   Rh345@120: negative control: one region with its sign flipped breaks the valuation identity
+ok   Rh345@120: a non-triangle region: vertex formula = fan from either diagonal
+ok   Rh345@120: negative control: one flipped normal breaks vertex = fan
+ok   Rh345@120: numerator N of the whole-yantra form has degree 24 (bound 24 from 27 lines)
+FIND Rh345@120: N is even in x (mirror symmetry): True
+FIND Rh345@120: pole lines of the whole-yantra form: 27 of the 27 sides
+FIND Rh345@120:   corner touch             lines through it m = 3, N vanishes to order k = 1: 6 points
+FIND Rh345@120:   marma                    lines through it m = 3, N vanishes to order k = 2: 18 points
+FIND Rh345@120:   outside crossing         lines through it m = 2, N vanishes to order k = 1: 62 points
+FIND Rh345@120:   partly outside crossing  lines through it m = 2, N vanishes to order k = 1: 94 points
+FIND Rh345@120:   sandhi                   lines through it m = 2, N vanishes to order k = 0: 28 points
+FIND Rh345@120:   tip on a base            lines through it m = 3, N vanishes to order k = 1: 7 points
+FIND Rh345@120:   triangle corner          lines through it m = 2, N vanishes to order k = 0: 14 points
+FIND Rh345@120:   point residue |Res| at triangle corners (m = 2, k = 0): {1.0: 14}
+FIND Rh345@120:   point residue |Res| at sandhis (m = 2, k = 0): {2.0: 28}
+FIND Rh345@120:   N = 0 at the marmas (tangent cone of the order-2 zero): {'isolated real point': 18}
+Rh345@120:   22 crossings of extended side lines lie beyond the box |x| <= 3, |y - 1/2| <= 3 (not classified)
+FIND Rh345@120: 18 marmas, 28 sandhis; order of N at the marmas: [2]; |Res| at sandhis: [2.0]; off-figure crossings with k = 0: 0
+ok   Rh345@120: wall control: region + its even neighbour: pole exponent 0.000 on the shared wall (cancels); neighbour moved 1/1000 off: 1.000 (pole left)
+FIND Rh345@120: at the circle centre (0, 1/2) (inside the bindu region: True): Omega(bindu region) = 3176.24890615, Omega_Y = 26.1728393774
+Rh345: 39 s
+PROGRESS 0.60 Rh345
+Kulaichev: rebuilt with u = v = 0.750438516022214024406084657051, Q = 0.550705232975448904641094020608, S = 0.920060145909595975294968707108; worst Huet condition 4.84e-122; bindu centring (Kulaichev's (d), not imposed) off by 3.00665e-111
+ok   Kulaichev at 120 digits: u isolated exactly by a sign change of its degree-348 polynomial on an interval of width 1e-100: True; (d) bindu centred (not imposed) to 3.01e-111; stored 60 digits agree to 4.55e-61
+FIND Kul@120: 78 bounded faces: 45 regions, 33 even faces inside the yantra, 0 outside every triangle
+FIND Kul@120: regions by ring (c = 1,3,5,7,9): [14, 10, 12, 8, 1]; regions by number of sides {3: 41, 4: 4}; even faces by sides {3: 12, 4: 21}
+FIND Kul@120:   region with 4 sides: t2345678 (ring 7), sides on t4 leg, t5 base, t9 leg, t5 leg; area 2.278e-03; centroid (-0.0987, 0.4868)
+FIND Kul@120:   region with 4 sides: t23678 (ring 5), sides on t4 leg, t6 base, t6 leg, t5 leg; area 3.425e-03; centroid (-0.1322, 0.5114)
+FIND Kul@120:   region with 4 sides: t2345678 (ring 7), sides on t4 leg, t5 leg, t9 leg, t5 base; area 2.278e-03; centroid (0.0987, 0.4868)
+FIND Kul@120:   region with 4 sides: t23678 (ring 5), sides on t4 leg, t5 leg, t6 leg, t6 base; area 3.425e-03; centroid (0.1322, 0.5114)
+FIND Kul@120:   smallest regions: 3 sides, t23678 (ring 5), sides on t4 leg, t5 base, t6 leg, area 5.782e-08
+FIND Kul@120:   smallest regions: 3 sides, t23678 (ring 5), sides on t4 leg, t6 leg, t5 base, area 5.782e-08
+Kul@120: point merging: largest spread inside one merged point 1.45e-121 (tolerance 1e-60)
+FIND Kul@120: convex faces: 78 of 78 (all convex)
+ok   Kul@120: parity lemma: across every wall the count changes by exactly 1, so no two regions share a wall (0 exceptions, 0 odd-odd walls)
+ok   Kul@120: each of the 45 regions: vertex formula = fan triangulation at all 676 grid points (grid lemma)
+ok   Kul@120: every face: Omega > 0 inside and Omega = 2 * area of the polar at an inside point (chunk-2 bridge)
+ok   Kul@120: positive control (known region sum): in each of the nine triangles the faces sum to the triangle's form, all grid points
+ok   Kul@120: valuation identity: sum of the 45 regions = sum over I of (-2)^(|I|-1) Omega(cap T_I) (511 nonempty intersections, by size [9, 36, 84, 126, 126, 84, 36, 9, 1]), all grid points (grid lemma)
+ok   Kul@120: sum of the nine triangles = sum of faces weighted by c
+ok   Kul@120: negative control: one region with its sign flipped breaks the valuation identity
+ok   Kul@120: a non-triangle region: vertex formula = fan from either diagonal
+ok   Kul@120: negative control: one flipped normal breaks vertex = fan
+ok   Kul@120: numerator N of the whole-yantra form has degree 24 (bound 24 from 27 lines)
+FIND Kul@120: N is even in x (mirror symmetry): True
+FIND Kul@120: pole lines of the whole-yantra form: 27 of the 27 sides
+FIND Kul@120:   corner touch             lines through it m = 3, N vanishes to order k = 1: 6 points
+FIND Kul@120:   marma                    lines through it m = 3, N vanishes to order k = 2: 18 points
+FIND Kul@120:   outside crossing         lines through it m = 2, N vanishes to order k = 1: 62 points
+FIND Kul@120:   partly outside crossing  lines through it m = 2, N vanishes to order k = 1: 94 points
+FIND Kul@120:   sandhi                   lines through it m = 2, N vanishes to order k = 0: 28 points
+FIND Kul@120:   tip on a base            lines through it m = 3, N vanishes to order k = 1: 7 points
+FIND Kul@120:   triangle corner          lines through it m = 2, N vanishes to order k = 0: 14 points
+FIND Kul@120:   point residue |Res| at triangle corners (m = 2, k = 0): {1.0: 14}
+FIND Kul@120:   point residue |Res| at sandhis (m = 2, k = 0): {2.0: 28}
+FIND Kul@120:   N = 0 at the marmas (tangent cone of the order-2 zero): {'isolated real point': 18}
+Kul@120:   22 crossings of extended side lines lie beyond the box |x| <= 3, |y - 1/2| <= 3 (not classified)
+FIND Kul@120: 18 marmas, 28 sandhis; order of N at the marmas: [2]; |Res| at sandhis: [2.0]; off-figure crossings with k = 0: 0
+ok   Kul@120: wall control: region + its even neighbour: pole exponent 0.000 on the shared wall (cancels); neighbour moved 1/1000 off: 1.000 (pole left)
+FIND Kul@120: at the circle centre (0, 1/2) (inside the bindu region: True): Omega(bindu region) = 3177.55629123, Omega_Y = 27.4485639318
+Kul: 40 s
+PROGRESS 0.80 Kul
+rhombus u* - 1e-4: rebuilt with u = v = 0.745896537184295181585859787277, Q = 0.552068148561651309187886449915, S = 0.924669300658119313899502926326; worst Huet condition 9.68e-122; bindu centring (Kulaichev's (d), not imposed) off by -0.00025382
+FIND thr-@120: 74 bounded faces: 43 regions, 31 even faces inside the yantra, 0 outside every triangle
+FIND thr-@120: regions by ring (c = 1,3,5,7,9): [14, 10, 10, 8, 1]; regions by number of sides {3: 43}; even faces by sides {3: 10, 4: 21}
+FIND thr-@120:   smallest regions: 3 sides, t2346789 (ring 7), sides on t5 leg, t6 base, t9 leg, area 2.295e-04
+FIND thr-@120:   smallest regions: 3 sides, t2346789 (ring 7), sides on t5 leg, t9 leg, t6 base, area 2.295e-04
+thr-@120: point merging: largest spread inside one merged point 1.94e-121 (tolerance 1e-60)
+FIND thr-@120: convex faces: 74 of 74 (all convex)
+ok   thr-@120: parity lemma: across every wall the count changes by exactly 1, so no two regions share a wall (0 exceptions, 0 odd-odd walls)
+ok   thr-@120: each of the 43 regions: vertex formula = fan triangulation at all 676 grid points (grid lemma)
+ok   thr-@120: every face: Omega > 0 inside and Omega = 2 * area of the polar at an inside point (chunk-2 bridge)
+ok   thr-@120: positive control (known region sum): in each of the nine triangles the faces sum to the triangle's form, all grid points
+ok   thr-@120: valuation identity: sum of the 43 regions = sum over I of (-2)^(|I|-1) Omega(cap T_I) (511 nonempty intersections, by size [9, 36, 84, 126, 126, 84, 36, 9, 1]), all grid points (grid lemma)
+ok   thr-@120: sum of the nine triangles = sum of faces weighted by c
+ok   thr-@120: negative control: one region with its sign flipped breaks the valuation identity
+ok   thr-@120: negative control: one flipped normal breaks vertex = fan
+ok   thr-@120: numerator N of the whole-yantra form has degree 24 (bound 24 from 27 lines)
+FIND thr-@120: N is even in x (mirror symmetry): True
+FIND thr-@120: pole lines of the whole-yantra form: 27 of the 27 sides
+FIND thr-@120:   corner touch             lines through it m = 3, N vanishes to order k = 1: 6 points
+FIND thr-@120:   marma                    lines through it m = 3, N vanishes to order k = 2: 18 points
+FIND thr-@120:   outside crossing         lines through it m = 2, N vanishes to order k = 1: 60 points
+FIND thr-@120:   partly outside crossing  lines through it m = 2, N vanishes to order k = 1: 98 points
+FIND thr-@120:   sandhi                   lines through it m = 2, N vanishes to order k = 0: 24 points
+FIND thr-@120:   tip on a base            lines through it m = 3, N vanishes to order k = 1: 7 points
+FIND thr-@120:   triangle corner          lines through it m = 2, N vanishes to order k = 0: 14 points
+FIND thr-@120:   point residue |Res| at triangle corners (m = 2, k = 0): {1.0: 14}
+FIND thr-@120:   point residue |Res| at sandhis (m = 2, k = 0): {2.0: 24}
+FIND thr-@120:   N = 0 at the marmas (tangent cone of the order-2 zero): {'isolated real point': 18}
+thr-@120:   24 crossings of extended side lines lie beyond the box |x| <= 3, |y - 1/2| <= 3 (not classified)
+FIND thr-@120: 18 marmas, 24 sandhis; order of N at the marmas: [2]; |Res| at sandhis: [2.0]; off-figure crossings with k = 0: 0
+ok   thr-@120: wall control: region + its even neighbour: pole exponent 0.000 on the shared wall (cancels); neighbour moved 1/1000 off: 1.000 (pole left)
+FIND thr-@120: at the circle centre (0, 1/2) (inside the bindu region: True): Omega(bindu region) = 3165.27101415, Omega_Y = 14.6371103306
+thr-: 38 s
+PROGRESS 1.00 thr-
+ok   positive control (known counts, sri-yantra study): Kulaichev, Rh345 and Q3 have 45 regions (45, 45, 45)
+ok   control (rhombus threshold): just below u* the rhombus yantra has 43 regions, all triangles, and the crossing pattern of R1 = DICTO Yantra
+ok   Kulaichev, Rh345 and Q3 have the same crossing pattern (every face with its triangles and side lines): the exact Q3 results carry over as structure
+43 -> 45: faces only in the DICTO pattern (R1): 8: t2345678 [t5b t5l t9l]; t2345678 [t5b t5l t9l]; t234678 [t1l t5b t6l]; t234678 [t1l t5b t6l]; t234678 [t4l t5l t6l t9l]; t234678 [t4l t5l t6l t9l]; t23678 [t4l t6b t6l]; t23678 [t4l t6b t6l]
+43 -> 45: faces only in the 45 pattern (Kulaichev): 12: t2345678 [t4l t5b t5l t9l]; t2345678 [t4l t5b t5l t9l]; t234678 [t1l t4l t5b t6l]; t234678 [t1l t4l t5b t6l]; t234678 [t4l t5l t9l]; t234678 [t4l t5l t9l]; t235678 [t4l t5b t5l]; t235678 [t4l t5b t5l]; t23678 [t4l t5b t6l]; t23678 [t4l t5l t6b t6l]; t23678 [t4l t5b t6l]; t23678 [t4l t5l t6b t6l]
+43 -> 45: point class ('sandhi', 2, 0): 24 -> 28
+43 -> 45: degree of N 24 -> 24; nonempty intersections by size [9, 36, 84, 126, 126, 84, 36, 9, 1] -> [9, 36, 84, 126, 126, 84, 36, 9, 1]; sandhi residues {'2.0': 24} -> {'2.0': 28}; centre Omega_Y R1 1649.83, Kulaichev 27.4486, Rh345 26.1728
+total 40 s
+FINAL ok
