@@ -1,0 +1,21 @@
+CELL+EPC round 0: 102 types, 20196 allowed, 24058 fit, extra 3862, classes 702
+PROGRESS 0.14 rounds
+CELL+EPC round 1: 222 types, 43665 allowed, 43739 fit, extra 74, classes 2420
+PROGRESS 0.29 rounds
+CELL+EPC round 2: 290 types, 57327 allowed, 57327 fit, extra 0, classes 3164
+PROGRESS 0.43 rounds
+EXACT CELL+EPC types 290 classes 3164 rounds 2
+COMPLETE CELL+EPC: level 4 290 types 57327 pairs; level 5 290 types 57327 pairs, extra 0 -> SAME
+REG ok   (R1) RD: 14 corners, 24 edges, cos(normal angle) over all edges = [Fraction(1, 2)] (1/2 = dihedral 120)
+REG ok   (R2) stabiliser of face (1, 1, 0) (and its side): 4 elements, 4 distinct actions on the rhombus (its full group has 4)
+REG ok   (R3) face corners as computed are the RD corners of the face
+REG ok   (R3) 4 positions per face, inside the rhombus: True; squared distance to the boundary >= 841/29400 (0.1691); squares of half-side s = 1/40 stay at least half that distance from the boundary and are disjoint
+REG ok   (R3) heights: class c gets height c * 1/253120 (s/2 / 3164 classes), so every pyramid has height <= s/2; creases bend <= 36.87 degrees < 60
+REG ok   (R4) RD: fillings of 360 by (k edges of 120, m near-flat sectors): [(0, 2), (3, 0)]; the only one with an RD edge is (3, 0)
+REG ok   (R4) NEGATIVE CONTROL cube: fillings [(0, 2), (2, 1), (4, 0)] include an edge beside a flat sector (k >= 1, m >= 1): sliding possible
+REG ok   (M) CONTROL unmirrored fits recounted with our own rotations: 57327 (keyed_rd.py: 57327)
+REG (M) faces with no bump or dent: 0; fitting (type, face, MIRRORED type, turn) pairs: 0
+REG VERDICT MIRRORS: no mirrored piece fits beside an unmirrored one (a tiling is all one hand)
+REG FINAL ok
+CONTACT touching proper poses 1194; allowed by CELL+EPC: 30; P0 (proper) 30 all allowed: True; inside P*: True; P* proper 44; allowed outside P*: 0; P* poses refused: 14
+CONTACT VERDICT CERTIFIED BY THEOREM A (given whole chairs)

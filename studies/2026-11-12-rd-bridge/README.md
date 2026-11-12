@@ -148,3 +148,45 @@ No fcc torus of index 11-16 admits a CELLFRAME filling (2224 tori; shards checke
 and none of index <= 10 before (737 tori). Control under the same code: CELL+EPART periodic at index 4. Not a proof of
 aperiodicity (49 extra chair contacts survive a shell, above); it says the 12-type set has no small period.
 Fault fixed first: the torus coset routine missed cosets above index 8 (fixed box); now a neighbour walk with a site-count assert.
+
+## PAUSED 12 Nov (DICTO): exact keying
+DICTO paused the keying work indefinitely, "until another hopeful piece comes to us". All exact-keying jobs were stopped cleanly; the
+results below are what had finished. Method (`scripts/refine_snip.py`, `keyed_rd.py`, `exact_key.py`, `exact_all.sh`): cancel-keying makes
+"fit" an equivalence closure, so fit = allowed needs the allowed face relation to split into complete blocks, a property of the TYPES;
+targeted refinement rounds let the faces of every fit-class holding an extra fit record their neighbour's type and turn, until fit =
+allowed. A refined marking maps onto the coarse one, so a certified coarse marking stays certified. Every exact set below also passed:
+completeness (refined types and pairs the same from the level-4 and level-5 patch), registration_check (lattice, hand: no mirrored fits).
+Logs: data/exact/<scheme>.log (CELL's run in data/exactD/).
+POSITIVE CONTROL H00: exact at 281 types (3230 bump sizes), complete, chair contacts = the 30 occurring (0 outside P*), whole chairs
+FORCED at R = 2. The unrefined recount also reproduced the old 2413 fits exactly.
+| scheme (base types) | exact after | types | bump sizes (classes) | chair contacts | whole chairs R = 2 | status |
+|---|---|---|---|---|---|---|
+| H00 (90) = FRAME+EFR | 2 rounds | 281 | 3230 | 0 outside P* | FORCED | certified (control) |
+| H02 (87) | 2 | 457 | 8196 | 0 outside P* | FORCED | certified |
+| H05 (83), H07 (83) | 2 | 417 | 7278 | 0 outside P* | FORCED | certified |
+| H18 (62) | 2 | 473 | 8628 | 0 outside P* | FORCED | certified |
+| H13 | 4 | 434 | | 0 outside P* | FORCED | certified |
+| H15, H19 | 4 | 381 | | 0 outside P* | FORCED | certified |
+| H17, H27 | 3 | 373 | | 0 outside P* | FORCED | certified |
+| H21 | 5 | 345 | | 0 outside P* | FORCED | certified |
+| H22, H23 | 3 | 375 | | 0 outside P* | FORCED | certified |
+| H24 | 3 | 368 | | 0 outside P* | FORCED | certified |
+| H26 | 4 | 405 | | 0 outside P* | FORCED | certified |
+| H25 | 4 | 405 | | 0 outside P* | not run | UNFINISHED |
+| FULL (118) | 4 | 205 | | not run | not run | UNFINISHED (see below) |
+| FRAME (2) | 3 | 271 | | not run | not run | UNFINISHED |
+| CELL+EPC | 2 | 290 | | 0 outside P* | not run | UNFINISHED |
+| H29 (6) | 5 | 293 | | not run | not run | UNFINISHED |
+| CELL+ECELLS, CELL | 3-4 | 343 | | not run | not run | UNFINISHED |
+| CF+ECELL / CF+EFRAME | 2 | 403 / 405 | | not run | not run | UNFINISHED |
+| H01, H03 | 2 | 419 | | not run | not run | UNFINISHED |
+| H28 | 3 | 405 | | not run | not run | UNFINISHED |
+| CELLFRAME (12), H04, H06, H08 | - | - | - | - | - | NOT exact after 6 rounds (8-12 extra fits left) |
+| CELL+EPART | 6 | 436 | | 0 outside P* | no verdict | its labels carry no chair turns on edges, so the whole-chair test cannot read a chair (positive control false) |
+Smallest exactly keyed set certified by direct tests: 281 (H00). Smaller exact sets were found but their tests had not run when work
+paused: FULL at 205 types, FRAME 271. FULL's base marking (118) is certified, so by the refinement argument its exact 205-type set is
+certified too (its completeness and registration/hand checks passed); the direct contact and whole-chair tests were not run, so this
+is recorded as an argument awaiting its direct check, not a tested result. Note: refining a smaller base does not give a smaller exact set
+(62 -> 473, 83 -> 417), and markings that were not certified as coarse sets (H13 ... H27) became certified after refinement.
+UNFINISHED: H25, FULL, FRAME, CELL+EPC, H29, CELL+ECELLS, CELL, CF+ECELL, CF+EFRAME, H01, H03, H28 (tests); CELLFRAME, H04, H06, H08 (not exact).
+RESTART ONLY with a new candidate piece (DICTO); then first: the direct tests of FULL (205) and FRAME (271).

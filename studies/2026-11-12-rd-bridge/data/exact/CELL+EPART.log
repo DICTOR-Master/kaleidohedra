@@ -1,0 +1,57 @@
+CELL+EPART round 0: 12 types, 6404 allowed, 7528 fit, extra 1124, classes 6
+PROGRESS 0.14 rounds
+CELL+EPART round 1: 137 types, 2740 allowed, 3227 fit, extra 487, classes 2036
+PROGRESS 0.29 rounds
+CELL+EPART round 2: 226 types, 4186 allowed, 5364 fit, extra 1178, classes 3220
+PROGRESS 0.43 rounds
+CELL+EPART round 3: 320 types, 5426 allowed, 5502 fit, extra 76, classes 5120
+PROGRESS 0.57 rounds
+CELL+EPART round 4: 352 types, 5904 allowed, 6048 fit, extra 144, classes 5668
+PROGRESS 0.71 rounds
+CELL+EPART round 5: 384 types, 6292 allowed, 6404 fit, extra 112, classes 6300
+PROGRESS 0.86 rounds
+CELL+EPART round 6: 436 types, 7168 allowed, 7168 fit, extra 0, classes 7380
+PROGRESS 1.00 rounds
+EXACT CELL+EPART types 436 classes 7380 rounds 6
+COMPLETE CELL+EPART: level 4 436 types 7168 pairs; level 5 436 types 7168 pairs, extra 0 -> SAME
+REG ok   (R1) RD: 14 corners, 24 edges, cos(normal angle) over all edges = [Fraction(1, 2)] (1/2 = dihedral 120)
+REG ok   (R2) stabiliser of face (1, 1, 0) (and its side): 4 elements, 4 distinct actions on the rhombus (its full group has 4)
+REG ok   (R3) face corners as computed are the RD corners of the face
+REG ok   (R3) 4 positions per face, inside the rhombus: True; squared distance to the boundary >= 841/29400 (0.1691); squares of half-side s = 1/40 stay at least half that distance from the boundary and are disjoint
+REG ok   (R3) heights: class c gets height c * 1/590400 (s/2 / 7380 classes), so every pyramid has height <= s/2; creases bend <= 36.87 degrees < 60
+REG ok   (R4) RD: fillings of 360 by (k edges of 120, m near-flat sectors): [(0, 2), (3, 0)]; the only one with an RD edge is (3, 0)
+REG ok   (R4) NEGATIVE CONTROL cube: fillings [(0, 2), (2, 1), (4, 0)] include an edge beside a flat sector (k >= 1, m >= 1): sliding possible
+REG ok   (M) CONTROL unmirrored fits recounted with our own rotations: 7168 (keyed_rd.py: 7168)
+REG (M) faces with no bump or dent: 0; fitting (type, face, MIRRORED type, turn) pairs: 0
+REG VERDICT MIRRORS: no mirrored piece fits beside an unmirrored one (a tiling is all one hand)
+REG FINAL ok
+CONTACT touching proper poses 1194; allowed by CELL+EPART: 30; P0 (proper) 30 all allowed: True; inside P*: True; P* proper 44; allowed outside P*: 0; P* poses refused: 14
+CONTACT VERDICT CERTIFIED BY THEOREM A (given whole chairs)
+R2 REFINE round 1: 137 types on 97107 labelled sites
+R2 REFINE round 2: 226 types on 86309 labelled sites
+R2 REFINE round 3: 320 types on 76219 labelled sites
+R2 REFINE round 4: 352 types on 66817 labelled sites
+R2 REFINE round 5: 384 types on 58076 labelled sites
+R2 REFINE round 6: 436 types on 49976 labelled sites
+R2 CELL+EPART: 436 types (82 centre, 354 edge, 0 blank)
+R2 (G) allowed pairs claiming cubes on two different grids: 0
+R2 control (1): rule-obeying filling with a whole chair round c0 exists: False
+R2 (C) ball R=2: 665 sites, 1775280 choices, 7 candidate chairs for c0 (223s)
+R2 (C) a rule-obeying filling WITHOUT a whole chair round c0 exists (224s)
+R2 VERDICT NOT FORCED
+R2 FINAL FAIL: control (1)
+R3 REFINE round 1: 137 types on 97107 labelled sites
+R3 REFINE round 2: 226 types on 86309 labelled sites
+R3 REFINE round 3: 320 types on 76219 labelled sites
+R3 REFINE round 4: 352 types on 66817 labelled sites
+R3 REFINE round 5: 384 types on 58076 labelled sites
+R3 REFINE round 6: 436 types on 49976 labelled sites
+R3 CELL+EPART: 436 types (82 centre, 354 edge, 0 blank)
+R3 (G) allowed pairs claiming cubes on two different grids: 0
+R3 control (1): rule-obeying filling with a whole chair round c0 exists: False
+R3 (C) ball R=3: 1687 sites, 4481232 choices, 7 candidate chairs for c0 (529s)
+R3 (C) a rule-obeying filling WITHOUT a whole chair round c0 exists (531s)
+R3 VERDICT NOT FORCED
+R3 FINAL FAIL: control (1)
+DONE
+DONE-RUN

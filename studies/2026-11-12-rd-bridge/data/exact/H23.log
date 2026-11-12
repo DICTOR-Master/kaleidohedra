@@ -1,0 +1,34 @@
+H23 round 0: 36 types, 1707 allowed, 4915 fit, extra 3208, classes 124
+PROGRESS 0.14 rounds
+H23 round 1: 288 types, 4680 allowed, 4812 fit, extra 132, classes 4806
+PROGRESS 0.29 rounds
+H23 round 2: 361 types, 5608 allowed, 5628 fit, extra 20, classes 6372
+PROGRESS 0.43 rounds
+H23 round 3: 375 types, 5763 allowed, 5763 fit, extra 0, classes 6734
+PROGRESS 0.57 rounds
+EXACT H23 types 375 classes 6734 rounds 3
+COMPLETE H23: level 4 375 types 5763 pairs; level 5 375 types 5763 pairs, extra 0 -> SAME
+REG ok   (R1) RD: 14 corners, 24 edges, cos(normal angle) over all edges = [Fraction(1, 2)] (1/2 = dihedral 120)
+REG ok   (R2) stabiliser of face (1, 1, 0) (and its side): 4 elements, 4 distinct actions on the rhombus (its full group has 4)
+REG ok   (R3) face corners as computed are the RD corners of the face
+REG ok   (R3) 4 positions per face, inside the rhombus: True; squared distance to the boundary >= 841/29400 (0.1691); squares of half-side s = 1/40 stay at least half that distance from the boundary and are disjoint
+REG ok   (R3) heights: class c gets height c * 1/538720 (s/2 / 6734 classes), so every pyramid has height <= s/2; creases bend <= 36.87 degrees < 60
+REG ok   (R4) RD: fillings of 360 by (k edges of 120, m near-flat sectors): [(0, 2), (3, 0)]; the only one with an RD edge is (3, 0)
+REG ok   (R4) NEGATIVE CONTROL cube: fillings [(0, 2), (2, 1), (4, 0)] include an edge beside a flat sector (k >= 1, m >= 1): sliding possible
+REG ok   (M) CONTROL unmirrored fits recounted with our own rotations: 5763 (keyed_rd.py: 5763)
+REG (M) faces with no bump or dent: 0; fitting (type, face, MIRRORED type, turn) pairs: 0
+REG VERDICT MIRRORS: no mirrored piece fits beside an unmirrored one (a tiling is all one hand)
+REG FINAL ok
+CONTACT touching proper poses 1194; allowed by H23: 30; P0 (proper) 30 all allowed: True; inside P*: True; P* proper 44; allowed outside P*: 0; P* poses refused: 14
+CONTACT VERDICT CERTIFIED BY THEOREM A (given whole chairs)
+R2 REFINE round 1: 288 types on 97107 labelled sites
+R2 REFINE round 2: 361 types on 86309 labelled sites
+R2 REFINE round 3: 375 types on 76219 labelled sites
+R2 H23: 375 types (104 centre, 271 edge, 0 blank)
+R2 (G) allowed pairs claiming cubes on two different grids: 0
+R2 control (1): rule-obeying filling with a whole chair round c0 exists: True
+R2 (C) ball R=2: 665 sites, 1482720 choices, 7 candidate chairs for c0 (230s)
+R2 (C) UNSAT: every rule-obeying filling reads a whole chair, turned as its RDs say, round every cube (666s)
+R2 VERDICT WHOLE CHAIRS FORCED
+DONE
+DONE-RUN

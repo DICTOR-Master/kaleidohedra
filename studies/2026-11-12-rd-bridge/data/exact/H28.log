@@ -1,0 +1,21 @@
+H28 round 0: 14 types, 1480 allowed, 2704 fit, extra 1224, classes 40
+PROGRESS 0.14 rounds
+H28 round 1: 225 types, 3958 allowed, 4130 fit, extra 172, classes 3620
+PROGRESS 0.29 rounds
+H28 round 2: 343 types, 5509 allowed, 5731 fit, extra 222, classes 5920
+PROGRESS 0.43 rounds
+H28 round 3: 405 types, 6307 allowed, 6307 fit, extra 0, classes 7144
+PROGRESS 0.57 rounds
+EXACT H28 types 405 classes 7144 rounds 3
+COMPLETE H28: level 4 405 types 6307 pairs; level 5 405 types 6307 pairs, extra 0 -> SAME
+REG ok   (R1) RD: 14 corners, 24 edges, cos(normal angle) over all edges = [Fraction(1, 2)] (1/2 = dihedral 120)
+REG ok   (R2) stabiliser of face (1, 1, 0) (and its side): 4 elements, 4 distinct actions on the rhombus (its full group has 4)
+REG ok   (R3) face corners as computed are the RD corners of the face
+REG ok   (R3) 4 positions per face, inside the rhombus: True; squared distance to the boundary >= 841/29400 (0.1691); squares of half-side s = 1/40 stay at least half that distance from the boundary and are disjoint
+REG ok   (R3) heights: class c gets height c * 1/571520 (s/2 / 7144 classes), so every pyramid has height <= s/2; creases bend <= 36.87 degrees < 60
+REG ok   (R4) RD: fillings of 360 by (k edges of 120, m near-flat sectors): [(0, 2), (3, 0)]; the only one with an RD edge is (3, 0)
+REG ok   (R4) NEGATIVE CONTROL cube: fillings [(0, 2), (2, 1), (4, 0)] include an edge beside a flat sector (k >= 1, m >= 1): sliding possible
+REG ok   (M) CONTROL unmirrored fits recounted with our own rotations: 6307 (keyed_rd.py: 6307)
+REG (M) faces with no bump or dent: 0; fitting (type, face, MIRRORED type, turn) pairs: 0
+REG VERDICT MIRRORS: no mirrored piece fits beside an unmirrored one (a tiling is all one hand)
+REG FINAL ok
