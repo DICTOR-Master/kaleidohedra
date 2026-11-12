@@ -6598,6 +6598,16 @@
     "retry": "never for symmetric keyed RDs (|G|>=3, these alphabets) or poly-RDs n<=7; only: keyed RD with no symmetry by a directed (not random) search, keyed poly-RDs >= 6 cells, or poly-RDs n = 8",
     "study": "2026-11-12-hopeful-piece",
     "date": "2026-11-12"
+   },
+   {
+    "question": "#43 step A1, DICTO 11-11 'most likely a 4D vacuus that is very sophisticated' + 'c the permutahedron 4D vacuus': the hop sweep's 4D Vacuus built like the permutohedron's (central slices through (O, t) carrying the walls): do the walls line up at a centre INSIDE the solid, and do slice classes sort cut from surviving cells?",
+    "method": "studies/2026-11-12-hop-4d-vacuus: vac4.py one engine (exact Q(sqrt5) slice normals and counts; special heights by float prefilter + exact gcd of the six minor polynomials; exact k = 5 slice shapes); positive control 4D permutohedron (65 slices, four classes as #105, centre = deepest drop of a line scan); negatives: perturbed permutohedron (150 at the centre), perturbed sweep (no orbit merges), random whole-orbit cut labels for the slice tests; walls/cut/N = og-margin 31a at k = 5-7; compute machine, 2 cores, FINAL ok",
+    "status": "FAILED (no sophisticated centre; slice classes uninformative), k = 5-7",
+    "result": "inside special heights 3 / 8 / 8 (k = 5 / 6 / 7), each merging one or two orbits: largest drop 60 of 465 (12.9 %), 12 of 615, 36 of 1035, against 85 of 150 (57 %) at the permutohedron centre; no parallel-wall pairs; T1 (slice type) separates but random labels do too (20/20); T2 (merged slices mixing wall types) never mixes, random labels neither; k = 8-11 skipped (float 4D enumeration fails Euler)",
+    "retry": "only k = 8-11 after an exact 4D corner enumeration; or the centre-free border sheets (31a); not the centred slice-type test again",
+    "study": "studies/2026-11-12-hop-4d-vacuus",
+    "date": "2026-11-12",
+    "target": "#43 Conjecture 1 (the OG's margin)"
    }
   ]
  },

@@ -668,6 +668,8 @@ SEPARATION (both versions, every level): a sheet carrying a SURVIVOR–CUT wall 
 are the 15 mirror sheets at k = 6, 9, 10 combining cut–cut with survivor–survivor walls. The border between cut and surviving cells
 lives on sheets of its own. Lead for step A1: count border sheets (circles through two survivor and two cut candidates).
 
+**§31b (12 Nov 2026):** the inside-the-solid scan with a permutohedron control and the slice-class test are in studies/2026-11-12-hop-4d-vacuus (k = 5–7: no sophisticated centre; slice classes uninformative).
+
 ## §34 Certified run toward 40 (11 Nov 2026; DICTO "yes take it to 40"; scripts/certified_orbit.py, data/og-certified-40*.{json,log}, watched job og-certified-40)
 Orbit storage + float with a proved error bound (1e−12) + balls for close calls (2–15 per level from D_35) + exact point labels.
 Validation: every t_min(D_k), k = 10 … 30, MATCHES certified-30 to 1e−9. **Certified t_min(D_k) < 3/φ² for every k ≤ 40 — RUN COMPLETE, FINAL ok** (t_min(D_39) ≤ 1.000083, t_min(D_40) ≤ 1.000108; D_41: 4 517 522 faces, 38 014 orbits, 43 close calls in balls, 4799 s; D_40: 3 412 382 faces; earlier milestones k ≤ 37, 38, 39)

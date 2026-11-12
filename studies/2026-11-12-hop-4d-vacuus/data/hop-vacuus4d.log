@@ -1,0 +1,95 @@
+PASS permutohedron: exact slice partitions agree at 3 generic heights (150 slices)
+PASS permutohedron f-vector (120, 240, 150, 30), Euler 0, incidence gap 1.67e-01
+PASS permutohedron: 65 central slices at the centre carry the 150 2-faces (#105: 65)
+  classes (count, corners, edges, faces, face sizes, 2-faces carried, Euler): (30, 32, 52, 22, {4: 14, 6: 8}, 60, 2); (20, 24, 36, 14, {4: 6, 6: 8}, 40, 2); (10, 24, 42, 20, {4: 18, 6: 2}, 20, 2); (5, 24, 36, 14, {4: 6, 6: 8}, 30, 2)
+PASS permutohedron slice classes = #105 (30 x 32/52/22, 20 x 24/36/14, 10 x 24/42/20, 5 x 24/36/14)
+PASS scan along a generic line: generic N 150; deepest inside drop at t = 0.0 with N = 65 (want t = 0, N = 65)
+  inside special heights on the line: 43: t -0.2727 N 148, t -0.2667 N 149, t -0.2609 N 148, t -0.2500 N 143, t -0.2400 N 149, t -0.2353 N 149, t -0.2308 N 149, t -0.2222 N 149, t -0.2143 N 149, t -0.2000 N 142, t -0.1875 N 149, t -0.1765 N 149, t -0.1667 N 145, t -0.1579 N 149, t -0.1500 N 149, t -0.1429 N 146, t -0.1364 N 149, t -0.1250 N 147, t -0.1111 N 148, t -0.1000 N 149, t -0.0833 N 149, t +0.0000 N 65, t +0.0833 N 149, t +0.1000 N 149, t +0.1111 N 148, t +0.1250 N 147, t +0.1364 N 149, t +0.1429 N 146, t +0.1500 N 149, t +0.1579 N 149, t +0.1667 N 145, t +0.1765 N 149, t +0.1875 N 149, t +0.2000 N 142, t +0.2143 N 149, t +0.2222 N 149, t +0.2308 N 149, t +0.2353 N 149, t +0.2400 N 149, t +0.2500 N 143, t +0.2609 N 148, t +0.2667 N 149, t +0.2727 N 148 | prefilter {'candidates': 1865, 'confirmed': 1865, 'rejected_exactly': 0, 'min_float_rejected': 1.2616969184865304e-07, 'always_float_prefilter': 0}
+PASS perturbed permutohedron: exact slice partitions agree at 3 generic heights (150 slices)
+PASS perturbed permutohedron f-vector (120, 240, 150, 30) (same as the permutohedron)
+PASS perturbed permutohedron: 150 slices at the old centre (want 150: nothing lines up there); largest inside drop 1 (want <= 8, the largest non-centre drop of the permutohedron: parallel 2-faces keep their heights); always-coincident pairs 0
+  perturbed permutohedron inside drops: [(1, 133)]
+k 5: 252 cells, cut 60, walls 750, 4D float enumeration f-vector (720, 1660, 1194, 254) Euler 0, incidence gap 4.39e-04 (max tight residual 1.2e-13); LAM/max b 5.00
+PASS k 5: cells/cut/walls (252, 60, 750) = og-margin §31a (252, 60, 750)
+PASS k 5: exact slice partitions agree at 3 generic heights (465 slices)
+PASS k 5: exact slice counts at three generic heights {'inside maxb/3': 465, 'inside maxb': 465, 'outside -0.2718 maxb': 465} agree with the union count 465
+PASS k 5: generic N 465 = og-margin §31a 465
+  special heights: 46 (4 trivial), non-trivial 42, INSIDE the solid 3; always-coincident wall pairs 285; prefilter {'candidates': 7340, 'confirmed': 7340, 'rejected_exactly': 0, 'min_float_rejected': 1.0632112125065459e-07, 'always_float_prefilter': 1545}
+  inside heights by drop: [(48, 1), (60, 2)]; pairs at inside heights 240, of them parallel walls 0
+  largest drops: all 100@-1.0560, 60@-1.9107, 60@-1.3657, 60@-1.3003, 60@-1.1518, 60@-1.0997 | inside 60@+0.4731, 60@+16.1062, 48@+1.6945
+PASS k 5: special heights only merge slices
+PASS k 5 generic maxb/3: every slice class rep has Euler 2 (11 classes, EXACT corners and incidences, min float margin outside the band 1.0e-02)
+  generic maxb/3 (t/max b +0.3333): 465 slices in 11 classes; slice types carrying a cut wall 2, only survivor walls 5, shared 0 -> T1 SEPARATES; random labels separate 20/20; T2 classes merged at this height 0, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+      class x120: 101 corners 159 edges 60 faces {3: 13, 4: 22, 5: 14, 6: 9, 33: 1, 34: 1}, walls {2: 120}, meets cut 10 active 49 cells, floor True top True
+      class x72: 97 corners 153 edges 58 faces {3: 21, 4: 16, 5: 9, 6: 8, 7: 2, 32: 1, 40: 1}, walls {2: 72}, meets cut 13 active 44 cells, floor True top True
+      class x48: 94 corners 143 edges 51 faces {3: 14, 4: 17, 5: 8, 6: 8, 7: 2, 32: 1, 42: 1}, walls {2: 48}, meets cut 10 active 40 cells, floor True top True
+      class x48: 97 corners 153 edges 58 faces {3: 21, 4: 16, 5: 9, 6: 8, 7: 2, 32: 1, 40: 1}, walls {2: 48}, meets cut 13 active 44 cells, floor True top True
+PASS k 5 generic maxb: every slice class rep has Euler 2 (10 classes, EXACT corners and incidences, min float margin outside the band 1.0e-02)
+  generic maxb (t/max b +1.0000): 465 slices in 10 classes; slice types carrying a cut wall 2, only survivor walls 5, shared 0 -> T1 SEPARATES; random labels separate 20/20; T2 classes merged at this height 0, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+      class x120: 98 corners 153 edges 57 faces {3: 19, 4: 15, 5: 11, 6: 9, 7: 1, 33: 1, 40: 1}, walls {2: 120}, meets cut 12 active 44 cells, floor True top True
+      class x120: 102 corners 163 edges 63 faces {3: 19, 4: 22, 5: 12, 6: 3, 7: 3, 8: 2, 32: 1, 34: 1}, walls {2: 120}, meets cut 15 active 47 cells, floor True top True
+      class x48: 94 corners 143 edges 51 faces {3: 14, 4: 13, 5: 12, 6: 10, 32: 1, 40: 1}, walls {2: 48}, meets cut 10 active 40 cells, floor True top True
+      class x36: 96 corners 149 edges 55 faces {3: 12, 4: 17, 5: 16, 6: 6, 7: 2, 30: 1, 34: 1}, walls {2: 36}, meets cut 10 active 44 cells, floor True top True
+PASS k 5 special drop 60: every slice class rep has Euler 2 (10 classes, EXACT corners and incidences, min float margin outside the band 1.0e-02)
+  special drop 60 (t/max b +0.4731): 405 slices in 10 classes; slice types carrying a cut wall 2, only survivor walls 5, shared 0 -> T1 SEPARATES; random labels separate 20/20; T2 classes merged at this height 1, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+      class x120: 96 corners 150 edges 56 faces {3: 19, 4: 17, 5: 7, 6: 9, 7: 2, 32: 1, 40: 1}, walls {2: 120}, meets cut 12 active 43 cells, floor True top True
+      class x60: 98 corners 155 edges 59 faces {3: 14, 4: 20, 5: 14, 6: 9, 32: 2}, walls {2: 120}, meets cut 10 active 49 cells, floor True top True
+      class x48: 94 corners 143 edges 51 faces {3: 14, 4: 17, 5: 8, 6: 8, 7: 2, 32: 1, 42: 1}, walls {2: 48}, meets cut 10 active 40 cells, floor True top True
+      class x48: 122 corners 201 edges 81 faces {3: 28, 4: 23, 5: 14, 6: 12, 8: 2, 30: 1, 38: 1}, walls {1: 48}, meets cut 12 active 68 cells, floor True top True
+PASS k 5 special drop 60: every slice class rep has Euler 2 (8 classes, EXACT corners and incidences, min float margin outside the band 1.0e-02)
+  special drop 60 (t/max b +16.1062): 405 slices in 8 classes; slice types carrying a cut wall 2, only survivor walls 5, shared 0 -> T1 SEPARATES; random labels separate 20/20; T2 classes merged at this height 1, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+      class x120: 100 corners 156 edges 58 faces {3: 15, 4: 17, 5: 16, 6: 8, 33: 1, 38: 1}, walls {2: 120}, meets cut 14 active 43 cells, floor True top True
+      class x60: 98 corners 155 edges 59 faces {3: 24, 4: 15, 5: 6, 6: 10, 7: 2, 34: 1, 40: 1}, walls {2: 120}, meets cut 12 active 47 cells, floor True top True
+      class x60: 100 corners 159 edges 61 faces {3: 16, 4: 24, 5: 8, 6: 9, 7: 2, 32: 1, 34: 1}, walls {2: 60}, meets cut 14 active 46 cells, floor True top True
+      class x60: 141 corners 231 edges 92 faces {3: 20, 4: 28, 5: 25, 6: 15, 7: 2, 30: 1, 31: 1}, walls {1: 60}, meets cut 18 active 73 cells, floor True top True
+PASS k 5 special drop 48: every slice class rep has Euler 2 (9 classes, EXACT corners and incidences, min float margin outside the band 1.0e-02)
+  special drop 48 (t/max b +1.6945): 417 slices in 9 classes; slice types carrying a cut wall 2, only survivor walls 5, shared 0 -> T1 SEPARATES; random labels separate 20/20; T2 classes merged at this height 1, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+      class x120: 100 corners 155 edges 57 faces {3: 21, 4: 14, 5: 9, 6: 7, 7: 4, 34: 1, 42: 1}, walls {2: 120}, meets cut 12 active 44 cells, floor True top True
+      class x120: 101 corners 161 edges 62 faces {3: 19, 4: 22, 5: 11, 6: 6, 7: 2, 33: 1, 39: 1}, walls {2: 120}, meets cut 15 active 46 cells, floor True top True
+      class x48: 100 corners 151 edges 53 faces {3: 14, 4: 15, 5: 12, 6: 8, 7: 2, 32: 1, 46: 1}, walls {2: 48}, meets cut 12 active 40 cells, floor True top True
+      class x36: 102 corners 159 edges 59 faces {3: 14, 4: 17, 5: 16, 6: 6, 7: 4, 30: 1, 34: 1}, walls {2: 36}, meets cut 10 active 48 cells, floor True top True
+PASS perturbed sweep: exact slice partitions agree at 2 generic heights (1001 slices)
+PASS perturbed sweep k 5: walls 1001, generic N 1001 (want = walls: no mirror sheets), always pairs 0, non-trivial special heights 0 with largest drop 0 (want <= 3: no orbit merges); trivial 237
+k 6: 320 cells, cut 60, walls 930, 4D float enumeration f-vector (984, 2172, 1510, 322) Euler 0, incidence gap 3.31e-05 (max tight residual 1.5e-13); LAM/max b 20.00
+PASS k 6: cells/cut/walls (320, 60, 930) = og-margin §31a (320, 60, 930)
+PASS k 6: exact slice partitions agree at 3 generic heights (615 slices)
+PASS k 6: exact slice counts at three generic heights {'inside maxb/3': 615, 'inside maxb': 615, 'outside -0.2718 maxb': 615} agree with the union count 615
+PASS k 6: generic N 615 = og-margin §31a 615
+  special heights: 71 (5 trivial), non-trivial 66, INSIDE the solid 8; always-coincident wall pairs 315; prefilter {'candidates': 8973, 'confirmed': 8973, 'rejected_exactly': 0, 'min_float_rejected': 1.641391761802968e-07, 'always_float_prefilter': 3273}
+  inside heights by drop: [(12, 8)]; pairs at inside heights 96, of them parallel walls 0
+  largest drops: all 36@-0.2950, 24@-1.4471, 24@-0.9774, 24@-0.8182, 24@-0.7317, 12@-2.9543 | inside 12@+0.2501, 12@+0.4395, 12@+0.6464, 12@+0.7059, 12@+0.7534, 12@+3.0087, 12@+3.6520, 12@+4.6320
+PASS k 6: special heights only merge slices
+  generic maxb/3 (t/max b +0.3333): 615 slices in 30 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 0, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+  generic maxb (t/max b +1.0000): 615 slices in 30 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 0, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+  special drop 12 (t/max b +0.2501): 603 slices in 30 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 1, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+  special drop 12 (t/max b +0.4395): 603 slices in 30 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 1, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+  special drop 12 (t/max b +0.6464): 603 slices in 30 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 1, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+  special drop 12 (t/max b +0.7059): 603 slices in 30 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 1, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+  special drop 12 (t/max b +0.7534): 603 slices in 30 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 1, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+k 7: 402 cells, cut 90, walls 1170, 4D float enumeration f-vector (1360, 2840, 1884, 404) Euler 0, incidence gap 1.50e-06 (max tight residual 1.6e-13); LAM/max b 5.00
+PASS k 7: cells/cut/walls (402, 90, 1170) = og-margin §31a (402, 90, 1170)
+PASS k 7: exact slice partitions agree at 3 generic heights (1035 slices)
+PASS k 7: exact slice counts at three generic heights {'inside maxb/3': 1035, 'inside maxb': 1035, 'outside -0.2718 maxb': 1035} agree with the union count 1035
+PASS k 7: generic N 1035 = og-margin §31a 1035
+  special heights: 112 (7 trivial), non-trivial 105, INSIDE the solid 8; always-coincident wall pairs 135; prefilter {'candidates': 5931, 'confirmed': 4755, 'rejected_exactly': 1176, 'min_float_rejected': 6.856988781073749e-06, 'always_float_prefilter': 483}
+  inside heights by drop: [(6, 1), (12, 5), (30, 1), (36, 1)]; pairs at inside heights 144, of them parallel walls 0
+  largest drops: all 36@-1.0155, 36@-0.9849, 36@-0.9302, 36@+0.1552, 30@+0.2901, 28@-1.0036 | inside 36@+0.1552, 30@+0.2901, 12@+0.4958, 12@+0.5723, 12@+2.7337, 12@+5.2537, 12@+19.3560, 6@+0.5693
+PASS k 7: special heights only merge slices
+  generic maxb/3 (t/max b +0.3333): 1035 slices in 46 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 0, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+  generic maxb (t/max b +1.0000): 1035 slices in 46 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 0, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+  special drop 36 (t/max b +0.1552): 999 slices in 46 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 3, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+  special drop 30 (t/max b +0.2901): 1005 slices in 46 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 2, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+  special drop 12 (t/max b +0.4958): 1023 slices in 46 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 1, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+  special drop 12 (t/max b +0.5723): 1023 slices in 46 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 1, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+  special drop 12 (t/max b +2.7337): 1023 slices in 46 classes; slice types carrying a cut wall 1, only survivor walls 1, shared 1 -> T1 n/a (no shapes at this level); random labels separate 0/20; T2 classes merged at this height 1, mixing wall types 0 (random labels: mean 0.00, max 0, draws with none 20/20)
+k 8: 500 cells, cut 0, walls 1490, 4D float enumeration f-vector (1872, 5628, 2490, 502) Euler -1768, incidence gap 1.90e-07 (max tight residual 6.6e-11); LAM/max b 20.00
+  k 8 SKIPPED: walls not trustworthy at this level (see og-margin §31a for its counts)
+k 9: 732 cells, cut 252, walls 2250, 4D float enumeration f-vector (2680, 7112, 3462, 734) Euler -1704, incidence gap 1.80e-07 (max tight residual 1.8e-10); LAM/max b 80.00
+  k 9 SKIPPED: walls not trustworthy at this level (see og-margin §31a for its counts)
+k 10: 662 cells, cut 192, walls 2232, 4D float enumeration f-vector (2736, 8184, 3364, 664) Euler -2748, incidence gap 5.82e-05 (max tight residual 6.1e-10); LAM/max b 5.00
+  k 10 SKIPPED: walls not trustworthy at this level (see og-margin §31a for its counts)
+k 11: 672 cells, cut 672, walls 318, 4D float enumeration f-vector (201, 518, 438, 121) Euler 0, incidence gap 1.30e-09 (max tight residual 6.8e-16); LAM/max b 5.00
+  k 11 SKIPPED: walls not trustworthy at this level (see og-margin §31a for its counts)
+done in 388 s
+FINAL ok
+(figure made in a separate run: scripts/fig_scan.py, FINAL ok)
