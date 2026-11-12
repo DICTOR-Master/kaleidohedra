@@ -1,0 +1,114 @@
+{
+ "sections": {
+  "tesseract": [
+   {
+    "polytope": "8-cell",
+    "direction": "vertex-first",
+    "height": "3/2 - sqrt(5)/2",
+    "height_note": "x1+x2+x3+x4 = 2h; corner layers at h = 0 (6 corners) and h = 1 (4 corners); tip h = 2",
+    "solid": "Greater Golden Cut Tetrahedron",
+    "exact": true
+   },
+   {
+    "polytope": "8-cell",
+    "direction": "vertex-first",
+    "height": "1/2",
+    "height_note": "x1+x2+x3+x4 = 2h; corner layers at h = 0 (6 corners) and h = 1 (4 corners); tip h = 2",
+    "solid": "Archimedean truncated tetrahedron",
+    "exact": true
+   },
+   {
+    "polytope": "8-cell",
+    "direction": "vertex-first",
+    "height": "-1/2 + sqrt(5)/2",
+    "height_note": "x1+x2+x3+x4 = 2h; corner layers at h = 0 (6 corners) and h = 1 (4 corners); tip h = 2",
+    "solid": "Lesser Golden Cut Tetrahedron",
+    "exact": true
+   }
+  ],
+  "120-cell": [
+   {
+    "polytope": "120-cell",
+    "direction": "vertex-first",
+    "atlas_height": "25/16 + 11/16\u221a5",
+    "h_over_tip": 0.9045084971874737,
+    "gap": [
+     "25/16 + 11/16\u221a5",
+     "25/16 + 11/16\u221a5"
+    ],
+    "fraction_in_gap_from_lower_layer": null,
+    "solid": "tetrahedron greater golden cut (#88)",
+    "exact": true
+   },
+   {
+    "polytope": "120-cell",
+    "direction": "vertex-first",
+    "atlas_height": "51/32 + 23/32\u221a5",
+    "h_over_tip": 0.9340169943749475,
+    "gap": [
+     "25/16 + 11/16\u221a5",
+     "13/8 + 3/4\u221a5"
+    ],
+    "fraction_in_gap_from_lower_layer": "1/2",
+    "solid": "tetrahedron lesser golden cut (#88)",
+    "exact": true
+   },
+   {
+    "polytope": "120-cell",
+    "direction": "cell-first",
+    "atlas_height": "37/32 + 17/32\u221a5",
+    "h_over_tip": 0.7983738762488434,
+    "gap": [
+     "9/8 + 1/2\u221a5",
+     "5/4 + 9/16\u221a5"
+    ],
+    "fraction_in_gap_from_lower_layer": "3/2 - sqrt(5)/2",
+    "solid": "dodecahedron greater golden cut (#88)",
+    "exact": true
+   },
+   {
+    "polytope": "120-cell",
+    "direction": "cell-first",
+    "atlas_height": "39/32 + 17/32\u221a5",
+    "h_over_tip": 0.8196601125010515,
+    "gap": [
+     "9/8 + 1/2\u221a5",
+     "5/4 + 9/16\u221a5"
+    ],
+    "fraction_in_gap_from_lower_layer": "-1/2 + sqrt(5)/2",
+    "solid": "dodecahedron lesser golden cut (#88)",
+    "exact": true
+   }
+  ]
+ },
+ "checks": [
+  {
+   "check": "tesseract vertex-first, h = 3/2 - sqrt(5)/2 (layers at 0 and 1; x = (1-h)/(2-h) = 3/2 - sqrt(5)/2): 12 corners, exactly Greater Golden Cut Tetrahedron",
+   "pass": true
+  },
+  {
+   "check": "tesseract vertex-first, h = 1/2 (layers at 0 and 1; x = (1-h)/(2-h) = 1/3): 12 corners, exactly Archimedean truncated tetrahedron",
+   "pass": true
+  },
+  {
+   "check": "tesseract vertex-first, h = -1/2 + sqrt(5)/2 (layers at 0 and 1; x = (1-h)/(2-h) = 1/2 - sqrt(5)/10): 12 corners, exactly Lesser Golden Cut Tetrahedron",
+   "pass": true
+  },
+  {
+   "check": "120-cell vertex-first, atlas height 25/16 + 11/16\u221a5 (h/tip 0.90450850; in the gap 25/16 + 11/16\u221a5 .. 25/16 + 11/16\u221a5, fraction -): 12 points, exactly tetrahedron greater golden cut (#88)",
+   "pass": true
+  },
+  {
+   "check": "120-cell vertex-first, atlas height 51/32 + 23/32\u221a5 (h/tip 0.93401699; in the gap 25/16 + 11/16\u221a5 .. 13/8 + 3/4\u221a5, fraction 1/2): 12 points, exactly tetrahedron lesser golden cut (#88)",
+   "pass": true
+  },
+  {
+   "check": "120-cell cell-first, atlas height 37/32 + 17/32\u221a5 (h/tip 0.79837388; in the gap 9/8 + 1/2\u221a5 .. 5/4 + 9/16\u221a5, fraction 3/2 - sqrt(5)/2): 60 points, exactly dodecahedron greater golden cut (#88)",
+   "pass": true
+  },
+  {
+   "check": "120-cell cell-first, atlas height 39/32 + 17/32\u221a5 (h/tip 0.81966011; in the gap 9/8 + 1/2\u221a5 .. 5/4 + 9/16\u221a5, fraction -1/2 + sqrt(5)/2): 60 points, exactly dodecahedron lesser golden cut (#88)",
+   "pass": true
+  }
+ ]
+}

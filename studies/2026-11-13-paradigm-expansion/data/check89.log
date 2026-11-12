@@ -1,0 +1,13 @@
+PASS #89 data read: 3 tesseract rows
+PASS #89 height h = 3/2 - sqrt(5)/2 (Greater Golden Cut Tetrahedron): 12 corners = the orderings of (−1, 2h − 1, 1, 1), i.e. of (0, h, 1, 1) after x ↦ (x + 1)/2
+PASS    its hexagons have sides in the ratio of the gaps h : 1 − h, and the cut x = (1 − h)/(2 − h) = 3/2 - sqrt(5)/2 gives short : long = x : (1 − 2x) = (1 − h) : h
+PASS #89 height h = 1/2 (Archimedean truncated tetrahedron): 12 corners = the orderings of (−1, 2h − 1, 1, 1), i.e. of (0, h, 1, 1) after x ↦ (x + 1)/2
+PASS    its hexagons have sides in the ratio of the gaps h : 1 − h, and the cut x = (1 − h)/(2 − h) = 1/3 gives short : long = x : (1 − 2x) = (1 − h) : h
+PASS #89 height h = -1/2 + sqrt(5)/2 (Lesser Golden Cut Tetrahedron): 12 corners = the orderings of (−1, 2h − 1, 1, 1), i.e. of (0, h, 1, 1) after x ↦ (x + 1)/2
+PASS    its hexagons have sides in the ratio of the gaps h : 1 − h, and the cut x = (1 − h)/(2 − h) = 1/2 - sqrt(5)/10 gives short : long = x : (1 − 2x) = (1 − h) : h
+PASS control h = 1/3 (0 < h < 1): section = orderings of [-1, -1/3, 1, 1]
+PASS control h = 3/2 (1 < h < 2: a regular tetrahedron, values (2h − 3, 1, 1, 1)): section = orderings of [0, 1, 1, 1]
+PASS control h = 0 (h = 0: the octahedron, values (−1, −1, 1, 1)): section = orderings of [-1, -1, 1, 1]
+PASS control h = 1 (h = 1: a layer of 4 corners, values (−1, 1, 1, 1)): section = orderings of [-1, 1, 1, 1]
+PASS negative control: the section by x1 + 2x2 + 3x3 + 4x4 = 1 (12 corners) is not closed under permuting coordinates
+FINAL ok

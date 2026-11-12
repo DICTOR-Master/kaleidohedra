@@ -1,0 +1,148 @@
+PROGRESS 0/32 arc-map
+wrote arc-map.png
+PASS arc map: 16 stations (Opening and 15 chapters)
+PROGRESS 1/32 arc-map-results
+wrote arc-map-results.png
+PASS arc map with results: 16 stations
+PROGRESS 2/32 bells-hexagon
+PASS bells-hexagon.png: six rows, each step one swap of neighbours, six equal sides √2 = 1.4142
+wrote bells-hexagon.png
+PROGRESS 3/32 bells-heard
+PASS bells-heard.png: six rows, each step one swap of neighbours, six equal sides √2 = 1.4142
+wrote bells-heard.png
+PROGRESS 4/32 three-hexagons
+PASS three-hexagons 1, 2, 3: regular: every side √2 × the gap it swaps; side ratio = gap ratio 1.000000
+PASS three-hexagons 1, 1 + φ, 2 + φ: golden: every side √2 × the gap it swaps; side ratio = gap ratio 1.618034
+PASS three-hexagons 1, 2, 4: the 1:2: every side √2 × the gap it swaps; side ratio = gap ratio 2.000000
+wrote three-hexagons.png
+PROGRESS 5/32 kelvin-swaps
+PASS Kelvin: 24 corners, 36 edges, 14 faces, Euler 2
+PASS Kelvin: 12 edges swap each pair 1↔2, 2↔3, 3↔4
+wrote kelvin-swaps.png
+PROGRESS 6/32 slider-silent
+PASS slider: Q4 vanishes on the slider only at μ = φ (a⁴ − 3a² + 1 = 3.33e-16); grid minimum at μ = 1.6175
+PASS slider: Q4 of the octahedron 0.7638 (0.764) and cuboctahedron 0.1909 (0.191), as #94
+wrote slider-silent.png
+PROGRESS 7/32 partner-fill
+PASS partner fill at x = φ: A cell (Icosaxes, μ = φ) + B cell (Unborn Axes, μ = 3 − φ) volumes 4.703819 + 3.296181 = 8 = the cell of 2Z³ per A site
+PASS partner fill: 24 corners each, squares and hexagons
+wrote partner-fill.png
+PROGRESS 8/32 two-sites
+PASS two sites at d = -0.3333: A + B volume = 8, A cell corners 24
+PASS two sites at d = +0.0000: A + B volume = 8, A cell corners 24
+PASS two sites at d = +0.3333: A + B volume = 8, A cell corners 24
+wrote two-sites.png
+PROGRESS 9/32 gap-bars
+PASS gap bars at octahedron: (g − m)/(g + m) = d
+PASS gap bars at DICTO 1:2: (g − m)/(g + m) = d
+PASS gap bars at Kelvin: (g − m)/(g + m) = d
+PASS gap bars at golden bond: (g − m)/(g + m) = d
+PASS gap bars at DICTO 2:1: (g − m)/(g + m) = d
+PASS gap bars at cuboctahedron: (g − m)/(g + m) = d
+wrote gap-bars.png
+PROGRESS 10/32 rd-apart
+PASS RD build: 14 Hemi RDs; hull faces 18 = 6 squares + 12 hexagons
+PASS RD build: 14 pieces + 6 pyramids volume 15.000000 = hull volume 15.000000 = 15
+wrote rd-apart.png
+PROGRESS 11/32 hexagons-two
+PASS chamfered cube: edge directions 4 classes up to sign, none parallel to a swap direction (1, ±1, 0)
+wrote hexagons-two.png
+PROGRESS 12/32 one-swap
+PASS one swap: three frames drawn
+wrote one-swap.png
+PROGRESS 13/32 square-hexagon
+PASS square: 1↔2 then 4↔5 equals 4↔5 then 1↔2
+PASS hexagon: six alternate swaps 1↔2, 2↔3 return to the start
+wrote square-hexagon.png
+PROGRESS 14/32 four-slices
+PASS slice 30 slices, split (1, 2, 2): 32 corners, 52 edges, 22 faces; faces of the solid on it 2
+PASS slice 20 slices, split (1, 1, 3): 24 corners, 36 edges, 14 faces; faces of the solid on it 2
+PASS slice 10 slices, split (1, 3, 1): 24 corners, 42 edges, 20 faces; faces of the solid on it 2
+PASS slice 5 slices: the DICTO 1:2, the heart: 24 corners, 36 edges, 14 faces; faces of the solid on it 6
+wrote four-slices.png
+PROGRESS 15/32 kelvin-swept
+PASS Kelvin swept: corners with 0, 1, 2, 3 edges below = [1, 11, 11, 1]
+wrote kelvin-swept.png
+PROGRESS 16/32 film-strip
+PASS 4D permutohedron swept: corners with 0..4 edges below [1, 26, 66, 26, 1]
+wrote film-strip-4d.png
+PROGRESS 17/32 eulerian-bars
+PASS Eulerian numbers for five values [1, 26, 66, 26, 1]
+wrote eulerian-bars.png
+PROGRESS 18/32 bt600-balance
+PASS bitruncated 600-cell: 3600 corners (3600)
+PASS cell normals: 600 truncated tetrahedra (600), 120 truncated icosahedra (120)
+PASS every corner has 4 edges and lies in 4 cells (2 W + 2 R)
+PASS generic sweep: 2166 swaps (2166): W–W → R–R 601, R–R → W–W 601 (601 each), mixed 964 (964)
+wrote bt600-balance.png
+PROGRESS 19/32 h-vectors
+PASS 120-cell: h from f by Dehn–Sommerville: h1 = f3 − 4 = 116, h2 = f0 − 2 − 2h1 = 366
+PASS truncated 120-cell: h from f by Dehn–Sommerville: h1 = f3 − 4 = 716, h2 = f0 − 2 − 2h1 = 966
+PASS bitruncated 600-cell: h from f by Dehn–Sommerville: h1 = f3 − 4 = 716, h2 = f0 − 2 − 2h1 = 2166
+PASS 4D permutohedron: h from f by Dehn–Sommerville: h1 = f3 − 4 = 26, h2 = f0 − 2 − 2h1 = 66
+PASS chain middle of the 5-cell: E − V + 1 = 6
+PASS chain middle of the tesseract: E − V + 1 = 17
+PASS chain middle of the 24-cell: E − V + 1 = 73
+PASS chain middle of the 600-cell: E − V + 1 = 601
+wrote h-vectors.png
+PROGRESS 20/32 coxeter-grid
+PASS Theorem (edges at a corner): the 600-cell e = 12 (12), the 120-cell 4 (4), (0,1,0,0) in B4 6 (6), truncated 600-cell 6 (6), 24-cell 8 (8), the permutohedron 4 (4)
+PASS seeds drawn: {'clean': 26, 'rosette': 34}
+wrote coxeter-grid.png
+PROGRESS 21/32 clean-crowded
+PASS Kelvin's cell: 3 edges at a corner (clean): 3 edges at the corner; Theorem gives 3
+PASS octahedron: 4 edges at a corner (rosette): 4 edges at the corner; Theorem gives 4
+wrote clean-crowded.png
+PROGRESS 22/32 rosette-ledger
+PASS moved 16-cell, height −3x1 + x4: heights [-30, -4, -3, -2, 1, 2, 12, 31]; corners where 4 cells are born 2, where 4 die 1 (2 and 1: unbalanced)
+PASS regular 16-cell, generic height: 4 born at 1, 4 die at 1 (balanced)
+wrote rosette-ledger.png
+PROGRESS 23/32 stacking-word
+PASS stacking word ABCACB (repeated): layer types hcchcc
+wrote stacking-word.png
+PROGRESS 24/32 growth
+PASS ridges [6, 36, 150, 540, 1806, 5796, 18150] match the table
+PASS Vacuus count N(n) [3, 15, 65, 225, 770, 2443, 7761] matches Theorem (3, 15, 65, …, 7761)
+PASS corners with two edges below A(n, 2) = [1, 11, 66, 302, 1191, 4293, 14608]
+wrote growth.png
+PROGRESS 25/32 golden-heights
+PASS golden heights: exact a + bφ agree with floats True; 70 distinct heights (70), 50 coincidences (50)
+wrote golden-heights.png
+PROGRESS 26/32 golden-patch
+PASS rational plane section: 1 kinds seen (few), 8 heights
+PASS golden plane section: 22 kinds of section seen in the window (at most 35), 70 heights (70)
+wrote golden-patch.png
+PROGRESS 27/32 road
+PASS road t = 0.0: the permutohedron's face lattice kept: 24 corners, 14 faces
+PASS road t = 0.5: the permutohedron's face lattice kept: 24 corners, 14 faces
+PASS road t = 0.9: the permutohedron's face lattice kept: 24 corners, 14 faces
+PASS road t = 1: Loday's associahedron: 14 corners, 9 faces
+wrote road.png
+PROGRESS 28/32 fedorov
+PASS Fedorov parallelepiped (cube): graphical zonotope of the a tree (path): 8 corners, 6 faces
+PASS Fedorov rhombic dodecahedron: graphical zonotope of the 4-cycle: 14 corners, 12 faces
+PASS Fedorov hexagonal prism: graphical zonotope of the triangle + pendant: 12 corners, 8 faces
+PASS Fedorov elongated dodecahedron: graphical zonotope of the K₄ minus an edge: 18 corners, 12 faces
+PASS Fedorov truncated octahedron: graphical zonotope of the K₄: 24 corners, 14 faces
+wrote fedorov.png
+PROGRESS 29/32 coa13
+PASS 13-COA: 13 corners, 24 edges, faces {'triangle': 4, 'square': 5, 'rhombus': 4}, edge lengths {np.float64(1.414213562)}
+PASS 13-COA Vacuus: 24 fins in 22 planes, 2 planes with two fins (22 planes, 2 pairs)
+wrote coa13.png
+PROGRESS 30/32 one-cone
+PASS one cone: Kelvin's cell: every edge parallel to a swap direction
+PASS one cone: DICTO 1:2: every edge parallel to a swap direction
+PASS one cone: Icosaxes (golden): every edge parallel to a swap direction
+PASS one cone: DICTO 2:1: every edge parallel to a swap direction
+PASS one cone: octahedron = values 0, 0, 1, 1: every edge parallel to a swap direction
+PASS one cone: tetrahedron = values 0, 1, 1, 1: every edge parallel to a swap direction
+PASS one cone: truncated tetrahedron = 0, 0, 1, 2: every edge parallel to a swap direction
+PASS one cone: rhombic dodecahedron (Fedorov): every edge parallel to a swap direction
+PASS one cone: Loday's associahedron: every edge parallel to a swap direction
+wrote one-cone.png
+PROGRESS 31/32 grandsire
+PASS Grandsire Doubles: calling BPBPSPBPBPSP rings 120 distinct rows and comes round
+PASS Grandsire extent: 2 single swaps (edges) + 118 double swaps (square diagonals), as in Table: 2 + 118
+wrote grandsire.png
+PROGRESS 32/32 done
+FINAL ok
