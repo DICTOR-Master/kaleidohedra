@@ -1,0 +1,14 @@
+A (exact): [[2, 1, 1, -1, 1, -1], [1, 2, 1, -1, -1, 1], [1, 1, 2, 1, 1, 1], [-1, -1, 1, 2, 1, 1], [1, -1, 1, 1, 2, -1], [-1, 1, 1, 1, -1, 2]]  integer: True
+A = [[2, 1, 1, -1, 1, -1], [1, 2, 1, -1, -1, 1], [1, 1, 2, 1, 1, 1], [-1, -1, 1, 2, 1, 1], [1, -1, 1, 1, 2, -1], [-1, 1, 1, 1, -1, 2]]  det -1
+P(x) A columns:
+⎡2⋅x + 1  -2⋅x - 1     0        0      3⋅x + 2  -3⋅x - 2⎤
+⎢                                                       ⎥
+⎢3⋅x + 2  3⋅x + 2   2⋅x + 1  -2⋅x - 1     0        0    ⎥
+⎢                                                       ⎥
+⎣   0        0      3⋅x + 2  3⋅x + 2   2⋅x + 1  2⋅x + 1 ⎦
+read off from column 0: c(x) = 2*x + 1 , g(x) = (3*x + 2)/(2*x + 1)
+P(x) A == c(x) P(g(x)) for every x: True
+g equals the Fibonacci hop applied three times, h(h(h(x))): True
+fixed points of g: [1/2 + sqrt(5)/2]
+g on the cubic approximants: 2/1 -> 8/5, 3/2 -> 13/8, 5/3 -> 21/13, 8/5 -> 34/21, 13/8 -> 55/34, 21/13 -> 89/55
+FINAL ok
