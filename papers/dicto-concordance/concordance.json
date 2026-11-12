@@ -6389,6 +6389,24 @@
     "retry": "no (answered); Yantra cones (curved, degree 160) queued as chunk 5b; next chunk 6",
     "study": "2026-11-12-solids-canonical",
     "date": "2026-11-12"
+   },
+   {
+    "question": "Aim 1 lead 4: the icosahedral containment constant 15 - 6sqrt5 from orbit moments plus the degree-6 invariant harmonic, with every step exact (last open step: the harmonic's range on the sphere)",
+    "method": "studies/2026-11-09-hopscotch-rows/scripts/lead4_range.py: exact identities over Q(sqrt5) (rank one; Phi = sqrt5 f6 - (5+2sqrt5)/21 |u|^6, f6 = product of the six planes normal to the five-fold axes); f6 = cubic F in (x^2, y^2, z^2); all critical points of F on the triangle by exact factoring (edges) and resultant + gcd (interior) over Q(sqrt5); exact moment solve for the last link; 42 checks, controls: octahedral x^4+y^4+z^4 range [1/3,1], 62-point count, two-fold max refuted, no-edges loses the max, 8/5 for phi fails",
+    "status": "SETTLED (proved exactly)",
+    "result": "Phi ranges exactly over [-80/189 - 32sqrt5/189, 16/21 + 32sqrt5/105] (three-fold min, five-fold max); 13 candidates on the triangle (3 vertices F=0, 6 edge points F = (2+sqrt5)/5 or -(2+sqrt5)/27, centre -(2+sqrt5)/27, three two-fold points F=0); min h = -16/945 at the extremal pair; no weights on {-c, c', -c'} match the degree 0..5 moments; so max_g (gu).w >= c for all unit pairs and the constant 15 - 6sqrt5 (#43 Theorem 2) follows from moments plus one harmonic, no numerical step",
+    "retry": "never",
+    "study": "studies/2026-11-09-hopscotch-rows",
+    "date": "2026-11-12"
+   },
+   {
+    "question": "Aim 1 lead 5: does the turn's fixed point maximise t_min on the icosahedral two-family line (dodecahedron faces at 1, icosahedron faces at lambda, turn lambda -> 1/lambda)?",
+    "method": "studies/2026-11-09-hopscotch-rows/scripts/lead5_exact.py: exact corners at 22 rational lambda vs all 3600 corner pairs, wall determinant (recorded 12 Nov with lead 4's close; result from commit cf24f831)",
+    "status": "SETTLED (exact)",
+    "result": "t_min = min(rho lam, rho/lam, 10 - sqrt5 - 3 lam_w s), s = lam + 1/lam, rho^2 = 15 - 6sqrt5, wall lam_w = sqrt(30+6sqrt5)/6; maximum exactly at the fixed point lam = 1, t_min = 10 - sqrt5 - sqrt(30+6sqrt5) = R^2 of the self-antipol",
+    "retry": "never",
+    "study": "studies/2026-11-09-hopscotch-rows",
+    "date": "2026-11-12"
    }
   ]
  },
@@ -8077,6 +8095,9 @@
    "DICTO (11 Nov 2026, 'this might be a good study to go to Platonic book as related' -> 'yes chapter 12'): studies/2026-11-11-twin-vacuus (the Angeli): the Galois twins of the OG family's solids are exactly a regular icosahedron (level 2) and regular dodecahedron (levels 3, 7), golden-stretched Archimedean patterns elsewhere; the Angeli (twin Vacuus), the disc law (six decagonal discs at levels 0, 4), the kite echo, the hidden 4D fins and hidden worlds of the twin sweeps. Cross-reference from Chapter 4 (The Vacuus).",
    "DICTO (11 Nov): also for the Outsider opening and the Angeli: pentakis dodecahedra cycle under the hop (period 4, exact similarity, c in Q(sqrt5) per start; Angeli thread D -> rhomb -> I -> rhomb); the OG does not cycle but its level-1 and level-5 Angeli equal the Catalan pentakis's level-1 Angelus exactly.",
    "DICTO (11 Nov): figure 'One Angelus, two parents' (OG + Catalan pentakis with the same five-fold corners, identical level-1 Angelus) goes to the Outsider opening (studies/2026-11-11-twin-vacuus/figures/shared-level1-angelus.png)."
+  ],
+  "FIRST AIM: the periodic-aperiodic bridge (the Hopscotch turn)": [
+   "Lead 4 (12 Nov 2026, studies/2026-11-09-hopscotch-rows): CLOSED EXACTLY. The icosahedral constant 15 − 6√5 of #43 Theorem 2 now follows from orbit moments plus the one degree-6 invariant harmonic with no numerical step: the harmonic is √5·f6 − (5 + 2√5)/21 on the sphere, f6 a cubic in (x², y², z²), whose critical points are all found over Q(√5); its extremes sit at the five-fold and three-fold axes. With lead 5 (the turn's fixed point maximises t_min on the icosahedral two-family line, exact), the sphere row of the Hopscotch is now proved from the framework for all three Platonic symmetry types."
   ]
  }
 }

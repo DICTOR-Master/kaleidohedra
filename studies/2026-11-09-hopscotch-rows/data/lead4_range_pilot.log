@@ -1,0 +1,61 @@
+--- POSITIVE CONTROL: octahedral degree-4 invariant x^4 + y^4 + z^4 -> F = X^2 + Y^2 + Z^2
+ok   O control: edge X = 0: F' splits over Q(sqrt5) (exact roots [1/2])
+ok   O control: edge Y = 0: F' splits over Q(sqrt5) (exact roots [1/2])
+ok   O control: edge Z = 0: F' splits over Q(sqrt5) (exact roots [1/2])
+ok   O control: interior: resultant of the two partials in Y is a nonzero polynomial in X (degree 1): finitely many critical X
+ok   O control: interior: the resultant splits over Q(sqrt5) into linear factors (X roots [1/3])
+ok   O control: interior: at X = 1/3 the common Y roots split over Q(sqrt5) ([1/3])
+ok   O control: every candidate lies in [1/3, 1] (exact) and both ends are attained: min 1/3 at the centre (three-fold), max 1 at a vertex (four-fold)
+O control: candidates [((1, 0, 0), 1, 'vertex'), ((0, 1, 0), 1, 'vertex'), ((0, 0, 1), 1, 'vertex'), ((0, 1/2, 1/2), 1/2, 'edge'), ((1/2, 0, 1/2), 1/2, 'edge'), ((1/2, 1/2, 0), 1/2, 'edge'), ((1/3, 1/3, 1/3), 1/3, 'interior')]  (0.1 s)
+--- I: the degree-6 invariant harmonic
+ok   I: 60 exact rotations, all orthogonal with det 1 (exact)
+Phi built (0.8 s)
+ok   I: orbit of the five-fold axis has 12 points and Phi equals the 12-vertex mean exactly
+ok   I: Phi is harmonic (Laplacian = 0, exact)
+ok   I: H(x0, x0) = Phi(x0) > 0 (exact sign)
+ok   I: Phi = alpha f6 + beta |u|^6 exactly, f6 = (y^2 - phi^2 z^2)(z^2 - phi^2 x^2)(x^2 - phi^2 y^2): solution [{alpha: sqrt(5), beta: -5/21 - 2*sqrt(5)/21}]
+ok   I: alpha = sqrt(5) > 0 (exact sign)
+ok   NEGATIVE CONTROL (c): f6 built with 8/5 in place of phi cannot represent Phi (no alpha, beta)
+ok   I: f6(x, y, z) = F(x^2, y^2, z^2) (exact)
+ok   I: edge X = 0: F' splits over Q(sqrt5) (exact roots [sqrt(5)/6 + 1/2, 1/2 - sqrt(5)/10])
+ok   I: edge Y = 0: F' splits over Q(sqrt5) (exact roots [sqrt(5)/10 + 1/2, 1/2 - sqrt(5)/6])
+ok   I: edge Z = 0: F' splits over Q(sqrt5) (exact roots [sqrt(5)/6 + 1/2, 1/2 - sqrt(5)/10])
+ok   I: interior: resultant of the two partials in Y is a nonzero polynomial in X (degree 4): finitely many critical X
+ok   I: interior: the resultant splits over Q(sqrt5) into linear factors (X roots [1/3, 1/4, sqrt(5)/8 + 3/8, 3/8 - sqrt(5)/8])
+ok   I: interior: at X = 1/3 the common Y roots split over Q(sqrt5) ([1/3])
+ok   I: interior: at X = 1/4 the common Y roots split over Q(sqrt5) ([3/8 - sqrt(5)/8])
+ok   I: interior: at X = sqrt(5)/8 + 3/8 the common Y roots split over Q(sqrt5) ([1/4])
+ok   I: interior: at X = 3/8 - sqrt(5)/8 the common Y roots split over Q(sqrt5) ([sqrt(5)/8 + 3/8])
+candidates found (2.4 s):
+   vertex   X, Y, Z = (1, 0, 0)   F = 0 ~ 0.000000000000
+   vertex   X, Y, Z = (0, 1, 0)   F = 0 ~ 0.000000000000
+   vertex   X, Y, Z = (0, 0, 1)   F = 0 ~ 0.000000000000
+   edge     X, Y, Z = (0, sqrt(5)/6 + 1/2, 1/2 - sqrt(5)/6)   F = -sqrt(5)/27 - 2/27 ~ -0.156891406574
+   edge     X, Y, Z = (0, 1/2 - sqrt(5)/10, sqrt(5)/10 + 1/2)   F = 2/5 + sqrt(5)/5 ~ 0.847213595500
+   edge     X, Y, Z = (sqrt(5)/10 + 1/2, 0, 1/2 - sqrt(5)/10)   F = 2/5 + sqrt(5)/5 ~ 0.847213595500
+   edge     X, Y, Z = (1/2 - sqrt(5)/6, 0, sqrt(5)/6 + 1/2)   F = -sqrt(5)/27 - 2/27 ~ -0.156891406574
+   edge     X, Y, Z = (sqrt(5)/6 + 1/2, 1/2 - sqrt(5)/6, 0)   F = -sqrt(5)/27 - 2/27 ~ -0.156891406574
+   edge     X, Y, Z = (1/2 - sqrt(5)/10, sqrt(5)/10 + 1/2, 0)   F = 2/5 + sqrt(5)/5 ~ 0.847213595500
+   interior X, Y, Z = (1/3, 1/3, 1/3)   F = -sqrt(5)/27 - 2/27 ~ -0.156891406574
+   interior X, Y, Z = (1/4, 3/8 - sqrt(5)/8, sqrt(5)/8 + 3/8)   F = 0 ~ 0.000000000000
+   interior X, Y, Z = (sqrt(5)/8 + 3/8, 1/4, 3/8 - sqrt(5)/8)   F = 0 ~ 0.000000000000
+   interior X, Y, Z = (3/8 - sqrt(5)/8, sqrt(5)/8 + 3/8, 1/4)   F = 0 ~ 0.000000000000
+ok   I: the three test axes are a five-, three- and two-fold axis of this I (stabiliser orders 5, 3, 2)
+F at five-fold 2/5 + sqrt(5)/5 ~ 0.847213595500; three-fold -sqrt(5)/27 - 2/27 ~ -0.156891406574; two-fold 0 ~ 0.000000000000
+ok   I: every candidate value lies in [F(three-fold), F(five-fold)] (exact comparisons in Q(sqrt5))
+ok   I: both ends are attained among the candidates (F5 on edges, F3 at the centre and on edges)
+ok   COUNT CONTROL: candidates lift to 62 sphere points = 62 axis points (12 five-fold with F5: 12, 20 three-fold with F3: 20, 30 two-fold)
+ok   NEGATIVE CONTROL (a): the claim "max at a two-fold axis" is refuted exactly (F5 > F2)
+ok   I (no edges): interior: resultant of the two partials in Y is a nonzero polynomial in X (degree 4): finitely many critical X
+ok   I (no edges): interior: the resultant splits over Q(sqrt5) into linear factors (X roots [1/3, 1/4, sqrt(5)/8 + 3/8, 3/8 - sqrt(5)/8])
+ok   I (no edges): interior: at X = 1/3 the common Y roots split over Q(sqrt5) ([1/3])
+ok   I (no edges): interior: at X = 1/4 the common Y roots split over Q(sqrt5) ([3/8 - sqrt(5)/8])
+ok   I (no edges): interior: at X = sqrt(5)/8 + 3/8 the common Y roots split over Q(sqrt5) ([1/4])
+ok   I (no edges): interior: at X = 3/8 - sqrt(5)/8 the common Y roots split over Q(sqrt5) ([sqrt(5)/8 + 3/8])
+ok   NEGATIVE CONTROL (b): without the edges the five-fold maximum is missed (interior/vertex max < F5): the edge step is essential
+ok   I: Phi on the unit sphere ranges exactly over [-80/189 - 32*sqrt(5)/189, 32*sqrt(5)/105 + 16/21] = [-80/189 - 32 sqrt5/189, 16/21 + 32 sqrt5/105]
+ok   I: min of h(u, w) = Phi(u) Phi(w) / H(x0, x0) over unit u, w is Phi_min Phi_max / H(x0, x0) = -16/945, = -16/945 (the extremal pair)
+ok   I: hence mean p = A + p6 h >= A + p6 (-16/945) = 0 for ALL unit u, w (p6 > 0, lead4_cert.py): the range step is now exact
+ok   I: no weights on {-c, c', -c'} match the orbit moments of degree 0..5 (exact solve: []), so max_g (gu).w >= c for every unit pair
+time 4.5 s
+FINAL ok

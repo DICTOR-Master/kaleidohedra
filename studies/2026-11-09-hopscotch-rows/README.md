@@ -141,17 +141,33 @@ reads the same from either end.
 
 ## LEADS 4 and 5 worked (12 Nov 2026; scripts/lead4_cert.py, scripts/lead5_exact.py, logs data/lead4_cert.log, data/lead5_exact.log, both FINAL ok)
 
-**LEAD 4: the icosahedral constant from moments plus one invariant harmonic. CLOSED, with one numerically checked step.**
+**LEAD 4 CONCLUSION (12 Nov 2026): CLOSED EXACTLY; the degree-6 harmonic is a cubic in (x², y², z²) whose critical points are found over Q(√5), so 15 − 6√5 follows from moments plus one harmonic with no numerical step (scripts/lead4_range.py, FINAL ok).**
+
+**LEAD 4: the icosahedral constant from moments plus one invariant harmonic. CLOSED (exact, every step).**
 Certificate p(t) = (t − c)(t + c)²(t² − c′²)², degree 7, where ±c, ±c′ (c² = (5 + 2√5)/15, c′² = (5 − 2√5)/15) are the only inner
 products between the orbit of a five-fold axis (the 12 icosahedron vertices) and a three-fold axis. p ≤ 0 on [−1, c]. Its mean over
 an I-orbit, for unit u, w, uses the 5-design property, the vanishing degree-7 harmonic part (exact) and the degree-6 invariant
 harmonic h(u, w) = mean_g ((gu)·w)⁶ − 1/7:  mean p = A + p₆ h(u, w), A = 4(√30 + 5√6)√(5 + √5)/14175, p₆ > 0.
 Exact: h has rank one (28 × 28 coefficient matrix, rank 1), h = Φ(u)Φ(w)/Φ(x₀); mean p = 0 at the extremal pair, where
 h = −16/945; Φ at the five-fold axis 16/21 + 32√5/105, at the three-fold axis −80/189 − 32√5/189.
-Numerical (400 000 points + 80 local refinements, agreement 10⁻¹²): these two axis values are the maximum and minimum of Φ on the
-sphere, so h ≥ −16/945 everywhere and mean p ≥ 0 for all unit u, w. Hence max_g (gu)·w ≥ c for every pair, c is attained, and the
-constant is 1/c² = 15 − 6√5 (#43 Theorem 2) by the moment route. Open for a full proof: an exact proof that the degree-6 invariant
-harmonic takes its extremes on the sphere at the five-fold and three-fold axes.
+These two axis values are the maximum and minimum of Φ on the sphere (first checked numerically, 400 000 points; now PROVED, below),
+so h ≥ −16/945 everywhere and mean p ≥ 0 for all unit u, w. Hence max_g (gu)·w ≥ c for every pair, c is attained, and the
+constant is 1/c² = 15 − 6√5 (#43 Theorem 2) by the moment route.
+**The range step, exact (scripts/lead4_range.py, 42 checks, FINAL ok, 21 s).** (i) Exact polynomial identities over Q(√5):
+H(x₀, x₀)·H(u, w) = Φ(u)Φ(w) with H(x₀, x₀) = 240/7 + 320√5/21 (rank one as an identity), and Φ = √5·f6 − (5 + 2√5)/21·|u|⁶ with
+f6 = (y² − φ²z²)(z² − φ²x²)(x² − φ²y²), the product of the six planes normal to the five-fold axes. (ii) f6 = F(x², y², z²) with F
+the cubic (Y − φ²Z)(Z − φ²X)(X − φ²Y), so the range of Φ on the sphere is the range of F on the triangle X + Y + Z = 1, X, Y, Z ≥ 0.
+(iii) Extremes of F there sit at a vertex, an edge critical point or an interior critical point. Vertices: F = 0. Each edge: F′ is a
+quadratic that splits over Q(√5), roots (5 ± √5)/10-type and (3 ± √5)/6-type, values F₅ = (2 + √5)/5 and F₃ = −(2 + √5)/27. Interior:
+the resultant of ∂F/∂X, ∂F/∂Y (after Z = 1 − X − Y) is a nonzero quartic that splits into the four linear factors X = 1/3, 1/4,
+(3 ± √5)/8; a gcd gives one Y each: the centre (F₃) and the three two-fold points (F = 0). Every candidate value lies in [F₃, F₅],
+compared exactly in Q(√5); so Φ ranges exactly over [−80/189 − 32√5/189, 16/21 + 32√5/105] and min h = Φ_min·Φ_max/H(x₀, x₀) =
+−16/945. (iv) The last link also made exact: if max_g (gu)·w < c, every t_g is a zero of p below c, in {−c, c′, −c′}, and no
+weights on these three values match the orbit moments of degree 0 to 5 (exact solve: none).
+Controls: POSITIVE, the octahedral x⁴ + y⁴ + z⁴ (F = X² + Y² + Z²) gives the known range [1/3, 1]; with c allowed the moment solve
+returns the extremal orbit (weights 1/4 on ±c, ±c′); COUNT, the candidates lift to 12 + 20 + 30 = 62 sphere points, the five-fold
+value on exactly 12, the three-fold value on exactly 20; NEGATIVE, a two-fold maximum is refuted (F₅ > 0), dropping the edges loses
+the maximum (interior only gives F₃ and 0), and f6 built with 8/5 in place of φ cannot represent Φ.
 Controls: POSITIVE, the tetrahedral group with its degree-3 invariant (xyz) gives by the same construction c = 1/3, constant 9,
 with the range of xyz exact (AM–GM); NEGATIVE, treating the I-orbit as a 6-design (h = 0) contradicts the exact orbit mean at the
 extremal pair (A ≠ 0), so the harmonic term is essential; moments up to degree 5 give only √(3/5) < c. Sanity: 20 000 random unit
@@ -176,7 +192,7 @@ exactly at the fixed point, t_min = 10 − √5 − √(30 + 6√5) = R² of the
    remark; destination: a #103 version line (DICTO's choice where).
 3. Kulaichev's equal great triangles = the turn of its viewpoint orbit: is there a yantra meeting (b), (c), (d) AND sitting at the
    turn (u = v) besides Kulaichev's own? (Kulaichev = equal slopes + (b) + (c), (d) then holds to 10⁻²⁵⁵ per #103.)
-4. [WORKED 12 Nov, see above: closed up to a numerically checked range step] Icosahedral constant from the framework: find the degree-6 certificate (I's first invariant harmonic) that closes 5/3 → 15 − 6√5,
+4. [CLOSED EXACTLY 12 Nov, see above; range step proved in scripts/lead4_range.py] Icosahedral constant from the framework: find the degree-6 certificate (I's first invariant harmonic) that closes 5/3 → 15 − 6√5,
    so the moment route covers all three constants (same as octahedral-constant LEAD 4).
 5. [WORKED 12 Nov, see above: yes, exact] The outline's prediction "the fixed point of a polar turn maximises t_min": on the C–O line it follows from s = μ + 3/μ ≥ 2√3; test
    the icosahedral two-family line (dodecahedron ∩ μ·icosahedron, turn μ ↦ c/μ) for the same closed form min(·, ·, a − b·s).
