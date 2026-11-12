@@ -6693,6 +6693,15 @@
     "retry": "never; leads: duoprisms; residents of the other H4 polytopes by orbit",
     "status": "SETTLED (exact)",
     "study": "studies/2026-11-13-platonic-residents-exact"
+   },
+   {
+    "date": "2026-11-13",
+    "method": "studies/2026-11-13-paradigm-exact: hemi_exact.py (rational: build transforms read as exact signed permutations and tenths, separating planes, hull = Z + c, volumes), scutoid_exact.py (Q(sqrt5): exact polars, folds, mirror planes, flip shells; scutoid shells S and A as convex half-cells, 2 x 2016 separating-plane pairs, exact volumes), q5.py; B1 logs collected (data/b1-logs); compute machine via job gate (pexact-pilot, pexact), FINAL ok",
+    "question": "Permutohedron Paradigm book gaps before release (DICTO 13 Nov 'books first'): Ch4 Theorem 4.1 exact (DICTO's 14 Hemi RD build = chamfered cube less six cube pyramids); Ch5 Theorems 5.3 (polar flip) and 5.4 (cycle, onions) exact; Ch9 closing note on the Boulder (B1 walls along the sliders)",
+    "result": "ALL THREE CLOSED. 4.1 EXACT: conv(build) = Z + (0,1/5,1/5), 91 + 99 pairs separated, 14 + 6/6 = 15. 5.3 PROVED (cones over RT rhombi, mirror side planes) + exact certificate (30 congruent cells, sum = V(TK) - V(PD)); 5.4 PROVED + certificate (S and A shells at circumradii 1, 1.18, 1.42 / 1.499, 71/45 filled exactly once; flip onion mu = 155/86); scutoid-shell filling certified only at these radii. Boulder note: #86 exact, #61 = Thm 9.1, #80 exact on (1/2,3/5), (3/4,1), #81 exact on [2/5,1], [3-phi,3/2]; windows and s* = 1.08734394 numerical. Also: cover c rendered; Permutohedron Family retold as Chapter 14 (13-COA = augmented cuboctahedron, Stewart 1970).",
+    "status": "SETTLED",
+    "retry": "never for 4.1, 5.3, flip onion; only: scutoid-shell filling for ALL radii (a general argument, not more runs); #80/#81 windows and exact s* (ledger [112])",
+    "study": "studies/2026-11-13-paradigm-exact"
    }
   ]
  },

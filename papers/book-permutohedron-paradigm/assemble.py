@@ -8,10 +8,10 @@
 # figures/ch<N>/; figures-fixed/ (made by fix_figures.py) overrides them. Output: paper.html, typeset by ../print.mjs (build.sh).
 import re, os, shutil, html
 HERE = os.path.dirname(os.path.abspath(__file__)); P = os.path.dirname(HERE)
-CH = [(str(i), f'paradigm-ch{i:02d}') for i in range(1, 14)] + [('Coda', 'paradigm-coda')]
+CH = [(str(i), f'paradigm-ch{i:02d}') for i in range(1, 15)] + [('Coda', 'paradigm-coda')]
 PART = {'1': ('Part One. Three dimensions', 'The permutohedra of three and four values: the truncated triangle, Kelvin\'s cell, the golden loop and the web of bonds; then a build of DICTO\'s that leads out of the family, and the scutoid.'),
         '6': ('Part Two. Four dimensions', 'The permutohedron of five values: its Vacuus and its heart, its sweep as a tissue, the rosettes, the walls of the Swap Rule and the mirrors of the Queens.'),
-        '11': ('Part Three. Every dimension', 'The Vacuus and the sweep counted for every number of values, the golden slice of the 4D filling, and change ringing on the permutohedra of three to eight values.')}
+        '11': ('Part Three. Every dimension', 'The Vacuus and the sweep counted for every number of values, the golden slice of the 4D filling, and change ringing on the permutohedra of three to eight values, and the whole family of the permutohedron, from Kelvin\'s cell to the associahedron.')}
 
 # DICTO's papers: the Collected Works table, plus the papers newer than it
 cw = open(os.path.join(P, 'collected', 'paper.html'), encoding='utf8').read()
@@ -37,6 +37,7 @@ FROM = {
  '11': f'Re-edited from {D(105)}, Section 4, and {D(104)}, Theorem 1′. Proposition 11.2 for every n is new in this book.',
  '12': f'New in this book. It answers the second lead of {D(105)}.',
  '13': f'New in this book. It reads the three principles of Kyushindo, as {D(43)} gives them, in English change ringing.',
+ '14': f'New in this book, retold from DICTO\'s draft paper The Permutohedron Family (12–13 November 2026, held as a paper, not published), with {D(49)} and #87.',
  'Coda': f'Re-edited from {D(105)}, Section 6, with a closing paragraph on what the book added.'}
 
 # checks and data, by chapter (from each chapter draft's status box; studies under studies/ of the research branch)
@@ -44,16 +45,17 @@ CHECKS = {
  '1': 'studies/2026-11-11-paradigm-ch1: key_lemma.py (exact, symbolic; the faces of the solids of Section 1.3 computed from their hulls; log kept; FINAL ok), fig_three.py (Figure 1.1). Commit d79c1d1f; checked independently on 11 November 2026, all findings fixed.',
  '2': 'studies/2026-11-11-paradigm-ch2: symmetry.py (the full symmetry group of the corners for four symmetric and three non-symmetric spacings; exact; FINAL ok). Commit becdcba3. The identification of T(x): #105, Theorem 4 (dictonic_family.py in studies/2026-11-10-permutohedron).',
  '3': 'studies/2026-11-11-paradigm-ch3: weight_map.py (exact, corner by corner, at d = −1/3, 0, 1/τ³, 1/3, 2/7, and every site within ±8 at six weights; FINAL ok), fig_slider.py (Figure 3.1). Commit d79c1d1f; checked independently on 11 November 2026, all findings fixed.',
- '4': 'studies/2026-11-11-hemi-rd-build: analyse_build.py (DICTO\'s world export with exact transforms; float geometry: the hull matched to 10<sup>−9</sup>, volumes to 10<sup>−6</sup>, the six pyramids found empty by sampling), fill_test.py (a numerical first test), exact_fill.py (Theorem 4.3 in rational arithmetic: 487 pairs separated by exact planes, densities 15 + 1 = 16; FINAL ok). Commit 52b55686. studies/2026-11-11-paradigm-ch4: fig_ch4.py (Figure 4.1; FINAL ok), commit 7f2c451e.',
- '5': 'studies/2026-11-11-paradigm-ch5: swap_orderings.py (all 120 orderings for three directions; exact; FINAL ok), commit bc0c7781. Theorems 5.2–5.4: the draft Scutoids: Layers, Shells and Cycles (commit e932cb55) and its studies of 17 October and 6–10 November 2026 (faces flat to 10<sup>−13</sup>, volumes adding up). Proposition 5.5: the study of 6–7 November 2026 (layer spacing solved from exact contact planes, corners to 400 digits; h written exactly in ℚ(2 cos 6°), FINAL ok).',
+ '4': 'studies/2026-11-11-hemi-rd-build: analyse_build.py (DICTO\'s world export; float geometry, the first reading of the build), fill_test.py (a numerical first test), exact_fill.py (Theorem 4.3 in rational arithmetic: 487 pairs separated by exact planes, densities 15 + 1 = 16; FINAL ok). Commit 52b55686. studies/2026-11-13-paradigm-exact: hemi_exact.py (Theorem 4.1 in rational arithmetic: the stored transforms read as exact rotations and tenths, 91 + 99 pairs separated by exact planes, hull = Z + c exactly, 14 + 6 · ⅙ = 15; FINAL ok; log data/hemi-exact.log). studies/2026-11-11-paradigm-ch4: fig_ch4.py (Figure 4.1; FINAL ok), commit 7f2c451e.',
+ '5': 'studies/2026-11-11-paradigm-ch5: swap_orderings.py (all 120 orderings for three directions; exact; FINAL ok), commit bc0c7781. Theorem 5.2: the draft Scutoids: Layers, Shells and Cycles (commit e932cb55) and its studies of 17 October and 6–10 November 2026 (faces flat to 10<sup>−13</sup>, volumes adding up). Theorems 5.3 and 5.4: studies/2026-11-13-paradigm-exact, scutoid_exact.py (exact in ℚ(√5): polars, folds, mirror planes, the flip shells at five-fold radii 1, 1.55 and 155/86, the scutoid shells at circumradii 1, 1.18, 1.42, 1.499, 71/45 with 2 × 2016 pairs of half-cells separated by exact planes and volumes adding exactly; FINAL ok; log data/scutoid-exact.log). Proposition 5.5: the study of 6–7 November 2026 (layer spacing solved from exact contact planes, corners to 400 digits; h written exactly in ℚ(2 cos 6°), FINAL ok).',
  '6': 'studies/2026-11-10-permutohedron (the study of #105; commit 3f41e5b3): the 65 slices and their shapes in exact rational arithmetic, every face confirmed exactly, Euler number 2 for every shape; web_of_bonds.py (the classical facts of Section 6.1 recounted exactly); the six corners of Theorem 6.2 confirmed against all 150 faces. Section 6.4: #107 and #108 (studies/2026-11-11-orbit-polytopes).',
  '7': 'The studies named in #104 (sweeps of the 120-cell, the truncated 120-cell and the bitruncated 600-cell in nine generic directions; the 5-cube, the 5D permutohedron and three random simple 4-polytopes, predictions first). Section 7.3: #108.',
  '8': 'studies/2026-11-11-paradigm-ch8: simple_rule.py (the edge count of Theorem 8.1 against the measured degree of all 81 polytopes of the Atlas; FINAL ok), commit c5fb794d; the Atlas data of #108 (studies/2026-11-11-orbit-polytopes).',
- '9': 'studies/2026-11-09-b1-walls: cells61.py with the five cell logs data/cells2-D24/ (35,561,184 exact sign checks, each ending FINAL ok); rerun from a clean checkout on 11 November 2026 with identical logs, commit 2467d60f. Re-run: cd studies/2026-11-09-b1-walls/scripts &amp;&amp; D2=24 python -u cells61.py (about 45 minutes, five cells in parallel).',
+ '9': 'studies/2026-11-09-b1-walls: cells61.py with the five cell logs data/cells2-D24/ (35,561,184 exact sign checks, each ending FINAL ok); rerun from a clean checkout on 11 November 2026 with identical logs, commit 2467d60f. Re-run: cd studies/2026-11-09-b1-walls/scripts &amp;&amp; D2=24 python -u cells61.py (about 45 minutes, five cells in parallel). Section 9.3: the B1 logs of studies/2026-11-09-b1-walls (tower-c.log, tower-h.log) and studies/2026-11-13-paradigm-exact/data/b1-logs (the cube and dodecahedron chains, each exact run ending FINAL ok).',
  '10': 'studies/2026-11-11-orbit-polytopes (commit c5fb794d): mirror_law.py (228 cases, no disagreement), mirror_check.py (Corollary 10.2), vacuus_queens.py (Section 10.3, under all 14 400 symmetries), vacuus_middles.py (Section 10.4).',
  '11': 'studies/2026-11-10-permutohedron: vacuus_general.py (Theorem 11.1 by brute force over every ridge, n = 3 to 9, exact elimination), vacuus3d_12.py (the 15 cards of Figure 11.1, exact). studies/2026-11-11-paradigm-ch11: sweep_all_n.py (Proposition 11.2, n = 3 to 7; FINAL ok), commit 2ec0ae43.',
  '12': 'studies/2026-11-11-paradigm-ch12: golden_types.py (corner heights exact in ℤ[φ]; types by graph isomorphism; FINAL ok), commit 9ecafe40. The float slice test of 10 November 2026 is superseded.',
  '13': 'studies/2026-11-12-change-ringing, commit 52adaaef (Theorem 13.7 proved for every n on 13 November 2026, after an independent reader closed one gap; breadth-first search for n = 7, 8 rerun by the reader with the same result).',
+ '14': 'studies/2026-11-12-permutohedron-associahedron-line: gp_line.py (Theorem 14.1, the table, n = 4, 5, exact), gp_enum.c and gp_line_b.py (the equal-speed line, n = 4, 5, 6), conj1_witness.py (the point of the proof of (iii), n = 3 to 13) and reader_check.py (an independent recheck); commits ee6fd4e7, b7c4891a. studies/2026-11-12-abhy-associahedron: abhy.py (Proposition 14.2, 48 checks). studies/2026-11-12-permutohedron-equal-edges: coxeter.py, gp_setup.py, gp_enum.c, gp_analyse.py, gp_tables.py (Theorem 14.3, exact over ℚ(√2) and ℚ(√5)); render_a316.py and vacuus_a316.py (Figures 14.2, 14.3; the Vacuus in floating point); PRIOR-ART.md (13 November 2026, commit 7f9b1dd5: the sources checked for the atoms).',
  'Coda': 'No new checks.'}
 
 # edits beyond numbering: (old, new); each must occur exactly once
@@ -61,9 +63,7 @@ EDITS = {
  '1': [('<b>Lemma 1.</b>', '<b>Lemma 1.1.</b>'), ('<b>Corollary 2.</b>', '<b>Corollary 1.2.</b>'),
        ('right, the orderings of 1, 2, 4, 5, the DICTO 1:2 Truncated Octahedron. From #105.</figcaption>',
         'right, the orderings of 1, 2, 4, 5, the DICTO 1:2 Truncated Octahedron, five of which make the heart of the 4D Vacuus (Chapter 6). From #105. (Permutohedra labelled by orderings, edges by exchanges, are a standard picture: T. Piesk, Wikimedia Commons, 2020; D. Eppstein.)</figcaption>')],
- '4': [('<p>The rhombic dodecahedron is a cube with a square pyramid', '<p>Chapters 1 to 3 found DICTO\'s solids among the permutohedra. This chapter follows one of his builds that leads out of the family. The rhombic dodecahedron is a cube with a square pyramid'),
-       ('its hull matches Z to 10<sup>−9</sup>; the missing volume 1 = 6 · ⅙ is the six pyramids, each found empty under its square (analyse_build.py). ∎',
-        'its hull matches Z to 10<sup>−9</sup>; the missing volume 1 = 6 · ⅙ is the six pyramids, each found empty under its square (analyse_build.py). This identification of the build is numerical (hull to 10<sup>−9</sup>, volumes to 10<sup>−6</sup>, the empty pyramids by sampling); the volume of Z is exact, and an exact reading of the build in rational coordinates is open. Theorem 4.3 is stated for Z and the cube pyramids and is exact. ∎')],
+ '4': [('<p>The rhombic dodecahedron is a cube with a square pyramid', '<p>Chapters 1 to 3 found DICTO\'s solids among the permutohedra. This chapter follows one of his builds that leads out of the family. The rhombic dodecahedron is a cube with a square pyramid')],
  '5': [('<p>A scutoid is a cell whose outline changes', '<p>Chapter 4 found where the permutohedron stops. This chapter returns to its edges, the exchanges of neighbours, and follows them into the cells of living tissue. A scutoid is a cell whose outline changes'),
        ('figures/football-slices.png', 'figures/ti-crystal-slices.png'),
        ('<figure><img src="figures/ti-crystal-slices.png"', '</div>\n<figure><img src="figures/ti-crystal-slices.png"'),
@@ -95,7 +95,7 @@ INDEX_TERMS = ['permutohedron', 'truncated triangle', 'elongated hexagon', 'trun
     'Kelvin', 'golden loop', 'golden bond', 'golden cut', 'Icosaxes', 'Unborn Axes', 'DICTONIC', 'web of bonds', 'power diagram', 'rhombic dodecahedron', 'Hemi RD',
     'chamfered cube', 'zonohedron', 'cube pyramid', 'scutoid', 'exchange of neighbours', 'Eulerian', 'h-vector', 'Vacuus', 'majorization', 'Mirror Law',
     'Queens', '600-cell', '120-cell', 'bitruncated 600-cell', 'truncated 600-cell', 'runcinated 5-cell', 'balance law', 'rosette', 'Swap Rule', 'chamber map',
-    'Coxeter', 'Wythoff', 'Atlas', 'golden slice', 'quasicrystal', 'change ringing', 'extent', 'plain hunt', 'Plain Bob', 'Stedman', 'Grandsire', 'Kyushindo', 'Fibonacci', 'Stanley']
+    'Coxeter', 'Wythoff', 'Atlas', 'generalized permutohedra', 'deformation cone', 'associahedron', 'canonical form', 'augmented cuboctahedron', '13-COA', 'parallelohedra', 'Fedorov', 'Boulder', 'golden slice', 'quasicrystal', 'change ringing', 'extent', 'plain hunt', 'Plain Bob', 'Stedman', 'Grandsire', 'Kyushindo', 'Fibonacci', 'Stanley']
 
 PAPER_CH = {}; INDEX = {}
 def link_text(t, tag):
@@ -106,7 +106,7 @@ def link_text(t, tag):
         if n > 3: print('UNKNOWN PAPER #', n, 'in', tag)
         return mo.group(0)
     t = re.sub(r'(?<![&\w])#(\d{1,3})\b', r, t)
-    t = re.sub(r'\b(Chapters?) (\d{1,2})\b', lambda mo: f'{mo.group(1)} <a href="#ch{mo.group(2)}">{mo.group(2)}</a>' if 1 <= int(mo.group(2)) <= 13 else mo.group(0), t)
+    t = re.sub(r'\b(Chapters?) (\d{1,2})\b', lambda mo: f'{mo.group(1)} <a href="#ch{mo.group(2)}">{mo.group(2)}</a>' if 1 <= int(mo.group(2)) <= 14 else mo.group(0), t)
     return t
 def link_html(h, tag):
     out = []; inA = False

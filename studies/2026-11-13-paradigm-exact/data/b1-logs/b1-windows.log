@@ -1,0 +1,8 @@
+START 5 exact chains (#81 dodecahedron at 3/4, 21/20, 13/10, 29/20; #80 cube at 14/25)
+PROGRESS 0.20 d-29o20: FINAL ok
+PROGRESS 0.40 c-14o25: FINAL ok
+PROGRESS 0.60 d-3o4: FINAL ok
+PROGRESS 0.80 d-21o20: step 2: 80 corners, kinds {4: 60, 5: 12}, hop (sqrt(5)/8 + 5/8, 5*sqrt(5)/58 + 55/58) ~ (0.904508, 1.141040) walls 17; 19s
+PROGRESS 1.00 d-13o10: step 2: 120 corners, kinds {4: 30, 6: 20, 10: 12}, hop (1, 5/2 - sqrt(5)/2) ~ (1.000000, 1.381966) walls 19; 177s
+FINAL FAIL: a run ended without its FINAL line
+[exit 0]

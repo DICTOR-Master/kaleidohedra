@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" width="900" height="720" font-family="DejaVu Sans, sans-serif">
+<rect width="900" height="720" fill="#fff"/>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b8962e"/></marker></defs>
+<rect x="300" y="20" width="300" height="62" rx="7" fill="#f4f7fc" stroke="#2f5f9e" stroke-width="1.6"/>
+<text x="450.0" y="37" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Permutohedron Π(x)</text>
+<text x="450.0" y="52" font-size="11" text-anchor="middle" fill="#222">every order of n values; braid fan</text>
+<text x="450.0" y="67" font-size="11" text-anchor="middle" fill="#222">fills space alone (Voronoi cell of A*)</text>
+<rect x="665" y="20" width="220" height="62" rx="7" fill="#f6f6f6" stroke="#777" stroke-width="1.2"/>
+<text x="775.0" y="37" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Coxeter permutohedra</text>
+<text x="775.0" y="52" font-size="11" text-anchor="middle" fill="#222">B₃: truncated cuboctahedron</text>
+<text x="775.0" y="67" font-size="11" text-anchor="middle" fill="#222">H₃: truncated icosidodecahedron</text>
+<rect x="20" y="150" width="230" height="62" rx="7" fill="#f4f7fc" stroke="#2f5f9e" stroke-width="1.6"/>
+<text x="135.0" y="167" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Graphical zonotopes Z_G</text>
+<text x="135.0" y="182" font-size="11" text-anchor="middle" fill="#222">sums of segments [eᵢ, eⱼ]</text>
+<text x="135.0" y="197" font-size="11" text-anchor="middle" fill="#222">all fill space by translation</text>
+<rect x="290" y="150" width="300" height="62" rx="7" fill="#f4f7fc" stroke="#2f5f9e" stroke-width="1.6"/>
+<text x="440.0" y="167" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Nestohedra</text>
+<text x="440.0" y="182" font-size="11" text-anchor="middle" fill="#222">sums of simplices over a building set</text>
+<text x="440.0" y="197" font-size="11" text-anchor="middle" fill="#222">(Postnikov; Feichtner–Sturmfels)</text>
+<rect x="665" y="150" width="220" height="62" rx="7" fill="#f4f7fc" stroke="#2f5f9e" stroke-width="1.6"/>
+<text x="775.0" y="167" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Matroid base polytopes</text>
+<text x="775.0" y="182" font-size="11" text-anchor="middle" fill="#222">0/1 corners, root edges</text>
+<text x="775.0" y="197" font-size="11" text-anchor="middle" fill="#222">(GGMS 1987)</text>
+<rect x="20" y="275" width="230" height="48" rx="7" fill="#f4f7fc" stroke="#2f5f9e" stroke-width="1.6"/>
+<text x="135.0" y="292" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Fedorov’s five (n = 4)</text>
+<text x="135.0" y="307" font-size="11" text-anchor="middle" fill="#222">one per connected graph</text>
+<rect x="290" y="275" width="300" height="48" rx="7" fill="#f4f7fc" stroke="#2f5f9e" stroke-width="1.6"/>
+<text x="440.0" y="292" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Graph associahedra</text>
+<text x="440.0" y="307" font-size="11" text-anchor="middle" fill="#222">(Carr–Devadoss)</text>
+<rect x="665" y="275" width="220" height="48" rx="7" fill="#f4f7fc" stroke="#2f5f9e" stroke-width="1.6"/>
+<text x="775.0" y="292" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Hypersimplices Δ(k, n)</text>
+<text x="775.0" y="307" font-size="11" text-anchor="middle" fill="#222">octahedron = Δ(2, 4)</text>
+<rect x="245" y="380" width="140" height="48" rx="7" fill="#f4f7fc" stroke="#2f5f9e" stroke-width="1.6"/>
+<text x="315.0" y="397" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Associahedron</text>
+<text x="315.0" y="412" font-size="11" text-anchor="middle" fill="#222">path · Loday</text>
+<rect x="395" y="380" width="105" height="48" rx="7" fill="#f4f7fc" stroke="#2f5f9e" stroke-width="1.6"/>
+<text x="447.5" y="397" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Cyclohedron</text>
+<text x="447.5" y="412" font-size="11" text-anchor="middle" fill="#222">cycle</text>
+<rect x="510" y="380" width="105" height="48" rx="7" fill="#f4f7fc" stroke="#2f5f9e" stroke-width="1.6"/>
+<text x="562.5" y="397" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Stellohedron</text>
+<text x="562.5" y="412" font-size="11" text-anchor="middle" fill="#222">star</text>
+<rect x="700" y="380" width="150" height="48" rx="7" fill="#f4f7fc" stroke="#2f5f9e" stroke-width="1.6"/>
+<text x="775.0" y="397" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Simplex Δ_[n]</text>
+<text x="775.0" y="412" font-size="11" text-anchor="middle" fill="#222">Δ(1, n)</text>
+<rect x="20" y="380" width="200" height="48" rx="7" fill="#f4f7fc" stroke="#2f5f9e" stroke-width="1.6"/>
+<text x="120.0" y="397" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Parallelepiped</text>
+<text x="120.0" y="412" font-size="11" text-anchor="middle" fill="#222">the tree: cube-like</text>
+<rect x="150" y="505" width="270" height="62" rx="7" fill="#fbf3d9" stroke="#b8962e" stroke-width="2.6"/>
+<text x="285.0" y="522" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Canonical form = bi-adjoint</text>
+<text x="285.0" y="537" font-size="11" text-anchor="middle" fill="#222">φ³ tree amplitude (ABHY 2017)</text>
+<text x="285.0" y="552" font-size="11" text-anchor="middle" fill="#222">reproduced exactly, n = 4–10 (Prop. 14.2)</text>
+<rect x="440" y="505" width="250" height="62" rx="7" fill="#fbf3d9" stroke="#b8962e" stroke-width="2.6"/>
+<text x="565.0" y="522" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Voronoi law (lattice count)</text>
+<text x="565.0" y="537" font-size="11" text-anchor="middle" fill="#222">Ω(conv 2r/|r|²; 0) = n!·covol</text>
+<text x="565.0" y="552" font-size="11" text-anchor="middle" fill="#222">A₃*: bcc needs all 14 walls</text>
+<rect x="710" y="505" width="175" height="62" rx="7" fill="#fbf3d9" stroke="#b8962e" stroke-width="2.6"/>
+<text x="797.5" y="522" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Feynman integrals</text>
+<text x="797.5" y="537" font-size="11" text-anchor="middle" fill="#222">Symanzik Newton</text>
+<text x="797.5" y="552" font-size="11" text-anchor="middle" fill="#222">polytopes</text>
+<rect x="20" y="610" width="270" height="62" rx="7" fill="#fff" stroke="#a33" stroke-width="1.6" stroke-dasharray="5 3"/>
+<text x="155.0" y="627" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Theorem 14.1: Π → associahedron</text>
+<text x="155.0" y="642" font-size="11" text-anchor="middle" fill="#222">walls, space-filling, form vs amplitude</text>
+<text x="155.0" y="657" font-size="11" text-anchor="middle" fill="#222">(Section 14.2)</text>
+<rect x="310" y="610" width="280" height="62" rx="7" fill="#fff" stroke="#a33" stroke-width="1.6" stroke-dasharray="5 3"/>
+<text x="450.0" y="627" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Theorem 14.3: equal-edged members</text>
+<text x="450.0" y="642" font-size="11" text-anchor="middle" fill="#222">of the A₃, B₃, H₃ cones: 17, 101, 4427</text>
+<text x="450.0" y="657" font-size="11" text-anchor="middle" fill="#222">339 H₃ atoms not found in sources</text>
+<rect x="610" y="610" width="275" height="62" rx="7" fill="#fff" stroke="#a33" stroke-width="1.6" stroke-dasharray="5 3"/>
+<text x="747.5" y="627" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#222">Proposition 14.4 · Chapter 13</text>
+<text x="747.5" y="642" font-size="11" text-anchor="middle" fill="#222">fills space ⇔ graphical zonotope (n = 4);</text>
+<text x="747.5" y="657" font-size="11" text-anchor="middle" fill="#222">change ringing walks Π (Chapter 13)</text>
+<line x1="450.0" y1="82" x2="135.0" y2="150" stroke="#555" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="450.0" y1="82" x2="440.0" y2="150" stroke="#555" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="450.0" y1="82" x2="775.0" y2="150" stroke="#555" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="135.0" y1="212" x2="135.0" y2="275" stroke="#555" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="135.0" y1="323" x2="120.0" y2="380" stroke="#555" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="440.0" y1="212" x2="440.0" y2="275" stroke="#555" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="775.0" y1="212" x2="775.0" y2="275" stroke="#555" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="440.0" y1="323" x2="315.0" y2="380" stroke="#555" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="440.0" y1="323" x2="447.5" y2="380" stroke="#555" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="440.0" y1="323" x2="562.5" y2="380" stroke="#555" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="775.0" y1="323" x2="775.0" y2="380" stroke="#555" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="600" y1="34" x2="665" y2="34" stroke="#777" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="632" y="28" font-size="9.5" text-anchor="middle" fill="#555">other root</text><text x="632" y="48" font-size="9.5" text-anchor="middle" fill="#555">systems</text>
+<path d="M315,428 C315,465 285,470 285,505" fill="none" stroke="#b8962e" stroke-width="2" marker-end="url(#ag)"/>
+<path d="M600,70 L632,70 L632,475 L565,475 L565,505" fill="none" stroke="#b8962e" stroke-width="2" marker-end="url(#ag)"/>
+<path d="M632,475 L797,475 L797,505" fill="none" stroke="#b8962e" stroke-width="2" marker-end="url(#ag)"/>
+<text x="640" y="468" font-size="9.5" fill="#8a6d1c">any member</text>
+<text x="20" y="696" font-size="11" fill="#555">Arrows: deforms into (walls move, edges keep their directions; the normal fan coarsens). Gold: the shape gives a law.</text>
+<text x="20" y="712" font-size="11" fill="#555">Dashed red: results of this chapter. Every member is a signed sum of simplices Δ_I (Section 14.1).</text>
+<text x="892" y="714" font-size="10" text-anchor="end" fill="#b8962e">DICTO · dictospheres.com</text></svg>

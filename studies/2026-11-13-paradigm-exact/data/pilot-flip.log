@@ -1,0 +1,22 @@
+ok   TI: 60 corners, faces {5: 12, 6: 20}, closed surface, Euler 2 (exact facets)
+ok   ID: 30 corners, faces {3: 20, 5: 12}, closed surface, Euler 2 (exact facets)
+ok   TD: 60 corners, faces {3: 20, 10: 12}, closed surface, Euler 2 (exact facets)
+ok   PD: 32 corners, faces {3: 60} (exact polar)
+ok   RT: 32 corners, faces {4: 30} (exact polar)
+ok   TK: 32 corners, faces {3: 60} (exact polar)
+ok   bipolar: PD° = TI and TK° = TD exactly (the polar swaps of the square)
+PROGRESS 0.10 solids and polars exact
+ok   every corner of PD, RT and TK lies on one of the 32 rays (12 five-fold, 20 three-fold)
+ok   RT: 30 rhombi (equal sides, exact), corners alternately on five-fold and three-fold rays
+ok   over every rhombus (5a, 3b, 5c, 3d): PD has the triangles abd, bcd (fold along the 3-3 diagonal), TK has abc, acd (fold along the 5-5 diagonal): a diagonal flip
+ok   every plane through the centre and two neighbouring corners of a rhombus is a mirror plane (maps the 32 rays to themselves)
+ok   nesting exact: PD (five-fold radius 1) inside TK (1.55) inside PD scaled by 155/86 (1.8023), strictly
+ok   RT (1.25) lies between PD and TK
+ok   forward flip shell: all 120 side faces flat (four corners coplanar with the centre, exact)
+ok   forward flip shell: 30 cells, one volume 0.0021369348 (exact, all equal), one distance multiset (congruent)
+ok   forward flip shell: 30 volumes add to V(TK) - V(PD) = 0.0641080445 exactly
+ok   back flip shell (TK -> RT -> PD x 155/86): faces flat, 30 congruent cells of volume 0.0037886011, adding to the shell exactly
+ok   the forward and back flip cells are two different shapes
+PROGRESS 0.30 polar flip exact (Theorem 5.3)
+pilot (flip part) 5.5 s; checks failed 0
+FINAL ok (pilot: polar flip)
