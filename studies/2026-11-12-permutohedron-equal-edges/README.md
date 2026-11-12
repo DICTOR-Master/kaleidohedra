@@ -84,7 +84,7 @@ edge of both** (edge lengths add on the cone). This covers the pentagon caps and
 
 **New (the goal of the gap).** The *atoms* are equal-edged members with no equal-edged Minkowski summand other than a point and themselves.
 - A3 = B3: A3-10, the octahedron with a tetrahedron on one face (4 triangles, 3 rhombi 60/120, 7 corners). This shape is known (the 60° rhombohedron
-  with one corner cut). A3-16 is a 13-corner solid on the octet lattice (4 triangles, 4 rhombi 60/120, 5 squares, 24 edges) that we did not find named.
+  with one corner cut). A3-16 is a 13-corner solid on the octet lattice (4 triangles, 4 rhombi 60/120, 5 squares, 24 edges) that we did not find named; DICTO named it the **DICTO 13-Corner Octet Atom** (12 Nov 2026): a square cupola (J4) whose octagon is closed by four 60° rhombi meeting at one apex; not centrally symmetric (6 of 13 faces in parallel pairs). Render: figures/a3-16-render.png (scripts/render_a316.py, exact corners in the log).
 - H3: 367 atoms, mostly pieces with regular triangles and pentagons together with rhombi of 36/144, 60/120 and 72/108 and hexagons of
   72/144 and 108/144 (e.g. H3-16: 5 triangles, 5 rhombi 36/144, 1 pentagon, 11 corners; H3-81: 10 triangles, 3 rhombi 72/108, 10
   corners). Full list: `data/raw/solids-H3.csv`, `data/raw/tables.json` (new_atoms), exact labels in `data/raw/members-H3.json`.
