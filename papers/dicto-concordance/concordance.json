@@ -6380,6 +6380,15 @@
     "status": "FOUND",
     "result": "mu* = 2.891792659030825 is a root of the irreducible degree-12 integer polynomial 199mu^12 + ... + 25 (not in Q(sqrt5), not the fixed point); at the fixed point c2/c0 root of 405x^4 - 12960x^3 + 107820x^2 - 105840x + 23024, anisotropy/c0 root of an irreducible quartic",
     "retry": "no"
+   },
+   {
+    "question": "aim 2 chunk 5: are DICTO's solids (Cleo-Icos, Antonius, Narcissus, Covenant, twisted cube, OG, Hecatodihedron) positive geometries, and what do their canonical forms say (joins, special points, exact numbers)?",
+    "method": "studies/2026-11-12-solids-canonical/scripts/solids_canon.py: Warren vertex formula (fan at non-simple corners) + independent triangulation formula, exact Q(sqrt5); residues on every face; joins proved by grid certificates; Santalo point and Mahler product; 86 checks incl. negatives (dropped term, mis-joined pair, simple-only fan), FINAL ok, 4 cores",
+    "status": "ANSWERED",
+    "result": "all pass the residue test (Res_F Omega = Omega(F) on every face, OG 80, Heca 102); joins = pole cancellations (rhombohedron = Cleo + Antonius + Cleo and Covenant = 2 Narcissus proved as rational identities; icosahedron = 20 Cleo; shifted pair leaves a pole); Cleo-Icos/Antonius/rhombohedron = affine cube simplex/octahedron/cube (Mahler 64/9, 32/3, 32/3); Mahler at Santalo point: OG (384200-160400sqrt5)/1539 = 16.5917, Covenant = twisted cube = 51/4, Narcissus 11.0787164 (root of 2304m^3-25440m^2-943m-30; Santalo point on the axis, root of 4z^3+19z^2+32z+8)",
+    "retry": "no (answered); Yantra cones (curved, degree 160) queued as chunk 5b; next chunk 6",
+    "study": "2026-11-12-solids-canonical",
+    "date": "2026-11-12"
    }
   ]
  },
@@ -8057,7 +8066,8 @@
   "SECOND ULTIMATE GOAL: geometry gives laws": [
    "DICTO 9 Nov 2026: one geometric object that hands out laws (as the amplituhedron does for particle scattering, Arkani-Hamed–Trnka 2013). Bridge: the canonical form of a polytope = the volume of its polar (the antipol of the DICTO Hopscotch). Chunks: 1 read and map; 2 canonical forms on the cube–octahedron line vs walls; 3 the turn in canonical-form language; 4 associahedron sanity case; 5 DICTO's solids as positive geometries; 6 Poincaré dodecahedral space; 7 E8 at the Golden Ladder's top. Long horizon; early prize = chunks 2–4.",
    "Chunk 3 (12 Nov 2026, studies/2026-11-10-canonical-sweep §chunk 3): the turn's fixed point is the insphere point of S(mu) = P ∩ mu P* (all poles of the canonical form at one distance) and the only mu where S(turn mu) is a copy of S(mu); the turn is not a symmetry of the canonical forms, of Omega at the centre, or of the walls; the roundest point (anisotropy zero) lies near, not on, the fixed point (cube and icosahedral sweeps). Next: chunk 4, associahedron.",
-   "Chunk 4 (12 Nov 2026, studies/2026-11-12-abhy-associahedron): our tools reproduce Arkani-Hamed-Bai-He-Yan exactly for n = 4..10 (canonical form of the kinematic associahedron = bi-adjoint scalar amplitude; unimodular vertices; a non-unimodular slice fails). Chunk 3 closed forms: the icosahedral roundest point is algebraic of degree 12, the fixed point of degree 4: near, not equal. Next: chunk 5, DICTO's solids as positive geometries."
+   "Chunk 4 (12 Nov 2026, studies/2026-11-12-abhy-associahedron): our tools reproduce Arkani-Hamed-Bai-He-Yan exactly for n = 4..10 (canonical form of the kinematic associahedron = bi-adjoint scalar amplitude; unimodular vertices; a non-unimodular slice fails). Chunk 3 closed forms: the icosahedral roundest point is algebraic of degree 12, the fixed point of degree 4: near, not equal. Next: chunk 5, DICTO's solids as positive geometries.",
+   "Chunk 5 (12 Nov 2026, studies/2026-11-12-solids-canonical): DICTO's solids (Cleo-Icos, Antonius, Narcissus, Covenant, twisted cube, OG, Hecatodihedron) pass the positive-geometry residue test exactly on every face; DICTO's space-filling joins are exactly pole cancellations of the canonical form (Cleo + Antonius + Cleo, two Narcissus proved as identities; 20 Cleo-Icos); Cleo-Icos and Antonius are affinely the cube's corner simplex and middle octahedron; new exact Mahler products at the Santalo point: OG (384200 - 160400sqrt5)/1539 = 16.5917 (roundest), Covenant = twisted cube = 51/4, Narcissus 11.0787 (irreducible cubic). Yantra cones (curved) queued as 5b. Next: chunk 6, Poincare dodecahedral space."
   ],
   "Popular book of the one study: DICTO's working title A Brief Geometry of Space (was A Brief History of Space)": [
    "DICTO 9 Nov 2026, after Stephen Hawking: the popular book of the one study (the three aims as one story: pieces, crystals, the quasicrystal at the turn, the law-giving geometry); Quanta of Space essay as its first chapter; title clash check pending (subtitle likely).",

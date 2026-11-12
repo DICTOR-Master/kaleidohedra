@@ -1,0 +1,125 @@
+chunk 5 PILOT run
+built in 2.5s
+  cube: 8 corners, 12 edges, 6 faces (by sides {4: 6}); corners by number of faces {3: 8}; Warren terms 8
+  simplex: 4 corners, 6 edges, 4 faces (by sides {3: 4}); corners by number of faces {3: 4}; Warren terms 4
+  cube middle octahedron: 6 corners, 12 edges, 8 faces (by sides {3: 8}); corners by number of faces {4: 6}; Warren terms 12
+  Cleo-Icos: 4 corners, 6 edges, 4 faces (by sides {3: 4}); corners by number of faces {3: 4}; Warren terms 4
+  Antonius: 6 corners, 12 edges, 8 faces (by sides {3: 8}); corners by number of faces {4: 6}; Warren terms 12
+  Cleo-Icos (far corner): 4 corners, 6 edges, 4 faces (by sides {3: 4}); corners by number of faces {3: 4}; Warren terms 4
+  golden prolate rhombohedron: 8 corners, 12 edges, 6 faces (by sides {4: 6}); corners by number of faces {3: 8}; Warren terms 8
+  icosahedron: 12 corners, 30 edges, 20 faces (by sides {3: 20}); corners by number of faces {5: 12}; Warren terms 36
+  Narcissus: 10 corners, 18 edges, 10 faces (by sides {3: 6, 4: 3, 6: 1}); corners by number of faces {3: 4, 4: 6}; Warren terms 16
+  Covenant: 14 corners, 24 edges, 12 faces (by sides {4: 12}); corners by number of faces {3: 8, 4: 6}; Warren terms 20
+  straight pair: 11 corners, 21 edges, 12 faces (by sides {3: 6, 4: 6}); corners by number of faces {3: 2, 4: 9}; Warren terms 20
+  Ogdoecontahedron (OG): 102 corners, 180 edges, 80 faces (by sides {4: 60, 6: 20}); corners by number of faces {3: 60, 4: 30, 5: 12}; Warren terms 156
+  Hecatodihedron: 80 corners, 180 edges, 102 faces (by sides {3: 60, 4: 30, 5: 12}); corners by number of faces {4: 60, 6: 20}; Warren terms 200
+PROGRESS 0.10 built
+ok   (C1) cube: Omega = prod 1/(x(1-x)) at a generic point
+ok   (C1) cube: Omega(centre) * vol = 64 (Mahler 32/3)
+ok   (C1) simplex: Omega(centroid) * vol = 128/3 (Mahler 64/9)
+ok   (C2) Narcissus volume 3/4 in the rational frame (got 3/4)
+ok   (C2) Narcissus: Omega(corner centroid) * vol = 68 (published Mahler 34/3)
+ok   (C2) Narcissus: 10 corners, faces 1 hexagon + 3 quads + 6 triangles
+ok   (C3) OG: 102 corners, 80 faces = 20 hexagons + 60 four-sided
+ok   (C3) OG: two corner radii; scaled so 90 corners have r^2 = 4/9, the other 12 have (170+2sqrt5)/361 (got (170/361 + 2/361*sqrt5))
+ok   (C3) OG: squared edges 120 x (2/9 - 2sqrt5/27), 60 x (86/3249 + 2sqrt5/361) (got {(2/9 - 2/27*sqrt5): 120, (86/3249 + 2/361*sqrt5): 60})
+ok   (C3) OG: every hexagon regular (equal sides and equal short diagonals)
+ok   (C3) Hecatodihedron: 80 corners, 102 faces
+PROGRESS 0.20 controls
+ok   (P1) cube: Warren = triangulation formula at 2 generic points (inside and outside)
+ok   (P2) cube: Omega(P;Y) = 3! vol(polar about Y) at 1 interior points
+ok   (P1) simplex: Warren = triangulation formula at 2 generic points (inside and outside)
+ok   (P2) simplex: Omega(P;Y) = 3! vol(polar about Y) at 1 interior points
+ok   (P1) cube middle octahedron: Warren = triangulation formula at 2 generic points (inside and outside)
+ok   (P2) cube middle octahedron: Omega(P;Y) = 3! vol(polar about Y) at 1 interior points
+ok   (P1) Cleo-Icos: Warren = triangulation formula at 2 generic points (inside and outside)
+ok   (P2) Cleo-Icos: Omega(P;Y) = 3! vol(polar about Y) at 1 interior points
+ok   (P1) Antonius: Warren = triangulation formula at 2 generic points (inside and outside)
+ok   (P2) Antonius: Omega(P;Y) = 3! vol(polar about Y) at 1 interior points
+ok   (P1) Cleo-Icos (far corner): Warren = triangulation formula at 2 generic points (inside and outside)
+ok   (P2) Cleo-Icos (far corner): Omega(P;Y) = 3! vol(polar about Y) at 1 interior points
+ok   (P1) golden prolate rhombohedron: Warren = triangulation formula at 2 generic points (inside and outside)
+ok   (P2) golden prolate rhombohedron: Omega(P;Y) = 3! vol(polar about Y) at 1 interior points
+ok   (P1) icosahedron: Warren = triangulation formula at 2 generic points (inside and outside)
+ok   (P2) icosahedron: Omega(P;Y) = 3! vol(polar about Y) at 1 interior points
+ok   (P1) Narcissus: Warren = triangulation formula at 2 generic points (inside and outside)
+ok   (P2) Narcissus: Omega(P;Y) = 3! vol(polar about Y) at 1 interior points
+ok   (P1) Covenant: Warren = triangulation formula at 2 generic points (inside and outside)
+ok   (P2) Covenant: Omega(P;Y) = 3! vol(polar about Y) at 1 interior points
+ok   (P1) straight pair: Warren = triangulation formula at 2 generic points (inside and outside)
+ok   (P2) straight pair: Omega(P;Y) = 3! vol(polar about Y) at 1 interior points
+ok   (P1) Ogdoecontahedron (OG): Warren = triangulation formula at 2 generic points (inside and outside)
+ok   (P2) Ogdoecontahedron (OG): Omega(P;Y) = 3! vol(polar about Y) at 1 interior points
+ok   (P1) Hecatodihedron: Warren = triangulation formula at 2 generic points (inside and outside)
+ok   (P2) Hecatodihedron: Omega(P;Y) = 3! vol(polar about Y) at 1 interior points
+PROGRESS 0.40 P1 P2
+ok   (N1) OG with one Warren term dropped: Warren != triangulation (caught)
+ok   (N3) Antonius treated as simple (one fan triangle per 4-face corner): bridge fails (caught)
+ok   (P3) cube: residue on each of its 6 faces = canonical form of that face (6/6 points)
+ok   (P3) simplex: residue on each of its 4 faces = canonical form of that face (4/4 points)
+ok   (P3) cube middle octahedron: residue on each of its 8 faces = canonical form of that face (8/8 points)
+ok   (P3) Cleo-Icos: residue on each of its 4 faces = canonical form of that face (4/4 points)
+ok   (P3) Antonius: residue on each of its 8 faces = canonical form of that face (8/8 points)
+ok   (P3) Cleo-Icos (far corner): residue on each of its 4 faces = canonical form of that face (4/4 points)
+ok   (P3) golden prolate rhombohedron: residue on each of its 6 faces = canonical form of that face (6/6 points)
+ok   (P3) icosahedron: residue on each of its 20 faces = canonical form of that face (20/20 points)
+ok   (P3) Narcissus: residue on each of its 10 faces = canonical form of that face (10/10 points)
+ok   (P3) Covenant: residue on each of its 12 faces = canonical form of that face (12/12 points)
+ok   (P3) straight pair: residue on each of its 12 faces = canonical form of that face (12/12 points)
+ok   (P3) Ogdoecontahedron (OG): residue on each of its 80 faces = canonical form of that face (80/80 points)
+ok   (P3) Hecatodihedron: residue on each of its 102 faces = canonical form of that face (102/102 points)
+PROGRESS 0.60 P3 residues
+ok   (P4) Omega(rhombohedron) = Omega(Cleo) + Omega(Antonius) + Omega(Cleo) as rational functions: 8 planes, cleared numerator degree <= 5, zero on all 216 points of a 6^3 grid
+ok   (P4) rhombohedron: on both inner cut planes the poles of Cleo + Antonius + Cleo cancel (6 points, residue 0)
+PROGRESS 0.70 rhombohedron joins
+ok   (P4) Omega(icosahedron) = sum of the 20 Cleo-Icos forms at 2 generic points (inside and outside)
+FAIL (P4) icosahedron: on all 15 inner planes (centre + an edge) the poles of the 20 Cleo-Icos cancel
+ok   (P4) Covenant is the convex union of the two Narcissus (vol = 2 vol N)
+ok   (P4) Omega(Covenant) = Omega(N) + Omega(N turned) (pilot: grid subsample): 13 planes, degree <= 10, zero on 27 grid points
+ok   (P4) Covenant: on the hexagon plane the poles of the two Narcissus cancel (4 points)
+ok   (P4) straight pair: on the hexagon plane the poles cancel (4 points)
+ok   (N2) mis-joined pair (second Narcissus shifted 1/7): a pole is left on the hexagon plane (caught)
+straight pair convex (hull volume = 2 vol N): True; hull faces {3: 6, 4: 6}
+PROGRESS 0.85 joins
+ok   (P5) Cleo-Icos, Antonius, rhombohedron = images of the cube corner simplex, middle octahedron, cube: Omega(L y) |det L| = Omega(y)
+
+RESULTS: Omega at the Santalo point and the Mahler product (= Omega * vol / 6)
+  Cleo-Icos: Santalo point centroid; Omega = (192 - 64*sqrt5) = 48.891649440; vol = (1/2 + 1/6*sqrt5); Mahler = 64/9 = 7.111111111
+ok   (P5) Cleo-Icos: Mahler = 64/9 (affine simplex)
+  Antonius: Santalo point centre; Omega = (72 - 24*sqrt5) = 18.334368540; vol = (2 + 2/3*sqrt5); Mahler = 32/3 = 10.666666667
+ok   (P5) Antonius: Mahler = 32/3 (affine octahedron / cube)
+  golden prolate rhombohedron: Santalo point centre; Omega = (48 - 16*sqrt5) = 12.222912360; vol = (3 + 1*sqrt5); Mahler = 32/3 = 10.666666667
+ok   (P5) golden prolate rhombohedron: Mahler = 32/3 (affine octahedron / cube)
+  icosahedron: Santalo point centre; Omega = (300 - 132*sqrt5) = 4.839026970; vol = (10 + 10/3*sqrt5); Mahler = (400/3 - 160/3*sqrt5) = 14.076374533
+  Ogdoecontahedron (OG): Santalo point centre; Omega = (2580 + 156*sqrt5) = 2928.826604490; vol = (1025/1539 - 145/513*sqrt5); Mahler = (384200/1539 - 160400/1539*sqrt5) = 16.591745555
+  Hecatodihedron: Santalo point centre; Omega = (2050/513 - 290/171*sqrt5) = 0.203939297; vol = (430 + 26*sqrt5); Mahler = (384200/1539 - 160400/1539*sqrt5) = 16.591745555
+  Covenant: Santalo point centre; Omega = 51 = 51.000000000; vol = 3/2; Mahler = 51/4 = 12.750000000
+ok   (P2) OG and Hecatodihedron: Omega(OG;0) = 6 vol(Heca), Omega(Heca;0) = 6 vol(OG), same Mahler
+ok       icosahedron: 32/3 <= Mahler <= (4pi/3)^2 (Iriyeh-Shibata 2020; Blaschke-Santalo) and <= 8E/9 (Winter 2026, E=30): 14.076375
+ok       Ogdoecontahedron (OG): 32/3 <= Mahler <= (4pi/3)^2 (Iriyeh-Shibata 2020; Blaschke-Santalo) and <= 8E/9 (Winter 2026, E=180): 16.591746
+ok       Covenant: 32/3 <= Mahler <= (4pi/3)^2 (Iriyeh-Shibata 2020; Blaschke-Santalo) and <= 8E/9 (Winter 2026, E=24): 12.750000
+  Narcissus: on the 3-fold axis (1/2,1/2,z): dM/dz numerator factors (3, [(4*z**3 + 19*z**2 + 32*z + 8, 1)])
+ok       Narcissus: exactly one critical point on the axis inside
+  Narcissus: Santalo point z = CRootOf(4*x**3 + 19*x**2 + 32*x + 8, 0) = -0.30009225696824821064; Mahler = 11.078716400698901373; minimal polynomial 2304*m**3 - 25440*m**2 - 943*m - 30
+ok       Narcissus: Santalo Mahler < 34/3 (corner-centroid value) and >= 64/9 (conjectured simplex minimum)
+  straight pair: on the 3-fold axis (1/2,1/2,z): dM/dz numerator factors (24, [(z, 1), (z**4 - 5*z**2 + 22, 1)])
+ok       straight pair: exactly one critical point on the axis inside
+  straight pair: Santalo point z = 0 = 0; Mahler = 12.750000000000000000; minimal polynomial 51/4
+
+ADJOINT degree on a generic line (affine chart; <= faces - 4 by Warren)
+ok       cube: adjoint degree 0 <= 2 (faces - 4)
+ok       simplex: adjoint degree 0 <= 0 (faces - 4)
+ok       cube middle octahedron: adjoint degree 4 <= 4 (faces - 4)
+ok       Cleo-Icos: adjoint degree 0 <= 0 (faces - 4)
+ok       Antonius: adjoint degree 4 <= 4 (faces - 4)
+ok       Cleo-Icos (far corner): adjoint degree 0 <= 0 (faces - 4)
+ok       golden prolate rhombohedron: adjoint degree 0 <= 2 (faces - 4)
+ok       icosahedron: adjoint degree 16 <= 16 (faces - 4)
+ok       Narcissus: adjoint degree 5 <= 6 (faces - 4)
+ok       Covenant: adjoint degree 6 <= 8 (faces - 4)
+ok       straight pair: adjoint degree 7 <= 8 (faces - 4)
+PROGRESS 1.00 done
+time 6.2s
+FINAL FAIL: a check or control failed
+FINAL FAIL
+[exit 0]
