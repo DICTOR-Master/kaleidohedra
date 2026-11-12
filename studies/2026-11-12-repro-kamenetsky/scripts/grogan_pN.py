@@ -66,6 +66,9 @@ if len(sys.argv) > 4:
     H = {((tuple(abs(x) - 1 for x in e['frame']), tuple(1 if x > 0 else -1 for x in e['frame'])), tuple(e['translation'])) for e in his}
     line += f'; his data file lists {len(his)}; same set as ours: {H == A} (only ours {len(A - H)}, only his {len(H - A)})'
     his = H
+import os
+if os.environ.get('DUMP'):                     # 12 Nov: dump E (frame as signed 1-based index list, translation) for set comparisons
+    json.dump(sorted([[s_i * (f_i + 1) for f_i, s_i in zip(h[0], h[1])], list(t)] for h, t in A), open(os.environ['DUMP'], 'w'))
 print(line, flush=True)
 ok = part and len(A) == formula and (his is None or his == A)
 print('FINAL ok' if ok else 'FINAL FAIL', flush=True)

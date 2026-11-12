@@ -1,0 +1,15 @@
+'SparseMonotiles.T5_isStronglyAperiodicMonotile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SparseMonotiles.T5_strong_aperiodic_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SparseMonotiles.T5_symmetry_registered_in_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SparseMonotiles.T5_symmetries_embed_signed_permutations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SparseMonotiles.T5_finite_euclidean_symmetries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SparseMonotiles.T5_euclidean_symmetry_card_le_3840' depends on axioms: [propext, Classical.choice, Quot.sound]
+SparseMonotiles.T5_strong_aperiodic_bound : IsCompact SparseMonotiles.T5 ∧
+  SparseMonotiles.HasTiling SparseMonotiles.T5 ∧
+    ∀ (tiles : Set (Set (SparseMonotiles.Point 5))),
+      SparseMonotiles.IsTiling SparseMonotiles.T5 tiles →
+        Finite (SparseMonotiles.EuclideanSymmetries tiles) ∧ Nat.card (SparseMonotiles.EuclideanSymmetries tiles) ≤ 3840
+'SparseMonotiles.T5_isStronglyAperiodicMonotile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SparseMonotiles.T5_strong_aperiodic_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SparseMonotiles.T5_finite_euclidean_symmetries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SparseMonotiles.T5_euclidean_symmetry_card_le_3840' depends on axioms: [propext, Classical.choice, Quot.sound]
