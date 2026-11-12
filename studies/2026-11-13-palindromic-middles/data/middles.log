@@ -1,0 +1,246 @@
+CONTROL cross-polytope moments exact: ok {'0,2': '2/45', '0,4': '1/105', '1,2': '4/45', '1,4': '1/35'}
+test vectors A4: (2,2,1,-1,-4) (3,1,0,0,-4) (3,2,0,-2,-3) (4,0,0,-1,-3)
+test vectors B4: (-3,-3,-4,-4) (-1,-2,-3,-6) (0,-3,-4,-5) (0,0,-5,-5)
+test vectors F4: (-3,-4,-4,-7) (-3,-3,-6,-6) (-1,-3,-4,-8) (-1,-2,-6,-7)
+test vectors H4: (-3,-3,-4,-4) (-1,-2,-3,-6) (0,0,-5,-5) (2,-1,-3,-6)
+PROGRESS 0.021 F4 ['1', '1', '1', '1'] palindrome (6.0 s)
+PROGRESS 0.042 F4 ['1', '2', '2', '1'] palindrome (5.2 s)
+PROGRESS 0.062 F4 ['2', '1', '1', '2'] palindrome (5.7 s)
+PROGRESS 0.083 F4 ['1', '2', '3', '4'] non-palindrome (3.8 s)
+PROGRESS 0.104 F4 ['4', '3', '2', '1'] non-palindrome (3.7 s)
+PROGRESS 0.125 F4 ['1', '1', '1', '1'] palindrome high (8.5 s)
+PROGRESS 0.146 F4 ['0', '1', '1', '1'] non-palindrome (1.6 s)
+PROGRESS 0.167 F4 ['1', '1', '1', '0'] non-palindrome (1.6 s)
+PROGRESS 0.188 F4 ['0', '1', '1', '0'] palindrome (1.0 s)
+PROGRESS 0.208 F4 ['1', '0', '0', '1'] palindrome (3.6 s)
+PROGRESS 0.229 F4 ['1', '1', '0', '0'] non-palindrome (0.5 s)
+PROGRESS 0.250 F4 ['0', '0', '1', '1'] non-palindrome (0.5 s)
+PROGRESS 0.271 H4 ['0', '1', '1', '0'] H4 middle (42.2 s)
+PROGRESS 0.292 F4 ['0', '1', '2', '0'] line (0.8 s)
+PROGRESS 0.312 F4 ['0', '1', '1/2', '0'] line (1.0 s)
+PROGRESS 0.333 F4 ['0', '1', '3', '0'] line (0.8 s)
+PROGRESS 0.354 F4 ['0', '1', '3/2', '0'] line (0.8 s)
+PROGRESS 0.375 F4 ['0', '1', '1/3', '0'] line (1.0 s)
+PROGRESS 0.396 F4 ['0', '1', '2/3', '0'] line (0.8 s)
+PROGRESS 0.417 B4 ['1', '1', '1', '1'] B4 palindrome (0.7 s)
+PROGRESS 0.438 B4 ['0', '1', '1', '0'] B4 line (0.2 s)
+PROGRESS 0.458 B4 ['0', '1', '2', '0'] B4 line (0.2 s)
+PROGRESS 0.479 B4 ['0', '1', '1/2', '0'] B4 line (0.2 s)
+PROGRESS 0.500 B4 ['0', '1', '3/2', '0'] B4 line (0.2 s)
+PROGRESS 0.521 B4 ['0', '1', '2/3', '0'] B4 line (0.2 s)
+PROGRESS 0.542 F4 ['0', '1', '1', '0'] palindrome high (2.2 s)
+PROGRESS 0.562 A4 ['1', '1', '1', '1'] palindrome (0.3 s)
+PROGRESS 0.583 B4 ['1', '0', '0', '1'] B4 palindrome (0.5 s)
+PROGRESS 0.604 A4 ['2', '1', '1', '2'] palindrome (0.3 s)
+PROGRESS 0.625 A4 ['1', '2', '2', '1'] palindrome (0.4 s)
+PROGRESS 0.646 A4 ['1', '2', '3', '4'] non-palindrome (0.2 s)
+PROGRESS 0.667 A4 ['4', '3', '2', '1'] non-palindrome (0.3 s)
+PROGRESS 0.688 A4 ['0', '1', '1', '1'] non-palindrome (0.2 s)
+PROGRESS 0.708 A4 ['1', '1', '1', '0'] non-palindrome (0.2 s)
+PROGRESS 0.729 A4 ['1', '1', '1', '1'] palindrome high (0.5 s)
+PROGRESS 0.750 A4 ['0', '1', '1', '0'] palindrome (0.1 s)
+PROGRESS 0.771 A4 ['1', '1', '0', '0'] non-palindrome (0.1 s)
+PROGRESS 0.792 A4 ['1', '0', '0', '1'] palindrome (0.2 s)
+PROGRESS 0.812 A4 ['0', '0', '1', '1'] non-palindrome (0.1 s)
+PROGRESS 0.833 A4 ['0', '1', '2', '0'] line (0.0 s)
+PROGRESS 0.854 A4 ['0', '1', '1/2', '0'] line (0.1 s)
+PROGRESS 0.875 A4 ['0', '1', '3', '0'] line (0.0 s)
+PROGRESS 0.896 A4 ['0', '1', '1/3', '0'] line (0.1 s)
+PROGRESS 0.917 A4 ['0', '1', '3/2', '0'] line (0.0 s)
+PROGRESS 0.938 A4 ['0', '1', '2/3', '0'] line (0.1 s)
+PROGRESS 0.958 A4 ['0', '1', '1', '0'] palindrome high (0.1 s)
+PROGRESS 0.979 H4 ['0', '1', '2', '0'] H4 line (50.3 s)
+PROGRESS 1.000 H4 ['0', '1', '1/2', '0'] H4 line (56.7 s)
+  ok  control: cross-polytope moments 2/45, 1/105 exact
+
+== per polytope: isotropy of the form moment t_k and the corner moment C_k (iso = no tone in degree k)
+A4 (0,1,1/2,0)      line             corners    30 cells/corner 4 ends equidistant False  k3: form TONE 5.12109, corners TONE -17.5009;
+A4 (0,1,1/3,0)      line             corners    30 cells/corner 4 ends equidistant False  k3: form TONE 18.0327, corners TONE -17.9134;
+A4 (0,1,2,0)        line             corners    30 cells/corner 4 ends equidistant False  k3: form TONE -0.0400085, corners TONE 140.007;
+A4 (0,1,2/3,0)      line             corners    30 cells/corner 4 ends equidistant False  k3: form TONE 1.44816, corners TONE -14.6135;
+A4 (0,1,3,0)        line             corners    30 cells/corner 4 ends equidistant False  k3: form TONE -0.00824542, corners TONE 483.661;
+A4 (0,1,3/2,0)      line             corners    30 cells/corner 4 ends equidistant False  k3: form TONE -0.0847574, corners TONE 49.3207;
+A4 (0,0,1,1)        non-palindrome   corners    20 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k3: form TONE -15.414, corners TONE 76.3675; k4: form TONE -60.5085, corners TONE -48;
+A4 (0,1,1,1)        non-palindrome   corners    60 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k3: form TONE -0.191629, corners TONE 305.47; k4: form TONE -0.550727, corners TONE 3096;
+A4 (1,1,0,0)        non-palindrome   corners    20 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k3: form TONE 15.414, corners TONE -76.3675; k4: form TONE -60.5085, corners TONE -48;
+A4 (1,1,1,0)        non-palindrome   corners    60 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k3: form TONE 0.191629, corners TONE -305.47; k4: form TONE -0.550727, corners TONE 3096;
+A4 (1,2,3,4)        non-palindrome   corners   120 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k3: form TONE -5.57477e-05, corners TONE 28001.4; k4: form TONE -3.74429e-05, corners TONE 166320;
+A4 (4,3,2,1)        non-palindrome   corners   120 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k3: form TONE 5.57477e-05, corners TONE -28001.4; k4: form TONE -3.74429e-05, corners TONE 166320;
+A4 (0,1,1,0)        palindrome       corners    30 cells/corner 4 ends equidistant True  k2: form iso, corners iso; k3: form iso, corners iso; k4: form TONE -7.08571, corners TONE 1080; k5: form iso, corners iso;
+A4 (1,0,0,1)        palindrome       corners    20 cells/corner 8 ends equidistant True  k2: form iso, corners iso; k3: form iso, corners iso; k4: form TONE 57.6, corners TONE -120; k5: form iso, corners iso;
+A4 (1,1,1,1)        palindrome       corners   120 cells/corner 4 ends equidistant True  k2: form iso, corners iso; k3: form iso, corners iso; k4: form TONE -0.0283559, corners TONE 10800; k5: form iso, corners iso;
+A4 (1,2,2,1)        palindrome       corners   120 cells/corner 4 ends equidistant True  k2: form iso, corners iso; k3: form iso, corners iso; k4: form TONE -0.00123747, corners TONE 137520; k5: form iso, corners iso;
+A4 (2,1,1,2)        palindrome       corners   120 cells/corner 4 ends equidistant True  k2: form iso, corners iso; k3: form iso, corners iso; k4: form TONE -0.00045194, corners TONE -7200; k5: form iso, corners iso;
+A4 (0,1,1,0)        palindrome high  corners    30 cells/corner 4 ends equidistant True  k6: form TONE -149.029, corners TONE 82350; k7: form iso, corners iso;
+A4 (1,1,1,1)        palindrome high  corners   120 cells/corner 4 ends equidistant True  k6: form TONE -0.14417, corners TONE 1.1475e+06; k7: form iso, corners iso;
+B4 (0,1,1,0)        B4 line          corners    96 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k4: form TONE -0.273518, corners TONE 64800;
+B4 (0,1,1/2,0)      B4 line          corners    96 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k4: form TONE -2.77366, corners TONE 34560;
+B4 (0,1,2,0)        B4 line          corners    96 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k4: form TONE -0.00956222, corners TONE 151200;
+B4 (0,1,2/3,0)      B4 line          corners    96 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k4: form TONE -1.19531, corners TONE 43680;
+B4 (0,1,3/2,0)      B4 line          corners    96 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k4: form TONE -0.0437051, corners TONE 103680;
+B4 (1,0,0,1)        B4 palindrome    corners    64 cells/corner 8 ends equidistant False  k2: form iso, corners iso; k4: form TONE -0.502998, corners TONE 2880;
+B4 (1,1,1,1)        B4 palindrome    corners   384 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k4: form TONE -0.00213168, corners TONE 1.67463e+06;
+F4 (0,1,1/2,0)      line             corners   288 cells/corner 4 ends equidistant False  k6: form TONE 0.00458373, corners TONE -5.38983e+06;
+F4 (0,1,1/3,0)      line             corners   288 cells/corner 4 ends equidistant False  k6: form TONE 0.0223525, corners TONE -3.81958e+06;
+F4 (0,1,2,0)        line             corners   288 cells/corner 4 ends equidistant False  k6: form TONE -4.4763e-06, corners TONE 3.44949e+08;
+F4 (0,1,2/3,0)      line             corners   288 cells/corner 4 ends equidistant False  k6: form TONE 0.000958394, corners TONE -6.21678e+06;
+F4 (0,1,3,0)        line             corners   288 cells/corner 4 ends equidistant False  k6: form TONE -3.78541e-07, corners TONE 2.78448e+09;
+F4 (0,1,3/2,0)      line             corners   288 cells/corner 4 ends equidistant False  k6: form TONE -1.662e-05, corners TONE 7.0813e+07;
+F4 (0,0,1,1)        non-palindrome   corners   192 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k4: form iso, corners iso; k6: form TONE -0.0260195, corners TONE 2.92608e+07;
+F4 (0,1,1,1)        non-palindrome   corners   576 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k4: form iso, corners iso; k6: form TONE -8.12182e-05, corners TONE 5.8632e+08;
+F4 (1,1,0,0)        non-palindrome   corners   192 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k4: form iso, corners iso; k6: form TONE 0.0260195, corners TONE -2.92608e+07;
+F4 (1,1,1,0)        non-palindrome   corners   576 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k4: form iso, corners iso; k6: form TONE 8.12182e-05, corners TONE -5.8632e+08;
+F4 (1,2,3,4)        non-palindrome   corners  1152 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k4: form iso, corners iso; k6: form TONE -1.29082e-09, corners TONE 1.44655e+12;
+F4 (4,3,2,1)        non-palindrome   corners  1152 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k4: form iso, corners iso; k6: form TONE 1.29082e-09, corners TONE -1.44655e+12;
+F4 (0,1,1,0)        palindrome       corners   288 cells/corner 4 ends equidistant True  k2: form iso, corners iso; k4: form iso, corners iso; k6: form iso, corners iso; k8: form TONE 0, corners TONE 1.33074e+11;
+F4 (1,0,0,1)        palindrome       corners   144 cells/corner 10 ends equidistant True  k2: form iso, corners iso; k4: form iso, corners iso; k6: form iso, corners iso; k8: form TONE 2, corners TONE -1.7806e+08;
+F4 (1,1,1,1)        palindrome       corners  1152 cells/corner 4 ends equidistant True  k2: form iso, corners iso; k4: form iso, corners iso; k6: form iso, corners iso; k8: form TONE -3.05176e-05, corners TONE 9.25258e+12;
+F4 (1,2,2,1)        palindrome       corners  1152 cells/corner 4 ends equidistant True  k2: form iso, corners iso; k4: form iso, corners iso; k6: form iso, corners iso; k8: form TONE -1.19209e-07, corners TONE 7.1479e+14;
+F4 (2,1,1,2)        palindrome       corners  1152 cells/corner 4 ends equidistant True  k2: form iso, corners iso; k4: form iso, corners iso; k6: form iso, corners iso; k8: form TONE -4.76837e-07, corners TONE 4.43742e+13;
+F4 (0,1,1,0)        palindrome high  corners   288 cells/corner 4 ends equidistant True  k10: form TONE 4096, corners TONE 3.14122e+14; k12: form TONE 0, corners TONE 5.13588e+17;
+F4 (1,1,1,1)        palindrome high  corners  1152 cells/corner 4 ends equidistant True  k10: form TONE 0, corners TONE 5.00787e+16; k12: form TONE -512, corners TONE 1.82199e+20;
+H4 (0,1,1/2,0)      H4 line          corners  3600 cells/corner 4 ends equidistant False  k12: form TONE 0, corners TONE -1.15695e+18;
+H4 (0,1,2,0)        H4 line          corners  3600 cells/corner 4 ends equidistant False  k12: form TONE -3.72529e-09, corners TONE -7.17016e+20;
+H4 (0,1,1,0)        H4 middle        corners  3600 cells/corner 4 ends equidistant False  k2: form iso, corners iso; k6: form iso, corners iso; k12: form TONE 0, corners TONE -1.4947e+19;
+
+== checks
+  ok  A4 ['0', '1', '1/2', '0'] degree 2 isotropic (form and corners)
+  ok  A4 ['0', '1', '1/3', '0'] degree 2 isotropic (form and corners)
+  ok  A4 ['0', '1', '2', '0'] degree 2 isotropic (form and corners)
+  ok  A4 ['0', '1', '2/3', '0'] degree 2 isotropic (form and corners)
+  ok  A4 ['0', '1', '3', '0'] degree 2 isotropic (form and corners)
+  ok  A4 ['0', '1', '3/2', '0'] degree 2 isotropic (form and corners)
+  ok  A4 ['0', '0', '1', '1'] degree 2 isotropic (form and corners)
+  ok  A4 ['0', '1', '1', '1'] degree 2 isotropic (form and corners)
+  ok  A4 ['1', '1', '0', '0'] degree 2 isotropic (form and corners)
+  ok  A4 ['1', '1', '1', '0'] degree 2 isotropic (form and corners)
+  ok  A4 ['1', '2', '3', '4'] degree 2 isotropic (form and corners)
+  ok  A4 ['4', '3', '2', '1'] degree 2 isotropic (form and corners)
+  ok  A4 ['0', '1', '1', '0'] degree 2 isotropic (form and corners)
+  ok  A4 ['1', '0', '0', '1'] degree 2 isotropic (form and corners)
+  ok  A4 ['1', '1', '1', '1'] degree 2 isotropic (form and corners)
+  ok  A4 ['1', '2', '2', '1'] degree 2 isotropic (form and corners)
+  ok  A4 ['2', '1', '1', '2'] degree 2 isotropic (form and corners)
+  ok  A4 ['0', '1', '1', '0'] degree 2 isotropic (form and corners)
+  ok  A4 ['1', '1', '1', '1'] degree 2 isotropic (form and corners)
+  ok  B4 ['0', '1', '1', '0'] degree 2 isotropic (form and corners)
+  ok  B4 ['0', '1', '1/2', '0'] degree 2 isotropic (form and corners)
+  ok  B4 ['0', '1', '2', '0'] degree 2 isotropic (form and corners)
+  ok  B4 ['0', '1', '2/3', '0'] degree 2 isotropic (form and corners)
+  ok  B4 ['0', '1', '3/2', '0'] degree 2 isotropic (form and corners)
+  ok  B4 ['1', '0', '0', '1'] degree 2 isotropic (form and corners)
+  ok  B4 ['1', '1', '1', '1'] degree 2 isotropic (form and corners)
+  ok  F4 ['0', '1', '1/2', '0'] degree 2 isotropic (form and corners)
+  ok  F4 ['0', '1', '1/3', '0'] degree 2 isotropic (form and corners)
+  ok  F4 ['0', '1', '2', '0'] degree 2 isotropic (form and corners)
+  ok  F4 ['0', '1', '2/3', '0'] degree 2 isotropic (form and corners)
+  ok  F4 ['0', '1', '3', '0'] degree 2 isotropic (form and corners)
+  ok  F4 ['0', '1', '3/2', '0'] degree 2 isotropic (form and corners)
+  ok  F4 ['0', '0', '1', '1'] degree 2 isotropic (form and corners)
+  ok  F4 ['0', '0', '1', '1'] degree 4 isotropic (no F4 invariant of degree 4)
+  ok  F4 ['0', '1', '1', '1'] degree 2 isotropic (form and corners)
+  ok  F4 ['0', '1', '1', '1'] degree 4 isotropic (no F4 invariant of degree 4)
+  ok  F4 ['1', '1', '0', '0'] degree 2 isotropic (form and corners)
+  ok  F4 ['1', '1', '0', '0'] degree 4 isotropic (no F4 invariant of degree 4)
+  ok  F4 ['1', '1', '1', '0'] degree 2 isotropic (form and corners)
+  ok  F4 ['1', '1', '1', '0'] degree 4 isotropic (no F4 invariant of degree 4)
+  ok  F4 ['1', '2', '3', '4'] degree 2 isotropic (form and corners)
+  ok  F4 ['1', '2', '3', '4'] degree 4 isotropic (no F4 invariant of degree 4)
+  ok  F4 ['4', '3', '2', '1'] degree 2 isotropic (form and corners)
+  ok  F4 ['4', '3', '2', '1'] degree 4 isotropic (no F4 invariant of degree 4)
+  ok  F4 ['0', '1', '1', '0'] degree 2 isotropic (form and corners)
+  ok  F4 ['0', '1', '1', '0'] degree 4 isotropic (no F4 invariant of degree 4)
+  ok  F4 ['1', '0', '0', '1'] degree 2 isotropic (form and corners)
+  ok  F4 ['1', '0', '0', '1'] degree 4 isotropic (no F4 invariant of degree 4)
+  ok  F4 ['1', '1', '1', '1'] degree 2 isotropic (form and corners)
+  ok  F4 ['1', '1', '1', '1'] degree 4 isotropic (no F4 invariant of degree 4)
+  ok  F4 ['1', '2', '2', '1'] degree 2 isotropic (form and corners)
+  ok  F4 ['1', '2', '2', '1'] degree 4 isotropic (no F4 invariant of degree 4)
+  ok  F4 ['2', '1', '1', '2'] degree 2 isotropic (form and corners)
+  ok  F4 ['2', '1', '1', '2'] degree 4 isotropic (no F4 invariant of degree 4)
+  ok  F4 ['0', '1', '1', '0'] degree 2 isotropic (form and corners)
+  ok  F4 ['1', '1', '1', '1'] degree 2 isotropic (form and corners)
+  ok  H4 ['0', '1', '1/2', '0'] degree 2 isotropic (form and corners)
+  ok  H4 ['0', '1', '2', '0'] degree 2 isotropic (form and corners)
+  ok  H4 ['0', '1', '1', '0'] degree 2 isotropic (form and corners)
+  ok  H4 ['0', '1', '1', '0'] degree 6 isotropic (no H4 invariant of degree 6)
+  ok  PREDICTION A4 (0, 1, 1, 0): degree-3 tone zero (form and corners)
+  ok  PREDICTION F4 (0, 1, 1, 0): degree-6 tone zero (form and corners)
+  ok  A4 (0, 1, 1, 0): degree-5 odd moment zero too (-I in the extended group)
+  ok  SHOULD FAIL TO VANISH: A4 (0, 1, 1, 0) degree-4 tone nonzero (even, survives -I)
+  ok  PREDICTION A4 (1, 0, 0, 1): degree-3 tone zero (form and corners)
+  ok  PREDICTION F4 (1, 0, 0, 1): degree-6 tone zero (form and corners)
+  ok  A4 (1, 0, 0, 1): degree-5 odd moment zero too (-I in the extended group)
+  ok  SHOULD FAIL TO VANISH: A4 (1, 0, 0, 1) degree-4 tone nonzero (even, survives -I)
+  ok  PREDICTION A4 (1, 1, 1, 1): degree-3 tone zero (form and corners)
+  ok  PREDICTION F4 (1, 1, 1, 1): degree-6 tone zero (form and corners)
+  ok  A4 (1, 1, 1, 1): degree-5 odd moment zero too (-I in the extended group)
+  ok  SHOULD FAIL TO VANISH: A4 (1, 1, 1, 1) degree-4 tone nonzero (even, survives -I)
+  ok  PREDICTION A4 (1, 2, 2, 1): degree-3 tone zero (form and corners)
+  ok  PREDICTION F4 (1, 2, 2, 1): degree-6 tone zero (form and corners)
+  ok  A4 (1, 2, 2, 1): degree-5 odd moment zero too (-I in the extended group)
+  ok  SHOULD FAIL TO VANISH: A4 (1, 2, 2, 1) degree-4 tone nonzero (even, survives -I)
+  ok  PREDICTION A4 (2, 1, 1, 2): degree-3 tone zero (form and corners)
+  ok  PREDICTION F4 (2, 1, 1, 2): degree-6 tone zero (form and corners)
+  ok  A4 (2, 1, 1, 2): degree-5 odd moment zero too (-I in the extended group)
+  ok  SHOULD FAIL TO VANISH: A4 (2, 1, 1, 2) degree-4 tone nonzero (even, survives -I)
+  ok  A4 (0, 1, 1, 0): ends equidistant (fixed point of the 5-cell polar line = uniform bitruncated 5-cell)
+  ok  F4 (0, 1, 1, 0): ends equidistant (fixed point of the 24-cell polar line = uniform bitruncated 24-cell)
+  ok  SHOULD FAIL TO VANISH: A4 (0, 1, 1, 1) degree-3 tone nonzero
+  ok  SHOULD FAIL TO VANISH: F4 (0, 1, 1, 1) degree-6 tone nonzero
+  ok  SHOULD FAIL TO VANISH: A4 (1, 1, 1, 0) degree-3 tone nonzero
+  ok  SHOULD FAIL TO VANISH: F4 (1, 1, 1, 0) degree-6 tone nonzero
+  ok  SHOULD FAIL TO VANISH: A4 (1, 1, 0, 0) degree-3 tone nonzero
+  ok  SHOULD FAIL TO VANISH: F4 (1, 1, 0, 0) degree-6 tone nonzero
+  ok  SHOULD FAIL TO VANISH: A4 (0, 0, 1, 1) degree-3 tone nonzero
+  ok  SHOULD FAIL TO VANISH: F4 (0, 0, 1, 1) degree-6 tone nonzero
+  ok  SHOULD FAIL TO VANISH: A4 (1, 2, 3, 4) degree-3 tone nonzero
+  ok  SHOULD FAIL TO VANISH: F4 (1, 2, 3, 4) degree-6 tone nonzero
+  ok  SHOULD FAIL TO VANISH: A4 (4, 3, 2, 1) degree-3 tone nonzero
+  ok  SHOULD FAIL TO VANISH: F4 (4, 3, 2, 1) degree-6 tone nonzero
+  ok  A4 reversed pair (0, 1, 1, 1) / (1, 1, 1, 0) (T): tone(reverse) = eps tone, eps = -1
+  ok  A4 reversed pair (0, 1, 1, 1) / (1, 1, 1, 0) (C): tone(reverse) = eps tone, eps = -1
+  ok  A4 reversed pair (1, 1, 0, 0) / (0, 0, 1, 1) (T): tone(reverse) = eps tone, eps = -1
+  ok  A4 reversed pair (1, 1, 0, 0) / (0, 0, 1, 1) (C): tone(reverse) = eps tone, eps = -1
+  ok  A4 reversed pair (1, 2, 3, 4) / (4, 3, 2, 1) (T): tone(reverse) = eps tone, eps = -1
+  ok  A4 reversed pair (1, 2, 3, 4) / (4, 3, 2, 1) (C): tone(reverse) = eps tone, eps = -1
+  ok  F4 reversed pair (0, 1, 1, 1) / (1, 1, 1, 0) (T): tone(reverse) = eps tone, eps = -1
+  ok  F4 reversed pair (0, 1, 1, 1) / (1, 1, 1, 0) (C): tone(reverse) = eps tone, eps = -1
+  ok  F4 reversed pair (1, 1, 0, 0) / (0, 0, 1, 1) (T): tone(reverse) = eps tone, eps = -1
+  ok  F4 reversed pair (1, 1, 0, 0) / (0, 0, 1, 1) (C): tone(reverse) = eps tone, eps = -1
+  ok  F4 reversed pair (1, 2, 3, 4) / (4, 3, 2, 1) (T): tone(reverse) = eps tone, eps = -1
+  ok  F4 reversed pair (1, 2, 3, 4) / (4, 3, 2, 1) (C): tone(reverse) = eps tone, eps = -1
+  ok  A4 line (0,1,t,0) parity at t = 2 (T): eps = -1 (0 = degenerate), tone nonzero off t = 1: True
+  ok  A4 line (0,1,t,0) parity at t = 2 (C): eps = -1 (0 = degenerate), tone nonzero off t = 1: True
+  ok  A4 line (0,1,t,0) parity at t = 3 (T): eps = -1 (0 = degenerate), tone nonzero off t = 1: True
+  ok  A4 line (0,1,t,0) parity at t = 3 (C): eps = -1 (0 = degenerate), tone nonzero off t = 1: True
+  ok  A4 line (0,1,t,0) parity at t = 3/2 (T): eps = -1 (0 = degenerate), tone nonzero off t = 1: True
+  ok  A4 line (0,1,t,0) parity at t = 3/2 (C): eps = -1 (0 = degenerate), tone nonzero off t = 1: True
+  ok  F4 line (0,1,t,0) parity at t = 2 (T): eps = -1 (0 = degenerate), tone nonzero off t = 1: True
+  ok  F4 line (0,1,t,0) parity at t = 2 (C): eps = -1 (0 = degenerate), tone nonzero off t = 1: True
+  ok  F4 line (0,1,t,0) parity at t = 3 (T): eps = -1 (0 = degenerate), tone nonzero off t = 1: True
+  ok  F4 line (0,1,t,0) parity at t = 3 (C): eps = -1 (0 = degenerate), tone nonzero off t = 1: True
+  ok  F4 line (0,1,t,0) parity at t = 3/2 (T): eps = -1 (0 = degenerate), tone nonzero off t = 1: True
+  ok  F4 line (0,1,t,0) parity at t = 3/2 (C): eps = -1 (0 = degenerate), tone nonzero off t = 1: True
+  ok  SHOULD FAIL TO VANISH: B4 (0,1,1,0) bitruncated tesseract degree-4 tone nonzero (form and corners)
+  ok  SHOULD FAIL TO VANISH: B4 (1, 0, 0, 1) degree-4 tone nonzero
+  ok  SHOULD FAIL TO VANISH: B4 (1, 1, 1, 1) degree-4 tone nonzero
+  ok  SHOULD FAIL: B4 line parity identity at t = 2 (no reversal symmetry)
+  ok  SHOULD FAIL: B4 line parity identity at t = 3/2 (no reversal symmetry)
+B4 line (0,1,t,0) degree-4 tone (form diff, corner diff): [('1/2', -2.7736625514403292, 34560.0), ('2/3', -1.1953051702309212, 43680.0), ('1', -0.2735177142857143, 64800.0), ('3/2', -0.04370511463844797, 103680.0), ('2', -0.009562217296900787, 151200.0)]
+  ok  SHOULD FAIL TO VANISH: H4 (0,1,1,0) bitruncated 600-cell degree-12 tone nonzero
+  ok  SHOULD FAIL: H4 line parity identity at t = 2
+F4 (0, 1, 1, 0) degree 10: form TONE, corners TONE; degree 12: form TONE, corners TONE
+F4 (1, 1, 1, 1) degree 10: form TONE, corners TONE; degree 12: form TONE, corners TONE
+  ok  A4 (0, 1, 1, 0) degree 7 odd moment zero
+A4 (0, 1, 1, 0) degree 6: form TONE, corners TONE
+  ok  A4 (1, 1, 1, 1) degree 7 odd moment zero
+A4 (1, 1, 1, 1) degree 6: form TONE, corners TONE
+F4 ['0', '1', '1', '0'] degree 8: form TONE 0, corners TONE 1.33074e+11
+F4 ['1', '0', '0', '1'] degree 8: form TONE 2, corners TONE -1.7806e+08
+F4 ['1', '1', '1', '1'] degree 8: form TONE -3.05176e-05, corners TONE 9.25258e+12
+F4 ['1', '2', '2', '1'] degree 8: form TONE -1.19209e-07, corners TONE 7.1479e+14
+F4 ['2', '1', '1', '2'] degree 8: form TONE -4.76837e-07, corners TONE 4.43742e+13
+eps per (group, moment): {'A4 T': [-1], 'A4 C': [-1], 'F4 T': [-1], 'F4 C': [-1]}
+128 checks, 0 FAIL; 61 s
+FINAL ok

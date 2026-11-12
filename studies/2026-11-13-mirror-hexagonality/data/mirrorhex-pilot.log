@@ -1,0 +1,36 @@
+PROGRESS 0.05 ball and site-group tests done (90 checks)
+PROGRESS 0.09 cells 6/135 (2 s)
+PROGRESS 0.13 cells 12/135 (2 s)
+PROGRESS 0.16 cells 18/135 (2 s)
+PROGRESS 0.20 cells 24/135 (3 s)
+PROGRESS 0.24 cells 30/135 (3 s)
+PROGRESS 0.28 cells 36/135 (3 s)
+PROGRESS 0.31 cells 42/135 (4 s)
+PROGRESS 0.35 cells 48/135 (4 s)
+PROGRESS 0.39 cells 54/135 (5 s)
+PROGRESS 0.43 cells 60/135 (5 s)
+PROGRESS 0.47 cells 66/135 (6 s)
+PROGRESS 0.50 cells 72/135 (6 s)
+PROGRESS 0.54 cells 78/135 (7 s)
+PROGRESS 0.58 cells 84/135 (7 s)
+PROGRESS 0.62 cells 90/135 (8 s)
+PROGRESS 0.65 cells 96/135 (9 s)
+PROGRESS 0.69 cells 102/135 (10 s)
+PROGRESS 0.73 cells 108/135 (11 s)
+PROGRESS 0.77 cells 114/135 (11 s)
+PROGRESS 0.81 cells 120/135 (12 s)
+PROGRESS 0.84 cells 126/135 (12 s)
+PROGRESS 0.88 cells 132/135 (13 s)
+== layer type c:
+   faces_on: ["('down_oct', 0)", "('down_tet_far', 0)", "('down_tet_near', 0)", "('up_oct', 0)", "('up_tet_far', 0)", "('up_tet_near', 0)"]
+   edges_on: ["('down_oct', 0)", "('down_tet_far', 0)", "('down_tet_near', 0)", "('up_oct', 0)", "('up_tet_far', 0)", "('up_tet_near', 0)"]
+   crossing: ["('down_oct', False)", "('down_oct', True)", "('down_tet_far', False)", "('down_tet_near', False)", "('down_tet_near', True)", "('up_oct', False)", "('up_oct', True)", "('up_tet_far', False)", "('up_tet_near', False)", "('up_tet_near', True)"]
+   whole_oct_maps: ["('ccc', False, True)", "('cch', False, False)", "('hcc', False, False)", "('hch', False, True)"]
+== layer type h:
+   faces_on: ["('down_oct', 0)", "('down_oct', 1)", "('down_tet_far', 0)", "('down_tet_near', 0)", "('down_tet_near', 1)", "('up_oct', 0)", "('up_oct', 1)", "('up_tet_far', 0)", "('up_tet_near', 1)"]
+   edges_on: ["('down_oct', 0)", "('down_oct', 3)", "('down_oct', 9)", "('down_tet_far', 0)", "('down_tet_near', 3)", "('down_tet_near', 6)", "('down_tet_near', 9)", "('up_oct', 0)", "('up_oct', 3)", "('up_oct', 9)", "('up_tet_far', 0)", "('up_tet_near', 3)", "('up_tet_near', 6)", "('up_tet_near', 9)"]
+   crossing: ["('down_oct', False)", "('down_tet_far', False)", "('down_tet_near', False)", "('up_oct', False)", "('up_tet_far', False)", "('up_tet_near', False)"]
+   whole_oct_maps: ["('chc', True, False)", "('hhh', True, False)"]
+PROGRESS 1.00 315 checks ok, 0 failed, 14 s
+FINAL ok
+[exit 0]

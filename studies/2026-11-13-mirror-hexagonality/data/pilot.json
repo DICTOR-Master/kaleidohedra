@@ -1,0 +1,3121 @@
+{
+ "words": {
+  "ABC": {
+   "types": "ccc",
+   "layers": [
+    {
+     "k": 0,
+     "type": "c",
+     "balls": {
+      "sigma": {
+       "local": false,
+       "global": false
+      },
+      "iota": {
+       "local": true,
+       "global": true
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 3,
+      "reflection_subgroup": 6,
+      "coxeter": false,
+      "sigma_h": false,
+      "inversion": true
+     }
+    },
+    {
+     "k": 1,
+     "type": "c",
+     "balls": {
+      "sigma": {
+       "local": false,
+       "global": false
+      },
+      "iota": {
+       "local": true,
+       "global": true
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 3,
+      "reflection_subgroup": 6,
+      "coxeter": false,
+      "sigma_h": false,
+      "inversion": true
+     }
+    },
+    {
+     "k": 2,
+     "type": "c",
+     "balls": {
+      "sigma": {
+       "local": false,
+       "global": false
+      },
+      "iota": {
+       "local": true,
+       "global": true
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 3,
+      "reflection_subgroup": 6,
+      "coxeter": false,
+      "sigma_h": false,
+      "inversion": true
+     }
+    }
+   ],
+   "pieces": [
+    {
+     "k": 0,
+     "type": "c",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 1,
+     "type": "c",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 2,
+     "type": "c",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 0,
+     "type": "c",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 1,
+     "type": "c",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 2,
+     "type": "c",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 0,
+     "type": "c",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 1,
+     "type": "c",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 2,
+     "type": "c",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    }
+   ]
+  },
+  "AB": {
+   "types": "hh",
+   "layers": [
+    {
+     "k": 0,
+     "type": "h",
+     "balls": {
+      "sigma": {
+       "local": true,
+       "global": true
+      },
+      "iota": {
+       "local": false,
+       "global": false
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 4,
+      "reflection_subgroup": 12,
+      "coxeter": true,
+      "sigma_h": true,
+      "inversion": false
+     }
+    },
+    {
+     "k": 1,
+     "type": "h",
+     "balls": {
+      "sigma": {
+       "local": true,
+       "global": true
+      },
+      "iota": {
+       "local": false,
+       "global": false
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 4,
+      "reflection_subgroup": 12,
+      "coxeter": true,
+      "sigma_h": true,
+      "inversion": false
+     }
+    }
+   ],
+   "pieces": [
+    {
+     "k": 0,
+     "type": "h",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 1,
+     "type": "h",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 0,
+     "type": "h",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 1,
+     "type": "h",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 0,
+     "type": "h",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 6,
+       "edges_on": 6,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 6,
+       "edges_on": 6,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 1,
+     "type": "h",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 6,
+       "edges_on": 6,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 6,
+       "edges_on": 6,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    }
+   ]
+  },
+  "ABAC": {
+   "types": "chch",
+   "layers": [
+    {
+     "k": 0,
+     "type": "c",
+     "balls": {
+      "sigma": {
+       "local": false,
+       "global": false
+      },
+      "iota": {
+       "local": true,
+       "global": true
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 3,
+      "reflection_subgroup": 6,
+      "coxeter": false,
+      "sigma_h": false,
+      "inversion": true
+     }
+    },
+    {
+     "k": 1,
+     "type": "h",
+     "balls": {
+      "sigma": {
+       "local": true,
+       "global": true
+      },
+      "iota": {
+       "local": false,
+       "global": false
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 4,
+      "reflection_subgroup": 12,
+      "coxeter": true,
+      "sigma_h": true,
+      "inversion": false
+     }
+    },
+    {
+     "k": 2,
+     "type": "c",
+     "balls": {
+      "sigma": {
+       "local": false,
+       "global": false
+      },
+      "iota": {
+       "local": true,
+       "global": true
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 3,
+      "reflection_subgroup": 6,
+      "coxeter": false,
+      "sigma_h": false,
+      "inversion": true
+     }
+    },
+    {
+     "k": 3,
+     "type": "h",
+     "balls": {
+      "sigma": {
+       "local": true,
+       "global": true
+      },
+      "iota": {
+       "local": false,
+       "global": false
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 4,
+      "reflection_subgroup": 12,
+      "coxeter": true,
+      "sigma_h": true,
+      "inversion": false
+     }
+    }
+   ],
+   "pieces": [
+    {
+     "k": 0,
+     "type": "c",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 1,
+     "type": "h",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 2,
+     "type": "c",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 3,
+     "type": "h",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 0,
+     "type": "c",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 1,
+     "type": "h",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 2,
+     "type": "c",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 3,
+     "type": "h",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 0,
+     "type": "c",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 1,
+     "type": "h",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 6,
+       "edges_on": 6,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 6,
+       "edges_on": 6,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 2,
+     "type": "c",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 3,
+     "type": "h",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 6,
+       "edges_on": 6,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 6,
+       "edges_on": 6,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    }
+   ]
+  },
+  "ABCACB": {
+   "types": "hcchcc",
+   "layers": [
+    {
+     "k": 0,
+     "type": "h",
+     "balls": {
+      "sigma": {
+       "local": true,
+       "global": true
+      },
+      "iota": {
+       "local": false,
+       "global": false
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 4,
+      "reflection_subgroup": 12,
+      "coxeter": true,
+      "sigma_h": true,
+      "inversion": false
+     }
+    },
+    {
+     "k": 1,
+     "type": "c",
+     "balls": {
+      "sigma": {
+       "local": false,
+       "global": false
+      },
+      "iota": {
+       "local": true,
+       "global": false
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 3,
+      "reflection_subgroup": 6,
+      "coxeter": false,
+      "sigma_h": false,
+      "inversion": true
+     }
+    },
+    {
+     "k": 2,
+     "type": "c",
+     "balls": {
+      "sigma": {
+       "local": false,
+       "global": false
+      },
+      "iota": {
+       "local": true,
+       "global": false
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 3,
+      "reflection_subgroup": 6,
+      "coxeter": false,
+      "sigma_h": false,
+      "inversion": true
+     }
+    },
+    {
+     "k": 3,
+     "type": "h",
+     "balls": {
+      "sigma": {
+       "local": true,
+       "global": true
+      },
+      "iota": {
+       "local": false,
+       "global": false
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 4,
+      "reflection_subgroup": 12,
+      "coxeter": true,
+      "sigma_h": true,
+      "inversion": false
+     }
+    },
+    {
+     "k": 4,
+     "type": "c",
+     "balls": {
+      "sigma": {
+       "local": false,
+       "global": false
+      },
+      "iota": {
+       "local": true,
+       "global": false
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 3,
+      "reflection_subgroup": 6,
+      "coxeter": false,
+      "sigma_h": false,
+      "inversion": true
+     }
+    },
+    {
+     "k": 5,
+     "type": "c",
+     "balls": {
+      "sigma": {
+       "local": false,
+       "global": false
+      },
+      "iota": {
+       "local": true,
+       "global": false
+      },
+      "mid": {
+       "local": false,
+       "global": false
+      }
+     },
+     "site_group": {
+      "order": 12,
+      "reflections": 3,
+      "reflection_subgroup": 6,
+      "coxeter": false,
+      "sigma_h": false,
+      "inversion": true
+     }
+    }
+   ],
+   "pieces": [
+    {
+     "k": 0,
+     "type": "h",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 1,
+     "type": "c",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 2,
+     "type": "c",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 3,
+     "type": "h",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 4,
+     "type": "c",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 5,
+     "type": "c",
+     "lam": "-1/4",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "up_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_near": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 0,
+     "type": "h",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 1,
+     "type": "c",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 2,
+     "type": "c",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 3,
+     "type": "h",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 3,
+       "edges_on": 3,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 9,
+       "edges_on": 9,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 4,
+     "type": "c",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 5,
+     "type": "c",
+     "lam": "1/10",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 0,
+     "type": "h",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 6,
+       "edges_on": 6,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 6,
+       "edges_on": 6,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 1,
+     "type": "c",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 2,
+     "type": "c",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 3,
+     "type": "h",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": true
+      },
+      "iota": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 6,
+       "edges_on": 6,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 6,
+       "edges_on": 6,
+       "faces_on": 1,
+       "crosses_plane": false
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 4,
+     "type": "c",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    },
+    {
+     "k": 5,
+     "type": "c",
+     "lam": "1/3",
+     "maps": {
+      "sigma": {
+       "oct_near_halves": false,
+       "tet_near": false,
+       "oct_whole": false
+      },
+      "iota": {
+       "oct_near_halves": true,
+       "tet_near": true,
+       "oct_whole": false
+      },
+      "mid": {
+       "tet_pair": false
+      }
+     },
+     "plane_census": {
+      "up_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "up_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_oct": {
+       "corners_on": 0,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      },
+      "down_tet_near": {
+       "corners_on": 3,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": true
+      },
+      "down_tet_far": {
+       "corners_on": 1,
+       "edges_on": 0,
+       "faces_on": 0,
+       "crosses_plane": false
+      }
+     }
+    }
+   ]
+  }
+ },
+ "lams": [
+  "-1/4",
+  "1/10",
+  "1/3"
+ ],
+ "plane_summary": {
+  "c": {
+   "faces_on": [
+    "('down_oct', 0)",
+    "('down_tet_far', 0)",
+    "('down_tet_near', 0)",
+    "('up_oct', 0)",
+    "('up_tet_far', 0)",
+    "('up_tet_near', 0)"
+   ],
+   "edges_on": [
+    "('down_oct', 0)",
+    "('down_tet_far', 0)",
+    "('down_tet_near', 0)",
+    "('up_oct', 0)",
+    "('up_tet_far', 0)",
+    "('up_tet_near', 0)"
+   ],
+   "crossing": [
+    "('down_oct', False)",
+    "('down_oct', True)",
+    "('down_tet_far', False)",
+    "('down_tet_near', False)",
+    "('down_tet_near', True)",
+    "('up_oct', False)",
+    "('up_oct', True)",
+    "('up_tet_far', False)",
+    "('up_tet_near', False)",
+    "('up_tet_near', True)"
+   ],
+   "whole_oct_maps": [
+    "('ccc', False, True)",
+    "('cch', False, False)",
+    "('hcc', False, False)",
+    "('hch', False, True)"
+   ]
+  },
+  "h": {
+   "faces_on": [
+    "('down_oct', 0)",
+    "('down_oct', 1)",
+    "('down_tet_far', 0)",
+    "('down_tet_near', 0)",
+    "('down_tet_near', 1)",
+    "('up_oct', 0)",
+    "('up_oct', 1)",
+    "('up_tet_far', 0)",
+    "('up_tet_near', 1)"
+   ],
+   "edges_on": [
+    "('down_oct', 0)",
+    "('down_oct', 3)",
+    "('down_oct', 9)",
+    "('down_tet_far', 0)",
+    "('down_tet_near', 3)",
+    "('down_tet_near', 6)",
+    "('down_tet_near', 9)",
+    "('up_oct', 0)",
+    "('up_oct', 3)",
+    "('up_oct', 9)",
+    "('up_tet_far', 0)",
+    "('up_tet_near', 3)",
+    "('up_tet_near', 6)",
+    "('up_tet_near', 9)"
+   ],
+   "crossing": [
+    "('down_oct', False)",
+    "('down_tet_far', False)",
+    "('down_tet_near', False)",
+    "('up_oct', False)",
+    "('up_tet_far', False)",
+    "('up_tet_near', False)"
+   ],
+   "whole_oct_maps": [
+    "('chc', True, False)",
+    "('hhh', True, False)"
+   ]
+  }
+ },
+ "checks": {
+  "ok": 315,
+  "fail": 0,
+  "failures": []
+ }
+}
