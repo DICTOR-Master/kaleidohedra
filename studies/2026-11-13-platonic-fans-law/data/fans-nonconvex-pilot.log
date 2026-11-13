@@ -1,0 +1,54 @@
+PROGRESS 0.062 D8: 3 planes, discs 3 (0 s)
+PROGRESS 0.125 CUBE: 6 planes, discs 0 (0 s)
+PROGRESS 0.188 DODECAHEDRON: 15 planes, discs 0 (0 s)
+PROGRESS 0.250 CUBOCTAHEDRON: 4 planes, discs 4 (0 s)
+PROGRESS 0.312 ICOSIDODECAHEDRON: 6 planes, discs 6 (0 s)
+PROGRESS 0.375 RHOMBIC_DODECAHEDRON: 6 planes, discs 0 (0 s)
+PROGRESS 0.438 RHOMBIC_TRIACONTAHEDRON: 15 planes, discs 0 (1 s)
+PROGRESS 0.500 STELLA_OCTANGULA: 21 planes, discs 3 (1 s)
+PROGRESS 0.562 DJ_TETRAHEDRAL_CLUSTER: 85 planes, discs 3 (2 s)
+PROGRESS 0.625 DOGSTAR: 27 planes, discs 0 (2 s)
+PROGRESS 0.688 DODECA_TETRAHEDRAL_CLUSTER: 124 planes, discs 0 (4 s)
+PROGRESS 0.750 DODECA_OCTAHEDRAL_CLUSTER: 460 planes, discs 0 (7 s)
+PROGRESS 0.812 DICTO_HEXA: 85 planes, discs 3 (8 s)
+PROGRESS 0.875 DICTO_HEXA_KEY: 61 planes, discs 9 (9 s)
+PROGRESS 0.938 DICTO_EDGE_ROOF: 6 planes, discs 0 (9 s)
+PROGRESS 1.000 DICTO_DELILAH: 3 planes, discs 3 (9 s)
+ok   N1 RULE = #87 definition, disc for disc (same edge sets), on every plane of all 16 exactly recognised solids: convex 8 solids 58 planes, non-convex 8 solids 869 planes  [[]]
+ok   N2 COROLLARY, convex: rule <=> plane cuts no face (and holds no face)  [[]]
+ok   N3 every disc plane has a loop round O among its fins (relaxed rule R0 is necessary)  [[]]
+ok   N3b (finding) planes where R0 holds but there is no disc: a third fin meets a corner of the loop (the clause is needed)  [8 planes: [('DICTO_HEXA', [1.0, 1.0, -1.0]), ('DICTO_HEXA', [1.0, -1.0, 1.0]), ('DICTO_HEXA', [1.0, -1.0, -1.0]), ('DICTO_HEXA', [1.0, 1.0, 1.0]), ('DICTO_HEXA_KEY', [1.0, -1.0, -1.0]), ('DICTO_HEXA_KEY', [1.0, 1.0, -1.0]), ('DICTO_HEXA_KEY', [1.0, -1.0, 1.0]), ('DICTO_HEXA_KEY', [1.0, 1.0, 1.0])]]
+ok   N4 every loop the rule accepts has apex angles summing to 2 pi (float)  [[]]
+ok   N5 (finding) loops of fins with apex sum 2 pi that the rule rejects (sum alone not enough)  [0 such loops: []]
+ok   N6 float rule = float census disc sizes on all 16 registry solids  [[]]
+
+CLAUSE convex=False | no loop of fins (open fans only) | 832 planes
+CLAUSE convex=False | disc | 18 planes
+CLAUSE convex=False | section of edges only, but broken by edges pointing at O | 10 planes
+CLAUSE convex=False | loop round O exists but a third fin meets one of its corners | 8 planes
+CLAUSE convex=False | a loop of fins that does not go once round O (winding 0 or turning back) | 1 planes
+CLAUSE convex=True | no loop of fins (open fans only) | 42 planes
+CLAUSE convex=True | disc | 16 planes
+OLDEXC DJ_TETRAHEDRAL_CLUSTER | DICTO Jewel tetrahedral cluster | plane [1.0, 0.0, 0.0] | def [8] rule [8] | cut 8 radial 8 | disc | pieces [(8, True, -1, True)]
+OLDEXC DJ_TETRAHEDRAL_CLUSTER | DICTO Jewel tetrahedral cluster | plane [0.0, 1.0, 0.0] | def [8] rule [8] | cut 8 radial 8 | disc | pieces [(8, True, 1, True)]
+OLDEXC DJ_TETRAHEDRAL_CLUSTER | DICTO Jewel tetrahedral cluster | plane [0.0, 0.0, 1.0] | def [8] rule [8] | cut 8 radial 8 | disc | pieces [(8, True, -1, True)]
+OLDEXC DODECA_TETRAHEDRAL_CLUSTER | Sunstar tetrahedral cluster (4 dodecahedra) | plane [1.0, 2.618034, 0.0] | def [] rule [] | cut 0 radial 6 | section of edges only, but broken by edges pointing at O | pieces [(6, False, None, None), (22, False, None, None)]
+OLDEXC DODECA_TETRAHEDRAL_CLUSTER | Sunstar tetrahedral cluster (4 dodecahedra) | plane [1.0, 1.0, -1.0] | def [] rule [] | cut 0 radial 9 | section of edges only, but broken by edges pointing at O | pieces [(10, False, None, None), (10, False, None, None), (10, False, None, None)]
+OLDEXC DODECA_TETRAHEDRAL_CLUSTER | Sunstar tetrahedral cluster (4 dodecahedra) | plane [1.0, -1.0, -1.0] | def [] rule [] | cut 0 radial 9 | section of edges only, but broken by edges pointing at O | pieces [(10, False, None, None), (10, False, None, None), (10, False, None, None)]
+OLDEXC DODECA_TETRAHEDRAL_CLUSTER | Sunstar tetrahedral cluster (4 dodecahedra) | plane [1.0, 0.0, -0.381966] | def [] rule [] | cut 0 radial 6 | section of edges only, but broken by edges pointing at O | pieces [(22, False, None, None), (6, False, None, None)]
+OLDEXC DODECA_TETRAHEDRAL_CLUSTER | Sunstar tetrahedral cluster (4 dodecahedra) | plane [0.0, 1.0, 2.618034] | def [] rule [] | cut 0 radial 6 | section of edges only, but broken by edges pointing at O | pieces [(6, False, None, None), (22, False, None, None)]
+OLDEXC DODECA_TETRAHEDRAL_CLUSTER | Sunstar tetrahedral cluster (4 dodecahedra) | plane [0.0, 1.0, -2.618034] | def [] rule [] | cut 0 radial 6 | section of edges only, but broken by edges pointing at O | pieces [(22, False, None, None), (6, False, None, None)]
+OLDEXC DODECA_TETRAHEDRAL_CLUSTER | Sunstar tetrahedral cluster (4 dodecahedra) | plane [1.0, -1.0, 1.0] | def [] rule [] | cut 0 radial 9 | section of edges only, but broken by edges pointing at O | pieces [(10, False, None, None), (10, False, None, None), (10, False, None, None)]
+OLDEXC DODECA_TETRAHEDRAL_CLUSTER | Sunstar tetrahedral cluster (4 dodecahedra) | plane [1.0, 0.0, 0.381966] | def [] rule [] | cut 0 radial 6 | section of edges only, but broken by edges pointing at O | pieces [(22, False, None, None), (6, False, None, None)]
+OLDEXC DODECA_TETRAHEDRAL_CLUSTER | Sunstar tetrahedral cluster (4 dodecahedra) | plane [1.0, -2.618034, 0.0] | def [] rule [] | cut 0 radial 6 | section of edges only, but broken by edges pointing at O | pieces [(22, False, None, None), (6, False, None, None)]
+OLDEXC DODECA_TETRAHEDRAL_CLUSTER | Sunstar tetrahedral cluster (4 dodecahedra) | plane [1.0, 1.0, 1.0] | def [] rule [] | cut 0 radial 9 | section of edges only, but broken by edges pointing at O | pieces [(10, False, None, None), (10, False, None, None), (10, False, None, None)]
+OLDEXC DICTO_HEXA_KEY | DICTO Hexa-Key | plane [0.0, 1.0, -1.0] | def [12] rule [12] | cut 8 radial 0 | disc | pieces [(12, True, -1, True)]
+OLDEXC DICTO_HEXA_KEY | DICTO Hexa-Key | plane [0.0, 1.0, 1.0] | def [12] rule [12] | cut 8 radial 0 | disc | pieces [(12, True, 1, True)]
+OLDEXC DICTO_HEXA_KEY | DICTO Hexa-Key | plane [1.0, 0.0, -1.0] | def [12] rule [12] | cut 8 radial 0 | disc | pieces [(12, True, -1, True)]
+OLDEXC DICTO_HEXA_KEY | DICTO Hexa-Key | plane [1.0, -1.0, 0.0] | def [12] rule [12] | cut 8 radial 0 | disc | pieces [(12, True, 1, True)]
+OLDEXC DICTO_HEXA_KEY | DICTO Hexa-Key | plane [1.0, 0.0, 1.0] | def [12] rule [12] | cut 8 radial 0 | disc | pieces [(12, True, 1, True)]
+OLDEXC DICTO_HEXA_KEY | DICTO Hexa-Key | plane [1.0, 1.0, 0.0] | def [12] rule [12] | cut 8 radial 0 | disc | pieces [(12, True, -1, True)]
+OLDEXC DICTO_EDGE_ROOF | Admiral Cap | plane [0.0, 1.0, 0.0] | def [] rule [] | cut 0 radial 0 | a loop of fins that does not go once round O (winding 0 or turning back) | pieces [(3, True, 0, False)]
+7 checks, 0 failed, 9 s
+FINAL ok
+[exit 0]

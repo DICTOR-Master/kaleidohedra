@@ -6818,6 +6818,16 @@
     "retry": "never; LEADS: Ch 4 text (RT = four single fins); figure of a Hexa-Key dodecagon plane; radial-edge census; exact recognition for the other 298 registry solids",
     "study": "studies/2026-11-13-platonic-fans-law",
     "goes_to": "Platonic book Ch 4 (open item 'do the open fans follow one law?', §4.5)"
+   },
+   {
+    "date": "2026-11-13",
+    "question": "Platonic book Ch 4 open item, non-convex part: what rule decides #87 discs on central planes of non-convex solids (the section law of [215] failed on 20 of 2914 planes)?",
+    "method": "studies/2026-11-13-platonic-fans-law section 4: proof from the #87 definition; fans_nonconvex.py runs fans_law.py's recognition and #87 code unchanged and computes the fin-graph rule independently (exact, Q(sqrt5)/Q(sqrt2)/Q(sqrt3)/Q(sqrt6)); relaxed rule R0 by a directed-loop search; float rule vs float census on all 389; job gate fansnc-pilot (two pilots failed, fixed), fansnc (9 checks, 0 failed), FINAL ok",
+    "result": "PROVED for every solid (no convexity or star shape needed): a central plane holds a #87 disc iff some connected piece of its fin graph (in-plane edges whose line misses O) is a simple loop turning one way round O and winding once (angles at O add to 2 pi); the disc is that piece. Convex law of [215] is a corollary. Exact on 91 recognised solids: 1390 convex + 2914 non-convex planes, disc for disc, 0 exceptions; float rule = float census on all 389. Clauses at work: radial edges break the loop (Sunstar tetrahedral cluster, 10 planes); loop not round O (Admiral Cap y = 0, winding 0); extra fin at a loop corner (12 planes x+-y+-z = 0 of Hexa, Hexa-Key, Hexa rhombohedral cluster, all containing faces; the relaxed rule without this clause is wrong there). Face cuts do not matter (Hexa-Key 6 dodecagons, Jewel tetrahedral cluster 3 octagons, with 8 radial edges in each octagon plane). No registry plane holds two discs (observation only for non-convex).",
+    "status": "SETTLED",
+    "retry": "never; LEADS: Ch 4 sentence (DICTO to place); figure of a Hexa x+y+z=0 plane (loop plus extra fins)",
+    "study": "studies/2026-11-13-platonic-fans-law",
+    "goes_to": "Platonic book Ch 4 (open item 'do the open fans follow one law?', non-convex part)"
    }
   ]
  },

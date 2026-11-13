@@ -2,6 +2,8 @@
 
 **Conclusion (13 Nov 2026): for convex solids, yes, and it is proved. A central plane holds a closed #87 disc exactly when it meets the surface only along edges (it cuts across no face). When it does cut across faces, its edges break into open fans, one fan between each two cuts. For non-convex solids this is not a law: it fails both ways, with exact counterexamples in the Sunstar tetrahedral cluster, the Admiral Cap, the Hexa-Key and the Jewel tetrahedral cluster. Exact (Q(√5)): the Hexa-Key has 3 octagon discs and 6 dodecagon discs, 96 of its 360 edges = 4/15 = 26.7 %, and Delilah has 3 square discs, 12 of 12 edges = 100 %, both as in the float census.**
 
+**Follow-up (section 4): a rule stated on the fins instead of the section holds for every solid, convex or not, and is proved: a central plane holds a disc exactly when its edges that do not point at the centre include a closed loop that goes once round the centre, turning the same way at every corner, with no other such edge at its corners. Exact on all 91 recognised solids (4304 planes, no exceptions); the convex law is a corollary.**
+
 ## 1. Hexa-Key and Delilah, exact
 - **Hexa-Key** (registry DICTO_HEXA_KEY, 122 corners, 240 triangles, 360 edges). Every coordinate was recognised as (a + b√5)/4 (largest
   difference from the registry 9.1e-9; the registry stores about 8 digits). Exact checks: closed oriented surface (each edge in two
@@ -77,7 +79,88 @@ goes once round O, turning the same way at every corner, with no edge pointing a
 corners. For a convex solid the only such loop is the whole section, and that is what turns the definition into the section law. The
 three ways a non-convex solid departs from it all occur in the registry: edges pointing at the centre (Sunstar tetrahedral cluster), a
 loop of edges that does not go round the centre (Admiral Cap), and further cuts of faces elsewhere in the plane of a disc (Hexa-Key,
-Jewel tetrahedral cluster).
+Jewel tetrahedral cluster). Section 4 turns this into a proved rule for every solid.
+
+## 4. Non-convex rule (follow-up, 13 Nov 2026)
+**Conclusion: one rule holds for every solid, convex or not, and it is proved. It is stated on the fins of the plane, not on the
+section. A central plane holds a #87 disc exactly when the edges in that plane that do not point at the centre include a closed loop
+that goes once round the centre, turning the same way at every corner, with no other such edge at any of its corners. The convex law of
+section 2 follows from it. Exact on all 91 recognised registry solids (1390 convex planes, 2914 non-convex planes, disc for disc,
+0 exceptions); in floats on all 389 registry solids. The rule stays close to the #87 definition. What it adds is that the joining
+step of #87 can be replaced by plain connection in the plane, and that cuts of faces do not enter.**
+
+Setting: P is any solid made of flat faces (convexity and star shape are not needed), O the mean of its corners, Π a central plane.
+A **fin** is an edge whose line misses O. The **fin graph** G(Π) is the set of fins lying in Π, with their corners; its **pieces** are
+its connected parts. A loop of fins **turns one way** when every fin of it turns round O in the same sense (seen along the normal of Π).
+#87, as fans_law.py implements it: two fins at a common corner v are joined when O, v and their two other ends lie in one plane and
+the two fins lie on opposite sides of the line Ov; a sheet is a class of joined fins; a disc is a sheet that is a single closed cycle
+(at least 3 fins, every corner on exactly 2 of them) that turns one way and winds once round O.
+
+**Theorem N.** Π holds a #87 disc exactly when some piece of G(Π) is a simple closed loop that turns one way and winds once round O.
+The disc is then that piece. For a loop that turns one way, "winds once" is the same as "its angles at O add to exactly 2π".
+
+*Proof.* (1) A fin AB spans with O a single plane, and joined fins share it, so every sheet lies in one central plane. The sheets in Π
+therefore split the fins of G(Π) among them, and each sheet, being connected, lies inside one piece.
+(2) Let L be a loop of fins in Π that turns one way. At a corner v of L with neighbours u and w along L, the sides uv and vw turn the
+same way round O, so u and w lie on opposite sides of the line Ov. The two fins of L at v are therefore joined, and all of L lies in one
+sheet.
+(⇐) Let the piece K be a loop that turns one way and winds once. By (2), K lies in one sheet, and by (1) that sheet lies in K. So the
+sheet is K: a closed cycle that turns one way and winds once, which is a disc.
+(⇒) Let D be a disc in Π, and K the piece of G(Π) that contains it. If K were larger than D, some fin f of K outside D would meet D at a
+corner v. The far end of f is not on the line Ov (else the line of f would pass through O), so f lies on one side of Ov. The two fins
+of D at v lie on opposite sides of Ov by (2), so f is on the opposite side to one of them, in the same plane: #87 joins them, and f
+would belong to D. So K = D.
+Last sentence: along a loop that turns one way, the angles at O all have the same sign, and their sum is 2π times the winding number. ∎
+
+**Corollary (convex solids, section 2).** If P is convex and O lies inside it, no edge line passes through O and no face lies in Π,
+and G(Π) lies on the section curve C = ∂P ∩ Π, a simple closed curve round O. A loop of fins that winds once round O is a simple closed
+curve inside C, so it is all of C. Hence Π holds a disc exactly when C consists of edges, that is, when Π cuts no face. This is
+Theorem (a) of section 2.
+
+**What each clause does, with registry examples (exact, data/fans-nonconvex.log).** Planes without a disc, by the clause that fails:
+- *no loop of fins at all* (open fans only): 1354 convex planes, 2870 non-convex planes;
+- *edges pointing at O break the loop* (the section consists of edges, but some of them have their line through O, so they are not
+  fins): the 10 planes of the Sunstar tetrahedral cluster (6 or 9 such edges in each);
+- *the loop does not go round O*: the Admiral Cap's plane y = 0 (a loop of 3 fins, winding 0, not turning one way; angles add to
+  0.97 × 2π);
+- *a loop goes round O, but a further fin meets one of its corners*: 12 planes, x ± y ± z = 0 of the Hexa, the Hexa-Key and the Hexa
+  rhombohedral cluster. Each of these planes contains faces of the solid (12, 12 and 24 or 36), and the fin graph there is one branched
+  piece of 36, 36 and 72 or 108 fins. The relaxed rule without this clause (job check N3b) would give these 12 planes a disc, wrongly.
+What does not matter: cuts of faces elsewhere in the plane, even where the cut faces touch the loop's corners (the Hexa-Key's 6 dodecagon
+discs, the Jewel tetrahedral cluster's 3 octagon discs, each in a plane that cuts 8 faces), and edges pointing at O that are not part of
+the loop (each octagon plane of the Jewel tetrahedral cluster holds 8 of them and still holds its disc).
+In the registry, the angle-sum test alone separates the loops (check N5: no loop of fins with angles adding to 2π fails to turn one
+way), but the proof needs the turning clause: a loop of fins can sweep forward through π and back through π, adding to 2π without going
+round O. No registry plane holds more than one disc. For non-convex solids this is an observation, not a theorem: two nested loops
+round O in one plane are not excluded by the rule.
+
+**Checked by computer** (job fansnc, scripts/fans_nonconvex.py; 9 checks, 0 failed, FINAL ok). The script runs fans_law.py's own
+recognition and #87 code unchanged (exec'd, with only its sheets and exact corners exported) and computes the rule independently:
+N1 rule = #87 definition, same edge sets, on every plane of all 91 exactly recognised solids (76 convex, 1390 planes; 15 non-convex,
+2914 planes); N2 convex corollary (rule ⇔ no face cut, no face in the plane); N3 every disc plane holds a loop round O among its fins;
+N3b the 12 planes above; N4 every loop the rule accepts has angles adding to 2π (float); N5 above; N6 the rule in floats gives the
+float census's disc sizes on all 389 registry solids; N7 plane totals 1390 + 2914 as in fans-law.json; N8 the 20 exceptions of section 3
+reproduced (11 + 9), each now agreeing with the rule. The rule needs no closed surface and no star shape, so the Hexa-Key caveat of
+section 1 does not touch it.
+Running: pilot fansnc-pilot (17 named solids) on the second compute host through the job gate, memory cage 4 GB, 3 cores. Two pilots
+FAILED and were fixed before any result was used. (1) Check N3 first required the relaxed rule R0 to equal #87; it does not (12 planes,
+above), so N3 now checks only that R0 is necessary and N3b records the planes. (2) The float rule took its plane normal rounded to
+6 digits, so the cuboctahedron's angle sums missed 2π by more than the tolerance (N6 failed twice); it now uses the unrounded normal,
+as the float census does. Also fixed after pilot 1: the winding of a loop that does not turn one way was reported by the half-open
+ray count, which is a winding number only for a loop that turns one way; such loops now report the float angle sum (the Admiral
+Cap's winding 0; this changed no check). The third pilot passed (FINAL ok). The first full run passed but wrote its per-plane data to /dev/null (the exec'd fans_law.py code reset the output name); the name was
+fixed and the full run repeated: 389 solids, 40 s, FINAL ok. Logs: data/fans-nonconvex-pilot.log (third pilot), data/fans-nonconvex.log;
+per-plane data: data/fans-nonconvex.json.
+
+**Proposed text for Ch 4, replacing the last three sentences of the proposed text below (DICTO to place; the book is not edited here):**
+> One rule holds for every solid, convex or not. A central plane holds a disc exactly when the edges in that plane that do not point at
+> the centre include a closed loop that goes once round the centre, turning the same way at every corner, with no other such edge at
+> any of its corners. For a convex solid this is the same as the plane cutting no face. The non-convex solids show each part of the
+> rule at work. On ten planes of the Sunstar tetrahedral cluster, edges pointing at the centre break the loop. On the Admiral Cap's
+> plane y = 0 the loop of three edges does not go round the centre. On the planes x ± y ± z = 0 of the Hexa and the Hexa-Key a loop
+> goes round the centre, but further edges meet its corners. Faces cut elsewhere in the plane do not matter: the Hexa-Key's six
+> dodecagon discs lie in planes that also cut eight faces. (Proof, study 2026-11-13-platonic-fans-law §4; exact on 91 solids,
+> 4304 planes, no exceptions.)
 
 ## Proposed text for Ch 4's open item (DICTO to place; the book is not edited here)
 > Do the open fans follow one law? For convex solids, yes. A central plane holds a closed disc exactly when it meets the surface only
