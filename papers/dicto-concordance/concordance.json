@@ -6792,6 +6792,15 @@
     "status": "SETTLED (ON proved for A4/F4); B4/H4 seed-line zero count open",
     "retry": "never for A4/F4; LEAD: exact zero count of the tone on the B4/H4 seed lines",
     "study": "studies/2026-11-13-palindromic-middles"
+   },
+   {
+    "question": "one-piece aim, DICTO's exception to the pause (13 Nov, '73 keyed jobs'): are the 73 keyed-RD classes that fill R8 with no torus to index 64 periodic at larger index, untileable at R10-R16, or still alive?",
+    "method": "studies/2026-11-12-hopeful-piece, scripts/deep4.py + run_d73.sh (jobs hp-d73-pilot, hp-d73, hp-d73-witness, FINAL ok): tiers per class, balls R10/R12/R16, every torus of index 65..72 (3833 O_h orbits), index 96 (1761), index 128 (2090); cap set from the 3-smooth ladder of kill indices seen (3..32, 48 and 64 clear); controls: per-index orbits = hunt.py tori() to 24, heptomino first torus 28, plain/all-bump RD, known survivor 0.0 no torus 49..64; witness: 3 index-96 fillings checked point by point from raw heights (0 mismatches)",
+    "status": "SETTLED",
+    "result": "all 73 periodic: each fills a torus of index 96 (96 pieces per period; 73..95 not checked); all fill R16, none at 65..72; the 3 witnessed classes share period vectors (4,4,0),(6,0,6),(2,4,6). No hopeful piece; nothing keyed",
+    "retry": "never for these 73; the 9 unfinished classes and 138 later hp-ks survivors stay PAUSED (only on DICTO's word; tori to 96 at least, 3-smooth indices)",
+    "study": "2026-11-12-hopeful-piece",
+    "date": "2026-11-13"
    }
   ]
  },

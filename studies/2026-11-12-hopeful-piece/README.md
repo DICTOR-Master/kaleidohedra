@@ -12,6 +12,8 @@ Status: SETTLED for these families (a closed route, not a proof for keyed RDs wi
 Leads 1 and 2 were run on 13 Nov; jobs hp-ks and hp-ksdeep2 were stopped cleanly at DICTO's word. Lead 3 (keyed poly-RDs of 6 or
 more cells) was not started. Retry only on DICTO's word.
 
+**Deep check of the 73 (13 Nov, below):** all 73 are periodic (index 96); no hopeful piece.
+
 **One-line conclusion:** all 144 158 unkeyed 8-RD clusters are periodic (COMPLETE); the directed keyed-RD search was PARTIAL. It found
 221 keyed RDs with no torus up to index 32. Of these, 83 were re-checked: none has a torus up to index 48, and 73 of 82 congruence
 classes fill the ball R8 with no torus up to index 64. Nothing is claimed aperiodic: these are unexplained candidates, not hopeful
@@ -43,6 +45,116 @@ pieces.
   inspect_surv.py, deep3.py (written, not run: box tori of index 65..128 and the ball R10).
 - Next if DICTO resumes: finish deep2 (9 classes) and deep2 for the 138 later survivors; deep3; a 2x2-patch LP; then report any piece
   still standing to DICTO first (not keyed).
+
+## Deep check of the 73 (13 Nov, DICTO's exception)
+DICTO approved one check while the hunt stays paused: "73 keyed jobs". No new search, no keying.
+
+**One-line conclusion:** all 73 classes are periodic. Each one fills an fcc torus of index 96, so each one has a period of 96
+pieces. The three checked by witness all use the period vectors (4, 4, 0), (6, 0, 6), (2, 4, 6). None is untileable: every class fills the ball R16 (14 993 RDs).
+There is no hopeful piece among the 73. Status: SETTLED for these 73 classes. The 9 unfinished classes and the 138 later
+survivors of hp-ks stay unchecked (paused).
+
+- **Cap, and why.** The 7-cell lesson was a cap one step too low: tori were checked to 3 pieces per period, and the period was 4.
+  So the cap here follows the periods actually seen. Every keyed-RD kill so far came at a 3-smooth index (2^a 3^b): hp-main 1, 2, 4,
+  6, 8; hp-ks 3, 4, 6, 8, 12, 16, 24, 32 (4 908 kills, complete tori to 32). In hp-ks the largest period doubled to 32 when the
+  search pushed periods up. Indices 48 and 64 were already clear (deep, deep2). So the run checked every torus of index 65..72
+  (complete, 3 833 orbits), then the next two rungs of that ladder, 96 = 3 x 32 (1 761 orbits) and 128 = 4 x 32 (2 090 orbits).
+  The pilot timings were 0.09, 0.14 and 0.20 s per torus, so this was the most that fitted the 10 h overnight cap on 2 cores.
+  Indices 73..95 were not checked, so 96 is a period, not proved to be the least one.
+- **Order.** Tiers, with every class through a tier before any class starts the next: balls R10, R12, R16; tori 65..72; index 96;
+  index 128. Checkpoint per (class, tier) in data/d73/p_K.jsonl.
+- **Controls (same code, data/d73/ctl.log, ctl_surv.log).**
+  - The per-index torus orbits equal hunt.py's tori() for every index 1..24.
+  - Known kill (README, hp-deep): the heptomino's first torus is at index 28, with none at 7, 14, 21.
+  - Plain RD fills a torus; all-bump RD fills no ball R1.
+  - Known survivor 0.0: no torus 49..64 (as deep2), fills R16.
+- **Witness (job hp-d73-witness, data/d73/witness.log).** For classes 0.0, 3.5 and 7.8, the index-96 filling was rebuilt and checked
+  point by point from the raw heights, without the fit table: 4 608 point contacts each, 0 mismatches. All three use the same
+  period lattice, HNF ((4,0,0),(0,6,0),(0,2,4)). The fillings use 24, 36 and 24 of the 48 orientations.
+- **Structure (step 4).** No class survived, so no ball filling was examined for hierarchy or substitution. The period lattice shared by
+  the three witnessed classes (index 96 = 3 x 32) answers why indices 48 and 64 found nothing. It is not a forced hierarchy.
+- Ledger [213]. Jobs: hp-d73-pilot, hp-d73 (FINAL ok, about 6.5 h), hp-d73-witness (FINAL ok). Script: scripts/deep4.py (modes list, tori, ctl,
+  pilot, run, struct, witness), scripts/run_d73.sh. Data: data/d73 (classes.json = the 73 height fields; the torus tables are
+  rebuilt by `deep4.py tori`, not stored).
+
+Per class: 48 heights, + bump, - dent, 0 flat. They are grouped by face, 4 points per face, in hunt.py's face order. The table
+gives the ball tier, the tori of index 65..72 and the torus of index 96.
+
+| class | heights | balls R10/R12/R16 | tori 65..72 | index 96 | verdict |
+|---|---|---|---|---|---|
+| 0.0 | `+--- -++- +0-0 0-0+ +--+ 0-0+ -0+0 +++- -0+0 0+0- +--+ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 0.1 | `+--+ -0+0 --++ ++-- +++0 ++-- ++-- 0+0- ++-- --++ +--+ 0---` | fills R16 | none | SAT, 96 | killed at 96 |
+| 0.2 | `+--0 +--+ +0-0 0-0+ 0-0+ 0-0+ -0+0 +--+ -0+0 0+0- +-0+ -0+0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 0.3 | `+--0 -++- +--+ +--+ -++- +--+ +0-+ +--+ -++- +--+ +--+ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 0.4 | `+--+ 0+0- -++- -0+0 -++- 0-0+ -+-0 +--+ 0-0+ +--+ +-+0 -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 0.5 | `+--+ --++ +--+ ++-- ++-- ---+ +--+ ++-- ++-- ++-+ --++ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 0.6 | `+--0 +--+ +-00 00-+ 0-0+ 00-+ 00+- 0++- 00+- -+00 +0-0 +--+` | fills R16 | none | SAT, 96 | killed at 96 |
+| 0.7 | `+--0 0000 +0-0 0000 0000 0000 +0-+ 0000 0000 0000 0000 -0+0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 0.8 | `+--- 0000 ++-- 0000 0000 ++-- ++-+ 0000 0000 --++ 0000 --++` | fills R16 | none | SAT, 96 | killed at 96 |
+| 1.0 | `+--- -0+0 0-0+ +0-0 +--+ +0-0 0+0- +++- 0+0- -0+0 +--+ 0+0-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 1.1 | `+--+ -0+0 --++ ++-- -0++ ++-- ++-- 0+0- ++-- --++ +--+ --0+` | fills R16 | none | SAT, 96 | killed at 96 |
+| 1.2 | `+--+ --++ +--- ++-- ++-- --++ +--+ ++-- ++-- ++-- --++ -+++` | fills R16 | none | SAT, 96 | killed at 96 |
+| 1.3 | `+--0 -++- --++ +--+ -++- -++- ++-- +--+ -++- -++0 +--+ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 1.4 | `+--- -++- +0-0 +--+ -++- +0-0 0-0+ +--+ -++- -+++ +--+ +0-0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 1.5 | `+--+ -0+0 --++ ++-- --+0 ++-- ++-- 0+0- ++-- --++ +--+ 0-++` | fills R16 | none | SAT, 96 | killed at 96 |
+| 1.6 | `+--+ --++ +--+ ++-- ++-- 0-+- +--+ ++-- ++-- +0+- --++ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 1.7 | `+--0 0000 0+0- 0000 0000 +0-0 -0+0 0000 0000 -++0 0000 +0-0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 1.8 | `+--0 0000 -++- -++- 0000 -++- +--+ 0++- +--+ +--+ 0000 0000` | fills R16 | none | SAT, 96 | killed at 96 |
+| 1.9 | `+--- +0-0 0000 0000 +0-0 0000 0000 0-0+ 0000 0000 +-++ 0+0-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 2.0 | `+--- ++-- 0000 0000 ++-- 0000 0000 +++- 0000 0000 --++ --++` | fills R16 | none | SAT, 96 | killed at 96 |
+| 2.1 | `+--+ 0000 +-0- 0000 0000 +0-0 +-+0 0000 0000 -++- 0000 +0-0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 2.2 | `+--+ --++ +--+ ++-- ++-- -+++ +--+ ++-- ++-- -+-- --++ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 2.3 | `+--0 0000 -0+0 0000 0000 -++- 0+0- 0000 0000 -++0 0000 -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 2.4 | `+--- 0-0+ -++- -++- 0-0+ -++- +--+ +0-0 +--+ +--+ +-++ -0+0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 2.5 | `+--+ -0+0 --++ ++-- 0-++ ++-- ++-- 0+0- ++-- --++ +--+ --+0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 2.6 | `+--+ -0+0 --++ ++-- +-+0 ++-- ++-- 0+0- ++-- --++ +--+ 0-+-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 2.7 | `+--0 +--+ +-+- -+-+ 0-0+ -+-+ +-+- 0++- +-+- -+-+ +0-0 +--+` | fills R16 | none | SAT, 96 | killed at 96 |
+| 2.8 | `+--0 0000 0-0+ 0000 0000 +0-0 +0-0 0000 0000 -++0 0000 +0-0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 3.0 | `+--0 -++- -++- +--+ -++- ++-- -++- +--+ -++- -++0 +--+ ++--` | fills R16 | none | SAT, 96 | killed at 96 |
+| 3.1 | `+--- -0+0 00+- -+00 0+0- -+00 +-00 0+0- +-00 00-+ +-++ +0-0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 3.2 | `+--+ -0+0 --++ ++-- +0+0 ++-- ++-- 0+0- ++-- --++ +--+ 0-0-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 3.3 | `+--0 ++-- +--+ +--+ ++-- +--+ -++- --++ -++- -++- +-0+ ++--` | fills R16 | none | SAT, 96 | killed at 96 |
+| 3.4 | `+--0 -++- +0-0 +--+ -++- +0-0 +0-+ +--+ -++- 0-0+ +--+ -0+0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 3.5 | `+--- -0+0 +--+ +--+ -0+0 +--+ -++- +++- -++- -++- 0+0- 0+0-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 3.6 | `+--+ -0+0 --++ ++-- 0-+0 ++-- ++-- 0+0- ++-- --++ +--+ 0-+0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 3.7 | `+--+ --++ +--+ ++-- ++-- --0+ +--+ ++-- ++-- ++-0 --++ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 3.8 | `+--0 +--+ +-+- -+-+ +--+ -+-+ +-+- 0++- +-+- -+-+ +--+ +--+` | fills R16 | none | SAT, 96 | killed at 96 |
+| 4.0 | `+--0 0000 -++- 0000 0000 -++- -++- 0000 0000 -++0 0000 -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 4.1 | `+--- -++- 0-0+ +0-0 +--+ +0-0 0+0- +++- 0+0- -0+0 +--+ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 4.2 | `+--+ -0+0 --++ ++-- -+++ ++-- ++-- 0+0- ++-- --++ +--+ ---+` | fills R16 | none | SAT, 96 | killed at 96 |
+| 4.3 | `+--+ --++ +--+ ++-- ++-- --+0 +--+ ++-- ++-- ++0- --++ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 4.4 | `+--0 0-0+ -++- -++- 0-0+ -++- +--+ 0++- +--+ +--+ +0-0 +0-0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 4.5 | `+--- 0000 -+00 00+- -++- 00+- 00-+ 0000 00-+ +-00 +-++ +--+` | fills R16 | none | SAT, 96 | killed at 96 |
+| 4.6 | `+--+ -0+0 --++ ++-- --+- ++-- ++-- 0+0- ++-- --++ +--+ +-++` | fills R16 | none | SAT, 96 | killed at 96 |
+| 4.7 | `+--+ -0+0 --++ ++-- +-++ ++-- ++-- 0+0- ++-- --++ +--+ --+-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 4.8 | `+--+ --++ +--+ ++-- ++-- -00+ +--+ ++-- ++-- 0+-0 --++ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 4.9 | `+--0 ++-- ++-- --++ +--+ --++ --++ --++ --++ ++-- +-0+ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 5.0 | `+--0 +--+ +0-0 0-0+ --++ 0-0+ -0+0 +--+ -0+0 0+0- +-0+ --++` | fills R16 | none | SAT, 96 | killed at 96 |
+| 5.1 | `+--0 -++- +0-0 +--+ -++- +0-0 0-0+ +--+ -++- -++0 +--+ +0-0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 5.2 | `+--+ 0+0- -++- -++- -++- +--+ -+-0 +--+ 0-0+ +--+ +-+0 -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 5.3 | `+--+ --++ +--+ ++-- ++-- -+0+ +--+ ++-- ++-- -+-0 --++ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 5.4 | `+--0 0000 -0+0 0000 0000 --++ 0+0- 0000 0000 -++0 0000 --++` | fills R16 | none | SAT, 96 | killed at 96 |
+| 5.5 | `+--0 -++- ++-- +--+ -++- ++-- +0-+ +--+ -++- --++ +--+ --++` | fills R16 | none | SAT, 96 | killed at 96 |
+| 5.6 | `+--- --++ +--+ +--+ --++ +--+ -++- +++- -++- -++- ++-- ++--` | fills R16 | none | SAT, 96 | killed at 96 |
+| 5.7 | `+--+ -0+0 --++ ++-- 0++0 ++-- ++-- 0+0- ++-- --++ +--+ 0--0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 5.8 | `+--+ -0+0 --++ ++-- +0++ ++-- ++-- 0+0- ++-- --++ +--+ --0-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 5.9 | `+--0 +--+ +-00 00-+ +--+ 00-+ 00+- 0++- 00+- -+00 +--+ +--+` | fills R16 | none | SAT, 96 | killed at 96 |
+| 6.0 | `+--+ --++ +--0 ++-- ++-- --++ +--+ ++-- ++-- ++-- --++ -++0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 6.1 | `+--0 -++- -0+0 +--+ -++- -++- 0+0- +--+ -++- -++0 +--+ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 6.2 | `+--- --++ 00+- -+00 0+0- -+00 +-00 ++-- +-00 00-+ +-++ +0-0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 6.3 | `+--+ -0+0 --++ ++-- 00+0 ++-- ++-- 0+0- ++-- --++ +--+ 0-00` | fills R16 | none | SAT, 96 | killed at 96 |
+| 6.4 | `+--0 +--+ +--+ -++- +--+ +--+ +--+ -++- +--+ -++0 -++- +--+` | fills R16 | none | SAT, 96 | killed at 96 |
+| 6.5 | `+--0 0000 0000 0000 0-0+ 0000 0000 0000 0000 0000 +-0+ -0+0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 6.6 | `+--- 0000 -+00 00+- 0+0- 00+- 00-+ 0000 00-+ +-00 +-++ +0-0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 7.0 | `+--+ --++ +--+ ++-- ++-- -0-+ +--+ ++-- ++-- 0+-+ --++ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 7.1 | `+--0 0000 --++ 0000 0000 --++ ++-- 0000 0000 -++0 0000 --++` | fills R16 | none | SAT, 96 | killed at 96 |
+| 7.2 | `+--- 0000 ++-- --++ -0+0 --++ --++ 0000 --++ ++-- +-++ 0-0+` | fills R16 | none | SAT, 96 | killed at 96 |
+| 7.3 | `+--+ -0+0 --++ ++-- 0+++ ++-- ++-- 0+0- ++-- --++ +--+ ---0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 7.4 | `+--+ --++ +--+ ++-- ++-- --+- +--+ ++-- ++-- +++- --++ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 7.5 | `+--0 0000 0000 0000 0000 +0-0 0000 0000 0000 -++0 0000 +0-0` | fills R16 | none | SAT, 96 | killed at 96 |
+| 7.6 | `+--0 -++- 0+0- +--+ -++- 0+0- +0-+ +--+ -++- -0+0 +--+ 0-0+` | fills R16 | none | SAT, 96 | killed at 96 |
+| 7.7 | `+--- -++- -++- +--+ -++- -++- -++- +--+ -++- -+++ +--+ -++-` | fills R16 | none | SAT, 96 | killed at 96 |
+| 7.8 | `+--+ -0+0 --++ ++-- 0-+- ++-- ++-- 0+0- ++-- --++ +--+ +-+0` | fills R16 | none | SAT, 96 | killed at 96 |
 
 ## Plan (written before computing)
 Ledger read first (concordance.json): Narcissus with crest, edge or face decorations is CLOSED ([160]: "never on Narcissus ...; only a

@@ -1,0 +1,8 @@
+control 1: per-index O_h orbits = hunt.py tori() for every index 1..24: True (index 24: 144 orbits) (26s)
+PROGRESS 0.075 control 2 heptomino index 7
+PROGRESS 0.150 control 2 heptomino index 14
+PROGRESS 0.225 control 2 heptomino index 21
+PROGRESS 0.300 control 2 heptomino index 28
+control 2: heptomino ((0, 0, 0), (0, 1, -1), (0, 2, -2), (1, -1, 0), (1, 1, -2), (2, -2, 0), (2, -1, -1)): first torus at index 28 (README: 28): True (66s)
+control 3: plain RD fills a torus of index 5, all-bump RD fills no ball R1: True (66s)
+FINAL ok
