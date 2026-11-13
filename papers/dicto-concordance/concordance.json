@@ -6808,6 +6808,16 @@
     "date": "2026-11-13",
     "what": "#89 tesseract sections read as permutohedra",
     "goes_to": "Permutohedron Paradigm Ch 14"
+   },
+   {
+    "date": "2026-11-13",
+    "question": "Platonic book Ch 4 open item: do the open fans (Dogstar, Sunstar clusters, RD, RT) follow one law under the #87 disc rule? And the Hexa-Key's discs (float 3 octagons + 6 dodecagons, 26.7 %) and Delilah's 100 %, exact",
+    "method": "studies/2026-11-13-platonic-fans-law: fans_law.py, exact in Q(sqrt5), Q(sqrt2), Q(sqrt3), Q(sqrt6) (qf.py of the #87 study); registry corners recognised exactly (91 of 389 solids; Hexa-Key as (a + b sqrt5)/4, volume 6 phi^3 = 48/64 of its block as in the Jewel study); #87 sheets by closed cycle + half-open winding ray, float apex sum agrees; per central plane: face cut (corners strictly on both sides), runs of edges; proof for convex solids; inspect_ce.py for the counterexample planes; job gate fanslaw-pilot (2 failed pilots fixed), fanslaw (28 checks, 0 failed), fanslaw-ce, FINAL ok",
+    "result": "PROVED for convex solids: a central plane holds a #87 disc iff it cuts no face (meets the surface only along edges); otherwise its edges form open fans, one per run of edges between cuts; at most one disc per plane. Checked on 76 convex solids, 1390 planes. Controls: octahedron 3x4, cuboctahedron 4x6, icosidodecahedron 6x10, cube 0; RD 6 planes each 2 cut faces, two opposite fans of 2; RT 15 planes each 4 cut faces, FOUR single fins (not two fans). NON-CONVEX: not a law (2894 of 2914 planes obey): Sunstar tetrahedral cluster 10 planes cut no face but radial edges (line through O, no fin) break the loop; Admiral Cap y = 0 a triangle of edges not round O; Hexa-Key 6 dodecagon planes and Jewel tetrahedral cluster 3 octagon planes hold discs while cutting 8 faces. Dogstar and Sunstar octahedral cluster obey on every plane. EXACT: Hexa-Key 3 octagons (coordinate planes) + 6 dodecagons (x = +-y etc.), 96/360 = 4/15; Delilah 3 squares, 12/12 (its registry corners are the octahedron's).",
+    "status": "SETTLED",
+    "retry": "never; LEADS: Ch 4 text (RT = four single fins); figure of a Hexa-Key dodecagon plane; radial-edge census; exact recognition for the other 298 registry solids",
+    "study": "studies/2026-11-13-platonic-fans-law",
+    "goes_to": "Platonic book Ch 4 (open item 'do the open fans follow one law?', §4.5)"
    }
   ]
  },
