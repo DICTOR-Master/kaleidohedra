@@ -1,0 +1,15 @@
+# The Permutohedron Paradigm, expanded version: figures and one check (13 Nov 2026)
+
+For the book papers/book-permutohedron-paradigm (Book Seven, Fire, of The Five Orders of Space), built to PROPOSAL.html (DICTO, 13 November 2026: "all three", and "a beginning, a middle and an end").
+
+**Conclusion.** (1) The proposal's reading "to check" holds: #89's sections of the tesseract across a long diagonal are permutohedra of four values with a repeated value. In #89's coordinates (corners (±1)⁴, hyperplanes x₁ + x₂ + x₃ + x₄ = 2h) the section for 0 < h < 1 has exactly the 12 orders of (−1, 2h − 1, 1, 1) as corners, that is of 0, h, 1, 1 after x ↦ (x + 1)/2, with gaps h and 1 − h; at #89's three stored heights (1/φ², 1/2, 1/φ) and at the controls h = 1/3, 0 (octahedron, values −1, −1, 1, 1), 1 (corner layer) and 3/2 (tetrahedron, values 0, 1, 1, 1); negative control: a non-diagonal hyperplane gives a section not closed under permuting coordinates. Exact (sympy). (2) 32 new figures of the book, each computed from its definition, with its counts checked against the book.
+
+## Scripts (all run on the compute host through the job gate)
+- `scripts/check89.py` — the #89 check. Data: `data/s5-exact4d-from-89.json` (a copy of #89's `studies/2026-11-03-golden-cuts-beyond-plato/data/s5-exact4d.json`). Log `data/check89.log`, FINAL ok.
+- `scripts/figlib.py` — the small renderer (painter's algorithm per solid, light shading, crisp edges, glass shells, the DICTO mark and emblem).
+- `scripts/figs_book.py` (+ `figs_book2.py`, executed inside it) — every new figure; `figs_book.py pilot | all | NAME`. Log `data/figs.log`, one PASS line per check, FINAL ok. Checks include: Kelvin's cell 24/36/14 and 12 swaps per pair; the four kinds of central slice (32/52/22, 24/36/14, 24/42/20, 24/36/14) with 2, 2, 2, 6 faces of the solid; Kelvin's cell swept 1, 11, 11, 1; the 4D permutohedron swept 1, 26, 66, 26, 1; the bitruncated 600-cell built as an H₄ Wythoff orbit (3600 corners, 600 + 120 cells) and one generic sweep classed exactly as 601 W–W → R–R, 601 R–R → W–W, 964 mixed (2166 swaps); h-vectors from Dehn–Sommerville; edges at a corner from the Coxeter rule (600-cell 12, 120-cell 4, …); the moved 16-cell's unbalanced ledger (two corners +4, one −4) against the balanced regular one; the 70 golden heights and 50 coincidences exact in ℤ[φ]; Loday's associahedron at the end of the road (24/14 kept until t < 1, then 14/9); Fedorov's five as graphical zonotopes (8/6, 14/12, 12/8, 18/12, 24/14); the 13-COA (13 corners, 24 equal edges, 4 + 5 + 4 faces, its Vacuus 24 fins in 22 planes); every edge of the one-cone solids parallel to a swap direction; Grandsire Doubles B P B P S P twice ringing 120 distinct rows with 2 single and 118 double swaps; Q₄ on the slider zero only at μ = φ, with #94's values at the ends.
+- `scripts/sheets.py` — contact sheets of the book PDF for looking at every page.
+
+The plane pictures of the golden slice (golden-patch.png) are float drawings; the kinds they colour are those of the book's exact theorem. The 13-COA's Vacuus is floating point, as in the book.
+
+DICTO · dictospheres.com

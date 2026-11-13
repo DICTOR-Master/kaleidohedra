@@ -82,7 +82,7 @@ def f_film():
             a = ConvexHull(X[f] @ np.linalg.svd(X[f] - X[f].mean(0))[2][:2].T).volume
             if best is None or a > best[0]: best = (a, S)
     gold = best[1]
-    fig_, axs = plt.subplots(1, 9, figsize=(16, 3.6))
+    fig_, axs = plt.subplots(3, 3, figsize=(11, 11.6)); axs = axs.ravel()
     for ax, t in zip(axs, ts):
         blank(ax); pts, X, F = section(t)
         sv = min(swaps, key=lambda s: abs(s[0] - t)); red = sv[1] if t < sv[0] else sv[2]
@@ -93,9 +93,9 @@ def f_film():
         sc = Scene(R); sc.solid(X, F, facecolors=cols, lw=0.6); sc.draw(ax)
         ax.set_xlim(-3.1, 3.1); ax.set_ylim(-3.1, 3.1)
         nb = [int(((idx == i) & (h < t)).sum()) for i in (1, 2, 3)]
-        ax.set_title(f'{len(F)} cells\nborn {nb[0]} · swaps {nb[1]} · died {nb[2]}', fontsize=7.5)
-    fig_.text(0.5, 0.05, 'gold: one cell (a permutohedron of four values); red: the pair at the nearest swap (still touching before it, just met after it); pale: the other cells', ha='center', fontsize=8.5)
-    mark(fig_); fig_.subplots_adjust(0.005, 0.12, 0.995, 0.86); save(fig_, 'film-strip-4d.png')
+        ax.set_title(f'{len(F)} cells in the slice\nborn {nb[0]} · swaps {nb[1]} · died {nb[2]}', fontsize=9.5)
+    fig_.text(0.5, 0.025, 'gold: one cell (a permutohedron of four values); red: the pair at the nearest swap\n(still touching before it, just met after it); pale: the other cells', ha='center', fontsize=9)
+    mark(fig_); fig_.subplots_adjust(0.01, 0.07, 0.99, 0.96, hspace=0.18, wspace=0.02); save(fig_, 'film-strip-4d.png')
 @fig('eulerian-bars')
 def f_ebars():
     fig_, ax = plt.subplots(figsize=(7.5, 3.6)); v = [1, 26, 66, 26, 1]
@@ -403,19 +403,22 @@ def f_gp():
     fig_, axs = plt.subplots(1, 2, figsize=(13, 4.6))
     for ax, (u, lab) in zip(axs, ((np.array([1.0, -1.0, 0, 0, 0]) + np.array([0, 0, 0.0, 0.0, 0.0]), 'a rational cut, u = (1, −1, 0, 0, 0): one kind, repeating'), (UG - UG.mean(), 'the golden cut, u = (1, φ, φ², φ³, φ⁴): they never repeat across'))):
         uu = u - u.mean(); c = 0.4123
-        X, Lp, S, T = golden_plane(uu, c, None, ext=11, res=1100)
+        X, Lp, S, T = golden_plane(uu, c, None, ext=9, res=800)
         off = c - Lp @ uu          # the height of the section inside the cell of λ
         levs = np.unique(np.round(np.array(perms((-2, -1, 0, 1, 2)), float) @ uu, 9))
         band = np.searchsorted(levs, off) - 1; kind = np.minimum(band, len(levs) - 2 - band)
         img = kind.reshape(S.shape).astype(float)
-        cmap = plt.get_cmap('tab20b' if 'golden' in lab else 'Set3')
+        cmap = plt.get_cmap('tab20b')
+        if 'golden' not in lab:   # one kind everywhere: colour the cells alternately so the repeat shows
+            kk0 = (np.round(Lp / 5) @ np.array([1, 2, 3, 4, 5])).astype(int); img = (kk0 % 4).reshape(S.shape).astype(float); cmap = matplotlib.colors.ListedColormap(['#e8d9a8', '#cfe0f3', '#e6d3ef', '#d4ead2'])
         ax.imshow(img, origin='lower', extent=[S.min(), S.max(), T.min(), T.max()], cmap=cmap, interpolation='nearest')
         key = (Lp * 1000).round().astype(np.int64); kk = key @ np.array([1, 7919, 104729, 1299709, 15485863], dtype=np.int64)
         K = kk.reshape(S.shape); edge = np.zeros(S.shape, bool); edge[:, 1:] |= K[:, 1:] != K[:, :-1]; edge[1:, :] |= K[1:, :] != K[:-1, :]
+        edge = edge | np.roll(edge, 1, 0) | np.roll(edge, 1, 1)
         ov = np.zeros(S.shape + (4,)); ov[edge] = (0.1, 0.1, 0.1, 1)
         ax.imshow(ov, origin='lower', extent=[S.min(), S.max(), T.min(), T.max()], interpolation='nearest')
         nk = len(np.unique(kind))
-        ax.set_title(lab + f'\n{nk} kinds in this window', fontsize=9); ax.axis('off')
+        ax.set_title(lab + (f'\n{nk} kinds in this window' if nk > 1 else '\ncells coloured in turn to show the repeat'), fontsize=9); ax.axis('off')
         if 'golden' in lab: check(f'golden plane section: {nk} kinds of section seen in the window (at most 35), {len(levs)} heights (70)', nk <= 35 and len(levs) == 70)
         else: check(f'rational plane section: {nk} kinds seen (few), {len(levs)} heights', nk <= 4)
     fig_.text(0.5, 0.04, 'a flat plane inside the three-dimensional slice of the 4D permutohedron filling; each region is one cell of the slice, coloured by the kind of its section', ha='center', fontsize=8.5)

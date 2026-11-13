@@ -351,7 +351,7 @@ def f_rd():
             d = p.mean(0) - c; sc.solid(p - c, color=[GOLD, '#c99a2e', '#e8c45a'][k % 3], lw=0.8, offset=d * ex)
         for p in pyr:
             d = p.mean(0) - c; sc.solid(p - c, color=TEAL, glass=True, alpha=0.55, lw=0.8, edge='#1f5f5b', offset=d * (ex + 0.7 if ex else 0.0))
-        sc.draw(ax); ax.set_xlim(-3.4, 3.4); ax.set_ylim(-3.2, 3.2)
+        sc.draw(ax); ax.set_xlim(-3.6, 3.6); ax.set_ylim(-3.7, 3.7)
     axs[0].set_title('closed: the chamfered cube (crystal shell)', fontsize=10); axs[1].set_title('pulled apart: 14 Hemi RDs (gold), 6 cube pyramids (teal glass)', fontsize=10)
     mark(fig_); fig_.subplots_adjust(0.01, 0.06, 0.99, 0.93); save(fig_, 'rd-apart.png')
 @fig('hexagons-two')

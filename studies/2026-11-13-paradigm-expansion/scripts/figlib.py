@@ -98,21 +98,22 @@ class Scene:
             if 'line' in it: return float((self.R[2] @ ((it['line'][0] + it['line'][1]) / 2))) + 1e-3
             if 'dot' in it: return float(self.R[2] @ it['dot']) + 2e-3
             return float((self.R[2] @ it['pts'].T).mean())
-        for it in sorted(self.items, key=lambda it: (it['z'], it.get('od', depth(it)) if self.byobject else depth(it), depth(it))):
+        for kk, it in enumerate(sorted(self.items, key=lambda it: (it['z'], it.get('od', depth(it)) if self.byobject else depth(it), depth(it)))):
+            zo = 2 + kk * 1e-4
             if 'line' in it:
                 a, b = self.proj(it['line'][0]) * scale, self.proj(it['line'][1]) * scale
-                ax.plot([a[0] + shift[0], b[0] + shift[0]], [a[1] + shift[1], b[1] + shift[1]], color=it['col'], lw=it['lw'], solid_capstyle='round', ls=it['ls'], zorder=3)
+                ax.plot([a[0] + shift[0], b[0] + shift[0]], [a[1] + shift[1], b[1] + shift[1]], color=it['col'], lw=it['lw'], solid_capstyle='round', ls=it['ls'], zorder=zo)
             elif 'dot' in it:
                 p = self.proj(it['dot']) * scale
-                ax.scatter([p[0] + shift[0]], [p[1] + shift[1]], s=it['s'], color=it['col'], zorder=4, edgecolors='none')
-                if it['label']: ax.text(p[0] + shift[0] + it['dx'], p[1] + shift[1] + it['dy'], it['label'], fontsize=it['fs'], color=it['lc'], ha='center', va='center', zorder=5,
+                ax.scatter([p[0] + shift[0]], [p[1] + shift[1]], s=it['s'], color=it['col'], zorder=zo, edgecolors='none')
+                if it['label']: ax.text(p[0] + shift[0] + it['dx'], p[1] + shift[1] + it['dy'], it['label'], fontsize=it['fs'], color=it['lc'], ha='center', va='center', zorder=50,
                                         bbox=dict(boxstyle='round,pad=0.12', fc='white', ec='none', alpha=0.75))
             else:
                 q = self.proj(it['pts'])[:, :2] * scale + np.asarray(shift)
                 fc = it['col'] if it['glass'] else shade(it['col'], it['n'])
-                ax.add_patch(MPoly(q, closed=True, facecolor=fc, alpha=it['alpha'], edgecolor='none', zorder=2))
+                ax.add_patch(MPoly(q, closed=True, facecolor=fc, alpha=it['alpha'], edgecolor='none', zorder=zo))
                 if it['edge'] is not None and it['lw'] > 0:
-                    ax.add_patch(MPoly(q, closed=True, facecolor='none', edgecolor=it['edge'], lw=it['lw'], joinstyle='round', zorder=2.5, alpha=1.0 if it['front'] else 0.55))
+                    ax.add_patch(MPoly(q, closed=True, facecolor='none', edgecolor=it['edge'], lw=it['lw'], joinstyle='round', zorder=zo + 5e-5, alpha=1.0 if it['front'] else 0.55))
 
 def mark(fig, dark=False):
     """the DICTO mark and the gold emblem, lower right of every figure."""
