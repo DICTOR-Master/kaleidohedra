@@ -44,6 +44,35 @@ def first_cell(f):
     return f'<b>#{e(m.group(1))}</b>{e(m.group(2))}' if m else e(f)
 
 
+# DICTO 14 Nov 2026: a name carries "DICTO" at its first mention in each part or section of running text, and drops it after.
+# Names entries and Almanac headwords keep the full name (each is a first mention). The prefix stays throughout where the bare
+# word is ambiguous (KEEP). "DICTO DOI", the title and the dataset name are not names.
+_TAILS = set()
+for _x in D['names']:
+    for _part in re.split(r',\s*(?=DICTO )', _x['name']):
+        if _part.startswith('DICTO '):
+            _TAILS.add(_part[6:].split(' (')[0].strip())
+_TAILS |= {'Jewels', 'Golden Tight Cycles', 'All-Golden Polytopes', '1:2 Truncated Octahedron', '2:1 Truncated Octahedron', '1:2 and 2:1 Truncated Octahedra',
+           '2:1 Truncated Octahedra', 'Hecatodihedron', 'Yantra', 'Hopscotch', 'GTI', 'FPD', 'OTT', 'Hexa', 'Hexa-Key', 'stretched solids', 'Vacuus Solids'}
+_TAILS -= {'DOI', 'Concordance'}
+_TRX = re.compile(r'\bDICTO (' + '|'.join(re.escape(t) for t in sorted(_TAILS, key=len, reverse=True)) + r')(?![\w-])')
+KEEP = {'Yantra', 'Jewel', 'Jewels'}
+DROPS = []
+
+
+def fm(text, seen, where):
+    """First-mention rule on one piece of running text; `seen` is the set for the current part or section."""
+    def sub(m):
+        t = m.group(1)
+        k = t[:-1] if t.endswith('s') and t[:-1] in _TAILS else t
+        if k in seen and k not in KEEP:
+            DROPS.append((where, 'DICTO ' + t))
+            return t
+        seen.add(k)
+        return m.group(0)
+    return _TRX.sub(sub, text)
+
+
 out = []
 w = out.append
 w('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>The DICTO Concordance</title>\n<link rel="stylesheet" href="../paper.css">\n<style>'
@@ -54,49 +83,131 @@ w('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>The DICTO
   'p.about{margin:0 0 2pt;font-style:italic}ul.th{margin:0 0 2pt;padding-left:4mm;font-size:9.2pt}ul.th li{margin:0 0 1pt;break-inside:avoid}'
   'p.lk{font:8.4pt/1.35 "DejaVu Sans",sans-serif;color:#40350f;margin:1pt 0 1pt 4mm;break-inside:avoid}'
   'table{width:100%}table.big{font-size:7.6pt;break-inside:auto}table.big tr{break-inside:avoid}table.big td,table.big th{padding:0.6mm 1.2mm 0.6mm 0}thead{display:table-header-group}'
-  '.dr{color:#a00}.cc{break-inside:avoid;margin:0 0 4pt;font-size:9.2pt}.cc .df{margin:0}.cc .mt{font:8pt/1.35 "DejaVu Sans",sans-serif;color:#333;margin:0 0 0 4mm}'
+  'table.nm td:nth-child(2){color:#2c2410}'
+  '.dr{color:#a00}.cc{break-inside:avoid;margin:0 0 4pt;font-size:9.2pt}.cc .df{margin:0}.cc .sb{margin:0;font-style:italic;color:#4a3f2a}.cc .mt{font:8pt/1.35 "DejaVu Sans",sans-serif;color:#333;margin:0 0 0 4mm}'
   'table.tri td.x{text-align:center;color:#6b5310;font-weight:600}table.tri th.x{text-align:center}table.tri{font-size:8.4pt}'
   'figure.f1 img{width:100%;display:block}figcaption{font-size:8.2pt}'
+  'ol.fr{padding-left:5mm;margin:2pt 0}ol.fr li{margin:0 0 5pt;break-inside:avoid;font-size:9.6pt}ol.fr .wh{font:8.4pt "DejaVu Sans",sans-serif;color:#40350f}'
   '</style>\n</head><body>')
 w('<img class="watermark" src="../dicto-logo.png" alt="">\n<img class="logo" src="../dicto-logo.png" alt="DICTO">')
 w('<h1>The DICTO Concordance</h1>')
-w('<p class="sub">A map and almanac of the work: threads, names, concepts and the one triangle</p>')
+w('<p class="sub">A map and almanac of the work: results, gaps, threads, names, concepts and the one triangle</p>')
 w(f'<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>'
   f'{date(D["date"])} · {e(D["version"])} · DICTO DOI: {D.get("doi", "to be reserved")} (concept) · Licence CC BY-SA 4.0 · Compiled with Claude (Anthropic) from the papers, the site cards and the DICTOnary, generated from concordance.json by build.py<br>'
   'The work, its ideas and its names are DICTO\'s, as each paper\'s credit line says; this map only gathers them.</div>')
+if D.get('status_box'):
+    w('<div class="status"><b>Draft notes</b><ul>' + ''.join(f'<li>{e(x)}</li>' for x in D['status_box']) + '</ul></div>')
 
 w('<p class="hook">This is a map of DICTO\'s work in one place, so that no detail has to be carried in the head. '
-  '<b>Threads</b> follow one idea from paper to paper; <b>Names</b> lists every named solid, piece, family and rule with who named it and where it first appears; '
-  'the <b>Almanac of Concepts</b> says what each operation, law and method is and where it is used; '
-  'the last page puts every thread on the one triangle of mirrors. To find anything, look it up in Names or the Almanac and follow the paper numbers.</p>')
+  'The next page states six results in standard terms, each with its paper. <b>What Is Missing</b> (Part 1) holds the gaps, the open points and the work of other fields that bears on them; '
+  '<b>Threads</b> (Part 2) follow one idea from paper to paper; <b>Names</b> (Part 3) says what every named solid, piece, family and rule is, who named it and where it first appears; '
+  'the <b>Almanac of Concepts</b> (Part 4) says what each operation, law and method is and where it is used; Part 5 puts every thread on the one triangle of mirrors. '
+  'To find anything, look it up in Names or the Almanac and follow the paper numbers.</p>')
 
-# 1. Threads
-w('<h2 class="first">1. Threads</h2>')
+# Front page
+FR = D.get('front', [])
+if FR:
+    seen = set()
+    NUM = {5: 'Five', 6: 'Six', 7: 'Seven'}
+    w(f'<h2>{NUM.get(len(FR), len(FR))} results in standard terms</h2>')
+    w('<p>Each statement is that of its paper, shortened; the paper holds the proof and the exact conditions.</p><ol class="fr">')
+    for x in FR:
+        w(f'<li><b>{e(x["head"])}.</b> {e(fm(x["text"], seen, "front page"))} <span class="wh">({ref(x["n"], True)}, {e(x["where"])}.)</span></li>')
+    w('</ol>')
+
+# 1. What is missing (was Part 5; content unchanged, moved forward in version 2.3)
+G = D['gaps']
+w('<h2>1. What Is Missing</h2>')
+w('<p class="hook">Parts 2–5 hold what we know. This part holds what we do not: gaps inside the work, the open points the papers left, and, from other fields, '
+  'results we did not know of that bear on ours. The Concordance, the reference library and the Kaleidohedra engine together are the tool. '
+  'Each entry is to carry three legs, the map (threads and papers it touches), the source (a library copy) and the engine (a view or test in the app); '
+  'a missing leg is itself a gap (draft 2 carries the library leg for the outside finds; the engine leg follows), and each outside find moves from <i>to read</i> to <i>credited</i>, <i>tested</i>, and finally <i>ours</i>. '
+  'One more kind of gap: <i>a crossing nobody has computed</i>, where two families or test curves on the same shape map must meet and the meeting point has not been found.</p>')
+w('<h3>1.1 The grid: solids against operations</h3>')
+w(f'<p>Papers where each operation is done for each solid; — marks a gap, ? an unsure entry. {e(G["colnames"])}.</p>')
+w('<table class="grid"><thead><tr><th>Solid</th>' + ''.join(f'<th>{e(x)}</th>' for x in G['cols']) + '</tr></thead><tbody>')
+for r in G['rows']:
+    w('<tr><td>' + e(r[0]) + '</td>' + ''.join(f'<td class="{"gap" if v == "—" else ""}">{e(v)}</td>' for v in r[1:]) + '</tr>')
+w('</tbody></table>')
+w('<h3>1.2 The nearest gaps, ranked, inside and outside</h3><p>Ranked by how directly each follows from what is already proved (most of the calculations are already done; the rest is arrangement and interpretation). '
+  'The gaps inside the work are directly analogous to the gaps outside it, so it is one study. Each gap therefore names the outside work that bears on it (1.5); a gap with none is where to search outside next.</p><ol class="rk">')
+def short(x):
+    return e(x['cite'].split(',')[0] + ' … ' + x['cite'].split(',')[-1].strip() if x['cite'].count(',') > 1 else x['cite'])
+seen = set()
+for a, why, to, outs in G['ranked']:
+    o = '; '.join(short(D['outside'][i]) for i in outs) if outs else '<i>none found yet: a search target</i>'
+    w(f'<li><b>{e(fm(a, seen, "1.2"))}</b>. Why near: {e(fm(why, seen, "1.2"))}. Leads to: {e(fm(to, seen, "1.2"))}. <span class="out">Outside: {o}.</span></li>')
+w('</ol>')
+w('<h3>1.3 Open points left by the papers</h3>')
+w(f'<p>{e(G["open_count"])} Version 2.3 adds the open points of #104, #105 and #108 and brings the status of #43, #47 and #61 up to date.</p><table class="big"><thead><tr><th>Paper</th><th>Open point</th><th>Status</th></tr></thead><tbody>')
+seen = set()
+for x in G['loose']:
+    w(f'<tr><td>{e(x["src"])}</td><td>{e(fm(x["what"], seen, "1.3"))}</td><td>{e(fm(x["status"], seen, "1.3"))}</td></tr>')
+w('</tbody></table>')
+w('<h3>1.4 Weak joins</h3><ul class="th">' + ''.join(f'<li>{e(x)}</li>' for x in G['weak']) + '</ul>')
+w('<h3>1.5 From elsewhere: what other fields hold</h3>')
+w('<p>Results from other fields, under other names, that bear on the threads and are not cited in any paper. Kind: <b>credit</b>, earlier or parallel work to cite; '
+  '<b>test</b>, a check to run in the engine; <b>lead</b>, a direction to follow; <b>anchor</b>, the same mathematics in a real object or measurement; '
+  '<b>crossing</b>, a crossing nobody has computed (entries follow with the maps of the seed triangles, once the leads of 14 November are tested). '
+  'The strongest: the big bang billiard is the one triangle at p = ∞, so the ladder runs sphere (p = 3, 4, 5), plane (6), hyperbolic (7 and up), big bang (∞); '
+  'the numbers 2 cos(π/p) are measured particle and anyon dimensions; and diamond growers\' shape dial is α = 3/μ, our core turn.</p>')
+w('<table class="big"><thead><tr><th>Field</th><th>Source</th><th>What it holds</th><th>Touches</th><th>Kind</th><th>Library</th><th>Checked</th><th>Status</th></tr></thead><tbody>')
+for x in D['outside']:
+    w(f'<tr><td>{e(x["field"])}</td><td>{e(x["cite"])}</td><td>{e(x["says"])}</td><td>{e(x["touches"])}</td><td>{e(x["kind"])}</td>'
+      f'<td>{"yes" if x["lib"] else "to fetch"}</td><td>{e(x["conf"])}</td><td>{e(x["status"])}</td></tr>')
+w('</tbody></table>')
+seen = set()
+w('<h3>1.6 Waiting for their volume</h3><p>Results found since the last version, with their study folder and the volume or version they go into (released as soon as DICTO has read them). '
+  'Leads not yet tested (among them those of the chat session of 13–14 November) stand here, never under Names, until tested.</p><table class="big"><thead><tr><th>Result</th><th>Study</th><th>Goes to</th></tr></thead><tbody>'
+  + ''.join(f'<tr><td>{e(fm(str(x.get("result", "")), seen, "1.6"))}</td><td>{e(str(x.get("study", "")))}</td><td>{e(fm(str(x.get("goes_to", "")), seen, "1.6"))}</td></tr>' for x in G.get('waiting', [])) + '</tbody></table>')
+w('<p>Fields not yet consulted, named by the search: dislocation theory (each h ↔ c swap is a partial-dislocation glide); commensurate–incommensurate transitions; '
+  'semi-discrete optimal transport (the weight walk); martensitic paths (Burgers, Kurdjumov–Sachs); topological interlocking and architected materials; '
+  'realisation spaces of polytopes; hypersimplices (the octahedron is Δ(2, 4)); fulleride and cluster chemistry; multiply-twinned nanoparticles; hyperbolic tilings and holography.</p>')
+if D.get('overlaps_note'):
+    w('<h3>1.7 Overlaps across threads (4 November 2026)</h3><p>' + e(D['overlaps_note']) + '</p>')
+
+# 2. Threads
+w('<h2>2. Threads</h2>')
 w(f'<p>{len(D["strands"])} threads run through the papers. Each paper is listed, in the order of its number, with one line on what it adds to the thread; '
-  'a paper can sit on several threads. Lines marked → are the verified cross-links of the audit of 4 November 2026 (study 2026-11-04-cross-links, section A).</p>')
+  'a paper can sit on several threads. Lines marked → are the verified cross-links of the audit of 4 November 2026 (study 2026-11-04-cross-links, section A) and, marked v2.3, links stated in the later paper\'s own text.</p>')
 for i, s in enumerate(D['strands'], 1):
-    w(f'<h3>1.{i} {e(s["name"])}</h3><p class="about">{e(s["about"])}</p><ul class="th">')
+    seen = set()
+    where = f'2.{i} {s["name"]}'
+    w(f'<h3>2.{i} {e(s["name"])}</h3><p class="about">{e(fm(s["about"], seen, where))}</p><ul class="th">')
     for x in sorted(s['papers'], key=lambda x: key(x['n'])):
-        w(f'<li>{ref(x["n"], True)}: {e(x["adds"])}</li>')
+        w(f'<li>{ref(x["n"], True)}: {e(fm(x["adds"], seen, where))}</li>')
     w('</ul>')
     for l in s['links']:
-        w(f'<p class="lk">→ {e(l)}</p>')
+        w(f'<p class="lk">→ {e(fm(l, seen, where))}</p>')
+SE = D.get('series')
+if SE:
+    n = len(D['strands']) + 1
+    w(f'<h3>2.{n} The books: {e(SE["name"])}</h3><p>{e(SE["note"])}</p>')
+    w('<table class="big"><thead><tr><th>Book</th><th>Ring</th><th>Title</th><th>Status</th></tr></thead><tbody>')
+    seen = set()
+    for b in SE['books']:
+        w(f'<tr><td>{e(b[0])}</td><td>{e(b[1])}</td><td>{e(b[2])}</td><td>{e(fm(b[3], seen, "series"))}</td></tr>')
+    w('</tbody></table>')
 
-# 2. Names
-w('<h2>2. Names</h2>')
-w(f'<p>{len(D["names"])} entries, alphabetical (a leading “DICTO” is passed over in the order). “Named by” is taken from the paper\'s credit line or text; '
+# 3. Names
+w('<h2>3. Names</h2>')
+w(f'<p>{len(D["names"])} entries, alphabetical (a leading “DICTO” is passed over in the order). “What it is” describes the thing so that the entry reads without the name '
+  '(marked † where it rests on the entry\'s own notes and is still to be checked against the paper). “Named by” is taken from the paper\'s credit line or text; '
   '“see #N” means the text read for this draft does not say who chose the name; '
-  'First: the paper or finding (F) where the name first appears; D: the number in the DICTOnary.</p>')
-w('<table class="big"><thead><tr><th>Name</th><th>Named by</th><th>First</th><th>D</th><th>Also called · note</th></tr></thead><tbody>')
-for x in D['names']:
+  'First: the paper or finding (F) where the name first appears; D: the number in the DICTOnary; “also called” keeps every earlier name findable.</p>')
+w('<table class="big nm"><thead><tr><th style="width:17%">Name</th><th style="width:33%">What it is</th><th style="width:9%">Named by</th><th style="width:9%">First</th><th style="width:5%">D</th><th>Also called · note</th></tr></thead><tbody>')
+def nkey(x):
+    return re.sub(r'^DICTO[ -]', '', x['name']).lower()
+for x in sorted(D['names'], key=nkey):
     note = '; '.join(e(v) for v in (x.get('aka'), x.get('note')) if v)
-    w(f'<tr><td>{e(x["name"])}</td><td>{e(x["by"])}</td><td>{first_cell(x["first"])}</td><td>{e(x.get("d", ""))}</td><td>{note}</td></tr>')
+    dsc = e(x.get('desc', '')) + (' †' if x.get('desc_unsure') else '')
+    w(f'<tr><td>{e(x["name"])}</td><td>{dsc}</td><td>{e(x["by"])}</td><td>{first_cell(x["first"])}</td><td>{e(x.get("d", "") if str(x.get("d", "")).startswith("D") else "")}</td><td>{note}</td></tr>')
 w('</tbody></table>')
 
-# 3. Almanac
-w('<h2>3. Almanac of Concepts</h2>')
+# 4. Almanac
+w('<h2>4. Almanac of Concepts</h2>')
 w(f'<p>{len(D["concepts"])} concepts: operations, constructions, laws, theorems and methods, as distinct from the named shapes. '
-  'Each definition is taken from the wording of the paper cited; then the first paper and its date, the papers that use it, its threads, and who proposed it.</p>')
+  'Under each name, one line on what it is; then the definition in the wording of the paper cited, the first paper and its date, the papers that use it, its threads, and its origin.</p>')
 import re as _re
 def origin(by):
     """House rule 9 Nov 2026 (DICTO): no running "DICTO proposed" in published text; the concept's origin is stated plainly."""
@@ -104,13 +215,14 @@ def origin(by):
     return _re.sub(r'\s+', ' ', t).strip()
 
 for c in sorted(D['concepts'], key=lambda c: c['name'].lower()):
-    used = ', '.join(f'#{n}' for n in sorted(c['used'], key=key)) or '—'
+    used = ', '.join(f'#{n.lstrip("#")}' for n in sorted(c['used'], key=lambda n: key(n.lstrip('#')))) or '—'
     th = '; '.join(ST[t]['name'] for t in c['strands'])
-    w(f'<div class="cc" id="c-{e(c["id"])}"><p class="df"><b>{e(c["name"])}</b>. {e(c["definition"])}</p>'
-      f'<p class="mt">First: {ref(c["first"], True)} ({when(c["first"])}) · Used in: {used} · Threads: {e(th)} · Origin: {e(origin(c["by"]))}</p></div>')
-
-# 4. Singularity
-w('<h2>4. The Singularity: One Triangle</h2>')
+    seen = set()
+    sb = f'<p class="sb">{e(c["sub"])}</p>' if c.get('sub') else ''
+    w(f'<div class="cc" id="c-{e(c["id"])}"><p class="df"><b>{e(c["name"])}</b></p>{sb}<p class="df">{e(fm(c["definition"], seen, "Almanac " + c["name"]))}</p>'
+      f'<p class="mt">First: {ref(c["first"].lstrip("#"), True)} ({when(c["first"].lstrip("#"))}) · Used in: {used} · Threads: {e(th)} · Origin: {e(origin(c["by"]))}</p></div>')
+# 5. Singularity
+w('<h2>5. The Singularity: One Triangle</h2>')
 w('<p>The Golden Ladder, chapter 1 (One Triangle, Three Numbers; The Golden Ladder, DICTO DOI: 10.5281/zenodo.23966554) shows that the five Platonic solids come from three kaleidoscopes, '
   'the spherical triangles with angles 90°, 60° and 180°/p for p = 3, 4, 5, and that each carries one number, 2 cos(180°/p): φ for the dodecahedron and icosahedron (p = 5), '
   '√2 for the cube and octahedron (p = 4), 1 for the tetrahedron (p = 3). At p = 6 the triangle is flat and tiles the plane under the close-packed layer of balls, the setting of the stacking papers. '
@@ -124,57 +236,13 @@ for r in D['triangle']:
 w('</tbody></table>')
 w('<p>The golden cuts reach furthest, to the E8 lattice in eight dimensions (#90); OG and the cube–octahedron sweep reach six (#90, #91). '
   'The flat triangle (p = 6) carries the stackings, where φ enters through the Fibonacci stacking (#69). The placement is the compiler\'s reading of the papers named in the last column.</p>')
-# 5. What is missing
-G = D['gaps']
-w('<h2>5. What Is Missing</h2>')
-w('<p class="hook">Parts 1–4 hold what we know. This part holds what we do not: gaps inside the work, the open points the papers left, and, from other fields, '
-  'results we did not know of that bear on ours. DICTO\'s point: the Concordance, the reference library and the Kaleidohedra engine together are the tool. '
-  'Each entry is to carry three legs, the map (threads and papers it touches), the source (a library copy) and the engine (a view or test in the app); '
-  'a missing leg is itself a gap (draft 2 carries the library leg for the outside finds; the engine leg follows), and each outside find moves from <i>to read</i> to <i>credited</i>, <i>tested</i>, and finally <i>ours</i>.</p>')
-w('<h3>5.1 The grid: solids against operations</h3>')
-w(f'<p>Papers where each operation is done for each solid; — marks a gap, ? an unsure entry. {e(G["colnames"])}.</p>')
-w('<table class="grid"><thead><tr><th>Solid</th>' + ''.join(f'<th>{e(x)}</th>' for x in G['cols']) + '</tr></thead><tbody>')
-for r in G['rows']:
-    w('<tr><td>' + e(r[0]) + '</td>' + ''.join(f'<td class="{"gap" if v == "—" else ""}">{e(v)}</td>' for v in r[1:]) + '</tr>')
-w('</tbody></table>')
-w('<h3>5.2 The nearest gaps, ranked, inside and outside</h3><p>Ranked by how directly each follows from what is already proved (DICTO: most of the calculations are already done; the rest is arrangement and interpretation). '
-  'DICTO\'s observation: the gaps inside the work are directly analogous to the gaps outside it, so it is one study. Each gap therefore names the outside work that bears on it (5.5); a gap with none is where to search outside next.</p><ol class="rk">')
-def short(x):
-    return e(x['cite'].split(',')[0] + ' … ' + x['cite'].split(',')[-1].strip() if x['cite'].count(',') > 1 else x['cite'])
-for a, why, to, outs in G['ranked']:
-    o = '; '.join(short(D['outside'][i]) for i in outs) if outs else '<i>none found yet: a search target</i>'
-    w(f'<li><b>{e(a)}</b>. Why near: {e(why)}. Leads to: {e(to)}. <span class="out">Outside: {o}.</span></li>')
-w('</ol>')
-w('<h3>5.3 Open points left by the papers</h3>')
-w(f'<p>{e(G["open_count"])}</p><table class="big"><thead><tr><th>Paper</th><th>Open point</th><th>Status</th></tr></thead><tbody>')
-for x in G['loose']:
-    w(f'<tr><td>{e(x["src"])}</td><td>{e(x["what"])}</td><td>{e(x["status"])}</td></tr>')
-w('</tbody></table>')
-w('<h3>5.4 Weak joins</h3><ul class="th">' + ''.join(f'<li>{e(x)}</li>' for x in G['weak']) + '</ul>')
-w('<h3>5.5 From elsewhere: what other fields hold</h3>')
-w('<p>Results from other fields, under other names, that bear on the threads and are not cited in any paper. Kind: <b>credit</b>, earlier or parallel work to cite; '
-  '<b>test</b>, a check to run in the engine; <b>lead</b>, a direction to follow; <b>anchor</b>, the same mathematics in a real object or measurement. '
-  'The strongest: the big bang billiard is the one triangle at p = ∞, so the ladder runs sphere (p = 3, 4, 5), plane (6), hyperbolic (7 and up), big bang (∞); '
-  'the numbers 2 cos(π/p) are measured particle and anyon dimensions; and diamond growers\' shape dial is α = 3/μ, our core turn.</p>')
-w('<table class="big"><thead><tr><th>Field</th><th>Source</th><th>What it holds</th><th>Touches</th><th>Kind</th><th>Library</th><th>Checked</th><th>Status</th></tr></thead><tbody>')
-for x in D['outside']:
-    w(f'<tr><td>{e(x["field"])}</td><td>{e(x["cite"])}</td><td>{e(x["says"])}</td><td>{e(x["touches"])}</td><td>{e(x["kind"])}</td>'
-      f'<td>{"yes" if x["lib"] else "to fetch"}</td><td>{e(x["conf"])}</td><td>{e(x["status"])}</td></tr>')
-w('</tbody></table>')
-w('<h3>5.6 Waiting for their volume</h3><p>Results found since the last version, with their study folder and the volume or version they go into (released as soon as DICTO has read them).</p><table class="big"><thead><tr><th>Result</th><th>Study</th><th>Goes to</th></tr></thead><tbody>' + ''.join(f'<tr><td>{e(str(x.get("result", "")))}</td><td>{e(str(x.get("study", "")))}</td><td>{e(str(x.get("goes_to", "")))}</td></tr>' for x in G.get('waiting', [])) + '</tbody></table>')
-w('<p>Fields not yet consulted, named by the search: dislocation theory (each h ↔ c swap is a partial-dislocation glide); commensurate–incommensurate transitions; '
-  'semi-discrete optimal transport (the weight walk); martensitic paths (Burgers, Kurdjumov–Sachs); topological interlocking and architected materials; '
-  'realisation spaces of polytopes; hypersimplices (the octahedron is Δ(2, 4)); fulleride and cluster chemistry; multiply-twinned nanoparticles; hyperbolic tilings and holography.</p>')
-w('<h2>Notes on this version</h2><ul class="th">' + ''.join(f'<li>{x}</li>' for x in D['status']) + '</ul>')
-if D.get('overlaps_note'):
-    w('<h3>5.7 Overlaps across threads (4 November 2026)</h3><p>' + e(D['overlaps_note']) + '</p>')
 # 6. Methods and code map
 import os as _os
 _cm = _os.path.join(HERE, 'code_map.json')
 if _os.path.exists(_cm):
     CM = json.load(open(_cm))
     w('<h2>6. Methods and Code Map</h2>')
-    w('<p class="hook">DICTO\'s idea: a map of which methods the studies share, so that when a method improves, or a fault is found in it, every result that rests on it can be found and re-checked, and so that shared methods can live in one library.</p>')
+    w('<p class="hook">A map of which methods the studies share, so that when a method improves, or a fault is found in it, every result that rests on it can be found and re-checked, and so that shared methods can live in one library.</p>')
     w(f'<p>Scanned: {CM["scanned_files"]} study scripts. Only {len(CM["scripts_using_studies_lib"])} import the shared library studies/_lib; most methods exist as copies.</p>')
     w('<table class="big"><thead><tr><th>Method</th><th>Scripts</th><th>Studies</th><th>Studies using it (first 8)</th></tr></thead><tbody>')
     for m, v in CM['methods'].items():
@@ -190,6 +258,10 @@ if T_:
     for fam, cells in T_['families'].items():
         w('<tr><td>' + e(fam) + '</td>' + ''.join(f'<td class="{"gap" if v == "—" else ""}">{e(v)}</td>' for v in cells) + '</tr>')
     w('</tbody></table>')
+w('<h2>Notes on this version</h2><ul class="th">' + ''.join(f'<li>{x}</li>' for x in D['status']) + '</ul>')
 w('</body></html>')
 open(os.path.join(HERE, 'paper.html'), 'w').write('\n'.join(out))
 print('paper.html:', len(D['strands']), 'threads,', len(D['names']), 'names,', len(D['concepts']), 'concepts')
+if os.environ.get('DROPS_OUT'):
+    json.dump(DROPS, open(os.environ['DROPS_OUT'], 'w'), ensure_ascii=False, indent=0)
+print('DICTO dropped at repeat mentions:', len(DROPS))

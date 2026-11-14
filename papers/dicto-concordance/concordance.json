@@ -1,5 +1,6 @@
 {
  "status": [
+  "Version 2.3 (14 November 2026) adds #104–#108, Kyushindo Cores Version 3 and #47 Version 3 to their threads, Names, the Almanac, the open points and the test table; a front page of six results in standard terms; a “What it is” column in Names and a one-line subtitle for every concept of the Almanac; the books of The Five Orders of Space (Part 2); the studies, drafts and leads of 12–14 November under “Waiting for their volume”. Part 5, What Is Missing, is now Part 1, its content unchanged, with one more kind of gap, a crossing nobody has computed. Running “DICTO's idea / observation” wording is removed; names keep DICTO at their first mention.",
   "Version 2.2 adds the papers #97–#103 to the list and to their threads, and an eleventh thread, Mandalas and yantras, opened by #103; it removes stale \"draft\" marks (#90 and #91 are published; the book corrections name the published versions; the waiting list names #98, #47 v3 and HexOct v8–11 as published), names the I−D nest pieces Sheriffs and Lone-stars, and adds DICTO's names for the unifying framework, the DICTO Hopscotch (Antipol, hop, step, jump, turn, emergence, dissolution).",
   "Version 2, 5 November 2026 (version 1, 4 November). Sources: every paper.src.html (else paper.html) in papers/, the paper cards of dictospheres.com, the DICTOnary atom cards and the cross-links audit of 4 November; papers to #96. Each new paper, read or test is one edit to concordance.json and a rebuild; each version is released as soon as DICTO has read it.",
   "Not yet covered: the books as entries of their own; the findings F1–F21 except where a paper, card or DICTOnary entry names them; the Kaleidohedra app Almanac (alm.c.*), whose concept ids these could feed later; every piece of every kit (only pieces with a name are listed).",
@@ -11,8 +12,8 @@
   "Part 5B: every outside find was checked against its abstract or a reliable record (column “checked”); none is yet read in full, all stand “to read”. Unrefereed preprints found by the search are left out. Library copies: only Hermann is held so far."
  ],
  "title": "The DICTO Concordance",
- "date": "2026-11-09",
- "version": "version 2.2",
+ "date": "2026-11-14",
+ "version": "version 2.3",
  "papers": {
   "1": {
    "title": "DICTO skewed rhombic dodecahedron",
@@ -760,6 +761,10 @@
     {
      "n": "103",
      "adds": "the Śrī Yantra on the Cleo-Antonius: Euclid's Cleo-Icos above, a side of Antonius below; the stella octangula as the yantra's frame."
+    },
+    {
+     "n": "106",
+     "adds": "the flat Karma layer: a plane across a three-fold axis cuts every Dogstar so that the part below is exactly a CLEO, and Pacioli's icosahedra in the octet above put a face on every CLEO base (Theorem 3)."
     }
    ],
    "links": [
@@ -895,7 +900,7 @@
     },
     {
      "n": "43",
-     "adds": "every icosahedral solid S lies inside (15 − 6√5)·P(S); DICTO's OG turned out is nested at every beat."
+     "adds": "every icosahedral solid S lies inside (15 − 6√5)·P(S); the OG turned out is nested at every beat; Version 2: every solid with octahedral rotational symmetry lies inside 3·P(S) (Theorem 4); Version 3: the OG's margin (Conjecture 1) holds for every k ≤ 40, with equality only at k = 3 (Theorem 5)."
     },
     {
      "n": "80",
@@ -907,7 +912,7 @@
     },
     {
      "n": "95",
-     "adds": "DICTO's pentagons for the kites: the cut OG (rectified truncated icosahedron, corners at the C60 bond centres), exact nonzero Dehn invariant, kits for the octet and every stacking (seven shapes), its Bull-horns adaptor, the pyrochlore network."
+     "adds": "pentagons for the kites: the cut OG (rectified truncated icosahedron, corners at the C60 bond centres), exact nonzero Dehn invariant, kits for the octet and every stacking (seven shapes), its Bull-horns adaptor, the pyrochlore network."
     }
    ],
    "links": [
@@ -933,7 +938,7 @@
     },
     {
      "n": "25",
-     "adds": "a rhombic dodecahedron with its twelve face neighbours fills space by translation alone; DICTO's rounded block."
+     "adds": "a rhombic dodecahedron with its twelve face neighbours fills space by translation alone; a rounded block."
     },
     {
      "n": "26",
@@ -945,7 +950,7 @@
     },
     {
      "n": "47",
-     "adds": "every mix of the Platonic solids fills space, with one kit of seven connectors."
+     "adds": "every mix of the Platonic solids fills space, with one kit of seven connectors; Version 3: cubes, tetrahedra and octahedra fill space together with no connector, never face to face (Theorem 2)."
     },
     {
      "n": "49",
@@ -957,7 +962,7 @@
     },
     {
      "n": "93",
-     "adds": "every caesium chloride pair and every Delian pair except the octet fills space in one way only."
+     "adds": "every caesium chloride pair and every Delian pair except the octet fills space in one way only; Version 4: at μ = 4/3 the pair is the DICTO 1:2 and 2:1 Truncated Octahedra (#105), which therefore fill space together in one way only."
     },
     {
      "n": "96",
@@ -974,9 +979,15 @@
     {
      "n": "101",
      "adds": "in an octet layer every octahedron is locked by its neighbours while every tetrahedron lifts straight out; in the Admiral layer only four surface pyramids are free."
+    },
+    {
+     "n": "106",
+     "adds": "with the solids at their own sizes, each of the five Platonic solids and the cuboctahedron sits in a skin that makes it a dodecahedron of edge 1, so every mix of these and the rhombic dodecahedron (127 mixes) fills space on one cubic grid of edge φ, with no layers (Theorems 1, 2)."
     }
    ],
-   "links": []
+   "links": [
+    "#47 → #106 (v2.3, from #106's opening): #47's four layers and kit of seven connectors become one cubic grid with skins once the solids take their own sizes."
+   ]
   },
   {
    "id": "bonds",
@@ -1121,12 +1132,17 @@
     {
      "n": "102",
      "adds": "the Loop Equality is a theorem: every site of every close-packed stacking has diamond's closed non-backtracking loops, at every length."
+    },
+    {
+     "n": "104",
+     "adds": "the Swap Rule of #61 proved (exact, computer-assisted) for every layer spacing s in [1/8, 1/4] in the six stackings that hold all sixteen four-layer contexts (Theorem 3); its walls are rosette exchanges, and the λ-stack of the power diagrams is a 4D cell complex (the 4D scutoids)."
     }
    ],
    "links": [
     "#69 → #91 (+ #30): #91’s golden-tilt Fibonacci word is #69’s c → ch, h → c (share 1/φ²) (row 10).",
     "#67 → #73: #73’s ice I_sd value uses #67 Theorem 1 on random stackings (row 11).",
-    "→ (4 Nov) Every stacking is tiled by RD (c) and TRD (h) cells; the harmonic fingerprint reads the c/h word ball by ball; the Fibonacci word is pure point with exact amplitudes while its A/B/C crystal is not (fading peaks at 1/2 and cos 72°); DICTO's turned node = the twisted ball (J27 ties)."
+    "→ (4 Nov) Every stacking is tiled by RD (c) and TRD (h) cells; the harmonic fingerprint reads the c/h word ball by ball; the Fibonacci word is pure point with exact amplitudes while its A/B/C crystal is not (fading peaks at 1/2 and cos 72°); the turned node = the twisted ball (J27 ties).",
+    "#61 → #104 (v2.3): the Swap Rule, open for s < 1/4 in #61, proved for s in [1/8, 1/4] by #104 Theorem 3; λ below −9s/8 and s below 1/8 stay open."
    ]
   },
   {
@@ -1152,11 +1168,11 @@
     },
     {
      "n": "79",
-     "adds": "the star treatment for DICTO's solids; the pole rule always works; DICTO's valley rule."
+     "adds": "the star treatment for the solids of the work; the pole rule always works; the valley rule."
     },
     {
      "n": "80",
-     "adds": "the gains of DICTO's growth rule T found exactly: T is polar reciprocation of the inverted corners."
+     "adds": "the gains of the growth rule T found exactly: T is polar reciprocation of the inverted corners."
     },
     {
      "n": "81",
@@ -1181,6 +1197,18 @@
     {
      "n": "92",
      "adds": "version 2: the cuboctahedron's pyramids (regular tetrahedra and half-octahedra) tile as the stackings with a free cut in every octahedron, rebuilding the cuboctahedron on straight layers and the anticuboctahedron on twisted ones."
+    },
+    {
+     "n": "105",
+     "adds": "the 4D Vacuus: the 150 two-dimensional faces of the 4D permutohedron lie in exactly 65 central slices of four kinds (Theorem 1); at the heart five permutohedra of 1, 2, 4, 5 (the DICTO 1:2 Truncated Octahedron) cross in regular hexagons (Theorem 2, and in every odd dimension Theorem 2b); the count N(n) in every dimension (Theorem 3)."
+    },
+    {
+     "n": "107",
+     "adds": "the Mirror Law: which faces of a reflection polytope lie on its mirrors, read from its Coxeter chain (Theorem 1); every face of a regular polytope lies on a mirror, and the 600-cell's triangles and the 120-cell's pentagons share the 60 mirrors of H₄ (Corollary 2)."
+    },
+    {
+     "n": "108",
+     "adds": "the second Vacuus: a central slice that carries three or more faces without being a mirror occurs only in the cuboctahedron, the icosidodecahedron, the runcinated 5-cell and the 4D permutohedron (Observation 4)."
     }
    ],
    "links": [
@@ -1188,7 +1216,8 @@
     "#43 → #80, #78, #79, #81 (+ #90, #91): #80’s gains (R/r)² = 9, 3, 15 − 6√5 are #43’s constants; #43 Lemma 3 is #80’s “T is polar reciprocation” (row 2).",
     "#85 → #87: #85’s angles δ = α + α′ are the angles of #87’s Vacuus fins (row 13).",
     "→ (4 Nov) Reversed neighbour impossible for T and C6 (search proof): T pyramids form whole tetrahedra, C6 whole cubes, in every tiling; R12 free + slides; the CO pyramids build CO on straight and J27 on twisted layers, and J27 + octahedra tile hcp (twin of the rectified cubic).",
-    "→ (4 Nov) Admiral Cap network (#47) is frustrated (8 of 12 shared edges at most); its ground states are layer words — the same layer freedom as #92."
+    "→ (4 Nov) Admiral Cap network (#47) is frustrated (8 of 12 shared edges at most); its ground states are layer words — the same layer freedom as #92.",
+    "#87 → #105, #107, #108 (v2.3): the Vacuus taken to four dimensions: the permutohedron's 65 slices (#105), the mirror slices of every reflection polytope (#107), and the only non-mirror Vacuus in four dimensions (#108 Observation 4); #107 Corollary 4 is the split of T(x)'s edges seen in #105 Figure 4."
    ]
   },
   {
@@ -1219,12 +1248,25 @@
     {
      "n": "91",
      "adds": "DICTO All-Golden Polytopes in the tesseract family and in the 600-cell × 120-cell family."
+    },
+    {
+     "n": "104",
+     "adds": "a simple 4-polytope swept by a moving hyperplane: its cells, cut as polygons in the slice, are born, swap neighbours (a scutoid swap) or die at its corners, h₁, h₂ and h₃ times (Theorems 1, 1′); the counts for the 120-cell, the truncated 120-cell and the bitruncated 600-cell (Theorem 2); a balance law for two kinds of cells (Theorem 4)."
+    },
+    {
+     "n": "107",
+     "adds": "the Queens' Vacuus: on the path between the Queens the faces of the two end bonds lie on mirrors and the middle-bond faces on none (Corollary 3); the bitruncated middle carries both Queens' faces on every mirror."
+    },
+    {
+     "n": "108",
+     "adds": "all 81 polytopes of the chain groups A₃, B₃, H₃, A₄, B₄, F₄, H₄ from their 0/1 seeds: a balance law for any multiset of cell types (Theorem 1); the 601 balanced exchanges of the Queens' family are the independent loops of the 600-cell's skeleton, E − V + 1 (Theorem 3); which Platonic solids live on the corners of each family (Observation 5)."
     }
    ],
    "links": [
     "#76 → #91: the three uniform μ of #91’s 600 × 120 sweep are #76’s edge-equalising cuts (row 3).",
     "→ (4 Nov) Both Queens are spherical 11-designs; on the path between them the truncated 600-cell at μ ≈ 0.92417 is a 19-design (the classical W(H4) orbit, Goethals–Seidel); the 4D sweep's tone zeros: 24-cell, √2, 1 + √3.",
-    "→ (4 Nov) #91's 4D sweep = SO(9) weight shapes; the All-Golden Polytopes are limits of Fibonacci multiplets, as Icosaxes is in 3D (SU(4))."
+    "→ (4 Nov) #91's 4D sweep = SO(9) weight shapes; the All-Golden Polytopes are limits of Fibonacci multiplets, as Icosaxes is in 3D (SU(4)).",
+    "#104 → #108 (v2.3, from #108 Corollary 2): #104 Theorem 4 (two kinds of cells) is the two-kind case of #108 Theorem 1 (any multiset of cell types); 601 = (R–R faces) − (R cells) + 1 = E − V + 1 of the 600-cell."
    ]
   },
   {
@@ -1292,7 +1334,7 @@
     },
     {
      "n": "89",
-     "adds": "DICTO's filling by cut cubes and octahedra, a section of the rectified tesseractic honeycomb."
+     "adds": "the filling by cut cubes and octahedra, a section of the rectified tesseractic honeycomb."
     },
     {
      "n": "90",
@@ -1309,6 +1351,10 @@
     {
      "n": "96",
      "adds": "from the harmonic fingerprint (#94) to waves through a whole packing: the resonance line that led to Reading the Voids."
+    },
+    {
+     "n": "105",
+     "adds": "the golden loop T(x) is, up to scale, the permutohedron of −q, −p, p, q with x = (q − p)/(2p): x = 1 is Kelvin's truncated octahedron, x = 1/2 the DICTO 1:2 Truncated Octahedron (Theorem 4)."
     }
    ],
    "links": [
@@ -1317,7 +1363,8 @@
     "#54 → #90, #91: #54 Theorem B is the polar side of the C·O sweep; the rhombic dodecahedron is H(2) (row 6).",
     "#53 → #89: DICTO’s cut-cube and octahedra filling (#89 §7) is #53’s CsCl lane (row 8).",
     "→ (4 Nov) The sweep is the family of weight shapes of SU(4) ≅ SO(6) then SO(7): octahedron 6 (unison), Kelvin 64 (fifth), cuboctahedron 15/21 (octave), cube 8 (twelfth); golden ladder of Fibonacci multiplets → Icosaxes and Unborn Axes, silver ladder of Pell multiplets → truncated cube (#90's title in particle terms).",
-    "→ (4 Nov) Special points of the sweep by unrelated tests: harmonic Q4 = 0 at φ (Icosaxes), isoperimetric maximum at √3 (core-turn fixed point, #81), Mahler maximum near φ (cubic), diamond growth α = 3/μ (the core turn)."
+    "→ (4 Nov) Special points of the sweep by unrelated tests: harmonic Q4 = 0 at φ (Icosaxes), isoperimetric maximum at √3 (core-turn fixed point, #81), Mahler maximum near φ (cubic), diamond growth α = 3/μ (the core turn).",
+    "#81, #91, #93 → #105 (v2.3, from #105 Theorem 4 and #93 Version 4): the golden loop T(x) is a line of permutohedra; at μ = 4/3 #93's CsCl pair is the DICTO 1:2 and 2:1 Truncated Octahedra."
    ]
   },
   {
@@ -1339,1337 +1386,1566 @@
    "by": "DICTO",
    "first": "F21",
    "d": "D16",
-   "aka": "icosahedron edge roof"
+   "aka": "icosahedron edge roof",
+   "desc": "a non-convex pair of tetrahedra roofing one icosahedron edge; six on an icosahedron make a regular octahedron"
   },
   {
    "name": "Aetos",
    "by": "DICTO",
    "first": "#29",
-   "d": "D25"
+   "d": "D25",
+   "desc": "a flat pentagonal pyramid holding the core icosahedron at each of its twelve corners inside the icosidodecahedron"
   },
   {
    "name": "Alice",
    "by": "DICTO",
    "first": "#63",
-   "d": "D94"
+   "d": "D94",
+   "desc": "a cell-first slice of the 600-cell taken midway between vertex levels, with 144 corners"
   },
   {
    "name": "Alice series slices: Alicia, Unicorn, Bandersnatch",
    "by": "DICTO",
    "first": "#63",
-   "note": "shapes first found by Alicia Boole Stott (1900)"
+   "note": "shapes first found by Alicia Boole Stott (1900)",
+   "desc": "three slices of the 600-cell (W48, W58, W60) first drawn by Alicia Boole Stott in 1900, computed exactly"
   },
   {
    "name": "All-Golden Polytopes, DICTO",
    "by": "DICTO",
-   "first": "#91"
+   "first": "#91",
+   "desc": "four-dimensional polytopes all of whose cells are golden cuts, e.g. the tesseract trimmed by its polar 16-cell at μ = φ²"
   },
   {
    "name": "Antonius",
    "by": "DICTO",
    "first": "#44",
-   "d": "D65"
+   "d": "D65",
+   "desc": "the middle piece of a golden rhombohedron with its two sharp tips cut off; fills space with those tips"
   },
   {
    "name": "ATOM-13×13, DICTO",
    "by": "DICTO",
-   "first": "#26"
+   "first": "#26",
+   "desc": "thirteen twelve-around-one clusters side by side, six golden (icosahedral) and seven periodic space-filling blocks"
   },
   {
    "name": "Atraktos",
    "by": "DICTO",
    "first": "#29",
-   "d": "D24"
+   "d": "D24",
+   "desc": "a convex piece fusing a Cleo-Icos with the dodecahedron's corner pyramid, in the layered build of the Hecatodihedron"
   },
   {
    "name": "AXE",
    "by": "DICTO",
    "first": "#19",
-   "aka": "Mosseri–Sadoc tile t6 (scaled by 1/φ)"
+   "aka": "Mosseri–Sadoc tile t6 (scaled by 1/φ)",
+   "desc": "a tetrahedron with five edges 1 and one edge 1/φ filling the groove between two edge-sharing icosahedra"
   },
   {
    "name": "B · HexOct −1/8 c-tile",
    "by": "DICTO (#86)",
    "first": "#86",
    "d": "D113",
-   "aka": "whole octahedra"
+   "aka": "whole octahedra",
+   "desc": "the c-tile at weight −1/8 built from whole pieces: a regular octahedron plus two regular tetrahedra, 8 faces"
   },
   {
    "name": "B · HexOct −1/8 h-tile",
    "by": "DICTO (#86)",
    "first": "#86",
    "d": "D114",
-   "aka": "whole octahedra"
+   "aka": "whole octahedra",
+   "desc": "the h-tile at weight −1/8 from whole pieces: a regular octahedron and two regular tetrahedra joined the other way"
   },
   {
    "name": "DICTO Belted Triacontahedron",
    "by": "DICTO",
    "first": "#37a",
    "d": "D37",
-   "aka": "DBT"
+   "aka": "DBT",
+   "desc": "the rhombic triacontahedron cut flat at two opposite corners, fitting the gyrated octet's octahedra pole to pole"
   },
   {
    "name": "Blockhead",
    "by": "DICTO",
    "first": "#56",
-   "d": "D79"
+   "d": "D79",
+   "desc": "the tetrahedral-hole piece of the twinned (hexagonal) octet at weight 3/8, the hexagonal twin of the cube"
   },
   {
    "name": "Bodhi seed",
    "by": "DICTO",
-   "first": "#24"
+   "first": "#24",
+   "desc": "a rhombic triacontahedron holding twelve smaller ones round a central one, two golden steps larger, gap filled exactly"
   },
   {
    "name": "Bull-horns OG adaptor",
    "by": "DICTO",
    "first": "#36",
-   "d": "D33"
+   "d": "D33",
+   "desc": "a single non-convex piece filling one third of each Ogdoecontahedron's share of the gap in their hexagon-joined packing"
   },
   {
    "name": "C · HexOct −1/8 c-tile",
    "by": "DICTO (#86)",
    "first": "#86",
-   "d": "D115"
+   "d": "D115",
+   "desc": "the c-tile at weight −1/8 under the Rule of Halves, its two towers joined along two trapezoids; 10 faces"
   },
   {
    "name": "C · HexOct −1/8 h-tile",
    "by": "DICTO (#86)",
    "first": "#86",
-   "d": "D116"
+   "d": "D116",
+   "desc": "the h-tile at weight −1/8 under the Rule of Halves, a single solid with 14 faces"
   },
   {
    "name": "Chain of Karma",
    "by": "DICTO",
-   "first": "#22"
+   "first": "#22",
+   "desc": "endless golden nesting of icosahedron and dodecahedron, each icosahedron replaced by a Lotus seed while gap pieces stay whole"
   },
   {
    "name": "Chucky",
    "by": "DICTO",
    "first": "#57",
-   "d": "D80"
+   "d": "D80",
+   "desc": "an octahedral-hole piece of the ABAC stacking at weight −3/8, hexagonal top half and cubic bottom half"
   },
   {
    "name": "CLEO",
    "by": "DICTO",
    "first": "#19",
-   "aka": "Mosseri–Sadoc tile t4 (scaled by 1/φ)"
+   "aka": "Mosseri–Sadoc tile t4 (scaled by 1/φ)",
+   "desc": "a triangular pyramid with equilateral base 1/φ and side edges 1, filling the inner corners of the Lotus seed"
   },
   {
    "name": "Cleo star",
    "by": "DICTO",
-   "first": "#35"
+   "first": "#35",
+   "desc": "an icosahedron with its twenty centre pyramids turned outward as spikes, tips exactly at a dodecahedron's corners"
   },
   {
    "name": "Cleo Towers",
    "by": "DICTO",
    "first": "#43",
    "d": "D74",
-   "aka": "8 tower pieces"
+   "aka": "8 tower pieces",
+   "desc": "tall blade-like pieces in five shells round a core, grown in Fibonacci beats of the antipedal rule; eight shapes",
+   "desc_unsure": true
   },
   {
    "name": "Cleo-Icos",
    "by": "DICTO",
    "first": "#29",
-   "aka": "Oktaktis (as the OTT’s octahedral ray, #43); the icosahedron’s face pyramid (classical shape)"
+   "aka": "Oktaktis (as the OTT’s octahedral ray, #43); the icosahedron’s face pyramid (classical shape)",
+   "desc": "the face pyramid of the regular icosahedron with apex at its centre (Mackay's unit tetrahedron)"
   },
   {
    "name": "Crown Jewel",
    "by": "DICTO",
    "first": "#24",
-   "d": "D17"
+   "d": "D17",
+   "desc": "a 14-corner, 9-faced piece filling each outer three-fold corner of the Bodhi seed's gap (kit B)"
   },
   {
    "name": "Cube Pearl",
    "by": "DICTO",
    "first": "#80",
-   "d": "D106"
+   "d": "D106",
+   "desc": "the cube with edges chamfered at depth 3/5: 6 squares, 12 hexagons, 32 corners on one sphere"
   },
   {
    "name": "D · HexOct −11/24 c-tile",
    "by": "DICTO (#86)",
    "first": "#86",
-   "d": "D117"
+   "d": "D117",
+   "desc": "the c-tile at weight −11/24 under the Rule of Halves, a single solid with 18 faces"
   },
   {
    "name": "David",
    "by": "DICTO",
    "first": "#55",
-   "note": "shape: a tetragonal disphenoid"
+   "note": "shape: a tetragonal disphenoid",
+   "desc": "a tetragonal disphenoid filling space with Goliath, six per two Goliaths, in the A15 power diagram"
   },
   {
    "name": "Delian bond",
    "by": "DICTO",
-   "first": "#51"
+   "first": "#51",
+   "desc": "the equal-volume position on the octet's cut slider: a doubled tetrahedron piece and a halved octahedron fill space"
   },
   {
    "name": "Delilah",
    "by": "DICTO",
    "first": "#51",
-   "note": "shape: the regular octahedron, at the Delian bond"
+   "note": "shape: the regular octahedron, at the Delian bond",
+   "desc": "the regular octahedron at half the octet octahedron's volume, filling space with Samson at the Delian bond"
   },
   {
    "name": "DICTO Deltoid Aktis",
    "by": "DICTO",
    "first": "#43",
-   "d": "D55"
+   "d": "D55",
+   "desc": "one of the 60 face pyramids over the kite faces of the Ogdoecontahedron, apex at its centre"
   },
   {
    "name": "Dented tetrahedron L/R",
    "by": "DICTO",
    "first": "#37",
    "d": "D72",
-   "aka": "golden-key octet"
+   "aka": "golden-key octet",
+   "desc": "left- and right-handed tetrahedra dented to receive the golden keys of the keyed octahedron in the octet truss"
   },
   {
    "name": "DESHI",
    "by": "DICTO",
-   "first": "#19"
+   "first": "#19",
+   "desc": "twelve unit icosahedra on the five-fold axes round a small central one, sharing 30 edges (R. W. Gray's cage), gaps empty"
   },
   {
    "name": "Diadem",
    "by": "DICTO",
-   "first": "#24"
+   "first": "#24",
+   "desc": "chiral five-faced pieces, 60 of each hand, in kit B of the Bodhi seed's gap, each with a rhombus face"
   },
   {
    "name": "DICTONIC BONDS",
    "by": "DICTO",
    "first": "#51",
-   "aka": "the three bonds holding the DICTONIC SOLIDS"
+   "aka": "the three bonds holding the DICTONIC SOLIDS",
+   "desc": "the three space-filling pairs: golden (Icosaxes, Unborn Axes), keyed (Lotus Jewel Axes, Dodecaxes) and Delian (Samson, Delilah)"
   },
   {
    "name": "DICTONIC SOLIDS",
    "by": "DICTO",
    "first": "#51",
-   "aka": "the six convex and keyed solids of #48 and #51"
+   "aka": "the six convex and keyed solids of #48 and #51",
+   "desc": "six convex or keyed solids that fill space in three pairs: Icosaxes, Unborn Axes, Lotus Jewel Axes, Dodecaxes, Samson, Delilah"
   },
   {
    "name": "DICTO Dodeca-13",
    "by": "DICTO",
-   "first": "#13"
+   "first": "#13",
+   "desc": "thirteen dodecahedra, one on each face of a central one, closed into one solid by 30 wedges and 20 needles"
   },
   {
    "name": "DICTO Dodeca-13 Needle",
    "by": "DICTO",
    "first": "#13",
-   "d": "D7"
+   "d": "D7",
+   "desc": "the three-fold piece closing the point at each corner of the central dodecahedron where three thin slots meet"
   },
   {
    "name": "DICTO Dodeca-13 Star",
    "by": "DICTO",
    "first": "#13",
-   "d": "D9"
+   "d": "D9",
+   "desc": "a three-armed piece of three gap wedges and one needle locked together, in the thirteen-dodecahedron cluster"
   },
   {
    "name": "DICTO Dodeca-13 Unit",
    "by": "DICTO",
    "first": "#13",
    "d": "D8",
-   "aka": "finned unit"
+   "aka": "finned unit",
+   "desc": "a dodecahedron with thin fins (wedge halves, needle thirds) that lifts out of the thirteen-dodecahedron cluster"
   },
   {
    "name": "DICTO Dodeca-13 Wedge",
    "by": "DICTO",
    "first": "#13",
-   "d": "D6"
+   "d": "D6",
+   "desc": "the mirror-symmetric piece closing the thin slot (about 10°) along each edge of the central dodecahedron"
   },
   {
    "name": "Dodecaxes",
    "by": "DICTO",
    "first": "#48",
-   "d": "D70"
+   "d": "D70",
+   "desc": "the Unborn Axes with eight Tricap keys, holding a whole regular dodecahedron; fills space with Lotus Jewel Axes"
   },
   {
    "name": "Dogstar",
    "by": "DICTO",
    "first": "F12",
-   "note": "the solid is Hart's stellation 8 of the dodecahedron (1996)"
+   "note": "the solid is Hart's stellation 8 of the dodecahedron (1996)",
+   "desc": "Hart's stellation 8 of the dodecahedron: the star hole left when dodecahedra occupy every other cube of a grid"
   },
   {
    "name": "Double Vision",
    "by": "DICTO",
    "first": "#33",
-   "aka": "both cycles in one space"
+   "aka": "both cycles in one space",
+   "desc": "the golden nested-solid cycle and its polar-inverted twin placed in one space and cut into one exact solid"
   },
   {
    "name": "DICTO DPHP",
    "by": "DICTO",
    "first": "#39",
-   "d": "D48"
+   "d": "D48",
+   "desc": "the fourth upward antipedal step from the Ogdoecontahedron: 12 decagons, 20 hexagons, 120 pentagons, 270 corners; the roundest"
   },
   {
    "name": "E · HexOct 1/10 c-tile",
    "by": "DICTO (#86)",
    "first": "#86",
-   "d": "D118"
+   "d": "D118",
+   "desc": "the c-tile at weight 1/10 made one solid by moving one tower one lattice step; 24 faces"
   },
   {
    "name": "Euclid–Kepler–Pacioli cell and network",
    "by": "DICTO",
    "first": "#8",
-   "aka": "EKP"
+   "aka": "EKP",
+   "desc": "a cube cell nesting all five Platonic solids on 13 points, repeating through space; its network of non-overlapping solids"
   },
   {
    "name": "Fallen Humpty",
    "by": "DICTO (#62)",
    "first": "#62",
-   "d": "D102"
+   "d": "D102",
+   "desc": "the equal-edged non-convex form of Humpty Dumpty's 600-cell slice pattern: 92 equilateral triangles, 48 corners, Td"
   },
   {
    "name": "Fang",
    "by": "DICTO",
    "first": "#57",
-   "d": "D81"
+   "d": "D81",
+   "desc": "an octahedral-hole piece of the ABAC stacking at weight 5/24, hexagonal top half and cubic bottom half"
   },
   {
    "name": "Fibonacci stacking",
    "by": "joint (#40)",
-   "first": "#40"
+   "first": "#40",
+   "desc": "the layer stacking whose c/h sequence follows the Fibonacci word, never repeating; hexagonal-layer share 1/φ²"
   },
   {
    "name": "DICTO Fill set 1 / 2 pieces",
    "by": "DICTO",
    "first": "#37a",
    "d": "D73",
-   "aka": "grown bipyramid, grown tetrahedra L/R"
+   "aka": "grown bipyramid, grown tetrahedra L/R",
+   "desc": "the second shape that fills space with the DBT or OTT: a grown bipyramid, or grown tetrahedra L/R in the octet"
   },
   {
    "name": "Five-sided Vajra",
    "by": "DICTO",
    "first": "#38",
-   "d": "D42"
+   "d": "D42",
+   "desc": "a convex double-pointed piece with a five-sided waist, formed on each five-fold axis by joining three shell pieces"
   },
   {
    "name": "DICTO FPD",
    "by": "DICTO",
    "first": "#38",
    "d": "D41",
-   "aka": "flat pentakis dodecahedron"
+   "aka": "flat pentakis dodecahedron",
+   "desc": "a flat pentakis dodecahedron, the fourth solid of the antipedal four-step cycle from the icosidodecahedron"
   },
   {
    "name": "frog chorus (five voices)",
    "by": "DICTO",
    "first": "#30",
-   "aka": "A Fibonacci Spine"
+   "aka": "A Fibonacci Spine",
+   "desc": "five periodic Ogdoecontahedron packings set in five slices round a five-fold axis, leaving a Fibonacci spine of gaps"
   },
   {
    "name": "FUJI",
    "by": "DICTO",
    "first": "#19",
-   "d": "D12"
+   "d": "D12",
+   "desc": "a hexagonal pyramid on a truncated triangle (sides 1 and 1/φ), side edges 1, filling the Lotus seed's outer corners"
   },
   {
    "name": "Galois twins",
    "by": "DICTO",
    "first": "#90",
-   "aka": "the Greater and Lesser Golden Cut Cubes (D123, D124)"
+   "aka": "the Greater and Lesser Golden Cut Cubes (D123, D124)",
+   "desc": "the Greater and Lesser Golden Cut Cubes, whose cut depths are algebraic conjugates sharing one quartic minimal polynomial"
   },
   {
    "name": "Ganesha",
    "by": "DICTO",
    "first": "#61",
-   "d": "D84"
+   "d": "D84",
+   "desc": "the mixed tetrahedral piece of a squashed close-packed stacking, cubic bottom half and hexagonal top half"
   },
   {
    "name": "GBPC",
    "by": "DICTO",
    "first": "#36",
    "d": "D32",
-   "aka": "Golden Bodhi Pyrochlore Corner"
+   "aka": "Golden Bodhi Pyrochlore Corner",
+   "desc": "a low triangular pyramid shaped like the rhombic triacontahedron's three-fold corner, golden conjugate of the Cleo-Icos"
   },
   {
    "name": "Golden Bodhi Pyrochlore",
    "by": "DICTO",
-   "first": "#36"
+   "first": "#36",
+   "desc": "the hexagon-joined packing of Ogdoecontahedra and the study of filling its gaps with golden pieces",
+   "desc_unsure": true
   },
   {
    "name": "Golden Clasp",
    "by": "DICTO",
    "first": "Star Cores study (2026-10-31)",
-   "d": "D107"
+   "d": "D107",
+   "desc": "a truncated cuboctahedron variant with face depths 1 : 1/φ : 3/4 on its 4-, 3- and 2-fold axes; 48 corners"
   },
   {
    "name": "Golden OGs: Lesser Golden OG, Greater Golden OG",
    "by": "DICTO",
-   "first": "#91"
+   "first": "#91",
+   "desc": "two golden relatives of the Ogdoecontahedron with its combinatorics, cut from the dodecahedron sweep at μ = √5 and (13 + 6√5)/11"
   },
   {
    "name": "golden tetrahedra (Danzer, Mosseri–Sadoc tiles)",
    "by": "classical",
    "first": "#38a",
-   "note": "not the Golden Cut Tetrahedra (GCT) of #88/#89: name clash noted in the cross-links audit"
+   "note": "not the Golden Cut Tetrahedra (GCT) of #88/#89: name clash noted in the cross-links audit",
+   "desc": "classical tetrahedra with golden-ratio edge proportions used as tiles for icosahedral order",
+   "desc_unsure": true
   },
   {
    "name": "Golden TI Star",
    "by": "DICTO",
    "first": "#78",
-   "d": "D103"
+   "d": "D103",
+   "desc": "the truncated icosahedron with a pyramid on every face, tips at φ times the face feet: 180 triangles"
   },
   {
    "name": "DICTO Golden Tight Cycles",
    "by": "DICTO",
-   "first": "#91"
+   "first": "#91",
+   "desc": "cycles of nested solids, each scaled to touch the next, whose overall closure factor is a power of φ"
   },
   {
    "name": "DICTO Golden-Regular Cuts",
    "by": "DICTO",
    "first": "#89",
-   "aka": "Greater and Lesser Golden Cut Icosidodecahedron and Snub Dodecahedron"
+   "aka": "Greater and Lesser Golden Cut Icosidodecahedron and Snub Dodecahedron",
+   "desc": "corner cuts of the icosidodecahedron and snub dodecahedron making every face either golden truncated or regular"
   },
   {
    "name": "Goliath",
    "by": "DICTO",
    "first": "#55",
-   "note": "shape: the hull of Jessen's orthogonal icosahedron, the classical Z12 icosahedron of A15"
+   "note": "shape: the hull of Jessen's orthogonal icosahedron, the classical Z12 icosahedron of A15",
+   "desc": "the convex hull of Jessen's orthogonal icosahedron, filling space with tetragonal disphenoids in the A15 structure"
   },
   {
    "name": "Greater and Lesser Golden Cut Great Dodecahedron, Great Icosahedron, Small and Great Stellated Dodecahedron",
    "by": "DICTO",
    "first": "#89",
-   "aka": "the eight Kepler–Poinsot golden cuts"
+   "aka": "the eight Kepler–Poinsot golden cuts",
+   "desc": "the two corner cuts of each Kepler–Poinsot star polyhedron that make its faces golden truncated polygons"
   },
   {
    "name": "Greater and Lesser Golden Cut Icosidodecahedron",
    "by": "DICTO",
    "first": "#89",
-   "note": "found independently; Zefiro 2011's regular-hexagon and regular-decagon stages"
+   "note": "found independently; Zefiro 2011's regular-hexagon and regular-decagon stages",
+   "desc": "the icosidodecahedron cut so pentagons become golden decagons and triangles regular hexagons, or triangles golden and pentagons regular"
   },
   {
    "name": "Greater Golden Cut Cube",
    "by": "DICTO",
    "first": "#88",
    "d": "D123",
-   "aka": "Galois twin (#90)"
+   "aka": "Galois twin (#90)",
+   "desc": "the cube cut at every corner (x ≈ 0.3479) so each square becomes a golden octagon, corner sides long"
   },
   {
    "name": "Greater Golden Cut Dodecahedron",
    "by": "DICTO",
    "first": "#88",
-   "d": "D119"
+   "d": "D119",
+   "desc": "the dodecahedron cut at x = 1/3 of each edge, the pentagons becoming golden decagons with corner sides long"
   },
   {
    "name": "Greater Golden Cut Icosahedron",
    "by": "DICTO",
    "first": "#88",
-   "d": "D121"
+   "d": "D121",
+   "desc": "the icosahedron cut at x = 1/φ² of each edge, its faces golden truncated triangles with corner sides long"
   },
   {
    "name": "Greater Golden Cut Rhombic Dodecahedron",
    "by": "DICTO",
    "first": "#89",
-   "d": "D127"
+   "d": "D127",
+   "desc": "the rhombic dodecahedron truncated so each rhombus is a golden octagon (corner sides long); 12 octagons, 6 squares, 8 triangles"
   },
   {
    "name": "Greater Golden Cut Rhombic Triacontahedron",
    "by": "DICTO",
    "first": "#89",
-   "d": "D129"
+   "d": "D129",
+   "desc": "the rhombic triacontahedron truncated so each rhombus is a golden octagon (corner sides long); 120 corners"
   },
   {
    "name": "Greater Golden Cut Snub Dodecahedron L/R",
    "by": "DICTO",
    "first": "#89",
-   "d": "D131"
+   "d": "D131",
+   "desc": "the chiral snub dodecahedron cut at x = 1/3: pentagons become golden decagons, triangles regular hexagons; 300 corners"
   },
   {
    "name": "Greater Golden Cut Tetrahedron",
    "by": "DICTO",
    "first": "#88",
-   "d": "D125"
+   "d": "D125",
+   "desc": "the tetrahedron cut at x = 1/φ² of each edge, its faces golden truncated triangles with corner sides long"
   },
   {
    "name": "DICTO GTI",
    "by": "DICTO",
    "first": "#38",
    "d": "D40",
-   "aka": "Golden Truncated Icosahedron"
+   "aka": "Golden Truncated Icosahedron",
+   "desc": "the truncated icosahedron of the antipedal four-step cycle whose hexagons alternate sides in ratio 1 : φ",
+   "desc_unsure": true
   },
   {
    "name": "DICTO-GTT-Solids",
    "by": "DICTO",
    "first": "#88",
-   "aka": "Icosaxes, Unborn Axes, White Knight; two members added in #89"
+   "aka": "Icosaxes, Unborn Axes, White Knight; two members added in #89",
+   "desc": "solids whose three-fold hexagonal faces are truncated triangles with sides exactly in golden ratio: Icosaxes, Unborn Axes, White Knight, two more"
   },
   {
    "name": "Haigha",
    "by": "DICTO",
    "first": "#65",
-   "d": "D96"
+   "d": "D96",
+   "desc": "the 120-cell's edge-first slice R33, the only slice with nine-sided faces"
   },
   {
    "name": "Hamlet",
    "by": "DICTO",
    "first": "#80",
-   "d": "D108"
+   "d": "D108",
+   "desc": "the fifth step of the antipedal growth rule from the Ogdoecontahedron: 452 corners, 270 faces, Ih"
   },
   {
    "name": "Hatta",
    "by": "DICTO",
    "first": "#65",
-   "d": "D97"
+   "d": "D97",
+   "desc": "the 120-cell's edge-first slice R35, the second slice with 114 corners"
   },
   {
    "name": "DICTO Hecatogdoecontahedron",
    "by": "DICTO",
-   "first": "#34a"
+   "first": "#34a",
+   "desc": "the compound of the Hecatodihedron and the Ogdoecontahedron, polar partners interlocked at the truncated icosahedron's midsphere"
   },
   {
    "name": "DICTO Hex Aktis",
    "by": "DICTO",
    "first": "#43",
-   "d": "D54"
+   "d": "D54",
+   "desc": "one of the 20 face pyramids over the hexagons of the Ogdoecontahedron, apex at its centre"
   },
   {
    "name": "DICTO Hexa",
    "by": "DICTO",
-   "first": "#18"
+   "first": "#18",
+   "desc": "a cube of eight overlapping Jewels with 24 low roofs; with its partner solid it fills space 5 : 3"
   },
   {
    "name": "DICTO Hexa Jewel",
    "by": "DICTO",
    "first": "#18",
-   "d": "D11"
+   "d": "D11",
+   "desc": "one of the eight exact Jewels, passing through each other on a 2 × 2 × 2 block, forming the Hexa"
   },
   {
    "name": "DICTO Hexa-Key",
    "by": "DICTO",
    "first": "#18",
-   "d": "D10"
+   "d": "D10",
+   "desc": "the single solid filling the space between Hexas in their face-centred cubic packing: eight stella octangulas and twelve double roofs"
   },
   {
    "name": "Hexagonal Cleo",
    "by": "DICTO",
    "first": "#38",
-   "d": "D43"
+   "d": "D43",
+   "desc": "a hexagonal pyramid on an Ogdoecontahedron hexagon, apex at a three-fold corner of the enclosing rhombic triacontahedron"
   },
   {
    "name": "Hexagonality Law",
    "by": "DICTO",
-   "first": "#66"
+   "first": "#66",
+   "desc": "a law: every count and volume of pieces in a close-packed stacking is linear in the share of hexagonal layers"
   },
   {
    "name": "HexOct",
    "by": "DICTO",
    "first": "#75",
-   "aka": "Endless Stack Cell"
+   "aka": "Endless Stack Cell",
+   "desc": "the two layer tiles, c-tile and h-tile, one ball's share each, such that every close-packed stacking is a string of them"
   },
   {
    "name": "HexOct c-tile",
    "by": "DICTO",
    "first": "#75",
    "d": "D110",
-   "aka": "λ = 1/10"
+   "aka": "λ = 1/10",
+   "desc": "one ball's share of a cubic layer at weight 1/10: four Rule of Halves pieces, two towers touching at the ball"
   },
   {
    "name": "HexOct family",
    "by": "DICTO (#86)",
    "first": "#86",
-   "aka": "members A–E by weight"
+   "aka": "members A–E by weight",
+   "desc": "five single-solid c/h tile pairs, A to E by weight, obtained by shifting one c-tile tower one lattice step"
   },
   {
    "name": "HexOct h-tile",
    "by": "DICTO",
    "first": "#75",
    "d": "D111",
-   "aka": "λ = 1/10"
+   "aka": "λ = 1/10",
+   "desc": "one ball's share of a hexagonal layer at weight 1/10: four Rule of Halves pieces forming one solid; volume 1/√2"
   },
   {
    "name": "HexOct-K",
    "by": "DICTO",
    "first": "#75",
-   "aka": "keyed HexOct tiles"
+   "aka": "keyed HexOct tiles",
+   "desc": "the keyed versions of the two layer tiles, proposed as pieces that can compute"
   },
   {
    "name": "Humpty Dumpty",
    "by": "DICTO",
    "first": "#63",
-   "d": "D85"
+   "d": "D85",
+   "desc": "the cell-first section of the 600-cell at height (2 + √5)/2: a convex egg of 92 triangles with tetrahedral symmetry"
   },
   {
    "name": "Ian Dury",
    "by": "DICTO",
    "first": "#56",
-   "d": "D78"
+   "d": "D78",
+   "desc": "the tetrahedral-hole piece of the twinned (hexagonal) octet at the weight stop 5/24, beside the 60° rhombohedron"
   },
   {
    "name": "Ian Dury-K, Rhombo-K, Sonsam-K, Lahdeli-K",
    "by": "DICTO",
    "first": "#56",
-   "aka": "the -K (keyed) forms"
+   "aka": "the -K (keyed) forms",
+   "desc": "keyed forms of the twinned-octet pieces, made by moving caps between neighbours; Rhombo-K is the 60° rhombohedron grown into a six-pointed star"
   },
   {
    "name": "DICTO-ICOSA star",
    "by": "DICTO",
    "first": "#29",
-   "aka": "the DICTO-Star with a pyramid on each of its 152 free faces"
+   "aka": "the DICTO-Star with a pyramid on each of its 152 free faces",
+   "desc": "an icosidodecahedron with dodecahedra on its pentagons and J63 on its triangles, plus an equal-edged pyramid on each of 152 free faces"
   },
   {
    "name": "Icosaxes",
    "by": "DICTO",
    "first": "#48",
    "aka": "Greater Golden Cut Octahedron (#88)",
-   "note": "shape known: Koca et al. 2015, truncated octahedron x = τ"
+   "note": "shape known: Koca et al. 2015, truncated octahedron x = τ",
+   "desc": "the octahedron truncated at x = τ, 8 hexagons and 6 squares: an icosahedron's golden split; fills space with the Unborn Axes"
   },
   {
    "name": "Icosaxes Bloom, Bud and Seed",
    "by": "DICTO (working names)",
    "first": "#59",
-   "aka": "also Lotus Jewel Bloom, Bud, Seed"
+   "aka": "also Lotus Jewel Bloom, Bud, Seed",
+   "desc": "twenty Icosaxes on a dodecahedron's corners slid inwards: first touch, closed round a hollow at 1/φ, one solid at 1/3"
   },
   {
    "name": "Icosaxes Hexa",
    "by": "DICTO",
-   "first": "#59"
+   "first": "#59",
+   "desc": "one closed solid of eight Icosaxes on a cube's corners round one Unborn Axes, equal to nine Icosaxes passing through each other"
   },
   {
    "name": "DICTO Interlock sets 1 and 2",
    "by": "DICTO",
    "first": "#33",
-   "aka": "Dharma-Ends, Dharma-Middle"
+   "aka": "Dharma-Ends, Dharma-Middle",
+   "desc": "the two dissections cut where the Spheres of Dharma cycle and its inside-out twin share one space: 536 pieces (ends), 502 (middle)"
   },
   {
    "name": "Jabberwock",
    "by": "DICTO",
    "first": "#63",
-   "d": "D88"
+   "d": "D88",
+   "desc": "the vertex-first, largest all-triangle slice of the 600-cell: 72 corners, 140 triangles"
   },
   {
    "name": "Janus c/h pieces",
    "by": "DICTO",
-   "first": "#57"
+   "first": "#57",
+   "desc": "pieces at a hole between a cubic and a hexagonal layer, half cubic-stacking piece and half hexagonal-stacking piece"
   },
   {
    "name": "DICTO Janus c/h Pyrochlore",
    "by": "DICTO",
-   "first": "#60"
+   "first": "#60",
+   "desc": "the Rule of Halves carried to the pyrochlore network of corner-sharing tetrahedra at the bond midpoints of diamond-like crystals, in every stacking"
   },
   {
    "name": "DICTO Jewel",
    "by": "DICTO",
    "first": "#41",
    "d": "D4",
-   "aka": "Dragon Jewel (first name)"
+   "aka": "Dragon Jewel (first name)",
+   "desc": "Euclid's dodecahedron (cube plus six roofs) carved by its neighbours' stella octangulas: 60 faces, 12 thick-Penrose-rhombus windows and 48 triangles"
   },
   {
    "name": "DICTO Jewel-Tetra, Jewel-Octa, Jewel-Rhombi",
    "by": "DICTO",
    "first": "#41",
-   "aka": "first called the DICTO Jewel tetrahedral / octahedral cluster (F15)"
+   "aka": "first called the DICTO Jewel tetrahedral / octahedral cluster (F15)",
+   "desc": "three Jewel clusters as single solids: four Jewels touching; six round a sealed stella; eight on a rhombohedron round a stella"
   },
   {
    "name": "Jubjub",
    "by": "DICTO",
    "first": "#63",
-   "d": "D93"
+   "d": "D93",
+   "desc": "a face-first all-triangle slice of the 600-cell: 30 corners, 56 triangles"
   },
   {
    "name": "Julias (G1–G10)",
    "by": "DICTO",
    "first": "#54",
-   "note": "in tribute to Júlia Pimentel"
+   "note": "in tribute to Júlia Pimentel",
+   "desc": "the step pieces G1 to G10 of the gnomon of the twelve-station golden icosahedral cycle"
   },
   {
    "name": "Kagemusha",
    "by": "DICTO",
    "first": "#62",
    "d": "D86",
-   "aka": "Shadow-17"
+   "aka": "Shadow-17",
+   "desc": "two Johnson solids J11 (gyroelongated pentagonal pyramids) glued on their pentagons; the equal-edged form of the 600-cell's outer edge-first slices"
   },
   {
    "name": "Kagome Hulls",
    "by": "DICTO",
-   "first": "#17"
+   "first": "#17",
+   "desc": "corner-sharing networks of solid clusters in the Stella–Jewel and Sunstar lattices, each shared piece in at most two clusters"
   },
   {
    "name": "DICTO-Kepler golden truncations",
    "by": "DICTO",
    "first": "#88",
-   "aka": "the ten Greater and Lesser Golden Cut Platonic solids (D119–D126 with Icosaxes and Unborn Axes)"
+   "aka": "the ten Greater and Lesser Golden Cut Platonic solids (D119–D126 with Icosaxes and Unborn Axes)",
+   "desc": "the ten solids from cutting each Platonic solid's corners at the two depths that make every face a golden truncated polygon"
   },
   {
    "name": "DICTO Kepler–Poinsot–UP Cycle",
    "by": "DICTO",
-   "first": "#38a"
+   "first": "#38a",
+   "desc": "Kepler's great and small stellated dodecahedra nested in an endless φ³ cycle, every shell filled exactly by one pattern"
   },
   {
    "name": "Keyaxes",
    "by": "DICTO",
    "first": "#59",
-   "d": "D83"
+   "d": "D83",
+   "desc": "the Icosaxes with two Tricap dents and six mirrored Tricap keys, volume φ²: the piece of the keyed Icosaxes Kagome network"
   },
   {
    "name": "Keyed octahedron",
    "by": "DICTO",
    "first": "#37",
    "d": "D34",
-   "aka": "golden-key octet"
+   "aka": "golden-key octet",
+   "desc": "the octet's octahedron with keys poking into neighbouring tetrahedra, key corners at golden-section points; with a dented tetrahedron it fills space"
   },
   {
    "name": "King of Pentacles",
    "by": "DICTO",
    "first": "#19",
-   "d": "D14"
+   "d": "D14",
+   "desc": "the piece on each icosidodecahedron pentagon in the Stella-Corona: a J2, 10 AXE, 5 CLEO and a small J2, pentagram on top"
   },
   {
    "name": "Kion",
    "by": "DICTO",
    "first": "#29",
-   "d": "D23"
+   "d": "D23",
+   "desc": "the convex piece of a dodecahedron beyond one face of its core icosahedron, inside that face's central cone: 10 corners, 7 faces"
   },
   {
    "name": "DICTO KRE",
    "by": "DICTO",
    "first": "#39",
-   "d": "D45"
+   "d": "D45",
+   "desc": "the first upward step from the Ogdoecontahedron by the antipedal rule: 30 rhombi and 60 kites, the rhombic enneacontahedron's combinatorics"
   },
   {
    "name": "Kyushindo series",
    "by": "DICTO",
-   "first": "#43"
+   "first": "#43",
+   "desc": "the series of constructions of tower shells round exact cores growing in Fibonacci beats, one antipedal step per beat"
   },
   {
    "name": "Lahdeli",
    "by": "DICTO",
    "first": "#56",
-   "d": "D77"
+   "d": "D77",
+   "desc": "the octahedral-hole piece of the twinned (hexagonal) octet at its equal-volume point, the twin of Delilah"
   },
   {
    "name": "Lesser Golden Cut Cube",
    "by": "DICTO",
    "first": "#88",
    "d": "D124",
-   "aka": "Galois twin (#90)"
+   "aka": "Galois twin (#90)",
+   "desc": "the cube with every corner cut at x ≈ 0.2332 so squares become golden octagons, original sides long: 6 octagons, 8 triangles"
   },
   {
    "name": "Lesser Golden Cut Dodecahedron",
    "by": "DICTO",
    "first": "#88",
-   "d": "D120"
+   "d": "D120",
+   "desc": "the dodecahedron with corners cut at x = (7 − √5)/22, pentagons becoming golden decagons (original sides long); 12 decagons, 20 triangles"
   },
   {
    "name": "Lesser Golden Cut Icosahedron",
    "by": "DICTO",
    "first": "#88",
-   "d": "D122"
+   "d": "D122",
+   "desc": "the icosahedron with corners cut at x = 1/(φ√5), triangles becoming golden truncated triangles (original sides long); 12 pentagons added"
   },
   {
    "name": "Lesser Golden Cut Rhombic Dodecahedron",
    "by": "DICTO",
    "first": "#89",
-   "d": "D128"
+   "d": "D128",
+   "desc": "the rhombic dodecahedron cut so every rhombus becomes a golden octagon, original sides long: 12 octagons, 6 squares, 8 triangles"
   },
   {
    "name": "Lesser Golden Cut Rhombic Triacontahedron",
    "by": "DICTO",
    "first": "#89",
-   "d": "D130"
+   "d": "D130",
+   "desc": "the rhombic triacontahedron cut so every rhombus becomes a golden octagon, original sides long: 30 octagons, 12 pentagons, 20 triangles"
   },
   {
    "name": "Lesser Golden Cut Snub Dodecahedron L/R",
    "by": "DICTO",
    "first": "#89",
-   "d": "D132"
+   "d": "D132",
+   "desc": "the snub dodecahedron, both hands, with corners cut at x = 1/(φ√5): golden truncated triangles, regular decagons, 300 corners"
   },
   {
    "name": "Lesser Golden Cut Tetrahedron",
    "by": "DICTO",
    "first": "#88",
-   "d": "D126"
+   "d": "D126",
+   "desc": "the tetrahedron with corners cut at x = 1/(φ√5) so faces become golden truncated triangles, original sides long; 12 corners"
   },
   {
    "name": "Lion",
    "by": "DICTO",
    "first": "#63",
-   "d": "D87"
+   "d": "D87",
+   "desc": "the vertex-first central slice of the 600-cell: 42 corners, 80 triangles, icosahedral symmetry"
   },
   {
    "name": "Lotus Hexa",
    "by": "DICTO",
-   "first": "#59"
+   "first": "#59",
+   "desc": "the keyed form of the Icosaxes Hexa, with the Tricaps turned outward; its centre lies outside 24 of its face planes"
   },
   {
    "name": "Lotus Jewel",
    "by": "DICTO",
    "first": "F21",
    "d": "D15",
-   "aka": "clawed icosahedron"
+   "aka": "clawed icosahedron",
+   "desc": "an icosahedron with eight Tricaps bitten out by neighbouring dodecahedra in a simple cubic lattice; 36 faces; fills space with them"
   },
   {
    "name": "Lotus Jewel Axes",
    "by": "DICTO",
    "first": "#48",
-   "d": "D69"
+   "d": "D69",
+   "desc": "the Icosaxes with eight Tricap dents; with its keyed partner the Dodecaxes it fills space"
   },
   {
    "name": "Lotus seed",
    "by": "DICTO",
    "first": "#22",
-   "aka": "Icosa-13"
+   "aka": "Icosa-13",
+   "desc": "a cluster of twelve icosahedra round a small central one, every gap filled exactly by AXE, CLEO and FUJI pieces"
   },
   {
    "name": "Mad Hatter",
    "by": "DICTO",
    "first": "#63",
-   "d": "D91"
+   "d": "D91",
+   "desc": "a face-first slice of the 600-cell at the midpoint of a gap: one of the four distinct 144-corner slices"
   },
   {
    "name": "Maedate, Kuwagata (notch pieces)",
    "by": "DICTO",
-   "first": "#85"
+   "first": "#85",
+   "desc": "two fillings of Kagemusha's notches in spike growth: an irregular octahedron over two notch spikes, or two pyramids meeting face to face"
   },
   {
    "name": "March Hare",
    "by": "DICTO",
    "first": "#63",
-   "d": "D92"
+   "d": "D92",
+   "desc": "a face-first slice of the 600-cell at the midpoint of a gap, with 144 corners"
   },
   {
    "name": "DICTO Metaxyhexecontahedron",
    "by": "DICTO",
    "first": "#35a",
    "d": "D30",
-   "aka": "M"
+   "aka": "M",
+   "desc": "a convex solid of 60 identical triangles and 32 corners, with an insphere; the dodecahedron–icosahedron hull in the golden cycle's last gap"
   },
   {
    "name": "Mirror middle piece Mg",
    "by": "DICTO",
    "first": "#37a",
-   "d": "D39"
+   "d": "D39",
+   "desc": "the mirror-symmetric edge piece at a twin layer of the gyrated octet: hull of two facing five-kite stars minus two Ogdoecontahedra"
   },
   {
    "name": "Monkey Staff",
    "by": "DICTO",
    "first": "#27",
-   "d": "D20"
+   "d": "D20",
+   "desc": "a twisted pentagonal frustum (pentagons of edge 1/φ and 1, ten side triangles), a piece of the Spheres of Dharma shells"
   },
   {
    "name": "Monkey Staff B",
    "by": "DICTO",
    "first": "#38",
-   "d": "D44"
+   "d": "D44",
+   "desc": "a twisted pentagonal frustum, twelve of which fill the gap between the Cleo-star dodecahedron and the tightest icosidodecahedron round it"
   },
   {
    "name": "Mono-Strut, Mono-Length, Disc and Isofin Vacuus",
    "by": "DICTO",
-   "first": "#87"
+   "first": "#87",
+   "desc": "classes of centre-pyramid frames: all centre struts one length; struts and edges one length; containing a central polygon disc; all fins congruent"
   },
   {
    "name": "DICTO OCD Stella",
    "by": "DICTO",
    "first": "#31a",
-   "d": "D29"
+   "d": "D29",
+   "desc": "the icosahedral hull of the adapter pieces round one Ogdoecontahedron in body-centred cubic packing, cut along 8 joints; 50 faces"
   },
   {
    "name": "OG turned out",
    "by": "DICTO",
-   "first": "#43"
+   "first": "#43",
+   "desc": "the Ogdoecontahedron's face pyramids flipped outward over their faces, shortened by the golden step and re-hulled, repeated without end"
   },
   {
    "name": "DICTO Ogdoecontahedron",
    "by": "DICTO",
    "first": "#31",
    "d": "D28",
-   "aka": "OG; OCD; O"
+   "aka": "OG; OCD; O",
+   "desc": "a solid of 80 faces, 20 regular hexagons and 60 kites, with full icosahedral symmetry and 102 corners"
   },
   {
    "name": "Oktaktis",
    "by": "DICTO",
    "first": "#43",
-   "aka": "the Cleo-Icos as the OTT’s octahedral ray"
+   "aka": "the Cleo-Icos as the OTT’s octahedral ray",
+   "desc": "one of three ray (central face pyramid) shapes of the OTT, proved to be exactly a Cleo-Icos"
   },
   {
    "name": "Ophelia",
    "by": "DICTO",
    "first": "#80",
-   "d": "D109"
+   "d": "D109",
+   "desc": "step 6 of the antipedal growth chain from the Ogdoecontahedron, after Hamlet: 642 corners, 440 faces, icosahedral symmetry"
   },
   {
    "name": "DICTO OTT",
    "by": "DICTO",
    "first": "#37a",
    "d": "D38",
-   "aka": "Octahedrally Truncated Triacontahedron"
+   "aka": "Octahedrally Truncated Triacontahedron",
+   "desc": "the rhombic triacontahedron with its eight three-fold corners on the octahedron's face directions cut off; it twins and fits every stacking"
   },
   {
    "name": "DICTO Palintriacontahedron",
    "by": "DICTO",
    "first": "#35b",
-   "d": "D31"
+   "d": "D31",
+   "desc": "a solid of 60 triangles and 32 corners on the rhombic triacontahedron's axes, the triacontahedron turned back on itself"
   },
   {
    "name": "Penta-cleo",
    "by": "DICTO",
    "first": "#20",
-   "d": "D66"
+   "d": "D66",
+   "desc": "a tetrahedron, one fifth of the icosidodecahedron's central pentagonal pyramid; five fill each pentagonal window round the CLEOs",
+   "desc_unsure": true
   },
   {
    "name": "DICTO PHE",
    "by": "DICTO",
    "first": "#39",
-   "d": "D46"
+   "d": "D46",
+   "desc": "the second upward step from the Ogdoecontahedron by the antipedal rule, with the face counts of the Goldberg polyhedron GP(3,0)"
   },
   {
    "name": "Pimentels (G11)",
    "by": "DICTO",
    "first": "#54",
-   "note": "in tribute to Júlia Pimentel"
+   "note": "in tribute to Júlia Pimentel",
+   "desc": "the 60 triangular bipyramids of the closing step G11 of the golden icosahedral cycle's gnomon"
   },
   {
    "name": "PiTet (Universal PiTet)",
    "by": "DICTO",
    "first": "#38",
-   "aka": "Pi for the spherical progression, Tet for the triangles"
+   "aka": "Pi for the spherical progression, Tet for the triangles",
+   "desc": "a rule growing each shell from the last by the antipedal step; from the Cleo star, an endless four-solid cycle, triangular walls"
   },
   {
    "name": "Polar Cleo Towers",
    "by": "DICTO",
    "first": "#43",
    "d": "D75",
-   "aka": "7 tower pieces + core ray"
+   "aka": "7 tower pieces + core ray",
+   "desc": "the polar of the Cleo Towers shells: seven tower pieces and a core ray, with the most Fibonacci beats deepest"
   },
   {
    "name": "Red King",
    "by": "DICTO",
    "first": "#65",
-   "d": "D98"
+   "d": "D98",
+   "desc": "the pentagon-first central slice of the 120-cell, with two regular decagons; the polar of the 600-cell's edge-first shadow"
   },
   {
    "name": "Red Knight",
    "by": "DICTO",
    "first": "#65",
-   "d": "D100"
+   "d": "D100",
+   "desc": "a cell-first slice of the 120-cell at the midpoint of a gap, with 120 corners"
   },
   {
    "name": "Red Queen",
    "by": "DICTO",
    "first": "#65",
-   "aka": "the 120-cell"
+   "aka": "the 120-cell",
+   "desc": "the 120-cell, built exactly as the polar of the 600-cell: 120 dodecahedra in nine layers round one"
   },
   {
    "name": "Regular-hexagon elongated dodecahedron",
    "by": "known (Grünbaum 2010); found independently by DICTO",
-   "first": "F5"
+   "first": "F5",
+   "desc": "the equal-edged truncated octahedron with one zone removed: Fedorov's elongated dodecahedron with regular hexagons, reached by the Bain stretch"
   },
   {
    "name": "Reuleaux dodecahedron, icosahedron, cube and octahedron",
    "by": "DICTO (names by look)",
    "first": "#45",
-   "note": "not Reuleaux polyhedra in the strict sense (#45)"
+   "note": "not Reuleaux polyhedra in the strict sense (#45)",
+   "desc": "rounded bodies formed where balls centred at a Platonic solid's corners overlap, each named for the dual solid it resembles"
   },
   {
    "name": "Ritsudō cycle",
    "by": "DICTO",
    "first": "#23",
-   "aka": "the Spheres of Dharma nesting"
+   "aka": "the Spheres of Dharma nesting",
+   "desc": "the endless nesting icosahedron, icosidodecahedron, dodecahedron, truncated icosahedron, rhombic triacontahedron, icosahedron φ³ larger, each layer filled exactly"
   },
   {
    "name": "Rule of Halves",
    "by": "DICTO",
-   "first": "#57"
+   "first": "#57",
+   "desc": "a rule that in any close-packed stacking each hole's piece is borrowed whole or in halves from the cubic and hexagonal stackings"
   },
   {
    "name": "Samson",
    "by": "DICTO",
    "first": "#51",
-   "d": "D71"
+   "d": "D71",
+   "desc": "the cube with four alternate corners cut at the Delian bond, equal in volume to the octahedron Delilah; together they fill space"
   },
   {
    "name": "Shield",
    "by": "DICTO",
    "first": "#28",
-   "d": "D21"
+   "d": "D21",
+   "desc": "a low hexagonal pyramid on a truncated-icosahedron hexagon, raised until neighbouring triangles merge into rhombi"
   },
   {
    "name": "DICTO skewed elongated dodecahedron ED F16",
    "by": "DICTO",
    "first": "F7",
-   "d": "D2"
+   "d": "D2",
+   "desc": "an equal-edged space-filling elongated dodecahedron on the skewed lattice: 4 rhombi of 60°, 4 of 72°, 4 hexagons; volume φ² + 2"
   },
   {
    "name": "DICTO skewed elongated dodecahedron ED F18",
    "by": "DICTO",
    "first": "F7",
-   "d": "D3"
+   "d": "D3",
+   "desc": "an equal-edged space-filling elongated dodecahedron on the skewed lattice: 6 rhombi of 60°, 2 of 72°, 4 hexagons; volume φ³ + ½"
   },
   {
    "name": "DICTO skewed rhombic dodecahedron",
    "by": "DICTO",
    "first": "F1",
-   "d": "D1"
+   "d": "D1",
+   "desc": "an equal-edged space-filling rhombic dodecahedron of 6 rhombi of 60° and 6 of 72°, volume φ²; a linear image of Bilinski's"
   },
   {
    "name": "Slice-48, 12-dented icosahedron, augmented dodecahedron",
    "by": "DICTO (#62)",
-   "first": "#62"
+   "first": "#62",
+   "desc": "equal-edged non-convex rebuilds of 600-cell slices and shadows: a 92-triangle tetrahedral solid, the dented icosahedron, the augmented dodecahedron"
   },
   {
    "name": "Sonsam",
    "by": "DICTO",
    "first": "#56",
-   "d": "D76"
+   "d": "D76",
+   "desc": "the tetrahedral-hole piece of the hexagonal close packing (twinned octet) at its equal-volume point; 19 corners, mirror image of Samson"
   },
   {
    "name": "Sphen",
    "by": "DICTO",
    "first": "#29",
-   "d": "D26"
+   "d": "D26",
+   "desc": "tetrahedron cut from the triangular antiprisms of the icosidodecahedron's hollow, on a shell edge; two parts in the 3:2:1 volume split"
   },
   {
    "name": "Sphenion",
    "by": "DICTO",
    "first": "#29",
-   "d": "D27"
+   "d": "D27",
+   "desc": "tetrahedron cut from the same triangular antiprisms, on a core edge; the smallest part (one sixth) of each antiprism"
   },
   {
    "name": "Spheres of Dharma",
    "by": "DICTO",
-   "first": "#23"
+   "first": "#23",
+   "desc": "six icosahedral solids nested from icosahedron to icosahedron φ³ larger, every gap filled exactly, repeating without end"
   },
   {
    "name": "DICTO Spheroid-13 RD",
    "by": "DICTO",
-   "first": "#25"
+   "first": "#25",
+   "desc": "thirteen-cell block of the rhombic dodecahedron honeycomb, reshaped to near-roundness with flat faces, still keyed, filling space by translation"
   },
   {
    "name": "Splash Rules",
    "by": "DICTO",
    "first": "#61",
-   "note": "rule finder, 27 October 2026 (#84)"
+   "note": "rule finder, 27 October 2026 (#84)",
+   "desc": "a rule-finder method that searches pictures of computed values along a slider for simple exact rules (halves, thirds, sums)"
   },
   {
    "name": "DICTO-Star",
    "by": "DICTO",
-   "first": "#14"
+   "first": "#14",
+   "desc": "icosidodecahedron with a regular dodecahedron on each pentagon and a tridiminished icosahedron (J63) on each triangle; 33 pieces closing exactly"
   },
   {
    "name": "Star Chain Reaction",
    "by": "DICTO",
    "first": "F12",
-   "note": "told in #42"
+   "note": "told in #42",
+   "desc": "endless nesting: a dodecahedron's great stellated core reaches the outer corners and holds a whole Sunstar smaller by φ, and so on"
   },
   {
    "name": "Star Halo",
    "by": "DICTO",
    "first": "#78",
-   "d": "D104"
+   "d": "D104",
+   "desc": "hull of the TI Star's 32 tips: a non-Catalan pentakis dodecahedron, five-fold corners 1.0265 times further out than six-fold"
   },
   {
    "name": "Stella–Jewel Lattice",
    "by": "DICTO",
-   "first": "#17"
+   "first": "#17",
+   "desc": "checkerboard filling of a cubic grid: rhombic-roofed cube solids (Jewels) on the even cubes, stella octangulas on the odd cubes"
   },
   {
    "name": "Stretched dodecahedron",
    "by": "DICTO",
    "first": "F11",
-   "d": "D5"
+   "d": "D5",
+   "desc": "hull of a dodecahedron and its copy slid along a two-fold axis: 8 pentagons, 4 hexagons, 2 rectangles"
   },
   {
    "name": "DICTO stretched solids (equal-edged, telescoped)",
    "by": "DICTO",
-   "first": "#49"
+   "first": "#49",
+   "desc": "family of solids swept by sliding an equal-edged solid along a line: one edge length (equal-edged) or any other length (telescoped)"
   },
   {
    "name": "Stupa",
    "by": "DICTO",
    "first": "#27",
-   "d": "D19"
+   "d": "D19",
+   "desc": "pentagonal pyramid (base φ/2, sides √3/2, apex inward) filling the twelve dimples of the dimpled icosidodecahedron"
   },
   {
    "name": "Sunstar",
    "by": "DICTO",
    "first": "F12",
-   "note": "a dodecahedron with the Dogstars of its six face-neighbour cells (#42)"
+   "note": "a dodecahedron with the Dogstars of its six face-neighbour cells (#42)",
+   "desc": "a regular dodecahedron together with the Dogstars (Hart's stellation 8) of its six face-neighbouring cells in the cubic grid"
   },
   {
    "name": "Sunstar Lattice, Sunstar-Tetra, Sunstar-Octa, Sunstar-Rhombi, Sunstar-Hexa",
    "by": "DICTO",
    "first": "#42",
-   "aka": "Sunstar clusters (F16)"
+   "aka": "Sunstar clusters (F16)",
+   "desc": "filling with regular dodecahedra on even cubes, Dogstars on odd cubes; its 4-, 6- and 8-dodecahedron clusters made single solids"
   },
   {
    "name": "DICTO Sunstar-Hexa-Key",
    "by": "DICTO",
    "first": "#42",
-   "d": "D53"
+   "d": "D53",
+   "desc": "the single solid filling the space between eight-dodecahedron blocks (Sunstar-Hexa); the two fill space in an irrational volume ratio"
   },
   {
    "name": "Swap Rule",
    "by": "DICTO",
-   "first": "#61"
+   "first": "#61",
+   "desc": "a rule that, when stacking layers are squashed or stretched, the two mixed pieces always add up to the two pure ones"
   },
   {
    "name": "Tetartoid core",
    "by": "DICTO",
    "first": "#37",
    "d": "D36",
-   "aka": "golden envelope network"
+   "aka": "golden envelope network",
+   "desc": "tetartoid (twelve congruent pentagons, symmetry T) at the centre of the grown piece in the golden-envelope octet kit"
   },
   {
    "name": "DICTO Tetraktis",
    "by": "DICTO",
    "first": "#43",
    "d": "D57",
-   "aka": "OTT rhombic ray"
+   "aka": "OTT rhombic ray",
+   "desc": "four-sided centre pyramid on a whole rhombus face of the OTT (triacontahedron cut by its octahedron); 6 in its 38-ray split"
   },
   {
    "name": "Theaetetus (world)",
    "by": "DICTO",
    "first": "#29",
-   "note": "after Theaetetus of Athens"
+   "note": "after Theaetetus of Athens",
+   "desc": "icosahedron held fixed inside the icosidodecahedron by twenty inward pyramids, grown to the 102-faced Hecatodihedron in two exact stories"
   },
   {
    "name": "TI Star",
    "by": "DICTO",
    "first": "#78",
-   "aka": "Truncated Icosahedron Star; Golden TI Star (D103) at s = φ"
+   "aka": "Truncated Icosahedron Star; Golden TI Star (D103) at s = φ",
+   "desc": "truncated icosahedron with its 32 centre pyramids turned outward as spikes, tips at s times face centres"
   },
   {
    "name": "TI Star core",
    "by": "DICTO",
    "first": "#78",
-   "d": "D105"
+   "d": "D105",
+   "desc": "the icosahedron truncated at (10 − √5)/19 of each edge, the core of every turn of the TI Star cycles"
   },
   {
    "name": "DICTO TPH",
    "by": "DICTO",
    "first": "#39",
    "d": "D49",
-   "aka": "Triangle-Pentagon Hecatontatriacontadihedron"
+   "aka": "Triangle-Pentagon Hecatontatriacontadihedron",
+   "desc": "first pedal (inward) step from the Ogdoecontahedron: 80 corners, 120 isosceles triangles and 12 regular pentagons, icosahedral symmetry"
   },
   {
    "name": "DICTO TPP",
    "by": "DICTO",
    "first": "#39",
-   "d": "D47"
+   "d": "D47",
+   "desc": "third antipedal (outward) step from the Ogdoecontahedron: 212 corners, 60 triangles and 120 pentagons of two kinds"
   },
   {
    "name": "DICTO TQ-320",
    "by": "DICTO",
    "first": "#43",
-   "d": "D59"
+   "d": "D59",
+   "desc": "sixth pedal step down from the Ogdoecontahedron: 320 faces, 240 triangles (20 regular) and 60 quadrilaterals; icosahedral"
   },
   {
    "name": "DICTO TQ-500",
    "by": "DICTO",
    "first": "#43",
-   "d": "D61"
+   "d": "D61",
+   "desc": "eighth pedal step down from the Ogdoecontahedron: 500 faces, 360 triangles (20 regular) and 120 quadrilaterals; icosahedral"
   },
   {
    "name": "DICTO TQD-732",
    "by": "DICTO",
    "first": "#43",
-   "d": "D62"
+   "d": "D62",
+   "desc": "ninth pedal step down from the Ogdoecontahedron: 732 faces, 540 triangles, 180 quadrilaterals and 12 decagons"
   },
   {
    "name": "DICTO TQH",
    "by": "DICTO",
    "first": "#39",
    "d": "D50",
-   "aka": "Triangle-Quadrilateral-Hexagon Polyhedron"
+   "aka": "Triangle-Quadrilateral-Hexagon Polyhedron",
+   "desc": "second pedal step down from the Ogdoecontahedron: 132 corners, 60 triangles, 60 quadrilaterals, 20 regular hexagons"
   },
   {
    "name": "DICTO TQHD",
    "by": "DICTO",
    "first": "#39",
    "d": "D52",
-   "aka": "Triangle-Quadrilateral-Hexagon Diacosihedron"
+   "aka": "Triangle-Quadrilateral-Hexagon Diacosihedron",
+   "desc": "fourth pedal step down from the Ogdoecontahedron: 162 corners, 200 faces (120 triangles, 60 quadrilaterals, 20 regular hexagons)"
   },
   {
    "name": "DICTO TQHD-662",
    "by": "DICTO",
    "first": "#43",
-   "d": "D63"
+   "d": "D63",
+   "desc": "tenth pedal step down from the Ogdoecontahedron: 662 faces, 480 triangles, 150 quadrilaterals, 20 hexagons, 12 decagons"
   },
   {
    "name": "DICTO TQP",
    "by": "DICTO",
    "first": "#39",
    "d": "D51",
-   "aka": "Triangle-Quadrilateral-Pentagon Polyhedron"
+   "aka": "Triangle-Quadrilateral-Pentagon Polyhedron",
+   "desc": "third pedal step down from the Ogdoecontahedron: 140 corners, triangles, 30 rhombi, quadrilaterals and 12 regular pentagons"
   },
   {
    "name": "DICTO TQP-252",
    "by": "DICTO",
    "first": "#43",
-   "d": "D58"
+   "d": "D58",
+   "desc": "fifth pedal step down from the Ogdoecontahedron: 252 faces, 120 triangles, 120 quadrilaterals, 12 regular pentagons"
   },
   {
    "name": "DICTO TQP-402",
    "by": "DICTO",
    "first": "#43",
-   "d": "D60"
+   "d": "D60",
+   "desc": "seventh pedal step down from the Ogdoecontahedron: 402 faces, 300 triangles, 90 quadrilaterals, 12 regular pentagons"
   },
   {
    "name": "DICTO TQP-672",
    "by": "DICTO",
    "first": "#43",
-   "d": "D64"
+   "d": "D64",
+   "desc": "eleventh pedal step down from the Ogdoecontahedron: 672 faces, 420 triangles, 240 quadrilaterals, 12 regular pentagons"
   },
   {
    "name": "DICTO Triaktis",
    "by": "DICTO",
    "first": "#43",
    "d": "D56",
-   "aka": "OTT triangle ray"
+   "aka": "OTT triangle ray",
+   "desc": "three-sided centre pyramid on a half-rhombus face of the OTT (triacontahedron cut by its octahedron); 24 in its 38-ray split"
   },
   {
    "name": "Tricap",
    "by": "classical",
    "first": "#48",
-   "aka": "Mosseri–Sadoc tile t3"
+   "aka": "Mosseri–Sadoc tile t3",
+   "desc": "Mosseri–Sadoc tetrahedral tile t3 of icosahedral tilings; used as key and dent shape in the golden-split pieces"
   },
   {
    "name": "Triskelion Tetrahedron",
    "by": "DICTO",
    "first": "#57",
    "d": "D82",
-   "aka": "TT"
+   "aka": "TT",
+   "desc": "the cubic octet's tetrahedral piece at weight 5/24, one member of Samson's sliding family"
   },
   {
    "name": "DICTO Truncated-Icosahedral Hecatodihedron",
    "by": "DICTO",
    "first": "#28",
    "d": "D22",
-   "aka": "DICTO Hecatodihedron; H"
+   "aka": "DICTO Hecatodihedron; H",
+   "desc": "truncated icosahedron with a low hexagonal pyramid on each hexagon: 102 faces (12 pentagons, 30 rhombi, 60 triangles), 80 corners"
   },
   {
    "name": "Tweedledee",
    "by": "DICTO",
    "first": "#63",
-   "d": "D90"
+   "d": "D90",
+   "desc": "edge-first slice of the 600-cell: 32 corners, 60 triangles, D5h symmetry; same counts as Tweedledum"
   },
   {
    "name": "Tweedledum",
    "by": "DICTO",
    "first": "#63",
-   "d": "D89"
+   "d": "D89",
+   "desc": "vertex-first slice of the 600-cell: 32 corners, 60 triangles, full icosahedral symmetry"
   },
   {
    "name": "Twisted cube",
    "by": "DICTO (#86)",
    "first": "#86",
    "d": "D112",
-   "aka": "A · HexOct 3/8 h-tile"
+   "aka": "A · HexOct 3/8 h-tile",
+   "desc": "convex 12-faced space-filler (6 squares, 6 isosceles triangles, 11 corners), two Narcissus pieces joined straight; not a parallelohedron"
   },
   {
    "name": "Unborn",
    "by": "DICTO",
    "first": "#48",
-   "aka": "the squeezed icosahedron in the cubic grid of icosahedra"
+   "aka": "the squeezed icosahedron in the cubic grid of icosahedra",
+   "desc": "squeezed icosahedron filling the cube-centre gap left when regular icosahedra are set edge to edge in a cubic grid"
   },
   {
    "name": "Unborn Axes",
    "by": "DICTO",
    "first": "#48",
    "aka": "Lesser Golden Cut Octahedron (#88)",
-   "note": "shape known: Koca et al. 2015, truncated octahedron x = 1/τ"
+   "note": "shape known: Koca et al. 2015, truncated octahedron x = 1/τ",
+   "desc": "the Unborn with twelve AXE pyramids: a convex truncated octahedron that fills space with the Icosaxes"
   },
   {
    "name": "UNITY, VENUS",
    "by": "DICTO",
    "first": "#19",
-   "aka": "UNITY: icosidodecahedron + 12 J11; VENUS its closed form (#26)"
+   "aka": "UNITY: icosidodecahedron + 12 J11; VENUS its closed form (#26)",
+   "desc": "icosidodecahedron with twelve gyroelongated pentagonal pyramids (J11) round it; its closed form fills the 20 dimples with VAJRA"
   },
   {
    "name": "DICTO Vacuus Solids",
    "by": "DICTO",
    "first": "#87",
-   "aka": "after Leonardo's vacuus bodies in Pacioli's De divina proportione"
+   "aka": "after Leonardo's vacuus bodies in Pacioli's De divina proportione",
+   "desc": "frames keeping only the fins of a solid: the flat triangle from its centre to each edge, built as sheets or struts"
   },
   {
    "name": "VAJRA",
    "by": "DICTO",
    "first": "#19",
-   "d": "D13"
+   "d": "D13",
+   "desc": "convex bipyramid closing each of the 20 dimples of the icosidodecahedron-plus-12-J11 cluster"
   },
   {
    "name": "Vajra (fine)",
    "by": "DICTO",
    "first": "#24",
-   "d": "D18"
+   "d": "D18",
+   "desc": "triangular bipyramid of the Bodhi Seed's inner pocket; 60 on the central triacontahedron make the rhombic hexecontahedron"
   },
   {
    "name": "W",
    "by": "DICTO",
    "first": "#37",
    "d": "D35",
-   "aka": "one-piece glue"
+   "aka": "one-piece glue",
+   "desc": "glue piece: the rhombic dodecahedron round an octet vertex minus the six golden envelopes biting it; fills space with the envelope"
   },
   {
    "name": "Walrus",
    "by": "DICTO",
    "first": "#65",
-   "d": "D99"
+   "d": "D99",
+   "desc": "pentagon-first slice of the 120-cell, with 120 corners"
   },
   {
    "name": "White Knight",
    "by": "DICTO",
    "first": "#65",
-   "d": "D101"
+   "d": "D101",
+   "desc": "cell-first slice of the 120-cell midway in a gap: faces of the truncated icosidodecahedron, two edge lengths"
   },
   {
    "name": "White Queen",
    "by": "DICTO",
    "first": "#63",
-   "aka": "the 600-cell"
+   "aka": "the 600-cell",
+   "desc": "the regular 600-cell, the four-dimensional polytope of 600 tetrahedra"
   },
   {
    "name": "White Rabbit",
    "by": "DICTO",
    "first": "#63",
-   "d": "D95"
+   "d": "D95",
+   "desc": "cell-first slice of the 600-cell cut midway in a gap, with 144 corners"
   },
   {
    "name": "Window Law",
    "by": "DICTO",
-   "first": "#84"
+   "first": "#84",
+   "desc": "for c/h layer stackings, any quantity fixed by g consecutive layers has a mean linear in the shares of length-g layer words"
   },
   {
    "name": "X",
    "by": "DICTO",
    "first": "#47",
    "d": "D67",
-   "aka": "cube of edge φ minus one Euclid roof (#47 connector)"
+   "aka": "cube of edge φ minus one Euclid roof (#47 connector)",
+   "desc": "non-convex connector: cube of edge φ minus one of Euclid's six roofs that build the dodecahedron"
   },
   {
    "name": "Y",
    "by": "DICTO",
    "first": "#47",
    "d": "D68",
-   "aka": "cube of edge φ plus one Euclid roof (#47 connector)"
+   "aka": "cube of edge φ plus one Euclid roof (#47 connector)",
+   "desc": "convex connector: cube of edge φ plus one Euclid roof, the dodecahedron cut by five face planes of its cube"
   },
   {
    "name": "Silence Is Golden",
    "by": "DICTO",
    "first": "Golden Ladder ch. 2",
-   "note": "chapter title: the golden stations are where the cubic tone falls silent"
+   "note": "chapter title: the golden stations are where the cubic tone falls silent",
+   "desc": "chapter title: along the octahedron-to-cube sweep the fourth-degree cubic harmonic vanishes only at golden stations"
   },
   {
    "name": "Golden Silences",
    "by": "DICTO",
    "first": "app (planned)",
-   "note": "app world: hear the sweep as a tuning instrument; the cubic tone falls silent at the golden stations (#94, Golden Ladder ch. 2)"
+   "note": "app world: hear the sweep as a tuning instrument; the cubic tone falls silent at the golden stations (#94, Golden Ladder ch. 2)",
+   "desc": "planned app world: the octahedron-to-cube sweep played as a tuning instrument, the cubic tone silent at golden stations",
+   "desc_unsure": true
   },
   {
    "name": "Narcissus",
    "what": "fixed HexOct h-piece (λ ≥ 3/8); self-mirroring (C3v); tiles space alone",
    "date": "2026-11-04",
    "by": "DICTO",
-   "first": "HexOct: Narcissus and Covenant"
+   "first": "HexOct: Narcissus and Covenant",
+   "desc": "self-mirroring ten-cornered h-layer piece (C3v) of the HexOct tiles at λ ≥ 3/8; copies of it fill space"
   },
   {
    "name": "Echo",
    "what": "ECHO IS A CUBE (checked 4 Nov: 8 corners, 6 square faces, all edges 1/√2 in ball units, all face angles 90°) — the fcc lattice’s small cube on its body diagonal; by \"one name per shape\" Echo names its ROLE (the c-layer piece, Narcissus’s companion), not a new shape — DICTO to confirm",
    "date": "2026-11-04",
    "by": "DICTO",
-   "first": "HexOct: Narcissus and Covenant"
+   "first": "HexOct: Narcissus and Covenant",
+   "desc": "role name for the cube that is the c-layer piece beside Narcissus: fcc small cube on its body diagonal",
+   "desc_unsure": true
   },
   {
    "name": "Covenant",
    "what": "DICTO 4 Nov 2026: two Narcissus joined on their hexagons with a 60° turn — a convex dodecahedron of 12 parallelograms (14 corners, volume one ball), a 4-zone parallelohedron with c = 1/3 (three cube edges 1/√2 + one third of the body diagonal); fills space alone by translation. (Straight join = the twisted cube.)",
    "date": "2026-11-04",
    "by": "DICTO",
-   "first": "HexOct: Narcissus and Covenant"
+   "first": "HexOct: Narcissus and Covenant",
+   "desc": "two Narcissus joined on hexagons with a 60° turn: convex parallelohedron of 12 parallelograms, filling space by translation"
   },
   {
    "name": "DICTO Void Keeper",
@@ -2677,7 +2953,8 @@
    "date": "2026-11-05",
    "by": "DICTO",
    "first": "#96",
-   "d": "D133"
+   "d": "D133",
+   "desc": "room-adaptor solid in the densest lattice packing of the cut Ogdoecontahedron; with it fills space by translation"
   },
   {
    "name": "DICTO Golden Skin",
@@ -2685,7 +2962,8 @@
    "date": "2026-11-05",
    "by": "DICTO",
    "first": "#96",
-   "d": "D134"
+   "d": "D134",
+   "desc": "golden rhombohedra touching an Ogdoecontahedron on its five-fold-axis lattice, minus it; fills space with it and golden rhombohedra"
   },
   {
    "name": "DICTO Void set 1 (cut OG), DICTO Void set 2 (OG)",
@@ -2693,110 +2971,207 @@
    "date": "2026-11-05",
    "by": "DICTO",
    "first": "#96",
-   "d": ""
+   "d": "",
+   "desc": "two piece sets filling space: cut Ogdoecontahedron + Void Keeper; Ogdoecontahedron + Golden Skin + prolate golden rhombohedron"
   },
   {
    "name": "Sheriff",
    "by": "DICTO",
    "first": "#99",
-   "aka": "pentagonal cap of I − D: a corner of the icosahedron over a face of its dual dodecahedron; slant edges √3/φ × base"
+   "aka": "pentagonal cap of I − D: a corner of the icosahedron over a face of its dual dodecahedron; slant edges √3/φ × base",
+   "desc": "pentagonal cap of the icosahedron minus its dual dodecahedron: an icosahedron corner over a dodecahedron face"
   },
   {
    "name": "Lone-star",
    "by": "DICTO",
    "first": "#99",
-   "aka": "wedge of I − D: an icosahedron edge and the dodecahedron edge beneath it, crossing at right angles; four equal edges"
+   "aka": "wedge of I − D: an icosahedron edge and the dodecahedron edge beneath it, crossing at right angles; four equal edges",
+   "desc": "thin wedge of the icosahedron minus its dual dodecahedron: an icosahedron edge over the perpendicular dodecahedron edge"
   },
   {
    "name": "DICTO Yantra",
    "by": "DICTO",
    "first": "#103",
-   "aka": "the Śrī Yantra on the Cleo-Antonius pair that meets Kulaichev's three conditions with the traditional 43; exact minimal polynomial of degree 160 (DICTO, 8 Nov 2026): great pair Cleo-Icos and Antonius side, slope product 2/φ³; both small triangles on the circle, bindu centred, 43 triangles, 18 marmas, 24 sandhis (study GF1). Earlier the name stood for K1, the Cleo-Octangula kite."
+   "aka": "the Śrī Yantra on the Cleo-Antonius pair that meets Kulaichev's three conditions with the traditional 43; exact minimal polynomial of degree 160 (DICTO, 8 Nov 2026): great pair Cleo-Icos and Antonius side, slope product 2/φ³; both small triangles on the circle, bindu centred, 43 triangles, 18 marmas, 24 sandhis (study GF1). Earlier the name stood for K1, the Cleo-Octangula kite.",
+   "desc": "Śrī Yantra drawn from the Cleo-Icos/Antonius cone-slope pair, meeting Kulaichev's three conditions with 43 triangles"
   },
   {
    "name": "Cleo-Octangula",
    "by": "DICTO",
    "first": "#103",
-   "aka": "the near-traditional variant: great pair Cleo-Icos above and stella tetrahedron below (slopes 2/φ², 1/√2); its yantra K1 and, from the perfect viewpoint, V1"
+   "aka": "the near-traditional variant: great pair Cleo-Icos above and stella tetrahedron below (slopes 2/φ², 1/√2); its yantra K1 and, from the perfect viewpoint, V1",
+   "desc": "near-traditional Śrī Yantra variant from the Cleo-Icos cone and the stella octangula's slope (2/φ², 1/√2)"
   },
   {
    "name": "Cleo-Antonius",
    "by": "DICTO",
    "first": "#103",
-   "aka": "the great pair of the DICTO Yantra: the Cleo-Icos (cone slope 2/φ²) with a side of Antonius (slope 1/φ); product 2/φ³"
+   "aka": "the great pair of the DICTO Yantra: the Cleo-Icos (cone slope 2/φ²) with a side of Antonius (slope 1/φ); product 2/φ³",
+   "desc": "pair of cone slopes 2/φ² and 1/φ (product 2/φ³) that sets the great triangles of the yantra"
   },
   {
    "name": "DICTO Hopscotch",
    "by": "DICTO",
    "first": "outline The DICTO Hopscotch (9 Nov 2026)",
-   "aka": "the unifying framework: polar pairs along a slider, events where one determinant vanishes; DICTO predicted the common denominator (9 Nov 2026)"
+   "aka": "the unifying framework: polar pairs along a slider, events where one determinant vanishes",
+   "desc": "framework reading constructions as shape–polar pairs along a slider, with events where one determinant vanishes",
+   "desc_unsure": true
   },
   {
    "name": "Antipol",
    "by": "DICTO",
    "first": "outline The DICTO Hopscotch (9 Nov 2026)",
-   "aka": "a shape together with its polar, facing each other; a square of the Hopscotch"
+   "aka": "a shape together with its polar, facing each other; a square of the Hopscotch",
+   "desc": "a shape and its polar reciprocal taken together, facing each other: normals kept, distances inverted"
   },
   {
    "name": "hop (Hopscotch)",
    "by": "DICTO",
    "first": "outline The DICTO Hopscotch (9 Nov 2026)",
-   "aka": "from a value to the same value: zero to zero along a slider, or a return around a cycle"
+   "aka": "from a value to the same value: zero to zero along a slider, or a return around a cycle",
+   "desc": "an event that returns a value to itself: zero to zero along a slider, or a return round a cycle",
+   "desc_unsure": true
   },
   {
    "name": "step (Hopscotch)",
    "by": "DICTO",
    "first": "outline The DICTO Hopscotch (9 Nov 2026)",
-   "aka": "hand-over with emergence before dissolution (gradual; #53 Proposition D, tau_A + tau_B < 0)"
+   "aka": "hand-over with emergence before dissolution (gradual; #53 Proposition D, tau_A + tau_B < 0)",
+   "desc": "gradual hand-over along a slider where new bonds emerge before old ones dissolve",
+   "desc_unsure": true
   },
   {
    "name": "jump (Hopscotch)",
    "by": "DICTO",
    "first": "outline The DICTO Hopscotch (9 Nov 2026)",
-   "aka": "emergence and dissolution at one value (switch; #53 Theorem B, tau_A + tau_B = 0)"
+   "aka": "emergence and dissolution at one value (switch; #53 Theorem B, tau_A + tau_B = 0)",
+   "desc": "switch event where new bonds emerge and old ones dissolve at one slider value",
+   "desc_unsure": true
   },
   {
    "name": "turn (Hopscotch)",
    "by": "DICTO",
    "first": "outline The DICTO Hopscotch (9 Nov 2026)",
-   "aka": "the end of the line where one turns and comes back: the polarity's fixed point (√3 for μ ↦ 3/μ)"
+   "aka": "the end of the line where one turns and comes back: the polarity's fixed point (√3 for μ ↦ 3/μ)",
+   "desc": "fixed point of the slider's polarity (e.g. √3 for μ ↦ 3/μ), where the sweep reverses"
   },
   {
    "name": "emergence / dissolution",
    "by": "DICTO",
    "first": "outline The DICTO Hopscotch (9 Nov 2026)",
-   "aka": "the appearing of new bonds and the disappearing of old ones along a slider"
+   "aka": "the appearing of new bonds and the disappearing of old ones along a slider",
+   "desc": "the appearing of new contacts and disappearing of old ones as a slider parameter moves",
+   "desc_unsure": true
   },
   {
    "name": "DICTO Hopscotch Paradigm",
    "by": "DICTO",
    "first": "outline The DICTO Hopscotch (9 Nov 2026)",
-   "aka": "the framework (DICTO, 9 Nov 2026): every construction is antipols along a polar slider; its events are hops, steps, jumps and the turn"
+   "aka": "the framework (DICTO, 9 Nov 2026): every construction is antipols along a polar slider; its events are hops, steps, jumps and the turn",
+   "desc": "the claim that every construction is shape–polar pairs along a polar slider, with hops, steps, jumps and a turn",
+   "desc_unsure": true
   },
   {
    "name": "DICTO Hopscotch Theorem",
    "by": "DICTO",
    "first": "outline The DICTO Hopscotch (9 Nov 2026)",
-   "aka": "the proved core of the Paradigm: along a polar slider every event is a zero of one determinant linear in the slider; proved for the paraboloid case (#53 flip formula); sphere and projective cases being verified"
+   "aka": "the proved core of the Paradigm: along a polar slider every event is a zero of one determinant linear in the slider; proved for the paraboloid case (#53 flip formula); sphere and projective cases being verified",
+   "desc": "along a polar slider every event is a zero of one determinant linear in the slider; proved for the paraboloid case",
+   "desc_unsure": true
   },
   {
    "name": "Golamandala",
    "by": "DICTO",
    "first": "Kaleidohedra (9 Nov 2026)",
-   "aka": "a spherical mandala (Sanskrit gola, sphere + maṇḍala); Kaleidohedra's world Golamandalas (was Mandalaspheres)"
+   "aka": "a spherical mandala (Sanskrit gola, sphere + maṇḍala); Kaleidohedra's world Golamandalas (was Mandalaspheres)",
+   "desc": "a mandala drawn on a sphere; also the app world of such spherical patterns"
   },
   {
    "name": "Golayantra",
    "by": "DICTO",
    "first": "Kaleidohedra (9 Nov 2026)",
-   "aka": "a sphere of yantras (Gola- prefix for specific golamandalas); echoes the classical gola-yantra, the Indian armillary sphere of Āryabhaṭa and Lalla"
+   "aka": "a sphere of yantras (Gola- prefix for specific golamandalas); echoes the classical gola-yantra, the Indian armillary sphere of Āryabhaṭa and Lalla",
+   "desc": "a sphere of yantras: the yantra's lines taken as great-circle rings, echoing the Indian armillary sphere"
   },
   {
    "name": "Angeli",
    "by": "DICTO",
    "first": "study 2026-11-11-twin-vacuus",
    "d": "2026-11-11",
-   "aka": "the twin Vacuus forms: the Vacuus (fins from the centre to every edge) of the Galois twin (sqrt5 -> -sqrt5) of a solid; one member is an Angelus (e.g. the twin OG Angelus: 300 fins, six decagonal discs of ten 36-degree fins). Not the #87 census Vacuus solids."
+   "aka": "the twin Vacuus forms: the Vacuus (fins from the centre to every edge) of the Galois twin (sqrt5 -> -sqrt5) of a solid; one member is an Angelus (e.g. the twin OG Angelus: 300 fins, six decagonal discs of ten 36-degree fins). Not the #87 census Vacuus solids.",
+   "desc": "fin frames (centre-to-edge triangles) of the Galois twin (√5 → −√5) of a solid, e.g. the twin Ogdoecontahedron"
+  },
+  {
+   "name": "scutoid tissue",
+   "by": "DICTO",
+   "first": "#104",
+   "desc": "the cells of a simple 4-polytope as a moving hyperplane cuts them: polygons born, trading neighbours and dying",
+   "aka": "after the scutoid of Gómez-Gálvez et al. (2018)"
+  },
+  {
+   "name": "4D scutoid",
+   "by": "DICTO",
+   "first": "#104",
+   "desc": "a four-dimensional cell of the λ-stack of power diagrams, whose 3D slices change neighbours along the weight walk"
+  },
+  {
+   "name": "4D Vacuus",
+   "by": "DICTO",
+   "first": "#105",
+   "desc": "the 65 central 3D slices of the 4D permutohedron that carry all its 150 two-dimensional faces"
+  },
+  {
+   "name": "DICTO 1:2 Truncated Octahedron",
+   "by": "DICTO",
+   "first": "#105",
+   "desc": "the permutohedron of 1, 2, 4, 5: square edges 1, hexagon edges alternating 1 and 2; the heart of the 4D Vacuus",
+   "aka": "T(1/2) on the golden loop; DICTONIC T(1/2)"
+  },
+  {
+   "name": "DICTO 2:1 Truncated Octahedron",
+   "by": "DICTO",
+   "first": "#105",
+   "desc": "the permutohedron of −5, −1, 1, 5: square edges 2, hexagon edges alternating 2 and 1; partner of the 1:2",
+   "aka": "T(2); with the 1:2 the CsCl pair of #93 at μ = 4/3"
+  },
+  {
+   "name": "One World",
+   "by": "DICTO",
+   "first": "#106",
+   "desc": "every mix of the five Platonic solids, the cuboctahedron and the rhombic dodecahedron filling space on one cubic grid, each in a dodecahedral skin"
+  },
+  {
+   "name": "flat Karma layer",
+   "by": "DICTO",
+   "first": "#106",
+   "desc": "a plane across a three-fold axis cutting every Dogstar into a CLEO below, met by an icosahedron face above"
+  },
+  {
+   "name": "Mirror Law",
+   "by": "DICTO",
+   "first": "#107",
+   "desc": "a rule, read from a Coxeter diagram, saying which faces of a Wythoff polytope lie on mirrors of its group"
+  },
+  {
+   "name": "second Vacuus",
+   "by": "DICTO",
+   "first": "#108",
+   "desc": "a central slice that carries three or more faces without being a mirror of the symmetry group"
+  },
+  {
+   "name": "DICTO 13-Corner Octet Atom",
+   "by": "DICTO",
+   "first": "The Permutohedron Family (draft, 12 Nov 2026)",
+   "desc": "a cuboctahedron with a square pyramid on one square face: an equal-edged member of the A₃ permutohedron cone",
+   "aka": "13-COA; A3-16",
+   "note": "shape known: the augmented cuboctahedron (Stewart 1970); new only as an atom of the permutohedron family"
+  },
+  {
+   "name": "Turn Theorem",
+   "by": "DICTO",
+   "first": "The Turn Law (draft, 13 Nov 2026)",
+   "desc": "along the polar line of a regular polytope, the containment ratio is largest exactly at the line's fixed point",
+   "aka": "the summit of the turn law"
   }
  ],
  "concepts": [
@@ -2814,7 +3189,8 @@
     "cuts",
     "sweep"
    ],
-   "by": "DICTO's observation of the 3-fold hexagon in his solids; the solids and family names are DICTO's (#88)"
+   "by": "DICTO (#88), from the three-fold hexagon in his solids, with the names of the solids and families",
+   "sub": "every corner cut alike so that each face keeps sides in the golden ratio"
   },
   {
    "id": "truncated-triangle",
@@ -2829,7 +3205,8 @@
    "strands": [
     "cuts"
    ],
-   "by": "classical face; DICTO observed that it runs through his solids (#88)"
+   "by": "classical face; its run through the solids of the work: DICTO (#88)",
+   "sub": "the hexagon with all angles 120° and sides alternating in two lengths"
   },
   {
    "id": "pyramidise",
@@ -2849,7 +3226,8 @@
    "strands": [
     "pyr"
    ],
-   "by": "Aristotle's pyramid (classical); DICTO: pyramidise as one operation on any such solid (#87)"
+   "by": "Aristotle's pyramid (classical); DICTO: pyramidise as one operation on any such solid (#87)",
+   "sub": "one cone from the centre over each face"
   },
   {
    "id": "star",
@@ -2866,7 +3244,8 @@
     "pyr",
     "cycles"
    ],
-   "by": "DICTO's idea (#78); the name Star Halo is DICTO's"
+   "by": "DICTO (#78), with the name Star Halo",
+   "sub": "the face pyramids turned outwards, and the hull of their tips"
   },
   {
    "id": "valley-rule",
@@ -2879,7 +3258,8 @@
    "strands": [
     "pyr"
    ],
-   "by": "DICTO's rule (#79)"
+   "by": "DICTO (#79)",
+   "sub": "spikes shortened only where they would reach a neighbour"
   },
   {
    "id": "core-turn",
@@ -2895,7 +3275,8 @@
     "pyr",
     "sweep"
    ],
-   "by": "DICTO found it for TI (#78) and proposed it for every two-family solid (#81)"
+   "by": "DICTO: for the TI (#78), for every two-family solid (#81)",
+   "sub": "the solid shared by the tip hulls of two face families; doing it twice gives the solid back"
   },
   {
    "id": "growth-rule-t",
@@ -2916,7 +3297,8 @@
     "og",
     "pyr"
    ],
-   "by": "DICTO's growth rule (#80); T is the 3D form of the classical antipedal construction (#38 v3)"
+   "by": "DICTO (#80); T is the 3D form of the classical antipedal construction (#38 v3)",
+   "sub": "the planes through each corner, at right angles to its radius (antipedal)"
   },
   {
    "id": "reverse-step-p",
@@ -2930,7 +3312,8 @@
    "strands": [
     "og"
    ],
-   "by": "DICTO: running the rule the other way (#39)"
+   "by": "DICTO: running the rule the other way (#39)",
+   "sub": "the hull of the feet of the perpendiculars to the face planes (pedal)"
   },
   {
    "id": "polar-reciprocation",
@@ -2953,7 +3336,8 @@
     "pyr",
     "sweep"
    ],
-   "by": "classical; turning the cycle inside out by it was DICTO's idea (#32)"
+   "by": "classical; turning the cycle inside out by it: DICTO (#32)",
+   "sub": "each solid replaced by its polar about a sphere; nestings reverse"
   },
   {
    "id": "sweep",
@@ -2961,13 +3345,15 @@
    "definition": "The flats y = x/μ of the product P × P* of a solid and its polar cut out P ∩ μP*; every corner cut of P or P* is such a section (#91).",
    "first": "90",
    "used": [
-    "91"
+    "91",
+    "105"
    ],
    "strands": [
     "sweep",
     "cuts"
    ],
-   "by": "DICTO: cube × octahedron as the six-dimensional home of the pair (#90) and following each solid with its dual through the dimensions (#91)"
+   "by": "DICTO: cube × octahedron as the six-dimensional home of the pair (#90) and following each solid with its dual through the dimensions (#91)",
+   "sub": "a solid cut by a growing copy of its polar, from one to the other"
   },
   {
    "id": "weight-walk",
@@ -2996,7 +3382,8 @@
     "stack",
     "sweep"
    ],
-   "by": "power diagrams are classical (Aurenhammer); DICTO's two loops read this way (#52)"
+   "by": "power diagrams are classical (Aurenhammer); the two loops of #52 read this way",
+   "sub": "power diagrams of two kinds of point as one weight slides"
   },
   {
    "id": "web-of-bonds",
@@ -3012,7 +3399,8 @@
    "strands": [
     "bonds"
    ],
-   "by": "DICTO's idea, 25 October 2026 (#52)"
+   "by": "DICTO, 25 October 2026 (#52)",
+   "sub": "the weighted Delaunay graph of a power diagram"
   },
   {
    "id": "dictonic-bonds",
@@ -3026,7 +3414,8 @@
    "strands": [
     "bonds"
    ],
-   "by": "DICTO (names, #51)"
+   "by": "DICTO (names, #51)",
+   "sub": "six convex and keyed solids held in three bonds"
   },
   {
    "id": "delian-bond",
@@ -3043,7 +3432,8 @@
    "strands": [
     "bonds"
    ],
-   "by": "DICTO: the approach and the names Samson and Delilah; doubling is the ancient Delian problem (#51)"
+   "by": "DICTO: the approach and the names Samson and Delilah; doubling is the ancient Delian problem (#51)",
+   "sub": "the octet cut where tetrahedron and octahedron pieces have equal volume"
   },
   {
    "id": "golden-split",
@@ -3059,7 +3449,8 @@
     "bonds",
     "cuts"
    ],
-   "by": "DICTO: pieces without odd protrusions, cuts \"hemispherical, or anywhere in between\" (#48)"
+   "by": "DICTO: pieces without odd protrusions, cuts \"hemispherical, or anywhere in between\" (#48)",
+   "sub": "each AXE cut into four pyramids from one inner point at 1/φ"
   },
   {
    "id": "shadow-forms",
@@ -3072,7 +3463,8 @@
    "strands": [
     "bonds"
    ],
-   "by": "DICTO's idea (#48)"
+   "by": "DICTO (#48)",
+   "sub": "other dissections of the same space, searched for new pieces"
   },
   {
    "id": "keys",
@@ -3093,7 +3485,8 @@
     "bonds",
     "og"
    ],
-   "by": "DICTO (keyed glue, #37; keyed versions of the new pairs, #56)"
+   "by": "DICTO (keyed glue, #37; keyed versions of the new pairs, #56)",
+   "sub": "bumps and dents that move volume between partner pieces, never changing the network"
   },
   {
    "id": "ch-words",
@@ -3118,7 +3511,8 @@
     "stack",
     "og"
    ],
-   "by": "Jagodzinski's notation (classical); taking the OG family to every stacking was proposed by Claude and adopted by DICTO (#40)"
+   "by": "Jagodzinski's notation (classical); taking the OG family to every stacking was proposed by Claude and adopted by DICTO (#40)",
+   "sub": "a stacking written as a word in cubic (c) and hexagonal (h) layers"
   },
   {
    "id": "fibonacci-stacking",
@@ -3135,7 +3529,8 @@
     "stack",
     "og"
    ],
-   "by": "joint work (#40)"
+   "by": "joint work (#40)",
+   "sub": "the stacking word of the Fibonacci substitution; hexagonal share 1/φ²"
   },
   {
    "id": "rule-of-halves",
@@ -3163,7 +3558,8 @@
     "stack",
     "bonds"
    ],
-   "by": "DICTO (#84 credit); DICTO's idea to follow the web onto every stacking (#57)"
+   "by": "DICTO (#84 credit; following the web onto every stacking, #57)",
+   "sub": "the piece in each gap is read off its nearest layers"
   },
   {
    "id": "janus-pieces",
@@ -3183,7 +3579,8 @@
    "strands": [
     "stack"
    ],
-   "by": "DICTO (name, #57)"
+   "by": "DICTO (name, #57)",
+   "sub": "octahedral gap pieces with one cubic and one hexagonal half"
   },
   {
    "id": "swap-rule",
@@ -3197,12 +3594,14 @@
     "69",
     "72",
     "74",
-    "84"
+    "84",
+    "104"
    ],
    "strands": [
     "stack"
    ],
-   "by": "DICTO (name, #61)"
+   "by": "DICTO (name, #61)",
+   "sub": "the two mixed pieces of a gap add up to the two pure ones"
   },
   {
    "id": "hexagonality-law",
@@ -3227,7 +3626,8 @@
    "strands": [
     "stack"
    ],
-   "by": "DICTO's law (#84)"
+   "by": "DICTO (#84)",
+   "sub": "every piece's total is linear in the share of hexagonal layers"
   },
   {
    "id": "window-law",
@@ -3238,7 +3638,8 @@
    "strands": [
     "stack"
    ],
-   "by": "DICTO's idea (#84)"
+   "by": "DICTO (#84)",
+   "sub": "anything fixed by g layers averages linearly over the words of length g"
   },
   {
    "id": "splash-rules",
@@ -3251,7 +3652,8 @@
    "strands": [
     "stack"
    ],
-   "by": "DICTO, 27 October 2026 (#84)"
+   "by": "DICTO, 27 October 2026 (#84)",
+   "sub": "a method: look for one simple rule behind a family of exact values"
   },
   {
    "id": "hexoct-tiles",
@@ -3265,7 +3667,8 @@
    "strands": [
     "stack"
    ],
-   "by": "DICTO's idea and name (#75)"
+   "by": "DICTO (#75)",
+   "sub": "two layer tiles, c and h, from which every stacking is built"
   },
   {
    "id": "tower-move",
@@ -3276,7 +3679,8 @@
    "strands": [
     "stack"
    ],
-   "by": "DICTO: true simple pieces (#86)"
+   "by": "DICTO: true simple pieces (#86)",
+   "sub": "one tower of a layer tile slid by a lattice step"
   },
   {
    "id": "knitting-slice",
@@ -3287,7 +3691,8 @@
    "strands": [
     "stack"
    ],
-   "by": "DICTO: the idea (#83)"
+   "by": "DICTO (#83)",
+   "sub": "a plane section that charts the octet as triangles and rhombi"
   },
   {
    "id": "face-to-face",
@@ -3301,18 +3706,24 @@
     "pyr",
     "stack"
    ],
-   "by": "DICTO: the face-to-face case (#77)"
+   "by": "DICTO: the face-to-face case (#77)",
+   "sub": "face-to-face pyramid tilings come down to tilings by whole solids"
   },
   {
    "id": "vacuus",
    "name": "Vacuus: SHEETS and STRUTS",
    "definition": "Keep only the walls between the centre pyramids, a fin O–A–B for each edge; built as SHEETS (the fins) and STRUTS (a rod from the centre to every corner, with the edges) (#87).",
    "first": "87",
-   "used": [],
+   "used": [
+    "105",
+    "107",
+    "108"
+   ],
    "strands": [
     "pyr"
    ],
-   "by": "DICTO's idea and name (#87)"
+   "by": "DICTO (#87)",
+   "sub": "the walls between the centre pyramids: one triangular fin per edge"
   },
   {
    "id": "field-obstruction",
@@ -3324,7 +3735,8 @@
     "cuts",
     "sweep"
    ],
-   "by": "see #90"
+   "by": "see #90",
+   "sub": "the Golden Cut Cubes need √2 and √5 together"
   },
   {
    "id": "cut-equals-shadow",
@@ -3336,7 +3748,8 @@
     "sweep",
     "cuts"
    ],
-   "by": "see #90"
+   "by": "see #90",
+   "sub": "the one cut of the sweep that is also a lattice shadow, at μ = φ"
   },
   {
    "id": "tight-cycles",
@@ -3349,7 +3762,8 @@
    "strands": [
     "cycles"
    ],
-   "by": "see #34; the name DICTO Golden Tight Cycles is DICTO’s (#91)"
+   "by": "see #34; the name DICTO Golden Tight Cycles is DICTO’s (#91)",
+   "sub": "nestings in which every step is tight"
   },
   {
    "id": "golden-cycle",
@@ -3370,7 +3784,8 @@
    "strands": [
     "cycles"
    ],
-   "by": "DICTO's (#22, #23)"
+   "by": "DICTO (#22, #23)",
+   "sub": "an endless nesting of icosahedral solids, φ³ larger each turn"
   },
   {
    "id": "gnomon",
@@ -3384,7 +3799,8 @@
    "strands": [
     "cycles"
    ],
-   "by": "classical; DICTO's idea to carry it into his three-dimensional golden cycle (#54)"
+   "by": "classical; carried into the three-dimensional golden cycle by DICTO (#54)",
+   "sub": "the piece that enlarges a figure to a similar one"
   },
   {
    "id": "ekp",
@@ -3401,7 +3817,8 @@
    "strands": [
     "kepler"
    ],
-   "by": "DICTO's construction (#8)"
+   "by": "DICTO (#8)",
+   "sub": "Euclid's roofed cube reflected onto an icosahedron inside it"
   },
   {
    "id": "kagome-test",
@@ -3417,7 +3834,8 @@
    "strands": [
     "kepler"
    ],
-   "by": "DICTO's test (#17)"
+   "by": "DICTO (#17)",
+   "sub": "do hull-shaped clusters share pieces as a kagome net does?"
   },
   {
    "id": "dehn",
@@ -3436,7 +3854,8 @@
     "pyr",
     "cycles"
    ],
-   "by": "classical (Dehn; Debrunner)"
+   "by": "classical (Dehn; Debrunner)",
+   "sub": "the angle invariant that must vanish for a solid that fills space"
   },
   {
    "id": "spinel-twin",
@@ -3451,7 +3870,8 @@
     "og",
     "stack"
    ],
-   "by": "classical crystallography"
+   "by": "classical crystallography",
+   "sub": "twinning by a half-turn about a three-fold axis"
   },
   {
    "id": "stretching",
@@ -3462,7 +3882,8 @@
    "strands": [
     "fill"
    ],
-   "by": "DICTO (the stretched dodecahedron, F11, #49)"
+   "by": "DICTO (the stretched dodecahedron, F11, #49)",
+   "sub": "the solid swept by sliding a solid along a line"
   },
   {
    "id": "lattice-moves",
@@ -3473,7 +3894,8 @@
    "strands": [
     "fill"
    ],
-   "by": "Fedorov's moves (1885); DICTO's idea that they rebuild the cut-and-glue fillers (#50)"
+   "by": "Fedorov's moves (1885); that they rebuild the cut-and-glue fillers: DICTO (#50)",
+   "sub": "a shear, the equal-edged cell and a stretch rebuild the classical fillers"
   },
   {
    "id": "reuleaux",
@@ -3486,7 +3908,8 @@
    "strands": [
     "fill"
    ],
-   "by": "DICTO's idea (#45)"
+   "by": "DICTO (#45)",
+   "sub": "the body common to balls centred on a solid's corners"
   },
   {
    "id": "spherical-waves",
@@ -3500,7 +3923,8 @@
     "fill",
     "sweep"
    ],
-   "by": "DICTO's idea (#96)"
+   "by": "DICTO (#96)",
+   "sub": "waves from every point of a packing; their dark places are the voids"
   },
   {
    "id": "rooms-windows",
@@ -3513,7 +3937,78 @@
    "strands": [
     "fill"
    ],
-   "by": "DICTO's idea (#96)"
+   "by": "DICTO (#96)",
+   "sub": "the wave field read as atoms, bonds, rings and cages"
+  },
+  {
+   "id": "scutoid-tissue",
+   "name": "scutoid tissue (sweep of a 4-polytope)",
+   "sub": "the cells of a 4D solid, cut by a moving 3D slice, trading neighbours like the cells of living tissue",
+   "definition": "Sweep a simple 4-polytope with a moving hyperplane: its cells cross the slice as polygons tiling the slice's surface, and the tiling changes only at corners, by a birth, a scutoid swap (one pair of cells stops touching and one pair starts) or a death, h₁, h₂ and h₃ times (#104 Theorems 1, 1′).",
+   "first": "104",
+   "used": [
+    "105",
+    "108"
+   ],
+   "strands": [
+    "queens"
+   ],
+   "by": "the index counts are classical (McMullen 1970; bistellar flips); the reading as a tissue of scutoids: DICTO (#104)"
+  },
+  {
+   "id": "balance-law",
+   "name": "balance law",
+   "sub": "in a sweep, exchanges of neighbours come in equal and opposite numbers",
+   "definition": "In every generic sweep of a simple 4-polytope whose corners all see the same multiset of cell types, the swaps that turn a contact of kind X into one of kind Y are exactly as many as those from Y to X (#108 Theorem 1; two kinds of cells: #104 Theorem 4).",
+   "first": "104",
+   "used": [
+    "108"
+   ],
+   "strands": [
+    "queens"
+   ],
+   "by": "DICTO (#104, #108); in substance the symmetry of a-balanced spheres (Stanley 1979), as the triage of 14 November 2026 found; to be said at the papers' next versions"
+  },
+  {
+   "id": "mirror-law",
+   "name": "Mirror Law",
+   "sub": "which faces of a kaleidoscope polytope lie on its mirrors, read off its Coxeter diagram",
+   "definition": "The faces of type J of a Wythoff polytope lie on mirrors of its reflection group exactly when the roots of the unringed nodes include one orthogonal to α_j for every j in J (#107 Theorem 1).",
+   "first": "107",
+   "used": [
+    "108"
+   ],
+   "strands": [
+    "pyr",
+    "queens"
+   ],
+   "by": "DICTO (#107)"
+  },
+  {
+   "id": "wythoff-seed",
+   "name": "seed (Wythoff's construction)",
+   "sub": "one corner and a kaleidoscope give a whole polytope",
+   "definition": "A point x labelled by 0s and 1s on the simple roots of a reflection group; the hull of its images is the Wythoff polytope, and every polytope of a chain group is read from its seed (#107, #108).",
+   "first": "107",
+   "used": [
+    "108"
+   ],
+   "strands": [
+    "queens"
+   ],
+   "by": "classical (Wythoff 1918; Coxeter)"
+  },
+  {
+   "id": "skin",
+   "name": "skin (one world)",
+   "sub": "a coat of congruent pieces that turns each solid into the same dodecahedron",
+   "definition": "Congruent pieces round a Platonic solid, or the cuboctahedron, that make it exactly a dodecahedron of edge 1, so that every mix lives on one cubic grid of edge φ (#106 Theorem 2).",
+   "first": "106",
+   "used": [],
+   "strands": [
+    "fill"
+   ],
+   "by": "DICTO (#106)"
   }
  ],
  "triangle": [
@@ -3813,7 +4308,7 @@
    ],
    [
     "The TRD as the rhombic dodecahedron's h partner",
-    "the Rule of Halves (#57) and #93's Theorem C give the template — STUDIED 4 Nov 2026 (studies/2026-11-04-trd, note The Turned Twin, read ok): RD/TRD = ½ polar of CO/anticuboctahedron; TRD = RD half-turned 60°; equal pyramid volumes; DICTO's turned node = the twisted ball; ring cells drawn",
+    "the Rule of Halves (#57) and #93's Theorem C give the template — STUDIED 4 Nov 2026 (studies/2026-11-04-trd, note The Turned Twin, read ok): RD/TRD = ½ polar of CO/anticuboctahedron; TRD = RD half-turned 60°; equal pyramid volumes; the turned node = the twisted ball; ring cells drawn",
     "the TRD DICTOnode in a paper; the rhombic dodecahedron on every stacking",
     [
      26
@@ -3917,7 +4412,7 @@
    {
     "src": "#43",
     "what": "Conjectures 1 and 2; shell 5 exact; the full flip",
-    "status": "open"
+    "status": "open · Conjecture 2 proved (Version 2, Theorem 4); Conjecture 1 proved for k ≤ 40 (Version 3, Theorem 5), reduced to an inradius bound beyond (Proposition 6)"
    },
    {
     "src": "#43",
@@ -3932,7 +4427,7 @@
    {
     "src": "#47",
     "what": "smallest kit; face to face; periodic in three directions (C + T + O without connectors ANSWERED 6 Nov: yes, never face to face)",
-    "status": "open"
+    "status": "open · C + T + O with no connector, never face to face (Version 3, Theorem 2); smallest kit still open"
    },
    {
     "src": "#49",
@@ -3977,7 +4472,7 @@
    {
     "src": "#61",
     "what": "Swap Rule for s < 1/4",
-    "status": "open"
+    "status": "open · proved for s in [1/8, 1/4] in six stackings (#104 Theorem 3); open below λ = −9s/8 and s = 1/8"
    },
    {
     "src": "#66, #67",
@@ -4048,6 +4543,31 @@
     "src": "#62",
     "what": "six all-triangle 600-cell slices (28, 30, 32, 42, 48, 72 vertices); equilateral forms of five patterns",
     "status": "open"
+   },
+   {
+    "src": "#104",
+    "what": "Theorem 3 below λ = −9s/8 and for s < 1/8; stackings without the four-layer condition",
+    "status": "open"
+   },
+   {
+    "src": "#105",
+    "what": "the golden slice of the permutohedron honeycomb counted exactly (Lead 1); the heart for an even number of values (Lead 2); a physical build of the heart (Lead 3: the ten crossing hexagons in the app)",
+    "status": "Lead 1 settled by the window method (study 2026-11-13-golden-slice-window: 35 kinds, infinitely many shapes each); Lead 3 answered in Version 4; Lead 2 open"
+   },
+   {
+    "src": "#108",
+    "what": "the second Vacuus and the residents (Observations 4, 5) stated as observations, not proved",
+    "status": "Observation 5 made exact for the 600-cell, the 120-cell and every 0/1-seed polytope (study 2026-11-13-platonic-residents-exact); Observation 4 open"
+   },
+   {
+    "src": "#104, #108",
+    "what": "are the balance laws (#104 Theorem 4, #108 Theorem 1) classical (Stanley's balanced complexes)?",
+    "status": "in substance yes (study 2026-11-14-chat-handoff, Lead 1); to be said at the next versions"
+   },
+   {
+    "src": "#105",
+    "what": "whether turned or mirrored copies of the DICTO 1:2 Truncated Octahedron fill space (§5)",
+    "status": "no: its Dehn invariant is nonzero (#100 Theorem 1.1, with Debrunner's theorem; study 2026-11-14-chat-handoff, Lead 10); to be written into the next version"
    }
   ],
   "waiting": [
@@ -4112,7 +4632,7 @@
     "goes_to": "#94 v2 or The Golden Ladder (sweep)"
    },
    {
-    "result": "Parallel outside tests on the sweep (DICTO's idea): the isoperimetric maximum is exactly μ = √3, the fixed point of the core turn μ ↔ 3/μ (where diamond's α = μ); harmonic Q4 = 0 exactly at Icosaxes φ; Mahler maximum near φ but cubic. Table of special points",
+    "result": "Parallel outside tests on the sweep: the isoperimetric maximum is exactly μ = √3, the fixed point of the core turn μ ↔ 3/μ (where diamond's α = μ); harmonic Q4 = 0 exactly at Icosaxes φ; Mahler maximum near φ but cubic. Table of special points",
     "study": "2026-11-04-mahler-sweep",
     "goes_to": "#94 v2 / The Golden Ladder (sweep)"
    },
@@ -4172,7 +4692,7 @@
     "goes_to": "The Golden Ladder / app"
    },
    {
-    "result": "#91's 4D sweep is the family of SO(9) weight shapes: 16-cell = vector 9, 24-cell = adjoint 36, rectified tesseract = 84, tesseract = spinor 16; DICTO's All-Golden Polytopes (μ = φ², 2 + 1/φ²) are the limits of Fibonacci multiplets (0, F_n, F_{n+1}, 0): dims 1650, 27027, 1527552, …",
+    "result": "#91's 4D sweep is the family of SO(9) weight shapes: 16-cell = vector 9, 24-cell = adjoint 36, rectified tesseract = 84, tesseract = spinor 16; the DICTO All-Golden Polytopes (μ = φ², 2 + 1/φ²) are the limits of Fibonacci multiplets (0, F_n, F_{n+1}, 0): dims 1650, 27027, 1527552, …",
     "study": "2026-11-04-su4-weights",
     "goes_to": "Alicia (Queens) / The Golden Ladder"
    },
@@ -4372,6 +4892,216 @@
     "result": "Equal-edged solids of the A3/B3/H3 permutohedron cones listed exactly (17/101/4427); Archimedean stretches along cube axes; 369 new atoms (prior art pending)",
     "study": "2026-11-12-permutohedron-equal-edges",
     "goes_to": "#49 next version (Archimedean stretches, open question 1)"
+   },
+   {
+    "result": "The Turn Law (draft): every polar line S(μ) of a polytope with one inradius h and one circumradius R folds onto itself under μ ↦ h²R²/μ, the antipol S(μ)∨ being h⁻²·S(h²R²/μ) (Theorem 1); on the regular lines the containment ratio is largest exactly at the fixed point (Theorem 2, the Turn Theorem); a line of crystals that turns at the Ammann–Beenker quasicrystal (Theorem 3)",
+    "study": "papers/2026-11-13-turn-law",
+    "goes_to": "Book Eleven (A Brief Geometry of Space) or its own number; DICTO assigns",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Geometry Gives Laws (draft, revised 13 Nov): canonical forms of the polar lines, solids and yantras: the golden window of E8, a 19-design beside the turn, marmas as double zeros, exact Mahler products",
+    "study": "papers/2026-11-12-geometry-gives-laws",
+    "goes_to": "Book Eleven (A Brief Geometry of Space)",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "The Permutohedron Family (draft): the line from the permutohedron to the associahedron, every equal-edged member of the A₃, B₃, H₃ cones (17, 101, 4427 solids), which members fill space; its Conjectures 1 and 2 proved for every n (ledger [198])",
+    "study": "papers/2026-11-12-permutohedron-family",
+    "goes_to": "The Permutohedron Paradigm, Chapter 14",
+    "date": "2026-11-12"
+   },
+   {
+    "result": "Swaps and fixed points: the proposition “geometry gives laws at the fixed points of its swaps” is false as a universal law; of 45 proved laws, 9 sit at a swap's fixed point and a swap plays some role in 24; a fixed point carries a law when the swap forces it (ledger [207])",
+    "study": "studies/2026-11-13-swaps-and-fixed-points",
+    "goes_to": "A Brief Geometry of Space (the spine); The Permutohedron Paradigm (Opening)",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Four books of The Five Orders of Space drafted for DICTO's read: Space-Fillers and Lattice Moves (Book Two), The Permutohedron Paradigm (Book Seven), The Platonic Solids (Book Eight), and the plan of A Brief Geometry of Space (Book Eleven)",
+    "study": "papers/book-space-fillers, book-permutohedron-paradigm, book-platonic, plan-book-brief-geometry",
+    "goes_to": "release in that order once read (Part 2, the books)",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Rosette balance: every event class balances in every generic sweep of every Wythoff polytope of every finite reflection group (all edges parallel to roots); false without the symmetry (a moved 16-cell)",
+    "study": "studies/2026-11-13-rosette-balance",
+    "goes_to": "The Permutohedron Paradigm, Chapter 10",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Golden slice of the 4D permutohedron honeycomb: 35 kinds, infinitely many shapes in each; the window version has 60 tiles; the slice repeats along a plane (non-periodic in one direction only)",
+    "study": "studies/2026-11-13-golden-slice-window",
+    "goes_to": "The Permutohedron Paradigm, Chapter 13; #105 next version (erratum to Lead 3 wording logged)",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Change ringing: the two halves of the plain hunt are the only shortest ways from rounds to backrounds in the change graph, for every n (proved)",
+    "study": "studies/2026-11-12-change-ringing",
+    "goes_to": "The Permutohedron Paradigm (the bells, its last chapter)",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Paradigm gaps closed: Chapter 4 Theorem 4.1 exact; Chapter 5 Propositions 5.3, 5.4 proved; #89's tesseract sections are permutohedra of (0, h, 1, 1), exact",
+    "study": "studies/2026-11-13-paradigm-exact, 2026-11-13-paradigm-expansion",
+    "goes_to": "The Permutohedron Paradigm",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "The residents made exact: every regular D, I, C, T, O on the corners of the 600-cell (120, 240, 600, 3000, 900), the 120-cell (1560, 2400, 7200, 34200, 8100) and every 0/1-seed polytope",
+    "study": "studies/2026-11-13-platonic-residents-exact",
+    "goes_to": "The Platonic Solids, Chapter 11; #108 next version",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Disc rule (Theorem N): a central plane holds a Vacuus disc exactly when a connected piece of its fin graph is a simple loop turning one way once round the centre; for convex solids, exactly when the plane cuts no face; exact on 91 solids",
+    "study": "studies/2026-11-13-platonic-fans-law, 2026-11-13-platonic-disc-ranking",
+    "goes_to": "The Platonic Solids, Chapter 4",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Platonic exact checks: crossed-nest cores and the six octet thresholds exact; corrections: no edge-to-edge face meeting (a corner on an edge at 1/φ²); the Dogstar has no disc under the #87 rule",
+    "study": "studies/2026-11-13-platonic-exact-checks",
+    "goes_to": "The Platonic Solids",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Mirror and Hexagonality: h layers of a close-packed stacking are mirror walls (D3h), c layers inversion centres (D3d); the link holds but does not carry the Hexagonality Law",
+    "study": "studies/2026-11-13-mirror-hexagonality",
+    "goes_to": "HexOct (Book Six) next version; A Brief Geometry of Space",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Pure swap in 6D: the self-reverse event class of the 6-permutohedron is balanced in every direction but trades a 3-face, not a contact; the balance is a known identity (Stanley 1979)",
+    "study": "studies/2026-11-13-pure-swap-6d",
+    "goes_to": "The Permutohedron Paradigm",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Palindromic middles of A₄ and F₄: the first tone of the canonical form vanishes exactly at every palindromic seed (proved); B₄, H₄ no zero sampled",
+    "study": "studies/2026-11-13-palindromic-middles",
+    "goes_to": "Geometry Gives Laws (draft)",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Near but never on: false in general; when a polytope is self-dual by an isometry that reverses the tone, the special points fall exactly on the design station (Theorems A, B)",
+    "study": "studies/2026-11-13-near-but-never-on",
+    "goes_to": "Geometry Gives Laws (draft)",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Amplitude at a distance: not supported as pre-registered (the own lattice points sit on the canonical form's poles); the zonotope fall-off r⁻²ᵈ is known (Baumbach, Freyer, Weigert and Winter 2025)",
+    "study": "studies/2026-11-13-amplitude-at-distance, 2026-11-13-zonotope-falloff",
+    "goes_to": "A Brief Geometry of Space, Chapter 12 (stated as known)",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "OG Galois-twin window: the twin family is bounded for every k but collapses to the centre, so it is not a window",
+    "study": "studies/2026-11-12-og-galois-window",
+    "goes_to": "Kyushindo Cores next version; The Platonic Solids, Chapter 13",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "Laves big atom: M0 is a two-layer piece; the Swap Rule holds exactly on its layer pair in every window; 253440 local certificates",
+    "study": "studies/2026-11-12-laves-three-layer-swap",
+    "goes_to": "#66, #67 next versions (HexOct)",
+    "date": "2026-11-12"
+   },
+   {
+    "result": "One-piece aim: 90 keyed rhombic dodecahedra certified strongly aperiodic on the fcc packing (given registration, since proved); no single hopeful piece among 6.4 million keyed RDs, all 73 survivors periodic at torus index 96",
+    "study": "studies/2026-11-12-rd-bridge, 2026-11-12-hopeful-piece",
+    "goes_to": "aim 3 (one piece, any stacking); research open",
+    "date": "2026-11-13"
+   },
+   {
+    "result": "The 19-design on the Queens' line: exactly one 1440-point W(H₄) orbit of strength 19, at μ* = 0.9241386732… (degree 20); the design is classical (Goethals–Seidel 1981), its place on the line and its uniqueness are new",
+    "study": "studies/2026-11-12-pds-hopscotch-line",
+    "goes_to": "Geometry Gives Laws (draft); Alicia (Book Ten) next version",
+    "date": "2026-11-12"
+   },
+   {
+    "result": "E8 at the top rung: the canonical form of the Gosset polytope 4₂₁ at the centre is 8!; its golden slice is the rectified 120-cell; the two golden windows are congruent",
+    "study": "studies/2026-11-12-e8-canonical",
+    "goes_to": "Geometry Gives Laws (draft); The Golden Ladder next version",
+    "date": "2026-11-12"
+   },
+   {
+    "result": "Lead 1: the balance laws (#104 Theorem 4, #108 Theorem 1) may be classical: Stanley's balanced Cohen–Macaulay complexes (1979), Bayer–Billera (1985); the 4D permutohedron's swap types 6, 6, 11, 11, 16, 16 are descent-set counts",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "PARTLY DONE (triage, 14 Nov): in substance the symmetry of a-balanced spheres (Stanley 1979; Björner–Frankl–Stanley 1987), named in study 2026-11-13-pure-swap-6d; to be said at #104's and #108's next versions; Bayer–Billera 1985 does not hold it (study 2026-11-14-chat-handoff)",
+    "date": "2026-11-14"
+   },
+   {
+    "result": "Lead 2: every omnitruncate row of #108 as a descent-set table (A₄ 6, 16, 11; B₄ 17, 57, 41; F₄ 73, 169, 97; H₄ 601, 2281, 1681); 601 also = the elements of H₄ with descent set exactly {1, 2}",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "PARTLY DONE: the rows are in #108; 601 = the elements of H₄ with descent set exactly {1, 2}, checked by hand (14400/6 − 14400/24 − 14400/12 + 1); direct count not run (study 2026-11-14-chat-handoff)",
+    "date": "2026-11-14"
+   },
+   {
+    "result": "Lead 3: the 4D associahedron as a tissue outside #108 Theorem 1 (28 corners of type 2 + 2, 14 of type 3 + 1); counts (10, 20, 10); cyclohedron (16, 36, 16)",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "NEW: the counts are the classical Narayana h-vectors (1, 10, 20, 10, 1) and (1, 16, 36, 16, 1); which typed counts stay direction-independent is open (study 2026-11-14-chat-handoff)",
+    "date": "2026-11-14"
+   },
+   {
+    "result": "Lead 4: sliding facets, the permutohedron to the associahedron as a stack of fixed normals and moving offsets; hexagon to pentagon as the smallest case; the cell-first sweep of the 4D permutohedron as a closed walk in the A₃ seed triangle",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "WRONG in one formula (the first stretch's gaps are (1, 1, t)); the λ-stack reading and the hexagon-to-pentagon stack untested (study 2026-11-14-chat-handoff)",
+    "date": "2026-11-14"
+   },
+   {
+    "result": "Lead 5: the hexagon of turns: core turn μ ↦ 3/μ composed with the CsCl partner μ ↦ 3 − μ has order six on the cube–octahedron sweep; golden orbit 3/φ², 3 − φ, φ, 3/φ, 3/(3 − φ), φ²; in n dimensions trace²/det = n",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "NEW, checked by hand (order six; the orbits); the partner n − μ underived for n ≥ 4; the four golden stations untested (study 2026-11-14-chat-handoff)",
+    "date": "2026-11-14"
+   },
+   {
+    "result": "Lead 6: the Dehn-silent line, the B₃ seeds (a, 1, 1) with corners at the signed permutations of (a, a + 1, a + 2), and a law of degrees between walls (Dehn linear, area quadratic, volume cubic)",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "PARTLY DONE (#100 Theorems 1.1, 1.2); the line is new and correct (Dehn zero exactly when the hexagons are equilateral); the law of degrees untested (study 2026-11-14-chat-handoff)",
+    "date": "2026-11-14"
+   },
+   {
+    "result": "Lead 7: the zonohedron with corners at the signed permutations of (a, a + 1, a + 2), 6a²(a + 2)² = 5, a ≈ 0.3831: its cubic tone vanishes (checked in the chat); Dehn zero as a zonohedron",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "NEW; tone and Dehn zero CONFIRMED exactly; Q6, Q8 do not vanish, so it is a crossing of two curves, not yet a station; prior art not searched (study 2026-11-14-chat-handoff)",
+    "date": "2026-11-14"
+   },
+   {
+    "result": "Lead 8: the cut-corner rule: an octahedron of edge L with corner pyramids of slant edges cᵢ cut off has Dehn invariant (12Σcᵢ − 24L)β, silent exactly when the cuts add up to two edges; the two-pyramid cuboctahedra as candidate space-fillers",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "NEW; CONFIRMED exactly on eight cut vectors; the cuboctahedron with two opposite pyramids tiles by translations; the adjacent pair undecided (study 2026-11-14-chat-handoff)",
+    "date": "2026-11-14"
+   },
+   {
+    "result": "Lead 9: wall exponents in #104 Theorem 3 (the octahedral defect is a cube of the wall's equation across λ = −5s/8, the tetrahedral a square): does the exponent read off the type of event?",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "NEW: the formulas match #104; the question is open (study 2026-11-14-chat-handoff)",
+    "date": "2026-11-14"
+   },
+   {
+    "result": "Lead 10: the DICTO 1:2 Truncated Octahedron cannot fill space alone, turned or mirrored: by the cut-corner rule its Dehn invariant is −12√2 β ≠ 0 (open point of #105 §5)",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "DONE: settled by #100 Theorem 1.1 with Debrunner's theorem (Dehn −12√2 ≠ 0, confirmed exactly); to be written into #105's next version (study 2026-11-14-chat-handoff)",
+    "date": "2026-11-14"
+   },
+   {
+    "result": "Kyushindo constants and the turns: whether the tetrahedral and icosahedral sweeps have a partner map like μ ↦ c − μ; the margin 3/φ² of #43 Theorem 5 against the golden orbit of Lead 5 (two observations, unchecked)",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "A2.1 WRONG (the turn constant is (hR)², not #43's (R/r)²); A2.2 DONE (#43 Theorem 5) (study 2026-11-14-chat-handoff)",
+    "date": "2026-11-14"
+   },
+   {
+    "result": "Platonic mixes, a hybrid of #47 and #106: the skinned icosahedron (edge 1) in the dodecahedron's slab (worlds 4 → 3); Euclid's roof R and a roof plate Z in place of the connectors X and Y; counts per mix",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "NEW, untested (B2–B5); B7 contradicted: #106 Table 2 states the roles of X and Y (study 2026-11-14-chat-handoff)",
+    "date": "2026-11-14"
+   },
+   {
+    "result": "The OG chains with triacontahedra (as described in the chat, no paper seen): the side ratio of the three-fold faces at each station as one sequence; a fourth family of face directions to map the OG",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "NEW: not recorded anywhere; Dehn of the cut OG ≠ 0 is known (study 2026-11-05-og-pentagons) (study 2026-11-14-chat-handoff)",
+    "date": "2026-11-14"
    }
   ]
  },
@@ -4850,6 +5580,39 @@
     "n/a (outside the test’s competence)",
     "EXACT: h pieces 36(5/24−λ)⊗β (zero from 5/24 on); c pieces 24(3/8−λ)⊗β (zero at 3/8); tiles zero",
     "one layer of c-tiles or h-tiles: all locked (slides and twists)",
+    "—"
+   ],
+   "Simple 4-polytopes of the chain groups (#104, #108)": [
+    "—",
+    "—",
+    "—",
+    "—",
+    "—",
+    "—",
+    "—",
+    "—",
+    "—"
+   ],
+   "Permutohedra and the golden loop T(x) (#105)": [
+    "—",
+    "—",
+    "—",
+    "—",
+    "—",
+    "—",
+    "—",
+    "—",
+    "—"
+   ],
+   "Platonic mixes in one world (#47, #106)": [
+    "n/a (outside the test’s competence)",
+    "n/a (outside the test’s competence)",
+    "n/a (outside the test’s competence)",
+    "n/a (outside the test’s competence)",
+    "—",
+    "—",
+    "—",
+    "—",
     "—"
    ]
   },
@@ -8608,5 +9371,121 @@
   "Bones and skeleton": [
    "DICTO 12 Nov 2026: special geometries of the human bones and skeleton, starting with the sacrum ('sacred position in several ancient spiritual and even geometric traditions'). Study 1 (studies/2026-11-12-sacrum-geometry, SETTLED): the sacrum is a downward wedge and an approximate inverted triangle (apex 52 deg), curved on a near-circular arc, wider in front than behind; no golden ratio beyond chance (tested against lumbar vertebrae and random numbers); the name 'sacred bone' is Greek and older than Galen, its reason unsettled. Next bones: coccyx, hyoid, patella, skull, pelvis, whole spine."
   ]
- }
+ },
+ "front": [
+  {
+   "n": "43",
+   "head": "Nesting constants",
+   "text": "For a convex polytope S with the centre O inside, let P(S) be the convex hull of the feet of the perpendiculars from O to the planes of its faces. If S has icosahedral rotational symmetry about O, then S ⊂ (15 − 6√5)·P(S); with octahedral or pyritohedral symmetry S ⊂ 3·P(S); with tetrahedral symmetry S ⊂ 9·P(S). Each constant is sharp, reached by the Platonic solids.",
+   "where": "Theorems 1, 2 and 4 and Corollary 7 (Theorem 4: Version 2)"
+  },
+  {
+   "n": "93",
+   "head": "Rigid pairs",
+   "text": "Cut a cube C and its polar octahedron C* at matching levels: the sections C ∩ μC* and C ∩ (3 − μ)C* fill space together as a caesium chloride pair (#90). For every μ in (1, 3) that tiling is the only one, face to face or not; likewise every pair of the walk through the octet from the rhombic dodecahedron to the cube, except the octet itself. The centre pyramids of the rhombic dodecahedron, by contrast, tile face to face in uncountably many ways.",
+   "where": "Main theorem (A)–(C)"
+  },
+  {
+   "n": "102",
+   "head": "The Loop Equality",
+   "text": "On the tetrahedral network of every close-packed stacking (diamond, lonsdaleite and every other stacking, periodic or not), at every site and for every length m, the number of closed non-backtracking loops is that of diamond: 24, 48, 480, 3432, … for m = 6, 8, 10, 12, …. The same holds for closed walks and loops on the pyrochlore network and on the sphere packing of every stacking.",
+   "where": "Theorem 1, Corollaries 2 and 3 (the conjecture of #74)"
+  },
+  {
+   "n": "105",
+   "head": "Central planes of the permutohedron",
+   "text": "The faces of codimension two of the permutohedron of 1, …, n lie in exactly N(n) hyperplanes through its centre, N(n) = Σ n!/(a! b! c!) over a + b + c = n with 1 ≤ a < c, plus 2ⁿ⁻¹ − 1 for n odd or 2ⁿ⁻² − 1 for n even: 3, 15, 65, 225, 770, 2443, 7761 for n = 3, …, 9. In four dimensions the 150 two-dimensional faces lie in 65 such slices, each face in one, of four kinds up to symmetry.",
+   "where": "Theorems 1 and 3"
+  },
+  {
+   "n": "108",
+   "head": "Exchanges counted by loops",
+   "text": "Sweep a simple 4-polytope by a moving hyperplane; its cells, as they cross the slice, trade neighbours at the corners. For the polytopes of the seeds (0, 1, 1, 0), (0, 1, 1, 1), (1, 1, 1, 0) and (1, 1, 1, 1) of each four-node chain group, the exchange between the contacts of the two end families of cells occurs, in each direction, E − V + 1 times, the number of independent cycles of the edge graph of the chain's regular polytope: 6 for A₄, 17 for B₄, 73 for F₄ and 601 for H₄ (the 600-cell).",
+   "where": "Theorem 3; it rests on the balance law, Theorem 1, which in substance is Stanley's symmetry for balanced spheres (1979); the sweep reading: #104"
+  },
+  {
+   "n": "47",
+   "head": "Every mix of the Platonic solids fills space",
+   "text": "For every non-empty set M of the five Platonic solids (31 sets) there is a tiling of space by copies of the solids of M, all of edge 1, each one used, together with pieces from one kit of seven connectors. Cubes, tetrahedra and octahedra fill space together with no connector, though never face to face.",
+   "where": "Main theorem; Theorem 2 (Version 3)"
+  }
+ ],
+ "series": {
+  "name": "The Five Orders of Space",
+  "note": "All the books form one work in eleven books and twelve volumes, in five rings after Musashi's Book of Five Rings and built like Euclid's Elements: the DICTOnary as Definitions, Quanta of Space I as Postulates, Books Two to Eleven as Propositions (series page, 13 November 2026). Each ring is one Platonic solid in its element's colour.",
+  "books": [
+   [
+    "One",
+    "Earth (cube)",
+    "Quanta of Space I and II (II: The DICTOnary of Atoms)",
+    "published; next versions drafted (Quanta 2.3, DICTOnary 1.4)"
+   ],
+   [
+    "Two",
+    "Earth (cube)",
+    "Space-Fillers and Lattice Moves",
+    "draft of 13 November 2026, not released: ten chapters in three parts (Alone, Together, Held), the Atlas of 28 plates"
+   ],
+   [
+    "Three",
+    "Water (icosahedron)",
+    "DICTONIC Bonds",
+    "published; next version drafted (v3)"
+   ],
+   [
+    "Four",
+    "Water (icosahedron)",
+    "The Golden Cycle",
+    "published; next version drafted (v5)"
+   ],
+   [
+    "Five",
+    "Water (icosahedron)",
+    "Star Cores",
+    "published; next version drafted (v3)"
+   ],
+   [
+    "Six",
+    "Fire (tetrahedron)",
+    "HexOct: The Hexagonality Law",
+    "published"
+   ],
+   [
+    "Seven",
+    "Fire (tetrahedron)",
+    "The Permutohedron Paradigm",
+    "draft of 13 November 2026, not released: one swap of neighbours from the truncated triangle through the 4D scutoid tissues (#104, #105, #107, #108) to the Permutohedron Family and change ringing"
+   ],
+   [
+    "Eight",
+    "Wind (octahedron)",
+    "The Platonic Solids (working title)",
+    "draft of 13 November 2026, not released: inside the five, the five filling space (#47, #106), where the five live (#108 Observation 5, made exact)"
+   ],
+   [
+    "Nine",
+    "Void (dodecahedron)",
+    "The Golden Ladder",
+    "published; next version drafted (v8)"
+   ],
+   [
+    "Ten",
+    "Void (dodecahedron)",
+    "Alicia in Wonderland: The Red & White Queens",
+    "published; next version drafted (v6, Chapter 10 from #107)"
+   ],
+   [
+    "Eleven",
+    "Void (dodecahedron)",
+    "A Brief Geometry of Space (working title)",
+    "plan of 13 November 2026: the three aims as one story; holds the drafts The Turn Law and Geometry Gives Laws"
+   ]
+  ]
+ },
+ "status_box": [
+  "DRAFT of version 2.3 for DICTO's read (14 November 2026), not released; delete this box at release (its first note becomes the Version 2.3 line in Notes on this version).",
+  "Names keep DICTO in Names and in the Almanac headwords; in running text a name carries DICTO at its first mention in each part or section and drops it after (DICTO, 14 November 2026). DICTO Yantra and DICTO Jewel keep it throughout, since the bare word is ambiguous (Kulaichev's yantra; jewel). DICTO DOI labels are unchanged.",
+  "Descriptions in Names marked † rest on the entry's own notes; to check. D40 DICTO GTI: #38 gives its hexagon sides as 1 : φ, the census of The Golden Ladder as 1 + 3√5/5; to check.",
+  "Not in this version: the part “maps and crossings” (each seed triangle, its test curves and where they meet) waits until the leads of 14 November are tested; the systematic line for every atom (symmetry group, face counts by type, construction recipe) is a task for the next version of The DICTOnary of Atoms (branch next-version/book-quanta-dictonary)."
+ ]
 }
