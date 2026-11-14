@@ -1,0 +1,1053 @@
+{
+ "controls": {
+  "sqrt3": {
+   "swap": "mu -> 3/mu",
+   "law": "t_min maximal, 5 - 2 sqrt3",
+   "mechanism": "B3 symmetry + concavity",
+   "qualifies": true
+  },
+  "3/2": {
+   "swap": "mu -> 3 - mu",
+   "law": "Dehn 0 (B2); wall area maximal (B3)",
+   "qualifies": true
+  },
+  "8/5": {
+   "qualifies": false,
+   "reason": "no geometric swap of the line fixes it; no quantity vanishes or is critical there"
+  }
+ },
+ "notes": {
+  "C Dehn of S(6/5)": "-72*sqrt(2)/5 (x) beta",
+  "C Dehn of S(7/5)": "-24*sqrt(2)/5 (x) beta",
+  "C Dehn of S(3/2)": "0 (x) beta",
+  "C Dehn of S(8/5)": "24*sqrt(2)/5 (x) beta",
+  "C Dehn of S(9/5)": "72*sqrt(2)/5 (x) beta",
+  "A volume V(a)": "4*(2*a**3 + 12*a**2 + 21*a + 8)",
+  "A area A(a)": "24*a**2 + 24*sqrt(2)*a + 48*a + 12 + 24*sqrt(3)",
+  "A dihedral kinds (deg = p pi + q beta)": [
+   [
+    "125.2644",
+    "1/2",
+    1
+   ],
+   [
+    "135.0000",
+    "3/4",
+    0
+   ],
+   [
+    "144.7356",
+    "1",
+    -1
+   ]
+  ],
+  "A roundness critical points on a > 0 (sign changes, float)": [
+   0.531884
+  ],
+  "small stellated dodecahedron at the turn": "smooth, t'' = 0.045593 (minimum)",
+  "great dodecahedron at the turn": "smooth, t'' = 0.000971 (minimum)"
+ },
+ "A": {
+  "V": "8*a**3 + 48*a**2 + 84*a + 32",
+  "A": "24*a**2 + 24*sqrt(2)*a + 48*a + 12 + 24*sqrt(3)",
+  "zone_planes": 13,
+  "completion": {
+   "125.2644": [],
+   "135.0000": [],
+   "144.7356": []
+  },
+  "tones": {
+   "Q4": {
+    "normalised_value_at_a*": 2.0501330894674953e-143,
+    "zero_at_a*": true,
+    "positive_zeros_on_line": [
+     0.3830657718182736
+    ]
+   },
+   "Q6": {
+    "normalised_value_at_a*": -0.7027196770763763,
+    "zero_at_a*": false,
+    "positive_zeros_on_line": [
+     1.110008365142888
+    ]
+   },
+   "Q8": {
+    "normalised_value_at_a*": -0.1788621367275189,
+    "zero_at_a*": false,
+    "positive_zeros_on_line": [
+     1.8325836233490453
+    ]
+   },
+   "Q12.0": {
+    "normalised_value_at_a*": 0.41489809850839543,
+    "zero_at_a*": false,
+    "positive_zeros_on_line": [
+     3.2890332504301854
+    ]
+   },
+   "Q12.1": {
+    "normalised_value_at_a*": -0.07250543899884107,
+    "zero_at_a*": false,
+    "positive_zeros_on_line": [
+     3.203361604084253
+    ]
+   }
+  },
+  "polar_volume": "8/(3*(a + 1)*(a + 2)*(2*a + 3))",
+  "mahler": "32*(2*a**3 + 12*a**2 + 21*a + 8)/(3*(a + 1)*(a + 2)*(2*a + 3))",
+  "mahler_critical": [
+   0.5793201631024573
+  ],
+  "iq_critical": [
+   0.5318836600346721
+  ],
+  "form_tones": {
+   "F4": {
+    "zero_at_a*": false,
+    "positive_zeros": [
+     0.35385751060789183
+    ]
+   },
+   "F6": {
+    "zero_at_a*": false,
+    "positive_zeros": []
+   },
+   "F8": {
+    "zero_at_a*": false,
+    "positive_zeros": []
+   },
+   "F12.0": {
+    "zero_at_a*": false,
+    "positive_zeros": [
+     0.22960884825710143
+    ]
+   },
+   "F12.1": {
+    "zero_at_a*": false,
+    "positive_zeros": []
+   }
+  },
+  "verdict": "NOT FORCED: Q4 = 0 at a* is a crossing of the line with the 5-design curve of the octahedral group; no geometric swap of the line fixes a*"
+ },
+ "findings": [
+  [
+   "A dihedral completion test: edges that can NOT be surrounded by copies: ['125.2644', '135.0000', '144.7356'] (deg)",
+   "{'125.2644': [], '135.0000': [], '144.7356': []}"
+  ],
+  [
+   "A RESULT: no member of the line (a > 0) tiles space by congruent copies, turned or mirrored, face-to-face or not",
+   ""
+  ],
+  [
+   "A tone Q6 at a*: nonzero (H(v/|v|) = -0.702720); its zeros on a > 0: [1.110008]",
+   ""
+  ],
+  [
+   "A tone Q8 at a*: nonzero (H(v/|v|) = -0.178862); its zeros on a > 0: [1.832584]",
+   ""
+  ],
+  [
+   "A tone Q12.0 at a*: nonzero (H(v/|v|) = 0.414898); its zeros on a > 0: [3.289033]",
+   ""
+  ],
+  [
+   "A tone Q12.1 at a*: nonzero (H(v/|v|) = -0.072505); its zeros on a > 0: [3.203362]",
+   ""
+  ],
+  [
+   "NOT critical at a*: A Mahler volume V(Z)V(Z\u00b0) is NOT critical at a*; its critical points on a > 0: [0.57932]",
+   "-32*(6*a**4 + 32*a**3 + 45*a**2 - 22)"
+  ],
+  [
+   "NOT critical at a*: A roundness 36 pi V^2/A^3 is at a* (2V'A - 3VA' = 423.586887 there)",
+   ""
+  ],
+  [
+   "A canonical-form tone F4 (integral of the degree-4 harmonic over the polar) at a*: nonzero; zeros on a > 0: [0.353858]",
+   ""
+  ],
+  [
+   "A canonical-form tone F6 (integral of the degree-6 harmonic over the polar) at a*: nonzero; zeros on a > 0: []",
+   ""
+  ],
+  [
+   "A canonical-form tone F8 (integral of the degree-8 harmonic over the polar) at a*: nonzero; zeros on a > 0: []",
+   ""
+  ],
+  [
+   "A canonical-form tone F12.0 (integral of the degree-12 harmonic over the polar) at a*: nonzero; zeros on a > 0: [0.229609]",
+   ""
+  ],
+  [
+   "A canonical-form tone F12.1 (integral of the degree-12 harmonic over the polar) at a*: nonzero; zeros on a > 0: []",
+   ""
+  ],
+  [
+   "NONE: A (v) Moebius involution fixes a* and maps the zero set of Q4 to itself (no harmonic quadruple): Q4 = 0 at a* is not a parity zero",
+   ""
+  ],
+  [
+   "B adjacent solid, dihedral completion test: every edge passes (angles alone do not forbid a tiling)",
+   "{'109.4712': [[1, 2, 0]], '125.2644': [[1, 2, 0]]}"
+  ]
+ ],
+ "B": {
+  "opposite": {
+   "symmetry_order": 16,
+   "faces": 12,
+   "linear_image_of_RD": true,
+   "belts": 6
+  },
+  "adjacent": {
+   "symmetry_order": 4,
+   "faces": [
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "completion": {
+    "109.4712": [
+     [
+      1,
+      2,
+      0
+     ]
+    ],
+    "125.2644": [
+     [
+      1,
+      2,
+      0
+     ]
+    ]
+   }
+  },
+  "minkowski_placements": [
+   "(2, ('+x', '-x'))",
+   "(2, ('+y', '-y'))",
+   "(2, ('+z', '-z'))"
+  ]
+ },
+ "rock_salt": {
+  "samples": {
+   "-3/4": {
+    "VA": "1/64",
+    "AA": "3/8",
+    "VB": "127/64",
+    "AB": "3/8 + 45*sqrt(2)/8",
+    "DA": "0",
+    "DB": "0",
+    "W": "3/8 + 45*sqrt(2)/16"
+   },
+   "-1/3": {
+    "VA": "8/27",
+    "AA": "8/3",
+    "VB": "46/27",
+    "AB": "8/3 + 10*sqrt(2)/3",
+    "DA": "0",
+    "DB": "0",
+    "W": "5*sqrt(2)/3 + 8/3"
+   },
+   "-1/5": {
+    "VA": "64/125",
+    "AA": "96/25",
+    "VB": "186/125",
+    "AB": "54*sqrt(2)/25 + 96/25",
+    "DA": "0",
+    "DB": "0",
+    "W": "27*sqrt(2)/25 + 96/25"
+   },
+   "0": {
+    "VA": "1",
+    "AA": "6",
+    "VB": "1",
+    "AB": "6",
+    "DA": "0",
+    "DB": "0",
+    "W": "6"
+   },
+   "1/5": {
+    "VA": "186/125",
+    "AA": "54*sqrt(2)/25 + 96/25",
+    "VB": "64/125",
+    "AB": "96/25",
+    "DA": "0",
+    "DB": "0",
+    "W": "27*sqrt(2)/25 + 96/25"
+   },
+   "1/3": {
+    "VA": "46/27",
+    "AA": "8/3 + 10*sqrt(2)/3",
+    "VB": "8/27",
+    "AB": "8/3",
+    "DA": "0",
+    "DB": "0",
+    "W": "5*sqrt(2)/3 + 8/3"
+   },
+   "1/2": {
+    "VA": "15/8",
+    "AA": "3/2 + 9*sqrt(2)/2",
+    "VB": "1/8",
+    "AB": "3/2",
+    "DA": "0",
+    "DB": "0",
+    "W": "3/2 + 9*sqrt(2)/4"
+   },
+   "3/4": {
+    "VA": "127/64",
+    "AA": "3/8 + 45*sqrt(2)/8",
+    "VB": "1/64",
+    "AB": "3/8",
+    "DA": "0",
+    "DB": "0",
+    "W": "3/8 + 45*sqrt(2)/16"
+   }
+  },
+  "W": "6*(1 - lam)**2 + 3*sqrt(2)*(-lam**2 + 2*lam) with lam -> |lam|",
+  "slope_at_0+": "-12 + 6*sqrt(2)",
+  "fixed_cell": "cube"
+ },
+ "zinc_blende": {
+  "samples": {
+   "1/2": {
+    "VA": "1/3",
+    "AA": "2*sqrt(3)",
+    "VB": "47/3",
+    "AB": "2*sqrt(3) + 21*sqrt(2)",
+    "DA": "12*sqrt(2)",
+    "DB": "-12*sqrt(2)",
+    "W": "(4*sqrt(3) + 21*sqrt(2))/2"
+   },
+   "6/5": {
+    "VA": "568/125",
+    "AA": "(12*sqrt(2) + 264*sqrt(3))/25",
+    "VB": "1432/125",
+    "AB": "(192*sqrt(2) + 264*sqrt(3))/25",
+    "DA": "72*sqrt(2)/5",
+    "DB": "-72*sqrt(2)/5",
+    "W": "(204*sqrt(2) + 528*sqrt(3))/50"
+   },
+   "13/10": {
+    "VA": "2116/375",
+    "AA": "(27*sqrt(2) + 284*sqrt(3))/25",
+    "VB": "3884/375",
+    "AB": "(147*sqrt(2) + 284*sqrt(3))/25",
+    "DA": "48*sqrt(2)/5",
+    "DB": "-48*sqrt(2)/5",
+    "W": "(174*sqrt(2) + 568*sqrt(3))/50"
+   },
+   "7/5": {
+    "VA": "2552/375",
+    "AA": "(48*sqrt(2) + 296*sqrt(3))/25",
+    "VB": "3448/375",
+    "AB": "(108*sqrt(2) + 296*sqrt(3))/25",
+    "DA": "24*sqrt(2)/5",
+    "DB": "-24*sqrt(2)/5",
+    "W": "(156*sqrt(2) + 592*sqrt(3))/50"
+   },
+   "3/2": {
+    "VA": "8",
+    "AA": "3*sqrt(2) + 12*sqrt(3)",
+    "VB": "8",
+    "AB": "3*sqrt(2) + 12*sqrt(3)",
+    "DA": "0",
+    "DB": "0",
+    "W": "3*sqrt(2) + 12*sqrt(3)"
+   },
+   "8/5": {
+    "VA": "3448/375",
+    "AA": "(108*sqrt(2) + 296*sqrt(3))/25",
+    "VB": "2552/375",
+    "AB": "(48*sqrt(2) + 296*sqrt(3))/25",
+    "DA": "-24*sqrt(2)/5",
+    "DB": "24*sqrt(2)/5",
+    "W": "(156*sqrt(2) + 592*sqrt(3))/50"
+   },
+   "17/10": {
+    "VA": "3884/375",
+    "AA": "(147*sqrt(2) + 284*sqrt(3))/25",
+    "VB": "2116/375",
+    "AB": "(27*sqrt(2) + 284*sqrt(3))/25",
+    "DA": "-48*sqrt(2)/5",
+    "DB": "48*sqrt(2)/5",
+    "W": "(174*sqrt(2) + 568*sqrt(3))/50"
+   },
+   "9/5": {
+    "VA": "1432/125",
+    "AA": "(192*sqrt(2) + 264*sqrt(3))/25",
+    "VB": "568/125",
+    "AB": "(12*sqrt(2) + 264*sqrt(3))/25",
+    "DA": "-72*sqrt(2)/5",
+    "DB": "72*sqrt(2)/5",
+    "W": "(204*sqrt(2) + 528*sqrt(3))/50"
+   },
+   "5/2": {
+    "VA": "47/3",
+    "AA": "2*sqrt(3) + 21*sqrt(2)",
+    "VB": "1/3",
+    "AB": "2*sqrt(3)",
+    "DA": "-12*sqrt(2)",
+    "DB": "12*sqrt(2)",
+    "W": "(4*sqrt(3) + 21*sqrt(2))/2"
+   }
+  },
+  "W_on_(1,2)": "-16*sqrt(3)*s**2 + 12*sqrt(2)*s**2 - 36*sqrt(2)*s + 48*sqrt(3)*s - 24*sqrt(3) + 30*sqrt(2)",
+  "W2_at_fixed": "-32*sqrt(3) + 24*sqrt(2)",
+  "fixed_cell": "triakis truncated tetrahedron"
+ },
+ "stars": {
+  "small stellated dodecahedron": {
+   "c": "24 + (8)*sqrt(5)",
+   "hR": "2 + (2)*sqrt(5)",
+   "t_at_hR": "15 + (-6)*sqrt(5)",
+   "right_branch": [
+    "15/2 + (-7/2)*sqrt(5)",
+    "-5/4 + (5/8)*sqrt(5)",
+    "-5 + (5)*sqrt(5)"
+   ],
+   "left_branch": [
+    "15/2 + (-7/2)*sqrt(5)",
+    "-5/4 + (5/8)*sqrt(5)",
+    "-5 + (5)*sqrt(5)"
+   ],
+   "slope_right": "0",
+   "slope_left": "0",
+   "shape": "smooth, t'' = 0.045593 (minimum)"
+  },
+  "great dodecahedron": {
+   "c": "984 + (440)*sqrt(5)",
+   "hR": "22 + (10)*sqrt(5)",
+   "t_at_hR": "15 + (-6)*sqrt(5)",
+   "right_branch": [
+    "15/2 + (-7/2)*sqrt(5)",
+    "-145/16 + (65/16)*sqrt(5)",
+    "20 + (10)*sqrt(5)"
+   ],
+   "left_branch": [
+    "15/2 + (-7/2)*sqrt(5)",
+    "-145/16 + (65/16)*sqrt(5)",
+    "20 + (10)*sqrt(5)"
+   ],
+   "slope_right": "0",
+   "slope_left": "0",
+   "shape": "smooth, t'' = 0.000971 (minimum)"
+  }
+ },
+ "checks": [
+  [
+   true,
+   "C t_min(mu) = max x.y over corners of S(mu), S(3/mu) = 5 - mu - 3/mu at mu = 8/5",
+   "61/40"
+  ],
+  [
+   true,
+   "C t_min(mu) = max x.y over corners of S(mu), S(3/mu) = 5 - mu - 3/mu at mu = 7/4",
+   "43/28"
+  ],
+  [
+   true,
+   "C t_min(mu) = max x.y over corners of S(mu), S(3/mu) = 5 - mu - 3/mu at mu = 19/10",
+   "289/190"
+  ],
+  [
+   true,
+   "C [sqrt3, B1+B3] t_min is EVEN under the turn mu -> 3/mu (exact identity)",
+   ""
+  ],
+  [
+   true,
+   "C [sqrt3] forced: critical at the fixed point sqrt3, t'' = -2*sqrt(3)/3 < 0 -> maximum 5 - 2sqrt3 (QUALIFIES, mechanism B3)",
+   ""
+  ],
+  [
+   true,
+   "C [3/2, B2] Dehn is ODD under mu -> 3 - mu on the pairs [('6/5', '9/5'), ('7/5', '8/5')]",
+   ""
+  ],
+  [
+   true,
+   "C [3/2] forced: Dehn = 0 at the fixed point (Kelvin) -> QUALIFIES, mechanism B2",
+   ""
+  ],
+  [
+   true,
+   "C area closed form = engine at mu = 6/5",
+   ""
+  ],
+  [
+   true,
+   "C area closed form = engine at mu = 8/5",
+   ""
+  ],
+  [
+   true,
+   "C [3/2, B3] wall area per site pair W even under the swap, W'' = 24 - 16*sqrt(3) < 0: maximum at Kelvin",
+   ""
+  ],
+  [
+   true,
+   "C [random 8/5, B1] not fixed: turn gives 15/8, CsCl swap gives 7/5",
+   ""
+  ],
+  [
+   true,
+   "C [8/5] Dehn nonzero there: 24*sqrt(2)/5",
+   ""
+  ],
+  [
+   true,
+   "C [8/5] neither t_min nor W is critical there (t' = 11/64, W' = 12/5 - 8*sqrt(3)/5)",
+   ""
+  ],
+  [
+   true,
+   "A a* = 0.383065771818 is a root of 6a^4 + 24a^3 + 24a^2 - 5 = 6(a(a+2))^2 - 5",
+   ""
+  ],
+  [
+   true,
+   "A the quartic is irreducible over Q: a* has degree 4",
+   "(1, [(6*a**4 + 24*a**3 + 24*a**2 - 5, 1)])"
+  ],
+  [
+   true,
+   "A exactly one positive root (the other three conjugates are negative: off the line a > 0)",
+   "[-2.3830657718182735, -1.295176338524488, -0.704823661475512, 0.3830657718182736]"
+  ],
+  [
+   true,
+   "A zonotope (6 Kelvin zones + 3 cube zones) has exactly the 48 corners sperm(a, a+1, a+2) at a = 1/3",
+   ""
+  ],
+  [
+   true,
+   "A zonotope (6 Kelvin zones + 3 cube zones) has exactly the 48 corners sperm(a, a+1, a+2) at a = 1",
+   ""
+  ],
+  [
+   true,
+   "A zonotope (6 Kelvin zones + 3 cube zones) has exactly the 48 corners sperm(a, a+1, a+2) at a = 5/2",
+   ""
+  ],
+  [
+   true,
+   "A face structure is the same for every a > 0: a zonotope's faces depend only on the generator directions (classical)",
+   ""
+  ],
+  [
+   true,
+   "A volume formula = hull volume at a = 1/3",
+   "1772/27"
+  ],
+  [
+   true,
+   "A area formula = hull area at a = 1/3 (float control)",
+   "(np.float64(83.54959454730451), 83.54959454730448)"
+  ],
+  [
+   true,
+   "A faces at a = 1/3: 6 octagons, 8 hexagons, 12 rectangles",
+   ""
+  ],
+  [
+   true,
+   "A volume formula = hull volume at a = 2",
+   "456"
+  ],
+  [
+   true,
+   "A area formula = hull area at a = 2 (float control)",
+   "(np.float64(313.4514703755616), 313.4514703755616)"
+  ],
+  [
+   true,
+   "A faces at a = 2: 6 octagons, 8 hexagons, 12 rectangles",
+   ""
+  ],
+  [
+   true,
+   "A belts: every one of the 9 zones lies in 4 zone planes -> every belt has 8 faces",
+   "{0: 8, 1: 8, 2: 8, 3: 8, 4: 8, 5: 8, 6: 8, 7: 8, 8: 8}"
+  ],
+  [
+   true,
+   "A NO TILING BY TRANSLATIONS for any a > 0 (Venkov 1954 / McMullen 1980: a parallelohedron has belts of 4 or 6 faces only)",
+   ""
+  ],
+  [
+   true,
+   "A Dehn = 0 at a = 1/3 (zonohedron)",
+   ""
+  ],
+  [
+   true,
+   "A Dehn = 0 at a = 1 (zonohedron)",
+   ""
+  ],
+  [
+   true,
+   "A the dihedral kinds are the same at every sampled a (face normals do not depend on a)",
+   ""
+  ],
+  [
+   true,
+   "A O_h-invariant harmonics: dimensions 1, 1, 1, 2 in degrees 4, 6, 8, 12 (Meyer 1954)",
+   ""
+  ],
+  [
+   true,
+   "A Q4 sum over the 48 corners = -(96/5)(6a^4 + 24a^3 + 24a^2 - 5) (chat-handoff value)",
+   ""
+  ],
+  [
+   true,
+   "A tone Q4 at a*: ZERO (H(v/|v|) = 0.000000); its zeros on a > 0: [0.383066]",
+   ""
+  ],
+  [
+   true,
+   "A at a* the 48 corners are a spherical 5-design, not a 7-design (an O_h orbit is a t-design iff every invariant harmonic of degree <= t vanishes on it: Sobolev 1962, Goethals-Seidel 1981)",
+   ""
+  ],
+  [
+   true,
+   "A the corner (a+2, a+1, a) lies on the octagon, hexagon and rectangle planes n/h . x = 1",
+   ""
+  ],
+  [
+   true,
+   "A polar volume 8/((a+2)(3a+3)(2a+3)) = hull of the polar at a = 1/3",
+   "18/77"
+  ],
+  [
+   true,
+   "A polar volume 8/((a+2)(3a+3)(2a+3)) = hull of the polar at a = 2",
+   "2/63"
+  ],
+  [
+   true,
+   "A the polar has 48 triangular faces: it is not a zonohedron, so polarity leaves the line",
+   ""
+  ],
+  [
+   true,
+   "A (i) similarity: octagon-rectangle edges 2a, octagon-hexagon and hexagon-rectangle edges sqrt2; ratio sqrt2 a injective -> no similarity swap",
+   ""
+  ],
+  [
+   true,
+   "A (iv) a -> -2 - a gives the SAME corner set: the only reparametrisation symmetry of the corner formula (a fold, fixed point a = -1)",
+   ""
+  ],
+  [
+   true,
+   "A every tone is EVEN under the fold (eps = +1): parity forces nothing; the fixed point a = -1 gives sperm(1, 0, 1) = the cuboctahedron, off the zonohedron line",
+   ""
+  ],
+  [
+   true,
+   "A the fold's fixed point a = -1 gives sperm(-1, 0, 1) = the cuboctahedron",
+   ""
+  ],
+  [
+   true,
+   "A the four roots of the Q4 tone",
+   ""
+  ],
+  [
+   true,
+   "A control a = 1/2 (random): no tone vanishes there; no swap fixes it",
+   ""
+  ],
+  [
+   true,
+   "B the opposite solid = L(rhombic dodecahedron), L = [[1,0,0],[0,1/2,1/2],[0,1/2,-1/2]]: the RD stretched by sqrt2 along a 4-fold axis (up to similarity)",
+   ""
+  ],
+  [
+   true,
+   "B L maps the RD's fcc lattice onto the lattice (2,1,1), (0,2,0), (0,0,2) of the handoff cover",
+   ""
+  ],
+  [
+   true,
+   "B symmetry orders (a symmetry permutes the square normals, so it is a signed permutation about the centroid): opposite 16 (D4h), adjacent 4 (C2v)",
+   ""
+  ],
+  [
+   true,
+   "B the point inversion acts on the 15 placements of two pyramids: fixes the 3 opposite ones, swaps the 12 adjacent ones in 6 pairs",
+   ""
+  ],
+  [
+   true,
+   "B over all 64 placements: the solid is centrally symmetric EXACTLY when the placement is fixed by the inversion",
+   ""
+  ],
+  [
+   true,
+   "B Minkowski's conditions (centrally symmetric, faces centrally symmetric) hold only for the 3 opposite pairs: [(2, ('+x', '-x')), (2, ('+y', '-y')), (2, ('+z', '-z'))]",
+   ""
+  ],
+  [
+   true,
+   "B Dehn of CO + k pyramids = (24 - 12k) sqrt2 (x) beta (handoff, exact): it depends on k only, so no swap of placements is odd on it; the two-pyramid solids are the only Dehn-zero ones",
+   ""
+  ],
+  [
+   true,
+   "B opposite solid: 4 zones, every belt has 6 faces (Venkov): a parallelohedron of the rhombic-dodecahedron type (Fedorov 1885)",
+   "{(np.float64(0.707106781), np.float64(-0.0), np.float64(-0.707106781)): 6, (np.float64(0.707106781), np.float64(-0.707106781), np.float64(-0.0)): 6, (np.float64(0.707106781), np.float64(0.0), np.float64(0.707106781)): 6, (np.float64(0.707106781), np.float64(0.707106781), np.float64(-0.0)): 6}"
+  ],
+  [
+   true,
+   "B opposite solid: 12 faces (4 squares, 8 rhombi of 60 deg), Dehn 0",
+   ""
+  ],
+  [
+   true,
+   "B adjacent solid: NOT centrally symmetric, trapezoid faces -> NO tiling by translations (Minkowski 1897); faces [3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = -3/4: A cell + B cell = lattice cell (2)",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = -3/4: Dehn(A) + Dehn(B) = 0 (0 + 0) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = -1/3: A cell + B cell = lattice cell (2)",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = -1/3: Dehn(A) + Dehn(B) = 0 (0 + 0) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = -1/5: A cell + B cell = lattice cell (2)",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = -1/5: Dehn(A) + Dehn(B) = 0 (0 + 0) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = 0: A cell + B cell = lattice cell (2)",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = 0: Dehn(A) + Dehn(B) = 0 (0 + 0) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = 1/5: A cell + B cell = lattice cell (2)",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = 1/5: Dehn(A) + Dehn(B) = 0 (0 + 0) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = 1/3: A cell + B cell = lattice cell (2)",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = 1/3: Dehn(A) + Dehn(B) = 0 (0 + 0) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = 1/2: A cell + B cell = lattice cell (2)",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = 1/2: Dehn(A) + Dehn(B) = 0 (0 + 0) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = 3/4: A cell + B cell = lattice cell (2)",
+   ""
+  ],
+  [
+   true,
+   "rock salt t = 3/4: Dehn(A) + Dehn(B) = 0 (0 + 0) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "rock salt: W(lam) = 6(1-|lam|)^2 + 3sqrt2(2|lam| - lam^2) at every sample (even under the swap lam -> -lam)",
+   ""
+  ],
+  [
+   true,
+   "rock salt: Dehn = 0 at EVERY weight (all dihedrals are rational multiples of pi): parity is satisfied vacuously",
+   ""
+  ],
+  [
+   true,
+   "rock salt: W has a KINK at the fixed point lam = 0: one-sided slopes -+(12 - 6*sqrt(2)) -> strict maximum there (the cube); W convex on each side, not concave",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 1/2: A cell + B cell = lattice cell (16)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 1/2: Dehn(A) + Dehn(B) = 0 (12*sqrt(2) + -12*sqrt(2)) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 6/5: A cell + B cell = lattice cell (16)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 6/5: Dehn(A) + Dehn(B) = 0 (72*sqrt(2)/5 + -72*sqrt(2)/5) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 13/10: A cell + B cell = lattice cell (16)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 13/10: Dehn(A) + Dehn(B) = 0 (48*sqrt(2)/5 + -48*sqrt(2)/5) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 7/5: A cell + B cell = lattice cell (16)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 7/5: Dehn(A) + Dehn(B) = 0 (24*sqrt(2)/5 + -24*sqrt(2)/5) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 3/2: A cell + B cell = lattice cell (16)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 3/2: Dehn(A) + Dehn(B) = 0 (0 + 0) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 8/5: A cell + B cell = lattice cell (16)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 8/5: Dehn(A) + Dehn(B) = 0 (-24*sqrt(2)/5 + 24*sqrt(2)/5) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 17/10: A cell + B cell = lattice cell (16)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 17/10: Dehn(A) + Dehn(B) = 0 (-48*sqrt(2)/5 + 48*sqrt(2)/5) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 9/5: A cell + B cell = lattice cell (16)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 9/5: Dehn(A) + Dehn(B) = 0 (-72*sqrt(2)/5 + 72*sqrt(2)/5) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 5/2: A cell + B cell = lattice cell (16)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende t = 5/2: Dehn(A) + Dehn(B) = 0 (-12*sqrt(2) + 12*sqrt(2)) [B2 parity: the two cells make a lattice fundamental domain]",
+   ""
+  ],
+  [
+   true,
+   "zinc blende: Dehn(A(s)) = -Dehn(A(3 - s)) at s = 1/2 (ODD under the swap)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende: Dehn(A(s)) = -Dehn(A(3 - s)) at s = 6/5 (ODD under the swap)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende: Dehn(A(s)) = -Dehn(A(3 - s)) at s = 13/10 (ODD under the swap)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende: Dehn(A(s)) = -Dehn(A(3 - s)) at s = 7/5 (ODD under the swap)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende [B2]: forced Dehn = 0 at the fixed point s = 3/2",
+   ""
+  ],
+  [
+   true,
+   "zinc blende: the fixed cell has 16 corners, 12 triangles and 4 hexagons: the triakis truncated tetrahedron (Voronoi cell of diamond)",
+   "[3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 6, 6, 6, 6]"
+  ],
+  [
+   true,
+   "zinc blende: W(s) on (1, 2) = 2*(-8*sqrt(3)*s**2 + 6*sqrt(2)*s**2 - 18*sqrt(2)*s + 24*sqrt(3)*s - 12*sqrt(3) + 15*sqrt(2)) (fitted on 5 points, checked on 3 more)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende [B3]: W(s) = W(3 - s) (even under the swap)",
+   ""
+  ],
+  [
+   true,
+   "zinc blende: W critical at the fixed point s = 3/2; W'' = -32*sqrt(3) + 24*sqrt(2) (concave: MAXIMUM)",
+   ""
+  ],
+  [
+   true,
+   "small stellated dodecahedron: turn mu -> c/mu, c = 24 + (8)*sqrt(5), fixed point hR = 2 + (2)*sqrt(5) in Q(sqrt5)",
+   ""
+  ],
+  [
+   true,
+   "small stellated dodecahedron: one corner pair is the maximum at all four points on the right of hR",
+   ""
+  ],
+  [
+   true,
+   "small stellated dodecahedron: on the right t_min* = A + B mu + C/mu (fitted on 3 points, exact on the 4th)",
+   ""
+  ],
+  [
+   true,
+   "small stellated dodecahedron: that branch reaches t_min*(hR) = 15 + (-6)*sqrt(5) = 1.583592",
+   ""
+  ],
+  [
+   true,
+   "small stellated dodecahedron: turn symmetry t*(mu) = t*(c/mu) exact at mu = hR + 1e-4",
+   ""
+  ],
+  [
+   true,
+   "small stellated dodecahedron: one corner pair is the maximum at all four points on the left of hR",
+   ""
+  ],
+  [
+   true,
+   "small stellated dodecahedron: on the left t_min* = A + B mu + C/mu (fitted on 3 points, exact on the 4th)",
+   ""
+  ],
+  [
+   true,
+   "small stellated dodecahedron: that branch reaches t_min*(hR) = 15 + (-6)*sqrt(5) = 1.583592",
+   ""
+  ],
+  [
+   true,
+   "small stellated dodecahedron: turn symmetry t*(mu) = t*(c/mu) exact at mu = hR - 1e-4",
+   ""
+  ],
+  [
+   true,
+   "small stellated dodecahedron: one-sided slopes at hR are opposite (right 0.000000, left 0.000000), as the turn forces: smooth",
+   ""
+  ],
+  [
+   true,
+   "great dodecahedron: turn mu -> c/mu, c = 984 + (440)*sqrt(5), fixed point hR = 22 + (10)*sqrt(5) in Q(sqrt5)",
+   ""
+  ],
+  [
+   true,
+   "great dodecahedron: one corner pair is the maximum at all four points on the right of hR",
+   ""
+  ],
+  [
+   true,
+   "great dodecahedron: on the right t_min* = A + B mu + C/mu (fitted on 3 points, exact on the 4th)",
+   ""
+  ],
+  [
+   true,
+   "great dodecahedron: that branch reaches t_min*(hR) = 15 + (-6)*sqrt(5) = 1.583592",
+   ""
+  ],
+  [
+   true,
+   "great dodecahedron: turn symmetry t*(mu) = t*(c/mu) exact at mu = hR + 1e-4",
+   ""
+  ],
+  [
+   true,
+   "great dodecahedron: one corner pair is the maximum at all four points on the left of hR",
+   ""
+  ],
+  [
+   true,
+   "great dodecahedron: on the left t_min* = A + B mu + C/mu (fitted on 3 points, exact on the 4th)",
+   ""
+  ],
+  [
+   true,
+   "great dodecahedron: that branch reaches t_min*(hR) = 15 + (-6)*sqrt(5) = 1.583592",
+   ""
+  ],
+  [
+   true,
+   "great dodecahedron: turn symmetry t*(mu) = t*(c/mu) exact at mu = hR - 1e-4",
+   ""
+  ],
+  [
+   true,
+   "great dodecahedron: one-sided slopes at hR are opposite (right 0.000000, left 0.000000), as the turn forces: smooth",
+   ""
+  ]
+ ],
+ "seconds": 87.7
+}

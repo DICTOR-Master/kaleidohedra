@@ -1,0 +1,20 @@
+      CONTROL rhombohedron N=1: FOUND (tori 1 of 1, 0.0 s)
+ok   CONTROL rhombohedron (1 O + 2 T) tiles at N = 1 (positive)
+      CONTROL opposite pair N=4: FOUND (tori 35 of 35, 0.1 s)
+ok   CONTROL CO + 2 pyramids on OPPOSITE squares tiles at N = 4 (positive)
+PROGRESS 0.00 adjacent pair, index 4
+      CO + 2 pyramids ADJACENT N=4: none (tori 35 of 35, 0.2 s)
+ok   adjacent pair, index 4: every sublattice searched (35)
+PROGRESS 0.25 adjacent pair, index 8
+      CO + 2 pyramids ADJACENT N=8: none (tori 155 of 155, 0.7 s)
+ok   adjacent pair, index 8: every sublattice searched (155)
+PROGRESS 0.50 adjacent pair, index 12
+      CO + 2 pyramids ADJACENT N=12: none (tori 455 of 455, 3.1 s)
+ok   adjacent pair, index 12: every sublattice searched (455)
+PROGRESS 0.75 adjacent pair, index 16
+      CO + 2 pyramids ADJACENT N=16: none (tori 651 of 651, 5.9 s)
+ok   adjacent pair, index 16: every sublattice searched (651)
+VERDICT adjacent pair: no octet-aligned periodic cover up to index 16
+6/6 checks ok, 10.6 s
+PROGRESS 1.00 done
+FINAL ok

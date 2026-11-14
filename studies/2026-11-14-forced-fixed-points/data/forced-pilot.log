@@ -1,0 +1,129 @@
+PROGRESS 0.00 controls: cube-octahedron line (0 s)
+ok   C t_min(mu) = max x.y over corners of S(mu), S(3/mu) = 5 - mu - 3/mu at mu = 8/5 | 61/40
+ok   C [sqrt3, B1+B3] t_min is EVEN under the turn mu -> 3/mu (exact identity)
+ok   C [sqrt3] forced: critical at the fixed point sqrt3, t'' = -2*sqrt(3)/3 < 0 -> maximum 5 - 2sqrt3 (QUALIFIES, mechanism B3)
+      C Dehn of S(6/5): -72*sqrt(2)/5 (x) beta
+      C Dehn of S(3/2): 0 (x) beta
+      C Dehn of S(9/5): 72*sqrt(2)/5 (x) beta
+ok   C [3/2, B2] Dehn is ODD under mu -> 3 - mu on the pairs [('6/5', '9/5')]
+ok   C [3/2] forced: Dehn = 0 at the fixed point (Kelvin) -> QUALIFIES, mechanism B2
+ok   C area closed form = engine at mu = 6/5
+ok   C area closed form = engine at mu = 8/5
+ok   C [3/2, B3] wall area per site pair W even under the swap, W'' = 24 - 16*sqrt(3) < 0: maximum at Kelvin
+ok   C [random 8/5, B1] not fixed: turn gives 15/8, CsCl swap gives 7/5
+ok   C [8/5] Dehn nonzero there: None
+ok   C [8/5] neither t_min nor W is critical there (t' = 11/64, W' = 12/5 - 8*sqrt(3)/5)
+PROGRESS 0.08 A: the silent zonohedron, structure (5 s)
+ok   A a* = 0.383065771818 is a root of 6a^4 + 24a^3 + 24a^2 - 5 = 6(a(a+2))^2 - 5
+ok   A the quartic is irreducible over Q: a* has degree 4 | (1, [(6*a**4 + 24*a**3 + 24*a**2 - 5, 1)])
+ok   A exactly one positive root (the other three conjugates are negative: off the line a > 0) | [-2.3830657718182735, -1.295176338524488, -0.704823661475512, 0.3830657718182736]
+ok   A zonotope (6 Kelvin zones + 3 cube zones) has exactly the 48 corners sperm(a, a+1, a+2) at a = 1/3
+ok   A face structure is the same for every a > 0: a zonotope's faces depend only on the generator directions (classical)
+ok   A volume formula = hull volume at a = 1/3 | 1772/27
+ok   A area formula = hull area at a = 1/3 (float control) | (np.float64(83.54959454730451), 83.54959454730448)
+ok   A faces at a = 1/3: 6 octagons, 8 hexagons, 12 rectangles
+ok   A volume formula = hull volume at a = 2 | 456
+ok   A area formula = hull area at a = 2 (float control) | (np.float64(313.4514703755616), 313.4514703755616)
+ok   A faces at a = 2: 6 octagons, 8 hexagons, 12 rectangles
+      A volume V(a): 4*(2*a**3 + 12*a**2 + 21*a + 8)
+      A area A(a): 24*a**2 + 24*sqrt(2)*a + 48*a + 12 + 24*sqrt(3)
+PROGRESS 0.17 A: tiling (7 s)
+ok   A belts: every one of the 9 zones lies in 4 zone planes -> every belt has 8 faces | {0: 8, 1: 8, 2: 8, 3: 8, 4: 8, 5: 8, 6: 8, 7: 8, 8: 8}
+ok   A NO TILING BY TRANSLATIONS for any a > 0 (Venkov 1954 / McMullen 1980: a parallelohedron has belts of 4 or 6 faces only)
+ok   A Dehn = 0 at a = 1/3 (zonohedron)
+      A dihedral kinds (deg = p pi + q beta): [('125.2644', '1/2', 1), ('135.0000', '3/4', 0), ('144.7356', '1', -1)]
+ok   A the dihedral kinds are the same at every sampled a (face normals do not depend on a)
+FIND A dihedral completion test: edges that can NOT be surrounded by copies: ['125.2644', '135.0000', '144.7356'] (deg) | {'125.2644': [], '135.0000': [], '144.7356': []}
+FIND A RESULT: no member of the line (a > 0) tiles space by congruent copies, turned or mirrored, face-to-face or not
+PROGRESS 0.25 A: tones Q4, Q6, Q8, Q12 of the corners (9 s)
+ok   A O_h-invariant harmonics: dimensions 1, 1, 1, 2 in degrees 4, 6, 8, 12 (Meyer 1954)
+ok   A Q4 sum over the 48 corners = -(96/5)(6a^4 + 24a^3 + 24a^2 - 5) (chat-handoff value)
+ok   A tone Q4 at a*: ZERO (H(v/|v|) = 0.000000); its zeros on a > 0: [0.383066]
+FIND A tone Q6 at a*: nonzero (H(v/|v|) = -0.702720); its zeros on a > 0: [1.110008]
+FIND A tone Q8 at a*: nonzero (H(v/|v|) = -0.178862); its zeros on a > 0: [1.832584]
+FIND A tone Q12.0 at a*: nonzero (H(v/|v|) = 0.414898); its zeros on a > 0: [3.289033]
+FIND A tone Q12.1 at a*: nonzero (H(v/|v|) = -0.072505); its zeros on a > 0: [3.203362]
+ok   A at a* the 48 corners are a spherical 5-design, not a 7-design (an O_h orbit is a t-design iff every invariant harmonic of degree <= t vanishes on it: Sobolev 1962, Goethals-Seidel 1981)
+PROGRESS 0.33 A: canonical form, Mahler, roundness (10 s)
+ok   A the corner (a+2, a+1, a) lies on the octagon, hexagon and rectangle planes n/h . x = 1
+ok   A polar volume 8/((a+2)(3a+3)(2a+3)) = hull of the polar at a = 1/3 | 18/77
+ok   A polar volume 8/((a+2)(3a+3)(2a+3)) = hull of the polar at a = 2 | 2/63
+ok   A the polar has 48 triangular faces: it is not a zonohedron, so polarity leaves the line
+FIND NOT critical at a*: A Mahler volume V(Z)V(Z°) is NOT critical at a*; its critical points on a > 0: [0.57932] | -32*(6*a**4 + 32*a**3 + 45*a**2 - 22)
+FIND NOT critical at a*: A roundness 36 pi V^2/A^3 is at a* (2V'A - 3VA' = 423.586887 there)
+      A roundness critical points on a > 0 (sign changes, float): [0.531884]
+FIND A canonical-form tone F4 (integral of the degree-4 harmonic over the polar) at a*: nonzero; zeros on a > 0: [0.353858]
+FIND A canonical-form tone F6 (integral of the degree-6 harmonic over the polar) at a*: nonzero; zeros on a > 0: []
+FIND A canonical-form tone F8 (integral of the degree-8 harmonic over the polar) at a*: nonzero; zeros on a > 0: []
+FIND A canonical-form tone F12.0 (integral of the degree-12 harmonic over the polar) at a*: nonzero; zeros on a > 0: [0.229609]
+FIND A canonical-form tone F12.1 (integral of the degree-12 harmonic over the polar) at a*: nonzero; zeros on a > 0: []
+PROGRESS 0.42 A: swaps of the line (18 s)
+ok   A (i) similarity: octagon-rectangle edges 2a, octagon-hexagon and hexagon-rectangle edges sqrt2; ratio sqrt2 a injective -> no similarity swap
+ok   A (iv) a -> -2 - a gives the SAME corner set: the only reparametrisation symmetry of the corner formula (a fold, fixed point a = -1)
+ok   A every tone is EVEN under the fold (eps = +1): parity forces nothing; the fixed point a = -1 gives sperm(1, 0, 1) = the cuboctahedron, off the zonohedron line
+ok   A the fold's fixed point a = -1 gives sperm(-1, 0, 1) = the cuboctahedron
+ok   A the four roots of the Q4 tone
+FIND NONE: A (v) Moebius involution fixes a* and maps the zero set of Q4 to itself (no harmonic quadruple): Q4 = 0 at a* is not a parity zero
+ok   A control a = 1/2 (random): no tone vanishes there; no swap fixes it
+PROGRESS 0.50 B: two-pyramid cuboctahedra (18 s)
+ok   B the opposite solid = L(rhombic dodecahedron), L = [[1,0,0],[0,1/2,1/2],[0,1/2,-1/2]]: the RD stretched by sqrt2 along a 4-fold axis (up to similarity)
+ok   B L maps the RD's fcc lattice onto the lattice (2,1,1), (0,2,0), (0,0,2) of the handoff cover
+ok   B symmetry orders (a symmetry permutes the square normals, so it is a signed permutation about the centroid): opposite 16 (D4h), adjacent 4 (C2v)
+ok   B the point inversion acts on the 15 placements of two pyramids: fixes the 3 opposite ones, swaps the 12 adjacent ones in 6 pairs
+ok   B over all 64 placements: the solid is centrally symmetric EXACTLY when the placement is fixed by the inversion
+ok   B Minkowski's conditions (centrally symmetric, faces centrally symmetric) hold only for the 3 opposite pairs: [(2, ('+x', '-x')), (2, ('+y', '-y')), (2, ('+z', '-z'))]
+ok   B Dehn of CO + k pyramids = (24 - 12k) sqrt2 (x) beta (handoff, exact): it depends on k only, so no swap of placements is odd on it; the two-pyramid solids are the only Dehn-zero ones
+ok   B opposite solid: 4 zones, every belt has 6 faces (Venkov): a parallelohedron of the rhombic-dodecahedron type (Fedorov 1885) | {(np.float64(0.707106781), np.float64(-0.0), np.float64(-0.707106781)): 6, (np.float64(0.707106781), np.float64(-0.707106781), np.float64(-0.0)): 6, (np.float64(0.707106781), np.float64(0.0), np.float64(0.707106781)): 6, (np.float64(0.707106781), np.float64(0.707106781), np.float64(-0.0)): 6}
+ok   B opposite solid: 12 faces (4 squares, 8 rhombi of 60 deg), Dehn 0
+ok   B adjacent solid: NOT centrally symmetric, trapezoid faces -> NO tiling by translations (Minkowski 1897); faces [3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+FIND B adjacent solid, dihedral completion test: every edge passes (angles alone do not forbid a tiling) | {'109.4712': [[1, 2, 0]], '125.2644': [[1, 2, 0]]}
+PROGRESS 0.58 L: rock salt site swap (21 s)
+ok   rock salt t = -1/3: A cell + B cell = lattice cell (2)
+ok   rock salt t = -1/3: Dehn(A) + Dehn(B) = 0 (0 + 0) [B2 parity: the two cells make a lattice fundamental domain]
+ok   rock salt t = 0: A cell + B cell = lattice cell (2)
+ok   rock salt t = 0: Dehn(A) + Dehn(B) = 0 (0 + 0) [B2 parity: the two cells make a lattice fundamental domain]
+ok   rock salt t = 1/3: A cell + B cell = lattice cell (2)
+ok   rock salt t = 1/3: Dehn(A) + Dehn(B) = 0 (0 + 0) [B2 parity: the two cells make a lattice fundamental domain]
+ok   rock salt: W(lam) = 6(1-|lam|)^2 + 3sqrt2(2|lam| - lam^2) at every sample (even under the swap lam -> -lam)
+ok   rock salt: Dehn = 0 at EVERY weight (all dihedrals are rational multiples of pi): parity is satisfied vacuously
+ok   rock salt: W has a KINK at the fixed point lam = 0: one-sided slopes -+(12 - 6*sqrt(2)) -> strict maximum there (the cube); W convex on each side, not concave
+PROGRESS 0.67 L: zinc blende site swap (32 s)
+ok   zinc blende t = 6/5: A cell + B cell = lattice cell (16)
+ok   zinc blende t = 6/5: Dehn(A) + Dehn(B) = 0 (72*sqrt(2)/5 + -72*sqrt(2)/5) [B2 parity: the two cells make a lattice fundamental domain]
+ok   zinc blende t = 3/2: A cell + B cell = lattice cell (16)
+ok   zinc blende t = 3/2: Dehn(A) + Dehn(B) = 0 (0 + 0) [B2 parity: the two cells make a lattice fundamental domain]
+ok   zinc blende t = 9/5: A cell + B cell = lattice cell (16)
+ok   zinc blende t = 9/5: Dehn(A) + Dehn(B) = 0 (-72*sqrt(2)/5 + 72*sqrt(2)/5) [B2 parity: the two cells make a lattice fundamental domain]
+ok   zinc blende: Dehn(A(s)) = -Dehn(A(3 - s)) at s = 6/5 (ODD under the swap)
+ok   zinc blende [B2]: forced Dehn = 0 at the fixed point s = 3/2
+ok   zinc blende: the fixed cell has 16 corners, 12 triangles and 4 hexagons: the triakis truncated tetrahedron (Voronoi cell of diamond) | [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 6, 6, 6, 6]
+ok   zinc blende: W(s) on (1, 2) = 2*(-8*sqrt(3)*s**2 + 6*sqrt(2)*s**2 - 18*sqrt(2)*s + 24*sqrt(3)*s - 12*sqrt(3) + 15*sqrt(2)) (fitted on 3 points, checked on 0 more)
+ok   zinc blende [B3]: W(s) = W(3 - s) (even under the swap)
+ok   zinc blende: W critical at the fixed point s = 3/2; W'' = -32*sqrt(3) + 24*sqrt(2) (concave: MAXIMUM)
+PROGRESS 0.75 L: small stellated / great dodecahedron turn (41 s)
+ok   small stellated dodecahedron: turn mu -> c/mu, c = 24 + (8)*sqrt(5), fixed point hR = 2 + (2)*sqrt(5) in Q(sqrt5)
+ok   small stellated dodecahedron: one corner pair is the maximum at all four points on the right of hR
+ok   small stellated dodecahedron: on the right t_min* = A + B mu + C/mu (fitted on 3 points, exact on the 4th)
+ok   small stellated dodecahedron: that branch reaches t_min*(hR) = 15 + (-6)*sqrt(5) = 1.583592
+ok   small stellated dodecahedron: turn symmetry t*(mu) = t*(c/mu) exact at mu = hR + 1e-4
+ok   small stellated dodecahedron: one corner pair is the maximum at all four points on the left of hR
+ok   small stellated dodecahedron: on the left t_min* = A + B mu + C/mu (fitted on 3 points, exact on the 4th)
+ok   small stellated dodecahedron: that branch reaches t_min*(hR) = 15 + (-6)*sqrt(5) = 1.583592
+ok   small stellated dodecahedron: turn symmetry t*(mu) = t*(c/mu) exact at mu = hR - 1e-4
+ok   small stellated dodecahedron: one-sided slopes at hR are opposite (right 0.000000, left 0.000000), as the turn forces: smooth
+      small stellated dodecahedron at the turn: smooth, t'' = 0.045593 (minimum)
+ok   great dodecahedron: turn mu -> c/mu, c = 984 + (440)*sqrt(5), fixed point hR = 22 + (10)*sqrt(5) in Q(sqrt5)
+ok   great dodecahedron: one corner pair is the maximum at all four points on the right of hR
+ok   great dodecahedron: on the right t_min* = A + B mu + C/mu (fitted on 3 points, exact on the 4th)
+ok   great dodecahedron: that branch reaches t_min*(hR) = 15 + (-6)*sqrt(5) = 1.583592
+ok   great dodecahedron: turn symmetry t*(mu) = t*(c/mu) exact at mu = hR + 1e-4
+ok   great dodecahedron: one corner pair is the maximum at all four points on the left of hR
+ok   great dodecahedron: on the left t_min* = A + B mu + C/mu (fitted on 3 points, exact on the 4th)
+ok   great dodecahedron: that branch reaches t_min*(hR) = 15 + (-6)*sqrt(5) = 1.583592
+ok   great dodecahedron: turn symmetry t*(mu) = t*(c/mu) exact at mu = hR - 1e-4
+ok   great dodecahedron: one-sided slopes at hR are opposite (right 0.000000, left 0.000000), as the turn forces: smooth
+      great dodecahedron at the turn: smooth, t'' = 0.000971 (minimum)
+PROGRESS 0.92 writing (41 s)
+91/91 checks ok, 41.2 s
+PROGRESS 1.00 done
+FINAL ok

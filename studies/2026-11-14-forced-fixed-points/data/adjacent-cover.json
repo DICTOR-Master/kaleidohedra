@@ -1,0 +1,257 @@
+{
+ "controls": {
+  "rhombohedron N=1": {
+   "N": 1,
+   "found": true,
+   "tori_tried": 1,
+   "tori_total": 1,
+   "all_tori_searched": true,
+   "witness": {
+    "found": true,
+    "N": 1,
+    "H": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      1
+     ]
+    ],
+    "tori_tried": 1,
+    "pieces": 1,
+    "orientations_used": 1,
+    "orientations_available": 8,
+    "chunk": 0,
+    "sec": 0.0
+   },
+   "sec": 0.0
+  },
+  "opposite N=4": {
+   "N": 4,
+   "found": true,
+   "tori_tried": 35,
+   "tori_total": 35,
+   "all_tori_searched": true,
+   "witness": {
+    "found": true,
+    "N": 4,
+    "H": [
+     [
+      2,
+      1,
+      0
+     ],
+     [
+      0,
+      2,
+      1
+     ],
+     [
+      0,
+      0,
+      1
+     ]
+    ],
+    "tori_tried": 1,
+    "pieces": 1,
+    "orientations_used": 1,
+    "orientations_available": 3,
+    "chunk": 16,
+    "sec": 0.0
+   },
+   "sec": 0.1
+  },
+  "CO alone N=16": {
+   "N": 16,
+   "found": false,
+   "tori_tried": 651,
+   "tori_total": 651,
+   "all_tori_searched": true,
+   "witness": null,
+   "sec": 0.5
+  }
+ },
+ "adjacent": [
+  {
+   "N": 4,
+   "found": false,
+   "tori_tried": 35,
+   "tori_total": 35,
+   "all_tori_searched": true,
+   "witness": null,
+   "sec": 0.1
+  },
+  {
+   "N": 8,
+   "found": false,
+   "tori_tried": 155,
+   "tori_total": 155,
+   "all_tori_searched": true,
+   "witness": null,
+   "sec": 0.7
+  },
+  {
+   "N": 12,
+   "found": false,
+   "tori_tried": 455,
+   "tori_total": 455,
+   "all_tori_searched": true,
+   "witness": null,
+   "sec": 3.1
+  },
+  {
+   "N": 16,
+   "found": false,
+   "tori_tried": 651,
+   "tori_total": 651,
+   "all_tori_searched": true,
+   "witness": null,
+   "sec": 5.9
+  },
+  {
+   "N": 20,
+   "found": false,
+   "tori_tried": 1085,
+   "tori_total": 1085,
+   "all_tori_searched": true,
+   "witness": null,
+   "sec": 11.9
+  },
+  {
+   "N": 24,
+   "found": false,
+   "tori_tried": 2015,
+   "tori_total": 2015,
+   "all_tori_searched": true,
+   "witness": null,
+   "sec": 27.1
+  },
+  {
+   "N": 28,
+   "found": false,
+   "tori_tried": 1995,
+   "tori_total": 1995,
+   "all_tori_searched": true,
+   "witness": null,
+   "sec": 31.1
+  },
+  {
+   "N": 32,
+   "found": false,
+   "tori_tried": 2667,
+   "tori_total": 2667,
+   "all_tori_searched": true,
+   "witness": null,
+   "sec": 48.4
+  },
+  {
+   "N": 36,
+   "found": false,
+   "tori_tried": 4550,
+   "tori_total": 4550,
+   "all_tori_searched": true,
+   "witness": null,
+   "sec": 97.0
+  },
+  {
+   "N": 40,
+   "found": false,
+   "tori_tried": 4805,
+   "tori_total": 4805,
+   "all_tori_searched": true,
+   "witness": null,
+   "sec": 113.4
+  },
+  {
+   "N": 44,
+   "found": false,
+   "tori_tried": 4655,
+   "tori_total": 4655,
+   "all_tori_searched": true,
+   "witness": null,
+   "sec": 130.7
+  },
+  {
+   "N": 48,
+   "found": false,
+   "tori_tried": 8463,
+   "tori_total": 8463,
+   "all_tori_searched": true,
+   "witness": null,
+   "sec": 281.9
+  }
+ ],
+ "verdict": "no octet-aligned periodic cover up to index 48",
+ "checks": [
+  [
+   true,
+   "CONTROL rhombohedron (1 O + 2 T) tiles at N = 1 (positive)"
+  ],
+  [
+   true,
+   "CONTROL CO + 2 pyramids on OPPOSITE squares tiles at N = 4 (positive)"
+  ],
+  [
+   true,
+   "CONTROL cuboctahedron alone: no cover at N = 16 (negative)"
+  ],
+  [
+   true,
+   "adjacent pair, index 4: every sublattice searched (35)"
+  ],
+  [
+   true,
+   "adjacent pair, index 8: every sublattice searched (155)"
+  ],
+  [
+   true,
+   "adjacent pair, index 12: every sublattice searched (455)"
+  ],
+  [
+   true,
+   "adjacent pair, index 16: every sublattice searched (651)"
+  ],
+  [
+   true,
+   "adjacent pair, index 20: every sublattice searched (1085)"
+  ],
+  [
+   true,
+   "adjacent pair, index 24: every sublattice searched (2015)"
+  ],
+  [
+   true,
+   "adjacent pair, index 28: every sublattice searched (1995)"
+  ],
+  [
+   true,
+   "adjacent pair, index 32: every sublattice searched (2667)"
+  ],
+  [
+   true,
+   "adjacent pair, index 36: every sublattice searched (4550)"
+  ],
+  [
+   true,
+   "adjacent pair, index 40: every sublattice searched (4805)"
+  ],
+  [
+   true,
+   "adjacent pair, index 44: every sublattice searched (4655)"
+  ],
+  [
+   true,
+   "adjacent pair, index 48: every sublattice searched (8463)"
+  ]
+ ],
+ "seconds": 752.5
+}

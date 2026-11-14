@@ -7649,6 +7649,33 @@
     "retry": "none (reproductions closed by DICTO)",
     "study": "studies/2026-11-13-repro-tomar",
     "date": "2026-11-14"
+   },
+   {
+    "question": "forced fixed points: silent zonohedron (DICTO silent zonohedron, corners sperm(a, a+1, a+2), a* = -1 + sqrt(1 + sqrt(5/6)), Q4 = 0): is anything FORCED there?",
+    "method": "forced.py exact battery: swap test (similarity, polarity, Galois, fold a -> -2-a, Moebius involutions via harmonic cross-ratios), tones Q4/Q6/Q8/Q12 (O_h harmonics, remainder by the minimal polynomial), canonical-form tones F4..F12 over the polar (48-tetrahedron orbit), Mahler, IQ; tiling by Venkov belts + dihedral completion test",
+    "status": "SETTLED: NOT FORCED",
+    "result": "no geometric swap fixes a*; Q4 = 0 is a crossing with the O_h 5-design curve (corners a 5-design, not 7: Q6, Q8, Q12 nonzero); Mahler max at root 0.579320 of 6a^4+32a^3+45a^2-22, IQ critical 0.531884, F4 zero 0.353858: none at a*; every belt has 8 faces and no edge kind (125.26, 135, 144.74 deg) can be surrounded: no member a > 0 tiles space in any way (proof)",
+    "retry": "never as a law-giving candidate; lead only: other zonohedron lines crossing the 5-design curve, Q4 = Q6 = 0 points",
+    "study": "studies/2026-11-14-forced-fixed-points",
+    "date": "2026-11-14"
+   },
+   {
+    "question": "forced fixed points: cuboctahedron + square pyramids on two squares (opposite / adjacent): prior art, symmetry, swap, adjacent case, forced law",
+    "method": "literature search (Wikipedia RD, Klitzing bauco, MathWorld, Grünbaum 2010, Grünbaum-Shephard 1980, Fedorov 1885); exact linear map to the rhombic dodecahedron; Minkowski conditions over all 64 placements; dihedral completion; octet-aligned periodic exact cover index 4..48, 48 orientations, 16 workers",
+    "status": "SETTLED (opposite: KNOWN); adjacent: translations PROVED impossible, rotations UNDECIDED",
+    "result": "opposite = RD stretched by sqrt2 along a 4-fold axis (L = [[1,0,0],[0,1/2,1/2],[0,1/2,-1/2]]), known space-filler: Critchlow 1969 (via Wikipedia), Klitzing 'bauco'; D4h; the inversion swap fixes the 3 opposite placements and forces central symmetry (Minkowski's first condition) only; adjacent: C2v, not centrally symmetric -> no translation tiling; angles do not forbid; no octet-aligned periodic cover up to index 48 (8463 tori at 48)",
+    "retry": "adjacent: only a non-octet-aligned or non-periodic method (corona search from the long edge, Hadwiger-type invariant); opposite: never (known)",
+    "study": "studies/2026-11-14-forced-fixed-points",
+    "date": "2026-11-14"
+   },
+   {
+    "question": "forced fixed points: three unexamined fixed points from the swaps study's leads (lead 2: rock salt and zinc blende site swaps; lead 5: SSD/GD turn), with controls sqrt3 (turn), Kelvin 3/2 (CsCl), random 8/5",
+    "method": "forced.py exact: cells from their own power-diagram definitions (polytope engine), exact Dehn, wall area W interpolated and verified; stars census flag line, exact Q(sqrt5) branch fit A + B mu + C/mu on both sides of hR",
+    "status": "SETTLED",
+    "result": "zinc blende s = 3/2 (triakis truncated tetrahedron, diamond Voronoi): Dehn odd -> 0 forced; W = 2((6sqrt2-8sqrt3)s^2+(24sqrt3-18sqrt2)s+15sqrt2-12sqrt3) on (1,2), even, W'' = 24sqrt2-32sqrt3 < 0 -> forced max 3sqrt2+12sqrt3 (new here); rock salt lam = 0 (cube): Dehn 0 at every weight (parity vacuous), W = 6(1-|lam|)^2+3sqrt2(2|lam|-lam^2), kink max; SSD/GD: one smooth turn-symmetric branch (C = B c), t' = 0 forced, C > 0 -> smooth minimum 15-6sqrt5; controls: sqrt3 and 3/2 qualify, 8/5 fails",
+    "retry": "never for these points; leads: wall-area laws on all ten #53 networks; sign rule for star turns",
+    "study": "studies/2026-11-14-forced-fixed-points",
+    "date": "2026-11-14"
    }
   ]
  },
