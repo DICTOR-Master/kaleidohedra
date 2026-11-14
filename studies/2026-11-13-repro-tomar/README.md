@@ -1,3 +1,5 @@
+**Filed in our own records, 14 November 2026: not posted on aiXiv.** The reproduction form there needs the author's process record, and this paper has none. Status by the coverage gate: Reproduced.
+
 # Reproduction: Tomar, The all-contact case of the 24-cell conjecture (aiXiv 2610.02329 v1)
 Conclusion: REPRODUCED (scope gate: all 8 numbered results covered). The whole supplement was rerun from scratch and every number
 agrees; every proof was read line by line; no mathematical error or gap found. Report draft written for DICTO's read (not posted).
