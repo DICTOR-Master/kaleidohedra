@@ -10,7 +10,7 @@
 import re, os, html, json, glob
 HERE = os.path.dirname(os.path.abspath(__file__)); P = os.path.dirname(HERE)
 PARTS = {'three': ('Part One. The swap builds solids', 'One swap of neighbouring values draws the hexagon; with four values the swaps build Kelvin\'s cell, the slider and the bonds, until the edges stop being swaps.'),
-         'scut3': ('Part Two. Swaps inside cells: DICTO\'s scutoid tissues', 'The centre of the book. In a slice a swap is a scutoid; one dimension up the permutohedron of five values is the web of swaps; swept, it and every simple 4-polytope are tissues of swaps, counted and balanced; crowded swaps make rosettes, and the walls of close packing are 4D scutoids.'),
+         'scut3': ('Part Two. Swaps inside cells: scutoid tissues', 'The centre of the book. In a slice a swap is a scutoid; one dimension up the permutohedron of five values is the web of swaps; swept, it and every simple 4-polytope are tissues of swaps, counted and balanced; crowded swaps make rosettes, and the walls of close packing are 4D scutoids.'),
          'everyn': ('Part Three. Swaps in every dimension', 'The Vacuus and the sweep counted for every number of values, and the golden slice of the 4D filling.'),
          'family': ('Part Four. The summit', 'Slide the walls instead of the values: every solid of the climb lies in one family, every edge a swap.'),
          'bells': ('Part Five. The return', 'Ringers may only swap neighbours: the first hexagon heard.')}
