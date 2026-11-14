@@ -1,0 +1,34 @@
+PROGRESS 0/6 start
+PROGRESS 1/6 ID built: 30 corners, circumradius^2 = 3/2 + 1/2*sqrt5
+PROGRESS 2/6 RT = T(ID): 32 corners
+PROGRESS 3/6 GTI = T(RT): 60 corners; circumradius^2 set ['15 + -5*sqrt5']
+GTI = T(T(ID)): 60 corners, faces by sides {5: 12, 6: 20}
+  hexagon sides alternate: True; short^2 = 45 + -20*sqrt5, long^2 = 6 + -2*sqrt5
+  ratio^2 (long/short) = 14/5 + 6/5*sqrt5  ~ 2.341640786500
+  long/short == 1 + 3*sqrt5/5 exactly: True;  long/short == phi exactly: False
+  short side = 5 + -2*sqrt5
+  long side = -1 + 1*sqrt5
+  pentagon side^2 = {45 + -20*sqrt5} (pentagons regular: True); short side is the pentagon side: True
+PROGRESS 4/6 GTI hexagons measured
+  dataset corners parse check (float agreement): True
+  dataset dicto-gti.json corners == T(T(ID)) corners exactly: False
+  dataset corners also corners of T(T(ID)): 0 of 60; dataset circumradius^2 set ['15 + -5*sqrt5']
+  dataset == T(T(ID)) after a signed coordinate permutation: ((2, 1, 0), (-1, -1, -1))
+   sample dataset corner (3/2 + -3/2*sqrt5, 0, 1/2 + -1/2*sqrt5) | sample T(T(ID)) corner (3/2 + -3/2*sqrt5, 1/2 + -1/2*sqrt5, 0)
+   sample dataset corner (3/2 + -3/2*sqrt5, 0, -1/2 + 1/2*sqrt5) | sample T(T(ID)) corner (3/2 + -3/2*sqrt5, -1/2 + 1/2*sqrt5, 0)
+   sample dataset corner (-9/4 + 1/4*sqrt5, 5/4 + -3/4*sqrt5, -2 + 1/2*sqrt5) | sample T(T(ID)) corner (-9/4 + 1/4*sqrt5, -2 + 1/2*sqrt5, 5/4 + -3/4*sqrt5)
+dataset dicto-gti.json: 60 corners, faces by sides {5: 12, 6: 20}
+  dataset hexagons: short^2 = 45 + -20*sqrt5, long^2 = 6 + -2*sqrt5; same edge lengths and ratio as T(T(ID)): True
+PROGRESS 5/6 dataset compared
+icosahedron cut at x = 1/3 (Archimedean): 60 corners, faces by sides {5: 12, 6: 20}
+  ratio^2 = 1; = 1: True; = phi^2: False; = (1+3sqrt5/5)^2: False
+icosahedron cut at x = 1/(2+phi) (#38 text): 60 corners, faces by sides {5: 12, 6: 20}
+  ratio^2 = 3/2 + 1/2*sqrt5; = 1: False; = phi^2: True; = (1+3sqrt5/5)^2: False
+icosahedron cut at x = 5/(15+3 sqrt5) (Golden Ladder): 60 corners, faces by sides {5: 12, 6: 20}
+  ratio^2 = 14/5 + 6/5*sqrt5; = 1: False; = phi^2: False; = (1+3sqrt5/5)^2: True
+  GTI similar to icosahedron cut at 5/(15+3 sqrt5): True; similar to cut at 1/(2+phi): False
+  scale^2 GTI : Golden Ladder cut = 126 + -54*sqrt5
+PROGRESS 6/6 controls done
+CHECKS {'census_ratio': True, 'not_phi': True, 'dataset_same_shape': True, 'control_archimedean': True, 'control_38_cut_is_phi': True, 'gti_is_GL_cut': True, 'gti_not_38_cut': True, 'hexagons_alternate': True}
+FINAL ok: D40 = T(T(ID)) has hexagons with alternating sides (5-2sqrt5) and (sqrt5-1); long/short = 1 + 3sqrt5/5 exactly, not phi
+[exit 0]
