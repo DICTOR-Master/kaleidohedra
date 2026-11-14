@@ -6828,6 +6828,56 @@
     "retry": "never; LEADS: Ch 4 sentence (DICTO to place); figure of a Hexa x+y+z=0 plane (loop plus extra fins)",
     "study": "studies/2026-11-13-platonic-fans-law",
     "goes_to": "Platonic book Ch 4 (open item 'do the open fans follow one law?', non-convex part)"
+   },
+   {
+    "date": "2026-11-14",
+    "question": "chat handoff Lead 10: Dehn invariant of T(x) (corners (1+x, x, 0)); at mu = 4/3, the DICTO 1:2 Truncated Octahedron; prediction 24(x - 1)sqrt2 beta",
+    "method": "handoff_tests.py: exact Dehn in sympy (faces certified, dihedrals verified exactly as p*pi + q*beta, beta = arctan(1/sqrt2)), float dehn.py screen as second opinion; job gate handoff-pilot (47 checks) and handoff, FINAL ok; x = 1/4, 1/3, 1/2, 2/3, 1, 3/2, 2, 3; controls cube, Kelvin, RD 0, octahedron, tetrahedron, cuboctahedron, truncated tetrahedron",
+    "result": "CONFIRMED exactly: D = 24(x - 1)sqrt2 at all 8 x; T(1/2): -12 sqrt2 (x) beta, nonzero (= #100 Thm 1.1 value 8 sqrt2 (x) beta_100 after scaling 3/2 and beta_100 = pi/2 - beta). With Debrunner: no tiling of space by congruent copies, turned or mirrored, so #105 open point is closed by #100",
+    "status": "SETTLED",
+    "retry": "never; LEAD: say so in #105 v5",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "#105 next version (Section 5 open point); #100 cross-reference"
+   },
+   {
+    "date": "2026-11-14",
+    "question": "chat handoff Lead 7: the solid with corners at the signed permutations of (a, a+1, a+2), 6a^2(a+2)^2 = 5 (B3 seed (a,1,1), a = 0.383066): Q4 tone zero? Dehn zero?",
+    "method": "handoff_tests.py: exact Dehn in sympy (faces certified, dihedrals verified exactly as p*pi + q*beta, beta = arctan(1/sqrt2)), float dehn.py screen as second opinion; job gate handoff-pilot (47 checks) and handoff, FINAL ok; exact Q4 tone sum of x^4+y^4+z^4 - (3/5) r^4 over the 48 corners; float fingerprint.py Q4..Q12 recorded",
+    "result": "CONFIRMED both: tone = -(96/5)(6a^4+24a^3+24a^2-5), exactly 0 at a, one root for a > 0; Dehn 0 (zonohedron, 26 faces, all centrally symmetric; zero along the whole line). Q6 0.248, Q8 0.128 nonzero: Q4 alone singles it out; a crossing, not yet a station. No prior-art search",
+    "status": "SETTLED (tests); prior art open",
+    "retry": "only a third test (roundness, Mahler) or prior-art search",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "Waiting for their volume (no paper yet)"
+   },
+   {
+    "date": "2026-11-14",
+    "question": "chat handoff Lead 8: Dehn of cuboctahedron + k equilateral square pyramids ((24 - 12k) beta per unit edge) and of the octahedron with corner cuts ((12 sum c - 24 L) beta)",
+    "method": "handoff_tests.py: exact Dehn in sympy (faces certified, dihedrals verified exactly as p*pi + q*beta, beta = arctan(1/sqrt2)), float dehn.py screen as second opinion; job gate handoff-pilot (47 checks) and handoff, FINAL ok; 10 pyramid placements k = 0..6; 8 cut vectors (equal, unequal, touching, single)",
+    "result": "CONFIRMED exactly in every case (additivity: square pyramid D = -12c); silent exactly at k = 2 (both placements) and at sum c = 2L",
+    "status": "SETTLED",
+    "retry": "never",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "#100 / #92 next versions (a remark)"
+   },
+   {
+    "date": "2026-11-14",
+    "question": "chat handoff Lead 8: do the two-pyramid cuboctahedra (pyramids on opposite / adjacent squares) tile space? exact cover on the octet",
+    "method": "handoff_tests.py: cells = octet tetrahedra + 8 octants per octahedron (piece = 40 cells = 4 octet cells); tori fcc/L for every HNF sublattice of index N = 4..24; modes translations, translations + point inverse, all 48 signed permutations; hnf()/solve() of tile_octet.py; covers re-verified; controls rhombohedron N = 1 (found), cuboctahedron alone N = 16 and CO + 1 pyramid N = 18 (none)",
+    "result": "OPPOSITE: TILES by translations alone (cover at index 4). ADJACENT: no octet-aligned periodic cover on any torus of index 4..24 (35..2015 sublattices), by translations, with point inverse, or with all 48 signed permutations; UNDECIDED (Dehn zero, so not forbidden)",
+    "status": "SETTLED (opposite); adjacent UNDECIDED (evidence only)",
+    "retry": "adjacent: only a non-octet-aligned or non-periodic method; opposite: prior-art search before any claim",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "#92 / #100 next versions after prior-art search"
+   },
+   {
+    "date": "2026-11-14",
+    "question": "chat handoff triage: are #104 Thm 4 and #108 Thm 1 (balance law) classical (Stanley 1979)?",
+    "method": "read pure-swap-6d Theorem 2 and rosette-balance; extended the pure-swap proof to a-balanced typings (binomial face counts, triangular inversion); one web search (citation, a-balanced notion, flag-h symmetry for balanced Gorenstein*); Stanley 1979 itself not in the library, not read",
+    "result": "YES in substance: the balance law is the symmetry h_b = h_(a-b) of the fine flag h-vector of an a-balanced sphere (Stanley 1979; Bjorner-Frankl-Stanley 1987), in sweep form; Bayer-Billera 1985 is not the source. Stays DICTO: tissue reading, in(X) formula and ledger, #108 Thm 3, rosette balance (non-simple Wythoff)",
+    "status": "SETTLED (attribution); text change open",
+    "retry": "read Stanley 1979 for the theorem number",
+    "study": "studies/2026-11-14-chat-handoff",
+    "goes_to": "#104, #108, Paradigm Ch. 7 next versions"
    }
   ]
  },

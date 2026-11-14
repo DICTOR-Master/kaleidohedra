@@ -1,0 +1,797 @@
+{
+ "dehn": {
+  "CONTROL cube": {
+   "D": "0",
+   "faces": 6,
+   "edges": 12,
+   "corners": 8,
+   "vol": "8",
+   "angle_kinds": {
+    "90.0deg = 1/2pi +0beta": [
+     12,
+     24.0
+    ]
+   },
+   "zero": true,
+   "float_screen_zero": true
+  },
+  "CONTROL octahedron (edge sqrt2)": {
+   "D": "-24*sqrt(2)",
+   "faces": 8,
+   "edges": 12,
+   "corners": 6,
+   "vol": "4/3",
+   "angle_kinds": {
+    "109.4712deg = 1pi -2beta": [
+     12,
+     16.970562748477146
+    ]
+   },
+   "zero": false,
+   "float_screen_zero": false
+  },
+  "CONTROL tetrahedron (edge 2sqrt2)": {
+   "D": "24*sqrt(2)",
+   "faces": 4,
+   "edges": 6,
+   "corners": 4,
+   "vol": "8/3",
+   "angle_kinds": {
+    "70.5288deg = 0pi +2beta": [
+     6,
+     16.970562748477143
+    ]
+   },
+   "zero": false,
+   "float_screen_zero": false
+  },
+  "CONTROL Kelvin truncated octahedron (edge sqrt2)": {
+   "D": "0",
+   "faces": 14,
+   "edges": 36,
+   "corners": 24,
+   "vol": "32",
+   "angle_kinds": {
+    "109.4712deg = 1pi -2beta": [
+     12,
+     16.970562748477146
+    ],
+    "125.2644deg = 1/2pi +1beta": [
+     24,
+     33.94112549695429
+    ]
+   },
+   "zero": true,
+   "float_screen_zero": true
+  },
+  "CONTROL cuboctahedron (edge sqrt2)": {
+   "D": "24*sqrt(2)",
+   "faces": 14,
+   "edges": 24,
+   "corners": 12,
+   "vol": "20/3",
+   "angle_kinds": {
+    "125.2644deg = 1/2pi +1beta": [
+     24,
+     33.94112549695429
+    ]
+   },
+   "zero": false,
+   "float_screen_zero": false
+  },
+  "CONTROL rhombic dodecahedron": {
+   "D": "0",
+   "faces": 12,
+   "edges": 24,
+   "corners": 14,
+   "vol": "16",
+   "angle_kinds": {
+    "120.0deg = 2/3pi +0beta": [
+     24,
+     41.56921938165305
+    ]
+   },
+   "zero": true,
+   "float_screen_zero": true
+  },
+  "CONTROL Archimedean truncated tetrahedron": {
+   "D": "-8*sqrt(2)",
+   "faces": 8,
+   "edges": 18,
+   "corners": 12,
+   "vol": "184/81",
+   "angle_kinds": {
+    "70.5288deg = 0pi +2beta": [
+     6,
+     5.656854249492381
+    ],
+    "109.4712deg = 1pi -2beta": [
+     12,
+     11.31370849898476
+    ]
+   },
+   "zero": false,
+   "float_screen_zero": false
+  },
+  "T(1/2) (mu = 4/3)": {
+   "D": "-12*sqrt(2)",
+   "faces": 14,
+   "edges": 36,
+   "corners": 24,
+   "vol": "61/6",
+   "angle_kinds": {
+    "109.4712deg = 1pi -2beta": [
+     12,
+     16.970562748477146
+    ],
+    "125.2644deg = 1/2pi +1beta": [
+     24,
+     16.970562748477146
+    ]
+   },
+   "zero": false,
+   "float_screen_zero": false,
+   "pred": "-12*sqrt(2)",
+   "pred_match": true
+  },
+  "T(1) (mu = 3/2)": {
+   "D": "0",
+   "faces": 14,
+   "edges": 36,
+   "corners": 24,
+   "vol": "32",
+   "angle_kinds": {
+    "109.4712deg = 1pi -2beta": [
+     12,
+     16.970562748477146
+    ],
+    "125.2644deg = 1/2pi +1beta": [
+     24,
+     33.94112549695429
+    ]
+   },
+   "zero": true,
+   "float_screen_zero": true,
+   "pred": "0",
+   "pred_match": true
+  },
+  "T(2) (mu = 5/3)": {
+   "D": "24*sqrt(2)",
+   "faces": 14,
+   "edges": 36,
+   "corners": 24,
+   "vol": "404/3",
+   "angle_kinds": {
+    "109.4712deg = 1pi -2beta": [
+     12,
+     16.970562748477146
+    ],
+    "125.2644deg = 1/2pi +1beta": [
+     24,
+     67.88225099390858
+    ]
+   },
+   "zero": false,
+   "float_screen_zero": false,
+   "pred": "24*sqrt(2)",
+   "pred_match": true
+  },
+  "Lead 7 solid (a, a+1, a+2)": {
+   "D": "0",
+   "faces": 26,
+   "edges": 72,
+   "corners": 48,
+   "vol": "12 + 2*sqrt(6)*(sqrt(30)*sqrt(sqrt(30) + 6) + 18*sqrt(5) + 15*sqrt(sqrt(30) + 6))/9",
+   "angle_kinds": {
+    "125.2644deg = 1/2pi +1beta": [
+     24,
+     33.94112549695429
+    ],
+    "135.0deg = 3/4pi +0beta": [
+     24,
+     18.38715704727713
+    ],
+    "144.7356deg = 1pi -1beta": [
+     24,
+     33.94112549695429
+    ]
+   },
+   "zero": true,
+   "float_screen_zero": true,
+   "pred": 0,
+   "pred_match": true
+  },
+  "CO + pyramids k=0": {
+   "D": "24*sqrt(2)",
+   "faces": 14,
+   "edges": 24,
+   "corners": 12,
+   "vol": "20/3",
+   "angle_kinds": {
+    "125.2644deg = 1/2pi +1beta": [
+     24,
+     33.94112549695429
+    ]
+   },
+   "zero": false,
+   "float_screen_zero": false,
+   "pred": "24*sqrt(2)",
+   "pred_match": true
+  },
+  "CO + pyramids k=1": {
+   "D": "12*sqrt(2)",
+   "faces": 13,
+   "edges": 24,
+   "corners": 13,
+   "vol": "22/3",
+   "angle_kinds": {
+    "109.4712deg = 1pi -2beta": [
+     4,
+     5.656854249492381
+    ],
+    "125.2644deg = 1/2pi +1beta": [
+     20,
+     28.284271247461913
+    ]
+   },
+   "zero": false,
+   "float_screen_zero": false,
+   "pred": "12*sqrt(2)",
+   "pred_match": true
+  },
+  "CO + pyramids k=2 opposite": {
+   "D": "0",
+   "faces": 12,
+   "edges": 24,
+   "corners": 14,
+   "vol": "8",
+   "angle_kinds": {
+    "109.4712deg = 1pi -2beta": [
+     8,
+     11.313708498984763
+    ],
+    "125.2644deg = 1/2pi +1beta": [
+     16,
+     22.62741699796953
+    ]
+   },
+   "zero": true,
+   "float_screen_zero": true,
+   "pred": "0",
+   "pred_match": true
+  },
+  "CO + pyramids k=2 adjacent": {
+   "D": "0",
+   "faces": 12,
+   "edges": 23,
+   "corners": 13,
+   "vol": "8",
+   "angle_kinds": {
+    "109.4712deg = 1pi -2beta": [
+     7,
+     11.313708498984761
+    ],
+    "125.2644deg = 1/2pi +1beta": [
+     16,
+     22.62741699796953
+    ]
+   },
+   "zero": true,
+   "float_screen_zero": true,
+   "pred": "0",
+   "pred_match": true
+  },
+  "octahedron cuts t = ['1/3', '1/3', '1/3', '1/3', '1/3', '1/3'] (sum t = 2)": {
+   "D": "0",
+   "faces": 14,
+   "edges": 36,
+   "corners": 24,
+   "vol": "32/27",
+   "angle_kinds": {
+    "109.4712deg = 1pi -2beta": [
+     12,
+     5.65685424949238
+    ],
+    "125.2644deg = 1/2pi +1beta": [
+     24,
+     11.313708498984756
+    ]
+   },
+   "zero": true,
+   "float_screen_zero": true,
+   "pred": "0",
+   "pred_match": true
+  },
+  "octahedron cuts t = ['1/4', '1/4', '1/4', '1/4', '1/4', '1/4'] (sum t = 3/2)": {
+   "D": "-6*sqrt(2)",
+   "faces": 14,
+   "edges": 36,
+   "corners": 24,
+   "vol": "61/48",
+   "angle_kinds": {
+    "109.4712deg = 1pi -2beta": [
+     12,
+     8.485281374238573
+    ],
+    "125.2644deg = 1/2pi +1beta": [
+     24,
+     8.485281374238573
+    ]
+   },
+   "zero": false,
+   "float_screen_zero": false,
+   "pred": "-6*sqrt(2)",
+   "pred_match": true
+  },
+  "octahedron cuts t = ['1/2', '1/2', '1/3', '1/3', '1/6', '1/6'] (sum t = 2)": {
+   "D": "0",
+   "faces": 14,
+   "edges": 36,
+   "corners": 24,
+   "vol": "10/9",
+   "angle_kinds": {
+    "109.4712deg = 1pi -2beta": [
+     12,
+     5.656854249492379
+    ],
+    "125.2644deg = 1/2pi +1beta": [
+     24,
+     11.313708498984766
+    ]
+   },
+   "zero": true,
+   "float_screen_zero": true,
+   "pred": "0",
+   "pred_match": true
+  }
+ },
+ "lead10": {
+  "1/2": {
+   "mu": "4/3",
+   "D": "-12*sqrt(2)",
+   "pred": "-12*sqrt(2)",
+   "match": true
+  },
+  "1": {
+   "mu": "3/2",
+   "D": "0",
+   "pred": "0",
+   "match": true
+  },
+  "2": {
+   "mu": "5/3",
+   "D": "24*sqrt(2)",
+   "pred": "24*sqrt(2)",
+   "match": true
+  }
+ },
+ "lead7": {
+  "a": "-1 + sqrt(sqrt(30)/6 + 1)",
+  "a_float": 0.3830657718182736,
+  "Q4_tone_exact_zero": true,
+  "tone_polynomial": "-96*(6*a**4 + 24*a**3 + 24*a**2 - 5)/5",
+  "dehn_zero": true,
+  "faces": 26,
+  "fingerprint_float": {
+   "Q4": 0.0,
+   "Q6": 0.2484,
+   "Q8": 0.1284,
+   "Q10": 0.1228,
+   "Q12": 0.2765
+  },
+  "fingerprint_a0": {
+   "Q4": 0.1528,
+   "Q6": 0.2404,
+   "Q8": 0.1551
+  },
+  "fingerprint_a1": {
+   "Q4": 0.1909,
+   "Q6": 0.0388,
+   "Q8": 0.086
+  }
+ },
+ "lead8_pyramids": {
+  "k=0": {
+   "D_per_unit_edge": "24",
+   "pred": 24,
+   "match": true,
+   "faces": 14
+  },
+  "k=1": {
+   "D_per_unit_edge": "12",
+   "pred": 12,
+   "match": true,
+   "faces": 13
+  },
+  "k=2 opposite": {
+   "D_per_unit_edge": "0",
+   "pred": 0,
+   "match": true,
+   "faces": 12
+  },
+  "k=2 adjacent": {
+   "D_per_unit_edge": "0",
+   "pred": 0,
+   "match": true,
+   "faces": 12
+  }
+ },
+ "lead8_cuts": {
+  "1/3,1/3,1/3,1/3,1/3,1/3": {
+   "sum_t": "2",
+   "D": "0",
+   "pred": "0",
+   "match": true,
+   "silent": true
+  },
+  "1/4,1/4,1/4,1/4,1/4,1/4": {
+   "sum_t": "3/2",
+   "D": "-6*sqrt(2)",
+   "pred": "-6*sqrt(2)",
+   "match": true,
+   "silent": false
+  },
+  "1/2,1/2,1/3,1/3,1/6,1/6": {
+   "sum_t": "2",
+   "D": "0",
+   "pred": "0",
+   "match": true,
+   "silent": true
+  }
+ },
+ "lead8_cover": {
+  "CONTROL rhombohedron (1 O + 2 T) [all]": [
+   {
+    "found": true,
+    "N": 1,
+    "H": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      1
+     ]
+    ],
+    "tori_tried": 1,
+    "pieces": 1,
+    "orientations_used": 1,
+    "orientations_available": 8,
+    "sec": 0.0
+   }
+  ],
+  "CONTROL cuboctahedron alone [all]": [],
+  "CONTROL CO + 1 pyramid (Dehn nonzero) [all]": [],
+  "CO + 2 pyramids opposite [translations]": [
+   {
+    "found": true,
+    "N": 4,
+    "H": [
+     [
+      4,
+      1,
+      2
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      1
+     ]
+    ],
+    "tori_tried": 26,
+    "pieces": 1,
+    "orientations_used": 1,
+    "orientations_available": 1,
+    "sec": 0.1
+   }
+  ],
+  "CO + 2 pyramids opposite verdict translations": "TILES (cover found)",
+  "CO + 2 pyramids opposite [translations+inverse]": [
+   {
+    "found": true,
+    "N": 4,
+    "H": [
+     [
+      4,
+      1,
+      2
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      1
+     ]
+    ],
+    "tori_tried": 26,
+    "pieces": 1,
+    "orientations_used": 1,
+    "orientations_available": 1,
+    "sec": 0.1
+   }
+  ],
+  "CO + 2 pyramids opposite verdict translations+inverse": "TILES (cover found)",
+  "CO + 2 pyramids opposite [all]": [
+   {
+    "found": true,
+    "N": 4,
+    "H": [
+     [
+      2,
+      1,
+      0
+     ],
+     [
+      0,
+      2,
+      1
+     ],
+     [
+      0,
+      0,
+      1
+     ]
+    ],
+    "tori_tried": 17,
+    "pieces": 1,
+    "orientations_used": 1,
+    "orientations_available": 3,
+    "sec": 0.1
+   }
+  ],
+  "CO + 2 pyramids opposite verdict all": "TILES (cover found)",
+  "CO + 2 pyramids adjacent [translations]": [
+   {
+    "found": false,
+    "N": 4,
+    "tori_tried": 35,
+    "sec": 0.1
+   },
+   {
+    "found": false,
+    "N": 8,
+    "tori_tried": 155,
+    "sec": 0.6
+   }
+  ],
+  "CO + 2 pyramids adjacent verdict translations": "no octet-aligned periodic cover up to N = 8",
+  "CO + 2 pyramids adjacent [translations+inverse]": [
+   {
+    "found": false,
+    "N": 4,
+    "tori_tried": 35,
+    "sec": 0.1
+   },
+   {
+    "found": false,
+    "N": 8,
+    "tori_tried": 155,
+    "sec": 1.1
+   }
+  ],
+  "CO + 2 pyramids adjacent verdict translations+inverse": "no octet-aligned periodic cover up to N = 8",
+  "CO + 2 pyramids adjacent [all]": [
+   {
+    "found": false,
+    "N": 4,
+    "tori_tried": 35,
+    "sec": 0.7
+   },
+   {
+    "found": false,
+    "N": 8,
+    "tori_tried": 155,
+    "sec": 6.8
+   }
+  ],
+  "CO + 2 pyramids adjacent verdict all": "no octet-aligned periodic cover up to N = 8"
+ },
+ "checks": [
+  [
+   true,
+   "CONTROL cube: exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)"
+  ],
+  [
+   true,
+   "CONTROL cube: D = 0 expected"
+  ],
+  [
+   true,
+   "CONTROL octahedron (edge sqrt2): exact Dehn D = -24*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)"
+  ],
+  [
+   true,
+   "CONTROL octahedron (edge sqrt2): D = -24*sqrt(2) expected"
+  ],
+  [
+   true,
+   "CONTROL tetrahedron (edge 2sqrt2): exact Dehn D = 24*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)"
+  ],
+  [
+   true,
+   "CONTROL tetrahedron (edge 2sqrt2): D = 24*sqrt(2) expected"
+  ],
+  [
+   true,
+   "CONTROL Kelvin truncated octahedron (edge sqrt2): exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)"
+  ],
+  [
+   true,
+   "CONTROL Kelvin truncated octahedron (edge sqrt2): D = 0 expected"
+  ],
+  [
+   true,
+   "CONTROL cuboctahedron (edge sqrt2): exact Dehn D = 24*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)"
+  ],
+  [
+   true,
+   "CONTROL cuboctahedron (edge sqrt2): D = 24*sqrt(2) expected"
+  ],
+  [
+   true,
+   "CONTROL rhombic dodecahedron: exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)"
+  ],
+  [
+   true,
+   "CONTROL rhombic dodecahedron: D = 0 expected"
+  ],
+  [
+   true,
+   "CONTROL Archimedean truncated tetrahedron: exact Dehn D = -8*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)"
+  ],
+  [
+   true,
+   "CONTROL truncated tetrahedron nonzero (negative control)"
+  ],
+  [
+   true,
+   "T(1/2) = S(mu = 4/3) up to scale"
+  ],
+  [
+   true,
+   "T(1/2) (mu = 4/3): exact Dehn D = -12*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)"
+  ],
+  [
+   true,
+   "T(1) = S(mu = 3/2) up to scale"
+  ],
+  [
+   true,
+   "T(1) (mu = 3/2): exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)"
+  ],
+  [
+   true,
+   "T(2) = S(mu = 5/3) up to scale"
+  ],
+  [
+   true,
+   "T(2) (mu = 5/3): exact Dehn D = 24*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)"
+  ],
+  [
+   true,
+   "T(1/2): square edge = hexagon-square edge = sqrt2/2, hexagon-hexagon edge = sqrt2 (ratio 1:2) [geometry, see README]"
+  ],
+  [
+   true,
+   "a = -1 + sqrt(1 + sqrt(5/6)) = 0.383065771818 satisfies 6a^2(a+2)^2 = 5"
+  ],
+  [
+   true,
+   "48 corners"
+  ],
+  [
+   true,
+   "Lead 7 Q4 tone of the 48 corners = 0 EXACTLY -> prediction zero CONFIRMED"
+  ],
+  [
+   true,
+   "tone at a = 0: 48 (sign +1 expected; positive at Kelvin, negative at the B3 permutohedron)"
+  ],
+  [
+   true,
+   "tone at a = 1: -4704/5 (sign -1 expected; positive at Kelvin, negative at the B3 permutohedron)"
+  ],
+  [
+   true,
+   "tone(a) = -(96/5)(6a^2(a+2)^2 - 5) exactly"
+  ],
+  [
+   true,
+   "tone has exactly 1 root(s) for a > 0 (one sign change)"
+  ],
+  [
+   true,
+   "Lead 7 solid (a, a+1, a+2): exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)"
+  ],
+  [
+   true,
+   "float fingerprint Q4 ~ 0 agrees with the exact tone"
+  ],
+  [
+   true,
+   "Lead 7 solid: 26 faces, all centrally symmetric (zonohedron)"
+  ],
+  [
+   true,
+   "CO + pyramids k=0: exact Dehn D = 24*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)"
+  ],
+  [
+   true,
+   "  volume = CO + 0 pyramids exactly (20/3); faces 14"
+  ],
+  [
+   true,
+   "CO + pyramids k=1: exact Dehn D = 12*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)"
+  ],
+  [
+   true,
+   "  volume = CO + 1 pyramids exactly (22/3); faces 13"
+  ],
+  [
+   true,
+   "CO + pyramids k=2 opposite: exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)"
+  ],
+  [
+   true,
+   "  volume = CO + 2 pyramids exactly (8); faces 12"
+  ],
+  [
+   true,
+   "CO + pyramids k=2 adjacent: exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)"
+  ],
+  [
+   true,
+   "  volume = CO + 2 pyramids exactly (8); faces 12"
+  ],
+  [
+   true,
+   "octahedron cuts t = ['1/3', '1/3', '1/3', '1/3', '1/3', '1/3'] (sum t = 2): exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)"
+  ],
+  [
+   true,
+   "octahedron cuts t = ['1/4', '1/4', '1/4', '1/4', '1/4', '1/4'] (sum t = 3/2): exact Dehn D = -6*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)"
+  ],
+  [
+   true,
+   "octahedron cuts t = ['1/2', '1/2', '1/3', '1/3', '1/6', '1/6'] (sum t = 2): exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)"
+  ],
+  [
+   true,
+   "CONTROL rhombohedron tiles at N = 1 (positive)"
+  ],
+  [
+   true,
+   "CONTROL cuboctahedron alone: no cover at N = 16 (negative; it does not tile alone)"
+  ],
+  [
+   true,
+   "CONTROL CO + 1 pyramid: no cover at N = 18 (negative; Dehn nonzero forbids)"
+  ],
+  [
+   true,
+   "CO + 2 pyramids opposite: 40 cells (8 T + 32 octants = 4 octet cells of 10)"
+  ],
+  [
+   true,
+   "CO + 2 pyramids adjacent: 40 cells (8 T + 32 octants = 4 octet cells of 10)"
+  ]
+ ],
+ "seconds": 175.8
+}

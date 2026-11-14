@@ -1,0 +1,138 @@
+PROGRESS 0.02 controls
+ok   CONTROL cube: exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)
+ok   CONTROL cube: D = 0 expected
+ok   CONTROL octahedron (edge sqrt2): exact Dehn D = -24*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+ok   CONTROL octahedron (edge sqrt2): D = -24*sqrt(2) expected
+ok   CONTROL tetrahedron (edge 2sqrt2): exact Dehn D = 24*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+ok   CONTROL tetrahedron (edge 2sqrt2): D = 24*sqrt(2) expected
+ok   CONTROL Kelvin truncated octahedron (edge sqrt2): exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)
+ok   CONTROL Kelvin truncated octahedron (edge sqrt2): D = 0 expected
+ok   CONTROL cuboctahedron (edge sqrt2): exact Dehn D = 24*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+ok   CONTROL cuboctahedron (edge sqrt2): D = 24*sqrt(2) expected
+ok   CONTROL rhombic dodecahedron: exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)
+ok   CONTROL rhombic dodecahedron: D = 0 expected
+ok   CONTROL Archimedean truncated tetrahedron: exact Dehn D = -8*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+ok   CONTROL truncated tetrahedron nonzero (negative control)
+PROGRESS 0.15 Lead 10
+ok   T(1/4) = S(mu = 6/5) up to scale
+ok   T(1/4) (mu = 6/5): exact Dehn D = -18*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction -18*sqrt(2) -> CONFIRMED
+ok   T(1/3) = S(mu = 5/4) up to scale
+ok   T(1/3) (mu = 5/4): exact Dehn D = -16*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction -16*sqrt(2) -> CONFIRMED
+ok   T(1/2) = S(mu = 4/3) up to scale
+ok   T(1/2) (mu = 4/3): exact Dehn D = -12*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction -12*sqrt(2) -> CONFIRMED
+ok   T(2/3) = S(mu = 7/5) up to scale
+ok   T(2/3) (mu = 7/5): exact Dehn D = -8*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction -8*sqrt(2) -> CONFIRMED
+ok   T(1) = S(mu = 3/2) up to scale
+ok   T(1) (mu = 3/2): exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)
+      prediction 0 -> CONFIRMED
+ok   T(3/2) = S(mu = 8/5) up to scale
+ok   T(3/2) (mu = 8/5): exact Dehn D = 12*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction 12*sqrt(2) -> CONFIRMED
+ok   T(2) = S(mu = 5/3) up to scale
+ok   T(2) (mu = 5/3): exact Dehn D = 24*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction 24*sqrt(2) -> CONFIRMED
+ok   T(3) = S(mu = 7/4) up to scale
+ok   T(3) (mu = 7/4): exact Dehn D = 48*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction 48*sqrt(2) -> CONFIRMED
+ok   T(1/2): square edge = hexagon-square edge = sqrt2/2, hexagon-hexagon edge = sqrt2 (ratio 1:2) [geometry, see README]
+PROGRESS 0.30 Lead 7
+ok   a = -1 + sqrt(1 + sqrt(5/6)) = 0.383065771818 satisfies 6a^2(a+2)^2 = 5
+ok   48 corners
+ok   Lead 7 Q4 tone of the 48 corners = 0 EXACTLY -> prediction zero CONFIRMED
+ok   tone at a = 0: 48 (sign +1 expected; positive at Kelvin, negative at the B3 permutohedron)
+ok   tone at a = 1: -4704/5 (sign -1 expected; positive at Kelvin, negative at the B3 permutohedron)
+      tone(a) = -96*(6*a**4 + 24*a**3 + 24*a**2 - 5)/5
+ok   tone(a) = -(96/5)(6a^2(a+2)^2 - 5) exactly
+ok   tone has exactly 1 root(s) for a > 0 (one sign change)
+ok   Lead 7 solid (a, a+1, a+2): exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)
+      prediction 0 -> CONFIRMED
+      fingerprint (float, record only): {'Q4': 0.0, 'Q6': 0.2484, 'Q8': 0.1284, 'Q10': 0.1228, 'Q12': 0.2765}
+ok   float fingerprint Q4 ~ 0 agrees with the exact tone
+ok   Lead 7 solid: 26 faces, all centrally symmetric (zonohedron)
+PROGRESS 0.45 Lead 8 Dehn
+ok   CO + pyramids k=0: exact Dehn D = 24*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction 24*sqrt(2) -> CONFIRMED
+ok     volume = CO + 0 pyramids exactly (20/3); faces 14
+ok   CO + pyramids k=1: exact Dehn D = 12*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction 12*sqrt(2) -> CONFIRMED
+ok     volume = CO + 1 pyramids exactly (22/3); faces 13
+ok   CO + pyramids k=2 opposite: exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)
+      prediction 0 -> CONFIRMED
+ok     volume = CO + 2 pyramids exactly (8); faces 12
+ok   CO + pyramids k=2 adjacent: exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)
+      prediction 0 -> CONFIRMED
+ok     volume = CO + 2 pyramids exactly (8); faces 12
+ok   CO + pyramids k=3 corner: exact Dehn D = -12*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction -12*sqrt(2) -> CONFIRMED
+ok     volume = CO + 3 pyramids exactly (26/3); faces 11
+ok   CO + pyramids k=3 row: exact Dehn D = -12*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction -12*sqrt(2) -> CONFIRMED
+ok     volume = CO + 3 pyramids exactly (26/3); faces 11
+ok   CO + pyramids k=4 ring: exact Dehn D = -24*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction -24*sqrt(2) -> CONFIRMED
+ok     volume = CO + 4 pyramids exactly (28/3); faces 10
+ok   CO + pyramids k=4 other: exact Dehn D = -24*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction -24*sqrt(2) -> CONFIRMED
+ok     volume = CO + 4 pyramids exactly (28/3); faces 10
+ok   CO + pyramids k=5: exact Dehn D = -36*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction -36*sqrt(2) -> CONFIRMED
+ok     volume = CO + 5 pyramids exactly (10); faces 9
+ok   CO + pyramids k=6: exact Dehn D = -48*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction -48*sqrt(2) -> CONFIRMED
+ok     volume = CO + 6 pyramids exactly (32/3); faces 8
+PROGRESS 0.60 Lead 8 corner cuts
+ok   octahedron cuts t = ['1/3', '1/3', '1/3', '1/3', '1/3', '1/3'] (sum t = 2): exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)
+      prediction 0 -> CONFIRMED
+ok   octahedron cuts t = ['1/4', '1/4', '1/4', '1/4', '1/4', '1/4'] (sum t = 3/2): exact Dehn D = -6*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction -6*sqrt(2) -> CONFIRMED
+ok   octahedron cuts t = ['1/2', '1/2', '1/3', '1/3', '1/6', '1/6'] (sum t = 2): exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)
+      prediction 0 -> CONFIRMED
+ok   octahedron cuts t = ['2/5', '1/5', '1/3', '1/7', '1/4', '1/9'] (sum t = 1811/1260): exact Dehn D = -709*sqrt(2)/105 (x) beta [NONZERO]; float screen agrees (False)
+      prediction -709*sqrt(2)/105 -> CONFIRMED
+ok   octahedron cuts t = ['1/2', '1/2', '1/2', '1/2', '0', '0'] (sum t = 2): exact Dehn D = 0 (x) beta [ZERO]; float screen agrees (True)
+      prediction 0 -> CONFIRMED
+ok   octahedron cuts t = ['1/2', '1/2', '1/2', '1/2', '1/2', '0'] (sum t = 5/2): exact Dehn D = 6*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction 6*sqrt(2) -> CONFIRMED
+ok   octahedron cuts t = ['1/3', '0', '0', '0', '0', '0'] (sum t = 1/3): exact Dehn D = -20*sqrt(2) (x) beta [NONZERO]; float screen agrees (False)
+      prediction -20*sqrt(2) -> CONFIRMED
+ok   octahedron cuts t = ['3/7', '2/5', '0', '1/3', '1/10', '1/4'] (sum t = 127/84): exact Dehn D = -41*sqrt(2)/7 (x) beta [NONZERO]; float screen agrees (False)
+      prediction -41*sqrt(2)/7 -> CONFIRMED
+PROGRESS 0.70 Lead 8 exact cover
+      CONTROL rhombohedron (1 O + 2 T) [all] N=1: FOUND (tori 1, 0.0 s) orientations used 1
+ok   CONTROL rhombohedron tiles at N = 1 (positive)
+      CONTROL cuboctahedron alone [all] N=16: none (tori 651, 4.5 s)
+ok   CONTROL cuboctahedron alone: no cover at N = 16 (negative; it does not tile alone)
+      CONTROL CO + 1 pyramid (Dehn nonzero) [all] N=18: none (tori 910, 39.7 s)
+ok   CONTROL CO + 1 pyramid: no cover at N = 18 (negative; Dehn nonzero forbids)
+ok   CO + 2 pyramids opposite: 40 cells (8 T + 32 octants = 4 octet cells of 10)
+PROGRESS 0.75 CO + 2 pyramids opposite
+      CO + 2 pyramids opposite [translations] N=4: FOUND (tori 26, 0.1 s) orientations used 1
+      CO + 2 pyramids opposite [translations+inverse] N=4: FOUND (tori 26, 0.1 s) orientations used 1
+      CO + 2 pyramids opposite [all] N=4: FOUND (tori 17, 0.1 s) orientations used 1
+ok   CO + 2 pyramids adjacent: 40 cells (8 T + 32 octants = 4 octet cells of 10)
+PROGRESS 0.88 CO + 2 pyramids adjacent
+      CO + 2 pyramids adjacent [translations] N=4: none (tori 35, 0.1 s)
+      CO + 2 pyramids adjacent [translations] N=8: none (tori 155, 0.6 s)
+      CO + 2 pyramids adjacent [translations] N=12: none (tori 455, 2.8 s)
+      CO + 2 pyramids adjacent [translations] N=16: none (tori 651, 5.3 s)
+      CO + 2 pyramids adjacent [translations] N=20: none (tori 1085, 11.0 s)
+      CO + 2 pyramids adjacent [translations] N=24: none (tori 2015, 24.5 s)
+      CO + 2 pyramids adjacent [translations+inverse] N=4: none (tori 35, 0.1 s)
+      CO + 2 pyramids adjacent [translations+inverse] N=8: none (tori 155, 1.1 s)
+      CO + 2 pyramids adjacent [translations+inverse] N=12: none (tori 455, 5.1 s)
+      CO + 2 pyramids adjacent [translations+inverse] N=16: none (tori 651, 9.6 s)
+      CO + 2 pyramids adjacent [translations+inverse] N=20: none (tori 1085, 20.1 s)
+      CO + 2 pyramids adjacent [translations+inverse] N=24: none (tori 2015, 44.6 s)
+      CO + 2 pyramids adjacent [all] N=4: none (tori 35, 0.7 s)
+      CO + 2 pyramids adjacent [all] N=8: none (tori 155, 6.8 s)
+      CO + 2 pyramids adjacent [all] N=12: none (tori 455, 31.7 s)
+      CO + 2 pyramids adjacent [all] N=16: none (tori 651, 61.0 s)
+      CO + 2 pyramids adjacent [all] N=20: none (tori 1085, 125.3 s)
+      CO + 2 pyramids adjacent [all] N=24: none (tori 2015, 278.8 s)
+PROGRESS 0.99 writing
+74/74 checks ok, 841.2 s
+FINAL ok
