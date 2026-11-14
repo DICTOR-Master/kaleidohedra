@@ -1,0 +1,213 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Implementation plan: the Fable handoff</title><link rel="stylesheet" href="../paper.css">
+<style>
+table{break-inside:auto;border-collapse:collapse;width:100%;font-size:7.7pt;margin:2mm 0}
+td,th{border:0.3pt solid #999;padding:0.7mm 1.2mm;vertical-align:top;text-align:left}
+th{background:#eee} tr{break-inside:avoid}
+table.h td:nth-child(1){width:8%} table.h td:nth-child(2){width:24%} table.h td:nth-child(3){width:25%} table.h td:nth-child(4){width:25%} table.h td:nth-child(5){width:8%} table.h td:nth-child(6){width:10%}
+b.d{color:#1f6b2a} b.p{color:#8a5a00} b.w{color:#a00} b.n{color:#555} b.x{color:#a00}
+.box{border:1.2pt solid #a00;border-radius:2mm;padding:1mm 2.5mm;margin:1.5mm 0;font-size:7.7pt;line-height:1.3;break-inside:avoid}
+h1{font-size:16pt;margin:0 0 1mm} .status{font-size:7.8pt;padding:1.2mm 2.5mm;margin:1.5mm 0} .meta{padding:3pt 0;margin-bottom:4pt} h2{margin:6pt 0 3pt}
+.ov{display:grid;grid-template-columns:1fr 1fr;gap:1.5mm 3mm;font-size:7.7pt;line-height:1.3}
+.ov div{border:0.4pt solid #b8962e;border-radius:1.5mm;padding:1mm 2mm}
+.ov h3{font:600 9pt 'DejaVu Sans',sans-serif;margin:0 0 1mm;color:#6b5310}
+.ov ul{margin:0;padding-left:4mm} .ov li{margin:0.3mm 0}
+p.note{font-size:8.4pt;margin:1mm 0 2mm}
+table.ph td:nth-child(1){width:12%} table.ph td:nth-child(2){width:50%} table.ph td:nth-child(3){width:20%}
+table.dec td:nth-child(1){width:4%} table.dec td:nth-child(2){width:50%}
+h2{break-before:auto}
+.pb{break-before:page}
+</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt=""><img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Implementation plan: the Fable handoff<br><span style="font-size:0.6em;font-weight:normal">Every change and suggestion from DICTO's chat sessions with Fable (13–14 November 2026): where each stands, what comes next, and in what order</span></h1>
+<div class="meta"><b>DICTO</b> · plan of 14 November 2026 · PLAN, for DICTO's decision, not for publication</div>
+<div class="status">PLAN, for DICTO's decision. Sources: the handoff bundle (files 01–07, scripts), its triage (studies/2026-11-14-chat-handoff, b9930014: 41 items), the DICTO Concordance v2.3 draft (09598cc7), the naming pass on the four unpublished books (5108ad82, 36e7cb76, 4e006d42, 5d024605, 91a84089), the D40 check (d6e09d03) and the studies of 14 November (state as seen when this plan was written). File 05 items are described without personal details. Who acts: <b>us</b> = done here; <b>DICTO decides</b> = waits for DICTO's choice; <b>DICTO's account</b> = only DICTO can do it (sign-in, posting, sending). Nothing has been sent anywhere.</div>
+
+<h2>1. Overview</h2>
+<div class="ov">
+<div><h3>DONE</h3><ul>
+<li>Triage of all 41 items, with exact tests of Leads 7, 8, 10: every prediction confirmed (b9930014).</li>
+<li>Lead 1 settled in substance: the balance law of #104 Thm 4 and #108 Thm 1 is Stanley's flag h-vector symmetry for balanced spheres, in sweep form. Not yet in any paper.</li>
+<li>The Concordance brought up to #108; a "What it is" column for 253 names; a subtitle for 49 laws and methods; a front page of six results; What Is Missing moved to Part 1 (09598cc7, draft).</li>
+<li>Naming policy applied to the four unpublished books and the Concordance.</li>
+<li>The DICTO silent zonohedron: confirmed exactly (Q4 = 0, Dehn 0) and named by DICTO.</li>
+<li>Forced-fixed-points battery: 121 of 121 exact checks. No new law-giving shape; the silent zonohedron's silence is a crossing, not forced.</li>
+<li>D40: the GTI hexagon ratio is 1 + 3√5/5; #38's 1 : φ is wrong; errata logged (d6e09d03).</li>
+</ul></div>
+<div><h3>IN PROGRESS</h3><ul>
+<li>The Platonic hybrid mix (file 03 B2–B5), for Space-Fillers Ch 8: test scripts written, exact runs not yet in. Space-Fillers is on hold for it (DOI reserved, unpublished).</li>
+<li>Cover search for the cuboctahedron with pyramids on two adjacent squares: running (16 workers).</li>
+<li>Palomar preparation: Lean workspace built and smoke-tested; the rules, the axiom policy and the choice of first entry are not yet written up.</li>
+</ul>
+<h3>WAITING FOR DICTO</h3><ul>
+<li>His read of the Concordance v2.3 draft (15 names marked to check, 14 descriptions marked †).</li>
+<li>His read of the changed Ch 8 pages, then publication of Space-Fillers (the deploy word for its site card is given).</li>
+<li>The OEIS editors on A400949 (in review); the decisions in Section 4.</li>
+</ul></div>
+<div><h3>NOT STARTED</h3><ul>
+<li>Leads 2, 3, 4, 5, 6 (Atlas with real seeds), 9; file 07 P1c, P1d, P2e; file 03 D2 (exact Dehn values of the OG family).</li>
+<li>The Concordance part "maps and crossings"; the systematic line per atom in the DICTOnary.</li>
+<li>Next versions of published papers: Stanley credit (#104, #108), #105 open point closed, #38 and DICTOnary D40 line.</li>
+<li>File 06 §4 (dictionary of flip polytopes) and §5 (rosette catalogue from vertex figures).</li>
+</ul></div>
+<div><h3>HELD (only on DICTO's word)</h3><ul>
+<li>File 02: One Tissue, Three Scales (the Sun's cells, the Earth's plates, cosmic voids).</li>
+<li>File 03 C: the "filigree" chapter and jewellery illustrations.</li>
+<li>File 05: Scholar profile, funding, two draft letters, the AI-use sentence.</li>
+<li>File 03 D1: the OG chain DICTO reported (no record of it in the repository yet).</li>
+</ul></div>
+</div>
+<div class="box"><b>Where the chat was wrong</b> (from the triage, with one addition)
+<ol style="margin:1mm 0 0;padding-left:5mm">
+<li><b>Lead 4:</b> the slice gaps on t ∈ [1, 2] are (1, 1, t), not (1, 1, t − 1). The rest of the closed walk is right.</li>
+<li><b>File 03 A2.1:</b> 9, 3 and 15 − 6√5 are #43's containment constants, not the turn constants. The turn constant is c = (hR)², which is 3 only for the cube; so "only the cube–octahedron pair gives a finite group" has no basis.</li>
+<li><b>Lead 1, second source:</b> Bayer–Billera 1985 does not contain the balance law. The sources are Stanley 1979 and Björner–Frankl–Stanley 1987.</li>
+<li><b>Lead 10, evidence:</b> not "the Concordance records of 4 November" but #100 Thm 1.1 (7 Nov), already a proof. Lead 10 is DICTO's own result, not new.</li>
+<li><b>File 03 B7</b> (contradicted): #106 Table 2 does state the roles of X and Y.</li>
+<li><b>Added 14 Nov:</b> the cuboctahedron with pyramids on two opposite squares, which tiles by translations, is a known space-filler (Critchlow 1969; an affine rhombic dodecahedron). It is not a new find.</li>
+</ol></div>
+
+<h2 class="pb">2. Item by item</h2>
+<p class="note">Status words: <b class="d">DONE</b>, <b class="p">PARTLY</b>, <b class="p">IN PROGRESS</b>, <b class="n">NOT STARTED</b>, <b class="n">HELD</b>, <b class="w">WRONG</b>. Item codes are the triage's (L = file 01 lead, A–E = file 03 sections, P = file 07 patterns).</p>
+
+<h3>File 04: the Concordance and the naming policy</h3>
+<table class="h"><tr><th>item</th><th>what it asks</th><th>status now</th><th>next step</th><th>who</th><th>depends on</th></tr>
+<tr><td>04 §0</td><td>Bring the Concordance up to #108 (#104–#108, Kyushindo Cores v3, #47 v3) in threads, Names, Almanac, cross-links, test table</td><td><b class="d">DONE</b> v2.3 draft, 09598cc7</td><td>DICTO's read; then publish v2.3</td><td>DICTO decides</td><td>—</td></tr>
+<tr><td>Names</td><td>A description column, every entry readable without the name</td><td><b class="d">DONE</b> 253 entries; 15 marked to check</td><td>Settle the 15 (us), show the 14 † descriptions to DICTO; add the silent zonohedron</td><td>us, then DICTO</td><td>—</td></tr>
+<tr><td>Almanac</td><td>One-line subtitle for each law and method</td><td><b class="d">DONE</b> 49 subtitles, 5 new concepts</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Front page</td><td>Five or six results in standard terms, each pointing to its paper</td><td><b class="d">DONE</b> six results</td><td>DICTO checks the choice of six</td><td>DICTO decides</td><td>—</td></tr>
+<tr><td>What Is Missing</td><td>Move nearer the front; add "a crossing nobody has computed"</td><td><b class="d">DONE</b> now Part 1, content unchanged</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Maps and crossings</td><td>New part: each seed triangle, its test curves, where they meet</td><td><b class="n">NOT STARTED</b></td><td>Build after Phase 2a</td><td>us</td><td>Leads 5, 6; P1c, P1d, P2e</td></tr>
+<tr><td>DICTOnary</td><td>A systematic line per atom: group, face counts by type, recipe</td><td><b class="n">NOT STARTED</b></td><td>Add to the DICTOnary v1.4 next-version draft, with the D40 line</td><td>us</td><td>Phase 5</td></tr>
+<tr><td>Untested leads</td><td>Leads of files 01 and 03 under "Waiting for their volume", not in Names</td><td><b class="d">DONE</b> with triage statuses</td><td>Move each into Names only when tested and named</td><td>us</td><td>—</td></tr>
+<tr><td>Naming policy</td><td>Description at first use; theorems readable alone; sparing new names; subtitles for laws</td><td><b class="d">DONE</b> on the four unpublished books and the Concordance</td><td>Apply to each published book or paper at its next real version only</td><td>us</td><td>Phase 5</td></tr>
+<tr><td>"DICTO" wording</td><td>Drop surplus "DICTO" in running text; keep credit, DOI line, names</td><td><b class="d">DONE</b> with DICTO's three corrections (below)</td><td>Same rule at next versions</td><td>us</td><td>—</td></tr>
+<tr><td>Leave alone</td><td>Threads, D-numbers, DOIs, corrections record, the names</td><td><b class="d">KEPT</b></td><td>—</td><td>—</td><td>—</td></tr>
+</table>
+<p class="note">DICTO's corrections to the brief, all in force: the "DICTO DOI" label is unchanged; names keep DICTO; in running text DICTO appears at the first mention in each chapter and is dropped after, except where the bare word would be ambiguous (DICTO Yantra, DICTO Jewel).</p>
+
+<h3>File 01: the ten leads</h3>
+<table class="h"><tr><th>item</th><th>what it asks</th><th>status now</th><th>next step</th><th>who</th><th>depends on</th></tr>
+<tr><td>L1</td><td>Is the balance law (#104 Thm 4, #108 Thm 1) classical?</td><td><b class="p">PARTLY</b> yes: Stanley 1979 (a-balanced spheres), Björner–Frankl–Stanley 1987; found 13 Nov for the one-colour case; no paper says it</td><td>Get Stanley 1979 into the reference library and read the theorem number; credit it in Paradigm Ch 7 before release, and in #104, #108 next versions. DICTO's own: the tissue reading, in(X), 601 as loops, the rosette law</td><td>us</td><td>Phase 4 (Paradigm), Phase 5</td></tr>
+<tr><td>L1a</td><td>26 / 66 / 26 sweep; swap types are descent-set counts</td><td><b class="d">DONE</b> #104, #108</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>L2</td><td>Every omnitruncate row is a descent-set table; 601 = elements of H4 with descent set {1, 2}</td><td><b class="p">PARTLY</b> rows in #108; 601 reading checked by hand</td><td>Count descent sets directly in B4, F4, H4</td><td>us</td><td>Phase 2b</td></tr>
+<tr><td>L3</td><td>4D associahedron tissue (42 corners; sweep 10, 20, 10; cyclohedron 16, 36, 16): outside #108's hypothesis</td><td><b class="n">NOT STARTED</b> (counts are classical Narayana numbers)</td><td>Typed sweep in Loday's coordinates: which typed counts stay direction-independent</td><td>us</td><td>Phase 2b</td></tr>
+<tr><td>L4</td><td>Sliding facets: permutohedron to associahedron as a 4D scutoid; hexagon-to-pentagon stack</td><td><b class="w">WRONG</b> in one formula (gaps (1, 1, t)); the idea untested</td><td>Build the hexagon-to-pentagon stack; compare with the 2018 scutoid</td><td>us</td><td>Phase 2b</td></tr>
+<tr><td>L5</td><td>The hexagon of turns (μ ↦ 3/μ with μ ↦ 3 − μ, order 6); golden orbit; n-dimensional ladder</td><td><b class="n">NOT STARTED</b> as tests; checked by hand</td><td>Fingerprint the four golden-orbit stations; derive whether the partner n − μ exists for n ≥ 4</td><td>us</td><td>Phase 2a</td></tr>
+<tr><td>L6</td><td>The Dehn-silent line (a, a+1, a+2); icosahedral silent points isolated; law of degrees</td><td><b class="p">PARTLY</b> line confirmed at the Lead 7 point; #100 has the rest</td><td>Draw the three seed triangles with walls, stations and test curves (the Atlas with real seeds)</td><td>us</td><td>Phase 2a</td></tr>
+<tr><td>L7</td><td>The silent zonohedron at a ≈ 0.3831: Q4 = 0, Dehn 0</td><td><b class="d">DONE</b> confirmed; named by DICTO; forced-fixed-points: nothing forced there, fills space in no way (proved)</td><td>Names entry; test the 5-design curve against other zonohedron lines (forced study, Lead 1)</td><td>us</td><td>placement: Decision 7</td></tr>
+<tr><td>L8</td><td>Cut-corner rule; CO + k pyramids: Dehn (24 − 12k)β; two-pyramid tilings</td><td><b class="d">DONE</b> rule confirmed; opposite pair tiles but is known (Critchlow 1969); adjacent pair: no translation tiling (proved), periodic search <b class="p">IN PROGRESS</b></td><td>Record the search result when it ends; the wider list of cut vectors summing to 2L</td><td>us</td><td>cover search</td></tr>
+<tr><td>L9</td><td>Wall exponents in #104 Thm 3: does the exponent read the event type?</td><td><b class="n">NOT STARTED</b></td><td>Test on the stacks of L4</td><td>us</td><td>L4</td></tr>
+<tr><td>L10</td><td>The DICTO 1:2 Truncated Octahedron cannot fill space alone, turned or mirrored</td><td><b class="d">DONE</b> by #100 Thm 1.1 with Debrunner; confirmed exactly</td><td>Close #105's open point in its next version</td><td>us, DICTO reads</td><td>Phase 5</td></tr>
+<tr><td>alongside</td><td>OEIS, Palomar, Concordance rework</td><td>see files 04 and 05</td><td>—</td><td>—</td><td>—</td></tr>
+</table>
+
+<h3>File 07: three patterns</h3>
+<table class="h"><tr><th>item</th><th>what it asks</th><th>status now</th><th>next step</th><th>who</th><th>depends on</th></tr>
+<tr><td>P1a</td><td>Order-6 composite; the cube's orbit 3, 1, 2, 3/2</td><td><b class="n">NOT STARTED</b> as text (= L5, checked by hand)</td><td>With L5</td><td>us</td><td>Phase 2a</td></tr>
+<tr><td>P1b</td><td>√3 is the roundest station (Lindelöf)</td><td><b class="d">DONE</b> tetra-sweep study</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>P1c</td><td>Golden orbit stations 3/φ², 3/φ, 3/(3 − φ), φ² untested</td><td><b class="n">NOT STARTED</b></td><td>Fingerprint each (Q4, Q8, roundness, Dehn)</td><td>us</td><td>Phase 2a</td></tr>
+<tr><td>P1d</td><td>n dimensions: orders 4, 6, ∞; tesseract orbit 2 ± 2/k; 24-cell at both fixed points</td><td><b class="n">NOT STARTED</b> (arithmetic checked)</td><td>Derive the partner map for n ≥ 4 first</td><td>us</td><td>Phase 2a</td></tr>
+<tr><td>P2a, b, d</td><td>Dehn linear between walls; silent only at 3/2; ID ∩ μRT nonzero</td><td><b class="d">DONE</b> #100; dual-sweeps</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>P2c</td><td>The silent line through CO–RD at μ = 5/3</td><td><b class="p">PARTLY</b> (= L6)</td><td>With L6</td><td>us</td><td>Phase 2a</td></tr>
+<tr><td>P2e</td><td>Icosahedral three-family silent solid = truncated icosidodecahedron (angles sum 450°)</td><td><b class="n">NOT STARTED</b> (consistent; classical angles)</td><td>One exact check, then a point on the icosahedral map</td><td>us</td><td>Phase 2a</td></tr>
+<tr><td>P3a</td><td>Law of degrees (Dehn 1, area 2, volume 3, Q<sub>l</sub> degree l)</td><td><b class="n">HEURISTIC</b></td><td>State as an observation on the maps, not as a law</td><td>us</td><td>Phase 2a</td></tr>
+<tr><td>P3b, c</td><td>Q8 bronze root and Mahler cubic; wall area symmetric under the partner</td><td><b class="d">DONE</b> mahler-sweep; swaps study K3</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>P4</td><td>One shape triangle per kaleidoscope, sweeps as lines, walls as events</td><td><b class="n">NOT STARTED</b> (a plan)</td><td>This is the "maps and crossings" part</td><td>us</td><td>Phase 2a</td></tr>
+</table>
+
+<h3>File 03: the addendum</h3>
+<table class="h"><tr><th>item</th><th>what it asks</th><th>status now</th><th>next step</th><th>who</th><th>depends on</th></tr>
+<tr><td>A1</td><td>Kyushindo Cores already has Lemma 3, Thm 3, Thm 5</td><td><b class="d">DONE</b> #43 v3</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>A2.1</td><td>#43's constants are the turn constants; only cube–octahedron closes</td><td><b class="w">WRONG</b></td><td>None. Only if wanted: look for a partner map on the tetrahedral and icosahedral sweeps</td><td>—</td><td>—</td></tr>
+<tr><td>A2.2</td><td>Margin 3/φ² at k = 3 equals a golden-orbit station</td><td><b class="d">DONE</b> as fact; the link untested</td><td>One look when P1c fingerprints 3/φ²</td><td>us</td><td>P1c</td></tr>
+<tr><td>A2.3</td><td>Lead with Kyushindo Cores for a specialist</td><td>advice</td><td>Already among the front-page six; use it first in Palomar</td><td>DICTO decides</td><td>—</td></tr>
+<tr><td>A3</td><td>Lean order: covering statement of Thm 4, Lemma 3, Cor 7, Thms 1, 4, 2</td><td><b class="p">IN PROGRESS</b> workspace built</td><td>See file 05, Palomar</td><td>us</td><td>Phase 3</td></tr>
+<tr><td>B1</td><td>#106 skins; the icosahedron at edge 1 in a dodecahedral cell</td><td><b class="d">DONE</b> #106 Table 1</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>B2</td><td>Hybrid: skinned icosahedron in the dodecahedron's slab at equal edges; four worlds become three</td><td><b class="p">IN PROGRESS</b> platonic-hybrid study, scripts written</td><td>Exact run; confirmed parts into Space-Fillers Ch 8 "The hybrid: one golden slab"</td><td>us</td><td>Phase 1</td></tr>
+<tr><td>B3</td><td>#47 Thm 2 removes P from every mix with T and O</td><td><b class="p">IN PROGRESS</b> same study</td><td>As B2</td><td>us</td><td>Phase 1</td></tr>
+<tr><td>B4</td><td>Partial skins R and the roof plate Z (φ × φ × ½) in place of X, Y; three checks</td><td><b class="p">IN PROGRESS</b> same study</td><td>The three checks; if any fails, Z goes to the chapter's open section as a proposal</td><td>us</td><td>Phase 1</td></tr>
+<tr><td>B5</td><td>Connector counts per version and mix (6 → 5)</td><td><b class="p">IN PROGRESS</b></td><td>One count table in Ch 8, only for confirmed versions</td><td>us</td><td>B2–B4</td></tr>
+<tr><td>B6</td><td>Tries that do not beat two edging pieces</td><td><b class="n">unverified notes</b></td><td>Mention only if checked</td><td>us</td><td>B4</td></tr>
+<tr><td>B7</td><td>Why X and Y appear in #106 "was not clear"</td><td><b class="w">CONTRADICTED</b> #106 Table 2</td><td>None (why they cannot be avoided stays #47's open question 2)</td><td>—</td><td>—</td></tr>
+<tr><td>C</td><td>"Filigree" summary chapter (settings, ground, edging); jewellery illustrations</td><td><b class="n">HELD</b></td><td>Chapter: Decision 5. Illustrations: render from exact model files, two materials</td><td>DICTO decides</td><td>B2–B5; Phase 4 or 6</td></tr>
+<tr><td>D1</td><td>The OG and triacontahedron chain in which the dodecahedron and icosahedron reappear</td><td><b class="n">HELD</b> not recorded anywhere here</td><td>DICTO says where it is; then record it and read off the side ratios</td><td>DICTO decides</td><td>Decision 9</td></tr>
+<tr><td>D2</td><td>Exact Dehn values of the nine OG-family solids, to see which could cancel</td><td><b class="p">PARTLY</b> all nonzero (float); cut OG exact</td><td>Exact values for all nine</td><td>us</td><td>Phase 2a</td></tr>
+<tr><td>E</td><td>Assessment: Stanley makes two theorems classical; originality lies in objects, exact results, readings</td><td>opinion; agrees with L1</td><td>The rosette law (Wythoff) also stays DICTO's</td><td>—</td><td>—</td></tr>
+</table>
+
+<h3>File 06: the first plan (13 Nov; background)</h3>
+<table class="h"><tr><th>item</th><th>what it asks</th><th>status now</th><th>next step</th><th>who</th><th>depends on</th></tr>
+<tr><td>§0</td><td>Stanley / Bayer–Billera check</td><td>= L1</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>§1</td><td>Coloured sweeps of the A4, B4, F4, H4 permutohedra</td><td><b class="d">DONE</b> #108</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>§2, §3</td><td>Associahedron tissues; sliding facets</td><td>= L3, L4</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>§4</td><td>Dictionary of flip polytopes (secondary, fiber, sweep polytopes; higher Bruhat orders); is #104 Figure 4 a slice of a secondary fan?</td><td><b class="n">NOT STARTED</b></td><td>Read and cite the known theory first; the dictionary as a section of a later tissue paper</td><td>us</td><td>Phase 2b</td></tr>
+<tr><td>§5</td><td>Rosette catalogue from vertex figures; A4* honeycomb sweep; rosette-to-swap path stacked in 5D</td><td><b class="p">PARTLY</b> rosette balance proved for Wythoff polytopes (rosette-balance, 13 Nov)</td><td>Vertex-figure catalogue of the uniform 4-polytopes</td><td>us</td><td>Phase 2b</td></tr>
+<tr><td>wording</td><td>"The relationship is the fundamental object" = the dual complex (nerve)</td><td>advice</td><td>Use these words in the Paradigm where it fits</td><td>us</td><td>Phase 4</td></tr>
+</table>
+
+<h3>File 02: One Tissue, Three Scales (separate project)</h3>
+<table class="h"><tr><th>item</th><th>what it asks</th><th>status now</th><th>next step</th><th>who</th><th>depends on</th></tr>
+<tr><td>Step 0</td><td>An event logger (swap, birth, death, split, merge, rosette) with Euler checks; validated on #104's sweep counts and a moving Voronoi tiling</td><td><b class="n">HELD</b></td><td>Own folder, away from the polytope studies; predictions written before the first run</td><td>DICTO decides</td><td>Decision 10</td></tr>
+<tr><td>Step 1</td><td>Earth's plates: present-day check (52 plates, 100 junctions, 150 boundaries), then two or three plate models</td><td><b class="n">HELD</b></td><td>Read the prior plate-graph work first</td><td>us</td><td>Step 0</td></tr>
+<tr><td>Step 2</td><td>The Sun's cells: prior-art search on neighbour swaps in granulation; one simulation</td><td><b class="n">HELD</b></td><td>The search decides whether the project is new</td><td>us</td><td>Step 0</td></tr>
+<tr><td>Step 3</td><td>Cosmic voids: a Voronoi-foam toy, then one small simulation</td><td><b class="n">HELD</b></td><td>Read the void-tracking papers first</td><td>us</td><td>Step 0</td></tr>
+<tr><td>Step 4</td><td>Comparison table and paper; collaborators sought once Step 1 has a table</td><td><b class="n">HELD</b></td><td>—</td><td>us; DICTO's account for contacts</td><td>Steps 1–3</td></tr>
+</table>
+
+<h3>File 05: outreach and standing (described without personal details)</h3>
+<table class="h"><tr><th>item</th><th>what it asks</th><th>status now</th><th>next step</th><th>who</th><th>depends on</th></tr>
+<tr><td>OEIS</td><td>Wait; record the A-number when approved</td><td><b class="p">WAITING</b> A400949 in review</td><td>Record it in the Concordance; next entry N(n) = 3, 15, 65, 225, 770 (#105), citing a Palomar proof where one exists</td><td>editors; then us; DICTO's account to submit</td><td>approval</td></tr>
+<tr><td>Palomar</td><td>Read the rules and axiom policy; first entry; layout Challenge / Solution / formalization file in a public repository at a fixed commit</td><td><b class="p">IN PROGRESS</b> Lean workspace built and smoke-tested 14 Nov</td><td>Write up the rules (including whether finite checks by native_decide are allowed); formalise the first entry</td><td>us; DICTO's account to submit</td><td>Phase 3; Decision 6</td></tr>
+<tr><td>Palomar candidates</td><td>Covering statement of #43 Thm 4; Lemma 3; Loop Equality (#102); DICTO added the Yantra paper (#103) and walks (Delian walk #51/#93; weight walks #52/#53)</td><td>listed</td><td>Order in Decision 6</td><td>DICTO decides</td><td>—</td></tr>
+<tr><td>Earlier Lean use</td><td>Check what it produced; clear its disk use (about 300 GB reported)</td><td><b class="n">NOT STARTED</b></td><td>Measure; remove build caches only, keep sources and logs; report the space freed</td><td>us</td><td>—</td></tr>
+<tr><td>Stanley check</td><td>Read Stanley 1979 and Bayer–Billera 1985</td><td><b class="d">DONE</b> in substance (L1)</td><td>The exact theorem number once the paper is in the library</td><td>us</td><td>—</td></tr>
+<tr><td>Scholar</td><td>Title check first; a public profile of about twenty strongest papers</td><td><b class="n">NOT STARTED</b></td><td>Search four exact titles (us); the profile itself needs DICTO's sign-in</td><td>us; DICTO's account</td><td>Decision 11</td></tr>
+<tr><td>ORCID, open indexes</td><td>ORCID as the main page listing all works, including the OEIS entry; check OpenAlex and Semantic Scholar by DOI</td><td><b class="n">NOT STARTED</b></td><td>DOI check (us); ORCID edits (DICTO)</td><td>us; DICTO's account</td><td>OEIS approval</td></tr>
+<tr><td>Funding</td><td>Three leads (a fund for open AI-and-mathematics resources; a fellowship for unusual work; an art-and-science grant in Japan, window closed until next autumn)</td><td><b class="n">HELD</b></td><td>Best after outside checks: OEIS approved, one Palomar entry, one refereed acceptance</td><td>DICTO decides</td><td>Phases 3, 6</td></tr>
+<tr><td>Craft connections and letters</td><td>Two draft letters to an outside institution DICTO belongs to (advice; a talk and display)</td><td><b class="n">HELD</b> nothing sent</td><td>DICTO fills the brackets and checks the facts; sends only if he wishes</td><td>DICTO's account</td><td>Decision 12</td></tr>
+<tr><td>AI-use sentence</td><td>One sentence for biography, ORCID, applications, Palomar</td><td>drafted in file 05; papers already state AI use</td><td>DICTO approves the wording; forms use "Claude Code (Opus)"</td><td>DICTO decides</td><td>—</td></tr>
+<tr><td>Two projects</td><td>Keep the geometry leads and the Sun / plates / voids project apart</td><td>agreed</td><td>Separate folder for file 02 if started</td><td>us</td><td>—</td></tr>
+</table>
+
+<h2 class="pb">3. Order of work</h2>
+<table class="ph"><tr><th>phase</th><th>steps</th><th>unblocks</th><th>who</th></tr>
+<tr><td><b>1. Finish Space-Fillers</b></td><td>(1) Exact hybrid run (B2–B5). (2) Confirmed parts into Ch 8 as "The hybrid: one golden slab", unconfirmed parts as proposals in its open section. (3) Changed-pages PDF for DICTO's read. (4) On "read ok": publish to the reserved DOI. (5) Site card through the deploy queue (word given).</td><td>The first book of the release order; the Platonic book can cite Ch 8; the filigree decision has its facts</td><td>us; DICTO reads</td></tr>
+<tr><td><b>2a. Leads for "maps and crossings"</b></td><td>L5 and P1a, P1c, P1d (turns, golden orbit, n dimensions); L6 and P2c (three seed triangles with walls, stations, curves); P2e; D2 (exact OG-family Dehn values); forced-study Lead 1 (the 5-design curve). Then the Concordance part, with the silent zonohedron on the cube–octahedron map.</td><td>The "maps and crossings" part; material for Brief Geometry Part Four</td><td>us</td></tr>
+<tr><td><b>2b. Tissue leads</b> (parallel, no book waits for them)</td><td>L2 (descent sets in B4, F4, H4); L3 (associahedron typed sweep); L4 (hexagon-to-pentagon stack); L9; file 06 §4 and §5. Each result routed to its own paper or next version, not piled into the Paradigm.</td><td>#108 next version; a later tissue paper</td><td>us</td></tr>
+<tr><td><b>3. Palomar, then OEIS</b></td><td>(1) Rules and axiom policy written up. (2) First entry in Lean (Decision 6). (3) Public repository at a fixed commit, then submission. (4) After A400949 is approved: record it; draft the N(n) entry citing the Lean proof.</td><td>Outside checks; Scholar / ORCID; funding later</td><td>us; DICTO's account to submit</td></tr>
+<tr><td><b>4. Paradigm, then Platonic</b></td><td>Paradigm: the Stanley credit in Ch 7 (L1), the dual-complex wording, arc check, read, publish, site card. Platonic: the filigree decision, Ch 8 hybrid cross-reference, arc check, read, publish, site card. Brief Geometry follows as Book Eleven.</td><td>The release order Space-Fillers, Paradigm, Platonic, Brief Geometry</td><td>us; DICTO reads</td></tr>
+<tr><td><b>5. Next versions of published work</b></td><td>#38 and the DICTOnary: D40 hexagon ratio 1 + 3√5/5 (and the systematic line per atom, v1.4). #78 core cut x = (10 − √5)/19: #78 v3 is already right; the books quoting it are fixed in their next-version drafts. #105 v5: open point closed by #100 Thm 1.1. #104 and #108: the Stanley 1979 credit for the balance law. Naming policy at each.</td><td>Clean record; the Concordance errata list can close</td><td>us; DICTO reads each</td></tr>
+<tr><td><b>6. Separate projects, on DICTO's word only</b></td><td>File 02 (event logger first); the filigree chapter if not placed in Phase 4; jewellery illustrations; funding and letters.</td><td>—</td><td>DICTO decides</td></tr>
+</table>
+<p class="note">Phases 1, 3 and 5 hold no computation of note and can run beside Phase 2. Phase 4 waits only for the Stanley credit from L1, which needs no new computation.</p>
+
+<h2>4. Decisions for DICTO</h2>
+<table class="dec"><tr><th>#</th><th>decision</th><th>recommended answer</th></tr>
+<tr><td>1</td><td>Space-Fillers Ch 8: publish with only the confirmed parts of the hybrid?</td><td>Yes; unconfirmed parts (for example the roof plate) as proposals in the open section.</td></tr>
+<tr><td>2</td><td>The Stanley 1979 credit: Paradigm Ch 7 before release, #104 and #108 at next versions?</td><td>Yes, all three, with DICTO's parts named beside it.</td></tr>
+<tr><td>3</td><td>#105 v5 now, closing the open point by #100 Thm 1.1?</td><td>Yes: a real change, a small new version.</td></tr>
+<tr><td>4</td><td>Publish the Concordance v2.3 after your read, or wait for "maps and crossings"?</td><td>Publish v2.3 now; maps and crossings in v2.4.</td></tr>
+<tr><td>5</td><td>The filigree chapter: closing chapter of the Platonic book, or a separate piece?</td><td>Closing chapter of the Platonic book; jewellery illustrations later.</td></tr>
+<tr><td>6</td><td>Palomar first entry?</td><td>The covering statement behind #43 Thm 4; then the Yantra paper (#103); then Lemma 3 and the walks.</td></tr>
+<tr><td>7</td><td>Where does the silent zonohedron go?</td><td>Concordance Names now; Brief Geometry Part Four as the worked case "a crossing, not a forced law".</td></tr>
+<tr><td>8</td><td>The two-pyramid cuboctahedron (opposite pair), a known space-filler: record only?</td><td>Yes: an "also called" entry with the Critchlow 1969 credit; no paper.</td></tr>
+<tr><td>9</td><td>The OG chain (D1): where is it recorded?</td><td>Name the paper, book or photos; we enter it the same day.</td></tr>
+<tr><td>10</td><td>One Tissue, Three Scales (file 02): start the event logger?</td><td>Hold until Space-Fillers and the Paradigm are out.</td></tr>
+<tr><td>11</td><td>Scholar profile and ORCID tidy-up?</td><td>Yes after the OEIS approval; we do the title and DOI checks first.</td></tr>
+<tr><td>12</td><td>Funding applications and the two letters?</td><td>Hold until one Palomar entry is registered.</td></tr>
+<tr><td>13</td><td>Clear the earlier Lean build caches (about 300 GB)?</td><td>Yes: caches only, sources and logs kept.</td></tr>
+<tr><td>14</td><td>Do Phase 2b results wait for the Paradigm?</td><td>No: the Paradigm is released without them; they go to their own papers.</td></tr>
+</table>
+
+<h2>5. Rules that apply throughout</h2>
+<ul style="font-size:8.6pt">
+<li><b>Naming policy</b> (agreed 14 Nov with DICTO's corrections): description at first use; theorems readable without other papers; new names only when they recur or anchor a result; laws and methods carry a subtitle; DICTO at first mention per chapter, then only where it removes ambiguity; "DICTO DOI" unchanged; old names stay findable as "also called". Published records are not re-issued for wording alone.</li>
+<li><b>Credit at the point of use:</b> another author's method, code or result is credited in the sentence, caption or table where it is used (Stanley 1979, Critchlow 1969, Debrunner, Narayana), not only in the references.</li>
+<li><b>Books first:</b> release order Space-Fillers, Paradigm, Platonic, Brief Geometry. Each book is checked for its arc before release. New results are sorted to their own papers.</li>
+<li><b>Read ok = publish:</b> DICTO's "read ok" on a PDF releases that exact PDF the same session; a new record or anything beyond that PDF is asked first.</li>
+<li><b>Deploy queue:</b> site cards go through the 12:00 / 21:00 queue; master is never pushed by hand.</li>
+<li><b>Exact before claimed:</b> every lead is a claim until an exact test confirms it; the chat's "derived" items enter only as "Waiting for their volume".</li>
+<li><b>Process record:</b> a reproduction says "Reproduced" only when every numbered claim is checked, and a paper is proposed for reproduction only when it carries an author process record. Reproductions are closed for now.</li>
+<li><b>Nothing sent outside without DICTO's word:</b> OEIS, Palomar, Scholar, ORCID, funding and letters are DICTO's account; we prepare, he sends.</li>
+</ul>
+</body></html>
