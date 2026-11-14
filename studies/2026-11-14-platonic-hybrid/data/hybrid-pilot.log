@@ -1,0 +1,85 @@
+hybrid.py pilot, workers 6, exact points per configuration 600 (negative controls 300)
+PROGRESS 0.02 start (0 s)
+PASS E1 dodecahedron: 20 corners, 30 edges of length exactly 1, min distance 1: 30 edges
+PASS E2 roof R: volume (7 + 3 sqrt5)/24, cube + 6 roofs = dodecahedron: (7/24+1/8r5)
+PASS B4(b) roof height exactly 1/2 (phi^2/2 - phi/2), ridge of length 1 along y, base = the whole face: 1/2
+PASS E3 icosahedron (Pacioli): 12 corners, 30 edges of length exactly 1
+PASS E4 every icosahedron corner lies on one octahedron edge, dividing it in the golden ratio
+PASS E5 octahedron corners = the 6 roof-ridge midpoints of the dodecahedron
+PASS E6 octahedron inside the dodecahedron; icosahedron inside the octahedron and inside Euclid's cube (|x_i| <= phi/2)
+PASS E7 Admiral Caps: 6 pieces of 2 tetrahedra, each of volume phi/12; icosahedron + 6 A = octahedron (exact): (1/24+1/24r5)
+PASS E8 caps: 8 convex caps, each (27 + 13 sqrt5)/96, images of one cap under the sign changes (symmetries of the cell); icosahedron + 6 A + 8 caps = dodecahedron (exact volumes): (9/32+13/96r5)
+PASS B4(c) plate Z = box phi x phi x 1/2 minus R: volume phi^2/2 - (7 + 3 sqrt5)/24 = (11 + 3 sqrt5)/24: (11/24+1/8r5)
+PASS E9 Dogstar S = cube - 6 roofs = phi/2 (#47 Table 1): (1/4+1/4r5)
+PROGRESS 0.10 exact facts (4 s)
+PASS B4(a) every roof standing out of the slab face and every roof-shaped hollow has its ridge along the same line (y), 49 columns: [(0.0, 1.0, 0.0)]
+PROGRESS 0.15 ridges (4 s)
+PASS B2 hybrid golden slab, edging X/Y (#47 Lemma 5), cells mixed D and skinned I: 600 points, 0 not covered once, 0 on a boundary; pieces hit {'A': 4, 'D': 125, 'I': 22, 'S': 18, 'X': 198, 'Y': 203, 'cap': 30}
+PROGRESS 0.21 B2 hybrid golden slab, edging X/Y (#47 L (7 s)
+PASS B4(d) hybrid golden slab, edging R/Z (partial skins), cells mixed D and skinned I: 600 points, 0 not covered once, 0 on a boundary; pieces hit {'A': 9, 'D': 241, 'I': 43, 'R': 79, 'S': 20, 'Z': 146, 'cap': 62}
+PROGRESS 0.27 B4(d) hybrid golden slab, edging R/Z (pa (8 s)
+PASS B4(d) hybrid golden slab, edging R/Z, all cells skinned icosahedra (mix without D): 600 points, 0 not covered once, 0 on a boundary; pieces hit {'A': 27, 'I': 108, 'R': 79, 'S': 20, 'Z': 146, 'cap': 220}
+PROGRESS 0.33 B4(d) hybrid golden slab, edging R/Z, al (8 s)
+PASS B5 golden tiling in 3D (no edging), cells mixed D and skinned I: 600 points, 0 not covered once, 0 on a boundary; pieces hit {'A': 27, 'D': 302, 'I': 78, 'S': 48, 'cap': 145}
+PROGRESS 0.39 B5 golden tiling in 3D (no edging), cell (9 s)
+PASS B3 one octet layer between two triangle planes, whole T and O: 600 points, 0 not covered once, 0 on a boundary; pieces hit {'O': 394, 'T': 206}
+PROGRESS 0.45 B3 one octet layer between two triangle  (9 s)
+PASS CONTROL+ #47 Lemma 5 slab, dodecahedra only (edging X/Y): 600 points, 0 not covered once, 0 on a boundary; pieces hit {'D': 181, 'S': 18, 'X': 198, 'Y': 203}
+PROGRESS 0.51 CONTROL+ #47 Lemma 5 slab, dodecahedra o (9 s)
+PASS CONTROL- plate hollow turned a quarter turn (must fail): 300 points, 12 not covered once (detected); e.g. ((-2.0970627088118734, -0.9276122171633485, -0.11716864849405452), 2, ['D', 'Z'])
+PROGRESS 0.57 CONTROL- plate hollow turned a quarter t (10 s)
+PASS CONTROL- no R in the Dogstar hollows (top face) (must fail): 300 points, 8 not covered once (detected); e.g. ((0.3720688837933486, -2.060876817369548, 1.462542612372163), 0, [])
+PROGRESS 0.63 CONTROL- no R in the Dogstar hollows (to (10 s)
+PASS CONTROL- X and Y swapped (must fail): 300 points, 46 not covered once (detected); e.g. ((1.009658971023087, -1.7572127283618149, 1.683787948636154), 2, ['D', 'Y'])
+PROGRESS 0.69 CONTROL- X and Y swapped (11 s)
+PASS CONTROL- icosahedron skin without its 8 caps (must fail): 300 points, 36 not covered once (detected); e.g. ((0.46651460045619864, 1.511785464643606, 0.35149294552116345), 0, [])
+PROGRESS 0.75 CONTROL- icosahedron skin without its 8  (11 s)
+PASS B4(d)/B5 float stack (as mixes3.py): golden slab R/Z + cube slab + octet layer on triangle planes, 40 000 points: 0 not covered once; pieces ['A', 'C', 'D', 'I', 'O', 'R', 'S', 'T', 'Z', 'cap']; stack height 4.4345
+PASS CONTROL- float stack with the plate hollow turned (must fail): 959 not covered once
+PROGRESS 0.85 float stack (17 s)
+PASS CONTROL+ #47 published construction (mixes3.py run from its file): all 31 mixes covered once, no D overlaps: 31/31 mixes pass
+PROGRESS 0.95 mixes3 control (37 s)
+K all five, published: 4 worlds, connectors ['A', 'P', "Q'", 'S', 'X', 'Y'] (6)
+K all five, triangle: 4 worlds, connectors ['A', "Q'", 'S', 'X', 'Y'] (5)
+K all five, hybrid: 3 worlds, connectors ['A', 'S', 'X', 'Y', 'cap'] (5)
+K all five, hybrid-RZ: 3 worlds, connectors ['A', 'R', 'S', 'Z', 'cap'] (5)
+PASS B5 all five: #47 published 4 worlds, P Q' A S X Y (6)
+PASS B5 all five: octet on triangle planes 4 worlds, Q' A S X Y (5)
+PASS B5 all five: hybrid 3 worlds, A cap S X Y (5)
+PASS B5 all five: hybrid with partial skins 3 worlds, A cap S R Z (5)
+PASS B5 D + I: hybrid 1 world, A cap S (3), against #47 A Q' S X Y (5): (1, ['A', 'S', 'cap']) vs (2, ['A', "Q'", 'S', 'X', 'Y'])
+K D      published: 3 S,X,Y  triangle: 3 S,X,Y  hybrid: 1 S  hybrid-RZ: 1 S
+K I      published: 2 A,Q'  triangle: 2 A,Q'  hybrid: 3 A,S,cap  hybrid-RZ: 3 A,S,cap
+K C      published: 0 -  triangle: 0 -  hybrid: 0 -  hybrid-RZ: 0 -
+K T      published: 1 P  triangle: 1 P  hybrid: 1 P  hybrid-RZ: 1 P
+K O      published: 2 P,Q  triangle: 1 Q  hybrid: 1 Q  hybrid-RZ: 1 Q
+K DI     published: 5 A,Q',S,X,Y  triangle: 5 A,Q',S,X,Y  hybrid: 3 A,S,cap  hybrid-RZ: 3 A,S,cap
+K DC     published: 3 S,X,Y  triangle: 3 S,X,Y  hybrid: 3 S,X,Y  hybrid-RZ: 3 R,S,Z
+K DT     published: 4 P,S,X,Y  triangle: 4 P,S,X,Y  hybrid: 4 P,S,X,Y  hybrid-RZ: 4 P,R,S,Z
+K DO     published: 5 P,Q,S,X,Y  triangle: 4 Q,S,X,Y  hybrid: 4 Q,S,X,Y  hybrid-RZ: 4 Q,R,S,Z
+K IC     published: 2 A,Q'  triangle: 2 A,Q'  hybrid: 5 A,S,X,Y,cap  hybrid-RZ: 5 A,R,S,Z,cap
+K IT     published: 3 A,P,Q'  triangle: 3 A,P,Q'  hybrid: 6 A,P,S,X,Y,cap  hybrid-RZ: 6 A,P,R,S,Z,cap
+K IO     published: 4 A,P,Q,Q'  triangle: 3 A,Q,Q'  hybrid: 6 A,Q,S,X,Y,cap  hybrid-RZ: 6 A,Q,R,S,Z,cap
+K CT     published: 1 P  triangle: 1 P  hybrid: 1 P  hybrid-RZ: 1 P
+K CO     published: 2 P,Q  triangle: 1 Q  hybrid: 1 Q  hybrid-RZ: 1 Q
+K TO     published: 1 P  triangle: 0 -  hybrid: 0 -  hybrid-RZ: 0 -
+K DIC    published: 5 A,Q',S,X,Y  triangle: 5 A,Q',S,X,Y  hybrid: 5 A,S,X,Y,cap  hybrid-RZ: 5 A,R,S,Z,cap
+K DIT    published: 6 A,P,Q',S,X,Y  triangle: 6 A,P,Q',S,X,Y  hybrid: 6 A,P,S,X,Y,cap  hybrid-RZ: 6 A,P,R,S,Z,cap
+K DIO    published: 7 A,P,Q,Q',S,X,Y  triangle: 6 A,Q,Q',S,X,Y  hybrid: 6 A,Q,S,X,Y,cap  hybrid-RZ: 6 A,Q,R,S,Z,cap
+K DCT    published: 4 P,S,X,Y  triangle: 4 P,S,X,Y  hybrid: 4 P,S,X,Y  hybrid-RZ: 4 P,R,S,Z
+K DCO    published: 5 P,Q,S,X,Y  triangle: 4 Q,S,X,Y  hybrid: 4 Q,S,X,Y  hybrid-RZ: 4 Q,R,S,Z
+K DTO    published: 4 P,S,X,Y  triangle: 3 S,X,Y  hybrid: 3 S,X,Y  hybrid-RZ: 3 R,S,Z
+K ICT    published: 3 A,P,Q'  triangle: 3 A,P,Q'  hybrid: 6 A,P,S,X,Y,cap  hybrid-RZ: 6 A,P,R,S,Z,cap
+K ICO    published: 4 A,P,Q,Q'  triangle: 3 A,Q,Q'  hybrid: 6 A,Q,S,X,Y,cap  hybrid-RZ: 6 A,Q,R,S,Z,cap
+K ITO    published: 3 A,P,Q'  triangle: 2 A,Q'  hybrid: 5 A,S,X,Y,cap  hybrid-RZ: 5 A,R,S,Z,cap
+K CTO    published: 1 P  triangle: 0 -  hybrid: 0 -  hybrid-RZ: 0 -
+K DICT   published: 6 A,P,Q',S,X,Y  triangle: 6 A,P,Q',S,X,Y  hybrid: 6 A,P,S,X,Y,cap  hybrid-RZ: 6 A,P,R,S,Z,cap
+K DICO   published: 7 A,P,Q,Q',S,X,Y  triangle: 6 A,Q,Q',S,X,Y  hybrid: 6 A,Q,S,X,Y,cap  hybrid-RZ: 6 A,Q,R,S,Z,cap
+K DITO   published: 6 A,P,Q',S,X,Y  triangle: 5 A,Q',S,X,Y  hybrid: 5 A,S,X,Y,cap  hybrid-RZ: 5 A,R,S,Z,cap
+K DCTO   published: 4 P,S,X,Y  triangle: 3 S,X,Y  hybrid: 3 S,X,Y  hybrid-RZ: 3 R,S,Z
+K ICTO   published: 3 A,P,Q'  triangle: 2 A,Q'  hybrid: 5 A,S,X,Y,cap  hybrid-RZ: 5 A,R,S,Z,cap
+K DICTO  published: 6 A,P,Q',S,X,Y  triangle: 5 A,Q',S,X,Y  hybrid: 5 A,S,X,Y,cap  hybrid-RZ: 5 A,R,S,Z,cap
+K kit serving all 31 mixes with the hybrid (partial skins) and triangle-plane octet: ['A', 'P', 'Q', 'R', 'S', 'Z', 'cap'] 7
+PROGRESS 0.99 counts (37 s)
+30/30 checks pass, 37 s
+FINAL ok

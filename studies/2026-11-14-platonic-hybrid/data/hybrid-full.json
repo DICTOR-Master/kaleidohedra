@@ -1,0 +1,482 @@
+{
+ "results": {
+  "E1 dodecahedron: 20 corners, 30 edges of length exactly 1, min distance 1": [
+   true,
+   "30 edges"
+  ],
+  "E2 roof R: volume (7 + 3 sqrt5)/24, cube + 6 roofs = dodecahedron": [
+   true,
+   "(7/24+1/8r5)"
+  ],
+  "B4(b) roof height exactly 1/2 (phi^2/2 - phi/2), ridge of length 1 along y, base = the whole face": [
+   true,
+   "1/2"
+  ],
+  "E3 icosahedron (Pacioli): 12 corners, 30 edges of length exactly 1": [
+   true,
+   ""
+  ],
+  "E4 every icosahedron corner lies on one octahedron edge, dividing it in the golden ratio": [
+   true,
+   ""
+  ],
+  "E5 octahedron corners = the 6 roof-ridge midpoints of the dodecahedron": [
+   true,
+   ""
+  ],
+  "E6 octahedron inside the dodecahedron; icosahedron inside the octahedron and inside Euclid's cube (|x_i| <= phi/2)": [
+   true,
+   ""
+  ],
+  "E7 Admiral Caps: 6 pieces of 2 tetrahedra, each of volume phi/12; icosahedron + 6 A = octahedron (exact)": [
+   true,
+   "(1/24+1/24r5)"
+  ],
+  "E8 caps: 8 convex caps, each (27 + 13 sqrt5)/96, images of one cap under the sign changes (symmetries of the cell); icosahedron + 6 A + 8 caps = dodecahedron (exact volumes)": [
+   true,
+   "(9/32+13/96r5)"
+  ],
+  "B4(c) plate Z = box phi x phi x 1/2 minus R: volume phi^2/2 - (7 + 3 sqrt5)/24 = (11 + 3 sqrt5)/24": [
+   true,
+   "(11/24+1/8r5)"
+  ],
+  "E9 Dogstar S = cube - 6 roofs = phi/2 (#47 Table 1)": [
+   true,
+   "(1/4+1/4r5)"
+  ],
+  "B4(a) every roof standing out of the slab face and every roof-shaped hollow has its ridge along the same line (y), 49 columns": [
+   true,
+   "[(0.0, 1.0, 0.0)]"
+  ],
+  "B2 hybrid golden slab, edging X/Y (#47 Lemma 5), cells mixed D and skinned I": [
+   true,
+   "60000 points, 0 not covered once, 0 on a boundary; pieces hit {'A': 734, 'D': 11961, 'I': 2022, 'S': 1457, 'X': 18608, 'Y': 21171, 'cap': 4047}"
+  ],
+  "B4(d) hybrid golden slab, edging R/Z (partial skins), cells mixed D and skinned I": [
+   true,
+   "60000 points, 0 not covered once, 0 on a boundary; pieces hit {'A': 1275, 'D': 22413, 'I': 3732, 'R': 8336, 'S': 2841, 'Z': 13641, 'cap': 7762}"
+  ],
+  "B4(d) hybrid golden slab, edging R/Z, all cells skinned icosahedra (mix without D)": [
+   true,
+   "60000 points, 0 not covered once, 0 on a boundary; pieces hit {'A': 3638, 'I': 9465, 'R': 8336, 'S': 2841, 'Z': 13641, 'cap': 22079}"
+  ],
+  "B5 golden tiling in 3D (no edging), cells mixed D and skinned I": [
+   true,
+   "60000 points, 0 not covered once, 0 on a boundary; pieces hit {'A': 2766, 'D': 31423, 'I': 6558, 'S': 5597, 'cap': 13656}"
+  ],
+  "B3 one octet layer between two triangle planes, whole T and O": [
+   true,
+   "60000 points, 0 not covered once, 0 on a boundary; pieces hit {'O': 39390, 'T': 20610}"
+  ],
+  "CONTROL+ #47 Lemma 5 slab, dodecahedra only (edging X/Y)": [
+   true,
+   "60000 points, 0 not covered once, 0 on a boundary; pieces hit {'D': 18764, 'S': 1457, 'X': 18608, 'Y': 21171}"
+  ],
+  "CONTROL- plate hollow turned a quarter turn (must fail)": [
+   true,
+   "4992 points, 218 not covered once (detected); e.g. ((-1.4180267459197622, -2.268451194646416, 1.7864906405280785), 2, ['D', 'Z'])"
+  ],
+  "CONTROL- no R in the Dogstar hollows (top face) (must fail)": [
+   true,
+   "4992 points, 163 not covered once (detected); e.g. ((0.3720688837933486, -2.060876817369548, 1.462542612372163), 0, [])"
+  ],
+  "CONTROL- X and Y swapped (must fail)": [
+   true,
+   "4992 points, 819 not covered once (detected); e.g. ((1.009658971023087, -1.7572127283618149, 1.683787948636154), 2, ['D', 'Y'])"
+  ],
+  "CONTROL- icosahedron skin without its 8 caps (must fail)": [
+   true,
+   "4992 points, 646 not covered once (detected); e.g. ((0.46651460045619864, 1.511785464643606, 0.35149294552116345), 0, [])"
+  ],
+  "B4(d)/B5 float stack (as mixes3.py): golden slab R/Z + cube slab + octet layer on triangle planes, 40 000 points": [
+   true,
+   "0 not covered once; pieces ['A', 'C', 'D', 'I', 'O', 'R', 'S', 'T', 'Z', 'cap']; stack height 4.4345"
+  ],
+  "CONTROL- float stack with the plate hollow turned (must fail)": [
+   true,
+   "959 not covered once"
+  ],
+  "CONTROL+ #47 published construction (mixes3.py run from its file): all 31 mixes covered once, no D overlaps": [
+   true,
+   "31/31 mixes pass"
+  ],
+  "B5 all five: #47 published 4 worlds, P Q' A S X Y (6)": [
+   true,
+   ""
+  ],
+  "B5 all five: octet on triangle planes 4 worlds, Q' A S X Y (5)": [
+   true,
+   ""
+  ],
+  "B5 all five: hybrid 3 worlds, A cap S X Y (5)": [
+   true,
+   ""
+  ],
+  "B5 all five: hybrid with partial skins 3 worlds, A cap S R Z (5)": [
+   true,
+   ""
+  ],
+  "B5 D + I: hybrid 1 world, A cap S (3), against #47 A Q' S X Y (5)": [
+   true,
+   "(1, ['A', 'S', 'cap']) vs (2, ['A', \"Q'\", 'S', 'X', 'Y'])"
+  ]
+ },
+ "volumes": {
+  "vD": "(15/4+7/4r5)",
+  "vR": "(7/24+1/8r5)",
+  "vZ": "(11/24+1/8r5)",
+  "vI": "(5/4+5/12r5)",
+  "vO": "(3/2+2/3r5)",
+  "vA": "(1/24+1/24r5)",
+  "vcap": "(9/32+13/96r5)",
+  "vS": "(1/4+1/4r5)"
+ },
+ "best": {
+  "D": [
+   "hybrid",
+   [
+    1,
+    [
+     "S"
+    ]
+   ]
+  ],
+  "I": [
+   "published",
+   [
+    1,
+    [
+     "A",
+     "Q'"
+    ]
+   ]
+  ],
+  "C": [
+   "published",
+   [
+    1,
+    []
+   ]
+  ],
+  "T": [
+   "published",
+   [
+    1,
+    [
+     "P"
+    ]
+   ]
+  ],
+  "O": [
+   "triangle",
+   [
+    1,
+    [
+     "Q"
+    ]
+   ]
+  ],
+  "DI": [
+   "hybrid",
+   [
+    1,
+    [
+     "A",
+     "S",
+     "cap"
+    ]
+   ]
+  ],
+  "DC": [
+   "published",
+   [
+    2,
+    [
+     "S",
+     "X",
+     "Y"
+    ]
+   ]
+  ],
+  "DT": [
+   "published",
+   [
+    2,
+    [
+     "P",
+     "S",
+     "X",
+     "Y"
+    ]
+   ]
+  ],
+  "DO": [
+   "triangle",
+   [
+    2,
+    [
+     "Q",
+     "S",
+     "X",
+     "Y"
+    ]
+   ]
+  ],
+  "IC": [
+   "published",
+   [
+    2,
+    [
+     "A",
+     "Q'"
+    ]
+   ]
+  ],
+  "IT": [
+   "published",
+   [
+    2,
+    [
+     "A",
+     "P",
+     "Q'"
+    ]
+   ]
+  ],
+  "IO": [
+   "triangle",
+   [
+    2,
+    [
+     "A",
+     "Q",
+     "Q'"
+    ]
+   ]
+  ],
+  "CT": [
+   "published",
+   [
+    2,
+    [
+     "P"
+    ]
+   ]
+  ],
+  "CO": [
+   "triangle",
+   [
+    2,
+    [
+     "Q"
+    ]
+   ]
+  ],
+  "TO": [
+   "triangle",
+   [
+    1,
+    []
+   ]
+  ],
+  "DIC": [
+   "hybrid",
+   [
+    2,
+    [
+     "A",
+     "S",
+     "X",
+     "Y",
+     "cap"
+    ]
+   ]
+  ],
+  "DIT": [
+   "hybrid",
+   [
+    2,
+    [
+     "A",
+     "P",
+     "S",
+     "X",
+     "Y",
+     "cap"
+    ]
+   ]
+  ],
+  "DIO": [
+   "hybrid",
+   [
+    2,
+    [
+     "A",
+     "Q",
+     "S",
+     "X",
+     "Y",
+     "cap"
+    ]
+   ]
+  ],
+  "DCT": [
+   "published",
+   [
+    3,
+    [
+     "P",
+     "S",
+     "X",
+     "Y"
+    ]
+   ]
+  ],
+  "DCO": [
+   "triangle",
+   [
+    3,
+    [
+     "Q",
+     "S",
+     "X",
+     "Y"
+    ]
+   ]
+  ],
+  "DTO": [
+   "triangle",
+   [
+    2,
+    [
+     "S",
+     "X",
+     "Y"
+    ]
+   ]
+  ],
+  "ICT": [
+   "published",
+   [
+    3,
+    [
+     "A",
+     "P",
+     "Q'"
+    ]
+   ]
+  ],
+  "ICO": [
+   "triangle",
+   [
+    3,
+    [
+     "A",
+     "Q",
+     "Q'"
+    ]
+   ]
+  ],
+  "ITO": [
+   "triangle",
+   [
+    2,
+    [
+     "A",
+     "Q'"
+    ]
+   ]
+  ],
+  "CTO": [
+   "triangle",
+   [
+    2,
+    []
+   ]
+  ],
+  "DICT": [
+   "hybrid",
+   [
+    3,
+    [
+     "A",
+     "P",
+     "S",
+     "X",
+     "Y",
+     "cap"
+    ]
+   ]
+  ],
+  "DICO": [
+   "hybrid",
+   [
+    3,
+    [
+     "A",
+     "Q",
+     "S",
+     "X",
+     "Y",
+     "cap"
+    ]
+   ]
+  ],
+  "DITO": [
+   "hybrid",
+   [
+    2,
+    [
+     "A",
+     "S",
+     "X",
+     "Y",
+     "cap"
+    ]
+   ]
+  ],
+  "DCTO": [
+   "triangle",
+   [
+    3,
+    [
+     "S",
+     "X",
+     "Y"
+    ]
+   ]
+  ],
+  "ICTO": [
+   "triangle",
+   [
+    3,
+    [
+     "A",
+     "Q'"
+    ]
+   ]
+  ],
+  "DICTO": [
+   "hybrid",
+   [
+    3,
+    [
+     "A",
+     "S",
+     "X",
+     "Y",
+     "cap"
+    ]
+   ]
+  ]
+ },
+ "kit31": [
+  "A",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "Z",
+  "cap"
+ ]
+}
