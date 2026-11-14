@@ -7676,6 +7676,16 @@
     "retry": "never for these points; leads: wall-area laws on all ten #53 networks; sign rule for star turns",
     "study": "studies/2026-11-14-forced-fixed-points",
     "date": "2026-11-14"
+   },
+   {
+    "date": "2026-11-14",
+    "question": "Platonic mixes hybrid (DICTO's working session 13-14 Nov, handoff B1-B6): skinned icosahedron of edge 1 in the dodecahedron slab of #47, octet cut on triangle planes, roof R + roof plate Z edging; do they hold, and the counts?",
+    "method": "exact Q(sqrt5) facts (edges, containments, golden section, volumes of R, Z, S, A, cap, ridge directions); exact random-point covering at rational points (60 000 per slab: golden slab X/Y and R/Z with mixed D and skinned I cells, icosahedra-only slab, 3D golden tiling, one octet layer); float stack test as mixes3.py; controls: #47 Lemma 5 slab and mixes3.py from its file (31/31) pass, four wrong edgings fail; compute host, jobs phybrid-pilot, phybrid",
+    "result": "CONFIRMED: B2 (ico + 6 Admiral Caps + 8 caps = the dodecahedral cell; stands in the dodecahedron slab; large octet and Q' not needed; 4 -> 3 worlds), B3, B4 a-d (ridges parallel; roof height 1/2; Z = (11 + 3sqrt5)/24; columns flat; slab phi^2 thick), B5 (all five: 3 worlds, A cap S R Z = 5 vs #47 6; D + I: A cap S, no edging). Kit over all 31 mixes stays 7 (P Q A cap S R Z). UNDECIDED: B6 (other edgings need two kinds; C, T, O skins at edge 1) not tested",
+    "status": "SETTLED (B2-B5 confirmed); B6 open",
+    "retry": "B6 only: a search for a single edging piece; smallest kit over 31 mixes stays open",
+    "study": "studies/2026-11-14-platonic-hybrid",
+    "goes_to": "Space-Fillers and Lattice Moves, Ch 8 section 6 (Prop 8.1-8.3, Thm 8.3, Cor 8.4); #47 next version"
    }
   ]
  },
