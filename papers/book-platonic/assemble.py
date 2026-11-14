@@ -28,7 +28,7 @@ MOVE = r'(\d+\. )?(Reproducibility|Data and reproducibility|Data, scripts and ch
 EDITS = [  # (old, new): applied to included text only; each was read in its sentence
     ("building the same body on all five Platonic solids, as one family, is DICTO's idea, and the other four did not appear", "built on all five Platonic solids the same body makes one family, and the other four did not appear"),
     ('Aristotle wrote that the pyramid fills space; DICTO proposed that he may have meant one of these.', 'Aristotle wrote that the pyramid fills space; he may have meant one of these.'),
-    ('DICTO also proposed the question of how the whole Platonic solids fill space. His earlier exact work answers it for all five:', 'How the whole Platonic solids fill space is answered for all five by DICTO\'s earlier exact work:'),
+    ('DICTO also proposed the question of how the whole Platonic solids fill space. His earlier exact work answers it for all five:', 'How the whole Platonic solids fill space is answered for all five by earlier exact work:'),
     ('DICTO proposed that it may have been Bradwardine\'s tetrahedron, the Cleo-Icos.', 'It may have been Bradwardine\'s tetrahedron, the Cleo-Icos.'),
     ('and where DICTO\'s proposal fits', 'and where the face-pyramid reading fits'),
     ('DICTO proposed <i>pyramidise</i> as one operation on any solid', '<i>Pyramidise</i> is one operation on any solid'),
@@ -37,6 +37,26 @@ EDITS = [  # (old, new): applied to included text only; each was read in its sen
     (' DICTO proposed that he may have meant the Cleo-Icos.', ' he may have meant the Cleo-Icos.'),
     ('The question is DICTO\'s: Aristotle', 'Aristotle'),
     ('DICTO proposed the product of cube and octahedron as the six-dimensional home of the pair:', 'The product of cube and octahedron is the six-dimensional home of the pair:'),
+    # naming pass of 14 November (DICTO's policy): plain descriptions inside theorem statements, running "DICTO's" credit wording removed;
+    # each read in its sentence, wording only, no claim changed
+    ("For the octahedron (k = 1) they are DICTO's Icosaxes (x = 1/φ², greater)", 'For the octahedron (k = 1) they are Icosaxes (x = 1/φ², greater)'),
+    ('Icosaxes at t = 1/φ² and Unborn Axes at t = 1/φ.', "Icosaxes (the octahedron's Greater Golden Cut) at t = 1/φ² and Unborn Axes (its Lesser Golden Cut) at t = 1/φ."),
+    ('which DICTO noticed resemble the golden truncated icosahedra', 'which resemble the golden truncated icosahedra'),
+    ('The Cleo-Icos fills space with no set of face pyramids;', "The Cleo-Icos, the icosahedron's face pyramid, fills space with no set of face pyramids;"),
+    ("a different kind of partner: DICTO's Antonius, two Cleo-Icos", 'a different kind of partner: Antonius, two Cleo-Icos'),
+    ('The idea of F21 is DICTO\'s: "the same principle', 'F21 follows, in DICTO\'s words, "the same principle'),
+    ('DICTO moved the roofs to the icosahedron:', 'F21 moves the roofs to the icosahedron:'),
+    ('The Cleo-Icos lies in no face-to-face tiling by face pyramids.', "The Cleo-Icos (the icosahedron's face pyramid) lies in no face-to-face tiling by face pyramids."),
+    ('which is why DICTO named them by their look.', 'which is why they are named by their look.'),
+    ('<p>DICTO named the bodies by their look:', '<p>The names follow the look:'),
+    ("DICTO's body is B = ", 'its body is B = '),
+    ('the numbers DICTO read from the look', 'the numbers read from the look'),
+    ("icosahedra in Pacioli's position with six Admiral Caps each)", "icosahedra in Pacioli's position with six Admiral Caps each, the six corner pieces of the octahedron round its icosahedron)"),
+    ('the cubic grid of edge φ (dodecahedra, Dogstars, cubes)', 'the cubic grid of edge φ (dodecahedra, Dogstars, which are cubes of edge φ without the six roofs that reach into them, and cubes)'),
+    ('so that the part below is exactly a CLEO, its apex', 'so that the part below is exactly a CLEO (one of the gap pieces of the Lotus seed, Chapter 6), its apex'),
+    ('The Dodeca-13 fits inside its own central dodecahedron', 'The Dodeca-13 (13 dodecahedra, a central one with one mirrored in each face, with 30 wedges and 20 needles) fits inside its own central dodecahedron'),
+    ("is DICTO's Dodeca-13 (13 dodecahedra", 'is the Dodeca-13 (13 dodecahedra'),
+    ("pentagons is DICTO's UNITY;", 'pentagons is UNITY;'),
 ]
 BANNED = re.compile(r'football|flat-ended|in plain words|simply put|in short\s*:|DICTO asked|asked by DICTO|DICTO proposed|DICTO chose|DICTO\'s choice|selected by', re.I)
 
