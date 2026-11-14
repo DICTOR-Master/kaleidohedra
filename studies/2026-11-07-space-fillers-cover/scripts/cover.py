@@ -56,7 +56,7 @@ def pieces(R):
             out.append((F, hexrgb(COL[(role, kind)]), k))
     return out
 # ------------------------------------------------------------------ painting
-GROUND = (20, 15, 11); GOLD = (217, 165, 33); TEAL = (40, 165, 150); BLUE = (55, 115, 205)
+GROUND = (20, 15, 11); GOLD = (217, 165, 33); TEAL = (40, 165, 150); BLUE = (55, 115, 205); PINK = (199, 125, 171)   # DICTO 11-15: exactly the pink of the C/H design's octahedra (#c77dab)
 W, Hc = 2400, 3394
 def rot(a, b, c):
     Rx = np.array([[1, 0, 0], [0, np.cos(a), -np.sin(a)], [0, np.sin(a), np.cos(a)]])
@@ -166,9 +166,9 @@ def put(canvas, rgb, al, x, y):
 def title_panel(canvas, top):
     N = W; sz = int(N * 0.064)
     t1 = L.word('SPACE-FILLERS', sz, lambda ch: GOLD, big=(0, 6))
-    t2 = L.word('AND LATTICE MOVES', sz, lambda ch: GOLD, big=(0, 4, 12))
-    sub = L.word('PIECES THAT FILL SPACE ALONE, TOGETHER AND HELD', int(N * 0.0225), lambda ch: TEAL, big=(0, 12, 17, 23, 30, 43))
-    by = L.word('* DICTO *', int(N * 0.040), lambda ch: BLUE, big=(0, 2, 3, 4, 5, 6, 8))
+    t2 = L.word('& LATTICE MOVES', sz, lambda ch: GOLD, big=(0, 2, 10))   # DICTO 11-15: '&' as on all covers
+    sub = L.word('PIECES THAT FILL SPACE ALONE, TOGETHER & HELD', int(N * 0.0225), lambda ch: TEAL, big=(0, 12, 17, 23, 30, 41))
+    by = L.word('* DICTO *', int(N * 0.040), lambda ch: PINK, big=(0, 2, 3, 4, 5, 6, 8))   # DICTO 11-15: DICTO in pink, back cover too
     y = L.paste(canvas, t1, N / 2, top); y = L.paste(canvas, t2, N / 2, y + 40); y = L.paste(canvas, sub, N / 2, y + 75)
     return L.paste(canvas, by, N / 2, y + 85)
 VIEW = {   # version: (rod apothem, view, picture box (x0, x1, max height))
@@ -212,5 +212,8 @@ if __name__ == '__main__':
     vs = sys.argv[1:] or ['A', 'B', 'C']
     print('layer word', ''.join(T), 'from', WORD, flush=True)
     for v in vs: make(v)
+    # the ◆ DICTO ◆ mark alone (transparent), for the back cover, in the same pink as the front (DICTO 11-15: "back cover same")
+    mk = L.word('* DICTO *', int(W * 0.06), lambda ch: PINK, big=(0, 2, 3, 4, 5, 6, 8))
+    Image.fromarray(np.dstack([np.clip(mk[0], 0, 255), mk[1] * 255]).astype(np.uint8), 'RGBA').save('../space-fillers-dicto-mark-back.png'); print('saved back mark', flush=True)
     ok = all(os.path.exists(f'../space-fillers-cover-{v}.png') and Image.open(f'../space-fillers-cover-{v}.png').size == (W, Hc) for v in vs)
     print('FINAL ok' if ok else 'FINAL FAIL (cover missing or wrong size)')
