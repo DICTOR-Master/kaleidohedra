@@ -23,7 +23,7 @@ def sheet(idx, cols, path, title=None, sub=None, cell=520, gap=36, names=None, s
     im.save(os.path.join(OUT, path), quality=90); print(path, im.size)
 g = lambda grp: [i for i, l in enumerate(L) if l['group'] == grp]
 sheet(g('cycle'), 5, 'up-cycle.jpg', 'Universal PiTet', 'One turn of the cycle: T four times, and the icosidodecahedron returns 10/φ⁴ larger · true relative size · DICTO 2026',
-      subs=['radius φ', 'its polar', 'hexagon sides 1 : φ', 'polar of the GTI', '35 − 15√5 times larger'], arrows=True)
+      subs=['radius φ', 'its polar', 'hexagon sides 1 : (1 + 3√5/5)', 'polar of the GTI', '35 − 15√5 times larger'], arrows=True)
 sheet(g('shells'), 4, 'up-shells.jpg')
 sheet(g('inner'), 3, 'up-inner.jpg')
 pcs = g('pieces'); sheet(pcs, 5, 'up-pieces.jpg', subs=[''] * len(pcs))
