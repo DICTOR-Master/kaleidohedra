@@ -1,0 +1,27 @@
+PROGRESS 0.100 part A done (0 s)
+PROGRESS 0.150 part B pupil 2.0 (21 s)
+PROGRESS 0.200 part B pupil 3.0 (43 s)
+PROGRESS 0.250 part B pupil 4.0 (75 s)
+PROGRESS 0.300 part B done (75 s)
+PROGRESS 0.342 part C commercial_3.0mm hex_flat_sheet (78 s)
+PROGRESS 0.383 part C commercial_3.0mm hex_bent_sheet (80 s)
+PROGRESS 0.425 part C commercial_3.0mm geodesic_face_centre_up (82 s)
+PROGRESS 0.467 part C commercial_3.0mm geodesic_pentagon_on_axis (84 s)
+PROGRESS 0.508 part C commercial_3.0mm golden_spiral (86 s)
+PROGRESS 0.550 part C commercial_3.0mm random_control (89 s)
+PROGRESS 0.592 part C bestplane_p3 hex_flat_sheet (92 s)
+PROGRESS 0.633 part C bestplane_p3 hex_bent_sheet (95 s)
+PROGRESS 0.675 part C bestplane_p3 geodesic_face_centre_up (97 s)
+PROGRESS 0.717 part C bestplane_p3 geodesic_pentagon_on_axis (98 s)
+PROGRESS 0.758 part C bestplane_p3 golden_spiral (100 s)
+PROGRESS 0.800 part C bestplane_p3 random_control (101 s)
+PROGRESS 0.950 part D done (101 s)
+CHECK poisson_max_P1_near_1/e False
+CHECK exactly_one_never_everywhere True
+CHECK hex_beats_poisson True
+CHECK C_no_layout_exactly_one_everywhere True
+CHECK C_random_worse_than_hexbent True
+CHECK D_concentric_zero_swaps True
+CHECK D_stretch_control_sqrt3 True
+wrote data/scutlens-pilot.json in 101 s
+FINAL FAIL (1 checks)

@@ -8065,6 +8065,15 @@
     "retry": "never redo the certificate check; next only: step 2 (construction -> G, H1, D -> F~ and test sign pairs; chart pull-back identities, via a verified sparse-polynomial normaliser), step 3b (main box bounds), assembly, existence (rebuild the yantra from the zero in Xs), Solution.lean",
     "study": "studies/2026-11-15-yantra-box-certificate",
     "goes_to": "Palomar entry later (not submitted); #103 uniqueness remark"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "DICTO 15 Nov (outside the plan, his idea): can lenses give small-pupil depth of focus without the light loss, using arrays of tiny apertures or lenslets on a curved surface, and do scutoid cells (columns between two curved surfaces) play a role?",
+    "method": "studies/2026-11-15-scutoid-lenses: literature (pinhole optics, KAMRA, IC-8, pinhole glasses trials, DIMS/Stellest lenslet lenses, compound eyes, curved compound-eye cameras, scutoids; every source in PRIOR_ART.md); jobs scutlens-pilot3 and scutlens FINAL ok: single-aperture DOF and fingerprint contrast, exactly-one fraction in the plane (hex, square, Poisson), six hole layouts on a spectacle mask judged over gaze (2 spacings, 3 pupils, far and 40 cm), neighbour swaps of hole columns from a back sphere about the eye's centre to five front surfaces",
+    "status": "SCOPED (one bound proved, one negative)",
+    "result": "Exactly-one bound: no hole array gives exactly one hole in the pupil for all gazes (covering radius >= d_min/sqrt3 > p/2); best hexagonal 0.93 at spacing 0.92-0.96 x pupil, square 0.83, random 1/e. Light per image stays 8-12% of a 3 mm pupil for every layout (one 1 mm hole: 11%): arrays widen the field, not the light; more light = several images (Scheiner). Best spectacle layout: hex sheet bent round the eye's centre of rotation (P1 0.93, even over gaze); icosahedral layout worse (0.79-0.91), pentagon on axis worst (0.73); Gauss-Bonnet: a 25 deg gaze cap holds 0.56 of a pentagon, so no defects needed. Scutoids: 0 swaps for regular layouts on any spectacle front curve (uneven stretch <= 1.15, hex needs sqrt3); golden/random 1-4 in ~175 edges. Fingerprint observation needs an effective aperture near 0.5 mm (squint).",
+    "retry": "no for spectacle scutoids or more-light hole arrays; open: exact hexagonal exactly-one optimum (area covered once), Goldberg vs stretched-grid layouts for 160 deg curved compound-eye cameras, scutoid search in unevenly curved compound eyes (micro-CT data)",
+    "study": "studies/2026-11-15-scutoid-lenses"
    }
   ]
  },

@@ -1,0 +1,27 @@
+PROGRESS 0.100 part A done (0 s)
+PROGRESS 0.150 part B pupil 2.0 (25 s)
+PROGRESS 0.200 part B pupil 3.0 (46 s)
+PROGRESS 0.250 part B pupil 4.0 (65 s)
+PROGRESS 0.300 part B done (67 s)
+PROGRESS 0.342 part C commercial_3.0mm hex_flat_sheet (69 s)
+PROGRESS 0.383 part C commercial_3.0mm hex_bent_sheet (70 s)
+PROGRESS 0.425 part C commercial_3.0mm geodesic_face_centre_up (72 s)
+PROGRESS 0.467 part C commercial_3.0mm geodesic_pentagon_on_axis (73 s)
+PROGRESS 0.508 part C commercial_3.0mm golden_spiral (75 s)
+PROGRESS 0.550 part C commercial_3.0mm random_control (77 s)
+PROGRESS 0.592 part C bestplane_p3 hex_flat_sheet (79 s)
+PROGRESS 0.633 part C bestplane_p3 hex_bent_sheet (81 s)
+PROGRESS 0.675 part C bestplane_p3 geodesic_face_centre_up (82 s)
+PROGRESS 0.717 part C bestplane_p3 geodesic_pentagon_on_axis (84 s)
+PROGRESS 0.758 part C bestplane_p3 golden_spiral (86 s)
+PROGRESS 0.800 part C bestplane_p3 random_control (88 s)
+PROGRESS 0.950 part D done (88 s)
+CHECK poisson_P1_matches_mu_exp_minus_mu True
+CHECK exactly_one_never_everywhere True
+CHECK hex_beats_poisson True
+CHECK C_no_layout_exactly_one_everywhere True
+CHECK C_random_worse_than_hexbent True
+CHECK D_concentric_zero_swaps True
+CHECK D_stretch_control_sqrt3 True
+wrote data/scutlens-pilot3.json in 88 s
+FINAL ok
