@@ -25,27 +25,33 @@ ok   P1 [#94] the second stretch (corners sperm(1,1,b), 0 < b < 1, the image of 
 ok   P1 [#94] the involution fixing +-i (a -> -1/a) moves 1/phi
 ok   P1 [#94] the only involution fixing 1/phi and swapping i <-> -i is a -> (2 - a)/(2a + 1) (fixed points 1/phi, -phi)
 ok   P1 [#94] it sends phi to (-11 + 5*sqrt(5))/2, not a zero of Q4: NO Moebius involution preserving Q4 fixes the station
+ok   P1 [#94] REFEREE (I): a -> 1/a preserves Q4 exactly (normalised) and is the identity on shapes (sperm(1, a, 0) ~ sperm(1, 1/a, 0); fixed point a = 1, the cuboctahedron): why every unit of norm +-1 is Galois-fixed up to similarity
 ok   P1 [#94] HIDDEN GALOIS SWAP: Icosaxes (a = 1/phi) is fixed by Galois conjugation up to similarity (a sigma(a) = -1); so is a = 1/phi^3
 ok   P1 [#94] ... but a = 1/phi^3 (mu = 1 + 1/phi^3) is not silent: the Galois fixedness does not force Q4 = 0
-ok   P1 [#94] the zero is forced by EXTRA SYMMETRY of the halves: the 12 even-permutation corners form a regular icosahedron, H4 sums to 0 on it (a 5-design: Goethals-Seidel)
+ok   P1 [#94] the zero is forced by EXTRA SYMMETRY of the halves: the 12 even-permutation corners form a regular icosahedron, H4 sums to 0 on it (a 5-design: Delsarte-Goethals-Seidel 1977)
 PROGRESS 0.17 P1: #91 (all-golden 4D), #100 (Dehn test), #45, #85, #93, #105, #44, family, locality (2 s)
 ok   P1 [#91] the two all-golden points mu = phi^2 and 2 + 1/phi^2 sum to 5: swapped by mu -> 5 - mu
 ok   P1 [#91] (1, 1, a, 0), a = mu - 2, is a corner of K cap mu K* (active: x1 = 1, x2 = 1, x1+x2+x3+-x4 = mu; independent)
-ok   P1 [#91] its B4 seed (edge lengths along the diagram, last node the short root) is (0, 1-a, a, 0); the seed reversal (0, a, 1-a, 0) is a -> 1-a, i.e. mu -> 5 - mu
+arg  P1 [#91] its B4 seed (edge lengths along the diagram, last node the short root) is (0, 1-a, a, 0); the seed reversal (0, a, 1-a, 0) is a -> 1-a, i.e. mu -> 5 - mu
 ok   P1 [#91] on the 8 cube cells (C-O cell at mu3 = mu - 1) the swap mu -> 5 - mu IS the CsCl site swap mu3 -> 3 - mu3 (geometric there)
 ok   P1 [#91] the golden pair: cube cells at mu3 = phi (Icosaxes) and 3 - phi, its CsCl partner
 ok   P1 [#91] fixed point mu = 5/2: tetrahedral cell cut at 1/3 = Archimedean truncated tetrahedron; cube cell = Kelvin: S(5/2) = sperm4(1,1,1/2,0) = the BITRUNCATED TESSERACT (uniform, B4 seed (0,1,1,0))
 ok   P1 [#91] on the 16 tetrahedral cells the swap pairs non-similar truncated tetrahedra (cuts (2-phi)/(3-phi) and 1/phi^2): not a similarity there
-ok   P1 [#91] at the fixed point the B4 degree-4 corner tone (sum x^4 - |x|^4/2 over 192 corners) = -1440 != 0: no tone forced (as palindromic-middles found)
+ok   P1 [#91] at the fixed point the B4 degree-4 corner tone (sum x^4 - |x|^4/2; here 192 x its value at the scaled corner (2,2,1,0), i.e. each of the 96 corners twice) = -1440 != 0: no tone forced (as palindromic-middles found)
+ok   P1 [#91] the fixed point a = 1/2 is the UNIFORM member: the two edge kinds of sperm4(1, 1, a, 0), squared lengths 2(1 - a)^2 and 2a^2, are equal only at a = 1/2; there all 96 corners (the bitruncated tesseract has 96, not 192) have 4 neighbours at distance^2 1/2 (exact)
+ok   P1 [#91] on the line the degree-4 tone summed over the 96 corners is 48 a^2 (a^2 - 4): on 0 <= a <= 1 its only zero is a = 0, the 24-cell (forced there by extra symmetry: F4 has no invariant of degree 4), an endpoint, not the fixed point; at a = 1/2 it is -45 (the earlier -1440 counted each corner twice at scale 2)
+arg  P1 [#91] the B4 diagram has no symmetry, so the seed reversal is not an automorphism of the group: mu -> 5 - mu is a PARAMETER PAIRING, geometric on the cube cells only
       P1 #100 Dehn of T cap (-3/2T): -12*sqrt(2) (x) beta
       P1 #100 Dehn of T cap (-2T): 0 (x) beta
-ok   P1 [#100] Dehn(T cap -kT) = 24 sqrt2 (k - 2) (x) beta, beta = arccos(1/sqrt3) (cuts sum to 3 - k; zero iff they sum to one edge, k = 2)
+ok   P1 [#100] Dehn(T cap -kT) = 24 sqrt2 (k - 2) (x) beta, beta = arctan(1/sqrt2) (cuts sum to 3 - k; zero iff they sum to one edge, k = 2)
 ok   P1 [#100] the fold k -> 1/k is the similarity x -> -x/k: S(1/2) = -S(2)/2 exactly (same shape: a fold, identity on shapes)
+ok   P1 [#100] Dehn(cube cap mu octahedron) = -24 sqrt2 (3 - 2 mu) (x) beta, beta = arctan(1/sqrt2), i.e. 12 sqrt2 (3 - 2 mu) (x) arccos(-1/3), on every control point ['3/2', '6/5', '9/5']: odd under mu -> 3 - mu
+arg  P1 [#100] proof of the forcing: in the cube tiling the cell complementary to cube cap mu-octahedron is a copy of cube cap (3 - mu)-octahedron about the cube corner; one of each fills a period, so D(mu) + D(3 - mu) = 0 and D(3/2) = 0. The swap extends to 0 <= mu <= 3 and pairs the cube (mu = 3) with the empty cell (mu = 0)
 ok   P1 [#45] w(rho) = sqrt(3 + rho^2) - rho with rho = r/R reproduces the cube/octahedron width (sqrt30 - sqrt3)/3
 ok   P1 [#45] w(rho) w(-rho) = 3 (an algebraic "turn", fixed point rho = 0: a flat solid, no geometry)
-ok   P1 [#45] polar duality: R(P°) = 1/r(P), r(P°) = 1/R(P), so r/R and the width are equal on dual pairs (the paper's corollary IS a duality invariance)
+arg  P1 [#45] polar duality: R(P°) = 1/r(P), r(P°) = 1/R(P), so r/R and the width are equal on dual pairs (the paper's corollary IS a duality invariance)
 ok   P1 [#85] tan g_k = s^k tan(alpha) is invariant under (s -> 1/s, alpha -> pi/2 - alpha, g -> pi/2 - g): an involution of ONE solid only when alpha = pi/4
-ok   P1 [#85] alpha = pi/4 exactly for the cube (tan alpha = (a/2)/(a/2)); at the fixed point s = 1 (mirrored spikes, t = 2): g = pi/4 forced, delta + 2g = pi: valley faces coplanar (the rhombic dodecahedron, classical)
+arg  P1 [#85] alpha = pi/4 exactly for the cube (tan alpha = (a/2)/(a/2)); at the fixed point s = 1 (mirrored spikes, t = 2): g = pi/4 forced, delta + 2g = pi: valley faces coplanar (the rhombic dodecahedron, classical)
 ok   P1 [#85] t -> t/(t-1) is harmonic conjugation with respect to the centre (t = 0) and the mirror point (t = 2): projective, not a similarity
 ok   P1 [#105/#93] the permutohedron of (1, 2, 4, 5) has the distance pattern of the C-O cell at mu = 4/3
 ok   P1 [#105/#93] the permutohedron of (-5, -1, 1, 5) has the distance pattern of the C-O cell at mu = 5/3
@@ -55,29 +61,37 @@ ok   P1 [Permutohedron Family Thm 1] the reversal i -> n+1-i maps intervals to i
 PROGRESS 0.25 P2a: evacuation, RSK, self-evacuating tableaux, domino tableaux (3 s)
 ok   P2a Schuetzenberger: RSK(w0 w w0) = (evac P, evac Q) for every permutation, n <= 6: on orderings evacuation IS w -> w0 w w0 (reverse the row, b -> n+1-b)
 ok   P2a fixed orderings = the centrally symmetric ones, 2^k k! (k = floor(n/2)): {1: 1, 2: 2, 3: 2, 4: 8, 5: 8, 6: 48}
-ok   P2a self-evacuating SYT of shape lambda = domino tableaux of lambda, every lambda with |lambda| even <= 8 (Stanley 2009; Stembridge 1996)
+ok   P2a self-evacuating SYT of shape lambda = domino tableaux of lambda, every lambda with |lambda| even <= 8 (Stanley's conjecture, proved by Stembridge 1996; bijection Berenstein-Kirillov 2000; survey Stanley 2009)
 ok   P2a sum over shapes of (self-evacuating)^2 = 2^k k!, the fixed orderings: {2: 2, 3: 2, 4: 8, 5: 8, 6: 48}
 PROGRESS 0.33 P2a: the fixed slice of the permutohedron, its battery, Brunn (3 s)
 ok   P2a n = 4: the evacuation-fixed corners are the signed permutations of (1, 3) in the fixed space (a B2 permutohedron)
-ok   P2a n = 4: the projection of the permutohedron to the fixed space has the same support as the fixed corners (30 random directions): fixed slice = projection
+ok   P2a n = 4: the projection of the permutohedron to the fixed space has the same support as the fixed corners (30 random directions; not needed: for every convex body and affine involution s preserving it, x -> (x + s x)/2 maps the body onto its fixed slice): fixed slice = projection
 ok   P2a n = 5: the evacuation-fixed corners are the signed permutations of (2, 4) in the fixed space (a B2 permutohedron)
-ok   P2a n = 5: the projection of the permutohedron to the fixed space has the same support as the fixed corners (30 random directions): fixed slice = projection
+ok   P2a n = 5: the projection of the permutohedron to the fixed space has the same support as the fixed corners (30 random directions; not needed: for every convex body and affine involution s preserving it, x -> (x + s x)/2 maps the body onto its fixed slice): fixed slice = projection
 ok   P2a n = 6: the evacuation-fixed corners are the signed permutations of (1, 3, 5) in the fixed space (a B3 permutohedron)
 ok   P2a n = 7: the evacuation-fixed corners are the signed permutations of (2, 4, 6) in the fixed space (a B3 permutohedron)
-ok   P2a so the 3D fixed slices are the silent-zonohedron line of the forced study at a = 1/2 (n = 6, corners sperm(1/2, 3/2, 5/2)) and a = 1 (n = 7, sperm(1, 2, 3))
+arg  P2a so the 3D fixed slices are the silent-zonohedron line of the forced study at a = 1/2 (n = 6, corners sperm(1/2, 3/2, 5/2)) and a = 1 (n = 7, sperm(1, 2, 3))
 ok   P2a battery at the n = 6 fixed slice (a = 1/2): every corner tone Q4..Q12 and canonical-form tone F4..F12 nonzero, Mahler and roundness not critical (Mahler' = 68/225)
 ok   P2a battery at the n = 7 fixed slice (a = 1): every corner tone Q4..Q12 and canonical-form tone F4..F12 nonzero, Mahler and roundness not critical (Mahler' = -488/675)
-ok   P2a tiling: no member a > 0 fills space in any way (forced study, dihedral-angle proof); Dehn = 0 at every a (a zonotope is a union of parallelepipeds): neither is forced by the swap
+arg  P2a tiling: no member a > 0 fills space in any way (forced study, dihedral-angle proof); Dehn = 0 at every a (a zonotope is a union of parallelepipeds): neither is forced by the swap
 ok   P2a n = 4: the evacuation-fixed slice of Kelvin's cell (the 4-permutohedron) is the octagon sperm(1/2, 3/2) (exact vertex enumeration)
-ok   P2a [Brunn, FORCED] n = 4: slice areas even in the offset and largest at the fixed slice: [('-1/2', '4'), ('-1/4', '23/4'), ('0', '7'), ('1/4', '23/4'), ('1/2', '4')]
+ok   P2a [Brunn] n = 4: slice areas even in the offset and largest at the fixed slice: [('-1/2', '4'), ('-1/4', '23/4'), ('0', '7'), ('1/4', '23/4'), ('1/2', '4')]
+ok   P2a [Brunn, concavity] n = 4: area^(1/2) strictly concave at offsets -1/4, 0, 1/4 (exact, by squaring)
+ok   P2a/P2b every exact slice volume agrees with an independent floating hull volume (|difference| < 1e-9) on all 6 slices
 ok   P2a n = 6: the evacuation-fixed 3D slice of the 6-permutohedron is exactly sperm(1/2, 3/2, 5/2) (48 corners, exact vertex enumeration)
+ok   P2a n = 6: the fixed slice has volume 87 = 4(2a^3 + 12a^2 + 21a + 8) at a = 1/2 (the forced study's zonohedron formula, an independent route); the earlier 138 counted duplicate planes twice (18 duplicates now skipped)
 ok   P2b the central slice x5 = 3 of the 4D permutohedron is the DICTO 1:2 Truncated Octahedron, permutohedron of (1,2,4,5) (#105)
-ok   P2b [Brunn, FORCED] it is the largest of its parallel slices x5 = 3 + t (volumes in coordinates y1..y3: [('0', '140/3'), ('1/2', '1835/48')])
+ok   P2b its volume in coordinates y1..y3 is 122/3 = (4mu^3/3 - 4(mu - 1)^3) x 3^3 / 2 at mu = 4/3 (cube cap mu-octahedron, an independent route); the earlier 140/3 counted the six squares twice
+ok   P2b slices x5 = 3 +- 1 (permutohedra of 1,2,3,5 and 1,3,4,5): 205/6 (earlier 259/6, duplicates); x5 = 3 +- 1/2: 1835/48 (unchanged, no coincident planes)
+ok   P2b [Brunn] it is the largest of its parallel slices x5 = 3 + t (volumes in coordinates y1..y3: [('-1', '205/6'), ('-1/2', '1835/48'), ('0', '122/3'), ('1/2', '1835/48'), ('1', '205/6')])
+ok   P2b [Brunn, concavity] volume^(1/3) strictly concave at t = -1/2, 0, 1/2 (cube roots [3.2449, 3.3687, 3.4388, 3.3687, 3.2449]; exact rational bounds)
 PROGRESS 0.42 P2a: change ringing (Paradigm Ch. 15) (4 s)
 ok   P2a plain hunt on 4, 6, 8, 10 bells: EVERY row is fixed by evacuation (reverse the row, b -> n+1-b)
 ok   P2a plain hunt on 5, 7, 9, 11 bells: evacuation maps the hunt to the hunt that starts with the other change (the two halves of Paradigm Thm 13.7 swapped)
+ok   P2a odd n = 5..11: the other hunt is the same 2n rows rung in the opposite order, so the move maps the plain hunt to itself reversed; exactly 2 of its rows are fixed (rounds and back rounds)
 ok   P2a Plain Bob Minimus: 24 rows, an extent
-ok   P2a evacuation maps Plain Bob Minimus to the method with lead-end 34 in place of 12 (not to itself); 8 of its 24 rows are evacuation-fixed (all 8 centrally symmetric rows)
+ok   P2a evacuation maps Plain Bob Minimus (x14x14x14x12) to x14x14x14x34 (not to itself); 8 of its 24 rows are fixed, which says nothing about the method: its rows are all of S4 and 8 = 2^2 2! is the number of centrally symmetric rows
+ok   P2a [credit: the ringers' reverse] the image x14x14x14x34, started from its half-lead, is x14x34x14x14 = Reverse Bob Minimus (-14-34,14, CCCBR Methods Library)
 PROGRESS 0.50 P2b: w0 of A3, B3, H3, A4, B4, F4, H4; sweep reversal; Brunn (4 s)
 ok   P2b A3: w0 found as a product of 6 reflections (= number of positive roots); w0 = -epsilon (diagram flip), not -1; fixed subspace dimension 1
 ok   P2b B3: w0 found as a product of 9 reflections (= number of positive roots); w0 = -1; fixed subspace dimension 0
@@ -90,6 +104,7 @@ ok   P2b 4D permutohedron (A4, palindromic seed, so centrally symmetric): the sw
 ok   P2b [Brunn, FORCED, A3] slices of the tetrahedron across a direction negated by w0: even, largest in the middle (the square): [('0', '2'), ('1/2', '3/2'), ('-1/2', '3/2')]
 ok   P2b [control, FAILS as required] along a 3-fold axis (no symmetry negates it) the middle slice is not the largest: [('-1', '2'), ('0', '9/8'), ('1', '1/2')]
 ok   P2b [Brunn, FORCED, A4] slices of the 5-cell x1 - x5 = t (negated by w0 = (15)(24)): even, largest at t = 0: [('0', '1/12'), ('1/4', '9/256'), ('-1/4', '9/256')]
+ok   P2b [Brunn, concavity] tetrahedron area^(1/2) and 5-cell volume^(1/3) strictly concave across the middle slice (exact)
 ok   P2b [control, FAILS as required] slices x1 = s (no symmetry negates e1): the largest is the facet s = 0, not the centroid level 1/5
 PROGRESS 0.58 P2c: Gale self-association (8 corners, hexagonal discs), Alexander duality screen (4 s)
 FIND P2c Gale: CUBE (8 corners, 6 faces): quadric rank 7 -> SELF-ASSOCIATED (Gale fixed point)
@@ -97,27 +112,29 @@ FIND P2c Gale: J26_GYROBIFASTIGIUM (8 corners, 8 faces): quadric rank 8 -> not s
 FIND P2c Gale: TRIAKIS_TETRAHEDRON (8 corners, 12 faces): quadric rank 8 -> not self-associated
 ok   P2c the cube's corners are self-associated: the products of opposite face planes (x^2-1, y^2-1, z^2-1) are a net of quadrics through all 8 (Coble; Eisenbud-Popescu)
 ok   P2c the octahedron frustum (half octahedron cut at half height, 8 corners) is self-associated (rank 7)
-ok   P2c its dihedral angles: base pi/2 - beta/2, top pi/2 + beta/2, sides pi - beta (cos 1/sqrt3, -1/sqrt3, -1/3; beta = arccos 1/3)
-ok   P2c so Dehn(frustum) = -3*sqrt(2) (x) arccos(1/3) != 0: a Gale fixed point that cannot fill space (Dehn; Debrunner 1980): Gale fixedness forces no tiling
+ok   P2c [Gale, not every hexahedron] two tetrahedra with two corners cut (faces 3,3,4,4,5,5; stable): quadric rank 8, NOT self-associated: {'1/4,1/4': {'corners': 8, 'face_sizes': [3, 3, 4, 4, 5, 5], 'quadric_rank': 8, 'stable': True}, '1/4,1/8': {'corners': 8, 'face_sizes': [3, 3, 4, 4, 5, 5], 'quadric_rank': 8, 'stable': True}}
+ok   P2c every 8-point set tested is STABLE (no two equal, no four on a line, no six in a plane), so the quadric-rank test decides self-association (Eisenbud-Popescu Cor. 7.4); the self-associated hexahedra are all of cube type (frustum faces [4, 4, 4, 4, 4, 4])
+ok   P2c its dihedral angles: base pi/2 - g/2, top pi/2 + g/2, sides pi - g (cos 1/sqrt3, -1/sqrt3, -1/3; g = arccos(1/3) = 2 beta, beta = arctan(1/sqrt2))
+ok   P2c so Dehn(frustum) = -3*sqrt(2) (x) arccos(1/3) = -6 sqrt2 (x) beta != 0: a Gale fixed point that cannot fill space (Dehn; Debrunner 1980): Gale fixedness forces no tiling
 FIND P2c CUBOCTAHEDRON: discs {6: 4} (float census agrees: see fans-law); hexagonal discs on a conic (Gale self-associated, Coble): [True, True, True, True]
 FIND P2c TETRAKIS_HEXAHEDRON: discs {6: 6} (float census agrees: see fans-law); hexagonal discs on a conic (Gale self-associated, Coble): [True, True, True, True, True, True]
 ok   P2c cuboctahedron: 4 hexagon discs, each on a conic: Gale fixed points; yet its Dehn invariant is 24 sqrt2 (x) beta != 0 (chat-handoff, k = 0): no tiling forced
 ok   P2c Alexander duality S -> (E minus S)* (disc edges to the dual graph): a fixed point needs V = F and |S| = E/2; of the 77 registry solids with V = F none has |S| = E/2 (gyrobifastigium 4 of 14, bilunabirotunda 12 of 26): NONE
-PROGRESS 0.67 P2d: chirality: Narcissus, Covenant, the twist family, the chiral fives (4 s)
+PROGRESS 0.67 P2d: chirality: Narcissus, Covenant, the twist family, the chiral fives (5 s)
 ok   P2d Narcissus: exactly 3 vertical mirror planes (at [30, 90, 150] deg): achiral, a FIXED point of the mirror swap
 ok   P2d Covenant (turned 60 deg): 14 corners, centrally symmetric about the hexagon centre: achiral, a fixed point
 FIND P2d twisted cube (straight join): improper symmetries among the 12 axis-preserving candidates: 6 -> achiral
-ok   P2d [Palais, FORCED] twist family: the degree-4 corner tone is critical at the straight join and at Covenant (fixed points of theta -> -theta), not at a random twist (cos = 3/5); second derivatives 70.0000, -70.0000
+ok   P2d [mirror evenness, FORCED; the simplest case of Palais 1979] twist family: the degree-4 corner tone is critical at the straight join and at Covenant (fixed points of theta -> -theta), not at a random twist (cos = 3/5); second derivatives 70.0000, -70.0000
 ok   P2d the dodecahedron holds 10 regular tetrahedra and exactly 2 compounds of five (the chiral fives)
 ok   P2d the central inversion (improper) maps one five onto the other: they are mirror images, swapped by the chirality swap
 ok   P2d each tetrahedron is centred at the origin, so its face normals are its negated corners: each five has as face normals all 20 three-fold directions
-ok   P2d so both fives have the SAME 20 face planes and the same core, which is therefore mirror-symmetric: the regular icosahedron (forced by the orbit: the 20 three-fold directions are an achiral set)
-PROGRESS 0.75 P3: periodic points of the hops (6 s)
+arg  P2d so both fives have the SAME 20 face planes and the same core, which is therefore mirror-symmetric: the regular icosahedron (forced by the orbit: the 20 three-fold directions are an achiral set)
+PROGRESS 0.75 P3: periodic points of the hops (7 s)
 ok   P3 [#69] Fibonacci hop s -> 1/(1+s): the fixed points of every iterate (k <= 20) are the roots of F_k (s^2 + s - 1): periodic points = the two fixed points 1/phi, -phi; M^2 is hyperbolic (trace 3), so no other period exists
 ok   P3 [#80] T(tetrahedron) = -3 x tetrahedron: a FIXED point of T on shapes (one step, factor 3 = R/r; two steps 9)
 ok   P3 [#80] T(T(cube)) = 3 x cube (gain 3): cube <-> octahedron, period 2
-ok   P3 [#80] so T is the polarity SWAP on shapes (catalogue row 13), of infinite order only through the scale: its fixed point is the self-polar tetrahedron, where the law reads gain = (one-step factor)^2 = 9, nothing beyond the main theorem
-ok   P3 [pentakis 4-cycle] lemma (exact, by orbit sizes 12, 20, 30, 60, 120 of the icosahedral group on directions): an I_h-invariant polytope with 12 facets is a regular dodecahedron, with 20 facets a regular icosahedron (the only orbits of those sizes are the 5-fold and 3-fold axes, one distance each)
-PROGRESS 0.92 writing (6 s)
-99 checks, 0 FAIL, 6 s
+arg  P3 [#80] so on solids whose corners all lie on one sphere about the centre (R the same for every corner), T is polar reciprocation up to the scale R^2; T^2 is a scaled copy only when T(S) is again sphere-inscribed (the Platonic solids; an Archimedean solid goes to a Catalan solid, which is not); the tetrahedron is A fixed point on shapes up to the point reflection (every sphere-inscribed self-polar solid is one), where the law reads gain = 3^2 = 9, the main theorem restated
+arg  P3 [pentakis 4-cycle] lemma (exact, by orbit sizes 12, 20, 30, 60, 120 of the icosahedral group on directions): an I_h-invariant polytope with 12 facets is a regular dodecahedron, with 20 facets a regular icosahedron (the only orbits of those sizes are the 5-fold and 3-fold axes, one distance each)
+PROGRESS 0.92 writing (7 s)
+106 computed checks, 0 FAIL; 10 statements proved by argument (listed as arg, not counted as checks); 7 s
 FINAL ok

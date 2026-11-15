@@ -5121,7 +5121,7 @@
     "date": "2026-11-15"
    },
    {
-    "result": "What is missing: no new law-giving fixed point; the laws forced at the fixed points of evacuation, w0, the Narcissus twist and the pentakis cycle are classical (Brunn, Palais, an orbit lemma); of the 17 laws with no swap, 1 is forced at a fixed point, 6 are carried by a swap, 1 has only an algebraic swap and 9 have none; the hops have no periodic points beyond their fixed points",
+    "result": "What is missing: no new law-giving fixed point; the laws forced at the fixed points of evacuation, w0, the Narcissus twist and the pentakis cycle are classical (Brunn–Minkowski with a symmetry negating the slicing direction, mirror evenness of a differentiable quantity, an orbit lemma); of the 17 laws with no swap, 1 is forced at a fixed point, 6 are carried by a swap, 1 has only an algebraic swap and 9 have none; only the Fibonacci hop has no periodic points beyond its fixed points (corrected after the referee, 15 Nov: slice volumes 122/3 and 87, Gale for cube-type hexahedra only)",
     "study": "studies/2026-11-15-whats-missing",
     "goes_to": "A Brief Geometry of Space (the spine), with study 2026-11-13-swaps-and-fixed-points",
     "date": "2026-11-15"
@@ -7756,7 +7756,17 @@
     "status": "SETTLED (as stated; 11 referee candidates listed in the README)",
     "retry": "only with a new geometric involution or a new law parameter; independent referee of the 11 candidates",
     "study": "studies/2026-11-15-whats-missing",
-    "goes_to": "A Brief Geometry of Space (swaps spine); swaps-and-fixed-points catalogue next version (reclassifications of #91, #100, #45, #93, #105, #80)"
+    "goes_to": "A Brief Geometry of Space (swaps spine); swaps-and-fixed-points catalogue next version (reclassifications of #91, #100, #45, #93, #105, #80)",
+    "corrected": "ledger entry [232] (15 Nov 2026, after the independent referee): slice volumes recomputed, Gale restricted to cube type, wording and credits fixed; verdict unchanged"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "what's missing: referee corrections (REFEREE-fable.md): duplicate planes in rat_measure, all P5/P6 slice volumes, Gale hexahedra, Brunn hypotheses, periodic-points wording, credits",
+    "method": "facets counted once (keyed by exact vertex set); every P5 and P6 slice recomputed in fractions, cross-checked by independent hull volumes and by closed forms (cube cap mu-octahedron at 4/3; zonohedron formula at a = 1/2); strict concavity of volume^(1/3) by exact rational bounds; Gale stability and two cut tetrahedra (exact ranks); CCCBR extract for Reverse Bob Minimus; statements proved by argument separated from computed checks; compute host, jobs wmiss2-pilot, wmiss2 (116 computed checks, 0 FAIL, 10 argued, FINAL ok)",
+    "result": "1:2 TO slice x5 = 3 has volume 122/3 (not 140/3); t = +-1: 205/6 (not 259/6); t = +-1/2: 1835/48 (unchanged); 6-permutohedron fixed slice 87 (not 138), offsets (+-1/4, -+1/4, 0) 307/4 and (+-1/2, -+1/2, 0) 64 (not 89, 212/3), same along (1, 0, -1); all strictly concave. Gale: only cube-type hexahedra (stable) are self-associated; tetrahedron with two corners cut has rank 8. Brunn needs a symmetry negating the direction; codimension >= 2 slices need Brunn-Minkowski. Only the Fibonacci hop has no periodic points beyond its fixed points. First version: 108 checks = 100 computed + 8 assertions. Bitruncated tesseract has 96 corners. Credits: Stembridge 1996 (Stanley conjecture), Delsarte-Goethals-Seidel 1977, Whitney 1932, Reverse Bob Minimus, folding A to B (Steinberg; Stembridge). Verdict NO NEW LAW-GIVING FIXED POINT unchanged",
+    "retry": "never for these numbers; only with a new geometric involution or a new law parameter",
+    "status": "SETTLED",
+    "study": "studies/2026-11-15-whats-missing"
    }
   ]
  },

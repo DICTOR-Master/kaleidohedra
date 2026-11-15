@@ -46,13 +46,13 @@
    "verdict": "SWAP FOUND (pair), NOT FORCED",
    "swap": "mu -> 5 - mu = the B4 seed reversal on the line; on the cube cells it is the CsCl site swap",
    "fixed": "mu = 5/2, the bitruncated tesseract (cells Kelvin TO + Archimedean truncated tetrahedra)",
-   "reason": "the two all-golden polytopes are a swapped PAIR; at the fixed point the degree-4 tone is nonzero; on the tetrahedral cells the swap is not a similarity"
+   "reason": "a parameter pairing, geometric on the cube cells only (the B4 diagram has no symmetry); the two all-golden polytopes are a swapped PAIR; the fixed point is the uniform member; its degree-4 tone is nonzero; the tone 48 a^2 (a^2 - 4) (over the 96 corners) vanishes only at the 24-cell end (a = 0), forced there by F4 symmetry"
   },
   "#100 Dehn test": {
    "verdict": "SWAP FOUND (Kelvin half), FORCED (already proved, swaps study K4)",
    "swap": "CsCl site swap mu -> 3 - mu",
    "fixed": "mu = 3/2, Kelvin",
-   "reason": "Dehn coefficient 12 sqrt2 (3 - 2 mu) is odd (control C2); the cube zero (mu = 3) is an endpoint with rational angles; on T cap (-kT) the only swap is the fold k -> 1/k, under which Dehn is even: no forced zero"
+   "reason": "Dehn = -24 sqrt2 (3 - 2 mu) (x) beta, beta = arctan(1/sqrt2) (= 12 sqrt2 (3 - 2 mu) (x) arccos(-1/3)), odd: the complementary cell in the cube tiling is the (3 - mu) cell, one of each fills a period; the swap pairs the cube (mu = 3) with the empty cell (mu = 0), so the cube zero is not at a fixed point; on T cap (-kT) the only swap is the fold k -> 1/k, under which Dehn is even: no forced zero"
   },
   "#45 width theorem": {
    "verdict": "SWAP FOUND (invariance), NOT FORCED",
@@ -254,10 +254,56 @@
     "F12.1": "709270187/1401260449218750000"
    }
   },
+  "brunn_P4_octagon_areas": {
+   "-1/2": "4",
+   "-1/4": "23/4",
+   "0": "7",
+   "1/4": "23/4",
+   "1/2": "4"
+  },
+  "slice_facets": {
+   "P6 ('0', '0', '0')": {
+    "rows": 62,
+    "facets": 26,
+    "duplicates": 18
+   },
+   "P5 -1": {
+    "rows": 30,
+    "facets": 14,
+    "duplicates": 4
+   },
+   "P5 -1/2": {
+    "rows": 30,
+    "facets": 14,
+    "duplicates": 0
+   },
+   "P5 0": {
+    "rows": 30,
+    "facets": 14,
+    "duplicates": 6
+   },
+   "P5 1/2": {
+    "rows": 30,
+    "facets": 14,
+    "duplicates": 0
+   },
+   "P5 1": {
+    "rows": 30,
+    "facets": 14,
+    "duplicates": 4
+   }
+  },
+  "brunn_P5_slice_volumes": {
+   "-1": "205/6",
+   "-1/2": "1835/48",
+   "0": "122/3",
+   "1/2": "1835/48",
+   "1": "205/6"
+  },
   "evacuation (Schuetzenberger)": {
    "fixed": "orderings: centrally symmetric rows (2^k k!); tableaux: self-evacuating = domino tableaux; slice: B_k permutohedra sperm(1,3,..) / sperm(1,..,k)",
    "forced": "Brunn: the fixed slice is the largest parallel slice (classical); nothing else (tones, form, Mahler, roundness nonzero/not critical; tiling no; Dehn 0 for every zonotope)",
-   "verdict": "FORCED LAW = classical (Brunn 1887); no new law"
+   "verdict": "FORCED LAW = classical (Brunn-Minkowski: the fixed slice has codimension >= 2 for n >= 6; Brunn 1887 for hyperplane slices); the fixed slice is the type-B permutohedron by the standard folding A_{n-1} -> B_k (Steinberg; Stembridge); no new law"
   },
   "w0": {
    "A3": {
@@ -298,24 +344,55 @@
   },
   "longest element w0": {
    "fixed": "the centre (w0 = -1: B3, H3, B4, F4, H4); a line (A3) or plane (A4) for w0 = -epsilon",
-   "forced": "every centrally symmetric Wythoff solid: the sweep ledger is a time palindrome; the central slice is the largest of its parallels (Brunn), e.g. the 1:2 TO in the 4D permutohedron",
+   "forced": "every slice fixed by a symmetry that negates the offset directions is the largest of its parallels (Brunn for hyperplane slices, Brunn-Minkowski in general; central symmetry suffices but is not needed: the tetrahedron and the 5-cell examples use w0), e.g. the 1:2 TO (volume 122/3) in the 4D permutohedron; the sweep ledger of a centrally symmetric Wythoff solid is a time palindrome",
    "verdict": "FORCED LAW = classical (Brunn; Dehn-Sommerville pairing); no new law"
   },
   "gale_8": {
    "CUBE": {
     "faces": 6,
     "quadric_rank": 7,
-    "self_associated": true
+    "self_associated": true,
+    "stable": true
    },
    "J26_GYROBIFASTIGIUM": {
     "faces": 8,
     "quadric_rank": 8,
-    "self_associated": false
+    "self_associated": false,
+    "stable": true
    },
    "TRIAKIS_TETRAHEDRON": {
     "faces": 12,
     "quadric_rank": 8,
-    "self_associated": false
+    "self_associated": false,
+    "stable": true
+   }
+  },
+  "gale_cut_tetrahedra": {
+   "1/4,1/4": {
+    "corners": 8,
+    "face_sizes": [
+     3,
+     3,
+     4,
+     4,
+     5,
+     5
+    ],
+    "quadric_rank": 8,
+    "stable": true
+   },
+   "1/4,1/8": {
+    "corners": 8,
+    "face_sizes": [
+     3,
+     3,
+     4,
+     4,
+     5,
+     5
+    ],
+    "quadric_rank": 8,
+    "stable": true
    }
   },
   "gale_hexagon_discs": {
@@ -345,14 +422,14 @@
    }
   },
   "Gale duality": {
-   "fixed": "8-corner sets that are self-associated (every planar-faced hexahedron: opposite-face net; the gyrobifastigium etc. per rank test); hexagonal discs on a conic (cuboctahedron, tetrakis hexahedron, ...)",
-   "forced": "none: the octahedron frustum is self-associated with Dehn -3 sqrt2 (x) beta; the cuboctahedron has Gale-fixed discs and Dehn != 0",
+   "fixed": "self-associated in Coble's sense (stable sets; Eisenbud-Popescu Cor. 7.4): the corners of every hexahedron of CUBE TYPE with planar faces (opposite-face net); not the tetrahedron with two corners cut (rank 8), the gyrobifastigium or the triakis tetrahedron; hexagonal discs on a conic (cuboctahedron, tetrakis hexahedron, ...)",
+   "forced": "none: the octahedron frustum is self-associated with Dehn -3 sqrt2 (x) arccos(1/3) = -6 sqrt2 (x) beta; the cuboctahedron has Gale-fixed discs and Dehn != 0",
    "verdict": "NONE"
   },
   "Alexander duality": {
-   "fixed": "needs V = F and half the edges on discs: no registry solid",
+   "fixed": "S -> (E minus S)* needs a chosen self-duality of the solid (V = F is only the screen) and half the edges on discs: no registry solid",
    "forced": "-",
-   "verdict": "NONE (no fixed point exists in the registry)"
+   "verdict": "NONE: no fixed point in the registry (planar duality: Whitney 1932; Alexander 1922 is the homological statement behind chi(S) = 1)"
   },
   "twist_family": {
    "4": {
@@ -365,8 +442,8 @@
   },
   "chirality": {
    "fixed": "Narcissus (3 mirrors), Covenant (centre), the common core of the chiral fives (icosahedron); the twisted cube per test",
-   "forced": "every battery quantity is O(3)-invariant, hence even under the mirror: nothing vanishes; in the twist family the mirror acts on the angle and forces criticality (Palais) at the straight join and at Covenant; the fives' common core is forced achiral",
-   "verdict": "FORCED: criticality only (Palais); no new law"
+   "forced": "every battery quantity is O(3)-invariant, hence even under the mirror: nothing vanishes; in the twist family the mirror acts as theta -> -theta and every DIFFERENTIABLE mirror-invariant quantity is critical at the straight join and at Covenant (an even differentiable function; the simplest case of Palais 1979); hull volume, Mahler volume, roundness or wall area may have a corner there instead; the fives' common core is forced achiral",
+   "verdict": "FORCED: criticality only, for differentiable quantities; no new law"
   }
  },
  "P3": {
@@ -376,9 +453,9 @@
    "verdict": "NONE new"
   },
   "#80 growth rule T": {
-   "periodic": "every sphere-inscribed solid whose image is inscribed: period 2; the tetrahedron: period 1",
+   "periodic": "only on solids with all corners on one sphere about the centre is T a scaled polar; period 2 when the image is again sphere-inscribed (the Platonic solids); the tetrahedron: period 1 up to the point reflection (a fixed point, not the only one: every sphere-inscribed self-polar solid)",
    "forced": "gain = (R'/R)^2 (the main theorem); at the fixed point 3^2 = 9, a restatement",
-   "verdict": "RECLASSIFIED: a swap modulo scale; no new law"
+   "verdict": "RECLASSIFIED: a swap modulo scale on sphere-inscribed solids; no new law"
   },
   "pentakis four-step cycle (twin-vacuus)": {
    "periodic": "every pentakis start (Catalan; pyramid heights h): period 4 on the twin side, D_{k+4} = c D_k with c in Q(sqrt5) (cited, exact there)",
@@ -535,6 +612,11 @@
   ],
   [
    true,
+   "P1 [#94] REFEREE (I): a -> 1/a preserves Q4 exactly (normalised) and is the identity on shapes (sperm(1, a, 0) ~ sperm(1, 1/a, 0); fixed point a = 1, the cuboctahedron): why every unit of norm +-1 is Galois-fixed up to similarity",
+   ""
+  ],
+  [
+   true,
    "P1 [#94] HIDDEN GALOIS SWAP: Icosaxes (a = 1/phi) is fixed by Galois conjugation up to similarity (a sigma(a) = -1); so is a = 1/phi^3",
    ""
   ],
@@ -545,7 +627,7 @@
   ],
   [
    true,
-   "P1 [#94] the zero is forced by EXTRA SYMMETRY of the halves: the 12 even-permutation corners form a regular icosahedron, H4 sums to 0 on it (a 5-design: Goethals-Seidel)",
+   "P1 [#94] the zero is forced by EXTRA SYMMETRY of the halves: the 12 even-permutation corners form a regular icosahedron, H4 sums to 0 on it (a 5-design: Delsarte-Goethals-Seidel 1977)",
    ""
   ],
   [
@@ -556,11 +638,6 @@
   [
    true,
    "P1 [#91] (1, 1, a, 0), a = mu - 2, is a corner of K cap mu K* (active: x1 = 1, x2 = 1, x1+x2+x3+-x4 = mu; independent)",
-   ""
-  ],
-  [
-   true,
-   "P1 [#91] its B4 seed (edge lengths along the diagram, last node the short root) is (0, 1-a, a, 0); the seed reversal (0, a, 1-a, 0) is a -> 1-a, i.e. mu -> 5 - mu",
    ""
   ],
   [
@@ -585,17 +662,32 @@
   ],
   [
    true,
-   "P1 [#91] at the fixed point the B4 degree-4 corner tone (sum x^4 - |x|^4/2 over 192 corners) = -1440 != 0: no tone forced (as palindromic-middles found)",
+   "P1 [#91] at the fixed point the B4 degree-4 corner tone (sum x^4 - |x|^4/2; here 192 x its value at the scaled corner (2,2,1,0), i.e. each of the 96 corners twice) = -1440 != 0: no tone forced (as palindromic-middles found)",
    ""
   ],
   [
    true,
-   "P1 [#100] Dehn(T cap -kT) = 24 sqrt2 (k - 2) (x) beta, beta = arccos(1/sqrt3) (cuts sum to 3 - k; zero iff they sum to one edge, k = 2)",
+   "P1 [#91] the fixed point a = 1/2 is the UNIFORM member: the two edge kinds of sperm4(1, 1, a, 0), squared lengths 2(1 - a)^2 and 2a^2, are equal only at a = 1/2; there all 96 corners (the bitruncated tesseract has 96, not 192) have 4 neighbours at distance^2 1/2 (exact)",
+   ""
+  ],
+  [
+   true,
+   "P1 [#91] on the line the degree-4 tone summed over the 96 corners is 48 a^2 (a^2 - 4): on 0 <= a <= 1 its only zero is a = 0, the 24-cell (forced there by extra symmetry: F4 has no invariant of degree 4), an endpoint, not the fixed point; at a = 1/2 it is -45 (the earlier -1440 counted each corner twice at scale 2)",
+   ""
+  ],
+  [
+   true,
+   "P1 [#100] Dehn(T cap -kT) = 24 sqrt2 (k - 2) (x) beta, beta = arctan(1/sqrt2) (cuts sum to 3 - k; zero iff they sum to one edge, k = 2)",
    ""
   ],
   [
    true,
    "P1 [#100] the fold k -> 1/k is the similarity x -> -x/k: S(1/2) = -S(2)/2 exactly (same shape: a fold, identity on shapes)",
+   ""
+  ],
+  [
+   true,
+   "P1 [#100] Dehn(cube cap mu octahedron) = -24 sqrt2 (3 - 2 mu) (x) beta, beta = arctan(1/sqrt2), i.e. 12 sqrt2 (3 - 2 mu) (x) arccos(-1/3), on every control point ['3/2', '6/5', '9/5']: odd under mu -> 3 - mu",
    ""
   ],
   [
@@ -610,17 +702,7 @@
   ],
   [
    true,
-   "P1 [#45] polar duality: R(P\u00b0) = 1/r(P), r(P\u00b0) = 1/R(P), so r/R and the width are equal on dual pairs (the paper's corollary IS a duality invariance)",
-   ""
-  ],
-  [
-   true,
    "P1 [#85] tan g_k = s^k tan(alpha) is invariant under (s -> 1/s, alpha -> pi/2 - alpha, g -> pi/2 - g): an involution of ONE solid only when alpha = pi/4",
-   ""
-  ],
-  [
-   true,
-   "P1 [#85] alpha = pi/4 exactly for the cube (tan alpha = (a/2)/(a/2)); at the fixed point s = 1 (mirrored spikes, t = 2): g = pi/4 forced, delta + 2g = pi: valley faces coplanar (the rhombic dodecahedron, classical)",
    ""
   ],
   [
@@ -665,7 +747,7 @@
   ],
   [
    true,
-   "P2a self-evacuating SYT of shape lambda = domino tableaux of lambda, every lambda with |lambda| even <= 8 (Stanley 2009; Stembridge 1996)",
+   "P2a self-evacuating SYT of shape lambda = domino tableaux of lambda, every lambda with |lambda| even <= 8 (Stanley's conjecture, proved by Stembridge 1996; bijection Berenstein-Kirillov 2000; survey Stanley 2009)",
    ""
   ],
   [
@@ -680,7 +762,7 @@
   ],
   [
    true,
-   "P2a n = 4: the projection of the permutohedron to the fixed space has the same support as the fixed corners (30 random directions): fixed slice = projection",
+   "P2a n = 4: the projection of the permutohedron to the fixed space has the same support as the fixed corners (30 random directions; not needed: for every convex body and affine involution s preserving it, x -> (x + s x)/2 maps the body onto its fixed slice): fixed slice = projection",
    ""
   ],
   [
@@ -690,7 +772,7 @@
   ],
   [
    true,
-   "P2a n = 5: the projection of the permutohedron to the fixed space has the same support as the fixed corners (30 random directions): fixed slice = projection",
+   "P2a n = 5: the projection of the permutohedron to the fixed space has the same support as the fixed corners (30 random directions; not needed: for every convex body and affine involution s preserving it, x -> (x + s x)/2 maps the body onto its fixed slice): fixed slice = projection",
    ""
   ],
   [
@@ -705,11 +787,6 @@
   ],
   [
    true,
-   "P2a so the 3D fixed slices are the silent-zonohedron line of the forced study at a = 1/2 (n = 6, corners sperm(1/2, 3/2, 5/2)) and a = 1 (n = 7, sperm(1, 2, 3))",
-   ""
-  ],
-  [
-   true,
    "P2a battery at the n = 6 fixed slice (a = 1/2): every corner tone Q4..Q12 and canonical-form tone F4..F12 nonzero, Mahler and roundness not critical (Mahler' = 68/225)",
    ""
   ],
@@ -720,17 +797,22 @@
   ],
   [
    true,
-   "P2a tiling: no member a > 0 fills space in any way (forced study, dihedral-angle proof); Dehn = 0 at every a (a zonotope is a union of parallelepipeds): neither is forced by the swap",
-   ""
-  ],
-  [
-   true,
    "P2a n = 4: the evacuation-fixed slice of Kelvin's cell (the 4-permutohedron) is the octagon sperm(1/2, 3/2) (exact vertex enumeration)",
    ""
   ],
   [
    true,
-   "P2a [Brunn, FORCED] n = 4: slice areas even in the offset and largest at the fixed slice: [('-1/2', '4'), ('-1/4', '23/4'), ('0', '7'), ('1/4', '23/4'), ('1/2', '4')]",
+   "P2a [Brunn] n = 4: slice areas even in the offset and largest at the fixed slice: [('-1/2', '4'), ('-1/4', '23/4'), ('0', '7'), ('1/4', '23/4'), ('1/2', '4')]",
+   ""
+  ],
+  [
+   true,
+   "P2a [Brunn, concavity] n = 4: area^(1/2) strictly concave at offsets -1/4, 0, 1/4 (exact, by squaring)",
+   ""
+  ],
+  [
+   true,
+   "P2a/P2b every exact slice volume agrees with an independent floating hull volume (|difference| < 1e-9) on all 6 slices",
    ""
   ],
   [
@@ -740,12 +822,32 @@
   ],
   [
    true,
+   "P2a n = 6: the fixed slice has volume 87 = 4(2a^3 + 12a^2 + 21a + 8) at a = 1/2 (the forced study's zonohedron formula, an independent route); the earlier 138 counted duplicate planes twice (18 duplicates now skipped)",
+   ""
+  ],
+  [
+   true,
    "P2b the central slice x5 = 3 of the 4D permutohedron is the DICTO 1:2 Truncated Octahedron, permutohedron of (1,2,4,5) (#105)",
    ""
   ],
   [
    true,
-   "P2b [Brunn, FORCED] it is the largest of its parallel slices x5 = 3 + t (volumes in coordinates y1..y3: [('0', '140/3'), ('1/2', '1835/48')])",
+   "P2b its volume in coordinates y1..y3 is 122/3 = (4mu^3/3 - 4(mu - 1)^3) x 3^3 / 2 at mu = 4/3 (cube cap mu-octahedron, an independent route); the earlier 140/3 counted the six squares twice",
+   ""
+  ],
+  [
+   true,
+   "P2b slices x5 = 3 +- 1 (permutohedra of 1,2,3,5 and 1,3,4,5): 205/6 (earlier 259/6, duplicates); x5 = 3 +- 1/2: 1835/48 (unchanged, no coincident planes)",
+   ""
+  ],
+  [
+   true,
+   "P2b [Brunn] it is the largest of its parallel slices x5 = 3 + t (volumes in coordinates y1..y3: [('-1', '205/6'), ('-1/2', '1835/48'), ('0', '122/3'), ('1/2', '1835/48'), ('1', '205/6')])",
+   ""
+  ],
+  [
+   true,
+   "P2b [Brunn, concavity] volume^(1/3) strictly concave at t = -1/2, 0, 1/2 (cube roots [3.2449, 3.3687, 3.4388, 3.3687, 3.2449]; exact rational bounds)",
    ""
   ],
   [
@@ -760,12 +862,22 @@
   ],
   [
    true,
+   "P2a odd n = 5..11: the other hunt is the same 2n rows rung in the opposite order, so the move maps the plain hunt to itself reversed; exactly 2 of its rows are fixed (rounds and back rounds)",
+   ""
+  ],
+  [
+   true,
    "P2a Plain Bob Minimus: 24 rows, an extent",
    ""
   ],
   [
    true,
-   "P2a evacuation maps Plain Bob Minimus to the method with lead-end 34 in place of 12 (not to itself); 8 of its 24 rows are evacuation-fixed (all 8 centrally symmetric rows)",
+   "P2a evacuation maps Plain Bob Minimus (x14x14x14x12) to x14x14x14x34 (not to itself); 8 of its 24 rows are fixed, which says nothing about the method: its rows are all of S4 and 8 = 2^2 2! is the number of centrally symmetric rows",
+   ""
+  ],
+  [
+   true,
+   "P2a [credit: the ringers' reverse] the image x14x14x14x34, started from its half-lead, is x14x34x14x14 = Reverse Bob Minimus (-14-34,14, CCCBR Methods Library)",
    ""
   ],
   [
@@ -825,6 +937,11 @@
   ],
   [
    true,
+   "P2b [Brunn, concavity] tetrahedron area^(1/2) and 5-cell volume^(1/3) strictly concave across the middle slice (exact)",
+   ""
+  ],
+  [
+   true,
    "P2b [control, FAILS as required] slices x1 = s (no symmetry negates e1): the largest is the facet s = 0, not the centroid level 1/5",
    ""
   ],
@@ -840,12 +957,22 @@
   ],
   [
    true,
-   "P2c its dihedral angles: base pi/2 - beta/2, top pi/2 + beta/2, sides pi - beta (cos 1/sqrt3, -1/sqrt3, -1/3; beta = arccos 1/3)",
+   "P2c [Gale, not every hexahedron] two tetrahedra with two corners cut (faces 3,3,4,4,5,5; stable): quadric rank 8, NOT self-associated: {'1/4,1/4': {'corners': 8, 'face_sizes': [3, 3, 4, 4, 5, 5], 'quadric_rank': 8, 'stable': True}, '1/4,1/8': {'corners': 8, 'face_sizes': [3, 3, 4, 4, 5, 5], 'quadric_rank': 8, 'stable': True}}",
    ""
   ],
   [
    true,
-   "P2c so Dehn(frustum) = -3*sqrt(2) (x) arccos(1/3) != 0: a Gale fixed point that cannot fill space (Dehn; Debrunner 1980): Gale fixedness forces no tiling",
+   "P2c every 8-point set tested is STABLE (no two equal, no four on a line, no six in a plane), so the quadric-rank test decides self-association (Eisenbud-Popescu Cor. 7.4); the self-associated hexahedra are all of cube type (frustum faces [4, 4, 4, 4, 4, 4])",
+   ""
+  ],
+  [
+   true,
+   "P2c its dihedral angles: base pi/2 - g/2, top pi/2 + g/2, sides pi - g (cos 1/sqrt3, -1/sqrt3, -1/3; g = arccos(1/3) = 2 beta, beta = arctan(1/sqrt2))",
+   ""
+  ],
+  [
+   true,
+   "P2c so Dehn(frustum) = -3*sqrt(2) (x) arccos(1/3) = -6 sqrt2 (x) beta != 0: a Gale fixed point that cannot fill space (Dehn; Debrunner 1980): Gale fixedness forces no tiling",
    ""
   ],
   [
@@ -870,7 +997,7 @@
   ],
   [
    true,
-   "P2d [Palais, FORCED] twist family: the degree-4 corner tone is critical at the straight join and at Covenant (fixed points of theta -> -theta), not at a random twist (cos = 3/5); second derivatives 70.0000, -70.0000",
+   "P2d [mirror evenness, FORCED; the simplest case of Palais 1979] twist family: the degree-4 corner tone is critical at the straight join and at Covenant (fixed points of theta -> -theta), not at a random twist (cos = 3/5); second derivatives 70.0000, -70.0000",
    ""
   ],
   [
@@ -890,11 +1017,6 @@
   ],
   [
    true,
-   "P2d so both fives have the SAME 20 face planes and the same core, which is therefore mirror-symmetric: the regular icosahedron (forced by the orbit: the 20 three-fold directions are an achiral set)",
-   ""
-  ],
-  [
-   true,
    "P3 [#69] Fibonacci hop s -> 1/(1+s): the fixed points of every iterate (k <= 20) are the roots of F_k (s^2 + s - 1): periodic points = the two fixed points 1/phi, -phi; M^2 is hyperbolic (trace 3), so no other period exists",
    ""
   ],
@@ -907,17 +1029,24 @@
    true,
    "P3 [#80] T(T(cube)) = 3 x cube (gain 3): cube <-> octahedron, period 2",
    ""
-  ],
-  [
-   true,
-   "P3 [#80] so T is the polarity SWAP on shapes (catalogue row 13), of infinite order only through the scale: its fixed point is the self-polar tetrahedron, where the law reads gain = (one-step factor)^2 = 9, nothing beyond the main theorem",
-   ""
-  ],
-  [
-   true,
-   "P3 [pentakis 4-cycle] lemma (exact, by orbit sizes 12, 20, 30, 60, 120 of the icosahedral group on directions): an I_h-invariant polytope with 12 facets is a regular dodecahedron, with 20 facets a regular icosahedron (the only orbits of those sizes are the 5-fold and 3-fold axes, one distance each)",
-   ""
   ]
  ],
- "seconds": 6
+ "argued": [
+  "P1 [#91] its B4 seed (edge lengths along the diagram, last node the short root) is (0, 1-a, a, 0); the seed reversal (0, a, 1-a, 0) is a -> 1-a, i.e. mu -> 5 - mu",
+  "P1 [#91] the B4 diagram has no symmetry, so the seed reversal is not an automorphism of the group: mu -> 5 - mu is a PARAMETER PAIRING, geometric on the cube cells only",
+  "P1 [#100] proof of the forcing: in the cube tiling the cell complementary to cube cap mu-octahedron is a copy of cube cap (3 - mu)-octahedron about the cube corner; one of each fills a period, so D(mu) + D(3 - mu) = 0 and D(3/2) = 0. The swap extends to 0 <= mu <= 3 and pairs the cube (mu = 3) with the empty cell (mu = 0)",
+  "P1 [#45] polar duality: R(P\u00b0) = 1/r(P), r(P\u00b0) = 1/R(P), so r/R and the width are equal on dual pairs (the paper's corollary IS a duality invariance)",
+  "P1 [#85] alpha = pi/4 exactly for the cube (tan alpha = (a/2)/(a/2)); at the fixed point s = 1 (mirrored spikes, t = 2): g = pi/4 forced, delta + 2g = pi: valley faces coplanar (the rhombic dodecahedron, classical)",
+  "P2a so the 3D fixed slices are the silent-zonohedron line of the forced study at a = 1/2 (n = 6, corners sperm(1/2, 3/2, 5/2)) and a = 1 (n = 7, sperm(1, 2, 3))",
+  "P2a tiling: no member a > 0 fills space in any way (forced study, dihedral-angle proof); Dehn = 0 at every a (a zonotope is a union of parallelepipeds): neither is forced by the swap",
+  "P2d so both fives have the SAME 20 face planes and the same core, which is therefore mirror-symmetric: the regular icosahedron (forced by the orbit: the 20 three-fold directions are an achiral set)",
+  "P3 [#80] so on solids whose corners all lie on one sphere about the centre (R the same for every corner), T is polar reciprocation up to the scale R^2; T^2 is a scaled copy only when T(S) is again sphere-inscribed (the Platonic solids; an Archimedean solid goes to a Catalan solid, which is not); the tetrahedron is A fixed point on shapes up to the point reflection (every sphere-inscribed self-polar solid is one), where the law reads gain = 3^2 = 9, the main theorem restated",
+  "P3 [pentakis 4-cycle] lemma (exact, by orbit sizes 12, 20, 30, 60, 120 of the icosahedral group on directions): an I_h-invariant polytope with 12 facets is a regular dodecahedron, with 20 facets a regular icosahedron (the only orbits of those sizes are the 5-fold and 3-fold axes, one distance each)"
+ ],
+ "seconds": 7,
+ "counts": {
+  "computed_checks": 106,
+  "computed_fail": 0,
+  "argued_statements": 10
+ }
 }
