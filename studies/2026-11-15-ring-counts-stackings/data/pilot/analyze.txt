@@ -1,0 +1,25 @@
+CHECK analyze: all 256 (site, word) pairs present ok
+FORMULA site u=0 (lower atom of bilayer 0); h[j] = 1 if bilayer j is h (j = -3..3), else 0
+  l=6: values [12]; depends on bilayers []; = 12
+CHECK analyze u=0 l=6: window edge bilayers -3, 3 not needed ok
+  l=8: values [24]; depends on bilayers []; = 24
+CHECK analyze u=0 l=8: window edge bilayers -3, 3 not needed ok
+  l=10: values [240]; depends on bilayers []; = 240
+CHECK analyze u=0 l=10: window edge bilayers -3, 3 not needed ok
+  l=12: values [1128]; depends on bilayers []; = 1128
+CHECK analyze u=0 l=12: window edge bilayers -3, 3 not needed ok
+  l=14: values [8148]; depends on bilayers []; = 8148
+CHECK analyze u=0 l=14: window edge bilayers -3, 3 not needed ok
+FORMULA site u=1 (upper atom of bilayer 0); h[j] = 1 if bilayer j is h (j = -3..3), else 0
+  l=6: values [12]; depends on bilayers []; = 12
+CHECK analyze u=1 l=6: window edge bilayers -3, 3 not needed ok
+  l=8: values [24]; depends on bilayers []; = 24
+CHECK analyze u=1 l=8: window edge bilayers -3, 3 not needed ok
+  l=10: values [240]; depends on bilayers []; = 240
+CHECK analyze u=1 l=10: window edge bilayers -3, 3 not needed ok
+  l=12: values [1128]; depends on bilayers []; = 1128
+CHECK analyze u=1 l=12: window edge bilayers -3, 3 not needed ok
+  l=14: values [8148]; depends on bilayers []; = 8148
+CHECK analyze u=1 l=14: window edge bilayers -3, 3 not needed ok
+11 checks, 0 failed (0 s)
+ALLCHECKS ok

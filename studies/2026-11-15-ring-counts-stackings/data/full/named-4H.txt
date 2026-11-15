@@ -1,0 +1,75 @@
+MODE named L=24 LNB=20
+DATA named 4H phase 0 u 0 bilayer h (lower atom), local word chchchc
+  cycles l=6..24 step 2: [12, 24, 240, 1128, 8148, 50016, 349182, 2361966, 16714593, 118326909]
+  SP rings l=6..24 step 2: [12, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  per bond (V,S,S,S) cycles: l6:[6, 6, 6, 6] | l8:[12, 12, 12, 12] | l10:[120, 120, 120, 120] | l12:[564, 564, 564, 564] | l14:[4074, 4074, 4074, 4074] | l16:[25008, 25008, 25008, 25008] | l18:[174570, 174598, 174598, 174598] | l20:[1180956, 1180992, 1180992, 1180992] | l22:[8356590, 8357532, 8357532, 8357532] | l24:[59161944, 59163958, 59163958, 59163958]
+  per bond (V,S,S,S) SP: l6:[6, 6, 6, 6]
+CHECK 4H ph0 u0 no odd cycles (bipartite) ok
+CHECK 4H ph0 u0 NB loops = #102 values to 20 ok
+  coordination sequence: [1, 4, 12, 24, 42, 66, 96, 130, 170]
+  King rings per site (length: number): {6: 12}   Guttman: {6: 24}
+CHECK 4H ph0 u0 King = 12 six-rings (2 per angle), Guttman = 24 bond-ring incidences (12 six-rings) ok
+  strong-ring check: 1392/1392 cycles of length 8..12 in the span of 616 nearby 6-rings
+CHECK 4H ph0 u0 no strong rings of length 8..12 ok
+  ice polymer series per site, y^0..18: ['0', '0', '0', '0', '0', '0', '2/729', '0', '1/2187', '0', '8/19683', '0', '6599/21257640', '0', '31903/175375530', '0', '2937959/20518937010', '0', '10402995007/98891016919695']
+  ice clusters at the site (kind, bonds or sizes, vertices or shared vertices): [(('pair', (6, 6), 1), 132), (('pair', (6, 6), 2), 189), (('pair', (6, 6), 3), 36), (('pair', (6, 6), 4), 9), (('pair', (6, 8), 1), 624), (('pair', (6, 8), 2), 822), (('pair', (6, 8), 3), 174), (('pair', (6, 8), 4), 36), (('pair', (6, 8), 5), 72), (('pair', (6, 10), 1), 6066), (('pair', (6, 10), 2), 8550), (('pair', (6, 10), 3), 2724), (('pair', (6, 10), 4), 918), (('pair', (6, 10), 5), 216), (('pair', (6, 10), 6), 378), (('pair', (6, 12), 1), 35892), (('pair', (6, 12), 2), 48954), (('pair', (6, 12), 3), 17454), (('pair', (6, 12), 4), 4716), (('pair', (6, 12), 5), 3516), (('pair', (6, 12), 6), 1188), (('pair', (8, 8), 1), 720), (('pair', (8, 8), 2), 870), (('pair', (8, 8), 3), 150), (('pair', (8, 8), 4), 126), (('pair', (8, 8), 5), 18), (('pair', (8, 8), 6), 30), (('pair', (8, 10), 1), 12762), (('pair', (8, 10), 2), 17244), (('pair', (8, 10), 3), 5982), (('pair', (8, 10), 4), 1902), (('pair', (8, 10), 5), 2052), (('pair', (8, 10), 6), 360), (('pair', (8, 10), 7), 210), (('single', 12, 11), 132), (('single', 14, 13), 624), (('single', 16, 14), 80), (('single', 16, 15), 6786), (('single', 18, 16), 2388), (('single', 18, 17), 44814), (('triple', 1, 1), 10524), (('triple', 2, 1), 2368), (('triple', 2, 2), 732), (('triple', 2, 6), 12)]
+DATA named 4H phase 0 u 1 bilayer h (upper atom), local word chchchc
+  cycles l=6..24 step 2: [12, 24, 240, 1128, 8148, 50016, 349182, 2361966, 16714593, 118326909]
+  SP rings l=6..24 step 2: [12, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  per bond (V,S,S,S) cycles: l6:[6, 6, 6, 6] | l8:[12, 12, 12, 12] | l10:[120, 120, 120, 120] | l12:[564, 564, 564, 564] | l14:[4074, 4074, 4074, 4074] | l16:[25008, 25008, 25008, 25008] | l18:[174570, 174598, 174598, 174598] | l20:[1180956, 1180992, 1180992, 1180992] | l22:[8356590, 8357532, 8357532, 8357532] | l24:[59161944, 59163958, 59163958, 59163958]
+  per bond (V,S,S,S) SP: l6:[6, 6, 6, 6]
+CHECK 4H ph0 u1 no odd cycles (bipartite) ok
+CHECK 4H ph0 u1 NB loops = #102 values to 20 ok
+  coordination sequence: [1, 4, 12, 24, 42, 66, 96, 130, 170]
+  King rings per site (length: number): {6: 12}   Guttman: {6: 24}
+CHECK 4H ph0 u1 King = 12 six-rings (2 per angle), Guttman = 24 bond-ring incidences (12 six-rings) ok
+  strong-ring check: 1392/1392 cycles of length 8..12 in the span of 616 nearby 6-rings
+CHECK 4H ph0 u1 no strong rings of length 8..12 ok
+  ice polymer series per site, y^0..18: ['0', '0', '0', '0', '0', '0', '2/729', '0', '1/2187', '0', '8/19683', '0', '6599/21257640', '0', '31903/175375530', '0', '2937959/20518937010', '0', '10402995007/98891016919695']
+  ice clusters at the site (kind, bonds or sizes, vertices or shared vertices): [(('pair', (6, 6), 1), 132), (('pair', (6, 6), 2), 189), (('pair', (6, 6), 3), 36), (('pair', (6, 6), 4), 9), (('pair', (6, 8), 1), 624), (('pair', (6, 8), 2), 822), (('pair', (6, 8), 3), 174), (('pair', (6, 8), 4), 36), (('pair', (6, 8), 5), 72), (('pair', (6, 10), 1), 6066), (('pair', (6, 10), 2), 8550), (('pair', (6, 10), 3), 2724), (('pair', (6, 10), 4), 918), (('pair', (6, 10), 5), 216), (('pair', (6, 10), 6), 378), (('pair', (6, 12), 1), 35892), (('pair', (6, 12), 2), 48954), (('pair', (6, 12), 3), 17454), (('pair', (6, 12), 4), 4716), (('pair', (6, 12), 5), 3516), (('pair', (6, 12), 6), 1188), (('pair', (8, 8), 1), 720), (('pair', (8, 8), 2), 870), (('pair', (8, 8), 3), 150), (('pair', (8, 8), 4), 126), (('pair', (8, 8), 5), 18), (('pair', (8, 8), 6), 30), (('pair', (8, 10), 1), 12762), (('pair', (8, 10), 2), 17244), (('pair', (8, 10), 3), 5982), (('pair', (8, 10), 4), 1902), (('pair', (8, 10), 5), 2052), (('pair', (8, 10), 6), 360), (('pair', (8, 10), 7), 210), (('single', 12, 11), 132), (('single', 14, 13), 624), (('single', 16, 14), 80), (('single', 16, 15), 6786), (('single', 18, 16), 2388), (('single', 18, 17), 44814), (('triple', 1, 1), 10524), (('triple', 2, 1), 2368), (('triple', 2, 2), 732), (('triple', 2, 6), 12)]
+PROGRESS 0.5000 named 1/2 4H phase 0 (112 s)
+DATA named 4H phase 1 u 0 bilayer c (lower atom), local word hchchch
+  cycles l=6..24 step 2: [12, 24, 240, 1128, 8148, 50016, 349182, 2362074, 16714935, 118331331]
+  SP rings l=6..24 step 2: [12, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  per bond (V,S,S,S) cycles: l6:[6, 6, 6, 6] | l8:[12, 12, 12, 12] | l10:[120, 120, 120, 120] | l12:[564, 564, 564, 564] | l14:[4074, 4074, 4074, 4074] | l16:[25008, 25008, 25008, 25008] | l18:[174570, 174598, 174598, 174598] | l20:[1181172, 1180992, 1180992, 1180992] | l22:[8357274, 8357532, 8357532, 8357532] | l24:[59170788, 59163958, 59163958, 59163958]
+  per bond (V,S,S,S) SP: l6:[6, 6, 6, 6]
+CHECK 4H ph1 u0 no odd cycles (bipartite) ok
+CHECK 4H ph1 u0 NB loops = #102 values to 20 ok
+  coordination sequence: [1, 4, 12, 25, 44, 67, 96, 130, 170]
+  King rings per site (length: number): {6: 12}   Guttman: {6: 24}
+CHECK 4H ph1 u0 King = 12 six-rings (2 per angle), Guttman = 24 bond-ring incidences (12 six-rings) ok
+  ice polymer series per site, y^0..18: ['0', '0', '0', '0', '0', '0', '2/729', '0', '1/2187', '0', '8/19683', '0', '6601/21257640', '0', '31897/175375530', '0', '2926471/20518937010', '0', '10425132313/98891016919695']
+  ice clusters at the site (kind, bonds or sizes, vertices or shared vertices): [(('pair', (6, 6), 1), 132), (('pair', (6, 6), 2), 186), (('pair', (6, 6), 3), 45), (('pair', (6, 6), 4), 3), (('pair', (6, 8), 1), 624), (('pair', (6, 8), 2), 834), (('pair', (6, 8), 3), 156), (('pair', (6, 8), 4), 24), (('pair', (6, 8), 5), 90), (('pair', (6, 10), 1), 6084), (('pair', (6, 10), 2), 8502), (('pair', (6, 10), 3), 2892), (('pair', (6, 10), 4), 846), (('pair', (6, 10), 5), 180), (('pair', (6, 10), 6), 372), (('pair', (6, 12), 1), 35844), (('pair', (6, 12), 2), 49038), (('pair', (6, 12), 3), 17484), (('pair', (6, 12), 4), 4344), (('pair', (6, 12), 5), 3726), (('pair', (6, 12), 6), 1212), (('pair', (8, 8), 1), 720), (('pair', (8, 8), 2), 852), (('pair', (8, 8), 3), 123), (('pair', (8, 8), 4), 162), (('pair', (8, 8), 5), 15), (('pair', (8, 8), 6), 30), (('pair', (8, 10), 1), 12738), (('pair', (8, 10), 2), 17316), (('pair', (8, 10), 3), 5898), (('pair', (8, 10), 4), 1794), (('pair', (8, 10), 5), 2160), (('pair', (8, 10), 6), 432), (('pair', (8, 10), 7), 186), (('single', 12, 11), 132), (('single', 14, 13), 624), (('single', 16, 14), 74), (('single', 16, 15), 6804), (('single', 18, 16), 2412), (('single', 18, 17), 44742), (('triple', 1, 1), 10554), (('triple', 2, 1), 2353), (('triple', 2, 2), 732), (('triple', 2, 6), 12)]
+DATA named 4H phase 1 u 1 bilayer c (upper atom), local word hchchch
+  cycles l=6..24 step 2: [12, 24, 240, 1128, 8148, 50016, 349182, 2362074, 16714935, 118331331]
+  SP rings l=6..24 step 2: [12, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  per bond (V,S,S,S) cycles: l6:[6, 6, 6, 6] | l8:[12, 12, 12, 12] | l10:[120, 120, 120, 120] | l12:[564, 564, 564, 564] | l14:[4074, 4074, 4074, 4074] | l16:[25008, 25008, 25008, 25008] | l18:[174570, 174598, 174598, 174598] | l20:[1181172, 1180992, 1180992, 1180992] | l22:[8357274, 8357532, 8357532, 8357532] | l24:[59170788, 59163958, 59163958, 59163958]
+  per bond (V,S,S,S) SP: l6:[6, 6, 6, 6]
+CHECK 4H ph1 u1 no odd cycles (bipartite) ok
+CHECK 4H ph1 u1 NB loops = #102 values to 20 ok
+  coordination sequence: [1, 4, 12, 25, 44, 67, 96, 130, 170]
+  King rings per site (length: number): {6: 12}   Guttman: {6: 24}
+CHECK 4H ph1 u1 King = 12 six-rings (2 per angle), Guttman = 24 bond-ring incidences (12 six-rings) ok
+  ice polymer series per site, y^0..18: ['0', '0', '0', '0', '0', '0', '2/729', '0', '1/2187', '0', '8/19683', '0', '6601/21257640', '0', '31897/175375530', '0', '2926471/20518937010', '0', '10425132313/98891016919695']
+  ice clusters at the site (kind, bonds or sizes, vertices or shared vertices): [(('pair', (6, 6), 1), 132), (('pair', (6, 6), 2), 186), (('pair', (6, 6), 3), 45), (('pair', (6, 6), 4), 3), (('pair', (6, 8), 1), 624), (('pair', (6, 8), 2), 834), (('pair', (6, 8), 3), 156), (('pair', (6, 8), 4), 24), (('pair', (6, 8), 5), 90), (('pair', (6, 10), 1), 6084), (('pair', (6, 10), 2), 8502), (('pair', (6, 10), 3), 2892), (('pair', (6, 10), 4), 846), (('pair', (6, 10), 5), 180), (('pair', (6, 10), 6), 372), (('pair', (6, 12), 1), 35844), (('pair', (6, 12), 2), 49038), (('pair', (6, 12), 3), 17484), (('pair', (6, 12), 4), 4344), (('pair', (6, 12), 5), 3726), (('pair', (6, 12), 6), 1212), (('pair', (8, 8), 1), 720), (('pair', (8, 8), 2), 852), (('pair', (8, 8), 3), 123), (('pair', (8, 8), 4), 162), (('pair', (8, 8), 5), 15), (('pair', (8, 8), 6), 30), (('pair', (8, 10), 1), 12738), (('pair', (8, 10), 2), 17316), (('pair', (8, 10), 3), 5898), (('pair', (8, 10), 4), 1794), (('pair', (8, 10), 5), 2160), (('pair', (8, 10), 6), 432), (('pair', (8, 10), 7), 186), (('single', 12, 11), 132), (('single', 14, 13), 624), (('single', 16, 14), 74), (('single', 16, 15), 6804), (('single', 18, 16), 2412), (('single', 18, 17), 44742), (('triple', 1, 1), 10554), (('triple', 2, 1), 2353), (('triple', 2, 2), 732), (('triple', 2, 6), 12)]
+PROGRESS 1.0000 named 2/2 4H phase 1 (214 s)
+CHECK ('4H', 0, 0) 12 six-rings per site (Herrero-Ramirez 2013 for Ih, Ic), all SP ok
+CHECK ('4H', 0, 1) 12 six-rings per site (Herrero-Ramirez 2013 for Ih, Ic), all SP ok
+CHECK ('4H', 1, 0) 12 six-rings per site (Herrero-Ramirez 2013 for Ih, Ic), all SP ok
+CHECK ('4H', 1, 1) 12 six-rings per site (Herrero-Ramirez 2013 for Ih, Ic), all SP ok
+TABLE cycles through a site (self-avoiding polygons), by length
+   ('4H', 0, 0) [12, 24, 240, 1128, 8148, 50016, 349182, 2361966, 16714593, 118326909]
+   ('4H', 0, 1) [12, 24, 240, 1128, 8148, 50016, 349182, 2361966, 16714593, 118326909]
+   ('4H', 1, 0) [12, 24, 240, 1128, 8148, 50016, 349182, 2362074, 16714935, 118331331]
+   ('4H', 1, 1) [12, 24, 240, 1128, 8148, 50016, 349182, 2362074, 16714935, 118331331]
+TABLE SP (primitive) rings through a site, by length
+   ('4H', 0, 0) [12, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   ('4H', 0, 1) [12, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   ('4H', 1, 0) [12, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   ('4H', 1, 1) [12, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+TABLE period averages (per site) of cycles, by length 6..L
+   4H    h-fraction 1/2   12 24 240 1128 8148 50016 349182 2362020 16714764 118329120
+TABLE ice polymer series, period average per site (coefficients of y^6..y^18 in ln Xi / N)
+   4H    h-fraction 1/2   y^6:2/729 y^8:1/2187 y^10:8/19683 y^12:55/177147 y^14:290/1594323 y^16:1367/9565938 y^18:122396/1162261467
+18 checks, 0 failed (214 s)
+ALLCHECKS ok

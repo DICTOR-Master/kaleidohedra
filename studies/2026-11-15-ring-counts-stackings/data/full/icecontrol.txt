@@ -1,0 +1,19 @@
+MODE icecontrol: cluster expansion (ice_series, summed over all sites) = brute-force ln Xi on finite pieces, to y^18
+  piece c 59 vertices, cycle space dim 20: brute ['28/729', '31/6561', '124/59049', '487/531441', '1406/4782969', '8747/86093442', '37630/1162261467']
+  piece c cluster expansion                       ['28/729', '31/6561', '124/59049', '487/531441', '1406/4782969', '8747/86093442', '37630/1162261467']
+CHECK icecontrol piece c dim 20: cluster expansion = brute force to y^18 ok
+PROGRESS 0.2500 icecontrol 1/4 (15 s)
+  piece h 63 vertices, cycle space dim 20: brute ['10/243', '29/6561', '145/59049', '508/531441', '155/531441', '11329/86093442', '11509/387420489']
+  piece h cluster expansion                       ['10/243', '29/6561', '145/59049', '508/531441', '155/531441', '11329/86093442', '11509/387420489']
+CHECK icecontrol piece h dim 20: cluster expansion = brute force to y^18 ok
+PROGRESS 0.5000 icecontrol 2/4 (33 s)
+  piece hc 61 vertices, cycle space dim 21: brute ['10/243', '34/6561', '142/59049', '535/531441', '524/1594323', '5714/43046721', '169/4782969']
+  piece hc cluster expansion                       ['10/243', '34/6561', '142/59049', '535/531441', '524/1594323', '5714/43046721', '169/4782969']
+CHECK icecontrol piece hc dim 21: cluster expansion = brute force to y^18 ok
+PROGRESS 0.7500 icecontrol 3/4 (57 s)
+  piece c 65 vertices, cycle space dim 23: brute ['34/729', '40/6561', '164/59049', '73/59049', '26/59049', '2371/14348907', '64684/1162261467']
+  piece c cluster expansion                       ['34/729', '40/6561', '164/59049', '73/59049', '26/59049', '2371/14348907', '64684/1162261467']
+CHECK icecontrol piece c dim 23: cluster expansion = brute force to y^18 ok
+PROGRESS 1.0000 icecontrol 4/4 (113 s)
+4 checks, 0 failed (113 s)
+ALLCHECKS ok

@@ -7783,6 +7783,16 @@
     "retry": "only with the catalogue files obtained legitimately: McCooey's permission/files, or DICTO's own browser download, or DICTO's explicit approval of another client; then run match.py unchanged",
     "study": "studies/2026-11-15-mccooey-comparison",
     "goes_to": "prior-art sections of the Permutohedron and Platonic books, Concordance also-called lines (after the run)"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "Palomar #102 notability lead (reviewer): first length where ring counts differ between close-packed tetrahedral stackings (c/h words incl. Fibonacci), per ring definition, with exact values, local law and an ice Ic/Ih consequence",
+    "method": "studies/2026-11-15-ring-counts-stackings: rings_core.c (exact cycle enumeration + SP no-shortcut test, per bond) + rings.py (NB loops, King/Guttman, GF(2) strong-ring span, Mayer cluster expansion of Nagle's even-subgraph form to 18 bonds); 11 polytypes to l=24, all 2048 c/h words of 11 bilayers to l=20 (Moebius/multilinear formula), Fibonacci 8 sites; controls 2*A038515, #102 NB values, coordination sequences, Herrero-Ramirez 12 six-rings, brute-force ln Xi on 4 pieces, wrong-expectation and corrupted-network negatives; jobs ringstack-pilot, ringstack, ringdiag, 5058 checks, FINAL ok",
+    "status": "SETTLED (computed to the stated lengths)",
+    "result": "King, Guttman, SP/primitive and strong rings are stacking-blind: 12 six-rings per site, nothing else (Ih/Ic KNOWN Herrero-Ramirez 2013; all stackings new; strong = proof via hexagon-faced cages). Polygons equal to l=16, first differ at m*=18: 3C 349236, 2H 349128; lower atom of bilayer 0: p18 = 349236 - 12h[-2] - 30h[-1] - 42h[0] - 24h[1], p20 = 2362200 - 30h[-2] - 114h[-1] - 204h[0] - 12h[1]; period averages 349236-108f, 2362200-360f, 16716612-3696f (l=22), 118335744-13464f+108b (l=24, b = c/h boundary fraction); difference carried only by cycles crossing one bilayer 4 times. Ice series (Nagle form, graded by bonds) equal to y^14, a16 = (4037+128f)/(2*3^15), a18 = (123404-2016f)/3^19",
+    "retry": "only: bijective proof (cycles crossing each bilayer <= 2 times equinumerous), local formulas at l=22,24 (W=6), ice order 20; Lean only after a structural proof (counts too large for kernel decide, native_decide banned)",
+    "study": "studies/2026-11-15-ring-counts-stackings",
+    "goes_to": "#102 next version or a separate note (DICTO to place); Palomar #102 notability"
    }
   ]
  },

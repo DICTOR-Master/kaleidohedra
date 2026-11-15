@@ -1,0 +1,43 @@
+MODE fib L=20: Fibonacci c/h word, sites at several positions, two window sizes
+CHECK fib pos 100 u0 NB loops = #102 ok
+CHECK fib pos 100 u1 NB loops = #102 ok
+CHECK fib pos 100: window independent ok
+DATA fib pos 100 local word cchcchchc (centre c): cycles lower (12, 24, 240, 1128, 8148, 50016, 349200, 2362158) upper (12, 24, 240, 1128, 8148, 50016, 349206, 2362086); SP lower (12, 0, 0, 0, 0, 0, 0, 0) upper (12, 0, 0, 0, 0, 0, 0, 0)
+PROGRESS 0.1250 fib 1/8 (3 s)
+CHECK fib pos 233 u0 NB loops = #102 ok
+CHECK fib pos 233 u1 NB loops = #102 ok
+CHECK fib pos 233: window independent ok
+DATA fib pos 233 local word hcchchcch (centre c): cycles lower (12, 24, 240, 1128, 8148, 50016, 349182, 2362074) upper (12, 24, 240, 1128, 8148, 50016, 349182, 2362074); SP lower (12, 0, 0, 0, 0, 0, 0, 0) upper (12, 0, 0, 0, 0, 0, 0, 0)
+PROGRESS 0.2500 fib 2/8 (6 s)
+CHECK fib pos 377 u0 NB loops = #102 ok
+CHECK fib pos 377 u1 NB loops = #102 ok
+CHECK fib pos 377: window independent ok
+DATA fib pos 377 local word hchcchcch (centre c): cycles lower (12, 24, 240, 1128, 8148, 50016, 349200, 2362158) upper (12, 24, 240, 1128, 8148, 50016, 349206, 2362086); SP lower (12, 0, 0, 0, 0, 0, 0, 0) upper (12, 0, 0, 0, 0, 0, 0, 0)
+PROGRESS 0.3750 fib 3/8 (9 s)
+CHECK fib pos 610 u0 NB loops = #102 ok
+CHECK fib pos 610 u1 NB loops = #102 ok
+CHECK fib pos 610: window independent ok
+DATA fib pos 610 local word hcchchcch (centre c): cycles lower (12, 24, 240, 1128, 8148, 50016, 349182, 2362074) upper (12, 24, 240, 1128, 8148, 50016, 349182, 2362074); SP lower (12, 0, 0, 0, 0, 0, 0, 0) upper (12, 0, 0, 0, 0, 0, 0, 0)
+PROGRESS 0.5000 fib 4/8 (12 s)
+CHECK fib pos 987 u0 NB loops = #102 ok
+CHECK fib pos 987 u1 NB loops = #102 ok
+CHECK fib pos 987: window independent ok
+DATA fib pos 987 local word hchcchcch (centre c): cycles lower (12, 24, 240, 1128, 8148, 50016, 349200, 2362158) upper (12, 24, 240, 1128, 8148, 50016, 349206, 2362086); SP lower (12, 0, 0, 0, 0, 0, 0, 0) upper (12, 0, 0, 0, 0, 0, 0, 0)
+PROGRESS 0.6250 fib 5/8 (15 s)
+CHECK fib pos 1597 u0 NB loops = #102 ok
+CHECK fib pos 1597 u1 NB loops = #102 ok
+CHECK fib pos 1597: window independent ok
+DATA fib pos 1597 local word hcchchcch (centre c): cycles lower (12, 24, 240, 1128, 8148, 50016, 349182, 2362074) upper (12, 24, 240, 1128, 8148, 50016, 349182, 2362074); SP lower (12, 0, 0, 0, 0, 0, 0, 0) upper (12, 0, 0, 0, 0, 0, 0, 0)
+PROGRESS 0.7500 fib 6/8 (18 s)
+CHECK fib pos 2001 u0 NB loops = #102 ok
+CHECK fib pos 2001 u1 NB loops = #102 ok
+CHECK fib pos 2001: window independent ok
+DATA fib pos 2001 local word cchchcchc (centre h): cycles lower (12, 24, 240, 1128, 8148, 50016, 349182, 2361966) upper (12, 24, 240, 1128, 8148, 50016, 349194, 2361996); SP lower (12, 0, 0, 0, 0, 0, 0, 0) upper (12, 0, 0, 0, 0, 0, 0, 0)
+PROGRESS 0.8750 fib 7/8 (20 s)
+CHECK fib pos 2584 u0 NB loops = #102 ok
+CHECK fib pos 2584 u1 NB loops = #102 ok
+CHECK fib pos 2584: window independent ok
+DATA fib pos 2584 local word hchcchcch (centre c): cycles lower (12, 24, 240, 1128, 8148, 50016, 349200, 2362158) upper (12, 24, 240, 1128, 8148, 50016, 349206, 2362086); SP lower (12, 0, 0, 0, 0, 0, 0, 0) upper (12, 0, 0, 0, 0, 0, 0, 0)
+PROGRESS 1.0000 fib 8/8 (23 s)
+24 checks, 0 failed (23 s)
+ALLCHECKS ok

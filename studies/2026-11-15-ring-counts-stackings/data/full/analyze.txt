@@ -1,0 +1,37 @@
+CHECK analyze: all 4096 (site, word) pairs present ok
+FORMULA site u=0 (lower atom of bilayer 0); h[j] = 1 if bilayer j is h (j = -5..5), else 0
+  l=6: values [12]; depends on bilayers []; = 12
+CHECK analyze u=0 l=6: window edge bilayers -5, 5 not needed ok
+  l=8: values [24]; depends on bilayers []; = 24
+CHECK analyze u=0 l=8: window edge bilayers -5, 5 not needed ok
+  l=10: values [240]; depends on bilayers []; = 240
+CHECK analyze u=0 l=10: window edge bilayers -5, 5 not needed ok
+  l=12: values [1128]; depends on bilayers []; = 1128
+CHECK analyze u=0 l=12: window edge bilayers -5, 5 not needed ok
+  l=14: values [8148]; depends on bilayers []; = 8148
+CHECK analyze u=0 l=14: window edge bilayers -5, 5 not needed ok
+  l=16: values [50016]; depends on bilayers []; = 50016
+CHECK analyze u=0 l=16: window edge bilayers -5, 5 not needed ok
+  l=18: values [349128, 349140, 349152, 349158, 349164, 349170, 349182, 349194, 349200, 349206, 349212, 349224, 349236]; depends on bilayers [-2, -1, 0, 1]; = 349236 + (-12)*h[-2] + (-30)*h[-1] + (-42)*h[0] + (-24)*h[1]
+CHECK analyze u=0 l=18: window edge bilayers -5, 5 not needed ok
+  l=20: values [2361840, 2361852, 2361870, 2361882, 2361954, 2361966, 2361984, 2361996, 2362044, 2362056, 2362074, 2362086, 2362158, 2362170, 2362188, 2362200]; depends on bilayers [-2, -1, 0, 1]; = 2362200 + (-30)*h[-2] + (-114)*h[-1] + (-204)*h[0] + (-12)*h[1]
+CHECK analyze u=0 l=20: window edge bilayers -5, 5 not needed ok
+FORMULA site u=1 (upper atom of bilayer 0); h[j] = 1 if bilayer j is h (j = -5..5), else 0
+  l=6: values [12]; depends on bilayers []; = 12
+CHECK analyze u=1 l=6: window edge bilayers -5, 5 not needed ok
+  l=8: values [24]; depends on bilayers []; = 24
+CHECK analyze u=1 l=8: window edge bilayers -5, 5 not needed ok
+  l=10: values [240]; depends on bilayers []; = 240
+CHECK analyze u=1 l=10: window edge bilayers -5, 5 not needed ok
+  l=12: values [1128]; depends on bilayers []; = 1128
+CHECK analyze u=1 l=12: window edge bilayers -5, 5 not needed ok
+  l=14: values [8148]; depends on bilayers []; = 8148
+CHECK analyze u=1 l=14: window edge bilayers -5, 5 not needed ok
+  l=16: values [50016]; depends on bilayers []; = 50016
+CHECK analyze u=1 l=16: window edge bilayers -5, 5 not needed ok
+  l=18: values [349128, 349140, 349152, 349158, 349164, 349170, 349182, 349194, 349200, 349206, 349212, 349224, 349236]; depends on bilayers [-1, 0, 1, 2]; = 349236 + (-24)*h[-1] + (-42)*h[0] + (-30)*h[1] + (-12)*h[2]
+CHECK analyze u=1 l=18: window edge bilayers -5, 5 not needed ok
+  l=20: values [2361840, 2361852, 2361870, 2361882, 2361954, 2361966, 2361984, 2361996, 2362044, 2362056, 2362074, 2362086, 2362158, 2362170, 2362188, 2362200]; depends on bilayers [-1, 0, 1, 2]; = 2362200 + (-12)*h[-1] + (-204)*h[0] + (-114)*h[1] + (-30)*h[2]
+CHECK analyze u=1 l=20: window edge bilayers -5, 5 not needed ok
+17 checks, 0 failed (2 s)
+ALLCHECKS ok

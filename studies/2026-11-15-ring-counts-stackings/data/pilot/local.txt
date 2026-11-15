@@ -1,0 +1,553 @@
+MODE local L=14 W=3 chunk 0/1
+LOCALDATA L 14 W 3 u 0 word ccccccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word ccccccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (0, 0, 0, 0, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word cccccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cccccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word ccccchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word ccccchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word ccccchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word ccccchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cccchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cccchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cccchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cccchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.0469 local chunk 0 6/128 (1 s)
+LOCALDATA L 14 W 3 u 0 word cccchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cccchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cccchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cccchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 0, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word ccchccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word ccchccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (0, 0, 0, 1, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word ccchcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word ccchcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word ccchchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word ccchchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word ccchchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word ccchchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.0938 local chunk 0 12/128 (2 s)
+LOCALDATA L 14 W 3 u 0 word ccchhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word ccchhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word ccchhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word ccchhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word ccchhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word ccchhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word ccchhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word ccchhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 0, 1, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cchcccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchcccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (0, 0, 1, 0, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word cchccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.1406 local chunk 0 18/128 (3 s)
+LOCALDATA L 14 W 3 u 0 word cchcchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchcchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cchcchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchcchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cchchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cchchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cchchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cchchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 0, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.1875 local chunk 0 24/128 (4 s)
+LOCALDATA L 14 W 3 u 0 word cchhccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchhccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (0, 0, 1, 1, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word cchhcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchhcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cchhchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchhchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cchhchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchhchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cchhhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchhhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cchhhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchhhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.2344 local chunk 0 30/128 (5 s)
+LOCALDATA L 14 W 3 u 0 word cchhhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchhhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word cchhhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word cchhhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 0, 1, 1, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chccccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chccccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (0, 1, 0, 0, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word chcccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chcccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chccchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chccchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chccchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chccchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.2812 local chunk 0 36/128 (6 s)
+LOCALDATA L 14 W 3 u 0 word chcchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chcchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chcchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chcchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chcchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chcchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chcchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chcchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 0, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chchccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chchccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (0, 1, 0, 1, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word chchcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chchcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.3281 local chunk 0 42/128 (7 s)
+LOCALDATA L 14 W 3 u 0 word chchchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chchchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chchchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chchchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chchhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chchhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chchhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chchhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chchhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chchhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chchhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chchhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 0, 1, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.3750 local chunk 0 48/128 (8 s)
+LOCALDATA L 14 W 3 u 0 word chhcccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhcccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (0, 1, 1, 0, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word chhccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chhcchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhcchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chhcchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhcchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chhchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chhchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.4219 local chunk 0 54/128 (9 s)
+LOCALDATA L 14 W 3 u 0 word chhchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chhchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 0, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chhhccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhhccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (0, 1, 1, 1, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word chhhcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhhcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chhhchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhhchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chhhchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhhchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.4688 local chunk 0 60/128 (10 s)
+LOCALDATA L 14 W 3 u 0 word chhhhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhhhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chhhhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhhhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chhhhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhhhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word chhhhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word chhhhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (0, 1, 1, 1, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hcccccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hcccccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (1, 0, 0, 0, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word hccccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hccccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.5156 local chunk 0 66/128 (11 s)
+LOCALDATA L 14 W 3 u 0 word hcccchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hcccchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hcccchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hcccchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hccchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hccchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hccchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hccchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hccchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hccchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hccchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hccchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 0, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.5625 local chunk 0 72/128 (11 s)
+LOCALDATA L 14 W 3 u 0 word hcchccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hcchccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (1, 0, 0, 1, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word hcchcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hcchcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hcchchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hcchchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hcchchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hcchchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hcchhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hcchhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hcchhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hcchhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.6094 local chunk 0 78/128 (13 s)
+LOCALDATA L 14 W 3 u 0 word hcchhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hcchhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hcchhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hcchhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 0, 1, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hchcccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchcccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (1, 0, 1, 0, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word hchccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hchcchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchcchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hchcchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchcchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.6562 local chunk 0 84/128 (14 s)
+LOCALDATA L 14 W 3 u 0 word hchchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hchchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hchchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hchchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 0, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hchhccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchhccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (1, 0, 1, 1, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word hchhcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchhcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.7031 local chunk 0 90/128 (15 s)
+LOCALDATA L 14 W 3 u 0 word hchhchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchhchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hchhchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchhchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hchhhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchhhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hchhhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchhhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hchhhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchhhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hchhhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hchhhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 0, 1, 1, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.7500 local chunk 0 96/128 (15 s)
+LOCALDATA L 14 W 3 u 0 word hhccccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhccccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (1, 1, 0, 0, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word hhcccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhcccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhccchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhccchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhccchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhccchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhcchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhcchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhcchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhcchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.7969 local chunk 0 102/128 (16 s)
+LOCALDATA L 14 W 3 u 0 word hhcchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhcchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhcchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhcchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 0, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhchccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhchccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (1, 1, 0, 1, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word hhchcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhchcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhchchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhchchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhchchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhchchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.8438 local chunk 0 108/128 (17 s)
+LOCALDATA L 14 W 3 u 0 word hhchhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhchhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhchhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhchhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhchhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhchhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhchhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhchhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 0, 1, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhhcccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhcccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (1, 1, 1, 0, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word hhhccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhccch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.8906 local chunk 0 114/128 (18 s)
+LOCALDATA L 14 W 3 u 0 word hhhcchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhcchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhhcchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhcchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhhchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhchcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhhchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhchch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhhchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhchhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhhchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhchhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 0, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.9375 local chunk 0 120/128 (19 s)
+LOCALDATA L 14 W 3 u 0 word hhhhccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 0, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhhccc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 0, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+CHECK local (1, 1, 1, 1, 0, 0, 0): outside letters and window size irrelevant ok
+LOCALDATA L 14 W 3 u 0 word hhhhcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 0, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhhcch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 0, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhhhchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 0, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhhchc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 0, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhhhchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 0, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhhchh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 0, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhhhhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 1, 0, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhhhcc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 1, 0, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhhhhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 1, 0, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhhhch cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 1, 0, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 0.9844 local chunk 0 126/128 (20 s)
+LOCALDATA L 14 W 3 u 0 word hhhhhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 1, 1, 0) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhhhhc cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 1, 1, 0) u1: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 0 word hhhhhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 1, 1, 1) u0: 12 six-rings, no SP ring longer than 6 ok
+LOCALDATA L 14 W 3 u 1 word hhhhhhh cyc 12 24 240 1128 8148 sp 12 0 0 0 0 bond 6,6,6,6;12,12,12,12;120,120,120,120;564,564,564,564;4074,4074,4074,4074
+CHECK local (1, 1, 1, 1, 1, 1, 1) u1: 12 six-rings, no SP ring longer than 6 ok
+PROGRESS 1.0000 local chunk 0 128/128 (21 s)
+272 checks, 0 failed (21 s)
+ALLCHECKS ok

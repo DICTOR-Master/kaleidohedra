@@ -1,0 +1,78 @@
+MODE named L=20 LNB=14
+DATA named 3C phase 0 u 0 bilayer c (lower atom), local word ccccccc
+  cycles l=6..20 step 2: [12, 24, 240, 1128, 8148, 50016, 349236, 2362200]
+  SP rings l=6..20 step 2: [12, 0, 0, 0, 0, 0, 0, 0]
+  per bond (V,S,S,S) cycles: l6:[6, 6, 6, 6] | l8:[12, 12, 12, 12] | l10:[120, 120, 120, 120] | l12:[564, 564, 564, 564] | l14:[4074, 4074, 4074, 4074] | l16:[25008, 25008, 25008, 25008] | l18:[174618, 174618, 174618, 174618] | l20:[1181100, 1181100, 1181100, 1181100]
+  per bond (V,S,S,S) SP: l6:[6, 6, 6, 6]
+CHECK 3C ph0 u0 no odd cycles (bipartite) ok
+CHECK 3C ph0 u0 NB loops = #102 values to 14 ok
+  coordination sequence: [1, 4, 12, 24, 42, 64, 92, 124, 162]
+  King rings per site (length: number): {6: 12}   Guttman: {6: 24}
+CHECK 3C ph0 u0 King = 12 six-rings (2 per angle), Guttman = 24 bond-ring incidences (12 six-rings) ok
+  strong-ring check: 1392/1392 cycles of length 8..12 in the span of 584 nearby 6-rings
+CHECK 3C ph0 u0 no strong rings of length 8..12 ok
+  ice polymer series per site, y^0..18: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
+DATA named 3C phase 0 u 1 bilayer c (upper atom), local word ccccccc
+  cycles l=6..20 step 2: [12, 24, 240, 1128, 8148, 50016, 349236, 2362200]
+  SP rings l=6..20 step 2: [12, 0, 0, 0, 0, 0, 0, 0]
+  per bond (V,S,S,S) cycles: l6:[6, 6, 6, 6] | l8:[12, 12, 12, 12] | l10:[120, 120, 120, 120] | l12:[564, 564, 564, 564] | l14:[4074, 4074, 4074, 4074] | l16:[25008, 25008, 25008, 25008] | l18:[174618, 174618, 174618, 174618] | l20:[1181100, 1181100, 1181100, 1181100]
+  per bond (V,S,S,S) SP: l6:[6, 6, 6, 6]
+CHECK 3C ph0 u1 no odd cycles (bipartite) ok
+CHECK 3C ph0 u1 NB loops = #102 values to 14 ok
+  coordination sequence: [1, 4, 12, 24, 42, 64, 92, 124, 162]
+  King rings per site (length: number): {6: 12}   Guttman: {6: 24}
+CHECK 3C ph0 u1 King = 12 six-rings (2 per angle), Guttman = 24 bond-ring incidences (12 six-rings) ok
+  strong-ring check: 1392/1392 cycles of length 8..12 in the span of 584 nearby 6-rings
+CHECK 3C ph0 u1 no strong rings of length 8..12 ok
+  ice polymer series per site, y^0..18: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
+PROGRESS 0.5000 named 1/2 3C phase 0 (4 s)
+DATA named 2H phase 0 u 0 bilayer h (lower atom), local word hhhhhhh
+  cycles l=6..20 step 2: [12, 24, 240, 1128, 8148, 50016, 349128, 2361840]
+  SP rings l=6..20 step 2: [12, 0, 0, 0, 0, 0, 0, 0]
+  per bond (V,S,S,S) cycles: l6:[6, 6, 6, 6] | l8:[12, 12, 12, 12] | l10:[120, 120, 120, 120] | l12:[564, 564, 564, 564] | l14:[4074, 4074, 4074, 4074] | l16:[25008, 25008, 25008, 25008] | l18:[174522, 174578, 174578, 174578] | l20:[1181028, 1180884, 1180884, 1180884]
+  per bond (V,S,S,S) SP: l6:[6, 6, 6, 6]
+CHECK 2H ph0 u0 no odd cycles (bipartite) ok
+CHECK 2H ph0 u0 NB loops = #102 values to 14 ok
+  coordination sequence: [1, 4, 12, 25, 44, 67, 96, 130, 170]
+  King rings per site (length: number): {6: 12}   Guttman: {6: 24}
+CHECK 2H ph0 u0 King = 12 six-rings (2 per angle), Guttman = 24 bond-ring incidences (12 six-rings) ok
+  strong-ring check: 1392/1392 cycles of length 8..12 in the span of 624 nearby 6-rings
+CHECK 2H ph0 u0 no strong rings of length 8..12 ok
+  ice polymer series per site, y^0..18: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
+DATA named 2H phase 0 u 1 bilayer h (upper atom), local word hhhhhhh
+  cycles l=6..20 step 2: [12, 24, 240, 1128, 8148, 50016, 349128, 2361840]
+  SP rings l=6..20 step 2: [12, 0, 0, 0, 0, 0, 0, 0]
+  per bond (V,S,S,S) cycles: l6:[6, 6, 6, 6] | l8:[12, 12, 12, 12] | l10:[120, 120, 120, 120] | l12:[564, 564, 564, 564] | l14:[4074, 4074, 4074, 4074] | l16:[25008, 25008, 25008, 25008] | l18:[174522, 174578, 174578, 174578] | l20:[1181028, 1180884, 1180884, 1180884]
+  per bond (V,S,S,S) SP: l6:[6, 6, 6, 6]
+CHECK 2H ph0 u1 no odd cycles (bipartite) ok
+CHECK 2H ph0 u1 NB loops = #102 values to 14 ok
+  coordination sequence: [1, 4, 12, 25, 44, 67, 96, 130, 170]
+  King rings per site (length: number): {6: 12}   Guttman: {6: 24}
+CHECK 2H ph0 u1 King = 12 six-rings (2 per angle), Guttman = 24 bond-ring incidences (12 six-rings) ok
+  strong-ring check: 1392/1392 cycles of length 8..12 in the span of 624 nearby 6-rings
+CHECK 2H ph0 u1 no strong rings of length 8..12 ok
+  ice polymer series per site, y^0..18: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
+PROGRESS 1.0000 named 2/2 2H phase 0 (7 s)
+CHECK 3C cycles = 2*A038515 (diamond closed SAWs, Guttmann-Jensen) ok
+CHECK ('3C', 0, 0) 12 six-rings per site (Herrero-Ramirez 2013 for Ih, Ic), all SP ok
+CHECK ('3C', 0, 1) 12 six-rings per site (Herrero-Ramirez 2013 for Ih, Ic), all SP ok
+CHECK ('2H', 0, 0) 12 six-rings per site (Herrero-Ramirez 2013 for Ih, Ic), all SP ok
+CHECK ('2H', 0, 1) 12 six-rings per site (Herrero-Ramirez 2013 for Ih, Ic), all SP ok
+TABLE cycles through a site (self-avoiding polygons), by length
+   ('2H', 0, 0) [12, 24, 240, 1128, 8148, 50016, 349128, 2361840]
+   ('2H', 0, 1) [12, 24, 240, 1128, 8148, 50016, 349128, 2361840]
+   ('3C', 0, 0) [12, 24, 240, 1128, 8148, 50016, 349236, 2362200]
+   ('3C', 0, 1) [12, 24, 240, 1128, 8148, 50016, 349236, 2362200]
+TABLE SP (primitive) rings through a site, by length
+   ('2H', 0, 0) [12, 0, 0, 0, 0, 0, 0, 0]
+   ('2H', 0, 1) [12, 0, 0, 0, 0, 0, 0, 0]
+   ('3C', 0, 0) [12, 0, 0, 0, 0, 0, 0, 0]
+   ('3C', 0, 1) [12, 0, 0, 0, 0, 0, 0, 0]
+TABLE period averages (per site) of cycles, by length 6..L
+   3C    h-fraction 0     12 24 240 1128 8148 50016 349236 2362200
+   2H    h-fraction 1     12 24 240 1128 8148 50016 349128 2361840
+TABLE ice polymer series, period average per site (coefficients of y^6..y^18 in ln Xi / N)
+   3C    h-fraction 0     y^6:0 y^8:0 y^10:0 y^12:0 y^14:0 y^16:0 y^18:0
+   2H    h-fraction 1     y^6:0 y^8:0 y^10:0 y^12:0 y^14:0 y^16:0 y^18:0
+21 checks, 0 failed (7 s)
+ALLCHECKS ok

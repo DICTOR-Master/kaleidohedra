@@ -1,0 +1,45 @@
+MODE named L=24 LNB=20
+DATA named 3C phase 0 u 0 bilayer c (lower atom), local word ccccccc
+  cycles l=6..24 step 2: [12, 24, 240, 1128, 8148, 50016, 349236, 2362200, 16716612, 118335744]
+  SP rings l=6..24 step 2: [12, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  per bond (V,S,S,S) cycles: l6:[6, 6, 6, 6] | l8:[12, 12, 12, 12] | l10:[120, 120, 120, 120] | l12:[564, 564, 564, 564] | l14:[4074, 4074, 4074, 4074] | l16:[25008, 25008, 25008, 25008] | l18:[174618, 174618, 174618, 174618] | l20:[1181100, 1181100, 1181100, 1181100] | l22:[8358306, 8358306, 8358306, 8358306] | l24:[59167872, 59167872, 59167872, 59167872]
+  per bond (V,S,S,S) SP: l6:[6, 6, 6, 6]
+CHECK 3C ph0 u0 no odd cycles (bipartite) ok
+CHECK 3C ph0 u0 NB loops = #102 values to 20 ok
+  coordination sequence: [1, 4, 12, 24, 42, 64, 92, 124, 162]
+  King rings per site (length: number): {6: 12}   Guttman: {6: 24}
+CHECK 3C ph0 u0 King = 12 six-rings (2 per angle), Guttman = 24 bond-ring incidences (12 six-rings) ok
+  strong-ring check: 1392/1392 cycles of length 8..12 in the span of 584 nearby 6-rings
+CHECK 3C ph0 u0 no strong rings of length 8..12 ok
+  ice polymer series per site, y^0..18: ['0', '0', '0', '0', '0', '0', '2/729', '0', '1/2187', '0', '8/19683', '0', '55/177147', '0', '290/1594323', '0', '4037/28697814', '0', '123404/1162261467']
+  ice clusters at the site (kind, bonds or sizes, vertices or shared vertices): [(('pair', (6, 6), 1), 132), (('pair', (6, 6), 2), 180), (('pair', (6, 6), 3), 54), (('pair', (6, 8), 1), 624), (('pair', (6, 8), 2), 864), (('pair', (6, 8), 3), 132), (('pair', (6, 8), 5), 108), (('pair', (6, 10), 1), 6120), (('pair', (6, 10), 2), 8232), (('pair', (6, 10), 3), 3276), (('pair', (6, 10), 4), 792), (('pair', (6, 10), 5), 132), (('pair', (6, 10), 6), 360), (('pair', (6, 12), 1), 35664), (('pair', (6, 12), 2), 49248), (('pair', (6, 12), 3), 18036), (('pair', (6, 12), 4), 3144), (('pair', (6, 12), 5), 4212), (('pair', (6, 12), 6), 1272), (('pair', (8, 8), 1), 720), (('pair', (8, 8), 2), 840), (('pair', (8, 8), 3), 78), (('pair', (8, 8), 4), 216), (('pair', (8, 8), 6), 30), (('pair', (8, 10), 1), 12648), (('pair', (8, 10), 2), 17856), (('pair', (8, 10), 3), 5580), (('pair', (8, 10), 4), 1176), (('pair', (8, 10), 5), 2496), (('pair', (8, 10), 6), 576), (('pair', (8, 10), 7), 132), (('single', 12, 11), 132), (('single', 14, 13), 624), (('single', 16, 14), 56), (('single', 16, 15), 6840), (('single', 18, 16), 2496), (('single', 18, 17), 44472), (('triple', 1, 1), 10524), (('triple', 2, 1), 2368), (('triple', 2, 2), 732), (('triple', 2, 6), 12)]
+DATA named 3C phase 0 u 1 bilayer c (upper atom), local word ccccccc
+  cycles l=6..24 step 2: [12, 24, 240, 1128, 8148, 50016, 349236, 2362200, 16716612, 118335744]
+  SP rings l=6..24 step 2: [12, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  per bond (V,S,S,S) cycles: l6:[6, 6, 6, 6] | l8:[12, 12, 12, 12] | l10:[120, 120, 120, 120] | l12:[564, 564, 564, 564] | l14:[4074, 4074, 4074, 4074] | l16:[25008, 25008, 25008, 25008] | l18:[174618, 174618, 174618, 174618] | l20:[1181100, 1181100, 1181100, 1181100] | l22:[8358306, 8358306, 8358306, 8358306] | l24:[59167872, 59167872, 59167872, 59167872]
+  per bond (V,S,S,S) SP: l6:[6, 6, 6, 6]
+CHECK 3C ph0 u1 no odd cycles (bipartite) ok
+CHECK 3C ph0 u1 NB loops = #102 values to 20 ok
+  coordination sequence: [1, 4, 12, 24, 42, 64, 92, 124, 162]
+  King rings per site (length: number): {6: 12}   Guttman: {6: 24}
+CHECK 3C ph0 u1 King = 12 six-rings (2 per angle), Guttman = 24 bond-ring incidences (12 six-rings) ok
+  strong-ring check: 1392/1392 cycles of length 8..12 in the span of 584 nearby 6-rings
+CHECK 3C ph0 u1 no strong rings of length 8..12 ok
+  ice polymer series per site, y^0..18: ['0', '0', '0', '0', '0', '0', '2/729', '0', '1/2187', '0', '8/19683', '0', '55/177147', '0', '290/1594323', '0', '4037/28697814', '0', '123404/1162261467']
+  ice clusters at the site (kind, bonds or sizes, vertices or shared vertices): [(('pair', (6, 6), 1), 132), (('pair', (6, 6), 2), 180), (('pair', (6, 6), 3), 54), (('pair', (6, 8), 1), 624), (('pair', (6, 8), 2), 864), (('pair', (6, 8), 3), 132), (('pair', (6, 8), 5), 108), (('pair', (6, 10), 1), 6120), (('pair', (6, 10), 2), 8232), (('pair', (6, 10), 3), 3276), (('pair', (6, 10), 4), 792), (('pair', (6, 10), 5), 132), (('pair', (6, 10), 6), 360), (('pair', (6, 12), 1), 35664), (('pair', (6, 12), 2), 49248), (('pair', (6, 12), 3), 18036), (('pair', (6, 12), 4), 3144), (('pair', (6, 12), 5), 4212), (('pair', (6, 12), 6), 1272), (('pair', (8, 8), 1), 720), (('pair', (8, 8), 2), 840), (('pair', (8, 8), 3), 78), (('pair', (8, 8), 4), 216), (('pair', (8, 8), 6), 30), (('pair', (8, 10), 1), 12648), (('pair', (8, 10), 2), 17856), (('pair', (8, 10), 3), 5580), (('pair', (8, 10), 4), 1176), (('pair', (8, 10), 5), 2496), (('pair', (8, 10), 6), 576), (('pair', (8, 10), 7), 132), (('single', 12, 11), 132), (('single', 14, 13), 624), (('single', 16, 14), 56), (('single', 16, 15), 6840), (('single', 18, 16), 2496), (('single', 18, 17), 44472), (('triple', 1, 1), 10524), (('triple', 2, 1), 2368), (('triple', 2, 2), 732), (('triple', 2, 6), 12)]
+PROGRESS 1.0000 named 1/1 3C phase 0 (116 s)
+CHECK 3C cycles = 2*A038515 (diamond closed SAWs, Guttmann-Jensen) ok
+CHECK ('3C', 0, 0) 12 six-rings per site (Herrero-Ramirez 2013 for Ih, Ic), all SP ok
+CHECK ('3C', 0, 1) 12 six-rings per site (Herrero-Ramirez 2013 for Ih, Ic), all SP ok
+TABLE cycles through a site (self-avoiding polygons), by length
+   ('3C', 0, 0) [12, 24, 240, 1128, 8148, 50016, 349236, 2362200, 16716612, 118335744]
+   ('3C', 0, 1) [12, 24, 240, 1128, 8148, 50016, 349236, 2362200, 16716612, 118335744]
+TABLE SP (primitive) rings through a site, by length
+   ('3C', 0, 0) [12, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   ('3C', 0, 1) [12, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+TABLE period averages (per site) of cycles, by length 6..L
+   3C    h-fraction 0     12 24 240 1128 8148 50016 349236 2362200 16716612 118335744
+TABLE ice polymer series, period average per site (coefficients of y^6..y^18 in ln Xi / N)
+   3C    h-fraction 0     y^6:2/729 y^8:1/2187 y^10:8/19683 y^12:55/177147 y^14:290/1594323 y^16:4037/28697814 y^18:123404/1162261467
+11 checks, 0 failed (116 s)
+ALLCHECKS ok

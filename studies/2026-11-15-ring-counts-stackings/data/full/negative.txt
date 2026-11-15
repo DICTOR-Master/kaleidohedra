@@ -1,0 +1,6 @@
+MODE negative controls
+CHECK POSITIVE twin: true expectation (2*A038515 to 12) is accepted ok
+CHECK NEGATIVE wrong expectation (diamond 12-cycles = 1129) is rejected ok
+CHECK NEGATIVE corrupted network fails Loop Equality ok
+3 checks, 0 failed (0 s)
+ALLCHECKS ok

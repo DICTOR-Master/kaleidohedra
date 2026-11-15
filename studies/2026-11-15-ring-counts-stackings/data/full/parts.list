@@ -1,0 +1,26 @@
+env NAMED_ONLY=3C python3 rings.py named 24 20 > ../data/full/named-3C.txt 2>&1
+env NAMED_ONLY=2H python3 rings.py named 24 20 > ../data/full/named-2H.txt 2>&1
+env NAMED_ONLY=4H python3 rings.py named 24 20 > ../data/full/named-4H.txt 2>&1
+env NAMED_ONLY=6H python3 rings.py named 24 20 > ../data/full/named-6H.txt 2>&1
+env NAMED_ONLY=8H python3 rings.py named 24 20 > ../data/full/named-8H.txt 2>&1
+env NAMED_ONLY=9R python3 rings.py named 24 20 > ../data/full/named-9R.txt 2>&1
+env NAMED_ONLY=10H python3 rings.py named 24 20 > ../data/full/named-10H.txt 2>&1
+env NAMED_ONLY=15R python3 rings.py named 24 20 > ../data/full/named-15R.txt 2>&1
+env NAMED_ONLY=12R python3 rings.py named 24 20 > ../data/full/named-12R.txt 2>&1
+env NAMED_ONLY=21R python3 rings.py named 24 20 > ../data/full/named-21R.txt 2>&1
+env NAMED_ONLY=10H* python3 rings.py named 24 20 > ../data/full/named-10Hs.txt 2>&1
+python3 rings.py local 20 5 0 12 > ../data/full/local-0.txt 2>&1
+python3 rings.py local 20 5 1 12 > ../data/full/local-1.txt 2>&1
+python3 rings.py local 20 5 2 12 > ../data/full/local-2.txt 2>&1
+python3 rings.py local 20 5 3 12 > ../data/full/local-3.txt 2>&1
+python3 rings.py local 20 5 4 12 > ../data/full/local-4.txt 2>&1
+python3 rings.py local 20 5 5 12 > ../data/full/local-5.txt 2>&1
+python3 rings.py local 20 5 6 12 > ../data/full/local-6.txt 2>&1
+python3 rings.py local 20 5 7 12 > ../data/full/local-7.txt 2>&1
+python3 rings.py local 20 5 8 12 > ../data/full/local-8.txt 2>&1
+python3 rings.py local 20 5 9 12 > ../data/full/local-9.txt 2>&1
+python3 rings.py local 20 5 10 12 > ../data/full/local-10.txt 2>&1
+python3 rings.py local 20 5 11 12 > ../data/full/local-11.txt 2>&1
+python3 rings.py fib 20 > ../data/full/fib.txt 2>&1
+python3 rings.py icecontrol > ../data/full/icecontrol.txt 2>&1
+python3 rings.py negative > ../data/full/negative.txt 2>&1
