@@ -9085,7 +9085,7 @@
    "paper": "#43 Kyushindo Cores (v3)",
    "where": "covering step behind Theorems 2 and 4 (and Lemma 3)",
    "wrong": "the orbit covering bound is presented without prior credit",
-   "right": "credit at the point of use: the covering bound = diameter of S^2/G (arccos(1/sqrt3) for O; the icosahedral value for I), Dunbar-Greenwald-McGowan-Searle 2009 Table 2 (arXiv:math/0702680), Greenwald 2000, McGowan 1993; DICTO's containment constants 3, 9, 15-6sqrt5 stay his (not found stated)",
+   "right": "credit at the point of use: the covering bound = diameter of S^2/G (arccos(1/sqrt3) for O; the icosahedral value for I), Dunbar-Greenwald-McGowan-Searle 2009 Table 2 (arXiv:math/0702680), Greenwald 2000, McGowan 1993; DICTO's containment constants 3, 9, 15-6sqrt5 stay his (not found stated); ALSO at #43 next version: sharpness of Thm 4 stated for scale c >= 0; add \"Theorem 4 is machine-checked in Lean (axioms propext, Classical.choice, Quot.sound only; studies/2026-11-14-palomar-lean, 909ad63a); the proof uses neither h > 0 nor boundedness\"",
    "source": "studies/2026-11-14-palomar-lean/LITERATURE.md (5bc7146a)",
    "date": "2026-11-15",
    "fix": "next version of #43 (DICTO decides)"
