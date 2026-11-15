@@ -89,3 +89,7 @@ New references [32]–[40]: Koca–Koç–Al-Barwani–Al-Farsi 2006; Sobolev 19
 4. Miezaki 2013 and Delsarte–Seidel 1989: author copies to confirm the T-design definitions credited from secondary sources.
 5. Misawa–Nishimura: their S¹ realization theorem may extend to orbits of the golden twist; a direct question to them (DICTO's call) could also say whether the X/F signatures are known in their circle.
 6. Koca et al. 2006 convention check: confirm that their [p, −a p′ a] gives exactly our twisted classes (up to a right translation) by direct computation from their eq. (31).
+
+## Reference library (16 November 2026)
+
+All 40 paper references and four further prior-art sources are in the library's cited/ manifest (commit 7d3c6ff in kaleidohedra-references, push pending): 40 new cited/ entries (20 copies: arXiv, author and institutional pages, Math-Net.Ru, the journal's open archive, the US patent, Wikipedia; 20 links), #105 added to dicto-own.json, and "Silent Running" added to cited_by of Baez 2018, Elser–Sloane 1987, SPLAG and #33. Mermin's arXiv PDF link returned a web page, so that entry is a link. INDEX rebuilt (1427 references) and printed.
