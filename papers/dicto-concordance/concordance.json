@@ -7767,6 +7767,16 @@
     "retry": "never for these numbers; only with a new geometric involution or a new law parameter",
     "status": "SETTLED",
     "study": "studies/2026-11-15-whats-missing"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "DICTO 15 Nov: McCooey's Visual Polyhedra 'seems to be what we now have' - are DICTO's solids (369 equal-edged atoms + all 4547 cone solids, silent zonohedron, Golden OGs, OG family #38/#39/#43/#80, the 389-solid registry, hybrid cap / Z / R / Admiral Cap) IDENTICAL, SIMILAR or absent in McCooey's catalogue?",
+    "method": "polite fetch (robots, 2 s delay, default client UA) -> exact export (40 digits) -> congruence up to similarity+mirror and incidence isomorphism; compute host, jobs mccooey-fetch-pilot, mccooey-offline (42/42 checks, FINAL ok)",
+    "result": "NOT COMPARED: the site answered the scripted client with HTTP 465 'Access Denied, you have been blocked'; crawl stopped, no bypass. Export of 4963 DICTO solids and the matcher are built and pass all controls on McCooey's TO file. No 'new' claim changes yet; PRIOR-ART wording 'not found in the sources checked' must stay.",
+    "status": "METHOD-FAILED",
+    "retry": "only with the catalogue files obtained legitimately: McCooey's permission/files, or DICTO's own browser download, or DICTO's explicit approval of another client; then run match.py unchanged",
+    "study": "studies/2026-11-15-mccooey-comparison",
+    "goes_to": "prior-art sections of the Permutohedron and Platonic books, Concordance also-called lines (after the run)"
    }
   ]
  },

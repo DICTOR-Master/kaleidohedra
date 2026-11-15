@@ -1,0 +1,94 @@
+PROGRESS 0.10 cone A3: 17 solids (0 s)
+PROGRESS 0.25 cone B3: 103 solids (0 s)
+PROGRESS 0.40 cone H3: 4427 solids (11 s)
+CHECK ok   cone solids rebuilt: 17 + 103 orbits + 4427 = 4547, new atoms 2 + 2 + 367 = 371 rows (369 distinct: A3 pair = B3 pair), sums 54 4547 371 54
+CHECK ok   silent zonohedron a* ~ 0.383066 0.383065771818
+CHECK ok   silent zonohedron: 48 corners 
+CHECK ok   Lesser Golden OG: 102 corners, 80 faces (OG combinatorics) 102 80
+CHECK ok   Greater Golden OG: 102 corners, 80 faces (OG combinatorics) 102 80
+PROGRESS 0.60 golden OGs (199 s)
+CHECK ok   DICTO TQHD: 162 corners in the float file 162
+CHECK ok   DICTO TQP: 140 corners in the float file 140
+CHECK ok   DICTO TQH: 132 corners in the float file 132
+CHECK ok   DICTO TPH: 80 corners in the float file 80
+CHECK ok   DICTO OG: 102 corners in the float file 102
+CHECK ok   DICTO KRE: 92 corners in the float file 92
+CHECK ok   DICTO PHE: 180 corners in the float file 180
+CHECK ok   DICTO TPP: 212 corners in the float file 212
+CHECK ok   DICTO DPHP: 270 corners in the float file 270
+CHECK ok   control: T^1(OG) = DICTO KRE of the float file 92 corners
+CHECK ok   control: T^2(OG) = DICTO PHE of the float file 180 corners
+CHECK ok   control: T^3(OG) = DICTO TPP of the float file 212 corners
+CHECK ok   control: T^4(OG) = DICTO DPHP of the float file 270 corners
+CHECK ok   control: P^1(OG) = DICTO TPH of the float file 80 corners
+CHECK ok   control: P^2(OG) = DICTO TQH of the float file 132 corners
+CHECK ok   control: P^3(OG) = DICTO TQP of the float file 140 corners
+CHECK ok   control: P^4(OG) = DICTO TQHD of the float file 162 corners
+CHECK ok   Hamlet: T^5(OG) has 452 corners, 270 faces (Concordance) 452 270
+CHECK ok   Ophelia: T^6(OG) has 642 corners, 440 faces (Concordance) 642 440
+CHECK ok   DICTO TQP-252: P^5(OG) has 252 faces (Concordance) 252
+CHECK ok   DICTO TQ-320: P^6(OG) has 320 faces (Concordance) 320
+CHECK ok   DICTO TQP-402: P^7(OG) has 402 faces (Concordance) 402
+CHECK ok   DICTO TQ-500: P^8(OG) has 500 faces (Concordance) 500
+CHECK ok   DICTO TQD-732: P^9(OG) has 732 faces (Concordance) 732
+CHECK ok   DICTO TQHD-662: P^10(OG) has 662 faces (Concordance) 662
+CHECK ok   DICTO TQP-672: P^11(OG) has 672 faces (Concordance) 672
+CHECK ok   PiTet cycle: ID 30 -> RT 32 -> golden TI 60 -> Q 32 -> ID 30 (#38) [30, 32, 60, 32, 30]
+PROGRESS 0.80 OG family (227 s)
+CHECK ok   registry: 389 solids 
+CHECK ok   Z: ridge ends lie on the top face of the box (roof height 1/2) 
+CHECK ok   Admiral Cap: 5 corners 
+groups {'cone': 4547, 'silent': 1, 'golden-og': 2, 'og-family': 20, 'registry': 389, 'hybrid': 4}
+checks 35/35, 229 s
+FINAL ok
+PROGRESS 0.10 4966 DICTO solids loaded (5 s)
+PROGRESS 0.20 1 McCooey solids parsed, 0 not parsed (5 s)
+PROGRESS 0.200 0/4966 matched (5 s)
+PROGRESS 0.230 200/4966 matched (5 s)
+PROGRESS 0.260 400/4966 matched (6 s)
+PROGRESS 0.291 600/4966 matched (7 s)
+PROGRESS 0.321 800/4966 matched (8 s)
+PROGRESS 0.351 1000/4966 matched (9 s)
+PROGRESS 0.381 1200/4966 matched (11 s)
+PROGRESS 0.411 1400/4966 matched (13 s)
+PROGRESS 0.442 1600/4966 matched (14 s)
+PROGRESS 0.472 1800/4966 matched (16 s)
+PROGRESS 0.502 2000/4966 matched (18 s)
+PROGRESS 0.532 2200/4966 matched (21 s)
+PROGRESS 0.562 2400/4966 matched (23 s)
+PROGRESS 0.593 2600/4966 matched (26 s)
+PROGRESS 0.623 2800/4966 matched (29 s)
+PROGRESS 0.653 3000/4966 matched (32 s)
+PROGRESS 0.683 3200/4966 matched (35 s)
+PROGRESS 0.713 3400/4966 matched (39 s)
+PROGRESS 0.744 3600/4966 matched (43 s)
+PROGRESS 0.774 3800/4966 matched (47 s)
+PROGRESS 0.804 4000/4966 matched (52 s)
+PROGRESS 0.834 4200/4966 matched (56 s)
+PROGRESS 0.865 4400/4966 matched (62 s)
+PROGRESS 0.895 4600/4966 matched (78 s)
+PROGRESS 0.925 4800/4966 matched (79 s)
+COUNT cone IDENTICAL 2
+COUNT cone NOT IN THE CATALOGUE 4536
+COUNT cone SIMILAR 9
+COUNT control IDENTICAL 1
+COUNT control NOT IN THE CATALOGUE 1
+COUNT control SIMILAR 1
+COUNT golden-og NOT IN THE CATALOGUE 2
+COUNT hybrid NOT IN THE CATALOGUE 4
+COUNT og-family NOT IN THE CATALOGUE 20
+COUNT registry IDENTICAL 1
+COUNT registry NOT IN THE CATALOGUE 386
+COUNT registry SIMILAR 2
+COUNT silent NOT IN THE CATALOGUE 1
+CHECK ok   control +: turned, mirrored, scaled, moved TO is IDENTICAL to TruncatedOctahedron.txt ('IDENTICAL', ['TruncatedOctahedron.txt'])
+CHECK ok   control +: its 40-digit residual < 1e-25 5.74e-41
+CHECK ok   control +: registry truncated octahedron is IDENTICAL to it ('IDENTICAL', ['TruncatedOctahedron.txt'])
+CHECK ok   control +: A3 cone truncated octahedron (A3 Wythoff) is IDENTICAL to it 
+CHECK ok   control sim: TO stretched 1.3 along z is SIMILAR (not IDENTICAL) ('SIMILAR', ['TruncatedOctahedron.txt'])
+CHECK ok   control -: cube is NOT IN THE CATALOGUE (fixture holds only the TO) 
+CHECK ok   control -: DICTO silent zonohedron (48 corners) is not IDENTICAL to the 24-corner TO 
+checks 7/7, 79 s
+FINAL ok
+FINAL ok
+[exit 0]
