@@ -1,0 +1,13 @@
+question: can radial tracheid files be traced in conifer cross-section pictures well enough to count file splits, ends and sideways jumps per file per cell (yew stream of One tissue)
+answer_looks_like: synthetic recall/precision of split and end detection; per-file-per-cell rates on 300 CoLuS patches from image and from manual masks; their agreement; logger Euler/balance per frame; FINAL ok
+pilot: this is the pilot (smoke run of 6 patches + 9 synthetics took about 1 min on 12 processes)
+size_estimate: 9 synthetic pictures (about 6000 cells each) + 300 patches x 2 modes (about 500 cells each)
+memory_estimate_gb: 4 (ceiling MemoryMax 60G)
+time_estimate_h: 0.08
+bounded_by: fixed list of 300 patches and 9 synthetic seeds; no loops over open parameters
+control: synthetic sections with known splits and ends (positive), the same without events (null, must give zero), logger negative control (retyped event caught), image vs manual-mask comparison
+progress: PROGRESS lines, fraction of the 309 jobs done
+ledger_checked: none found on cambium, tracheid or yew in the ledger digest (15 Nov)
+if_ok: README of studies/2026-11-15-yew-cambium, ledger entry, comparison-table row
+if_fail_or_cap: read the failing CHECK, fix trace_files.py or the control, rerun; fallback method: manual-mask mode only (segmentation removed from the error budget)
+ledger_override: the hits are other One-tissue streams (Earth, Sun, foam, McCooey); none concerns tracheid files or cambium; this is a new stream

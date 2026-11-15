@@ -1,0 +1,44 @@
+{
+ "split": {
+  "true_in_window": 22,
+  "detected": 31,
+  "matched": 22,
+  "recall": 1.0,
+  "precision": 0.7096774193548387
+ },
+ "end": {
+  "true_in_window": 15,
+  "detected": 27,
+  "matched": 14,
+  "recall": 0.9333333333333333,
+  "precision": 0.5185185185185185
+ },
+ "insert_detected": 3,
+ "jumps_detected": 2,
+ "trace": {
+  "spacing": {
+   "tangential_px": 25.98,
+   "radial_px": 32.1,
+   "cells": 5992,
+   "links": 5911,
+   "files": 81,
+   "gap_joins": 17
+  },
+  "window": {
+   "r0": 195.3,
+   "r1": 4631.3,
+   "span_cells": 138.2,
+   "guard_files": [
+    3,
+    36
+   ]
+  },
+  "per_file_per_cell": {
+   "jump": 0.00039439952672056796,
+   "split": 0.006113192664168803,
+   "insert": 0.0005915992900808519,
+   "end": 0.005324393610727667
+  },
+  "file_cells_in_window": 5071.0
+ }
+}

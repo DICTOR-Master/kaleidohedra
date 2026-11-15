@@ -1,0 +1,698 @@
+{
+ "seconds": 20.3,
+ "synthetic": {
+  "ps0.0_rot7": {
+   "split": {
+    "true": 0,
+    "detected": 0,
+    "matched": 0,
+    "recall": null,
+    "precision": null
+   },
+   "end": {
+    "true": 0,
+    "detected": 0,
+    "matched": 0,
+    "recall": null,
+    "precision": null
+   },
+   "false_per_file_cell": 0.0,
+   "jumps": 0,
+   "inserts": 0
+  },
+  "ps0.004_rot0": {
+   "split": {
+    "true": 71,
+    "detected": 71,
+    "matched": 65,
+    "recall": 0.9154929577464789,
+    "precision": 0.9154929577464789
+   },
+   "end": {
+    "true": 44,
+    "detected": 47,
+    "matched": 41,
+    "recall": 0.9318181818181818,
+    "precision": 0.8723404255319149
+   },
+   "false_per_file_cell": 0.0007663814024779665,
+   "jumps": 0,
+   "inserts": 1
+  },
+  "ps0.004_rot7": {
+   "split": {
+    "true": 70,
+    "detected": 79,
+    "matched": 63,
+    "recall": 0.9,
+    "precision": 0.7974683544303798
+   },
+   "end": {
+    "true": 41,
+    "detected": 62,
+    "matched": 37,
+    "recall": 0.9024390243902439,
+    "precision": 0.5967741935483871
+   },
+   "false_per_file_cell": 0.0028258322420566546,
+   "jumps": 4,
+   "inserts": 7
+  }
+ },
+ "synthetic_runs": {
+  "ps0.0_rot7": [
+   {
+    "seed": 3,
+    "ok": true,
+    "eval": {
+     "split": {
+      "true_in_window": 0,
+      "detected": 0,
+      "matched": 0,
+      "recall": 0.0,
+      "precision": 0.0
+     },
+     "end": {
+      "true_in_window": 0,
+      "detected": 0,
+      "matched": 0,
+      "recall": 0.0,
+      "precision": 0.0
+     },
+     "insert_detected": 0,
+     "jumps_detected": 0,
+     "trace": {
+      "spacing": {
+       "tangential_px": 26.01,
+       "radial_px": 32.07,
+       "cells": 5759,
+       "links": 5719,
+       "files": 40,
+       "gap_joins": 0
+      },
+      "window": {
+       "r0": 197.2,
+       "r1": 4621.3,
+       "span_cells": 137.9,
+       "guard_files": [
+        0,
+        39
+       ]
+      },
+      "per_file_per_cell": {
+       "jump": 0.0,
+       "split": 0.0,
+       "insert": 0.0,
+       "end": 0.0
+      },
+      "file_cells_in_window": 5244.0
+     }
+    },
+    "trace_ok": true,
+    "logger_counts": {
+     "1": {},
+     "4": {}
+    },
+    "neg": {
+     "1": null,
+     "4": null
+    }
+   },
+   {
+    "seed": 2,
+    "ok": true,
+    "eval": {
+     "split": {
+      "true_in_window": 0,
+      "detected": 0,
+      "matched": 0,
+      "recall": 0.0,
+      "precision": 0.0
+     },
+     "end": {
+      "true_in_window": 0,
+      "detected": 0,
+      "matched": 0,
+      "recall": 0.0,
+      "precision": 0.0
+     },
+     "insert_detected": 0,
+     "jumps_detected": 0,
+     "trace": {
+      "spacing": {
+       "tangential_px": 26.0,
+       "radial_px": 32.07,
+       "cells": 5760,
+       "links": 5720,
+       "files": 40,
+       "gap_joins": 0
+      },
+      "window": {
+       "r0": 199.7,
+       "r1": 4620.4,
+       "span_cells": 137.8,
+       "guard_files": [
+        0,
+        39
+       ]
+      },
+      "per_file_per_cell": {
+       "jump": 0.0,
+       "split": 0.0,
+       "insert": 0.0,
+       "end": 0.0
+      },
+      "file_cells_in_window": 5244.0
+     }
+    },
+    "trace_ok": true,
+    "logger_counts": {
+     "1": {},
+     "4": {}
+    },
+    "neg": {
+     "1": null,
+     "4": null
+    }
+   },
+   {
+    "seed": 1,
+    "ok": true,
+    "eval": {
+     "split": {
+      "true_in_window": 0,
+      "detected": 0,
+      "matched": 0,
+      "recall": 0.0,
+      "precision": 0.0
+     },
+     "end": {
+      "true_in_window": 0,
+      "detected": 0,
+      "matched": 0,
+      "recall": 0.0,
+      "precision": 0.0
+     },
+     "insert_detected": 0,
+     "jumps_detected": 0,
+     "trace": {
+      "spacing": {
+       "tangential_px": 26.01,
+       "radial_px": 32.44,
+       "cells": 5760,
+       "links": 5720,
+       "files": 40,
+       "gap_joins": 0
+      },
+      "window": {
+       "r0": 200.9,
+       "r1": 4617.1,
+       "span_cells": 136.2,
+       "guard_files": [
+        0,
+        39
+       ]
+      },
+      "per_file_per_cell": {
+       "jump": 0.0,
+       "split": 0.0,
+       "insert": 0.0,
+       "end": 0.0
+      },
+      "file_cells_in_window": 5206.0
+     }
+    },
+    "trace_ok": true,
+    "logger_counts": {
+     "1": {},
+     "4": {}
+    },
+    "neg": {
+     "1": null,
+     "4": null
+    }
+   }
+  ],
+  "ps0.004_rot0": [
+   {
+    "seed": 1,
+    "ok": true,
+    "eval": {
+     "split": {
+      "true_in_window": 19,
+      "detected": 19,
+      "matched": 18,
+      "recall": 0.9473684210526315,
+      "precision": 0.9473684210526315
+     },
+     "end": {
+      "true_in_window": 13,
+      "detected": 13,
+      "matched": 13,
+      "recall": 1.0,
+      "precision": 1.0
+     },
+     "insert_detected": 0,
+     "jumps_detected": 0,
+     "trace": {
+      "spacing": {
+       "tangential_px": 25.99,
+       "radial_px": 32.31,
+       "cells": 5877,
+       "links": 5817,
+       "files": 60,
+       "gap_joins": 2
+      },
+      "window": {
+       "r0": 72.0,
+       "r1": 4489.6,
+       "span_cells": 136.7,
+       "guard_files": [
+        38,
+        1
+       ]
+      },
+      "per_file_per_cell": {
+       "jump": 0.0,
+       "split": 0.003756425464610518,
+       "insert": 0.0,
+       "end": 0.0025701858442071963
+      },
+      "file_cells_in_window": 5058.0
+     }
+    },
+    "trace_ok": true,
+    "logger_counts": {
+     "1": {
+      "split": 19,
+      "merge": 13
+     },
+     "4": {
+      "split": 19,
+      "merge": 13
+     }
+    },
+    "neg": {
+     "1": true,
+     "4": true
+    }
+   },
+   {
+    "seed": 3,
+    "ok": true,
+    "eval": {
+     "split": {
+      "true_in_window": 30,
+      "detected": 27,
+      "matched": 25,
+      "recall": 0.8333333333333334,
+      "precision": 0.9259259259259259
+     },
+     "end": {
+      "true_in_window": 16,
+      "detected": 17,
+      "matched": 14,
+      "recall": 0.875,
+      "precision": 0.8235294117647058
+     },
+     "insert_detected": 0,
+     "jumps_detected": 0,
+     "trace": {
+      "spacing": {
+       "tangential_px": 25.98,
+       "radial_px": 32.04,
+       "cells": 7067,
+       "links": 6988,
+       "files": 79,
+       "gap_joins": 10
+      },
+      "window": {
+       "r0": 51.5,
+       "r1": 4487.0,
+       "span_cells": 138.4,
+       "guard_files": [
+        38,
+        4
+       ]
+      },
+      "per_file_per_cell": {
+       "jump": 0.0,
+       "split": 0.004871887405268856,
+       "insert": 0.0,
+       "end": 0.003067484662576687
+      },
+      "file_cells_in_window": 5542.0
+     }
+    },
+    "trace_ok": true,
+    "logger_counts": {
+     "1": {
+      "split": 27,
+      "merge": 17
+     },
+     "4": {
+      "split": 27,
+      "merge": 16
+     }
+    },
+    "neg": {
+     "1": true,
+     "4": true
+    }
+   },
+   {
+    "seed": 2,
+    "ok": true,
+    "eval": {
+     "split": {
+      "true_in_window": 22,
+      "detected": 25,
+      "matched": 22,
+      "recall": 1.0,
+      "precision": 0.88
+     },
+     "end": {
+      "true_in_window": 15,
+      "detected": 17,
+      "matched": 14,
+      "recall": 0.9333333333333333,
+      "precision": 0.8235294117647058
+     },
+     "insert_detected": 1,
+     "jumps_detected": 0,
+     "trace": {
+      "spacing": {
+       "tangential_px": 25.98,
+       "radial_px": 32.11,
+       "cells": 6052,
+       "links": 5986,
+       "files": 66,
+       "gap_joins": 6
+      },
+      "window": {
+       "r0": 58.5,
+       "r1": 4489.9,
+       "span_cells": 138.0,
+       "guard_files": [
+        36,
+        4
+       ]
+      },
+      "per_file_per_cell": {
+       "jump": 0.0,
+       "split": 0.0049426650850138395,
+       "insert": 0.00019770660340055358,
+       "end": 0.003361012257809411
+      },
+      "file_cells_in_window": 5058.0
+     }
+    },
+    "trace_ok": true,
+    "logger_counts": {
+     "1": {
+      "split": 26,
+      "merge": 17
+     },
+     "4": {
+      "split": 24,
+      "merge": 16,
+      "clump": 2
+     }
+    },
+    "neg": {
+     "1": true,
+     "4": true
+    }
+   }
+  ],
+  "ps0.004_rot7": [
+   {
+    "seed": 2,
+    "ok": true,
+    "eval": {
+     "split": {
+      "true_in_window": 22,
+      "detected": 31,
+      "matched": 22,
+      "recall": 1.0,
+      "precision": 0.7096774193548387
+     },
+     "end": {
+      "true_in_window": 15,
+      "detected": 27,
+      "matched": 14,
+      "recall": 0.9333333333333333,
+      "precision": 0.5185185185185185
+     },
+     "insert_detected": 3,
+     "jumps_detected": 2,
+     "trace": {
+      "spacing": {
+       "tangential_px": 25.98,
+       "radial_px": 32.1,
+       "cells": 5992,
+       "links": 5911,
+       "files": 81,
+       "gap_joins": 17
+      },
+      "window": {
+       "r0": 195.3,
+       "r1": 4631.3,
+       "span_cells": 138.2,
+       "guard_files": [
+        3,
+        36
+       ]
+      },
+      "per_file_per_cell": {
+       "jump": 0.00039439952672056796,
+       "split": 0.006113192664168803,
+       "insert": 0.0005915992900808519,
+       "end": 0.005324393610727667
+      },
+      "file_cells_in_window": 5071.0
+     }
+    },
+    "trace_ok": true,
+    "logger_counts": {
+     "1": {
+      "split": 35,
+      "merge": 27
+     },
+     "4": {
+      "split": 34,
+      "merge": 26,
+      "relabel": 1
+     }
+    },
+    "neg": {
+     "1": true,
+     "4": true
+    }
+   },
+   {
+    "seed": 1,
+    "ok": true,
+    "eval": {
+     "split": {
+      "true_in_window": 17,
+      "detected": 18,
+      "matched": 16,
+      "recall": 0.9411764705882353,
+      "precision": 0.8888888888888888
+     },
+     "end": {
+      "true_in_window": 9,
+      "detected": 12,
+      "matched": 9,
+      "recall": 1.0,
+      "precision": 0.75
+     },
+     "insert_detected": 1,
+     "jumps_detected": 0,
+     "trace": {
+      "spacing": {
+       "tangential_px": 25.99,
+       "radial_px": 32.3,
+       "cells": 5840,
+       "links": 5770,
+       "files": 70,
+       "gap_joins": 4
+      },
+      "window": {
+       "r0": 215.9,
+       "r1": 4632.3,
+       "span_cells": 136.7,
+       "guard_files": [
+        9,
+        38
+       ]
+      },
+      "per_file_per_cell": {
+       "jump": 0.0,
+       "split": 0.0045662100456621,
+       "insert": 0.0002536783358701167,
+       "end": 0.0030441400304414
+      },
+      "file_cells_in_window": 3942.0
+     }
+    },
+    "trace_ok": true,
+    "logger_counts": {
+     "1": {
+      "split": 19,
+      "merge": 12
+     },
+     "4": {
+      "split": 18,
+      "merge": 11
+     }
+    },
+    "neg": {
+     "1": true,
+     "4": true
+    }
+   },
+   {
+    "seed": 3,
+    "ok": true,
+    "eval": {
+     "split": {
+      "true_in_window": 31,
+      "detected": 30,
+      "matched": 25,
+      "recall": 0.8064516129032258,
+      "precision": 0.8333333333333334
+     },
+     "end": {
+      "true_in_window": 17,
+      "detected": 23,
+      "matched": 14,
+      "recall": 0.8235294117647058,
+      "precision": 0.6086956521739131
+     },
+     "insert_detected": 3,
+     "jumps_detected": 2,
+     "trace": {
+      "spacing": {
+       "tangential_px": 25.98,
+       "radial_px": 32.05,
+       "cells": 6980,
+       "links": 6888,
+       "files": 92,
+       "gap_joins": 26
+      },
+      "window": {
+       "r0": 223.3,
+       "r1": 4660.7,
+       "span_cells": 138.4,
+       "guard_files": [
+        0,
+        34
+       ]
+      },
+      "per_file_per_cell": {
+       "jump": 0.000363901018922853,
+       "split": 0.0054585152838427945,
+       "insert": 0.0005458515283842794,
+       "end": 0.004184861717612809
+      },
+      "file_cells_in_window": 5496.0
+     }
+    },
+    "trace_ok": true,
+    "logger_counts": {
+     "1": {
+      "split": 33,
+      "merge": 23,
+      "clump": 2
+     },
+     "4": {
+      "split": 31,
+      "merge": 21,
+      "clump": 5
+     }
+    },
+    "neg": {
+     "1": true,
+     "4": true
+    }
+   }
+  ]
+ },
+ "colus_image": {
+  "patches": 300,
+  "traced": 299,
+  "files_cells": 98599.0,
+  "split": 2084,
+  "insert": 253,
+  "end": 2286,
+  "jump": 879,
+  "logger_ok": 299,
+  "neg_caught": 296,
+  "swaps": 0,
+  "clumps": 1442,
+  "euler_fail_frames": 0,
+  "balance_fail": 0,
+  "why": {
+   "fewer than two long files: no guarded window": 1
+  },
+  "per_file_per_cell": {
+   "split": 0.021136116999158207,
+   "insert": 0.0025659489447154636,
+   "end": 0.02318481931865435,
+   "jump": 0.008914897717015386,
+   "all_starts_and_ends": 0.046886885262528016
+  }
+ },
+ "colus_mask": {
+  "patches": 300,
+  "traced": 299,
+  "files_cells": 78639.0,
+  "split": 835,
+  "insert": 58,
+  "end": 780,
+  "jump": 167,
+  "logger_ok": 299,
+  "neg_caught": 257,
+  "swaps": 0,
+  "clumps": 424,
+  "euler_fail_frames": 0,
+  "balance_fail": 0,
+  "why": {
+   "fewer than two long files: no guarded window": 1
+  },
+  "per_file_per_cell": {
+   "split": 0.01061814112590445,
+   "insert": 0.000737547527308333,
+   "end": 0.009918742608629306,
+   "jump": 0.00212362822518089,
+   "all_starts_and_ends": 0.02127443126184209
+  }
+ },
+ "colus_both_traced": 299,
+ "per_patch_event_correlation_image_vs_mask": 0.6259865417337851,
+ "outward_sign_agreement": 0.6923076923076923,
+ "colus_rings_estimated": {
+  "0": 86,
+  "1": 148,
+  "2": 53,
+  "3": 8,
+  "4": 2,
+  "5": 2
+ },
+ "colus_patch_files": {
+  "median": 19.0
+ },
+ "checks": {
+  "synthetic all ran": true,
+  "synthetic logger ok (Euler + balance) every run and step": true,
+  "synthetic negative control caught where events exist": true,
+  "null synthetic: no splits or ends detected": true,
+  "straight synthetic: split recall >= 0.8": true,
+  "straight synthetic: end recall >= 0.8": true,
+  "colus: no swaps logged (impossible in one section)": true,
+  "colus: logger Euler and balance hold in every traced patch": true,
+  "colus: most patches traced (>= 50% in both modes)": true
+ }
+}

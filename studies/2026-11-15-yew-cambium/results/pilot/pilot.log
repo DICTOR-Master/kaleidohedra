@@ -1,0 +1,35 @@
+PROGRESS 0.003 synthetic 3 0.0 7 ok=True
+PROGRESS 0.006 synthetic 1 0.004 0 ok=True
+PROGRESS 0.010 synthetic 2 0.004 7 ok=True
+PROGRESS 0.013 synthetic 1 0.004 7 ok=True
+PROGRESS 0.016 synthetic 2 0.0 7 ok=True
+PROGRESS 0.019 synthetic 3 0.004 0 ok=True
+PROGRESS 0.023 synthetic 2 0.004 0 ok=True
+PROGRESS 0.026 synthetic 1 0.0 7 ok=True
+PROGRESS 0.029 synthetic 3 0.004 7 ok=True
+PROGRESS 0.065 patches
+PROGRESS 0.129 patches
+PROGRESS 0.194 patches
+PROGRESS 0.259 patches
+PROGRESS 0.324 patches
+PROGRESS 0.388 patches
+PROGRESS 0.453 patches
+PROGRESS 0.518 patches
+PROGRESS 0.583 patches
+PROGRESS 0.647 patches
+PROGRESS 0.712 patches
+PROGRESS 0.777 patches
+PROGRESS 0.841 patches
+PROGRESS 0.906 patches
+PROGRESS 0.971 patches
+CHECK ok   synthetic all ran
+CHECK ok   synthetic logger ok (Euler + balance) every run and step
+CHECK ok   synthetic negative control caught where events exist
+CHECK ok   null synthetic: no splits or ends detected
+CHECK ok   straight synthetic: split recall >= 0.8
+CHECK ok   straight synthetic: end recall >= 0.8
+CHECK ok   colus: no swaps logged (impossible in one section)
+CHECK ok   colus: logger Euler and balance hold in every traced patch
+CHECK ok   colus: most patches traced (>= 50% in both modes)
+{"synthetic": {"ps0.0_rot7": {"split": {"true": 0, "detected": 0, "matched": 0, "recall": null, "precision": null}, "end": {"true": 0, "detected": 0, "matched": 0, "recall": null, "precision": null}, "false_per_file_cell": 0.0, "jumps": 0, "inserts": 0}, "ps0.004_rot0": {"split": {"true": 71, "detected": 71, "matched": 65, "recall": 0.9154929577464789, "precision": 0.9154929577464789}, "end": {"true": 44, "detected": 47, "matched": 41, "recall": 0.9318181818181818, "precision": 0.8723404255319149}, "false_per_file_cell": 0.0007663814024779665, "jumps": 0, "inserts": 1}, "ps0.004_rot7": {"split": {"true": 70, "detected": 79, "matched": 63, "recall": 0.9, "precision": 0.7974683544303798}, "end": {"true": 41, "detected": 62, "matched": 37, "recall": 0.9024390243902439, "precision": 0.5967741935483871}, "false_per_file_cell": 0.0028258322420566546, "jumps": 4, "inserts": 7}}, "image": {"split": 0.021136116999158207, "insert": 0.0025659489447154636, "end": 0.02318481931865435, "jump": 0.008914897717015386, "all_starts_and_ends": 0.046886885262528016}, "mask": {"split": 0.01061814112590445, "insert": 0.000737547527308333, "end": 0.009918742608629306, "jump": 0.00212362822518089, "all_starts_and_ends": 0.02127443126184209}, "corr": 0.6259865417337851, "sign": 0.6923076923076923, "traced": [299, 299]}
+PILOT_OK
