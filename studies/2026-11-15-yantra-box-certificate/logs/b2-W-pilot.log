@@ -1,0 +1,29 @@
+[    0.0 s] tests in use: [('F', 'G'), ('F', 'H1'), ('F', 'D'), ('T', 'b7 < b8'), ('T', 'b9 < 1'), ('T', 'b8 < b9'), ('T', 'corner t9 in disc'), ('T', 'apex t8'), ('T', 'b3 < b6'), ('T', 'b1 < b2'), ('T', 'b2 < b3'), ('T', 'apex t1'), ('T', 'w8 > 0'), ('T', 'b6 < b7'), ('T', 'Q > 1/2'), ('T', 'apex t6'), ('T', 'w2 > 0'), ('T', 'apex t2'), ('T', 'w6 > 0'), ('T', 'apex t5'), ('T', 'corner t8 in disc'), ('T', 'b5 < 1/2'), ('T', 'b5 < b6'), ('T', 'w4 > 0'), ('T', 'b3 < b4'), ('T', 'corner t6 in disc'), ('T', 'corner t2 in disc'), ('T', 'w5 > 0'), ('T', 'apex t4'), ('T', 'b4 < b5'), ('T', 'corner t4 in disc'), ('T', 'corner t5 in disc')]
+[    0.0 s] level 1: open 2, leaves 0, deepest 1
+PROGRESS 0.013 level 1
+[    0.1 s] level 2: open 4, leaves 0, deepest 1
+PROGRESS 0.026 level 2
+[    0.1 s] level 3: open 4, leaves 2, deepest 1
+PROGRESS 0.038 level 3
+[    0.1 s] level 4: open 4, leaves 4, deepest 2
+PROGRESS 0.051 level 4
+[    0.2 s] level 5: open 8, leaves 4, deepest 2
+PROGRESS 0.064 level 5
+[    0.2 s] level 6: open 16, leaves 4, deepest 2
+PROGRESS 0.077 level 6
+[    0.2 s] level 7: open 16, leaves 12, deepest 3
+PROGRESS 0.090 level 7
+[    0.3 s] level 8: open 32, leaves 12, deepest 3
+PROGRESS 0.103 level 8
+[    0.4 s] level 9: open 64, leaves 12, deepest 3
+PROGRESS 0.115 level 9
+[    0.4 s] level 10: open 8, leaves 72, deepest 4
+PROGRESS 0.128 level 10
+[    0.4 s] level 11: open 8, leaves 76, deepest 4
+PROGRESS 0.141 level 11
+[    0.5 s] level 12: open 12, leaves 78, deepest 4
+[    0.5 s]    open clusters: [((np.float64(0.0), np.float64(6.0), np.float64(3.9)), 1), ((np.float64(0.0), np.float64(5.0), np.float64(3.9)), 1), ((np.float64(0.0), np.float64(7.0), np.float64(3.9)), 1), ((np.float64(0.0), np.float64(4.5), np.float64(3.9)), 1), ((np.float64(0.0), np.float64(6.5), np.float64(3.9)), 1), ((np.float64(0.0), np.float64(5.5), np.float64(3.9)), 1), ((np.float64(0.0), np.float64(6.0), np.float64(4.5)), 1), ((np.float64(0.0), np.float64(5.0), np.float64(4.5)), 1)]
+PROGRESS 0.154 level 12
+[    0.5 s] leaves: 90  by test: {'b6 < b7': 3, 'G': 48, 'H1': 38, 'D': 1}  open: 0
+PROGRESS 1.0 done
+FINAL ok

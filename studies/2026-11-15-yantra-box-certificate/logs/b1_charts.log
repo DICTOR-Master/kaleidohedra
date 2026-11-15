@@ -1,0 +1,92 @@
+PROGRESS 0.00 chart A
+[    0.4 s] A G: 16 terms, degrees (8, 0, 2), dropped []; at p = 0: (r - 2) * (r + 2)
+[    0.4 s] A H1: 1045 terms, degrees (32, 10, 3), dropped [('p', 4)]; at p = 0: 14 terms
+[    0.4 s] A D: 774 terms, degrees (30, 10, 2), dropped [('p', 5)]; at p = 0: (-64) * r * q * (q^4*r + 2*q^3*r + 4*q^2*r + 16*q^2 - 8*q*r - 16*r - 32)
+[    0.4 s] A test corner t2 in disc: even-power factors kept (closed condition): ['2*p^9*q^4 - 12*p^8*q^4 - 7*p^8*q^3 + 30*p^7*q^4 + 42*p^7*q^3']
+[    0.5 s] A test corner t4 in disc: even-power factors kept (closed condition): ['p^19*q^6*r^2 - 16*p^18*q^6*r^2 - 2*p^18*q^6*r - 5*p^18*q^5*r']
+[    0.9 s] A test corner t5 in disc: even-power factors kept (closed condition): ['p^6*q^3 - 4*p^5*q^3 - 2*p^5*q^2 + 6*p^4*q^3 + 8*p^4*q^2 - 4*', 'p^11*q^4 - p^11*q^3*r + p^10*q^4*r - 10*p^10*q^4 + 10*p^10*q']
+[    0.9 s] A test corner t6 in disc: even-power factors kept (closed condition): ['p^9*q^4 - 6*p^8*q^4 - 3*p^8*q^3 + 15*p^7*q^4 + 18*p^7*q^3 - ']
+[    0.9 s] A test corner t8 in disc: even-power factors kept (closed condition): ['p^2*q - 2*p*q - p + q + 2', 'p^3 + p^2*r - 4*p^2 - 2*p*r + 4*p + r']
+[    1.0 s] A: wrote data/polys-utr-A.json; test sizes 13701
+PROGRESS 0.11 chart B
+[    1.0 s] B G: 16 terms, degrees (8, 8, 2), dropped []; at p = 0: (r - 2) * (r + 2)
+[    1.0 s] B H1: 1045 terms, degrees (32, 26, 3), dropped [('p', 4)]; at p = 0: 14 terms
+[    1.0 s] B D: 774 terms, degrees (30, 26, 2), dropped [('p', 5)]; at p = 0: (-64) * r * (16*q^4*r + 32*q^4 + 8*q^3*r - 4*q^2*r - 16*q^2 - 2*q*r - r)
+[    1.0 s] B test corner t2 in disc: even-power factors kept (closed condition): ['2*p^9*q^6 - 7*p^8*q^6 - 12*p^8*q^5 + 7*p^7*q^6 + 42*p^7*q^5 ']
+[    1.1 s] B test corner t4 in disc: even-power factors kept (closed condition): ['p^19*q^16*r^2 - 5*p^18*q^16*r^2 - 16*p^18*q^15*r^2 + 9*p^17*']
+[    1.5 s] B test corner t5 in disc: even-power factors kept (closed condition): ['p^6*q^4 - 2*p^5*q^4 - 4*p^5*q^3 + 8*p^4*q^3 + p^3*q^4 + 6*p^', 'p^11*q^10*r - 3*p^10*q^10*r - p^11*q^9 - 10*p^10*q^9*r + 3*p']
+[    1.5 s] B test corner t6 in disc: even-power factors kept (closed condition): ['p^9*q^6 - 3*p^8*q^6 - 6*p^8*q^5 + 2*p^7*q^6 + 18*p^7*q^5 + p']
+[    1.5 s] B test corner t8 in disc: even-power factors kept (closed condition): ['p^2*q^2 - p*q^2 - 2*p*q + 2*q + 1', 'p^3*q^3 + p^2*q^2*r - 4*p^2*q^2 - 2*p*q*r + 4*p*q + r']
+[    1.6 s] B: wrote data/polys-utr-B.json; test sizes 13701
+PROGRESS 0.22 chart C1
+[    1.6 s] C1 G: 13 terms, degrees (8, 0, 2), dropped []; at p = 0: r - 1
+[    1.6 s] C1 H1: 522 terms, degrees (54, 10, 3), dropped [('p', 12)]; at p = 0: (q - 1) * (-2*q^2 + q + r)
+[    1.6 s] C1 D: 359 terms, degrees (57, 10, 2), dropped [('p', 8)]; at p = 0: (q - 1)^2
+[    1.6 s] C1 test corner t2 in disc: even-power factors kept (closed condition): ['2*p^20*q^4 - p^16*q^3 - p^14*q^3 - 2*p^12*q^2 + p^10*q^2 - p']
+[    1.6 s] C1 test corner t4 in disc: even-power factors kept (closed condition): ['p^36*q^6*r^2 + 2*p^35*q^6*r - 2*p^34*q^6*r^2 + 2*p^34*q^6*r ']
+[    1.6 s] C1 test corner t5 in disc: even-power factors kept (closed condition): ['p^16*q^3 - p^12*q^2 - p^8*q + 1', '-p^21*q^4 + p^20*q^4*r - p^20*q^4 + p^19*q^4 + p^18*q^4 + p^']
+[    1.6 s] C1 test corner t6 in disc: even-power factors kept (closed condition): ['p^18*q^4 - p^14*q^3 - p^12*q^3 - p^10*q^2 + p^8*q^2 + p^2*q ']
+[    1.6 s] C1 test corner t8 in disc: even-power factors kept (closed condition): ['-p^3 + p^2*r - p^2 + p + 1', 'p^6*q - 1']
+[    1.7 s] C1: wrote data/polys-utr-C1.json; test sizes 6072
+PROGRESS 0.33 chart C2
+[    1.7 s] C2 G: 13 terms, degrees (8, 8, 2), dropped []; at p = 0: r - 1
+[    1.7 s] C2 H1: 522 terms, degrees (54, 26, 3), dropped [('p', 12)]; at p = 0: (-1) * (q - 1) * (q + 1) * (q^2 + 1) * (q^8*r + q^4 - 2)
+[    1.7 s] C2 D: 359 terms, degrees (57, 26, 2), dropped [('p', 8)]; at p = 0: (q - 1)^2 * (q + 1)^2 * (q^2 + 1)^2
+[    1.7 s] C2 test corner t2 in disc: even-power factors kept (closed condition): ['2*p^20*q^6 - p^16*q^6 - p^14*q^4 - 2*p^12*q^6 + p^10*q^4 - p']
+[    1.8 s] C2 test corner t4 in disc: even-power factors kept (closed condition): ['p^36*q^16*r^2 + 2*p^35*q^15*r - 2*p^34*q^14*r^2 - p^32*q^16*']
+[    1.8 s] C2 test corner t5 in disc: even-power factors kept (closed condition): ['p^16*q^4 - p^12*q^4 - p^8*q^4 + 1', '-p^21*q^9 + p^20*q^8*r + p^18*q^10*r - p^20*q^8 + p^19*q^7 +']
+[    1.8 s] C2 test corner t6 in disc: even-power factors kept (closed condition): ['p^18*q^6 - p^14*q^6 - p^12*q^4 - p^10*q^6 + p^8*q^4 + p^2*q^']
+[    1.8 s] C2 test corner t8 in disc: even-power factors kept (closed condition): ['p^3*q - 1', '-p^3*q^3 + p^2*q^2*r - p^2*q^2 + p*q + 1']
+[    1.8 s] C2: wrote data/polys-utr-C2.json; test sizes 6088
+PROGRESS 0.44 chart W
+[    1.8 s] W G: 24 terms, degrees (10, 0, 2), dropped [('p', 2)]; at p = 0: r - 5
+[    1.8 s] W H1: 2323 terms, degrees (94, 10, 3), dropped [('p', 18)]; at p = 0: (r - 4) * (q - 3)
+[    1.9 s] W D: 1534 terms, degrees (91, 10, 2), dropped [('p', 16)]; at p = 0: (q + r - 10)^2
+[    2.0 s] W test corner t2 in disc: even-power factors kept (closed condition): ['2*p^36*q^4 - 32*p^36*q^3 + 192*p^36*q^2 - 512*p^36*q + 512*p']
+[    2.2 s] W test corner t4 in disc: even-power factors kept (closed condition): ['p^60*q^6*r^2 - 8*p^60*q^6*r - 24*p^60*q^5*r^2 + 16*p^60*q^6 ']
+[    2.7 s] W test corner t5 in disc: even-power factors kept (closed condition): ['p^28*q^3 - 12*p^28*q^2 + 48*p^28*q - 64*p^28 + 3*p^24*q^2 - ', 'p^36*q^4*r - 4*p^36*q^4 - 16*p^36*q^3*r + 64*p^36*q^3 + 96*p']
+[    2.7 s] W test corner t6 in disc: even-power factors kept (closed condition): ['p^32*q^4 - 16*p^32*q^3 + 96*p^32*q^2 - 256*p^32*q + 256*p^32']
+[    2.7 s] W test corner t8 in disc: even-power factors kept (closed condition): ['p^4*r - 4*p^4 + p + 1', 'p^10*q - 4*p^10 + p^6 - 1']
+[    2.9 s] W: wrote data/polys-utr-W.json; test sizes 30550
+PROGRESS 0.56 chart Wt+
+[    2.9 s] Wt+ G: 36 terms, degrees (10, 10, 2), dropped [('p', 2)]; at p = 0: -q^2 + 4*r - 4
+[    2.9 s] Wt+ H1: 2551 terms, degrees (94, 57, 3), dropped [('q', 12), ('p', 18)]; at p = 0: (4) * (r - 1) * (q^2 - 2*q + 2) * (q^2 + 2*q + 2)
+[    2.9 s] Wt+ D: 1538 terms, degrees (91, 58, 2), dropped [('q', 8), ('p', 16)]; at p = 0: (4) * (-q^4 + 2*q^2*r - 2*q^2 + 2)^2
+[    3.1 s] Wt+ test corner t2 in disc: even-power factors kept (closed condition): ['512*p^36*q^20 + 512*p^32*q^20 + 192*p^28*q^20 - 64*p^28*q^16']
+[    3.3 s] Wt+ test corner t4 in disc: even-power factors kept (closed condition): ['65536*p^60*q^36*r^2 - 131072*p^60*q^36*r + 32768*p^59*q^37*r']
+[    4.0 s] Wt+ test corner t5 in disc: even-power factors kept (closed condition): ['64*p^28*q^16 + 48*p^24*q^16 + 12*p^20*q^16 - 16*p^20*q^12 + ', '1024*p^36*q^20*r - 1024*p^36*q^20 + 1024*p^32*q^20*r + 256*p']
+[    4.0 s] Wt+ test corner t6 in disc: even-power factors kept (closed condition): ['256*p^32*q^18 + 256*p^28*q^18 + 96*p^24*q^18 - 64*p^24*q^14 ']
+[    4.0 s] Wt+ test corner t8 in disc: even-power factors kept (closed condition): ['4*p^4*q^2*r - 4*p^4*q^2 + p*q + 1', '4*p^10*q^6 + p^6*q^6 - 1']
+[    4.1 s] Wt+: wrote data/polys-utr-Wt+.json; test sizes 30976
+PROGRESS 0.67 chart Wt-
+[    4.1 s] Wt- G: 36 terms, degrees (10, 10, 2), dropped [('p', 2)]; at p = 0: -q^2 + 4*r - 4
+[    4.1 s] Wt- H1: 2550 terms, degrees (94, 57, 3), dropped [('q', 12), ('p', 18)]; at p = 0: (4) * (r - 1) * (q^2 - 2) * (q^2 + 2)
+[    4.1 s] Wt- D: 1540 terms, degrees (91, 58, 2), dropped [('q', 8), ('p', 16)]; at p = 0: (4) * (-q^4 + 2*q^2*r - 2*q^2 - 2)^2
+[    4.3 s] Wt- test corner t2 in disc: even-power factors kept (closed condition): ['512*p^36*q^20 - 512*p^32*q^20 + 192*p^28*q^20 + 64*p^28*q^16']
+[    4.6 s] Wt- test corner t4 in disc: even-power factors kept (closed condition): ['65536*p^60*q^36*r^2 - 131072*p^60*q^36*r + 32768*p^59*q^37*r']
+[    5.1 s] Wt- test corner t5 in disc: even-power factors kept (closed condition): ['64*p^28*q^16 - 48*p^24*q^16 + 12*p^20*q^16 + 16*p^20*q^12 - ', '1024*p^36*q^20*r - 1024*p^36*q^20 - 1024*p^32*q^20*r + 256*p']
+[    5.1 s] Wt- test corner t6 in disc: even-power factors kept (closed condition): ['256*p^32*q^18 - 256*p^28*q^18 + 96*p^24*q^18 + 64*p^24*q^14 ']
+[    5.1 s] Wt- test corner t8 in disc: even-power factors kept (closed condition): ['4*p^4*q^2*r - 4*p^4*q^2 + p*q + 1', '4*p^10*q^6 - p^6*q^6 + 1']
+[    5.2 s] Wt-: wrote data/polys-utr-Wt-.json; test sizes 30978
+PROGRESS 0.78 chart Wr+
+[    5.2 s] Wr+ G: 20 terms, degrees (10, 10, 0), dropped [('p', 2)]; at p = 0: (-1) * (q - 2) * (q + 2)
+[    5.3 s] Wr+ H1: 4671 terms, degrees (94, 57, 10), dropped [('q', 12), ('p', 18)]; at p = 0: (4) * (q^4 + 4*r - 4)
+[    5.3 s] Wr+ D: 3790 terms, degrees (91, 58, 10), dropped [('q', 8), ('p', 16)]; at p = 0: (-4) * (-q^4 + 2*q^2 + 2*r - 2)^2
+[    5.7 s] Wr+ test corner t2 in disc: even-power factors kept (closed condition): ['512*p^36*q^20*r^4 - 2048*p^36*q^20*r^3 + 3072*p^36*q^20*r^2 ']
+[    6.3 s] Wr+ test corner t4 in disc: even-power factors kept (closed condition): ['65536*p^60*q^36*r^6 + 32768*p^59*q^37*r^6 + 4096*p^58*q^38*r']
+[    7.9 s] Wr+ test corner t5 in disc: even-power factors kept (closed condition): ['64*p^28*q^16*r^3 - 192*p^28*q^16*r^2 + 192*p^28*q^16*r - 64*', '1024*p^36*q^20*r^4 - 4096*p^36*q^20*r^3 + 6144*p^36*q^20*r^2']
+[    7.9 s] Wr+ test corner t6 in disc: even-power factors kept (closed condition): ['256*p^32*q^18*r^4 - 1024*p^32*q^18*r^3 + 1536*p^32*q^18*r^2 ']
+[    8.0 s] Wr+ test corner t8 in disc: even-power factors kept (closed condition): ['4*p^10*q^6*r - 4*p^10*q^6 + p^6*q^6 - 1']
+[    8.2 s] Wr+: wrote data/polys-utr-Wr+.json; test sizes 58920
+PROGRESS 0.89 chart Wr-
+[    8.2 s] Wr- G: 20 terms, degrees (10, 10, 0), dropped [('p', 2)]; at p = 0: (-1) * (q^2 + 4)
+[    8.3 s] Wr- H1: 4671 terms, degrees (94, 57, 10), dropped [('q', 12), ('p', 18)]; at p = 0: (-4) * (q^4 + 4*r - 4)
+[    8.3 s] Wr- D: 3790 terms, degrees (91, 58, 10), dropped [('q', 8), ('p', 16)]; at p = 0: (-4) * (-q^4 - 2*q^2 + 2*r - 2)^2
+[    8.7 s] Wr- test corner t2 in disc: even-power factors kept (closed condition): ['512*p^36*q^20*r^4 - 2048*p^36*q^20*r^3 + 3072*p^36*q^20*r^2 ']
+[    9.3 s] Wr- test corner t4 in disc: even-power factors kept (closed condition): ['65536*p^60*q^36*r^6 - 32768*p^59*q^37*r^6 + 4096*p^58*q^38*r']
+[   10.9 s] Wr- test corner t5 in disc: even-power factors kept (closed condition): ['64*p^28*q^16*r^3 - 192*p^28*q^16*r^2 + 192*p^28*q^16*r - 64*', '1024*p^36*q^20*r^4 - 4096*p^36*q^20*r^3 + 6144*p^36*q^20*r^2']
+[   10.9 s] Wr- test corner t6 in disc: even-power factors kept (closed condition): ['256*p^32*q^18*r^4 - 1024*p^32*q^18*r^3 + 1536*p^32*q^18*r^2 ']
+[   10.9 s] Wr- test corner t8 in disc: even-power factors kept (closed condition): ['4*p^4*q^2 - p*q - 1', '4*p^10*q^6*r - 4*p^10*q^6 + p^6*q^6 - 1']
+[   11.1 s] Wr-: wrote data/polys-utr-Wr-.json; test sizes 59304
+PROGRESS 1.0 done
+FINAL ok

@@ -1,0 +1,30 @@
+[    0.0 s] NEGATIVE CONTROL: perturbed G by 1/1048576
+[    0.0 s] data/polys-utr.json: 46037 leaves
+PROGRESS 0.05 coverage
+[    0.1 s] coverage: tree rebuilt, leaves reached 46037 of 46037 ; open boxes in certificate: 0 -> True
+PROGRESS 0.1 leaves
+[    0.0 s] NEGATIVE CONTROL: perturbed G by 1/1048576
+PROGRESS 0.145 leaves 2301/46037
+PROGRESS 0.190 leaves 4602/46037
+PROGRESS 0.235 leaves 6903/46037
+PROGRESS 0.280 leaves 9204/46037
+PROGRESS 0.325 leaves 11505/46037
+PROGRESS 0.370 leaves 13806/46037
+PROGRESS 0.415 leaves 16107/46037
+PROGRESS 0.460 leaves 18408/46037
+PROGRESS 0.505 leaves 20709/46037
+PROGRESS 0.550 leaves 23010/46037
+PROGRESS 0.595 leaves 25311/46037
+PROGRESS 0.640 leaves 27612/46037
+PROGRESS 0.685 leaves 29913/46037
+PROGRESS 0.730 leaves 32214/46037
+PROGRESS 0.775 leaves 34515/46037
+PROGRESS 0.820 leaves 36816/46037
+PROGRESS 0.865 leaves 39117/46037
+PROGRESS 0.910 leaves 41418/46037
+PROGRESS 0.955 leaves 43719/46037
+PROGRESS 1.000 leaves 46020/46037
+[    4.1 s] leaves passed: 45683 of 46037 ; by enclosure: {'mono': 3376, 'slope': 42261, 'hole': 46} ; polynomial evaluations: 48891 ; term evaluations: 12391498 ; max digits of a box endpoint (numerator/denominator): 9
+[    4.1 s] FAILED leaves (first 10): [[10, 724, 9, 180, 9, 252, 'F', 'G'], [10, 724, 9, 178, 9, 252, 'F', 'G'], [10, 724, 9, 182, 9, 252, 'F', 'G'], [10, 724, 9, 181, 9, 252, 'F', 'G'], [10, 724, 9, 179, 9, 252, 'F', 'G'], [10, 850, 9, 336, 9, 263, 'F', 'G'], [10, 850, 9, 328, 9, 263, 'F', 'G'], [10, 850, 9, 340, 9, 263, 'F', 'G'], [10, 850, 9, 332, 9, 263, 'F', 'G'], [10, 850, 9, 338, 9, 263, 'F', 'G']]
+PROGRESS 1.0 done
+FINAL FAIL: coverage True, failed leaves 354

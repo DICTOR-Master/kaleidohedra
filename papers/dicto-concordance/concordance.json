@@ -7987,6 +7987,16 @@
     "retry": "never; only a Lean certificate",
     "study": "studies/2026-11-15-dicto-yantra-uniqueness",
     "goes_to": "#103 v5: uniqueness theorem beside Theorem 9, with the excentre remark ((d) must be read as incircle); note in the study README, #103 not edited here"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "Lean-friendly uniqueness certificate for Kulaichev's Sri Yantra without the degree-1744 eliminant: a branch-and-bound interval certificate on the admissible box (u, tau = t/u, rho), with a Krawczyk box at Theorem 10's solution",
+    "method": "studies/2026-11-15-yantra-box-certificate: s1 system pulled back to (u, tau, rho), positive factors stripped; 36 admissibility tests as sign pairs (N, D); face analysis: F~ = 0 on the boundary only at (0,0,1) and (1,1,2), resolved by 9 blow-up charts (A, B homogeneous; C1, C2, W, Wt+-, Wr+- weighted tower); float generator, exact integer re-check (monotone split + slope form, tree coverage), semantic check from the geometry, independent FLINT/Arb mean-value check on the second machine; Krawczyk in exact rationals (half-width 2^-22, contraction 0.125); controls G + 2^-20 rejected, equations-only cover open only at the u = 0.66866 non-admissible solution; Lean pilot (monotone split proved sound, 1000 leaves by decide +kernel in 18 s, slope checker about 1 s per 522-term leaf); jobs yboxcert2, yboxarb2, yboxlean FINAL ok",
+    "status": "CERTIFIED (computation); Lean pilot feasible",
+    "result": "64,613 boxes in 10 charts, 68,041 polynomial evaluations (18.4 M term evaluations), endpoints at most 9 digits, coefficients at most 108 digits; one Krawczyk box with exactly one solution = Theorem 10's; estimated full kernel check about 10-12 core-hours, parallel by files",
+    "retry": "never; next only: Lean slope-form soundness, derivation identities, chart covering lemmas, Banach for the Krawczyk box; then the DICTO Yantra (Q(sqrt5) coefficients, u unbounded)",
+    "study": "studies/2026-11-15-yantra-box-certificate",
+    "goes_to": "#103 (uniqueness remark: an elimination-free certificate exists); Palomar entry later (not submitted)"
    }
   ]
  },

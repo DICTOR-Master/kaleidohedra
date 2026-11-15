@@ -1,0 +1,44 @@
+PROGRESS 0.1 pull-back
+[    1.1 s] G~: degrees (u, tau, rho) = (8, 0, 2), 13 terms, max coefficient 2; dropped positive factors [('u - 1', 2), ('u', 2), ('u^2 + 1', 2)]
+[    1.2 s] H1~: degrees (u, tau, rho) = (26, 10, 3), 522 terms, max coefficient 72; dropped positive factors [('u - 1', 3), ('u', 3), ('u^2 + 1', 2)]
+[    1.2 s] D~: degrees (u, tau, rho) = (26, 10, 2), 359 terms, max coefficient 44; dropped positive factors [('u - 1', 2), ('u', 2), ('u^2 + 1', 2)]
+PROGRESS 0.4 admissibility tests
+[    1.2 s] test b1 < b2: N 1 terms deg 0, D 10 terms deg 10
+[    1.2 s] test b2 < b3: N 1 terms deg 0, D 10 terms deg 10
+[    1.2 s] test b3 < b4: N 24 terms deg 15, D 120 terms deg 24
+[    1.2 s] test b4 < b5: N 138 terms deg 27, D 513 terms deg 38
+[    1.2 s] test b5 < b6: N 2 terms deg 3, D 97 terms deg 24
+[    1.2 s] test b6 < b7: N 8 terms deg 9, D 8 terms deg 10
+[    1.2 s] test b7 < b8: N 1 terms deg 0, D 5 terms deg 3
+[    1.2 s] test b8 < b9: N 3 terms deg 1, D 5 terms deg 3
+[    1.2 s] test w1 > 0: N 1 terms deg 0, D 1 terms deg 0
+[    1.2 s] test w2 > 0: N 26 terms deg 13, D 10 terms deg 10
+[    1.2 s] test w3 > 0: N 1 terms deg 0, D 1 terms deg 0
+[    1.2 s] test w4 > 0: N 6 terms deg 9, D 120 terms deg 24
+[    1.2 s] test w5 > 0: N 142 terms deg 26, D 72 terms deg 21
+[    1.2 s] test w6 > 0: N 24 terms deg 14, D 8 terms deg 10
+[    1.2 s] test w7 > 0: N 1 terms deg 0, D 1 terms deg 0
+[    1.2 s] test w8 > 0: N 6 terms deg 9, D 10 terms deg 6
+[    1.2 s] test w9 > 0: N 1 terms deg 0, D 1 terms deg 0
+[    1.2 s] test apex t1: N 2 terms deg 3, D 8 terms deg 10
+[    1.2 s] test apex t2: N 26 terms deg 13, D 10 terms deg 10
+[    1.2 s] test apex t3: N 1 terms deg 0, D 1 terms deg 0
+[    1.2 s] test apex t4: N 76 terms deg 24, D 236 terms deg 27
+[    1.2 s] test apex t5: N 16 terms deg 10, D 29 terms deg 14
+[    1.2 s] test apex t6: N 8 terms deg 10, D 30 terms deg 20
+[    1.2 s] test apex t7: N 1 terms deg 0, D 1 terms deg 0
+[    1.2 s] test apex t8: N 6 terms deg 9, D 5 terms deg 3
+[    1.2 s] test apex t9: N 1 terms deg 0, D 1 terms deg 0
+[    1.2 s] test corner t2 in disc: N 215 terms deg 29, D 1 terms deg 0
+[    1.3 s] test corner t4 in disc: N 559 terms deg 44, D 1 terms deg 0
+[    1.3 s] test corner t5 in disc: N 1579 terms deg 58, D 1 terms deg 0
+[    1.3 s] test corner t6 in disc: N 214 terms deg 32, D 1 terms deg 0
+[    1.3 s] test corner t8 in disc: N 19 terms deg 16, D 1 terms deg 0
+[    1.3 s] test corner t9 in disc: N 13 terms deg 10, D 1 terms deg 0
+[    1.3 s] test b9 < 1: N 3 terms deg 2, D 1 terms deg 0
+[    1.3 s] test b3 < b6: N 1 terms deg 0, D 8 terms deg 10
+[    1.3 s] test b5 < 1/2: N 29 terms deg 14, D 29 terms deg 14
+[    1.3 s] test Q > 1/2: N 8 terms deg 10, D 8 terms deg 10
+[    1.3 s] wrote data/polys-utr.json
+PROGRESS 1.0 done
+FINAL ok

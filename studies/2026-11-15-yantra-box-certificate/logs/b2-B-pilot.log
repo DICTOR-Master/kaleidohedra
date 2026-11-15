@@ -1,0 +1,22 @@
+[    0.0 s] tests in use: [('F', 'G'), ('F', 'H1'), ('F', 'D'), ('T', 'b9 < 1'), ('T', 'b7 < b8'), ('T', 'b8 < b9'), ('T', 'corner t9 in disc'), ('T', 'apex t8'), ('T', 'b1 < b2'), ('T', 'b2 < b3'), ('T', 'b3 < b6'), ('T', 'apex t1'), ('T', 'w8 > 0'), ('T', 'b6 < b7'), ('T', 'Q > 1/2'), ('T', 'corner t8 in disc'), ('T', 'w2 > 0'), ('T', 'apex t2'), ('T', 'w6 > 0'), ('T', 'apex t5'), ('T', 'apex t6'), ('T', 'b5 < 1/2'), ('T', 'b5 < b6'), ('T', 'w4 > 0'), ('T', 'b3 < b4'), ('T', 'corner t2 in disc'), ('T', 'corner t6 in disc'), ('T', 'w5 > 0'), ('T', 'apex t4'), ('T', 'b4 < b5'), ('T', 'corner t4 in disc'), ('T', 'corner t5 in disc')]
+[    0.0 s] level 1: open 2, leaves 0, deepest 1
+PROGRESS 0.010 level 1
+[    0.1 s] level 2: open 4, leaves 0, deepest 1
+PROGRESS 0.020 level 2
+[    0.1 s] level 3: open 8, leaves 0, deepest 1
+PROGRESS 0.029 level 3
+[    0.1 s] level 4: open 16, leaves 0, deepest 2
+PROGRESS 0.039 level 4
+[    0.1 s] level 5: open 32, leaves 0, deepest 2
+PROGRESS 0.049 level 5
+[    0.2 s] level 6: open 34, leaves 15, deepest 2
+PROGRESS 0.059 level 6
+[    0.2 s] level 7: open 12, leaves 43, deepest 3
+PROGRESS 0.069 level 7
+[    0.2 s] level 8: open 10, leaves 50, deepest 3
+PROGRESS 0.078 level 8
+[    0.2 s] level 9: open 8, leaves 56, deepest 3
+PROGRESS 0.088 level 9
+[    0.2 s] leaves: 64  by test: {'corner t8 in disc': 29, 'b5 < 1/2': 1, 'corner t2 in disc': 1, 'Q > 1/2': 8, 'G': 25}  open: 0
+PROGRESS 1.0 done
+FINAL ok
