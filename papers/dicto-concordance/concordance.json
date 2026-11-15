@@ -8169,6 +8169,16 @@
     "retry": "only with: better retina segmentation (over 90% tracked), an apposition eye with strongly uneven curvature (check the other six Paukner eyes at 2400 nm first), or the volume-EM wasp eye",
     "study": "studies/2026-11-16-compound-eye-scutoids",
     "goes_to": "#104 scutoid thread (biology prediction)"
+   },
+   {
+    "date": "2026-11-16",
+    "question": "Compound-eye scutoids: which of the seven Paukner 2024 butterfly eyes (BossDB paukner2024) should be traced next? Clear zone, cornea unevenness and column traceability from the 2.4 um level",
+    "method": "studies/2026-11-16-compound-eye-scutoids: bossfetch.py (channel folder found by listing; job eye-survey-fetch FINAL ok, 3.6 GB, gw06 pilot 40 s); eyesurvey.py: cornea as the connected ray height map about a local sphere through one seed per eye, lens-texture gate; free quadric (trimmed, bootstrap); local U on 132 um discs 144 um apart; depth profiles of texture and structure-tensor column alignment; eyesurveyfig.py; job eye-survey FINAL ok (second launch); three orthogonal slices per eye viewed by eye; gw05 as control",
+    "status": "SETTLED (choice made: gw16); curvature numbers good to about +-0.1 in U only",
+    "result": "apposition (no clear zone, thin pointed cones, continuous columns): gw16, gw06, gw17, gw07; clear-zone type (large oval cones, pigment band, structureless band): gw05, gw14, gw13 (grp02). Quadric max/min, mid/min: gw16 1.27/1.16, gw07 1.34/1.16, gw06 1.17/1.12, gw14 2.21/1.83 (fit mixed with other surfaces), gw05 1.45 here vs 1.03 in the trace; U median: gw16 0.13, gw07 0.21, gw06 0.12, gw14 0.16, gw05 0.25 here vs 0.11 in the trace; gw13 and gw17 cornea not measurable (sample tube, low contrast, eye cut off). Ranking gw16 > gw07 > gw06 > gw17 > gw14 > gw05 > gw13; pick gw16 (columns traceable from the cones through the retina, cleanest cornea fit, moderate unevenness, 7.3 G voxels at 0.6 um). None is uneven beyond the survey's resolution. Wasp eye (Makarova et al. 2025, eLife 14:RP103247): public CATMAID (8 nm, 8000 x 12000 x 12331 voxels, 685 skeletons, per-ommatidium annotations), per-cell Imaris models not released, no data licence stated",
+    "retry": "never redo this survey at 2.4 um; next only: trace gw16 (then gw07 with seams masked), cornea curvature at 1200 nm, wasp R1-R8 skeletons from the CATMAID API",
+    "study": "studies/2026-11-16-compound-eye-scutoids",
+    "goes_to": "#104 scutoid thread (biology prediction)"
    }
   ]
  },

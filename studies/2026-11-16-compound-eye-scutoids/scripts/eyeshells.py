@@ -5,7 +5,7 @@ towards the sphere centre keeps its chart position at every depth. Output: stack
 (derived from unlicensed data, never put in git).
 Patch axes are given as (A, B) angles in the coarse frame (u0, e1, e2) found on the 2.4 um volume (sphere_iso.npy, frame_iso.npy).
 Usage: eyeshells.py OUT.npy A B [DEPTH_STEP_UM N D0_UM D1_UM]"""
-import sys, numpy as np, time
+import sys, os, numpy as np, time
 from scipy import ndimage as ndi
 E = os.environ.get('EYE_DATA', os.path.expanduser('~/eye-data')) + '/'
 DA = 0.001

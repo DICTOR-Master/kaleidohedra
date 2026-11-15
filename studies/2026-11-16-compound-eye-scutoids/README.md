@@ -253,3 +253,69 @@ neighbour graph; red = pairs that part) and figures/eye-swapmap.png (counted cel
    persist or are end effects.
 5. Measure the axis anisotropy A directly from cone tracks (the README's Δφ tensor). A median of 1.10 in the cone layer means
    the model expects few changes; compare per patch once the retina is trusted.
+
+## 16 Nov: survey of the seven butterfly eyes for the next trace (ledger [272])
+
+**Conclusion: trace gw16 next.** It is an apposition eye (no clear zone), and its columns can be followed from the cone
+tips down through the retina. Its cornea is the most cleanly fitted, and moderately uneven (local radii about 805 and 1030 µm).
+None of the five measurable eyes is uneven beyond what this survey can resolve. So gw16 tests the "no clear zone" half of the
+question cleanly, but it is not the strongly oval eye that the prediction is about.
+
+Data: Paukner et al. 2024 (Ecology and Evolution, CC BY 4.0 article; BossDB paukner2024, DOI 10.60533/boss-2023-okgx), seven
+eyes from six species (*Heliconius cydno*, *Strymon melinus*, *Calycopis cecrops*, *Polygonia interrogationis*, *Polites peckius*,
+two *Pieris rapae*). Neither the paper (first 100,000 characters of the PMC text, read) nor its code says which volume is which animal. Only gw07 is named by its channel folder
+(CYD_102017_DP_full_vol, so most likely *H. cydno*). Every eye was read at scale 2400_2400_600 (2.4 × 2.4 × 0.6 µm). That is the
+coarsest scale all seven share, and the one used for gw05. Four eyes also have 4800 and 9600 levels, but those are too coarse
+to show columns. Fetch: job eye-survey-fetch (gw06 pilot 40 s; five eyes 3.6 GB, FINAL ok, no absent chunks). bossfetch.py now
+finds the channel folder itself. The volumes stay on the compute machine, outside git. Committed here are
+data/eyesurvey-summary.json (derived numbers) and figures/eye-survey.png (low-resolution sections and depth profiles). Scripts:
+scripts/eyesurvey.py and eyesurveyfig.py (job eye-survey, FINAL ok on the second launch; the first stopped when two cornea
+sheets broke after a mask change, which was fixed).
+
+| rank | eye (volume, voxels) | clear zone | cornea quadric max/min, mid/min | local U median (IQR); radii | columns from the surface inward | problems |
+|---|---|---|---|---|---|---|
+| 1 | **gw16** (grp03; 2496 × 2547 × 1155) | none: thin pointed cones run straight into the retina | 1.27, 1.16 | 0.13 (0.08-0.18); 805 / 1030 µm | seen by eye as a continuous fan from cones to basement membrane; aligned 60-77 and 115-341 µm | retina partly detached from the brain behind it; tomography rings around the volume centre |
+| 2 | gw07 (grp04, *H. cydno*?; 2975 × 2975 × 2162) | none | 1.34, 1.16 | 0.21 (0.15-0.41); 934 / 1416 µm | strongest column signal (aligned 55-96 and 391-598 µm) | three z blocks with brightness seams; eye cut at the field edges; cornea fit mixed with other surfaces (sphere rms 26 µm); 19 G voxels at 0.6 µm |
+| 3 | gw06 (grp03; 1844 × 2626 × 1035) | none: same cone type as gw16 | 1.17, 1.12 | 0.12 (0.09-0.18); 616 / 793 µm | aligned 127-290 µm; fibres seen continuously below the cones | tomography rings; the roundest of the apposition eyes |
+| 4 | gw17 (grp03; 2216 × 2960 × 1200) | none (thin pointed cones) | not measured | not measured | faint | very low contrast (eye interior about 3 grey levels against 0.3 outside); inside a sample tube; the cornea was found only in a patch (2 discs) |
+| 5 | gw14 (grp02; 2451 × 3339 × 1100) | yes: large bright cones, pigment band, structureless band below about 130 µm | 2.21, 1.83 (fit mixed with other surfaces; 1.27 in a pilot) | 0.16 (0.10-0.44) | cones only (53-127 µm), then no column signal | tears between the cone layer and the retina; grey medium around the eye |
+| 6 | gw05 (grp02; traced) | yes, 130-280 µm | trace: within 3%; this survey 1.45 | trace 0.11; this survey 0.25 | cones only (36-94 µm) | trace UNDECIDED (section above) |
+| 7 | gw13 (grp02; 3424 × 3424 × 1200) | probably: same large bright cones as gw05 and gw14 | not measured | not measured | not judged | eye at the z edge of the volume and cut off; torn tissue; grey medium; sample tube |
+
+How the columns were judged: by eye on three orthogonal slices of each volume, and by the share of voxels whose structure-tensor
+column axis lies within 30° of the surface normal, at each depth (runs where the share is at least 0.5; profiles in the figure).
+The three grp02 eyes (gw05, gw13, gw14) share large oval cones, a pigment band and a structureless band, so they read as clear-zone
+eyes. The grp03 and grp04 eyes (gw06, gw16, gw17, gw07) have thin pointed cones whose fibres continue without a gap, so they read as
+apposition eyes.
+
+**Limits of the curvature numbers.** The cornea is found automatically. A local sphere is fitted through one seed point per eye,
+read off the slices by eye. Rays are then cast from its centre, and the connected height map that keeps lens texture is kept.
+On gw05 this survey gives U 0.11-0.25 and a quadric ratio of 1.15-1.45 across mask variants, where the careful trace gave 0.11
+and 1.03. So U is good to about ±0.1 here. A free quadric on a cap is poorly posed: its bootstrap spread is small (±0.01), but
+it moves with the choice of surface points. The ranking therefore rests on the clear zone and the columns. On curvature it says
+only that gw07 may be the most uneven eye. Tried and dropped: a single sphere for the whole volume (it locked onto the sample
+tube in gw13 and gw17 and onto the head capsule in gw16), and lens-boundary voxels as the sheet (too sparse to connect).
+A radius-based clear-zone call misread fine apposition retina as a clear zone (gw06), so the clear-zone column is a visual call.
+
+### Wasp eye (Makarova et al. 2025) as a validation set: facts checked, nothing downloaded
+- Published: Makarova et al. 2025, eLife 14:RP103247, doi 10.7554/eLife.103247 (article CC BY 4.0). *Megaphragma viggianii*:
+  29 ommatidia, 478 cells, FIB-SEM at 8 × 8 × 8 nm over 64 × 96 × 98.6 µm.
+- Where: a public CATMAID server (waspem-lamina.flatironinstitute.org, readable without login). It holds one project
+  ("Megaphragma wasp 0416"), an image stack of 8000 × 12000 × 12331 voxels at 8 nm served as JPEG tiles (about 1.2 T voxels, about
+  1.2 TB raw), 685 skeleton tracings, and 253 annotations per ommatidium and cell type (for example ommatidia_C1, R1R4, R7,
+  rhabdom_centerline, nuc_PR), plus two mesh volumes (an alpha shape and a training region).
+- Segmentation: the paper's per-cell models (manual Imaris segmentation, Blender) are not released in any repository found. No
+  EMPIAR, Zenodo or Dryad entry exists, and Supplementary file 1 holds measurements only. What is public is the CATMAID
+  skeletons (centrelines, not cell volumes).
+- Licence: none stated for the data (only the article is CC BY 4.0), so the same rule applies as for BossDB: analysis only,
+  cited, nothing redistributed.
+- Use: the photoreceptor and rhabdom centreline skeletons would give neighbour sets along depth directly, with no segmentation.
+  Next step: read the R1-R8 skeletons per ommatidium (a few MB through the API).
+
+### LEADS
+1. Trace gw16 with the gw05 pipeline (a cone shell window, then planes that follow the columns). Its columns are continuous, so
+   pair the cones and the retina one to one (impossible in gw05), and compare neighbour sets at the cone tips and at about 300 µm.
+2. If gw16 shows no swaps, run gw07 as the more uneven eye: mask the z-block seams, and refit its cornea on one block only.
+3. Wasp eye: fetch the R1-R8 and rhabdom-centreline skeletons from the public CATMAID API, and compute neighbour sets of the 29
+   ommatidia along depth.
+4. Cornea curvature: fit gw16 and gw07 at 1200 nm (cleaner surface) before claiming U, because this survey's U is only good to ±0.1.

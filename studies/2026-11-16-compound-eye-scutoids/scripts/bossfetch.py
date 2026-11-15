@@ -2,11 +2,21 @@
 """Read one scale of a public BossDB precomputed volume (bucket bossdb-open-data) into a local uint8 .npy (z, y, x).
 Dataset: Paukner et al. 2024 (J. Microsc.?/ see README), BossDB collection paukner2024. No licence is stated for it: the volume is
 kept on the compute machine outside git and is never redistributed; only derived counts are committed.
+The channel folder is found by listing the experiment (most use 032019_DP_full_vol, grp04_gw07 uses CYD_102017_DP_full_vol);
+set BOSS_CHANNEL to force one.
 Usage: python bossfetch.py EXPERIMENT SCALE_KEY OUT.npy [x0 x1 y0 y1 z0 z1]"""
-import sys, json, gzip, urllib.request, urllib.error, numpy as np, time
+import sys, os, re, json, gzip, urllib.request, urllib.error, numpy as np, time
 from concurrent.futures import ThreadPoolExecutor
 exp, key, out = sys.argv[1], sys.argv[2], sys.argv[3]
-base = f'https://bossdb-open-data.s3.amazonaws.com/paukner2024/{exp}/032019_DP_full_vol'
+BUCKET = 'https://bossdb-open-data.s3.amazonaws.com'
+ch = os.environ.get('BOSS_CHANNEL')
+if not ch:
+    lst = urllib.request.urlopen(f'{BUCKET}/?list-type=2&prefix=paukner2024/{exp}/&delimiter=/').read().decode()
+    chs = [p.rstrip('/').split('/')[-1] for p in re.findall(r'<Prefix>([^<]*)</Prefix>', lst) if p.count('/') == 3]
+    if len(chs) != 1: sys.exit(f'channel folders found: {chs}; set BOSS_CHANNEL')
+    ch = chs[0]
+print('channel', ch, flush=True)
+base = f'{BUCKET}/paukner2024/{exp}/{ch}'
 info = json.load(urllib.request.urlopen(base + '/info'))
 sc = [s for s in info['scales'] if s['key'] == key][0]; X, Y, Z = sc['size']; cx, cy, cz = sc['chunk_sizes'][0]
 x0, x1, y0, y1, z0, z1 = [int(v) for v in sys.argv[4:10]] if len(sys.argv) > 4 else (0, X, 0, Y, 0, Z)

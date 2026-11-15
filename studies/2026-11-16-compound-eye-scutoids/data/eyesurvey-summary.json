@@ -1,0 +1,319 @@
+{
+ "gw13": {
+  "measured": false,
+  "reason": "cornea sheet not found at 2.4 um",
+  "sheet_points": 207
+ },
+ "gw17": {
+  "measured": false,
+  "reason": "fewer than 5 counted discs",
+  "sheet_points": 6506
+ },
+ "gw05": {
+  "measured": true,
+  "seed_iso": [
+   125,
+   300,
+   355
+  ],
+  "sheet_points": 26676,
+  "sheet_extent_um": [
+   596,
+   1331,
+   925
+  ],
+  "sphere_radius_um": 683,
+  "sphere_rms_um": 22.1,
+  "quadric": "ellipsoid",
+  "semi_axes_um": [
+   642,
+   611,
+   444
+  ],
+  "ratio_max_min": 1.447004986120437,
+  "ratio_mid_min": 1.3769413027952746,
+  "ratio_bootstrap": {
+   "p10": 1.428520330985054,
+   "p50": 1.4361428424293903,
+   "p90": 1.4430121244954441,
+   "non_ellipsoid": 0
+  },
+  "U_tiles": 22,
+  "U_median": 0.2538155471122179,
+  "U_iqr": [
+   0.17848464726945906,
+   0.4723222006457958
+  ],
+  "U_max": 0.9410113295576459,
+  "discs_placed": 49,
+  "r1_median_um": 526.2219900096175,
+  "r2_median_um": 869.9631622557356,
+  "clear_zone_bands_um": [],
+  "texture_dip": {
+   "from_um": 177.6,
+   "to_um": 218.4,
+   "ratio": 0.6205230843560535
+  },
+  "column_runs_um": [
+   [
+    36.0,
+    93.6
+   ]
+  ],
+  "aligned_depth_um": 60.0,
+  "tissue_end_um": 597.6,
+  "shape_zyx": [
+   1004,
+   566,
+   419
+  ]
+ },
+ "gw06": {
+  "measured": true,
+  "seed_iso": [
+   129,
+   330,
+   75
+  ],
+  "sheet_points": 25433,
+  "sheet_extent_um": [
+   600,
+   1441,
+   1068
+  ],
+  "sphere_radius_um": 796,
+  "sphere_rms_um": 13.0,
+  "quadric": "ellipsoid",
+  "semi_axes_um": [
+   759,
+   728,
+   648
+  ],
+  "ratio_max_min": 1.171727899277697,
+  "ratio_mid_min": 1.123620274319838,
+  "ratio_bootstrap": {
+   "p10": 1.1608113264223676,
+   "p50": 1.1624610420089951,
+   "p90": 1.163994321968007,
+   "non_ellipsoid": 0
+  },
+  "U_tiles": 39,
+  "U_median": 0.11929634101520595,
+  "U_iqr": [
+   0.0945128744244047,
+   0.1818022874735156
+  ],
+  "U_max": 0.5492885381429303,
+  "discs_placed": 58,
+  "r1_median_um": 616.2916724926964,
+  "r2_median_um": 793.006013291044,
+  "clear_zone_bands_um": [],
+  "texture_dip": {
+   "from_um": 213.6,
+   "to_um": 254.39999999999998,
+   "ratio": 0.42962800878021834
+  },
+  "column_runs_um": [
+   [
+    127.19999999999999,
+    290.4
+   ]
+  ],
+  "aligned_depth_um": 165.6,
+  "tissue_end_um": 597.6,
+  "shape_zyx": [
+   1035,
+   657,
+   461
+  ]
+ },
+ "gw14": {
+  "measured": true,
+  "seed_iso": [
+   137,
+   420,
+   482
+  ],
+  "sheet_points": 4158,
+  "sheet_extent_um": [
+   491,
+   1401,
+   1073
+  ],
+  "sphere_radius_um": 893,
+  "sphere_rms_um": 17.3,
+  "quadric": "ellipsoid",
+  "semi_axes_um": [
+   665,
+   551,
+   301
+  ],
+  "ratio_max_min": 2.2098179468476657,
+  "ratio_mid_min": 1.8332593482684605,
+  "ratio_bootstrap": {
+   "p10": 2.1506688442594646,
+   "p50": 2.1845850582230604,
+   "p90": 2.219906154511623,
+   "non_ellipsoid": 0
+  },
+  "U_tiles": 16,
+  "U_median": 0.15545788711971123,
+  "U_iqr": [
+   0.1021958277224623,
+   0.4381298753030263
+  ],
+  "U_max": 0.9714467498373923,
+  "discs_placed": 46,
+  "r1_median_um": 761.8384693330538,
+  "r2_median_um": 1081.1841668511784,
+  "clear_zone_bands_um": [],
+  "texture_dip": {
+   "from_um": 350.4,
+   "to_um": 391.2,
+   "ratio": 0.6396014171650968
+  },
+  "column_runs_um": [
+   [
+    52.8,
+    127.19999999999999
+   ]
+  ],
+  "aligned_depth_um": 76.8,
+  "tissue_end_um": 597.6,
+  "shape_zyx": [
+   1100,
+   835,
+   613
+  ]
+ },
+ "gw16": {
+  "measured": true,
+  "seed_iso": [
+   144,
+   300,
+   88
+  ],
+  "sheet_points": 13664,
+  "sheet_extent_um": [
+   672,
+   1288,
+   1169
+  ],
+  "sphere_radius_um": 961,
+  "sphere_rms_um": 7.9,
+  "quadric": "ellipsoid",
+  "semi_axes_um": [
+   873,
+   794,
+   687
+  ],
+  "ratio_max_min": 1.2702356436349012,
+  "ratio_mid_min": 1.1564288877153477,
+  "ratio_bootstrap": {
+   "p10": 1.2640140162933013,
+   "p50": 1.2655082788509082,
+   "p90": 1.2665259526299422,
+   "non_ellipsoid": 0
+  },
+  "U_tiles": 24,
+  "U_median": 0.12824657592624436,
+  "U_iqr": [
+   0.07642487041182663,
+   0.18440108246092854
+  ],
+  "U_max": 0.3238181565426114,
+  "discs_placed": 46,
+  "r1_median_um": 804.716231484342,
+  "r2_median_um": 1030.4443477580605,
+  "clear_zone_bands_um": [],
+  "texture_dip": {
+   "from_um": 192.0,
+   "to_um": 232.79999999999998,
+   "ratio": 0.6228788957940253
+  },
+  "column_runs_um": [
+   [
+    60.0,
+    76.8
+   ],
+   [
+    115.19999999999999,
+    340.8
+   ]
+  ],
+  "aligned_depth_um": 247.2,
+  "tissue_end_um": 597.6,
+  "shape_zyx": [
+   1155,
+   637,
+   624
+  ]
+ },
+ "gw07": {
+  "measured": true,
+  "seed_iso": [
+   270,
+   450,
+   150
+  ],
+  "sheet_points": 20979,
+  "sheet_extent_um": [
+   1302,
+   1786,
+   1286
+  ],
+  "sphere_radius_um": 1153,
+  "sphere_rms_um": 25.9,
+  "quadric": "ellipsoid",
+  "semi_axes_um": [
+   1126,
+   978,
+   840
+  ],
+  "ratio_max_min": 1.3411909104427433,
+  "ratio_mid_min": 1.1643986602601697,
+  "ratio_bootstrap": {
+   "p10": 1.3396153327481355,
+   "p50": 1.342936577898642,
+   "p90": 1.3451296538541868,
+   "non_ellipsoid": 0
+  },
+  "U_tiles": 56,
+  "U_median": 0.21217000878028958,
+  "U_iqr": [
+   0.14797318477134186,
+   0.4059155699632272
+  ],
+  "U_max": 0.7977548342608567,
+  "discs_placed": 112,
+  "r1_median_um": 934.2144038404919,
+  "r2_median_um": 1416.273109076508,
+  "clear_zone_bands_um": [],
+  "texture_dip": {
+   "from_um": 482.4,
+   "to_um": 523.1999999999999,
+   "ratio": 0.7524786591626114
+  },
+  "column_runs_um": [
+   [
+    26.4,
+    26.4
+   ],
+   [
+    55.199999999999996,
+    96.0
+   ],
+   [
+    391.2,
+    597.6
+   ]
+  ],
+  "aligned_depth_um": 254.39999999999998,
+  "tissue_end_um": 597.6,
+  "shape_zyx": [
+   2162,
+   744,
+   744
+  ]
+ }
+}
