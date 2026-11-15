@@ -7908,6 +7908,16 @@
     "retry": "never for W/P pairing as a cure for step dependence; next: a count that excludes swaps within a fixed physical time of a neighbouring cell change (the macroscopic count), fixed before counting",
     "study": "studies/2026-11-15-event-logger (pairing section, pairing/)",
     "goes_to": "One tissue, three scales (counting rules for all streams; foam ladder rung 1; Earth section)"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "One tissue, many scales: atmosphere and sea ice (DICTO 15 Nov: 'atmospheric convection and clouds, ice sheets and sea ice'): can open-cell convection and sea-ice floes be read as changing tilings from free satellite time series, and are their swap, split and merge rates stable under threshold, time step and a persistence rule?",
+    "method": "studies/2026-11-15-atmosphere-seaice: Himawari-9 Japan-area Level 1b (NOAA open data on AWS), band 3, own HSD reader; open cells = h-minima marker watershed on smoothed albedo (sigma 1.5, 3 km; h 0.03/0.05/0.08), floes = threshold components with zones of influence (h 0.35/0.5); box ringed by one outside cell (sphere Euler), moved with the drift (phase correlation), interior events only; Sun-stream graph/matching and the shared event logger imported unchanged; swaps with flicker (W) and two-sided (P) persistence; 5 Feb 2025 cold-air outbreak 00-06 UTC at 2.5/5/10/20 min, Okhotsk ice 27 Feb 2025; rigid-drift and noise controls; jobs atmice-pilot, atmice-run2 FINAL ok",
+    "status": "PILOT (atmosphere feasible, rates not yet stable); sea ice NOT feasible from geostationary images; ice-wedge polygons no time series",
+    "result": "cloud tilings pass Euler at sigma 3 (0-3 of 145 frames fail; a third fail at sigma 1.5); rigid control 0 events; noise control gives split/merge flicker, no swaps; two-sided P=10 min swaps per cell-hour step-independent within ~30% (sigma 3, h 0.05: 0.085/0.078/0.106 at 2.5/5/10 min) but 0.03-0.15 across settings and strongly P-dependent (0.085/0.029/0.008 at P 10/20/40); splits+births per cell-hour 0.5-1.1 at 2.5 min vs 0.04-0.08 at 20 min (flicker); deaths read as merges; interior mean neighbours 5.5-5.8, mu2 3.1-3.5 (sigma 3); test box mixes open cells with cloud streets. Sea ice: 0-33 cells, cloud confusion, sun-angle drift. Prior art: no swap count found (Glassmeier & Feingold 2017 network laws from LES; Haerter & Monroy EGU 2025/2026 tracking abstracts)",
+    "retry": "atmosphere only with a pure open- or closed-cell box, two-sided persistence for splits/merges, and a moving-Voronoi image control of known swap rate; sea ice only via the SubZero floe model or 250 m / 10 m imagery; never Himawari for floes",
+    "study": "studies/2026-11-15-atmosphere-seaice",
+    "goes_to": "One tissue (comparison table: atmosphere and sea-ice rows); #104 follow-up"
    }
   ]
  },

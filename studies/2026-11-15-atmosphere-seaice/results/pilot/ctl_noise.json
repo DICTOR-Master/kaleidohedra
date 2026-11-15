@@ -1,0 +1,81 @@
+{
+ "data": "data/ctl_noise",
+ "mode": "open",
+ "sigma": 1.5,
+ "h": 0.03,
+ "box": 300,
+ "r0": 100,
+ "c0": 100,
+ "amin": 4,
+ "frames": 12,
+ "steps": {
+  "1": {
+   "step": 1,
+   "dt_min": 2.5,
+   "frames": 12,
+   "duration_h": 0.4583333333333333,
+   "mean_interior_cells": 15.5,
+   "drift_px_per_step_mean": [
+    2.0,
+    3.0
+   ],
+   "counts_interior": {
+    "split": 13,
+    "relabel": 4,
+    "clump": 2,
+    "merge": 10
+   },
+   "counts_all": {
+    "split": 30,
+    "clump": 25,
+    "relabel": 13,
+    "merge": 28,
+    "swap": 4,
+    "birth": 2
+   },
+   "clump_patterns": {
+    "born 2 died 0 lost 0 gained 0": 1,
+    "born 1 died 0 lost 0 gained 0": 1
+   },
+   "swaps_elementary": 0,
+   "swaps_two_step": 0,
+   "gained_unmatched": 0,
+   "lost_unmatched": 0,
+   "by_W": {
+    "5.0": {
+     "swaps_persistent": 0,
+     "split_flicker": 5,
+     "new_cells_persistent": 8,
+     "swaps_per_new_cell": 0.0,
+     "swaps_per_cell_hour": 0.0
+    },
+    "10.0": {
+     "swaps_persistent": 0,
+     "split_flicker": 6,
+     "new_cells_persistent": 7,
+     "swaps_per_new_cell": 0.0,
+     "swaps_per_cell_hour": 0.0
+    }
+   },
+   "frames_euler_bad": 2,
+   "frames_triple_bad": 0,
+   "junction_degrees": {
+    "3": 848
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "p_n": {
+    "1": 0.022222222222222223,
+    "2": 0.13333333333333333,
+    "3": 0.08888888888888889,
+    "4": 0.26666666666666666,
+    "5": 0.3111111111111111,
+    "6": 0.044444444444444446,
+    "7": 0.13333333333333333
+   },
+   "mean_n_interior": 4.377777777777778,
+   "mu2": 2.3683950617283953
+  }
+ },
+ "wall_s": 0.9995248317718506
+}

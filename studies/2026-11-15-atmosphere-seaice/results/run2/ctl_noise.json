@@ -1,0 +1,92 @@
+{
+ "data": "data/c2_noise",
+ "mode": "open",
+ "sigma": 3.0,
+ "h": 0.05,
+ "box": 400,
+ "r0": 250,
+ "c0": 500,
+ "amin": 4,
+ "frames": 24,
+ "steps": {
+  "1": {
+   "step": 1,
+   "dt_min": 2.5,
+   "frames": 24,
+   "duration_h": 0.9583333333333334,
+   "mean_interior_cells": 32.458333333333336,
+   "drift_px_per_step_mean": [
+    1.0,
+    2.0
+   ],
+   "counts_interior": {
+    "merge": 12,
+    "split": 10,
+    "clump": 2
+   },
+   "counts_all": {
+    "split": 38,
+    "merge": 37,
+    "clump": 20,
+    "swap": 21
+   },
+   "clump_patterns": {
+    "born 0 died 1 lost 0 gained 3": 1,
+    "born 1 died 0 lost 3 gained 0": 1
+   },
+   "swaps_elementary": 0,
+   "swaps_two_step": 0,
+   "gained_unmatched": 0,
+   "lost_unmatched": 0,
+   "by_W": {
+    "10.0": {
+     "swaps_persistent": 0,
+     "split_flicker": 4,
+     "new_cells_persistent": 6,
+     "swaps_per_new_cell": 0.0,
+     "swaps_per_cell_hour": 0.0
+    },
+    "20.0": {
+     "swaps_persistent": 0,
+     "split_flicker": 5,
+     "new_cells_persistent": 5,
+     "swaps_per_new_cell": 0.0,
+     "swaps_per_cell_hour": 0.0
+    }
+   },
+   "two_sided": {
+    "10.0": {
+     "judged": 0,
+     "persistent": 0,
+     "per_cell_hour": 0.0
+    },
+    "20.0": {
+     "judged": 0,
+     "persistent": 0,
+     "per_cell_hour": 0.0
+    }
+   },
+   "frames_euler_bad": 0,
+   "frames_triple_bad": 0,
+   "junction_degrees": {
+    "3": 2900
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "p_n": {
+    "3": 0.08,
+    "4": 0.16,
+    "5": 0.19,
+    "6": 0.23,
+    "7": 0.245,
+    "8": 0.055,
+    "9": 0.015,
+    "10": 0.005,
+    "11": 0.02
+   },
+   "mean_n_interior": 5.77,
+   "mu2": 2.6771
+  }
+ },
+ "wall_s": 2.982184648513794
+}
