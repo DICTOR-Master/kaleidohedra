@@ -1,0 +1,42 @@
+PROGRESS 0.00 start (0 s)
+PROGRESS 0.05 synthetic control 1.74 / None (3 s)
+PROGRESS 0.11 drosophila_mauritiana raw (5 s)
+PROGRESS 0.16 drosophila_mauritiana similarity (5 s)
+PROGRESS 0.22 drosophila_mauritiana noise (5 s)
+PROGRESS 0.28 drosophila_mauritiana smooth (5 s)
+PROGRESS 0.33 apis_mellifera raw (10 s)
+PROGRESS 0.39 apis_mellifera noise (11 s)
+PROGRESS 0.44 apis_mellifera smooth (11 s)
+PROGRESS 0.50 apis_mellifera similarity (11 s)
+PROGRESS 0.56 deilephila_elpenor raw (19 s)
+PROGRESS 0.61 deilephila_elpenor similarity (19 s)
+PROGRESS 0.67 deilephila_elpenor smooth (20 s)
+PROGRESS 0.73 deilephila_elpenor noise (22 s)
+PROGRESS 0.78 manduca_sexta raw (36 s)
+PROGRESS 0.84 manduca_sexta smooth (38 s)
+PROGRESS 0.89 manduca_sexta similarity (38 s)
+PROGRESS 0.95 manduca_sexta noise (40 s)
+CHECK C1_similarity_zero_swaps True
+CHECK C2_across_rows_first_swap_at_sqrt3 True
+CHECK C2_along_rows_no_swap_to_A10 True
+CHECK zero_depth_zero_swaps True
+CHECK all_16_runs_present True
+apis_mellifera noise spacing/lens 1.024 edges 12701 0:0.0 10:0.0224 25:0.1386 50:0.4307 75:0.62 100:0.7452 150:0.8774 200:0.936 250:0.9612 300:0.9699 400:0.9815 
+apis_mellifera raw spacing/lens 1.024 edges 12701 0:0.0 10:0.0245 25:0.0963 50:0.2591 75:0.4063 100:0.5206 150:0.7 200:0.8042 250:0.8707 300:0.9096 400:0.9455 
+apis_mellifera similarity spacing/lens 1.024 edges 12701 0:0.0 10:0.0 25:0.0 50:0.0 75:0.0 100:0.0 150:0.0 200:0.0 250:0.0 300:0.0 400:0.0 
+apis_mellifera smooth spacing/lens 1.024 edges 12701 0:0.0 10:0.0017 25:0.0035 50:0.008 75:0.0131 100:0.0206 150:0.0468 200:0.089 250:0.1407 300:0.2104 400:0.303 {'kmax_p10_50_90_per_um': [0.00089, 0.0016, 0.00297], 'kmin_p10_50_90_per_um': [-0.00025, 0.00049, 0.00103], 'dphi_max_deg_p50': 2.03, 'dphi_min_deg_p50': 0.62, 'dstar_um_p10_50_90': [164.9, 316.0, 574.9]}
+deilephila_elpenor noise spacing/lens 1.006 edges 38200 0:0.0 10:0.0018 25:0.0038 50:0.0351 75:0.135 100:0.2677 150:0.4729 200:0.6177 250:0.7267 300:0.8088 400:0.9029 
+deilephila_elpenor raw spacing/lens 1.006 edges 38200 0:0.0 10:0.001 25:0.0025 50:0.0086 75:0.0218 100:0.0512 150:0.1924 200:0.3601 250:0.4776 300:0.575 400:0.7153 
+deilephila_elpenor similarity spacing/lens 1.006 edges 38200 0:0.0 10:0.0 25:0.0 50:0.0 75:0.0 100:0.0 150:0.0 200:0.0 250:0.0 300:0.0 400:0.0 
+deilephila_elpenor smooth spacing/lens 1.006 edges 38200 0:0.0 10:0.0001 25:0.0002 50:0.0003 75:0.0004 100:0.0006 150:0.0009 200:0.0013 250:0.0022 300:0.0036 400:0.0097 {'kmax_p10_50_90_per_um': [0.00069, 0.00084, 0.00103], 'kmin_p10_50_90_per_um': [0.00043, 0.00064, 0.00079], 'dphi_max_deg_p50': 1.37, 'dphi_min_deg_p50': 1.04, 'dstar_um_p10_50_90': [634.6, 894.7, 1173.7]}
+drosophila_mauritiana noise spacing/lens 1.008 edges 2163 0:0.0 10:0.0018 25:0.0536 50:0.3592 75:0.5934 100:0.7565 150:0.9272 200:0.9721 250:0.9841 300:0.9912 400:0.9804 
+drosophila_mauritiana raw spacing/lens 1.008 edges 2163 0:0.0 10:0.0005 25:0.0042 50:0.038 75:0.1175 100:0.2204 150:0.469 200:0.6966 250:0.8851 300:0.9472 400:0.7986 
+drosophila_mauritiana similarity spacing/lens 1.008 edges 2163 0:0.0 10:0.0 25:0.0 50:0.0 75:0.0 100:0.0 150:0.0 200:0.0 250:0.0 300:0.0 400:0.0 
+drosophila_mauritiana smooth spacing/lens 1.008 edges 2163 0:0.0 10:0.0 25:0.0 50:0.0005 75:0.0032 100:0.0129 150:0.1036 200:0.3027 250:0.7079 300:0.788 400:0.478 {'kmax_p10_50_90_per_um': [0.00325, 0.00404, 0.0055], 'kmin_p10_50_90_per_um': [0.00199, 0.00295, 0.00362], 'dphi_max_deg_p50': 4.14, 'dphi_min_deg_p50': 3.02, 'dstar_um_p10_50_90': [122.2, 175.6, 239.6]}
+manduca_sexta noise spacing/lens 1.002 edges 76091 0:0.0 10:0.0 25:0.0 50:0.0 75:0.0 100:0.0 150:0.0001 200:0.0001 250:0.0001 300:0.0002 400:0.0003 
+manduca_sexta raw spacing/lens 1.002 edges 76091 0:0.0 10:0.0 25:0.0 50:0.0 75:0.0 100:0.0 150:0.0001 200:0.0001 250:0.0001 300:0.0001 400:0.0003 
+manduca_sexta similarity spacing/lens 1.002 edges 76091 0:0.0 10:0.0 25:0.0 50:0.0 75:0.0 100:0.0 150:0.0 200:0.0 250:0.0 300:0.0 400:0.0 
+manduca_sexta smooth spacing/lens 1.002 edges 76091 0:0.0 10:0.0 25:0.0 50:0.0 75:0.0 100:0.0001 150:0.0001 200:0.0001 250:0.0002 300:0.0002 400:0.0003 {'kmax_p10_50_90_per_um': [0.00044, 0.00053, 0.00064], 'kmin_p10_50_90_per_um': [0.00023, 0.0004, 0.00049], 'dphi_max_deg_p50': 0.98, 'dphi_min_deg_p50': 0.75, 'dstar_um_p10_50_90': [1004.6, 1424.8, 1862.5]}
+PROGRESS 1.00 done (40 s)
+FINAL ok
+[exit 0]

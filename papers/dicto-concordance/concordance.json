@@ -8111,6 +8111,16 @@
     "retry": "never for the dihedral, 2T, 2O, 2I, W(H3) signatures or the edge analysis; open only: W(H4) degree-3 forcing by full symmetry / O(4) irreducible, elimination proof of no generic (5,7)/(3,6) points, reading Bannai 1969 / Franzsen 2001",
     "study": "studies/2026-11-15-twisted-silence-groups",
     "goes_to": "aim 2 (laws) notes; clause (C) character silence of the census"
+   },
+   {
+    "date": "2026-11-16",
+    "question": "Compound-eye scutoids (DICTO 16 Nov: 'scutoids should appear in unevenly curved compound eyes'): prior art, open 3D eye data, a prediction stated before the data, and a pilot on open ODA-3D tables (bee, fruit fly, two hawkmoths)",
+    "method": "studies/2026-11-16-compound-eye-scutoids: prediction committed first (2bf1098a); fetch_oda.py (range requests into the 17 GB CC BY 4.0 figshare zip, checksums); eyeswap.py: columns extended along cone axes 0-400 um, local tangent Delaunay neighbour sets at cone layer vs depth, swap share by local anisotropy A; controls C1 even shrink (0 swaps), C2 perfect hex mosaic (first swap at A=1.74 across rows, none to A=10 along rows), C3 axis noise; job eyeswap-pilot FINAL ok (40 s)",
+    "status": "PREDICTION STATED + MODEL CALIBRATED (no scutoid observed: open data hold no depth traces)",
+    "result": "no prior report of scutoids or facet-to-retina neighbour changes in compound eyes; law: swaps when A=(1-d dphi_min/D)/(1-d dphi_max/D) reaches sqrt3 across facet rows (one edge family = 1/3 flips), never along rows; real mosaics soft: 0.2% (A<1.2), 2.7% (1.2-1.4), 5.7% (1.4-1.6), 9-13% (near sqrt3), 23% (2-2.5), 33% (2.5-3); model on real mosaics: bee 2.1/4.7/8.9/21% of interior edges at 100/150/200/300 um, patchy; fly 1.3% at 100 um, 10% at 150; D. elpenor <=0.4% to 300 um; M. sexta 0; raw cone axes (7-16 deg rms scatter) swap 5-52% at 100 um by noise, so cone-axis data cannot test it",
+    "retry": "never for the model on these four ODA tables; next only with depth traces: BossDB paukner2024 butterfly volumes (0.6 um, public, licence unstated), D. elpenor stack as negative control, 29-ommatidium wasp EM eye",
+    "study": "studies/2026-11-16-compound-eye-scutoids",
+    "goes_to": "#104 scutoid thread (biology prediction); One tissue, three scales notes"
    }
   ]
  },
