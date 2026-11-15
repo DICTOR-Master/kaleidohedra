@@ -5135,13 +5135,19 @@
    {
     "result": "Ring counts across stackings: strong rings stacking-blind (12 six-rings per site, no other strong ring; proof via Theorem 1 + hexagon-faced cage decomposition), King/Guttman/SP rings computed equal (11 polytypes; SP also all 2^11 local words and 8 Fibonacci sites); self-avoiding polygons equal to diamond (2 x A038515) to length 16 at every site of every stacking, first differ at 18 by the exact local law p18 = 349236 - 12h[-2] - 30h[-1] - 42h[0] - 24h[1] (p20 likewise; upper atom mirrored), computer-assisted and complete by a locality lemma; period averages 349236 - 108f, 2362200 - 360f (proved), 22 and 24 (with 108b) checked on 11 polytypes; Nagle ice series graded by bonds first differs at 16 bonds (+64*3^-15 f), sign reverses at 18, checked on 11 polytypes, nothing claimed on S_h vs S_c",
     "study": "studies/2026-11-15-ring-counts-stackings",
-    "goes_to": "#102 Version 5, Section 5 (Theorems 4, 5, Lemma 4, Corollary 6, Figure 3); draft for DICTO's read (DRAFT-102-v5-loop-equality.pdf, 15 Nov); not published",
+    "goes_to": "#102 Version 5, Section 5 (Theorems 4, 5, Lemma 4, Corollary 6, Figure 3); published in Version 5 (15 Nov); the differences in Theorem 5 are proved structurally in the Version 6 draft (see the polygon-bijection row)",
     "date": "2026-11-15"
    },
    {
     "result": "Loop Equality formally verified in Lean 4 + Mathlib (v4.35.0-rc2): loop_equality, loop_count_eq (explicit count, 15 values to m = 34), W_closed (chain form), Fibonacci corollary; no sorry, no native_decide; axioms propext, Classical.choice, Quot.sound. Not formalised: Ihara-Bass for all m (m <= 12), Bala identity (n < 10), Fibonacci word forms (k < 100), Corollaries 2, 3",
     "study": "studies/2026-11-14-lean-loop-equality (lean/LoopEquality)",
     "goes_to": "#102 Version 5, Section 3 'Formal proof'; draft for DICTO's read (15 Nov); not published",
+    "date": "2026-11-15"
+   },
+   {
+    "result": "Polygon laws of #102 proved up to diamond's constants: Theorem A (all lengths) - the half-turn twist about the midpoint of the two crossing bonds maps polygons crossing a bilayer's vertical bonds twice one to one onto those of the stacking with that letter flipped (length, site, crossing profile kept; Whitney 1933 credited), so polygons crossing every bilayer at most twice are equally many in every stacking; Theorem B - exact local formula Delta = -1/2 sum A_root A_far over pairs of arcs that meet; six-crossing terms vanish for l <= 20 (hand argument); 4-crossing tables (1038 arcs / 7713 meeting pairs at l <= 18; 6756 / 74493 at l <= 20) give 12, 30, 42, 24 (18) and 30, 114, 204, 12 (20), 0 for l <= 16 and for flips outside -2..1, the same for all 64 neighbour patterns of each flip -4..3; why 18 = 6 + 8 + 4 (all 12 six-bond asymmetries sit on one pairing on both sides). Constants 349236, 2362200 stay Guttmann-Jensen's (A038515). Lengths 22, 24 checked only. 2208 twist runs ok; 48 of 48 wrong-twist runs break.",
+    "study": "studies/2026-11-15-polygon-bijection",
+    "goes_to": "#102 Version 6, Section 5 (Theorems A, B, Corollary A, Lemmas 5-7, Figure 4); draft for DICTO's read (DRAFT-102-v6-loop-equality.pdf, 15 Nov); not published",
     "date": "2026-11-15"
    }
   ]
