@@ -1,0 +1,298 @@
+{
+ "ok": [
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "row counts": {
+  "ok": true,
+  "square": 17,
+  "hexagon": [
+   14,
+   16,
+   16,
+   18,
+   18,
+   20,
+   20,
+   22,
+   22,
+   24,
+   24,
+   26,
+   26,
+   28,
+   26,
+   26,
+   24,
+   24,
+   22,
+   22,
+   20,
+   20,
+   18,
+   18,
+   16,
+   16,
+   14
+  ],
+  "triangle": [
+   14,
+   13,
+   12,
+   11,
+   9,
+   8,
+   7,
+   5,
+   4,
+   3,
+   1
+  ]
+ },
+ "side lengths within 1 %": {
+  "ok": true,
+  "sides": {
+   "square: stitch edge": {
+    "true_cm": 9.5,
+    "from_stitches_cm": 9.444,
+    "error_pct": -0.58
+   },
+   "square: row edge": {
+    "true_cm": 9.5,
+    "from_stitches_cm": 9.5,
+    "error_pct": 0.0
+   },
+   "hexagon: bottom and top": {
+    "true_cm": 7.757,
+    "from_stitches_cm": 7.778,
+    "error_pct": 0.27
+   },
+   "hexagon: slanted sides": {
+    "true_cm": 7.757,
+    "from_stitches_cm": 7.79,
+    "error_pct": 0.43
+   },
+   "triangle: long leg": {
+    "true_cm": 7.757,
+    "from_stitches_cm": 7.778,
+    "error_pct": 0.27
+   },
+   "triangle: short leg": {
+    "true_cm": 5.485,
+    "from_stitches_cm": 5.5,
+    "error_pct": 0.28
+   },
+   "triangle: hypotenuse": {
+    "true_cm": 9.5,
+    "from_stitches_cm": 9.526,
+    "error_pct": 0.27
+   }
+  }
+ },
+ "Narcissus faces": {
+  "ok": true
+ },
+ "Narcissus edges and folds": {
+  "ok": true,
+  "dihedral_deg": {
+   "A": 90.0,
+   "B": 90.0,
+   "C": 90.0,
+   "D": 90.0,
+   "E": 90.0,
+   "F": 90.0,
+   "G": 120.0,
+   "H": 120.0,
+   "I": 120.0,
+   "J": 90.0,
+   "K": 90.0,
+   "L": 90.0,
+   "M": 135.0,
+   "N": 135.0,
+   "O": 135.0,
+   "P": 135.0,
+   "Q": 135.0,
+   "R": 135.0
+  },
+  "length_cm": {
+   "A": 7.757,
+   "B": 7.757,
+   "C": 7.757,
+   "D": 7.757,
+   "E": 7.757,
+   "F": 7.757,
+   "G": 5.485,
+   "H": 5.485,
+   "I": 5.485,
+   "J": 9.5,
+   "K": 9.5,
+   "L": 9.5,
+   "M": 9.5,
+   "N": 9.5,
+   "O": 9.5,
+   "P": 9.5,
+   "Q": 9.5,
+   "R": 9.5
+  }
+ },
+ "triangle hands alternate": {
+  "ok": true
+ },
+ "assembly groups": {
+  "ok": true
+ },
+ "cores": {
+  "ok": true,
+  "scale": 0.9579,
+  "cube_core_side_mm": 91.0,
+  "narcissus_inset_mm": [
+   1.69,
+   2.83
+  ],
+  "narcissus_core_edges_mm": {
+   "square": 91.0,
+   "hexagon": 74.3,
+   "triangle short leg": 52.5,
+   "triangle long leg": 74.3,
+   "triangle hypotenuse": 91.0
+  }
+ },
+ "Narcissus core net pieces": {
+  "ok": true,
+  "pieces": [
+   [
+    "T1",
+    "T2",
+    "T3",
+    "square 1"
+   ],
+   [
+    "T4",
+    "T5",
+    "hexagon"
+   ],
+   [
+    "T6",
+    "square 2",
+    "square 3"
+   ]
+  ]
+ },
+ "core pieces at true size, in the column": {
+  "ok": true,
+  "pieces": [
+   {
+    "file": "core-narcissus-1.svg",
+    "faces": [
+     "T1",
+     "T2",
+     "T3",
+     "square 1"
+    ],
+    "w_mm": 143.1,
+    "h_mm": 201.1,
+    "true_lengths": true,
+    "cut_edges": [
+     "A",
+     "E",
+     "F",
+     "H",
+     "K",
+     "L",
+     "M"
+    ],
+    "fold_edges": [
+     "I",
+     "Q",
+     "R"
+    ]
+   },
+   {
+    "file": "core-narcissus-2.svg",
+    "faces": [
+     "hexagon",
+     "T4",
+     "T5"
+    ],
+    "w_mm": 147.7,
+    "h_mm": 217.6,
+    "true_lengths": true,
+    "cut_edges": [
+     "A",
+     "C",
+     "E",
+     "F",
+     "G",
+     "H",
+     "N",
+     "P"
+    ],
+    "fold_edges": [
+     "B",
+     "D"
+    ]
+   },
+   {
+    "file": "core-narcissus-3.svg",
+    "faces": [
+     "square 3",
+     "T6",
+     "square 2"
+    ],
+    "w_mm": 140.0,
+    "h_mm": 188.0,
+    "true_lengths": true,
+    "cut_edges": [
+     "C",
+     "G",
+     "K",
+     "L",
+     "M",
+     "N",
+     "P"
+    ],
+    "fold_edges": [
+     "J",
+     "O"
+    ]
+   }
+  ]
+ },
+ "cube core strip": {
+  "ok": true,
+  "w_mm": 97.0,
+  "h_mm": 188.0,
+  "strips": [
+   [
+    "square 1",
+    "square 2"
+   ],
+   [
+    "square 4",
+    "square 5"
+   ],
+   [
+    "square 6",
+    "square 3"
+   ]
+  ]
+ },
+ "twisted cube": {
+  "ok": true,
+  "faces": 12
+ },
+ "test piece contacts": {
+  "ok": true,
+  "square_contacts_between_units": 1
+ }
+}
