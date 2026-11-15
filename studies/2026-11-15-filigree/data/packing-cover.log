@@ -1,0 +1,29 @@
+X PASS O: 6 corners, edge^2 = phi^4/2 (edge phi^2/sqrt2)
+X PASS I: 12 corners, edge 1 (Pacioli), I/O edge ratio sqrt2/phi^2
+X PASS D: 20 corners at the face centres of I, edge = (phi/3) x I edge
+X PASS C: 8 corners of D, edge = phi x D edge
+X PASS T: 4 alternate corners of C, edge = sqrt2 x C edge
+X PASS C is the dual cube of O: its 8 corners are the face centres of O
+X PASS nest: I in O, D in I, C in D, T in C (every corner inside, exact)
+COUNT gold {'A': 6, 'Ls': 30, 'P': 4, 'R': 6, 'Sh': 12}
+X PASS gold pieces: 6 Admiral Caps, 12 Sheriffs, 30 Lone-stars, 6 roofs, 4 pyramids
+X PASS O - I = the six Admiral Caps (exact volume)
+X PASS I - D = 12 Sheriffs + 30 Lone-stars (exact volume)
+X PASS D - C = Euclid's six roofs (exact volume)
+X PASS C - T = four corner pyramids (exact volume)
+X PASS every gold piece lies in the outer solid of its gap
+X PASS Sheriff: base edge = D edge, slant edges = sqrt3/phi x base (#99)
+X PASS pyramid: trirectangular, legs = C edge = (2/3) x the legs 1/sqrt2 of O's centre pyramid at #99 scale
+VOL O 2.990712
+VOL I 2.181695
+VOL D 1.202278
+VOL C 0.664603
+VOL T 0.221534
+PROGRESS 0.15 checks
+X PASS cube of the octet: 1 octahedron + 8 tetrahedra + 12 quarter octahedra (each a tetrahedron of 4 corners)
+X PASS volumes add up exactly to the cube, 8 = 4/3 + 8 x 1/3 + 12 x 1/3
+X PASS every tetrahedron has edge sqrt2 (the octahedron's) and its midpoint octahedron is axis-parallel, radius 1/2, about its centroid
+front corner (2, 0, 2) ; tetrahedra drawn 7 ; quarter octahedra drawn 9
+X PASS left out: the front tetrahedron and the three quarter octahedra at the front corner
+saved ../data/packing-cover.png (2400, 2200)
+FINAL ok
