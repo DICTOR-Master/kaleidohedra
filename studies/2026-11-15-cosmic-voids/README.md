@@ -316,6 +316,29 @@ Tables made by scripts/summarise.py from results/*.json.
   contact changes clumped with other contact changes, with no merge, is the part that still stands against "one at a time" here.
 
 
+## Follow-up: grid or physics? (15 Nov 2026; predictions written BEFORE the runs)
+Question: at the finest snapshot spacing (Delta a = 1/512, R = 4 Mpc/h), 20% of contact changes clump with other contact changes and no
+merge. Is that the voxel grid or the physics of the density field?
+Tests:
+- (1) Finer grid on the same field. The R = 4 smoothed field has no power above the 256^3 grid's Nyquist frequency (the Gaussian factor
+  there is e^-79), so the same continuous field can be sampled on a 512^3 grid (0.5 Mpc/h voxels) by Fourier zero-padding, exactly.
+  Basins, walls and tracking as before. Only the voxel size changes.
+- (2) Grid-free basins. A fixed random subset of the particles (tracers) is followed through the same run. Walls are faces of the
+  tracers' periodic Voronoi tessellation, so cells meet generically (3 along an edge, 4 at a corner), not as cubes (4 along an edge).
+  (a) ZOBOV zones (Neyrinck 2008): density = 1 / Voronoi volume, each tracer points to its lowest-density Voronoi neighbour.
+  (b) The same watershed on the R = 4 smoothed field read at the tracers, so the zones match the voxel basins in scale.
+- Neighbour rule: a wall counts if its area is at least eps * Vbar^(2/3) (Vbar = mean basin volume at that snapshot). eps is fixed as the
+  smallest value in {0.001, 0.002, 0.005, 0.01, 0.02, 0.05} at which the 256^3 and 512^3 grids agree on the mean neighbour count to 1%
+  ("walls both grids resolve"). The same cut is applied to Poisson-Voronoi cells for a like-for-like reference; uncut, 15.535.
+Predictions:
+- P1. If the clumps are the grid: at 512^3 the share clumped with other contact changes falls from 0.20 to 0.12 or less, and the share
+  alone rises above 0.65 toward the exact foam's ~0.9 at the same rate of changes per basin per step. If physics: within 0.03 of 0.20.
+  Either way, the basin count stays within 1% (same field, same minima).
+- P2. Voronoi zones (b) clump no more than the 512^3 voxels at the same rate; ZOBOV zones (a) flicker more (no smoothing) but, at matched
+  changes per zone per step, lie near the exact-foam curve if the clumps are the grid.
+- P3. With the physical wall rule, neighbours per basin = 14.5 +- 1, below Meijering's 15.535 (Aragon-Calvo 2014: about 14).
+- P4. Any clumps left are mostly "lost 1, gained 1" on small walls next to merges and splits.
+
 ## Limits
 - The simulation is particle-mesh: force resolution about 0.5 Mpc/h, one 256 Mpc/h box. The basins are watershed basins at a fixed
   smoothing, not the hierarchical ZOBOV/VIDE voids, chosen so that they tile space and nesting plays no part.
