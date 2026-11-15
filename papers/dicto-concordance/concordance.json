@@ -7838,6 +7838,16 @@
     "retry": "only: l=22,24 via Theorem B (tables F_max 14-16 + 6-crossing inclusion-exclusion; 108 b term); Lean: Theorem A first (no tables), then l=18 tables by decide (l=20 tables likely beyond kernel)",
     "study": "studies/2026-11-15-polygon-bijection",
     "goes_to": "#102 v5 Section 5 (replaces 'why 18 is open'; DICTO to place); Palomar Lean plan"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "One tissue, three scales: reference (null-model) values for the event census: Euler identities, swaps per birth in sweeps, moving Voronoi rates, coarsening T1/T2",
+    "method": "studies/2026-11-15-tissue-null-models: derivation (THEORY.md); Wythoff+Qhull h-vectors of all uniform 4-polytopes; periodic Poisson-Voronoi sweeps 3D/4D (index census); random simple 4-polytopes; moving PV 2D/3D time-stepped (linear, Brownian) + typical-Delaunay integral; literature (Moller 1989, Rutenberg-McCurdy, Herdtle-Aref)",
+    "status": "SETTLED (exact identities and 3D PV value); full 4D/moving runs were finishing at entry time",
+    "result": "swaps per birth = k/2 - 3 for any section of a normal 3D tessellation; PV: 24pi^2/35 - 2 = 4.7677 (sim 4.7669 +- 0.0006); 4D PV contact changes per birth 268/9; linear-motion T1 per cell per spacing 3.058 +- 0.005 (2D), 3D contact changes 15.61 +- 0.03; Brownian T1 counts scale as 1/delta (not a rate); froth T1/T2 0.53 +- 0.05 (lit.)",
+    "retry": "never for these; only: coarsening simulation (curved-film vertex model), power diagrams with non-linear weights",
+    "study": "studies/2026-11-15-tissue-null-models",
+    "goes_to": "One tissue, three scales (comparison table theory column); #104 follow-up"
    }
   ]
  },
