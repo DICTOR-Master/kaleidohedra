@@ -1,0 +1,3016 @@
+{
+ "results": [
+  {
+   "shape": "solid A (C1, perms (phi^2,phi^2,phi^2,phi,0))",
+   "family": "S5 orbits",
+   "role": "positive control",
+   "comparison": "600-cell walls (4D)",
+   "plates": 30,
+   "tally": {
+    "mirror": 30,
+    "cross": 0,
+    "none": 0
+   },
+   "cells": 10,
+   "2-faces": 30,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "solid B (C4, perms (phi^2,phi^2,1,1,0))",
+   "family": "S5 orbits",
+   "role": "positive control",
+   "comparison": "600-cell walls (4D)",
+   "plates": 80,
+   "tally": {
+    "mirror": 40,
+    "cross": 40,
+    "none": 0
+   },
+   "cells": 20,
+   "2-faces": 80,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "R = C3, third 20-point twisted class of 2I",
+   "family": "S5 orbits",
+   "role": "test",
+   "comparison": "600-cell walls (4D)",
+   "plates": 5,
+   "tally": {
+    "mirror": 0,
+    "cross": 5,
+    "none": 0
+   },
+   "cells": 30,
+   "2-faces": 70,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "-A (C2)",
+   "family": "S5 orbits",
+   "role": "test (congruent to A by -1)",
+   "comparison": "600-cell walls (4D)",
+   "plates": 30,
+   "tally": {
+    "mirror": 30,
+    "cross": 0,
+    "none": 0
+   },
+   "cells": 10,
+   "2-faces": 30,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "-B (C5)",
+   "family": "S5 orbits",
+   "role": "test (congruent to B by -1)",
+   "comparison": "600-cell walls (4D)",
+   "plates": 80,
+   "tally": {
+    "mirror": 40,
+    "cross": 40,
+    "none": 0
+   },
+   "cells": 20,
+   "2-faces": 80,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "ordinary orbit (phi^2,phi^2,phi^2,3/2,0)",
+   "family": "S5 orbits",
+   "role": "negative control",
+   "comparison": "600-cell walls (4D)",
+   "plates": 30,
+   "tally": {
+    "mirror": 10,
+    "cross": 0,
+    "none": 20
+   },
+   "cells": 10,
+   "2-faces": 30,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "ordinary orbit (phi^2,phi^2,6/5,6/5,0)",
+   "family": "S5 orbits",
+   "role": "negative control",
+   "comparison": "600-cell walls (4D)",
+   "plates": 80,
+   "tally": {
+    "mirror": 10,
+    "cross": 0,
+    "none": 70
+   },
+   "cells": 20,
+   "2-faces": 80,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "600-cell [C3 x C5] 30-point union (a)",
+   "family": "remaining silences",
+   "role": "test",
+   "comparison": "600-cell walls (4D)",
+   "plates": 45,
+   "tally": {
+    "mirror": 30,
+    "cross": 15,
+    "none": 0
+   },
+   "cells": 90,
+   "2-faces": 195,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "600-cell [C3 x C5] 30-point union (b)",
+   "family": "remaining silences",
+   "role": "test",
+   "comparison": "600-cell walls (4D)",
+   "plates": 90,
+   "tally": {
+    "mirror": 60,
+    "cross": 30,
+    "none": 0
+   },
+   "cells": 120,
+   "2-faces": 255,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "600-cell [C3 x C10] 60-point union (a)",
+   "family": "remaining silences",
+   "role": "test",
+   "comparison": "600-cell walls (4D)",
+   "plates": 30,
+   "tally": {
+    "mirror": 30,
+    "cross": 0,
+    "none": 0
+   },
+   "cells": 120,
+   "2-faces": 330,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "600-cell [C3 x C10] 60-point union (b)",
+   "family": "remaining silences",
+   "role": "test",
+   "comparison": "600-cell walls (4D)",
+   "plates": 75,
+   "tally": {
+    "mirror": 60,
+    "cross": 0,
+    "none": 15
+   },
+   "cells": 210,
+   "2-faces": 480,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "600-cell [C5 x C5] 30-point union (a)",
+   "family": "remaining silences",
+   "role": "test",
+   "comparison": "600-cell walls (4D)",
+   "plates": 55,
+   "tally": {
+    "mirror": 55,
+    "cross": 0,
+    "none": 0
+   },
+   "cells": 35,
+   "2-faces": 105,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "600-cell [C5 x C5] 30-point union (b)",
+   "family": "remaining silences",
+   "role": "test",
+   "comparison": "600-cell walls (4D)",
+   "plates": 55,
+   "tally": {
+    "mirror": 30,
+    "cross": 25,
+    "none": 0
+   },
+   "cells": 55,
+   "2-faces": 130,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "600-cell [C5 x C5].2 60-point union (a)",
+   "family": "remaining silences",
+   "role": "test",
+   "comparison": "600-cell walls (4D)",
+   "plates": 55,
+   "tally": {
+    "mirror": 55,
+    "cross": 0,
+    "none": 0
+   },
+   "cells": 210,
+   "2-faces": 460,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "600-cell [C5 x C5].2 60-point union (b)",
+   "family": "remaining silences",
+   "role": "test",
+   "comparison": "600-cell walls (4D)",
+   "plates": 30,
+   "tally": {
+    "mirror": 30,
+    "cross": 0,
+    "none": 0
+   },
+   "cells": 60,
+   "2-faces": 260,
+   "2-faces through centre": 0,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "120-cell [C5 x 2T] 240-point union (a)",
+   "family": "remaining silences",
+   "role": "test",
+   "comparison": "600-cell walls (4D)",
+   "plates": 420,
+   "tally": {
+    "mirror": 60,
+    "cross": 120,
+    "none": 240
+   },
+   "cells": 360,
+   "2-faces": 1200,
+   "2-faces through centre": 0
+  },
+  {
+   "shape": "120-cell [C5 x 2T] 240-point union (b)",
+   "family": "remaining silences",
+   "role": "test",
+   "comparison": "600-cell walls (4D)",
+   "plates": 600,
+   "tally": {
+    "mirror": 60,
+    "cross": 120,
+    "none": 420
+   },
+   "cells": 480,
+   "2-faces": 1440,
+   "2-faces through centre": 0
+  },
+  {
+   "shape": "600-cell central cut across a vertex axis",
+   "family": "echo shapes",
+   "role": "test",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 21,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 6,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "f-vector": [
+    42,
+    120,
+    80
+   ],
+   "faces": {
+    "3": 80
+   },
+   "edges": 120,
+   "edges through centre": 0,
+   "height": "0",
+   "sympy_agrees": true
+  },
+  {
+   "shape": "600-cell central cut across a vertex axis",
+   "family": "echo shapes",
+   "role": "test",
+   "comparison": "600-cell walls through the section",
+   "plates": 21,
+   "tally": {
+    "mirror": 21,
+    "cross": 0,
+    "none": 0
+   },
+   "f-vector": [
+    42,
+    120,
+    80
+   ],
+   "faces": {
+    "3": 80
+   },
+   "edges": 120,
+   "edges through centre": 0,
+   "height": "0"
+  },
+  {
+   "shape": "600-cell slice across a vertex axis at height 3/10",
+   "family": "echo shapes",
+   "role": "negative control",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 135,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 120
+   },
+   "f-vector": [
+    132,
+    330,
+    200
+   ],
+   "faces": {
+    "3": 140,
+    "4": 60
+   },
+   "edges": 330,
+   "edges through centre": 0,
+   "height": "3/10",
+   "sympy_agrees": true
+  },
+  {
+   "shape": "600-cell slice across a vertex axis at height 3/10",
+   "family": "echo shapes",
+   "role": "negative control",
+   "comparison": "600-cell walls through the section",
+   "plates": 135,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 120
+   },
+   "f-vector": [
+    132,
+    330,
+    200
+   ],
+   "faces": {
+    "3": 140,
+    "4": 60
+   },
+   "edges": 330,
+   "edges through centre": 0,
+   "height": "3/10"
+  },
+  {
+   "shape": "120-cell central cut across a cell axis",
+   "family": "echo shapes",
+   "role": "test",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 25,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 10,
+    "none": 0
+   },
+   "f-vector": [
+    80,
+    120,
+    42
+   ],
+   "faces": {
+    "5": 12,
+    "6": 30
+   },
+   "edges": 120,
+   "edges through centre": 0,
+   "height": "0",
+   "sympy_agrees": true
+  },
+  {
+   "shape": "120-cell central cut across a cell axis",
+   "family": "echo shapes",
+   "role": "test",
+   "comparison": "600-cell walls through the section",
+   "plates": 25,
+   "tally": {
+    "mirror": 25,
+    "cross": 0,
+    "none": 0
+   },
+   "f-vector": [
+    80,
+    120,
+    42
+   ],
+   "faces": {
+    "5": 12,
+    "6": 30
+   },
+   "edges": 120,
+   "edges through centre": 0,
+   "height": "0"
+  },
+  {
+   "shape": "120-cell slice across a cell axis at 3/10 of the top",
+   "family": "echo shapes",
+   "role": "negative control",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 90,
+   "tally": {
+    "mirror": 0,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 90
+   },
+   "f-vector": [
+    120,
+    180,
+    62
+   ],
+   "faces": {
+    "4": 30,
+    "6": 20,
+    "10": 12
+   },
+   "edges": 180,
+   "edges through centre": 0,
+   "height": "(3/5+9/10phi)",
+   "sympy_agrees": true
+  },
+  {
+   "shape": "120-cell slice across a cell axis at 3/10 of the top",
+   "family": "echo shapes",
+   "role": "negative control",
+   "comparison": "600-cell walls through the section",
+   "plates": 90,
+   "tally": {
+    "mirror": 0,
+    "cross": 0,
+    "none": 90
+   },
+   "f-vector": [
+    120,
+    180,
+    62
+   ],
+   "faces": {
+    "4": 30,
+    "6": 20,
+    "10": 12
+   },
+   "edges": 180,
+   "edges through centre": 0,
+   "height": "(3/5+9/10phi)"
+  },
+  {
+   "shape": "600-cell central cut across a cell axis",
+   "family": "echo shapes",
+   "role": "test",
+   "comparison": "3D figure walls (octahedral)",
+   "plates": 45,
+   "tally": {
+    "mirror": 9,
+    "cross octahedron": 0,
+    "none": 36
+   },
+   "f-vector": [
+    84,
+    240,
+    158
+   ],
+   "faces": {
+    "3": 152,
+    "4": 6
+   },
+   "edges": 240,
+   "edges through centre": 0,
+   "height": "0",
+   "sympy_agrees": true
+  },
+  {
+   "shape": "600-cell central cut across a cell axis",
+   "family": "echo shapes",
+   "role": "test",
+   "comparison": "600-cell walls through the section",
+   "plates": 45,
+   "tally": {
+    "mirror": 45,
+    "cross": 0,
+    "none": 0
+   },
+   "f-vector": [
+    84,
+    240,
+    158
+   ],
+   "faces": {
+    "3": 152,
+    "4": 6
+   },
+   "edges": 240,
+   "edges through centre": 0,
+   "height": "0"
+  },
+  {
+   "shape": "600-cell slice across a cell axis at 3/10 of the top",
+   "family": "echo shapes",
+   "role": "negative control",
+   "comparison": "3D figure walls (octahedral)",
+   "plates": 294,
+   "tally": {
+    "mirror": 6,
+    "cross octahedron": 0,
+    "none": 288
+   },
+   "f-vector": [
+    132,
+    330,
+    200
+   ],
+   "faces": {
+    "3": 140,
+    "4": 60
+   },
+   "edges": 330,
+   "edges through centre": 0,
+   "height": "(3/40+9/80phi)",
+   "sympy_agrees": true
+  },
+  {
+   "shape": "600-cell slice across a cell axis at 3/10 of the top",
+   "family": "echo shapes",
+   "role": "negative control",
+   "comparison": "600-cell walls through the section",
+   "plates": 294,
+   "tally": {
+    "mirror": 6,
+    "cross": 0,
+    "none": 288
+   },
+   "f-vector": [
+    132,
+    330,
+    200
+   ],
+   "faces": {
+    "3": 140,
+    "4": 60
+   },
+   "edges": 330,
+   "edges through centre": 0,
+   "height": "(3/40+9/80phi)"
+  },
+  {
+   "shape": "120-cell central cut across a vertex axis",
+   "family": "echo shapes",
+   "role": "test",
+   "comparison": "3D figure walls (octahedral)",
+   "plates": 31,
+   "tally": {
+    "mirror": 3,
+    "cross octahedron": 4,
+    "none": 24
+   },
+   "f-vector": [
+    78,
+    120,
+    44
+   ],
+   "faces": {
+    "5": 24,
+    "6": 20
+   },
+   "edges": 120,
+   "edges through centre": 0,
+   "height": "0",
+   "sympy_agrees": true
+  },
+  {
+   "shape": "120-cell central cut across a vertex axis",
+   "family": "echo shapes",
+   "role": "test",
+   "comparison": "600-cell walls through the section",
+   "plates": 31,
+   "tally": {
+    "mirror": 31,
+    "cross": 0,
+    "none": 0
+   },
+   "f-vector": [
+    78,
+    120,
+    44
+   ],
+   "faces": {
+    "5": 24,
+    "6": 20
+   },
+   "edges": 120,
+   "edges through centre": 0,
+   "height": "0"
+  },
+  {
+   "shape": "120-cell slice across a vertex axis at 3/10 of the top",
+   "family": "echo shapes",
+   "role": "negative control",
+   "comparison": "3D figure walls (octahedral)",
+   "plates": 138,
+   "tally": {
+    "mirror": 6,
+    "cross octahedron": 0,
+    "none": 132
+   },
+   "f-vector": [
+    100,
+    150,
+    52
+   ],
+   "faces": {
+    "4": 12,
+    "5": 12,
+    "6": 16,
+    "8": 12
+   },
+   "edges": 150,
+   "edges through centre": 0,
+   "height": "12/5",
+   "sympy_agrees": true
+  },
+  {
+   "shape": "120-cell slice across a vertex axis at 3/10 of the top",
+   "family": "echo shapes",
+   "role": "negative control",
+   "comparison": "600-cell walls through the section",
+   "plates": 138,
+   "tally": {
+    "mirror": 6,
+    "cross": 0,
+    "none": 132
+   },
+   "f-vector": [
+    100,
+    150,
+    52
+   ],
+   "faces": {
+    "4": 12,
+    "5": 12,
+    "6": 16,
+    "8": 12
+   },
+   "edges": 150,
+   "edges through centre": 0,
+   "height": "12/5"
+  },
+  {
+   "shape": "octahedron on the 4-fold axes",
+   "family": "echo shapes",
+   "role": "positive control",
+   "comparison": "3D figure walls (octahedral)",
+   "plates": 3,
+   "tally": {
+    "mirror": 3,
+    "cross octahedron": 0,
+    "none": 0
+   },
+   "edges": 12,
+   "sympy_agrees": true
+  },
+  {
+   "shape": "rhombic triacontahedron",
+   "family": "GET",
+   "role": "positive control",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron",
+   "sympy_agrees": true
+  },
+  {
+   "shape": "rhombic triacontahedron",
+   "family": "GET",
+   "role": "positive control",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "GET A",
+   "family": "GET",
+   "role": "test",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron",
+   "sympy_agrees": true
+  },
+  {
+   "shape": "GET A",
+   "family": "GET",
+   "role": "test",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "GET A (own corner centroid)",
+   "family": "GET",
+   "role": "test, other centre",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 54,
+   "tally": {
+    "mirror": 2,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 52
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "its own corner centroid",
+   "sympy_agrees": true
+  },
+  {
+   "shape": "GET A (own corner centroid)",
+   "family": "GET",
+   "role": "test, other centre",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 54,
+   "tally": {
+    "mirror": 2,
+    "cross": 0,
+    "none": 52
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "its own corner centroid"
+  },
+  {
+   "shape": "GET A on the star with phi -> 8/5",
+   "family": "GET",
+   "role": "negative control",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 33,
+   "tally": {
+    "mirror": 3,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 30
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "GET A on the star with phi -> 8/5",
+   "family": "GET",
+   "role": "negative control",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 33,
+   "tally": {
+    "mirror": 3,
+    "cross": 0,
+    "none": 30
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "GET B",
+   "family": "GET",
+   "role": "test",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron",
+   "sympy_agrees": true
+  },
+  {
+   "shape": "GET B",
+   "family": "GET",
+   "role": "test",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "GET B (own corner centroid)",
+   "family": "GET",
+   "role": "test, other centre",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 51,
+   "tally": {
+    "mirror": 3,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 48
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "its own corner centroid",
+   "sympy_agrees": true
+  },
+  {
+   "shape": "GET B (own corner centroid)",
+   "family": "GET",
+   "role": "test, other centre",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 51,
+   "tally": {
+    "mirror": 3,
+    "cross": 0,
+    "none": 48
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "its own corner centroid"
+  },
+  {
+   "shape": "GET B on the star with phi -> 8/5",
+   "family": "GET",
+   "role": "negative control",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 33,
+   "tally": {
+    "mirror": 3,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 30
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "GET B on the star with phi -> 8/5",
+   "family": "GET",
+   "role": "negative control",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 33,
+   "tally": {
+    "mirror": 3,
+    "cross": 0,
+    "none": 30
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "k = 10 candidate 2 (undecided tiler, depth 4)",
+   "family": "GET",
+   "role": "test (not certified)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "k = 10 candidate 2 (undecided tiler, depth 4)",
+   "family": "GET",
+   "role": "test (not certified)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "k = 10 candidate 3 (undecided tiler, depth 10)",
+   "family": "GET",
+   "role": "test (not certified)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 3,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "k = 10 candidate 3 (undecided tiler, depth 10)",
+   "family": "GET",
+   "role": "test (not certified)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 3,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "k = 10 candidate 4 (undecided tiler, depth 10)",
+   "family": "GET",
+   "role": "test (not certified)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 3,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "k = 10 candidate 4 (undecided tiler, depth 10)",
+   "family": "GET",
+   "role": "test (not certified)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 3,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "k = 10 candidate 5 (undecided tiler, depth 10)",
+   "family": "GET",
+   "role": "test (not certified)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 3,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "k = 10 candidate 5 (undecided tiler, depth 10)",
+   "family": "GET",
+   "role": "test (not certified)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 3,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "k = 10 candidate 6 (undecided tiler, depth 10)",
+   "family": "GET",
+   "role": "test (not certified)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 3,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "k = 10 candidate 6 (undecided tiler, depth 10)",
+   "family": "GET",
+   "role": "test (not certified)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 3,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "k = 10 candidate 7 (undecided tiler, depth 12)",
+   "family": "GET",
+   "role": "test (not certified)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 4,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "k = 10 candidate 7 (undecided tiler, depth 12)",
+   "family": "GET",
+   "role": "test (not certified)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 4,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #1 (depth 1)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #1 (depth 1)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #2 (depth 2)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #2 (depth 2)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #3 (depth 2)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #3 (depth 2)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #4 (depth 2)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #4 (depth 2)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #5 (depth 2)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #5 (depth 2)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #6 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #6 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #7 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #7 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #8 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #8 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #9 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #9 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #10 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #10 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #11 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #11 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #12 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #12 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #13 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #13 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #14 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #14 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #15 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #15 (depth 3)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #16 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #16 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #17 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #17 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #18 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #18 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #19 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #19 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #20 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #20 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #21 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #21 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #22 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #22 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #23 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #23 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #24 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #24 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #25 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #25 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #26 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #26 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #27 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #27 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #28 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #28 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #29 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #29 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #30 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #30 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #31 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #31 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #32 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #32 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #33 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #33 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #34 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #34 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #35 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #35 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #36 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #36 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #37 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #37 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #38 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #38 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #39 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #39 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #40 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #40 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #41 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #41 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #42 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #42 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #43 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #43 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #44 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #44 (depth 4)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #45 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #45 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #46 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #46 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #47 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #47 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #48 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #48 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #49 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #49 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #50 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #50 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #51 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #51 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #52 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #52 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #53 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #53 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #54 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #54 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #55 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #55 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 0,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #56 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #56 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #57 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #57 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #58 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #58 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #59 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "3D figure walls (icosahedral)",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross dodecahedron": 0,
+    "cross icosahedron": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "flip-search surface #59 (depth 5)",
+   "family": "GET",
+   "role": "same family, ordinary (flip search)",
+   "comparison": "600-cell walls through its vertex-axis central section",
+   "plates": 15,
+   "tally": {
+    "mirror": 15,
+    "cross": 0,
+    "none": 0
+   },
+   "edges": 60,
+   "edges through centre": 1,
+   "centre": "centre of the parent triacontahedron"
+  },
+  {
+   "shape": "octahedral GP(2,0) polar (cube cut at sqrt2)",
+   "family": "echo shapes",
+   "role": "test",
+   "comparison": "3D figure walls (octahedral), sympy in Q(sqrt2)",
+   "plates": 18,
+   "tally": {
+    "mirror": 6,
+    "cross octahedron": 0,
+    "none": 12
+   },
+   "f-vector": [
+    32,
+    48,
+    18
+   ],
+   "edges": 48
+  },
+  {
+   "shape": "cube cut at 3/2 (same family, ordinary)",
+   "family": "echo shapes",
+   "role": "negative control",
+   "comparison": "3D figure walls (octahedral), sympy in Q(sqrt2)",
+   "plates": 18,
+   "tally": {
+    "mirror": 6,
+    "cross octahedron": 0,
+    "none": 12
+   },
+   "f-vector": [
+    32,
+    48,
+    18
+   ],
+   "edges": 48
+  },
+  {
+   "shape": "cube (cut at 2 is inactive: 12 edges)",
+   "family": "echo shapes",
+   "role": "positive control",
+   "comparison": "3D figure walls (octahedral), sympy in Q(sqrt2)",
+   "plates": 6,
+   "tally": {
+    "mirror": 6,
+    "cross octahedron": 0,
+    "none": 0
+   },
+   "f-vector": [
+    8,
+    12,
+    6
+   ],
+   "edges": 12
+  }
+ ],
+ "baselines": {
+  "random 20-subsets of the 600-cell": {
+   "samples": 100,
+   "mean plates": 68.95,
+   "mean share in no wall": 0.2759091315714879,
+   "share of samples with every plate a wall": 0.0,
+   "mean share mirror": 0.4986961110814041,
+   "mean share cross": 0.22539475734710798
+  },
+  "random 30-subsets of the 600-cell": {
+   "samples": 100,
+   "mean plates": 89.49,
+   "mean share in no wall": 0.20294736242718567,
+   "share of samples with every plate a wall": 0.0,
+   "mean share mirror": 0.5279660318681947,
+   "mean share cross": 0.26908660570461956
+  },
+  "random 60-subsets of the 600-cell": {
+   "samples": 100,
+   "mean plates": 81.34,
+   "mean share in no wall": 0.020313138086424178,
+   "share of samples with every plate a wall": 0.6,
+   "mean share mirror": 0.7206019909750847,
+   "mean share cross": 0.259084870938491
+  },
+  "random 240-subsets of the 120-cell": {
+   "samples": 10,
+   "mean plates": 1007.6,
+   "mean share in no wall": 0.7444065273509219,
+   "share of samples with every plate a wall": 0.0,
+   "mean share mirror": 0.05898807635081911,
+   "mean share cross": 0.19660539629825885
+  }
+ },
+ "fails": [],
+ "pilot": false,
+ "seconds": 28.2644944190979
+}
