@@ -43,7 +43,7 @@ For σ = identity this is the classical statement that a conjugacy class kills d
 
 Restriction of V_k to 2I (exact): V₁ = 2, V₂ = 3, V₃ = 4s, V₄ = 5, V₅ = 6, V₆ = 3′ + 4, V₇ = 2′ + 6, V₈ = 4 + 5, V₉ = 4s + 6, V₁₀ = 3 + 3′ + 5, V₁₁ = 2 + 4s + 6, V₁₂ = 1 + 3 + 4 + 5. The representations 2, 2′, 3, 3′ are exchanged by σ, so they are invisible to every twisted class. This is why degrees 1 and 2 are forced.
 
-Zero pattern of the twisted characters (exact; the nonzero values are those of S5 on its odd classes and of Schur's spin characters):
+Twisted characters. The zeros are exact computations here. The nonzero values are quoted (S5 on its odd classes; Schur's spin characters) and are confirmed only through the orthogonality relations of the Remark and the union tests of §3 B:
 
 | class | S5 odd class | 1 | 4 | 5 | 4s (spin ⟨3,2⟩) | 6 (spin ⟨4,1⟩) |
 |---|---|---|---|---|---|---|
@@ -95,7 +95,7 @@ No proper union of classes kills degree 4, 8 or 10. A complement of a union kill
 **What it misses.**
 1. The theorem bounds similarities only. The verdict sentence "nothing new can be forced" does not follow, because (P), (E), (X) are not the only ways a tone can be forced. X and F are counterexamples inside U1: their symmetry group is generic, no similarity involution fixes them, and their silence is forced by §2 above. A fourth clause is needed, for instance (placeholder name, DICTO's to choose) **(C) character silence**: the corners form a class, or twisted class, of a finite group, and the tone vanishes because the relevant characters vanish there.
 2. Galois-type maps are not similarities, so the normaliser argument cannot see them. Here the A5 action itself is the Galois-twisted diagonal of 2I × 2I. Both golden members are also fixed by Galois conjugation as shapes (the conjugate of permutations of (0,0,0,1,φ²) is the same set up to scale). Galois-fixedness alone forces nothing; the twisted-class structure does.
-3. Subsystem inclusions that are not normal. A4 ⊂ H4 as root systems: an A4-orbit can be a proper part of an H4-orbit without being H4-invariant. The census's orbit-size test rules out H4 *symmetry* of an A4 member but not this weaker relation, which is exactly where X and F live. The same test should be run for the other inclusions (A3, B3 ⊃ pieces of H3 only through Icosaxes, already found; D4, A2×A2, H3×A1 inside H4).
+3. Subsystem inclusions that are not normal. A4 ⊂ H4 as root systems: an A4-orbit can be a proper part of an H4-orbit without being H4-invariant. The census's orbit-size test rules out H4 *symmetry* of an A4 member but not this weaker relation, which is exactly where X and F live. The same question is open for the other root subsystems of H4 (D4, A2×A2, H3×A1); in 3D the census's hidden-symmetry-of-halves argument already covers it (Icosaxes).
 4. The seed-space note that F is "where an ordinary curve meets the edge" does not make F a coincidence: T₃ = T₆ = 0 at F is proved by the Corollary, whether or not a curve passes through.
 
 ## Leads
