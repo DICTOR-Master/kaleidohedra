@@ -8166,7 +8166,7 @@
     "method": "eyerun.py (job eye-trace, FINAL ok, 714 s): 19 usable patches on a 6x6 grid 0.2 rad apart, tile-partitioned; cone layer on shells (window about 34-97 um), retina on column-following planes in 90 segments of 20 um (300-460 um); predictive Hungarian tracks with forward-backward and no-jump trust; Delaunay of all detections; image null (10 seeds) + bootstrap null; local quadric curvature of the cornea per tile; controls straight 0/120, shear past sqrt3 28/86, jittered lattices at or below their null (3 vs 5.6+-3.0; 2 vs 7.8+-2.8); figures inspected",
     "status": "UNDECIDED",
     "result": "cone layer: 10 of 1328 neighbour pairs change (0.75%) vs image null 4.2+-2.1 (weak; events at the window bottom where cones end, or near-square rhombi). Retina: 206 of 2563 (8.0%) vs null 96+-10, but inspection shows long edges across missed ommatidia (46% of detections tracked): segmentation effect, not trusted. No relation to cornea unevenness U (median 0.11; Spearman rho 0.00, p 0.99, n 17) or convergence anisotropy (rho -0.20, p 0.44). The eye is near-spherical (quadric semi-axes within 3%) and has a clear zone (130-280 um) that breaks the cone-retina trace. No scutoid-like neighbour change established; the prediction is neither confirmed nor refuted by this eye",
-    "retry": "only with: better retina segmentation (over 90% tracked), an apposition eye with strongly uneven curvature (check the other six Paukner eyes at 2400 nm first), or the volume-EM wasp eye",
+    "retry": "never redo any Lean module or the comparator; next only: a negative-control Challenge; the entry stays local, nothing submitted",
     "study": "studies/2026-11-16-compound-eye-scutoids",
     "goes_to": "#104 scutoid thread (biology prediction)"
    }

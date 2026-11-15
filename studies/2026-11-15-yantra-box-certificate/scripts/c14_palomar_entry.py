@@ -7,7 +7,7 @@ Usage: c14_palomar_entry.py OUTDIR [LIBDIR]   (LIBDIR: a directory holding Yantr
 import os, re, shutil, sys, json
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); D_ = lambda *p: os.path.join(HERE, *p)
 OUT = sys.argv[1]; LIB = sys.argv[2] if len(sys.argv) > 2 else D_('lean')
-LOOP = os.path.join(os.path.dirname(HERE), '2026-11-14-lean-loop-equality', 'entry')
+LOOP = os.environ.get('TEMPLATE') or os.path.join(os.path.dirname(HERE), '2026-11-14-lean-loop-equality', 'entry')  # a built Palomar template entry
 os.makedirs(OUT, exist_ok=True)
 def modulize(text):
     """Palomar layout: `module` first, imports public, then an exposed public section"""
@@ -17,15 +17,18 @@ def modulize(text):
         i += 1
     out += ['', '@[expose] public section', '']
     return '\n'.join(out + lines[i:])
-# library
+# library: exactly the import closure of YantraCert.Main (unused generated modules, e.g. KTest_28, stay out)
+def lib_path(m): return os.path.join(LIB, *m.split('.')) + '.lean'
+todo, keep = ['YantraCert.Main'], set()
+while todo:
+    m = todo.pop()
+    if m in keep: continue
+    keep.add(m)
+    todo += re.findall(r'^import (YantraCert\S*)', open(lib_path(m)).read(), re.M)
 n = 0
-for root, dirs, files in os.walk(os.path.join(LIB, 'YantraCert')):
-    for f in files:
-        if not f.endswith('.lean'): continue
-        src = os.path.join(root, f); rel = os.path.relpath(src, LIB)
-        if rel.startswith(os.path.join('YantraCert', 'Bench')) or 'Axioms' in f or f in ('AxU.lean', 'AxK.lean', 'KT.lean'): continue
-        dst = os.path.join(OUT, rel); os.makedirs(os.path.dirname(dst), exist_ok=True)
-        open(dst, 'w').write(modulize(open(src).read())); n += 1
+for m in sorted(keep):
+    dst = os.path.join(OUT, *m.split('.')) + '.lean'; os.makedirs(os.path.dirname(dst), exist_ok=True)
+    open(dst, 'w').write(modulize(open(lib_path(m)).read())); n += 1
 # Challenge
 ch = open(D_('lean', 'Challenge', 'KulaichevYantra.lean')).read()
 open(os.path.join(OUT, 'Challenge.lean'), 'w').write(modulize(ch))
@@ -79,4 +82,11 @@ shutil.copy(D_('lean', 'palomar', 'README.md'), os.path.join(OUT, 'README.md'))
 print('library files:', n)
 _need = ['comparator.json', 'formalization.yaml', 'README.md', 'lakefile.toml']
 _miss = [f for f in _need if not os.path.exists(os.path.join(OUT, f))]
-print('FINAL ok' if n > 0 and not _miss else f'FINAL FAIL (missing {_miss}, files {n})')
+# every YantraCert import of every written file must resolve to a written file
+for root, dirs, files in os.walk(OUT):
+    for f in files:
+        if f.endswith('.lean') and '.lake' not in root:
+            for m in re.findall(r'^public import (YantraCert\S*)|^import (YantraCert\S*)', open(os.path.join(root, f)).read(), re.M):
+                m = m[0] or m[1]
+                if not os.path.exists(os.path.join(OUT, *m.split('.')) + '.lean'): _miss.append(m)
+print('FINAL ok' if n > 0 and not _miss else f'FINAL FAIL (missing {sorted(set(_miss))[:10]}, files {n})')
