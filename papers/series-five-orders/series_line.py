@@ -19,6 +19,9 @@ RINGS = {'Earth': ('地', '#488e48', '#488e48'),
          'Fire':  ('火', '#cd3e28', '#cd3e28'),
          'Wind':  ('風', '#e8c852', '#a8891f'),
          'Void':  ('空', '#8a5cc4', '#8a5cc4')}
+# The ring's colour for the series line on a dark cover ground (front covers, LED letters; DICTO 15 Nov 2026: the element
+# word and its kanji in the ring's colour, the rest white): the exact element colours, checked readable on the cover ground.
+ON_DARK = {'Earth': (72, 142, 72), 'Water': (58, 112, 205), 'Fire': (205, 62, 40), 'Wind': (232, 200, 82), 'Void': (138, 92, 196)}
 RING_OF = {1: 'Earth', 2: 'Earth', 3: 'Water', 4: 'Water', 5: 'Water', 6: 'Fire', 7: 'Fire',
            8: 'Wind', 9: 'Void', 10: 'Void', 11: 'Void'}
 
@@ -27,6 +30,12 @@ def series_text(book, part=None):
     ring = RING_OF[book]
     head = f'Book {WORDS[book]}' + (f', {part}' if part else '')
     return f'{head} · {ring} {RINGS[ring][0]} · {SERIES}'
+
+
+def element_span(book, part=None):
+    """(start, end) of the ring word and its kanji (e.g. "Wind 風") in series_text(book, part), and the ring."""
+    ring = RING_OF[book]; t = series_text(book, part); w = f'{ring} {RINGS[ring][0]}'; i = t.index(w)
+    return i, i + len(w), ring
 
 
 def series_line(book, part=None):

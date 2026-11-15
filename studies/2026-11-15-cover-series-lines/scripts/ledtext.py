@@ -1,4 +1,5 @@
 # LED title letters (hyphen/comma sit on the letter baseline, 11-07), copied from studies/2026-10-29-golden-cover/scripts/cover_title_series.py (series style)
+# Series line in colour (15 Nov 2026): word() takes colour_at(i, ch) to colour letters by position.
 # Platonic cover (15 Nov 2026): copied from studies/2026-11-15-paradigm-cover/scripts/ledtext.py; added the middle dot of the series line
 # (a round dot at mid-letter height) and the kanji of the series line (drawn from a CJK font at the LED letter height, same rim and glow).
 CJK = '/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc'
@@ -39,9 +40,11 @@ def glyph(ch, size, col):
     ys, xs = np.where(a > 0.5); y1 = ys.max()
     if ch in '*-,\u00b7': y1 = iy.max()   # sit on the letters' baseline, so the diamond stays centred
     return rgb, al, (ys.min(), y1, xs.min(), xs.max())
-def word(text, size, colour_of, big=(), k=1.35):
-    """Capitals throughout; letters at the positions in big are larger (initial caps, DICTO 10-29); bottoms on one line."""
-    gs = [None if ch == ' ' else glyph(ch, int(size * (k if i in big else 1)), colour_of(ch)) for i, ch in enumerate(text)]
+def word(text, size, colour_of, big=(), k=1.35, colour_at=None):
+    """Capitals throughout; letters at the positions in big are larger (initial caps, DICTO 10-29); bottoms on one line.
+    colour_at(i, ch), if given, colours by position (15 Nov 2026: the element word of the series line in its ring's colour)."""
+    col = (lambda i, ch: colour_at(i, ch)) if colour_at else (lambda i, ch: colour_of(ch))
+    gs = [None if ch == ' ' else glyph(ch, int(size * (k if i in big else 1)), col(i, ch)) for i, ch in enumerate(text)]
     gap = int(size * 0.18); space = int(size * 0.55)
     widths = [space if g is None else g[2][3] - g[2][2] + 1 for g in gs]
     W_ = sum(widths) + gap * (len(text) - 1) + size; Hh = int(size * k * 1.2) + size

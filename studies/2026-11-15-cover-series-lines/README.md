@@ -11,3 +11,19 @@ picture is not touched; the lettering block (pixels copied) moves down only as f
 Run: python scripts/series_covers.py <papers>; python scripts/compare_sheet.py <papers> COVERS-series-line.png.
 Result: FINAL ok, 10 covers, each written as <cover>-series-v2.png beside the book's cover (old cover kept).
 Translations (Quanta and DICTOnary ar/fa/ja/zh) have no translated series wording yet: left unchanged.
+
+## Series line in the element colour (15 Nov 2026, v3)
+
+DICTO: "the line representing the order should be fully or partially in the element colour". Partial version chosen: the ring
+word and its kanji (e.g. "Wind 風") in the ring's element colour, the rest white; same LED letters, size and position. Ring colours
+(papers/series-five-orders/series_line.py ON_DARK, the exact element colours of the DICTO square): Earth (cube) green (72, 142, 72),
+Water (icosahedron) blue (58, 112, 205), Fire (tetrahedron) red (205, 62, 40), Wind (octahedron) yellow (232, 200, 82), Void
+(dodecahedron) violet (138, 92, 196). Legibility on the cover ground (20, 15, 11), contrast ratio: green 4.75, blue 3.97, red 3.91,
+yellow 11.6, violet 4.00 (all above 3 for large lettering; read whole and at thumbnail size on the compare sheet), so no colour was lightened.
+
+Run: python scripts/series_covers.py <papers> element (-> <cover>-series-v3.png); Platonic Solids: SERIESCOL=element python
+../2026-11-15-platonic-cover-circle/scripts/compose.py <papers>/book-platonic/cover/platonic-cover-front-series.png
+<papers>/book-platonic/cover/platonic-cover-front-series-v2.png (SERIESCOL=full -> platonic-cover-front-series-full.png in this
+folder, the whole line in yellow, for comparison only); python scripts/compare_sheet.py <papers> COVERS-series-line-colour.png colour.
+Checks: the white mode reproduces all ten v2 covers and the Platonic cover byte for byte; each v3 differs from its v2 only inside
+the series line's box; FINAL ok for all eleven covers. Not in any book yet: each takes its cover at its next version (concordance next_versions).
