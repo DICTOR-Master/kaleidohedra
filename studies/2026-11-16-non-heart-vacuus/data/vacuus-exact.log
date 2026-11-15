@@ -1,0 +1,69 @@
+PROGRESS 0.00 start
+PROGRESS 0.20 A
+PROGRESS 0.45 B
+PROGRESS 0.95 permutohedron
+== A: perms of (φ², φ², φ², φ, 0)
+  corners 20, edges 40, 2-faces (ridges) 30, cells 10: 5 tetrahedron, 5 truncated tetrahedron
+  centrally symmetric: False; symmetry group order (exact, all isometries fixing the centre): 120
+  distinct central plates spanned by the ridges: 30; ridges per plate: 1 on 30
+  orbit 1: 20 plates, ridge = equilateral triangle, side √2; slice: 6 corners (6 corners of the solid, 0 edge crossings), 9 edges, 5 faces {3: 2, 4: 3} (sides: count)
+      3 x trapezoid (isosceles), sides √2, 2φ, φ²√2, 2φ  (cut from truncated tetrahedron)
+      1 x equilateral triangle, side φ²√2  (cut from truncated tetrahedron)
+      1 x equilateral triangle, side √2  [the plate's ridge]  (cut from tetrahedron / truncated tetrahedron)
+  orbit 2: 10 plates, ridge = equiangular hexagon, sides √2 and φ√2 in turn; slice: 10 corners (6 corners of the solid, 4 edge crossings), 15 edges, 7 faces {3: 3, 5: 3, 6: 1} (sides: count)
+      3 x isosceles triangle, sides √6/2, √6/2, √2  (cut from tetrahedron)
+      3 x pentagon, sides √6/2, φ√2, √6/2, φ²√6/2, φ²√6/2  (cut from truncated tetrahedron)
+      1 x equiangular hexagon, sides √2 and φ√2 in turn  [the plate's ridge]  (cut from truncated tetrahedron)
+== B: perms of (φ², φ², 1, 1, 0)
+  corners 30, edges 90, 2-faces (ridges) 80, cells 20: 10 triangular prism, 5 octahedron, 5 cuboctahedron
+  centrally symmetric: False; symmetry group order (exact, all isometries fixing the centre): 120
+  distinct central plates spanned by the ridges: 80; ridges per plate: 1 on 80
+  orbit 1: 20 plates, ridge = equilateral triangle, side φ√2; slice: 21 corners (3 corners of the solid, 18 edge crossings), 33 edges, 14 faces {3: 4, 4: 3, 6: 7} (sides: count)
+      3 x hexagon, sides √2, √((9 + √5)/4), √((11 − √5)/4), φ√2, √((11 − √5)/4), √((9 + √5)/4)  (cut from cuboctahedron)
+      3 x hexagon, sides √2/(2φ), √((9 + √5)/4), √((11 − 3√5)/4), φ√2/2, √((11 − 3√5)/4), √((9 + √5)/4)  (cut from octahedron)
+      3 x isosceles triangle, sides √2/(2φ), √((11 − √5)/4), √((11 − √5)/4)  (cut from triangular prism)
+      3 x rectangle, sides √((11 − 3√5)/4) and √2 in turn  (cut from triangular prism)
+      1 x equiangular hexagon, sides φ√2/2 and √2 in turn  (cut from cuboctahedron)
+      1 x equilateral triangle, side φ√2  [the plate's ridge]  (cut from octahedron / triangular prism)
+  orbit 2: 20 plates, ridge = equilateral triangle, side φ√2; slice: 21 corners (3 corners of the solid, 18 edge crossings), 33 edges, 14 faces {3: 1, 4: 9, 6: 1, 7: 3} (sides: count)
+      3 x heptagon, sides √2/2, √((7 − 2√5)/2), √((9 − √5)/4), √((11 + √5)/4), √((11 + √5)/4), √((9 − √5)/4), √((7 − 2√5)/2)  (cut from cuboctahedron)
+      3 x trapezoid (isosceles), sides φ√2/2, √((11 + √5)/4), φ√2, √((11 + √5)/4)  (cut from triangular prism)
+      3 x trapezoid (isosceles), sides φ√2/2, √((9 − √5)/4), √2, √((9 − √5)/4)  (cut from octahedron)
+      3 x trapezoid (isosceles), sides √((7 − 2√5)/2), √2, √((7 − 2√5)/2), φ√2  (cut from triangular prism)
+      1 x equiangular hexagon, sides √2/2 and φ√2 in turn  (cut from cuboctahedron)
+      1 x equilateral triangle, side φ√2  [the plate's ridge]  (cut from cuboctahedron / octahedron)
+  orbit 3: 30 plates, ridge = rectangle, sides √2 and φ√2 in turn; slice: 13 corners (9 corners of the solid, 4 edge crossings), 24 edges, 13 faces {3: 6, 4: 5, 5: 2} (sides: count)
+      4 x scalene triangle, sides √(5 − √5), 2, √(5 + √5)  (cut from triangular prism)
+      2 x isosceles triangle, sides φ√2, √(5 + √5), √(5 + √5)  (cut from triangular prism)
+      2 x pentagon, sides √2, √(5 − √5), √(5 + √5), √(5 + √5), √(5 − √5)  (cut from cuboctahedron)
+      2 x trapezoid (isosceles), sides √2, 2, φ√2, 2  (cut from octahedron)
+      2 x trapezoid (isosceles), sides √2, √(5 + √5), φ√2, √(5 + √5)  (cut from cuboctahedron)
+      1 x rectangle, sides √2 and φ√2 in turn  [the plate's ridge]  (cut from cuboctahedron / triangular prism)
+  orbit 4: 10 plates, ridge = equilateral triangle, side √2; slice: 15 corners (6 corners of the solid, 9 edge crossings), 24 edges, 11 faces {3: 2, 4: 6, 6: 3} (sides: count)
+      3 x hexagon, sides √6/2, φ√6/2, √2, φ√6/2, √6/2, φ√2  (cut from cuboctahedron)
+      3 x rectangle, sides √2 and φ√6/2 in turn  (cut from triangular prism)
+      3 x rhombus, side φ√6/2  (cut from octahedron)
+      1 x equilateral triangle, side φ√2  (cut from triangular prism)
+      1 x equilateral triangle, side √2  [the plate's ridge]  (cut from cuboctahedron)
+== CONTROL permutohedron n=5, perms of (0,1,2,3,4)
+  corners 120, edges 240, 2-faces (ridges) 150, cells 30: 20 hexagonal prism, 10 truncated octahedron
+  centrally symmetric: True; symmetry group order (exact, all isometries fixing the centre): 240
+  distinct central plates spanned by the ridges: 65; ridges per plate: 2 on 60, 6 on 5
+  orbit 1: 20 plates, ridge = regular hexagon, side √2; slice: 24 corners (12 corners of the solid, 12 edge crossings), 36 edges, 14 faces {4: 6, 6: 8} (sides: count)
+      6 x hexagon, sides √2, 2√14/3, 2√14/3, √2, 2√14/3, 2√14/3  (cut from truncated octahedron)
+      6 x rectangle, sides √2 and 2√14/3 in turn  (cut from hexagonal prism)
+      2 x regular hexagon, side √2  [the plate's ridge]  (cut from hexagonal prism / truncated octahedron)
+  orbit 2: 30 plates, ridge = square, side √2; slice: 32 corners (16 corners of the solid, 16 edge crossings), 52 edges, 22 faces {4: 14, 6: 8} (sides: count)
+      8 x quadrilateral, sides √26/6, √10/2, 2, 2√14/3  (cut from hexagonal prism)
+      4 x hexagon, sides √2, √26/3, 2√14/3, 2√2, 2√14/3, √26/3  (cut from truncated octahedron)
+      4 x hexagon, sides √26/6, √26/3, √2, √26/3, √26/6, 3√2/2  (cut from hexagonal prism)
+      4 x trapezoid (isosceles), sides √10/2, 3√2/2, √10/2, 2√2  (cut from truncated octahedron)
+      2 x square, side √2  [the plate's ridge]  (cut from hexagonal prism / truncated octahedron)
+  orbit 3: 10 plates, ridge = regular hexagon, side √2; slice: 24 corners (24 corners of the solid, 0 edge crossings), 42 edges, 20 faces {4: 18, 6: 2} (sides: count)
+      12 x trapezoid (isosceles), sides √2, 2, 2√2, 2  (cut from hexagonal prism)
+      6 x square, side 2√2  (cut from truncated octahedron)
+      2 x regular hexagon, side √2  [the plate's ridge]  (cut from truncated octahedron)
+  orbit 4: 5 plates, ridge = square, side √2; slice: 24 corners (24 corners of the solid, 0 edge crossings), 36 edges, 14 faces {4: 6, 6: 8} (sides: count)
+      8 x equiangular hexagon, sides √2 and 2√2 in turn  (cut from truncated octahedron)
+      6 x square, side √2  [the plate's ridge]  (cut from hexagonal prism)
+FINAL ok

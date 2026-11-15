@@ -8140,6 +8140,16 @@
     "retry": "only for the leads (derive the 120-cell 3D identity; Hopf law for C3/C6; count icosian structures in E8)",
     "status": "SETTLED",
     "study": "2026-11-16-remaining-silences"
+   },
+   {
+    "date": "2026-11-16",
+    "question": "Non-heart Vacuus of the golden solids A (perms of (φ²,φ²,φ²,φ,0)) and B (perms of (φ²,φ²,1,1,0)) for Silent Running: exact plate counts, kinds of plate under the symmetry group, one slice per kind, renders",
+    "method": "studies/2026-11-16-non-heart-vacuus: vacuus_exact.py exact Q(sqrt5) (Rado facets + float cross-check, ridges, plate normals as exact null vectors, full symmetry group by Gram-matrix backtracking, orbits, exact slices with side lengths and shape names, Euler 3D/4D); control n=5 permutohedron; render_vacuus.py crystal slices + cone fins; edgecheck exit 0",
+    "status": "SETTLED (exact)",
+    "result": "A: 30 ridges on 30 plates, 2 kinds (20 on triangles √2, slice frustum 6/9/5; 10 on hexagons, slice 10/15/7); B: 80 ridges on 80 plates, 4 kinds (20+20 on φ√2 triangles, slices 21/33/14 of different face types; 30 on rectangles, 13/24/13; 10 on √2 triangles, 15/24/11); both group order 120, not centrally symmetric, one ridge per plate = non-heart Vacuus; control permutohedron 150 on 65 plates, group 240, 5 heart plates cut the 1:2 TO",
+    "retry": "never (exact); only to add the optional heart/non-heart side-by-side panel",
+    "study": "studies/2026-11-16-non-heart-vacuus",
+    "goes_to": "Silent Running: Twisted Silence (figures); #105 next version (Vacuus for any polytope with a centre, heart and non-heart kinds)"
    }
   ]
  },
