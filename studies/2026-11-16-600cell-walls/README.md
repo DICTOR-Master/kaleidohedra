@@ -1,6 +1,6 @@
 # Are the new shapes hidden in the 600-cell's walls? (16 Nov 2026)
 
-**Conclusion: yes for solid A; for solid B, half its plates are 600-cell mirror walls and the other half are the 600-cell's central sections parallel to its cells (the equators of the 120-cell's corner axes).** All 30 of A's central plates are walls of the 600-cell. For B, 40 of its 80 plates are walls. The other 40, through its φ√2 triangles, are the walls that give B away. Floating point (tolerance 1e-7); an exact recheck is to come.
+**Conclusion: yes for solid A; for solid B, half its plates are 600-cell mirror walls and the other half are the 600-cell's central sections parallel to its cells (the equators of the 120-cell's corner axes).** All 30 of A's central plates are walls of the 600-cell. For B, 40 of its 80 plates are walls. The other 40, through its φ√2 triangles, are the walls that give B away. Confirmed EXACTLY in Q(√5) (scripts/walls_exact.py, data/walls_exact.log: exact 600-cell of 120 corners, 60 mirror directions, 300 cell-centre directions; every plate exactly coplanar with the centre; all 110 plates of A and B are mirror walls or cell-parallel central sections).
 
 **DICTO's theory (16 Nov 2026, his words):** "the reason that all the recent and otherwise undiscovered shapes are vacuus is that because of this they have previously been indistinguishable from 600 cell walls". Restated and confirmed by DICTO: each shape's walls (the central plates of its Vacuus) coincide with walls the 600-cell already has, so inside the 600-cell they look like part of its own structure.
 
@@ -38,4 +38,4 @@ So every plate of B is a central plane that the 600-cell–120-cell pair already
 
 Control for the equators (scripts/walls_where_ctl.py, data/walls_where_ctl.log): the ordinary orbits' non-mirror plates (40 + 30 and 20) point along NONE of the 600-cell's directions (corners, edge midpoints, triangle centres, cell centres). So the equators are special to the twist: with it, every one of B's 80 plates is a central plane of the 600-cell–120-cell pair; without it, most plates are in no such plane.
 
-LEADS: (1) exact recheck in Q(√5); (2) the same test on the other recent shapes (GET, the echo shapes, the 2I twisted classes of other degrees).
+LEADS: (1) the same test on the other recent shapes (GET, the echo shapes, the 2I twisted classes of other degrees).
