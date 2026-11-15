@@ -1,0 +1,122 @@
+{
+ "3C": {
+  "word": "ABC",
+  "types": "ccc",
+  "pieces": 54,
+  "volume_ok": true,
+  "coverage": {
+   "1": 20000
+  },
+  "faces_by_multiplicity": {
+   "2": 162
+  },
+  "face_to_face": true,
+  "contacts": {
+   "square: cube+cube (next layer)": 81,
+   "square: cube+cube (same layer)": 81
+  },
+  "pieces_by_layer_type": {
+   "c layer: cube, z from -1.0 to 0.5 layers about its ball": 27,
+   "c layer: cube, z from -0.5 to 1.0 layers about its ball": 27
+  }
+ },
+ "2H": {
+  "word": "AB",
+  "types": "hh",
+  "pieces": 36,
+  "volume_ok": true,
+  "coverage": {
+   "1": 20000
+  },
+  "faces_by_multiplicity": {
+   "2": 180
+  },
+  "face_to_face": true,
+  "contacts": {
+   "hexagon: Narcissus+Narcissus (same layer)": 18,
+   "square: Narcissus+Narcissus (next layer)": 54,
+   "triangle: Narcissus+Narcissus (same layer)": 108
+  },
+  "pieces_by_layer_type": {
+   "h layer: Narcissus, z from -1.0 to 0.0 layers about its ball": 18,
+   "h layer: Narcissus, z from 0.0 to 1.0 layers about its ball": 18
+  }
+ },
+ "4H": {
+  "word": "ABCB",
+  "types": "hchc",
+  "pieces": 72,
+  "volume_ok": true,
+  "coverage": {
+   "1": 20000
+  },
+  "faces_by_multiplicity": {
+   "2": 288
+  },
+  "face_to_face": true,
+  "contacts": {
+   "hexagon: Narcissus+Narcissus (same layer)": 18,
+   "square: Narcissus+cube (next layer)": 108,
+   "square: cube+cube (same layer)": 54,
+   "triangle: Narcissus+Narcissus (same layer)": 108
+  },
+  "pieces_by_layer_type": {
+   "h layer: Narcissus, z from -1.0 to 0.0 layers about its ball": 18,
+   "h layer: Narcissus, z from 0.0 to 1.0 layers about its ball": 18,
+   "c layer: cube, z from -1.0 to 0.5 layers about its ball": 18,
+   "c layer: cube, z from -0.5 to 1.0 layers about its ball": 18
+  }
+ },
+ "6H": {
+  "word": "ABCACB",
+  "types": "hcchcc",
+  "pieces": 108,
+  "volume_ok": true,
+  "coverage": {
+   "1": 20000
+  },
+  "faces_by_multiplicity": {
+   "2": 396
+  },
+  "face_to_face": true,
+  "contacts": {
+   "hexagon: Narcissus+Narcissus (same layer)": 18,
+   "square: Narcissus+cube (next layer)": 108,
+   "square: cube+cube (next layer)": 54,
+   "square: cube+cube (same layer)": 108,
+   "triangle: Narcissus+Narcissus (same layer)": 108
+  },
+  "pieces_by_layer_type": {
+   "h layer: Narcissus, z from -1.0 to 0.0 layers about its ball": 18,
+   "h layer: Narcissus, z from 0.0 to 1.0 layers about its ball": 18,
+   "c layer: cube, z from -1.0 to 0.5 layers about its ball": 36,
+   "c layer: cube, z from -0.5 to 1.0 layers about its ball": 36
+  }
+ },
+ "9R": {
+  "word": "ABACACBCB",
+  "types": "hhchhchhc",
+  "pieces": 162,
+  "volume_ok": true,
+  "coverage": {
+   "1": 20000
+  },
+  "faces_by_multiplicity": {
+   "2": 702
+  },
+  "face_to_face": true,
+  "contacts": {
+   "hexagon: Narcissus+Narcissus (same layer)": 54,
+   "square: Narcissus+Narcissus (next layer)": 81,
+   "square: Narcissus+cube (next layer)": 162,
+   "square: cube+cube (same layer)": 81,
+   "triangle: Narcissus+Narcissus (same layer)": 324
+  },
+  "pieces_by_layer_type": {
+   "h layer: Narcissus, z from -1.0 to 0.0 layers about its ball": 54,
+   "h layer: Narcissus, z from 0.0 to 1.0 layers about its ball": 54,
+   "c layer: cube, z from -1.0 to 0.5 layers about its ball": 27,
+   "c layer: cube, z from -0.5 to 1.0 layers about its ball": 27
+  }
+ }
+}

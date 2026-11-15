@@ -313,3 +313,19 @@ reference library, not in this repo.
 - M. Firsching (2015). *Computing maximal copies of polytopes contained in a polytope*. Experimental Mathematics 24, 98–105. <https://arxiv.org/abs/1407.0683> (Polar reciprocals reverse inclusion. Largest copy of a polytope in a polytope.)
 - R. Twarock, M. Valiunas, E. Zappa (2015). *Orbits of crystallographic embedding of non-crystallographic groups and applications to virology*. Acta Cryst. A. <https://arxiv.org/abs/1411.2115> (Nested icosahedral point sets.)
 - I. Hafner (2007). *Dissection of small stellated dodecahedron and great stellated dodecahedron to rhombic triacontahedron and hexecontahedron*. Visual Mathematics 9(2). <http://www.mi.sanu.ac.rs/vismath/hafnervisual/visual54A/Visual54.html>
+
+## HexOct in crochet (study 2026-11-15-hexoct-crochet)
+
+- D. Taimiņa (2009). *Crocheting Adventures with Hyperbolic Planes*. A K Peters. Bridges 2022: "What I learned in 25 years crocheting hyperbolic planes". <https://archive.bridgesmathart.org/2022/bridges2022-6.pdf> (First crocheted hyperbolic plane 1997.)
+- H. M. Osinga, B. Krauskopf (2004). *Crocheting the Lorenz manifold*. Math. Intelligencer 26(4) 25–37. <https://www.math.auckland.ac.nz/~hinke/crochet/> (25,511 stitches from computed instructions.)
+- J. Gilbank (2012). *Polyhedral Balls* crochet pattern. <https://www.planetjune.com/blog/polyhedral-balls-crochet-pattern/> (Platonic solids from crocheted faces.)
+- M. Edelstein, H. Peleg, S. Itzhaky, M. Ben-Chen (2022). *AmiGo: computational design of amigurumi crochet patterns*. SCF 2022. <https://arxiv.org/abs/2211.01178>
+- K. Seitz, J. Lincke, P. Rein, R. Hirschfeld (2021). *Language and Tool Support for 3D Crochet Patterns*. HPI Technical Report 137. doi:10.25932/publishup-49253 (No industrial crochet machines; stitches attach almost anywhere.)
+- S. Dong (2025). *Topological Crochet*. Bridges 2025, 77–84. <https://archive.bridgesmathart.org/2025/bridges2025-77.pdf>
+- L. Magrics (2025). *3D Webs: Interweaving Rhythm, Geometry and Crochet*. Bridges 2025. <https://archive.bridgesmathart.org/2025/bridges2025-215.pdf>
+- S. Markande, E. Matsumoto (2020). *Knotty knits are tangles in tori*. Bridges 2020, 103–112. <https://arxiv.org/abs/2002.01497>
+- L. Storck, F. Steenbock, M. Dotter, J. Funke, A. Ehrmann (2023). *Principle capabilities of crocheted fabrics for composite materials*. J. Eng. Fibers Fabr. 18. doi:10.1177/15589250231203381 (link only; abstract read.)
+- L. Storck, M. Feldmann, Y. Kyosev (2023). *Design tool for automated crocheting of fabrics*. CDATP 4(2) 254–272. <https://cdatp.publia.org/cdatp/article/view/130>
+- J. Madill (2025). *How to Get Hooked*. Knitty, Winter 2025. <http://knitty.com/ISSUEw25/FEATw25GH/FEATw25GH.php> (Knit vs crochet: live loops, yarn use, thickness, stretch.)
+- S. Baker, S. Goldstine (2012). *Bead crochet bracelets: what would Escher do?* Bridges 2012, 567–572. <https://archive.bridgesmathart.org/2012/bridges2012-567.html>
+- Institute For Figuring, Crochet Coral Reef (from 2005). <https://v1.crochetcoralreef.org/about/history.php>

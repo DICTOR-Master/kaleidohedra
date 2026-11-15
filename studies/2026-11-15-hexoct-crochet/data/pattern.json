@@ -1,0 +1,106 @@
+{
+ "L_cm": 9.5,
+ "a_cm": 13.435028842544403,
+ "square": {
+  "sts": 17,
+  "rows": 19
+ },
+ "square_check_cm": {
+  "width": 9.444444444444445,
+  "height": 9.5
+ },
+ "hexagon": {
+  "bottom_sts": 14,
+  "middle_sts": 28,
+  "total_rows": 27,
+  "rows_each_half": 13,
+  "increases_each_edge": 7,
+  "increase_rows": [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14
+  ],
+  "decrease_rows": [
+   15,
+   17,
+   19,
+   21,
+   23,
+   25,
+   27
+  ]
+ },
+ "hexagon_check": {
+  "bottom/top side": 7.777777777777778,
+  "slanted side": 7.790119176888339,
+  "width": 15.555555555555555,
+  "height": 13.5,
+  "corner angle at bottom": 119.94760766727222
+ },
+ "triangle": {
+  "first_row_sts": 14,
+  "rows": 11,
+  "decreases_on_slanted_edge": 13,
+  "decrease_schedule": [
+   1,
+   1,
+   1,
+   2,
+   1,
+   1,
+   2,
+   1,
+   1,
+   2
+  ]
+ },
+ "triangle_check": {
+  "long leg": 7.777777777777778,
+  "short leg": 5.5,
+  "hypotenuse": 9.525955446069114,
+  "angle at long leg end": 35.26576765934564
+ },
+ "true_cm": {
+  "square side": 9.5,
+  "hexagon side": 7.756717518813398,
+  "triangle short leg": 5.484827557301445,
+  "triangle long leg": 7.756717518813398,
+  "triangle hypotenuse": 9.5
+ },
+ "error_percent": {
+  "square side": [
+   -0.58,
+   0.0
+  ],
+  "hexagon side": [
+   0.27,
+   0.43
+  ],
+  "triangle short leg": [
+   0.28
+  ],
+  "triangle long leg": [
+   0.27
+  ],
+  "triangle hypotenuse": [
+   0.27
+  ]
+ },
+ "worst_percent": 0.58,
+ "true_angles": {
+  "hexagon corner": 120.0,
+  "triangle acute angle at long leg end": 35.264389682754654
+ },
+ "gauge": {
+  "sts_per_10cm": 18.0,
+  "rows_per_10cm": 20.0
+ },
+ "face_area_cm2": {
+  "Narcissus": 554.7,
+  "cube": 541.5
+ }
+}
