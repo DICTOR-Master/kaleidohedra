@@ -1,0 +1,222 @@
+{
+ "run": "k6e025",
+ "logger_md5": "2e2b526ffbd5a22dbf1a7953f97721cb",
+ "params": {
+  "N0": 2000,
+  "Nend": 600,
+  "K": 6,
+  "eps": 0.025,
+  "lamf": 4.0,
+  "amin": 0.002,
+  "seed": 1,
+  "rec_frac": 0.005,
+  "cfl": 0.15,
+  "resample": 2
+ },
+ "status": "maxwall",
+ "frames": 4,
+ "torus_euler_failures": 0,
+ "frames_not_all_triple": 0,
+ "sim_euler_failures": 0,
+ "exact_events": {
+  "T1": 94,
+  "T2": 12
+ },
+ "anomalies": {
+  "T1 R==S": 0,
+  "T2 shared outer": 0,
+  "lens X==Y": 0,
+  "lens loop": 0,
+  "one-sided": 0
+ },
+ "logger": {
+  "stride1_pair": {
+   "counts": {
+    "swap": 86,
+    "clump": 2,
+    "death": 10,
+    "merge": 2
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 2
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  },
+  "stride1_segment": {
+   "counts": {
+    "swap": 86,
+    "clump": 2,
+    "death": 10,
+    "merge": 2
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 2
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  },
+  "stride2_pair": {
+   "counts": {
+    "death": 5,
+    "swap": 83,
+    "clump": 2
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 2
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  },
+  "stride2_segment": {
+   "counts": {
+    "death": 5,
+    "swap": 83,
+    "clump": 2
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 2
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  },
+  "stride4_pair": {
+   "counts": {},
+   "clumps": {},
+   "balance_failures": 0,
+   "neg_control_caught": null
+  },
+  "stride4_segment": {
+   "counts": {},
+   "clumps": {},
+   "balance_failures": 0,
+   "neg_control_caught": null
+  }
+ },
+ "windows": {
+  "2000-1000": {
+   "vanished": 12,
+   "T1": 94,
+   "T1_per_vanished": 7.833333333333333,
+   "censored q0.01 per vanished": 7.833333333333333,
+   "censored q0.05 per vanished": 7.833333333333333,
+   "shedding (loser dies within 5% growth) per vanished": 7.833333333333333,
+   "shedding area<0.1 per vanished": 0.25,
+   "shedding area<0.2 per vanished": 0.25,
+   "macroscopic (not shedding by area<0.1) per vanished": 7.583333333333333,
+   "macroscopic (loser survives 5% growth) per vanished": 0.0
+  }
+ },
+ "topology": {
+  "2000-1000": {
+   "frames": 4,
+   "mu2": 1.665741457517032,
+   "mean_n": 6.0,
+   "p": {
+    "3": 0.0083,
+    "4": 0.1022,
+    "5": 0.2613,
+    "6": 0.303,
+    "7": 0.2017,
+    "8": 0.0892,
+    "9": 0.0274,
+    "10": 0.0063,
+    "11": 0.0006
+   },
+   "lewis": {
+    "3": 0.2541932412342332,
+    "4": 0.4938001656999153,
+    "5": 0.7300416237660121,
+    "6": 1.0015722978498403,
+    "7": 1.2557369694296345,
+    "8": 1.5057881177039938,
+    "9": 1.8685795892436605,
+    "10": 1.9561085431168705,
+    "11": 0.0,
+    "12": 0.0
+   },
+   "aboav": {
+    "3": 6.881818181818181,
+    "4": 6.698696120689655,
+    "5": 6.447133343632375,
+    "6": 6.307072104139193,
+    "7": 6.144974065195639,
+    "8": 6.041552191331589,
+    "9": 5.969081654754169,
+    "10": 5.8098214285714285,
+    "11": 0.0,
+    "12": 0.0
+   }
+  }
+ },
+ "von_neumann": {
+  "per_n": {
+   "3": {
+    "count": 40,
+    "mean": -1.647989421464441,
+    "sd": 0.8556813560407072
+   },
+   "4": {
+    "count": 582,
+    "mean": -1.367700464018642,
+    "sd": 0.48574267000560584
+   },
+   "5": {
+    "count": 1479,
+    "mean": -0.715414080427463,
+    "sd": 0.24819581413964317
+   },
+   "6": {
+    "count": 1696,
+    "mean": -0.008864759607508554,
+    "sd": 0.11957934117693547
+   },
+   "7": {
+    "count": 1128,
+    "mean": 0.7048233176178864,
+    "sd": 0.2571215489705252
+   },
+   "8": {
+    "count": 495,
+    "mean": 1.4099452645096322,
+    "sd": 0.4558602106349135
+   },
+   "9": {
+    "count": 150,
+    "mean": 2.1273861172286157,
+    "sd": 0.641929307512668
+   },
+   "10": {
+    "count": 34,
+    "mean": 2.8817099287006576,
+    "sd": 0.8306974808709404
+   }
+  },
+  "slope": 0.6967119469576288,
+  "n0": 5.9958758138693105,
+  "expected_slope": 1.0471975511965976
+ },
+ "sides_at_small_area": {
+  "0.02": {
+   "3": 11,
+   "4": 6
+  },
+  "0.05": {
+   "3": 9,
+   "4": 12,
+   "5": 2
+  },
+  "0.1": {
+   "3": 12,
+   "4": 22,
+   "5": 6
+  },
+  "0.2": {
+   "3": 14,
+   "4": 51,
+   "5": 19,
+   "6": 1
+  }
+ },
+ "ok": true
+}

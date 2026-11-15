@@ -1,0 +1,223 @@
+{
+ "0-1 deep": {
+  "shift_um": [
+   43.380001068115234,
+   45.15999984741211,
+   2.130000114440918
+  ],
+  "matched": 2264,
+  "median_misorientation": 0.046393703102338577,
+  "B_grains_with_several_A": 143,
+  "interior_A": 1917,
+  "deep_A": 175,
+  "vanished_deep": 54,
+  "interior_B_unmatched": 336,
+  "faces_vanished_mean": 7.0,
+  "vanished_faces_hist": {
+   "3": 3,
+   "4": 7,
+   "5": 13,
+   "6": 5,
+   "7": 7,
+   "8": 3,
+   "9": 6,
+   "10": 4,
+   "11": 1,
+   "12": 2,
+   "13": 2,
+   "18": 1
+  },
+  "vanished_diam_over_mean": 0.7707777619361877,
+  "meanF_deep_A": 8.06857142857143,
+  "meanF_interior_B": 10.644646924829157,
+  "amin0": {
+   "tracked_grains": 96,
+   "gained": 6,
+   "lost": 14,
+   "gained_per_vanished": 0.1111111111111111,
+   "lost_per_vanished": 0.25925925925925924,
+   "net_per_vanished": -0.14814814814814814,
+   "identity_fv_minus_halfF": 2.9657142857142853
+  },
+  "amin50": {
+   "tracked_grains": 96,
+   "gained": 6,
+   "lost": 12,
+   "gained_per_vanished": 0.1111111111111111,
+   "lost_per_vanished": 0.2222222222222222,
+   "net_per_vanished": -0.1111111111111111,
+   "identity_fv_minus_halfF": 2.9657142857142853
+  },
+  "set": "deep interior (all neighbours interior)"
+ },
+ "4-5 deep": {
+  "shift_um": [
+   11.350000381469727,
+   -1.899999976158142,
+   11.609999656677246
+  ],
+  "matched": 2129,
+  "median_misorientation": 0.0625572578997782,
+  "B_grains_with_several_A": 129,
+  "interior_A": 1691,
+  "deep_A": 276,
+  "vanished_deep": 49,
+  "interior_B_unmatched": 299,
+  "faces_vanished_mean": 5.408163265306122,
+  "vanished_faces_hist": {
+   "2": 2,
+   "3": 7,
+   "4": 9,
+   "5": 10,
+   "6": 12,
+   "7": 4,
+   "9": 1,
+   "10": 2,
+   "11": 1,
+   "14": 1
+  },
+  "vanished_diam_over_mean": 0.6072982549667358,
+  "meanF_deep_A": 7.793478260869565,
+  "meanF_interior_B": 10.997891407485504,
+  "amin0": {
+   "tracked_grains": 187,
+   "gained": 15,
+   "lost": 26,
+   "gained_per_vanished": 0.30612244897959184,
+   "lost_per_vanished": 0.5306122448979592,
+   "net_per_vanished": -0.22448979591836735,
+   "identity_fv_minus_halfF": 1.5114241348713393
+  },
+  "amin50": {
+   "tracked_grains": 187,
+   "gained": 12,
+   "lost": 20,
+   "gained_per_vanished": 0.24489795918367346,
+   "lost_per_vanished": 0.40816326530612246,
+   "net_per_vanished": -0.16326530612244897,
+   "identity_fv_minus_halfF": 1.5114241348713393
+  },
+  "set": "deep interior (all neighbours interior)"
+ },
+ "0-1 interior": {
+  "shift_um": [
+   43.380001068115234,
+   45.15999984741211,
+   2.130000114440918
+  ],
+  "matched": 2264,
+  "median_misorientation": 0.046393703102338577,
+  "B_grains_with_several_A": 143,
+  "interior_A": 1917,
+  "deep_A": 1917,
+  "vanished_deep": 553,
+  "interior_B_unmatched": 336,
+  "faces_vanished_mean": 8.318264014466546,
+  "vanished_faces_hist": {
+   "2": 2,
+   "3": 21,
+   "4": 47,
+   "5": 82,
+   "6": 66,
+   "7": 71,
+   "8": 58,
+   "9": 43,
+   "10": 32,
+   "11": 19,
+   "12": 29,
+   "13": 27,
+   "14": 15,
+   "15": 7,
+   "16": 8,
+   "17": 5,
+   "18": 9,
+   "19": 3,
+   "20": 2,
+   "21": 1,
+   "22": 1,
+   "23": 1,
+   "25": 2,
+   "29": 1,
+   "31": 1
+  },
+  "vanished_diam_over_mean": 0.6943689584732056,
+  "meanF_deep_A": 10.989567031820553,
+  "meanF_interior_B": 10.644646924829157,
+  "amin0": {
+   "tracked_grains": 1154,
+   "gained": 370,
+   "lost": 474,
+   "gained_per_vanished": 0.6690777576853526,
+   "lost_per_vanished": 0.8571428571428571,
+   "net_per_vanished": -0.18806509945750452,
+   "identity_fv_minus_halfF": 2.82348049855627
+  },
+  "amin50": {
+   "tracked_grains": 1154,
+   "gained": 335,
+   "lost": 451,
+   "gained_per_vanished": 0.6057866184448463,
+   "lost_per_vanished": 0.8155515370705244,
+   "net_per_vanished": -0.20976491862567812,
+   "identity_fv_minus_halfF": 2.82348049855627
+  },
+  "set": "all interior grains"
+ },
+ "4-5 interior": {
+  "shift_um": [
+   11.350000381469727,
+   -1.899999976158142,
+   11.609999656677246
+  ],
+  "matched": 2129,
+  "median_misorientation": 0.0625572578997782,
+  "B_grains_with_several_A": 129,
+  "interior_A": 1691,
+  "deep_A": 1691,
+  "vanished_deep": 255,
+  "interior_B_unmatched": 299,
+  "faces_vanished_mean": 6.545098039215686,
+  "vanished_faces_hist": {
+   "2": 10,
+   "3": 29,
+   "4": 36,
+   "5": 44,
+   "6": 45,
+   "7": 25,
+   "8": 9,
+   "9": 15,
+   "10": 13,
+   "11": 5,
+   "12": 1,
+   "13": 5,
+   "14": 6,
+   "15": 2,
+   "16": 6,
+   "17": 2,
+   "19": 1,
+   "21": 1
+  },
+  "vanished_diam_over_mean": 0.5627098679542542,
+  "meanF_deep_A": 10.62448255470136,
+  "meanF_interior_B": 10.997891407485504,
+  "amin0": {
+   "tracked_grains": 1231,
+   "gained": 242,
+   "lost": 325,
+   "gained_per_vanished": 0.9490196078431372,
+   "lost_per_vanished": 1.2745098039215685,
+   "net_per_vanished": -0.3254901960784314,
+   "identity_fv_minus_halfF": 1.2328567618650057
+  },
+  "amin50": {
+   "tracked_grains": 1231,
+   "gained": 234,
+   "lost": 311,
+   "gained_per_vanished": 0.9176470588235294,
+   "lost_per_vanished": 1.219607843137255,
+   "net_per_vanished": -0.30196078431372547,
+   "identity_fv_minus_halfF": 1.2328567618650057
+  },
+  "set": "all interior grains"
+ }
+}

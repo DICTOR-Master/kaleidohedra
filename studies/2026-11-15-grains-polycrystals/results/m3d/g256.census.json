@@ -1,0 +1,419 @@
+{
+ "run": "g256",
+ "logger_md5": "2e2b526ffbd5a22dbf1a7953f97721cb",
+ "params": {
+  "n": 256,
+  "N0": 4000,
+  "Nend": 400,
+  "c": 0.8,
+  "sigmin": 2.5,
+  "seed": 1,
+  "rec_frac": 0.0
+ },
+ "status": "done",
+ "frames": 109,
+ "faces_at_small_volume": {
+  "0.05": {
+   "n": 3633,
+   "mean": 7.007707129094412,
+   "mean_area4": 6.674373795761079,
+   "hist": {
+    "2": 1,
+    "3": 1,
+    "4": 35,
+    "5": 266,
+    "6": 853,
+    "7": 1295,
+    "8": 872,
+    "9": 276,
+    "10": 33,
+    "11": 1
+   }
+  },
+  "0.1": {
+   "n": 3655,
+   "mean": 7.986867305061559,
+   "mean_area4": 7.719562243502052,
+   "hist": {
+    "5": 35,
+    "6": 266,
+    "7": 906,
+    "8": 1301,
+    "9": 839,
+    "10": 272,
+    "11": 32,
+    "12": 4
+   }
+  },
+  "0.2": {
+   "n": 3691,
+   "mean": 9.108642644269846,
+   "mean_area4": 8.873205093470604,
+   "hist": {
+    "5": 3,
+    "6": 43,
+    "7": 262,
+    "8": 788,
+    "9": 1277,
+    "10": 896,
+    "11": 322,
+    "12": 88,
+    "13": 10,
+    "14": 2
+   }
+  }
+ },
+ "by_amin": {
+  "1": {
+   "logger": {
+    "stride1": {
+     "counts": {
+      "clump": 8601,
+      "contact lost": 10740,
+      "contact gained": 4097,
+      "death": 478
+     },
+     "balance_failures": 0,
+     "neg_control_caught": true
+    },
+    "stride2": {
+     "counts": {
+      "clump": 8460,
+      "contact lost": 7010,
+      "contact gained": 2143,
+      "death": 245
+     },
+     "balance_failures": 0,
+     "neg_control_caught": true
+    },
+    "stride4": {
+     "counts": {
+      "clump": 6922,
+      "contact lost": 3905,
+      "contact gained": 918,
+      "death": 106
+     },
+     "balance_failures": 0,
+     "neg_control_caught": true
+    }
+   },
+   "windows": {
+    "4000-2000": {
+     "faces of vanished at last frame per vanished": 5.661249365159979,
+     "gained per vanished": 3.718638902996445,
+     "gained persistent k3 per vanished": 3.376333164042661,
+     "gained persistent k5 per vanished": 3.232605383443372,
+     "lost per vanished": 6.49060436769934,
+     "lost persistent k3 per vanished": 5.318943626206196,
+     "lost persistent k5 per vanished": 4.822244794311834,
+     "vanished": 1969,
+     "net (gained - lost) per vanished": -2.771965464702895,
+     "mean F in window": 14.070967625237383,
+     "identity: f_v - <F>/2": -1.3742344474587123
+    },
+    "2000-1000": {
+     "faces of vanished at last frame per vanished": 5.46259842519685,
+     "gained per vanished": 2.690944881889764,
+     "gained persistent k3 per vanished": 2.50492125984252,
+     "gained persistent k5 per vanished": 2.4261811023622046,
+     "lost per vanished": 4.181102362204724,
+     "lost persistent k3 per vanished": 3.984251968503937,
+     "lost persistent k5 per vanished": 3.888779527559055,
+     "vanished": 1016,
+     "net (gained - lost) per vanished": -1.4901574803149606,
+     "mean F in window": 13.7898136875181,
+     "identity: f_v - <F>/2": -1.4323084185622
+    },
+    "1000-0": {
+     "faces of vanished at last frame per vanished": 5.2508038585209,
+     "gained per vanished": 2.332797427652733,
+     "gained persistent k3 per vanished": 2.188102893890675,
+     "gained persistent k5 per vanished": 2.054662379421222,
+     "lost per vanished": 3.9967845659163985,
+     "lost persistent k3 per vanished": 3.8810289389067525,
+     "lost persistent k5 per vanished": 3.7958199356913185,
+     "gained censored k5 per vanished": 0.09163987138263666,
+     "gained censored k3 per vanished": 0.03215434083601286,
+     "vanished": 622,
+     "net (gained - lost) per vanished": -1.6639871382636655,
+     "mean F in window": 13.690931784956689,
+     "identity: f_v - <F>/2": -1.5946620339574444
+    }
+   }
+  },
+  "4": {
+   "logger": {
+    "stride1": {
+     "counts": {
+      "clump": 8142,
+      "contact lost": 10953,
+      "contact gained": 4366,
+      "death": 488
+     },
+     "balance_failures": 0,
+     "neg_control_caught": true
+    },
+    "stride2": {
+     "counts": {
+      "clump": 8039,
+      "contact lost": 7095,
+      "contact gained": 2432,
+      "death": 250
+     },
+     "balance_failures": 0,
+     "neg_control_caught": true
+    },
+    "stride4": {
+     "counts": {
+      "clump": 6704,
+      "contact lost": 3915,
+      "contact gained": 1117,
+      "death": 125
+     },
+     "balance_failures": 0,
+     "neg_control_caught": true
+    }
+   },
+   "windows": {
+    "4000-2000": {
+     "faces of vanished at last frame per vanished": 4.656678517013712,
+     "gained per vanished": 3.702386998476384,
+     "gained persistent k3 per vanished": 3.452006094464195,
+     "gained persistent k5 per vanished": 3.3301168105637378,
+     "lost per vanished": 6.687150837988827,
+     "lost persistent k3 per vanished": 5.942102590147283,
+     "lost persistent k5 per vanished": 5.500761808024378,
+     "vanished": 1969,
+     "net (gained - lost) per vanished": -2.9847638395124427,
+     "mean F in window": 13.731997460790913,
+     "identity: f_v - <F>/2": -2.2093202133817442
+    },
+    "2000-1000": {
+     "faces of vanished at last frame per vanished": 4.570866141732283,
+     "gained per vanished": 2.581692913385827,
+     "gained persistent k3 per vanished": 2.484251968503937,
+     "gained persistent k5 per vanished": 2.434055118110236,
+     "lost per vanished": 4.7578740157480315,
+     "lost persistent k3 per vanished": 4.649606299212598,
+     "lost persistent k5 per vanished": 4.591535433070866,
+     "vanished": 1016,
+     "net (gained - lost) per vanished": -2.1761811023622046,
+     "mean F in window": 13.553240357588303,
+     "identity: f_v - <F>/2": -2.205754037061868
+    },
+    "1000-0": {
+     "faces of vanished at last frame per vanished": 4.704180064308682,
+     "gained per vanished": 2.2733118971061095,
+     "gained persistent k3 per vanished": 2.165594855305466,
+     "gained persistent k5 per vanished": 2.0385852090032155,
+     "lost per vanished": 4.397106109324759,
+     "lost persistent k3 per vanished": 4.310289389067524,
+     "lost persistent k5 per vanished": 4.236334405144695,
+     "gained censored k5 per vanished": 0.08681672025723473,
+     "gained censored k3 per vanished": 0.024115755627009645,
+     "vanished": 622,
+     "net (gained - lost) per vanished": -2.1237942122186495,
+     "mean F in window": 13.526988841301295,
+     "identity: f_v - <F>/2": -2.0593143563419654
+    }
+   }
+  }
+ },
+ "topology_last": {
+  "N": 393,
+  "meanF": 13.653944020356233,
+  "mu2F": 27.75810785437264,
+  "meanF4": 13.511450381679388,
+  "mu2F4": 27.573024105044382,
+  "Rbar": 21.681013444835887,
+  "sigma": 4.150745883187021
+ },
+ "meanF_series": [
+  [
+   4000,
+   15.322,
+   14.399
+  ],
+  [
+   3992,
+   14.635,
+   14.225
+  ],
+  [
+   3932,
+   14.31,
+   13.966
+  ],
+  [
+   3798,
+   14.116,
+   13.807
+  ],
+  [
+   3612,
+   14.023,
+   13.723
+  ],
+  [
+   3403,
+   13.96,
+   13.645
+  ],
+  [
+   3208,
+   13.889,
+   13.574
+  ],
+  [
+   2977,
+   13.875,
+   13.599
+  ],
+  [
+   2782,
+   13.876,
+   13.547
+  ],
+  [
+   2576,
+   13.852,
+   13.55
+  ],
+  [
+   2386,
+   13.808,
+   13.511
+  ],
+  [
+   2205,
+   13.831,
+   13.527
+  ],
+  [
+   2031,
+   13.832,
+   13.545
+  ],
+  [
+   1900,
+   13.802,
+   13.563
+  ],
+  [
+   1762,
+   13.798,
+   13.48
+  ],
+  [
+   1620,
+   13.804,
+   13.57
+  ],
+  [
+   1496,
+   13.832,
+   13.591
+  ],
+  [
+   1402,
+   13.836,
+   13.556
+  ],
+  [
+   1305,
+   13.776,
+   13.496
+  ],
+  [
+   1198,
+   13.778,
+   13.553
+  ],
+  [
+   1122,
+   13.774,
+   13.538
+  ],
+  [
+   1038,
+   13.75,
+   13.547
+  ],
+  [
+   967,
+   13.822,
+   13.603
+  ],
+  [
+   895,
+   13.794,
+   13.582
+  ],
+  [
+   834,
+   13.746,
+   13.552
+  ],
+  [
+   782,
+   13.726,
+   13.522
+  ],
+  [
+   731,
+   13.677,
+   13.549
+  ],
+  [
+   674,
+   13.769,
+   13.567
+  ],
+  [
+   627,
+   13.713,
+   13.55
+  ],
+  [
+   592,
+   13.669,
+   13.53
+  ],
+  [
+   557,
+   13.637,
+   13.501
+  ],
+  [
+   524,
+   13.645,
+   13.504
+  ],
+  [
+   499,
+   13.651,
+   13.491
+  ],
+  [
+   466,
+   13.622,
+   13.451
+  ],
+  [
+   438,
+   13.667,
+   13.484
+  ],
+  [
+   411,
+   13.606,
+   13.47
+  ],
+  [
+   393,
+   13.654,
+   13.511
+  ]
+ ],
+ "ok": true
+}

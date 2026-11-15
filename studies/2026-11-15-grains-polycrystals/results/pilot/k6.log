@@ -1,0 +1,9 @@
+PROGRESS 0.000 N=2000 t=0.0000 step=1 events=156
+PROGRESS 0.001 N=1997 t=0.0464 step=902 events=167
+PROGRESS 0.004 N=1991 t=0.0915 step=1812 events=176
+PROGRESS 0.011 N=1974 t=0.1441 step=2902 events=207
+PROGRESS 0.024 N=1943 t=0.1936 step=3947 events=265
+PROGRESS 0.037 N=1914 t=0.2523 step=5210 events=318
+PROGRESS 0.055 N=1871 t=0.3008 step=6257 events=409
+VERTEX2D maxwall {"N": 1846, "events": {"T1": 307, "T2": 154}, "vn_slope": 0.8640606613384859, "euler_fail": 0, "anomalies": {"T1 R==S": 0, "T2 shared outer": 0, "lens X==Y": 0, "lens loop": 0, "one-sided": 0}}
+CENSUS2D_OK k6 {"exact": {"T1": 307, "T2": 154}, "logger1": {"swap": 204, "clump": 8, "death": 69, "merge": 85}, "vn": 0.8640606613384859, "last": null}

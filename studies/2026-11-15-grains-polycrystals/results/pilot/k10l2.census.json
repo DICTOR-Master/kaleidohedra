@@ -1,0 +1,216 @@
+{
+ "run": "k10l2",
+ "logger_md5": "2e2b526ffbd5a22dbf1a7953f97721cb",
+ "params": {
+  "N0": 2000,
+  "Nend": 600,
+  "K": 10,
+  "eps": 0.05,
+  "lamf": 2.0,
+  "amin": 0.002,
+  "seed": 1,
+  "rec_frac": 0.005,
+  "cfl": 0.15,
+  "resample": 2
+ },
+ "status": "maxwall",
+ "frames": 4,
+ "torus_euler_failures": 0,
+ "frames_not_all_triple": 0,
+ "sim_euler_failures": 0,
+ "exact_events": {
+  "T1": 164,
+  "T2": 3
+ },
+ "anomalies": {
+  "T1 R==S": 0,
+  "T2 shared outer": 0,
+  "lens X==Y": 0,
+  "lens loop": 0,
+  "one-sided": 0
+ },
+ "logger": {
+  "stride1_pair": {
+   "counts": {
+    "swap": 148,
+    "clump": 8,
+    "death": 3
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 8
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  },
+  "stride1_segment": {
+   "counts": {
+    "swap": 148,
+    "clump": 8,
+    "death": 3
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 8
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  },
+  "stride2_pair": {
+   "counts": {
+    "death": 2,
+    "swap": 143,
+    "clump": 7
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 7
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  },
+  "stride2_segment": {
+   "counts": {
+    "death": 2,
+    "swap": 143,
+    "clump": 7
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 7
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  },
+  "stride4_pair": {
+   "counts": {},
+   "clumps": {},
+   "balance_failures": 0,
+   "neg_control_caught": null
+  },
+  "stride4_segment": {
+   "counts": {},
+   "clumps": {},
+   "balance_failures": 0,
+   "neg_control_caught": null
+  }
+ },
+ "windows": {
+  "2000-1000": {
+   "vanished": 3,
+   "T1": 164,
+   "T1_per_vanished": 54.666666666666664,
+   "censored q0.01 per vanished": 54.666666666666664,
+   "censored q0.05 per vanished": 54.666666666666664,
+   "shedding (loser dies within 5% growth) per vanished": 54.666666666666664,
+   "shedding area<0.2 per vanished": 0.3333333333333333,
+   "macroscopic (not shedding by area<0.1) per vanished": 54.666666666666664,
+   "macroscopic (loser survives 5% growth) per vanished": 0.0
+  }
+ },
+ "topology": {
+  "2000-1000": {
+   "frames": 4,
+   "mu2": 1.6682830929326924,
+   "mean_n": 6.0,
+   "p": {
+    "3": 0.009,
+    "4": 0.1036,
+    "5": 0.2553,
+    "6": 0.3083,
+    "7": 0.1994,
+    "8": 0.0901,
+    "9": 0.0283,
+    "10": 0.0055,
+    "11": 0.0006
+   },
+   "lewis": {
+    "3": 0.27665689066408294,
+    "4": 0.551556242054285,
+    "5": 0.7616425493788321,
+    "6": 0.9875886317152627,
+    "7": 1.2420738851412039,
+    "8": 1.4487186018602598,
+    "9": 1.802183623544965,
+    "10": 1.867208157836688,
+    "11": 0.0,
+    "12": 0.0
+   },
+   "aboav": {
+    "3": 6.758894478844169,
+    "4": 6.684676861782801,
+    "5": 6.453594335084253,
+    "6": 6.299268715794884,
+    "7": 6.147567185921997,
+    "8": 6.049329561512116,
+    "9": 5.994796017822334,
+    "10": 5.811071428571428,
+    "11": 0.0,
+    "12": 0.0
+   }
+  }
+ },
+ "von_neumann": {
+  "per_n": {
+   "3": {
+    "count": 49,
+    "mean": -1.7986846547471296,
+    "sd": 0.8588303898837888
+   },
+   "4": {
+    "count": 576,
+    "mean": -1.4028017743268346,
+    "sd": 0.4954426612062082
+   },
+   "5": {
+    "count": 1397,
+    "mean": -0.7472900453261366,
+    "sd": 0.36605141313815
+   },
+   "6": {
+    "count": 1672,
+    "mean": -0.035294994824517194,
+    "sd": 0.24941436910042425
+   },
+   "7": {
+    "count": 1061,
+    "mean": 0.6922083696354201,
+    "sd": 0.35774232560992963
+   },
+   "8": {
+    "count": 476,
+    "mean": 1.3792507950103405,
+    "sd": 0.5536256126465108
+   },
+   "9": {
+    "count": 147,
+    "mean": 2.129340858535716,
+    "sd": 0.761877586448234
+   },
+   "10": {
+    "count": 28,
+    "mean": 2.925885501332887,
+    "sd": 0.8495525231595262
+   }
+  },
+  "slope": 0.7023749573241218,
+  "n0": 6.032110202407777,
+  "expected_slope": 1.0471975511965976
+ },
+ "sides_at_small_area": {
+  "0.02": {
+   "3": 3
+  },
+  "0.05": {
+   "3": 3
+  },
+  "0.1": {
+   "3": 6,
+   "4": 2,
+   "5": 2
+  },
+  "0.2": {
+   "3": 9,
+   "4": 20,
+   "5": 8,
+   "6": 1
+  }
+ },
+ "ok": true
+}

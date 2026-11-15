@@ -1,0 +1,449 @@
+{
+ "run": "k6e05s1",
+ "logger_md5": "2e2b526ffbd5a22dbf1a7953f97721cb",
+ "params": {
+  "N0": 8000,
+  "Nend": 800,
+  "K": 6,
+  "eps": 0.05,
+  "lamf": 4.0,
+  "amin": 0.002,
+  "seed": 1,
+  "rec_frac": 0.002,
+  "cfl": 0.15,
+  "resample": 2
+ },
+ "status": "done",
+ "frames": 2315,
+ "torus_euler_failures": 0,
+ "frames_not_all_triple": 0,
+ "sim_euler_failures": 0,
+ "exact_events": {
+  "T1": 9605,
+  "T2": 7200
+ },
+ "anomalies": {
+  "T1 R==S": 0,
+  "T2 shared outer": 0,
+  "lens X==Y": 0,
+  "lens loop": 0,
+  "one-sided": 0
+ },
+ "logger": {
+  "stride1_pair": {
+   "counts": {
+    "swap": 6642,
+    "clump": 55,
+    "death": 4366,
+    "merge": 2828
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 50,
+    "born 0 died 2 lost 0 gained 1": 2,
+    "born 0 died 1 lost 1 gained 2": 2,
+    "born 0 died 0 lost 3 gained 3": 1
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  },
+  "stride1_segment": {
+   "counts": {
+    "swap": 6642,
+    "clump": 55,
+    "death": 4366,
+    "merge": 2828
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 50,
+    "born 0 died 2 lost 0 gained 1": 2,
+    "born 0 died 1 lost 1 gained 2": 2,
+    "born 0 died 0 lost 3 gained 3": 1
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  },
+  "stride2_pair": {
+   "counts": {
+    "swap": 6061,
+    "clump": 72,
+    "merge": 3346,
+    "death": 3844
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 65,
+    "born 0 died 2 lost 0 gained 1": 2,
+    "born 0 died 1 lost 1 gained 2": 2,
+    "born 0 died 0 lost 3 gained 3": 1,
+    "born 0 died 2 lost 0 gained 0": 1,
+    "born 0 died 2 lost 0 gained 2": 1
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  },
+  "stride2_segment": {
+   "counts": {
+    "swap": 6061,
+    "clump": 72,
+    "merge": 3346,
+    "death": 3844
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 65,
+    "born 0 died 2 lost 0 gained 1": 2,
+    "born 0 died 1 lost 1 gained 2": 2,
+    "born 0 died 0 lost 3 gained 3": 1,
+    "born 0 died 2 lost 0 gained 0": 1,
+    "born 0 died 2 lost 0 gained 2": 1
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  },
+  "stride4_pair": {
+   "counts": {
+    "merge": 3882,
+    "death": 3302,
+    "clump": 103,
+    "swap": 5410
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 92,
+    "born 0 died 1 lost 1 gained 2": 4,
+    "born 0 died 2 lost 0 gained 1": 2,
+    "born 0 died 0 lost 3 gained 3": 2,
+    "born 0 died 2 lost 0 gained 0": 2,
+    "born 0 died 2 lost 0 gained 2": 1
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  },
+  "stride4_segment": {
+   "counts": {
+    "merge": 3882,
+    "death": 3302,
+    "clump": 103,
+    "swap": 5410
+   },
+   "clumps": {
+    "born 0 died 0 lost 2 gained 2": 92,
+    "born 0 died 1 lost 1 gained 2": 4,
+    "born 0 died 2 lost 0 gained 1": 2,
+    "born 0 died 0 lost 3 gained 3": 2,
+    "born 0 died 2 lost 0 gained 0": 2,
+    "born 0 died 2 lost 0 gained 2": 1
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true
+  }
+ },
+ "windows": {
+  "8000-4000": {
+   "vanished": 3999,
+   "T1": 5466,
+   "T1_per_vanished": 1.366841710427607,
+   "censored q0.01 per vanished": 0.1632908227056764,
+   "censored q0.05 per vanished": 0.22780695173793447,
+   "shedding (loser dies within 5% growth) per vanished": 1.1955488872218054,
+   "shedding area<0.1 per vanished": 1.1695423855963991,
+   "shedding area<0.2 per vanished": 1.2145536384096025,
+   "persistent q0.01 per vanished": 1.2025506376594148,
+   "persistent q0.05 per vanished": 1.13503375843961,
+   "macroscopic (not shedding by area<0.1) per vanished": 0.1972993248312078,
+   "macroscopic (loser survives 5% growth) per vanished": 0.17129282320580144
+  },
+  "4000-2000": {
+   "vanished": 2000,
+   "T1": 2629,
+   "T1_per_vanished": 1.3145,
+   "persistent q0.01 per vanished": 1.3145,
+   "persistent q0.05 per vanished": 1.312,
+   "shedding area<0.1 per vanished": 1.233,
+   "shedding area<0.2 per vanished": 1.307,
+   "shedding (loser dies within 5% growth) per vanished": 1.231,
+   "macroscopic (not shedding by area<0.1) per vanished": 0.0815,
+   "macroscopic (loser survives 5% growth) per vanished": 0.0835
+  },
+  "2000-1000": {
+   "vanished": 1000,
+   "T1": 1272,
+   "T1_per_vanished": 1.272,
+   "persistent q0.01 per vanished": 1.272,
+   "persistent q0.05 per vanished": 1.268,
+   "shedding area<0.2 per vanished": 1.268,
+   "shedding area<0.1 per vanished": 1.195,
+   "shedding (loser dies within 5% growth) per vanished": 1.18,
+   "macroscopic (not shedding by area<0.1) per vanished": 0.077,
+   "macroscopic (loser survives 5% growth) per vanished": 0.092
+  },
+  "1000-0": {
+   "vanished": 201,
+   "T1": 238,
+   "T1_per_vanished": 1.1840796019900497,
+   "persistent q0.01 per vanished": 1.1343283582089552,
+   "persistent q0.05 per vanished": 0.900497512437811,
+   "shedding area<0.1 per vanished": 1.1293532338308458,
+   "shedding area<0.2 per vanished": 1.1840796019900497,
+   "shedding (loser dies within 5% growth) per vanished": 1.154228855721393,
+   "censored q0.05 per vanished": 0.2736318407960199,
+   "censored q0.01 per vanished": 0.04975124378109453,
+   "macroscopic (not shedding by area<0.1) per vanished": 0.05472636815920398,
+   "macroscopic (loser survives 5% growth) per vanished": 0.029850746268656716
+  }
+ },
+ "topology": {
+  "8000-4000": {
+   "frames": 734,
+   "mu2": 1.5737625746191515,
+   "mean_n": 6.0,
+   "p": {
+    "3": 0.006,
+    "4": 0.0824,
+    "5": 0.2874,
+    "6": 0.3146,
+    "7": 0.1932,
+    "8": 0.0812,
+    "9": 0.0278,
+    "10": 0.0059,
+    "11": 0.0013,
+    "12": 0.0002
+   },
+   "lewis": {
+    "3": 0.05657273624721786,
+    "4": 0.19053035218941064,
+    "5": 0.4575053160444695,
+    "6": 0.9614571164656727,
+    "7": 1.5038486960472406,
+    "8": 2.0484558515295017,
+    "9": 2.546173854175093,
+    "10": 2.959873720699399,
+    "11": 3.5099783714825117,
+    "12": 0.0
+   },
+   "aboav": {
+    "3": 7.980736559801025,
+    "4": 7.006271717809654,
+    "5": 6.497283028449956,
+    "6": 6.25474410813986,
+    "7": 6.075755849571666,
+    "8": 5.949774073120657,
+    "9": 5.8571771940371224,
+    "10": 5.715290222430683,
+    "11": 5.722284384224944,
+    "12": 0.0
+   }
+  },
+  "4000-2000": {
+   "frames": 718,
+   "mu2": 1.7585493759217592,
+   "mean_n": 6.0,
+   "p": {
+    "3": 0.0081,
+    "4": 0.0922,
+    "5": 0.2885,
+    "6": 0.3014,
+    "7": 0.1837,
+    "8": 0.08,
+    "9": 0.0343,
+    "10": 0.0096,
+    "11": 0.0019,
+    "12": 0.0004
+   },
+   "lewis": {
+    "3": 0.0559302667466593,
+    "4": 0.17533419219510007,
+    "5": 0.4358366162844484,
+    "6": 0.9274048124297832,
+    "7": 1.5371628486514137,
+    "8": 2.0919616666790355,
+    "9": 2.6126717790588043,
+    "10": 3.2180245705820245,
+    "11": 3.449618331899567,
+    "12": 0.0
+   },
+   "aboav": {
+    "3": 8.222742566604692,
+    "4": 7.133144113908236,
+    "5": 6.552610395311909,
+    "6": 6.263164292250705,
+    "7": 6.097997243232854,
+    "8": 5.958995404883293,
+    "9": 5.833927333681363,
+    "10": 5.735564277448423,
+    "11": 5.640555688490493,
+    "12": 0.0
+   }
+  },
+  "2000-1000": {
+   "frames": 649,
+   "mu2": 1.94130178301243,
+   "mean_n": 6.0,
+   "p": {
+    "3": 0.0095,
+    "4": 0.1089,
+    "5": 0.2804,
+    "6": 0.2835,
+    "7": 0.1802,
+    "8": 0.0875,
+    "9": 0.0341,
+    "10": 0.0116,
+    "11": 0.0038,
+    "12": 0.0006
+   },
+   "lewis": {
+    "3": 0.048754280520584725,
+    "4": 0.18408613176778482,
+    "5": 0.43087007958942236,
+    "6": 0.9222894506168262,
+    "7": 1.5278313843991975,
+    "8": 2.084253424451215,
+    "9": 2.568800340625616,
+    "10": 3.10928667095672,
+    "11": 3.6344286760852764,
+    "12": 3.7337845055470207
+   },
+   "aboav": {
+    "3": 8.26416741962137,
+    "4": 7.1781848855038595,
+    "5": 6.570956175007273,
+    "6": 6.298490678204174,
+    "7": 6.118790655267811,
+    "8": 6.003904627524717,
+    "9": 5.850044071145045,
+    "10": 5.730055535397314,
+    "11": 5.619786308598316,
+    "12": 5.727777777777778
+   }
+  },
+  "1000-0": {
+   "frames": 214,
+   "mu2": 1.91144885899744,
+   "mean_n": 6.0,
+   "p": {
+    "3": 0.0078,
+    "4": 0.1131,
+    "5": 0.2735,
+    "6": 0.2818,
+    "7": 0.1884,
+    "8": 0.094,
+    "9": 0.0271,
+    "10": 0.0072,
+    "11": 0.0058,
+    "12": 0.0013
+   },
+   "lewis": {
+    "3": 0.04561267785178865,
+    "4": 0.18816929779704847,
+    "5": 0.4397759666301702,
+    "6": 0.937258453974154,
+    "7": 1.5017379721453548,
+    "8": 2.070270060568602,
+    "9": 2.579388041255045,
+    "10": 2.8199630571366883,
+    "11": 3.6202691945073346,
+    "12": 0.0
+   },
+   "aboav": {
+    "3": 8.230594450523022,
+    "4": 7.216392302596764,
+    "5": 6.5493586233482395,
+    "6": 6.29352022845882,
+    "7": 6.121387332478082,
+    "8": 5.970925313477161,
+    "9": 5.837012623046274,
+    "10": 5.7706113378684805,
+    "11": 5.747351992143659,
+    "12": 0.0
+   }
+  }
+ },
+ "von_neumann": {
+  "per_n": {
+   "3": {
+    "count": 47168,
+    "mean": -2.110368039373768,
+    "sd": 0.7263386292674713
+   },
+   "4": {
+    "count": 655993,
+    "mean": -1.5962873256753132,
+    "sd": 0.5039245569353396
+   },
+   "5": {
+    "count": 2122669,
+    "mean": -0.8860621179028242,
+    "sd": 0.5294788560300981
+   },
+   "6": {
+    "count": 2265464,
+    "mean": -0.03334661478737464,
+    "sd": 1.1454093094660964
+   },
+   "7": {
+    "count": 1396523,
+    "mean": 0.878973479665025,
+    "sd": 2.007033582014138
+   },
+   "8": {
+    "count": 600988,
+    "mean": 1.7938188922852047,
+    "sd": 2.6670256937056807
+   },
+   "9": {
+    "count": 220787,
+    "mean": 2.708405367540672,
+    "sd": 4.6649543958331705
+   },
+   "10": {
+    "count": 54409,
+    "mean": 3.6008936147063615,
+    "sd": 6.755886284369879
+   },
+   "11": {
+    "count": 13093,
+    "mean": 4.406643707988406,
+    "sd": 7.5470873819429904
+   },
+   "12": {
+    "count": 2182,
+    "mean": 5.309429459223305,
+    "sd": 11.274936040533875
+   },
+   "13": {
+    "count": 113,
+    "mean": 4.695402180491547,
+    "sd": 14.189136209711116
+   },
+   "14": {
+    "count": 32,
+    "mean": 6.22964589644003,
+    "sd": 3.6910989200514415
+   }
+  },
+  "slope": 0.8656992145371095,
+  "n0": 5.987154810458956,
+  "expected_slope": 1.0471975511965976
+ },
+ "sides_at_small_area": {
+  "0.02": {
+   "3": 1646,
+   "4": 5004,
+   "5": 532
+  },
+  "0.05": {
+   "3": 817,
+   "4": 5030,
+   "5": 1382
+  },
+  "0.1": {
+   "3": 393,
+   "4": 4429,
+   "5": 2443
+  },
+  "0.2": {
+   "3": 175,
+   "4": 3185,
+   "5": 3936,
+   "6": 26
+  }
+ },
+ "ok": true
+}

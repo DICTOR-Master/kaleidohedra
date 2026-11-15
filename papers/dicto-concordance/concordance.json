@@ -8007,6 +8007,15 @@
     "retry": "never retry the Potts lattice against 0.53 by size alone: its stationary mu2 (1.9) is not the dry froth's and the count moves by a factor 2 with rc. Next: a vertex-model froth with fixed microscopic rc and T2n deaths (Rutenberg-McCurdy's own setup), or accept the lattice value as a lattice result",
     "study": "studies/2026-11-15-event-logger (Scaling-state froth section, scaling/)",
     "goes_to": "One tissue, three scales (counting rules; foam ladder rung 1)"
+   },
+   {
+    "date": "2026-11-15",
+    "status": "PILOT (2D/3D null runs + literature; experiment pilot)",
+    "question": "One tissue, three scales, GRAINS stream (DICTO 15 Nov: 'metamorphic rocks and mineral aggregates, polycrystalline materials', plus polar ice): swaps per vanished grain and contact changes in curvature-driven grain growth, 2D and 3D; what is published; are there public experimental time series (3D X-ray grain maps, ice, rock analogues)?",
+    "method": "studies/2026-11-15-grains-polycrystals: 2D curved-boundary vertex model with exact T1/T2 (6 runs, 20000->1500 grains, eps 0.025-0.1, K 3/6); 3D MBO threshold dynamics (256^3 4000->393, 160^3 1000->150); shared logger unchanged at strides 1/2/4; persistence; identity net = f_v - <F>/2; public Ni HEDM maps (Bhattacharya 2021) registered by orientation; literature (sources.md); jobs grains-pilot, grains-2d, grains-3d, grains-3dn FINAL ok",
+    "result": "2D: 1.22-1.27 T1 per T2 in steady windows, stable to eps (4-fold) and persistence; 89-95% side-shedding (macroscopic 0.06-0.14, vs Rutenberg-McCurdy 0.53: disagrees); published ~1.34 (Sprague 2009, unverified) and 3/2 (froth with shedding); control partly FAILED: von Neumann linear (n0 5.99) but slope 0.76 not pi/3, mu2 1.9-2.0 vs Mason 2015 1.620. 3D: <F> 13.65-13.85 (Mason 13.766: control passes); per vanished grain contacts gained 2.3-2.7, lost 3.9-4.8; identity holds in steady windows (e.g. -1.49 vs -1.43); Wakai 2001 3.7/13.2 is not steady by the identity. Ni: 2 of 5 intervals registrable; matching noise ~ signal; no ratio. Ice: no same-grain time series. Rock analogues: public OCP movies, never counted. Prediction: serial sections give <F>/2 - 3 = 3.883 swaps per birth.",
+    "retry": "2D only with a more accurate scheme (Lazar 2010 corrections or 4/5-sided T2) to reach mu2 1.62 and slope pi/3; never the straight-edge K=3 scheme for topology claims; Ni only via the authors' face-table correspondences (data.zip); 3D counts only with finer time steps",
+    "study": "studies/2026-11-15-grains-polycrystals"
    }
   ]
  },
