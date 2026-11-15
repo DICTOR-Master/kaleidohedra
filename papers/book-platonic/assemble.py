@@ -131,6 +131,7 @@ def include(num, keys, lead, label):
     blk = ''.join(out)
     blk = re.sub(r'<p class="prec">.*?</p>', '', blk, flags=re.S)
     blk = blk.replace('class="status"', 'class="note"')   # one status box in the book: a paper's own boxes become notes
+    blk = re.sub(r'<span class="status[^"]*">', '<span class="claimtag">', blk)   # 15 Nov (DICTO screenshot p. 80): inline status labels are claim tags, not red draft boxes
     # figures: copy, renumber through the chapter
     blk = re.sub(r'<img ([^>]*?)src="([^"]+)"', lambda mo: f'<img {mo.group(1)}src="{copyfig(mo.group(2), folder, label)}"', blk)
     caps = re.findall(r'<figcaption[^>]*>\s*(?:<b>)?\s*(Figure|Fig\.|Plate)s? (\d+)(?:[–-](\d+))?', blk)
@@ -268,10 +269,11 @@ div.inc table{width:100%} table.five{width:100%} table.five td:first-child{white
 figure.plate img{width:72%;margin:0 auto;display:block}
 figure.mark{position:relative} figure.mark img.fm{position:absolute;width:14mm;right:2mm;opacity:.9;border:none}
 p.note{font-size:9pt;color:#444;border-left:2px solid #ccc;padding-left:2mm}
+span.claimtag{font-style:italic;color:#555}
 p.from.also{color:#8a6d12}
 table.rank{width:100%;font-size:8.2pt;border-collapse:collapse} table.rank td,table.rank th{padding:0.5mm 1mm;border-bottom:0.3pt solid #ddd;text-align:left}'''
 doc = f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>The Five Solids (working title)</title>
+<html lang="en"><head><meta charset="utf-8"><title>The Platonic Solids</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
 {front.replace('__TOC__', tochtml)}
