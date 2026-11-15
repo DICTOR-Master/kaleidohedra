@@ -1,0 +1,19 @@
+PROGRESS 0.02 Res_t(H1, D)
+[  136.4 s] R3 = Res_t(H1, D): degrees (u, S) = (434, 50), 128.6 s
+PROGRESS 0.30 factor R3
+[  137.2 s] factored in 0.9 s
+[  137.2 s]    R3 factor degrees (u, S) = (1, 0)^40 NZ u - 1
+[  137.2 s]    R3 factor degrees (u, S) = (1, 0)^40 NZ u + 1
+[  137.2 s]    R3 factor degrees (u, S) = (1, 0)^70 NZ u
+[  137.2 s]    R3 factor degrees (u, S) = (2, 0)^34 NZ u^2 + 1
+[  137.2 s]    R3 factor degrees (u, S) = (2, 1)^12 NZ u^2*S - u^2 + S
+[  137.3 s]    R3 factor degrees (u, S) = (192, 38)^1 KEEP 
+PARI stack size set to 6000000000 bytes, maximum size set to 6000001024
+PROGRESS 0.45 Res_S(R3_k, G)
+[  141.8 s]    E2 factor degree 1^76 NZ u - 1
+[  141.8 s]    E2 factor degree 1^82 NZ u
+[  141.8 s]    E2 factor degree 1^76 NZ u + 1
+[  141.8 s]    E2 factor degree 2^73 NZ u^2 + 1
+[  141.8 s]    E2 factor degree 348^1 KEEP 
+[  141.9 s] route 2 candidate factor degrees: [348] ; f348 among them: True
+PROGRESS 0.55 isolation

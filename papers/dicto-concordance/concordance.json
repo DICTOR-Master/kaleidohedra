@@ -7848,6 +7848,15 @@
     "retry": "never for these; only: coarsening simulation (curved-film vertex model), power diagrams with non-linear weights",
     "study": "studies/2026-11-15-tissue-null-models",
     "goes_to": "One tissue, three scales (comparison table theory column); #104 follow-up"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "Uniqueness of Kulaichev's Sri Yantra (Kulaichev 1984 IJHS 19.3 p. 285; open per Chiodo 2021 C. R. Math. 359 p. 384): Huet's conditions + Kulaichev (a)-(d) + #103 Theorem 1 admissibility",
+    "method": "studies/2026-11-15-yantra-uniqueness: divisor lemma (exact, Singular); full elimination Res_S then Res_t (E deg 1744 = NZ factors * f348 * f396); real roots in (0,1) by VCA, PARI Sturm and FLINT/Arb (8+8, agree); Arb back-solve + Krawczyk + admissibility rebuild; independent route Res_t(H1,D) then Res_S (only f348), PARI Sturm, mpmath iv; controls (B+1, u+2^-200, f348+1, Rh345); jobs yuniq-main and yuniq-route2 FINAL ok",
+    "status": "PROVED (certified computation)",
+    "result": "exactly one admissible yantra: #103 Theorem 10's (u = 0.7504385160..., root of f348); the system's only other real solution with 0<u<1 (u = 0.66866, root of f348) is not admissible (b6 > b7, w5, w6 < 0, t4 inverted); f396 is an artefact of the elimination order",
+    "retry": "never; only a Lean certificate (bottleneck: the degree-1744 Res_t identity)",
+    "study": "studies/2026-11-15-yantra-uniqueness"
    }
   ]
  },

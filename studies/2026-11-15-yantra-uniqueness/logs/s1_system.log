@@ -1,0 +1,35 @@
+PROGRESS 0.05 construction
+PROGRESS 0.15 divisor lemma
+[    5.5 s] divisor lemma closes: True ; NZ factors: 23
+PROGRESS 0.25 equations
+[    5.5 s] G: kept factor degrees (u, t, S) = (10, 0, 2); dropped NZ factors: []
+[    5.5 s] E146 -> H1: kept factor degrees (u, t, S) = (23, 10, 3); dropped NZ factors: [('-u + t', 1), ('u + t', 1), ('u', 3), ('u*t - 1', 1), ('u*t + 1', 1)]
+[    5.5 s] Dd -> D: kept factor degrees (u, t, S) = (24, 10, 2); dropped NZ factors: [('-u + t', 6), ('u + t', 6), ('u', 12), ('u*t - 1', 1), ('u*t + 1', 1), ('u^2*S + S - 1', 2)]
+[    6.3 s] matches #103 system (equal up to constants and NZ factors): {'G': True, 'H1': True, 'D': True}
+PROGRESS 0.35 resultants in S
+[    6.4 s] R1 = Res_S(G, H1): degrees (u, t) 76 20
+[    6.4 s] R2 = Res_S(G, D): degrees (u, t) 64 20
+[    6.4 s]    R1 factor degrees (u, t) = (1, 0)^6 NZ u - 1
+[    6.4 s]    R1 factor degrees (u, t) = (1, 0)^6 NZ u
+[    6.4 s]    R1 factor degrees (u, t) = (1, 0)^6 NZ u + 1
+[    6.4 s]    R1 factor degrees (u, t) = (2, 0)^4 NZ u^2 + 1
+[    6.4 s]    R1 factor degrees (u, t) = (50, 20)^1 KEEP 
+[    6.4 s]    R2 factor degrees (u, t) = (1, 0)^4 NZ u - 1
+[    6.4 s]    R2 factor degrees (u, t) = (1, 0)^4 NZ u
+[    6.4 s]    R2 factor degrees (u, t) = (1, 0)^4 NZ u + 1
+[    6.4 s]    R2 factor degrees (u, t) = (2, 0)^4 NZ u^2 + 1
+[    6.4 s]    R2 factor degrees (u, t) = (44, 20)^1 KEEP 
+[    6.5 s] kept factors of R1: [(50, 20)]  of R2: [(44, 20)]
+PROGRESS 0.5 resultants in t
+PARI stack size set to 8000000000 bytes, maximum size set to 8000000000
+[   17.9 s] E00 = Res_t: degree 1744
+[   21.2 s]    factor degree 1 ^178 NZ u - 1
+[   21.2 s]    factor degree 1 ^274 NZ u
+[   21.2 s]    factor degree 1 ^178 NZ u + 1
+[   21.2 s]    factor degree 2 ^185 NZ u^2 + 1
+[   21.2 s]    factor degree 348 ^1 KEEP 
+[   21.2 s]    factor degree 396 ^1 KEEP 
+[   21.2 s] candidate factors: [(348, 'Res_t(A0, B0)'), (396, 'Res_t(A0, B0)')] ; f348 among them: True
+[   21.3 s] wrote data/polys-K.json
+PROGRESS 1.0 done
+FINAL ok

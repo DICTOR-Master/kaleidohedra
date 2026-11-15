@@ -1,0 +1,15 @@
+PARI stack size set to 4000000000 bytes, maximum size set to 4000002048
+[    0.4 s] factor 0: degree 348 (Res_t(A0, B0), f348)
+[    0.6 s]    VCA: 8 roots in (0, 1)
+[    1.7 s]    PARI: polsturm on [0,1] = 8, polrootsreal on [0,1] = 8; Sturm 1 on every VCA interval: True; 0 on gaps: True
+[   12.3 s]    FLINT: 8 real roots in (0, 1); each in exactly one VCA interval: True
+[   21.4 s]    positive control: Theorem 10 interval meets exactly one root (index [6]): True
+[   21.9 s]    negative control: f348 + 1 has 0 roots in that interval (expected 0)
+PROGRESS 0.50 factor 0 isolated
+[   21.9 s] factor 1: degree 396 (Res_t(A0, B0))
+[   23.0 s]    VCA: 8 roots in (0, 1)
+[   24.6 s]    PARI: polsturm on [0,1] = 8, polrootsreal on [0,1] = 8; Sturm 1 on every VCA interval: True; 0 on gaps: True
+[   39.1 s]    FLINT: 8 real roots in (0, 1); each in exactly one VCA interval: True
+PROGRESS 1.00 factor 1 isolated
+[   50.6 s] total candidate u values in (0, 1): 16
+FINAL ok
