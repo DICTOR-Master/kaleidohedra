@@ -1,0 +1,12 @@
+600-cell P vertices: 120
+F (rescaled to radius of X) lies in P: 30 of 30
+H4 mirrors: 60
+P: facets 600 2-faces 1200
+P's own Vacuus plates: 60
+positive control P: facets 600 2-faces 1200 plates 60 | in H4 mirrors 60 | in P plates 60 | by (corners, mirror, Pplate): {(3, True, True): 1200}
+solid A (X, 20): facets 10 2-faces 30 plates 30 | in H4 mirrors 30 | in P plates 30 | by (corners, mirror, Pplate): {(3, True, True): 20, (6, True, True): 10}
+solid B (F, 30): facets 20 2-faces 80 plates 80 | in H4 mirrors 40 | in P plates 40 | by (corners, mirror, Pplate): {(3, False, False): 40, (4, True, True): 30, (3, True, True): 10}
+negative control (phi^2,phi^2,phi^2,1.5,0): facets 10 2-faces 30 plates 30 | in H4 mirrors 10 | in P plates 10 | by (corners, mirror, Pplate): {(3, False, False): 20, (6, True, True): 10}
+negative control (phi^2,phi^2,1.2,1.2,0): facets 20 2-faces 80 plates 80 | in H4 mirrors 10 | in P plates 10 | by (corners, mirror, Pplate): {(3, False, False): 40, (4, False, False): 30, (3, True, True): 10}
+checks [True, True, True, True, True, True]
+FINAL ok
