@@ -1,0 +1,100 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "version": "6",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-11-15",
+ "access_right": "open",
+ "title": "Knitting vs Crocheting Crystals: HexOct, a knitted lattice and crocheted solid cells for every close-packed stacking",
+ "description": "<p><b>Version 6 (15 November 2026) adds the crocheted construction and the full crochet pattern (Appendix):</b> the HexOct solid cells themselves, Narcissus in every h layer and cubes in every c layer, crocheted over firm cores and stacked face to face (Part 4, with a comparison of knitting and crochet), and the complete pattern with charts, assembly diagrams and core templates at full size. The mathematics of Versions 4 and 5 is unchanged.</p><p>This paper builds a close-packed crystal in two crafts. <b>Knitted</b> (Parts 1–3): one continuous multi-layer knitted fabric whose knitted sheets are the close-packed layers of balls and whose linking yarns join each node to the three nodes of the next sheet that its ball touches, turning on in the same sense at a c layer and back at an h layer. The cells it closes off are the pieces of the HexOct tiles (#75). <b>Crocheted</b> (Part 4 and the Appendix): closed crocheted cells, Narcissus (#98) in every h layer and cubes in every c layer, two cells per ball, fitted whole face to whole face, so that the build is the stacking in three dimensions.</p><p><b>Result 1 (knitted lattice, idealised).</b> All close-packed stackings have the same density; compression, buckling onset, rigidity, vapour transfer, conduction along the yarn and direct radiation through twelve sheets are the same in every stacking. The stacking changes only the straight see-through area (up to 10.7 times larger in 2H than in 3C) and, when the sheets are much softer than the links, the free transverse shear (3C up to 17.5 times softer than 2H), set by the stack's net turning.</p><p><b>Result 2 (crocheted solid cells, checked geometrically).</b> In the stackings 3C, 2H, 4H, 6H and 9R, Narcissus pairs and cube pairs fill space with no gap and no overlap, each face meets one whole face, and every contact between two layers is a square of side a/√2. Only three face shapes are needed (a square, a regular hexagon, a right triangle), each crocheted in rows of single crochet; at 18 stitches × 20 rows per 10 cm every side is within 0.6 % and every corner within 0.1° of the true shape.</p><p><b>Contents.</b> Front section with the comfort results (Part 3); Part 1, knitted construction; Part 2, lattice mechanics and a see-through proxy; Part 4, the crocheted construction and knitting and crochet compared; Appendix, the complete crochet pattern (materials, gauge, row-by-row recipes with charts, assembly, stacking, test piece 1, finishing, core templates at 1:1).</p><p>Neither build has yet been made: the fabric has not been knitted and the cells have not been crocheted; the test pieces come next.</p><p>The Knitted HexOct and the Crocheted HexOct, their ideas and their names are DICTO's; design, computation, checks and drafting with Claude (Anthropic). Licence CC BY-SA 4.0.</p>",
+ "keywords": [
+  "DICTO",
+  "HexOct",
+  "knitting",
+  "close-packed stacking",
+  "hexagonality",
+  "Rule of Halves",
+  "Fibonacci stacking",
+  "polytypes",
+  "tetrahedra and octahedra",
+  "textile mathematics",
+  "knitting charts",
+  "crystallography",
+  "spacer fabric",
+  "multi-layer knitting",
+  "lattice mechanics",
+  "textile design",
+  "crochet",
+  "crocheted polyhedra",
+  "Narcissus",
+  "space-filling cells",
+  "crochet pattern"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23647898",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23721038",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23737639",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23731359",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23896076",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24005929",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/b5f15f5c8ee30601f02c1cd8e0bc881703b3dd9c/studies/2026-10-31-hexoct-knitting",
+   "relation": "isSupplementedBy",
+   "scheme": "url"
+  },
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/051e2c5c/studies/2026-11-15-hexoct-crochet",
+   "relation": "isSupplementedBy",
+   "scheme": "url"
+  },
+  {
+   "identifier": "10.1038/s41467-024-46498-z",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ],
+ "subjects": [
+  {
+   "term": "MSC2020 52C22: Tilings in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 00A66: Mathematics and visual arts",
+   "identifier": "https://zbmath.org/classification/?q=cc:00A66",
+   "scheme": "url"
+  }
+ ]
+}
