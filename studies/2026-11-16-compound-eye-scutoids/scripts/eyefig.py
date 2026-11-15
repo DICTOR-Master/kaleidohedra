@@ -14,7 +14,7 @@ from matplotlib.patches import Rectangle
 
 RUN, FIG = sys.argv[1], sys.argv[2]; os.makedirs(FIG, exist_ok=True)
 S = json.load(open(f'{RUN}/summary.json')); P = [p for p in S['patches'] if 'skip' not in p]
-E = '/home/dicto/eye-data/'; fr = np.load(E + 'frame_iso.npy'); frame = (fr[:3], fr[3:6], fr[6:])
+E = os.environ.get('EYE_DATA', os.path.expanduser('~/eye-data')) + '/'; fr = np.load(E + 'frame_iso.npy'); frame = (fr[:3], fr[3:6], fr[6:])
 MARK = 'DICTO · dictospheres.com'
 
 

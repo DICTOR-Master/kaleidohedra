@@ -15,7 +15,7 @@ HALF = 0.1      # tile half-width (rad): the patch grid is 0.2 rad apart, the pa
 # ---- tile partition: every cell and every neighbour change is counted by one patch only, the one whose tile (|A-A0|, |B-B0| <= HALF
 # in angles about the eye centre) contains it. Lost edges are counted exactly (their top midpoint); counted edges and null
 # expectations are scaled by the share of the unit's cells that lie in the tile.
-E_ = '/home/dicto/eye-data/'; fr = np.load(E_ + 'frame_iso.npy'); U0, G1, G2 = fr[:3], fr[3:6], fr[6:]
+E_ = os.environ.get('EYE_DATA', os.path.expanduser('~/eye-data')) + '/'; fr = np.load(E_ + 'frame_iso.npy'); U0, G1, G2 = fr[:3], fr[3:6], fr[6:]
 sph = np.load(E_ + 'sphere_iso.npy'); CEN = sph[:3] * 4 + 1.5
 
 

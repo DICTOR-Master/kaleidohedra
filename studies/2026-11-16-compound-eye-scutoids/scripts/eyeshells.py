@@ -7,7 +7,7 @@ Patch axes are given as (A, B) angles in the coarse frame (u0, e1, e2) found on 
 Usage: eyeshells.py OUT.npy A B [DEPTH_STEP_UM N D0_UM D1_UM]"""
 import sys, numpy as np, time
 from scipy import ndimage as ndi
-E = '/home/dicto/eye-data/'
+E = os.environ.get('EYE_DATA', os.path.expanduser('~/eye-data')) + '/'
 DA = 0.001
 
 

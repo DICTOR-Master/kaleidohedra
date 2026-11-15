@@ -20,7 +20,7 @@ from scipy import ndimage as ndi
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import eyeshells as es, eyetrace as et
 
-E = '/home/dicto/eye-data/'
+E = os.environ.get('EYE_DATA', os.path.expanduser('~/eye-data')) + '/'
 OUT = sys.argv[1]; WORKERS = int(sys.argv[2]); SEEDS = int(sys.argv[3]); PILOT = len(sys.argv) > 4 and sys.argv[4] == 'pilot'
 os.makedirs(OUT, exist_ok=True)
 T0 = time.time()
