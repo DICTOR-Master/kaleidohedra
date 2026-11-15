@@ -1,0 +1,211 @@
+[
+ {
+  "candidate": "B1",
+  "step": "literature_notability",
+  "outcome": "failure",
+  "summary": "The statement restates, in scutoid language, the standard fact that for a generic linear functional on a simple polytope h_i counts vertices with i edges below, together with the classical observation that a sweeping hyperplane section changes by a flip as it passes such a vertex. No new mathematical content beyond the vocabulary has been established, and a research audience for the restatement as a theorem is not identified.",
+  "findings": [
+   {
+    "evidence": "B1 statement",
+    "message": "The count of index-i vertices of a simple polytope under a generic linear functional equals h_i and is direction-independent; this is the textbook proof of the Dehn-Sommerville relations (Ziegler, Lectures on Polytopes, Sections 3.4 and 8.3; Buchstaber-Panov, Toric Topology, Ch. 1). The change of a hyperplane section at a vertex of a simple 4-polytope (cell born, a 2-2 flip, cell dies) is the dual reading of the same local picture, and sweeping-hyperplane computations of polytope invariants appear in C. W. Lee, Sweeping the cd-index and the toric h-vector (Electron. J. Combin. 18 (2011) P66). Stated as a theorem without this attribution, the result reads as new when it is an easy consequence of standard material."
+   },
+   {
+    "evidence": "B1 statement",
+    "message": "Paper-worthiness and a research audience beyond the scutoid reformulation have not been affirmatively established; the mathematical content is routine for polytope combinatorics."
+   }
+  ],
+  "scores": {
+   "notability": 2,
+   "literature": 3
+  },
+  "trust_level": null,
+  "sources_checked": [
+   "https://arxiv.org/pdf/1102.1079",
+   "https://arxiv.org/pdf/2002.00999",
+   "https://ar5iv.labs.arxiv.org/html/1011.2264",
+   "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v18i1p66",
+   "https://mathworld.wolfram.com/Scutoid.html",
+   "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6063940/",
+   "https://en.wikipedia.org/wiki/Pachner_moves"
+  ],
+  "declarations_checked": [],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "abstract",
+    "message": "The abstract does call the swap 'the classical 2-2 flip', a partial acknowledgment; the h-vector interpretation is not attributed in the statement as given."
+   },
+   {
+    "evidence": "Lee 2011, Section 1",
+    "message": "Lee states that with edges oriented by the sweep h_i equals the number of vertices of outdegree i; he does not describe the section change as a bistellar move, so the flip reading is at most a small reformulation, not a theorem with new content."
+   },
+   {
+    "evidence": "search",
+    "message": "No prior source found linking scutoids to slices of 4-polytopes; the novelty is terminological. Recollection (not verified online): McMullen's 'On simple polytopes' (Invent. Math. 1993) and Timorin's work use flips of simple polytopes in the same local sense."
+   }
+  ],
+  "what_would_reach_4": "A genuinely new consequence for scutoid tissues or polytope combinatorics (e.g. a characterization or bound not following from h_i = index count), or a demonstrated application in the tissue-modelling literature, with the standard sources credited."
+ },
+ {
+  "candidate": "B1'",
+  "step": "literature_notability",
+  "outcome": "failure",
+  "summary": "The all-dimension version is the same standard fact: for a simple d-polytope a generic sweep passes vertices of index i, counted by h_i, and the dual of the section boundary undergoes an i-to-(d-i) bistellar move there. The added bookkeeping of which facet contacts change is immediate from the move. A research audience for it as a theorem is not established.",
+  "findings": [
+   {
+    "evidence": "B1' statement",
+    "message": "That index-i vertices number h_i is standard (Ziegler, Lectures on Polytopes, Section 8.3). That the dual section boundary changes by a bistellar move at each vertex follows directly from the local simplex-cone structure of a simple vertex, and the link between such local moves and shellings/flips is classical (Pachner 1991; Lee 2011). The statement presents as new what is an easy consequence of this material without credit."
+   },
+   {
+    "evidence": "B1' statement",
+    "message": "Which facet contacts change under an i-to-(d-i) move (only i in {1,2,d-2,d-1}) is a direct reading of which edges a bistellar move adds or removes; paper-worthiness is not demonstrated."
+   }
+  ],
+  "scores": {
+   "notability": 2,
+   "literature": 3
+  },
+  "trust_level": null,
+  "sources_checked": [
+   "https://arxiv.org/pdf/1102.1079",
+   "https://ar5iv.labs.arxiv.org/html/1011.2264",
+   "https://en.wikipedia.org/wiki/Pachner_moves",
+   "https://arxiv.org/abs/1902.06895"
+  ],
+  "declarations_checked": [],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "B1' statement",
+    "message": "An i-to-(d-i) bistellar move on a (d-2)-sphere removes the face spanned by i vertices and adds the face spanned by d-i vertices; an edge is removed only when i = 2 and added only when d-i = 2, and vertices appear/disappear only for i = 1 or d-1. The stated case list (vertices dual to facets, edges dual to contacts) is thus immediate; plausible but routine."
+   }
+  ],
+  "what_would_reach_4": "Same as B1: a non-obvious consequence (e.g. constraints on scutoid tissues realizable by sweeps, or a new inequality), with the standard h-vector and bistellar-move sources credited."
+ },
+ {
+  "candidate": "B2",
+  "step": "literature_notability",
+  "outcome": "failure",
+  "summary": "The three h-vectors are a routine computation from known f-vectors of uniform 4-polytopes (all three are simple; h1 = cells - 4, h2 = vertices - 2 - 2h1). The values check out arithmetically, but a numerical evaluation of this kind is not paper-worthy on its own.",
+  "findings": [
+   {
+    "evidence": "B2 statement",
+    "message": "The h-vectors follow in one line from the published f-vectors of the 120-cell, truncated 120-cell and bitruncated 600-cell; this is a routine evaluation without an identified research audience."
+   }
+  ],
+  "scores": {
+   "notability": 2,
+   "literature": 3
+  },
+  "trust_level": null,
+  "sources_checked": [
+   "https://en.wikipedia.com/wiki/4-polytope",
+   "https://cavac.at/cavacopedia/Uniform_4-polytope"
+  ],
+  "declarations_checked": [],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "arithmetic check",
+    "message": "120-cell: 600 vertices, 120 cells: h1 = 116, h2 = 600-2-232 = 366. Truncated 120-cell: 2400 vertices, 720 cells: h1 = 716, h2 = 2400-2-1432 = 966. Bitruncated 600-cell: 3600 vertices, 720 cells: h1 = 716, h2 = 3600-2-1432 = 2166. All consistent."
+   }
+  ],
+  "what_would_reach_4": "Nothing in the values themselves; they could only appear as worked examples inside a notable result."
+ },
+ {
+  "candidate": "B3",
+  "step": "literature_notability",
+  "outcome": "failure",
+  "summary": "A computer-assisted exact evaluation of a bespoke quantity (the 'Swap defect' of power-diagram hole-cell volumes in layered packings with a chosen hole weight) over a parameter window. The quantity is defined for this work, its meaning for an existing question in packing, crystallography or polytypism is not established, and no comparison with the layer-interaction literature (ANNNI-type stacking energetics, stacking-fault analyses) is visible.",
+  "findings": [
+   {
+    "evidence": "B3 statement",
+    "message": "The defect D is a four-layer combination of volumes under an author-chosen weighting; without a link to an established problem (e.g. why the weight lambda and the window s in [1/8,1/4] matter, or what D predicts), the result risks being a theory whose definitions are chosen to produce the advertised closed forms. A credible research audience has not been affirmatively established."
+   },
+   {
+    "evidence": "B3 statement",
+    "message": "Context independence of a four-layer combination is the structural assumption behind ANNNI-type and cluster-expansion descriptions of close-packed polytypes; the statement does not compare with that literature, nor with Voronoi/power-diagram analyses of stacking variants."
+   }
+  ],
+  "scores": {
+   "notability": 3,
+   "literature": 2
+  },
+  "trust_level": null,
+  "sources_checked": [
+   "https://arxiv.org/pdf/2405.04876",
+   "https://ar5iv.labs.arxiv.org/html/1705.01751",
+   "https://arxiv.org/pdf/2601.12582"
+  ],
+  "declarations_checked": [],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "B3 statement",
+    "message": "d^2 = (2/3)s with s <= 1/4 means layer spacing at most half the close-packed spacing; the geometric setting is not that of hard-sphere close packing, which further obscures the intended audience. Scored 3 rather than 2 because a specialist reading (layer-resolved power-diagram volumes of polytypes) is conceivable, but it is not established."
+   },
+   {
+    "evidence": "B3 statement",
+    "message": "'Proved for all stackings under a four-layer condition' is conditional; the unconditional part covers six stackings."
+   }
+  ],
+  "what_would_reach_4": "Tie D to an established question (stacking-fault or polytype energetics, an entropy or density comparison of fcc/hcp, or a known packing problem), justify the weights and the s-window from that question, and compare with ANNNI/cluster-expansion results."
+ },
+ {
+  "candidate": "B4",
+  "step": "literature_notability",
+  "outcome": "failure",
+  "summary": "A counting identity for a two-colouring of cells of a simple 4-polytope with two cells of each colour at every vertex. Given B1, the sweep-independent count follows from Euler-characteristic bookkeeping of the R-R contact graph across the sweep; the bitruncated 600-cell value is an evaluation. Interest beyond the author's framework is not established.",
+  "findings": [
+   {
+    "evidence": "B4 statement",
+    "message": "The equality of W-W-to-R-R and R-R-to-W-W swaps and their value #R-R 2-faces - #R cells + 1 has the form of a cycle-rank (Euler characteristic) count of the R-R adjacency structure, an easy consequence of B1; no research audience or downstream use is identified."
+   }
+  ],
+  "scores": {
+   "notability": 2,
+   "literature": 3
+  },
+  "trust_level": null,
+  "sources_checked": [
+   "https://ar5iv.labs.arxiv.org/html/1011.2264",
+   "https://en.wikipedia.org/wiki/Pachner_moves"
+  ],
+  "declarations_checked": [],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "B4 statement",
+    "message": "The bitruncated 600-cell has truncated tetrahedra and truncated icosahedra, two of each at every vertex, fitting the hypothesis; the value 601 was not recomputed."
+   }
+  ],
+  "what_would_reach_4": "A general colouring law with a non-Euler-characteristic proof and a stated use (e.g. for scutoid tissues or balanced complexes in the sense of Stanley's flag h-vectors), credited against that literature."
+ },
+ {
+  "candidate": "B5",
+  "step": "literature_notability",
+  "outcome": "failure",
+  "summary": "A one-polytope observation reduced to the maximum cut of the wheel W5 (7 of 10 edges). It is a small lemma, trivial as a stand-alone result.",
+  "findings": [
+   {
+    "evidence": "B5 statement",
+    "message": "The lemma is a local finite check (max cut of W5) for one polytope; it is trivial as a stand-alone contribution and has no identified research audience."
+   }
+  ],
+  "scores": {
+   "notability": 2,
+   "literature": 3
+  },
+  "trust_level": null,
+  "sources_checked": [],
+  "declarations_checked": [],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "B5 statement",
+    "message": "Max cut of W5 checked by hand: with the hub on one side and k rim vertices on the other, the cut is k plus an even rim cut of at most 4 (k = 3 gives 3 + 4 = 7; k = 4 gives 4 + 2 = 6; k = 5 gives 5). So 7 of 10 is correct. No literature expected for a lemma of this size."
+   }
+  ],
+  "what_would_reach_4": "Only as a step inside a notable result; on its own it cannot."
+ }
+]

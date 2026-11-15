@@ -1,0 +1,155 @@
+[
+ {
+  "candidate": "A1",
+  "step": "literature_notability",
+  "outcome": "failure",
+  "summary": "A closed-form count of the central hyperplanes spanned by the ridges of the standard permutohedron. The count appears to be new (no OEIS match) and the proof is a correct-looking elementary computation of slice normals, but the statement does not connect to an identified open question or established line of research, so paper-worthiness and a credible research audience are not affirmatively established.",
+  "findings": [
+   {
+    "severity": "internal",
+    "message": "Research interest not demonstrated: the central slice aff(F ∪ {c}) of a ridge is an ad hoc construction with no stated role in known theory (braid/resonance arrangements, face lattices, sections, Ehrhart theory). The proof reduces to computing a three-valued normal per ordered 3-block partition and identifying a split with its reverse, plus the two-valued (a = c) case giving centred subset-sum hyperplanes. This is a routine enumeration; a research audience is plausible only if the count is shown to answer or feed into an existing question, which the statement does not do."
+   }
+  ],
+  "scores": {
+   "notability": 3,
+   "literature": 3
+  },
+  "trust_level": null,
+  "sources_checked": [
+   "https://oeis.org/search?q=3%2C15%2C65%2C225%2C770%2C2443&fmt=short",
+   "https://arxiv.org/pdf/2305.06202",
+   "https://arxiv.org/pdf/2509.13877",
+   "https://arxiv.org/pdf/1904.08437",
+   "https://arxiv.org/pdf/2208.09251",
+   "https://arxiv.org/pdf/2304.14239"
+  ],
+  "declarations_checked": [],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "OEIS search 3,15,65,225,770,2443",
+    "message": "No match; the sequence is not yet in OEIS (statement says it was submitted). No prior statement of this count found."
+   },
+   {
+    "evidence": "sanity check n=3",
+    "message": "Pi_3 is a hexagon; ridges are the 6 vertices giving 3 lines through the centre; the formula gives 0 + T(3) = 3. Consistent."
+   },
+   {
+    "evidence": "resonance / all-subset arrangement literature (1904.08437, 2208.09251)",
+    "message": "The two-valued slices are centred subset-sum hyperplanes, i.e. a translate-to-centre of resonance-arrangement hyperplanes intersected with sum=const; the statement does not cite this connection, which is the most natural literature anchor."
+   },
+   {
+    "evidence": "covering papers 2305.06202, 2509.13877; sections paper 2304.14239",
+    "message": "Nearby active topics (hyperplane covers of permutohedron vertices; slicing chambers/optimal sections) exist but none studies hyperplanes spanned by ridges through the centre."
+   }
+  ],
+  "what_would_reach_4": "Show the count matters elsewhere: e.g. identify these hyperplanes with a known arrangement (resonance/threshold) or use them to solve a stated problem (central sections, covering, symmetry classes of sections for all n), and generalise to faces of every dimension or to all Coxeter permutohedra with a uniform formula."
+ },
+ {
+  "candidate": "A2",
+  "step": "literature_notability",
+  "outcome": "failure",
+  "summary": "The n = 5 instance of the ridge-slice count (65 slices for the 150 two-faces), with an orbit classification under S_5 x central inversion. It is a finite computation and a special case of A1; on its own it is identifiable but routine and lacks an identified research audience.",
+  "findings": [
+   {
+    "severity": "internal",
+    "message": "Trivial as a standalone research claim: a finite, machine-checkable enumeration of one polytope, specialising the general count; the orbit sizes 30, 20, 10, 5 follow from the split-size types (1,1,3),(1,2,2)/(1,3,1),(2,1,2) under the stated symmetry group. Its value is illustrative, not paper-worthy alone."
+   }
+  ],
+  "scores": {
+   "notability": 2,
+   "literature": 3
+  },
+  "trust_level": null,
+  "sources_checked": [
+   "https://oeis.org/search?q=3%2C15%2C65%2C225%2C770%2C2443&fmt=short",
+   "https://en.wikipedia.org/wiki/Permutohedron",
+   "https://arxiv.org/pdf/2304.14239"
+  ],
+  "declarations_checked": [],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "A1 formula at n=5",
+    "message": "Formula gives 60 (splits (1,1,3),(1,2,2),(1,3,1)... with a<c) + T(5)=15, i.e. 65; consistent with A1's table."
+   },
+   {
+    "evidence": "literature search",
+    "message": "No prior statement of this specific 65-slice decomposition found; nothing contradicts it."
+   }
+  ],
+  "what_would_reach_4": "It cannot reach the floor alone; fold it into A1 as the worked example of a general theorem that itself establishes research interest."
+ },
+ {
+  "candidate": "A3",
+  "step": "literature_notability",
+  "outcome": "failure",
+  "summary": "Coordinate sections x_i = t of a permutohedron are permutohedra of n-1 explicitly given values, and iterated central sections in odd dimension give smaller permutohedra ending in a regular hexagon. This is a short, correct-looking exercise in majorization (Rado's theorem); it is identifiable but routine and no specific research use is shown.",
+  "findings": [
+   {
+    "severity": "internal",
+    "message": "Routine consequence of a standard result: by Rado's theorem the section is {y : (t,y) majorized by v}, and the replacement of v_p, v_{p+1} by v_p+v_{p+1}-t follows by comparing partial sums. Theorem 2b is iteration of Lemma 2a with t equal to the middle value; the hexagon is Pi_3 of (1, c, n), regular because the values are equally spaced. Paper-worthiness and an audience beyond textbook majorization are not established."
+   }
+  ],
+  "scores": {
+   "notability": 2,
+   "literature": 3
+  },
+  "trust_level": null,
+  "sources_checked": [
+   "https://arxiv.org/pdf/2109.01746",
+   "https://arxiv.org/pdf/2205.02635",
+   "https://arxiv.org/pdf/2305.06202",
+   "https://arxiv.org/pdf/2304.14239",
+   "https://arxiv.org/pdf/1611.05314"
+  ],
+  "declarations_checked": [],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "Rado / Muirhead-Rado exposition (2109.01746; 2205.02635)",
+    "message": "Permutohedron = majorization polytope is standard; the statement credits Rado, so attribution is fair."
+   },
+   {
+    "evidence": "search for sections x_i = t",
+    "message": "No explicit published statement of Lemma 2a found in free sources; it is likely folklore in majorization texts (Marshall-Olkin-Arnold not checked: not freely accessible). Coordinate hyperplanes x_1 = i appear in Hegedüs's covering paper only as vertex covers."
+   }
+  ],
+  "what_would_reach_4": "Extend to a genuinely non-obvious result, e.g. a complete description of all hyperplane sections of permutohedra through the centre (or of every Coxeter permutohedron) with volumes or face numbers, or an application (covering numbers, section maximisation) that uses the lemma essentially."
+ },
+ {
+  "candidate": "A4",
+  "step": "literature_notability",
+  "outcome": "failure",
+  "summary": "The family of truncated octahedra given by signed permutations of (1+x, x, 0) coincides, up to scale, with permutohedra of four values symmetric about 0. This is a direct linear change of coordinates (the A3 = D3 identification of the sum-zero hyperplane of R^4 with R^3) and the x = 1 case is the textbook coordinate description of the truncated octahedron; it is trivial as a research contribution.",
+  "findings": [
+   {
+    "severity": "internal",
+    "message": "Trivial: the standard A3/D3 linear identification of the sum-zero hyperplane of R^4 with R^3 (y_k = (x_1 + x_{k+1} - x_j - x_l)/2 for {j,l} the remaining indices) sends the permutations of (-q,-p,p,q) to the signed permutations of a vector of the form (q+p, q-p, 0), i.e. a multiple of (1+x, x, 0) with x = (q-p)/(2p) (checked for p = 1/2, q = 3/2, which gives (2, 1, 0)); checking this takes one line. The x = 1 case, 'all permutations of (0, ±1, ±2)', is stated on Wikipedia's Permutohedron and Truncated octahedron pages, and the candidate does not cite it."
+   }
+  ],
+  "scores": {
+   "notability": 2,
+   "literature": 2
+  },
+  "trust_level": null,
+  "sources_checked": [
+   "https://en.wikipedia.org/wiki/Permutohedron",
+   "https://cavac.at/cavacopedia/Truncated%20octahedron",
+   "https://arxiv.org/pdf/1804.05836"
+  ],
+  "declarations_checked": [],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "Wikipedia Permutohedron",
+    "message": "Gives both the (1,2,3,4) and the (0,±1,±2) coordinate forms of the truncated octahedron; the candidate's family generalises this by an obvious parameter but does not cite the standard identification."
+   },
+   {
+    "evidence": "Koca et al. 1804.05836",
+    "message": "W(A_n)/W(D_n) orbit polytopes and their identifications are treated as standard background in this literature."
+   }
+  ],
+  "what_would_reach_4": "Not reachable as stated; it is a coordinate remark. It could only appear as a lemma inside a larger result (e.g. a classification of when type-A permutohedra acquire extra B/D symmetry in all dimensions, with consequences)."
+ }
+]
