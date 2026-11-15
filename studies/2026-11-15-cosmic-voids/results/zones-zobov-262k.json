@@ -1,0 +1,1202 @@
+{
+ "mode": "zobov",
+ "m": 1,
+ "n_tracers": 262144,
+ "R_Mpc_h": null,
+ "a_min": 0.875,
+ "L_Mpc_h": 256.0,
+ "nbody": {
+  "code": "pmwd (arXiv:2211.09958)",
+  "N": 256,
+  "L_Mpc_h": 256.0,
+  "grid": 256,
+  "da": 0.001953125,
+  "seed": 1,
+  "subsample": 8,
+  "n_tracers": 262144,
+  "tracer_rng_seed": 12345,
+  "snapshots": [
+   {
+    "k": 0,
+    "a": 0.75
+   },
+   {
+    "k": 1,
+    "a": 0.751953125
+   },
+   {
+    "k": 2,
+    "a": 0.75390625
+   },
+   {
+    "k": 3,
+    "a": 0.755859375
+   },
+   {
+    "k": 4,
+    "a": 0.7578125
+   },
+   {
+    "k": 5,
+    "a": 0.759765625
+   },
+   {
+    "k": 6,
+    "a": 0.76171875
+   },
+   {
+    "k": 7,
+    "a": 0.763671875
+   },
+   {
+    "k": 8,
+    "a": 0.765625
+   },
+   {
+    "k": 9,
+    "a": 0.767578125
+   },
+   {
+    "k": 10,
+    "a": 0.76953125
+   },
+   {
+    "k": 11,
+    "a": 0.771484375
+   },
+   {
+    "k": 12,
+    "a": 0.7734375
+   },
+   {
+    "k": 13,
+    "a": 0.775390625
+   },
+   {
+    "k": 14,
+    "a": 0.77734375
+   },
+   {
+    "k": 15,
+    "a": 0.779296875
+   },
+   {
+    "k": 16,
+    "a": 0.78125
+   },
+   {
+    "k": 17,
+    "a": 0.783203125
+   },
+   {
+    "k": 18,
+    "a": 0.78515625
+   },
+   {
+    "k": 19,
+    "a": 0.787109375
+   },
+   {
+    "k": 20,
+    "a": 0.7890625
+   },
+   {
+    "k": 21,
+    "a": 0.791015625
+   },
+   {
+    "k": 22,
+    "a": 0.79296875
+   },
+   {
+    "k": 23,
+    "a": 0.794921875
+   },
+   {
+    "k": 24,
+    "a": 0.796875
+   },
+   {
+    "k": 25,
+    "a": 0.798828125
+   },
+   {
+    "k": 26,
+    "a": 0.80078125
+   },
+   {
+    "k": 27,
+    "a": 0.802734375
+   },
+   {
+    "k": 28,
+    "a": 0.8046875
+   },
+   {
+    "k": 29,
+    "a": 0.806640625
+   },
+   {
+    "k": 30,
+    "a": 0.80859375
+   },
+   {
+    "k": 31,
+    "a": 0.810546875
+   },
+   {
+    "k": 32,
+    "a": 0.8125
+   },
+   {
+    "k": 33,
+    "a": 0.814453125
+   },
+   {
+    "k": 34,
+    "a": 0.81640625
+   },
+   {
+    "k": 35,
+    "a": 0.818359375
+   },
+   {
+    "k": 36,
+    "a": 0.8203125
+   },
+   {
+    "k": 37,
+    "a": 0.822265625
+   },
+   {
+    "k": 38,
+    "a": 0.82421875
+   },
+   {
+    "k": 39,
+    "a": 0.826171875
+   },
+   {
+    "k": 40,
+    "a": 0.828125
+   },
+   {
+    "k": 41,
+    "a": 0.830078125
+   },
+   {
+    "k": 42,
+    "a": 0.83203125
+   },
+   {
+    "k": 43,
+    "a": 0.833984375
+   },
+   {
+    "k": 44,
+    "a": 0.8359375
+   },
+   {
+    "k": 45,
+    "a": 0.837890625
+   },
+   {
+    "k": 46,
+    "a": 0.83984375
+   },
+   {
+    "k": 47,
+    "a": 0.841796875
+   },
+   {
+    "k": 48,
+    "a": 0.84375
+   },
+   {
+    "k": 49,
+    "a": 0.845703125
+   },
+   {
+    "k": 50,
+    "a": 0.84765625
+   },
+   {
+    "k": 51,
+    "a": 0.849609375
+   },
+   {
+    "k": 52,
+    "a": 0.8515625
+   },
+   {
+    "k": 53,
+    "a": 0.853515625
+   },
+   {
+    "k": 54,
+    "a": 0.85546875
+   },
+   {
+    "k": 55,
+    "a": 0.857421875
+   },
+   {
+    "k": 56,
+    "a": 0.859375
+   },
+   {
+    "k": 57,
+    "a": 0.861328125
+   },
+   {
+    "k": 58,
+    "a": 0.86328125
+   },
+   {
+    "k": 59,
+    "a": 0.865234375
+   },
+   {
+    "k": 60,
+    "a": 0.8671875
+   },
+   {
+    "k": 61,
+    "a": 0.869140625
+   },
+   {
+    "k": 62,
+    "a": 0.87109375
+   },
+   {
+    "k": 63,
+    "a": 0.873046875
+   },
+   {
+    "k": 64,
+    "a": 0.875
+   },
+   {
+    "k": 65,
+    "a": 0.876953125
+   },
+   {
+    "k": 66,
+    "a": 0.87890625
+   },
+   {
+    "k": 67,
+    "a": 0.880859375
+   },
+   {
+    "k": 68,
+    "a": 0.8828125
+   },
+   {
+    "k": 69,
+    "a": 0.884765625
+   },
+   {
+    "k": 70,
+    "a": 0.88671875
+   },
+   {
+    "k": 71,
+    "a": 0.888671875
+   },
+   {
+    "k": 72,
+    "a": 0.890625
+   },
+   {
+    "k": 73,
+    "a": 0.892578125
+   },
+   {
+    "k": 74,
+    "a": 0.89453125
+   },
+   {
+    "k": 75,
+    "a": 0.896484375
+   },
+   {
+    "k": 76,
+    "a": 0.8984375
+   },
+   {
+    "k": 77,
+    "a": 0.900390625
+   },
+   {
+    "k": 78,
+    "a": 0.90234375
+   },
+   {
+    "k": 79,
+    "a": 0.904296875
+   },
+   {
+    "k": 80,
+    "a": 0.90625
+   },
+   {
+    "k": 81,
+    "a": 0.908203125
+   },
+   {
+    "k": 82,
+    "a": 0.91015625
+   },
+   {
+    "k": 83,
+    "a": 0.912109375
+   },
+   {
+    "k": 84,
+    "a": 0.9140625
+   },
+   {
+    "k": 85,
+    "a": 0.916015625
+   },
+   {
+    "k": 86,
+    "a": 0.91796875
+   },
+   {
+    "k": 87,
+    "a": 0.919921875
+   },
+   {
+    "k": 88,
+    "a": 0.921875
+   },
+   {
+    "k": 89,
+    "a": 0.923828125
+   },
+   {
+    "k": 90,
+    "a": 0.92578125
+   },
+   {
+    "k": 91,
+    "a": 0.927734375
+   },
+   {
+    "k": 92,
+    "a": 0.9296875
+   },
+   {
+    "k": 93,
+    "a": 0.931640625
+   },
+   {
+    "k": 94,
+    "a": 0.93359375
+   },
+   {
+    "k": 95,
+    "a": 0.935546875
+   },
+   {
+    "k": 96,
+    "a": 0.9375
+   },
+   {
+    "k": 97,
+    "a": 0.939453125
+   },
+   {
+    "k": 98,
+    "a": 0.94140625
+   },
+   {
+    "k": 99,
+    "a": 0.943359375
+   },
+   {
+    "k": 100,
+    "a": 0.9453125
+   },
+   {
+    "k": 101,
+    "a": 0.947265625
+   },
+   {
+    "k": 102,
+    "a": 0.94921875
+   },
+   {
+    "k": 103,
+    "a": 0.951171875
+   },
+   {
+    "k": 104,
+    "a": 0.953125
+   },
+   {
+    "k": 105,
+    "a": 0.955078125
+   },
+   {
+    "k": 106,
+    "a": 0.95703125
+   },
+   {
+    "k": 107,
+    "a": 0.958984375
+   },
+   {
+    "k": 108,
+    "a": 0.9609375
+   },
+   {
+    "k": 109,
+    "a": 0.962890625
+   },
+   {
+    "k": 110,
+    "a": 0.96484375
+   },
+   {
+    "k": 111,
+    "a": 0.966796875
+   },
+   {
+    "k": 112,
+    "a": 0.96875
+   },
+   {
+    "k": 113,
+    "a": 0.970703125
+   },
+   {
+    "k": 114,
+    "a": 0.97265625
+   },
+   {
+    "k": 115,
+    "a": 0.974609375
+   },
+   {
+    "k": 116,
+    "a": 0.9765625
+   },
+   {
+    "k": 117,
+    "a": 0.978515625
+   },
+   {
+    "k": 118,
+    "a": 0.98046875
+   },
+   {
+    "k": 119,
+    "a": 0.982421875
+   },
+   {
+    "k": 120,
+    "a": 0.984375
+   },
+   {
+    "k": 121,
+    "a": 0.986328125
+   },
+   {
+    "k": 122,
+    "a": 0.98828125
+   },
+   {
+    "k": 123,
+    "a": 0.990234375
+   },
+   {
+    "k": 124,
+    "a": 0.9921875
+   },
+   {
+    "k": 125,
+    "a": 0.994140625
+   },
+   {
+    "k": 126,
+    "a": 0.99609375
+   },
+   {
+    "k": 127,
+    "a": 0.998046875
+   },
+   {
+    "k": 128,
+    "a": 1.0
+   }
+  ],
+  "control": [
+   {
+    "k": 0,
+    "a": 0.75,
+    "max_dev_over_std": 0.0
+   },
+   {
+    "k": 32,
+    "a": 0.8125,
+    "max_dev_over_std": 0.0
+   },
+   {
+    "k": 64,
+    "a": 0.875,
+    "max_dev_over_std": 0.0
+   },
+   {
+    "k": 96,
+    "a": 0.9375,
+    "max_dev_over_std": 0.0
+   },
+   {
+    "k": 128,
+    "a": 1.0,
+    "max_dev_over_std": 0.0
+   }
+  ],
+  "ref": "nbody-s1f",
+  "note": "first 1/8 of the tracers of nbody-s1f-trac"
+ },
+ "n_snapshots": 65,
+ "max_volume_error": 1.1102230246251565e-16,
+ "max_nlist_asymmetry": 0,
+ "eps_list": [
+  0.0,
+  0.001,
+  0.002,
+  0.005,
+  0.01,
+  0.02,
+  0.05
+ ],
+ "neighbour_curve_first": [
+  17.33794571580628,
+  16.953698775944652,
+  16.77062267163385,
+  16.428951569984033,
+  15.97445449707291,
+  15.32197977647685,
+  13.992549228312932
+ ],
+ "neighbour_curve_last": [
+  17.373923032739803,
+  16.969557725445146,
+  16.785755313038482,
+  16.413555427914993,
+  15.963239517518668,
+  15.294658242389431,
+  14.031016657093625
+ ],
+ "neighbour_curve_mean": [
+  17.397938065458032,
+  16.981260090486465,
+  16.79906487505527,
+  16.43594267363628,
+  16.01033490362082,
+  15.332275231233803,
+  14.058319981529017
+ ],
+ "zones_per_snapshot": [
+  1879,
+  1879,
+  1875,
+  1871,
+  1869,
+  1869,
+  1865,
+  1864,
+  1862,
+  1859,
+  1858,
+  1854,
+  1848,
+  1846,
+  1843,
+  1844,
+  1843,
+  1834,
+  1831,
+  1829,
+  1826,
+  1823,
+  1823,
+  1820,
+  1818,
+  1812,
+  1815,
+  1812,
+  1812,
+  1808,
+  1810,
+  1803,
+  1805,
+  1800,
+  1800,
+  1797,
+  1793,
+  1790,
+  1789,
+  1786,
+  1786,
+  1783,
+  1782,
+  1781,
+  1780,
+  1777,
+  1776,
+  1774,
+  1770,
+  1768,
+  1761,
+  1758,
+  1755,
+  1755,
+  1754,
+  1754,
+  1752,
+  1748,
+  1746,
+  1745,
+  1743,
+  1743,
+  1740,
+  1740,
+  1741
+ ],
+ "variants": [
+  {
+   "k": 1,
+   "rule": [
+    "faces",
+    0.0
+   ],
+   "snapshots_used": 65,
+   "counts": {
+    "clump": 868,
+    "split": 25,
+    "merge": 53,
+    "contact lost": 1460,
+    "contact gained": 1470
+   },
+   "top_clump_patterns": {
+    "born 0 died 0 lost 0 gained 2": 134,
+    "born 0 died 0 lost 2 gained 0": 132,
+    "born 0 died 0 lost 1 gained 1": 123,
+    "born 0 died 1 lost 0 gained 1": 40,
+    "born 0 died 0 lost 2 gained 1": 39,
+    "born 0 died 0 lost 1 gained 2": 38,
+    "born 0 died 1 lost 0 gained 2": 35,
+    "born 0 died 1 lost 0 gained 3": 26,
+    "born 0 died 0 lost 2 gained 2": 22,
+    "born 0 died 1 lost 0 gained 4": 18,
+    "born 0 died 1 lost 0 gained 5": 17,
+    "born 1 died 0 lost 1 gained 0": 16
+   },
+   "derived": {
+    "contact changes, with a merge/split/birth/death": 954,
+    "cells died (merge or death)": 236,
+    "cells born (split or birth)": 98,
+    "contact changes, alone": 2930,
+    "contact changes, clumped with other contact changes": 1834,
+    "clump size 6+": 40,
+    "clump size 5": 23,
+    "clump size 3": 108,
+    "clump size 2": 389,
+    "clump size 4": 54
+   },
+   "contact_changes_total": 5718,
+   "per_basin_per_step": 0.04951860355059859,
+   "fraction_alone": 0.5124169289961525,
+   "fraction_clumped": 0.32074151801329137,
+   "contact_changes_per_merge": 24.228813559322035,
+   "balance_failures": 0,
+   "basins_first_last": [
+    1879,
+    1741
+   ],
+   "mean_contacts_first_last": [
+    17.33794571580628,
+    17.373923032739803
+   ],
+   "mean_contacts_mean": 17.397938065458032,
+   "characterisation": {
+    "merge": {
+     "n": 954,
+     "median_area_eps": 0.10769972071275562,
+     "frac_area_below_0p01": 0.18029350104821804,
+     "frac_area_below_0p03": 0.3008385744234801,
+     "mean_wall_field": 16.71889711785863,
+     "frac_near_merge": 1.0,
+     "frac_flicker": 0.012578616352201259,
+     "frac_lost": 0.3029350104821803
+    },
+    "alone": {
+     "n": 2930,
+     "median_area_eps": 0.0019285322092426145,
+     "frac_area_below_0p01": 0.7344709897610922,
+     "frac_area_below_0p03": 0.9020477815699659,
+     "mean_wall_field": 109.64203294703393,
+     "frac_near_merge": 0.06587030716723549,
+     "frac_flicker": 0.11092150170648464,
+     "frac_lost": 0.49829351535836175
+    },
+    "clumped": {
+     "n": 1834,
+     "median_area_eps": 0.016921517951120575,
+     "frac_area_below_0p01": 0.3974918211559433,
+     "frac_area_below_0p03": 0.6063249727371864,
+     "mean_wall_field": 56.88998483260086,
+     "frac_near_merge": 0.05125408942202835,
+     "frac_flicker": 0.05125408942202835,
+     "frac_lost": 0.48854961832061067
+    }
+   }
+  },
+  {
+   "k": 1,
+   "rule": [
+    "eps",
+    0.01
+   ],
+   "snapshots_used": 65,
+   "counts": {
+    "clump": 802,
+    "split": 28,
+    "merge": 48,
+    "contact lost": 1418,
+    "contact gained": 1351
+   },
+   "top_clump_patterns": {
+    "born 0 died 0 lost 1 gained 1": 146,
+    "born 0 died 0 lost 0 gained 2": 91,
+    "born 0 died 0 lost 2 gained 0": 88,
+    "born 0 died 1 lost 0 gained 1": 52,
+    "born 0 died 0 lost 2 gained 1": 46,
+    "born 0 died 0 lost 1 gained 2": 43,
+    "born 0 died 1 lost 0 gained 2": 36,
+    "born 0 died 1 lost 0 gained 3": 24,
+    "born 0 died 0 lost 2 gained 2": 18,
+    "born 0 died 1 lost 0 gained 4": 18,
+    "born 0 died 0 lost 2 gained 3": 14,
+    "born 0 died 1 lost 0 gained 6": 14
+   },
+   "derived": {
+    "contact changes, with a merge/split/birth/death": 916,
+    "cells died (merge or death)": 236,
+    "cells born (split or birth)": 98,
+    "contact changes, alone": 2769,
+    "contact changes, clumped with other contact changes": 1702,
+    "clump size 6+": 43,
+    "clump size 5": 29,
+    "clump size 2": 325,
+    "clump size 3": 104,
+    "clump size 4": 46
+   },
+   "contact_changes_total": 5387,
+   "per_basin_per_step": 0.04665210166615505,
+   "fraction_alone": 0.5140152218303323,
+   "fraction_clumped": 0.3159457954334509,
+   "contact_changes_per_merge": 22.826271186440678,
+   "balance_failures": 0,
+   "basins_first_last": [
+    1879,
+    1741
+   ],
+   "mean_contacts_first_last": [
+    15.97445449707291,
+    15.963239517518668
+   ],
+   "mean_contacts_mean": 16.010334903620823,
+   "characterisation": {
+    "merge": {
+     "n": 916,
+     "median_area_eps": 0.16555858639577553,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.15829694323144106,
+     "mean_wall_field": 7.6701459744221285,
+     "frac_near_merge": 1.0,
+     "frac_flicker": 0.016375545851528384,
+     "frac_lost": 0.2925764192139738
+    },
+    "alone": {
+     "n": 2769,
+     "median_area_eps": 0.01726782537558314,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.7540628385698809,
+     "mean_wall_field": 23.561645066031588,
+     "frac_near_merge": 0.0765619357168653,
+     "frac_flicker": 0.08992416034669556,
+     "frac_lost": 0.5120982304080895
+    },
+    "clumped": {
+     "n": 1702,
+     "median_area_eps": 0.042202930718999526,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.3989424206815511,
+     "mean_wall_field": 11.721842022563832,
+     "frac_near_merge": 0.045828437132784956,
+     "frac_flicker": 0.0399529964747356,
+     "frac_lost": 0.4917743830787309
+    }
+   }
+  },
+  {
+   "k": 2,
+   "rule": [
+    "faces",
+    0.0
+   ],
+   "snapshots_used": 33,
+   "counts": {
+    "clump": 865,
+    "split": 23,
+    "merge": 47,
+    "contact lost": 1288,
+    "contact gained": 1307
+   },
+   "top_clump_patterns": {
+    "born 0 died 0 lost 0 gained 2": 128,
+    "born 0 died 0 lost 1 gained 1": 125,
+    "born 0 died 0 lost 2 gained 0": 121,
+    "born 0 died 1 lost 0 gained 1": 41,
+    "born 0 died 0 lost 1 gained 2": 37,
+    "born 0 died 0 lost 2 gained 1": 37,
+    "born 0 died 1 lost 0 gained 2": 27,
+    "born 0 died 1 lost 0 gained 3": 26,
+    "born 0 died 0 lost 2 gained 2": 22,
+    "born 0 died 1 lost 0 gained 4": 21,
+    "born 0 died 0 lost 3 gained 0": 20,
+    "born 1 died 0 lost 1 gained 0": 17
+   },
+   "derived": {
+    "contact changes, with a merge/split/birth/death": 1035,
+    "cells died (merge or death)": 236,
+    "cells born (split or birth)": 98,
+    "contact changes, alone": 2595,
+    "contact changes, clumped with other contact changes": 1832,
+    "clump size 2": 374,
+    "clump size 6+": 42,
+    "clump size 4": 59,
+    "clump size 3": 109,
+    "clump size 5": 24
+   },
+   "contact_changes_total": 5462,
+   "per_basin_per_step": 0.0945875314861461,
+   "fraction_alone": 0.475100695715855,
+   "fraction_clumped": 0.33540827535701206,
+   "contact_changes_per_merge": 23.14406779661017,
+   "balance_failures": 0,
+   "basins_first_last": [
+    1879,
+    1741
+   ],
+   "mean_contacts_first_last": [
+    17.33794571580628,
+    17.373923032739803
+   ],
+   "mean_contacts_mean": 17.396735041852835,
+   "characterisation": {
+    "merge": {
+     "n": 1035,
+     "median_area_eps": 0.09201152756368823,
+     "frac_area_below_0p01": 0.20096618357487922,
+     "frac_area_below_0p03": 0.32463768115942027,
+     "mean_wall_field": 16.082058124584247,
+     "frac_near_merge": 1.0,
+     "frac_flicker": 0.028985507246376812,
+     "frac_lost": 0.314975845410628
+    },
+    "alone": {
+     "n": 2595,
+     "median_area_eps": 0.0021774614099037337,
+     "frac_area_below_0p01": 0.7221579961464355,
+     "frac_area_below_0p03": 0.8944123314065511,
+     "mean_wall_field": 95.49374311307776,
+     "frac_near_merge": 0.14065510597302505,
+     "frac_flicker": 0.14797687861271677,
+     "frac_lost": 0.49633911368015415
+    },
+    "clumped": {
+     "n": 1832,
+     "median_area_eps": 0.015368659024857574,
+     "frac_area_below_0p01": 0.4153930131004367,
+     "frac_area_below_0p03": 0.6244541484716157,
+     "mean_wall_field": 49.63648005362591,
+     "frac_near_merge": 0.11244541484716157,
+     "frac_flicker": 0.08296943231441048,
+     "frac_lost": 0.4923580786026201
+    }
+   }
+  },
+  {
+   "k": 2,
+   "rule": [
+    "eps",
+    0.01
+   ],
+   "snapshots_used": 33,
+   "counts": {
+    "clump": 818,
+    "split": 27,
+    "merge": 48,
+    "contact lost": 1270,
+    "contact gained": 1191
+   },
+   "top_clump_patterns": {
+    "born 0 died 0 lost 1 gained 1": 150,
+    "born 0 died 0 lost 0 gained 2": 98,
+    "born 0 died 0 lost 2 gained 0": 86,
+    "born 0 died 1 lost 0 gained 1": 49,
+    "born 0 died 0 lost 2 gained 1": 49,
+    "born 0 died 0 lost 1 gained 2": 48,
+    "born 0 died 1 lost 0 gained 2": 32,
+    "born 0 died 1 lost 0 gained 3": 19,
+    "born 0 died 1 lost 0 gained 4": 19,
+    "born 0 died 0 lost 2 gained 2": 17,
+    "born 0 died 0 lost 2 gained 3": 14,
+    "born 1 died 0 lost 2 gained 0": 13
+   },
+   "derived": {
+    "contact changes, with a merge/split/birth/death": 956,
+    "cells died (merge or death)": 236,
+    "cells born (split or birth)": 98,
+    "contact changes, alone": 2461,
+    "contact changes, clumped with other contact changes": 1769,
+    "clump size 2": 334,
+    "clump size 3": 112,
+    "clump size 4": 45,
+    "clump size 5": 28,
+    "clump size 6+": 47
+   },
+   "contact_changes_total": 5186,
+   "per_basin_per_step": 0.08980793450881612,
+   "fraction_alone": 0.4745468569224836,
+   "fraction_clumped": 0.3411106826070189,
+   "contact_changes_per_merge": 21.97457627118644,
+   "balance_failures": 0,
+   "basins_first_last": [
+    1879,
+    1741
+   ],
+   "mean_contacts_first_last": [
+    15.97445449707291,
+    15.963239517518668
+   ],
+   "mean_contacts_mean": 16.009299116851704,
+   "characterisation": {
+    "merge": {
+     "n": 956,
+     "median_area_eps": 0.14850904527786163,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.17259414225941422,
+     "mean_wall_field": 7.485017350234602,
+     "frac_near_merge": 1.0,
+     "frac_flicker": 0.027196652719665274,
+     "frac_lost": 0.3002092050209205
+    },
+    "alone": {
+     "n": 2461,
+     "median_area_eps": 0.017567113172933402,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.7403494514425031,
+     "mean_wall_field": 20.593494264412577,
+     "frac_near_merge": 0.14262494920763918,
+     "frac_flicker": 0.14181227143437627,
+     "frac_lost": 0.5160503860219423
+    },
+    "clumped": {
+     "n": 1769,
+     "median_area_eps": 0.0384282954499683,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.4217071791972866,
+     "mean_wall_field": 13.1132772635587,
+     "frac_near_merge": 0.11305822498586772,
+     "frac_flicker": 0.06331260599208592,
+     "frac_lost": 0.4878462408140192
+    }
+   }
+  },
+  {
+   "k": 4,
+   "rule": [
+    "faces",
+    0.0
+   ],
+   "snapshots_used": 17,
+   "counts": {
+    "clump": 855,
+    "split": 19,
+    "merge": 43,
+    "contact lost": 1061,
+    "contact gained": 1054
+   },
+   "top_clump_patterns": {
+    "born 0 died 0 lost 1 gained 1": 123,
+    "born 0 died 0 lost 0 gained 2": 120,
+    "born 0 died 0 lost 2 gained 0": 108,
+    "born 0 died 1 lost 0 gained 1": 39,
+    "born 0 died 0 lost 2 gained 1": 36,
+    "born 0 died 0 lost 1 gained 2": 35,
+    "born 0 died 1 lost 0 gained 2": 23,
+    "born 0 died 1 lost 0 gained 3": 22,
+    "born 0 died 0 lost 2 gained 2": 20,
+    "born 0 died 0 lost 3 gained 0": 19,
+    "born 1 died 0 lost 1 gained 0": 18,
+    "born 0 died 0 lost 1 gained 3": 18
+   },
+   "derived": {
+    "contact changes, with a merge/split/birth/death": 1138,
+    "cells died (merge or death)": 234,
+    "cells born (split or birth)": 96,
+    "contact changes, alone": 2115,
+    "contact changes, clumped with other contact changes": 1883,
+    "clump size 2": 351,
+    "clump size 6+": 49,
+    "clump size 5": 32,
+    "clump size 4": 64,
+    "clump size 3": 105
+   },
+   "contact_changes_total": 5136,
+   "per_basin_per_step": 0.17785672381200704,
+   "fraction_alone": 0.4117990654205608,
+   "fraction_clumped": 0.36662772585669784,
+   "contact_changes_per_merge": 21.94871794871795,
+   "balance_failures": 0,
+   "basins_first_last": [
+    1879,
+    1741
+   ],
+   "mean_contacts_first_last": [
+    17.33794571580628,
+    17.373923032739803
+   ],
+   "mean_contacts_mean": 17.39458800633254,
+   "characterisation": {
+    "merge": {
+     "n": 1139,
+     "median_area_eps": 0.07648956064970752,
+     "frac_area_below_0p01": 0.22036874451273047,
+     "frac_area_below_0p03": 0.3608428446005268,
+     "mean_wall_field": 17.29347067733511,
+     "frac_near_merge": 1.0,
+     "frac_flicker": 0.08428446005267778,
+     "frac_lost": 0.33977172958735735
+    },
+    "alone": {
+     "n": 2115,
+     "median_area_eps": 0.0029608696089721406,
+     "frac_area_below_0p01": 0.6936170212765957,
+     "frac_area_below_0p03": 0.8808510638297873,
+     "mean_wall_field": 64.16470774672818,
+     "frac_near_merge": 0.26430260047281323,
+     "frac_flicker": 0.19952718676122932,
+     "frac_lost": 0.5016548463356973
+    },
+    "clumped": {
+     "n": 1883,
+     "median_area_eps": 0.013802369555071501,
+     "frac_area_below_0p01": 0.4391927774827403,
+     "frac_area_below_0p03": 0.6383430695698353,
+     "mean_wall_field": 46.358082210115235,
+     "frac_near_merge": 0.2543813064259161,
+     "frac_flicker": 0.13170472650026555,
+     "frac_lost": 0.48220924057355286
+    }
+   }
+  },
+  {
+   "k": 4,
+   "rule": [
+    "eps",
+    0.01
+   ],
+   "snapshots_used": 17,
+   "counts": {
+    "clump": 813,
+    "split": 24,
+    "merge": 48,
+    "contact lost": 1052,
+    "contact gained": 993
+   },
+   "top_clump_patterns": {
+    "born 0 died 0 lost 1 gained 1": 143,
+    "born 0 died 0 lost 0 gained 2": 89,
+    "born 0 died 0 lost 2 gained 0": 82,
+    "born 0 died 0 lost 2 gained 1": 53,
+    "born 0 died 0 lost 1 gained 2": 44,
+    "born 0 died 1 lost 0 gained 1": 39,
+    "born 0 died 1 lost 0 gained 2": 25,
+    "born 0 died 1 lost 0 gained 3": 17,
+    "born 0 died 0 lost 2 gained 2": 17,
+    "born 0 died 0 lost 3 gained 0": 15,
+    "born 0 died 0 lost 3 gained 1": 14,
+    "born 0 died 0 lost 1 gained 3": 13
+   },
+   "derived": {
+    "contact changes, with a merge/split/birth/death": 1046,
+    "cells died (merge or death)": 234,
+    "cells born (split or birth)": 96,
+    "contact changes, alone": 2045,
+    "contact changes, clumped with other contact changes": 1815,
+    "clump size 6+": 52,
+    "clump size 3": 122,
+    "clump size 2": 314,
+    "clump size 4": 49,
+    "clump size 5": 30
+   },
+   "contact_changes_total": 4906,
+   "per_basin_per_step": 0.16989195619581515,
+   "fraction_alone": 0.41683652670199756,
+   "fraction_clumped": 0.36995515695067266,
+   "contact_changes_per_merge": 20.965811965811966,
+   "balance_failures": 0,
+   "basins_first_last": [
+    1879,
+    1741
+   ],
+   "mean_contacts_first_last": [
+    15.97445449707291,
+    15.963239517518668
+   ],
+   "mean_contacts_mean": 16.0093425283031,
+   "characterisation": {
+    "merge": {
+     "n": 1046,
+     "median_area_eps": 0.12306754269386791,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.21319311663479923,
+     "mean_wall_field": 7.000184233487141,
+     "frac_near_merge": 1.0,
+     "frac_flicker": 0.06692160611854685,
+     "frac_lost": 0.32504780114722753
+    },
+    "alone": {
+     "n": 2045,
+     "median_area_eps": 0.018410078032618758,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.7178484107579463,
+     "mean_wall_field": 17.435932612826715,
+     "frac_near_merge": 0.24254278728606357,
+     "frac_flicker": 0.18386308068459659,
+     "frac_lost": 0.5144254278728606
+    },
+    "clumped": {
+     "n": 1815,
+     "median_area_eps": 0.03685958713604252,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.43526170798898073,
+     "mean_wall_field": 12.903235357688414,
+     "frac_near_merge": 0.2545454545454545,
+     "frac_flicker": 0.12121212121212122,
+     "frac_lost": 0.4887052341597796
+    }
+   }
+  }
+ ]
+}

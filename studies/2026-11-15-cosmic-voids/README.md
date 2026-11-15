@@ -16,12 +16,19 @@ VERDICT (15 Nov 2026; true strength stated for each finding)
    - The rise slows, so the share approaches roughly 0.65-0.7 (an extrapolation).
    - At the finest spacing, 20% of contact changes still clump with other contact changes. That is more than a one-at-a-time foam
      gives when sampled at the same rate.
-   - Cause NOT settled: the voxel grid (not a generic tiling) or the physics. Strength: one box, one grid, one void definition.
+   - Cause, decided by the follow-up below: the discreteness of the tiling (voxels, or tracer particles), not the physics. In both
+     families the excess clumping over the exact foam, at the same rate of changes, falls when the units get finer: voxel basins
+     0.163 -> 0.076 (1 -> 0.5 Mpc/h voxels, same field), tracer zones by about 0.08 (131k -> 1M tracers). The clumps sit on small
+     walls; they do not gather at merges or on denser walls. Strength: two resolutions per family; that the excess reaches 0 in the continuum is
+     an extrapolation, not a measurement.
 3. Ratio: about 25 contact changes per basin that merges away; 23-27 over R = 3-6, both seeds and the fine spacings. It is steady as the
    spacing shrinks. Per NET basin lost (z = 3 to 0, R = 4), about 117, because many merges and splits undo one another. Merges are
    not 4-1 deaths: a whole wall dissolves, so a merge carries several contact changes by its nature.
-4. Neighbours per void basin: 17.2-18.0 when any shared voxel face counts; 13.7-15.4 when a wall needs 10 faces. The Poisson-Voronoi
-   15.54 lies between, and no rule-free number comes out (Aragón-Calvo 2014: about 14).
+4. Neighbours per void basin: 17.2-18.0 when any shared voxel face counts; 13.7-15.4 when a wall needs 10 faces. With the physical rule
+   fixed in the follow-up (a wall counts if its area is at least 0.002 of the cell size Vbar^(2/3)), 16.7 on both grids, ABOVE
+   Meijering's 15.535. At the same cut, Poisson-Voronoi cells have 14.93, so the basins have 1.8 more. Over cuts eps 0.002-0.02 all six
+   void tilings (two voxel grids, four tracer tilings) have 0.3-3.1 more neighbours than Poisson-Voronoi cut the same way; at eps 0.05
+   the voxel basins come level (-0.16 to +0.19). Aragón-Calvo 2014 (about 14) used a different void definition.
 5. We found no earlier count of contacts gained or lost between neighbouring voids (sources listed below).
 
 ## Question and wording
@@ -339,6 +346,159 @@ Predictions:
 - P3. With the physical wall rule, neighbours per basin = 14.5 +- 1, below Meijering's 15.535 (Aragon-Calvo 2014: about 14).
 - P4. Any clumps left are mostly "lost 1, gained 1" on small walls next to merges and splits.
 
+### Follow-up verdict (decided 15-16 Nov 2026)
+- GRID, more exactly: the discreteness of the units the basins are built from. Not physics.
+  - Same continuous field, voxels halved (1 -> 0.5 Mpc/h), finest spacing: the share of non-merge contact changes that clump falls
+    0.243 -> 0.186 (any face) and 0.189 -> 0.158 (physical rule). Against the exact foam at the same rate, the excess falls
+    0.163 -> 0.076 and 0.119 -> 0.077. It roughly halves with the voxel size.
+  - Grid-free walls (Voronoi faces of tracer particles) do NOT remove the clumping: tracer zones clump MORE (0.28-0.45), because a
+    tracer (spacing 2.5-8 Mpc/h) is a coarser unit than a voxel. Within that family it also falls with resolution: smoothed-field
+    zones 131k -> 1M tracers, at matched rate about 0.08 lower.
+  - Where the clumps sit: on small walls (voxel basins, physical rule: median area 0.016-0.020 Vbar^(2/3) against 0.011 for single
+    changes); near a merge or split only 4-16% (single changes 2-8%); they change again in the next step about as often as single
+    changes do; wall density the same as for single changes
+    once tiny walls are cut (1.72 against 1.79 for 256^3). The commonest clumps are "lost 1, gained 1", "lost 2", "gained 2": pairs of
+    small walls that one unit changing hands makes or breaks together. No sign of a physical place (filament, merge) for them.
+  - Strength: two resolutions in each family, one seed, R = 4, a = 0.875-1. That the excess goes to 0 in the continuum is an
+    extrapolation. Not run: the 512^3-particle simulation (about 10 times the 70-minute 256^3 run and some 30 GB on a shared machine);
+    the field test above changes only the voxel size, which is the cleaner grid test.
+- Predictions against outcome: P1 partly (clumped share 0.20 -> 0.148 any face, 0.118 physical rule; predicted <= 0.12; basin count
+  1309 -> 1311, within 1%). P2 wrong (tracer zones clump more than voxels; the tracer is the coarser unit). P3 wrong (16.7, above
+  15.535, not 14.5). P4 partly (small walls yes; near merges no).
+- Neighbour rule, as fixed before the runs: the smallest eps at which 256^3 and 512^3 agree to 1% is 0.002 (16.74 and 16.73). This
+  agreement is a crossing of two curves; at eps 0.005-0.05 the 512^3 counts lie 2-3% lower. The firmer statement is the comparison
+  with Poisson-Voronoi at the same cut: at eps 0.002-0.02 every void tiling has more neighbours (0.3-3.1), at eps 0.05 the voxel
+  basins come level (table below). Uncut Poisson-Voronoi here:
+  15.551 +- 0.009 (Meijering 15.535).
+
+### Follow-up method
+- Test 1 (scripts/grid_refine.py): run s1f, a = 0.875-1 (65 snapshots, Delta a = 1/512), R = 4. The smoothed field is band-limited
+  (Gaussian weight at the 256^3 Nyquist frequency 2e-36 of the peak), so Fourier zero-padding samples the same field on 512^3; control:
+  the 512^3 field at the old voxels equals the 256^3 field to 9e-15 of its spread. Basins, walls (area in (Mpc/h)^2, mean field on the
+  wall), tracking and logger as before (scripts/basin_events.py, a generalised copy of the earlier stage 2 with per-change records).
+- Test 2 (scripts/nbody_tracers.py, tracer_zones.py): the s1f run repeated with the same code and seed, saving a fixed random 1/8 of the
+  particles at every step; the densities are bit-identical to the earlier run (control at 5 snapshots: deviation 0). Periodic Voronoi
+  cells of the tracers from Qhull's Delaunay triangulation with copies across the box (circumsphere margin check; volumes sum to L^3 to
+  2e-16; degree on Poisson points 15.54). freud 3.6.1 was tried first and dropped (its neighbour list was not symmetric and gave 14.60
+  on Poisson points). ZOBOV zones (Neyrinck 2008; density = 1 / Voronoi volume) for 262,144 and 32,768 tracers; smoothed-field zones
+  (the R = 4 field of all particles read at the tracers) for 1,048,576 and 131,072 tracers. Zones are not merged into voids.
+- Yardstick: the exact foam sampled at fixed steps, now down to 0.017 changes per cell per step (toy_coarse.py, base step 0.00125; its
+  rows at 0.067-0.53 repeat the earlier curve exactly). Compared quantity: among contact changes not tied to a merge or split, the
+  share clumped with other contact changes, at the same number of such changes per cell per step.
+- Wall rules: native (any face), 10 (Mpc/h)^2, and eps * Vbar^(2/3) (pv_walls.py gives Poisson-Voronoi under the same cut).
+- Limits: tracer zones under-sample voids (tracers follow mass), so 131k tracers find only about 800 zones against 1309 voxel basins;
+  1M tracers find 1259. Tracer walls are rough at the tracer spacing, which raises their neighbour counts.
+
+### Follow-up tables (scripts/summarise_followup.py)
+#### Grid refinement and grid-free zones: share of contact changes alone and clumped
+
+| run | tiling | spacing Delta a | wall rule | basins first / last | mean contacts | contact changes | per basin per step | share alone | clumped with contact changes | with a merge or split | non-merge changes per basin per step | clumped share of non-merge changes | exact foam at the same rate | contact changes per merged basin | balance failures |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| grid-s1f-R4-G256 | voxels 256^3 (1 Mpc/h) | 0.001953125 | faces 1 | 1309 / 1258 | 17.44 | 2874 | 0.035 | 0.592 | 0.190 | 0.218 | 0.027 | 0.243 | 0.080 | 21.9 | 0 |
+| grid-s1f-R4-G256 | voxels 256^3 (1 Mpc/h) | 0.001953125 | phys 10 | 1309 / 1258 | 14.40 | 2429 | 0.029 | 0.620 | 0.142 | 0.238 | 0.023 | 0.186 | 0.067 | 18.5 | 0 |
+| grid-s1f-R4-G256 | voxels 256^3 (1 Mpc/h) | 0.001953125 | eps 0.01 | 1309 / 1258 | 15.25 | 2537 | 0.031 | 0.624 | 0.145 | 0.231 | 0.024 | 0.189 | 0.070 | 19.4 | 0 |
+| grid-s1f-R4-G256 | voxels 256^3 (1 Mpc/h) | 0.00390625 | faces 1 | 1309 / 1258 | 17.44 | 2797 | 0.068 | 0.561 | 0.215 | 0.224 | 0.053 | 0.276 | 0.139 | 21.7 | 0 |
+| grid-s1f-R4-G256 | voxels 256^3 (1 Mpc/h) | 0.00390625 | phys 10 | 1309 / 1258 | 14.40 | 2320 | 0.056 | 0.589 | 0.156 | 0.255 | 0.042 | 0.210 | 0.116 | 18.0 | 0 |
+| grid-s1f-R4-G256 | voxels 256^3 (1 Mpc/h) | 0.00390625 | eps 0.01 | 1309 / 1258 | 15.25 | 2458 | 0.060 | 0.604 | 0.156 | 0.240 | 0.045 | 0.205 | 0.124 | 19.1 | 0 |
+| grid-s1f-R4-G256 | voxels 256^3 (1 Mpc/h) | 0.0078125 | faces 1 | 1309 / 1258 | 17.44 | 2675 | 0.130 | 0.518 | 0.246 | 0.237 | 0.099 | 0.322 | 0.219 | 21.4 | 0 |
+| grid-s1f-R4-G256 | voxels 256^3 (1 Mpc/h) | 0.0078125 | phys 10 | 1309 / 1258 | 14.40 | 2127 | 0.103 | 0.540 | 0.182 | 0.278 | 0.075 | 0.252 | 0.179 | 17.0 | 0 |
+| grid-s1f-R4-G256 | voxels 256^3 (1 Mpc/h) | 0.0078125 | eps 0.01 | 1309 / 1258 | 15.24 | 2288 | 0.111 | 0.565 | 0.176 | 0.260 | 0.082 | 0.237 | 0.193 | 18.3 | 0 |
+| grid-s1f-R4-G512 | voxels 512^3 (0.5 Mpc/h) | 0.001953125 | faces 1 | 1311 / 1284 | 18.07 | 4122 | 0.050 | 0.650 | 0.148 | 0.201 | 0.040 | 0.186 | 0.110 | 23.7 | 0 |
+| grid-s1f-R4-G512 | voxels 512^3 (0.5 Mpc/h) | 0.001953125 | phys 10 | 1311 / 1284 | 14.00 | 2780 | 0.033 | 0.633 | 0.103 | 0.264 | 0.025 | 0.140 | 0.073 | 16.0 | 0 |
+| grid-s1f-R4-G512 | voxels 512^3 (0.5 Mpc/h) | 0.001953125 | eps 0.01 | 1311 / 1284 | 14.88 | 3093 | 0.037 | 0.627 | 0.118 | 0.255 | 0.028 | 0.158 | 0.081 | 17.8 | 0 |
+| grid-s1f-R4-G512 | voxels 512^3 (0.5 Mpc/h) | 0.00390625 | faces 1 | 1311 / 1284 | 18.07 | 3916 | 0.094 | 0.616 | 0.167 | 0.217 | 0.074 | 0.213 | 0.177 | 23.4 | 0 |
+| grid-s1f-R4-G512 | voxels 512^3 (0.5 Mpc/h) | 0.00390625 | phys 10 | 1311 / 1284 | 14.00 | 2517 | 0.060 | 0.584 | 0.122 | 0.294 | 0.043 | 0.173 | 0.118 | 15.1 | 0 |
+| grid-s1f-R4-G512 | voxels 512^3 (0.5 Mpc/h) | 0.00390625 | eps 0.01 | 1311 / 1284 | 14.88 | 2780 | 0.067 | 0.586 | 0.129 | 0.285 | 0.048 | 0.181 | 0.130 | 16.6 | 0 |
+| grid-s1f-R4-G512 | voxels 512^3 (0.5 Mpc/h) | 0.0078125 | faces 1 | 1311 / 1284 | 18.07 | 3490 | 0.168 | 0.568 | 0.201 | 0.230 | 0.129 | 0.262 | 0.257 | 22.8 | 0 |
+| grid-s1f-R4-G512 | voxels 512^3 (0.5 Mpc/h) | 0.0078125 | phys 10 | 1311 / 1284 | 14.00 | 2131 | 0.102 | 0.532 | 0.143 | 0.325 | 0.069 | 0.211 | 0.168 | 13.9 | 0 |
+| grid-s1f-R4-G512 | voxels 512^3 (0.5 Mpc/h) | 0.0078125 | eps 0.01 | 1311 / 1284 | 14.88 | 2413 | 0.116 | 0.532 | 0.169 | 0.299 | 0.081 | 0.241 | 0.191 | 15.8 | 0 |
+| zones-smooth-131k | Voronoi tracers, smooth, 131072 tracers | 0.001953125 | faces 0 | 804 / 791 | 18.43 | 2987 | 0.059 | 0.619 | 0.323 | 0.058 | 0.055 | 0.343 | 0.144 | 74.7 | 0 |
+| zones-smooth-131k | Voronoi tracers, smooth, 131072 tracers | 0.001953125 | eps 0.01 | 804 / 791 | 16.72 | 2645 | 0.052 | 0.620 | 0.312 | 0.068 | 0.048 | 0.334 | 0.130 | 66.1 | 0 |
+| zones-smooth-131k | Voronoi tracers, smooth, 131072 tracers | 0.00390625 | faces 0 | 804 / 791 | 18.43 | 2804 | 0.110 | 0.563 | 0.373 | 0.064 | 0.103 | 0.398 | 0.224 | 70.1 | 0 |
+| zones-smooth-131k | Voronoi tracers, smooth, 131072 tracers | 0.00390625 | eps 0.01 | 804 / 791 | 16.72 | 2520 | 0.099 | 0.567 | 0.355 | 0.078 | 0.091 | 0.385 | 0.207 | 63.0 | 0 |
+| zones-smooth-131k | Voronoi tracers, smooth, 131072 tracers | 0.0078125 | faces 0 | 804 / 791 | 18.43 | 2564 | 0.202 | 0.471 | 0.433 | 0.097 | 0.182 | 0.479 | 0.331 | 64.1 | 0 |
+| zones-smooth-131k | Voronoi tracers, smooth, 131072 tracers | 0.0078125 | eps 0.01 | 804 / 791 | 16.72 | 2311 | 0.182 | 0.493 | 0.401 | 0.106 | 0.162 | 0.448 | 0.305 | 57.8 | 0 |
+| zones-smooth-1m | Voronoi tracers, smooth, 1048576 tracers | 0.001953125 | faces 0 | 1259 / 1230 | 19.22 | 9937 | 0.125 | 0.569 | 0.391 | 0.040 | 0.120 | 0.407 | 0.246 | 118.3 | 0 |
+| zones-smooth-1m | Voronoi tracers, smooth, 1048576 tracers | 0.001953125 | eps 0.01 | 1259 / 1230 | 16.59 | 7018 | 0.088 | 0.680 | 0.269 | 0.051 | 0.084 | 0.284 | 0.195 | 83.5 | 0 |
+| zones-smooth-1m | Voronoi tracers, smooth, 1048576 tracers | 0.00390625 | faces 0 | 1259 / 1230 | 19.22 | 8363 | 0.210 | 0.496 | 0.452 | 0.052 | 0.199 | 0.476 | 0.353 | 99.6 | 0 |
+| zones-smooth-1m | Voronoi tracers, smooth, 1048576 tracers | 0.00390625 | eps 0.01 | 1259 / 1230 | 16.59 | 6192 | 0.155 | 0.606 | 0.333 | 0.060 | 0.146 | 0.355 | 0.281 | 73.7 | 0 |
+| zones-smooth-1m | Voronoi tracers, smooth, 1048576 tracers | 0.0078125 | faces 0 | 1259 / 1230 | 19.22 | 6845 | 0.343 | 0.408 | 0.513 | 0.079 | 0.317 | 0.557 | 0.469 | 82.5 | 0 |
+| zones-smooth-1m | Voronoi tracers, smooth, 1048576 tracers | 0.0078125 | eps 0.01 | 1259 / 1230 | 16.58 | 5261 | 0.264 | 0.514 | 0.405 | 0.081 | 0.243 | 0.440 | 0.399 | 63.4 | 0 |
+| zones-zobov-262k | Voronoi tracers, zobov, 262144 tracers | 0.001953125 | faces 0 | 1879 / 1741 | 17.40 | 5718 | 0.050 | 0.512 | 0.321 | 0.167 | 0.041 | 0.385 | 0.114 | 24.2 | 0 |
+| zones-zobov-262k | Voronoi tracers, zobov, 262144 tracers | 0.001953125 | eps 0.01 | 1879 / 1741 | 16.01 | 5387 | 0.047 | 0.514 | 0.316 | 0.170 | 0.039 | 0.381 | 0.108 | 22.8 | 0 |
+| zones-zobov-262k | Voronoi tracers, zobov, 262144 tracers | 0.00390625 | faces 0 | 1879 / 1741 | 17.40 | 5462 | 0.095 | 0.475 | 0.335 | 0.189 | 0.076 | 0.414 | 0.182 | 23.1 | 0 |
+| zones-zobov-262k | Voronoi tracers, zobov, 262144 tracers | 0.00390625 | eps 0.01 | 1879 / 1741 | 16.01 | 5186 | 0.090 | 0.475 | 0.341 | 0.184 | 0.073 | 0.418 | 0.176 | 22.0 | 0 |
+| zones-zobov-262k | Voronoi tracers, zobov, 262144 tracers | 0.0078125 | faces 0 | 1879 / 1741 | 17.39 | 5136 | 0.178 | 0.412 | 0.367 | 0.222 | 0.138 | 0.471 | 0.268 | 21.9 | 0 |
+| zones-zobov-262k | Voronoi tracers, zobov, 262144 tracers | 0.0078125 | eps 0.01 | 1879 / 1741 | 16.01 | 4906 | 0.170 | 0.417 | 0.370 | 0.213 | 0.133 | 0.470 | 0.261 | 21.0 | 0 |
+| zones-zobov-32k | Voronoi tracers, zobov, 32768 tracers | 0.001953125 | faces 0 | 329 / 315 | 17.78 | 829 | 0.040 | 0.492 | 0.391 | 0.117 | 0.036 | 0.443 | 0.099 | 29.6 | 0 |
+| zones-zobov-32k | Voronoi tracers, zobov, 32768 tracers | 0.001953125 | eps 0.01 | 329 / 315 | 16.19 | 875 | 0.042 | 0.496 | 0.401 | 0.103 | 0.038 | 0.447 | 0.106 | 31.2 | 0 |
+| zones-zobov-32k | Voronoi tracers, zobov, 32768 tracers | 0.00390625 | faces 0 | 329 / 315 | 17.78 | 812 | 0.079 | 0.472 | 0.385 | 0.143 | 0.068 | 0.450 | 0.164 | 29.0 | 0 |
+| zones-zobov-32k | Voronoi tracers, zobov, 32768 tracers | 0.00390625 | eps 0.01 | 329 / 315 | 16.19 | 851 | 0.082 | 0.469 | 0.405 | 0.126 | 0.072 | 0.464 | 0.174 | 30.4 | 0 |
+| zones-zobov-32k | Voronoi tracers, zobov, 32768 tracers | 0.0078125 | faces 0 | 329 / 315 | 17.78 | 764 | 0.148 | 0.420 | 0.415 | 0.165 | 0.124 | 0.497 | 0.250 | 27.3 | 0 |
+| zones-zobov-32k | Voronoi tracers, zobov, 32768 tracers | 0.0078125 | eps 0.01 | 329 / 315 | 16.19 | 803 | 0.156 | 0.427 | 0.428 | 0.144 | 0.133 | 0.501 | 0.261 | 28.7 | 0 |
+
+#### Where the contact changes happen (finest spacing; wall area in units of Vbar^(2/3))
+
+| run | wall rule | group | contact changes | median wall area | share with wall area < 0.01 | share < 0.03 | mean smoothed field on the wall | share near a merge or split (same or adjacent step) | share that change again in an adjacent step | share lost (rest gained) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| grid-s1f-R4-G256 | faces 1 | alone | 1701 | 0.0018 | 0.945 | 0.986 | 2.087 | 0.060 | 0.036 | 0.487 |
+| grid-s1f-R4-G256 | faces 1 | clumped | 546 | 0.0036 | 0.689 | 0.844 | 2.528 | 0.101 | 0.042 | 0.498 |
+| grid-s1f-R4-G256 | faces 1 | merge | 627 | 0.0465 | 0.255 | 0.413 | 1.410 | 1.000 | 0.043 | 0.388 |
+| grid-s1f-R4-G256 | eps 0.01 | alone | 1582 | 0.0109 | 0.000 | 0.968 | 1.791 | 0.052 | 0.061 | 0.489 |
+| grid-s1f-R4-G256 | eps 0.01 | clumped | 369 | 0.0199 | 0.000 | 0.626 | 1.715 | 0.095 | 0.030 | 0.504 |
+| grid-s1f-R4-G256 | eps 0.01 | merge | 586 | 0.0875 | 0.000 | 0.239 | 1.163 | 1.000 | 0.036 | 0.391 |
+| grid-s1f-R4-G512 | faces 1 | alone | 2681 | 0.0005 | 0.984 | 0.996 | 2.302 | 0.066 | 0.091 | 0.502 |
+| grid-s1f-R4-G512 | faces 1 | clumped | 612 | 0.0009 | 0.812 | 0.889 | 2.628 | 0.155 | 0.108 | 0.471 |
+| grid-s1f-R4-G512 | faces 1 | merge | 829 | 0.0278 | 0.351 | 0.511 | 1.717 | 1.000 | 0.090 | 0.510 |
+| grid-s1f-R4-G512 | eps 0.01 | alone | 1940 | 0.0105 | 0.000 | 0.987 | 1.652 | 0.073 | 0.231 | 0.513 |
+| grid-s1f-R4-G512 | eps 0.01 | clumped | 364 | 0.0159 | 0.000 | 0.676 | 1.723 | 0.157 | 0.154 | 0.481 |
+| grid-s1f-R4-G512 | eps 0.01 | merge | 789 | 0.0933 | 0.000 | 0.276 | 1.236 | 1.000 | 0.089 | 0.513 |
+| zones-smooth-131k | faces 0 | alone | 1849 | 0.0014 | 0.813 | 0.939 | 3.289 | 0.025 | 0.140 | 0.491 |
+| zones-smooth-131k | faces 0 | clumped | 964 | 0.0074 | 0.548 | 0.739 | 3.126 | 0.040 | 0.082 | 0.494 |
+| zones-smooth-131k | faces 0 | merge | 174 | 0.0563 | 0.178 | 0.368 | 1.856 | 1.000 | 0.006 | 0.460 |
+| zones-smooth-131k | eps 0.01 | alone | 1640 | 0.0155 | 0.000 | 0.814 | 2.784 | 0.033 | 0.118 | 0.505 |
+| zones-smooth-131k | eps 0.01 | clumped | 824 | 0.0272 | 0.000 | 0.530 | 2.338 | 0.040 | 0.052 | 0.498 |
+| zones-smooth-131k | eps 0.01 | merge | 181 | 0.0888 | 0.000 | 0.249 | 1.722 | 1.000 | 0.022 | 0.470 |
+| zones-smooth-1m | faces 0 | alone | 5655 | 0.0003 | 0.938 | 0.982 | 3.559 | 0.043 | 0.275 | 0.494 |
+| zones-smooth-1m | faces 0 | clumped | 3888 | 0.0006 | 0.834 | 0.915 | 4.783 | 0.043 | 0.289 | 0.503 |
+| zones-smooth-1m | faces 0 | merge | 394 | 0.0257 | 0.350 | 0.525 | 2.339 | 1.000 | 0.079 | 0.396 |
+| zones-smooth-1m | eps 0.01 | alone | 4772 | 0.0128 | 0.000 | 0.911 | 2.604 | 0.038 | 0.235 | 0.498 |
+| zones-smooth-1m | eps 0.01 | clumped | 1890 | 0.0174 | 0.000 | 0.705 | 2.608 | 0.039 | 0.167 | 0.507 |
+| zones-smooth-1m | eps 0.01 | merge | 356 | 0.0773 | 0.000 | 0.292 | 1.534 | 1.000 | 0.045 | 0.404 |
+| zones-zobov-262k | faces 0 | alone | 2930 | 0.0019 | 0.734 | 0.902 | 109.642 | 0.066 | 0.111 | 0.498 |
+| zones-zobov-262k | faces 0 | clumped | 1834 | 0.0169 | 0.397 | 0.606 | 56.890 | 0.051 | 0.051 | 0.489 |
+| zones-zobov-262k | faces 0 | merge | 954 | 0.1077 | 0.180 | 0.301 | 16.719 | 1.000 | 0.013 | 0.303 |
+| zones-zobov-262k | eps 0.01 | alone | 2769 | 0.0173 | 0.000 | 0.754 | 23.562 | 0.077 | 0.090 | 0.512 |
+| zones-zobov-262k | eps 0.01 | clumped | 1702 | 0.0422 | 0.000 | 0.399 | 11.722 | 0.046 | 0.040 | 0.492 |
+| zones-zobov-262k | eps 0.01 | merge | 916 | 0.1656 | 0.000 | 0.158 | 7.670 | 1.000 | 0.016 | 0.293 |
+| zones-zobov-32k | faces 0 | alone | 408 | 0.0027 | 0.691 | 0.877 | 16.992 | 0.037 | 0.051 | 0.542 |
+| zones-zobov-32k | faces 0 | clumped | 324 | 0.0228 | 0.312 | 0.565 | 9.535 | 0.040 | 0.028 | 0.506 |
+| zones-zobov-32k | faces 0 | merge | 97 | 0.0757 | 0.237 | 0.299 | 1.971 | 1.000 | 0.021 | 0.392 |
+| zones-zobov-32k | eps 0.01 | alone | 434 | 0.0193 | 0.000 | 0.721 | 7.783 | 0.041 | 0.067 | 0.523 |
+| zones-zobov-32k | eps 0.01 | clumped | 351 | 0.0450 | 0.000 | 0.373 | 3.310 | 0.037 | 0.020 | 0.499 |
+| zones-zobov-32k | eps 0.01 | merge | 90 | 0.1451 | 0.000 | 0.078 | 1.772 | 1.000 | 0.022 | 0.378 |
+
+#### Top clump patterns (finest spacing, native wall rule)
+
+- grid-s1f-R4-G256 (faces 1): born 0 died 0 lost 1 gained 1 x70; born 0 died 0 lost 2 gained 0 x38; born 0 died 0 lost 0 gained 2 x33; born 0 died 1 lost 0 gained 1 x20; born 0 died 1 lost 0 gained 2 x15
+- grid-s1f-R4-G512 (faces 1): born 0 died 0 lost 1 gained 1 x85; born 0 died 0 lost 0 gained 2 x53; born 0 died 0 lost 2 gained 0 x36; born 0 died 1 lost 0 gained 1 x32; born 0 died 1 lost 0 gained 2 x15
+- zones-smooth-131k (faces 0): born 0 died 0 lost 2 gained 0 x83; born 0 died 0 lost 0 gained 2 x83; born 0 died 0 lost 1 gained 1 x69; born 0 died 0 lost 2 gained 1 x17; born 0 died 0 lost 1 gained 2 x14
+- zones-smooth-1m (faces 0): born 0 died 0 lost 1 gained 1 x345; born 0 died 0 lost 2 gained 0 x309; born 0 died 0 lost 0 gained 2 x298; born 0 died 0 lost 2 gained 1 x78; born 0 died 0 lost 1 gained 2 x77
+- zones-zobov-262k (faces 0): born 0 died 0 lost 0 gained 2 x134; born 0 died 0 lost 2 gained 0 x132; born 0 died 0 lost 1 gained 1 x123; born 0 died 1 lost 0 gained 1 x40; born 0 died 0 lost 2 gained 1 x39
+- zones-zobov-32k (faces 0): born 0 died 0 lost 2 gained 0 x26; born 0 died 0 lost 0 gained 2 x23; born 0 died 0 lost 1 gained 1 x15; born 0 died 1 lost 0 gained 1 x9; born 0 died 1 lost 0 gained 2 x8
+
+#### Neighbours per basin against the wall rule: a wall counts if its area >= eps * Vbar^(2/3) (mean over snapshots)
+
+| tiling | eps 0 | eps 0.001 | eps 0.002 | eps 0.005 | eps 0.01 | eps 0.02 | eps 0.05 |
+|---|---|---|---|---|---|---|---|
+| Poisson-Voronoi (N = 8000, 8 seeds) | 15.551 +- 0.009 | 15.117 +- 0.006 | 14.933 +- 0.006 | 14.573 +- 0.007 | 14.158 +- 0.005 | 13.537 +- 0.005 | 12.274 +- 0.007 |
+| grid-s1f-R4-G256 | 17.44 | 17.44 | 16.74 | 16.22 | 15.25 | 14.13 | 12.46 |
+| grid-s1f-R4-G512 | 18.07 | 17.21 | 16.73 | 15.77 | 14.88 | 13.83 | 12.12 |
+| zones-smooth-131k | 18.43 | 17.96 | 17.73 | 17.26 | 16.72 | 15.92 | 14.40 |
+| zones-smooth-1m | 19.22 | 18.39 | 18.02 | 17.31 | 16.59 | 15.59 | 13.91 |
+| zones-zobov-262k | 17.40 | 16.98 | 16.80 | 16.44 | 16.01 | 15.33 | 14.06 |
+| zones-zobov-32k | 17.78 | 17.36 | 17.16 | 16.69 | 16.19 | 15.50 | 14.13 |
+
 ## Limits
 - The simulation is particle-mesh: force resolution about 0.5 Mpc/h, one 256 Mpc/h box. The basins are watershed basins at a fixed
   smoothing, not the hierarchical ZOBOV/VIDE voids, chosen so that they tile space and nesting plays no part.
@@ -352,9 +512,9 @@ Predictions:
   Guard for next time: pipe job output through grep PROGRESS, never to /dev/null.
 
 ## Leads
-- Grid refinement: the same smoothing on a 512^3 density grid. If the 20% clumped share falls, it is the voxel grid; if it stays, it is
-  physics. The same test with Voronoi (particle) basins as in ZOBOV.
-- Do the clumps sit where walls flicker? Compare them with the lost-and-regained-next-step contacts.
+- Done (follow-up): grid refinement and Voronoi (particle) basins; the clumping is the discreteness of the units. Next, if wanted: a
+  third voxel size (768^3, about 25 GB per worker) to test that the excess falls linearly with voxel size.
+- Done (follow-up): clumps change again about as often as single changes, sit on small walls, and are rarely at merges.
 - Comparison table (plan Section 4) gets these candidate numbers:
   - void basins: contact changes per merged basin about 25;
   - toy power diagram: 15.9 per birth or death (31.8 per death);
@@ -365,5 +525,7 @@ Predictions:
 - scripts/toy_foam.py (toy, exact events, adapter to the shared logger); test_toy.py (independent checks: ALL OK); toy_check.py;
   toy_coarse.py (fixed-step sampling curve); toy_static.py (neighbours by N).
 - scripts/nbody_pm.py (pmwd run); void_basins.py (basins, contacts, tracking, logger); summarise.py (tables).
+- Follow-up: grid_refine.py, basin_events.py, nbody_tracers.py, tracer_zones.py, pv_walls.py, summarise_followup.py; results/grid-*.json,
+  zones-*.json, pv-walls.json, toy-coarse-voronoi-fine.json.
 - results/*.json: every number above. The density grids (about 6-8 GB per run) stay on the compute machine and are not in git.
 - The event logger studies/2026-11-15-event-logger/scripts/eventlog.py is imported unchanged.

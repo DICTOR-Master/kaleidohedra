@@ -1,13 +1,13 @@
 """Fixed-step sampling of the toy foam, measured exactly as the void basins are: frames every dt (no halving) through the shared logger,
 then the share of SEEN contact changes that come alone (a logger 'contact gained'/'contact lost' event), against the seen contact
-changes per cell per step. Gives the curve a one-at-a-time process traces when sampled coarsely. Usage: toy_coarse.py OUT N mode A"""
+changes per cell per step. Gives the curve a one-at-a-time process traces when sampled coarsely. Usage: toy_coarse.py OUT N mode A [dt0 (default 0.005)]"""
 import sys, os, json, re
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from toy_foam import Foam, foam_N, tiling, EL
 out, N, mode, A = sys.argv[1], int(sys.argv[2]), sys.argv[3], float(sys.argv[4])
 f = Foam(N, mode, 1.0, 0.5, A, 1); foam_N[0] = N
-dt0 = 0.005; ts = np.arange(0, 1 + 1e-12, dt0)
+dt0 = float(sys.argv[5]) if len(sys.argv) > 5 else 0.005; ts = np.arange(0, 1 + 1e-12, dt0)
 frames = []
 for i, t in enumerate(ts):
     frames.append(tiling(float(t), f.state(t)))

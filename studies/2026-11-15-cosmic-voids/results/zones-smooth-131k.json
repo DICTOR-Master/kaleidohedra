@@ -1,0 +1,1201 @@
+{
+ "mode": "smooth",
+ "m": 16,
+ "n_tracers": 131072,
+ "R_Mpc_h": 4.0,
+ "a_min": 0.875,
+ "L_Mpc_h": 256.0,
+ "nbody": {
+  "code": "pmwd (arXiv:2211.09958)",
+  "N": 256,
+  "L_Mpc_h": 256.0,
+  "grid": 256,
+  "da": 0.001953125,
+  "seed": 1,
+  "subsample": 8,
+  "n_tracers": 2097152,
+  "tracer_rng_seed": 12345,
+  "snapshots": [
+   {
+    "k": 0,
+    "a": 0.75
+   },
+   {
+    "k": 1,
+    "a": 0.751953125
+   },
+   {
+    "k": 2,
+    "a": 0.75390625
+   },
+   {
+    "k": 3,
+    "a": 0.755859375
+   },
+   {
+    "k": 4,
+    "a": 0.7578125
+   },
+   {
+    "k": 5,
+    "a": 0.759765625
+   },
+   {
+    "k": 6,
+    "a": 0.76171875
+   },
+   {
+    "k": 7,
+    "a": 0.763671875
+   },
+   {
+    "k": 8,
+    "a": 0.765625
+   },
+   {
+    "k": 9,
+    "a": 0.767578125
+   },
+   {
+    "k": 10,
+    "a": 0.76953125
+   },
+   {
+    "k": 11,
+    "a": 0.771484375
+   },
+   {
+    "k": 12,
+    "a": 0.7734375
+   },
+   {
+    "k": 13,
+    "a": 0.775390625
+   },
+   {
+    "k": 14,
+    "a": 0.77734375
+   },
+   {
+    "k": 15,
+    "a": 0.779296875
+   },
+   {
+    "k": 16,
+    "a": 0.78125
+   },
+   {
+    "k": 17,
+    "a": 0.783203125
+   },
+   {
+    "k": 18,
+    "a": 0.78515625
+   },
+   {
+    "k": 19,
+    "a": 0.787109375
+   },
+   {
+    "k": 20,
+    "a": 0.7890625
+   },
+   {
+    "k": 21,
+    "a": 0.791015625
+   },
+   {
+    "k": 22,
+    "a": 0.79296875
+   },
+   {
+    "k": 23,
+    "a": 0.794921875
+   },
+   {
+    "k": 24,
+    "a": 0.796875
+   },
+   {
+    "k": 25,
+    "a": 0.798828125
+   },
+   {
+    "k": 26,
+    "a": 0.80078125
+   },
+   {
+    "k": 27,
+    "a": 0.802734375
+   },
+   {
+    "k": 28,
+    "a": 0.8046875
+   },
+   {
+    "k": 29,
+    "a": 0.806640625
+   },
+   {
+    "k": 30,
+    "a": 0.80859375
+   },
+   {
+    "k": 31,
+    "a": 0.810546875
+   },
+   {
+    "k": 32,
+    "a": 0.8125
+   },
+   {
+    "k": 33,
+    "a": 0.814453125
+   },
+   {
+    "k": 34,
+    "a": 0.81640625
+   },
+   {
+    "k": 35,
+    "a": 0.818359375
+   },
+   {
+    "k": 36,
+    "a": 0.8203125
+   },
+   {
+    "k": 37,
+    "a": 0.822265625
+   },
+   {
+    "k": 38,
+    "a": 0.82421875
+   },
+   {
+    "k": 39,
+    "a": 0.826171875
+   },
+   {
+    "k": 40,
+    "a": 0.828125
+   },
+   {
+    "k": 41,
+    "a": 0.830078125
+   },
+   {
+    "k": 42,
+    "a": 0.83203125
+   },
+   {
+    "k": 43,
+    "a": 0.833984375
+   },
+   {
+    "k": 44,
+    "a": 0.8359375
+   },
+   {
+    "k": 45,
+    "a": 0.837890625
+   },
+   {
+    "k": 46,
+    "a": 0.83984375
+   },
+   {
+    "k": 47,
+    "a": 0.841796875
+   },
+   {
+    "k": 48,
+    "a": 0.84375
+   },
+   {
+    "k": 49,
+    "a": 0.845703125
+   },
+   {
+    "k": 50,
+    "a": 0.84765625
+   },
+   {
+    "k": 51,
+    "a": 0.849609375
+   },
+   {
+    "k": 52,
+    "a": 0.8515625
+   },
+   {
+    "k": 53,
+    "a": 0.853515625
+   },
+   {
+    "k": 54,
+    "a": 0.85546875
+   },
+   {
+    "k": 55,
+    "a": 0.857421875
+   },
+   {
+    "k": 56,
+    "a": 0.859375
+   },
+   {
+    "k": 57,
+    "a": 0.861328125
+   },
+   {
+    "k": 58,
+    "a": 0.86328125
+   },
+   {
+    "k": 59,
+    "a": 0.865234375
+   },
+   {
+    "k": 60,
+    "a": 0.8671875
+   },
+   {
+    "k": 61,
+    "a": 0.869140625
+   },
+   {
+    "k": 62,
+    "a": 0.87109375
+   },
+   {
+    "k": 63,
+    "a": 0.873046875
+   },
+   {
+    "k": 64,
+    "a": 0.875
+   },
+   {
+    "k": 65,
+    "a": 0.876953125
+   },
+   {
+    "k": 66,
+    "a": 0.87890625
+   },
+   {
+    "k": 67,
+    "a": 0.880859375
+   },
+   {
+    "k": 68,
+    "a": 0.8828125
+   },
+   {
+    "k": 69,
+    "a": 0.884765625
+   },
+   {
+    "k": 70,
+    "a": 0.88671875
+   },
+   {
+    "k": 71,
+    "a": 0.888671875
+   },
+   {
+    "k": 72,
+    "a": 0.890625
+   },
+   {
+    "k": 73,
+    "a": 0.892578125
+   },
+   {
+    "k": 74,
+    "a": 0.89453125
+   },
+   {
+    "k": 75,
+    "a": 0.896484375
+   },
+   {
+    "k": 76,
+    "a": 0.8984375
+   },
+   {
+    "k": 77,
+    "a": 0.900390625
+   },
+   {
+    "k": 78,
+    "a": 0.90234375
+   },
+   {
+    "k": 79,
+    "a": 0.904296875
+   },
+   {
+    "k": 80,
+    "a": 0.90625
+   },
+   {
+    "k": 81,
+    "a": 0.908203125
+   },
+   {
+    "k": 82,
+    "a": 0.91015625
+   },
+   {
+    "k": 83,
+    "a": 0.912109375
+   },
+   {
+    "k": 84,
+    "a": 0.9140625
+   },
+   {
+    "k": 85,
+    "a": 0.916015625
+   },
+   {
+    "k": 86,
+    "a": 0.91796875
+   },
+   {
+    "k": 87,
+    "a": 0.919921875
+   },
+   {
+    "k": 88,
+    "a": 0.921875
+   },
+   {
+    "k": 89,
+    "a": 0.923828125
+   },
+   {
+    "k": 90,
+    "a": 0.92578125
+   },
+   {
+    "k": 91,
+    "a": 0.927734375
+   },
+   {
+    "k": 92,
+    "a": 0.9296875
+   },
+   {
+    "k": 93,
+    "a": 0.931640625
+   },
+   {
+    "k": 94,
+    "a": 0.93359375
+   },
+   {
+    "k": 95,
+    "a": 0.935546875
+   },
+   {
+    "k": 96,
+    "a": 0.9375
+   },
+   {
+    "k": 97,
+    "a": 0.939453125
+   },
+   {
+    "k": 98,
+    "a": 0.94140625
+   },
+   {
+    "k": 99,
+    "a": 0.943359375
+   },
+   {
+    "k": 100,
+    "a": 0.9453125
+   },
+   {
+    "k": 101,
+    "a": 0.947265625
+   },
+   {
+    "k": 102,
+    "a": 0.94921875
+   },
+   {
+    "k": 103,
+    "a": 0.951171875
+   },
+   {
+    "k": 104,
+    "a": 0.953125
+   },
+   {
+    "k": 105,
+    "a": 0.955078125
+   },
+   {
+    "k": 106,
+    "a": 0.95703125
+   },
+   {
+    "k": 107,
+    "a": 0.958984375
+   },
+   {
+    "k": 108,
+    "a": 0.9609375
+   },
+   {
+    "k": 109,
+    "a": 0.962890625
+   },
+   {
+    "k": 110,
+    "a": 0.96484375
+   },
+   {
+    "k": 111,
+    "a": 0.966796875
+   },
+   {
+    "k": 112,
+    "a": 0.96875
+   },
+   {
+    "k": 113,
+    "a": 0.970703125
+   },
+   {
+    "k": 114,
+    "a": 0.97265625
+   },
+   {
+    "k": 115,
+    "a": 0.974609375
+   },
+   {
+    "k": 116,
+    "a": 0.9765625
+   },
+   {
+    "k": 117,
+    "a": 0.978515625
+   },
+   {
+    "k": 118,
+    "a": 0.98046875
+   },
+   {
+    "k": 119,
+    "a": 0.982421875
+   },
+   {
+    "k": 120,
+    "a": 0.984375
+   },
+   {
+    "k": 121,
+    "a": 0.986328125
+   },
+   {
+    "k": 122,
+    "a": 0.98828125
+   },
+   {
+    "k": 123,
+    "a": 0.990234375
+   },
+   {
+    "k": 124,
+    "a": 0.9921875
+   },
+   {
+    "k": 125,
+    "a": 0.994140625
+   },
+   {
+    "k": 126,
+    "a": 0.99609375
+   },
+   {
+    "k": 127,
+    "a": 0.998046875
+   },
+   {
+    "k": 128,
+    "a": 1.0
+   }
+  ],
+  "control": [
+   {
+    "k": 0,
+    "a": 0.75,
+    "max_dev_over_std": 0.0
+   },
+   {
+    "k": 32,
+    "a": 0.8125,
+    "max_dev_over_std": 0.0
+   },
+   {
+    "k": 64,
+    "a": 0.875,
+    "max_dev_over_std": 0.0
+   },
+   {
+    "k": 96,
+    "a": 0.9375,
+    "max_dev_over_std": 0.0
+   },
+   {
+    "k": 128,
+    "a": 1.0,
+    "max_dev_over_std": 0.0
+   }
+  ],
+  "ref": "nbody-s1f"
+ },
+ "n_snapshots": 65,
+ "max_volume_error": 2.220446049250313e-16,
+ "max_nlist_asymmetry": 0,
+ "eps_list": [
+  0.0,
+  0.001,
+  0.002,
+  0.005,
+  0.01,
+  0.02,
+  0.05
+ ],
+ "neighbour_curve_first": [
+  18.455223880597014,
+  17.96268656716418,
+  17.761194029850746,
+  17.33582089552239,
+  16.756218905472636,
+  15.990049751243781,
+  14.462686567164178
+ ],
+ "neighbour_curve_last": [
+  18.563843236409607,
+  18.085967130214918,
+  17.81289506953224,
+  17.342604298356513,
+  16.74841972187105,
+  15.949431099873578,
+  14.40960809102402
+ ],
+ "neighbour_curve_mean": [
+  18.426324537451205,
+  17.957665802030945,
+  17.729141793380435,
+  17.26064516987207,
+  16.720527248431896,
+  15.920875134364282,
+  14.395979405221668
+ ],
+ "zones_per_snapshot": [
+  804,
+  803,
+  803,
+  801,
+  802,
+  801,
+  800,
+  801,
+  801,
+  799,
+  799,
+  798,
+  798,
+  798,
+  797,
+  798,
+  797,
+  797,
+  797,
+  796,
+  796,
+  793,
+  791,
+  791,
+  791,
+  791,
+  791,
+  791,
+  791,
+  791,
+  791,
+  792,
+  792,
+  793,
+  793,
+  794,
+  795,
+  794,
+  793,
+  794,
+  795,
+  795,
+  796,
+  795,
+  795,
+  795,
+  796,
+  796,
+  796,
+  795,
+  794,
+  794,
+  794,
+  793,
+  790,
+  790,
+  789,
+  787,
+  787,
+  788,
+  790,
+  791,
+  791,
+  791,
+  791
+ ],
+ "variants": [
+  {
+   "k": 1,
+   "rule": [
+    "faces",
+    0.0
+   ],
+   "snapshots_used": 65,
+   "counts": {
+    "clump": 401,
+    "contact lost": 908,
+    "contact gained": 941,
+    "split": 5,
+    "merge": 10
+   },
+   "top_clump_patterns": {
+    "born 0 died 0 lost 2 gained 0": 83,
+    "born 0 died 0 lost 0 gained 2": 83,
+    "born 0 died 0 lost 1 gained 1": 69,
+    "born 0 died 0 lost 2 gained 1": 17,
+    "born 0 died 0 lost 1 gained 2": 14,
+    "born 0 died 0 lost 0 gained 3": 14,
+    "born 0 died 0 lost 2 gained 2": 11,
+    "born 0 died 1 lost 0 gained 1": 10,
+    "born 0 died 0 lost 3 gained 1": 9,
+    "born 0 died 0 lost 3 gained 0": 9,
+    "born 0 died 1 lost 0 gained 2": 7,
+    "born 1 died 0 lost 2 gained 0": 5
+   },
+   "derived": {
+    "contact changes, with a merge/split/birth/death": 174,
+    "cells died (merge or death)": 40,
+    "cells born (split or birth)": 27,
+    "contact changes, clumped with other contact changes": 964,
+    "clump size 4": 31,
+    "contact changes, alone": 1849,
+    "clump size 2": 235,
+    "clump size 6+": 17,
+    "clump size 3": 54,
+    "clump size 5": 12
+   },
+   "contact_changes_total": 2987,
+   "per_basin_per_step": 0.05873290240455355,
+   "fraction_alone": 0.6190157348510211,
+   "fraction_clumped": 0.3227318379645129,
+   "contact_changes_per_merge": 74.675,
+   "balance_failures": 0,
+   "basins_first_last": [
+    804,
+    791
+   ],
+   "mean_contacts_first_last": [
+    18.455223880597014,
+    18.563843236409607
+   ],
+   "mean_contacts_mean": 18.426324537451208,
+   "characterisation": {
+    "merge": {
+     "n": 174,
+     "median_area_eps": 0.05626431926648634,
+     "frac_area_below_0p01": 0.1781609195402299,
+     "frac_area_below_0p03": 0.367816091954023,
+     "mean_wall_field": 1.8563021697704063,
+     "frac_near_merge": 1.0,
+     "frac_flicker": 0.005747126436781609,
+     "frac_lost": 0.45977011494252873
+    },
+    "clumped": {
+     "n": 964,
+     "median_area_eps": 0.007382315760694499,
+     "frac_area_below_0p01": 0.5477178423236515,
+     "frac_area_below_0p03": 0.7385892116182573,
+     "mean_wall_field": 3.125927555710086,
+     "frac_near_merge": 0.04045643153526971,
+     "frac_flicker": 0.08195020746887967,
+     "frac_lost": 0.49377593360995853
+    },
+    "alone": {
+     "n": 1849,
+     "median_area_eps": 0.0014442375592337432,
+     "frac_area_below_0p01": 0.8134126554894537,
+     "frac_area_below_0p03": 0.9388858842617631,
+     "mean_wall_field": 3.2887582615648263,
+     "frac_near_merge": 0.02541914548404543,
+     "frac_flicker": 0.13953488372093023,
+     "frac_lost": 0.4910762574364521
+    }
+   }
+  },
+  {
+   "k": 1,
+   "rule": [
+    "eps",
+    0.01
+   ],
+   "snapshots_used": 65,
+   "counts": {
+    "clump": 355,
+    "contact lost": 828,
+    "contact gained": 812,
+    "split": 4,
+    "merge": 10
+   },
+   "top_clump_patterns": {
+    "born 0 died 0 lost 1 gained 1": 83,
+    "born 0 died 0 lost 0 gained 2": 64,
+    "born 0 died 0 lost 2 gained 0": 48,
+    "born 0 died 0 lost 2 gained 1": 22,
+    "born 0 died 0 lost 1 gained 2": 20,
+    "born 0 died 0 lost 3 gained 0": 14,
+    "born 0 died 1 lost 0 gained 1": 8,
+    "born 0 died 0 lost 1 gained 3": 7,
+    "born 0 died 1 lost 0 gained 4": 7,
+    "born 0 died 1 lost 0 gained 2": 7,
+    "born 0 died 0 lost 0 gained 3": 7,
+    "born 0 died 0 lost 3 gained 1": 6
+   },
+   "derived": {
+    "contact changes, with a merge/split/birth/death": 181,
+    "cells died (merge or death)": 40,
+    "cells born (split or birth)": 27,
+    "contact changes, alone": 1640,
+    "contact changes, clumped with other contact changes": 824,
+    "clump size 4": 20,
+    "clump size 2": 195,
+    "clump size 5": 7,
+    "clump size 6+": 17,
+    "clump size 3": 63
+   },
+   "contact_changes_total": 2645,
+   "per_basin_per_step": 0.052008211201889566,
+   "fraction_alone": 0.6200378071833649,
+   "fraction_clumped": 0.311531190926276,
+   "contact_changes_per_merge": 66.125,
+   "balance_failures": 0,
+   "basins_first_last": [
+    804,
+    791
+   ],
+   "mean_contacts_first_last": [
+    16.756218905472636,
+    16.74841972187105
+   ],
+   "mean_contacts_mean": 16.7205272484319,
+   "characterisation": {
+    "merge": {
+     "n": 181,
+     "median_area_eps": 0.08883413670187598,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.24861878453038674,
+     "mean_wall_field": 1.7218226350086039,
+     "frac_near_merge": 1.0,
+     "frac_flicker": 0.022099447513812154,
+     "frac_lost": 0.4696132596685083
+    },
+    "alone": {
+     "n": 1640,
+     "median_area_eps": 0.015540433808887557,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.8140243902439024,
+     "mean_wall_field": 2.7837840263117593,
+     "frac_near_merge": 0.032926829268292684,
+     "frac_flicker": 0.11768292682926829,
+     "frac_lost": 0.5048780487804878
+    },
+    "clumped": {
+     "n": 824,
+     "median_area_eps": 0.027243866003091255,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.5303398058252428,
+     "mean_wall_field": 2.338268173194841,
+     "frac_near_merge": 0.04004854368932039,
+     "frac_flicker": 0.05218446601941747,
+     "frac_lost": 0.4975728155339806
+    }
+   }
+  },
+  {
+   "k": 2,
+   "rule": [
+    "faces",
+    0.0
+   ],
+   "snapshots_used": 33,
+   "counts": {
+    "clump": 423,
+    "contact lost": 777,
+    "contact gained": 802,
+    "split": 4,
+    "merge": 10
+   },
+   "top_clump_patterns": {
+    "born 0 died 0 lost 0 gained 2": 84,
+    "born 0 died 0 lost 2 gained 0": 83,
+    "born 0 died 0 lost 1 gained 1": 69,
+    "born 0 died 0 lost 2 gained 1": 22,
+    "born 0 died 0 lost 1 gained 2": 21,
+    "born 0 died 0 lost 0 gained 3": 14,
+    "born 0 died 0 lost 2 gained 2": 10,
+    "born 0 died 0 lost 3 gained 0": 10,
+    "born 0 died 1 lost 0 gained 1": 9,
+    "born 0 died 0 lost 3 gained 1": 7,
+    "born 0 died 1 lost 0 gained 2": 7,
+    "born 0 died 0 lost 1 gained 3": 7
+   },
+   "derived": {
+    "contact changes, with a merge/split/birth/death": 180,
+    "cells died (merge or death)": 40,
+    "cells born (split or birth)": 27,
+    "contact changes, clumped with other contact changes": 1045,
+    "clump size 2": 236,
+    "contact changes, alone": 1579,
+    "clump size 5": 17,
+    "clump size 6+": 19,
+    "clump size 4": 31,
+    "clump size 3": 67
+   },
+   "contact_changes_total": 2804,
+   "per_basin_per_step": 0.11025795012582933,
+   "fraction_alone": 0.5631241084165478,
+   "fraction_clumped": 0.3726818830242511,
+   "contact_changes_per_merge": 70.1,
+   "balance_failures": 0,
+   "basins_first_last": [
+    804,
+    791
+   ],
+   "mean_contacts_first_last": [
+    18.455223880597014,
+    18.563843236409607
+   ],
+   "mean_contacts_mean": 18.42837148077076,
+   "characterisation": {
+    "merge": {
+     "n": 180,
+     "median_area_eps": 0.049818683737268984,
+     "frac_area_below_0p01": 0.19444444444444445,
+     "frac_area_below_0p03": 0.39444444444444443,
+     "mean_wall_field": 1.9118119265185065,
+     "frac_near_merge": 1.0,
+     "frac_flicker": 0.05555555555555555,
+     "frac_lost": 0.46111111111111114
+    },
+    "clumped": {
+     "n": 1045,
+     "median_area_eps": 0.006826160236457262,
+     "frac_area_below_0p01": 0.5607655502392345,
+     "frac_area_below_0p03": 0.7521531100478469,
+     "mean_wall_field": 3.0814496869423955,
+     "frac_near_merge": 0.06985645933014355,
+     "frac_flicker": 0.11674641148325358,
+     "frac_lost": 0.4909090909090909
+    },
+    "alone": {
+     "n": 1579,
+     "median_area_eps": 0.0017447261636010915,
+     "frac_area_below_0p01": 0.8024065864471184,
+     "frac_area_below_0p03": 0.935402153261558,
+     "mean_wall_field": 2.9956972727918982,
+     "frac_near_merge": 0.06713109563014566,
+     "frac_flicker": 0.17669411019632678,
+     "frac_lost": 0.4920835972134262
+    }
+   }
+  },
+  {
+   "k": 2,
+   "rule": [
+    "eps",
+    0.01
+   ],
+   "snapshots_used": 33,
+   "counts": {
+    "clump": 379,
+    "contact lost": 733,
+    "contact gained": 695,
+    "split": 4,
+    "merge": 9
+   },
+   "top_clump_patterns": {
+    "born 0 died 0 lost 1 gained 1": 85,
+    "born 0 died 0 lost 0 gained 2": 69,
+    "born 0 died 0 lost 2 gained 0": 52,
+    "born 0 died 0 lost 1 gained 2": 23,
+    "born 0 died 0 lost 2 gained 1": 20,
+    "born 0 died 0 lost 3 gained 0": 16,
+    "born 0 died 0 lost 0 gained 3": 10,
+    "born 0 died 1 lost 0 gained 1": 9,
+    "born 0 died 0 lost 3 gained 1": 8,
+    "born 0 died 0 lost 1 gained 3": 8,
+    "born 0 died 1 lost 0 gained 2": 6,
+    "born 0 died 0 lost 2 gained 2": 6
+   },
+   "derived": {
+    "contact changes, with a merge/split/birth/death": 197,
+    "cells died (merge or death)": 40,
+    "cells born (split or birth)": 27,
+    "contact changes, alone": 1428,
+    "contact changes, clumped with other contact changes": 895,
+    "clump size 4": 23,
+    "clump size 2": 206,
+    "clump size 5": 8,
+    "clump size 6+": 19,
+    "clump size 3": 69
+   },
+   "contact_changes_total": 2520,
+   "per_basin_per_step": 0.09909059711736444,
+   "fraction_alone": 0.5666666666666667,
+   "fraction_clumped": 0.3551587301587302,
+   "contact_changes_per_merge": 63.0,
+   "balance_failures": 0,
+   "basins_first_last": [
+    804,
+    791
+   ],
+   "mean_contacts_first_last": [
+    16.756218905472636,
+    16.74841972187105
+   ],
+   "mean_contacts_mean": 16.721058326222433,
+   "characterisation": {
+    "merge": {
+     "n": 197,
+     "median_area_eps": 0.07719021603398722,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.26903553299492383,
+     "mean_wall_field": 1.684606180083446,
+     "frac_near_merge": 1.0,
+     "frac_flicker": 0.02030456852791878,
+     "frac_lost": 0.4619289340101523
+    },
+    "alone": {
+     "n": 1428,
+     "median_area_eps": 0.01620567275313302,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.7955182072829131,
+     "mean_wall_field": 2.6769980793212858,
+     "frac_near_merge": 0.056022408963585436,
+     "frac_flicker": 0.19467787114845939,
+     "frac_lost": 0.5133053221288515
+    },
+    "clumped": {
+     "n": 895,
+     "median_area_eps": 0.026026787671449343,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.553072625698324,
+     "mean_wall_field": 2.3947981506229015,
+     "frac_near_merge": 0.0659217877094972,
+     "frac_flicker": 0.11731843575418995,
+     "frac_lost": 0.488268156424581
+    }
+   }
+  },
+  {
+   "k": 4,
+   "rule": [
+    "faces",
+    0.0
+   ],
+   "snapshots_used": 17,
+   "counts": {
+    "clump": 418,
+    "contact lost": 593,
+    "contact gained": 614,
+    "split": 4,
+    "merge": 10
+   },
+   "top_clump_patterns": {
+    "born 0 died 0 lost 2 gained 0": 71,
+    "born 0 died 0 lost 1 gained 1": 71,
+    "born 0 died 0 lost 0 gained 2": 65,
+    "born 0 died 0 lost 2 gained 1": 22,
+    "born 0 died 0 lost 3 gained 0": 18,
+    "born 0 died 0 lost 1 gained 2": 18,
+    "born 0 died 0 lost 0 gained 3": 18,
+    "born 0 died 0 lost 1 gained 3": 9,
+    "born 0 died 0 lost 2 gained 2": 8,
+    "born 0 died 0 lost 3 gained 2": 7,
+    "born 0 died 0 lost 3 gained 1": 7,
+    "born 0 died 1 lost 0 gained 1": 7
+   },
+   "derived": {
+    "contact changes, with a merge/split/birth/death": 248,
+    "cells died (merge or death)": 40,
+    "cells born (split or birth)": 27,
+    "contact changes, clumped with other contact changes": 1109,
+    "clump size 2": 207,
+    "contact changes, alone": 1207,
+    "clump size 3": 76,
+    "clump size 6+": 28,
+    "clump size 5": 20,
+    "clump size 4": 34
+   },
+   "contact_changes_total": 2564,
+   "per_basin_per_step": 0.2015425020344751,
+   "fraction_alone": 0.4707488299531981,
+   "fraction_clumped": 0.4325273010920437,
+   "contact_changes_per_merge": 64.1,
+   "balance_failures": 0,
+   "basins_first_last": [
+    804,
+    791
+   ],
+   "mean_contacts_first_last": [
+    18.455223880597014,
+    18.563843236409607
+   ],
+   "mean_contacts_mean": 18.428080611963757,
+   "characterisation": {
+    "merge": {
+     "n": 248,
+     "median_area_eps": 0.04085421049193922,
+     "frac_area_below_0p01": 0.2661290322580645,
+     "frac_area_below_0p03": 0.4314516129032258,
+     "mean_wall_field": 1.9599413924028128,
+     "frac_near_merge": 1.0,
+     "frac_flicker": 0.0967741935483871,
+     "frac_lost": 0.43951612903225806
+    },
+    "clumped": {
+     "n": 1109,
+     "median_area_eps": 0.005552366129200552,
+     "frac_area_below_0p01": 0.6023444544634806,
+     "frac_area_below_0p03": 0.7844905320108205,
+     "mean_wall_field": 3.0073976340336497,
+     "frac_near_merge": 0.1424706943192065,
+     "frac_flicker": 0.1992786293958521,
+     "frac_lost": 0.49594229035166815
+    },
+    "alone": {
+     "n": 1207,
+     "median_area_eps": 0.002119617639778831,
+     "frac_area_below_0p01": 0.7771333885666943,
+     "frac_area_below_0p03": 0.9304059652029826,
+     "mean_wall_field": 2.724908396157683,
+     "frac_near_merge": 0.140016570008285,
+     "frac_flicker": 0.2328086164043082,
+     "frac_lost": 0.49130074565037285
+    }
+   }
+  },
+  {
+   "k": 4,
+   "rule": [
+    "eps",
+    0.01
+   ],
+   "snapshots_used": 17,
+   "counts": {
+    "clump": 380,
+    "contact lost": 585,
+    "contact gained": 554,
+    "split": 4,
+    "merge": 8
+   },
+   "top_clump_patterns": {
+    "born 0 died 0 lost 1 gained 1": 80,
+    "born 0 died 0 lost 0 gained 2": 62,
+    "born 0 died 0 lost 2 gained 0": 57,
+    "born 0 died 0 lost 1 gained 2": 23,
+    "born 0 died 0 lost 2 gained 1": 18,
+    "born 0 died 0 lost 3 gained 0": 12,
+    "born 0 died 0 lost 1 gained 3": 11,
+    "born 0 died 0 lost 3 gained 1": 9,
+    "born 0 died 1 lost 0 gained 1": 8,
+    "born 0 died 0 lost 2 gained 3": 8,
+    "born 0 died 0 lost 2 gained 2": 8,
+    "born 0 died 0 lost 0 gained 3": 8
+   },
+   "derived": {
+    "contact changes, with a merge/split/birth/death": 246,
+    "cells died (merge or death)": 40,
+    "cells born (split or birth)": 27,
+    "contact changes, alone": 1139,
+    "contact changes, clumped with other contact changes": 926,
+    "clump size 6+": 18,
+    "clump size 2": 199,
+    "clump size 3": 61,
+    "clump size 5": 15,
+    "clump size 4": 32
+   },
+   "contact_changes_total": 2311,
+   "per_basin_per_step": 0.18165550787896723,
+   "fraction_alone": 0.49286023366508,
+   "fraction_clumped": 0.4006923409779316,
+   "contact_changes_per_merge": 57.775,
+   "balance_failures": 0,
+   "basins_first_last": [
+    804,
+    791
+   ],
+   "mean_contacts_first_last": [
+    16.756218905472636,
+    16.74841972187105
+   ],
+   "mean_contacts_mean": 16.72068285788988,
+   "characterisation": {
+    "merge": {
+     "n": 246,
+     "median_area_eps": 0.07410194799606255,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.27235772357723576,
+     "mean_wall_field": 1.6955101118164368,
+     "frac_near_merge": 1.0,
+     "frac_flicker": 0.06910569105691057,
+     "frac_lost": 0.4634146341463415
+    },
+    "alone": {
+     "n": 1139,
+     "median_area_eps": 0.017046059035644785,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.7761194029850746,
+     "mean_wall_field": 2.476468622454505,
+     "frac_near_merge": 0.1360842844600527,
+     "frac_flicker": 0.22388059701492538,
+     "frac_lost": 0.5136084284460053
+    },
+    "clumped": {
+     "n": 926,
+     "median_area_eps": 0.02554842119477479,
+     "frac_area_below_0p01": 0.0,
+     "frac_area_below_0p03": 0.5755939524838013,
+     "mean_wall_field": 2.4330843194254026,
+     "frac_near_merge": 0.14794816414686826,
+     "frac_flicker": 0.19978401727861772,
+     "frac_lost": 0.4946004319654428
+    }
+   }
+  }
+ ]
+}
