@@ -286,6 +286,7 @@ doc = f'''<!doctype html>
 {idx}
 {about}
 {SERIES}
+<div class="coverpage" style="break-before:page;height:252mm;display:flex;justify-content:center;align-items:center"><img src="cover/platonic-cover-back.png" alt="Back cover: the DICTO mark in the dodecahedron's violet" style="height:244mm;display:block"></div>
 </body></html>'''
 hits = [doc_m.group(0) for doc_m in BANNED.finditer(re.sub('<[^>]+>', ' ', doc))]
 open(os.path.join(HERE, 'paper.html'), 'w', encoding='utf8').write(doc)
