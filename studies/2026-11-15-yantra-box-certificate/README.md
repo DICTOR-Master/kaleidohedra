@@ -228,7 +228,11 @@ Status 16 Nov (§7): steps 1–4 are **DONE**, and so are the top-level theorem,
       - **NanoDa accepts the solution.**
       - **Lean's default kernel (leanchecker) accepts the solution**, and the comparator reports "Your solution is okay!".
       - **Totals.** The whole comparator run took 2 h 31 min wall time; con-ron checked 26,723 declarations in `--verified` mode.
-    - **Not yet run.** A negative control, a deliberately altered Challenge that the comparator must reject.
+    - **Negative controls: all three REJECTED** (job ylean-negctl, `scripts/run_negative_controls.sh`). Each ran in its own scratch copy of the entry, through the same 4-worker comparator, and each was rejected within minutes:
+      - (a) One constant in the Challenge changed (the lower bound of `kulaichev_slope`, last digit +1). The comparator says: "Challenge and solution theorem statement do not match: 'KulaichevYantra.kulaichev_slope'".
+      - (b) The Challenge conclusion weakened (∃! to ∃ in `kulaichev_unique`). The comparator says: "Challenge and solution theorem statement do not match: 'KulaichevYantra.kulaichev_unique'".
+      - (c) One Solution proof (`kulaichev_slope`) replaced by `sorry`. `#print axioms` lists `sorryAx`, and the comparator says: "Illegal axiom detected: 'sorryAx'".
+      - The comparator therefore both passes (the real entry) and fails (all three altered copies).
 
 ## Credits (at point of use)
 
