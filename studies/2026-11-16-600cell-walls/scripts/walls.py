@@ -32,10 +32,10 @@ print('F (rescaled to radius of X) lies in P:', onP, 'of', len(F))
 def unit(v): return v / np.linalg.norm(v)
 def canon(n):
     n = unit(n); i = np.argmax(np.abs(n) > 1e-9); return n if n[i] > 0 else -n
-def faces2(V):
+def faces2(V, dec=7):
     h = ConvexHull(V); eqs = {}
     for e, s in zip(h.equations, h.simplices):
-        k = tuple(np.round(e, 7)); eqs.setdefault(k, set()).update(s)
+        k = tuple(np.round(e, dec) + 0.0); eqs.setdefault(k, set()).update(s)
     fac = list(eqs.values()); out = set()
     for a, b in itertools.combinations(fac, 2):
         c = sorted(a & b)

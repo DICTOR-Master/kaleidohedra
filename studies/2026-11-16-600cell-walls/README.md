@@ -24,4 +24,8 @@ In DICTO's picture, A is fully hidden in the 600-cell's walls; B is half hidden,
 
 Files: scripts/walls.py, data/walls.log (FINAL ok). Ran on the compute machine, under 5 min.
 
-LEADS: (1) exact recheck in Q(√5); (2) the same test on the other recent shapes (GET, the echo shapes, the 2I twisted classes of other degrees); (3) whether B's 40 non-wall plates lie in the 120-cell's walls (the dual), which would make B hidden in the 600-cell–120-cell pair.
+## Lead 3 done: the 120-cell (16 Nov)
+
+The 120-cell (dual, 600 corners, 120 cells, 720 pentagons) has its 720 pentagons on 60 central plates, and these are the SAME 60 H4 mirrors (12 pentagons per plate). So the 600-cell and 120-cell share one wall system: the 60 mirrors. B's 40 φ√2-triangle plates are in neither; B stays half hidden (40 of 80) even in the pair. Files: scripts/walls120.py, data/walls120.log (FINAL ok; checks 600 corners, 120 cells, 720 pentagons).
+
+LEADS: (1) exact recheck in Q(√5); (2) the same test on the other recent shapes (GET, the echo shapes, the 2I twisted classes of other degrees); (3) where B's 40 visible plates do lie: a second H4 wall system (e.g. the Galois-twisted mirrors, √5 ↦ −√5), which would make B hidden in the 600-cell and its Galois twin together.
