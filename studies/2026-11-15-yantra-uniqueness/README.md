@@ -60,7 +60,7 @@ Its count of 45 regions (Proposition 11) therefore belongs to the unique Kulaich
    - Each root is held in a dyadic interval of width 2⁻¹⁴⁰⁰, certified by exact signs at the endpoints.
 4. **Back-solving (s3, Arb ball arithmetic, 2400 bits).** For each of the 16 roots:
    - all 20 roots of A(t, u) are isolated, and those with 0 < t < u (from 0 < b1 < b3) are certified real;
-   - B is evaluated at each of them: 45 are rejected because B ≠ 0, with certified margins down to 4·10⁻⁷;
+   - B is evaluated at each of them: 45 are rejected because B ≠ 0, with certified margins (the smallest |B| is 3.1·10⁻¹⁰, at a root of f396);
    - for the 3 that are left, S is taken from G with R < S < 1, then H1 and D are tested: 1 is rejected (D ≠ 0);
    - **2 true solutions** remain. Each is certified by the Krawczyk test (exactly one solution in a box of radius 10⁻³⁰⁰), and each yantra is rebuilt in balls:
      - u = 0.66866: **not admissible**. b4 > b5, b6 > b7, w5 < 0, w6 < 0, t4's apex is on the wrong side, two corners lie outside the disc, and b5 > 1/2. Every one of these is certified.
@@ -101,7 +101,7 @@ Its count of 45 regions (Proposition 11) therefore belongs to the unique Kulaich
   - **(ii) The two resultant identities in S.** These are R = αG + βH1, with G quadratic and H1 cubic in S. The cofactors come from a 5×5 Sylvester matrix and have about 10³–10⁴ terms. This is at the edge for `linear_combination`.
   - **(iii) The identity E = αA + βB.** Here A and B have degree 20 in t, so the Sylvester matrix is 40×40, and E has degree 1744 with coefficients of hundreds of digits. The cofactors are far beyond `ring` or `decide` in the kernel.
   - **(iv) Descartes certificates for f348 and f396 on (0, 1).** These need Taylor shifts of degree about 400. They are plausible with a reflective checker on Nat/Int, which the kernel computes with GMP.
-  - **(v) Back-solve and Krawczyk.** Dyadic-interval reflective checkers are feasible. About 200–400 bits suffice, given margins of 4·10⁻⁷ and more.
+  - **(v) Back-solve and Krawczyk.** Dyadic-interval reflective checkers are feasible. About 200–400 bits suffice, given margins of 3·10⁻¹⁰ and more.
 - **Bottleneck and how to remove it.** Part (iii) is the bottleneck. It can be removed by using route 2's eliminant as well: gcd(E, E2) = f348. Better, replace the Res_t identity by a subresultant or a verified polynomial-arithmetic checker, proved correct once and run by `decide` without native_decide.
 - **Assessment.** This is a real project: a verified sparse-polynomial normaliser plus an interval evaluator. It is not a one-file proof. Everything except (iii) is within reach today.
 

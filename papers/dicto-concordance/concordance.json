@@ -7860,7 +7860,8 @@
     "status": "PROVED (certified computation)",
     "result": "exactly one admissible yantra: #103 Theorem 10's (u = 0.7504385160..., root of f348); the system's only other real solution with 0<u<1 (u = 0.66866, root of f348) is not admissible (b6 > b7, w5, w6 < 0, t4 inverted); f396 is an artefact of the elimination order",
     "retry": "never; only a Lean certificate (bottleneck: the degree-1744 Res_t identity)",
-    "study": "studies/2026-11-15-yantra-uniqueness"
+    "study": "studies/2026-11-15-yantra-uniqueness",
+    "goes_to": "#103 v5 Theorem 14 (new section 10.1, with the list of ways Kulaichev's unique yantra differs from the traditional form); DRAFT for DICTO's read (15 Nov), not published"
    }
   ]
  },
@@ -9217,7 +9218,8 @@
    "source": "studies/2026-11-14-lean-loop-equality/LITERATURE.md (5bc7146a)",
    "date": "2026-11-15",
    "fix": "next version of #43 (DICTO decides)"
-  }
+  },
+  {"paper": "#103 The DICTO Yantra (v3, v4)", "where": "Theorem 10, Certificate: factors of the degree-1744 resultant", "wrong": "u (1^178), two other linear factors (1^274, 1^178)", "right": "(u - 1)^178 u^274 (u + 1)^178 (u^2 + 1)^185 f348 f396", "source": "studies/2026-11-15-yantra-uniqueness (data/E-factors.txt)", "date": "2026-11-15", "fix": "#103 v5 draft (Theorem 10 certificate)"}
  ],
  "modus_operandi": {
   "note": "DICTO 7 Nov 2026: 'as with all such mess-ups from now on ... only happens once law!' and 'maybe add to concordance under rules of operation — modus operandi'. How the work is run.",
