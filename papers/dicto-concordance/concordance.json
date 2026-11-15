@@ -9484,7 +9484,7 @@
    "n": "108",
    "head": "Exchanges counted by loops",
    "text": "Sweep a simple 4-polytope by a moving hyperplane; its cells, as they cross the slice, trade neighbours at the corners. For the polytopes of the seeds (0, 1, 1, 0), (0, 1, 1, 1), (1, 1, 1, 0) and (1, 1, 1, 1) of each four-node chain group, the exchange between the contacts of the two end families of cells occurs, in each direction, E − V + 1 times, the number of independent cycles of the edge graph of the chain's regular polytope: 6 for A₄, 17 for B₄, 73 for F₄ and 601 for H₄ (the 600-cell).",
-   "where": "Theorem 3; it rests on the balance law, Theorem 1, which is the symmetry of the fine h-vector of a balanced sphere (Stanley 1979, balanced complexes; Bayer–Billera 1985, §3, for one cell of each type), read as a sweep; the loop count E − V + 1 is DICTO's; the sweep reading: #104"
+   "where": "Theorem 3; it rests on the balance law, Theorem 1, which is the symmetry of the fine h-vector of a balanced sphere (the exchanges of each kind are the fine h-numbers of the polar balanced sphere, Stanley 1979, Prop. 3.6; their symmetry for one cell of each type is Bayer–Billera 1985, §3, and for the two-kind case it follows by reversing the sweep), read as a sweep; the loop count E − V + 1 is DICTO's; the sweep reading: #104"
   },
   {
    "n": "47",
