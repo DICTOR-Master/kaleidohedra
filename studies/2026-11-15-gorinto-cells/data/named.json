@@ -1,0 +1,1051 @@
+{
+ "cell": {
+  "H_exact": "4/3 + (-sqrt(30)*sqrt(11*sqrt(5) + 25) + sqrt(30*sqrt(5) + 150) + 5*sqrt(6*sqrt(5) + 30) + 40*sqrt(3) + 5*sqrt(6)*sqrt(11*sqrt(5) + 25))/30",
+  "H": 6.821352299258901,
+  "parts": [
+   {
+    "element": "earth",
+    "kanji": "\u5730",
+    "seed": "a",
+    "solid": "cube",
+    "bottom": 0.0,
+    "top": 1.1547005383792515,
+    "height": 1.1547005383792515,
+    "height_exact": "2*sqrt(3)/3",
+    "volume": 1.539600717839002,
+    "volume_exact": "8*sqrt(3)/9"
+   },
+   {
+    "element": "water",
+    "kanji": "\u6c34",
+    "seed": "va",
+    "solid": "icosahedron",
+    "bottom": 1.1547005383792515,
+    "top": 2.7440094829627837,
+    "height": 1.5893089445835322,
+    "height_exact": "sqrt(8*sqrt(5)/15 + 4/3)",
+    "volume": 2.5361507101204097,
+    "volume_exact": "64*(5*sqrt(5)/12 + 5/4)/(2*sqrt(5) + 10)**(3/2)"
+   },
+   {
+    "element": "fire",
+    "kanji": "\u706b",
+    "seed": "ra",
+    "solid": "tetrahedron",
+    "bottom": 2.7440094829627837,
+    "top": 4.077342816296117,
+    "height": 1.3333333333333333,
+    "height_exact": "4/3",
+    "volume": 0.5132002392796673,
+    "volume_exact": "8*sqrt(3)/27"
+   },
+   {
+    "element": "wind",
+    "kanji": "\u98a8",
+    "seed": "ha",
+    "solid": "octahedron",
+    "bottom": 4.077342816296117,
+    "top": 5.232043354675369,
+    "height": 1.1547005383792515,
+    "height_exact": "2*sqrt(3)/3",
+    "volume": 1.3333333333333333,
+    "volume_exact": "4/3"
+   },
+   {
+    "element": "void",
+    "kanji": "\u7a7a",
+    "seed": "kha",
+    "solid": "dodecahedron",
+    "bottom": 5.232043354675369,
+    "top": 6.821352299258901,
+    "height": 1.5893089445835322,
+    "height_exact": "sqrt(8*sqrt(5)/15 + 4/3)",
+    "volume": 2.785163863122623,
+    "volume_exact": "64*sqrt(3)*(15/4 + 7*sqrt(5)/4)/(9*(1 + sqrt(5))**3)"
+   }
+  ],
+  "volume": 8.707448863695035,
+  "volume_exact": "(20*sqrt(sqrt(5) + 5) + 28*sqrt(5*sqrt(5) + 25)/3 + 220*sqrt(2)/3 + 100*sqrt(10)/3 + 380*sqrt(3*sqrt(5) + 15)/9 + 524*sqrt(15*sqrt(5) + 75)/27)/((15 + 7*sqrt(5))*sqrt(sqrt(5) + 5))",
+  "inside_contacts": [
+   {
+    "lower": "earth",
+    "upper": "water",
+    "gap": 0.0,
+    "kind": "face-face"
+   },
+   {
+    "lower": "water",
+    "upper": "fire",
+    "gap": 0.0,
+    "kind": "face-face"
+   },
+   {
+    "lower": "fire",
+    "upper": "wind",
+    "gap": 0.0,
+    "kind": "corner-face"
+   },
+   {
+    "lower": "wind",
+    "upper": "void",
+    "gap": 0.0,
+    "kind": "face-face"
+   }
+  ]
+ },
+ "arrangements": [
+  {
+   "name": "column (pagoda stack)",
+   "contacts": [
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ],
+   "period": 6.821352299258901,
+   "period_exact": "4/3 + (-sqrt(330*sqrt(5) + 750) + sqrt(30*sqrt(5) + 150) + 5*sqrt(6*sqrt(5) + 30) + 40*sqrt(3) + 5*sqrt(66*sqrt(5) + 150))/30"
+  },
+  {
+   "name": "square field, columns, theta 0",
+   "t": 1.8683447179254313,
+   "t_exact": "(sqrt(3) + sqrt(15))/3",
+   "contacts": [
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-void",
+     "kind": "edge-edge",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "void-void",
+     "kind": "edge-edge",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ],
+   "density": 0.3656844014995968
+  },
+  {
+   "name": "square field, columns, theta 45",
+   "t": 1.7990507183651974,
+   "t_exact": "8*(-5*sqrt(3) + 2*sqrt(15))*sqrt(sqrt(5) + 5)/(-75*sqrt(2)*sqrt(sqrt(5) + 5) - 60 + 24*sqrt(5) + 33*sqrt(10)*sqrt(sqrt(5) + 5))",
+   "contacts": [
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 4
+    }
+   ],
+   "certified": [
+    {
+     "elements": "void-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ],
+   "density": 0.39439703257171466
+  },
+  {
+   "name": "hexagonal field, columns, theta 0",
+   "t": 1.8211859946200588,
+   "t_exact": "-sqrt(sqrt(5) + 5)*(-5*sqrt(6) + sqrt(30))/10",
+   "contacts": [
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "water-water",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 6
+    }
+   ],
+   "certified": [
+    {
+     "elements": "water-water",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ],
+   "density": 0.4444073339714904
+  },
+  {
+   "name": "hexagonal field, columns, theta 90",
+   "t": 1.8683447179254313,
+   "t_exact": "(sqrt(3) + sqrt(15))/3",
+   "contacts": [
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-void",
+     "kind": "edge-edge",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "void-void",
+     "kind": "edge-edge",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ],
+   "density": 0.4222559752884788
+  },
+  {
+   "name": "body-centred (BCT), columns shifted H/2, theta 0",
+   "t": 1.7776700946753579,
+   "t_exact": "sqrt(sqrt(5) + 5)*(-4*sqrt(5)*sqrt(6*sqrt(5) + 30) - 10*sqrt(2*sqrt(5) + 10) - sqrt(5)*sqrt(60*sqrt(5) + 135) - 5*sqrt(12*sqrt(5) + 27) - 6*sqrt(15) + sqrt(5)*sqrt(12*sqrt(5) + 27) + 2*sqrt(5)*sqrt(2*sqrt(5) + 10) + 10*sqrt(3) + 5*sqrt(60*sqrt(5) + 135) + 16*sqrt(30) + 20*sqrt(6*sqrt(5) + 30))/240",
+   "contacts": [
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "water-wind",
+     "kind": "corner-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "wind-water",
+     "kind": "face-corner",
+     "orient": "UU",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "water-wind",
+     "kind": "corner-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "wind-water",
+     "kind": "face-corner",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ],
+   "density": 0.4039411707300355
+  },
+  {
+   "name": "body-centred (BCT), columns shifted H/2, theta 45",
+   "t": 1.7067688810294772,
+   "t_exact": "(-625*sqrt(11*sqrt(5) + 25)*sqrt(120*sqrt(5) + 270) - 605*sqrt(5)*sqrt(11*sqrt(5) + 25)*sqrt(24*sqrt(5) + 54) - 250*sqrt(11*sqrt(5) + 25)*sqrt(60*sqrt(5) + 135) - 220*sqrt(5)*sqrt(11*sqrt(5) + 25)*sqrt(12*sqrt(5) + 27) - 44*sqrt(5)*sqrt(11*sqrt(5) + 25)*sqrt(55*sqrt(5) + 125) - 75*sqrt(10*sqrt(5) + 50)*sqrt(11*sqrt(5) + 25) - 55*sqrt(5)*sqrt(2*sqrt(5) + 10)*sqrt(11*sqrt(5) + 25) - 110*sqrt(3)*sqrt(11*sqrt(5) + 25) - 200 + 50*sqrt(15)*sqrt(11*sqrt(5) + 25) + 125*sqrt(2*sqrt(5) + 10)*sqrt(11*sqrt(5) + 25) + 33*sqrt(5)*sqrt(10*sqrt(5) + 50)*sqrt(11*sqrt(5) + 25) + 100*sqrt(11*sqrt(5) + 25)*sqrt(55*sqrt(5) + 125) + 500*sqrt(11*sqrt(5) + 25)*sqrt(12*sqrt(5) + 27) + 110*sqrt(5)*sqrt(11*sqrt(5) + 25)*sqrt(60*sqrt(5) + 135) + 275*sqrt(5)*sqrt(11*sqrt(5) + 25)*sqrt(120*sqrt(5) + 270) + 1375*sqrt(11*sqrt(5) + 25)*sqrt(24*sqrt(5) + 54))/(-375*sqrt(2)*sqrt(sqrt(5) + 5) - 300 + 120*sqrt(5) + 165*sqrt(10)*sqrt(sqrt(5) + 5))",
+   "contacts": [
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "fire-void",
+     "kind": "corner-face",
+     "orient": "UU",
+     "count": 2
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-fire",
+     "kind": "face-corner",
+     "orient": "UU",
+     "count": 2
+    }
+   ],
+   "certified": [
+    {
+     "elements": "void-fire",
+     "kind": "face-corner",
+     "orient": "UU",
+     "zero": "digits",
+     "value": 0.0
+    },
+    {
+     "elements": "fire-void",
+     "kind": "corner-face",
+     "orient": "UU",
+     "zero": "digits",
+     "value": 0.0
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ],
+   "density": 0.43819863553642646
+  },
+  {
+   "name": "up/down checkerboard (stupa field), square, theta 0",
+   "t": 1.7377719751321326,
+   "t_exact": "(-sqrt(165*sqrt(5) + 375) - 5*sqrt(3*sqrt(5) + 15) + sqrt(15*sqrt(5) + 75) + 10*sqrt(6) + 4*sqrt(30*sqrt(5) + 150) + 5*sqrt(33*sqrt(5) + 75))/60",
+   "contacts": [
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "DD",
+     "count": 1
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "DD",
+     "count": 1
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "water-wind",
+     "kind": "corner-face",
+     "orient": "DU",
+     "count": 1
+    },
+    {
+     "elements": "water-wind",
+     "kind": "corner-face",
+     "orient": "UD",
+     "count": 1
+    },
+    {
+     "elements": "wind-water",
+     "kind": "face-corner",
+     "orient": "DU",
+     "count": 1
+    },
+    {
+     "elements": "wind-water",
+     "kind": "face-corner",
+     "orient": "UD",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "water-wind",
+     "kind": "corner-face",
+     "orient": "UD",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "wind-water",
+     "kind": "face-corner",
+     "orient": "UD",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "water-wind",
+     "kind": "corner-face",
+     "orient": "DU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "DD",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "DD",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "wind-water",
+     "kind": "face-corner",
+     "orient": "DU",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ],
+   "density": 0.4227025565455651
+  },
+  {
+   "name": "up/down checkerboard (stupa field), square, theta 45",
+   "t": 1.7623135158525873,
+   "t_exact": "(-10*sqrt(3) + 10*sqrt(15) + 6*sqrt(30)*sqrt(sqrt(5) + 5))/(-15*sqrt(2) + 6*sqrt(5)*sqrt(sqrt(5) + 5) + 15*sqrt(10))",
+   "contacts": [
+    {
+     "elements": "earth-void",
+     "kind": "edge-edge",
+     "orient": "DU",
+     "count": 4
+    },
+    {
+     "elements": "earth-void",
+     "kind": "edge-edge",
+     "orient": "UD",
+     "count": 4
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "DD",
+     "count": 1
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-earth",
+     "kind": "edge-edge",
+     "orient": "DU",
+     "count": 4
+    },
+    {
+     "elements": "void-earth",
+     "kind": "edge-edge",
+     "orient": "UD",
+     "count": 4
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "DD",
+     "count": 1
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "earth-void",
+     "kind": "edge-edge",
+     "orient": "UD",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-earth",
+     "kind": "edge-edge",
+     "orient": "UD",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "earth-void",
+     "kind": "edge-edge",
+     "orient": "DU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-earth",
+     "kind": "edge-edge",
+     "orient": "DU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "DD",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "DD",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ],
+   "density": 0.4110116279746276
+  }
+ ],
+ "rings": [
+  {
+   "name": "ring N=4 outward with centre",
+   "r": 1.8211859946200586,
+   "r_exact": "-sqrt(sqrt(5) + 5)*(-5*sqrt(6) + sqrt(30))/10",
+   "contacts": [
+    {
+     "elements": "water-water",
+     "kind": "face-face",
+     "orient": "cm0",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "water-water",
+     "kind": "face-face",
+     "orient": "cm0",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ]
+  },
+  {
+   "name": "ring N=5 outward with centre",
+   "r": 1.8211859946200586,
+   "r_exact": "-sqrt(sqrt(5) + 5)*(-5*sqrt(6) + sqrt(30))/10",
+   "contacts": [
+    {
+     "elements": "water-water",
+     "kind": "face-face",
+     "orient": "cm0",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "water-water",
+     "kind": "face-face",
+     "orient": "cm0",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ]
+  },
+  {
+   "name": "ring N=6 outward with centre",
+   "r": 1.9644938927536917,
+   "r_exact": "2*sqrt(30)*sqrt(sqrt(5) + 5)/15",
+   "contacts": [
+    {
+     "elements": "water-water",
+     "kind": "corner-corner",
+     "orient": "m0m1",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "water-water",
+     "kind": "corner-corner",
+     "orient": "m0m1",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ]
+  },
+  {
+   "name": "ring N=8 outward with centre",
+   "r": 2.5588225777051985,
+   "r_exact": "-sqrt(11*sqrt(5) + 25)*(-3800*sqrt(14805*sqrt(5) + 33105) - 3740*sqrt(5)*sqrt(2961*sqrt(5) + 6621) - 1050*sqrt(120*sqrt(5) + 270) - 990*sqrt(5)*sqrt(24*sqrt(5) + 54) - 175*sqrt(330*sqrt(5) + 750) - 165*sqrt(5)*sqrt(66*sqrt(5) + 150) - 500*sqrt(12*sqrt(5) + 27) - 88*sqrt(5)*sqrt(60*sqrt(5) + 135) + 200*sqrt(60*sqrt(5) + 135) + 220*sqrt(5)*sqrt(12*sqrt(5) + 27) + 375*sqrt(66*sqrt(5) + 150) + 77*sqrt(5)*sqrt(330*sqrt(5) + 750) + 2250*sqrt(24*sqrt(5) + 54) + 462*sqrt(5)*sqrt(120*sqrt(5) + 270) + 1672*sqrt(5)*sqrt(14805*sqrt(5) + 33105) + 8500*sqrt(2961*sqrt(5) + 6621))/(-660*sqrt(5) - 450*sqrt(sqrt(5) + 5) - 750*sqrt(2) + 330*sqrt(10) + 210*sqrt(5)*sqrt(sqrt(5) + 5) + 1500)",
+   "contacts": [
+    {
+     "elements": "void-void",
+     "kind": "face-corner",
+     "orient": "m0m1",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "void-void",
+     "kind": "face-corner",
+     "orient": "m0m1",
+     "zero": "digits",
+     "value": 0.0
+    }
+   ]
+  },
+  {
+   "name": "ring N=8 inward with centre",
+   "r": 2.5588225777051985,
+   "r_exact": "(-340*sqrt(2961*sqrt(5) + 6621) - 94*sqrt(29610*sqrt(5) + 66210) - 26*sqrt(20460*sqrt(5) + 45750) - 110*sqrt(24*sqrt(5) + 54) - 24*sqrt(33*sqrt(5) + 75) - 20*sqrt(12*sqrt(5) + 27) + 12*sqrt(60*sqrt(5) + 135) + 12*sqrt(165*sqrt(5) + 375) + 50*sqrt(120*sqrt(5) + 270) + 58*sqrt(4092*sqrt(5) + 9150) + 210*sqrt(5922*sqrt(5) + 13242) + 152*sqrt(14805*sqrt(5) + 33105))/(-204*sqrt(5)*sqrt(sqrt(5) + 5)*sqrt(682*sqrt(5) + 1525) - 39*sqrt(2)*sqrt(sqrt(5) + 5)*sqrt(11*sqrt(5) + 25) - 45*sqrt(2)*sqrt(11*sqrt(5) + 25) - 21*sqrt(5)*sqrt(11*sqrt(5) + 25) + 45*sqrt(11*sqrt(5) + 25) + 21*sqrt(10)*sqrt(11*sqrt(5) + 25) + 18*sqrt(10)*sqrt(sqrt(5) + 5)*sqrt(11*sqrt(5) + 25) + 456*sqrt(sqrt(5) + 5)*sqrt(682*sqrt(5) + 1525))",
+   "contacts": [
+    {
+     "elements": "void-void",
+     "kind": "edge-corner",
+     "orient": "m0m1",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "void-void",
+     "kind": "edge-corner",
+     "orient": "m0m1",
+     "zero": "digits",
+     "value": 0.0
+    }
+   ]
+  },
+  {
+   "name": "ring N=8 outward no centre",
+   "r": 2.5588225777051985,
+   "r_exact": "-sqrt(11*sqrt(5) + 25)*(-3800*sqrt(14805*sqrt(5) + 33105) - 3740*sqrt(5)*sqrt(2961*sqrt(5) + 6621) - 1050*sqrt(120*sqrt(5) + 270) - 990*sqrt(5)*sqrt(24*sqrt(5) + 54) - 175*sqrt(330*sqrt(5) + 750) - 165*sqrt(5)*sqrt(66*sqrt(5) + 150) - 500*sqrt(12*sqrt(5) + 27) - 88*sqrt(5)*sqrt(60*sqrt(5) + 135) + 200*sqrt(60*sqrt(5) + 135) + 220*sqrt(5)*sqrt(12*sqrt(5) + 27) + 375*sqrt(66*sqrt(5) + 150) + 77*sqrt(5)*sqrt(330*sqrt(5) + 750) + 2250*sqrt(24*sqrt(5) + 54) + 462*sqrt(5)*sqrt(120*sqrt(5) + 270) + 1672*sqrt(5)*sqrt(14805*sqrt(5) + 33105) + 8500*sqrt(2961*sqrt(5) + 6621))/(-660*sqrt(5) - 450*sqrt(sqrt(5) + 5) - 750*sqrt(2) + 330*sqrt(10) + 210*sqrt(5)*sqrt(sqrt(5) + 5) + 1500)",
+   "contacts": [
+    {
+     "elements": "void-void",
+     "kind": "face-corner",
+     "orient": "m0m1",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "void-void",
+     "kind": "face-corner",
+     "orient": "m0m1",
+     "zero": "digits",
+     "value": 0.0
+    }
+   ]
+  },
+  {
+   "name": "ring N=12 outward with centre",
+   "r": 3.789909705778669,
+   "r_exact": "(-420*sqrt(5922*sqrt(5) + 13242) - 630*sqrt(1974*sqrt(5) + 4414) - 304*sqrt(2046*sqrt(5) + 4575) - 80*sqrt(60*sqrt(5) + 135) - 240*sqrt(4*sqrt(5) + 9) - 8*sqrt(330*sqrt(5) + 750) + 16*sqrt(66*sqrt(5) + 150) + 96*sqrt(20*sqrt(5) + 45) + 160*sqrt(12*sqrt(5) + 27) + 136*sqrt(10230*sqrt(5) + 22875) + 282*sqrt(9870*sqrt(5) + 22070) + 188*sqrt(29610*sqrt(5) + 66210))/(-912*sqrt(5)*sqrt(682*sqrt(5) + 1525) - 1020*sqrt(3)*sqrt(682*sqrt(5) + 1525) - 63*sqrt(10)*sqrt(sqrt(5) + 5)*sqrt(682*sqrt(5) + 1525) - 27*sqrt(5)*sqrt(sqrt(5) + 5)*sqrt(11*sqrt(5) + 25) - 60*sqrt(2)*sqrt(11*sqrt(5) + 25) - 12*sqrt(30)*sqrt(11*sqrt(5) + 25) + 30*sqrt(6)*sqrt(11*sqrt(5) + 25) + 24*sqrt(10)*sqrt(11*sqrt(5) + 25) + 57*sqrt(sqrt(5) + 5)*sqrt(11*sqrt(5) + 25) + 141*sqrt(2)*sqrt(sqrt(5) + 5)*sqrt(682*sqrt(5) + 1525) + 456*sqrt(15)*sqrt(682*sqrt(5) + 1525) + 2040*sqrt(682*sqrt(5) + 1525))",
+   "contacts": [
+    {
+     "elements": "void-void",
+     "kind": "edge-edge",
+     "orient": "m0m1",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "void-void",
+     "kind": "edge-edge",
+     "orient": "m0m1",
+     "zero": "digits",
+     "value": 0.0
+    }
+   ]
+  }
+ ],
+ "mandala": [
+  {
+   "name": "mandala 13 h=H/2 outer layers parallel",
+   "contacts": [
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 4
+    },
+    {
+     "elements": "water-wind",
+     "kind": "corner-face",
+     "orient": "UU",
+     "count": 3
+    },
+    {
+     "elements": "wind-water",
+     "kind": "face-corner",
+     "orient": "UU",
+     "count": 3
+    }
+   ],
+   "certified": [
+    {
+     "elements": "wind-water",
+     "kind": "face-corner",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "water-wind",
+     "kind": "corner-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ],
+   "d": 1.7776700946753579,
+   "d_exact": "sqrt(sqrt(5) + 5)*(-4*sqrt(5)*sqrt(6*sqrt(5) + 30) - 10*sqrt(2*sqrt(5) + 10) - sqrt(5)*sqrt(60*sqrt(5) + 135) - 5*sqrt(12*sqrt(5) + 27) - 6*sqrt(15) + sqrt(5)*sqrt(12*sqrt(5) + 27) + 2*sqrt(5)*sqrt(2*sqrt(5) + 10) + 10*sqrt(3) + 5*sqrt(60*sqrt(5) + 135) + 16*sqrt(30) + 20*sqrt(6*sqrt(5) + 30))/240"
+  },
+  {
+   "name": "mandala 13 h=H/2 outer layers inverted",
+   "contacts": [
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "DD",
+     "count": 4
+    },
+    {
+     "elements": "water-water",
+     "kind": "corner-face",
+     "orient": "UD",
+     "count": 3
+    },
+    {
+     "elements": "water-water",
+     "kind": "face-corner",
+     "orient": "UD",
+     "count": 3
+    }
+   ],
+   "certified": [
+    {
+     "elements": "water-water",
+     "kind": "face-corner",
+     "orient": "UD",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "water-water",
+     "kind": "corner-face",
+     "orient": "UD",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "DD",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ],
+   "d": 1.7780815414206905,
+   "d_exact": "(-120*sqrt(3) - 5*sqrt(10)*sqrt(33*sqrt(5) + 75) - 20*sqrt(2)*sqrt(3*sqrt(5) + 15) - 3*sqrt(2)*sqrt(165*sqrt(5) + 375) - 40*sqrt(5) - 2*sqrt(2)*sqrt(15*sqrt(5) + 75) + 2*sqrt(10)*sqrt(15*sqrt(5) + 75) + 5*sqrt(2)*sqrt(33*sqrt(5) + 75) + 120 + 40*sqrt(15) + 3*sqrt(10)*sqrt(165*sqrt(5) + 375) + 20*sqrt(10)*sqrt(3*sqrt(5) + 15))/120"
+  },
+  {
+   "name": "mandala 13 h=H outer layers parallel",
+   "contacts": [
+    {
+     "elements": "void-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 12
+    }
+   ],
+   "certified": [
+    {
+     "elements": "void-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ],
+   "d": 1.2721209626545606,
+   "d_exact": "4*(-5*sqrt(3) + 2*sqrt(15))*sqrt(sqrt(5) + 5)/(-75*sqrt(sqrt(5) + 5) - 30*sqrt(2) + 12*sqrt(10) + 33*sqrt(5)*sqrt(sqrt(5) + 5))"
+  },
+  {
+   "name": "mandala web lattice h=H/2 outer layers parallel",
+   "contacts": [
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "water-wind",
+     "kind": "corner-face",
+     "orient": "UU",
+     "count": 1
+    },
+    {
+     "elements": "wind-water",
+     "kind": "face-corner",
+     "orient": "UU",
+     "count": 1
+    }
+   ],
+   "certified": [
+    {
+     "elements": "void-earth",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "water-wind",
+     "kind": "corner-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "wind-water",
+     "kind": "face-corner",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    },
+    {
+     "elements": "earth-void",
+     "kind": "face-face",
+     "orient": "UU",
+     "zero": "exact",
+     "value": 0.0
+    }
+   ],
+   "d": 1.7776700946753579,
+   "d_exact": "sqrt(sqrt(5) + 5)*(-4*sqrt(5)*sqrt(6*sqrt(5) + 30) - 10*sqrt(2*sqrt(5) + 10) - sqrt(5)*sqrt(60*sqrt(5) + 135) - 5*sqrt(12*sqrt(5) + 27) - 6*sqrt(15) + sqrt(5)*sqrt(12*sqrt(5) + 27) + 2*sqrt(5)*sqrt(2*sqrt(5) + 10) + 10*sqrt(3) + 5*sqrt(60*sqrt(5) + 135) + 16*sqrt(30) + 20*sqrt(6*sqrt(5) + 30))/240",
+   "density": 0.4039411707300355
+  }
+ ],
+ "ekp": {
+  "earth-water": {
+   "exact": "3/2 - sqrt(5)/2",
+   "value": 0.38196601125010515
+  },
+  "water-fire": {
+   "exact": "3/2 - sqrt(5)/2",
+   "value": 0.38196601125010515
+  },
+  "fire-wind": {
+   "exact": "0",
+   "value": 0.0
+  },
+  "wind-void": {
+   "exact": "1/2 - sqrt(5)/2",
+   "value": -0.6180339887498949
+  }
+ },
+ "fails": []
+}
