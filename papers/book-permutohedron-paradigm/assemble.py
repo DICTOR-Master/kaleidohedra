@@ -182,6 +182,7 @@ doc = f'''<!doctype html>
 {idx}
 {open(os.path.join(HERE, 'about.html'), encoding='utf8').read()}
 {series}
+<div class="coverpage" style="break-before:page;height:252mm;display:flex;justify-content:center;align-items:center"><img src="figures/cover/paradigm-cover-back.png" alt="Back cover: the DICTO mark in pink" style="height:244mm;display:block"></div>
 </body></html>'''
 left = re.findall(r'\{\{[^}]*\}\}|\{D:\d+\}', doc)
 if left: raise SystemExit(f'unresolved: {left[:5]}')
