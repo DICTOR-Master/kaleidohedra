@@ -8179,6 +8179,17 @@
     "retry": "never redo this survey at 2.4 um; next only: trace gw16 (then gw07 with seams masked), cornea curvature at 1200 nm, wasp R1-R8 skeletons from the CATMAID API",
     "study": "studies/2026-11-16-compound-eye-scutoids",
     "goes_to": "#104 scutoid thread (biology prediction)"
+   },
+   {
+    "date": "2026-11-16",
+    "question": "Compound-eye scutoids, second trace: do the ommatidial columns of the apposition butterfly eye gw16 (Paukner et al. 2024, BossDB paukner2024, 600 nm) change neighbours along depth more than the image null gives, and do the changes follow cornea unevenness U or column convergence?",
+    "method": "studies/2026-11-16-compound-eye-scutoids: bossfetch.py (600 nm block, 4.4 GB, job eye16-fetch FINAL ok); eyerun16.py (job eye16-trace FINAL ok, 1403 s): 10 cornea-sheet patches 150 um apart, planes on the cornea normal (300 um wide, pixel scaled with depth to remove even convergence), new column-following tracker in eyetrace.py (mean shift from top, middle and bottom seeds; a column counts when two seed planes agree within 0.25 period in every plane), segments: cone window 68-92 um, cone tips 92-120, retina 120-340 in 55 um pieces, plus a whole-range following run; image null (8 seeds) + bootstrap null; tile partition; cornea quadric at 0.6 um in 9 variants per patch; controls straight 0/170, shear A=2 40/120, jitter 6 vs 15.0+-4.6 and 18 vs 19.4+-7.2; all 1505 flagged changes sorted by eye on contact sheets (rule pre-sort first)",
+    "status": "NOT CONFIRMED (no true neighbour exchange seen; retina tracking 54% median, below the 90% aim)",
+    "result": "retina 120-340 um: 799 of 4786 pairs change (16.7%) vs image null 809+-34 (z -0.3); cone window 448 of 2430 vs 133+-12 but all are layer-end effects where the cones taper out; tips 258 vs 242+-16; by eye 0 of 1505 flagged changes is a true exchange (cone: pairs keep place, lost where cones end or as diagonals of near-square four-cone cells; retina: flagged pairs are 1.6-2 periods long, diagonals of near-cocircular quads, lattice only partly resolved, ring streaks in patches 7-9); tracked share median 0.73 cone, 0.58 tips, 0.54 retina (0.27-0.96); whole-range following 120-340 um 0.19; column-following (structure-tensor) frame tracked worse than the fixed cornea normal (cone 0.39 vs 0.88). Cornea: radii 765/981 um, U median 0.12 (IQR 0.08-0.21), uncertainty from 9 fit variants median 0.06, up to 0.2 in two patches (survey +-0.1 confirmed); retina excess vs U rho -0.18 (p 0.63, n 10), vs segment anisotropy A rho +0.55 (p 0.10; A 1.02-1.06); convergence over 300 um about A 1.14, where the model expects about 1% scattered changes, below this method's floor",
+    "retry": "not this pipeline on gw16 unchanged; only with: contact-length restriction (< 1.3 periods) applied to data and null alike, a 3D watershed or honeycomb-ring retina segmentation reaching 90% (pilot on patch 1, 175-230 um), a cone window cut where the discs end, the more uneven gw07, or the wasp EM skeletons",
+    "study": "studies/2026-11-16-compound-eye-scutoids",
+    "goes_to": "#104 scutoid thread (biology prediction)",
+    "follows": "Compound-eye scutoids: which of the seven Paukner 2024 butterfly eyes (BossDB paukner2024) should be traced next? Clear "
    }
   ]
  },

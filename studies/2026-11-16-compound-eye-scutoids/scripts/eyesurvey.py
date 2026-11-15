@@ -127,6 +127,7 @@ tree = cKDTree(Pc)
 Ns = np.array([Nc[j].mean(0) for j in tree.query_ball_point(Pc, 20)]); Ns /= np.linalg.norm(Ns, axis=1, keepdims=True)
 
 cs, Rs = sphere_ls(Pc); res = np.linalg.norm(Pc - cs, axis=1) - Rs
+np.save(f'{OUT}/{NAME}-sheet.npy', np.c_[Pc, Ns, np.r_[cs, Rs][None].repeat(len(Pc), 0)].astype(np.float32))   # sheet (iso), normals, sphere: for the depth trace
 ext_pts = np.ptp(Pc, axis=0) * VX
 log(f'reference sphere R {Rs * VX:.0f} um, rms {res.std() * VX:.1f} um; sheet extent (z, y, x) {np.round(ext_pts)} um')
 print('PROGRESS 0.3 sheet', flush=True)
@@ -276,7 +277,7 @@ np.save(f'{OUT}/{NAME}-xsec.npy', sl.astype(np.float32))
 
 out = dict(name=NAME, shape_zyx=list(V.shape), iso_shape=list(I.shape), background=bg, threshold=thr,
            seed_iso=list(SEEDS[NAME]), sheet=dict(points=int(len(Pc)), extent_um=ext_pts.tolist()),
-           sphere=dict(radius_um=Rs * VX, rms_um=float(res.std() * VX), local_seed_sphere_um=R * VX), quadric=quad,
+           sphere=dict(radius_um=Rs * VX, rms_um=float(res.std() * VX), local_seed_sphere_um=R * VX, centre_iso=cs.tolist()), quadric=quad,
            local=dict(tiles=len(tiles), U_median=float(np.nanmedian(U)), U_q25=float(np.nanpercentile(U, 25)), U_q75=float(np.nanpercentile(U, 75)),
                       U_max=float(np.nanmax(U)), discs_placed=len(taken), r1_median_um=float(np.median([t['r1'] for t in tiles])) if tiles else None,
                       r2_median_um=float(np.median([t['r2'] for t in tiles])) if tiles else None, tile_list=tiles),

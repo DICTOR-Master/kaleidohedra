@@ -101,6 +101,64 @@ def link(dets, gate):
     return tracks, tidx
 
 
+def follow_tracks(Z, P0, period, rad=0.35, iters=4, power=2):
+    """Column following (gw16): each start point moves to the intensity-weighted centre (weights clip(Z, 0) ** power) of a disc
+    of radius rad * period about its position in the previous plane, iterated (mean shift). Z: (K, N, N), cells bright."""
+    K = len(Z); P0 = np.asarray(P0, float); n = len(P0); r = rad * period; g = np.arange(-int(np.ceil(r)), int(np.ceil(r)) + 1)
+    G1, G2 = np.meshgrid(g, g, indexing='ij'); m = G1 ** 2 + G2 ** 2 <= r * r; off = np.c_[G1[m], G2[m]].astype(float)
+    X = np.empty((K, n, 2)); p = P0.copy()
+    for k in range(K):
+        W = np.clip(Z[k], 0, None)
+        for _ in range(iters):
+            Q = p[:, None, :] + off[None]
+            w = ndi.map_coordinates(W, Q.reshape(-1, 2).T, order=1, cval=0.0).reshape(n, -1) ** power
+            sw = w.sum(1); p = np.where(sw[:, None] > 1e-9, (w[..., None] * Q).sum(1) / (sw[:, None] + 1e-12), p)
+        X[k] = p
+    return X
+
+
+def follow_link(Z, dets, period, seeds=None, agree=0.25, merge=0.35):
+    """Tracks by column following from the detections of several seed planes (top, middle, bottom by default), each followed up
+    and down through the whole depth. Tracks from different seed planes that stay within agree * period of each other in every
+    plane are one column; a column is CONFIRMED when at least two seed planes reproduce it (this is the forward-backward test:
+    a follower that hops to a neighbour is not reproduced from the other end). Confirmed columns that come within merge * period
+    of each other in any plane are both left untrusted. Returns tracks (K, 2) of confirmed columns, their detection index per plane
+    (nearest detection within 0.3 period, else -1), a trust flag, and the mean positions of unconfirmed columns."""
+    K = len(Z); seeds = sorted(set([0, K // 2, K - 1])) if seeds is None else seeds
+    T, src = [], []
+    for ks in seeds:
+        if len(dets[ks]) == 0: continue
+        dn = follow_tracks(Z[ks:], dets[ks], period); up = follow_tracks(Z[ks::-1], dets[ks], period)
+        T.append(np.concatenate([up[::-1][:-1], dn], 0)); src += [ks] * len(dets[ks])
+    X = np.concatenate(T, 1); src = np.array(src); M = X.shape[1]
+    par = np.arange(M)
+    def find(a):
+        while par[a] != a: par[a] = par[par[a]]; a = par[a]
+        return a
+    from scipy.spatial import cKDTree
+    for a, b in cKDTree(X[K // 2]).query_pairs(agree * period):
+        if np.linalg.norm(X[:, a] - X[:, b], axis=1).max() < agree * period: par[find(a)] = find(b)
+    roots = np.array([find(a) for a in range(M)]); groups = {}
+    for a, r_ in enumerate(roots): groups.setdefault(r_, []).append(a)
+    conf, unconf = [], []
+    for r_, mem in groups.items():
+        (conf if len(set(src[mem])) >= 2 else unconf).append(X[:, mem].mean(1))
+    if not conf: return [], [], np.zeros(0, bool), [], dict(followed=M, columns=len(groups), confirmed=0, merged=0)
+    C = np.stack(conf, 1); n = C.shape[1]; trust = np.ones(n, bool)
+    for k in range(K):
+        for a, b in cKDTree(C[k]).query_pairs(merge * period): trust[a] = trust[b] = False
+    tidx = []
+    for i in range(n):
+        I = np.full(K, -1)
+        for k in range(K):
+            if len(dets[k]):
+                d = np.linalg.norm(dets[k] - C[k, i], axis=1); j = int(np.argmin(d))
+                if d[j] < 0.3 * period: I[k] = j
+        tidx.append(I)
+    others = [u.mean(0) for u in unconf]
+    return [C[:, i] for i in range(n)], tidx, trust, others, dict(followed=M, columns=len(groups), confirmed=n, merged=int((~trust).sum()))
+
+
 def fill(T):
     ok = ~np.isnan(T[:, 0])
     if ok.all(): return T
@@ -167,7 +225,7 @@ def p_swap(a):
     return A_P[-1]
 
 
-def run(S, depths, period, out, label, zthr=0.6, log=print, nullruns=True, img_seeds=10, window=False, psm=0.10, dsm=None, dark=False, bandpass=False, zthr_=None):
+def run(S, depths, period, out, label, zthr=0.6, log=print, nullruns=True, img_seeds=10, window=False, psm=0.10, dsm=None, dark=False, bandpass=False, zthr_=None, tracker='link'):
     global BANDPASS; BANDPASS = bandpass
     if zthr_ is not None: zthr = zthr_
     K, N, _ = S.shape; edge = max(2, int(0.3 * period))   # small border cut; the interior rule removes border cells
@@ -198,11 +256,15 @@ def run(S, depths, period, out, label, zthr=0.6, log=print, nullruns=True, img_s
         k0, k1 = best[0], best[1] + 1
         if k1 - k0 < 12:
             log(f'PROGRESS 0.55 {label}: no persistent window (longest {k1 - k0} shells)'); return None, None, None, None, labs, dets
-        S = S[k0:k1]; depths = depths[k0:k1]; dets = dets[k0:k1]; labs = labs[k0:k1]; K = k1 - k0
+        S = S[k0:k1]; Z = Z[k0:k1]; depths = depths[k0:k1]; dets = dets[k0:k1]; labs = labs[k0:k1]; K = k1 - k0
         log(f'PROGRESS 0.52 {label}: persistent window {depths[0]:.0f}-{depths[-1]:.0f} um ({K} shells)')
-    tracks, tidx = link(dets, 0.3 * period)
-    full = [i for i, T in enumerate(tracks) if (~np.isnan(T[:, 0])).sum() >= 0.8 * K and np.isnan(T[:GAP + 1, 0]).sum() <= GAP
-            and np.isnan(T[-GAP - 1:, 0]).sum() <= GAP and max_gap(T) <= GAP]                 # ends may miss up to GAP shells (held constant)
+    fstat = None
+    if tracker == 'follow':
+        tracks, tidx, ftrust, fothers, fstat = follow_link(Z, dets, period); full = list(range(len(tracks)))
+    else:
+        tracks, tidx = link(dets, 0.3 * period)
+        full = [i for i, T in enumerate(tracks) if (~np.isnan(T[:, 0])).sum() >= 0.8 * K and np.isnan(T[:GAP + 1, 0]).sum() <= GAP
+                and np.isnan(T[-GAP - 1:, 0]).sum() <= GAP and max_gap(T) <= GAP]                 # ends may miss up to GAP shells (held constant)
     if len(full) < 8:
         log(f'PROGRESS 0.55 {label}: only {len(full)} tracks span the layer: no count'); return None, None, None, None, labs, dets
     X = np.stack([fill(tracks[i]) for i in full], 1)                  # (K, n, 2)
@@ -215,13 +277,14 @@ def run(S, depths, period, out, label, zthr=0.6, log=print, nullruns=True, img_s
     # trusted cells: the same track is found when linking bottom-up (forward-backward consistency, >= 95% of its detections)
     # and it never jumps (max deviation from its depth-smoothed path < 0.25 period). Only edges between trusted interior cells
     # are counted; all spanning cells stay in the Delaunay geometry.
-    btr, bidx = link(dets[::-1], 0.3 * period)
     owner = {}
+    if tracker == 'follow': confirmed = np.asarray(ftrust, bool); bidx = []    # seed-plane agreement + no merge (follow_link)
+    else:
+        btr, bidx = link(dets[::-1], 0.3 * period); confirmed = np.zeros(n, bool)
     for b, I in enumerate(bidx):
         for kk, j in enumerate(I[::-1]):
             if j >= 0: owner[(kk, int(j))] = b
-    confirmed = np.zeros(n, bool)
-    for c_, t in enumerate(full):
+    for c_, t in enumerate(full if tracker != 'follow' else []):
         ids = [owner.get((kk, int(j))) for kk, j in enumerate(tidx[t]) if j >= 0]
         if ids:
             vals, cnts = np.unique([-1 if v is None else v for v in ids], return_counts=True)
@@ -234,6 +297,18 @@ def run(S, depths, period, out, label, zthr=0.6, log=print, nullruns=True, img_s
     used = [set(int(tidx[t][k]) for t in full if tidx[t][k] >= 0) for k in range(K)]
     extras = [dets[k][[j for j in range(len(dets[k])) if j not in used[k]]] for k in range(K)]
     tracked_share = float(np.mean([len(used[k]) / max(1, len(dets[k])) for k in range(K)]))
+    # tracked share in the interior zone (more than 1.5 periods from the plane border): detections within 0.3 period of a
+    # confirmed track, and of a trusted interior track
+    def zone_share(sel):
+        v = []
+        for k in range(K):
+            D = dets[k]
+            if not len(D): continue
+            z = ((D > 1.5 * period) & (D < N - 1 - 1.5 * period)).all(1)
+            if sel.sum() and z.sum():
+                d = np.linalg.norm(D[z][:, None] - X[k][sel][None], axis=2).min(1); v.append(float(np.mean(d < 0.3 * period)))
+        return float(np.mean(v)) if v else 0.0
+    tracked_share_zone = zone_share(confirmed); trusted_share_zone = zone_share(interior)
     raw = count_swaps(X, interior, extras, period)
     sm = sm0
     smooth = count_swaps(sm, interior, extras, period)
@@ -257,7 +332,8 @@ def run(S, depths, period, out, label, zthr=0.6, log=print, nullruns=True, img_s
     # null: straight columns at the smoothed top positions + iid jitter of the measured noise
     if not nullruns:
         return dict(raw=raw, smoothed=smooth, noise_px=noise, spanning=n, interior=int(interior.sum()), interior_untrusted=int(interior_all.sum()),
-                    tracked_share=tracked_share, depth_um=[float(depths[0]), float(depths[-1])]), X, sm, interior, labs, dets
+                    tracked_share=tracked_share, tracked_share_zone=tracked_share_zone, trusted_share_zone=trusted_share_zone, follow=fstat,
+                    depth_um=[float(depths[0]), float(depths[-1])]), X, sm, interior, labs, dets
     rng = np.random.default_rng(7); nulls = []; nulls_sm = []
     base = np.repeat(sm[:1], K, 0)
     ex0 = [extras[0]] * K                                             # straight columns: the untracked cells stay put too
@@ -275,11 +351,12 @@ def run(S, depths, period, out, label, zthr=0.6, log=print, nullruns=True, img_s
     # cells to render in the image null: the spanning columns (top positions) + every other track seen in >= 30% of the shells
     # (they stay in the images and can take over a track, so the null must contain them too)
     others = [np.nanmean(tracks[i], 0) for i, T in enumerate(tracks) if i not in set(full) and (~np.isnan(T[:, 0])).sum() >= 0.3 * K]
+    if tracker == 'follow': others = list(fothers)
     P0 = sm[0]
     if others:
         O = np.array(others); dmin = np.linalg.norm(O[:, None] - P0[None], axis=2).min(1); O = O[dmin > 0.5 * period]
         P0 = np.r_[P0, O]
-    imgnull = image_null(P0, K, N, period, depths, noise, seeds=img_seeds, log=log, label=label, psm=psm, dsm=dsm, bandpass=bandpass, zthr=zthr)
+    imgnull = image_null(P0, K, N, period, depths, noise, seeds=img_seeds, log=log, label=label, psm=psm, dsm=dsm, bandpass=bandpass, zthr=zthr, tracker=tracker)
     log(f'PROGRESS 0.9 {label}: null raw {np.mean(nulls):.2f}+-{np.std(nulls):.2f}, null smoothed {np.mean(nulls_sm):.2f}+-{np.std(nulls_sm):.2f}')
     # anisotropy and model expectation on the smoothed tracks
     Etop, _ = dense_edges(sm[0], extras[0], period); Ein = [e for e in Etop if interior[e[0]] and interior[e[1]]]
@@ -291,6 +368,7 @@ def run(S, depths, period, out, label, zthr=0.6, log=print, nullruns=True, img_s
     res = dict(label=label, psm=psm, dsm=dsm, dark=dark, bandpass=bandpass, zthr=zthr, depth_um=[float(depths[0]), float(depths[-1])], shells=K, period_px=period,
                detections_per_shell=[int(len(d)) for d in dets[::max(1, K // 10)]], tracks=len(tracks), spanning=n,
                interior=int(interior.sum()), interior_before_trust=int(interior_all.sum()), tracked_share=tracked_share, confirmed=int(confirmed[interior_all].sum()),
+               tracker=tracker, follow=fstat, tracked_share_zone=tracked_share_zone, trusted_share_zone=trusted_share_zone,
                nojump=int(nojump[interior_all].sum()), noise_px=noise, noise_over_period=noise / period,
                raw=raw, smoothed=smooth, region=region, control_straight_noiseless_lost=zero['lost'],
                null_raw_mean=float(np.mean(nulls)), null_raw_sd=float(np.std(nulls)), null_raw_max=int(np.max(nulls)),
@@ -322,26 +400,26 @@ def render(Pk, N, period, rng, snr=1.5, blob=0.2):
     return img + rng.normal(0, 1 / snr, img.shape) * 0.5
 
 
-def image_null(P0, K, N, period, depths, target_noise, seeds=10, log=print, label='', psm=0.10, dsm=None, bandpass=False, zthr=0.6):
+def image_null(P0, K, N, period, depths, target_noise, seeds=10, log=print, label='', psm=0.10, dsm=None, bandpass=False, zthr=0.6, tracker='link'):
     """Null by images: straight columns at P0 (no rearrangement) + iid per-shell jitter, rendered and run through the same
     detection / linking / counting. Jitter calibrated so the pipeline's measured residual equals target_noise."""
     sj = 1.9 * target_noise; out = []
     for it in range(2):                                              # calibration of the jitter
         rng = np.random.default_rng(100 + it)
         S = np.stack([render(P0 + rng.normal(0, sj, P0.shape), N, period, rng) for _ in range(K)])
-        r = run(S, depths, period, None, label + ' null-calibration', log=lambda *a: None, nullruns=False, psm=psm, dsm=dsm, bandpass=bandpass, zthr_=zthr)[0]
+        r = run(S, depths, period, None, label + ' null-calibration', log=lambda *a: None, nullruns=False, psm=psm, dsm=dsm, bandpass=bandpass, zthr_=zthr, tracker=tracker)[0]
         sj *= target_noise / max(r['noise_px'], 1e-6)
     for sd in range(seeds):
         rng = np.random.default_rng(200 + sd)
         S = np.stack([render(P0 + rng.normal(0, sj, P0.shape), N, period, rng) for _ in range(K)])
-        r = run(S, depths, period, None, label + ' null', log=lambda *a: None, nullruns=False, psm=psm, dsm=dsm, bandpass=bandpass, zthr_=zthr)[0]
+        r = run(S, depths, period, None, label + ' null', log=lambda *a: None, nullruns=False, psm=psm, dsm=dsm, bandpass=bandpass, zthr_=zthr, tracker=tracker)[0]
         out.append((r['raw']['lost'], r['raw']['top_edges'], r['smoothed']['lost'], r['smoothed']['top_edges'], r['noise_px']))
         log(f'PROGRESS {0.9 + 0.09 * sd / seeds:.2f} {label}: image null seed {sd}: raw {out[-1][0]}/{out[-1][1]}, smoothed {out[-1][2]}, noise {out[-1][4]:.2f}')
     o = np.array(out, float)
     return dict(jitter_px=float(sj), seeds=seeds, raw_share_mean=float((o[:, 0] / np.maximum(o[:, 1], 1)).mean()),
                 raw_share_sd=float((o[:, 0] / np.maximum(o[:, 1], 1)).std()), smoothed_share_mean=float((o[:, 2] / np.maximum(o[:, 3], 1)).mean()),
                 smoothed_share_sd=float((o[:, 2] / np.maximum(o[:, 3], 1)).std()), raw_lost=o[:, 0].tolist(), raw_top=o[:, 1].tolist(),
-                smoothed_lost=o[:, 2].tolist(), noise=o[:, 4].tolist())
+                smoothed_lost=o[:, 2].tolist(), smoothed_top=o[:, 3].tolist(), noise=o[:, 4].tolist())
 
 
 def synth_stack(kind, K=60, N=300, period=32.0, seed=3, snr=1.5, A=2.0, jit=0.12):

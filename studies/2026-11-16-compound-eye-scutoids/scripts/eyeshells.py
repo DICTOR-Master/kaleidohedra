@@ -52,11 +52,18 @@ def fibre_dir(V, p, h=50, ref=None):
     return d, (w[0] / w[2], w[1] / w[2])
 
 
-def make_fibre_stack(V, p0, inward, length_um, N=500, px_um=0.3, step_um=1.0, every_um=10.0, log=None):
+def make_fibre_stack(V, p0, inward, length_um, N=500, px_um=0.3, step_um=1.0, every_um=10.0, log=None, px_scale=None, h=50, max_dev_deg=None):
     """Planes perpendicular to the measured local column direction, stepped along it (a straightened frame that follows
-    bending columns). The direction is re-measured every every_um and interpolated; in-plane axes are parallel-transported."""
+    bending columns). The direction is re-measured every every_um and interpolated; in-plane axes are parallel-transported.
+    px_scale (optional, one factor per plane): the pixel size of plane k is px_um * px_scale[k], so that evenly converging
+    columns keep their plane positions (a similarity per plane, which never changes a neighbour set).
+    max_dev_deg (optional): a measured direction more than this off the inward reference is rejected (layered tissue such as the
+    lens gives a false axis) and the previous direction is kept; the number of rejections is returned in ratios as NaN rows."""
     nsteps = int(round(length_um / step_um)) + 1
-    p = np.array(p0, float); n, rat = fibre_dir(V, p, ref=inward); e1 = np.cross(n, [1.0, 0, 0]); e1 /= np.linalg.norm(e1)
+    p = np.array(p0, float); inward = np.asarray(inward, float) / np.linalg.norm(inward); n, rat = fibre_dir(V, p, h=h, ref=inward)
+    cosmax = None if max_dev_deg is None else np.cos(np.radians(max_dev_deg))
+    if cosmax is not None and n @ inward < cosmax: n, rat = inward.copy(), (np.nan, np.nan)
+    e1 = np.cross(n, [1.0, 0, 0]); e1 /= np.linalg.norm(e1)
     g = (np.arange(N) - (N - 1) / 2) * px_um / 0.6                                  # voxels
     G1, G2 = np.meshgrid(g, g, indexing='ij')
     S = np.zeros((nsteps, N, N), np.float32); path = []; dirs = []; ratios = [rat]; e1s = []
@@ -64,10 +71,13 @@ def make_fibre_stack(V, p0, inward, length_um, N=500, px_um=0.3, step_um=1.0, ev
     for k in range(nsteps):
         t = k * step_um
         if t - last >= every_um - 1e-9:
-            n_new, rat = fibre_dir(V, p, ref=n); ratios.append(rat); n_next = n_new; last = t
+            n_new, rat = fibre_dir(V, p, h=h, ref=n)
+            if cosmax is not None and n_new @ inward < cosmax: n_new, rat = n_next, (np.nan, np.nan)
+            ratios.append(rat); n_next = n_new; last = t
         n = n + (n_next - n) * min(1.0, step_um / every_um); n /= np.linalg.norm(n)   # smooth turn towards the new direction
         e1 = e1 - (e1 @ n) * n; e1 /= np.linalg.norm(e1); e2 = np.cross(n, e1)
-        P = p[None, None] + G1[..., None] * e1 + G2[..., None] * e2
+        f = 1.0 if px_scale is None else float(px_scale[k])
+        P = p[None, None] + f * (G1[..., None] * e1 + G2[..., None] * e2)
         S[k] = ndi.map_coordinates(V, P.reshape(-1, 3).T, order=1, cval=-1, output=np.float32).reshape(N, N)
         path.append(p.copy()); dirs.append(n.copy()); e1s.append(e1.copy())
         p = p + n * step_um / 0.6

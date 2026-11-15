@@ -319,3 +319,110 @@ A radius-based clear-zone call misread fine apposition retina as a clear zone (g
 3. Wasp eye: fetch the R1-R8 and rhabdom-centreline skeletons from the public CATMAID API, and compute neighbour sets of the 29
    ommatidia along depth.
 4. Cornea curvature: fit gw16 and gw07 at 1200 nm (cleaner surface) before claiming U, because this survey's U is only good to ±0.1.
+
+## 16 Nov: depth trace of the apposition eye gw16 (ledger [273])
+
+**Conclusion: NOT CONFIRMED.** No scutoid-like neighbour change is established in gw16. In the retina (120-340 µm), 799 of 4786
+neighbour pairs (16.7%) change within 55 µm segments, against an image null of 809 ± 34. Sorted by eye, 0 of the 1505 flagged changes
+in all layers is a true neighbour exchange. Only 54% of detections were tracked (median; target over 90%), so a small true rate cannot
+be excluded. The changes do not follow cornea unevenness (Spearman ρ −0.18, p 0.63, 10 patches). This eye's convergence is nearly even
+(A ≈ 1.03 per 55 µm segment, about 1.14 over 300 µm from the cornea radii), and for such an eye the prediction expects about 1%
+scattered changes, which is below what this trace can resolve.
+
+Data: Paukner et al. 2024, BossDB paukner2024, butterfly_retina_xray_grp03_gw16, channel 032019_DP_full_vol, scale 600_600_600. The
+fetched block is x 100-1900, y 200-2300, all z (1155 × 2100 × 1800 voxels, 4.4 GB, 0 absent chunks; job eye16-fetch, FINAL ok). As
+before, the volume stays on the compute machine, outside git. Committed here: data/eyetrace16-summary.json (derived counts, per patch and
+per segment, with every flagged change and its sorting), data/eyetrace16-inspection.json (the by-eye calls with reasons), and two small
+figures. Scripts: eyerun16.py (driver), eyesum16.py (pooling), eyefig16.py, eyesheets16.py (contact sheets for inspection, kept on the
+compute machine). eyetrace.py gained a column-following tracker (`tracker='follow'`). eyeshells.make_fibre_stack gained a per-plane
+pixel scale and a direction guard. eyesurvey.py now also saves the cornea sheet and the sphere centre. Job eye16-trace: FINAL ok, 1403 s.
+
+### Method (as run)
+- **Cornea and patches.** The survey's cornea sheet for gw16 was re-run and saved (same numbers: sphere R 961 µm, rms 7.9 µm). The
+  volume holds only the upper part of the eye (693 µm in z), so 10 sheet points, 150 µm apart, have plane stacks that stay inside the
+  block from 40 to 355 µm deep.
+- **Planes.** Each plane is perpendicular to the cornea normal, 300 µm wide (600 px of 0.5 µm at the top), with planes 1 µm apart.
+  The pixel shrinks as (961 − d)/(961 − d0), so even convergence (a similarity, which never changes a neighbour set) is taken out and
+  the lattice period stays about constant in pixels (13.5 µm at 80 µm deep, measured on the cone lattice). A fresh stack is made
+  for each depth segment.
+- **Segments.** The cone window is 68-92 µm (clean bright discs), the cone tips 92-120 µm, and the retina 120-340 µm in four
+  segments of 55 µm. One more whole-range stack (120-340 µm) measures how many columns can be followed through the entire retina.
+- **Tracking (new: column following).** Cells are detected (band-pass, local maxima, watershed, weighted centroids) in the top,
+  middle and bottom plane of a segment. Each is followed up and down through every plane by mean shift (weighted centre within
+  0.35 period). A column counts only when tracks from two different seed planes agree within 0.25 period in every plane, which is the
+  forward-backward test, and when no other column merges with it. Counting then follows the gw05 trace: the Delaunay graph of all
+  detections, pairs between trusted interior columns, top versus bottom (majority of 5 planes), the image null (8 seeds plus 2
+  calibration runs per segment), the bootstrap null, and the tile partition (each cell and change counted in the patch whose
+  top-plane centre is nearest).
+- **Cornea curvature per patch.** The surface was re-found at 0.6 µm along the sheet normals, and a quadric was fitted in 9 variants
+  (disc radius 100, 132 or 180 µm × surface threshold at 30, 50 or 70% from outside to lens grey). The spread over the variants is
+  the uncertainty of U.
+
+**Pilots that set the method** (each 5 min or less, on two patches):
+- The column-following frame (structure-tensor axis) tracked the cone window at 0.39 and the fixed-normal frame at 0.88. The measured
+  axis follows the layering where the cones end (it turned 20-25° off the normal there). So the planes stay on the cornea normal.
+  This departs from "trace along the measured direction", because the measured direction made tracking worse.
+- Retina: dark centres tracked 0.58 (as in gw05). Bright cores with stronger smoothing (0.25 period in the plane, 8 µm in depth)
+  tracked 0.87 on 150-210 µm in one patch and 0.51-0.63 elsewhere.
+- Whole ranges fail. Following 60-340 µm tracked 0.13-0.20, and 120-340 µm tracked 0.29: columns are not reproduced from both ends
+  through the cone tips (92-120 µm, little lattice signal; the survey's column-alignment gap at 77-115 µm) or through the deeper
+  retina. That is why the count is per segment.
+- The FFT period estimate locked onto wrong rings (55-107 px) in the retina, so the period is set from the cone lattice and scaled.
+
+### Controls (same tracker and settings as the retina)
+| control | result | expected |
+|---|---|---|
+| straight-column lattice | 0 of 170 pairs | 0 |
+| lattice compressed across rows to A = 2 (past √3) | 40 of 120 (33%) | about 1/3 |
+| jittered lattices, 0.05 period (5 seeds) | 6 lost vs image null 15.0 ± 4.6 | null rate (the null errs high) |
+| jittered lattices, 0.12 period (5 seeds) | 18 lost vs 19.4 ± 7.2 | null rate |
+
+### Results (tile-partitioned)
+| layer | segments | tracked share (median, range) | counted cells / pairs | changed pairs | image null | bootstrap null | by eye: true |
+|---|---|---|---|---|---|---|---|
+| cone window 68-92 µm | 10 | 0.73 (0.51-0.90) | 1030 / 2430 | 448 (18.4%) | 133 ± 12 | 22 ± 4 | 0 |
+| cone tips 92-120 µm | 10 | 0.58 (0.50-0.65) | 759 / 1285 | 258 (20.1%) | 242 ± 16 | 11 ± 3 | 0 |
+| retina 120-340 µm | 40 | 0.54 (0.27-0.96) | 2862 / 4786 | 799 (16.7%) | 809 ± 34 | 34 ± 5 | 0 |
+
+Retina by segment (changed / pairs, image null): 120-175 µm 124/942 (235); 175-230 µm 190/1638 (193); 230-285 µm 279/1171 (190);
+285-340 µm 206/1036 (191). Whole-range following, 120-340 µm: tracked 0.19 (median), 286 trusted columns in 10 patches.
+The best-tracked unit (patch 1, 175-230 µm, 96% tracked, 233 columns) has 42 of 613 pairs changing against an image null of 10.1.
+Its lattice is clearly resolved (figure), but inspection shows no exchange (below).
+
+**Inspection, which decides the reading.** All 1505 flagged changes were looked at on contact sheets: the top, middle and bottom
+plane of each change, with the pair and its two opposite columns marked. Before the sheets were viewed, a rule pre-sorted them:
+256 "clear flip", 129 "near-tie" and 1120 "artefact". By eye, none is a true neighbour exchange:
+- **Cone window and tips (706).** The four columns of the pair keep their places, with bright discs at the top and middle. The pair is
+  lost at the bottom of the window, where the cones taper out and texture detections fall between them. Where a flip is real in
+  the graph, it is the diagonal of a near-square four-cone cell. These are layer-end effects. The rule had already marked 378 of the
+  448 cone-window changes as artefacts: one cell of the pair was seen in under 80% of the planes, or the pair was still a Delaunay
+  edge among the tracked columns at the bottom.
+- **Retina (799).** The flagged pairs are 1.6-2 lattice periods long (median; over 1.3 periods for 88-99% of them), so they are
+  diagonals across near-cocircular groups of four, not contacts. In single planes the ommatidia show as rings or blobs, and no
+  opposite pair is seen coming into contact. In patches 7-9, tomography ring streaks and the detached retina cross the crops.
+- So the cone-window excess over the image null (448 against 133) is an end-of-layer effect, and the retina total equals its null.
+
+**Curvature and convergence.** Local cornea radii have medians of 765 and 981 µm. U per patch has a median of 0.12 (IQR 0.08-0.21,
+range 0.06-0.29, 10 patches). The honest uncertainty of U is the spread over the 9 fit variants: median 0.06, and up to 0.17-0.22
+in two patches (patch 0 0.06-0.23; patch 7 0.04-0.26). That agrees with the survey's ±0.1, so a patch's U is known to about ±0.03
+at best and ±0.1 at worst. Across patches, retina changes minus the null show no link to U (ρ −0.18, p 0.63) and a weak, not
+significant one to the segment convergence anisotropy A (ρ +0.55, p 0.10; A only 1.02-1.06 per segment). U and A are unrelated
+(ρ −0.01). The more uneven half of the patches has 307 changes against a null of 347, and the more even half 492 against 462.
+Since no true exchange was found, there is nothing to test against curvature beyond these null-level counts.
+
+Figures (DICTO mark; low resolution; also in papers-to-read as RENDER-eye-gw16-*.png): figures/eye-gw16-crosssection.png (the
+best-tracked retina segment, top, middle and bottom, with the neighbour graph and the 42 flagged pairs) and figures/eye-gw16-swapmap.png
+(counted columns and flagged retina changes on the eye, patches shaded by U, and per-patch changes minus the null against U with
+the U variant ranges).
+
+### LEADS
+1. Count only contacts. Restrict changes to pairs shorter than 1.3 periods at the top, and run the same restriction and rule pre-sort
+   inside the image null, so that true-looking flips can be compared with the null (here the null was not sorted).
+2. Retina segmentation is still below 90% (median 54%). Not yet tried on gw16: a 3D watershed on the column-smoothed band-pass
+   volume, and the honeycomb-corner rings. Try them on patch 1 (96% in 175-230 µm), where the lattice is clean, before any count.
+3. Cone window per patch: end it where the cone discs stop (from the disc contrast profile), so that the taper does not produce
+   changes. Then the cone-tip-to-retina pairing (whole-range following, 19% now) can be chained segment to segment.
+4. gw07 (U median 0.21 in the survey) is the more uneven apposition eye. Trace it with this pipeline after the z-block seams are
+   masked. The prediction for gw16-like convergence (A ≈ 1.1) is about 1%, below this method's floor.
+5. Wasp eye (Makarova et al. 2025): R1-R8 skeletons from the public CATMAID API need no segmentation, so they are the cleanest test
+   of whether retinula bundles keep their neighbours.
