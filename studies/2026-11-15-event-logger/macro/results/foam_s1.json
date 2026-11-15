@@ -1,0 +1,1050 @@
+{
+ "source": "foam_s1_frames.jsonl.gz",
+ "frames": 1500,
+ "W": 8,
+ "P": 8,
+ "taus": [
+  16,
+  8,
+  32
+ ],
+ "steps": {
+  "1": {
+   "vanished": 1350,
+   "appeared": 0,
+   "tau=16": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "tau": 16,
+     "units": "MCS",
+     "tol": 0.0,
+     "by_segment": false,
+     "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+    },
+    "swaps": 1031,
+    "cell_events": {
+     "merge": 749,
+     "death": 493,
+     "clump": 108
+    },
+    "vanished": 1350,
+    "appeared": 0,
+    "primary": {
+     "free": 138,
+     "attached": 893,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 20,
+     "per_type": {
+      "merge": {
+       "events": 749,
+       "attached_swaps": 346,
+       "sides_shed_before_vanishing": 339,
+       "attached_before": 343,
+       "attached_after": 3,
+       "attached_per_event": 0.4619
+      },
+      "death": {
+       "events": 493,
+       "attached_swaps": 471,
+       "sides_shed_before_vanishing": 471,
+       "attached_before": 471,
+       "attached_after": 0,
+       "attached_per_event": 0.9554
+      },
+      "clump": {
+       "events": 108,
+       "attached_swaps": 76,
+       "sides_shed_before_vanishing": 58,
+       "attached_before": 66,
+       "attached_after": 10,
+       "attached_per_event": 0.7037
+      }
+     }
+    },
+    "ring": {
+     "free": 31,
+     "attached": 1000,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 2,
+     "per_type": {
+      "merge": {
+       "events": 749,
+       "attached_swaps": 455,
+       "sides_shed_before_vanishing": 196,
+       "attached_before": 297,
+       "attached_after": 158,
+       "attached_per_event": 0.6075
+      },
+      "death": {
+       "events": 493,
+       "attached_swaps": 458,
+       "sides_shed_before_vanishing": 300,
+       "attached_before": 362,
+       "attached_after": 96,
+       "attached_per_event": 0.929
+      },
+      "clump": {
+       "events": 108,
+       "attached_swaps": 87,
+       "sides_shed_before_vanishing": 42,
+       "attached_before": 66,
+       "attached_after": 21,
+       "attached_per_event": 0.8056
+      }
+     }
+    },
+    "free_per_vanished": 0.1022,
+    "ring_free_per_vanished": 0.023
+   },
+   "tau=8": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "tau": 8,
+     "units": "MCS",
+     "tol": 0.0,
+     "by_segment": false,
+     "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+    },
+    "swaps": 1031,
+    "cell_events": {
+     "merge": 749,
+     "death": 493,
+     "clump": 108
+    },
+    "vanished": 1350,
+    "appeared": 0,
+    "primary": {
+     "free": 262,
+     "attached": 769,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 18,
+     "per_type": {
+      "merge": {
+       "events": 749,
+       "attached_swaps": 290,
+       "sides_shed_before_vanishing": 284,
+       "attached_before": 287,
+       "attached_after": 3,
+       "attached_per_event": 0.3872
+      },
+      "death": {
+       "events": 493,
+       "attached_swaps": 422,
+       "sides_shed_before_vanishing": 422,
+       "attached_before": 422,
+       "attached_after": 0,
+       "attached_per_event": 0.856
+      },
+      "clump": {
+       "events": 108,
+       "attached_swaps": 57,
+       "sides_shed_before_vanishing": 45,
+       "attached_before": 50,
+       "attached_after": 7,
+       "attached_per_event": 0.5278
+      }
+     }
+    },
+    "ring": {
+     "free": 133,
+     "attached": 898,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 3,
+     "per_type": {
+      "merge": {
+       "events": 749,
+       "attached_swaps": 404,
+       "sides_shed_before_vanishing": 180,
+       "attached_before": 267,
+       "attached_after": 137,
+       "attached_per_event": 0.5394
+      },
+      "death": {
+       "events": 493,
+       "attached_swaps": 419,
+       "sides_shed_before_vanishing": 282,
+       "attached_before": 333,
+       "attached_after": 86,
+       "attached_per_event": 0.8499
+      },
+      "clump": {
+       "events": 108,
+       "attached_swaps": 75,
+       "sides_shed_before_vanishing": 36,
+       "attached_before": 57,
+       "attached_after": 18,
+       "attached_per_event": 0.6944
+      }
+     }
+    },
+    "free_per_vanished": 0.1941,
+    "ring_free_per_vanished": 0.0985
+   },
+   "tau=32": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "tau": 32,
+     "units": "MCS",
+     "tol": 0.0,
+     "by_segment": false,
+     "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+    },
+    "swaps": 1031,
+    "cell_events": {
+     "merge": 749,
+     "death": 493,
+     "clump": 108
+    },
+    "vanished": 1350,
+    "appeared": 0,
+    "primary": {
+     "free": 54,
+     "attached": 977,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 10,
+     "per_type": {
+      "merge": {
+       "events": 749,
+       "attached_swaps": 391,
+       "sides_shed_before_vanishing": 382,
+       "attached_before": 387,
+       "attached_after": 4,
+       "attached_per_event": 0.522
+      },
+      "death": {
+       "events": 493,
+       "attached_swaps": 501,
+       "sides_shed_before_vanishing": 500,
+       "attached_before": 501,
+       "attached_after": 0,
+       "attached_per_event": 1.0162
+      },
+      "clump": {
+       "events": 108,
+       "attached_swaps": 85,
+       "sides_shed_before_vanishing": 65,
+       "attached_before": 74,
+       "attached_after": 11,
+       "attached_per_event": 0.787
+      }
+     }
+    },
+    "ring": {
+     "free": 5,
+     "attached": 1026,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 0,
+     "per_type": {
+      "merge": {
+       "events": 749,
+       "attached_swaps": 465,
+       "sides_shed_before_vanishing": 201,
+       "attached_before": 305,
+       "attached_after": 160,
+       "attached_per_event": 0.6208
+      },
+      "death": {
+       "events": 493,
+       "attached_swaps": 472,
+       "sides_shed_before_vanishing": 308,
+       "attached_before": 373,
+       "attached_after": 99,
+       "attached_per_event": 0.9574
+      },
+      "clump": {
+       "events": 108,
+       "attached_swaps": 89,
+       "sides_shed_before_vanishing": 43,
+       "attached_before": 68,
+       "attached_after": 21,
+       "attached_per_event": 0.8241
+      }
+     }
+    },
+    "free_per_vanished": 0.04,
+    "ring_free_per_vanished": 0.0037
+   }
+  },
+  "2": {
+   "vanished": 1350,
+   "appeared": 0,
+   "tau=16": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "tau": 16,
+     "units": "MCS",
+     "tol": 0.0,
+     "by_segment": false,
+     "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+    },
+    "swaps": 839,
+    "cell_events": {
+     "merge": 800,
+     "clump": 101,
+     "death": 438
+    },
+    "vanished": 1350,
+    "appeared": 0,
+    "primary": {
+     "free": 136,
+     "attached": 703,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 17,
+     "per_type": {
+      "merge": {
+       "events": 800,
+       "attached_swaps": 279,
+       "sides_shed_before_vanishing": 266,
+       "attached_before": 270,
+       "attached_after": 9,
+       "attached_per_event": 0.3488
+      },
+      "clump": {
+       "events": 101,
+       "attached_swaps": 42,
+       "sides_shed_before_vanishing": 35,
+       "attached_before": 38,
+       "attached_after": 4,
+       "attached_per_event": 0.4158
+      },
+      "death": {
+       "events": 438,
+       "attached_swaps": 382,
+       "sides_shed_before_vanishing": 382,
+       "attached_before": 382,
+       "attached_after": 0,
+       "attached_per_event": 0.8721
+      }
+     }
+    },
+    "ring": {
+     "free": 27,
+     "attached": 812,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 1,
+     "per_type": {
+      "merge": {
+       "events": 800,
+       "attached_swaps": 416,
+       "sides_shed_before_vanishing": 135,
+       "attached_before": 233,
+       "attached_after": 183,
+       "attached_per_event": 0.52
+      },
+      "clump": {
+       "events": 101,
+       "attached_swaps": 64,
+       "sides_shed_before_vanishing": 24,
+       "attached_before": 32,
+       "attached_after": 32,
+       "attached_per_event": 0.6337
+      },
+      "death": {
+       "events": 438,
+       "attached_swaps": 332,
+       "sides_shed_before_vanishing": 213,
+       "attached_before": 259,
+       "attached_after": 73,
+       "attached_per_event": 0.758
+      }
+     }
+    },
+    "free_per_vanished": 0.1007,
+    "ring_free_per_vanished": 0.02
+   },
+   "tau=8": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "tau": 8,
+     "units": "MCS",
+     "tol": 0.0,
+     "by_segment": false,
+     "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+    },
+    "swaps": 839,
+    "cell_events": {
+     "merge": 800,
+     "clump": 101,
+     "death": 438
+    },
+    "vanished": 1350,
+    "appeared": 0,
+    "primary": {
+     "free": 249,
+     "attached": 590,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 12,
+     "per_type": {
+      "merge": {
+       "events": 800,
+       "attached_swaps": 220,
+       "sides_shed_before_vanishing": 208,
+       "attached_before": 211,
+       "attached_after": 9,
+       "attached_per_event": 0.275
+      },
+      "clump": {
+       "events": 101,
+       "attached_swaps": 31,
+       "sides_shed_before_vanishing": 28,
+       "attached_before": 28,
+       "attached_after": 3,
+       "attached_per_event": 0.3069
+      },
+      "death": {
+       "events": 438,
+       "attached_swaps": 339,
+       "sides_shed_before_vanishing": 339,
+       "attached_before": 339,
+       "attached_after": 0,
+       "attached_per_event": 0.774
+      }
+     }
+    },
+    "ring": {
+     "free": 116,
+     "attached": 723,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 3,
+     "per_type": {
+      "merge": {
+       "events": 800,
+       "attached_swaps": 361,
+       "sides_shed_before_vanishing": 115,
+       "attached_before": 199,
+       "attached_after": 162,
+       "attached_per_event": 0.4512
+      },
+      "clump": {
+       "events": 101,
+       "attached_swaps": 58,
+       "sides_shed_before_vanishing": 22,
+       "attached_before": 29,
+       "attached_after": 29,
+       "attached_per_event": 0.5743
+      },
+      "death": {
+       "events": 438,
+       "attached_swaps": 304,
+       "sides_shed_before_vanishing": 198,
+       "attached_before": 237,
+       "attached_after": 67,
+       "attached_per_event": 0.6941
+      }
+     }
+    },
+    "free_per_vanished": 0.1844,
+    "ring_free_per_vanished": 0.0859
+   },
+   "tau=32": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "tau": 32,
+     "units": "MCS",
+     "tol": 0.0,
+     "by_segment": false,
+     "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+    },
+    "swaps": 839,
+    "cell_events": {
+     "merge": 800,
+     "clump": 101,
+     "death": 438
+    },
+    "vanished": 1350,
+    "appeared": 0,
+    "primary": {
+     "free": 53,
+     "attached": 786,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 10,
+     "per_type": {
+      "merge": {
+       "events": 800,
+       "attached_swaps": 320,
+       "sides_shed_before_vanishing": 304,
+       "attached_before": 310,
+       "attached_after": 10,
+       "attached_per_event": 0.4
+      },
+      "clump": {
+       "events": 101,
+       "attached_swaps": 52,
+       "sides_shed_before_vanishing": 42,
+       "attached_before": 46,
+       "attached_after": 6,
+       "attached_per_event": 0.5149
+      },
+      "death": {
+       "events": 438,
+       "attached_swaps": 414,
+       "sides_shed_before_vanishing": 414,
+       "attached_before": 414,
+       "attached_after": 0,
+       "attached_per_event": 0.9452
+      }
+     }
+    },
+    "ring": {
+     "free": 4,
+     "attached": 835,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 0,
+     "per_type": {
+      "merge": {
+       "events": 800,
+       "attached_swaps": 422,
+       "sides_shed_before_vanishing": 139,
+       "attached_before": 239,
+       "attached_after": 183,
+       "attached_per_event": 0.5275
+      },
+      "clump": {
+       "events": 101,
+       "attached_swaps": 66,
+       "sides_shed_before_vanishing": 25,
+       "attached_before": 33,
+       "attached_after": 33,
+       "attached_per_event": 0.6535
+      },
+      "death": {
+       "events": 438,
+       "attached_swaps": 347,
+       "sides_shed_before_vanishing": 221,
+       "attached_before": 271,
+       "attached_after": 76,
+       "attached_per_event": 0.7922
+      }
+     }
+    },
+    "free_per_vanished": 0.0393,
+    "ring_free_per_vanished": 0.003
+   }
+  },
+  "4": {
+   "vanished": 1350,
+   "appeared": 0,
+   "tau=16": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "tau": 16,
+     "units": "MCS",
+     "tol": 0.0,
+     "by_segment": false,
+     "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+    },
+    "swaps": 655,
+    "cell_events": {
+     "clump": 119,
+     "death": 339,
+     "merge": 861
+    },
+    "vanished": 1350,
+    "appeared": 0,
+    "primary": {
+     "free": 128,
+     "attached": 527,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 11,
+     "per_type": {
+      "clump": {
+       "events": 119,
+       "attached_swaps": 44,
+       "sides_shed_before_vanishing": 37,
+       "attached_before": 39,
+       "attached_after": 5,
+       "attached_per_event": 0.3697
+      },
+      "death": {
+       "events": 339,
+       "attached_swaps": 234,
+       "sides_shed_before_vanishing": 233,
+       "attached_before": 234,
+       "attached_after": 0,
+       "attached_per_event": 0.6903
+      },
+      "merge": {
+       "events": 861,
+       "attached_swaps": 249,
+       "sides_shed_before_vanishing": 214,
+       "attached_before": 228,
+       "attached_after": 21,
+       "attached_per_event": 0.2892
+      }
+     }
+    },
+    "ring": {
+     "free": 23,
+     "attached": 632,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 1,
+     "per_type": {
+      "clump": {
+       "events": 119,
+       "attached_swaps": 61,
+       "sides_shed_before_vanishing": 17,
+       "attached_before": 24,
+       "attached_after": 37,
+       "attached_per_event": 0.5126
+      },
+      "death": {
+       "events": 339,
+       "attached_swaps": 192,
+       "sides_shed_before_vanishing": 98,
+       "attached_before": 125,
+       "attached_after": 67,
+       "attached_per_event": 0.5664
+      },
+      "merge": {
+       "events": 861,
+       "attached_swaps": 379,
+       "sides_shed_before_vanishing": 90,
+       "attached_before": 156,
+       "attached_after": 223,
+       "attached_per_event": 0.4402
+      }
+     }
+    },
+    "free_per_vanished": 0.0948,
+    "ring_free_per_vanished": 0.017
+   },
+   "tau=8": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "tau": 8,
+     "units": "MCS",
+     "tol": 0.0,
+     "by_segment": false,
+     "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+    },
+    "swaps": 655,
+    "cell_events": {
+     "clump": 119,
+     "death": 339,
+     "merge": 861
+    },
+    "vanished": 1350,
+    "appeared": 0,
+    "primary": {
+     "free": 233,
+     "attached": 422,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 6,
+     "per_type": {
+      "clump": {
+       "events": 119,
+       "attached_swaps": 33,
+       "sides_shed_before_vanishing": 28,
+       "attached_before": 29,
+       "attached_after": 4,
+       "attached_per_event": 0.2773
+      },
+      "death": {
+       "events": 339,
+       "attached_swaps": 202,
+       "sides_shed_before_vanishing": 202,
+       "attached_before": 202,
+       "attached_after": 0,
+       "attached_per_event": 0.5959
+      },
+      "merge": {
+       "events": 861,
+       "attached_swaps": 187,
+       "sides_shed_before_vanishing": 164,
+       "attached_before": 171,
+       "attached_after": 16,
+       "attached_per_event": 0.2172
+      }
+     }
+    },
+    "ring": {
+     "free": 94,
+     "attached": 561,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 1,
+     "per_type": {
+      "clump": {
+       "events": 119,
+       "attached_swaps": 57,
+       "sides_shed_before_vanishing": 16,
+       "attached_before": 22,
+       "attached_after": 35,
+       "attached_per_event": 0.479
+      },
+      "death": {
+       "events": 339,
+       "attached_swaps": 168,
+       "sides_shed_before_vanishing": 85,
+       "attached_before": 108,
+       "attached_after": 60,
+       "attached_per_event": 0.4956
+      },
+      "merge": {
+       "events": 861,
+       "attached_swaps": 336,
+       "sides_shed_before_vanishing": 77,
+       "attached_before": 133,
+       "attached_after": 203,
+       "attached_per_event": 0.3902
+      }
+     }
+    },
+    "free_per_vanished": 0.1726,
+    "ring_free_per_vanished": 0.0696
+   },
+   "tau=32": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "tau": 32,
+     "units": "MCS",
+     "tol": 0.0,
+     "by_segment": false,
+     "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+    },
+    "swaps": 655,
+    "cell_events": {
+     "clump": 119,
+     "death": 339,
+     "merge": 861
+    },
+    "vanished": 1350,
+    "appeared": 0,
+    "primary": {
+     "free": 48,
+     "attached": 607,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 9,
+     "per_type": {
+      "clump": {
+       "events": 119,
+       "attached_swaps": 56,
+       "sides_shed_before_vanishing": 45,
+       "attached_before": 49,
+       "attached_after": 7,
+       "attached_per_event": 0.4706
+      },
+      "death": {
+       "events": 339,
+       "attached_swaps": 259,
+       "sides_shed_before_vanishing": 258,
+       "attached_before": 259,
+       "attached_after": 0,
+       "attached_per_event": 0.764
+      },
+      "merge": {
+       "events": 861,
+       "attached_swaps": 292,
+       "sides_shed_before_vanishing": 252,
+       "attached_before": 269,
+       "attached_after": 23,
+       "attached_per_event": 0.3391
+      }
+     }
+    },
+    "ring": {
+     "free": 4,
+     "attached": 651,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 0,
+     "per_type": {
+      "clump": {
+       "events": 119,
+       "attached_swaps": 61,
+       "sides_shed_before_vanishing": 17,
+       "attached_before": 24,
+       "attached_after": 37,
+       "attached_per_event": 0.5126
+      },
+      "death": {
+       "events": 339,
+       "attached_swaps": 203,
+       "sides_shed_before_vanishing": 106,
+       "attached_before": 136,
+       "attached_after": 67,
+       "attached_per_event": 0.5988
+      },
+      "merge": {
+       "events": 861,
+       "attached_swaps": 387,
+       "sides_shed_before_vanishing": 95,
+       "attached_before": 163,
+       "attached_after": 224,
+       "attached_per_event": 0.4495
+      }
+     }
+    },
+    "free_per_vanished": 0.0356,
+    "ring_free_per_vanished": 0.003
+   }
+  },
+  "8": {
+   "vanished": 1350,
+   "appeared": 0,
+   "tau=16": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "tau": 16,
+     "units": "MCS",
+     "tol": 0.0,
+     "by_segment": false,
+     "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+    },
+    "swaps": 486,
+    "cell_events": {
+     "clump": 142,
+     "death": 237,
+     "merge": 875
+    },
+    "vanished": 1350,
+    "appeared": 0,
+    "primary": {
+     "free": 130,
+     "attached": 356,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 7,
+     "per_type": {
+      "clump": {
+       "events": 142,
+       "attached_swaps": 43,
+       "sides_shed_before_vanishing": 43,
+       "attached_before": 43,
+       "attached_after": 0,
+       "attached_per_event": 0.3028
+      },
+      "death": {
+       "events": 237,
+       "attached_swaps": 105,
+       "sides_shed_before_vanishing": 105,
+       "attached_before": 105,
+       "attached_after": 0,
+       "attached_per_event": 0.443
+      },
+      "merge": {
+       "events": 875,
+       "attached_swaps": 208,
+       "sides_shed_before_vanishing": 158,
+       "attached_before": 173,
+       "attached_after": 35,
+       "attached_per_event": 0.2377
+      }
+     }
+    },
+    "ring": {
+     "free": 20,
+     "attached": 466,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 1,
+     "per_type": {
+      "clump": {
+       "events": 142,
+       "attached_swaps": 57,
+       "sides_shed_before_vanishing": 10,
+       "attached_before": 11,
+       "attached_after": 46,
+       "attached_per_event": 0.4014
+      },
+      "death": {
+       "events": 237,
+       "attached_swaps": 96,
+       "sides_shed_before_vanishing": 35,
+       "attached_before": 46,
+       "attached_after": 50,
+       "attached_per_event": 0.4051
+      },
+      "merge": {
+       "events": 875,
+       "attached_swaps": 313,
+       "sides_shed_before_vanishing": 46,
+       "attached_before": 88,
+       "attached_after": 225,
+       "attached_per_event": 0.3577
+      }
+     }
+    },
+    "free_per_vanished": 0.0963,
+    "ring_free_per_vanished": 0.0148
+   },
+   "tau=8": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "tau": 8,
+     "units": "MCS",
+     "tol": 0.0,
+     "by_segment": false,
+     "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+    },
+    "swaps": 486,
+    "cell_events": {
+     "clump": 142,
+     "death": 237,
+     "merge": 875
+    },
+    "vanished": 1350,
+    "appeared": 0,
+    "primary": {
+     "free": 226,
+     "attached": 260,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 0,
+     "per_type": {
+      "clump": {
+       "events": 142,
+       "attached_swaps": 35,
+       "sides_shed_before_vanishing": 35,
+       "attached_before": 35,
+       "attached_after": 0,
+       "attached_per_event": 0.2465
+      },
+      "death": {
+       "events": 237,
+       "attached_swaps": 77,
+       "sides_shed_before_vanishing": 77,
+       "attached_before": 77,
+       "attached_after": 0,
+       "attached_per_event": 0.3249
+      },
+      "merge": {
+       "events": 875,
+       "attached_swaps": 148,
+       "sides_shed_before_vanishing": 112,
+       "attached_before": 121,
+       "attached_after": 27,
+       "attached_per_event": 0.1691
+      }
+     }
+    },
+    "ring": {
+     "free": 62,
+     "attached": 424,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 0,
+     "per_type": {
+      "clump": {
+       "events": 142,
+       "attached_swaps": 57,
+       "sides_shed_before_vanishing": 10,
+       "attached_before": 11,
+       "attached_after": 46,
+       "attached_per_event": 0.4014
+      },
+      "death": {
+       "events": 237,
+       "attached_swaps": 81,
+       "sides_shed_before_vanishing": 26,
+       "attached_before": 35,
+       "attached_after": 46,
+       "attached_per_event": 0.3418
+      },
+      "merge": {
+       "events": 875,
+       "attached_swaps": 286,
+       "sides_shed_before_vanishing": 38,
+       "attached_before": 73,
+       "attached_after": 213,
+       "attached_per_event": 0.3269
+      }
+     }
+    },
+    "free_per_vanished": 0.1674,
+    "ring_free_per_vanished": 0.0459
+   },
+   "tau=32": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "tau": 32,
+     "units": "MCS",
+     "tol": 0.0,
+     "by_segment": false,
+     "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+    },
+    "swaps": 486,
+    "cell_events": {
+     "clump": 142,
+     "death": 237,
+     "merge": 875
+    },
+    "vanished": 1350,
+    "appeared": 0,
+    "primary": {
+     "free": 51,
+     "attached": 435,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 6,
+     "per_type": {
+      "clump": {
+       "events": 142,
+       "attached_swaps": 58,
+       "sides_shed_before_vanishing": 55,
+       "attached_before": 56,
+       "attached_after": 2,
+       "attached_per_event": 0.4085
+      },
+      "death": {
+       "events": 237,
+       "attached_swaps": 122,
+       "sides_shed_before_vanishing": 122,
+       "attached_before": 122,
+       "attached_after": 0,
+       "attached_per_event": 0.5148
+      },
+      "merge": {
+       "events": 875,
+       "attached_swaps": 255,
+       "sides_shed_before_vanishing": 192,
+       "attached_before": 213,
+       "attached_after": 42,
+       "attached_per_event": 0.2914
+      }
+     }
+    },
+    "ring": {
+     "free": 3,
+     "attached": 483,
+     "identity_ok": true,
+     "free_within_tau_of_record_ends": 0,
+     "per_type": {
+      "clump": {
+       "events": 142,
+       "attached_swaps": 58,
+       "sides_shed_before_vanishing": 10,
+       "attached_before": 12,
+       "attached_after": 46,
+       "attached_per_event": 0.4085
+      },
+      "death": {
+       "events": 237,
+       "attached_swaps": 105,
+       "sides_shed_before_vanishing": 43,
+       "attached_before": 55,
+       "attached_after": 50,
+       "attached_per_event": 0.443
+      },
+      "merge": {
+       "events": 875,
+       "attached_swaps": 320,
+       "sides_shed_before_vanishing": 50,
+       "attached_before": 94,
+       "attached_after": 226,
+       "attached_per_event": 0.3657
+      }
+     }
+    },
+    "free_per_vanished": 0.0378,
+    "ring_free_per_vanished": 0.0022
+   }
+  }
+ },
+ "seconds": 14.5
+}

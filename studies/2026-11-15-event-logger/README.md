@@ -30,6 +30,9 @@ eventlog.py gained two opt-in options there (contacts counted per boundary; boun
 off its behaviour is unchanged, and the tests are now 33/33 (the 23 below plus 10 for the options).
 PAIRING RULE (15 Nov 2026, section at the end; scripts/pairing.py): the shared rule pairs split swaps and removes flicker, and it
 leaves exact counts unchanged. Swap counts stay step-dependent, because at coarse steps swaps merge with neighbouring cell changes.
+MACROSCOPIC COUNT (15 Nov 2026, last section; scripts/macro.py): swaps not near any cell event within tau ("free") are step-independent
+in the foam (within 7% and 14.5% over steps 1 to 4, against 36 to 40% for all swaps), but their rate depends on tau and does not match
+Rutenberg-McCurdy's 0.53. On the Earth model almost all swaps are attached to plate events; the 3 to 9 free ones give no rate.
 NEXT (as it stood): settle the Earth counting rule before any rate is quoted. First, explain the single-contact clumps. Second, a persistence
 rule for swaps (fix the tolerance first). Third, close the Müller 2019 seam and run a second model, then compare the two.
 
@@ -349,3 +352,101 @@ in pairing.py, which was fixed and a test added; pairing-runs and pairing-diag, 
   The counts here are the time-wise version of the same swap. DICTO pointed to the paper.
 - Nothing is left running.
 
+
+## Macroscopic count: free and attached swaps (scripts/macro.py, tests scripts/test_macro.py; runs in macro/)
+
+VERDICT (15 Nov 2026): in the foam the free swaps are step-independent where all swaps are not, but their rate does not match
+Rutenberg-McCurdy and depends on tau. On the Earth almost every swap is attached, and the few free swaps are too few to test.
+- Controls pass. Moving-seed Voronoi (no cell ever vanishes): every swap is free, and swaps = logger = Delaunay flips (238 and 168)
+  at both steps and every tau. Power runs (births and deaths): free + attached = swaps; attached 0 at tau = 2W, 3 to 4 of 126 at
+  tau = 4W. Synthetic map: tests 15/15, with the known free and attached swaps and the free count unchanged when a coarse step
+  absorbs an attached swap.
+- Foam rung 1, tau = 16 MCS: free swaps per vanished cell 0.102 / 0.101 / 0.095 / 0.096 (seed 1) and 0.093 / 0.087 / 0.079 / 0.078
+  (seed 2) at steps 1 / 2 / 4 / 8 MCS. Over steps 1 to 4 they fall by 7% and 14.5%; all swaps under the same rule fall by 36% and
+  40%. The prediction (within 15% over steps 1 to 4) HELD, for seed 2 only just. The predicted drop (15 to 30%) was too pessimistic.
+  At tau = 32 the free counts are flatter still (within 11% and 8% over all four steps); at tau = 8 they fall by 11% and 15%.
+- The step dependence has moved into the attached swaps: sides shed per vanished cell 0.64 / 0.66 at step 1, 0.39 / 0.35 at step 4.
+  Those values stay below the 0.98 implied by the literature, as predicted.
+- Against 0.53 (Rutenberg-McCurdy): FAILED. The free rate is 0.09 to 0.10 at tau = 16, outside the predicted 0.3 to 0.6. It does not
+  settle as tau grows (0.19, 0.10, 0.04 per vanished cell at tau = 8, 16, 32). In this froth nearly every swap involves a cell that
+  vanishes within a few tens of sweeps, so the window count measures tau, not a fixed rate. Rutenberg-McCurdy remove only the
+  shedding of the vanishing cell itself. Their 0.53 is therefore a different quantity from a window count, and the two cannot test
+  each other.
+- Earth, Müller 2016, tau = 10 Myr: free swaps 8 / 9 / 7 / 5 (mesh, 3.5 / 3.9 / 3.0 / 2.2 per 100 Myr) and 3 / 4 / 5 / 4 (vector,
+  1.3 / 1.7 / 2.2 / 1.7) at steps 1 / 2 / 5 / 10 Myr, out of 29 and 25 swaps at step 1. The prediction (within 20% over steps 1, 2, 5)
+  holds for the mesh reading (13%) and fails for the vector reading (+67%). Both are counts of 3 to 9, whose Poisson scatter
+  (30 to 60%) is larger than the test, so neither reading decides it. At tau = 20 Myr 0 to 3 swaps are free. In this model
+  nearly every swap lies within 10 Myr of a plate split, merge, birth or a clump with a vanishing or new plate, most often such a clump (12 to 13 of the attached
+  swaps at step 1), then splits (5 to 7).
+- So the macroscopic count makes the foam's swap rate step-independent, but only as a family indexed by tau. It is a defined
+  statistic, not a constant to compare across scales. For the Earth model the swaps are mostly a by-product of plate
+  reorganisations. The free count there gives no rate yet, and a second model or a longer record would be needed.
+- Nothing is left running.
+
+Why: the pairing section found that at a coarse step a swap falling in the same interval as a cell vanishing, splitting, appearing
+or merging is absorbed into that event. The foam literature counts such swaps with the cell event ("macroscopic" T1s, Rutenberg &
+McCurdy 2005: 0.53 per T2; 3/2 with side-shedding, Herdtle & Aref 1992). macro.py runs pairing.py and eventlog.classify unchanged
+and splits the counted swaps in two.
+
+Definitions (fixed 15 Nov 2026 before any run on foam, Earth or sphere frames):
+- Cell event: a logger event in which a cell vanishes or appears (death, birth, split, merge, a clump with a born or died cell;
+  not a relabel), timed at the later frame of its interval.
+- Participants: its born and died cells; for a split, merge or clump also the kept partner of each born or died cell (dominant
+  lineage when given, else the kept neighbour that passes eventlog's split/merge neighbourhood test, only when exactly one passes:
+  when several pass, as for a four-sided cell vanishing inside one coarse interval, the event counts as a vanishing alone).
+  Ring variant (secondary): plus the neighbours of each born or died cell.
+- Free swap: a swap counted by pairing.py none of whose four cells is a participant of a cell event within tau of the swap's time
+  span (before or after). Attached swap: the rest, each assigned to its nearest such event. Per event type: events, attached
+  swaps, and for vanishings the sides shed (attached swaps before the event with the vanishing cell in the lost pair).
+  free + attached = swaps is checked in every run.
+- Parameters: the main pairing rules (foam W = P = 8 MCS, Earth W = P = 5 Myr, sphere W = P = 2e-4) and tau = 2W as the main
+  value; tau = W and 4W reported beside it.
+- The rule "only one partner" was added while writing the tests, before any run: the synthetic test at step 2 showed that a
+  four-sided vanishing read as a merge passes several neighbours through the test, which attached an unrelated swap.
+
+Tests (scripts/test_macro.py, 15/15; pairing 18/18 and eventlog 33/33 unchanged): a hand-built sphere map (octahedron with a
+three-sided cell w) with four known swaps and one death. tau = 3: free 3, attached 1 (the side w sheds 1 before it vanishes);
+ring variant free 2; tau = 15: free 2. At step 2 the shed side and the vanishing fall in one interval and are logged as one
+event: the swap count drops from 4 to 3 and the free count stays 3. With lineage (w absorbed by z) the merge attaches the swap
+of z. NEGATIVE: with no cell event every swap is free at tau 0 and 100; tau = 0 attaches nothing.
+
+Predictions (written 15 Nov 2026 before the runs; one disclosure: a syntax smoke run of the Earth script was made on the local
+machine before this section was written, and its last two output lines were seen: the attached swaps per event type for the mesh
+reading at tau = 20, steps 5 and 10, small numbers; no free count was seen):
+- Control, moving seeds (2 Voronoi, 2 power runs, as in the pairing section): Voronoi has no vanishing, so every swap is free and
+  swaps = logger swaps = Delaunay 2-2 flips at both steps and every tau. Power runs: free + attached = swaps; attached at most 15%.
+- Foam rung 1, tau = 16 MCS: test = free swaps per vanished cell within 15% over steps 1, 2, 4. Expected to FAIL mildly: the
+  pairing diagnosis puts 258 of the 400 swaps lost at step 4 on a vanishing cell (attached, so harmless here), but 34 on a
+  neighbouring cell change and 108 on swaps merged or cancelled within the step, which are free at step 1. Expected drop from step 1
+  to 4: 15 to 30% (against 36% for all swaps). Value at step 1: 0.3 to 0.6 per vanished cell; it matches Rutenberg-McCurdy if within
+  0.53 +- 0.10. Sides shed per vanished cell at step 1: below the 0.98 implied by the literature (the lattice froth lets cells
+  vanish as four-sided in one sweep).
+- Earth, Müller 2016, tau = 10 Myr: test = free swaps per 100 Myr within 20% over steps 1, 2, 5 (both readings). Expected to HOLD
+  (11 of 12 mesh swaps lost at step 5 coincide with a split, birth or merge). Step 10 equals tau and may be lower. Value 3 to 8 per
+  100 Myr. The ring variant gives fewer free swaps at every step.
+
+Results (macro/results/*.json and *.log; jobs macro-pilot and macro-runs, FINAL ok; free = primary participants)
+
+| foam rung 1, free swaps per vanished cell (seed 1 / seed 2) | step 1 | 2 | 4 | 8 MCS |
+|---|---|---|---|---|
+| all swaps, W = P = 8 (pairing section) | 0.764 / 0.773 | 0.621 / 0.600 | 0.485 / 0.460 | 0.360 / 0.342 |
+| free, tau = 8 | 0.194 / 0.195 | 0.184 / 0.184 | 0.173 / 0.165 | 0.167 / 0.145 |
+| free, tau = 16 (main) | 0.102 / 0.093 | 0.101 / 0.087 | 0.095 / 0.079 | 0.096 / 0.078 |
+| free, tau = 32 | 0.040 / 0.038 | 0.039 / 0.037 | 0.036 / 0.035 | 0.038 / 0.037 |
+| free, ring variant, tau = 16 | 0.023 / 0.025 | 0.020 / 0.022 | 0.017 / 0.016 | 0.015 / 0.013 |
+| attached at tau = 16: sides shed per vanished cell | 0.64 / 0.66 | 0.51 / 0.48 | 0.36 / 0.35 | 0.23 / 0.21 |
+
+| Earth, Müller 2016, free swaps (per 100 Myr) of all swaps | step 1 | 2 | 5 | 10 Myr |
+|---|---|---|---|---|
+| mesh per boundary, tau = 5 | 18 (7.8) of 29 | 19 (8.3) of 25 | 10 (4.3) of 19 | 11 (4.8) of 11 |
+| mesh per boundary, tau = 10 (main) | 8 (3.5) | 9 (3.9) | 7 (3.0) | 5 (2.2) |
+| mesh per boundary, tau = 20 | 2 (0.9) | 2 (0.9) | 3 (1.3) | 3 (1.3) |
+| vector per pair, tau = 5 | 8 (3.5) of 25 | 10 (4.3) of 22 | 7 (3.0) of 14 | 10 (4.3) of 10 |
+| vector per pair, tau = 10 (main) | 3 (1.3) | 4 (1.7) | 5 (2.2) | 4 (1.7) |
+| vector per pair, tau = 20 | 0 | 0 | 1 (0.4) | 2 (0.9) |
+
+- Foam cell events at step 1 (seed 1): 493 deaths, 749 merges (a four-sided or larger cell vanishing within one sweep, read as a merge
+  into a single neighbour), 108 clumps with a vanished cell; at step 8: 237, 875, 142. Attached swaps per event at tau = 16 and step 1:
+  deaths 0.96, merges 0.46, clumps 0.70.
+- The ring variant attaches still more and leaves 1 to 2.5% of the foam swaps free, and 1 to 3 of the Earth's.
+- Full per-event-type tables (events, attached, before / after, sides shed) for every step and tau are in the json files.

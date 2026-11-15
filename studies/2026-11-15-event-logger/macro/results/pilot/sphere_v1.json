@@ -1,0 +1,208 @@
+{
+ "mode": "voronoi",
+ "N": 100,
+ "seed": 1,
+ "tmax": 0.02,
+ "W": 0.0002,
+ "P": 0.0002,
+ "taus": [
+  0.0004,
+  0.0002,
+  0.0008
+ ],
+ "runs": {
+  "0.0001": {
+   "frames": 201,
+   "flips": {
+    "flip 2-2": 14
+   },
+   "logger_swaps": 14,
+   "macro": {
+    "tau=0.0004": {
+     "params": {
+      "W": 0.0002,
+      "P": 0.0002,
+      "tau": 0.0004,
+      "units": "seed-motion time",
+      "tol": 0.0,
+      "by_segment": false,
+      "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+     },
+     "swaps": 14,
+     "cell_events": {},
+     "vanished": 0,
+     "appeared": 0,
+     "primary": {
+      "free": 14,
+      "attached": 0,
+      "identity_ok": true,
+      "free_within_tau_of_record_ends": 0,
+      "per_type": {}
+     },
+     "ring": {
+      "free": 14,
+      "attached": 0,
+      "identity_ok": true,
+      "free_within_tau_of_record_ends": 0,
+      "per_type": {}
+     }
+    },
+    "tau=0.0002": {
+     "params": {
+      "W": 0.0002,
+      "P": 0.0002,
+      "tau": 0.0002,
+      "units": "seed-motion time",
+      "tol": 0.0,
+      "by_segment": false,
+      "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+     },
+     "swaps": 14,
+     "cell_events": {},
+     "vanished": 0,
+     "appeared": 0,
+     "primary": {
+      "free": 14,
+      "attached": 0,
+      "identity_ok": true,
+      "free_within_tau_of_record_ends": 0,
+      "per_type": {}
+     },
+     "ring": {
+      "free": 14,
+      "attached": 0,
+      "identity_ok": true,
+      "free_within_tau_of_record_ends": 0,
+      "per_type": {}
+     }
+    },
+    "tau=0.0008": {
+     "params": {
+      "W": 0.0002,
+      "P": 0.0002,
+      "tau": 0.0008,
+      "units": "seed-motion time",
+      "tol": 0.0,
+      "by_segment": false,
+      "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+     },
+     "swaps": 14,
+     "cell_events": {},
+     "vanished": 0,
+     "appeared": 0,
+     "primary": {
+      "free": 14,
+      "attached": 0,
+      "identity_ok": true,
+      "free_within_tau_of_record_ends": 1,
+      "per_type": {}
+     },
+     "ring": {
+      "free": 14,
+      "attached": 0,
+      "identity_ok": true,
+      "free_within_tau_of_record_ends": 1,
+      "per_type": {}
+     }
+    }
+   }
+  },
+  "1e-05": {
+   "frames": 2001,
+   "flips": {
+    "flip 2-2": 14
+   },
+   "logger_swaps": 14,
+   "macro": {
+    "tau=0.0004": {
+     "params": {
+      "W": 0.0002,
+      "P": 0.0002,
+      "tau": 0.0004,
+      "units": "seed-motion time",
+      "tol": 0.0,
+      "by_segment": false,
+      "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+     },
+     "swaps": 14,
+     "cell_events": {},
+     "vanished": 0,
+     "appeared": 0,
+     "primary": {
+      "free": 14,
+      "attached": 0,
+      "identity_ok": true,
+      "free_within_tau_of_record_ends": 0,
+      "per_type": {}
+     },
+     "ring": {
+      "free": 14,
+      "attached": 0,
+      "identity_ok": true,
+      "free_within_tau_of_record_ends": 0,
+      "per_type": {}
+     }
+    },
+    "tau=0.0002": {
+     "params": {
+      "W": 0.0002,
+      "P": 0.0002,
+      "tau": 0.0002,
+      "units": "seed-motion time",
+      "tol": 0.0,
+      "by_segment": false,
+      "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+     },
+     "swaps": 14,
+     "cell_events": {},
+     "vanished": 0,
+     "appeared": 0,
+     "primary": {
+      "free": 14,
+      "attached": 0,
+      "identity_ok": true,
+      "free_within_tau_of_record_ends": 0,
+      "per_type": {}
+     },
+     "ring": {
+      "free": 14,
+      "attached": 0,
+      "identity_ok": true,
+      "free_within_tau_of_record_ends": 0,
+      "per_type": {}
+     }
+    },
+    "tau=0.0008": {
+     "params": {
+      "W": 0.0002,
+      "P": 0.0002,
+      "tau": 0.0008,
+      "units": "seed-motion time",
+      "tol": 0.0,
+      "by_segment": false,
+      "rule": "pairing.py (T, logger, P, W) -> cell events -> free / attached within tau"
+     },
+     "swaps": 14,
+     "cell_events": {},
+     "vanished": 0,
+     "appeared": 0,
+     "primary": {
+      "free": 14,
+      "attached": 0,
+      "identity_ok": true,
+      "free_within_tau_of_record_ends": 1,
+      "per_type": {}
+     },
+     "ring": {
+      "free": 14,
+      "attached": 0,
+      "identity_ok": true,
+      "free_within_tau_of_record_ends": 1,
+      "per_type": {}
+     }
+    }
+   }
+  }
+ },
+ "seconds": 6.7
+}
