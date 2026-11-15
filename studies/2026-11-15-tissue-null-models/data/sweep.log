@@ -68,3 +68,30 @@ PROGRESS 0.15 polytopes
 X PASS PV 3D sweep identities exact (births = deaths = cells, i=0 and i=d+1 absent) 
 X PASS PV 3D contact changes per birth 4.7669 +- 0.0006 vs 24pi^2/35 - 2 = 4.7677 
 PROGRESS 0.35 PV3D sweep
+X PASS PV 4D sweep identities exact (births = deaths = cells, i=0 and i=d+1 absent, i2 = i3) 
+X PASS PV 4D contact changes per birth 29.7897 +- 0.0087 vs 286/9 - 2 = 29.7778 
+PROGRESS 0.55 PV4D sweep
+X PASS control bcc (truncated octahedra) swaps per birth = 4 exactly [0, 16000, 64000, 16000, 0]
+X PASS negative control: PV 3D value differs from the bcc value 4 
+fcc perturbed {'h': [0, 32000, 128001, 32000, 0], 'V_per_cell': 6.00003125, 'swaps_per_birth': np.float64(4.00003125)}
+PROGRESS 0.6 controls
+RANDPOLY {'cells': 100, 'h2_over_h1': np.float64(3.9703125), 'err': np.float64(0.020097688939140358), 'reps': 20}
+RANDPOLY {'cells': 1000, 'h2_over_h1': np.float64(4.579267068273093), 'err': np.float64(0.005515827718675704), 'reps': 20}
+RANDPOLY {'cells': 10000, 'h2_over_h1': np.float64(4.722438975590235), 'err': np.float64(0.0017429809326343444), 'reps': 20}
+RANDPOLY {'cells': 100000, 'h2_over_h1': np.float64(4.75833783351334), 'err': np.float64(0.0019685230293548695), 'reps': 4}
+RANDPOLY {'cells': 300000, 'h2_over_h1': np.float64(4.762910172135628), 'err': np.float64(3.6667155562053466e-05), 'reps': 2}
+X PASS random simple 4-polytopes: deficit from the PV value shrinks with every size step [0.7974162321755602, 0.18846166390246744, 0.045289756585325414, 0.009390898662219982, 0.004818560039931974]
+X PASS random simple 4-polytopes: largest size within 0.03 of 24pi^2/35 - 2 {'cells': 300000, 'h2_over_h1': np.float64(4.762910172135628), 'err': np.float64(3.6667155562053466e-05), 'reps': 2} deficit exponent 0.648
+PROGRESS 0.75 random polytopes
+X PASS PV 2D plane mean sides = 6 exactly (torus Euler) 6.0
+X PASS PV 2D plane areas tile the torus 1.0000000000000202
+X PASS PV 2D mu2 vs Hinde-Miles 1.781 1.78132
+PV2D {'mean_n': 6.0, 'mu2': 1.78132, 'aboav_a': 0.6460296597053814, 'lewis_slope': 0.225209194035924}
+X PASS PV on the sphere: mean sides = 6 - 12/N exactly 5.988
+PROGRESS 0.85 PV2D
+X PASS section of PV 3D: mean sides = 6 (planar section of a normal tessellation) 6.0
+X PASS section areas tile the plane section 1.000000000000001
+SECTION {'mean_n': 6.0, 'mu2': 2.854387656702025, 'aboav_a': 0.9095545003646084, 'lewis_slope': 0.3131306948884655}
+20 checks, 0 failed
+PROGRESS 1.0 done
+FINAL ok
