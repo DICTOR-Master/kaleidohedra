@@ -1,0 +1,8 @@
+twin 600-cell P' corners: 120
+P' mirrors: 60
+mirrors shared by P and P': 60
+A by (corners, P wall, twin P' wall): {(3, True, True): 20, (6, True, True): 10}
+B by (corners, P wall, twin P' wall): {(3, False, False): 40, (4, True, True): 30, (3, True, True): 10}
+B plates in the walls of P or its twin: 40 of 80
+checks [True, True]
+FINAL ok

@@ -1,6 +1,6 @@
 # Are the new shapes hidden in the 600-cell's walls? (16 Nov 2026)
 
-**Conclusion: yes for solid A, half for solid B.** All 30 of A's central plates are walls of the 600-cell. For B, 40 of its 80 plates are walls. The other 40, through its φ√2 triangles, are the walls that give B away. Floating point (tolerance 1e-7); an exact recheck is to come.
+**Conclusion: yes for solid A; for solid B, half its plates are 600-cell mirror walls and the other half are the 600-cell's central sections parallel to its cells (the equators of the 120-cell's corner axes).** All 30 of A's central plates are walls of the 600-cell. For B, 40 of its 80 plates are walls. The other 40, through its φ√2 triangles, are the walls that give B away. Floating point (tolerance 1e-7); an exact recheck is to come.
 
 **DICTO's theory (16 Nov 2026, his words):** "the reason that all the recent and otherwise undiscovered shapes are vacuus is that because of this they have previously been indistinguishable from 600 cell walls". Restated and confirmed by DICTO: each shape's walls (the central plates of its Vacuus) coincide with walls the 600-cell already has, so inside the 600-cell they look like part of its own structure.
 
@@ -28,4 +28,12 @@ Files: scripts/walls.py, data/walls.log (FINAL ok). Ran on the compute machine, 
 
 The 120-cell (dual, 600 corners, 120 cells, 720 pentagons) has its 720 pentagons on 60 central plates, and these are the SAME 60 H4 mirrors (12 pentagons per plate). So the 600-cell and 120-cell share one wall system: the 60 mirrors. B's 40 φ√2-triangle plates are in neither; B stays half hidden (40 of 80) even in the pair. Files: scripts/walls120.py, data/walls120.log (FINAL ok; checks 600 corners, 120 cells, 720 pentagons).
 
-LEADS: (1) exact recheck in Q(√5); (2) the same test on the other recent shapes (GET, the echo shapes, the 2I twisted classes of other degrees); (3) where B's 40 visible plates do lie: a second H4 wall system (e.g. the Galois-twisted mirrors, √5 ↦ −√5), which would make B hidden in the 600-cell and its Galois twin together.
+## Where B's 40 visible plates lie (16 Nov)
+
+The Galois-twin 600-cell (closure of perms of (σ², σ², σ², σ, 0), σ = −1/φ) has the SAME 60 mirrors, so that is no new wall system (scripts/walls_twin.py, data/walls_twin.log).
+Comparing the plate directions with the 600-cell's own directions (scripts/walls_where.py, data/walls_where.log; checks 720 edges, 1200 triangles, 600 cells):
+- B's 30 rectangle plates and 10 √2-triangle plates: perpendicular to a corner of the 600-cell (its mirrors);
+- **B's 40 φ√2-triangle plates: perpendicular to a corner of the 120-cell** (a cell centre of the 600-cell). Each is the central section of the 600-cell parallel to a pair of its opposite tetrahedral cells: the equator of a 120-cell corner axis.
+So every plate of B is a central plane that the 600-cell–120-cell pair already has: 40 mirror walls and 40 equators of the 120-cell's corner axes (300 such planes). Whether those equators count as "walls" is DICTO's call.
+
+LEADS: (1) exact recheck in Q(√5); (2) the same test on the other recent shapes (GET, the echo shapes, the 2I twisted classes of other degrees); (3) do the ordinary-orbit controls' non-wall plates also lie on 120-cell equators (then the equators are not special to the twist)?
