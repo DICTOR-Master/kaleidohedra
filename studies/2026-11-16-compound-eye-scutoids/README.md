@@ -175,7 +175,7 @@ neighbour changes with depth (the scutoid test of the prediction stated before t
 
 ## 16 Nov: depth trace on the butterfly volume (ledger [270], [271])
 
-**Conclusion: UNDECIDED.** In the cone layer, 10 of about 1330 neighbour pairs change over 35-100 µm depth (0.75%), against
+**Conclusion: UNDECIDED, and NOT A TEST OF THE PREDICTION (16 Nov, as gw16 below): the eye is nearly spherical.** In the cone layer, 10 of about 1330 neighbour pairs change over 35-100 µm depth (0.75%), against
 4.2 ± 2.1 from position noise alone (image null). That is a weak excess, and it sits where the cone lattice ends. In the retina,
 an apparent 8.0% of pairs change per 20 µm (206 of about 2560, null 96 ± 10), but inspection shows that most of these are long
 edges across ommatidia the segmentation missed, so they are not trusted. Neither layer follows cornea curvature: Spearman
@@ -322,7 +322,7 @@ A radius-based clear-zone call misread fine apposition retina as a clear zone (g
 
 ## 16 Nov: depth trace of the apposition eye gw16 (ledger [273])
 
-**Conclusion: NOT CONFIRMED.** No scutoid-like neighbour change is established in gw16. In the retina (120-340 µm), 799 of 4786
+**Conclusion (relabelled 16 Nov with DICTO: "that last eye test doesnt seem to be relevant data"): NOT A TEST OF THE PREDICTION.** The prediction is about unevenly curved eyes; gw16 (like all seven Paukner butterfly eyes) is nearly evenly curved, and at its curvature the prediction itself expects about 1% changes, below this method's resolution. Measured: no scutoid-like neighbour change is established in gw16. In the retina (120-340 µm), 799 of 4786
 neighbour pairs (16.7%) change within 55 µm segments, against an image null of 809 ± 34. Sorted by eye, 0 of the 1505 flagged changes
 in all layers is a true neighbour exchange. Only 54% of detections were tracked (median; target over 90%), so a small true rate cannot
 be excluded. The changes do not follow cornea unevenness (Spearman ρ −0.18, p 0.63, 10 patches). This eye's convergence is nearly even
@@ -426,3 +426,7 @@ the U variant ranges).
    masked. The prediction for gw16-like convergence (A ≈ 1.1) is about 1%, below this method's floor.
 5. Wasp eye (Makarova et al. 2025): R1-R8 skeletons from the public CATMAID API need no segmentation, so they are the cleanest test
    of whether retinula bundles keep their neighbours.
+
+## 16 Nov: butterfly eyes set aside (DICTO)
+
+DICTO: "that last eye test doesnt seem to be relevant data". Agreed: the Paukner butterfly eyes are all nearly evenly curved, so they cannot test a prediction about UNEVEN curvature. Both traces stay on file as method development (pipeline, controls, null), not as evidence either way. Next: find eye data whose curvature is strongly uneven (acute zones and flattened eyes, e.g. dragonflies, robber flies, mantises, mantis shrimp) with a published cell segmentation, before any further tracing.
