@@ -33,6 +33,10 @@ leaves exact counts unchanged. Swap counts stay step-dependent, because at coars
 MACROSCOPIC COUNT (15 Nov 2026, last section; scripts/macro.py): swaps not near any cell event within tau ("free") are step-independent
 in the foam (within 7% and 14.5% over steps 1 to 4, against 36 to 40% for all swaps), but their rate depends on tau and does not match
 Rutenberg-McCurdy's 0.53. On the Earth model almost all swaps are attached to plate events; the 3 to 9 free ones give no rate.
+RUTENBERG-McCURDY COUNT (15 Nov 2026, last section; scripts/rm_count.py): their exact rule is an area rule (a T1 counts if all four
+bubbles exceed l^2 = rc sqrt(<A>)). By it the foam gives 0.30 macroscopic swaps per vanished cell (rc = 1 pixel), within 20% over
+steps 1 to 4, but 0.14 to 0.46 for rc = 2 to 0.5: no scaling state, so 0.53 cannot be tested here. The vanishing rule without a
+window removes 99% of the swaps (0.004 to 0.014 left). Total 0.76 against 1.5.
 NEXT (as it stood): settle the Earth counting rule before any rate is quoted. First, explain the single-contact clumps. Second, a persistence
 rule for swaps (fix the tolerance first). Third, close the Müller 2019 seam and run a second model, then compare the two.
 
@@ -450,3 +454,118 @@ Results (macro/results/*.json and *.log; jobs macro-pilot and macro-runs, FINAL 
   deaths 0.96, merges 0.46, clumps 0.70.
 - The ring variant attaches still more and leaves 1 to 2.5% of the foam swaps free, and 1 to 3 of the Earth's.
 - Full per-event-type tables (events, attached, before / after, sides shed) for every step and tau are in the json files.
+
+
+## Rutenberg-McCurdy count: side-shedding removed without a time window (scripts/rm_count.py, tests scripts/test_rm_count.py; runs in rm/)
+
+VERDICT (15 Nov 2026): the paper's exact rule is an area rule, not a vanishing rule, and neither version gives 0.53 in this froth.
+- Rule SS (the plan's rule, no window): in foam rung 1 it removes 99% of the swaps. Macroscopic swaps per vanished cell 0.004 /
+  0.004 / 0.008 / 0.014 (seed 1) and 0.008 / 0.008 / 0.006 / 0.010 (seed 2) at steps 1 / 2 / 4 / 8 MCS: 5 to 19 swaps in all, far
+  below 0.53. Every lost pair but one holds a cell that vanishes later (the froth coarsens from 1383 to 33 cells), and that cell
+  almost never gains a side before it goes (median 3 to 4 MCS from the shed to the vanishing). So in a coarsening record this rule
+  is nearly "every swap"; it is not the paper's count.
+- Rule RM (the paper's own: all four cells larger than l^2 = rc sqrt(<A>)), rc = 1 pixel: 0.303 / 0.276 / 0.253 / 0.219 (seed 1) and
+  0.296 / 0.270 / 0.238 / 0.208 (seed 2). Below 0.53, and within 20% over steps 1 to 4 (17% and 19%; the logger's swaps without the
+  pairing rule fall by 30% and 32%). But it depends on rc: 0.46 / 0.44 at rc = 0.5 and 0.14 / 0.14 at rc = 2 (step 1). The paper
+  expects no dependence on that factor only in the scaling regime; this froth is not in it, so the paper's number cannot be tested
+  here. Every swap that rule RM calls microscopic is also side-shedding by rule SS.
+- Total (W = P = 8): 0.764 / 0.773 per vanished cell at step 1 against Herdtle and Aref's 1.5, about half, and step-dependent
+  (0.36 / 0.34 at step 8). Sides at l^2 (rc = 1): 3-sided 21%, 4-sided 65% / 61%, 5-sided 13% / 16% (paper: 9 / 84 / 7%).
+- Control: moving-seed Voronoi (no vanishing): side-shedding 0 and macroscopic = swaps = logger = Delaunay flips (238, 168) at both
+  steps. The regenerated foam frames are identical to the saved ones (1500 of 1500, both seeds).
+
+The source, read in full (free arXiv version): A. D. Rutenberg and M. B. McCurdy, "Scaling state of dry two-dimensional froths:
+universal angle-deviations and structure", Phys. Rev. E 73, 011403 (2006), arXiv cond-mat/0502287, section III C and Fig. 7. Their
+model is a force-based vertex model of a dry froth (films with curvature, vertices in force balance, von Neumann's law, N0 = 10^4
+bubbles, scaling regime at late times). Their exact rule, quoted: "We count T1 events distinctly if all bubbles involved are bigger
+than l^2, and count T2n events if the bubble has n sides as it shrinks past the scale of l^2", where l = sqrt(rc L(t)) is the
+geometric mean of the microscopic scale rc (vertices closer than rc enter a T1; the Plateau-border size) and the mean bubble size
+L(t). "Any side-shedding that occurs at microscopic scales should simply be counted as the details of the associated T2 process."
+Herdtle and Aref's 3/2 "included microscopic side-shedding events", so it is an upper bound to 0.53 (their words).
+So their rule is an AREA rule on all four bubbles of a T1. It is not a rule on later vanishing: a side shed while the bubble is still
+larger than l^2 counts as a macroscopic T1, and a T1 in which a bubble smaller than l^2 gains a side is excluded. The plan's
+description ("remove only the side-shedding T1s of the cell that later vanishes") is close to it but not the same. Both are counted
+here, and neither uses a time window:
+- Rule SS (combinatorial, the plan's rule made precise): a counted swap is side-shedding when a cell x of its LOST pair vanishes
+  later (first frame after the loss without x, time T_x) and x gains no contact in any counted swap between the loss and T_x.
+  Macroscopic (SS) = counted swaps - side-shedding swaps. SS_any (no "no regain" condition) is reported beside it.
+- Rule RM (the paper's own rule; needs cell areas): a counted swap is microscopic when one of its four cells has area below
+  l^2(t) = rc sqrt(A_box / N(t)) in a frame from the one before its first change to the one of its last change. Macroscopic (RM) =
+  counted swaps - microscopic swaps. Main rc = 1 pixel (the Potts froth's microscopic scale is the lattice spacing), also 0.5 and 2.
+  Also the side number of each vanishing cell as it shrinks past l^2 (their 9 / 84 / 7 % for 3 / 4 / 5 sides).
+- Counted swaps: pairing.py with the main rule W = P = 8 MCS ("paired + persistent"), and W = P = 0 (the logger's swaps) beside it.
+  T2 = vanished cells.
+- The saved foam frames carry no areas. rm/scripts/rm_foam.py regenerates rung 1 from its seed with the code of foam_pairing.py and
+  compares every regenerated frame with the saved line; the areas are used only if all frames are identical.
+
+Tests (scripts/test_rm_count.py; macro, pairing and eventlog tests unchanged): the octahedron map of test_macro.py. S1: four swaps,
+one of them (w sheds a side 1 before vanishing) side-shedding, macroscopic 3; the swap in which w GAINS a side is not side-shedding
+(negative). S2: w sheds, regains and sheds again before vanishing: side-shedding 1, SS_any 2. At step 2 the shed swap is absorbed
+into the vanishing and the macroscopic count stays 3. Areas: rc = 1 makes only the shed swap microscopic; rc = 10 makes both swaps
+of w microscopic; w passes l^2 with 4 sides. NEGATIVE: with no vanishing every swap is macroscopic.
+
+Predictions (written 15 Nov 2026 BEFORE any run of rm_count.py, pilot included):
+- Control, moving seeds on the sphere (2 Voronoi, 2 power runs, 100 seeds, t 0 to 0.5, steps 1e-4 and 1e-5, W = P = 2e-4): Voronoi
+  has no vanishing, so side-shedding 0 and macroscopic = swaps = logger = Delaunay 2-2 flips (238 and 168) at both steps. Power runs:
+  side-shedding swaps at most 1.5 per death (deaths 26 and 27).
+- Foam rung 1 regeneration: all 1520 frames identical to the saved ones (both seeds).
+- Foam rung 1, main rule, step 1: total per vanished cell 0.764 / 0.773 (known from the pairing section), about half of 1.5.
+  Side-shedding (SS) per vanished 0.55 to 0.72. Macroscopic (SS) per vanished 0.05 to 0.20: FAILS 0.53 +- 0.10.
+  Step test: macroscopic (SS) within 20% over steps 1 to 4 (uncertain: a quarter of the swaps lost at step 4 were not on a
+  vanishing cell).
+- Rule RM, rc = 1: l^2 grows from about 6 to about 45 pixels as the froth coarsens from 1383 to 33 cells. Macroscopic (RM) per
+  vanished 0.25 to 0.50 at step 1, between the SS count and the total, below 0.53; within 20% over steps 1 to 4. The froth is not
+  in a scaling state (it coarsens to 33 cells in a 256^2 box), so rc = 0.5 and rc = 2 differ by more than 15% (Rutenberg and
+  McCurdy expect no change with the factor only in the scaling regime). Sides at l^2: more four-sided than at pixel size (27%),
+  but not 84%: 3-sided 30 to 50%, 4-sided 35 to 55%.
+- What a mismatch would mean: the Potts froth is a lattice model at temperature 0.3, with T1s at the lattice scale, no force
+  balance at vertices and cells that vanish two- to four-sided within one sweep. It is a different microscopic dynamics from the
+  vertex model, and it is small and short. Agreement with 0.53 is therefore not expected from the definitions alone. A count that
+  matches in the vertex model may still differ here.
+
+Results (rm/results/*.json and *.log; jobs rm-pilot and rm-runs, FINAL ok). Foam rung 1, per vanished cell (vanished 1350 / 1339 at
+every step), seed 1 / seed 2:
+
+| count | step 1 | 2 | 4 | 8 MCS |
+|---|---|---|---|---|
+| total, W = P = 8 | 0.764 / 0.773 | 0.622 / 0.600 | 0.485 / 0.460 | 0.360 / 0.342 |
+| side-shedding (SS), W = P = 8 | 0.760 / 0.766 | 0.618 / 0.592 | 0.477 / 0.454 | 0.346 / 0.332 |
+| macroscopic (SS), W = P = 8 | 0.004 / 0.008 | 0.004 / 0.008 | 0.008 / 0.006 | 0.014 / 0.010 |
+| macroscopic (SS_any, no regain test), W = P = 8 | 0.000 / 0.001 | 0.000 / 0.001 | 0.000 / 0.001 | 0.000 / 0.001 |
+| macroscopic (RM), rc = 1, W = P = 8 | 0.303 / 0.296 | 0.276 / 0.270 | 0.253 / 0.238 | 0.219 / 0.208 |
+| macroscopic (RM), rc = 0.5 | 0.464 / 0.443 | 0.415 / 0.386 | 0.350 / 0.327 | 0.290 / 0.267 |
+| macroscopic (RM), rc = 2 | 0.140 / 0.141 | 0.129 / 0.137 | 0.126 / 0.124 | 0.125 / 0.110 |
+| total, logger's swaps (W = P = 0) | 0.804 / 0.787 | 0.675 / 0.628 | 0.528 / 0.469 | 0.350 / 0.328 |
+| macroscopic (SS), W = P = 0 | 0.141 / 0.124 | 0.078 / 0.064 | 0.033 / 0.030 | 0.013 / 0.010 |
+| macroscopic (RM), rc = 1, W = P = 0 | 0.425 / 0.385 | 0.358 / 0.325 | 0.298 / 0.260 | 0.214 / 0.201 |
+
+- l^2 at rc = 1 grows from 6.9 to 44.6 pixels (seed 1) as the froth coarsens; at rc = 0.5, 82 to 91 cells vanish from above l^2
+  within one sweep. Shed-to-vanish delays (SS, step 1): quartiles 2 / 4 / 9 MCS (seed 1), 2 / 3 / 9 (seed 2).
+- Without the pairing rule (W = P = 0) the SS count keeps 0.14 / 0.12 at step 1: unpaired flicker that the rule removes. With the
+  rule nearly nothing is left.
+- Sides at l^2 (step 1; counts): rc = 1: 2: 12 / 15, 3: 282 / 280, 4: 878 / 822, 5: 178 / 219; rc = 2: 4-sided 55%, 5-sided 36%.
+- Sphere power runs (deaths 26, 27): side-shedding 46 and 63, that is 1.8 and 2.3 per death, the same at both steps. In this model a
+  cell vanishes only as a triangle, so it sheds n - 3 sides first.
+
+How the findings compare with the predictions:
+- Voronoi control: held. Power runs: FAILED (1.8 and 2.3 side-shedding swaps per death, predicted at most 1.5; the prediction
+  forgot that these cells vanish only through 3-1).
+- Regeneration: held, all frames identical. The prediction said 1520 frames; the record has 1500 (the 20 burn-in sweeps are not
+  saved).
+- Total at step 1: as known (0.764 / 0.773).
+- Side-shedding (SS) 0.76 / 0.77: FAILED, just above the predicted 0.55 to 0.72. Macroscopic (SS) 0.004 / 0.008: FAILED, below the
+  predicted 0.05 to 0.20; against 0.53 it fails, as predicted. Its step test cannot be decided: 5 to 19 swaps.
+- Rule RM at rc = 1: 0.30 inside the predicted 0.25 to 0.50, below 0.53, within 20% over steps 1 to 4: held. rc = 0.5 against 2
+  differs by a factor of 3: held (more than 15%). Sides at l^2: FAILED: 3-sided 21% (predicted 30 to 50%) and 4-sided 61 to 65%
+  (predicted 35 to 55%), nearer the paper's 9 / 84% than expected.
+
+What the model difference implies. Rutenberg and McCurdy count in a vertex model in its scaling state, where l^2 lies far from both
+the vertex scale and the bubble scale. Our Potts froth is a lattice at temperature 0.3, 256^2 pixels, coarsening from 1383 to 33
+cells. l^2 is only 7 to 45 pixels, so no window between the microscopic and macroscopic scales exists, and the count moves by a
+factor of 3 when rc moves by a factor of 4. The paper's consistency, 0.53 macroscopic + 0.98 microscopic side-shedding = 1.5, reads
+here 0.30 + 0.46 = 0.76: with the sides at l^2 the continuum would shed about 0.9 sides per vanishing cell at small scale, and the
+lattice sheds about half of that. The rest vanish four-sided within one sweep, with no swap. So the two models agree on the form
+(macroscopic T1s are a sizeable fraction of T2s) but not on the number, and the number here is not yet well defined. A fair test
+of 0.53 needs a froth that reaches a scaling state with l^2 far from 1 pixel and far from <A>: rung 1 at 1024^2 or larger, run long,
+the step already listed as the foam ladder's next step, with rule RM and rc = 0.5, 1, 2 fixed in advance.
+- Nothing is left running.

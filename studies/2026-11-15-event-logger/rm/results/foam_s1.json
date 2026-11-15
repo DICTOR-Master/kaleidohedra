@@ -1,0 +1,771 @@
+{
+ "params": {
+  "seed": 1,
+  "L": 256,
+  "N": 2000,
+  "T": 0.3,
+  "mcs": 1500,
+  "burn": 20,
+  "rules": [
+   [
+    8,
+    8
+   ],
+   [
+    0,
+    0
+   ]
+  ],
+  "rcs": [
+   1.0,
+   0.5,
+   2.0
+  ]
+ },
+ "frames": 1500,
+ "regenerated_identical": 1500,
+ "regenerated_different": 0,
+ "cells_first_last": [
+  1383,
+  33
+ ],
+ "steps": {
+  "1": {
+   "W=8 P=8": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "units": "MCS (rc: pixels)",
+     "tol": 0.0,
+     "by_segment": false,
+     "rcs": [
+      1.0,
+      0.5,
+      2.0
+     ],
+     "rule": "pairing.py (T, logger, P, W) -> SS: lost-pair cell vanishes later with no gain between; RM: any cell < rc*sqrt(<A>)"
+    },
+    "swaps": 1031,
+    "vanished": 1350,
+    "appeared": 0,
+    "SS": {
+     "side_shedding": 1026,
+     "macroscopic": 5,
+     "identity_ok": true,
+     "side_shedding_any": 1031,
+     "macroscopic_any": 0,
+     "not_ss_lost_cell_alive_at_end_no_regain": 0,
+     "shed_to_vanish_delay_quartiles": [
+      2,
+      4,
+      9
+     ]
+    },
+    "per_vanished": {
+     "total": 0.7637,
+     "SS_macroscopic": 0.0037,
+     "SS_side_shedding": 0.76,
+     "SS_any_macroscopic": 0.0
+    },
+    "RM": {
+     "1.0": {
+      "microscopic": 622,
+      "macroscopic": 409,
+      "macroscopic_per_vanished": 0.303,
+      "microscopic_and_SS": 622,
+      "ell2_first_last": [
+       6.884,
+       44.564
+      ],
+      "sides_at_ell2": {
+       "2": 12,
+       "3": 282,
+       "4": 878,
+       "5": 178
+      }
+     },
+     "0.5": {
+      "microscopic": 404,
+      "macroscopic": 627,
+      "macroscopic_per_vanished": 0.4644,
+      "microscopic_and_SS": 404,
+      "ell2_first_last": [
+       3.442,
+       22.282
+      ],
+      "sides_at_ell2": {
+       "2": 96,
+       "3": 567,
+       "4": 557,
+       "5": 39,
+       "never below": 91
+      }
+     },
+     "2.0": {
+      "microscopic": 842,
+      "macroscopic": 189,
+      "macroscopic_per_vanished": 0.14,
+      "microscopic_and_SS": 842,
+      "ell2_first_last": [
+       13.768,
+       89.128
+      ],
+      "sides_at_ell2": {
+       "2": 3,
+       "3": 102,
+       "4": 746,
+       "5": 490,
+       "6": 9
+      }
+     }
+    }
+   },
+   "W=0 P=0": {
+    "params": {
+     "W": 0,
+     "P": 0,
+     "units": "MCS (rc: pixels)",
+     "tol": 0.0,
+     "by_segment": false,
+     "rcs": [
+      1.0,
+      0.5,
+      2.0
+     ],
+     "rule": "pairing.py (T, logger, P, W) -> SS: lost-pair cell vanishes later with no gain between; RM: any cell < rc*sqrt(<A>)"
+    },
+    "swaps": 1085,
+    "vanished": 1350,
+    "appeared": 0,
+    "SS": {
+     "side_shedding": 895,
+     "macroscopic": 190,
+     "identity_ok": true,
+     "side_shedding_any": 1084,
+     "macroscopic_any": 1,
+     "not_ss_lost_cell_alive_at_end_no_regain": 0,
+     "shed_to_vanish_delay_quartiles": [
+      1,
+      4,
+      13
+     ]
+    },
+    "per_vanished": {
+     "total": 0.8037,
+     "SS_macroscopic": 0.1407,
+     "SS_side_shedding": 0.663,
+     "SS_any_macroscopic": 0.0007
+    },
+    "RM": {
+     "1.0": {
+      "microscopic": 511,
+      "macroscopic": 574,
+      "macroscopic_per_vanished": 0.4252,
+      "microscopic_and_SS": 488,
+      "ell2_first_last": [
+       6.884,
+       44.564
+      ],
+      "sides_at_ell2": {
+       "2": 12,
+       "3": 282,
+       "4": 878,
+       "5": 178
+      }
+     },
+     "0.5": {
+      "microscopic": 312,
+      "macroscopic": 773,
+      "macroscopic_per_vanished": 0.5726,
+      "microscopic_and_SS": 307,
+      "ell2_first_last": [
+       3.442,
+       22.282
+      ],
+      "sides_at_ell2": {
+       "2": 96,
+       "3": 567,
+       "4": 557,
+       "5": 39,
+       "never below": 91
+      }
+     },
+     "2.0": {
+      "microscopic": 719,
+      "macroscopic": 366,
+      "macroscopic_per_vanished": 0.2711,
+      "microscopic_and_SS": 673,
+      "ell2_first_last": [
+       13.768,
+       89.128
+      ],
+      "sides_at_ell2": {
+       "2": 3,
+       "3": 102,
+       "4": 746,
+       "5": 490,
+       "6": 9
+      }
+     }
+    }
+   }
+  },
+  "2": {
+   "W=8 P=8": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "units": "MCS (rc: pixels)",
+     "tol": 0.0,
+     "by_segment": false,
+     "rcs": [
+      1.0,
+      0.5,
+      2.0
+     ],
+     "rule": "pairing.py (T, logger, P, W) -> SS: lost-pair cell vanishes later with no gain between; RM: any cell < rc*sqrt(<A>)"
+    },
+    "swaps": 839,
+    "vanished": 1350,
+    "appeared": 0,
+    "SS": {
+     "side_shedding": 834,
+     "macroscopic": 5,
+     "identity_ok": true,
+     "side_shedding_any": 839,
+     "macroscopic_any": 0,
+     "not_ss_lost_cell_alive_at_end_no_regain": 0,
+     "shed_to_vanish_delay_quartiles": [
+      2,
+      6,
+      12
+     ]
+    },
+    "per_vanished": {
+     "total": 0.6215,
+     "SS_macroscopic": 0.0037,
+     "SS_side_shedding": 0.6178,
+     "SS_any_macroscopic": 0.0
+    },
+    "RM": {
+     "1.0": {
+      "microscopic": 466,
+      "macroscopic": 373,
+      "macroscopic_per_vanished": 0.2763,
+      "microscopic_and_SS": 466,
+      "ell2_first_last": [
+       6.884,
+       44.564
+      ],
+      "sides_at_ell2": {
+       "2": 28,
+       "3": 313,
+       "4": 825,
+       "5": 154,
+       "never below": 30
+      }
+     },
+     "0.5": {
+      "microscopic": 279,
+      "macroscopic": 560,
+      "macroscopic_per_vanished": 0.4148,
+      "microscopic_and_SS": 279,
+      "ell2_first_last": [
+       3.442,
+       22.282
+      ],
+      "sides_at_ell2": {
+       "1": 2,
+       "2": 95,
+       "3": 445,
+       "4": 407,
+       "5": 27,
+       "never below": 374
+      }
+     },
+     "2.0": {
+      "microscopic": 665,
+      "macroscopic": 174,
+      "macroscopic_per_vanished": 0.1289,
+      "microscopic_and_SS": 665,
+      "ell2_first_last": [
+       13.768,
+       89.128
+      ],
+      "sides_at_ell2": {
+       "2": 3,
+       "3": 113,
+       "4": 752,
+       "5": 474,
+       "6": 8
+      }
+     }
+    }
+   },
+   "W=0 P=0": {
+    "params": {
+     "W": 0,
+     "P": 0,
+     "units": "MCS (rc: pixels)",
+     "tol": 0.0,
+     "by_segment": false,
+     "rcs": [
+      1.0,
+      0.5,
+      2.0
+     ],
+     "rule": "pairing.py (T, logger, P, W) -> SS: lost-pair cell vanishes later with no gain between; RM: any cell < rc*sqrt(<A>)"
+    },
+    "swaps": 911,
+    "vanished": 1350,
+    "appeared": 0,
+    "SS": {
+     "side_shedding": 806,
+     "macroscopic": 105,
+     "identity_ok": true,
+     "side_shedding_any": 910,
+     "macroscopic_any": 1,
+     "not_ss_lost_cell_alive_at_end_no_regain": 0,
+     "shed_to_vanish_delay_quartiles": [
+      2,
+      6,
+      14
+     ]
+    },
+    "per_vanished": {
+     "total": 0.6748,
+     "SS_macroscopic": 0.0778,
+     "SS_side_shedding": 0.597,
+     "SS_any_macroscopic": 0.0007
+    },
+    "RM": {
+     "1.0": {
+      "microscopic": 428,
+      "macroscopic": 483,
+      "macroscopic_per_vanished": 0.3578,
+      "microscopic_and_SS": 422,
+      "ell2_first_last": [
+       6.884,
+       44.564
+      ],
+      "sides_at_ell2": {
+       "2": 28,
+       "3": 313,
+       "4": 825,
+       "5": 154,
+       "never below": 30
+      }
+     },
+     "0.5": {
+      "microscopic": 246,
+      "macroscopic": 665,
+      "macroscopic_per_vanished": 0.4926,
+      "microscopic_and_SS": 245,
+      "ell2_first_last": [
+       3.442,
+       22.282
+      ],
+      "sides_at_ell2": {
+       "1": 2,
+       "2": 95,
+       "3": 445,
+       "4": 407,
+       "5": 27,
+       "never below": 374
+      }
+     },
+     "2.0": {
+      "microscopic": 617,
+      "macroscopic": 294,
+      "macroscopic_per_vanished": 0.2178,
+      "microscopic_and_SS": 601,
+      "ell2_first_last": [
+       13.768,
+       89.128
+      ],
+      "sides_at_ell2": {
+       "2": 3,
+       "3": 113,
+       "4": 752,
+       "5": 474,
+       "6": 8
+      }
+     }
+    }
+   }
+  },
+  "4": {
+   "W=8 P=8": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "units": "MCS (rc: pixels)",
+     "tol": 0.0,
+     "by_segment": false,
+     "rcs": [
+      1.0,
+      0.5,
+      2.0
+     ],
+     "rule": "pairing.py (T, logger, P, W) -> SS: lost-pair cell vanishes later with no gain between; RM: any cell < rc*sqrt(<A>)"
+    },
+    "swaps": 655,
+    "vanished": 1350,
+    "appeared": 0,
+    "SS": {
+     "side_shedding": 644,
+     "macroscopic": 11,
+     "identity_ok": true,
+     "side_shedding_any": 655,
+     "macroscopic_any": 0,
+     "not_ss_lost_cell_alive_at_end_no_regain": 0,
+     "shed_to_vanish_delay_quartiles": [
+      4,
+      8,
+      16
+     ]
+    },
+    "per_vanished": {
+     "total": 0.4852,
+     "SS_macroscopic": 0.0081,
+     "SS_side_shedding": 0.477,
+     "SS_any_macroscopic": 0.0
+    },
+    "RM": {
+     "1.0": {
+      "microscopic": 314,
+      "macroscopic": 341,
+      "macroscopic_per_vanished": 0.2526,
+      "microscopic_and_SS": 314,
+      "ell2_first_last": [
+       6.884,
+       44.564
+      ],
+      "sides_at_ell2": {
+       "1": 1,
+       "2": 34,
+       "3": 326,
+       "4": 654,
+       "5": 122,
+       "never below": 213
+      }
+     },
+     "0.5": {
+      "microscopic": 183,
+      "macroscopic": 472,
+      "macroscopic_per_vanished": 0.3496,
+      "microscopic_and_SS": 183,
+      "ell2_first_last": [
+       3.442,
+       22.282
+      ],
+      "sides_at_ell2": {
+       "1": 1,
+       "2": 68,
+       "3": 301,
+       "4": 250,
+       "5": 21,
+       "never below": 709
+      }
+     },
+     "2.0": {
+      "microscopic": 485,
+      "macroscopic": 170,
+      "macroscopic_per_vanished": 0.1259,
+      "microscopic_and_SS": 484,
+      "ell2_first_last": [
+       13.768,
+       89.128
+      ],
+      "sides_at_ell2": {
+       "2": 6,
+       "3": 140,
+       "4": 752,
+       "5": 444,
+       "6": 6,
+       "never below": 2
+      }
+     }
+    }
+   },
+   "W=0 P=0": {
+    "params": {
+     "W": 0,
+     "P": 0,
+     "units": "MCS (rc: pixels)",
+     "tol": 0.0,
+     "by_segment": false,
+     "rcs": [
+      1.0,
+      0.5,
+      2.0
+     ],
+     "rule": "pairing.py (T, logger, P, W) -> SS: lost-pair cell vanishes later with no gain between; RM: any cell < rc*sqrt(<A>)"
+    },
+    "swaps": 713,
+    "vanished": 1350,
+    "appeared": 0,
+    "SS": {
+     "side_shedding": 668,
+     "macroscopic": 45,
+     "identity_ok": true,
+     "side_shedding_any": 713,
+     "macroscopic_any": 0,
+     "not_ss_lost_cell_alive_at_end_no_regain": 0,
+     "shed_to_vanish_delay_quartiles": [
+      4,
+      8,
+      20
+     ]
+    },
+    "per_vanished": {
+     "total": 0.5281,
+     "SS_macroscopic": 0.0333,
+     "SS_side_shedding": 0.4948,
+     "SS_any_macroscopic": 0.0
+    },
+    "RM": {
+     "1.0": {
+      "microscopic": 311,
+      "macroscopic": 402,
+      "macroscopic_per_vanished": 0.2978,
+      "microscopic_and_SS": 307,
+      "ell2_first_last": [
+       6.884,
+       44.564
+      ],
+      "sides_at_ell2": {
+       "1": 1,
+       "2": 34,
+       "3": 326,
+       "4": 654,
+       "5": 122,
+       "never below": 213
+      }
+     },
+     "0.5": {
+      "microscopic": 172,
+      "macroscopic": 541,
+      "macroscopic_per_vanished": 0.4007,
+      "microscopic_and_SS": 172,
+      "ell2_first_last": [
+       3.442,
+       22.282
+      ],
+      "sides_at_ell2": {
+       "1": 1,
+       "2": 68,
+       "3": 301,
+       "4": 250,
+       "5": 21,
+       "never below": 709
+      }
+     },
+     "2.0": {
+      "microscopic": 486,
+      "macroscopic": 227,
+      "macroscopic_per_vanished": 0.1681,
+      "microscopic_and_SS": 475,
+      "ell2_first_last": [
+       13.768,
+       89.128
+      ],
+      "sides_at_ell2": {
+       "2": 6,
+       "3": 140,
+       "4": 752,
+       "5": 444,
+       "6": 6,
+       "never below": 2
+      }
+     }
+    }
+   }
+  },
+  "8": {
+   "W=8 P=8": {
+    "params": {
+     "W": 8,
+     "P": 8,
+     "units": "MCS (rc: pixels)",
+     "tol": 0.0,
+     "by_segment": false,
+     "rcs": [
+      1.0,
+      0.5,
+      2.0
+     ],
+     "rule": "pairing.py (T, logger, P, W) -> SS: lost-pair cell vanishes later with no gain between; RM: any cell < rc*sqrt(<A>)"
+    },
+    "swaps": 486,
+    "vanished": 1350,
+    "appeared": 0,
+    "SS": {
+     "side_shedding": 467,
+     "macroscopic": 19,
+     "identity_ok": true,
+     "side_shedding_any": 486,
+     "macroscopic_any": 0,
+     "not_ss_lost_cell_alive_at_end_no_regain": 0,
+     "shed_to_vanish_delay_quartiles": [
+      8,
+      16,
+      24
+     ]
+    },
+    "per_vanished": {
+     "total": 0.36,
+     "SS_macroscopic": 0.0141,
+     "SS_side_shedding": 0.3459,
+     "SS_any_macroscopic": 0.0
+    },
+    "RM": {
+     "1.0": {
+      "microscopic": 191,
+      "macroscopic": 295,
+      "macroscopic_per_vanished": 0.2185,
+      "microscopic_and_SS": 191,
+      "ell2_first_last": [
+       6.884,
+       44.564
+      ],
+      "sides_at_ell2": {
+       "2": 36,
+       "3": 241,
+       "4": 423,
+       "5": 83,
+       "never below": 567
+      }
+     },
+     "0.5": {
+      "microscopic": 94,
+      "macroscopic": 392,
+      "macroscopic_per_vanished": 0.2904,
+      "microscopic_and_SS": 94,
+      "ell2_first_last": [
+       3.442,
+       22.282
+      ],
+      "sides_at_ell2": {
+       "2": 37,
+       "3": 174,
+       "4": 141,
+       "5": 13,
+       "never below": 985
+      }
+     },
+     "2.0": {
+      "microscopic": 317,
+      "macroscopic": 169,
+      "macroscopic_per_vanished": 0.1252,
+      "microscopic_and_SS": 316,
+      "ell2_first_last": [
+       13.768,
+       89.128
+      ],
+      "sides_at_ell2": {
+       "2": 16,
+       "3": 180,
+       "4": 692,
+       "5": 366,
+       "6": 7,
+       "never below": 89
+      }
+     }
+    }
+   },
+   "W=0 P=0": {
+    "params": {
+     "W": 0,
+     "P": 0,
+     "units": "MCS (rc: pixels)",
+     "tol": 0.0,
+     "by_segment": false,
+     "rcs": [
+      1.0,
+      0.5,
+      2.0
+     ],
+     "rule": "pairing.py (T, logger, P, W) -> SS: lost-pair cell vanishes later with no gain between; RM: any cell < rc*sqrt(<A>)"
+    },
+    "swaps": 473,
+    "vanished": 1350,
+    "appeared": 0,
+    "SS": {
+     "side_shedding": 455,
+     "macroscopic": 18,
+     "identity_ok": true,
+     "side_shedding_any": 473,
+     "macroscopic_any": 0,
+     "not_ss_lost_cell_alive_at_end_no_regain": 0,
+     "shed_to_vanish_delay_quartiles": [
+      8,
+      8,
+      24
+     ]
+    },
+    "per_vanished": {
+     "total": 0.3504,
+     "SS_macroscopic": 0.0133,
+     "SS_side_shedding": 0.337,
+     "SS_any_macroscopic": 0.0
+    },
+    "RM": {
+     "1.0": {
+      "microscopic": 184,
+      "macroscopic": 289,
+      "macroscopic_per_vanished": 0.2141,
+      "microscopic_and_SS": 184,
+      "ell2_first_last": [
+       6.884,
+       44.564
+      ],
+      "sides_at_ell2": {
+       "2": 36,
+       "3": 241,
+       "4": 423,
+       "5": 83,
+       "never below": 567
+      }
+     },
+     "0.5": {
+      "microscopic": 92,
+      "macroscopic": 381,
+      "macroscopic_per_vanished": 0.2822,
+      "microscopic_and_SS": 92,
+      "ell2_first_last": [
+       3.442,
+       22.282
+      ],
+      "sides_at_ell2": {
+       "2": 37,
+       "3": 174,
+       "4": 141,
+       "5": 13,
+       "never below": 985
+      }
+     },
+     "2.0": {
+      "microscopic": 308,
+      "macroscopic": 165,
+      "macroscopic_per_vanished": 0.1222,
+      "microscopic_and_SS": 307,
+      "ell2_first_last": [
+       13.768,
+       89.128
+      ],
+      "sides_at_ell2": {
+       "2": 16,
+       "3": 180,
+       "4": 692,
+       "5": 366,
+       "6": 7,
+       "never below": 89
+      }
+     }
+    }
+   }
+  }
+ },
+ "seconds": 74.0
+}

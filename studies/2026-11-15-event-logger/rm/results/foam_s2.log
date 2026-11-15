@@ -1,0 +1,75 @@
+PROGRESS 0.000 sim mcs 0 cells 2000; identical 0, different 0
+PROGRESS 0.010 sim mcs 30 cells 1175; identical 11, different 0
+PROGRESS 0.020 sim mcs 60 cells 754; identical 41, different 0
+PROGRESS 0.030 sim mcs 90 cells 546; identical 71, different 0
+PROGRESS 0.039 sim mcs 120 cells 422; identical 101, different 0
+PROGRESS 0.049 sim mcs 150 cells 364; identical 131, different 0
+PROGRESS 0.059 sim mcs 180 cells 303; identical 161, different 0
+PROGRESS 0.069 sim mcs 210 cells 261; identical 191, different 0
+PROGRESS 0.079 sim mcs 240 cells 217; identical 221, different 0
+PROGRESS 0.089 sim mcs 270 cells 196; identical 251, different 0
+PROGRESS 0.099 sim mcs 300 cells 184; identical 281, different 0
+PROGRESS 0.109 sim mcs 330 cells 170; identical 311, different 0
+PROGRESS 0.118 sim mcs 360 cells 149; identical 341, different 0
+PROGRESS 0.128 sim mcs 390 cells 138; identical 371, different 0
+PROGRESS 0.138 sim mcs 420 cells 132; identical 401, different 0
+PROGRESS 0.148 sim mcs 450 cells 119; identical 431, different 0
+PROGRESS 0.158 sim mcs 480 cells 113; identical 461, different 0
+PROGRESS 0.168 sim mcs 510 cells 104; identical 491, different 0
+PROGRESS 0.178 sim mcs 540 cells 93; identical 521, different 0
+PROGRESS 0.188 sim mcs 570 cells 87; identical 551, different 0
+PROGRESS 0.197 sim mcs 600 cells 83; identical 581, different 0
+PROGRESS 0.207 sim mcs 630 cells 77; identical 611, different 0
+PROGRESS 0.217 sim mcs 660 cells 73; identical 641, different 0
+PROGRESS 0.227 sim mcs 690 cells 69; identical 671, different 0
+PROGRESS 0.237 sim mcs 720 cells 66; identical 701, different 0
+PROGRESS 0.247 sim mcs 750 cells 63; identical 731, different 0
+PROGRESS 0.257 sim mcs 780 cells 61; identical 761, different 0
+PROGRESS 0.266 sim mcs 810 cells 59; identical 791, different 0
+PROGRESS 0.276 sim mcs 840 cells 57; identical 821, different 0
+PROGRESS 0.286 sim mcs 870 cells 57; identical 851, different 0
+PROGRESS 0.296 sim mcs 900 cells 56; identical 881, different 0
+PROGRESS 0.306 sim mcs 930 cells 53; identical 911, different 0
+PROGRESS 0.316 sim mcs 960 cells 53; identical 941, different 0
+PROGRESS 0.326 sim mcs 990 cells 51; identical 971, different 0
+PROGRESS 0.336 sim mcs 1020 cells 48; identical 1001, different 0
+PROGRESS 0.345 sim mcs 1050 cells 47; identical 1031, different 0
+PROGRESS 0.355 sim mcs 1080 cells 46; identical 1061, different 0
+PROGRESS 0.365 sim mcs 1110 cells 46; identical 1091, different 0
+PROGRESS 0.375 sim mcs 1140 cells 45; identical 1121, different 0
+PROGRESS 0.385 sim mcs 1170 cells 44; identical 1151, different 0
+PROGRESS 0.395 sim mcs 1200 cells 44; identical 1181, different 0
+PROGRESS 0.405 sim mcs 1230 cells 44; identical 1211, different 0
+PROGRESS 0.414 sim mcs 1260 cells 43; identical 1241, different 0
+PROGRESS 0.424 sim mcs 1290 cells 42; identical 1271, different 0
+PROGRESS 0.434 sim mcs 1320 cells 40; identical 1301, different 0
+PROGRESS 0.444 sim mcs 1350 cells 39; identical 1331, different 0
+PROGRESS 0.454 sim mcs 1380 cells 38; identical 1361, different 0
+PROGRESS 0.464 sim mcs 1410 cells 38; identical 1391, different 0
+PROGRESS 0.474 sim mcs 1440 cells 38; identical 1421, different 0
+PROGRESS 0.484 sim mcs 1470 cells 38; identical 1451, different 0
+PROGRESS 0.493 sim mcs 1500 cells 36; identical 1481, different 0
+regenerated 1500 frames in 61 s: identical to saved 1500, different 0
+PROGRESS 0.625 step 1 done
+PROGRESS 0.750 step 2 done
+PROGRESS 0.875 step 4 done
+PROGRESS 1.000 step 8 done
+W=8 P=8: vanished 1339 / 1339 / 1339 / 1339; swaps 1035 / 804 / 616 / 458
+   total per vanished: 0.773 / 0.6004 / 0.46 / 0.342
+   SS macroscopic per vanished: 0.0075 / 0.0082 / 0.006 / 0.0097
+   SS side-shedding per vanished: 0.7655 / 0.5922 / 0.4541 / 0.3323
+   SS_any macroscopic per vanished: 0.0007 / 0.0007 / 0.0007 / 0.0007
+   RM rc 1.0 macroscopic per vanished: 0.2957 / 0.2696 / 0.2382 / 0.2076; l^2 first/last [6.909, 43.904]; sides at l^2 (step 1) {2: 15, 3: 280, 4: 822, 5: 219, 6: 2, 'never below': 1}
+   RM rc 0.5 macroscopic per vanished: 0.4429 / 0.3861 / 0.3271 / 0.2674; l^2 first/last [3.454, 21.952]; sides at l^2 (step 1) {1: 4, 2: 116, 3: 562, 4: 535, 5: 40, 'never below': 82}
+   RM rc 2.0 macroscopic per vanished: 0.1412 / 0.1374 / 0.124 / 0.1098; l^2 first/last [13.818, 87.807]; sides at l^2 (step 1) {2: 4, 3: 96, 4: 730, 5: 496, 6: 13}
+   shed-to-vanish delay quartiles (MCS): [2, 3, 9] / [2, 4, 12] / [4, 8, 16] / [8, 8, 24]
+W=0 P=0: vanished 1339 / 1339 / 1339 / 1339; swaps 1054 / 841 / 628 / 439
+   total per vanished: 0.7872 / 0.6281 / 0.469 / 0.3279
+   SS macroscopic per vanished: 0.124 / 0.0635 / 0.0299 / 0.0097
+   SS side-shedding per vanished: 0.6632 / 0.5646 / 0.4391 / 0.3181
+   SS_any macroscopic per vanished: 0.0075 / 0.0045 / 0.0037 / 0.0007
+   RM rc 1.0 macroscopic per vanished: 0.3846 / 0.3249 / 0.2599 / 0.2009; l^2 first/last [6.909, 43.904]; sides at l^2 (step 1) {2: 15, 3: 280, 4: 822, 5: 219, 6: 2, 'never below': 1}
+   RM rc 0.5 macroscopic per vanished: 0.5176 / 0.4309 / 0.3398 / 0.2577; l^2 first/last [3.454, 21.952]; sides at l^2 (step 1) {1: 4, 2: 116, 3: 562, 4: 535, 5: 40, 'never below': 82}
+   RM rc 2.0 macroscopic per vanished: 0.2323 / 0.1987 / 0.1516 / 0.1075; l^2 first/last [13.818, 87.807]; sides at l^2 (step 1) {2: 4, 3: 96, 4: 730, 5: 496, 6: 13}
+   shed-to-vanish delay quartiles (MCS): [1, 3, 12] / [2, 4, 14] / [4, 8, 16] / [8, 8, 24]
+RM_FOAM_OK

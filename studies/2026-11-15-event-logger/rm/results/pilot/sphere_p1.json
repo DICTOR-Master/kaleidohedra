@@ -1,0 +1,103 @@
+{
+ "mode": "power",
+ "N": 100,
+ "seed": 1,
+ "tmax": 0.02,
+ "W": 0.0002,
+ "P": 0.0002,
+ "runs": {
+  "0.0001": {
+   "frames": 201,
+   "flips": {
+    "flip 3-1": 3,
+    "flip 1-3": 2,
+    "flip 2-2": 5
+   },
+   "logger_swaps": 5,
+   "logger_births": 2,
+   "logger_deaths": 3,
+   "rm": {
+    "params": {
+     "W": 0.0002,
+     "P": 0.0002,
+     "units": "seed-motion time",
+     "tol": 0.0,
+     "by_segment": false,
+     "rcs": [
+      1.0
+     ],
+     "rule": "pairing.py (T, logger, P, W) -> SS: lost-pair cell vanishes later with no gain between; RM: any cell < rc*sqrt(<A>)"
+    },
+    "swaps": 5,
+    "vanished": 3,
+    "appeared": 2,
+    "SS": {
+     "side_shedding": 1,
+     "macroscopic": 4,
+     "identity_ok": true,
+     "side_shedding_any": 1,
+     "macroscopic_any": 4,
+     "not_ss_lost_cell_alive_at_end_no_regain": 4,
+     "shed_to_vanish_delay_quartiles": [
+      0.004999999999999999,
+      0.004999999999999999,
+      0.004999999999999999
+     ]
+    },
+    "per_vanished": {
+     "total": 1.6667,
+     "SS_macroscopic": 1.3333,
+     "SS_side_shedding": 0.3333,
+     "SS_any_macroscopic": 1.3333
+    }
+   }
+  },
+  "1e-05": {
+   "frames": 2001,
+   "flips": {
+    "flip 3-1": 3,
+    "flip 1-3": 2,
+    "flip 2-2": 5
+   },
+   "logger_swaps": 5,
+   "logger_births": 2,
+   "logger_deaths": 3,
+   "rm": {
+    "params": {
+     "W": 0.0002,
+     "P": 0.0002,
+     "units": "seed-motion time",
+     "tol": 0.0,
+     "by_segment": false,
+     "rcs": [
+      1.0
+     ],
+     "rule": "pairing.py (T, logger, P, W) -> SS: lost-pair cell vanishes later with no gain between; RM: any cell < rc*sqrt(<A>)"
+    },
+    "swaps": 5,
+    "vanished": 3,
+    "appeared": 2,
+    "SS": {
+     "side_shedding": 1,
+     "macroscopic": 4,
+     "identity_ok": true,
+     "side_shedding_any": 1,
+     "macroscopic_any": 4,
+     "not_ss_lost_cell_alive_at_end_no_regain": 4,
+     "shed_to_vanish_delay_quartiles": [
+      0.005000000000000001,
+      0.005000000000000001,
+      0.005000000000000001
+     ]
+    },
+    "per_vanished": {
+     "total": 1.6667,
+     "SS_macroscopic": 1.3333,
+     "SS_side_shedding": 0.3333,
+     "SS_any_macroscopic": 1.3333
+    }
+   }
+  }
+ },
+ "seconds": 1.6
+}

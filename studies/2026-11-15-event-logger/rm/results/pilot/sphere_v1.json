@@ -1,0 +1,99 @@
+{
+ "mode": "voronoi",
+ "N": 100,
+ "seed": 1,
+ "tmax": 0.02,
+ "W": 0.0002,
+ "P": 0.0002,
+ "runs": {
+  "0.0001": {
+   "frames": 201,
+   "flips": {
+    "flip 2-2": 14
+   },
+   "logger_swaps": 14,
+   "logger_births": 0,
+   "logger_deaths": 0,
+   "rm": {
+    "params": {
+     "W": 0.0002,
+     "P": 0.0002,
+     "units": "seed-motion time",
+     "tol": 0.0,
+     "by_segment": false,
+     "rcs": [
+      1.0
+     ],
+     "rule": "pairing.py (T, logger, P, W) -> SS: lost-pair cell vanishes later with no gain between; RM: any cell < rc*sqrt(<A>)"
+    },
+    "swaps": 14,
+    "vanished": 0,
+    "appeared": 0,
+    "SS": {
+     "side_shedding": 0,
+     "macroscopic": 14,
+     "identity_ok": true,
+     "side_shedding_any": 0,
+     "macroscopic_any": 14,
+     "not_ss_lost_cell_alive_at_end_no_regain": 14,
+     "shed_to_vanish_delay_quartiles": [
+      null,
+      null,
+      null
+     ]
+    },
+    "per_vanished": {
+     "total": null,
+     "SS_macroscopic": null,
+     "SS_side_shedding": null,
+     "SS_any_macroscopic": null
+    }
+   }
+  },
+  "1e-05": {
+   "frames": 2001,
+   "flips": {
+    "flip 2-2": 14
+   },
+   "logger_swaps": 14,
+   "logger_births": 0,
+   "logger_deaths": 0,
+   "rm": {
+    "params": {
+     "W": 0.0002,
+     "P": 0.0002,
+     "units": "seed-motion time",
+     "tol": 0.0,
+     "by_segment": false,
+     "rcs": [
+      1.0
+     ],
+     "rule": "pairing.py (T, logger, P, W) -> SS: lost-pair cell vanishes later with no gain between; RM: any cell < rc*sqrt(<A>)"
+    },
+    "swaps": 14,
+    "vanished": 0,
+    "appeared": 0,
+    "SS": {
+     "side_shedding": 0,
+     "macroscopic": 14,
+     "identity_ok": true,
+     "side_shedding_any": 0,
+     "macroscopic_any": 14,
+     "not_ss_lost_cell_alive_at_end_no_regain": 14,
+     "shed_to_vanish_delay_quartiles": [
+      null,
+      null,
+      null
+     ]
+    },
+    "per_vanished": {
+     "total": null,
+     "SS_macroscopic": null,
+     "SS_side_shedding": null,
+     "SS_any_macroscopic": null
+    }
+   }
+  }
+ },
+ "seconds": 2.5
+}

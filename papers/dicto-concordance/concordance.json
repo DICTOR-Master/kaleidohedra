@@ -7947,6 +7947,16 @@
     "retry": "never the same window test on these models; only: per-plate rates with a resolution control (merge family microplates to Scotese-size plates and recount), or a new independent topological model if one is published",
     "study": "studies/2026-11-15-earth-plates",
     "goes_to": "One tissue, three scales (Earth section of the planned paper)"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "One tissue, three scales: the Rutenberg-McCurdy macroscopic T1 count without a time window: what exactly is their definition, and what does foam rung 1 give by it (per vanished cell, steps 1/2/4/8 MCS) against 0.53, with the total against Herdtle-Aref 1.5",
+    "method": "studies/2026-11-15-event-logger/scripts/rm_count.py on pairing.py swaps (W = P = 8 MCS; W = P = 0 beside): rule SS (lost-pair cell vanishes later with no gain between) and rule RM, the paper's own (PRE 73 011403, arXiv cond-mat/0502287 read in full: a T1 counts if all bubbles exceed l^2 = rc sqrt(<A>)), rc = 1, 0.5, 2 pixels; areas from the foam regenerated from its seed (1500/1500 frames identical to the saved ones); tests 12/12 (synthetic octahedron maps, regain case, coarse-step absorption, area rule; NEGATIVE no vanishing -> all macroscopic); sphere control; jobs rm-pilot, rm-runs FINAL ok",
+    "status": "COMPUTED: rule RM 0.30 per T2 at rc = 1 (within 20% over steps 1-4) but rc-dependent 0.14-0.46: 0.53 UNTESTABLE in this froth (no scaling state); rule SS degenerate (99% removed); FAILED: match to 0.53",
+    "result": "foam W=P=8, seeds 1/2: total 0.764/0.773 (step 1) -> 0.360/0.342 (step 8), half of 1.5. SS macroscopic 0.004/0.008 (step 1) to 0.014/0.010 (step 8): 5-19 swaps; nearly every lost pair holds a cell that later vanishes without regaining a side (median 3-4 MCS before). RM rc=1: 0.303/0.296, 0.276/0.270, 0.253/0.238, 0.219/0.208 at steps 1/2/4/8; rc=0.5: 0.46/0.44, rc=2: 0.14/0.14 (step 1). Every RM-microscopic swap is SS. Sides at l^2 (rc=1): 3/4/5-sided 21/65/13 % (s1), 21/61/16 % (s2) vs paper 9/84/7. Consistency 0.30 + 0.46 = 0.76 here vs 0.53 + 0.98 = 1.5: the lattice loses about half the small-scale shedding (cells vanish four-sided in one sweep). Sphere Voronoi: SS 0, macroscopic = swaps = flips (238, 168); power runs 1.8 and 2.3 sheds per death.",
+    "retry": "never retry rule SS (vanishing without window) against 0.53 on a coarsening record (degenerate). Rule RM against 0.53 only on a froth in its scaling state with l^2 far from 1 pixel and from <A> (rung 1 at 1024^2 or larger, long run), rc = 0.5/1/2 fixed in advance; or a vertex-model froth",
+    "study": "studies/2026-11-15-event-logger (Rutenberg-McCurdy count section, rm/)",
+    "goes_to": "One tissue, three scales (counting rules for all streams; foam ladder rung 1 next step)"
    }
   ]
  },
