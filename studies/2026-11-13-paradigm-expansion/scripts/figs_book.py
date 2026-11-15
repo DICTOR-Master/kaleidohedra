@@ -285,7 +285,7 @@ def f_partner():
     for e in itertools.product((1, -1), repeat=3):
         c = np.array(e, float); Bc = cell_A(muB, c * 1.0)
         sc.solid(Bc, offset=c * 0.55, color=VIOLET, glass=True, alpha=0.30, lw=0.8, edge='#4b2f78')
-    sc.draw(ax); ax.set_xlim(-3.1, 3.1); ax.set_ylim(-3.0, 3.0)
+    sc.draw(ax); ax.set_xlim(-3.6, 3.6); ax.set_ylim(-3.5, 3.5)   # 15 Nov: was ±3.1/±3.0, which cut the top and bottom cells (edge guard)
     check(f'partner fill at x = φ: A cell (Icosaxes, μ = φ) + B cell (Unborn Axes, μ = 3 − φ) volumes {volA:.6f} + {volB:.6f} = 8 = the cell of 2Z³ per A site', abs(volA + volB - 8) < 1e-9)
     check('partner fill: 24 corners each, squares and hexagons', len(A0) == 24 and sorted(len(f) for f, n in FA) == [4] * 6 + [6] * 8)
     mark(fig_); fig_.subplots_adjust(0, 0.05, 1, 1); save(fig_, 'partner-fill.png')

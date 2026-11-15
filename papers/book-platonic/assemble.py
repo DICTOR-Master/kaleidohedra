@@ -292,3 +292,10 @@ hits = [doc_m.group(0) for doc_m in BANNED.finditer(re.sub('<[^>]+>', ' ', doc))
 open(os.path.join(HERE, 'paper.html'), 'w', encoding='utf8').write(doc)
 print('chapters', len(chapters), 'papers in book', len(sources), 'referred', len(REFERRED), 'figures', sum(len(fs) for _, _, fs in os.walk(os.path.join(HERE, 'figures'))),
       'chars', len(doc), 'BANNED' if hits else 'banned 0', hits[:20], 'series page ' + ('included' if SERIES else 'MISSING (hook left: ' + SERIES_FILE + ')'))
+# 15 Nov GUARD (DICTO: "fig 6.7 too big for fig frame again"): no model may run off its image frame (../edgecheck.py; deliberate
+# close-ups in ../edgecheck-allow.txt with a reason). The build stops here on a hit; figcheck.mjs repeats the check on the print host.
+import subprocess, sys
+_imgs = sorted({os.path.join(HERE, s) for s in re.findall(r'<img[^>]*\bsrc="([^"]+)"', doc) if not re.match(r'(data|https?):', s)})
+_ec = subprocess.run([sys.executable, os.path.join(HERE, '..', 'edgecheck.py'), *_imgs])
+if _ec.returncode: sys.exit('EDGE: a figure runs off its frame (lines above); re-render it or allowlist a deliberate crop in ../edgecheck-allow.txt')
+print('edgecheck ok:', len(_imgs), 'images')
