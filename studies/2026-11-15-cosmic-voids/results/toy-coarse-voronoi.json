@@ -1,0 +1,49 @@
+{
+ "N": 512,
+ "mode": "voronoi",
+ "A": 0.0,
+ "rows": [
+  {
+   "dt": 0.005,
+   "steps": 200,
+   "seen_contact_changes": 6892,
+   "alone_share": 0.8360417875798026,
+   "seen_per_cell_per_step": 0.0673046875
+  },
+  {
+   "dt": 0.01,
+   "steps": 100,
+   "seen_contact_changes": 6884,
+   "alone_share": 0.7379430563625798,
+   "seen_per_cell_per_step": 0.134453125
+  },
+  {
+   "dt": 0.02,
+   "steps": 50,
+   "seen_contact_changes": 6848,
+   "alone_share": 0.579001168224299,
+   "seen_per_cell_per_step": 0.2675
+  },
+  {
+   "dt": 0.04,
+   "steps": 25,
+   "seen_contact_changes": 6812,
+   "alone_share": 0.38461538461538464,
+   "seen_per_cell_per_step": 0.5321875
+  },
+  {
+   "dt": 0.08,
+   "steps": 12,
+   "seen_contact_changes": 6417,
+   "alone_share": 0.20040517375720743,
+   "seen_per_cell_per_step": 1.04443359375
+  },
+  {
+   "dt": 0.16,
+   "steps": 6,
+   "seen_contact_changes": 6239,
+   "alone_share": 0.06635678794678634,
+   "seen_per_cell_per_step": 2.0309244791666665
+  }
+ ]
+}

@@ -7881,6 +7881,16 @@
     "retry": "never for the counting rule on these models; next: a model with its own plate history (Young 2019, PALEOMAP), persistent swaps vs reorganisations, recount with the shared pairing rule (event-logger/pairing/) when it lands",
     "study": "studies/2026-11-15-earth-plates",
     "goes_to": "One tissue, three scales (Earth section of the planned paper)"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "One tissue, three scales, Section 3 (cosmic voids): do 3D cells gain/lose contacts one at a time (#104 Theorem 1') in a moving foam and in cosmic-void basins; contact changes per merge; neighbours per void vs Poisson-Voronoi 15.535",
+    "method": "studies/2026-11-15-cosmic-voids: toy = periodic 3D Voronoi/power foam of moving centres (Qhull lifted hull, margin+orthosphere, Euler, shift-robustness checks), interval halving to 1e-9 so every event is resolved, shared event logger (eventlog.py, unchanged); lattice negative control; fixed-step sampling curve. Cosmic = own pmwd particle-mesh run (256^3, 256 Mpc/h, Planck18, 2 seeds, z=3..0 at da=1/128 plus da=1/512 for a=0.75..1), steepest-descent watershed basins at fixed Gaussian R=3,4,6 Mpc/h, contact = shared voxel face (and >=10 faces), tracking by minimum containment (Wojtak, Powell & Abel 2016)",
+    "status": "SETTLED for the toy (one at a time, exact); UNDECIDED for the void basins (cause of the residual 20% clumping: voxel grid or physics)",
+    "result": "toy: 30,758 events, 0 simultaneous, 0 clumps, lists identical at two steps; lattice control caught (10 simultaneous); 15.56 contact changes per cell per rms spacing (null study 15.61+-0.03); degree 15.534+-0.012. voids: share of contact changes alone 0.23 (da 1/16) -> 0.60 (da 1/512), levelling near 0.65-0.7; 20% clumped with other contact changes at finest spacing, more than the foam at equal sampling; ~25 contact changes per merged basin (23-27 over R, seeds, spacings), ~117 per net basin lost; neighbours 17.2-18.0 (any face) or 13.7-15.4 (>=10 faces): rule-dependent",
+    "retry": "toy: never. voids: only with a finer density grid (512^3 at the same smoothing) or Voronoi (particle) basins, to separate grid artefact from physics",
+    "study": "studies/2026-11-15-cosmic-voids",
+    "goes_to": "One tissue, three scales (Section 3 and the comparison table); #104 follow-up"
    }
   ]
  },

@@ -1,0 +1,49 @@
+{
+ "N": 512,
+ "mode": "wiggle",
+ "A": 1.0,
+ "rows": [
+  {
+   "dt": 0.005,
+   "steps": 200,
+   "seen_contact_changes": 15609,
+   "alone_share": 0.5732590172336473,
+   "seen_per_cell_per_step": 0.2490466693258875
+  },
+  {
+   "dt": 0.01,
+   "steps": 100,
+   "seen_contact_changes": 15104,
+   "alone_share": 0.3856594279661017,
+   "seen_per_cell_per_step": 0.4820015317845289
+  },
+  {
+   "dt": 0.02,
+   "steps": 50,
+   "seen_contact_changes": 14279,
+   "alone_share": 0.20344561944113734,
+   "seen_per_cell_per_step": 0.9107085911091269
+  },
+  {
+   "dt": 0.04,
+   "steps": 25,
+   "seen_contact_changes": 12794,
+   "alone_share": 0.07128341410035954,
+   "seen_per_cell_per_step": 1.6312635471120742
+  },
+  {
+   "dt": 0.08,
+   "steps": 12,
+   "seen_contact_changes": 9744,
+   "alone_share": 0.01416256157635468,
+   "seen_per_cell_per_step": 2.5921787709497206
+  },
+  {
+   "dt": 0.16,
+   "steps": 6,
+   "seen_contact_changes": 5814,
+   "alone_share": 0.0008599931200550396,
+   "seen_per_cell_per_step": 3.092553191489362
+  }
+ ]
+}
