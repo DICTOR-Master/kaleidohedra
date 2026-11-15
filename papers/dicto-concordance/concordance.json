@@ -8052,6 +8052,16 @@
     "result": "Forced silences (degrees 1, 2) = nonsymmorphic systematic absences of the S3-crystal (non-sigma-stable blocks; for nonabelian G: no fixed point <=> degree 1 forced). Unforced 5, 7 = special-position (Wyckoff) type, like diamond 222; the 6-block has 3-defect zero in 2I.sigma (order 240), so it vanishes on X's order-6 class (Brauer). No extinct Bragg peaks from silence: 0 zeros for X, -X, F, control; silence shows instead as p5 = p3, p7 = (7/8) p3 in every direction (float 1e-13). 11 icosahedral space groups, 5 nonsymmorphic (5_1 screws, xy glides); 'P5_3 32' is not one.",
     "retry": "no for Bragg extinctions from silence; open: exact theorem (i)-(iii) over all binary polyhedral groups, exact proof of p5=p3, p7=7p3/8",
     "study": "studies/2026-11-15-quasicrystal-extinctions"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "Lean 4 + Mathlib formal proof of Kulaichev's Sri Yantra uniqueness from the box certificate (steps 1-4 of the box-certificate plan and the top-level statement)",
+    "method": "studies/2026-11-15-yantra-box-certificate section 7: library YantraCert (Lean v4.35.0-rc2, Mathlib v4.35.0-rc2); recursor-based Nat-only checker (Lean core), monotone split and slope form proved sound (geom_sum2_mul); bisection-tree walk proved to cover its cell; 1,194 generated subtree modules by decide +kernel (no native_decide); Krawczyk uniqueness by contraction and existence by Banach (Mathlib ContractingWith.fixedPoint) on a 2^-100 box inside the 2^-22 hole; chart covering lemmas by case splits with real roots; statement of the theorem as a Palomar Challenge (compiles, sorry); jobs ylean-cert FINAL ok, ylean-node2 (independent aarch64 re-check of a stratified subset)",
+    "status": "PROVED in part (Lean): steps 1 and 4, chart coverings; top-level theorem open",
+    "result": "all 10 charts `covered` (64,613 leaves, 6,387 s module time, max 2.36 GB, 22 min wall on 5 parallel files); kbox_exists_unique (exactly one zero of F~ in the hole); cover_corner0/1, cover_N1; #print axioms: only propext, Classical.choice, Quot.sound everywhere",
+    "retry": "never redo the certificate check; next only: step 2 (construction -> G, H1, D -> F~ and test sign pairs; chart pull-back identities, via a verified sparse-polynomial normaliser), step 3b (main box bounds), assembly, existence (rebuild the yantra from the zero in Xs), Solution.lean",
+    "study": "studies/2026-11-15-yantra-box-certificate",
+    "goes_to": "Palomar entry later (not submitted); #103 uniqueness remark"
    }
   ]
  },
