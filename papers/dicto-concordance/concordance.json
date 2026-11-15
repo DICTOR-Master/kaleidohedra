@@ -8043,6 +8043,15 @@
     "result": "No prior per-file per-ring census, no yew study, no topological/scutoid framing (Bannan: divisions per cm xylem, ~13% survival; Bailey: net initials; Hejnowicz: domain drift). Synthetic: split recall 0.92 / precision 0.92, ends 0.93 / 0.87 (straight), precision 0.80 / 0.60 turned 7 deg; null gives 0; false 0.0008-0.0028 per file per cell. CoLuS: starts+ends 0.021 per file per cell (manual masks) vs 0.047 (own segmentation), per-patch r = 0.63; patches < 1 ring so outward direction agrees only 69% and splits vs ends cannot be separated; ~5x Bannan-implied 0.004. Logger: Euler + balance every frame, 0 swaps (forced), negative control caught. No open yew section picture found.",
     "retry": "never: gross rates from sub-ring patches (direction undetermined); swaps from a single section (impossible). Next only with: a multi-ring section (yew preferred; TRIA Pinus/Larix, a QWA lab, or DICTO's own yew section) traced from manual-quality lumina with the synthetic floor subtracted; swaps only from serial tangential sections or a stack of cross-sections",
     "study": "studies/2026-11-15-yew-cambium"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "Are quasicrystal (and crystal) diffraction extinctions, forced by nonsymmorphic or internal-space (Galois) symmetries, the same phenomenon as the twisted silence of 2I twisted classes in the 600-cell?",
+    "method": "studies/2026-11-15-quasicrystal-extinctions: Fourier-space crystallography read (Mermin cond-mat/9207028; Rabson-Fisher cond-mat/0105036; Fisher-Rabson math-ph/0105010; Yamamoto icosahedral Wyckoff page); dictionary derived (S3 as crystal, Peter-Weyl blocks as peaks, cocycle a sigma(a)^-1); pilot qx-pilot FINAL ok: multipoles n<=12, odd moments, 16488 Bragg vectors of a golden module with X, -X, F, R and a generic control as motifs",
+    "status": "ANSWERED (scope): partly same",
+    "result": "Forced silences (degrees 1, 2) = nonsymmorphic systematic absences of the S3-crystal (non-sigma-stable blocks; for nonabelian G: no fixed point <=> degree 1 forced). Unforced 5, 7 = special-position (Wyckoff) type, like diamond 222; the 6-block has 3-defect zero in 2I.sigma (order 240), so it vanishes on X's order-6 class (Brauer). No extinct Bragg peaks from silence: 0 zeros for X, -X, F, control; silence shows instead as p5 = p3, p7 = (7/8) p3 in every direction (float 1e-13). 11 icosahedral space groups, 5 nonsymmorphic (5_1 screws, xy glides); 'P5_3 32' is not one.",
+    "retry": "no for Bragg extinctions from silence; open: exact theorem (i)-(iii) over all binary polyhedral groups, exact proof of p5=p3, p7=7p3/8",
+    "study": "studies/2026-11-15-quasicrystal-extinctions"
    }
   ]
  },
