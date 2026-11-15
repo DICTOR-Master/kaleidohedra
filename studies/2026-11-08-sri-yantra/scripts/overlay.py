@@ -89,12 +89,17 @@ def wrap(dr, text, f, maxw):
     return out + [line]
 
 
-def plate(key, notes, rings_marks, out):
-    """one overlay plate, drawn at 2x and reduced (anti-aliasing)"""
-    s = 2; Wd = 1200 * s; D = 1000 * s; top = 190 * s; side = (Wd - D) // 2
-    label, load, col, exact = Y[key]
-    b0, w0, a0 = Y['GF1'][1](); b, w, a = load()
-    lo = min(0.0, min(a.values())); hi = max(1.0, max(a.values()))
+def plate(key, notes, rings_marks, out, base='GF1', entry=None, extra=None, ret=False):
+    """one overlay plate, drawn at 2x and reduced (anti-aliasing).
+    base: the yantra drawn solid grey underneath; entry: a (label, loader, colour, exact) tuple in place of Y[key]; extra(dr, X, Yd, s):
+    further red marks; ret: return the image instead of saving (breakers.py, 15 Nov 2026). With the defaults, and for any figure that
+    stays inside the circle's band (every plate before 15 Nov 2026), the plate is drawn exactly as before."""
+    s = 2; D = 1000 * s; top = 190 * s
+    label, load, col, exact = entry or Y[key]
+    b0, w0, a0 = Y[base][1](); b, w, a = load()
+    lo = min(0.0, min(a.values()), min(b.values())); hi = max(1.0, max(a.values()), max(b.values()))
+    wx = max(0.5, max(abs(x) for x in w.values()))
+    Wd = max(1200 * s, int((2 * wx + 0.2) * D)); side = (Wd - D) // 2
     X = lambda x: side + (x + 0.5) * D; Yd = lambda d: top + (d - lo) * D
     fn = font(FONT, 40 * s); fb = font(BOLD, 64 * s); fs_ = font(FONT, 30 * s)
     probe = ImageDraw.Draw(Image.new('RGB', (10, 10)))
@@ -109,10 +114,12 @@ def plate(key, notes, rings_marks, out):
         dr.text((bx + 115 * s, 67 * s), 'EXACT' if exact else 'COMPUTED', font=font(BOLD, 28 * s), fill='white', anchor='mm')
     short = label.split(',')[0]; short = short[0].lower() + short[1:] if short.startswith('The ') else short
     if key == 'grid': short = 'the equilateral grid figure'
-    dr.text((side, 122 * s), 'solid grey: the DICTO Yantra;   dotted, in colour: ' + short, font=fs_, fill=(80, 80, 80))
+    bname = Y[base][0]; bname = bname[0].lower() + bname[1:] if bname.startswith('The ') else bname
+    dr.text((side, 122 * s), f'solid grey: {bname};   dotted, in colour: ' + short, font=fs_, fill=(80, 80, 80))
     circle(dr, X, Yd, (90, 90, 90), 3 * s)
     draw_lines(dr, b0, w0, a0, X, Yd, GREY, 4 * s)
     draw_lines(dr, b, w, a, X, Yd, col, 3 * s, dotted=True, dot=12 * s)
+    if extra: extra(dr, X, Yd, s)
     for (x, d, rr) in rings_marks:
         R = rr * D
         dr.ellipse([X(x) - R, Yd(d) - R, X(x) + R, Yd(d) + R], outline=RED, width=4 * s)
@@ -120,7 +127,9 @@ def plate(key, notes, rings_marks, out):
     for l in lines:
         dr.text((side, y), l, font=fn, fill=RED); y += 56 * s
     dr.text((Wd - side, H - 50 * s), 'DICTO · dictospheres.com', font=fs_, fill=(110, 110, 110), anchor='ra')
-    im.resize((Wd // s, H // s), Image.LANCZOS).save(out)
+    im = im.resize((Wd // s, H // s), Image.LANCZOS)
+    if ret: return im
+    im.save(out)
 
 
 def overview(out, M):
