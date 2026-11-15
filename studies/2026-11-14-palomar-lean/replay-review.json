@@ -1,0 +1,414 @@
+[
+ {
+  "findings": [],
+  "trust_level": null,
+  "sources_checked": [
+   "formalization_metadata",
+   "challenge_source"
+  ],
+  "declarations_checked": [],
+  "codes_checked": [
+   "arxiv:math.CO",
+   "arxiv:cond-mat.stat-mech",
+   "msc2020:05C38",
+   "msc2020:05C30",
+   "msc2020:05C81",
+   "msc2020:05C63",
+   "msc2020:52C23",
+   "msc2020:68R15"
+  ],
+  "internal_notes": [
+   {
+    "evidence": "05C38/05C30/05C81/05C63",
+    "message": "Closed non-backtracking walks (paths and cycles), enumeration of loop counts, closed-walk counts (random walks on graphs), infinite tetrahedral networks: all on topic."
+   },
+   {
+    "evidence": "52C23, 68R15",
+    "message": "Aperiodic Fibonacci stacking (aperiodic order) and Sturmian/substitution words (combinatorics on words) appear in the selected Fibonacci theorems."
+   },
+   {
+    "evidence": "cond-mat.stat-mech",
+    "message": "Polytypes, ice networks and loop counts relevant to lattice statistics; acceptable."
+   }
+  ],
+  "step": "classification",
+  "outcome": "neutral",
+  "summary": "All submitted arXiv and MSC2020 codes plausibly describe the statement or its proof.",
+  "scores": {
+   "classification": 4
+  }
+ },
+ {
+  "findings": [],
+  "trust_level": null,
+  "sources_checked": [
+   "formalization_metadata",
+   "entry@local-snapshot:formalization.yaml",
+   "entry@local-snapshot:README.md",
+   "entry@local-snapshot:Challenge.lean",
+   "entry@local-snapshot:Solution.lean",
+   "entry@local-snapshot:comparator.json",
+   "submission",
+   "mechanical_report (assumed pass)"
+  ],
+  "declarations_checked": [],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "project.authors, responsible_maintainers",
+    "message": "Only the human author DICTO; AI agent credited in automation.methods and README. Human-only rule satisfied."
+   },
+   {
+    "evidence": "automation, review",
+    "message": "Agent authorship of all Lean code disclosed; review.status self-assessed with 'no independent human line-by-line audit' stated; paper #102 disclosed as not peer reviewed. Accurate."
+   },
+   {
+    "evidence": "status.scope / fidelity.divergences",
+    "message": "Gaps (Ihara-Bass series only m<=12, Bala identity only n<10, Fibonacci word identity only positions <100, Corollaries not formalised) disclosed in both README and YAML and match the Challenge docstrings."
+   },
+   {
+    "evidence": "sources[].type",
+    "message": "MECHANICAL RISK, outside editorial scope: nine sources use type 'article' and one 'web post'; CONTRIBUTING 3.2 allows only paper, book, web discussion, folklore, original-proof, other when type is present. This is an intake-shape requirement (not an editorial finding) but would likely fail mechanical verification as written; the replay assumed mechanical pass per instructions."
+   },
+   {
+    "evidence": "project.description",
+    "message": "'0 for odd m' is not a compared theorem for all odd m (only m=3,5,7 in loopCount_values); it follows immediately from bipartiteness of the network together with loop_count_eq, so not material."
+   },
+   {
+    "evidence": "sources Thorpe/Nagle relationship 'background'",
+    "message": "W_closed reproves and extends Thorpe's closed-walk equality; 'background' is defensible since the result is source-based via #102 'formalizes'. Harmless."
+   },
+   {
+    "evidence": "source #102",
+    "message": "Self-published Zenodo paper by the submitter; relationship formalizes; endorsement 'participated'. Consistent."
+   }
+  ],
+  "step": "metadata",
+  "outcome": "neutral",
+  "summary": "Structured metadata, provenance, automation and review status are stated accurately and consistently with the Challenge; no material metadata problem identified.",
+  "scores": {
+   "clarity": 4,
+   "provenance": 4
+  }
+ },
+ {
+  "findings": [],
+  "trust_level": null,
+  "sources_checked": [
+   "challenge_source",
+   "entry@local-snapshot:Challenge.lean:1-363",
+   "entry@local-snapshot:README.md",
+   "entry@local-snapshot:formalization.yaml",
+   "entry@local-snapshot:comparator.json",
+   "entry@local-snapshot:lakefile.toml",
+   "entry@local-snapshot:lean-toolchain"
+  ],
+  "declarations_checked": [
+   "DictoLoopEquality.nbLoops_finite",
+   "DictoLoopEquality.loop_equality",
+   "DictoLoopEquality.loop_count_eq",
+   "DictoLoopEquality.loopCount_values",
+   "DictoLoopEquality.loopCount_values_34",
+   "DictoLoopEquality.closedWalks_domb_small",
+   "DictoLoopEquality.loopCount_eq_iharaBass_small",
+   "DictoLoopEquality.W_closed",
+   "DictoLoopEquality.bond_iff",
+   "DictoLoopEquality.Graph.loops_ncard_eq_FD",
+   "DictoLoopEquality.fibonacci_isStacking",
+   "DictoLoopEquality.fibonacci_zero",
+   "DictoLoopEquality.fibonacci_one",
+   "DictoLoopEquality.fibonacci_layer_type",
+   "DictoLoopEquality.isH_eq_word",
+   "DictoLoopEquality.fibonacci_not_periodic",
+   "DictoLoopEquality.fibonacci_loop_equality"
+  ],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "nbLoops, Challenge.lean:91",
+    "message": "f : Fin m -> Atom, f 0 = v, Bond f i f(i+1), f(i+2) != f i cyclically: rooted cyclically reduced closed walks (tailless, backtrackless), as advertised; reversals counted separately, disclosed in fidelity (2)."
+   },
+   {
+    "evidence": "m = 1, 2",
+    "message": "Bond is irreflexive (layer or Fin 2 index differs), so m=1 empty; m=2 requires f i != f i, empty. loop_count_eq covers these with loopCount 1 = loopCount 2 = 0 (proved). No vacuity."
+   },
+   {
+    "evidence": "loop_equality reference point",
+    "message": "(0,(0,0),0) is a site of diamond (diamond 0 = 0). Non-vacuous; hv, hσ are object-defining hypotheses."
+   },
+   {
+    "evidence": "W_closed",
+    "message": "Stated for nbr at every atom of every σ (even non-stackings); tied to Bond at sites of stackings by bond_iff, which also implies nbr maps sites to sites. Matches 'closed walks at every atom of every stacking'."
+   },
+   {
+    "evidence": "Graph.loops_ncard_eq_FD",
+    "message": "Hypotheses: symmetric, loopless, (q+1)-regular, walk-regular (hw for all x), m>=3. Matches narrative 'finite or infinite graph, same closed-walk counts'. Note the docstring states this generality is not in #102 (alignment note)."
+   },
+   {
+    "evidence": "loopCount",
+    "message": "Defined as the recursion FD(dataW 3 closedWalks); narrative says exactly this, not a closed form; Ihara-Bass agreement only m<=12 is disclosed in the theorem name and docstring."
+   },
+   {
+    "evidence": "closedWalks_domb_small, isH_eq_word",
+    "message": "Finite-range checks clearly labelled; prose does not claim the all-n / all-k identities."
+   },
+   {
+    "evidence": "fibonacci_not_periodic",
+    "message": "Non-periodicity of the position sequence σ for every nonzero period; matches 'aperiodic stacking'. Fibonacci name rests on the Sturmian slope 1/φ²; substitution agreement only to position 99, disclosed."
+   },
+   {
+    "evidence": "project.description",
+    "message": "Points to all principal result families (loop equality, explicit count, closed walks, local formula, values, Fibonacci). Not misleading."
+   }
+  ],
+  "step": "statement_alignment",
+  "outcome": "neutral",
+  "summary": "Each compared theorem matches its narrative account; scope limits (small-range checks, partial Ihara-Bass agreement, finite word check) are stated in the Lean docstrings and prose.",
+  "scores": {
+   "statement_alignment": 4
+  }
+ },
+ {
+  "findings": [],
+  "trust_level": "high",
+  "sources_checked": [
+   "challenge_source",
+   "entry@local-snapshot:Challenge.lean",
+   "entry@local-snapshot:LoopEquality/Defs.lean",
+   "entry@local-snapshot:LoopEquality/Network.lean (declaration list)",
+   "Mathlib v4.35.0-rc2 (imported generically; standard ZMod, Finset, AddMonoidAlgebra, Int.floor, Real.sqrt, Set.ncard not reread)"
+  ],
+  "declarations_checked": [
+   "DictoLoopEquality.nbLoops_finite",
+   "DictoLoopEquality.loop_equality",
+   "DictoLoopEquality.loop_count_eq",
+   "DictoLoopEquality.loopCount_values",
+   "DictoLoopEquality.loopCount_values_34",
+   "DictoLoopEquality.closedWalks_domb_small",
+   "DictoLoopEquality.loopCount_eq_iharaBass_small",
+   "DictoLoopEquality.W_closed",
+   "DictoLoopEquality.bond_iff",
+   "DictoLoopEquality.Graph.loops_ncard_eq_FD",
+   "DictoLoopEquality.fibonacci_isStacking",
+   "DictoLoopEquality.fibonacci_zero",
+   "DictoLoopEquality.fibonacci_one",
+   "DictoLoopEquality.fibonacci_layer_type",
+   "DictoLoopEquality.isH_eq_word",
+   "DictoLoopEquality.fibonacci_not_periodic",
+   "DictoLoopEquality.fibonacci_loop_equality"
+  ],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "IsSite, shortVecs, Challenge.lean:77-81",
+    "message": "(i,j) ↦ (i a1 + j a2)/3: A,B,C = residues i≡j≡c mod 3 are the three triangular sublattice cosets; the six shortVecs have length 1/√3 (e.g. |−2a1+a2|²/9 = 3/9) and map position c to c±1 (three to each). Correct."
+   },
+   {
+    "evidence": "Bond, Challenge.lean:84-88",
+    "message": "Vertical bond within a bilayer at the same planar point, three slanted bonds from upper atom of layer k to lower atoms of layer k+1 at positions σ(k+1); with σ(k+1)≠σ(k) exactly 3 of 6 vectors qualify, giving degree 4. σ=k gives AaBbCc (diamond), alternating gives AaBb (lonsdaleite). Faithful combinatorial model; geometric bond lengths abstracted (fidelity (1))."
+   },
+   {
+    "evidence": "Set.ncard",
+    "message": "ncard of an infinite set is 0; nbLoops_finite (unconditional) excludes this, so ncard is a true count in loop_equality/loop_count_eq."
+   },
+   {
+    "evidence": "nbr, sd",
+    "message": "Auxiliary neighbour function defined at all atoms; bond_iff proves it equals Bond at sites of stackings. Not manufacturing."
+   },
+   {
+    "evidence": "loopCount / FD / dataW / cA",
+    "message": "Explicit integer recursions in the Challenge, auditable; their link to actual counts is the content of loop_count_eq and loops_ncard_eq_FD, not built into a definition."
+   },
+   {
+    "evidence": "fibonacci, fibAlpha",
+    "message": "Cut-and-project definition with α=(3−√5)/2; toNat-based two-sided sum is total and matches σ(k+1)−σ(k)=fibStep k (proved in library). Fine."
+   },
+   {
+    "evidence": "imports",
+    "message": "Challenge imports only Mathlib: trust high. Challenge is 363 lines, self-contained."
+   }
+  ],
+  "step": "definition_fidelity",
+  "outcome": "neutral",
+  "summary": "The Challenge definitions faithfully encode the tetrahedral network of close-packed stackings and the loop sets; nothing manufactures the conclusions.",
+  "scores": {
+   "definition_fidelity": 4,
+   "auditability": 4
+  }
+ },
+ {
+  "findings": [
+   {
+    "severity": "error",
+    "location": "Challenge.lean (all 17 compared theorems); README.md 'Literature and novelty'",
+    "message": "Research interest is not affirmatively established. The selected results reduce to known or routine steps: equality of closed-walk counts across close-packed stackings (Thorpe 1972 for periodic polytypes; the extension to all stackings follows by locality), a general local identity expressing rooted non-backtracking loop counts in a walk-regular regular graph through closed-walk counts (a standard consequence of the Hashimoto-Bass recursion), finite kernel evaluations of the resulting values, and an instance on the classical Sturmian (Fibonacci) stacking. A plausible audience exists in polytype and ice-network lattice statistics and in zeta functions of infinite graphs, but the submission does not show a result that this audience would treat as a paper or serious note rather than a corollary of known theory; the paper being formalised has not had peer review and no external reception is documented. Better prose alone would not resolve this; a substantively stronger result would be needed."
+   },
+   {
+    "severity": "warning",
+    "location": "README.md, section 'Literature and novelty'; formalization.yaml sources (Thorpe note)",
+    "message": "The novelty account says the new step beyond Thorpe's closed-walk theorem and the Ihara-Bass reduction is the stacking-independence of walk counts along each bond (#102 Lemma 2 (b)). The submission's own proof of loop_count_eq does not use that step: it combines only the closed-walk count at every site (W_closed) with the general local loop formula for walk-regular graphs (Graph.loops_ncard_eq_FD), and loop_equality then follows. In addition, the loop count at a site depends only on a bounded window of layers, so the aperiodic case follows from the periodic site-wise case. The account should state that the per-site, all-stacking Loop Equality is a direct consequence of site-wise closed-walk equality (Thorpe 1972 for periodic polytypes, extended to all stackings by locality or by W_closed) together with a short non-backtracking recursion argument, and should cite the work on rooted and per-vertex Ihara zeta functions of infinite graphs (Grigorchuk and Zuk 2004; Lenz, Pogorzelski and Schmidt 2019) alongside the works already listed."
+   }
+  ],
+  "trust_level": null,
+  "sources_checked": [
+   "entry@local-snapshot:README.md",
+   "entry@local-snapshot:formalization.yaml",
+   "entry@local-snapshot:Challenge.lean",
+   "entry@local-snapshot:LoopEquality/Explicit.lean:39-48",
+   "entry@local-snapshot:LoopEquality/Main.lean:1-40",
+   "https://scilit.com/publications/55bde34bbc9edb0e1bf60c238b4b47b7 (search snippet; page 403)",
+   "https://portal.mardi4nfdi.de/wiki/Item:Q5644894",
+   "https://arxiv.org/abs/2405.15865",
+   "https://ar5iv.labs.arxiv.org/html/1408.3522",
+   "https://www.ams.org/journals/tran/2019-371-08/S0002-9947-2018-07508-0",
+   "https://ar5iv.arxiv.org/html/1306.5454",
+   "https://math.ucr.edu/~lapidus/papers/YJFAN_5356.pdf (search result)",
+   "https://ar5iv.arxiv.org/html/1603.05553 (search result)",
+   "https://scholar.harvard.edu/sites/scholar.harvard.edu/files/mkempton/files/nb_walk_paper.pdf (search result)"
+  ],
+  "declarations_checked": [
+   "DictoLoopEquality.nbLoops_finite",
+   "DictoLoopEquality.loop_equality",
+   "DictoLoopEquality.loop_count_eq",
+   "DictoLoopEquality.loopCount_values",
+   "DictoLoopEquality.loopCount_values_34",
+   "DictoLoopEquality.closedWalks_domb_small",
+   "DictoLoopEquality.loopCount_eq_iharaBass_small",
+   "DictoLoopEquality.W_closed",
+   "DictoLoopEquality.bond_iff",
+   "DictoLoopEquality.Graph.loops_ncard_eq_FD",
+   "DictoLoopEquality.fibonacci_isStacking",
+   "DictoLoopEquality.fibonacci_zero",
+   "DictoLoopEquality.fibonacci_one",
+   "DictoLoopEquality.fibonacci_layer_type",
+   "DictoLoopEquality.isH_eq_word",
+   "DictoLoopEquality.fibonacci_not_periodic",
+   "DictoLoopEquality.fibonacci_loop_equality"
+  ],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "LoopEquality/Explicit.lean:39-48",
+    "message": "loop_count_eq is proved from nbLoops_eq, Graph.loops_ncard, Graph.sum_F_eq (regular σ) and W_closed only; W_vert/W_cross (bond walk counts, #102 Lemma 2(b)) are used only in Main.loop_equality. Hence loop_equality is a corollary of loop_count_eq and the 'new step' is dispensable."
+   },
+   {
+    "evidence": "locality",
+    "message": "Rooted loops of length m at a site of layer k use only layers within m/2; any finite window of a stacking occurs in a periodic polytype (periodize the window), so per-site results for periodic stackings transfer to all stackings. The aperiodic emphasis adds no mathematics."
+   },
+   {
+    "evidence": "Thorpe 1972",
+    "message": "Full text not accessible (scilit 403, MaRDI metadata only). Snippet: closed-walk counts equal across fcc/hcp and zincblende/wurtzite polytype series. Whether Thorpe states it per site or per cell not verified; W_closed proves per-site for every σ by a short gauge argument either way. Limitation recorded, not a finding."
+   },
+   {
+    "evidence": "He-Wilson-Ganesh 2024 abstract",
+    "message": "Layer gauge gives identical band structures for all close-packed structures (s orbitals, up to 2nd neighbours); this already implies per-site spectral equality in their setting; submission cites it."
+   },
+   {
+    "evidence": "Lenz-Pogorzelski-Schmidt 2019",
+    "message": "Ihara zeta for measure graphs incl. periodic, percolation graphs and graphings; per-vertex reduced closed path counts N_j(x) defined; ergodic random/aperiodic stackings fit as graphings for averaged counts. No explicit close-packed statement found. Grigorchuk-Zuk 2004 rooted zeta for limits of finite regular graphs via KNS measure. Neither cited in README (Clair-Mokhtari-Sharghi and Guido-Isola-Lapidus are)."
+   },
+   {
+    "evidence": "search paths",
+    "message": "Queries on non-backtracking loops / Ihara zeta on polytypes, diamond/lonsdaleite stacking-independent loops, walk-regular per-vertex NB formula returned no prior explicit statement of the Loop Equality. Absence is not used as evidence of novelty or of non-novelty."
+   },
+   {
+    "evidence": "audience",
+    "message": "Plausible: statistical mechanics of ice Ic/Ih and stacking-disordered ice (Nagle loop expansions), spin ice on polytypes, Ihara zeta of infinite/aperiodic graphs. Paper-worthiness is the missing element. Score is near the 2/3 boundary; 3 chosen because a specific audience is identifiable and the explicit per-site formula on an aperiodic family is a clean, citable fact, but it is corollary-level."
+   },
+   {
+    "evidence": "positive",
+    "message": "Literature account is unusually candid ('an expert can obtain the periodic, site-averaged case ...; we claim no more than this'); citations Nagle, Thorpe, Ihara, Hashimoto, Bass, Domb, OEIS, HWG, GIL, Morse-Hedlund, Lothaire, Jagodzinski are appropriate."
+   }
+  ],
+  "step": "literature_notability",
+  "outcome": "failure",
+  "summary": "The literature account is detailed and mostly accurate but overstates the distance from known results; research interest as a paper-level contribution is not affirmatively established, since the headline theorem follows from site-wise closed-walk equality and a standard non-backtracking identity.",
+  "scores": {
+   "notability": 3,
+   "literature": 3
+  }
+ },
+ {
+  "findings": [],
+  "trust_level": null,
+  "sources_checked": [
+   "solution_source",
+   "entry@local-snapshot:Solution.lean",
+   "entry@local-snapshot:README.md 'Proof account'",
+   "entry@local-snapshot:LoopEquality/Explicit.lean",
+   "entry@local-snapshot:LoopEquality/Main.lean",
+   "entry@local-snapshot:LoopEquality/Counts.lean (declaration list)",
+   "entry@local-snapshot:LoopEquality/Levels.lean (declaration list)",
+   "entry@local-snapshot:LoopEquality/Graph.lean (declaration list)",
+   "entry@local-snapshot:LoopEquality/ClosedWalks.lean (declaration list)",
+   "entry@local-snapshot:LoopEquality/Fibonacci.lean (declaration list)"
+  ],
+  "declarations_checked": [
+   "DictoLoopEquality.nbLoops_finite",
+   "DictoLoopEquality.loop_equality",
+   "DictoLoopEquality.loop_count_eq",
+   "DictoLoopEquality.loopCount_values",
+   "DictoLoopEquality.loopCount_values_34",
+   "DictoLoopEquality.closedWalks_domb_small",
+   "DictoLoopEquality.loopCount_eq_iharaBass_small",
+   "DictoLoopEquality.W_closed",
+   "DictoLoopEquality.bond_iff",
+   "DictoLoopEquality.Graph.loops_ncard_eq_FD",
+   "DictoLoopEquality.fibonacci_isStacking",
+   "DictoLoopEquality.fibonacci_zero",
+   "DictoLoopEquality.fibonacci_one",
+   "DictoLoopEquality.fibonacci_layer_type",
+   "DictoLoopEquality.isH_eq_word",
+   "DictoLoopEquality.fibonacci_not_periodic",
+   "DictoLoopEquality.fibonacci_loop_equality"
+  ],
+  "codes_checked": [],
+  "internal_notes": [
+   {
+    "evidence": "README step 1 vs Counts/Levels",
+    "message": "Levels.Q_eq gauge lemma, Counts.E_inv with rho_fix/neg_fix, W_site, W_vert, W_cross, W_nbr exist as described."
+   },
+   {
+    "evidence": "README step 2-3 vs Graph/Main/Explicit",
+    "message": "Graph.transfer, Graph.loops_ncard, Graph.sum_F_eq; Main.F_bond, total, loop_equality; Explicit.loop_count_eq uses W_closed + sum_F_eq exactly as stated."
+   },
+   {
+    "evidence": "README step 4 vs ClosedWalks",
+    "message": "Pl_eq = (1+gY)(1+ḡY^{-1}), coeff_zero_Pl_pow, coeff_zero_N_pow = honeycomb: as described."
+   },
+   {
+    "evidence": "README step 5 vs Fibonacci",
+    "message": "isH_not_periodic and fibonacci_not_periodic via irrationality of √5; word_check by decide for k<100. As described."
+   },
+   {
+    "evidence": "computational components",
+    "message": "decide / decide +kernel for values m<=34, Domb n<10, Ihara-Bass m<=12, word k<100 disclosed; no native_decide found by grep; axioms per mechanical report assumption."
+   }
+  ],
+  "step": "proof_account",
+  "outcome": "neutral",
+  "summary": "The README and Solution proof accounts match the architecture of the recorded proof, including its kernel-evaluation components.",
+  "scores": {
+   "proof_alignment": 4
+  }
+ },
+ {
+  "step": "synthesis",
+  "outcome": "rejected",
+  "summary": "The formal statements faithfully express the advertised results on the tetrahedral networks of close-packed stackings, the definitions are sound and auditable, and the metadata and proof account are accurate. The submission does not affirmatively establish research interest at the level of a paper or serious note: the headline Loop Equality and its explicit count follow from site-wise equality of closed-walk counts, known for periodic polytypes and extending to all stackings by locality, combined with a standard non-backtracking recursion identity for walk-regular graphs. The literature account also places the new step in a lemma that the explicit-count proof does not need.",
+  "scores": {
+   "statement_alignment": 4,
+   "definition_fidelity": 4,
+   "notability": 3,
+   "literature": 3,
+   "clarity": 4
+  },
+  "warnings": [
+   "Research interest is not affirmatively established. The selected results reduce to known or routine steps: equality of closed-walk counts across close-packed stackings (Thorpe 1972 for periodic polytypes; the extension to all stackings follows by locality), a general local identity expressing rooted non-backtracking loop counts in a walk-regular regular graph through closed-walk counts (a standard consequence of the Hashimoto-Bass recursion), finite kernel evaluations of the resulting values, and an instance on the classical Sturmian (Fibonacci) stacking. A plausible audience exists in polytype and ice-network lattice statistics and in zeta functions of infinite graphs, but the submission does not show a result that this audience would treat as a paper or serious note rather than a corollary of known theory; the paper being formalised has not had peer review and no external reception is documented. Better prose alone would not resolve this; a substantively stronger result would be needed.",
+   "The novelty account says the new step beyond Thorpe's closed-walk theorem and the Ihara-Bass reduction is the stacking-independence of walk counts along each bond (#102 Lemma 2 (b)). The submission's own proof of loop_count_eq does not use that step: it combines only the closed-walk count at every site (W_closed) with the general local loop formula for walk-regular graphs (Graph.loops_ncard_eq_FD), and loop_equality then follows. In addition, the loop count at a site depends only on a bounded window of layers, so the aperiodic case follows from the periodic site-wise case. The account should state that the per-site, all-stacking Loop Equality is a direct consequence of site-wise closed-walk equality (Thorpe 1972 for periodic polytypes, extended to all stackings by locality or by W_closed) together with a short non-backtracking recursion argument, and should cite the work on rooted and per-vertex Ihara zeta functions of infinite graphs (Grigorchuk and Zuk 2004; Lenz, Pogorzelski and Schmidt 2019) alongside the works already listed."
+  ],
+  "requested_changes": [
+   "Revise the literature and novelty account so that it states that the per-site Loop Equality for all stackings follows from site-wise closed-walk equality (Thorpe 1972 for periodic polytypes; all stackings by locality or W_closed) together with the general local loop formula, rather than identifying the bond walk-count lemma as the new step, and cite the work on rooted and per-vertex Ihara zeta functions of infinite graphs (Grigorchuk and Zuk 2004; Lenz, Pogorzelski and Schmidt 2019)."
+  ]
+ }
+]

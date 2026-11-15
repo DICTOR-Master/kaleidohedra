@@ -1,0 +1,279 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4
+version: "v0.4"
+
+project:
+  name: "The Loop Equality: closed non-backtracking loops on every close-packed stacking"
+  description: >-
+    On the tetrahedral bond network of any close-packed stacking (diamond,
+    lonsdaleite, every polytype, and every aperiodic stacking), every site has
+    the same number of closed non-backtracking loops of each length m, and this
+    number is an explicit integer loopCount m (0 for odd m; 24, 48, 480, 3432,
+    ... for m = 6, 8, 10, 12, ...), computed from the closed-walk counts (Domb
+    numbers, in Bala's chain form) by the non-backtracking recursion of
+    Hashimoto and Bass. The development also proves the closed-walk equality at
+    every atom of every stacking, a local loop formula for any graph with q + 1
+    neighbours at every vertex and equal closed-walk counts, the values for
+    m <= 34, and that the aperiodic Fibonacci stacking satisfies the equality
+    with the same count. This formalises Theorem 1 of DICTO's paper #102.
+  authors:
+    - "DICTO"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "DICTO"
+
+classification:
+  arxiv: ["math.CO", "cond-mat.stat-mech"]
+  msc2020: ["05C38", "05C30", "05C81", "05C63", "52C23", "68R15"]
+
+sources:
+  - title: "Every Site Hears the Same: the Loop Equality Is a Theorem (paper #102, Theorem 1, Lemmas 1-3, Proposition)"
+    authors:
+      - "DICTO"
+    id: "doi:10.5281/zenodo.24127070"
+    type: "paper"
+    location: "https://doi.org/10.5281/zenodo.24127070 (version 4; version 1: https://doi.org/10.5281/zenodo.24037664)"
+    relationship: "formalizes"
+    note: >-
+      Theorem 1 (the Loop Equality), its explicit count and listed values, and
+      the closed-walk Proposition are formalised. The conjecture is from
+      DICTO's paper #74 (doi:10.5281/zenodo.23730421).
+    license: "CC-BY-SA-4.0"
+    author_endorsement: "participated"
+  - title: "Spin Ice and Kagome Magnets on Every Stacking (paper #74; the conjecture and the loop values to m = 34)"
+    authors:
+      - "DICTO"
+    id: "doi:10.5281/zenodo.23730421"
+    type: "paper"
+    location: "https://doi.org/10.5281/zenodo.23730421"
+    relationship: "background"
+    license: "CC-BY-SA-4.0"
+    author_endorsement: "participated"
+  - title: "Lattice statistics of hydrogen bonded crystals. I. The residual entropy of ice"
+    authors:
+      - "J. F. Nagle"
+    type: "paper"
+    location: "J. Math. Phys. 7 (1966) 1484-1491"
+    relationship: "background"
+    note: "Equal closed-walk counts for cubic and hexagonal ice."
+  - title: "Random walks in polytype structures"
+    authors:
+      - "M. F. Thorpe"
+    id: "doi:10.1063/1.1665973"
+    type: "paper"
+    location: "J. Math. Phys. 13 (1972) 294-299"
+    relationship: "background"
+    note: "Closed-walk equality for periodic polytypes; W_closed reproves it for all stackings."
+  - title: "On discrete subgroups of the two by two projective linear group over p-adic fields"
+    authors:
+      - "Y. Ihara"
+    type: "paper"
+    location: "J. Math. Soc. Japan 18 (1966) 219-235"
+    relationship: "background"
+  - title: "Zeta functions of finite graphs and representations of p-adic groups"
+    authors:
+      - "K. Hashimoto"
+    type: "paper"
+    location: "Adv. Stud. Pure Math. 15 (1989) 211-280"
+    relationship: "background"
+    note: "Edge matrix and the non-backtracking recursion used in LoopEquality.Graph and LocalFormula."
+  - title: "The Ihara-Selberg zeta function of a tree lattice"
+    authors:
+      - "H. Bass"
+    type: "paper"
+    location: "Internat. J. Math. 3 (1992) 717-797"
+    relationship: "background"
+  - title: "On the theory of cooperative phenomena in crystals"
+    authors:
+      - "C. Domb"
+    type: "paper"
+    location: "Adv. Phys. 9 (1960) 149-361"
+    relationship: "background"
+    note: "Closed walks on the diamond lattice (Domb numbers, OEIS A002895)."
+  - title: "OEIS A002895 (Domb numbers), with Peter Bala's comment giving the chain form; A002893"
+    contributors:
+      - name: "Peter Bala"
+        role: "author of the chain-form comment on A002895"
+    type: "web discussion"
+    location: "https://oeis.org/A002895"
+    relationship: "background"
+  - title: "Metallic bonding in close-packed structures: structural frustration from a hidden gauge symmetry"
+    authors:
+      - "E. He"
+      - "C. M. Wilson"
+      - "R. Ganesh"
+    id: "arXiv:2405.15865"
+    type: "paper"
+    location: "Phys. Rev. Lett. 133 (2024) 256401"
+    relationship: "background"
+    note: "The layer gauge mechanism; used here for walk counts (LoopEquality.Levels)."
+  - title: "Ihara's zeta function for periodic graphs and its approximation in the amenable case"
+    authors:
+      - "D. Guido"
+      - "T. Isola"
+      - "M. L. Lapidus"
+    id: "arXiv:math/0608229"
+    type: "paper"
+    location: "J. Funct. Anal. 255 (2008) 1339-1361"
+    relationship: "background"
+    note: "With Thorpe 1972 this gives the site-averaged loop counts for periodic stackings."
+  - title: "The Ihara zeta function of infinite graphs, the KNS spectral measure and integrable maps"
+    authors:
+      - "R. I. Grigorchuk"
+      - "A. Zuk"
+    type: "paper"
+    location: "Random Walks and Geometry, de Gruyter, 2004, 141-180"
+    relationship: "background"
+    note: "Ihara zeta functions of infinite graphs."
+  - title: "The Ihara zeta function for infinite graphs"
+    authors:
+      - "D. Lenz"
+      - "F. Pogorzelski"
+      - "M. Schmidt"
+    type: "paper"
+    location: "Trans. Amer. Math. Soc. 371 (2019) 5687-5729"
+    relationship: "background"
+    note: "Per-vertex (rooted) Ihara zeta functions of infinite graphs."
+  - title: "Symbolic dynamics II. Sturmian trajectories"
+    authors:
+      - "M. Morse"
+      - "G. A. Hedlund"
+    type: "paper"
+    location: "Amer. J. Math. 62 (1940) 1-42"
+    relationship: "background"
+    note: "Sturmian words; aperiodicity for irrational slope."
+  - title: "Algebraic Combinatorics on Words, Chapter 2 (Sturmian words)"
+    authors:
+      - "M. Lothaire"
+    type: "book"
+    location: "Cambridge University Press, 2002"
+    relationship: "background"
+  - title: "Eindimensionale Fehlordnung in Kristallen und ihr Einfluss auf die Roentgeninterferenzen. I."
+    authors:
+      - "H. Jagodzinski"
+    type: "paper"
+    location: "Acta Cryst. 2 (1949) 201-207"
+    relationship: "background"
+    note: "The c/h layer notation used for the Fibonacci stacking."
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Formalised: #102 Theorem 1 for every close-packed stacking (periodic or
+    not), every site and every length m >= 1, with finiteness; the explicit
+    count loop_count_eq; the closed-walk counts at every atom (W_closed); the
+    general local loop formula for (q+1)-regular graphs with equal closed-walk
+    counts; the fifteen nonzero values of #102 for m <= 34; the Fibonacci
+    stacking (stacking, Jagodzinski types, aperiodicity, loop corollary).
+    Not formalised: the identity of loopCount with #102's Ihara-Bass series for
+    all m (checked for m <= 12); Bala's identity between the chain form and
+    Domb's closed form for all n (checked for n < 10); the equality of the
+    cut-and-project and substitution forms of the Fibonacci word at every
+    position (checked for positions < 100); #102's Corollaries 1-3 and Lemma 2
+    (c); the equality of the vertical and slanted bond walk counts, which the
+    proof does not need.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude Opus (Anthropic)"]
+      framework: "Claude Code (Opus)"
+      tool_setup: >-
+        A Claude Code agent wrote the Lean statements, proof outline and proofs
+        in a terminal session, compiling with Lake against Mathlib v4.35.0-rc2
+        on a Linux workstation; plain Mathlib tactics, decide and decide
+        +kernel (no native_decide).
+      cost:
+        wall_time: "about two days (14-15 November 2026)"
+        spend_usd: "subscription-based"
+        hardware: "local Linux workstation"
+      prompting_notes: >-
+        DICTO set the target (#102 Theorem 1, then the explicit count, then the
+        Fibonacci companion) and the order of work; the agent followed a
+        written proof outline module by module, with milestone builds.
+  spend_usd: "subscription-based"
+  notes: >-
+    DICTO conjectured the Loop Equality (#74), found the loop values to m = 34,
+    and directed the proof in #102 and this formalisation. The Lean statements
+    and proofs were written by the agent. Every milestone was checked by a
+    clean Lake build and by #print axioms (only propext, Classical.choice and
+    Quot.sound). No independent human line-by-line audit of the Lean code has
+    been made.
+
+fidelity:
+  divergences: >-
+    (1) The network is given combinatorially (integer planar coordinates,
+    positions in ZMod 3); bond lengths are encoded by the six short vectors.
+    (2) Loops are maps Fin m -> Atom with f 0 = v, so a loop and its reversal
+    are counted separately, as in #102's t_m. (3) The formula proved for the
+    count is the Hashimoto-Bass recursion applied to the closed walks, not
+    #102's Ihara-Bass series; the two agree for m <= 12 (proved by kernel
+    evaluation). (4) The proof compares each bond with a reference bond of
+    diamond of the same kind instead of using diamond's symmetry group. (5)
+    The Fibonacci word is defined by its two-sided cut-and-project form; it
+    agrees with the substitution word c -> ch, h -> c at positions 0-99.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none"
+  notes: >-
+    The statement file was compared with #102 Theorem 1 and its Proposition
+    (correspondence table in README.md). Positive and negative controls: the
+    fifteen listed values are proved by kernel evaluation and a deliberately
+    wrong value (loopCount 24 = 750276793) is rejected. The paper #102 had an
+    automated check on aiXiv (2611.01038); it has not had human peer review.
+
+alignment:
+  namespace: "DictoLoopEquality"
+  statements:
+    - source: "#102 Theorem 1 (the Loop Equality)"
+      lean: "DictoLoopEquality.loop_equality"
+      module: "Challenge"
+      status: "proved"
+      note: "Every stacking, every site, every m >= 1; nbLoops_finite makes ncard a true count."
+    - source: "#102 Theorem 1, finiteness of the loop sets"
+      lean: "DictoLoopEquality.nbLoops_finite"
+      module: "Challenge"
+      status: "proved"
+      note: "Implicit in #102."
+    - source: "#102 Theorem 1, 'Explicitly' (the count and its values)"
+      lean: "DictoLoopEquality.loop_count_eq"
+      module: "Challenge"
+      status: "proved"
+      note: "loopCount is the Hashimoto-Bass recursion applied to the closed walks; values in loopCount_values and loopCount_values_34."
+    - source: "#102 values t_m for m = 3..34"
+      lean: "DictoLoopEquality.loopCount_values_34"
+      module: "Challenge"
+      status: "proved"
+      note: "With loopCount_values; kernel evaluation."
+    - source: "#102 Ihara-Bass series"
+      lean: "DictoLoopEquality.loopCount_eq_iharaBass_small"
+      module: "Challenge"
+      status: "partial"
+      note: "Agreement for 1 <= m <= 12 only."
+    - source: "#102 Lemma 2 (a) and Proposition (closed walks; Thorpe 1972 for periodic polytypes)"
+      lean: "DictoLoopEquality.W_closed"
+      module: "Challenge"
+      status: "proved"
+      note: "At every atom of every stacking; bond_iff ties the neighbour function to the bonds; closedWalks_domb_small compares with Domb's closed form for n < 10."
+    - source: "#102 Lemma 3 summed over the bonds at a vertex"
+      lean: "DictoLoopEquality.Graph.loops_ncard_eq_FD"
+      module: "Challenge"
+      status: "proved"
+      note: "General graphs with q + 1 neighbours everywhere and equal closed-walk counts; stated in this generality here, not in #102."
+    - source: "Fibonacci stacking (DICTO's Fibonacci stackings study and #102 checks)"
+      lean: "DictoLoopEquality.fibonacci_loop_equality"
+      module: "Challenge"
+      status: "proved"
+      note: "With fibonacci_isStacking, fibonacci_zero, fibonacci_one, fibonacci_layer_type, isH_eq_word and fibonacci_not_periodic."
+
+acknowledgements: >-
+  Mathlib and the Lean FRO toolchain; the Palomar template. Mathematical
+  credits as listed under sources: Nagle, Thorpe, Ihara, Hashimoto, Bass, Domb,
+  Bala, He-Wilson-Ganesh, Guido-Isola-Lapidus, Morse-Hedlund, Lothaire,
+  Jagodzinski.

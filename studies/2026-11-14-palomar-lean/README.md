@@ -234,3 +234,11 @@ Here `loopCount` is an explicit, computable integer function: the local loop for
 | (f) | `Fibonacci.lean` compiles: stacking, Jagodzinski types, word check, aperiodicity, loop corollary |
 | (g) | full clean rebuild of the `LoopEquality` library (job `loop-explicit-lean`): "Build completed successfully (8942 jobs)". Negative control: no `sorry` or `native_decide` in the sources. Positive control: 15 axiom lines, all `[propext, Classical.choice, Quot.sound]`. **FINAL ok** |
 | (c) | `SphereLoops.lean` (#102 Corollary 3 statement) typechecks with `sorry` |
+
+## Palomar entry packaged and scored (15 November 2026)
+
+DICTO (15 Nov): "move forward with Palomar, if score guaranteed". **Nothing submitted, and no repository created or pushed.**
+
+- **Package:** `entry/` (text files; the build cache is not included). One Comparator configuration with 17 theorems. `Solution.lean` is the Challenge with proofs, transferred from the library (namespace `LoopEqualityProof`).
+- **Preflight:** `PREFLIGHT.md`. `lake comparator` accepts the Solution: Lean kernel, NanoDa and con-ron. The axioms are the three standard ones, and a wrong Challenge is rejected.
+- **Score:** `SCORE.md`, with the blind replay in `replay-review.json`. **Notability 3 out of 5, below the floor, so the outcome would be `rejected`.** The condition "score guaranteed" is not met, and the entry stays local.
