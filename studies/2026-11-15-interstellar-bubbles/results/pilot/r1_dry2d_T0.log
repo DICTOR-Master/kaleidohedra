@@ -1,0 +1,57 @@
+PROGRESS 0.000 dry2d mcs 0 cells 1995
+PROGRESS 0.020 dry2d mcs 30 cells 1499
+PROGRESS 0.039 dry2d mcs 60 cells 1183
+PROGRESS 0.059 dry2d mcs 90 cells 1007
+PROGRESS 0.079 dry2d mcs 120 cells 872
+PROGRESS 0.099 dry2d mcs 150 cells 766
+PROGRESS 0.118 dry2d mcs 180 cells 665
+PROGRESS 0.138 dry2d mcs 210 cells 593
+PROGRESS 0.158 dry2d mcs 240 cells 555
+PROGRESS 0.178 dry2d mcs 270 cells 506
+PROGRESS 0.197 dry2d mcs 300 cells 450
+PROGRESS 0.217 dry2d mcs 330 cells 420
+PROGRESS 0.237 dry2d mcs 360 cells 392
+PROGRESS 0.257 dry2d mcs 390 cells 358
+PROGRESS 0.276 dry2d mcs 420 cells 339
+PROGRESS 0.296 dry2d mcs 450 cells 320
+PROGRESS 0.316 dry2d mcs 480 cells 298
+PROGRESS 0.336 dry2d mcs 510 cells 282
+PROGRESS 0.355 dry2d mcs 540 cells 269
+PROGRESS 0.375 dry2d mcs 570 cells 256
+PROGRESS 0.395 dry2d mcs 600 cells 250
+PROGRESS 0.414 dry2d mcs 630 cells 239
+PROGRESS 0.434 dry2d mcs 660 cells 229
+PROGRESS 0.454 dry2d mcs 690 cells 220
+PROGRESS 0.474 dry2d mcs 720 cells 210
+PROGRESS 0.493 dry2d mcs 750 cells 204
+PROGRESS 0.513 dry2d mcs 780 cells 198
+PROGRESS 0.533 dry2d mcs 810 cells 191
+PROGRESS 0.553 dry2d mcs 840 cells 185
+PROGRESS 0.572 dry2d mcs 870 cells 180
+PROGRESS 0.592 dry2d mcs 900 cells 174
+PROGRESS 0.612 dry2d mcs 930 cells 167
+PROGRESS 0.632 dry2d mcs 960 cells 162
+PROGRESS 0.651 dry2d mcs 990 cells 159
+PROGRESS 0.671 dry2d mcs 1020 cells 153
+PROGRESS 0.691 dry2d mcs 1050 cells 150
+PROGRESS 0.711 dry2d mcs 1080 cells 147
+PROGRESS 0.730 dry2d mcs 1110 cells 145
+PROGRESS 0.750 dry2d mcs 1140 cells 140
+PROGRESS 0.770 dry2d mcs 1170 cells 133
+PROGRESS 0.789 dry2d mcs 1200 cells 127
+PROGRESS 0.809 dry2d mcs 1230 cells 125
+PROGRESS 0.829 dry2d mcs 1260 cells 122
+PROGRESS 0.849 dry2d mcs 1290 cells 119
+PROGRESS 0.868 dry2d mcs 1320 cells 116
+PROGRESS 0.888 dry2d mcs 1350 cells 115
+PROGRESS 0.908 dry2d mcs 1380 cells 114
+PROGRESS 0.928 dry2d mcs 1410 cells 111
+PROGRESS 0.947 dry2d mcs 1440 cells 107
+PROGRESS 0.967 dry2d mcs 1470 cells 102
+PROGRESS 0.987 dry2d mcs 1500 cells 100
+PROGRESS 0.930 census step 1
+PROGRESS 0.960 census step 2
+PROGRESS 1.020 census step 4
+{"rung": "dry2d", "frames": 1500, "seconds": 66.8, "cells_first_last": [1658, 100], "mean_neighbours_first_last": [5.961399276236429, 6.0]}
+{"step1": {"merge": 886, "death": 531, "clump": 2014, "swap": 1126}, "step2": {"death": 441, "clump": 1381, "merge": 967, "swap": 955}, "step4": {"merge": 1060, "death": 333, "clump": 858, "swap": 800}, "vanished_by_sides": {"2": 242, "3": 822, "4": 466, "5": 28}, "swaps_per_vanished": 0.7227214377406932, "euler_failures": 0, "euler_fail_islands_ok": 0, "balance_failures": 0}
+LADDER_OK

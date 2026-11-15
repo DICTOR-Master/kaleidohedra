@@ -1,0 +1,57 @@
+PROGRESS 0.000 births2d mcs 0 cells 1997
+PROGRESS 0.020 births2d mcs 30 cells 1168
+PROGRESS 0.039 births2d mcs 60 cells 801
+PROGRESS 0.059 births2d mcs 90 cells 627
+PROGRESS 0.079 births2d mcs 120 cells 510
+PROGRESS 0.099 births2d mcs 150 cells 422
+PROGRESS 0.118 births2d mcs 180 cells 361
+PROGRESS 0.138 births2d mcs 210 cells 333
+PROGRESS 0.158 births2d mcs 240 cells 316
+PROGRESS 0.178 births2d mcs 270 cells 295
+PROGRESS 0.197 births2d mcs 300 cells 286
+PROGRESS 0.217 births2d mcs 330 cells 272
+PROGRESS 0.237 births2d mcs 360 cells 274
+PROGRESS 0.257 births2d mcs 390 cells 264
+PROGRESS 0.276 births2d mcs 420 cells 252
+PROGRESS 0.296 births2d mcs 450 cells 240
+PROGRESS 0.316 births2d mcs 480 cells 232
+PROGRESS 0.336 births2d mcs 510 cells 222
+PROGRESS 0.355 births2d mcs 540 cells 212
+PROGRESS 0.375 births2d mcs 570 cells 209
+PROGRESS 0.395 births2d mcs 600 cells 195
+PROGRESS 0.414 births2d mcs 630 cells 180
+PROGRESS 0.434 births2d mcs 660 cells 173
+PROGRESS 0.454 births2d mcs 690 cells 184
+PROGRESS 0.474 births2d mcs 720 cells 174
+PROGRESS 0.493 births2d mcs 750 cells 167
+PROGRESS 0.513 births2d mcs 780 cells 170
+PROGRESS 0.533 births2d mcs 810 cells 168
+PROGRESS 0.553 births2d mcs 840 cells 168
+PROGRESS 0.572 births2d mcs 870 cells 165
+PROGRESS 0.592 births2d mcs 900 cells 166
+PROGRESS 0.612 births2d mcs 930 cells 169
+PROGRESS 0.632 births2d mcs 960 cells 167
+PROGRESS 0.651 births2d mcs 990 cells 171
+PROGRESS 0.671 births2d mcs 1020 cells 163
+PROGRESS 0.691 births2d mcs 1050 cells 156
+PROGRESS 0.711 births2d mcs 1080 cells 154
+PROGRESS 0.730 births2d mcs 1110 cells 149
+PROGRESS 0.750 births2d mcs 1140 cells 148
+PROGRESS 0.770 births2d mcs 1170 cells 152
+PROGRESS 0.789 births2d mcs 1200 cells 149
+PROGRESS 0.809 births2d mcs 1230 cells 148
+PROGRESS 0.829 births2d mcs 1260 cells 145
+PROGRESS 0.849 births2d mcs 1290 cells 144
+PROGRESS 0.868 births2d mcs 1320 cells 140
+PROGRESS 0.888 births2d mcs 1350 cells 133
+PROGRESS 0.908 births2d mcs 1380 cells 137
+PROGRESS 0.928 births2d mcs 1410 cells 141
+PROGRESS 0.947 births2d mcs 1440 cells 145
+PROGRESS 0.967 births2d mcs 1470 cells 136
+PROGRESS 0.987 births2d mcs 1500 cells 133
+PROGRESS 0.930 census step 1
+PROGRESS 0.960 census step 2
+PROGRESS 1.020 census step 4
+{"rung": "births2d", "frames": 1500, "seconds": 73.1, "cells_first_last": [1383, 139], "mean_neighbours_first_last": [5.956616052060737, 5.971223021582734]}
+{"step1": {"clump": 3393, "merge": 1041, "death": 743, "swap": 2198, "split": 242, "birth": 445, "relabel": 8}, "step2": {"clump": 2105, "merge": 1117, "death": 656, "swap": 1986, "split": 242, "birth": 430, "relabel": 15}, "step4": {"clump": 1166, "merge": 1243, "death": 509, "swap": 1695, "split": 237, "birth": 403, "relabel": 27}, "vanished_by_sides": {"1": 7, "2": 434, "3": 1023, "4": 467, "5": 22}, "swaps_per_vanished": 1.125448028673835, "euler_failures": 7, "euler_fail_islands_ok": 0, "balance_failures": 0}
+LADDER_OK

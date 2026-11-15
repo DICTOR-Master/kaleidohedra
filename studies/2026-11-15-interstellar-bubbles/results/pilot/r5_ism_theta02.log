@@ -1,0 +1,18 @@
+PROGRESS 0.000 ism2d frame 120 cells 62 hot 0.36
+PROGRESS 0.083 ism2d frame 140 cells 53 hot 0.37
+PROGRESS 0.167 ism2d frame 160 cells 58 hot 0.31
+PROGRESS 0.250 ism2d frame 180 cells 58 hot 0.34
+PROGRESS 0.333 ism2d frame 200 cells 57 hot 0.37
+PROGRESS 0.417 ism2d frame 220 cells 55 hot 0.37
+PROGRESS 0.500 ism2d frame 240 cells 55 hot 0.33
+PROGRESS 0.583 ism2d frame 260 cells 63 hot 0.32
+PROGRESS 0.667 ism2d frame 280 cells 67 hot 0.31
+PROGRESS 0.750 ism2d frame 300 cells 76 hot 0.27
+PROGRESS 0.833 ism2d frame 320 cells 75 hot 0.21
+PROGRESS 0.917 ism2d frame 340 cells 68 hot 0.21
+PROGRESS 0.930 census step 1
+PROGRESS 0.960 census step 2
+PROGRESS 1.020 census step 4
+{"rung": "ism2d", "frames": 240, "seconds": 17.6, "cells_first_last": [62, 59], "mean_neighbours_first_last": [3.2903225806451615, 2.2711864406779663]}
+{"step1": {"clump": 772, "split": 357, "merge": 339, "relabel": 55, "death": 34, "swap": 9, "birth": 1}, "step2": {"split": 255, "clump": 602, "relabel": 39, "merge": 246, "birth": 17, "death": 28, "swap": 1}, "step4": {"clump": 437, "split": 161, "birth": 13, "merge": 158, "relabel": 22, "death": 18, "swap": 2}, "vanished_by_sides": {"1": 284, "2": 206, "3": 77, "4": 34, "5": 9, "6": 7, "7": 4, "8": 7, "9": 3, "10": 4, "11": 5, "12": 2, "13": 1, "14": 1, "15": 2, "16": 4, "18": 2, "19": 4, "20": 2, "21": 2, "22": 1, "24": 1, "25": 1, "26": 1, "28": 1, "30": 2, "34": 1, "37": 1, "40": 2, "42": 1}, "swaps_per_vanished": 0.013392857142857142, "euler_failures": 240, "euler_fail_islands_ok": 223, "balance_failures": 0}
+LADDER_OK

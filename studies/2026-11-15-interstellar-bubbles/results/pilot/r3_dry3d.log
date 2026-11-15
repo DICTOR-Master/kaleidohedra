@@ -1,0 +1,60 @@
+PROGRESS 0.000 dry3d mcs 0 cells 600
+PROGRESS 0.019 dry3d mcs 6 cells 575
+PROGRESS 0.037 dry3d mcs 12 cells 526
+PROGRESS 0.056 dry3d mcs 18 cells 457
+PROGRESS 0.075 dry3d mcs 24 cells 409
+PROGRESS 0.094 dry3d mcs 30 cells 379
+PROGRESS 0.113 dry3d mcs 36 cells 340
+PROGRESS 0.131 dry3d mcs 42 cells 311
+PROGRESS 0.150 dry3d mcs 48 cells 283
+PROGRESS 0.169 dry3d mcs 54 cells 264
+PROGRESS 0.188 dry3d mcs 60 cells 241
+PROGRESS 0.206 dry3d mcs 66 cells 222
+PROGRESS 0.225 dry3d mcs 72 cells 206
+PROGRESS 0.244 dry3d mcs 78 cells 187
+PROGRESS 0.263 dry3d mcs 84 cells 171
+PROGRESS 0.281 dry3d mcs 90 cells 157
+PROGRESS 0.300 dry3d mcs 96 cells 142
+PROGRESS 0.319 dry3d mcs 102 cells 131
+PROGRESS 0.338 dry3d mcs 108 cells 116
+PROGRESS 0.356 dry3d mcs 114 cells 102
+PROGRESS 0.375 dry3d mcs 120 cells 95
+PROGRESS 0.394 dry3d mcs 126 cells 92
+PROGRESS 0.412 dry3d mcs 132 cells 87
+PROGRESS 0.431 dry3d mcs 138 cells 82
+PROGRESS 0.450 dry3d mcs 144 cells 78
+PROGRESS 0.469 dry3d mcs 150 cells 74
+PROGRESS 0.487 dry3d mcs 156 cells 73
+PROGRESS 0.506 dry3d mcs 162 cells 70
+PROGRESS 0.525 dry3d mcs 168 cells 69
+PROGRESS 0.544 dry3d mcs 174 cells 67
+PROGRESS 0.562 dry3d mcs 180 cells 64
+PROGRESS 0.581 dry3d mcs 186 cells 62
+PROGRESS 0.600 dry3d mcs 192 cells 56
+PROGRESS 0.619 dry3d mcs 198 cells 54
+PROGRESS 0.637 dry3d mcs 204 cells 50
+PROGRESS 0.656 dry3d mcs 210 cells 48
+PROGRESS 0.675 dry3d mcs 216 cells 47
+PROGRESS 0.694 dry3d mcs 222 cells 42
+PROGRESS 0.713 dry3d mcs 228 cells 36
+PROGRESS 0.731 dry3d mcs 234 cells 34
+PROGRESS 0.750 dry3d mcs 240 cells 31
+PROGRESS 0.769 dry3d mcs 246 cells 28
+PROGRESS 0.787 dry3d mcs 252 cells 27
+PROGRESS 0.806 dry3d mcs 258 cells 26
+PROGRESS 0.825 dry3d mcs 264 cells 26
+PROGRESS 0.844 dry3d mcs 270 cells 25
+PROGRESS 0.863 dry3d mcs 276 cells 23
+PROGRESS 0.881 dry3d mcs 282 cells 22
+PROGRESS 0.900 dry3d mcs 288 cells 22
+PROGRESS 0.919 dry3d mcs 294 cells 21
+PROGRESS 0.938 dry3d mcs 300 cells 21
+PROGRESS 0.956 dry3d mcs 306 cells 20
+PROGRESS 0.975 dry3d mcs 312 cells 19
+PROGRESS 0.994 dry3d mcs 318 cells 19
+PROGRESS 0.930 census step 1
+PROGRESS 0.960 census step 2
+PROGRESS 1.020 census step 4
+{"rung": "dry3d", "frames": 300, "seconds": 26.2, "cells_first_last": [444, 19], "mean_neighbours_first_last": [13.756756756756756, 11.157894736842104]}
+{"step1": {"clump": 1200, "death": 72, "contact lost": 1366, "contact gained": 678}, "step2": {"clump": 1052, "death": 39, "contact lost": 923, "contact gained": 408}, "step4": {"clump": 836, "contact lost": 510, "contact gained": 188, "death": 23}, "vanished_by_sides": {"1": 3, "2": 26, "3": 95, "4": 106, "5": 100, "6": 67, "7": 23, "8": 4, "9": 1}, "swaps_per_vanished": 4.8094117647058825, "euler_failures": null, "euler_fail_islands_ok": null, "balance_failures": 0}
+LADDER_OK

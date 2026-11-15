@@ -7862,6 +7862,15 @@
     "retry": "never; only a Lean certificate (bottleneck: the degree-1744 Res_t identity)",
     "study": "studies/2026-11-15-yantra-uniqueness",
     "goes_to": "#103 v5 Theorem 14 (new section 10.1, with the list of ways Kulaichev's unique yantra differs from the traditional form); DRAFT for DICTO's read (15 Nov), not published"
+   },
+   {
+    "date": "2026-11-15",
+    "status": "PILOT (feasibility verdict)",
+    "question": "One tissue, three scales, interstellar-gas stream as a foam ladder (DICTO 15 Nov: 'yes add interstellar gas stream'; 'simplest most basic foam and bubbles upwards'): can dry 2D froth, wet 2D foam, dry 3D foam, foam with births and supernova bubbles in gas be tiled over time and censused with the shared event logger?",
+    "method": "studies/2026-11-15-interstellar-bubbles: cellular Potts foam (8/26 neighbours, area constraint for liquid and gas-fed newborns) for rungs 1-4; 2D supernova-bubble TOY (Sedov growth, stall, cooling; cells = watershed of log density from hot markers rho < theta) for rung 5; logger unchanged at steps 1, 2, 4; torus Euler per frame; negative control; job ism-ladder-pilot FINAL ok (11 runs)",
+    "result": "rungs 1-4 tile (mean neighbours 6.0 on the torus, Euler 0 failures with islands allowed, balance 0 failures, negative control caught 11/11); rung 1 swaps per vanished cell 0.80/0.68/0.53 at steps 1/2/4 (Rutenberg-McCurdy 0.53 macroscopic, 3/2 with side-shedding): step-dependent because lattice swaps split into one-contact-lost / one-contact-gained clumps (831/525 vs 1085 swaps); rung 4 births/splits stable (445/430/403, 242/242/237; 709 injected all accounted); rung 5 toy rule FAILS as a tiling (about 30 island cells of 60, Euler fails 223/240 frames even with islands allowed, swaps 0.01 per vanished cell, split/merge rates x2.8 at the finer step); no public ISM time series at bubble cadence (TIGRESS R8 public about 10 Myr, 1 Myr on request; observations one epoch)",
+    "retry": "rungs 1-4 only with a pairing rule for split swaps (loss + gain among the same four cells within k frames; k and tolerance fixed first) and larger boxes; rung 5 only with a new cell rule (hot regions + distance share of dense gas, or 3D), never the threshold-watershed rule again as is",
+    "study": "studies/2026-11-15-interstellar-bubbles"
    }
   ]
  },

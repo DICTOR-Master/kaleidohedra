@@ -1,0 +1,57 @@
+PROGRESS 0.000 dry2d mcs 0 cells 1997
+PROGRESS 0.020 dry2d mcs 30 cells 1178
+PROGRESS 0.039 dry2d mcs 60 cells 799
+PROGRESS 0.059 dry2d mcs 90 cells 609
+PROGRESS 0.079 dry2d mcs 120 cells 481
+PROGRESS 0.099 dry2d mcs 150 cells 375
+PROGRESS 0.118 dry2d mcs 180 cells 307
+PROGRESS 0.138 dry2d mcs 210 cells 270
+PROGRESS 0.158 dry2d mcs 240 cells 238
+PROGRESS 0.178 dry2d mcs 270 cells 210
+PROGRESS 0.197 dry2d mcs 300 cells 190
+PROGRESS 0.217 dry2d mcs 330 cells 175
+PROGRESS 0.237 dry2d mcs 360 cells 158
+PROGRESS 0.257 dry2d mcs 390 cells 148
+PROGRESS 0.276 dry2d mcs 420 cells 137
+PROGRESS 0.296 dry2d mcs 450 cells 121
+PROGRESS 0.316 dry2d mcs 480 cells 116
+PROGRESS 0.336 dry2d mcs 510 cells 107
+PROGRESS 0.355 dry2d mcs 540 cells 102
+PROGRESS 0.375 dry2d mcs 570 cells 99
+PROGRESS 0.395 dry2d mcs 600 cells 95
+PROGRESS 0.414 dry2d mcs 630 cells 86
+PROGRESS 0.434 dry2d mcs 660 cells 80
+PROGRESS 0.454 dry2d mcs 690 cells 75
+PROGRESS 0.474 dry2d mcs 720 cells 74
+PROGRESS 0.493 dry2d mcs 750 cells 71
+PROGRESS 0.513 dry2d mcs 780 cells 66
+PROGRESS 0.533 dry2d mcs 810 cells 60
+PROGRESS 0.553 dry2d mcs 840 cells 58
+PROGRESS 0.572 dry2d mcs 870 cells 55
+PROGRESS 0.592 dry2d mcs 900 cells 52
+PROGRESS 0.612 dry2d mcs 930 cells 49
+PROGRESS 0.632 dry2d mcs 960 cells 49
+PROGRESS 0.651 dry2d mcs 990 cells 48
+PROGRESS 0.671 dry2d mcs 1020 cells 47
+PROGRESS 0.691 dry2d mcs 1050 cells 45
+PROGRESS 0.711 dry2d mcs 1080 cells 43
+PROGRESS 0.730 dry2d mcs 1110 cells 41
+PROGRESS 0.750 dry2d mcs 1140 cells 41
+PROGRESS 0.770 dry2d mcs 1170 cells 40
+PROGRESS 0.789 dry2d mcs 1200 cells 39
+PROGRESS 0.809 dry2d mcs 1230 cells 39
+PROGRESS 0.829 dry2d mcs 1260 cells 39
+PROGRESS 0.849 dry2d mcs 1290 cells 38
+PROGRESS 0.868 dry2d mcs 1320 cells 38
+PROGRESS 0.888 dry2d mcs 1350 cells 36
+PROGRESS 0.908 dry2d mcs 1380 cells 34
+PROGRESS 0.928 dry2d mcs 1410 cells 33
+PROGRESS 0.947 dry2d mcs 1440 cells 33
+PROGRESS 0.967 dry2d mcs 1470 cells 33
+PROGRESS 0.987 dry2d mcs 1500 cells 33
+PROGRESS 0.930 census step 1
+PROGRESS 0.960 census step 2
+PROGRESS 1.020 census step 4
+{"rung": "dry2d", "frames": 1500, "seconds": 50.8, "cells_first_last": [1383, 33], "mean_neighbours_first_last": [5.956616052060737, 6.0]}
+{"step1": {"clump": 1625, "merge": 749, "death": 493, "swap": 1085}, "step2": {"merge": 800, "clump": 954, "death": 438, "swap": 911}, "step4": {"clump": 535, "merge": 861, "death": 339, "swap": 713}, "vanished_by_sides": {"1": 6, "2": 272, "3": 682, "4": 371, "5": 19}, "swaps_per_vanished": 0.8037037037037037, "euler_failures": 6, "euler_fail_islands_ok": 0, "balance_failures": 0}
+LADDER_OK
