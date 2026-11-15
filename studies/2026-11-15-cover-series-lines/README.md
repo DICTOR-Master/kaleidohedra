@@ -27,3 +27,10 @@ Run: python scripts/series_covers.py <papers> element (-> <cover>-series-v3.png)
 folder, the whole line in yellow, for comparison only); python scripts/compare_sheet.py <papers> COVERS-series-line-colour.png colour.
 Checks: the white mode reproduces all ten v2 covers and the Platonic cover byte for byte; each v3 differs from its v2 only inside
 the series line's box; FINAL ok for all eleven covers. Not in any book yet: each takes its cover at its next version (concordance next_versions).
+
+## DECIDED 16 Nov 2026: fully (v4)
+
+DICTO: "3 fully". The whole series line is in the ring's element colour (python scripts/series_covers.py <papers> full ->
+<cover>-series-v4.png; Platonic Solids: platonic-cover-front-series-full.png copied to book-platonic/cover/platonic-cover-front-series-v4.png).
+FINAL ok for all ten covers plus the Platonic cover. The partial (v3) files stay for comparison only. Each book takes its v4 cover at
+its next version (Concordance next_versions updated); no cover-only releases.

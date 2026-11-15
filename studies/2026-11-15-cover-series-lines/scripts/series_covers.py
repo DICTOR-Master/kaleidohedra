@@ -13,6 +13,7 @@
 # Colour (DICTO 15 Nov 2026: "the line representing the order should be fully or partially in the element colour"):
 #      python series_covers.py PAPERS_DIR element   -> <cover>-series-v3.png: the ring word and its kanji (e.g. "Wind 風") in the
 #      ring's colour (series_line.ON_DARK), the rest white; everything else as v2.
+#      python series_covers.py PAPERS_DIR full      -> <cover>-series-v4.png: the WHOLE line in the ring's colour (DICTO 16 Nov 2026: "fully").
 import os, sys
 import numpy as np
 from PIL import Image
@@ -22,7 +23,7 @@ P = os.path.abspath(sys.argv[1]); os.chdir(os.path.dirname(os.path.abspath(__fil
 sys.path.insert(0, os.path.join(P, 'series-five-orders'))
 from series_line import series_text, element_span, ON_DARK
 MODE = sys.argv[2] if len(sys.argv) > 2 else 'white'
-assert MODE in ('white', 'element'), MODE
+assert MODE in ('white', 'element', 'full'), MODE
 WHITE = (255, 255, 255)
 GAP, MIN_ABOVE = 87, 50            # at the 2400-wide scale
 from series_covers_list import COVERS
@@ -47,7 +48,7 @@ for rel, book, part, nlet in COVERS:
     pic_bottom, let_top = R[-nlet - 1][1], R[-nlet][0]
     text = series_text(book, part); t, big = caps_of(text); size = int(W * 0.030)
     e0, e1, ring = element_span(book, part)
-    cat = (lambda i, ch: ON_DARK[ring] if e0 <= i < e1 else WHITE) if MODE == 'element' else None
+    cat = {'white': None, 'full': (lambda i, ch: ON_DARK[ring]), 'element': (lambda i, ch: ON_DARK[ring] if e0 <= i < e1 else WHITE)}[MODE]
     while True:
         w_ = L.word(t, size, lambda ch: WHITE, big=big, colour_at=cat)
         if w_[1].shape[1] <= W - 360 * s: break
@@ -63,11 +64,11 @@ for rel, book, part, nlet in COVERS:
     new[pic_bottom:let_top + shift] = ground
     y_ink_bottom = let_top + shift - int(round(GAP * s)); y0 = y_ink_bottom - ink1
     L.paste(new, w_, W / 2, y0)
-    d_, b_ = os.path.split(path); out = os.path.join(d_, b_[:-4].replace('-series', '') + ('-series-v3.png' if MODE == 'element' else '-series-v2.png'))
+    d_, b_ = os.path.split(path); out = os.path.join(d_, b_[:-4].replace('-series', '') + {'element': '-series-v3.png', 'full': '-series-v4.png', 'white': '-series-v2.png'}[MODE])
     Image.fromarray(np.clip(np.rint(new), 0, 255).astype(np.uint8)).save(out)
     R2 = runs(new, ground); margin = H - R2[-1][1]
     ok = Image.open(out).size == (W, H) and margin >= 60 * s and np.array_equal(new[:pic_bottom], a[:pic_bottom])
     bad += not ok
-    print(f'{"ok " if ok else "BAD"} {rel} -> {os.path.basename(out)} | {text} |' + (f' {t[e0:e1]} in {ring} {ON_DARK[ring]} |' if MODE == 'element' else '') + f' size {size} | picture bottom {pic_bottom} | '
+    print(f'{"ok " if ok else "BAD"} {rel} -> {os.path.basename(out)} | {text} |' + (f' {t[e0:e1] if MODE == "element" else "all"} in {ring} {ON_DARK[ring]} |' if MODE != 'white' else '') + f' size {size} | picture bottom {pic_bottom} | '
           f'lettering moved {shift} px | bottom margin {margin} px (was {H - R[-1][1]})', flush=True)
 print('FINAL ok' if not bad else f'FINAL FAIL: {bad} covers')
