@@ -40,3 +40,28 @@ RUN {'mode': 'linear', 'delta': 0.003, 'seed': 3303, 'steps': 333, 'N': 8000, 'l
 PROGRESS 0.714 runs
 RUN {'mode': 'brownian', 'delta': 0.03, 'seed': 3237, 'steps': 1111, 'N': 8000, 'lost': 2044723, 'made': 2044731, 'net_lost': 39172, 'net_made': 39180, 'contacts_start': 62051, 'contacts_end': 62059}
 PROGRESS 0.750 runs
+RUN {'mode': 'brownian', 'delta': 0.03, 'seed': 3037, 'steps': 1111, 'N': 8000, 'lost': 2048855, 'made': 2048784, 'net_lost': 39411, 'net_made': 39340, 'contacts_start': 61972, 'contacts_end': 61901}
+PROGRESS 0.786 runs
+RUN {'mode': 'brownian', 'delta': 0.03, 'seed': 3337, 'steps': 1111, 'N': 8000, 'lost': 2040986, 'made': 2041093, 'net_lost': 38970, 'net_made': 39077, 'contacts_start': 62153, 'contacts_end': 62260}
+PROGRESS 0.821 runs
+RUN {'mode': 'brownian', 'delta': 0.03, 'seed': 3137, 'steps': 1111, 'N': 8000, 'lost': 2068665, 'made': 2068533, 'net_lost': 39096, 'net_made': 38964, 'contacts_start': 62148, 'contacts_end': 62016}
+PROGRESS 0.857 runs
+RUN {'mode': 'brownian', 'delta': 0.01, 'seed': 3317, 'steps': 10000, 'N': 8000, 'lost': 6188010, 'made': 6187762, 'net_lost': 39237, 'net_made': 38989, 'contacts_start': 62259, 'contacts_end': 62011}
+PROGRESS 0.893 runs
+RUN {'mode': 'brownian', 'delta': 0.01, 'seed': 3217, 'steps': 10000, 'N': 8000, 'lost': 6252514, 'made': 6252518, 'net_lost': 39330, 'net_made': 39334, 'contacts_start': 62209, 'contacts_end': 62213}
+PROGRESS 0.929 runs
+RUN {'mode': 'brownian', 'delta': 0.01, 'seed': 3117, 'steps': 10000, 'N': 8000, 'lost': 6215680, 'made': 6215623, 'net_lost': 39399, 'net_made': 39342, 'contacts_start': 62079, 'contacts_end': 62022}
+PROGRESS 0.964 runs
+RUN {'mode': 'brownian', 'delta': 0.01, 'seed': 3017, 'steps': 10000, 'N': 8000, 'lost': 6254613, 'made': 6254360, 'net_lost': 39555, 'net_made': 39302, 'contacts_start': 62361, 'contacts_end': 62108}
+PROGRESS 1.000 runs
+SUMMARY linear 0.1 {'changes_per_cell_per_ell': np.float64(14.9351875), 'err': np.float64(0.033012959103206535), 'net_changes_per_cell': np.float64(9.798124999999999), 'net_err': np.float64(0.017536346184425015), 'made_minus_lost': -88}
+SUMMARY linear 0.03 {'changes_per_cell_per_ell': np.float64(15.34315625), 'err': np.float64(0.0706324917670978), 'net_changes_per_cell': np.float64(9.75559375), 'net_err': np.float64(0.013531057542896277), 'made_minus_lost': 295}
+SUMMARY linear 0.01 {'changes_per_cell_per_ell': np.float64(15.557531249999998), 'err': np.float64(0.05750410707705271), 'net_changes_per_cell': np.float64(9.83990625), 'net_err': np.float64(0.024563288526358897), 'made_minus_lost': -377}
+SUMMARY linear 0.003 {'changes_per_cell_per_ell': np.float64(15.525875000000001), 'err': np.float64(0.07388083380800933), 'net_changes_per_cell': np.float64(9.7884375), 'net_err': np.float64(0.02642503646323542), 'made_minus_lost': 56}
+SUMMARY brownian 0.1 {'changes_per_cell_per_ell': np.float64(149.49168749999998), 'err': np.float64(0.3447188524574578), 'net_changes_per_cell': np.float64(9.8265), 'net_err': np.float64(0.020665994612728746), 'made_minus_lost': 170}
+SUMMARY brownian 0.03 {'changes_per_cell_per_ell': np.float64(512.6990625000001), 'err': np.float64(1.5358144796444102), 'net_changes_per_cell': np.float64(9.787812500000001), 'net_err': np.float64(0.02065619484359773), 'made_minus_lost': -88}
+SUMMARY brownian 0.01 {'changes_per_cell_per_ell': np.float64(1556.90875), 'err': np.float64(3.9945630278985327), 'net_changes_per_cell': np.float64(9.827749999999998), 'net_err': np.float64(0.01722877619468856), 'made_minus_lost': -554}
+X PASS linear motion: contact-change rate is time-step independent at the finest steps [np.float64(14.9351875), np.float64(15.34315625), np.float64(15.557531249999998), np.float64(15.525875000000001)]
+X PASS NEGATIVE control (expected to fail time-step independence): Brownian counts grow as delta^-1 (counts per fixed rms displacement) - not a usable rate exponent -1.018
+2 checks, 0 failed
+FINAL ok
