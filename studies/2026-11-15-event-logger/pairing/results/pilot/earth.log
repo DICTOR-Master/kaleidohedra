@@ -1,0 +1,46 @@
+PROGRESS 0.050 vector by_segment=False tol=0 step 1
+PROGRESS 0.100 vector by_segment=False tol=0 step 2
+PROGRESS 0.150 vector by_segment=False tol=0 step 5
+PROGRESS 0.200 vector by_segment=False tol=0 step 10
+PROGRESS 0.250 vector by_segment=True tol=0 step 1
+PROGRESS 0.300 vector by_segment=True tol=0 step 2
+PROGRESS 0.350 vector by_segment=True tol=0 step 5
+PROGRESS 0.400 vector by_segment=True tol=0 step 10
+PROGRESS 0.450 mesh by_segment=False tol=0 step 1
+PROGRESS 0.500 mesh by_segment=False tol=0 step 2
+PROGRESS 0.550 mesh by_segment=False tol=0 step 5
+PROGRESS 0.600 mesh by_segment=False tol=0 step 10
+PROGRESS 0.650 mesh by_segment=True tol=0 step 1
+PROGRESS 0.700 mesh by_segment=True tol=0 step 2
+PROGRESS 0.750 mesh by_segment=True tol=0 step 5
+PROGRESS 0.800 mesh by_segment=True tol=0 step 10
+PROGRESS 0.850 mesh by_segment=True tol=150 step 1
+PROGRESS 0.900 mesh by_segment=True tol=150 step 2
+PROGRESS 0.950 mesh by_segment=True tol=150 step 5
+PROGRESS 1.000 mesh by_segment=True tol=150 step 10
+vector by_segment=False tol=0
+  W=0 P=0: swaps at steps 48 / 32 / 14 / 10  per 100 Myr 20.87 / 13.91 / 6.09 / 4.35  paired 0 / 0 / 0 / 0  halves left 24 / 18 / 9 / 3
+  W=5 P=5: swaps at steps 25 / 22 / 14 / 10  per 100 Myr 10.87 / 9.57 / 6.09 / 4.35  paired 2 / 0 / 0 / 0  halves left 17 / 13 / 9 / 3
+  W=10 P=10: swaps at steps 18 / 18 / 12 / 10  per 100 Myr 7.83 / 7.83 / 5.22 / 4.35  paired 1 / 0 / 0 / 0  halves left 18 / 14 / 7 / 3
+  W=20 P=20: swaps at steps 11 / 10 / 5 / 4  per 100 Myr 4.78 / 4.35 / 2.17 / 1.74  paired 1 / 0 / 0 / 0  halves left 16 / 13 / 10 / 6
+vector by_segment=True tol=0
+  W=0 P=0: swaps at steps 56 / 40 / 16 / 9  per 100 Myr 24.35 / 17.39 / 6.96 / 3.91  paired 0 / 0 / 0 / 0  halves left 16 / 14 / 4 / 1
+  W=5 P=5: swaps at steps 27 / 23 / 16 / 9  per 100 Myr 11.74 / 10.0 / 6.96 / 3.91  paired 2 / 0 / 0 / 0  halves left 10 / 9 / 4 / 1
+  W=10 P=10: swaps at steps 15 / 16 / 11 / 9  per 100 Myr 6.52 / 6.96 / 4.78 / 3.91  paired 1 / 0 / 0 / 0  halves left 18 / 15 / 3 / 1
+  W=20 P=20: swaps at steps 8 / 7 / 4 / 3  per 100 Myr 3.48 / 3.04 / 1.74 / 1.3  paired 0 / 0 / 0 / 0  halves left 16 / 15 / 8 / 5
+mesh by_segment=False tol=0
+  W=0 P=0: swaps at steps 48 / 34 / 14 / 10  per 100 Myr 20.87 / 14.78 / 6.09 / 4.35  paired 0 / 0 / 0 / 0  halves left 18 / 15 / 8 / 4
+  W=5 P=5: swaps at steps 24 / 21 / 14 / 10  per 100 Myr 10.43 / 9.13 / 6.09 / 4.35  paired 1 / 0 / 0 / 0  halves left 18 / 15 / 8 / 4
+  W=10 P=10: swaps at steps 17 / 17 / 12 / 10  per 100 Myr 7.39 / 7.39 / 5.22 / 4.35  paired 0 / 0 / 0 / 0  halves left 19 / 15 / 7 / 4
+  W=20 P=20: swaps at steps 11 / 10 / 5 / 4  per 100 Myr 4.78 / 4.35 / 2.17 / 1.74  paired 0 / 0 / 0 / 0  halves left 15 / 13 / 10 / 7
+mesh by_segment=True tol=0
+  W=0 P=0: swaps at steps 62 / 46 / 19 / 11  per 100 Myr 26.96 / 20.0 / 8.26 / 4.78  paired 0 / 0 / 0 / 0  halves left 1 / 1 / 0 / 0
+  W=5 P=5: swaps at steps 29 / 25 / 19 / 11  per 100 Myr 12.61 / 10.87 / 8.26 / 4.78  paired 1 / 0 / 0 / 0  halves left 10 / 10 / 0 / 0
+  W=10 P=10: swaps at steps 16 / 17 / 13 / 11  per 100 Myr 6.96 / 7.39 / 5.65 / 4.78  paired 0 / 0 / 0 / 0  halves left 19 / 15 / 4 / 0
+  W=20 P=20: swaps at steps 11 / 10 / 6 / 4  per 100 Myr 4.78 / 4.35 / 2.61 / 1.74  paired 0 / 0 / 0 / 0  halves left 14 / 13 / 8 / 5
+mesh by_segment=True tol=150
+  W=0 P=0: swaps at steps 13 / 11 / 10 / 6  per 100 Myr 5.65 / 4.78 / 4.35 / 2.61  paired 0 / 0 / 0 / 0  halves left 119 / 87 / 41 / 17
+  W=5 P=5: swaps at steps 24 / 16 / 15 / 6  per 100 Myr 10.43 / 6.96 / 6.52 / 2.61  paired 15 / 8 / 5 / 0  halves left 32 / 36 / 31 / 17
+  W=10 P=10: swaps at steps 12 / 12 / 8 / 7  per 100 Myr 5.22 / 5.22 / 3.48 / 3.04  paired 7 / 7 / 4 / 1  halves left 30 / 29 / 20 / 15
+  W=20 P=20: swaps at steps 7 / 6 / 5 / 3  per 100 Myr 3.04 / 2.61 / 2.17 / 1.3  paired 3 / 3 / 2 / 0  halves left 20 / 19 / 14 / 12
+EARTH_OK

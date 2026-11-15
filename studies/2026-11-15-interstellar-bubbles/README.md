@@ -122,6 +122,14 @@ Marks: FT = full text read, AB = abstract only, 2nd = known from other papers' c
   - Watkins et al. 2023: a single epoch. Nested bubbles (31%) are read as merging or triggering.
   - Chen et al. 2026 and Angress et al. 2026: bubble segmentation and lifetimes in simulations; no event counts in the abstracts.
   - THESAN 2024: merger trees of ionised bubbles in the reionization era. Intergalactic, not ISM.
+- **Prior work (scutoids in foam):** A. Mughal, S. J. Cox, D. Weaire, S. R. Burke and S. Hutzler, "Demonstration and
+  interpretation of 'scutoid' cells formed in a quasi-2D soap froth", Philos. Mag. Lett. 98 (2018) 358-364,
+  doi:10.1080/09500839.2018.1552806, arXiv:1809.08421 [FT; author list checked against the arXiv copy: Aberystwyth and Trinity
+  College Dublin]. DICTO pointed to it. A single layer of soap bubbles between two concentric cylinders (curved, not parallel,
+  bounding surfaces) forms scutoids. A T1 swap happens on the inner surface and not on the outer one, so the swap is seen through
+  the depth of one layer of cells. This is the tissue picture of this stream (a swap in time read as a scutoid in a stack). Surface
+  Evolver simulation (144 cells; the T1 is triggered by hand) and a first experiment (inner cylinder 21 mm, outer 39 mm, bubbles
+  about 8 mm). They describe single configurations only. They count no T1s and give no rates, and there is no coarsening in time.
 - **Rung 1:**
   - Rutenberg & McCurdy 2006, PRE 73, 011403, arXiv cond-mat/0502287 [FT]. T1/T2 = 0.53 ± 0.05 macroscopic. Vanishing cells
     9 / 84 / 7 % with 3 / 4 / 5 sides. mu2 = 1.24.
@@ -196,6 +204,9 @@ Marks: FT = full text read, AB = abstract only, 2nd = known from other papers' c
 1. Pairing rule for split swaps: a loss and a gain among the same four cells within k frames make one swap. Fix k and the tolerance
    before counting; validate on the moving-Voronoi null model of the tissue-null-models stream (exact T1 rate known). Share the rule
    with the Earth stream.
+   DONE 15 Nov 2026 in studies/2026-11-15-event-logger (pairing section): the shared rule (W = P = 8 MCS) pairs split swaps and removes
+   flicker. Rung 1 swaps per vanished cell are still step-dependent (0.76 / 0.62 / 0.49 / 0.36 at steps 1 / 2 / 4 / 8). About two
+   thirds of the swaps lost at step 4 are side-shedding by a cell that vanishes in the same interval.
 2. Rung 1 at 1024^2 with two seeds, the side number taken at a fixed small area. Compare with Rutenberg & McCurdy and the null-model
    table. Rung 3 at 96^3 or more.
 3. Rung 5: replace the watershed-threshold rule by hot regions plus a distance share of the dense gas (so cells stay discs), or go to

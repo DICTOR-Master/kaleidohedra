@@ -1,0 +1,853 @@
+{
+ "params": {
+  "seed": 1,
+  "L": 256,
+  "N": 2000,
+  "T": 0.3,
+  "mcs": 60,
+  "burn": 20
+ },
+ "frames": 60,
+ "rules_fixed_in_advance": [
+  [
+   0,
+   0,
+   0
+  ],
+  [
+   8,
+   8,
+   0
+  ],
+  [
+   16,
+   16,
+   0
+  ],
+  [
+   8,
+   8,
+   2
+  ],
+  [
+   32,
+   32,
+   0
+  ]
+ ],
+ "euler_fail_islands_allowed": 0,
+ "cells_first_last": [
+  1383,
+  663
+ ],
+ "steps": {
+  "1": {
+   "cells_vanished": 720,
+   "cells_appeared": 0,
+   "rules": {
+    "W=0 P=0 tol=0": {
+     "params": {
+      "W": 0,
+      "P": 0,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 60,
+     "step": 1,
+     "raw_counts": {
+      "death": 245,
+      "merge": 408,
+      "clump": 828,
+      "swap": 572
+     },
+     "raw_one_lost": 404,
+     "raw_one_gained": 264,
+     "swaps": 572,
+     "swaps_direct": 572,
+     "swaps_paired": 0,
+     "pair_gaps": {},
+     "swaps_cancelled_flicker": 0,
+     "swaps_one_side_only": 0,
+     "halves_cancelled_flicker": 0,
+     "halves_left_lost": 404,
+     "halves_left_gained": 264,
+     "swaps_censored": 0,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.7944444444444444
+    },
+    "W=8 P=8 tol=0": {
+     "params": {
+      "W": 8,
+      "P": 8,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 60,
+     "step": 1,
+     "raw_counts": {
+      "death": 245,
+      "merge": 408,
+      "clump": 828,
+      "swap": 572
+     },
+     "raw_one_lost": 404,
+     "raw_one_gained": 264,
+     "swaps": 491,
+     "swaps_direct": 368,
+     "swaps_paired": 123,
+     "pair_gaps": {
+      "1": 70,
+      "2": 25,
+      "3": 15,
+      "4": 4,
+      "5": 7,
+      "6": 1,
+      "8": 1
+     },
+     "swaps_cancelled_flicker": 119,
+     "swaps_one_side_only": 85,
+     "halves_cancelled_flicker": 174,
+     "halves_left_lost": 201,
+     "halves_left_gained": 132,
+     "swaps_censored": 44,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.6819444444444445
+    },
+    "W=16 P=16 tol=0": {
+     "params": {
+      "W": 16,
+      "P": 16,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 60,
+     "step": 1,
+     "raw_counts": {
+      "death": 245,
+      "merge": 408,
+      "clump": 828,
+      "swap": 572
+     },
+     "raw_one_lost": 404,
+     "raw_one_gained": 264,
+     "swaps": 458,
+     "swaps_direct": 340,
+     "swaps_paired": 118,
+     "pair_gaps": {
+      "1": 65,
+      "2": 21,
+      "3": 15,
+      "4": 4,
+      "5": 7,
+      "6": 1,
+      "8": 1,
+      "9": 1,
+      "12": 1,
+      "13": 1,
+      "14": 1
+     },
+     "swaps_cancelled_flicker": 123,
+     "swaps_one_side_only": 109,
+     "halves_cancelled_flicker": 190,
+     "halves_left_lost": 213,
+     "halves_left_gained": 138,
+     "swaps_censored": 79,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.6361111111111111
+    },
+    "W=32 P=32 tol=0": {
+     "params": {
+      "W": 32,
+      "P": 32,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 60,
+     "step": 1,
+     "raw_counts": {
+      "death": 245,
+      "merge": 408,
+      "clump": 828,
+      "swap": 572
+     },
+     "raw_one_lost": 404,
+     "raw_one_gained": 264,
+     "swaps": 399,
+     "swaps_direct": 299,
+     "swaps_paired": 100,
+     "pair_gaps": {
+      "1": 56,
+      "2": 17,
+      "3": 11,
+      "4": 3,
+      "5": 7,
+      "6": 1,
+      "8": 1,
+      "9": 1,
+      "12": 1,
+      "13": 1,
+      "14": 1
+     },
+     "swaps_cancelled_flicker": 134,
+     "swaps_one_side_only": 139,
+     "halves_cancelled_flicker": 223,
+     "halves_left_lost": 242,
+     "halves_left_gained": 142,
+     "swaps_censored": 161,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.5541666666666667
+    },
+    "W=8 P=8 tol=2": {
+     "params": {
+      "W": 8,
+      "P": 8,
+      "tol": 2,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 60,
+     "step": 1,
+     "raw_counts": {
+      "death": 41,
+      "merge": 535,
+      "clump": 4011,
+      "swap": 30
+     },
+     "raw_one_lost": 1918,
+     "raw_one_gained": 1577,
+     "swaps": 361,
+     "swaps_direct": 26,
+     "swaps_paired": 335,
+     "pair_gaps": {
+      "1": 29,
+      "2": 75,
+      "3": 73,
+      "4": 50,
+      "5": 36,
+      "6": 34,
+      "7": 25,
+      "8": 13
+     },
+     "swaps_cancelled_flicker": 1,
+     "swaps_one_side_only": 3,
+     "halves_cancelled_flicker": 1859,
+     "halves_left_lost": 633,
+     "halves_left_gained": 336,
+     "swaps_censored": 28,
+     "frames_junctions_dropped_by_tol": 39,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.5013888888888889
+    }
+   }
+  },
+  "2": {
+   "cells_vanished": 712,
+   "cells_appeared": 0,
+   "rules": {
+    "W=0 P=0 tol=0": {
+     "params": {
+      "W": 0,
+      "P": 0,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 30,
+     "step": 2,
+     "raw_counts": {
+      "death": 186,
+      "merge": 450,
+      "clump": 468,
+      "swap": 455
+     },
+     "raw_one_lost": 204,
+     "raw_one_gained": 132,
+     "swaps": 455,
+     "swaps_direct": 455,
+     "swaps_paired": 0,
+     "pair_gaps": {},
+     "swaps_cancelled_flicker": 0,
+     "swaps_one_side_only": 0,
+     "halves_cancelled_flicker": 0,
+     "halves_left_lost": 204,
+     "halves_left_gained": 132,
+     "swaps_censored": 0,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.6390449438202247
+    },
+    "W=8 P=8 tol=0": {
+     "params": {
+      "W": 8,
+      "P": 8,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 30,
+     "step": 2,
+     "raw_counts": {
+      "death": 186,
+      "merge": 450,
+      "clump": 468,
+      "swap": 455
+     },
+     "raw_one_lost": 204,
+     "raw_one_gained": 132,
+     "swaps": 372,
+     "swaps_direct": 327,
+     "swaps_paired": 45,
+     "pair_gaps": {
+      "2": 32,
+      "4": 7,
+      "6": 5,
+      "8": 1
+     },
+     "swaps_cancelled_flicker": 61,
+     "swaps_one_side_only": 67,
+     "halves_cancelled_flicker": 73,
+     "halves_left_lost": 128,
+     "halves_left_gained": 112,
+     "swaps_censored": 29,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.5224719101123596
+    },
+    "W=16 P=16 tol=0": {
+     "params": {
+      "W": 16,
+      "P": 16,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 30,
+     "step": 2,
+     "raw_counts": {
+      "death": 186,
+      "merge": 450,
+      "clump": 468,
+      "swap": 455
+     },
+     "raw_one_lost": 204,
+     "raw_one_gained": 132,
+     "swaps": 348,
+     "swaps_direct": 303,
+     "swaps_paired": 45,
+     "pair_gaps": {
+      "2": 31,
+      "4": 7,
+      "6": 5,
+      "8": 1,
+      "10": 1
+     },
+     "swaps_cancelled_flicker": 64,
+     "swaps_one_side_only": 88,
+     "halves_cancelled_flicker": 78,
+     "halves_left_lost": 135,
+     "halves_left_gained": 121,
+     "swaps_censored": 63,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.4887640449438202
+    },
+    "W=32 P=32 tol=0": {
+     "params": {
+      "W": 32,
+      "P": 32,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 30,
+     "step": 2,
+     "raw_counts": {
+      "death": 186,
+      "merge": 450,
+      "clump": 468,
+      "swap": 455
+     },
+     "raw_one_lost": 204,
+     "raw_one_gained": 132,
+     "swaps": 300,
+     "swaps_direct": 264,
+     "swaps_paired": 36,
+     "pair_gaps": {
+      "2": 24,
+      "4": 5,
+      "6": 5,
+      "8": 1,
+      "10": 1
+     },
+     "swaps_cancelled_flicker": 75,
+     "swaps_one_side_only": 116,
+     "halves_cancelled_flicker": 98,
+     "halves_left_lost": 160,
+     "halves_left_gained": 122,
+     "swaps_censored": 120,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.42134831460674155
+    },
+    "W=8 P=8 tol=2": {
+     "params": {
+      "W": 8,
+      "P": 8,
+      "tol": 2,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 30,
+     "step": 2,
+     "raw_counts": {
+      "death": 51,
+      "merge": 491,
+      "clump": 2564,
+      "swap": 39
+     },
+     "raw_one_lost": 1204,
+     "raw_one_gained": 950,
+     "swaps": 223,
+     "swaps_direct": 33,
+     "swaps_paired": 190,
+     "pair_gaps": {
+      "2": 55,
+      "4": 61,
+      "6": 52,
+      "8": 22
+     },
+     "swaps_cancelled_flicker": 1,
+     "swaps_one_side_only": 5,
+     "halves_cancelled_flicker": 929,
+     "halves_left_lost": 522,
+     "halves_left_gained": 328,
+     "swaps_censored": 18,
+     "frames_junctions_dropped_by_tol": 21,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.31320224719101125
+    }
+   }
+  },
+  "4": {
+   "cells_vanished": 697,
+   "cells_appeared": 0,
+   "rules": {
+    "W=0 P=0 tol=0": {
+     "params": {
+      "W": 0,
+      "P": 0,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 15,
+     "step": 4,
+     "raw_counts": {
+      "merge": 457,
+      "death": 127,
+      "clump": 276,
+      "swap": 322
+     },
+     "raw_one_lost": 91,
+     "raw_one_gained": 56,
+     "swaps": 322,
+     "swaps_direct": 322,
+     "swaps_paired": 0,
+     "pair_gaps": {},
+     "swaps_cancelled_flicker": 0,
+     "swaps_one_side_only": 0,
+     "halves_cancelled_flicker": 0,
+     "halves_left_lost": 91,
+     "halves_left_gained": 56,
+     "swaps_censored": 0,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.4619799139167862
+    },
+    "W=8 P=8 tol=0": {
+     "params": {
+      "W": 8,
+      "P": 8,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 15,
+     "step": 4,
+     "raw_counts": {
+      "merge": 457,
+      "death": 127,
+      "clump": 276,
+      "swap": 322
+     },
+     "raw_one_lost": 91,
+     "raw_one_gained": 56,
+     "swaps": 278,
+     "swaps_direct": 265,
+     "swaps_paired": 13,
+     "pair_gaps": {
+      "4": 8,
+      "8": 5
+     },
+     "swaps_cancelled_flicker": 16,
+     "swaps_one_side_only": 41,
+     "halves_cancelled_flicker": 17,
+     "halves_left_lost": 74,
+     "halves_left_gained": 71,
+     "swaps_censored": 17,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.3988522238163558
+    },
+    "W=16 P=16 tol=0": {
+     "params": {
+      "W": 16,
+      "P": 16,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 15,
+     "step": 4,
+     "raw_counts": {
+      "merge": 457,
+      "death": 127,
+      "clump": 276,
+      "swap": 322
+     },
+     "raw_one_lost": 91,
+     "raw_one_gained": 56,
+     "swaps": 246,
+     "swaps_direct": 233,
+     "swaps_paired": 13,
+     "pair_gaps": {
+      "4": 8,
+      "8": 5
+     },
+     "swaps_cancelled_flicker": 27,
+     "swaps_one_side_only": 62,
+     "halves_cancelled_flicker": 21,
+     "halves_left_lost": 81,
+     "halves_left_gained": 81,
+     "swaps_censored": 47,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.35294117647058826
+    },
+    "W=32 P=32 tol=0": {
+     "params": {
+      "W": 32,
+      "P": 32,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 15,
+     "step": 4,
+     "raw_counts": {
+      "merge": 457,
+      "death": 127,
+      "clump": 276,
+      "swap": 322
+     },
+     "raw_one_lost": 91,
+     "raw_one_gained": 56,
+     "swaps": 220,
+     "swaps_direct": 208,
+     "swaps_paired": 12,
+     "pair_gaps": {
+      "4": 7,
+      "8": 5
+     },
+     "swaps_cancelled_flicker": 34,
+     "swaps_one_side_only": 80,
+     "halves_cancelled_flicker": 29,
+     "halves_left_lost": 95,
+     "halves_left_gained": 79,
+     "swaps_censored": 93,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.31563845050215206
+    },
+    "W=8 P=8 tol=2": {
+     "params": {
+      "W": 8,
+      "P": 8,
+      "tol": 2,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 15,
+     "step": 4,
+     "raw_counts": {
+      "merge": 441,
+      "death": 42,
+      "clump": 1532,
+      "swap": 50
+     },
+     "raw_one_lost": 681,
+     "raw_one_gained": 520,
+     "swaps": 122,
+     "swaps_direct": 40,
+     "swaps_paired": 82,
+     "pair_gaps": {
+      "4": 42,
+      "8": 40
+     },
+     "swaps_cancelled_flicker": 1,
+     "swaps_one_side_only": 9,
+     "halves_cancelled_flicker": 323,
+     "halves_left_lost": 431,
+     "halves_left_gained": 292,
+     "swaps_censored": 11,
+     "frames_junctions_dropped_by_tol": 12,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.1750358680057389
+    }
+   }
+  },
+  "8": {
+   "cells_vanished": 697,
+   "cells_appeared": 0,
+   "rules": {
+    "W=0 P=0 tol=0": {
+     "params": {
+      "W": 0,
+      "P": 0,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 8,
+     "step": 8,
+     "raw_counts": {
+      "merge": 441,
+      "death": 77,
+      "clump": 203,
+      "swap": 195
+     },
+     "raw_one_lost": 49,
+     "raw_one_gained": 19,
+     "swaps": 195,
+     "swaps_direct": 195,
+     "swaps_paired": 0,
+     "pair_gaps": {},
+     "swaps_cancelled_flicker": 0,
+     "swaps_one_side_only": 0,
+     "halves_cancelled_flicker": 0,
+     "halves_left_lost": 49,
+     "halves_left_gained": 19,
+     "swaps_censored": 0,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.2797704447632712
+    },
+    "W=8 P=8 tol=0": {
+     "params": {
+      "W": 8,
+      "P": 8,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 8,
+     "step": 8,
+     "raw_counts": {
+      "merge": 441,
+      "death": 77,
+      "clump": 203,
+      "swap": 195
+     },
+     "raw_one_lost": 49,
+     "raw_one_gained": 19,
+     "swaps": 197,
+     "swaps_direct": 195,
+     "swaps_paired": 2,
+     "pair_gaps": {
+      "8": 2
+     },
+     "swaps_cancelled_flicker": 0,
+     "swaps_one_side_only": 0,
+     "halves_cancelled_flicker": 0,
+     "halves_left_lost": 47,
+     "halves_left_gained": 17,
+     "swaps_censored": 12,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.28263988522238165
+    },
+    "W=16 P=16 tol=0": {
+     "params": {
+      "W": 16,
+      "P": 16,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 8,
+     "step": 8,
+     "raw_counts": {
+      "merge": 441,
+      "death": 77,
+      "clump": 203,
+      "swap": 195
+     },
+     "raw_one_lost": 49,
+     "raw_one_gained": 19,
+     "swaps": 160,
+     "swaps_direct": 158,
+     "swaps_paired": 2,
+     "pair_gaps": {
+      "8": 2
+     },
+     "swaps_cancelled_flicker": 8,
+     "swaps_one_side_only": 29,
+     "halves_cancelled_flicker": 3,
+     "halves_left_lost": 50,
+     "halves_left_gained": 40,
+     "swaps_censored": 31,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.22955523672883787
+    },
+    "W=32 P=32 tol=0": {
+     "params": {
+      "W": 32,
+      "P": 32,
+      "tol": 0,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 8,
+     "step": 8,
+     "raw_counts": {
+      "merge": 441,
+      "death": 77,
+      "clump": 203,
+      "swap": 195
+     },
+     "raw_one_lost": 49,
+     "raw_one_gained": 19,
+     "swaps": 140,
+     "swaps_direct": 139,
+     "swaps_paired": 1,
+     "pair_gaps": {
+      "8": 1
+     },
+     "swaps_cancelled_flicker": 14,
+     "swaps_one_side_only": 42,
+     "halves_cancelled_flicker": 6,
+     "halves_left_lost": 61,
+     "halves_left_gained": 41,
+     "swaps_censored": 54,
+     "frames_junctions_dropped_by_tol": 0,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.20086083213773315
+    },
+    "W=8 P=8 tol=2": {
+     "params": {
+      "W": 8,
+      "P": 8,
+      "tol": 2,
+      "units": "MCS (tol: pixel edges)",
+      "by_segment": false,
+      "theta": 0.9,
+      "rule": "T on frames -> eventlog.classify -> P on elementary contact changes -> W pairing of accepted halves"
+     },
+     "frames": 8,
+     "step": 8,
+     "raw_counts": {
+      "merge": 412,
+      "death": 25,
+      "clump": 869,
+      "swap": 48
+     },
+     "raw_one_lost": 368,
+     "raw_one_gained": 245,
+     "swaps": 82,
+     "swaps_direct": 48,
+     "swaps_paired": 34,
+     "pair_gaps": {
+      "8": 34
+     },
+     "swaps_cancelled_flicker": 0,
+     "swaps_one_side_only": 0,
+     "halves_cancelled_flicker": 0,
+     "halves_left_lost": 334,
+     "halves_left_gained": 211,
+     "swaps_censored": 5,
+     "frames_junctions_dropped_by_tol": 6,
+     "balance_failures": 0,
+     "swap_unparsed": 0,
+     "swaps_per_vanished": 0.11764705882352941
+    }
+   }
+  }
+ },
+ "seconds": 6.2
+}

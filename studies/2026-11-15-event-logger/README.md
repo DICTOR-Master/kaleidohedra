@@ -28,6 +28,8 @@ event census runs, but its rates are not yet stable.
 CONTINUED (15 Nov 2026) in studies/2026-11-15-earth-plates: the counting rule, persistence, the Müller 2019 seam and more models.
 eventlog.py gained two opt-in options there (contacts counted per boundary; boundary networks in several pieces); with the options
 off its behaviour is unchanged, and the tests are now 33/33 (the 23 below plus 10 for the options).
+PAIRING RULE (15 Nov 2026, section at the end; scripts/pairing.py): the shared rule pairs split swaps and removes flicker, and it
+leaves exact counts unchanged. Swap counts stay step-dependent, because at coarse steps swaps merge with neighbouring cell changes.
 NEXT (as it stood): settle the Earth counting rule before any rate is quoted. First, explain the single-contact clumps. Second, a persistence
 rule for swaps (fix the tolerance first). Third, close the Müller 2019 seam and run a second model, then compare the two.
 
@@ -237,3 +239,113 @@ Nothing is left running.
 - Searches with no relevant hit: "T1" OR "neighbour exchange" solar granulation topological network granules; granulation
   "Aboav-Weaire" OR "Lewis law"; "Delaunay"/"Voronoi" "topological" granules "neighbor exchange"/"T1 process" photosphere; plate
   tectonic reconstruction topology graph network "triple junction" statistics neighbours evolution.
+
+## Pairing and persistence rules for swaps (scripts/pairing.py, tests scripts/test_pairing.py; runs in pairing/)
+
+VERDICT (15 Nov 2026): the rule is fixed, tested and shared. It removes flicker and pairs split swaps, and it leaves exact swap counts
+unchanged. It does NOT make swap counts step-independent, in the foam or on the Earth. The remaining step dependence has a different
+cause, now measured: at a coarser step a swap falls into the same interval as a cell vanishing or appearing next to it, and the
+logger then records one combined event (a clump, death or merge) instead of a swap. No pairing or persistence rule can undo that.
+- Controls: on the moving-seed sphere the main rule (W = P = 2e-4) gives counts identical to the logger and to the Delaunay flips in
+  all 4 runs at both steps (238, 168, 126 and 108 swaps). The wide rule (W = P = 1e-3) cancels one genuine swap-and-reverse pair in
+  one run (168 -> 166, 1.2%; predicted at most 2%). The synthetic flickers collapse to zero, and a split swap 3 frames apart is
+  paired at W >= 3 and not at W = 2 (tests, 18/18).
+- Foam rung 1 (main rule W = P = 8 MCS): swaps per vanished cell 0.76 / 0.62 / 0.49 / 0.36 at steps 1 / 2 / 4 / 8 MCS (seed 1),
+  0.77 / 0.60 / 0.46 / 0.34 (seed 2), against 0.80 / 0.68 / 0.53 / 0.35 without the rule. The prediction (within 15% over steps
+  1 to 4) FAILED. At step 1 the rule pairs 272 split swaps, cancels 199 flickering swaps and 322 flickering halves, and leaves
+  617 halves of 1356. Of the swaps counted at step 1 and missing at step 4 (400 and 436), 65% and 67% involve a cell that vanishes
+  in that interval: the side-shedding of a shrinking cell just before it vanishes. A further 9% and 10% have a neighbouring cell
+  change, and 27% and 22% are joined with other contact changes or left as halves. Against the published values, the step-1 count
+  0.76 to 0.77 lies between 0.53 (macroscopic, Rutenberg & McCurdy 2006) and 1.5 (side-shedding included, Herdtle & Aref 1992).
+  The step-4 count 0.46 to 0.49 is near 0.53, as expected if the coarse step merges side-shedding into the vanishing.
+- Earth, Müller 2016 (main rule W = P = 5 Myr): swaps per 100 Myr 10.9 / 9.6 / 6.1 / 4.3 at steps 1 / 2 / 5 / 10 Myr (vector
+  reading) and 12.6 / 10.9 / 8.3 / 4.8 (mesh reading, per boundary). Without the rule: 20.9 / 13.9 / 6.1 / 4.3 and 27.0 / 20.0 /
+  8.3 / 4.8. Steps 1 and 2 now agree within 14%. Step 5 is still 34 to 44% lower, so the prediction (within 20% over steps 1 to 5)
+  FAILED. At W = P = 10 Myr steps 1 and 2 are equal (18 / 18 vector, 16 / 17 mesh) and step 5 is 19 to 33% lower. Of the 12
+  mesh swaps missing at step 5, 11 fall together with a split, birth or merge in the same 5 Myr interval; 1 is a cancellation.
+  A 150 km tolerance makes it worse (many more halves; a hard cut makes events of its own, as the Earth-plates stream found).
+- So the stable quantity is not "swaps" at any one step. Two cures remain: frames fine enough that no swap shares an interval with a
+  cell change (the foam and Earth series already give step 1 as the finest), or a count defined to exclude swaps within a fixed
+  physical time of a neighbouring cell change. The second is the macroscopic count of the foam literature. It is the next step, to
+  be fixed before counting.
+
+The problem, seen by three streams: a swap is often logged in two halves, one contact lost in one frame and the new contact gained
+in a later one, so swap counts depend on the time step (foam rung 1: 831 + 525 single-contact clumps against 1085 clean swaps,
+T1/T2 0.80 / 0.68 / 0.53 at steps 1 / 2 / 4; Earth, vector reading: 13 + 11 such clumps, swaps 48 / 14 / 10 at 1 / 5 / 10 Myr).
+The null-model theory (studies/2026-11-15-tissue-null-models) says that with jittery boundaries swap counts scale with the frame
+rate; only net counts are stable unless a persistence or pairing rule is fixed before counting. pairing.py fixes such a rule once,
+for every stream. It runs eventlog.classify unchanged and post-processes; eventlog.py itself is not changed.
+
+Rules (all times physical, never frame counts; W, P and tol are parameters logged in every output):
+- T (tolerance tol, optional; needs boundary lengths): a contact shorter than tol is removed from the frame before logging. Its two
+  end junctions merge into one four-fold junction, so Euler is unchanged.
+- P (persistence): a contact change counts only if the new state lasts at least P. Otherwise it is a flicker and is cancelled, so a
+  back-and-forth within P (lost and regained, gained and lost, a swap and its reverse) cancels both halves. A logged swap counts
+  only if both its changes are accepted: the new contact survives P and the old contact stays lost P. A change that reaches the end
+  of the record is accepted and reported as censored.
+- W (pairing): a lost contact (a, b) and a gained contact (c, d) form one swap if a, b, c, d are four distinct cells, c and d were
+  both neighbours of a and of b in the last frame before the loss (the 2-2 pattern), and the two times differ by at most W (gain
+  before or after the loss). Losses in time order take the nearest admissible gain; each half is used once. Unpaired halves stay
+  single-contact events.
+Order: T, then the logger, then P, then W. The Earth-plates stream has its own rules (studies/2026-11-15-earth-plates/scripts/swaps.py:
+a join through four-fold junctions and a two-sided persistence k measured before and after). pairing.py differs: W pairs halves without
+requiring a four-fold junction in every frame between, and P is measured forward from each change.
+
+Tests (scripts/test_pairing.py, 17/17; eventlog's own tests unchanged, 33/33): a flicker of whole swaps, of halves, and of mixed
+halves each collapses to zero swaps. A swap split into halves 3 frames apart is paired at W = 3 and W = 5, not at W = 2, and the
+window is physical (the same sequence at half the time step pairs at W = 1.5 and not at W = 1.0). A gain before its loss is paired.
+A swap and its reverse 5 apart count 2 at P = 3 and 0 at P = 6. At P = W = 0 the count equals the logger's. NEGATIVE: a loss and a
+gain that are not the 2-2 pattern stay unpaired. The tolerance turns a short boundary into a four-fold junction with Euler kept,
+and a swap seen through shrinking boundaries is paired back into one swap when W covers the gap.
+
+Parameters and predictions (written 15 Nov 2026 BEFORE any run in pairing/):
+- Control, moving seeds on the sphere (2 Voronoi, 2 power runs, 100 seeds, t 0 to 0.5, steps 1e-5 and 1e-4): main rule W = P = 2e-4
+  gives counts identical to the logger and to the Delaunay flips at both steps, in all 4 runs. A wide rule, W = P = 1e-3, is
+  reported too. It may cancel a few genuine quick reversals; predicted to differ by at most 2%.
+- Foam rung 1 (dry 2D Potts froth, seeds 1 and 2 as in the pilot, steps 1, 2, 4, 8 MCS): main rule W = P = 8 MCS, tol 0. Also
+  W = P = 16 MCS and W = P = 8 MCS with tol = 2 pixel edges. Swaps per vanished cell with the main rule agree within 15% across
+  steps 1 to 4 (step 8 equals the rule's own scale and may differ). The value lies between the macroscopic 0.53 and the 1.5 that
+  includes side-shedding (Rutenberg & McCurdy 2006; Herdtle & Aref 1992), near 1.0.
+- Earth, Müller 2016, 230 Ma to now (vector reading of this study and the 15 km mesh reading of the Earth-plates stream, both
+  read only, steps 1, 2, 5, 10 Myr): main rule W = P = 5 Myr, also W = P = 10 Myr; contacts per pair and per boundary
+  (by_segment); mesh also with tol = 150 km. With the main rule, swaps per 100 Myr agree within 20% across steps 1, 2 and 5; at
+  10 Myr they are lower, because events closer than 10 Myr cancel in the frames themselves. The value is 8 to 15 per 100 Myr.
+
+Results (pairing/results/*.json and *.log; jobs pairing-pilot, run twice, the first stopped by its own check on a label-type fault
+in pairing.py, which was fixed and a test added; pairing-runs and pairing-diag, FINAL ok). Rule sets (20, 20) Myr for the Earth and
+(32, 32) MCS for the foam were added after the pilot and before the runs.
+
+| foam rung 1, swaps per vanished cell (vanished 1350 / 1339) | step 1 | 2 | 4 | 8 MCS |
+|---|---|---|---|---|
+| no rule, seed 1 / seed 2 | 0.804 / 0.787 | 0.675 / 0.628 | 0.528 / 0.469 | 0.350 / 0.328 |
+| W = P = 8 (main) | 0.764 / 0.773 | 0.621 / 0.600 | 0.485 / 0.460 | 0.360 / 0.342 |
+| W = P = 16 | 0.737 / 0.738 | 0.601 / 0.568 | 0.456 / 0.425 | 0.313 / 0.304 |
+| W = P = 32 | 0.669 / 0.650 | 0.541 / 0.500 | 0.423 / 0.378 | 0.290 / 0.271 |
+| W = P = 8, tol 2 pixel edges | 0.590 / 0.565 | 0.428 / 0.407 | 0.293 / 0.276 | 0.209 / 0.206 |
+
+| Earth, Müller 2016, swaps (per 100 Myr) | step 1 | 2 | 5 | 10 Myr |
+|---|---|---|---|---|
+| vector reading, per pair, no rule | 48 (20.9) | 32 (13.9) | 14 (6.1) | 10 (4.3) |
+| vector, per pair, W = P = 5 (main) | 25 (10.9) | 22 (9.6) | 14 (6.1) | 10 (4.3) |
+| vector, per pair, W = P = 10 | 18 (7.8) | 18 (7.8) | 12 (5.2) | 10 (4.3) |
+| vector, per boundary, W = P = 5 | 27 (11.7) | 23 (10.0) | 16 (7.0) | 9 (3.9) |
+| mesh, per boundary, no rule | 62 (27.0) | 46 (20.0) | 19 (8.3) | 11 (4.8) |
+| mesh, per boundary, W = P = 5 | 29 (12.6) | 25 (10.9) | 19 (8.3) | 11 (4.8) |
+| mesh, per boundary, W = P = 10 | 16 (7.0) | 17 (7.4) | 13 (5.7) | 11 (4.8) |
+| mesh, per boundary, W = P = 20 | 11 (4.8) | 10 (4.3) | 6 (2.6) | 4 (1.7) |
+| mesh, per boundary, tol 150 km, W = P = 5 | 24 (10.4) | 16 (7.0) | 15 (6.5) | 6 (2.6) |
+
+- Sphere control: identical with and without the main rule in all 8 cases (4 runs x 2 steps). Pairs found: 0, cancellations: 0.
+  The power runs include births and deaths (38 and 26; 24 and 27), which the rules leave alone.
+- The Earth mesh reading at W = P = 5 gives 29 / 19 at steps 1 / 5. The Earth-plates stream's two-sided rule (k = 5) gives 26 / 19
+  on the same frames, so the two rules agree at the coarse step and differ by 3 swaps at the fine one.
+- Foam frames: the dry2d branch of the foam ladder (same seeds and parameters as its pilot r1 runs; the raw counts reproduce the
+  pilot's 1085 / 911 / 713 swaps exactly) rerun with every frame saved with its boundary lengths. The frames (5 MB each, gzip) stay
+  on the compute machine and can be regenerated from the seed.
+- Foams and the tissue picture: in Mughal, Cox, Weaire, Burke & Hutzler 2018 (Philos. Mag. Lett. 98, 358-364,
+  doi:10.1080/09500839.2018.1552806; arXiv:1809.08421, read), a single layer of soap bubbles between two concentric cylinders forms
+  scutoids: a T1 swap on the inner surface that is absent on the outer one, that is, a swap seen through the depth of one layer of
+  cells. They show single configurations (Surface Evolver, 144 cells, and a first experiment). They count no T1s and give no rates.
+  The counts here are the time-wise version of the same swap. DICTO pointed to the paper.
+- Nothing is left running.
+

@@ -1,0 +1,15 @@
+PROGRESS 0.650 census step 1 tol 0
+PROGRESS 0.700 census step 1 tol 2
+PROGRESS 0.750 census step 2 tol 0
+PROGRESS 0.800 census step 2 tol 2
+PROGRESS 0.850 census step 4 tol 0
+PROGRESS 0.900 census step 4 tol 2
+PROGRESS 0.950 census step 8 tol 0
+PROGRESS 1.000 census step 8 tol 2
+swaps per vanished cell (rows: rule; columns: step 1 / 2 / 4 / 8)
+W=0 P=0 tol=0 0.794 / 0.639 / 0.462 / 0.280  swaps 572 / 455 / 322 / 195  halves left 668 / 336 / 147 / 68
+W=8 P=8 tol=0 0.682 / 0.522 / 0.399 / 0.283  swaps 491 / 372 / 278 / 197  halves left 333 / 240 / 145 / 64
+W=16 P=16 tol=0 0.636 / 0.489 / 0.353 / 0.230  swaps 458 / 348 / 246 / 160  halves left 351 / 256 / 162 / 90
+W=8 P=8 tol=2 0.501 / 0.313 / 0.175 / 0.118  swaps 361 / 223 / 122 / 82  halves left 969 / 850 / 723 / 545
+W=32 P=32 tol=0 0.554 / 0.421 / 0.316 / 0.201  swaps 399 / 300 / 220 / 140  halves left 384 / 282 / 174 / 102
+FOAM_OK
