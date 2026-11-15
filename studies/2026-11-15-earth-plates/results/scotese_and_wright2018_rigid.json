@@ -1,0 +1,3293 @@
+{
+ "model": "scotese_and_wright2018",
+ "rule": "rigid",
+ "level": 9,
+ "spacing_km": 15.040322003510507,
+ "tmax": 100,
+ "plates_by_time": {
+  "100": 12,
+  "99": 12,
+  "98": 12,
+  "97": 12,
+  "96": 12,
+  "95": 13,
+  "94": 13,
+  "93": 13,
+  "92": 13,
+  "91": 13,
+  "90": 13,
+  "89": 13,
+  "88": 13,
+  "87": 13,
+  "86": 13,
+  "85": 14,
+  "84": 14,
+  "83": 14,
+  "82": 14,
+  "81": 14,
+  "80": 14,
+  "79": 14,
+  "78": 14,
+  "77": 14,
+  "76": 14,
+  "75": 14,
+  "74": 14,
+  "73": 14,
+  "72": 14,
+  "71": 14,
+  "70": 14,
+  "69": 14,
+  "68": 14,
+  "67": 15,
+  "66": 15,
+  "65": 15,
+  "64": 15,
+  "63": 15,
+  "62": 15,
+  "61": 15,
+  "60": 14,
+  "59": 14,
+  "58": 14,
+  "57": 14,
+  "56": 14,
+  "55": 14,
+  "54": 14,
+  "53": 14,
+  "52": 14,
+  "51": 14,
+  "50": 16,
+  "49": 16,
+  "48": 16,
+  "47": 16,
+  "46": 16,
+  "45": 16,
+  "44": 16,
+  "43": 16,
+  "42": 16,
+  "41": 16,
+  "40": 15,
+  "39": 15,
+  "38": 15,
+  "37": 15,
+  "36": 15,
+  "35": 15,
+  "34": 15,
+  "33": 15,
+  "32": 15,
+  "31": 15,
+  "30": 16,
+  "29": 16,
+  "28": 16,
+  "27": 16,
+  "26": 16,
+  "25": 16,
+  "24": 16,
+  "23": 17,
+  "22": 17,
+  "21": 17,
+  "20": 19,
+  "19": 19,
+  "18": 19,
+  "17": 19,
+  "16": 19,
+  "15": 19,
+  "14": 18,
+  "13": 18,
+  "12": 18,
+  "11": 18,
+  "10": 18,
+  "9": 17,
+  "8": 17,
+  "7": 17,
+  "6": 17,
+  "5": 17,
+  "4": 17,
+  "3": 17,
+  "2": 17,
+  "1": 17,
+  "0": 17
+ },
+ "census": [
+  {
+   "step": 1,
+   "Lmin": 0,
+   "by_segment": true,
+   "frames": 101,
+   "counts": {
+    "split": 4,
+    "relabel": 2,
+    "swap": 5,
+    "merge": 3,
+    "clump": 6,
+    "birth": 3
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 0 died 1 lost 1 gained 3": 1,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 0 died 3 lost 3 gained 2": 1,
+    "born 2 died 0 lost 2 gained 2": 1,
+    "born 0 died 1 lost 0 gained 0": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 5,
+   "swaps_fourfold": 0,
+   "swaps_persistent": {
+    "1": 5,
+    "2": 4,
+    "5": 1
+   },
+   "swaps_persistent_lengthfilter": {
+    "k1_l0": 5,
+    "k1_l50": 5,
+    "k1_l150": 5,
+    "k2_l0": 4,
+    "k2_l50": 4,
+    "k2_l150": 4,
+    "k5_l0": 1,
+    "k5_l50": 1,
+    "k5_l150": 1
+   },
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 4,
+     "relabel": 2,
+     "swap": 5,
+     "merge": 3,
+     "clump": 6,
+     "birth": 3
+    }
+   },
+   "swap_times": [
+    [
+     71,
+     70,
+     "direct"
+    ],
+    [
+     50,
+     49,
+     "direct"
+    ],
+    [
+     46,
+     45,
+     "direct"
+    ],
+    [
+     37,
+     36,
+     "direct"
+    ],
+    [
+     13,
+     12,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 1,
+   "Lmin": 50,
+   "by_segment": true,
+   "frames": 101,
+   "counts": {
+    "split": 4,
+    "relabel": 2,
+    "swap": 2,
+    "merge": 3,
+    "clump": 12,
+    "birth": 3
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 0 died 0 lost 1 gained 0": 3,
+    "born 0 died 0 lost 0 gained 1": 3,
+    "born 0 died 1 lost 1 gained 3": 1,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 0 died 3 lost 3 gained 2": 1,
+    "born 2 died 0 lost 2 gained 2": 1,
+    "born 0 died 1 lost 0 gained 0": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 2,
+   "swaps_fourfold": 3,
+   "swaps_persistent": {
+    "1": 5,
+    "2": 4,
+    "5": 1
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 4,
+     "relabel": 2,
+     "swap": 2,
+     "merge": 3,
+     "clump": 12,
+     "birth": 3
+    }
+   },
+   "swap_times": [
+    [
+     71,
+     70,
+     "direct"
+    ],
+    [
+     50,
+     49,
+     "direct"
+    ],
+    [
+     46,
+     44,
+     "four-fold"
+    ],
+    [
+     37,
+     35,
+     "four-fold"
+    ],
+    [
+     15,
+     11,
+     "four-fold"
+    ]
+   ]
+  },
+  {
+   "step": 1,
+   "Lmin": 150,
+   "by_segment": true,
+   "frames": 101,
+   "counts": {
+    "split": 4,
+    "relabel": 2,
+    "swap": 1,
+    "merge": 3,
+    "clump": 19,
+    "birth": 3
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 0 died 0 lost 1 gained 0": 7,
+    "born 0 died 0 lost 0 gained 1": 6,
+    "born 0 died 1 lost 1 gained 3": 1,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 0 died 3 lost 2 gained 2": 1,
+    "born 2 died 0 lost 2 gained 2": 1,
+    "born 0 died 1 lost 0 gained 0": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 1,
+   "swaps_fourfold": 4,
+   "swaps_persistent": {
+    "1": 5,
+    "2": 4,
+    "5": 1
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 4,
+     "relabel": 2,
+     "swap": 1,
+     "merge": 3,
+     "clump": 19,
+     "birth": 3
+    }
+   },
+   "swap_times": [
+    [
+     71,
+     70,
+     "direct"
+    ],
+    [
+     50,
+     48,
+     "four-fold"
+    ],
+    [
+     46,
+     44,
+     "four-fold"
+    ],
+    [
+     37,
+     35,
+     "four-fold"
+    ],
+    [
+     17,
+     10,
+     "four-fold"
+    ]
+   ]
+  },
+  {
+   "step": 2,
+   "Lmin": 0,
+   "by_segment": true,
+   "frames": 51,
+   "counts": {
+    "split": 5,
+    "relabel": 2,
+    "swap": 5,
+    "merge": 2,
+    "clump": 7,
+    "birth": 1
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 0 died 1 lost 1 gained 3": 1,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 1 died 3 lost 3 gained 2": 1,
+    "born 2 died 0 lost 2 gained 2": 1,
+    "born 0 died 1 lost 0 gained 0": 2
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 5,
+   "swaps_fourfold": 0,
+   "swaps_persistent": {
+    "1": 5,
+    "2": 5,
+    "5": 1
+   },
+   "swaps_persistent_lengthfilter": {
+    "k1_l0": 5,
+    "k1_l50": 5,
+    "k1_l150": 5,
+    "k2_l0": 5,
+    "k2_l50": 5,
+    "k2_l150": 5,
+    "k5_l0": 1,
+    "k5_l50": 1,
+    "k5_l150": 1
+   },
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 5,
+     "relabel": 2,
+     "swap": 5,
+     "merge": 2,
+     "clump": 7,
+     "birth": 1
+    }
+   },
+   "swap_times": [
+    [
+     72,
+     70,
+     "direct"
+    ],
+    [
+     50,
+     48,
+     "direct"
+    ],
+    [
+     46,
+     44,
+     "direct"
+    ],
+    [
+     38,
+     36,
+     "direct"
+    ],
+    [
+     14,
+     12,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 2,
+   "Lmin": 50,
+   "by_segment": true,
+   "frames": 51,
+   "counts": {
+    "split": 5,
+    "relabel": 2,
+    "swap": 3,
+    "merge": 2,
+    "clump": 11,
+    "birth": 1
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 0 died 1 lost 1 gained 3": 1,
+    "born 0 died 0 lost 1 gained 0": 2,
+    "born 0 died 0 lost 0 gained 1": 2,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 1 died 3 lost 3 gained 2": 1,
+    "born 2 died 0 lost 2 gained 2": 1,
+    "born 0 died 1 lost 0 gained 0": 2
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 3,
+   "swaps_fourfold": 2,
+   "swaps_persistent": {
+    "1": 5,
+    "2": 5,
+    "5": 1
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 5,
+     "relabel": 2,
+     "swap": 3,
+     "merge": 2,
+     "clump": 11,
+     "birth": 1
+    }
+   },
+   "swap_times": [
+    [
+     72,
+     70,
+     "direct"
+    ],
+    [
+     50,
+     48,
+     "direct"
+    ],
+    [
+     46,
+     44,
+     "direct"
+    ],
+    [
+     38,
+     34,
+     "four-fold"
+    ],
+    [
+     16,
+     10,
+     "four-fold"
+    ]
+   ]
+  },
+  {
+   "step": 2,
+   "Lmin": 150,
+   "by_segment": true,
+   "frames": 51,
+   "counts": {
+    "split": 5,
+    "relabel": 2,
+    "swap": 3,
+    "merge": 2,
+    "clump": 14,
+    "birth": 1
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 0 died 1 lost 1 gained 3": 1,
+    "born 0 died 0 lost 1 gained 0": 4,
+    "born 0 died 0 lost 0 gained 1": 3,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 1 died 3 lost 2 gained 2": 1,
+    "born 2 died 0 lost 2 gained 2": 1,
+    "born 0 died 1 lost 0 gained 0": 2
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 3,
+   "swaps_fourfold": 2,
+   "swaps_persistent": {
+    "1": 5,
+    "2": 5,
+    "5": 1
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 5,
+     "relabel": 2,
+     "swap": 3,
+     "merge": 2,
+     "clump": 14,
+     "birth": 1
+    }
+   },
+   "swap_times": [
+    [
+     72,
+     70,
+     "direct"
+    ],
+    [
+     50,
+     48,
+     "direct"
+    ],
+    [
+     46,
+     44,
+     "direct"
+    ],
+    [
+     38,
+     34,
+     "four-fold"
+    ],
+    [
+     18,
+     10,
+     "four-fold"
+    ]
+   ]
+  },
+  {
+   "step": 5,
+   "Lmin": 0,
+   "by_segment": true,
+   "frames": 21,
+   "counts": {
+    "split": 5,
+    "birth": 1,
+    "relabel": 2,
+    "swap": 3,
+    "merge": 2,
+    "clump": 9
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 0 died 0 lost 1 gained 0": 1,
+    "born 0 died 0 lost 0 gained 1": 1,
+    "born 0 died 1 lost 1 gained 3": 1,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 1 died 3 lost 3 gained 2": 1,
+    "born 2 died 0 lost 2 gained 2": 1,
+    "born 0 died 1 lost 0 gained 0": 2
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 3,
+   "swaps_fourfold": 0,
+   "swaps_persistent": {
+    "1": 3,
+    "2": 3,
+    "5": 3
+   },
+   "swaps_persistent_lengthfilter": {
+    "k1_l0": 3,
+    "k1_l50": 3,
+    "k1_l150": 3,
+    "k2_l0": 3,
+    "k2_l50": 3,
+    "k2_l150": 3,
+    "k5_l0": 3,
+    "k5_l50": 3,
+    "k5_l150": 3
+   },
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 5,
+     "birth": 1,
+     "relabel": 2,
+     "swap": 3,
+     "merge": 2,
+     "clump": 9
+    }
+   },
+   "swap_times": [
+    [
+     75,
+     70,
+     "direct"
+    ],
+    [
+     40,
+     35,
+     "direct"
+    ],
+    [
+     15,
+     10,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 5,
+   "Lmin": 50,
+   "by_segment": true,
+   "frames": 21,
+   "counts": {
+    "split": 5,
+    "birth": 1,
+    "relabel": 2,
+    "swap": 3,
+    "merge": 2,
+    "clump": 8
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 0 died 0 lost 1 gained 0": 1,
+    "born 0 died 1 lost 1 gained 4": 1,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 1 died 3 lost 3 gained 2": 1,
+    "born 2 died 0 lost 2 gained 2": 1,
+    "born 0 died 1 lost 0 gained 0": 2
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 3,
+   "swaps_fourfold": 0,
+   "swaps_persistent": {
+    "1": 3,
+    "2": 3,
+    "5": 3
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 5,
+     "birth": 1,
+     "relabel": 2,
+     "swap": 3,
+     "merge": 2,
+     "clump": 8
+    }
+   },
+   "swap_times": [
+    [
+     75,
+     70,
+     "direct"
+    ],
+    [
+     40,
+     35,
+     "direct"
+    ],
+    [
+     15,
+     10,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 5,
+   "Lmin": 150,
+   "by_segment": true,
+   "frames": 21,
+   "counts": {
+    "split": 5,
+    "birth": 1,
+    "relabel": 2,
+    "swap": 2,
+    "merge": 2,
+    "clump": 10
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 0 died 0 lost 1 gained 0": 2,
+    "born 0 died 1 lost 1 gained 4": 1,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 1 died 3 lost 3 gained 2": 1,
+    "born 2 died 0 lost 2 gained 2": 1,
+    "born 0 died 1 lost 0 gained 0": 2,
+    "born 0 died 0 lost 0 gained 1": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 2,
+   "swaps_fourfold": 1,
+   "swaps_persistent": {
+    "1": 3,
+    "2": 3,
+    "5": 3
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 5,
+     "birth": 1,
+     "relabel": 2,
+     "swap": 2,
+     "merge": 2,
+     "clump": 10
+    }
+   },
+   "swap_times": [
+    [
+     75,
+     70,
+     "direct"
+    ],
+    [
+     40,
+     35,
+     "direct"
+    ],
+    [
+     20,
+     10,
+     "four-fold"
+    ]
+   ]
+  },
+  {
+   "step": 10,
+   "Lmin": 0,
+   "by_segment": true,
+   "frames": 11,
+   "counts": {
+    "split": 5,
+    "birth": 2,
+    "relabel": 2,
+    "swap": 2,
+    "clump": 9
+   },
+   "clump_patterns": {
+    "born 0 died 1 lost 0 gained 0": 4,
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 0 died 1 lost 2 gained 4": 1,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 0 died 3 lost 2 gained 2": 1,
+    "born 2 died 0 lost 2 gained 2": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 2,
+   "swaps_fourfold": 0,
+   "swaps_persistent": {
+    "1": 2,
+    "2": 2,
+    "5": 2
+   },
+   "swaps_persistent_lengthfilter": {
+    "k1_l0": 2,
+    "k1_l50": 2,
+    "k1_l150": 2,
+    "k2_l0": 2,
+    "k2_l50": 2,
+    "k2_l150": 2,
+    "k5_l0": 2,
+    "k5_l50": 2,
+    "k5_l150": 2
+   },
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 5,
+     "birth": 2,
+     "relabel": 2,
+     "swap": 2,
+     "clump": 9
+    }
+   },
+   "swap_times": [
+    [
+     80,
+     70,
+     "direct"
+    ],
+    [
+     20,
+     10,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 10,
+   "Lmin": 50,
+   "by_segment": true,
+   "frames": 11,
+   "counts": {
+    "split": 5,
+    "birth": 2,
+    "relabel": 2,
+    "swap": 2,
+    "clump": 9
+   },
+   "clump_patterns": {
+    "born 0 died 1 lost 0 gained 0": 4,
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 0 died 1 lost 2 gained 4": 1,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 0 died 3 lost 2 gained 2": 1,
+    "born 2 died 0 lost 2 gained 2": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 2,
+   "swaps_fourfold": 0,
+   "swaps_persistent": {
+    "1": 2,
+    "2": 2,
+    "5": 2
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 5,
+     "birth": 2,
+     "relabel": 2,
+     "swap": 2,
+     "clump": 9
+    }
+   },
+   "swap_times": [
+    [
+     80,
+     70,
+     "direct"
+    ],
+    [
+     20,
+     10,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 10,
+   "Lmin": 150,
+   "by_segment": true,
+   "frames": 11,
+   "counts": {
+    "split": 5,
+    "birth": 2,
+    "relabel": 2,
+    "swap": 2,
+    "clump": 9
+   },
+   "clump_patterns": {
+    "born 0 died 1 lost 0 gained 0": 4,
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 0 died 1 lost 2 gained 4": 1,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 0 died 3 lost 2 gained 2": 1,
+    "born 2 died 0 lost 2 gained 2": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 2,
+   "swaps_fourfold": 0,
+   "swaps_persistent": {
+    "1": 2,
+    "2": 2,
+    "5": 2
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 5,
+     "birth": 2,
+     "relabel": 2,
+     "swap": 2,
+     "clump": 9
+    }
+   },
+   "swap_times": [
+    [
+     80,
+     70,
+     "direct"
+    ],
+    [
+     20,
+     10,
+     "direct"
+    ]
+   ]
+  }
+ ],
+ "pair_rule_step1_L0": {
+  "step": 1,
+  "Lmin": 0,
+  "by_segment": false,
+  "frames": 101,
+  "counts": {
+   "split": 4,
+   "relabel": 2,
+   "clump": 10,
+   "merge": 5,
+   "birth": 3,
+   "swap": 2
+  },
+  "clump_patterns": {
+   "born 0 died 0 lost 1 gained 0": 3,
+   "born 2 died 1 lost 1 gained 0": 1,
+   "born 0 died 0 lost 0 gained 1": 1,
+   "born 0 died 1 lost 1 gained 3": 1,
+   "born 3 died 0 lost 0 gained 0": 1,
+   "born 0 died 1 lost 1 gained 1": 1,
+   "born 2 died 0 lost 2 gained 2": 1,
+   "born 0 died 1 lost 0 gained 0": 1
+  },
+  "frames_failing": 0,
+  "failing_detail": [],
+  "balance_failures": 0,
+  "neg_control_caught": true,
+  "swaps_direct": 2,
+  "swaps_fourfold": 0,
+  "swaps_persistent": {
+   "1": 2,
+   "2": 2,
+   "5": 1
+  },
+  "swaps_persistent_lengthfilter": {
+   "k1_l0": 2,
+   "k1_l50": 2,
+   "k1_l150": 2,
+   "k2_l0": 2,
+   "k2_l50": 2,
+   "k2_l150": 2,
+   "k5_l0": 1,
+   "k5_l50": 1,
+   "k5_l150": 1
+  },
+  "swaps_persistent_censored": {
+   "1": 0,
+   "2": 0,
+   "5": 0
+  },
+  "per100": {
+   "0-100 Ma": {
+    "split": 4,
+    "relabel": 2,
+    "clump": 10,
+    "merge": 5,
+    "birth": 3,
+    "swap": 2
+   }
+  },
+  "swap_times": [
+   [
+    37,
+    36,
+    "direct"
+   ],
+   [
+    13,
+    12,
+    "direct"
+   ]
+  ]
+ },
+ "infos": [
+  {
+   "time": 100,
+   "polygons": 12,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 30,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 927.4,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 197095,
+   "cells": 12,
+   "seconds": 11.6
+  },
+  {
+   "time": 99,
+   "polygons": 12,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 30,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 919.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 196967,
+   "cells": 12,
+   "seconds": 9.9
+  },
+  {
+   "time": 98,
+   "polygons": 12,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 30,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 928.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 196987,
+   "cells": 12,
+   "seconds": 14.2
+  },
+  {
+   "time": 97,
+   "polygons": 12,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 30,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 936.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 196927,
+   "cells": 12,
+   "seconds": 16.3
+  },
+  {
+   "time": 96,
+   "polygons": 12,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 30,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 961.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 196856,
+   "cells": 12,
+   "seconds": 16.1
+  },
+  {
+   "time": 95,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 954.2,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 207112,
+   "cells": 13,
+   "seconds": 13.1
+  },
+  {
+   "time": 94,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 946.4,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 207171,
+   "cells": 13,
+   "seconds": 11.8
+  },
+  {
+   "time": 93,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 955.2,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 206809,
+   "cells": 13,
+   "seconds": 13.8
+  },
+  {
+   "time": 92,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 938.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 206694,
+   "cells": 13,
+   "seconds": 7.7
+  },
+  {
+   "time": 91,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 972.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 206146,
+   "cells": 13,
+   "seconds": 7.6
+  },
+  {
+   "time": 90,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 1015.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 205239,
+   "cells": 13,
+   "seconds": 20.1
+  },
+  {
+   "time": 89,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 1041.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 205113,
+   "cells": 13,
+   "seconds": 21.2
+  },
+  {
+   "time": 88,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 1051.2,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 205097,
+   "cells": 13,
+   "seconds": 21.1
+  },
+  {
+   "time": 87,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 1060.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 208496,
+   "cells": 13,
+   "seconds": 21.1
+  },
+  {
+   "time": 86,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 1068.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 208362,
+   "cells": 13,
+   "seconds": 18.4
+  },
+  {
+   "time": 85,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 1009.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 217247,
+   "cells": 14,
+   "seconds": 19.3
+  },
+  {
+   "time": 84,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 1068.4,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 217051,
+   "cells": 14,
+   "seconds": 8.2
+  },
+  {
+   "time": 83,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 1059.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 217083,
+   "cells": 14,
+   "seconds": 19.2
+  },
+  {
+   "time": 82,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 992.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 218502,
+   "cells": 14,
+   "seconds": 7.5
+  },
+  {
+   "time": 81,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 908.1,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 218384,
+   "cells": 14,
+   "seconds": 18.6
+  },
+  {
+   "time": 80,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 604.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 210860,
+   "cells": 14,
+   "seconds": 7.9
+  },
+  {
+   "time": 79,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 597.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 210918,
+   "cells": 14,
+   "seconds": 19.7
+  },
+  {
+   "time": 78,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 598.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 210883,
+   "cells": 14,
+   "seconds": 8.1
+  },
+  {
+   "time": 77,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 627.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 216735,
+   "cells": 14,
+   "seconds": 17.0
+  },
+  {
+   "time": 76,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 594.2,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 216785,
+   "cells": 14,
+   "seconds": 19.7
+  },
+  {
+   "time": 75,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 601.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 216881,
+   "cells": 14,
+   "seconds": 15.5
+  },
+  {
+   "time": 74,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 602.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 216980,
+   "cells": 14,
+   "seconds": 19.6
+  },
+  {
+   "time": 73,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 594.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 217121,
+   "cells": 14,
+   "seconds": 8.1
+  },
+  {
+   "time": 72,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 529.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 218601,
+   "cells": 14,
+   "seconds": 8.9
+  },
+  {
+   "time": 71,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 538.2,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 218880,
+   "cells": 14,
+   "seconds": 7.8
+  },
+  {
+   "time": 70,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 199.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 216310,
+   "cells": 14,
+   "seconds": 8.0
+  },
+  {
+   "time": 69,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 209.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 216495,
+   "cells": 14,
+   "seconds": 8.3
+  },
+  {
+   "time": 68,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 256.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 216400,
+   "cells": 14,
+   "seconds": 7.4
+  },
+  {
+   "time": 67,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 266.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 226426,
+   "cells": 15,
+   "seconds": 18.2
+  },
+  {
+   "time": 66,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 275.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 226494,
+   "cells": 15,
+   "seconds": 20.1
+  },
+  {
+   "time": 65,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 304.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 226578,
+   "cells": 15,
+   "seconds": 19.9
+  },
+  {
+   "time": 64,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 313.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 226590,
+   "cells": 15,
+   "seconds": 8.4
+  },
+  {
+   "time": 63,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 332.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 226824,
+   "cells": 15,
+   "seconds": 16.5
+  },
+  {
+   "time": 62,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 379.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 226453,
+   "cells": 15,
+   "seconds": 8.9
+  },
+  {
+   "time": 61,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 379.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 226645,
+   "cells": 15,
+   "seconds": 7.9
+  },
+  {
+   "time": 60,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 445.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 221109,
+   "cells": 14,
+   "seconds": 7.7
+  },
+  {
+   "time": 59,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 502.4,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 220972,
+   "cells": 14,
+   "seconds": 18.3
+  },
+  {
+   "time": 58,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 521.2,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 221356,
+   "cells": 14,
+   "seconds": 7.2
+  },
+  {
+   "time": 57,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 577.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 221578,
+   "cells": 14,
+   "seconds": 7.8
+  },
+  {
+   "time": 56,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 596.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 221310,
+   "cells": 14,
+   "seconds": 7.4
+  },
+  {
+   "time": 55,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 615.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 221410,
+   "cells": 14,
+   "seconds": 21.2
+  },
+  {
+   "time": 54,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 625.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 221386,
+   "cells": 14,
+   "seconds": 23.1
+  },
+  {
+   "time": 53,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 644.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 221518,
+   "cells": 14,
+   "seconds": 7.9
+  },
+  {
+   "time": 52,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 634.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 221338,
+   "cells": 14,
+   "seconds": 21.6
+  },
+  {
+   "time": 51,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 634.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 221322,
+   "cells": 14,
+   "seconds": 8.0
+  },
+  {
+   "time": 50,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 380.2,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 228294,
+   "cells": 16,
+   "seconds": 13.5
+  },
+  {
+   "time": 49,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 73.5,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 228609,
+   "cells": 16,
+   "seconds": 21.7
+  },
+  {
+   "time": 48,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 512.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 229196,
+   "cells": 16,
+   "seconds": 8.2
+  },
+  {
+   "time": 47,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 3,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 503.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 229009,
+   "cells": 16,
+   "seconds": 13.6
+  },
+  {
+   "time": 46,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 473.4,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 229346,
+   "cells": 16,
+   "seconds": 21.4
+  },
+  {
+   "time": 45,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 36.8,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 229620,
+   "cells": 16,
+   "seconds": 7.9
+  },
+  {
+   "time": 44,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 3,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 452.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 229151,
+   "cells": 16,
+   "seconds": 8.2
+  },
+  {
+   "time": 43,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 423.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 228953,
+   "cells": 16,
+   "seconds": 19.5
+  },
+  {
+   "time": 42,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 418.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 227957,
+   "cells": 16,
+   "seconds": 19.3
+  },
+  {
+   "time": 41,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 404.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 227462,
+   "cells": 16,
+   "seconds": 7.9
+  },
+  {
+   "time": 40,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 508.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 223109,
+   "cells": 15,
+   "seconds": 17.0
+  },
+  {
+   "time": 39,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 489.2,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 222897,
+   "cells": 15,
+   "seconds": 18.2
+  },
+  {
+   "time": 38,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 346.4,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 222715,
+   "cells": 15,
+   "seconds": 17.7
+  },
+  {
+   "time": 37,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 177.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 222351,
+   "cells": 15,
+   "seconds": 7.7
+  },
+  {
+   "time": 36,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 27.3,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 222412,
+   "cells": 15,
+   "seconds": 8.0
+  },
+  {
+   "time": 35,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 201.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 222440,
+   "cells": 15,
+   "seconds": 17.2
+  },
+  {
+   "time": 34,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 233.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 222207,
+   "cells": 15,
+   "seconds": 8.9
+  },
+  {
+   "time": 33,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 191.2,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 222282,
+   "cells": 15,
+   "seconds": 17.6
+  },
+  {
+   "time": 32,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 150.0,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 222105,
+   "cells": 15,
+   "seconds": 8.0
+  },
+  {
+   "time": 31,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 116.8,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 222218,
+   "cells": 15,
+   "seconds": 16.5
+  },
+  {
+   "time": 30,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 410.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 236715,
+   "cells": 16,
+   "seconds": 11.9
+  },
+  {
+   "time": 29,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 370.1,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 237025,
+   "cells": 16,
+   "seconds": 15.0
+  },
+  {
+   "time": 28,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 330.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 237235,
+   "cells": 16,
+   "seconds": 11.6
+  },
+  {
+   "time": 27,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 358.2,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 235395,
+   "cells": 16,
+   "seconds": 17.6
+  },
+  {
+   "time": 26,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 321.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 235502,
+   "cells": 16,
+   "seconds": 8.3
+  },
+  {
+   "time": 25,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 312.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 236003,
+   "cells": 16,
+   "seconds": 13.1
+  },
+  {
+   "time": 24,
+   "polygons": 16,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 42,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 303.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 235578,
+   "cells": 16,
+   "seconds": 10.4
+  },
+  {
+   "time": 23,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 294.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 239548,
+   "cells": 17,
+   "seconds": 11.7
+  },
+  {
+   "time": 22,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 248.4,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 239869,
+   "cells": 17,
+   "seconds": 13.2
+  },
+  {
+   "time": 21,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 239.4,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 239810,
+   "cells": 17,
+   "seconds": 10.6
+  },
+  {
+   "time": 20,
+   "polygons": 19,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 51,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 214.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 259280,
+   "cells": 19,
+   "seconds": 10.8
+  },
+  {
+   "time": 19,
+   "polygons": 19,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 51,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 207.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 257619,
+   "cells": 19,
+   "seconds": 14.6
+  },
+  {
+   "time": 18,
+   "polygons": 19,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 51,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 182.1,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 257889,
+   "cells": 19,
+   "seconds": 13.1
+  },
+  {
+   "time": 17,
+   "polygons": 19,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 51,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 148.2,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 259157,
+   "cells": 19,
+   "seconds": 15.3
+  },
+  {
+   "time": 16,
+   "polygons": 19,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 51,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 110.4,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 259182,
+   "cells": 19,
+   "seconds": 10.0
+  },
+  {
+   "time": 15,
+   "polygons": 19,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 51,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 67.6,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 258959,
+   "cells": 19,
+   "seconds": 17.9
+  },
+  {
+   "time": 14,
+   "polygons": 18,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 48,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 33.8,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 254731,
+   "cells": 18,
+   "seconds": 10.6
+  },
+  {
+   "time": 13,
+   "polygons": 18,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 3,
+   "labels_below_resolution": [],
+   "chains": 48,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 9.0,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 255243,
+   "cells": 18,
+   "seconds": 11.6
+  },
+  {
+   "time": 12,
+   "polygons": 18,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 48,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 33.7,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 255128,
+   "cells": 18,
+   "seconds": 9.7
+  },
+  {
+   "time": 11,
+   "polygons": 18,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 4,
+   "labels_below_resolution": [],
+   "chains": 48,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 68.6,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 255265,
+   "cells": 18,
+   "seconds": 18.4
+  },
+  {
+   "time": 10,
+   "polygons": 18,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 7,
+   "labels_below_resolution": [],
+   "chains": 48,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 178.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 254811,
+   "cells": 18,
+   "seconds": 9.7
+  },
+  {
+   "time": 9,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 210.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 251419,
+   "cells": 17,
+   "seconds": 10.1
+  },
+  {
+   "time": 8,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 210.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 251462,
+   "cells": 17,
+   "seconds": 10.1
+  },
+  {
+   "time": 7,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 210.4,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 251459,
+   "cells": 17,
+   "seconds": 16.8
+  },
+  {
+   "time": 6,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 235.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 251433,
+   "cells": 17,
+   "seconds": 10.6
+  },
+  {
+   "time": 5,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 243.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 251522,
+   "cells": 17,
+   "seconds": 11.4
+  },
+  {
+   "time": 4,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 259.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 251398,
+   "cells": 17,
+   "seconds": 10.5
+  },
+  {
+   "time": 3,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 4,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 201.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 251742,
+   "cells": 17,
+   "seconds": 15.3
+  },
+  {
+   "time": 2,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 8,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 201.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 251942,
+   "cells": 17,
+   "seconds": 13.7
+  },
+  {
+   "time": 1,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 7,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 159.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 252245,
+   "cells": 17,
+   "seconds": 12.7
+  },
+  {
+   "time": 0,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 7,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 167.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 251832,
+   "cells": 17,
+   "seconds": 10.3
+  }
+ ]
+}

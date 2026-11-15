@@ -24,7 +24,7 @@ RULES (stated before counting; 15 Nov 2026):
   R5 lineage (split vs birth, merge vs death): the mesh points of a new cell are rotated back with its own plate rotation to the earlier
      frame and looked up there (parents); a vanished cell's points are rotated forward (heirs). At most 5000 points per cell.
 Usage: python earth_mesh.py present MODEL RULE LEVEL                 -> present_MODEL_RULE_LLEVEL.json
-       python earth_mesh.py series MODEL RULE LEVEL TMAX NPROC OUTDIR -> OUTDIR/MODEL_RULE.json (+ frames_*.jsonl)"""
+       python earth_mesh.py series MODEL RULE LEVEL TMAX NPROC OUTDIR [TMIN] -> OUTDIR/MODEL_RULE.json (+ frames_*.jsonl)"""
 import sys, os, json, math, time, shutil
 from collections import Counter, defaultdict
 import numpy as np
@@ -300,10 +300,11 @@ if __name__ == '__main__':
         print('FINAL ok' if all(r['ok'] for r in res.values()) else 'FINAL FAIL check', flush=True)
         sys.exit(0)
     tmax, nproc, outdir = int(sys.argv[5]), int(sys.argv[6]), sys.argv[7]
+    tmin = int(sys.argv[8]) if len(sys.argv) > 8 else 0            # youngest age (models such as Domeier & Torsvik 2014 end at 250 Ma)
     work = os.path.join(outdir, f'work_{model}_{rule}'); os.makedirs(work, exist_ok=True)
     G.update(mesh=mesh, rot=rot, topo=topo, rule=rule, work=work)
     import multiprocessing as mp
-    times = list(range(tmax, -1, -1))
+    times = list(range(tmax, tmin - 1, -1))
     frames_json, meta, infos = {}, {}, {}
     with mp.get_context('fork').Pool(nproc) as pool:
         for n, (t, fj, names, pids, info) in enumerate(pool.imap_unordered(frame_job, times)):
@@ -311,8 +312,8 @@ if __name__ == '__main__':
             if n % 10 == 0: print(f'PROGRESS {0.7 * n / len(times):.3f} frames {n}/{len(times)} (t={t}: {info["cells"]} cells, {info["seconds"]} s)', flush=True)
     G['meta'] = meta
     def series_times(s):
-        ts = list(range(tmax, -1, -s))
-        return ts + [0] if ts[-1] != 0 else ts
+        ts = list(range(tmax, tmin - 1, -s))
+        return ts + [tmin] if ts[-1] != tmin else ts
     pairs = sorted({(a, b) for s in STEPS for a, b in zip(series_times(s), series_times(s)[1:])})
     lin = {}
     with mp.get_context('fork').Pool(nproc) as pool:

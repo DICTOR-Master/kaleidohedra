@@ -3,7 +3,28 @@
 Follows studies/2026-11-15-event-logger (the logger, its validation and the first Müller 2016 census). DICTO, 15 Nov 2026: all
 resources on the scutoid Earth, Sun and cosmos work now; this is the 17 Nov follow-up brought forward.
 
-VERDICT (15 Nov 2026): the counting rule is settled and one swap count now holds across step sizes, models and deforming-zone
+VERDICT, second round (15 Nov 2026, sections 7-10): the plate-scale agreement found in the first round does NOT carry over to an
+independent plate history, events do NOT cluster at the known reorganisations beyond chance, and the neighbour numbers are far
+broader than random.
+- Independent history: GPlately offers only one model with plate boundaries outside the Müller (EarthByte) family, Scotese & Wright
+  2018 (C. R. Scotese's PALEOMAP rotations), and its boundaries cover only 100 Ma to now with 12 to 17 plates. Every frame passes
+  Euler (101 of 101), but it has 1 persistent swap in 100 Myr (5 raw), 4 splits, 3 merges, 3 births, deaths 0: per plate and per
+  100 Myr 0.07 persistent swaps against 0.44 to 0.58 in the rigid Müller-family readings. So the family's 23-35 persistent swaps
+  measure how finely those models divide the plates, not a rate the two histories share. Young 2018 reads as the Müller 2016 map
+  today (46 / 88 / 132) and was not run; Domeier & Torsvik 2014 (410-250 Ma, Matthews 2016's source there) passes Euler in all 160
+  frames and gives 15 persistent swaps at 1 Myr steps against 26 in Matthews 2016 over the same window (28 at 5 Myr steps).
+- Reorganisations (105-100 Ma and about 50 Ma; circular-shift test stated before the runs): in all six Müller-family readings the
+  event rate in the windows is 1.3 to 2.0 times the rate outside, but p = 0.12 to 0.28 (none below 0.05); persistent swaps alone
+  p = 0.35 to 0.79; Scotese & Wright 2018 rate ratio 0.73, p = 0.84. Claim rule not met: no clustering beyond chance is shown.
+  The 10 Myr series peak at 20-40 Ma in the family (8 to 11 events per 10 Myr) and are thin before 150 Ma.
+- Neighbour numbers: mean sides equals 6 - 12/F exactly in every frame without island loops (2169 frames), as Euler demands; the
+  spread is not random: variance of sides 3 to 11 times spherical Poisson-Voronoi's at the same F (medians per model; at least 1.5
+  times at every 50 Myr epoch of every model, below it in 33 of 2657 frames), three-sided plates 4.7 to 11 times more common (medians), and the
+  largest plate (24 sides today in Müller 2016) beyond Poisson-Voronoi's 99th percentile in 67% of frames.
+NEXT: the Sun and void tissues with the same rules; for the Earth, rates per plate (not totals) and a model-resolution control
+(merge the family's microplates to Scotese-size plates and recount) before any rate is compared across histories.
+
+VERDICT, first round (15 Nov 2026): the counting rule is settled and one swap count now holds across step sizes, models and deforming-zone
 rules; the raw counts do not.
 - Single-contact clumps EXPLAINED: they were swaps in which one pair shares a second boundary elsewhere; counted per boundary they
   are swaps (Müller 2016 on the mesh: 18 such clumps under the pair rule, 1 left; swaps 48 -> 62). The 33 failing frames came from
@@ -24,9 +45,8 @@ rules; the raw counts do not.
   equal to splits (ratio 0.7 to 1.1); no three-sided cell ever dies (deaths 0: plates end by merging). Raw swaps (58 to 188), relabels
   and clumps disagree by factors of three to ten. The models are related (Merdith 2021 and Matthews 2016 share the Müller 2016
   map today), so agreement is among kin, not independent proof; and every count describes the models, not the Earth itself.
-NEXT: (1) one more model with its own plate history (for example Young et al. 2019 or a Scotese/PALEOMAP model) to test the
-agreement; (2) persistent swaps per 100 Myr against the known reorganisations (about 100 and 50 Ma); (3) the same rules on the Sun
-and void tissues.
+NEXT (first round; (1) and (2) done in the second round): (1) one more model with its own plate history; (2) persistent swaps
+against the known reorganisations (about 100 and 50 Ma); (3) the same rules on the Sun and void tissues.
 
 ## Predictions (written 15 Nov 2026 BEFORE the runs below; only the diagnosis of the old frames and the earth-pilot frames ran first)
 
@@ -183,3 +203,192 @@ earth_mesh.py now writes parents and heirs into the frame files, so later runs c
 swap rules here (scripts/swaps.py: joins through four-fold meetings, two-sided persistence, length filter) are local to this study;
 a shared pairing and persistence rule for the logger is being added in studies/2026-11-15-event-logger/pairing/, and these frames
 are kept so they can be recounted with it.
+
+## 7. Second round: an independent plate history, events against reorganisations, neighbour numbers (predictions written 15 Nov 2026 BEFORE the runs)
+
+Models chosen (provenance read from the files GPlately downloads; nothing run yet). Of the 32 models GPlately's PlateModelManager
+lists, those with topological plate boundaries outside the Müller (EarthByte) family are few. Young et al. 2018/2019 (Geoscience
+Frontiers 10, 989-1013, doi:10.1016/j.gsf.2018.05.011) is by the same group and described as building on previous work; whether
+its last 230 Myr is Müller 2016 is checked in the pilot (present-day and 200 Ma maps against Müller 2016) before it is counted as
+kin. Clennett 2020, Zahirovic 2022, Cao 2024, Alfonso 2024, Müller 2022/2025 and Shirmard 2025 are later models of the same group,
+Seton 2012, Shephard 2013 and Gurnis 2012 earlier ones; none is treated as independent. PALEOMAP, Scotese 2016, Torsvik & Cocks
+2017, Golonka and Li 2008 carry rotations and static polygons only (no plate boundaries), so the rules cannot read them.
+Two are run:
+- Scotese & Wright 2018 (0-540 Ma; GPlately name scotese_and_wright2018, Zenodo doi:10.5281/zenodo.5348491, version
+  10.5281/zenodo.5460860): its rotation file is C. R. Scotese's PALEOMAP plate model (header: "PALEOMAP Plate Model m15g60_v2d3 ...
+  by CR Scotese 02/01/2016"), with 524 topological plate polygons and no deforming networks. Its plate history is Scotese's own, not
+  derived from the Müller family (both use the same public sea-floor magnetic data in the young oceans, so they are not blind to each
+  other). Who digitised the topological boundaries is not stated in the downloaded files; the record names Scotese and Wright.
+- Domeier & Torsvik 2014 (410-250 Ma; Geoscience Frontiers 5, 303-350, doi:10.1016/j.gsf.2014.01.002; GPlately name domeier2014):
+  "Plate tectonics in the Late Paleozoic", the original Late Paleozoic topological model; Matthews 2016 builds its 410-250 Ma on it,
+  so in that window it is Matthews 2016's source, not an independent check (Merdith 2021's link to it is not checked here); it is
+  run as the parent against which the later models' Paleozoic is read.
+
+Rules: exactly as in sections 1 to 6 (rule A, mesh level 9, step 1 Myr, Lmin 0, persistence k = 5 two-sided).
+
+Predictions for the runs:
+(P1) Scotese & Wright 2018 and Domeier & Torsvik 2014: every frame passes Euler, balance exact, negative control caught.
+(P2) Scotese & Wright 2018 in 0-230 Ma agrees with the Müller family on the agreed points: persistent swaps within a factor 2 of
+     the family's 23-35 (that is 12 to 70), splits more than births, deaths 0, persistent swaps / splits between 0.5 and 1.5, and more
+     persistent swaps in 0-100 than in 100-200 Ma. Its raw swaps, clumps and relabels lie outside the family's ranges (they are
+     reading-dependent).
+(P3) Domeier & Torsvik 2014 vs Matthews 2016 and Merdith 2021 in 250-410 Ma: persistent swaps within 30% of Matthews 2016 (its
+     direct descendant there).
+
+Time series and reorganisations (scripts/timeseries.py; step-1 events and Lmin 0 frames of every run). Classes: persistent swaps
+(k = 5), splits, merges, births; counts in 5 and 10 Myr bins over each model's span. Reorganisations fixed before looking, from the
+literature: 105-100 Ma (Matthews, Seton and Müller 2012, "A global-scale plate reorganization event at 105-100 Ma", Earth Planet.
+Sci. Lett. 355-356, 283-298) and about 50 Ma (Hawaiian-Emperor bend 50-47 Ma, Sharp and Clague 2006, Science 313, 1281-1284;
+Australian-Antarctic reorganisation at the bend's time, Whittaker et al. 2007, Science 318, 83-86; India's collision with Asia
+about 50-55 Ma). The kinematic synthesis of these models is Matthews et al. 2016, "Global plate boundary evolution and kinematics
+since the late Paleozoic" (Global Planet. Change 146, 226-250; the reorganisation list in Müller et al. 2016 is used the same way).
+Windows W = [98, 108) and [45, 55) Ma (20 Myr in all); an event between frames t0 and t0 - 1 has age t0 - 0.5.
+Test (stated now): statistic = number of events (persistent swaps + splits + merges + births) with age in W, in 0-230 Ma; null =
+the same event series shifted in a circle by a whole number of Myr drawn uniformly from 0..229 (keeps every cluster and the total,
+destroys only the alignment with W); 10 000 shifts, fixed seed; one-sided p = share of shifts with a count at least the observed.
+Also reported: rate in W / rate outside W, the same test for persistent swaps alone, and (exploratory, not part of the claim) the
+Farallon breakup window [20, 26) Ma (Lonsdale 2005, Tectonophysics 404, 237-264).
+Claim rule (stated now): "events cluster at reorganisations beyond chance" only if p < 0.05 in Scotese & Wright 2018 AND in at least
+4 of the 6 Müller-family readings. Caveat stated now: the Müller-family models were built by the authors who described the 105-100
+Ma event, so their test is partly circular; Scotese & Wright 2018 is the check.
+(P4) Combined events: p < 0.05 in at least 4 of 6 Müller-family readings (rate in W about 1.5 to 2 times the rate outside).
+(P5) Scotese & Wright 2018: rate in W above the rate outside, but p > 0.05 (claim not met).
+(P6) Persistent swaps alone (about 25 per model): p > 0.05 in most readings (too few events for the test).
+
+Neighbour numbers (same script; every 1 Myr frame; epochs reported every 50 Myr). n = number of boundaries of a cell (sides,
+counted per boundary) and the number of distinct neighbours. Reference: studies/2026-11-15-tissue-null-models (mean sides 6 - 12/F
+exactly for a triple-junction map of F cells on the sphere; 2D Poisson-Voronoi variance mu2 = 1.781, Hinde and Miles 1980);
+Poisson-Voronoi on the sphere with the same F simulated here (2000 maps per F; uniform random points, Voronoi from the convex hull).
+(P7) Mean sides equals 6 - 12/F exactly in every frame without island loops and with one connected boundary network (Euler).
+(P8) The plates' variance of sides mu2 is larger than spherical Poisson-Voronoi's at the same F, by at least 1.5 times, at every
+     50 Myr epoch of every model (a few large plates with many sides and many small three- and four-sided plates).
+(P9) Three-sided plates are more common than in Poisson-Voronoi at the same F (fraction at least twice), and the largest side
+     number exceeds Poisson-Voronoi's 99th percentile at the same F in most frames.
+
+Pilot (earth-indep-pilot, single frames at mesh level 9; FINAL FAIL, read before any full run): Scotese & Wright 2018's topological
+plate polygons exist only from 100 Ma to now (12 polygons at 100 Ma, 17 today, none at 105 Ma or older; the rotations reach 540 Ma
+but the boundaries do not); Domeier & Torsvik 2014 has none at exactly 410 Ma (16 at 400, 17 at 250). The frames that exist pass
+Euler (Scotese & Wright today 17 cells / 30 junctions / 45 boundaries; Domeier & Torsvik at 250 Ma 17 / 30 / 45). Young 2018 today
+reads 46 / 88 / 132 with 126 neighbour pairs, the Müller 2016 map (boundary length 300 065 km against 300 218 km), so it is kin and
+not run. Its 200 Ma frame failed in the pilot (model files were still downloading in a parallel process) and is not needed.
+
+Predictions AMENDED after the pilot, before the full runs (the claim rule above cannot be met as written, because Scotese & Wright
+2018 has no boundaries before 100 Ma):
+- Runs: Scotese & Wright 2018 100-0 Ma; Domeier & Torsvik 2014 409-250 Ma.
+- (P2') Scotese & Wright 2018 with 12-17 plates (against 30-46 in the Müller family over 0-100 Ma): persistent swaps in 0-100 Ma
+  between 3 and 19 (family 14-19); splits at least births; deaths 0; per plate and per 100 Myr, persistent swaps within a factor 2 of
+  the family's.
+- Reorganisation test for Scotese & Wright 2018: span 0-100 Ma, windows [45, 55) and [98, 100) (the part of [98, 108) inside its
+  record), same circular-shift null over 0..99. Claim rule amended: "events cluster at reorganisations beyond chance" only if p <
+  0.05 in at least 4 of the 6 Müller-family readings over 0-230 Ma AND p < 0.05 in Scotese & Wright 2018 over 0-100 Ma; the 50 Ma
+  window alone is also tested in every model ([45, 55), spans as above) and reported separately.
+- (P5') Scotese & Wright 2018: rate in the windows above the rate outside, p > 0.05.
+
+## 8. Second-round results (scripts/earth_mesh.py with an optional youngest age, timeseries.py; results/)
+
+### 8a. The two new runs (rule A, mesh level 9, Lmin 0; every census: frames failing 0, balance failures 0, negative control caught)
+| run | frames | plates | raw swaps at step 1 / 2 / 5 / 10 Myr | persistent swaps (k 5) at the same steps | births | splits | merges | clumps (step 1) |
+|---|---|---|---|---|---|---|---|---|
+| Scotese & Wright 2018 (100-0 Ma) | 101 | 12-19 | 5 / 5 / 3 / 2 | 1 / 1 / 3 / 2 | 3 / 1 / 1 / 2 | 4 / 5 / 5 / 5 | 3 / 2 / 2 / 0 | 6 |
+| Domeier & Torsvik 2014 (409-250 Ma) | 160 | 15-21 | 31 / 27 / 28 / 15 | 15 / 13 / 28 / 15 | 0 / 0 / 0 / 0 | 5 / 5 / 4 / 3 | 4 / 6 / 2 / 1 | 55 |
+- Data quality: Scotese & Wright 2018 has no gap or overlap of its plate polygons in any frame; Domeier & Torsvik 2014 gaps at most
+  0.01% and no overlap above 1%.
+- Scotese & Wright 2018 against the family over 0-100 Ma (persistent swaps / splits / merges / births; mean plates): Müller 2016
+  17 / 16 / 12 / 7 (31.8 plates), Müller 2019 A 19 / 18 / 15 / 13 (32.6), Matthews 2016 15 / 16 / 15 / 7 (31.8), Merdith 2021
+  14 / 16 / 14 / 9 (31.8), Scotese & Wright 2018 1 / 4 / 3 / 3 (15.2). All four classes per plate: family 1.6 to 2.0 per 100 Myr in
+  the rigid readings, Scotese & Wright 0.72; persistent swaps per plate 0.44 to 0.58 against 0.07.
+- Domeier & Torsvik 2014 against its descendants over 409-250 Ma (persistent swaps / splits / merges / births): Matthews 2016
+  26 / 13 / 2 / 0 (17.3 plates), Merdith 2021 16 / 6 / 5 / 2 (19.4), Domeier & Torsvik 2014 15 / 5 / 4 / 0 (17.4). Its persistent
+  count is step-dependent (15 at 1 Myr, 28 at 5 Myr; the first-round runs agreed within 3 to 27%): contacts in this model often last
+  under 5 Myr. Births 0 and deaths 0: its plates arise only by splitting.
+
+### 8b. Events in 10 Myr bins, 0-230 Ma (persistent swaps + splits + merges + births; persistent swaps in brackets; results/timeseries*.json also hold 5 Myr bins, each class, and Domeier & Torsvik 2014 and Merdith 2021 to their ends)
+| age (Ma) | M16 | M19 A | M19 B | M19 C | Mat16 | Mer21 | SW18 |
+|---|---|---|---|---|---|---|---|
+| 0-10 | 4 (0) | 11 (2) | 18 (6) | 13 (3) | 4 (0) | 4 (0) | 1 (0) |
+| 10-20 | 4 (2) | 4 (3) | 6 (1) | 3 (1) | 4 (2) | 2 (0) | 2 (1) |
+| 20-30 | 8 (3) | 9 (2) | 8 (0) | 9 (1) | 8 (3) | 10 (3) | 2 (0) |
+| 30-40 | 10 (4) | 10 (2) | 11 (2) | 11 (2) | 10 (4) | 10 (4) | 1 (0) |
+| 40-50 | 9 (1) | 8 (1) | 6 (1) | 7 (1) | 9 (1) | 8 (0) | 0 (0) |
+| 50-60 | 3 (0) | 4 (1) | 10 (1) | 9 (1) | 3 (0) | 3 (0) | 1 (0) |
+| 60-70 | 3 (2) | 3 (0) | 6 (0) | 7 (0) | 3 (2) | 4 (2) | 2 (0) |
+| 70-80 | 4 (3) | 6 (3) | 5 (3) | 6 (3) | 3 (1) | 3 (2) | 0 (0) |
+| 80-90 | 5 (1) | 5 (0) | 6 (0) | 5 (0) | 7 (1) | 6 (1) | 1 (0) |
+| 90-100 | 2 (1) | 5 (5) | 6 (5) | 5 (5) | 2 (1) | 3 (2) | 1 (0) |
+| 100-110 | 6 (2) | 5 (2) | 7 (1) | 5 (1) | 3 (1) | 3 (1) | - |
+| 110-120 | 1 (1) | 8 (3) | 11 (4) | 8 (3) | 2 (1) | 1 (1) | - |
+| 120-130 | 5 (2) | 5 (1) | 3 (1) | 3 (0) | 4 (2) | 4 (2) | - |
+| 130-140 | 4 (1) | 6 (3) | 2 (2) | 4 (2) | 4 (1) | 5 (1) | - |
+| 140-150 | 2 (0) | 4 (2) | 5 (2) | 4 (2) | 4 (2) | 6 (3) | - |
+| 150-160 | 1 (0) | 4 (0) | 6 (0) | 3 (0) | 2 (0) | 1 (0) | - |
+| 160-170 | 2 (1) | 3 (2) | 3 (1) | 3 (2) | 2 (1) | 3 (0) | - |
+| 170-180 | 1 (0) | 3 (1) | 1 (1) | 1 (1) | 3 (1) | 2 (0) | - |
+| 180-190 | 1 (1) | 1 (1) | 3 (1) | 3 (1) | 0 (0) | 0 (0) | - |
+| 190-200 | 2 (0) | 1 (0) | 0 (0) | 0 (0) | 2 (0) | 2 (0) | - |
+| 200-210 | 3 (1) | 1 (0) | 1 (0) | 1 (0) | 0 (0) | 0 (0) | - |
+| 210-220 | 0 (0) | 0 (0) | 0 (0) | 0 (0) | 1 (1) | 0 (0) | - |
+| 220-230 | 0 (0) | 2 (1) | 2 (1) | 2 (1) | 2 (2) | 1 (1) | - |
+
+### 8c. Reorganisation test (rules in section 7; 10 000 circular shifts, seed 20261115)
+| run (span) | events | in windows (expected) | rate ratio | p | persistent swaps only: in (exp.), p | 105-100 Ma window only, p | 50 Ma window only, p | exploratory 20-26 Ma, p |
+|---|---|---|---|---|---|---|---|---|
+| Müller 2016 (0-230) | 80 | 13 (6.96) | 2.04 | 0.115 | 3 (2.26), 0.349 | 0.196 | 0.154 | 0.130 |
+| Müller 2019 A | 108 | 12 (9.39) | 1.31 | 0.279 | 3 (3.04), 0.665 | 0.470 | 0.248 | 0.519 |
+| Müller 2019 B | 126 | 18 (10.96) | 1.75 | 0.135 | 3 (2.87), 0.524 | 0.355 | 0.126 | 0.188 |
+| Müller 2019 C | 112 | 14 (9.74) | 1.50 | 0.214 | 2 (2.61), 0.795 | 0.504 | 0.155 | 0.135 |
+| Matthews 2016 | 82 | 11 (7.13) | 1.63 | 0.181 | 3 (2.35), 0.438 | 0.350 | 0.150 | 0.109 |
+| Merdith 2021 | 81 | 10 (7.04) | 1.48 | 0.240 | 2 (2.00), 0.556 | 0.390 | 0.210 | 0.118 |
+| Scotese & Wright 2018 (0-100) | 11 | 1 (1.32) | 0.73 | 0.840 | 0 (0.12), 1.0 | 1.0 | 0.769 | 0.091 |
+- Every family reading has more events in the windows than expected, none significantly; the excess is about 3 to 7 events, which
+  the circular shifts (keeping the series' own clusters) reproduce in 12 to 28% of shifts. The family's Müller 2019 readings carry 5
+  persistent swaps at 96-90 Ma, just younger than the 105-100 Ma window; the 50 Ma window holds 6 to 11 events of the 11 to 16
+  found in 40-60 Ma. The series also rise toward the present with the number of plates, which the circular null does not remove;
+  a per-plate rate would be the next test, not part of this claim.
+
+### 8d. Neighbour numbers (sides counted per boundary; spherical Poisson-Voronoi with the same F, 2000 maps per F)
+| run | frames | frames without island loops: mean = 6 - 12/F | variance of sides / Poisson-Voronoi: median (min) | three-sided share / PV: median | largest side number above PV 99th percentile |
+|---|---|---|---|---|---|
+| Müller 2016 | 231 | 231 of 231 | 5.4 (1.6) | 9.7 | 126 frames |
+| Müller 2019 A | 251 | 240 of 240 | 5.4 (1.7) | 11.4 | 185 |
+| Müller 2019 B | 251 | 10 of 10 | 11.1 (3.6) | 7.7 | 217 |
+| Müller 2019 C | 251 | 58 of 58 | 8.5 (3.4) | 11.2 | 214 |
+| Matthews 2016 | 411 | 411 of 411 | 4.5 (1.4) | 7.8 | 238 |
+| Merdith 2021 | 1001 | 958 of 958 | 4.7 (1.3) | 6.9 | 669 |
+| Scotese & Wright 2018 | 101 | 101 of 101 | 4.6 (4.1) | 6.9 | 53 |
+| Domeier & Torsvik 2014 | 160 | 160 of 160 | 3.2 (0.8) | 4.7 | 77 |
+- Epochs (F, variance of sides, PV variance, three-sided share): Müller 2016 today 46, 22.6, 1.51, 28%; 50 Ma 27, 9.7, 1.35, 19%;
+  100 Ma 26, 2.3, 1.34, 12%; 150 Ma 22, 10.7, 1.28, 32%; 200 Ma 13, 3.9, 1.00, 23%. Spherical PV has 1.5 to 3.6% three-sided cells
+  at these F. The 100 Ma maps are the most even in every rigid family reading (variance 2.1 to 3.0, against 9.7 to 23 at 50 Ma and today).
+- Frames below 1.5 times PV: Matthews 2016 7 (336-330 Ma, 1.42), Merdith 2021 11 (near 940 Ma, 1.30), Domeier & Torsvik 2014 15
+  (399-330 Ma, down to 0.80, where its 16 plates are nearly even); at the 50 Myr epochs every model stays at or above 1.58.
+
+## 9. Second-round predictions checked
+(P1) Every frame passes, balance exact, control caught: HELD (101 of 101 and 160 of 160).
+(P2) As first written (0-230 Ma) it could not be tested: the model has no boundaries before 100 Ma (amended before the runs).
+(P2') Persistent swaps in 0-100 Ma between 3 and 19: FAILED (1; 3 at 5 Myr steps). Splits at least births: HELD (4, 3). Deaths 0:
+HELD. Per plate within a factor 2 of the family: FAILED (0.07 against 0.44-0.58, about 7 times lower).
+(P3) Domeier & Torsvik 2014 within 30% of Matthews 2016 in 250-410 Ma: FAILED at 1 Myr steps (15 against 26); at 5 Myr steps 28.
+(P4) Combined events p < 0.05 in at least 4 of 6 family readings: FAILED (0 of 6; rate ratios 1.3 to 2.0 did appear).
+(P5') Scotese & Wright 2018 rate in windows above outside: FAILED (0.73); p > 0.05: HELD (0.84).
+(P6) Persistent swaps alone p > 0.05 in most readings: HELD (all seven).
+(P7) Mean sides 6 - 12/F in every frame without islands: HELD (2169 of 2169).
+(P8) Variance of sides at least 1.5 times PV at every 50 Myr epoch: HELD (minimum 1.58); in single frames it fails in 33 of 2657.
+(P9) Three-sided share at least twice PV: HELD in 2534 of 2657 frames; largest side number above PV's 99th percentile in most
+frames: HELD (1779 of 2657, 67%).
+
+## 10. Second-round runs, files and credits
+Runs (FINAL ok unless stated; nothing left running): earth-indep-pilot (single frames; FINAL FAIL, which found the Scotese & Wright
+record limit and a download race, read in section 7), earth-sw18, earth-dt14 (stopped deliberately at 24 of 160 frames: under
+shared load it ran at 71 s per frame; rerun as earth-dt14b), earth-dt14b, earth-ts-pilot, earth-ts6, earth-ts-sw18, earth-ts-dt14;
+on the two compute machines. Files: results/frames_, events_ and census files of scotese_and_wright2018_rigid and domeier2014_rigid
+(the frame files now carry lineage), results/timeseries6.json, timeseries_sw18.json, timeseries_dt14.json (every event with its age,
+5 and 10 Myr bins, tests, per-frame neighbour statistics and the PV reference per F).
+Credits, in addition to section 2: Scotese & Wright 2018, PALEOMAP Paleodigital Elevation Models (PaleoDEMS) for the Phanerozoic,
+Zenodo doi:10.5281/zenodo.5348491, with C. R. Scotese's PALEOMAP plate model (rotations) and its topological plate boundaries;
+Domeier & Torsvik 2014, Plate tectonics in the Late Paleozoic, Geoscience Frontiers 5, 303-350; Young et al. 2019 (read at present
+day only); both new models downloaded through GPlately's PlateModelManager and resolved with pyGPlates. Reorganisation dates:
+Matthews, Seton & Müller 2012 (EPSL 355-356, 283-298), Sharp & Clague 2006 (Science 313, 1281-1284), Whittaker et al. 2007
+(Science 318, 83-86), Lonsdale 2005 (Tectonophysics 404, 237-264); kinematic context Matthews et al. 2016 (Global Planet. Change
+146, 226-250; the title "Global plate boundary evolution and kinematics since the late Paleozoic" belongs to this 2016 paper) and
+Müller et al. 2016. Poisson-Voronoi variance reference: Hinde & Miles 1980 via studies/2026-11-15-tissue-null-models; SciPy
+ConvexHull (Qhull) for the spherical Voronoi maps.
