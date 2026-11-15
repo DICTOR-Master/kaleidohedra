@@ -1,7 +1,7 @@
 #!/bin/bash
 # Independent re-check of every leaf of every chart with FLINT/Arb (b5_arb.py), on the second compute machine.
 cd "$(dirname "$0")/.." || exit 1
-PY=${PY:-~/geom/bin/python}
+PY=${PY:-python3}   # a Python with sage (passagemath), python-flint, mpmath, numpy
 st=0
 for c in main A B C1 C2 W Wt+ Wt- Wr+ Wr-; do
   p=data/polys-utr-$c.json; h=-; [ $c = main ] && { p=data/polys-utr.json; h=data/holes-main.json; }; [ $c = C1 ] && h=data/holes-C1.json

@@ -6,10 +6,10 @@
 #     two files at a time, to measure kernel time and memory per leaf.
 # Writes logs/lean-*.log and data/lean-pilot.json.  FINAL ok iff every file compiles without error.
 cd "$(dirname "$0")/.." || exit 1
-PY=${PY:-~/geom/bin/python}
-LP=${LEANPROJ:-$HOME/lean/palomar-dicto}
-OUT=${LEANOUT:-$HOME/lean/yantra-box-pilot}
-mkdir -p "$OUT"; export PATH=$HOME/.elan/bin:$PATH
+PY=${PY:-python3}   # a Python with sage (passagemath), python-flint, mpmath, numpy
+LP=${LEANPROJ:?set LEANPROJ to a Lean 4 + Mathlib project}
+OUT=${LEANOUT:-$PWD/lean-work}
+mkdir -p "$OUT"; export PATH=${ELAN_BIN:+$ELAN_BIN:}$PATH
 st=0
 run() {  # file tag
   /usr/bin/time -f "TIME $2 %e s %M KB" timeout 1500 bash -c "cd $LP && lake env lean $1" > logs/lean-$2.log 2>&1

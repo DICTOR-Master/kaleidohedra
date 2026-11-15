@@ -2,8 +2,8 @@
 # The whole box certificate for Kulaichev's yantra in one job: build, generate, check exactly, semantic control, negative controls.
 # Every step must end FINAL ok (the negative controls must end FAIL); the job's FINAL line depends on all of them.
 cd "$(dirname "$0")/.." || exit 1
-PY=${PY:-~/geom/bin/python}
-CENSUS=${CENSUS:-$HOME/k-research/studies/2026-11-15-yantra-uniqueness/data/census-K.json}
+PY=${PY:-python3}   # a Python with sage (passagemath), python-flint, mpmath, numpy
+CENSUS=${CENSUS:-../2026-11-15-yantra-uniqueness/data/census-K.json}
 st=0
 step() {  # name, log, command...
   local nm=$1 lg=$2; shift 2
