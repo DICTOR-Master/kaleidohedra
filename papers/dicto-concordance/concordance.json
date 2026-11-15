@@ -7997,6 +7997,16 @@
     "retry": "never; next only: Lean slope-form soundness, derivation identities, chart covering lemmas, Banach for the Krawczyk box; then the DICTO Yantra (Q(sqrt5) coefficients, u unbounded)",
     "study": "studies/2026-11-15-yantra-box-certificate",
     "goes_to": "#103 (uniqueness remark: an elimination-free certificate exists); Palomar entry later (not submitted)"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "One tissue, three scales: Rutenberg-McCurdy macroscopic T1 per T2 in a froth that reaches its scaling state (2048^2 Potts froth, rule RM with rc fixed in advance) against 0.53; total against Herdtle-Aref 1.5; T2 shares at l^2 against 9/84/7",
+    "method": "studies/2026-11-15-event-logger/scaling: froth_scaling.py (potts.py rung 1 unchanged, T = 0.3, 2048^2, N0 = 262144, 4000 MCS, frames every MCS for t 1000-4000, fragment clean-up on a copy); scaling test fixed in advance (4 equal-log quarters: p(n) 0.015, mu2 0.05, KS 0.03, slope 10%); count_scaling.py = rm_count.py unchanged in 500-MCS blocks, steps 1/2/4/8, W = P = 8 and 0, rc = 1 pixel (paper: rc = vertex-merging distance) and 0.5, 2; shifted blocks for edges; seeds 1, 2 and a 1024^2 check; jobs scale-pilot, scale-big, scale-small FINAL ok",
+    "status": "COMPUTED: 0.48 +- 0.02 per T2 at rc = 1 (lower edge of 0.53 +- 0.05) in the one run that passes the scaling test; FAILED: rc-independence (0.64 / 0.32 at rc 0.5 / 2) and froth structure (mu2 1.90 vs 1.24)",
+    "result": "seed 2 passes the scaling test (3624 -> 903 cells); seed 1 fails narrowly, 1024^2 fails. Seed 2: RM rc=1 0.480/0.476/0.465/0.461 at steps 1/2/4/8; rc=0.5 0.642, rc=2 0.316; blocks rise 0.45 -> 0.56 over the window; total 1.08/0.99/0.89/0.79 vs 1.5; SS 0.97; shares at l^2 26/67/6 % vs 9/84/7; shifted blocks within 3%. Stationary mu2 1.90 (paper 1.24 +- 0.01, Stavans-Glazier 1.4 +- 0.1); von Neumann n0 = 6.00; growth over vN coefficient 1.17 vs 0.898.",
+    "retry": "never retry the Potts lattice against 0.53 by size alone: its stationary mu2 (1.9) is not the dry froth's and the count moves by a factor 2 with rc. Next: a vertex-model froth with fixed microscopic rc and T2n deaths (Rutenberg-McCurdy's own setup), or accept the lattice value as a lattice result",
+    "study": "studies/2026-11-15-event-logger (Scaling-state froth section, scaling/)",
+    "goes_to": "One tissue, three scales (counting rules; foam ladder rung 1)"
    }
   ]
  },

@@ -37,6 +37,9 @@ RUTENBERG-McCURDY COUNT (15 Nov 2026, last section; scripts/rm_count.py): their 
 bubbles exceed l^2 = rc sqrt(<A>)). By it the foam gives 0.30 macroscopic swaps per vanished cell (rc = 1 pixel), within 20% over
 steps 1 to 4, but 0.14 to 0.46 for rc = 2 to 0.5: no scaling state, so 0.53 cannot be tested here. The vanishing rule without a
 window removes 99% of the swaps (0.004 to 0.014 left). Total 0.76 against 1.5.
+SCALING-STATE FROTH (15 Nov 2026, last section; scaling/): a 2048^2 Potts froth in a tested scaling state gives 0.48 +- 0.02
+macroscopic T1 per T2 at rc = 1 pixel (paper 0.53 +- 0.05), step-independent, but 0.64 / 0.32 at rc = 0.5 / 2 and rising over the
+window; its mu2 = 1.90 is not the dry froth's 1.24. Total 1.08 against 1.5; shares at l^2 26 / 67 / 6 % against 9 / 84 / 7.
 NEXT (as it stood): settle the Earth counting rule before any rate is quoted. First, explain the single-contact clumps. Second, a persistence
 rule for swaps (fix the tolerance first). Third, close the Müller 2019 seam and run a second model, then compare the two.
 
@@ -569,3 +572,102 @@ lattice sheds about half of that. The rest vanish four-sided within one sweep, w
 of 0.53 needs a froth that reaches a scaling state with l^2 far from 1 pixel and far from <A>: rung 1 at 1024^2 or larger, run long,
 the step already listed as the foam ladder's next step, with rule RM and rc = 0.5, 1, 2 fixed in advance.
 - Nothing is left running.
+
+## Scaling-state froth: Rutenberg-McCurdy count where it is meant to hold (scaling/; scripts scaling/scripts/froth_scaling.py, count_scaling.py)
+
+VERDICT (15 Nov 2026): one of the two 2048^2 froths passes the scaling test fixed in advance. In it, the macroscopic T1 count by
+the paper's own rule is 0.48 +- 0.02 per T2 at rc = 1 pixel, at the lower edge of Rutenberg-McCurdy's 0.53 +- 0.05. But the count
+is not scale-free here: rc = 0.5 and 2 give 0.64 and 0.32, and the 500-MCS blocks rise from 0.45 to 0.56 as l^2 / <A> falls. So the
+number agrees at the natural choice rc = 1 pixel, and the paper's claim that it does not depend on rc FAILS on the lattice.
+- Scaling state: seed 2 (2048^2, t = 1000 to 4000 MCS, 3624 to 903 cells, <A> 1157 to 4645 pixels) passes all four quarters (p(n)
+  within 0.009, mu2 within 0.05, KS 0.018, slope within 2.7%). Seed 1 fails narrowly in every window tried (mu2 0.056 and slope
+  10.5% off in one quarter), and 1024^2 fails (only 948 to 233 cells), so seed 1 and 1024^2 are not counted.
+- The stationary state is not the froth's: mu2 = 1.90 (n2, contacts of at least 2 pixel edges: 1.92) against 1.24 +- 0.01
+  (Rutenberg-McCurdy) and 1.4 +- 0.1 (Stavans-Glazier experiment); p(3..9) = 0.008 / 0.109 / 0.278 / 0.291 / 0.175 / 0.089 / 0.035.
+  Von Neumann's law holds exactly in form (n0 = 6.00, about 1.0 pixel per MCS per side), and <A> is linear in t, but growth over the
+  von Neumann coefficient is 1.17 against their 0.898. The Potts froth at T = 0.3 has a wider side distribution than the vertex
+  model and the experiment.
+- Total counted swaps per T2: 1.08 (step 1), below Herdtle-Aref's 1.5. Side-shedding (rule SS) 0.97 per T2.
+- Steps 1 / 2 / 4 / 8 MCS: rule RM 0.480 / 0.476 / 0.465 / 0.461 (step-independent, 4% from step 1 to 8); total 1.08 / 0.99 / 0.89 /
+  0.79.
+- T2 shares at l^2 (rc = 1), 3 / 4 / 5 sides: 26 / 67 / 6 % against 9 / 84 / 7 %; at rc = 2: 15 / 69 / 15 %.
+- Block edges: blocks shifted by 250 MCS give 0.494 and 1.093 (3% and 1.5% from the main blocks).
+- Nothing is left running. The frames (about 1 GB per run) stay on the compute machines and are not in git.
+
+What the paper fixes (arXiv cond-mat/0502287v1, read again in full for this section, sections II and III): rc = 0.01 in their
+length unit, with initial mean bubble area A0 = 10^3 and N0 up to 10^4 bubbles (box 10^7); T1 enters when two vertices come within
+rc, T2 when a bubble's area falls below 10 rc^2. Scaling state: <A> = 0.94 (t~ - t~0) with t~ = t D sigma (von Neumann
+dA/dt~ = (pi/3)(n - 6)), so growth over the von Neumann coefficient = 0.94 / (pi/3) = 0.898; mu2 = 1.24 +- 0.01 (they quote the
+undrained experiment of Stavans and Glazier 1989 at 1.4 +- 0.1 and Herdtle-Aref at about 1.2); E/Ehex = 0.938; T2 shares at l^2
+9 / 84 / 7 % (3 / 4 / 5 sides) +- 2; R_T1 / R_T2 = 0.53 +- 0.05, reached only after a transient of about a decade in t~ (Fig. 7:
+t~ from about 10^5 to 10^6, where <A> is 10^5 to 10^6, so l^2 / <A> = rc / L is 1e-5 to 3e-5). Their only statement about
+Herdtle-Aref's 3/2 is that it "included microscopic side-shedding events" and is therefore an upper bound; the difference
+1.5 - 0.53 = 0.97 is ours, not theirs.
+
+rc in pixels, fixed before any run: their rc is the distance at which vertices merge (the Plateau-border size). In the lattice froth
+that distance is the lattice spacing, so rc = 1 pixel (main), with 0.5 and 2 beside it to test their claim that a constant factor in
+l changes nothing in the scaling regime. The dimensionless ratio rc / L of the paper (about 1e-5) cannot be reached on any lattice
+we can run (it needs bubbles about 10^5 pixels across); at 2048^2 it is 1e-2 at best. This is the one unremovable difference.
+
+Model choice: the Potts froth of the foam ladder (rung 1, potts.py unchanged; Glazier, Gross & Stavans 1987) at T = 0.3, on a 2048^2
+torus. The grains stream's curved vertex model (studies/2026-11-15-grains-polycrystals/scripts/vertex2d.py) was considered and not
+used: its T1 length scales with the mean boundary (delta = eps <l>), so it has no fixed microscopic scale rc, and only three-sided
+grains vanish, so the 3 / 4 / 5 shares are fixed by construction. One change from rung 1, fixed before any run: fragment clean-up is
+applied to a copy of the label map for frames and statistics, so saving frames does not change the dynamics.
+
+Rules fixed before any run (count_scaling.py doc): stats every 10 MCS from the start; frames at every MCS inside the window.
+Scaling test: window cut into four quarters of equal log t; stationary if every quarter is within 0.015 of the whole window in p(n)
+(n = 3 to 9), within 0.05 in mu2, within KS distance 0.03 in the A/<A> distribution, and has an <A>-against-t slope within 10% of the
+whole window's; on failure the first quarter is dropped (at most twice). Count only inside the window that passes: rm_count.py
+unchanged, blocks of 500 MCS, steps 1 / 2 / 4 / 8 MCS, W = P = 8 (main) and 0, rc = 1 (main), 0.5, 2; blocks shifted by 250 MCS at
+step 1 for the block-edge effect. Main test: macroscopic T1 per T2 (rule RM, rc = 1, W = P = 8, step 1) against 0.53 +- 0.05;
+total counted swaps per T2 against 1.5; T2 shares at l^2 against 9 / 84 / 7 %.
+
+Predictions (written 15 Nov 2026 before any run of these scripts, pilot included):
+- Scaling: reached at 2048^2 from <A> about 50 times the initial area; in the window p(n) stationary, mu2 between 1.1 and 1.5 (Potts
+  froths and grain growth are reported near 1.2 to 1.4), <A> linear in t, growth over von Neumann coefficient 0.8 to 1.0.
+- Count (rule RM, rc = 1, step 1): 0.35 to 0.55 per T2, higher than at 256^2 (0.30) because l^2 / <A> is smaller. Against
+  0.53 +- 0.05: uncertain, more likely below. rc = 0.5 against rc = 2 still differs by more than 15% (separation only a factor L of
+  about 30 to 90 between pixel and bubble), so the paper's rc-independence FAILS here.
+- Total per T2 at step 1: 0.8 to 1.1, below 1.5 (the lattice loses small-scale shedding: cells vanish four-sided within a sweep).
+- Steps: rule-RM count within 20% over steps 1 to 4; total falls by more than 30% from step 1 to step 8.
+- T2 shares at l^2 (rc = 1): 4-sided 60 to 75%, 3-sided 15 to 25%, 5-sided 8 to 15%; nearer 9 / 84 / 7 than at 256^2 but not equal.
+- Block edges: the shifted blocks agree with the main blocks within 3%.
+
+Results (scaling/results/*_count.json, *.log, */stats.jsonl; scaling/scripts/summary.py prints them; jobs scale-pilot, scale-big,
+scale-small, FINAL ok). Seed 2, 2048^2, window 1000 to 4000 MCS, W = P = 8, per T2 (T2 = 2719 at step 1):
+
+| count | step 1 | 2 | 4 | 8 MCS |
+|---|---|---|---|---|
+| total counted swaps | 1.077 | 0.991 | 0.892 | 0.789 |
+| macroscopic (RM), rc = 1 | 0.480 | 0.476 | 0.465 | 0.461 |
+| macroscopic (RM), rc = 0.5 | 0.642 | 0.639 | 0.615 | 0.586 |
+| macroscopic (RM), rc = 2 | 0.316 | 0.315 | 0.310 | 0.310 |
+| side-shedding (SS) | 0.967 | 0.880 | 0.780 | 0.660 |
+| macroscopic (RM), rc = 1, W = P = 0 | 0.509 | 0.475 | 0.453 | 0.428 |
+
+Per block (step 1, rc = 1): 0.447 / 0.493 / 0.462 / 0.522 / 0.575 / 0.561 for t = 1000-1500 ... 3500-4000 (T2 1198 / 592 / 368 /
+245 / 193 / 123; l^2 34 to 68 pixels). Statistical error of 0.48: about 0.02 (counts 1305 of 2719). Side numbers at l^2 (rc = 1,
+step 1): 2: 27, 3: 706, 4: 1810, 5: 176.
+Scaling tests (fixed rule; quarters of equal log t): seed 2 [1000, 4000] passes. Seed 1 fails [1000, 4000] (first quarter mu2 2.04
+against 1.89), [1420, 4000] (one quarter mu2 off by 0.056) and [1840, 4000] (slope off by 10.5 to 13.8%). 1024^2 fails all three
+(mu2 per quarter 1.81 to 2.25, slopes off by up to 21%). mu2 per window: 1.89 / 1.86 / 1.86 (seed 1), 1.90 (seed 2), 2.01 (1024^2).
+Froth simulation time 85 min per 2048^2 run (two in parallel), 55 min for 1024^2.
+
+How the findings compare with the predictions:
+- Scaling reached at 2048^2: held for seed 2, FAILED for seed 1 (narrowly). mu2 between 1.1 and 1.5: FAILED (1.90). Growth over the
+  von Neumann coefficient 0.8 to 1.0: FAILED (1.17 to 1.21). <A> linear in t: held.
+- Rule RM, rc = 1, step 1, 0.35 to 0.55: held (0.48). Against 0.53 +- 0.05: at its lower edge, inside by the combined errors.
+  rc = 0.5 against rc = 2 differs by more than 15%: held (factor 2.0), so their rc-independence fails here.
+- Total 0.8 to 1.1 below 1.5: held (1.08).
+- Rule RM within 20% over steps 1 to 4: held (3%). Total falls by more than 30% from step 1 to 8: FAILED (27%).
+- T2 shares at l^2: 4-sided 60 to 75%: held (67%); 3-sided 15 to 25%: FAILED (26%); 5-sided 8 to 15%: FAILED (6.5%).
+- Block edges within 3%: held (2.9% and 1.5%).
+
+What the model difference implies. The lattice froth reaches a stationary state with the von Neumann law, but its side distribution
+is wider (mu2 1.9) than the dry froth's (1.24 to 1.4), and l^2 / <A> is about 1/60 here against about 1e-5 in the vertex model. The
+macroscopic count therefore still moves with rc (factor 2 for a factor 4 in rc) and drifts upward as the separation grows (0.45 to
+0.56 over the window), as expected if it tends to an rc-free value only when l^2 is far from both scales. The count at rc = 1 pixel
+lands on 0.53 within errors, and its drift points towards 0.53 or above, but on a lattice of this size the agreement cannot be
+separated from the choice of rc. A fair test needs a froth whose own mu2 is that of a dry froth: a vertex model with a fixed
+microscopic rc and T2n deaths (as in Rutenberg-McCurdy), not the Potts lattice.
