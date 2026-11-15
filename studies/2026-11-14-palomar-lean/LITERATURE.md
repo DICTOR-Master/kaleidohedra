@@ -132,3 +132,42 @@ novelty: >
 ```
 
 The last sentence must be checked against Mathlib and Reservoir before use. If it cannot be checked, drop it.
+
+---
+
+# Literature search for the second entry: the Loop Equality (#102, Theorem 1) (2026-11-15)
+
+**Question.** Has anyone already stated that every site of every close-packed stacking has the same number of closed non-backtracking walks of each length?
+
+**Conclusion.** We found no such statement. The nearest results are each one step short of it:
+- the equality for **all closed walks** in periodic polytypes (Thorpe 1972; Nagle 1966 for ice);
+- the equality of **band structures** of all close-packed stackings through a layer gauge (He–Wilson–Ganesh 2024), and of their nearest-neighbour **transport** (Wilson–Ganesh–Samokhin 2026);
+- for periodic stackings, the **site-averaged** loop counts, which follow from Thorpe together with the Bass formula for periodic graphs (Guido–Isola–Lapidus 2008), as #102 already says.
+
+New in #102 are the statement at every single site (walk-regular, not vertex-transitive), aperiodic stackings, and the corollaries. The formal proof makes the dependence explicit: the loops through a bond are fixed by the walk counts on that bond's four end pairs (#102, Lemma 3), and those counts do not depend on the stacking.
+
+**Honest notability estimate: 3 out of 5, 3.5 at best.** That is still below Palomar's floor of 4, though better than #43 Theorem 4 (2 out of 5).
+- For: the research audience is clear (polytypes, spin ice and ice entropy, Ihara zeta functions of periodic and aperiodic graphs). The statement is exact, for all lengths, and covers aperiodic stackings, which the periodic-graph zeta literature does not reach. The ice-polytype entropy question is active (Chen–Ran 2026; Xu–Lin–Zhang 2025).
+- Against: an editor may read it as a corollary. Thorpe's closed-walk equality plus the standard Hashimoto/Ihara reduction gives it once one also checks the bond walk counts (#102, Lemma 2 (b)), which is a short Fourier computation.
+
+## Queries and sources (15 November 2026)
+
+**Web searches**, with the query strings used:
+1. `non-backtracking walks closed same count hexagonal cubic polytypes diamond lonsdaleite every site`: only structural papers on lonsdaleite and diamond.
+2. `Ihara zeta function close-packed stacking fcc hcp polytype equal non-backtracking cycles`: only stacking-statistics papers (arXiv 1706.07852, 1708.01460, cond-mat/9810287) and arXiv 2602.18574.
+3. `"walk-regular" infinite graph not vertex-transitive stacking polytype closed walks equal Thorpe`: arXiv 1211.5689 (walk-regular graphs and hitting times), 0806.2074 (periodic graphs), 2401.06022 (walk-regular planar graphs). None treats stackings.
+4. `Thorpe "Random walks in polytype structures" 1972 citing non-backtracking` (extended search): Thorpe's abstract (ResearchGate listing) and one citing book chapter (*Energy Bands*, Springer). No non-backtracking follow-up.
+5. `Wilson Ganesh Samokhin 2602.18574 close-packed gauge symmetry hopping`: arXiv 2602.18574 (abstract read: nearest-neighbour conductance is insensitive to stacking disorder; the first difference comes from next-nearest-neighbour hopping) and arXiv 2405.15865 (He–Wilson–Ganesh, abstract read).
+6. `"non-backtracking" OR "Hashimoto" "stacking" lattice cubic hexagonal ice loops same number Bethe lattice Pauling`: arXiv 2608.07613 (Chen–Ran, *Hexagonal stacking maximizes proton configurational entropy among ice-I polytypes*). Abstract read: entropy bounds and an inequality method on even-length words; it says the equality of the cubic and hexagonal constants is open, and states no loop equality. Also arXiv cond-mat/0208303 and 1308.1014 (spin ice background).
+7. `cospectral vertices local spectrum infinite graphs layered gauge equivalent periodic aperiodic stacking walk counts`: arXiv 2308.04339 (de la Harpe, cospectral infinite graphs), 2205.12819 (local spectral measures; all vertices are dominant in walk-regular graphs), 2007.07609, 2111.01265. None treats stackings.
+8. `"non-backtracking" closed walks "close-packed" OR "polytypes" equal every vertex aperiodic stacking theorem` (extended search): Kempton arXiv 1610.04672 (closed non-backtracking walks on ℤ²), 1209.3996, 1507.03411, 2406.05759. None treats stackings.
+
+**Already searched for #102 itself** (7 November 2026; listed in #102 Section 5): DICTO's reference library (259 items, catalogue and full text); OEIS A002895, A293237; Thorpe 1972 and Betteridge 1981 (Crossref abstracts); He–Wilson–Ganesh; Isaev–McKay–Zhang §8.2; Bercu–Montégut; the OpenAlex list of the 17 works citing Thorpe 1972.
+
+**Not searched:** MathOverflow (not reachable from here), and the full texts of the 17 works citing Thorpe (only their titles were read).
+
+**Palomar database:** the one indexed entry (read 15 November for #43) is unrelated.
+
+## Fidelity of the Lean statement
+
+`DictoLoopEquality.loop_equality` states exactly the counting claim of Theorem 1: for every stacking (periodic or not), every site and every length m, the number of closed non-backtracking loops equals the number at diamond's site. It needs no extra hypothesis; for m = 1, 2 both sides are 0. The explicit series and values (Ihara–Bass, Domb numbers) are **not** part of the formal statement. `nbLoops_finite` makes sure `ncard` is a true count.

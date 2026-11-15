@@ -158,3 +158,31 @@ DICTO approved the formalisation on 15 Nov 2026. Files:
 ```
 
 **Not done, on DICTO's decision (15 Nov):** no Palomar repository and no submission. The notability estimate is 2 out of 5 (LITERATURE.md). The proof stays here as a checked formalisation of #43 Theorem 4.
+
+## Loop Equality (#102): formal proof (15 November 2026)
+
+DICTO approved formalising #102 Theorem 1 on 15 November 2026. **Nothing has been submitted, and no Palomar repository has been created.**
+
+**Status:** proved in Lean (Lean v4.35.0-rc2, Mathlib v4.35.0-rc2). There is no `sorry` and no `native_decide`, and the axioms are only `propext`, `Classical.choice` and `Quot.sound`.
+
+**Files:**
+- `lean/LoopEquality/`: Defs, Graph, Levels, Network, Counts, Main and Axioms, 1,488 lines in all.
+- `loop-equality-outline.md`: the proof outline and the correspondence notes.
+- `LITERATURE.md`, second part: the literature search and a notability estimate of 3 out of 5.
+
+The statement is `lean/LoopEquality.lean` (the Challenge) unchanged, and it needed no extra hypothesis.
+
+**Milestone log:**
+| Milestone | Content |
+|---|---|
+| (a) | definitions and statement typecheck; generic graph part (`Graph.lean`), gauge lemma (`Levels.lean`), network (`Network.lean`) |
+| (b) | key local lemma: walk counts at a site and along a bond do not depend on the stacking (`Counts.lean`) |
+| (c) | counting lemma: #102 Lemma 3 transfer and loops as edge sequences (`Graph.transfer`, `Graph.loops_ncard`) |
+| (d) | main theorems `loop_equality` and `nbLoops_finite` with no `sorry` (`Main.lean`) |
+| (e) | clean build of all modules through the job wrapper on the compute host: FINAL ok; `#print axioms` for both theorems gives `[propext, Classical.choice, Quot.sound]` |
+
+**Before any submission (DICTO's word needed):**
+- Package the proof as Challenge.lean (the statement file) plus Solution.lean, which re-exports `LoopEquality.Main`.
+- Check with the PalomarSubmission preflight that the comparator accepts declarations proved in imported modules; otherwise inline them.
+- Write formalization.yaml v0.4: source #102 with relationship `formalizes`, authors DICTO, automation `agent`, Claude Code (Opus), review `self-assessed`.
+- Note that the notability estimate (3 out of 5) is below the floor of 4.
