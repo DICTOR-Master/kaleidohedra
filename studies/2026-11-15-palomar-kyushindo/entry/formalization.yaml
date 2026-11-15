@@ -1,0 +1,182 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4
+version: "v0.4"
+
+project:
+  name: "The octahedral constant 3: a symmetric polytope lies in three times the hull of its facet foot points"
+  description: >-
+    A convex polytope S = {x : <n_i, x> <= h_i} with unit normals n_i and
+    positive distances h_i, whose family of face planes is invariant under the
+    octahedral rotation group (24 rotations), lies inside 3 times the convex
+    hull P(S) of its foot points h_i n_i; for the cube no factor c with
+    0 <= c < 3 works. The development also proves the covering lemma used for
+    it (every orbit of the octahedral rotation group on the unit sphere comes
+    within angle arccos(1/sqrt 3) of every direction, in the general form
+    |u||w|/sqrt 3 <= <g u, w> for some rotation g), which is the upper bound
+    diam(S^2/O) <= arccos(1/sqrt 3) for the known diameter of the orbit space
+    (the bound is attained). This formalises Theorem 4 of
+    DICTO's paper #43, "Kyushindo Cores".
+  authors:
+    - "DICTO"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "DICTO"
+
+classification:
+  arxiv: ["math.MG"]
+  msc2020: ["52B15", "52A40", "52B11"]
+
+sources:
+  - title: "Kyushindo Cores (paper #43, Theorem 4 and its proof; Theorem 1 for the reduction)"
+    authors:
+      - "DICTO"
+    id: "doi:10.5281/zenodo.24153218"
+    type: "paper"
+    location: "https://doi.org/10.5281/zenodo.24153218 (version 3; all versions: https://doi.org/10.5281/zenodo.23532013)"
+    relationship: "formalizes"
+    note: >-
+      Theorem 4 (octahedral nesting, sharp for the cube and octahedron) is
+      formalised with the covering lemma of its proof. The formal proof does
+      not go through #43 Theorem 1; it combines the covering lemma with strict
+      separation directly.
+    license: "CC-BY-SA-4.0"
+    author_endorsement: "participated"
+  - title: "Diameters of spherical Alexandrov spaces and curvature one orbifolds"
+    authors:
+      - "S. J. Greenwald"
+    type: "paper"
+    location: "Indiana Univ. Math. J. 49 (2000) 1449-1479"
+    relationship: "background"
+    note: "Diameters of the orbit spaces S^2/G; for the octahedral group the value arccos(1/sqrt 3) is the bound of the covering lemma."
+  - title: "Diameters of 3-sphere quotients"
+    authors:
+      - "W. D. Dunbar"
+      - "S. J. Greenwald"
+      - "J. McGowan"
+      - "C. Searle"
+    id: "arXiv:math/0702680"
+    type: "paper"
+    location: "Differential Geom. Appl. 27 (2009) 307-319"
+    relationship: "background"
+    note: "Table 2 lists diam(S^2/O) = arccos(1/sqrt 3); the covering lemma is the upper-bound half of this entry."
+  - title: "Spherical codes and designs"
+    authors:
+      - "P. Delsarte"
+      - "J. M. Goethals"
+      - "J. J. Seidel"
+    id: "doi:10.1007/BF03187604"
+    type: "paper"
+    location: "Geom. Dedicata 6 (1977) 363-388"
+    relationship: "background"
+    note: "Spherical designs; the moment identities used in the covering proof say that octahedral orbits are 3-designs."
+  - title: "Cubature formulae, polytopes and spherical designs"
+    authors:
+      - "J. M. Goethals"
+      - "J. J. Seidel"
+    type: "paper"
+    location: "The Geometric Vein, Springer, 1981, 203-218"
+    relationship: "background"
+  - title: "Mathlib (convex hulls, the geometric Hahn-Banach separation theorem, Riesz representation)"
+    contributors:
+      - name: "The Mathlib community"
+        role: "library authors"
+    type: "other"
+    location: "https://github.com/leanprover-community/mathlib4 (tag v4.35.0-rc2)"
+    relationship: "background"
+    note: "geometric_hahn_banach_closed_point and InnerProductSpace.toDual give the separation step."
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Formalised: #43 Theorem 4 in the standard frame of the octahedral group
+    (symmetry axes along the coordinate axes), for any nonempty finite
+    octahedrally invariant family of half-spaces with unit normals and positive
+    distances; the covering lemma for unit vectors (and, in the proof library,
+    for all vectors); admissibility of the cube; sharpness of the constant 3 for
+    the cube among factors c >= 0. Not formalised: the statement in an
+    arbitrary frame (it follows by rotating S); sharpness for the octahedron;
+    the equality case of the covering lemma; #43 Theorem 1 (the general
+    containment bound), Theorem 2 (the icosahedral constant 15 - 6 sqrt 5) and
+    Corollary 7 (the pyritohedral and tetrahedral constants 3 and 9).
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude Opus (Anthropic)"]
+      framework: "Claude Code (Opus)"
+      tool_setup: >-
+        A Claude Code agent wrote the Lean statement and the proofs in a
+        terminal session, compiling with Lake against Mathlib v4.35.0-rc2 on a
+        Linux workstation; plain Mathlib tactics and decide (no native_decide).
+      cost:
+        wall_time: "about one day (14-15 November 2026), including the statement audit"
+        spend_usd: "subscription-based"
+        hardware: "local Linux workstation"
+      prompting_notes: >-
+        DICTO chose the result and approved the formalisation; the agent
+        followed the proof plan of #43 (covering lemma by moments, then
+        separation) and checked each milestone by a clean build.
+  spend_usd: "subscription-based"
+  notes: >-
+    DICTO found Theorem 4 (conjectured in #43 version 1, proved in version 2,
+    with proofs found with Claude). The Lean statements and proofs were written
+    by the agent. Every milestone was checked by a clean Lake build and by
+    #print axioms (only propext, Classical.choice and Quot.sound). No
+    independent human line-by-line audit of the Lean code has been made.
+
+fidelity:
+  divergences: >-
+    (1) The octahedral group is fixed in the standard frame as the 24 signed
+    permutation matrices of determinant 1; #43 allows any frame. (2) The
+    polytope is given by a finite family of half-spaces, and P is the hull of
+    their foot points; for the facet family of a symmetric polytope this is
+    #43's P(S) exactly, and redundant half-spaces are allowed (they only
+    enlarge P). (3) Symmetry is required of the half-space family; for the
+    facet family of a symmetric S this holds automatically. (4) Boundedness is
+    not assumed, and the proof uses neither boundedness nor the positivity of
+    the distances; the hypothesis 0 < h_i is kept to match #43. (5) Sharpness
+    is stated for factors c >= 0, which #43 leaves implicit; for c <= -3 the
+    inclusion holds for the cube because P is centrally symmetric.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none"
+  notes: >-
+    The statement file was compared with #43 Theorem 4 and its proof; the
+    cube_admissible theorem shows that the hypotheses are satisfiable. Negative
+    control: a Challenge with the constant changed from 3 to 2 is rejected by
+    the comparator. The paper #43 has not had peer review.
+
+alignment:
+  namespace: "DictoKyushindo"
+  statements:
+    - source: "#43 Theorem 4 (octahedral nesting)"
+      lean: "DictoKyushindo.octahedral_nesting"
+      module: "Challenge"
+      status: "proved"
+      note: "Standard frame; any nonempty finite octahedrally invariant family of half-spaces."
+    - source: "#43 proof of Theorem 4, the covering step (known: diam S^2/O = arccos(1/sqrt 3), Greenwald 2000, Dunbar-Greenwald-McGowan-Searle 2009)"
+      lean: "DictoKyushindo.covering"
+      module: "Challenge"
+      status: "proved"
+      note: "Proved by the moments over the 24 rotations and the cubic of #43; not new."
+    - source: "#43 Theorem 4, sharpness (cube)"
+      lean: "DictoKyushindo.octahedral_nesting_sharp"
+      module: "Challenge"
+      status: "proved"
+      note: "For 0 <= c < 3; cube_admissible shows the cube satisfies the hypotheses."
+    - source: "#43 Theorem 4, the cube as an example"
+      lean: "DictoKyushindo.cube_admissible"
+      module: "Challenge"
+      status: "proved"
+      note: "Unit normals, distance 1, octahedral symmetry."
+
+acknowledgements: >-
+  Mathlib and the Lean FRO toolchain; the Palomar template. Mathematical
+  credits as listed under sources: Greenwald; Dunbar, Greenwald, McGowan and
+  Searle; Delsarte, Goethals and Seidel.
