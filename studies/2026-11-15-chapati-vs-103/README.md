@@ -82,7 +82,7 @@ To be placed where each result is used. All are drafts for DICTO's read. #103 it
 
 DICTO's results stay as they are. Proposition 3 (the parity rule) remains DICTO's. Chapati's earlier star-point rule is credited beside it, as both are independent works.
 
-## 5. Palomar (studies/2026-11-14-palomar-lean, candidates C and C′)
+## 5. Palomar (studies/2026-11-14-lean-loop-equality, candidates C and C′)
 
 **Still new, as far as the sources go.** Chapati have no exact field, no rational yantra and no viewpoint map: Theorem 2 (R1), Theorem 1 and Theorem 5 with uniqueness β* = −y_H are not in their report. Their statement that the system has "no closed-form solution" is, if anything, a recent statement that Theorem 1 answers. Theorem 1's novelty still rests on its explicit field, beside Chiodo 2021's constructibility, which must be credited. For any entry, add Chapati & Chapati 2026 to the literature-search record as related work: numerical reconstruction, star-point count, sampling. Do not cite it as prior art for the candidate statements. A Lean entry built on Proposition 3 would need the star-point rule credited and the Kulaichev difference stated, but Proposition 3 is not a listed candidate.
 

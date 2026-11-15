@@ -5140,7 +5140,7 @@
    },
    {
     "result": "Loop Equality formally verified in Lean 4 + Mathlib (v4.35.0-rc2): loop_equality, loop_count_eq (explicit count, 15 values to m = 34), W_closed (chain form), Fibonacci corollary; no sorry, no native_decide; axioms propext, Classical.choice, Quot.sound. Not formalised: Ihara-Bass for all m (m <= 12), Bala identity (n < 10), Fibonacci word forms (k < 100), Corollaries 2, 3",
-    "study": "studies/2026-11-14-palomar-lean (lean/LoopEquality)",
+    "study": "studies/2026-11-14-lean-loop-equality (lean/LoopEquality)",
     "goes_to": "#102 Version 5, Section 3 'Formal proof'; draft for DICTO's read (15 Nov); not published",
     "date": "2026-11-15"
    }
@@ -9157,8 +9157,8 @@
    "paper": "#43 Kyushindo Cores (v3)",
    "where": "covering step behind Theorems 2 and 4 (and Lemma 3)",
    "wrong": "the orbit covering bound is presented without prior credit",
-   "right": "credit at the point of use: the covering bound = diameter of S^2/G (arccos(1/sqrt3) for O; the icosahedral value for I), Dunbar-Greenwald-McGowan-Searle 2009 Table 2 (arXiv:math/0702680), Greenwald 2000, McGowan 1993; DICTO's containment constants 3, 9, 15-6sqrt5 stay his (not found stated); ALSO at #43 next version: sharpness of Thm 4 stated for scale c >= 0; add \"Theorem 4 is machine-checked in Lean (axioms propext, Classical.choice, Quot.sound only; studies/2026-11-14-palomar-lean, 909ad63a); the proof uses neither h > 0 nor boundedness\"",
-   "source": "studies/2026-11-14-palomar-lean/LITERATURE.md (5bc7146a)",
+   "right": "credit at the point of use: the covering bound = diameter of S^2/G (arccos(1/sqrt3) for O; the icosahedral value for I), Dunbar-Greenwald-McGowan-Searle 2009 Table 2 (arXiv:math/0702680), Greenwald 2000, McGowan 1993; DICTO's containment constants 3, 9, 15-6sqrt5 stay his (not found stated); ALSO at #43 next version: sharpness of Thm 4 stated for scale c >= 0; add \"Theorem 4 is machine-checked in Lean (axioms propext, Classical.choice, Quot.sound only; studies/2026-11-14-lean-loop-equality, 909ad63a); the proof uses neither h > 0 nor boundedness\"",
+   "source": "studies/2026-11-14-lean-loop-equality/LITERATURE.md (5bc7146a)",
    "date": "2026-11-15",
    "fix": "next version of #43 (DICTO decides)"
   }
