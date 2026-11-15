@@ -105,7 +105,7 @@ INDEX_TERMS = ['permutohedron', 'swap', 'truncated triangle', 'elongated hexagon
     'Kelvin', 'Weaire', 'golden loop', 'golden bond', 'golden cut', 'Icosaxes', 'Unborn Axes', 'DICTONIC', 'silent station', 'harmonic', 'Dehn invariant', 'web of bonds', 'power diagram', 'rhombic dodecahedron', 'Hemi RD',
     'chamfered cube', 'zonohedron', 'cube pyramid', 'scutoid', 'T1', 'Eulerian', 'h-vector', 'g-theorem', 'Vacuus', 'majorization', 'Mirror Law', 'braid relation',
     'Queens', '600-cell', '120-cell', 'bitruncated 600-cell', 'truncated 600-cell', 'runcinated 5-cell', 'balance law', 'rosette', 'Swap Rule', 'chamber map', 'secondary fan', 'switch theorem',
-    'Coxeter', 'Wythoff', 'Atlas', 'generalized permutohedra', 'deformation cone', 'Minkowski sum', 'associahedron', 'canonical form', 'augmented cuboctahedron', '13-COA', 'parallelohedra', 'Fedorov', 'graphical zonotope', 'Stretching Theorem', 'Boulder', 'golden slice', 'quasicrystal', 'change ringing', 'extent', 'plain hunt', 'Plain Bob', 'Stedman', 'Grandsire', 'Kyushindo', 'Fibonacci', 'Stanley', 'self-reverse']
+    'Coxeter', 'Wythoff', 'Atlas', 'generalized permutohedra', 'deformation cone', 'Minkowski sum', 'associahedron', 'canonical form', 'augmented cuboctahedron', '13-COA', 'parallelohedra', 'Fedorov', 'graphical zonotope', 'Stretching Theorem', 'Boulder', 'golden slice', 'quasicrystal', 'change ringing', 'extent', 'plain hunt', 'Plain Bob', 'Stedman', 'Grandsire', 'Kyushindo', 'Fibonacci', 'Stanley', 'self-reverse', 'Bayer and Billera', 'fine h-number', 'line shelling']
 PAPER_CH = {}; INDEX = {}; chapters = []; toc = []; checks = []
 for meta, body in CH:
     key = meta['key']; c = NUM['ch'][key]; tag = 'Opening' if key == 'open' else c
