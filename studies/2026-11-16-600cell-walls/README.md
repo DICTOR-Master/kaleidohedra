@@ -1,6 +1,6 @@
 # Are the new shapes hidden in the 600-cell's walls? (16 Nov 2026)
 
-**Conclusion: yes for solid A; for solid B, half its plates are 600-cell mirror walls and the other half are the 600-cell's central sections parallel to its cells (the equators of the 120-cell's corner axes).** All 30 of A's central plates are walls of the 600-cell. For B, 40 of its 80 plates are walls. The other 40, through its φ√2 triangles, are the walls that give B away. Confirmed EXACTLY in Q(√5) (scripts/walls_exact.py, data/walls_exact.log: exact 600-cell of 120 corners, 60 mirror directions, 300 cell-centre directions; every plate exactly coplanar with the centre; all 110 plates of A and B are mirror walls or cell-parallel central sections).
+**Conclusion (with DICTO's ruling, 16 Nov: "cross walls also count"): every central plate of both new shapes is a 600-cell wall, confirmed exactly in Q(√5).** Solid A: all 30 plates are mirror walls. Solid B: 40 mirror walls + 40 cross walls (central sections parallel to the 600-cell's cells). Ordinary orbits without the twist have most of their plates in no 600-cell wall. DICTO's theory holds for both shapes: they were hidden in the 600-cell's walls.
 
 **DICTO's theory (16 Nov 2026, his words):** "the reason that all the recent and otherwise undiscovered shapes are vacuus is that because of this they have previously been indistinguishable from 600 cell walls". Restated and confirmed by DICTO: each shape's walls (the central plates of its Vacuus) coincide with walls the 600-cell already has, so inside the 600-cell they look like part of its own structure.
 
@@ -34,7 +34,7 @@ The Galois-twin 600-cell (closure of perms of (σ², σ², σ², σ, 0), σ = �
 Comparing the plate directions with the 600-cell's own directions (scripts/walls_where.py, data/walls_where.log; checks 720 edges, 1200 triangles, 600 cells):
 - B's 30 rectangle plates and 10 √2-triangle plates: perpendicular to a corner of the 600-cell (its mirrors);
 - **B's 40 φ√2-triangle plates: perpendicular to a corner of the 120-cell** (a cell centre of the 600-cell). Each is the central section of the 600-cell parallel to a pair of its opposite tetrahedral cells: the equator of a 120-cell corner axis.
-So every plate of B is a central plane that the 600-cell–120-cell pair already has: 40 mirror walls and 40 equators of the 120-cell's corner axes (300 such planes). Whether those equators count as "walls" is DICTO's call.
+So every plate of B is a central plane that the 600-cell–120-cell pair already has: 40 mirror walls and 40 equators of the 120-cell's corner axes (300 such planes). DICTO 16 Nov: "cross walls also count". So these cell-parallel central sections are 600-cell walls too.
 
 Control for the equators (scripts/walls_where_ctl.py, data/walls_where_ctl.log): the ordinary orbits' non-mirror plates (40 + 30 and 20) point along NONE of the 600-cell's directions (corners, edge midpoints, triangle centres, cell centres). So the equators are special to the twist: with it, every one of B's 80 plates is a central plane of the 600-cell–120-cell pair; without it, most plates are in no such plane.
 
