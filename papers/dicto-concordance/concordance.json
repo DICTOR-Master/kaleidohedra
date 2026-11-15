@@ -7723,6 +7723,16 @@
     "result": "Version 1, 91 pp, with Ch 8 §6 the hybrid golden slab; cover by DICTO (& and pink DICTO); record 24221379, concept 24221378",
     "study": "papers/book-space-fillers",
     "date": "2026-11-15"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "what's missing: hidden swaps behind the 17 no-swap laws; unused involutions (Schuetzenberger evacuation, longest element w0, Gale and Alexander duality, chirality) at DICTO's objects; periodic points of the hops",
+    "method": "exact (fractions, Q(sqrt5), sympy radicals, DomainMatrix ranks); every standard involution tested on each law's parameter; forced-law battery at each fixed point; controls sqrt3 and Kelvin 3/2 (forced.py control section rerun unchanged) qualify, 8/5 and non-negated Brunn directions and a random twist fail; compute host, jobs wmiss-pilot2, wmiss (108 checks, FINAL ok)",
+    "result": "NO NEW LAW-GIVING FIXED POINT. Forced laws found are classical: Brunn central-slice maximum at evacuation- and w0-fixed slices (incl. the 1:2 TO as largest slice x5 = 3 of the 4D permutohedron), Palais criticality in the Narcissus twist family (straight join, Covenant), icosahedral orbit lemma for the pentakis-cycle regular hulls. 17 no-swap laws: 1 forced (#100 Kelvin half = CsCl parity), 6 invariance/pair (#66/67, #84, #45, #93, #91 pair via B4 seed reversal mu -> 5 - mu, #105), 1 algebraic only (#85), 9 none (#94 silence = extra symmetry of two icosahedra; #44, #47, #77, #92, #101, #106, Permutohedron Family Thm 1, Laves locality). Evacuation-fixed slices of P_n = type-B permutohedra (silent-zonohedron line a = 1/2, 1): nothing forced. Gale: all planar-faced hexahedra self-associated; frustum Dehn != 0: nothing forced. Alexander: no fixed point in the registry. Hops: periodic = fixed points (Fibonacci); T = polarity up to scale, tetrahedron fixed",
+    "status": "SETTLED (as stated; 11 referee candidates listed in the README)",
+    "retry": "only with a new geometric involution or a new law parameter; independent referee of the 11 candidates",
+    "study": "studies/2026-11-15-whats-missing",
+    "goes_to": "A Brief Geometry of Space (swaps spine); swaps-and-fixed-points catalogue next version (reclassifications of #91, #100, #45, #93, #105, #80)"
    }
   ]
  },
