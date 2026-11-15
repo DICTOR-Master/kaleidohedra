@@ -1,0 +1,24 @@
+python3 bij.py named 18 > ../data/full/named18.txt 2>&1
+python3 bij.py named 20 > ../data/full/named20.txt 2>&1
+python3 bij.py negative 16 > ../data/full/negative.txt 2>&1
+python3 halves.py 18 > ../data/full/halves18.txt 2>&1
+python3 halves.py 20 0 > ../data/full/halves20-0.txt 2>&1
+python3 halves.py 20 1 > ../data/full/halves20-1.txt 2>&1
+python3 halves.py 20 2 > ../data/full/halves20-2.txt 2>&1
+python3 halves.py 20 3 > ../data/full/halves20-3.txt 2>&1
+python3 bij.py words 16 3 0 10 > ../data/full/words16-0.txt 2>&1
+python3 bij.py words 16 3 1 10 > ../data/full/words16-1.txt 2>&1
+python3 bij.py words 16 3 2 10 > ../data/full/words16-2.txt 2>&1
+python3 bij.py words 16 3 3 10 > ../data/full/words16-3.txt 2>&1
+python3 bij.py words 16 3 4 10 > ../data/full/words16-4.txt 2>&1
+python3 bij.py words 16 3 5 10 > ../data/full/words16-5.txt 2>&1
+python3 bij.py words 16 3 6 10 > ../data/full/words16-6.txt 2>&1
+python3 bij.py words 16 3 7 10 > ../data/full/words16-7.txt 2>&1
+python3 bij.py words 16 3 8 10 > ../data/full/words16-8.txt 2>&1
+python3 bij.py words 16 3 9 10 > ../data/full/words16-9.txt 2>&1
+python3 bij.py words 18 2 0 6 > ../data/full/words18-0.txt 2>&1
+python3 bij.py words 18 2 1 6 > ../data/full/words18-1.txt 2>&1
+python3 bij.py words 18 2 2 6 > ../data/full/words18-2.txt 2>&1
+python3 bij.py words 18 2 3 6 > ../data/full/words18-3.txt 2>&1
+python3 bij.py words 18 2 4 6 > ../data/full/words18-4.txt 2>&1
+python3 bij.py words 18 2 5 6 > ../data/full/words18-5.txt 2>&1

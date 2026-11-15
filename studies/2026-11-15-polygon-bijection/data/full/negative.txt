@@ -1,0 +1,49 @@
+NEG ccccc mode 0 flip 0 invalid images 0 expected valid bijection -> ok
+NEG ccccc mode 0 flip 1 invalid images 0 expected valid bijection -> ok
+NEG ccccc mode 0 flip -1 invalid images 0 expected valid bijection -> ok
+NEG ccccc mode 1 flip 0 invalid images 43203 expected break -> ok
+NEG ccccc mode 1 flip 1 invalid images 17625 expected break -> ok
+NEG ccccc mode 1 flip -1 invalid images 35079 expected break -> ok
+NEG ccccc mode 2 flip 0 invalid images 43203 expected break -> ok
+NEG ccccc mode 2 flip 1 invalid images 17625 expected break -> ok
+NEG ccccc mode 2 flip -1 invalid images 35079 expected break -> ok
+NEG ccccc mode 3 flip 0 invalid images 43203 expected break -> ok
+NEG ccccc mode 3 flip 1 invalid images 17625 expected break -> ok
+NEG ccccc mode 3 flip -1 invalid images 35079 expected break -> ok
+NEG hhhhh mode 0 flip 0 invalid images 0 expected valid bijection -> ok
+NEG hhhhh mode 0 flip 1 invalid images 0 expected valid bijection -> ok
+NEG hhhhh mode 0 flip -1 invalid images 0 expected valid bijection -> ok
+NEG hhhhh mode 1 flip 0 invalid images 43203 expected break -> ok
+NEG hhhhh mode 1 flip 1 invalid images 17625 expected break -> ok
+NEG hhhhh mode 1 flip -1 invalid images 35079 expected break -> ok
+NEG hhhhh mode 2 flip 0 invalid images 43203 expected break -> ok
+NEG hhhhh mode 2 flip 1 invalid images 17625 expected break -> ok
+NEG hhhhh mode 2 flip -1 invalid images 35079 expected break -> ok
+NEG hhhhh mode 3 flip 0 invalid images 43203 expected break -> ok
+NEG hhhhh mode 3 flip 1 invalid images 17625 expected break -> ok
+NEG hhhhh mode 3 flip -1 invalid images 35079 expected break -> ok
+NEG chccc mode 0 flip 0 invalid images 0 expected valid bijection -> ok
+NEG chccc mode 0 flip 1 invalid images 0 expected valid bijection -> ok
+NEG chccc mode 0 flip -1 invalid images 0 expected valid bijection -> ok
+NEG chccc mode 1 flip 0 invalid images 43203 expected break -> ok
+NEG chccc mode 1 flip 1 invalid images 17625 expected break -> ok
+NEG chccc mode 1 flip -1 invalid images 35079 expected break -> ok
+NEG chccc mode 2 flip 0 invalid images 43203 expected break -> ok
+NEG chccc mode 2 flip 1 invalid images 17625 expected break -> ok
+NEG chccc mode 2 flip -1 invalid images 35079 expected break -> ok
+NEG chccc mode 3 flip 0 invalid images 43203 expected break -> ok
+NEG chccc mode 3 flip 1 invalid images 17625 expected break -> ok
+NEG chccc mode 3 flip -1 invalid images 35079 expected break -> ok
+NEG hhcch mode 0 flip 0 invalid images 0 expected valid bijection -> ok
+NEG hhcch mode 0 flip 1 invalid images 0 expected valid bijection -> ok
+NEG hhcch mode 0 flip -1 invalid images 0 expected valid bijection -> ok
+NEG hhcch mode 1 flip 0 invalid images 43203 expected break -> ok
+NEG hhcch mode 1 flip 1 invalid images 17625 expected break -> ok
+NEG hhcch mode 1 flip -1 invalid images 35079 expected break -> ok
+NEG hhcch mode 2 flip 0 invalid images 43203 expected break -> ok
+NEG hhcch mode 2 flip 1 invalid images 17625 expected break -> ok
+NEG hhcch mode 2 flip -1 invalid images 35079 expected break -> ok
+NEG hhcch mode 3 flip 0 invalid images 43203 expected break -> ok
+NEG hhcch mode 3 flip 1 invalid images 17625 expected break -> ok
+NEG hhcch mode 3 flip -1 invalid images 35079 expected break -> ok
+ALLCHECKS ok (25 s)

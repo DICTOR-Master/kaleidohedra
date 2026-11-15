@@ -7822,6 +7822,16 @@
     "retry": "never for the validations; Earth rates only after (1) explaining the single-contact clumps, (2) a swap persistence rule with a tolerance fixed first, (3) closing the Muller 2019 seam and a second model",
     "study": "studies/2026-11-15-event-logger",
     "goes_to": "One tissue, three scales (new paper after Step 1); #104 thread (sweep counts recovered by a general tool)"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "Palomar #102 v5 Theorem 5: structural (bijective/local) proof of the polygon laws (equality to l=16, p18/p20 linear laws) so that Lean becomes feasible",
+    "method": "studies/2026-11-15-polygon-bijection: half-turn surgery about the centroid of the crossing points of one bilayer (proof); exhaustive test bij.c on 3C/2H to l=20 at every flip, all c/h words of 7 bilayers to l=16 and of 5 to l=18 (2208 runs), three wrong twists as negatives; product structure p = sum w*f (linkages.py); local identity Delta = -1/2 sum A_root A_far with A from meeting arc pairs (halves.py), all 512 neighbour patterns at l=18 and l=20; jobs polybij (24 parts ok), polyhalves20 FINAL ok",
+    "status": "PROVED (Theorem A, all lengths; Theorem B identity) + COMPUTED (finite local tables, l=18,20)",
+    "result": "Theorem A: polygons symmetric at a bilayer (always when crossing it twice; also parallelogram 4-sets, mirror cases) are equinumerous at corresponding sites of any two stackings, preserving length, site and full crossing profile; so polygons crossing every bilayer at most twice are stacking-blind at all lengths. Theorem B: a flip changes p_l by -1/2 sum A_root*A_far over asymmetric local linkages (only meeting arc pairs enter); 6-crossing terms vanish at l<=20 by hand; 4-crossing tables (1038 arcs / 7713 meeting pairs at l=18; 6756 / 74493 at l=20) reproduce 12,30,42,24 and 30,114,204,12, zero for l<=16 and outside bilayers -2..1, for every neighbour pattern. Why 18: asymmetry starts at 6 bonds on both halves but always on the same pairing (12 shapes), which cannot close one polygon. Diamond constants themselves remain Guttmann-Jensen counts.",
+    "retry": "only: l=22,24 via Theorem B (tables F_max 14-16 + 6-crossing inclusion-exclusion; 108 b term); Lean: Theorem A first (no tables), then l=18 tables by decide (l=20 tables likely beyond kernel)",
+    "study": "studies/2026-11-15-polygon-bijection",
+    "goes_to": "#102 v5 Section 5 (replaces 'why 18 is open'; DICTO to place); Palomar Lean plan"
    }
   ]
  },

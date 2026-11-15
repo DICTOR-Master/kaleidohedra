@@ -1,0 +1,14 @@
+SIZES letters 0120120 fmax 12 weight (2, 0) arcs from a boundary atom 6756 meeting arc pairs 74493 configurations (S,M,F) 6591 with A != 0 1686 first F with A != 0 8
+SIZES letters 0210210 fmax 12 weight None arcs from a boundary atom 6756 meeting arc pairs 74493 configurations (S,M,F) 6591 with A != 0 3318 first F with A != 0 6
+DELTA base ccccccccccccccc flip -2 l12:0 l14:0 l16:0 l18:-12 l20:-30 expected {18: -12, 20: -30} ok (14 s)
+SIZES letters 1201201 fmax 12 weight (1, 0) arcs from a boundary atom 6756 meeting arc pairs 74493 configurations (S,M,F) 6591 with A != 0 3462 first F with A != 0 6
+SIZES letters 1021021 fmax 12 weight None arcs from a boundary atom 6756 meeting arc pairs 74493 configurations (S,M,F) 6591 with A != 0 3318 first F with A != 0 6
+DELTA base ccccccccccccccc flip -1 l12:0 l14:0 l16:0 l18:-30 l20:-114 expected {18: -30, 20: -114} ok (27 s)
+SIZES letters 2102102 fmax 12 weight (0, 1) arcs from a boundary atom 6756 meeting arc pairs 74493 configurations (S,M,F) 6591 with A != 0 3474 first F with A != 0 6
+SIZES letters 2012012 fmax 12 weight None arcs from a boundary atom 6756 meeting arc pairs 74493 configurations (S,M,F) 6591 with A != 0 3318 first F with A != 0 6
+DELTA base ccccccccccccccc flip 0 l12:0 l14:0 l16:0 l18:-42 l20:-204 expected {18: -42, 20: -204} ok (41 s)
+SIZES letters 0210210 fmax 12 weight (1, 1) arcs from a boundary atom 6756 meeting arc pairs 74493 configurations (S,M,F) 6591 with A != 0 1710 first F with A != 0 8
+SIZES letters 0120120 fmax 12 weight None arcs from a boundary atom 6756 meeting arc pairs 74493 configurations (S,M,F) 6591 with A != 0 3318 first F with A != 0 6
+DELTA base ccccccccccccccc flip 1 l12:0 l14:0 l16:0 l18:-24 l20:-12 expected {18: -24, 20: -12} ok (55 s)
+PROGRESS 1.0 base ccccccccccccccc
+ALLCHECKS ok

@@ -1,0 +1,12 @@
+SIZES letters 0120120 fmax 10 weight (2, 0) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 0 first F with A != 0 None
+SIZES letters 0210210 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 0 first F with A != 0 None
+DELTA base ccccccccccccccc flip -2 l12:0 l14:0 l16:0 l18:0 expected {18: -12} FAIL (2 s)
+SIZES letters 0120120 fmax 10 weight (1, 0) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 0 first F with A != 0 None
+DELTA base ccccccccccccccc flip -1 l12:0 l14:0 l16:0 l18:0 expected {18: -30} FAIL (3 s)
+SIZES letters 0210210 fmax 10 weight (0, 1) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 0 first F with A != 0 None
+SIZES letters 0120120 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 0 first F with A != 0 None
+DELTA base ccccccccccccccc flip 0 l12:0 l14:0 l16:0 l18:0 expected {18: -42} FAIL (5 s)
+SIZES letters 0210210 fmax 10 weight (1, 1) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 0 first F with A != 0 None
+DELTA base ccccccccccccccc flip 1 l12:0 l14:0 l16:0 l18:0 expected {18: -24} FAIL (5 s)
+PROGRESS 1.0 base ccccccccccccccc
+ALLCHECKS FAIL

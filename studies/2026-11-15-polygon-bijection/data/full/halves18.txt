@@ -1,0 +1,51 @@
+SIZES letters 0120120 fmax 10 weight (2, 0) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 294 first F with A != 0 8
+SIZES letters 0210210 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base ccccccccccccccc flip -2 l12:0 l14:0 l16:0 l18:-12 expected {18: -12} ok (1 s)
+SIZES letters 1201201 fmax 10 weight (1, 0) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 876 first F with A != 0 6
+SIZES letters 1021021 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base ccccccccccccccc flip -1 l12:0 l14:0 l16:0 l18:-30 expected {18: -30} ok (2 s)
+SIZES letters 2102102 fmax 10 weight (0, 1) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 876 first F with A != 0 6
+SIZES letters 2012012 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base ccccccccccccccc flip 0 l12:0 l14:0 l16:0 l18:-42 expected {18: -42} ok (3 s)
+SIZES letters 0210210 fmax 10 weight (1, 1) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 294 first F with A != 0 8
+SIZES letters 0120120 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base ccccccccccccccc flip 1 l12:0 l14:0 l16:0 l18:-24 expected {18: -24} ok (4 s)
+PROGRESS 0.25 base ccccccccccccccc
+SIZES letters 0202020 fmax 10 weight (2, 0) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 294 first F with A != 0 8
+SIZES letters 0101010 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base hhhhhhhhhhhhhhh flip -2 l12:0 l14:0 l16:0 l18:-12 expected {18: -12} ok (6 s)
+SIZES letters 1212121 fmax 10 weight (1, 0) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 876 first F with A != 0 6
+SIZES letters 1010101 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base hhhhhhhhhhhhhhh flip -1 l12:0 l14:0 l16:0 l18:-30 expected {18: -30} ok (7 s)
+SIZES letters 0101010 fmax 10 weight (0, 1) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 876 first F with A != 0 6
+SIZES letters 0202020 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base hhhhhhhhhhhhhhh flip 0 l12:0 l14:0 l16:0 l18:-42 expected {18: -42} ok (8 s)
+SIZES letters 1010101 fmax 10 weight (1, 1) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 294 first F with A != 0 8
+SIZES letters 1212121 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base hhhhhhhhhhhhhhh flip 1 l12:0 l14:0 l16:0 l18:-24 expected {18: -24} ok (10 s)
+PROGRESS 0.5 base hhhhhhhhhhhhhhh
+SIZES letters 2010201 fmax 10 weight (2, 0) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 294 first F with A != 0 8
+SIZES letters 2101210 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base chchchchchchchc flip -2 l12:0 l14:0 l16:0 l18:-12 expected {18: -12} ok (11 s)
+SIZES letters 1012101 fmax 10 weight (1, 0) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 876 first F with A != 0 6
+SIZES letters 1210121 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base chchchchchchchc flip -1 l12:0 l14:0 l16:0 l18:-30 expected {18: -30} ok (12 s)
+SIZES letters 0121012 fmax 10 weight (0, 1) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 876 first F with A != 0 6
+SIZES letters 0212021 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base chchchchchchchc flip 0 l12:0 l14:0 l16:0 l18:-42 expected {18: -42} ok (14 s)
+SIZES letters 1012101 fmax 10 weight (1, 1) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 294 first F with A != 0 8
+DELTA base chchchchchchchc flip 1 l12:0 l14:0 l16:0 l18:-24 expected {18: -24} ok (15 s)
+PROGRESS 0.75 base chchchchchchchc
+SIZES letters 2102021 fmax 10 weight (2, 0) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 294 first F with A != 0 8
+SIZES letters 2021010 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base hhcchhcchhcchhc flip -2 l12:0 l14:0 l16:0 l18:-12 expected {18: -12} ok (16 s)
+SIZES letters 0121201 fmax 10 weight (1, 0) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 876 first F with A != 0 6
+SIZES letters 0202101 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base hhcchhcchhcchhc flip -1 l12:0 l14:0 l16:0 l18:-30 expected {18: -30} ok (17 s)
+SIZES letters 1020210 fmax 10 weight (0, 1) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 876 first F with A != 0 6
+SIZES letters 1212010 fmax 10 weight None arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 840 first F with A != 0 6
+DELTA base hhcchhcchhcchhc flip 0 l12:0 l14:0 l16:0 l18:-42 expected {18: -42} ok (19 s)
+SIZES letters 2102021 fmax 10 weight (1, 1) arcs from a boundary atom 1038 meeting arc pairs 7713 configurations (S,M,F) 1917 with A != 0 294 first F with A != 0 8
+DELTA base hhcchhcchhcchhc flip 1 l12:0 l14:0 l16:0 l18:-24 expected {18: -24} ok (19 s)
+PROGRESS 1.0 base hhcchhcchhcchhc
+ALLCHECKS ok
