@@ -8190,6 +8190,16 @@
     "study": "studies/2026-11-16-compound-eye-scutoids",
     "goes_to": "#104 scutoid thread (biology prediction)",
     "follows": "Compound-eye scutoids: which of the seven Paukner 2024 butterfly eyes (BossDB paukner2024) should be traced next? Clear "
+   },
+   {
+    "date": "2026-11-16",
+    "question": "Palomar notability pre-score of the finished Lean entry: uniqueness and existence of Kulaichev's Sri Yantra (kulaichev_unique, kulaichev_slope; Huet + Kulaichev (a)-(d) + #103 Thm 1 admissibility)",
+    "method": "studies/2026-11-16-palomar-yantra: blind input (neutral abstract, exact sources, Challenge verbatim); two fresh blind scorers in parallel given only PalomarPolicy @ 28bd48b CONTRIBUTING s1 + s7, prompt 04, rubric.json; own review of both; citation check in reference library (no Kulaichev/Chiodo/Pustynski/Huet held), #103 and studies, and the open-access Chiodo PDF re-read",
+    "status": "ESTIMATED (not submitted; production reviewer not runnable)",
+    "result": "blind A 4/4 neutral, blind B 4/4 neutral, no findings; own estimate notability 4 (at the floor, about 1 point run-to-run noise), literature 4 after fixes. Correction: Chiodo's 'toujours ouverte' is on p. 381, not p. 384 (English s1.2.4 p. 387 correct). Missing comparisons: Rao 1998, Kulaichev 'Addition', Tahta 1992, Santhi et al. 2012, Tularam 2012, a Synapse pre-registration on the Rao system",
+    "retry": "no rescoring until the citation fixes and comparisons are added; then at most one blind rerun",
+    "study": "studies/2026-11-16-palomar-yantra",
+    "goes_to": "formalization.yaml of the yantra entry (page fix, comparisons, scope line); #103 v5 errata route for p. 384 -> 381; builds on ledger entries: Lean 4 + Mathlib formal proof of Kulaichev's Sri Yantra uniqueness from the box  | Lean 4 + Mathlib formal proof of Kulaichev's Sri Yantra uniqueness: step 2 (deri"
    }
   ]
  },
