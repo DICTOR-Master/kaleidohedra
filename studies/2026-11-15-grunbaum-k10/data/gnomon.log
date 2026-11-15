@@ -1,0 +1,22 @@
+class C(5) sources up to depth 3: 18 t=1s
+PROGRESS 0.056 source 1/18 distinct=148 rank<=3=0 t=165s
+PROGRESS 0.111 source 2/18 distinct=1254 rank<=3=0 t=362s
+PROGRESS 0.167 source 3/18 distinct=1813 rank<=3=0 t=571s
+PROGRESS 0.222 source 4/18 distinct=2787 rank<=3=10 t=745s
+PROGRESS 0.278 source 5/18 distinct=4703 rank<=3=10 t=941s
+PROGRESS 0.333 source 6/18 distinct=5752 rank<=3=17 t=1081s
+PROGRESS 0.389 source 7/18 distinct=6634 rank<=3=17 t=1174s
+PROGRESS 0.444 source 8/18 distinct=8585 rank<=3=17 t=1286s
+PROGRESS 0.500 source 9/18 distinct=10410 rank<=3=17 t=1393s
+PROGRESS 0.556 source 10/18 distinct=12226 rank<=3=17 t=1480s
+PROGRESS 0.611 source 11/18 distinct=13935 rank<=3=17 t=1554s
+PROGRESS 0.667 source 12/18 distinct=15722 rank<=3=17 t=1629s
+PROGRESS 0.722 source 13/18 distinct=17397 rank<=3=17 t=1694s
+PROGRESS 0.778 source 14/18 distinct=19064 rank<=3=17 t=1770s
+PROGRESS 0.833 source 15/18 distinct=20720 rank<=3=17 t=1841s
+PROGRESS 0.889 source 16/18 distinct=21623 rank<=3=17 t=1905s
+PROGRESS 0.944 source 17/18 distinct=22427 rank<=3=17 t=1974s
+PROGRESS 1.000 source 18/18 distinct=23255 rank<=3=17 t=2043s
+RESULT {'sources': 18, 'paths': 19048, 'results': 38096, 'in_class': 38096, 'distinct': 23255, 'noncoplanar': 23255, 'embedded_partial': 3181, 'rank_hist': {6: 22093, 5: 1145, 3: 17}, 'rank_le_3': 17}
+CONTROL rhombic icosahedron + one zone layer gives the triacontahedron: True
+FINAL ok

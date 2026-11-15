@@ -80,6 +80,8 @@ The blind reviewer also identified the B̃3 simplex independently.
 
 ## (b) Grünbaum: rhombic monohedral parallelohedron with every zone of k faces, k ≥ 10
 
+**Outcome (same day, study `studies/2026-11-15-grunbaum-k10`):** k = 10 is answered by the DICTO Grünbaum–Escher Triacontahedron (GET, forms A and B): the triacontahedron less four oblate golden rhombohedra, a face-to-face lattice tiler (computer-verified in exact arithmetic), found at flip depth 4 and by DICTO's zone-layer gnomon. Novelty is provisional until Senechal–Taylor 2023 is read.
+
 **Statement.** Grünbaum, "The Bilinski dodecahedron, and assorted parallelohedra, zonohedra, monohedra, isozonohedra and otherhedra", Math. Intelligencer 32(4) (2010) 5–15. The author's version 2/3/10, p. 17 (library copy) reads: "Given an even integer k ≥ 4, is there a rhombic monohedral parallelohedron such that every zone has exactly k faces? … No information is available for any k ≥ 10."
 - The cube has k = 4, the rhombic dodecahedra K and B have k = 6, and the doubly indented icosahedra D1 and D2 have k = 8.
 - Grünbaum's polyhedra are sphere-like with adjacent faces not coplanar (p. 9; blind reviewer's finding). The pilot does not yet impose the coplanarity condition, so the full run adds it.

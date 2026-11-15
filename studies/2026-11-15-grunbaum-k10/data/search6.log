@@ -1,0 +1,17 @@
+n=6 k=10 symmetries=120
+PROGRESS 0.077 depth=0 states=1 in_class=1 noncoplanar=1 rank<=3=0 tilers=0 t=0s
+PROGRESS 0.154 depth=1 states=1 in_class=1 noncoplanar=1 rank<=3=0 tilers=0 t=0s
+PROGRESS 0.231 depth=2 states=4 in_class=4 noncoplanar=4 rank<=3=0 tilers=0 t=1s
+PROGRESS 0.308 depth=3 states=10 in_class=10 noncoplanar=10 rank<=3=0 tilers=0 t=1s
+PROGRESS 0.385 depth=4 states=29 in_class=29 noncoplanar=29 rank<=3=3 tilers=0 t=456s
+PROGRESS 0.462 depth=5 states=70 in_class=69 noncoplanar=69 rank<=3=3 tilers=0 t=466s
+PROGRESS 0.538 depth=6 states=184 in_class=175 noncoplanar=175 rank<=3=3 tilers=0 t=500s
+PROGRESS 0.615 depth=7 states=412 in_class=370 noncoplanar=370 rank<=3=3 tilers=0 t=564s
+PROGRESS 0.692 depth=8 states=853 in_class=692 noncoplanar=692 rank<=3=3 tilers=0 t=662s
+PROGRESS 0.769 depth=9 states=1492 in_class=1021 noncoplanar=1021 rank<=3=3 tilers=0 t=873s
+PROGRESS 0.846 depth=10 states=2201 in_class=1184 noncoplanar=1184 rank<=3=7 tilers=0 t=1175s
+PROGRESS 0.923 depth=11 states=2333 in_class=863 noncoplanar=863 rank<=3=7 tilers=0 t=1363s
+PROGRESS 1.000 depth=12 states=1372 in_class=408 noncoplanar=408 rank<=3=8 tilers=0 t=1366s
+RESULT n=6 k=10 states=4827 rank_hist={6: 4578, 5: 241, 3: 8} rank<=3=8 tilers=0 capped=False
+CONTROLS   | zonotope at depth 0 does not tile (n>=5): True
+FINAL ok
