@@ -1,0 +1,44 @@
+SIZES letters 0120 fmax 14 arcs 45834 configurations 18477 A_far != 0 10392 first F with A_far != 0 6 (41 s)
+SIZES letters 0102 fmax 14 arcs 45834 configurations 18477 A_far != 0 10404 first F with A_far != 0 6 (36 s)
+HALF letters c1=1: switching bilayer 1 (next to the cut) c->h changes A_far first at F = [14] (all F: [14]); weighted A_root first at {(0, 1): 14, (1, 1): 14, (1, 0): 14, (2, 0): 14}
+SIZES letters 0121 fmax 14 arcs 45834 configurations 18477 A_far != 0 10392 first F with A_far != 0 6 (50 s)
+HALF letters c1=1: switching bilayer 2 c->h changes A_far first at F = [] (all F: []); weighted A_root first at {}
+SIZES letters 0210 fmax 14 arcs 45834 configurations 18477 A_far != 0 10392 first F with A_far != 0 6 (37 s)
+SIZES letters 0201 fmax 14 arcs 45834 configurations 18477 A_far != 0 10404 first F with A_far != 0 6 (49 s)
+HALF letters c1=2: switching bilayer 1 (next to the cut) c->h changes A_far first at F = [14] (all F: [14]); weighted A_root first at {(0, 1): 14, (1, 1): 14, (1, 0): 14, (2, 0): 14}
+SIZES letters 0212 fmax 14 arcs 45834 configurations 18477 A_far != 0 10392 first F with A_far != 0 6 (43 s)
+HALF letters c1=2: switching bilayer 2 c->h changes A_far first at F = [] (all F: []); weighted A_root first at {}
+PROGRESS 0.5 half tables done
+SPLIT flip -3 (all other letters c): Delta24 = -732 by (R,F): {(12, 8): 312, (14, 6): -1044}
+   neighbour -5 (far side) c->h: change 0 by (R,F): {}
+   neighbour -4 (far side) c->h: change 0 by (R,F): {}
+   neighbour -2 (root side) c->h: change 0 by (R,F): {}
+   neighbour -1 (root side) c->h: change 0 by (R,F): {}
+SPLIT flip -2 (all other letters c): Delta24 = -483 by (R,F): {(8, 12): 660, (10, 10): 1410, (12, 8): 327, (14, 6): -2880}
+   neighbour -4 (far side) c->h: change 0 by (R,F): {}
+   neighbour -3 (far side) c->h: change 0 by (R,F): {}
+   neighbour -1 (root side) c->h: change -54 by (R,F): {(14, 6): -54}
+   neighbour 0 (root side) c->h: change 0 by (R,F): {}
+SPLIT flip -1 (all other letters c): Delta24 = -4485 by (R,F): {(6, 14): -2844, (8, 12): -348, (10, 10): 1590, (12, 8): -171, (14, 6): -2712}
+   neighbour -3 (far side) c->h: change 0 by (R,F): {}
+   neighbour -2 (far side) c->h: change -54 by (R,F): {(6, 14): -54}
+   neighbour 0 (root side) c->h: change -72 by (R,F): {(14, 6): -72}
+   neighbour 1 (root side) c->h: change 0 by (R,F): {}
+SPLIT flip 0 (all other letters c): Delta24 = -7518 by (R,F): {(6, 14): -4740, (8, 12): -852, (10, 10): 2016, (12, 8): -240, (14, 6): -3702}
+   neighbour -2 (root side) c->h: change 0 by (R,F): {}
+   neighbour -1 (root side) c->h: change -72 by (R,F): {(14, 6): -72}
+   neighbour 1 (far side) c->h: change -90 by (R,F): {(6, 14): -90}
+   neighbour 2 (far side) c->h: change 0 by (R,F): {}
+SPLIT flip 1 (all other letters c): Delta24 = 666 by (R,F): {(8, 12): 1320, (10, 10): 2184, (12, 8): 240, (14, 6): -3078}
+   neighbour -1 (root side) c->h: change 0 by (R,F): {}
+   neighbour 0 (root side) c->h: change -90 by (R,F): {(14, 6): -90}
+   neighbour 2 (far side) c->h: change 0 by (R,F): {}
+   neighbour 3 (far side) c->h: change 0 by (R,F): {}
+SPLIT flip 2 (all other letters c): Delta24 = -1128 by (R,F): {(12, 8): 624, (14, 6): -1752}
+   neighbour 0 (root side) c->h: change 0 by (R,F): {}
+   neighbour 1 (root side) c->h: change 0 by (R,F): {}
+   neighbour 3 (far side) c->h: change 0 by (R,F): {}
+   neighbour 4 (far side) c->h: change 0 by (R,F): {}
+CONTROL split totals (all letters c) = DELTA4 l24 of polylaw24-tables: ok
+PROGRESS 1.0 splits done
+ALLCHECKS ok

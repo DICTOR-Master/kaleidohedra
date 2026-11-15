@@ -1,0 +1,17 @@
+CONTROL six-crossing count 3C flip 0: {18: 180, 20: 3198} expected {18: 180, 20: 3198} ok
+CONTROL six-crossing count 3C flip -1: {18: 90, 20: 1722} expected {18: 90, 20: 1722} ok
+CONTROL six-crossing count 2H flip 0: {18: 180, 20: 3198} expected {18: 180, 20: 3198} ok
+CONTROL six-crossing count 2H flip -1: {18: 90, 20: 1722} expected {18: 90, 20: 1722} ok
+DELTA6 flip -1 pattern cc l18:0 l20:0 l22:24 l24:186 hand-lemma ok | splits (l18,R6,F6):90->90 (l20,R6,F8):738->738 (l20,R8,F6):984->984 (l22,R6,F10):6147->6147 (l22,R8,F8):10104->10128 (l22,R10,F6):9561->9561 (l24,R6,F12):50328->50328 (l24,R8,F10):86064->86136 (l24,R10,F8):101682->101796 (l24,R12,F6):86796->86796
+DELTA8 flip -1 pattern cc l22:0 l24:0 hand-lemma ok | splits (l24,R8,F8):984->984
+PROGRESS 0.25 cases 1/4 (358 s)
+DELTA6 flip -1 pattern ch l18:0 l20:0 l22:24 l24:186 hand-lemma ok | splits (l18,R6,F6):90->90 (l20,R6,F8):738->738 (l20,R8,F6):984->984 (l22,R6,F10):6147->6147 (l22,R8,F8):10104->10128 (l22,R10,F6):9561->9561 (l24,R6,F12):50328->50328 (l24,R8,F10):86064->86136 (l24,R10,F8):101682->101796 (l24,R12,F6):86796->86796
+DELTA8 flip -1 pattern ch l22:0 l24:0 hand-lemma ok | splits (l24,R8,F8):984->984
+PROGRESS 0.5 cases 2/4 (673 s)
+DELTA6 flip -1 pattern hc l18:0 l20:0 l22:24 l24:186 hand-lemma ok | splits (l18,R6,F6):90->90 (l20,R6,F8):738->738 (l20,R8,F6):984->984 (l22,R6,F10):6147->6147 (l22,R8,F8):10104->10128 (l22,R10,F6):9561->9561 (l24,R6,F12):50328->50328 (l24,R8,F10):86064->86136 (l24,R10,F8):101682->101796 (l24,R12,F6):86796->86796
+DELTA8 flip -1 pattern hc l22:0 l24:0 hand-lemma ok | splits (l24,R8,F8):984->984
+PROGRESS 0.75 cases 3/4 (873 s)
+DELTA6 flip -1 pattern hh l18:0 l20:0 l22:24 l24:186 hand-lemma ok | splits (l18,R6,F6):90->90 (l20,R6,F8):738->738 (l20,R8,F6):984->984 (l22,R6,F10):6147->6147 (l22,R8,F8):10104->10128 (l22,R10,F6):9561->9561 (l24,R6,F12):50328->50328 (l24,R8,F10):86064->86136 (l24,R10,F8):101682->101796 (l24,R12,F6):86796->86796
+DELTA8 flip -1 pattern hh l22:0 l24:0 hand-lemma ok | splits (l24,R8,F8):984->984
+PROGRESS 1.0 cases 4/4 (1060 s)
+ALLCHECKS FAIL

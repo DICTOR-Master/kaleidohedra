@@ -7957,6 +7957,26 @@
     "retry": "never retry rule SS (vanishing without window) against 0.53 on a coarsening record (degenerate). Rule RM against 0.53 only on a froth in its scaling state with l^2 far from 1 pixel and from <A> (rung 1 at 1024^2 or larger, long run), rc = 0.5/1/2 fixed in advance; or a vertex-model froth",
     "study": "studies/2026-11-15-event-logger (Rutenberg-McCurdy count section, rm/)",
     "goes_to": "One tissue, three scales (counting rules for all streams; foam ladder rung 1 next step)"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "Grunbaum 2010 (Bilinski paper, v2/3/10 p. 17): rhombic monohedral parallelohedron, sphere-like, adjacent faces not coplanar, every zone exactly k = 10 faces ('No information is available for any k >= 10')",
+    "method": "studies/2026-11-15-grunbaum-k10: zone-word lemma (face-pair vectors in {0,+-1}, rank 3) + exhaustive Plucker filters vclass2/vclass3 (19,683 subspaces; sign coherence = cell counts); exact flip search from the triacontahedron to depth 12 (k10_search, Z[phi]); DICTO's gnomon read as one zone layer added to k=8 surfaces (gnomon.py, 23,255 surfaces); exact tiling check (covolume = volume, peeled cell decomposition, separating axes over all translates within 2R); independent float check (200k points covered once, 0 face crossings); jobs k10-* FINAL ok",
+    "status": "PROVED (certified computation) for existence at k = 10; novelty PROVISIONAL (Senechal-Taylor 2023 full text unread)",
+    "result": "the DICTO Grunbaum-Escher Triacontahedron (GET; DICTO's name), forms GET A and GET B: rhombic triacontahedron minus four oblate golden rhombohedra (types 015, 023, 124, 345), 16 cells, 30 congruent golden rhombi, six zones of 10, no coplanar adjacent faces, lattice tiling face to face, lattice (1,0,0,-1,0,-1),(0,-1,0,0,1,-1),(0,0,1,1,1,0), volume 20+32 phi; reached at flip depth 4 and by the zone-layer gnomon from k=8 surfaces; theorem: in class C(6) every face-to-face lattice tiler that is a union of golden rhombohedra has this 16-cell pattern; 6 further candidates (3 lattices) covered once in float only, undecided",
+    "retry": "only: exact certificate for flip candidates 2-7 (needs a decomposition-free overlap test); read Senechal-Taylor 2023 (NDL/library) before any novelty claim; k >= 12 needs zones crossing more than twice",
+    "study": "studies/2026-11-15-grunbaum-k10",
+    "goes_to": "ask DICTO (new record or chapter)"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "Palomar #102: extend the local proof of the polygon laws to l=22 and l=24 (local laws p22, p24; origin of the 108 b term of the ring-counts period law)",
+    "method": "studies/2026-11-15-polygon-bijection section 8: Theorem B four-crossing tables to F=14 (halves24.py, rewritten independently; equal to halves.py to F=12), reach lemma (tables use c[0..3]), 512 neighbour patterns; exact six/eight-crossing chain counts in G and G' (six.py; controls 180, 3198, 90, 1722 from direct profiles); telescoping both orders + Moebius (law.py); direct enumeration of all 512 c/h words on bilayers -4..4, both atoms, to l=24 (rings.py unchanged); negatives: WRONG=1 tables and dropped six-crossing terms fail; jobs polylaw24-tables, polylaw24-six-dbb, polylaw24-sixneg, polypair24, polylocal24-dbb, polylocal24-dbb2, polylawfinal FINAL ok",
+    "status": "PROVED (up to diamond constants, finite tables + Theorems A, B) + CHECKED exactly against direct enumeration",
+    "result": "p22 = 16716612 - 96h[-3] - 390h[-2] - 1029h[-1] - 1437h[0] - 552h[1] - 192h[2] (linear); p24 = 118335744 - 732h[-3] - 507h[-2] - 4299h[-1] - 7200h[0] + 618h[1] - 1128h[2] - 54h[-2]h[-1] - 72h[-1]h[0] - 90h[0]h[1] (lower atom of bilayer 0; upper atom j -> -j). Matches 1024 local (word, atom) runs and 80 named sites at l=18..24. Period laws 16716612 - 3696f and 118335744 - 13464f + 108b now proved: the b term is the neighbour hh interaction (-216 per adjacent h pair), carried only by four-crossing polygons with a 14-bond half linkage whose asymmetry depends on the bilayer next to the cut. Six-crossing terms first matter at 22 (+24, +42) and at 24 (-24, +186, +318, -48); eight-crossing 0.",
+    "retry": "only: l=26 (tables to F=16, six-crossing to (10,10)); hand proof that half asymmetry ignores the second bilayer to F=14; Lean after Theorem A",
+    "study": "studies/2026-11-15-polygon-bijection",
+    "goes_to": "#102 Section 5 after DICTO reads v6 (DICTO decides placement); ring-counts Theorem 2 becomes proved"
    }
   ]
  },

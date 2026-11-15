@@ -1,0 +1,17 @@
+CONTROL six-crossing count 3C flip 0: {18: 180, 20: 3198} expected {18: 180, 20: 3198} ok
+CONTROL six-crossing count 3C flip -1: {18: 90, 20: 1722} expected {18: 90, 20: 1722} ok
+CONTROL six-crossing count 2H flip 0: {18: 180, 20: 3198} expected {18: 180, 20: 3198} ok
+CONTROL six-crossing count 2H flip -1: {18: 90, 20: 1722} expected {18: 90, 20: 1722} ok
+DELTA6 flip 2 pattern cc l18:0 l20:0 l22:0 l24:0 hand-lemma ok | splits (l18,R6,F6):0->0 (l20,R6,F8):0->0 (l20,R8,F6):0->0 (l22,R6,F10):0->0 (l22,R8,F8):0->0 (l22,R10,F6):0->0 (l24,R6,F12):0->0 (l24,R8,F10):0->0 (l24,R10,F8):0->0 (l24,R12,F6):0->0
+DELTA8 flip 2 pattern cc l22:0 l24:0 hand-lemma ok | splits (l24,R8,F8):0->0
+PROGRESS 0.25 cases 1/4 (78 s)
+DELTA6 flip 2 pattern ch l18:0 l20:0 l22:0 l24:0 hand-lemma ok | splits (l18,R6,F6):0->0 (l20,R6,F8):0->0 (l20,R8,F6):0->0 (l22,R6,F10):0->0 (l22,R8,F8):0->0 (l22,R10,F6):0->0 (l24,R6,F12):0->0 (l24,R8,F10):0->0 (l24,R10,F8):0->0 (l24,R12,F6):0->0
+DELTA8 flip 2 pattern ch l22:0 l24:0 hand-lemma ok | splits (l24,R8,F8):0->0
+PROGRESS 0.5 cases 2/4 (171 s)
+DELTA6 flip 2 pattern hc l18:0 l20:0 l22:0 l24:0 hand-lemma ok | splits (l18,R6,F6):0->0 (l20,R6,F8):0->0 (l20,R8,F6):0->0 (l22,R6,F10):0->0 (l22,R8,F8):0->0 (l22,R10,F6):0->0 (l24,R6,F12):0->0 (l24,R8,F10):0->0 (l24,R10,F8):0->0 (l24,R12,F6):0->0
+DELTA8 flip 2 pattern hc l22:0 l24:0 hand-lemma ok | splits (l24,R8,F8):0->0
+PROGRESS 0.75 cases 3/4 (254 s)
+DELTA6 flip 2 pattern hh l18:0 l20:0 l22:0 l24:0 hand-lemma ok | splits (l18,R6,F6):0->0 (l20,R6,F8):0->0 (l20,R8,F6):0->0 (l22,R6,F10):0->0 (l22,R8,F8):0->0 (l22,R10,F6):0->0 (l24,R6,F12):0->0 (l24,R8,F10):0->0 (l24,R10,F8):0->0 (l24,R12,F6):0->0
+DELTA8 flip 2 pattern hh l22:0 l24:0 hand-lemma ok | splits (l24,R8,F8):0->0
+PROGRESS 1.0 cases 4/4 (334 s)
+ALLCHECKS ok

@@ -1,0 +1,17 @@
+CONTROL six-crossing count 3C flip 0: {18: 180, 20: 3198} expected {18: 180, 20: 3198} ok
+CONTROL six-crossing count 3C flip -1: {18: 90, 20: 1722} expected {18: 90, 20: 1722} ok
+CONTROL six-crossing count 2H flip 0: {18: 180, 20: 3198} expected {18: 180, 20: 3198} ok
+CONTROL six-crossing count 2H flip -1: {18: 90, 20: 1722} expected {18: 90, 20: 1722} ok
+DELTA6 flip 0 pattern cc l18:0 l20:0 l22:42 l24:318 hand-lemma ok | splits (l18,R6,F6):180->180 (l20,R6,F8):1476->1476 (l20,R8,F6):1722->1722 (l22,R6,F10):12294->12294 (l22,R8,F8):17682->17724 (l22,R10,F6):15024->15024 (l24,R6,F12):100656->100656 (l24,R8,F10):150612->150738 (l24,R10,F8):160332->160524 (l24,R12,F6):126900->126900
+DELTA8 flip 0 pattern cc l22:0 l24:0 hand-lemma ok | splits (l24,R8,F8):1968->1968
+PROGRESS 0.25 cases 1/4 (85 s)
+DELTA6 flip 0 pattern ch l18:0 l20:0 l22:42 l24:318 hand-lemma ok | splits (l18,R6,F6):180->180 (l20,R6,F8):1476->1476 (l20,R8,F6):1722->1722 (l22,R6,F10):12294->12294 (l22,R8,F8):17682->17724 (l22,R10,F6):15024->15024 (l24,R6,F12):100656->100656 (l24,R8,F10):150612->150738 (l24,R10,F8):160332->160524 (l24,R12,F6):126900->126900
+DELTA8 flip 0 pattern ch l22:0 l24:0 hand-lemma ok | splits (l24,R8,F8):1968->1968
+PROGRESS 0.5 cases 2/4 (144 s)
+DELTA6 flip 0 pattern hc l18:0 l20:0 l22:42 l24:318 hand-lemma ok | splits (l18,R6,F6):180->180 (l20,R6,F8):1476->1476 (l20,R8,F6):1722->1722 (l22,R6,F10):12294->12294 (l22,R8,F8):17682->17724 (l22,R10,F6):15024->15024 (l24,R6,F12):100656->100656 (l24,R8,F10):150612->150738 (l24,R10,F8):160332->160524 (l24,R12,F6):126900->126900
+DELTA8 flip 0 pattern hc l22:0 l24:0 hand-lemma ok | splits (l24,R8,F8):1968->1968
+PROGRESS 0.75 cases 3/4 (223 s)
+DELTA6 flip 0 pattern hh l18:0 l20:0 l22:42 l24:318 hand-lemma ok | splits (l18,R6,F6):180->180 (l20,R6,F8):1476->1476 (l20,R8,F6):1722->1722 (l22,R6,F10):12294->12294 (l22,R8,F8):17682->17724 (l22,R10,F6):15024->15024 (l24,R6,F12):100656->100656 (l24,R8,F10):150612->150738 (l24,R10,F8):160332->160524 (l24,R12,F6):126900->126900
+DELTA8 flip 0 pattern hh l22:0 l24:0 hand-lemma ok | splits (l24,R8,F8):1968->1968
+PROGRESS 1.0 cases 4/4 (303 s)
+ALLCHECKS ok

@@ -6,7 +6,7 @@
 - **Proved with a small finite computation (l = 18, 20): Theorem 5 of #102 v5.** The four-crossing tables reproduce every coefficient: 12, 30, 42, 24 at l = 18 and 30, 114, 204, 12 at l = 20. They give 0 at every l ≤ 16, 0 for flips outside bilayers −2…1, and the same values for all 512 patterns of the neighbouring letters, at l = 18 and at l = 20. So the law is linear, with no products, for a structural reason. The l = 18 table is small: 1038 arcs, 7713 meeting pairs.
 - **Why 18:** half-structure asymmetry first appears with 6 bonds. All 12 asymmetric six-bond shapes carry their asymmetry on the same pairing on both sides, and two equal pairings cannot close into one polygon. So the first nonzero product needs 6 + 8 bonds plus 4 crossing bonds: 18.
 - **Checked exhaustively on finite windows:** the surgery is a bijection in every run (3C and 2H at every flip, both atoms, to l = 20; every c/h word of 7 bilayers to l = 16; of 5 bilayers to l = 18). Three wrong twists fail in every run, as they must.
-- **Still open:** the absolute constant (diamond's 349236, 2362200) is the Guttmann–Jensen count. A local argument gives only the differences between stackings. The law at l = 22, 24 needs the tables with 12–14 bonds and the six-crossing terms (not run).
+- **Still open:** the absolute constant (diamond's 349236, 2362200) is the Guttmann–Jensen count. A local argument gives only the differences between stackings. The laws at l = 22 and 24 are now proved the same way (§8).
 
 **Status:** all runs done; 2208 surgery runs, 0 failures; every table check passes (`data/CHECKS.txt`). Job polybij printed FINAL FAIL only because its count found 25 ok files for 24 parts: the output of the second job had landed in the same folder. All 24 parts are ok, and the count is fixed. Job polyhalves20 ended FINAL ok. Not yet in a paper. Lean has not been started. The plan and its size are in §7.
 
@@ -208,3 +208,91 @@ LEADS:
 2. The l = 22, 24 local laws via Theorem B: tables with F_max 14–16, plus the six-crossing terms through inclusion–exclusion. The 108 b pair term at l = 24 should appear as a product of two flips' asymmetries.
 3. Lean: part 1 + 2 (Theorem A) first. It has no tables and is a clean standalone result.
 4. The same surgery for close-packed spheres (fcc versus hcp, Benito et al. 2023), and for the ice series of study 2026-11-15-ring-counts-stackings, which uses even subgraphs with the same cut.
+
+## 8. Lengths 22 and 24 (15 November 2026, second run)
+
+**Verdict.**
+- **Proved, up to diamond's constants (finite tables + Theorems A, B):** for the lower atom of bilayer 0,
+
+      p22 = 16716612 − 96·h[−3] − 390·h[−2] − 1029·h[−1] − 1437·h[0] − 552·h[1] − 192·h[2]
+      p24 = 118335744 − 732·h[−3] − 507·h[−2] − 4299·h[−1] − 7200·h[0] + 618·h[1] − 1128·h[2]
+                      − 54·h[−2]h[−1] − 72·h[−1]h[0] − 90·h[0]h[1]
+
+  For the upper atom, reflect the indices (j → −j), as at 18 and 20.
+- **p22 is linear; p24 has exactly three products, all of neighbouring bilayers.** No other product, and no bilayer outside −3…2, occurs.
+- **Checked against direct enumeration, exactly:** all 512 c/h words on bilayers −4…4, both atoms, l = 18…24 (1024 runs, new), and all 80 sites of the 11 named polytypes (ring-counts study). Every number matches.
+- **Theorem 2 of the ring-counts study follows:** averaged over a period, p22 = 16716612 − 3696 f and p24 = 118335744 − 13248 f − 216 ⟨hh⟩, where ⟨hh⟩ is the frequency of two neighbouring h bilayers. Since b = 2(f − ⟨hh⟩), this is 118335744 − 13464 f + 108 b. So both period laws are now proved (up to the diamond constants), not only checked.
+- **What the b term is, locally:** a pair of neighbouring h bilayers costs 216 polygons of length 24 more than the two h bilayers cost separately (54 + 72 + 90, by the pair's place relative to the site). It comes from four-crossing polygons with 14 bonds on one side of the flipped bilayer and 6 on the other. The asymmetry of a 14-bond half linkage depends on whether the bilayer next to the cut is h; it never depends on the bilayer after that, and no half linkage of 12 bonds or fewer depends on either. A c/h boundary is where the pair term is missing, hence the +108 per boundary.
+- **Six crossings now count:** they add +24 (h[−1]) and +42 (h[0]) at l = 22, and −24, +186, +318, −48 (h[−2] … h[1]) at l = 24, all linear. Without them the law fails (negative control). Eight crossings give 0.
+- **Negative controls fail as required:** the tables built with a class-preserving mirror in place of the half-turn (WRONG=1), and the law with the six-crossing terms left out, each disagree with the direct counts.
+
+**Status:** all jobs FINAL ok (one first run failed a check that was too strict and was rerun; §8.5). Not in #102 (DICTO's read of v6 is pending). Lean not started.
+
+### 8.1 Four crossings (`halves24.py`)
+
+- The same Theorem B sum as §3, to F = 14 bonds per side. The code was written again. Each meeting pair of arcs is counted through its 8 ordered representations and the total divided by 8, with no dedup set. To F = 12 it gives exactly the tables of `halves.py` for all 8 letter patterns, unweighted and with 6 root weights (`check12.txt`).
+- **Sizes at F = 14:** 45834 arcs from a boundary atom, 18477 configurations (S, M, F) per letter pattern, about 10400 with A ≠ 0.
+- **No side with A ≠ 0 has fewer than 6 bonds** (read off the tables). So at l ≤ 24 both sides have 6 to 14 bonds, and an arc has at most 12.
+- **Reach lemma.** An arc of at most 12 bonds goes down to the near atom N_3 at most: 5 bonds down and 5 up. The far atom F_3 would need its vertical bond twice. So a table depends on the letters c[0..3] of its half only, which the code asserts. It follows that Δ_kf depends only on h[kf−2], h[kf−1], h[kf+1], h[kf+2]. It is computed for all 512 patterns of kf ± 1, 2, 3 at flips kf = −4…3, and the letters at kf ± 3 indeed never matter.
+- **Results, all other letters c (four-crossing part of Δ_kf):**
+
+| kf | −3 | −2 | −1 | 0 | 1 | 2 |
+|---|---|---|---|---|---|---|
+| l = 22 | −96 | −390 | −1053 | −1479 | −552 | −192 |
+| l = 24 | −732 | −483 | −4485 | −7518 | +666 | −1128 |
+
+  Flips −4 and 3 give 0. At l = 18 and 20 every pattern reproduces Theorem 5 again.
+
+### 8.2 Six and eight crossings (`six.py`)
+
+- An n-crossing polygon is a cyclic chain of n/2 disjoint root arcs and n/2 disjoint far arcs. `six.py` counts these chains exactly in G (bilayer kf c) and in G′ (kf h). Each shape is weighted by its atoms of the root's type and divided by n, its number of representations. This is the product structure p = Σ w·f evaluated directly. No symmetrisation is used, so it needs no extra lemma.
+- **Positive control:** the absolute numbers of polygons that cross bilayer 0 (or −1) exactly six times are 180 and 3198 (90 and 1722) at l = 18, 20, in 3C and in 2H. They equal the crossing profiles of the direct enumeration (ring-counts study, `diag.txt`).
+- **Lemma 7, extended (by hand, confirmed on every line):**
+  - a side with exactly 6 bonds (three 2-bond arcs) has no asymmetry, so at l = 22 only the split (8, 8) can contribute, and at l = 24 only (8, 10) and (10, 8);
+  - eight crossings at l = 24 need four 2-bond arcs on each side, which have no asymmetry by the same argument, so their term is 0;
+  - ten crossings need at least 30 bonds.
+- **Arcs of at most 8 bonds see c[0..2] only** (asserted), so the six-crossing term depends only on h[kf ± 1]. It turns out not to depend on them:
+
+| kf | −3 | −2 | −1 | 0 | 1 | 2 |
+|---|---|---|---|---|---|---|
+| l = 22 | 0 | 0 | +24 | +42 | 0 | 0 |
+| l = 24 | 0 | −24 | +186 | +318 | −48 | 0 |
+
+### 8.3 The laws (`law.py`)
+
+- Δ_kf = (four-crossing part) + (six-crossing part) + (eight-crossing part) exactly at l ≤ 24. The two-crossing part is 0 by Theorem A.
+- p(word) is built by telescoping from 3C for all 4096 words on bilayers −6…5, once flipping the letters in increasing order and once in decreasing order. The two agree on every word, which checks that the tables are consistent.
+- Möbius inversion gives the multilinear laws above. The window edges −6 and 5 never occur.
+- **Proof of the laws (up to the constants).** Telescope over flips: each flip changes p_l by its tabulated Δ, which depends only on the listed neighbour letters. The constants 16716612 and 118335744 are diamond's values (2·A038515, Guttmann–Jensen 2009); they are not proved here.
+
+### 8.4 The product terms (`pairterm.py`)
+
+- Δ at l = 24, split by (R, F) = (root bonds, far bonds). Switching one neighbour letter changes only the split (14, 6) when the neighbour is on the root side, or (6, 14) when it is on the far side, and only for the neighbour next to the flipped bilayer:
+  - h[−1] changes Δ_−2 by −54 and h[−2] changes Δ_−1 by −54;
+  - h[0] changes Δ_−1 by −72 and h[−1] changes Δ_0 by −72;
+  - h[1] changes Δ_0 by −90 and h[0] changes Δ_1 by −90.
+- The two directions agree, as they must for a product term.
+- **Half tables:** switching the half's first bilayer c → h changes its asymmetry first (and only) at F = 14, both unweighted and weighted. Switching its second bilayer changes nothing up to F = 14.
+
+### 8.5 Runs and files
+
+- Jobs (job gate, pilots ≤ 5 min first):
+  - polylaw24-tables: four-crossing tables + check12 + WRONG=1 control;
+  - polylaw24-six-dbb (flips 0, 1, 2), polylaw24-six (flips −3, −2, −1, second host), polylaw24-sixneg;
+  - polypair24;
+  - polylocal24-dbb (chunks 0–27), polylocal24-dbb2 (chunks 28–31, moved from the overloaded second host);
+  - polylawfinal (law + two negative controls).
+- polylaw24-six ended FINAL FAIL: its check that the root half is the same in G and G′ compared letters exactly. For kf < 0 the letter construction runs upward, so G′'s root half comes out with its letters exchanged by the toggle, which is a global isometry. The check now compares up to the toggle. Its DELTA values were kept in `data/law24/node-firstrun/`, and the rerun (polylaw24-sixneg) gave the same values with ALLCHECKS ok.
+- Files:
+  - `scripts/halves24.py`, `six.py`, `law.py`, `pairterm.py`, `run_law24.sh`, `run_local24.sh` (direct enumeration with the unchanged `rings.py` of the ring-counts study), `run_lawfinal.sh`;
+  - `data/law24/`: `halves24*.txt`, `tables24.txt.gz` (all four-crossing tables to F = 14), `check12.txt`, `six24-*.txt`, `local24-*.txt`, `pairterm24.txt`, `law*.txt`.
+
+CONCLUSION (§8):
+- p22 and p24 are proved local laws, up to diamond's constants. p22 is linear in h[−3..2]; p24 adds three neighbour products −54, −72, −90.
+- The period laws 16716612 − 3696 f and 118335744 − 13464 f + 108 b follow. The b term is the neighbour-pair interaction, carried by four-crossing polygons with a 14-bond half linkage that reaches across the next bilayer.
+- STATUS: proved and exactly checked (1024 local runs, 80 named sites); not in #102.
+
+LEADS (§8):
+1. l = 26: tables to F = 16, six-crossing splits up to (10, 10); products of bilayers two apart may first appear there.
+2. A hand proof that half asymmetry ignores the second bilayer up to F = 14. It would shorten the Lean part 5 tables.
+3. Placement in #102 after DICTO's read of v6 (DICTO decides).
