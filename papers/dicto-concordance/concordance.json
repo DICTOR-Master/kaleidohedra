@@ -9228,7 +9228,15 @@
    "date": "2026-11-15",
    "fix": "next version of #43 (DICTO decides)"
   },
-  {"paper": "#103 The DICTO Yantra (v3, v4)", "where": "Theorem 10, Certificate: factors of the degree-1744 resultant", "wrong": "u (1^178), two other linear factors (1^274, 1^178)", "right": "(u - 1)^178 u^274 (u + 1)^178 (u^2 + 1)^185 f348 f396", "source": "studies/2026-11-15-yantra-uniqueness (data/E-factors.txt)", "date": "2026-11-15", "fix": "#103 v5 draft (Theorem 10 certificate)"}
+  {
+   "paper": "#103 The DICTO Yantra (v3, v4)",
+   "where": "Theorem 10, Certificate: factors of the degree-1744 resultant",
+   "wrong": "u (1^178), two other linear factors (1^274, 1^178)",
+   "right": "(u - 1)^178 u^274 (u + 1)^178 (u^2 + 1)^185 f348 f396",
+   "source": "studies/2026-11-15-yantra-uniqueness (data/E-factors.txt)",
+   "date": "2026-11-15",
+   "fix": "#103 v5 draft (Theorem 10 certificate)"
+  }
  ],
  "modus_operandi": {
   "note": "DICTO 7 Nov 2026: 'as with all such mess-ups from now on ... only happens once law!' and 'maybe add to concordance under rules of operation — modus operandi'. How the work is run.",
@@ -9762,7 +9770,8 @@
   "book-permutohedron-paradigm": [
    "Prop. 14.4(ii): 'the five such graphs' -> the SIX connected graphs on four vertices give Fedorov's five parallelohedra (both trees, path and star, give the parallelepiped) (found 15 Nov, study 2026-11-15-palomar-permutohedron)",
    "Ch. 15: credit OEIS A343433 for the truncated octahedron's 44 Hamiltonian cycles, and Polster-Ross for the Minimus extent count (10 792 = 2 x 5396), at the point of use; verify the Polster-Ross source first",
-   "Figure 3.2 partner fill (figures/new/partner-fill.png): top and bottom Unborn Axes cells ran off the frame; re-rendered with wider limits (studies/2026-11-13-paradigm-expansion/scripts/figs_book.py, FINAL ok; 15 Nov edge guard)"
+   "Figure 3.2 partner fill (figures/new/partner-fill.png): top and bottom Unborn Axes cells ran off the frame; re-rendered with wider limits (studies/2026-11-13-paradigm-expansion/scripts/figs_book.py, FINAL ok; 15 Nov edge guard)",
+   "Centre chapters on 4D scutoid tissues: credit A. Mughal, S. J. Cox, D. Weaire, S. R. Burke, S. Hutzler, Demonstration and interpretation of 'scutoid' cells formed in a quasi-2D soap froth, Philos. Mag. Lett. 98 (2018) 358-364, doi:10.1080/09500839.2018.1552806"
   ],
   "book-golden-cycle": [
    "Figure 6.1(c) 'pulled apart by layer' (figures/ch6/apart.jpg): the outer pieces ran off the frame; re-rendered with the whole model inside (render_polar.html default apart distance 17 -> 26, studies/2026-10-16-polar-dharma; 15 Nov edge guard)"
@@ -9775,6 +9784,9 @@
   ],
   "dharma-inside-out": [
    "Figure 'pulled apart by layer' (figures/apart.jpg): outer pieces ran off the frame; re-rendered (same image as Golden Cycle Figure 6.1(c), 15 Nov edge guard)"
+  ],
+  "2026-11-10-scutoids-4d": [
+   "Cite and discuss A. Mughal, S. J. Cox, D. Weaire, S. R. Burke, S. Hutzler, Demonstration and interpretation of 'scutoid' cells formed in a quasi-2D soap froth, Philos. Mag. Lett. 98 (2018) 358-364, doi:10.1080/09500839.2018.1552806 (DICTO 15 Nov): scutoids demonstrated in a real soap froth between two non-parallel plates; prior art for scutoids in foams; author list to be checked against the paper"
   ]
  }
 }
