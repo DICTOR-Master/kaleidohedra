@@ -1,0 +1,20 @@
+PROGRESS 0.00 start
+PROGRESS 0.15 controls ok
+== CONTROL uniform truncated 5-cell, perms of (2,2,2,1,0): corners 20, cells 10, ridges 30, edges 40; edge lengths sqrt2
+  5 x regular tetrahedron: 4 corners, 6 edges (sqrt2), 4 faces: 4 x triangle side sqrt2  [cells x_S = min for |S| = [1]]
+  5 x truncated tetrahedron (uniform): 12 corners, 18 edges (sqrt2), 8 faces: 4 x regular hexagon side sqrt2; 4 x triangle side sqrt2  [cells x_S = min for |S| = [4]]
+== CONTROL uniform cantellated 5-cell, perms of (2,2,1,1,0): corners 30, cells 20, ridges 80, edges 90; edge lengths sqrt2
+  5 x regular octahedron: 6 corners, 12 edges (sqrt2), 8 faces: 8 x triangle side sqrt2  [cells x_S = min for |S| = [1]]
+  10 x triangular prism (right, square sides): 6 corners, 9 edges (sqrt2), 5 faces: 3 x square side sqrt2; 2 x triangle side sqrt2  [cells x_S = min for |S| = [2]]
+  5 x cuboctahedron (uniform): 12 corners, 24 edges (sqrt2), 14 faces: 6 x square side sqrt2; 8 x triangle side sqrt2  [cells x_S = min for |S| = [4]]
+== A: perms of (phi^2, phi^2, phi^2, phi, 0): corners 20, cells 10, ridges 30, edges 40; edge lengths sqrt2, phi*sqrt2; ratio^2 = 3/2+1/2*sqrt5 (phi^2 = 3/2+1/2*sqrt5)
+  5 x regular tetrahedron: 4 corners, 6 edges (sqrt2), 4 faces: 4 x triangle side sqrt2  [cells x_S = min for |S| = [1]]
+  5 x truncated tetrahedron, golden (hexagon sides 1 : phi): 12 corners, 18 edges (phi*sqrt2, sqrt2), 8 faces: 4 x hexagon, sides sqrt2 and phi*sqrt2 in turn; 4 x triangle side sqrt2  [cells x_S = min for |S| = [4]]
+== B: perms of (phi^2, phi^2, 1, 1, 0): corners 30, cells 20, ridges 80, edges 90; edge lengths sqrt2, phi*sqrt2; ratio^2 = 3/2+1/2*sqrt5 (phi^2 = 3/2+1/2*sqrt5)
+  5 x regular octahedron: 6 corners, 12 edges (phi*sqrt2), 8 faces: 8 x triangle side phi*sqrt2  [cells x_S = min for |S| = [1]]
+  10 x triangular prism, golden (sides golden rectangles): 6 corners, 9 edges (phi*sqrt2, sqrt2), 5 faces: 3 x rectangle phi*sqrt2 x sqrt2; 2 x triangle side phi*sqrt2  [cells x_S = min for |S| = [2]]
+  5 x cuboctahedron, golden (rectangles 1 : phi, triangles of two sizes): 12 corners, 24 edges (phi*sqrt2, sqrt2), 14 faces: 6 x rectangle phi*sqrt2 x sqrt2; 4 x triangle side phi*sqrt2; 4 x triangle side sqrt2  [cells x_S = min for |S| = [4]]
+PROGRESS 0.30 exact analysis written
+PROGRESS 0.65 A
+PROGRESS 1.00 B
+FINAL ok
