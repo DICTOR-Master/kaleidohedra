@@ -80,6 +80,43 @@ Its count of 45 regions (Proposition 11) therefore belongs to the unique Kulaich
   - f348 + 1 has no root in Theorem 10's interval;
   - Rh345 (DICTO's 3-4-5 rhombus, u = 3/4 exactly, which meets (a), (b) and (c) but not (d)): A has three real t-roots in (0, 3/4), and B rejects all three. So the census does catch a yantra that misses (d) by only 2.4·10⁻⁵.
 
+## The two tiny extra triangles measured (DICTO, 15 Nov 2026: "yes measure them")
+
+`scripts/s5_tiny_triangles.py` (job ytiny, FINAL ok; pilot ytiny-pilot) rebuilds Theorem 10's yantra as s3 does: f348's root in Theorem 10's interval, the t-root of A with B = 0, S from G, the Krawczyk box of radius 1e-300 (one solution certified), then the whole yantra in Arb balls at 2400 bits. The arrangement's combinatorics is read from a double-precision copy of it (the face walk of studies/2026-11-08-sri-yantra/scripts/figure.py, copied). That is the arrangement certified in #103 Proposition 11. Every corner is then recomputed in Arb as the meeting point of its two lines; the largest corner ball has radius 4.2e-591.
+
+Checks (all hold): 45 odd regions (14, 10, 12, 8, 1), 41 triangles, 4 four-sided; the two smallest regions are the mirror pair in ring 3 and are certified smaller than every other region; the bounded regions' areas add up to the area of the union of the nine triangles, integrated slab by slab (0.532851924 both ways, no enclosed gap); the two great triangles have equal area; t5's corner lies on the far side of t4's right leg (certified sign).
+
+Values (r = the circle's radius = 1/2 in #103's units; certified bounds, rounded outward; the log prints "+/- 1.98e-12" on the signed distance only because Arb's 8-digit display adds its rounding to the radius):
+
+| quantity | certified value |
+|---|---|
+| tiny triangle (p, r, c) area | [2.312, 2.313]e-7 r² = [5.782, 5.783]e-8 D² |
+| / great triangle (1.228 r²) | [1.882, 1.883]e-7 |
+| / circle | [7.361, 7.362]e-8 |
+| / smallest other triangle (ring 4, at t4 right leg, t5 right leg, t6 base, t9 right leg) | [2.570, 2.571]e-4 (about 1/3890) |
+| its sides | [7.076, 7.077]e-4, [7.208, 7.209]e-4, [7.682, 7.683]e-4 r |
+| its inradius | [2.105, 2.106]e-4 r |
+| mirror image | same area (difference certified 0 to the ball width) |
+| white sliver (p, q, c), an even region | area [8.228, 8.229]e-7 r²; sides 7.077e-4, 2.565e-3, 2.934e-3 r; inradius 2.651e-4 r |
+| four-sided A (ring 3) | area [0.01115, 0.01116] of a great triangle = 15.22 x smallest other triangle; short side q-c [2.934, 2.935]e-3 r; longest 0.1862 r |
+| four-sided B (ring 4) | area [0.007417, 0.007418] of a great triangle = 10.13 x smallest other triangle; short side p-q [2.564, 2.565]e-3 r; longest 0.1505 r |
+| smallest other triangle | area [8.999, 9.000]e-4 r² = [7.325, 7.326]e-4 of a great triangle |
+| overshoot: signed distance of t5's corner c from t4's right leg | [-6.417, -6.416]e-4 r (= -0.000320824 D) |
+| overshoot along t5's base, c-p | [7.076, 7.077]e-4 r |
+
+Drawing scale (pen line 0.1 mm):
+
+| radius | tiny triangle sides | inradius | area | overshoot | A short side | B short side |
+|---|---|---|---|---|---|---|
+| 10 cm | 70.8, 72.1, 76.8 µm | 21.1 µm | 2313 µm² | 64.2 µm | 293 µm | 256 µm |
+| 1 m | 0.708, 0.721, 0.768 mm | 0.211 mm | 0.2313 mm² | 0.642 mm | 2.93 mm | 2.56 mm |
+
+So at a radius of 10 cm the whole tiny triangle is narrower than the pen line and t4's leg passes the corner by less than the line's width: invisible. The triangle's inside first shows when its inradius exceeds half the line width, at a radius of about 24 cm (0.05 mm / 2.1056e-4 = 237 mm); at a radius of 1 m it is a speck with sides of about 0.7 mm. In #103 v5 these numbers are Table 6 and the paragraph after the list of deviations (§10.1).
+
+Files: `scripts/s5_tiny_triangles.py`, `data/tiny-triangles.json`, `logs/s5_tiny.log`, `logs/s5-pilot.log` (pilot: the same script before the union-area check was made exact; same values).
+
+Note for #103: Proposition 11 calls its smallest certified value 5.8e-8 "the doubled area of one of the two tiny triangles". The certified area itself is 5.782e-8 (doubled area 1.156e-7), so that phrase needs checking against certified_counts.py; it was not changed here.
+
 ## Credits (at point of use)
 
 - **Problem and sources.** Kulaichev (1984) posed the problem. Pustynski (2014) gave the numerical solution and the remark on the extra triangles. Chiodo (2021) gave the form of Huet's conditions and the statement that uniqueness is open. Huet (2002) gave the conditions themselves. Rao (1998) is credited as in #103.

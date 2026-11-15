@@ -1,0 +1,271 @@
+{
+ "tiny triangle area / great triangle area": {
+  "value": "[1.882e-07, 1.883e-07]",
+  "mid": 1.8826502259563293e-07,
+  "rad": 0.0,
+  "unit": "ratio"
+ },
+ "tiny triangle area / circle area": {
+  "value": "[7.361e-08, 7.362e-08]",
+  "mid": 7.361886861287183e-08,
+  "rad": 0.0,
+  "unit": "ratio"
+ },
+ "tiny triangle area / smallest proper triangle area": {
+  "value": "[0.000257, 0.0002571]",
+  "mid": 0.00025700122132797296,
+  "rad": 0.0,
+  "unit": "ratio"
+ },
+ "tiny triangle area (diameter 1)": {
+  "value": "[5.782e-08, 5.783e-08]",
+  "mid": 5.782012419994759e-08,
+  "rad": 0.0,
+  "unit": "D^2"
+ },
+ "tiny triangle area / radius^2": {
+  "value": "[2.312e-07, 2.313e-07]",
+  "mid": 2.3128049679979036e-07,
+  "rad": 0.0,
+  "unit": "r^2"
+ },
+ "tiny triangle side 1 / radius": {
+  "value": "[0.0007076, 0.0007077]",
+  "mid": 0.0007076820549913491,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "tiny triangle side 2 / radius": {
+  "value": "[0.0007208, 0.0007209]",
+  "mid": 0.000720894299055504,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "tiny triangle side 3 / radius": {
+  "value": "[0.0007682, 0.0007683]",
+  "mid": 0.0007682007836990506,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "tiny triangle inradius / radius": {
+  "value": "[0.0002105, 0.0002106]",
+  "mid": 0.00021056345937495098,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "mirror tiny triangle area minus this one (|diff|)": {
+  "value": "|x| <= 0",
+  "mid": 0.0,
+  "rad": 0.0,
+  "unit": "D^2"
+ },
+ "white sliver (p, q, c) area / radius^2": {
+  "value": "[8.228e-07, 8.229e-07]",
+  "mid": 8.228717394943841e-07,
+  "rad": 0.0,
+  "unit": "r^2"
+ },
+ "white sliver side 1 / radius": {
+  "value": "[0.0007076, 0.0007077]",
+  "mid": 0.0007076820549913491,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "white sliver side 2 / radius": {
+  "value": "[0.002564, 0.002565]",
+  "mid": 0.002564866273047218,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "white sliver side 3 / radius": {
+  "value": "[0.002934, 0.002935]",
+  "mid": 0.002934376309165924,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "white sliver inradius / radius": {
+  "value": "[0.0002651, 0.0002652]",
+  "mid": 0.0002651463607475001,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "four-sided B (ring 4) area / great triangle area": {
+  "value": "[0.007417, 0.007418]",
+  "mid": 0.007417054290195515,
+  "rad": 0.0,
+  "unit": "ratio"
+ },
+ "four-sided B area / smallest proper triangle area": {
+  "value": "[10.12, 10.13]",
+  "mid": 10.12504598546892,
+  "rad": 0.0,
+  "unit": "ratio"
+ },
+ "four-sided B shortest side / radius": {
+  "value": "[0.002564, 0.002565]",
+  "mid": 0.002564866273047218,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "four-sided B longest side / radius": {
+  "value": "[0.1504, 0.1505]",
+  "mid": 0.15046737923610282,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "four-sided A (ring 3) area / great triangle area": {
+  "value": "[0.01115, 0.01116]",
+  "mid": 0.01115293974222555,
+  "rad": 0.0,
+  "unit": "ratio"
+ },
+ "four-sided A area / smallest proper triangle area": {
+  "value": "[15.22, 15.23]",
+  "mid": 15.224915895852352,
+  "rad": 0.0,
+  "unit": "ratio"
+ },
+ "four-sided A shortest side / radius": {
+  "value": "[0.002934, 0.002935]",
+  "mid": 0.002934376309165924,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "four-sided A longest side / radius": {
+  "value": "[0.1862, 0.1863]",
+  "mid": 0.1862144489017565,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "smallest proper triangle area / great triangle area": {
+  "value": "[0.0007325, 0.0007326]",
+  "mid": 0.0007325452448156965,
+  "rad": 0.0,
+  "unit": "ratio"
+ },
+ "smallest proper triangle area / radius^2": {
+  "value": "[0.0008999, 0.0009]",
+  "mid": 0.0008999198354183734,
+  "rad": 0.0,
+  "unit": "r^2"
+ },
+ "great triangle area / radius^2": {
+  "value": "[1.228, 1.229]",
+  "mid": 1.2284836217110209,
+  "rad": 0.0,
+  "unit": "r^2"
+ },
+ "overshoot: signed distance of t5 corner from t4 right leg / radius": {
+  "value": "[-0.0006417, -0.0006416]",
+  "mid": -0.0006416488439506533,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "overshoot along t5 base, |c - p| / radius": {
+  "value": "[0.0007076, 0.0007077]",
+  "mid": 0.0007076820549913491,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "|c - q| / radius (A short side)": {
+  "value": "[0.002934, 0.002935]",
+  "mid": 0.002934376309165924,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "|p - q| / radius (B short side)": {
+  "value": "[0.002564, 0.002565]",
+  "mid": 0.002564866273047218,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "|c - r| / radius": {
+  "value": "[0.0007682, 0.0007683]",
+  "mid": 0.0007682007836990506,
+  "rad": 0.0,
+  "unit": "r"
+ },
+ "drawing_scale": {
+  "10 cm": {
+   "tiny_sides_um": [
+    "[70.7, 70.8]",
+    "[72, 72.1]",
+    "[76.8, 76.9]"
+   ],
+   "tiny_inradius_um": "[21, 21.1]",
+   "tiny_area_um2": "[2.31e+03, 2.32e+03]",
+   "overshoot_um": "[64.1, 64.2]",
+   "along_base_um": "[70.7, 70.8]",
+   "sliver_inradius_um": "[26.5, 26.6]",
+   "A_short_um": "[293, 294]",
+   "B_short_um": "[256, 257]",
+   "smallest_proper_inradius_um": "[1.3e+03, 1.31e+03]"
+  },
+  "1 m": {
+   "tiny_sides_um": [
+    "[707, 708]",
+    "[720, 721]",
+    "[768, 769]"
+   ],
+   "tiny_inradius_um": "[210, 211]",
+   "tiny_area_um2": "[2.31e+05, 2.32e+05]",
+   "overshoot_um": "[641, 642]",
+   "along_base_um": "[707, 708]",
+   "sliver_inradius_um": "[265, 266]",
+   "A_short_um": "[2.93e+03, 2.94e+03]",
+   "B_short_um": "[2.56e+03, 2.57e+03]",
+   "smallest_proper_inradius_um": "[1.3e+04, 1.31e+04]"
+  }
+ },
+ "checks": {
+  "odd": 45,
+  "rings": [
+   14,
+   10,
+   12,
+   8,
+   1
+  ],
+  "triangles": 41,
+  "four_sided": 4,
+  "krawczyk": true,
+  "maxrad": "[4.23e-591 +/- 7.60e-595]"
+ },
+ "smallest_proper": {
+  "ring": 4,
+  "centre": [
+   0.08128290227543376,
+   0.5443910010764411
+  ],
+  "lines": [
+   [
+    "t5 right leg",
+    "t9 right leg"
+   ],
+   [
+    "t4 right leg",
+    "t6 base",
+    "t9 right leg"
+   ],
+   [
+    "t5 right leg",
+    "t6 base"
+   ]
+  ]
+ },
+ "tiny_lines": [
+  [
+   "t4 right leg",
+   "t5 base"
+  ],
+  [
+   "t4 right leg",
+   "t6 right leg"
+  ],
+  [
+   "t5 base",
+   "t5 right leg",
+   "t6 right leg"
+  ]
+ ]
+}

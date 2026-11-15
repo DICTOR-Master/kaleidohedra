@@ -1,0 +1,47 @@
+[    0.2 s] Krawczyk box (radius 1e-300) holds exactly one solution: True  u = 0.7504385160222140244060847
+PROGRESS 0.25 certified yantra rebuilt
+[    0.2 s] odd regions: 45 rings [14, 10, 12, 8, 1] triangles 41 ; bounded regions 78
+[    0.2 s] sum of bounded region areas 0.532851924; union of the nine triangles by scanline 0.532861217
+PROGRESS 0.5 arrangement read
+[    0.3 s] signed distance of t5's corner from t4's right leg (diameter 1): [-0.00032082442 +/- 1.98e-12]
+[    0.3 s] largest corner ball radius: [4.23e-591 +/- 7.60e-595]
+PROGRESS 0.75 measured
+[    0.3 s] tiny triangle area / great triangle area                           [1.882e-07, 1.883e-07]  ratio
+[    0.3 s] tiny triangle area / circle area                                   [7.361e-08, 7.362e-08]  ratio
+[    0.3 s] tiny triangle area / smallest proper triangle area                  [0.000257, 0.0002571]  ratio
+[    0.3 s] tiny triangle area (diameter 1)                                    [5.782e-08, 5.783e-08]  D^2
+[    0.3 s] tiny triangle area / radius^2                                      [2.312e-07, 2.313e-07]  r^2
+[    0.3 s] tiny triangle side 1 / radius                                      [0.0007076, 0.0007077]  r
+[    0.3 s] tiny triangle side 2 / radius                                      [0.0007208, 0.0007209]  r
+[    0.3 s] tiny triangle side 3 / radius                                      [0.0007682, 0.0007683]  r
+[    0.3 s] tiny triangle inradius / radius                                    [0.0002105, 0.0002106]  r
+[    0.3 s] mirror tiny triangle area minus this one (|diff|)                                |x| <= 0  D^2
+[    0.3 s] white sliver (p, q, c) area / radius^2                             [8.228e-07, 8.229e-07]  r^2
+[    0.3 s] white sliver side 1 / radius                                       [0.0007076, 0.0007077]  r
+[    0.3 s] white sliver side 2 / radius                                         [0.002564, 0.002565]  r
+[    0.3 s] white sliver side 3 / radius                                         [0.002934, 0.002935]  r
+[    0.3 s] white sliver inradius / radius                                     [0.0002651, 0.0002652]  r
+[    0.3 s] four-sided B (ring 4) area / great triangle area                     [0.007417, 0.007418]  ratio
+[    0.3 s] four-sided B area / smallest proper triangle area                          [10.12, 10.13]  ratio
+[    0.3 s] four-sided B shortest side / radius                                  [0.002564, 0.002565]  r
+[    0.3 s] four-sided B longest side / radius                                       [0.1504, 0.1505]  r
+[    0.3 s] four-sided A (ring 3) area / great triangle area                       [0.01115, 0.01116]  ratio
+[    0.3 s] four-sided A area / smallest proper triangle area                          [15.22, 15.23]  ratio
+[    0.3 s] four-sided A shortest side / radius                                  [0.002934, 0.002935]  r
+[    0.3 s] four-sided A longest side / radius                                       [0.1862, 0.1863]  r
+[    0.3 s] smallest proper triangle area / great triangle area                [0.0007325, 0.0007326]  ratio
+[    0.3 s] smallest proper triangle area / radius^2                              [0.0008999, 0.0009]  r^2
+[    0.3 s] great triangle area / radius^2                                             [1.228, 1.229]  r^2
+[    0.3 s] overshoot: signed distance of t5 corner from t4 right leg / radius   [-0.0006417, -0.0006416]  r
+[    0.3 s] overshoot along t5 base, |c - p| / radius                          [0.0007076, 0.0007077]  r
+[    0.3 s] |c - q| / radius (A short side)                                      [0.002934, 0.002935]  r
+[    0.3 s] |p - q| / radius (B short side)                                      [0.002564, 0.002565]  r
+[    0.3 s] |c - r| / radius                                                   [0.0007682, 0.0007683]  r
+[    0.3 s] smallest proper triangle: ring 4 centre (0.08128, 0.54439) lines [['t5 right leg', 't9 right leg'], ['t4 right leg', 't6 base', 't9 right leg'], ['t5 right leg', 't6 base']]
+[    0.3 s] tiny triangle lines at its corners: [['t4 right leg', 't5 base'], ['t4 right leg', 't6 right leg'], ['t5 base', 't5 right leg', 't6 right leg']]
+[    0.3 s] radius 10 cm : {'tiny_sides_um': ['[70.7, 70.8]', '[72, 72.1]', '[76.8, 76.9]'], 'tiny_inradius_um': '[21, 21.1]', 'tiny_area_um2': '[2.31e+03, 2.32e+03]', 'overshoot_um': '[64.1, 64.2]', 'along_base_um': '[70.7, 70.8]', 'sliver_inradius_um': '[26.5, 26.6]', 'A_short_um': '[293, 294]', 'B_short_um': '[256, 257]', 'smallest_proper_inradius_um': '[1.3e+03, 1.31e+03]'}
+[    0.3 s] radius 1 m : {'tiny_sides_um': ['[707, 708]', '[720, 721]', '[768, 769]'], 'tiny_inradius_um': '[210, 211]', 'tiny_area_um2': '[2.31e+05, 2.32e+05]', 'overshoot_um': '[641, 642]', 'along_base_um': '[707, 708]', 'sliver_inradius_um': '[265, 266]', 'A_short_um': '[2.93e+03, 2.94e+03]', 'B_short_um': '[2.56e+03, 2.57e+03]', 'smallest_proper_inradius_um': '[1.3e+04, 1.31e+04]'}
+PROGRESS 1.000 done
+FINAL ok
+PILOT-DONE
+[exit 0]
