@@ -171,3 +171,27 @@ New in #102 are the statement at every single site (walk-regular, not vertex-tra
 ## Fidelity of the Lean statement
 
 `DictoLoopEquality.loop_equality` states exactly the counting claim of Theorem 1: for every stacking (periodic or not), every site and every length m, the number of closed non-backtracking loops equals the number at diamond's site. It needs no extra hypothesis; for m = 1, 2 both sides are 0. The explicit series and values (Ihara–Bass, Domb numbers) are **not** part of the formal statement. `nbLoops_finite` makes sure `ncard` is a true count.
+
+---
+
+# The strengthened entry: explicit count and the Fibonacci corollary (2026-11-15, later)
+
+**Question.** Does the explicit count (`loop_count_eq`, `W_closed`) together with the aperiodic Fibonacci corollary lift the Loop Equality entry to Palomar's notability floor of 4?
+
+**Conclusion. Honest estimate: 3.5 out of 5, not reliably 4.** The strengthening makes the entry more complete and easier to judge, but it does not change what an editor will see as the new mathematics.
+- **For.** The formal statement now carries the number itself: every site of every stacking has exactly `loopCount m` loops, with all fifteen of #102's values (m = 6..34) proved, and the closed walks given in closed form (#102 Proposition; the chain form of the Domb numbers). The local loop formula (`Graph.sum_F_eq`) is a general fact about walk-regular graphs with q + 1 neighbours everywhere. In that setting the loops at a single vertex follow from the closed walks alone; for finite graphs this is usually seen only through the Ihara–Bass trace formula. The Fibonacci corollary shows, in the same formal development, that the theorem covers a genuinely aperiodic network, which the periodic-graph zeta literature (Clair–Mokhtari-Sharghi 2001; Guido–Isola–Lapidus 2008) does not reach.
+- **Against.** The closed-walk values for diamond are classical: Domb numbers (Domb 1960; OEIS A002895). So is the reduction of non-backtracking loops to walks (Ihara 1966; Hashimoto 1989; Bass 1992). The explicit count adds a computation, not a new idea. The aperiodicity of the Fibonacci word is classical (Morse–Hedlund 1940; Lothaire 2002, Ch. 2), and the Fibonacci corollary is an instance of the main theorem. The identity with #102's Ihara–Bass series and with Domb's closed form is checked only for small m and n. An editor could still read the whole entry as "Thorpe 1972 plus the standard Ihara–Bass reduction".
+- **What could reach 4.** Proving the Ihara–Bass series for all m. Better still, adding a second, independent result of the same series that is clearly new. Neither is done here.
+
+**Credits at the point of use (Lean doc strings and the outline, Section 7).** Ihara 1966, Hashimoto 1989, Bass 1992 (the recursion and the series); Domb 1960 and OEIS A002895 (Domb numbers); Peter Bala's OEIS comment (chain form); Nagle 1966, Thorpe 1972 (closed walks); Morse–Hedlund 1940 and Lothaire 2002 (Sturmian words, aperiodicity, cut-and-project form); Jagodzinski (the c/h layer rule).
+
+**Extra searches (15 November 2026, web):**
+1. `Fibonacci stacking close-packed polytype aperiodic random walks spectrum`: stacking-disorder and diffraction papers (Varn–Canright–Crutchfield, arXiv cond-mat/0302585 and cond-mat/0203290), Fibonacci-chain hyperuniformity (arXiv 2405.03752), polytype band gaps (arXiv 2306.17756). None treats walk or loop counts on a Fibonacci-stacked network.
+2. `Ihara zeta function aperiodic graph Fibonacci non-backtracking walks quasiperiodic`: periodic-graph zeta functions (arXiv math/0605753, math/0608229, 2102.09486, 1910.12782), non-backtracking walk matrices (arXiv 1706.00851). Nothing on aperiodic or Fibonacci graphs.
+
+**Novelty text for the Fibonacci part:** the Fibonacci stacking itself and its aperiodicity are not claimed as new. The new content is the loop statement on it, which is an instance of #102 Theorem 1.
+
+**Fidelity notes.**
+1. `fibonacci` is defined for all k ∈ ℤ by the cut-and-project form of the Sturmian word, the natural two-sided extension. DICTO's study and #102's checks use the one-sided substitution word (c ↦ ch, h ↦ c, from c). The two are proved equal at positions 0..99 (`isH_eq_word`); equality at every position is the classical Sturmian characterisation and is not formalised.
+2. The steps follow Jagodzinski's rule exactly as in `letters_from_ch` of #102's checks: σ0 = A, σ1 = B, and the step reverses at h layers (`fibonacci_layer_type`).
+3. Aperiodicity is proved both for the type word (`isH_not_periodic`) and for the stacking itself (`fibonacci_not_periodic`, every nonzero shift).

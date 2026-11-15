@@ -53,7 +53,7 @@ Take a site v of G_σ and m ≥ 3. Its four bonds are one vertical bond and thre
 | Lemma 2 (a), (b) | Section 2 consequences (Lemma 2 (c) is not needed for Theorem 1) |
 | Lemma 3 and the A_j recursion | Section 3 |
 | Proof of Theorem 1 (counts at every site equal diamond's) | Section 4 |
-| the explicit series and values (Ihara–Bass, Domb numbers) | **not formalised**; the Lean statement is the equality with diamond's count, which is the content of Theorem 1 |
+| the explicit series and values (Ihara–Bass, Domb numbers) | formalised on 15 Nov as an explicit computable count (Section 7): `loop_count_eq`, with the closed walks in Bala's chain form (`W_closed`); the Ihara–Bass series itself is checked for m ≤ 12 only |
 
 No extra hypothesis is needed: the statement holds for every m ≥ 1 (for m = 1, 2 both counts are 0).
 
@@ -79,3 +79,20 @@ No extra hypothesis is needed: the statement holds for every m ≥ 1 (for m = 1,
 - Lemma 2 (c) is not needed for Theorem 1.
 - The neighbour formula is applied at every atom, not only at sites, so the neighbour graph is 4-regular everywhere; at sites it agrees with `Bond` (`bond_iff`).
 - **No extra hypothesis was needed.**
+
+## 7. The explicit count and the Fibonacci corollary (added 15 Nov 2026)
+
+**Conclusion.** The count in Theorem 1 is now explicit in Lean: `loop_count_eq : (nbLoops σ v m).ncard = loopCount m` for every stacking, site and m ≥ 1, where `loopCount` is a computable integer function. All fifteen values that #102 lists (m = 6, 8, …, 34) are proved from it by kernel evaluation. The aperiodic Fibonacci stacking is a proved instance (`fibonacci_loop_equality`).
+
+**Status:** proved; full clean build FINAL ok; axioms only `propext`, `Classical.choice`, `Quot.sound`.
+
+| #102 | Lean declaration (file) | Notes |
+|---|---|---|
+| "W_m equals W_m at every site of every stacking" and the Proposition (closed walks as a chain) | `W_closed` (`ClosedWalks.lean`): `W i x x = closedWalks i` at every atom of every stacking; `closedWalks (2n) = Σ_a C(n,a)² H(a)`, `H(a) = Σ (a!/(i!j!k!))²` (honeycomb walks, OEIS A002893) | proof: two steps from an even level of diamond give `(1 + gY)(1 + ḡY⁻¹)` in `ℤ[ℤ²][Y, Y⁻¹]`; the constant term of `(gḡ)^a` is `H(a)` because `i d₁ + j d₂ + k d₃` determines `(i, j, k)`. Closed walks: Nagle 1966, Thorpe 1972 (periodic); chain formula: Bala's comment on OEIS A002895 |
+| the Domb numbers (OEIS A002895) | `domb`, `closedWalks_domb_small` | Domb's closed form `Σ C(n,k)² C(2k,k) C(2n−2k,n−k)` equals the chain form for n < 10 (`decide`); the identity for all n (Bala) is **not** formalised |
+| Lemma 3 summed over the four bonds | `Graph.F_eq_FD`, `Graph.FD_sum`, `Graph.sum_F_eq` (`LocalFormula.lean`) | the bond recursions of Hashimoto 1989 and Bass 1992 written as linear maps of the walk data; summing over the bonds at v leaves only `W_i(v,v)`, `W_i(b,b)` and `Σ_b W_i(v,b) = W_{i+1}(v,v)`. So in any graph with q + 1 neighbours everywhere and equal closed-walk counts at all vertices, the loops at a vertex are an explicit integer combination of those counts |
+| "Explicitly, … the values 24, 48, 480, …" | `loopCount`, `loop_count_eq`, `loopCount_values`, `loopCount_values_34` (`Explicit.lean`) | 15 values, m = 6..34, by `decide` / `decide +kernel` (no `native_decide`) |
+| the Ihara–Bass series (Ihara 1966; Hashimoto 1989; Bass 1992) | `iharaBass`, `loopCount_eq_iharaBass_small` | the coefficient form equals `loopCount m` for 1 ≤ m ≤ 12 (kernel check); the identity for all m is **not** formalised |
+| the aperiodic Fibonacci stacking (#102 checks; DICTO's Fibonacci stackings, 28 Oct) | `fibonacci`, `fibonacci_isStacking`, `fibonacci_layer_type`, `isH_eq_word`, `isH_not_periodic`, `fibonacci_not_periodic`, `fibonacci_loop_equality` (`Fibonacci.lean`) | see COMPANIONS.md |
+
+**Difference from #102.** The formula proved is not #102's Ihara–Bass expression but an equivalent recursion (`FD`) applied to the same closed-walk numbers. It needs no finite quotient of diamond, which #102's derivation of the series uses.

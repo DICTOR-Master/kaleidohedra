@@ -186,3 +186,51 @@ The statement is `lean/LoopEquality.lean` (the Challenge) unchanged, and it need
 - Check with the PalomarSubmission preflight that the comparator accepts declarations proved in imported modules; otherwise inline them.
 - Write formalization.yaml v0.4: source #102 with relationship `formalizes`, authors DICTO, automation `agent`, Claude Code (Opus), review `self-assessed`.
 - Note that the notability estimate (3 out of 5) is below the floor of 4.
+
+## Loop Equality strengthened: explicit count and the Fibonacci companion (15 November 2026)
+
+On 15 November DICTO chose "b and possibly c": strengthen #102 with its explicit count, then scout a companion. He then chose the **aperiodic Fibonacci stacking** as the companion, to be formalised in full. **Nothing has been submitted, and no repository has been created.**
+
+**Conclusion.** The formal development now proves the count itself, not only the equality with diamond:
+
+```lean
+theorem loop_count_eq (σ : ℤ → ZMod 3) (hσ : IsStacking σ) (v : Atom) (hv : IsSite σ v)
+    (m : ℕ) [NeZero m] : ((nbLoops σ v m).ncard : ℤ) = loopCount m
+```
+
+Here `loopCount` is an explicit, computable integer function: the local loop formula applied to the closed-walk counts, which come in closed form (#102 Proposition; the Domb numbers in Bala's chain form). All fifteen values in #102 (m = 6, 8, …, 34: 24, 48, 480, …, 27416593190640) are proved from it. The Fibonacci stacking is proved to be a stacking, aperiodic, and to satisfy the Loop Equality with the same explicit count.
+
+**Status:**
+- 11 modules, 2,372 lines, no `sorry` and no `native_decide`.
+- `#print axioms` gives `[propext, Classical.choice, Quot.sound]` for all 15 theorems.
+- Clean build FINAL ok.
+- Notability estimate: 3.5 out of 5, still below the floor of 4 (LITERATURE.md, last part).
+
+**New files** (in `lean/LoopEquality/`; the files from the first proof are unchanged except `Axioms.lean`):
+
+| File | Lines | Content |
+|---|---|---|
+| `ClosedWalks.lean` | 269 | `W_closed`: closed walks at every atom of every stacking = `closedWalks i` (0 for odd i; Σ_a C(n,a)² H(a) for i = 2n). `chain_eq_domb_small`: equals Domb's closed form for n < 10 |
+| `LocalFormula.lean` | 218 | `cA`, `A_eq_sum` (non-backtracking walks as explicit combinations of walks); `nbD`, `FD`, `F_eq_FD`, `FD_sum`; `sum_F_eq`, the local loop formula for graphs with q + 1 neighbours and equal closed-walk counts |
+| `Explicit.lean` | 80 | `loopCount`, `loop_count_eq`, `loopCount_values`, `loopCount_values_34`, `iharaBass`, `loopCount_eq_iharaBass_small` (m ≤ 12), `closedWalks_domb_small` |
+| `Fibonacci.lean` | 303 | `fibonacci`, `fibonacci_isStacking`, `fibonacci_layer_type`, `isH_eq_word` (k < 100), `isH_not_periodic`, `fibonacci_not_periodic`, `fibonacci_loop_equality` |
+| `Axioms.lean` | 23 | `#print axioms` for the 15 theorems |
+| `../SphereLoops.lean` | 50 | companion statement only (#102 Corollary 3, proof `sorry`; not in the library) |
+
+**Correspondence notes:** `loop-equality-outline.md`, Section 7. **Companions:** `COMPANIONS.md`.
+
+**What is not formalised:**
+- the Ihara–Bass series for all m (checked for m ≤ 12);
+- Bala's identity, chain form = Domb's closed form, for all n (checked for n < 10);
+- the equality of the cut-and-project and substitution forms of the Fibonacci word at every position (checked for k < 100; this is the classical Sturmian characterisation).
+
+**Milestone log (15 November 2026).** Quick checks used `lake env lean` on the compute host; the full build ran through the job wrapper. Lean v4.35.0-rc2, Mathlib v4.35.0-rc2.
+
+| Milestone | Content |
+|---|---|
+| (b1) | `ClosedWalks.lean` compiles: `W_closed` (#102 Proposition, closed walks in chain form) |
+| (b2) | `LocalFormula.lean` compiles: `sum_F_eq` (Lemma 3 summed over the bonds, linear in the walk data) |
+| (b3) | `Explicit.lean` compiles: `loop_count_eq`; #102's 15 values by `decide` and `decide +kernel`; Ihara–Bass coefficients agree for m ≤ 12. Control: a deliberately wrong value (`loopCount 24 = 750276793`) is rejected |
+| (f) | `Fibonacci.lean` compiles: stacking, Jagodzinski types, word check, aperiodicity, loop corollary |
+| (g) | full clean rebuild of the `LoopEquality` library (job `loop-explicit-lean`): "Build completed successfully (8942 jobs)". Negative control: no `sorry` or `native_decide` in the sources. Positive control: 15 axiom lines, all `[propext, Classical.choice, Quot.sound]`. **FINAL ok** |
+| (c) | `SphereLoops.lean` (#102 Corollary 3 statement) typechecks with `sorry` |
