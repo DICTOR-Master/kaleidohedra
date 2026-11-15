@@ -21,8 +21,9 @@ DOI = {19: '10.5281/zenodo.23351291'}   # #19's meta line gives the DOI without 
 # chapters: (label, file, part heading or None)
 CH = [('1', 'ch01.html', 'Part One. Inside the five'), ('2', 'ch02.html', None), ('3', 'ch03.html', None), ('4', 'ch04.html', None),
       ('5', 'ch05.html', None), ('6', 'ch06.html', 'Part Two. The five fill space'), ('7', 'ch07.html', None), ('8', 'ch08.html', None),
-      ('9', 'ch09.html', None), ('10', 'ch10.html', None), ('11', 'ch11.html', 'Part Three. Where the five live'), ('12', 'ch12.html', None),
-      ('13', 'ch13.html', None), ('Coda', 'coda.html', None)]
+      ('9', 'ch09.html', None), ('10', 'ch10.html', None), ('11', 'ch11.html', None), ('12', 'ch12.html', 'Part Three. Where the five live'),
+      ('13', 'ch13.html', None), ('14', 'ch14.html', None), ('Coda', 'coda.html', None)]
+# 15 Nov 2026: Chapter 10, Filigree, inserted after One World (DICTO: "yes write it in the Platonic book"); old 10-13 are now 11-14
 # sections that never go into a chapter body: they go to the appendix
 MOVE = r'(\d+\. )?(Reproducibility|Data and reproducibility|Data, scripts and checks|Credits|Naming|References|Sources checked|Sources and sources checked|Sources|Appendix[ AB]*\. The reference library searched|Prior art.*|Relation to known work.*|What is known and what is new|What is new and what is known|In the app|Build it|Remarks)'
 EDITS = [  # (old, new): applied to included text only; each was read in its sentence
@@ -70,7 +71,7 @@ INBOOK = {}     # paper number -> chapter label where it is used first
 REFERRED = set(); styles = set(); sources = {}; INDEX = {}
 INDEX_TERMS = ['Euclid', 'Pacioli', 'Kepler', 'Plato', 'Aristotle', 'Hart', 'Dehn', 'golden ratio', 'golden cut', 'Golden Cut', 'Icosaxes',
                'Unborn Axes', 'Cleo-Icos', 'Antonius', 'AXE', 'CLEO', 'FUJI', 'Lotus seed', 'Chain of Karma', 'Admiral Cap', 'Dogstar',
-               'Sunstar', 'Jewel', 'EKP', 'octet', 'Vacuus', 'Angelus', 'Angeli', 'Mirror Law', 'Reuleaux', 'Ogdoecontahedron', 'OG',
+               'Sunstar', 'Jewel', 'filigree', 'Euclid\'s roof', 'roof plate', 'satellite', 'Stewart', 'EKP', 'octet', 'Vacuus', 'Angelus', 'Angeli', 'Mirror Law', 'Reuleaux', 'Ogdoecontahedron', 'OG',
                'pentakis dodecahedron', 'stella octangula', 'great stellated dodecahedron', '600-cell', '120-cell', '24-cell',
                'snub 24-cell', 'quasicrystal', 'approximant', 'Galois twin', 'Dodeca-13', 'UNITY', 'Sheriff', 'Lone-star', 'roof']
 

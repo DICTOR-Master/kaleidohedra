@@ -1,0 +1,36 @@
+X PASS octet ring: the pieces of the layer that share an edge with the missing octahedron are 6 tetrahedra and 6 octahedra: T 6, O 6
+X PASS octet ring: each shares a whole triangle face with exactly two others, and they close up in one cycle of 12, tetrahedra and octahedra alternating
+X PASS octet ring: the hole (the missing octahedron) has one face on each of the two planes, so it runs right through the band
+X PASS octet ring: every piece lies in the layer between the two planes
+X PASS octet band satellites: on each of the 6 octahedra one tetrahedron seated face to face on its top face, apex on the plane x+y+z = 4, all distinct
+X PASS satellite tetrahedron on an octahedron face: all six edges exactly phi^2/sqrt2 (squared phi^4/2), apex (h, h, h)
+X PASS claw (octahedron with the icosahedron in Pacioli's position): 12 rotations among the 24 of the octahedron keep the icosahedron
+X PASS earrings: those 12 rotations never carry face +++ to face -++, so the earring and its mirror image are a true left and right pair
+COUNT ring full setting {'A': 6, 'I': 1, 'cap': 8}
+saved ../data/ring.png (2400, 1608)
+PROGRESS 0.12
+COUNT bracelet {'A': 12, 'D': 2, 'I': 2, 'S': 3, 'cap': 16}
+saved ../data/bracelet.png (2400, 908)
+PROGRESS 0.22
+COUNT brooch {'A': 6, 'D': 4, 'I': 1, 'R': 8, 'S': 4, 'Z': 9, 'cap': 8}
+saved ../data/brooch.png (2400, 1700)
+PROGRESS 0.32
+COUNT pendant: icosahedral band {'A': 36, 'I': 6, 'gT': 6}
+COUNT necklace: golden loop {'A': 24, 'D': 4, 'I': 4, 'S': 8, 'cap': 32}
+saved ../data/band-loop.png (2400, 1122)
+PROGRESS 0.45
+COUNT earring with satellite (one of the pair) {'A': 6, 'I': 1, 'T': 1}
+saved ../data/earrings.png (2400, 933)
+PROGRESS 0.58
+X PASS stone loop ring: 6 tetrahedra and 6 octahedra of edge 1, whole, face to face
+COUNT satellite pendant (four tetrahedra on alternate faces) {'A': 6, 'I': 1, 'T': 4}
+X PASS pendant: the octahedron with tetrahedra on four alternate faces is the regular tetrahedron of edge 2 phi^2/sqrt2 (apexes pairwise at squared distance 2 phi^4; volume of octahedron + 4 tetrahedra = volume of that tetrahedron)
+COUNT satellite necklace {'A': 24, 'D': 12, 'I': 4, 'S': 8, 'cap': 32}
+saved ../data/variations.png (2400, 2136)
+PROGRESS 0.78
+COUNT satellite bracelet {'A': 12, 'D': 8, 'I': 2, 'S': 3, 'cap': 16}
+COUNT satellite brooch {'A': 6, 'D': 8, 'I': 1, 'R': 8, 'S': 4, 'Z': 9, 'cap': 8}
+saved ../data/satellites.png (2400, 2584)
+PROGRESS 0.95
+X PASS every drawn piece has faces
+FINAL ok
