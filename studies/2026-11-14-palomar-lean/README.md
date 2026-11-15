@@ -4,7 +4,7 @@ DICTO said yes to preparing a Palomar submission on 14 November 2026. This study
 
 **Conclusion.** The first entry should be **#43 Theorem 4, the octahedral constant 3**, with the covering lemma and sharpness in the same Challenge. The second should be **#102, the Loop Equality**: it is the most notable result, but it is a much larger formalisation. The Challenge statements of both compile against Palomar's toolchain (`lean/`, every proof `sorry`).
 
-**Status:** rules read; workspace built (FINAL ok); statements typecheck; proofs not started.
+**Status:** rules read; workspace built (FINAL ok); statements typecheck. **15 Nov: #43 Theorem 4 is fully proved in Lean** (`lean/OctahedralNestingProof.lean`, no `sorry`, only the three allowed axioms; §5). On 15 Nov DICTO decided that it will **not** be the first Palomar entry, because the covering lemma is known (LITERATURE.md). No Palomar repository was prepared.
 
 ## 1. Rules (read 14 Nov 2026)
 
@@ -91,7 +91,7 @@ theorem octahedral_nesting {ι : Type*} [Fintype ι] [Nonempty ι]
     halfspaceBody n h ⊆ (3 : ℝ) • footHull n h
 ```
 
-It is accompanied by `covering` (∀ unit u, w, ∃ an octahedral rotation g with 1/√3 ≤ ⟪g u, w⟫), `cube_admissible` and `octahedral_nesting_sharp` (for c < 3 the cube is not inside c·P).
+It is accompanied by `covering` (∀ unit u, w, ∃ an octahedral rotation g with 1/√3 ≤ ⟪g u, w⟫), `cube_admissible` and `octahedral_nesting_sharp` (for 0 ≤ c < 3 the cube is not inside c·P; the hypothesis 0 ≤ c was added on 15 Nov, §5).
 
 **Fidelity notes for the informal account:**
 1. The statement is made in the standard frame (symmetry axes along the coordinate axes). The paper's statement for any frame follows by rotating S.
@@ -119,3 +119,42 @@ The covering lemma uses the moments over the 24 rotations and the cubic (t − m
   - review: self-assessed
   - sources: #43 (DOI) with relationship `formalizes`. Since #43 already presents the result, this is not `original-proof`.
 - Run the PalomarSubmission reusable-workflow preflight.
+
+## 5. Formal proof of #43 Theorem 4 (15 Nov 2026)
+
+DICTO approved the formalisation on 15 Nov 2026. Files:
+- `lean/OctahedralNesting.lean`: the statement (Challenge form, four `sorry`s). Changed from 14 Nov in one place: `octahedral_nesting_sharp` now has the hypothesis `0 ≤ c` (see note 6 below).
+- `lean/OctahedralNestingProof.lean`: the same definitions and theorems, all proved (274 lines). It ends with four `#print axioms` lines.
+
+**Proof route.** This is the shorter route from §4: it does not use Theorem 1.
+- (a) The 24 rotations are an explicit list `rot : Fin 24 → …` of signed permutations. `decide` checks that each has determinant `sign σ · ∏ sᵢ = 1`, that the list has no repeats, and that it contains every rotation of the group.
+- (b) Covering lemma, in a general form: `‖u‖‖w‖/√3 ≤ ⟪g u, w⟫` for some g. Write t_g = ⟪g u, w⟫. The identities Σt = 0, Σt² = 8‖u‖²‖w‖² and Σt³ = 0 over the list are `ring` identities. Then use the cubic (M − t)(t + M)² with M = ‖u‖‖w‖/√3: it is the paper's cubic, since 1/(3m) = m at m = 1/√3.
+- (c) Separation: a point outside the finite foot-point hull is strictly separated from it (`geometric_hahn_banach_closed_point`, then the Riesz vector `InnerProductSpace.toDual`).
+- (d) Theorem 4. For x in the body, every hᵢ ≥ ‖x‖/√3, by covering with u = nᵢ, w = x and the symmetry. Every direction v has a normal with ⟪v, nⱼ⟫ ≥ ‖v‖/√3, so ⟪v, hⱼnⱼ⟫ ≥ ‖x‖‖v‖/3 ≥ ⟪v, x⟫/3. Hence x/3 cannot be separated from P.
+- (e) Sharpness: the point (1, 1, 1) of the cube, against the half-space Σyᵢ ≤ 1, which contains the octahedron P.
+
+**Informal ↔ formal correspondence** (paper v3, Theorem 4: "Every convex polytope S with octahedral rotational symmetry about O satisfies S ⊂ 3·P(S), and the constant is sharp (cube, octahedron).")
+1. *Frame.* Formally, the symmetry axes lie along the coordinate axes, and O is the 24 signed permutation matrices of determinant 1 in `EuclideanSpace ℝ (Fin 3)`. The paper's statement in any frame follows by a rotation, which preserves S, P(S) and scaling.
+2. *What "body" means.* S is given as `halfspaceBody n h` = {x : ⟪nᵢ, x⟫ ≤ hᵢ for all i}, for a nonempty finite family of unit normals nᵢ. P(S) is `footHull n h`, the convex hull of the foot points hᵢnᵢ. With the facet planes of S as the family, this is the paper's S and P(S). Redundant half-spaces are allowed, so the formal theorem is slightly more general: extra foot points can only enlarge P.
+3. *Symmetry hypothesis.* `OctahedrallySymmetric n h`: every rotation carries each plane of the family to a plane of the family. This holds for the facet family of an octahedrally symmetric S.
+4. *Strengthenings.* (i) Boundedness of S is not assumed. (ii) The hypothesis hᵢ > 0 (O inside S) stays in the statement to match the paper, but the proof does not use it: for a symmetric family, the covering step already forces hᵢ ≥ ‖x‖/√3 ≥ 0 whenever S is nonempty. (iii) The covering lemma is proved for all u, w with the bound ‖u‖‖w‖/√3. The stated `covering` is the unit case.
+5. *Covering lemma, credit.* That every O-orbit on the unit sphere comes within angle arccos(1/√3) of every direction is the statement that S²/O has diameter arccos(1/√3). This is **known**: S. Greenwald, Indiana Univ. Math. J. 49 (2000) 1449–1479; W. D. Dunbar, S. J. Greenwald, J. McGowan, C. Searle, Differential Geom. Appl. 27 (2009) 307–319, Table 2; see also J. McGowan, Compositio Math. 87 (1993) 79–98 (LITERATURE.md). The moment proof used here is the one in #43 v2. The containment S ⊂ 3·P(S) for the foot-point hull was not found in print (LITERATURE.md), but it is close to the known diameter.
+6. *Sharpness.* The formal statement covers the cube only (the octahedron is not formalised). It needs **0 ≤ c**: the 14 Nov draft said "for every c < 3", which is false for c ≤ −3, since c·P is then |c| times the centrally symmetric octahedron, which contains the cube for |c| ≥ 3. With 0 ≤ c < 3 it matches the paper's meaning of "sharp".
+
+**Milestone log (15 Nov 2026).** Every check was run on the compute host, in the workspace pinned to Lean v4.35.0-rc2 and Mathlib v4.35.0-rc2.
+- (a) Group lemma (`rot_isOctahedralRotation`, `rot_injective`, `rot_surjective`) compiles.
+- (b) Covering lemma (`exists_ge_of_moments`, `covering_general`, `covering`) compiles.
+- (c) Separation (`separation`, `le_dist`, `exists_foot`) compiles.
+- (d) Main theorem `octahedral_nesting` compiles.
+- (e) `cube_admissible` and `octahedral_nesting_sharp` (with `0 ≤ c`) compile. The draft's sharpness statement without `0 ≤ c` was found to be false.
+- (f) Full build (job `kyushindo-t4-lean`): `lake build PalomarDicto.OctahedralNesting PalomarDicto.OctahedralNestingProof` gave "Build completed successfully (8932 jobs)". The proof file contains no `sorry` and no `native_decide`, and the only warning is the unused `hh`. **FINAL ok.**
+- (g) Axioms output:
+
+```
+'DictoKyushindo.covering' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DictoKyushindo.octahedral_nesting' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DictoKyushindo.cube_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DictoKyushindo.octahedral_nesting_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+**Not done, on DICTO's decision (15 Nov):** no Palomar repository and no submission. The notability estimate is 2 out of 5 (LITERATURE.md). The proof stays here as a checked formalisation of #43 Theorem 4.

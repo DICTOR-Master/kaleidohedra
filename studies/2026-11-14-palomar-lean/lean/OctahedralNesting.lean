@@ -7,8 +7,8 @@ public import Mathlib
 /-!
 # The octahedral constant 3 (DICTO, paper #43 "Kyushindo Cores", Theorem 4)
 
-Statement surface only (every proof is `sorry`); candidate Challenge for a
-Palomar entry.
+Statement surface only (every proof is `sorry`). The proofs are in
+`OctahedralNestingProof.lean`.
 
 A convex polytope `S` containing the origin `O` is written as the intersection
 of finitely many half-spaces `⟪n i, x⟫ ≤ h i` with unit normals `n i` and
@@ -74,8 +74,10 @@ theorem cube_admissible :
     (∀ k, ‖cubeNormal k‖ = 1) ∧ OctahedrallySymmetric cubeNormal (fun _ => 1) := by
   sorry
 
-/-- **Sharpness.** For the cube no constant below 3 works. -/
-theorem octahedral_nesting_sharp (c : ℝ) (hc : c < 3) :
+/-- **Sharpness.** For the cube no constant `c` with `0 ≤ c < 3` works.
+(The hypothesis `0 ≤ c` is needed: for `c ≤ -3`, `c • P` is `|c|` times the
+centrally symmetric octahedron and contains the cube.) -/
+theorem octahedral_nesting_sharp (c : ℝ) (hc0 : 0 ≤ c) (hc : c < 3) :
     ¬ halfspaceBody cubeNormal (fun _ => 1) ⊆ c • footHull cubeNormal (fun _ => 1) := by
   sorry
 
