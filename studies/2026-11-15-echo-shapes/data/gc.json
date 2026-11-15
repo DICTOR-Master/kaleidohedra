@@ -1,0 +1,8334 @@
+{
+ "results": [
+  {
+   "base": "icosahedron",
+   "h": 1,
+   "k": 0,
+   "T": 1,
+   "points": 12,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    0
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.44,
+     "10": 0.13173333333333334,
+     "12": 0.34272,
+     "16": 0.20104533333333333,
+     "18": 0.275264,
+     "20": 0.01195264
+    }
+   },
+   "T6": 0.44,
+   "T15": 0.0,
+   "amp_degree": 6,
+   "amp": 5.28,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     12,
+     30,
+     20
+    ],
+    "faces": {
+     "3": 20
+    },
+    "name": "icosahedron",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 1,
+     "length_basis": 1,
+     "components": [
+      {
+       "theta_sum": "72.35594992088480625",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     20,
+     30,
+     12
+    ],
+    "faces": {
+     "5": 12
+    },
+    "name": "dodecahedron",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 1,
+     "length_basis": 1,
+     "components": [
+      {
+       "theta_sum": "61.033318073871082063",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4
+     ]
+    }
+   }
+  },
+  {
+   "base": "icosahedron",
+   "h": 1,
+   "k": 1,
+   "T": 3,
+   "points": 32,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    20
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.00033950617283950616,
+     "10": 0.2363660620840319,
+     "12": 0.04284318413520974,
+     "16": 0.014440323482757257,
+     "18": 0.11589578710452766,
+     "20": 0.09478501232185932
+    }
+   },
+   "T6": 0.00033950617283950616,
+   "T15": 0.0,
+   "amp_degree": 6,
+   "amp": 0.14666666666666667,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     32,
+     90,
+     60
+    ],
+    "faces": {
+     "3": 60
+    },
+    "name": "pentakis dodecahedron or triakis icosahedron (60 triangles)",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 2,
+     "length_basis": 2,
+     "components": [
+      {
+       "theta_sum": "84.794733558699471579",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "161.04808258052010589",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     60,
+     90,
+     32
+    ],
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "name": "truncated icosahedron",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 2,
+     "length_basis": 2,
+     "components": [
+      {
+       "theta_sum": "149.35407082832550315",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "72.35594992088480625",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      8
+     ]
+    }
+   }
+  },
+  {
+   "base": "icosahedron",
+   "h": 2,
+   "k": 0,
+   "T": 4,
+   "points": 42,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    30
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.00171875,
+     "10": 0.02234253228635204,
+     "12": 0.2146688466535296,
+     "16": 0.0032773148273545867,
+     "18": 0.0001427501800440404,
+     "20": 0.11128932989778076
+    }
+   },
+   "T6": 0.00171875,
+   "T15": -9.02091854986971e-63,
+   "amp_degree": 6,
+   "amp": 0.33,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     42,
+     120,
+     80
+    ],
+    "faces": {
+     "3": 80
+    },
+    "name": "geodesic (2,0) type (80 triangles)",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 2,
+     "length_basis": 2,
+     "components": [
+      {
+       "theta_sum": "164.97662908880146198",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "169.61552763429756003",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4,
+      8
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     80,
+     120,
+     42
+    ],
+    "faces": {
+     "5": 12,
+     "6": 30
+    },
+    "name": "Goldberg GP(2,0) type (12 pentagons, 30 hexagons)",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 2,
+     "length_basis": 2,
+     "components": [
+      {
+       "theta_sum": "150.79644737231007545",
+       "rational_pi": true,
+       "ratio": "48/1"
+      },
+      {
+       "theta_sum": "155.28109768156487922",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      6,
+      10
+     ]
+    }
+   }
+  },
+  {
+   "base": "icosahedron",
+   "h": 2,
+   "k": 1,
+   "T": 7,
+   "points": 72,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    60
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0033875823762404902,
+     "10": 7.452464357291373e-05,
+     "12": 0.0018757900860090274,
+     "15": 0.08779824074330667,
+     "16": 0.06627499248232543,
+     "18": 0.02177585017991404,
+     "20": 0.0012598814543482173
+    }
+   },
+   "T6": 0.0033875823762404902,
+   "T15": 0.08779824074330667,
+   "amp_degree": 6,
+   "amp": 0.4632895631876434,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     72,
+     210,
+     140
+    ],
+    "faces": {
+     "3": 140
+    },
+    "name": "V72 E210 F140 faces{3: 140}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "174.4601502630611321",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "85.879930021939001479",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "172.27179005383183632",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "171.45877877025563397",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     140,
+     210,
+     72
+    ],
+    "faces": {
+     "5": 12,
+     "6": 60
+    },
+    "name": "V140 E210 F72 faces{5: 12, 6: 60}",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "80.101385945632208963",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "161.04637545395631421",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "164.73261072681714127",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "159.38181513762168916",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2,
+      3
+     ]
+    }
+   }
+  },
+  {
+   "base": "icosahedron",
+   "h": 2,
+   "k": 2,
+   "T": 12,
+   "points": 122,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    110
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.002555423036310104,
+     "10": 0.00018911774874971494,
+     "12": 0.00035451738869376597,
+     "16": 0.00175201780146001,
+     "18": 0.0038013884114874146,
+     "20": 0.0939810236509271
+    }
+   },
+   "T6": 0.002555423036310104,
+   "T15": 2.2744694377562893e-62,
+   "amp_degree": 6,
+   "amp": 0.4023824096311967,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     122,
+     360,
+     240
+    ],
+    "faces": {
+     "3": 240
+    },
+    "name": "V122 E360 F240 faces{3: 240}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "178.09375818608750378",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "352.33038975096668836",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "351.94392852077244058",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "176.05087120986684375",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4,
+      8
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     240,
+     360,
+     122
+    ],
+    "faces": {
+     "5": 12,
+     "6": 110
+    },
+    "name": "V240 E360 F122 faces{5: 12, 6: 110}",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "333.20745905715720681",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "333.94199439814689418",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "168.40178970902487464",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "171.24590051513449405",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4,
+      6,
+      14
+     ]
+    }
+   }
+  },
+  {
+   "base": "icosahedron",
+   "h": 3,
+   "k": 0,
+   "T": 9,
+   "points": 92,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    80
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.001642535034294626,
+     "10": 0.00010600997352265063,
+     "12": 1.4636351320287456e-05,
+     "16": 0.02757799317365313,
+     "18": 0.12669504524398653,
+     "20": 2.0667678266711493e-06
+    }
+   },
+   "T6": 0.001642535034294626,
+   "T15": -4.734902928807391e-62,
+   "amp_degree": 6,
+   "amp": 0.32260040262359796,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     92,
+     270,
+     180
+    ],
+    "faces": {
+     "3": 180
+    },
+    "name": "V92 E270 F180 faces{3: 180}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 3,
+     "components": [
+      {
+       "theta_sum": "348.55226853353764282",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "263.2782516854151434",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "173.37899188977464022",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4,
+      12
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     180,
+     270,
+     92
+    ],
+    "faces": {
+     "5": 12,
+     "6": 80
+    },
+    "name": "V180 E270 F92 faces{5: 12, 6: 80}",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "327.1441325527160199",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "82.05764284471003986",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "164.11528568942007972",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "167.47123444454863651",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4,
+      6,
+      8
+     ]
+    }
+   }
+  },
+  {
+   "base": "icosahedron",
+   "h": 3,
+   "k": 1,
+   "T": 13,
+   "points": 132,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    120
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0022071467803885542,
+     "10": 3.431094182208074e-06,
+     "12": 0.0004417676422742246,
+     "15": 0.0002237881892243605,
+     "16": 3.1751565492301255e-05,
+     "18": 0.002941174324539446,
+     "20": 0.018256087811120047
+    }
+   },
+   "T6": 0.0022071467803885542,
+   "T15": 0.0002237881892243605,
+   "amp_degree": 6,
+   "amp": 0.37395831319201717,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     132,
+     390,
+     260
+    ],
+    "faces": {
+     "3": 260
+    },
+    "name": "V132 E390 F260 faces{3: 260}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 7,
+     "length_basis": 6,
+     "components": [
+      {
+       "theta_sum": "353.18328475408293857",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "178.78502121759121676",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "176.39862709412379514",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "176.60493286538631583",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "88.285075078389311112",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "176.45468615038548927",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     260,
+     390,
+     132
+    ],
+    "faces": {
+     "5": 12,
+     "6": 120
+    },
+    "name": "V260 E390 F132 faces{5: 12, 6: 120}",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 7,
+     "length_basis": 7,
+     "components": [
+      {
+       "theta_sum": "166.8374939648433365",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "167.81476090790280525",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "168.45726326931822232",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "84.081553581131417007",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "167.81476090790280525",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "171.81319118581214923",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "169.05098390428001822",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2,
+      4
+     ]
+    }
+   }
+  },
+  {
+   "base": "icosahedron",
+   "h": 3,
+   "k": 2,
+   "T": 19,
+   "points": 192,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    180
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0020251164235881697,
+     "10": 2.428746811933914e-05,
+     "12": 0.0002759065109037002,
+     "15": 7.234147215724549e-05,
+     "16": 0.00011292160035670338,
+     "18": 0.00010175783186025296,
+     "20": 0.00014568541994003573
+    }
+   },
+   "T6": 0.0020251164235881697,
+   "T15": 7.234147215724549e-05,
+   "amp_degree": 6,
+   "amp": 0.35820577409995286,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 3,
+   "k": 3,
+   "T": 27,
+   "points": 272,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    260
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0017039051212840424,
+     "10": 4.825356271142298e-06,
+     "12": 0.0002570554215869494,
+     "16": 4.7769016061837674e-05,
+     "18": 6.243021110020274e-05,
+     "20": 0.00019273116425142734
+    }
+   },
+   "T6": 0.0017039051212840424,
+   "T15": -1.5476789726514517e-63,
+   "amp_degree": 6,
+   "amp": 0.32857180110982886,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 4,
+   "k": 0,
+   "T": 16,
+   "points": 162,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    150
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0015814221583770683,
+     "10": 4.4726944845810655e-08,
+     "12": 4.971088218625772e-05,
+     "16": 0.0003046213379479938,
+     "18": 9.983836381042722e-06,
+     "20": 0.0005879135133119873
+    }
+   },
+   "T6": 0.0015814221583770683,
+   "T15": 4.4578832199279633e-63,
+   "amp_degree": 6,
+   "amp": 0.3165421108711621,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 4,
+   "k": 1,
+   "T": 21,
+   "points": 212,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    200
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.001862087916430378,
+     "10": 3.5397862957030817e-06,
+     "12": 0.00015090568430827376,
+     "15": 3.1115523025578737e-06,
+     "16": 3.0758761331799786e-06,
+     "18": 0.00024396713404920955,
+     "20": 0.00010189161020903806
+    }
+   },
+   "T6": 0.001862087916430378,
+   "T15": 3.1115523025578737e-06,
+   "amp_degree": 6,
+   "amp": 0.3434849201712191,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 4,
+   "k": 2,
+   "T": 28,
+   "points": 282,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    270
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0018088021079126781,
+     "10": 8.67199558327581e-06,
+     "12": 0.0001655580190323848,
+     "15": 7.666494880702633e-07,
+     "16": 1.2230685119220467e-05,
+     "18": 6.0041985509436065e-05,
+     "20": 2.4855584610812256e-05
+    }
+   },
+   "T6": 0.0018088021079126781,
+   "T15": 7.666494880702633e-07,
+   "amp_degree": 6,
+   "amp": 0.3385346386373886,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 4,
+   "k": 3,
+   "T": 37,
+   "points": 372,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    360
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0016614924749418188,
+     "10": 2.610564121206655e-06,
+     "12": 0.00015472964545582577,
+     "15": 3.0422461160548954e-07,
+     "16": 1.2919778007178558e-05,
+     "18": 6.571941210775776e-05,
+     "20": 3.1393007778362133e-06
+    }
+   },
+   "T6": 0.0016614924749418188,
+   "T15": 3.0422461160548954e-07,
+   "amp_degree": 6,
+   "amp": 0.32445672009116044,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 4,
+   "k": 4,
+   "T": 48,
+   "points": 482,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    470
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0015499488297703074,
+     "10": 2.6714024628009134e-07,
+     "12": 0.00011227273235880961,
+     "16": 4.910732062550085e-06,
+     "18": 7.012730984486442e-05,
+     "20": 6.92731649715696e-09
+    }
+   },
+   "T6": 0.0015499488297703074,
+   "T15": 1.088580348531692e-62,
+   "amp_degree": 6,
+   "amp": 0.313376383689401,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 5,
+   "k": 0,
+   "T": 25,
+   "points": 252,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    240
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0015154961055845373,
+     "10": 3.581497640520016e-07,
+     "12": 8.475066511010325e-05,
+     "16": 2.2586454837347058e-07,
+     "18": 8.7843630095729e-07,
+     "20": 5.9552565251565394e-06
+    }
+   },
+   "T6": 0.0015154961055845373,
+   "T15": 9.95619728254428e-63,
+   "amp_degree": 6,
+   "amp": 0.3098738989489697,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 5,
+   "k": 1,
+   "T": 31,
+   "points": 312,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    300
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0016962571004115023,
+     "10": 1.3875436382005284e-06,
+     "12": 0.00011828416989412948,
+     "15": 2.9550738744262907e-08,
+     "16": 3.8427590108149887e-07,
+     "18": 2.934414083929665e-05,
+     "20": 7.159919830041739e-07
+    }
+   },
+   "T6": 0.0016962571004115023,
+   "T15": 2.9550738744262907e-08,
+   "amp_degree": 6,
+   "amp": 0.3278335704013132,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 5,
+   "k": 2,
+   "T": 39,
+   "points": 392,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    380
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0016762046678256775,
+     "10": 3.2382434129129835e-06,
+     "12": 0.0001371617966407376,
+     "15": 3.653261908769358e-07,
+     "16": 5.001586447766423e-06,
+     "18": 2.5190557773032467e-05,
+     "20": 3.7404736488886054e-08
+    }
+   },
+   "T6": 0.0016762046678256775,
+   "T15": 3.653261908769358e-07,
+   "amp_degree": 6,
+   "amp": 0.3258900547016354,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 5,
+   "k": 3,
+   "T": 49,
+   "points": 492,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    480
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0015961864448759038,
+     "10": 1.2929598404795623e-06,
+     "12": 0.00013274008725073732,
+     "15": 9.402857501077278e-08,
+     "16": 5.632547517979036e-06,
+     "18": 3.175724266762316e-05,
+     "20": 2.2411723835430046e-06
+    }
+   },
+   "T6": 0.0015961864448759038,
+   "T15": 9.402857501077278e-08,
+   "amp_degree": 6,
+   "amp": 0.3180163095618482,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 5,
+   "k": 4,
+   "T": 61,
+   "points": 612,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    600
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.001543358242812422,
+     "10": 3.236835336777493e-07,
+     "12": 0.0001050528247275858,
+     "15": 3.017716978840873e-10,
+     "16": 2.166264770885202e-06,
+     "18": 3.418417574743311e-05,
+     "20": 1.6038038715517552e-07
+    }
+   },
+   "T6": 0.001543358242812422,
+   "T15": 3.017716978840873e-10,
+   "amp_degree": 6,
+   "amp": 0.31270941505588706,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 5,
+   "k": 5,
+   "T": 75,
+   "points": 752,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    740
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0014854420451956942,
+     "10": 5.965906012978023e-10,
+     "12": 9.333338403307996e-05,
+     "16": 5.435710940606861e-07,
+     "18": 2.102817948532872e-05,
+     "20": 3.028123208116122e-07
+    }
+   },
+   "T6": 0.0014854420451956942,
+   "T15": -6.831512923862956e-63,
+   "amp_degree": 6,
+   "amp": 0.3067859318541174,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 6,
+   "k": 0,
+   "T": 36,
+   "points": 362,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    350
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0014763047159562764,
+     "10": 4.77143523573774e-07,
+     "12": 8.230302332931843e-05,
+     "16": 4.3107597880193865e-09,
+     "18": 1.16985983209088e-05,
+     "20": 5.828676537391728e-10
+    }
+   },
+   "T6": 0.0014763047159562764,
+   "T15": -1.386649111088988e-63,
+   "amp_degree": 6,
+   "amp": 0.30584091747670006,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 6,
+   "k": 1,
+   "T": 43,
+   "points": 432,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    420
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.001603871683939644,
+     "10": 4.814976034463539e-07,
+     "12": 0.00010182280630089046,
+     "15": 7.823879071529013e-10,
+     "16": 2.796014195792829e-07,
+     "18": 2.2220882743651533e-05,
+     "20": 1.682191224411724e-08
+    }
+   },
+   "T6": 0.001603871683939644,
+   "T15": 7.823879071529013e-10,
+   "amp_degree": 6,
+   "amp": 0.31878097479996487,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 6,
+   "k": 2,
+   "T": 52,
+   "points": 522,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    510
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0015995904553227033,
+     "10": 1.2889600855975066e-06,
+     "12": 0.00011542486907128484,
+     "15": 8.006281596454241e-08,
+     "16": 2.403836603688082e-06,
+     "18": 2.276098586608183e-05,
+     "20": 3.7956098006638214e-08
+    }
+   },
+   "T6": 0.0015995904553227033,
+   "T15": 8.006281596454241e-08,
+   "amp_degree": 6,
+   "amp": 0.31835522808530486,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 6,
+   "k": 3,
+   "T": 63,
+   "points": 632,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    620
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0015294432153322897,
+     "10": 3.4671585955843356e-07,
+     "12": 0.00012088517363753959,
+     "15": 2.0570132927859608e-08,
+     "16": 3.548179726936021e-06,
+     "18": 2.9443420009259403e-05,
+     "20": 1.3520261640565305e-06
+    }
+   },
+   "T6": 0.0015294432153322897,
+   "T15": 2.0570132927859608e-08,
+   "amp_degree": 6,
+   "amp": 0.3112965180072753,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 6,
+   "k": 4,
+   "T": 76,
+   "points": 762,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    750
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0015174211488815357,
+     "10": 1.7321639321977123e-07,
+     "12": 9.965312315029204e-05,
+     "15": 1.4728242489672903e-11,
+     "16": 1.4159354150510692e-06,
+     "18": 2.725192802902958e-05,
+     "20": 1.2372077458007463e-07
+    }
+   },
+   "T6": 0.0015174211488815357,
+   "T15": 1.4728242489672903e-11,
+   "amp_degree": 6,
+   "amp": 0.31007064355261704,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 6,
+   "k": 5,
+   "T": 91,
+   "points": 912,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    900
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.001487328681109048,
+     "10": 1.4350906677755316e-08,
+     "12": 9.061793988635893e-05,
+     "15": 3.476010067517623e-11,
+     "16": 4.6090539756162323e-07,
+     "18": 1.9624010947731488e-05,
+     "20": 1.2430201366743482e-07
+    }
+   },
+   "T6": 0.001487328681109048,
+   "T15": 3.476010067517623e-11,
+   "amp_degree": 6,
+   "amp": 0.3069806919580925,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 6,
+   "k": 6,
+   "T": 108,
+   "points": 1082,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    1070
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.001452223536752669,
+     "10": 4.713557203481655e-08,
+     "12": 8.43593415837699e-05,
+     "16": 1.1761079117538221e-07,
+     "18": 1.7027625046795278e-05,
+     "20": 8.042323126203942e-08
+    }
+   },
+   "T6": 0.001452223536752669,
+   "T15": -1.0692714536428289e-62,
+   "amp_degree": 6,
+   "amp": 0.30333625449103363,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 7,
+   "k": 0,
+   "T": 49,
+   "points": 492,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    480
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0014517507817019086,
+     "10": 5.106759028777284e-07,
+     "12": 7.946095647886623e-05,
+     "16": 5.802630305389662e-08,
+     "18": 1.2418139737944455e-05,
+     "20": 1.1448295456523338e-08
+    }
+   },
+   "T6": 0.0014517507817019086,
+   "T15": -1.3995511588950053e-62,
+   "amp_degree": 6,
+   "amp": 0.30328687661788617,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 7,
+   "k": 1,
+   "T": 57,
+   "points": 572,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    560
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0015470464255258095,
+     "10": 1.3468883912120856e-07,
+     "12": 9.250473078963265e-05,
+     "15": 9.432380729486286e-11,
+     "16": 1.4188086856728713e-07,
+     "18": 1.815937958077938e-05,
+     "20": 7.508265094149175e-09
+    }
+   },
+   "T6": 0.0015470464255258095,
+   "T15": 9.432380729486286e-11,
+   "amp_degree": 6,
+   "amp": 0.3130828349196348,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 7,
+   "k": 2,
+   "T": 67,
+   "points": 672,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    660
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0015479731970305325,
+     "10": 4.899026423150355e-07,
+     "12": 0.00010395391960049846,
+     "15": 3.5000150068076366e-08,
+     "16": 1.1814135384511943e-06,
+     "18": 1.8396777218454476e-05,
+     "20": 1.080141211247938e-07
+    }
+   },
+   "T6": 0.0015479731970305325,
+   "T15": 3.5000150068076366e-08,
+   "amp_degree": 6,
+   "amp": 0.3131765983656099,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 7,
+   "k": 3,
+   "T": 79,
+   "points": 792,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    780
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0015079380640502594,
+     "10": 1.4427734888705706e-07,
+     "12": 0.0001044558165448727,
+     "15": 1.3559833604817864e-08,
+     "16": 1.685367135356125e-06,
+     "18": 2.456905955525217e-05,
+     "20": 5.003080146729056e-07
+    }
+   },
+   "T6": 0.0015079380640502594,
+   "T15": 1.3559833604817864e-08,
+   "amp_degree": 6,
+   "amp": 0.3091002357459865,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 7,
+   "k": 4,
+   "T": 93,
+   "points": 932,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    920
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0014871311312059676,
+     "10": 2.7366433953118805e-08,
+     "12": 9.401946372620999e-05,
+     "15": 8.745526676636523e-10,
+     "16": 9.016628606587289e-07,
+     "18": 2.47578485052175e-05,
+     "20": 1.1356767130879952e-07
+    }
+   },
+   "T6": 0.0014871311312059676,
+   "T15": 8.745526676636523e-10,
+   "amp_degree": 6,
+   "amp": 0.3069603043932718,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 7,
+   "k": 5,
+   "T": 109,
+   "points": 1092,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    1080
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0014740307740478487,
+     "10": 3.523374787072603e-09,
+     "12": 8.936513133327333e-05,
+     "15": 2.4432857114203803e-10,
+     "16": 3.6615255456413033e-07,
+     "18": 1.751354491460779e-05,
+     "20": 1.4832226017534483e-07
+    }
+   },
+   "T6": 0.0014740307740478487,
+   "T15": 2.4432857114203803e-10,
+   "amp_degree": 6,
+   "amp": 0.30560528438440276,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 7,
+   "k": 6,
+   "T": 127,
+   "points": 1272,
+   "group": "I",
+   "order": 60,
+   "chiral": true,
+   "goldberg_faces": [
+    12,
+    1260
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     17,
+     19,
+     23,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0014561953438474709,
+     "10": 1.5496988393283968e-08,
+     "12": 8.339904622129794e-05,
+     "15": 1.1400415018215534e-11,
+     "16": 1.1818903577286657e-07,
+     "18": 1.6102229398550143e-05,
+     "20": 5.722384915298021e-08
+    }
+   },
+   "T6": 0.0014561953438474709,
+   "T15": 1.1400415018215534e-11,
+   "amp_degree": 6,
+   "amp": 0.30375078104619874,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "icosahedron",
+   "h": 7,
+   "k": 7,
+   "T": 147,
+   "points": 1472,
+   "group": "Ih",
+   "order": 120,
+   "chiral": false,
+   "goldberg_faces": [
+    12,
+    1460
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0014327702515711574,
+     "10": 1.249451026341721e-07,
+     "12": 7.957695375917304e-05,
+     "16": 1.6418305118717014e-08,
+     "18": 1.4610130358821076e-05,
+     "20": 4.991631256950779e-08
+    }
+   },
+   "T6": 0.0014327702515711574,
+   "T15": -6.410315979897428e-64,
+   "amp_degree": 6,
+   "amp": 0.3012977317198862,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 1,
+   "k": 0,
+   "T": 1,
+   "points": 6,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    0
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.5833333333333334,
+     "6": 0.125,
+     "8": 0.515625,
+     "10": 0.16927083333333334,
+     "12": 0.4837239583333333,
+     "14": 0.19368489583333334,
+     "16": 0.4642537434895833,
+     "18": 0.209686279296875,
+     "20": 0.45079803466796875
+    }
+   },
+   "T6": 0.125,
+   "T15": 0.0,
+   "amp_degree": 4,
+   "amp": 3.5,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     6,
+     12,
+     8
+    ],
+    "faces": {
+     "3": 8
+    },
+    "name": "octahedron",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 1,
+     "length_basis": 1,
+     "components": [
+      {
+       "theta_sum": "22.927598834988222676",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     8,
+     12,
+     6
+    ],
+    "faces": {
+     "4": 6
+    },
+    "name": "cube or parallelepiped",
+    "dehn": {
+     "zero": true,
+     "edge_classes": 1,
+     "length_basis": 1,
+     "components": [
+      {
+       "theta_sum": "18.849555921538759431",
+       "rational_pi": true,
+       "ratio": "6/1"
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": true,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": true,
+     "belt_sizes": [
+      4
+     ]
+    }
+   }
+  },
+  {
+   "base": "octahedron",
+   "h": 1,
+   "k": 1,
+   "T": 3,
+   "points": 14,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    8
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.0013227513227513227,
+     "6": 0.26080246913580246,
+     "8": 0.18431778575627783,
+     "10": 0.038099613892958496,
+     "12": 0.16386238114729287,
+     "14": 0.20570789464021608,
+     "16": 0.1267394895569184,
+     "18": 0.034634309697295154,
+     "20": 0.29418356990649086
+    }
+   },
+   "T6": 0.26080246913580246,
+   "T15": 0.0,
+   "amp_degree": 4,
+   "amp": 0.16666666666666666,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     14,
+     36,
+     24
+    ],
+    "faces": {
+     "3": 24
+    },
+    "name": "V14 E36 F24 faces{3: 24}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 2,
+     "length_basis": 2,
+     "components": [
+      {
+       "theta_sum": "34.015499418540471419",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "54.715417176010218844",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4,
+      8
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     24,
+     36,
+     14
+    ],
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "name": "truncated octahedron",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 2,
+     "length_basis": 2,
+     "components": [
+      {
+       "theta_sum": "52.470624851166815047",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "22.927598834988222676",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      6
+     ]
+    }
+   }
+  },
+  {
+   "base": "octahedron",
+   "h": 2,
+   "k": 0,
+   "T": 4,
+   "points": 18,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    12
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.016203703703703703,
+     "6": 0.0703125,
+     "8": 0.2587076822916667,
+     "10": 0.016530354817708332,
+     "12": 0.17410949424461084,
+     "14": 0.0032837744112367982,
+     "16": 0.18860933557152748,
+     "18": 0.1385441666158537,
+     "20": 0.09178473875120592
+    }
+   },
+   "T6": 0.0703125,
+   "T15": 0.0,
+   "amp_degree": 4,
+   "amp": 0.5833333333333334,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     18,
+     48,
+     32
+    ],
+    "faces": {
+     "3": 32
+    },
+    "name": "V18 E48 F32 faces{3: 32}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 2,
+     "length_basis": 2,
+     "components": [
+      {
+       "theta_sum": "65.188291805141051994",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "57.854715399681782548",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4,
+      8
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     32,
+     48,
+     18
+    ],
+    "faces": {
+     "4": 6,
+     "6": 12
+    },
+    "name": "chamfered cube type (6 squares, 12 hexagons)",
+    "dehn": {
+     "zero": true,
+     "edge_classes": 2,
+     "length_basis": 2,
+     "components": [
+      {
+       "theta_sum": "56.548667764616278292",
+       "rational_pi": true,
+       "ratio": "18/1"
+      },
+      {
+       "theta_sum": "50.265482457436691815",
+       "rational_pi": true,
+       "ratio": "16/1"
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": true,
+     "belt_sizes": [
+      6,
+      8
+     ]
+    }
+   }
+  },
+  {
+   "base": "octahedron",
+   "h": 2,
+   "k": 1,
+   "T": 7,
+   "points": 30,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    24
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.03306878306878307,
+     "6": 0.0001857507931366046,
+     "8": 0.01065060574005673,
+     "9": 0.11994940405478774,
+     "10": 0.02179475242541462,
+     "12": 0.05097469392533004,
+     "13": 0.03032545480756515,
+     "14": 0.06780805450035142,
+     "15": 0.004690481100783012,
+     "16": 0.02719363741721615,
+     "17": 0.07151284196397144,
+     "18": 0.05889259234063266,
+     "19": 0.001398061615680698,
+     "20": 0.004697621692091527
+    }
+   },
+   "T6": 0.0001857507931366046,
+   "T15": 0.004690481100783012,
+   "amp_degree": 4,
+   "amp": 0.8333333333333334,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     30,
+     84,
+     56
+    ],
+    "faces": {
+     "3": 56
+    },
+    "name": "V30 E84 F56 faces{3: 56}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "67.815534979192267611",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "63.543546217930862294",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "64.898673692904412449",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "31.877578864785872253",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2,
+      4,
+      6
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     56,
+     84,
+     30
+    ],
+    "faces": {
+     "4": 6,
+     "6": 24
+    },
+    "name": "V56 E84 F30 faces{4: 6, 6: 24}",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "55.212575592524711584",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "28.396791363353183175",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "58.489085643286755821",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "63.16447139419887171",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2,
+      5
+     ]
+    }
+   }
+  },
+  {
+   "base": "octahedron",
+   "h": 2,
+   "k": 2,
+   "T": 12,
+   "points": 50,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    44
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.02081275720164609,
+     "6": 0.002218108901082152,
+     "8": 0.012805766139403292,
+     "10": 0.0029885350275204864,
+     "12": 0.12267338985537846,
+     "14": 0.016127393642270733,
+     "16": 0.00853670666716239,
+     "18": 0.020782849751036853,
+     "20": 0.1061798238714574
+    }
+   },
+   "T6": 0.002218108901082152,
+   "T15": 1.9913648889155654e-63,
+   "amp_degree": 4,
+   "amp": 0.6611111111111111,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     50,
+     144,
+     96
+    ],
+    "faces": {
+     "3": 96
+    },
+    "name": "V50 E144 F96 faces{3: 96}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "134.17580459850268745",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "134.81366730927960379",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "69.983649415957675304",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "67.35739662601068115",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4,
+      8,
+      16
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     96,
+     144,
+     50
+    ],
+    "faces": {
+     "4": 6,
+     "6": 44
+    },
+    "name": "V96 E144 F50 faces{4: 6, 6: 44}",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "122.68354128636682938",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "63.977049694305040947",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "67.242137859256111233",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "121.25342135613148307",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4,
+      6,
+      12
+     ]
+    }
+   }
+  },
+  {
+   "base": "octahedron",
+   "h": 3,
+   "k": 0,
+   "T": 9,
+   "points": 38,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    32
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.01207243254334667,
+     "6": 0.0013181560138162168,
+     "8": 0.003625427983539095,
+     "10": 0.11117101802062694,
+     "12": 0.08725485050135559,
+     "14": 0.012354449609669674,
+     "16": 0.04821217063734376,
+     "18": 0.051917609258522235,
+     "20": 0.11007100781286748
+    }
+   },
+   "T6": 0.0013181560138162168,
+   "T15": 0.0,
+   "amp_degree": 4,
+   "amp": 0.5035087719298246,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     38,
+     108,
+     72
+    ],
+    "faces": {
+     "3": 72
+    },
+    "name": "V38 E108 F72 faces{3: 72}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 3,
+     "components": [
+      {
+       "theta_sum": "101.87084151461907408",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "64.558205620957832162",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "132.41736150525196495",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4,
+      12
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     72,
+     108,
+     38
+    ],
+    "faces": {
+     "4": 6,
+     "6": 32
+    },
+    "name": "V72 E108 F38 faces{4: 6, 6: 32}",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "64.270681070135690934",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "59.95419707511621244",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "117.92992562820049558",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "29.97709853755810622",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4,
+      6,
+      12
+     ]
+    }
+   }
+  },
+  {
+   "base": "octahedron",
+   "h": 3,
+   "k": 1,
+   "T": 13,
+   "points": 54,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    48
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.018588473887619188,
+     "6": 8.134730140114539e-07,
+     "8": 0.007168967041554807,
+     "9": 0.0021934878014351635,
+     "10": 0.0024084426206666316,
+     "12": 0.04352205343993183,
+     "13": 0.08357711124986493,
+     "14": 0.0015236843194195826,
+     "15": 0.008929923610786103,
+     "16": 0.01594638878605613,
+     "17": 0.004311085439931627,
+     "18": 0.011646135560715455,
+     "19": 0.0009939335174538703,
+     "20": 0.03592273191019434
+    }
+   },
+   "T6": 8.134730140114539e-07,
+   "T15": 0.008929923610786103,
+   "amp_degree": 4,
+   "amp": 0.6247863247863248,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     54,
+     156,
+     104
+    ],
+    "faces": {
+     "3": 104
+    },
+    "name": "V54 E156 F104 faces{3: 104}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 7,
+     "length_basis": 6,
+     "components": [
+      {
+       "theta_sum": "67.712317683295750782",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "135.26810705465154305",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "33.758413416610151222",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "67.241149643702575601",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "70.691379643170379475",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "67.402188968823826036",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2,
+      4
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     104,
+     156,
+     54
+    ],
+    "faces": {
+     "4": 6,
+     "6": 48
+    },
+    "name": "V104 E156 F54 faces{4: 6, 6: 48}",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 7,
+     "length_basis": 7,
+     "components": [
+      {
+       "theta_sum": "59.95419707511621244",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "61.863600293499945498",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "63.080501115860890126",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "31.309062663455310273",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "61.863600293499945498",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "64.041181463572482113",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "67.28887301817438221",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2,
+      4,
+      7
+     ]
+    }
+   }
+  },
+  {
+   "base": "octahedron",
+   "h": 3,
+   "k": 2,
+   "T": 19,
+   "points": 78,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    72
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.017192611327139725,
+     "6": 0.00015229815537455332,
+     "8": 0.002884278515251718,
+     "9": 0.0010736272846490267,
+     "10": 0.0014280377236353618,
+     "12": 0.009209192594583833,
+     "13": 0.004135128502158314,
+     "14": 0.001722055271101882,
+     "15": 0.055061944380585974,
+     "16": 0.04043503884310107,
+     "17": 0.006022411352669497,
+     "18": 0.002208419534804085,
+     "19": 0.010475210969029185,
+     "20": 0.015525142551754613
+    }
+   },
+   "T6": 0.00015229815537455332,
+   "T15": 0.055061944380585974,
+   "amp_degree": 4,
+   "amp": 0.6008700673772445,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 3,
+   "k": 3,
+   "T": 27,
+   "points": 110,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    104
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.014532189561420066,
+     "6": 1.764527171145734e-05,
+     "8": 0.002941009896214955,
+     "10": 0.00011344953871094748,
+     "12": 0.002696636355105269,
+     "14": 0.0038392569755569448,
+     "16": 0.010580548865313448,
+     "18": 0.05614238721576201,
+     "20": 0.029281438390555
+    }
+   },
+   "T6": 1.764527171145734e-05,
+   "T15": -7.200182966120329e-63,
+   "amp_degree": 4,
+   "amp": 0.5524273534047905,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 4,
+   "k": 0,
+   "T": 16,
+   "points": 66,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    60
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.013932506887052342,
+     "6": 6.746760534639323e-07,
+     "8": 9.479475893191171e-05,
+     "10": 0.002375160707626029,
+     "12": 0.012770809386992078,
+     "14": 0.08256649157073273,
+     "16": 0.057414864708460765,
+     "18": 0.0028584145000248194,
+     "20": 0.020028984757033113
+    }
+   },
+   "T6": 6.746760534639323e-07,
+   "T15": -1.285746958235773e-63,
+   "amp_degree": 4,
+   "amp": 0.5409090909090909,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 4,
+   "k": 1,
+   "T": 21,
+   "points": 86,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    80
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.016073601331979007,
+     "6": 6.992642740946056e-05,
+     "8": 0.002122181659827473,
+     "9": 2.3011789342006045e-05,
+     "10": 0.0007487205534985127,
+     "12": 0.0028741421840648208,
+     "13": 0.0026031493508655913,
+     "14": 0.009034742171849956,
+     "15": 0.014732595965902916,
+     "16": 0.0307576458310126,
+     "17": 0.04557339472291384,
+     "18": 0.003067106312448268,
+     "19": 0.002992807898503796,
+     "20": 0.0108416069070534
+    }
+   },
+   "T6": 6.992642740946056e-05,
+   "T15": 0.014732595965902916,
+   "amp_degree": 4,
+   "amp": 0.5809867709092515,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 4,
+   "k": 2,
+   "T": 28,
+   "points": 114,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    108
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.015610081425633433,
+     "6": 7.909724566763515e-05,
+     "8": 0.0022310670787735274,
+     "9": 3.0692681670674756e-07,
+     "10": 9.57185056909112e-05,
+     "12": 0.000989181053866403,
+     "13": 0.002194537039626913,
+     "14": 0.0001096200549597602,
+     "15": 0.000655500492395455,
+     "16": 0.007966705805323894,
+     "17": 0.009693126950024562,
+     "18": 0.026364107491532854,
+     "19": 0.023554875108883936,
+     "20": 0.016108274836919154
+    }
+   },
+   "T6": 7.909724566763515e-05,
+   "T15": 0.000655500492395455,
+   "amp_degree": 4,
+   "amp": 0.5725484345785098,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 4,
+   "k": 3,
+   "T": 37,
+   "points": 150,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    144
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.01441425637288172,
+     "6": 2.3700647324973223e-05,
+     "8": 0.0019364799438692335,
+     "9": 8.699258482987766e-07,
+     "10": 4.647143487747027e-05,
+     "12": 0.0010312928640524497,
+     "13": 8.357875800640412e-06,
+     "14": 3.553330781410254e-05,
+     "15": 0.0016859714433495748,
+     "16": 0.0010830930357578644,
+     "17": 0.0015734945338322062,
+     "18": 0.002637166902463691,
+     "19": 0.0024080683231511558,
+     "20": 0.010632350638694483
+    }
+   },
+   "T6": 2.3700647324973223e-05,
+   "T15": 0.0016859714433495748,
+   "amp_degree": 4,
+   "amp": 0.5501812281698787,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 4,
+   "k": 4,
+   "T": 48,
+   "points": 194,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    188
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.013578647409348462,
+     "6": 5.676559208414393e-06,
+     "8": 0.0014518088058301294,
+     "10": 1.2535673163063932e-06,
+     "12": 0.000706824244053838,
+     "14": 0.00011172412425316623,
+     "16": 0.0009231812650518352,
+     "18": 0.0024284738794842107,
+     "20": 0.004295917319559888
+    }
+   },
+   "T6": 5.676559208414393e-06,
+   "T15": 1.2235708644960263e-63,
+   "amp_degree": 4,
+   "amp": 0.5339958760105903,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 5,
+   "k": 0,
+   "T": 25,
+   "points": 102,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    96
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.013289774500349065,
+     "6": 9.802555923286435e-07,
+     "8": 0.001436230524750429,
+     "10": 3.469624720656444e-05,
+     "12": 0.001217889919417438,
+     "14": 0.0014827182634313053,
+     "16": 0.027231449058942522,
+     "18": 0.0511707744869591,
+     "20": 0.031244152977793548
+    }
+   },
+   "T6": 9.802555923286435e-07,
+   "T15": -1.1962736020494314e-63,
+   "amp_degree": 4,
+   "amp": 0.5282852113274896,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 5,
+   "k": 1,
+   "T": 31,
+   "points": 126,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    120
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.014807063073440768,
+     "6": 2.7420864452289226e-05,
+     "8": 0.0016725884602192503,
+     "9": 7.131387688156214e-07,
+     "10": 1.602062476648927e-05,
+     "12": 0.0006784250776037151,
+     "13": 0.00014587151236529255,
+     "14": 0.002070206336422741,
+     "15": 0.0007811628669433752,
+     "16": 0.0005399232140756247,
+     "17": 0.0017962171243927818,
+     "18": 0.018513621109280672,
+     "19": 0.022572671364080015,
+     "20": 0.010932943731370645
+    }
+   },
+   "T6": 2.7420864452289226e-05,
+   "T15": 0.0007811628669433752,
+   "amp_degree": 4,
+   "amp": 0.5576274065558974,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 5,
+   "k": 2,
+   "T": 39,
+   "points": 158,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    152
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.014585007038466236,
+     "6": 3.6404176608854344e-05,
+     "8": 0.0019194754062933025,
+     "9": 1.8259416106603201e-06,
+     "10": 3.189428216841518e-05,
+     "12": 0.00043725038973167724,
+     "13": 1.3158123040434068e-06,
+     "14": 0.00010955518191471131,
+     "15": 0.00029995692307593767,
+     "16": 0.001567807113591701,
+     "17": 0.002379890307213415,
+     "18": 0.0010608572010929937,
+     "19": 2.133416601618904e-07,
+     "20": 0.0073924341950312835
+    }
+   },
+   "T6": 3.6404176608854344e-05,
+   "T15": 0.00029995692307593767,
+   "amp_degree": 4,
+   "amp": 0.5534303459404724,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 5,
+   "k": 3,
+   "T": 49,
+   "points": 198,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    192
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.013926549424757477,
+     "6": 1.475333788917389e-05,
+     "8": 0.0017788314993004266,
+     "9": 5.818797933077237e-07,
+     "10": 2.8452428601549195e-05,
+     "12": 0.0005109717766986138,
+     "13": 4.043966547606794e-07,
+     "14": 2.724701994036417e-05,
+     "15": 4.649216113645127e-06,
+     "16": 0.0003944535421001782,
+     "17": 8.06289318887025e-05,
+     "18": 0.0010755116881046242,
+     "19": 0.002254870478990136,
+     "20": 8.147121276626882e-05
+    }
+   },
+   "T6": 1.475333788917389e-05,
+   "T15": 4.649216113645127e-06,
+   "amp_degree": 4,
+   "amp": 0.5407934336878611,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 5,
+   "k": 4,
+   "T": 61,
+   "points": 246,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    240
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.013557363882869874,
+     "6": 8.192540722133583e-06,
+     "8": 0.0014650325322878904,
+     "9": 8.377910655727795e-09,
+     "10": 3.942972242830049e-06,
+     "12": 0.00043937927003485477,
+     "13": 1.694687666728071e-06,
+     "14": 1.1272935883049162e-05,
+     "15": 1.9873838879008583e-07,
+     "16": 0.0003037050243531951,
+     "17": 8.126784777903537e-06,
+     "18": 0.00012295009182704318,
+     "19": 5.179995197988973e-05,
+     "20": 0.0005391710656269318
+    }
+   },
+   "T6": 8.192540722133583e-06,
+   "T15": 1.9873838879008583e-07,
+   "amp_degree": 4,
+   "amp": 0.533577212351003,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 5,
+   "k": 5,
+   "T": 75,
+   "points": 302,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    296
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.01309926749622037,
+     "6": 1.8919760146585061e-06,
+     "8": 0.0013468946398819226,
+     "10": 6.851971902023582e-07,
+     "12": 0.000283263437579267,
+     "14": 1.3478482602129232e-07,
+     "16": 0.0002562632555015526,
+     "18": 1.779417549740624e-05,
+     "20": 0.0002968012150291317
+    }
+   },
+   "T6": 1.8919760146585061e-06,
+   "T15": 5.0491549774321795e-64,
+   "amp_degree": 4,
+   "amp": 0.5244850974247293,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 6,
+   "k": 0,
+   "T": 36,
+   "points": 146,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    140
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.013013256384881218,
+     "6": 3.5009798421424823e-07,
+     "8": 0.0012216418771953945,
+     "10": 8.95829176585684e-06,
+     "12": 0.00037117234869094116,
+     "14": 0.00031615025684496556,
+     "16": 0.0033285718346345934,
+     "18": 0.0014260054962175121,
+     "20": 0.034571851045078844
+    }
+   },
+   "T6": 3.5009798421424823e-07,
+   "T15": -1.211555329476625e-62,
+   "amp_degree": 4,
+   "amp": 0.5227603505264201,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 6,
+   "k": 1,
+   "T": 43,
+   "points": 174,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    168
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.014081128728309985,
+     "6": 1.4525501911304006e-05,
+     "8": 0.001510447334604435,
+     "9": 1.3469030230926702e-10,
+     "10": 1.7268425116543582e-06,
+     "12": 0.00032327546268884236,
+     "13": 3.46225441319282e-06,
+     "14": 5.681643497058448e-06,
+     "15": 2.9250684095369413e-07,
+     "16": 0.0008510888068749889,
+     "17": 0.00038771102843706504,
+     "18": 0.002946004629283745,
+     "19": 0.001521362569936511,
+     "20": 0.0006713156427901765
+    }
+   },
+   "T6": 1.4525501911304006e-05,
+   "T15": 2.9250684095369413e-07,
+   "amp_degree": 4,
+   "amp": 0.5437864500835873,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 6,
+   "k": 2,
+   "T": 52,
+   "points": 210,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    204
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.014006005944041972,
+     "6": 1.9874049496157623e-05,
+     "8": 0.0016501026271395806,
+     "9": 4.741126323893416e-07,
+     "10": 1.649030444740697e-05,
+     "12": 0.00042320979794801015,
+     "13": 1.9907717172457423e-06,
+     "14": 2.5130554808900495e-06,
+     "15": 1.045634046022691e-05,
+     "16": 9.416221965809819e-05,
+     "17": 5.761769087278587e-07,
+     "18": 0.0003843307318216988,
+     "19": 0.001231477400053771,
+     "20": 0.001599924578239497
+    }
+   },
+   "T6": 1.9874049496157623e-05,
+   "T15": 1.045634046022691e-05,
+   "amp_degree": 4,
+   "amp": 0.5423339606044244,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 6,
+   "k": 3,
+   "T": 63,
+   "points": 254,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    248
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.013394686178904708,
+     "6": 5.083422299052127e-06,
+     "8": 0.0016226680155304578,
+     "9": 1.2350520880232018e-07,
+     "10": 1.4405600137076233e-05,
+     "12": 0.0005173780935175525,
+     "13": 3.166993211896253e-09,
+     "14": 3.514516348877097e-05,
+     "15": 4.10830283620683e-07,
+     "16": 0.00011134127622652603,
+     "17": 6.750164251964185e-06,
+     "18": 3.055831381824487e-05,
+     "19": 6.004678507900454e-07,
+     "20": 0.00025098355521300115
+    }
+   },
+   "T6": 5.083422299052127e-06,
+   "T15": 4.10830283620683e-07,
+   "amp_degree": 4,
+   "amp": 0.5303662977197918,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 6,
+   "k": 4,
+   "T": 76,
+   "points": 306,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    300
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.01335795998928319,
+     "6": 6.2136520728562005e-06,
+     "8": 0.0014165537474770198,
+     "9": 5.533369853363945e-10,
+     "10": 3.110900854961131e-06,
+     "12": 0.0004028650576088149,
+     "13": 2.881738977264726e-07,
+     "14": 1.0491972141698389e-05,
+     "15": 8.101748730766191e-07,
+     "16": 0.00018280039884666834,
+     "17": 2.841502636517989e-06,
+     "18": 1.5231060295393172e-05,
+     "19": 2.467867284921384e-06,
+     "20": 8.576597317015872e-05
+    }
+   },
+   "T6": 6.2136520728562005e-06,
+   "T15": 8.101748730766191e-07,
+   "amp_degree": 4,
+   "amp": 0.5296387068322584,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 6,
+   "k": 5,
+   "T": 91,
+   "points": 366,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    360
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.013131251716292053,
+     "6": 3.3188983190636004e-06,
+     "8": 0.0013297481438141437,
+     "9": 5.808007129997424e-10,
+     "10": 8.445059603474367e-07,
+     "12": 0.00030553126229833057,
+     "13": 2.491243070193266e-08,
+     "14": 1.1209227118712228e-06,
+     "15": 7.748616070962396e-08,
+     "16": 0.00013825112845366506,
+     "17": 5.251401251648717e-07,
+     "18": 5.508121843522109e-06,
+     "19": 3.1998289078732886e-06,
+     "20": 0.00015623016374979374
+    }
+   },
+   "T6": 3.3188983190636004e-06,
+   "T15": 7.748616070962396e-08,
+   "amp_degree": 4,
+   "amp": 0.5251250194402597,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 6,
+   "k": 6,
+   "T": 108,
+   "points": 434,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    428
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.012850923355346171,
+     "6": 7.67952476698747e-07,
+     "8": 0.0012505016172798418,
+     "10": 1.7972477251430055e-09,
+     "12": 0.0002835814892980453,
+     "14": 3.4871208152577414e-07,
+     "16": 7.786646328923218e-05,
+     "18": 5.869188343074094e-07,
+     "20": 9.445993150094785e-05
+    }
+   },
+   "T6": 7.67952476698747e-07,
+   "T15": 3.112234487749366e-63,
+   "amp_degree": 4,
+   "amp": 0.5194895479817372,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 7,
+   "k": 0,
+   "T": 49,
+   "points": 198,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    192
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.012834916284043917,
+     "6": 2.9986790557386463e-07,
+     "8": 0.0011929094702792238,
+     "10": 2.0889552688130616e-06,
+     "12": 0.00022696999915069002,
+     "14": 2.456750229718582e-05,
+     "16": 0.00016785353671384265,
+     "18": 0.0012728839860212389,
+     "20": 0.004042031806663969
+    }
+   },
+   "T6": 2.9986790557386463e-07,
+   "T15": -3.587392747670182e-63,
+   "amp_degree": 4,
+   "amp": 0.519165909864007,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 7,
+   "k": 1,
+   "T": 57,
+   "points": 230,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    224
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.013632470142515346,
+     "6": 8.26342006525078e-06,
+     "8": 0.001391866648472885,
+     "9": 6.1535761059690624e-09,
+     "10": 4.4252860961375967e-07,
+     "12": 0.0003152331651639256,
+     "13": 1.4422437722362318e-07,
+     "14": 3.601319212806593e-07,
+     "15": 8.12936688380072e-07,
+     "16": 8.611775118095166e-05,
+     "17": 1.2362291591177427e-05,
+     "18": 7.1467598286347405e-06,
+     "19": 1.4824692555810743e-05,
+     "20": 0.0018179608066938439
+    }
+   },
+   "T6": 8.26342006525078e-06,
+   "T15": 8.12936688380072e-07,
+   "amp_degree": 4,
+   "amp": 0.5350531496896568,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 7,
+   "k": 2,
+   "T": 67,
+   "points": 270,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    264
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.013606389361200122,
+     "6": 1.1193073209311993e-05,
+     "8": 0.0015158037293962767,
+     "9": 2.1696728884187772e-07,
+     "10": 8.133024038660177e-06,
+     "12": 0.00033738796062053193,
+     "13": 1.1336142827643174e-06,
+     "14": 3.5983814134459005e-06,
+     "15": 2.601709639921208e-08,
+     "16": 0.00015985586578491962,
+     "17": 7.094196622908796e-08,
+     "18": 1.1540343101177897e-05,
+     "19": 3.002827181071119e-05,
+     "20": 3.949321674968346e-06
+    }
+   },
+   "T6": 1.1193073209311993e-05,
+   "T15": 2.601709639921208e-08,
+   "amp_degree": 4,
+   "amp": 0.5345410897070519,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 7,
+   "k": 3,
+   "T": 79,
+   "points": 318,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    312
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.013263985305849395,
+     "6": 4.624489234871158e-06,
+     "8": 0.0014657419540091475,
+     "9": 8.306136320344066e-08,
+     "10": 5.7408138396191515e-06,
+     "12": 0.0004101092306857726,
+     "13": 6.579618751297969e-09,
+     "14": 1.2314138229231551e-05,
+     "15": 8.497513567545911e-07,
+     "16": 0.00014731060297230715,
+     "17": 1.5044863005535962e-06,
+     "18": 1.565450092185893e-05,
+     "19": 5.169455747851005e-08,
+     "20": 4.237073555794495e-05
+    }
+   },
+   "T6": 4.624489234871158e-06,
+   "T15": 8.497513567545911e-07,
+   "amp_degree": 4,
+   "amp": 0.5277723859987725,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 7,
+   "k": 4,
+   "T": 93,
+   "points": 374,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    368
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.013118997235455478,
+     "6": 3.2690662085101192e-06,
+     "8": 0.0013477173283021147,
+     "9": 7.447358181462075e-09,
+     "10": 1.3033781654890112e-06,
+     "12": 0.0003707216296072893,
+     "13": 1.3539138500585095e-07,
+     "14": 6.826366198288383e-06,
+     "15": 4.071290163033587e-07,
+     "16": 0.0001760797209393165,
+     "17": 9.688065077648858e-08,
+     "18": 1.5876606050737344e-05,
+     "19": 7.09782591809131e-08,
+     "20": 6.847217221571472e-05
+    }
+   },
+   "T6": 3.2690662085101192e-06,
+   "T15": 4.071290163033587e-07,
+   "amp_degree": 4,
+   "amp": 0.5248799309790431,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 7,
+   "k": 5,
+   "T": 109,
+   "points": 438,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    432
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.013024294377189905,
+     "6": 2.648684017266421e-06,
+     "8": 0.0013183793971289226,
+     "9": 2.2731919443455558e-09,
+     "10": 9.254575921637942e-07,
+     "12": 0.00028822706990378074,
+     "13": 5.163161461505938e-10,
+     "14": 7.636435254239207e-07,
+     "15": 1.484019859241304e-08,
+     "16": 0.00013502669984912598,
+     "17": 1.3053571198745376e-07,
+     "18": 5.584598017095179e-06,
+     "19": 1.0533631869978455e-07,
+     "20": 7.904651201307361e-05
+    }
+   },
+   "T6": 2.648684017266421e-06,
+   "T15": 1.484019859241304e-08,
+   "amp_degree": 4,
+   "amp": 0.5229820091752564,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 7,
+   "k": 6,
+   "T": 127,
+   "points": 510,
+   "group": "O",
+   "order": 24,
+   "chiral": true,
+   "goldberg_faces": [
+    6,
+    504
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.012892285243417925,
+     "6": 1.5357475572871048e-06,
+     "8": 0.0012502068385684853,
+     "9": 8.191961606329395e-11,
+     "10": 5.503830679732493e-08,
+     "12": 0.0002740207742143758,
+     "13": 5.71442516156436e-10,
+     "14": 2.4798190665937926e-07,
+     "15": 1.8642119485838674e-10,
+     "16": 9.383540554583073e-05,
+     "17": 4.0964682448601084e-08,
+     "18": 5.312725549962203e-07,
+     "19": 8.166525622883348e-08,
+     "20": 5.30208910062965e-05
+    }
+   },
+   "T6": 1.5357475572871048e-06,
+   "T15": 1.8642119485838674e-10,
+   "amp_degree": 4,
+   "amp": 0.5203248889989565,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "octahedron",
+   "h": 7,
+   "k": 7,
+   "T": 147,
+   "points": 590,
+   "group": "Oh",
+   "order": 48,
+   "chiral": false,
+   "goldberg_faces": [
+    6,
+    584
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.012703760060606452,
+     "6": 3.406087192785702e-07,
+     "8": 0.001200671933721633,
+     "10": 1.1533109719226757e-07,
+     "12": 0.0002511732952367053,
+     "14": 4.972152619883584e-09,
+     "16": 9.132726844760428e-05,
+     "18": 3.492479439733878e-07,
+     "20": 2.6606375423999914e-05
+    }
+   },
+   "T6": 3.406087192785702e-07,
+   "T15": 8.509495180298487e-64,
+   "amp_degree": 4,
+   "amp": 0.5165064968349725,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 1,
+   "k": 0,
+   "T": 1,
+   "points": 4,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    0
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.5555555555555556,
+     "4": 0.25925925925925924,
+     "6": 0.3950617283950617,
+     "7": 0.37448559670781895,
+     "8": 0.04526748971193416,
+     "9": 0.26825179088553575,
+     "10": 0.42269979169842,
+     "11": 0.12350759538688208,
+     "12": 0.17250644944594037,
+     "13": 0.4164375725621471,
+     "14": 0.2149627145816751,
+     "15": 0.11723784954491656,
+     "16": 0.36858967724858765,
+     "17": 0.29821811514981594,
+     "18": 0.1067461561125643,
+     "19": 0.2973090176446502,
+     "20": 0.3553402902240413
+    }
+   },
+   "T6": 0.3950617283950617,
+   "T15": 0.11723784954491656,
+   "amp_degree": 3,
+   "amp": 2.2222222222222223,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     4,
+     6,
+     4
+    ],
+    "faces": {
+     "3": 4
+    },
+    "name": "tetrahedron",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 1,
+     "length_basis": 1,
+     "components": [
+      {
+       "theta_sum": "7.3857565040446480928",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     4,
+     6,
+     4
+    ],
+    "faces": {
+     "3": 4
+    },
+    "name": "tetrahedron",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 1,
+     "length_basis": 1,
+     "components": [
+      {
+       "theta_sum": "7.3857565040446480928",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2
+     ]
+    }
+   }
+  },
+  {
+   "base": "tetrahedron",
+   "h": 1,
+   "k": 1,
+   "T": 3,
+   "points": 8,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    4
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [
+     3,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.25925925925925924,
+     "6": 0.3950617283950617,
+     "8": 0.04526748971193416,
+     "10": 0.42269979169842,
+     "12": 0.17250644944594037,
+     "14": 0.2149627145816751,
+     "16": 0.36858967724858765,
+     "18": 0.1067461561125643,
+     "20": 0.3553402902240413
+    }
+   },
+   "T6": 0.3950617283950617,
+   "T15": 0.0,
+   "amp_degree": 3,
+   "amp": -3.8893845486632136e-62,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     8,
+     12,
+     6
+    ],
+    "faces": {
+     "4": 6
+    },
+    "name": "cube or parallelepiped",
+    "matches_GC_triangulation": false,
+    "dehn": {
+     "zero": true,
+     "edge_classes": 1,
+     "length_basis": 1,
+     "components": [
+      {
+       "theta_sum": "18.849555921538759431",
+       "rational_pi": true,
+       "ratio": "6/1"
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": true,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": true,
+     "belt_sizes": [
+      4
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     6,
+     12,
+     8
+    ],
+    "faces": {
+     "3": 8
+    },
+    "name": "octahedron",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 1,
+     "length_basis": 1,
+     "components": [
+      {
+       "theta_sum": "22.927598834988222676",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4
+     ]
+    }
+   }
+  },
+  {
+   "base": "tetrahedron",
+   "h": 2,
+   "k": 0,
+   "T": 4,
+   "points": 10,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    6
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.08888888888888889,
+     "4": 0.06481481481481481,
+     "6": 0.21487654320987654,
+     "7": 0.05991769547325103,
+     "8": 0.2662011316872428,
+     "9": 0.04292028654168572,
+     "10": 0.0001744049433521313,
+     "11": 0.01976121526190113,
+     "12": 0.22005441411299656,
+     "13": 0.06663001160994353,
+     "14": 0.20206298366434375,
+     "15": 0.01875805592718665,
+     "16": 0.14879602523413102,
+     "17": 0.04771489842397055,
+     "18": 0.05460576879877646,
+     "19": 0.04756944282314403,
+     "20": 0.31258909831274884
+    }
+   },
+   "T6": 0.21487654320987654,
+   "T15": 0.01875805592718665,
+   "amp_degree": 3,
+   "amp": 0.8888888888888888,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     10,
+     24,
+     16
+    ],
+    "faces": {
+     "3": 16
+    },
+    "name": "V10 E24 F16 faces{3: 16}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 2,
+     "length_basis": 2,
+     "components": [
+      {
+       "theta_sum": "32.560344533584501826",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "21.560671763757748506",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2,
+      4
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     16,
+     24,
+     10
+    ],
+    "faces": {
+     "3": 4,
+     "6": 6
+    },
+    "name": "V16 E24 F10 faces{3: 4, 6: 6}",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 2,
+     "length_basis": 2,
+     "components": [
+      {
+       "theta_sum": "26.235312425583407524",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "18.849555921538759431",
+       "rational_pi": true,
+       "ratio": "6/1"
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      3,
+      4
+     ]
+    }
+   }
+  },
+  {
+   "base": "tetrahedron",
+   "h": 2,
+   "k": 1,
+   "T": 7,
+   "points": 16,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    12
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.15742118945442032,
+     "4": 0.025608465608465608,
+     "6": 0.10426088342085565,
+     "7": 0.00047302012089985403,
+     "8": 0.001596958181284659,
+     "9": 0.12090155179975069,
+     "10": 0.05731398526152246,
+     "11": 0.0063241189226311756,
+     "12": 0.028415199989040792,
+     "13": 0.1671066377069195,
+     "14": 0.07764886932969495,
+     "15": 0.06348728896053622,
+     "16": 0.11342292701476912,
+     "17": 0.05993430612608879,
+     "18": 0.05480297487130542,
+     "19": 0.014019308327859335,
+     "20": 0.00889040611859649
+    }
+   },
+   "T6": 0.10426088342085565,
+   "T15": 0.06348728896053622,
+   "amp_degree": 3,
+   "amp": 1.182919888165327,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     16,
+     42,
+     28
+    ],
+    "faces": {
+     "3": 28
+    },
+    "name": "V16 E42 F28 faces{3: 28}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "30.530519565000641552",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "33.415733031100863055",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "28.00869684844124523",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "13.757817251335049009",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     28,
+     42,
+     16
+    ],
+    "faces": {
+     "3": 4,
+     "6": 12
+    },
+    "name": "V28 E42 F16 faces{3: 4, 6: 12}",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "31.717346597428322241",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "27.453819653963501796",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "21.265850971022728928",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "12.082244225211213318",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2,
+      3
+     ]
+    }
+   }
+  },
+  {
+   "base": "tetrahedron",
+   "h": 2,
+   "k": 2,
+   "T": 12,
+   "points": 26,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    22
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.07012930089853167,
+     "4": 0.022542430662088782,
+     "6": 0.11844070980664839,
+     "7": 0.007149212453281955,
+     "8": 0.0948665931568617,
+     "9": 0.01198432002459311,
+     "10": 0.00329661491615271,
+     "11": 0.006643491811177405,
+     "12": 0.004034386628062045,
+     "13": 0.02243776453356511,
+     "14": 0.08702503058461898,
+     "15": 0.05087187287238306,
+     "16": 0.045934946542242595,
+     "17": 0.00019556007436934895,
+     "18": 0.010955776020992718,
+     "19": 0.019254905675190993,
+     "20": 0.07559267578775104
+    }
+   },
+   "T6": 0.11844070980664839,
+   "T15": 0.05087187287238306,
+   "amp_degree": 3,
+   "amp": 0.7895388296610267,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     26,
+     72,
+     48
+    ],
+    "faces": {
+     "3": 48
+    },
+    "name": "V26 E72 F48 faces{3: 48}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "62.945713325313886193",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "63.816064578864403275",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "34.76860936310650565",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "32.092377469662708396",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2,
+      4
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     48,
+     72,
+     26
+    ],
+    "faces": {
+     "3": 4,
+     "6": 22
+    },
+    "name": "V48 E72 F26 faces{3: 4, 6: 22}",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "34.391398252482334014",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "52.470624851166815047",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "55.212575592524711584",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "31.988524847152520473",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2,
+      3,
+      7
+     ]
+    }
+   }
+  },
+  {
+   "base": "tetrahedron",
+   "h": 3,
+   "k": 0,
+   "T": 9,
+   "points": 20,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    16
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.03651389932381668,
+     "4": 0.01106734765637846,
+     "6": 0.07810139123938273,
+     "7": 0.08970549701647304,
+     "8": 0.026500347846342205,
+     "9": 0.023571893902543745,
+     "10": 0.0251629807183598,
+     "11": 0.0006804711813723992,
+     "12": 0.14457003833068824,
+     "13": 5.733325462692407e-05,
+     "14": 0.12154723782177297,
+     "15": 0.09694944223324652,
+     "16": 0.018070526023360636,
+     "17": 3.3190024623170657e-09,
+     "18": 0.06706632345294866,
+     "19": 0.037196701045894,
+     "20": 0.04398193236677891
+    }
+   },
+   "T6": 0.07810139123938273,
+   "T15": 0.09694944223324652,
+   "amp_degree": 3,
+   "amp": 0.5697086922186475,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     20,
+     54,
+     36
+    ],
+    "faces": {
+     "3": 36
+    },
+    "name": "V20 E54 F36 faces{3: 36}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 3,
+     "components": [
+      {
+       "theta_sum": "62.196648210060878064",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "49.909305690260541866",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "27.732291917017396043",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2,
+      6
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     36,
+     54,
+     20
+    ],
+    "faces": {
+     "3": 4,
+     "6": 16
+    },
+    "name": "V36 E54 F20 faces{3: 4, 6: 16}",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 3,
+     "components": [
+      {
+       "theta_sum": "40.563725691961374396",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "50.886325717260575768",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "45.211426551607925587",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2,
+      3,
+      4
+     ]
+    }
+   }
+  },
+  {
+   "base": "tetrahedron",
+   "h": 3,
+   "k": 1,
+   "T": 13,
+   "points": 28,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    24
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.08382995852886152,
+     "4": 0.0003263414880369354,
+     "6": 0.041073703003001776,
+     "7": 0.03724276727353702,
+     "8": 0.008301909686543568,
+     "9": 0.03758736470944965,
+     "10": 0.07007493000234398,
+     "11": 0.03783725632677802,
+     "12": 0.014129366111530166,
+     "13": 0.0027234304218947806,
+     "14": 0.016710109101104393,
+     "15": 0.057832046827610464,
+     "16": 0.026721890391224374,
+     "17": 0.04368681178526951,
+     "18": 0.0362357503210985,
+     "19": 0.005549807025262215,
+     "20": 0.051066520855624985
+    }
+   },
+   "T6": 0.041073703003001776,
+   "T15": 0.057832046827610464,
+   "amp_degree": 3,
+   "amp": 0.8632237177714788,
+   "group_raised": false,
+   "exact_unforced": {},
+   "geodesic_hull": {
+    "fvec": [
+     28,
+     78,
+     52
+    ],
+    "faces": {
+     "3": 52
+    },
+    "name": "V28 E78 F52 faces{3: 52}",
+    "matches_GC_triangulation": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 7,
+     "length_basis": 6,
+     "components": [
+      {
+       "theta_sum": "32.463262977614823744",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "64.049005457879857762",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "31.16472962857246177",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "35.706575698078462973",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "15.746678753016688545",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "31.341086552301541003",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2
+     ]
+    }
+   },
+   "goldberg_polar": {
+    "fvec": [
+     52,
+     78,
+     28
+    ],
+    "faces": {
+     "3": 4,
+     "6": 24
+    },
+    "name": "V52 E78 F28 faces{3: 4, 6: 24}",
+    "dehn": {
+     "zero": false,
+     "edge_classes": 7,
+     "length_basis": 7,
+     "components": [
+      {
+       "theta_sum": "33.92440576939480334",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "27.874036991846787589",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "24.164488450422426637",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "27.874036991846787589",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "30.042150538997258133",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "14.794880587548431674",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "31.188869978315876174",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": false,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      2,
+      4
+     ]
+    }
+   }
+  },
+  {
+   "base": "tetrahedron",
+   "h": 3,
+   "k": 2,
+   "T": 19,
+   "points": 40,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    36
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.07982703878792081,
+     "4": 0.004621599051814064,
+     "6": 0.01711571919204364,
+     "7": 0.005388616963021211,
+     "8": 0.00012038954753302578,
+     "9": 0.05008238234629528,
+     "10": 0.0630890951421965,
+     "11": 0.02297635596687418,
+     "12": 0.009474868144810383,
+     "13": 0.03281294497817712,
+     "14": 0.006473430068462345,
+     "15": 0.02296023186037541,
+     "16": 0.04718356608083725,
+     "17": 0.0025878096573720352,
+     "18": 0.017551894867701996,
+     "19": 0.01152882398753573,
+     "20": 0.0059106379170606165
+    }
+   },
+   "T6": 0.01711571919204364,
+   "T15": 0.02296023186037541,
+   "amp_degree": 3,
+   "amp": 0.8423619638343435,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 3,
+   "k": 3,
+   "T": 27,
+   "points": 56,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    52
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06672743814101942,
+     "4": 0.0027543558832890712,
+     "6": 0.026251124177014994,
+     "7": 0.000917812989326694,
+     "8": 0.011841756501570759,
+     "9": 0.001334244011275252,
+     "10": 0.006194069674481612,
+     "11": 9.141945652002718e-05,
+     "12": 0.048075387448867996,
+     "13": 0.012683571460434915,
+     "14": 0.02274959923831846,
+     "15": 0.0687562215533965,
+     "16": 0.003484611316514667,
+     "17": 0.012618709395199131,
+     "18": 0.014764287156774853,
+     "19": 0.003601483192147063,
+     "20": 0.012068058686681272
+    }
+   },
+   "T6": 0.026251124177014994,
+   "T15": 0.0687562215533965,
+   "amp_degree": 3,
+   "amp": 0.7701511432671695,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 4,
+   "k": 0,
+   "T": 16,
+   "points": 34,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    30
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.07491457660222442,
+     "4": 0.0035883634499551454,
+     "6": 5.339826562433252e-06,
+     "7": 0.00021677269722781235,
+     "8": 0.037177694187242795,
+     "9": 0.009662245365182297,
+     "10": 0.011893234463917452,
+     "11": 0.018158561308077623,
+     "12": 0.12677000006369862,
+     "13": 0.00017027398427283422,
+     "14": 0.012305390303387688,
+     "15": 0.02251206362777418,
+     "16": 0.05859007581089979,
+     "17": 0.0014432090495411303,
+     "18": 0.0020691897710986853,
+     "19": 0.017155593758899405,
+     "20": 0.06673791331195211
+    }
+   },
+   "T6": 5.339826562433252e-06,
+   "T15": 0.02251206362777418,
+   "amp_degree": 3,
+   "amp": 0.816031462368534,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 4,
+   "k": 1,
+   "T": 21,
+   "points": 44,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    40
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.07041425421689203,
+     "4": 0.005556801939027676,
+     "6": 0.029872142524983113,
+     "7": 0.002868888196706863,
+     "8": 1.3734377316919316e-05,
+     "9": 0.005734539457638019,
+     "10": 0.05838807831898392,
+     "11": 7.238156480452747e-05,
+     "12": 0.006504021955216782,
+     "13": 0.0004961631758875189,
+     "14": 0.019669977163600732,
+     "15": 0.055142056168338276,
+     "16": 0.04939596810824325,
+     "17": 0.031860397001146186,
+     "18": 0.0195335139109182,
+     "19": 0.0007178940761145735,
+     "20": 0.007914348560242292
+    }
+   },
+   "T6": 0.029872142524983113,
+   "T15": 0.055142056168338276,
+   "amp_degree": 3,
+   "amp": 0.7911412528290566,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 4,
+   "k": 2,
+   "T": 28,
+   "points": 58,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    54
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.07249762716360958,
+     "4": 0.0032968922955592117,
+     "6": 0.015410526027756735,
+     "7": 0.006540685150295217,
+     "8": 0.002246677003900405,
+     "9": 0.020083687285687008,
+     "10": 0.0005076828357911174,
+     "11": 2.0572174062173826e-05,
+     "12": 0.03654869750070821,
+     "13": 0.009144092945948494,
+     "14": 0.04056235706013834,
+     "15": 0.0031842279484042488,
+     "16": 0.024190649733120143,
+     "17": 0.003756062802945313,
+     "18": 0.01577276799993826,
+     "19": 0.016230152042392507,
+     "20": 0.016349212837845437
+    }
+   },
+   "T6": 0.015410526027756735,
+   "T15": 0.0031842279484042488,
+   "amp_degree": 3,
+   "amp": 0.8027598349228856,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 4,
+   "k": 3,
+   "T": 37,
+   "points": 76,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    72
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06848183361524668,
+     "4": 0.0026811380025422125,
+     "6": 0.012568449999625931,
+     "7": 0.002102485379260345,
+     "8": 2.8378012264307437e-05,
+     "9": 0.016251293618740087,
+     "10": 0.009648452433235742,
+     "11": 0.003934905887771622,
+     "12": 0.008218379874062175,
+     "13": 0.0007990747279533247,
+     "14": 0.016486397089885692,
+     "15": 0.005231951747575131,
+     "16": 0.02112383610174517,
+     "17": 0.012431493219102887,
+     "18": 0.01718023190718277,
+     "19": 0.025409051758688246,
+     "20": 0.02512081646005336
+    }
+   },
+   "T6": 0.012568449999625931,
+   "T15": 0.005231951747575131,
+   "amp_degree": 3,
+   "amp": 0.7802098499207145,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 4,
+   "k": 4,
+   "T": 48,
+   "points": 98,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    94
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06559992435584894,
+     "4": 0.0022234201282910673,
+     "6": 0.013395729233366528,
+     "7": 0.000579460382687415,
+     "8": 0.00023477184081461755,
+     "9": 0.001245975382426512,
+     "10": 0.0024821834657208935,
+     "11": 0.0005380840987425047,
+     "12": 0.02780252853051877,
+     "13": 0.001720841678264826,
+     "14": 0.008030445077015972,
+     "15": 0.004772681947271173,
+     "16": 0.012199944304200972,
+     "17": 0.00023229558941617771,
+     "18": 0.0011794557162040846,
+     "19": 0.01974418150639381,
+     "20": 0.018945729279533013
+    }
+   },
+   "T6": 0.013395729233366528,
+   "T15": 0.004772681947271173,
+   "amp_degree": 3,
+   "amp": 0.7636166831065552,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 5,
+   "k": 0,
+   "T": 25,
+   "points": 52,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    48
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06525810238024266,
+     "4": 0.0008380031161107041,
+     "6": 0.015946320861157187,
+     "7": 0.010960533836805612,
+     "8": 0.00213184265842848,
+     "9": 0.0012800626631684466,
+     "10": 0.004247946075926058,
+     "11": 0.01641102335190949,
+     "12": 0.03402853826262289,
+     "13": 0.013005756938658049,
+     "14": 0.0005735538107914203,
+     "15": 0.03427202208225824,
+     "16": 0.003719944375966986,
+     "17": 0.0007696265508087402,
+     "18": 0.058359880807764566,
+     "19": 0.03047812592033026,
+     "20": 0.0030040485884210615
+    }
+   },
+   "T6": 0.015946320861157187,
+   "T15": 0.03427202208225824,
+   "amp_degree": 3,
+   "amp": 0.7616245933251581,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 5,
+   "k": 1,
+   "T": 31,
+   "points": 64,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    60
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.07054043396653226,
+     "4": 0.0032376798922939738,
+     "6": 0.009738626106675558,
+     "7": 0.0017793409203360605,
+     "8": 0.003496060531862533,
+     "9": 0.021129374404708152,
+     "10": 0.004143485685020868,
+     "11": 0.005753301060680246,
+     "12": 0.006119697826820626,
+     "13": 0.022491851419168166,
+     "14": 0.01410414265311926,
+     "15": 0.014597846159345675,
+     "16": 0.00975968246507502,
+     "17": 0.0024287901220180134,
+     "18": 0.02491896012877457,
+     "19": 0.013680649183264632,
+     "20": 0.007430321388034799
+    }
+   },
+   "T6": 0.009738626106675558,
+   "T15": 0.014597846159345675,
+   "amp_degree": 3,
+   "amp": 0.791849783546418,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 5,
+   "k": 2,
+   "T": 39,
+   "points": 80,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    76
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06851516231296056,
+     "4": 0.0031432602618375396,
+     "6": 0.01671853015293499,
+     "7": 0.0009533730168022041,
+     "8": 0.0007477952472007095,
+     "9": 0.0009022781890300385,
+     "10": 0.01271192624430525,
+     "11": 0.0011018884921605292,
+     "12": 0.014927441401565393,
+     "13": 0.005880424972186634,
+     "14": 0.0054757691943676315,
+     "15": 0.014974435715148829,
+     "16": 0.016970527540856786,
+     "17": 0.019178560774653713,
+     "18": 0.006529331941954548,
+     "19": 0.004133807172881304,
+     "20": 0.018472752806837186
+    }
+   },
+   "T6": 0.01671853015293499,
+   "T15": 0.014974435715148829,
+   "amp_degree": 3,
+   "amp": 0.7803996828575047,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 5,
+   "k": 3,
+   "T": 49,
+   "points": 100,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    96
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06667733674060167,
+     "4": 0.0023891322487186503,
+     "6": 0.013509310627322055,
+     "7": 0.0021105730448559004,
+     "8": 1.732289910573496e-05,
+     "9": 0.00535329693192631,
+     "10": 0.0003522222264092189,
+     "11": 0.001675333704714279,
+     "12": 0.014961765982743661,
+     "13": 0.005716159241377925,
+     "14": 0.0014367304555494332,
+     "15": 0.005097029318115857,
+     "16": 0.015274574222786799,
+     "17": 0.0051133855429901015,
+     "18": 0.006684672562925768,
+     "19": 0.009305280224060578,
+     "20": 0.017517653954864654
+    }
+   },
+   "T6": 0.013509310627322055,
+   "T15": 0.005097029318115857,
+   "amp_degree": 3,
+   "amp": 0.7698619601553496,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 5,
+   "k": 4,
+   "T": 61,
+   "points": 124,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    120
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06560683857241346,
+     "4": 0.0022637820133882816,
+     "6": 0.012373190191964685,
+     "7": 0.0011917808779356176,
+     "8": 3.7538457687859846e-05,
+     "9": 0.0051063183570567525,
+     "10": 0.0007969189601144137,
+     "11": 0.0003478302327362894,
+     "12": 0.0021557011430611913,
+     "13": 0.0021141953304965595,
+     "14": 0.007148262986129793,
+     "15": 0.0129321621973399,
+     "16": 0.005093548994263555,
+     "17": 0.0035715075115158906,
+     "18": 0.009813461295094299,
+     "19": 0.008758255333965036,
+     "20": 0.0006246996250346858
+    }
+   },
+   "T6": 0.012373190191964685,
+   "T15": 0.0129321621973399,
+   "amp_degree": 3,
+   "amp": 0.763656924555427,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 5,
+   "k": 5,
+   "T": 75,
+   "points": 152,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    148
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06405403835721524,
+     "4": 0.001911978263413261,
+     "6": 0.012228284114633893,
+     "7": 0.0009285115650575638,
+     "8": 0.0001185962563665377,
+     "9": 0.00264811649201213,
+     "10": 0.0006407518561777583,
+     "11": 4.1196434097792424e-05,
+     "12": 0.004769512981268335,
+     "13": 1.962713092656357e-05,
+     "14": 0.0012838868354604718,
+     "15": 0.00401343970067616,
+     "16": 0.006574278319258662,
+     "17": 1.7497003287881142e-05,
+     "18": 0.005896474337459983,
+     "19": 0.010239285358368889,
+     "20": 0.011574718509756452
+    }
+   },
+   "T6": 0.012228284114633893,
+   "T15": 0.00401343970067616,
+   "amp_degree": 3,
+   "amp": 0.7545655901523163,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 6,
+   "k": 0,
+   "T": 36,
+   "points": 74,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    70
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06361137000180021,
+     "4": 0.0017065339425146905,
+     "6": 0.014076025963847221,
+     "7": 2.462950770222665e-05,
+     "8": 4.306394422624082e-05,
+     "9": 0.0016799432225194726,
+     "10": 0.019938995182229767,
+     "11": 8.369082211793638e-07,
+     "12": 0.00945895426326701,
+     "13": 0.0036574679877163373,
+     "14": 0.0048277049232777185,
+     "15": 0.008059841499075491,
+     "16": 0.03508716231747359,
+     "17": 0.0037125131604354416,
+     "18": 0.02121697468835602,
+     "19": 0.0053873469122049066,
+     "20": 0.007677832662758833
+    }
+   },
+   "T6": 0.014076025963847221,
+   "T15": 0.008059841499075491,
+   "amp_degree": 3,
+   "amp": 0.7519537219909227,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 6,
+   "k": 1,
+   "T": 43,
+   "points": 88,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    84
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06748611559262391,
+     "4": 0.0025131683704044875,
+     "6": 0.013351516737055143,
+     "7": 0.0023844101690739103,
+     "8": 0.0001469008859105322,
+     "9": 0.002387491595776633,
+     "10": 0.0003243588368463108,
+     "11": 0.008481502588069621,
+     "12": 0.012399747040079212,
+     "13": 0.002138378682504194,
+     "14": 0.013635769096513678,
+     "15": 0.002596318966583354,
+     "16": 0.009204274214573283,
+     "17": 0.012293947322975752,
+     "18": 0.013667813950859036,
+     "19": 0.008071722962925569,
+     "20": 0.003875457955723456
+    }
+   },
+   "T6": 0.013351516737055143,
+   "T15": 0.002596318966583354,
+   "amp_degree": 3,
+   "amp": 0.7745169998428348,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 6,
+   "k": 2,
+   "T": 52,
+   "points": 106,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    102
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.0670619883140561,
+     "4": 0.0026343121886844663,
+     "6": 0.012759815964669628,
+     "7": 0.001650769061207603,
+     "8": 0.0003039102989629065,
+     "9": 0.0073408699955801,
+     "10": 0.0013880578509086854,
+     "11": 4.179600813700391e-06,
+     "12": 0.0026034981422930073,
+     "13": 0.012292611068326437,
+     "14": 0.0005337846109766403,
+     "15": 0.006176292196064622,
+     "16": 0.008721430192595072,
+     "17": 0.002608436949857762,
+     "18": 0.020153227865910967,
+     "19": 0.0038142738898585523,
+     "20": 0.012329208096611258
+    }
+   },
+   "T6": 0.012759815964669628,
+   "T15": 0.006176292196064622,
+   "amp_degree": 3,
+   "amp": 0.7720793759657162,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 6,
+   "k": 3,
+   "T": 63,
+   "points": 128,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    124
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.0648518041324221,
+     "4": 0.002043431750535573,
+     "6": 0.01322288950985307,
+     "7": 0.0011546917580637964,
+     "8": 0.000226940974661518,
+     "9": 0.0029408228815914574,
+     "10": 0.0025833179786647264,
+     "11": 4.646638529173641e-05,
+     "12": 0.006148451783705471,
+     "13": 0.0014286193455814156,
+     "14": 0.00516829570163184,
+     "15": 0.007644582768628893,
+     "16": 0.003944820561480266,
+     "17": 0.002214005071995729,
+     "18": 0.0050635166319367465,
+     "19": 0.0043907493451553,
+     "20": 0.01375846634072108
+    }
+   },
+   "T6": 0.01322288950985307,
+   "T15": 0.007644582768628893,
+   "amp_degree": 3,
+   "amp": 0.7592499464452305,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 6,
+   "k": 4,
+   "T": 76,
+   "points": 154,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    150
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06490979506565332,
+     "4": 0.002159633416887544,
+     "6": 0.012291126007212836,
+     "7": 0.001118795850385331,
+     "8": 3.4490636831611516e-05,
+     "9": 0.0038342529235808006,
+     "10": 0.0005439103858735135,
+     "11": 0.00041563999523182836,
+     "12": 0.002417438880923232,
+     "13": 0.0017355904751244018,
+     "14": 0.00019850042421836036,
+     "15": 0.006770840259477599,
+     "16": 0.005885966380835668,
+     "17": 0.0014806886677135285,
+     "18": 0.004410717629157503,
+     "19": 0.004333994807999787,
+     "20": 0.010530914866906951
+    }
+   },
+   "T6": 0.012291126007212836,
+   "T15": 0.006770840259477599,
+   "amp_degree": 3,
+   "amp": 0.7595893338766287,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 6,
+   "k": 5,
+   "T": 91,
+   "points": 184,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    180
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.0641744272355812,
+     "4": 0.002013300488534182,
+     "6": 0.011987372211995655,
+     "7": 0.0009850027903901767,
+     "8": 5.51813043162021e-05,
+     "9": 0.003538626854611707,
+     "10": 0.0004808863414093717,
+     "11": 0.00011537725998435273,
+     "12": 0.0008253377798467523,
+     "13": 0.0007420648035384946,
+     "14": 0.0005758994698469332,
+     "15": 0.00487078726043667,
+     "16": 0.0009649479768559869,
+     "17": 0.0022154485444455035,
+     "18": 0.009186166218880083,
+     "19": 0.0003812895026309718,
+     "20": 6.164460614993792e-05
+    }
+   },
+   "T6": 0.011987372211995655,
+   "T15": 0.00487078726043667,
+   "amp_degree": 3,
+   "amp": 0.75527435624756,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 6,
+   "k": 6,
+   "T": 108,
+   "points": 218,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    214
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06324312172045662,
+     "4": 0.001801600582788239,
+     "6": 0.011643328155836356,
+     "7": 0.0008072246797552442,
+     "8": 4.693344490577511e-05,
+     "9": 0.0032019241293625065,
+     "10": 0.000526692438712465,
+     "11": 6.617792188893722e-05,
+     "12": 0.0016037450761334639,
+     "13": 6.151234881109675e-05,
+     "14": 0.00026286799659708417,
+     "15": 0.0005983462722494214,
+     "16": 0.0011934033834423332,
+     "17": 0.0002361107935888964,
+     "18": 0.0066557352848922256,
+     "19": 0.001570596643317212,
+     "20": 0.006699309405475685
+    }
+   },
+   "T6": 0.011643328155836356,
+   "T15": 0.0005983462722494214,
+   "amp_degree": 3,
+   "amp": 0.749774020595282,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 7,
+   "k": 0,
+   "T": 49,
+   "points": 100,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    96
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06344645758545933,
+     "4": 0.001576659007152884,
+     "6": 0.010787277955169098,
+     "7": 0.0006769802123492749,
+     "8": 0.0004382473041085509,
+     "9": 0.006819751426786284,
+     "10": 0.00013150845156025754,
+     "11": 0.0035009392790087547,
+     "12": 0.0011961742136995471,
+     "13": 0.01140853480540557,
+     "14": 0.004641783797742571,
+     "15": 0.00692007575658541,
+     "16": 0.008583342681876186,
+     "17": 0.0031256347363375903,
+     "18": 0.002274723673367521,
+     "19": 0.019939107770520433,
+     "20": 0.017950212674898006
+    }
+   },
+   "T6": 0.010787277955169098,
+   "T15": 0.00692007575658541,
+   "amp_degree": 3,
+   "amp": 0.7509783697755547,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 7,
+   "k": 1,
+   "T": 57,
+   "points": 116,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    112
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06590106070816809,
+     "4": 0.0023662225948776956,
+     "6": 0.012869772074408852,
+     "7": 0.0007827883068660084,
+     "8": 4.27283558684298e-05,
+     "9": 0.0026345714498978035,
+     "10": 0.0034932706458831015,
+     "11": 4.7615712599004893e-05,
+     "12": 0.0037708197738334907,
+     "13": 0.004850138838715347,
+     "14": 0.004687894635529561,
+     "15": 0.006735814948128428,
+     "16": 0.001332261440817953,
+     "17": 0.006707835319285912,
+     "18": 0.015991052383913892,
+     "19": 0.007091661510990636,
+     "20": 0.0014962468372258096
+    }
+   },
+   "T6": 0.012869772074408852,
+   "T15": 0.006735814948128428,
+   "amp_degree": 3,
+   "amp": 0.7653673668865347,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 7,
+   "k": 2,
+   "T": 67,
+   "points": 136,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    132
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06570370195055909,
+     "4": 0.002339652222004048,
+     "6": 0.01283038312767848,
+     "7": 0.0015067885153835557,
+     "8": 4.882419667006992e-05,
+     "9": 0.003328081227178932,
+     "10": 0.00024213754313058276,
+     "11": 0.0010382126132442637,
+     "12": 0.004513444994856768,
+     "13": 0.002892197005939976,
+     "14": 0.003536291574431543,
+     "15": 0.0035211423555519526,
+     "16": 0.005137163794088358,
+     "17": 0.0038093151166870842,
+     "18": 0.005185834877235848,
+     "19": 0.0030972431565083106,
+     "20": 0.005630927943220168
+    }
+   },
+   "T6": 0.01283038312767848,
+   "T15": 0.0035211423555519526,
+   "amp_degree": 3,
+   "amp": 0.7642204565615814,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 7,
+   "k": 3,
+   "T": 79,
+   "points": 160,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    156
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06453383665612092,
+     "4": 0.002049300989015721,
+     "6": 0.012367637276425413,
+     "7": 0.001151317773501369,
+     "8": 0.00010747529729706735,
+     "9": 0.004226757162269,
+     "10": 0.0007459393639835783,
+     "11": 0.00017076772129901815,
+     "12": 0.0004523096588099104,
+     "13": 0.0022224501450000523,
+     "14": 0.0007882788682898969,
+     "15": 0.005435840585554967,
+     "16": 0.0079253044258675,
+     "17": 0.0013528893372056466,
+     "18": 0.0029436149704548326,
+     "19": 0.0013388160018358388,
+     "20": 0.007537795152401401
+    }
+   },
+   "T6": 0.012367637276425413,
+   "T15": 0.005435840585554967,
+   "amp_degree": 3,
+   "amp": 0.7573863634961774,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 7,
+   "k": 4,
+   "T": 93,
+   "points": 188,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    184
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06410717990331444,
+     "4": 0.001999953411549845,
+     "6": 0.012031591733820462,
+     "7": 0.0009413896165759933,
+     "8": 5.5705180385936856e-05,
+     "9": 0.0033223024513470076,
+     "10": 0.000782148765294736,
+     "11": 4.721819083934408e-05,
+     "12": 0.0023375755644081822,
+     "13": 0.00014555000594009056,
+     "14": 0.0013584646431018383,
+     "15": 0.0012072002211957384,
+     "16": 0.0027022924856578354,
+     "17": 0.0003963749773044091,
+     "18": 0.010208428788378939,
+     "19": 0.0023621840763376335,
+     "20": 0.0019452552333406716
+    }
+   },
+   "T6": 0.012031591733820462,
+   "T15": 0.0012072002211957384,
+   "amp_degree": 3,
+   "amp": 0.7548785327061386,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 7,
+   "k": 5,
+   "T": 109,
+   "points": 220,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    216
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06378778923974283,
+     "4": 0.0019527082197221854,
+     "6": 0.01192305136539608,
+     "7": 0.0009820627361114256,
+     "8": 6.560365360093083e-05,
+     "9": 0.0033056093868549744,
+     "10": 0.00045015691502771083,
+     "11": 9.629529631337862e-05,
+     "12": 0.0012196904894246617,
+     "13": 0.0005432143532592715,
+     "14": 6.0773788321959024e-05,
+     "15": 0.0016563817461893128,
+     "16": 0.0009600156227589362,
+     "17": 0.0007786120182326445,
+     "18": 0.004145200925231713,
+     "19": 0.0023394758120687128,
+     "20": 0.004893051594308179
+    }
+   },
+   "T6": 0.01192305136539608,
+   "T15": 0.0016563817461893128,
+   "amp_degree": 3,
+   "amp": 0.7529957310768345,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 7,
+   "k": 6,
+   "T": 127,
+   "points": 256,
+   "group": "T",
+   "order": 12,
+   "chiral": true,
+   "goldberg_faces": [
+    4,
+    252
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06337717721273053,
+     "4": 0.0018799343014383153,
+     "6": 0.01163678613473783,
+     "7": 0.0008578114709815787,
+     "8": 4.550854861474137e-05,
+     "9": 0.0032579985934181577,
+     "10": 0.00044430955967640916,
+     "11": 8.165649441094989e-05,
+     "12": 0.0010114346006968621,
+     "13": 0.0003115699199662615,
+     "14": 9.431647038214054e-05,
+     "15": 0.0011761046607627228,
+     "16": 0.00026226867952312,
+     "17": 0.0006601749577181464,
+     "18": 0.002380255063432358,
+     "19": 0.0005299102420569737,
+     "20": 0.0005304705403382289
+    }
+   },
+   "T6": 0.01163678613473783,
+   "T15": 0.0011761046607627228,
+   "amp_degree": 3,
+   "amp": 0.750568242290721,
+   "group_raised": false,
+   "exact_unforced": {}
+  },
+  {
+   "base": "tetrahedron",
+   "h": 7,
+   "k": 7,
+   "T": 147,
+   "points": 296,
+   "group": "Td",
+   "order": 24,
+   "chiral": false,
+   "goldberg_faces": [
+    4,
+    292
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.06274671339225686,
+     "4": 0.001735054745824973,
+     "6": 0.011411859664428469,
+     "7": 0.0007633300183494549,
+     "8": 4.316573609159992e-05,
+     "9": 0.0031080375194862267,
+     "10": 0.0003792825638084066,
+     "11": 4.962581056348938e-05,
+     "12": 0.0012025705922388127,
+     "13": 0.00020351980738932596,
+     "14": 0.00015905890845324376,
+     "15": 0.0001634504182099181,
+     "16": 0.0003732685858865484,
+     "17": 3.3410451538468424e-06,
+     "18": 0.002000371452996278,
+     "19": 0.0005569213909672541,
+     "20": 0.0014380158864697125
+    }
+   },
+   "T6": 0.011411859664428469,
+   "T15": 0.0001634504182099181,
+   "amp_degree": 3,
+   "amp": 0.7468256580265087,
+   "group_raised": false,
+   "exact_unforced": {}
+  }
+ ],
+ "fails": [],
+ "seconds": 360.1389865875244
+}

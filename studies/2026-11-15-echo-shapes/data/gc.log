@@ -1,0 +1,447 @@
+CHECK ok   icosahedron (1,0) T=1: 12 points = 12
+CHECK ok   icosahedron (1,0): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (1,0) every forced silence of Ih is zero
+CHECK ok   icosahedron (1,0) polar has one face per geodesic point
+PROGRESS 0.010 icosahedron (1,0) T=1 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced [] | hull icosahedron dehn0=False | polar dodecahedron dehn0=False
+CHECK ok   icosahedron (1,1) T=3: 32 points = 32
+CHECK ok   icosahedron (1,1): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (1,1) every forced silence of Ih is zero
+CHECK ok   icosahedron (1,1) polar has one face per geodesic point
+PROGRESS 0.019 icosahedron (1,1) T=3 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced [] | hull pentakis dodecahedron or triakis icosahedron (60 triangles) dehn0=False | polar truncated icosahedron dehn0=False
+CHECK ok   icosahedron (2,0) T=4: 42 points = 42
+CHECK ok   icosahedron (2,0): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (2,0) every forced silence of Ih is zero
+CHECK ok   icosahedron (2,0) polar has one face per geodesic point
+PROGRESS 0.029 icosahedron (2,0) T=4 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced [] | hull geodesic (2,0) type (80 triangles) dehn0=False | polar Goldberg GP(2,0) type (12 pentagons, 30 hexagons) dehn0=False
+CHECK ok   icosahedron (2,1) T=7: 72 points = 72
+CHECK ok   icosahedron (2,1): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (2,1) every forced silence of I is zero
+CHECK ok   icosahedron (2,1) polar has one face per geodesic point
+PROGRESS 0.038 icosahedron (2,1) T=7 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced [] | hull V72 E210 F140 faces{3: 140} dehn0=False | polar V140 E210 F72 faces{5: 12, 6: 60} dehn0=False
+CHECK ok   icosahedron (2,2) T=12: 122 points = 122
+CHECK ok   icosahedron (2,2): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (2,2) every forced silence of Ih is zero
+CHECK ok   icosahedron (2,2) polar has one face per geodesic point
+PROGRESS 0.048 icosahedron (2,2) T=12 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced [] | hull V122 E360 F240 faces{3: 240} dehn0=False | polar V240 E360 F122 faces{5: 12, 6: 110} dehn0=False
+CHECK ok   icosahedron (3,0) T=9: 92 points = 92
+CHECK ok   icosahedron (3,0): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (3,0) every forced silence of Ih is zero
+CHECK ok   icosahedron (3,0) polar has one face per geodesic point
+PROGRESS 0.057 icosahedron (3,0) T=9 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced [] | hull V92 E270 F180 faces{3: 180} dehn0=False | polar V180 E270 F92 faces{5: 12, 6: 80} dehn0=False
+CHECK ok   icosahedron (3,1) T=13: 132 points = 132
+CHECK ok   icosahedron (3,1): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (3,1) every forced silence of I is zero
+CHECK ok   icosahedron (3,1) polar has one face per geodesic point
+PROGRESS 0.067 icosahedron (3,1) T=13 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced [] | hull V132 E390 F260 faces{3: 260} dehn0=False | polar V260 E390 F132 faces{5: 12, 6: 120} dehn0=False
+CHECK ok   icosahedron (3,2) T=19: 192 points = 192
+CHECK ok   icosahedron (3,2): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (3,2) every forced silence of I is zero
+PROGRESS 0.076 icosahedron (3,2) T=19 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (3,3) T=27: 272 points = 272
+CHECK ok   icosahedron (3,3): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (3,3) every forced silence of Ih is zero
+PROGRESS 0.086 icosahedron (3,3) T=27 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+CHECK ok   icosahedron (4,0) T=16: 162 points = 162
+CHECK ok   icosahedron (4,0): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (4,0) every forced silence of Ih is zero
+PROGRESS 0.095 icosahedron (4,0) T=16 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+CHECK ok   icosahedron (4,1) T=21: 212 points = 212
+CHECK ok   icosahedron (4,1): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (4,1) every forced silence of I is zero
+PROGRESS 0.105 icosahedron (4,1) T=21 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (4,2) T=28: 282 points = 282
+CHECK ok   icosahedron (4,2): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (4,2) every forced silence of I is zero
+PROGRESS 0.114 icosahedron (4,2) T=28 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (4,3) T=37: 372 points = 372
+CHECK ok   icosahedron (4,3): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (4,3) every forced silence of I is zero
+PROGRESS 0.124 icosahedron (4,3) T=37 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (4,4) T=48: 482 points = 482
+CHECK ok   icosahedron (4,4): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (4,4) every forced silence of Ih is zero
+PROGRESS 0.133 icosahedron (4,4) T=48 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+CHECK ok   icosahedron (5,0) T=25: 252 points = 252
+CHECK ok   icosahedron (5,0): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (5,0) every forced silence of Ih is zero
+PROGRESS 0.143 icosahedron (5,0) T=25 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+CHECK ok   icosahedron (5,1) T=31: 312 points = 312
+CHECK ok   icosahedron (5,1): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (5,1) every forced silence of I is zero
+PROGRESS 0.152 icosahedron (5,1) T=31 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (5,2) T=39: 392 points = 392
+CHECK ok   icosahedron (5,2): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (5,2) every forced silence of I is zero
+PROGRESS 0.162 icosahedron (5,2) T=39 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (5,3) T=49: 492 points = 492
+CHECK ok   icosahedron (5,3): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (5,3) every forced silence of I is zero
+PROGRESS 0.171 icosahedron (5,3) T=49 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (5,4) T=61: 612 points = 612
+CHECK ok   icosahedron (5,4): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (5,4) every forced silence of I is zero
+PROGRESS 0.181 icosahedron (5,4) T=61 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (5,5) T=75: 752 points = 752
+CHECK ok   icosahedron (5,5): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (5,5) every forced silence of Ih is zero
+PROGRESS 0.190 icosahedron (5,5) T=75 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+CHECK ok   icosahedron (6,0) T=36: 362 points = 362
+CHECK ok   icosahedron (6,0): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (6,0) every forced silence of Ih is zero
+PROGRESS 0.200 icosahedron (6,0) T=36 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+CHECK ok   icosahedron (6,1) T=43: 432 points = 432
+CHECK ok   icosahedron (6,1): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (6,1) every forced silence of I is zero
+PROGRESS 0.210 icosahedron (6,1) T=43 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (6,2) T=52: 522 points = 522
+CHECK ok   icosahedron (6,2): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (6,2) every forced silence of I is zero
+PROGRESS 0.219 icosahedron (6,2) T=52 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (6,3) T=63: 632 points = 632
+CHECK ok   icosahedron (6,3): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (6,3) every forced silence of I is zero
+PROGRESS 0.229 icosahedron (6,3) T=63 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (6,4) T=76: 762 points = 762
+CHECK ok   icosahedron (6,4): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (6,4) every forced silence of I is zero
+PROGRESS 0.238 icosahedron (6,4) T=76 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (6,5) T=91: 912 points = 912
+CHECK ok   icosahedron (6,5): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (6,5) every forced silence of I is zero
+PROGRESS 0.248 icosahedron (6,5) T=91 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (6,6) T=108: 1082 points = 1082
+CHECK ok   icosahedron (6,6): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (6,6) every forced silence of Ih is zero
+PROGRESS 0.257 icosahedron (6,6) T=108 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+CHECK ok   icosahedron (7,0) T=49: 492 points = 492
+CHECK ok   icosahedron (7,0): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (7,0) every forced silence of Ih is zero
+PROGRESS 0.267 icosahedron (7,0) T=49 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+CHECK ok   icosahedron (7,1) T=57: 572 points = 572
+CHECK ok   icosahedron (7,1): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (7,1) every forced silence of I is zero
+PROGRESS 0.276 icosahedron (7,1) T=57 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (7,2) T=67: 672 points = 672
+CHECK ok   icosahedron (7,2): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (7,2) every forced silence of I is zero
+PROGRESS 0.286 icosahedron (7,2) T=67 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (7,3) T=79: 792 points = 792
+CHECK ok   icosahedron (7,3): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (7,3) every forced silence of I is zero
+PROGRESS 0.295 icosahedron (7,3) T=79 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (7,4) T=93: 932 points = 932
+CHECK ok   icosahedron (7,4): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (7,4) every forced silence of I is zero
+PROGRESS 0.305 icosahedron (7,4) T=93 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (7,5) T=109: 1092 points = 1092
+CHECK ok   icosahedron (7,5): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (7,5) every forced silence of I is zero
+PROGRESS 0.314 icosahedron (7,5) T=109 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (7,6) T=127: 1272 points = 1272
+CHECK ok   icosahedron (7,6): chiral = True (class III expected chiral: True); group I
+CHECK ok   icosahedron (7,6) every forced silence of I is zero
+PROGRESS 0.324 icosahedron (7,6) T=127 I zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 17] unforced []
+CHECK ok   icosahedron (7,7) T=147: 1472 points = 1472
+CHECK ok   icosahedron (7,7): chiral = False (class III expected chiral: False); group Ih
+CHECK ok   icosahedron (7,7) every forced silence of Ih is zero
+PROGRESS 0.333 icosahedron (7,7) T=147 Ih zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+CHECK ok   octahedron (1,0) T=1: 6 points = 6
+CHECK ok   octahedron (1,0): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (1,0) every forced silence of Oh is zero
+CHECK ok   octahedron (1,0) polar has one face per geodesic point
+PROGRESS 0.343 octahedron (1,0) T=1 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced [] | hull octahedron dehn0=False | polar cube or parallelepiped dehn0=True
+CHECK ok   octahedron (1,1) T=3: 14 points = 14
+CHECK ok   octahedron (1,1): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (1,1) every forced silence of Oh is zero
+CHECK ok   octahedron (1,1) polar has one face per geodesic point
+PROGRESS 0.352 octahedron (1,1) T=3 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced [] | hull V14 E36 F24 faces{3: 24} dehn0=False | polar truncated octahedron dehn0=False
+CHECK ok   octahedron (2,0) T=4: 18 points = 18
+CHECK ok   octahedron (2,0): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (2,0) every forced silence of Oh is zero
+CHECK ok   octahedron (2,0) polar has one face per geodesic point
+PROGRESS 0.362 octahedron (2,0) T=4 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced [] | hull V18 E48 F32 faces{3: 32} dehn0=False | polar chamfered cube type (6 squares, 12 hexagons) dehn0=True
+CHECK ok   octahedron (2,1) T=7: 30 points = 30
+CHECK ok   octahedron (2,1): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (2,1) every forced silence of O is zero
+CHECK ok   octahedron (2,1) polar has one face per geodesic point
+PROGRESS 0.371 octahedron (2,1) T=7 O zeros [1, 2, 3, 5, 7, 11] unforced [] | hull V30 E84 F56 faces{3: 56} dehn0=False | polar V56 E84 F30 faces{4: 6, 6: 24} dehn0=False
+CHECK ok   octahedron (2,2) T=12: 50 points = 50
+CHECK ok   octahedron (2,2): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (2,2) every forced silence of Oh is zero
+CHECK ok   octahedron (2,2) polar has one face per geodesic point
+PROGRESS 0.381 octahedron (2,2) T=12 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced [] | hull V50 E144 F96 faces{3: 96} dehn0=False | polar V96 E144 F50 faces{4: 6, 6: 44} dehn0=False
+CHECK ok   octahedron (3,0) T=9: 38 points = 38
+CHECK ok   octahedron (3,0): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (3,0) every forced silence of Oh is zero
+CHECK ok   octahedron (3,0) polar has one face per geodesic point
+PROGRESS 0.390 octahedron (3,0) T=9 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced [] | hull V38 E108 F72 faces{3: 72} dehn0=False | polar V72 E108 F38 faces{4: 6, 6: 32} dehn0=False
+CHECK ok   octahedron (3,1) T=13: 54 points = 54
+CHECK ok   octahedron (3,1): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (3,1) every forced silence of O is zero
+CHECK ok   octahedron (3,1) polar has one face per geodesic point
+PROGRESS 0.400 octahedron (3,1) T=13 O zeros [1, 2, 3, 5, 7, 11] unforced [] | hull V54 E156 F104 faces{3: 104} dehn0=False | polar V104 E156 F54 faces{4: 6, 6: 48} dehn0=False
+CHECK ok   octahedron (3,2) T=19: 78 points = 78
+CHECK ok   octahedron (3,2): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (3,2) every forced silence of O is zero
+PROGRESS 0.410 octahedron (3,2) T=19 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (3,3) T=27: 110 points = 110
+CHECK ok   octahedron (3,3): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (3,3) every forced silence of Oh is zero
+PROGRESS 0.419 octahedron (3,3) T=27 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+CHECK ok   octahedron (4,0) T=16: 66 points = 66
+CHECK ok   octahedron (4,0): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (4,0) every forced silence of Oh is zero
+PROGRESS 0.429 octahedron (4,0) T=16 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+CHECK ok   octahedron (4,1) T=21: 86 points = 86
+CHECK ok   octahedron (4,1): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (4,1) every forced silence of O is zero
+PROGRESS 0.438 octahedron (4,1) T=21 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (4,2) T=28: 114 points = 114
+CHECK ok   octahedron (4,2): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (4,2) every forced silence of O is zero
+PROGRESS 0.448 octahedron (4,2) T=28 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (4,3) T=37: 150 points = 150
+CHECK ok   octahedron (4,3): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (4,3) every forced silence of O is zero
+PROGRESS 0.457 octahedron (4,3) T=37 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (4,4) T=48: 194 points = 194
+CHECK ok   octahedron (4,4): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (4,4) every forced silence of Oh is zero
+PROGRESS 0.467 octahedron (4,4) T=48 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+CHECK ok   octahedron (5,0) T=25: 102 points = 102
+CHECK ok   octahedron (5,0): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (5,0) every forced silence of Oh is zero
+PROGRESS 0.476 octahedron (5,0) T=25 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+CHECK ok   octahedron (5,1) T=31: 126 points = 126
+CHECK ok   octahedron (5,1): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (5,1) every forced silence of O is zero
+PROGRESS 0.486 octahedron (5,1) T=31 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (5,2) T=39: 158 points = 158
+CHECK ok   octahedron (5,2): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (5,2) every forced silence of O is zero
+PROGRESS 0.495 octahedron (5,2) T=39 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (5,3) T=49: 198 points = 198
+CHECK ok   octahedron (5,3): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (5,3) every forced silence of O is zero
+PROGRESS 0.505 octahedron (5,3) T=49 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (5,4) T=61: 246 points = 246
+CHECK ok   octahedron (5,4): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (5,4) every forced silence of O is zero
+PROGRESS 0.514 octahedron (5,4) T=61 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (5,5) T=75: 302 points = 302
+CHECK ok   octahedron (5,5): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (5,5) every forced silence of Oh is zero
+PROGRESS 0.524 octahedron (5,5) T=75 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+CHECK ok   octahedron (6,0) T=36: 146 points = 146
+CHECK ok   octahedron (6,0): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (6,0) every forced silence of Oh is zero
+PROGRESS 0.533 octahedron (6,0) T=36 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+CHECK ok   octahedron (6,1) T=43: 174 points = 174
+CHECK ok   octahedron (6,1): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (6,1) every forced silence of O is zero
+PROGRESS 0.543 octahedron (6,1) T=43 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (6,2) T=52: 210 points = 210
+CHECK ok   octahedron (6,2): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (6,2) every forced silence of O is zero
+PROGRESS 0.552 octahedron (6,2) T=52 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (6,3) T=63: 254 points = 254
+CHECK ok   octahedron (6,3): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (6,3) every forced silence of O is zero
+PROGRESS 0.562 octahedron (6,3) T=63 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (6,4) T=76: 306 points = 306
+CHECK ok   octahedron (6,4): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (6,4) every forced silence of O is zero
+PROGRESS 0.571 octahedron (6,4) T=76 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (6,5) T=91: 366 points = 366
+CHECK ok   octahedron (6,5): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (6,5) every forced silence of O is zero
+PROGRESS 0.581 octahedron (6,5) T=91 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (6,6) T=108: 434 points = 434
+CHECK ok   octahedron (6,6): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (6,6) every forced silence of Oh is zero
+PROGRESS 0.590 octahedron (6,6) T=108 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+CHECK ok   octahedron (7,0) T=49: 198 points = 198
+CHECK ok   octahedron (7,0): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (7,0) every forced silence of Oh is zero
+PROGRESS 0.600 octahedron (7,0) T=49 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+CHECK ok   octahedron (7,1) T=57: 230 points = 230
+CHECK ok   octahedron (7,1): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (7,1) every forced silence of O is zero
+PROGRESS 0.610 octahedron (7,1) T=57 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (7,2) T=67: 270 points = 270
+CHECK ok   octahedron (7,2): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (7,2) every forced silence of O is zero
+PROGRESS 0.619 octahedron (7,2) T=67 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (7,3) T=79: 318 points = 318
+CHECK ok   octahedron (7,3): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (7,3) every forced silence of O is zero
+PROGRESS 0.629 octahedron (7,3) T=79 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (7,4) T=93: 374 points = 374
+CHECK ok   octahedron (7,4): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (7,4) every forced silence of O is zero
+PROGRESS 0.638 octahedron (7,4) T=93 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (7,5) T=109: 438 points = 438
+CHECK ok   octahedron (7,5): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (7,5) every forced silence of O is zero
+PROGRESS 0.648 octahedron (7,5) T=109 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (7,6) T=127: 510 points = 510
+CHECK ok   octahedron (7,6): chiral = True (class III expected chiral: True); group O
+CHECK ok   octahedron (7,6) every forced silence of O is zero
+PROGRESS 0.657 octahedron (7,6) T=127 O zeros [1, 2, 3, 5, 7, 11] unforced []
+CHECK ok   octahedron (7,7) T=147: 590 points = 590
+CHECK ok   octahedron (7,7): chiral = False (class III expected chiral: False); group Oh
+CHECK ok   octahedron (7,7) every forced silence of Oh is zero
+PROGRESS 0.667 octahedron (7,7) T=147 Oh zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+CHECK ok   tetrahedron (1,0) T=1: 4 points = 4
+CHECK ok   tetrahedron (1,0): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (1,0) every forced silence of Td is zero
+CHECK ok   tetrahedron (1,0) polar has one face per geodesic point
+PROGRESS 0.676 tetrahedron (1,0) T=1 Td zeros [1, 2, 5] unforced [] | hull tetrahedron dehn0=False | polar tetrahedron dehn0=False
+CHECK ok   tetrahedron (1,1) T=3: 8 points = 8
+CHECK ok   tetrahedron (1,1): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (1,1) every forced silence of Td is zero
+CHECK ok   tetrahedron (1,1) polar has one face per geodesic point
+PROGRESS 0.686 tetrahedron (1,1) T=3 Td zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced [3, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] | hull cube or parallelepiped dehn0=True | polar octahedron dehn0=False
+CHECK ok   tetrahedron (2,0) T=4: 10 points = 10
+CHECK ok   tetrahedron (2,0): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (2,0) every forced silence of Td is zero
+CHECK ok   tetrahedron (2,0) polar has one face per geodesic point
+PROGRESS 0.695 tetrahedron (2,0) T=4 Td zeros [1, 2, 5] unforced [] | hull V10 E24 F16 faces{3: 16} dehn0=False | polar V16 E24 F10 faces{3: 4, 6: 6} dehn0=False
+CHECK ok   tetrahedron (2,1) T=7: 16 points = 16
+CHECK ok   tetrahedron (2,1): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (2,1) every forced silence of T is zero
+CHECK ok   tetrahedron (2,1) polar has one face per geodesic point
+PROGRESS 0.705 tetrahedron (2,1) T=7 T zeros [1, 2, 5] unforced [] | hull V16 E42 F28 faces{3: 28} dehn0=False | polar V28 E42 F16 faces{3: 4, 6: 12} dehn0=False
+CHECK ok   tetrahedron (2,2) T=12: 26 points = 26
+CHECK ok   tetrahedron (2,2): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (2,2) every forced silence of Td is zero
+CHECK ok   tetrahedron (2,2) polar has one face per geodesic point
+PROGRESS 0.714 tetrahedron (2,2) T=12 Td zeros [1, 2, 5] unforced [] | hull V26 E72 F48 faces{3: 48} dehn0=False | polar V48 E72 F26 faces{3: 4, 6: 22} dehn0=False
+CHECK ok   tetrahedron (3,0) T=9: 20 points = 20
+CHECK ok   tetrahedron (3,0): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (3,0) every forced silence of Td is zero
+CHECK ok   tetrahedron (3,0) polar has one face per geodesic point
+PROGRESS 0.724 tetrahedron (3,0) T=9 Td zeros [1, 2, 5] unforced [] | hull V20 E54 F36 faces{3: 36} dehn0=False | polar V36 E54 F20 faces{3: 4, 6: 16} dehn0=False
+CHECK ok   tetrahedron (3,1) T=13: 28 points = 28
+CHECK ok   tetrahedron (3,1): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (3,1) every forced silence of T is zero
+CHECK ok   tetrahedron (3,1) polar has one face per geodesic point
+PROGRESS 0.733 tetrahedron (3,1) T=13 T zeros [1, 2, 5] unforced [] | hull V28 E78 F52 faces{3: 52} dehn0=False | polar V52 E78 F28 faces{3: 4, 6: 24} dehn0=False
+CHECK ok   tetrahedron (3,2) T=19: 40 points = 40
+CHECK ok   tetrahedron (3,2): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (3,2) every forced silence of T is zero
+PROGRESS 0.743 tetrahedron (3,2) T=19 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (3,3) T=27: 56 points = 56
+CHECK ok   tetrahedron (3,3): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (3,3) every forced silence of Td is zero
+PROGRESS 0.752 tetrahedron (3,3) T=27 Td zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (4,0) T=16: 34 points = 34
+CHECK ok   tetrahedron (4,0): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (4,0) every forced silence of Td is zero
+PROGRESS 0.762 tetrahedron (4,0) T=16 Td zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (4,1) T=21: 44 points = 44
+CHECK ok   tetrahedron (4,1): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (4,1) every forced silence of T is zero
+PROGRESS 0.771 tetrahedron (4,1) T=21 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (4,2) T=28: 58 points = 58
+CHECK ok   tetrahedron (4,2): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (4,2) every forced silence of T is zero
+PROGRESS 0.781 tetrahedron (4,2) T=28 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (4,3) T=37: 76 points = 76
+CHECK ok   tetrahedron (4,3): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (4,3) every forced silence of T is zero
+PROGRESS 0.790 tetrahedron (4,3) T=37 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (4,4) T=48: 98 points = 98
+CHECK ok   tetrahedron (4,4): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (4,4) every forced silence of Td is zero
+PROGRESS 0.800 tetrahedron (4,4) T=48 Td zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (5,0) T=25: 52 points = 52
+CHECK ok   tetrahedron (5,0): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (5,0) every forced silence of Td is zero
+PROGRESS 0.810 tetrahedron (5,0) T=25 Td zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (5,1) T=31: 64 points = 64
+CHECK ok   tetrahedron (5,1): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (5,1) every forced silence of T is zero
+PROGRESS 0.819 tetrahedron (5,1) T=31 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (5,2) T=39: 80 points = 80
+CHECK ok   tetrahedron (5,2): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (5,2) every forced silence of T is zero
+PROGRESS 0.829 tetrahedron (5,2) T=39 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (5,3) T=49: 100 points = 100
+CHECK ok   tetrahedron (5,3): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (5,3) every forced silence of T is zero
+PROGRESS 0.838 tetrahedron (5,3) T=49 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (5,4) T=61: 124 points = 124
+CHECK ok   tetrahedron (5,4): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (5,4) every forced silence of T is zero
+PROGRESS 0.848 tetrahedron (5,4) T=61 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (5,5) T=75: 152 points = 152
+CHECK ok   tetrahedron (5,5): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (5,5) every forced silence of Td is zero
+PROGRESS 0.857 tetrahedron (5,5) T=75 Td zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (6,0) T=36: 74 points = 74
+CHECK ok   tetrahedron (6,0): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (6,0) every forced silence of Td is zero
+PROGRESS 0.867 tetrahedron (6,0) T=36 Td zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (6,1) T=43: 88 points = 88
+CHECK ok   tetrahedron (6,1): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (6,1) every forced silence of T is zero
+PROGRESS 0.876 tetrahedron (6,1) T=43 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (6,2) T=52: 106 points = 106
+CHECK ok   tetrahedron (6,2): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (6,2) every forced silence of T is zero
+PROGRESS 0.886 tetrahedron (6,2) T=52 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (6,3) T=63: 128 points = 128
+CHECK ok   tetrahedron (6,3): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (6,3) every forced silence of T is zero
+PROGRESS 0.895 tetrahedron (6,3) T=63 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (6,4) T=76: 154 points = 154
+CHECK ok   tetrahedron (6,4): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (6,4) every forced silence of T is zero
+PROGRESS 0.905 tetrahedron (6,4) T=76 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (6,5) T=91: 184 points = 184
+CHECK ok   tetrahedron (6,5): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (6,5) every forced silence of T is zero
+PROGRESS 0.914 tetrahedron (6,5) T=91 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (6,6) T=108: 218 points = 218
+CHECK ok   tetrahedron (6,6): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (6,6) every forced silence of Td is zero
+PROGRESS 0.924 tetrahedron (6,6) T=108 Td zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (7,0) T=49: 100 points = 100
+CHECK ok   tetrahedron (7,0): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (7,0) every forced silence of Td is zero
+PROGRESS 0.933 tetrahedron (7,0) T=49 Td zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (7,1) T=57: 116 points = 116
+CHECK ok   tetrahedron (7,1): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (7,1) every forced silence of T is zero
+PROGRESS 0.943 tetrahedron (7,1) T=57 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (7,2) T=67: 136 points = 136
+CHECK ok   tetrahedron (7,2): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (7,2) every forced silence of T is zero
+PROGRESS 0.952 tetrahedron (7,2) T=67 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (7,3) T=79: 160 points = 160
+CHECK ok   tetrahedron (7,3): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (7,3) every forced silence of T is zero
+PROGRESS 0.962 tetrahedron (7,3) T=79 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (7,4) T=93: 188 points = 188
+CHECK ok   tetrahedron (7,4): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (7,4) every forced silence of T is zero
+PROGRESS 0.971 tetrahedron (7,4) T=93 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (7,5) T=109: 220 points = 220
+CHECK ok   tetrahedron (7,5): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (7,5) every forced silence of T is zero
+PROGRESS 0.981 tetrahedron (7,5) T=109 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (7,6) T=127: 256 points = 256
+CHECK ok   tetrahedron (7,6): chiral = True (class III expected chiral: True); group T
+CHECK ok   tetrahedron (7,6) every forced silence of T is zero
+PROGRESS 0.990 tetrahedron (7,6) T=127 T zeros [1, 2, 5] unforced []
+CHECK ok   tetrahedron (7,7) T=147: 296 points = 296
+CHECK ok   tetrahedron (7,7): chiral = False (class III expected chiral: False); group Td
+CHECK ok   tetrahedron (7,7) every forced silence of Td is zero
+PROGRESS 1.000 tetrahedron (7,7) T=147 Td zeros [1, 2, 5] unforced []
+CHECK ok   control: octahedral GP(1,1) polar is a truncated octahedron (combinatorially)
+CHECK ok   control: icosahedral (1,0) gives icosahedron / dodecahedron
+CHECK ok   control: icosahedron Dehn nonzero
+CHECK ok   control: cube Dehn zero and tiles
+105 subdivisions, 0 failed checks, 360 s
+FINAL ok

@@ -1,0 +1,33 @@
+CHECK ok   24-cell: 24 vertices
+IMAGE 24-cell along vertex: group Oh, 15 image points (9 coincident) = 1x2 + 8x2[cube or parallelepiped] + 6[octahedron]; tone zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17] unforced []; section rhombic dodecahedron Oh
+IMAGE 24-cell along facet centre: group Oh, 18 image points (6 coincident) = 6x2[octahedron] + 12[cuboctahedron]; tone zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17] unforced []; section cuboctahedron Oh
+PROGRESS 0.200 24-cell done (0 s)
+CHECK ok   600-cell: 120 unit vertices
+CHECK ok   600-cell: 720 edges
+CHECK ok   600-cell: 600 facets (600)
+IMAGE 600-cell along vertex: group Ih, 75 image points (45 coincident) = 1x2 + 12x2[icosahedron] + 20x2[dodecahedron] + 12x2[icosahedron] + 30[icosidodecahedron]; tone zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13] unforced []; section geodesic (2,0) type (80 triangles) Ih
+IMAGE 600-cell along facet centre: group Oh, 114 image points (6 coincident) = 8[cube or parallelepiped] + 8[cube or parallelepiped] + 6x2[octahedron] + 24[truncated cube] + 24[rhombicuboctahedron] + 24[rhombicuboctahedron] + 8[cube or parallelepiped] + 12[cuboctahedron]; tone zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17] unforced []; section V84 E240 F158 faces{3: 152, 4: 6} Oh
+PROGRESS 0.400 600-cell done (7 s)
+CHECK ok   120-cell: 600 vertices, radius^2 8
+CHECK ok   120-cell: 1200 edges (1200)
+CHECK ok   120-cell: 120 facets (120)
+IMAGE 120-cell along vertex: group Oh, 519 image points (81 coincident) = 1x2 + 8[cube or parallelepiped] + 24[rhombicuboctahedron] + 24x2[truncated octahedron] + 24[rhombicuboctahedron] + 8[cube or parallelepiped] + 48[truncated cuboctahedron] + 48[V48 E108 F62 faces{3: 32, 4: 30}] + 32x2[V32 E84 F54 faces{3: 48, 4: 6}] + 48[V48 E96 F50 faces{3: 8, 4: 42}] + 24[truncated cube] + 24x2[truncated octahedron] + 56[V56 E120 F66 faces{3: 48, 4: 12, 8: 6}] + 48[V48 E108 F62 faces{3: 32, 4: 30}] + 48[truncated cuboctahedron] + 54[V54 E120 F68 faces{3: 48, 4: 12, 6: 8}]; tone zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17] unforced []; section V78 E120 F44 faces{5: 24, 6: 20} Oh
+IMAGE 120-cell along facet centre: group Ih, 330 image points (270 coincident) = 20x2[dodecahedron] + 20x2[dodecahedron] + 30x2[icosidodecahedron] + 60x2[truncated icosahedron] + 60x2[truncated icosahedron] + 60x2[rhombicosidodecahedron] + 20x2[dodecahedron] + 60[rhombicosidodecahedron]; tone zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13] unforced []; section Goldberg GP(2,0) type (12 pentagons, 30 hexagons) Ih
+PROGRESS 0.600 120-cell done (60 s)
+CHECK ok   E8 shadow: 240 points (600-cell and 600-cell/phi)
+IMAGE E8-shadow along vertex: group Ih, 137 image points (77 coincident) = 1x4 + 12x2[icosahedron] + 20x2[dodecahedron] + 12x4[icosahedron] + 30[icosidodecahedron] + 20x2[dodecahedron] + 12x2[icosahedron] + 30[icosidodecahedron]; tone zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13] unforced []
+IMAGE E8-shadow along facet centre: group Oh, 212 image points (28 coincident) = 8[cube or parallelepiped] + 8x2[cube or parallelepiped] + 6x2[octahedron] + 24[truncated cube] + 24[rhombicuboctahedron] + 24[rhombicuboctahedron] + 8x2[cube or parallelepiped] + 12[cuboctahedron] + 6x2[octahedron] + 24[truncated cube] + 24[rhombicuboctahedron] + 24[rhombicuboctahedron] + 8[cube or parallelepiped] + 12[cuboctahedron]; tone zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17] unforced []
+PROGRESS 0.800 E8-shadow done (87 s)
+CHECK ok   S5: closure of C1 is 120 points (120)
+CHECK ok   S5 orbits 20+20+20+30+30
+IMAGE S5 orbit C1 along S4 axis: group Td, 20 image points (0 coincident) = 4[tetrahedron] + 12[truncated tetrahedron] + 4[tetrahedron]; tone zeros [1, 2, 5] unforced []
+IMAGE S5 orbit C3 along S4 axis: group Oh, 20 image points (0 coincident) = 8[cube or parallelepiped] + 12[cuboctahedron]; tone zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17] unforced []
+IMAGE S5 orbit C4 along S4 axis: group Td, 30 image points (0 coincident) = 6[octahedron] + 12[cuboctahedron] + 12[truncated tetrahedron]; tone zeros [1, 2, 5] unforced []
+IMAGE S5 orbits C1+C2 along S4 axis: group Oh, 40 image points (0 coincident) = 8[cube or parallelepiped] + 24[rhombicuboctahedron] + 8[cube or parallelepiped]; tone zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17] unforced []
+IMAGE S5 orbits C4+C5 along S4 axis: group Oh, 54 image points (6 coincident) = 6x2[octahedron] + 24[truncated cube] + 24[rhombicuboctahedron]; tone zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17] unforced []
+PROGRESS 1.000 S5-orbits done (89 s)
+CHECK ok   control: 600-cell vertex-first shadow has Ih symmetry
+CHECK ok   control: 600-cell vertex-first equatorial vertices form an icosidodecahedron (Coxeter; Baez)
+CHECK ok   section of the solid: 30 equatorial vertices + 12 midpoints of the edges joining the two icosahedral layers at heights +-1/(2 phi)
+13 images, 0 failed checks, 89 s
+FINAL ok

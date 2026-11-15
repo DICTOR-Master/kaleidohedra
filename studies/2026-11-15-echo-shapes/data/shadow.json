@@ -1,0 +1,5052 @@
+{
+ "images": [
+  {
+   "label": "24-cell along vertex",
+   "group": "Oh",
+   "order": 48,
+   "image_points": 15,
+   "source_points": 24,
+   "coincident": 9,
+   "shells": [
+    {
+     "r2": "0",
+     "points": 1,
+     "multiplicity": [
+      [
+       2,
+       1
+      ]
+     ]
+    },
+    {
+     "r2": "3/2",
+     "r": 1.224744871391589,
+     "points": 8,
+     "multiplicity": [
+      [
+       2,
+       8
+      ]
+     ],
+     "hull": "cube or parallelepiped",
+     "hull_fvec": [
+      8,
+      12,
+      6
+     ],
+     "hull_faces": {
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": true,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": true,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": true,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "2",
+     "r": 1.4142135623730951,
+     "points": 6,
+     "multiplicity": [
+      [
+       1,
+       6
+      ]
+     ],
+     "hull": "octahedron",
+     "hull_fvec": [
+      6,
+      12,
+      8
+     ],
+     "hull_faces": {
+      "3": 8
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "22.927598834988222676",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    }
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.026247321701867155,
+     "6": 0.306410060197939,
+     "8": 0.1229014683875795,
+     "10": 0.13005552062693695,
+     "12": 0.14235705875789084,
+     "14": 0.20904972296574198,
+     "16": 0.16559550377790544,
+     "18": 0.0406848167955794,
+     "20": 0.29870823823135295
+    }
+   },
+   "exact_unforced": {},
+   "T_nonzero_first": {
+    "4": 0.026247321701867155,
+    "6": 0.306410060197939,
+    "8": 0.1229014683875795,
+    "10": 0.13005552062693695,
+    "12": 0.14235705875789084
+   },
+   "set": "24-cell",
+   "axis": "vertex",
+   "axis_vector": [
+    "1",
+    "1",
+    "0",
+    "0"
+   ],
+   "vertex_slice": {
+    "points": 6,
+    "name": "octahedron",
+    "group": "Oh"
+   },
+   "section": {
+    "label": "24-cell along vertex (solid section)",
+    "points": 14,
+    "group": "Oh",
+    "name": "rhombic dodecahedron",
+    "fvec": [
+     14,
+     24,
+     12
+    ],
+    "faces": {
+     "4": 12
+    },
+    "all_points_vertices": true,
+    "dehn": {
+     "zero": true,
+     "edge_classes": 1,
+     "length_basis": 1,
+     "components": [
+      {
+       "theta_sum": "50.265482457436691815",
+       "rational_pi": true,
+       "ratio": "16/1"
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": true,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": true,
+     "belt_sizes": [
+      6
+     ]
+    },
+    "tones": {
+     "forced_silent": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29
+     ],
+     "zero": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29
+     ],
+     "unforced_zero": [],
+     "forced_but_nonzero": [],
+     "first_tones": {
+      "4": 0.0013227513227513227,
+      "6": 0.26080246913580246,
+      "8": 0.18431778575627783,
+      "10": 0.038099613892958496,
+      "12": 0.16386238114729287,
+      "14": 0.20570789464021608,
+      "16": 0.1267394895569184,
+      "18": 0.034634309697295154,
+      "20": 0.29418356990649086
+     }
+    }
+   }
+  },
+  {
+   "label": "24-cell along facet centre",
+   "group": "Oh",
+   "order": 48,
+   "image_points": 18,
+   "source_points": 24,
+   "coincident": 6,
+   "shells": [
+    {
+     "r2": "1",
+     "r": 1.0,
+     "points": 6,
+     "multiplicity": [
+      [
+       2,
+       6
+      ]
+     ],
+     "hull": "octahedron",
+     "hull_fvec": [
+      6,
+      12,
+      8
+     ],
+     "hull_faces": {
+      "3": 8
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "22.927598834988222676",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "2",
+     "r": 1.4142135623730951,
+     "points": 12,
+     "multiplicity": [
+      [
+       1,
+       12
+      ]
+     ],
+     "hull": "cuboctahedron",
+     "hull_fvec": [
+      12,
+      24,
+      14
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6
+      ]
+     },
+     "shell_group": "Oh"
+    }
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.08203125,
+     "6": 0.01220703125,
+     "8": 0.3147125244140625,
+     "10": 0.03971417744954427,
+     "12": 0.1663137674331665,
+     "14": 0.004495158791542053,
+     "16": 0.2453438840651264,
+     "18": 0.1160848762083333,
+     "20": 0.11865910510641697
+    }
+   },
+   "exact_unforced": {},
+   "T_nonzero_first": {
+    "4": 0.08203125,
+    "6": 0.01220703125,
+    "8": 0.3147125244140625,
+    "10": 0.03971417744954427,
+    "12": 0.1663137674331665
+   },
+   "set": "24-cell",
+   "axis": "facet centre",
+   "axis_vector": [
+    "1",
+    "0",
+    "0",
+    "0"
+   ],
+   "vertex_slice": {
+    "points": 12,
+    "name": "cuboctahedron",
+    "group": "Oh"
+   },
+   "section": {
+    "label": "24-cell along facet centre (solid section)",
+    "points": 12,
+    "group": "Oh",
+    "name": "cuboctahedron",
+    "fvec": [
+     12,
+     24,
+     14
+    ],
+    "faces": {
+     "3": 8,
+     "4": 6
+    },
+    "all_points_vertices": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 1,
+     "length_basis": 1,
+     "components": [
+      {
+       "theta_sum": "52.470624851166815047",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      6
+     ]
+    },
+    "tones": {
+     "forced_silent": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29
+     ],
+     "zero": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29
+     ],
+     "unforced_zero": [],
+     "forced_but_nonzero": [],
+     "first_tones": {
+      "4": 0.036458333333333336,
+      "6": 0.330078125,
+      "8": 0.16314697265625,
+      "10": 0.00016530354817708334,
+      "12": 0.36009963353474933,
+      "14": 0.09363879760106404,
+      "16": 0.09949334555615981,
+      "18": 0.263952384586446,
+      "20": 0.16379392128874315
+     }
+    }
+   }
+  },
+  {
+   "label": "600-cell along vertex",
+   "group": "Ih",
+   "order": 120,
+   "image_points": 75,
+   "source_points": 120,
+   "coincident": 45,
+   "shells": [
+    {
+     "r2": "0",
+     "points": 1,
+     "multiplicity": [
+      [
+       2,
+       1
+      ]
+     ]
+    },
+    {
+     "r2": "(3/4-1/4phi)",
+     "r": 0.5877852522924731,
+     "points": 12,
+     "multiplicity": [
+      [
+       2,
+       12
+      ]
+     ],
+     "hull": "icosahedron",
+     "hull_fvec": [
+      12,
+      30,
+      20
+     ],
+     "hull_faces": {
+      "3": 20
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "72.35594992088480625",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "3/4",
+     "r": 0.8660254037844386,
+     "points": 20,
+     "multiplicity": [
+      [
+       2,
+       20
+      ]
+     ],
+     "hull": "dodecahedron",
+     "hull_fvec": [
+      20,
+      30,
+      12
+     ],
+     "hull_faces": {
+      "5": 12
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "61.033318073871082063",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "(1/2+1/4phi)",
+     "r": 0.9510565162951535,
+     "points": 12,
+     "multiplicity": [
+      [
+       2,
+       12
+      ]
+     ],
+     "hull": "icosahedron",
+     "hull_fvec": [
+      12,
+      30,
+      20
+     ],
+     "hull_faces": {
+      "3": 20
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "72.35594992088480625",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "1",
+     "r": 1.0,
+     "points": 30,
+     "multiplicity": [
+      [
+       1,
+       30
+      ]
+     ],
+     "hull": "icosidodecahedron",
+     "hull_fvec": [
+      30,
+      60,
+      32
+     ],
+     "hull_faces": {
+      "3": 20,
+      "5": 12
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "149.35407082832550315",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       8
+      ]
+     },
+     "shell_group": "Ih"
+    }
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.008502046271470168,
+     "10": 0.06120462191330973,
+     "12": 0.11337357382748524,
+     "16": 6.377406275497175e-07,
+     "18": 0.05868507064480884,
+     "20": 0.0881131434991639
+    }
+   },
+   "exact_unforced": {},
+   "T_nonzero_first": {
+    "6": 0.008502046271470168,
+    "10": 0.06120462191330973,
+    "12": 0.11337357382748524
+   },
+   "set": "600-cell",
+   "axis": "vertex",
+   "axis_vector": [
+    "1",
+    "0",
+    "0",
+    "0"
+   ],
+   "vertex_slice": {
+    "points": 30,
+    "name": "icosidodecahedron",
+    "group": "Ih"
+   },
+   "section": {
+    "label": "600-cell along vertex (solid section)",
+    "points": 42,
+    "group": "Ih",
+    "name": "geodesic (2,0) type (80 triangles)",
+    "fvec": [
+     42,
+     120,
+     80
+    ],
+    "faces": {
+     "3": 80
+    },
+    "all_points_vertices": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 2,
+     "length_basis": 2,
+     "components": [
+      {
+       "theta_sum": "172.24044798801438113",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "163.26349909834968663",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      8,
+      12
+     ]
+    },
+    "tones": {
+     "forced_silent": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      11,
+      13,
+      14,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29
+     ],
+     "zero": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      11,
+      13,
+      14,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29
+     ],
+     "unforced_zero": [],
+     "forced_but_nonzero": [],
+     "first_tones": {
+      "6": 0.00171875,
+      "10": 0.02234253228635204,
+      "12": 0.2146688466535296,
+      "16": 0.0032773148273545867,
+      "18": 0.0001427501800440404,
+      "20": 0.11128932989778076
+     }
+    }
+   }
+  },
+  {
+   "label": "600-cell along facet centre",
+   "group": "Oh",
+   "order": 48,
+   "image_points": 114,
+   "source_points": 120,
+   "coincident": 6,
+   "shells": [
+    {
+     "r2": "(3/4-3/8phi)",
+     "r": 0.37846697903356036,
+     "points": 8,
+     "multiplicity": [
+      [
+       1,
+       8
+      ]
+     ],
+     "hull": "cube or parallelepiped",
+     "hull_fvec": [
+      8,
+      12,
+      6
+     ],
+     "hull_faces": {
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": true,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": true,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": true,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "3/8",
+     "r": 0.6123724356957945,
+     "points": 8,
+     "multiplicity": [
+      [
+       1,
+       8
+      ]
+     ],
+     "hull": "cube or parallelepiped",
+     "hull_fvec": [
+      8,
+      12,
+      6
+     ],
+     "hull_faces": {
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": true,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": true,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": true,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "1/2",
+     "r": 0.7071067811865476,
+     "points": 6,
+     "multiplicity": [
+      [
+       2,
+       6
+      ]
+     ],
+     "hull": "octahedron",
+     "hull_fvec": [
+      6,
+      12,
+      8
+     ],
+     "hull_faces": {
+      "3": 8
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "22.927598834988222676",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(7/8-1/8phi)",
+     "r": 0.8202107969334853,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "truncated cube",
+     "hull_fvec": [
+      24,
+      36,
+      14
+     ],
+     "hull_faces": {
+      "3": 8,
+      "8": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4,
+       6
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "7/8",
+     "r": 0.9354143466934853,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "rhombicuboctahedron",
+     "hull_fvec": [
+      24,
+      48,
+      26
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 18
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "56.548667764616278292",
+        "rational_pi": true,
+        "ratio": "18/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6,
+       8
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(3/4+1/8phi)",
+     "r": 0.9758351544158147,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "rhombicuboctahedron",
+     "hull_fvec": [
+      24,
+      48,
+      26
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 18
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "56.548667764616278292",
+        "rational_pi": true,
+        "ratio": "18/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6,
+       8
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(3/8+3/8phi)",
+     "r": 0.9908394147293549,
+     "points": 8,
+     "multiplicity": [
+      [
+       1,
+       8
+      ]
+     ],
+     "hull": "cube or parallelepiped",
+     "hull_fvec": [
+      8,
+      12,
+      6
+     ],
+     "hull_faces": {
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": true,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": true,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": true,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "1",
+     "r": 1.0,
+     "points": 12,
+     "multiplicity": [
+      [
+       1,
+       12
+      ]
+     ],
+     "hull": "cuboctahedron",
+     "hull_fvec": [
+      12,
+      24,
+      14
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6
+      ]
+     },
+     "shell_group": "Oh"
+    }
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.0008675120837416827,
+     "6": 0.0056040077672324905,
+     "8": 0.011757556285706005,
+     "10": 0.00011597084666503152,
+     "12": 0.05818015902356032,
+     "14": 0.010737279793776894,
+     "16": 0.01941146569247335,
+     "18": 0.02594577535120133,
+     "20": 0.04289833296293609
+    }
+   },
+   "exact_unforced": {},
+   "T_nonzero_first": {
+    "4": 0.0008675120837416827,
+    "6": 0.0056040077672324905,
+    "8": 0.011757556285706005,
+    "10": 0.00011597084666503152,
+    "12": 0.05818015902356032
+   },
+   "set": "600-cell",
+   "axis": "facet centre",
+   "axis_vector": [
+    "(-1/8-1/4phi)",
+    "-1/8",
+    "(-1/8-1/4phi)",
+    "(-1/8-1/4phi)"
+   ],
+   "vertex_slice": {
+    "points": 12,
+    "name": "cuboctahedron",
+    "group": "Oh"
+   },
+   "section": {
+    "label": "600-cell along facet centre (solid section)",
+    "points": 84,
+    "group": "Oh",
+    "name": "V84 E240 F158 faces{3: 152, 4: 6}",
+    "fvec": [
+     84,
+     240,
+     158
+    ],
+    "faces": {
+     "3": 152,
+     "4": 6
+    },
+    "all_points_vertices": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 7,
+     "length_basis": 6,
+     "components": [
+      {
+       "theta_sum": "138.00682161537873945",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "70.786497704365098312",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "138.61089093414260671",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "68.896179195205752453",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "157.60358588132713776",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "139.24653341626147582",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4,
+      8,
+      12,
+      14
+     ]
+    },
+    "tones": {
+     "forced_silent": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29
+     ],
+     "zero": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29
+     ],
+     "unforced_zero": [],
+     "forced_but_nonzero": [],
+     "first_tones": {
+      "4": 0.0040127548697233145,
+      "6": 0.02006203149545796,
+      "8": 0.002519697921301771,
+      "10": 0.014656049349069762,
+      "12": 0.0658661242072799,
+      "14": 0.0002116487458690243,
+      "16": 0.0054803038991485,
+      "18": 0.0061194474247753625,
+      "20": 0.006876547798229953
+     }
+    }
+   }
+  },
+  {
+   "label": "120-cell along vertex",
+   "group": "Oh",
+   "order": 48,
+   "image_points": 519,
+   "source_points": 600,
+   "coincident": 81,
+   "shells": [
+    {
+     "r2": "0",
+     "points": 1,
+     "multiplicity": [
+      [
+       2,
+       1
+      ]
+     ]
+    },
+    {
+     "r2": "(3-3/2phi)",
+     "r": 0.7569339580671207,
+     "points": 8,
+     "multiplicity": [
+      [
+       1,
+       8
+      ]
+     ],
+     "hull": "cube or parallelepiped",
+     "hull_fvec": [
+      8,
+      12,
+      6
+     ],
+     "hull_faces": {
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": true,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": true,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": true,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(11/2-5/2phi)",
+     "r": 1.206198585691951,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "rhombicuboctahedron",
+     "hull_fvec": [
+      24,
+      48,
+      26
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 18
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "56.548667764616278292",
+        "rational_pi": true,
+        "ratio": "18/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6,
+       8
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(6-2phi)",
+     "r": 1.6625077511098136,
+     "points": 24,
+     "multiplicity": [
+      [
+       2,
+       24
+      ]
+     ],
+     "hull": "truncated octahedron",
+     "hull_fvec": [
+      24,
+      36,
+      14
+     ],
+     "hull_faces": {
+      "4": 6,
+      "6": 8
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "22.927598834988222676",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "7/2",
+     "r": 1.8708286933869707,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "rhombicuboctahedron",
+     "hull_fvec": [
+      24,
+      48,
+      26
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 18
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "56.548667764616278292",
+        "rational_pi": true,
+        "ratio": "18/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6,
+       8
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(3/2+3/2phi)",
+     "r": 1.9816788294587098,
+     "points": 8,
+     "multiplicity": [
+      [
+       1,
+       8
+      ]
+     ],
+     "hull": "cube or parallelepiped",
+     "hull_fvec": [
+      8,
+      12,
+      6
+     ],
+     "hull_faces": {
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": true,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": true,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": true,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(7-3/2phi)",
+     "r": 2.1384454673606146,
+     "points": 48,
+     "multiplicity": [
+      [
+       1,
+       48
+      ]
+     ],
+     "hull": "truncated cuboctahedron",
+     "hull_fvec": [
+      48,
+      72,
+      26
+     ],
+     "hull_faces": {
+      "4": 12,
+      "6": 8,
+      "8": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 3,
+      "length_basis": 3,
+      "components": [
+       {
+        "theta_sum": "56.548667764616278292",
+        "rational_pi": true,
+        "ratio": "18/1"
+       },
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       8
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "11/2",
+     "r": 2.345207879911715,
+     "points": 48,
+     "multiplicity": [
+      [
+       1,
+       48
+      ]
+     ],
+     "hull": "V48 E108 F62 faces{3: 32, 4: 30}",
+     "hull_fvec": [
+      48,
+      108,
+      62
+     ],
+     "hull_faces": {
+      "3": 32,
+      "4": 30
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 4,
+      "length_basis": 3,
+      "components": [
+       {
+        "theta_sum": "69.709381246685226196",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "127.56348884024659667",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "94.247779607693797154",
+        "rational_pi": true,
+        "ratio": "30/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6,
+       8,
+       12
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "6",
+     "r": 2.449489742783178,
+     "points": 32,
+     "multiplicity": [
+      [
+       2,
+       32
+      ]
+     ],
+     "hull": "V32 E84 F54 faces{3: 48, 4: 6}",
+     "hull_fvec": [
+      32,
+      84,
+      54
+     ],
+     "hull_faces": {
+      "3": 48,
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 3,
+      "length_basis": 3,
+      "components": [
+       {
+        "theta_sum": "33.729505154629055542",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "130.89867863247093114",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "61.863600293499945498",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4,
+       10
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(15/2-1/2phi)",
+     "r": 2.5866934502613663,
+     "points": 48,
+     "multiplicity": [
+      [
+       1,
+       48
+      ]
+     ],
+     "hull": "V48 E96 F50 faces{3: 8, 4: 42}",
+     "hull_fvec": [
+      48,
+      96,
+      50
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 42
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 4,
+      "length_basis": 4,
+      "components": [
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "69.834452378145364329",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "57.11544161191988142",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "62.112439072625951687",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4,
+       6,
+       16
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(3+5/2phi)",
+     "r": 2.6542578947560345,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "truncated cube",
+     "hull_fvec": [
+      24,
+      36,
+      14
+     ],
+     "hull_faces": {
+      "3": 8,
+      "8": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4,
+       6
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(4+2phi)",
+     "r": 2.6899940478558295,
+     "points": 24,
+     "multiplicity": [
+      [
+       2,
+       24
+      ]
+     ],
+     "hull": "truncated octahedron",
+     "hull_fvec": [
+      24,
+      36,
+      14
+     ],
+     "hull_faces": {
+      "4": 6,
+      "6": 8
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "22.927598834988222676",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "15/2",
+     "r": 2.7386127875258306,
+     "points": 56,
+     "multiplicity": [
+      [
+       1,
+       56
+      ]
+     ],
+     "hull": "V56 E120 F66 faces{3: 48, 4: 12, 8: 6}",
+     "hull_fvec": [
+      56,
+      120,
+      66
+     ],
+     "hull_faces": {
+      "3": 48,
+      "4": 12,
+      "8": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 4,
+      "length_basis": 4,
+      "components": [
+       {
+        "theta_sum": "140.19556091062809255",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "58.159467290636626574",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "65.51012415070869352",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "56.548667764616278292",
+        "rational_pi": true,
+        "ratio": "18/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       8,
+       12
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(7+1/2phi)",
+     "r": 2.7944618434279875,
+     "points": 48,
+     "multiplicity": [
+      [
+       1,
+       48
+      ]
+     ],
+     "hull": "V48 E108 F62 faces{3: 32, 4: 30}",
+     "hull_fvec": [
+      48,
+      108,
+      62
+     ],
+     "hull_faces": {
+      "3": 32,
+      "4": 30
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 4,
+      "length_basis": 3,
+      "components": [
+       {
+        "theta_sum": "66.005248243821907272",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "162.23513851603001852",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "32.135340535067845467",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4,
+       8,
+       12
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(11/2+3/2phi)",
+     "r": 2.815501906077288,
+     "points": 48,
+     "multiplicity": [
+      [
+       1,
+       48
+      ]
+     ],
+     "hull": "truncated cuboctahedron",
+     "hull_fvec": [
+      48,
+      72,
+      26
+     ],
+     "hull_faces": {
+      "4": 12,
+      "6": 8,
+      "8": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 3,
+      "length_basis": 3,
+      "components": [
+       {
+        "theta_sum": "56.548667764616278292",
+        "rational_pi": true,
+        "ratio": "18/1"
+       },
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       8
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "8",
+     "r": 2.8284271247461903,
+     "points": 54,
+     "multiplicity": [
+      [
+       1,
+       54
+      ]
+     ],
+     "hull": "V54 E120 F68 faces{3: 48, 4: 12, 6: 8}",
+     "hull_fvec": [
+      54,
+      120,
+      68
+     ],
+     "hull_faces": {
+      "3": 48,
+      "4": 12,
+      "6": 8
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 4,
+      "length_basis": 3,
+      "components": [
+       {
+        "theta_sum": "203.54838020704663793",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "60.203807987880897509",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4,
+       10,
+       12
+      ]
+     },
+     "shell_group": "Oh"
+    }
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 1.5518805877897484e-05,
+     "6": 3.114703912630222e-05,
+     "8": 0.001049112963135427,
+     "10": 0.0019493977785789505,
+     "12": 0.0034799081242774216,
+     "14": 0.0006783423709074554,
+     "16": 1.7343542041669548e-05,
+     "18": 0.007359768579029409,
+     "20": 0.010274054139634965
+    }
+   },
+   "exact_unforced": {},
+   "T_nonzero_first": {
+    "4": 1.5518805877897484e-05,
+    "6": 3.114703912630222e-05,
+    "8": 0.001049112963135427,
+    "10": 0.0019493977785789505,
+    "12": 0.0034799081242774216
+   },
+   "set": "120-cell",
+   "axis": "vertex",
+   "axis_vector": [
+    "0",
+    "2",
+    "2",
+    "0"
+   ],
+   "vertex_slice": {
+    "points": 54,
+    "name": "V54 E120 F68 faces{3: 48, 4: 12, 6: 8}",
+    "group": "Oh"
+   },
+   "section": {
+    "label": "120-cell along vertex (solid section)",
+    "points": 78,
+    "group": "Oh",
+    "name": "V78 E120 F44 faces{5: 24, 6: 20}",
+    "fvec": [
+     78,
+     120,
+     44
+    ],
+    "faces": {
+     "5": 24,
+     "6": 20
+    },
+    "all_points_vertices": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 4,
+     "length_basis": 4,
+     "components": [
+      {
+       "theta_sum": "60.203807987880897509",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "122.31381636103386668",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "64.558205620957832162",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "60.626710678065741537",
+       "rational_pi": false,
+       "ratio": null
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      4,
+      6,
+      10
+     ]
+    },
+    "tones": {
+     "forced_silent": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29
+     ],
+     "zero": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29
+     ],
+     "unforced_zero": [],
+     "forced_but_nonzero": [],
+     "first_tones": {
+      "4": 0.00017045316190615335,
+      "6": 0.00026998325525969755,
+      "8": 0.012016533090065557,
+      "10": 0.005571925055285168,
+      "12": 0.04828414279279587,
+      "14": 0.008290045407757986,
+      "16": 0.014776781418568292,
+      "18": 0.0021616066634227295,
+      "20": 0.07995255683144135
+     }
+    }
+   }
+  },
+  {
+   "label": "120-cell along facet centre",
+   "group": "Ih",
+   "order": 120,
+   "image_points": 330,
+   "source_points": 600,
+   "coincident": 270,
+   "shells": [
+    {
+     "r2": "(6-3phi)",
+     "r": 1.0704662693192697,
+     "points": 20,
+     "multiplicity": [
+      [
+       2,
+       20
+      ]
+     ],
+     "hull": "dodecahedron",
+     "hull_fvec": [
+      20,
+      30,
+      12
+     ],
+     "hull_faces": {
+      "5": 12
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "61.033318073871082063",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "3",
+     "r": 1.7320508075688772,
+     "points": 20,
+     "multiplicity": [
+      [
+       2,
+       20
+      ]
+     ],
+     "hull": "dodecahedron",
+     "hull_fvec": [
+      20,
+      30,
+      12
+     ],
+     "hull_faces": {
+      "5": 12
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "61.033318073871082063",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "4",
+     "r": 2.0,
+     "points": 30,
+     "multiplicity": [
+      [
+       2,
+       30
+      ]
+     ],
+     "hull": "icosidodecahedron",
+     "hull_fvec": [
+      30,
+      60,
+      32
+     ],
+     "hull_faces": {
+      "3": 20,
+      "5": 12
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "149.35407082832550315",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       8
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "(7-1phi)",
+     "r": 2.3199064660563593,
+     "points": 60,
+     "multiplicity": [
+      [
+       2,
+       60
+      ]
+     ],
+     "hull": "truncated icosahedron",
+     "hull_fvec": [
+      60,
+      90,
+      32
+     ],
+     "hull_faces": {
+      "5": 12,
+      "6": 20
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "72.35594992088480625",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "149.35407082832550315",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       8
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "7",
+     "r": 2.6457513110645907,
+     "points": 60,
+     "multiplicity": [
+      [
+       2,
+       60
+      ]
+     ],
+     "hull": "truncated icosahedron",
+     "hull_fvec": [
+      60,
+      90,
+      32
+     ],
+     "hull_faces": {
+      "5": 12,
+      "6": 20
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "149.35407082832550315",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "72.35594992088480625",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       8
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "(6+1phi)",
+     "r": 2.760078620030577,
+     "points": 60,
+     "multiplicity": [
+      [
+       2,
+       60
+      ]
+     ],
+     "hull": "rhombicosidodecahedron",
+     "hull_fvec": [
+      60,
+      120,
+      62
+     ],
+     "hull_faces": {
+      "3": 20,
+      "4": 30,
+      "5": 12
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "321.88482721014348262",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       12
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "(3+3phi)",
+     "r": 2.8025170768881473,
+     "points": 20,
+     "multiplicity": [
+      [
+       2,
+       20
+      ]
+     ],
+     "hull": "dodecahedron",
+     "hull_fvec": [
+      20,
+      30,
+      12
+     ],
+     "hull_faces": {
+      "5": 12
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "61.033318073871082063",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "8",
+     "r": 2.8284271247461903,
+     "points": 60,
+     "multiplicity": [
+      [
+       1,
+       60
+      ]
+     ],
+     "hull": "rhombicosidodecahedron",
+     "hull_fvec": [
+      60,
+      120,
+      62
+     ],
+     "hull_faces": {
+      "3": 20,
+      "4": 30,
+      "5": 12
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "166.6037295285786034",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "155.28109768156487922",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       12
+      ]
+     },
+     "shell_group": "Ih"
+    }
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.0019263776699861687,
+     "10": 8.607211275920308e-05,
+     "12": 0.002742048981384847,
+     "16": 0.014251363250336175,
+     "18": 0.0064368224689793155,
+     "20": 0.018665385124706096
+    }
+   },
+   "exact_unforced": {},
+   "T_nonzero_first": {
+    "6": 0.0019263776699861687,
+    "10": 8.607211275920308e-05,
+    "12": 0.002742048981384847
+   },
+   "set": "120-cell",
+   "axis": "facet centre",
+   "axis_vector": [
+    "(1+1phi)",
+    "0",
+    "0",
+    "0"
+   ],
+   "vertex_slice": {
+    "points": 60,
+    "name": "rhombicosidodecahedron",
+    "group": "Ih"
+   },
+   "section": {
+    "label": "120-cell along facet centre (solid section)",
+    "points": 80,
+    "group": "Ih",
+    "name": "Goldberg GP(2,0) type (12 pentagons, 30 hexagons)",
+    "fvec": [
+     80,
+     120,
+     42
+    ],
+    "faces": {
+     "5": 12,
+     "6": 30
+    },
+    "all_points_vertices": true,
+    "dehn": {
+     "zero": false,
+     "edge_classes": 2,
+     "length_basis": 2,
+     "components": [
+      {
+       "theta_sum": "155.28109768156487922",
+       "rational_pi": false,
+       "ratio": null
+      },
+      {
+       "theta_sum": "150.79644737231007545",
+       "rational_pi": true,
+       "ratio": "48/1"
+      }
+     ]
+    },
+    "translation": {
+     "tiles_by_translation": false,
+     "centrally_symmetric": true,
+     "faces_centrally_symmetric": false,
+     "belt_sizes": [
+      6,
+      10
+     ]
+    },
+    "tones": {
+     "forced_silent": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      11,
+      13,
+      14,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29
+     ],
+     "zero": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      11,
+      13,
+      14,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29
+     ],
+     "unforced_zero": [],
+     "forced_but_nonzero": [],
+     "first_tones": {
+      "6": 0.02576187510549286,
+      "10": 0.022003161737728743,
+      "12": 0.014100455713812188,
+      "16": 0.039369480222463366,
+      "18": 0.024799495682817946,
+      "20": 0.038015955009997854
+     }
+    }
+   }
+  },
+  {
+   "label": "E8-shadow along vertex",
+   "group": "Ih",
+   "order": 120,
+   "image_points": 137,
+   "source_points": 240,
+   "coincident": 77,
+   "shells": [
+    {
+     "r2": "0",
+     "points": 1,
+     "multiplicity": [
+      [
+       4,
+       1
+      ]
+     ]
+    },
+    {
+     "r2": "(7/4-1phi)",
+     "r": 0.3632712640026804,
+     "points": 12,
+     "multiplicity": [
+      [
+       2,
+       12
+      ]
+     ],
+     "hull": "icosahedron",
+     "hull_fvec": [
+      12,
+      30,
+      20
+     ],
+     "hull_faces": {
+      "3": 20
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "72.35594992088480625",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "(3/2-3/4phi)",
+     "r": 0.5352331346596348,
+     "points": 20,
+     "multiplicity": [
+      [
+       2,
+       20
+      ]
+     ],
+     "hull": "dodecahedron",
+     "hull_fvec": [
+      20,
+      30,
+      12
+     ],
+     "hull_faces": {
+      "5": 12
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "61.033318073871082063",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "(3/4-1/4phi)",
+     "r": 0.5877852522924731,
+     "points": 12,
+     "multiplicity": [
+      [
+       4,
+       12
+      ]
+     ],
+     "hull": "icosahedron",
+     "hull_fvec": [
+      12,
+      30,
+      20
+     ],
+     "hull_faces": {
+      "3": 20
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "72.35594992088480625",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "(2-1phi)",
+     "r": 0.6180339887498948,
+     "points": 30,
+     "multiplicity": [
+      [
+       1,
+       30
+      ]
+     ],
+     "hull": "icosidodecahedron",
+     "hull_fvec": [
+      30,
+      60,
+      32
+     ],
+     "hull_faces": {
+      "3": 20,
+      "5": 12
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "149.35407082832550315",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       8
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "3/4",
+     "r": 0.8660254037844386,
+     "points": 20,
+     "multiplicity": [
+      [
+       2,
+       20
+      ]
+     ],
+     "hull": "dodecahedron",
+     "hull_fvec": [
+      20,
+      30,
+      12
+     ],
+     "hull_faces": {
+      "5": 12
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "61.033318073871082063",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "(1/2+1/4phi)",
+     "r": 0.9510565162951535,
+     "points": 12,
+     "multiplicity": [
+      [
+       2,
+       12
+      ]
+     ],
+     "hull": "icosahedron",
+     "hull_fvec": [
+      12,
+      30,
+      20
+     ],
+     "hull_faces": {
+      "3": 20
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "72.35594992088480625",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Ih"
+    },
+    {
+     "r2": "1",
+     "r": 1.0,
+     "points": 30,
+     "multiplicity": [
+      [
+       1,
+       30
+      ]
+     ],
+     "hull": "icosidodecahedron",
+     "hull_fvec": [
+      30,
+      60,
+      32
+     ],
+     "hull_faces": {
+      "3": 20,
+      "5": 12
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "149.35407082832550315",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       8
+      ]
+     },
+     "shell_group": "Ih"
+    }
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "6": 0.008502046271470168,
+     "10": 0.06120462191330973,
+     "12": 0.11337357382748524,
+     "16": 6.377406275497175e-07,
+     "18": 0.05868507064480884,
+     "20": 0.0881131434991639
+    }
+   },
+   "exact_unforced": {},
+   "T_nonzero_first": {
+    "6": 0.008502046271470168,
+    "10": 0.06120462191330973,
+    "12": 0.11337357382748524
+   },
+   "set": "E8-shadow",
+   "axis": "vertex",
+   "axis_vector": [
+    "1",
+    "0",
+    "0",
+    "0"
+   ],
+   "vertex_slice": {
+    "points": 60,
+    "name": "icosidodecahedron",
+    "group": "Ih"
+   }
+  },
+  {
+   "label": "E8-shadow along facet centre",
+   "group": "Oh",
+   "order": 48,
+   "image_points": 212,
+   "source_points": 240,
+   "coincident": 28,
+   "shells": [
+    {
+     "r2": "(15/8-9/8phi)",
+     "r": 0.233905456662234,
+     "points": 8,
+     "multiplicity": [
+      [
+       1,
+       8
+      ]
+     ],
+     "hull": "cube or parallelepiped",
+     "hull_fvec": [
+      8,
+      12,
+      6
+     ],
+     "hull_faces": {
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": true,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": true,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": true,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(3/4-3/8phi)",
+     "r": 0.37846697903356036,
+     "points": 8,
+     "multiplicity": [
+      [
+       2,
+       8
+      ]
+     ],
+     "hull": "cube or parallelepiped",
+     "hull_fvec": [
+      8,
+      12,
+      6
+     ],
+     "hull_faces": {
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": true,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": true,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": true,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(1-1/2phi)",
+     "r": 0.43701602444882104,
+     "points": 6,
+     "multiplicity": [
+      [
+       2,
+       6
+      ]
+     ],
+     "hull": "octahedron",
+     "hull_fvec": [
+      6,
+      12,
+      8
+     ],
+     "hull_faces": {
+      "3": 8
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "22.927598834988222676",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(15/8-1phi)",
+     "r": 0.5069181504445319,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "truncated cube",
+     "hull_fvec": [
+      24,
+      36,
+      14
+     ],
+     "hull_faces": {
+      "3": 8,
+      "8": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4,
+       6
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(7/4-7/8phi)",
+     "r": 0.5781178598208517,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "rhombicuboctahedron",
+     "hull_fvec": [
+      24,
+      48,
+      26
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 18
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "56.548667764616278292",
+        "rational_pi": true,
+        "ratio": "18/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6,
+       8
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(11/8-5/8phi)",
+     "r": 0.6030992928459755,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "rhombicuboctahedron",
+     "hull_fvec": [
+      24,
+      48,
+      26
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 18
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "56.548667764616278292",
+        "rational_pi": true,
+        "ratio": "18/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6,
+       8
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "3/8",
+     "r": 0.6123724356957945,
+     "points": 8,
+     "multiplicity": [
+      [
+       2,
+       8
+      ]
+     ],
+     "hull": "cube or parallelepiped",
+     "hull_fvec": [
+      8,
+      12,
+      6
+     ],
+     "hull_faces": {
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": true,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": true,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": true,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(2-1phi)",
+     "r": 0.6180339887498948,
+     "points": 12,
+     "multiplicity": [
+      [
+       1,
+       12
+      ]
+     ],
+     "hull": "cuboctahedron",
+     "hull_fvec": [
+      12,
+      24,
+      14
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "1/2",
+     "r": 0.7071067811865476,
+     "points": 6,
+     "multiplicity": [
+      [
+       2,
+       6
+      ]
+     ],
+     "hull": "octahedron",
+     "hull_fvec": [
+      6,
+      12,
+      8
+     ],
+     "hull_faces": {
+      "3": 8
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "22.927598834988222676",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(7/8-1/8phi)",
+     "r": 0.8202107969334853,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "truncated cube",
+     "hull_fvec": [
+      24,
+      36,
+      14
+     ],
+     "hull_faces": {
+      "3": 8,
+      "8": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4,
+       6
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "7/8",
+     "r": 0.9354143466934853,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "rhombicuboctahedron",
+     "hull_fvec": [
+      24,
+      48,
+      26
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 18
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "56.548667764616278292",
+        "rational_pi": true,
+        "ratio": "18/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6,
+       8
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(3/4+1/8phi)",
+     "r": 0.9758351544158147,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "rhombicuboctahedron",
+     "hull_fvec": [
+      24,
+      48,
+      26
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 18
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "56.548667764616278292",
+        "rational_pi": true,
+        "ratio": "18/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6,
+       8
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(3/8+3/8phi)",
+     "r": 0.9908394147293549,
+     "points": 8,
+     "multiplicity": [
+      [
+       1,
+       8
+      ]
+     ],
+     "hull": "cube or parallelepiped",
+     "hull_fvec": [
+      8,
+      12,
+      6
+     ],
+     "hull_faces": {
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": true,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": true,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": true,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "1",
+     "r": 1.0,
+     "points": 12,
+     "multiplicity": [
+      [
+       1,
+       12
+      ]
+     ],
+     "hull": "cuboctahedron",
+     "hull_fvec": [
+      12,
+      24,
+      14
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6
+      ]
+     },
+     "shell_group": "Oh"
+    }
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.0008675120837416827,
+     "6": 0.0056040077672324905,
+     "8": 0.011757556285706005,
+     "10": 0.00011597084666503152,
+     "12": 0.05818015902356032,
+     "14": 0.010737279793776894,
+     "16": 0.01941146569247335,
+     "18": 0.02594577535120133,
+     "20": 0.04289833296293609
+    }
+   },
+   "exact_unforced": {},
+   "T_nonzero_first": {
+    "4": 0.0008675120837416827,
+    "6": 0.0056040077672324905,
+    "8": 0.011757556285706005,
+    "10": 0.00011597084666503152,
+    "12": 0.05818015902356032
+   },
+   "set": "E8-shadow",
+   "axis": "facet centre",
+   "axis_vector": [
+    "(-1/8-1/4phi)",
+    "-1/8",
+    "(-1/8-1/4phi)",
+    "(-1/8-1/4phi)"
+   ],
+   "vertex_slice": {
+    "points": 24,
+    "name": "cuboctahedron",
+    "group": "Oh"
+   }
+  },
+  {
+   "label": "S5 orbit C1 along S4 axis",
+   "group": "Td",
+   "order": 24,
+   "image_points": 20,
+   "source_points": 20,
+   "coincident": 0,
+   "shells": [
+    {
+     "r2": "3/4",
+     "r": 0.8660254037844386,
+     "points": 4,
+     "multiplicity": [
+      [
+       1,
+       4
+      ]
+     ],
+     "hull": "tetrahedron",
+     "hull_fvec": [
+      4,
+      6,
+      4
+     ],
+     "hull_faces": {
+      "3": 4
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "7.3857565040446480928",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": false,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       2
+      ]
+     },
+     "shell_group": "Td"
+    },
+    {
+     "r2": "(7/4+7/4phi)",
+     "r": 2.1404577735410517,
+     "points": 12,
+     "multiplicity": [
+      [
+       1,
+       12
+      ]
+     ],
+     "hull": "truncated tetrahedron",
+     "hull_fvec": [
+      12,
+      18,
+      8
+     ],
+     "hull_faces": {
+      "3": 4,
+      "6": 4
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "22.927598834988222676",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "7.3857565040446480928",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": false,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Td"
+    },
+    {
+     "r2": "(3/2+9/4phi)",
+     "r": 2.267283942228512,
+     "points": 4,
+     "multiplicity": [
+      [
+       1,
+       4
+      ]
+     ],
+     "hull": "tetrahedron",
+     "hull_fvec": [
+      4,
+      6,
+      4
+     ],
+     "hull_faces": {
+      "3": 4
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "7.3857565040446480928",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": false,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       2
+      ]
+     },
+     "shell_group": "Td"
+    }
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.33490324541767535,
+     "4": 0.06748731238527157,
+     "6": 0.10283780934898525,
+     "7": 0.0037749892425130746,
+     "8": 0.019677228151804196,
+     "9": 0.08060210208225707,
+     "10": 0.002267606741884523,
+     "11": 0.019763853755520165,
+     "12": 0.1146781808118674,
+     "13": 0.04415450139430768,
+     "14": 0.007864234765170675,
+     "15": 0.11420884007280374,
+     "16": 0.0889870359612779,
+     "17": 0.08301810629493839,
+     "18": 0.16696880506786946,
+     "19": 0.07781517651160737,
+     "20": 0.06580441098574907
+    }
+   },
+   "exact_unforced": {},
+   "T_nonzero_first": {
+    "3": 0.33490324541767535,
+    "4": 0.06748731238527157,
+    "6": 0.10283780934898525,
+    "7": 0.0037749892425130746,
+    "8": 0.019677228151804196,
+    "9": 0.08060210208225707,
+    "10": 0.002267606741884523,
+    "11": 0.019763853755520165,
+    "12": 0.1146781808118674
+   },
+   "set": "S5 orbit C1",
+   "axis": "S4 axis",
+   "axis_vector": [
+    "-1/5",
+    "-1/5",
+    "-1/5",
+    "-1/5",
+    "4/5"
+   ],
+   "vertex_slice": {
+    "points": 0
+   }
+  },
+  {
+   "label": "S5 orbit C3 along S4 axis",
+   "group": "Oh",
+   "order": 48,
+   "image_points": 20,
+   "source_points": 20,
+   "coincident": 0,
+   "shells": [
+    {
+     "r2": "(3/4+3/4phi)",
+     "r": 1.4012585384440737,
+     "points": 8,
+     "multiplicity": [
+      [
+       1,
+       8
+      ]
+     ],
+     "hull": "cube or parallelepiped",
+     "hull_fvec": [
+      8,
+      12,
+      6
+     ],
+     "hull_faces": {
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": true,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": true,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": true,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(2+2phi)",
+     "r": 2.288245611270737,
+     "points": 12,
+     "multiplicity": [
+      [
+       1,
+       12
+      ]
+     ],
+     "hull": "cuboctahedron",
+     "hull_fvec": [
+      12,
+      24,
+      14
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6
+      ]
+     },
+     "shell_group": "Oh"
+    }
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.10127314814814815,
+     "6": 0.008704668209876544,
+     "8": 0.10722570851015946,
+     "10": 0.07170382162810329,
+     "12": 0.2696976767328314,
+     "14": 3.4356258296744214e-06,
+     "16": 0.08005548397784135,
+     "18": 0.04456300231687661,
+     "20": 0.1990799275532585
+    }
+   },
+   "exact_unforced": {},
+   "T_nonzero_first": {
+    "4": 0.10127314814814815,
+    "6": 0.008704668209876544,
+    "8": 0.10722570851015946,
+    "10": 0.07170382162810329,
+    "12": 0.2696976767328314
+   },
+   "set": "S5 orbit C3",
+   "axis": "S4 axis",
+   "axis_vector": [
+    "-1/5",
+    "-1/5",
+    "-1/5",
+    "-1/5",
+    "4/5"
+   ],
+   "vertex_slice": {
+    "points": 12,
+    "name": "cuboctahedron",
+    "group": "Oh"
+   }
+  },
+  {
+   "label": "S5 orbit C4 along S4 axis",
+   "group": "Td",
+   "order": 24,
+   "image_points": 30,
+   "source_points": 30,
+   "coincident": 0,
+   "shells": [
+    {
+     "r2": "(1+1phi)",
+     "r": 1.618033988749895,
+     "points": 6,
+     "multiplicity": [
+      [
+       1,
+       6
+      ]
+     ],
+     "hull": "octahedron",
+     "hull_fvec": [
+      6,
+      12,
+      8
+     ],
+     "hull_faces": {
+      "3": 8
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "22.927598834988222676",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(3/2+5/4phi)",
+     "r": 1.8768437563999216,
+     "points": 12,
+     "multiplicity": [
+      [
+       1,
+       12
+      ]
+     ],
+     "hull": "cuboctahedron",
+     "hull_fvec": [
+      12,
+      24,
+      14
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "26.235312425583407524",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "26.235312425583407524",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": false,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6
+      ]
+     },
+     "shell_group": "Td"
+    },
+    {
+     "r2": "(7/4+2phi)",
+     "r": 2.2329505094156903,
+     "points": 12,
+     "multiplicity": [
+      [
+       1,
+       12
+      ]
+     ],
+     "hull": "truncated tetrahedron",
+     "hull_fvec": [
+      12,
+      18,
+      8
+     ],
+     "hull_faces": {
+      "3": 4,
+      "6": 4
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "22.927598834988222676",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "7.3857565040446480928",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": false,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Td"
+    }
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     5
+    ],
+    "zero": [
+     1,
+     2,
+     5
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "3": 0.0025400843004775814,
+     "4": 0.04855845322139181,
+     "6": 0.0010869848034983365,
+     "7": 0.02666853879434347,
+     "8": 0.040493689206997696,
+     "9": 0.10963247015299579,
+     "10": 0.020318444003218958,
+     "11": 0.002075726304556039,
+     "12": 0.02901427408957843,
+     "13": 0.008912457688721398,
+     "14": 0.02175728175406701,
+     "15": 0.02004070995146827,
+     "16": 0.01396739746774501,
+     "17": 0.0036590503688346578,
+     "18": 0.10367499831664727,
+     "19": 0.07375604439254327,
+     "20": 0.010964933597739599
+    }
+   },
+   "exact_unforced": {},
+   "T_nonzero_first": {
+    "3": 0.0025400843004775814,
+    "4": 0.04855845322139181,
+    "6": 0.0010869848034983365,
+    "7": 0.02666853879434347,
+    "8": 0.040493689206997696,
+    "9": 0.10963247015299579,
+    "10": 0.020318444003218958,
+    "11": 0.002075726304556039,
+    "12": 0.02901427408957843
+   },
+   "set": "S5 orbit C4",
+   "axis": "S4 axis",
+   "axis_vector": [
+    "-1/5",
+    "-1/5",
+    "-1/5",
+    "-1/5",
+    "4/5"
+   ],
+   "vertex_slice": {
+    "points": 0
+   }
+  },
+  {
+   "label": "S5 orbits C1+C2 along S4 axis",
+   "group": "Oh",
+   "order": 48,
+   "image_points": 40,
+   "source_points": 40,
+   "coincident": 0,
+   "shells": [
+    {
+     "r2": "3/4",
+     "r": 0.8660254037844386,
+     "points": 8,
+     "multiplicity": [
+      [
+       1,
+       8
+      ]
+     ],
+     "hull": "cube or parallelepiped",
+     "hull_fvec": [
+      8,
+      12,
+      6
+     ],
+     "hull_faces": {
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": true,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": true,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": true,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(7/4+7/4phi)",
+     "r": 2.1404577735410517,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "rhombicuboctahedron",
+     "hull_fvec": [
+      24,
+      48,
+      26
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 18
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "56.548667764616278292",
+        "rational_pi": true,
+        "ratio": "18/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6,
+       8
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(3/2+9/4phi)",
+     "r": 2.267283942228512,
+     "points": 8,
+     "multiplicity": [
+      [
+       1,
+       8
+      ]
+     ],
+     "hull": "cube or parallelepiped",
+     "hull_fvec": [
+      8,
+      12,
+      6
+     ],
+     "hull_faces": {
+      "4": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": true,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": true,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": true,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    }
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.06748731238527157,
+     "6": 0.10283780934898525,
+     "8": 0.019677228151804196,
+     "10": 0.002267606741884523,
+     "12": 0.1146781808118674,
+     "14": 0.007864234765170675,
+     "16": 0.0889870359612779,
+     "18": 0.16696880506786946,
+     "20": 0.06580441098574907
+    }
+   },
+   "exact_unforced": {},
+   "T_nonzero_first": {
+    "4": 0.06748731238527157,
+    "6": 0.10283780934898525,
+    "8": 0.019677228151804196,
+    "10": 0.002267606741884523,
+    "12": 0.1146781808118674
+   },
+   "set": "S5 orbits C1+C2",
+   "axis": "S4 axis",
+   "axis_vector": [
+    "-1/5",
+    "-1/5",
+    "-1/5",
+    "-1/5",
+    "4/5"
+   ],
+   "vertex_slice": {
+    "points": 0
+   }
+  },
+  {
+   "label": "S5 orbits C4+C5 along S4 axis",
+   "group": "Oh",
+   "order": 48,
+   "image_points": 54,
+   "source_points": 60,
+   "coincident": 6,
+   "shells": [
+    {
+     "r2": "(1+1phi)",
+     "r": 1.618033988749895,
+     "points": 6,
+     "multiplicity": [
+      [
+       2,
+       6
+      ]
+     ],
+     "hull": "octahedron",
+     "hull_fvec": [
+      6,
+      12,
+      8
+     ],
+     "hull_faces": {
+      "3": 8
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 1,
+      "length_basis": 1,
+      "components": [
+       {
+        "theta_sum": "22.927598834988222676",
+        "rational_pi": false,
+        "ratio": null
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(3/2+5/4phi)",
+     "r": 1.8768437563999216,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "truncated cube",
+     "hull_fvec": [
+      24,
+      36,
+      14
+     ],
+     "hull_faces": {
+      "3": 8,
+      "8": 6
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "52.470624851166815047",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "18.849555921538759431",
+        "rational_pi": true,
+        "ratio": "6/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       4,
+       6
+      ]
+     },
+     "shell_group": "Oh"
+    },
+    {
+     "r2": "(7/4+2phi)",
+     "r": 2.2329505094156903,
+     "points": 24,
+     "multiplicity": [
+      [
+       1,
+       24
+      ]
+     ],
+     "hull": "rhombicuboctahedron",
+     "hull_fvec": [
+      24,
+      48,
+      26
+     ],
+     "hull_faces": {
+      "3": 8,
+      "4": 18
+     },
+     "all_points_are_hull_vertices": true,
+     "dehn": {
+      "zero": false,
+      "edge_classes": 2,
+      "length_basis": 2,
+      "components": [
+       {
+        "theta_sum": "60.626710678065741537",
+        "rational_pi": false,
+        "ratio": null
+       },
+       {
+        "theta_sum": "56.548667764616278292",
+        "rational_pi": true,
+        "ratio": "18/1"
+       }
+      ]
+     },
+     "translation": {
+      "tiles_by_translation": false,
+      "centrally_symmetric": true,
+      "faces_centrally_symmetric": false,
+      "belt_sizes": [
+       6,
+       8
+      ]
+     },
+     "shell_group": "Oh"
+    }
+   ],
+   "tones": {
+    "forced_silent": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "zero": [
+     1,
+     2,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     29
+    ],
+    "unforced_zero": [],
+    "forced_but_nonzero": [],
+    "first_tones": {
+     "4": 0.04855845322139181,
+     "6": 0.0010869848034983365,
+     "8": 0.040493689206997696,
+     "10": 0.020318444003218958,
+     "12": 0.02901427408957843,
+     "14": 0.02175728175406701,
+     "16": 0.01396739746774501,
+     "18": 0.10367499831664727,
+     "20": 0.010964933597739599
+    }
+   },
+   "exact_unforced": {},
+   "T_nonzero_first": {
+    "4": 0.04855845322139181,
+    "6": 0.0010869848034983365,
+    "8": 0.040493689206997696,
+    "10": 0.020318444003218958,
+    "12": 0.02901427408957843
+   },
+   "set": "S5 orbits C4+C5",
+   "axis": "S4 axis",
+   "axis_vector": [
+    "-1/5",
+    "-1/5",
+    "-1/5",
+    "-1/5",
+    "4/5"
+   ],
+   "vertex_slice": {
+    "points": 0
+   }
+  }
+ ],
+ "fails": [],
+ "seconds": 88.89049792289734
+}

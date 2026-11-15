@@ -1,0 +1,118 @@
+CHECK ok   Ih A5: vertex count 32 = Euler 32
+CHECK ok   Ih A5: hull faces 30 = 30
+CHECK ok   Ih A5: Dehn invariant zero (zonotope control)
+CHECK ok   Ih A5: Venkov test on the hull agrees with the zone count rule
+ZONO Ih A5: F=30 {4: 30} zones 6 sizes [10] group Ih tiler(transl) False name rhombic triacontahedron zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+PROGRESS 0.037
+CHECK ok   Ih A3: vertex count 92 = Euler 92
+CHECK ok   Ih A3: hull faces 90 = 90
+CHECK ok   Ih A3: Dehn invariant zero (zonotope control)
+CHECK ok   Ih A3: Venkov test on the hull agrees with the zone count rule
+ZONO Ih A3: F=90 {4: 90} zones 10 sizes [18] group Ih tiler(transl) False name rhombic enneacontahedron zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+PROGRESS 0.074
+CHECK ok   Ih A2: vertex count 120 = Euler 120
+CHECK ok   Ih A2: hull faces 62 = 62
+CHECK ok   Ih A2: Dehn invariant zero (zonotope control)
+CHECK ok   Ih A2: Venkov test on the hull agrees with the zone count rule
+ZONO Ih A2: F=62 {4: 30, 6: 20, 10: 12} zones 15 sizes [12] group Ih tiler(transl) False name truncated icosidodecahedron zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+PROGRESS 0.111
+CHECK ok   Ih A5+A3: vertex count 152 = Euler 152
+CHECK ok   Ih A5+A3: hull faces 90 = 90
+CHECK ok   Ih A5+A3: Dehn invariant zero (zonotope control)
+CHECK ok   Ih A5+A3: Venkov test on the hull agrees with the zone count rule
+ZONO Ih A5+A3: F=90 {4: 60, 8: 30} zones 16 sizes [10, 18] group Ih tiler(transl) False name V152 E240 F90 faces{4: 60, 8: 30} zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+PROGRESS 0.148
+CHECK ok   Ih A5+A2: vertex count 240 = Euler 240
+CHECK ok   Ih A5+A2: hull faces 122 = 122
+CHECK ok   Ih A5+A2: Dehn invariant zero (zonotope control)
+CHECK ok   Ih A5+A2: Venkov test on the hull agrees with the zone count rule
+ZONO Ih A5+A2: F=122 {4: 60, 6: 20, 8: 30, 10: 12} zones 21 sizes [16, 20] group Ih tiler(transl) False name V240 E360 F122 faces{4: 60, 6: 20, 8: 30, 10: 12} zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+PROGRESS 0.185
+CHECK ok   Ih A3+A2: vertex count 360 = Euler 360
+CHECK ok   Ih A3+A2: hull faces 182 = 182
+CHECK ok   Ih A3+A2: Dehn invariant zero (zonotope control)
+CHECK ok   Ih A3+A2: Venkov test on the hull agrees with the zone count rule
+ZONO Ih A3+A2: F=182 {4: 60, 6: 80, 8: 30, 10: 12} zones 25 sizes [20, 24] group Ih tiler(transl) False name V360 E540 F182 faces{4: 60, 6: 80, 8: 30, 10: 12} zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+PROGRESS 0.222
+CHECK ok   Ih A5+A3+A2: vertex count 480 = Euler 480
+CHECK ok   Ih A5+A3+A2: hull faces 242 = 242
+CHECK ok   Ih A5+A3+A2: Venkov test on the hull agrees with the zone count rule
+ZONO Ih A5+A3+A2: F=242 {4: 120, 6: 80, 10: 12, 12: 30} zones 31 sizes [20, 24] group Ih tiler(transl) False name V480 E720 F242 faces{4: 120, 6: 80, 10: 12, 12: 30} zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+PROGRESS 0.259
+CHECK ok   Ih golden-lengths A5+A3: vertex count 152 = Euler 152
+CHECK ok   Ih golden-lengths A5+A3: hull faces 90 = 90
+CHECK ok   Ih golden-lengths A5+A3: Dehn invariant zero (zonotope control)
+CHECK ok   Ih golden-lengths A5+A3: Venkov test on the hull agrees with the zone count rule
+ZONO Ih golden-lengths A5+A3: F=90 {4: 60, 8: 30} zones 16 sizes [10, 18] group Ih tiler(transl) False name V152 E240 F90 faces{4: 60, 8: 30} zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+PROGRESS 0.296
+CHECK ok   Ih golden-lengths A5+A2: vertex count 240 = Euler 240
+CHECK ok   Ih golden-lengths A5+A2: hull faces 122 = 122
+CHECK ok   Ih golden-lengths A5+A2: Dehn invariant zero (zonotope control)
+CHECK ok   Ih golden-lengths A5+A2: Venkov test on the hull agrees with the zone count rule
+ZONO Ih golden-lengths A5+A2: F=122 {4: 60, 6: 20, 8: 30, 10: 12} zones 21 sizes [16, 20] group Ih tiler(transl) False name V240 E360 F122 faces{4: 60, 6: 20, 8: 30, 10: 12} zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+PROGRESS 0.333
+CHECK ok   Ih golden-lengths A3+A2: vertex count 360 = Euler 360
+CHECK ok   Ih golden-lengths A3+A2: hull faces 182 = 182
+CHECK ok   Ih golden-lengths A3+A2: Dehn invariant zero (zonotope control)
+CHECK ok   Ih golden-lengths A3+A2: Venkov test on the hull agrees with the zone count rule
+ZONO Ih golden-lengths A3+A2: F=182 {4: 60, 6: 80, 8: 30, 10: 12} zones 25 sizes [20, 24] group Ih tiler(transl) False name V360 E540 F182 faces{4: 60, 6: 80, 8: 30, 10: 12} zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+PROGRESS 0.370
+CHECK ok   Ih golden-lengths A5+A3+A2: vertex count 480 = Euler 480
+CHECK ok   Ih golden-lengths A5+A3+A2: hull faces 242 = 242
+CHECK ok   Ih golden-lengths A5+A3+A2: Venkov test on the hull agrees with the zone count rule
+ZONO Ih golden-lengths A5+A3+A2: F=242 {4: 120, 6: 80, 10: 12, 12: 30} zones 31 sizes [20, 24] group Ih tiler(transl) False name V480 E720 F242 faces{4: 120, 6: 80, 10: 12, 12: 30} zeros [1, 2, 3, 4, 5, 7, 8, 9, 11, 13, 14, 15] unforced []
+PROGRESS 0.407
+CHECK ok   Oh C4: vertex count 8 = Euler 8
+CHECK ok   Oh C4: hull faces 6 = 6
+CHECK ok   Oh C4: Dehn invariant zero (zonotope control)
+CHECK ok   Oh C4: Venkov test on the hull agrees with the zone count rule
+ZONO Oh C4: F=6 {4: 6} zones 3 sizes [4] group Oh tiler(transl) True name cube or parallelepiped zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+PROGRESS 0.444
+CHECK ok   Oh C3: vertex count 14 = Euler 14
+CHECK ok   Oh C3: hull faces 12 = 12
+CHECK ok   Oh C3: Dehn invariant zero (zonotope control)
+CHECK ok   Oh C3: Venkov test on the hull agrees with the zone count rule
+ZONO Oh C3: F=12 {4: 12} zones 4 sizes [6] group Oh tiler(transl) True name rhombic dodecahedron zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+PROGRESS 0.481
+CHECK ok   Oh C2: vertex count 24 = Euler 24
+CHECK ok   Oh C2: hull faces 14 = 14
+CHECK ok   Oh C2: Dehn invariant zero (zonotope control)
+CHECK ok   Oh C2: Venkov test on the hull agrees with the zone count rule
+ZONO Oh C2: F=14 {4: 6, 6: 8} zones 6 sizes [6] group Oh tiler(transl) True name truncated octahedron zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+PROGRESS 0.519
+CHECK ok   Oh C4+C3: vertex count 32 = Euler 32
+CHECK ok   Oh C4+C3: hull faces 18 = 18
+CHECK ok   Oh C4+C3: Dehn invariant zero (zonotope control)
+CHECK ok   Oh C4+C3: Venkov test on the hull agrees with the zone count rule
+ZONO Oh C4+C3: F=18 {4: 6, 6: 12} zones 7 sizes [6, 8] group Oh tiler(transl) False name chamfered cube type (6 squares, 12 hexagons) zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+PROGRESS 0.556
+CHECK ok   Oh C4+C2: vertex count 48 = Euler 48
+CHECK ok   Oh C4+C2: hull faces 26 = 26
+CHECK ok   Oh C4+C2: Dehn invariant zero (zonotope control)
+CHECK ok   Oh C4+C2: Venkov test on the hull agrees with the zone count rule
+ZONO Oh C4+C2: F=26 {4: 12, 6: 8, 8: 6} zones 9 sizes [8] group Oh tiler(transl) False name truncated cuboctahedron zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+PROGRESS 0.593
+CHECK ok   Oh C3+C2: vertex count 72 = Euler 72
+CHECK ok   Oh C3+C2: hull faces 50 = 50
+CHECK ok   Oh C3+C2: Dehn invariant zero (zonotope control)
+CHECK ok   Oh C3+C2: Venkov test on the hull agrees with the zone count rule
+ZONO Oh C3+C2: F=50 {4: 30, 6: 20} zones 10 sizes [12] group Oh tiler(transl) False name V72 E120 F50 faces{4: 30, 6: 20} zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+PROGRESS 0.630
+CHECK ok   Oh C4+C3+C2: vertex count 96 = Euler 96
+CHECK ok   Oh C4+C3+C2: hull faces 50 = 50
+CHECK ok   Oh C4+C3+C2: Dehn invariant zero (zonotope control)
+CHECK ok   Oh C4+C3+C2: Venkov test on the hull agrees with the zone count rule
+ZONO Oh C4+C3+C2: F=50 {4: 24, 6: 8, 8: 18} zones 13 sizes [8, 12] group Oh tiler(transl) False name V96 E144 F50 faces{4: 24, 6: 8, 8: 18} zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21] unforced []
+PROGRESS 0.667
+GOLDEN 3 axes (0, 1, 2): F=6 {4: 6} zone sizes [4] shapes 1 name cube or parallelepiped |G|=12 tiler(transl) True
+GOLDEN 3 axes (0, 1, 4): F=6 {4: 6} zone sizes [4] shapes 1 name cube or parallelepiped |G|=12 tiler(transl) True
+GOLDEN 4 axes (0, 1, 2, 3): F=12 {4: 12} zone sizes [6] shapes 1 name rhombic dodecahedron |G|=8 tiler(transl) True
+GOLDEN 5 axes (0, 1, 2, 3, 4): F=20 {4: 20} zone sizes [8] shapes 1 name rhombic icosahedron |G|=20 tiler(transl) False
+GOLDEN 6 axes (0, 1, 2, 3, 4, 5): F=30 {4: 30} zone sizes [10] shapes 1 name rhombic triacontahedron |G|=120 tiler(transl) False
+PROGRESS 0.889
+CHECK ok   control: A5 gives the rhombic triacontahedron (30 rhombi, zones of 10)
+CHECK ok   control: A2 gives the truncated icosidodecahedron type (30 squares, 20 hexagons, 12 decagons)
+CHECK ok   control: C2 (6 face diagonals) gives the truncated octahedron type, a translation tiler
+CHECK ok   control: C3 gives the rhombic dodecahedron, a translation tiler
+0 failed checks, 36 s
+FINAL ok
