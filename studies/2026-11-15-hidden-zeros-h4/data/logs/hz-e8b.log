@@ -1,0 +1,89 @@
+PROGRESS 0.02 reflection subgroups: 16 classes
+PROGRESS 0.03 + cyclic: 39
+PROGRESS 0.04 + quaternion families: 120
+PROGRESS 0.062 two-generated 13/264 chunks, 64 candidates, 11s
+PROGRESS 0.075 two-generated 26/264 chunks, 127 candidates, 20s
+PROGRESS 0.087 two-generated 39/264 chunks, 203 candidates, 28s
+PROGRESS 0.099 two-generated 52/264 chunks, 268 candidates, 39s
+PROGRESS 0.112 two-generated 65/264 chunks, 346 candidates, 44s
+PROGRESS 0.124 two-generated 78/264 chunks, 494 candidates, 56s
+PROGRESS 0.136 two-generated 91/264 chunks, 578 candidates, 67s
+PROGRESS 0.148 two-generated 104/264 chunks, 649 candidates, 79s
+PROGRESS 0.161 two-generated 117/264 chunks, 720 candidates, 91s
+PROGRESS 0.173 two-generated 130/264 chunks, 831 candidates, 103s
+PROGRESS 0.185 two-generated 143/264 chunks, 943 candidates, 118s
+PROGRESS 0.198 two-generated 156/264 chunks, 1000 candidates, 129s
+PROGRESS 0.210 two-generated 169/264 chunks, 1105 candidates, 144s
+PROGRESS 0.222 two-generated 182/264 chunks, 1235 candidates, 157s
+PROGRESS 0.235 two-generated 195/264 chunks, 1484 candidates, 168s
+PROGRESS 0.247 two-generated 208/264 chunks, 1658 candidates, 182s
+PROGRESS 0.259 two-generated 221/264 chunks, 1762 candidates, 197s
+PROGRESS 0.272 two-generated 234/264 chunks, 1936 candidates, 206s
+PROGRESS 0.284 two-generated 247/264 chunks, 2046 candidates, 214s
+PROGRESS 0.296 two-generated 260/264 chunks, 2216 candidates, 222s
+PROGRESS 0.30 + two-generated: 164
+PROGRESS 0.32 + rotation parts and -I: 179
+PROGRESS 0.35 E8 roots: N=240, 179 subgroup classes, ambient order 14400, galois=no (252s)
+-I in the ambient group: True
+PROGRESS 0.350 sets from group 0/179: 10 distinct sets
+PROGRESS 0.357 sets from group 8/179: 82 distinct sets
+PROGRESS 0.363 sets from group 16/179: 119 distinct sets
+PROGRESS 0.370 sets from group 24/179: 139 distinct sets
+PROGRESS 0.377 sets from group 32/179: 189 distinct sets
+PROGRESS 0.384 sets from group 40/179: 227 distinct sets
+PROGRESS 0.390 sets from group 48/179: 241 distinct sets
+PROGRESS 0.397 sets from group 56/179: 289 distinct sets
+PROGRESS 0.404 sets from group 64/179: 324 distinct sets
+PROGRESS 0.410 sets from group 72/179: 329 distinct sets
+PROGRESS 0.417 sets from group 80/179: 352 distinct sets
+PROGRESS 0.424 sets from group 88/179: 352 distinct sets
+PROGRESS 0.430 sets from group 96/179: 379 distinct sets
+PROGRESS 0.437 sets from group 104/179: 415 distinct sets
+PROGRESS 0.444 sets from group 112/179: 439 distinct sets
+PROGRESS 0.451 sets from group 120/179: 449 distinct sets
+PROGRESS 0.457 sets from group 128/179: 473 distinct sets
+PROGRESS 0.464 sets from group 136/179: 495 distinct sets
+PROGRESS 0.471 sets from group 144/179: 499 distinct sets
+PROGRESS 0.477 sets from group 152/179: 509 distinct sets
+PROGRESS 0.484 sets from group 160/179: 530 distinct sets
+PROGRESS 0.491 sets from group 168/179: 540 distinct sets
+PROGRESS 0.497 sets from group 176/179: 541 distinct sets
+541 distinct sets (up to the ambient group)
+PROGRESS 0.500 sets analysed 0/541 (263s)
+PROGRESS 0.512 sets analysed 27/541 (263s)
+PROGRESS 0.525 sets analysed 54/541 (263s)
+PROGRESS 0.537 sets analysed 81/541 (263s)
+PROGRESS 0.550 sets analysed 108/541 (320s)
+PROGRESS 0.562 sets analysed 135/541 (320s)
+PROGRESS 0.575 sets analysed 162/541 (320s)
+PROGRESS 0.587 sets analysed 189/541 (320s)
+PROGRESS 0.600 sets analysed 216/541 (320s)
+PROGRESS 0.612 sets analysed 243/541 (320s)
+PROGRESS 0.625 sets analysed 270/541 (401s)
+PROGRESS 0.637 sets analysed 297/541 (431s)
+PROGRESS 0.650 sets analysed 324/541 (460s)
+PROGRESS 0.662 sets analysed 351/541 (551s)
+PROGRESS 0.675 sets analysed 378/541 (579s)
+PROGRESS 0.687 sets analysed 405/541 (579s)
+PROGRESS 0.700 sets analysed 432/541 (579s)
+PROGRESS 0.712 sets analysed 459/541 (580s)
+PROGRESS 0.725 sets analysed 486/541 (581s)
+PROGRESS 0.737 sets analysed 513/541 (581s)
+PROGRESS 0.750 sets analysed 540/541 (590s)
+CHECK tone/kernel consistency on 400 sets: ok
+dim N_k = [239, 232, 205, 128, 156, 128, 121, 120, 120, 120, 121, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120]
+PROGRESS 0.80 linkage done (594s)
+PROGRESS 0.818 degree 2: E dims (no sigma, sigma, N_k) = (205, 205, 205), 24 sets to explain
+PROGRESS 0.836 degree 4: E dims (no sigma, sigma, N_k) = (120, 120, 156), 7 sets to explain
+PROGRESS 0.854 degree 6: E dims (no sigma, sigma, N_k) = (120, 120, 121), 1 sets to explain
+PROGRESS 0.890 degree 10: E dims (no sigma, sigma, N_k) = (120, 120, 121), 1 sets to explain
+E8 roots: 541 sets, 7 with OPEN zeros; checks 9/9 ok
+  size 120 orbit stab 14400 sym >300000 zeros [1, 3, 4, 5, 7, 9, 11, 13, 15, 17, 19] G [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] X [] ZONAL [] TW [] SPAN [] GAL [] OPEN [4] cond 0 gal-self None
+  size 120 orbit stab 14400 sym >300000 zeros [1, 3, 4, 5, 7, 9, 11, 13, 15, 17, 19] G [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] X [] ZONAL [] TW [] SPAN [] GAL [] OPEN [4] cond 0 gal-self None
+  size 240 union stab 14400 sym >300000 zeros [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 13, 15, 17, 19] G [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] X [] ZONAL [] TW [] SPAN [2] GAL [] OPEN [4, 6, 10] cond 1 gal-self None
+  size 120 union stab 576 sym >300000 zeros [1, 3, 4, 5, 7, 9, 11, 13, 15, 17, 19] G [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] X [] ZONAL [] TW [] SPAN [] GAL [] OPEN [4] cond 1 gal-self None
+  size 120 union stab 576 sym >300000 zeros [1, 3, 4, 5, 7, 9, 11, 13, 15, 17, 19] G [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] X [] ZONAL [] TW [] SPAN [] GAL [] OPEN [4] cond 1 gal-self None
+  size 120 union stab 144 sym >300000 zeros [1, 3, 4, 5, 7, 9, 11, 13, 15, 17, 19] G [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] X [] ZONAL [] TW [] SPAN [] GAL [] OPEN [4] cond 1 gal-self None
+  size 120 union stab 144 sym >300000 zeros [1, 3, 4, 5, 7, 9, 11, 13, 15, 17, 19] G [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] X [] ZONAL [] TW [] SPAN [] GAL [] OPEN [4] cond 1 gal-self None
+FINAL ok
+[exit 0]

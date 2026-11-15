@@ -291,9 +291,11 @@ def sym_perms(IM, Xf, cap=400000):
     if len(np.unique(ref)) != n: raise RuntimeError('basis signatures not unique')
     out = []
     diag = IM[0, 0]
+    calls = [0]
     def rec(ys):
         i = len(ys)
-        if len(out) > cap: return
+        calls[0] += 1
+        if len(out) > cap or calls[0] > 50 * cap: return
         if i == r:
             sig = enc(IM[:, ys])                          # signature of every point w.r.t. the image basis
             o = np.argsort(sig); ss = sig[o]
@@ -309,7 +311,7 @@ def sym_perms(IM, Xf, cap=400000):
             if c in ys: continue
             rec(ys + [int(c)])
     rec([])
-    if len(out) > cap: return None, basis
+    if len(out) > cap or calls[0] > 50 * cap: return None, basis
     return np.array(out, dtype=np.int32), basis
 
 def orbits_from_gens(gen_perms, N):

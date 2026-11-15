@@ -1,0 +1,109 @@
+PROGRESS 0.02 reflection subgroups: 16 classes
+PROGRESS 0.03 + cyclic: 39
+PROGRESS 0.04 + quaternion families: 120
+PROGRESS 0.062 two-generated 13/264 chunks, 61 candidates, 5s
+PROGRESS 0.075 two-generated 26/264 chunks, 133 candidates, 10s
+PROGRESS 0.087 two-generated 39/264 chunks, 203 candidates, 15s
+PROGRESS 0.099 two-generated 52/264 chunks, 267 candidates, 20s
+PROGRESS 0.112 two-generated 65/264 chunks, 351 candidates, 23s
+PROGRESS 0.124 two-generated 78/264 chunks, 494 candidates, 35s
+PROGRESS 0.136 two-generated 91/264 chunks, 578 candidates, 44s
+PROGRESS 0.148 two-generated 104/264 chunks, 643 candidates, 56s
+PROGRESS 0.161 two-generated 117/264 chunks, 719 candidates, 70s
+PROGRESS 0.173 two-generated 130/264 chunks, 831 candidates, 79s
+PROGRESS 0.185 two-generated 143/264 chunks, 938 candidates, 94s
+PROGRESS 0.198 two-generated 156/264 chunks, 1000 candidates, 105s
+PROGRESS 0.210 two-generated 169/264 chunks, 1107 candidates, 118s
+PROGRESS 0.222 two-generated 182/264 chunks, 1235 candidates, 132s
+PROGRESS 0.235 two-generated 195/264 chunks, 1484 candidates, 142s
+PROGRESS 0.247 two-generated 208/264 chunks, 1658 candidates, 157s
+PROGRESS 0.259 two-generated 221/264 chunks, 1762 candidates, 176s
+PROGRESS 0.272 two-generated 234/264 chunks, 1936 candidates, 188s
+PROGRESS 0.284 two-generated 247/264 chunks, 2040 candidates, 203s
+PROGRESS 0.296 two-generated 260/264 chunks, 2217 candidates, 214s
+PROGRESS 0.30 + two-generated: 164
+PROGRESS 0.32 + rotation parts and -I: 179
+PROGRESS 0.35 600-cell: N=120, 179 subgroup classes, ambient order 14400, galois=yes (226s)
+-I in the ambient group: True
+PROGRESS 0.350 sets from group 0/179: 5 distinct sets
+PROGRESS 0.357 sets from group 8/179: 41 distinct sets
+PROGRESS 0.363 sets from group 16/179: 77 distinct sets
+PROGRESS 0.370 sets from group 24/179: 93 distinct sets
+PROGRESS 0.377 sets from group 32/179: 116 distinct sets
+PROGRESS 0.384 sets from group 40/179: 135 distinct sets
+PROGRESS 0.390 sets from group 48/179: 151 distinct sets
+PROGRESS 0.397 sets from group 56/179: 165 distinct sets
+PROGRESS 0.404 sets from group 64/179: 181 distinct sets
+PROGRESS 0.410 sets from group 72/179: 188 distinct sets
+PROGRESS 0.417 sets from group 80/179: 191 distinct sets
+PROGRESS 0.424 sets from group 88/179: 191 distinct sets
+PROGRESS 0.430 sets from group 96/179: 198 distinct sets
+PROGRESS 0.437 sets from group 104/179: 216 distinct sets
+PROGRESS 0.444 sets from group 112/179: 257 distinct sets
+PROGRESS 0.451 sets from group 120/179: 285 distinct sets
+PROGRESS 0.457 sets from group 128/179: 301 distinct sets
+PROGRESS 0.464 sets from group 136/179: 313 distinct sets
+PROGRESS 0.471 sets from group 144/179: 333 distinct sets
+PROGRESS 0.477 sets from group 152/179: 356 distinct sets
+PROGRESS 0.484 sets from group 160/179: 363 distinct sets
+PROGRESS 0.491 sets from group 168/179: 375 distinct sets
+PROGRESS 0.497 sets from group 176/179: 375 distinct sets
+twisted: base group order 120, 76 subgroups
+twisted: 5457 candidate sets, 500 distinct twisted-class unions in the universe (up to its symmetry group)
+808 distinct sets (up to the ambient group)
+PROGRESS 0.500 sets analysed 0/808 (257s)
+PROGRESS 0.512 sets analysed 40/808 (257s)
+PROGRESS 0.525 sets analysed 80/808 (257s)
+PROGRESS 0.537 sets analysed 120/808 (258s)
+PROGRESS 0.550 sets analysed 160/808 (258s)
+PROGRESS 0.562 sets analysed 200/808 (258s)
+PROGRESS 0.574 sets analysed 240/808 (259s)
+PROGRESS 0.587 sets analysed 280/808 (259s)
+PROGRESS 0.599 sets analysed 320/808 (259s)
+PROGRESS 0.611 sets analysed 360/808 (260s)
+PROGRESS 0.624 sets analysed 400/808 (260s)
+PROGRESS 0.636 sets analysed 440/808 (260s)
+PROGRESS 0.649 sets analysed 480/808 (260s)
+PROGRESS 0.661 sets analysed 520/808 (261s)
+PROGRESS 0.673 sets analysed 560/808 (262s)
+PROGRESS 0.686 sets analysed 600/808 (263s)
+PROGRESS 0.698 sets analysed 640/808 (264s)
+PROGRESS 0.710 sets analysed 680/808 (269s)
+PROGRESS 0.723 sets analysed 720/808 (269s)
+PROGRESS 0.735 sets analysed 760/808 (269s)
+PROGRESS 0.748 sets analysed 800/808 (269s)
+twisted-class unions among the census sets: 500
+CHECK tone/kernel consistency on 400 sets: ok
+dim N_k = [119, 112, 102, 104, 95, 84, 86, 76, 79, 68, 77, 60, 60, 60, 61, 68, 61, 60, 61, 60, 60]
+PROGRESS 0.80 linkage done (271s)
+PROGRESS 0.818 degree 2: E dims (no sigma, sigma, N_k) = (102, 102, 102), 21 sets to explain
+PROGRESS 0.827 degree 3: E dims (no sigma, sigma, N_k) = (104, 104, 104), 19 sets to explain
+PROGRESS 0.836 degree 4: E dims (no sigma, sigma, N_k) = (95, 95, 95), 33 sets to explain
+PROGRESS 0.845 degree 5: E dims (no sigma, sigma, N_k) = (84, 84, 84), 34 sets to explain
+PROGRESS 0.854 degree 6: E dims (no sigma, sigma, N_k) = (86, 86, 86), 16 sets to explain
+PROGRESS 0.863 degree 7: E dims (no sigma, sigma, N_k) = (76, 76, 76), 3 sets to explain
+PROGRESS 0.872 degree 8: E dims (no sigma, sigma, N_k) = (61, 61, 79), 8 sets to explain
+PROGRESS 0.881 degree 9: E dims (no sigma, sigma, N_k) = (60, 60, 68), 8 sets to explain
+PROGRESS 0.890 degree 10: E dims (no sigma, sigma, N_k) = (77, 77, 77), 2 sets to explain
+PROGRESS 0.935 degree 15: E dims (no sigma, sigma, N_k) = (60, 60, 68), 8 sets to explain
+600-cell: 808 sets, 16 with OPEN zeros; checks 23/23 ok
+  size 30 orbit stab 120 sym 120 zeros [1, 2, 3, 6] G [1, 2] X [] ZONAL [] TW [3, 6] SPAN [] GAL [] OPEN [] cond None gal-self True
+  size 20 orbit stab 120 sym 120 zeros [1, 2, 5, 7] G [1, 2] X [] ZONAL [] TW [5, 7] SPAN [] GAL [] OPEN [] cond None gal-self True
+  size 30 union stab 15 sym 15 zeros [1, 3, 4, 8] G [1, 3] X [] ZONAL [] TW [] SPAN [4] GAL [] OPEN [8] cond 1 gal-self False
+  size 30 union stab 15 sym 15 zeros [1, 3, 4, 8] G [1, 3] X [] ZONAL [] TW [] SPAN [4] GAL [] OPEN [8] cond 1 gal-self False
+  size 60 union stab 60 sym 60 zeros [1, 3, 4, 5, 7, 8, 9, 11, 13, 15, 17, 19] G [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] X [] ZONAL [] TW [] SPAN [4] GAL [] OPEN [8] cond 1 gal-self False
+  size 60 union stab 60 sym 60 zeros [1, 3, 4, 5, 7, 8, 9, 11, 13, 15, 17, 19] G [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] X [] ZONAL [] TW [] SPAN [4] GAL [] OPEN [8] cond 1 gal-self False
+  size 30 union stab 50 sym 50 zeros [1, 3, 4, 8] G [1, 3] X [] ZONAL [] TW [] SPAN [4] GAL [] OPEN [8] cond 1 gal-self False
+  size 30 union stab 50 sym 50 zeros [1, 3, 4, 8] G [1, 3] X [] ZONAL [] TW [] SPAN [4] GAL [] OPEN [8] cond 1 gal-self False
+  size 60 union stab 200 sym 200 zeros [1, 3, 4, 5, 7, 8, 9, 11, 13, 15, 17, 19] G [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] X [] ZONAL [] TW [] SPAN [4] GAL [] OPEN [8] cond 1 gal-self False
+  size 60 union stab 200 sym 200 zeros [1, 3, 4, 5, 7, 8, 9, 11, 13, 15, 17, 19] G [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] X [] ZONAL [] TW [] SPAN [4] GAL [] OPEN [8] cond 1 gal-self False
+  size 24 twisted stab 120 sym 120 zeros [3, 4, 5, 9, 15] G [] X [] ZONAL [] TW [] SPAN [3, 4, 5] GAL [] OPEN [9, 15] cond 2 gal-self True
+  size 54 twisted stab 120 sym 120 zeros [3, 5, 9, 15] G [] X [] ZONAL [] TW [] SPAN [3, 5] GAL [] OPEN [9, 15] cond 2 gal-self True
+  size 26 twisted stab 120 sym 120 zeros [3, 5, 9, 15] G [] X [] ZONAL [] TW [] SPAN [3, 5] GAL [] OPEN [9, 15] cond 2 gal-self True
+  size 64 twisted stab 120 sym 120 zeros [3, 5, 9, 15] G [] X [] ZONAL [] TW [] SPAN [3, 5] GAL [] OPEN [9, 15] cond 2 gal-self True
+  size 56 twisted stab 120 sym 120 zeros [3, 5, 9, 15] G [] X [] ZONAL [] TW [] SPAN [3, 5] GAL [] OPEN [9, 15] cond 2 gal-self True
+  size 94 twisted stab 120 sym 120 zeros [3, 5, 9, 15] G [] X [] ZONAL [] TW [] SPAN [3, 5] GAL [] OPEN [9, 15] cond 2 gal-self True
+  size 66 twisted stab 120 sym 120 zeros [3, 5, 9, 15] G [] X [] ZONAL [] TW [] SPAN [3, 5] GAL [] OPEN [9, 15] cond 2 gal-self True
+  size 96 twisted stab 120 sym 120 zeros [3, 4, 5, 9, 15] G [] X [] ZONAL [] TW [] SPAN [3, 4, 5] GAL [] OPEN [9, 15] cond 2 gal-self True
+FINAL ok
+[exit 0]

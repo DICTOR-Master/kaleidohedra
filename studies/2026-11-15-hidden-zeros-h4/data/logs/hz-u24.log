@@ -1,0 +1,86 @@
+PROGRESS 0.02 reflection subgroups: 16 classes
+PROGRESS 0.03 + cyclic: 39
+PROGRESS 0.04 + quaternion families: 120
+PROGRESS 0.32 + rotation parts and -I: 140
+24-cell: 24 points, symmetry group order 1152
+PROGRESS 0.062 two-generated 9/192 chunks, 140 candidates, 0s
+PROGRESS 0.073 two-generated 18/192 chunks, 242 candidates, 1s
+PROGRESS 0.085 two-generated 27/192 chunks, 367 candidates, 1s
+PROGRESS 0.097 two-generated 36/192 chunks, 497 candidates, 2s
+PROGRESS 0.109 two-generated 45/192 chunks, 554 candidates, 2s
+PROGRESS 0.120 two-generated 54/192 chunks, 681 candidates, 2s
+PROGRESS 0.132 two-generated 63/192 chunks, 774 candidates, 3s
+PROGRESS 0.144 two-generated 72/192 chunks, 853 candidates, 3s
+PROGRESS 0.155 two-generated 81/192 chunks, 929 candidates, 4s
+PROGRESS 0.167 two-generated 90/192 chunks, 1071 candidates, 4s
+PROGRESS 0.179 two-generated 99/192 chunks, 1153 candidates, 4s
+PROGRESS 0.191 two-generated 108/192 chunks, 1259 candidates, 5s
+PROGRESS 0.202 two-generated 117/192 chunks, 1408 candidates, 5s
+PROGRESS 0.214 two-generated 126/192 chunks, 1578 candidates, 5s
+PROGRESS 0.226 two-generated 135/192 chunks, 1713 candidates, 6s
+PROGRESS 0.237 two-generated 144/192 chunks, 1846 candidates, 6s
+PROGRESS 0.249 two-generated 153/192 chunks, 2004 candidates, 7s
+PROGRESS 0.261 two-generated 162/192 chunks, 2132 candidates, 7s
+PROGRESS 0.273 two-generated 171/192 chunks, 2273 candidates, 7s
+PROGRESS 0.284 two-generated 180/192 chunks, 2419 candidates, 8s
+PROGRESS 0.296 two-generated 189/192 chunks, 2541 candidates, 8s
+PROGRESS 0.35 24-cell: N=24, 221 subgroup classes, ambient order 1152, galois=yes (81s)
+-I in the ambient group: True
+PROGRESS 0.350 sets from group 0/221: 2 distinct sets
+PROGRESS 0.357 sets from group 11/221: 20 distinct sets
+PROGRESS 0.365 sets from group 22/221: 44 distinct sets
+PROGRESS 0.372 sets from group 33/221: 68 distinct sets
+PROGRESS 0.380 sets from group 44/221: 80 distinct sets
+PROGRESS 0.387 sets from group 55/221: 92 distinct sets
+PROGRESS 0.395 sets from group 66/221: 94 distinct sets
+PROGRESS 0.402 sets from group 77/221: 100 distinct sets
+PROGRESS 0.410 sets from group 88/221: 100 distinct sets
+PROGRESS 0.417 sets from group 99/221: 100 distinct sets
+PROGRESS 0.425 sets from group 110/221: 107 distinct sets
+PROGRESS 0.432 sets from group 121/221: 107 distinct sets
+PROGRESS 0.440 sets from group 132/221: 107 distinct sets
+PROGRESS 0.447 sets from group 143/221: 107 distinct sets
+PROGRESS 0.455 sets from group 154/221: 116 distinct sets
+PROGRESS 0.462 sets from group 165/221: 117 distinct sets
+PROGRESS 0.469 sets from group 176/221: 117 distinct sets
+PROGRESS 0.477 sets from group 187/221: 118 distinct sets
+PROGRESS 0.484 sets from group 198/221: 118 distinct sets
+PROGRESS 0.492 sets from group 209/221: 118 distinct sets
+PROGRESS 0.499 sets from group 220/221: 118 distinct sets
+twisted: base group order 48, 35 subgroups
+twisted: 1837 candidate sets, 64 distinct twisted-class unions in the universe (up to its symmetry group)
+144 distinct sets (up to the ambient group)
+PROGRESS 0.500 sets analysed 0/144 (97s)
+PROGRESS 0.512 sets analysed 7/144 (97s)
+PROGRESS 0.524 sets analysed 14/144 (97s)
+PROGRESS 0.536 sets analysed 21/144 (97s)
+PROGRESS 0.549 sets analysed 28/144 (97s)
+PROGRESS 0.561 sets analysed 35/144 (97s)
+PROGRESS 0.573 sets analysed 42/144 (97s)
+PROGRESS 0.585 sets analysed 49/144 (97s)
+PROGRESS 0.597 sets analysed 56/144 (97s)
+PROGRESS 0.609 sets analysed 63/144 (97s)
+PROGRESS 0.622 sets analysed 70/144 (97s)
+PROGRESS 0.634 sets analysed 77/144 (97s)
+PROGRESS 0.646 sets analysed 84/144 (97s)
+PROGRESS 0.658 sets analysed 91/144 (97s)
+PROGRESS 0.670 sets analysed 98/144 (97s)
+PROGRESS 0.682 sets analysed 105/144 (97s)
+PROGRESS 0.694 sets analysed 112/144 (97s)
+PROGRESS 0.707 sets analysed 119/144 (97s)
+PROGRESS 0.719 sets analysed 126/144 (98s)
+PROGRESS 0.731 sets analysed 133/144 (98s)
+PROGRESS 0.743 sets analysed 140/144 (98s)
+twisted-class unions among the census sets: 64
+CHECK tone/kernel consistency on 144 sets: ok
+dim N_k = [23, 20, 15, 16, 13, 12, 14, 12, 12, 12, 13, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+PROGRESS 0.80 linkage done (98s)
+PROGRESS 0.809 degree 1: E dims (no sigma, sigma, N_k) = (20, 20, 20), 1 sets to explain
+PROGRESS 0.818 degree 2: E dims (no sigma, sigma, N_k) = (15, 15, 15), 9 sets to explain
+PROGRESS 0.827 degree 3: E dims (no sigma, sigma, N_k) = (16, 16, 16), 3 sets to explain
+PROGRESS 0.836 degree 4: E dims (no sigma, sigma, N_k) = (13, 13, 13), 1 sets to explain
+PROGRESS 0.890 degree 10: E dims (no sigma, sigma, N_k) = (13, 13, 13), 1 sets to explain
+24-cell: 144 sets, 0 with OPEN zeros; checks 13/13 ok
+  size 8 union stab 48 sym 48 zeros [1, 2] G [1] X [] ZONAL [] TW [2] SPAN [] GAL [] OPEN [] cond None gal-self True
+FINAL ok
+[exit 0]

@@ -52,7 +52,7 @@ def canon(Pa, S):
 # ---------------------------------------------------------------- per-universe analysis
 def analyse(uname, no_p2=False, procs=20):
     t0 = time.time()
-    X, A, lab, sig, U600, mats600, cat = build_h4(no_p2, procs)
+    X, A, lab, sig, U600, mats600, cat = build_h4(no_p2 or uname in ('U24', 'SNUB'), procs)   # 24-cell, snub: own catalogue below
     if uname == 'U600':
         U, Pa, gal = U600, A.P, sig
         amb_mats = mats600; extra_gens = []
@@ -81,6 +81,9 @@ def analyse(uname, no_p2=False, procs=20):
     N = U.N
     log(f'PROGRESS 0.35 {U.name}: N={N}, {len(cat.groups)} subgroup classes, ambient order {len(Pa)}, galois={"yes" if gal is not None else "no"} ({time.time()-t0:.0f}s)')
     chi = harm_char_table(amb_mats, KMAX, U.dim)               # per ambient element
+    mi = np.nonzero(np.abs(amb_mats + np.eye(amb_mats.shape[1])).max(axis=(1, 2)) < 1e-9)[0]
+    minus_perm = Pa[mi[0]] if len(mi) else None
+    log(f'-I in the ambient group: {minus_perm is not None}')
     dimG_all = np.rint(chi.mean(0)).astype(int).tolist()
     # ---- sets: orbits and unions of two orbits
     sets = {}
@@ -102,6 +105,25 @@ def analyse(uname, no_p2=False, procs=20):
                     add_set(np.concatenate([orbs[i], orbs[j]]), gi, 'union')
         if gi % max(1, len(cat.groups) // 20) == 0:
             log(f'PROGRESS {0.35 + 0.15 * gi / len(cat.groups):.3f} sets from group {gi}/{len(cat.groups)}: {len(sets)} distinct sets')
+    # every union of twisted classes (subgroups of 2I, or 2O for the 24-cell) is added as a set of its own
+    tw = {}
+    if uname in ('U600', 'SNUB', 'U24'):
+        from hz_twisted import build_twisted, hom_dim, intertwines, qmul
+        if uname == 'U24':
+            T2 = U.Xf; c = np.array([1, 1, 0, 0]) / 2 ** 0.5
+            base = np.vstack([T2, np.array([qmul(c, t) for t in T2])])
+            cinv = np.array([c[0], -c[1], -c[2], -c[3]])
+            def translate(pts):
+                in2T = lambda p: np.allclose(np.abs(p) * 2 % 1, 0, atol=1e-7)
+                if all(in2T(p) for p in pts): return pts
+                q = np.array([qmul(cinv, p) for p in pts])
+                return q if all(in2T(p) for p in q) else None
+        else:
+            base = U600.Xf; translate = None
+        tw = build_twisted(U.Xf, base, lambda S_: canon(Pa, S_), translate, right_translates=(uname != 'U600'), log=log)
+        for key, lst in tw.items():
+            if key not in sets:
+                sets[key] = {'key': key, 'size': len(lst[0]['idx']), 'rep': lst[0]['idx'], 'groups': [], 'kind': 'twisted'}
     log(f'{len(sets)} distinct sets (up to the ambient group)')
     # ---- per-set exact analysis
     recs = list(sets.values())
@@ -117,7 +139,7 @@ def analyse(uname, no_p2=False, procs=20):
         rest = [k for k in r['zeros'] if dS[k] != 0]
         r['X'] = []; r['sym_order'] = None
         if rest:
-            sp, sb = sym_perms(U.IM[np.ix_(S, S)], U.Xf[S], cap=300000)
+            sp, sb = sym_perms(U.IM[np.ix_(S, S)], U.Xf[S], cap=(20000 if uname == 'E8' else 300000))
             if sp is not None:
                 r['sym_order'] = int(len(sp))
                 M = float_mats(U.Xf[S], sp, sb)
@@ -127,11 +149,56 @@ def analyse(uname, no_p2=False, procs=20):
             else:
                 r['sym_order'] = '>300000'
         r['after_X'] = [k for k in rest if k not in r['X']]
+        # ZONAL: the stabiliser fixes exactly one axis e (the centroid direction), its only invariant harmonic of degree k is the zonal
+        # one about e, and all points lie on one latitude: then T_k = 0 <=> G_k(cos theta) = 0 (e.g. U_k(cos theta) = 0 at theta = j pi/(k+1)).
+        r['ZONAL'] = []
+        if r['after_X']:
+            Mst = amb_mats[stab]; Pf = Mst.mean(0); fixdim = int(round(np.trace(Pf)))
+            c = U.Xf[S].sum(0)
+            if fixdim == 1 and np.linalg.norm(c) > 1e-9:
+                cs = U.Xf[S] @ c / (np.linalg.norm(U.Xf[S], axis=1) * np.linalg.norm(c))
+                if np.ptp(cs) < 1e-9:
+                    r['latitude_deg'] = float(np.degrees(np.arccos(np.clip(cs[0], -1, 1))))
+                    r['ZONAL'] = [k for k in r['after_X'] if dS[k] == 1]
+            # the same test with the set's full symmetry group (it may exceed the stabiliser in Sym(P))
+            if r['after_X'] and r.get('dim_sym') and r.get('span_dim') == U.dim:
+                Pf2 = M.mean(0); fd2 = int(round(np.trace(Pf2)))
+                if fd2 == 1 and np.linalg.norm(c) > 1e-9:
+                    cs = U.Xf[S] @ c / (np.linalg.norm(U.Xf[S], axis=1) * np.linalg.norm(c))
+                    if np.ptp(cs) < 1e-9:
+                        r['latitude_deg'] = float(np.degrees(np.arccos(np.clip(cs[0], -1, 1))))
+                        r['ZONAL'] += [k for k in r['after_X'] if r['dim_sym'][k] == 1 and k not in r['ZONAL']]
+            r['after_X'] = [k for k in r['after_X'] if k not in r['ZONAL']]
         if gal is not None:
             gS = sorted(int(gal[i]) for i in S)
             r['galois_self'] = canon(Pa, np.array(gS)) == r['key']
         if ri % max(1, len(recs) // 20) == 0:
             log(f'PROGRESS {0.50 + 0.25 * ri / len(recs):.3f} sets analysed {ri}/{len(recs)} ({time.time()-t0:.0f}s)')
+    # ---- twisted silence (classes and unions of twisted classes of subgroups of 2I / 2O)
+    for r in recs: r['TW'] = []
+    if tw:
+        ntw = 0
+        for r in recs:
+            lst = tw.get(r['key'])
+            if not lst: continue
+            t = min(lst, key=lambda u: u['n_classes_used']); per = {}
+            for k in r['after_X']:
+                hd = hom_dim(t['Q'], t['S'], t['gens'], t['alpha'], k)
+                err, nrm = intertwines(t['Q'], t['sel'], t['gens'], t['alpha'], k)
+                per[k] = {'hom_dim': hd, 'intertwine_err': err, 'sum_norm': nrm,
+                          'type': 'forced (no alpha-stable constituent)' if hd == 0 else 'twisted character zero'}
+                if err > 1e-7 or nrm > 1e-7: CHECKS.append((f'twisted intertwining/zero at k={k} size {r["size"]}', False))
+            r['twisted'] = {'G_order': t['G_order'], 'alpha_inner': t['alpha_inner'], 'class_sizes': t['class_sizes'],
+                            'n_classes_used': t['n_classes_used'], 'degrees': per,
+                            'other_realisations': [(u['G_order'], u['alpha_inner'], u['class_sizes']) for u in lst[1:]]}
+            # explained: no alpha-stable constituent (forced), or a single twisted class with twisted character zero.
+            # A zero of a union of several classes that no single class has is a cancellation: kept OPEN, flagged TWU.
+            r['TW'] = [k for k in r['after_X'] if k in per and (per[k]['hom_dim'] == 0 or t['n_classes_used'] == 1)]
+            r['TWU'] = [k for k in r['after_X'] if k in per and k not in r['TW']]
+            r['after_X'] = [k for k in r['after_X'] if k not in r['TW']]
+            ntw += 1
+        CHECKS.append(('twisted intertwining identity and zero sums', all(c_[1] for c_ in CHECKS if c_[0].startswith('twisted'))))
+        log(f'twisted-class unions among the census sets: {ntw}')
     # ---- rational kernels N_k and explained spans E_k
     gram_mats = []
     for k in range(KMAX + 1):
@@ -214,8 +281,12 @@ def analyse(uname, no_p2=False, procs=20):
     wrong_fail = []
     for k in range(1, KMAX + 1):
         todo = [r for r in recs if k in r['after_X']]
-        gens = [np.isin(np.arange(N), r['rep']).astype(int) for r in recs if k in r['G'] or k in r['X']]
+        gens = [np.isin(np.arange(N), r['rep']).astype(int) for r in recs if k in r['G'] or k in r['X'] or k in r['ZONAL'] or k in r['TW']]
         if dimG_all[k] == 0: gens.append(np.ones(N, int))
+        if minus_perm is not None:          # parity: S and -S have equal even tones and opposite odd harmonic parts
+            for x in range(N):
+                v = np.zeros(N, int); v[x] += 1; v[minus_perm[x]] += -1 if k % 2 == 0 else 1
+                if v.any(): gens.append(v)
         if not todo:
             expl_dim[k] = None; continue
         rows0, rk0 = close_span(gens, False)
@@ -279,6 +350,6 @@ if __name__ == '__main__':
         nopen = sum(1 for s in out['sets'] if s['OPEN'])
         log(f'{out["universe"]}: {len(out["sets"])} sets, {nopen} with OPEN zeros; checks {sum(c[1] for c in CHECKS)}/{len(CHECKS)} ok')
         for s in out['sets']:
-            if s['OPEN'] or s['GAL']:
-                log(f'  size {s["size"]} {s["kind"]} stab {s["stab_order"]} sym {s["sym_order"]} zeros {s["zeros"]} G {s["G"]} X {s["X"]} SPAN {s["SPAN"]} GAL {s["GAL"]} OPEN {s["OPEN"]} cond {s.get("conditions")} gal-self {s.get("galois_self")}')
+            if s['OPEN'] or s['GAL'] or s['TW']:
+                log(f'  size {s["size"]} {s["kind"]} stab {s["stab_order"]} sym {s["sym_order"]} zeros {s["zeros"]} G {s["G"]} X {s["X"]} ZONAL {s["ZONAL"]} TW {s["TW"]} SPAN {s["SPAN"]} GAL {s["GAL"]} OPEN {s["OPEN"]} cond {s.get("conditions")} gal-self {s.get("galois_self")}')
         print('FINAL ok' if all(c[1] for c in CHECKS) else 'FINAL FAIL (a check failed: ' + '; '.join(c[0] for c in CHECKS if not c[1]) + ')')

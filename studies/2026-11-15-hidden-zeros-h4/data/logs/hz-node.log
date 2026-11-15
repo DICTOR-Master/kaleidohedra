@@ -1,0 +1,131 @@
+PROGRESS 0.02 reflection subgroups: 16 classes
+PROGRESS 0.03 + cyclic: 39
+PROGRESS 0.04 + quaternion families: 120
+PROGRESS 0.32 + rotation parts and -I: 140
+snub 24-cell: 96 points, symmetry group order 576
+PROGRESS 0.061 two-generated 8/176 chunks, 80 candidates, 0s
+PROGRESS 0.073 two-generated 16/176 chunks, 152 candidates, 0s
+PROGRESS 0.084 two-generated 24/176 chunks, 246 candidates, 0s
+PROGRESS 0.095 two-generated 32/176 chunks, 315 candidates, 1s
+PROGRESS 0.107 two-generated 40/176 chunks, 375 candidates, 1s
+PROGRESS 0.118 two-generated 48/176 chunks, 404 candidates, 1s
+PROGRESS 0.130 two-generated 56/176 chunks, 436 candidates, 1s
+PROGRESS 0.141 two-generated 64/176 chunks, 487 candidates, 1s
+PROGRESS 0.152 two-generated 72/176 chunks, 553 candidates, 1s
+PROGRESS 0.164 two-generated 80/176 chunks, 576 candidates, 1s
+PROGRESS 0.175 two-generated 88/176 chunks, 605 candidates, 1s
+PROGRESS 0.186 two-generated 96/176 chunks, 659 candidates, 2s
+PROGRESS 0.198 two-generated 104/176 chunks, 719 candidates, 2s
+PROGRESS 0.209 two-generated 112/176 chunks, 779 candidates, 2s
+PROGRESS 0.220 two-generated 120/176 chunks, 847 candidates, 2s
+PROGRESS 0.232 two-generated 128/176 chunks, 919 candidates, 2s
+PROGRESS 0.243 two-generated 136/176 chunks, 987 candidates, 2s
+PROGRESS 0.255 two-generated 144/176 chunks, 1057 candidates, 2s
+PROGRESS 0.266 two-generated 152/176 chunks, 1153 candidates, 2s
+PROGRESS 0.277 two-generated 160/176 chunks, 1231 candidates, 2s
+PROGRESS 0.289 two-generated 168/176 chunks, 1307 candidates, 2s
+PROGRESS 0.300 two-generated 176/176 chunks, 1381 candidates, 2s
+PROGRESS 0.35 snub 24-cell: N=96, 71 subgroup classes, ambient order 576, galois=yes (66s)
+-I in the ambient group: True
+PROGRESS 0.350 sets from group 0/71: 4 distinct sets
+PROGRESS 0.356 sets from group 3/71: 17 distinct sets
+PROGRESS 0.363 sets from group 6/71: 20 distinct sets
+PROGRESS 0.369 sets from group 9/71: 30 distinct sets
+PROGRESS 0.375 sets from group 12/71: 51 distinct sets
+PROGRESS 0.382 sets from group 15/71: 71 distinct sets
+PROGRESS 0.388 sets from group 18/71: 77 distinct sets
+PROGRESS 0.394 sets from group 21/71: 94 distinct sets
+PROGRESS 0.401 sets from group 24/71: 112 distinct sets
+PROGRESS 0.407 sets from group 27/71: 139 distinct sets
+PROGRESS 0.413 sets from group 30/71: 152 distinct sets
+PROGRESS 0.420 sets from group 33/71: 156 distinct sets
+PROGRESS 0.426 sets from group 36/71: 162 distinct sets
+PROGRESS 0.432 sets from group 39/71: 172 distinct sets
+PROGRESS 0.439 sets from group 42/71: 174 distinct sets
+PROGRESS 0.445 sets from group 45/71: 178 distinct sets
+PROGRESS 0.451 sets from group 48/71: 180 distinct sets
+PROGRESS 0.458 sets from group 51/71: 180 distinct sets
+PROGRESS 0.464 sets from group 54/71: 189 distinct sets
+PROGRESS 0.470 sets from group 57/71: 195 distinct sets
+PROGRESS 0.477 sets from group 60/71: 200 distinct sets
+PROGRESS 0.483 sets from group 63/71: 200 distinct sets
+PROGRESS 0.489 sets from group 66/71: 200 distinct sets
+PROGRESS 0.496 sets from group 69/71: 200 distinct sets
+twisted: base group order 120, 76 subgroups
+twisted: 2124 candidate sets, 78 distinct twisted-class unions in the universe (up to its symmetry group)
+257 distinct sets (up to the ambient group)
+PROGRESS 0.500 sets analysed 0/257 (97s)
+PROGRESS 0.512 sets analysed 12/257 (97s)
+PROGRESS 0.523 sets analysed 24/257 (97s)
+PROGRESS 0.535 sets analysed 36/257 (97s)
+PROGRESS 0.547 sets analysed 48/257 (97s)
+PROGRESS 0.558 sets analysed 60/257 (97s)
+PROGRESS 0.570 sets analysed 72/257 (97s)
+PROGRESS 0.582 sets analysed 84/257 (97s)
+PROGRESS 0.593 sets analysed 96/257 (97s)
+PROGRESS 0.605 sets analysed 108/257 (98s)
+PROGRESS 0.617 sets analysed 120/257 (98s)
+PROGRESS 0.628 sets analysed 132/257 (98s)
+PROGRESS 0.640 sets analysed 144/257 (98s)
+PROGRESS 0.652 sets analysed 156/257 (98s)
+PROGRESS 0.663 sets analysed 168/257 (98s)
+PROGRESS 0.675 sets analysed 180/257 (98s)
+PROGRESS 0.687 sets analysed 192/257 (98s)
+PROGRESS 0.698 sets analysed 204/257 (98s)
+PROGRESS 0.710 sets analysed 216/257 (98s)
+PROGRESS 0.722 sets analysed 228/257 (98s)
+PROGRESS 0.733 sets analysed 240/257 (98s)
+PROGRESS 0.745 sets analysed 252/257 (98s)
+twisted-class unions among the census sets: 78
+CHECK tone/kernel consistency on 257 sets: ok
+dim N_k = [95, 88, 78, 80, 73, 60, 62, 56, 57, 52, 55, 48, 48, 48, 48, 52, 48, 48, 48, 48, 48]
+PROGRESS 0.80 linkage done (270s)
+PROGRESS 0.818 degree 2: E dims (no sigma, sigma, N_k) = (78, 78, 78), 3 sets to explain
+PROGRESS 0.827 degree 3: E dims (no sigma, sigma, N_k) = (80, 80, 80), 3 sets to explain
+PROGRESS 0.836 degree 4: E dims (no sigma, sigma, N_k) = (73, 73, 73), 17 sets to explain
+PROGRESS 0.845 degree 5: E dims (no sigma, sigma, N_k) = (56, 56, 60), 1 sets to explain
+PROGRESS 0.881 degree 9: E dims (no sigma, sigma, N_k) = (48, 48, 52), 1 sets to explain
+PROGRESS 0.890 degree 10: E dims (no sigma, sigma, N_k) = (55, 55, 55), 1 sets to explain
+PROGRESS 0.935 degree 15: E dims (no sigma, sigma, N_k) = (48, 48, 52), 1 sets to explain
+snub 24-cell: 257 sets, 1 with OPEN zeros; checks 17/17 ok
+  size 12 orbit stab 24 sym 120 zeros [4] G [] X [] ZONAL [] TW [4] SPAN [] GAL [] OPEN [] cond None gal-self False
+  size 12 orbit stab 24 sym 120 zeros [4] G [] X [] ZONAL [] TW [4] SPAN [] GAL [] OPEN [] cond None gal-self False
+  size 24 union stab 24 sym 120 zeros [3, 4, 5, 9, 15] G [] X [] ZONAL [] TW [] SPAN [3, 4] GAL [] OPEN [5, 9, 15] cond 2 gal-self True
+  size 6 twisted stab 6 sym 48 zeros [3] G [] X [] ZONAL [] TW [3] SPAN [] GAL [] OPEN [] cond None gal-self True
+  size 20 twisted stab 24 sym 120 zeros [1, 2, 5, 7] G [] X [1, 2] ZONAL [] TW [5, 7] SPAN [] GAL [] OPEN [] cond None gal-self True
+FINAL ok
+A5 (twisted diagonal of 2I): 60 elements
+A5-orbit sizes on the 120-cell: [5, 5, 20, 20, 20, 20, 30, 60, 60, 60, 60, 60, 60, 60, 60]
+dim of A5-invariant harmonics, k = 0..20: [1, 0, 0, 1, 1, 1, 1, 1, 2, 2, 3, 2, 3, 4, 4, 5, 5, 5, 7, 7, 8]
+normaliser of A5 in H4: order 240
+orbits killing degree 4: [(1, 60), (5, 60), (7, 60), (10, 60)]
+orbit  0 size  20 stab  120 zeros [1, 2] c4 = 46-6*sqrt5 (~32.5836) sigma -> orbit 12
+orbit  1 size  60 stab   60 zeros [1, 2, 4] c4 = 0 (~0.0000) sigma -> orbit 5
+orbit  2 size   5 stab  120 zeros [1, 2] c4 = 5/2-15/2*sqrt5 (~-14.2705) sigma -> orbit 2
+orbit  3 size  20 stab  120 zeros [1, 2] c4 = -44 (~-44.0000) sigma -> orbit 14
+orbit  4 size  60 stab  120 zeros [1, 2] c4 = 12-36*sqrt5 (~-68.4984) sigma -> orbit 6
+orbit  5 size  60 stab   60 zeros [1, 2, 4] c4 = 0 (~0.0000) sigma -> orbit 1
+orbit  6 size  60 stab  120 zeros [1, 2] c4 = 12-36*sqrt5 (~-68.4984) sigma -> orbit 4
+orbit  7 size  60 stab   60 zeros [1, 2, 4] c4 = 0 (~0.0000) sigma -> orbit 10
+orbit  8 size  60 stab  120 zeros [1, 2] c4 = -12+36*sqrt5 (~68.4984) sigma -> orbit 8
+orbit  9 size  30 stab  240 zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19] c4 = -9+27*sqrt5 (~51.3738) sigma -> orbit 9
+orbit 10 size  60 stab   60 zeros [1, 2, 4] c4 = 0 (~0.0000) sigma -> orbit 7
+orbit 11 size   5 stab  120 zeros [1, 2] c4 = 5/2-15/2*sqrt5 (~-14.2705) sigma -> orbit 11
+orbit 12 size  20 stab  120 zeros [1, 2] c4 = -44 (~-44.0000) sigma -> orbit 0
+orbit 13 size  60 stab  120 zeros [1, 2] c4 = -12+36*sqrt5 (~68.4984) sigma -> orbit 13
+orbit 14 size  20 stab  120 zeros [1, 2] c4 = 46-6*sqrt5 (~32.5836) sigma -> orbit 3
+normaliser cosets: 3 distinct (orbit permutation, sign on f4, det) patterns
+  det -1 sign +1 on f4; orbit permutation (0, 5, 2, 3, 4, 1, 6, 10, 8, 9, 7, 11, 12, 13, 14); zero orbits fixed: []
+  det -1 sign +1 on f4; orbit permutation (14, 7, 11, 12, 6, 10, 4, 1, 13, 9, 5, 2, 3, 8, 0); zero orbits fixed: []
+  det +1 sign +1 on f4; orbit permutation (14, 10, 11, 12, 6, 7, 4, 5, 13, 9, 1, 2, 3, 8, 0); zero orbits fixed: []
+Double Vision maps g.sigma normalising A5: 4 distinct orbit permutations
+  orbit permutation (3, 7, 11, 0, 4, 10, 6, 1, 13, 9, 5, 2, 14, 8, 12); zero orbits fixed: []
+  orbit permutation (3, 10, 11, 0, 4, 7, 6, 5, 13, 9, 1, 2, 14, 8, 12); zero orbits fixed: []
+  orbit permutation (12, 1, 2, 14, 6, 5, 4, 7, 8, 9, 10, 11, 0, 13, 3); zero orbits fixed: [1, 5, 7, 10]
+  orbit permutation (12, 5, 2, 14, 6, 1, 4, 10, 8, 9, 7, 11, 0, 13, 3); zero orbits fixed: []
+orbit 1: group generated by s0^-1 O has order >400 (infinite or large)
+orbit 5: group generated by s0^-1 O has order >400 (infinite or large)
+orbit 7: group generated by s0^-1 O has order >400 (infinite or large)
+orbit 10: group generated by s0^-1 O has order >400 (infinite or large)
+FINAL ok
+[exit 0]
