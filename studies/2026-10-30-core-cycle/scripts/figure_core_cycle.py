@@ -31,7 +31,7 @@ def order(V, ids, n):
     c = V[ids].mean(0); u = V[ids[0]] - c; w = np.cross(n, u); return [i for _, i in sorted((np.arctan2((V[i] - c) @ w, (V[i] - c) @ u), i) for i in ids)]
 def shade(col, n): return np.clip(np.array(mc.to_rgb(col)) * (0.35 + 0.65 * max(0, n @ L)), 0, 1)
 TEAL = '#2bb3a3'
-panels = [(P, 'TI'), (C, 'its core\n(icosahedron truncated at 1/φ³)'), (P2, 'the core of the core\'s turn:\nTI again')]
+panels = [(P, 'TI'), (C, 'its core\n(icosahedron truncated at (10 − √5)/19)'), (P2, 'the core of the core\'s turn:\nTI again')]
 fig = plt.figure(figsize=(12, 4.4), facecolor=BG)
 for k, (Q, name) in enumerate(panels):
     V, F = facelist(Q); V = V / np.linalg.norm(V, axis=1).max()
