@@ -172,3 +172,84 @@ The x = 209 slice runs along the ommatidia: the facet lenses down the left edge,
 The depth axis is RADIAL (curved), not a grid axis, so the trace must follow each ommatidium along its own direction.
 Next: a sub-block at 1200_1200_600 around the arc's middle; segment the cone and rhabdom cross-sections at successive radii and count
 neighbour changes with depth (the scutoid test of the prediction stated before the data).
+
+## 16 Nov: depth trace on the butterfly volume (ledger [270], [271])
+
+**Conclusion: UNDECIDED.** In the cone layer, 10 of about 1330 neighbour pairs change over 35-100 µm depth (0.75%), against
+4.2 ± 2.1 from position noise alone (image null). That is a weak excess, and it sits where the cone lattice ends. In the retina,
+an apparent 8.0% of pairs change per 20 µm (206 of about 2560, null 96 ± 10), but inspection shows that most of these are long
+edges across ommatidia the segmentation missed, so they are not trusted. Neither layer follows cornea curvature: Spearman
+ρ = 0.00 (p = 0.99, 17 patches). This eye is nearly spherical, and its clear zone breaks the trace between cones and retina.
+**No scutoid-like neighbour change is established, and the curvature prediction is neither confirmed nor refuted by this eye.**
+
+Data: Paukner et al. 2024, BossDB collection paukner2024, experiment butterfly_retina_xray_grp02_gw05, channel
+032019_DP_full_vol. Scale 600_600_600 (1676 × 2264 × 1004 voxels, 0.6 µm; 6 absent chunks in z 1000-1003 were left as
+background). No licence is stated, so the volumes stay on the compute machine, outside git, and are not redistributed. Only
+derived counts (data/eyetrace-summary.json) and two small, low-resolution figures are kept here. Scripts: scripts/eyeshells.py,
+eyetrace.py, eyerun.py, eyesum.py, eyefig.py. Jobs eye-fetch600, eye-fetch600full (first run failed on an absent chunk: fixed,
+rerun FINAL ok) and eye-trace (FINAL ok, 714 s).
+
+### What the volume shows
+- Cornea: fitted sphere R = 660 µm (rms 4.4 µm). A free quadric gives semi-axes within 3% of each other. In 17 patch tiles
+  (0.2 × 0.2 rad), local principal radii have medians of 571 and 669 µm and the unevenness U = (k1 − k2)/(k1 + k2) has a median of
+  0.11 (IQR 0.05-0.16). This is a near-spherical eye, not the strongly uneven case the prediction is about.
+- Layers along the radius: lens and cone (0-40 µm), pigmented band (40-130 µm), a structureless band 130-280 µm (as a clear zone),
+  then the retina (about 300-460 µm) with columns that run 11-24° off the sphere radius and bend by about 25° (structure tensor).
+  No column could be followed through the 130-280 µm band, so cone and retina could not be paired one to one.
+- Retina cross-sections: the bright dots (about 5 µm apart) form a honeycomb at the corners between ommatidia. The ommatidial
+  lattice (about 9 µm, the count expected from the facets) is the set of dark centres. The cone layer is a clean lattice of bright discs.
+
+### Method (as run)
+Cone layer: concentric shells about the fitted sphere, at 1 µm steps from 10 to 130 µm. Each patch is 400 × 400 px at 1 mrad per px.
+The depth window is chosen automatically where detections persist (median 34-97 µm). Retina: planes perpendicular to the
+locally measured column direction (re-measured every 10 µm), stepped along it from 300 µm below the cornea for 180 µm
+(500 × 500 px at 0.3 µm per px), in 20 µm segments; ommatidia are the dark centres of a band-pass image. Every shell or plane:
+local maxima, watershed regions, weighted centroids. Tracks: predictive Hungarian linking, gaps of up to 3 shells, kept only if
+linking bottom-up reproduces them (≥ 95%) and they never jump (< 0.25 period). Neighbour graph: Delaunay of ALL detections in the
+shell (so every counted pair is a true lattice neighbour), counted only between trusted interior cells. A change is a pair present
+at the top (majority of 5 shells) and absent at the bottom. Nulls: (1) image null, where straight columns at the measured top
+positions plus every other detected cell are rendered with per-shell jitter calibrated to the measured centroid noise and run
+through the same pipeline (10 seeds); (2) a bootstrap of the measured residual series. The patches are 0.2 rad apart and overlap,
+so each cell and each change is counted once, in the patch tile that contains its direction from the eye centre.
+
+### Controls (all through the image pipeline)
+| control | result | expected |
+|---|---|---|
+| straight-column lattice | 0 of 120 pairs | 0 |
+| lattice compressed across rows to A = 2 (past √3) | 28 of 86 (33%) | about 1/3 |
+| jittered, disordered lattice (5 seeds, 0.05 period) | 3 lost vs image null 5.6 ± 3.0 | null rate |
+| same, 0.12 period | 2 lost vs 7.8 ± 2.8 | null rate (the null errs high: conservative) |
+
+### Results (tile-partitioned, smoothed tracks)
+| layer | patches | cells / pairs | changed pairs | image null | bootstrap null | README model (table B) |
+|---|---|---|---|---|---|---|
+| cone (35-100 µm) | 19 | 574 / 1328 | 10 (0.75%) | 4.2 ± 2.1 | 1.4 ± 1.2 | 12.2 |
+| retina, 90 segments of 20 µm | 19 | 19 per segment, 46% of detections tracked / 2563 | 206 (8.0%) | 96 ± 10 | 14 ± 4 | 50 |
+
+Retina by depth below the cornea (changed / pairs, null): 300-340 µm 38/468 (28.7); 340-380 94/1200 (37.3); 380-420 57/725
+(23.8); 420-460 17/169 (6.5). Against curvature: the more uneven half of the tiles has 103 changes against a null of 46, and the
+more even half has 89 against 45. Spearman ρ of the retina excess with U is 0.00 (p 0.99), with convergence anisotropy A −0.20
+(p 0.44), and with column bend +0.40 (p 0.12), n = 17.
+
+**Inspection, which decides the reading.** Close-ups of the lost retina pairs (strongest segment: 33 of 149) show cells 1.5-2
+lattice periods apart with undetected ommatidia between them. These are near-tied long Delaunay edges across detection gaps
+(only 46% of detections are tracked), which the synthetic null does not reproduce, so the retina excess is a segmentation
+effect until shown otherwise. The 26 cone-layer events (before tiling) are true neighbour pairs (length 0.9-1.1 period), but most
+lie at the bottom of the window, where the cone lattice turns into pigment texture, and the clean ones are near-square rhombi.
+Touching-region (watershed) adjacency changes much more often (cone 156/1221), because contacts at triple points flicker, so it
+was not used for the verdict.
+
+Figures (DICTO mark; low resolution): figures/eye-crosssection.png (cone shell and a retina segment, top and bottom, with the
+neighbour graph; red = pairs that part) and figures/eye-swapmap.png (counted cells and changes on the eye surface, tiles shaded by U).
+
+### LEADS
+1. Retina segmentation: track the bright honeycomb corners (twice as many, well resolved) and take each ommatidium as the
+   hexagon they ring; or use a 3D watershed on the band-pass volume. Aim for over 90% of cells tracked before counting.
+2. Validate the retina reading on the volume-EM wasp eye (Makarova et al. 2025), where every cell is segmented: are retinula
+   bundles' neighbour sets constant from cone tip to basement membrane?
+3. Test the prediction where it applies: an apposition eye (no clear zone) with strongly uneven curvature. Check the other six
+   Paukner eyes for species, clear zone and quadric anisotropy first (from their 2400 nm levels, a few minutes each).
+4. Cone layer: extend the window into the cone tips, using the pigment-cell ring as the marker, to see whether the 10 changes
+   persist or are end effects.
+5. Measure the axis anisotropy A directly from cone tracks (the README's Δφ tensor). A median of 1.10 in the cone layer means
+   the model expects few changes; compare per patch once the retina is trusted.

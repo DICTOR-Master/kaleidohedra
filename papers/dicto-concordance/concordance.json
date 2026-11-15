@@ -8150,6 +8150,25 @@
     "retry": "never (exact); only to add the optional heart/non-heart side-by-side panel",
     "study": "studies/2026-11-16-non-heart-vacuus",
     "goes_to": "Silent Running: Twisted Silence (figures); #105 next version (Vacuus for any polytope with a centre, heart and non-heart kinds)"
+   },
+   {
+    "date": "2026-11-16",
+    "question": "Compound-eye scutoids, depth trace on a real eye (DICTO approved 16 Nov): methods tried on the butterfly X-ray volume (Paukner et al. 2024, BossDB paukner2024 gw05, 600 nm), including the ones that failed",
+    "method": "studies/2026-11-16-compound-eye-scutoids: eyeshells.py, eyetrace.py; pilots on the compute machine (each 5 min or less)",
+    "status": "METHOD-FAILED (three retina methods); method kept for the cone layer",
+    "result": "(1) radial shells about the cornea sphere: work for the cone layer (clean bright-disc lattice), fail for the retina (columns run 11-24 deg off the radius and bend about 25 deg; cells persist 10-20 um in a shell). (2) Planes perpendicular to the locally measured column direction (structure tensor): retina columns become continuous. (3) Bright retina dots are the honeycomb corners between ommatidia (spacing a/sqrt3), not ommatidia; tracking them gave a sparse subset whose Delaunay 'neighbours' spanned several cells. (4) Dark centres by band-pass: about 250 per plane, but under 55% of cells followable even over 20 um. (5) Graph built only from tracked cells: false long edges; replaced by the Delaunay of all detections, counted only between trusted cells. (6) Null: Gaussian and bootstrap position nulls understated a heavy-jitter control (10 vs 4); image-level null (rendered straight columns + calibrated jitter + all cells) adopted. (7) The overlapping patch grid would count cells several times; tile partition adopted",
+    "retry": "retina only with a segmentation tracking over 90% of cells (honeycomb-corner rings or 3D watershed), or on volume-EM data",
+    "study": "studies/2026-11-16-compound-eye-scutoids"
+   },
+   {
+    "date": "2026-11-16",
+    "question": "Compound-eye scutoids: do ommatidia of a real butterfly eye (gw05) change neighbours along depth more than position noise gives, and do the changes sit where the cornea curvature is uneven?",
+    "method": "eyerun.py (job eye-trace, FINAL ok, 714 s): 19 usable patches on a 6x6 grid 0.2 rad apart, tile-partitioned; cone layer on shells (window about 34-97 um), retina on column-following planes in 90 segments of 20 um (300-460 um); predictive Hungarian tracks with forward-backward and no-jump trust; Delaunay of all detections; image null (10 seeds) + bootstrap null; local quadric curvature of the cornea per tile; controls straight 0/120, shear past sqrt3 28/86, jittered lattices at or below their null (3 vs 5.6+-3.0; 2 vs 7.8+-2.8); figures inspected",
+    "status": "UNDECIDED",
+    "result": "cone layer: 10 of 1328 neighbour pairs change (0.75%) vs image null 4.2+-2.1 (weak; events at the window bottom where cones end, or near-square rhombi). Retina: 206 of 2563 (8.0%) vs null 96+-10, but inspection shows long edges across missed ommatidia (46% of detections tracked): segmentation effect, not trusted. No relation to cornea unevenness U (median 0.11; Spearman rho 0.00, p 0.99, n 17) or convergence anisotropy (rho -0.20, p 0.44). The eye is near-spherical (quadric semi-axes within 3%) and has a clear zone (130-280 um) that breaks the cone-retina trace. No scutoid-like neighbour change established; the prediction is neither confirmed nor refuted by this eye",
+    "retry": "only with: better retina segmentation (over 90% tracked), an apposition eye with strongly uneven curvature (check the other six Paukner eyes at 2400 nm first), or the volume-EM wasp eye",
+    "study": "studies/2026-11-16-compound-eye-scutoids",
+    "goes_to": "#104 scutoid thread (biology prediction)"
    }
   ]
  },
