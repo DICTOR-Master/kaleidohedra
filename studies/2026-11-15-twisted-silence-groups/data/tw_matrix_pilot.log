@@ -1,0 +1,36 @@
+CHECK OK   2I has 120 elements
+CHECK OK   sigma (Galois, then i->-i, j<->k) is an automorphism of 2I
+== W(H3): 120 elements, points on S^8
+CHECK OK   W(H3) id: automorphism
+   twist id: changes the character (outer, Galois-type): False
+CHECK OK   W(H3) id: invariant-harmonic dimensions are integers
+   forced (no invariant harmonic) k<=12: []; dims k=1..12: [1, 2, 5, 10, 21, 50, 92, 172, 310, 530, 867, 1398]
+SIG W(H3) id |O|=12 kills<=12=[] UNFORCED=[]
+SIG W(H3) id |O|=12 kills<=12=[] UNFORCED=[]
+SIG W(H3) id |O|=1 kills<=12=[] UNFORCED=[]
+SIG W(H3) id |O|=20 kills<=12=[1] UNFORCED=[1]
+SIG W(H3) id |O|=15 kills<=12=[] UNFORCED=[]
+SIG W(H3) id |O|=12 kills<=12=[] UNFORCED=[]
+SIG W(H3) id |O|=12 kills<=12=[] UNFORCED=[]
+SIG W(H3) id |O|=1 kills<=12=[] UNFORCED=[]
+SIG W(H3) id |O|=20 kills<=12=[1] UNFORCED=[1]
+SIG W(H3) id |O|=15 kills<=12=[] UNFORCED=[]
+   id: 10 twisted classes
+CHECK OK   W(H3) galois: automorphism
+   twist galois: changes the character (outer, Galois-type): True
+CHECK OK   W(H3) galois: invariant-harmonic dimensions are integers
+   forced (no invariant harmonic) k<=12: [1]; dims k=1..12: [0, 1, 5, 10, 21, 48, 90, 172, 310, 530, 864, 1395]
+SIG W(H3) galois |O|=20 kills<=12=[1] UNFORCED=[]
+SIG W(H3) galois |O|=30 kills<=12=[1] UNFORCED=[]
+SIG W(H3) galois |O|=10 kills<=12=[1] UNFORCED=[]
+SIG W(H3) galois |O|=20 kills<=12=[1] UNFORCED=[]
+SIG W(H3) galois |O|=30 kills<=12=[1] UNFORCED=[]
+SIG W(H3) galois |O|=10 kills<=12=[1] UNFORCED=[]
+   galois: 6 twisted classes
+CHECK OK   W(H3) WRONG(sign twist): not an automorphism (control)
+PROGRESS 0.20 H3 done
+TABLE unforced silences in matrix spheres (group, twist, size, killed, unforced)
+   ('W(H3)', 'id', 20, [1], [1])
+   ('W(H3)', 'id', 20, [1], [1])
+checks failed: 0
+FINAL ok

@@ -1,0 +1,252 @@
+CHECK OK   2I has 120 elements
+CHECK OK   sigma (Galois, then i->-i, j<->k) is an automorphism of 2I
+== W(H3): 120 elements, points on S^8
+CHECK OK   W(H3) id: automorphism
+   twist id: changes the character (outer, Galois-type): False
+CHECK OK   W(H3) id: invariant-harmonic dimensions are integers
+   forced (no invariant harmonic) k<=30: []; dims k=1..12: [1, 2, 5, 10, 21, 50, 92, 172, 310, 530, 867, 1398]
+SIG W(H3) id |O|=12 kills<=30=[] UNFORCED=[]
+SIG W(H3) id |O|=12 kills<=30=[] UNFORCED=[]
+SIG W(H3) id |O|=1 kills<=30=[] UNFORCED=[]
+SIG W(H3) id |O|=20 kills<=30=[1] UNFORCED=[1]
+SIG W(H3) id |O|=15 kills<=30=[] UNFORCED=[]
+SIG W(H3) id |O|=12 kills<=30=[] UNFORCED=[]
+SIG W(H3) id |O|=12 kills<=30=[] UNFORCED=[]
+SIG W(H3) id |O|=1 kills<=30=[] UNFORCED=[]
+SIG W(H3) id |O|=20 kills<=30=[1] UNFORCED=[1]
+SIG W(H3) id |O|=15 kills<=30=[] UNFORCED=[]
+   id: 10 twisted classes
+CHECK OK   W(H3) galois: automorphism
+   twist galois: changes the character (outer, Galois-type): True
+CHECK OK   W(H3) galois: invariant-harmonic dimensions are integers
+   forced (no invariant harmonic) k<=30: [1]; dims k=1..12: [0, 1, 5, 10, 21, 48, 90, 172, 310, 530, 864, 1395]
+SIG W(H3) galois |O|=20 kills<=30=[1] UNFORCED=[]
+SIG W(H3) galois |O|=30 kills<=30=[1] UNFORCED=[]
+SIG W(H3) galois |O|=10 kills<=30=[1] UNFORCED=[]
+SIG W(H3) galois |O|=20 kills<=30=[1] UNFORCED=[]
+SIG W(H3) galois |O|=30 kills<=30=[1] UNFORCED=[]
+SIG W(H3) galois |O|=10 kills<=30=[1] UNFORCED=[]
+   galois: 6 twisted classes
+CHECK OK   W(H3) WRONG(sign twist): not an automorphism (control)
+PROGRESS 0.20 H3 done
+CHECK OK   W+(H4) has 7200 elements (7200)
+== W+(H4): 7200 elements, points on S^15
+CHECK OK   W+(H4) id: automorphism
+   twist id: changes the character (outer, Galois-type): False
+CHECK OK   W+(H4) id: invariant-harmonic dimensions are integers
+   forced (no invariant harmonic) k<=30: []; dims k=1..12: [1, 3, 5, 12, 17, 45, 79, 192, 401, 929, 1950, 4232]
+SIG W+(H4) id |O|=144 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=144 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=144 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=144 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=12 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=240 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=360 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) id |O|=12 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=240 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=144 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=144 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=144 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=144 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=12 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=240 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=360 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) id |O|=12 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=240 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=12 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=12 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=12 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=12 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=1 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=20 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=30 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) id |O|=1 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=20 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=240 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=240 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=240 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=240 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=20 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=400 kills<=30=[2] UNFORCED=[2]
+SIG W+(H4) id |O|=600 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) id |O|=20 kills<=30=[] UNFORCED=[]
+SIG W+(H4) id |O|=400 kills<=30=[2] UNFORCED=[2]
+SIG W+(H4) id |O|=360 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) id |O|=360 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) id |O|=30 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) id |O|=600 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) id |O|=450 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+   id: 41 twisted classes
+CHECK OK   W+(H4) galois both: automorphism
+   twist galois both: changes the character (outer, Galois-type): True
+CHECK OK   W+(H4) galois both: invariant-harmonic dimensions are integers
+   forced (no invariant harmonic) k<=30: [1, 2]; dims k=1..12: [0, 0, 1, 5, 6, 23, 47, 140, 325, 819, 1794, 4010]
+SIG W+(H4) galois both |O|=400 kills<=30=[1, 2] UNFORCED=[]
+SIG W+(H4) galois both |O|=400 kills<=30=[1, 2] UNFORCED=[]
+SIG W+(H4) galois both |O|=600 kills<=30=[1, 2, 3] UNFORCED=[3]
+SIG W+(H4) galois both |O|=600 kills<=30=[1, 2, 3] UNFORCED=[3]
+SIG W+(H4) galois both |O|=400 kills<=30=[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) galois both |O|=600 kills<=30=[1, 2, 3] UNFORCED=[3]
+SIG W+(H4) galois both |O|=600 kills<=30=[1, 2, 3] UNFORCED=[3]
+SIG W+(H4) galois both |O|=900 kills<=30=[1, 2, 3] UNFORCED=[3]
+SIG W+(H4) galois both |O|=900 kills<=30=[1, 2, 3] UNFORCED=[3]
+SIG W+(H4) galois both |O|=600 kills<=30=[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) galois both |O|=400 kills<=30=[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) galois both |O|=600 kills<=30=[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) galois both |O|=200 kills<=30=[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+   galois both: 13 twisted classes
+CHECK OK   W+(H4) galois left only: automorphism
+   twist galois left only: changes the character (outer, Galois-type): True
+CHECK OK   W+(H4) galois left only: invariant-harmonic dimensions are integers
+   forced (no invariant harmonic) k<=30: [1]; dims k=1..12: [0, 1, 2, 7, 10, 30, 59, 160, 355, 866, 1857, 4106]
+SIG W+(H4) galois left only |O|=240 kills<=30=[1] UNFORCED=[]
+SIG W+(H4) galois left only |O|=240 kills<=30=[1] UNFORCED=[]
+SIG W+(H4) galois left only |O|=240 kills<=30=[1] UNFORCED=[]
+SIG W+(H4) galois left only |O|=240 kills<=30=[1] UNFORCED=[]
+SIG W+(H4) galois left only |O|=20 kills<=30=[1] UNFORCED=[]
+SIG W+(H4) galois left only |O|=400 kills<=30=[1, 2] UNFORCED=[2]
+SIG W+(H4) galois left only |O|=600 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) galois left only |O|=20 kills<=30=[1] UNFORCED=[]
+SIG W+(H4) galois left only |O|=400 kills<=30=[1, 2] UNFORCED=[2]
+SIG W+(H4) galois left only |O|=360 kills<=30=[1, 3] UNFORCED=[3]
+SIG W+(H4) galois left only |O|=360 kills<=30=[1, 3] UNFORCED=[3]
+SIG W+(H4) galois left only |O|=360 kills<=30=[1, 3] UNFORCED=[3]
+SIG W+(H4) galois left only |O|=360 kills<=30=[1, 3] UNFORCED=[3]
+SIG W+(H4) galois left only |O|=30 kills<=30=[1, 3] UNFORCED=[3]
+SIG W+(H4) galois left only |O|=600 kills<=30=[1, 2, 3] UNFORCED=[2, 3]
+SIG W+(H4) galois left only |O|=900 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) galois left only |O|=30 kills<=30=[1, 3] UNFORCED=[3]
+SIG W+(H4) galois left only |O|=600 kills<=30=[1, 2, 3] UNFORCED=[2, 3]
+SIG W+(H4) galois left only |O|=240 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) galois left only |O|=240 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) galois left only |O|=20 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) galois left only |O|=400 kills<=30=[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W+(H4) galois left only |O|=300 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+   galois left only: 23 twisted classes
+PROGRESS 0.55 H4+ done
+CHECK OK   W(H4) has 14400 elements (14400)
+== W(H4): 14400 elements, points on S^15
+CHECK OK   W(H4) id: automorphism
+   twist id: changes the character (outer, Galois-type): False
+CHECK OK   W(H4) id: invariant-harmonic dimensions are integers
+   forced (no invariant harmonic) k<=30: []; dims k=1..12: [1, 2, 4, 9, 12, 28, 49, 112, 225, 503, 1037, 2216]
+SIG W(H4) id |O|=144 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=60 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=1200 kills<=30=[2] UNFORCED=[2]
+SIG W(H4) id |O|=720 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=720 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=288 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=1200 kills<=30=[2] UNFORCED=[2]
+SIG W(H4) id |O|=1800 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W(H4) id |O|=720 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=288 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=720 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=144 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=60 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=24 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=480 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=720 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W(H4) id |O|=24 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=480 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=144 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=144 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=24 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=480 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=720 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W(H4) id |O|=24 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=480 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=1 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=40 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=60 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W(H4) id |O|=1 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=40 kills<=30=[] UNFORCED=[]
+SIG W(H4) id |O|=400 kills<=30=[2] UNFORCED=[2]
+SIG W(H4) id |O|=1200 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W(H4) id |O|=400 kills<=30=[2] UNFORCED=[2]
+SIG W(H4) id |O|=450 kills<=30=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+   id: 34 twisted classes
+CHECK OK   W(H4) galois: automorphism
+   twist galois: changes the character (outer, Galois-type): True
+CHECK OK   W(H4) galois: invariant-harmonic dimensions are integers
+   forced (no invariant harmonic) k<=30: [1, 2]; dims k=1..12: [0, 0, 1, 4, 5, 15, 31, 84, 185, 446, 956, 2102]
+SIG W(H4) galois |O|=400 kills<=30=[1, 2] UNFORCED=[]
+SIG W(H4) galois |O|=1800 kills<=30=[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W(H4) galois |O|=400 kills<=30=[1, 2] UNFORCED=[]
+SIG W(H4) galois |O|=1200 kills<=30=[1, 2] UNFORCED=[]
+SIG W(H4) galois |O|=1200 kills<=30=[1, 2, 3] UNFORCED=[3]
+SIG W(H4) galois |O|=1440 kills<=30=[1, 2] UNFORCED=[]
+SIG W(H4) galois |O|=1200 kills<=30=[1, 2, 3] UNFORCED=[3]
+SIG W(H4) galois |O|=1440 kills<=30=[1, 2] UNFORCED=[]
+SIG W(H4) galois |O|=60 kills<=30=[1, 2] UNFORCED=[]
+SIG W(H4) galois |O|=1200 kills<=30=[1, 2] UNFORCED=[]
+SIG W(H4) galois |O|=60 kills<=30=[1, 2] UNFORCED=[]
+SIG W(H4) galois |O|=800 kills<=30=[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W(H4) galois |O|=900 kills<=30=[1, 2, 3] UNFORCED=[3]
+SIG W(H4) galois |O|=900 kills<=30=[1, 2, 3] UNFORCED=[3]
+SIG W(H4) galois |O|=1200 kills<=30=[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+SIG W(H4) galois |O|=200 kills<=30=[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29] UNFORCED=[3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+   galois: 16 twisted classes
+CHECK OK   W(H4) WRONG(left only): not an automorphism (control)
+PROGRESS 1.00 H4 done
+TABLE unforced silences in matrix spheres (group, twist, size, killed, unforced)
+   ('W(H3)', 'id', 20, [1], [1])
+   ('W(H3)', 'id', 20, [1], [1])
+   ('W+(H4)', 'id', 360, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'id', 360, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'id', 30, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'id', 400, [2], [2])
+   ('W+(H4)', 'id', 600, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'id', 400, [2], [2])
+   ('W+(H4)', 'id', 360, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'id', 360, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'id', 30, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'id', 600, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'id', 450, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'galois both', 600, [1, 2, 3], [3])
+   ('W+(H4)', 'galois both', 600, [1, 2, 3], [3])
+   ('W+(H4)', 'galois both', 400, [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'galois both', 600, [1, 2, 3], [3])
+   ('W+(H4)', 'galois both', 600, [1, 2, 3], [3])
+   ('W+(H4)', 'galois both', 900, [1, 2, 3], [3])
+   ('W+(H4)', 'galois both', 900, [1, 2, 3], [3])
+   ('W+(H4)', 'galois both', 600, [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'galois both', 400, [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'galois both', 600, [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'galois both', 200, [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'galois left only', 400, [1, 2], [2])
+   ('W+(H4)', 'galois left only', 600, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'galois left only', 400, [1, 2], [2])
+   ('W+(H4)', 'galois left only', 360, [1, 3], [3])
+   ('W+(H4)', 'galois left only', 360, [1, 3], [3])
+   ('W+(H4)', 'galois left only', 360, [1, 3], [3])
+   ('W+(H4)', 'galois left only', 360, [1, 3], [3])
+   ('W+(H4)', 'galois left only', 30, [1, 3], [3])
+   ('W+(H4)', 'galois left only', 600, [1, 2, 3], [2, 3])
+   ('W+(H4)', 'galois left only', 900, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'galois left only', 30, [1, 3], [3])
+   ('W+(H4)', 'galois left only', 600, [1, 2, 3], [2, 3])
+   ('W+(H4)', 'galois left only', 240, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'galois left only', 240, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'galois left only', 20, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'galois left only', 400, [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W+(H4)', 'galois left only', 300, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W(H4)', 'id', 1200, [2], [2])
+   ('W(H4)', 'id', 1200, [2], [2])
+   ('W(H4)', 'id', 1800, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W(H4)', 'id', 720, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W(H4)', 'id', 720, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W(H4)', 'id', 60, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W(H4)', 'id', 400, [2], [2])
+   ('W(H4)', 'id', 1200, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W(H4)', 'id', 400, [2], [2])
+   ('W(H4)', 'id', 450, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W(H4)', 'galois', 1800, [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W(H4)', 'galois', 1200, [1, 2, 3], [3])
+   ('W(H4)', 'galois', 1200, [1, 2, 3], [3])
+   ('W(H4)', 'galois', 800, [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W(H4)', 'galois', 900, [1, 2, 3], [3])
+   ('W(H4)', 'galois', 900, [1, 2, 3], [3])
+   ('W(H4)', 'galois', 1200, [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+   ('W(H4)', 'galois', 200, [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29], [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29])
+checks failed: 0
+FINAL ok

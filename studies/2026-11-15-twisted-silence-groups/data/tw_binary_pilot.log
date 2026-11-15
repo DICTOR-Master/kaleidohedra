@@ -1,0 +1,162 @@
+CHECK OK   2T: 24 elements, closed
+CHECK OK   2T: quaternion -> SU(2) is multiplicative
+CHECK OK   2T: Sym^k map is a (anti)homomorphism
+CHECK OK   2T: rho_k is a homomorphism
+CHECK OK   2T: sigma_outer is an automorphism and not inner
+CHECK OK   2T: wrong sigma is NOT an automorphism (control)
+== 2T sigma=id: 7 classes, sizes [1, 1, 4, 4, 4, 4, 6]; twist group irreducible on R^4: False (sum chi^2/|G| = 2)
+CHECK OK   2T id: classes partition G
+CHECK OK   2T id class 0 (|O|=1): criterion == direct for k <= 8
+CHECK OK   2T id class 1 (|O|=4): criterion == direct for k <= 8
+CHECK OK   2T id class 2 (|O|=4): criterion == direct for k <= 8
+CHECK OK   2T id class 3 (|O|=6): criterion == direct for k <= 8
+CHECK OK   2T id class 4 (|O|=1): criterion == direct for k <= 8
+CHECK OK   2T id class 5 (|O|=4): criterion == direct for k <= 8
+CHECK OK   2T id class 6 (|O|=4): criterion == direct for k <= 8
+SIG 2T sigma=id class 0 |O|=1 x0=(-1.0, 0.0, 0.0, 0.0) affine-rank=0 kills<=30=[] forced=[]... UNFORCED=[]
+SIG 2T sigma=id class 1 |O|=4 x0=(-0.5, -0.5, -0.5, -0.5) affine-rank=3 kills<=30=[2] forced=[]... UNFORCED=[2]
+SIG 2T sigma=id class 2 |O|=4 x0=(-0.5, -0.5, -0.5, 0.5) affine-rank=3 kills<=30=[2] forced=[]... UNFORCED=[2]
+SIG 2T sigma=id class 3 |O|=6 x0=(0.0, -1.0, 0.0, 0.0) affine-rank=3 kills<=30=[1, 3, 5, 7, 9, 11] forced=[]... UNFORCED=[1, 3, 5, 7, 9, 11]
+SIG 2T sigma=id class 4 |O|=1 x0=(1.0, 0.0, 0.0, 0.0) affine-rank=0 kills<=30=[] forced=[]... UNFORCED=[]
+SIG 2T sigma=id class 5 |O|=4 x0=(0.5, -0.5, -0.5, -0.5) affine-rank=3 kills<=30=[2] forced=[]... UNFORCED=[2]
+SIG 2T sigma=id class 6 |O|=4 x0=(0.5, -0.5, -0.5, 0.5) affine-rank=3 kills<=30=[2] forced=[]... UNFORCED=[2]
+== 2T sigma=outer: 3 classes, sizes [6, 6, 12]; twist group irreducible on R^4: False (sum chi^2/|G| = 2)
+CHECK OK   2T outer: classes partition G
+CHECK FAIL 2T outer k=5 class 0: unstable block is zero
+CHECK FAIL 2T outer k=5 class 0: unstable block is zero
+CHECK FAIL 2T outer k=5 class 0: unstable block is zero
+CHECK FAIL 2T outer k=5 class 2: unstable block is zero
+CHECK FAIL 2T outer k=5 class 2: unstable block is zero
+CHECK FAIL 2T outer k=5 class 2: unstable block is zero
+CHECK FAIL 2T outer k=7 class 0: unstable block is zero
+CHECK FAIL 2T outer k=7 class 0: unstable block is zero
+CHECK FAIL 2T outer k=7 class 0: unstable block is zero
+CHECK FAIL 2T outer k=7 class 0: unstable block is zero
+CHECK FAIL 2T outer k=7 class 2: unstable block is zero
+CHECK FAIL 2T outer k=7 class 2: unstable block is zero
+CHECK FAIL 2T outer k=7 class 2: unstable block is zero
+CHECK FAIL 2T outer k=7 class 2: unstable block is zero
+CHECK FAIL 2T outer k=8 class 0: unstable block is zero
+CHECK FAIL 2T outer k=8 class 0: unstable block is zero
+CHECK FAIL 2T outer k=8 class 0: unstable block is zero
+CHECK FAIL 2T outer k=8 class 1: unstable block is zero
+CHECK FAIL 2T outer k=8 class 1: unstable block is zero
+CHECK FAIL 2T outer k=8 class 1: unstable block is zero
+CHECK FAIL 2T outer k=8 class 2: unstable block is zero
+CHECK FAIL 2T outer k=8 class 2: unstable block is zero
+CHECK FAIL 2T outer k=8 class 2: unstable block is zero
+CHECK OK   2T outer class 0 (|O|=6): criterion == direct for k <= 8
+CHECK OK   2T outer class 1 (|O|=12): criterion == direct for k <= 8
+CHECK OK   2T outer class 2 (|O|=6): criterion == direct for k <= 8
+SIG 2T sigma=outer class 0 |O|=6 x0=(-1.0, 0.0, 0.0, 0.0) affine-rank=3 kills<=30=[3] forced=[]... UNFORCED=[3]
+SIG 2T sigma=outer class 1 |O|=12 x0=(-0.5, -0.5, -0.5, -0.5) affine-rank=3 kills<=30=[1, 3, 5, 7, 9, 11] forced=[]... UNFORCED=[1, 3, 5, 7, 9, 11]
+SIG 2T sigma=outer class 2 |O|=6 x0=(0.0, -1.0, 0.0, 0.0) affine-rank=3 kills<=30=[3] forced=[]... UNFORCED=[3]
+== 2T sigma=wrong: 4 classes, sizes [6, 6, 6, 12]; twist group irreducible on R^4: False (sum chi^2/|G| = 2)
+CHECK OK   2T wrong sigma: S does not intertwine (control)
+   wrong sigma: 0 block-prediction mismatches (informational; the block test needs an automorphism)
+SIG 2T sigma=wrong class 0 |O|=6 x0=(-1.0, 0.0, 0.0, 0.0) affine-rank=4 kills<=30=[] forced=[]... UNFORCED=[]
+SIG 2T sigma=wrong class 1 |O|=12 x0=(-0.5, -0.5, -0.5, -0.5) affine-rank=3 kills<=30=[1, 3, 5, 7, 9, 11] forced=[]... UNFORCED=[1, 3, 5, 7, 9, 11]
+SIG 2T sigma=wrong class 2 |O|=6 x0=(-0.5, 0.5, -0.5, -0.5) affine-rank=4 kills<=30=[] forced=[]... UNFORCED=[]
+SIG 2T sigma=wrong class 3 |O|=6 x0=(-0.5, 0.5, -0.5, 0.5) affine-rank=4 kills<=30=[] forced=[]... UNFORCED=[]
+PROGRESS 0.50 2T done
+CHECK OK   2O: 48 elements, closed
+CHECK OK   2O: quaternion -> SU(2) is multiplicative
+CHECK OK   2O: Sym^k map is a (anti)homomorphism
+CHECK OK   2O: rho_k is a homomorphism
+CHECK OK   2O: sigma_outer is an automorphism and not inner
+CHECK OK   2O: wrong sigma is NOT an automorphism (control)
+== 2O sigma=id: 8 classes, sizes [1, 1, 6, 6, 6, 8, 8, 12]; twist group irreducible on R^4: False (sum chi^2/|G| = 2)
+CHECK OK   2O id: classes partition G
+CHECK OK   2O id class 0 (|O|=6): criterion == direct for k <= 8
+CHECK OK   2O id class 1 (|O|=6): criterion == direct for k <= 8
+CHECK OK   2O id class 2 (|O|=1): criterion == direct for k <= 8
+CHECK OK   2O id class 3 (|O|=8): criterion == direct for k <= 8
+CHECK OK   2O id class 4 (|O|=12): criterion == direct for k <= 8
+CHECK OK   2O id class 5 (|O|=6): criterion == direct for k <= 8
+CHECK OK   2O id class 6 (|O|=1): criterion == direct for k <= 8
+CHECK OK   2O id class 7 (|O|=8): criterion == direct for k <= 8
+SIG 2O sigma=id class 0 |O|=6 x0=(-0.7071067811865476, -0.7071067811865476, 0.0, 0.0) affine-rank=3 kills<=30=[3] forced=[]... UNFORCED=[3]
+SIG 2O sigma=id class 1 |O|=6 x0=(0.7071067811865476, -0.7071067811865476, 0.0, 0.0) affine-rank=3 kills<=30=[3] forced=[]... UNFORCED=[3]
+SIG 2O sigma=id class 2 |O|=1 x0=(-1.0, 0.0, 0.0, 0.0) affine-rank=0 kills<=30=[] forced=[]... UNFORCED=[]
+SIG 2O sigma=id class 3 |O|=8 x0=(-0.5, -0.5, -0.5, -0.5) affine-rank=3 kills<=30=[2] forced=[]... UNFORCED=[2]
+SIG 2O sigma=id class 4 |O|=12 x0=(0.0, -0.7071067811865476, -0.7071067811865476, 0.0) affine-rank=3 kills<=30=[1, 3, 5, 7, 9, 11] forced=[]... UNFORCED=[1, 3, 5, 7, 9, 11]
+SIG 2O sigma=id class 5 |O|=6 x0=(0.0, -1.0, 0.0, 0.0) affine-rank=3 kills<=30=[1, 3, 5, 7, 9, 11] forced=[]... UNFORCED=[1, 3, 5, 7, 9, 11]
+SIG 2O sigma=id class 6 |O|=1 x0=(1.0, 0.0, 0.0, 0.0) affine-rank=0 kills<=30=[] forced=[]... UNFORCED=[]
+SIG 2O sigma=id class 7 |O|=8 x0=(0.5, -0.5, -0.5, -0.5) affine-rank=3 kills<=30=[2] forced=[]... UNFORCED=[2]
+== 2O sigma=outer: 6 classes, sizes [2, 6, 8, 8, 12, 12]; twist group irreducible on R^4: False (sum chi^2/|G| = 2)
+CHECK OK   2O outer: classes partition G
+CHECK FAIL 2O outer k=5 class 2: unstable block is zero
+CHECK FAIL 2O outer k=5 class 2: unstable block is zero
+CHECK FAIL 2O outer k=5 class 3: unstable block is zero
+CHECK FAIL 2O outer k=5 class 3: unstable block is zero
+CHECK FAIL 2O outer k=7 class 2: unstable block is zero
+CHECK FAIL 2O outer k=7 class 2: unstable block is zero
+CHECK FAIL 2O outer k=7 class 2: unstable block is zero
+CHECK FAIL 2O outer k=7 class 2: unstable block is zero
+CHECK FAIL 2O outer k=7 class 3: unstable block is zero
+CHECK FAIL 2O outer k=7 class 3: unstable block is zero
+CHECK FAIL 2O outer k=7 class 3: unstable block is zero
+CHECK FAIL 2O outer k=7 class 3: unstable block is zero
+CHECK OK   2O outer class 0 (|O|=12): criterion == direct for k <= 8
+CHECK OK   2O outer class 1 (|O|=2): criterion == direct for k <= 8
+CHECK OK   2O outer class 2 (|O|=8): criterion == direct for k <= 8
+CHECK OK   2O outer class 3 (|O|=8): criterion == direct for k <= 8
+CHECK OK   2O outer class 4 (|O|=12): criterion == direct for k <= 8
+CHECK OK   2O outer class 5 (|O|=6): criterion == direct for k <= 8
+SIG 2O sigma=outer class 0 |O|=12 x0=(-0.7071067811865476, -0.7071067811865476, 0.0, 0.0) affine-rank=4 kills<=30=[1, 3, 5, 7, 9, 11] forced=[1]... UNFORCED=[3, 5, 7, 9, 11]
+SIG 2O sigma=outer class 1 |O|=2 x0=(-1.0, 0.0, 0.0, 0.0) affine-rank=1 kills<=30=[1, 3, 5, 7, 9, 11] forced=[1]... UNFORCED=[3, 5, 7, 9, 11]
+SIG 2O sigma=outer class 2 |O|=8 x0=(-0.5, -0.5, -0.5, -0.5) affine-rank=4 kills<=30=[1, 2] forced=[1]... UNFORCED=[2]
+SIG 2O sigma=outer class 3 |O|=8 x0=(-0.5, -0.5, -0.5, 0.5) affine-rank=4 kills<=30=[1, 2] forced=[1]... UNFORCED=[2]
+SIG 2O sigma=outer class 4 |O|=12 x0=(0.0, -0.7071067811865476, -0.7071067811865476, 0.0) affine-rank=3 kills<=30=[1, 3, 5, 7, 9, 11] forced=[1]... UNFORCED=[3, 5, 7, 9, 11]
+SIG 2O sigma=outer class 5 |O|=6 x0=(0.0, -1.0, 0.0, 0.0) affine-rank=3 kills<=30=[1, 3, 5, 7, 9, 11] forced=[1]... UNFORCED=[3, 5, 7, 9, 11]
+== 2O sigma=wrong: 8 classes, sizes [2, 6, 8, 8, 8, 12, 12, 12]; twist group irreducible on R^4: False (sum chi^2/|G| = 2)
+CHECK OK   2O wrong sigma: S does not intertwine (control)
+   wrong sigma: 5 block-prediction mismatches (informational; the block test needs an automorphism)
+SIG 2O sigma=wrong class 0 |O|=8 x0=(-0.7071067811865476, -0.7071067811865476, 0.0, 0.0) affine-rank=4 kills<=30=[5, 11] forced=[]... UNFORCED=[5, 11]
+SIG 2O sigma=wrong class 1 |O|=8 x0=(-0.7071067811865476, 0.0, -0.7071067811865476, 0.0) affine-rank=4 kills<=30=[5, 11] forced=[]... UNFORCED=[5, 11]
+SIG 2O sigma=wrong class 2 |O|=8 x0=(-0.7071067811865476, 0.0, 0.0, -0.7071067811865476) affine-rank=4 kills<=30=[5, 11] forced=[]... UNFORCED=[5, 11]
+SIG 2O sigma=wrong class 3 |O|=2 x0=(-1.0, 0.0, 0.0, 0.0) affine-rank=1 kills<=30=[1, 3, 5, 7, 9, 11] forced=[]... UNFORCED=[1, 3, 5, 7, 9, 11]
+SIG 2O sigma=wrong class 4 |O|=12 x0=(-0.5, -0.5, -0.5, -0.5) affine-rank=4 kills<=30=[2, 5, 11] forced=[]... UNFORCED=[2, 5, 11]
+SIG 2O sigma=wrong class 5 |O|=12 x0=(-0.5, -0.5, -0.5, 0.5) affine-rank=4 kills<=30=[2, 5, 11] forced=[]... UNFORCED=[2, 5, 11]
+SIG 2O sigma=wrong class 6 |O|=12 x0=(0.0, -0.7071067811865476, -0.7071067811865476, 0.0) affine-rank=3 kills<=30=[1, 3, 5, 7, 9, 11] forced=[]... UNFORCED=[1, 3, 5, 7, 9, 11]
+SIG 2O sigma=wrong class 7 |O|=6 x0=(0.0, -1.0, 0.0, 0.0) affine-rank=3 kills<=30=[1, 3, 5, 7, 9, 11] forced=[]... UNFORCED=[1, 3, 5, 7, 9, 11]
+PROGRESS 1.00 2O done
+TABLE (group, twist, class, size, affine rank, killed<=30, unforced by the twist group)
+   ('2T', 'id', 0, 1, np.int64(0), [], [])
+   ('2T', 'id', 1, 4, np.int64(3), [2], [2])
+   ('2T', 'id', 2, 4, np.int64(3), [2], [2])
+   ('2T', 'id', 3, 6, np.int64(3), [1, 3, 5, 7, 9, 11], [1, 3, 5, 7, 9, 11])
+   ('2T', 'id', 4, 1, np.int64(0), [], [])
+   ('2T', 'id', 5, 4, np.int64(3), [2], [2])
+   ('2T', 'id', 6, 4, np.int64(3), [2], [2])
+   ('2T', 'outer', 0, 6, np.int64(3), [3], [3])
+   ('2T', 'outer', 1, 12, np.int64(3), [1, 3, 5, 7, 9, 11], [1, 3, 5, 7, 9, 11])
+   ('2T', 'outer', 2, 6, np.int64(3), [3], [3])
+   ('2T', 'wrong', 0, 6, np.int64(4), [], [])
+   ('2T', 'wrong', 1, 12, np.int64(3), [1, 3, 5, 7, 9, 11], [1, 3, 5, 7, 9, 11])
+   ('2T', 'wrong', 2, 6, np.int64(4), [], [])
+   ('2T', 'wrong', 3, 6, np.int64(4), [], [])
+   ('2O', 'id', 0, 6, np.int64(3), [3], [3])
+   ('2O', 'id', 1, 6, np.int64(3), [3], [3])
+   ('2O', 'id', 2, 1, np.int64(0), [], [])
+   ('2O', 'id', 3, 8, np.int64(3), [2], [2])
+   ('2O', 'id', 4, 12, np.int64(3), [1, 3, 5, 7, 9, 11], [1, 3, 5, 7, 9, 11])
+   ('2O', 'id', 5, 6, np.int64(3), [1, 3, 5, 7, 9, 11], [1, 3, 5, 7, 9, 11])
+   ('2O', 'id', 6, 1, np.int64(0), [], [])
+   ('2O', 'id', 7, 8, np.int64(3), [2], [2])
+   ('2O', 'outer', 0, 12, np.int64(4), [1, 3, 5, 7, 9, 11], [3, 5, 7, 9, 11])
+   ('2O', 'outer', 1, 2, np.int64(1), [1, 3, 5, 7, 9, 11], [3, 5, 7, 9, 11])
+   ('2O', 'outer', 2, 8, np.int64(4), [1, 2], [2])
+   ('2O', 'outer', 3, 8, np.int64(4), [1, 2], [2])
+   ('2O', 'outer', 4, 12, np.int64(3), [1, 3, 5, 7, 9, 11], [3, 5, 7, 9, 11])
+   ('2O', 'outer', 5, 6, np.int64(3), [1, 3, 5, 7, 9, 11], [3, 5, 7, 9, 11])
+   ('2O', 'wrong', 0, 8, np.int64(4), [5, 11], [5, 11])
+   ('2O', 'wrong', 1, 8, np.int64(4), [5, 11], [5, 11])
+   ('2O', 'wrong', 2, 8, np.int64(4), [5, 11], [5, 11])
+   ('2O', 'wrong', 3, 2, np.int64(1), [1, 3, 5, 7, 9, 11], [1, 3, 5, 7, 9, 11])
+   ('2O', 'wrong', 4, 12, np.int64(4), [2, 5, 11], [2, 5, 11])
+   ('2O', 'wrong', 5, 12, np.int64(4), [2, 5, 11], [2, 5, 11])
+   ('2O', 'wrong', 6, 12, np.int64(3), [1, 3, 5, 7, 9, 11], [1, 3, 5, 7, 9, 11])
+   ('2O', 'wrong', 7, 6, np.int64(3), [1, 3, 5, 7, 9, 11], [1, 3, 5, 7, 9, 11])
+checks failed: 35
+FINAL FAIL

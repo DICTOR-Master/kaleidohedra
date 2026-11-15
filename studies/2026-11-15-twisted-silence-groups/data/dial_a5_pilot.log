@@ -1,0 +1,103 @@
+PROGRESS 0.00 A invariant harmonics
+   k=1: invariant harmonics dim 0
+   k=2: invariant harmonics dim 0
+   k=3: invariant harmonics dim 1
+   k=4: invariant harmonics dim 1
+   k=5: invariant harmonics dim 1
+   k=6: invariant harmonics dim 1
+   k=7: invariant harmonics dim 1
+CHECK OK   dims of invariant harmonics == harmonic Molien series for k <= 7: [0, 0, 1, 1, 1, 1, 1]
+CHECK OK   X = perms(phi^2,phi^2,phi^2,phi,0) kills [1, 2, 5, 7] (expected [1,2,5,7]) in the A5-on-R^4 model
+CHECK OK   F = perms(phi^2,phi^2,1,1,0) kills [1, 2, 3, 6] (expected [1,2,3,6])
+CHECK OK   invariant harmonics of degree 3 vanish at X/F exactly as the direct sums say (False,True)
+CHECK OK   invariant harmonics of degree 4 vanish at X/F exactly as the direct sums say (False,False)
+CHECK OK   invariant harmonics of degree 5 vanish at X/F exactly as the direct sums say (True,False)
+CHECK OK   invariant harmonics of degree 6 vanish at X/F exactly as the direct sums say (False,True)
+CHECK OK   invariant harmonics of degree 7 vanish at X/F exactly as the direct sums say (True,False)
+PROGRESS 0.10 B C3 edge (a,a,a,b,c)
+CHECK OK   C3 edge (a,a,a,b,c): degrees killed identically along the edge = [1, 2] (forced by A5: [1, 2])
+TABLE C3 edge (a,a,a,b,c): special points (s = coordinate along the edge, x = s u + v; s = inf -> u kills [1, 2])
+   minpoly deg 1 (1 real) s~[np.float64(0.0)] kills<=30: [1, 2, 3, 5, 7, 9, 11]  MULTI-SILENT ['0', '1']
+   minpoly deg 2 (2 real) s~[np.float64(0.381966), np.float64(2.618034)] kills<=30: [1, 2, 5, 7]  MULTI-SILENT ['1', '-3', '1']
+   minpoly deg 4 (2 real) s~[np.float64(0.437797), np.float64(1.396972)] kills<=30: [1, 2, 4]   
+   minpoly deg 6 (2 real) s~[np.float64(-0.20496), np.float64(0.12692)] kills<=30: [1, 2, 6]   
+   minpoly deg 4 (4 real) s~[np.float64(-0.127399), np.float64(0.092171), np.float64(0.555877), np.float64(0.832612)] kills<=30: [1, 2, 7]   
+PROGRESS 0.25 B C2 edge (a,a,b,b,c)
+CHECK OK   C2 edge (a,a,b,b,c): degrees killed identically along the edge = [1, 2] (forced by A5: [1, 2])
+TABLE C2 edge (a,a,b,b,c): special points (s = coordinate along the edge, x = s u + v; s = inf -> u kills [1, 2, 3, 5, 7, 9, 11])
+   minpoly deg 2 (2 real) s~[np.float64(-2.236068), np.float64(2.236068)] kills<=30: [1, 2, 3, 6]  MULTI-SILENT ['-5', '0', '1']
+   minpoly deg 4 (2 real) s~[np.float64(-1.485797), np.float64(1.485797)] kills<=30: [1, 2, 4]   
+   minpoly deg 4 (2 real) s~[np.float64(-1.111195), np.float64(1.111195)] kills<=30: [1, 2, 6]   
+   minpoly deg 6 (2 real) s~[np.float64(-0.867409), np.float64(0.867409)] kills<=30: [1, 2, 7]   
+PROGRESS 0.40 C numeric location + Krawczyk certification
+   face K=(3, 4) x~[-0.67223, -0.13309, -0.13309, 0.27895, 0.65945] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 3, 4] sig(num,k<=12)=[1, 2, 3, 4] 
+PROGRESS 0.425 face K=(3, 4): 1 solutions
+   face K=(3, 5) x~[-0.70711, -0.0, 0.0, 0.0, 0.70711] |orbit|=20 krawczyk=False sig(cert,k<=7)=[1, 2, 3, '4?', 5, '6?', '7?'] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[7, 9, 11]
+   face K=(3, 5) x~[-0.5, -0.5, -0.0, 0.5, 0.5] |orbit|=30 krawczyk=False sig(cert,k<=7)=[1, 2, 3, '4?', 5, '6?', '7?'] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[7, 9, 11]
+   face K=(3, 5) x~[-0.70711, -0.0, -0.0, 1e-05, 0.70711] |orbit|=20 krawczyk=False sig(cert,k<=7)=[1, 2, 3, '4?', 5, '6?', '7?'] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[7, 9, 11]
+   face K=(3, 5) x~[-0.70711, -0.0, 0.0, 0.0, 0.70711] |orbit|=20 krawczyk=False sig(cert,k<=7)=[1, 2, 3, '4?', 5, '6?', '7?'] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[7, 9, 11]
+   face K=(3, 5) x~[-0.70711, -0.0, -0.0, 1e-05, 0.70711] |orbit|=20 krawczyk=False sig(cert,k<=7)=[1, 2, 3, '4?', 5, '6?', '7?'] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[7, 9, 11]
+PROGRESS 0.450 face K=(3, 5): 5 solutions
+   face K=(3, 6) x~[-0.63246, -0.19544, -0.19544, 0.51167, 0.51167] |orbit|=30 krawczyk=False sig(cert,k<=7)=[1, 2, 3, '4?', '5?', 6, '7?'] sig(num,k<=12)=[1, 2, 3, 6] 
+PROGRESS 0.475 face K=(3, 6): 1 solutions
+   face K=(3, 7) x~[-0.70711, -0.0, -0.0, 0.0, 0.70711] |orbit|=20 krawczyk=False sig(cert,k<=7)=[1, 2, 3, '4?', '5?', '6?', 7] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[5, 9, 11]
+   face K=(3, 7) x~[-0.5, -0.5, 0.0, 0.5, 0.5] |orbit|=30 krawczyk=False sig(cert,k<=7)=[1, 2, 3, '4?', '5?', '6?', 7] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[5, 9, 11]
+   face K=(3, 7) x~[-0.70711, -0.0, -0.0, 0.0, 0.70711] |orbit|=20 krawczyk=False sig(cert,k<=7)=[1, 2, 3, '4?', '5?', '6?', 7] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[5, 9, 11]
+   face K=(3, 7) x~[-0.70711, -0.0, -0.0, 0.0, 0.70711] |orbit|=20 krawczyk=False sig(cert,k<=7)=[1, 2, 3, '4?', '5?', '6?', 7] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[5, 9, 11]
+PROGRESS 0.500 face K=(3, 7): 4 solutions
+   face K=(4, 5) x~[-0.75323, -0.19296, 0.06113, 0.44253, 0.44253] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 4, 5] sig(num,k<=12)=[1, 2, 4, 5] 
+PROGRESS 0.525 face K=(4, 5): 1 solutions
+   face K=(4, 6) x~[-0.43573, -0.43573, -0.08788, 0.20366, 0.75569] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 4, 6] sig(num,k<=12)=[1, 2, 4, 6] 
+   face K=(4, 6) x~[-0.75172, -0.23739, 0.2362, 0.2362, 0.5167] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 4, 6] sig(num,k<=12)=[1, 2, 4, 6] 
+PROGRESS 0.550 face K=(4, 6): 2 solutions
+   face K=(4, 7) x~[-0.63088, -0.16029, -0.16029, 0.25441, 0.69705] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 4, 7] sig(num,k<=12)=[1, 2, 4, 7] 
+PROGRESS 0.575 face K=(4, 7): 1 solutions
+   face K=(5, 6) x~[-0.50518, -0.21265, -0.21265, 0.1325, 0.79799] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 5, 6] sig(num,k<=12)=[1, 2, 5, 6] 
+   face K=(5, 6) x~[-0.43061, -0.43061, -0.08141, 0.17278, 0.76985] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 5, 6] sig(num,k<=12)=[1, 2, 5, 6] 
+   face K=(5, 6) x~[-0.4785, -0.4785, -0.01598, 0.30146, 0.67152] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 5, 6] sig(num,k<=12)=[1, 2, 5, 6] 
+PROGRESS 0.600 face K=(5, 6): 3 solutions
+   face K=(5, 7) x~[-0.8279, -0.12079, 0.31623, 0.31623, 0.31623] |orbit|=20 krawczyk=False sig(cert,k<=7)=[1, 2, '3?', '4?', 5, '6?', 7] sig(num,k<=12)=[1, 2, 5, 7] 
+   face K=(5, 7) x~[-0.5, -0.5, 0.0, 0.5, 0.5] |orbit|=30 krawczyk=False sig(cert,k<=7)=[1, 2, '3?', '4?', 5, '6?', 7] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[3, 9, 11]
+   face K=(5, 7) x~[-0.70711, -0.00017, 8e-05, 8e-05, 0.70711] |orbit|=60 krawczyk=False sig(cert,k<=7)=[1, 2, '3?', '4?', 5, '6?', 7] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[3, 9, 11]
+   face K=(5, 7) x~[-0.70711, -1e-05, 0.0, 0.0, 0.70711] |orbit|=20 krawczyk=False sig(cert,k<=7)=[1, 2, '3?', '4?', 5, '6?', 7] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[3, 9, 11]
+   face K=(5, 7) x~[-0.70711, -0.0001, -0.0001, 0.00021, 0.70711] |orbit|=60 krawczyk=False sig(cert,k<=7)=[1, 2, '3?', '4?', 5, '6?', 7] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[3, 9, 11]
+   face K=(5, 7) x~[-0.70711, -2e-05, 1e-05, 1e-05, 0.70711] |orbit|=20 krawczyk=False sig(cert,k<=7)=[1, 2, '3?', '4?', 5, '6?', 7] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[3, 9, 11]
+   face K=(5, 7) x~[-0.70711, -0.0, -0.0, 0.0, 0.70711] |orbit|=20 krawczyk=False sig(cert,k<=7)=[1, 2, '3?', '4?', 5, '6?', 7] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[3, 9, 11]
+   face K=(5, 7) x~[-0.70711, -0.00011, -0.00011, 0.00022, 0.70711] |orbit|=60 krawczyk=False sig(cert,k<=7)=[1, 2, '3?', '4?', 5, '6?', 7] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[3, 9, 11]
+PROGRESS 0.625 face K=(5, 7): 8 solutions
+   face K=(6, 7) x~[-0.82405, 0.0326, 0.0326, 0.25512, 0.50372] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 6, 7] sig(num,k<=12)=[1, 2, 6, 7] 
+   face K=(6, 7) x~[-0.81974, -0.05286, 0.18175, 0.18175, 0.50909] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 6, 7] sig(num,k<=12)=[1, 2, 6, 7] 
+   face K=(6, 7) x~[-0.56158, -0.23053, -0.23053, 0.34483, 0.67781] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 6, 7] sig(num,k<=12)=[1, 2, 6, 7] 
+PROGRESS 0.650 face K=(6, 7): 3 solutions
+   interior K=(3, 4, 5) x~[-0.66607, -0.23738, 0.0, 0.23738, 0.66607] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 3, 4, 5, '7?'] sig(num,k<=12)=[1, 2, 3, 4, 5, 7, 9, 11] OVERDETERMINED extra=[7, 9, 11]
+PROGRESS 0.675 interior K=(3, 4, 5): 1 solutions
+PROGRESS 0.700 interior K=(3, 4, 6): 0 solutions
+   interior K=(3, 4, 7) x~[-0.66607, -0.23738, -0.0, 0.23738, 0.66607] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 3, 4, '5?', 7] sig(num,k<=12)=[1, 2, 3, 4, 5, 7, 9, 11] OVERDETERMINED extra=[5, 9, 11]
+PROGRESS 0.725 interior K=(3, 4, 7): 1 solutions
+   interior K=(3, 5, 6) x~[-0.6015, -0.37175, 0.0, 0.37175, 0.6015] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 3, 5, 6, '7?'] sig(num,k<=12)=[1, 2, 3, 5, 6, 7, 9, 11] OVERDETERMINED extra=[7, 9, 11]
+PROGRESS 0.750 interior K=(3, 5, 6): 1 solutions
+scripts/dial_a5.py:342: RuntimeWarning: overflow encountered in scalar power
+  if ei: m *= yi ** ei
+scripts/dial_a5.py:343: RuntimeWarning: invalid value encountered in scalar add
+  t += m
+   interior K=(3, 5, 7) x~[-0.64716, -0.28492, 0.0, 0.28492, 0.64716] |orbit|=60 krawczyk=False sig(cert,k<=7)=[1, 2, 3, '4?', 5, '6?', 7] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[9, 11]
+   interior K=(3, 5, 7) x~[-0.70653, -0.02862, -0.0, 0.02862, 0.70653] |orbit|=60 krawczyk=False sig(cert,k<=7)=[1, 2, 3, '4?', 5, '6?', 7] sig(num,k<=12)=[1, 2, 3, 5, 7, 9, 11] OVERDETERMINED extra=[9, 11]
+PROGRESS 0.775 interior K=(3, 5, 7): 2 solutions
+   interior K=(3, 6, 7) x~[-0.6015, -0.37175, 0.0, 0.37175, 0.6015] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, 3, '5?', 6, 7] sig(num,k<=12)=[1, 2, 3, 5, 6, 7, 9, 11] OVERDETERMINED extra=[5, 9, 11]
+PROGRESS 0.800 interior K=(3, 6, 7): 1 solutions
+PROGRESS 0.825 interior K=(4, 5, 6): 0 solutions
+   interior K=(4, 5, 7) x~[-0.66607, -0.23738, 0.0, 0.23738, 0.66607] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, '3?', 4, 5, 7] sig(num,k<=12)=[1, 2, 3, 4, 5, 7, 9, 11] OVERDETERMINED extra=[3, 9, 11]
+PROGRESS 0.850 interior K=(4, 5, 7): 1 solutions
+PROGRESS 0.875 interior K=(4, 6, 7): 0 solutions
+   interior K=(5, 6, 7) x~[-0.6015, -0.37175, -0.0, 0.37175, 0.6015] |orbit|=60 krawczyk=True sig(cert,k<=7)=[1, 2, '3?', 5, 6, 7] sig(num,k<=12)=[1, 2, 3, 5, 6, 7, 9, 11] OVERDETERMINED extra=[3, 9, 11]
+PROGRESS 0.900 interior K=(5, 6, 7): 1 solutions
+   UNCERTIFIED generic point: {'stratum': 'face', 'K': [5, 7], 'x_sorted': [-0.7071068, -0.0001663, 8.31e-05, 8.31e-05, 0.7071068], 'certified': False, 'signature_certified_k<=7': ['1', '2', '3?', '4?', '5', '6?', '7'], 'signature_numeric_k<=12': [1, 2, 3, 5, 7, 9, 11], 'extra_numeric': [3, 9, 11], 'orbit_size': 60}
+   UNCERTIFIED generic point: {'stratum': 'face', 'K': [5, 7], 'x_sorted': [-0.7071068, -0.0001034, -0.0001034, 0.0002068, 0.7071068], 'certified': False, 'signature_certified_k<=7': ['1', '2', '3?', '4?', '5', '6?', '7'], 'signature_numeric_k<=12': [1, 2, 3, 5, 7, 9, 11], 'extra_numeric': [3, 9, 11], 'orbit_size': 60}
+   UNCERTIFIED generic point: {'stratum': 'face', 'K': [5, 7], 'x_sorted': [-0.7071068, -0.0001083, -0.0001083, 0.0002166, 0.7071068], 'certified': False, 'signature_certified_k<=7': ['1', '2', '3?', '4?', '5', '6?', '7'], 'signature_numeric_k<=12': [1, 2, 3, 5, 7, 9, 11], 'extra_numeric': [3, 9, 11], 'orbit_size': 60}
+   UNCERTIFIED generic point: {'stratum': 'interior', 'K': [3, 5, 7], 'x_sorted': [-0.6471642, -0.2849184, 0.0, 0.2849184, 0.6471642], 'certified': False, 'signature_certified_k<=7': ['1', '2', '3', '4?', '5', '6?', '7'], 'signature_numeric_k<=12': [1, 2, 3, 5, 7, 9, 11], 'extra_numeric': [9, 11], 'orbit_size': 60}
+   UNCERTIFIED generic point: {'stratum': 'interior', 'K': [3, 5, 7], 'x_sorted': [-0.7065274, -0.028619, -0.0, 0.028619, 0.7065274], 'certified': False, 'signature_certified_k<=7': ['1', '2', '3', '4?', '5', '6?', '7'], 'signature_numeric_k<=12': [1, 2, 3, 5, 7, 9, 11], 'extra_numeric': [9, 11], 'orbit_size': 60}
+CHECK FAIL every located point is Krawczyk-certified (17) or lies on a lower stratum (edge/line, treated exactly in B) (15); total 37
+PROGRESS 0.92 D figures
+CHECK OK   figures written
+checks failed: 1
+FINAL FAIL
