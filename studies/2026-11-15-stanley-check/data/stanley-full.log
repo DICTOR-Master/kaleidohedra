@@ -1,0 +1,236 @@
+== 4D permutohedron (A4 1111): 120 corners, 30 cells
+  ok   4D permutohedron (A4 1111) T1 simple (4 cells at every corner)
+  ok   4D permutohedron (A4 1111) T3 a-balanced, a = {1: 1, 2: 1, 3: 1, 4: 1}
+  ok   4D permutohedron (A4 1111) T2 every subset of a corner's cells is a face of dimension 4 - |T|; 541 faces, distinct  bad 0
+  ok   4D permutohedron (A4 1111) T4 Stanley fine h symmetric h_b = h_(a-b) and >= 0  (0, 0, 1, 1):6 (0, 1, 0, 1):16 (0, 1, 1, 0):11 (1, 0, 0, 1):11 (1, 0, 1, 0):16 (1, 1, 0, 0):6
+  ok   4D permutohedron (A4 1111) dir 0: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111) dir 0: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111) dir 0: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111) dir 0: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111) dir 1: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111) dir 1: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111) dir 1: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111) dir 1: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111) dir 2: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111) dir 2: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111) dir 2: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111) dir 2: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111) dir 3: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111) dir 3: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111) dir 3: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111) dir 3: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111) dir 4: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111) dir 4: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111) dir 4: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111) dir 4: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111) dir 5: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111) dir 5: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111) dir 5: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111) dir 5: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111) T8 #108 in(X) = N_X - sum c_X + p_X equals h_X  {'(0, 0, 1, 1)': 6, '(0, 1, 0, 1)': 16, '(0, 1, 1, 0)': 11, '(1, 0, 0, 1)': 11, '(1, 0, 1, 0)': 16, '(1, 1, 0, 0)': 6}
+PROGRESS 0.083 4D permutohedron (A4 1111)
+  ok   4D permutohedron (A4 1111) tilted copy 0: face lattice kept (exact)
+== 4D permutohedron (A4 1111), tilted 0: 120 corners, 30 cells
+  ok   4D permutohedron (A4 1111), tilted 0 T1 simple (4 cells at every corner)
+  ok   4D permutohedron (A4 1111), tilted 0 T3 a-balanced, a = {1: 1, 2: 1, 3: 1, 4: 1}
+  ok   4D permutohedron (A4 1111), tilted 0 T2 every subset of a corner's cells is a face of dimension 4 - |T|; 541 faces, distinct  bad 0
+  ok   4D permutohedron (A4 1111), tilted 0 T4 Stanley fine h symmetric h_b = h_(a-b) and >= 0  (0, 0, 1, 1):6 (0, 1, 0, 1):16 (0, 1, 1, 0):11 (1, 0, 0, 1):11 (1, 0, 1, 0):16 (1, 1, 0, 0):6
+  ok   4D permutohedron (A4 1111), tilted 0 dir 0: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111), tilted 0 dir 0: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111), tilted 0 dir 0: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111), tilted 0 dir 0: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111), tilted 0 dir 1: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111), tilted 0 dir 1: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111), tilted 0 dir 1: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111), tilted 0 dir 1: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111), tilted 0 dir 2: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111), tilted 0 dir 2: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111), tilted 0 dir 2: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111), tilted 0 dir 2: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111), tilted 0 dir 3: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111), tilted 0 dir 3: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111), tilted 0 dir 3: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111), tilted 0 dir 3: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111), tilted 0 dir 4: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111), tilted 0 dir 4: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111), tilted 0 dir 4: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111), tilted 0 dir 4: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111), tilted 0 dir 5: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111), tilted 0 dir 5: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111), tilted 0 dir 5: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111), tilted 0 dir 5: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111), tilted 0 T8 #108 in(X) = N_X - sum c_X + p_X equals h_X  {'(0, 0, 1, 1)': 6, '(0, 1, 0, 1)': 16, '(0, 1, 1, 0)': 11, '(1, 0, 0, 1)': 11, '(1, 0, 1, 0)': 16, '(1, 1, 0, 0)': 6}
+  ok   4D permutohedron (A4 1111) tilted 0: same Stanley h as the regular copy (no symmetry needed)
+PROGRESS 0.167 4D permutohedron (A4 1111) tilted 0
+  ok   4D permutohedron (A4 1111) tilted copy 1: face lattice kept (exact)
+== 4D permutohedron (A4 1111), tilted 1: 120 corners, 30 cells
+  ok   4D permutohedron (A4 1111), tilted 1 T1 simple (4 cells at every corner)
+  ok   4D permutohedron (A4 1111), tilted 1 T3 a-balanced, a = {1: 1, 2: 1, 3: 1, 4: 1}
+  ok   4D permutohedron (A4 1111), tilted 1 T2 every subset of a corner's cells is a face of dimension 4 - |T|; 541 faces, distinct  bad 0
+  ok   4D permutohedron (A4 1111), tilted 1 T4 Stanley fine h symmetric h_b = h_(a-b) and >= 0  (0, 0, 1, 1):6 (0, 1, 0, 1):16 (0, 1, 1, 0):11 (1, 0, 0, 1):11 (1, 0, 1, 0):16 (1, 1, 0, 0):6
+  ok   4D permutohedron (A4 1111), tilted 1 dir 0: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111), tilted 1 dir 0: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111), tilted 1 dir 0: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111), tilted 1 dir 0: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111), tilted 1 dir 1: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111), tilted 1 dir 1: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111), tilted 1 dir 1: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111), tilted 1 dir 1: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111), tilted 1 dir 2: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111), tilted 1 dir 2: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111), tilted 1 dir 2: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111), tilted 1 dir 2: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111), tilted 1 dir 3: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111), tilted 1 dir 3: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111), tilted 1 dir 3: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111), tilted 1 dir 3: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111), tilted 1 dir 4: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111), tilted 1 dir 4: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111), tilted 1 dir 4: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111), tilted 1 dir 4: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111), tilted 1 dir 5: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   4D permutohedron (A4 1111), tilted 1 dir 5: T6 N_u(b) = Stanley h_b for all b
+  ok   4D permutohedron (A4 1111), tilted 1 dir 5: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 0, 1, 1)->(1, 1, 0, 0):6 (0, 1, 0, 1)->(1, 0, 1, 0):16 (0, 1, 1, 0)->(1, 0, 0, 1):11 (1, 0, 0, 1)->(0, 1, 1, 0):11 (1, 0, 1, 0)->(0, 1, 0, 1):16 (1, 1, 0, 0)->(0, 0, 1, 1):6
+  ok   4D permutohedron (A4 1111), tilted 1 dir 5: T9 N_(-u)(b) = N_u(a-b)
+  ok   4D permutohedron (A4 1111), tilted 1 T8 #108 in(X) = N_X - sum c_X + p_X equals h_X  {'(0, 0, 1, 1)': 6, '(0, 1, 0, 1)': 16, '(0, 1, 1, 0)': 11, '(1, 0, 0, 1)': 11, '(1, 0, 1, 0)': 16, '(1, 1, 0, 0)': 6}
+  ok   4D permutohedron (A4 1111) tilted 1: same Stanley h as the regular copy (no symmetry needed)
+PROGRESS 0.250 4D permutohedron (A4 1111) tilted 1
+== bitruncated 24-cell (F4 0110): 288 corners, 48 cells
+  ok   bitruncated 24-cell (F4 0110) T1 simple (4 cells at every corner)
+  ok   bitruncated 24-cell (F4 0110) T3 a-balanced, a = {1: 2, 4: 2}
+  ok   bitruncated 24-cell (F4 0110) T2 every subset of a corner's cells is a face of dimension 4 - |T|; 1249 faces, distinct  bad 0
+  ok   bitruncated 24-cell (F4 0110) T4 Stanley fine h symmetric h_b = h_(a-b) and >= 0  (0, 2):73 (1, 1):52 (2, 0):73
+  ok   bitruncated 24-cell (F4 0110) dir 0: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110) dir 0: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110) dir 0: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110) dir 0: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110) dir 1: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110) dir 1: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110) dir 1: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110) dir 1: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110) dir 2: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110) dir 2: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110) dir 2: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110) dir 2: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110) dir 3: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110) dir 3: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110) dir 3: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110) dir 3: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110) dir 4: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110) dir 4: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110) dir 4: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110) dir 4: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110) dir 5: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110) dir 5: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110) dir 5: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110) dir 5: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110) T8 #108 in(X) = N_X - sum c_X + p_X equals h_X  {'(0, 2)': 73, '(1, 1)': 52, '(2, 0)': 73}
+PROGRESS 0.333 bitruncated 24-cell (F4 0110)
+  ok   bitruncated 24-cell (F4 0110) tilted copy 0: face lattice kept (exact)
+== bitruncated 24-cell (F4 0110), tilted 0: 288 corners, 48 cells
+  ok   bitruncated 24-cell (F4 0110), tilted 0 T1 simple (4 cells at every corner)
+  ok   bitruncated 24-cell (F4 0110), tilted 0 T3 a-balanced, a = {1: 2, 4: 2}
+  ok   bitruncated 24-cell (F4 0110), tilted 0 T2 every subset of a corner's cells is a face of dimension 4 - |T|; 1249 faces, distinct  bad 0
+  ok   bitruncated 24-cell (F4 0110), tilted 0 T4 Stanley fine h symmetric h_b = h_(a-b) and >= 0  (0, 2):73 (1, 1):52 (2, 0):73
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 0: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 0: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 0: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 0: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 1: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 1: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 1: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 1: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 2: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 2: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 2: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 2: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 3: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 3: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 3: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 3: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 4: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 4: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 4: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 4: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 5: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 5: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 5: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110), tilted 0 dir 5: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110), tilted 0 T8 #108 in(X) = N_X - sum c_X + p_X equals h_X  {'(0, 2)': 73, '(1, 1)': 52, '(2, 0)': 73}
+  ok   bitruncated 24-cell (F4 0110) tilted 0: same Stanley h as the regular copy (no symmetry needed)
+PROGRESS 0.417 bitruncated 24-cell (F4 0110) tilted 0
+  ok   bitruncated 24-cell (F4 0110) tilted copy 1: face lattice kept (exact)
+== bitruncated 24-cell (F4 0110), tilted 1: 288 corners, 48 cells
+  ok   bitruncated 24-cell (F4 0110), tilted 1 T1 simple (4 cells at every corner)
+  ok   bitruncated 24-cell (F4 0110), tilted 1 T3 a-balanced, a = {1: 2, 4: 2}
+  ok   bitruncated 24-cell (F4 0110), tilted 1 T2 every subset of a corner's cells is a face of dimension 4 - |T|; 1249 faces, distinct  bad 0
+  ok   bitruncated 24-cell (F4 0110), tilted 1 T4 Stanley fine h symmetric h_b = h_(a-b) and >= 0  (0, 2):73 (1, 1):52 (2, 0):73
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 0: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 0: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 0: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 0: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 1: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 1: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 1: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 1: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 2: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 2: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 2: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 2: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 3: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 3: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 3: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 3: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 4: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 4: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 4: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 4: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 5: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 5: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 5: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):73 (1, 1)->(1, 1):52 (2, 0)->(0, 2):73
+  ok   bitruncated 24-cell (F4 0110), tilted 1 dir 5: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 24-cell (F4 0110), tilted 1 T8 #108 in(X) = N_X - sum c_X + p_X equals h_X  {'(0, 2)': 73, '(1, 1)': 52, '(2, 0)': 73}
+  ok   bitruncated 24-cell (F4 0110) tilted 1: same Stanley h as the regular copy (no symmetry needed)
+PROGRESS 0.500 bitruncated 24-cell (F4 0110) tilted 1
+== bitruncated 600-cell (H4 0110): 3600 corners, 720 cells
+  ok   bitruncated 600-cell (H4 0110) T1 simple (4 cells at every corner)
+  ok   bitruncated 600-cell (H4 0110) T3 a-balanced, a = {1: 2, 4: 2}
+  ok   bitruncated 600-cell (H4 0110) T2 every subset of a corner's cells is a face of dimension 4 - |T|; 15841 faces, distinct  bad 0
+  ok   bitruncated 600-cell (H4 0110) T4 Stanley fine h symmetric h_b = h_(a-b) and >= 0  (0, 2):601 (1, 1):964 (2, 0):601
+  ok   bitruncated 600-cell (H4 0110) T4 fine h against the paper's numbers  {(2, 0): 601, (1, 1): 964, (0, 2): 601}
+  ok   bitruncated 600-cell (H4 0110) dir 0: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 600-cell (H4 0110) dir 0: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 600-cell (H4 0110) dir 0: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):601 (1, 1)->(1, 1):964 (2, 0)->(0, 2):601
+  ok   bitruncated 600-cell (H4 0110) dir 0: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 600-cell (H4 0110) dir 1: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 600-cell (H4 0110) dir 1: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 600-cell (H4 0110) dir 1: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):601 (1, 1)->(1, 1):964 (2, 0)->(0, 2):601
+  ok   bitruncated 600-cell (H4 0110) dir 1: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 600-cell (H4 0110) dir 2: T5 sweep = line shelling of the polar (restriction face R(v))  failures 0
+  ok   bitruncated 600-cell (H4 0110) dir 2: T6 N_u(b) = Stanley h_b for all b
+  ok   bitruncated 600-cell (H4 0110) dir 2: T7 ledger from 2-faces: X -> Y = h_Y, balanced  (0, 2)->(2, 0):601 (1, 1)->(1, 1):964 (2, 0)->(0, 2):601
+  ok   bitruncated 600-cell (H4 0110) dir 2: T9 N_(-u)(b) = N_u(a-b)
+  ok   bitruncated 600-cell (H4 0110) T8 #108 in(X) = N_X - sum c_X + p_X equals h_X  {'(0, 2)': 601, '(1, 1)': 964, '(2, 0)': 601}
+PROGRESS 0.583 bitruncated 600-cell (H4 0110)
+  ok   NEG random types on a tilted permutohedron: not a-balanced (Stanley h undefined)  {(1, 1, 1, 2): 42, (1, 1, 1, 1): 26, (1, 1, 2, 2): 42, (1, 2, 2, 2): 10}
+  ok   NEG random types: ledger unbalanced in 6 of 6 directions (expected > 0)
+PROGRESS 0.667 negative control
+== moved 16-cell
+  ok   moved 16-cell: the 16 sign-choice tetrahedra are exactly the facets
+  ok   moved 16-cell: NOT simple (cells per corner {8}): the polar is not simplicial, Stanley's hypothesis fails
+  ok   moved 16-cell: faces through a corner 27 (a simplicial polar would give 2^8 = 256 cell subsets)
+  ok   moved 16-cell: corner heights under -3x1 + x4 are -30, 31, -3, -4, 2, 1, 12, -2
+  ok   moved 16-cell: unbalanced in the direction -3x1 + x4 (rosette-balance Theorem 4)  {"(0, '', 0, 12, 0, 8)": 1, "(1, '', 0, 8, 0, 4)": 2, "(3, 'Q', 2, 2, 0, 0)": 1, "(4, '', 5, 1, 2, 0)": 2, "(5, '', 8, 0, 4, 0)": 1, "(6, '', 12, 0, 8, 0)": 1}
+  ok   moved 16-cell: faces new at a corner are not always an interval [R, sigma] (corners with >1 minimal new face: 613)
+  ok   moved 16-cell: class contributions have rank 5 < 8 classes: counts not fixed by face numbers
+  ok   moved 16-cell: unbalanced in 1 of 201 sweeps (> 0)
+PROGRESS 0.750 moved 16-cell
+== regular 16-cell
+  ok   regular 16-cell: the 16 sign-choice tetrahedra are exactly the facets
+  ok   regular 16-cell: NOT simple (cells per corner {8}): the polar is not simplicial, Stanley's hypothesis fails
+  ok   regular 16-cell: faces through a corner 27 (a simplicial polar would give 2^8 = 256 cell subsets)
+  ok   regular 16-cell: balanced in all 50 generic sweeps (symmetry: Paradigm Thm 10.3)
+PROGRESS 0.833 regular 16-cell
+checks failed: 0; 198.9 s
+FINAL ok (full, 198.9 s)
+[exit 0]

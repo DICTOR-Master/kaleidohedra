@@ -7686,6 +7686,16 @@
     "retry": "B6 only: a search for a single edging piece; smallest kit over 31 mixes stays open",
     "study": "studies/2026-11-14-platonic-hybrid",
     "goes_to": "Space-Fillers and Lattice Moves, Ch 8 section 6 (Prop 8.1-8.3, Thm 8.3, Cor 8.4); #47 next version"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "DICTO 15 Nov: 'have we done the Stanley law check against our laws' - is the balance law of #104 Thm 4 / #108 Thm 1 Stanley's 1979 symmetry, and what of #108 Thm 3, #104 Thm 1, the rosette law (Paradigm Lemma 10.2 / Thm 10.3) and the Eulerian sweep count?",
+    "method": "sources: Bayer-Billera 1985 read in full (GDZ scan); Stanley 1979 NOT readable (AMS browser verification; abstract only; theorem numbers second-hand); Stanley EC1 Cor 3.13.2, 3.16.6; arXiv 1503.06430. Exact check (stanley_check.py, compute host, jobs stanley-pilot, stanley, 214 checks, FINAL ok): polar sphere simplicial, sweep = line shelling with restriction face R(v), corner counts = Stanley fine h from the fine f-vector, ledger from 2-faces, #108 in(X) = inversion, reversal = complement; 4D permutohedron, bitruncated 24-cell (regular + 2 tilted each), bitruncated 600-cell (Q(sqrt5)); moved and regular 16-cell; negative control random types",
+    "result": "#104 Thm 4 and #108 Thm 1 = fine h-symmetry h_b = h_(a-b) of the polar balanced sphere after an exactly verified translation (601/964/601, 73/52/73, 6/16/11); for one type per corner it is stated in Bayer-Billera 1985 Sec 3 p 152 (complete: Thm 3.2), who credit it to Bjorner-Garsia-Stanley 1982, Stanley 1982, Bayer-Billera 1984 Cor 4.7, not to Stanley 1979; for type (2,2) not found stated in sources read. #108 Thm 3 (E - V + 1) NEW; #104 Thm 1 classical elsewhere, tissue reading new; rosette law NEW, outside the simplicial setting (new faces not an interval, rank 5 < 8 classes, so symmetry needed); Eulerian count KNOWN (EC1 Cor 3.13.2). Triage 14 Nov wrong twice: Bayer-Billera 1985 IS a source; 'Stanley 1979 symmetry' unconfirmed",
+    "status": "SETTLED (map and checks); Stanley 1979 theorem numbers open until read",
+    "retry": "never for the checks; only: read Stanley 1979 (DICTO browser download) and fix citations",
+    "study": "studies/2026-11-15-stanley-check",
+    "goes_to": "credit sentences for Paradigm Ch 8-10, #104 and #108 next versions, Concordance front (#108) and gaps.waiting[84], Brief Geometry plan: README Section 5 (DICTO decides)"
    }
   ]
  },
