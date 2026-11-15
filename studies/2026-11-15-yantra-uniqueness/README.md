@@ -2,7 +2,7 @@
 
 # Uniqueness of Kulaichev's Śrī Yantra (study 2026-11-15)
 
-DICTO, 15 Nov 2026: "yes start the yantra uniqueness check". This answers the question Kulaichev asked in 1984 (A. P. Kulaichev, *IJHS* 19.3, p. 285). Chiodo (*C. R. Math.* 359, 2021, p. 384) calls it "toujours ouverte", still open. Pustynski (*IJHS* 49.3, 2014, pp. 273–274) argued for uniqueness from residual plots on dense grids, which is numerical evidence only. Huet's conditions are used in Chiodo's form.
+DICTO, 15 Nov 2026: "yes start the yantra uniqueness check". This answers the question Kulaichev asked in 1984 (A. P. Kulaichev, *IJHS* 19.3, p. 285). Chiodo (*C. R. Math.* 359, 2021, p. 381) calls it "toujours ouverte", still open. Pustynski (*IJHS* 49.3, 2014, pp. 273–274) argued for uniqueness from residual plots on dense grids, which is numerical evidence only. Huet's conditions are used in Chiodo's form.
 
 ## Theorem (Kulaichev's question answered)
 
