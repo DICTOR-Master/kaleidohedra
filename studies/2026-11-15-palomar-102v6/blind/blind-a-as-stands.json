@@ -1,0 +1,51 @@
+{
+  "step": "literature_notability",
+  "outcome": "warning",
+  "summary": "Read together, Theorems A, B and 5 give a concrete, checkable result in lattice enumeration and the topology of close-packed tetrahedral networks: polygon counts through a site do not depend on the stacking up to length 16, and at lengths 18 and 20 they follow exact local linear laws in the h/c letters. A specialist audience can be named: people who enumerate lattice polygons and self-avoiding walks, and crystal-network and chemical-graph theorists who use ring statistics to classify polytypes and stacking-disordered ice. The literature account leaves out the closest direct comparison, Herrero's enumeration of self-avoiding walks on the ice Ih (lonsdaleite) and ice Ic (diamond) networks, and it does not set the polygon result against the known early stacking dependence of coordination sequences and walk counts.",
+  "findings": [
+    {
+      "severity": "warning",
+      "message": "Closest prior comparison omitted. C. P. Herrero, 'Structural characterization of ice polymorphs from self-avoiding walks', Chem. Phys. 439 (2014) 49 (arXiv:1402.5036), enumerates self-avoiding walks on exactly the two networks treated here, ice Ih = lonsdaleite (2H) and ice Ic = diamond (3C). In its Table II the counts agree at lengths 5 and 10 (324, 70188) and differ at length 15 (14776128 against 14774652). This is the direct analogue of the paper's claim that polygon counts agree to length 16 and first differ at 18. It changes the public account in two ways. First, the stacking dependence of open walks is already documented at moderate length on these very networks. Second, what is new and interesting is the contrast: closed polygons stay blind to stacking much longer than open walks or coordination shells do. The account should cite this work and state that contrast. It currently cites only Herrero-Ramirez 2013 on ring statistics and Benito et al. 2023, which is about hcp/fcc sphere packings, a different pair of networks."
+    },
+    {
+      "severity": "warning",
+      "message": "The research-interest case is left implicit. No outside open question, and no use of polygon or ring invariance in the polytype or ice literature, is named. One concrete, citable use exists: ring statistics are a standard way to analyse simulated stacking-disordered ice and polytypes. The result implies that rings up to length 16 through a site cannot tell any stacking from any other, and that lengths 18 and 20 respond linearly to the h/c letters of four nearby bilayers. The account would be stronger if it stated this consequence and gave the audience it serves."
+    }
+  ],
+  "scores": {"notability": 4, "literature": 3},
+  "trust_level": null,
+  "sources_checked": [
+    "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b/CONTRIBUTING.md",
+    "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b/rubric.json",
+    "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b/prompts/04-literature-notability.md",
+    "local:blind/inputs/common.md",
+    "local:blind/inputs/a-as-stands.md",
+    "https://arxiv.org/abs/1402.5036",
+    "https://arxiv.org/pdf/1402.5036",
+    "https://arxiv.org/abs/1307.4611",
+    "https://arxiv.org/abs/1406.5929",
+    "https://pubs.rsc.org/en/Content/ArticleLanding/2013/CP/C3CP52167B",
+    "https://doaj.org/article/40c8584974894f65aa516bb7bc5996d9",
+    "https://www.preprints.org/manuscript/202308.0999/v1",
+    "https://oeis.org/A038515",
+    "https://arxiv.org/abs/2511.09732",
+    "https://personal.math.ubc.ca/~slade/lacecounts/",
+    "https://it.iucr.org/Cb/ch9o2v0001/sec9o2o1o2/"
+  ],
+  "declarations_checked": [],
+  "codes_checked": [],
+  "internal_notes": [
+    {"evidence": "Herrero 2014 Table II", "message": "Self-avoiding walk counts for Ih and Ic: C5 = 324 for both, C10 = 70188 for both, C15 = 14776128 (Ih) against 14774652 (Ic). This is positive context: open walks feel the stacking by length 15 at the latest, while the candidate says polygons stay invariant to length 16. That contrast is the strongest evidence of interest, and the account does not use it."},
+    {"evidence": "web searches (diamond vs lonsdaleite polygons; polytypes cycle counts; 'Loop Equality')", "message": "No prior statement found that polygon counts are stacking-independent, and no exact local h/c formula found. The Zenodo series itself did not appear in search. Novelty is not inferred from this."},
+    {"evidence": "Benito-Urrutia-Karayiannis-Laso, Crystals 13 (2023) 1316", "message": "Confirmed: self-avoiding walk enumeration on hcp vs fcc and hex vs bcc, with counts diverging beyond a critical length. Cited correctly as background, but it concerns sphere packings, not tetrahedral networks."},
+    {"evidence": "OEIS A038515", "message": "Confirmed as diamond-net polygon counts (Guttmann-Jensen 2009, Table 16.12). Cited correctly."},
+    {"evidence": "Theorem 5 statement", "message": "'Proved, up to diamond's constants' together with finite tables (about 1000 arcs and 7700 meeting pairs at length 18; 6756 arcs and 74493 meeting pairs at length 20) means the proof depends on computed data. That belongs to the proof-account step, but the informal account should say which parts are formalised. No Comparator configuration was supplied to this blind review, so declarations_checked is empty."},
+    {"evidence": "Theorem A corollary scope", "message": "The corollary covers only polygons that cross every bilayer at most twice. On its own it is a tool rather than a headline result."}
+  ],
+  "per_theorem": [
+    {"theorem": "Theorem A (half-turn twist bijection)", "notability": 3, "literature": 3, "note": "A Whitney-type surgery bijection, limited to polygons crossing each bilayer at most twice. Taken alone it is a lemma, and its paper-worthiness is borderline. Its value lies in feeding Theorems B and 5."},
+    {"theorem": "Theorem B (exact local flip formula)", "notability": 3, "literature": 3, "note": "A technical inclusion-exclusion formula for the change under one flip. Its interest comes almost entirely from what it gives in Theorem 5."},
+    {"theorem": "Theorem 5 (invariance to length 16; exact linear forms at 18 and 20)", "notability": 4, "literature": 3, "note": "The headline result. It is concrete, surprising set against walk and coordination-sequence counts, and has a named specialist audience. Its literature context is missing the Herrero 2014 self-avoiding-walk comparison."}
+  ],
+  "what_would_reach_4": "Literature: cite Herrero, Chem. Phys. 439 (2014) 49 / arXiv:1402.5036. State that walk counts on Ih and Ic agree at lengths 5 and 10 and differ by length 15, and that coordination sequences differ even earlier (diamond 4, 12, 24, ... against lonsdaleite 4, 12, 25, ...). Then frame the result as the contrast: closed polygons are stacking-blind to length 16, open walks are not. Say precisely what Benito et al. covers (hcp/fcc sphere packings, not tetrahedral networks). Say which statements are formalised in Lean and which rest on computed tables. Notability, to make it robust rather than near the borderline: name the outside use, namely ring statistics as an order parameter for stacking-disordered ice and SiC/ZnS polytypes, and what the theorem implies for it (rings up to length 16 carry no stacking information; lengths 18 and 20 give a linear local h/c readout). A cited open question or remark from that community would strengthen this further."
+}

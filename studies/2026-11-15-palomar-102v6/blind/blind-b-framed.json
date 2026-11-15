@@ -1,0 +1,46 @@
+{
+  "step": "literature_notability",
+  "outcome": "warning",
+  "summary": "The selected results (an all-length twist bijection for polygons crossing each bilayer at most twice, an exact local flip formula, and an exact first-difference law at length 18) form a coherent specialist contribution to lattice-polygon enumeration on tetrahedral polytypes, with a credible audience in lattice statistics and ice-type models. The literature account omits the most directly relevant prior work: Nagle's 1966 cycle-correction expansion for the residual entropy of ice, whose exact coefficients for hexagonal and cubic ice coincide through a stated order and then separate, and Onsager's argument for W_hex >= W_cubic cited there. Without that comparison the claim to be the first exact, structural account of where stacking enters cycle statistics is not supported.",
+  "findings": [
+    {
+      "severity": "major",
+      "message": "Unsupported priority claim and omitted prior work. The submission claims the first exact, structural account of where and why stacking first enters cycle statistics of the ice/diamond network, but does not discuss J. F. Nagle, 'Lattice statistics of hydrogen bonded crystals. I. The residual entropy of ice', J. Math. Phys. 7 (1966) 1484. Nagle expanded the ice-rule count in cycle corrections on the hexagonal and cubic ice lattices, gave exact coefficients up to cycle order 14, and found that the hexagonal and cubic coefficients coincide up to n = 10 and then differ (as summarised by Ferreyra, Rossini, Grigera, Phys. Rev. E 98 (2018) 042146); an argument of Onsager for W_hex > W_cubic is cited in Nagle's footnote 11. This is an exact comparison of stacking-dependent closed-cycle statistics on the same two networks and the natural bridge from the polygon counts to the residual-entropy question quoted from Xu, Lin, Zhang. The account should compare the twist bijection and the length-18 law with Nagle's coefficients (stating how his closed graphs and their order relate to simple cycles through a site) and with Onsager's argument, and withdraw or qualify the priority wording."
+    },
+    {
+      "severity": "minor",
+      "message": "The outside questions are adjacent, not the same question. The quoted Xu-Lin-Zhang problem concerns ice-rule residual entropy and the Benito-Urrutia-Karayiannis-Laso paper concerns self-avoiding walks on hcp versus fcc sphere packings (coordination 12), not simple cycles of the 4-coordinated tetrahedral network. The submission says this honestly, but the framing should not imply that the theorems address either question; the reported detail that hcp/fcc counts agree up to N = 5 comes from search summaries and is not in the paper's abstract, so it should be checked against the paper or dropped."
+    }
+  ],
+  "scores": {"notability": 4, "literature": 3},
+  "trust_level": null,
+  "sources_checked": [
+    "local:blind/inputs/common.md",
+    "local:blind/inputs/b-framed.md",
+    "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b/CONTRIBUTING.md",
+    "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b/rubric.json",
+    "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b/prompts/04-literature-notability.md",
+    "https://arxiv.org/abs/2511.22477",
+    "https://api.crossref.org/works/10.3390/cryst13091316",
+    "https://sedici.unlp.edu.ar/bitstream/handle/10915/97938/11336_87908_2_CONICET_Digital_Nro.03a86d30-f1a0-4613-841f-8aa7b3f6f722_A.pdf-PDFA.pdf.pdf?sequence=1",
+    "https://arxiv.org/pdf/1307.4611",
+    "https://arxiv.org/pdf/cond-mat/0609211",
+    "https://arxiv.org/pdf/1505.02561",
+    "https://arxiv.org/pdf/2208.06744",
+    "https://arxiv.org/pdf/cond-mat/0406027",
+    "https://en.wikipedia.org/wiki/Ice-type_model"
+  ],
+  "declarations_checked": [],
+  "codes_checked": [],
+  "internal_notes": [
+    {"evidence": "arXiv:2511.22477", "message": "Quote and framing verified: Xu, Lin, Zhang, 'Equivalence of residual entropy of hexagonal and cubic ices from tensor network methods', v1 27 Nov 2025, v3 9 Jun 2026, Phys. Rev. B 113, 214416 (2026). Abstract attributes Sh >= Sc to earlier analytical work; the paper itself argues Sh = Sc numerically/via normality. No cycle or polygon content in the abstract."},
+    {"evidence": "Crystals 13 (2023) 1316 via Crossref", "message": "Abstract quote verified verbatim. The 'agree up to N = 5' and 'equal-count assumption shown false' details could not be confirmed (MDPI, DOAJ, preprints.org returned 403)."},
+    {"evidence": "Ferreyra-Rossini-Grigera PRE 98 042146 (2018)", "message": "States Nagle's cycle-correction coefficients for hexagonal and cubic ice coincide up to n = 10, hexagonal larger afterwards, consistent with Onsager's proof (Nagle footnote 11). Nagle's original not accessed (paywalled); whether his n is bond count and his graphs include non-simple closed graphs (which could explain earlier divergence than simple-cycle length 18) is unverified."},
+    {"evidence": "Herrero-Ramirez arXiv:1307.4611", "message": "Ih and Ic: all fundamental rings six-membered; coordination sequences of Ih/Ic are known to differ at small shells, so stacking enters other topological statistics early; useful contrast, not a defect."},
+    {"evidence": "web searches", "message": "No prior source found comparing self-avoiding polygon counts on diamond vs lonsdaleite or polytypes; no prior statement of the twist bijection or the length-18 law found. Absence of evidence only; not used to infer novelty."},
+    {"evidence": "positive evidence for audience", "message": "Hex-vs-cubic statistics is an active published question (PRB 2026, PRE 2018, Crystals 2023, Nagle 1966); diamond polygon counts are a standard enumeration target (Guttmann-Jensen, OEIS A038515). An all-stacking, all-length bijection plus an exact first-difference law is plausibly a specialist note (J. Phys. A / Acta Cryst. A / combinatorics journal level)."},
+    {"evidence": "comparator configuration", "message": "No Comparator configuration or Lean files were supplied in the blind inputs, so declarations_checked is empty; coverage could not be checked."}
+  ],
+  "what_would_reach_4": "Literature: add Nagle 1966 (cycle-correction expansion, exact Ih/Ic coefficients and where they diverge) and Onsager's W_hex >= W_cubic argument; state precisely how Nagle's closed graphs relate to simple polygons through a site and whether Theorem 5's length-18 law reproduces or explains his divergence; replace 'first exact, structural account' with a scoped claim (e.g. first all-length bijection for simple cycles across all stackings, as far as the cited searches show); verify or drop the 'agree up to N = 5' Benito et al. detail; list the sources searched. Notability would be firmer still if the paper derived a consequence for the Ih/Ic cycle expansion or for Onsager's inequality.",
+  "does_framing_hold": "Partly. The quoted outside questions are real and correctly quoted (Xu-Lin-Zhang PRB 2026; Benito et al. abstract verbatim), and the submitter honestly says the theorems do not decide Sh = Sc or SAWs on sphere packings. But those are neighbouring questions, and the 'first exact structural account' claim does not hold as stated: Nagle 1966 already gave exact, stacking-dependent cycle-expansion coefficients for hexagonal vs cubic ice and Onsager proved an inequality from them. Nagle is the true bridge and is missing."
+}
