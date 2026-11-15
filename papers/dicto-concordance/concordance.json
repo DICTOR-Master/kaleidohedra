@@ -7918,6 +7918,15 @@
     "retry": "atmosphere only with a pure open- or closed-cell box, two-sided persistence for splits/merges, and a moving-Voronoi image control of known swap rate; sea ice only via the SubZero floe model or 250 m / 10 m imagery; never Himawari for floes",
     "study": "studies/2026-11-15-atmosphere-seaice",
     "goes_to": "One tissue (comparison table: atmosphere and sea-ice rows); #104 follow-up"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "One tissue, three scales, Section 2 (Sun; DICTO 15 Nov: 'throw all possible resources at the new scutoid work'): have neighbour swaps been counted in solar granulation; counts of swaps, splits, merges, births, deaths of granules in a periodic radiative-MHD simulation; swaps per split, per cell lifetime; side-number laws against Voronoi; stability over threshold and time step",
+    "method": "studies/2026-11-15-sun-granulation: prior art (free sources, PRIOR_ART.md); public Bifrost runs en024048_hion (242 snapshots, 10 s) and qs024048_by3363 (101) from Hinode SDC Europe, planes by HTTP range requests (2.1 GB); periodic marker watershed (lanes as boundaries), overlap matching with lineage, shared event logger (imported unchanged), elementary and two-step swaps, flicker filter W = 60 s; 17 settings x steps 10/20/40/80 s; positive control: moving periodic Voronoi seeds drawn as images vs exact Delaunay counts (6 sequences); jobs sun-pilot, sun-pilot2, sun-ctl-pilot2, sun-fetch-en, sun-fetch-qs, sun-census, sun-control, sun-fig, FINAL ok",
+    "status": "COMPUTED (not stable with the time step: rates are not yet comparable across scales)",
+    "result": "No swap count in granulation found (lab Benard-Marangoni neighbour switching described by Cerisier, Rahal & Rivier 1996, full text unread). At 10 s over 13 settings: 0.07-0.15 persistent swaps per cell per minute, 0.8-1.9 swaps per persistent split, 0.6-1.3 swaps per cell lifetime (lifetime 6-11 min); births/deaths at junctions almost absent (cells arise by splitting, vanish by merging); counts fall 12-26% from 10 to 20 s and 50-70% to 80 s; control: true count step-independent (2%), pipeline finds 87% at 10 s and 62% at 80 s, so much of the step dependence is detection loss; detection factor at 10 s 0.8-1.15. Robust: mu2 2.7-4.9 vs 1.0-1.2 for centroid Voronoi, p6 0.16-0.24 vs 0.35-0.40, Aboav-Weaire a 0.67-0.90 with intercept within 0.35 of 6a+mu2, Lewis linear (R2 0.94-0.99 en); deeper planes: fewer cells, fewer swaps per lifetime. Supergranules not reached.",
+    "retry": "never as run; next only with: unpaired lost/gained contacts resolved, rate extrapolated to step 0 with the control efficiency, emergent intensity or a real Hinode series, or a supergranule-scale data set",
+    "study": "studies/2026-11-15-sun-granulation"
    }
   ]
  },
