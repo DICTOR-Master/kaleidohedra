@@ -1,0 +1,88 @@
+== A. The 20-set X from its definition (R^5, centred) ==
+CHECK X has 20 points, cosines in the 600-cell set: OK
+   cosine distribution from one point: [((1/4+-1/4r5), 3), ((1/4+1/4r5), 3), (-1/2, 6), (0, 6), (1, 1), (1/2, 1)]
+   Gram automorphisms of X: 120
+CHECK symmetry group of X has order 120: OK
+CHECK reflection closure of X has 120 points with 600-cell cosines (H4 roots): OK
+   600-cell kills: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 28, 29]
+   S5-orbit size  30 antipodal=False is_X=False shape(min->0)=[0, 1, 1, (3/2+1/2r5), (3/2+1/2r5)] kills=[1, 2, 3, 6]
+   S5-orbit size  20 antipodal=False is_X=True shape(min->0)=[0, (1/2+1/2r5), (3/2+1/2r5), (3/2+1/2r5), (3/2+1/2r5)] kills=[1, 2, 5, 7]
+   S5-orbit size  20 antipodal=False is_X=False shape(min->0)=[0, 0, 0, 1, (3/2+1/2r5)] kills=[1, 2, 5, 7]
+   S5-orbit size  20 antipodal=True is_X=False shape(min->0)=[0, (1/2+1/2r5), (1/2+1/2r5), (1/2+1/2r5), (1+1r5)] kills=[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+   S5-orbit size  30 antipodal=False is_X=False shape(min->0)=[0, 0, (1/2+1/2r5), (1/2+1/2r5), (3/2+1/2r5)] kills=[1, 2, 3, 6]
+CHECK the 30-set perms(phi^2,phi^2,1,1,0) is (up to scale) an S5-orbit of the same 600-cell: OK
+   X kills: [1, 2, 5, 7]   F(30) kills: [1, 2, 3, 6]
+   S5-invariant harmonics, dim by degree 1..: [0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 6, 7, 8, 8, 8, 9, 10, 10, 11]
+   degrees forced by S5 (dim 0): [1, 2]
+== B. Quaternion model: 2I, the outer automorphism, twisted classes ==
+CHECK 2I has 120 elements and is closed: OK
+CHECK sigma (Galois conjugation, then i->-i, j<->k) maps 2I to 2I: OK
+CHECK sigma is multiplicative: OK
+CHECK sigma moves the order-10 class to the other one (outer): OK
+   twisted class size  20 antipodal=True kills=[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+   twisted class size  20 antipodal=False kills=[1, 2, 5, 7]
+   twisted class size  20 antipodal=False kills=[1, 2, 5, 7]
+   twisted class size  30 antipodal=False kills=[1, 2, 3, 6]
+   twisted class size  30 antipodal=False kills=[1, 2, 3, 6]
+CHECK X is congruent to a twisted class of 2I (exact Gram isomorphism): OK
+CHECK F is congruent to a twisted class of 2I (exact Gram isomorphism): OK
+== C. Characters: restriction of V_k (dim k+1) to 2I; prediction versus direct sums ==
+CHECK the nine characters are orthonormal: OK
+   V_1 = 2
+   V_2 = 3
+   V_3 = 4s
+   V_4 = 5
+   V_5 = 6
+   V_6 = 3' + 4
+   V_7 = 2' + 6
+   V_8 = 4 + 5
+   V_9 = 4s + 6
+   V_10 = 3 + 3' + 5
+   V_11 = 2 + 4s + 6
+   V_12 = 1 + 3 + 4 + 5
+CHECK pinning degrees: V_3=4s, V_4=5, V_5=6, V_6=3'+4: OK
+   zero pattern of twisted characters (pinned by degrees 3,4,5,6 only):
+     class size 20: zero at ['4s', '6']; predicted kills [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]; direct [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+     class size 20: zero at ['6']; predicted kills [1, 2, 5, 7]; direct [1, 2, 5, 7]
+     class size 20: zero at ['6']; predicted kills [1, 2, 5, 7]; direct [1, 2, 5, 7]
+     class size 30: zero at ['4', '4s']; predicted kills [1, 2, 3, 6]; direct [1, 2, 3, 6]
+     class size 30: zero at ['4', '4s']; predicted kills [1, 2, 3, 6]; direct [1, 2, 3, 6]
+CHECK theorem prediction = direct exact sums, all five twisted classes, degrees 1..30: OK
+   A5-invariant harmonics dim (degree 1..): [0, 0, 1, 1, 1, 1, 1, 2, 2, 3, 2, 3, 4, 4, 5, 5, 5, 7, 7, 8, 8, 9, 10, 11, 12, 12, 13, 15, 15, 17]
+   ordinary conjugacy classes (sigma = identity): kills predicted by character zeros vs direct
+     class size 12, real part (-1/4+-1/4r5): zero characters ['5']; kills [4]
+     class size 12, real part (-1/4+1/4r5): zero characters ['5']; kills [4]
+     class size 12, real part (1/4+-1/4r5): zero characters ['5']; kills [4]
+     class size 12, real part (1/4+1/4r5): zero characters ['5']; kills [4]
+     class size 20, real part -1/2: zero characters ['3', "3'", '6']; kills [2, 5]
+     class size 30, real part 0: zero characters ['2', "2'", '4', '4s', '6']; kills [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+     class size 20, real part 1/2: zero characters ['3', "3'", '6']; kills [2, 5]
+CHECK ordinary classes: prediction = direct: OK
+== D. Unions of twisted classes: prediction from weighted twisted characters vs direct ==
+CHECK the two 20-classes are negatives of each other, likewise the two 30-classes: OK
+   R + X + (-X), 60 points: predicted all odd + [2, 6]; direct [1, 2, 3, 5, 6, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+CHECK union R + X + (-X), 60 points: OK
+   F + (-F), 60 points: predicted all odd + [2, 6]; direct [1, 2, 3, 5, 6, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+CHECK union F + (-F), 60 points: OK
+   X + (-X), 40 points: predicted all odd + [2]; direct [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+CHECK union X + (-X), 40 points: OK
+   R + F, 50 points: predicted [1, 2, 3]; direct [1, 2, 3]
+CHECK union R + F, 50 points: OK
+   X + (-X) + F, 70 points: predicted [1, 2, 3]; direct [1, 2, 3]
+CHECK union X + (-X) + F, 70 points: OK
+   R + X, 40 points: predicted [1, 2, 5, 7]; direct [1, 2, 5, 7]
+CHECK union R + X, 40 points: OK
+   X + F, 50 points (either sign choice a): predicted [1, 2]; direct [1, 2]
+CHECK union X + F, 50 points (either sign choice a): OK
+   X + (-F'), 50 points (other sign choice): predicted [1, 2]; direct [1, 2]
+CHECK union X + (-F'), 50 points (other sign choice): OK
+== E. 120-cell (cell centres of the 600-cell, 600 points): A5 twisted orbits, direct sums (data, not predicted) ==
+CHECK 120-cell: 20 cells at a vertex, 600 centres, equal norms: OK
+CHECK 120-cell is invariant under left and right multiplication by 2I: OK
+CHECK orbits partition the 600 vertices: OK
+   4 orbit(s) of size 20, antipodal=False, kills (<=20) [1, 2]
+   1 orbit(s) of size 30, antipodal=True, kills (<=20) [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+   2 orbit(s) of size 5, antipodal=False, kills (<=20) [1, 2]
+   4 orbit(s) of size 60, antipodal=False, kills (<=20) [1, 2]
+   4 orbit(s) of size 60, antipodal=False, kills (<=20) [1, 2, 4]
+   whole 120-cell kills (<=30): [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 28, 29]
