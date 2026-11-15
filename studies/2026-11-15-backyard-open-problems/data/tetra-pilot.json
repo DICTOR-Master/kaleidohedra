@@ -1,0 +1,1395 @@
+{
+ "tetrahedra": [
+  {
+   "index": 1,
+   "angles_over_pi": [
+    "1/4",
+    "1/3",
+    "1/3",
+    "1/4",
+    "1/2",
+    "2/3"
+   ],
+   "angle_roundtrip_error": "1.94e-61",
+   "edge_lengths_unit_volume": [
+    "2.28942848510666",
+    "1.98270322825009",
+    "1.98270322825009",
+    "2.28942848510666",
+    "3.23774081372113",
+    "1.98270322825009"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [
+    "Sommerville fig 9"
+   ],
+   "goldberg_family_match": [
+    {
+     "family": "Goldberg half through edge 23",
+     "a": "0.5773502691896257645091488",
+     "distance": "3.17e-31"
+    },
+    {
+     "family": "Goldberg half through edge 23",
+     "a": "0.5773502691896257645091488",
+     "distance": "3.17e-31"
+    }
+   ],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "15 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    false,
+    "3 distinct edge lengths; every node has a 2pi closed walk"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "KNOWN TILER"
+  },
+  {
+   "index": 2,
+   "angles_over_pi": [
+    "5/24",
+    "3/8",
+    "1/3",
+    "1/4",
+    "13/24",
+    "5/8"
+   ],
+   "angle_roundtrip_error": "7.78e-62",
+   "edge_lengths_unit_volume": [
+    "2.7635846494139",
+    "1.50854706394286",
+    "1.98270322825009",
+    "2.28942848510666",
+    "2.7635846494139",
+    "2.45685939255733"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "7 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 4): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 3,
+   "angles_over_pi": [
+    "1/4",
+    "1/2",
+    "1/2",
+    "1/3",
+    "1/3",
+    "1/2"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "2.88449914061482",
+    "1.44224957030741",
+    "2.03964890265551",
+    "2.49804953296681",
+    "2.49804953296681",
+    "2.03964890265551"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [
+    "Sommerville fig 8"
+   ],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "14 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    false,
+    "4 distinct edge lengths; every node has a 2pi closed walk"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "KNOWN TILER"
+  },
+  {
+   "index": 4,
+   "angles_over_pi": [
+    "7/24",
+    "11/24",
+    "13/24",
+    "7/24",
+    "1/3",
+    "1/2"
+   ],
+   "angle_roundtrip_error": "7.78e-62",
+   "edge_lengths_unit_volume": [
+    "2.39257467061677",
+    "1.93417404030546",
+    "1.54772443265746",
+    "2.98997400296486",
+    "2.49804953296681",
+    "2.03964890265551"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "3 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 5,
+   "angles_over_pi": [
+    "1/5",
+    "1/5",
+    "1/3",
+    "1/5",
+    "2/3",
+    "2/3"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "1.99045171111492",
+    "1.99045171111492",
+    "1.81249138962501",
+    "3.22061852154932",
+    "2.93267267272979",
+    "2.93267267272979"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "24 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 3, node (0, 2): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 6,
+   "angles_over_pi": [
+    "1/5",
+    "1/5",
+    "4/15",
+    "4/15",
+    "3/5",
+    "11/15"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "1.99045171111492",
+    "1.99045171111492",
+    "2.51655495558716",
+    "2.51655495558716",
+    "3.63673623869195",
+    "2.22860910676763"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "19 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 1, node (0, 3): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 7,
+   "angles_over_pi": [
+    "1/5",
+    "1/5",
+    "1/3",
+    "1/3",
+    "3/5",
+    "3/5"
+   ],
+   "angle_roundtrip_error": "2.33e-61",
+   "edge_lengths_unit_volume": [
+    "1.6954660551037",
+    "1.6954660551037",
+    "2.49804953296681",
+    "2.49804953296681",
+    "2.74332170392949",
+    "2.74332170392949"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "16 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 2, node (0, 1): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 8,
+   "angles_over_pi": [
+    "1/3",
+    "1/3",
+    "3/5",
+    "1/3",
+    "2/5",
+    "2/5"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "2.12783769807735",
+    "2.12783769807735",
+    "1.44419737889484",
+    "3.44291371803249",
+    "2.33676044551536",
+    "2.33676044551536"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "12 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 1, node (0, 3): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 9,
+   "angles_over_pi": [
+    "4/15",
+    "8/15",
+    "1/3",
+    "1/3",
+    "7/15",
+    "7/15"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "3.33611861508419",
+    "1.33740227594653",
+    "2.12783769807735",
+    "2.12783769807735",
+    "2.44355554846367",
+    "2.44355554846367"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "8 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 3): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 10,
+   "angles_over_pi": [
+    "1/7",
+    "3/7",
+    "1/3",
+    "1/3",
+    "4/7",
+    "4/7"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "3.50672951189598",
+    "1.0036549666733",
+    "2.49804953296681",
+    "2.49804953296681",
+    "2.81217872484987",
+    "2.81217872484987"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "11 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 1, node (2, 3): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 11,
+   "angles_over_pi": [
+    "2/7",
+    "2/7",
+    "1/3",
+    "1/3",
+    "3/7",
+    "5/7"
+   ],
+   "angle_roundtrip_error": "7.78e-62",
+   "edge_lengths_unit_volume": [
+    "2.25519223928464",
+    "2.25519223928464",
+    "2.49804953296681",
+    "2.49804953296681",
+    "4.06371599746121",
+    "1.56064145223853"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "9 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (1, 3): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 12,
+   "angles_over_pi": [
+    "1/5",
+    "2/5",
+    "1/2",
+    "1/3",
+    "1/3",
+    "2/3"
+   ],
+   "angle_roundtrip_error": "1.17e-61",
+   "edge_lengths_unit_volume": [
+    "2.74332170392949",
+    "1.6954660551037",
+    "2.88449914061482",
+    "2.49804953296681",
+    "4.0419290499211",
+    "1.54387951695429"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "10 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 1, node (2, 4): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 13,
+   "angles_over_pi": [
+    "2/15",
+    "7/15",
+    "1/2",
+    "1/3",
+    "2/5",
+    "3/5"
+   ],
+   "angle_roundtrip_error": "1.17e-61",
+   "edge_lengths_unit_volume": [
+    "3.468418646",
+    "0.97036911303319",
+    "2.88449914061482",
+    "2.49804953296681",
+    "3.31683210785059",
+    "2.2689764590248"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "8 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 14,
+   "angles_over_pi": [
+    "2/15",
+    "7/15",
+    "31/60",
+    "19/60",
+    "5/12",
+    "7/12"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "3.468418646",
+    "0.97036911303319",
+    "2.16734651237792",
+    "3.21520216120371",
+    "2.5996794796137",
+    "2.9861290872617"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "3 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 15,
+   "angles_over_pi": [
+    "1/5",
+    "2/5",
+    "7/12",
+    "1/4",
+    "5/12",
+    "7/12"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "2.74332170392949",
+    "1.6954660551037",
+    "1.44224957030741",
+    "3.94029910327422",
+    "2.5996794796137",
+    "2.9861290872617"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "6 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 1, node (2, 4): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 16,
+   "angles_over_pi": [
+    "13/60",
+    "23/60",
+    "7/12",
+    "1/4",
+    "2/5",
+    "3/5"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "2.0261690756926",
+    "2.4126186833406",
+    "1.44224957030741",
+    "3.94029910327422",
+    "3.31683210785059",
+    "2.2689764590248"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "3 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 17,
+   "angles_over_pi": [
+    "1/5",
+    "3/5",
+    "1/3",
+    "1/3",
+    "1/2",
+    "1/2"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "4.43878775903319",
+    "1.04785564882579",
+    "2.49804953296681",
+    "2.49804953296681",
+    "2.88449914061482",
+    "2.88449914061482"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "9 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 1, node (2, 3): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 18,
+   "angles_over_pi": [
+    "3/10",
+    "7/10",
+    "1/3",
+    "1/3",
+    "2/5",
+    "2/5"
+   ],
+   "angle_roundtrip_error": "7.78e-62",
+   "edge_lengths_unit_volume": [
+    "4.57996519571852",
+    "1.18903308551111",
+    "2.49804953296681",
+    "2.49804953296681",
+    "2.74332170392949",
+    "2.74332170392949"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "7 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 3): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 19,
+   "angles_over_pi": [
+    "1/5",
+    "1/5",
+    "2/5",
+    "1/3",
+    "1/2",
+    "2/3"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "1.44419737889484",
+    "2.33676044551536",
+    "2.33676044551536",
+    "3.44291371803249",
+    "3.97553432380543",
+    "2.12783769807735"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "15 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 4, node (0, 1): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 20,
+   "angles_over_pi": [
+    "1/6",
+    "7/30",
+    "11/30",
+    "11/30",
+    "1/2",
+    "2/3"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "2.44355554846367",
+    "1.33740227594653",
+    "3.33611861508419",
+    "2.44355554846367",
+    "3.97553432380543",
+    "2.12783769807735"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "6 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (4, 1): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 21,
+   "angles_over_pi": [
+    "1/5",
+    "1/5",
+    "9/20",
+    "17/60",
+    "11/20",
+    "37/60"
+   ],
+   "angle_roundtrip_error": "2.33e-61",
+   "edge_lengths_unit_volume": [
+    "1.44419737889484",
+    "2.33676044551536",
+    "1.96598876890989",
+    "3.81368539463796",
+    "3.60476264719996",
+    "2.49860937468282"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "7 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 2, node (0, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 22,
+   "angles_over_pi": [
+    "1/5",
+    "1/3",
+    "1/2",
+    "1/3",
+    "2/5",
+    "3/5"
+   ],
+   "angle_roundtrip_error": "2.14e-61",
+   "edge_lengths_unit_volume": [
+    "1.99045171111492",
+    "1.81249138962501",
+    "2.09288478340775",
+    "2.93267267272979",
+    "3.22061852154932",
+    "1.99045171111492"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "10 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 4, node (0, 3): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 23,
+   "angles_over_pi": [
+    "1/6",
+    "11/30",
+    "1/2",
+    "1/3",
+    "13/30",
+    "17/30"
+   ],
+   "angle_roundtrip_error": "2.92e-61",
+   "edge_lengths_unit_volume": [
+    "2.51655495558716",
+    "1.28638814515276",
+    "2.09288478340775",
+    "2.93267267272979",
+    "2.69451527707707",
+    "2.51655495558716"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "8 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (3, 1): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 24,
+   "angles_over_pi": [
+    "1/6",
+    "11/30",
+    "29/60",
+    "7/20",
+    "5/12",
+    "7/12"
+   ],
+   "angle_roundtrip_error": "7.78e-62",
+   "edge_lengths_unit_volume": [
+    "2.51655495558716",
+    "1.28638814515276",
+    "2.42379856732382",
+    "2.60175888881373",
+    "3.02542906099314",
+    "2.1856411716711"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "4 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 1, node (2, 4): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 25,
+   "angles_over_pi": [
+    "1/5",
+    "1/3",
+    "1/3",
+    "1/5",
+    "1/2",
+    "4/5"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "2.74332170392949",
+    "2.49804953296681",
+    "2.49804953296681",
+    "2.74332170392949",
+    "4.66721765003464",
+    "1.6954660551037"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "13 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 3, node (0, 1): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 26,
+   "angles_over_pi": [
+    "7/60",
+    "5/12",
+    "1/3",
+    "1/5",
+    "7/12",
+    "43/60"
+   ],
+   "angle_roundtrip_error": "1.17e-61",
+   "edge_lengths_unit_volume": [
+    "4.10656141591362",
+    "1.13480982098269",
+    "2.49804953296681",
+    "2.74332170392949",
+    "3.30397793805051",
+    "3.05870576708783"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "5 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 27,
+   "angles_over_pi": [
+    "1/5",
+    "2/5",
+    "2/5",
+    "1/5",
+    "1/2",
+    "2/3"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "2.74332170392949",
+    "1.6954660551037",
+    "1.6954660551037",
+    "2.74332170392949",
+    "2.88449914061482",
+    "2.49804953296681"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "21 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 1, node (1, 2): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 28,
+   "angles_over_pi": [
+    "1/5",
+    "2/5",
+    "1/3",
+    "1/3",
+    "1/2",
+    "3/5"
+   ],
+   "angle_roundtrip_error": "1.36e-61",
+   "edge_lengths_unit_volume": [
+    "3.22061852154932",
+    "1.2301668104344",
+    "2.93267267272979",
+    "1.81249138962501",
+    "3.38635871409121",
+    "1.99045171111492"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "10 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 1, node (2, 4): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 29,
+   "angles_over_pi": [
+    "7/30",
+    "13/30",
+    "3/10",
+    "3/10",
+    "1/2",
+    "3/5"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "3.36780788673486",
+    "1.37735617561994",
+    "2.78548330754425",
+    "1.66530202443947",
+    "3.38635871409121",
+    "1.99045171111492"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "3 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 30,
+   "angles_over_pi": [
+    "1/4",
+    "7/20",
+    "1/3",
+    "1/3",
+    "9/20",
+    "13/20"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "2.92334616748001",
+    "1.52743916450372",
+    "2.93267267272979",
+    "1.81249138962501",
+    "3.68363106816052",
+    "1.6931793570456"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "6 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 1, node (2, 4): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 31,
+   "angles_over_pi": [
+    "1/5",
+    "1/2",
+    "3/5",
+    "1/5",
+    "1/3",
+    "2/3"
+   ],
+   "angle_roundtrip_error": "7.78e-62",
+   "edge_lengths_unit_volume": [
+    "2.33676044551536",
+    "2.45701533555358",
+    "1.44419737889484",
+    "3.7809578244102",
+    "3.44291371803249",
+    "2.12783769807735"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "12 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 2, node (0, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 32,
+   "angles_over_pi": [
+    "1/5",
+    "1/2",
+    "17/30",
+    "7/30",
+    "3/10",
+    "7/10"
+   ],
+   "angle_roundtrip_error": "7.78e-62",
+   "edge_lengths_unit_volume": [
+    "2.33676044551536",
+    "2.45701533555358",
+    "1.95503959167495",
+    "3.27011561163009",
+    "3.9537559308126",
+    "1.61699548529724"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "7 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 2, node (0, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 33,
+   "angles_over_pi": [
+    "3/20",
+    "11/20",
+    "17/30",
+    "7/30",
+    "7/20",
+    "13/20"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "3.56526811329215",
+    "1.22850766777679",
+    "1.95503959167495",
+    "3.27011561163009",
+    "2.72524826303581",
+    "2.84550315307403"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "4 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 34,
+   "angles_over_pi": [
+    "1/5",
+    "1/2",
+    "1/2",
+    "1/3",
+    "2/5",
+    "1/2"
+   ],
+   "angle_roundtrip_error": "7.78e-62",
+   "edge_lengths_unit_volume": [
+    "3.45636876141424",
+    "1.12304228802762",
+    "1.81712059283214",
+    "3.14734519026494",
+    "2.13615337220738",
+    "2.94016288085976"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "10 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 4, node (0, 3): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 35,
+   "angles_over_pi": [
+    "1/5",
+    "1/2",
+    "7/15",
+    "11/30",
+    "11/30",
+    "8/15"
+   ],
+   "angle_roundtrip_error": "1.36e-61",
+   "edge_lengths_unit_volume": [
+    "3.45636876141424",
+    "1.12304228802762",
+    "2.88423764587473",
+    "2.08022813722235",
+    "3.20327042524997",
+    "1.87304582781717"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "3 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 2, node (0, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 36,
+   "angles_over_pi": [
+    "4/15",
+    "13/30",
+    "17/30",
+    "4/15",
+    "2/5",
+    "1/2"
+   ],
+   "angle_roundtrip_error": "1.17e-61",
+   "edge_lengths_unit_volume": [
+    "2.95481782343733",
+    "1.62459322600453",
+    "1.31556965485523",
+    "3.64889612824185",
+    "2.13615337220738",
+    "2.94016288085976"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "2 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 37,
+   "angles_over_pi": [
+    "4/15",
+    "13/30",
+    "3/5",
+    "3/10",
+    "11/30",
+    "7/15"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "2.95481782343733",
+    "1.62459322600453",
+    "1.37149488984026",
+    "3.70482136322688",
+    "2.08022813722235",
+    "2.88423764587473"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "3 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 38,
+   "angles_over_pi": [
+    "4/15",
+    "17/30",
+    "2/5",
+    "3/10",
+    "11/30",
+    "8/15"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "3.64889612824185",
+    "1.31556965485523",
+    "2.69171027904712",
+    "1.88770077039474",
+    "3.20327042524997",
+    "1.87304582781717"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "2 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 39,
+   "angles_over_pi": [
+    "3/10",
+    "2/5",
+    "3/5",
+    "3/10",
+    "1/3",
+    "1/2"
+   ],
+   "angle_roundtrip_error": "1.56e-61",
+   "edge_lengths_unit_volume": [
+    "1.88770077039474",
+    "2.69171027904712",
+    "1.37149488984026",
+    "3.70482136322688",
+    "3.14734519026494",
+    "1.81712059283214"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "6 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 0, node (2, 5): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  },
+  {
+   "index": 40,
+   "angles_over_pi": [
+    "1/3",
+    "2/5",
+    "2/5",
+    "1/3",
+    "1/2",
+    "2/5"
+   ],
+   "angle_roundtrip_error": "7.78e-62",
+   "edge_lengths_unit_volume": [
+    "2.49804953296681",
+    "1.6954660551037",
+    "1.6954660551037",
+    "2.49804953296681",
+    "1.78271850941982",
+    "2.74332170392949"
+   ],
+   "dehn_zero_control": true,
+   "known_match": [],
+   "goldberg_family_match": [],
+   "nonf2f_excluded_CS_Prop2_3": [
+    false,
+    "5 pi-combination(s)"
+   ],
+   "f2f_excluded_BDKS_Prop4_3": [
+    true,
+    "length class 1, node (1, 2): no closed walk with angle sum 2pi"
+   ],
+   "CS_LP_min": 0.0,
+   "class": "OPEN: face-to-face excluded, non-face-to-face open"
+  }
+ ],
+ "controls": {
+  "Sommerville fig 7 (No. 1)": {
+   "angles_over_pi": [
+    "0.5",
+    "0.5",
+    "0.333333333333",
+    "0.333333333333",
+    "0.333333333333",
+    "0.333333333333"
+   ],
+   "volume": "0.666666666666667"
+  },
+  "Sommerville fig 8": {
+   "angles_over_pi": [
+    "0.25",
+    "0.5",
+    "0.333333333333",
+    "0.5",
+    "0.5",
+    "0.333333333333"
+   ],
+   "volume": "0.333333333333333"
+  },
+  "Sommerville fig 9": {
+   "angles_over_pi": [
+    "0.333333333333",
+    "0.25",
+    "0.25",
+    "0.333333333333",
+    "0.5",
+    "0.666666666667"
+   ],
+   "volume": "0.666666666666667"
+  },
+  "Sommerville fig 10": {
+   "angles_over_pi": [
+    "0.25",
+    "0.732279527199",
+    "0.166666666667",
+    "0.633860236401",
+    "0.633860236401",
+    "0.166666666667"
+   ],
+   "volume": "0.166666666666667"
+  },
+  "fig9 volume / fig8 volume (expect 2)": "2.0"
+ },
+ "summary": {
+  "KNOWN TILER": 2,
+  "OPEN: face-to-face excluded, non-face-to-face open": 38
+ },
+ "checks": {
+  "dehn_zero_all_40 (control)": true,
+  "angle_roundtrip_all_40": true,
+  "seconds": 18.0
+ }
+}

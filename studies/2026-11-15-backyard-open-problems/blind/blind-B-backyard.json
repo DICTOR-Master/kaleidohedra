@@ -1,0 +1,334 @@
+[
+  {
+    "candidate": "T1",
+    "step": "literature_notability",
+    "outcome": "neutral",
+    "summary": "A complete, certified determination of which of the 40 surviving sporadic rational tetrahedra tile space would finish the problem Chentouf and Sun state as their goal and leave open (arXiv:2312.01654, Sec. 1.1 and Thm 1.2). Together with their Thm 1.1 on the two families, it would settle the tiling question for every rational tetrahedron. The audience is clear: discrete geometers working on tilings, scissors congruence and the Dehn invariant, and the circle around the Kedlaya-Kolpakov-Poonen-Rubinstein classification. The candidate's citations and quotations check out against the sources.",
+    "findings": [],
+    "scores": {
+      "notability": 4,
+      "literature": 4
+    },
+    "trust_level": null,
+    "sources_checked": [
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/README.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/CONTRIBUTING.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/prompts/04-literature-notability.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/rubric.json",
+      "https://api.github.com/repos/PalomarRegistry/PalomarPolicy/commits/28bd48b",
+      "input:blind/inputs/B-backyard.md",
+      "https://arxiv.org/abs/2312.01654",
+      "https://arxiv.org/pdf/2312.01654v1 (full text read: Sec. 1.1, Thms 1.1-1.2, Lemma 1.4, Sec. 3.1, App. A)",
+      "https://arxiv.org/pdf/2011.14232 (grep for tiling/Sommerville/Goldberg/Hill)",
+      "https://mathworld.wolfram.com/Space-FillingTetrahedron.html",
+      "https://kskedlaya.org/slides/kanpur2025-handout.pdf (search snippet only)",
+      "https://www.quantamagazine.org/undergraduates-hunt-for-special-tetrahedra-that-fit-together-20210209/ (search snippet only)",
+      "https://portal.mardi4nfdi.de/wiki/Publication:878075 (Edmonds 2007 record, search snippet)",
+      "https://arxiv.org/pdf/1709.04139 (search snippet on Edmonds scope)",
+      "query: rational tetrahedra tile space sporadic tetrahedra Kedlaya Kolpakov Poonen Rubinstein which tile",
+      "query: \"tetrahedra\" \"tile space\" sporadic rational dihedral angles 2024 OR 2025 arXiv Chentouf Sun follow-up",
+      "query: rational tetrahedron does not tile space sporadic Poonen undergraduate 2021 \"tile\" tetrahedra",
+      "query: Edmonds \"Sommerville's missing tetrahedra\" Discrete Computational Geometry 2007 face-to-face proper tiling",
+      "query: classification convex pentahedra tile space square pyramid space-filler Dehn invariant 2020s arXiv (returned Edmonds citation)"
+    ],
+    "declarations_checked": [],
+    "codes_checked": [],
+    "internal_notes": [
+      {
+        "evidence": "replay setup",
+        "message": "Blind pre-score of a target statement treated as proved exactly as stated; there is no Lean repository or Comparator configuration, so declarations_checked is empty and statement/definition fidelity were not reviewed."
+      },
+      {
+        "evidence": "arXiv:2312.01654v1 Sec. 1.1, Thm 1.2, Sec. 3.1",
+        "message": "Quotation verified verbatim ('The goal of this paper, not fully attained, is to determine which rational tetrahedra tile space'). A has 40 members: 17 are excluded by Props 2.3/2.7 and 2 more by the LP criterion (Cor. 2.13). The tiling definition uses congruent copies and is not restricted to face-to-face tilings. The preprint is still v1 with no journal reference listed."
+      },
+      {
+        "evidence": "search for follow-ups 2024-2026",
+        "message": "No later work tightening the 'at most 40' bound was found (MathWorld, Kedlaya's 2025 Kanpur handout and arXiv searches all repeat the 2023 bound). The question appears open as of this search."
+      },
+      {
+        "evidence": "Edmonds, DCG 2007",
+        "message": "Edmonds completed Sommerville's classification of face-to-face tilings by properly congruent copies. A full answer should cite it and Debrunner 1980. This is a plausible comparison, not a material omission for a complete answer."
+      },
+      {
+        "evidence": "Thm 1.2 set A, third entry (1/4,1/2,1/2,1/3,1/3,1/2)",
+        "message": "The opposite-edge pairs (1/4,1/2),(1/2,1/3),(1/3,1/2) match the Coxeter simplex of the affine group B~3 [4,3^{1,1}], which tiles by reflections. So at least one member of A is a classical tiler, and the answer m is at least 1. Reviewer's own check from the angle data, not taken from a source."
+      },
+      {
+        "evidence": "notability ceiling",
+        "message": "Not scored at the top level: it is a finite case completion of a partial classification, of interest mainly to specialists, although the parent rational-tetrahedra problem had wide coverage (Quanta)."
+      }
+    ]
+  },
+  {
+    "candidate": "T2",
+    "step": "literature_notability",
+    "outcome": "failure",
+    "summary": "As stated, the partial result narrows Chentouf and Sun's 'at most 40' to 'at least a and at most b' but fixes neither a nor b. Its research interest therefore cannot be judged from the statement. Identifying classical tilers among the 40 is a routine look-up, and a small further reduction would repackage the method of arXiv:2312.01654. The account also omits Edmonds's classification of face-to-face tetrahedral tilings, which bears directly on the proposed face-to-face obstruction.",
+    "findings": [
+      {
+        "evidence": "T2 statement",
+        "message": "Research interest is not established. With a and b unspecified, the statement could describe anything from a substantial resolution to a marginal tightening of a preprint bound. State the bounds actually achieved, how many cases remain, and what is new in the combined face-to-face/non-face-to-face obstruction compared with Props 2.3, 2.7 and Cor. 2.13 of Chentouf and Sun."
+      },
+      {
+        "evidence": "A. L. Edmonds, Sommerville's missing tetrahedra, Discrete Comput. Geom. 37 (2007)",
+        "message": "Omitted prior result. Edmonds proved that Sommerville's list of tetrahedra tiling face-to-face by properly congruent copies is complete, so for orientation-preserving face-to-face tilings the obstruction question is already answered. Only mirror-image and non-face-to-face tilings remain. The account should cite this and say which part of the obstruction it leaves to be proved."
+      }
+    ],
+    "scores": {
+      "notability": 3,
+      "literature": 3
+    },
+    "trust_level": null,
+    "sources_checked": [
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/README.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/CONTRIBUTING.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/prompts/04-literature-notability.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/rubric.json",
+      "https://api.github.com/repos/PalomarRegistry/PalomarPolicy/commits/28bd48b",
+      "input:blind/inputs/B-backyard.md",
+      "https://arxiv.org/abs/2312.01654",
+      "https://arxiv.org/pdf/2312.01654v1 (full text read: Sec. 1.1, Thms 1.1-1.2, Lemma 1.4, Sec. 3.1, App. A)",
+      "https://arxiv.org/pdf/2011.14232 (grep for tiling/Sommerville/Goldberg/Hill)",
+      "https://mathworld.wolfram.com/Space-FillingTetrahedron.html",
+      "https://kskedlaya.org/slides/kanpur2025-handout.pdf (search snippet only)",
+      "https://www.quantamagazine.org/undergraduates-hunt-for-special-tetrahedra-that-fit-together-20210209/ (search snippet only)",
+      "https://portal.mardi4nfdi.de/wiki/Publication:878075 (Edmonds 2007 record, search snippet)",
+      "https://arxiv.org/pdf/1709.04139 (search snippet on Edmonds scope)",
+      "query: rational tetrahedra tile space sporadic tetrahedra Kedlaya Kolpakov Poonen Rubinstein which tile",
+      "query: \"tetrahedra\" \"tile space\" sporadic rational dihedral angles 2024 OR 2025 arXiv Chentouf Sun follow-up",
+      "query: rational tetrahedron does not tile space sporadic Poonen undergraduate 2021 \"tile\" tetrahedra",
+      "query: Edmonds \"Sommerville's missing tetrahedra\" Discrete Computational Geometry 2007 face-to-face proper tiling",
+      "query: classification convex pentahedra tile space square pyramid space-filler Dehn invariant 2020s arXiv (returned Edmonds citation)"
+    ],
+    "declarations_checked": [],
+    "codes_checked": [],
+    "internal_notes": [
+      {
+        "evidence": "replay setup",
+        "message": "Blind pre-score of a target statement treated as proved exactly as stated; there is no Lean repository or Comparator configuration, so declarations_checked is empty and statement/definition fidelity were not reviewed."
+      },
+      {
+        "evidence": "Thm 1.2 set A, third entry",
+        "message": "The B~3 Coxeter simplex lies in A and tiles, so the lower bound a >= 1 is immediate. This supports the premise that some of the 40 are classical tilers. Goldberg 1974 (JCTA 'Three infinite families of tetrahedral space-fillers') and Sommerville (Proc. Edinburgh Math. Soc. 41, 1923; Chentouf-Sun cite it as [Som22]) are the right older sources."
+      },
+      {
+        "evidence": "rubric",
+        "message": "This is the same audience as T1. If the reported bounds were strong, for example most of the 40 settled, the floor could plausibly be met."
+      }
+    ]
+  },
+  {
+    "candidate": "G1",
+    "step": "literature_notability",
+    "outcome": "warning",
+    "summary": "An exact translative-tiling example with 30 golden rhombi and every zone of 10 faces would answer Grünbaum's open question for k = 10, where he says 'No information is available for any k >= 10.' It would be the first case beyond the doubly indented icosahedra D1, D2 (k = 8). This is a natural research note for discrete geometers and crystallographers studying non-convex parallelohedra, a live topic (Senechal and Taylor, Acta Cryst. A 2023). The question wording is quoted accurately, but the paraphrased definition leaves out one of Grünbaum's conditions.",
+    "findings": [
+      {
+        "evidence": "Grünbaum, Math. Intelligencer 32(4) (2010), p. 9 ('in the present note we consider only polyhedra with surface homeomorphic to a sphere and adjacent faces not coplanar') and p. 10 (semicrosses excluded)",
+        "message": "The candidate paraphrases Grünbaum's parallelohedron as 'not necessarily convex, homeomorphic to a ball' and drops his condition that adjacent faces are not coplanar. That condition decides which 30-rhombus surfaces count as answers. Grünbaum invokes it explicitly to exclude Stein's semicrosses and the overlapping indentation of Fig. 10(e). The statement should carry the condition, or a 'spherical type' polyhedron in his sense."
+      }
+    ],
+    "scores": {
+      "notability": 4,
+      "literature": 3
+    },
+    "trust_level": null,
+    "sources_checked": [
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/README.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/CONTRIBUTING.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/prompts/04-literature-notability.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/rubric.json",
+      "https://api.github.com/repos/PalomarRegistry/PalomarPolicy/commits/28bd48b",
+      "input:blind/inputs/B-backyard.md",
+      "https://faculty.washington.edu/moishe/branko/BG285%20Bilinski%20dodecahedron.pdf (published Intelligencer version, full text read: definition p.1, open problem and D1/D2 pp.9-10, conjecture p.10)",
+      "https://sites.math.washington.edu/~grunbaum/BilinskiDodecahedron.pdf (404)",
+      "https://digital.lib.washington.edu/server/api/core/bitstreams/a3bd8e7b-a9ec-48be-890f-cb2d3ef96c08/content (search snippet)",
+      "https://www.researchgate.net/publication/42433646 (search snippet)",
+      "https://www.tandfonline.com/doi/full/10.1080/17513472.2025.2492807 (403, not read)",
+      "https://pubmed.ncbi.nlm.nih.gov/36999623/ (Senechal & Taylor, Parallelohedra old and new, Acta Cryst A 79 (2023) 273-279; abstract via search snippet)",
+      "https://arxiv.org/pdf/2307.07824 (search hit, not read)",
+      "query: Grünbaum \"rhombic monohedral parallelohedron\" every zone k faces k >= 10",
+      "query: nonconvex rhombic isozonohedron parallelohedron tiles by translation \"every zone\" triacontahedron indentation Grünbaum open problem answered",
+      "query: Grünbaum \"Tilings by some nonconvex parallelohedra\" Geombinatorics",
+      "query: \"Parallelohedra, old and new\" Acta Crystallographica 2023 nonconvex parallelohedra counterexample Grünbaum"
+    ],
+    "declarations_checked": [],
+    "codes_checked": [],
+    "internal_notes": [
+      {
+        "evidence": "replay setup",
+        "message": "Blind pre-score of a target statement treated as proved exactly as stated; there is no Lean repository or Comparator configuration, so declarations_checked is empty and statement/definition fidelity were not reviewed."
+      },
+      {
+        "evidence": "Grünbaum 2010, pp. 9-10",
+        "message": "Open-problem wording verified (the PDF text renders >= as 'C'). The same page says 'None of the other isozonohedra obtainable by indentation of F or T seems to be a parallelohedron', which is informal evidence against indentations of the triacontahedron T. An example would need to go beyond those, or overturn that impression, and the account should mention the remark."
+      },
+      {
+        "evidence": "structure of the class",
+        "message": "Six edge directions, with each pair spanning one golden rhombus that occurs twice, give 15*2 = 30 faces and 10 faces per zone. The convex triacontahedron has exactly these face and zone data but is not a parallelohedron, since convex parallelohedra have zones of 4 or 6. Six equiangular lines in R^3 are unique up to isometry, so this is the natural congruent-rhombus class for k = 10. Still, the question allows other configurations, for example zones that revisit directions or more than 30 faces."
+      },
+      {
+        "evidence": "G1 vs G2",
+        "message": "G1 and G2 contradict each other: G1 asserts existence in the class where G2 asserts non-existence. They are alternative outcomes of one search, not joint claims."
+      },
+      {
+        "evidence": "search 2010-2026",
+        "message": "No answer to the k >= 10 question was found. Senechal and Taylor 2023 build three new non-convex parallelohedra as a counterexample to 'a statement by Grünbaum'. Only the abstract was seen, so which statement is not confirmed, and that paper should be checked before submission. A 2025 J. Math. Arts paper on new monohedral families returned 403 and was not read."
+      }
+    ]
+  },
+  {
+    "candidate": "G2",
+    "step": "literature_notability",
+    "outcome": "failure",
+    "summary": "A finite exhaustive search showing that no 30-face golden-rhombus polyhedron on the six icosahedral directions, with every zone of 10 faces, is a parallelohedron would confirm Grünbaum's informal remark about triacontahedron indentations. It would not settle his question for k = 10: rhombic monohedra with zones of 10 faces need not have exactly 30 faces or use each direction pair once. As a stand-alone negative result in a restricted class, it would fit as a section of a paper rather than a paper of its own. Paper-worthiness has not been shown. The paraphrased definition also leaves out one of Grünbaum's conditions.",
+    "findings": [
+      {
+        "evidence": "G2 statement vs Grünbaum's question",
+        "message": "Research interest is not established. The search is confined to exactly 30 faces with the icosahedral face set, so it leaves the k = 10 case open: other face counts and zone patterns with congruent rhombi are possible. On its own it confirms an informal remark Grünbaum already made ('None of the other isozonohedra obtainable by indentation of F or T seems to be a parallelohedron'). To clear the bar, extend it to a class that decides k = 10, or combine it with a positive construction or a structural obstruction that explains the search result."
+      },
+      {
+        "evidence": "Grünbaum, Math. Intelligencer 32(4) (2010), p. 9 ('in the present note we consider only polyhedra with surface homeomorphic to a sphere and adjacent faces not coplanar') and p. 10 (semicrosses excluded)",
+        "message": "The candidate paraphrases Grünbaum's parallelohedron as 'not necessarily convex, homeomorphic to a ball' and drops his condition that adjacent faces are not coplanar. That condition decides which 30-rhombus surfaces count as answers. Grünbaum invokes it explicitly to exclude Stein's semicrosses and the overlapping indentation of Fig. 10(e). The statement should carry the condition, or a 'spherical type' polyhedron in his sense."
+      }
+    ],
+    "scores": {
+      "notability": 3,
+      "literature": 3
+    },
+    "trust_level": null,
+    "sources_checked": [
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/README.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/CONTRIBUTING.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/prompts/04-literature-notability.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/rubric.json",
+      "https://api.github.com/repos/PalomarRegistry/PalomarPolicy/commits/28bd48b",
+      "input:blind/inputs/B-backyard.md",
+      "https://faculty.washington.edu/moishe/branko/BG285%20Bilinski%20dodecahedron.pdf (published Intelligencer version, full text read: definition p.1, open problem and D1/D2 pp.9-10, conjecture p.10)",
+      "https://sites.math.washington.edu/~grunbaum/BilinskiDodecahedron.pdf (404)",
+      "https://digital.lib.washington.edu/server/api/core/bitstreams/a3bd8e7b-a9ec-48be-890f-cb2d3ef96c08/content (search snippet)",
+      "https://www.researchgate.net/publication/42433646 (search snippet)",
+      "https://www.tandfonline.com/doi/full/10.1080/17513472.2025.2492807 (403, not read)",
+      "https://pubmed.ncbi.nlm.nih.gov/36999623/ (Senechal & Taylor, Parallelohedra old and new, Acta Cryst A 79 (2023) 273-279; abstract via search snippet)",
+      "https://arxiv.org/pdf/2307.07824 (search hit, not read)",
+      "query: Grünbaum \"rhombic monohedral parallelohedron\" every zone k faces k >= 10",
+      "query: nonconvex rhombic isozonohedron parallelohedron tiles by translation \"every zone\" triacontahedron indentation Grünbaum open problem answered",
+      "query: Grünbaum \"Tilings by some nonconvex parallelohedra\" Geombinatorics",
+      "query: \"Parallelohedra, old and new\" Acta Crystallographica 2023 nonconvex parallelohedra counterexample Grünbaum"
+    ],
+    "declarations_checked": [],
+    "codes_checked": [],
+    "internal_notes": [
+      {
+        "evidence": "replay setup",
+        "message": "Blind pre-score of a target statement treated as proved exactly as stated; there is no Lean repository or Comparator configuration, so declarations_checked is empty and statement/definition fidelity were not reviewed."
+      },
+      {
+        "evidence": "exact search",
+        "message": "An exhaustive exact search in Q(sqrt5) is checkable and gives positive evidence for a negative claim within its class. The research-interest problem is the narrow class, not reliability."
+      }
+    ]
+  },
+  {
+    "candidate": "P1",
+    "step": "literature_notability",
+    "outcome": "warning",
+    "summary": "Classifying every pyramid over a square base, apex anywhere, that tiles space would settle the quadrilateral-pyramid part of Goldberg's question on the space-filling pentahedra for square bases. It needs Dehn-invariant vanishing across a three-parameter family, which goes well beyond Duval's one-parameter Galois-theoretic theorem. The audience is discrete geometers in tiling and scissors congruence. The account understates prior partial results: Duval's paper also settles slices beyond the right square pyramids.",
+    "findings": [
+      {
+        "evidence": "Duval, arXiv:2207.01486v2, Sec. 1 (consequences of Theorem 1, Fig. 2)",
+        "message": "Omitted partial result within P1's scope. Duval derives from Theorem 1 that the symmetric halvings T2(h) and T4(h) of the right square pyramid have trivial Dehn invariant only at h = 1/sqrt2. T4(h) is the square pyramid with apex above a base vertex, and its only zero-Dehn member is the classical one-third-cube pyramid. T2(h) is a rectangle-based pyramid with apex above an edge midpoint. The candidate says only that the right square pyramids are settled. The account should list every slice already decided, so a reader can see what is new."
+      }
+    ],
+    "scores": {
+      "notability": 4,
+      "literature": 3
+    },
+    "trust_level": null,
+    "sources_checked": [
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/README.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/CONTRIBUTING.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/prompts/04-literature-notability.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/rubric.json",
+      "https://api.github.com/repos/PalomarRegistry/PalomarPolicy/commits/28bd48b",
+      "input:blind/inputs/B-backyard.md",
+      "https://arxiv.org/abs/2207.01486",
+      "https://arxiv.org/pdf/2207.01486v2 (full text read: abstract, Theorem 1, consequences T1(h)-T6(h))",
+      "https://mathworld.wolfram.com/Space-FillingPentahedron.html",
+      "https://mathworld.wolfram.com/Space-FillingPolyhedron.html (search snippet)",
+      "https://api.openalex.org/works/doi:10.1016%2F0097-3165%2874%2990101-0 (bibliographic record)",
+      "https://www.sciencedirect.com/science/article/pii/0097316574901010 (full text not retrievable)",
+      "https://arxiv.org/pdf/1005.3836 (search snippet)",
+      "query: space-filling pentahedra Goldberg \"not known whether all\" quadrilateral pyramid tile space classification",
+      "query: classification convex pentahedra tile space square pyramid space-filler Dehn invariant 2020s arXiv",
+      "query: Goldberg \"The space-filling pentahedra II\" Journal of Combinatorial Theory Series A 17 1974 375"
+    ],
+    "declarations_checked": [],
+    "codes_checked": [],
+    "internal_notes": [
+      {
+        "evidence": "replay setup",
+        "message": "Blind pre-score of a target statement treated as proved exactly as stated; there is no Lean repository or Comparator configuration, so declarations_checked is empty and statement/definition fidelity were not reviewed."
+      },
+      {
+        "evidence": "Duval Theorem 1",
+        "message": "Verified: 'For any h > 0, the only right square pyramid P4(h) with trivial Dehn invariant is P4(1/sqrt2)', i.e. the cube-centre pyramid. Combined with Debrunner (1980: tiles have zero Dehn invariant), this settles the right square pyramids as the candidate says. Debrunner should be cited as the source of the obstruction. The arXiv record lists no journal reference."
+      },
+      {
+        "evidence": "Goldberg, JCTA 17 (1974) 375-378",
+        "message": "Bibliographic data confirmed (OpenAlex, MathWorld; DOI 10.1016/0097-3165(74)90101-0). The quoted sentence from Sec. 6 could not be checked because the full text was not retrievable. MathWorld independently says Goldberg's lists were not claimed to be complete."
+      },
+      {
+        "evidence": "scope",
+        "message": "The question heading says 'the quadrilateral pyramids', but P1 covers square bases only. Goldberg's question also covers triangular-prism-type pentahedra, so P1 answers part of it. No later classification of space-filling pentahedra or square pyramids was found."
+      }
+    ]
+  },
+  {
+    "candidate": "P2",
+    "step": "literature_notability",
+    "outcome": "neutral",
+    "summary": "Classifying the right pyramids over a rectangle that tile space is a two-parameter Dehn-invariant problem. Its square slice is exactly Duval's theorem (only the cube-centre pyramid has trivial Dehn invariant), so P2 is a natural next step. Results of this kind, deciding zero Dehn invariant on low-dimensional polyhedron families, are studied by the same audience as Kedlaya-Kolpakov-Poonen-Rubinstein and Chentouf-Sun, and could plausibly fill a research note. The account of Duval's result is accurate for this scope.",
+    "findings": [],
+    "scores": {
+      "notability": 4,
+      "literature": 4
+    },
+    "trust_level": null,
+    "sources_checked": [
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/README.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/CONTRIBUTING.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/prompts/04-literature-notability.md",
+      "https://raw.githubusercontent.com/PalomarRegistry/PalomarPolicy/28bd48b9b71bbb2a82c718ce761d5a4220ef8e60/rubric.json",
+      "https://api.github.com/repos/PalomarRegistry/PalomarPolicy/commits/28bd48b",
+      "input:blind/inputs/B-backyard.md",
+      "https://arxiv.org/abs/2207.01486",
+      "https://arxiv.org/pdf/2207.01486v2 (full text read: abstract, Theorem 1, consequences T1(h)-T6(h))",
+      "https://mathworld.wolfram.com/Space-FillingPentahedron.html",
+      "https://mathworld.wolfram.com/Space-FillingPolyhedron.html (search snippet)",
+      "https://api.openalex.org/works/doi:10.1016%2F0097-3165%2874%2990101-0 (bibliographic record)",
+      "https://www.sciencedirect.com/science/article/pii/0097316574901010 (full text not retrievable)",
+      "https://arxiv.org/pdf/1005.3836 (search snippet)",
+      "query: space-filling pentahedra Goldberg \"not known whether all\" quadrilateral pyramid tile space classification",
+      "query: classification convex pentahedra tile space square pyramid space-filler Dehn invariant 2020s arXiv",
+      "query: Goldberg \"The space-filling pentahedra II\" Journal of Combinatorial Theory Series A 17 1974 375"
+    ],
+    "declarations_checked": [],
+    "codes_checked": [],
+    "internal_notes": [
+      {
+        "evidence": "replay setup",
+        "message": "Blind pre-score of a target statement treated as proved exactly as stated; there is no Lean repository or Comparator configuration, so declarations_checked is empty and statement/definition fidelity were not reviewed."
+      },
+      {
+        "evidence": "Duval T2(h), T4(h)",
+        "message": "Duval's halved pyramids have the apex above an edge midpoint or a vertex, so they are not right rectangular pyramids. They are outside P2's scope, and no omission arises here."
+      },
+      {
+        "evidence": "notability margin",
+        "message": "This sits near the floor. The interest rests on the Dehn-invariant classification over two parameters, not on the tiling list, which is likely very short. If the proof reduced to a routine computation, notability would drop."
+      }
+    ]
+  }
+]
