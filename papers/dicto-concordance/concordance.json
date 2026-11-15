@@ -5131,6 +5131,18 @@
     "study": "studies/2026-11-15-filigree; papers/book-platonic/chapters/ch10.html",
     "goes_to": "The Platonic Solids (Book Eight), Chapter 10; in the draft for DICTO's read (DRAFT-platonic-book.pdf, 15 Nov); not published. Open: least metal / smallest kit, one edging piece for R and Z, edge-1 settings for C, T, O, face to face, 3-periodicity, interlocking pierced links (clearance unchecked), golden-cycle necklace, nest pendant drawn",
     "date": "2026-11-15"
+   },
+   {
+    "result": "Ring counts across stackings: strong rings stacking-blind (12 six-rings per site, no other strong ring; proof via Theorem 1 + hexagon-faced cage decomposition), King/Guttman/SP rings computed equal (11 polytypes; SP also all 2^11 local words and 8 Fibonacci sites); self-avoiding polygons equal to diamond (2 x A038515) to length 16 at every site of every stacking, first differ at 18 by the exact local law p18 = 349236 - 12h[-2] - 30h[-1] - 42h[0] - 24h[1] (p20 likewise; upper atom mirrored), computer-assisted and complete by a locality lemma; period averages 349236 - 108f, 2362200 - 360f (proved), 22 and 24 (with 108b) checked on 11 polytypes; Nagle ice series graded by bonds first differs at 16 bonds (+64*3^-15 f), sign reverses at 18, checked on 11 polytypes, nothing claimed on S_h vs S_c",
+    "study": "studies/2026-11-15-ring-counts-stackings",
+    "goes_to": "#102 Version 5, Section 5 (Theorems 4, 5, Lemma 4, Corollary 6, Figure 3); draft for DICTO's read (DRAFT-102-v5-loop-equality.pdf, 15 Nov); not published",
+    "date": "2026-11-15"
+   },
+   {
+    "result": "Loop Equality formally verified in Lean 4 + Mathlib (v4.35.0-rc2): loop_equality, loop_count_eq (explicit count, 15 values to m = 34), W_closed (chain form), Fibonacci corollary; no sorry, no native_decide; axioms propext, Classical.choice, Quot.sound. Not formalised: Ihara-Bass for all m (m <= 12), Bala identity (n < 10), Fibonacci word forms (k < 100), Corollaries 2, 3",
+    "study": "studies/2026-11-14-palomar-lean (lean/LoopEquality)",
+    "goes_to": "#102 Version 5, Section 3 'Formal proof'; draft for DICTO's read (15 Nov); not published",
+    "date": "2026-11-15"
    }
   ]
  },
