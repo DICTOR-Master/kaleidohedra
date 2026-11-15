@@ -5027,7 +5027,7 @@
    {
     "result": "Lead 1: the balance laws (#104 Theorem 4, #108 Theorem 1) may be classical: Stanley's balanced Cohen–Macaulay complexes (1979), Bayer–Billera (1985); the 4D permutohedron's swap types 6, 6, 11, 11, 16, 16 are descent-set counts",
     "study": "studies/2026-11-14-chat-handoff",
-    "goes_to": "PARTLY DONE (triage, 14 Nov): in substance the symmetry of a-balanced spheres (Stanley 1979; Björner–Frankl–Stanley 1987), named in study 2026-11-13-pure-swap-6d; to be said at #104's and #108's next versions; Bayer–Billera 1985 does not hold it (study 2026-11-14-chat-handoff)",
+    "goes_to": "DONE (study 2026-11-15-stanley-check): Bayer–Billera 1985 §3 for one type per corner; type a in substance; to be said at #104's and #108's next versions.",
     "date": "2026-11-14"
    },
    {
@@ -9474,7 +9474,7 @@
    "n": "108",
    "head": "Exchanges counted by loops",
    "text": "Sweep a simple 4-polytope by a moving hyperplane; its cells, as they cross the slice, trade neighbours at the corners. For the polytopes of the seeds (0, 1, 1, 0), (0, 1, 1, 1), (1, 1, 1, 0) and (1, 1, 1, 1) of each four-node chain group, the exchange between the contacts of the two end families of cells occurs, in each direction, E − V + 1 times, the number of independent cycles of the edge graph of the chain's regular polytope: 6 for A₄, 17 for B₄, 73 for F₄ and 601 for H₄ (the 600-cell).",
-   "where": "Theorem 3; it rests on the balance law, Theorem 1, which in substance is Stanley's symmetry for balanced spheres (1979); the sweep reading: #104"
+   "where": "Theorem 3; it rests on the balance law, Theorem 1, which is the symmetry of the fine h-vector of a balanced sphere (Stanley 1979, balanced complexes; Bayer–Billera 1985, §3, for one cell of each type), read as a sweep; the loop count E − V + 1 is DICTO's; the sweep reading: #104"
   },
   {
    "n": "47",
