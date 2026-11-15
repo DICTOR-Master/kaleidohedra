@@ -1,0 +1,91 @@
+{
+ "info": {
+  "time": 0,
+  "plates": 63,
+  "polygons": 52,
+  "subsegments": 405,
+  "t_splits": 9,
+  "sharing": {
+   "1": 238,
+   "2": 181,
+   "3": 2
+  },
+  "junction_node_degrees": {
+   "3": 114,
+   "2": 5,
+   "4": 4,
+   "5": 1
+  },
+  "odd_subsegments": 240,
+  "far_side_of_unshared": {
+   "network": 199,
+   "plate": 45,
+   "gap": 2
+  },
+  "skipped": {
+   "coincident duplicate": 15,
+   "zero-length piece": 10,
+   "shared by 1": 4
+  },
+  "cycles_per_cell": {
+   "1": 59,
+   "2": 4
+  },
+  "multi_cycle_cells": {
+   "801": 2,
+   "824": 2,
+   "911": 2,
+   "201#1": 2
+  },
+  "deforming_cells": 13,
+  "boundary_length_km": 326166
+ },
+ "check": {
+  "t": 0,
+  "cells": 63,
+  "boundaries": 188,
+  "pairs": 165,
+  "problems": [
+   "junction ('201#1', '911', 'Z:GPlates-4114e8a4-fd8b-465e-9107-f2d37bb19303'): 911,Z:GPlates-4114e8a4-fd8b-465e-9107-f2d37bb19303 do not touch",
+   "junction ('201#1', '911', 'Z:GPlates-4114e8a4-fd8b-465e-9107-f2d37bb19303'): 911,Z:GPlates-4114e8a4-fd8b-465e-9107-f2d37bb19303 do not touch",
+   "junction ('201#1', '911', 'Z:GPlates-afd0b61a-ce18-4342-b24e-283b0df7910d'): 201#1,Z:GPlates-afd0b61a-ce18-4342-b24e-283b0df7910d do not touch",
+   "Euler V-E+F = 0 != 2"
+  ],
+  "junctions": 124,
+  "junction_degrees": {
+   "3": 123,
+   "4": 1
+  },
+  "euler": 0,
+  "euler_ok": false,
+  "triple_formulas_ok": null,
+  "ok": false
+ },
+ "mean_neighbours": 5.238095238095238,
+ "mean_boundaries_per_plate": 5.968253968253968,
+ "neighbour_numbers": {
+  "1": 1,
+  "2": 14,
+  "3": 10,
+  "4": 9,
+  "5": 7,
+  "6": 6,
+  "7": 5,
+  "8": 2,
+  "9": 1,
+  "10": 1,
+  "11": 4,
+  "12": 1,
+  "14": 1,
+  "24": 1
+ },
+ "nonTriple": [
+  [
+   "Northern Andes Flat Slab",
+   "Southern Andes Flat Slab Section",
+   "Nazca Plate",
+   "Northern_Andes"
+  ]
+ ]
+}
+FINAL FAIL Euler

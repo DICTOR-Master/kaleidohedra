@@ -1,0 +1,6618 @@
+{
+ "model": "muller2016",
+ "step": 1,
+ "times": [
+  230,
+  0
+ ],
+ "plates_by_time": {
+  "230": 10,
+  "229": 10,
+  "228": 10,
+  "227": 10,
+  "226": 10,
+  "225": 10,
+  "224": 10,
+  "223": 10,
+  "222": 10,
+  "221": 10,
+  "220": 10,
+  "219": 10,
+  "218": 10,
+  "217": 10,
+  "216": 10,
+  "215": 10,
+  "214": 10,
+  "213": 10,
+  "212": 10,
+  "211": 10,
+  "210": 10,
+  "209": 10,
+  "208": 10,
+  "207": 10,
+  "206": 10,
+  "205": 10,
+  "204": 10,
+  "203": 10,
+  "202": 10,
+  "201": 10,
+  "200": 13,
+  "199": 13,
+  "198": 13,
+  "197": 13,
+  "196": 13,
+  "195": 14,
+  "194": 14,
+  "193": 14,
+  "192": 14,
+  "191": 14,
+  "190": 15,
+  "189": 15,
+  "188": 15,
+  "187": 15,
+  "186": 15,
+  "185": 15,
+  "184": 15,
+  "183": 15,
+  "182": 15,
+  "181": 15,
+  "180": 14,
+  "179": 14,
+  "178": 14,
+  "177": 14,
+  "176": 14,
+  "175": 15,
+  "174": 15,
+  "173": 15,
+  "172": 15,
+  "171": 15,
+  "170": 17,
+  "169": 17,
+  "168": 17,
+  "167": 17,
+  "166": 17,
+  "165": 18,
+  "164": 18,
+  "163": 18,
+  "162": 18,
+  "161": 18,
+  "160": 20,
+  "159": 20,
+  "158": 20,
+  "157": 20,
+  "156": 20,
+  "155": 23,
+  "154": 23,
+  "153": 23,
+  "152": 22,
+  "151": 22,
+  "150": 22,
+  "149": 22,
+  "148": 22,
+  "147": 22,
+  "146": 22,
+  "145": 25,
+  "144": 26,
+  "143": 25,
+  "142": 26,
+  "141": 26,
+  "140": 26,
+  "139": 26,
+  "138": 26,
+  "137": 26,
+  "136": 26,
+  "135": 27,
+  "134": 27,
+  "133": 27,
+  "132": 29,
+  "131": 29,
+  "130": 29,
+  "129": 29,
+  "128": 29,
+  "127": 29,
+  "126": 29,
+  "125": 28,
+  "124": 28,
+  "123": 28,
+  "122": 28,
+  "121": 27,
+  "120": 26,
+  "119": 26,
+  "118": 26,
+  "117": 26,
+  "116": 26,
+  "115": 24,
+  "114": 24,
+  "113": 24,
+  "112": 24,
+  "111": 24,
+  "110": 24,
+  "109": 24,
+  "108": 24,
+  "107": 24,
+  "106": 24,
+  "105": 25,
+  "104": 25,
+  "103": 26,
+  "102": 26,
+  "101": 26,
+  "100": 26,
+  "99": 26,
+  "98": 26,
+  "97": 26,
+  "96": 26,
+  "95": 26,
+  "94": 26,
+  "93": 26,
+  "92": 26,
+  "91": 26,
+  "90": 27,
+  "89": 27,
+  "88": 27,
+  "87": 27,
+  "86": 27,
+  "85": 29,
+  "84": 26,
+  "83": 27,
+  "82": 27,
+  "81": 27,
+  "80": 28,
+  "79": 30,
+  "78": 30,
+  "77": 30,
+  "76": 30,
+  "75": 29,
+  "74": 29,
+  "73": 29,
+  "72": 29,
+  "71": 29,
+  "70": 29,
+  "69": 29,
+  "68": 29,
+  "67": 28,
+  "66": 28,
+  "65": 28,
+  "64": 28,
+  "63": 28,
+  "62": 28,
+  "61": 27,
+  "60": 29,
+  "59": 29,
+  "58": 29,
+  "57": 30,
+  "56": 30,
+  "55": 29,
+  "54": 29,
+  "53": 29,
+  "52": 30,
+  "51": 26,
+  "50": 27,
+  "49": 27,
+  "48": 28,
+  "47": 32,
+  "46": 31,
+  "45": 31,
+  "44": 32,
+  "43": 31,
+  "42": 31,
+  "41": 31,
+  "40": 35,
+  "39": 35,
+  "38": 35,
+  "37": 33,
+  "36": 35,
+  "35": 37,
+  "34": 36,
+  "33": 37,
+  "32": 36,
+  "31": 35,
+  "30": 38,
+  "29": 38,
+  "28": 37,
+  "27": 38,
+  "26": 37,
+  "25": 33,
+  "24": 32,
+  "23": 32,
+  "22": 32,
+  "21": 32,
+  "20": 35,
+  "19": 35,
+  "18": 33,
+  "17": 34,
+  "16": 34,
+  "15": 35,
+  "14": 34,
+  "13": 34,
+  "12": 36,
+  "11": 36,
+  "10": 39,
+  "9": 40,
+  "8": 40,
+  "7": 42,
+  "6": 44,
+  "5": 44,
+  "4": 46,
+  "3": 44,
+  "2": 44,
+  "1": 44,
+  "0": 46
+ },
+ "summary": {
+  "frames": 231,
+  "counts": {
+   "swap": 48,
+   "clump": 100,
+   "birth": 8,
+   "split": 39,
+   "relabel": 12,
+   "merge": 24
+  },
+  "clump_patterns": {
+   "born 0 died 0 lost 1 gained 0": 13,
+   "born 2 died 1 lost 1 gained 0": 1,
+   "born 0 died 1 lost 0 gained 0": 5,
+   "born 0 died 0 lost 0 gained 1": 11,
+   "born 1 died 2 lost 0 gained 0": 2,
+   "born 2 died 0 lost 2 gained 0": 2,
+   "born 4 died 1 lost 3 gained 0": 1,
+   "born 1 died 2 lost 0 gained 1": 2,
+   "born 3 died 1 lost 8 gained 0": 1,
+   "born 2 died 2 lost 0 gained 1": 1,
+   "born 1 died 0 lost 1 gained 0": 4,
+   "born 1 died 1 lost 1 gained 0": 2,
+   "born 0 died 0 lost 2 gained 2": 4,
+   "born 1 died 1 lost 1 gained 1": 1,
+   "born 3 died 0 lost 5 gained 2": 1,
+   "born 0 died 2 lost 0 gained 2": 1,
+   "born 0 died 1 lost 1 gained 5": 1,
+   "born 0 died 2 lost 0 gained 1": 1,
+   "born 1 died 1 lost 0 gained 2": 1,
+   "born 5 died 4 lost 0 gained 2": 1,
+   "born 0 died 3 lost 0 gained 3": 1,
+   "born 0 died 2 lost 0 gained 6": 1,
+   "born 1 died 0 lost 0 gained 0": 4,
+   "born 1 died 0 lost 2 gained 1": 1,
+   "born 1 died 0 lost 3 gained 0": 1,
+   "born 2 died 1 lost 0 gained 2": 1,
+   "born 2 died 3 lost 0 gained 1": 1,
+   "born 0 died 1 lost 0 gained 2": 1,
+   "born 1 died 5 lost 2 gained 2": 1,
+   "born 2 died 0 lost 1 gained 0": 3,
+   "born 1 died 2 lost 0 gained 2": 2,
+   "born 2 died 0 lost 1 gained 1": 1,
+   "born 3 died 1 lost 4 gained 0": 1,
+   "born 0 died 1 lost 0 gained 1": 1,
+   "born 1 died 3 lost 0 gained 0": 1,
+   "born 2 died 0 lost 0 gained 0": 3,
+   "born 0 died 0 lost 0 gained 2": 1,
+   "born 4 died 4 lost 0 gained 0": 1,
+   "born 0 died 0 lost 2 gained 0": 2,
+   "born 0 died 1 lost 1 gained 2": 1,
+   "born 0 died 2 lost 3 gained 4": 1,
+   "born 4 died 3 lost 0 gained 0": 1,
+   "born 2 died 0 lost 5 gained 0": 1,
+   "born 0 died 2 lost 0 gained 0": 1,
+   "born 0 died 1 lost 1 gained 4": 1,
+   "born 2 died 1 lost 2 gained 0": 1,
+   "born 2 died 2 lost 1 gained 4": 1,
+   "born 3 died 1 lost 0 gained 0": 1,
+   "born 2 died 1 lost 1 gained 2": 1,
+   "born 1 died 0 lost 1 gained 1": 1,
+   "born 1 died 0 lost 5 gained 0": 1,
+   "born 1 died 1 lost 0 gained 1": 1,
+   "born 0 died 1 lost 1 gained 0": 1,
+   "born 0 died 0 lost 1 gained 1": 1,
+   "born 0 died 0 lost 3 gained 3": 1
+  },
+  "frames_failing": [
+   {
+    "t": 228,
+    "cells": 10,
+    "boundaries": 26,
+    "pairs": 24,
+    "problems": [
+     "triple-junction formulas: J=18 vs 16, E=26 vs 24"
+    ],
+    "junctions": 18,
+    "junction_degrees": {
+     "3": 18
+    },
+    "euler": 2,
+    "euler_ok": true,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 227,
+    "cells": 10,
+    "boundaries": 25,
+    "pairs": 24,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=16 vs 16, E=25 vs 24"
+    ],
+    "junctions": 16,
+    "junction_degrees": {
+     "3": 16
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 226,
+    "cells": 10,
+    "boundaries": 25,
+    "pairs": 24,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=16 vs 16, E=25 vs 24"
+    ],
+    "junctions": 16,
+    "junction_degrees": {
+     "3": 16
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 189,
+    "cells": 15,
+    "boundaries": 38,
+    "pairs": 37,
+    "problems": [
+     "Euler V-E+F = 3 != 2"
+    ],
+    "junctions": 26,
+    "junction_degrees": {
+     "3": 24,
+     "4": 2
+    },
+    "euler": 3,
+    "euler_ok": false,
+    "triple_formulas_ok": null,
+    "ok": false
+   },
+   {
+    "t": 186,
+    "cells": 15,
+    "boundaries": 41,
+    "pairs": 38,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=27 vs 26, E=41 vs 39"
+    ],
+    "junctions": 27,
+    "junction_degrees": {
+     "3": 27
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 185,
+    "cells": 15,
+    "boundaries": 41,
+    "pairs": 38,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=27 vs 26, E=41 vs 39"
+    ],
+    "junctions": 27,
+    "junction_degrees": {
+     "3": 27
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 184,
+    "cells": 15,
+    "boundaries": 41,
+    "pairs": 38,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=27 vs 26, E=41 vs 39"
+    ],
+    "junctions": 27,
+    "junction_degrees": {
+     "3": 27
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 183,
+    "cells": 15,
+    "boundaries": 41,
+    "pairs": 38,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=27 vs 26, E=41 vs 39"
+    ],
+    "junctions": 27,
+    "junction_degrees": {
+     "3": 27
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 182,
+    "cells": 15,
+    "boundaries": 41,
+    "pairs": 38,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=27 vs 26, E=41 vs 39"
+    ],
+    "junctions": 27,
+    "junction_degrees": {
+     "3": 27
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 172,
+    "cells": 15,
+    "boundaries": 42,
+    "pairs": 39,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=28 vs 26, E=42 vs 39"
+    ],
+    "junctions": 28,
+    "junction_degrees": {
+     "3": 28
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 154,
+    "cells": 23,
+    "boundaries": 65,
+    "pairs": 61,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=43 vs 42, E=65 vs 63"
+    ],
+    "junctions": 43,
+    "junction_degrees": {
+     "3": 43
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 149,
+    "cells": 22,
+    "boundaries": 62,
+    "pairs": 57,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=41 vs 40, E=62 vs 60"
+    ],
+    "junctions": 41,
+    "junction_degrees": {
+     "3": 41
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 142,
+    "cells": 26,
+    "boundaries": 74,
+    "pairs": 72,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=49 vs 48, E=74 vs 72"
+    ],
+    "junctions": 49,
+    "junction_degrees": {
+     "3": 49
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 126,
+    "cells": 29,
+    "boundaries": 80,
+    "pairs": 79,
+    "problems": [
+     "Euler V-E+F = 3 != 2"
+    ],
+    "junctions": 54,
+    "junction_degrees": {
+     "3": 52,
+     "4": 2
+    },
+    "euler": 3,
+    "euler_ok": false,
+    "triple_formulas_ok": null,
+    "ok": false
+   },
+   {
+    "t": 120,
+    "cells": 26,
+    "boundaries": 76,
+    "pairs": 72,
+    "problems": [
+     "Euler V-E+F = 0 != 2",
+     "triple-junction formulas: J=50 vs 48, E=76 vs 72"
+    ],
+    "junctions": 50,
+    "junction_degrees": {
+     "3": 50
+    },
+    "euler": 0,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 119,
+    "cells": 26,
+    "boundaries": 74,
+    "pairs": 72,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=49 vs 48, E=74 vs 72"
+    ],
+    "junctions": 49,
+    "junction_degrees": {
+     "3": 49
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 118,
+    "cells": 26,
+    "boundaries": 74,
+    "pairs": 72,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=49 vs 48, E=74 vs 72"
+    ],
+    "junctions": 49,
+    "junction_degrees": {
+     "3": 49
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 117,
+    "cells": 26,
+    "boundaries": 74,
+    "pairs": 72,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=49 vs 48, E=74 vs 72"
+    ],
+    "junctions": 49,
+    "junction_degrees": {
+     "3": 49
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 114,
+    "cells": 24,
+    "boundaries": 68,
+    "pairs": 66,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=45 vs 44, E=68 vs 66"
+    ],
+    "junctions": 45,
+    "junction_degrees": {
+     "3": 45
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 113,
+    "cells": 24,
+    "boundaries": 68,
+    "pairs": 66,
+    "problems": [
+     "Euler V-E+F = 1 != 2",
+     "triple-junction formulas: J=45 vs 44, E=68 vs 66"
+    ],
+    "junctions": 45,
+    "junction_degrees": {
+     "3": 45
+    },
+    "euler": 1,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   }
+  ],
+  "n_frames_failing": 33,
+  "balance_failures": [],
+  "n_balance_failures": 0,
+  "triple_formulas": {
+   "True": 194,
+   "False": 24,
+   "None": 13
+  },
+  "ok": false
+ },
+ "per100": {
+  "0-100 Ma": {
+   "swap": 33,
+   "relabel": 11,
+   "clump": 73,
+   "split": 22,
+   "merge": 17,
+   "birth": 7
+  },
+  "100-200 Ma": {
+   "split": 16,
+   "clump": 25,
+   "swap": 13,
+   "relabel": 1,
+   "merge": 7
+  },
+  "200-300 Ma": {
+   "swap": 2,
+   "clump": 2,
+   "birth": 1,
+   "split": 1
+  }
+ },
+ "neg_control_caught": true,
+ "euler_fail_times": [
+  228,
+  227,
+  226,
+  189,
+  186,
+  185,
+  184,
+  183,
+  182,
+  172,
+  154,
+  149,
+  142,
+  126,
+  120,
+  119,
+  118,
+  117,
+  114,
+  113
+ ],
+ "infos": [
+  {
+   "time": 230,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 55,
+   "t_splits": 0,
+   "sharing": {
+    "2": 55
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 152068
+  },
+  {
+   "time": 229,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 55,
+   "t_splits": 0,
+   "sharing": {
+    "2": 55
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 151973
+  },
+  {
+   "time": 228,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 57,
+   "t_splits": 0,
+   "sharing": {
+    "2": 53,
+    "1": 3,
+    "3": 1
+   },
+   "junction_node_degrees": {
+    "3": 17,
+    "2": 1
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 3
+   },
+   "skipped": {
+    "shared by 3": 1
+   },
+   "cycles_per_cell": {
+    "1": 9,
+    "2": 1
+   },
+   "multi_cycle_cells": {
+    "919": 2
+   },
+   "deforming_cells": 0,
+   "boundary_length_km": 157527
+  },
+  {
+   "time": 227,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 57,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54,
+    "1": 3
+   },
+   "junction_node_degrees": {
+    "3": 15,
+    "4": 1
+   },
+   "odd_subsegments": 3,
+   "far_side_of_unshared": {
+    "plate": 3
+   },
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 151689
+  },
+  {
+   "time": 226,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 57,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54,
+    "1": 3
+   },
+   "junction_node_degrees": {
+    "3": 15,
+    "4": 1
+   },
+   "odd_subsegments": 3,
+   "far_side_of_unshared": {
+    "plate": 3
+   },
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 151583
+  },
+  {
+   "time": 225,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 151319
+  },
+  {
+   "time": 224,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 151171
+  },
+  {
+   "time": 223,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 151045
+  },
+  {
+   "time": 222,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 150919
+  },
+  {
+   "time": 221,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 150793
+  },
+  {
+   "time": 220,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 52,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 151001
+  },
+  {
+   "time": 219,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 52,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 150872
+  },
+  {
+   "time": 218,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 52,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 150747
+  },
+  {
+   "time": 217,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 52,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 150623
+  },
+  {
+   "time": 216,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 52,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 150508
+  },
+  {
+   "time": 215,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 52,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 150492
+  },
+  {
+   "time": 214,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 52,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 150364
+  },
+  {
+   "time": 213,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 52,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 150231
+  },
+  {
+   "time": 212,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 53,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 150075
+  },
+  {
+   "time": 211,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 54,
+   "t_splits": 0,
+   "sharing": {
+    "2": 53,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 149886
+  },
+  {
+   "time": 210,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 55,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 149218
+  },
+  {
+   "time": 209,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 55,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 149018
+  },
+  {
+   "time": 208,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 55,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 148922
+  },
+  {
+   "time": 207,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 55,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 148803
+  },
+  {
+   "time": 206,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 55,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 148662
+  },
+  {
+   "time": 205,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 55,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 148452
+  },
+  {
+   "time": 204,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 55,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 148228
+  },
+  {
+   "time": 203,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 55,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 148001
+  },
+  {
+   "time": 202,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 55,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 147742
+  },
+  {
+   "time": 201,
+   "plates": 10,
+   "polygons": 10,
+   "subsegments": 55,
+   "t_splits": 0,
+   "sharing": {
+    "2": 54,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 16
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 10
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 147543
+  },
+  {
+   "time": 200,
+   "plates": 13,
+   "polygons": 13,
+   "subsegments": 72,
+   "t_splits": 0,
+   "sharing": {
+    "2": 72
+   },
+   "junction_node_degrees": {
+    "3": 22
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 13
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 162998
+  },
+  {
+   "time": 199,
+   "plates": 13,
+   "polygons": 13,
+   "subsegments": 72,
+   "t_splits": 0,
+   "sharing": {
+    "2": 72
+   },
+   "junction_node_degrees": {
+    "3": 22
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 13
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 162942
+  },
+  {
+   "time": 198,
+   "plates": 13,
+   "polygons": 13,
+   "subsegments": 72,
+   "t_splits": 0,
+   "sharing": {
+    "2": 72
+   },
+   "junction_node_degrees": {
+    "3": 22
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 13
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 162617
+  },
+  {
+   "time": 197,
+   "plates": 13,
+   "polygons": 13,
+   "subsegments": 72,
+   "t_splits": 0,
+   "sharing": {
+    "2": 72
+   },
+   "junction_node_degrees": {
+    "3": 22
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 13
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 162207
+  },
+  {
+   "time": 196,
+   "plates": 13,
+   "polygons": 13,
+   "subsegments": 72,
+   "t_splits": 0,
+   "sharing": {
+    "2": 72
+   },
+   "junction_node_degrees": {
+    "3": 22
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 13
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 161888
+  },
+  {
+   "time": 195,
+   "plates": 14,
+   "polygons": 14,
+   "subsegments": 80,
+   "t_splits": 0,
+   "sharing": {
+    "2": 80
+   },
+   "junction_node_degrees": {
+    "3": 24
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 14
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 165518
+  },
+  {
+   "time": 194,
+   "plates": 14,
+   "polygons": 14,
+   "subsegments": 80,
+   "t_splits": 0,
+   "sharing": {
+    "2": 80
+   },
+   "junction_node_degrees": {
+    "3": 24
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 14
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 164999
+  },
+  {
+   "time": 193,
+   "plates": 14,
+   "polygons": 14,
+   "subsegments": 80,
+   "t_splits": 0,
+   "sharing": {
+    "2": 80
+   },
+   "junction_node_degrees": {
+    "3": 24
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 14
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 164635
+  },
+  {
+   "time": 192,
+   "plates": 14,
+   "polygons": 14,
+   "subsegments": 80,
+   "t_splits": 0,
+   "sharing": {
+    "2": 80
+   },
+   "junction_node_degrees": {
+    "3": 24
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 14
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 164378
+  },
+  {
+   "time": 191,
+   "plates": 14,
+   "polygons": 14,
+   "subsegments": 80,
+   "t_splits": 0,
+   "sharing": {
+    "2": 80
+   },
+   "junction_node_degrees": {
+    "3": 24
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 14
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 163979
+  },
+  {
+   "time": 190,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 95,
+   "t_splits": 0,
+   "sharing": {
+    "2": 95
+   },
+   "junction_node_degrees": {
+    "3": 26
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 165382
+  },
+  {
+   "time": 189,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 95,
+   "t_splits": 0,
+   "sharing": {
+    "2": 94,
+    "4": 1
+   },
+   "junction_node_degrees": {
+    "3": 26
+   },
+   "odd_subsegments": 1,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 4": 1
+   },
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 165470
+  },
+  {
+   "time": 188,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 95,
+   "t_splits": 0,
+   "sharing": {
+    "2": 95
+   },
+   "junction_node_degrees": {
+    "3": 26
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 165615
+  },
+  {
+   "time": 187,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 95,
+   "t_splits": 0,
+   "sharing": {
+    "2": 95
+   },
+   "junction_node_degrees": {
+    "3": 26
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 165657
+  },
+  {
+   "time": 186,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 97,
+   "t_splits": 1,
+   "sharing": {
+    "2": 95,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 26,
+    "4": 1
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 165715
+  },
+  {
+   "time": 185,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 97,
+   "t_splits": 1,
+   "sharing": {
+    "2": 95,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 26,
+    "4": 1
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 165802
+  },
+  {
+   "time": 184,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 97,
+   "t_splits": 1,
+   "sharing": {
+    "2": 95,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 26,
+    "4": 1
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 165922
+  },
+  {
+   "time": 183,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 97,
+   "t_splits": 1,
+   "sharing": {
+    "2": 95,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 26,
+    "4": 1
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 166011
+  },
+  {
+   "time": 182,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 97,
+   "t_splits": 1,
+   "sharing": {
+    "2": 95,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 26,
+    "4": 1
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 166128
+  },
+  {
+   "time": 181,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 96,
+   "t_splits": 0,
+   "sharing": {
+    "2": 95,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 26
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 166274
+  },
+  {
+   "time": 180,
+   "plates": 14,
+   "polygons": 14,
+   "subsegments": 93,
+   "t_splits": 0,
+   "sharing": {
+    "2": 93
+   },
+   "junction_node_degrees": {
+    "3": 24
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 14
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 159599
+  },
+  {
+   "time": 179,
+   "plates": 14,
+   "polygons": 14,
+   "subsegments": 93,
+   "t_splits": 0,
+   "sharing": {
+    "2": 93
+   },
+   "junction_node_degrees": {
+    "3": 24
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 14
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 159844
+  },
+  {
+   "time": 178,
+   "plates": 14,
+   "polygons": 14,
+   "subsegments": 93,
+   "t_splits": 0,
+   "sharing": {
+    "2": 93
+   },
+   "junction_node_degrees": {
+    "3": 24
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 14
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 160098
+  },
+  {
+   "time": 177,
+   "plates": 14,
+   "polygons": 14,
+   "subsegments": 93,
+   "t_splits": 0,
+   "sharing": {
+    "2": 93
+   },
+   "junction_node_degrees": {
+    "3": 24
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 14
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 160356
+  },
+  {
+   "time": 176,
+   "plates": 14,
+   "polygons": 14,
+   "subsegments": 94,
+   "t_splits": 0,
+   "sharing": {
+    "2": 94
+   },
+   "junction_node_degrees": {
+    "3": 24
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 14
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 160635
+  },
+  {
+   "time": 175,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 97,
+   "t_splits": 0,
+   "sharing": {
+    "2": 97
+   },
+   "junction_node_degrees": {
+    "3": 26
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 162834
+  },
+  {
+   "time": 174,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 98,
+   "t_splits": 0,
+   "sharing": {
+    "2": 98
+   },
+   "junction_node_degrees": {
+    "3": 26
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 163128
+  },
+  {
+   "time": 173,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 98,
+   "t_splits": 0,
+   "sharing": {
+    "2": 98
+   },
+   "junction_node_degrees": {
+    "3": 26
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 163429
+  },
+  {
+   "time": 172,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 100,
+   "t_splits": 0,
+   "sharing": {
+    "2": 100
+   },
+   "junction_node_degrees": {
+    "3": 28
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 163786
+  },
+  {
+   "time": 171,
+   "plates": 15,
+   "polygons": 15,
+   "subsegments": 98,
+   "t_splits": 0,
+   "sharing": {
+    "2": 98
+   },
+   "junction_node_degrees": {
+    "3": 26
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 15
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 164029
+  },
+  {
+   "time": 170,
+   "plates": 17,
+   "polygons": 17,
+   "subsegments": 102,
+   "t_splits": 0,
+   "sharing": {
+    "2": 102
+   },
+   "junction_node_degrees": {
+    "3": 30
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 17
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 170810
+  },
+  {
+   "time": 169,
+   "plates": 17,
+   "polygons": 17,
+   "subsegments": 102,
+   "t_splits": 0,
+   "sharing": {
+    "2": 102
+   },
+   "junction_node_degrees": {
+    "3": 30
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 17
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 171272
+  },
+  {
+   "time": 168,
+   "plates": 17,
+   "polygons": 17,
+   "subsegments": 102,
+   "t_splits": 0,
+   "sharing": {
+    "2": 102
+   },
+   "junction_node_degrees": {
+    "3": 30
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 17
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 171858
+  },
+  {
+   "time": 167,
+   "plates": 17,
+   "polygons": 17,
+   "subsegments": 102,
+   "t_splits": 0,
+   "sharing": {
+    "2": 102
+   },
+   "junction_node_degrees": {
+    "3": 30
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 17
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 172207
+  },
+  {
+   "time": 166,
+   "plates": 17,
+   "polygons": 17,
+   "subsegments": 102,
+   "t_splits": 0,
+   "sharing": {
+    "2": 102
+   },
+   "junction_node_degrees": {
+    "3": 30
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 17
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 172572
+  },
+  {
+   "time": 165,
+   "plates": 18,
+   "polygons": 18,
+   "subsegments": 107,
+   "t_splits": 0,
+   "sharing": {
+    "2": 107
+   },
+   "junction_node_degrees": {
+    "3": 32
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 18
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 182319
+  },
+  {
+   "time": 164,
+   "plates": 18,
+   "polygons": 18,
+   "subsegments": 106,
+   "t_splits": 0,
+   "sharing": {
+    "2": 106
+   },
+   "junction_node_degrees": {
+    "3": 32
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 18
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 182577
+  },
+  {
+   "time": 163,
+   "plates": 18,
+   "polygons": 18,
+   "subsegments": 105,
+   "t_splits": 0,
+   "sharing": {
+    "2": 105
+   },
+   "junction_node_degrees": {
+    "3": 32
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 18
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 182817
+  },
+  {
+   "time": 162,
+   "plates": 18,
+   "polygons": 18,
+   "subsegments": 105,
+   "t_splits": 0,
+   "sharing": {
+    "2": 105
+   },
+   "junction_node_degrees": {
+    "3": 32
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 18
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 182901
+  },
+  {
+   "time": 161,
+   "plates": 18,
+   "polygons": 18,
+   "subsegments": 105,
+   "t_splits": 0,
+   "sharing": {
+    "2": 105
+   },
+   "junction_node_degrees": {
+    "3": 32
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 18
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 183043
+  },
+  {
+   "time": 160,
+   "plates": 20,
+   "polygons": 21,
+   "subsegments": 117,
+   "t_splits": 0,
+   "sharing": {
+    "2": 117
+   },
+   "junction_node_degrees": {
+    "3": 36
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 20
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 188038
+  },
+  {
+   "time": 159,
+   "plates": 20,
+   "polygons": 21,
+   "subsegments": 118,
+   "t_splits": 0,
+   "sharing": {
+    "2": 118
+   },
+   "junction_node_degrees": {
+    "3": 36
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 20
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 187994
+  },
+  {
+   "time": 158,
+   "plates": 20,
+   "polygons": 21,
+   "subsegments": 118,
+   "t_splits": 0,
+   "sharing": {
+    "2": 118
+   },
+   "junction_node_degrees": {
+    "3": 36
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 20
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 188041
+  },
+  {
+   "time": 157,
+   "plates": 20,
+   "polygons": 21,
+   "subsegments": 117,
+   "t_splits": 0,
+   "sharing": {
+    "2": 117
+   },
+   "junction_node_degrees": {
+    "3": 36
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 20
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 188133
+  },
+  {
+   "time": 156,
+   "plates": 20,
+   "polygons": 21,
+   "subsegments": 117,
+   "t_splits": 0,
+   "sharing": {
+    "2": 117
+   },
+   "junction_node_degrees": {
+    "3": 36
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 20
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 188367
+  },
+  {
+   "time": 155,
+   "plates": 23,
+   "polygons": 23,
+   "subsegments": 123,
+   "t_splits": 0,
+   "sharing": {
+    "2": 123
+   },
+   "junction_node_degrees": {
+    "3": 42
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 23
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 204424
+  },
+  {
+   "time": 154,
+   "plates": 23,
+   "polygons": 23,
+   "subsegments": 125,
+   "t_splits": 1,
+   "sharing": {
+    "2": 122,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 42,
+    "4": 1
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 23
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 206729
+  },
+  {
+   "time": 153,
+   "plates": 23,
+   "polygons": 23,
+   "subsegments": 124,
+   "t_splits": 0,
+   "sharing": {
+    "2": 122,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 42
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 23
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 206970
+  },
+  {
+   "time": 152,
+   "plates": 22,
+   "polygons": 22,
+   "subsegments": 119,
+   "t_splits": 0,
+   "sharing": {
+    "2": 118,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 40
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "zero-length piece": 1,
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 22
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 204787
+  },
+  {
+   "time": 151,
+   "plates": 22,
+   "polygons": 22,
+   "subsegments": 120,
+   "t_splits": 0,
+   "sharing": {
+    "2": 118,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 40
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 22
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 205078
+  },
+  {
+   "time": 150,
+   "plates": 22,
+   "polygons": 22,
+   "subsegments": 123,
+   "t_splits": 0,
+   "sharing": {
+    "2": 122,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 40
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 22
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 200025
+  },
+  {
+   "time": 149,
+   "plates": 22,
+   "polygons": 22,
+   "subsegments": 124,
+   "t_splits": 1,
+   "sharing": {
+    "2": 122,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 40,
+    "4": 1
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 22
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 200354
+  },
+  {
+   "time": 148,
+   "plates": 22,
+   "polygons": 22,
+   "subsegments": 123,
+   "t_splits": 0,
+   "sharing": {
+    "2": 122,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 40
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 22
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 200696
+  },
+  {
+   "time": 147,
+   "plates": 22,
+   "polygons": 22,
+   "subsegments": 124,
+   "t_splits": 0,
+   "sharing": {
+    "2": 122,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 40
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 22
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 201003
+  },
+  {
+   "time": 146,
+   "plates": 22,
+   "polygons": 22,
+   "subsegments": 126,
+   "t_splits": 0,
+   "sharing": {
+    "2": 125,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 40
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 22
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 201534
+  },
+  {
+   "time": 145,
+   "plates": 25,
+   "polygons": 25,
+   "subsegments": 139,
+   "t_splits": 0,
+   "sharing": {
+    "2": 137,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 46
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 25
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 223324
+  },
+  {
+   "time": 144,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 142,
+   "t_splits": 0,
+   "sharing": {
+    "2": 140,
+    "1": 6
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 6,
+   "far_side_of_unshared": {
+    "plate": 6
+   },
+   "skipped": {
+    "zero-length piece": 1,
+    "coincident duplicate": 3
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 225314
+  },
+  {
+   "time": 143,
+   "plates": 25,
+   "polygons": 25,
+   "subsegments": 140,
+   "t_splits": 0,
+   "sharing": {
+    "2": 137,
+    "1": 6
+   },
+   "junction_node_degrees": {
+    "3": 46
+   },
+   "odd_subsegments": 6,
+   "far_side_of_unshared": {
+    "plate": 6
+   },
+   "skipped": {
+    "coincident duplicate": 3
+   },
+   "cycles_per_cell": {
+    "1": 25
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 222649
+  },
+  {
+   "time": 142,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 148,
+   "t_splits": 1,
+   "sharing": {
+    "2": 141,
+    "1": 12
+   },
+   "junction_node_degrees": {
+    "3": 48,
+    "4": 1
+   },
+   "odd_subsegments": 12,
+   "far_side_of_unshared": {
+    "plate": 12
+   },
+   "skipped": {
+    "coincident duplicate": 6
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 226900
+  },
+  {
+   "time": 141,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 147,
+   "t_splits": 0,
+   "sharing": {
+    "2": 141,
+    "1": 12
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 12,
+   "far_side_of_unshared": {
+    "plate": 12
+   },
+   "skipped": {
+    "coincident duplicate": 6
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 227304
+  },
+  {
+   "time": 140,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 150,
+   "t_splits": 1,
+   "sharing": {
+    "2": 147,
+    "1": 7
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 7,
+   "far_side_of_unshared": {
+    "plate": 6
+   },
+   "skipped": {
+    "far side not found": 2,
+    "coincident duplicate": 3
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 228179
+  },
+  {
+   "time": 139,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 148,
+   "t_splits": 0,
+   "sharing": {
+    "2": 146,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 228826
+  },
+  {
+   "time": 138,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 148,
+   "t_splits": 0,
+   "sharing": {
+    "2": 146,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 229031
+  },
+  {
+   "time": 137,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 152,
+   "t_splits": 0,
+   "sharing": {
+    "2": 151,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "zero-length piece": 1,
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232372
+  },
+  {
+   "time": 136,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 151,
+   "t_splits": 0,
+   "sharing": {
+    "2": 149,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232381
+  },
+  {
+   "time": 135,
+   "plates": 27,
+   "polygons": 27,
+   "subsegments": 158,
+   "t_splits": 0,
+   "sharing": {
+    "2": 155,
+    "1": 6
+   },
+   "junction_node_degrees": {
+    "3": 50
+   },
+   "odd_subsegments": 6,
+   "far_side_of_unshared": {
+    "plate": 6
+   },
+   "skipped": {
+    "coincident duplicate": 3
+   },
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 240128
+  },
+  {
+   "time": 134,
+   "plates": 27,
+   "polygons": 27,
+   "subsegments": 159,
+   "t_splits": 0,
+   "sharing": {
+    "2": 157,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 50
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 239995
+  },
+  {
+   "time": 133,
+   "plates": 27,
+   "polygons": 27,
+   "subsegments": 159,
+   "t_splits": 0,
+   "sharing": {
+    "2": 154,
+    "1": 10
+   },
+   "junction_node_degrees": {
+    "3": 50
+   },
+   "odd_subsegments": 10,
+   "far_side_of_unshared": {
+    "plate": 10
+   },
+   "skipped": {
+    "coincident duplicate": 5
+   },
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 239998
+  },
+  {
+   "time": 132,
+   "plates": 29,
+   "polygons": 29,
+   "subsegments": 165,
+   "t_splits": 0,
+   "sharing": {
+    "2": 160,
+    "1": 10
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 10,
+   "far_side_of_unshared": {
+    "plate": 10
+   },
+   "skipped": {
+    "coincident duplicate": 5
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 246072
+  },
+  {
+   "time": 131,
+   "plates": 29,
+   "polygons": 29,
+   "subsegments": 165,
+   "t_splits": 0,
+   "sharing": {
+    "2": 164,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 247180
+  },
+  {
+   "time": 130,
+   "plates": 29,
+   "polygons": 29,
+   "subsegments": 162,
+   "t_splits": 0,
+   "sharing": {
+    "2": 158,
+    "1": 8
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 8,
+   "far_side_of_unshared": {
+    "plate": 8
+   },
+   "skipped": {
+    "coincident duplicate": 4
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 246672
+  },
+  {
+   "time": 129,
+   "plates": 29,
+   "polygons": 29,
+   "subsegments": 161,
+   "t_splits": 0,
+   "sharing": {
+    "2": 158,
+    "1": 6
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 6,
+   "far_side_of_unshared": {
+    "plate": 6
+   },
+   "skipped": {
+    "coincident duplicate": 3
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 247456
+  },
+  {
+   "time": 128,
+   "plates": 29,
+   "polygons": 29,
+   "subsegments": 162,
+   "t_splits": 0,
+   "sharing": {
+    "2": 159,
+    "1": 6
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 6,
+   "far_side_of_unshared": {
+    "plate": 6
+   },
+   "skipped": {
+    "coincident duplicate": 3
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 248043
+  },
+  {
+   "time": 127,
+   "plates": 29,
+   "polygons": 29,
+   "subsegments": 160,
+   "t_splits": 0,
+   "sharing": {
+    "2": 155,
+    "1": 10
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 10,
+   "far_side_of_unshared": {
+    "plate": 10
+   },
+   "skipped": {
+    "coincident duplicate": 5
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 248046
+  },
+  {
+   "time": 126,
+   "plates": 29,
+   "polygons": 29,
+   "subsegments": 159,
+   "t_splits": 0,
+   "sharing": {
+    "2": 153,
+    "4": 1,
+    "1": 10
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 11,
+   "far_side_of_unshared": {
+    "plate": 10
+   },
+   "skipped": {
+    "shared by 4": 1,
+    "coincident duplicate": 5
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 248128
+  },
+  {
+   "time": 125,
+   "plates": 28,
+   "polygons": 28,
+   "subsegments": 159,
+   "t_splits": 0,
+   "sharing": {
+    "2": 156,
+    "1": 8
+   },
+   "junction_node_degrees": {
+    "3": 52
+   },
+   "odd_subsegments": 8,
+   "far_side_of_unshared": {
+    "plate": 8
+   },
+   "skipped": {
+    "zero-length piece": 1,
+    "coincident duplicate": 4
+   },
+   "cycles_per_cell": {
+    "1": 28
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 241905
+  },
+  {
+   "time": 124,
+   "plates": 28,
+   "polygons": 28,
+   "subsegments": 160,
+   "t_splits": 0,
+   "sharing": {
+    "2": 155,
+    "1": 10
+   },
+   "junction_node_degrees": {
+    "3": 52
+   },
+   "odd_subsegments": 10,
+   "far_side_of_unshared": {
+    "plate": 10
+   },
+   "skipped": {
+    "coincident duplicate": 5
+   },
+   "cycles_per_cell": {
+    "1": 28
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 242928
+  },
+  {
+   "time": 123,
+   "plates": 28,
+   "polygons": 28,
+   "subsegments": 160,
+   "t_splits": 0,
+   "sharing": {
+    "2": 155,
+    "1": 10
+   },
+   "junction_node_degrees": {
+    "3": 52
+   },
+   "odd_subsegments": 10,
+   "far_side_of_unshared": {
+    "plate": 10
+   },
+   "skipped": {
+    "coincident duplicate": 5
+   },
+   "cycles_per_cell": {
+    "1": 28
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 242036
+  },
+  {
+   "time": 122,
+   "plates": 28,
+   "polygons": 28,
+   "subsegments": 160,
+   "t_splits": 0,
+   "sharing": {
+    "2": 155,
+    "1": 10
+   },
+   "junction_node_degrees": {
+    "3": 52
+   },
+   "odd_subsegments": 10,
+   "far_side_of_unshared": {
+    "plate": 10
+   },
+   "skipped": {
+    "coincident duplicate": 5
+   },
+   "cycles_per_cell": {
+    "1": 28
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 242172
+  },
+  {
+   "time": 121,
+   "plates": 27,
+   "polygons": 28,
+   "subsegments": 160,
+   "t_splits": 0,
+   "sharing": {
+    "2": 155,
+    "1": 10
+   },
+   "junction_node_degrees": {
+    "3": 50
+   },
+   "odd_subsegments": 10,
+   "far_side_of_unshared": {
+    "plate": 10
+   },
+   "skipped": {
+    "shared by 1": 1,
+    "coincident duplicate": 5
+   },
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 241923
+  },
+  {
+   "time": 120,
+   "plates": 26,
+   "polygons": 27,
+   "subsegments": 153,
+   "t_splits": 2,
+   "sharing": {
+    "2": 150,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 48,
+    "4": 2
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "shared by 1": 1,
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 240322
+  },
+  {
+   "time": 119,
+   "plates": 26,
+   "polygons": 27,
+   "subsegments": 152,
+   "t_splits": 1,
+   "sharing": {
+    "2": 150,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 48,
+    "4": 1
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "shared by 1": 1,
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 240277
+  },
+  {
+   "time": 118,
+   "plates": 26,
+   "polygons": 27,
+   "subsegments": 152,
+   "t_splits": 1,
+   "sharing": {
+    "2": 150,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 48,
+    "4": 1
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "shared by 1": 1,
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 240063
+  },
+  {
+   "time": 117,
+   "plates": 26,
+   "polygons": 27,
+   "subsegments": 153,
+   "t_splits": 1,
+   "sharing": {
+    "2": 151,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 48,
+    "4": 1
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "shared by 1": 1,
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 240923
+  },
+  {
+   "time": 116,
+   "plates": 26,
+   "polygons": 27,
+   "subsegments": 152,
+   "t_splits": 0,
+   "sharing": {
+    "2": 152
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 241428
+  },
+  {
+   "time": 115,
+   "plates": 24,
+   "polygons": 25,
+   "subsegments": 145,
+   "t_splits": 0,
+   "sharing": {
+    "2": 144,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 44
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "shared by 1": 1,
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 24
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 233300
+  },
+  {
+   "time": 114,
+   "plates": 24,
+   "polygons": 24,
+   "subsegments": 144,
+   "t_splits": 0,
+   "sharing": {
+    "2": 140,
+    "1": 5
+   },
+   "junction_node_degrees": {
+    "3": 45
+   },
+   "odd_subsegments": 5,
+   "far_side_of_unshared": {
+    "plate": 5
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 24
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 233678
+  },
+  {
+   "time": 113,
+   "plates": 24,
+   "polygons": 24,
+   "subsegments": 145,
+   "t_splits": 0,
+   "sharing": {
+    "2": 142,
+    "1": 3
+   },
+   "junction_node_degrees": {
+    "3": 45
+   },
+   "odd_subsegments": 3,
+   "far_side_of_unshared": {
+    "plate": 3
+   },
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 24
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 233789
+  },
+  {
+   "time": 112,
+   "plates": 24,
+   "polygons": 24,
+   "subsegments": 142,
+   "t_splits": 0,
+   "sharing": {
+    "2": 142
+   },
+   "junction_node_degrees": {
+    "3": 44
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 24
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232502
+  },
+  {
+   "time": 111,
+   "plates": 24,
+   "polygons": 24,
+   "subsegments": 142,
+   "t_splits": 0,
+   "sharing": {
+    "2": 142
+   },
+   "junction_node_degrees": {
+    "3": 44
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 24
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232375
+  },
+  {
+   "time": 110,
+   "plates": 24,
+   "polygons": 24,
+   "subsegments": 146,
+   "t_splits": 0,
+   "sharing": {
+    "2": 145,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 44
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 24
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232406
+  },
+  {
+   "time": 109,
+   "plates": 24,
+   "polygons": 24,
+   "subsegments": 146,
+   "t_splits": 0,
+   "sharing": {
+    "2": 144,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 44
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 24
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232405
+  },
+  {
+   "time": 108,
+   "plates": 24,
+   "polygons": 24,
+   "subsegments": 145,
+   "t_splits": 0,
+   "sharing": {
+    "2": 143,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 44
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 24
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 231473
+  },
+  {
+   "time": 107,
+   "plates": 24,
+   "polygons": 24,
+   "subsegments": 144,
+   "t_splits": 0,
+   "sharing": {
+    "2": 142,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 44
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 24
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 231866
+  },
+  {
+   "time": 106,
+   "plates": 24,
+   "polygons": 24,
+   "subsegments": 144,
+   "t_splits": 0,
+   "sharing": {
+    "2": 142,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 44
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 24
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 231725
+  },
+  {
+   "time": 105,
+   "plates": 25,
+   "polygons": 25,
+   "subsegments": 146,
+   "t_splits": 0,
+   "sharing": {
+    "2": 145,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 46
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "zero-length piece": 1,
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 25
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 234130
+  },
+  {
+   "time": 104,
+   "plates": 25,
+   "polygons": 25,
+   "subsegments": 147,
+   "t_splits": 0,
+   "sharing": {
+    "2": 145,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 46
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 25
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 233899
+  },
+  {
+   "time": 103,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 150,
+   "t_splits": 0,
+   "sharing": {
+    "2": 148,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237579
+  },
+  {
+   "time": 102,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 150,
+   "t_splits": 0,
+   "sharing": {
+    "2": 148,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237550
+  },
+  {
+   "time": 101,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 152,
+   "t_splits": 0,
+   "sharing": {
+    "2": 146,
+    "1": 8,
+    "3": 1
+   },
+   "junction_node_degrees": {
+    "3": 47,
+    "4": 1,
+    "2": 2
+   },
+   "odd_subsegments": 9,
+   "far_side_of_unshared": {
+    "plate": 7
+   },
+   "skipped": {
+    "shared by 3": 1,
+    "far side not found": 1,
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 25,
+    "2": 1
+   },
+   "multi_cycle_cells": {
+    "201": 2
+   },
+   "deforming_cells": 0,
+   "boundary_length_km": 240830
+  },
+  {
+   "time": 100,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 150,
+   "t_splits": 1,
+   "sharing": {
+    "2": 147,
+    "1": 5
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 5,
+   "far_side_of_unshared": {
+    "plate": 6
+   },
+   "skipped": {
+    "coincident duplicate": 3
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238309
+  },
+  {
+   "time": 99,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 150,
+   "t_splits": 0,
+   "sharing": {
+    "2": 149,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238415
+  },
+  {
+   "time": 98,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 149,
+   "t_splits": 0,
+   "sharing": {
+    "2": 149,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "zero-length piece": 1,
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238412
+  },
+  {
+   "time": 97,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 150,
+   "t_splits": 0,
+   "sharing": {
+    "2": 149,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238460
+  },
+  {
+   "time": 96,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 150,
+   "t_splits": 0,
+   "sharing": {
+    "2": 149,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238472
+  },
+  {
+   "time": 95,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 150,
+   "t_splits": 0,
+   "sharing": {
+    "2": 150
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237002
+  },
+  {
+   "time": 94,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 150,
+   "t_splits": 0,
+   "sharing": {
+    "2": 150
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237177
+  },
+  {
+   "time": 93,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 150,
+   "t_splits": 0,
+   "sharing": {
+    "2": 150
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237303
+  },
+  {
+   "time": 92,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 150,
+   "t_splits": 0,
+   "sharing": {
+    "2": 150
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237131
+  },
+  {
+   "time": 91,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 150,
+   "t_splits": 0,
+   "sharing": {
+    "2": 150
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237314
+  },
+  {
+   "time": 90,
+   "plates": 27,
+   "polygons": 27,
+   "subsegments": 153,
+   "t_splits": 0,
+   "sharing": {
+    "2": 153
+   },
+   "junction_node_degrees": {
+    "3": 50
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238937
+  },
+  {
+   "time": 89,
+   "plates": 27,
+   "polygons": 27,
+   "subsegments": 155,
+   "t_splits": 0,
+   "sharing": {
+    "2": 150,
+    "1": 4,
+    "3": 1
+   },
+   "junction_node_degrees": {
+    "3": 52
+   },
+   "odd_subsegments": 5,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "shared by 3": 1
+   },
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 239418
+  },
+  {
+   "time": 88,
+   "plates": 27,
+   "polygons": 27,
+   "subsegments": 151,
+   "t_splits": 0,
+   "sharing": {
+    "2": 151
+   },
+   "junction_node_degrees": {
+    "3": 50
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238053
+  },
+  {
+   "time": 87,
+   "plates": 27,
+   "polygons": 27,
+   "subsegments": 150,
+   "t_splits": 0,
+   "sharing": {
+    "2": 151
+   },
+   "junction_node_degrees": {
+    "3": 50
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "zero-length piece": 1
+   },
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237880
+  },
+  {
+   "time": 86,
+   "plates": 27,
+   "polygons": 27,
+   "subsegments": 152,
+   "t_splits": 1,
+   "sharing": {
+    "2": 151
+   },
+   "junction_node_degrees": {
+    "3": 50,
+    "4": 1
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238824
+  },
+  {
+   "time": 85,
+   "plates": 29,
+   "polygons": 30,
+   "subsegments": 168,
+   "t_splits": 0,
+   "sharing": {
+    "2": 167,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "shared by 1": 1,
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 236173
+  },
+  {
+   "time": 84,
+   "plates": 26,
+   "polygons": 27,
+   "subsegments": 159,
+   "t_splits": 0,
+   "sharing": {
+    "2": 159
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 228725
+  },
+  {
+   "time": 83,
+   "plates": 27,
+   "polygons": 28,
+   "subsegments": 157,
+   "t_splits": 0,
+   "sharing": {
+    "2": 157
+   },
+   "junction_node_degrees": {
+    "3": 50
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232267
+  },
+  {
+   "time": 82,
+   "plates": 27,
+   "polygons": 28,
+   "subsegments": 156,
+   "t_splits": 0,
+   "sharing": {
+    "2": 156
+   },
+   "junction_node_degrees": {
+    "3": 50
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 231764
+  },
+  {
+   "time": 81,
+   "plates": 27,
+   "polygons": 28,
+   "subsegments": 156,
+   "t_splits": 0,
+   "sharing": {
+    "2": 156
+   },
+   "junction_node_degrees": {
+    "3": 50
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 231609
+  },
+  {
+   "time": 80,
+   "plates": 28,
+   "polygons": 30,
+   "subsegments": 162,
+   "t_splits": 0,
+   "sharing": {
+    "2": 162
+   },
+   "junction_node_degrees": {
+    "3": 52
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 2
+   },
+   "cycles_per_cell": {
+    "1": 28
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 234287
+  },
+  {
+   "time": 79,
+   "plates": 30,
+   "polygons": 32,
+   "subsegments": 168,
+   "t_splits": 0,
+   "sharing": {
+    "2": 168
+   },
+   "junction_node_degrees": {
+    "3": 56
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 2
+   },
+   "cycles_per_cell": {
+    "1": 30
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 240273
+  },
+  {
+   "time": 78,
+   "plates": 30,
+   "polygons": 32,
+   "subsegments": 168,
+   "t_splits": 0,
+   "sharing": {
+    "2": 168
+   },
+   "junction_node_degrees": {
+    "3": 56
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 2
+   },
+   "cycles_per_cell": {
+    "1": 30
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 239784
+  },
+  {
+   "time": 77,
+   "plates": 30,
+   "polygons": 32,
+   "subsegments": 169,
+   "t_splits": 0,
+   "sharing": {
+    "2": 169
+   },
+   "junction_node_degrees": {
+    "3": 56
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 3
+   },
+   "cycles_per_cell": {
+    "1": 30
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 240248
+  },
+  {
+   "time": 76,
+   "plates": 30,
+   "polygons": 32,
+   "subsegments": 170,
+   "t_splits": 1,
+   "sharing": {
+    "2": 169
+   },
+   "junction_node_degrees": {
+    "3": 55,
+    "5": 1
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 3
+   },
+   "cycles_per_cell": {
+    "1": 30
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 240319
+  },
+  {
+   "time": 75,
+   "plates": 29,
+   "polygons": 31,
+   "subsegments": 166,
+   "t_splits": 0,
+   "sharing": {
+    "2": 166
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 3
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237036
+  },
+  {
+   "time": 74,
+   "plates": 29,
+   "polygons": 31,
+   "subsegments": 170,
+   "t_splits": 0,
+   "sharing": {
+    "2": 170
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 3
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237728
+  },
+  {
+   "time": 73,
+   "plates": 29,
+   "polygons": 31,
+   "subsegments": 167,
+   "t_splits": 0,
+   "sharing": {
+    "2": 167
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 3
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238723
+  },
+  {
+   "time": 72,
+   "plates": 29,
+   "polygons": 31,
+   "subsegments": 167,
+   "t_splits": 0,
+   "sharing": {
+    "2": 167
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 3
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 239611
+  },
+  {
+   "time": 71,
+   "plates": 29,
+   "polygons": 31,
+   "subsegments": 165,
+   "t_splits": 0,
+   "sharing": {
+    "2": 165
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 3
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 239108
+  },
+  {
+   "time": 70,
+   "plates": 29,
+   "polygons": 31,
+   "subsegments": 168,
+   "t_splits": 0,
+   "sharing": {
+    "2": 166,
+    "3": 1,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 55
+   },
+   "odd_subsegments": 3,
+   "far_side_of_unshared": {
+    "plate": 1
+   },
+   "skipped": {
+    "shared by 3": 1,
+    "shared by 1": 3,
+    "far side not found": 1
+   },
+   "cycles_per_cell": {
+    "1": 28,
+    "2": 1
+   },
+   "multi_cycle_cells": {
+    "201": 2
+   },
+   "deforming_cells": 0,
+   "boundary_length_km": 239674
+  },
+  {
+   "time": 69,
+   "plates": 29,
+   "polygons": 31,
+   "subsegments": 166,
+   "t_splits": 0,
+   "sharing": {
+    "2": 166
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 3
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 239084
+  },
+  {
+   "time": 68,
+   "plates": 29,
+   "polygons": 31,
+   "subsegments": 166,
+   "t_splits": 0,
+   "sharing": {
+    "2": 166
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 3
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238760
+  },
+  {
+   "time": 67,
+   "plates": 28,
+   "polygons": 29,
+   "subsegments": 161,
+   "t_splits": 0,
+   "sharing": {
+    "2": 161
+   },
+   "junction_node_degrees": {
+    "3": 52
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 2
+   },
+   "cycles_per_cell": {
+    "1": 28
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 239161
+  },
+  {
+   "time": 66,
+   "plates": 28,
+   "polygons": 29,
+   "subsegments": 162,
+   "t_splits": 0,
+   "sharing": {
+    "2": 162
+   },
+   "junction_node_degrees": {
+    "3": 52
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 2
+   },
+   "cycles_per_cell": {
+    "1": 28
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 236775
+  },
+  {
+   "time": 65,
+   "plates": 28,
+   "polygons": 29,
+   "subsegments": 162,
+   "t_splits": 0,
+   "sharing": {
+    "2": 162
+   },
+   "junction_node_degrees": {
+    "3": 52
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 2
+   },
+   "cycles_per_cell": {
+    "1": 28
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237127
+  },
+  {
+   "time": 64,
+   "plates": 28,
+   "polygons": 29,
+   "subsegments": 162,
+   "t_splits": 0,
+   "sharing": {
+    "2": 162
+   },
+   "junction_node_degrees": {
+    "3": 52
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 2
+   },
+   "cycles_per_cell": {
+    "1": 28
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237080
+  },
+  {
+   "time": 63,
+   "plates": 28,
+   "polygons": 29,
+   "subsegments": 159,
+   "t_splits": 0,
+   "sharing": {
+    "2": 159
+   },
+   "junction_node_degrees": {
+    "3": 52
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 2
+   },
+   "cycles_per_cell": {
+    "1": 28
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 234086
+  },
+  {
+   "time": 62,
+   "plates": 28,
+   "polygons": 29,
+   "subsegments": 160,
+   "t_splits": 0,
+   "sharing": {
+    "2": 160
+   },
+   "junction_node_degrees": {
+    "3": 52
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 2
+   },
+   "cycles_per_cell": {
+    "1": 28
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 234373
+  },
+  {
+   "time": 61,
+   "plates": 27,
+   "polygons": 28,
+   "subsegments": 158,
+   "t_splits": 0,
+   "sharing": {
+    "2": 158
+   },
+   "junction_node_degrees": {
+    "3": 50
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 2
+   },
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232907
+  },
+  {
+   "time": 60,
+   "plates": 29,
+   "polygons": 29,
+   "subsegments": 164,
+   "t_splits": 0,
+   "sharing": {
+    "2": 161,
+    "1": 3
+   },
+   "junction_node_degrees": {
+    "3": 52,
+    "4": 1,
+    "2": 1
+   },
+   "odd_subsegments": 3,
+   "far_side_of_unshared": {
+    "plate": 2,
+    "gap": 1
+   },
+   "skipped": {
+    "shared by 1": 3
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 1,
+   "boundary_length_km": 236001
+  },
+  {
+   "time": 59,
+   "plates": 29,
+   "polygons": 29,
+   "subsegments": 164,
+   "t_splits": 0,
+   "sharing": {
+    "2": 162,
+    "1": 3
+   },
+   "junction_node_degrees": {
+    "3": 52,
+    "4": 1,
+    "2": 1
+   },
+   "odd_subsegments": 3,
+   "far_side_of_unshared": {
+    "plate": 2,
+    "gap": 1
+   },
+   "skipped": {
+    "zero-length piece": 1,
+    "shared by 1": 2
+   },
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 1,
+   "boundary_length_km": 235864
+  },
+  {
+   "time": 58,
+   "plates": 29,
+   "polygons": 29,
+   "subsegments": 162,
+   "t_splits": 0,
+   "sharing": {
+    "2": 162
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238873
+  },
+  {
+   "time": 57,
+   "plates": 30,
+   "polygons": 30,
+   "subsegments": 163,
+   "t_splits": 0,
+   "sharing": {
+    "2": 162,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 56
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 30
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 236793
+  },
+  {
+   "time": 56,
+   "plates": 30,
+   "polygons": 30,
+   "subsegments": 164,
+   "t_splits": 0,
+   "sharing": {
+    "2": 163,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 56
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 30
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 235537
+  },
+  {
+   "time": 55,
+   "plates": 29,
+   "polygons": 29,
+   "subsegments": 161,
+   "t_splits": 0,
+   "sharing": {
+    "2": 161
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232776
+  },
+  {
+   "time": 54,
+   "plates": 29,
+   "polygons": 29,
+   "subsegments": 161,
+   "t_splits": 0,
+   "sharing": {
+    "2": 161
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 231966
+  },
+  {
+   "time": 53,
+   "plates": 29,
+   "polygons": 29,
+   "subsegments": 162,
+   "t_splits": 0,
+   "sharing": {
+    "2": 162
+   },
+   "junction_node_degrees": {
+    "3": 54
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 29
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232342
+  },
+  {
+   "time": 52,
+   "plates": 30,
+   "polygons": 30,
+   "subsegments": 167,
+   "t_splits": 0,
+   "sharing": {
+    "2": 167
+   },
+   "junction_node_degrees": {
+    "3": 56
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 30
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 234469
+  },
+  {
+   "time": 51,
+   "plates": 26,
+   "polygons": 26,
+   "subsegments": 151,
+   "t_splits": 0,
+   "sharing": {
+    "2": 151
+   },
+   "junction_node_degrees": {
+    "3": 48
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 26
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 219298
+  },
+  {
+   "time": 50,
+   "plates": 27,
+   "polygons": 27,
+   "subsegments": 155,
+   "t_splits": 0,
+   "sharing": {
+    "2": 155
+   },
+   "junction_node_degrees": {
+    "3": 50
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 223565
+  },
+  {
+   "time": 49,
+   "plates": 27,
+   "polygons": 27,
+   "subsegments": 158,
+   "t_splits": 0,
+   "sharing": {
+    "2": 158
+   },
+   "junction_node_degrees": {
+    "3": 50
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 27
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 223629
+  },
+  {
+   "time": 48,
+   "plates": 28,
+   "polygons": 28,
+   "subsegments": 162,
+   "t_splits": 0,
+   "sharing": {
+    "2": 162
+   },
+   "junction_node_degrees": {
+    "3": 52
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 28
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 226657
+  },
+  {
+   "time": 47,
+   "plates": 32,
+   "polygons": 32,
+   "subsegments": 174,
+   "t_splits": 0,
+   "sharing": {
+    "2": 174
+   },
+   "junction_node_degrees": {
+    "3": 60
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 32
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 230852
+  },
+  {
+   "time": 46,
+   "plates": 31,
+   "polygons": 31,
+   "subsegments": 171,
+   "t_splits": 0,
+   "sharing": {
+    "2": 171
+   },
+   "junction_node_degrees": {
+    "3": 58
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 31
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 227589
+  },
+  {
+   "time": 45,
+   "plates": 31,
+   "polygons": 31,
+   "subsegments": 169,
+   "t_splits": 0,
+   "sharing": {
+    "2": 169
+   },
+   "junction_node_degrees": {
+    "3": 58
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 31
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 229439
+  },
+  {
+   "time": 44,
+   "plates": 32,
+   "polygons": 32,
+   "subsegments": 172,
+   "t_splits": 0,
+   "sharing": {
+    "2": 173
+   },
+   "junction_node_degrees": {
+    "3": 60
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "zero-length piece": 1
+   },
+   "cycles_per_cell": {
+    "1": 32
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 231725
+  },
+  {
+   "time": 43,
+   "plates": 31,
+   "polygons": 32,
+   "subsegments": 173,
+   "t_splits": 0,
+   "sharing": {
+    "2": 174
+   },
+   "junction_node_degrees": {
+    "3": 58
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "zero-length piece": 1,
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 31
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 224211
+  },
+  {
+   "time": 42,
+   "plates": 31,
+   "polygons": 32,
+   "subsegments": 174,
+   "t_splits": 0,
+   "sharing": {
+    "2": 173,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 58
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1,
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 31
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 224758
+  },
+  {
+   "time": 41,
+   "plates": 31,
+   "polygons": 32,
+   "subsegments": 174,
+   "t_splits": 0,
+   "sharing": {
+    "2": 172,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 58
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2,
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 31
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 225212
+  },
+  {
+   "time": 40,
+   "plates": 35,
+   "polygons": 36,
+   "subsegments": 187,
+   "t_splits": 0,
+   "sharing": {
+    "2": 185,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 66
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2,
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 35
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 231047
+  },
+  {
+   "time": 39,
+   "plates": 35,
+   "polygons": 36,
+   "subsegments": 190,
+   "t_splits": 0,
+   "sharing": {
+    "2": 188,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 66
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2,
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 35
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 231319
+  },
+  {
+   "time": 38,
+   "plates": 35,
+   "polygons": 36,
+   "subsegments": 191,
+   "t_splits": 0,
+   "sharing": {
+    "2": 189,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 66
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2,
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 35
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232346
+  },
+  {
+   "time": 37,
+   "plates": 33,
+   "polygons": 34,
+   "subsegments": 186,
+   "t_splits": 0,
+   "sharing": {
+    "2": 184,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 62
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2,
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 33
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 229858
+  },
+  {
+   "time": 36,
+   "plates": 35,
+   "polygons": 36,
+   "subsegments": 191,
+   "t_splits": 0,
+   "sharing": {
+    "2": 189,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 66
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2,
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 35
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 233056
+  },
+  {
+   "time": 35,
+   "plates": 37,
+   "polygons": 37,
+   "subsegments": 195,
+   "t_splits": 0,
+   "sharing": {
+    "2": 186,
+    "1": 14
+   },
+   "junction_node_degrees": {
+    "3": 68,
+    "4": 1
+   },
+   "odd_subsegments": 14,
+   "far_side_of_unshared": {
+    "gap": 2,
+    "plate": 12
+   },
+   "skipped": {
+    "shared by 1": 3,
+    "coincident duplicate": 5
+   },
+   "cycles_per_cell": {
+    "1": 37
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 1,
+   "boundary_length_km": 236893
+  },
+  {
+   "time": 34,
+   "plates": 36,
+   "polygons": 36,
+   "subsegments": 191,
+   "t_splits": 0,
+   "sharing": {
+    "2": 185,
+    "1": 10
+   },
+   "junction_node_degrees": {
+    "3": 68
+   },
+   "odd_subsegments": 10,
+   "far_side_of_unshared": {
+    "gap": 4,
+    "plate": 6
+   },
+   "skipped": {
+    "shared by 1": 3,
+    "coincident duplicate": 3,
+    "zero-length piece": 1
+   },
+   "cycles_per_cell": {
+    "1": 36
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 1,
+   "boundary_length_km": 232691
+  },
+  {
+   "time": 33,
+   "plates": 37,
+   "polygons": 37,
+   "subsegments": 194,
+   "t_splits": 0,
+   "sharing": {
+    "2": 187,
+    "1": 10
+   },
+   "junction_node_degrees": {
+    "3": 68,
+    "4": 1
+   },
+   "odd_subsegments": 10,
+   "far_side_of_unshared": {
+    "gap": 2,
+    "plate": 8
+   },
+   "skipped": {
+    "shared by 1": 2,
+    "coincident duplicate": 3
+   },
+   "cycles_per_cell": {
+    "1": 37
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 1,
+   "boundary_length_km": 227861
+  },
+  {
+   "time": 32,
+   "plates": 36,
+   "polygons": 36,
+   "subsegments": 187,
+   "t_splits": 0,
+   "sharing": {
+    "2": 182,
+    "1": 6
+   },
+   "junction_node_degrees": {
+    "3": 66,
+    "4": 1
+   },
+   "odd_subsegments": 6,
+   "far_side_of_unshared": {
+    "gap": 2,
+    "plate": 4
+   },
+   "skipped": {
+    "shared by 1": 2,
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 36
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 1,
+   "boundary_length_km": 223351
+  },
+  {
+   "time": 31,
+   "plates": 35,
+   "polygons": 35,
+   "subsegments": 185,
+   "t_splits": 0,
+   "sharing": {
+    "2": 179,
+    "1": 8
+   },
+   "junction_node_degrees": {
+    "3": 64,
+    "4": 1
+   },
+   "odd_subsegments": 8,
+   "far_side_of_unshared": {
+    "gap": 2,
+    "plate": 6
+   },
+   "skipped": {
+    "shared by 1": 2,
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 35
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 1,
+   "boundary_length_km": 222293
+  },
+  {
+   "time": 30,
+   "plates": 38,
+   "polygons": 38,
+   "subsegments": 203,
+   "t_splits": 0,
+   "sharing": {
+    "2": 197,
+    "1": 8
+   },
+   "junction_node_degrees": {
+    "3": 70,
+    "4": 1,
+    "2": 1
+   },
+   "odd_subsegments": 8,
+   "far_side_of_unshared": {
+    "gap": 3,
+    "plate": 5
+   },
+   "skipped": {
+    "shared by 1": 2,
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 38
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 1,
+   "boundary_length_km": 237877
+  },
+  {
+   "time": 29,
+   "plates": 38,
+   "polygons": 38,
+   "subsegments": 202,
+   "t_splits": 0,
+   "sharing": {
+    "2": 196,
+    "1": 10
+   },
+   "junction_node_degrees": {
+    "3": 72
+   },
+   "odd_subsegments": 10,
+   "far_side_of_unshared": {
+    "gap": 4,
+    "plate": 5
+   },
+   "skipped": {
+    "zero-length piece": 1,
+    "shared by 1": 2,
+    "far side not found": 1,
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 38
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 1,
+   "boundary_length_km": 237589
+  },
+  {
+   "time": 28,
+   "plates": 37,
+   "polygons": 37,
+   "subsegments": 202,
+   "t_splits": 0,
+   "sharing": {
+    "2": 196,
+    "1": 8
+   },
+   "junction_node_degrees": {
+    "3": 70
+   },
+   "odd_subsegments": 8,
+   "far_side_of_unshared": {
+    "gap": 4,
+    "plate": 4
+   },
+   "skipped": {
+    "shared by 1": 2,
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 37
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 1,
+   "boundary_length_km": 237672
+  },
+  {
+   "time": 27,
+   "plates": 38,
+   "polygons": 38,
+   "subsegments": 206,
+   "t_splits": 0,
+   "sharing": {
+    "2": 199,
+    "1": 11
+   },
+   "junction_node_degrees": {
+    "3": 70,
+    "4": 1
+   },
+   "odd_subsegments": 11,
+   "far_side_of_unshared": {
+    "plate": 8,
+    "gap": 3
+   },
+   "skipped": {
+    "shared by 1": 2,
+    "coincident duplicate": 4
+   },
+   "cycles_per_cell": {
+    "1": 38
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 1,
+   "boundary_length_km": 244771
+  },
+  {
+   "time": 26,
+   "plates": 37,
+   "polygons": 37,
+   "subsegments": 206,
+   "t_splits": 2,
+   "sharing": {
+    "2": 199,
+    "1": 10
+   },
+   "junction_node_degrees": {
+    "3": 68,
+    "5": 1
+   },
+   "odd_subsegments": 10,
+   "far_side_of_unshared": {
+    "plate": 8,
+    "gap": 3
+   },
+   "skipped": {
+    "shared by 1": 2,
+    "coincident duplicate": 5
+   },
+   "cycles_per_cell": {
+    "1": 37
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 1,
+   "boundary_length_km": 240941
+  },
+  {
+   "time": 25,
+   "plates": 33,
+   "polygons": 33,
+   "subsegments": 181,
+   "t_splits": 0,
+   "sharing": {
+    "2": 176,
+    "1": 10
+   },
+   "junction_node_degrees": {
+    "3": 62
+   },
+   "odd_subsegments": 10,
+   "far_side_of_unshared": {
+    "plate": 10
+   },
+   "skipped": {
+    "coincident duplicate": 5
+   },
+   "cycles_per_cell": {
+    "1": 33
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 233814
+  },
+  {
+   "time": 24,
+   "plates": 32,
+   "polygons": 32,
+   "subsegments": 176,
+   "t_splits": 0,
+   "sharing": {
+    "2": 174,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 60
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 32
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232314
+  },
+  {
+   "time": 23,
+   "plates": 32,
+   "polygons": 32,
+   "subsegments": 176,
+   "t_splits": 0,
+   "sharing": {
+    "2": 176
+   },
+   "junction_node_degrees": {
+    "3": 60
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 32
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 233006
+  },
+  {
+   "time": 22,
+   "plates": 32,
+   "polygons": 32,
+   "subsegments": 178,
+   "t_splits": 0,
+   "sharing": {
+    "2": 177,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 60
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 32
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 233183
+  },
+  {
+   "time": 21,
+   "plates": 32,
+   "polygons": 32,
+   "subsegments": 176,
+   "t_splits": 0,
+   "sharing": {
+    "2": 175,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 60
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 32
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 233072
+  },
+  {
+   "time": 20,
+   "plates": 35,
+   "polygons": 35,
+   "subsegments": 188,
+   "t_splits": 0,
+   "sharing": {
+    "2": 187,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 66
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 35
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 240700
+  },
+  {
+   "time": 19,
+   "plates": 35,
+   "polygons": 35,
+   "subsegments": 188,
+   "t_splits": 0,
+   "sharing": {
+    "2": 187,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 66
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 35
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 240260
+  },
+  {
+   "time": 18,
+   "plates": 33,
+   "polygons": 33,
+   "subsegments": 181,
+   "t_splits": 0,
+   "sharing": {
+    "2": 182
+   },
+   "junction_node_degrees": {
+    "3": 62
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "zero-length piece": 1
+   },
+   "cycles_per_cell": {
+    "1": 33
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 234971
+  },
+  {
+   "time": 17,
+   "plates": 34,
+   "polygons": 34,
+   "subsegments": 181,
+   "t_splits": 0,
+   "sharing": {
+    "2": 181
+   },
+   "junction_node_degrees": {
+    "3": 64
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 34
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 235167
+  },
+  {
+   "time": 16,
+   "plates": 34,
+   "polygons": 34,
+   "subsegments": 180,
+   "t_splits": 0,
+   "sharing": {
+    "2": 180
+   },
+   "junction_node_degrees": {
+    "3": 64
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 34
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 233480
+  },
+  {
+   "time": 15,
+   "plates": 35,
+   "polygons": 35,
+   "subsegments": 188,
+   "t_splits": 0,
+   "sharing": {
+    "2": 189
+   },
+   "junction_node_degrees": {
+    "3": 66
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "zero-length piece": 1
+   },
+   "cycles_per_cell": {
+    "1": 35
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 235630
+  },
+  {
+   "time": 14,
+   "plates": 34,
+   "polygons": 34,
+   "subsegments": 185,
+   "t_splits": 0,
+   "sharing": {
+    "2": 185
+   },
+   "junction_node_degrees": {
+    "3": 64
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 34
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232716
+  },
+  {
+   "time": 13,
+   "plates": 34,
+   "polygons": 34,
+   "subsegments": 186,
+   "t_splits": 0,
+   "sharing": {
+    "2": 186
+   },
+   "junction_node_degrees": {
+    "3": 64
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 34
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 232919
+  },
+  {
+   "time": 12,
+   "plates": 36,
+   "polygons": 36,
+   "subsegments": 193,
+   "t_splits": 0,
+   "sharing": {
+    "2": 192,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 68
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 36
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 236822
+  },
+  {
+   "time": 11,
+   "plates": 36,
+   "polygons": 36,
+   "subsegments": 193,
+   "t_splits": 0,
+   "sharing": {
+    "2": 191,
+    "1": 4
+   },
+   "junction_node_degrees": {
+    "3": 68
+   },
+   "odd_subsegments": 4,
+   "far_side_of_unshared": {
+    "plate": 4
+   },
+   "skipped": {
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 36
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237327
+  },
+  {
+   "time": 10,
+   "plates": 39,
+   "polygons": 39,
+   "subsegments": 200,
+   "t_splits": 0,
+   "sharing": {
+    "2": 200,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 72,
+    "4": 1
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "zero-length piece": 1,
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 39
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 236701
+  },
+  {
+   "time": 9,
+   "plates": 40,
+   "polygons": 40,
+   "subsegments": 208,
+   "t_splits": 2,
+   "sharing": {
+    "2": 205,
+    "1": 5
+   },
+   "junction_node_degrees": {
+    "3": 74,
+    "4": 2
+   },
+   "odd_subsegments": 5,
+   "far_side_of_unshared": {
+    "plate": 6
+   },
+   "skipped": {
+    "zero-length piece": 1,
+    "coincident duplicate": 3
+   },
+   "cycles_per_cell": {
+    "1": 38,
+    "2": 2
+   },
+   "multi_cycle_cells": {
+    "101": 2,
+    "901": 2
+   },
+   "deforming_cells": 0,
+   "boundary_length_km": 238720
+  },
+  {
+   "time": 8,
+   "plates": 40,
+   "polygons": 40,
+   "subsegments": 211,
+   "t_splits": 1,
+   "sharing": {
+    "2": 207,
+    "1": 6,
+    "3": 1
+   },
+   "junction_node_degrees": {
+    "3": 76,
+    "4": 1
+   },
+   "odd_subsegments": 7,
+   "far_side_of_unshared": {
+    "plate": 7
+   },
+   "skipped": {
+    "zero-length piece": 1,
+    "coincident duplicate": 3,
+    "shared by 3": 1
+   },
+   "cycles_per_cell": {
+    "1": 40
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 239618
+  },
+  {
+   "time": 7,
+   "plates": 42,
+   "polygons": 42,
+   "subsegments": 215,
+   "t_splits": 1,
+   "sharing": {
+    "2": 211,
+    "1": 4,
+    "3": 1
+   },
+   "junction_node_degrees": {
+    "3": 80,
+    "4": 1
+   },
+   "odd_subsegments": 5,
+   "far_side_of_unshared": {
+    "plate": 5
+   },
+   "skipped": {
+    "coincident duplicate": 2,
+    "shared by 3": 1
+   },
+   "cycles_per_cell": {
+    "1": 42
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 240160
+  },
+  {
+   "time": 6,
+   "plates": 44,
+   "polygons": 44,
+   "subsegments": 223,
+   "t_splits": 1,
+   "sharing": {
+    "2": 219,
+    "1": 4,
+    "3": 1
+   },
+   "junction_node_degrees": {
+    "3": 84,
+    "4": 1
+   },
+   "odd_subsegments": 5,
+   "far_side_of_unshared": {
+    "plate": 5
+   },
+   "skipped": {
+    "coincident duplicate": 2,
+    "shared by 3": 1
+   },
+   "cycles_per_cell": {
+    "1": 44
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 240925
+  },
+  {
+   "time": 5,
+   "plates": 44,
+   "polygons": 44,
+   "subsegments": 218,
+   "t_splits": 0,
+   "sharing": {
+    "2": 218
+   },
+   "junction_node_degrees": {
+    "3": 84
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 1
+   },
+   "cycles_per_cell": {
+    "1": 44
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 239362
+  },
+  {
+   "time": 4,
+   "plates": 46,
+   "polygons": 46,
+   "subsegments": 223,
+   "t_splits": 0,
+   "sharing": {
+    "2": 224
+   },
+   "junction_node_degrees": {
+    "3": 88
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "shared by 1": 1,
+    "zero-length piece": 1
+   },
+   "cycles_per_cell": {
+    "1": 46
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 242744
+  },
+  {
+   "time": 3,
+   "plates": 44,
+   "polygons": 44,
+   "subsegments": 215,
+   "t_splits": 0,
+   "sharing": {
+    "2": 216
+   },
+   "junction_node_degrees": {
+    "3": 84
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {
+    "zero-length piece": 1
+   },
+   "cycles_per_cell": {
+    "1": 44
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 237069
+  },
+  {
+   "time": 2,
+   "plates": 44,
+   "polygons": 44,
+   "subsegments": 219,
+   "t_splits": 0,
+   "sharing": {
+    "2": 219
+   },
+   "junction_node_degrees": {
+    "3": 84
+   },
+   "odd_subsegments": 0,
+   "far_side_of_unshared": {},
+   "skipped": {},
+   "cycles_per_cell": {
+    "1": 44
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238642
+  },
+  {
+   "time": 1,
+   "plates": 44,
+   "polygons": 44,
+   "subsegments": 220,
+   "t_splits": 0,
+   "sharing": {
+    "2": 219,
+    "1": 2
+   },
+   "junction_node_degrees": {
+    "3": 84
+   },
+   "odd_subsegments": 2,
+   "far_side_of_unshared": {
+    "plate": 2
+   },
+   "skipped": {
+    "coincident duplicate": 1
+   },
+   "cycles_per_cell": {
+    "1": 44
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238860
+  },
+  {
+   "time": 0,
+   "plates": 46,
+   "polygons": 46,
+   "subsegments": 227,
+   "t_splits": 0,
+   "sharing": {
+    "2": 226,
+    "1": 8
+   },
+   "junction_node_degrees": {
+    "3": 88
+   },
+   "odd_subsegments": 8,
+   "far_side_of_unshared": {
+    "plate": 8
+   },
+   "skipped": {
+    "zero-length piece": 5,
+    "coincident duplicate": 2
+   },
+   "cycles_per_cell": {
+    "1": 46
+   },
+   "multi_cycle_cells": {},
+   "deforming_cells": 0,
+   "boundary_length_km": 238161
+  }
+ ]
+}

@@ -1,0 +1,165 @@
+PROGRESS 0.000 resolve 230 Ma: 10 plates
+PROGRESS 0.250 resolve 130 Ma: 29 plates
+PROGRESS 0.500 resolve 30 Ma: 38 plates
+PROGRESS 0.600 lineage 230->220 Ma
+PROGRESS 0.767 lineage 130->120 Ma
+PROGRESS 0.933 lineage 30->20 Ma
+{
+ "summary": {
+  "frames": 24,
+  "counts": {
+   "clump": 50,
+   "split": 17,
+   "birth": 8,
+   "swap": 10,
+   "merge": 14,
+   "relabel": 3
+  },
+  "clump_patterns": {
+   "born 2 died 1 lost 1 gained 0": 1,
+   "born 0 died 0 lost 1 gained 0": 3,
+   "born 0 died 1 lost 0 gained 0": 3,
+   "born 1 died 2 lost 1 gained 1": 1,
+   "born 2 died 0 lost 0 gained 0": 2,
+   "born 2 died 0 lost 2 gained 0": 1,
+   "born 4 died 2 lost 2 gained 0": 1,
+   "born 1 died 0 lost 0 gained 0": 3,
+   "born 7 died 5 lost 10 gained 2": 1,
+   "born 1 died 0 lost 1 gained 0": 3,
+   "born 3 died 1 lost 3 gained 2": 1,
+   "born 0 died 0 lost 2 gained 2": 2,
+   "born 3 died 0 lost 5 gained 2": 1,
+   "born 0 died 2 lost 0 gained 2": 2,
+   "born 0 died 1 lost 1 gained 5": 1,
+   "born 1 died 1 lost 0 gained 3": 1,
+   "born 0 died 2 lost 0 gained 1": 1,
+   "born 3 died 0 lost 4 gained 0": 1,
+   "born 9 died 5 lost 1 gained 1": 1,
+   "born 1 died 6 lost 1 gained 7": 1,
+   "born 2 died 2 lost 3 gained 2": 1,
+   "born 3 died 3 lost 2 gained 1": 1,
+   "born 1 died 2 lost 0 gained 0": 1,
+   "born 0 died 0 lost 3 gained 3": 1,
+   "born 3 died 8 lost 2 gained 2": 1,
+   "born 1 died 1 lost 0 gained 1": 1,
+   "born 3 died 0 lost 0 gained 0": 1,
+   "born 6 died 2 lost 2 gained 2": 1,
+   "born 4 died 4 lost 0 gained 0": 2,
+   "born 2 died 0 lost 1 gained 0": 1,
+   "born 2 died 1 lost 0 gained 0": 1,
+   "born 5 died 4 lost 3 gained 4": 1,
+   "born 3 died 4 lost 8 gained 6": 1,
+   "born 1 died 1 lost 4 gained 1": 1,
+   "born 3 died 1 lost 0 gained 0": 1,
+   "born 6 died 6 lost 3 gained 4": 1,
+   "born 9 died 1 lost 3 gained 3": 1,
+   "born 0 died 2 lost 0 gained 0": 1
+  },
+  "frames_failing": [
+   {
+    "t": 120,
+    "cells": 26,
+    "boundaries": 76,
+    "pairs": 72,
+    "problems": [
+     "Euler V-E+F = 0 != 2",
+     "triple-junction formulas: J=50 vs 48, E=76 vs 72"
+    ],
+    "junctions": 50,
+    "junction_degrees": {
+     "3": 50
+    },
+    "euler": 0,
+    "euler_ok": false,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 70,
+    "cells": 29,
+    "boundaries": 82,
+    "pairs": 80,
+    "problems": [
+     "triple-junction formulas: J=55 vs 54, E=82 vs 81"
+    ],
+    "junctions": 55,
+    "junction_degrees": {
+     "3": 55
+    },
+    "euler": 2,
+    "euler_ok": true,
+    "triple_formulas_ok": false,
+    "ok": false
+   },
+   {
+    "t": 60,
+    "cells": 29,
+    "boundaries": 81,
+    "pairs": 77,
+    "problems": [
+     "junction ('101', '224', 'Z:gap'): 224,Z:gap do not touch",
+     "junction ('101', '224', 'Z:gap'): 224,Z:gap do not touch"
+    ],
+    "junctions": 54,
+    "junction_degrees": {
+     "3": 54
+    },
+    "euler": 2,
+    "euler_ok": true,
+    "triple_formulas_ok": true,
+    "ok": false
+   },
+   {
+    "t": 30,
+    "cells": 38,
+    "boundaries": 108,
+    "pairs": 103,
+    "problems": [
+     "junction ('301', '901', 'Z:gap'): 901,Z:gap do not touch"
+    ],
+    "junctions": 72,
+    "junction_degrees": {
+     "3": 71,
+     "4": 1
+    },
+    "euler": 2,
+    "euler_ok": true,
+    "triple_formulas_ok": null,
+    "ok": false
+   }
+  ],
+  "n_frames_failing": 4,
+  "balance_failures": [],
+  "n_balance_failures": 0,
+  "triple_formulas": {
+   "True": 20,
+   "False": 2,
+   "None": 2
+  },
+  "ok": false
+ },
+ "per100": {
+  "0-100 Ma": {
+   "split": 8,
+   "relabel": 2,
+   "swap": 6,
+   "clump": 32,
+   "birth": 7,
+   "merge": 8
+  },
+  "100-200 Ma": {
+   "split": 8,
+   "clump": 16,
+   "swap": 4,
+   "merge": 6,
+   "relabel": 1
+  },
+  "200-300 Ma": {
+   "clump": 2,
+   "split": 1,
+   "birth": 1
+  }
+ },
+ "neg_control_caught": true
+}
+FINAL ok

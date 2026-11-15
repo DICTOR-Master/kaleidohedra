@@ -1,0 +1,77 @@
+{
+ "stage": "trunc120",
+ "seed": 7,
+ "corners": 2400,
+ "cells": 720,
+ "faces": 3120,
+ "edges": 4800,
+ "steps": {
+  "1": {
+   "frames": 2399,
+   "counts": {
+    "birth": 716,
+    "swap": 966,
+    "death": 716
+   },
+   "clump_patterns": {},
+   "frames_failing": [],
+   "n_frames_failing": 0,
+   "balance_failures": [],
+   "n_balance_failures": 0,
+   "triple_formulas": {
+    "True": 2399
+   },
+   "ok": true
+  },
+  "2": {
+   "frames": 1200,
+   "counts": {
+    "split": 13,
+    "birth": 703,
+    "death": 703,
+    "swap": 924,
+    "clump": 8,
+    "merge": 13
+   },
+   "clump_patterns": {
+    "born 0 died 0 lost 2 gained 2": 8
+   },
+   "frames_failing": [],
+   "n_frames_failing": 0,
+   "balance_failures": [],
+   "n_balance_failures": 0,
+   "triple_formulas": {
+    "True": 1200
+   },
+   "ok": true
+  },
+  "5": {
+   "frames": 481,
+   "counts": {
+    "clump": 31,
+    "split": 39,
+    "birth": 671,
+    "death": 674,
+    "swap": 827,
+    "relabel": 1,
+    "merge": 38
+   },
+   "clump_patterns": {
+    "born 3 died 1 lost 0 gained 0": 1,
+    "born 2 died 0 lost 2 gained 0": 1,
+    "born 0 died 0 lost 2 gained 2": 26,
+    "born 0 died 0 lost 3 gained 3": 2,
+    "born 0 died 2 lost 0 gained 0": 1
+   },
+   "frames_failing": [],
+   "n_frames_failing": 0,
+   "balance_failures": [],
+   "n_balance_failures": 0,
+   "triple_formulas": {
+    "True": 481
+   },
+   "ok": true
+  }
+ },
+ "neg_control_caught": true
+}

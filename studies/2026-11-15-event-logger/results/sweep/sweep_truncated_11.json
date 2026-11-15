@@ -1,0 +1,118 @@
+{
+ "stage": "truncated",
+ "seed": 11,
+ "corners": 1440,
+ "cells": 720,
+ "faces": 3600,
+ "edges": 4320,
+ "steps": {
+  "1": {
+   "frames": 1439,
+   "counts": {
+    "clump": 2634
+   },
+   "clump_patterns": {
+    "born 3 died 0 lost 0 gained 0": 2,
+    "born 2 died 0 lost 0 gained 0": 109,
+    "born 0 died 0 lost 1 gained 0": 227,
+    "born 1 died 0 lost 0 gained 0": 490,
+    "born 0 died 0 lost 0 gained 3": 118,
+    "born 0 died 1 lost 0 gained 0": 490,
+    "born 0 died 0 lost 0 gained 2": 371,
+    "born 0 died 0 lost 2 gained 0": 371,
+    "born 0 died 0 lost 3 gained 0": 118,
+    "born 0 died 0 lost 0 gained 1": 227,
+    "born 0 died 2 lost 0 gained 0": 109,
+    "born 0 died 3 lost 0 gained 0": 2
+   },
+   "frames_failing": [],
+   "n_frames_failing": 0,
+   "balance_failures": [],
+   "n_balance_failures": 0,
+   "triple_formulas": {
+    "None": 1437,
+    "True": 2
+   },
+   "ok": true
+  },
+  "2": {
+   "frames": 720,
+   "counts": {
+    "clump": 2596,
+    "merge": 3,
+    "split": 3
+   },
+   "clump_patterns": {
+    "born 5 died 0 lost 1 gained 0": 1,
+    "born 1 died 0 lost 0 gained 0": 485,
+    "born 2 died 0 lost 0 gained 0": 107,
+    "born 0 died 0 lost 1 gained 0": 221,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 0 died 0 lost 0 gained 3": 114,
+    "born 0 died 0 lost 2 gained 0": 367,
+    "born 0 died 0 lost 3 gained 0": 114,
+    "born 0 died 0 lost 0 gained 1": 221,
+    "born 0 died 1 lost 0 gained 0": 485,
+    "born 0 died 0 lost 0 gained 2": 367,
+    "born 1 died 0 lost 1 gained 0": 1,
+    "born 3 died 0 lost 3 gained 0": 1,
+    "born 0 died 2 lost 0 gained 0": 107,
+    "born 0 died 3 lost 0 gained 3": 1,
+    "born 0 died 1 lost 0 gained 1": 1,
+    "born 0 died 3 lost 0 gained 0": 1,
+    "born 0 died 5 lost 0 gained 1": 1
+   },
+   "frames_failing": [],
+   "n_frames_failing": 0,
+   "balance_failures": [],
+   "n_balance_failures": 0,
+   "triple_formulas": {
+    "None": 720
+   },
+   "ok": true
+  },
+  "5": {
+   "frames": 289,
+   "counts": {
+    "clump": 2423,
+    "merge": 15,
+    "split": 9
+   },
+   "clump_patterns": {
+    "born 7 died 0 lost 1 gained 0": 1,
+    "born 1 died 0 lost 0 gained 0": 466,
+    "born 2 died 0 lost 0 gained 0": 97,
+    "born 3 died 0 lost 0 gained 0": 1,
+    "born 0 died 0 lost 1 gained 0": 192,
+    "born 4 died 1 lost 0 gained 1": 1,
+    "born 0 died 0 lost 2 gained 0": 348,
+    "born 0 died 1 lost 0 gained 1": 7,
+    "born 0 died 0 lost 0 gained 3": 98,
+    "born 0 died 1 lost 0 gained 0": 456,
+    "born 0 died 0 lost 0 gained 2": 340,
+    "born 0 died 0 lost 3 gained 0": 100,
+    "born 0 died 0 lost 0 gained 1": 192,
+    "born 1 died 0 lost 1 gained 0": 3,
+    "born 3 died 0 lost 3 gained 0": 9,
+    "born 0 died 2 lost 0 gained 0": 96,
+    "born 0 died 3 lost 0 gained 3": 10,
+    "born 1 died 0 lost 0 gained 1": 1,
+    "born 0 died 1 lost 1 gained 0": 1,
+    "born 0 died 2 lost 1 gained 0": 1,
+    "born 0 died 2 lost 3 gained 4": 1,
+    "born 0 died 3 lost 0 gained 0": 1,
+    "born 0 died 5 lost 0 gained 1": 1
+   },
+   "frames_failing": [],
+   "n_frames_failing": 0,
+   "balance_failures": [],
+   "n_balance_failures": 0,
+   "triple_formulas": {
+    "None": 288,
+    "True": 1
+   },
+   "ok": true
+  }
+ },
+ "neg_control_caught": true
+}

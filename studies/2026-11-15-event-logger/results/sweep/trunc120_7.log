@@ -1,0 +1,14 @@
+START trunc120: 2400 corners, 720 cells, 3120 faces, 4800 edges; cells per edge {3: 4800}
+PROGRESS 0.000 frames 0/2399
+PROGRESS 0.063 frames 300/2399
+PROGRESS 0.125 frames 600/2399
+PROGRESS 0.188 frames 900/2399
+PROGRESS 0.250 frames 1200/2399
+PROGRESS 0.313 frames 1500/2399
+PROGRESS 0.375 frames 1800/2399
+PROGRESS 0.438 frames 2100/2399
+step 1: 2399 frames; counts {'birth': 716, 'swap': 966, 'death': 716}; ok True; triple formulas {'True': 2399}; clump patterns {}
+NEG control (event 0 retyped birth -> swap) caught: True
+step 2: 1200 frames; counts {'split': 13, 'birth': 703, 'death': 703, 'swap': 924, 'clump': 8, 'merge': 13}; ok True; triple formulas {'True': 1200}; clump patterns {'born 0 died 0 lost 2 gained 2': 8}
+step 5: 481 frames; counts {'clump': 31, 'split': 39, 'birth': 671, 'death': 674, 'swap': 827, 'relabel': 1, 'merge': 38}; ok True; triple formulas {'True': 481}; clump patterns {'born 3 died 1 lost 0 gained 0': 1, 'born 2 died 0 lost 2 gained 0': 1, 'born 0 died 0 lost 2 gained 2': 26, 'born 0 died 0 lost 3 gained 3': 2, 'born 0 died 2 lost 0 gained 0': 1}
+PROGRESS 1.000 done

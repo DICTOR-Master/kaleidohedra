@@ -1,0 +1,74 @@
+{
+ "frames": 47,
+ "frames_ok": 42,
+ "steps": 46,
+ "clean_steps": 36,
+ "clean_counts": {
+  "clump": 54,
+  "birth": 8,
+  "split": 21,
+  "swap": 8,
+  "merge": 9,
+  "relabel": 3
+ },
+ "clean_per100": {
+  "0-100 Ma": {
+   "relabel": 3,
+   "split": 9,
+   "swap": 4,
+   "clump": 35,
+   "birth": 7,
+   "merge": 6
+  },
+  "100-200 Ma": {
+   "split": 11,
+   "clump": 17,
+   "swap": 4,
+   "merge": 3
+  },
+  "200-300 Ma": {
+   "clump": 2,
+   "birth": 1,
+   "split": 1
+  }
+ },
+ "clean_clumps": {
+  "born 2 died 1 lost 1 gained 0": 2,
+  "born 0 died 0 lost 1 gained 0": 5,
+  "born 0 died 1 lost 0 gained 0": 4,
+  "born 2 died 0 lost 2 gained 0": 1,
+  "born 4 died 1 lost 3 gained 0": 1,
+  "born 1 died 0 lost 0 gained 0": 2,
+  "born 2 died 3 lost 0 gained 2": 1,
+  "born 3 died 1 lost 8 gained 0": 1,
+  "born 1 died 0 lost 1 gained 0": 5,
+  "born 0 died 0 lost 0 gained 1": 2,
+  "born 3 died 4 lost 0 gained 0": 1,
+  "born 0 died 0 lost 2 gained 2": 2,
+  "born 3 died 1 lost 3 gained 1": 1,
+  "born 1 died 1 lost 0 gained 3": 1,
+  "born 2 died 1 lost 4 gained 0": 1,
+  "born 5 died 4 lost 0 gained 2": 1,
+  "born 1 died 6 lost 1 gained 7": 1,
+  "born 2 died 0 lost 4 gained 0": 1,
+  "born 1 died 1 lost 1 gained 0": 1,
+  "born 0 died 0 lost 3 gained 3": 1,
+  "born 1 died 5 lost 2 gained 2": 1,
+  "born 3 died 1 lost 1 gained 0": 1,
+  "born 3 died 2 lost 4 gained 3": 1,
+  "born 2 died 0 lost 0 gained 0": 2,
+  "born 1 died 1 lost 0 gained 1": 1,
+  "born 3 died 1 lost 0 gained 0": 2,
+  "born 1 died 3 lost 0 gained 0": 1,
+  "born 2 died 0 lost 5 gained 0": 1,
+  "born 4 died 2 lost 0 gained 0": 1,
+  "born 1 died 0 lost 4 gained 0": 1,
+  "born 0 died 2 lost 0 gained 2": 1,
+  "born 0 died 2 lost 0 gained 0": 1,
+  "born 0 died 0 lost 2 gained 1": 1,
+  "born 4 died 4 lost 3 gained 4": 1,
+  "born 7 died 1 lost 2 gained 3": 1,
+  "born 1 died 1 lost 0 gained 4": 1,
+  "born 2 died 0 lost 1 gained 0": 1
+ }
+}

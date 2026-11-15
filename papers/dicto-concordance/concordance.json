@@ -7812,6 +7812,16 @@
     "retry": "only: bijective proof (cycles crossing each bilayer <= 2 times equinumerous), local formulas at l=22,24 (W=6), ice order 20; Lean only after a structural proof (counts too large for kernel decide, native_decide banned)",
     "study": "studies/2026-11-15-ring-counts-stackings",
     "goes_to": "#102 next version or a separate note (DICTO to place); Palomar #102 notability"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "One tissue, three scales, Step 0 and first part of Step 1 (DICTO 15 Nov: 'start on the new scutoid Earth, Sun and cosmos work ASAP'): an event logger for changing tilings (swap, birth, death, split, merge, relabel, clump; 3D contact gained/lost) with Euler, triple-junction and balance checks; validated on the #104 sweeps and on moving-seed sphere tilings; Earth present-day check and a first plate event census",
+    "method": "studies/2026-11-15-event-logger: eventlog.py (tiling format, logger, checks; 23/23 tests incl. negative controls), sweep_tilings.py, voronoi_sphere.py (hull of n_i/h_i; independent flip count by edge-sharing groups), plates.py (pyGPlates 1.0 + GPlately 2.0, GPL-2.0, credited; noding, deforming-zone cells, 40 000-point lineage), clean_steps.py; jobs elog-pilot, elog-sweep, elog-sphere (FAIL: reference count fault), elog-sphere2, elog-plates1, elog-plates10, all FINAL ok except as stated",
+    "status": "SETTLED (logger + validations); UNDECIDED (Earth event rates)",
+    "result": "Sweeps logged as tiling sequences give exactly 116/366/116 (120-cell), 716/966/716 (truncated 120-cell), 716/2166/716 (bitruncated 600-cell), two directions, every frame Euler + triple formulas; truncated 600-cell no swap; step 5 distorts swaps up to 14%. Sphere Voronoi/power, 100 seeds: logger = independent flip count, same at dt 5e-6, 1e-5, 1e-4 (e.g. 126 swaps, 38 births, 26 deaths); predicted coarse-step clumps did not appear. Earth present day: Muller 2016 46 plates, 88 junctions all triple, 132 boundaries, Euler 2, 88=2x44, 132=3x44 exact (Bird 2003 52/100/150 verified in the paper, formulas Bird's own); Muller 2019 Euler 0 in our reading (rigid plates cover 93.5%, Nazca-Andes seam open). Muller 2016 230-0 Ma at 1 Myr: 48 swaps, 39 splits, 24 merges, 8 births, 12 relabels, 100 clumps, balance exact; swaps 48/14/10 at 1/5/10 Myr (18 of 48 back-and-forth): step-dependent, model-chosen plate additions. Prior art: no swap counts found in granulation or plate reconstructions; Janin et al. plate graph has no event classes",
+    "retry": "never for the validations; Earth rates only after (1) explaining the single-contact clumps, (2) a swap persistence rule with a tolerance fixed first, (3) closing the Muller 2019 seam and a second model",
+    "study": "studies/2026-11-15-event-logger",
+    "goes_to": "One tissue, three scales (new paper after Step 1); #104 thread (sweep counts recovered by a general tool)"
    }
   ]
  },

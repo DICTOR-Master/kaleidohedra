@@ -1,0 +1,62 @@
+{
+ "info": {
+  "time": 0,
+  "plates": 46,
+  "polygons": 46,
+  "subsegments": 227,
+  "t_splits": 0,
+  "sharing": {
+   "2": 226,
+   "1": 8
+  },
+  "junction_node_degrees": {
+   "3": 88
+  },
+  "odd_subsegments": 8,
+  "far_side_of_unshared": {
+   "plate": 8
+  },
+  "skipped": {
+   "zero-length piece": 5,
+   "coincident duplicate": 2
+  },
+  "cycles_per_cell": {
+   "1": 46
+  },
+  "multi_cycle_cells": {},
+  "deforming_cells": 0,
+  "boundary_length_km": 238161
+ },
+ "check": {
+  "t": 0,
+  "cells": 46,
+  "boundaries": 132,
+  "pairs": 126,
+  "problems": [],
+  "junctions": 88,
+  "junction_degrees": {
+   "3": 88
+  },
+  "euler": 2,
+  "euler_ok": true,
+  "triple_formulas_ok": true,
+  "ok": true
+ },
+ "mean_neighbours": 5.478260869565218,
+ "mean_boundaries_per_plate": 5.739130434782608,
+ "neighbour_numbers": {
+  "2": 4,
+  "3": 13,
+  "4": 10,
+  "5": 6,
+  "6": 2,
+  "7": 4,
+  "9": 2,
+  "10": 2,
+  "16": 1,
+  "20": 1,
+  "21": 1
+ },
+ "nonTriple": []
+}
+FINAL ok

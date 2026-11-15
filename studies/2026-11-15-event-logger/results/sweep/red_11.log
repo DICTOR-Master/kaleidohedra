@@ -1,0 +1,8 @@
+START red: 600 corners, 120 cells, 720 faces, 1200 edges; cells per edge {3: 1200}
+PROGRESS 0.000 frames 0/599
+PROGRESS 0.250 frames 300/599
+step 1: 599 frames; counts {'birth': 116, 'swap': 366, 'death': 116}; ok True; triple formulas {'True': 599}; clump patterns {}
+NEG control (event 0 retyped birth -> swap) caught: True
+step 2: 300 frames; counts {'birth': 113, 'swap': 348, 'split': 3, 'death': 113, 'clump': 6, 'merge': 3}; ok True; triple formulas {'True': 300}; clump patterns {'born 0 died 0 lost 2 gained 2': 6}
+step 5: 121 frames; counts {'clump': 25, 'birth': 99, 'split': 13, 'swap': 289, 'death': 101, 'merge': 13}; ok True; triple formulas {'True': 121}; clump patterns {'born 3 died 0 lost 0 gained 0': 1, 'born 1 died 0 lost 3 gained 2': 1, 'born 0 died 0 lost 3 gained 3': 2, 'born 0 died 0 lost 2 gained 2': 20, 'born 0 died 2 lost 0 gained 2': 1}
+PROGRESS 1.000 done

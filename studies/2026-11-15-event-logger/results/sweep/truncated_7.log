@@ -1,0 +1,11 @@
+START truncated: 1440 corners, 720 cells, 3600 faces, 4320 edges; cells per edge {3: 3600, 5: 720}
+PROGRESS 0.000 frames 0/1439
+PROGRESS 0.104 frames 300/1439
+PROGRESS 0.208 frames 600/1439
+PROGRESS 0.313 frames 900/1439
+PROGRESS 0.417 frames 1200/1439
+step 1: 1439 frames; counts {'clump': 2634}; ok True; triple formulas {'None': 1439}; clump patterns {'born 3 died 0 lost 0 gained 0': 2, 'born 2 died 0 lost 0 gained 0': 109, 'born 0 died 0 lost 1 gained 0': 227, 'born 1 died 0 lost 0 gained 0': 490, 'born 0 died 0 lost 2 gained 0': 371, 'born 0 died 0 lost 0 gained 3': 118}
+NEG control (event 0 retyped clump -> swap) caught: True
+step 2: 720 frames; counts {'clump': 2522, 'merge': 7, 'split': 7}; ok True; triple formulas {'None': 720}; clump patterns {'born 5 died 0 lost 1 gained 0': 1, 'born 2 died 0 lost 0 gained 0': 102, 'born 1 died 0 lost 0 gained 0': 474, 'born 0 died 0 lost 1 gained 0': 209, 'born 3 died 0 lost 0 gained 0': 1, 'born 0 died 0 lost 2 gained 0': 357}
+step 5: 289 frames; counts {'clump': 2431, 'merge': 11, 'split': 11}; ok True; triple formulas {'None': 289}; clump patterns {'born 9 died 0 lost 3 gained 0': 1, 'born 1 died 0 lost 0 gained 0': 461, 'born 3 died 0 lost 0 gained 0': 1, 'born 2 died 0 lost 0 gained 0': 95, 'born 0 died 0 lost 1 gained 0': 191, 'born 0 died 0 lost 2 gained 0': 344}
+PROGRESS 1.000 done
