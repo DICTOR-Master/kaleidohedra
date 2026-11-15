@@ -1,7 +1,7 @@
 **Verdict: FEASIBLE, and the certificate is built and checked.** Kulaichev's yantra is unique by a branch-and-bound interval certificate that uses no elimination identity. It has 64,613 rational boxes in 10 charts and 68,041 polynomial evaluations (18.4 million term evaluations). Every box endpoint has at most 9 digits. Each box is closed by one sign test. One box of half-width 2⁻²² is left over, and the Krawczyk test in exact rational arithmetic proves that it holds exactly one solution, Theorem 10's. Every box was re-proved in exact integer arithmetic. Every box was then re-proved independently in FLINT/Arb ball arithmetic, with a different enclosure, on the second compute machine. Both negative controls fail as they must.
 
 **Lean status (15 Nov 2026, evening): steps 1 and 4 are fully proved, step 3 in part.** The work uses Lean 4 + Mathlib v4.35.0-rc2, the Palomar toolchain, and §7 has the details.
-- **Step 1 (done).** The faster checker is proved sound: the monotone split and the slope form, in natural numbers only, evaluated by the kernel. All 64,613 leaves of all 10 charts pass `decide +kernel` (no `native_decide`), in 1,194 modules. Each chart has a theorem `covered`. This took 6,387 s of module time, which is 22 min on the first compute machine.
+- **Step 1 (done).** The faster checker is proved sound: the monotone split and the slope form, in natural numbers only, evaluated by the kernel. All 64,613 leaves of all 10 charts pass `decide +kernel` (no `native_decide`), in 1,194 modules. Each chart has a theorem `covered`. This took 6,387 s of module time, which is 22 min on the first compute machine. The aarch64 build of the same kernel, on the second compute machine, accepted a stratified subset of 408 of the 1,194 modules and rejected none.
 - **Step 4 (done).** Exactly one zero of F~ lies in the Krawczyk hole: `kbox_exists_unique`. Uniqueness comes from a contraction, and existence from Banach's theorem.
 - **Step 3 (in part).** The chart coverings of §2 are proved.
 - **Axioms.** For every theorem, `#print axioms` lists only `propext`, `Classical.choice` and `Quot.sound`.
@@ -174,7 +174,7 @@ Status 15 Nov evening (§7): step 1 is **DONE**; step 2 is **OPEN** (the stateme
    - **The theorems.** The assemblies prove `YantraCert.Data.<chart>.covered : C.Covered ⟨0, 0, 0, 0, 0, 0⟩` for main, A, B, C1, C2, W, Wt+, Wt−, Wr+ and Wr−.
    - **Axioms.** All 11 lines (the 10 charts and `checkTree_sound`) list only `propext`, `Classical.choice` and `Quot.sound` (logs/lean/axioms-cert.log). No source contains `sorry` or `native_decide`.
    - **What `covered` says.** Take any point y of the unit cube, the chart's box rescaled by y = x/W. Then one of the chart's stored equations is nonzero at y, or one stored test has N(y)·D(y) < 0, or y lies in a hole. The holes are the Krawczyk box, corner0 and corner1 for the main chart, and N1 for C1.
-   - **Independent re-check.** Job ylean-node2 ran on the second compute machine, with the aarch64 build of the same kernel (commit 11acb17). It checks every module of the 8 small charts and every 4th subtree module of main and C1. Result: see the line below.
+   - **Independent re-check.** Job ylean-node2 ran on the second compute machine, with the aarch64 build of the same kernel (commit 11acb17). It checks every module of the 8 small charts and every 4th subtree module of main and C1, and it ended FINAL ok: 314 of 314 modules accepted, 1,939 s of module time, at most 1.91 GB (data/lean-node-times.tsv). An earlier full run, ylean-node, was stopped by the agent after about 100 modules, because the full set needed 4 to 5 h, more than its cap. Its built modules count as checked. Together, 408 of the 1,194 subtree modules were accepted by the second kernel, and none was rejected.
 3. **Step 4, the Krawczyk box: DONE.** The theorem is `KBox.kbox_exists_unique : ∃! x, InBox cX rX x ∧ ∀ k, F k x = 0`, for F = (G~, H~, D~) in (u, τ, ρ). X is the certificate's hole, of half-width 2⁻²².
    - **Uniqueness** comes from `krawczyk_unique`, with the polynomial slopes enclosed at the corners of X. The ratios Σ_j M_ij r_j / r_i are 0.0506, 0.1250 and 0.1253, matching §3's 0.051, 0.125 and 0.125.
    - **Existence** comes from `krawczyk_exists` on a box Xs of half-width 2⁻¹⁰⁰.
@@ -209,6 +209,7 @@ Status 15 Nov evening (§7): step 1 is **DONE**; step 2 is **OPEN** (the stateme
   - Uniqueness is a case split over the charts, using `covered`, the coverings and the identities, plus `kbox_exists_unique`.
   - Existence takes the zero in Xs and rebuilds the yantra from it. Every test must then be shown strictly positive on Xs. The interval evaluation needed is already in `Krawczyk.lean` (`NP.vq` with the monotone split).
   - Then write `Solution.lean` (the Challenge word for word, with proofs, in its own namespace), `formalization.yaml` and `comparator.json`.
+  - Palomar format: every `.lean` file must use the module system (`module`, `public import`) and have at most 10,000 lines. The library and the Challenge do not use it yet; the generated modules are well under the line limit (the largest, the main assembly, has 2,379 lines).
 
 ## Credits (at point of use)
 
