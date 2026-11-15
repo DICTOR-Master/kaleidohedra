@@ -161,3 +161,14 @@ counts if both ends list each other. Interior = more than two rings from the rim
 or a principal stretch under 0.05), not on the patch hull at depth. Swapped = an interior edge of the cone layer that is missing at
 depth d. A = ratio of the singular values of the least-squares 2×2 map of each point's neighbour offsets, cone layer to depth d.
 Noise control: smoothed axes plus random tilts with the measured rms raw-to-smoothed tilt (seed 7).
+
+## 16 Nov: first butterfly eye volume fetched (DICTO approved the override, '2 override check')
+
+Paukner et al. 2024 (BossDB paukner2024, butterfly_retina_xray_grp02_gw05), scale 2400_2400_600: array 1004 × 566 × 419 (z, y, x), FINAL ok.
+The volume stays on the compute machine and is never redistributed (no licence stated). Preview slices in figures/ are low-resolution
+derived views for locating anatomy only. Seen by eye: the z = 502 slice cuts the eye across. The corneal lenses run as a bead row
+along the outer arc, the ommatidia run radially inward through a dark layer to the cut rhabdom layer, and the optic lobe is on the left.
+The x = 209 slice runs along the ommatidia: the facet lenses down the left edge, with the fibre pattern converging inward.
+The depth axis is RADIAL (curved), not a grid axis, so the trace must follow each ommatidium along its own direction.
+Next: a sub-block at 1200_1200_600 around the arc's middle; segment the cone and rhabdom cross-sections at successive radii and count
+neighbour changes with depth (the scutoid test of the prediction stated before the data).
