@@ -14,6 +14,8 @@ import fs from 'node:fs';
   const hits = [...txt.matchAll(BAN)].map(m => txt.slice(Math.max(0, m.index - 40), m.index + 50).replace(/\s+/g, ' '));
   const raw = fs.readFileSync(path.join(here, dir, 'paper.html'), 'utf8');
   if (/^DRAFT/i.test(path.basename(pdf)) && !/class="status/.test(raw) && !process.env.ALLOW_BANNED) { console.error('DRAFT without the red status box - not printed'); process.exit(3); }
+  // 15 Nov (Platonic v1 went out with two chapter heads saying "New chapter (draft of 11 November 2026)"): a final (non-DRAFT) PDF may carry no draft wording of our own.
+  if (!/^DRAFT/i.test(path.basename(pdf)) && /New chapter \(draft|\(draft of \d+ \w+ 20\d\d\)[,:]|working title/i.test(raw.replace(/<[^>]+>/g,' ').replace(/DICTO: [^.]*\(draft of/g,'')) && !process.env.ALLOW_BANNED) { console.error('GUARD: draft wording in a final PDF ("New chapter (draft…", "(draft of …)", "working title")'); process.exit(9); }
   const lang = (raw.match(/<html[^>]*lang="([^"]+)"/) || [])[1] || 'en';   // (native-review requirement dropped 11-07: DICTO's reader already checked; accuracy is guarded by the ja text guard)
   // KATAKANA-COVER GUARD (DICTO 11-07: "any japanese language version gets a katakana cover"): a final ja book needs its own cover
   // image (file name with -ja) whose alt text carries the katakana title.
