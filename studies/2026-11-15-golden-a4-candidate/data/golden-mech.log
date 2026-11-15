@@ -1,0 +1,85 @@
+A. point sets
+  |X| = 20, |Y| = 30, reflection closure of X: 120 points
+  ok   X 20, Y 30, closure 120 (600-cell)
+  ok   P is a union of S5-orbits
+  scale of Y onto the 600-cell radius: 1
+  ok   the 30-set Y (scaled exactly) is an S5-orbit of the same 600-cell
+  ok   the remaining 20-orbit C3 is antipodal; C2 = -C1 and C5 = -C4 are distinct orbits
+B. cosine classes of the 600-cell = conjugacy classes of 2I
+  -1: 1, (-1/4-1/4*r5): 12, -1/2: 20, (1/4-1/4*r5): 12, 0: 30, (-1/4+1/4*r5): 12, 1/2: 20, (1/4+1/4*r5): 12, 1: 1
+  ok   9 classes with the sizes of 2I
+  ok   the 9 class functions are the orthonormal irreducible characters of 2I
+  Sym^k content (McKay):
+    k= 0: 1
+    k= 1: 2
+    k= 2: 3
+    k= 3: 4s
+    k= 4: 5
+    k= 5: 6
+    k= 6: 3' + 4
+    k= 7: 6 + 2'
+    k= 8: 5 + 4
+    k= 9: 4s + 6
+    k=10: 3 + 5 + 3'
+    k=11: 2 + 4s + 6
+    k=12: 1 + 3 + 5 + 4
+    k=13: 2 + 4s + 6 + 2'
+    k=14: 3 + 5 + 3' + 4
+    k=15: 4s + 26
+    k=16: 25 + 3' + 4
+    k=17: 4s + 26 + 2'
+    k=18: 3 + 5 + 3' + 24
+    k=19: 2 + 4s + 26 + 2'
+    k=20: 1 + 3 + 25 + 3' + 4
+C. tones and block contents of the five orbits
+  C1 = X (20): tone zeros k<= 30: [1, 2, 5, 7]
+     |twisted character|^2: 1:1, 2:0, 3:0, 4s:3, 5:1, 6:0, 2':0, 3':0, 4:1
+  ok   C1 = X (20): T_k = sum_rho m(k,rho) F_rho for every k <= 30
+  ok   C1 = X (20): every |twisted character|^2 is a rational integer
+  ok   C1 = X (20): every tone is rational (Galois-fixed)
+  ok   C1 = X (20): zeros predicted from the vanishing blocks = direct zeros
+  C2 = -X (20): tone zeros k<= 30: [1, 2, 5, 7]
+     |twisted character|^2: 1:1, 2:0, 3:0, 4s:3, 5:1, 6:0, 2':0, 3':0, 4:1
+  ok   C2 = -X (20): T_k = sum_rho m(k,rho) F_rho for every k <= 30
+  ok   C2 = -X (20): every |twisted character|^2 is a rational integer
+  ok   C2 = -X (20): every tone is rational (Galois-fixed)
+  ok   C2 = -X (20): zeros predicted from the vanishing blocks = direct zeros
+  C3 antipodal (20): tone zeros k<= 30: [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+     |twisted character|^2: 1:1, 2:0, 3:0, 4s:0, 5:1, 6:0, 2':0, 3':0, 4:4
+  ok   C3 antipodal (20): T_k = sum_rho m(k,rho) F_rho for every k <= 30
+  ok   C3 antipodal (20): every |twisted character|^2 is a rational integer
+  ok   C3 antipodal (20): every tone is rational (Galois-fixed)
+  ok   C3 antipodal (20): zeros predicted from the vanishing blocks = direct zeros
+  C4 = Y (30): tone zeros k<= 30: [1, 2, 3, 6]
+     |twisted character|^2: 1:1, 2:0, 3:0, 4s:0, 5:1, 6:2, 2':0, 3':0, 4:0
+  ok   C4 = Y (30): T_k = sum_rho m(k,rho) F_rho for every k <= 30
+  ok   C4 = Y (30): every |twisted character|^2 is a rational integer
+  ok   C4 = Y (30): every tone is rational (Galois-fixed)
+  ok   C4 = Y (30): zeros predicted from the vanishing blocks = direct zeros
+  C5 = -Y (30): tone zeros k<= 30: [1, 2, 3, 6]
+     |twisted character|^2: 1:1, 2:0, 3:0, 4s:0, 5:1, 6:2, 2':0, 3':0, 4:0
+  ok   C5 = -Y (30): T_k = sum_rho m(k,rho) F_rho for every k <= 30
+  ok   C5 = -Y (30): every |twisted character|^2 is a rational integer
+  ok   C5 = -Y (30): every tone is rational (Galois-fixed)
+  ok   C5 = -Y (30): zeros predicted from the vanishing blocks = direct zeros
+D. spin part: 6-block u=|chi6(C1)|^2=0, v=|chi6(C4)|^2=2; 4s-block u'=3, v'=0
+  ok   row and column orthogonality: 2u+3v = 6, u+u' = 3, v+v' = 2
+   nonnegative integer solutions of 2u+3v = 6: [(0, 2), (3, 0)]  -> u = 0 or v = 0 (forced)
+  ok   only (0,2) and (3,0): the 6-block vanishes on the (3,2)-type pair C1,C2 or on the 4-cycle pair C4,C5
+  ok   actual: (u,v) = (0,2): 6 vanishes on C1 (T5 = T7 = 0), 4s vanishes on C4 (T3 = 0), as Schur 1911 assigns (chi^(4,1) lives on 4-cycles, chi^(3,2) on (3,2)-type)
+  ok   non-spin 4 (standard rep of S5): 0 on 4-cycles (C4: T6 = 0), 1 on (3,2), 4 on transpositions (C3)
+F. Double Vision: Phi = phi^2 * sigma on the 600-cell
+  ok   sigma(P) = P / phi^2, so Phi = phi^2 sigma permutes the 600-cell and maps cosine c to sigma(c)
+  ok   Phi fixes C1 = X (20) setwise (so it forces no zero, only rational tones)
+  ok   Phi fixes C2 = -X (20) setwise (so it forces no zero, only rational tones)
+  ok   Phi fixes C3 antipodal (20) setwise (so it forces no zero, only rational tones)
+  ok   Phi fixes C4 = Y (30) setwise (so it forces no zero, only rational tones)
+  ok   Phi fixes C5 = -Y (30) setwise (so it forces no zero, only rational tones)
+G. controls
+  ok   control member t = 2: its reflection closure is not finite-small (no 600-cell), mechanism does not apply
+  t = 2 zeros k<=20: [1, 2]
+  ok   control t = 2 is silent only in degrees 1, 2
+  ok   wrong claim rejected: "the 6-block vanishes on C4" (T5(C4) != 0)
+  ok   wrong claim rejected: "C1 is a 3-design" (T3(C1) != 0)
+  ok   wrong mechanism rejected: "every S5-orbit in the 600-cell is silent in 5 and 7"
+FINAL ok
