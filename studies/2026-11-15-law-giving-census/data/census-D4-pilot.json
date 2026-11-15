@@ -1,0 +1,727 @@
+{
+ "group": "D4",
+ "order": 192,
+ "field_D": 2,
+ "kmax": 20,
+ "families": [
+  {
+   "pattern": "001t",
+   "raw_patterns": 6,
+   "involution": "t -> 1/t via automorphism (0, 1, 3, 2)",
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 9,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": "identically zero",
+    "4": [],
+    "5": "identically zero",
+    "6": [],
+    "7": "identically zero",
+    "8": [],
+    "9": "identically zero",
+    "10": [],
+    "11": "identically zero",
+    "12": [],
+    "13": "identically zero",
+    "14": [],
+    "15": "identically zero",
+    "16": [],
+    "17": "identically zero",
+    "18": [],
+    "19": "identically zero",
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-1",
+      "1"
+     ],
+     "deg": 1,
+     "value": "1.00000000000000000000000000000",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "-1",
+      "1"
+     ],
+     "deg": 1,
+     "value": "1.00000000000000000000000000000",
+     "genuine": null
+    }
+   ],
+   "extra_symmetry": {
+    "F4 reflection (1,1,1,1)/2": [],
+    "B4 reflection e4": [
+     "1"
+    ]
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.04444444444444444,
+     "5": 0.0,
+     "6": 0.001763668430335097,
+     "7": 0.0,
+     "8": 0.13580246913580246,
+     "9": 0.0,
+     "10": 0.051239417494561526,
+     "11": 0.0,
+     "12": 0.048278027244648185,
+     "13": 0.0,
+     "14": 0.03418366290895885,
+     "15": 0.0,
+     "16": 0.1240038660210475,
+     "17": 0.0,
+     "18": 0.025330934828009927,
+     "19": 0.0,
+     "20": 0.06436719605562362
+    },
+    "tone_zero_exact": []
+   },
+   "tones_even_under_t_to_1/t": true,
+   "fixed_point": {
+    "tone4": {
+     "value_times_|G|P_k(1)": "128/3",
+     "value": 0.04444444444444444,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": 1
+    },
+    "tone6": {
+     "value_times_|G|P_k(1)": "64/27",
+     "value": 0.001763668430335097,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": 1
+    },
+    "tone8": {
+     "value_times_|G|P_k(1)": "704/3",
+     "value": 0.13580246913580246,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone10": {
+     "value_times_|G|P_k(1)": "236672/2187",
+     "value": 0.051239417494561526,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": 1
+    },
+    "tone12": {
+     "value_times_|G|P_k(1)": "2371840/19683",
+     "value": 0.048278027244648185,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": 1
+    },
+    "tone14": {
+     "value_times_|G|P_k(1)": "5813312/59049",
+     "value": 0.03418366290895885,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone16": {
+     "value_times_|G|P_k(1)": "645300032/1594323",
+     "value": 0.1240038660210475,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone18": {
+     "value_times_|G|P_k(1)": "1325943040/14348907",
+     "value": 0.025330934828009927,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": 1
+    },
+    "tone20": {
+     "value_times_|G|P_k(1)": "11171852416/43046721",
+     "value": 0.06436719605562362,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": 1
+    },
+    "mahler_derivative_zero": true,
+    "mahler_second_derivative_sign": -1
+   },
+   "_crossings": [
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 0.3,
+   "coincidences": [
+    {
+     "what": "mahler and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "mahler at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "iq at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    }
+   ]
+  },
+  {
+   "pattern": "010t",
+   "raw_patterns": 6,
+   "involution": null,
+   "pointwise_symmetric": [
+    [
+     2,
+     1,
+     0,
+     3
+    ]
+   ],
+   "distinct_pair_forms": 13,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": "identically zero",
+    "4": [],
+    "5": "identically zero",
+    "6": [
+     {
+      "minpoly": [
+       "-2",
+       "0",
+       "1"
+      ],
+      "deg": 2,
+      "value": "1.41421356237309504880168872421",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "7": "identically zero",
+    "8": [],
+    "9": "identically zero",
+    "10": [
+     {
+      "minpoly": [
+       "-2",
+       "-2",
+       "1"
+      ],
+      "deg": 2,
+      "value": "2.73205080756887729352744634151",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "11": "identically zero",
+    "12": [],
+    "13": "identically zero",
+    "14": [],
+    "15": "identically zero",
+    "16": [],
+    "17": "identically zero",
+    "18": [],
+    "19": "identically zero",
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-4",
+      "16",
+      "24",
+      "8",
+      "1"
+     ],
+     "deg": 4,
+     "value": "0.191436366157564503581181163282",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [],
+   "extra_symmetry": {
+    "F4 reflection (1,1,1,1)/2": "whole family",
+    "B4 reflection e4": []
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.05184,
+     "5": 0.0,
+     "6": 0.0112,
+     "7": 0.0,
+     "8": 0.012989724444444446,
+     "9": 0.0,
+     "10": 0.057344465454545454,
+     "11": 0.0,
+     "12": 0.08433952988553847,
+     "13": 0.0,
+     "14": 0.013092341623466666,
+     "15": 0.0,
+     "16": 0.03993289693863454,
+     "17": 0.0,
+     "18": 0.028290268557613813,
+     "19": 0.0,
+     "20": 0.050412756866636245
+    },
+    "tone_zero_exact": []
+   },
+   "tones_even_under_t_to_1/t": false,
+   "_crossings": [
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "-2",
+       "0",
+       "1"
+      ],
+      "deg": 2,
+      "value": "1.41421356237309504880168872421",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone10",
+     {
+      "minpoly": [
+       "-2",
+       "-2",
+       "1"
+      ],
+      "deg": 2,
+      "value": "2.73205080756887729352744634151",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-4",
+       "16",
+       "24",
+       "8",
+       "1"
+      ],
+      "deg": 4,
+      "value": "0.191436366157564503581181163282",
+      "genuine": true,
+      "mult": 1
+     }
+    ]
+   ],
+   "seconds": 0.5,
+   "coincidences": [
+    {
+     "what": "tone6 at a special number",
+     "flags": [
+      "quadratic, discriminant 8"
+     ],
+     "value": "1.41421356237309504880168872421"
+    },
+    {
+     "what": "tone10 at a special number",
+     "flags": [
+      "quadratic, discriminant 12"
+     ],
+     "value": "2.73205080756887729352744634151"
+    }
+   ]
+  },
+  {
+   "pattern": "011t",
+   "raw_patterns": 12,
+   "involution": null,
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 33,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": "identically zero",
+    "4": [],
+    "5": "identically zero",
+    "6": [
+     {
+      "minpoly": [
+       "-35",
+       "-111",
+       "-100",
+       "-15",
+       "20",
+       "9",
+       "1"
+      ],
+      "deg": 6,
+      "value": "2.10502006099612925646101534026",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "7": "identically zero",
+    "8": [],
+    "9": "identically zero",
+    "10": [],
+    "11": "identically zero",
+    "12": [],
+    "13": "identically zero",
+    "14": [],
+    "15": "identically zero",
+    "16": [],
+    "17": "identically zero",
+    "18": [],
+    "19": "identically zero",
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-867",
+      "249",
+      "915",
+      "399",
+      "69",
+      "5"
+     ],
+     "deg": 5,
+     "value": "0.739243154920163023132701874116",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "108",
+      "-385",
+      "-226",
+      "-16",
+      "3"
+     ],
+     "deg": 4,
+     "value": "0.244768978136009464580447439402",
+     "genuine": null
+    },
+    {
+     "minpoly": [
+      "108",
+      "-385",
+      "-226",
+      "-16",
+      "3"
+     ],
+     "deg": 4,
+     "value": "12.2919767745687327864733716986",
+     "genuine": null
+    }
+   ],
+   "extra_symmetry": {
+    "F4 reflection (1,1,1,1)/2": [],
+    "B4 reflection e4": [
+     "1"
+    ]
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.013717421124828533,
+     "5": 0.0,
+     "6": 0.014344019373740453,
+     "7": 0.0,
+     "8": 0.023817354171993727,
+     "9": 0.0,
+     "10": 0.00032721083530040613,
+     "11": 0.0,
+     "12": 0.017361856228542152,
+     "13": 0.0,
+     "14": 0.022756089638541397,
+     "15": 0.0,
+     "16": 0.04361006404041752,
+     "17": 0.0,
+     "18": 0.02020179705191331,
+     "19": 0.0,
+     "20": 0.01321283718352964
+    },
+    "tone_zero_exact": []
+   },
+   "tones_even_under_t_to_1/t": false,
+   "_crossings": [
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "-35",
+       "-111",
+       "-100",
+       "-15",
+       "20",
+       "9",
+       "1"
+      ],
+      "deg": 6,
+      "value": "2.10502006099612925646101534026",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-867",
+       "249",
+       "915",
+       "399",
+       "69",
+       "5"
+      ],
+      "deg": 5,
+      "value": "0.739243154920163023132701874116",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "108",
+       "-385",
+       "-226",
+       "-16",
+       "3"
+      ],
+      "deg": 4,
+      "value": "0.244768978136009464580447439402",
+      "genuine": null
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "108",
+       "-385",
+       "-226",
+       "-16",
+       "3"
+      ],
+      "deg": 4,
+      "value": "12.2919767745687327864733716986",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 0.7,
+   "coincidences": []
+  }
+ ],
+ "stations": [
+  {
+   "pattern": "0001",
+   "symmetric_under": [
+    [
+     2,
+     1,
+     0,
+     3
+    ]
+   ]
+  },
+  {
+   "pattern": "0011",
+   "symmetric_under": [
+    [
+     0,
+     1,
+     3,
+     2
+    ]
+   ]
+  },
+  {
+   "pattern": "0100",
+   "symmetric_under": [
+    [
+     2,
+     1,
+     0,
+     3
+    ],
+    [
+     3,
+     1,
+     2,
+     0
+    ],
+    [
+     0,
+     1,
+     3,
+     2
+    ],
+    [
+     2,
+     1,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     0,
+     2
+    ]
+   ]
+  },
+  {
+   "pattern": "0101",
+   "symmetric_under": [
+    [
+     2,
+     1,
+     0,
+     3
+    ]
+   ]
+  },
+  {
+   "pattern": "0111",
+   "symmetric_under": [
+    [
+     0,
+     1,
+     3,
+     2
+    ]
+   ]
+  },
+  {
+   "pattern": "1011",
+   "symmetric_under": [
+    [
+     2,
+     1,
+     0,
+     3
+    ],
+    [
+     3,
+     1,
+     2,
+     0
+    ],
+    [
+     0,
+     1,
+     3,
+     2
+    ],
+    [
+     2,
+     1,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     0,
+     2
+    ]
+   ]
+  },
+  {
+   "pattern": "1111",
+   "symmetric_under": [
+    [
+     2,
+     1,
+     0,
+     3
+    ],
+    [
+     3,
+     1,
+     2,
+     0
+    ],
+    [
+     0,
+     1,
+     3,
+     2
+    ],
+    [
+     2,
+     1,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     0,
+     2
+    ]
+   ]
+  }
+ ],
+ "checks": 13,
+ "fails": [],
+ "seconds": 0.9
+}

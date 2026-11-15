@@ -1,0 +1,291 @@
+{
+ "degrees": {
+  "A3": {
+   "seed": [
+    0.35995441700053704,
+    0.46576735461726976,
+    0.8608921256444777
+   ],
+   "orbit": 24,
+   "nonzero_degrees": [
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+   ],
+   "min_tone_nonzero_degrees": 0.0008795983217282547,
+   "max_abs_tone_other_degrees": 1.202741610010587e-16
+  },
+  "B3": {
+   "seed": [
+    0.7075134252450574,
+    0.3658900495682794,
+    0.6031888581655316
+   ],
+   "orbit": 48,
+   "nonzero_degrees": [
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30
+   ],
+   "min_tone_nonzero_degrees": 0.0006801801451693948,
+   "max_abs_tone_other_degrees": 5.597374415818473e-16
+  },
+  "H3": {
+   "seed": [
+    0.6353359086985838,
+    0.411817240245955,
+    0.8142040059864502
+   ],
+   "orbit": 120,
+   "nonzero_degrees": [
+    6,
+    10,
+    12,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30
+   ],
+   "min_tone_nonzero_degrees": 0.0003860322356033261,
+   "max_abs_tone_other_degrees": 6.34677495744045e-16
+  },
+  "A4": {
+   "seed": [
+    0.37957041394498237,
+    0.5738597333469634,
+    0.6617181278349545,
+    0.6014396142899244
+   ],
+   "orbit": 120,
+   "nonzero_degrees": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+   ],
+   "min_tone_nonzero_degrees": 0.0004946493539222488,
+   "max_abs_tone_other_degrees": 2.312964634635743e-16
+  },
+  "B4": {
+   "seed": [
+    0.7107590000066986,
+    0.816486451104512,
+    0.9693870783852689,
+    0.49894081462415396
+   ],
+   "orbit": 384,
+   "nonzero_degrees": [
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24
+   ],
+   "min_tone_nonzero_degrees": 0.0009292927995541672,
+   "max_abs_tone_other_degrees": 2.590520390792032e-16
+  },
+  "D4": {
+   "seed": [
+    0.7539830449558775,
+    0.7873511976691088,
+    0.504904524308741,
+    0.3010430584561853
+   ],
+   "orbit": 192,
+   "nonzero_degrees": [
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24
+   ],
+   "min_tone_nonzero_degrees": 0.0013494979561902572,
+   "max_abs_tone_other_degrees": 2.590520390792032e-16
+  },
+  "F4": {
+   "seed": [
+    0.9814221923364888,
+    0.508880856111813,
+    0.5197902014240358,
+    0.92419774931161
+   ],
+   "orbit": 1152,
+   "nonzero_degrees": [
+    6,
+    8,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24
+   ],
+   "min_tone_nonzero_degrees": 3.8010905601264964e-07,
+   "max_abs_tone_other_degrees": 2.9605947323337506e-16
+  },
+  "H4": {
+   "seed": [
+    0.7096140579236356,
+    0.6299167656272819,
+    0.8412939067541714,
+    0.3212422053637298
+   ],
+   "orbit": 14400,
+   "nonzero_degrees": [
+    12,
+    20,
+    24,
+    30,
+    32,
+    36,
+    40
+   ],
+   "min_tone_nonzero_degrees": 3.410637239495379e-06,
+   "max_abs_tone_other_degrees": 4.842217162216979e-16
+  }
+ },
+ "zonohedron": {
+  "t": "[0.541736809786319866940820588796 +/- 2.30e-31]",
+  "degrees_zero_there": [
+   4
+  ],
+  "minpoly": [
+   "100",
+   "0",
+   "-480",
+   "0",
+   "516",
+   "0",
+   "-144",
+   "0",
+   "9"
+  ]
+ },
+ "icosaxes": {
+  "degrees_zero": [
+   4,
+   8,
+   14
+  ],
+  "symmetry": {
+   "orbit_size": 24,
+   "extra_isometries_preserving": [
+    "-I"
+   ],
+   "full_symmetry_order": 48,
+   "G_order": 48,
+   "suborbits": [
+    {
+     "character": [
+      -1,
+      -1,
+      1
+     ],
+     "suborbit_size": 12,
+     "suborbit_symmetry_order": 120,
+     "subgroup_order": 24,
+     "hidden": true
+    }
+   ],
+   "explained": true
+  }
+ },
+ "points": [
+  {
+   "file": "four-A4.json",
+   "points": 34,
+   "disagreements": 0
+  },
+  {
+   "file": "four-B4.json",
+   "points": 17,
+   "disagreements": 0
+  },
+  {
+   "file": "three-A3.json",
+   "points": 171,
+   "disagreements": 0
+  },
+  {
+   "file": "three-B3.json",
+   "points": 43,
+   "disagreements": 0
+  },
+  {
+   "file": "three-H3.json",
+   "points": 64,
+   "disagreements": 0
+  }
+ ],
+ "fails": []
+}

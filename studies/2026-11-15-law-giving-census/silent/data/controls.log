@@ -1,0 +1,17 @@
+ok   A3: orbit 24; zonal tones vanish exactly in the degrees without invariant harmonics and are > 0 in the 27 degrees with them (k <= 30)
+ok   B3: orbit 48; zonal tones vanish exactly in the degrees without invariant harmonics and are > 0 in the 14 degrees with them (k <= 30)
+ok   H3: orbit 120; zonal tones vanish exactly in the degrees without invariant harmonics and are > 0 in the 11 degrees with them (k <= 30)
+ok   A4: orbit 120; zonal tones vanish exactly in the degrees without invariant harmonics and are > 0 in the 22 degrees with them (k <= 24)
+ok   B4: orbit 384; zonal tones vanish exactly in the degrees without invariant harmonics and are > 0 in the 11 degrees with them (k <= 24)
+ok   D4: orbit 192; zonal tones vanish exactly in the degrees without invariant harmonics and are > 0 in the 11 degrees with them (k <= 24)
+ok   F4: orbit 1152; zonal tones vanish exactly in the degrees without invariant harmonics and are > 0 in the 9 degrees with them (k <= 24)
+ok   H4: orbit 14400; zonal tones vanish exactly in the degrees without invariant harmonics and are > 0 in the 7 degrees with them (k <= 40)
+ok   silent zonohedron: on c = (1, 1, t) the tone T4 vanishes at t = sqrt2 a* = [0.54173680978631986694 +/- 8.21e-22] (certified root ball overlaps, its minimal polynomial divides the norm polynomial of (t^2/2 + sqrt2 t)^2 = 5/6)
+ok   Icosaxes: on c = (1, t, 0) the tones vanishing exactly at t = golden ratio: [4, 8, 14] (T4 and T8, not T6)
+ok   Icosaxes: a sub-orbit of an index-2 subgroup (12 points) has symmetry of order 120 (a regular icosahedron): explained
+ok   A4 (four-A4.json): zonal tones agree with the zero degrees at all 34 listed points
+ok   B4 (four-B4.json): zonal tones agree with the zero degrees at all 17 listed points
+ok   A3 (three-A3.json): zonal tones agree with the zero degrees at all 171 listed points
+ok   B3 (three-B3.json): zonal tones agree with the zero degrees at all 43 listed points
+ok   H3 (three-H3.json): zonal tones agree with the zero degrees at all 64 listed points
+FINAL ok

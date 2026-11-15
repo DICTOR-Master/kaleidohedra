@@ -1,0 +1,26 @@
+B4: degrees with invariant harmonics up to 24: 4, 6, 8(dim 2), 10, 12(dim 3), 14(dim 2), 16(dim 4), 18(dim 3), 20(dim 5), 22(dim 4), 24(dim 7)
+HIER B4 degrees [4] (1 conditions): Groebner basis ['u2 - 4']
+HIER B4 degrees [4, 6] (2 conditions): Groebner basis ['u2 - 4', 'u3 - 5']
+HIER B4 degrees [4, 6, 8] (4 conditions): Groebner basis ['1']
+HIER B4 degrees [4, 6, 8, 10] (5 conditions): Groebner basis ['1']
+CURVE B4 [4, 6]: line {'u2': '4', 'u3': '5'}, 242 sampled seeds, z = u4 in [6.59566, 6.61948]
+CURVEPOINT B4 [4, 6]+10: z = 6.666666667: no real seed found (outside the realizable part of the curve)
+INTERIOR B4 [4, 8]: u = [4.0, 4.6, 5.6] seed [0.32246, 0.355081, 0.32246, 0.0] certified False zero None strength None orbit None
+PROGRESS 0.250 B4 interior system [4, 8]: ok, 1 real u-solutions, 1 seeds (4.3 s)
+INTERIOR B4 [6, 8]: u = [3.18343339, 2.95858349, 2.91716697] seed [0.201893, 0.302356, 0.115936, 0.379814] certified True zero [6, 8] strength 3 orbit 384
+PROGRESS 0.500 B4 interior system [6, 8]: ok, 2 real u-solutions, 1 seeds (19.4 s)
+INTERIOR B4 [8, 10]: u = [4.0, 4.6, 5.6] seed [0.32246, 0.355081, 0.32246, 0.0] certified False zero None strength None orbit None
+PROGRESS 0.750 B4 interior system [8, 10]: ok, 3 real u-solutions, 1 seeds (23.9 s)
+PROGRESS 1.000 B4 interior system [4, 6, 10]: ok, 1 real u-solutions, 0 seeds (10.0 s)
+PROGRESS 0.250 B4 facet c0=0: 0 certified points with >= 2 conditions, 0 undecided pairs
+FACETPOINT B4 c1=0 seed [0.488005, 0.0, 0.264786, 0.247209] zero [4, 6] strength 7 orbit 192
+PROGRESS 0.500 B4 facet c1=0: 1 certified points with >= 2 conditions, 0 undecided pairs
+FACETPOINT B4 c2=0 seed [0.404648, 0.207322, 0.0, 0.38803] zero [4, 6] strength 7 orbit 192
+PROGRESS 0.750 B4 facet c2=0: 1 certified points with >= 2 conditions, 0 undecided pairs
+PROGRESS 1.000 B4 facet c3=0: 0 certified points with >= 2 conditions, 0 undecided pairs
+EDGE B4 nodes (0, 2) t = 1.000000000000000000 minpoly ['-1', '1'] zero [4, 10]  <<< OVER-DETERMINED {'orbit_size': 96, 'extra_isometries_preserving': ['-I', 'refl (1,1,1,1)/2 (F4)'], 'explained': True}
+VERTEX B4 node 0 orbit 8 zero (exact) [] strength 3
+VERTEX B4 node 1 orbit 24 zero (exact) [4, 10] strength 5  <<< OVER-DETERMINED {'orbit_size': 24, 'extra_isometries_preserving': ['-I', 'refl (1,1,1,1)/2 (F4)'], 'explained': True}
+VERTEX B4 node 2 orbit 32 zero (exact) [] strength 3
+VERTEX B4 node 3 orbit 16 zero (exact) [] strength 3
+B4: done in 144.7 s

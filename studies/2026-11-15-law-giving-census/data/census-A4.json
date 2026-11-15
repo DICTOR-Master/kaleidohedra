@@ -1,0 +1,8405 @@
+{
+ "group": "A4",
+ "order": 120,
+ "field_D": 2,
+ "kmax": 20,
+ "families": [
+  {
+   "pattern": "001t",
+   "raw_patterns": 4,
+   "involution": null,
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 6,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [],
+    "4": [
+     {
+      "minpoly": [
+       "-3",
+       "-6",
+       "3",
+       "6",
+       "2"
+      ],
+      "deg": 4,
+      "value": "0.914035257480289371821692963159",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "5": [
+     {
+      "minpoly": [
+       "-1",
+       "-1",
+       "1"
+      ],
+      "deg": 2,
+      "value": "1.61803398874989484820458683437",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "6": [],
+    "7": [
+     {
+      "minpoly": [
+       "-1",
+       "-2",
+       "16",
+       "17",
+       "4"
+      ],
+      "deg": 4,
+      "value": "0.271653274147995296206626258444",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "-1",
+       "-1",
+       "1"
+      ],
+      "deg": 2,
+      "value": "1.61803398874989484820458683437",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "8": [],
+    "9": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": [],
+    "16": [],
+    "17": [],
+    "18": [],
+    "19": [],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-1",
+      "17",
+      "7",
+      "1"
+     ],
+     "deg": 3,
+     "value": "0.0574531923158755368448089564528",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [],
+   "f0": 20,
+   "facets": 10,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": []
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.11865234375,
+     "4": 0.0009765625,
+     "5": 0.0232086181640625,
+     "6": 0.019672938755580356,
+     "7": 0.011627376079559326,
+     "8": 0.11822756131490071,
+     "9": 0.09621724113821983,
+     "10": 0.022095564075491646,
+     "11": 0.050340878806309775,
+     "12": 0.03728254557175275,
+     "13": 0.02988502593026559,
+     "14": 0.061291066957892326,
+     "15": 0.0308652924128463,
+     "16": 0.05439316739448811,
+     "17": 0.10661566034155245,
+     "18": 0.040538252082559866,
+     "19": 0.010754538458806485,
+     "20": 0.06222287368530022
+    },
+    "tone_zero_exact": []
+   },
+   "tones_even_under_t_to_1/t": false,
+   "_crossings": [
+    [
+     "tone4",
+     {
+      "minpoly": [
+       "-3",
+       "-6",
+       "3",
+       "6",
+       "2"
+      ],
+      "deg": 4,
+      "value": "0.914035257480289371821692963159",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone5",
+     {
+      "minpoly": [
+       "-1",
+       "-1",
+       "1"
+      ],
+      "deg": 2,
+      "value": "1.61803398874989484820458683437",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "-1",
+       "-2",
+       "16",
+       "17",
+       "4"
+      ],
+      "deg": 4,
+      "value": "0.271653274147995296206626258444",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "-1",
+       "-1",
+       "1"
+      ],
+      "deg": 2,
+      "value": "1.61803398874989484820458683437",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-1",
+       "17",
+       "7",
+       "1"
+      ],
+      "deg": 3,
+      "value": "0.0574531923158755368448089564528",
+      "genuine": true,
+      "mult": 1
+     }
+    ]
+   ],
+   "seconds": 2.9,
+   "coincidences": [
+    {
+     "what": "tone5 and tone7 vanish/critical at the same point",
+     "value": "1.61803398874989484820458683437",
+     "minpoly": [
+      "-1",
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 at a special number",
+     "flags": [
+      "quadratic, discriminant 5"
+     ],
+     "value": "1.61803398874989484820458683437"
+    },
+    {
+     "what": "tone7 at a special number",
+     "flags": [
+      "quadratic, discriminant 5"
+     ],
+     "value": "1.61803398874989484820458683437"
+    }
+   ]
+  },
+  {
+   "pattern": "010t",
+   "raw_patterns": 4,
+   "involution": null,
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 9,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [
+     {
+      "minpoly": [
+       "-1",
+       "1",
+       "1"
+      ],
+      "deg": 2,
+      "value": "0.618033988749894848204586834366",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "4": [
+     {
+      "minpoly": [
+       "-3",
+       "-4",
+       "-2",
+       "4",
+       "2"
+      ],
+      "deg": 4,
+      "value": "1.18259883218911978002718608835",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "5": [],
+    "6": [
+     {
+      "minpoly": [
+       "-1",
+       "1",
+       "1"
+      ],
+      "deg": 2,
+      "value": "0.618033988749894848204586834366",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "-3",
+       "-9",
+       "-7",
+       "4",
+       "2"
+      ],
+      "deg": 4,
+      "value": "1.74983059173127512965497239851",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "7": [
+     {
+      "minpoly": [
+       "-3",
+       "-1",
+       "-25",
+       "-45",
+       "-15",
+       "9",
+       "3"
+      ],
+      "deg": 6,
+      "value": "2.38214825723424928549325093342",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "8": [],
+    "9": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": [],
+    "16": [],
+    "17": [],
+    "18": [],
+    "19": [],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-73",
+      "-53",
+      "154",
+      "186",
+      "65",
+      "5"
+     ],
+     "deg": 5,
+     "value": "0.600945286200805911455589754970",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "989",
+      "-186",
+      "-6203",
+      "-3040",
+      "7175",
+      "9038",
+      "4043",
+      "804",
+      "60"
+     ],
+     "deg": 8,
+     "value": "0.406556488049370026445767583084",
+     "genuine": null
+    }
+   ],
+   "f0": 30,
+   "facets": 20,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": []
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.01967930029154519,
+     "4": 0.003748438150770512,
+     "5": 0.01573749033140953,
+     "6": 0.005130272493361002,
+     "7": 0.06749419884571904,
+     "8": 0.046509343706939946,
+     "9": 0.049945051999936464,
+     "10": 0.04168972469384871,
+     "11": 0.0031655681197652217,
+     "12": 0.041996617495862136,
+     "13": 0.0009653292629072275,
+     "14": 0.015969403528502554,
+     "15": 0.09817345710706935,
+     "16": 0.04496299778189272,
+     "17": 0.004797272892471327,
+     "18": 0.020730587301150214,
+     "19": 0.03620396796728104,
+     "20": 0.03581492247270722
+    },
+    "tone_zero_exact": []
+   },
+   "tones_even_under_t_to_1/t": false,
+   "_crossings": [
+    [
+     "tone3",
+     {
+      "minpoly": [
+       "-1",
+       "1",
+       "1"
+      ],
+      "deg": 2,
+      "value": "0.618033988749894848204586834366",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone4",
+     {
+      "minpoly": [
+       "-3",
+       "-4",
+       "-2",
+       "4",
+       "2"
+      ],
+      "deg": 4,
+      "value": "1.18259883218911978002718608835",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "-1",
+       "1",
+       "1"
+      ],
+      "deg": 2,
+      "value": "0.618033988749894848204586834366",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "-3",
+       "-9",
+       "-7",
+       "4",
+       "2"
+      ],
+      "deg": 4,
+      "value": "1.74983059173127512965497239851",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "-3",
+       "-1",
+       "-25",
+       "-45",
+       "-15",
+       "9",
+       "3"
+      ],
+      "deg": 6,
+      "value": "2.38214825723424928549325093342",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-73",
+       "-53",
+       "154",
+       "186",
+       "65",
+       "5"
+      ],
+      "deg": 5,
+      "value": "0.600945286200805911455589754970",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "989",
+       "-186",
+       "-6203",
+       "-3040",
+       "7175",
+       "9038",
+       "4043",
+       "804",
+       "60"
+      ],
+      "deg": 8,
+      "value": "0.406556488049370026445767583084",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 3.1,
+   "coincidences": [
+    {
+     "what": "tone3 and tone6 vanish/critical at the same point",
+     "value": "0.618033988749894848204586834366",
+     "minpoly": [
+      "-1",
+      "1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 at a special number",
+     "flags": [
+      "quadratic, discriminant 5"
+     ],
+     "value": "0.618033988749894848204586834366"
+    },
+    {
+     "what": "tone6 at a special number",
+     "flags": [
+      "quadratic, discriminant 5"
+     ],
+     "value": "0.618033988749894848204586834366"
+    }
+   ]
+  },
+  {
+   "pattern": "011t",
+   "raw_patterns": 4,
+   "involution": null,
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 20,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [],
+    "4": [
+     {
+      "minpoly": [
+       "-30",
+       "-30",
+       "5",
+       "10",
+       "2"
+      ],
+      "deg": 4,
+      "value": "1.70630236362239537521273220368",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "5": [
+     {
+      "minpoly": [
+       "-575",
+       "-450",
+       "50",
+       "75",
+       "12"
+      ],
+      "deg": 4,
+      "value": "2.36027267908758085559657725782",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "6": [],
+    "7": [
+     {
+      "minpoly": [
+       "275",
+       "-2025",
+       "-2885",
+       "-1035",
+       "105",
+       "105",
+       "12"
+      ],
+      "deg": 6,
+      "value": "0.115884883446117228470886600273",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "275",
+       "-2025",
+       "-2885",
+       "-1035",
+       "105",
+       "105",
+       "12"
+      ],
+      "deg": 6,
+      "value": "3.40585094051554855411607883304",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "8": [],
+    "9": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": [],
+    "16": [],
+    "17": [],
+    "18": [],
+    "19": [],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-5750",
+      "2710",
+      "6598",
+      "2362",
+      "295",
+      "13"
+     ],
+     "deg": 5,
+     "value": "0.683161236773308062522513064842",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "529000",
+      "-2221800",
+      "-622725",
+      "1855640",
+      "1376220",
+      "399120",
+      "57811",
+      "4176",
+      "120"
+     ],
+     "deg": 8,
+     "value": "0.235499103682438345195470586186",
+     "genuine": null
+    }
+   ],
+   "f0": 60,
+   "facets": 20,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": []
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.021982495420313452,
+     "4": 0.0221381448976904,
+     "5": 0.0077134528336304286,
+     "6": 0.0003268467389688545,
+     "7": 0.018836513613231867,
+     "8": 0.008350058015346256,
+     "9": 0.0065541030918085654,
+     "10": 0.008193154319498054,
+     "11": 0.019841918862498035,
+     "12": 0.01866028050290352,
+     "13": 0.029746603954479936,
+     "14": 0.023977966976613235,
+     "15": 0.025975644054265352,
+     "16": 0.01838241051369839,
+     "17": 0.004379091397745339,
+     "18": 0.012807508168542682,
+     "19": 0.010015722998348029,
+     "20": 0.024240856972888816
+    },
+    "tone_zero_exact": []
+   },
+   "tones_even_under_t_to_1/t": false,
+   "_crossings": [
+    [
+     "tone4",
+     {
+      "minpoly": [
+       "-30",
+       "-30",
+       "5",
+       "10",
+       "2"
+      ],
+      "deg": 4,
+      "value": "1.70630236362239537521273220368",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone5",
+     {
+      "minpoly": [
+       "-575",
+       "-450",
+       "50",
+       "75",
+       "12"
+      ],
+      "deg": 4,
+      "value": "2.36027267908758085559657725782",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "275",
+       "-2025",
+       "-2885",
+       "-1035",
+       "105",
+       "105",
+       "12"
+      ],
+      "deg": 6,
+      "value": "0.115884883446117228470886600273",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "275",
+       "-2025",
+       "-2885",
+       "-1035",
+       "105",
+       "105",
+       "12"
+      ],
+      "deg": 6,
+      "value": "3.40585094051554855411607883304",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-5750",
+       "2710",
+       "6598",
+       "2362",
+       "295",
+       "13"
+      ],
+      "deg": 5,
+      "value": "0.683161236773308062522513064842",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "529000",
+       "-2221800",
+       "-622725",
+       "1855640",
+       "1376220",
+       "399120",
+       "57811",
+       "4176",
+       "120"
+      ],
+      "deg": 8,
+      "value": "0.235499103682438345195470586186",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 2.9,
+   "coincidences": []
+  },
+  {
+   "pattern": "01t0",
+   "raw_patterns": 2,
+   "involution": "t -> 1/t via automorphism (3, 2, 1, 0)",
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 9,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "4": [],
+    "5": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "6": [],
+    "7": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "8": [],
+    "9": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "10": [],
+    "11": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "12": [],
+    "13": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "14": [],
+    "15": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "16": [],
+    "17": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "18": [],
+    "19": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-1",
+      "1"
+     ],
+     "deg": 1,
+     "value": "1.00000000000000000000000000000",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "-1",
+      "1"
+     ],
+     "deg": 1,
+     "value": "1.00000000000000000000000000000",
+     "genuine": null
+    }
+   ],
+   "f0": 30,
+   "facets": 10,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": [
+     "1"
+    ]
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.09,
+     "5": 0.0,
+     "6": 0.008928571428571428,
+     "7": 0.0,
+     "8": 0.05173611111111111,
+     "9": 0.0,
+     "10": 0.13785511363636363,
+     "11": 0.0,
+     "12": 0.035892427884615385,
+     "13": 0.0,
+     "14": 0.06048502604166667,
+     "15": 0.0,
+     "16": 0.05484044692095588,
+     "17": 0.0,
+     "18": 0.0765864322060033,
+     "19": 0.0,
+     "20": 0.09740822201683408
+    },
+    "tone_zero_exact": [
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19
+    ]
+   },
+   "tones_even_under_t_to_1/t": true,
+   "fixed_point": {
+    "tone3": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone4": {
+     "value_times_|G|P_k(1)": "54",
+     "value": 0.09,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": 1
+    },
+    "tone5": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone6": {
+     "value_times_|G|P_k(1)": "15/2",
+     "value": 0.008928571428571428,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": 1
+    },
+    "tone7": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone8": {
+     "value_times_|G|P_k(1)": "447/8",
+     "value": 0.05173611111111111,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone9": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone10": {
+     "value_times_|G|P_k(1)": "5823/32",
+     "value": 0.13785511363636363,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone11": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone12": {
+     "value_times_|G|P_k(1)": "7167/128",
+     "value": 0.035892427884615385,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone13": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone14": {
+     "value_times_|G|P_k(1)": "55743/512",
+     "value": 0.06048502604166667,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone15": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone16": {
+     "value_times_|G|P_k(1)": "229119/2048",
+     "value": 0.05484044692095588,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone17": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone18": {
+     "value_times_|G|P_k(1)": "1430463/8192",
+     "value": 0.0765864322060033,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone19": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone20": {
+     "value_times_|G|P_k(1)": "8043519/32768",
+     "value": 0.09740822201683408,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "mahler_derivative_zero": true,
+    "mahler_second_derivative_sign": -1
+   },
+   "_crossings": [
+    [
+     "tone3",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone5",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone9",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone11",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone13",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone15",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone17",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone19",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 0.7,
+   "coincidences": [
+    {
+     "what": "tone3 and tone5 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone7 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone5 and tone7 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone7 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone9 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone11 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone13 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone15 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone17 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone19 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone19 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone19 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "mahler and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "mahler at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "iq at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    }
+   ]
+  },
+  {
+   "pattern": "01t1",
+   "raw_patterns": 4,
+   "involution": null,
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 18,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [],
+    "4": [],
+    "5": [
+     {
+      "minpoly": [
+       "-69",
+       "-138",
+       "184",
+       "253",
+       "66"
+      ],
+      "deg": 4,
+      "value": "0.649389430794055642459215346280",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "6": [
+     {
+      "minpoly": [
+       "-26",
+       "-78",
+       "-25",
+       "80",
+       "95",
+       "42",
+       "6"
+      ],
+      "deg": 6,
+      "value": "0.826331484638147502351229686363",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "7": [
+     {
+      "minpoly": [
+       "-231",
+       "-693",
+       "-705",
+       "-255",
+       "25",
+       "37",
+       "6"
+      ],
+      "deg": 6,
+      "value": "3.01014592328118884532123118114",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "8": [],
+    "9": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": [],
+    "16": [],
+    "17": [],
+    "18": [],
+    "19": [],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-22",
+      "208",
+      "264",
+      "88",
+      "11"
+     ],
+     "deg": 4,
+     "value": "0.0941589933438166028998922307895",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [],
+   "f0": 60,
+   "facets": 20,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": []
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.021982495420313452,
+     "4": 0.0221381448976904,
+     "5": 0.0077134528336304286,
+     "6": 0.0003268467389688545,
+     "7": 0.018836513613231867,
+     "8": 0.008350058015346256,
+     "9": 0.0065541030918085654,
+     "10": 0.008193154319498054,
+     "11": 0.019841918862498035,
+     "12": 0.01866028050290352,
+     "13": 0.029746603954479936,
+     "14": 0.023977966976613235,
+     "15": 0.025975644054265352,
+     "16": 0.01838241051369839,
+     "17": 0.004379091397745339,
+     "18": 0.012807508168542682,
+     "19": 0.010015722998348029,
+     "20": 0.024240856972888816
+    },
+    "tone_zero_exact": []
+   },
+   "tones_even_under_t_to_1/t": false,
+   "_crossings": [
+    [
+     "tone5",
+     {
+      "minpoly": [
+       "-69",
+       "-138",
+       "184",
+       "253",
+       "66"
+      ],
+      "deg": 4,
+      "value": "0.649389430794055642459215346280",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "-26",
+       "-78",
+       "-25",
+       "80",
+       "95",
+       "42",
+       "6"
+      ],
+      "deg": 6,
+      "value": "0.826331484638147502351229686363",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "-231",
+       "-693",
+       "-705",
+       "-255",
+       "25",
+       "37",
+       "6"
+      ],
+      "deg": 6,
+      "value": "3.01014592328118884532123118114",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-22",
+       "208",
+       "264",
+       "88",
+       "11"
+      ],
+      "deg": 4,
+      "value": "0.0941589933438166028998922307895",
+      "genuine": true,
+      "mult": 1
+     }
+    ]
+   ],
+   "seconds": 0.9,
+   "coincidences": []
+  },
+  {
+   "pattern": "01tt",
+   "raw_patterns": 4,
+   "involution": null,
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 22,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [
+     {
+      "minpoly": [
+       "-1",
+       "-2",
+       "9"
+      ],
+      "deg": 2,
+      "value": "0.462475295574264370222099282715",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "4": [
+     {
+      "minpoly": [
+       "-3",
+       "-12",
+       "-18",
+       "-12",
+       "2"
+      ],
+      "deg": 4,
+      "value": "7.34110006478844098852367028058",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "5": [
+     {
+      "minpoly": [
+       "-33",
+       "-132",
+       "2",
+       "268",
+       "117"
+      ],
+      "deg": 4,
+      "value": "0.710135173710267196165301413411",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": [],
+    "16": [],
+    "17": [],
+    "18": [],
+    "19": [],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-31",
+      "-196",
+      "-166",
+      "944",
+      "1652",
+      "482"
+     ],
+     "deg": 5,
+     "value": "0.438944172756124072521332996780",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "2410",
+      "15396",
+      "-41718",
+      "-445900",
+      "-439257",
+      "2766384",
+      "7596736",
+      "7191792",
+      "2751465",
+      "331128",
+      "11664"
+     ],
+     "deg": 10,
+     "value": "0.252221714781893389858197772056",
+     "genuine": null
+    }
+   ],
+   "f0": 60,
+   "facets": 20,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": []
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.021982495420313452,
+     "4": 0.0221381448976904,
+     "5": 0.0077134528336304286,
+     "6": 0.0003268467389688545,
+     "7": 0.018836513613231867,
+     "8": 0.008350058015346256,
+     "9": 0.0065541030918085654,
+     "10": 0.008193154319498054,
+     "11": 0.019841918862498035,
+     "12": 0.01866028050290352,
+     "13": 0.029746603954479936,
+     "14": 0.023977966976613235,
+     "15": 0.025975644054265352,
+     "16": 0.01838241051369839,
+     "17": 0.004379091397745339,
+     "18": 0.012807508168542682,
+     "19": 0.010015722998348029,
+     "20": 0.024240856972888816
+    },
+    "tone_zero_exact": []
+   },
+   "tones_even_under_t_to_1/t": false,
+   "_crossings": [
+    [
+     "tone3",
+     {
+      "minpoly": [
+       "-1",
+       "-2",
+       "9"
+      ],
+      "deg": 2,
+      "value": "0.462475295574264370222099282715",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone4",
+     {
+      "minpoly": [
+       "-3",
+       "-12",
+       "-18",
+       "-12",
+       "2"
+      ],
+      "deg": 4,
+      "value": "7.34110006478844098852367028058",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone5",
+     {
+      "minpoly": [
+       "-33",
+       "-132",
+       "2",
+       "268",
+       "117"
+      ],
+      "deg": 4,
+      "value": "0.710135173710267196165301413411",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-31",
+       "-196",
+       "-166",
+       "944",
+       "1652",
+       "482"
+      ],
+      "deg": 5,
+      "value": "0.438944172756124072521332996780",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "2410",
+       "15396",
+       "-41718",
+       "-445900",
+       "-439257",
+       "2766384",
+       "7596736",
+       "7191792",
+       "2751465",
+       "331128",
+       "11664"
+      ],
+      "deg": 10,
+      "value": "0.252221714781893389858197772056",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 0.8,
+   "coincidences": [
+    {
+     "what": "tone3 at a special number",
+     "flags": [
+      "quadratic, discriminant 40"
+     ],
+     "value": "0.462475295574264370222099282715"
+    }
+   ]
+  },
+  {
+   "pattern": "100t",
+   "raw_patterns": 2,
+   "involution": "t -> 1/t via automorphism (3, 2, 1, 0)",
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 6,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "4": [],
+    "5": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "6": [
+     {
+      "minpoly": [
+       "4",
+       "6",
+       "-15",
+       "-40",
+       "-15",
+       "6",
+       "4"
+      ],
+      "deg": 6,
+      "value": "0.436873895306366675843763622252",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "4",
+       "6",
+       "-15",
+       "-40",
+       "-15",
+       "6",
+       "4"
+      ],
+      "deg": 6,
+      "value": "2.28899005123373125090038985252",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "7": [
+     {
+      "minpoly": [
+       "4",
+       "-1",
+       "-11",
+       "-1",
+       "4"
+      ],
+      "deg": 4,
+      "value": "0.578036454636281554597503666474",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "4",
+       "-1",
+       "-11",
+       "-1",
+       "4"
+      ],
+      "deg": 4,
+      "value": "1.72999469493534102619262678739",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "8": [],
+    "9": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "10": [],
+    "11": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "12": [],
+    "13": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "14": [],
+    "15": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "16": [],
+    "17": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "18": [],
+    "19": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-1",
+      "1"
+     ],
+     "deg": 1,
+     "value": "1.00000000000000000000000000000",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "-1",
+      "1"
+     ],
+     "deg": 1,
+     "value": "1.00000000000000000000000000000",
+     "genuine": null
+    }
+   ],
+   "f0": 20,
+   "facets": 30,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": [
+     "1"
+    ]
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.04,
+     "5": 0.0,
+     "6": 0.14285714285714285,
+     "7": 0.0,
+     "8": 0.13333333333333333,
+     "9": 0.0,
+     "10": 0.01818181818181818,
+     "11": 0.0,
+     "12": 0.16923076923076924,
+     "13": 0.0,
+     "14": 0.08,
+     "15": 0.0,
+     "16": 0.08235294117647059,
+     "17": 0.0,
+     "18": 0.11578947368421053,
+     "19": 0.0,
+     "20": 0.11428571428571428
+    },
+    "tone_zero_exact": [
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19
+    ]
+   },
+   "tones_even_under_t_to_1/t": true,
+   "fixed_point": {
+    "tone3": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone4": {
+     "value_times_|G|P_k(1)": "24",
+     "value": 0.04,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": 1
+    },
+    "tone5": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone6": {
+     "value_times_|G|P_k(1)": "120",
+     "value": 0.14285714285714285,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone7": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone8": {
+     "value_times_|G|P_k(1)": "144",
+     "value": 0.13333333333333333,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone9": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone10": {
+     "value_times_|G|P_k(1)": "24",
+     "value": 0.01818181818181818,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone11": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone12": {
+     "value_times_|G|P_k(1)": "264",
+     "value": 0.16923076923076924,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone13": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone14": {
+     "value_times_|G|P_k(1)": "144",
+     "value": 0.08,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone15": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone16": {
+     "value_times_|G|P_k(1)": "168",
+     "value": 0.08235294117647059,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone17": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone18": {
+     "value_times_|G|P_k(1)": "264",
+     "value": 0.11578947368421053,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone19": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone20": {
+     "value_times_|G|P_k(1)": "288",
+     "value": 0.11428571428571428,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "mahler_derivative_zero": true,
+    "mahler_second_derivative_sign": -1
+   },
+   "_crossings": [
+    [
+     "tone3",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone5",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "4",
+       "6",
+       "-15",
+       "-40",
+       "-15",
+       "6",
+       "4"
+      ],
+      "deg": 6,
+      "value": "0.436873895306366675843763622252",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "4",
+       "6",
+       "-15",
+       "-40",
+       "-15",
+       "6",
+       "4"
+      ],
+      "deg": 6,
+      "value": "2.28899005123373125090038985252",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "4",
+       "-1",
+       "-11",
+       "-1",
+       "4"
+      ],
+      "deg": 4,
+      "value": "0.578036454636281554597503666474",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "4",
+       "-1",
+       "-11",
+       "-1",
+       "4"
+      ],
+      "deg": 4,
+      "value": "1.72999469493534102619262678739",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone9",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone11",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone13",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone15",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone17",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone19",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 1.0,
+   "coincidences": [
+    {
+     "what": "tone3 and tone5 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone7 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone5 and tone7 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone7 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone9 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone11 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone13 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone15 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone17 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone19 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone19 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone19 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "mahler and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "mahler at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "iq at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    }
+   ]
+  },
+  {
+   "pattern": "101t",
+   "raw_patterns": 4,
+   "involution": null,
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 20,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [
+     {
+      "minpoly": [
+       "-3",
+       "4",
+       "2"
+      ],
+      "deg": 2,
+      "value": "0.581138830084189665999446772216",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "4": [
+     {
+      "minpoly": [
+       "-3",
+       "-12",
+       "2",
+       "8",
+       "2"
+      ],
+      "deg": 4,
+      "value": "1.10629809692353575999641277744",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "5": [
+     {
+      "minpoly": [
+       "-69",
+       "-76",
+       "-14",
+       "24",
+       "6"
+      ],
+      "deg": 4,
+      "value": "1.96756976368852221828831244183",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "6": [
+     {
+      "minpoly": [
+       "-13",
+       "-18",
+       "-85",
+       "-60",
+       "5",
+       "12",
+       "2"
+      ],
+      "deg": 6,
+      "value": "2.31876165421443404568163345559",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "7": [
+     {
+      "minpoly": [
+       "231",
+       "226",
+       "-235",
+       "-300",
+       "-15",
+       "36",
+       "6"
+      ],
+      "deg": 6,
+      "value": "0.946083388911868181799740390484",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "231",
+       "226",
+       "-235",
+       "-300",
+       "-15",
+       "36",
+       "6"
+      ],
+      "deg": 6,
+      "value": "2.71382905114713084555529780783",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "8": [],
+    "9": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": [],
+    "16": [],
+    "17": [],
+    "18": [],
+    "19": [],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-7876",
+      "-468",
+      "9882",
+      "6672",
+      "1794",
+      "234",
+      "13"
+     ],
+     "deg": 6,
+     "value": "0.722593647994228315299686401473",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "893108",
+      "128104",
+      "-1177836",
+      "-760556",
+      "-24794",
+      "119788",
+      "52189",
+      "11864",
+      "1664",
+      "136",
+      "5"
+     ],
+     "deg": 10,
+     "value": "0.763794291790926123996399810755",
+     "genuine": null
+    }
+   ],
+   "f0": 60,
+   "facets": 30,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": []
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.012289485662266727,
+     "4": 0.0003151150169811981,
+     "5": 0.009959789169200605,
+     "6": 0.01823816580625893,
+     "7": 0.00017271324515924415,
+     "8": 0.0016027802771830524,
+     "9": 0.02119296763524831,
+     "10": 0.021874423828044182,
+     "11": 0.023648875173794846,
+     "12": 0.022593823355669715,
+     "13": 0.037237763182225804,
+     "14": 0.003376825819249507,
+     "15": 0.01171469194746645,
+     "16": 0.0184222302625553,
+     "17": 0.007238418824107476,
+     "18": 0.014832085794151517,
+     "19": 0.003733922984188253,
+     "20": 0.028606670705714876
+    },
+    "tone_zero_exact": []
+   },
+   "tones_even_under_t_to_1/t": false,
+   "_crossings": [
+    [
+     "tone3",
+     {
+      "minpoly": [
+       "-3",
+       "4",
+       "2"
+      ],
+      "deg": 2,
+      "value": "0.581138830084189665999446772216",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone4",
+     {
+      "minpoly": [
+       "-3",
+       "-12",
+       "2",
+       "8",
+       "2"
+      ],
+      "deg": 4,
+      "value": "1.10629809692353575999641277744",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone5",
+     {
+      "minpoly": [
+       "-69",
+       "-76",
+       "-14",
+       "24",
+       "6"
+      ],
+      "deg": 4,
+      "value": "1.96756976368852221828831244183",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "-13",
+       "-18",
+       "-85",
+       "-60",
+       "5",
+       "12",
+       "2"
+      ],
+      "deg": 6,
+      "value": "2.31876165421443404568163345559",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "231",
+       "226",
+       "-235",
+       "-300",
+       "-15",
+       "36",
+       "6"
+      ],
+      "deg": 6,
+      "value": "0.946083388911868181799740390484",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "231",
+       "226",
+       "-235",
+       "-300",
+       "-15",
+       "36",
+       "6"
+      ],
+      "deg": 6,
+      "value": "2.71382905114713084555529780783",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-7876",
+       "-468",
+       "9882",
+       "6672",
+       "1794",
+       "234",
+       "13"
+      ],
+      "deg": 6,
+      "value": "0.722593647994228315299686401473",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "893108",
+       "128104",
+       "-1177836",
+       "-760556",
+       "-24794",
+       "119788",
+       "52189",
+       "11864",
+       "1664",
+       "136",
+       "5"
+      ],
+      "deg": 10,
+      "value": "0.763794291790926123996399810755",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 0.9,
+   "coincidences": [
+    {
+     "what": "tone3 at a special number",
+     "flags": [
+      "quadratic, discriminant 40"
+     ],
+     "value": "0.581138830084189665999446772216"
+    }
+   ]
+  },
+  {
+   "pattern": "10t1",
+   "raw_patterns": 4,
+   "involution": null,
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 18,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [],
+    "4": [
+     {
+      "minpoly": [
+       "-5",
+       "-10",
+       "5",
+       "10",
+       "3"
+      ],
+      "deg": 4,
+      "value": "0.920939963401758699470284281452",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "5": [
+     {
+      "minpoly": [
+       "-25",
+       "-50",
+       "250",
+       "275",
+       "66"
+      ],
+      "deg": 4,
+      "value": "0.346146554210095768980589019034",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "6": [
+     {
+      "minpoly": [
+       "-50",
+       "-150",
+       "-145",
+       "-40",
+       "35",
+       "30",
+       "6"
+      ],
+      "deg": 6,
+      "value": "1.73693092437083864454873178824",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "7": [
+     {
+      "minpoly": [
+       "-25",
+       "-75",
+       "-95",
+       "-65",
+       "15",
+       "35",
+       "6"
+      ],
+      "deg": 6,
+      "value": "1.68371667936465391007805799379",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "8": [],
+    "9": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": [],
+    "16": [],
+    "17": [],
+    "18": [],
+    "19": [],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-6250",
+      "-11500",
+      "3050",
+      "21164",
+      "18689",
+      "6752",
+      "900"
+     ],
+     "deg": 6,
+     "value": "0.696874926894780159068760621269",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "-24200",
+      "-85800",
+      "-23175",
+      "445400",
+      "1123680",
+      "1401360",
+      "1053463",
+      "493524",
+      "140802",
+      "22524",
+      "1578"
+     ],
+     "deg": 10,
+     "value": "0.375057905082069628037455273318",
+     "genuine": null
+    }
+   ],
+   "f0": 60,
+   "facets": 30,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": []
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.012289485662266727,
+     "4": 0.0003151150169811981,
+     "5": 0.009959789169200605,
+     "6": 0.01823816580625893,
+     "7": 0.00017271324515924415,
+     "8": 0.0016027802771830524,
+     "9": 0.02119296763524831,
+     "10": 0.021874423828044182,
+     "11": 0.023648875173794846,
+     "12": 0.022593823355669715,
+     "13": 0.037237763182225804,
+     "14": 0.003376825819249507,
+     "15": 0.01171469194746645,
+     "16": 0.0184222302625553,
+     "17": 0.007238418824107476,
+     "18": 0.014832085794151517,
+     "19": 0.003733922984188253,
+     "20": 0.028606670705714876
+    },
+    "tone_zero_exact": []
+   },
+   "tones_even_under_t_to_1/t": false,
+   "_crossings": [
+    [
+     "tone4",
+     {
+      "minpoly": [
+       "-5",
+       "-10",
+       "5",
+       "10",
+       "3"
+      ],
+      "deg": 4,
+      "value": "0.920939963401758699470284281452",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone5",
+     {
+      "minpoly": [
+       "-25",
+       "-50",
+       "250",
+       "275",
+       "66"
+      ],
+      "deg": 4,
+      "value": "0.346146554210095768980589019034",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "-50",
+       "-150",
+       "-145",
+       "-40",
+       "35",
+       "30",
+       "6"
+      ],
+      "deg": 6,
+      "value": "1.73693092437083864454873178824",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "-25",
+       "-75",
+       "-95",
+       "-65",
+       "15",
+       "35",
+       "6"
+      ],
+      "deg": 6,
+      "value": "1.68371667936465391007805799379",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-6250",
+       "-11500",
+       "3050",
+       "21164",
+       "18689",
+       "6752",
+       "900"
+      ],
+      "deg": 6,
+      "value": "0.696874926894780159068760621269",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "-24200",
+       "-85800",
+       "-23175",
+       "445400",
+       "1123680",
+       "1401360",
+       "1053463",
+       "493524",
+       "140802",
+       "22524",
+       "1578"
+      ],
+      "deg": 10,
+      "value": "0.375057905082069628037455273318",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 1.0,
+   "coincidences": []
+  },
+  {
+   "pattern": "10tt",
+   "raw_patterns": 4,
+   "involution": null,
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 20,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [
+     {
+      "minpoly": [
+       "-4",
+       "-1",
+       "9"
+      ],
+      "deg": 2,
+      "value": "0.724533032155127526673791168354",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "4": [
+     {
+      "minpoly": [
+       "2",
+       "6",
+       "-7",
+       "-6",
+       "2"
+      ],
+      "deg": 4,
+      "value": "0.805292753425201147011936509738",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "2",
+       "6",
+       "-7",
+       "-6",
+       "2"
+      ],
+      "deg": 4,
+      "value": "3.70630236362239537521273220368",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "5": [],
+    "6": [
+     {
+      "minpoly": [
+       "4",
+       "18",
+       "-35",
+       "-240",
+       "-215",
+       "78",
+       "76"
+      ],
+      "deg": 6,
+      "value": "0.278318377496018872118715850810",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "4",
+       "18",
+       "-35",
+       "-240",
+       "-215",
+       "78",
+       "76"
+      ],
+      "deg": 6,
+      "value": "1.72789330266347949984953536403",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "7": [
+     {
+      "minpoly": [
+       "12",
+       "39",
+       "-225",
+       "-405",
+       "325",
+       "169",
+       "153"
+      ],
+      "deg": 6,
+      "value": "0.271318785026868877868212441701",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "12",
+       "39",
+       "-225",
+       "-405",
+       "325",
+       "169",
+       "153"
+      ],
+      "deg": 6,
+      "value": "0.943321222418817771660884216480",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "8": [],
+    "9": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": [],
+    "16": [],
+    "17": [],
+    "18": [],
+    "19": [],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-22",
+      "-542",
+      "-3727",
+      "-7840",
+      "1578",
+      "19664",
+      "15492"
+     ],
+     "deg": 6,
+     "value": "0.672281460943158321012308974973",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "10",
+      "492",
+      "8826",
+      "71060",
+      "247887",
+      "130920",
+      "-1499096",
+      "-2033808",
+      "100665",
+      "4423464",
+      "2768400"
+     ],
+     "deg": 10,
+     "value": "0.638942175372321415097192747662",
+     "genuine": null
+    }
+   ],
+   "f0": 60,
+   "facets": 30,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": []
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.012289485662266727,
+     "4": 0.0003151150169811981,
+     "5": 0.009959789169200605,
+     "6": 0.01823816580625893,
+     "7": 0.00017271324515924415,
+     "8": 0.0016027802771830524,
+     "9": 0.02119296763524831,
+     "10": 0.021874423828044182,
+     "11": 0.023648875173794846,
+     "12": 0.022593823355669715,
+     "13": 0.037237763182225804,
+     "14": 0.003376825819249507,
+     "15": 0.01171469194746645,
+     "16": 0.0184222302625553,
+     "17": 0.007238418824107476,
+     "18": 0.014832085794151517,
+     "19": 0.003733922984188253,
+     "20": 0.028606670705714876
+    },
+    "tone_zero_exact": []
+   },
+   "tones_even_under_t_to_1/t": false,
+   "_crossings": [
+    [
+     "tone3",
+     {
+      "minpoly": [
+       "-4",
+       "-1",
+       "9"
+      ],
+      "deg": 2,
+      "value": "0.724533032155127526673791168354",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone4",
+     {
+      "minpoly": [
+       "2",
+       "6",
+       "-7",
+       "-6",
+       "2"
+      ],
+      "deg": 4,
+      "value": "0.805292753425201147011936509738",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone4",
+     {
+      "minpoly": [
+       "2",
+       "6",
+       "-7",
+       "-6",
+       "2"
+      ],
+      "deg": 4,
+      "value": "3.70630236362239537521273220368",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "4",
+       "18",
+       "-35",
+       "-240",
+       "-215",
+       "78",
+       "76"
+      ],
+      "deg": 6,
+      "value": "0.278318377496018872118715850810",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "4",
+       "18",
+       "-35",
+       "-240",
+       "-215",
+       "78",
+       "76"
+      ],
+      "deg": 6,
+      "value": "1.72789330266347949984953536403",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "12",
+       "39",
+       "-225",
+       "-405",
+       "325",
+       "169",
+       "153"
+      ],
+      "deg": 6,
+      "value": "0.271318785026868877868212441701",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "12",
+       "39",
+       "-225",
+       "-405",
+       "325",
+       "169",
+       "153"
+      ],
+      "deg": 6,
+      "value": "0.943321222418817771660884216480",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-22",
+       "-542",
+       "-3727",
+       "-7840",
+       "1578",
+       "19664",
+       "15492"
+      ],
+      "deg": 6,
+      "value": "0.672281460943158321012308974973",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "10",
+       "492",
+       "8826",
+       "71060",
+       "247887",
+       "130920",
+       "-1499096",
+       "-2033808",
+       "100665",
+       "4423464",
+       "2768400"
+      ],
+      "deg": 10,
+      "value": "0.638942175372321415097192747662",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 0.5,
+   "coincidences": [
+    {
+     "what": "tone3 at a special number",
+     "flags": [
+      "quadratic, discriminant 145"
+     ],
+     "value": "0.724533032155127526673791168354"
+    }
+   ]
+  },
+  {
+   "pattern": "111t",
+   "raw_patterns": 4,
+   "involution": null,
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 58,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "4": [
+     {
+      "minpoly": [
+       "-43",
+       "-48",
+       "2",
+       "12",
+       "2"
+      ],
+      "deg": 4,
+      "value": "2.01763050318789810858907947211",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "5": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "-37",
+       "9",
+       "3"
+      ],
+      "deg": 2,
+      "value": "2.31881307912986667215670599477",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "6": [
+     {
+      "minpoly": [
+       "47",
+       "-153",
+       "-33",
+       "12",
+       "2"
+      ],
+      "deg": 4,
+      "value": "0.290956053321589808084965478298",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "47",
+       "-153",
+       "-33",
+       "12",
+       "2"
+      ],
+      "deg": 4,
+      "value": "3.67614493760276720133769094003",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "7": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "-227",
+       "-297",
+       "-72",
+       "18",
+       "3"
+      ],
+      "deg": 4,
+      "value": "4.61576032923676297554896847347",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "8": [],
+    "9": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "10": [],
+    "11": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "12": [],
+    "13": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "14": [],
+    "15": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "16": [],
+    "17": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "18": [],
+    "19": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-184941",
+      "-32946",
+      "72506",
+      "34056",
+      "5871",
+      "442",
+      "12"
+     ],
+     "deg": 6,
+     "value": "1.33026209600594216110436132598",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "398992175",
+      "61379338",
+      "-176340963",
+      "-66673344",
+      "953754",
+      "5014140",
+      "1241982",
+      "149088",
+      "9879",
+      "346",
+      "5"
+     ],
+     "deg": 10,
+     "value": "1.39708271918954319541704656955",
+     "genuine": null
+    }
+   ],
+   "f0": 120,
+   "facets": 30,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": [
+     "1"
+    ]
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.014400000000000001,
+     "5": 0.0,
+     "6": 0.005714285714285714,
+     "7": 0.0,
+     "8": 0.014697244444444443,
+     "9": 0.0,
+     "10": 0.009086836363636363,
+     "11": 0.0,
+     "12": 0.005745255975384616,
+     "13": 0.0,
+     "14": 0.023559228074666667,
+     "15": 0.0,
+     "16": 0.02472050451877647,
+     "17": 0.0,
+     "18": 0.01961721323951158,
+     "19": 0.0,
+     "20": 0.019886509829168137
+    },
+    "tone_zero_exact": [
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19
+    ]
+   },
+   "tones_even_under_t_to_1/t": false,
+   "_crossings": [
+    [
+     "tone3",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone4",
+     {
+      "minpoly": [
+       "-43",
+       "-48",
+       "2",
+       "12",
+       "2"
+      ],
+      "deg": 4,
+      "value": "2.01763050318789810858907947211",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone5",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone5",
+     {
+      "minpoly": [
+       "-37",
+       "9",
+       "3"
+      ],
+      "deg": 2,
+      "value": "2.31881307912986667215670599477",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "47",
+       "-153",
+       "-33",
+       "12",
+       "2"
+      ],
+      "deg": 4,
+      "value": "0.290956053321589808084965478298",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "47",
+       "-153",
+       "-33",
+       "12",
+       "2"
+      ],
+      "deg": 4,
+      "value": "3.67614493760276720133769094003",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "-227",
+       "-297",
+       "-72",
+       "18",
+       "3"
+      ],
+      "deg": 4,
+      "value": "4.61576032923676297554896847347",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone9",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone11",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone13",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone15",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone17",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone19",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-184941",
+       "-32946",
+       "72506",
+       "34056",
+       "5871",
+       "442",
+       "12"
+      ],
+      "deg": 6,
+      "value": "1.33026209600594216110436132598",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "398992175",
+       "61379338",
+       "-176340963",
+       "-66673344",
+       "953754",
+       "5014140",
+       "1241982",
+       "149088",
+       "9879",
+       "346",
+       "5"
+      ],
+      "deg": 10,
+      "value": "1.39708271918954319541704656955",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 0.8,
+   "coincidences": [
+    {
+     "what": "tone3 and tone5 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone7 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone5 and tone7 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone5 at a special number",
+     "flags": [
+      "quadratic, discriminant 525"
+     ],
+     "value": "2.31881307912986667215670599477"
+    },
+    {
+     "what": "tone7 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone9 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone11 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone13 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone15 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone17 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone19 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    }
+   ]
+  },
+  {
+   "pattern": "11t1",
+   "raw_patterns": 4,
+   "involution": null,
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 49,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "4": [],
+    "5": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "6": [
+     {
+      "minpoly": [
+       "-314",
+       "-666",
+       "-465",
+       "0",
+       "135",
+       "54",
+       "6"
+      ],
+      "deg": 6,
+      "value": "1.87815242606725969380425789990",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "7": [
+     {
+      "minpoly": [
+       "-17",
+       "108",
+       "63",
+       "18",
+       "3"
+      ],
+      "deg": 4,
+      "value": "0.144679982148207500328011188081",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "8": [],
+    "9": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "10": [],
+    "11": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "12": [],
+    "13": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "14": [],
+    "15": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "16": [],
+    "17": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "18": [],
+    "19": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-33447",
+      "7254",
+      "63144",
+      "48824",
+      "16329",
+      "2706",
+      "190"
+     ],
+     "deg": 6,
+     "value": "0.554459613961595773604370288537",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "-11558233",
+      "19776226",
+      "70389429",
+      "74752536",
+      "45409626",
+      "18848724",
+      "5661294",
+      "1234536",
+      "191679",
+      "19594",
+      "989"
+     ],
+     "deg": 10,
+     "value": "0.261491184238168509930909700889",
+     "genuine": null
+    }
+   ],
+   "f0": 120,
+   "facets": 30,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": [
+     "1"
+    ]
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.014400000000000001,
+     "5": 0.0,
+     "6": 0.005714285714285714,
+     "7": 0.0,
+     "8": 0.014697244444444443,
+     "9": 0.0,
+     "10": 0.009086836363636363,
+     "11": 0.0,
+     "12": 0.005745255975384616,
+     "13": 0.0,
+     "14": 0.023559228074666667,
+     "15": 0.0,
+     "16": 0.02472050451877647,
+     "17": 0.0,
+     "18": 0.01961721323951158,
+     "19": 0.0,
+     "20": 0.019886509829168137
+    },
+    "tone_zero_exact": [
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19
+    ]
+   },
+   "tones_even_under_t_to_1/t": false,
+   "_crossings": [
+    [
+     "tone3",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone5",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "-314",
+       "-666",
+       "-465",
+       "0",
+       "135",
+       "54",
+       "6"
+      ],
+      "deg": 6,
+      "value": "1.87815242606725969380425789990",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "-17",
+       "108",
+       "63",
+       "18",
+       "3"
+      ],
+      "deg": 4,
+      "value": "0.144679982148207500328011188081",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone9",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone11",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone13",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone15",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone17",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone19",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-33447",
+       "7254",
+       "63144",
+       "48824",
+       "16329",
+       "2706",
+       "190"
+      ],
+      "deg": 6,
+      "value": "0.554459613961595773604370288537",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "-11558233",
+       "19776226",
+       "70389429",
+       "74752536",
+       "45409626",
+       "18848724",
+       "5661294",
+       "1234536",
+       "191679",
+       "19594",
+       "989"
+      ],
+      "deg": 10,
+      "value": "0.261491184238168509930909700889",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 0.9,
+   "coincidences": [
+    {
+     "what": "tone3 and tone5 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone7 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone5 and tone7 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone7 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone9 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone11 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone13 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone15 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone17 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone19 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    }
+   ]
+  },
+  {
+   "pattern": "11tt",
+   "raw_patterns": 2,
+   "involution": "t -> 1/t via automorphism (3, 2, 1, 0)",
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 62,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "4": [
+     {
+      "minpoly": [
+       "2",
+       "-18",
+       "-43",
+       "-18",
+       "2"
+      ],
+      "deg": 4,
+      "value": "0.0907139376852759784373109720820",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "2",
+       "-18",
+       "-43",
+       "-18",
+       "2"
+      ],
+      "deg": 4,
+      "value": "11.0236643399762004978167284120",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "5": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "6": [
+     {
+      "minpoly": [
+       "76",
+       "234",
+       "-395",
+       "-1080",
+       "-395",
+       "234",
+       "76"
+      ],
+      "deg": 6,
+      "value": "0.440115029033550234813519170091",
+      "genuine": true,
+      "mult": 2
+     },
+     {
+      "minpoly": [
+       "76",
+       "234",
+       "-395",
+       "-1080",
+       "-395",
+       "234",
+       "76"
+      ],
+      "deg": 6,
+      "value": "2.27213326978608902553761146674",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "7": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "8": [],
+    "9": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "10": [],
+    "11": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "12": [],
+    "13": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "14": [],
+    "15": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "16": [],
+    "17": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "18": [],
+    "19": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-1",
+      "1"
+     ],
+     "deg": 1,
+     "value": "1.00000000000000000000000000000",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "-1",
+      "1"
+     ],
+     "deg": 1,
+     "value": "1.00000000000000000000000000000",
+     "genuine": null
+    }
+   ],
+   "f0": 120,
+   "facets": 30,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": [
+     "1"
+    ]
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.014400000000000001,
+     "5": 0.0,
+     "6": 0.005714285714285714,
+     "7": 0.0,
+     "8": 0.014697244444444443,
+     "9": 0.0,
+     "10": 0.009086836363636363,
+     "11": 0.0,
+     "12": 0.005745255975384616,
+     "13": 0.0,
+     "14": 0.023559228074666667,
+     "15": 0.0,
+     "16": 0.02472050451877647,
+     "17": 0.0,
+     "18": 0.01961721323951158,
+     "19": 0.0,
+     "20": 0.019886509829168137
+    },
+    "tone_zero_exact": [
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19
+    ]
+   },
+   "tones_even_under_t_to_1/t": true,
+   "fixed_point": {
+    "tone3": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone4": {
+     "value_times_|G|P_k(1)": "216/25",
+     "value": 0.014400000000000001,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone5": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone6": {
+     "value_times_|G|P_k(1)": "24/5",
+     "value": 0.005714285714285714,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone7": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone8": {
+     "value_times_|G|P_k(1)": "248016/15625",
+     "value": 0.014697244444444443,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone9": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone10": {
+     "value_times_|G|P_k(1)": "187416/15625",
+     "value": 0.009086836363636363,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone11": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone12": {
+     "value_times_|G|P_k(1)": "87525384/9765625",
+     "value": 0.005745255975384616,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": 1
+    },
+    "tone13": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone14": {
+     "value_times_|G|P_k(1)": "414127056/9765625",
+     "value": 0.023559228074666667,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone15": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone16": {
+     "value_times_|G|P_k(1)": "12311970024/244140625",
+     "value": 0.02472050451877647,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone17": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone18": {
+     "value_times_|G|P_k(1)": "54598689192/1220703125",
+     "value": 0.01961721323951158,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone19": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone20": {
+     "value_times_|G|P_k(1)": "191169756963744/3814697265625",
+     "value": 0.019886509829168137,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "mahler_derivative_zero": true,
+    "mahler_second_derivative_sign": -1
+   },
+   "_crossings": [
+    [
+     "tone3",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone4",
+     {
+      "minpoly": [
+       "2",
+       "-18",
+       "-43",
+       "-18",
+       "2"
+      ],
+      "deg": 4,
+      "value": "0.0907139376852759784373109720820",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone4",
+     {
+      "minpoly": [
+       "2",
+       "-18",
+       "-43",
+       "-18",
+       "2"
+      ],
+      "deg": 4,
+      "value": "11.0236643399762004978167284120",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone5",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "76",
+       "234",
+       "-395",
+       "-1080",
+       "-395",
+       "234",
+       "76"
+      ],
+      "deg": 6,
+      "value": "0.440115029033550234813519170091",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "76",
+       "234",
+       "-395",
+       "-1080",
+       "-395",
+       "234",
+       "76"
+      ],
+      "deg": 6,
+      "value": "2.27213326978608902553761146674",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone9",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone11",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone13",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone15",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone17",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone19",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 0.8,
+   "coincidences": [
+    {
+     "what": "tone3 and tone5 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone7 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone5 and tone7 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone7 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone9 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone11 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone13 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone15 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone17 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone19 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone19 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone19 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "mahler and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "mahler at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "iq at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    }
+   ]
+  },
+  {
+   "pattern": "1t1t",
+   "raw_patterns": 2,
+   "involution": "t -> 1/t via automorphism (3, 2, 1, 0)",
+   "pointwise_symmetric": [],
+   "distinct_pair_forms": 49,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "4": [],
+    "5": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "6": [],
+    "7": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "8": [],
+    "9": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "10": [],
+    "11": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "12": [],
+    "13": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "14": [],
+    "15": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "16": [],
+    "17": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "18": [],
+    "19": [
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-1",
+      "1"
+     ],
+     "deg": 1,
+     "value": "1.00000000000000000000000000000",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "-1",
+      "1"
+     ],
+     "deg": 1,
+     "value": "1.00000000000000000000000000000",
+     "genuine": null
+    }
+   ],
+   "f0": 120,
+   "facets": 30,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": [
+     "1"
+    ]
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.014400000000000001,
+     "5": 0.0,
+     "6": 0.005714285714285714,
+     "7": 0.0,
+     "8": 0.014697244444444443,
+     "9": 0.0,
+     "10": 0.009086836363636363,
+     "11": 0.0,
+     "12": 0.005745255975384616,
+     "13": 0.0,
+     "14": 0.023559228074666667,
+     "15": 0.0,
+     "16": 0.02472050451877647,
+     "17": 0.0,
+     "18": 0.01961721323951158,
+     "19": 0.0,
+     "20": 0.019886509829168137
+    },
+    "tone_zero_exact": [
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17,
+     19
+    ]
+   },
+   "tones_even_under_t_to_1/t": true,
+   "fixed_point": {
+    "tone3": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone4": {
+     "value_times_|G|P_k(1)": "216/25",
+     "value": 0.014400000000000001,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone5": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone6": {
+     "value_times_|G|P_k(1)": "24/5",
+     "value": 0.005714285714285714,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone7": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone8": {
+     "value_times_|G|P_k(1)": "248016/15625",
+     "value": 0.014697244444444443,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": 1
+    },
+    "tone9": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone10": {
+     "value_times_|G|P_k(1)": "187416/15625",
+     "value": 0.009086836363636363,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone11": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone12": {
+     "value_times_|G|P_k(1)": "87525384/9765625",
+     "value": 0.005745255975384616,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone13": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone14": {
+     "value_times_|G|P_k(1)": "414127056/9765625",
+     "value": 0.023559228074666667,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone15": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone16": {
+     "value_times_|G|P_k(1)": "12311970024/244140625",
+     "value": 0.02472050451877647,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone17": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone18": {
+     "value_times_|G|P_k(1)": "54598689192/1220703125",
+     "value": 0.01961721323951158,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "tone19": {
+     "value_times_|G|P_k(1)": "0",
+     "value": 0.0,
+     "zero_at_fixed_point": true,
+     "derivative_zero": true,
+     "second_derivative_sign": 0
+    },
+    "tone20": {
+     "value_times_|G|P_k(1)": "191169756963744/3814697265625",
+     "value": 0.019886509829168137,
+     "zero_at_fixed_point": false,
+     "derivative_zero": true,
+     "second_derivative_sign": -1
+    },
+    "mahler_derivative_zero": true,
+    "mahler_second_derivative_sign": -1
+   },
+   "_crossings": [
+    [
+     "tone3",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone5",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone7",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone9",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone11",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone13",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone15",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone17",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone19",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "-1",
+       "1"
+      ],
+      "deg": 1,
+      "value": "1.00000000000000000000000000000",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 1.0,
+   "coincidences": [
+    {
+     "what": "tone3 and tone5 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone7 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone3 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone5 and tone7 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone5 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone7 and tone9 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone7 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone9 and tone11 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone9 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone11 and tone13 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone11 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone13 and tone15 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone13 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone15 and tone17 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone15 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone17 and tone19 vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone17 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "tone19 and mahler vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone19 and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "tone19 at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "mahler and iq vanish/critical at the same point",
+     "value": "1.00000000000000000000000000000",
+     "minpoly": [
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "what": "mahler at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    },
+    {
+     "what": "iq at a special number",
+     "flags": [
+      "rational 1.00000000000000000000000000000",
+      "AT t = 1"
+     ],
+     "value": "1.00000000000000000000000000000"
+    }
+   ]
+  },
+  {
+   "pattern": "1tt1",
+   "raw_patterns": 2,
+   "involution": null,
+   "pointwise_symmetric": [
+    [
+     3,
+     2,
+     1,
+     0
+    ]
+   ],
+   "distinct_pair_forms": 45,
+   "vol_poly_deg": 4,
+   "tones": {
+    "1": "identically zero",
+    "2": "identically zero",
+    "3": "identically zero",
+    "4": [
+     {
+      "minpoly": [
+       "-1",
+       "-4",
+       "2",
+       "12",
+       "6"
+      ],
+      "deg": 4,
+      "value": "0.553745514831765830562758245748",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "5": "identically zero",
+    "6": [
+     {
+      "minpoly": [
+       "-1",
+       "-1",
+       "1"
+      ],
+      "deg": 2,
+      "value": "1.61803398874989484820458683437",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    "7": "identically zero",
+    "8": [],
+    "9": "identically zero",
+    "10": [],
+    "11": "identically zero",
+    "12": [],
+    "13": "identically zero",
+    "14": [],
+    "15": "identically zero",
+    "16": [],
+    "17": "identically zero",
+    "18": [],
+    "19": "identically zero",
+    "20": []
+   },
+   "mahler_critical": [
+    {
+     "minpoly": [
+      "-5",
+      "-20",
+      "18",
+      "68",
+      "23"
+     ],
+     "deg": 4,
+     "value": "0.509085313553047517429206009909",
+     "genuine": true,
+     "mult": 1
+    }
+   ],
+   "iq_critical": [
+    {
+     "minpoly": [
+      "-1",
+      "2",
+      "5"
+     ],
+     "deg": 2,
+     "value": "0.289897948556635619639456814941",
+     "genuine": null
+    }
+   ],
+   "f0": 120,
+   "facets": 30,
+   "self_dual_possible": false,
+   "extra_symmetry": {
+    "point reflection -I": "whole family"
+   },
+   "at_t_1": {
+    "tones": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.014400000000000001,
+     "5": 0.0,
+     "6": 0.005714285714285714,
+     "7": 0.0,
+     "8": 0.014697244444444443,
+     "9": 0.0,
+     "10": 0.009086836363636363,
+     "11": 0.0,
+     "12": 0.005745255975384616,
+     "13": 0.0,
+     "14": 0.023559228074666667,
+     "15": 0.0,
+     "16": 0.02472050451877647,
+     "17": 0.0,
+     "18": 0.01961721323951158,
+     "19": 0.0,
+     "20": 0.019886509829168137
+    },
+    "tone_zero_exact": []
+   },
+   "tones_even_under_t_to_1/t": false,
+   "_crossings": [
+    [
+     "tone4",
+     {
+      "minpoly": [
+       "-1",
+       "-4",
+       "2",
+       "12",
+       "6"
+      ],
+      "deg": 4,
+      "value": "0.553745514831765830562758245748",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "tone6",
+     {
+      "minpoly": [
+       "-1",
+       "-1",
+       "1"
+      ],
+      "deg": 2,
+      "value": "1.61803398874989484820458683437",
+      "genuine": true,
+      "mult": 2
+     }
+    ],
+    [
+     "mahler",
+     {
+      "minpoly": [
+       "-5",
+       "-20",
+       "18",
+       "68",
+       "23"
+      ],
+      "deg": 4,
+      "value": "0.509085313553047517429206009909",
+      "genuine": true,
+      "mult": 1
+     }
+    ],
+    [
+     "iq",
+     {
+      "minpoly": [
+       "-1",
+       "2",
+       "5"
+      ],
+      "deg": 2,
+      "value": "0.289897948556635619639456814941",
+      "genuine": null
+     }
+    ]
+   ],
+   "seconds": 0.7,
+   "coincidences": [
+    {
+     "what": "tone6 at a special number",
+     "flags": [
+      "quadratic, discriminant 5"
+     ],
+     "value": "1.61803398874989484820458683437"
+    },
+    {
+     "what": "iq at a special number",
+     "flags": [
+      "quadratic, discriminant 24"
+     ],
+     "value": "0.289897948556635619639456814941"
+    }
+   ]
+  }
+ ],
+ "stations": [
+  {
+   "pattern": "0001",
+   "symmetric_under": []
+  },
+  {
+   "pattern": "0010",
+   "symmetric_under": []
+  },
+  {
+   "pattern": "0011",
+   "symmetric_under": []
+  },
+  {
+   "pattern": "0101",
+   "symmetric_under": []
+  },
+  {
+   "pattern": "0110",
+   "symmetric_under": [
+    [
+     3,
+     2,
+     1,
+     0
+    ]
+   ]
+  },
+  {
+   "pattern": "0111",
+   "symmetric_under": []
+  },
+  {
+   "pattern": "1001",
+   "symmetric_under": [
+    [
+     3,
+     2,
+     1,
+     0
+    ]
+   ]
+  },
+  {
+   "pattern": "1011",
+   "symmetric_under": []
+  },
+  {
+   "pattern": "1111",
+   "symmetric_under": [
+    [
+     3,
+     2,
+     1,
+     0
+    ]
+   ]
+  }
+ ],
+ "checks": 106,
+ "fails": [],
+ "seconds": 7.2
+}

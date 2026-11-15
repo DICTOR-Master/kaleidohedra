@@ -1,0 +1,4455 @@
+{
+ "summary": {
+  "A3": {
+   "families": 4,
+   "raw_patterns": 12,
+   "with_involution": 1,
+   "pointwise_symmetric": 1,
+   "tone_zeros": 89,
+   "mahler_critical": 4,
+   "iq_critical": 3,
+   "iq_errors": [],
+   "dehn_zeros": [
+    [
+     "01t",
+     "2"
+    ],
+    [
+     "11t",
+     "1"
+    ],
+    [
+     "1t1",
+     "1"
+    ]
+   ],
+   "checks": 30,
+   "fails": [],
+   "seconds": 0.8,
+   "kmax": 20
+  },
+  "B3": {
+   "families": 6,
+   "raw_patterns": 12,
+   "with_involution": 0,
+   "pointwise_symmetric": 0,
+   "tone_zeros": 44,
+   "mahler_critical": 6,
+   "iq_critical": 5,
+   "iq_errors": [],
+   "dehn_zeros": [
+    [
+     "11t",
+     "whole family"
+    ],
+    [
+     "1t0",
+     "1"
+    ],
+    [
+     "1t1",
+     "1"
+    ],
+    [
+     "1tt",
+     "1"
+    ]
+   ],
+   "checks": 12,
+   "fails": [],
+   "seconds": 2.0,
+   "kmax": 20
+  },
+  "H3": {
+   "families": 6,
+   "raw_patterns": 12,
+   "with_involution": 0,
+   "pointwise_symmetric": 0,
+   "tone_zeros": 55,
+   "mahler_critical": 5,
+   "iq_critical": 4,
+   "iq_errors": [],
+   "dehn_zeros": [
+    [
+     "11t",
+     "1"
+    ],
+    [
+     "1t1",
+     "1"
+    ],
+    [
+     "1tt",
+     "1"
+    ]
+   ],
+   "checks": 6,
+   "fails": [],
+   "seconds": 2.3,
+   "kmax": 20
+  },
+  "A4": {
+   "families": 15,
+   "raw_patterns": 50,
+   "with_involution": 4,
+   "pointwise_symmetric": 1,
+   "tone_zeros": 107,
+   "mahler_critical": 15,
+   "iq_critical": 13,
+   "iq_errors": [],
+   "dehn_zeros": [],
+   "checks": 106,
+   "fails": [],
+   "seconds": 7.2,
+   "kmax": 20
+  },
+  "B4": {
+   "families": 25,
+   "raw_patterns": 50,
+   "with_involution": 0,
+   "pointwise_symmetric": 0,
+   "tone_zeros": 68,
+   "mahler_critical": 23,
+   "iq_critical": 17,
+   "iq_errors": [],
+   "dehn_zeros": [],
+   "checks": 25,
+   "fails": [],
+   "seconds": 5.8,
+   "kmax": 20
+  },
+  "D4": {
+   "families": 8,
+   "raw_patterns": 50,
+   "with_involution": 1,
+   "pointwise_symmetric": 6,
+   "tone_zeros": 24,
+   "mahler_critical": 8,
+   "iq_critical": 6,
+   "iq_errors": [],
+   "dehn_zeros": [],
+   "checks": 18,
+   "fails": [],
+   "seconds": 4.3,
+   "kmax": 20
+  },
+  "F4": {
+   "families": 15,
+   "raw_patterns": 50,
+   "with_involution": 4,
+   "pointwise_symmetric": 1,
+   "tone_zeros": 64,
+   "mahler_critical": 14,
+   "iq_critical": 13,
+   "iq_errors": [],
+   "dehn_zeros": [],
+   "checks": 62,
+   "fails": [],
+   "seconds": 3.0,
+   "kmax": 20
+  },
+  "H4": {
+   "families": 25,
+   "raw_patterns": 50,
+   "with_involution": 0,
+   "pointwise_symmetric": 0,
+   "tone_zeros": 35,
+   "mahler_critical": 18,
+   "iq_critical": 11,
+   "iq_errors": [],
+   "dehn_zeros": [],
+   "checks": 25,
+   "fails": [],
+   "seconds": 806.7,
+   "kmax": 20
+  },
+  "_total": {
+   "families": 104,
+   "raw_patterns": 286,
+   "with_involution": 10
+  }
+ },
+ "law_rows": [
+  [
+   "A3",
+   "x3o3t",
+   "x3o3x",
+   "cuboctahedron",
+   "t -> 1/t ((2, 1, 0))",
+   "3,7,9,11,13,15,17,19",
+   "6,8,10,12,14,16,18,20",
+   "4",
+   "max"
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "o3x3x3o",
+   "",
+   "t -> 1/t ((3, 2, 1, 0))",
+   "3,5,7,9,11,13,15,17,19",
+   "8,10,12,14,16,18,20",
+   "4,6",
+   "max"
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "x3o3o3x",
+   "",
+   "t -> 1/t ((3, 2, 1, 0))",
+   "3,5,7,9,11,13,15,17,19",
+   "6,8,10,12,14,16,18,20",
+   "4",
+   "max"
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "x3x3x3x",
+   "",
+   "t -> 1/t ((3, 2, 1, 0))",
+   "3,5,7,9,11,13,15,17,19",
+   "4,6,8,10,14,16,18,20",
+   "12",
+   "max"
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "x3x3x3x",
+   "",
+   "t -> 1/t ((3, 2, 1, 0))",
+   "3,5,7,9,11,13,15,17,19",
+   "4,6,10,12,14,16,18,20",
+   "8",
+   "max"
+  ],
+  [
+   "D4",
+   "o3o3x *b3t",
+   "o3o3x *b3x",
+   "",
+   "t -> 1/t ((0, 1, 3, 2))",
+   "-",
+   "8,14,16",
+   "4,6,10,12,18,20",
+   "max"
+  ],
+  [
+   "F4",
+   "o3x4t3o",
+   "o3x4x3o",
+   "",
+   "t -> 1/t ((3, 2, 1, 0))",
+   "6,14",
+   "16,20",
+   "8,12,18",
+   "max"
+  ],
+  [
+   "F4",
+   "x3o4o3t",
+   "x3o4o3x",
+   "",
+   "t -> 1/t ((3, 2, 1, 0))",
+   "6,14",
+   "12,16",
+   "8,18,20",
+   "max"
+  ],
+  [
+   "F4",
+   "x3x4t3t",
+   "x3x4x3x",
+   "",
+   "t -> 1/t ((3, 2, 1, 0))",
+   "6,14",
+   "8,16,18,20",
+   "12",
+   "max"
+  ],
+  [
+   "F4",
+   "x3t4x3t",
+   "x3x4x3x",
+   "",
+   "t -> 1/t ((3, 2, 1, 0))",
+   "6,14",
+   "8,12,16",
+   "18,20",
+   "max"
+  ]
+ ],
+ "coincidences": [
+  [
+   "A3",
+   "x3o3t",
+   "tone3 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone3 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone3 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone3 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone3 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone3 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone3 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone3 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone3 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone7 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone7 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone7 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone7 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone7 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone7 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone7 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone7 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone9 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone9 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone9 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone9 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone9 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone9 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone9 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone11 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone11 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone11 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone11 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone11 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone11 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone13 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone13 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone13 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone13 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone13 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone15 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone15 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone15 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone15 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone17 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone17 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone17 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone19 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "tone19 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3o3t",
+   "mahler and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone3 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone3 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone3 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone3 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone3 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone3 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone3 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone7 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone7 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone7 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone7 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone7 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone7 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone9 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone9 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone9 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone9 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone9 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone11 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone11 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone11 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone11 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone13 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone13 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone13 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone15 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone15 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3x3t",
+   "tone17 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3t3x",
+   "tone4 and tone8 vanish/critical at the same point",
+   "0.61803398874989",
+   [
+    "-1",
+    "1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3t3x",
+   "tone4 and tone14 vanish/critical at the same point",
+   "0.61803398874989",
+   [
+    "-1",
+    "1",
+    "1"
+   ]
+  ],
+  [
+   "A3",
+   "x3t3x",
+   "tone8 and tone14 vanish/critical at the same point",
+   "0.61803398874989",
+   [
+    "-1",
+    "1",
+    "1"
+   ]
+  ],
+  [
+   "B3",
+   "x3t4o",
+   "tone4 and tone8 vanish/critical at the same point",
+   "1.61803398874989",
+   [
+    "-1",
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "B3",
+   "x3t4o",
+   "tone4 and tone14 vanish/critical at the same point",
+   "1.61803398874989",
+   [
+    "-1",
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "B3",
+   "x3t4o",
+   "tone8 and tone14 vanish/critical at the same point",
+   "1.61803398874989",
+   [
+    "-1",
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3o3x3t",
+   "tone5 and tone7 vanish/critical at the same point",
+   "1.61803398874989",
+   [
+    "-1",
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3o3t",
+   "tone3 and tone6 vanish/critical at the same point",
+   "0.61803398874989",
+   [
+    "-1",
+    "1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone3 and tone5 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone3 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone3 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone3 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone3 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone3 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone3 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone3 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone3 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone3 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone5 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone5 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone5 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone5 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone5 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone5 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone5 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone5 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone5 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone7 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone7 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone7 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone7 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone7 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone7 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone7 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone7 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone9 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone9 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone9 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone9 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone9 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone9 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone9 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone11 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone11 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone11 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone11 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone11 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone11 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone13 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone13 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone13 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone13 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone13 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone15 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone15 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone15 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone15 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone17 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone17 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone17 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone19 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "tone19 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "o3x3t3o",
+   "mahler and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone3 and tone5 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone3 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone3 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone3 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone3 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone3 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone3 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone3 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone3 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone3 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone5 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone5 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone5 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone5 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone5 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone5 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone5 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone5 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone5 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone7 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone7 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone7 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone7 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone7 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone7 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone7 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone7 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone9 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone9 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone9 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone9 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone9 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone9 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone9 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone11 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone11 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone11 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone11 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone11 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone11 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone13 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone13 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone13 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone13 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone13 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone15 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone15 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone15 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone15 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone17 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone17 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone17 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone19 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "tone19 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3o3o3t",
+   "mahler and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone3 and tone5 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone3 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone3 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone3 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone3 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone3 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone3 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone3 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone5 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone5 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone5 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone5 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone5 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone5 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone5 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone7 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone7 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone7 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone7 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone7 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone7 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone9 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone9 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone9 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone9 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone9 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone11 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone11 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone11 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone11 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone13 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone13 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone13 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone15 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone15 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3x3t",
+   "tone17 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone3 and tone5 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone3 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone3 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone3 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone3 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone3 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone3 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone3 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone5 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone5 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone5 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone5 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone5 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone5 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone5 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone7 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone7 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone7 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone7 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone7 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone7 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone9 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone9 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone9 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone9 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone9 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone11 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone11 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone11 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone11 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone13 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone13 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone13 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone15 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone15 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3x",
+   "tone17 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone3 and tone5 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone3 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone3 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone3 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone3 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone3 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone3 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone3 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone3 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone3 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone5 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone5 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone5 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone5 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone5 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone5 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone5 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone5 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone5 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone7 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone7 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone7 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone7 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone7 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone7 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone7 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone7 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone9 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone9 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone9 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone9 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone9 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone9 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone9 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone11 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone11 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone11 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone11 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone11 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone11 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone13 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone13 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone13 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone13 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone13 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone15 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone15 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone15 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone15 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone17 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone17 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone17 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone19 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "tone19 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3x3t3t",
+   "mahler and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone3 and tone5 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone3 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone3 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone3 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone3 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone3 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone3 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone3 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone3 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone3 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone5 and tone7 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone5 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone5 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone5 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone5 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone5 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone5 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone5 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone5 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone7 and tone9 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone7 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone7 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone7 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone7 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone7 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone7 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone7 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone9 and tone11 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone9 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone9 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone9 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone9 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone9 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone9 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone11 and tone13 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone11 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone11 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone11 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone11 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone11 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone13 and tone15 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone13 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone13 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone13 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone13 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone15 and tone17 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone15 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone15 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone15 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone17 and tone19 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone17 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone17 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone19 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "tone19 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "A4",
+   "x3t3x3t",
+   "mahler and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "B4",
+   "x3o3t4o",
+   "tone4 and tone10 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "B4",
+   "x3o3t4o",
+   "tone4 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "B4",
+   "x3o3t4o",
+   "tone4 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "B4",
+   "x3o3t4o",
+   "tone10 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "B4",
+   "x3o3t4o",
+   "tone10 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "B4",
+   "x3o3t4o",
+   "mahler and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "B4",
+   "x3x3t4o",
+   "tone4 and tone10 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "B4",
+   "x3t3t4o",
+   "tone4 and tone10 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "D4",
+   "o3o3x *b3t",
+   "mahler and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "D4",
+   "x3o3x *b3t",
+   "tone4 and tone10 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "D4",
+   "x3o3x *b3t",
+   "tone4 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "D4",
+   "x3o3x *b3t",
+   "tone4 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "D4",
+   "x3o3x *b3t",
+   "tone10 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "D4",
+   "x3o3x *b3t",
+   "tone10 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "D4",
+   "x3o3x *b3t",
+   "mahler and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "D4",
+   "x3x3x *b3t",
+   "tone4 and tone10 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "D4",
+   "x3x3t *b3t",
+   "tone4 and tone10 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "o3x4t3o",
+   "tone6 and tone14 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "o3x4t3o",
+   "tone6 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "o3x4t3o",
+   "tone6 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "o3x4t3o",
+   "tone14 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "o3x4t3o",
+   "tone14 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "o3x4t3o",
+   "mahler and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3o4o3t",
+   "tone6 and tone14 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3o4o3t",
+   "tone6 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3o4o3t",
+   "tone6 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3o4o3t",
+   "tone14 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3o4o3t",
+   "tone14 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3o4o3t",
+   "mahler and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3x4x3t",
+   "tone6 and tone14 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3x4t3x",
+   "tone6 and tone14 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3x4t3t",
+   "tone6 and tone14 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3x4t3t",
+   "tone6 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3x4t3t",
+   "tone6 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3x4t3t",
+   "tone14 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3x4t3t",
+   "tone14 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3x4t3t",
+   "mahler and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3t4x3t",
+   "tone6 and tone14 vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3t4x3t",
+   "tone6 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3t4x3t",
+   "tone6 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3t4x3t",
+   "tone14 and mahler vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3t4x3t",
+   "tone14 and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ],
+  [
+   "F4",
+   "x3t4x3t",
+   "mahler and iq vanish/critical at the same point",
+   "1.00000000000000",
+   [
+    "-1",
+    "1"
+   ]
+  ]
+ ],
+ "n_crossings": 651
+}

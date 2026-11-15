@@ -1,0 +1,20 @@
+H4: degrees with invariant harmonics up to 48: 12, 20, 24, 30, 32, 36, 40, 42, 44, 48
+HIER H4 degrees [12] (1 conditions): Groebner basis ['u2 - 2550240 - 1140480*sqrt(5)']
+HIER H4 degrees [12, 20] (2 conditions): Groebner basis ['u2 - 2550240 - 1140480*sqrt(5)', 'u3 - 15244385520 - 6817496400*sqrt(5)']
+HIER H4 degrees [12, 20, 24] (3 conditions): Groebner basis ['1']
+HIER H4 degrees [12, 20, 24, 30] (4 conditions): Groebner basis ['1']
+k-research/studies/2026-11-15-law-giving-census/silent/scripts/sil.py:69: RuntimeWarning: overflow encountered in power
+  out.append(np.sum(L**d)); J.append(d*(L**(d - 1)) @ hf)
+k-research/studies/2026-11-15-law-giving-census/silent/scripts/sil.py:69: RuntimeWarning: overflow encountered in multiply
+  out.append(np.sum(L**d)); J.append(d*(L**(d - 1)) @ hf)
+k-research/studies/2026-11-15-law-giving-census/silent/scripts/sil.py:69: RuntimeWarning: overflow encountered in matmul
+  out.append(np.sum(L**d)); J.append(d*(L**(d - 1)) @ hf)
+k-research/studies/2026-11-15-law-giving-census/silent/scripts/sil.py:82: RuntimeWarning: invalid value encountered in matmul
+  jacs.append(g @ Ju)
+k-research/studies/2026-11-15-law-giving-census/silent/scripts/sil.py:69: RuntimeWarning: invalid value encountered in matmul
+  out.append(np.sum(L**d)); J.append(d*(L**(d - 1)) @ hf)
+CURVE H4 [12, 20]: line {'u2': '1140480*sqrt(5) + 2550240', 'u3': '6817496400*sqrt(5) + 15244385520'}, NO real seed found on it
+CURVEPOINT H4 [12, 20]+30: z = 625.2021908: no real seed found (outside the realizable part of the curve)
+CURVEPOINT H4 [12, 20]+30: z = 2.164107879e+15: no real seed found (outside the realizable part of the curve)
+CURVEPOINT H4 [12, 20]+32: z = 625.2022307: no real seed found (outside the realizable part of the curve)
+CURVEPOINT H4 [12, 20]+32: z = 2.164108017e+15: no real seed found (outside the realizable part of the curve)

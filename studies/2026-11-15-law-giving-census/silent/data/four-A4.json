@@ -1,0 +1,3513 @@
+{
+ "group": "A4",
+ "KF": 6,
+ "K4": 7,
+ "KEVAL": 24,
+ "dims": {
+  "3": 1,
+  "4": 1,
+  "5": 1,
+  "6": 1,
+  "7": 1,
+  "8": 2,
+  "9": 2,
+  "10": 2,
+  "11": 2,
+  "12": 3,
+  "13": 3,
+  "14": 3,
+  "15": 4,
+  "16": 4,
+  "17": 4,
+  "18": 5,
+  "19": 5,
+  "20": 6,
+  "21": 6,
+  "22": 6,
+  "23": 7,
+  "24": 8
+ },
+ "hierarchy": [
+  {
+   "degrees": [
+    3
+   ],
+   "conditions": 1,
+   "groebner": [
+    "u2"
+   ],
+   "dim_hint": 2
+  },
+  {
+   "degrees": [
+    3,
+    4
+   ],
+   "conditions": 2,
+   "groebner": [
+    "u2",
+    "u3 - 8/5"
+   ],
+   "dim_hint": 1
+  },
+  {
+   "degrees": [
+    3,
+    4,
+    5
+   ],
+   "conditions": 3,
+   "groebner": [
+    "u2",
+    "u3 - 8/5",
+    "u4"
+   ],
+   "dim_hint": 0
+  },
+  {
+   "degrees": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "conditions": 4,
+   "groebner": [
+    "1"
+   ],
+   "dim_hint": -1
+  },
+  {
+   "degrees": [
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "conditions": 5,
+   "groebner": [
+    "1"
+   ],
+   "dim_hint": -1
+  }
+ ],
+ "curves": [
+  {
+   "degrees": [
+    3,
+    4
+   ],
+   "u_fixed": {
+    "u2": "0",
+    "u3": "8/5"
+   },
+   "free": "u4",
+   "later": [
+    {
+     "degree": 5,
+     "restriction": "polynomial(s) of degree [1] in u4",
+     "real_roots": [
+      "0"
+     ]
+    },
+    {
+     "degree": 6,
+     "restriction": "nonzero constant on the curve",
+     "value": "-0.33333333333333333333"
+    },
+    {
+     "degree": 7,
+     "restriction": "polynomial(s) of degree [1] in u4",
+     "real_roots": [
+      "0"
+     ]
+    },
+    {
+     "degree": 8,
+     "restriction": "nonzero constant on the curve",
+     "value": "0.081596452328159645233"
+    },
+    {
+     "degree": 9,
+     "restriction": "polynomial(s) of degree [1, 1] in u4",
+     "real_roots": [
+      "0"
+     ]
+    },
+    {
+     "degree": 10,
+     "restriction": "polynomial(s) of degree [2, 2] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 11,
+     "restriction": "polynomial(s) of degree [1, 1] in u4",
+     "real_roots": [
+      "0"
+     ]
+    },
+    {
+     "degree": 12,
+     "restriction": "polynomial(s) of degree [2, 2, 2] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 13,
+     "restriction": "polynomial(s) of degree [1, 1, 1] in u4",
+     "real_roots": [
+      "0"
+     ]
+    },
+    {
+     "degree": 14,
+     "restriction": "polynomial(s) of degree [2, 2, 2] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 15,
+     "restriction": "polynomial(s) of degree [3, 3, 3, 3] in u4",
+     "real_roots": [
+      "0"
+     ]
+    },
+    {
+     "degree": 16,
+     "restriction": "polynomial(s) of degree [2, 2, 2, 2] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 17,
+     "restriction": "polynomial(s) of degree [3, 3, 3, 3] in u4",
+     "real_roots": [
+      "0"
+     ]
+    },
+    {
+     "degree": 18,
+     "restriction": "polynomial(s) of degree [2, 2, 2, 2, 2] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 19,
+     "restriction": "polynomial(s) of degree [3, 3, 3, 3, 3] in u4",
+     "real_roots": [
+      "0"
+     ]
+    },
+    {
+     "degree": 20,
+     "restriction": "polynomial(s) of degree [4, 4, 4, 4, 4, 4] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 21,
+     "restriction": "polynomial(s) of degree [3, 3, 3, 3, 3, 3] in u4",
+     "real_roots": [
+      "0"
+     ]
+    },
+    {
+     "degree": 22,
+     "restriction": "polynomial(s) of degree [4, 4, 4, 4, 4, 4] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 23,
+     "restriction": "polynomial(s) of degree [3, 3, 3, 3, 3, 3, 3] in u4",
+     "real_roots": [
+      "0"
+     ]
+    },
+    {
+     "degree": 24,
+     "restriction": "polynomial(s) of degree [4, 4, 4, 4, 4, 4, 4, 4] in u4",
+     "real_roots": []
+    }
+   ],
+   "sampled_z_range": [
+    -0.061950977076783584,
+    0.06194474106822493
+   ],
+   "n_samples": 280,
+   "sample_seeds": [
+    [
+     0.2857295212211568,
+     0.30936164646496034,
+     0.00010506708672172735,
+     0.4048037652271611
+    ],
+    [
+     0.2902516025584784,
+     0.27270030653664495,
+     0.06324584627239793,
+     0.37380224463247874
+    ],
+    [
+     0.303127639642392,
+     0.22752511797103273,
+     0.12403259606749684,
+     0.3453146463190786
+    ],
+    [
+     0.32296862805294074,
+     0.17536716212349496,
+     0.18101255006043712,
+     0.32065165976312726
+    ],
+    [
+     0.34642657902508095,
+     0.12158521706239163,
+     0.2295416039874348,
+     0.30244659992509254
+    ],
+    [
+     0.3696011217368021,
+     0.07200452070404718,
+     0.2668038951002974,
+     0.29159046245885334
+    ],
+    [
+     0.40156094513442075,
+     0.006602564645222033,
+     0.3060576799505239,
+     0.28577881026983326
+    ]
+   ],
+   "coincidences_exact": [
+    {
+     "degrees": [
+      5,
+      7
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      5,
+      9
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      5,
+      11
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      5,
+      13
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      5,
+      15
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      5,
+      17
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      5,
+      19
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      5,
+      21
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      5,
+      23
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      7,
+      9
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      7,
+      11
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      7,
+      13
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      7,
+      15
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      7,
+      17
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      7,
+      19
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      7,
+      21
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      7,
+      23
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      9,
+      11
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      9,
+      13
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      9,
+      15
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      9,
+      17
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      9,
+      19
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      9,
+      21
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      9,
+      23
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      11,
+      13
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      11,
+      15
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      11,
+      17
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      11,
+      19
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      11,
+      21
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      11,
+      23
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      13,
+      15
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      13,
+      17
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      13,
+      19
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      13,
+      21
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      13,
+      23
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      15,
+      17
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      15,
+      19
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      15,
+      21
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      15,
+      23
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      17,
+      19
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      17,
+      21
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      17,
+      23
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      19,
+      21
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      19,
+      23
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "degrees": [
+      21,
+      23
+     ],
+     "z": "0",
+     "minpoly": [
+      "0",
+      "1"
+     ]
+    }
+   ],
+   "points": [
+    {
+     "degree": 5,
+     "z": "0",
+     "minpoly_z": [
+      "0",
+      "1"
+     ],
+     "seed_c": [
+      0.3218030206536993,
+      0.17819697934630047,
+      0.17819697934630047,
+      0.3218030206536997
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 5,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    },
+    {
+     "degree": 7,
+     "z": "0",
+     "minpoly_z": [
+      "0",
+      "1"
+     ],
+     "seed_c": [
+      0.32180302065369937,
+      0.17819697934630016,
+      0.17819697934630066,
+      0.3218030206536998
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 5,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    },
+    {
+     "degree": 9,
+     "z": "0",
+     "minpoly_z": [
+      "0",
+      "1"
+     ],
+     "seed_c": [
+      0.3218030206536994,
+      0.17819697934630024,
+      0.17819697934630055,
+      0.3218030206536998
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 5,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    },
+    {
+     "degree": 11,
+     "z": "0",
+     "minpoly_z": [
+      "0",
+      "1"
+     ],
+     "seed_c": [
+      0.32180302065369965,
+      0.17819697934630044,
+      0.1781969793463007,
+      0.32180302065369926
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 5,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    },
+    {
+     "degree": 13,
+     "z": "0",
+     "minpoly_z": [
+      "0",
+      "1"
+     ],
+     "seed_c": [
+      0.3218030206536995,
+      0.17819697934630052,
+      0.17819697934629994,
+      0.3218030206536999
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 5,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    },
+    {
+     "degree": 15,
+     "z": "0",
+     "minpoly_z": [
+      "0",
+      "1"
+     ],
+     "seed_c": [
+      0.3218030206536997,
+      0.17819697934630013,
+      0.17819697934630047,
+      0.3218030206536998
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 5,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    },
+    {
+     "degree": 17,
+     "z": "0",
+     "minpoly_z": [
+      "0",
+      "1"
+     ],
+     "seed_c": [
+      0.32180302065369976,
+      0.1781969793463005,
+      0.1781969793463002,
+      0.32180302065369965
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 5,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    },
+    {
+     "degree": 19,
+     "z": "0",
+     "minpoly_z": [
+      "0",
+      "1"
+     ],
+     "seed_c": [
+      0.3218030206536996,
+      0.17819697934630016,
+      0.17819697934630038,
+      0.3218030206536998
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 5,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    },
+    {
+     "degree": 21,
+     "z": "0",
+     "minpoly_z": [
+      "0",
+      "1"
+     ],
+     "seed_c": [
+      0.3218030206537001,
+      0.1781969793462999,
+      0.1781969793463006,
+      0.3218030206536995
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 5,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    },
+    {
+     "degree": 23,
+     "z": "0",
+     "minpoly_z": [
+      "0",
+      "1"
+     ],
+     "seed_c": [
+      0.3218030206536998,
+      0.17819697934630035,
+      0.17819697934630013,
+      0.32180302065369976
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 5,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    }
+   ]
+  }
+ ],
+ "interior_systems": [
+  {
+   "system": [
+    3,
+    4,
+    5
+   ],
+   "status": "ok",
+   "n_real_u": 1,
+   "points": [
+    {
+     "u": [
+      0.0,
+      1.6,
+      0.0
+     ],
+     "seed_c": [
+      0.3218030206536998,
+      0.1781969793463001,
+      0.17819697934630033,
+      0.3218030206536998
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "zero_beyond_system_unproven": [
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 5,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    }
+   ]
+  },
+  {
+   "system": [
+    3,
+    4,
+    6
+   ],
+   "status": "empty",
+   "n_real_u": 0,
+   "points": []
+  },
+  {
+   "system": [
+    3,
+    4,
+    7
+   ],
+   "status": "ok",
+   "n_real_u": 1,
+   "points": [
+    {
+     "u": [
+      0.0,
+      1.6,
+      0.0
+     ],
+     "seed_c": [
+      0.3218030206536999,
+      0.17819697934630002,
+      0.17819697934630038,
+      0.32180302065369976
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "zero_beyond_system_unproven": [
+      5,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 5,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    }
+   ]
+  },
+  {
+   "system": [
+    3,
+    5,
+    6
+   ],
+   "status": "ok",
+   "n_real_u": 1,
+   "points": [
+    {
+     "u": [
+      0.0,
+      1.2,
+      0.0
+     ],
+     "seed_c": [
+      0.19098300562505263,
+      0.30901699437494756,
+      0.3090169943749469,
+      0.19098300562505297
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      5,
+      6,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "zero_beyond_system_unproven": [
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 3,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    }
+   ]
+  },
+  {
+   "system": [
+    3,
+    5,
+    7
+   ],
+   "status": "positive-dimensional",
+   "n_real_u": 0,
+   "points": [],
+   "groebner": [
+    "u2",
+    "u4"
+   ]
+  },
+  {
+   "system": [
+    3,
+    6,
+    7
+   ],
+   "status": "ok",
+   "n_real_u": 1,
+   "points": [
+    {
+     "u": [
+      0.0,
+      1.2,
+      0.0
+     ],
+     "seed_c": [
+      0.1909830056250525,
+      0.3090169943749476,
+      0.3090169943749473,
+      0.19098300562505255
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      5,
+      6,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "zero_beyond_system_unproven": [
+      5,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 3,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    }
+   ]
+  },
+  {
+   "system": [
+    4,
+    5,
+    6
+   ],
+   "status": "ok",
+   "n_real_u": 2,
+   "points": [
+    {
+     "u": [
+      -0.7745966692414834,
+      1.6,
+      -1.2393546707863734
+     ],
+     "seed": null
+    },
+    {
+     "u": [
+      0.7745966692414834,
+      1.6,
+      1.2393546707863734
+     ],
+     "seed": null
+    }
+   ]
+  },
+  {
+   "system": [
+    4,
+    5,
+    7
+   ],
+   "status": "ok",
+   "n_real_u": 1,
+   "points": [
+    {
+     "u": [
+      0.0,
+      1.6,
+      0.0
+     ],
+     "seed_c": [
+      0.3218030206536996,
+      0.17819697934630035,
+      0.1781969793463005,
+      0.3218030206536996
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "zero_beyond_system_unproven": [
+      3,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 5,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    }
+   ]
+  },
+  {
+   "system": [
+    4,
+    6,
+    7
+   ],
+   "status": "ok",
+   "n_real_u": 2,
+   "points": [
+    {
+     "u": [
+      -0.7745966692414834,
+      1.6,
+      -1.0586154479633607
+     ],
+     "seed": null
+    },
+    {
+     "u": [
+      0.7745966692414834,
+      1.6,
+      1.0586154479633607
+     ],
+     "seed": null
+    }
+   ]
+  },
+  {
+   "system": [
+    5,
+    6,
+    7
+   ],
+   "status": "ok",
+   "n_real_u": 3,
+   "points": [
+    {
+     "u": [
+      0.0,
+      1.2,
+      0.0
+     ],
+     "seed_c": [
+      0.19098300562505233,
+      0.3090169943749477,
+      0.3090169943749477,
+      0.19098300562505238
+     ],
+     "certified": true,
+     "zero_degrees": [
+      3,
+      5,
+      6,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "zero_beyond_system_unproven": [
+      3,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "orbit_size": 120,
+     "design_strength": 3,
+     "conditions": 37,
+     "stratum_dim": 3,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 1,
+     "locus_dim": 1,
+     "overdetermined": false,
+     "symmetry": {
+      "orbit_size": 120,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    },
+    {
+     "u": [
+      -1.0954451150103321,
+      2.0,
+      -1.7527121840165316
+     ],
+     "seed": null
+    },
+    {
+     "u": [
+      1.0954451150103321,
+      2.0,
+      1.7527121840165316
+     ],
+     "seed": null
+    }
+   ]
+  }
+ ],
+ "facets": [
+  {
+   "zero_node": 0,
+   "points": [
+    {
+     "seed_c": [
+      0.0,
+      0.3189635654827874,
+      0.21248897683487855,
+      0.4685474576823339
+     ],
+     "zero_degrees": [
+      4,
+      5
+     ],
+     "orbit_size": 60,
+     "design_strength": 2,
+     "minpoly_x": [
+      "-5292",
+      "0",
+      "209916",
+      "0",
+      "-3251108",
+      "0",
+      "13618944",
+      "0",
+      "-26649327",
+      "0",
+      "33219169",
+      "0",
+      "-29729637",
+      "0",
+      "17063631",
+      "0",
+      "-6685208",
+      "0",
+      "269664"
+     ],
+     "minpoly_y": [
+      "808992",
+      "7280928",
+      "17928840",
+      "-21603648",
+      "-155019387",
+      "-129451581",
+      "325190768",
+      "505602393",
+      "-367036281",
+      "-1080719312",
+      "-367036281",
+      "505602393",
+      "325190768",
+      "-129451581",
+      "-155019387",
+      "-21603648",
+      "17928840",
+      "7280928",
+      "808992"
+     ],
+     "chart": [
+      "0",
+      "x",
+      "y",
+      "1"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    },
+    {
+     "seed_c": [
+      0.0,
+      0.2919654478791178,
+      0.24469416884543954,
+      0.46334038327544275
+     ],
+     "zero_degrees": [
+      4,
+      6
+     ],
+     "orbit_size": 60,
+     "design_strength": 2,
+     "minpoly_x": [
+      "432",
+      "0",
+      "-10368",
+      "0",
+      "103968",
+      "0",
+      "-563840",
+      "0",
+      "1756200",
+      "0",
+      "-3079488",
+      "0",
+      "2751592",
+      "0",
+      "-889632",
+      "0",
+      "-172845",
+      "0",
+      "167800",
+      "0",
+      "-27552",
+      "0",
+      "-2112",
+      "0",
+      "192"
+     ],
+     "minpoly_y": [
+      "192",
+      "2304",
+      "17856",
+      "99264",
+      "329952",
+      "505344",
+      "-322712",
+      "-3041208",
+      "-6086877",
+      "-5063496",
+      "2643996",
+      "13013952",
+      "17867698",
+      "13013952",
+      "2643996",
+      "-5063496",
+      "-6086877",
+      "-3041208",
+      "-322712",
+      "505344",
+      "329952",
+      "99264",
+      "17856",
+      "2304",
+      "192"
+     ],
+     "chart": [
+      "0",
+      "x",
+      "y",
+      "1"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    },
+    {
+     "seed_c": [
+      0.0,
+      0.290887100935156,
+      0.21174561213754364,
+      0.49736728692730026
+     ],
+     "zero_degrees": [
+      5,
+      6
+     ],
+     "orbit_size": 60,
+     "design_strength": 2,
+     "minpoly_x": [
+      "-1797228",
+      "0",
+      "61370460",
+      "0",
+      "-871411455",
+      "0",
+      "7864233130",
+      "0",
+      "-53924890085",
+      "0",
+      "277579951218",
+      "0",
+      "-982045837215",
+      "0",
+      "2221808735920",
+      "0",
+      "-3048314979120",
+      "0",
+      "2417232413340",
+      "0",
+      "-1069295222636",
+      "0",
+      "265743090840",
+      "0",
+      "-46985159020",
+      "0",
+      "7777074720",
+      "0",
+      "-596619840",
+      "0",
+      "14452224"
+     ],
+     "minpoly_y": [
+      "3613056",
+      "54195840",
+      "377159280",
+      "1612978080",
+      "4822567140",
+      "11241001668",
+      "16796272945",
+      "-29857581660",
+      "-286785140260",
+      "-769845106030",
+      "-664334873914",
+      "1214997938400",
+      "3633949789625",
+      "2541417162300",
+      "-2705970170800",
+      "-5941526356108",
+      "-2705970170800",
+      "2541417162300",
+      "3633949789625",
+      "1214997938400",
+      "-664334873914",
+      "-769845106030",
+      "-286785140260",
+      "-29857581660",
+      "16796272945",
+      "11241001668",
+      "4822567140",
+      "1612978080",
+      "377159280",
+      "54195840",
+      "3613056"
+     ],
+     "chart": [
+      "0",
+      "x",
+      "y",
+      "1"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    },
+    {
+     "seed_c": [
+      0.0,
+      0.4021860139009454,
+      0.2760272195386661,
+      0.32178676656038846
+     ],
+     "zero_degrees": [
+      5,
+      6
+     ],
+     "orbit_size": 60,
+     "design_strength": 2,
+     "minpoly_x": [
+      "-1797228",
+      "0",
+      "61370460",
+      "0",
+      "-871411455",
+      "0",
+      "7864233130",
+      "0",
+      "-53924890085",
+      "0",
+      "277579951218",
+      "0",
+      "-982045837215",
+      "0",
+      "2221808735920",
+      "0",
+      "-3048314979120",
+      "0",
+      "2417232413340",
+      "0",
+      "-1069295222636",
+      "0",
+      "265743090840",
+      "0",
+      "-46985159020",
+      "0",
+      "7777074720",
+      "0",
+      "-596619840",
+      "0",
+      "14452224"
+     ],
+     "minpoly_y": [
+      "3613056",
+      "54195840",
+      "377159280",
+      "1612978080",
+      "4822567140",
+      "11241001668",
+      "16796272945",
+      "-29857581660",
+      "-286785140260",
+      "-769845106030",
+      "-664334873914",
+      "1214997938400",
+      "3633949789625",
+      "2541417162300",
+      "-2705970170800",
+      "-5941526356108",
+      "-2705970170800",
+      "2541417162300",
+      "3633949789625",
+      "1214997938400",
+      "-664334873914",
+      "-769845106030",
+      "-286785140260",
+      "-29857581660",
+      "16796272945",
+      "11241001668",
+      "4822567140",
+      "1612978080",
+      "377159280",
+      "54195840",
+      "3613056"
+     ],
+     "chart": [
+      "0",
+      "x",
+      "y",
+      "1"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    }
+   ],
+   "undecided": []
+  },
+  {
+   "zero_node": 1,
+   "points": [
+    {
+     "seed_c": [
+      0.4048562972695888,
+      0.0,
+      0.3094141939937447,
+      0.2857295087366664
+     ],
+     "zero_degrees": [
+      3,
+      4
+     ],
+     "orbit_size": 60,
+     "design_strength": 4,
+     "minpoly_x": [
+      "-196",
+      "0",
+      "2632",
+      "0",
+      "-6680",
+      "0",
+      "6180",
+      "0",
+      "-2105",
+      "0",
+      "-8",
+      "0",
+      "96"
+     ],
+     "minpoly_y": [
+      "-98",
+      "-784",
+      "-2254",
+      "-2520",
+      "-135",
+      "1496",
+      "598",
+      "-52",
+      "155",
+      "640",
+      "656",
+      "288",
+      "48"
+     ],
+     "chart": [
+      "x",
+      "0",
+      "y",
+      "1"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    },
+    {
+     "seed_c": [
+      0.2211360246432496,
+      0.0,
+      0.37337006086239355,
+      0.4054939144943569
+     ],
+     "zero_degrees": [
+      4,
+      6
+     ],
+     "orbit_size": 60,
+     "design_strength": 2,
+     "minpoly_x": [
+      "432",
+      "0",
+      "-10368",
+      "0",
+      "103968",
+      "0",
+      "-563840",
+      "0",
+      "1756200",
+      "0",
+      "-3079488",
+      "0",
+      "2751592",
+      "0",
+      "-889632",
+      "0",
+      "-172845",
+      "0",
+      "167800",
+      "0",
+      "-27552",
+      "0",
+      "-2112",
+      "0",
+      "192"
+     ],
+     "minpoly_y": [
+      "324",
+      "5184",
+      "32400",
+      "90432",
+      "33876",
+      "-507456",
+      "-1501376",
+      "-1700160",
+      "134457",
+      "2753696",
+      "3385740",
+      "1488840",
+      "-804170",
+      "-1689720",
+      "-1308420",
+      "-652728",
+      "-186243",
+      "102600",
+      "219336",
+      "186048",
+      "100656",
+      "38016",
+      "10080",
+      "1728",
+      "144"
+     ],
+     "chart": [
+      "x",
+      "0",
+      "y",
+      "1"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    },
+    {
+     "seed_c": [
+      0.22447528580531687,
+      0.0,
+      0.2648537125557536,
+      0.5106710016389295
+     ],
+     "zero_degrees": [
+      5,
+      6
+     ],
+     "orbit_size": 60,
+     "design_strength": 2,
+     "minpoly_x": [
+      "-1797228",
+      "0",
+      "61370460",
+      "0",
+      "-871411455",
+      "0",
+      "7864233130",
+      "0",
+      "-53924890085",
+      "0",
+      "277579951218",
+      "0",
+      "-982045837215",
+      "0",
+      "2221808735920",
+      "0",
+      "-3048314979120",
+      "0",
+      "2417232413340",
+      "0",
+      "-1069295222636",
+      "0",
+      "265743090840",
+      "0",
+      "-46985159020",
+      "0",
+      "7777074720",
+      "0",
+      "-596619840",
+      "0",
+      "14452224"
+     ],
+     "minpoly_y": [
+      "-2695842",
+      "-53916840",
+      "-447373935",
+      "-1860107760",
+      "-2857488975",
+      "8462292912",
+      "52546465705",
+      "99719310430",
+      "-12834048785",
+      "-437227819190",
+      "-842582985367",
+      "-364358193430",
+      "1231028736865",
+      "2489004830500",
+      "1630019173060",
+      "-893058183072",
+      "-2614341940770",
+      "-2062196733780",
+      "-248053598680",
+      "989495838600",
+      "993301491384",
+      "379312612800",
+      "-84661590120",
+      "-182720114640",
+      "-98129584620",
+      "-18680811552",
+      "7517731680",
+      "6390639360",
+      "2028153600",
+      "325175040",
+      "21678336"
+     ],
+     "chart": [
+      "x",
+      "0",
+      "y",
+      "1"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    }
+   ],
+   "undecided": []
+  },
+  {
+   "zero_node": 2,
+   "points": [
+    {
+     "seed_c": [
+      0.2857295087366664,
+      0.30941419399374476,
+      0.0,
+      0.4048562972695888
+     ],
+     "zero_degrees": [
+      3,
+      4
+     ],
+     "orbit_size": 60,
+     "design_strength": 4,
+     "minpoly_x": [
+      "-96",
+      "0",
+      "8",
+      "0",
+      "2105",
+      "0",
+      "-6180",
+      "0",
+      "6680",
+      "0",
+      "-2632",
+      "0",
+      "196"
+     ],
+     "minpoly_y": [
+      "98",
+      "392",
+      "98",
+      "-1540",
+      "-1965",
+      "1232",
+      "3658",
+      "1232",
+      "-1965",
+      "-1540",
+      "98",
+      "392",
+      "98"
+     ],
+     "chart": [
+      "x",
+      "y",
+      "0",
+      "1"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    },
+    {
+     "seed_c": [
+      0.4054939144943569,
+      0.37337006086239355,
+      0.0,
+      0.2211360246432496
+     ],
+     "zero_degrees": [
+      4,
+      6
+     ],
+     "orbit_size": 60,
+     "design_strength": 2,
+     "minpoly_x": [
+      "192",
+      "0",
+      "-2112",
+      "0",
+      "-27552",
+      "0",
+      "167800",
+      "0",
+      "-172845",
+      "0",
+      "-889632",
+      "0",
+      "2751592",
+      "0",
+      "-3079488",
+      "0",
+      "1756200",
+      "0",
+      "-563840",
+      "0",
+      "103968",
+      "0",
+      "-10368",
+      "0",
+      "432"
+     ],
+     "minpoly_y": [
+      "324",
+      "2592",
+      "2592",
+      "-33408",
+      "-118836",
+      "-42768",
+      "480856",
+      "883536",
+      "-160119",
+      "-2123408",
+      "-1905468",
+      "1337136",
+      "3448806",
+      "1337136",
+      "-1905468",
+      "-2123408",
+      "-160119",
+      "883536",
+      "480856",
+      "-42768",
+      "-118836",
+      "-33408",
+      "2592",
+      "2592",
+      "324"
+     ],
+     "chart": [
+      "x",
+      "y",
+      "0",
+      "1"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    },
+    {
+     "seed_c": [
+      0.5106710016389295,
+      0.2648537125557536,
+      0.0,
+      0.22447528580531687
+     ],
+     "zero_degrees": [
+      5,
+      6
+     ],
+     "orbit_size": 60,
+     "design_strength": 2,
+     "minpoly_x": [
+      "-14452224",
+      "0",
+      "596619840",
+      "0",
+      "-7777074720",
+      "0",
+      "46985159020",
+      "0",
+      "-265743090840",
+      "0",
+      "1069295222636",
+      "0",
+      "-2417232413340",
+      "0",
+      "3048314979120",
+      "0",
+      "-2221808735920",
+      "0",
+      "982045837215",
+      "0",
+      "-277579951218",
+      "0",
+      "53924890085",
+      "0",
+      "-7864233130",
+      "0",
+      "871411455",
+      "0",
+      "-61370460",
+      "0",
+      "1797228"
+     ],
+     "minpoly_y": [
+      "2695842",
+      "26958420",
+      "56476845",
+      "-278756100",
+      "-1390656465",
+      "-949013226",
+      "4690144445",
+      "6400292710",
+      "-10320162305",
+      "-17253073450",
+      "23788644527",
+      "41754303140",
+      "-42902824615",
+      "-93897667640",
+      "26789832190",
+      "129843891556",
+      "26789832190",
+      "-93897667640",
+      "-42902824615",
+      "41754303140",
+      "23788644527",
+      "-17253073450",
+      "-10320162305",
+      "6400292710",
+      "4690144445",
+      "-949013226",
+      "-1390656465",
+      "-278756100",
+      "56476845",
+      "26958420",
+      "2695842"
+     ],
+     "chart": [
+      "x",
+      "y",
+      "0",
+      "1"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    }
+   ],
+   "undecided": []
+  },
+  {
+   "zero_node": 3,
+   "points": [
+    {
+     "seed_c": [
+      0.468547457682334,
+      0.21248897683487858,
+      0.3189635654827875,
+      0.0
+     ],
+     "zero_degrees": [
+      4,
+      5
+     ],
+     "orbit_size": 60,
+     "design_strength": 2,
+     "minpoly_x": [
+      "-269664",
+      "0",
+      "6685208",
+      "0",
+      "-17063631",
+      "0",
+      "29729637",
+      "0",
+      "-33219169",
+      "0",
+      "26649327",
+      "0",
+      "-13618944",
+      "0",
+      "3251108",
+      "0",
+      "-209916",
+      "0",
+      "5292"
+     ],
+     "minpoly_y": [
+      "-404496",
+      "-3640464",
+      "-11545944",
+      "-9850368",
+      "26685831",
+      "70372113",
+      "38470130",
+      "-59485041",
+      "-95085539",
+      "-29099934",
+      "33702987",
+      "30585651",
+      "3632740",
+      "-6050877",
+      "-2923333",
+      "-108192",
+      "272538",
+      "82026",
+      "7938"
+     ],
+     "chart": [
+      "x",
+      "y",
+      "1",
+      "0"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    },
+    {
+     "seed_c": [
+      0.46334038327544275,
+      0.2446941688454395,
+      0.29196544787911777,
+      0.0
+     ],
+     "zero_degrees": [
+      4,
+      6
+     ],
+     "orbit_size": 60,
+     "design_strength": 2,
+     "minpoly_x": [
+      "192",
+      "0",
+      "-2112",
+      "0",
+      "-27552",
+      "0",
+      "167800",
+      "0",
+      "-172845",
+      "0",
+      "-889632",
+      "0",
+      "2751592",
+      "0",
+      "-3079488",
+      "0",
+      "1756200",
+      "0",
+      "-563840",
+      "0",
+      "103968",
+      "0",
+      "-10368",
+      "0",
+      "432"
+     ],
+     "minpoly_y": [
+      "144",
+      "1728",
+      "10080",
+      "38016",
+      "100656",
+      "186048",
+      "219336",
+      "102600",
+      "-186243",
+      "-652728",
+      "-1308420",
+      "-1689720",
+      "-804170",
+      "1488840",
+      "3385740",
+      "2753696",
+      "134457",
+      "-1700160",
+      "-1501376",
+      "-507456",
+      "33876",
+      "90432",
+      "32400",
+      "5184",
+      "324"
+     ],
+     "chart": [
+      "x",
+      "y",
+      "1",
+      "0"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    },
+    {
+     "seed_c": [
+      0.32178676656038846,
+      0.2760272195386661,
+      0.4021860139009454,
+      0.0
+     ],
+     "zero_degrees": [
+      5,
+      6
+     ],
+     "orbit_size": 60,
+     "design_strength": 2,
+     "minpoly_x": [
+      "-14452224",
+      "0",
+      "596619840",
+      "0",
+      "-7777074720",
+      "0",
+      "46985159020",
+      "0",
+      "-265743090840",
+      "0",
+      "1069295222636",
+      "0",
+      "-2417232413340",
+      "0",
+      "3048314979120",
+      "0",
+      "-2221808735920",
+      "0",
+      "982045837215",
+      "0",
+      "-277579951218",
+      "0",
+      "53924890085",
+      "0",
+      "-7864233130",
+      "0",
+      "871411455",
+      "0",
+      "-61370460",
+      "0",
+      "1797228"
+     ],
+     "minpoly_y": [
+      "-21678336",
+      "-325175040",
+      "-2028153600",
+      "-6390639360",
+      "-7517731680",
+      "18680811552",
+      "98129584620",
+      "182720114640",
+      "84661590120",
+      "-379312612800",
+      "-993301491384",
+      "-989495838600",
+      "248053598680",
+      "2062196733780",
+      "2614341940770",
+      "893058183072",
+      "-1630019173060",
+      "-2489004830500",
+      "-1231028736865",
+      "364358193430",
+      "842582985367",
+      "437227819190",
+      "12834048785",
+      "-99719310430",
+      "-52546465705",
+      "-8462292912",
+      "2857488975",
+      "1860107760",
+      "447373935",
+      "53916840",
+      "2695842"
+     ],
+     "chart": [
+      "x",
+      "y",
+      "1",
+      "0"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    },
+    {
+     "seed_c": [
+      0.49736728692730026,
+      0.21174561213754367,
+      0.2908871009351561,
+      0.0
+     ],
+     "zero_degrees": [
+      5,
+      6
+     ],
+     "orbit_size": 60,
+     "design_strength": 2,
+     "minpoly_x": [
+      "-14452224",
+      "0",
+      "596619840",
+      "0",
+      "-7777074720",
+      "0",
+      "46985159020",
+      "0",
+      "-265743090840",
+      "0",
+      "1069295222636",
+      "0",
+      "-2417232413340",
+      "0",
+      "3048314979120",
+      "0",
+      "-2221808735920",
+      "0",
+      "982045837215",
+      "0",
+      "-277579951218",
+      "0",
+      "53924890085",
+      "0",
+      "-7864233130",
+      "0",
+      "871411455",
+      "0",
+      "-61370460",
+      "0",
+      "1797228"
+     ],
+     "minpoly_y": [
+      "-21678336",
+      "-325175040",
+      "-2028153600",
+      "-6390639360",
+      "-7517731680",
+      "18680811552",
+      "98129584620",
+      "182720114640",
+      "84661590120",
+      "-379312612800",
+      "-993301491384",
+      "-989495838600",
+      "248053598680",
+      "2062196733780",
+      "2614341940770",
+      "893058183072",
+      "-1630019173060",
+      "-2489004830500",
+      "-1231028736865",
+      "364358193430",
+      "842582985367",
+      "437227819190",
+      "12834048785",
+      "-99719310430",
+      "-52546465705",
+      "-8462292912",
+      "2857488975",
+      "1860107760",
+      "447373935",
+      "53916840",
+      "2695842"
+     ],
+     "chart": [
+      "x",
+      "y",
+      "1",
+      "0"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    }
+   ],
+   "undecided": []
+  }
+ ],
+ "edges": [
+  {
+   "nodes": [
+    0,
+    1
+   ],
+   "identically_zero_degrees": [],
+   "points": [
+    {
+     "t": "1.09404970083614570728062896119",
+     "minpoly_t": [
+      "-2",
+      "-6",
+      "-3",
+      "6",
+      "3"
+     ],
+     "degrees": [
+      4
+     ],
+     "seed_c": [
+      1.0,
+      1.0940497008361456,
+      0.0,
+      0.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    },
+    {
+     "t": "0.618033988749894848204586834366",
+     "minpoly_t": [
+      "-1",
+      "1",
+      "1"
+     ],
+     "degrees": [
+      5,
+      7
+     ],
+     "seed_c": [
+      1.0,
+      0.6180339887498949,
+      0.0,
+      0.0
+     ],
+     "conditions": 2,
+     "stratum_dim": 1,
+     "overdetermined_raw": true,
+     "overdetermined": true,
+     "design_strength": 2,
+     "orbit_size": 20,
+     "symmetry": {
+      "orbit_size": 20,
+      "extra_isometries_preserving": [],
+      "explained": false
+     }
+    },
+    {
+     "t": "3.68116306765073327044877343769",
+     "minpoly_t": [
+      "-4",
+      "-17",
+      "-16",
+      "2",
+      "1"
+     ],
+     "degrees": [
+      7
+     ],
+     "seed_c": [
+      1.0,
+      3.681163067650733,
+      0.0,
+      0.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    }
+   ]
+  },
+  {
+   "nodes": [
+    0,
+    2
+   ],
+   "identically_zero_degrees": [],
+   "points": [
+    {
+     "t": "1.61803398874989484820458683437",
+     "minpoly_t": [
+      "-1",
+      "-1",
+      "1"
+     ],
+     "degrees": [
+      3,
+      6
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      1.618033988749895,
+      0.0
+     ],
+     "conditions": 2,
+     "stratum_dim": 1,
+     "overdetermined_raw": true,
+     "overdetermined": true,
+     "design_strength": 3,
+     "orbit_size": 30,
+     "symmetry": {
+      "orbit_size": 30,
+      "extra_isometries_preserving": [],
+      "explained": false
+     }
+    },
+    {
+     "t": "0.845595287921002449591760573585",
+     "minpoly_t": [
+      "-2",
+      "-4",
+      "2",
+      "4",
+      "3"
+     ],
+     "degrees": [
+      4
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.8455952879210025,
+      0.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    },
+    {
+     "t": "0.571483893769741531217637621497",
+     "minpoly_t": [
+      "-2",
+      "-4",
+      "7",
+      "9",
+      "3"
+     ],
+     "degrees": [
+      6
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.5714838937697415,
+      0.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    },
+    {
+     "t": "0.419789153325424065230925150047",
+     "minpoly_t": [
+      "-3",
+      "-9",
+      "15",
+      "45",
+      "25",
+      "1",
+      "3"
+     ],
+     "degrees": [
+      7
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.41978915332542405,
+      0.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    }
+   ]
+  },
+  {
+   "nodes": [
+    0,
+    3
+   ],
+   "identically_zero_degrees": [],
+   "points": [
+    {
+     "t": "1.00000000000000000000000000000",
+     "minpoly_t": [
+      "-1",
+      "1"
+     ],
+     "degrees": [
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "conditions": 36,
+     "stratum_dim": 1,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 0,
+     "locus_dim": 0,
+     "overdetermined": false,
+     "design_strength": 3,
+     "orbit_size": 20,
+     "symmetry": {
+      "orbit_size": 20,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    },
+    {
+     "t": "0.436873895306366675843763622252",
+     "minpoly_t": [
+      "4",
+      "6",
+      "-15",
+      "-40",
+      "-15",
+      "6",
+      "4"
+     ],
+     "degrees": [
+      6
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.0,
+      0.43687389530636667
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    },
+    {
+     "t": "2.28899005123373125090038985252",
+     "minpoly_t": [
+      "4",
+      "6",
+      "-15",
+      "-40",
+      "-15",
+      "6",
+      "4"
+     ],
+     "degrees": [
+      6
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.0,
+      2.288990051233731
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    },
+    {
+     "t": "0.578036454636281554597503666474",
+     "minpoly_t": [
+      "4",
+      "-1",
+      "-11",
+      "-1",
+      "4"
+     ],
+     "degrees": [
+      7
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.0,
+      0.5780364546362815
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    },
+    {
+     "t": "1.72999469493534102619262678739",
+     "minpoly_t": [
+      "4",
+      "-1",
+      "-11",
+      "-1",
+      "4"
+     ],
+     "degrees": [
+      7
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.0,
+      1.729994694935341
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    }
+   ]
+  },
+  {
+   "nodes": [
+    1,
+    2
+   ],
+   "identically_zero_degrees": [],
+   "points": [
+    {
+     "t": "1.00000000000000000000000000000",
+     "minpoly_t": [
+      "-1",
+      "1"
+     ],
+     "degrees": [
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+     ],
+     "seed_c": [
+      0.0,
+      1.0,
+      1.0,
+      0.0
+     ],
+     "conditions": 36,
+     "stratum_dim": 1,
+     "overdetermined_raw": true,
+     "minus_I_symmetric": true,
+     "even_conditions": 0,
+     "locus_dim": 0,
+     "overdetermined": false,
+     "design_strength": 3,
+     "orbit_size": 30,
+     "symmetry": {
+      "orbit_size": 30,
+      "extra_isometries_preserving": [
+       "-I",
+       "L(3, 2, 1, 0)"
+      ],
+      "explained": true
+     }
+    }
+   ]
+  },
+  {
+   "nodes": [
+    1,
+    3
+   ],
+   "identically_zero_degrees": [],
+   "points": [
+    {
+     "t": "0.618033988749894848204586834366",
+     "minpoly_t": [
+      "-1",
+      "1",
+      "1"
+     ],
+     "degrees": [
+      3,
+      6
+     ],
+     "seed_c": [
+      0.0,
+      1.0,
+      0.0,
+      0.6180339887498949
+     ],
+     "conditions": 2,
+     "stratum_dim": 1,
+     "overdetermined_raw": true,
+     "overdetermined": true,
+     "design_strength": 3,
+     "orbit_size": 30,
+     "symmetry": {
+      "orbit_size": 30,
+      "extra_isometries_preserving": [],
+      "explained": false
+     }
+    },
+    {
+     "t": "1.18259883218911978002718608835",
+     "minpoly_t": [
+      "-3",
+      "-4",
+      "-2",
+      "4",
+      "2"
+     ],
+     "degrees": [
+      4
+     ],
+     "seed_c": [
+      0.0,
+      1.0,
+      0.0,
+      1.1825988321891199
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    },
+    {
+     "t": "1.74983059173127512965497239851",
+     "minpoly_t": [
+      "-3",
+      "-9",
+      "-7",
+      "4",
+      "2"
+     ],
+     "degrees": [
+      6
+     ],
+     "seed_c": [
+      0.0,
+      1.0,
+      0.0,
+      1.749830591731275
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    },
+    {
+     "t": "2.38214825723424928549325093342",
+     "minpoly_t": [
+      "-3",
+      "-1",
+      "-25",
+      "-45",
+      "-15",
+      "9",
+      "3"
+     ],
+     "degrees": [
+      7
+     ],
+     "seed_c": [
+      0.0,
+      1.0,
+      0.0,
+      2.3821482572342494
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    }
+   ]
+  },
+  {
+   "nodes": [
+    2,
+    3
+   ],
+   "identically_zero_degrees": [],
+   "points": [
+    {
+     "t": "0.914035257480289371821692963159",
+     "minpoly_t": [
+      "-3",
+      "-6",
+      "3",
+      "6",
+      "2"
+     ],
+     "degrees": [
+      4
+     ],
+     "seed_c": [
+      0.0,
+      0.0,
+      1.0,
+      0.9140352574802894
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    },
+    {
+     "t": "1.61803398874989484820458683437",
+     "minpoly_t": [
+      "-1",
+      "-1",
+      "1"
+     ],
+     "degrees": [
+      5,
+      7
+     ],
+     "seed_c": [
+      0.0,
+      0.0,
+      1.0,
+      1.618033988749895
+     ],
+     "conditions": 2,
+     "stratum_dim": 1,
+     "overdetermined_raw": true,
+     "overdetermined": true,
+     "design_strength": 2,
+     "orbit_size": 20,
+     "symmetry": {
+      "orbit_size": 20,
+      "extra_isometries_preserving": [],
+      "explained": false
+     }
+    },
+    {
+     "t": "0.271653274147995296206626258444",
+     "minpoly_t": [
+      "-1",
+      "-2",
+      "16",
+      "17",
+      "4"
+     ],
+     "degrees": [
+      7
+     ],
+     "seed_c": [
+      0.0,
+      0.0,
+      1.0,
+      0.2716532741479953
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 2
+    }
+   ]
+  }
+ ],
+ "vertices": [
+  {
+   "node": 0,
+   "zero_degrees_exact": [],
+   "orbit_size": 5,
+   "design_strength": 2,
+   "conditions": 0,
+   "stratum_dim": 0,
+   "overdetermined_raw": false,
+   "overdetermined": false
+  },
+  {
+   "node": 1,
+   "zero_degrees_exact": [],
+   "orbit_size": 10,
+   "design_strength": 2,
+   "conditions": 0,
+   "stratum_dim": 0,
+   "overdetermined_raw": false,
+   "overdetermined": false
+  },
+  {
+   "node": 2,
+   "zero_degrees_exact": [],
+   "orbit_size": 10,
+   "design_strength": 2,
+   "conditions": 0,
+   "stratum_dim": 0,
+   "overdetermined_raw": false,
+   "overdetermined": false
+  },
+  {
+   "node": 3,
+   "zero_degrees_exact": [],
+   "orbit_size": 5,
+   "design_strength": 2,
+   "conditions": 0,
+   "stratum_dim": 0,
+   "overdetermined_raw": false,
+   "overdetermined": false
+  }
+ ],
+ "seconds": 74.7
+}

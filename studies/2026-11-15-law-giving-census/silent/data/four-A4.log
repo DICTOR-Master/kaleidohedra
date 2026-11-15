@@ -1,0 +1,95 @@
+A4: degrees with invariant harmonics up to 24: 3, 4, 5, 6, 7, 8(dim 2), 9(dim 2), 10(dim 2), 11(dim 2), 12(dim 3), 13(dim 3), 14(dim 3), 15(dim 4), 16(dim 4), 17(dim 4), 18(dim 5), 19(dim 5), 20(dim 6), 21(dim 6), 22(dim 6), 23(dim 7), 24(dim 8)
+HIER A4 degrees [3] (1 conditions): Groebner basis ['u2']
+HIER A4 degrees [3, 4] (2 conditions): Groebner basis ['u2', 'u3 - 8/5']
+HIER A4 degrees [3, 4, 5] (3 conditions): Groebner basis ['u2', 'u3 - 8/5', 'u4']
+HIER A4 degrees [3, 4, 5, 6] (4 conditions): Groebner basis ['1']
+HIER A4 degrees [3, 4, 5, 6, 7] (5 conditions): Groebner basis ['1']
+CURVE A4 [3, 4]: line {'u2': '0', 'u3': '8/5'}, 280 sampled seeds, z = u4 in [-0.061951, 0.0619447]
+CURVEPOINT A4 [3, 4]+5: z = 0 seed [0.321803, 0.178197, 0.178197, 0.321803] certified True zero [3, 4, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 5 orbit 120
+CURVEPOINT A4 [3, 4]+7: z = 0 seed [0.321803, 0.178197, 0.178197, 0.321803] certified True zero [3, 4, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 5 orbit 120
+CURVEPOINT A4 [3, 4]+9: z = 0 seed [0.321803, 0.178197, 0.178197, 0.321803] certified True zero [3, 4, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 5 orbit 120
+CURVEPOINT A4 [3, 4]+11: z = 0 seed [0.321803, 0.178197, 0.178197, 0.321803] certified True zero [3, 4, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 5 orbit 120
+CURVEPOINT A4 [3, 4]+13: z = 0 seed [0.321803, 0.178197, 0.178197, 0.321803] certified True zero [3, 4, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 5 orbit 120
+CURVEPOINT A4 [3, 4]+15: z = 0 seed [0.321803, 0.178197, 0.178197, 0.321803] certified True zero [3, 4, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 5 orbit 120
+CURVEPOINT A4 [3, 4]+17: z = 0 seed [0.321803, 0.178197, 0.178197, 0.321803] certified True zero [3, 4, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 5 orbit 120
+CURVEPOINT A4 [3, 4]+19: z = 0 seed [0.321803, 0.178197, 0.178197, 0.321803] certified True zero [3, 4, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 5 orbit 120
+CURVEPOINT A4 [3, 4]+21: z = 0 seed [0.321803, 0.178197, 0.178197, 0.321803] certified True zero [3, 4, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 5 orbit 120
+CURVEPOINT A4 [3, 4]+23: z = 0 seed [0.321803, 0.178197, 0.178197, 0.321803] certified True zero [3, 4, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 5 orbit 120
+CURVECOINCIDENCE A4 [3, 4]: degrees [5, 7] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [5, 9] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [5, 11] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [5, 13] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [5, 15] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [5, 17] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [5, 19] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [5, 21] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [5, 23] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [7, 9] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [7, 11] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [7, 13] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [7, 15] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [7, 17] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [7, 19] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [7, 21] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [7, 23] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [9, 11] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [9, 13] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [9, 15] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [9, 17] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [9, 19] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [9, 21] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [9, 23] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [11, 13] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [11, 15] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [11, 17] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [11, 19] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [11, 21] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [11, 23] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [13, 15] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [13, 17] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [13, 19] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [13, 21] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [13, 23] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [15, 17] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [15, 19] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [15, 21] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [15, 23] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [17, 19] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [17, 21] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [17, 23] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [19, 21] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [19, 23] vanish together at z = 0  <<< check realizability above
+CURVECOINCIDENCE A4 [3, 4]: degrees [21, 23] vanish together at z = 0  <<< check realizability above
+INTERIOR A4 [3, 4, 5]: u = [0.0, 1.6, 0.0] seed [0.321803, 0.178197, 0.178197, 0.321803] certified True zero [3, 4, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 5 orbit 120
+PROGRESS 0.100 A4 interior system [3, 4, 5]: ok, 1 real u-solutions, 1 seeds (0.4 s)
+PROGRESS 0.200 A4 interior system [3, 4, 6]: empty, 0 real u-solutions, 0 seeds (0.0 s)
+INTERIOR A4 [3, 4, 7]: u = [0.0, 1.6, 0.0] seed [0.321803, 0.178197, 0.178197, 0.321803] certified True zero [3, 4, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 5 orbit 120
+PROGRESS 0.300 A4 interior system [3, 4, 7]: ok, 1 real u-solutions, 1 seeds (0.3 s)
+INTERIOR A4 [3, 5, 6]: u = [0.0, 1.2, 0.0] seed [0.190983, 0.309017, 0.309017, 0.190983] certified True zero [3, 5, 6, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 3 orbit 120
+PROGRESS 0.400 A4 interior system [3, 5, 6]: ok, 1 real u-solutions, 1 seeds (0.3 s)
+PROGRESS 0.500 A4 interior system [3, 5, 7]: positive-dimensional, 0 real u-solutions, 0 seeds (0.0 s) basis ['u2', 'u4']
+INTERIOR A4 [3, 6, 7]: u = [0.0, 1.2, 0.0] seed [0.190983, 0.309017, 0.309017, 0.190983] certified True zero [3, 5, 6, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 3 orbit 120
+PROGRESS 0.600 A4 interior system [3, 6, 7]: ok, 1 real u-solutions, 1 seeds (0.5 s)
+PROGRESS 0.700 A4 interior system [4, 5, 6]: ok, 2 real u-solutions, 0 seeds (14.1 s)
+INTERIOR A4 [4, 5, 7]: u = [0.0, 1.6, 0.0] seed [0.321803, 0.178197, 0.178197, 0.321803] certified True zero [3, 4, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 5 orbit 120
+PROGRESS 0.800 A4 interior system [4, 5, 7]: ok, 1 real u-solutions, 1 seeds (0.5 s)
+PROGRESS 0.900 A4 interior system [4, 6, 7]: ok, 2 real u-solutions, 0 seeds (13.8 s)
+INTERIOR A4 [5, 6, 7]: u = [0.0, 1.2, 0.0] seed [0.190983, 0.309017, 0.309017, 0.190983] certified True zero [3, 5, 6, 7, 9, 11, 13, 15, 17, 19, 21, 23] strength 3 orbit 120
+PROGRESS 1.000 A4 interior system [5, 6, 7]: ok, 3 real u-solutions, 1 seeds (14.0 s)
+PROGRESS 0.250 A4 facet c0=0: 4 certified points with >= 2 conditions, 0 undecided pairs
+FACETPOINT A4 c1=0 seed [0.404856, 0.0, 0.309414, 0.28573] zero [3, 4] strength 4 orbit 60
+PROGRESS 0.500 A4 facet c1=0: 3 certified points with >= 2 conditions, 0 undecided pairs
+FACETPOINT A4 c2=0 seed [0.28573, 0.309414, 0.0, 0.404856] zero [3, 4] strength 4 orbit 60
+PROGRESS 0.750 A4 facet c2=0: 3 certified points with >= 2 conditions, 0 undecided pairs
+PROGRESS 1.000 A4 facet c3=0: 4 certified points with >= 2 conditions, 0 undecided pairs
+EDGE A4 nodes (0, 1) t = 0.618033988749894848 minpoly ['-1', '1', '1'] zero [5, 7]  <<< OVER-DETERMINED {'orbit_size': 20, 'extra_isometries_preserving': [], 'explained': False}
+EDGE A4 nodes (0, 2) t = 1.618033988749894848 minpoly ['-1', '-1', '1'] zero [3, 6]  <<< OVER-DETERMINED {'orbit_size': 30, 'extra_isometries_preserving': [], 'explained': False}
+EDGE A4 nodes (0, 3) t = 1.000000000000000000 minpoly ['-1', '1'] zero [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] (explained by -I)
+EDGE A4 nodes (1, 2) t = 1.000000000000000000 minpoly ['-1', '1'] zero [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23] (explained by -I)
+EDGE A4 nodes (1, 3) t = 0.618033988749894848 minpoly ['-1', '1', '1'] zero [3, 6]  <<< OVER-DETERMINED {'orbit_size': 30, 'extra_isometries_preserving': [], 'explained': False}
+EDGE A4 nodes (2, 3) t = 1.618033988749894848 minpoly ['-1', '-1', '1'] zero [5, 7]  <<< OVER-DETERMINED {'orbit_size': 20, 'extra_isometries_preserving': [], 'explained': False}
+VERTEX A4 node 0 orbit 5 zero (exact) [] strength 2
+VERTEX A4 node 1 orbit 10 zero (exact) [] strength 2
+VERTEX A4 node 2 orbit 10 zero (exact) [] strength 2
+VERTEX A4 node 3 orbit 5 zero (exact) [] strength 2
+A4: done in 74.7 s

@@ -1,0 +1,1000 @@
+{
+ "group": "B4",
+ "KF": 6,
+ "K4": 10,
+ "KEVAL": 24,
+ "dims": {
+  "4": 1,
+  "6": 1,
+  "8": 2,
+  "10": 1,
+  "12": 3,
+  "14": 2,
+  "16": 4,
+  "18": 3,
+  "20": 5,
+  "22": 4,
+  "24": 7
+ },
+ "hierarchy": [
+  {
+   "degrees": [
+    4
+   ],
+   "conditions": 1,
+   "groebner": [
+    "u2 - 4"
+   ],
+   "dim_hint": 2
+  },
+  {
+   "degrees": [
+    4,
+    6
+   ],
+   "conditions": 2,
+   "groebner": [
+    "u2 - 4",
+    "u3 - 5"
+   ],
+   "dim_hint": 1
+  },
+  {
+   "degrees": [
+    4,
+    6,
+    8
+   ],
+   "conditions": 4,
+   "groebner": [
+    "1"
+   ],
+   "dim_hint": -1
+  },
+  {
+   "degrees": [
+    4,
+    6,
+    8,
+    10
+   ],
+   "conditions": 5,
+   "groebner": [
+    "1"
+   ],
+   "dim_hint": -1
+  }
+ ],
+ "curves": [
+  {
+   "degrees": [
+    4,
+    6
+   ],
+   "u_fixed": {
+    "u2": "4",
+    "u3": "5"
+   },
+   "free": "u4",
+   "later": [
+    {
+     "degree": 8,
+     "restriction": "polynomial(s) of degree [1, 1] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 10,
+     "restriction": "polynomial(s) of degree [1] in u4",
+     "real_roots": [
+      "6.666666666666666666666667"
+     ]
+    },
+    {
+     "degree": 12,
+     "restriction": "polynomial(s) of degree [1, 1, 1] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 14,
+     "restriction": "polynomial(s) of degree [1, 1] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 16,
+     "restriction": "polynomial(s) of degree [2, 2, 2, 2] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 18,
+     "restriction": "polynomial(s) of degree [2, 2, 2] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 20,
+     "restriction": "polynomial(s) of degree [2, 2, 2, 2, 2] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 22,
+     "restriction": "polynomial(s) of degree [2, 2, 2, 2] in u4",
+     "real_roots": []
+    },
+    {
+     "degree": 24,
+     "restriction": "polynomial(s) of degree [3, 3, 3, 3, 3, 3, 3] in u4",
+     "real_roots": []
+    }
+   ],
+   "sampled_z_range": [
+    6.595663017874854,
+    6.619480114980043
+   ],
+   "n_samples": 242,
+   "sample_seeds": [
+    [
+     0.40466595704650427,
+     0.20722506421526263,
+     0.00021177646324507698,
+     0.3878972022749881
+    ],
+    [
+     0.40887991760486636,
+     0.18839293176259547,
+     0.03899311869623704,
+     0.3637340319363011
+    ],
+    [
+     0.4160891586139293,
+     0.16399701819130388,
+     0.08349773829447804,
+     0.33641608490028874
+    ],
+    [
+     0.42988196743186147,
+     0.12630090616732592,
+     0.14244344609879045,
+     0.3013736803020222
+    ],
+    [
+     0.4447799748736563,
+     0.09097998139547635,
+     0.1882597031019276,
+     0.2759803406289397
+    ],
+    [
+     0.4643352128757643,
+     0.048471027713501945,
+     0.23163287093297327,
+     0.2555608884777605
+    ],
+    [
+     0.48631994080934077,
+     0.0033755110182131934,
+     0.26305464179080823,
+     0.24724990638163769
+    ]
+   ],
+   "coincidences_exact": [],
+   "points": []
+  }
+ ],
+ "interior_systems": [
+  {
+   "system": [
+    4,
+    8
+   ],
+   "status": "ok",
+   "n_real_u": 1,
+   "points": [
+    {
+     "u": [
+      4.0,
+      4.6,
+      5.6
+     ],
+     "seed_c": [
+      0.32245972808267126,
+      0.35508053053591604,
+      0.32245969597666585,
+      4.540474681408476e-08
+     ],
+     "certified": false
+    }
+   ]
+  },
+  {
+   "system": [
+    6,
+    8
+   ],
+   "status": "ok",
+   "n_real_u": 2,
+   "points": [
+    {
+     "u": [
+      3.183433394115301,
+      2.9585834852882518,
+      2.917166970576503
+     ],
+     "seed_c": [
+      0.20189301051852845,
+      0.30235632172715776,
+      0.11593647066773101,
+      0.3798141970865828
+     ],
+     "certified": true,
+     "zero_degrees": [
+      6,
+      8
+     ],
+     "zero_beyond_system_unproven": [],
+     "orbit_size": 384,
+     "design_strength": 3,
+     "conditions": 3,
+     "stratum_dim": 3,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    },
+    {
+     "u": [
+      5.959423748741842,
+      9.898559371854606,
+      16.797118743709213
+     ],
+     "seed": null
+    }
+   ]
+  },
+  {
+   "system": [
+    8,
+    10
+   ],
+   "status": "ok",
+   "n_real_u": 3,
+   "points": [
+    {
+     "u": [
+      4.0,
+      4.6,
+      5.6
+     ],
+     "seed_c": [
+      0.32245973072246203,
+      0.3550805334427524,
+      0.32245971838022214,
+      1.74545634399065e-08
+     ],
+     "certified": false
+    },
+    {
+     "u": [
+      2.7397348085914737,
+      2.206479878621541,
+      1.948674042957368
+     ],
+     "seed": null
+    },
+    {
+     "u": [
+      6.403122334265669,
+      11.36494869280703,
+      20.265611671328347
+     ],
+     "seed": null
+    }
+   ]
+  },
+  {
+   "system": [
+    4,
+    6,
+    10
+   ],
+   "status": "ok",
+   "n_real_u": 1,
+   "points": [
+    {
+     "u": [
+      4.0,
+      5.0,
+      6.666666666666667
+     ],
+     "seed": null
+    }
+   ]
+  }
+ ],
+ "facets": [
+  {
+   "zero_node": 0,
+   "points": [],
+   "undecided": []
+  },
+  {
+   "zero_node": 1,
+   "points": [
+    {
+     "seed_c": [
+      0.48800510514245543,
+      0.0,
+      0.2647859012074297,
+      0.2472089936501149
+     ],
+     "zero_degrees": [
+      4,
+      6
+     ],
+     "orbit_size": 192,
+     "design_strength": 7,
+     "minpoly_x": [
+      "27",
+      "0",
+      "-1944",
+      "0",
+      "43380",
+      "0",
+      "-337904",
+      "0",
+      "1188084",
+      "0",
+      "-2089152",
+      "0",
+      "1838816",
+      "0",
+      "-648576",
+      "0",
+      "-18864",
+      "0",
+      "-7040",
+      "0",
+      "32064",
+      "0",
+      "-6912",
+      "0",
+      "192"
+     ],
+     "minpoly_y": [
+      "81",
+      "0",
+      "-1944",
+      "0",
+      "15516",
+      "0",
+      "-45296",
+      "0",
+      "17628",
+      "0",
+      "107328",
+      "0",
+      "-142688",
+      "0",
+      "-384",
+      "0",
+      "109296",
+      "0",
+      "-84864",
+      "0",
+      "31680",
+      "0",
+      "-6912",
+      "0",
+      "576"
+     ],
+     "chart": [
+      "x",
+      "0",
+      "y",
+      "1"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    }
+   ],
+   "undecided": []
+  },
+  {
+   "zero_node": 2,
+   "points": [
+    {
+     "seed_c": [
+      0.4046481804899513,
+      0.20732189191052713,
+      0.0,
+      0.3880299275995216
+     ],
+     "zero_degrees": [
+      4,
+      6
+     ],
+     "orbit_size": 192,
+     "design_strength": 7,
+     "minpoly_x": [
+      "-8",
+      "0",
+      "24",
+      "0",
+      "36",
+      "0",
+      "-112",
+      "0",
+      "78",
+      "0",
+      "-18",
+      "0",
+      "1"
+     ],
+     "minpoly_y": [
+      "81",
+      "0",
+      "-1296",
+      "0",
+      "9252",
+      "0",
+      "-41696",
+      "0",
+      "129852",
+      "0",
+      "-272256",
+      "0",
+      "375648",
+      "0",
+      "-338688",
+      "0",
+      "196080",
+      "0",
+      "-69888",
+      "0",
+      "14400",
+      "0",
+      "-1536",
+      "0",
+      "64"
+     ],
+     "chart": [
+      "x",
+      "y",
+      "0",
+      "1"
+     ],
+     "zero_beyond_system_unproven": [],
+     "conditions": 2,
+     "stratum_dim": 2,
+     "overdetermined_raw": false,
+     "overdetermined": false
+    }
+   ],
+   "undecided": []
+  },
+  {
+   "zero_node": 3,
+   "points": [],
+   "undecided": []
+  }
+ ],
+ "edges": [
+  {
+   "nodes": [
+    0,
+    1
+   ],
+   "identically_zero_degrees": [],
+   "points": [
+    {
+     "t": "0.707106781186547524400844362105",
+     "minpoly_t": [
+      "-1",
+      "0",
+      "2"
+     ],
+     "degrees": [
+      6
+     ],
+     "seed_c": [
+      1.0,
+      0.7071067811865476,
+      0.0,
+      0.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 3
+    },
+    {
+     "t": "0.366025403784438646763723170753",
+     "minpoly_t": [
+      "-1",
+      "2",
+      "2"
+     ],
+     "degrees": [
+      10
+     ],
+     "seed_c": [
+      1.0,
+      0.36602540378443865,
+      0.0,
+      0.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 3
+    }
+   ]
+  },
+  {
+   "nodes": [
+    0,
+    2
+   ],
+   "identically_zero_degrees": [],
+   "points": [
+    {
+     "t": "1.00000000000000000000000000000",
+     "minpoly_t": [
+      "-1",
+      "1"
+     ],
+     "degrees": [
+      4,
+      10
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      1.0,
+      0.0
+     ],
+     "conditions": 2,
+     "stratum_dim": 1,
+     "overdetermined_raw": true,
+     "overdetermined": true,
+     "design_strength": 5,
+     "orbit_size": 96,
+     "symmetry": {
+      "orbit_size": 96,
+      "extra_isometries_preserving": [
+       "-I",
+       "refl (1,1,1,1)/2 (F4)"
+      ],
+      "explained": true
+     }
+    },
+    {
+     "t": "0.577350269189625764509148780502",
+     "minpoly_t": [
+      "-1",
+      "0",
+      "3"
+     ],
+     "degrees": [
+      6
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.5773502691896257,
+      0.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 3
+    },
+    {
+     "t": "2.41421356237309504880168872421",
+     "minpoly_t": [
+      "-1",
+      "-2",
+      "1"
+     ],
+     "degrees": [
+      6
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      2.414213562373095,
+      0.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 3
+    },
+    {
+     "t": "0.272253546663379505633171935497",
+     "minpoly_t": [
+      "1",
+      "6",
+      "-11",
+      "-84",
+      "-49",
+      "86",
+      "43"
+     ],
+     "degrees": [
+      10
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.27225354666337953,
+      0.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 3
+    },
+    {
+     "t": "1.03135178662621782098385230500",
+     "minpoly_t": [
+      "1",
+      "6",
+      "-11",
+      "-84",
+      "-49",
+      "86",
+      "43"
+     ],
+     "degrees": [
+      10
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      1.0313517866262178,
+      0.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 3
+    }
+   ]
+  },
+  {
+   "nodes": [
+    0,
+    3
+   ],
+   "identically_zero_degrees": [],
+   "points": [
+    {
+     "t": "0.916856051578766992758508288523",
+     "minpoly_t": [
+      "1",
+      "0",
+      "-8",
+      "0",
+      "12",
+      "0",
+      "-8",
+      "0",
+      "4"
+     ],
+     "degrees": [
+      4
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.0,
+      0.916856051578767
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 5
+    },
+    {
+     "t": "0.350882889467895159882365151365",
+     "minpoly_t": [
+      "1",
+      "0",
+      "-50",
+      "0",
+      "948",
+      "0",
+      "-8712",
+      "0",
+      "41556",
+      "0",
+      "-103272",
+      "0",
+      "129504",
+      "0",
+      "-79776",
+      "0",
+      "20352",
+      "0",
+      "-3200",
+      "0",
+      "256"
+     ],
+     "degrees": [
+      10
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.0,
+      0.35088288946789514
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 3
+    },
+    {
+     "t": "0.454141945674631593208110040709",
+     "minpoly_t": [
+      "1",
+      "0",
+      "-50",
+      "0",
+      "948",
+      "0",
+      "-8712",
+      "0",
+      "41556",
+      "0",
+      "-103272",
+      "0",
+      "129504",
+      "0",
+      "-79776",
+      "0",
+      "20352",
+      "0",
+      "-3200",
+      "0",
+      "256"
+     ],
+     "degrees": [
+      10
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.0,
+      0.4541419456746316
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 3
+    },
+    {
+     "t": "2.40730607092104572788247796026",
+     "minpoly_t": [
+      "1",
+      "0",
+      "-50",
+      "0",
+      "948",
+      "0",
+      "-8712",
+      "0",
+      "41556",
+      "0",
+      "-103272",
+      "0",
+      "129504",
+      "0",
+      "-79776",
+      "0",
+      "20352",
+      "0",
+      "-3200",
+      "0",
+      "256"
+     ],
+     "degrees": [
+      10
+     ],
+     "seed_c": [
+      1.0,
+      0.0,
+      0.0,
+      2.4073060709210456
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 3
+    }
+   ]
+  },
+  {
+   "nodes": [
+    1,
+    2
+   ],
+   "identically_zero_degrees": [],
+   "points": [
+    {
+     "t": "2.73205080756887729352744634151",
+     "minpoly_t": [
+      "-2",
+      "-2",
+      "1"
+     ],
+     "degrees": [
+      6
+     ],
+     "seed_c": [
+      0.0,
+      1.0,
+      2.732050807568877,
+      0.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 3
+    },
+    {
+     "t": "1.13795865802992595943907406935",
+     "minpoly_t": [
+      "-24",
+      "-144",
+      "-268",
+      "-112",
+      "166",
+      "172",
+      "43"
+     ],
+     "degrees": [
+      10
+     ],
+     "seed_c": [
+      0.0,
+      1.0,
+      1.137958658029926,
+      0.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 3
+    }
+   ]
+  },
+  {
+   "nodes": [
+    1,
+    3
+   ],
+   "identically_zero_degrees": [],
+   "points": [
+    {
+     "t": "1.00000000000000000000000000000",
+     "minpoly_t": [
+      "-1",
+      "1"
+     ],
+     "degrees": [
+      6
+     ],
+     "seed_c": [
+      0.0,
+      1.0,
+      0.0,
+      1.0
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 3
+    },
+    {
+     "t": "1.93185165257813657349948639946",
+     "minpoly_t": [
+      "1",
+      "0",
+      "-4",
+      "0",
+      "1"
+     ],
+     "degrees": [
+      10
+     ],
+     "seed_c": [
+      0.0,
+      1.0,
+      0.0,
+      1.9318516525781366
+     ],
+     "conditions": 1,
+     "stratum_dim": 1,
+     "overdetermined_raw": false,
+     "overdetermined": false,
+     "design_strength": 3
+    }
+   ]
+  },
+  {
+   "nodes": [
+    2,
+    3
+   ],
+   "identically_zero_degrees": [],
+   "points": []
+  }
+ ],
+ "vertices": [
+  {
+   "node": 0,
+   "zero_degrees_exact": [],
+   "orbit_size": 8,
+   "design_strength": 3,
+   "conditions": 0,
+   "stratum_dim": 0,
+   "overdetermined_raw": false,
+   "overdetermined": false
+  },
+  {
+   "node": 1,
+   "zero_degrees_exact": [
+    4,
+    10
+   ],
+   "orbit_size": 24,
+   "design_strength": 5,
+   "conditions": 2,
+   "stratum_dim": 0,
+   "overdetermined_raw": true,
+   "overdetermined": true,
+   "symmetry": {
+    "orbit_size": 24,
+    "extra_isometries_preserving": [
+     "-I",
+     "refl (1,1,1,1)/2 (F4)"
+    ],
+    "explained": true
+   }
+  },
+  {
+   "node": 2,
+   "zero_degrees_exact": [],
+   "orbit_size": 32,
+   "design_strength": 3,
+   "conditions": 0,
+   "stratum_dim": 0,
+   "overdetermined_raw": false,
+   "overdetermined": false
+  },
+  {
+   "node": 3,
+   "zero_degrees_exact": [],
+   "orbit_size": 16,
+   "design_strength": 3,
+   "conditions": 0,
+   "stratum_dim": 0,
+   "overdetermined_raw": false,
+   "overdetermined": false
+  }
+ ],
+ "seconds": 144.7
+}

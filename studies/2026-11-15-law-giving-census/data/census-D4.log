@@ -1,0 +1,30 @@
+group D4: order 192, field Q(sqrt2), ambient 4, built in 0.3 s
+D4: 8 families (raw patterns 50), 7 stations; kmax 20; IQ True
+ok   D4 001t: tone test says P(1/t) ~ P(t) (first differing degree None); involution from the diagram: True
+ok   D4 001t: tone 4 critical at the fixed point t = 1 (evenness)
+ok   D4 001t: tone 6 critical at the fixed point t = 1 (evenness)
+ok   D4 001t: tone 8 critical at the fixed point t = 1 (evenness)
+ok   D4 001t: tone 10 critical at the fixed point t = 1 (evenness)
+ok   D4 001t: tone 12 critical at the fixed point t = 1 (evenness)
+ok   D4 001t: tone 14 critical at the fixed point t = 1 (evenness)
+ok   D4 001t: tone 16 critical at the fixed point t = 1 (evenness)
+ok   D4 001t: tone 18 critical at the fixed point t = 1 (evenness)
+ok   D4 001t: tone 20 critical at the fixed point t = 1 (evenness)
+ok   D4 001t: Mahler product critical at t = 1
+PROGRESS 0.125 D4 family 001t (2.3 s)
+ok   D4 010t: tone test says P(1/t) not ~ P(t) (first differing degree 4); involution from the diagram: False
+PROGRESS 0.250 D4 family 010t (2.4 s)
+ok   D4 011t: tone test says P(1/t) not ~ P(t) (first differing degree 4); involution from the diagram: False
+PROGRESS 0.375 D4 family 011t (2.5 s)
+ok   D4 01tt: tone test says P(1/t) not ~ P(t) (first differing degree 4); involution from the diagram: False
+PROGRESS 0.500 D4 family 01tt (0.6 s)
+ok   D4 101t: tone test says P(1/t) not ~ P(t) (first differing degree 4); involution from the diagram: False
+PROGRESS 0.625 D4 family 101t (0.7 s)
+ok   D4 111t: tone test says P(1/t) not ~ P(t) (first differing degree 4); involution from the diagram: False
+PROGRESS 0.750 D4 family 111t (0.7 s)
+ok   D4 11tt: tone test says P(1/t) not ~ P(t) (first differing degree 4); involution from the diagram: False
+PROGRESS 0.875 D4 family 11tt (0.7 s)
+ok   D4 1t11: tone test says P(1/t) not ~ P(t) (first differing degree 6); involution from the diagram: False
+PROGRESS 1.000 D4 family 1t11 (0.6 s)
+D4: 18 checks, 0 FAIL, 4.3 s
+FINAL ok

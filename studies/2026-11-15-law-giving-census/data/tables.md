@@ -1,0 +1,442 @@
+| group | families (raw patterns) | with involution | whole family symmetric | tone zeros | Mahler crit. | IQ crit. | Dehn zeros (3D) | checks / FAIL | s |
+|---|---|---|---|---|---|---|---|---|---|
+| A3 | 4 (12) | 1 | 1 | 89 | 4 | 3 | 01t: 2, 11t: 1, 1t1: 1 | 30 / 0 | 0.8 |
+| B3 | 6 (12) | 0 | 0 | 44 | 6 | 5 | 11t: whole family, 1t0: 1, 1t1: 1, 1tt: 1 | 12 / 0 | 2.0 |
+| H3 | 6 (12) | 0 | 0 | 55 | 5 | 4 | 11t: 1, 1t1: 1, 1tt: 1 | 6 / 0 | 2.3 |
+| A4 | 15 (50) | 4 | 1 | 107 | 15 | 13 | n/c | 106 / 0 | 7.2 |
+| B4 | 25 (50) | 0 | 0 | 68 | 23 | 17 | n/c | 25 / 0 | 5.8 |
+| D4 | 8 (50) | 1 | 6 | 24 | 8 | 6 | n/c | 18 / 0 | 4.3 |
+| F4 | 15 (50) | 4 | 1 | 64 | 14 | 13 | n/c | 62 / 0 | 3.0 |
+| H4 | 25 (50) | 0 | 0 | 35 | 18 | 11 | n/c | 25 / 0 | 806.7 |
+
+| group | family | fixed member | name | involution | tones killed at the fixed point | tones max there | tones min there | Mahler |
+|---|---|---|---|---|---|---|---|---|
+| A3 | x3o3t | x3o3x | cuboctahedron | t -> 1/t ((2, 1, 0)) | 3,7,9,11,13,15,17,19 | 6,8,10,12,14,16,18,20 | 4 | max |
+| A4 | o3x3t3o | o3x3x3o |  | t -> 1/t ((3, 2, 1, 0)) | 3,5,7,9,11,13,15,17,19 | 8,10,12,14,16,18,20 | 4,6 | max |
+| A4 | x3o3o3t | x3o3o3x |  | t -> 1/t ((3, 2, 1, 0)) | 3,5,7,9,11,13,15,17,19 | 6,8,10,12,14,16,18,20 | 4 | max |
+| A4 | x3x3t3t | x3x3x3x |  | t -> 1/t ((3, 2, 1, 0)) | 3,5,7,9,11,13,15,17,19 | 4,6,8,10,14,16,18,20 | 12 | max |
+| A4 | x3t3x3t | x3x3x3x |  | t -> 1/t ((3, 2, 1, 0)) | 3,5,7,9,11,13,15,17,19 | 4,6,10,12,14,16,18,20 | 8 | max |
+| D4 | o3o3x *b3t | o3o3x *b3x |  | t -> 1/t ((0, 1, 3, 2)) | - | 8,14,16 | 4,6,10,12,18,20 | max |
+| F4 | o3x4t3o | o3x4x3o |  | t -> 1/t ((3, 2, 1, 0)) | 6,14 | 16,20 | 8,12,18 | max |
+| F4 | x3o4o3t | x3o4o3x |  | t -> 1/t ((3, 2, 1, 0)) | 6,14 | 12,16 | 8,18,20 | max |
+| F4 | x3x4t3t | x3x4x3x |  | t -> 1/t ((3, 2, 1, 0)) | 6,14 | 8,16,18,20 | 12 | max |
+| F4 | x3t4x3t | x3x4x3x |  | t -> 1/t ((3, 2, 1, 0)) | 6,14 | 8,12,16 | 18,20 | max |
+
+| group | family | coincidence | value | minimal polynomial |
+|---|---|---|---|---|
+| A3 | x3o3t | tone3 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone3 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone3 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone3 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone3 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone3 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone3 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone3 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone3 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone7 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone7 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone7 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone7 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone7 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone7 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone7 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone7 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone9 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone9 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone9 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone9 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone9 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone9 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone9 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone11 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone11 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone11 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone11 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone11 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone11 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone13 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone13 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone13 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone13 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone13 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone15 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone15 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone15 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone15 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone17 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone17 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone17 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone19 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | tone19 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3o3t | mahler and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone3 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone3 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone3 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone3 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone3 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone3 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone3 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone7 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone7 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone7 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone7 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone7 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone7 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone9 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone9 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone9 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone9 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone9 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone11 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone11 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone11 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone11 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone13 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone13 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone13 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone15 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone15 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3x3t | tone17 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A3 | x3t3x | tone4 and tone8 vanish/critical at the same point | 0.61803398874989 | ['-1', '1', '1'] |
+| A3 | x3t3x | tone4 and tone14 vanish/critical at the same point | 0.61803398874989 | ['-1', '1', '1'] |
+| A3 | x3t3x | tone8 and tone14 vanish/critical at the same point | 0.61803398874989 | ['-1', '1', '1'] |
+| B3 | x3t4o | tone4 and tone8 vanish/critical at the same point | 1.61803398874989 | ['-1', '-1', '1'] |
+| B3 | x3t4o | tone4 and tone14 vanish/critical at the same point | 1.61803398874989 | ['-1', '-1', '1'] |
+| B3 | x3t4o | tone8 and tone14 vanish/critical at the same point | 1.61803398874989 | ['-1', '-1', '1'] |
+| A4 | o3o3x3t | tone5 and tone7 vanish/critical at the same point | 1.61803398874989 | ['-1', '-1', '1'] |
+| A4 | o3x3o3t | tone3 and tone6 vanish/critical at the same point | 0.61803398874989 | ['-1', '1', '1'] |
+| A4 | o3x3t3o | tone3 and tone5 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone3 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone3 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone3 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone3 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone3 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone3 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone3 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone3 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone3 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone5 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone5 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone5 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone5 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone5 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone5 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone5 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone5 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone5 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone7 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone7 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone7 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone7 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone7 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone7 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone7 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone7 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone9 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone9 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone9 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone9 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone9 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone9 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone9 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone11 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone11 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone11 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone11 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone11 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone11 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone13 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone13 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone13 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone13 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone13 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone15 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone15 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone15 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone15 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone17 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone17 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone17 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone19 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | tone19 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | o3x3t3o | mahler and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone3 and tone5 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone3 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone3 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone3 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone3 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone3 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone3 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone3 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone3 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone3 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone5 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone5 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone5 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone5 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone5 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone5 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone5 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone5 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone5 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone7 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone7 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone7 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone7 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone7 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone7 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone7 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone7 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone9 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone9 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone9 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone9 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone9 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone9 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone9 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone11 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone11 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone11 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone11 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone11 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone11 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone13 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone13 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone13 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone13 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone13 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone15 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone15 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone15 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone15 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone17 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone17 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone17 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone19 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | tone19 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3o3o3t | mahler and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone3 and tone5 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone3 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone3 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone3 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone3 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone3 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone3 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone3 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone5 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone5 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone5 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone5 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone5 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone5 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone5 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone7 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone7 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone7 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone7 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone7 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone7 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone9 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone9 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone9 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone9 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone9 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone11 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone11 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone11 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone11 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone13 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone13 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone13 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone15 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone15 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3x3t | tone17 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone3 and tone5 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone3 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone3 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone3 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone3 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone3 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone3 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone3 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone5 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone5 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone5 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone5 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone5 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone5 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone5 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone7 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone7 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone7 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone7 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone7 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone7 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone9 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone9 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone9 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone9 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone9 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone11 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone11 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone11 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone11 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone13 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone13 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone13 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone15 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone15 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3x | tone17 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone3 and tone5 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone3 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone3 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone3 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone3 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone3 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone3 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone3 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone3 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone3 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone5 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone5 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone5 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone5 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone5 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone5 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone5 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone5 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone5 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone7 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone7 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone7 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone7 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone7 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone7 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone7 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone7 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone9 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone9 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone9 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone9 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone9 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone9 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone9 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone11 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone11 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone11 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone11 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone11 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone11 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone13 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone13 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone13 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone13 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone13 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone15 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone15 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone15 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone15 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone17 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone17 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone17 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone19 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | tone19 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3x3t3t | mahler and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone3 and tone5 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone3 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone3 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone3 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone3 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone3 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone3 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone3 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone3 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone3 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone5 and tone7 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone5 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone5 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone5 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone5 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone5 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone5 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone5 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone5 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone7 and tone9 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone7 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone7 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone7 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone7 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone7 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone7 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone7 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone9 and tone11 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone9 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone9 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone9 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone9 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone9 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone9 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone11 and tone13 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone11 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone11 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone11 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone11 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone11 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone13 and tone15 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone13 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone13 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone13 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone13 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone15 and tone17 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone15 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone15 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone15 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone17 and tone19 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone17 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone17 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone19 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | tone19 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| A4 | x3t3x3t | mahler and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| B4 | x3o3t4o | tone4 and tone10 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| B4 | x3o3t4o | tone4 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| B4 | x3o3t4o | tone4 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| B4 | x3o3t4o | tone10 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| B4 | x3o3t4o | tone10 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| B4 | x3o3t4o | mahler and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| B4 | x3x3t4o | tone4 and tone10 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| B4 | x3t3t4o | tone4 and tone10 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| D4 | o3o3x *b3t | mahler and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| D4 | x3o3x *b3t | tone4 and tone10 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| D4 | x3o3x *b3t | tone4 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| D4 | x3o3x *b3t | tone4 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| D4 | x3o3x *b3t | tone10 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| D4 | x3o3x *b3t | tone10 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| D4 | x3o3x *b3t | mahler and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| D4 | x3x3x *b3t | tone4 and tone10 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| D4 | x3x3t *b3t | tone4 and tone10 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | o3x4t3o | tone6 and tone14 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | o3x4t3o | tone6 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | o3x4t3o | tone6 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | o3x4t3o | tone14 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | o3x4t3o | tone14 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | o3x4t3o | mahler and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3o4o3t | tone6 and tone14 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3o4o3t | tone6 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3o4o3t | tone6 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3o4o3t | tone14 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3o4o3t | tone14 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3o4o3t | mahler and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3x4x3t | tone6 and tone14 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3x4t3x | tone6 and tone14 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3x4t3t | tone6 and tone14 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3x4t3t | tone6 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3x4t3t | tone6 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3x4t3t | tone14 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3x4t3t | tone14 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3x4t3t | mahler and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3t4x3t | tone6 and tone14 vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3t4x3t | tone6 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3t4x3t | tone6 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3t4x3t | tone14 and mahler vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3t4x3t | tone14 and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |
+| F4 | x3t4x3t | mahler and iq vanish/critical at the same point | 1.00000000000000 | ['-1', '1'] |

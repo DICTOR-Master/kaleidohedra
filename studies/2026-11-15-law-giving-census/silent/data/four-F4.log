@@ -1,0 +1,9 @@
+F4: degrees with invariant harmonics up to 24: 6, 8, 12(dim 2), 14, 16, 18(dim 2), 20(dim 2), 22, 24(dim 4)
+HIER F4 degrees [6] (1 conditions): Groebner basis ['u2 - 120']
+HIER F4 degrees [6, 8] (2 conditions): Groebner basis ['u2 - 120', 'u3 - 336']
+HIER F4 degrees [6, 8, 12] (4 conditions): Groebner basis ['1']
+HIER F4 degrees [6, 8, 12, 14] (5 conditions): Groebner basis ['1']
+CURVE F4 [6, 8]: line {'u2': '120', 'u3': '336'}, 278 sampled seeds, z = u4 in [3156.53, 3157.47]
+CURVEPOINT F4 [6, 8]+12: z = 3294.883721: no real seed found (outside the realizable part of the curve)
+CURVEPOINT F4 [6, 8]+14: z = 3157 seed [0.388224, 0.111776, 0.111776, 0.388224] certified True zero [6, 8, 14, 22] strength 11 orbit 1152  <<< OVER-DETERMINED {'orbit_size': 1152, 'extra_isometries_preserving': ['-I', 'L(3, 2, 1, 0)'], 'explained': True}
+CURVEPOINT F4 [6, 8]+18: z = 3156.8137 seed [0.380538, 0.138756, 0.083433, 0.397274] certified True zero [6, 8] strength 11 orbit 1152
