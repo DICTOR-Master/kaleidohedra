@@ -28,6 +28,6 @@ data/pilot/halves18-all.txt: ALLCHECKS ok
 data/pilot/halves18.txt: ALLCHECKS ok
 data/pilot/halves18-wrong.txt: ALLCHECKS FAIL
 bij runs: 2208, with END FAIL: 0
-negative controls (wrong twists): 36 of 36 break as required; halves WRONG=1 control: 5 FAIL lines (required)
+negative controls (wrong twists): 48 of 48 break as required (4 stackings x 4 flips x 3 wrong twists); halves WRONG=1 control: 5 FAIL lines (required)
 job polybij: all 24 parts ALLCHECKS ok; its FINAL FAIL line came from the script counting 25 ok files (halves20-all.txt of job polyhalves20 was written into the same folder) against 24 parts; the count is fixed in run_bij.sh
 job polyhalves20: FINAL ok

@@ -167,6 +167,7 @@ Files:
 - `scripts/probe16.py`: the l = 16 cancellation.
 - `scripts/rigid_shapes.py`, `scripts/testB.py`: diagnostics. testB shows that a root-side twist fixing the site never applies.
 - `scripts/run_bij.sh`: the job script.
+- `scripts/fig102v6.py`: Figure 4 of #102 v6 (the twist on one 10-polygon); it first re-checks Theorem A on all 150 two-crossing 10-polygons at the site (output `data/fig102v6.txt`, FINAL ok).
 - `data/pilot/`, `data/full/`: raw outputs, each ending ALLCHECKS ok or FAIL.
 - `logs/`: the job logs.
 
