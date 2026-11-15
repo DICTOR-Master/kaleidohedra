@@ -93,7 +93,8 @@ for ch, CH in CHARTS:
     box = [[Fq(a), Fq(b)] for a, b in data['box']]
     assert all(a == 0 for a, b in box), ch
     W = [b for a, b in box]
-    Fk = list(data['F']); used = {l[7] for l in cert['leaves'] if l[6] == 'T'}; Tk = [k for k in data['tests'] if k in used]
+    usedF = {l[7] for l in cert['leaves'] if l[6] == 'F'}; Fk = [k for k in data['F'] if k in usedF]
+    used = {l[7] for l in cert['leaves'] if l[6] == 'T'}; Tk = [k for k in data['tests'] if k in used]
     F = {}; FK = {}
     for k in Fk: F[k], FK[k] = rescale(data['F'][k], W)
     T = {}; TK = {}
@@ -208,6 +209,7 @@ for ch, CH in CHARTS:
     open(os.path.join(cdir, 'All.lean'), 'w').write('\n'.join(s))
     allmods.append(f'{ns}.All')
     manifest['charts'][ch] = {'lean': CH, 'W': [str(w) for w in W], 'F': Fk, 'T': Tk, 'H': Hk, 'files': fl,
+                              'KF': {k: str(FK[k]) for k in Fk}, 'KT': {k: [str(TK[k][0]), str(TK[k][1])] for k in Tk},
                               'total_cost': sum(f['cost'] for f in fl), 'leaves': len(leaves), 'top_nodes': len(top)}
     print(f'{ch}: {len(leaves)} leaves, {len(files)} files, top nodes {len(top)}, cost {sum(f["cost"] for f in fl):.3g}', flush=True)
 if not ONLY: open(os.path.join(OUT, 'All.lean'), 'w').write('\n'.join([f'import {m}' for m in allmods] + ['']))

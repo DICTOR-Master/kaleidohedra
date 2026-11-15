@@ -1,11 +1,13 @@
 **Verdict: FEASIBLE, and the certificate is built and checked.** Kulaichev's yantra is unique by a branch-and-bound interval certificate that uses no elimination identity. It has 64,613 rational boxes in 10 charts and 68,041 polynomial evaluations (18.4 million term evaluations). Every box endpoint has at most 9 digits. Each box is closed by one sign test. One box of half-width 2⁻²² is left over, and the Krawczyk test in exact rational arithmetic proves that it holds exactly one solution, Theorem 10's. Every box was re-proved in exact integer arithmetic. Every box was then re-proved independently in FLINT/Arb ball arithmetic, with a different enclosure, on the second compute machine. Both negative controls fail as they must.
 
-**Lean status (15 Nov 2026, evening): steps 1 and 4 are fully proved, step 3 in part.** The work uses Lean 4 + Mathlib v4.35.0-rc2, the Palomar toolchain, and §7 has the details.
-- **Step 1 (done).** The faster checker is proved sound: the monotone split and the slope form, in natural numbers only, evaluated by the kernel. All 64,613 leaves of all 10 charts pass `decide +kernel` (no `native_decide`), in 1,194 modules. Each chart has a theorem `covered`. This took 6,387 s of module time, which is 22 min on the first compute machine. The aarch64 build of the same kernel, on the second compute machine, accepted a stratified subset of 408 of the 1,194 modules and rejected none.
-- **Step 4 (done).** Exactly one zero of F~ lies in the Krawczyk hole: `kbox_exists_unique`. Uniqueness comes from a contraction, and existence from Banach's theorem.
-- **Step 3 (in part).** The chart coverings of §2 are proved.
-- **Axioms.** For every theorem, `#print axioms` lists only `propext`, `Classical.choice` and `Quot.sound`.
-- **Not yet proved.** Step 2 is open: the stored polynomials and tests are not yet proved to be the construction. Step 3's main box bounds are open too. Without them the top-level theorem is not proved. Its statement compiles (`lean/Challenge/KulaichevYantra.lean`, with `sorry`).
+**Lean status (16 Nov 2026): the whole theorem is proved in Lean.** `YantraCert.Y.kulaichev_unique : ∃! y : Yantra, y.Huet ∧ y.Kulaichev ∧ y.Admissible` and `YantraCert.Y.kulaichev_slope` (w7/b7 lies in an interval of width 2⁻²¹ around 0.75043851602221…) are proved over Lean 4 + Mathlib v4.35.0-rc2, the Palomar toolchain, with no `sorry` and no `native_decide`. `#print axioms` lists only `propext`, `Classical.choice` and `Quot.sound` for both. All four steps of the plan are done (§7):
+- **Step 1, the certificate.** The 64,613 boxes in 10 charts pass `decide +kernel`, through a checker that is proved sound.
+- **Step 2, the derivation.** A verified sparse-polynomial normaliser checks every identity between the geometry and the stored polynomials. It covers 24 construction steps (the divisor lemma, made mechanical), the three equations, the pull-backs, the 36 tests, the chart identities and the rescalings.
+- **Step 3, the coverings and box bounds.** The box bounds and the chart coverings are proved, and the case split over the charts is assembled.
+- **Step 4, the Krawczyk box.** It is proved: contraction for uniqueness, Banach's theorem for existence.
+- **Existence.** The figure rebuilt from the zero of F~ is proved to meet every condition.
+
+The Palomar layout and the local preflight are in §7.
 
 A Lean pilot on the same toolchain measured the cost. The soundness of the box evaluator is proved in Lean. 1000 boxes of the certificate pass `decide +kernel` in 18 s of kernel time (no `native_decide`). The slope-form checker costs about 1 s per box of the largest polynomial. So the whole certificate is roughly 10 to 12 core-hours of kernel time, split into files that check in parallel (about 1.5 h on the 24-core compute machine): it fits a kernel check. What remains for a Palomar entry is listed under **Next steps**.
 
@@ -114,7 +116,7 @@ The pilot used Lean 4 v4.35.0-rc2 with Mathlib, the toolchain of the local Palom
 
 ## 6. Next steps toward a Palomar entry (nothing submitted)
 
-Status 15 Nov evening (§7): step 1 is **DONE**; step 2 is **OPEN** (the statement is written); step 3 is **IN PART** (the chart coverings are proved; the main box bounds are open); step 4 is **DONE**.
+Status 16 Nov (§7): steps 1–4 are **DONE**, and so are the top-level theorem, its existence half and the assembly.
 
 1. **Lean: soundness of the slope form.** This is the identity x^a − m^a = (x − m)Σ x^k m^{a−1−k} (Mathlib `geom_sum₂_mul`) plus the monotone split already proved, about 150 lines. Then chunk the 64,485 leaves into files.
 2. **Lean: the statement and the derivation.**
@@ -196,20 +198,28 @@ Status 15 Nov evening (§7): step 1 is **DONE**; step 2 is **OPEN** (the stateme
    - **(d)** is the incentre: b5 < 1/2 < a1, and the centre is equally far from t5's base and from t1's leg.
    - **Admissibility** is #103 Theorem 1's list.
 
-### What remains for the top-level theorem (steps 2 and 3b, and the assembly)
+### Milestones of 16 Nov 2026: steps 2 and 3b, the assembly and existence (all DONE)
 
-- **2a. Construction to equations.**
-  - From Huet, Kulaichev and admissibility, derive u, t and S and every quantity of s1_system.py, together with the divisor lemma. This gives G = H1 = D = 0.
-  - Pull them back: F~ = (1 + u²)^deg_S · F(u, uτ, S(ρ)) divided by its positive factors.
-  - Write each test as q = c·E·N/D with c, E > 0, so that N·D > 0 (≥ 0 for the closed-disc tests).
-  - The tool needed is a sparse-polynomial normaliser, evaluated by the kernel and proved once, for identities of up to about 2,500 terms. `ring` or `linear_combination` serves for the small ones.
-- **2b. Chart identities.** Each stored chart polynomial is K·F~(map(W y)) divided by a monomial and by positive factors. The same normaliser proves this.
-- **3b. The main box bounds of §1.** At an admissible yantra, 0 < u < 1, 0 < τ < 1 and 0 < ρ < 6.
-- **Assembly.**
-  - Uniqueness is a case split over the charts, using `covered`, the coverings and the identities, plus `kbox_exists_unique`.
-  - Existence takes the zero in Xs and rebuilds the yantra from it. Every test must then be shown strictly positive on Xs. The interval evaluation needed is already in `Krawczyk.lean` (`NP.vq` with the monotone split).
-  - Then write `Solution.lean` (the Challenge word for word, with proofs, in its own namespace), `formalization.yaml` and `comparator.json`.
-  - Palomar format: every `.lean` file must use the module system (`module`, `public import`) and have at most 10,000 lines. The library and the Challenge do not use it yet; the generated modules are well under the line limit (the largest, the main assembly, has 2,379 lines).
+6. **Step 2, a verified polynomial normaliser: DONE.**
+   - **The library.** `ZPoly` is in Lean core. It holds sparse integer polynomials in three variables, kept sorted by merging, with `add`, `mul`, `pow`, `subst`, `substH` and `eqv`. `ZPolySound` proves that every operation commutes with evaluation, and `ZP.eq_of_eqv` turns a kernel-checked `eqv` into an identity of real functions.
+   - **Fractions.** `Frac` handles expressions in named quantities and their fractions (`frac_sound`). `step_inv` is the divisor lemma made mechanical: a new quantity is its stored reduced fraction as soon as two kernel identities hold, and the cancelled factor is shown nonzero automatically. `num_zero` and `zero_of_num` link an expression to its numerator.
+7. **Step 2, the derivation from the geometry: DONE.**
+   - **The construction is forced.** `Geom` and the generated `GeomSteps` show that Huet + Kulaichev + admissibility force the 26 named quantities of s1_system.py, one relation at a time. Each relation is proved by a `linear_combination` certificate that Singular found (`scripts/c6_geom_lean.py`); `dne*` proves each divisor nonzero.
+   - **The equations and tests.** `Unique1` (generated by c9) gives `invs` (every quantity is its stored fraction), `fs_*` (G, H1 and D vanish, via nonvanishing witnesses) and `fm_*` (the stored G~, H~ and D~ vanish at the main-chart point).
+   - **Kernel checks.** 78 + 10 kernel modules ran in jobs ylean-deriv4 and ylean-deriv5 and in ylean-rescale. They check 24 steps, 3 equations, 3 pull-backs, the tests at the main chart, every chart identity and every rescaling. KTest_28 (corner t5) needs over 46 GB and is not used; existence handles it otherwise.
+   - **Times.** The largest module took 7.9 GB (data/lean-deriv-times-*.tsv). The first runs were stopped by the out-of-memory killer, so equal denominators are now kept once and the (1,4,6) fraction goes through two helper steps.
+   - **Second machine.** It accepted 69 of the 78 derivation modules (ylean-deriv-node4 FINAL ok).
+8. **Step 3b, the box bounds: DONE.** `BoxBounds` proves 0 < u < 1, 0 < τ < 1 and 0 < ρ ≤ 6. For ρ ≤ 6 there are two cases: b9 < 1 when u ≤ 5/6, and ρ u⁵ R = w9 (1 + u) with w9 ≤ 1/2 when u > 5/6.
+9. **The assembly and uniqueness: DONE.**
+   - **The charts.** `Unique2` (generated by c10) proves that at chart parameters which map to the figure's point, each chart's `Good` can only hold in a hole. It uses `GlueLemmas.sign_transfer` for the test pairs.
+   - **The case split.** `Unique3` proves `pt_in_X` by the case split over A/B, C1/C2 and N1 → W/Wt±/Wr±, and the main chart.
+   - **The theorems.** `Unique4` proves `unique` and `slope`. `KKBox` identifies the Krawczyk box's polynomials with the stored ones.
+10. **Existence: DONE.** The proof works at `xs`, the zero of F~ in the small Krawczyk box.
+    - **The figure.** The named quantities are their stored fractions there. Their denominators are nonzero by kernel sign checks on the box: 24 modules `KExD*`, plus 35 + 3 test modules `KExT*`, job ylean-exist4.
+    - **Steps, tests, equations.** The construction steps hold by `step_of_inv`. Every admissibility test is positive, from the signs of its pulled-back numerator and denominator; corner t5 uses the bounds 2/5 < b5 < 3/5 and w5 < 1/5. The three equations hold.
+    - **The triple points.** Each of the 12 holds by a Singular certificate (`Exist`, generated by c12).
+    - **The conditions.** `ExistFinal` (generated by c13) proves `ystar_ok`. `Main` proves `kulaichev_unique` and `kulaichev_slope`, and `#print axioms` is clean.
+11. **The Palomar entry.** The local preflight is the next job (scripts/run_palomar.sh, c14_palomar_entry.py, `lean/palomar/`), and its result is recorded below. Nothing is submitted and no repository is created.
 
 ## Credits (at point of use)
 

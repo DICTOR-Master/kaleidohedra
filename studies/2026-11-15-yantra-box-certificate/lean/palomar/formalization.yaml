@@ -1,0 +1,196 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4
+version: "v0.4"
+
+project:
+  name: "Kulaichev's Sri Yantra is unique"
+  description: >-
+    Nine isosceles triangles with a common axis in a circle of diameter 1 that
+    meet Huet's conditions in Chiodo's form (the two great triangles inscribed,
+    seven apexes on bases, the 18 marmas and the 6 corner touches), Kulaichev's
+    four conditions (a)-(d) and the admissibility of DICTO's paper #103
+    (Theorem 1) form exactly one figure, the yantra of #103 Theorem 10, with
+    slope w7/b7 = 0.7504385160222140244... This answers the question Kulaichev
+    asked in 1984. The proof combines a kernel-checked branch-and-bound interval
+    certificate (64,613 boxes in 10 charts, with proved monotone-split and slope
+    enclosures), a Krawczyk box (uniqueness by a contraction, existence by
+    Banach's fixed-point theorem), the forced construction from the geometry,
+    and a verified sparse-polynomial normaliser for the identities between them.
+  authors:
+    - "DICTO"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "DICTO"
+
+classification:
+  arxiv: ["math.MG", "math.HO"]
+  msc2020: ["51M04", "51M15", "65G20", "01A32", "03B35"]
+
+sources:
+  - title: "The DICTO Yantra: Two Exact Solutions (paper #103; Theorem 1 admissibility, Theorem 10 Kulaichev's yantra)"
+    authors:
+      - "DICTO"
+    id: "doi:10.5281/zenodo.24052633"
+    type: "paper"
+    location: "https://doi.org/10.5281/zenodo.24052633 (concept DOI, all versions)"
+    relationship: "formalizes"
+    note: >-
+      The conditions (Theorem 1's admissibility) and the yantra of Theorem 10
+      are formalised; the uniqueness is the new result below.
+    license: "CC-BY-SA-4.0"
+    author_endorsement: "participated"
+  - title: "Uniqueness of Kulaichev's Sri Yantra (DICTO's study 2026-11-15: elimination census and box certificate)"
+    authors:
+      - "DICTO"
+    type: "original-proof"
+    location: "this repository (README.md)"
+    relationship: "formalizes"
+    note: "First proof of uniqueness; the Lean proof follows the box certificate, not the degree-1744 elimination."
+    author_endorsement: "participated"
+  - title: "Sriyantra and its Mathematical Properties"
+    authors:
+      - "A. P. Kulaichev"
+    type: "paper"
+    location: "Indian Journal of History of Science 19.3 (1984) 279-292"
+    relationship: "background"
+    note: "Conditions (a)-(d) and the question of uniqueness (p. 285)."
+  - title: "Sri Yantra Geometry"
+    authors:
+      - "G. Huet"
+    type: "paper"
+    location: "Theoretical Computer Science 281 (2002) 609-628"
+    relationship: "background"
+  - title: "On the construction of the Sri Yantra"
+    authors:
+      - "A. Chiodo"
+    id: "doi:10.5802/crmath.163"
+    type: "paper"
+    location: "Comptes Rendus Mathematique 359 (2021) 377-397"
+    relationship: "background"
+    note: "Huet's conditions in the form used here; the uniqueness question called still open (p. 384)."
+  - title: "On mathematical complexity of Sriyantra"
+    authors:
+      - "V.-V. Pustynski"
+    type: "paper"
+    location: "Indian Journal of History of Science 49.3 (2014) 268-277"
+    relationship: "background"
+    note: "Numerical evidence for uniqueness."
+  - title: "Interval Analysis; Methods and Applications of Interval Analysis"
+    authors:
+      - "R. E. Moore"
+    type: "book"
+    location: "Prentice-Hall 1966; SIAM 1979"
+    relationship: "background"
+    note: "Natural interval extension: the monotone split proved in YantraCert.Sound."
+  - title: "Newton-Algorithmen zur Bestimmung von Nullstellen mit Fehlerschranken"
+    authors:
+      - "R. Krawczyk"
+    type: "paper"
+    location: "Computing 4 (1969) 187-201"
+    relationship: "background"
+    note: "Krawczyk's test (YantraCert.Krawczyk)."
+  - title: "A test for the existence of solutions to nonlinear systems"
+    authors:
+      - "R. E. Moore"
+    type: "paper"
+    location: "SIAM J. Numer. Anal. 14 (1977) 611-615"
+    relationship: "background"
+  - title: "Interval slopes for rational functions and associated centered forms"
+    authors:
+      - "R. Krawczyk"
+      - "A. Neumaier"
+    type: "paper"
+    location: "SIAM J. Numer. Anal. 22 (1985) 604-616"
+    relationship: "background"
+    note: "Slope form (YantraCert.Sound, YantraCert.Krawczyk)."
+  - title: "Interval Methods for Systems of Equations"
+    authors:
+      - "A. Neumaier"
+    type: "book"
+    location: "Cambridge University Press 1990, Thm 5.1.7"
+    relationship: "background"
+  - title: "Sur les operations dans les ensembles abstraits et leur application aux equations integrales"
+    authors:
+      - "S. Banach"
+    type: "paper"
+    location: "Fund. Math. 3 (1922) 133-181"
+    relationship: "background"
+    note: "Fixed-point theorem, used through Mathlib's ContractingWith.fixedPoint."
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Formalised: existence and uniqueness of the figure (kulaichev_unique) and
+    the slope interval of the Krawczyk box (kulaichev_slope). Not formalised:
+    the identification of the slope with the root of #103's degree-348
+    polynomial f348 (the statement gives an isolating interval instead); #103's
+    region count (Proposition 11).
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude Opus (Anthropic)"]
+      framework: "Claude Code (Opus)"
+      tool_setup: >-
+        A Claude Code agent wrote the statements, the proofs, the generators of
+        the certificate and identity modules (Python with Sage/Singular for the
+        polynomial algebra and the linear_combination certificates) and ran the
+        kernel checks with Lake against Mathlib v4.35.0-rc2 on Linux compute
+        machines; decide +kernel only (no native_decide).
+      cost:
+        wall_time: "about two days (15-16 November 2026)"
+        spend_usd: "subscription-based"
+        hardware: "local Linux machines"
+      prompting_notes: >-
+        DICTO set the target (Kulaichev's question for #103) and the order of
+        work (certificate, Lean checker, derivation, coverings, Krawczyk box,
+        statement); the agent followed the study plan with milestone checks.
+  spend_usd: "subscription-based"
+  notes: >-
+    DICTO posed the formalisation and directed the study; the uniqueness
+    certificate, its Lean checker and every proof were written by the agent.
+    Every milestone was checked by a Lake build and by #print axioms (only
+    propext, Classical.choice and Quot.sound). No independent human
+    line-by-line audit of the Lean code has been made.
+
+fidelity:
+  divergences: >-
+    (1) The frame is fixed: diameter 1, depth measured down from the top point,
+    t1-t5 pointing down; so "exactly one" means one 27-tuple (b, w, a). (2)
+    Each condition is stated on the right half (mirror symmetry). (3) A triple
+    point is the vanishing of the 3x3 determinant of the three lines, which
+    also holds for three parallel lines; legs are never horizontal for an
+    admissible figure. (4) Kulaichev (a) is stated as congruence (equal heights
+    and half-widths); (d) as: the centre lies strictly between the base of t5
+    and the apex of t1 and is equally far from that base and from the leg of
+    t1. (5) The yantra is located by an interval for w7/b7 of width 2^-21, not
+    by the minimal polynomial.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none"
+  notes: >-
+    The statement was compared with #103 Theorem 1 and the conditions listed in
+    the study README. The certificate was checked three ways before Lean (exact
+    integers, Arb ball arithmetic on a second machine, a negative control), and
+    the Lean kernel modules were re-checked on a second machine and
+    architecture.
+
+alignment:
+  namespace: "KulaichevYantra"
+  statements:
+    - source: "Kulaichev 1984, p. 285 (the question); #103 Theorem 10 (the yantra)"
+      lean: "KulaichevYantra.kulaichev_unique"
+      module: "Challenge"
+      status: "proved"
+      note: "Existence and uniqueness."
+    - source: "#103 Theorem 10 (u = 0.7504385160222140244...)"
+      lean: "KulaichevYantra.kulaichev_slope"
+      module: "Challenge"
+      status: "proved"
+      note: "An isolating interval of width 2^-21."
