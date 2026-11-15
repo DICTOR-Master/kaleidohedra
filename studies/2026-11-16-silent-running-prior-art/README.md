@@ -83,7 +83,7 @@ New references [32]–[40]: Koca–Koç–Al-Barwani–Al-Farsi 2006; Sobolev 19
 
 ## LEADS
 
-1. Goethals–Seidel 1981: borrow The Geometric Vein from the Internet Archive (item geometricveincox0000unse) with DICTO's own free account, read §5 (H4 orbits); or inter-library copy (CiNii BA03554294). This is the one source that could still hold S5-orbit silences of the 600-cell.
+1. DONE 16 Nov (DICTO borrowed; §5 pp. 212–214 read: full-group orbits of A3, B3, H3, H4 only; no S5-orbits, no twisted classes; does not anticipate). Was: Goethals–Seidel 1981: borrow The Geometric Vein from the Internet Archive (item geometricveincox0000unse) with DICTO's own free account, read §5 (H4 orbits); or inter-library copy (CiNii BA03554294). This is the one source that could still hold S5-orbit silences of the 600-cell.
 2. Coxeter, Regular Polytopes: IA loan (regularpolytopes0000hsmc, 1948 ed.), for the 600-cell coordinates and the A4 ⊂ H4 embedding.
 3. Schur 1911: public domain; fetch from GDZ by hand and read the odd-class rule (Proposition 3 (c)).
 4. Miezaki 2013 and Delsarte–Seidel 1989: author copies to confirm the T-design definitions credited from secondary sources.
