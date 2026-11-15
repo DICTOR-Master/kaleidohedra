@@ -1,4 +1,4 @@
-# Assemble DICTO's Platonic book (working title; the title is DICTO's) from hand-written chapter files and the published papers.
+# Assemble DICTO's Platonic book from hand-written chapter files and the published papers.
 # Plan: papers/plan-book-platonic (11 Nov 2026); DICTO 13 Nov 2026: books first, this is the third.
 # Modelled on book-golden-cycle/ and book-star-cores/, with one difference: a chapter here draws on SEVERAL papers. Each chapter is a
 # hand-written file chapters/chNN.html (opening, bridges, study results, the chapter's claims and open items) holding include lines
