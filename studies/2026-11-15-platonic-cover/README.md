@@ -1,23 +1,28 @@
 # Series front cover for The Platonic Solids (15 Nov 2026) - DICTO · dictospheres.com
 
-DICTO, 15 Nov 2026: a new cover "matching protocols" (the house style of his other book covers). Not yet in the book: the current
-white cover (book-platonic/front.html, cover/cover-skins.png) stays until DICTO chooses.
+Cover by DICTO: "a ring with the Japanese character in the middle and crystal deep translucent colours". Not yet in the book: the
+current white cover (book-platonic/front.html, cover/cover-skins.png) stays until DICTO chooses.
 
-- Image: the five Platonic solids as stones in their element colours, each in its gold setting of #106 Table 1 / Chapter 10
-  Table 10.2, so that stone + setting is exactly the dodecahedron of edge 1: D bare; I in 6 Admiral Caps + 8 caps; C in Euclid's
-  6 roofs; T (edge phi sqrt2) in 4 corner tetrahedra + 6 roofs; O (edge phi^2/sqrt2) in 8 caps. All five at one scale (each fills
-  the same cell). The front half of each setting (pieces whose centre lies in front of the cell's centre) is left off so the stone
-  shows. Layout 2 over 3 in D·I·C·T·O order: the largest equal size that fits (cell box 740 px against about 430 in a row of five).
-- One gold for every setting piece: the series gold deepened a little (204, 152, 44) so the yellow octahedron stays distinct;
-  gold edges dark, stone edges light (as Chapter 10's figures).
-- Lettering as the series: the series line of front.html above the title (as Golden Cycle and Star Cores); subtitle shortened to
-  one line: "Inside the Five, Filling Space & Where They Live" (front.html: "Inside the five, the five filling space, and where
-  the five live", too long for one line at the series size).
-- Exact checks first (scripts/cover.py, 27 X PASS): cell volume (15 + 7 sqrt5)/4; for each jewel stone + setting = cell by exact
-  volume, gold share = Table 10.2, stone edge, every corner inside the cell, piece counts.
+- Image: one gold finger ring, the series' ring (The Five Orders of Space follows Musashi's five rings; this book's ring is Wind),
+  in a three-quarter view. The character 風 (Wind) stands in the middle of the hoop, in the ring's plane, in the same gold.
+  The five Platonic solids sit on the band as crystal stones in D·I·C·T·O order, left to right, evenly 40 degrees apart over the
+  upper arc, each face-down in a small gold collet with one prong per corner of its bottom face. All five at edge 1 (the same
+  edge), in the element colours of the DICTO square: D violet (138, 92, 196), I blue (58, 112, 205), C green (72, 142, 72),
+  T red (205, 62, 40), O yellow (232, 200, 82).
+- Rendering: path-traced in Blender Cycles (CPU, 1024 samples, denoised, 2400 x 2200 picture block). Gold = metallic BSDF
+  reflecting soft-box lights and a studio surround (highlights, reflection gradient, darker gold in shadow). Crystal = refractive
+  glass (IOR 1.45), tinted, with a volume absorption in the element colour, so the colour deepens where the stone is thicker;
+  light reaching a stone through its body comes from a banded light box, so the back facets and edges show inside it; small
+  bevels give bright facet edges. The camera sees only the cover ground (20, 15, 11).
+- Lettering as the series: series line white, title in the series gold (217, 165, 33), subtitle in the champagne of the ring's
+  lit gold (236, 206, 140), and the ◆ DICTO ◆ mark (front and back) in the dodecahedron's violet (138, 92, 196), DICTO's choice.
+- Checks before rendering (X PASS lines): corner, face and edge counts of the five solids; shortest corner distance = 1 exactly
+  (doubles, to 1e-12) and attained by every edge; every mesh edge = 1 (single precision, 1e-6); neighbouring stones clear of each
+  other; 風 inside the hoop.
 
-Files: scripts/cover.py (pieces from studies/2026-11-14-platonic-hybrid golden.py / hybrid.py through
-studies/2026-11-15-filigree/scripts/jewels_lib.py; painting, layout and lettering after studies/2026-11-15-paradigm-cover);
-scripts/ledtext.py (copy, plus the middle dot and the kanji of the series line); platonic-cover-front-series.png (2400 x 3394);
-platonic-dicto-mark-back.png (back mark, as Space-Fillers and Paradigm). Run on the compute host through the job gate
-(pilots platcover-pilot, platcover-pilot2; final platcover, FINAL ok).
+Files: scripts/ring_scene.py (Blender scene and render), scripts/compose.py (cover ground + lettering + back mark),
+scripts/compare.py (refreshes the fifth column of the five-cover comparison sheet), scripts/run.sh (render + compose),
+scripts/ledtext.py (series LED lettering; DSEG14 by keshikan, SIL Open Font Licence, DSEG-LICENSE.txt; the kanji of the series line
+from Noto Sans CJK). 風 in the ring from Noto Serif CJK Bold (SIL Open Font Licence). Outputs: platonic-cover-front-series.png
+(2400 x 3394), platonic-dicto-mark-back.png. Run through the job gate (pilots at 800 x 733; final FINAL ok). The first design
+(five stones in their gold settings of Chapter 10, Table 10.2) is in this folder's git history.
