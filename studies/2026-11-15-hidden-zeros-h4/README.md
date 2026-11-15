@@ -17,6 +17,8 @@ All controls passed: 6 controls and 80 in-run soundness checks, 0 failed.
 | snub 24-cell | 257 | none beyond the Double-Vision class pair | — |
 | E8 roots (8D) | 541 | degree **4**: 120-point unions with stabiliser 576 or 144 (96 + 24 and 72 + 48 split over the two 600-cell shells), one condition each | **OPEN** |
 
+**Update 16 Nov:** all three OPEN rows are now explained (Hopf rings and restricted linkage for the 600-cell, Hopf rings down to one exact 3D identity for the 120-cell, W(E8)-images of shells and bizonal swap pairs for E8): see `studies/2026-11-16-remaining-silences/README.md`.
+
 "One condition" means that the zero imposes a single rational linear condition on the stabiliser-invariant weightings of the polytope. It is a crossing, not a coincidence.
 
 DICTO asked (15 Nov) for every hidden zero to be mapped before anyone else. The parallel study `studies/2026-11-15-fable-golden-a4/REPORT.md` explains the census's golden case. Section 1 of this README was written and committed blind, before that report was read. Computation, proofs and drafting were done with Claude (Anthropic).

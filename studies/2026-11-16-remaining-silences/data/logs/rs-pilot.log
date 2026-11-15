@@ -1,0 +1,69 @@
+PROGRESS 0.02 universes built (30s)
+cases: [('600-cell', 30, 15), ('600-cell', 30, 15), ('600-cell', 60, 60), ('600-cell', 60, 60), ('600-cell', 30, 50), ('600-cell', 30, 50), ('600-cell', 60, 200), ('600-cell', 60, 200), ('120-cell', 240, 120), ('120-cell', 240, 120), ('E8', 120, 576), ('E8', 120, 576), ('E8', 120, 144), ('E8', 120, 144)]
+CHECK ok   case list = 8 + 2 + 4 sets
+== (a) controls: symmetry-group search on whole polytopes
+CHECK ok   600-cell symmetry order 14400 = 14400
+CHECK ok   24-cell symmetry order 1152 = 1152
+PROGRESS 0.10 controls (a) done (30s)
+[600-cell 30 stab 15] (a) |Sym(S)| = 15 (chain [15, 1, 1, 1]); invariant harmonic dims k<=8 (Molien over all elements): [1, 0, 1, 0, 1, 4, 3, 4, 3] -> forced: False
+CHECK ok   600-cell 30: |Sym(S)| equals census symmetry order 15
+CHECK ok   600-cell 30: exact kernel zeros [1, 3, 4, 8] = census zeros
+   (c) dim V = 8; visible dims k=0..20: [1, 0, 2, 0, 1, 4, 2, 4, 1, 4, 3, 4, 4, 4, 3, 4, 3, 4, 3, 4, 4]; degrees j with K_j in K_8: [4, 10, 12, 14, 16, 18, 20]; the other zeros [1, 3, 4] force 8: True
+PROGRESS 0.233 case 1/3 (a),(c) done (30s)
+[120-cell 240 stab 120] (a) |Sym(S)| = 120 (chain [120, 1, 1, 1]); invariant harmonic dims k<=8 (Molien over all elements): [1, 0, 0, 0, 0, 0, 1, 0, 1] -> forced: False
+CHECK ok   120-cell 240: |Sym(S)| equals census symmetry order 120
+CHECK ok   120-cell 240: exact kernel zeros [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 15, 17, 19] = census zeros
+   (c) dim V = 5; visible dims k=0..20: [1, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 5, 0, 3, 0, 3, 0, 3, 0, 5]; degrees j with K_j in K_8: [12, 14, 16, 18, 20]; the other zeros [1, 2, 3, 4, 5, 7, 9, 10, 11, 13, 15, 17, 19] force 8: False
+PROGRESS 0.367 case 2/3 (a),(c) done (30s)
+[E8 120 stab 576] (a) |Sym(S)| = 14400 (chain [120, 12, 5, 2, 1, 1, 1, 1]); invariant harmonic dims k<=4 (Molien over all elements): [1, 0, 1, 0, 1] -> forced: False
+CHECK ok   E8 120: exact kernel zeros [1, 3, 4, 5, 7, 9, 11, 13, 15, 17, 19] = census zeros
+   (c) dim V = 4; visible dims k=0..20: [1, 0, 2, 0, 1, 0, 3, 0, 4, 0, 3, 0, 4, 0, 4, 0, 4, 0, 4, 0, 4]; degrees j with K_j in K_4: [6, 8, 10, 12, 14, 16, 18, 20]; the other zeros [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] force 4: False
+PROGRESS 0.500 case 3/3 (a),(c) done (33s)
+== (b1) Hopf reduction
+[600-cell 30] Hopf (R C5): base silent in l = [2, 4]; S silent in even degrees <= 8: [4, 8]; exact equivalence: True; 6 directions, multiplicities [5, 5, 5, 5, 5, 5]; 6 axes, [5, 5, 5, 5, 5, 5]
+CHECK ok   600-cell 30: Hopf equivalence T_2l(S)=0 <=> tone_l(M)=0, l<=4
+CHECK ok   600-cell 30: Hopf base silent in l=4
+[120-cell 240] Hopf (L C10): base silent in l = [1, 2, 4]; S silent in even degrees <= 8: [2, 4, 8]; exact equivalence: True; 24 directions, multiplicities [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]; 24 axes, [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+CHECK ok   120-cell 240: Hopf equivalence T_2l(S)=0 <=> tone_l(M)=0, l<=4
+CHECK ok   120-cell 240: Hopf base silent in l=4
+   tetrahedral frame: 3 two-fold axes from 6 order-4 elements
+   T-invariant quartic x^4+y^4+z^4-3/5 on the Hopf image (value: multiplicity): {'0-1/10*sqrt5': 120, '0+1/10*sqrt5': 120}; sum 0
+CHECK ok   120-cell 240: quartic sum over Hopf image = 0 exactly
+PROGRESS 0.60 Hopf on cases done (33s)
+== (b1) controls
+CHECK ok   600-cell: Hopf equivalence on 40 random left-C5-invariant sets (silent among them in degree 4 or 8: 0)
+CHECK ok   600-cell: 20 constructed equal-axis-coverage left-C5 sets are all silent in degrees 4 and 8 (cosets per axis: [4, 4, 4, 4, 4, 4])
+CHECK ok   120-cell: Hopf equivalence on 40 random left-C5-invariant sets (silent among them in degree 4 or 8: 0)
+CHECK ok   Hopf ratio T_2l(S)|S|^2 / tone_l(M) constant for ('600-cell', 1): 1 value(s)
+   ratio ('600-cell', 1): ['1/3']
+CHECK ok   Hopf ratio T_2l(S)|S|^2 / tone_l(M) constant for ('600-cell', 3): 1 value(s)
+   ratio ('600-cell', 3): ['1/7']
+CHECK ok   Hopf ratio T_2l(S)|S|^2 / tone_l(M) constant for ('120-cell', 3): 1 value(s)
+   ratio ('120-cell', 3): ['1/7']
+CHECK ok   Hopf ratio T_2l(S)|S|^2 / tone_l(M) constant for ('600-cell', 2): 1 value(s)
+   ratio ('600-cell', 2): ['1/5']
+CHECK ok   Hopf ratio T_2l(S)|S|^2 / tone_l(M) constant for ('600-cell', 4): 1 value(s)
+   ratio ('600-cell', 4): ['1/9']
+CHECK ok   Hopf ratio T_2l(S)|S|^2 / tone_l(M) constant for ('120-cell', 1): 1 value(s)
+   ratio ('120-cell', 1): ['1/3']
+CHECK ok   Hopf ratio T_2l(S)|S|^2 / tone_l(M) constant for ('120-cell', 2): 1 value(s)
+   ratio ('120-cell', 2): ['1/5']
+CHECK ok   Hopf ratio T_2l(S)|S|^2 / tone_l(M) constant for ('120-cell', 4): 1 value(s)
+   ratio ('120-cell', 4): ['1/9']
+CHECK ok   Hopf criterion reproduces the even zeros <= 8 of all 5 explained census sets with a cyclic factor of order >= 5
+PROGRESS 0.75 Hopf controls done (42s)
+== (b2) E8 bizonal swap pairs
+CHECK ok   24-cells inscribed in the 600-cell: 25 = 25
+CHECK ok   every inscribed 24-cell C: C in shell 1 is orthogonal to its copy in shell 2 (3 checked)
+CHECK ok   every inscribed 24-cell C: D_C = C(2) - C(1) silent in degree 4, not in degree 2 (3 checked)
+CHECK ok   negative control: 3 disjoint mismatched pairs C(2) - C'(1): silent in degree 4 in 0
+CHECK ok   both 600-cell shells silent in degree 4 (bizonal root, census RES)
+[E8 120 stab 576] S = shell 1 with 1 inscribed 24-cell(s) swapped to the other shell; identity exact: True
+CHECK ok   E8 120 stab 576: bizonal swap decomposition exact
+CHECK ok   bizonal h = |a|^4 - 3|a|^2|b|^2 + |b|^4 is harmonic (finite differences, float) and h(s=0) = h(s=1) = 1
+PROGRESS 0.90 E8 bizonal done (46s)
+== (c) control: random unions of orbits of the same stabilisers
+CHECK ok   (c) soundness on 10 random unions of stabiliser orbits (a forcing degree zero always brings the open zero)
+PROGRESS 1.00 done: 33/33 checks passed (46s)
+FINAL ok
+[exit 0]

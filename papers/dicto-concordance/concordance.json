@@ -8114,6 +8114,16 @@
    },
    {
     "date": "2026-11-16",
+    "question": "Lean 4 + Mathlib formal proof of Kulaichev's Sri Yantra uniqueness: step 2 (derivation from the geometry), box bounds, case-split assembly, existence, top-level theorem",
+    "method": "studies/2026-11-15-yantra-box-certificate section 7, milestones 6-11: verified sparse-polynomial normaliser ZPoly (Lean core, proved sound, decide +kernel, no native_decide); divisor lemma mechanised (step_inv / step_of_inv); Singular linear_combination certificates for the construction steps and the 12 triple points; BoxBounds (0<u<1, 0<tau<1, 0<rho<=6); case split pt_in_X over the 10 charts; existence at the zero of F~ in the small Krawczyk box via kernel sign checks of pulled-back numerators/denominators (corner t5 by bounds 2/5<b5<3/5, w5<1/5); jobs ylean-deriv4/5, ylean-rescale, ylean-exist4, ylean-deriv-node4 (second machine, 69 of 78 modules)",
+    "status": "PROVED (Lean): kulaichev_unique and kulaichev_slope, no sorry, axioms propext, Classical.choice, Quot.sound",
+    "result": "YantraCert.Y.kulaichev_unique : exists unique y, Huet and Kulaichev and Admissible; kulaichev_slope; #print axioms clean for both; Main builds in 145 s on top of the library; largest kernel module 7.9 GB (derivation), 3.7 GB (existence signs); the corner-t5 pulled-back test (>40 GB) replaced by three small bound checks; Palomar local preflight: job ylean-palomar2 (result in README section 7)",
+    "retry": "never redo any Lean module that built; next only: the Palomar preflight result (and a negative-control Challenge); the entry stays local, nothing submitted",
+    "study": "studies/2026-11-15-yantra-box-certificate",
+    "goes_to": "Palomar entry later (not submitted); #103 uniqueness remark"
+   },
+   {
+    "date": "2026-11-16",
     "question": "Compound-eye scutoids (DICTO 16 Nov: 'scutoids should appear in unevenly curved compound eyes'): prior art, open 3D eye data, a prediction stated before the data, and a pilot on open ODA-3D tables (bee, fruit fly, two hawkmoths)",
     "method": "studies/2026-11-16-compound-eye-scutoids: prediction committed first (2bf1098a); fetch_oda.py (range requests into the 17 GB CC BY 4.0 figshare zip, checksums); eyeswap.py: columns extended along cone axes 0-400 um, local tangent Delaunay neighbour sets at cone layer vs depth, swap share by local anisotropy A; controls C1 even shrink (0 swaps), C2 perfect hex mosaic (first swap at A=1.74 across rows, none to A=10 along rows), C3 axis noise; job eyeswap-pilot FINAL ok (40 s)",
     "status": "PREDICTION STATED + MODEL CALIBRATED (no scutoid observed: open data hold no depth traces)",
@@ -8121,6 +8131,15 @@
     "retry": "never for the model on these four ODA tables; next only with depth traces: BossDB paukner2024 butterfly volumes (0.6 um, public, licence unstated), D. elpenor stack as negative control, 29-ommatidium wasp EM eye",
     "study": "studies/2026-11-16-compound-eye-scutoids",
     "goes_to": "#104 scutoid thread (biology prediction); One tissue, three scales notes"
+   },
+   {
+    "date": "2026-11-16",
+    "method": "rs_main.py + rs_iso.py exact Q(sqrt5)/flint; stabiliser-chain symmetry, restricted kernels, Hopf reduction, bizonal swaps; 78 checks",
+    "question": "Hidden-zeros census residue: why are the OPEN zeros silent (600-cell deg 8 [Cm x Cn] unions, 120-cell deg 8 [C5 x 2T] union, E8 deg 4 stab 576/144)?",
+    "result": "all explained: Hopf rings (C5-invariant sets: T_2l(S)=0 iff Hopf image silent in degree l; 600-cell: deg 4 iff deg 8 iff equal cover of the six 5-fold axes) + restricted linkage K4 in K8; 120-cell reduced to x^4+y^4+z^4 = 3/5 +- sqrt5/10 on two tetrahedral orbits (Galois-conjugate cancellation); E8 sets are W(E8)-images of 600-cell shells (|Sym|=14400) = shell with 1-4 inscribed 24-cells swapped (bizonal h(0)=h(1))",
+    "retry": "only for the leads (derive the 120-cell 3D identity; Hopf law for C3/C6; count icosian structures in E8)",
+    "status": "SETTLED",
+    "study": "2026-11-16-remaining-silences"
    }
   ]
  },
