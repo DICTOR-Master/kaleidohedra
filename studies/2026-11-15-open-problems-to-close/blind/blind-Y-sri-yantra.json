@@ -1,0 +1,118 @@
+[
+ {
+  "candidate": "Y1",
+  "step": "literature_notability",
+  "outcome": "neutral",
+  "summary": "An exact, certified algebraic description of Kulaichev's constrained Sri Yantra (slope of exact degree 348 against his bound of 12544, certified existence, and a certified region count that differs from the traditional 43) addresses questions raised in Kulaichev 1984 and Pustynski 2014 and is plausibly a serious research note for readers in the mathematical history of Indian geometry and in computational/real algebraic geometry. The literature account cites the defining sources precisely and credits Pustynski's earlier observation of the two extra small triangles.",
+  "findings": [],
+  "scores": {"notability": 4, "literature": 4},
+  "trust_level": null,
+  "sources_checked": [
+   "candidate:Y-sri-yantra.md",
+   "https://comptes-rendus.academie-sciences.fr/mathematique/articles/10.5802/crmath.163",
+   "https://comptes-rendus.academie-sciences.fr/mathematique/item/10.5802/crmath.163.pdf",
+   "https://insa.nic.in/writereaddata/UpLoadedFiles/IJHS/Vol49_3_5_Pustynski.pdf",
+   "https://cahc.jainuniversity.ac.in/assets/ijhs/Vol49_3_5_Pustynski.pdf",
+   "https://portal.mardi4nfdi.de/wiki/Item:Q2034739",
+   "https://www.numdam.org/articles/10.5802/crmath.163/",
+   "https://texample.net/sri-yantra/",
+   "https://www.anantaajournal.com/archives/2023/vol9issue6/PartD/9-6-39-715.pdf",
+   "web search: Sri Yantra uniqueness Kulaichev exact algebraic solution polynomial",
+   "web search: Sri Yantra construction algebraic degree resultant computer algebra uniqueness 2022-2024",
+   "web search: Sri Yantra arXiv exact construction concurrency rational triangles",
+   "web search: Chiodo Sri Yantra 2021 cited uniqueness proof certified computation",
+   "web search: Sri Yantra golden ratio exact 43 triangles concurrency"
+  ],
+  "declarations_checked": ["Y1"],
+  "codes_checked": [],
+  "internal_notes": [
+   {"evidence": "Pustynski 2014 p.275", "message": "Pustynski gives 15-figure coordinates and writes that a purely analytical solution of the final two steps is probably impossible; he also notes the near-concurrence near psi producing two additional tiny triangles. Y1 credits both correctly; existence itself was known numerically (Kulaichev 1984, Rao 1998, Pustynski 2014), so the contribution is the exact degree, irreducibility and certification, not existence."},
+   {"evidence": "Chiodo 2021 sec. 1.2.4 and footnote 19", "message": "Chiodo restates Kulaichev's conditions (a)-(d) matching the candidate's (a)-(d) and says the Kulaichev problem is not treated there; no later work found computing the exact algebraic degree."},
+   {"evidence": "Y1 statement", "message": "Degree 348 irreducible does not by itself settle whether the root is expressible in radicals (Galois group not stated); the account does not claim that, so no finding."},
+   {"evidence": "omitted comparisons", "message": "Rao 1998 (IJHS 33) and Kulaichev's addendum are not cited in the candidate file; minor, not material to the account."},
+   {"evidence": "Pustynski PDF", "message": "insa.nic.in fetch returned the binary PDF; text extracted locally and read."}
+  ]
+ },
+ {
+  "candidate": "Y2",
+  "step": "literature_notability",
+  "outcome": "neutral",
+  "summary": "Assessed as if proved: a rigorous proof that Kulaichev's constrained Sri Yantra is unique settles a question posed by Kulaichev in 1984 and described as still open in Chiodo 2021 (which cites Pustynski 2014). This is plausibly paper-worthy for a specialist audience in the mathematical history of Indian geometry and computational real algebraic geometry. The account discloses Pustynski's numerical uniqueness argument, so no priority overstatement is made.",
+  "findings": [],
+  "scores": {"notability": 4, "literature": 4},
+  "trust_level": null,
+  "sources_checked": [
+   "candidate:Y-sri-yantra.md",
+   "https://comptes-rendus.academie-sciences.fr/mathematique/articles/10.5802/crmath.163",
+   "https://comptes-rendus.academie-sciences.fr/mathematique/item/10.5802/crmath.163.pdf",
+   "https://insa.nic.in/writereaddata/UpLoadedFiles/IJHS/Vol49_3_5_Pustynski.pdf",
+   "https://portal.mardi4nfdi.de/wiki/Item:Q2034739",
+   "web search: Sri Yantra uniqueness Kulaichev exact algebraic solution polynomial",
+   "web search: Chiodo Sri Yantra 2021 cited uniqueness proof certified computation"
+  ],
+  "declarations_checked": ["Y2"],
+  "codes_checked": [],
+  "internal_notes": [
+   {"evidence": "Y2 status", "message": "Y2 is a target, not proved; scored as if proved exactly as stated, per instructions."},
+   {"evidence": "Pustynski 2014 p.275", "message": "Pustynski explicitly 'conclude[s] that there is only one set of parameters satisfying the adopted constraints' on analytical-plus-numerical (grid/plot) evidence. Any write-up must present Y2 as the first rigorous proof of a uniqueness already asserted on numerical grounds, not as a new uniqueness claim; the candidate file already frames it this way."},
+   {"evidence": "Chiodo 2021 p.384 (French) and p.387", "message": "French text: 'il se pose la question (toujours ouverte) de l'unicite'; Chiodo cites Pustynski [18], so the open status post-dates Pustynski's numerical argument."},
+   {"evidence": "admissibility definition", "message": "Uniqueness depends on the admissibility conditions (non-degeneracy, apex sides, corners in the closed disc) matching Kulaichev's intended problem; a statement-alignment reviewer should confirm that the admissible set is not narrowed to manufacture uniqueness. Not a literature finding."},
+   {"evidence": "plan", "message": "Planned handling of degenerate loci of the elimination is essential to completeness; outside this step's scope."},
+   {"evidence": "consequence", "message": "Interest is real but confined to a specialist audience; not judged consequential beyond it."}
+  ]
+ },
+ {
+  "candidate": "Y3",
+  "step": "literature_notability",
+  "outcome": "failure",
+  "summary": "The result replaces Kulaichev's congruence condition with the constraint u*v = 2/phi^3 and shows that some admissible configuration then has exactly the traditional 43 regions. Configurations satisfying (i)-(iii) form a four-parameter family (Huet 2002, Chiodo 2021), so finding a member with 43 regions is expected; the golden-ratio constraint has no stated source or mathematical motivation, and no research audience for this particular variant is established.",
+  "findings": [
+   {"severity": "blocking", "evidence": "Y3 statement; Chiodo 2021 sec. 1.2.3 and 2.2.2", "message": "Paper-worthiness and a credible research audience are not established. The concurrency conditions (i)-(iii) leave a four-parameter family of exact Sri Yantras (Huet 2002; Chiodo 2021 constructs all of them with straightedge and compass), and imposing three further conditions plus one chosen equation to reach a configuration with 43 regions is close to routine. The constraint u*v = 2/phi^3 is given no source, traditional basis or mathematical reason, so it reads as chosen to produce the advertised count. What would help: a reason for the constraint independent of the outcome, or a structural theorem (for example a description of the whole region of parameter space giving 43 regions) rather than one tuned instance."},
+   {"severity": "warning", "evidence": "Y3 literature account", "message": "The account does not compare Y3 with the existing exact concurrent models of Huet 2002 and Chiodo 2021, which already give exact Sri Yantras satisfying (i)-(iii), nor does it cite any source for golden-ratio proportions in the Sri Yantra. Golden-ratio claims about this figure circulate mainly in non-scholarly sources, so the account should state plainly that the constraint is the author's choice and say what is new relative to those models."}
+  ],
+  "scores": {"notability": 2, "literature": 3},
+  "trust_level": null,
+  "sources_checked": [
+   "candidate:Y-sri-yantra.md",
+   "https://comptes-rendus.academie-sciences.fr/mathematique/item/10.5802/crmath.163.pdf",
+   "https://portal.mardi4nfdi.de/wiki/Item:Q2034739",
+   "https://www.anantaajournal.com/archives/2023/vol9issue6/PartD/9-6-39-715.pdf",
+   "https://texample.net/sri-yantra/",
+   "web search: Sri Yantra golden ratio exact 43 triangles concurrency"
+  ],
+  "declarations_checked": ["Y3"],
+  "codes_checked": [],
+  "internal_notes": [
+   {"evidence": "Chiodo 2021 p.386-388", "message": "Chiodo: Huet's solutions have four degrees of freedom; up to rescaling and translation the diagram depends on four parameters (base points of t3, t6, t7, t9). Y3 imposes (b),(c),(d) plus one equation: four conditions, so isolated solutions are expected."},
+   {"evidence": "Huet 2002", "message": "Huet's TCS paper was not opened (no free copy found in this search); whether its sample configurations have exactly 43 regions was not verified, so the finding asks for a comparison rather than asserting duplication."},
+   {"evidence": "Mahesh 2023 (anantaajournal)", "message": "Mentions earlier attempts to use the golden ratio for Sri Chakra proportions; no rigorous source found."},
+   {"evidence": "degree 160, 24 two-line crossings", "message": "Exact data are positive evidence of care but do not establish research interest by themselves."}
+  ]
+ },
+ {
+  "candidate": "Y4",
+  "step": "literature_notability",
+  "outcome": "failure",
+  "summary": "Y4 shows that rational choices of four parameters give Sri Yantras satisfying (i)-(iii) with all coordinates in one quadratic field, including a fully rational example. Chiodo 2021 proved that the whole four-parameter family satisfying (i)-(iii) is constructible with straightedge and compass, through a single Apollonius circle-line-point step followed by line constructions. Y4 reads as an algebraic restatement of that construction with a curious rational instance; it is not shown to be paper-worthy on its own, and the account does not relate it to Chiodo's theorem.",
+  "findings": [
+   {"severity": "blocking", "evidence": "Y4 statement; Chiodo 2021 sec. 2 (pp. 387-388)", "message": "Paper-worthiness is not established. Chiodo 2021 constructs every Sri Yantra satisfying (i)-(iii) from four free parameters (base points of t3, t6, t7, t9, equivalent to (u, v, b6, b9) here) by straightedge and compass, the only non-linear step being an Apollonius circle-line-point problem. That all coordinates lie in a single quadratic extension of the parameter field, and that a rational instance exists, follows closely from that construction. The result as stated is a modest corollary or curiosity rather than a research contribution with an identified audience."},
+   {"severity": "material", "evidence": "Y4 literature account", "message": "The candidate cites Chiodo 2021 only for the uniqueness question and omits its main theorem, the straightedge-and-compass constructibility of the full (i)-(iii) family, which is the direct predecessor of Y4 and changes how the result should be presented. The account should state Chiodo's theorem and say precisely what Y4 adds (for example, depth one in the tower of quadratic extensions and an explicit rational point), if anything beyond it."}
+  ],
+  "scores": {"notability": 2, "literature": 2},
+  "trust_level": null,
+  "sources_checked": [
+   "candidate:Y-sri-yantra.md",
+   "https://comptes-rendus.academie-sciences.fr/mathematique/articles/10.5802/crmath.163",
+   "https://comptes-rendus.academie-sciences.fr/mathematique/item/10.5802/crmath.163.pdf",
+   "https://portal.mardi4nfdi.de/wiki/Item:Q2034739",
+   "web search: Sri Yantra arXiv exact construction concurrency rational triangles"
+  ],
+  "declarations_checked": ["Y4"],
+  "codes_checked": [],
+  "internal_notes": [
+   {"evidence": "Chiodo 2021 p.388 footnote 20", "message": "Parameters: base points of t3, t6, t7, t9 on the diameter; with t7 apex at the top and base corners on the circle, a rational slope u gives a rational base depth (line through a rational point of the circle), so (u, v, b6, b9) is a rational reparametrisation of Chiodo's parameters."},
+   {"evidence": "Chiodo 2021 p.387", "message": "Chiodo: 'the constructibility shown here implies that the coordinates of the diagram are contained in the field of constructible numbers'; he does not state the depth of the tower. A one-square-root bound is a genuine but small sharpening."},
+   {"evidence": "rational example (19/24, 2/3, 8/15, 8/9)", "message": "Exact rational arithmetic verification is positive evidence of correctness, not of research interest."}
+  ]
+ }
+]
