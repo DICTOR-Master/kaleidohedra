@@ -1,0 +1,9067 @@
+[
+{
+"t0": 241,
+"t1": 240,
+"type": "clump",
+"cells": [
+"101",
+"16104",
+"16111",
+"380",
+"701",
+"902",
+"Z:08452cd6",
+"Z:51d8e8a6",
+"Z:8a446475"
+],
+"pattern": "born 4 died 0 lost 4 gained 0",
+"net": 4
+},
+{
+"t0": 237,
+"t1": 236,
+"type": "swap",
+"cells": [
+"101",
+"16104",
+"16111",
+"902"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 234,
+"t1": 233,
+"type": "swap",
+"cells": [
+"498",
+"701",
+"919",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 231,
+"t1": 230,
+"type": "clump",
+"cells": [
+"101",
+"131",
+"16104",
+"16111",
+"301",
+"307",
+"380",
+"505",
+"902"
+],
+"pattern": "born 3 died 2 lost 3 gained 0",
+"net": 1
+},
+{
+"t0": 231,
+"t1": 230,
+"type": "relabel",
+"cells": [
+"Z:8a446475",
+"Z:fbcedaf6"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 231,
+"t1": 230,
+"type": "clump",
+"cells": [
+"505",
+"602",
+"60301"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 221,
+"t1": 220,
+"type": "merge",
+"cells": [
+"307"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 221,
+"t1": 220,
+"type": "swap",
+"cells": [
+"498",
+"701",
+"919",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 214,
+"t1": 213,
+"type": "swap",
+"cells": [
+"101",
+"131",
+"301",
+"902"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 210,
+"t1": 209,
+"type": "swap",
+"cells": [
+"101",
+"131",
+"301",
+"902"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 209,
+"t1": 208,
+"type": "swap",
+"cells": [
+"101",
+"131",
+"301",
+"902"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 201,
+"t1": 200,
+"type": "clump",
+"cells": [
+"101",
+"329",
+"701",
+"706",
+"Z:3500bef1",
+"Z:39615fc4",
+"Z:89853f17",
+"Z:d35dfe3d#1",
+"Z:d35dfe3d#2",
+"Z:dc311a1c",
+"Z:ddb413b3",
+"Z:fbcedaf6"
+],
+"pattern": "born 9 died 1 lost 1 gained 0",
+"net": 8
+},
+{
+"t0": 201,
+"t1": 200,
+"type": "clump",
+"cells": [
+"498",
+"786",
+"801"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 201,
+"t1": 200,
+"type": "birth",
+"cells": [
+"319"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 201,
+"t1": 200,
+"type": "clump",
+"cells": [
+"602"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 199,
+"t1": 198,
+"type": "swap",
+"cells": [
+"301",
+"706",
+"Z:d35dfe3d#1",
+"Z:ddb413b3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 196,
+"t1": 195,
+"type": "clump",
+"cells": [
+"101",
+"18100",
+"902",
+"Z:5b7e87cf"
+],
+"pattern": "born 2 died 0 lost 1 gained 0",
+"net": 2
+},
+{
+"t0": 192,
+"t1": 191,
+"type": "swap",
+"cells": [
+"101",
+"131",
+"18100",
+"902"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 191,
+"t1": 190,
+"type": "clump",
+"cells": [
+"101",
+"101#1",
+"101#2",
+"131",
+"701",
+"701#1",
+"701#2",
+"701#3",
+"Z:42abbc5d",
+"Z:487c10c3",
+"Z:ddb413b3"
+],
+"pattern": "born 7 died 4 lost 0 gained 0",
+"net": 3
+},
+{
+"t0": 191,
+"t1": 190,
+"type": "clump",
+"cells": [
+"901",
+"919",
+"926"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 190,
+"t1": 189,
+"type": "clump",
+"cells": [
+"101#2",
+"Z:42abbc5d",
+"Z:487c10c3",
+"Z:b302e214"
+],
+"pattern": "born 1 died 1 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 189,
+"t1": 188,
+"type": "split",
+"cells": [
+"701#4",
+"Z:b302e214",
+"Z:b9b542cc"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 189,
+"t1": 188,
+"type": "swap",
+"cells": [
+"301",
+"380",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 189,
+"t1": 188,
+"type": "swap",
+"cells": [
+"901",
+"902",
+"919",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 188,
+"t1": 187,
+"type": "clump",
+"cells": [
+"701#4",
+"Z:b9b542cc",
+"Z:c5a20d97"
+],
+"pattern": "born 1 died 2 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 187,
+"t1": 186,
+"type": "clump",
+"cells": [
+"101#3",
+"101#4",
+"Z:484438c2",
+"Z:c5a20d97"
+],
+"pattern": "born 3 died 1 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 186,
+"t1": 185,
+"type": "clump",
+"cells": [
+"101#3",
+"101#4",
+"701#2",
+"701#3",
+"Z:484438c2",
+"Z:70e6a9fb"
+],
+"pattern": "born 1 died 3 lost 0 gained 1",
+"net": -2
+},
+{
+"t0": 181,
+"t1": 180,
+"type": "relabel",
+"cells": [
+"505",
+"530"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 181,
+"t1": 180,
+"type": "birth",
+"cells": [
+"Z:8b9858b8"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 181,
+"t1": 180,
+"type": "clump",
+"cells": [
+"101#3",
+"Z:70e6a9fb",
+"Z:806389f9"
+],
+"pattern": "born 1 died 2 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 180,
+"t1": 179,
+"type": "clump",
+"cells": [
+"Z:23eab4c8",
+"Z:42abbc5d",
+"Z:51d8e8a6",
+"Z:62b09b85#1",
+"Z:62b09b85#2",
+"Z:806389f9",
+"Z:e4ac9473"
+],
+"pattern": "born 4 died 3 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 179,
+"t1": 178,
+"type": "clump",
+"cells": [
+"301",
+"Z:89853f17",
+"Z:d35dfe3d",
+"Z:d35dfe3d#1",
+"Z:d35dfe3d#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 179,
+"t1": 178,
+"type": "relabel",
+"cells": [
+"Z:62b09b85#1",
+"Z:d0602d7b#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 179,
+"t1": 178,
+"type": "relabel",
+"cells": [
+"Z:62b09b85#2",
+"Z:d0602d7b#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 178,
+"t1": 177,
+"type": "relabel",
+"cells": [
+"Z:be70aa94#1",
+"Z:d0602d7b#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 178,
+"t1": 177,
+"type": "relabel",
+"cells": [
+"Z:be70aa94#2",
+"Z:d0602d7b#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 178,
+"t1": 177,
+"type": "clump",
+"cells": [
+"301",
+"Z:89853f17",
+"Z:d35dfe3d",
+"Z:d35dfe3d#1",
+"Z:d35dfe3d#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 177,
+"t1": 176,
+"type": "relabel",
+"cells": [
+"Z:6b3e6282#2",
+"Z:be70aa94#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 177,
+"t1": 176,
+"type": "relabel",
+"cells": [
+"Z:6b3e6282#1",
+"Z:be70aa94#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 176,
+"t1": 175,
+"type": "clump",
+"cells": [
+"2035",
+"233",
+"7714",
+"Z:23eab4c8",
+"Z:619c40f2#1",
+"Z:619c40f2#2",
+"Z:632d4ab7",
+"Z:6b3e6282#1",
+"Z:6b3e6282#2",
+"Z:cf5158d8",
+"Z:e4ac9473"
+],
+"pattern": "born 7 died 4 lost 0 gained 0",
+"net": 3
+},
+{
+"t0": 175,
+"t1": 174,
+"type": "clump",
+"cells": [
+"301",
+"Z:89853f17",
+"Z:d35dfe3d",
+"Z:d35dfe3d#1",
+"Z:d35dfe3d#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 174,
+"t1": 173,
+"type": "clump",
+"cells": [
+"301",
+"Z:89853f17",
+"Z:d35dfe3d",
+"Z:d35dfe3d#1",
+"Z:d35dfe3d#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 174,
+"t1": 173,
+"type": "relabel",
+"cells": [
+"Z:097b2978#1",
+"Z:619c40f2#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 174,
+"t1": 173,
+"type": "relabel",
+"cells": [
+"Z:097b2978#2",
+"Z:619c40f2#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 173,
+"t1": 172,
+"type": "clump",
+"cells": [
+"301",
+"Z:89853f17",
+"Z:d35dfe3d",
+"Z:d35dfe3d#1",
+"Z:d35dfe3d#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 173,
+"t1": 172,
+"type": "swap",
+"cells": [
+"786",
+"801",
+"919",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 172,
+"t1": 171,
+"type": "relabel",
+"cells": [
+"Z:01a343ca",
+"Z:8b9858b8"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 172,
+"t1": 171,
+"type": "clump",
+"cells": [
+"301",
+"Z:89853f17",
+"Z:d35dfe3d",
+"Z:d35dfe3d#1",
+"Z:d35dfe3d#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 172,
+"t1": 171,
+"type": "swap",
+"cells": [
+"101#2",
+"701#2",
+"Z:097b2978#1",
+"Z:cf5158d8"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 171,
+"t1": 170,
+"type": "clump",
+"cells": [
+"307",
+"319",
+"334",
+"530",
+"701#1"
+],
+"pattern": "born 2 died 0 lost 2 gained 0",
+"net": 2
+},
+{
+"t0": 171,
+"t1": 170,
+"type": "clump",
+"cells": [
+"101#1",
+"104",
+"16111",
+"2035",
+"902",
+"Z:08452cd6",
+"Z:097b2978#1",
+"Z:097b2978#2",
+"Z:3593e88b",
+"Z:37aa3be2",
+"Z:73d4a01e",
+"Z:994d350d#1",
+"Z:994d350d#2",
+"Z:cf5158d8",
+"Z:eeb37a20#1",
+"Z:eeb37a20#2"
+],
+"pattern": "born 9 died 4 lost 1 gained 1",
+"net": 5
+},
+{
+"t0": 171,
+"t1": 170,
+"type": "clump",
+"cells": [
+"301",
+"Z:89853f17",
+"Z:d35dfe3d",
+"Z:d35dfe3d#1",
+"Z:d35dfe3d#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 170,
+"t1": 169,
+"type": "clump",
+"cells": [
+"301",
+"Z:4b889474",
+"Z:632d4ab7",
+"Z:89853f17",
+"Z:994d350d#1",
+"Z:994d350d#2",
+"Z:d35dfe3d",
+"Z:d35dfe3d#1",
+"Z:d35dfe3d#2"
+],
+"pattern": "born 3 died 4 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 169,
+"t1": 168,
+"type": "relabel",
+"cells": [
+"Z:4b889474",
+"Z:f8522a5e"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 168,
+"t1": 167,
+"type": "relabel",
+"cells": [
+"Z:3b564238",
+"Z:f8522a5e"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 167,
+"t1": 166,
+"type": "clump",
+"cells": [
+"Z:25cbd911",
+"Z:3593e88b",
+"Z:3b564238",
+"Z:949234ea"
+],
+"pattern": "born 2 died 2 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 166,
+"t1": 165,
+"type": "split",
+"cells": [
+"802"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 166,
+"t1": 165,
+"type": "relabel",
+"cells": [
+"Z:25cbd911",
+"Z:fdc8fdf4"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 166,
+"t1": 165,
+"type": "swap",
+"cells": [
+"380",
+"530",
+"786",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 165,
+"t1": 164,
+"type": "clump",
+"cells": [
+"301",
+"701#1",
+"Z:1fff4da2",
+"Z:89853f17",
+"Z:949234ea",
+"Z:d35dfe3d",
+"Z:d35dfe3d#1",
+"Z:d35dfe3d#2",
+"Z:eeb37a20#2",
+"Z:fdc8fdf4"
+],
+"pattern": "born 2 died 3 lost 4 gained 0",
+"net": -1
+},
+{
+"t0": 164,
+"t1": 163,
+"type": "clump",
+"cells": [
+"101#2",
+"233",
+"301",
+"701#2",
+"Z:1fff4da2",
+"Z:32cc1899#1",
+"Z:32cc1899#2",
+"Z:89853f17",
+"Z:949234ea",
+"Z:d35dfe3d",
+"Z:d35dfe3d#1",
+"Z:d35dfe3d#2",
+"Z:d8074495",
+"Z:eeb37a20#1"
+],
+"pattern": "born 5 died 3 lost 0 gained 3",
+"net": 2
+},
+{
+"t0": 164,
+"t1": 163,
+"type": "relabel",
+"cells": [
+"Z:01a343ca",
+"Z:d05cb66f"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 163,
+"t1": 162,
+"type": "clump",
+"cells": [
+"701#2",
+"Z:32cc1899#1",
+"Z:32cc1899#2",
+"Z:37aa3be2",
+"Z:5160b304#1",
+"Z:5160b304#2",
+"Z:58c14181#1",
+"Z:58c14181#2",
+"Z:8c31521e",
+"Z:d8074495",
+"Z:eeb37a20#1"
+],
+"pattern": "born 5 died 4 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 162,
+"t1": 161,
+"type": "clump",
+"cells": [
+"701#1",
+"Z:5160b304#1",
+"Z:58c14181",
+"Z:58c14181#1",
+"Z:58c14181#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 162,
+"t1": 161,
+"type": "clump",
+"cells": [
+"233",
+"701#2",
+"Z:5160b304#1",
+"Z:5160b304#2",
+"Z:eeb37a20#1",
+"Z:eeb37a20#2"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 161,
+"t1": 160,
+"type": "clump",
+"cells": [
+"18100",
+"301",
+"41200",
+"43200",
+"902"
+],
+"pattern": "born 2 died 0 lost 2 gained 0",
+"net": 2
+},
+{
+"t0": 161,
+"t1": 160,
+"type": "clump",
+"cells": [
+"380",
+"501#1",
+"501#2",
+"501#3",
+"530",
+"605",
+"701#1",
+"701#3",
+"701#4",
+"786",
+"801",
+"Z:290c25ad",
+"Z:490f6b8d",
+"Z:603357d3",
+"Z:c0a2c463",
+"Z:cd942a76",
+"Z:d05cb66f"
+],
+"pattern": "born 11 died 2 lost 3 gained 0",
+"net": 9
+},
+{
+"t0": 161,
+"t1": 160,
+"type": "swap",
+"cells": [
+"233",
+"701#2",
+"7714",
+"Z:eeb37a20#2"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 161,
+"t1": 160,
+"type": "swap",
+"cells": [
+"233",
+"701#2",
+"Z:5160b304#2",
+"Z:eeb37a20#1"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 160,
+"t1": 159,
+"type": "clump",
+"cells": [
+"736",
+"801",
+"801#1",
+"801#2",
+"Z:290c25ad",
+"Z:3c2c8805",
+"Z:83cfd68a",
+"Z:c0a2c463"
+],
+"pattern": "born 5 died 3 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 159,
+"t1": 158,
+"type": "clump",
+"cells": [
+"501#4",
+"736#2",
+"Z:83cfd68a",
+"Z:eb50e6e5"
+],
+"pattern": "born 3 died 1 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 159,
+"t1": 158,
+"type": "relabel",
+"cells": [
+"736",
+"736#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 158,
+"t1": 157,
+"type": "clump",
+"cells": [
+"501#4",
+"605",
+"736#1",
+"736#2",
+"736#3",
+"801#2",
+"Z:036089fd",
+"Z:3c2c8805",
+"Z:655eb8a6",
+"Z:c7508c1f",
+"Z:cd942a76",
+"Z:eb50e6e5"
+],
+"pattern": "born 4 died 3 lost 3 gained 1",
+"net": 1
+},
+{
+"t0": 158,
+"t1": 157,
+"type": "clump",
+"cells": [
+"701#2",
+"Z:5160b304#1",
+"Z:5160b304#2",
+"Z:79a12b2b#1",
+"Z:79a12b2b#2",
+"Z:985ffb75",
+"Z:eeb37a20#1"
+],
+"pattern": "born 3 died 2 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 158,
+"t1": 157,
+"type": "clump",
+"cells": [
+"501#2",
+"501#3",
+"701#3",
+"701#4",
+"Z:cd942a76"
+],
+"pattern": "born 0 died 1 lost 1 gained 2",
+"net": -1
+},
+{
+"t0": 157,
+"t1": 156,
+"type": "clump",
+"cells": [
+"501#2",
+"501#3",
+"605",
+"736#1",
+"736#3",
+"736#4",
+"801#3",
+"Z:036089fd",
+"Z:655eb8a6",
+"Z:c7508c1f",
+"Z:cd942a76",
+"Z:d5e46dc3",
+"Z:ef11b632#1",
+"Z:ef11b632#2"
+],
+"pattern": "born 6 died 3 lost 3 gained 2",
+"net": 3
+},
+{
+"t0": 157,
+"t1": 156,
+"type": "swap",
+"cells": [
+"101#2",
+"Z:58c14181",
+"Z:8c31521e",
+"Z:985ffb75"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 156,
+"t1": 155,
+"type": "split",
+"cells": [
+"Z:4f1e8ef0",
+"Z:cd942a76",
+"Z:dc788eac"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 156,
+"t1": 155,
+"type": "clump",
+"cells": [
+"501#3",
+"736#1",
+"736#4",
+"801#3",
+"Z:21f54df0",
+"Z:b656fb76",
+"Z:d5e46dc3",
+"Z:d73571a4",
+"Z:ef11b632#1"
+],
+"pattern": "born 3 died 4 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 156,
+"t1": 155,
+"type": "clump",
+"cells": [
+"528",
+"529"
+],
+"pattern": "born 2 died 0 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 156,
+"t1": 155,
+"type": "split",
+"cells": [
+"780"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 156,
+"t1": 155,
+"type": "clump",
+"cells": [
+"301",
+"530",
+"701#1",
+"Z:58c14181",
+"Z:93a47355"
+],
+"pattern": "born 1 died 2 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 156,
+"t1": 155,
+"type": "swap",
+"cells": [
+"701#2",
+"7714",
+"Z:79a12b2b#1",
+"Z:eeb37a20#2"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 155,
+"t1": 154,
+"type": "clump",
+"cells": [
+"736#1",
+"736#3",
+"801#1",
+"801#3",
+"801#4",
+"Z:1d3810f4",
+"Z:21f54df0",
+"Z:b627d9e6",
+"Z:b656fb76",
+"Z:d73571a4"
+],
+"pattern": "born 4 died 2 lost 0 gained 2",
+"net": 2
+},
+{
+"t0": 155,
+"t1": 154,
+"type": "clump",
+"cells": [
+"101",
+"101#1",
+"101#2",
+"233",
+"301",
+"530",
+"701#1",
+"701#3",
+"701#4",
+"706",
+"7714",
+"802",
+"802#1",
+"802#2",
+"802#3",
+"Z:4f1e8ef0",
+"Z:79a12b2b#1",
+"Z:79a12b2b#2",
+"Z:8672fee5#1",
+"Z:8672fee5#2",
+"Z:8c31521e",
+"Z:93a47355",
+"Z:985ffb75",
+"Z:d35dfe3d#1",
+"Z:dc788eac",
+"Z:eeb37a20",
+"Z:eeb37a20#1",
+"Z:eeb37a20#2",
+"Z:fe6ac02b"
+],
+"pattern": "born 9 died 16 lost 1 gained 1",
+"net": -7
+},
+{
+"t0": 154,
+"t1": 153,
+"type": "clump",
+"cells": [
+"501",
+"501#1",
+"501#2",
+"736#1",
+"736#2",
+"736#3",
+"801",
+"801#1",
+"801#2",
+"801#3",
+"801#4",
+"Z:1d3810f4",
+"Z:b627d9e6",
+"Z:b656fb76",
+"Z:ef11b632#1",
+"Z:ef11b632#2"
+],
+"pattern": "born 2 died 14 lost 0 gained 0",
+"net": -12
+},
+{
+"t0": 153,
+"t1": 152,
+"type": "relabel",
+"cells": [
+"534",
+"605"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 153,
+"t1": 152,
+"type": "relabel",
+"cells": [
+"Z:490f6b8d",
+"Z:bb092457"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 153,
+"t1": 152,
+"type": "merge",
+"cells": [
+"101",
+"104",
+"2035"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 152,
+"t1": 151,
+"type": "clump",
+"cells": [
+"101",
+"301",
+"501",
+"529",
+"530",
+"534",
+"701",
+"701#1",
+"701#2",
+"802",
+"802#1",
+"802#2",
+"802#3",
+"Z:040e5122",
+"Z:6cbf908f",
+"Z:8672fee5#1",
+"Z:fe6ac02b"
+],
+"pattern": "born 4 died 7 lost 2 gained 1",
+"net": -3
+},
+{
+"t0": 151,
+"t1": 150,
+"type": "clump",
+"cells": [
+"2035",
+"205",
+"28900",
+"501#1",
+"501#2",
+"701",
+"802",
+"802#1",
+"802#2",
+"Z:040e5122",
+"Z:0f9cc290",
+"Z:101f0811",
+"Z:1c4b0a3a#1",
+"Z:1c4b0a3a#2",
+"Z:36b98a80",
+"Z:3aedd43d",
+"Z:40cd02df",
+"Z:5473cbe6",
+"Z:68976cd6",
+"Z:6cbf908f",
+"Z:73d4a01e",
+"Z:8672fee5#1",
+"Z:8672fee5#2",
+"Z:c33d64e3",
+"Z:e554eb44",
+"Z:eeb37a20",
+"Z:f7f42a74"
+],
+"pattern": "born 18 died 7 lost 0 gained 1",
+"net": 11
+},
+{
+"t0": 150,
+"t1": 149,
+"type": "relabel",
+"cells": [
+"501#2",
+"802#4"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 150,
+"t1": 149,
+"type": "clump",
+"cells": [
+"701",
+"802#2",
+"802#3",
+"Z:0f9cc290",
+"Z:1c4b0a3a#1",
+"Z:68976cd6"
+],
+"pattern": "born 1 died 0 lost 4 gained 0",
+"net": 1
+},
+{
+"t0": 150,
+"t1": 149,
+"type": "merge",
+"cells": [
+"501#1"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 150,
+"t1": 149,
+"type": "swap",
+"cells": [
+"534",
+"780",
+"801",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 150,
+"t1": 149,
+"type": "clump",
+"cells": [
+"534",
+"801",
+"802#2"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 149,
+"t1": 148,
+"type": "clump",
+"cells": [
+"701",
+"802#4",
+"Z:1c4b0a3a#2",
+"Z:68976cd6",
+"Z:f7f42a74"
+],
+"pattern": "born 0 died 1 lost 3 gained 0",
+"net": -1
+},
+{
+"t0": 149,
+"t1": 148,
+"type": "swap",
+"cells": [
+"534",
+"780",
+"801",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 148,
+"t1": 147,
+"type": "clump",
+"cells": [
+"701",
+"801",
+"802",
+"802#1",
+"802#2",
+"802#3",
+"Z:1c4b0a3a#1",
+"Z:1c4b0a3a#2",
+"Z:5d907b22",
+"Z:68976cd6",
+"Z:925d36dd",
+"Z:bb092457",
+"Z:dbc7c22a"
+],
+"pattern": "born 4 died 6 lost 0 gained 2",
+"net": -2
+},
+{
+"t0": 148,
+"t1": 147,
+"type": "swap",
+"cells": [
+"534",
+"780",
+"801",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 147,
+"t1": 146,
+"type": "clump",
+"cells": [
+"701",
+"Z:3aedd43d",
+"Z:5d907b22",
+"Z:68976cd6",
+"Z:93cc7611"
+],
+"pattern": "born 1 died 1 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 147,
+"t1": 146,
+"type": "swap",
+"cells": [
+"301",
+"528",
+"529",
+"530"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 147,
+"t1": 146,
+"type": "swap",
+"cells": [
+"41200",
+"43200",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 146,
+"t1": 145,
+"type": "clump",
+"cells": [
+"101",
+"201",
+"2035",
+"205",
+"2060",
+"301",
+"307",
+"329",
+"334",
+"530",
+"534",
+"701",
+"706",
+"714",
+"715",
+"902",
+"919",
+"Z:36b98a80",
+"Z:404cec20",
+"Z:449f62f5",
+"Z:4fe749b8",
+"Z:54f0f41b#1",
+"Z:54f0f41b#2",
+"Z:653498bf",
+"Z:68976cd6",
+"Z:73bba3de",
+"Z:ac25ff90",
+"Z:de9933d2",
+"Z:e351518e"
+],
+"pattern": "born 14 died 2 lost 12 gained 0",
+"net": 12
+},
+{
+"t0": 146,
+"t1": 145,
+"type": "clump",
+"cells": [
+"Z:069ba064",
+"Z:194b3d9d"
+],
+"pattern": "born 2 died 0 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 146,
+"t1": 145,
+"type": "split",
+"cells": [
+"380",
+"534",
+"787"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 145,
+"t1": 144,
+"type": "clump",
+"cells": [
+"301",
+"304",
+"714",
+"Z:1ab15a7d",
+"Z:8b269373#1",
+"Z:d35dfe3d#1",
+"Z:dc311a1c"
+],
+"pattern": "born 3 died 2 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 145,
+"t1": 144,
+"type": "clump",
+"cells": [
+"714",
+"Z:54f0f41b",
+"Z:54f0f41b#1",
+"Z:54f0f41b#2",
+"Z:73bba3de"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 145,
+"t1": 144,
+"type": "relabel",
+"cells": [
+"Z:8b269373#2",
+"Z:d35dfe3d#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 145,
+"t1": 144,
+"type": "clump",
+"cells": [
+"Z:68976cd6",
+"Z:c33d64e3",
+"Z:dbc7c22a"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 145,
+"t1": 144,
+"type": "clump",
+"cells": [
+"Z:68976cd6",
+"Z:de9933d2",
+"Z:f7f42a74"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 145,
+"t1": 144,
+"type": "clump",
+"cells": [
+"Z:404cec20",
+"Z:4fe749b8",
+"Z:ac25ff90"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 144,
+"t1": 143,
+"type": "clump",
+"cells": [
+"714",
+"Z:54f0f41b",
+"Z:54f0f41b#1",
+"Z:54f0f41b#2",
+"Z:73bba3de"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 144,
+"t1": 143,
+"type": "clump",
+"cells": [
+"701",
+"802",
+"Z:6060d4c0",
+"Z:68976cd6",
+"Z:925d36dd",
+"Z:dbc7c22a"
+],
+"pattern": "born 1 died 1 lost 2 gained 1",
+"net": 0
+},
+{
+"t0": 144,
+"t1": 143,
+"type": "clump",
+"cells": [
+"101",
+"16111",
+"201",
+"2060",
+"902",
+"919"
+],
+"pattern": "born 0 died 1 lost 2 gained 1",
+"net": -1
+},
+{
+"t0": 143,
+"t1": 142,
+"type": "clump",
+"cells": [
+"18100",
+"18150",
+"301",
+"41200",
+"42150",
+"926",
+"Z:236365c4",
+"Z:5b7e87cf"
+],
+"pattern": "born 3 died 3 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 142,
+"t1": 141,
+"type": "clump",
+"cells": [
+"18150",
+"42150",
+"Z:236365c4",
+"Z:653de1ed"
+],
+"pattern": "born 1 died 1 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 142,
+"t1": 141,
+"type": "clump",
+"cells": [
+"714",
+"Z:54f0f41b",
+"Z:54f0f41b#1",
+"Z:54f0f41b#2",
+"Z:73bba3de"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 141,
+"t1": 140,
+"type": "clump",
+"cells": [
+"714",
+"Z:54f0f41b",
+"Z:54f0f41b#1",
+"Z:54f0f41b#2",
+"Z:73bba3de",
+"Z:e351518e"
+],
+"pattern": "born 2 died 2 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 141,
+"t1": 140,
+"type": "relabel",
+"cells": [
+"Z:1f39f061",
+"Z:6060d4c0"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 141,
+"t1": 140,
+"type": "clump",
+"cells": [
+"301",
+"409",
+"43200",
+"926",
+"Z:653de1ed",
+"Z:dd42abd4"
+],
+"pattern": "born 2 died 2 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 141,
+"t1": 140,
+"type": "clump",
+"cells": [
+"Z:28290c64",
+"Z:3500bef1",
+"Z:39615fc4",
+"Z:89853f17",
+"Z:8b269373#1",
+"Z:8b269373#2"
+],
+"pattern": "born 1 died 5 lost 0 gained 0",
+"net": -4
+},
+{
+"t0": 141,
+"t1": 140,
+"type": "swap",
+"cells": [
+"529",
+"530",
+"534",
+"715"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 141,
+"t1": 140,
+"type": "clump",
+"cells": [
+"Z:68976cd6",
+"Z:de9933d2",
+"Z:f7f42a74"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 140,
+"t1": 139,
+"type": "birth",
+"cells": [
+"701#2"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 140,
+"t1": 139,
+"type": "clump",
+"cells": [
+"714",
+"Z:449f62f5",
+"Z:54f0f41b",
+"Z:54f0f41b#1",
+"Z:54f0f41b#2",
+"Z:73bba3de"
+],
+"pattern": "born 1 died 2 lost 1 gained 1",
+"net": -1
+},
+{
+"t0": 140,
+"t1": 139,
+"type": "clump",
+"cells": [
+"701",
+"701#1",
+"Z:dbc7c22a"
+],
+"pattern": "born 1 died 2 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 140,
+"t1": 139,
+"type": "clump",
+"cells": [
+"101",
+"101#1",
+"101#2",
+"Z:2f40714a",
+"Z:dd42abd4"
+],
+"pattern": "born 3 died 2 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 139,
+"t1": 138,
+"type": "relabel",
+"cells": [
+"Z:1f39f061",
+"Z:488823ba"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 139,
+"t1": 138,
+"type": "clump",
+"cells": [
+"201",
+"201#1",
+"201#2",
+"Z:68976cd6",
+"Z:de9933d2",
+"Z:f7f42a74"
+],
+"pattern": "born 2 died 1 lost 2 gained 0",
+"net": 1
+},
+{
+"t0": 139,
+"t1": 138,
+"type": "clump",
+"cells": [
+"701#1",
+"Z:68976cd6",
+"Z:93cc7611"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 139,
+"t1": 138,
+"type": "swap",
+"cells": [
+"Z:449f62f5",
+"Z:54f0f41b",
+"Z:73bba3de",
+"Z:de9933d2"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 139,
+"t1": 138,
+"type": "swap",
+"cells": [
+"301",
+"380",
+"409",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 138,
+"t1": 137,
+"type": "clump",
+"cells": [
+"Z:68976cd6",
+"Z:de9933d2",
+"Z:f7f42a74"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 137,
+"t1": 136,
+"type": "clump",
+"cells": [
+"Z:34a1a0d2",
+"Z:488823ba",
+"Z:603357d3",
+"Z:beff74b7",
+"Z:cab1f09c#1",
+"Z:cab1f09c#2"
+],
+"pattern": "born 4 died 2 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 137,
+"t1": 136,
+"type": "clump",
+"cells": [
+"Z:68976cd6",
+"Z:de9933d2",
+"Z:f7f42a74"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 136,
+"t1": 135,
+"type": "clump",
+"cells": [
+"2035",
+"2060",
+"2061"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 136,
+"t1": 135,
+"type": "swap",
+"cells": [
+"28900",
+"701#1",
+"802",
+"Z:68976cd6"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 136,
+"t1": 135,
+"type": "swap",
+"cells": [
+"201#2",
+"701#2",
+"Z:449f62f5",
+"Z:de9933d2"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 135,
+"t1": 134,
+"type": "relabel",
+"cells": [
+"534",
+"53401"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 135,
+"t1": 134,
+"type": "swap",
+"cells": [
+"201#2",
+"701#2",
+"Z:449f62f5",
+"Z:de9933d2"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 135,
+"t1": 134,
+"type": "clump",
+"cells": [
+"Z:36b98a80",
+"Z:de9933d2"
+],
+"pattern": "born 0 died 0 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 135,
+"t1": 134,
+"type": "swap",
+"cells": [
+"28900",
+"701#1",
+"802",
+"Z:68976cd6"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 135,
+"t1": 134,
+"type": "clump",
+"cells": [
+"Z:de9933d2",
+"Z:f7f42a74"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 134,
+"t1": 133,
+"type": "clump",
+"cells": [
+"801",
+"Z:34a1a0d2",
+"Z:cab1f09c",
+"Z:cab1f09c#1",
+"Z:cab1f09c#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 134,
+"t1": 133,
+"type": "clump",
+"cells": [
+"Z:de9933d2",
+"Z:f7f42a74"
+],
+"pattern": "born 0 died 0 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 134,
+"t1": 133,
+"type": "clump",
+"cells": [
+"715",
+"Z:404cec20",
+"Z:653498bf"
+],
+"pattern": "born 0 died 0 lost 3 gained 0",
+"net": 0
+},
+{
+"t0": 134,
+"t1": 133,
+"type": "clump",
+"cells": [
+"Z:36b98a80",
+"Z:de9933d2"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 133,
+"t1": 132,
+"type": "clump",
+"cells": [
+"103",
+"Z:167a7ed8",
+"Z:2f40714a"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 133,
+"t1": 132,
+"type": "clump",
+"cells": [
+"501",
+"701#1",
+"702",
+"715",
+"801",
+"Z:1c670f6a",
+"Z:34a1a0d2"
+],
+"pattern": "born 3 died 1 lost 2 gained 0",
+"net": 2
+},
+{
+"t0": 133,
+"t1": 132,
+"type": "swap",
+"cells": [
+"528",
+"529",
+"530",
+"715"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 133,
+"t1": 132,
+"type": "swap",
+"cells": [
+"28900",
+"701#1",
+"802",
+"Z:68976cd6"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 133,
+"t1": 132,
+"type": "swap",
+"cells": [
+"201#2",
+"701#2",
+"Z:449f62f5",
+"Z:de9933d2"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 132,
+"t1": 131,
+"type": "relabel",
+"cells": [
+"Z:28290c64",
+"Z:f98af950"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 132,
+"t1": 131,
+"type": "clump",
+"cells": [
+"306"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 132,
+"t1": 131,
+"type": "clump",
+"cells": [
+"307",
+"319"
+],
+"pattern": "born 0 died 2 lost 0 gained 0",
+"net": -2
+},
+{
+"t0": 132,
+"t1": 131,
+"type": "clump",
+"cells": [
+"201#2",
+"701#2",
+"Z:449f62f5",
+"Z:68976cd6",
+"Z:de9933d2",
+"Z:f7f42a74"
+],
+"pattern": "born 0 died 0 lost 1 gained 3",
+"net": 0
+},
+{
+"t0": 132,
+"t1": 131,
+"type": "swap",
+"cells": [
+"701#1",
+"702",
+"802",
+"Z:1c670f6a"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 131,
+"t1": 130,
+"type": "clump",
+"cells": [
+"18150",
+"301",
+"380",
+"42150",
+"787",
+"926",
+"Z:167a7ed8",
+"Z:9da67b32",
+"Z:c5b353a2#1",
+"Z:c5b353a2#2",
+"Z:e0126f22"
+],
+"pattern": "born 4 died 3 lost 1 gained 2",
+"net": 1
+},
+{
+"t0": 131,
+"t1": 130,
+"type": "clump",
+"cells": [
+"702",
+"801",
+"802",
+"806",
+"Z:1c670f6a",
+"Z:744b4f5f",
+"Z:beff74b7"
+],
+"pattern": "born 2 died 1 lost 3 gained 0",
+"net": 1
+},
+{
+"t0": 131,
+"t1": 130,
+"type": "merge",
+"cells": [
+"205"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 131,
+"t1": 130,
+"type": "swap",
+"cells": [
+"Z:449f62f5",
+"Z:54f0f41b",
+"Z:73bba3de",
+"Z:de9933d2"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 131,
+"t1": 130,
+"type": "clump",
+"cells": [
+"Z:68976cd6",
+"Z:de9933d2",
+"Z:f7f42a74"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 131,
+"t1": 130,
+"type": "swap",
+"cells": [
+"28900",
+"701#1",
+"802",
+"Z:68976cd6"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 130,
+"t1": 129,
+"type": "relabel",
+"cells": [
+"Z:744b4f5f",
+"Z:c0ed65c3"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 130,
+"t1": 129,
+"type": "clump",
+"cells": [
+"Z:40dc4b46#1",
+"Z:40dc4b46#2",
+"Z:9da67b32",
+"Z:c5b353a2#1",
+"Z:c5b353a2#2",
+"Z:f634aad6"
+],
+"pattern": "born 3 died 3 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 130,
+"t1": 129,
+"type": "clump",
+"cells": [
+"28900",
+"701#1",
+"802",
+"Z:68976cd6",
+"Z:c33d64e3"
+],
+"pattern": "born 0 died 0 lost 1 gained 3",
+"net": 0
+},
+{
+"t0": 130,
+"t1": 129,
+"type": "clump",
+"cells": [
+"715",
+"Z:404cec20",
+"Z:653498bf"
+],
+"pattern": "born 0 died 0 lost 0 gained 3",
+"net": 0
+},
+{
+"t0": 129,
+"t1": 128,
+"type": "clump",
+"cells": [
+"201#3",
+"701#3",
+"Z:449f62f5",
+"Z:de9933d2"
+],
+"pattern": "born 2 died 0 lost 0 gained 1",
+"net": 2
+},
+{
+"t0": 129,
+"t1": 128,
+"type": "clump",
+"cells": [
+"715",
+"Z:404cec20",
+"Z:653498bf"
+],
+"pattern": "born 0 died 0 lost 3 gained 0",
+"net": 0
+},
+{
+"t0": 129,
+"t1": 128,
+"type": "clump",
+"cells": [
+"701#1",
+"Z:68976cd6",
+"Z:c33d64e3"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 129,
+"t1": 128,
+"type": "swap",
+"cells": [
+"18150",
+"902",
+"926",
+"Z:f634aad6"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 129,
+"t1": 128,
+"type": "swap",
+"cells": [
+"701#1",
+"702",
+"802",
+"Z:c0ed65c3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 128,
+"t1": 127,
+"type": "clump",
+"cells": [
+"18150",
+"926",
+"Z:2f2952aa#1",
+"Z:2f2952aa#2",
+"Z:40dc4b46#1",
+"Z:40dc4b46#2",
+"Z:c40fc08b",
+"Z:f634aad6"
+],
+"pattern": "born 3 died 3 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 128,
+"t1": 127,
+"type": "clump",
+"cells": [
+"501",
+"501#1",
+"501#2",
+"702",
+"Z:c0ed65c3"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 128,
+"t1": 127,
+"type": "clump",
+"cells": [
+"201#2",
+"201#3",
+"701#2",
+"701#3",
+"Z:449f62f5",
+"Z:54f0f41b",
+"Z:68976cd6",
+"Z:73bba3de",
+"Z:de9933d2",
+"Z:f7f42a74"
+],
+"pattern": "born 0 died 0 lost 4 gained 6",
+"net": 0
+},
+{
+"t0": 127,
+"t1": 126,
+"type": "relabel",
+"cells": [
+"Z:2f2952aa#2",
+"Z:a385f6ca#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 127,
+"t1": 126,
+"type": "clump",
+"cells": [
+"301",
+"530",
+"530#1",
+"530#2",
+"715"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 127,
+"t1": 126,
+"type": "relabel",
+"cells": [
+"Z:2f2952aa#1",
+"Z:a385f6ca#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 127,
+"t1": 126,
+"type": "clump",
+"cells": [
+"501",
+"501#1",
+"501#2",
+"702",
+"Z:c0ed65c3"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 127,
+"t1": 126,
+"type": "clump",
+"cells": [
+"201#2",
+"201#3",
+"701#2",
+"701#3",
+"Z:449f62f5",
+"Z:68976cd6",
+"Z:de9933d2",
+"Z:f7f42a74"
+],
+"pattern": "born 0 died 2 lost 3 gained 1",
+"net": -2
+},
+{
+"t0": 127,
+"t1": 126,
+"type": "swap",
+"cells": [
+"18150",
+"902",
+"926",
+"Z:c40fc08b"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 126,
+"t1": 125,
+"type": "clump",
+"cells": [
+"201",
+"201#1",
+"201#2",
+"28900",
+"701#2",
+"Z:0f9cc290",
+"Z:101f0811",
+"Z:36b98a80",
+"Z:3aedd43d",
+"Z:40cd02df",
+"Z:5473cbe6",
+"Z:68976cd6",
+"Z:c33d64e3",
+"Z:de9933d2",
+"Z:e554eb44",
+"Z:f7f42a74"
+],
+"pattern": "born 1 died 13 lost 1 gained 0",
+"net": -12
+},
+{
+"t0": 126,
+"t1": 125,
+"type": "clump",
+"cells": [
+"Z:2b552c85#1",
+"Z:2b552c85#2",
+"Z:77ae4e60",
+"Z:a385f6ca#1",
+"Z:a385f6ca#2",
+"Z:c40fc08b"
+],
+"pattern": "born 3 died 3 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 126,
+"t1": 125,
+"type": "clump",
+"cells": [
+"301",
+"530#1",
+"530#2",
+"715"
+],
+"pattern": "born 0 died 2 lost 1 gained 0",
+"net": -2
+},
+{
+"t0": 126,
+"t1": 125,
+"type": "clump",
+"cells": [
+"501",
+"801",
+"802",
+"Z:beff74b7",
+"Z:c0ed65c3"
+],
+"pattern": "born 0 died 1 lost 0 gained 3",
+"net": -1
+},
+{
+"t0": 125,
+"t1": 124,
+"type": "clump",
+"cells": [
+"Z:2b552c85",
+"Z:2b552c85#1",
+"Z:2b552c85#2",
+"Z:77ae4e60",
+"Z:e0126f22"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 125,
+"t1": 124,
+"type": "clump",
+"cells": [
+"201",
+"Z:d1c10390",
+"Z:de9933d2"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 124,
+"t1": 123,
+"type": "clump",
+"cells": [
+"Z:2b552c85",
+"Z:77ae4e60",
+"Z:bc1e8c6e#1",
+"Z:bc1e8c6e#2",
+"Z:bf4e4d46"
+],
+"pattern": "born 3 died 2 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 124,
+"t1": 123,
+"type": "swap",
+"cells": [
+"201",
+"701#2",
+"Z:449f62f5",
+"Z:de9933d2"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 123,
+"t1": 122,
+"type": "swap",
+"cells": [
+"Z:449f62f5",
+"Z:54f0f41b",
+"Z:73bba3de",
+"Z:de9933d2"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 122,
+"t1": 121,
+"type": "swap",
+"cells": [
+"Z:449f62f5",
+"Z:54f0f41b",
+"Z:73bba3de",
+"Z:de9933d2"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 121,
+"t1": 120,
+"type": "clump",
+"cells": [
+"101#1",
+"304",
+"3181",
+"Z:1ab15a7d",
+"Z:5df51aba",
+"Z:f98af950"
+],
+"pattern": "born 2 died 2 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 121,
+"t1": 120,
+"type": "clump",
+"cells": [
+"2060",
+"780",
+"801",
+"901",
+"902",
+"908",
+"919",
+"926",
+"982",
+"983"
+],
+"pattern": "born 3 died 0 lost 5 gained 2",
+"net": 3
+},
+{
+"t0": 121,
+"t1": 120,
+"type": "split",
+"cells": [
+"558"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 121,
+"t1": 120,
+"type": "clump",
+"cells": [
+"101#1",
+"18150",
+"409",
+"926",
+"Z:b36543a8",
+"Z:bc1e8c6e#1",
+"Z:bc1e8c6e#2",
+"Z:bf4e4d46"
+],
+"pattern": "born 1 died 4 lost 0 gained 2",
+"net": -3
+},
+{
+"t0": 121,
+"t1": 120,
+"type": "relabel",
+"cells": [
+"Z:0993a426",
+"Z:404cec20"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 121,
+"t1": 120,
+"type": "merge",
+"cells": [
+"101#1",
+"2035",
+"2061"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 121,
+"t1": 120,
+"type": "merge",
+"cells": [
+"702"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 120,
+"t1": 119,
+"type": "clump",
+"cells": [
+"101",
+"101#1",
+"101#2",
+"103",
+"201",
+"2060",
+"902",
+"Z:069ba064",
+"Z:194b3d9d",
+"Z:b36543a8",
+"Z:e0126f22"
+],
+"pattern": "born 1 died 8 lost 0 gained 1",
+"net": -7
+},
+{
+"t0": 119,
+"t1": 118,
+"type": "clump",
+"cells": [
+"201",
+"201#1",
+"201#2",
+"201#3",
+"201#4",
+"701#3",
+"701#4",
+"714",
+"Z:449f62f5",
+"Z:54f0f41b",
+"Z:73bba3de",
+"Z:de9933d2"
+],
+"pattern": "born 6 died 1 lost 2 gained 1",
+"net": 5
+},
+{
+"t0": 118,
+"t1": 117,
+"type": "relabel",
+"cells": [
+"714",
+"714#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 118,
+"t1": 117,
+"type": "clump",
+"cells": [
+"201#2",
+"201#3",
+"201#4",
+"701#3",
+"701#4",
+"714#2",
+"Z:449f62f5",
+"Z:54f0f41b",
+"Z:73bba3de",
+"Z:de9933d2"
+],
+"pattern": "born 1 died 1 lost 5 gained 6",
+"net": 0
+},
+{
+"t0": 118,
+"t1": 117,
+"type": "clump",
+"cells": [
+"Z:4fe749b8",
+"Z:653498bf"
+],
+"pattern": "born 0 died 0 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 117,
+"t1": 116,
+"type": "clump",
+"cells": [
+"201#2",
+"201#3",
+"701#3",
+"701#4",
+"714#2",
+"Z:449f62f5",
+"Z:54f0f41b",
+"Z:73bba3de",
+"Z:de9933d2"
+],
+"pattern": "born 0 died 0 lost 6 gained 7",
+"net": 0
+},
+{
+"t0": 117,
+"t1": 116,
+"type": "swap",
+"cells": [
+"201#1",
+"714#1",
+"Z:54f0f41b",
+"Z:73bba3de"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 117,
+"t1": 116,
+"type": "swap",
+"cells": [
+"101",
+"409",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 116,
+"t1": 115,
+"type": "split",
+"cells": [
+"789"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 116,
+"t1": 115,
+"type": "clump",
+"cells": [
+"201#1",
+"201#2",
+"201#3",
+"701#2",
+"701#3",
+"701#4",
+"714#1",
+"714#2",
+"Z:449f62f5",
+"Z:54f0f41b",
+"Z:73bba3de",
+"Z:de9933d2"
+],
+"pattern": "born 0 died 2 lost 4 gained 7",
+"net": -2
+},
+{
+"t0": 116,
+"t1": 115,
+"type": "merge",
+"cells": [
+"780",
+"801",
+"926"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 116,
+"t1": 115,
+"type": "swap",
+"cells": [
+"801",
+"806",
+"919",
+"983"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 115,
+"t1": 114,
+"type": "clump",
+"cells": [
+"3181",
+"Z:5df51aba",
+"Z:8771e919"
+],
+"pattern": "born 1 died 2 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 115,
+"t1": 114,
+"type": "clump",
+"cells": [
+"201#1",
+"201#2",
+"701",
+"701#1",
+"701#2",
+"701#3",
+"714#2",
+"714#3",
+"Z:449f62f5",
+"Z:54f0f41b",
+"Z:73bba3de",
+"Z:d1c10390",
+"Z:de9933d2"
+],
+"pattern": "born 2 died 6 lost 1 gained 3",
+"net": -4
+},
+{
+"t0": 115,
+"t1": 114,
+"type": "split",
+"cells": [
+"780",
+"801",
+"926"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 114,
+"t1": 113,
+"type": "clump",
+"cells": [
+"201#1",
+"714#1",
+"Z:54f0f41b",
+"Z:73bba3de",
+"Z:aa244691"
+],
+"pattern": "born 1 died 0 lost 1 gained 2",
+"net": 1
+},
+{
+"t0": 114,
+"t1": 113,
+"type": "swap",
+"cells": [
+"528",
+"529",
+"558",
+"715"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 113,
+"t1": 112,
+"type": "relabel",
+"cells": [
+"Z:8771e919",
+"Z:f49a71ec"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 113,
+"t1": 112,
+"type": "swap",
+"cells": [
+"201#1",
+"714#1",
+"Z:54f0f41b",
+"Z:73bba3de"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 111,
+"t1": 110,
+"type": "split",
+"cells": [
+"560"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 111,
+"t1": 110,
+"type": "merge",
+"cells": [
+"301",
+"528",
+"529",
+"53401",
+"787"
+],
+"pattern": "born 0 died 1 lost 0 gained 3",
+"net": -1
+},
+{
+"t0": 111,
+"t1": 110,
+"type": "swap",
+"cells": [
+"101",
+"409",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 111,
+"t1": 110,
+"type": "swap",
+"cells": [
+"201#1",
+"714#3",
+"Z:54f0f41b",
+"Z:73bba3de"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 110,
+"t1": 109,
+"type": "clump",
+"cells": [
+"201",
+"201#1",
+"201#2",
+"501",
+"701",
+"714#1",
+"714#3",
+"802",
+"802#1",
+"802#2",
+"Z:73bba3de"
+],
+"pattern": "born 3 died 3 lost 1 gained 2",
+"net": 0
+},
+{
+"t0": 110,
+"t1": 109,
+"type": "clump",
+"cells": [
+"Z:0993a426",
+"Z:4fe749b8",
+"Z:653498bf",
+"Z:ac25ff90"
+],
+"pattern": "born 0 died 4 lost 0 gained 0",
+"net": -4
+},
+{
+"t0": 109,
+"t1": 108,
+"type": "relabel",
+"cells": [
+"Z:7b8571fb",
+"Z:f49a71ec"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 109,
+"t1": 108,
+"type": "clump",
+"cells": [
+"201",
+"714#3",
+"Z:54f0f41b",
+"Z:73bba3de",
+"Z:aa244691"
+],
+"pattern": "born 0 died 2 lost 2 gained 0",
+"net": -2
+},
+{
+"t0": 108,
+"t1": 107,
+"type": "clump",
+"cells": [
+"501",
+"701",
+"802",
+"802#1",
+"802#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 108,
+"t1": 107,
+"type": "clump",
+"cells": [
+"714",
+"714#1",
+"714#2",
+"Z:54f0f41b",
+"Z:73bba3de"
+],
+"pattern": "born 1 died 4 lost 0 gained 0",
+"net": -3
+},
+{
+"t0": 108,
+"t1": 107,
+"type": "swap",
+"cells": [
+"301",
+"529",
+"53401",
+"787"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 106,
+"t1": 105,
+"type": "clump",
+"cells": [
+"Z:097011e8",
+"Z:beff74b7",
+"Z:ce4ba0fd",
+"Z:f532e4da"
+],
+"pattern": "born 3 died 1 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 105,
+"t1": 104,
+"type": "split",
+"cells": [
+"Z:2a6d68b4"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 104,
+"t1": 103,
+"type": "split",
+"cells": [
+"301",
+"528",
+"529",
+"787"
+],
+"pattern": "born 1 died 0 lost 2 gained 0",
+"net": 1
+},
+{
+"t0": 104,
+"t1": 103,
+"type": "swap",
+"cells": [
+"501",
+"529",
+"53401",
+"715"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 102,
+"t1": 101,
+"type": "swap",
+"cells": [
+"802",
+"806",
+"919",
+"983"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 102,
+"t1": 101,
+"type": "swap",
+"cells": [
+"301",
+"53401",
+"787",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 101,
+"t1": 100,
+"type": "clump",
+"cells": [
+"501",
+"701",
+"801",
+"801#1",
+"801#2",
+"802",
+"802#1",
+"802#2",
+"Z:05ba1006",
+"Z:097011e8",
+"Z:13b90300",
+"Z:1c62047b",
+"Z:7e0b402f",
+"Z:a5479296",
+"Z:cab1f09c",
+"Z:f532e4da"
+],
+"pattern": "born 9 died 5 lost 0 gained 1",
+"net": 4
+},
+{
+"t0": 101,
+"t1": 100,
+"type": "split",
+"cells": [
+"301",
+"308",
+"334",
+"558",
+"715"
+],
+"pattern": "born 1 died 0 lost 3 gained 0",
+"net": 1
+},
+{
+"t0": 101,
+"t1": 100,
+"type": "merge",
+"cells": [
+"789"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 101,
+"t1": 100,
+"type": "clump",
+"cells": [
+"2061"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 101,
+"t1": 100,
+"type": "swap",
+"cells": [
+"301",
+"53401",
+"787",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 96,
+"t1": 95,
+"type": "relabel",
+"cells": [
+"Z:0d8a242e",
+"Z:ce4ba0fd"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 96,
+"t1": 95,
+"type": "swap",
+"cells": [
+"53401",
+"780",
+"787",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 96,
+"t1": 95,
+"type": "swap",
+"cells": [
+"301",
+"528",
+"529",
+"558"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 95,
+"t1": 94,
+"type": "clump",
+"cells": [
+"801#2",
+"801#3",
+"801#4",
+"802#2",
+"833",
+"Z:13b90300",
+"Z:1c62047b",
+"Z:a5479296"
+],
+"pattern": "born 3 died 1 lost 1 gained 1",
+"net": 2
+},
+{
+"t0": 95,
+"t1": 94,
+"type": "relabel",
+"cells": [
+"802",
+"802#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 94,
+"t1": 93,
+"type": "relabel",
+"cells": [
+"Z:7e0b402f",
+"Z:dbde4727"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 94,
+"t1": 93,
+"type": "clump",
+"cells": [
+"801#4",
+"833",
+"Z:0d8a242e",
+"Z:a5479296"
+],
+"pattern": "born 0 died 0 lost 2 gained 1",
+"net": 0
+},
+{
+"t0": 94,
+"t1": 93,
+"type": "clump",
+"cells": [
+"801#3",
+"833",
+"Z:0d8a242e",
+"Z:1c62047b",
+"Z:a5479296"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 94,
+"t1": 93,
+"type": "swap",
+"cells": [
+"501",
+"529",
+"560",
+"715"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 94,
+"t1": 93,
+"type": "clump",
+"cells": [
+"801#2",
+"Z:1c62047b"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 93,
+"t1": 92,
+"type": "clump",
+"cells": [
+"501",
+"529",
+"53401",
+"53401#1",
+"53401#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 93,
+"t1": 92,
+"type": "clump",
+"cells": [
+"801#2",
+"Z:1c62047b"
+],
+"pattern": "born 0 died 0 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 93,
+"t1": 92,
+"type": "clump",
+"cells": [
+"801#2",
+"801#3",
+"833",
+"Z:0d8a242e",
+"Z:13b90300",
+"Z:1c62047b",
+"Z:a5479296"
+],
+"pattern": "born 0 died 0 lost 3 gained 4",
+"net": 0
+},
+{
+"t0": 92,
+"t1": 91,
+"type": "clump",
+"cells": [
+"501",
+"529",
+"53401",
+"53401#1",
+"53401#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 92,
+"t1": 91,
+"type": "clump",
+"cells": [
+"802",
+"802#1",
+"919",
+"985"
+],
+"pattern": "born 2 died 2 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 92,
+"t1": 91,
+"type": "clump",
+"cells": [
+"802#2",
+"Z:13b90300",
+"Z:1c62047b"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 91,
+"t1": 90,
+"type": "clump",
+"cells": [
+"801#2",
+"801#3",
+"801#4",
+"833",
+"833#1",
+"833#2",
+"Z:13b90300",
+"Z:1c62047b",
+"Z:a5479296"
+],
+"pattern": "born 2 died 2 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 91,
+"t1": 90,
+"type": "clump",
+"cells": [
+"304",
+"306",
+"307",
+"308",
+"334"
+],
+"pattern": "born 1 died 2 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 91,
+"t1": 90,
+"type": "clump",
+"cells": [
+"Z:2a6d68b4"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 91,
+"t1": 90,
+"type": "swap",
+"cells": [
+"301",
+"528",
+"529",
+"558"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 91,
+"t1": 90,
+"type": "swap",
+"cells": [
+"301",
+"780",
+"787",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 91,
+"t1": 90,
+"type": "clump",
+"cells": [
+"801#3",
+"802#2"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 90,
+"t1": 89,
+"type": "swap",
+"cells": [
+"801#3",
+"802#2",
+"Z:13b90300",
+"Z:1c62047b"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 90,
+"t1": 89,
+"type": "swap",
+"cells": [
+"801#1",
+"802#1",
+"Z:13b90300",
+"Z:1c62047b"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 89,
+"t1": 88,
+"type": "clump",
+"cells": [
+"801#2",
+"801#3",
+"802#2",
+"833#2",
+"833#3",
+"Z:13b90300",
+"Z:1c62047b",
+"Z:a5479296"
+],
+"pattern": "born 1 died 0 lost 4 gained 4",
+"net": 1
+},
+{
+"t0": 89,
+"t1": 88,
+"type": "relabel",
+"cells": [
+"919",
+"985"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 89,
+"t1": 88,
+"type": "clump",
+"cells": [
+"801#4"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 89,
+"t1": 88,
+"type": "swap",
+"cells": [
+"801#1",
+"802#1",
+"Z:13b90300",
+"Z:1c62047b"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 88,
+"t1": 87,
+"type": "relabel",
+"cells": [
+"Z:914dd369",
+"Z:dbde4727"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 88,
+"t1": 87,
+"type": "merge",
+"cells": [
+"833#3"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 88,
+"t1": 87,
+"type": "clump",
+"cells": [
+"801#2",
+"801#3",
+"801#4",
+"802#2",
+"833#1",
+"833#2",
+"Z:13b90300",
+"Z:1c62047b",
+"Z:a5479296"
+],
+"pattern": "born 0 died 0 lost 7 gained 6",
+"net": 0
+},
+{
+"t0": 87,
+"t1": 86,
+"type": "clump",
+"cells": [
+"801#2",
+"801#4",
+"833#1",
+"833#2",
+"Z:1c62047b",
+"Z:a5479296"
+],
+"pattern": "born 0 died 1 lost 2 gained 2",
+"net": -1
+},
+{
+"t0": 87,
+"t1": 86,
+"type": "swap",
+"cells": [
+"801#3",
+"802#2",
+"Z:13b90300",
+"Z:1c62047b"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 87,
+"t1": 86,
+"type": "swap",
+"cells": [
+"801#1",
+"802#1",
+"Z:13b90300",
+"Z:1c62047b"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 86,
+"t1": 85,
+"type": "clump",
+"cells": [
+"501",
+"501#1",
+"501#2",
+"701",
+"801#3",
+"802",
+"802#1",
+"802#2",
+"806",
+"833#3",
+"836",
+"841",
+"854",
+"901",
+"904",
+"908",
+"919",
+"982",
+"983",
+"Z:13b90300",
+"Z:1c62047b",
+"Z:914dd369",
+"Z:d19e4d23"
+],
+"pattern": "born 9 died 8 lost 1 gained 2",
+"net": 1
+},
+{
+"t0": 86,
+"t1": 85,
+"type": "clump",
+"cells": [
+"608",
+"609",
+"780",
+"926"
+],
+"pattern": "born 2 died 0 lost 1 gained 0",
+"net": 2
+},
+{
+"t0": 86,
+"t1": 85,
+"type": "split",
+"cells": [
+"224"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 86,
+"t1": 85,
+"type": "clump",
+"cells": [
+"801#2",
+"833#1",
+"833#2",
+"Z:0d8a242e",
+"Z:a5479296"
+],
+"pattern": "born 0 died 0 lost 3 gained 1",
+"net": 0
+},
+{
+"t0": 86,
+"t1": 85,
+"type": "clump",
+"cells": [
+"301",
+"53401",
+"780",
+"787",
+"801#1"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 85,
+"t1": 84,
+"type": "clump",
+"cells": [
+"301",
+"528",
+"529",
+"558",
+"560",
+"715"
+],
+"pattern": "born 0 died 3 lost 0 gained 3",
+"net": -3
+},
+{
+"t0": 85,
+"t1": 84,
+"type": "merge",
+"cells": [
+"802",
+"806",
+"Z:a5479296"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 85,
+"t1": 84,
+"type": "swap",
+"cells": [
+"608",
+"609",
+"901",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 85,
+"t1": 84,
+"type": "swap",
+"cells": [
+"801#2",
+"833#2",
+"Z:1c62047b",
+"Z:a5479296"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 84,
+"t1": 83,
+"type": "clump",
+"cells": [
+"902",
+"918",
+"926"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 84,
+"t1": 83,
+"type": "clump",
+"cells": [
+"101",
+"301",
+"304",
+"307",
+"317",
+"501",
+"501#1",
+"501#2",
+"529",
+"701",
+"714",
+"715",
+"Z:7b8571fb",
+"Z:914dd369",
+"Z:b1762c09",
+"Z:daa90e18"
+],
+"pattern": "born 4 died 6 lost 0 gained 6",
+"net": -2
+},
+{
+"t0": 84,
+"t1": 83,
+"type": "birth",
+"cells": [
+"Z:37189432"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 84,
+"t1": 83,
+"type": "clump",
+"cells": [
+"802",
+"804",
+"901",
+"904",
+"Z:0d8a242e",
+"Z:a5479296"
+],
+"pattern": "born 1 died 0 lost 3 gained 1",
+"net": 1
+},
+{
+"t0": 84,
+"t1": 83,
+"type": "clump",
+"cells": [
+"833#1",
+"833#3",
+"841",
+"901",
+"Z:a5479296"
+],
+"pattern": "born 0 died 1 lost 1 gained 1",
+"net": -1
+},
+{
+"t0": 84,
+"t1": 83,
+"type": "swap",
+"cells": [
+"801#2",
+"833#2",
+"Z:1c62047b",
+"Z:a5479296"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 83,
+"t1": 82,
+"type": "clump",
+"cells": [
+"833#1",
+"841",
+"854",
+"Z:a5479296",
+"Z:d19e4d23"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 82,
+"t1": 81,
+"type": "swap",
+"cells": [
+"836",
+"854",
+"Z:a5479296",
+"Z:d19e4d23"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 81,
+"t1": 80,
+"type": "split",
+"cells": [
+"525"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 81,
+"t1": 80,
+"type": "clump",
+"cells": [
+"804",
+"804#1",
+"804#2",
+"901",
+"901#1",
+"901#2"
+],
+"pattern": "born 4 died 2 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 80,
+"t1": 79,
+"type": "clump",
+"cells": [
+"102",
+"Z:abf715da",
+"Z:aefe6cec",
+"Z:b1762c09"
+],
+"pattern": "born 3 died 1 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 80,
+"t1": 79,
+"type": "relabel",
+"cells": [
+"Z:05ba1006",
+"Z:24ce2b3d"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 80,
+"t1": 79,
+"type": "clump",
+"cells": [
+"814",
+"901",
+"901#1",
+"901#2",
+"Z:0d8a242e",
+"Z:3171a92e"
+],
+"pattern": "born 3 died 3 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 80,
+"t1": 79,
+"type": "merge",
+"cells": [
+"301",
+"501",
+"529",
+"53401"
+],
+"pattern": "born 0 died 1 lost 0 gained 2",
+"net": -1
+},
+{
+"t0": 79,
+"t1": 78,
+"type": "clump",
+"cells": [
+"836",
+"854",
+"880",
+"Z:d19e4d23"
+],
+"pattern": "born 1 died 1 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 78,
+"t1": 77,
+"type": "swap",
+"cells": [
+"801#2",
+"833#2",
+"Z:1c62047b",
+"Z:a5479296"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 77,
+"t1": 76,
+"type": "clump",
+"cells": [
+"801#2",
+"833#2",
+"901",
+"Z:13b90300",
+"Z:1c62047b",
+"Z:2ae11d8d",
+"Z:3171a92e",
+"Z:a5479296",
+"Z:a91a8e07"
+],
+"pattern": "born 2 died 1 lost 1 gained 3",
+"net": 1
+},
+{
+"t0": 76,
+"t1": 75,
+"type": "swap",
+"cells": [
+"301",
+"53401",
+"780",
+"801#1"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 76,
+"t1": 75,
+"type": "swap",
+"cells": [
+"801#1",
+"802",
+"Z:13b90300",
+"Z:1c62047b"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 75,
+"t1": 74,
+"type": "clump",
+"cells": [
+"301",
+"53401",
+"787"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 75,
+"t1": 74,
+"type": "swap",
+"cells": [
+"801#2",
+"Z:1c62047b",
+"Z:24ce2b3d",
+"Z:a5479296"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 75,
+"t1": 74,
+"type": "swap",
+"cells": [
+"801#1",
+"802",
+"Z:13b90300",
+"Z:1c62047b"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 74,
+"t1": 73,
+"type": "clump",
+"cells": [
+"801#2",
+"833#2",
+"Z:24ce2b3d",
+"Z:37d83539",
+"Z:a5479296"
+],
+"pattern": "born 1 died 0 lost 1 gained 2",
+"net": 1
+},
+{
+"t0": 74,
+"t1": 73,
+"type": "clump",
+"cells": [
+"Z:3d907360",
+"Z:abf715da",
+"Z:aefe6cec",
+"Z:d94352ba"
+],
+"pattern": "born 2 died 2 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 74,
+"t1": 73,
+"type": "relabel",
+"cells": [
+"854",
+"881"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 73,
+"t1": 72,
+"type": "clump",
+"cells": [
+"801#2",
+"804#2",
+"901",
+"Z:13b90300",
+"Z:a91a8e07",
+"Z:d21b82c3"
+],
+"pattern": "born 1 died 1 lost 1 gained 2",
+"net": 0
+},
+{
+"t0": 73,
+"t1": 72,
+"type": "clump",
+"cells": [
+"Z:24ce2b3d",
+"Z:37d83539",
+"Z:a5479296"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 73,
+"t1": 72,
+"type": "merge",
+"cells": [
+"833#2",
+"901",
+"Z:2ae11d8d"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 72,
+"t1": 71,
+"type": "split",
+"cells": [
+"780",
+"781",
+"801#1",
+"901"
+],
+"pattern": "born 1 died 0 lost 2 gained 0",
+"net": 1
+},
+{
+"t0": 72,
+"t1": 71,
+"type": "swap",
+"cells": [
+"101",
+"409",
+"918",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 69,
+"t1": 68,
+"type": "clump",
+"cells": [
+"101",
+"102",
+"301",
+"Z:3d907360",
+"Z:57e65770",
+"Z:6ec76668",
+"Z:93baf023",
+"Z:d505840b",
+"Z:d94352ba"
+],
+"pattern": "born 4 died 2 lost 2 gained 0",
+"net": 2
+},
+{
+"t0": 68,
+"t1": 67,
+"type": "clump",
+"cells": [
+"0",
+"301",
+"304",
+"307",
+"334",
+"525",
+"Z:f453aca3"
+],
+"pattern": "born 2 died 2 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 68,
+"t1": 67,
+"type": "relabel",
+"cells": [
+"836",
+"880"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 67,
+"t1": 66,
+"type": "clump",
+"cells": [
+"801#2",
+"833#2",
+"833#3",
+"Z:24ce2b3d",
+"Z:a5479296"
+],
+"pattern": "born 1 died 0 lost 1 gained 1",
+"net": 1
+},
+{
+"t0": 67,
+"t1": 66,
+"type": "relabel",
+"cells": [
+"804",
+"804#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 67,
+"t1": 66,
+"type": "merge",
+"cells": [
+"802",
+"804#1",
+"814",
+"904"
+],
+"pattern": "born 0 died 1 lost 0 gained 2",
+"net": -1
+},
+{
+"t0": 67,
+"t1": 66,
+"type": "swap",
+"cells": [
+"0",
+"301",
+"701",
+"Z:f453aca3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 66,
+"t1": 65,
+"type": "clump",
+"cells": [
+"101",
+"101#1",
+"101#2",
+"Z:2c34f039",
+"Z:57e65770",
+"Z:6ec76668",
+"Z:884ab3f5",
+"Z:a921df6a"
+],
+"pattern": "born 5 died 3 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 66,
+"t1": 65,
+"type": "split",
+"cells": [
+"529"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 66,
+"t1": 65,
+"type": "clump",
+"cells": [
+"301",
+"727",
+"926"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 66,
+"t1": 65,
+"type": "swap",
+"cells": [
+"833#1",
+"836",
+"Z:a5479296",
+"Z:d19e4d23"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 66,
+"t1": 65,
+"type": "clump",
+"cells": [
+"301",
+"53401",
+"608",
+"780",
+"781"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 65,
+"t1": 64,
+"type": "clump",
+"cells": [
+"801#2",
+"833#3",
+"Z:a5479296"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 65,
+"t1": 64,
+"type": "swap",
+"cells": [
+"0",
+"301",
+"701",
+"Z:f453aca3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 65,
+"t1": 64,
+"type": "clump",
+"cells": [
+"101#1",
+"Z:2c34f039",
+"Z:884ab3f5"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 65,
+"t1": 64,
+"type": "swap",
+"cells": [
+"833#1",
+"836",
+"Z:a5479296",
+"Z:d19e4d23"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 64,
+"t1": 63,
+"type": "birth",
+"cells": [
+"833#3"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 64,
+"t1": 63,
+"type": "merge",
+"cells": [
+"Z:2c34f039"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 64,
+"t1": 63,
+"type": "clump",
+"cells": [
+"301",
+"409",
+"901",
+"918",
+"926",
+"Z:37189432"
+],
+"pattern": "born 0 died 0 lost 3 gained 3",
+"net": 0
+},
+{
+"t0": 64,
+"t1": 63,
+"type": "swap",
+"cells": [
+"801#2",
+"833#2",
+"Z:24ce2b3d",
+"Z:a5479296"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 63,
+"t1": 62,
+"type": "split",
+"cells": [
+"Z:4be5384b"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 63,
+"t1": 62,
+"type": "relabel",
+"cells": [
+"880",
+"881"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 63,
+"t1": 62,
+"type": "clump",
+"cells": [
+"801#1",
+"801#3",
+"833#3",
+"836",
+"Z:24ce2b3d",
+"Z:a5479296"
+],
+"pattern": "born 1 died 0 lost 3 gained 2",
+"net": 1
+},
+{
+"t0": 62,
+"t1": 61,
+"type": "clump",
+"cells": [
+"801#3",
+"833#3",
+"836",
+"Z:0a735522",
+"Z:4be5384b",
+"Z:a5479296",
+"Z:d19e4d23",
+"Z:eabad61c"
+],
+"pattern": "born 2 died 2 lost 1 gained 2",
+"net": 0
+},
+{
+"t0": 62,
+"t1": 61,
+"type": "clump",
+"cells": [
+"101",
+"101#1",
+"101#2",
+"102",
+"301",
+"Z:2b67d3ee",
+"Z:884ab3f5",
+"Z:a921df6a"
+],
+"pattern": "born 2 died 4 lost 0 gained 1",
+"net": -2
+},
+{
+"t0": 62,
+"t1": 61,
+"type": "merge",
+"cells": [
+"802",
+"804",
+"814",
+"904"
+],
+"pattern": "born 0 died 1 lost 0 gained 2",
+"net": -1
+},
+{
+"t0": 61,
+"t1": 60,
+"type": "split",
+"cells": [
+"880",
+"901",
+"922"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 61,
+"t1": 60,
+"type": "clump",
+"cells": [
+"801#3",
+"833#2",
+"833#3",
+"836",
+"Z:0a735522",
+"Z:24ce2b3d",
+"Z:350e2e26",
+"Z:4be5384b",
+"Z:eabad61c"
+],
+"pattern": "born 1 died 1 lost 4 gained 2",
+"net": 0
+},
+{
+"t0": 61,
+"t1": 60,
+"type": "clump",
+"cells": [
+"301",
+"608",
+"609",
+"727",
+"926"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 60,
+"t1": 59,
+"type": "clump",
+"cells": [
+"Z:0a735522",
+"Z:350e2e26",
+"Z:4be5384b",
+"Z:8bbaac6d"
+],
+"pattern": "born 1 died 3 lost 0 gained 0",
+"net": -2
+},
+{
+"t0": 60,
+"t1": 59,
+"type": "swap",
+"cells": [
+"301",
+"609",
+"727",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 60,
+"t1": 59,
+"type": "swap",
+"cells": [
+"833#1",
+"836",
+"841",
+"880"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 59,
+"t1": 58,
+"type": "clump",
+"cells": [
+"801",
+"801#1",
+"801#2",
+"801#3",
+"833",
+"833#1",
+"833#2",
+"Z:24ce2b3d",
+"Z:8bbaac6d",
+"Z:eabad61c"
+],
+"pattern": "born 2 died 8 lost 0 gained 0",
+"net": -6
+},
+{
+"t0": 59,
+"t1": 58,
+"type": "clump",
+"cells": [
+"780"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 58,
+"t1": 57,
+"type": "split",
+"cells": [
+"Z:80037ca1"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 57,
+"t1": 56,
+"type": "clump",
+"cells": [
+"301",
+"901",
+"926",
+"926#1",
+"926#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 56,
+"t1": 55,
+"type": "clump",
+"cells": [
+"101",
+"301",
+"Z:2b67d3ee",
+"Z:5bbbf227",
+"Z:93baf023",
+"Z:9d011941",
+"Z:d505840b"
+],
+"pattern": "born 2 died 3 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 56,
+"t1": 55,
+"type": "relabel",
+"cells": [
+"727",
+"738"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 56,
+"t1": 55,
+"type": "clump",
+"cells": [
+"301",
+"406",
+"901",
+"926#1",
+"926#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 56,
+"t1": 55,
+"type": "split",
+"cells": [
+"Z:05dc1fc9"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 56,
+"t1": 55,
+"type": "clump",
+"cells": [
+"833",
+"841",
+"880",
+"922"
+],
+"pattern": "born 0 died 1 lost 0 gained 2",
+"net": -1
+},
+{
+"t0": 55,
+"t1": 54,
+"type": "clump",
+"cells": [
+"101",
+"101#1",
+"101#2",
+"Z:5bbbf227",
+"Z:9d011941"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 55,
+"t1": 54,
+"type": "swap",
+"cells": [
+"406",
+"901",
+"Z:05dc1fc9",
+"Z:37189432"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 55,
+"t1": 54,
+"type": "clump",
+"cells": [
+"301",
+"53401",
+"608",
+"781",
+"801"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 55,
+"t1": 54,
+"type": "swap",
+"cells": [
+"781",
+"801",
+"836",
+"880"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 54,
+"t1": 53,
+"type": "split",
+"cells": [
+"101#3"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 53,
+"t1": 52,
+"type": "split",
+"cells": [
+"0#2",
+"Z:16488ac1",
+"Z:9d011941"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 53,
+"t1": 52,
+"type": "relabel",
+"cells": [
+"0",
+"0#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 53,
+"t1": 52,
+"type": "split",
+"cells": [
+"902",
+"903",
+"918"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 53,
+"t1": 52,
+"type": "merge",
+"cells": [
+"101#3"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 53,
+"t1": 52,
+"type": "clump",
+"cells": [
+"901",
+"Z:05dc1fc9",
+"Z:37189432"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 53,
+"t1": 52,
+"type": "swap",
+"cells": [
+"301",
+"609",
+"738",
+"901"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 52,
+"t1": 51,
+"type": "clump",
+"cells": [
+"0#2",
+"101#3",
+"301#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 52,
+"t1": 51,
+"type": "clump",
+"cells": [
+"0",
+"0#1",
+"301",
+"301#1",
+"529",
+"604",
+"738",
+"901"
+],
+"pattern": "born 3 died 3 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 52,
+"t1": 51,
+"type": "split",
+"cells": [
+"Z:0f34caa0"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 52,
+"t1": 51,
+"type": "clump",
+"cells": [
+"801",
+"833",
+"836",
+"880",
+"922"
+],
+"pattern": "born 0 died 3 lost 0 gained 1",
+"net": -3
+},
+{
+"t0": 51,
+"t1": 50,
+"type": "clump",
+"cells": [
+"Z:13b90300",
+"Z:1c62047b",
+"Z:25e4d7c3",
+"Z:5d4fcf3d",
+"Z:f0cb2966"
+],
+"pattern": "born 3 died 2 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 51,
+"t1": 50,
+"type": "split",
+"cells": [
+"2035"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 51,
+"t1": 50,
+"type": "clump",
+"cells": [
+"Z:02cb298f",
+"Z:14c83715",
+"Z:56b20692",
+"Z:5b5c60a1",
+"Z:5b940075",
+"Z:6756855a",
+"Z:8e48ccd1",
+"Z:f2353abe",
+"Z:fa292034"
+],
+"pattern": "born 9 died 0 lost 0 gained 0",
+"net": 9
+},
+{
+"t0": 51,
+"t1": 50,
+"type": "clump",
+"cells": [
+"608",
+"698",
+"781",
+"801",
+"901",
+"922"
+],
+"pattern": "born 1 died 0 lost 1 gained 2",
+"net": 1
+},
+{
+"t0": 50,
+"t1": 49,
+"type": "swap",
+"cells": [
+"801",
+"802",
+"Z:25e4d7c3",
+"Z:f0cb2966"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 50,
+"t1": 49,
+"type": "clump",
+"cells": [
+"201",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:56b20692",
+"Z:8e48ccd1",
+"Z:fa292034"
+],
+"pattern": "born 0 died 0 lost 1 gained 2",
+"net": 0
+},
+{
+"t0": 49,
+"t1": 48,
+"type": "split",
+"cells": [
+"861"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 49,
+"t1": 48,
+"type": "clump",
+"cells": [
+"101#3",
+"301#2",
+"Z:16488ac1"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 49,
+"t1": 48,
+"type": "clump",
+"cells": [
+"201",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:56b20692",
+"Z:8e48ccd1",
+"Z:fa292034"
+],
+"pattern": "born 0 died 0 lost 2 gained 1",
+"net": 0
+},
+{
+"t0": 49,
+"t1": 48,
+"type": "swap",
+"cells": [
+"301#1",
+"304",
+"Z:daa90e18",
+"Z:f453aca3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 48,
+"t1": 47,
+"type": "clump",
+"cells": [
+"604",
+"608",
+"645",
+"665",
+"801"
+],
+"pattern": "born 2 died 0 lost 2 gained 0",
+"net": 2
+},
+{
+"t0": 48,
+"t1": 47,
+"type": "birth",
+"cells": [
+"688"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 48,
+"t1": 47,
+"type": "clump",
+"cells": [
+"53401"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 48,
+"t1": 47,
+"type": "swap",
+"cells": [
+"301#1",
+"304",
+"Z:daa90e18",
+"Z:f453aca3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 48,
+"t1": 47,
+"type": "swap",
+"cells": [
+"804",
+"901",
+"902",
+"904"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 48,
+"t1": 47,
+"type": "swap",
+"cells": [
+"801",
+"804",
+"Z:5d4fcf3d",
+"Z:f0cb2966"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 48,
+"t1": 47,
+"type": "swap",
+"cells": [
+"201",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:fa292034"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 47,
+"t1": 46,
+"type": "clump",
+"cells": [
+"101#1",
+"301#1",
+"406#2",
+"409",
+"901",
+"Z:37189432"
+],
+"pattern": "born 1 died 1 lost 0 gained 3",
+"net": 0
+},
+{
+"t0": 47,
+"t1": 46,
+"type": "relabel",
+"cells": [
+"406",
+"406#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 47,
+"t1": 46,
+"type": "swap",
+"cells": [
+"201",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:fa292034"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 46,
+"t1": 45,
+"type": "clump",
+"cells": [
+"301#1",
+"501",
+"603",
+"604",
+"Z:06ca4270",
+"Z:08188fc8",
+"Z:14cadf82",
+"Z:15740569",
+"Z:2f699f3c",
+"Z:4319e7b7",
+"Z:caf01353"
+],
+"pattern": "born 8 died 0 lost 2 gained 0",
+"net": 8
+},
+{
+"t0": 46,
+"t1": 45,
+"type": "clump",
+"cells": [
+"609",
+"645",
+"735",
+"738"
+],
+"pattern": "born 1 died 1 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 46,
+"t1": 45,
+"type": "clump",
+"cells": [
+"201",
+"902",
+"Z:5473cbe6",
+"Z:864118ef"
+],
+"pattern": "born 2 died 0 lost 0 gained 1",
+"net": 2
+},
+{
+"t0": 46,
+"t1": 45,
+"type": "clump",
+"cells": [
+"101#1",
+"301#1",
+"304",
+"406",
+"406#1",
+"406#2",
+"901",
+"Z:37189432",
+"Z:5bbbf227",
+"Z:daa90e18",
+"Z:f453aca3"
+],
+"pattern": "born 1 died 2 lost 3 gained 2",
+"net": -1
+},
+{
+"t0": 45,
+"t1": 44,
+"type": "birth",
+"cells": [
+"855"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 45,
+"t1": 44,
+"type": "swap",
+"cells": [
+"608",
+"609",
+"645",
+"735"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 45,
+"t1": 44,
+"type": "swap",
+"cells": [
+"201",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:fa292034"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 44,
+"t1": 43,
+"type": "merge",
+"cells": [
+"501",
+"701",
+"801",
+"Z:2f699f3c"
+],
+"pattern": "born 0 died 1 lost 0 gained 2",
+"net": -1
+},
+{
+"t0": 44,
+"t1": 43,
+"type": "swap",
+"cells": [
+"802",
+"Z:25e4d7c3",
+"Z:5d4fcf3d",
+"Z:f0cb2966"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 44,
+"t1": 43,
+"type": "swap",
+"cells": [
+"201",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:fa292034"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 43,
+"t1": 42,
+"type": "swap",
+"cells": [
+"201",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:fa292034"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 42,
+"t1": 41,
+"type": "clump",
+"cells": [
+"201",
+"201#1",
+"201#2",
+"801",
+"802",
+"802#1",
+"802#2",
+"902",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:5d4fcf3d",
+"Z:864118ef",
+"Z:f0cb2966",
+"Z:fa073c18",
+"Z:fa292034"
+],
+"pattern": "born 5 died 3 lost 1 gained 3",
+"net": 2
+},
+{
+"t0": 41,
+"t1": 40,
+"type": "clump",
+"cells": [
+"301#1",
+"603",
+"604",
+"617",
+"663",
+"701",
+"735",
+"Z:08188fc8",
+"Z:2b9004cd",
+"Z:4e27e2d7",
+"Z:958c913c",
+"Z:e51ad354",
+"Z:f453aca3",
+"Z:f51678b3"
+],
+"pattern": "born 7 died 4 lost 2 gained 0",
+"net": 3
+},
+{
+"t0": 41,
+"t1": 40,
+"type": "clump",
+"cells": [
+"781",
+"801",
+"901",
+"922",
+"9923",
+"Z:d5a94d57"
+],
+"pattern": "born 2 died 0 lost 2 gained 1",
+"net": 2
+},
+{
+"t0": 41,
+"t1": 40,
+"type": "clump",
+"cells": [
+"201#1",
+"904",
+"Z:e1d2bd5f",
+"Z:fa292034"
+],
+"pattern": "born 1 died 1 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 41,
+"t1": 40,
+"type": "merge",
+"cells": [
+"918"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 41,
+"t1": 40,
+"type": "merge",
+"cells": [
+"307"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 41,
+"t1": 40,
+"type": "swap",
+"cells": [
+"801",
+"802#2",
+"Z:5d4fcf3d",
+"Z:f0cb2966"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 40,
+"t1": 39,
+"type": "swap",
+"cells": [
+"801",
+"802#2",
+"Z:5d4fcf3d",
+"Z:f0cb2966"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 40,
+"t1": 39,
+"type": "swap",
+"cells": [
+"201#1",
+"Z:56b20692",
+"Z:8e48ccd1",
+"Z:e1d2bd5f"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 39,
+"t1": 38,
+"type": "clump",
+"cells": [
+"Z:17ccc09e",
+"Z:2f699f3c",
+"Z:3a0b0d86",
+"Z:4e27e2d7",
+"Z:d6ae4168",
+"Z:e51ad354"
+],
+"pattern": "born 3 died 3 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 39,
+"t1": 38,
+"type": "relabel",
+"cells": [
+"855",
+"857"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 39,
+"t1": 38,
+"type": "merge",
+"cells": [
+"698"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 39,
+"t1": 38,
+"type": "clump",
+"cells": [
+"201#1",
+"902",
+"904",
+"Z:56b20692",
+"Z:8e48ccd1",
+"Z:e1d2bd5f"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 39,
+"t1": 38,
+"type": "swap",
+"cells": [
+"101#2",
+"Z:0f34caa0",
+"Z:16488ac1",
+"Z:5bbbf227"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 38,
+"t1": 37,
+"type": "clump",
+"cells": [
+"613",
+"617",
+"663",
+"Z:79990233"
+],
+"pattern": "born 2 died 2 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 38,
+"t1": 37,
+"type": "split",
+"cells": [
+"698"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 38,
+"t1": 37,
+"type": "swap",
+"cells": [
+"608",
+"645",
+"665",
+"781"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 38,
+"t1": 37,
+"type": "swap",
+"cells": [
+"801",
+"802#2",
+"804",
+"Z:f0cb2966"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 38,
+"t1": 37,
+"type": "swap",
+"cells": [
+"201#1",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:e1d2bd5f"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 37,
+"t1": 36,
+"type": "clump",
+"cells": [
+"101#1",
+"902",
+"Z:13f4badb",
+"Z:1953ec9b",
+"Z:32537761",
+"Z:3491b520",
+"Z:3928ef5d",
+"Z:4cf94d9c",
+"Z:755522ee",
+"Z:7971c52b",
+"Z:af1d2390",
+"Z:b26cb34e",
+"Z:ceadf24b",
+"Z:ff2ea91f"
+],
+"pattern": "born 12 died 0 lost 1 gained 0",
+"net": 12
+},
+{
+"t0": 37,
+"t1": 36,
+"type": "merge",
+"cells": [
+"Z:79990233",
+"Z:958c913c",
+"Z:f4b3f669"
+],
+"pattern": "born 1 died 2 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 37,
+"t1": 36,
+"type": "clump",
+"cells": [
+"801",
+"838",
+"855",
+"901"
+],
+"pattern": "born 2 died 0 lost 1 gained 0",
+"net": 2
+},
+{
+"t0": 37,
+"t1": 36,
+"type": "relabel",
+"cells": [
+"Z:0f34caa0",
+"Z:5af0ecc1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 36,
+"t1": 35,
+"type": "clump",
+"cells": [
+"306",
+"708"
+],
+"pattern": "born 2 died 0 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 36,
+"t1": 35,
+"type": "relabel",
+"cells": [
+"0",
+"Z:05b8b248"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 36,
+"t1": 35,
+"type": "relabel",
+"cells": [
+"853",
+"9923"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 36,
+"t1": 35,
+"type": "merge",
+"cells": [
+"Z:1953ec9b"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 36,
+"t1": 35,
+"type": "swap",
+"cells": [
+"301#1",
+"304",
+"Z:daa90e18",
+"Z:f453aca3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 36,
+"t1": 35,
+"type": "clump",
+"cells": [
+"101#1",
+"Z:13f4badb"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 35,
+"t1": 34,
+"type": "clump",
+"cells": [
+"801",
+"802",
+"802#1",
+"802#2",
+"Z:5d4fcf3d",
+"Z:f0cb2966"
+],
+"pattern": "born 1 died 2 lost 2 gained 0",
+"net": -1
+},
+{
+"t0": 35,
+"t1": 34,
+"type": "relabel",
+"cells": [
+"Z:17ccc09e",
+"Z:f0dadb4d"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 35,
+"t1": 34,
+"type": "merge",
+"cells": [
+"301#1",
+"608",
+"609"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 35,
+"t1": 34,
+"type": "clump",
+"cells": [
+"608",
+"688",
+"781",
+"922"
+],
+"pattern": "born 0 died 0 lost 1 gained 2",
+"net": 0
+},
+{
+"t0": 35,
+"t1": 34,
+"type": "swap",
+"cells": [
+"301#1",
+"304",
+"Z:daa90e18",
+"Z:f453aca3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 35,
+"t1": 34,
+"type": "swap",
+"cells": [
+"101#2",
+"Z:16488ac1",
+"Z:5af0ecc1",
+"Z:5bbbf227"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 34,
+"t1": 33,
+"type": "split",
+"cells": [
+"Z:c12008a0",
+"Z:e1d2bd5f",
+"Z:f60aa2ce"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 34,
+"t1": 33,
+"type": "split",
+"cells": [
+"689"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 34,
+"t1": 33,
+"type": "relabel",
+"cells": [
+"839",
+"855"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 34,
+"t1": 33,
+"type": "merge",
+"cells": [
+"Z:f0cb2966"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 34,
+"t1": 33,
+"type": "clump",
+"cells": [
+"301#1",
+"304",
+"306",
+"317",
+"701",
+"708",
+"Z:daa90e18"
+],
+"pattern": "born 0 died 3 lost 0 gained 3",
+"net": -3
+},
+{
+"t0": 34,
+"t1": 33,
+"type": "clump",
+"cells": [
+"801",
+"802",
+"804",
+"901",
+"Z:25e4d7c3",
+"Z:5d4fcf3d"
+],
+"pattern": "born 0 died 2 lost 2 gained 1",
+"net": -2
+},
+{
+"t0": 34,
+"t1": 33,
+"type": "swap",
+"cells": [
+"101#2",
+"Z:16488ac1",
+"Z:5af0ecc1",
+"Z:5bbbf227"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 34,
+"t1": 33,
+"type": "clump",
+"cells": [
+"Z:3491b520",
+"Z:755522ee",
+"Z:7971c52b"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 33,
+"t1": 32,
+"type": "clump",
+"cells": [
+"102",
+"Z:16488ac1",
+"Z:f9415809"
+],
+"pattern": "born 1 died 2 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 33,
+"t1": 32,
+"type": "clump",
+"cells": [
+"101#1",
+"Z:13f4badb",
+"Z:3491b520"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 33,
+"t1": 32,
+"type": "clump",
+"cells": [
+"Z:3491b520",
+"Z:755522ee",
+"Z:7971c52b"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 32,
+"t1": 31,
+"type": "clump",
+"cells": [
+"201#1",
+"Z:b374bf3c",
+"Z:c12008a0",
+"Z:f60aa2ce"
+],
+"pattern": "born 1 died 1 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 32,
+"t1": 31,
+"type": "relabel",
+"cells": [
+"Z:3491b520",
+"Z:c399c7b3"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 32,
+"t1": 31,
+"type": "merge",
+"cells": [
+"645",
+"665",
+"801"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 32,
+"t1": 31,
+"type": "swap",
+"cells": [
+"688",
+"689",
+"901",
+"922"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "clump",
+"cells": [
+"709",
+"Z:6e9f1e22",
+"Z:7c44e18f"
+],
+"pattern": "born 3 died 0 lost 0 gained 0",
+"net": 3
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "clump",
+"cells": [
+"301#1",
+"406",
+"Z:37189432",
+"Z:dbc10ebc"
+],
+"pattern": "born 1 died 1 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "clump",
+"cells": [
+"607",
+"686",
+"Z:095a06f7",
+"Z:3a0b0d86",
+"Z:4b908e82",
+"Z:7d6867fd",
+"Z:d6ae4168",
+"Z:f0dadb4d"
+],
+"pattern": "born 5 died 3 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "clump",
+"cells": [
+"801",
+"835",
+"838",
+"839",
+"857",
+"861",
+"Z:d5a94d57"
+],
+"pattern": "born 1 died 2 lost 0 gained 3",
+"net": -1
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "clump",
+"cells": [
+"608",
+"653",
+"659",
+"689"
+],
+"pattern": "born 2 died 0 lost 1 gained 0",
+"net": 2
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "clump",
+"cells": [
+"201#1",
+"818",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:41ee4dda",
+"Z:56b20692",
+"Z:8e48ccd1",
+"Z:b374bf3c",
+"Z:f60aa2ce"
+],
+"pattern": "born 2 died 1 lost 6 gained 0",
+"net": 1
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "clump",
+"cells": [
+"101#1",
+"2035",
+"224",
+"Z:13f4badb",
+"Z:1953ec9b",
+"Z:c399c7b3"
+],
+"pattern": "born 1 died 1 lost 0 gained 3",
+"net": 0
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "clump",
+"cells": [
+"101#2",
+"Z:5af0ecc1",
+"Z:f9415809"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 30,
+"t1": 29,
+"type": "split",
+"cells": [
+"Z:5af0ecc1"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 30,
+"t1": 29,
+"type": "clump",
+"cells": [
+"101#1",
+"901",
+"902",
+"903",
+"Z:13f4badb",
+"Z:1953ec9b",
+"Z:c399c7b3"
+],
+"pattern": "born 0 died 1 lost 3 gained 1",
+"net": -1
+},
+{
+"t0": 30,
+"t1": 29,
+"type": "clump",
+"cells": [
+"Z:755522ee",
+"Z:7971c52b",
+"Z:c399c7b3"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 30,
+"t1": 29,
+"type": "swap",
+"cells": [
+"301#1",
+"608",
+"659",
+"901"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 30,
+"t1": 29,
+"type": "clump",
+"cells": [
+"818",
+"Z:f60aa2ce"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 30,
+"t1": 29,
+"type": "clump",
+"cells": [
+"Z:02cb298f",
+"Z:14c83715"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 29,
+"t1": 28,
+"type": "clump",
+"cells": [
+"503",
+"701",
+"801",
+"Z:095a06f7",
+"Z:6e9f1e22",
+"Z:7c44e18f",
+"Z:7d6867fd",
+"Z:ae357d35#1"
+],
+"pattern": "born 2 died 0 lost 5 gained 0",
+"net": 2
+},
+{
+"t0": 29,
+"t1": 28,
+"type": "clump",
+"cells": [
+"201#1",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:41ee4dda",
+"Z:93709b6f#1",
+"Z:93709b6f#2"
+],
+"pattern": "born 2 died 1 lost 1 gained 1",
+"net": 1
+},
+{
+"t0": 29,
+"t1": 28,
+"type": "clump",
+"cells": [
+"835",
+"839",
+"839#1",
+"839#2",
+"Z:d5a94d57"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 29,
+"t1": 28,
+"type": "clump",
+"cells": [
+"Z:ae357d35#2"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 29,
+"t1": 28,
+"type": "clump",
+"cells": [
+"301#1",
+"6662",
+"Z:dbc10ebc"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 29,
+"t1": 28,
+"type": "merge",
+"cells": [
+"Z:5af0ecc1"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 29,
+"t1": 28,
+"type": "clump",
+"cells": [
+"101#1",
+"901",
+"903",
+"Z:13f4badb",
+"Z:c399c7b3"
+],
+"pattern": "born 0 died 0 lost 1 gained 3",
+"net": 0
+},
+{
+"t0": 28,
+"t1": 27,
+"type": "clump",
+"cells": [
+"301#3",
+"613",
+"613#1",
+"613#2",
+"818",
+"819",
+"Z:4adcc172",
+"Z:4b908e82",
+"Z:5b940075",
+"Z:7893900d",
+"Z:879cda8d",
+"Z:93709b6f#1",
+"Z:93709b6f#2",
+"Z:b9062897#1",
+"Z:b9062897#2",
+"Z:b9062897#3",
+"Z:b9062897#4",
+"Z:f2353abe",
+"Z:f4b3f669",
+"Z:f60aa2ce"
+],
+"pattern": "born 11 died 7 lost 1 gained 0",
+"net": 4
+},
+{
+"t0": 28,
+"t1": 27,
+"type": "clump",
+"cells": [
+"835",
+"839",
+"839#1",
+"839#2",
+"Z:d5a94d57"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 28,
+"t1": 27,
+"type": "clump",
+"cells": [
+"Z:755522ee",
+"Z:7971c52b",
+"Z:c399c7b3"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 27,
+"t1": 26,
+"type": "clump",
+"cells": [
+"301#1",
+"613",
+"613#1",
+"613#2",
+"Z:879cda8d"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 27,
+"t1": 26,
+"type": "clump",
+"cells": [
+"201",
+"201#1",
+"201#2",
+"802",
+"804",
+"818",
+"902",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:56b20692",
+"Z:8e48ccd1",
+"Z:97da4a3b",
+"Z:b9062897#1",
+"Z:b9062897#3",
+"Z:d21b82c3",
+"Z:fa073c18"
+],
+"pattern": "born 2 died 5 lost 2 gained 3",
+"net": -3
+},
+{
+"t0": 27,
+"t1": 26,
+"type": "clump",
+"cells": [
+"101#2",
+"Z:5af0ecc1",
+"Z:f9415809"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 27,
+"t1": 26,
+"type": "relabel",
+"cells": [
+"Z:095a06f7",
+"Z:75e3f073"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 27,
+"t1": 26,
+"type": "clump",
+"cells": [
+"Z:755522ee",
+"Z:7971c52b",
+"Z:c399c7b3"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 27,
+"t1": 26,
+"type": "clump",
+"cells": [
+"101#1",
+"Z:13f4badb",
+"Z:c399c7b3"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 27,
+"t1": 26,
+"type": "clump",
+"cells": [
+"902",
+"Z:7971c52b",
+"Z:c399c7b3"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 26,
+"t1": 25,
+"type": "clump",
+"cells": [
+"301#1",
+"301#3",
+"613",
+"613#1",
+"613#2",
+"Z:879cda8d"
+],
+"pattern": "born 2 died 2 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 26,
+"t1": 25,
+"type": "split",
+"cells": [
+"Z:610783ce",
+"Z:add69cdd",
+"Z:d5a94d57"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 26,
+"t1": 25,
+"type": "clump",
+"cells": [
+"818",
+"819",
+"904",
+"Z:259d6cf9",
+"Z:56b20692",
+"Z:7893900d",
+"Z:8e48ccd1",
+"Z:b9062897#1",
+"Z:f60aa2ce"
+],
+"pattern": "born 1 died 1 lost 3 gained 2",
+"net": 0
+},
+{
+"t0": 26,
+"t1": 25,
+"type": "clump",
+"cells": [
+"301#1",
+"306",
+"320"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 26,
+"t1": 25,
+"type": "clump",
+"cells": [
+"698",
+"801",
+"839",
+"853",
+"861",
+"922"
+],
+"pattern": "born 0 died 3 lost 0 gained 2",
+"net": -3
+},
+{
+"t0": 26,
+"t1": 25,
+"type": "clump",
+"cells": [
+"902",
+"Z:7971c52b",
+"Z:c399c7b3"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 26,
+"t1": 25,
+"type": "swap",
+"cells": [
+"818",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:b9062897#3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 26,
+"t1": 25,
+"type": "clump",
+"cells": [
+"Z:755522ee",
+"Z:7971c52b",
+"Z:c399c7b3"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 25,
+"t1": 24,
+"type": "clump",
+"cells": [
+"Z:1953ec9b",
+"Z:4c0a45b0",
+"Z:c399c7b3"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 25,
+"t1": 24,
+"type": "relabel",
+"cells": [
+"Z:259d6cf9",
+"Z:fe77671d"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 25,
+"t1": 24,
+"type": "clump",
+"cells": [
+"301#1",
+"613",
+"613#1",
+"613#2",
+"Z:879cda8d"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 25,
+"t1": 24,
+"type": "merge",
+"cells": [
+"688",
+"689",
+"901"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 25,
+"t1": 24,
+"type": "clump",
+"cells": [
+"101#2",
+"Z:5af0ecc1",
+"Z:f9415809"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 24,
+"t1": 23,
+"type": "clump",
+"cells": [
+"201",
+"818",
+"818#1",
+"819",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:56b20692",
+"Z:8e48ccd1",
+"Z:b9062897#1",
+"Z:b9062897#3",
+"Z:b9062897#4",
+"Z:fe77671d"
+],
+"pattern": "born 1 died 2 lost 4 gained 7",
+"net": -1
+},
+{
+"t0": 24,
+"t1": 23,
+"type": "split",
+"cells": [
+"902",
+"909",
+"911"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 24,
+"t1": 23,
+"type": "split",
+"cells": [
+"818#2"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 24,
+"t1": 23,
+"type": "split",
+"cells": [
+"Z:6c556847"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 24,
+"t1": 23,
+"type": "clump",
+"cells": [
+"101#2",
+"Z:5af0ecc1",
+"Z:f9415809"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 24,
+"t1": 23,
+"type": "clump",
+"cells": [
+"101#1",
+"Z:1953ec9b",
+"Z:4c0a45b0"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 24,
+"t1": 23,
+"type": "merge",
+"cells": [
+"653",
+"688",
+"781",
+"922"
+],
+"pattern": "born 0 died 1 lost 0 gained 2",
+"net": -1
+},
+{
+"t0": 24,
+"t1": 23,
+"type": "clump",
+"cells": [
+"Z:4c0a45b0",
+"Z:755522ee",
+"Z:7971c52b"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 23,
+"t1": 22,
+"type": "clump",
+"cells": [
+"818",
+"818#1",
+"818#2",
+"819",
+"Z:fe77671d"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 23,
+"t1": 22,
+"type": "clump",
+"cells": [
+"Z:4c0a45b0",
+"Z:755522ee",
+"Z:7971c52b",
+"Z:e9b6ee3a"
+],
+"pattern": "born 1 died 1 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 23,
+"t1": 22,
+"type": "clump",
+"cells": [
+"801",
+"839",
+"901",
+"Z:610783ce",
+"Z:6c556847",
+"Z:add69cdd"
+],
+"pattern": "born 0 died 1 lost 1 gained 2",
+"net": -1
+},
+{
+"t0": 23,
+"t1": 22,
+"type": "clump",
+"cells": [
+"819",
+"Z:f60aa2ce"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 22,
+"t1": 21,
+"type": "relabel",
+"cells": [
+"Z:06feef24",
+"Z:7d6867fd"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 22,
+"t1": 21,
+"type": "clump",
+"cells": [
+"818",
+"819",
+"Z:02cb298f",
+"Z:14c83715",
+"Z:b9062897#1",
+"Z:f60aa2ce"
+],
+"pattern": "born 0 died 0 lost 3 gained 1",
+"net": 0
+},
+{
+"t0": 22,
+"t1": 21,
+"type": "swap",
+"cells": [
+"801",
+"901",
+"Z:610783ce",
+"Z:add69cdd"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 21,
+"t1": 20,
+"type": "clump",
+"cells": [
+"201",
+"818",
+"911",
+"Z:03d0863c",
+"Z:14c83715",
+"Z:39da9edd",
+"Z:468c502a",
+"Z:56b20692",
+"Z:5b940075",
+"Z:b3a4cf61",
+"Z:b9062897#1",
+"Z:b9062897#2",
+"Z:b9062897#3",
+"Z:f2353abe",
+"Z:fe77671d"
+],
+"pattern": "born 6 died 5 lost 1 gained 2",
+"net": 1
+},
+{
+"t0": 21,
+"t1": 20,
+"type": "clump",
+"cells": [
+"503",
+"Z:75e3f073",
+"Z:768ce4da"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 21,
+"t1": 20,
+"type": "clump",
+"cells": [
+"501",
+"503",
+"511",
+"607",
+"686",
+"709",
+"801",
+"Z:06feef24",
+"Z:39d78e23",
+"Z:4adcc172",
+"Z:75e3f073"
+],
+"pattern": "born 3 died 1 lost 5 gained 1",
+"net": 2
+},
+{
+"t0": 21,
+"t1": 20,
+"type": "clump",
+"cells": [
+"701",
+"709",
+"Z:ae357d35#1",
+"Z:ae357d35#2",
+"Z:f44811e7#1",
+"Z:f44811e7#2",
+"Z:f44811e7#3",
+"Z:f44811e7#4"
+],
+"pattern": "born 4 died 2 lost 0 gained 1",
+"net": 2
+},
+{
+"t0": 21,
+"t1": 20,
+"type": "clump",
+"cells": [
+"101#2",
+"Z:5af0ecc1",
+"Z:f9415809"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 21,
+"t1": 20,
+"type": "clump",
+"cells": [
+"Z:755522ee",
+"Z:7971c52b",
+"Z:e9b6ee3a"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 21,
+"t1": 20,
+"type": "swap",
+"cells": [
+"301#1",
+"306",
+"320",
+"708"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 20,
+"t1": 19,
+"type": "clump",
+"cells": [
+"101#2",
+"Z:5af0ecc1",
+"Z:f9415809"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 20,
+"t1": 19,
+"type": "clump",
+"cells": [
+"Z:3ad71ab9",
+"Z:6e9f1e22",
+"Z:7c44e18f"
+],
+"pattern": "born 1 died 2 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 20,
+"t1": 19,
+"type": "clump",
+"cells": [
+"701",
+"709",
+"Z:f44811e7#3",
+"Z:f44811e7#4"
+],
+"pattern": "born 0 died 2 lost 1 gained 0",
+"net": -2
+},
+{
+"t0": 20,
+"t1": 19,
+"type": "clump",
+"cells": [
+"Z:755522ee",
+"Z:7971c52b",
+"Z:e9b6ee3a"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 20,
+"t1": 19,
+"type": "clump",
+"cells": [
+"819",
+"Z:03d0863c",
+"Z:f60aa2ce"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 19,
+"t1": 18,
+"type": "relabel",
+"cells": [
+"Z:72f2b5ed",
+"Z:97da4a3b"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 19,
+"t1": 18,
+"type": "clump",
+"cells": [
+"101",
+"101#1",
+"101#2",
+"301",
+"301#1",
+"301#2",
+"Z:5af0ecc1",
+"Z:f9415809"
+],
+"pattern": "born 2 died 6 lost 0 gained 0",
+"net": -4
+},
+{
+"t0": 19,
+"t1": 18,
+"type": "relabel",
+"cells": [
+"Z:3ad71ab9",
+"Z:8606e871"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 19,
+"t1": 18,
+"type": "clump",
+"cells": [
+"801",
+"835",
+"839",
+"901",
+"Z:add69cdd"
+],
+"pattern": "born 0 died 2 lost 0 gained 2",
+"net": -2
+},
+{
+"t0": 19,
+"t1": 18,
+"type": "clump",
+"cells": [
+"Z:755522ee",
+"Z:7971c52b",
+"Z:e9b6ee3a"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 19,
+"t1": 18,
+"type": "clump",
+"cells": [
+"201",
+"818",
+"819",
+"Z:03d0863c",
+"Z:14c83715"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 18,
+"t1": 17,
+"type": "clump",
+"cells": [
+"201",
+"201#1",
+"201#2",
+"802",
+"815",
+"819",
+"904",
+"911",
+"Z:03d0863c",
+"Z:33a549d2",
+"Z:39da9edd",
+"Z:468c502a",
+"Z:6756855a",
+"Z:72f2b5ed",
+"Z:e2121f04",
+"Z:f60aa2ce"
+],
+"pattern": "born 5 died 4 lost 3 gained 2",
+"net": 1
+},
+{
+"t0": 18,
+"t1": 17,
+"type": "relabel",
+"cells": [
+"Z:6d196293",
+"Z:8606e871"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 18,
+"t1": 17,
+"type": "clump",
+"cells": [
+"Z:6972d6fb",
+"Z:755522ee",
+"Z:ceadf24b",
+"Z:e9b6ee3a"
+],
+"pattern": "born 1 died 1 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 18,
+"t1": 17,
+"type": "relabel",
+"cells": [
+"Z:39d78e23",
+"Z:cbf88eaf"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 18,
+"t1": 17,
+"type": "swap",
+"cells": [
+"501",
+"503",
+"Z:06feef24",
+"Z:75e3f073"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 18,
+"t1": 17,
+"type": "swap",
+"cells": [
+"801",
+"901",
+"Z:610783ce",
+"Z:add69cdd"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 17,
+"t1": 16,
+"type": "clump",
+"cells": [
+"901",
+"909",
+"909#1",
+"909#2",
+"Z:6972d6fb"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 17,
+"t1": 16,
+"type": "relabel",
+"cells": [
+"Z:6d196293",
+"Z:f11bbae2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 17,
+"t1": 16,
+"type": "birth",
+"cells": [
+"Z:35f66aac"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 17,
+"t1": 16,
+"type": "relabel",
+"cells": [
+"Z:03d0863c",
+"Z:24d051be"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 17,
+"t1": 16,
+"type": "clump",
+"cells": [
+"301",
+"306",
+"320",
+"701"
+],
+"pattern": "born 0 died 2 lost 0 gained 1",
+"net": -2
+},
+{
+"t0": 17,
+"t1": 16,
+"type": "clump",
+"cells": [
+"608",
+"653",
+"781",
+"801",
+"922"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 17,
+"t1": 16,
+"type": "clump",
+"cells": [
+"Z:6972d6fb",
+"Z:755522ee",
+"Z:7971c52b",
+"Z:ceadf24b"
+],
+"pattern": "born 0 died 0 lost 0 gained 3",
+"net": 0
+},
+{
+"t0": 16,
+"t1": 15,
+"type": "clump",
+"cells": [
+"901",
+"909",
+"909#1",
+"909#2",
+"911",
+"971",
+"Z:6972d6fb"
+],
+"pattern": "born 2 died 2 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 16,
+"t1": 15,
+"type": "merge",
+"cells": [
+"Z:eece8c4f#1",
+"Z:f11bbae2",
+"Z:f44811e7#1"
+],
+"pattern": "born 1 died 2 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 16,
+"t1": 15,
+"type": "relabel",
+"cells": [
+"Z:eece8c4f#2",
+"Z:f44811e7#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 16,
+"t1": 15,
+"type": "clump",
+"cells": [
+"Z:6972d6fb",
+"Z:755522ee",
+"Z:7971c52b",
+"Z:ceadf24b"
+],
+"pattern": "born 0 died 0 lost 3 gained 0",
+"net": 0
+},
+{
+"t0": 16,
+"t1": 15,
+"type": "swap",
+"cells": [
+"201#1",
+"802",
+"911",
+"Z:24d051be"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 15,
+"t1": 14,
+"type": "clump",
+"cells": [
+"301",
+"301#1",
+"301#2",
+"608",
+"613",
+"Z:3b37e42a",
+"Z:879cda8d",
+"Z:cbf88eaf"
+],
+"pattern": "born 3 died 3 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 15,
+"t1": 14,
+"type": "relabel",
+"cells": [
+"Z:1e5c95cf#2",
+"Z:eece8c4f#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 15,
+"t1": 14,
+"type": "clump",
+"cells": [
+"608",
+"653",
+"653#1",
+"653#2",
+"678",
+"781",
+"801",
+"Z:01f37110",
+"Z:102b115e"
+],
+"pattern": "born 5 died 1 lost 2 gained 0",
+"net": 4
+},
+{
+"t0": 15,
+"t1": 14,
+"type": "relabel",
+"cells": [
+"Z:1e5c95cf#1",
+"Z:eece8c4f#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 15,
+"t1": 14,
+"type": "clump",
+"cells": [
+"101",
+"Z:13f4badb",
+"Z:1953ec9b",
+"Z:6972d6fb",
+"Z:a6421b32"
+],
+"pattern": "born 2 died 1 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 14,
+"t1": 13,
+"type": "relabel",
+"cells": [
+"Z:24d051be",
+"Z:60c45a60"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 14,
+"t1": 13,
+"type": "clump",
+"cells": [
+"101",
+"Z:1953ec9b",
+"Z:a6421b32"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 14,
+"t1": 13,
+"type": "swap",
+"cells": [
+"301#1",
+"901",
+"Z:35f66aac",
+"Z:dbc10ebc"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 13,
+"t1": 12,
+"type": "clump",
+"cells": [
+"801",
+"821",
+"Z:add69cdd"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 13,
+"t1": 12,
+"type": "clump",
+"cells": [
+"653",
+"653#1",
+"653#2",
+"801",
+"849",
+"922",
+"Z:102b115e"
+],
+"pattern": "born 2 died 3 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 13,
+"t1": 12,
+"type": "relabel",
+"cells": [
+"Z:1e5c95cf#1",
+"Z:fb351147#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 13,
+"t1": 12,
+"type": "relabel",
+"cells": [
+"Z:72f2b5ed",
+"Z:815e4567"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 13,
+"t1": 12,
+"type": "clump",
+"cells": [
+"819",
+"Z:312dde3b",
+"Z:60c45a60",
+"Z:f60aa2ce"
+],
+"pattern": "born 1 died 1 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 13,
+"t1": 12,
+"type": "clump",
+"cells": [
+"909",
+"911",
+"9910"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 13,
+"t1": 12,
+"type": "relabel",
+"cells": [
+"Z:1e5c95cf#2",
+"Z:fb351147#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 13,
+"t1": 12,
+"type": "swap",
+"cells": [
+"301#2",
+"608",
+"645",
+"678"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 13,
+"t1": 12,
+"type": "clump",
+"cells": [
+"819",
+"Z:14c83715"
+],
+"pattern": "born 0 died 0 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 13,
+"t1": 12,
+"type": "clump",
+"cells": [
+"815",
+"Z:33a549d2"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 13,
+"t1": 12,
+"type": "clump",
+"cells": [
+"101",
+"901",
+"Z:13f4badb",
+"Z:a6421b32",
+"Z:ceadf24b"
+],
+"pattern": "born 0 died 0 lost 0 gained 4",
+"net": 0
+},
+{
+"t0": 12,
+"t1": 11,
+"type": "relabel",
+"cells": [
+"Z:ecdd2d82#2",
+"Z:fb351147#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 12,
+"t1": 11,
+"type": "clump",
+"cells": [
+"201",
+"201#1",
+"201#2",
+"819",
+"911",
+"Z:312dde3b",
+"Z:33a549d2",
+"Z:5feab482",
+"Z:815e4567",
+"Z:91241071",
+"Z:b3a4cf61",
+"Z:e4be8c5c",
+"Z:f60aa2ce"
+],
+"pattern": "born 4 died 5 lost 2 gained 0",
+"net": -1
+},
+{
+"t0": 12,
+"t1": 11,
+"type": "relabel",
+"cells": [
+"Z:ecdd2d82#1",
+"Z:fb351147#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 12,
+"t1": 11,
+"type": "clump",
+"cells": [
+"901",
+"Z:a6421b32",
+"Z:ceadf24b"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 12,
+"t1": 11,
+"type": "clump",
+"cells": [
+"301#1",
+"301#2",
+"608",
+"645",
+"678",
+"Z:879cda8d"
+],
+"pattern": "born 0 died 0 lost 3 gained 3",
+"net": 0
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "relabel",
+"cells": [
+"Z:d068be9d#1",
+"Z:ecdd2d82#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "clump",
+"cells": [
+"801",
+"824",
+"901"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "clump",
+"cells": [
+"101",
+"969",
+"970",
+"Z:13f4badb",
+"Z:6aff5281",
+"Z:8e2b8cfe",
+"Z:996c5357",
+"Z:a6421b32",
+"Z:bf775055#1",
+"Z:bf775055#2"
+],
+"pattern": "born 7 died 1 lost 1 gained 0",
+"net": 6
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "clump",
+"cells": [
+"201",
+"802",
+"819",
+"Z:db17812b",
+"Z:e4be8c5c",
+"Z:f60aa2ce"
+],
+"pattern": "born 1 died 1 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "clump",
+"cells": [
+"566",
+"645",
+"801"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "clump",
+"cells": [
+"301",
+"301#1",
+"301#2",
+"646",
+"677",
+"Z:73e7c2db",
+"Z:879cda8d"
+],
+"pattern": "born 4 died 3 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "relabel",
+"cells": [
+"971",
+"972"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "relabel",
+"cells": [
+"Z:d068be9d#2",
+"Z:ecdd2d82#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "swap",
+"cells": [
+"503",
+"Z:75e3f073",
+"Z:768ce4da",
+"Z:f453aca3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 10,
+"t1": 9,
+"type": "relabel",
+"cells": [
+"Z:8265df67#2",
+"Z:d068be9d#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 10,
+"t1": 9,
+"type": "clump",
+"cells": [
+"201",
+"201#1",
+"201#2",
+"815",
+"819",
+"911",
+"Z:5feab482",
+"Z:7bb19303",
+"Z:815e4567",
+"Z:91241071",
+"Z:db17812b",
+"Z:f60aa2ce"
+],
+"pattern": "born 3 died 2 lost 4 gained 1",
+"net": 1
+},
+{
+"t0": 10,
+"t1": 9,
+"type": "clump",
+"cells": [
+"Z:755522ee",
+"Z:996c5357",
+"Z:bf775055#3"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 10,
+"t1": 9,
+"type": "relabel",
+"cells": [
+"Z:8265df67#1",
+"Z:d068be9d#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 10,
+"t1": 9,
+"type": "relabel",
+"cells": [
+"Z:0ab8e37a",
+"Z:73e7c2db"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 10,
+"t1": 9,
+"type": "clump",
+"cells": [
+"909",
+"911",
+"9910"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 10,
+"t1": 9,
+"type": "swap",
+"cells": [
+"801",
+"821",
+"824",
+"901"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 10,
+"t1": 9,
+"type": "swap",
+"cells": [
+"901",
+"903",
+"Z:6aff5281",
+"Z:bf775055#1"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 10,
+"t1": 9,
+"type": "swap",
+"cells": [
+"566",
+"781",
+"801",
+"Z:102b115e"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 10,
+"t1": 9,
+"type": "clump",
+"cells": [
+"101",
+"Z:13f4badb",
+"Z:996c5357"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 9,
+"t1": 8,
+"type": "clump",
+"cells": [
+"701",
+"709",
+"Z:3c20202c#1",
+"Z:3c20202c#2",
+"Z:6dfdeea2#1",
+"Z:8265df67#1",
+"Z:8265df67#2"
+],
+"pattern": "born 3 died 2 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 9,
+"t1": 8,
+"type": "relabel",
+"cells": [
+"Z:31a5f390",
+"Z:e2121f04"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 9,
+"t1": 8,
+"type": "clump",
+"cells": [
+"101",
+"903",
+"970",
+"Z:13f4badb",
+"Z:6aff5281",
+"Z:996c5357",
+"Z:b8aa3f96",
+"Z:bf775055#1",
+"Z:bf775055#2",
+"Z:bf775055#3"
+],
+"pattern": "born 1 died 3 lost 2 gained 1",
+"net": -2
+},
+{
+"t0": 9,
+"t1": 8,
+"type": "clump",
+"cells": [
+"Z:6dfdeea2#2",
+"Z:9619649c"
+],
+"pattern": "born 2 died 0 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 9,
+"t1": 8,
+"type": "swap",
+"cells": [
+"566",
+"678",
+"781",
+"Z:102b115e"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 9,
+"t1": 8,
+"type": "swap",
+"cells": [
+"201#1",
+"818",
+"Z:14c83715",
+"Z:5feab482"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 9,
+"t1": 8,
+"type": "clump",
+"cells": [
+"819",
+"Z:db17812b",
+"Z:f60aa2ce"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 8,
+"t1": 7,
+"type": "birth",
+"cells": [
+"829"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 8,
+"t1": 7,
+"type": "clump",
+"cells": [
+"566",
+"681",
+"801"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 8,
+"t1": 7,
+"type": "clump",
+"cells": [
+"101",
+"Z:13f4badb",
+"Z:2596547a#1",
+"Z:2596547a#2",
+"Z:b8aa3f96",
+"Z:bf775055#1",
+"Z:bf775055#2",
+"Z:dcfb49d6"
+],
+"pattern": "born 3 died 3 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 8,
+"t1": 7,
+"type": "relabel",
+"cells": [
+"Z:0dc58e30#1",
+"Z:3c20202c#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 8,
+"t1": 7,
+"type": "clump",
+"cells": [
+"Z:0dc58e30#2",
+"Z:3c20202c#2",
+"Z:6dfdeea2",
+"Z:6dfdeea2#1",
+"Z:6dfdeea2#2"
+],
+"pattern": "born 2 died 3 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 8,
+"t1": 7,
+"type": "clump",
+"cells": [
+"819",
+"Z:373791af",
+"Z:db17812b",
+"Z:f60aa2ce"
+],
+"pattern": "born 1 died 1 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 8,
+"t1": 7,
+"type": "clump",
+"cells": [
+"566",
+"678",
+"Z:bdfe4b4b"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 7,
+"t1": 6,
+"type": "clump",
+"cells": [
+"802",
+"815",
+"Z:1a78a5b2",
+"Z:31a5f390",
+"Z:5b5c60a1"
+],
+"pattern": "born 1 died 2 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 7,
+"t1": 6,
+"type": "relabel",
+"cells": [
+"Z:0dc58e30#1",
+"Z:913dbeb2#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 7,
+"t1": 6,
+"type": "clump",
+"cells": [
+"566",
+"645",
+"664",
+"669",
+"676",
+"681",
+"781",
+"801",
+"Z:102b115e",
+"Z:5c669185",
+"Z:bdfe4b4b"
+],
+"pattern": "born 4 died 2 lost 3 gained 1",
+"net": 2
+},
+{
+"t0": 7,
+"t1": 6,
+"type": "clump",
+"cells": [
+"201#1",
+"911",
+"Z:0df7910d",
+"Z:7bb19303",
+"Z:7bb19303#1",
+"Z:7bb19303#2",
+"Z:91241071"
+],
+"pattern": "born 3 died 2 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 7,
+"t1": 6,
+"type": "clump",
+"cells": [
+"653",
+"Z:102b115e",
+"Z:fe71c23c"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 7,
+"t1": 6,
+"type": "split",
+"cells": [
+"Z:1953ec9b"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 7,
+"t1": 6,
+"type": "relabel",
+"cells": [
+"Z:0dc58e30#2",
+"Z:913dbeb2#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 7,
+"t1": 6,
+"type": "relabel",
+"cells": [
+"Z:5feab482",
+"Z:9640bb12"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 7,
+"t1": 6,
+"type": "clump",
+"cells": [
+"101",
+"Z:13f4badb"
+],
+"pattern": "born 0 died 0 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 7,
+"t1": 6,
+"type": "swap",
+"cells": [
+"802",
+"819",
+"904",
+"Z:373791af"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "relabel",
+"cells": [
+"Z:913dbeb2#1",
+"Z:b4f5754a#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "relabel",
+"cells": [
+"Z:913dbeb2#2",
+"Z:b4f5754a#2"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "clump",
+"cells": [
+"901",
+"970",
+"Z:1953ec9b",
+"Z:2596547a#1",
+"Z:2596547a#2",
+"Z:755522ee",
+"Z:7fc3b566",
+"Z:dcfb49d6",
+"Z:fd42c3e3#1",
+"Z:fd42c3e3#2"
+],
+"pattern": "born 3 died 4 lost 1 gained 1",
+"net": -1
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "relabel",
+"cells": [
+"Z:3b37e42a",
+"Z:b84e96c9"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "clump",
+"cells": [
+"645",
+"646",
+"653",
+"669",
+"674",
+"677",
+"678",
+"697",
+"847",
+"849",
+"Z:0ab8e37a",
+"Z:102b115e",
+"Z:5c669185",
+"Z:fe71c23c"
+],
+"pattern": "born 3 died 2 lost 7 gained 1",
+"net": 1
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "clump",
+"cells": [
+"608",
+"653",
+"659",
+"699",
+"901"
+],
+"pattern": "born 1 died 0 lost 1 gained 1",
+"net": 1
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "clump",
+"cells": [
+"201#1",
+"911",
+"Z:7bb19303",
+"Z:7bb19303#1",
+"Z:7bb19303#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "clump",
+"cells": [
+"901",
+"911",
+"972"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "merge",
+"cells": [
+"802",
+"818",
+"819",
+"Z:373791af",
+"Z:8e48ccd1",
+"Z:f60aa2ce"
+],
+"pattern": "born 0 died 1 lost 0 gained 4",
+"net": -1
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "swap",
+"cells": [
+"801",
+"821",
+"824",
+"901"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 5,
+"t1": 4,
+"type": "split",
+"cells": [
+"201#3"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 5,
+"t1": 4,
+"type": "clump",
+"cells": [
+"503",
+"701",
+"709",
+"Z:b4f5754a#1",
+"Z:b4f5754a#2",
+"Z:fc3e06b3#1",
+"Z:fc3e06b3#2",
+"Z:fc4a22c1"
+],
+"pattern": "born 3 died 2 lost 0 gained 2",
+"net": 1
+},
+{
+"t0": 5,
+"t1": 4,
+"type": "clump",
+"cells": [
+"101",
+"901",
+"Z:13f4badb",
+"Z:6f987ecd",
+"Z:755522ee",
+"Z:7fc3b566",
+"Z:ad70f2ab",
+"Z:fd42c3e3#1",
+"Z:fd42c3e3#2"
+],
+"pattern": "born 2 died 3 lost 1 gained 1",
+"net": -1
+},
+{
+"t0": 5,
+"t1": 4,
+"type": "clump",
+"cells": [
+"201#1",
+"911",
+"Z:7bb19303",
+"Z:7bb19303#1",
+"Z:7bb19303#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 5,
+"t1": 4,
+"type": "birth",
+"cells": [
+"697#2"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 5,
+"t1": 4,
+"type": "clump",
+"cells": [
+"697",
+"697#1",
+"847",
+"Z:102b115e"
+],
+"pattern": "born 1 died 1 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 5,
+"t1": 4,
+"type": "swap",
+"cells": [
+"Z:05b8b248",
+"Z:75e3f073",
+"Z:768ce4da",
+"Z:f453aca3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 5,
+"t1": 4,
+"type": "clump",
+"cells": [
+"201#2",
+"Z:0df7910d"
+],
+"pattern": "born 0 died 0 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 5,
+"t1": 4,
+"type": "swap",
+"cells": [
+"801",
+"829",
+"849",
+"Z:102b115e"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 4,
+"t1": 3,
+"type": "clump",
+"cells": [
+"901",
+"Z:6f987ecd",
+"Z:6f987ecd#1",
+"Z:6f987ecd#2",
+"Z:755522ee"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 4,
+"t1": 3,
+"type": "clump",
+"cells": [
+"697",
+"697#1",
+"697#2",
+"847",
+"849"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 4,
+"t1": 3,
+"type": "relabel",
+"cells": [
+"Z:6dfdeea2",
+"Z:8eaa74bf"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 4,
+"t1": 3,
+"type": "merge",
+"cells": [
+"904"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 4,
+"t1": 3,
+"type": "merge",
+"cells": [
+"969"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 4,
+"t1": 3,
+"type": "clump",
+"cells": [
+"101",
+"Z:13f4badb",
+"Z:ad70f2ab"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 4,
+"t1": 3,
+"type": "clump",
+"cells": [
+"801",
+"821",
+"901",
+"Z:610783ce",
+"Z:add69cdd"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 4,
+"t1": 3,
+"type": "swap",
+"cells": [
+"Z:05b8b248",
+"Z:75e3f073",
+"Z:768ce4da",
+"Z:f453aca3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 4,
+"t1": 3,
+"type": "swap",
+"cells": [
+"607",
+"Z:06feef24",
+"Z:75e3f073",
+"Z:b84e96c9"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 3,
+"t1": 2,
+"type": "relabel",
+"cells": [
+"Z:1b345384",
+"Z:fc4a22c1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 3,
+"t1": 2,
+"type": "swap",
+"cells": [
+"301",
+"701",
+"708",
+"Z:f453aca3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 3,
+"t1": 2,
+"type": "swap",
+"cells": [
+"201#1",
+"818",
+"Z:14c83715",
+"Z:9640bb12"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 3,
+"t1": 2,
+"type": "swap",
+"cells": [
+"802",
+"815",
+"818",
+"Z:1a78a5b2"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 3,
+"t1": 2,
+"type": "swap",
+"cells": [
+"Z:05b8b248",
+"Z:75e3f073",
+"Z:768ce4da",
+"Z:f453aca3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 3,
+"t1": 2,
+"type": "swap",
+"cells": [
+"664",
+"669",
+"676",
+"Z:102b115e"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 3,
+"t1": 2,
+"type": "clump",
+"cells": [
+"970",
+"Z:6f987ecd#2"
+],
+"pattern": "born 0 died 0 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 3,
+"t1": 2,
+"type": "swap",
+"cells": [
+"608",
+"653",
+"678",
+"697"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 3,
+"t1": 2,
+"type": "clump",
+"cells": [
+"101",
+"Z:13f4badb",
+"Z:ad70f2ab"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 3,
+"t1": 2,
+"type": "clump",
+"cells": [
+"903",
+"Z:6f987ecd#1"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 2,
+"t1": 1,
+"type": "clump",
+"cells": [
+"201#1",
+"201#2",
+"911",
+"Z:5473cbe6",
+"Z:7bb19303#1",
+"Z:7bb19303#2",
+"Z:7bb19303#3"
+],
+"pattern": "born 1 died 0 lost 4 gained 3",
+"net": 1
+},
+{
+"t0": 2,
+"t1": 1,
+"type": "clump",
+"cells": [
+"503",
+"503#1",
+"503#2",
+"Z:75e3f073",
+"Z:768ce4da"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 2,
+"t1": 1,
+"type": "clump",
+"cells": [
+"697",
+"697#1",
+"697#2",
+"847",
+"849",
+"Z:102b115e"
+],
+"pattern": "born 2 died 1 lost 0 gained 2",
+"net": 1
+},
+{
+"t0": 2,
+"t1": 1,
+"type": "clump",
+"cells": [
+"818",
+"Z:373791af",
+"Z:42a69297",
+"Z:f60aa2ce"
+],
+"pattern": "born 1 died 1 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 2,
+"t1": 1,
+"type": "merge",
+"cells": [
+"201#3"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 2,
+"t1": 1,
+"type": "clump",
+"cells": [
+"101",
+"Z:13f4badb",
+"Z:ad70f2ab"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 2,
+"t1": 1,
+"type": "swap",
+"cells": [
+"501",
+"607",
+"Z:06feef24",
+"Z:b84e96c9"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 2,
+"t1": 1,
+"type": "swap",
+"cells": [
+"201#1",
+"818",
+"Z:14c83715",
+"Z:9640bb12"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 2,
+"t1": 1,
+"type": "swap",
+"cells": [
+"301",
+"701",
+"708",
+"Z:f453aca3"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 2,
+"t1": 1,
+"type": "swap",
+"cells": [
+"801",
+"829",
+"Z:01f37110",
+"Z:102b115e"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 2,
+"t1": 1,
+"type": "clump",
+"cells": [
+"201#2",
+"Z:0df7910d"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "birth",
+"cells": [
+"923"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "clump",
+"cells": [
+"101",
+"105",
+"903",
+"Z:13f4badb",
+"Z:2b0aa7a4",
+"Z:6f987ecd#1",
+"Z:ad70f2ab"
+],
+"pattern": "born 2 died 1 lost 1 gained 1",
+"net": 1
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "clump",
+"cells": [
+"503",
+"503#1",
+"503#2",
+"701",
+"701#1",
+"701#2",
+"708",
+"Z:1b345384",
+"Z:3c316b87",
+"Z:75e3f073",
+"Z:768ce4da",
+"Z:f453aca3"
+],
+"pattern": "born 4 died 4 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "birth",
+"cells": [
+"925"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "clump",
+"cells": [
+"697#2",
+"849"
+],
+"pattern": "born 0 died 0 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "clump",
+"cells": [
+"608",
+"653",
+"669",
+"678",
+"697#1"
+],
+"pattern": "born 0 died 0 lost 4 gained 0",
+"net": 0
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "swap",
+"cells": [
+"801",
+"829",
+"Z:01f37110",
+"Z:102b115e"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "clump",
+"cells": [
+"608",
+"653",
+"669",
+"678",
+"697#2"
+],
+"pattern": "born 0 died 0 lost 0 gained 4",
+"net": 0
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "clump",
+"cells": [
+"697#1",
+"849"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+}
+]

@@ -69,4 +69,22 @@ expect('NEG: a frame with one boundary missing fails Euler', not check_tiling(br
 c4 = Tiling(['A', 'B', 'C', 'D', 'P'], [('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'A')] + [('P', x) for x in 'ABCD'], [('A', 'B', 'P'), ('B', 'C', 'P'), ('C', 'D', 'P'), ('D', 'A', 'P'), ('A', 'B', 'C', 'D')])
 r4 = check_tiling(c4)
 expect('a four-fold junction: Euler holds, triple formulas do not apply', r4['euler_ok'] and r4['triple_formulas_ok'] is None, r4)
+# ADDED 15 Nov (Earth stream). Swap whose old pair still touches elsewhere: P (north) and Q (south) share two boundaries,
+# separated by cells a and b on the equator; a and b come together across one of the P-Q boundaries.
+W0 = Tiling('PQab', [('P', 'Q'), ('P', 'Q'), ('P', 'a'), ('Q', 'a'), ('P', 'b'), ('Q', 'b')], [('P', 'Q', 'a')] * 2 + [('P', 'Q', 'b')] * 2, t=0)
+W1 = Tiling('PQab', [('P', 'Q'), ('P', 'a'), ('Q', 'a'), ('P', 'b'), ('Q', 'b'), ('a', 'b')], [('P', 'a', 'b'), ('Q', 'a', 'b'), ('P', 'Q', 'a'), ('P', 'Q', 'b')], t=1)
+expect('two-boundary map: Euler and triple formulas', check_tiling(W0)['ok'] and check_tiling(W1)['ok'] and check_tiling(W0)['triple_formulas_ok'])
+expect('pair rule (default) reads it as a one-contact clump', [(e['type'], e['pattern']) for e in classify(W0, W1)] == [('clump', 'born 0 died 0 lost 0 gained 1')], classify(W0, W1))
+tb = lambda A, B: sorted(e['type'] for e in classify(A, B, by_segment=True))
+expect('by_segment: swap (new pair a-b, old pair P-Q keeps one boundary)', tb(W0, W1) == ['swap'], tb(W0, W1))
+expect('by_segment: reverse is a swap', tb(W1, W0) == ['swap'], tb(W1, W0))
+expect('by_segment changes nothing on the plain cases', tb(B0, B1) == ['swap'] and tb(T0, T1) == ['birth'] and tb(C0, C1) == ['split'] and tb(O, O3) == ['birth', 'swap'])
+rs, ss = run([W0, W1, W0], by_segment=True)
+expect('by_segment run: two swaps, balance ok', ss['ok'] and ss['counts'] == {'swap': 2}, ss['counts'])
+# island cell (a plate inside another): boundary network in two pieces
+I1 = Tiling(list(T0.cells) + [9], T0.segments + [(0, 9)], T0.junctions, loops=1, components=2, t=1)
+expect('island with components=2: Euler 3 = 1 + 2 holds, triple formulas do not apply', check_tiling(I1)['ok'] and check_tiling(I1)['triple_formulas_ok'] is None, check_tiling(I1))
+expect('NEG: the same island with components left out fails Euler', not check_tiling(Tiling(I1.cells, I1.segments, I1.junctions, loops=1, t=1))['ok'])
+expect('NEG: a wrong component count fails Euler', not check_tiling(Tiling(I1.cells, I1.segments, I1.junctions, loops=1, components=1, t=1))['ok'])
+expect('components survive the JSON round trip', Tiling.from_json(I1.to_json()).components == 2 and check_tiling(Tiling.from_json(I1.to_json()))['ok'])
 print(f'{sum(OK)}/{len(OK)} tests passed'); sys.exit(0 if all(OK) else 1)

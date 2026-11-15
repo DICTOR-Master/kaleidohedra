@@ -1,0 +1,8684 @@
+{
+ "model": "muller2016",
+ "rule": "rigid",
+ "level": 9,
+ "spacing_km": 15.040322003510507,
+ "tmax": 230,
+ "plates_by_time": {
+  "230": 10,
+  "229": 10,
+  "228": 11,
+  "227": 10,
+  "226": 10,
+  "225": 10,
+  "224": 10,
+  "223": 10,
+  "222": 10,
+  "221": 10,
+  "220": 10,
+  "219": 10,
+  "218": 10,
+  "217": 10,
+  "216": 10,
+  "215": 10,
+  "214": 10,
+  "213": 10,
+  "212": 10,
+  "211": 10,
+  "210": 10,
+  "209": 10,
+  "208": 10,
+  "207": 10,
+  "206": 10,
+  "205": 10,
+  "204": 10,
+  "203": 10,
+  "202": 10,
+  "201": 10,
+  "200": 13,
+  "199": 13,
+  "198": 13,
+  "197": 13,
+  "196": 13,
+  "195": 14,
+  "194": 14,
+  "193": 14,
+  "192": 14,
+  "191": 14,
+  "190": 15,
+  "189": 15,
+  "188": 15,
+  "187": 15,
+  "186": 15,
+  "185": 15,
+  "184": 15,
+  "183": 15,
+  "182": 15,
+  "181": 15,
+  "180": 14,
+  "179": 14,
+  "178": 14,
+  "177": 14,
+  "176": 14,
+  "175": 15,
+  "174": 15,
+  "173": 15,
+  "172": 15,
+  "171": 15,
+  "170": 17,
+  "169": 17,
+  "168": 17,
+  "167": 17,
+  "166": 17,
+  "165": 18,
+  "164": 18,
+  "163": 18,
+  "162": 18,
+  "161": 18,
+  "160": 20,
+  "159": 20,
+  "158": 20,
+  "157": 20,
+  "156": 20,
+  "155": 23,
+  "154": 23,
+  "153": 23,
+  "152": 22,
+  "151": 22,
+  "150": 22,
+  "149": 22,
+  "148": 22,
+  "147": 22,
+  "146": 22,
+  "145": 25,
+  "144": 26,
+  "143": 25,
+  "142": 26,
+  "141": 26,
+  "140": 26,
+  "139": 26,
+  "138": 26,
+  "137": 26,
+  "136": 26,
+  "135": 27,
+  "134": 27,
+  "133": 27,
+  "132": 29,
+  "131": 29,
+  "130": 29,
+  "129": 29,
+  "128": 29,
+  "127": 29,
+  "126": 29,
+  "125": 28,
+  "124": 28,
+  "123": 28,
+  "122": 28,
+  "121": 27,
+  "120": 26,
+  "119": 26,
+  "118": 26,
+  "117": 26,
+  "116": 26,
+  "115": 24,
+  "114": 24,
+  "113": 24,
+  "112": 24,
+  "111": 24,
+  "110": 24,
+  "109": 24,
+  "108": 24,
+  "107": 24,
+  "106": 24,
+  "105": 25,
+  "104": 25,
+  "103": 26,
+  "102": 26,
+  "101": 28,
+  "100": 26,
+  "99": 26,
+  "98": 26,
+  "97": 26,
+  "96": 26,
+  "95": 26,
+  "94": 26,
+  "93": 27,
+  "92": 26,
+  "91": 26,
+  "90": 27,
+  "89": 27,
+  "88": 27,
+  "87": 27,
+  "86": 27,
+  "85": 29,
+  "84": 26,
+  "83": 27,
+  "82": 27,
+  "81": 27,
+  "80": 28,
+  "79": 30,
+  "78": 30,
+  "77": 30,
+  "76": 30,
+  "75": 29,
+  "74": 29,
+  "73": 29,
+  "72": 29,
+  "71": 29,
+  "70": 29,
+  "69": 29,
+  "68": 29,
+  "67": 28,
+  "66": 28,
+  "65": 28,
+  "64": 29,
+  "63": 28,
+  "62": 28,
+  "61": 27,
+  "60": 28,
+  "59": 28,
+  "58": 29,
+  "57": 30,
+  "56": 30,
+  "55": 29,
+  "54": 29,
+  "53": 29,
+  "52": 30,
+  "51": 26,
+  "50": 27,
+  "49": 27,
+  "48": 28,
+  "47": 32,
+  "46": 31,
+  "45": 31,
+  "44": 32,
+  "43": 31,
+  "42": 31,
+  "41": 31,
+  "40": 35,
+  "39": 35,
+  "38": 35,
+  "37": 33,
+  "36": 35,
+  "35": 36,
+  "34": 35,
+  "33": 36,
+  "32": 35,
+  "31": 34,
+  "30": 37,
+  "29": 37,
+  "28": 36,
+  "27": 37,
+  "26": 36,
+  "25": 33,
+  "24": 32,
+  "23": 32,
+  "22": 32,
+  "21": 32,
+  "20": 35,
+  "19": 35,
+  "18": 33,
+  "17": 34,
+  "16": 34,
+  "15": 35,
+  "14": 34,
+  "13": 34,
+  "12": 36,
+  "11": 36,
+  "10": 39,
+  "9": 40,
+  "8": 40,
+  "7": 42,
+  "6": 44,
+  "5": 44,
+  "4": 46,
+  "3": 44,
+  "2": 44,
+  "1": 44,
+  "0": 46
+ },
+ "census": [
+  {
+   "step": 1,
+   "Lmin": 0,
+   "by_segment": true,
+   "frames": 231,
+   "counts": {
+    "clump": 86,
+    "swap": 62,
+    "birth": 8,
+    "split": 29,
+    "relabel": 15,
+    "merge": 17
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 0 gained 1": 3,
+    "born 1 died 2 lost 1 gained 0": 2,
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 1 died 0 lost 0 gained 1": 4,
+    "born 0 died 1 lost 0 gained 0": 3,
+    "born 1 died 2 lost 0 gained 0": 2,
+    "born 2 died 0 lost 1 gained 1": 2,
+    "born 2 died 0 lost 2 gained 0": 2,
+    "born 4 died 1 lost 3 gained 0": 1,
+    "born 1 died 2 lost 0 gained 2": 3,
+    "born 3 died 1 lost 9 gained 0": 1,
+    "born 0 died 1 lost 1 gained 0": 6,
+    "born 1 died 0 lost 1 gained 0": 4,
+    "born 2 died 2 lost 0 gained 1": 1,
+    "born 1 died 1 lost 1 gained 0": 2,
+    "born 0 died 0 lost 2 gained 2": 3,
+    "born 1 died 1 lost 1 gained 1": 1,
+    "born 3 died 0 lost 5 gained 2": 1,
+    "born 0 died 1 lost 1 gained 5": 1,
+    "born 0 died 2 lost 0 gained 2": 1,
+    "born 0 died 2 lost 0 gained 1": 1,
+    "born 1 died 1 lost 0 gained 2": 1,
+    "born 2 died 0 lost 0 gained 1": 1,
+    "born 0 died 2 lost 1 gained 0": 1,
+    "born 5 died 4 lost 0 gained 2": 1,
+    "born 0 died 3 lost 0 gained 3": 1,
+    "born 0 died 2 lost 0 gained 6": 1,
+    "born 2 died 2 lost 0 gained 2": 1,
+    "born 1 died 0 lost 2 gained 1": 1,
+    "born 1 died 0 lost 3 gained 0": 1,
+    "born 2 died 1 lost 0 gained 3": 1,
+    "born 3 died 4 lost 1 gained 1": 1,
+    "born 0 died 1 lost 0 gained 2": 1,
+    "born 1 died 5 lost 2 gained 2": 1,
+    "born 3 died 0 lost 1 gained 1": 1,
+    "born 1 died 1 lost 0 gained 1": 2,
+    "born 3 died 1 lost 4 gained 0": 1,
+    "born 1 died 3 lost 0 gained 0": 1,
+    "born 2 died 0 lost 0 gained 0": 2,
+    "born 0 died 0 lost 0 gained 1": 1,
+    "born 4 died 4 lost 0 gained 1": 1,
+    "born 2 died 0 lost 1 gained 0": 2,
+    "born 0 died 1 lost 1 gained 2": 1,
+    "born 0 died 3 lost 3 gained 4": 1,
+    "born 2 died 0 lost 5 gained 0": 1,
+    "born 4 died 3 lost 1 gained 0": 1,
+    "born 0 died 2 lost 0 gained 0": 1,
+    "born 0 died 1 lost 1 gained 4": 1,
+    "born 3 died 1 lost 2 gained 1": 1,
+    "born 3 died 1 lost 0 gained 0": 1,
+    "born 2 died 2 lost 1 gained 4": 1,
+    "born 1 died 0 lost 1 gained 1": 1,
+    "born 2 died 1 lost 1 gained 2": 1,
+    "born 2 died 0 lost 1 gained 2": 1,
+    "born 1 died 0 lost 2 gained 2": 1,
+    "born 1 died 0 lost 5 gained 0": 1,
+    "born 0 died 1 lost 1 gained 1": 1,
+    "born 0 died 0 lost 1 gained 1": 1,
+    "born 0 died 0 lost 3 gained 3": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 62,
+   "swaps_fourfold": 0,
+   "swaps_persistent": {
+    "1": 62,
+    "2": 42,
+    "5": 26
+   },
+   "swaps_persistent_lengthfilter": {
+    "k1_l0": 62,
+    "k1_l50": 49,
+    "k1_l150": 36,
+    "k2_l0": 42,
+    "k2_l50": 41,
+    "k2_l150": 33,
+    "k5_l0": 26,
+    "k5_l50": 26,
+    "k5_l150": 26
+   },
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 1,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "clump": 57,
+     "swap": 43,
+     "relabel": 12,
+     "split": 16,
+     "merge": 12,
+     "birth": 7
+    },
+    "100-200 Ma": {
+     "split": 12,
+     "clump": 26,
+     "swap": 16,
+     "relabel": 3,
+     "merge": 5
+    },
+    "200-300 Ma": {
+     "clump": 3,
+     "swap": 3,
+     "birth": 1,
+     "split": 1
+    }
+   },
+   "swap_times": [
+    [
+     223,
+     222,
+     "direct"
+    ],
+    [
+     221,
+     220,
+     "direct"
+    ],
+    [
+     205,
+     204,
+     "direct"
+    ],
+    [
+     189,
+     188,
+     "direct"
+    ],
+    [
+     189,
+     188,
+     "direct"
+    ],
+    [
+     188,
+     187,
+     "direct"
+    ],
+    [
+     164,
+     163,
+     "direct"
+    ],
+    [
+     154,
+     153,
+     "direct"
+    ],
+    [
+     148,
+     147,
+     "direct"
+    ],
+    [
+     140,
+     139,
+     "direct"
+    ],
+    [
+     135,
+     134,
+     "direct"
+    ],
+    [
+     131,
+     130,
+     "direct"
+    ],
+    [
+     129,
+     128,
+     "direct"
+    ],
+    [
+     128,
+     127,
+     "direct"
+    ],
+    [
+     128,
+     127,
+     "direct"
+    ],
+    [
+     117,
+     116,
+     "direct"
+    ],
+    [
+     113,
+     112,
+     "direct"
+    ],
+    [
+     105,
+     104,
+     "direct"
+    ],
+    [
+     102,
+     101,
+     "direct"
+    ],
+    [
+     94,
+     93,
+     "direct"
+    ],
+    [
+     92,
+     91,
+     "direct"
+    ],
+    [
+     84,
+     83,
+     "direct"
+    ],
+    [
+     81,
+     80,
+     "direct"
+    ],
+    [
+     80,
+     79,
+     "direct"
+    ],
+    [
+     78,
+     77,
+     "direct"
+    ],
+    [
+     77,
+     76,
+     "direct"
+    ],
+    [
+     75,
+     74,
+     "direct"
+    ],
+    [
+     72,
+     71,
+     "direct"
+    ],
+    [
+     68,
+     67,
+     "direct"
+    ],
+    [
+     64,
+     63,
+     "direct"
+    ],
+    [
+     64,
+     63,
+     "direct"
+    ],
+    [
+     61,
+     60,
+     "direct"
+    ],
+    [
+     48,
+     47,
+     "direct"
+    ],
+    [
+     47,
+     46,
+     "direct"
+    ],
+    [
+     45,
+     44,
+     "direct"
+    ],
+    [
+     44,
+     43,
+     "direct"
+    ],
+    [
+     42,
+     41,
+     "direct"
+    ],
+    [
+     40,
+     39,
+     "direct"
+    ],
+    [
+     38,
+     37,
+     "direct"
+    ],
+    [
+     34,
+     33,
+     "direct"
+    ],
+    [
+     32,
+     31,
+     "direct"
+    ],
+    [
+     32,
+     31,
+     "direct"
+    ],
+    [
+     29,
+     28,
+     "direct"
+    ],
+    [
+     28,
+     27,
+     "direct"
+    ],
+    [
+     28,
+     27,
+     "direct"
+    ],
+    [
+     27,
+     26,
+     "direct"
+    ],
+    [
+     26,
+     25,
+     "direct"
+    ],
+    [
+     26,
+     25,
+     "direct"
+    ],
+    [
+     23,
+     22,
+     "direct"
+    ],
+    [
+     22,
+     21,
+     "direct"
+    ],
+    [
+     18,
+     17,
+     "direct"
+    ],
+    [
+     17,
+     16,
+     "direct"
+    ],
+    [
+     12,
+     11,
+     "direct"
+    ],
+    [
+     11,
+     10,
+     "direct"
+    ],
+    [
+     10,
+     9,
+     "direct"
+    ],
+    [
+     10,
+     9,
+     "direct"
+    ],
+    [
+     9,
+     8,
+     "direct"
+    ],
+    [
+     6,
+     5,
+     "direct"
+    ],
+    [
+     4,
+     3,
+     "direct"
+    ],
+    [
+     2,
+     1,
+     "direct"
+    ],
+    [
+     1,
+     0,
+     "direct"
+    ],
+    [
+     1,
+     0,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 1,
+   "Lmin": 50,
+   "by_segment": true,
+   "frames": 231,
+   "counts": {
+    "clump": 159,
+    "swap": 26,
+    "birth": 8,
+    "split": 31,
+    "merge": 20,
+    "relabel": 12
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 0 gained 1": 2,
+    "born 1 died 2 lost 1 gained 0": 2,
+    "born 0 died 0 lost 1 gained 0": 36,
+    "born 0 died 0 lost 0 gained 1": 41,
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 1 died 0 lost 0 gained 1": 4,
+    "born 0 died 1 lost 0 gained 0": 2,
+    "born 1 died 2 lost 0 gained 0": 2,
+    "born 2 died 0 lost 1 gained 1": 1,
+    "born 2 died 0 lost 2 gained 0": 2,
+    "born 4 died 1 lost 3 gained 0": 1,
+    "born 1 died 1 lost 0 gained 1": 4,
+    "born 1 died 2 lost 0 gained 2": 3,
+    "born 3 died 1 lost 9 gained 0": 1,
+    "born 0 died 1 lost 1 gained 0": 6,
+    "born 1 died 0 lost 1 gained 0": 4,
+    "born 2 died 2 lost 0 gained 2": 2,
+    "born 1 died 1 lost 1 gained 0": 2,
+    "born 0 died 0 lost 3 gained 1": 1,
+    "born 0 died 0 lost 2 gained 2": 2,
+    "born 3 died 0 lost 5 gained 2": 1,
+    "born 0 died 2 lost 0 gained 2": 1,
+    "born 0 died 2 lost 0 gained 1": 1,
+    "born 3 died 1 lost 1 gained 1": 1,
+    "born 1 died 3 lost 1 gained 1": 1,
+    "born 5 died 4 lost 0 gained 2": 1,
+    "born 0 died 3 lost 0 gained 3": 1,
+    "born 0 died 2 lost 0 gained 6": 1,
+    "born 2 died 1 lost 0 gained 0": 1,
+    "born 1 died 2 lost 0 gained 1": 1,
+    "born 1 died 0 lost 2 gained 0": 1,
+    "born 2 died 1 lost 0 gained 3": 1,
+    "born 3 died 4 lost 1 gained 1": 1,
+    "born 0 died 1 lost 0 gained 2": 1,
+    "born 1 died 5 lost 2 gained 2": 1,
+    "born 3 died 0 lost 1 gained 1": 1,
+    "born 2 died 0 lost 0 gained 0": 3,
+    "born 3 died 1 lost 3 gained 0": 1,
+    "born 1 died 3 lost 0 gained 0": 1,
+    "born 4 died 4 lost 0 gained 1": 1,
+    "born 2 died 0 lost 1 gained 0": 2,
+    "born 0 died 3 lost 3 gained 5": 1,
+    "born 2 died 0 lost 5 gained 0": 1,
+    "born 4 died 3 lost 1 gained 0": 1,
+    "born 0 died 2 lost 0 gained 0": 1,
+    "born 0 died 1 lost 1 gained 4": 1,
+    "born 3 died 1 lost 2 gained 1": 1,
+    "born 3 died 1 lost 0 gained 0": 1,
+    "born 2 died 2 lost 2 gained 4": 1,
+    "born 0 died 0 lost 2 gained 1": 1,
+    "born 2 died 1 lost 0 gained 2": 1,
+    "born 2 died 0 lost 1 gained 2": 1,
+    "born 1 died 0 lost 2 gained 2": 1,
+    "born 1 died 0 lost 5 gained 0": 1,
+    "born 0 died 0 lost 1 gained 2": 1,
+    "born 0 died 0 lost 1 gained 1": 1,
+    "born 0 died 0 lost 3 gained 3": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 26,
+   "swaps_fourfold": 20,
+   "swaps_persistent": {
+    "1": 46,
+    "2": 40,
+    "5": 26
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 1,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "clump": 102,
+     "relabel": 11,
+     "split": 18,
+     "merge": 14,
+     "birth": 7,
+     "swap": 18
+    },
+    "100-200 Ma": {
+     "split": 12,
+     "clump": 48,
+     "swap": 7,
+     "merge": 6,
+     "relabel": 1
+    },
+    "200-300 Ma": {
+     "clump": 9,
+     "swap": 1,
+     "birth": 1,
+     "split": 1
+    }
+   },
+   "swap_times": [
+    [
+     224,
+     222,
+     "four-fold"
+    ],
+    [
+     221,
+     220,
+     "direct"
+    ],
+    [
+     205,
+     203,
+     "four-fold"
+    ],
+    [
+     190,
+     187,
+     "four-fold"
+    ],
+    [
+     164,
+     163,
+     "direct"
+    ],
+    [
+     148,
+     146,
+     "four-fold"
+    ],
+    [
+     136,
+     132,
+     "four-fold"
+    ],
+    [
+     135,
+     133,
+     "four-fold"
+    ],
+    [
+     131,
+     129,
+     "four-fold"
+    ],
+    [
+     129,
+     128,
+     "direct"
+    ],
+    [
+     128,
+     127,
+     "direct"
+    ],
+    [
+     128,
+     127,
+     "direct"
+    ],
+    [
+     117,
+     116,
+     "direct"
+    ],
+    [
+     113,
+     111,
+     "four-fold"
+    ],
+    [
+     105,
+     104,
+     "direct"
+    ],
+    [
+     102,
+     101,
+     "direct"
+    ],
+    [
+     95,
+     92,
+     "four-fold"
+    ],
+    [
+     93,
+     91,
+     "four-fold"
+    ],
+    [
+     84,
+     83,
+     "direct"
+    ],
+    [
+     81,
+     80,
+     "direct"
+    ],
+    [
+     80,
+     79,
+     "direct"
+    ],
+    [
+     78,
+     77,
+     "direct"
+    ],
+    [
+     77,
+     75,
+     "four-fold"
+    ],
+    [
+     73,
+     70,
+     "four-fold"
+    ],
+    [
+     68,
+     67,
+     "direct"
+    ],
+    [
+     65,
+     63,
+     "four-fold"
+    ],
+    [
+     48,
+     47,
+     "direct"
+    ],
+    [
+     45,
+     43,
+     "four-fold"
+    ],
+    [
+     44,
+     42,
+     "four-fold"
+    ],
+    [
+     38,
+     36,
+     "four-fold"
+    ],
+    [
+     34,
+     33,
+     "direct"
+    ],
+    [
+     32,
+     31,
+     "direct"
+    ],
+    [
+     32,
+     31,
+     "direct"
+    ],
+    [
+     31,
+     25,
+     "four-fold"
+    ],
+    [
+     28,
+     27,
+     "direct"
+    ],
+    [
+     26,
+     25,
+     "direct"
+    ],
+    [
+     26,
+     24,
+     "four-fold"
+    ],
+    [
+     23,
+     21,
+     "four-fold"
+    ],
+    [
+     22,
+     21,
+     "direct"
+    ],
+    [
+     18,
+     17,
+     "direct"
+    ],
+    [
+     17,
+     16,
+     "direct"
+    ],
+    [
+     10,
+     8,
+     "four-fold"
+    ],
+    [
+     4,
+     3,
+     "direct"
+    ],
+    [
+     2,
+     1,
+     "direct"
+    ],
+    [
+     1,
+     0,
+     "direct"
+    ],
+    [
+     1,
+     0,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 1,
+   "Lmin": 150,
+   "by_segment": true,
+   "frames": 231,
+   "counts": {
+    "clump": 206,
+    "swap": 12,
+    "birth": 7,
+    "split": 31,
+    "merge": 21,
+    "relabel": 13
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 0 gained 1": 1,
+    "born 1 died 2 lost 1 gained 0": 1,
+    "born 0 died 0 lost 1 gained 0": 57,
+    "born 0 died 0 lost 0 gained 1": 65,
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 1 died 0 lost 0 gained 1": 4,
+    "born 0 died 1 lost 0 gained 0": 2,
+    "born 1 died 2 lost 0 gained 0": 2,
+    "born 2 died 0 lost 1 gained 1": 1,
+    "born 2 died 0 lost 2 gained 0": 2,
+    "born 4 died 1 lost 3 gained 0": 1,
+    "born 1 died 1 lost 1 gained 1": 1,
+    "born 1 died 2 lost 0 gained 2": 3,
+    "born 4 died 1 lost 11 gained 0": 1,
+    "born 0 died 1 lost 1 gained 0": 5,
+    "born 1 died 0 lost 1 gained 0": 4,
+    "born 2 died 2 lost 0 gained 2": 2,
+    "born 1 died 1 lost 1 gained 0": 1,
+    "born 0 died 0 lost 2 gained 2": 1,
+    "born 1 died 1 lost 0 gained 1": 3,
+    "born 3 died 0 lost 5 gained 2": 1,
+    "born 0 died 2 lost 0 gained 2": 1,
+    "born 0 died 2 lost 0 gained 1": 1,
+    "born 1 died 1 lost 0 gained 2": 1,
+    "born 3 died 1 lost 1 gained 1": 1,
+    "born 1 died 3 lost 1 gained 1": 1,
+    "born 5 died 4 lost 0 gained 2": 1,
+    "born 0 died 3 lost 0 gained 3": 1,
+    "born 0 died 2 lost 0 gained 6": 1,
+    "born 0 died 0 lost 1 gained 2": 2,
+    "born 0 died 0 lost 1 gained 1": 3,
+    "born 0 died 0 lost 2 gained 1": 2,
+    "born 2 died 1 lost 0 gained 0": 1,
+    "born 1 died 2 lost 0 gained 1": 1,
+    "born 1 died 0 lost 2 gained 0": 1,
+    "born 2 died 1 lost 0 gained 3": 1,
+    "born 3 died 4 lost 1 gained 1": 1,
+    "born 0 died 1 lost 0 gained 2": 1,
+    "born 1 died 5 lost 2 gained 2": 1,
+    "born 3 died 0 lost 1 gained 1": 1,
+    "born 2 died 0 lost 0 gained 0": 3,
+    "born 3 died 1 lost 3 gained 0": 1,
+    "born 1 died 3 lost 0 gained 0": 1,
+    "born 0 died 1 lost 0 gained 3": 1,
+    "born 4 died 4 lost 0 gained 1": 1,
+    "born 2 died 0 lost 1 gained 0": 2,
+    "born 0 died 3 lost 3 gained 5": 1,
+    "born 2 died 0 lost 5 gained 0": 1,
+    "born 4 died 3 lost 0 gained 0": 1,
+    "born 0 died 2 lost 0 gained 0": 1,
+    "born 0 died 1 lost 1 gained 4": 1,
+    "born 3 died 1 lost 2 gained 1": 1,
+    "born 3 died 1 lost 0 gained 0": 1,
+    "born 2 died 2 lost 2 gained 5": 1,
+    "born 1 died 0 lost 0 gained 0": 1,
+    "born 0 died 0 lost 2 gained 0": 1,
+    "born 2 died 1 lost 0 gained 2": 1,
+    "born 2 died 0 lost 1 gained 2": 1,
+    "born 1 died 0 lost 1 gained 1": 1,
+    "born 1 died 0 lost 5 gained 0": 1,
+    "born 0 died 0 lost 3 gained 3": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 12,
+   "swaps_fourfold": 21,
+   "swaps_persistent": {
+    "1": 33,
+    "2": 27,
+    "5": 17
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "clump": 127,
+     "split": 19,
+     "relabel": 13,
+     "merge": 14,
+     "birth": 6,
+     "swap": 8
+    },
+    "100-200 Ma": {
+     "split": 11,
+     "clump": 70,
+     "merge": 7,
+     "swap": 3
+    },
+    "200-300 Ma": {
+     "clump": 9,
+     "swap": 1,
+     "birth": 1,
+     "split": 1
+    }
+   },
+   "swap_times": [
+    [
+     225,
+     221,
+     "four-fold"
+    ],
+    [
+     221,
+     220,
+     "direct"
+    ],
+    [
+     206,
+     202,
+     "four-fold"
+    ],
+    [
+     191,
+     187,
+     "four-fold"
+    ],
+    [
+     165,
+     162,
+     "four-fold"
+    ],
+    [
+     149,
+     146,
+     "four-fold"
+    ],
+    [
+     143,
+     138,
+     "four-fold"
+    ],
+    [
+     142,
+     139,
+     "four-fold"
+    ],
+    [
+     136,
+     132,
+     "four-fold"
+    ],
+    [
+     130,
+     127,
+     "four-fold"
+    ],
+    [
+     128,
+     127,
+     "direct"
+    ],
+    [
+     117,
+     116,
+     "direct"
+    ],
+    [
+     105,
+     104,
+     "direct"
+    ],
+    [
+     104,
+     101,
+     "four-fold"
+    ],
+    [
+     94,
+     89,
+     "four-fold"
+    ],
+    [
+     81,
+     80,
+     "direct"
+    ],
+    [
+     80,
+     79,
+     "direct"
+    ],
+    [
+     79,
+     73,
+     "four-fold"
+    ],
+    [
+     74,
+     69,
+     "four-fold"
+    ],
+    [
+     74,
+     58,
+     "four-fold"
+    ],
+    [
+     69,
+     67,
+     "four-fold"
+    ],
+    [
+     48,
+     47,
+     "direct"
+    ],
+    [
+     45,
+     43,
+     "four-fold"
+    ],
+    [
+     39,
+     36,
+     "four-fold"
+    ],
+    [
+     34,
+     33,
+     "direct"
+    ],
+    [
+     32,
+     31,
+     "direct"
+    ],
+    [
+     31,
+     23,
+     "four-fold"
+    ],
+    [
+     28,
+     27,
+     "direct"
+    ],
+    [
+     28,
+     21,
+     "four-fold"
+    ],
+    [
+     19,
+     17,
+     "four-fold"
+    ],
+    [
+     17,
+     16,
+     "direct"
+    ],
+    [
+     6,
+     4,
+     "four-fold"
+    ],
+    [
+     4,
+     3,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 2,
+   "Lmin": 0,
+   "by_segment": true,
+   "frames": 116,
+   "counts": {
+    "clump": 80,
+    "swap": 46,
+    "birth": 8,
+    "split": 23,
+    "merge": 18,
+    "relabel": 10
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 0 gained 1": 1,
+    "born 1 died 2 lost 1 gained 0": 1,
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 1 died 0 lost 0 gained 1": 4,
+    "born 0 died 1 lost 0 gained 0": 2,
+    "born 1 died 2 lost 0 gained 0": 2,
+    "born 2 died 0 lost 1 gained 1": 2,
+    "born 2 died 0 lost 2 gained 0": 2,
+    "born 4 died 1 lost 3 gained 0": 1,
+    "born 1 died 1 lost 0 gained 1": 2,
+    "born 1 died 2 lost 0 gained 2": 2,
+    "born 4 died 1 lost 9 gained 0": 1,
+    "born 1 died 0 lost 1 gained 0": 5,
+    "born 2 died 3 lost 1 gained 1": 1,
+    "born 1 died 1 lost 1 gained 0": 4,
+    "born 0 died 0 lost 2 gained 2": 4,
+    "born 1 died 1 lost 1 gained 1": 1,
+    "born 3 died 0 lost 5 gained 2": 1,
+    "born 0 died 1 lost 1 gained 5": 1,
+    "born 0 died 1 lost 1 gained 0": 3,
+    "born 0 died 2 lost 0 gained 2": 1,
+    "born 0 died 2 lost 0 gained 1": 1,
+    "born 1 died 1 lost 0 gained 2": 1,
+    "born 5 died 5 lost 0 gained 1": 1,
+    "born 2 died 0 lost 0 gained 0": 3,
+    "born 0 died 3 lost 0 gained 3": 1,
+    "born 0 died 2 lost 0 gained 6": 1,
+    "born 4 died 3 lost 0 gained 1": 1,
+    "born 1 died 0 lost 2 gained 1": 1,
+    "born 1 died 0 lost 3 gained 0": 1,
+    "born 3 died 2 lost 0 gained 1": 1,
+    "born 3 died 4 lost 1 gained 1": 1,
+    "born 0 died 1 lost 0 gained 2": 1,
+    "born 1 died 5 lost 2 gained 2": 1,
+    "born 3 died 0 lost 1 gained 1": 1,
+    "born 1 died 2 lost 0 gained 1": 1,
+    "born 3 died 1 lost 3 gained 0": 1,
+    "born 1 died 3 lost 0 gained 0": 1,
+    "born 0 died 0 lost 0 gained 1": 1,
+    "born 4 died 5 lost 1 gained 1": 1,
+    "born 2 died 0 lost 2 gained 1": 1,
+    "born 2 died 0 lost 1 gained 0": 1,
+    "born 0 died 4 lost 3 gained 5": 1,
+    "born 2 died 0 lost 5 gained 0": 1,
+    "born 4 died 2 lost 0 gained 0": 1,
+    "born 0 died 2 lost 0 gained 0": 1,
+    "born 1 died 0 lost 2 gained 2": 2,
+    "born 0 died 1 lost 1 gained 4": 1,
+    "born 3 died 1 lost 2 gained 1": 1,
+    "born 3 died 1 lost 0 gained 0": 1,
+    "born 2 died 2 lost 1 gained 4": 1,
+    "born 1 died 0 lost 1 gained 1": 1,
+    "born 4 died 1 lost 1 gained 3": 1,
+    "born 1 died 0 lost 5 gained 1": 1,
+    "born 0 died 1 lost 1 gained 1": 1,
+    "born 0 died 0 lost 3 gained 3": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 46,
+   "swaps_fourfold": 0,
+   "swaps_persistent": {
+    "1": 46,
+    "2": 46,
+    "5": 23
+   },
+   "swaps_persistent_lengthfilter": {
+    "k1_l0": 46,
+    "k1_l50": 40,
+    "k1_l150": 29,
+    "k2_l0": 46,
+    "k2_l50": 40,
+    "k2_l150": 29,
+    "k5_l0": 23,
+    "k5_l50": 23,
+    "k5_l150": 23
+   },
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "swap": 28,
+     "split": 12,
+     "relabel": 10,
+     "clump": 53,
+     "birth": 7,
+     "merge": 13
+    },
+    "100-200 Ma": {
+     "split": 10,
+     "clump": 24,
+     "swap": 15,
+     "merge": 5
+    },
+    "200-300 Ma": {
+     "clump": 3,
+     "swap": 3,
+     "birth": 1,
+     "split": 1
+    }
+   },
+   "swap_times": [
+    [
+     224,
+     222,
+     "direct"
+    ],
+    [
+     222,
+     220,
+     "direct"
+    ],
+    [
+     206,
+     204,
+     "direct"
+    ],
+    [
+     190,
+     188,
+     "direct"
+    ],
+    [
+     190,
+     188,
+     "direct"
+    ],
+    [
+     188,
+     186,
+     "direct"
+    ],
+    [
+     164,
+     162,
+     "direct"
+    ],
+    [
+     148,
+     146,
+     "direct"
+    ],
+    [
+     140,
+     138,
+     "direct"
+    ],
+    [
+     136,
+     134,
+     "direct"
+    ],
+    [
+     132,
+     130,
+     "direct"
+    ],
+    [
+     130,
+     128,
+     "direct"
+    ],
+    [
+     128,
+     126,
+     "direct"
+    ],
+    [
+     128,
+     126,
+     "direct"
+    ],
+    [
+     118,
+     116,
+     "direct"
+    ],
+    [
+     114,
+     112,
+     "direct"
+    ],
+    [
+     106,
+     104,
+     "direct"
+    ],
+    [
+     102,
+     100,
+     "direct"
+    ],
+    [
+     94,
+     92,
+     "direct"
+    ],
+    [
+     92,
+     90,
+     "direct"
+    ],
+    [
+     84,
+     82,
+     "direct"
+    ],
+    [
+     82,
+     80,
+     "direct"
+    ],
+    [
+     80,
+     78,
+     "direct"
+    ],
+    [
+     78,
+     76,
+     "direct"
+    ],
+    [
+     78,
+     76,
+     "direct"
+    ],
+    [
+     76,
+     74,
+     "direct"
+    ],
+    [
+     72,
+     70,
+     "direct"
+    ],
+    [
+     68,
+     66,
+     "direct"
+    ],
+    [
+     64,
+     62,
+     "direct"
+    ],
+    [
+     62,
+     60,
+     "direct"
+    ],
+    [
+     48,
+     46,
+     "direct"
+    ],
+    [
+     44,
+     42,
+     "direct"
+    ],
+    [
+     40,
+     38,
+     "direct"
+    ],
+    [
+     38,
+     36,
+     "direct"
+    ],
+    [
+     34,
+     32,
+     "direct"
+    ],
+    [
+     32,
+     30,
+     "direct"
+    ],
+    [
+     30,
+     28,
+     "direct"
+    ],
+    [
+     28,
+     26,
+     "direct"
+    ],
+    [
+     28,
+     26,
+     "direct"
+    ],
+    [
+     26,
+     24,
+     "direct"
+    ],
+    [
+     26,
+     24,
+     "direct"
+    ],
+    [
+     12,
+     10,
+     "direct"
+    ],
+    [
+     12,
+     10,
+     "direct"
+    ],
+    [
+     10,
+     8,
+     "direct"
+    ],
+    [
+     6,
+     4,
+     "direct"
+    ],
+    [
+     2,
+     0,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 2,
+   "Lmin": 50,
+   "by_segment": true,
+   "frames": 116,
+   "counts": {
+    "clump": 128,
+    "swap": 24,
+    "birth": 8,
+    "split": 24,
+    "merge": 18,
+    "relabel": 10
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 0 gained 1": 1,
+    "born 1 died 2 lost 1 gained 0": 1,
+    "born 0 died 0 lost 1 gained 0": 21,
+    "born 0 died 0 lost 0 gained 1": 27,
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 1 died 0 lost 0 gained 1": 5,
+    "born 0 died 1 lost 0 gained 0": 2,
+    "born 1 died 2 lost 0 gained 0": 2,
+    "born 2 died 0 lost 1 gained 1": 1,
+    "born 2 died 0 lost 2 gained 0": 2,
+    "born 4 died 1 lost 3 gained 0": 1,
+    "born 1 died 1 lost 0 gained 1": 2,
+    "born 1 died 2 lost 0 gained 2": 2,
+    "born 4 died 1 lost 9 gained 0": 1,
+    "born 1 died 0 lost 1 gained 0": 5,
+    "born 2 died 3 lost 1 gained 1": 1,
+    "born 1 died 1 lost 1 gained 0": 4,
+    "born 0 died 0 lost 3 gained 1": 1,
+    "born 0 died 0 lost 2 gained 2": 3,
+    "born 3 died 0 lost 5 gained 2": 1,
+    "born 0 died 1 lost 1 gained 5": 1,
+    "born 0 died 1 lost 1 gained 0": 3,
+    "born 0 died 2 lost 0 gained 2": 1,
+    "born 0 died 2 lost 0 gained 1": 1,
+    "born 1 died 1 lost 0 gained 2": 1,
+    "born 5 died 5 lost 0 gained 1": 1,
+    "born 2 died 0 lost 0 gained 0": 4,
+    "born 0 died 3 lost 0 gained 3": 1,
+    "born 0 died 2 lost 0 gained 6": 1,
+    "born 4 died 3 lost 0 gained 0": 1,
+    "born 1 died 2 lost 0 gained 1": 2,
+    "born 1 died 0 lost 2 gained 0": 1,
+    "born 3 died 2 lost 0 gained 1": 1,
+    "born 3 died 4 lost 1 gained 1": 1,
+    "born 0 died 1 lost 0 gained 2": 1,
+    "born 1 died 5 lost 2 gained 2": 1,
+    "born 3 died 0 lost 1 gained 1": 1,
+    "born 3 died 1 lost 3 gained 0": 1,
+    "born 1 died 3 lost 0 gained 0": 1,
+    "born 4 died 5 lost 1 gained 1": 1,
+    "born 2 died 0 lost 2 gained 1": 1,
+    "born 2 died 0 lost 1 gained 0": 1,
+    "born 0 died 4 lost 3 gained 6": 1,
+    "born 2 died 0 lost 5 gained 0": 1,
+    "born 4 died 2 lost 0 gained 0": 1,
+    "born 0 died 2 lost 0 gained 0": 1,
+    "born 1 died 0 lost 2 gained 2": 2,
+    "born 0 died 1 lost 1 gained 4": 1,
+    "born 3 died 1 lost 2 gained 1": 1,
+    "born 3 died 1 lost 0 gained 0": 1,
+    "born 2 died 2 lost 2 gained 4": 1,
+    "born 0 died 0 lost 2 gained 1": 1,
+    "born 0 died 0 lost 1 gained 2": 2,
+    "born 4 died 1 lost 0 gained 3": 1,
+    "born 1 died 0 lost 5 gained 1": 1,
+    "born 0 died 0 lost 3 gained 3": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 24,
+   "swaps_fourfold": 11,
+   "swaps_persistent": {
+    "1": 35,
+    "2": 35,
+    "5": 19
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "clump": 83,
+     "split": 13,
+     "relabel": 9,
+     "birth": 7,
+     "swap": 14,
+     "merge": 13
+    },
+    "100-200 Ma": {
+     "split": 10,
+     "clump": 38,
+     "swap": 8,
+     "merge": 5,
+     "relabel": 1
+    },
+    "200-300 Ma": {
+     "clump": 7,
+     "swap": 2,
+     "birth": 1,
+     "split": 1
+    }
+   },
+   "swap_times": [
+    [
+     224,
+     222,
+     "direct"
+    ],
+    [
+     222,
+     220,
+     "direct"
+    ],
+    [
+     206,
+     202,
+     "four-fold"
+    ],
+    [
+     190,
+     186,
+     "four-fold"
+    ],
+    [
+     164,
+     162,
+     "direct"
+    ],
+    [
+     148,
+     146,
+     "direct"
+    ],
+    [
+     136,
+     132,
+     "four-fold"
+    ],
+    [
+     136,
+     132,
+     "four-fold"
+    ],
+    [
+     132,
+     128,
+     "four-fold"
+    ],
+    [
+     130,
+     128,
+     "direct"
+    ],
+    [
+     128,
+     126,
+     "direct"
+    ],
+    [
+     128,
+     126,
+     "direct"
+    ],
+    [
+     118,
+     116,
+     "direct"
+    ],
+    [
+     106,
+     104,
+     "direct"
+    ],
+    [
+     102,
+     100,
+     "direct"
+    ],
+    [
+     96,
+     92,
+     "four-fold"
+    ],
+    [
+     94,
+     90,
+     "four-fold"
+    ],
+    [
+     84,
+     82,
+     "direct"
+    ],
+    [
+     82,
+     80,
+     "direct"
+    ],
+    [
+     80,
+     78,
+     "direct"
+    ],
+    [
+     78,
+     76,
+     "direct"
+    ],
+    [
+     78,
+     74,
+     "four-fold"
+    ],
+    [
+     74,
+     70,
+     "four-fold"
+    ],
+    [
+     68,
+     66,
+     "direct"
+    ],
+    [
+     66,
+     62,
+     "four-fold"
+    ],
+    [
+     48,
+     46,
+     "direct"
+    ],
+    [
+     44,
+     42,
+     "direct"
+    ],
+    [
+     38,
+     36,
+     "direct"
+    ],
+    [
+     34,
+     32,
+     "direct"
+    ],
+    [
+     32,
+     30,
+     "direct"
+    ],
+    [
+     32,
+     24,
+     "four-fold"
+    ],
+    [
+     28,
+     26,
+     "direct"
+    ],
+    [
+     26,
+     24,
+     "direct"
+    ],
+    [
+     26,
+     24,
+     "direct"
+    ],
+    [
+     2,
+     0,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 2,
+   "Lmin": 150,
+   "by_segment": true,
+   "frames": 116,
+   "counts": {
+    "clump": 172,
+    "birth": 7,
+    "split": 25,
+    "merge": 19,
+    "swap": 8,
+    "relabel": 11
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 0 gained 1": 1,
+    "born 1 died 2 lost 1 gained 0": 1,
+    "born 0 died 0 lost 1 gained 0": 40,
+    "born 0 died 0 lost 0 gained 1": 52,
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 1 died 0 lost 0 gained 1": 4,
+    "born 0 died 1 lost 0 gained 0": 2,
+    "born 1 died 2 lost 0 gained 0": 2,
+    "born 2 died 0 lost 1 gained 2": 1,
+    "born 2 died 0 lost 2 gained 0": 2,
+    "born 4 died 1 lost 3 gained 0": 1,
+    "born 1 died 1 lost 1 gained 1": 1,
+    "born 1 died 2 lost 0 gained 2": 2,
+    "born 4 died 1 lost 9 gained 0": 1,
+    "born 1 died 0 lost 1 gained 0": 4,
+    "born 2 died 3 lost 1 gained 2": 1,
+    "born 0 died 0 lost 2 gained 0": 2,
+    "born 1 died 1 lost 1 gained 0": 2,
+    "born 0 died 0 lost 2 gained 1": 3,
+    "born 1 died 1 lost 0 gained 1": 2,
+    "born 3 died 0 lost 5 gained 2": 1,
+    "born 0 died 2 lost 0 gained 2": 1,
+    "born 0 died 2 lost 0 gained 1": 1,
+    "born 1 died 1 lost 0 gained 2": 1,
+    "born 5 died 5 lost 0 gained 1": 1,
+    "born 2 died 0 lost 0 gained 0": 4,
+    "born 0 died 3 lost 0 gained 3": 1,
+    "born 0 died 2 lost 0 gained 6": 1,
+    "born 0 died 0 lost 1 gained 2": 2,
+    "born 1 died 0 lost 6 gained 1": 1,
+    "born 0 died 0 lost 1 gained 1": 2,
+    "born 4 died 3 lost 0 gained 0": 2,
+    "born 1 died 2 lost 0 gained 1": 2,
+    "born 1 died 0 lost 2 gained 0": 2,
+    "born 3 died 2 lost 0 gained 1": 1,
+    "born 3 died 4 lost 1 gained 1": 1,
+    "born 0 died 1 lost 0 gained 2": 1,
+    "born 1 died 5 lost 2 gained 2": 1,
+    "born 3 died 0 lost 2 gained 1": 1,
+    "born 3 died 1 lost 3 gained 0": 1,
+    "born 1 died 3 lost 0 gained 0": 1,
+    "born 4 died 5 lost 1 gained 1": 1,
+    "born 2 died 0 lost 1 gained 0": 2,
+    "born 0 died 4 lost 3 gained 6": 1,
+    "born 2 died 0 lost 5 gained 0": 1,
+    "born 0 died 2 lost 0 gained 0": 1,
+    "born 1 died 0 lost 1 gained 2": 1,
+    "born 0 died 1 lost 1 gained 4": 1,
+    "born 3 died 1 lost 2 gained 1": 1,
+    "born 3 died 1 lost 0 gained 0": 1,
+    "born 2 died 2 lost 2 gained 5": 1,
+    "born 1 died 0 lost 0 gained 0": 1,
+    "born 4 died 1 lost 0 gained 3": 1,
+    "born 1 died 0 lost 2 gained 2": 1,
+    "born 0 died 1 lost 1 gained 0": 2,
+    "born 0 died 0 lost 2 gained 2": 1,
+    "born 0 died 0 lost 3 gained 3": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 8,
+   "swaps_fourfold": 15,
+   "swaps_persistent": {
+    "1": 23,
+    "2": 23,
+    "5": 13
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "clump": 106,
+     "split": 14,
+     "relabel": 11,
+     "birth": 6,
+     "swap": 5,
+     "merge": 12
+    },
+    "100-200 Ma": {
+     "split": 10,
+     "clump": 57,
+     "merge": 7,
+     "swap": 3
+    },
+    "200-300 Ma": {
+     "clump": 9,
+     "birth": 1,
+     "split": 1
+    }
+   },
+   "swap_times": [
+    [
+     206,
+     202,
+     "four-fold"
+    ],
+    [
+     192,
+     186,
+     "four-fold"
+    ],
+    [
+     166,
+     162,
+     "four-fold"
+    ],
+    [
+     150,
+     146,
+     "four-fold"
+    ],
+    [
+     142,
+     138,
+     "four-fold"
+    ],
+    [
+     136,
+     132,
+     "four-fold"
+    ],
+    [
+     130,
+     126,
+     "four-fold"
+    ],
+    [
+     128,
+     126,
+     "direct"
+    ],
+    [
+     118,
+     116,
+     "direct"
+    ],
+    [
+     106,
+     104,
+     "direct"
+    ],
+    [
+     104,
+     98,
+     "four-fold"
+    ],
+    [
+     94,
+     88,
+     "four-fold"
+    ],
+    [
+     82,
+     80,
+     "direct"
+    ],
+    [
+     74,
+     68,
+     "four-fold"
+    ],
+    [
+     74,
+     58,
+     "four-fold"
+    ],
+    [
+     70,
+     62,
+     "four-fold"
+    ],
+    [
+     48,
+     46,
+     "direct"
+    ],
+    [
+     40,
+     36,
+     "four-fold"
+    ],
+    [
+     34,
+     32,
+     "direct"
+    ],
+    [
+     32,
+     30,
+     "direct"
+    ],
+    [
+     32,
+     22,
+     "four-fold"
+    ],
+    [
+     28,
+     26,
+     "direct"
+    ],
+    [
+     28,
+     20,
+     "four-fold"
+    ]
+   ]
+  },
+  {
+   "step": 5,
+   "Lmin": 0,
+   "by_segment": true,
+   "frames": 47,
+   "counts": {
+    "clump": 73,
+    "birth": 8,
+    "split": 16,
+    "swap": 19,
+    "merge": 11,
+    "relabel": 4
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 1 died 0 lost 0 gained 1": 4,
+    "born 0 died 1 lost 0 gained 0": 3,
+    "born 1 died 2 lost 0 gained 0": 2,
+    "born 2 died 0 lost 1 gained 1": 1,
+    "born 2 died 0 lost 2 gained 0": 1,
+    "born 4 died 1 lost 3 gained 0": 1,
+    "born 2 died 3 lost 0 gained 2": 1,
+    "born 4 died 1 lost 11 gained 1": 1,
+    "born 1 died 0 lost 1 gained 0": 5,
+    "born 3 died 4 lost 1 gained 0": 1,
+    "born 0 died 0 lost 2 gained 2": 5,
+    "born 3 died 1 lost 3 gained 1": 1,
+    "born 1 died 1 lost 1 gained 0": 3,
+    "born 3 died 0 lost 5 gained 2": 1,
+    "born 0 died 1 lost 1 gained 5": 1,
+    "born 0 died 1 lost 1 gained 0": 3,
+    "born 0 died 2 lost 0 gained 2": 2,
+    "born 0 died 2 lost 0 gained 1": 1,
+    "born 1 died 1 lost 0 gained 3": 1,
+    "born 2 died 1 lost 4 gained 0": 1,
+    "born 5 died 4 lost 0 gained 2": 1,
+    "born 2 died 0 lost 4 gained 0": 1,
+    "born 1 died 6 lost 1 gained 7": 1,
+    "born 2 died 2 lost 0 gained 2": 1,
+    "born 2 died 1 lost 0 gained 0": 2,
+    "born 0 died 1 lost 1 gained 2": 2,
+    "born 3 died 2 lost 3 gained 1": 1,
+    "born 0 died 1 lost 0 gained 2": 2,
+    "born 1 died 5 lost 2 gained 2": 1,
+    "born 3 died 1 lost 1 gained 0": 1,
+    "born 2 died 0 lost 0 gained 0": 1,
+    "born 1 died 1 lost 0 gained 1": 1,
+    "born 3 died 2 lost 4 gained 3": 1,
+    "born 3 died 1 lost 0 gained 0": 2,
+    "born 1 died 3 lost 0 gained 0": 1,
+    "born 4 died 5 lost 2 gained 2": 1,
+    "born 4 died 2 lost 2 gained 3": 1,
+    "born 2 died 0 lost 1 gained 0": 2,
+    "born 1 died 2 lost 0 gained 2": 1,
+    "born 0 died 3 lost 4 gained 5": 1,
+    "born 1 died 0 lost 4 gained 0": 1,
+    "born 2 died 0 lost 5 gained 0": 1,
+    "born 4 died 2 lost 0 gained 0": 1,
+    "born 1 died 0 lost 2 gained 2": 1,
+    "born 0 died 2 lost 0 gained 0": 1,
+    "born 6 died 4 lost 3 gained 5": 1,
+    "born 8 died 1 lost 4 gained 4": 1,
+    "born 1 died 1 lost 0 gained 4": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 19,
+   "swaps_fourfold": 0,
+   "swaps_persistent": {
+    "1": 19,
+    "2": 19,
+    "5": 19
+   },
+   "swaps_persistent_lengthfilter": {
+    "k1_l0": 19,
+    "k1_l50": 19,
+    "k1_l150": 18,
+    "k2_l0": 19,
+    "k2_l50": 19,
+    "k2_l150": 18,
+    "k5_l0": 19,
+    "k5_l50": 19,
+    "k5_l150": 18
+   },
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 7,
+     "relabel": 4,
+     "swap": 10,
+     "clump": 50,
+     "birth": 7,
+     "merge": 7
+    },
+    "100-200 Ma": {
+     "split": 8,
+     "clump": 22,
+     "swap": 8,
+     "merge": 4
+    },
+    "200-300 Ma": {
+     "clump": 1,
+     "birth": 1,
+     "split": 1,
+     "swap": 1
+    }
+   },
+   "swap_times": [
+    [
+     205,
+     200,
+     "direct"
+    ],
+    [
+     190,
+     185,
+     "direct"
+    ],
+    [
+     165,
+     160,
+     "direct"
+    ],
+    [
+     140,
+     135,
+     "direct"
+    ],
+    [
+     130,
+     125,
+     "direct"
+    ],
+    [
+     130,
+     125,
+     "direct"
+    ],
+    [
+     120,
+     115,
+     "direct"
+    ],
+    [
+     105,
+     100,
+     "direct"
+    ],
+    [
+     105,
+     100,
+     "direct"
+    ],
+    [
+     95,
+     90,
+     "direct"
+    ],
+    [
+     75,
+     70,
+     "direct"
+    ],
+    [
+     70,
+     65,
+     "direct"
+    ],
+    [
+     50,
+     45,
+     "direct"
+    ],
+    [
+     40,
+     35,
+     "direct"
+    ],
+    [
+     40,
+     35,
+     "direct"
+    ],
+    [
+     35,
+     30,
+     "direct"
+    ],
+    [
+     30,
+     25,
+     "direct"
+    ],
+    [
+     30,
+     25,
+     "direct"
+    ],
+    [
+     15,
+     10,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 5,
+   "Lmin": 50,
+   "by_segment": true,
+   "frames": 47,
+   "counts": {
+    "clump": 89,
+    "birth": 8,
+    "split": 16,
+    "swap": 15,
+    "merge": 12,
+    "relabel": 4
+   },
+   "clump_patterns": {
+    "born 0 died 0 lost 1 gained 0": 5,
+    "born 0 died 0 lost 0 gained 1": 11,
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 1 died 0 lost 0 gained 1": 4,
+    "born 0 died 1 lost 0 gained 0": 3,
+    "born 1 died 2 lost 0 gained 0": 2,
+    "born 2 died 0 lost 1 gained 1": 1,
+    "born 2 died 0 lost 2 gained 0": 1,
+    "born 4 died 1 lost 3 gained 0": 1,
+    "born 2 died 3 lost 0 gained 2": 1,
+    "born 4 died 1 lost 11 gained 1": 1,
+    "born 1 died 0 lost 1 gained 0": 5,
+    "born 3 died 4 lost 1 gained 0": 1,
+    "born 0 died 0 lost 3 gained 1": 1,
+    "born 0 died 0 lost 2 gained 1": 3,
+    "born 3 died 1 lost 3 gained 1": 1,
+    "born 1 died 1 lost 1 gained 0": 3,
+    "born 3 died 0 lost 5 gained 2": 1,
+    "born 0 died 1 lost 1 gained 5": 1,
+    "born 0 died 1 lost 1 gained 0": 3,
+    "born 0 died 2 lost 0 gained 2": 2,
+    "born 0 died 2 lost 0 gained 1": 1,
+    "born 1 died 1 lost 0 gained 2": 1,
+    "born 2 died 1 lost 4 gained 0": 1,
+    "born 5 died 4 lost 0 gained 2": 1,
+    "born 2 died 0 lost 4 gained 1": 1,
+    "born 1 died 6 lost 1 gained 7": 1,
+    "born 0 died 0 lost 3 gained 2": 1,
+    "born 2 died 2 lost 0 gained 2": 1,
+    "born 0 died 0 lost 2 gained 2": 1,
+    "born 2 died 1 lost 0 gained 0": 2,
+    "born 0 died 1 lost 1 gained 2": 1,
+    "born 3 died 2 lost 2 gained 2": 1,
+    "born 0 died 1 lost 0 gained 2": 1,
+    "born 1 died 5 lost 2 gained 2": 1,
+    "born 3 died 1 lost 1 gained 0": 1,
+    "born 2 died 0 lost 1 gained 0": 3,
+    "born 1 died 1 lost 0 gained 1": 1,
+    "born 3 died 2 lost 4 gained 3": 1,
+    "born 3 died 1 lost 0 gained 0": 2,
+    "born 1 died 3 lost 0 gained 0": 1,
+    "born 4 died 5 lost 2 gained 2": 1,
+    "born 4 died 2 lost 2 gained 3": 1,
+    "born 1 died 2 lost 0 gained 2": 1,
+    "born 0 died 3 lost 4 gained 5": 1,
+    "born 1 died 0 lost 4 gained 0": 1,
+    "born 2 died 0 lost 5 gained 0": 1,
+    "born 4 died 2 lost 0 gained 0": 1,
+    "born 1 died 0 lost 2 gained 2": 1,
+    "born 0 died 2 lost 0 gained 0": 1,
+    "born 6 died 4 lost 4 gained 5": 1,
+    "born 8 died 1 lost 2 gained 4": 1,
+    "born 0 died 1 lost 0 gained 3": 1,
+    "born 1 died 1 lost 0 gained 4": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 15,
+   "swaps_fourfold": 2,
+   "swaps_persistent": {
+    "1": 17,
+    "2": 17,
+    "5": 17
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 7,
+     "relabel": 4,
+     "swap": 7,
+     "clump": 57,
+     "birth": 7,
+     "merge": 8
+    },
+    "100-200 Ma": {
+     "split": 8,
+     "clump": 29,
+     "swap": 7,
+     "merge": 4
+    },
+    "200-300 Ma": {
+     "clump": 3,
+     "birth": 1,
+     "split": 1,
+     "swap": 1
+    }
+   },
+   "swap_times": [
+    [
+     205,
+     200,
+     "direct"
+    ],
+    [
+     190,
+     185,
+     "direct"
+    ],
+    [
+     165,
+     160,
+     "direct"
+    ],
+    [
+     130,
+     125,
+     "direct"
+    ],
+    [
+     130,
+     125,
+     "direct"
+    ],
+    [
+     120,
+     115,
+     "direct"
+    ],
+    [
+     105,
+     100,
+     "direct"
+    ],
+    [
+     105,
+     100,
+     "direct"
+    ],
+    [
+     95,
+     90,
+     "direct"
+    ],
+    [
+     75,
+     70,
+     "direct"
+    ],
+    [
+     70,
+     65,
+     "direct"
+    ],
+    [
+     50,
+     45,
+     "direct"
+    ],
+    [
+     40,
+     35,
+     "direct"
+    ],
+    [
+     35,
+     30,
+     "direct"
+    ],
+    [
+     35,
+     25,
+     "four-fold"
+    ],
+    [
+     30,
+     25,
+     "direct"
+    ],
+    [
+     30,
+     20,
+     "four-fold"
+    ]
+   ]
+  },
+  {
+   "step": 5,
+   "Lmin": 150,
+   "by_segment": true,
+   "frames": 47,
+   "counts": {
+    "clump": 116,
+    "birth": 8,
+    "split": 17,
+    "swap": 9,
+    "merge": 9,
+    "relabel": 5
+   },
+   "clump_patterns": {
+    "born 0 died 0 lost 1 gained 0": 20,
+    "born 2 died 1 lost 1 gained 0": 1,
+    "born 0 died 0 lost 0 gained 1": 23,
+    "born 1 died 0 lost 0 gained 1": 4,
+    "born 0 died 1 lost 0 gained 0": 3,
+    "born 1 died 2 lost 0 gained 0": 2,
+    "born 2 died 0 lost 1 gained 2": 1,
+    "born 2 died 0 lost 2 gained 0": 1,
+    "born 4 died 1 lost 3 gained 0": 1,
+    "born 2 died 3 lost 0 gained 2": 1,
+    "born 0 died 1 lost 0 gained 2": 2,
+    "born 4 died 1 lost 11 gained 1": 1,
+    "born 1 died 0 lost 1 gained 0": 5,
+    "born 3 died 4 lost 1 gained 0": 1,
+    "born 0 died 0 lost 1 gained 2": 1,
+    "born 0 died 0 lost 2 gained 1": 3,
+    "born 3 died 1 lost 3 gained 2": 1,
+    "born 1 died 1 lost 1 gained 0": 2,
+    "born 3 died 0 lost 5 gained 2": 1,
+    "born 0 died 1 lost 1 gained 4": 1,
+    "born 0 died 1 lost 1 gained 0": 2,
+    "born 0 died 2 lost 0 gained 2": 3,
+    "born 1 died 1 lost 0 gained 2": 1,
+    "born 2 died 1 lost 4 gained 0": 1,
+    "born 5 died 4 lost 0 gained 2": 1,
+    "born 2 died 1 lost 5 gained 2": 1,
+    "born 1 died 6 lost 1 gained 7": 1,
+    "born 2 died 2 lost 0 gained 2": 1,
+    "born 0 died 0 lost 2 gained 2": 1,
+    "born 2 died 1 lost 0 gained 0": 2,
+    "born 3 died 2 lost 2 gained 2": 1,
+    "born 1 died 5 lost 2 gained 2": 1,
+    "born 3 died 1 lost 1 gained 0": 1,
+    "born 2 died 0 lost 0 gained 0": 1,
+    "born 1 died 1 lost 0 gained 1": 1,
+    "born 3 died 2 lost 4 gained 3": 1,
+    "born 3 died 1 lost 0 gained 0": 2,
+    "born 1 died 3 lost 0 gained 0": 1,
+    "born 4 died 5 lost 2 gained 2": 1,
+    "born 4 died 2 lost 2 gained 4": 1,
+    "born 2 died 0 lost 1 gained 0": 1,
+    "born 1 died 2 lost 0 gained 2": 1,
+    "born 0 died 3 lost 4 gained 5": 1,
+    "born 1 died 0 lost 4 gained 0": 1,
+    "born 2 died 0 lost 5 gained 0": 1,
+    "born 4 died 3 lost 0 gained 0": 1,
+    "born 1 died 0 lost 2 gained 3": 1,
+    "born 0 died 2 lost 0 gained 0": 1,
+    "born 6 died 4 lost 4 gained 5": 1,
+    "born 0 died 0 lost 2 gained 0": 1,
+    "born 7 died 1 lost 1 gained 3": 1,
+    "born 0 died 1 lost 0 gained 3": 1,
+    "born 1 died 1 lost 0 gained 4": 1,
+    "born 2 died 0 lost 1 gained 1": 1,
+    "born 0 died 1 lost 0 gained 1": 1,
+    "born 0 died 1 lost 2 gained 0": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 9,
+   "swaps_fourfold": 8,
+   "swaps_persistent": {
+    "1": 17,
+    "2": 17,
+    "5": 17
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "clump": 71,
+     "split": 8,
+     "relabel": 5,
+     "birth": 7,
+     "merge": 6,
+     "swap": 4
+    },
+    "100-200 Ma": {
+     "split": 8,
+     "clump": 42,
+     "swap": 5,
+     "merge": 3
+    },
+    "200-300 Ma": {
+     "clump": 3,
+     "birth": 1,
+     "split": 1
+    }
+   },
+   "swap_times": [
+    [
+     215,
+     200,
+     "four-fold"
+    ],
+    [
+     195,
+     185,
+     "four-fold"
+    ],
+    [
+     165,
+     160,
+     "direct"
+    ],
+    [
+     130,
+     125,
+     "direct"
+    ],
+    [
+     130,
+     125,
+     "direct"
+    ],
+    [
+     120,
+     115,
+     "direct"
+    ],
+    [
+     105,
+     100,
+     "direct"
+    ],
+    [
+     105,
+     95,
+     "four-fold"
+    ],
+    [
+     95,
+     85,
+     "four-fold"
+    ],
+    [
+     75,
+     65,
+     "four-fold"
+    ],
+    [
+     75,
+     45,
+     "four-fold"
+    ],
+    [
+     70,
+     60,
+     "four-fold"
+    ],
+    [
+     50,
+     45,
+     "direct"
+    ],
+    [
+     40,
+     35,
+     "direct"
+    ],
+    [
+     35,
+     30,
+     "direct"
+    ],
+    [
+     30,
+     25,
+     "direct"
+    ],
+    [
+     30,
+     20,
+     "four-fold"
+    ]
+   ]
+  },
+  {
+   "step": 10,
+   "Lmin": 0,
+   "by_segment": true,
+   "frames": 24,
+   "counts": {
+    "clump": 44,
+    "birth": 6,
+    "split": 9,
+    "swap": 11,
+    "merge": 10,
+    "relabel": 3
+   },
+   "clump_patterns": {
+    "born 2 died 1 lost 1 gained 0": 2,
+    "born 2 died 1 lost 1 gained 1": 1,
+    "born 1 died 2 lost 1 gained 1": 1,
+    "born 3 died 0 lost 1 gained 1": 1,
+    "born 2 died 0 lost 2 gained 0": 1,
+    "born 4 died 2 lost 2 gained 0": 1,
+    "born 1 died 0 lost 0 gained 1": 1,
+    "born 8 died 5 lost 14 gained 2": 1,
+    "born 1 died 0 lost 1 gained 0": 3,
+    "born 3 died 1 lost 3 gained 2": 1,
+    "born 0 died 0 lost 2 gained 2": 2,
+    "born 3 died 0 lost 5 gained 2": 1,
+    "born 0 died 1 lost 1 gained 5": 1,
+    "born 0 died 2 lost 0 gained 2": 2,
+    "born 1 died 1 lost 0 gained 3": 1,
+    "born 0 died 2 lost 0 gained 1": 2,
+    "born 3 died 0 lost 4 gained 0": 1,
+    "born 9 died 5 lost 1 gained 1": 1,
+    "born 1 died 6 lost 1 gained 7": 1,
+    "born 2 died 2 lost 3 gained 2": 1,
+    "born 1 died 0 lost 1 gained 2": 1,
+    "born 4 died 3 lost 5 gained 5": 1,
+    "born 1 died 2 lost 0 gained 0": 1,
+    "born 0 died 1 lost 0 gained 0": 1,
+    "born 3 died 8 lost 2 gained 2": 1,
+    "born 6 died 2 lost 2 gained 2": 1,
+    "born 2 died 0 lost 0 gained 0": 1,
+    "born 1 died 1 lost 0 gained 1": 1,
+    "born 3 died 0 lost 1 gained 0": 1,
+    "born 4 died 5 lost 2 gained 2": 1,
+    "born 5 died 4 lost 2 gained 4": 1,
+    "born 2 died 0 lost 1 gained 0": 1,
+    "born 2 died 1 lost 0 gained 0": 1,
+    "born 1 died 1 lost 4 gained 1": 1,
+    "born 7 died 9 lost 10 gained 7": 1,
+    "born 4 died 1 lost 0 gained 1": 1,
+    "born 6 died 6 lost 3 gained 5": 1,
+    "born 10 died 1 lost 5 gained 4": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 11,
+   "swaps_fourfold": 0,
+   "swaps_persistent": {
+    "1": 11,
+    "2": 11,
+    "5": 11
+   },
+   "swaps_persistent_lengthfilter": {
+    "k1_l0": 11,
+    "k1_l50": 11,
+    "k1_l150": 8,
+    "k2_l0": 11,
+    "k2_l50": 11,
+    "k2_l150": 8,
+    "k5_l0": 11,
+    "k5_l50": 11,
+    "k5_l150": 8
+   },
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 4,
+     "relabel": 2,
+     "swap": 6,
+     "clump": 27,
+     "birth": 5,
+     "merge": 4
+    },
+    "100-200 Ma": {
+     "clump": 16,
+     "split": 4,
+     "swap": 4,
+     "merge": 6,
+     "relabel": 1
+    },
+    "200-300 Ma": {
+     "clump": 1,
+     "birth": 1,
+     "split": 1,
+     "swap": 1
+    }
+   },
+   "swap_times": [
+    [
+     210,
+     200,
+     "direct"
+    ],
+    [
+     170,
+     160,
+     "direct"
+    ],
+    [
+     120,
+     110,
+     "direct"
+    ],
+    [
+     110,
+     100,
+     "direct"
+    ],
+    [
+     110,
+     100,
+     "direct"
+    ],
+    [
+     100,
+     90,
+     "direct"
+    ],
+    [
+     50,
+     40,
+     "direct"
+    ],
+    [
+     40,
+     30,
+     "direct"
+    ],
+    [
+     40,
+     30,
+     "direct"
+    ],
+    [
+     30,
+     20,
+     "direct"
+    ],
+    [
+     20,
+     10,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 10,
+   "Lmin": 50,
+   "by_segment": true,
+   "frames": 24,
+   "counts": {
+    "clump": 53,
+    "birth": 5,
+    "split": 9,
+    "swap": 10,
+    "merge": 10,
+    "relabel": 3
+   },
+   "clump_patterns": {
+    "born 0 died 0 lost 1 gained 0": 4,
+    "born 2 died 1 lost 1 gained 0": 2,
+    "born 0 died 0 lost 0 gained 1": 5,
+    "born 2 died 1 lost 1 gained 1": 1,
+    "born 1 died 2 lost 1 gained 2": 1,
+    "born 3 died 0 lost 1 gained 1": 1,
+    "born 2 died 0 lost 2 gained 0": 1,
+    "born 4 died 2 lost 2 gained 0": 1,
+    "born 1 died 0 lost 0 gained 1": 1,
+    "born 8 died 5 lost 14 gained 1": 1,
+    "born 1 died 0 lost 1 gained 0": 3,
+    "born 3 died 1 lost 3 gained 3": 1,
+    "born 0 died 0 lost 2 gained 1": 1,
+    "born 3 died 0 lost 5 gained 2": 1,
+    "born 0 died 1 lost 1 gained 5": 1,
+    "born 0 died 2 lost 0 gained 2": 3,
+    "born 1 died 1 lost 0 gained 2": 1,
+    "born 0 died 2 lost 0 gained 1": 1,
+    "born 3 died 0 lost 4 gained 1": 1,
+    "born 9 died 5 lost 1 gained 1": 1,
+    "born 1 died 6 lost 1 gained 7": 1,
+    "born 2 died 2 lost 3 gained 2": 1,
+    "born 1 died 0 lost 1 gained 2": 1,
+    "born 4 died 3 lost 4 gained 4": 1,
+    "born 1 died 2 lost 0 gained 0": 1,
+    "born 0 died 1 lost 0 gained 0": 1,
+    "born 0 died 0 lost 2 gained 2": 1,
+    "born 4 died 8 lost 2 gained 3": 1,
+    "born 6 died 2 lost 2 gained 2": 1,
+    "born 2 died 0 lost 1 gained 0": 2,
+    "born 1 died 1 lost 0 gained 1": 1,
+    "born 3 died 0 lost 1 gained 0": 1,
+    "born 4 died 5 lost 2 gained 2": 1,
+    "born 5 died 4 lost 2 gained 4": 1,
+    "born 2 died 1 lost 0 gained 0": 1,
+    "born 1 died 1 lost 3 gained 0": 1,
+    "born 7 died 9 lost 10 gained 7": 1,
+    "born 4 died 1 lost 0 gained 1": 1,
+    "born 6 died 6 lost 4 gained 5": 1,
+    "born 10 died 1 lost 3 gained 4": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 10,
+   "swaps_fourfold": 2,
+   "swaps_persistent": {
+    "1": 12,
+    "2": 12,
+    "5": 12
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 4,
+     "relabel": 2,
+     "swap": 6,
+     "clump": 32,
+     "birth": 4,
+     "merge": 4
+    },
+    "100-200 Ma": {
+     "clump": 18,
+     "split": 4,
+     "swap": 4,
+     "merge": 6,
+     "relabel": 1
+    },
+    "200-300 Ma": {
+     "clump": 3,
+     "birth": 1,
+     "split": 1
+    }
+   },
+   "swap_times": [
+    [
+     220,
+     200,
+     "four-fold"
+    ],
+    [
+     170,
+     160,
+     "direct"
+    ],
+    [
+     120,
+     110,
+     "direct"
+    ],
+    [
+     110,
+     100,
+     "direct"
+    ],
+    [
+     110,
+     100,
+     "direct"
+    ],
+    [
+     100,
+     90,
+     "direct"
+    ],
+    [
+     70,
+     60,
+     "direct"
+    ],
+    [
+     50,
+     40,
+     "direct"
+    ],
+    [
+     40,
+     30,
+     "direct"
+    ],
+    [
+     40,
+     20,
+     "four-fold"
+    ],
+    [
+     30,
+     20,
+     "direct"
+    ],
+    [
+     20,
+     10,
+     "direct"
+    ]
+   ]
+  },
+  {
+   "step": 10,
+   "Lmin": 150,
+   "by_segment": true,
+   "frames": 24,
+   "counts": {
+    "clump": 63,
+    "birth": 5,
+    "split": 9,
+    "swap": 6,
+    "merge": 10,
+    "relabel": 2
+   },
+   "clump_patterns": {
+    "born 0 died 0 lost 1 gained 0": 8,
+    "born 2 died 1 lost 1 gained 0": 2,
+    "born 0 died 0 lost 0 gained 1": 9,
+    "born 2 died 1 lost 1 gained 1": 1,
+    "born 1 died 2 lost 0 gained 2": 1,
+    "born 3 died 0 lost 1 gained 1": 1,
+    "born 2 died 0 lost 2 gained 0": 1,
+    "born 4 died 2 lost 2 gained 0": 1,
+    "born 1 died 0 lost 0 gained 1": 1,
+    "born 8 died 5 lost 14 gained 1": 1,
+    "born 1 died 0 lost 1 gained 0": 3,
+    "born 3 died 1 lost 4 gained 4": 1,
+    "born 0 died 0 lost 2 gained 1": 1,
+    "born 3 died 0 lost 5 gained 2": 1,
+    "born 0 died 1 lost 0 gained 4": 1,
+    "born 0 died 2 lost 0 gained 2": 3,
+    "born 1 died 1 lost 0 gained 2": 1,
+    "born 3 died 0 lost 4 gained 1": 1,
+    "born 1 died 1 lost 0 gained 1": 2,
+    "born 9 died 5 lost 1 gained 1": 1,
+    "born 1 died 6 lost 1 gained 7": 1,
+    "born 2 died 2 lost 0 gained 0": 1,
+    "born 1 died 0 lost 1 gained 1": 1,
+    "born 0 died 0 lost 2 gained 2": 2,
+    "born 4 died 3 lost 4 gained 5": 1,
+    "born 1 died 2 lost 0 gained 0": 1,
+    "born 0 died 1 lost 0 gained 0": 1,
+    "born 4 died 8 lost 2 gained 3": 1,
+    "born 6 died 2 lost 2 gained 2": 1,
+    "born 2 died 0 lost 1 gained 0": 2,
+    "born 3 died 0 lost 1 gained 0": 1,
+    "born 4 died 5 lost 2 gained 2": 1,
+    "born 5 died 4 lost 2 gained 4": 1,
+    "born 2 died 1 lost 0 gained 0": 1,
+    "born 1 died 1 lost 3 gained 0": 1,
+    "born 7 died 9 lost 10 gained 7": 1,
+    "born 4 died 1 lost 0 gained 1": 1,
+    "born 6 died 6 lost 4 gained 5": 1,
+    "born 10 died 1 lost 2 gained 4": 1,
+    "born 0 died 2 lost 0 gained 1": 1
+   },
+   "frames_failing": 0,
+   "failing_detail": [],
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "swaps_direct": 6,
+   "swaps_fourfold": 2,
+   "swaps_persistent": {
+    "1": 8,
+    "2": 8,
+    "5": 8
+   },
+   "swaps_persistent_lengthfilter": null,
+   "swaps_persistent_censored": {
+    "1": 0,
+    "2": 0,
+    "5": 0
+   },
+   "per100": {
+    "0-100 Ma": {
+     "split": 4,
+     "clump": 36,
+     "relabel": 1,
+     "birth": 4,
+     "merge": 4,
+     "swap": 5
+    },
+    "100-200 Ma": {
+     "clump": 24,
+     "split": 4,
+     "swap": 1,
+     "merge": 6,
+     "relabel": 1
+    },
+    "200-300 Ma": {
+     "clump": 3,
+     "birth": 1,
+     "split": 1
+    }
+   },
+   "swap_times": [
+    [
+     220,
+     200,
+     "four-fold"
+    ],
+    [
+     170,
+     160,
+     "direct"
+    ],
+    [
+     80,
+     40,
+     "four-fold"
+    ],
+    [
+     70,
+     60,
+     "direct"
+    ],
+    [
+     70,
+     60,
+     "direct"
+    ],
+    [
+     50,
+     40,
+     "direct"
+    ],
+    [
+     40,
+     30,
+     "direct"
+    ],
+    [
+     30,
+     20,
+     "direct"
+    ]
+   ]
+  }
+ ],
+ "pair_rule_step1_L0": {
+  "step": 1,
+  "Lmin": 0,
+  "by_segment": false,
+  "frames": 231,
+  "counts": {
+   "relabel": 18,
+   "split": 38,
+   "merge": 26,
+   "swap": 48,
+   "clump": 92,
+   "birth": 10
+  },
+  "clump_patterns": {
+   "born 0 died 0 lost 1 gained 0": 11,
+   "born 2 died 1 lost 1 gained 0": 1,
+   "born 0 died 1 lost 0 gained 0": 6,
+   "born 1 died 2 lost 0 gained 0": 2,
+   "born 2 died 0 lost 2 gained 0": 2,
+   "born 4 died 1 lost 3 gained 0": 1,
+   "born 0 died 0 lost 0 gained 1": 7,
+   "born 1 died 2 lost 0 gained 1": 2,
+   "born 3 died 1 lost 8 gained 0": 1,
+   "born 1 died 0 lost 1 gained 0": 4,
+   "born 2 died 2 lost 0 gained 1": 1,
+   "born 1 died 1 lost 1 gained 0": 2,
+   "born 0 died 0 lost 2 gained 2": 3,
+   "born 1 died 1 lost 1 gained 1": 1,
+   "born 3 died 0 lost 5 gained 2": 1,
+   "born 0 died 1 lost 1 gained 5": 1,
+   "born 0 died 2 lost 0 gained 2": 1,
+   "born 0 died 2 lost 0 gained 1": 1,
+   "born 1 died 1 lost 0 gained 2": 1,
+   "born 5 died 4 lost 0 gained 2": 1,
+   "born 0 died 3 lost 0 gained 3": 1,
+   "born 0 died 2 lost 0 gained 6": 1,
+   "born 1 died 0 lost 0 gained 0": 4,
+   "born 2 died 1 lost 0 gained 1": 1,
+   "born 1 died 0 lost 2 gained 1": 1,
+   "born 1 died 0 lost 3 gained 0": 1,
+   "born 2 died 1 lost 0 gained 2": 1,
+   "born 2 died 3 lost 0 gained 1": 1,
+   "born 0 died 1 lost 0 gained 2": 1,
+   "born 1 died 5 lost 2 gained 2": 1,
+   "born 2 died 0 lost 1 gained 0": 3,
+   "born 1 died 2 lost 0 gained 2": 2,
+   "born 2 died 0 lost 1 gained 1": 1,
+   "born 1 died 1 lost 0 gained 1": 2,
+   "born 3 died 1 lost 4 gained 0": 1,
+   "born 1 died 3 lost 0 gained 0": 1,
+   "born 2 died 0 lost 0 gained 0": 3,
+   "born 4 died 4 lost 0 gained 0": 1,
+   "born 0 died 1 lost 1 gained 2": 1,
+   "born 0 died 2 lost 2 gained 3": 1,
+   "born 2 died 0 lost 5 gained 0": 1,
+   "born 4 died 3 lost 0 gained 0": 1,
+   "born 0 died 2 lost 0 gained 0": 1,
+   "born 0 died 1 lost 1 gained 4": 1,
+   "born 2 died 1 lost 2 gained 0": 1,
+   "born 3 died 1 lost 0 gained 0": 1,
+   "born 2 died 2 lost 1 gained 4": 1,
+   "born 2 died 1 lost 1 gained 2": 1,
+   "born 1 died 0 lost 1 gained 1": 1,
+   "born 1 died 0 lost 5 gained 0": 1,
+   "born 0 died 1 lost 1 gained 0": 1,
+   "born 0 died 0 lost 1 gained 1": 1,
+   "born 0 died 0 lost 3 gained 3": 1
+  },
+  "frames_failing": 0,
+  "failing_detail": [],
+  "balance_failures": 0,
+  "neg_control_caught": true,
+  "swaps_direct": 48,
+  "swaps_fourfold": 0,
+  "swaps_persistent": {
+   "1": 48,
+   "2": 32,
+   "5": 20
+  },
+  "swaps_persistent_lengthfilter": {
+   "k1_l0": 48,
+   "k1_l50": 35,
+   "k1_l150": 28,
+   "k2_l0": 32,
+   "k2_l50": 31,
+   "k2_l150": 26,
+   "k5_l0": 20,
+   "k5_l50": 20,
+   "k5_l150": 20
+  },
+  "swaps_persistent_censored": {
+   "1": 0,
+   "2": 0,
+   "5": 0
+  },
+  "per100": {
+   "0-100 Ma": {
+    "split": 19,
+    "swap": 34,
+    "relabel": 13,
+    "merge": 16,
+    "clump": 67,
+    "birth": 8
+   },
+   "100-200 Ma": {
+    "split": 17,
+    "clump": 23,
+    "swap": 12,
+    "relabel": 3,
+    "merge": 9,
+    "birth": 1
+   },
+   "200-300 Ma": {
+    "relabel": 2,
+    "split": 2,
+    "merge": 1,
+    "swap": 2,
+    "clump": 2,
+    "birth": 1
+   }
+  },
+  "swap_times": [
+   [
+    223,
+    222,
+    "direct"
+   ],
+   [
+    221,
+    220,
+    "direct"
+   ],
+   [
+    189,
+    188,
+    "direct"
+   ],
+   [
+    189,
+    188,
+    "direct"
+   ],
+   [
+    188,
+    187,
+    "direct"
+   ],
+   [
+    164,
+    163,
+    "direct"
+   ],
+   [
+    140,
+    139,
+    "direct"
+   ],
+   [
+    135,
+    134,
+    "direct"
+   ],
+   [
+    131,
+    130,
+    "direct"
+   ],
+   [
+    129,
+    128,
+    "direct"
+   ],
+   [
+    117,
+    116,
+    "direct"
+   ],
+   [
+    113,
+    112,
+    "direct"
+   ],
+   [
+    105,
+    104,
+    "direct"
+   ],
+   [
+    102,
+    101,
+    "direct"
+   ],
+   [
+    94,
+    93,
+    "direct"
+   ],
+   [
+    92,
+    91,
+    "direct"
+   ],
+   [
+    81,
+    80,
+    "direct"
+   ],
+   [
+    80,
+    79,
+    "direct"
+   ],
+   [
+    78,
+    77,
+    "direct"
+   ],
+   [
+    77,
+    76,
+    "direct"
+   ],
+   [
+    75,
+    74,
+    "direct"
+   ],
+   [
+    72,
+    71,
+    "direct"
+   ],
+   [
+    68,
+    67,
+    "direct"
+   ],
+   [
+    64,
+    63,
+    "direct"
+   ],
+   [
+    64,
+    63,
+    "direct"
+   ],
+   [
+    61,
+    60,
+    "direct"
+   ],
+   [
+    48,
+    47,
+    "direct"
+   ],
+   [
+    47,
+    46,
+    "direct"
+   ],
+   [
+    45,
+    44,
+    "direct"
+   ],
+   [
+    44,
+    43,
+    "direct"
+   ],
+   [
+    42,
+    41,
+    "direct"
+   ],
+   [
+    40,
+    39,
+    "direct"
+   ],
+   [
+    38,
+    37,
+    "direct"
+   ],
+   [
+    34,
+    33,
+    "direct"
+   ],
+   [
+    32,
+    31,
+    "direct"
+   ],
+   [
+    29,
+    28,
+    "direct"
+   ],
+   [
+    28,
+    27,
+    "direct"
+   ],
+   [
+    28,
+    27,
+    "direct"
+   ],
+   [
+    27,
+    26,
+    "direct"
+   ],
+   [
+    23,
+    22,
+    "direct"
+   ],
+   [
+    18,
+    17,
+    "direct"
+   ],
+   [
+    12,
+    11,
+    "direct"
+   ],
+   [
+    10,
+    9,
+    "direct"
+   ],
+   [
+    9,
+    8,
+    "direct"
+   ],
+   [
+    7,
+    6,
+    "direct"
+   ],
+   [
+    4,
+    3,
+    "direct"
+   ],
+   [
+    2,
+    1,
+    "direct"
+   ],
+   [
+    1,
+    0,
+    "direct"
+   ]
+  ]
+ },
+ "infos": [
+  {
+   "time": 230,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 205.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 194392,
+   "cells": 10,
+   "seconds": 64.8
+  },
+  {
+   "time": 229,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 240.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 194320,
+   "cells": 10,
+   "seconds": 67.5
+  },
+  {
+   "time": 228,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": -0.00127,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 27,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 300.1,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 198734,
+   "cells": 11,
+   "seconds": 66.9
+  },
+  {
+   "time": 227,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 342.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 193983,
+   "cells": 10,
+   "seconds": 53.6
+  },
+  {
+   "time": 226,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 392.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 193700,
+   "cells": 10,
+   "seconds": 52.0
+  },
+  {
+   "time": 225,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 264.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 193672,
+   "cells": 10,
+   "seconds": 50.9
+  },
+  {
+   "time": 224,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 123.5,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 193461,
+   "cells": 10,
+   "seconds": 27.0
+  },
+  {
+   "time": 223,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 7.8,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 193384,
+   "cells": 10,
+   "seconds": 27.7
+  },
+  {
+   "time": 222,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 92.0,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 193294,
+   "cells": 10,
+   "seconds": 28.1
+  },
+  {
+   "time": 221,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 244.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 193017,
+   "cells": 10,
+   "seconds": 39.4
+  },
+  {
+   "time": 220,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 450.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 192864,
+   "cells": 10,
+   "seconds": 39.1
+  },
+  {
+   "time": 219,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 418.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 192697,
+   "cells": 10,
+   "seconds": 42.7
+  },
+  {
+   "time": 218,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 386.1,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 192629,
+   "cells": 10,
+   "seconds": 39.1
+  },
+  {
+   "time": 217,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 337.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 192647,
+   "cells": 10,
+   "seconds": 40.2
+  },
+  {
+   "time": 216,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 287.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 192565,
+   "cells": 10,
+   "seconds": 39.1
+  },
+  {
+   "time": 215,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 247.1,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 192228,
+   "cells": 10,
+   "seconds": 43.5
+  },
+  {
+   "time": 214,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 197.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 191994,
+   "cells": 10,
+   "seconds": 43.3
+  },
+  {
+   "time": 213,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 148.3,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 191821,
+   "cells": 10,
+   "seconds": 43.1
+  },
+  {
+   "time": 212,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 106.4,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 191729,
+   "cells": 10,
+   "seconds": 40.4
+  },
+  {
+   "time": 211,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 57.0,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 191542,
+   "cells": 10,
+   "seconds": 39.3
+  },
+  {
+   "time": 210,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 24.0,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 190199,
+   "cells": 10,
+   "seconds": 41.1
+  },
+  {
+   "time": 209,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 444.4,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 190063,
+   "cells": 10,
+   "seconds": 41.2
+  },
+  {
+   "time": 208,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 402.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 189886,
+   "cells": 10,
+   "seconds": 40.4
+  },
+  {
+   "time": 207,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 310.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 189799,
+   "cells": 10,
+   "seconds": 42.7
+  },
+  {
+   "time": 206,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 187.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 189694,
+   "cells": 10,
+   "seconds": 43.2
+  },
+  {
+   "time": 205,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 98.1,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 189414,
+   "cells": 10,
+   "seconds": 44.0
+  },
+  {
+   "time": 204,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 16.4,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 189093,
+   "cells": 10,
+   "seconds": 43.9
+  },
+  {
+   "time": 203,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 123.4,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 189018,
+   "cells": 10,
+   "seconds": 43.0
+  },
+  {
+   "time": 202,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 246.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 188738,
+   "cells": 10,
+   "seconds": 42.4
+  },
+  {
+   "time": 201,
+   "polygons": 10,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 24,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 347.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 188329,
+   "cells": 10,
+   "seconds": 43.8
+  },
+  {
+   "time": 200,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 473.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 207413,
+   "cells": 13,
+   "seconds": 43.8
+  },
+  {
+   "time": 199,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 822.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 207232,
+   "cells": 13,
+   "seconds": 44.7
+  },
+  {
+   "time": 198,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 908.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 206887,
+   "cells": 13,
+   "seconds": 46.9
+  },
+  {
+   "time": 197,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 839.2,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 206248,
+   "cells": 13,
+   "seconds": 43.6
+  },
+  {
+   "time": 196,
+   "polygons": 13,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 33,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 677.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 205912,
+   "cells": 13,
+   "seconds": 46.1
+  },
+  {
+   "time": 195,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 573.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 210310,
+   "cells": 14,
+   "seconds": 46.8
+  },
+  {
+   "time": 194,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 456.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 209707,
+   "cells": 14,
+   "seconds": 41.4
+  },
+  {
+   "time": 193,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 387.4,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 209508,
+   "cells": 14,
+   "seconds": 44.7
+  },
+  {
+   "time": 192,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 228.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 209004,
+   "cells": 14,
+   "seconds": 42.0
+  },
+  {
+   "time": 191,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 375.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 208509,
+   "cells": 14,
+   "seconds": 42.7
+  },
+  {
+   "time": 190,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 24.7,
+   "chains_under": {
+    "50": 2,
+    "150": 3
+   },
+   "boundary_km": 210276,
+   "cells": 15,
+   "seconds": 41.4
+  },
+  {
+   "time": 189,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 7.8,
+   "chains_under": {
+    "50": 2,
+    "150": 2
+   },
+   "boundary_km": 210480,
+   "cells": 15,
+   "seconds": 44.8
+  },
+  {
+   "time": 188,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 9.0,
+   "chains_under": {
+    "50": 2,
+    "150": 2
+   },
+   "boundary_km": 210737,
+   "cells": 15,
+   "seconds": 41.1
+  },
+  {
+   "time": 187,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 166.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 210825,
+   "cells": 15,
+   "seconds": 42.0
+  },
+  {
+   "time": 186,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 269.1,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 210929,
+   "cells": 15,
+   "seconds": 41.0
+  },
+  {
+   "time": 185,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 389.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 211258,
+   "cells": 15,
+   "seconds": 41.6
+  },
+  {
+   "time": 184,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 491.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 211580,
+   "cells": 15,
+   "seconds": 44.3
+  },
+  {
+   "time": 183,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 489.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 211842,
+   "cells": 15,
+   "seconds": 40.6
+  },
+  {
+   "time": 182,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 477.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 212145,
+   "cells": 15,
+   "seconds": 40.3
+  },
+  {
+   "time": 181,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 466.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 212251,
+   "cells": 15,
+   "seconds": 44.6
+  },
+  {
+   "time": 180,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 248.1,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 202698,
+   "cells": 14,
+   "seconds": 40.4
+  },
+  {
+   "time": 179,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 282.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 203090,
+   "cells": 14,
+   "seconds": 40.7
+  },
+  {
+   "time": 178,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 317.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 203373,
+   "cells": 14,
+   "seconds": 40.8
+  },
+  {
+   "time": 177,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 352.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 203676,
+   "cells": 14,
+   "seconds": 41.0
+  },
+  {
+   "time": 176,
+   "polygons": 14,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 36,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 405.1,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 204163,
+   "cells": 14,
+   "seconds": 40.5
+  },
+  {
+   "time": 175,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 111.2,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 206612,
+   "cells": 15,
+   "seconds": 41.3
+  },
+  {
+   "time": 174,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 126.3,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 206996,
+   "cells": 15,
+   "seconds": 41.6
+  },
+  {
+   "time": 173,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 141.4,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 207466,
+   "cells": 15,
+   "seconds": 41.8
+  },
+  {
+   "time": 172,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 141.4,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 207720,
+   "cells": 15,
+   "seconds": 42.2
+  },
+  {
+   "time": 171,
+   "polygons": 15,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 39,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 156.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 208287,
+   "cells": 15,
+   "seconds": 42.0
+  },
+  {
+   "time": 170,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 155.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 216621,
+   "cells": 17,
+   "seconds": 41.7
+  },
+  {
+   "time": 169,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 148.9,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 217287,
+   "cells": 17,
+   "seconds": 42.9
+  },
+  {
+   "time": 168,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 152.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 217810,
+   "cells": 17,
+   "seconds": 42.5
+  },
+  {
+   "time": 167,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 115.4,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 218244,
+   "cells": 17,
+   "seconds": 41.3
+  },
+  {
+   "time": 166,
+   "polygons": 17,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 45,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 106.5,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 218682,
+   "cells": 17,
+   "seconds": 42.4
+  },
+  {
+   "time": 165,
+   "polygons": 18,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 48,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 115.5,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 231235,
+   "cells": 18,
+   "seconds": 43.1
+  },
+  {
+   "time": 164,
+   "polygons": 18,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 48,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 101.3,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 231792,
+   "cells": 18,
+   "seconds": 42.3
+  },
+  {
+   "time": 163,
+   "polygons": 18,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 48,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 121.4,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 232112,
+   "cells": 18,
+   "seconds": 43.1
+  },
+  {
+   "time": 162,
+   "polygons": 18,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 48,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 158.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 232495,
+   "cells": 18,
+   "seconds": 42.2
+  },
+  {
+   "time": 161,
+   "polygons": 18,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 48,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 176.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 232723,
+   "cells": 18,
+   "seconds": 42.3
+  },
+  {
+   "time": 160,
+   "polygons": 21,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 54,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 185.1,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 239045,
+   "cells": 20,
+   "seconds": 44.7
+  },
+  {
+   "time": 159,
+   "polygons": 21,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 54,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 217.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 239358,
+   "cells": 20,
+   "seconds": 43.2
+  },
+  {
+   "time": 158,
+   "polygons": 21,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 54,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 209.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 239271,
+   "cells": 20,
+   "seconds": 43.9
+  },
+  {
+   "time": 157,
+   "polygons": 21,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 54,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 222.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 239606,
+   "cells": 20,
+   "seconds": 43.7
+  },
+  {
+   "time": 156,
+   "polygons": 21,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 54,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 130.9,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 239918,
+   "cells": 20,
+   "seconds": 43.5
+  },
+  {
+   "time": 155,
+   "polygons": 23,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 63,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 73.8,
+   "chains_under": {
+    "50": 0,
+    "150": 3
+   },
+   "boundary_km": 259666,
+   "cells": 23,
+   "seconds": 42.8
+  },
+  {
+   "time": 154,
+   "polygons": 23,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 63,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 40.7,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 263143,
+   "cells": 23,
+   "seconds": 44.8
+  },
+  {
+   "time": 153,
+   "polygons": 23,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 63,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 49.3,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 263331,
+   "cells": 23,
+   "seconds": 44.4
+  },
+  {
+   "time": 152,
+   "polygons": 22,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 60,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 99.4,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 260577,
+   "cells": 22,
+   "seconds": 46.6
+  },
+  {
+   "time": 151,
+   "polygons": 22,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 60,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 57.1,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 261316,
+   "cells": 22,
+   "seconds": 47.6
+  },
+  {
+   "time": 150,
+   "polygons": 22,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 60,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 302.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 253860,
+   "cells": 22,
+   "seconds": 44.1
+  },
+  {
+   "time": 149,
+   "polygons": 22,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 60,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 190.1,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 254457,
+   "cells": 22,
+   "seconds": 44.6
+  },
+  {
+   "time": 148,
+   "polygons": 22,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 60,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 90.7,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 255158,
+   "cells": 22,
+   "seconds": 44.8
+  },
+  {
+   "time": 147,
+   "polygons": 22,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 60,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 41.9,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 255461,
+   "cells": 22,
+   "seconds": 45.0
+  },
+  {
+   "time": 146,
+   "polygons": 22,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 4,
+   "labels_below_resolution": [],
+   "chains": 60,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 150.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 256012,
+   "cells": 22,
+   "seconds": 48.0
+  },
+  {
+   "time": 145,
+   "polygons": 25,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 69,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 116.7,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 284266,
+   "cells": 25,
+   "seconds": 44.4
+  },
+  {
+   "time": 144,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 66.7,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 286703,
+   "cells": 26,
+   "seconds": 45.4
+  },
+  {
+   "time": 143,
+   "polygons": 25,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 69,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 33.3,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 283289,
+   "cells": 25,
+   "seconds": 43.8
+  },
+  {
+   "time": 142,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 100.6,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 289018,
+   "cells": 26,
+   "seconds": 46.2
+  },
+  {
+   "time": 141,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 57.2,
+   "chains_under": {
+    "50": 0,
+    "150": 3
+   },
+   "boundary_km": 289474,
+   "cells": 26,
+   "seconds": 45.0
+  },
+  {
+   "time": 140,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 5,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 25.1,
+   "chains_under": {
+    "50": 2,
+    "150": 3
+   },
+   "boundary_km": 290160,
+   "cells": 26,
+   "seconds": 46.2
+  },
+  {
+   "time": 139,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 18.6,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 291544,
+   "cells": 26,
+   "seconds": 44.7
+  },
+  {
+   "time": 138,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 46.1,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 291726,
+   "cells": 26,
+   "seconds": 47.2
+  },
+  {
+   "time": 137,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 64.3,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 296453,
+   "cells": 26,
+   "seconds": 45.5
+  },
+  {
+   "time": 136,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 82.5,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 296127,
+   "cells": 26,
+   "seconds": 44.0
+  },
+  {
+   "time": 135,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 40.9,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 306077,
+   "cells": 27,
+   "seconds": 45.7
+  },
+  {
+   "time": 134,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 8.7,
+   "chains_under": {
+    "50": 2,
+    "150": 2
+   },
+   "boundary_km": 306239,
+   "cells": 27,
+   "seconds": 46.1
+  },
+  {
+   "time": 133,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 41.7,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 306226,
+   "cells": 27,
+   "seconds": 46.5
+  },
+  {
+   "time": 132,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 91.3,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 314024,
+   "cells": 29,
+   "seconds": 46.3
+  },
+  {
+   "time": 131,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 91.3,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 314756,
+   "cells": 29,
+   "seconds": 46.8
+  },
+  {
+   "time": 130,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 7.8,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 314253,
+   "cells": 29,
+   "seconds": 47.0
+  },
+  {
+   "time": 129,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 107.5,
+   "chains_under": {
+    "50": 0,
+    "150": 3
+   },
+   "boundary_km": 315220,
+   "cells": 29,
+   "seconds": 45.7
+  },
+  {
+   "time": 128,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 82.6,
+   "chains_under": {
+    "50": 0,
+    "150": 4
+   },
+   "boundary_km": 315841,
+   "cells": 29,
+   "seconds": 47.2
+  },
+  {
+   "time": 127,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 11,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 68.5,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 315478,
+   "cells": 29,
+   "seconds": 47.6
+  },
+  {
+   "time": 126,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 5,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 59.8,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 314796,
+   "cells": 29,
+   "seconds": 48.4
+  },
+  {
+   "time": 125,
+   "polygons": 28,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 175.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 307840,
+   "cells": 28,
+   "seconds": 47.6
+  },
+  {
+   "time": 124,
+   "polygons": 28,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 159.2,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 308655,
+   "cells": 28,
+   "seconds": 47.6
+  },
+  {
+   "time": 123,
+   "polygons": 28,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 147.2,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 307864,
+   "cells": 28,
+   "seconds": 47.6
+  },
+  {
+   "time": 122,
+   "polygons": 28,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 81.8,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 308282,
+   "cells": 28,
+   "seconds": 46.2
+  },
+  {
+   "time": 121,
+   "polygons": 28,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 16.3,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 307849,
+   "cells": 27,
+   "seconds": 46.7
+  },
+  {
+   "time": 120,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 69.8,
+   "chains_under": {
+    "50": 0,
+    "150": 3
+   },
+   "boundary_km": 305992,
+   "cells": 26,
+   "seconds": 44.5
+  },
+  {
+   "time": 119,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 1e-05,
+   "gap_after_rule_frac": 1e-05,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 44.5,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 305976,
+   "cells": 26,
+   "seconds": 53.7
+  },
+  {
+   "time": 118,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 183.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 305500,
+   "cells": 26,
+   "seconds": 43.3
+  },
+  {
+   "time": 117,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 305.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 306167,
+   "cells": 26,
+   "seconds": 48.3
+  },
+  {
+   "time": 116,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 304.9,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 306962,
+   "cells": 26,
+   "seconds": 43.1
+  },
+  {
+   "time": 115,
+   "polygons": 25,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 66,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 209.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 296929,
+   "cells": 24,
+   "seconds": 43.1
+  },
+  {
+   "time": 114,
+   "polygons": 24,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 1e-05,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 66,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 136.6,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 297094,
+   "cells": 24,
+   "seconds": 44.5
+  },
+  {
+   "time": 113,
+   "polygons": 24,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 1e-05,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 66,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 59.7,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 297458,
+   "cells": 24,
+   "seconds": 42.9
+  },
+  {
+   "time": 112,
+   "polygons": 24,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 66,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 34.8,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 296240,
+   "cells": 24,
+   "seconds": 44.4
+  },
+  {
+   "time": 111,
+   "polygons": 24,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 66,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 82.9,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 296335,
+   "cells": 24,
+   "seconds": 43.1
+  },
+  {
+   "time": 110,
+   "polygons": 24,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 66,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 9.0,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 296003,
+   "cells": 24,
+   "seconds": 46.0
+  },
+  {
+   "time": 109,
+   "polygons": 24,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 66,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 100.6,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 296161,
+   "cells": 24,
+   "seconds": 43.0
+  },
+  {
+   "time": 108,
+   "polygons": 24,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 66,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 169.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 295197,
+   "cells": 24,
+   "seconds": 47.3
+  },
+  {
+   "time": 107,
+   "polygons": 24,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 66,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 203.5,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 295627,
+   "cells": 24,
+   "seconds": 45.7
+  },
+  {
+   "time": 106,
+   "polygons": 24,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 66,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 194.4,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 295721,
+   "cells": 24,
+   "seconds": 46.6
+  },
+  {
+   "time": 105,
+   "polygons": 25,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 69,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 217.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 298971,
+   "cells": 25,
+   "seconds": 43.8
+  },
+  {
+   "time": 104,
+   "polygons": 25,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 69,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 227.7,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 298496,
+   "cells": 25,
+   "seconds": 43.5
+  },
+  {
+   "time": 103,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 110.1,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 303382,
+   "cells": 26,
+   "seconds": 46.8
+  },
+  {
+   "time": 102,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 93.3,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 303146,
+   "cells": 26,
+   "seconds": 48.3
+  },
+  {
+   "time": 101,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": -0.00053,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 7.8,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 309600,
+   "cells": 28,
+   "seconds": 43.9
+  },
+  {
+   "time": 100,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 58.4,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 303625,
+   "cells": 26,
+   "seconds": 47.7
+  },
+  {
+   "time": 99,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 125.8,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 303953,
+   "cells": 26,
+   "seconds": 44.8
+  },
+  {
+   "time": 98,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 195.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 303763,
+   "cells": 26,
+   "seconds": 46.0
+  },
+  {
+   "time": 97,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 153.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 304088,
+   "cells": 26,
+   "seconds": 46.9
+  },
+  {
+   "time": 96,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 85.2,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 303817,
+   "cells": 26,
+   "seconds": 44.6
+  },
+  {
+   "time": 95,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 50.7,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 301789,
+   "cells": 26,
+   "seconds": 43.7
+  },
+  {
+   "time": 94,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 7.9,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 302237,
+   "cells": 26,
+   "seconds": 46.5
+  },
+  {
+   "time": 93,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 34.8,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 302389,
+   "cells": 27,
+   "seconds": 48.1
+  },
+  {
+   "time": 92,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 49.2,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 302120,
+   "cells": 26,
+   "seconds": 46.6
+  },
+  {
+   "time": 91,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 50.6,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 302747,
+   "cells": 26,
+   "seconds": 47.7
+  },
+  {
+   "time": 90,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 133.9,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 305302,
+   "cells": 27,
+   "seconds": 45.1
+  },
+  {
+   "time": 89,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.00011,
+   "gap_after_rule_frac": 0.00011,
+   "overlap_rigid_frac": -0.00077,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 116.7,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 305789,
+   "cells": 27,
+   "seconds": 57.7
+  },
+  {
+   "time": 88,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 224.6,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 303579,
+   "cells": 27,
+   "seconds": 48.9
+  },
+  {
+   "time": 87,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 251.0,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 303853,
+   "cells": 27,
+   "seconds": 49.6
+  },
+  {
+   "time": 86,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 253.3,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 305120,
+   "cells": 27,
+   "seconds": 50.7
+  },
+  {
+   "time": 85,
+   "polygons": 30,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 33.1,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 301606,
+   "cells": 29,
+   "seconds": 51.2
+  },
+  {
+   "time": 84,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 3,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 83.8,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 292094,
+   "cells": 26,
+   "seconds": 52.8
+  },
+  {
+   "time": 83,
+   "polygons": 28,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 66.1,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 295730,
+   "cells": 27,
+   "seconds": 47.9
+  },
+  {
+   "time": 82,
+   "polygons": 28,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 100.2,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 295049,
+   "cells": 27,
+   "seconds": 52.1
+  },
+  {
+   "time": 81,
+   "polygons": 28,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 3,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 117.6,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 295110,
+   "cells": 27,
+   "seconds": 52.2
+  },
+  {
+   "time": 80,
+   "polygons": 30,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 100.8,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 298807,
+   "cells": 28,
+   "seconds": 48.9
+  },
+  {
+   "time": 79,
+   "polygons": 32,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 84,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 84.4,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 306463,
+   "cells": 30,
+   "seconds": 52.8
+  },
+  {
+   "time": 78,
+   "polygons": 32,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 84,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 100.4,
+   "chains_under": {
+    "50": 0,
+    "150": 3
+   },
+   "boundary_km": 305577,
+   "cells": 30,
+   "seconds": 53.0
+  },
+  {
+   "time": 77,
+   "polygons": 32,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 84,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 53.4,
+   "chains_under": {
+    "50": 0,
+    "150": 3
+   },
+   "boundary_km": 306039,
+   "cells": 30,
+   "seconds": 49.8
+  },
+  {
+   "time": 76,
+   "polygons": 32,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 84,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 23.8,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 306374,
+   "cells": 30,
+   "seconds": 50.5
+  },
+  {
+   "time": 75,
+   "polygons": 31,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 9.4,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 301797,
+   "cells": 29,
+   "seconds": 49.9
+  },
+  {
+   "time": 74,
+   "polygons": 31,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 46.1,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 302529,
+   "cells": 29,
+   "seconds": 48.4
+  },
+  {
+   "time": 73,
+   "polygons": 31,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 52.5,
+   "chains_under": {
+    "50": 0,
+    "150": 4
+   },
+   "boundary_km": 303930,
+   "cells": 29,
+   "seconds": 45.5
+  },
+  {
+   "time": 72,
+   "polygons": 31,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 17.5,
+   "chains_under": {
+    "50": 2,
+    "150": 4
+   },
+   "boundary_km": 305341,
+   "cells": 29,
+   "seconds": 49.8
+  },
+  {
+   "time": 71,
+   "polygons": 31,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 8.8,
+   "chains_under": {
+    "50": 3,
+    "150": 4
+   },
+   "boundary_km": 304835,
+   "cells": 29,
+   "seconds": 46.0
+  },
+  {
+   "time": 70,
+   "polygons": 31,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 17.5,
+   "chains_under": {
+    "50": 1,
+    "150": 4
+   },
+   "boundary_km": 304519,
+   "cells": 29,
+   "seconds": 48.7
+  },
+  {
+   "time": 69,
+   "polygons": 31,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 8.7,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 304603,
+   "cells": 29,
+   "seconds": 49.5
+  },
+  {
+   "time": 68,
+   "polygons": 31,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 34.0,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 304353,
+   "cells": 29,
+   "seconds": 44.9
+  },
+  {
+   "time": 67,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 8.7,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 304534,
+   "cells": 28,
+   "seconds": 47.7
+  },
+  {
+   "time": 66,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 26.3,
+   "chains_under": {
+    "50": 1,
+    "150": 4
+   },
+   "boundary_km": 301693,
+   "cells": 28,
+   "seconds": 49.2
+  },
+  {
+   "time": 65,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 9.0,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 301663,
+   "cells": 28,
+   "seconds": 45.8
+  },
+  {
+   "time": 64,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 8.9,
+   "chains_under": {
+    "50": 5,
+    "150": 5
+   },
+   "boundary_km": 301460,
+   "cells": 29,
+   "seconds": 45.2
+  },
+  {
+   "time": 63,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 16.8,
+   "chains_under": {
+    "50": 2,
+    "150": 3
+   },
+   "boundary_km": 297400,
+   "cells": 28,
+   "seconds": 49.7
+  },
+  {
+   "time": 62,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 33.7,
+   "chains_under": {
+    "50": 2,
+    "150": 3
+   },
+   "boundary_km": 298109,
+   "cells": 28,
+   "seconds": 45.0
+  },
+  {
+   "time": 61,
+   "polygons": 28,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 16.8,
+   "chains_under": {
+    "50": 2,
+    "150": 3
+   },
+   "boundary_km": 296089,
+   "cells": 27,
+   "seconds": 43.7
+  },
+  {
+   "time": 60,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 8.9,
+   "chains_under": {
+    "50": 3,
+    "150": 4
+   },
+   "boundary_km": 298867,
+   "cells": 28,
+   "seconds": 48.4
+  },
+  {
+   "time": 59,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 36.8,
+   "chains_under": {
+    "50": 2,
+    "150": 4
+   },
+   "boundary_km": 298761,
+   "cells": 28,
+   "seconds": 51.5
+  },
+  {
+   "time": 58,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 36.7,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 302870,
+   "cells": 29,
+   "seconds": 48.9
+  },
+  {
+   "time": 57,
+   "polygons": 30,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 84,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 118.2,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 299802,
+   "cells": 30,
+   "seconds": 50.3
+  },
+  {
+   "time": 56,
+   "polygons": 30,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 84,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 160.2,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 298035,
+   "cells": 30,
+   "seconds": 53.7
+  },
+  {
+   "time": 55,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 3,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 102.7,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 294561,
+   "cells": 29,
+   "seconds": 52.1
+  },
+  {
+   "time": 54,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 113.0,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 294549,
+   "cells": 29,
+   "seconds": 53.0
+  },
+  {
+   "time": 53,
+   "polygons": 29,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 81,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 137.8,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 294880,
+   "cells": 29,
+   "seconds": 54.3
+  },
+  {
+   "time": 52,
+   "polygons": 30,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 84,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 129.4,
+   "chains_under": {
+    "50": 0,
+    "150": 3
+   },
+   "boundary_km": 297626,
+   "cells": 30,
+   "seconds": 55.7
+  },
+  {
+   "time": 51,
+   "polygons": 26,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 72,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 122.4,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 278463,
+   "cells": 26,
+   "seconds": 60.5
+  },
+  {
+   "time": 50,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 47.0,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 283252,
+   "cells": 27,
+   "seconds": 53.9
+  },
+  {
+   "time": 49,
+   "polygons": 27,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 75,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 65.8,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 283655,
+   "cells": 27,
+   "seconds": 55.0
+  },
+  {
+   "time": 48,
+   "polygons": 28,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 78,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 65.8,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 287623,
+   "cells": 28,
+   "seconds": 52.2
+  },
+  {
+   "time": 47,
+   "polygons": 32,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 90,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 17.8,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 292964,
+   "cells": 32,
+   "seconds": 48.3
+  },
+  {
+   "time": 46,
+   "polygons": 31,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 87,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 106.0,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 288710,
+   "cells": 31,
+   "seconds": 49.1
+  },
+  {
+   "time": 45,
+   "polygons": 31,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 87,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 89.2,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 291553,
+   "cells": 31,
+   "seconds": 50.3
+  },
+  {
+   "time": 44,
+   "polygons": 32,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 90,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 24.0,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 294033,
+   "cells": 32,
+   "seconds": 49.2
+  },
+  {
+   "time": 43,
+   "polygons": 32,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 87,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 41.8,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 284673,
+   "cells": 31,
+   "seconds": 49.3
+  },
+  {
+   "time": 42,
+   "polygons": 32,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 87,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 111.4,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 285075,
+   "cells": 31,
+   "seconds": 54.8
+  },
+  {
+   "time": 41,
+   "polygons": 32,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 87,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 40.3,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 285760,
+   "cells": 31,
+   "seconds": 53.5
+  },
+  {
+   "time": 40,
+   "polygons": 36,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 99,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 8.6,
+   "chains_under": {
+    "50": 3,
+    "150": 3
+   },
+   "boundary_km": 293977,
+   "cells": 35,
+   "seconds": 50.6
+  },
+  {
+   "time": 39,
+   "polygons": 36,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 99,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 16.9,
+   "chains_under": {
+    "50": 2,
+    "150": 3
+   },
+   "boundary_km": 294018,
+   "cells": 35,
+   "seconds": 53.7
+  },
+  {
+   "time": 38,
+   "polygons": 36,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 99,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 24.9,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 295420,
+   "cells": 35,
+   "seconds": 50.5
+  },
+  {
+   "time": 37,
+   "polygons": 34,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 93,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 26.7,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 292086,
+   "cells": 33,
+   "seconds": 53.3
+  },
+  {
+   "time": 36,
+   "polygons": 36,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 99,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 182.8,
+   "chains_under": {
+    "50": 0,
+    "150": 0
+   },
+   "boundary_km": 296244,
+   "cells": 35,
+   "seconds": 51.3
+  },
+  {
+   "time": 35,
+   "polygons": 37,
+   "networks": 0,
+   "gap_rigid_frac": 1e-05,
+   "gap_after_rule_frac": 1e-05,
+   "overlap_rigid_frac": -0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 102,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 137.3,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 299954,
+   "cells": 36,
+   "seconds": 60.4
+  },
+  {
+   "time": 34,
+   "polygons": 36,
+   "networks": 0,
+   "gap_rigid_frac": 1e-05,
+   "gap_after_rule_frac": 1e-05,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 99,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 144.3,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 295106,
+   "cells": 35,
+   "seconds": 56.9
+  },
+  {
+   "time": 33,
+   "polygons": 37,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": -0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 102,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 138.2,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 287965,
+   "cells": 36,
+   "seconds": 58.0
+  },
+  {
+   "time": 32,
+   "polygons": 36,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": -0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 99,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 87.5,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 282316,
+   "cells": 35,
+   "seconds": 57.1
+  },
+  {
+   "time": 31,
+   "polygons": 35,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": -0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 96,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 57.6,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 281077,
+   "cells": 34,
+   "seconds": 59.0
+  },
+  {
+   "time": 30,
+   "polygons": 38,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": -0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 5,
+   "labels_below_resolution": [],
+   "chains": 105,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 42.4,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 300876,
+   "cells": 37,
+   "seconds": 60.2
+  },
+  {
+   "time": 29,
+   "polygons": 38,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 105,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 25.2,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 301165,
+   "cells": 37,
+   "seconds": 58.4
+  },
+  {
+   "time": 28,
+   "polygons": 37,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 102,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 17.6,
+   "chains_under": {
+    "50": 1,
+    "150": 1
+   },
+   "boundary_km": 301196,
+   "cells": 36,
+   "seconds": 58.4
+  },
+  {
+   "time": 27,
+   "polygons": 38,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 105,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 25.0,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 310461,
+   "cells": 37,
+   "seconds": 58.2
+  },
+  {
+   "time": 26,
+   "polygons": 37,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": -0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 3,
+   "labels_below_resolution": [],
+   "chains": 102,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 8.7,
+   "chains_under": {
+    "50": 2,
+    "150": 3
+   },
+   "boundary_km": 305732,
+   "cells": 36,
+   "seconds": 54.3
+  },
+  {
+   "time": 25,
+   "polygons": 33,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 93,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 18.2,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 295912,
+   "cells": 33,
+   "seconds": 50.4
+  },
+  {
+   "time": 24,
+   "polygons": 32,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 90,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 72.9,
+   "chains_under": {
+    "50": 0,
+    "150": 3
+   },
+   "boundary_km": 294089,
+   "cells": 32,
+   "seconds": 48.8
+  },
+  {
+   "time": 23,
+   "polygons": 32,
+   "networks": 0,
+   "gap_rigid_frac": 1e-05,
+   "gap_after_rule_frac": 1e-05,
+   "overlap_rigid_frac": 1e-05,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 90,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 104.0,
+   "chains_under": {
+    "50": 0,
+    "150": 3
+   },
+   "boundary_km": 295174,
+   "cells": 32,
+   "seconds": 59.4
+  },
+  {
+   "time": 22,
+   "polygons": 32,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 3,
+   "labels_below_resolution": [],
+   "chains": 90,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 24.4,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 295382,
+   "cells": 32,
+   "seconds": 49.7
+  },
+  {
+   "time": 21,
+   "polygons": 32,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 3,
+   "labels_below_resolution": [],
+   "chains": 90,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 122.4,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 295077,
+   "cells": 32,
+   "seconds": 50.4
+  },
+  {
+   "time": 20,
+   "polygons": 35,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 99,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 115.2,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 304610,
+   "cells": 35,
+   "seconds": 50.8
+  },
+  {
+   "time": 19,
+   "polygons": 35,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 99,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 118.4,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 304130,
+   "cells": 35,
+   "seconds": 48.7
+  },
+  {
+   "time": 18,
+   "polygons": 33,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 93,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 56.9,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 297540,
+   "cells": 33,
+   "seconds": 49.3
+  },
+  {
+   "time": 17,
+   "polygons": 34,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 96,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 127.1,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 298266,
+   "cells": 34,
+   "seconds": 47.0
+  },
+  {
+   "time": 16,
+   "polygons": 34,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 96,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 118.4,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 295965,
+   "cells": 34,
+   "seconds": 50.7
+  },
+  {
+   "time": 15,
+   "polygons": 35,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 6,
+   "labels_below_resolution": [],
+   "chains": 99,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 110.7,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 298027,
+   "cells": 35,
+   "seconds": 49.7
+  },
+  {
+   "time": 14,
+   "polygons": 34,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 96,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 100.7,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 294435,
+   "cells": 34,
+   "seconds": 51.9
+  },
+  {
+   "time": 13,
+   "polygons": 34,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 96,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 101.8,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 294625,
+   "cells": 34,
+   "seconds": 50.0
+  },
+  {
+   "time": 12,
+   "polygons": 36,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 0,
+   "labels_below_resolution": [],
+   "chains": 102,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 60.4,
+   "chains_under": {
+    "50": 0,
+    "150": 3
+   },
+   "boundary_km": 299618,
+   "cells": 36,
+   "seconds": 48.0
+  },
+  {
+   "time": 11,
+   "polygons": 36,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 102,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 25.8,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 300110,
+   "cells": 36,
+   "seconds": 51.9
+  },
+  {
+   "time": 10,
+   "polygons": 39,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 111,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 8.9,
+   "chains_under": {
+    "50": 3,
+    "150": 6
+   },
+   "boundary_km": 299621,
+   "cells": 39,
+   "seconds": 54.4
+  },
+  {
+   "time": 9,
+   "polygons": 40,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 114,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 9.0,
+   "chains_under": {
+    "50": 3,
+    "150": 6
+   },
+   "boundary_km": 301879,
+   "cells": 40,
+   "seconds": 69.4
+  },
+  {
+   "time": 8,
+   "polygons": 40,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 1,
+   "labels_below_resolution": [],
+   "chains": 114,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 16.9,
+   "chains_under": {
+    "50": 1,
+    "150": 6
+   },
+   "boundary_km": 302993,
+   "cells": 40,
+   "seconds": 73.8
+  },
+  {
+   "time": 7,
+   "polygons": 42,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 120,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 87.2,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 303175,
+   "cells": 42,
+   "seconds": 73.2
+  },
+  {
+   "time": 6,
+   "polygons": 44,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 126,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 49.3,
+   "chains_under": {
+    "50": 1,
+    "150": 2
+   },
+   "boundary_km": 304559,
+   "cells": 44,
+   "seconds": 74.4
+  },
+  {
+   "time": 5,
+   "polygons": 44,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 4,
+   "labels_below_resolution": [],
+   "chains": 126,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 56.7,
+   "chains_under": {
+    "50": 0,
+    "150": 4
+   },
+   "boundary_km": 302671,
+   "cells": 44,
+   "seconds": 75.3
+  },
+  {
+   "time": 4,
+   "polygons": 46,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 132,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 16.5,
+   "chains_under": {
+    "50": 1,
+    "150": 3
+   },
+   "boundary_km": 306966,
+   "cells": 46,
+   "seconds": 76.8
+  },
+  {
+   "time": 3,
+   "polygons": 44,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 4,
+   "labels_below_resolution": [],
+   "chains": 126,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 68.4,
+   "chains_under": {
+    "50": 0,
+    "150": 3
+   },
+   "boundary_km": 299397,
+   "cells": 44,
+   "seconds": 79.4
+  },
+  {
+   "time": 2,
+   "polygons": 44,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 126,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 85.9,
+   "chains_under": {
+    "50": 0,
+    "150": 2
+   },
+   "boundary_km": 301576,
+   "cells": 44,
+   "seconds": 80.1
+  },
+  {
+   "time": 1,
+   "polygons": 44,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 4,
+   "labels_below_resolution": [],
+   "chains": 126,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 94.8,
+   "chains_under": {
+    "50": 0,
+    "150": 3
+   },
+   "boundary_km": 301562,
+   "cells": 44,
+   "seconds": 75.8
+  },
+  {
+   "time": 0,
+   "polygons": 46,
+   "networks": 0,
+   "gap_rigid_frac": 0.0,
+   "gap_after_rule_frac": 0.0,
+   "overlap_rigid_frac": 0.0,
+   "network_area_frac": 0.0,
+   "sliver_pieces_merged": 2,
+   "labels_below_resolution": [],
+   "chains": 132,
+   "loops": 0,
+   "components": 1,
+   "shortest_km": 129.3,
+   "chains_under": {
+    "50": 0,
+    "150": 1
+   },
+   "boundary_km": 300218,
+   "cells": 46,
+   "seconds": 73.9
+  }
+ ]
+}

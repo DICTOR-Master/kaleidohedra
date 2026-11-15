@@ -1,0 +1,7934 @@
+[
+{
+"t0": 987,
+"t1": 986,
+"type": "clump",
+"cells": [
+"580",
+"580#1",
+"580#2",
+"9804",
+"98041"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 986,
+"t1": 985,
+"type": "clump",
+"cells": [
+"580",
+"580#1",
+"580#2",
+"9804",
+"98041"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 986,
+"t1": 985,
+"type": "clump",
+"cells": [
+"501",
+"501#1",
+"501#2"
+],
+"pattern": "born 1 died 2 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 978,
+"t1": 977,
+"type": "split",
+"cells": [
+"501",
+"501#1",
+"501#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 977,
+"t1": 976,
+"type": "relabel",
+"cells": [
+"501",
+"501#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 977,
+"t1": 976,
+"type": "merge",
+"cells": [
+"501#2"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 975,
+"t1": 974,
+"type": "clump",
+"cells": [
+"501",
+"505",
+"505#1",
+"505#2",
+"9804"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 974,
+"t1": 973,
+"type": "clump",
+"cells": [
+"501",
+"505",
+"505#1",
+"505#2",
+"9804"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 951,
+"t1": 950,
+"type": "clump",
+"cells": [
+"206",
+"22046"
+],
+"pattern": "born 0 died 2 lost 0 gained 0",
+"net": -2
+},
+{
+"t0": 951,
+"t1": 950,
+"type": "clump",
+"cells": [
+"101",
+"715"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 941,
+"t1": 940,
+"type": "clump",
+"cells": [
+"101",
+"456",
+"501",
+"580",
+"801",
+"8031",
+"98041"
+],
+"pattern": "born 0 died 0 lost 4 gained 4",
+"net": 0
+},
+{
+"t0": 931,
+"t1": 930,
+"type": "clump",
+"cells": [
+"456",
+"501",
+"5032",
+"580",
+"715",
+"801",
+"8031",
+"9804",
+"98041",
+"980421"
+],
+"pattern": "born 1 died 1 lost 5 gained 3",
+"net": 0
+},
+{
+"t0": 901,
+"t1": 900,
+"type": "clump",
+"cells": [
+"101",
+"4012",
+"606",
+"980421"
+],
+"pattern": "born 2 died 0 lost 0 gained 1",
+"net": 2
+},
+{
+"t0": 901,
+"t1": 900,
+"type": "clump",
+"cells": [
+"5032",
+"701",
+"715",
+"77144",
+"9804"
+],
+"pattern": "born 1 died 0 lost 1 gained 2",
+"net": 1
+},
+{
+"t0": 901,
+"t1": 900,
+"type": "clump",
+"cells": [
+"456",
+"501",
+"580",
+"6024"
+],
+"pattern": "born 0 died 2 lost 0 gained 1",
+"net": -2
+},
+{
+"t0": 901,
+"t1": 900,
+"type": "clump",
+"cells": [
+"501",
+"5032",
+"8031"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 891,
+"t1": 890,
+"type": "clump",
+"cells": [
+"501",
+"5032",
+"701",
+"715",
+"77144",
+"9804"
+],
+"pattern": "born 0 died 0 lost 3 gained 3",
+"net": 0
+},
+{
+"t0": 890,
+"t1": 889,
+"type": "split",
+"cells": [
+"456",
+"501",
+"580",
+"980421"
+],
+"pattern": "born 1 died 0 lost 2 gained 0",
+"net": 1
+},
+{
+"t0": 872,
+"t1": 871,
+"type": "split",
+"cells": [
+"980421#2"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 872,
+"t1": 871,
+"type": "relabel",
+"cells": [
+"980421",
+"980421#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 871,
+"t1": 870,
+"type": "clump",
+"cells": [
+"101",
+"4012",
+"501",
+"5032",
+"701",
+"715",
+"77144",
+"98041",
+"980421",
+"980421#1"
+],
+"pattern": "born 1 died 5 lost 1 gained 1",
+"net": -4
+},
+{
+"t0": 871,
+"t1": 870,
+"type": "merge",
+"cells": [
+"980421#2"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 871,
+"t1": 870,
+"type": "clump",
+"cells": [
+"456",
+"505",
+"9804"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 854,
+"t1": 853,
+"type": "split",
+"cells": [
+"77521"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 851,
+"t1": 850,
+"type": "clump",
+"cells": [
+"101",
+"4012",
+"456",
+"501",
+"503",
+"5031",
+"580",
+"5907",
+"606",
+"701#1",
+"701#2",
+"714",
+"77521",
+"775211",
+"775311",
+"9804",
+"98041",
+"980421",
+"98045"
+],
+"pattern": "born 9 died 4 lost 1 gained 5",
+"net": 5
+},
+{
+"t0": 848,
+"t1": 847,
+"type": "swap",
+"cells": [
+"5031",
+"701#1",
+"775211",
+"775311"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 847,
+"t1": 846,
+"type": "clump",
+"cells": [
+"5031",
+"580",
+"701",
+"701#1",
+"701#2",
+"775311",
+"98041"
+],
+"pattern": "born 1 died 2 lost 2 gained 0",
+"net": -1
+},
+{
+"t0": 846,
+"t1": 845,
+"type": "swap",
+"cells": [
+"5031",
+"701",
+"775211",
+"775311"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 828,
+"t1": 827,
+"type": "clump",
+"cells": [
+"5031",
+"5031#1",
+"5031#2",
+"701",
+"98045"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 827,
+"t1": 826,
+"type": "clump",
+"cells": [
+"5031",
+"5031#1",
+"5031#2",
+"701",
+"98045"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 826,
+"t1": 825,
+"type": "clump",
+"cells": [
+"5031",
+"5031#1",
+"5031#2",
+"701",
+"98045"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 825,
+"t1": 824,
+"type": "clump",
+"cells": [
+"5031",
+"5031#1",
+"5031#2",
+"701",
+"98045"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 821,
+"t1": 820,
+"type": "clump",
+"cells": [
+"101",
+"501",
+"606"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 821,
+"t1": 820,
+"type": "relabel",
+"cells": [
+"503",
+"980421"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 819,
+"t1": 818,
+"type": "clump",
+"cells": [
+"580",
+"701",
+"980421",
+"980421#1",
+"980421#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 818,
+"t1": 817,
+"type": "clump",
+"cells": [
+"580",
+"701",
+"980421",
+"980421#1",
+"980421#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 813,
+"t1": 812,
+"type": "swap",
+"cells": [
+"101",
+"4012",
+"501",
+"98041"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 811,
+"t1": 810,
+"type": "clump",
+"cells": [
+"101",
+"4012",
+"501",
+"580",
+"606",
+"98041",
+"98045"
+],
+"pattern": "born 0 died 0 lost 4 gained 5",
+"net": 0
+},
+{
+"t0": 804,
+"t1": 803,
+"type": "swap",
+"cells": [
+"101",
+"4012",
+"98041",
+"98045"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 801,
+"t1": 800,
+"type": "clump",
+"cells": [
+"101",
+"401",
+"4012",
+"456",
+"501",
+"5031",
+"5907",
+"606",
+"701",
+"77521",
+"775211",
+"77531",
+"775311",
+"801",
+"98045"
+],
+"pattern": "born 4 died 4 lost 3 gained 5",
+"net": 0
+},
+{
+"t0": 787,
+"t1": 786,
+"type": "swap",
+"cells": [
+"101",
+"701",
+"714",
+"98041"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 781,
+"t1": 780,
+"type": "split",
+"cells": [
+"501#2"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 781,
+"t1": 780,
+"type": "clump",
+"cells": [
+"5031",
+"5906",
+"5907",
+"5916",
+"77521",
+"77531"
+],
+"pattern": "born 2 died 2 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 781,
+"t1": 780,
+"type": "clump",
+"cells": [
+"4014",
+"501",
+"501#1"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 780,
+"t1": 779,
+"type": "clump",
+"cells": [
+"4014",
+"456",
+"501#2"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 779,
+"t1": 778,
+"type": "clump",
+"cells": [
+"4014",
+"456",
+"501",
+"501#1",
+"501#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 775,
+"t1": 774,
+"type": "swap",
+"cells": [
+"401",
+"4014",
+"456",
+"98041"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 773,
+"t1": 772,
+"type": "swap",
+"cells": [
+"101",
+"701",
+"714",
+"98041"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 771,
+"t1": 770,
+"type": "swap",
+"cells": [
+"101",
+"401",
+"4014",
+"801"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 761,
+"t1": 760,
+"type": "merge",
+"cells": [
+"501",
+"701",
+"980421"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 761,
+"t1": 760,
+"type": "swap",
+"cells": [
+"4014",
+"456",
+"501",
+"801"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 751,
+"t1": 750,
+"type": "clump",
+"cells": [
+"101",
+"108",
+"22053",
+"4014",
+"456",
+"501",
+"5031",
+"580",
+"5906",
+"5916",
+"606",
+"701",
+"714",
+"715",
+"77144",
+"77521",
+"801",
+"98041"
+],
+"pattern": "born 4 died 5 lost 6 gained 4",
+"net": -1
+},
+{
+"t0": 731,
+"t1": 730,
+"type": "split",
+"cells": [
+"77149"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 726,
+"t1": 725,
+"type": "clump",
+"cells": [
+"5906",
+"5916",
+"701"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 721,
+"t1": 720,
+"type": "clump",
+"cells": [
+"108",
+"401",
+"4014",
+"501",
+"5031",
+"580",
+"5916",
+"714",
+"715",
+"77144",
+"801"
+],
+"pattern": "born 1 died 2 lost 0 gained 7",
+"net": -1
+},
+{
+"t0": 711,
+"t1": 710,
+"type": "merge",
+"cells": [
+"5031",
+"5916",
+"715"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 701,
+"t1": 700,
+"type": "clump",
+"cells": [
+"108",
+"109",
+"3003",
+"401",
+"5031",
+"5032",
+"701",
+"714",
+"715",
+"77144",
+"77147",
+"77148",
+"77149",
+"801",
+"98043",
+"98044",
+"98046"
+],
+"pattern": "born 8 died 2 lost 6 gained 1",
+"net": 6
+},
+{
+"t0": 683,
+"t1": 682,
+"type": "clump",
+"cells": [
+"101",
+"3003",
+"401",
+"98044",
+"98046"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 679,
+"t1": 678,
+"type": "swap",
+"cells": [
+"101",
+"401",
+"98044",
+"98046"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 676,
+"t1": 675,
+"type": "split",
+"cells": [
+"5031",
+"5901",
+"715"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 673,
+"t1": 672,
+"type": "swap",
+"cells": [
+"580",
+"801",
+"98043",
+"98044"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 662,
+"t1": 661,
+"type": "swap",
+"cells": [
+"714",
+"77144",
+"77147",
+"77148"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 661,
+"t1": 660,
+"type": "swap",
+"cells": [
+"109",
+"3003",
+"714",
+"98043"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 652,
+"t1": 651,
+"type": "relabel",
+"cells": [
+"101",
+"101#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 652,
+"t1": 651,
+"type": "split",
+"cells": [
+"101#2"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 651,
+"t1": 650,
+"type": "clump",
+"cells": [
+"101",
+"101#1",
+"109",
+"22053",
+"3003",
+"401",
+"501",
+"5031",
+"580",
+"5901",
+"601",
+"606",
+"701",
+"714",
+"715",
+"77030",
+"801",
+"8011",
+"98043",
+"98044",
+"98046"
+],
+"pattern": "born 6 died 4 lost 7 gained 3",
+"net": 2
+},
+{
+"t0": 651,
+"t1": 650,
+"type": "clump",
+"cells": [
+"77146",
+"77147",
+"77148",
+"77149"
+],
+"pattern": "born 2 died 2 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 651,
+"t1": 650,
+"type": "merge",
+"cells": [
+"101#2"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 650,
+"t1": 649,
+"type": "swap",
+"cells": [
+"101",
+"401",
+"98044",
+"98046"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 640,
+"t1": 639,
+"type": "swap",
+"cells": [
+"101",
+"401",
+"98044",
+"98046"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 636,
+"t1": 635,
+"type": "merge",
+"cells": [
+"101",
+"601",
+"8011",
+"98046"
+],
+"pattern": "born 0 died 1 lost 0 gained 2",
+"net": -1
+},
+{
+"t0": 631,
+"t1": 630,
+"type": "split",
+"cells": [
+"4012"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 631,
+"t1": 630,
+"type": "clump",
+"cells": [
+"714",
+"715",
+"760",
+"77146",
+"77149"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 621,
+"t1": 620,
+"type": "split",
+"cells": [
+"206",
+"701",
+"714"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 618,
+"t1": 617,
+"type": "swap",
+"cells": [
+"501",
+"580",
+"98043",
+"98044"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 617,
+"t1": 616,
+"type": "birth",
+"cells": [
+"580#2"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 617,
+"t1": 616,
+"type": "relabel",
+"cells": [
+"580",
+"580#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 615,
+"t1": 614,
+"type": "clump",
+"cells": [
+"101",
+"401",
+"4012",
+"4012#1",
+"4012#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 614,
+"t1": 613,
+"type": "swap",
+"cells": [
+"501",
+"5032",
+"77030",
+"801"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 611,
+"t1": 610,
+"type": "clump",
+"cells": [
+"501",
+"580",
+"580#1",
+"580#2",
+"98044"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 610,
+"t1": 609,
+"type": "clump",
+"cells": [
+"101",
+"401",
+"4012",
+"4012#1",
+"4012#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 607,
+"t1": 606,
+"type": "clump",
+"cells": [
+"501",
+"580",
+"580#1",
+"580#2",
+"98044"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 606,
+"t1": 605,
+"type": "clump",
+"cells": [
+"501",
+"580",
+"580#1",
+"580#2",
+"98044"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 602,
+"t1": 601,
+"type": "clump",
+"cells": [
+"501",
+"580",
+"580#1",
+"580#2",
+"98044"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 601,
+"t1": 600,
+"type": "split",
+"cells": [
+"8026"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 601,
+"t1": 600,
+"type": "relabel",
+"cells": [
+"302",
+"4012"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 601,
+"t1": 600,
+"type": "clump",
+"cells": [
+"101",
+"501",
+"580",
+"580#1",
+"580#2",
+"601",
+"801",
+"8011",
+"98044"
+],
+"pattern": "born 1 died 2 lost 3 gained 2",
+"net": -1
+},
+{
+"t0": 601,
+"t1": 600,
+"type": "clump",
+"cells": [
+"101",
+"206",
+"501",
+"5031",
+"5032",
+"701",
+"714",
+"715",
+"760",
+"77030",
+"77144",
+"801",
+"98043"
+],
+"pattern": "born 0 died 6 lost 1 gained 6",
+"net": -6
+},
+{
+"t0": 601,
+"t1": 600,
+"type": "merge",
+"cells": [
+"606"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 593,
+"t1": 592,
+"type": "swap",
+"cells": [
+"101",
+"3003",
+"701",
+"98043"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 591,
+"t1": 590,
+"type": "clump",
+"cells": [
+"101",
+"1019",
+"201",
+"206",
+"22042",
+"3003",
+"701",
+"77030",
+"801",
+"8026",
+"98044"
+],
+"pattern": "born 3 died 0 lost 6 gained 1",
+"net": 3
+},
+{
+"t0": 586,
+"t1": 585,
+"type": "clump",
+"cells": [
+"3003",
+"302",
+"3151",
+"401",
+"701",
+"98043"
+],
+"pattern": "born 1 died 1 lost 1 gained 2",
+"net": 0
+},
+{
+"t0": 586,
+"t1": 585,
+"type": "merge",
+"cells": [
+"580"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 581,
+"t1": 580,
+"type": "birth",
+"cells": [
+"606"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 581,
+"t1": 580,
+"type": "split",
+"cells": [
+"8013"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 581,
+"t1": 580,
+"type": "swap",
+"cells": [
+"101",
+"1019",
+"401",
+"98044"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 580,
+"t1": 579,
+"type": "swap",
+"cells": [
+"801",
+"8011",
+"8013",
+"98044"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 571,
+"t1": 570,
+"type": "clump",
+"cells": [
+"101",
+"201",
+"206",
+"22032",
+"22042",
+"302",
+"3151",
+"501",
+"701",
+"77030"
+],
+"pattern": "born 1 died 2 lost 3 gained 2",
+"net": -1
+},
+{
+"t0": 566,
+"t1": 565,
+"type": "swap",
+"cells": [
+"22032",
+"302",
+"501",
+"98043"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 561,
+"t1": 560,
+"type": "clump",
+"cells": [
+"101",
+"1019",
+"22032",
+"302",
+"401",
+"501",
+"701",
+"98043",
+"98044",
+"9804411"
+],
+"pattern": "born 1 died 0 lost 6 gained 4",
+"net": 1
+},
+{
+"t0": 561,
+"t1": 560,
+"type": "merge",
+"cells": [
+"8026"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 558,
+"t1": 557,
+"type": "clump",
+"cells": [
+"201",
+"22032",
+"22032#1",
+"22032#2",
+"22042"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 558,
+"t1": 557,
+"type": "swap",
+"cells": [
+"302",
+"501",
+"701",
+"9804411"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 557,
+"t1": 556,
+"type": "clump",
+"cells": [
+"201",
+"22032",
+"22032#1",
+"22032#2",
+"22042"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 557,
+"t1": 556,
+"type": "swap",
+"cells": [
+"501",
+"606",
+"801",
+"8011"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 556,
+"t1": 555,
+"type": "swap",
+"cells": [
+"101",
+"22032",
+"22042",
+"98044"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 551,
+"t1": 550,
+"type": "clump",
+"cells": [
+"10191",
+"201",
+"22031",
+"22032",
+"22041",
+"22042",
+"302",
+"451",
+"459",
+"460",
+"501",
+"580",
+"601",
+"602",
+"606",
+"77030",
+"801",
+"8011",
+"98044"
+],
+"pattern": "born 8 died 7 lost 0 gained 2",
+"net": 1
+},
+{
+"t0": 546,
+"t1": 545,
+"type": "split",
+"cells": [
+"451",
+"456",
+"580",
+"602"
+],
+"pattern": "born 1 died 0 lost 2 gained 0",
+"net": 1
+},
+{
+"t0": 541,
+"t1": 540,
+"type": "clump",
+"cells": [
+"101",
+"1019",
+"10191",
+"201",
+"22013",
+"22031",
+"302",
+"4101",
+"451",
+"456",
+"460",
+"601",
+"6013",
+"8013",
+"98043",
+"980441",
+"9804411"
+],
+"pattern": "born 4 died 6 lost 2 gained 3",
+"net": -2
+},
+{
+"t0": 538,
+"t1": 537,
+"type": "relabel",
+"cells": [
+"22013",
+"22032"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 531,
+"t1": 530,
+"type": "split",
+"cells": [
+"457",
+"459",
+"460",
+"580",
+"701"
+],
+"pattern": "born 1 died 0 lost 3 gained 0",
+"net": 1
+},
+{
+"t0": 531,
+"t1": 530,
+"type": "swap",
+"cells": [
+"451",
+"456",
+"6013",
+"980441"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 531,
+"t1": 530,
+"type": "swap",
+"cells": [
+"22032",
+"22041",
+"701",
+"801"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 531,
+"t1": 530,
+"type": "swap",
+"cells": [
+"101",
+"22032",
+"801",
+"8013"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 528,
+"t1": 527,
+"type": "clump",
+"cells": [
+"101",
+"401",
+"401#1",
+"401#2",
+"4101"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 528,
+"t1": 527,
+"type": "clump",
+"cells": [
+"457",
+"457#1",
+"457#2",
+"460",
+"580"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 527,
+"t1": 526,
+"type": "clump",
+"cells": [
+"457",
+"457#1",
+"457#2",
+"460",
+"580"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 527,
+"t1": 526,
+"type": "clump",
+"cells": [
+"401",
+"401#1",
+"401#2"
+],
+"pattern": "born 1 died 2 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 523,
+"t1": 522,
+"type": "clump",
+"cells": [
+"302",
+"401",
+"980441",
+"980441#1",
+"980441#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 521,
+"t1": 520,
+"type": "clump",
+"cells": [
+"1",
+"101",
+"22032",
+"22041",
+"302",
+"401",
+"451",
+"451#1",
+"451#2",
+"4511",
+"456",
+"457",
+"459",
+"460",
+"466",
+"580",
+"601",
+"6013",
+"602",
+"701",
+"801",
+"8013",
+"980441",
+"980441#1",
+"980441#2"
+],
+"pattern": "born 6 died 7 lost 6 gained 7",
+"net": -1
+},
+{
+"t0": 520,
+"t1": 519,
+"type": "swap",
+"cells": [
+"1",
+"451#2",
+"580",
+"980441"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 514,
+"t1": 513,
+"type": "swap",
+"cells": [
+"451#1",
+"601",
+"6013",
+"602"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 513,
+"t1": 512,
+"type": "swap",
+"cells": [
+"451#1",
+"601",
+"6013",
+"602"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 512,
+"t1": 511,
+"type": "swap",
+"cells": [
+"451#1",
+"601",
+"6013",
+"602"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 511,
+"t1": 510,
+"type": "clump",
+"cells": [
+"1",
+"451",
+"451#2",
+"459",
+"466",
+"980441"
+],
+"pattern": "born 1 died 2 lost 0 gained 2",
+"net": -1
+},
+{
+"t0": 511,
+"t1": 510,
+"type": "clump",
+"cells": [
+"451#1",
+"456",
+"457",
+"601"
+],
+"pattern": "born 1 died 1 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 511,
+"t1": 510,
+"type": "clump",
+"cells": [
+"101",
+"302",
+"401",
+"4101",
+"701",
+"980441"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 510,
+"t1": 509,
+"type": "swap",
+"cells": [
+"101",
+"302",
+"401",
+"701"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 509,
+"t1": 508,
+"type": "clump",
+"cells": [
+"101",
+"302",
+"401",
+"4101",
+"4101#1",
+"4101#2",
+"701",
+"701#1",
+"701#2",
+"980441"
+],
+"pattern": "born 4 died 2 lost 0 gained 2",
+"net": 2
+},
+{
+"t0": 508,
+"t1": 507,
+"type": "clump",
+"cells": [
+"101",
+"302",
+"401",
+"4101",
+"4101#1",
+"4101#2",
+"701",
+"701#1",
+"701#2",
+"980441"
+],
+"pattern": "born 2 died 4 lost 1 gained 1",
+"net": -2
+},
+{
+"t0": 507,
+"t1": 506,
+"type": "clump",
+"cells": [
+"101",
+"302",
+"701",
+"701#1",
+"701#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 506,
+"t1": 505,
+"type": "clump",
+"cells": [
+"401#2",
+"701",
+"701#1",
+"701#2"
+],
+"pattern": "born 2 died 2 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 506,
+"t1": 505,
+"type": "relabel",
+"cells": [
+"401",
+"401#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 505,
+"t1": 504,
+"type": "clump",
+"cells": [
+"101",
+"302",
+"401",
+"401#1",
+"401#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 501,
+"t1": 500,
+"type": "clump",
+"cells": [
+"101",
+"1018",
+"172",
+"22601",
+"302",
+"404",
+"4100",
+"4101",
+"451",
+"456",
+"457",
+"459",
+"460",
+"466",
+"580",
+"5801",
+"601",
+"6013",
+"701",
+"8013",
+"902",
+"919",
+"926",
+"980441"
+],
+"pattern": "born 9 died 5 lost 6 gained 6",
+"net": 4
+},
+{
+"t0": 491,
+"t1": 490,
+"type": "split",
+"cells": [
+"601",
+"6026",
+"701"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 491,
+"t1": 490,
+"type": "clump",
+"cells": [
+"101",
+"1018",
+"172",
+"173",
+"184",
+"22601",
+"302",
+"701"
+],
+"pattern": "born 2 died 1 lost 3 gained 1",
+"net": 1
+},
+{
+"t0": 491,
+"t1": 490,
+"type": "split",
+"cells": [
+"6013"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 491,
+"t1": 490,
+"type": "clump",
+"cells": [
+"401",
+"404",
+"4041",
+"466",
+"902"
+],
+"pattern": "born 1 died 0 lost 2 gained 1",
+"net": 1
+},
+{
+"t0": 490,
+"t1": 489,
+"type": "clump",
+"cells": [
+"601",
+"602",
+"6026",
+"6026#1",
+"6026#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 489,
+"t1": 488,
+"type": "clump",
+"cells": [
+"601",
+"602",
+"6026",
+"6026#1",
+"6026#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 489,
+"t1": 488,
+"type": "swap",
+"cells": [
+"173",
+"22601",
+"701",
+"919"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 488,
+"t1": 487,
+"type": "swap",
+"cells": [
+"173",
+"22601",
+"701",
+"919"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 487,
+"t1": 486,
+"type": "clump",
+"cells": [
+"601",
+"602",
+"6026",
+"6026#1",
+"6026#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 487,
+"t1": 486,
+"type": "swap",
+"cells": [
+"173",
+"22601",
+"701",
+"919"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 486,
+"t1": 485,
+"type": "clump",
+"cells": [
+"601",
+"602",
+"6026",
+"6026#1",
+"6026#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 486,
+"t1": 485,
+"type": "merge",
+"cells": [
+"1018"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 486,
+"t1": 485,
+"type": "swap",
+"cells": [
+"173",
+"22601",
+"701",
+"919"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 485,
+"t1": 484,
+"type": "swap",
+"cells": [
+"302",
+"401",
+"404",
+"4041"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 485,
+"t1": 484,
+"type": "swap",
+"cells": [
+"173",
+"22601",
+"701",
+"919"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 483,
+"t1": 482,
+"type": "swap",
+"cells": [
+"173",
+"22601",
+"701",
+"919"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 482,
+"t1": 481,
+"type": "swap",
+"cells": [
+"173",
+"22601",
+"701",
+"919"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 481,
+"t1": 480,
+"type": "clump",
+"cells": [
+"101",
+"173",
+"185",
+"22601",
+"701",
+"919"
+],
+"pattern": "born 1 died 0 lost 3 gained 2",
+"net": 1
+},
+{
+"t0": 481,
+"t1": 480,
+"type": "clump",
+"cells": [
+"451",
+"456",
+"457",
+"460",
+"580",
+"5801",
+"601",
+"6013",
+"602",
+"6026",
+"701",
+"926"
+],
+"pattern": "born 1 died 2 lost 6 gained 5",
+"net": -1
+},
+{
+"t0": 481,
+"t1": 480,
+"type": "clump",
+"cells": [
+"401",
+"4100",
+"902"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 481,
+"t1": 480,
+"type": "swap",
+"cells": [
+"302",
+"401",
+"404",
+"4041"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 481,
+"t1": 480,
+"type": "clump",
+"cells": [
+"459",
+"902"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 476,
+"t1": 475,
+"type": "clump",
+"cells": [
+"101",
+"173",
+"185",
+"22601",
+"451",
+"460",
+"580",
+"602",
+"6026",
+"701",
+"701#1",
+"701#2",
+"926"
+],
+"pattern": "born 3 died 2 lost 3 gained 3",
+"net": 1
+},
+{
+"t0": 476,
+"t1": 475,
+"type": "split",
+"cells": [
+"1007"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 476,
+"t1": 475,
+"type": "clump",
+"cells": [
+"401",
+"404",
+"4041"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 476,
+"t1": 475,
+"type": "clump",
+"cells": [
+"401",
+"459",
+"460",
+"466",
+"580",
+"902"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 476,
+"t1": 475,
+"type": "clump",
+"cells": [
+"456",
+"6013"
+],
+"pattern": "born 0 died 0 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 472,
+"t1": 471,
+"type": "clump",
+"cells": [
+"101",
+"173",
+"22601",
+"302",
+"401",
+"401#1",
+"401#2",
+"459",
+"460",
+"466",
+"701",
+"701#1",
+"701#2",
+"902",
+"926"
+],
+"pattern": "born 3 died 3 lost 3 gained 4",
+"net": 0
+},
+{
+"t0": 471,
+"t1": 470,
+"type": "split",
+"cells": [
+"602"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 471,
+"t1": 470,
+"type": "clump",
+"cells": [
+"101",
+"108",
+"173",
+"184",
+"185",
+"22601",
+"302",
+"401",
+"401#1",
+"401#2",
+"456",
+"457",
+"459",
+"460",
+"466",
+"580",
+"601",
+"701",
+"902",
+"926"
+],
+"pattern": "born 2 died 6 lost 3 gained 10",
+"net": -4
+},
+{
+"t0": 470,
+"t1": 469,
+"type": "swap",
+"cells": [
+"101",
+"184",
+"22601",
+"302"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 468,
+"t1": 467,
+"type": "swap",
+"cells": [
+"101",
+"184",
+"22601",
+"302"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 466,
+"t1": 465,
+"type": "swap",
+"cells": [
+"401",
+"459",
+"580",
+"902"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 463,
+"t1": 462,
+"type": "swap",
+"cells": [
+"101",
+"184",
+"22601",
+"302"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 462,
+"t1": 461,
+"type": "clump",
+"cells": [
+"1007",
+"101",
+"184",
+"302",
+"302#1",
+"302#2",
+"302#3"
+],
+"pattern": "born 3 died 1 lost 0 gained 2",
+"net": 2
+},
+{
+"t0": 461,
+"t1": 460,
+"type": "clump",
+"cells": [
+"1007",
+"101",
+"108",
+"184",
+"185",
+"22601",
+"302",
+"302#1",
+"302#2",
+"302#3",
+"401",
+"404",
+"580",
+"701",
+"902"
+],
+"pattern": "born 2 died 5 lost 2 gained 3",
+"net": -3
+},
+{
+"t0": 461,
+"t1": 460,
+"type": "merge",
+"cells": [
+"4511"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 456,
+"t1": 455,
+"type": "clump",
+"cells": [
+"184",
+"302",
+"315"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 456,
+"t1": 455,
+"type": "merge",
+"cells": [
+"6026"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 456,
+"t1": 455,
+"type": "clump",
+"cells": [
+"580",
+"6013",
+"602",
+"701"
+],
+"pattern": "born 0 died 0 lost 1 gained 2",
+"net": 0
+},
+{
+"t0": 451,
+"t1": 450,
+"type": "clump",
+"cells": [
+"108",
+"184",
+"185",
+"701"
+],
+"pattern": "born 1 died 1 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 451,
+"t1": 450,
+"type": "relabel",
+"cells": [
+"404",
+"4100"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 451,
+"t1": 450,
+"type": "relabel",
+"cells": [
+"459",
+"460"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 451,
+"t1": 450,
+"type": "clump",
+"cells": [
+"580",
+"60112",
+"6013",
+"602"
+],
+"pattern": "born 1 died 1 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 451,
+"t1": 450,
+"type": "clump",
+"cells": [
+"22601"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 446,
+"t1": 445,
+"type": "relabel",
+"cells": [
+"108",
+"184"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 441,
+"t1": 440,
+"type": "clump",
+"cells": [
+"302",
+"401",
+"451",
+"456",
+"457",
+"459",
+"460",
+"580",
+"5801",
+"5802",
+"601",
+"60112",
+"6013",
+"602",
+"701",
+"902",
+"926"
+],
+"pattern": "born 4 died 6 lost 7 gained 0",
+"net": -2
+},
+{
+"t0": 441,
+"t1": 440,
+"type": "clump",
+"cells": [
+"101",
+"108",
+"184",
+"185",
+"302",
+"315",
+"701",
+"9019"
+],
+"pattern": "born 2 died 2 lost 3 gained 0",
+"net": 0
+},
+{
+"t0": 436,
+"t1": 435,
+"type": "swap",
+"cells": [
+"101",
+"108",
+"184",
+"302"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 431,
+"t1": 430,
+"type": "clump",
+"cells": [
+"101",
+"184",
+"302",
+"401",
+"4571",
+"459",
+"580",
+"5801",
+"5802",
+"601",
+"602",
+"701",
+"9019",
+"902",
+"919",
+"926"
+],
+"pattern": "born 1 died 3 lost 3 gained 10",
+"net": -2
+},
+{
+"t0": 430,
+"t1": 429,
+"type": "swap",
+"cells": [
+"401",
+"459",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 427,
+"t1": 426,
+"type": "clump",
+"cells": [
+"4571",
+"580",
+"601",
+"601#1",
+"601#2",
+"701",
+"701#1",
+"701#2"
+],
+"pattern": "born 4 died 2 lost 0 gained 1",
+"net": 2
+},
+{
+"t0": 426,
+"t1": 425,
+"type": "clump",
+"cells": [
+"4571",
+"580",
+"601#2",
+"701",
+"701#1",
+"701#2"
+],
+"pattern": "born 1 died 2 lost 2 gained 0",
+"net": -1
+},
+{
+"t0": 424,
+"t1": 423,
+"type": "relabel",
+"cells": [
+"601",
+"601#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 424,
+"t1": 423,
+"type": "merge",
+"cells": [
+"601#2"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 421,
+"t1": 420,
+"type": "clump",
+"cells": [
+"4571",
+"459",
+"501",
+"580",
+"5801",
+"602",
+"701",
+"9006",
+"926"
+],
+"pattern": "born 2 died 1 lost 4 gained 0",
+"net": 1
+},
+{
+"t0": 421,
+"t1": 420,
+"type": "clump",
+"cells": [
+"101",
+"108",
+"701",
+"9019"
+],
+"pattern": "born 0 died 2 lost 0 gained 1",
+"net": -2
+},
+{
+"t0": 420,
+"t1": 419,
+"type": "split",
+"cells": [
+"9006",
+"9006#1",
+"9006#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 419,
+"t1": 418,
+"type": "relabel",
+"cells": [
+"9006",
+"9006#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 419,
+"t1": 418,
+"type": "merge",
+"cells": [
+"9006#2"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 419,
+"t1": 418,
+"type": "swap",
+"cells": [
+"401",
+"4100",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 412,
+"t1": 411,
+"type": "clump",
+"cells": [
+"601",
+"602",
+"9006",
+"9006#1",
+"9006#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 411,
+"t1": 410,
+"type": "clump",
+"cells": [
+"101",
+"103",
+"902"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 411,
+"t1": 410,
+"type": "clump",
+"cells": [
+"1001",
+"401",
+"4100",
+"430",
+"4571",
+"459",
+"501",
+"580",
+"602",
+"602201",
+"701",
+"9006",
+"9006#1",
+"9006#2",
+"9013",
+"9014",
+"926"
+],
+"pattern": "born 6 died 7 lost 2 gained 1",
+"net": -1
+},
+{
+"t0": 411,
+"t1": 410,
+"type": "clump",
+"cells": [
+"101",
+"314",
+"701"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 409,
+"t1": 408,
+"type": "clump",
+"cells": [
+"101",
+"314",
+"314#1",
+"314#2",
+"314#3",
+"701"
+],
+"pattern": "born 3 died 1 lost 0 gained 1",
+"net": 2
+},
+{
+"t0": 408,
+"t1": 407,
+"type": "clump",
+"cells": [
+"101",
+"314#3",
+"701"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 407,
+"t1": 406,
+"type": "clump",
+"cells": [
+"401",
+"701",
+"9006",
+"9006#1",
+"9006#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 406,
+"t1": 405,
+"type": "clump",
+"cells": [
+"101",
+"314",
+"314#1",
+"314#2",
+"401",
+"701",
+"9006",
+"9006#1",
+"9006#2"
+],
+"pattern": "born 2 died 4 lost 2 gained 0",
+"net": -2
+},
+{
+"t0": 401,
+"t1": 400,
+"type": "clump",
+"cells": [
+"101",
+"16111",
+"401",
+"701",
+"902",
+"902003",
+"919"
+],
+"pattern": "born 2 died 0 lost 3 gained 1",
+"net": 2
+},
+{
+"t0": 401,
+"t1": 400,
+"type": "relabel",
+"cells": [
+"1001",
+"402"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 400,
+"t1": 399,
+"type": "merge",
+"cells": [
+"103"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 400,
+"t1": 399,
+"type": "swap",
+"cells": [
+"101",
+"16111",
+"701",
+"902003"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 396,
+"t1": 395,
+"type": "clump",
+"cells": [
+"401",
+"402",
+"9006",
+"9006#1",
+"9006#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 395,
+"t1": 394,
+"type": "swap",
+"cells": [
+"580",
+"602201",
+"9013",
+"9014"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 394,
+"t1": 393,
+"type": "clump",
+"cells": [
+"401",
+"402",
+"9006",
+"9006#1",
+"9006#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 391,
+"t1": 390,
+"type": "clump",
+"cells": [
+"1001",
+"402",
+"580",
+"601",
+"602",
+"602201",
+"604",
+"701",
+"9006",
+"9012"
+],
+"pattern": "born 4 died 1 lost 4 gained 0",
+"net": 3
+},
+{
+"t0": 391,
+"t1": 390,
+"type": "clump",
+"cells": [
+"28800",
+"701",
+"919"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 390,
+"t1": 389,
+"type": "split",
+"cells": [
+"902014"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 388,
+"t1": 387,
+"type": "clump",
+"cells": [
+"9013",
+"9013#1",
+"9013#2",
+"9014",
+"902"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 387,
+"t1": 386,
+"type": "clump",
+"cells": [
+"9013",
+"9013#1",
+"9013#2",
+"9014",
+"902"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 386,
+"t1": 385,
+"type": "swap",
+"cells": [
+"580",
+"602",
+"602201",
+"9012"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 386,
+"t1": 385,
+"type": "swap",
+"cells": [
+"16111",
+"401",
+"902",
+"902003"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 384,
+"t1": 383,
+"type": "relabel",
+"cells": [
+"604",
+"604#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 384,
+"t1": 383,
+"type": "split",
+"cells": [
+"9005"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 384,
+"t1": 383,
+"type": "birth",
+"cells": [
+"604#2"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 384,
+"t1": 383,
+"type": "swap",
+"cells": [
+"9013",
+"9014",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 382,
+"t1": 381,
+"type": "clump",
+"cells": [
+"580",
+"602",
+"604",
+"604#1",
+"604#2",
+"9012"
+],
+"pattern": "born 1 died 2 lost 2 gained 0",
+"net": -1
+},
+{
+"t0": 381,
+"t1": 380,
+"type": "clump",
+"cells": [
+"101",
+"314",
+"701",
+"9005"
+],
+"pattern": "born 0 died 2 lost 1 gained 0",
+"net": -2
+},
+{
+"t0": 381,
+"t1": 380,
+"type": "clump",
+"cells": [
+"902014"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 381,
+"t1": 380,
+"type": "clump",
+"cells": [
+"580",
+"602",
+"602201",
+"604",
+"9012"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 380,
+"t1": 379,
+"type": "clump",
+"cells": [
+"101",
+"401",
+"902003"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 375,
+"t1": 374,
+"type": "clump",
+"cells": [
+"580",
+"602",
+"602201",
+"602201#1",
+"602201#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 373,
+"t1": 372,
+"type": "clump",
+"cells": [
+"580",
+"602",
+"602201",
+"602201#1",
+"602201#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 372,
+"t1": 371,
+"type": "swap",
+"cells": [
+"101",
+"16111",
+"401",
+"902"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 371,
+"t1": 370,
+"type": "clump",
+"cells": [
+"1001",
+"401",
+"9006",
+"9006#1",
+"9006#2",
+"9012",
+"9013"
+],
+"pattern": "born 2 died 1 lost 1 gained 2",
+"net": 1
+},
+{
+"t0": 371,
+"t1": 370,
+"type": "swap",
+"cells": [
+"601",
+"602201",
+"9013",
+"9014"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 370,
+"t1": 369,
+"type": "clump",
+"cells": [
+"1001",
+"401",
+"9006",
+"9006#1",
+"9006#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 370,
+"t1": 369,
+"type": "swap",
+"cells": [
+"101",
+"16111",
+"401",
+"902"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 369,
+"t1": 368,
+"type": "swap",
+"cells": [
+"1001",
+"401",
+"9012",
+"9013"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 368,
+"t1": 367,
+"type": "swap",
+"cells": [
+"101",
+"401",
+"701",
+"9006"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 362,
+"t1": 361,
+"type": "clump",
+"cells": [
+"430",
+"580",
+"9013",
+"9013#1",
+"9013#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 361,
+"t1": 360,
+"type": "clump",
+"cells": [
+"5801",
+"602201",
+"9013",
+"9013#1",
+"9014",
+"9014#1",
+"9014#2",
+"902013"
+],
+"pattern": "born 5 died 3 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 361,
+"t1": 360,
+"type": "clump",
+"cells": [
+"1001",
+"401",
+"459",
+"580",
+"604",
+"9006",
+"9012",
+"9013#2"
+],
+"pattern": "born 1 died 2 lost 0 gained 4",
+"net": -1
+},
+{
+"t0": 360,
+"t1": 359,
+"type": "split",
+"cells": [
+"401",
+"430",
+"9009",
+"902"
+],
+"pattern": "born 1 died 0 lost 2 gained 0",
+"net": 1
+},
+{
+"t0": 360,
+"t1": 359,
+"type": "relabel",
+"cells": [
+"1001",
+"1002"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 359,
+"t1": 358,
+"type": "clump",
+"cells": [
+"580",
+"5801",
+"5801#1",
+"5801#2",
+"9014#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 358,
+"t1": 357,
+"type": "clump",
+"cells": [
+"5801#1",
+"601",
+"9014",
+"9014#1",
+"9014#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 357,
+"t1": 356,
+"type": "clump",
+"cells": [
+"5801",
+"5801#1",
+"5801#2",
+"9014",
+"9014#1",
+"9014#2",
+"9014#3",
+"9014#4"
+],
+"pattern": "born 5 died 3 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 356,
+"t1": 355,
+"type": "split",
+"cells": [
+"16104"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 356,
+"t1": 355,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"602",
+"9014#2",
+"9014#3",
+"9014#4"
+],
+"pattern": "born 0 died 2 lost 1 gained 1",
+"net": -2
+},
+{
+"t0": 355,
+"t1": 354,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013",
+"9014",
+"9014#1",
+"9014#2",
+"902",
+"926",
+"926#1",
+"926#2"
+],
+"pattern": "born 3 died 3 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 354,
+"t1": 353,
+"type": "clump",
+"cells": [
+"9013",
+"902",
+"926",
+"926#1",
+"926#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 351,
+"t1": 350,
+"type": "clump",
+"cells": [
+"580",
+"5801",
+"601",
+"602",
+"604",
+"9013",
+"9014"
+],
+"pattern": "born 0 died 0 lost 4 gained 4",
+"net": 0
+},
+{
+"t0": 347,
+"t1": 346,
+"type": "swap",
+"cells": [
+"28800",
+"701",
+"902",
+"919"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 343,
+"t1": 342,
+"type": "swap",
+"cells": [
+"430",
+"9013",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 342,
+"t1": 341,
+"type": "swap",
+"cells": [
+"28800",
+"701",
+"902",
+"919"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 341,
+"t1": 340,
+"type": "clump",
+"cells": [
+"430",
+"580",
+"5801",
+"604",
+"9006",
+"9013"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 337,
+"t1": 336,
+"type": "swap",
+"cells": [
+"580",
+"604",
+"9006",
+"9013"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 336,
+"t1": 335,
+"type": "clump",
+"cells": [
+"101",
+"304",
+"701"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 336,
+"t1": 335,
+"type": "swap",
+"cells": [
+"1002",
+"401",
+"580",
+"9009"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 336,
+"t1": 335,
+"type": "swap",
+"cells": [
+"430",
+"580",
+"5801",
+"9013"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 332,
+"t1": 331,
+"type": "clump",
+"cells": [
+"401",
+"459",
+"9006",
+"9006#1",
+"9006#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 331,
+"t1": 330,
+"type": "relabel",
+"cells": [
+"9006",
+"9006#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 331,
+"t1": 330,
+"type": "merge",
+"cells": [
+"9006#2"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 331,
+"t1": 330,
+"type": "clump",
+"cells": [
+"902013"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 330,
+"t1": 329,
+"type": "split",
+"cells": [
+"430",
+"9009",
+"9010"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 330,
+"t1": 329,
+"type": "swap",
+"cells": [
+"101",
+"401",
+"459",
+"9006"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 329,
+"t1": 328,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013",
+"9013#1",
+"9013#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 328,
+"t1": 327,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013#3"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 328,
+"t1": 327,
+"type": "swap",
+"cells": [
+"1002",
+"401",
+"580",
+"9009"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 327,
+"t1": 326,
+"type": "swap",
+"cells": [
+"1002",
+"101",
+"401",
+"459"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 326,
+"t1": 325,
+"type": "clump",
+"cells": [
+"701",
+"902",
+"919",
+"919#1",
+"919#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 326,
+"t1": 325,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013#3"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 326,
+"t1": 325,
+"type": "swap",
+"cells": [
+"430",
+"580",
+"9009",
+"9010"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 325,
+"t1": 324,
+"type": "clump",
+"cells": [
+"701",
+"902",
+"919",
+"919#1",
+"919#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 325,
+"t1": 324,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013#3"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 325,
+"t1": 324,
+"type": "swap",
+"cells": [
+"1002",
+"101",
+"401",
+"459"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 325,
+"t1": 324,
+"type": "swap",
+"cells": [
+"580",
+"604",
+"9006",
+"9013#2"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 323,
+"t1": 322,
+"type": "swap",
+"cells": [
+"1002",
+"101",
+"401",
+"459"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 322,
+"t1": 321,
+"type": "clump",
+"cells": [
+"1002",
+"1002#1",
+"1002#2",
+"401",
+"459"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 321,
+"t1": 320,
+"type": "clump",
+"cells": [
+"1002#1",
+"1002#2",
+"459",
+"460"
+],
+"pattern": "born 1 died 3 lost 0 gained 0",
+"net": -2
+},
+{
+"t0": 320,
+"t1": 319,
+"type": "clump",
+"cells": [
+"101",
+"16104",
+"16111",
+"304",
+"401",
+"460",
+"580",
+"701",
+"9009",
+"902"
+],
+"pattern": "born 0 died 3 lost 1 gained 6",
+"net": -3
+},
+{
+"t0": 320,
+"t1": 319,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013#3"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 318,
+"t1": 317,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013#3"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 316,
+"t1": 315,
+"type": "swap",
+"cells": [
+"430",
+"9013#1",
+"9014",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 315,
+"t1": 314,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013#3"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 314,
+"t1": 313,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013#3"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 312,
+"t1": 311,
+"type": "clump",
+"cells": [
+"604",
+"701",
+"9006",
+"9006#1",
+"9006#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 311,
+"t1": 310,
+"type": "clump",
+"cells": [
+"460",
+"580",
+"5801",
+"604",
+"701",
+"9006",
+"9006#1",
+"9006#2",
+"9009",
+"9013#1",
+"9013#2"
+],
+"pattern": "born 1 died 4 lost 1 gained 4",
+"net": -3
+},
+{
+"t0": 311,
+"t1": 310,
+"type": "clump",
+"cells": [
+"28800",
+"701",
+"919"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 311,
+"t1": 310,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013#3"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 310,
+"t1": 309,
+"type": "swap",
+"cells": [
+"430",
+"701",
+"9009",
+"9013#1"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 309,
+"t1": 308,
+"type": "clump",
+"cells": [
+"430",
+"5801",
+"601",
+"602",
+"604",
+"701",
+"9006",
+"9013#1",
+"9013#2",
+"9014"
+],
+"pattern": "born 0 died 0 lost 7 gained 5",
+"net": 0
+},
+{
+"t0": 309,
+"t1": 308,
+"type": "clump",
+"cells": [
+"430",
+"9013#2",
+"9014"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 308,
+"t1": 307,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"701",
+"9013#1",
+"9013#4"
+],
+"pattern": "born 1 died 0 lost 1 gained 1",
+"net": 1
+},
+{
+"t0": 308,
+"t1": 307,
+"type": "clump",
+"cells": [
+"430",
+"601",
+"701",
+"9013#2",
+"9013#3"
+],
+"pattern": "born 1 died 0 lost 1 gained 1",
+"net": 1
+},
+{
+"t0": 307,
+"t1": 306,
+"type": "clump",
+"cells": [
+"430",
+"601",
+"9013#5"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 306,
+"t1": 305,
+"type": "clump",
+"cells": [
+"430",
+"5801",
+"601",
+"701",
+"9013#3",
+"9013#4",
+"9013#5"
+],
+"pattern": "born 0 died 2 lost 2 gained 1",
+"net": -2
+},
+{
+"t0": 306,
+"t1": 305,
+"type": "swap",
+"cells": [
+"430",
+"9010",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 305,
+"t1": 304,
+"type": "clump",
+"cells": [
+"430",
+"601",
+"701",
+"9013#3",
+"9013#4"
+],
+"pattern": "born 1 died 0 lost 1 gained 1",
+"net": 1
+},
+{
+"t0": 304,
+"t1": 303,
+"type": "clump",
+"cells": [
+"430",
+"5801",
+"601",
+"701",
+"9013#2",
+"9013#3",
+"9013#4",
+"9014"
+],
+"pattern": "born 0 died 0 lost 3 gained 5",
+"net": 0
+},
+{
+"t0": 304,
+"t1": 303,
+"type": "clump",
+"cells": [
+"430",
+"9013#2",
+"9014"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 303,
+"t1": 302,
+"type": "clump",
+"cells": [
+"430",
+"5801",
+"601",
+"9013#2",
+"9013#3",
+"9013#4",
+"9014"
+],
+"pattern": "born 0 died 1 lost 2 gained 4",
+"net": -1
+},
+{
+"t0": 303,
+"t1": 302,
+"type": "clump",
+"cells": [
+"9013#3",
+"9014"
+],
+"pattern": "born 0 died 0 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 302,
+"t1": 301,
+"type": "clump",
+"cells": [
+"430",
+"5801",
+"601",
+"9013#2",
+"9013#3",
+"9013#4",
+"9014"
+],
+"pattern": "born 1 died 0 lost 3 gained 2",
+"net": 1
+},
+{
+"t0": 302,
+"t1": 301,
+"type": "clump",
+"cells": [
+"9013#3",
+"9014"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 301,
+"t1": 300,
+"type": "clump",
+"cells": [
+"60301",
+"604",
+"9006"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 301,
+"t1": 300,
+"type": "merge",
+"cells": [
+"9013#4"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 301,
+"t1": 300,
+"type": "merge",
+"cells": [
+"9013#3"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 301,
+"t1": 300,
+"type": "swap",
+"cells": [
+"601",
+"602",
+"604",
+"9013#1"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 299,
+"t1": 298,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013",
+"9013#1",
+"9013#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 299,
+"t1": 298,
+"type": "swap",
+"cells": [
+"430",
+"701",
+"9009",
+"9010"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 297,
+"t1": 296,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013",
+"9013#1",
+"9013#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 296,
+"t1": 295,
+"type": "swap",
+"cells": [
+"430",
+"5801",
+"601",
+"9013#2"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 294,
+"t1": 293,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013",
+"9013#1",
+"9013#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 293,
+"t1": 292,
+"type": "swap",
+"cells": [
+"430",
+"5801",
+"601",
+"9013"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 292,
+"t1": 291,
+"type": "clump",
+"cells": [
+"601",
+"60301",
+"9013",
+"9013#1",
+"9013#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 291,
+"t1": 290,
+"type": "swap",
+"cells": [
+"430",
+"5801",
+"701",
+"9010"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 289,
+"t1": 288,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013",
+"9013#1",
+"9013#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 287,
+"t1": 286,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013",
+"9013#1",
+"9013#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 285,
+"t1": 284,
+"type": "clump",
+"cells": [
+"430",
+"5801",
+"601",
+"9013#2",
+"9013#3"
+],
+"pattern": "born 1 died 0 lost 1 gained 1",
+"net": 1
+},
+{
+"t0": 285,
+"t1": 284,
+"type": "swap",
+"cells": [
+"601",
+"60301",
+"9006",
+"9013#1"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 284,
+"t1": 283,
+"type": "clump",
+"cells": [
+"430",
+"5801",
+"601",
+"9013#3",
+"9013#4"
+],
+"pattern": "born 1 died 0 lost 1 gained 1",
+"net": 1
+},
+{
+"t0": 283,
+"t1": 282,
+"type": "clump",
+"cells": [
+"430",
+"9014",
+"9014#1",
+"9014#2",
+"926"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 283,
+"t1": 282,
+"type": "birth",
+"cells": [
+"9013#5"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 283,
+"t1": 282,
+"type": "clump",
+"cells": [
+"430",
+"9013#4"
+],
+"pattern": "born 0 died 0 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 283,
+"t1": 282,
+"type": "clump",
+"cells": [
+"430",
+"9013#3"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 282,
+"t1": 281,
+"type": "clump",
+"cells": [
+"430",
+"9014",
+"9014#1",
+"9014#2",
+"926"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 282,
+"t1": 281,
+"type": "clump",
+"cells": [
+"5801",
+"601",
+"9013#4",
+"9013#5",
+"9013#6"
+],
+"pattern": "born 1 died 0 lost 1 gained 2",
+"net": 1
+},
+{
+"t0": 282,
+"t1": 281,
+"type": "clump",
+"cells": [
+"60301",
+"9006",
+"9013#5"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 282,
+"t1": 281,
+"type": "clump",
+"cells": [
+"60301",
+"9006",
+"9013#4"
+],
+"pattern": "born 0 died 0 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 281,
+"t1": 280,
+"type": "clump",
+"cells": [
+"430",
+"5801",
+"601",
+"9013#3",
+"9013#4",
+"9013#6"
+],
+"pattern": "born 0 died 1 lost 1 gained 2",
+"net": -1
+},
+{
+"t0": 281,
+"t1": 280,
+"type": "clump",
+"cells": [
+"60301",
+"9006",
+"9013#4"
+],
+"pattern": "born 0 died 0 lost 2 gained 0",
+"net": 0
+},
+{
+"t0": 280,
+"t1": 279,
+"type": "clump",
+"cells": [
+"430",
+"5801",
+"5801#1",
+"5801#2",
+"701",
+"9013#1",
+"9013#4",
+"9013#5"
+],
+"pattern": "born 2 died 2 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 279,
+"t1": 278,
+"type": "clump",
+"cells": [
+"430",
+"9014",
+"9014#1",
+"9014#2",
+"926"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 279,
+"t1": 278,
+"type": "split",
+"cells": [
+"5801#3"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 279,
+"t1": 278,
+"type": "clump",
+"cells": [
+"430",
+"5801#1",
+"601",
+"9013#1",
+"9013#2",
+"9013#3",
+"9013#4"
+],
+"pattern": "born 0 died 1 lost 3 gained 1",
+"net": -1
+},
+{
+"t0": 279,
+"t1": 278,
+"type": "clump",
+"cells": [
+"5801#2",
+"601",
+"701",
+"9013#2",
+"9013#3"
+],
+"pattern": "born 0 died 0 lost 0 gained 4",
+"net": 0
+},
+{
+"t0": 278,
+"t1": 277,
+"type": "clump",
+"cells": [
+"430",
+"9014",
+"9014#1",
+"9014#2",
+"926"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 278,
+"t1": 277,
+"type": "clump",
+"cells": [
+"430",
+"5801#2",
+"601",
+"9010",
+"9013#1",
+"9013#3"
+],
+"pattern": "born 0 died 1 lost 2 gained 2",
+"net": -1
+},
+{
+"t0": 278,
+"t1": 277,
+"type": "clump",
+"cells": [
+"430",
+"5801#1",
+"601",
+"9010",
+"9013#1"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 277,
+"t1": 276,
+"type": "clump",
+"cells": [
+"5801#1",
+"5801#3",
+"601",
+"60301",
+"701",
+"9006",
+"9006#1",
+"9006#2",
+"9013#1",
+"9013#3",
+"9013#4"
+],
+"pattern": "born 4 died 1 lost 2 gained 3",
+"net": 3
+},
+{
+"t0": 276,
+"t1": 275,
+"type": "clump",
+"cells": [
+"505",
+"5801",
+"5801#1",
+"5801#2",
+"5801#3",
+"601",
+"602",
+"60301",
+"604",
+"701",
+"9006#1",
+"9006#2",
+"9013#1",
+"9013#2",
+"9013#3",
+"9013#4"
+],
+"pattern": "born 2 died 9 lost 5 gained 0",
+"net": -7
+},
+{
+"t0": 271,
+"t1": 270,
+"type": "clump",
+"cells": [
+"60301",
+"604",
+"902009"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 270,
+"t1": 269,
+"type": "clump",
+"cells": [
+"16104"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 266,
+"t1": 265,
+"type": "merge",
+"cells": [
+"602",
+"604",
+"902009"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 261,
+"t1": 260,
+"type": "clump",
+"cells": [
+"430",
+"601",
+"9010",
+"9014"
+],
+"pattern": "born 0 died 2 lost 0 gained 1",
+"net": -2
+},
+{
+"t0": 260,
+"t1": 259,
+"type": "clump",
+"cells": [
+"176",
+"701",
+"902"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 251,
+"t1": 250,
+"type": "clump",
+"cells": [
+"16104",
+"176",
+"498",
+"5801",
+"601",
+"701",
+"9009",
+"9010",
+"902",
+"926"
+],
+"pattern": "born 2 died 4 lost 2 gained 2",
+"net": -2
+},
+{
+"t0": 251,
+"t1": 250,
+"type": "clump",
+"cells": [
+"602",
+"60301",
+"902009"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 250,
+"t1": 249,
+"type": "relabel",
+"cells": [
+"380",
+"601"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 245,
+"t1": 244,
+"type": "swap",
+"cells": [
+"498",
+"701",
+"919",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 241,
+"t1": 240,
+"type": "clump",
+"cells": [
+"101",
+"16104",
+"16111",
+"380",
+"498",
+"701",
+"902",
+"919",
+"926"
+],
+"pattern": "born 1 died 0 lost 5 gained 1",
+"net": 1
+},
+{
+"t0": 238,
+"t1": 237,
+"type": "swap",
+"cells": [
+"498",
+"701",
+"919",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 231,
+"t1": 230,
+"type": "clump",
+"cells": [
+"131",
+"16104",
+"16111"
+],
+"pattern": "born 1 died 2 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 231,
+"t1": 230,
+"type": "clump",
+"cells": [
+"505",
+"602",
+"60301"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 226,
+"t1": 225,
+"type": "swap",
+"cells": [
+"498",
+"701",
+"919",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 201,
+"t1": 200,
+"type": "clump",
+"cells": [
+"101",
+"301",
+"307",
+"380",
+"505",
+"706",
+"902"
+],
+"pattern": "born 3 died 0 lost 3 gained 0",
+"net": 3
+},
+{
+"t0": 201,
+"t1": 200,
+"type": "relabel",
+"cells": [
+"498",
+"786"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 201,
+"t1": 200,
+"type": "clump",
+"cells": [
+"602"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 196,
+"t1": 195,
+"type": "split",
+"cells": [
+"101",
+"18100",
+"902"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 192,
+"t1": 191,
+"type": "swap",
+"cells": [
+"101",
+"131",
+"18100",
+"902"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 191,
+"t1": 190,
+"type": "split",
+"cells": [
+"901"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 191,
+"t1": 190,
+"type": "clump",
+"cells": [
+"101",
+"131",
+"205",
+"701",
+"902"
+],
+"pattern": "born 1 died 1 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 181,
+"t1": 180,
+"type": "clump",
+"cells": [
+"307",
+"505",
+"530"
+],
+"pattern": "born 1 died 2 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 178,
+"t1": 177,
+"type": "split",
+"cells": [
+"701",
+"786",
+"801"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 176,
+"t1": 175,
+"type": "split",
+"cells": [
+"101",
+"2035",
+"701"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 172,
+"t1": 171,
+"type": "swap",
+"cells": [
+"786",
+"801",
+"919",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 171,
+"t1": 170,
+"type": "clump",
+"cells": [
+"101",
+"104",
+"16111",
+"2035",
+"902"
+],
+"pattern": "born 2 died 0 lost 1 gained 1",
+"net": 2
+},
+{
+"t0": 169,
+"t1": 168,
+"type": "clump",
+"cells": [
+"380",
+"786",
+"926",
+"926#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 169,
+"t1": 168,
+"type": "birth",
+"cells": [
+"926#2"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 166,
+"t1": 165,
+"type": "relabel",
+"cells": [
+"926",
+"926#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 166,
+"t1": 165,
+"type": "merge",
+"cells": [
+"926#2"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 161,
+"t1": 160,
+"type": "split",
+"cells": [
+"802"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 161,
+"t1": 160,
+"type": "clump",
+"cells": [
+"18100",
+"301",
+"41200",
+"43200",
+"902"
+],
+"pattern": "born 2 died 0 lost 2 gained 0",
+"net": 2
+},
+{
+"t0": 156,
+"t1": 155,
+"type": "clump",
+"cells": [
+"380",
+"499",
+"528",
+"529",
+"530",
+"605",
+"786",
+"801",
+"926"
+],
+"pattern": "born 4 died 1 lost 3 gained 0",
+"net": 3
+},
+{
+"t0": 155,
+"t1": 154,
+"type": "swap",
+"cells": [
+"301",
+"380",
+"529",
+"605"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 153,
+"t1": 152,
+"type": "relabel",
+"cells": [
+"534",
+"605"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 153,
+"t1": 152,
+"type": "merge",
+"cells": [
+"101",
+"104",
+"2035"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 151,
+"t1": 150,
+"type": "clump",
+"cells": [
+"301",
+"380",
+"499",
+"528",
+"529",
+"534",
+"780"
+],
+"pattern": "born 1 died 1 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 151,
+"t1": 150,
+"type": "clump",
+"cells": [
+"28900",
+"701",
+"802"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 150,
+"t1": 149,
+"type": "swap",
+"cells": [
+"301",
+"529",
+"530",
+"534"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 147,
+"t1": 146,
+"type": "swap",
+"cells": [
+"41200",
+"43200",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 146,
+"t1": 145,
+"type": "clump",
+"cells": [
+"101",
+"201",
+"2035",
+"205",
+"301",
+"530",
+"534",
+"701",
+"706",
+"714",
+"715",
+"802",
+"902",
+"919"
+],
+"pattern": "born 3 died 1 lost 9 gained 0",
+"net": 2
+},
+{
+"t0": 146,
+"t1": 145,
+"type": "split",
+"cells": [
+"380",
+"534",
+"780",
+"787"
+],
+"pattern": "born 1 died 0 lost 2 gained 0",
+"net": 1
+},
+{
+"t0": 145,
+"t1": 144,
+"type": "split",
+"cells": [
+"301",
+"304",
+"714"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 143,
+"t1": 142,
+"type": "clump",
+"cells": [
+"18100",
+"18150",
+"301",
+"41200",
+"42150",
+"926"
+],
+"pattern": "born 2 died 2 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 143,
+"t1": 142,
+"type": "birth",
+"cells": [
+"609"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 143,
+"t1": 142,
+"type": "swap",
+"cells": [
+"301",
+"528",
+"529",
+"530"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 142,
+"t1": 141,
+"type": "swap",
+"cells": [
+"18150",
+"42150",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 142,
+"t1": 141,
+"type": "swap",
+"cells": [
+"609",
+"780",
+"919",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 141,
+"t1": 140,
+"type": "clump",
+"cells": [
+"301",
+"409",
+"43200",
+"926"
+],
+"pattern": "born 1 died 1 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 141,
+"t1": 140,
+"type": "clump",
+"cells": [
+"101",
+"16111",
+"902"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 141,
+"t1": 140,
+"type": "swap",
+"cells": [
+"529",
+"530",
+"534",
+"715"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 138,
+"t1": 137,
+"type": "swap",
+"cells": [
+"18150",
+"42150",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 136,
+"t1": 135,
+"type": "split",
+"cells": [
+"224"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 135,
+"t1": 134,
+"type": "relabel",
+"cells": [
+"534",
+"53401"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 133,
+"t1": 132,
+"type": "clump",
+"cells": [
+"501",
+"701",
+"702",
+"715",
+"801"
+],
+"pattern": "born 2 died 0 lost 2 gained 0",
+"net": 2
+},
+{
+"t0": 133,
+"t1": 132,
+"type": "swap",
+"cells": [
+"528",
+"529",
+"530",
+"715"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 131,
+"t1": 130,
+"type": "split",
+"cells": [
+"806"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 131,
+"t1": 130,
+"type": "merge",
+"cells": [
+"301",
+"380",
+"787"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 131,
+"t1": 130,
+"type": "merge",
+"cells": [
+"205"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 130,
+"t1": 129,
+"type": "clump",
+"cells": [
+"609",
+"609#1",
+"609#2",
+"901#2"
+],
+"pattern": "born 3 died 1 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 130,
+"t1": 129,
+"type": "relabel",
+"cells": [
+"901",
+"901#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 129,
+"t1": 128,
+"type": "swap",
+"cells": [
+"609#2",
+"901#2",
+"919",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 129,
+"t1": 128,
+"type": "swap",
+"cells": [
+"201",
+"28900",
+"802",
+"919"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 128,
+"t1": 127,
+"type": "clump",
+"cells": [
+"609",
+"609#1",
+"609#2",
+"901#2"
+],
+"pattern": "born 1 died 3 lost 0 gained 0",
+"net": -2
+},
+{
+"t0": 128,
+"t1": 127,
+"type": "relabel",
+"cells": [
+"901",
+"901#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 128,
+"t1": 127,
+"type": "swap",
+"cells": [
+"501",
+"701",
+"702",
+"802"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 127,
+"t1": 126,
+"type": "clump",
+"cells": [
+"609",
+"609#1",
+"609#2",
+"901#2"
+],
+"pattern": "born 3 died 1 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 127,
+"t1": 126,
+"type": "relabel",
+"cells": [
+"901",
+"901#1"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 126,
+"t1": 125,
+"type": "merge",
+"cells": [
+"201",
+"28900",
+"802"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 126,
+"t1": 125,
+"type": "swap",
+"cells": [
+"301",
+"528",
+"530",
+"715"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 125,
+"t1": 124,
+"type": "clump",
+"cells": [
+"780",
+"780#1",
+"780#2",
+"801",
+"901#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 124,
+"t1": 123,
+"type": "swap",
+"cells": [
+"609#1",
+"901#2",
+"919",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 123,
+"t1": 122,
+"type": "clump",
+"cells": [
+"18150",
+"18150#1",
+"18150#2",
+"18150#3",
+"18150#4",
+"18150#5",
+"902",
+"926"
+],
+"pattern": "born 5 died 1 lost 0 gained 1",
+"net": 4
+},
+{
+"t0": 122,
+"t1": 121,
+"type": "clump",
+"cells": [
+"609#1",
+"780#3",
+"801",
+"901#2",
+"919",
+"926"
+],
+"pattern": "born 1 died 0 lost 1 gained 2",
+"net": 1
+},
+{
+"t0": 122,
+"t1": 121,
+"type": "clump",
+"cells": [
+"18150#4",
+"18150#5",
+"902",
+"926"
+],
+"pattern": "born 0 died 2 lost 1 gained 0",
+"net": -2
+},
+{
+"t0": 121,
+"t1": 120,
+"type": "clump",
+"cells": [
+"101",
+"18150#1",
+"18150#2",
+"18150#3",
+"409",
+"42150",
+"501",
+"528",
+"529",
+"53401",
+"609",
+"609#1",
+"609#2",
+"780",
+"780#1",
+"780#2",
+"780#3",
+"787",
+"901",
+"901#1",
+"901#2",
+"902",
+"908",
+"919",
+"926",
+"982",
+"983"
+],
+"pattern": "born 6 died 12 lost 3 gained 5",
+"net": -6
+},
+{
+"t0": 121,
+"t1": 120,
+"type": "clump",
+"cells": [
+"301",
+"530",
+"715"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 121,
+"t1": 120,
+"type": "merge",
+"cells": [
+"101",
+"2035",
+"224"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 121,
+"t1": 120,
+"type": "clump",
+"cells": [
+"501",
+"701",
+"702"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 119,
+"t1": 118,
+"type": "swap",
+"cells": [
+"501",
+"780",
+"787",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 117,
+"t1": 116,
+"type": "swap",
+"cells": [
+"101",
+"409",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 116,
+"t1": 115,
+"type": "clump",
+"cells": [
+"609",
+"780",
+"902",
+"902#1",
+"902#2",
+"926",
+"926#1",
+"926#2"
+],
+"pattern": "born 4 died 4 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 116,
+"t1": 115,
+"type": "swap",
+"cells": [
+"801",
+"806",
+"919",
+"983"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 115,
+"t1": 114,
+"type": "clump",
+"cells": [
+"101",
+"902#1",
+"926",
+"926#1",
+"926#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 114,
+"t1": 113,
+"type": "clump",
+"cells": [
+"101",
+"409",
+"902",
+"902#1",
+"902#2",
+"926"
+],
+"pattern": "born 1 died 2 lost 2 gained 0",
+"net": -1
+},
+{
+"t0": 113,
+"t1": 112,
+"type": "clump",
+"cells": [
+"101",
+"409",
+"902",
+"902#1",
+"902#2",
+"926"
+],
+"pattern": "born 2 died 1 lost 0 gained 2",
+"net": 1
+},
+{
+"t0": 111,
+"t1": 110,
+"type": "clump",
+"cells": [
+"301",
+"528",
+"529",
+"787",
+"789"
+],
+"pattern": "born 1 died 1 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 111,
+"t1": 110,
+"type": "clump",
+"cells": [
+"101",
+"409",
+"902",
+"902#1",
+"902#2",
+"926"
+],
+"pattern": "born 1 died 2 lost 2 gained 0",
+"net": -1
+},
+{
+"t0": 104,
+"t1": 103,
+"type": "split",
+"cells": [
+"301",
+"528",
+"529",
+"787"
+],
+"pattern": "born 1 died 0 lost 2 gained 0",
+"net": 1
+},
+{
+"t0": 103,
+"t1": 102,
+"type": "swap",
+"cells": [
+"101",
+"409",
+"902",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 102,
+"t1": 101,
+"type": "clump",
+"cells": [
+"501",
+"501#1",
+"501#2",
+"801",
+"926"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 101,
+"t1": 100,
+"type": "clump",
+"cells": [
+"501",
+"501#1",
+"501#2",
+"801",
+"926"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 101,
+"t1": 100,
+"type": "clump",
+"cells": [
+"301",
+"304",
+"308",
+"528",
+"530",
+"715"
+],
+"pattern": "born 2 died 0 lost 3 gained 0",
+"net": 2
+},
+{
+"t0": 101,
+"t1": 100,
+"type": "merge",
+"cells": [
+"301",
+"787",
+"789"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 100,
+"t1": 99,
+"type": "swap",
+"cells": [
+"802",
+"806",
+"919",
+"983"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 98,
+"t1": 97,
+"type": "swap",
+"cells": [
+"501",
+"529",
+"530",
+"715"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 93,
+"t1": 92,
+"type": "swap",
+"cells": [
+"301",
+"528",
+"529",
+"530"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 92,
+"t1": 91,
+"type": "relabel",
+"cells": [
+"919",
+"985"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 91,
+"t1": 90,
+"type": "split",
+"cells": [
+"304",
+"307",
+"308",
+"714"
+],
+"pattern": "born 1 died 0 lost 2 gained 0",
+"net": 1
+},
+{
+"t0": 91,
+"t1": 90,
+"type": "swap",
+"cells": [
+"301",
+"528",
+"529",
+"530"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 89,
+"t1": 88,
+"type": "relabel",
+"cells": [
+"919",
+"985"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 86,
+"t1": 85,
+"type": "clump",
+"cells": [
+"802",
+"806",
+"833",
+"836",
+"841",
+"854",
+"901",
+"904",
+"908",
+"919",
+"982",
+"983"
+],
+"pattern": "born 5 died 4 lost 0 gained 2",
+"net": 1
+},
+{
+"t0": 86,
+"t1": 85,
+"type": "birth",
+"cells": [
+"732"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 85,
+"t1": 84,
+"type": "clump",
+"cells": [
+"678",
+"732",
+"901"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 85,
+"t1": 84,
+"type": "merge",
+"cells": [
+"802",
+"806",
+"833"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 85,
+"t1": 84,
+"type": "merge",
+"cells": [
+"301",
+"528",
+"529"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 84,
+"t1": 83,
+"type": "clump",
+"cells": [
+"902",
+"918",
+"926"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 84,
+"t1": 83,
+"type": "birth",
+"cells": [
+"317"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 84,
+"t1": 83,
+"type": "clump",
+"cells": [
+"802",
+"804",
+"904"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 84,
+"t1": 83,
+"type": "clump",
+"cells": [
+"101",
+"301",
+"304",
+"307",
+"308",
+"529",
+"530",
+"701",
+"714",
+"715"
+],
+"pattern": "born 0 died 3 lost 0 gained 6",
+"net": -3
+},
+{
+"t0": 84,
+"t1": 83,
+"type": "swap",
+"cells": [
+"801",
+"802",
+"833",
+"901"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 81,
+"t1": 80,
+"type": "split",
+"cells": [
+"678",
+"732",
+"780",
+"801",
+"854",
+"901",
+"926"
+],
+"pattern": "born 1 died 0 lost 5 gained 0",
+"net": 1
+},
+{
+"t0": 81,
+"t1": 80,
+"type": "relabel",
+"cells": [
+"308",
+"525"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 81,
+"t1": 80,
+"type": "swap",
+"cells": [
+"301",
+"501",
+"787",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 80,
+"t1": 79,
+"type": "split",
+"cells": [
+"814"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 80,
+"t1": 79,
+"type": "clump",
+"cells": [
+"101",
+"102",
+"301"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 80,
+"t1": 79,
+"type": "swap",
+"cells": [
+"301",
+"501",
+"780",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 79,
+"t1": 78,
+"type": "relabel",
+"cells": [
+"836",
+"880"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 76,
+"t1": 75,
+"type": "clump",
+"cells": [
+"787"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 76,
+"t1": 75,
+"type": "clump",
+"cells": [
+"301",
+"678",
+"732",
+"780",
+"854",
+"901",
+"926"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 74,
+"t1": 73,
+"type": "relabel",
+"cells": [
+"854",
+"881"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 71,
+"t1": 70,
+"type": "swap",
+"cells": [
+"101",
+"409",
+"918",
+"926"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 68,
+"t1": 67,
+"type": "relabel",
+"cells": [
+"836",
+"880"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 68,
+"t1": 67,
+"type": "clump",
+"cells": [
+"307",
+"308",
+"525"
+],
+"pattern": "born 1 died 2 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 68,
+"t1": 67,
+"type": "swap",
+"cells": [
+"301",
+"501",
+"780",
+"801"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 67,
+"t1": 66,
+"type": "clump",
+"cells": [
+"201",
+"802",
+"804",
+"814",
+"904"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 66,
+"t1": 65,
+"type": "clump",
+"cells": [
+"301",
+"609",
+"678",
+"727",
+"732",
+"780",
+"926"
+],
+"pattern": "born 2 died 2 lost 0 gained 2",
+"net": 0
+},
+{
+"t0": 65,
+"t1": 64,
+"type": "clump",
+"cells": [
+"409",
+"609",
+"609#1",
+"609#2",
+"901",
+"926",
+"926#1",
+"926#2"
+],
+"pattern": "born 4 died 2 lost 0 gained 1",
+"net": 2
+},
+{
+"t0": 64,
+"t1": 63,
+"type": "clump",
+"cells": [
+"609#2",
+"727",
+"926",
+"926#1"
+],
+"pattern": "born 1 died 1 lost 1 gained 0",
+"net": 0
+},
+{
+"t0": 64,
+"t1": 63,
+"type": "clump",
+"cells": [
+"926#2"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 64,
+"t1": 63,
+"type": "swap",
+"cells": [
+"801",
+"802",
+"804",
+"901"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 63,
+"t1": 62,
+"type": "relabel",
+"cells": [
+"880",
+"881"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 62,
+"t1": 61,
+"type": "merge",
+"cells": [
+"804",
+"814",
+"904"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 61,
+"t1": 60,
+"type": "split",
+"cells": [
+"880",
+"901",
+"922",
+"926"
+],
+"pattern": "born 1 died 0 lost 2 gained 0",
+"net": 1
+},
+{
+"t0": 59,
+"t1": 58,
+"type": "clump",
+"cells": [
+"608",
+"609",
+"609#1",
+"922",
+"926"
+],
+"pattern": "born 2 died 1 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 59,
+"t1": 58,
+"type": "clump",
+"cells": [
+"301",
+"609#2",
+"926"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 58,
+"t1": 57,
+"type": "clump",
+"cells": [
+"301",
+"608",
+"727",
+"901",
+"926",
+"926#1",
+"926#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 3",
+"net": 1
+},
+{
+"t0": 57,
+"t1": 56,
+"type": "clump",
+"cells": [
+"301",
+"409",
+"608",
+"678",
+"901",
+"926#2"
+],
+"pattern": "born 1 died 1 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 56,
+"t1": 55,
+"type": "split",
+"cells": [
+"304",
+"307",
+"308"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 56,
+"t1": 55,
+"type": "clump",
+"cells": [
+"301",
+"406",
+"608",
+"609",
+"678",
+"727",
+"738",
+"901",
+"926#1",
+"926#2"
+],
+"pattern": "born 3 died 4 lost 1 gained 1",
+"net": -1
+},
+{
+"t0": 56,
+"t1": 55,
+"type": "clump",
+"cells": [
+"833",
+"841",
+"922"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 53,
+"t1": 52,
+"type": "split",
+"cells": [
+"902",
+"903",
+"918"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 52,
+"t1": 51,
+"type": "clump",
+"cells": [
+"301",
+"529",
+"604",
+"608",
+"780",
+"801",
+"833",
+"836",
+"880",
+"922"
+],
+"pattern": "born 1 died 5 lost 2 gained 2",
+"net": -4
+},
+{
+"t0": 51,
+"t1": 50,
+"type": "split",
+"cells": [
+"2035"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 51,
+"t1": 50,
+"type": "swap",
+"cells": [
+"801",
+"802",
+"804",
+"901"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 49,
+"t1": 48,
+"type": "split",
+"cells": [
+"861"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 48,
+"t1": 47,
+"type": "birth",
+"cells": [
+"688"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 48,
+"t1": 47,
+"type": "clump",
+"cells": [
+"604",
+"608",
+"645",
+"665",
+"738",
+"926"
+],
+"pattern": "born 3 died 0 lost 1 gained 1",
+"net": 3
+},
+{
+"t0": 48,
+"t1": 47,
+"type": "clump",
+"cells": [
+"801",
+"802",
+"804",
+"901",
+"902",
+"904"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 47,
+"t1": 46,
+"type": "clump",
+"cells": [
+"501",
+"701",
+"802",
+"802#1",
+"802#2"
+],
+"pattern": "born 2 died 1 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 47,
+"t1": 46,
+"type": "merge",
+"cells": [
+"101",
+"406",
+"409",
+"901"
+],
+"pattern": "born 0 died 1 lost 0 gained 2",
+"net": -1
+},
+{
+"t0": 47,
+"t1": 46,
+"type": "swap",
+"cells": [
+"604",
+"645",
+"665",
+"738"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 46,
+"t1": 45,
+"type": "clump",
+"cells": [
+"501",
+"701",
+"802",
+"802#1",
+"802#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 46,
+"t1": 45,
+"type": "split",
+"cells": [
+"603"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 46,
+"t1": 45,
+"type": "clump",
+"cells": [
+"604",
+"609",
+"645",
+"735",
+"738",
+"926"
+],
+"pattern": "born 1 died 2 lost 0 gained 2",
+"net": -1
+},
+{
+"t0": 45,
+"t1": 44,
+"type": "birth",
+"cells": [
+"855"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 45,
+"t1": 44,
+"type": "swap",
+"cells": [
+"608",
+"609",
+"645",
+"735"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 44,
+"t1": 43,
+"type": "merge",
+"cells": [
+"301",
+"501",
+"603",
+"701",
+"801"
+],
+"pattern": "born 0 died 1 lost 0 gained 3",
+"net": -1
+},
+{
+"t0": 44,
+"t1": 43,
+"type": "swap",
+"cells": [
+"201",
+"802",
+"902",
+"904"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 42,
+"t1": 41,
+"type": "swap",
+"cells": [
+"301",
+"608",
+"609",
+"735"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 41,
+"t1": 40,
+"type": "split",
+"cells": [
+"801",
+"922",
+"9923"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 41,
+"t1": 40,
+"type": "clump",
+"cells": [
+"304",
+"307",
+"308",
+"328"
+],
+"pattern": "born 1 died 1 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 41,
+"t1": 40,
+"type": "clump",
+"cells": [
+"301",
+"604",
+"608",
+"617",
+"645",
+"663",
+"665",
+"673",
+"735",
+"801"
+],
+"pattern": "born 3 died 1 lost 4 gained 0",
+"net": 2
+},
+{
+"t0": 41,
+"t1": 40,
+"type": "clump",
+"cells": [
+"201",
+"802",
+"818",
+"819",
+"902",
+"904"
+],
+"pattern": "born 2 died 0 lost 1 gained 1",
+"net": 2
+},
+{
+"t0": 41,
+"t1": 40,
+"type": "merge",
+"cells": [
+"918"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 40,
+"t1": 39,
+"type": "swap",
+"cells": [
+"201",
+"819",
+"902",
+"904"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 39,
+"t1": 38,
+"type": "relabel",
+"cells": [
+"855",
+"857"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 38,
+"t1": 37,
+"type": "clump",
+"cells": [
+"604",
+"613",
+"617",
+"663"
+],
+"pattern": "born 1 died 3 lost 0 gained 0",
+"net": -2
+},
+{
+"t0": 38,
+"t1": 37,
+"type": "swap",
+"cells": [
+"608",
+"645",
+"665",
+"801"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 37,
+"t1": 36,
+"type": "clump",
+"cells": [
+"838",
+"855"
+],
+"pattern": "born 2 died 0 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 36,
+"t1": 35,
+"type": "split",
+"cells": [
+"698",
+"853",
+"9923"
+],
+"pattern": "born 2 died 1 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 35,
+"t1": 34,
+"type": "merge",
+"cells": [
+"301",
+"608",
+"609"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 35,
+"t1": 34,
+"type": "clump",
+"cells": [
+"688",
+"922"
+],
+"pattern": "born 0 died 0 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 34,
+"t1": 33,
+"type": "clump",
+"cells": [
+"301",
+"304",
+"306",
+"308",
+"317",
+"3201",
+"328",
+"522",
+"701",
+"708"
+],
+"pattern": "born 4 died 4 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 34,
+"t1": 33,
+"type": "split",
+"cells": [
+"688",
+"689",
+"901"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 34,
+"t1": 33,
+"type": "relabel",
+"cells": [
+"839",
+"855"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 34,
+"t1": 33,
+"type": "swap",
+"cells": [
+"801",
+"802",
+"804",
+"901"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 33,
+"t1": 32,
+"type": "clump",
+"cells": [
+"101",
+"102",
+"301"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 32,
+"t1": 31,
+"type": "merge",
+"cells": [
+"665"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 32,
+"t1": 31,
+"type": "swap",
+"cells": [
+"608",
+"688",
+"853",
+"922"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 32,
+"t1": 31,
+"type": "swap",
+"cells": [
+"101",
+"901",
+"902",
+"903"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "clump",
+"cells": [
+"608",
+"653",
+"659",
+"689"
+],
+"pattern": "born 2 died 0 lost 1 gained 0",
+"net": 2
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "split",
+"cells": [
+"709"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "clump",
+"cells": [
+"603",
+"607",
+"686",
+"801"
+],
+"pattern": "born 2 died 0 lost 1 gained 0",
+"net": 2
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "clump",
+"cells": [
+"801",
+"835",
+"838",
+"839",
+"857",
+"861"
+],
+"pattern": "born 1 died 2 lost 0 gained 2",
+"net": -1
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "relabel",
+"cells": [
+"604",
+"613"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 31,
+"t1": 30,
+"type": "merge",
+"cells": [
+"2035"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 29,
+"t1": 28,
+"type": "merge",
+"cells": [
+"3201"
+],
+"pattern": "born 0 died 1 lost 0 gained 0",
+"net": -1
+},
+{
+"t0": 29,
+"t1": 28,
+"type": "swap",
+"cells": [
+"802",
+"818",
+"819",
+"904"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 28,
+"t1": 27,
+"type": "clump",
+"cells": [
+"818",
+"818#1",
+"818#2",
+"819",
+"819#1",
+"819#2"
+],
+"pattern": "born 4 died 2 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 28,
+"t1": 27,
+"type": "split",
+"cells": [
+"503",
+"701",
+"801"
+],
+"pattern": "born 1 died 0 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 28,
+"t1": 27,
+"type": "swap",
+"cells": [
+"301",
+"608",
+"659",
+"901"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 27,
+"t1": 26,
+"type": "birth",
+"cells": [
+"818#3"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 27,
+"t1": 26,
+"type": "merge",
+"cells": [
+"802",
+"804",
+"902"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 27,
+"t1": 26,
+"type": "swap",
+"cells": [
+"608",
+"688",
+"801",
+"853"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 26,
+"t1": 25,
+"type": "clump",
+"cells": [
+"688",
+"698",
+"801",
+"835",
+"839",
+"853",
+"861",
+"922"
+],
+"pattern": "born 0 died 3 lost 3 gained 4",
+"net": -3
+},
+{
+"t0": 26,
+"t1": 25,
+"type": "swap",
+"cells": [
+"301",
+"503",
+"522",
+"701"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 26,
+"t1": 25,
+"type": "clump",
+"cells": [
+"201",
+"802",
+"818#1",
+"818#2",
+"818#3",
+"819#1",
+"819#2",
+"902",
+"904"
+],
+"pattern": "born 0 died 0 lost 7 gained 7",
+"net": 0
+},
+{
+"t0": 26,
+"t1": 25,
+"type": "swap",
+"cells": [
+"101",
+"301",
+"406",
+"901"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 25,
+"t1": 24,
+"type": "merge",
+"cells": [
+"688",
+"689",
+"901"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 25,
+"t1": 24,
+"type": "clump",
+"cells": [
+"201",
+"802",
+"818#1",
+"818#3",
+"819#2"
+],
+"pattern": "born 0 died 1 lost 2 gained 1",
+"net": -1
+},
+{
+"t0": 24,
+"t1": 23,
+"type": "split",
+"cells": [
+"802",
+"818#2",
+"819#1",
+"902",
+"904",
+"911"
+],
+"pattern": "born 1 died 0 lost 4 gained 0",
+"net": 1
+},
+{
+"t0": 24,
+"t1": 23,
+"type": "merge",
+"cells": [
+"653",
+"688",
+"801",
+"922"
+],
+"pattern": "born 0 died 1 lost 0 gained 2",
+"net": -1
+},
+{
+"t0": 23,
+"t1": 22,
+"type": "swap",
+"cells": [
+"201",
+"224",
+"902",
+"911"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 22,
+"t1": 21,
+"type": "swap",
+"cells": [
+"301",
+"503",
+"522",
+"701"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 21,
+"t1": 20,
+"type": "clump",
+"cells": [
+"301",
+"306",
+"328",
+"334",
+"337",
+"340",
+"522",
+"701",
+"708"
+],
+"pattern": "born 4 died 3 lost 1 gained 0",
+"net": 1
+},
+{
+"t0": 21,
+"t1": 20,
+"type": "clump",
+"cells": [
+"818",
+"818#1",
+"818#2",
+"819",
+"819#1",
+"819#2"
+],
+"pattern": "born 2 died 4 lost 0 gained 0",
+"net": -2
+},
+{
+"t0": 21,
+"t1": 20,
+"type": "clump",
+"cells": [
+"301",
+"501",
+"503",
+"511",
+"607",
+"686",
+"709",
+"801"
+],
+"pattern": "born 2 died 0 lost 5 gained 0",
+"net": 2
+},
+{
+"t0": 19,
+"t1": 18,
+"type": "clump",
+"cells": [
+"839",
+"853"
+],
+"pattern": "born 0 died 2 lost 0 gained 0",
+"net": -2
+},
+{
+"t0": 18,
+"t1": 17,
+"type": "birth",
+"cells": [
+"815"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 18,
+"t1": 17,
+"type": "swap",
+"cells": [
+"802",
+"819",
+"904",
+"911"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 17,
+"t1": 16,
+"type": "clump",
+"cells": [
+"201",
+"802",
+"818",
+"819",
+"904",
+"911"
+],
+"pattern": "born 0 died 0 lost 2 gained 2",
+"net": 0
+},
+{
+"t0": 16,
+"t1": 15,
+"type": "clump",
+"cells": [
+"901",
+"911",
+"971"
+],
+"pattern": "born 1 died 0 lost 0 gained 1",
+"net": 1
+},
+{
+"t0": 15,
+"t1": 14,
+"type": "clump",
+"cells": [
+"301",
+"511",
+"604",
+"608",
+"645",
+"673",
+"686",
+"801"
+],
+"pattern": "born 0 died 1 lost 1 gained 4",
+"net": -1
+},
+{
+"t0": 13,
+"t1": 12,
+"type": "clump",
+"cells": [
+"608",
+"615",
+"653",
+"801",
+"821",
+"849",
+"901",
+"922"
+],
+"pattern": "born 3 died 1 lost 2 gained 1",
+"net": 2
+},
+{
+"t0": 12,
+"t1": 11,
+"type": "swap",
+"cells": [
+"608",
+"615",
+"653",
+"849"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "clump",
+"cells": [
+"301",
+"511",
+"603",
+"604",
+"608",
+"615",
+"645",
+"646",
+"677",
+"686",
+"801"
+],
+"pattern": "born 2 died 2 lost 1 gained 4",
+"net": 0
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "relabel",
+"cells": [
+"971",
+"972"
+],
+"pattern": "born 1 died 1 lost 0 gained 0",
+"net": 0
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "clump",
+"cells": [
+"101",
+"901",
+"902",
+"909",
+"969",
+"970#1",
+"970#2"
+],
+"pattern": "born 4 died 1 lost 0 gained 1",
+"net": 3
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "birth",
+"cells": [
+"824"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "swap",
+"cells": [
+"608",
+"615",
+"653",
+"849"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 11,
+"t1": 10,
+"type": "swap",
+"cells": [
+"201",
+"802",
+"819",
+"911"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 10,
+"t1": 9,
+"type": "clump",
+"cells": [
+"301",
+"566",
+"615",
+"645",
+"801"
+],
+"pattern": "born 1 died 0 lost 1 gained 1",
+"net": 1
+},
+{
+"t0": 10,
+"t1": 9,
+"type": "clump",
+"cells": [
+"101",
+"901",
+"970",
+"970#1",
+"970#2"
+],
+"pattern": "born 1 died 2 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 10,
+"t1": 9,
+"type": "swap",
+"cells": [
+"201",
+"802",
+"819",
+"911"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 9,
+"t1": 8,
+"type": "swap",
+"cells": [
+"608",
+"615",
+"653",
+"849"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 8,
+"t1": 7,
+"type": "clump",
+"cells": [
+"608",
+"615",
+"653",
+"669",
+"678",
+"801",
+"849"
+],
+"pattern": "born 2 died 1 lost 1 gained 2",
+"net": 1
+},
+{
+"t0": 8,
+"t1": 7,
+"type": "split",
+"cells": [
+"829"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "clump",
+"cells": [
+"564",
+"566",
+"645",
+"646",
+"664",
+"669",
+"676",
+"677",
+"678",
+"801"
+],
+"pattern": "born 3 died 0 lost 6 gained 1",
+"net": 3
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "clump",
+"cells": [
+"608",
+"653",
+"659",
+"699",
+"801",
+"821",
+"824",
+"901"
+],
+"pattern": "born 1 died 0 lost 2 gained 2",
+"net": 1
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "merge",
+"cells": [
+"802",
+"818",
+"819"
+],
+"pattern": "born 0 died 1 lost 0 gained 1",
+"net": -1
+},
+{
+"t0": 6,
+"t1": 5,
+"type": "clump",
+"cells": [
+"901",
+"911",
+"972"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 5,
+"t1": 4,
+"type": "clump",
+"cells": [
+"564",
+"608",
+"669",
+"674"
+],
+"pattern": "born 1 died 1 lost 0 gained 1",
+"net": 0
+},
+{
+"t0": 5,
+"t1": 4,
+"type": "clump",
+"cells": [
+"697",
+"847"
+],
+"pattern": "born 2 died 0 lost 0 gained 0",
+"net": 2
+},
+{
+"t0": 4,
+"t1": 3,
+"type": "clump",
+"cells": [
+"101",
+"901",
+"909",
+"969",
+"970"
+],
+"pattern": "born 0 died 1 lost 1 gained 1",
+"net": -1
+},
+{
+"t0": 4,
+"t1": 3,
+"type": "clump",
+"cells": [
+"802",
+"818",
+"904"
+],
+"pattern": "born 0 died 1 lost 1 gained 0",
+"net": -1
+},
+{
+"t0": 4,
+"t1": 3,
+"type": "swap",
+"cells": [
+"653",
+"801",
+"847",
+"849"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 3,
+"t1": 2,
+"type": "clump",
+"cells": [
+"697",
+"801",
+"901"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 2,
+"t1": 1,
+"type": "swap",
+"cells": [
+"653",
+"697",
+"801",
+"847"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "birth",
+"cells": [
+"925"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "birth",
+"cells": [
+"923"
+],
+"pattern": "born 1 died 0 lost 0 gained 0",
+"net": 1
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "swap",
+"cells": [
+"653",
+"697",
+"801",
+"847"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "swap",
+"cells": [
+"101",
+"901",
+"909",
+"970"
+],
+"pattern": "born 0 died 0 lost 1 gained 1",
+"net": 0
+},
+{
+"t0": 1,
+"t1": 0,
+"type": "clump",
+"cells": [
+"301",
+"645",
+"646",
+"674",
+"677",
+"678"
+],
+"pattern": "born 0 died 0 lost 3 gained 3",
+"net": 0
+}
+]

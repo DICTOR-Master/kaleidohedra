@@ -25,7 +25,10 @@ event census runs, but its rates are not yet stable.
   model, not the Earth.
 - Prior art: no paper found that counts swaps (neighbour exchanges) in solar granulation or in plate reconstructions. The Janin et
   al. plate graph (Zenodo 15863930) has no event classification.
-NEXT: settle the Earth counting rule before any rate is quoted. First, explain the single-contact clumps. Second, a persistence
+CONTINUED (15 Nov 2026) in studies/2026-11-15-earth-plates: the counting rule, persistence, the Müller 2019 seam and more models.
+eventlog.py gained two opt-in options there (contacts counted per boundary; boundary networks in several pieces); with the options
+off its behaviour is unchanged, and the tests are now 33/33 (the 23 below plus 10 for the options).
+NEXT (as it stood): settle the Earth counting rule before any rate is quoted. First, explain the single-contact clumps. Second, a persistence
 rule for swaps (fix the tolerance first). Third, close the Müller 2019 seam and run a second model, then compare the two.
 
 ## Predictions (written 15 Nov 2026 before any event-logging run; only the present-day plate check below was run first)

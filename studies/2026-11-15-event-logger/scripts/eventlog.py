@@ -9,8 +9,12 @@ TILING FORMAT (one JSON object per line, a "frame"; a file of frames in time ord
    "junctions": [[a, b, c], ...],              # optional, dim 2: the cells meeting at each junction (corner of the map)
    "edges": [[a, b, c], ...], "corners": [[a, b, c, d], ...],   # optional, dim 3 (cells round each edge / at each corner)
    "loops": n,                                 # optional, dim 2: boundaries that are closed loops with no junction on them
-   "parents": {new: {old: share}}, "heirs": {old: {new: share}}}  # optional lineage: share of the NEW cell's area that came
+   "parents": {new: {old: share}}, "heirs": {old: {new: share}},  # optional lineage: share of the NEW cell's area that came
                                                # from each old cell / share of the OLD cell's area that went to each new cell
+   "components": n}                            # optional (added 15 Nov, Earth stream): connected pieces of the boundary network
+                                               # (a junction-free loop is its own piece); when given, Euler reads V - E + F = 1 + n
+                                               # with V = junctions + loops and E = boundaries (loops included), so a cell with a hole
+                                               # (an island plate) is allowed
 Labels are strings in the file (JSON keys); any hashable label works in memory.
 
 EVENTS between consecutive frames (plain terms first; #104 names in brackets):
@@ -36,8 +40,8 @@ NET = {'swap': 0, 'birth': 1, 'death': -1, 'split': 1, 'merge': -1, 'relabel': 0
 
 class Tiling:
     def __init__(self, cells, boundaries, junctions=None, dim=2, surface='sphere', t=None, edges=None, corners=None, loops=0,
-                 parents=None, heirs=None):
-        self.t, self.dim, self.surface, self.loops = t, dim, surface, loops
+                 parents=None, heirs=None, components=None):
+        self.t, self.dim, self.surface, self.loops, self.components = t, dim, surface, loops, components
         self.cells = frozenset(cells)
         self.segments = [tuple(sorted(p)) for p in boundaries]
         self.pairs = frozenset(self.segments)
@@ -55,6 +59,7 @@ class Tiling:
         if self.edges is not None: d['edges'] = [list(map(str, e)) for e in self.edges]
         if self.corners is not None: d['corners'] = [list(map(str, c)) for c in self.corners]
         if self.loops: d['loops'] = self.loops
+        if self.components is not None: d['components'] = self.components
         if self.parents: d['parents'] = {str(k): {str(a): s for a, s in v.items()} for k, v in self.parents.items()}
         if self.heirs: d['heirs'] = {str(k): {str(a): s for a, s in v.items()} for k, v in self.heirs.items()}
         return json.dumps(d)
@@ -63,7 +68,8 @@ class Tiling:
     def from_json(line):
         d = json.loads(line)
         return Tiling(d['cells'], d['boundaries'], d.get('junctions'), d.get('dim', 2), d.get('surface', 'sphere'), d.get('t'),
-                      d.get('edges'), d.get('corners'), d.get('loops', 0), d.get('parents'), d.get('heirs'))
+                      d.get('edges'), d.get('corners'), d.get('loops', 0), d.get('parents'), d.get('heirs'),
+                      d.get('components'))
 
 
 def read_frames(path):
@@ -86,9 +92,10 @@ def check_tiling(T):
             # V - E + F = 2 for a connected map of disc cells; a junction-free loop boundary adds a face-and-edge without a vertex:
             # count each loop as one extra vertex (a loop is a circle with one 2-valent corner) so the formula still reads V-E+F=2
             chi = (J + T.loops) - len(T.segments) + len(T.cells)
-            r['euler'] = chi; r['euler_ok'] = (chi == 2)
-            if not r['euler_ok']: r['problems'].append(f'Euler V-E+F = {chi} != 2')
-            if set(deg) <= {3} and not T.loops:
+            want = 2 if T.components is None else 1 + T.components
+            r['euler'] = chi; r['euler_ok'] = (chi == want)
+            if not r['euler_ok']: r['problems'].append(f'Euler V-E+F = {chi} != {want}')
+            if set(deg) <= {3} and not T.loops and T.components in (None, 1):
                 n = len(T.cells)
                 r['triple_formulas_ok'] = (J == 2 * (n - 2) and len(T.segments) == 3 * (n - 2))
                 if not r['triple_formulas_ok']: r['problems'].append(f'triple-junction formulas: J={J} vs {2*(n-2)}, E={len(T.segments)} vs {3*(n-2)}')
@@ -141,12 +148,20 @@ def _dominant(share, theta):
     return k if v >= theta else None
 
 
-def classify(A, B, theta=0.9):
-    """Events between frames A and B (B later). Each event: dict(type, cells, pattern, net)."""
+def classify(A, B, theta=0.9, by_segment=False):
+    """Events between frames A and B (B later). Each event: dict(type, cells, pattern, net).
+    by_segment (added 15 Nov, Earth stream; default off = the tested pair rule): a contact is lost / gained when the NUMBER of
+    boundaries the two cells share falls / rises, so a swap whose new pair already touched elsewhere (or whose old pair still
+    touches elsewhere) is seen as a swap and not as a one-contact clump."""
     born, died = B.cells - A.cells, A.cells - B.cells
     kept = A.cells & B.cells
-    lost = {p for p in A.pairs - B.pairs if p[0] in kept and p[1] in kept}
-    gained = {p for p in B.pairs - A.pairs if p[0] in kept and p[1] in kept}
+    if by_segment:
+        mA, mB = Counter(A.segments), Counter(B.segments)
+        lost = {p for p in mA if mB[p] < mA[p] and p[0] in kept and p[1] in kept}
+        gained = {p for p in mB if mB[p] > mA[p] and p[0] in kept and p[1] in kept}
+    else:
+        lost = {p for p in A.pairs - B.pairs if p[0] in kept and p[1] in kept}
+        gained = {p for p in B.pairs - A.pairs if p[0] in kept and p[1] in kept}
     events = []
     for g in _clusters(A, B, born, died, lost, gained):
         kinds = Counter(k for k, _ in g)
@@ -212,11 +227,11 @@ def balance(A, B, events):
     return s == len(B.cells) - len(A.cells), s, len(B.cells) - len(A.cells)
 
 
-def run(frames, theta=0.9):
+def run(frames, theta=0.9, by_segment=False):
     """Log a whole sequence. Returns (rows, summary). rows: one per event with t0, t1."""
     rows, checks, bad_bal = [], [check_tiling(F) for F in frames], []
     for A, B in zip(frames, frames[1:]):
-        ev = classify(A, B, theta)
+        ev = classify(A, B, theta, by_segment)
         ok, s, d = balance(A, B, ev)
         if not ok: bad_bal.append((A.t, B.t, s, d))
         for e in ev: rows.append(dict(t0=A.t, t1=B.t, **e))
