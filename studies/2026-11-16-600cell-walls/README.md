@@ -36,4 +36,6 @@ Comparing the plate directions with the 600-cell's own directions (scripts/walls
 - **B's 40 φ√2-triangle plates: perpendicular to a corner of the 120-cell** (a cell centre of the 600-cell). Each is the central section of the 600-cell parallel to a pair of its opposite tetrahedral cells: the equator of a 120-cell corner axis.
 So every plate of B is a central plane that the 600-cell–120-cell pair already has: 40 mirror walls and 40 equators of the 120-cell's corner axes (300 such planes). Whether those equators count as "walls" is DICTO's call.
 
-LEADS: (1) exact recheck in Q(√5); (2) the same test on the other recent shapes (GET, the echo shapes, the 2I twisted classes of other degrees); (3) do the ordinary-orbit controls' non-wall plates also lie on 120-cell equators (then the equators are not special to the twist)?
+Control for the equators (scripts/walls_where_ctl.py, data/walls_where_ctl.log): the ordinary orbits' non-mirror plates (40 + 30 and 20) point along NONE of the 600-cell's directions (corners, edge midpoints, triangle centres, cell centres). So the equators are special to the twist: with it, every one of B's 80 plates is a central plane of the 600-cell–120-cell pair; without it, most plates are in no such plane.
+
+LEADS: (1) exact recheck in Q(√5); (2) the same test on the other recent shapes (GET, the echo shapes, the 2I twisted classes of other degrees).

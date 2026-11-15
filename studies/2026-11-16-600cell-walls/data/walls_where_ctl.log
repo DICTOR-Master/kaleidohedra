@@ -1,0 +1,14 @@
+{'corners (mirrors)': 60, 'edge midpoints': 360, 'triangle centres': 600, 'cell centres (120-cell corners)': 300} edges 720 triangles 1200
+== B
+40 plates on 3 -gons; normal along: ('cell centres (120-cell corners)',)
+10 plates on 3 -gons; normal along: ('corners (mirrors)',)
+30 plates on 4 -gons; normal along: ('corners (mirrors)',)
+== ctl (phi^2,phi^2,1.2,1.2,0)
+10 plates on 3 -gons; normal along: ('corners (mirrors)',)
+40 plates on 3 -gons; normal along: none of these
+30 plates on 4 -gons; normal along: none of these
+== ctl (phi^2,phi^2,phi^2,1.5,0)
+20 plates on 3 -gons; normal along: none of these
+10 plates on 6 -gons; normal along: ('corners (mirrors)',)
+checks [True, True, True]
+FINAL ok
