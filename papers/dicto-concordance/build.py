@@ -95,6 +95,8 @@ w('<p class="sub">A map and almanac of the work: results, gaps, threads, names, 
 w(f'<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>'
   f'{date(D["date"])} · {e(D["version"])} · DICTO DOI: {D.get("doi", "to be reserved")} (concept) · Licence CC BY-SA 4.0 · Compiled with Claude (Anthropic) from the papers, the site cards and the DICTOnary, generated from concordance.json by build.py<br>'
   'The work, its ideas and its names are DICTO\'s, as each paper\'s credit line says; this map only gathers them.</div>')
+if D.get('version_line'):
+    w('<p class="version"><b>' + e(D['version_line'].split(' adds ')[0]) + ' adds</b> ' + e(D['version_line'].split(' adds ', 1)[1]) + '</p>')
 if D.get('status_box'):
     w('<div class="status"><b>Draft notes</b><ul>' + ''.join(f'<li>{e(x)}</li>' for x in D['status_box']) + '</ul></div>')
 
