@@ -146,4 +146,4 @@ contrast = disc-defocus MTF × diffraction MTF at the ridge frequency.
 ## Faults on the way (recorded once)
 - Pilot 1: the random-holes control used one realization per density, which was too noisy (max 0.39 against 1/e). It now
   averages 8 realizations and checks μe^-μ at every density.
-- Pilot 2: numpy booleans broke the JSON writer. Checks are cast to bool.
+- Pilot 2: numpy booleans broke the JSON writer. Checks are cast to bool. (Its log is not kept: the traceback held machine paths.)
