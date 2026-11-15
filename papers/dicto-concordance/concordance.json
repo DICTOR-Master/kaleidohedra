@@ -7977,6 +7977,16 @@
     "retry": "only: l=26 (tables to F=16, six-crossing to (10,10)); hand proof that half asymmetry ignores the second bilayer to F=14; Lean after Theorem A",
     "study": "studies/2026-11-15-polygon-bijection",
     "goes_to": "#102 Section 5 after DICTO reads v6 (DICTO decides placement); ring-counts Theorem 2 becomes proved"
+   },
+   {
+    "date": "2026-11-15",
+    "question": "Uniqueness of the DICTO Yantra (#103 Theorem 9): Huet's conditions (Chiodo 2021 form) + Kulaichev (b), (c), (d) + the Cleo-Antonius u v = 2/phi^3 in place of (a) + #103 Theorem 1 admissibility",
+    "method": "studies/2026-11-15-dicto-yantra-uniqueness (pipeline of the Kulaichev census): divisor lemma over Q for generic u, v (Singular), v = (2 sqrt5 - 4)/u, NZ factors over Q(sqrt5); full elimination over Q(sqrt5) Res_S then Res_t (E deg 560 = u^400 * g80 * g80'; norms f160 and h160); positive real roots (u not confined to (0,1)) by VCA, PARI Sturm and FLINT/Arb (30 + 29, agree); Arb back-solve + Krawczyk + admissibility; independent route t first then S by evaluation at 869 integers and exact interpolation (E2 deg 460 = u^380 * g80, norm f160 only), PARI Sturm, mpmath iv; controls (B+1, u+2^-200, f160 + a0/1e10, undistorted Cleo-Antonius u = 3 - sqrt5 misses (d) by 0.058); jobs dyuniq-main and dyuniq-route2 FINAL ok",
+    "status": "PROVED (certified computation)",
+    "result": "exactly one admissible DICTO Yantra: #103 Theorem 9's (u = 0.6793185887..., root of f160); the system has exactly four real solutions with u > 0, all on f160: u = 0.57120 is Theorem 1 admissible but the circle's centre is the EXCENTRE of the bindu triangle (b5 > 1/2), so (d) fails; u = 0.67176 and 0.88628 are not admissible (t4 inverted, b6 > b7, w5, w6 < 0); h160 is an artefact of the elimination order",
+    "retry": "never; only a Lean certificate",
+    "study": "studies/2026-11-15-dicto-yantra-uniqueness",
+    "goes_to": "#103 v5: uniqueness theorem beside Theorem 9, with the excentre remark ((d) must be read as incircle); note in the study README, #103 not edited here"
    }
   ]
  },

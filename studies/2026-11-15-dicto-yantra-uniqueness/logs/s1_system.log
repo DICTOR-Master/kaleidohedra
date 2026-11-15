@@ -1,0 +1,32 @@
+PROGRESS 0.05 construction (generic great slopes u, v)
+PROGRESS 0.12 divisor lemma
+[    1.6 s] divisor lemma (generic u, v) closes: True ; NZ factors over Q: 26
+PROGRESS 0.20 substitution v = (2 sqrt5 - 4)/u
+[    1.9 s] NZ factors over K after substitution: 23
+PROGRESS 0.25 equations over K
+[    1.9 s] G: kept degrees (u, t, S) = (4, 0, 2); dropped NZ factors: []
+[    2.3 s] E146 -> H1: kept degrees (u, t, S) = (15, 10, 3); dropped NZ factors: [('u*t - 1', 1), ('u*t + 1', 1), ('u*t + (-2*s + 4)', 1), ('u*t + (2*s - 4)', 1)]
+[   16.8 s] Dd -> D: kept degrees (u, t, S) = (18, 10, 2); dropped NZ factors: [('u*t - 1', 1), ('u*t + 1', 1), ('u*t + (-2*s + 4)', 6), ('u*t + (2*s - 4)', 6), ('u^2*S + S - 1', 2)]
+[   16.9 s] matches #103 system (audit stage 4, case D), up to constants and NZ factors: {'G': True, 'H1': True, 'D': True}
+PROGRESS 0.30 resultants in S (Singular over K)
+[   16.9 s] R1 = Res_S(G, H1): degrees (u, t) 30, 20 (0.0 s)
+[   17.2 s] R2 = Res_S(G, D): degrees (u, t) 36, 20 (0.4 s)
+PROGRESS 0.40 factor R1, R2 over K
+[   17.3 s]    R1 factor degrees (u, t) = (1, 0)^10 NZ u
+[   17.3 s]    R1 factor degrees (u, t) = (20, 20)^1 KEEP 
+[   17.3 s]    (R1 factored in 0.0 s)
+[   17.3 s]    R2 factor degrees (u, t) = (1, 0)^8 NZ u
+[   17.3 s]    R2 factor degrees (u, t) = (28, 20)^1 KEEP 
+[   17.3 s]    (R2 factored in 0.0 s)
+[   17.3 s] kept factors of R1: [(20, 20)]  of R2: [(28, 20)]
+PROGRESS 0.50 resultants in t (PARI over Q[s]/(s^2-5))
+PARI stack size set to 8000000000 bytes, maximum size set to 8000000000
+[   19.5 s] E00 = Res_t(A0, B0) over K: degree 560 (2.2 s)
+[   19.6 s]    nffactor over K: 0.1 s
+[   19.6 s]    K-factor degree 1 ^400 NZ u
+[   19.6 s]    K-factor degree 80 ^1 KEEP 
+[   19.7 s]    K-factor degree 80 ^1 KEEP 
+[   19.7 s] candidate rational factors: [(160, 'norm of a degree-80 K-factor of Res_t(A0, B0)'), (160, 'norm of a degree-80 K-factor of Res_t(A0, B0)')] ; f160 among them: True
+[   19.8 s] wrote data/polys-D.json
+PROGRESS 1.0 done
+FINAL ok

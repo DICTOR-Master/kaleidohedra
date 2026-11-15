@@ -1,0 +1,15 @@
+PARI stack size set to 4000000000 bytes, maximum size set to 4000002048
+[    0.1 s] factor 0: degree 160 (norm of a degree-80 K-factor of Res_t(A0, B0)); Cauchy bound 2^182
+[    6.2 s]    VCA: 29 roots in (0, 2^182)
+[    9.2 s]    PARI: polsturm on [0,1] (scaled) = 29, polrootsreal on [0,+oo] (unscaled) = 29; Sturm 1 on every VCA interval: True; 0 on gaps: True
+[    9.3 s]    FLINT: 29 positive real roots; each in exactly one VCA interval: True
+PROGRESS 0.50 factor 0 isolated
+[   10.4 s] factor 1: degree 160 (norm of a degree-80 K-factor of Res_t(A0, B0), f160); Cauchy bound 2^180
+[   15.7 s]    VCA: 30 roots in (0, 2^180)
+[   19.1 s]    PARI: polsturm on [0,1] (scaled) = 30, polrootsreal on [0,+oo] (unscaled) = 30; Sturm 1 on every VCA interval: True; 0 on gaps: True
+[   19.2 s]    FLINT: 30 positive real roots; each in exactly one VCA interval: True
+[   20.6 s]    positive control: Theorem 9 interval meets exactly one root (index [9]): True
+[   20.6 s]    negative control: f160 + a0/10^10 has 0 roots in that interval (expected 0)
+PROGRESS 1.00 factor 1 isolated
+[   20.6 s] total candidate u values (u > 0): 59
+FINAL ok
