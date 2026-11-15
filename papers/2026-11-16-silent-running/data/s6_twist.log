@@ -1,0 +1,64 @@
+CHECK OK   there are 15 triple transpositions
+CHECK OK   Coxeter relations solved by triple transpositions
+CHECK OK   xi is a bijection of Sym6
+CHECK OK   xi is a homomorphism (every 7th g against all h)
+CHECK OK   xi is a homomorphism (all g against generators)
+CHECK OK   xi is not inner (no conjugation agrees on the generators)
+CHECK OK   xi sends transpositions to triple transpositions (not to reflections)
+class          size  chi  chi*sign  chi o xi
+(6,)            120   -1        1        0
+(5, 1)          144    0        0        0
+(4, 1, 1)        90    1       -1        1
+(4, 2)           90   -1       -1       -1
+(3, 1, 1, 1)     40    2        2       -1
+(3, 2, 1)       120    0        0       -1
+(3, 3)           40   -1       -1        2
+(2, 1, 1, 1, 1)   15    3       -3       -1
+(2, 2, 1, 1)     45    1        1        1
+(2, 2, 2)        15   -1        1        3
+(1, 1, 1, 1, 1, 1)    1    5        5        5
+CHECK OK   chi o xi is a class function
+CHECK OK   chi o xi differs from chi
+CHECK OK   chi o xi differs from chi*sign
+CHECK OK   chi o xi has value -1 on transpositions (a reflection of R^5 has trace 3)
+CHECK OK   <chi, chi o xi> = 0: rho o xi is a different irreducible
+CHECK OK   rho o xi sends every Coxeter generator s_i to a non-reflection (trace -1; a reflection has trace 3)
+CHECK OK   rho o xi sends the triple transpositions to reflections (same matrix group rho(Sym6), other generators)
+CHECK OK   character table orthonormal (11 irreducibles)
+CHECK OK   rho = [5,1]
+CHECK OK   (6,) o xi is irreducible
+CHECK OK   (5, 1) o xi is irreducible
+CHECK OK   (4, 2) o xi is irreducible
+CHECK OK   (4, 1, 1) o xi is irreducible
+CHECK OK   (3, 3) o xi is irreducible
+CHECK OK   (3, 2, 1) o xi is irreducible
+CHECK OK   (3, 1, 1, 1) o xi is irreducible
+CHECK OK   (2, 2, 2) o xi is irreducible
+CHECK OK   (2, 2, 1, 1) o xi is irreducible
+CHECK OK   (2, 1, 1, 1, 1) o xi is irreducible
+CHECK OK   (1, 1, 1, 1, 1, 1) o xi is irreducible
+xi on irreducibles: (5, 1)<->(2, 2, 2), (4, 1, 1)<->(3, 1, 1, 1), (3, 3)<->(2, 1, 1, 1, 1)
+xi-stable irreducibles: [(6,), (4, 2), (3, 2, 1), (2, 2, 1, 1), (1, 1, 1, 1, 1, 1)]
+CHECK OK   rho o xi = [2,2,2]
+rho (x) (rho o xi) = (3, 2, 1) + (2, 2, 1, 1)
+CHECK OK   twisted action contains neither the trivial nor the sign character (no hyperplane, no latitude pair)
+sum chi_A^2/|G| = 2
+CHECK OK   5 twisted classes = number of xi-stable irreducibles (Fel'shtyn-Troitsky)
+CHECK OK   Molien coefficients are integers
+invariant harmonics of the twist group, k = 1..40: [0, 1, 4, 38, 157, 858, 3437, 14004, 49784, 168235, 525342, 1558747, 4366470, 11697894, 29965135, 73880616, 175603079, 403990538, 901200958, 1954727768, 4129351676, 8513140274, 17152828842, 33829858866, 65390660838, 124029955596, 231091912954, 423385104968, 763420241868, 1355939340814, 2374073218316, 4100521119114, 6991299004518, 11773860078204, 19595972756874, 32250264740374, 52508721671428, 84617999260200, 135024941964540, 213433050332217]
+
+twisted classes of Sym6 under xi on S^24 (k <= 40):
+rep (cycle type of x)   size  stab  killed                       forced by twist group  unforced
+(1, 1, 1, 1, 1, 1)       180     4  [1]                          [1]                    []
+CHECK OK   class of size 180 kills every degree the twist group forces
+(2, 1, 1, 1, 1)          180     4  [1]                          [1]                    []
+CHECK OK   class of size 180 kills every degree the twist group forces
+(2, 1, 1, 1, 1)          180     4  [1]                          [1]                    []
+CHECK OK   class of size 180 kills every degree the twist group forces
+(3, 1, 1, 1)             144     5  [1]                          [1]                    []
+CHECK OK   class of size 144 kills every degree the twist group forces
+(2, 2, 1, 1)              36    20  [1]                          [1]                    []
+CHECK OK   class of size 36 kills every degree the twist group forces
+
+unforced zeros (by the twist group) over all classes: 0
+FINAL ok
