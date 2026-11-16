@@ -8149,7 +8149,7 @@
     "result": "A: 30 ridges on 30 plates, 2 kinds (20 on triangles √2, slice frustum 6/9/5; 10 on hexagons, slice 10/15/7); B: 80 ridges on 80 plates, 4 kinds (20+20 on φ√2 triangles, slices 21/33/14 of different face types; 30 on rectangles, 13/24/13; 10 on √2 triangles, 15/24/11); both group order 120, not centrally symmetric, one ridge per plate = non-heart Vacuus; control permutohedron 150 on 65 plates, group 240, 5 heart plates cut the 1:2 TO",
     "retry": "never (exact); only to add the optional heart/non-heart side-by-side panel",
     "study": "studies/2026-11-16-non-heart-vacuus",
-    "goes_to": "Silent Running: Twisted Silence (figures); #105 next version (Vacuus for any polytope with a centre, heart and non-heart kinds)"
+    "goes_to": "Silent Running: Twisted Silence (figures); #105 next version (Vacuus for any polytope with a centre, heart and non-heart kinds); Walls of Silence (DRAFT papers/2026-11-16-walls-of-silence)"
    },
    {
     "date": "2026-11-16",
@@ -8209,7 +8209,7 @@
     "result": "HOLDS (distinctive): R 5/5 plates cross walls; silence sets [C3 x C5] 45/45, 90/90 and [C5 x C5] 55/55, 55/55 (0 of 100 random 30-subsets are all-wall); 600-cell vertex-axis cut 21 = 15 mirror + 6 dodecahedron cross; 120-cell cell-axis cut (GP(2,0) type) 25 = 15 mirror + 10 icosahedron cross (off-centre slices 120/135 and 90/90 no wall). HOLDS (not distinctive): [C3 x C10] 30/30 and 60/75, [C5 x C5].2 55/55 and 30/30 (60 of 100 random 60-subsets are all-wall); GET A, GET B 15/15 mirror plates (60 edges) from the triacontahedron centre, but so do all 59 ordinary flip-search surfaces and candidates 2-7 (own corner centroid: 2/54, 3/51). FAILS: 120-cell [C5 x 2T] 240-point sets 240/420 and 420/600 no wall (random 240-subsets 74% no wall); 600-cell cell-axis cut 36/45 and 120-cell vertex-axis cut 24/31 no wall in octahedral figure walls (all walls in the 600-cell's own section walls, which is automatic for central sections); octahedral GP(2,0) 12/18 no wall, the same as the ordinary cut at 3/2",
     "retry": "only with: a baseline of random 600-cell subsets with the same symmetry order or 2-face count (for the 60-point sets); a centre-free wall test for GET (its tiling lattice or its cell rhombohedra); the 24-cell (F4) walls for the octahedral shapes and the 2T/2O twisted classes; hyperplanes parallel to 2-faces for the 120-cell sets",
     "study": "studies/2026-11-16-600cell-walls",
-    "goes_to": "aim 2 (geometry gives laws) / Vacuus thread"
+    "goes_to": "aim 2 (geometry gives laws) / Vacuus thread; Walls of Silence (DRAFT papers/2026-11-16-walls-of-silence)"
    },
    {
     "date": "2026-11-16",
@@ -8229,7 +8229,7 @@
     "result": "Kept walls V 15+30, E 6+10, F 4+12, C 6+27 (mirror+cross), same for both Queens; law: kept walls = planes of the side-on cells of the two Queens (White Queen flat faces = cross walls, Red Queen flat faces = mirrors). Possible Vacuus: icosahedra, dodecahedra, Cleo-Icos (600 V); regular tetrahedra, octahedron (C views); dodecahedra + one truncated icosahedron (30 mirror + 60 cross, 120 V); icosidodecahedron, cuboctahedra, rhombicosidodecahedra fail. Every type of shadow reaches all 360 walls; shadow graph and wall graph connected.",
     "retry": "only the 3 README leads (twin truncated icosahedra, unions of cells, 24-cell shadows)",
     "study": "studies/2026-11-16-queens-shadows",
-    "goes_to": "builds on ledger entries: DICTO's walls theory (600-cell walls) of 16 Nov"
+    "goes_to": "builds on ledger entries: DICTO's walls theory (600-cell walls) of 16 Nov; Walls of Silence (DRAFT papers/2026-11-16-walls-of-silence)"
    },
    {
     "question": "DICTO 16 Nov: construct/deconstruct the Queens (600-cell, 120-cell) from/into polytopes; cat and steak: do A, B and partner orbits build the 600-cell (corners, solids, walls)?",
@@ -8238,7 +8238,8 @@
     "result": "corners: P = A+(-A)+C3+B+(-B); walls: A and B together use all 60 mirrors + 40 cross walls; solids: no tiling, union of the 5 hulls 0.650 of P, core = uniform bitruncated 5-cell, A cap B = golden cantitruncated 5-cell; 686 regions/23 classes from A,B planes; GA complement = 20 PA-pyramids + 20 edge joins; 120-cell: 10 600-cells, 225 24-cells, 13 S5 orbits; caps over inscribed 600/24-cells overlap",
     "retry": "only the 90-plane arrangement (mode all) as a monitored job; literature check for GA complement split and the core",
     "study": "studies/2026-11-16-queens-construct",
-    "date": "2026-11-16"
+    "date": "2026-11-16",
+    "goes_to": "Walls of Silence (DRAFT papers/2026-11-16-walls-of-silence)"
    },
    {
     "date": "2026-11-16",
@@ -8246,7 +8247,7 @@
     "method": "studies/2026-11-16-queens-vicinity-vacuus: qv_lib.py + study1.py (job qvvacuus FINAL ok, 45 checks; exact Q(sqrt5) plate normals matched to the 60 mirror + 300 cross wall normals; controls 600-cell and 120-cell 60 mirror plates heart, perturbed and turned 600-cell no wall); station.py (FINAL ok)",
     "status": "SETTLED (exact)",
     "result": "hidden: snub 24-cell, grand antiprism, all diminished 600-cells (proof: every 2-face is a 600-cell triangle) on mirrors only; inscribed 24-cell (12 plates), 600-cell inscribed in the 120-cell (60), runcinated 5-cell = A4 roots (5) on cross walls only; uniform H4: two Queens hidden, 11 partly (60 M + rest none), runcinated/runcitruncated x2/omnitruncated not hidden; no uniform face on a cross wall. Exact cross-wall station law: truncated-600-cell hop at lambda3:lambda4 = 1/phi, mu = 1/2 + sqrt5/5: its Vacuus is exactly the 360 walls (20 hexagons per mirror, 8 triangles per cross wall); A and B are Koca's W(A4) orbit sets 20+/- and 30+/-. Slice atlases mostly partly hidden. Flags: none of these Vacuus readings stated by the finders",
-    "goes_to": "#107 next version (cross walls; station); Concordance"
+    "goes_to": "#107 next version (cross walls; station); Concordance; Walls of Silence (DRAFT papers/2026-11-16-walls-of-silence)"
    },
    {
     "date": "2026-11-16",
@@ -8254,7 +8255,7 @@
     "method": "studies/2026-11-16-queens-chambers: chambers.py (job qchambers FINAL ok, 24 checks): count = 14400 x regions of one H4 chamber C; exact Zaslavsky in Q(sqrt5), float splitting, float whole lattice of 360 hyperplanes; control mirrors alone exact 14400, chi (t-1)(t-11)(t-19)(t-29), volume sums",
     "status": "SETTLED (exact count; classes by distance invariants)",
     "result": "4,291,200 chambers in each Queen = 14400 x 298; 298 pairwise non-congruent pieces in C, 15 combinatorial types (155 simplices ...), all pyramids from the centre over pieces of a cell; chi = (t-1)(t^3-359t^2+45959t-2099281), not free; the 120-cell adds no walls. A: 30 mirrors (generate all W(H4)), 3360 chambers, 28 classes, 120 = the 600-cell's Coxeter chamber; B: 40 M + 40 C (cross part not a reflection system), 62,880 chambers, 524 classes, no Queen chamber",
-    "goes_to": "#107 next version; Concordance"
+    "goes_to": "#107 next version; Concordance; Walls of Silence (DRAFT papers/2026-11-16-walls-of-silence)"
    },
    {
     "date": "2026-11-16",
@@ -8337,7 +8338,8 @@
     "status": "SETTLED",
     "result": "every corner in exactly 2 of 10 inscribed 600-cells, one per state; different-state pairs share a 24-cell. 1200 A-type, 1200 B-type, 600 C3 copies, all inside inscribed 600-cells, one class each (stabiliser 12/12/24). Walls 1560 = 60 (120-cell mirrors) + 300 (inscribed mirrors) + 1200 new; chambers 14400 x 41197 = 593,236,800, none A or B. Half-cat rule: per S5, the 5 shared 24-cells split (0,12,12) once and (10,2,12) four times (A,C3,B); 18 pair patterns. Fins: all copies cover the 600-cell's triangles and edges (B-type copies partition its 1200 triangles); 120-cell pentagons only radially and only with C3 fins. Inherited-heart conjecture fails: A, B, 5-cells inherit walls but are non-heart; runcitruncated 5-cells inherited heart without walls",
     "retry": "never for these counts; leads: A-type exact triangle covers, runcitruncated plates, classes of the 41197 regions",
-    "study": "2026-11-16-redqueen-cats"
+    "study": "2026-11-16-redqueen-cats",
+    "goes_to": "Walls of Silence (DRAFT papers/2026-11-16-walls-of-silence), §6 The cats in the Red Queen; three kinds -> #105 next version"
    },
    {
     "date": "2026-11-16",
@@ -10335,6 +10337,14 @@
    "date": "2026-11-15",
    "opener": "DICTO 15 Nov: open the paper with his image of a submarine running silent at the bottom while the mines pass (U-boat, Das Boot): silence at exactly the listened-for frequencies, by disguise (Double Vision), unheard among ordinary orbits",
    "title": "Silent Running: Twisted Silence (DICTO 15 Nov)"
+  },
+  {
+   "result": "Walls of Silence (DICTO's title, 16 Nov): every central plate of the golden silent solids A and B is a 600-cell wall, exact in Q(sqrt5) (A: 30 mirrors; B: 40 mirrors + 40 cross walls); Vacuus widened to any polytope with a centre in three kinds (heart, inherited heart, non-heart; Lemma: central symmetry => every plate carries a face and its opposite; tested rule: removing corners -> inherited heart, twisting -> non-heart; first conjecture 'inherited heart iff walls inherited' failed both ways); cat and steak in the 600-cell (corners yes, walls yes, solids no; 4,291,200 chambers); the 120-cell's cats (10 inscribed 600-cells in two states, every corner in 2; 1200 A, 1200 B, 600 C3 copies; 1560 walls; 593,236,800 chambers, none a cat; skeleton fins); shadows as one lattice of possible Vacuus; the Queens' neighbours as Vacuus; golden station mu = 1/2 + sqrt5/5",
+   "study": "studies/2026-11-16-600cell-walls, -non-heart-vacuus, -queens-vicinity-vacuus, -queens-chambers, -queens-construct, -queens-shadows, -redqueen-cats",
+   "goes_to": "own paper first: DRAFT papers/2026-11-16-walls-of-silence (Walls of Silence, 16 Nov, 21 pp., unpublished, awaiting DICTO's read; subtitle to choose; prior-art check incomplete), the place paper paired with Silent Running; then the A Brief Geometry of Space chapter Twisted Walls of Silence; three kinds -> #105 next version; cross walls and station -> #107 next version",
+   "draft": "papers/2026-11-16-walls-of-silence/paper.html (Main theorem; Lemma 1; Theorems 2-7; Propositions 8 (diminished 600-cells hidden; inherited heart unless antipodal, proved) and 9 (cross-wall law)); DRAFT-walls-of-silence.pdf in the reading folder",
+   "date": "2026-11-16",
+   "title": "Walls of Silence (DICTO 16 Nov)"
   }
  ]
 }
