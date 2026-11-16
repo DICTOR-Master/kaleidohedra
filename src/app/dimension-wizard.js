@@ -186,6 +186,23 @@ const CSS = `
 .dicto-block-name { font: 800 var(--text-xl)/1.2 var(--font-ui); letter-spacing: 0.06em; color: var(--pale); }
 .dicto-block-name span { color: var(--accent-strong); }
 .dicto-block .dim-wizard-section .dim-wizard-label { color: var(--pale); }
+/* The gold block under The Five Orders of Space (DICTO 2026-11-16): five ring labels to jump to, each ring's heading in its
+   element colour, and a small "new" mark on the newest work. */
+.dicto-ring-jump { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 6px; margin: 10px 0 2px; }
+.dicto-ring-btn { min-height: max(var(--touch), 52px); padding: 4px 2px; cursor: pointer; touch-action: manipulation;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+  color: var(--pale); background: color-mix(in srgb, var(--ring) 14%, transparent);
+  border: 1px solid var(--ring); border-bottom-width: 3px; border-radius: var(--radius-m); font: 700 var(--text-s) var(--font-ui); }
+.dicto-ring-btn:hover, .dicto-ring-btn:focus-visible { background: color-mix(in srgb, var(--ring) 30%, transparent); }
+.dicto-ring-btn .dicto-ring-kanji { font-size: var(--text-xl); line-height: 1.1; color: var(--ring); }
+.dicto-ring-btn .dicto-ring-name { font-size: clamp(10px, 2.9vw, var(--text-s)); white-space: nowrap; }
+.dicto-ring { display: flex; align-items: baseline; gap: 8px; margin: 14px 0 0; padding: 2px 0 4px 8px; scroll-margin-top: 12px;
+  border-left: 4px solid var(--ring); border-bottom: 1px solid color-mix(in srgb, var(--ring) 55%, transparent);
+  font: 800 var(--text-s) var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--pale); }
+.dicto-ring .dicto-ring-kanji { font-size: var(--text-l); color: var(--ring); letter-spacing: 0; }
+.dicto-ring-none { --ring: #9ab; text-transform: none; letter-spacing: 0.02em; }
+.dicto-new { display: inline-block; vertical-align: 2px; margin-left: 4px; padding: 0 7px; border-radius: 999px;
+  font: 800 var(--text-xs)/1.5 var(--font-ui); letter-spacing: 0.04em; color: #1a1408; background: var(--wire, #e8c25a); box-shadow: 0 0 4px rgba(var(--wire-rgb, 232, 194, 90), 0.8); }
 .dim-wizard-back {
   background: none; border: none; color: var(--accent); cursor: pointer;
   font: var(--text-m) var(--font-ui); padding: 0; margin-bottom: 10px;
@@ -492,7 +509,8 @@ export const LATTICES_3D = [
     { label: 'Truncated Tetrahedron', action: 'tool:pieceType:pyrochlore' },
   ] },
   // Golden Breathing Pyrochlore (DICTO 2026-10-14): big and small tetrahedra tip to tip, the hexagons FUJI's flat-ended triangles;
-  // its own world to build (world-breathing.js), next to the Pyrochlore; listed once per door (the wizard drops repeats).
+  // its own world to build (world-breathing.js), next to the Pyrochlore. DICTO's, so listed in the gold DICTO block under Book One
+  // (DICTO 2026-11-16, the apps census), not among either app's lattices.
   { key: 'breathing', label: 'Golden Breathing Pyrochlore', pieces: [
     { label: 'Golden Breathing Pyrochlore', action: 'tool:breathingWorld' },
   ] },
@@ -692,8 +710,34 @@ const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'REULEAUX_PLATONIC', 'PLATONIC', 'A
 // DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
 // it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
 // Polyhedraverse pieces gathered from across its families.
-const DICTO_WORK = new Set(['bitrunc', 'perm4', 'mandala', 'starCores', 'whiteQueen', 'bloom', 'stackings', 'hexoct', 'dictonic', 'globalWeb', 'platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
+const DICTO_WORK = new Set(['breathing', 'bodhiPyro', 'bitrunc', 'perm4', 'mandala', 'starCores', 'whiteQueen', 'bloom', 'stackings', 'hexoct', 'dictonic', 'globalWeb', 'platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
+// The Five Orders of Space (DICTO 2026-11-16, from the apps census of 2026-11-15): the gold block's worlds and lattices under the
+// five rings, Earth, Water, Fire, Wind, Void (Musashi's five rings), in book order; inside each book, the order the block had
+// before (newest first). Each ring's heading wears its element colour (DICTO's element colours, agreed 2026-10-22). An entry on
+// no shelf yet (Golamandalas, whose paper is in no book yet, and any new world) is listed after the rings. 'hex' is the
+// DICTO Hex Prism (split off the hexagonal lattice).
+export const FIVE_RINGS = [
+  { id: 'earth', kanji: '地', colour: '#488e48', books: ['One', 'Two'] },
+  { id: 'water', kanji: '水', colour: '#3a70cd', books: ['Three', 'Four', 'Five'] },
+  { id: 'fire', kanji: '火', colour: '#cd3e28', books: ['Six', 'Seven'] },
+  { id: 'wind', kanji: '風', colour: '#e8c852', books: ['Eight'] },
+  { id: 'void', kanji: '空', colour: '#8a5cc4', books: ['Nine', 'Ten', 'Eleven'] },
+];
+export const DICTO_SHELF = [
+  ['One', ['octetTruss', 'ocdStella', 'icosa', 'dodeca', 'bodhiPyro', 'breathing']],
+  ['Two', ['octet', 'thirteens', 'stellaJewel', 'sunstar', 'octetBuild', 'targets', 'shells', 'dictofcc', 'hex']],
+  ['Three', ['dictonic', 'globalWeb', 'bloom']],
+  ['Four', ['up', 'vajrayana', 'doubleVision', 'cycles', 'theaetetus', 'chains']],
+  ['Five', ['starCores']],
+  ['Six', ['stackings', 'hexoct']],
+  ['Seven', ['bitrunc', 'perm4']],
+  ['Eight', ['platonicMix', 'reuleaux', 'aristotle', 'roofFold', 'studies']],
+  ['Nine', ['golden']],
+  ['Ten', ['whiteQueen']],
+];
+// The newest work carries a small "new" mark in its row instead of moving to the top.
+const NEW_WORK = new Set(['bitrunc', 'perm4']);
 // DICTO's newest first (DICTO 2026-11-02): the four Star Cores solids D106–D109 (named 2026-10-31), then Kagemusha's crests and the other
 // Star Cores shapes not in PV before (D105 down to D22, newest first), each in its own section.
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: [...NARCISSUS_IDS, ...STAR_CORES_SOLID_IDS, ...KAGEMUSHA_CREST_IDS, ...STAR_CORES_SHAPE_IDS, 'DICTO_ICOSAXES', 'DICTO_UNBORN_AXES', 'DICTO_LOTUS_JEWEL_AXES', 'DICTO_DODECAXES', 'DICTO_SAMSON', 'DICTO_DELILAH', 'TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY', 'DICTO_EDGE_ROOF', 'DICTO_UNBORN', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
@@ -938,6 +982,11 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     bodyEl.querySelectorAll('.dicto-dim-content [data-action]:not([data-lattices])').forEach((el) => el.addEventListener('click', () => choose(openDim, el.dataset.action, el.dataset.app)));
     bodyEl.querySelectorAll('[data-lattices]').forEach((el) => el.addEventListener('click', () => showRhombiLattices()));
     bodyEl.querySelectorAll('[data-family]').forEach((el) => el.addEventListener('click', () => showPolyFamily(el.dataset.family)));
+    // A ring label scrolls the list to that ring's heading (smooth unless the reader asks for less motion).
+    bodyEl.querySelectorAll('[data-ring-jump]').forEach((el) => el.addEventListener('click', () => {
+      const still = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+      bodyEl.querySelector(`.dicto-ring[data-ring="${el.dataset.ringJump}"]`)?.scrollIntoView({ block: 'start', behavior: still ? 'auto' : 'smooth' });
+    }));
     wireSearch(L);
     if (scrollTo) bodyEl.querySelector(scrollTo)?.scrollIntoView({ block: 'start' });
   }
@@ -999,7 +1048,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
         <button type="button" class="dim-wizard-card-btn" data-action="${piece.action}" data-app="${e.lattice3d ? dictoOpen(piece.action) : e.app}">
           ${previewSlot(() => (piece.preview ? piece.preview() : pieceEdges(piece.action)))}
           <span class="dim-wizard-row-text">
-            <span class="dim-wizard-label">${e.lat.label}</span>
+            <span class="dim-wizard-label">${e.lat.label}${newMark(e)}</span>
             <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.lat.key}${e.dicto && e.lat.key === 'hex' ? 'Dicto' : ''}`, L)}</span>
           </span>
         </button>`;
@@ -1007,7 +1056,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
       // A lattice or world: its heading, then its pieces.
       return `
         <div class="dim-wizard-section">
-          <span class="dim-wizard-label">${e.lat.label}</span>
+          <span class="dim-wizard-label">${e.lat.label}${newMark(e)}</span>
           <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.lat.key}${e.dicto && e.lat.key === 'hex' ? 'Dicto' : ''}`, L)}</span>
         </div>${e.lat.pieces.map((piece) => `
         <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-action="${piece.action}" data-app="${e.lattice3d ? dictoOpen(piece.action) : e.app}">
@@ -1015,18 +1064,39 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
           <span class="dim-wizard-row-text"><span class="dim-wizard-label">${piece.label}</span></span>
         </button>`).join('')}`;
     };
+    const newMark = (e) => (e.lattice3d && NEW_WORK.has(e.lat.key) ? ` <span class="dicto-new">${t('wiz.new', L)}</span>` : '');
     let html = '';
     for (const app of [...new Set(entries.map((e) => e.app))]) {
       const mine = entries.filter((e) => e.app === app);
-      html += `<div class="dicto-block${app === 'dicto' && mine.some((e) => e.lattice3d) ? ' dicto-gold' : ''}" style="${blockStyle(app)}"><div class="dicto-block-name">${wordmark(app)}</div>`;
+      const gold = app === 'dicto' && mine.some((e) => e.lattice3d);
+      html += `<div class="dicto-block${gold ? ' dicto-gold' : ''}" style="${blockStyle(app)}"><div class="dicto-block-name">${wordmark(app)}</div>`;
       const kinds = app === 'dicto' ? [...KINDS.filter(([k]) => k === 'shapes'), ...KINDS.filter(([k]) => k !== 'shapes')] : KINDS;
       const present = kinds.filter(([kind]) => mine.some((e) => e.kind === kind));
       for (const [kind, label] of present) {
+        // The gold block's worlds and lattices go under the five rings instead (ringsHtml).
+        if (gold && (kind === 'world' || kind === 'lattice')) continue;
         if (present.length > 1 && label) html += `<div class="dim-wizard-kind">${t(label, L)}</div>`;
         html += mine.filter((e) => e.kind === kind).map(row).join('');
       }
+      if (gold) html += ringsHtml(mine.filter((e) => e.lattice3d), row, L);
       html += '</div>';
     }
+    return html;
+  }
+  // The gold block under The Five Orders of Space: a row of the rings to jump to, then each ring's heading in its element
+  // colour and its entries in book order; a ring with nothing in it is not shown; entries on no shelf yet come last.
+  function ringsHtml(list, row, L) {
+    const place = new Map(DICTO_SHELF.flatMap(([book, keys]) => keys.map((k, i) => [k, [book, i]])));
+    const bookIx = new Map(DICTO_SHELF.map(([book], n) => [book, n]));
+    const at = (e) => { const [book, i] = place.get(e.lat.key); return bookIx.get(book) * 1000 + i; };
+    const rings = FIVE_RINGS.map((r) => ({ ...r, list: list.filter((e) => r.books.includes(place.get(e.lat.key)?.[0])).sort((x, y) => at(x) - at(y)) }))
+      .filter((r) => r.list.length);
+    const rest = list.filter((e) => !place.has(e.lat.key));
+    const name = (r) => { const n = t(`wiz.ring.${r.id}`, L); return `<span class="dicto-ring-kanji">${r.kanji}</span>${n === r.kanji ? '' : `<span class="dicto-ring-name">${n}</span>`}`; };
+    let html = `<div class="dicto-ring-jump" role="navigation" aria-label="${t('wiz.ring.jump', L)}">${rings.map((r) => `
+        <button type="button" class="dicto-ring-btn" data-ring-jump="${r.id}" style="--ring: ${r.colour}">${name(r)}</button>`).join('')}</div>`;
+    for (const r of rings) html += `<div class="dicto-ring" data-ring="${r.id}" style="--ring: ${r.colour}">${name(r)}</div>` + r.list.map(row).join('');
+    if (rest.length) html += `<div class="dicto-ring dicto-ring-none">${t('wiz.ring.none', L)}</div>` + rest.map(row).join('');
     return html;
   }
 

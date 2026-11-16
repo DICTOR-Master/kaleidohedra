@@ -1,5 +1,5 @@
 // Golamandalas (DICTO 2026-11-08) through the real UI on an iPad (1024 × 1366, touch):
-// - Kaleidohedra door, DICTO → 3D+: Golamandalas card right after DICTONIC opens the world; the title, a minimise chevron, no
+// - Kaleidohedra door, DICTO → 3D+: Golamandalas card, after the five rings (its paper is in no book yet), opens the world; the title, a minimise chevron, no
 //   ◀ ▶ buttons, no paint, shear or lattice-view controls;
 // - Yantra: 9 tetrahedra in 9 cones with 9 marma circles, opening between still positions; tapping along the one big slider reaches
 //   the three still positions (the narrowed yantra, 18 meetings) and the turns between them;
@@ -49,8 +49,8 @@ await page.waitForSelector('.dim-wizard-overlay.open');
 if (!(await page.locator('[data-action="tool:mandalaWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
 await page.waitForTimeout(500);
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-assert.equal(worlds[0], 'tool:dictonicWorld', 'DICTONIC still first');
-assert.equal(worlds[1], 'tool:mandalaWorld', 'Golamandalas right after DICTONIC'); checks += 2;
+assert.equal(await page.evaluate(() => document.querySelector('.dicto-ring-none')?.nextElementSibling?.dataset.action), 'tool:mandalaWorld', 'Golamandalas after the rings, its paper in no book yet (the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))');
+assert.equal(worlds[worlds.indexOf('tool:whiteQueenWorld') + 1], 'tool:mandalaWorld', 'after the Void'); checks += 2;
 const card = page.locator('[data-action="tool:mandalaWorld"]').first(); await card.scrollIntoViewIfNeeded();
 const cb = await card.boundingBox(); assert.ok(cb.width >= 44 && cb.height >= 44, 'touchable card'); checks++;
 await shot('ipad-wizard');

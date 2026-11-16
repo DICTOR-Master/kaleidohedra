@@ -1,5 +1,5 @@
-// The Universal PiTet world (DICTO 2026-10-19) through the real UI on an iPad, from both doors (SITE=kaleidohedra | rhombiverse): first in
-// DICTO's block, opened from the wizard, its views (shells 308, Vajras, hexagonal Cleos, the DICTO OG Family up / down / breaks, the cycle), the endless film's Unwrap / Wrap
+// The Universal PiTet world (DICTO 2026-10-19) through the real UI on an iPad, from both doors (SITE=kaleidohedra | rhombiverse): first of
+// Book Four in DICTO's block (Water), opened from the wizard, its views (shells 308, Vajras, hexagonal Cleos, the DICTO OG Family up / down / breaks, the cycle), the endless film's Unwrap / Wrap
 // toggles (play, pause, the other way), Pull apart, the ?open=up:cycle link; no errors. Screenshots.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
@@ -11,8 +11,8 @@ await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page
 await page.waitForSelector('.dim-wizard-overlay.open');
 if (!(await page.locator('[data-action="tool:upWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
 await page.waitForTimeout(500);
-const first = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World/.test(a))[0]);
-console.log(SITE, 'first DICTO world:', first); assert.equal(first, 'tool:dictonicWorld'); // DICTONIC is the newest work (DICTO 2026-10-23)
+const all = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a))), first = all[all.indexOf('tool:bloomWorld') + 1];
+console.log(SITE, 'after the Bloom:', first); assert.equal(first, 'tool:upWorld'); // Book Four first (Water; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))
 const btn = page.locator('[data-action="tool:upWorld"]').first(); await btn.scrollIntoViewIfNeeded(); await btn.tap();
 await page.waitForTimeout(500);
 if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');

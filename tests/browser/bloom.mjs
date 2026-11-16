@@ -1,5 +1,5 @@
 // The Icosaxes Bloom (DICTO 2026-10-27, paper #59), through the real UI, touch, phone (390×844) and iPad (820×1180), on the Kaleidohedra
-// and Rhombiverse doors (DOORS): right after the Stackings World in DICTO's list; three buttons (big enough to touch); the slider snaps to
+// and Rhombiverse doors (DOORS): after the Global Web of Bonds in DICTO's list (Water, Book Three); three buttons (big enough to touch); the slider snaps to
 // every stop and only stops (Bloom, Bud, Seed; Lotus Jewel Seed for Lotus Jewel Axes), the joined solid drawn, the caption naming the stop; the Icosaxes
 // Hexa views; ?open=bloom:<kind>. No console errors. Screenshots ($SHOTS, default /tmp/bloom-shots) at TV 1280×720, iPad 820×1050 and
 // phone 390×760 of the Bud and the Lotus Hexa.
@@ -29,7 +29,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     if (!(await page.locator('[data-action="tool:bloomWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-    assert.deepEqual(worlds.slice(0, 4), ['tool:dictonicWorld', 'tool:globalWebWorld', 'tool:stackingsWorld', 'tool:bloomWorld'], `${tag}: after the Stackings World`); checks++;
+    assert.equal(worlds[worlds.indexOf('tool:globalWebWorld') + 1], 'tool:bloomWorld', `${tag}: after the Global Web (Book Three; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
     assert.equal(await page.evaluate(() => /wiz\.\w/.test(document.body.innerText)), false, `${tag}: no raw wiz.* keys in the menu`); checks++;
     await page.locator('[data-action="tool:bloomWorld"]').first().tap(); await page.waitForTimeout(400);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');

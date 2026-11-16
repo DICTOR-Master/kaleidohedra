@@ -1,5 +1,5 @@
 // The Bitruncated 600-cell (DICTO 2026-11-10; src/app/world-bitrunc.js), through the real UI, touch, phone (390×844) and iPad
-// (820×1180), on the Kaleidohedra and Rhombiverse doors (DOORS): right after DICTONIC in DICTO's list; it opens on the Sweep along the
+// (820×1180), on the Kaleidohedra and Rhombiverse doors (DOORS): after HexOct in DICTO's list (Fire, Book Seven); it opens on the Sweep along the
 // generic direction at the swap nearest the middle, the four cells lit (two let go, two meet) and captioned "Swap k of 2166: …";
 // the five direction buttons give each sweep's own stops and totals (generic 716 / 716 / 2166, cell-first 1782 = 1782); the big slider
 // at the bottom stops at every corner height and gap middle; Play runs the sweep and stops on a touch. Shadow: From / To and one big
@@ -71,7 +71,7 @@ for (const door of (PARTS.includes('doors') ? process.env.DOORS ?? 'kaleidohedra
     if (!(await page.locator('[data-action="tool:bitruncWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-    assert.equal(worlds[worlds.indexOf('tool:dictonicWorld') + 1], 'tool:bitruncWorld', `${tag}: right after DICTONIC`); checks++;
+    assert.equal(worlds[worlds.indexOf('tool:hexoctWorld') + 1], 'tool:bitruncWorld', `${tag}: Book Seven first, after HexOct (Fire; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
     await page.locator('[data-action="tool:bitruncWorld"]').first().tap(); await leave(page);
     await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1500);
     const caption = () => page.locator(`${P} .ch-param-caption`).textContent();

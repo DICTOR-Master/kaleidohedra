@@ -1,5 +1,5 @@
 // The OG on the Octet Truss (DICTO 2026-10-19; paper #37) through the real UI on an iPad: opened from the DICTO wizard (first of DICTO's
-// worlds, newest work), the preset (golden-key octet round one OG), every family and kit button, set / round / network with the
+// worlds: Earth, Book One), the preset (golden-key octet round one OG), every family and kit button, set / round / network with the
 // pull-apart and size sliders (each shown only where it applies), the chamber with no view buttons, a tapped piece named, Reset, and the
 // ?open=octetTruss:starW link; no errors. Screenshots.
 import { chromium } from 'playwright';
@@ -17,7 +17,7 @@ if (!(await page.locator('[data-action="tool:octetTrussWorld"]').count())) await
 await page.waitForTimeout(500);
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a)));
 console.log('first DICTO worlds:', worlds.slice(0, 3).join(', '));
-assert.equal(worlds[0], 'tool:dictonicWorld', 'new work first (DICTONIC, 2026-10-23)'); assert.equal(worlds[1], 'tool:globalWebWorld', 'then The Global Web of Bonds (2026-10-25)'); assert.equal(worlds[2], 'tool:platonicMixWorld', 'then Every Mix of the Platonic Solids (#47)'); assert.equal(worlds[3], 'tool:reuleauxWorld', 'then The Reuleaux Platonic Solids (#45)'); assert.equal(worlds[4], 'tool:aristotleWorld', "then Aristotle's Pyramid (#44)"); assert.equal(worlds[5], 'tool:octetTrussWorld', 'then the octet truss'); assert.equal(worlds.filter((a) => a === 'tool:octetTrussWorld').length, 1, 'listed once');
+assert.equal(worlds[0], 'tool:octetTrussWorld', 'first under Earth (Book One; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))');
 await page.locator('[data-action="tool:octetTrussWorld"]').first().tap();
 await page.waitForTimeout(500);
 if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');

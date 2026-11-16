@@ -1,5 +1,5 @@
 // The Stackings World (DICTO 2026-10-26), through the real UI, touch, phone (390×844) and iPad (820×1180), on the Kaleidohedra and
-// Rhombiverse doors (DOORS): right after the Global Web of Bonds in DICTO's list; the six polytype buttons (big enough to touch); one
+// Rhombiverse doors (DOORS): after Star Cores in DICTO's list (Fire, Book Six); the six polytype buttons (big enough to touch); one
 // slider snapping to every stop of #57's walk (the pieces drawn = stackingColumn, the caption naming the stop and the census); the
 // ?open=stackings:<polytype> link. No console errors. Then screenshots ($SHOTS, default /tmp/stackings-shots) at TV 1280×720,
 // iPad 820×1050 and phone 390×760 of 4H at λ = 0 (Janus pieces in gold and platinum).
@@ -31,7 +31,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     if (!(await page.locator('[data-action="tool:stackingsWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-    assert.deepEqual(worlds.slice(0, 3), ['tool:dictonicWorld', 'tool:globalWebWorld', 'tool:stackingsWorld'], `${tag}: after the Global Web`); checks++;
+    assert.equal(worlds[worlds.indexOf('tool:starCoresWorld') + 1], 'tool:stackingsWorld', `${tag}: Book Six first, after Star Cores (Fire; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
     await page.locator('[data-action="tool:stackingsWorld"]').first().tap(); await page.waitForTimeout(400);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');
     await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1500);

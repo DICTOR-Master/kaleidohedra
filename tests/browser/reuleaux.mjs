@@ -12,8 +12,8 @@ await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page
 await page.waitForSelector('.dim-wizard-overlay.open');
 if (!(await page.locator('[data-action="tool:reuleauxWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
 await page.waitForTimeout(500);
-const first = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a))[1]);
-assert.equal(first, 'tool:reuleauxWorld', 'next to the newest work (#47)');
+const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a)));
+assert.equal(worlds[worlds.indexOf('tool:platonicMixWorld') + 1], 'tool:reuleauxWorld', 'next to Every Mix (Book Eight; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))');
 // the link
 await page.goto(`${BASE}/index.html?site=${SITE}&open=reuleaux&probe`); await page.waitForTimeout(1500);
 if (await page.locator('#welcome-overlay').isVisible()) await page.keyboard.press('Enter');

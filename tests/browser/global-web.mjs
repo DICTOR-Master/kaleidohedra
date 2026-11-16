@@ -31,7 +31,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     if (!(await page.locator('[data-action="tool:globalWebWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-    assert.deepEqual(worlds.slice(0, 2), ['tool:dictonicWorld', 'tool:globalWebWorld'], `${tag}: next to DICTONIC`); checks++;
+    assert.equal(worlds[worlds.indexOf('tool:dictonicWorld') + 1], 'tool:globalWebWorld', `${tag}: next to DICTONIC (Book Three; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
     await page.locator('[data-action="tool:globalWebWorld"]').first().tap(); await page.waitForTimeout(400);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');
     await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1200);
