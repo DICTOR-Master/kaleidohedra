@@ -304,7 +304,7 @@ Add with "edit" on each entry. Signature at the end: "- _DICTO_, Nov 07 2026" (o
 %Y A002899 Cf. A293237, A402231.
 ```
 
-**A008264** (lonsdaleite coordination sequence):
+**A008264** (lonsdaleite coordination sequence): PROPOSED 16 Nov 2026 by DICTO (comment + link; entry-2 placeholders removed, signed _James Baker_).
 ```
 %C A008264 Empirically also the coordination sequence of every atom of the cubic (A) bilayers of the 4H polytype (stacking ABAC, network of 4H-SiC with all atoms alike); checked for n <= 100. The atoms of the hexagonal bilayers of 4H have A??????(entry 2). - _DICTO_, Nov 07 2026
 %H A008264 DICTO, <a href="https://doi.org/10.5281/zenodo.23730421">Spin Ice and Kagome Magnets on Every Stacking</a>, Zenodo (2026).
