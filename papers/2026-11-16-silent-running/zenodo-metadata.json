@@ -1,0 +1,208 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "subjects": [
+  {
+   "term": "MSC2020 05B30: Other designs, configurations",
+   "identifier": "https://zbmath.org/classification/?q=cc:05B30",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 20C15: Ordinary representations and characters",
+   "identifier": "https://zbmath.org/classification/?q=cc:20C15",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 20E45: Conjugacy classes for groups",
+   "identifier": "https://zbmath.org/classification/?q=cc:20E45",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 33C55: Spherical harmonics",
+   "identifier": "https://zbmath.org/classification/?q=cc:33C55",
+   "scheme": "url"
+  }
+ ],
+ "version": "1",
+ "publication_date": "2026-11-16",
+ "title": "Silent Running: Twisted Silence",
+ "description": "<p><i>Listening for hidden symmetries that silence specific harmonics of point sets in the 600-cell.</i></p><p><b>Main theorem.</b> Split the 120 corners of the 600-cell by the symmetry group S5 of the 5-cell. The 20 permutations of (φ², φ², φ², φ, 0) are silent (every harmonic polynomial of that degree sums to zero over them) in exactly the degrees 1, 2, 5 and 7, and the 30 permutations of (φ², φ², 1, 1, 0) in exactly 1, 2, 3 and 6. Their symmetry is S5 and nothing more, and S5 forces only degrees 1 and 2: the other silences are forced by a hidden symmetry, the twisted conjugacy classes of the binary icosahedral group under its Galois twist (Theorem 1, a general silence criterion for twisted classes of any finite subgroup of a compact group).</p><p>A finite set of points on a sphere is silent in degree k when every harmonic polynomial of degree k sums to zero over it. Symmetry forces some silences: a set with the symmetry of a group G is silent in every degree in which G has no invariant harmonic. We show that a second, hidden kind of symmetry forces more. Read the 120 corners of the 600-cell as the binary icosahedral group 2I of unit quaternions. The symmetry group S5 of the 5-cell splits them into five orbits of 20, 20, 20, 30 and 30 corners (Koca et al. [32, 4]). Each orbit is a twisted conjugacy class {a·x·σ(a)<sup>−1</sup>}, where σ is the outer automorphism of 2I: the Galois conjugation √5 ↦ −√5 followed by a rotation. Main theorem: the 20 permutations of (φ², φ², φ², φ, 0) are silent in exactly the degrees 1, 2, 5 and 7, and the 30 permutations of (φ², φ², 1, 1, 0) in exactly 1, 2, 3 and 6, in all degrees. Their symmetry is S5 and nothing more, and S5 forces only degrees 1 and 2. The other silences are forced by twisted characters (Theorem 1, a general silence criterion for twisted classes of any finite subgroup of a compact group). Three accounts of the mechanism (twisted characters of 2I, Schur's spin characters of a double cover of S5 with an integrality argument, and Brauer's defect zero) are one piece of representation theory seen three ways (Proposition 3). Galois conjugation, which DICTO calls Double Vision, builds the twist; as a map of the set it forces only that every tone is rational. A census of 3232 point sets in five H4 and E8 polytopes leaves three open families. A classification shows where genuine twists exist (I2(n), H3, H4 through Galois conjugation, and Sym6 through its exceptional automorphism, which adds no silence), a dial shows the double silences are isolated points, and a crystallographic reading matches the forced silences with the systematic absences of a nonsymmorphic space group.</p><p>Companion paper: Walls of Silence: The Walls of the Six Hundred (#110, DICTO DOI: 10.5281/zenodo.24272477) shows where these silent shapes hide, in the walls of the 600-cell and the 120-cell.</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "DICTO",
+  "twisted silence",
+  "600-cell",
+  "binary icosahedral group",
+  "twisted conjugacy classes",
+  "spherical designs",
+  "harmonic index",
+  "harmonic strength",
+  "Galois conjugation",
+  "Double Vision",
+  "spin characters",
+  "H4",
+  "E8",
+  "systematic absences"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24272477",
+   "relation": "isSupplementedBy",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24272477",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23407106",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1515/crll.1911.139.155",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.2307/1968918",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.3906/fiz-1109-11",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1134/S1061920818010028",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1007/BF03187604",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1007/978-1-4612-5648-9_13",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1016/j.jat.2014.06.010",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.37236/6437",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.2969/jmsj/03620341",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1007/3-7643-7447-0_6",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1090/pspum/037/604577",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1103/RevModPhys.64.3",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1103/PhysRevB.65.024201",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1107/97809553602060000114",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1039/c2cs35120j",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1007/BF02234767",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1088/0305-4470/20/18/016",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24121177",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1007/BF02711518",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1016/j.jalgebra.2021.07.034",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1016/j.laa.2005.07.018",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1016/S0195-6698(03)00101-X",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.4153/CJM-2011-069-5",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1007/BF00961408",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1016/0024-3795(89)90462-X",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1016/j.disc.2012.11.012",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}

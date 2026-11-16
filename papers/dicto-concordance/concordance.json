@@ -701,6 +701,22 @@
    "date_first": true,
    "version": 1,
    "doi_v1": "24126803"
+  },
+  "109": {
+   "title": "Silent Running: Twisted Silence",
+   "doi": "24272473",
+   "date": "2026-11-16",
+   "date_first": true,
+   "version": 1,
+   "doi_v1": "24272474"
+  },
+  "110": {
+   "title": "Walls of Silence: The Walls of the Six Hundred",
+   "doi": "24272477",
+   "date": "2026-11-16",
+   "date_first": true,
+   "version": 1,
+   "doi_v1": "24272478"
   }
  },
  "strands": [
@@ -8036,7 +8052,8 @@
     "status": "SETTLED: forced (new kind T, twisted silence: DICTO 16 Nov; was R, representation forcing)",
     "result": "Both golden members are S5-orbits of one 600-cell (split 20+20+20+30+30, Koca et al. 2012) = twisted conjugacy classes of 2I. On the 600-cell T5 and T7 both see only the 6-block (2' is not alpha-stable), so T5 = T7 = 0 is one condition. Squared twisted values are integers (2.S5 spin characters): 2u + 3v = 6 forces u = 0 or v = 0; actual (0,2) (Schur 1911): 6 vanishes on the (3,2)-type pair (X: T5 = T7 = 0), 4s on the 4-cycle pair (Y: T3 = 0), standard character 0 on 4-cycles (Y: T6 = 0). All zeros k <= 30 of all five orbits predicted exactly. Double Vision fixes every orbit: forces only rational tones. All 416 census coincidences now explained. Systematic: no other orbit with two unforced silences via one block; only extra doubles are two 600-cell dodecahedral classes (angle pi/3, zeros 2, 5: Chebyshev rule) and antipodal E8 orbits (-I).",
     "retry": "never for these two members; open only: E8 second classes of subsystems, 120-cell blocks, other twisted actions (2O, other groups as point sets), isometries of an orbit outside Aut(P)",
-    "study": "studies/2026-11-15-golden-a4-candidate"
+    "study": "studies/2026-11-15-golden-a4-candidate",
+    "published": "#109, published 16 Nov 2026, DICTO DOI: 10.5281/zenodo.24272473 (Version 1: 10.5281/zenodo.24272474)"
    },
    {
     "date": "2026-11-15",
@@ -8110,7 +8127,8 @@
     "result": "only 2I on S^3 gives an irreducible Galois twist on a group sphere; its classes X {1,2,5,7}, F {1,2,3,6} are the ONLY multi-silent points on both 1-dim strata (exact, k<=30) apart from antipodal points; certified generic face/interior orbits carry exactly their defining silences (no overdetermined point found); ordinary 2I latitudes are multi-silent only in families (w=+-1/2: {2,5} for every axis); dihedral twisted classes = cosine rule (rectangles D16, D24 hexagonal stars); 2T/2O = rotated or latitude classes; W(H3) nothing beyond 1; W(H4) Galois classes in S^15 kill degree 3 unforced by the twist group (candidates)",
     "retry": "never for the dihedral, 2T, 2O, 2I, W(H3) signatures or the edge analysis; open only: W(H4) degree-3 forcing by full symmetry / O(4) irreducible, elimination proof of no generic (5,7)/(3,6) points, reading Bannai 1969 / Franzsen 2001",
     "study": "studies/2026-11-15-twisted-silence-groups",
-    "goes_to": "aim 2 (laws) notes; clause (C) character silence of the census"
+    "goes_to": "aim 2 (laws) notes; clause (C) character silence of the census",
+    "published": "#109, published 16 Nov 2026, DICTO DOI: 10.5281/zenodo.24272473 (Version 1: 10.5281/zenodo.24272474)"
    },
    {
     "date": "2026-11-16",
@@ -8339,7 +8357,8 @@
     "result": "every corner in exactly 2 of 10 inscribed 600-cells, one per state; different-state pairs share a 24-cell. 1200 A-type, 1200 B-type, 600 C3 copies, all inside inscribed 600-cells, one class each (stabiliser 12/12/24). Walls 1560 = 60 (120-cell mirrors) + 300 (inscribed mirrors) + 1200 new; chambers 14400 x 41197 = 593,236,800, none A or B. Half-cat rule: per S5, the 5 shared 24-cells split (0,12,12) once and (10,2,12) four times (A,C3,B); 18 pair patterns. Fins: all copies cover the 600-cell's triangles and edges (B-type copies partition its 1200 triangles); 120-cell pentagons only radially and only with C3 fins. Inherited-heart conjecture fails: A, B, 5-cells inherit walls but are non-heart; runcitruncated 5-cells inherited heart without walls",
     "retry": "never for these counts; leads: A-type exact triangle covers, runcitruncated plates, classes of the 41197 regions",
     "study": "2026-11-16-redqueen-cats",
-    "goes_to": "Walls of Silence (DRAFT papers/2026-11-16-walls-of-silence), §6 The cats in the Red Queen; three kinds -> #105 next version"
+    "goes_to": "Walls of Silence (DRAFT papers/2026-11-16-walls-of-silence), §6 The cats in the Red Queen; three kinds -> #105 next version",
+    "published": "#110, published 16 Nov 2026, DICTO DOI: 10.5281/zenodo.24272477 (Version 1: 10.5281/zenodo.24272478)"
    },
    {
     "date": "2026-11-16",
@@ -8349,7 +8368,8 @@
     "result": "P* = Q exact; Q = A* n -A* n C3* n B* n -B*. A* (10,30,40,20; 20 tetrahedra; Kleetope of the 5-cell; 5 corners on Q), B* (20,80,90,30; 30 triangular bipyramids), C3* (30,70,60,20; trapezohedral cells); all plates on the 120-cell's own mirrors (10 per copy); A*, B* inherited heart, C3* heart. Placement I (300 copies): every pentagon whole by 10 A*, 10 B*, 5 C3*, every edge by 26/27/13; finite = radial; all-or-nothing, 60 pentagons per copy (6 of 12 on each of 10 mirrors; the five duals of an S5 take 5 different halves). No exact cover (12 impossible); fewest A* 16 (proved), B* 16, C3* 22; edges A* 8. Placement II (3000 inclusion copies dualised): plates all on cross walls, pentagons 0 exactly, edges whole. Each 120-cell corner is a corner of exactly 1 A*, whose 5 Q-corners lie one in each of the 10 inscribed 600-cells. P's 25 24-cells, 10 splits in two states of 5 (K5,5), one S5 splits each as (0,12,12) once and (10,2,12) four times in both states = the half-cat numbers. Controls: mis-scaled fails; non-golden fails the corner/cell fit but its fins still cover (coverage depends on the S5 fan, not on the golden ratio)",
     "retry": "never for these counts; leads: mixed minimal covers, A* corner partition vs White Queens, the five halves per mirror",
     "study": "2026-11-16-redqueen-cats",
-    "goes_to": "Walls of Silence (DRAFT papers/2026-11-16-walls-of-silence) after the Fable review, near §6 The cats in the Red Queen; Alicia chapter 'The Queens' walls and their cats'; builds on ledger entry: 120-cell survey (DICTO 16 Nov: half-alive cats ..."
+    "goes_to": "Walls of Silence (DRAFT papers/2026-11-16-walls-of-silence) after the Fable review, near §6 The cats in the Red Queen; Alicia chapter 'The Queens' walls and their cats'; builds on ledger entry: 120-cell survey (DICTO 16 Nov: half-alive cats ...",
+    "published": "#110, published 16 Nov 2026, DICTO DOI: 10.5281/zenodo.24272477 (Version 1: 10.5281/zenodo.24272478)"
    },
    {
     "date": "2026-11-16",
@@ -10381,7 +10401,8 @@
    "draft": "papers/2026-11-16-silent-running/paper.html (Main theorem, Theorems 1, 2, 4, Propositions 3, 5-8; Proposition 7 new: silence in 1, 5, 7 on S^3 forces p5 = p3 and p7 = (7/8) p3 exactly, proved via the U3 coefficients 1/8, 1/8, 7/64)",
    "date": "2026-11-15",
    "opener": "DICTO 15 Nov: open the paper with his image of a submarine running silent at the bottom while the mines pass (U-boat, Das Boot): silence at exactly the listened-for frequencies, by disguise (Double Vision), unheard among ordinary orbits",
-   "title": "Silent Running: Twisted Silence (DICTO 15 Nov)"
+   "title": "Silent Running: Twisted Silence (DICTO 15 Nov)",
+   "published": "#109, published 16 Nov 2026, DICTO DOI: 10.5281/zenodo.24272473 (Version 1: 10.5281/zenodo.24272474)"
   },
   {
    "result": "Walls of Silence, revised 16 Nov after the review (22 findings accepted): main result Theorem B, the 120-cell holds exactly 1200 A, 1200 B, 600 C3 copies inside its 10 inscribed 600-cells (two states, every corner in 2); walls in three classes 60 + 300 + 1200 = 1560; A copies hidden in the 120-cell's own walls, B and C3 only in their 600-cell's; the 120 B copies split each 600-cell's 1200 triangles exactly. Theorem A (A, B hidden in the 600-cell) proved from the face lemmas (edge triangles and golden rectangles on mirrors, radius triangles on cross walls). Index law for the three kinds (heart / inherited heart / non-heart). Theorem C chambers 4,291,200 and 593,236,800. Cross walls = 25 x 12 middle sections of the inscribed 24-cells (float check). Koca-Ozdes Koca-Al-Ajmi 2012 read in full: orbits as Dynkin labels only, hulls not named",
@@ -10389,7 +10410,8 @@
    "goes_to": "own paper first: DRAFT papers/2026-11-16-walls-of-silence (17 pp., revised 16 Nov, awaiting DICTO's read; subtitle to choose; Coxeter Table V check of the 24-cell reading not done; prior-art items in the status box), paired with Silent Running; then the Brief Geometry chapter Twisted Walls of Silence (full stories); three kinds + index law -> #105 next version; cross walls, stations, station shape -> #107 next version",
    "draft": "papers/2026-11-16-walls-of-silence/paper.html (Lemma 1, Proposition 2 index law, Lemma 3 face lemmas, Theorem A, Proposition 4 special cuts, Theorem B main, Proposition 5 half-cats, Theorem C chambers, Proposition 6 station; conjectures (i)-(iv)); DRAFT-walls-of-silence.pdf in the reading folder",
    "date": "2026-11-16",
-   "title": "Walls of Silence (DICTO 16 Nov)"
+   "title": "Walls of Silence (DICTO 16 Nov)",
+   "published": "#110, published 16 Nov 2026, DICTO DOI: 10.5281/zenodo.24272477 (Version 1: 10.5281/zenodo.24272478)"
   }
  ]
 }
