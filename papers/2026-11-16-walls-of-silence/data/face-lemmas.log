@@ -1,0 +1,25 @@
+CHECK ok   120 unit icosians
+CHECK ok   720 edges (inner product phi/2)
+CHECK ok   1200 triangles, 600 cells
+CHECK ok   60 mirror walls, 300 cross walls, disjoint
+  edge triangles: 1200 faces on 60 plates: 60 mirror, 0 cross, 0 none; faces per plate [20]
+  golden rectangles (edge x radius): 1800 faces on 60 plates: 60 mirror, 0 cross, 0 none; faces per plate [30]
+  radius triangles: 2400 faces on 300 plates: 0 mirror, 300 cross, 0 none; faces per plate [8]
+CHECK ok   edge triangles: 20 on each of the 60 mirrors
+CHECK ok   golden rectangles: 1800, 30 on each of the 60 mirrors
+CHECK ok   radius triangles: 2400, 8 on each of the 300 cross walls
+CHECK ok   W(H4) maps (14400 = 2 x 120 x 120 / 2) permute the corners
+CHECK ok   W(H4) transitive on the edge triangles
+CHECK ok   W(H4) transitive on the golden rectangles
+CHECK ok   W(H4) transitive on the radius triangles
+CHECK ok   radius triangle {1, (1,1,1,1)/2, (1,1,1,-1)/2}: normal (0,1,-1,0) is a cross wall
+  a golden rectangle: [[np.float64(1.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)], [np.float64(0.5), np.float64(0.5), np.float64(0.5), np.float64(0.5)], [np.float64(0.309), np.float64(0.0), np.float64(0.5), np.float64(0.809)], [np.float64(0.809), np.float64(-0.5), np.float64(0.0), np.float64(0.309)]] normal [-0.    -0.309  0.809 -0.5  ]
+CHECK ok   the 24 Hurwitz units form a 24-cell T0 in the 600-cell
+CHECK ok   five conjugate 24-cell subgroups
+CHECK ok   25 inscribed 24-cells (left cosets)
+CHECK ok   each 24-cell has 12 cell axes (24 octahedral cells)
+  sections: 300 in all, 300 distinct, 300 cross walls, 0 mirrors, multiplicities [(1, 300)]
+CHECK ok   the 25 x 12 middle sections across the 24-cells' cell axes are exactly the 300 cross walls, each once
+  corners on one cross wall: 12  on one mirror: 30
+CHECK ok   each cross wall holds 12 corners of the 600-cell (checked on one; all walls are one orbit)
+FINAL ok

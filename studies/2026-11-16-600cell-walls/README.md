@@ -1,5 +1,7 @@
 # Walls of Silence: are the new shapes hidden in the 600-cell's walls? (16 Nov 2026)
 
+> **Correction (16 Nov 2026, after the Walls of Silence review):** the first table was run with the 60 mirrors only, and there B has 40 plates on no wall. The cross walls were admitted afterwards (DICTO's ruling "cross walls also count"), after B's 40 remaining plates were found on them; every later test used the fixed 360 walls. The conclusion line states the result with the cross walls. Their independent reason: they are the 25 x 12 = 300 middle sections of the inscribed 24-cells across their cell axes (papers/2026-11-16-walls-of-silence/scripts/face_lemmas.py). The ordinary-orbit controls are not on the 600-cell's corners, so they do not test the twist.
+
 Naming (DICTO, 16 Nov 2026): this study is the start of the paper **Walls of Silence** (where the silent shapes live). With Silent Running: Twisted Silence (the mechanism; the law kind is twisted silence) it forms the Brief Geometry chapter **Twisted Walls of Silence**.
 
 **Conclusion (with DICTO's ruling, 16 Nov: "cross walls also count"): every central plate of both new shapes is a 600-cell wall, confirmed exactly in Q(√5).** Solid A: all 30 plates are mirror walls. Solid B: 40 mirror walls + 40 cross walls (central sections parallel to the 600-cell's cells). Ordinary orbits without the twist have most of their plates in no 600-cell wall. DICTO's theory holds for both shapes: they were hidden in the 600-cell's walls.

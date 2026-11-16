@@ -1,5 +1,7 @@
 # Building the Queens from polytopes, and taking them apart (16 Nov 2026)
 
+> **Correction (16 Nov 2026, after the Walls of Silence review):** the hull volumes as fractions of the 600-cell are A (1 + 3φ)/40, **B (3 + 5φ)/24** and **C3 (14 + 7φ)/60**; the table below lists the three values in the order A, C3, B. Koca, Ozdes Koca and Al-Ajmi 2012 (arXiv:1106.2957, read in full) give the five orbits only as Dynkin labels in §4.1, eq. (30), without naming the hulls.
+
 **Conclusion: by corners, the White Queen (600-cell) is exactly A + (−A) + C3 + B + (−B), five S5 orbits. By walls, A and B together use all 60 mirrors (30 + 40, sharing the 10 S5 mirrors) and 40 of the 300 cross walls. By solids, the five orbit hulls do not assemble the Queen: they all contain the centre, no hull contains another, and together they cover only 65.0% of it. Their common core is a uniform bitruncated 5-cell, and A ∩ B is a golden cantitruncated 5-cell. Every check is exact in Q(√5).**
 
 DICTO's proposal (16 Nov 2026): "construct/deconstruct the queens from/into polytopes, as far as possible". He asked the question as "if this is the steak, where is the cat; if this is the cat, where is the steak". Here this means: can the shapes A and B, which hide in the Queen's walls, also build the Queen itself? The White Queen is the 600-cell P and the Red Queen is the 120-cell Q, dual to P and aligned with it, in sum-zero R⁵, where S5 permutes the coordinates. Computation was done with Claude (Anthropic).
