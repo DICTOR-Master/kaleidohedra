@@ -8210,6 +8210,16 @@
     "retry": "only with: a baseline of random 600-cell subsets with the same symmetry order or 2-face count (for the 60-point sets); a centre-free wall test for GET (its tiling lattice or its cell rhombohedra); the 24-cell (F4) walls for the octahedral shapes and the 2T/2O twisted classes; hyperplanes parallel to 2-faces for the 120-cell sets",
     "study": "studies/2026-11-16-600cell-walls",
     "goes_to": "aim 2 (geometry gives laws) / Vacuus thread"
+   },
+   {
+    "date": "2026-11-16",
+    "question": "One tissue, many scales, PLANETS stream (scope, no tracing): which planetary cell patterns (Jupiter polar cyclone rings, Saturn hexagon, Pluto Sputnik Planitia cells, Mars polygons, Sun beyond granulation, Venus cloud cells) have public time-resolved data that can count neighbour swaps (2-2 moves); what did Juno actually observe of cyclones joining the southern pentagon",
+    "method": "studies/2026-11-16-planet-cells: prior art from free copies (Adriani 2020, Mura 2021, Gavriel & Kaspi 2022 and 2025 read in full; Mura 2022, EGU21-16226, EPSC2026-710, PIA23608 and others as abstracts); archive reachability checks (PDS JIRAM bundle orbits 1-77, USGS Pluto mosaic, HiRISE PDS, free HMI magnetograms); light peek on the compute machine: Zenodo 6611745 centre table (Mura 2021, PJ4-PJ30, CC BY 4.0), cyclic CPC order per epoch",
+    "status": "SETTLED",
+    "result": "Only Jupiter's rings are time-resolved and cell-resolved, but with 6 (south) / 9 (north) cells and one event in 9 years they give an event catalogue, never a rate. Juno observed (Mura et al. 2021, GRL 48, e2021GL094235): a sixth, smaller cyclone formed in Sep 2019 in the gap opened by CPC1 and CPC5 (not an intruder from outside, per their sequence analysis), hexagon at PJ23 (3 Nov 2019), gone by PJ25 (Feb 2020) without merging; Adriani et al. 2020: dipole embryo PJ15, apparent hexagon at PJ18. No neighbour exchange, merger or loss of an established cyclone published; table PJ4-PJ30: CPC cyclic order 1-2-3-4-5 in all 19 complete epochs (zero swaps). Saturn hexagon: one cell, NO-GO. Pluto: one epoch, side-number statistics only (none published found). Mars polygons: no topology change in repeats, side-number only. Venus cells: NO-GO for now. Sun supergranulation: left to the Sun stream; free hourly HMI magnetograms found (no registration). Pick: Jupiter south ring, small exact event reading",
+    "retry": "no swap-rate attempt on any planetary pattern; open: Jupiter south ring PJ4-PJ30 through the event logger with the PJ18 and PJ22-25 intruder; JIRAM PJ31-PJ77 centres only via SPICE mapping; Pluto side-number statistics; supergranule tiling from free HMI magnetograms (Sun stream)",
+    "study": "studies/2026-11-16-planet-cells",
+    "goes_to": "One tissue, three scales: planets stream (scope); builds on ledger entries: One tissue, three scales, Step 0 and first part of Step 1 (DICTO 15 Nov: 'start on the new scutoid Earth, Sun and cosmos | One tissue, three scales, Section 2 (Sun; DICTO 15 Nov: 'throw all possible resources at the new scutoid work'): have ne | One tissue, many scales: atmosphere and sea ice (DICTO 15 Nov: 'atmospheric convection and clouds, ice sheets and sea ic | One tissue, three scales: reference (null-model) values for the event census: Euler identities, swaps per birth in sweep"
    }
   ]
  },
