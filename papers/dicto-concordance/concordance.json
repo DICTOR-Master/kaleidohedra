@@ -8417,6 +8417,24 @@
     "result": "Loop equality (29 files) and Kyushindo (5) were already in module form; both entries pass the source check, a clean build and the comparator (con-ron, NanoDa, Lean), and the workspace builds. Yantra: 1,399 files in module form, every regenerated file equal to modulize(before) byte for byte; 1,369 generated files committed. From a clean build (10,307 jobs) the entry passes the source check, the axioms (propext, Classical.choice, Quot.sound only) and the comparator (con-ron 26,723 declarations, NanoDa, Lean; 2 h 39 min); the three negative controls are rejected. Repository checker: 1,433 committed .lean files, longest 2,383 lines, Challenges 363, 89, 124 lines; FINAL ok. Fault fixed: parallel lake builds raced on a shared dependency; run_palomar.sh prebuilds the shared dependencies and retries alone. Rao constraint engine (Gherbi) cited as related work; of its four Rao errata only E1 (x16) touches a cited constraint (F8); the statement is unaffected.",
     "retry": "never for the conversion; rerun scripts/palomar_source_check.py before any submission",
     "study": "studies/2026-11-15-yantra-box-certificate"
+   },
+   {
+    "question": "Aim 1 step 5a: is the icosahedral hop g = h^3 an inflation of the actual 3D tilings T(x) -> T(g(x)), not only of the projection data",
+    "method": "exact: symbolic Q_g A = k Q_x, k = -x/(3x+2); window containment |k|W_x in W_g for all x > 0 by support functions at the 15 facet normals with exact sign analysis; exact enumeration of vertices and the 20 tile types per period for 1/1->5/3, 2/1->8/5, 3/2->13/8, 5/3->21/13, 1/2->7/4; controls: turn x -> 1/x (positive), h(x), g(g(x)) strips and 5|k| containment (negative) (studies/2026-11-10-ab-line, ico_tiles.py)",
+    "status": "SETTLED",
+    "result": "PROVED for all x > 0: A L(x) = model set of the strip of g(x) with window k(x)W_x, and |k|W_x is inside W_g(x), so every vertex of the inflated crystal at x is a vertex of the crystal at g(x) (density |k|^3 vol W_x / vol W_g, phi^-9 at phi; vertex ratios 1220/16, 10336/136, 43784/576, 92736/1220 -> phi^9); periods scale by s(x) = (2x+1)(1+g^2)/(1+x^2); window shapes equal only at phi, so off phi T(g(x)) is not the inflation of T(x) and frequencies differ; found: the line has a turn x -> 1/x (T(1/x) = mirror of T(x)) fixing the 1/1 crystal; MLD not tested",
+    "retry": "never; only MLD of T(phi) with its phi^3 inflation remains",
+    "study": "studies/2026-11-10-ab-line",
+    "date": "2026-11-16"
+   },
+   {
+    "question": "Aim 1 step 5b: what is extremal at the icosahedral fixed point phi of the line",
+    "method": "exact sympy: signed permutations preserving the Gram matrix of P(x); tile volumes and Pluecker duality |det P_I| = x^3 |det Q_(I^c)|; set partitions of the four volume classes by Groebner bases; norm form N(|P(phi)n|^2) in Z[phi] with A-balancing and exhaustion of |n|^2 <= 4 (studies/2026-11-10-ab-line, ico_extremal.py)",
+    "status": "SETTLED",
+    "result": "PROVED: symmetry order 24 for all x > 0 except 48 at x = 1 and 120 exactly at phi, 1/phi (six directions equiangular only there); tile frequency proportional to tile volume, four classes 2x^2, 1+x^3, 2x, |x^3-1| that reduce to two non-flat volumes (golden prolate/oblate, ratio phi) only at phi, 1/phi; at phi every nonzero n in Z^6 has |pi n||pi_perp n| >= 1/2, equality on the A-orbits of the unit vectors (A-invariant), crystals give 0. OPEN: whether phi maximises liminf |pi_x n||pi_perp_x n| over the whole line",
+    "retry": "only the full 3D Hurwitz question along the line",
+    "study": "studies/2026-11-10-ab-line",
+    "date": "2026-11-16"
    }
   ]
  },
