@@ -21,6 +21,7 @@ Nothing has been submitted. DICTO submits these himself from his own OEIS accoun
     (no "this program was run on ...", no "the sheet pointed to ..."); no stray characters at the end of the name.
     Apply these to entries 2-7 before each is submitted.
 12. Learned on A402191 (editor M. Marcus, Nov 2026): worked examples ("a(4) = 15: ...") go in EXAMPLE (%e), never in COMMENTS (%C).
+15. ORDER inside fields (learned on A008264, 16 Nov 2026): LINKS: the 'Table of n, a(n)' line first, then alphabetical by first author's surname (place 'DICTO' in alphabetical position, not at the end); REFERENCES: alphabetical by first author; COMMENTS: chronological (new ones at the end). Copy pages must say exactly WHERE each line goes (after which existing line), after reading the live entry.
 14. ONE IN, ONE OUT, LIKE FOR LIKE (DICTO 16 Nov 2026): when a COMMENT is approved (or closed), send the next comment; when a SEQUENCE is approved (or closed), send the next sequence; never more in review than now; with three in review now (A402191, A402231, the A008264 comment), the next goes in only after one of them comes out.
 13. BEFORE giving DICTO any OEIS text (16 Nov 2026, after A402231): start from the prepared entry in THIS file, never from raw data; run the checklist: rules 1-12; terms recomputed two independent ways; program prints exactly the data; every A-number real (no A??????) or explained; OEIS searched for the terms; then one copy page, fields in form order.
 
