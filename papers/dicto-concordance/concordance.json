@@ -8294,6 +8294,21 @@
     "retry": "not the depth rule alone; next only with a time-matching continuity rule that shuffled frames fail (all four cells matched above a fixed overlap share) and a calibration control with splits and merges; the depth rule may be added on top afterwards",
     "study": "studies/2026-11-15-sun-granulation",
     "goes_to": "Microcosm and Macrocosm (scutoid-interactions) Sun row and open item 3; builds on ledger entries: One tissue, three scales, Section 2 (Sun; DICTO 15 Nov: 'throw all possible resources at t | Scutoid interactions open item 3 (Sun): is there a granulation swap rate stable under the "
+   },
+   {
+    "date": "2026-11-16",
+    "question": "Real foams changing over time (DICTO 16 Nov: 'can we not observe real bubbles live anywhere... there may be a feed somewhere'): is there free, open, time-resolved data of a real coarsening foam, 3D tomography or a clean 2D monolayer (no shadow problem), or a live feed, that can test macroscopic T1 per T2 against Rutenberg-McCurdy 0.53 +- 0.05?",
+    "method": "studies/2026-11-16-real-foam-data: scope only, no tracing; papers' data statements, Zenodo/Figshare/Dryad API searches, file listings and headers only (TIFF header, three small CSVs counted per frame); every source listed with URL and date",
+    "status": "SETTLED (scope): no open dataset can test the ratio; NOT A TEST for every public candidate",
+    "result": "3D: FoamQuant raw subset Zenodo 15564270 = 2 time steps, 39.7 GB, CC BY, sheared foam; tutorial series floschott/FoamQuant_binder = 10 steps of 250x252x252 8-bit BigTIFF (159 MB, MIT), cropped and down-scaled from the same rheometer run: pilot for a T1 detector only (sheared, no T2). Coarsening albumin foam (J. Synchrotron Rad. 2025), Soft Matter 2023 hopper flow, Nat. Commun. 2025 (160 tomograms, 5,000-33,000 T1, raw 'cannot be deposited'), Lambert/Graner/Cantat, Mader: no public series. Guidolin et al. foamed emulsions (Zenodo 12759664, 4.7 GB) are optical views of 3D foam (shadow problem). 2D: Chieco-Durian 2022 CSVs (CC BY) give per-frame area and side number, 80/101/69 frames at 5 min, bubbles 1745->728, 3025->688, 2588->846: T2 yes, T1 no (no identities). No live feed (ESA ISS Foam-Coarsening has recorded media only). Best public pick: FoamQuant tutorial series (pilot). The ratio needs DICTO's own 2D cell: ~3000 bubbles of ~2 mm, 1 mm gap, backlit, phone time-lapse 1 frame / 30 s for 10-12 h, about 1000-1250 swaps.",
+    "retry": "only if a coarsening 3D or 2D series with bubble identities becomes public, or with DICTO's own 2D cell footage",
+    "study": "studies/2026-11-16-real-foam-data",
+    "goes_to": "Microcosm and Macrocosm (scutoid-interactions): natural-systems rung; open item 4 (froth against 0.53) gains a real-foam route",
+    "follows": [
+     "One tissue, three scales: Rutenberg-McCurdy macroscopic T1 per T2 in a froth that reaches its scaling state (2",
+     "DICTO 16 Nov ('narrow our focus back to core study objectives and drop any avenues that are not supportive of ",
+     "Sun swaps traced through depth (DICTO 16 Nov: 'the same initial problem as the shadows of the queens'): if a g"
+    ]
    }
   ]
  },
