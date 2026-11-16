@@ -811,3 +811,8 @@ Seeds 0.22 to 0.26 at c = 1. Total T1 per T2 0.368; T2 sides at l^2 4.7 / 85.8 /
 their model); Aboav a 1.11; Lewis slope 0.51, n0 4.0. The two sizes agree (0.250 +- 0.015 and 0.245 +- 0.011 at c = 1), and the
 count is cut-off free at both. VERDICT unchanged and now on a tested scaling state at the larger size: NOT CONFIRMED, 0.245 +- 0.011
 (seed sd 0.015) against 0.53 +- 0.05. The rc x 4 side check (second machine) was at N = 1500 of 2500 and is still a follow-up.
+rc x 4 side check (N0 = 2500, rc = 1.2648e-3, seeds 1 and 2, second machine; count_n2500_rc4.json; both runs FINAL ok): 1040 T2 in
+the candidate windows, which did NOT pass the scaling test with only two runs pooled. Macroscopic T1 per T2 0.222 / 0.215 / 0.206
++- 0.014 at c = 0.5 / 1 / 2 (seeds 0.19 and 0.24 at c = 1); total 0.363; mu2 1.56; laws held as above. A four times larger
+microscopic scale lowers the count by about 12 % (1.6 Poisson errors; the two seeds differ by more), far less than the gap to 0.53;
+it is consistent with Rutenberg and McCurdy's statement that rc matters little, and it does not move the verdict.
