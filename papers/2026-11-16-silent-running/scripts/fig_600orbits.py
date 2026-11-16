@@ -7,7 +7,7 @@ Projection: the Coxeter plane of H4 (the 30-fold view, four rings of 30), where 
 kept by an element of S5 stacks corners of different orbits on one another: 31, 45 and 37 distinct points for the 5-, 4- and
 3-cycle planes, so no S5-symmetric plane shows all corners.) Depth for shading: a coordinate of the complementary plane.
 Edges: the 720 edges of the 600-cell, depth-shaded. Corners: shaded balls, painted back to front with the edges.
-Colours (element colours of the Kaleidohedra app): X Fire, −X Water, R Void, F Wind, −F Earth (see the caption).
+Colours (colours of the Kaleidohedra app): X red, −X blue, R violet, F yellow, −F green (see the caption).
 Usage: fig_600orbits.py out.png  (ends FINAL ok / FINAL FAIL)"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 
 GROUND = '#05050a'; INK = '#e6e1d3'; DIM = '#8d8a82'
-EL = {'Fire': (205, 62, 40), 'Water': (58, 112, 205), 'Void': (138, 92, 196), 'Wind': (232, 200, 82), 'Earth': (72, 142, 72)}
+EL = {'red': (205, 62, 40), 'blue': (58, 112, 205), 'violet': (138, 92, 196), 'yellow': (232, 200, 82), 'green': (72, 142, 72)}
 fails = []
 def check(ok, msg):
     print(('CHECK ok   ' if ok else 'CHECK FAIL ') + msg, flush=True)
@@ -74,8 +74,8 @@ fig = plt.figure(figsize=(W_IN, H_IN), dpi=DPI, facecolor=GROUND)
 ax = fig.add_axes([0.01, 0.03, 0.66, 0.94]); ax.set_facecolor(GROUND); ax.set_aspect('equal'); ax.axis('off')
 lim = np.abs(xy).max() * 1.06 + rad; ax.set_xlim(-lim, lim); ax.set_ylim(-lim, lim)
 check(abs((ax.get_position().width * W_IN) - (ax.get_position().height * H_IN)) < 0.01, 'square model frame: one scale for x and y')
-NAMES = [('X', 'golden, hull = solid A', 'Fire'), ('−X', 'its mirror image', 'Water'), ('R = C3', 'A4 roots, hull = expanded 5-cell', 'Void'),
-         ('F', 'golden, hull = solid B', 'Wind'), ('−F', 'its mirror image', 'Earth')]
+NAMES = [('X', 'golden, hull = solid A', 'red'), ('−X', 'its mirror image', 'blue'), ('R = C3', 'A4 roots, hull = expanded 5-cell', 'violet'),
+         ('F', 'golden, hull = solid B', 'yellow'), ('−F', 'its mirror image', 'green')]
 COL = [np.array(EL[n[2]]) / 255 for n in NAMES]
 items = [('e', (z[i] + z[j]) / 2, (i, j)) for i, j in E] + [('b', z[i] + 1e-3, i) for i in range(120)]
 for kind, dz, it in sorted(items, key=lambda t: t[1]):
@@ -94,11 +94,11 @@ for k, (nm, sub, el) in enumerate(NAMES):
     lax.add_patch(Circle((0, 0), 0.9, color=tuple(COL[k] * 0.55)));
     for f, w in ((0.86, 0.0), (0.62, 0.30), (0.36, 0.62)): lax.add_patch(Circle((-0.16 * (1 - f), 0.16 * (1 - f)), 0.9 * f, color=tuple(np.clip(COL[k] * (1 - w) + w, 0, 1))))
     fig.text(0.745, y + 0.012, f'{nm}  ({n} corners)', color=tuple(np.clip(COL[k] * 1.15, 0, 1)), fontsize=11, va='center')
-    fig.text(0.745, y - 0.025, f'{sub}; {el}', color=DIM, fontsize=8.4, va='center')
+    fig.text(0.745, y - 0.025, sub, color=DIM, fontsize=8.4, va='center')
 fig.text(0.69, 0.94, 'The 600-cell: 120 corners,', color=INK, fontsize=11.5)
 fig.text(0.69, 0.905, 'five S5-orbits', color=INK, fontsize=11.5)
 fig.text(0.69, 0.16, 'Coxeter plane of H4 (30-fold view);', color=DIM, fontsize=8.2)
-fig.text(0.69, 0.13, 'opposite corners: Fire–Water, Wind–Earth, Void–Void.', color=DIM, fontsize=8.2)
+fig.text(0.69, 0.13, 'opposite corners: X and −X, F and −F,\nR with itself.', color=DIM, fontsize=8.2)
 fig.text(0.985, 0.02, 'DICTO · dictospheres.com', color='#9a978f', fontsize=8, ha='right', va='bottom')
 fig.savefig(sys.argv[1], dpi=DPI, facecolor=GROUND)
 from PIL import Image

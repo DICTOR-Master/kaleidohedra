@@ -2,7 +2,7 @@
 """Figure 1, the lofargram of silences. Drawn like a sonar LOFAR display: degree k across (the frequencies), one band per
 point set, a bright vertical line where the set rings (T_k > 0, brightness from log T_k) and darkness where it is silent.
 Data: data/fig-tones.json from scripts/fig_tones.py (zero patterns asserted there against the exact signatures).
-Colours: the Kaleidohedra app's element colours (Fire red for X, Wind yellow for F, Void violet for R, as in Figure 2), dark app ground.
+Colours: the Kaleidohedra app's colours (red for X, yellow for F, violet for R, as in Figure 2), dark app ground.
 Usage: fig_lofargram.py tones.json out.png   (ends FINAL ok / FINAL FAIL)"""
 import sys, json
 import numpy as np
@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
 GROUND = '#05050a'; BAND = np.array([11, 13, 20]) / 255; INK = '#e6e1d3'; DIM = '#8d8a82'
-EL = {'Fire': (205, 62, 40), 'Wind': (232, 200, 82), 'Void': (138, 92, 196), 'Water': (58, 112, 205), 'Earth': (72, 142, 72)}
+EL = {'red': (205, 62, 40), 'yellow': (232, 200, 82), 'violet': (138, 92, 196), 'blue': (58, 112, 205), 'green': (72, 142, 72)}
 c = lambda n: tuple(v / 255 for v in EL[n])
 GREY = (0.78, 0.78, 0.76); WHITE = (0.93, 0.92, 0.88)
 fails = []
@@ -22,10 +22,10 @@ def check(ok, msg):
 d = json.load(open(sys.argv[1])); S = d['sets']; K = d['kmax']
 ROWS = [  # (key, label line 1, label line 2, colour, degrees to mark as vanished)
     ('ctrl-X (3,3,3,2,0)', 'ordinary S5-orbit', 'perms of (3, 3, 3, 2, 0)', GREY, []),
-    ('X', 'X, golden (20)', 'perms of (φ², φ², φ², φ, 0)', c('Fire'), [5, 7]),
+    ('X', 'X, golden (20)', 'perms of (φ², φ², φ², φ, 0)', c('red'), [5, 7]),
     ('ctrl-F (3,3,2,2,0)', 'ordinary S5-orbit', 'perms of (3, 3, 2, 2, 0)', GREY, []),
-    ('F', 'F, golden (30)', 'perms of (φ², φ², 1, 1, 0)', c('Wind'), [3, 6]),
-    ('R', 'R = C3, A4 roots (20)', 'silent in 2 and every odd degree', c('Void'), []),
+    ('F', 'F, golden (30)', 'perms of (φ², φ², 1, 1, 0)', c('yellow'), [3, 6]),
+    ('R', 'R = C3, A4 roots (20)', 'silent in 2 and every odd degree', c('violet'), []),
     ('600-cell', '600-cell (120)', 'reference: an 11-design', WHITE, []),
 ]
 check(S['X']['T'] == S['-X']['T'] or np.allclose(S['X']['T'], S['-X']['T'], atol=1e-12), '−X has the same tones as X')

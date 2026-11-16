@@ -3,8 +3,8 @@
 twisted-silence groups study (Table 3b of the paper) as a row of degree tiles k = 1 .. 20, grouped by the kind of law.
 A silent tile is grey when the set's family already forces it (the census rows: the t = 2 neighbour on the same Wythoff
 family is silent there too; the Table 3b rows: the twist group has no invariant there, the "forced" column), and takes the
-colour of its kind when only this member is silent there. Kinds: (T) twisted silence Fire red, (X) extra symmetry Wind
-yellow, (P) parity Water blue, (E) evenness Earth green, and the classical latitude or cosine-rule zeros (L) Void violet.
+colour of its kind when only this member is silent there. Kinds: (T) twisted silence red, (X) extra symmetry
+yellow, (P) parity blue, (E) evenness green, and the classical latitude or cosine-rule zeros (L) violet.
 Open candidates are hatched. Ringing tiles are dark.
 Data: data/fig-tones.json (scripts/fig_tones.py: census members, their neighbours, the 2I classes, X, F; zero patterns
 asserted there) and, for the binary-octahedral, binary-tetrahedral, dihedral and matrix-sphere classes, the signatures of
@@ -17,9 +17,9 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
 GROUND = '#05050a'; INK = '#e6e1d3'; DIM = '#8d8a82'; RING = '#161924'; RINGE = '#2a2f3c'; GREY = '#7b7d84'
-EL = {'Fire': '#cd3e28', 'Wind': '#e8c852', 'Water': '#3a70cd', 'Earth': '#488e48', 'Void': '#8a5cc4'}
-KIND = {'T': ('(T) twisted silence', EL['Fire']), 'X': ('(X) extra symmetry', EL['Wind']), 'P': ('(P) parity', EL['Water']),
-        'E': ('(E) evenness', EL['Earth']), 'L': ('(L) latitude or cosine rule, classical', EL['Void']),
+EL = {'red': '#cd3e28', 'yellow': '#e8c852', 'blue': '#3a70cd', 'green': '#488e48', 'violet': '#8a5cc4'}
+KIND = {'T': ('(T) twisted silence', EL['red']), 'X': ('(X) extra symmetry', EL['yellow']), 'P': ('(P) parity', EL['blue']),
+        'E': ('(E) evenness', EL['green']), 'L': ('(L) latitude or cosine rule, classical', EL['violet']),
         'O': ('open: candidates in 16 dimensions', '#c9c6bd'), 'N': ('twists with no unforced silence', GREY)}
 fails = []
 def check(ok, msg):
@@ -90,7 +90,7 @@ for kind, label, sil, forced, opn, law in ROWS:
             elif k in forced: fc, hatch, ec = GREY, None, GREY
             else:
                 extra_by_symmetry = kind == 'P' and k not in forced
-                fc, hatch, ec = (EL['Wind'] if extra_by_symmetry else col), None, None
+                fc, hatch, ec = (EL['yellow'] if extra_by_symmetry else col), None, None
                 ec = fc
         else: fc, hatch, ec = RING, None, RINGE
         ax.add_patch(Rectangle((xx + tw * 0.07, y + 0.1), tw * 0.86, 0.8, fc=fc, ec=ec, lw=0.7, hatch=hatch, zorder=2))
