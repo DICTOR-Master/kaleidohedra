@@ -1,0 +1,126 @@
+PROGRESS [    0.4s] (1) symbolic hop identities: True
+PROGRESS [    0.5s] (1b) turn x -> 1/x, S = [[1, 0, 0, 0, 0, 0], [0, -1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1], [0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0]]: True
+PROGRESS [    5.2s] (2) window containment for all x > 0 (15 facet normals, exact sign analysis): True; touching: []; NEG factor 5 fails: True
+PROGRESS [    5.8s] (2b) largest lambda with lambda |k| W_x in W_g: x = 1/100: 203/100 = 2.0300000, x = 1/2: 93/29 = 3.2068966, x = 1: 49/13 = 3.7692308, x = 3/2: 337/81 = 4.1604938, x = 2: 4 = 4.0000000, x = 5/3: 21/5 = 4.2000000, x = 100: 151/50 = 3.0200000, x = 1/2 + sqrt(5)/2: 2 + sqrt(5) = 4.2360680
+PROGRESS [    5.9s] POSITIVE CONTROL turn: L(1/x) is the mirror image of L(x) at x = 2: 136 = 136 vertices, sets equal: True
+PROGRESS [    6.1s] pair 1 -> 5/3: vertices per period 16 and 1220
+PROGRESS [    6.1s]    tiles of T(1) per period by volume class {volume: count}: {Fraction(0, 1): 0, Fraction(2, 1): 16}; total 16
+PROGRESS [    6.4s]    tiles of T(5/3) per period by volume class {volume: count}: {Fraction(10, 3): 270, Fraction(98, 27): 196, Fraction(50, 9): 450, Fraction(152, 27): 304}; total 1220
+   vertex count = vol W / covol (x): True
+   vertex count = vol W / covol (g): True
+   A L(x) inside L(g(x)): True
+   A injective mod periods: True
+   density = |k|^3 vol W_x / vol W_g: True
+   L(g(x)) strictly larger (no equality): True
+   A periods(x) are periods of g: True
+   physical periods scale by s(x): True
+   cell volume ratio s^3 (A onto all periods of g): True
+   tile counts = |det Q_(I^c)| / covol (x): True
+   tile count proportional to tile volume (x): True
+   total tile volume = cell volume (x): True
+   tile counts = |det Q_(I^c)| / covol (g): True
+   tile count proportional to tile volume (g): True
+   total tile volume = cell volume (g): True
+   NEG: A periods(x) leave the strip of h(x): True
+   NEG: A periods(x) leave the strip of g(g(x)): True
+PROGRESS [   12.4s] pair 3/2 -> 13/8: vertices per period 576 and 43784
+PROGRESS [   12.6s]    tiles of T(3/2) per period by volume class {volume: count}: {Fraction(19, 8): 76, Fraction(3, 1): 144, Fraction(35, 8): 140, Fraction(9, 2): 216}; total 576
+PROGRESS [   26.2s]    tiles of T(13/8) per period by volume class {volume: count}: {Fraction(13, 4): 9984, Fraction(1685, 512): 6740, Fraction(169, 32): 16224, Fraction(2709, 512): 10836}; total 43784
+   vertex count = vol W / covol (x): True
+   vertex count = vol W / covol (g): True
+   A L(x) inside L(g(x)): True
+   A injective mod periods: True
+   density = |k|^3 vol W_x / vol W_g: True
+   L(g(x)) strictly larger (no equality): True
+   A periods(x) are periods of g: True
+   physical periods scale by s(x): True
+   cell volume ratio s^3 (A onto all periods of g): True
+   tile counts = |det Q_(I^c)| / covol (x): True
+   tile count proportional to tile volume (x): True
+   total tile volume = cell volume (x): True
+   tile counts = |det Q_(I^c)| / covol (g): True
+   tile count proportional to tile volume (g): True
+   total tile volume = cell volume (g): True
+   NEG: A periods(x) leave the strip of h(x): True
+   NEG: A periods(x) leave the strip of g(g(x)): True
+PROGRESS [   27.7s] pair 2 -> 8/5: vertices per period 136 and 10336
+PROGRESS [   27.8s]    tiles of T(2) per period by volume class {volume: count}: {Fraction(4, 1): 24, Fraction(7, 1): 28, Fraction(8, 1): 48, Fraction(9, 1): 36}; total 136
+PROGRESS [   31.0s]    tiles of T(8/5) per period by volume class {volume: count}: {Fraction(387, 125): 1548, Fraction(16, 5): 2400, Fraction(637, 125): 2548, Fraction(128, 25): 3840}; total 10336
+   vertex count = vol W / covol (x): True
+   vertex count = vol W / covol (g): True
+   A L(x) inside L(g(x)): True
+   A injective mod periods: True
+   density = |k|^3 vol W_x / vol W_g: True
+   L(g(x)) strictly larger (no equality): True
+   A periods(x) are periods of g: True
+   physical periods scale by s(x): True
+   cell volume ratio s^3 (A onto all periods of g): True
+   tile counts = |det Q_(I^c)| / covol (x): True
+   tile count proportional to tile volume (x): True
+   total tile volume = cell volume (x): True
+   tile counts = |det Q_(I^c)| / covol (g): True
+   tile count proportional to tile volume (g): True
+   total tile volume = cell volume (g): True
+   NEG: A periods(x) leave the strip of h(x): True
+   NEG: A periods(x) leave the strip of g(g(x)): True
+PROGRESS [   42.8s] pair 5/3 -> 21/13: vertices per period 1220 and 92736
+PROGRESS [   43.2s]    tiles of T(5/3) per period by volume class {volume: count}: {Fraction(10, 3): 270, Fraction(98, 27): 196, Fraction(50, 9): 450, Fraction(152, 27): 304}; total 1220
+PROGRESS [   66.3s]    tiles of T(21/13) per period by volume class {volume: count}: {Fraction(7064, 2197): 14128, Fraction(42, 13): 21294, Fraction(11458, 2197): 22916, Fraction(882, 169): 34398}; total 92736
+   vertex count = vol W / covol (x): True
+   vertex count = vol W / covol (g): True
+   A L(x) inside L(g(x)): True
+   A injective mod periods: True
+   density = |k|^3 vol W_x / vol W_g: True
+   L(g(x)) strictly larger (no equality): True
+   A periods(x) are periods of g: True
+   physical periods scale by s(x): True
+   cell volume ratio s^3 (A onto all periods of g): True
+   tile counts = |det Q_(I^c)| / covol (x): True
+   tile count proportional to tile volume (x): True
+   total tile volume = cell volume (x): True
+   tile counts = |det Q_(I^c)| / covol (g): True
+   tile count proportional to tile volume (g): True
+   total tile volume = cell volume (g): True
+   NEG: A periods(x) leave the strip of h(x): True
+   NEG: A periods(x) leave the strip of g(g(x)): True
+PROGRESS [   67.0s] pair 1/2 -> 7/4: vertices per period 136 and 6440
+PROGRESS [   67.0s]    tiles of T(1/2) per period by volume class {volume: count}: {Fraction(1, 2): 24, Fraction(7, 8): 28, Fraction(1, 1): 48, Fraction(9, 8): 36}; total 136
+PROGRESS [   68.6s]    tiles of T(7/4) per period by volume class {volume: count}: {Fraction(7, 2): 1344, Fraction(279, 64): 1116, Fraction(49, 8): 2352, Fraction(407, 64): 1628}; total 6440
+   vertex count = vol W / covol (x): True
+   vertex count = vol W / covol (g): True
+   A L(x) inside L(g(x)): True
+   A injective mod periods: True
+   density = |k|^3 vol W_x / vol W_g: True
+   L(g(x)) strictly larger (no equality): True
+   A periods(x) are periods of g: True
+   physical periods scale by s(x): True
+   cell volume ratio s^3 (A onto all periods of g): True
+   tile counts = |det Q_(I^c)| / covol (x): True
+   tile count proportional to tile volume (x): True
+   total tile volume = cell volume (x): True
+   tile counts = |det Q_(I^c)| / covol (g): True
+   tile count proportional to tile volume (g): True
+   total tile volume = cell volume (g): True
+   NEG: A periods(x) leave the strip of h(x): True
+   NEG: A periods(x) leave the strip of g(g(x)): True
+CHECK P Q^T = 0: True
+CHECK A symmetric, det -1: True
+CHECK P(x) A = (2x+1) P(g): True
+CHECK Q_g A = k Q_x: True
+CHECK phason part vanishes on E(x): True
+CHECK k(phi) = -phi^-3, s(phi) = phi^3: True
+CHECK phason part nonzero off phi: True
+CHECK turn: x P(1/x) = R P(x) S, S signed permutation: True
+CHECK turn on internal maps: Q_(1/x) = -x R Q_x S: True
+CHECK NEG: 5|k| W_x inside W_g(x) for every x > 0 must FAIL: True
+CHECK |k| W_x inside W_g(x) for every x > 0: True
+CHECK homothetic only at phi: True
+CHECK lambda_max(phi) = phi^3: True
+CHECK lambda_max >= 1 at the approximants: True
+CHECK POSITIVE turn control: True
+CHECK pair 1: True
+CHECK pair 3/2: True
+CHECK pair 2: True
+CHECK pair 5/3: True
+CHECK pair 1/2: True
+FINAL ok

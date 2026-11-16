@@ -1,0 +1,33 @@
+PROGRESS [   0.0s] (1) Gram entries of P(x): [-x, 1 - x**2, x, x**2 + 1, x**2 - 1]
+PROGRESS [   0.2s]     x > 0 where two Gram entries coincide up to sign (only places the symmetry can change): [-1/2 + sqrt(5)/2, 1, 1/2 + sqrt(5)/2]
+PROGRESS [   0.2s]     x = 1/3: symmetry group order 24
+PROGRESS [   0.3s]     x = 1/2: symmetry group order 24
+PROGRESS [   0.3s]     x = 1: symmetry group order 48
+PROGRESS [   0.3s]     x = 3/2: symmetry group order 24
+PROGRESS [   0.3s]     x = 2: symmetry group order 24
+PROGRESS [   0.4s]     x = 7/3: symmetry group order 24
+PROGRESS [   0.8s]     x = 1/2 + sqrt(5)/2: symmetry group order 120
+PROGRESS [   1.2s]     x = 1/(1/2 + sqrt(5)/2): symmetry group order 120
+PROGRESS [   1.2s]     equiangular six directions (|cos| = |x^2-1|/(1+x^2) = x/(1+x^2)) at x = [-1/2 + sqrt(5)/2, 1/2 + sqrt(5)/2]
+PROGRESS [   1.3s] (2) tile volume classes (volume^2: count): 4*x**4: 6, 4*x**2: 6, (x + 1)**2*(x**2 - x + 1)**2: 4, (x - 1)**2*(x**2 + x + 1)**2: 4
+PROGRESS [   1.3s]     at most two tile volumes, none flat, exactly at x = [-1/2 + sqrt(5)/2, 1/2 + sqrt(5)/2]; with a flat class at x = [1]
+PROGRESS [   1.8s] (3) 484 nonzero n with |n|^2 <= 4: least N(|P n|^2) = 5
+PROGRESS [   1.8s]     |pi n||pi_perp n| along A^j e1, j = -3..5: [1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]; |n|^2: [2889, 161, 9, 1, 9, 161, 2889, 51841, 930249]
+PROGRESS [   1.8s]     crystal x = 3/2: period [-3, -3, -2, 2, 0, 0] has internal part 0 (product 0)
+PROGRESS [   1.8s]     crystal x = 8/5: period [-8, -8, -5, 5, 0, 0] has internal part 0 (product 0)
+CHECK special points are exactly 1, 1/phi, phi: True
+CHECK orders: 24 generic, 48 at 1, 120 at phi and 1/phi: True
+CHECK equiangular exactly at phi, 1/phi: True
+CHECK Pluecker: det P_I = +- x^3 det Q_(I^c), all 20: True
+CHECK four classes 2x^2 (6), 2x (6), 1+x^3 (4), |x^3-1| (4): True
+CHECK two volumes and no flat tile exactly at phi, 1/phi: True
+CHECK golden ratio of the two shapes at phi: True
+CHECK normalisation P^T P/(2 sqrt5 phi) + Q^T Q phi/(2 sqrt5) = I: True
+CHECK P(phi) A = phi^3 P(phi), Q A = -phi^-3 Q: True
+CHECK alpha formula matches P(phi): True
+CHECK least norm over |n|^2 <= 4 is 5: True
+CHECK bound phi^3 sqrt(4)/2 < 5: True
+CHECK product 1/2 along the A-orbit of e1 (9 vectors, growing): True
+CHECK NEG crystal 3/2: a period has product 0: True
+CHECK NEG crystal 8/5: a period has product 0: True
+FINAL ok
