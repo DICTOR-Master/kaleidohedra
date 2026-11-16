@@ -56,6 +56,11 @@ moves). Nothing here assumes or tests any influence of one system on another.
    do NOT outlive the cells (half-life 220 s against 540 s for cells, NOT CONFIRMED); vanished corners re-form at the same place
    within a minute 5.6 times as often as chance (CONSISTENT), and the cells at a corner are renewed while it stays (0.64 per minute,
    CONSISTENT); no cycle of local recurrence, only a box-wide oscillation of 7 to 8 min.
+11. **Space-time slicing at a tilt** (16 Nov, DICTO's question; SCOPE and pilot only, section "Space-time slicing at a tilt"): the
+   corner argument of #104 Theorem 1 carries over to a simple space-time cell complex; births, swaps and deaths per volume are fixed
+   in every generic direction only if the cells are convex in space-time. A space-time Poisson-Voronoi block shows it exactly
+   (within 2% over 9 directions). The Sun's tracked cells are balls but not convex at a tilt, and the time direction is the
+   non-generic one (2.5 times fewer swaps than the tilts); the 3D connected components of upflow percolate. Full run waits for DICTO.
 
 ## Method
 
@@ -512,3 +517,233 @@ files (33 MB, with corner tracks) and the features stay on the compute machine (
 Prior art for this section: PRIOR_ART.md, "Persistence and recurrence of the granulation pattern" (Getling and Brandt 2002 asked
 "persistence or recurrence?" of averaged intensity images; Roudier and co-workers' trees of fragmenting granules; Hoekzema and
 co-workers' persistency regions).
+
+## Space-time slicing at a tilt (16 Nov 2026; DICTO's question; SCOPE and pilot only)
+
+DICTO, 16 Nov 2026: "are there scutoid structures that transcend persistence or recurrence, is it possible that time is not running
+in a linear direction". In DICTO's #104 (Scutoid Tissues in Four Dimensions) a sweep through a simple 4-polytope gives a tissue
+whose births, swaps and deaths are fixed by the h-vector, the same for every generic sweep direction; time is one sweep direction
+among many. The test asked for: stack the granulation frames into one 3D space-time block, label the cells as 3D regions of the block,
+cut the block by planes tilted away from the time axis, and see whether births, deaths and swaps per unit of swept volume stay fixed
+across directions. This section is about the geometry of the block only; it makes no claim about physical time. DICTO approved the
+scope on 16 Nov 2026; the full run waits for him.
+
+### Theory: what carries over from #104, and on what conditions
+
+Set-up. The block is the region (x, y, t) of the box; its cells are 3D regions that fill it. A sweep is a family of parallel planes
+h = const, h(t, x) = t cos(theta) + (x / v) sin(theta), where theta is the angle between the plane's normal and the t-axis and v is a
+speed that converts space into time (without it a tilt has no meaning: theta is an angle only in the coordinates (x / v, t)).
+
+1. **#104 Theorem 1, the local part, carries over unchanged** to any *simple* 3D cell complex (four cells and four edges at every
+   corner, three cells at every edge, two cells sharing at most one wall) cut by a *generic* plane family. Its proof only looks at
+   one corner: when the plane passes a corner with i of its four edges below, the plane's tiling gains a three-sided cell (i = 1),
+   makes one swap (i = 2) or loses a three-sided cell (i = 3), and nothing else changes. Here "generic" means: no edge lies in a
+   plane of the family at a corner (no edge perpendicular to the normal), no two corners on one plane, and no plane tangent to a wall
+   or an edge away from the corners.
+2. **The global part (counts fixed by the h-vector) does not carry over as such.** In #104 the counts are the h-vector of the
+   polytope because its boundary is a closed 3-sphere, its cells are convex (one lowest and one highest corner in every direction),
+   and the Dehn-Sommerville relations hold. A space-time block has a boundary (the first and last frames, and the side walls of a
+   sub-box) and no h-vector. What carries over is the counting argument of studies/2026-11-15-tissue-null-models (THEORY section 2,
+   which extends #104 Theorem 1 to normal 3D tessellations): **if every cell is convex in the sweep direction** (one lowest and one
+   highest point, both corners, in every direction considered), then
+   births = number of cells whose lowest point lies inside the swept region, deaths = number whose highest point lies inside,
+   swaps = corners inside - births - deaths.
+   The corners and the cells are fixed objects of the block, so in a large block **births, deaths and swaps per unit volume tend to
+   direction-independent values: births = deaths = cells per volume, swaps = corners per volume - 2 x cells per volume**, and swaps
+   per birth = (corners per cell) - 2 = k/2 - 3 (k = mean number of neighbours of a 3D cell). The direction enters only through cells
+   and corners cut by the block's boundary: a surface term, which falls as (block size)^-1. This is the exact analogue of #104's
+   h1 = f3 - 4, h2 = f0 - 2 - 2 h1 (there the "boundary term" is the 4 cells at the lowest and highest corner). The g-theorem bound
+   of #104 (swaps at least births) has no analogue here; the value for space-time Poisson-Voronoi cells is 4.77 swaps per birth.
+3. **The speed scale v does not change the prediction.** Changing v is a linear map of the block; it keeps convexity, corners and the
+   ratio of volumes. So for convex simple cells the densities are the same for every theta and every v. Any dependence on v in data
+   is a sign that the cells are not convex in space-time, or of the sampling (below).
+4. **For cells of any shape** (not convex, curved walls), stratified Morse theory gives one identity that holds in every generic
+   direction: for each cell that does not touch the block's boundary and is a 3D ball, **(pieces born) - (pieces of the same cell
+   that join) = 1** (its Euler characteristic; in general = Euler characteristic of the cell). A cell that is not convex in the
+   sweep direction can show up in a plane as several pieces: a new piece can appear at a corner, on an edge (a two-sided lens), or
+   inside a wall (an island), and pieces can join or split off. Births then include these extra pieces, and swaps are no longer
+   corners - births - deaths: **for non-convex cells the counts depend on the direction**, and only the identity above, the corner
+   count and the Euler formula of each plane (V - E + F = 2 with the outside as one cell) are fixed.
+5. **Sampled blocks are not generic in the time direction.** The block is built from frames 10 s apart, so the plane theta = 0 sees
+   every change of one frame step at once (clumps); and a cell label assigned by frame-to-frame tracking makes walls that lie exactly
+   in a frame plane (where a split piece gets a new label). Tilted planes break these ties. So theta = 0 is the least generic
+   direction of the block, and differences between theta = 0 and the tilts can come from this alone.
+6. **Shuffled time.** A block built from frames in shuffled order is still a cell complex, so the theory predicts invariance for it
+   too *if* it were simple, convex and generic. It is not: its cells are thin slabs with walls in the frame planes. So the shuffled
+   block must break invariance through items 4 and 5 (direction-dependent counts, clumps at theta = 0), and a run in which it did not
+   would show that the counts do not see the block's continuity at all. It is a control of the pipeline, not of the theorem.
+
+What would count as the h-vector-like invariance in the Sun: births, deaths and swaps per volume in the core of the block equal at
+theta = 0, 15 and 30 degrees and for v from half to twice the granule speed, within the spread of the Poisson-Voronoi control,
+together with the Morse identity holding cell by cell. The theory says this happens only if the granules' space-time cells are
+close to convex.
+
+### Pilot plan (written 16 Nov 2026 BEFORE the pilot ran; scripts/spacetime_tilt.py, job sun-tilt-pilot)
+
+- Sub-box 250 x 250 pixels (12 x 12 Mm) of en024048_hion, uz at 0.1 Mm below the mean tau = 1 height, all 242 snapshots (40 min).
+  Core for counting: 24 pixels (1.1 Mm) in from the side walls and 30 frames (300 s) in from the first and last frame; the same core
+  for every direction. Speed scale v = 3 km/s (a granule's diameter, 1.8 Mm, over its lifetime by the census, 558 s) and, at
+  theta = 30 degrees, v = 1.5 and 6 km/s. Tilt in the x direction.
+- Two labellings of the Sun block: (A) the task's: markers are the 3D connected components (in x, y, t) of upflow above mean + 0.25
+  std (smoothing 1.5 pixels, as the census), and the block is filled by a 3D marker watershed of uz; (B) census tracks: the census
+  cells with labels carried by the overlap rule (tiles.match), so a split piece gets a new label.
+- Planes: one per frame step at fixed x (step 10 s cos(theta) in h); the part of a plane outside the block is one outside cell, so
+  each plane is a sphere tiling. Pieces of one 3D cell keep their identity by overlap within that cell. Events by the shared logger;
+  events touching the outside cell are boundary events and are not counted; counted events lie in the core. Also counted from the 3D
+  identity alone (no logger): cell first appears, new piece of a present cell, piece splits off, pieces of one cell join, cell
+  vanishes. Swaps undone by the same four pieces within 60 s (at fixed x) are flicker; persistent swaps are reported beside all.
+- Block checks: cells that do not touch the block boundary are connected and balls (voxel Euler number 1); corners (2 x 2 x 2 voxel
+  windows with four or more cells, clustered) with exactly four cells; Euler of every plane; the logger's balance; the Morse identity
+  per interior cell.
+- Controls (known answers): (1) a space-time Poisson-Voronoi block of the same size (seed spacing about 1.2 Mm, time scale 3 km/s,
+  so cells are granule-sized and live about 7 min), voxel labels by the nearest seed; exact counts per direction from its Delaunay
+  corners (corner index = edges going down, counted in the core); (2) a moving-Voronoi block (control_voronoi.py, 500 seeds, speed 1,
+  seed 1: no cell is ever born or dies; every change at theta = 0 is a swap); (3) shuffled frames (seed 7) for labellings A and B.
+  The #104 polytope sweeps themselves were already logged in two directions with the exact h-vector counts (event-logger study,
+  validation (a)); they are the exact closed case and are not rerun.
+- Predictions: (P1) Poisson-Voronoi exact: no corner of index 0 or 4; births, swaps and deaths per volume within 10% across the 3 x 3
+  directions (theta 0/15/30, v 1.5/3/6), swaps per birth near 4.8. (P2) Poisson-Voronoi through the voxel pipeline: within 25% of the
+  exact counts in every direction (voxel walls add flicker), Morse identity on at least 90% of interior cells. (P3) Moving Voronoi:
+  interior births and deaths near 0 at theta = 0; at the tilts still few as long as the fastest seed is slower than v cot(theta).
+  (P4) Sun, labelling A: the upflow markers connect through time into large families (the census found that splits and merges join
+  the plane into a few families within 40 min), so the 3D cells are few, large and far from convex; we expect births per volume to
+  change by more than 20% between theta = 0 and 30 degrees and with v, i.e. NO invariance; the Morse identity can still hold.
+  (P5) Labelling B: walls in frame planes make theta = 0 non-generic; births at theta = 0 are mostly read as splits by the logger.
+  (P6) Shuffled blocks: counts at theta = 0 dominated by clumps and very different from the tilts.
+- Pilot size: 6 blocks (sunA real/shuffled, sunB real/shuffled, Poisson-Voronoi, moving Voronoi) x 5 directions = 30 slice runs,
+  in parallel, cap 5 min.
+
+### Pilot result (job sun-tilt-pilot, FINAL ok; tables by scripts/tilt_summary.py; results/tilt-pilot/)
+
+The pilot ran twice: the first run counted a new cell twice when it first showed as two pieces in one plane (truth counts only;
+the logger counts were unchanged). The second run is the one reported. Blocks took 5 to 21 s each, slice runs 2 to 58 s.
+Core volume 2791 Mm^2 min in every run (10.1 x 10.1 Mm, 30.2 min). Directions: theta 0, 15, 30 degrees at v = 3 km/s, and theta
+30 degrees at v = 1.5 and 6 km/s.
+
+**Control 1, Poisson-Voronoi space-time block, exact (P1): PASS.** 2467 seeds, 927 cells. Corners in the core by index i (edges
+going down), from the Delaunay tetrahedra, in all 9 directions (theta 0/15/30 x v 1.5/3/6): no corner of index 0 or 4; births
+(i = 1) 285 to 291, swaps (i = 2) 1390 to 1400, deaths (i = 3) 285 to 293. Spread 2% or less; swaps per birth 4.79 to 4.91 (bulk
+value for the typical cell 4.77). The corners are the same corners in every direction; only their index changes, and the counts stay.
+This is the invariance the theory predicts, on a block where the answer is known.
+
+**The voxel pipeline on the same block (P2): partly.**
+
+| Poisson-Voronoi, core | theta 0 | 15, v 3 | 30, v 3 | 30, v 1.5 | 30, v 6 |
+|---|---|---|---|---|---|
+| exact births / swaps / deaths | 291 / 1394 / 287 | 287 / 1399 / 286 | 285 / 1400 / 287 | 289 / 1390 / 293 | 287 / 1400 / 285 |
+| cell first appears / vanishes (3D identity) | 292 / 289 | 286 / 286 | 281 / 291 | 285 / 296 | 286 / 290 |
+| logger swaps, all (persistent) | 749 (719) | 757 (716) | 812 (747) | 954 (809) | 751 (706) |
+| logger births / deaths / clumps | 168 / 174 / 607 | 165 / 169 / 706 | 166 / 162 / 829 | 182 / 190 / 985 | 161 / 157 / 713 |
+| Morse identity holds (of 333 interior cells) | 308 | 302 | 303 | 258 | 302 |
+
+Births and deaths read from the 3D identity match the exact counts within 2% in every direction. The logger finds only 52 to 58%
+of the swaps (69% at v = 1.5); the rest fall into clumps, because at one plane step (10 s) about nine corners pass through the core at
+once. The logger's persistent swap count is stable across directions within 6% at v = 3 and 6 km/s, and 13% higher at v = 1.5,
+where the plane crosses 1.4 frames per pixel and the staircase sampling adds pieces. Morse identity: 91 to 92% of interior cells
+(77% at v = 1.5); the failures are cells that are not voxel balls (24 of 333 have voxel Euler number other than 1). Every plane passes
+Euler; the balance holds in every step.
+
+**Control 2, moving Voronoi (P3): PASS for births, with a detection loss at the tilts.** 500 seeds, 256 corners in the core (247
+with exactly four cells). Fastest seed 2.4 km/s in x, slower than v cot(theta) in every direction run (2.6 km/s at 30 degrees and
+v = 1.5). Core births + deaths: 0, 5, 9, 21, 4 (theta 0; 15; 30 at v 3, 1.5, 6). Swaps (all): 193, 181, 156, 118, 186, i.e. 75% of the
+corners at theta 0 and 46 to 73% at the tilts.
+
+**Sun, labelling A (the 3D connected components of upflow) (P4): it percolates; nothing to test.** The 55 upflow markers of the
+12 x 12 Mm x 40 min block join into one that holds 66% of all upflow voxels; the block has 47 cells, 2 of them inside, 9 corners in
+the core and **no swap in any direction**. Planes fail Euler in 131 to 162 of 242 to 700 (the giant cell's pieces have holes). With
+shuffled frames the largest marker holds 99.9% of the upflow voxels.
+
+**Sun, labelling B (census tracks): a block of balls, cut into non-convex pieces at a tilt.** 464 cells; all 211 cells inside the
+block are connected and balls (voxel Euler number 1); 714 corners in the core, 697 (98%) with exactly four cells. Convex-cell
+prediction for the swaps: corners - births - deaths = 714 - 149 - 149 = 416 (the voxel corner count finds 86% of the exact corners
+in control 1, so this is a lower value).
+
+| Sun B, core | theta 0 | 15, v 3 | 30, v 3 | 30, v 1.5 | 30, v 6 |
+|---|---|---|---|---|---|
+| cell first appears / vanishes (3D identity) | 149 / 149 | 147 / 145 | 146 / 142 | 150 / 354 | 148 / 144 |
+| logger swaps, all (persistent) | 61 (36) | 156 (141) | 152 (135) | 172 (96) | 163 (147) |
+| logger births / deaths | 23 / 41 | 89 / 104 | 90 / 108 | 161 / 177 | 90 / 102 |
+| logger splits / merges / clumps / relabels | 67 / 58 / 65 / 0 | 134 / 133 / 352 / 69 | 162 / 162 / 469 / 186 | 323 / 311 / 746 / 237 | 142 / 140 / 361 / 78 |
+| new pieces of a present cell / pieces joining | 0 / 0 | 185 / 58 | 358 / 69 | 508 / 112 | 198 / 61 |
+| Morse identity holds (of 211) | 211 | 160 | 134 | 84 | 157 |
+| planes failing Euler | 3 of 242 | 71 of 349 | 132 of 471 | 236 of 700 | 78 of 357 |
+
+- The number of cells born and vanishing in the core is the same in every direction (146 to 150), but that holds for any block
+  (each cell is counted once, at its lowest point) and is not the test.
+- Swaps: theta = 0 gives 2.5 times fewer than the tilts (61 against 152 to 172). The time direction is the non-generic one here
+  (theory item 5: tracking puts a split piece's new label on a wall that lies in a frame plane, and every change of a 10 s step
+  lands on one plane): at theta = 0 the logger reads most births as splits (23 births against 149 cells born). Among the tilted
+  directions at v = 3 and 6 km/s the swaps agree within 7% (persistent 135 to 147), about as well as in control 1; with about 150
+  events each, the counting error alone is about 8%.
+- The cells are not convex in space-time: a tilted plane cuts a cell into several pieces, more the larger tan(theta) / v (new pieces
+  0, 185, 358 at theta 0, 15, 30 degrees at v = 3; 508 at v = 1.5, 198 at v = 6), and planes fail Euler (pieces with holes). So by
+  theory item 4 the swap count is not expected to be fixed, and it is far below the convex prediction (about 150 found where 416 x
+  0.55 = 230 would be detected if the cells were convex).
+- The Morse identity fails beyond the control's digital baseline at the tilts (64 to 76% at v >= 3, 40% at v = 1.5, against 91% in
+  control 1); at v = 1.5, 207 cells vanish from a plane and come back, i.e. the plane steps over thin parts of a cell. That is
+  sampling: thin tails of shrinking granules lie between two frames.
+
+**Control 3, shuffled frames (P6): PASS, it breaks everything.** Labelling B shuffled: 7307 cells (slabs one frame thick); cells
+born in the core 2909 to 2954, but new pieces 0 at theta 0 against 32 812 to 69 064 at the tilts, logger births 75 against 352 to
+1277, the Morse identity holds for 99% of cells at theta 0 and 0 to 2% at the tilts.
+
+**Pilot verdict.** The theory carries over in the form stated (control 1: births, swaps and deaths of a convex simple space-time
+complex are the same in every generic direction and for every speed scale, within 2%). The voxel pipeline reproduces the births
+exactly but finds only about half the swaps, with a direction spread of about 6%. In the Sun, the 3D-connected-component cells
+percolate (obstacle 1); the tracked cells are balls but not convex in space-time, so the h-vector-like invariance of swaps is not
+expected and is not seen across theta = 0 and the tilts; among tilted directions at v >= 3 km/s the swap counts agree within the
+counting error of this small block. Nothing here is a statement about physical time.
+
+**Obstacles found.**
+1. Percolation of 3D upflow components (labelling A as asked): one family holds two thirds of the upflow; needs markers that are
+   not connected through time (higher thresholds, h-maxima, or per-frame markers linked only by mutual best overlap).
+2. Units: theta is an angle only after choosing v. The theory's counts do not depend on v (control 1: identical exact counts at
+   v = 1.5, 3, 6 km/s); the Sun's pieces and the pipeline's detection do (pieces x2.6 from v = 6 to 1.5 km/s), so a v-dependence in
+   the Sun is a measure of non-convexity and of sampling, not a physical speed. The reference v = 3 km/s is the census granule
+   diameter over lifetime; any v from 1.5 to 6 km/s should be reported.
+3. Sampling: one plane per frame step at fixed x; at tan(theta) / v large, a plane jumps more than one frame per pixel (1.4 at
+   30 degrees and 1.5 km/s) and steps over thin parts. Swaps that fall within one step become clumps (half of them in control 1).
+4. Non-genericity of theta = 0 (frames, tracking walls in frame planes): theta = 0 is not a fair member of the comparison; the test
+   is among tilted directions, with theta = 0 reported beside.
+5. A sub-box is needed (a tilted plane is not periodic), and the core must stay far enough from the first and last frames that a
+   plane's cut edge is at least one cell away: margin in time >= (1.5 Mm) tan(theta) / v. The pilot's 300 s meets this at v = 3
+   and 6 km/s (289 s needed at 30 degrees and 3 km/s) but not at v = 1.5 km/s (577 s), which adds to the v = 1.5 differences above.
+6. The tracked cells' count of corners (714) gives a convex prediction (416 swaps) that the data cannot reach while cells are
+   non-convex; the swap count is then a property of the shapes, not of the h-vector.
+
+### Full-run plan (not started; waits for DICTO)
+
+- Job sun-tilt (plan file in the job system, written 16 Nov 2026); scripts/spacetime_tilt.py and scripts/tilt_pilot.sh extended
+  to a task list. All four 12 x 12 Mm quadrants of the 24 x 24 Mm box as independent blocks (4 times the pilot volume), depths 0,
+  0.1, 0.2 Mm below the mean tau = 1 height, en024048_hion (242 snapshots) and qs024048_by3363 (101 snapshots, 0.1 Mm, second run).
+- Labellings: B (census tracks); A at marker thresholds 0.5, 1.0, 1.5 std, kept only where the largest marker holds under 5% of the
+  upflow voxels (the percolation gate); A2: per-frame census markers linked through time by mutual best overlap only (no split or
+  merge links), filled by a 3D watershed.
+- Directions: theta 0, 10, 20, 30, 45 degrees; tilt towards +x, -x and +y; v = 3 km/s; at 30 degrees also v = 1.5 and 6 km/s
+  (15 directions). Core margin in t raised to 60 frames (600 s) so that the plane's cut edge stays at least 1.5 Mm away at 45 degrees
+  and v = 3 km/s; plane step dt cos(theta) and, as a sampling check, half that.
+- Counts per core volume: cells born and vanishing (3D identity), new pieces and joins, logger swaps (all, persistent), births,
+  deaths, splits, merges, clumps; corners; Morse identity per interior cell; Euler of every plane; balance.
+- Controls that must PASS: (1) Poisson-Voronoi blocks, 5 seeds x seed time scale 1.5, 3, 6 km/s: exact corner counts invariant
+  within 3% over all 15 directions; pipeline persistent swaps invariant within its own spread, which becomes the yardstick s_PV;
+  (2) moving Voronoi (seeds 1 and 2): births and deaths at most 2% of swaps whenever the fastest seed is slower than v cot(theta);
+  (3) time-reversed blocks: identical swap counts, births and deaths exchanged (a code check: reversal maps the block onto itself);
+  (4) the #104 polytope sweeps (120-cell, truncated 120-cell, bitruncated 600-cell) logged in three more generic directions:
+  exact h-vector counts (the closed, exact case). Controls that must FAIL: (5) shuffled frames (seeds 7 and 8), both labellings:
+  the spread of swaps and births over the tilted directions must exceed 3 s_PV, and the Morse identity must fall below half its
+  real-block rate.
+- Size: about 120 blocks (Sun B 24, A and A2 up to 96 before the percolation gate, qs 8, Poisson-Voronoi 15, moving Voronoi 2) x 15
+  directions = 1800 slice runs at 3 to 60 s each (pilot rate), about 6 CPU hours, 20 at a time: about 30 min wall, cap 1.5 h,
+  memory under 10 GB.
+- Predictions (from the pilot): Poisson-Voronoi exact invariant (PASS); Sun B: swaps per core volume equal over the tilted
+  directions at v >= 3 km/s within s_PV, but not at theta = 0 or v = 1.5 km/s, and new pieces rising with tan(theta) / v: the cells
+  are not convex in space-time, so no h-vector-like invariance; labelling A percolates up to at least 1.0 std.
+- Verdict criteria (for the Sun's swap count, per labelling and depth): **ESTABLISHED** if swaps, births and deaths per core volume
+  agree within s_PV over all tilted directions and all v from 1.5 to 6 km/s, in all four quadrants, the Morse identity holds at
+  least at the control-1 rate, controls 1 to 4 pass and the shuffled control fails; **CONSISTENT** if they agree over the tilted
+  directions at v >= 3 km/s only (or in some quadrants only), controls passing; **NOT CONFIRMED** if the tilted directions differ by
+  more than 2 s_PV, or the shuffled control does not break the invariance.
+
+Files: scripts/spacetime_tilt.py (blocks, checks, exact Poisson-Voronoi corners, tilted slicing and logging), scripts/tilt_pilot.sh
+(job sun-tilt-pilot), scripts/tilt_summary.py (tables); results/tilt-pilot/ (blocks.jsonl, one JSON per block and direction, logs).
+The blocks themselves (data/tilt/*.npz) stay on the compute machine.

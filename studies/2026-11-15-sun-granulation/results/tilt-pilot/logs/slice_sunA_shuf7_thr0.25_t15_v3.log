@@ -1,0 +1,9 @@
+PROGRESS 0.0029 plane 1/349
+PROGRESS 0.1461 plane 51/349
+PROGRESS 0.2894 plane 101/349
+PROGRESS 0.4327 plane 151/349
+PROGRESS 0.5759 plane 201/349
+PROGRESS 0.7192 plane 251/349
+PROGRESS 0.8625 plane 301/349
+SLICE {"block": "sunA_shuf7_thr0.25", "theta": 15.0, "v": 3.0, "planes": 349, "step_h_s": 9.659258262890683, "core_volume_Mm2min": 2791.2033257747553, "core_events": {"split": 45, "merge": 40, "relabel": 21, "clump": 34}, "core_swaps_twostep": 0, "core_swaps_all": 0, "core_swaps_persistent": 0, "core_clump_patterns": {"born 1 died 2 lost 0 gained 0": 15, "born 2 died 2 lost 0 gained 0": 7, "born 2 died 1 lost 0 gained 0": 3, "born 3 died 1 lost 0 gained 0": 2, "born 1 died 0 lost 0 gained 0": 1, "born 1 died 3 lost 0 gained 0": 1, "born 3 died 4 lost 0 gained 0": 1, "born 2 died 4 lost 0 gained 0": 1}, "truth_core": {"cell first appears": 47, "new piece of a present cell": 44, "pieces of one cell join": 7, "piece splits off": 10, "piece of a present cell vanishes": 45, "cell vanishes": 45}, "boundary_events": {"split": 53, "clump": 50, "relabel": 21, "merge": 37, "birth": 8, "death": 5}, "interior_outside_core": {"relabel": 11, "merge": 47, "split": 32, "clump": 2}, "planes_failing_euler": 270, "balance_failures": 0, "planes_cells_in_several_pieces": 45, "digital_fragments_reassigned": 177, "seconds": 3.9, "morse_interior_cells": {"fails": 28, "holds": 41}}
+SLICE_OK data/tilt/sunA_shuf7_thr0.25.npz 15.0 3.0

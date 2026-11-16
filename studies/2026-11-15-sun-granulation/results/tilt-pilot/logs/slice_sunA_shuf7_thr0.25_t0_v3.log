@@ -1,0 +1,7 @@
+PROGRESS 0.0041 plane 1/242
+PROGRESS 0.2107 plane 51/242
+PROGRESS 0.4174 plane 101/242
+PROGRESS 0.6240 plane 151/242
+PROGRESS 0.8306 plane 201/242
+SLICE {"block": "sunA_shuf7_thr0.25", "theta": 0.0, "v": 3.0, "planes": 242, "step_h_s": 10.0, "core_volume_Mm2min": 2791.2033257747553, "core_events": {"split": 38, "merge": 37, "clump": 8, "relabel": 7}, "core_swaps_twostep": 0, "core_swaps_all": 0, "core_swaps_persistent": 0, "core_clump_patterns": {"born 1 died 2 lost 0 gained 0": 4, "born 2 died 1 lost 0 gained 0": 3, "born 3 died 1 lost 0 gained 0": 1}, "truth_core": {"cell first appears": 46, "cell vanishes": 45, "piece splits off": 3, "piece of a present cell vanishes": 3, "new piece of a present cell": 2, "pieces of one cell join": 2}, "boundary_events": {"merge": 43, "split": 40, "birth": 10, "death": 6, "clump": 24, "relabel": 4}, "interior_outside_core": {"merge": 36, "split": 32, "clump": 3, "relabel": 4}, "planes_failing_euler": 176, "balance_failures": 0, "planes_cells_in_several_pieces": 21, "digital_fragments_reassigned": 80, "seconds": 2.4, "morse_interior_cells": {"holds": 68, "fails": 1}}
+SLICE_OK data/tilt/sunA_shuf7_thr0.25.npz 0.0 3.0

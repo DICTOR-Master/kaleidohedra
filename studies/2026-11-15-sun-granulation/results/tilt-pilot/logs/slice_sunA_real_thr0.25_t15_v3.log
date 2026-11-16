@@ -1,0 +1,9 @@
+PROGRESS 0.0029 plane 1/349
+PROGRESS 0.1461 plane 51/349
+PROGRESS 0.2894 plane 101/349
+PROGRESS 0.4327 plane 151/349
+PROGRESS 0.5759 plane 201/349
+PROGRESS 0.7192 plane 251/349
+PROGRESS 0.8625 plane 301/349
+SLICE {"block": "sunA_real_thr0.25", "theta": 15.0, "v": 3.0, "planes": 349, "step_h_s": 9.659258262890683, "core_volume_Mm2min": 2791.2033257747553, "core_events": {"merge": 24, "split": 15, "clump": 5, "relabel": 1, "death": 1}, "core_swaps_twostep": 0, "core_swaps_all": 0, "core_swaps_persistent": 0, "core_clump_patterns": {"born 0 died 0 lost 1 gained 0": 4, "born 0 died 0 lost 0 gained 1": 1}, "truth_core": {"piece of a present cell vanishes": 14, "piece splits off": 11, "cell vanishes": 11, "cell first appears": 2, "new piece of a present cell": 3, "pieces of one cell join": 1}, "boundary_events": {"split": 28, "clump": 68, "birth": 25, "swap": 15, "merge": 20, "relabel": 2, "death": 8}, "interior_outside_core": {"death": 3, "merge": 21, "clump": 7, "split": 10}, "planes_failing_euler": 149, "balance_failures": 0, "planes_cells_in_several_pieces": 271, "digital_fragments_reassigned": 145, "seconds": 4.3, "morse_interior_cells": {"fails": 1, "holds": 1}}
+SLICE_OK data/tilt/sunA_real_thr0.25.npz 15.0 3.0
