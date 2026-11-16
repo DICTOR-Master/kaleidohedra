@@ -251,6 +251,21 @@ Palomar now requires every committed Lean file of a submitted repository, genera
 - **Whole repository.** `scripts/palomar_source_check.py` (repository root) checks every committed `.lean` file: `module` header, at most 10,000 lines, no symbolic links, Challenge limits. It ends FINAL ok; the longest file is `Data/Main/All.lean` (2,383 lines), and the Challenge has 124 lines and 7,210 bytes.
 - Nothing was submitted. No GitHub workflow or runner was added; those steps wait for DICTO.
 
+## Version (Palomar-ready, memory) (17 November 2026)
+
+Palomar's preflight of the standalone repository (DICTOR-Master/kulaichev-yantra-lean, run on 16 Nov) stopped in the Solution build: the standard runner has 4 cores and 16 GB, `lake build` compiles up to 4 modules at once, and the build was killed for lack of memory (peak 15.4 GB, exit 137). The theorem statements, the Challenge and the axioms are unchanged.
+
+- **Measurement.** `scripts/measure_lean_mem.sh` recompiles every module of a built entry alone, as lake compiles it, and records each module's memory peak and RSS (`data/lean-mem-before.tsv`). Nine modules needed more than about 3 GB: `Deriv/KRWtp` 11.8 GB, `Deriv/KRW` 9.9, `Deriv/KFin_D` 6.4, `Deriv/KCW_FH1` 6.1, `Exist` 5.3, `Deriv/KFin_H1` 4.7, `Deriv/KSteps` 3.7, `Deriv/KCWtp_FH1` 3.3 and `Deriv/KExT27` 3.2. The 1,216 certificate modules need at most 1.9 GB each.
+- **The one bad proof term.** Inside `KRWtp`, the single theorem `res_F1` took 11.7 GB. Almost all of it went on `ZP.ofSP` of the stored chart polynomial (11.5 GB alone), which sorted the concatenation P⁺ ++ P⁻ by insertion while the stored terms were roughly in descending order. Two generator-level changes fix it:
+  - `ZP.ofSP` now sorts P⁺ and P⁻ separately and merges them (`ZPoly2.lean`; its soundness lemma `eval_ofSP` re-proved in `ZPoly2Sound.lean`);
+  - `c1_lean_cert.py` writes each part of every stored polynomial in ascending order of (a, b, e), so each sort is linear. Only the 10 `Polys.lean` files change; the subtree modules `P<k>` and the assemblies are byte-identical.
+  - `KRWtp` now needs 0.5 GB in 3.8 s (was 11.8 GB in 111 s), and `KRW` 0.45 GB (was 9.9 GB). Measurements after the change: `data/lean-mem-ofsp.tsv`.
+- **Build order.** The 8 modules still above 2.5 GB (6.4 GB at most) are put in one chain by `scripts/c15_build_order.py` (list: `data/lean-build-order.json`). Each imports the previous one with a plain `import` marked "build order (memory)", so lake never builds two of them at once. The chain follows the real import graph, and the script checks that it adds no cycle. With every other module at 2.1 GB or less, 4 modules at once stay below about 13 GB.
+- **Regeneration.** `run_module_regen.sh` (now ending with c15) reproduces every committed file byte for byte (COMPARE ok).
+- **Fit check under Palomar's limits (job kyl-fit, `scripts/run_fit_check.sh`).** The check ran a clean `lake build Solution`, Palomar's own build command. It ran on 4 CPUs (`taskset`, `LEAN_NUM_THREADS=4`; at most 4 lean processes were seen at once) inside a cgroup capped at 14 GB with no swap. The build succeeds in 26 min (1 h 20 min of CPU) with a **memory peak of 8.2 GB**, and the axioms are propext, Classical.choice and Quot.sound only. @@FITCOMP@@
+- **Negative controls (job kyl-negctl).** All three are rejected again on the new entry (FINAL ok): (a) and (b) by "theorem statement do not match", (c) by `sorryAx`, "Illegal axiom detected".
+- **Preflight.** @@PREFLIGHT@@
+
 ## Credits (at point of use)
 
 - **Interval arithmetic and the natural extension:** R. E. Moore, *Interval Analysis* (1966), and *Methods and Applications of Interval Analysis* (1979).

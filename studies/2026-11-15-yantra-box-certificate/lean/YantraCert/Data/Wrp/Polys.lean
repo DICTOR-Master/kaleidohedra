@@ -13,9 +13,9 @@ namespace YantraCert.Data.Wrp
 open YantraCert
 
 -- F0 = G~, K = 67108864
-noncomputable def F0p_0 : NP := (.cons 59049 10 8 0 (.cons 78732 9 9 0 (.cons 26244 8 10 0 (.cons 209952 8 8 0 (.cons 139968 7 9 0 (.cons 419904 8 6 0 (.cons 559872 7 7 0 (.cons 373248 6 8 0 (.cons 1492992 6 6 0 (.cons 995328 5 7 0 (.cons 21233664 4 2 0 (.cons 100663296 1 1 0 (.cons 268435456 0 0 0 .nil)))))))))))))
+noncomputable def F0p_0 : NP := (.cons 268435456 0 0 0 (.cons 100663296 1 1 0 (.cons 21233664 4 2 0 (.cons 995328 5 7 0 (.cons 1492992 6 6 0 (.cons 373248 6 8 0 (.cons 559872 7 7 0 (.cons 139968 7 9 0 (.cons 419904 8 6 0 (.cons 209952 8 8 0 (.cons 26244 8 10 0 (.cons 78732 9 9 0 (.cons 59049 10 8 0 .nil)))))))))))))
 noncomputable def F0p : NP := F0p_0
-noncomputable def F0n_0 : NP := (.cons 5971968 6 4 0 (.cons 5971968 5 5 0 (.cons 15925248 4 4 0 (.cons 7077888 3 5 0 (.cons 18874368 2 4 0 (.cons 50331648 1 3 0 (.cons 67108864 0 2 0 .nil)))))))
+noncomputable def F0n_0 : NP := (.cons 67108864 0 2 0 (.cons 50331648 1 3 0 (.cons 18874368 2 4 0 (.cons 7077888 3 5 0 (.cons 15925248 4 4 0 (.cons 5971968 5 5 0 (.cons 5971968 6 4 0 .nil)))))))
 noncomputable def F0n : NP := F0n_0
 noncomputable def F0 : SP := ⟨10, 10, 0, F0p, F0n⟩
 noncomputable def C : Chart := ⟨[F0], [], []⟩

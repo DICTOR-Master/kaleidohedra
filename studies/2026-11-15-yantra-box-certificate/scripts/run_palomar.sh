@@ -24,6 +24,7 @@ lake exe cache get > $LOG/cache.log 2>&1 || { tail -5 $LOG/cache.log; st=1; }
 echo "PROGRESS 0.08 heavy modules"
 find YantraCert -name '*.lean' | grep -E 'Data/[^/]+/P[0-9]+\.lean|Deriv/K' | sed 's#\.lean$##; s#/#.#g' | sort > $LOG/heavy.txt
 N=$(wc -l < $LOG/heavy.txt); export LOG N
+rm -f $LOG/b-*.log $LOG/r-*.log   # 17 Nov 2026: old per-module logs made the PROGRESS count wrong
 # 16 Nov 2026 (job ymod-palomar, clean build): two parallel `lake build`s raced on a shared dependency's .olean
 # (Data.Wtp.Polys). Guard: build every non-heavy module that a heavy module imports first, in one lake process;
 # then any heavy module that still fails is retried alone, and only a second failure counts.

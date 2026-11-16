@@ -1,0 +1,14 @@
+{
+ "note": "Modules whose measured cgroup memory peak (data/lean-mem-ofsp.tsv, each module compiled alone by scripts/measure_lean_mem.sh, 17 Nov 2026) exceeds the threshold. scripts/c15_build_order.py chains them so that lake builds at most one at a time.",
+ "threshold_bytes": 2684354560,
+ "solo": [
+  "YantraCert.Deriv.KFin_D",
+  "YantraCert.Deriv.KCW_FH1",
+  "YantraCert.Exist",
+  "YantraCert.Deriv.KFin_H1",
+  "YantraCert.Deriv.KSteps",
+  "YantraCert.Deriv.KCWtp_FH1",
+  "YantraCert.Deriv.KExT27",
+  "YantraCert.Deriv.KCW_FD"
+ ]
+}

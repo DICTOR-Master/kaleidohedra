@@ -81,7 +81,10 @@ def np_lit(terms, name):
 
 def sp_defs(p, name):
     D = degs(p)
-    pos = [(e, c) for e, c in p if c > 0]; neg = [(e, -c) for e, c in p if c < 0]
+    # 17 Nov 2026: each part in ascending lexicographic order of (a, b, e), the order of ZP.add, so that ZP.ofSP's insertion
+    # sorts are linear (unsorted, the largest polynomial took 11.7 GB of kernel memory in Deriv/KRWtp)
+    pos = sorted((tuple(e), c) for e, c in p if c > 0); neg = sorted((tuple(e), -c) for e, c in p if c < 0)
+    assert len({e for e, _ in pos + neg}) == len(pos) + len(neg), 'repeated monomial'
     return np_lit(pos, name + 'p') + np_lit(neg, name + 'n') + [f'noncomputable def {name} : SP := ⟨{D[0]}, {D[1]}, {D[2]}, {name}p, {name}n⟩']
 
 manifest = {'budget': BUDGET, 'charts': {}}

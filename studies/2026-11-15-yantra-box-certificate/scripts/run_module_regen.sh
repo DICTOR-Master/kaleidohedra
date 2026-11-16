@@ -3,13 +3,13 @@
 # nothing but the header changed: each regenerated file must equal lean_module.modulize(<the file before>), byte for byte.
 # Generators in dependency order (budget 1.2e5 for c1, as in section 7 of the README):
 #   c1 (Data/*), c2 (KBoxData), c5 (Deriv core), c8 (Deriv/KR*), c11 (Deriv/KEx*), c6 (GeomSteps), c9 (Unique1),
-#   c10 (Unique2), c12 (Exist), c13 (ExistFinal).
+#   c10 (Unique2), c12 (Exist), c13 (ExistFinal), then c15 (build order: the memory-heavy modules chained, 17 Nov 2026).
 # Deriv/KKBox.lean (17 lines) has no generator and is converted with the hand-written files (scripts/lean_module.py FILE);
 # lean/bench/ (scripts/c0_bench.py, not in git) is left out of the comparison.
 # Then rewrites data/lean-generated.sha256 and data/lean-deriv-generated.sha256 for the new files.
 # Usage: PY=<python with sage, mpmath> [ONLYGEN="c5 c8"] run_module_regen.sh      FINAL ok iff every generator ends well and
 # every comparison holds.
-PY=${PY:-python3}; ONLYGEN=${ONLYGEN:-"c1 c2 c5 c8 c11 c6 c9 c10 c12 c13"}
+PY=${PY:-python3}; ONLYGEN=${ONLYGEN:-"c1 c2 c5 c8 c11 c6 c9 c10 c12 c13 c15"}
 ST=$(cd "$(dirname "$0")/.." && pwd); LOG=$ST/logs/module-regen; mkdir -p $LOG; cd $ST || exit 1
 OLD=$LOG/old; rm -rf $OLD $LOG/data-before; cp -a lean $OLD; cp -a data $LOG/data-before; export ST
 st=0; n=$(echo $ONLYGEN | wc -w); k=0

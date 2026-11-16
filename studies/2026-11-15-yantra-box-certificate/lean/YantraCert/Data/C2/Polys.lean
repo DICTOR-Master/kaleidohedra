@@ -13,14 +13,14 @@ namespace YantraCert.Data.C2
 open YantraCert
 
 -- T0 = test "Q > 1/2", K_N = 281474976710656, K_D = 281474976710656
-noncomputable def T0Np_0 : NP := (.cons 387420489 18 6 0 (.cons 34828517376 12 4 0 (.cons 50096498540544 2 2 0 (.cons 142657607172096 0 4 0 .nil))))
+noncomputable def T0Np_0 : NP := (.cons 142657607172096 0 4 0 (.cons 50096498540544 2 2 0 (.cons 34828517376 12 4 0 (.cons 387420489 18 6 0 .nil))))
 noncomputable def T0Np : NP := T0Np_0
-noncomputable def T0Nn_0 : NP := (.cons 6198727824 14 6 0 (.cons 99179645184 10 6 0 (.cons 557256278016 8 4 0 (.cons 281474976710656 0 0 0 .nil))))
+noncomputable def T0Nn_0 : NP := (.cons 281474976710656 0 0 0 (.cons 557256278016 8 4 0 (.cons 99179645184 10 6 0 (.cons 6198727824 14 6 0 .nil))))
 noncomputable def T0Nn : NP := T0Nn_0
 noncomputable def T0N : SP := ⟨18, 6, 0, T0Np, T0Nn⟩
-noncomputable def T0Dp_0 : NP := (.cons 387420489 18 6 0 (.cons 557256278016 8 4 0 (.cons 50096498540544 2 2 0 (.cons 281474976710656 0 0 0 .nil))))
+noncomputable def T0Dp_0 : NP := (.cons 281474976710656 0 0 0 (.cons 50096498540544 2 2 0 (.cons 557256278016 8 4 0 (.cons 387420489 18 6 0 .nil))))
 noncomputable def T0Dp : NP := T0Dp_0
-noncomputable def T0Dn_0 : NP := (.cons 6198727824 14 6 0 (.cons 34828517376 12 4 0 (.cons 99179645184 10 6 0 (.cons 142657607172096 0 4 0 .nil))))
+noncomputable def T0Dn_0 : NP := (.cons 142657607172096 0 4 0 (.cons 99179645184 10 6 0 (.cons 34828517376 12 4 0 (.cons 6198727824 14 6 0 .nil))))
 noncomputable def T0Dn : NP := T0Dn_0
 noncomputable def T0D : SP := ⟨18, 6, 0, T0Dp, T0Dn⟩
 noncomputable def C : Chart := ⟨[], [(T0N, T0D)], []⟩

@@ -25,7 +25,7 @@ lemma ZP.eval_norm (p : ZP) (x y z : ℝ) : (ZP.norm p).eval x y z = p.eval x y 
 
 lemma ZP.eval_ofSP (p : SP) (x y z : ℝ) : (ZP.ofSP p).eval x y z = p.eval x y z := by
   unfold ZP.ofSP SP.eval
-  rw [ZP.eval_norm, ZP.eval_app, ZP.eval_ofNP, ZP.eval_ofNP]; simp; ring
+  rw [ZP.eval_add, ZP.eval_norm, ZP.eval_norm, ZP.eval_ofNP, ZP.eval_ofNP]; simp; ring
 
 lemma ZP.degLE_cons {D0 D1 D2 c a b e} {t : ZP} :
     (ZP.cons c a b e t).degLE D0 D1 D2 = true ↔ a ≤ D0 ∧ b ≤ D1 ∧ e ≤ D2 ∧ t.degLE D0 D1 D2 = true := by
