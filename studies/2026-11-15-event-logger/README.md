@@ -43,7 +43,8 @@ window; its mu2 = 1.90 is not the dry froth's 1.24. Total 1.08 against 1.5; shar
 LAW-BUILT FROTH (16 Nov 2026, last section; vfroth/): an off-lattice froth built only from Plateau's 120 degrees, Laplace arcs and
 von Neumann's law (checked to 1e-9 degrees and 1e-10), with Rutenberg-McCurdy's own T1/T2 and counting rules, gives 0.250 +- 0.015
 macroscopic T1 per T2 (N0 = 1000, 8 seeds), the same at c = 0.5 / 1 / 2 (0.256 / 0.250 / 0.242): the cut-off dependence was a
-lattice artefact, but the value is half of 0.53. NOT CONFIRMED. Window not in a tested scaling state (mu2 1.58); N0 = 2500 running.
+lattice artefact, but the value is half of 0.53. N0 = 2500 (7 seeds) in a window that passes the scaling test: 0.245 +- 0.011,
+cut-off free; stationary mu2 1.59 (theirs 1.24). NOT CONFIRMED.
 NEXT (as it stood): settle the Earth counting rule before any rate is quoted. First, explain the single-contact clumps. Second, a persistence
 rule for swaps (fix the tolerance first). Third, close the Müller 2019 seam and run a second model, then compare the two.
 
@@ -794,3 +795,19 @@ scaling window is wanted, run N0 >= 10^4 on a free machine with a local (patch) 
 slow for.
 Operations note: the first launch (N0 = 6400) was stopped by killing its wrapper and runs; its own script survived and later
 wrote a FINAL FAIL line into the log file of the relaunch. Nothing of its data was used. Stop a job by its process group.
+
+Update (16 Nov 2026, same day, after the report): N0 = 2500 finished (count_n2500.json). Seeds 1 to 4 and 6 to 8 ended done (to
+N = 50); seed 5 stopped at N = 1700 when the Newton solve failed (stuck-linesearch; before its window, so not counted, and the
+main job therefore ended FINAL FAIL by its own rule). The seven runs pooled PASS the fixed scaling test after the first quarter is
+dropped (all quarters within p(n) 0.014, mu2 0.046, KS 0.013, slope 6.8 %). In that tested scaling window (2109 T2, 776 T1):
+
+| N0 = 2500, 7 seeds, scaling window | c = 0.5 | c = 1 (main) | c = 2 |
+|---|---|---|---|
+| macroscopic T1 per T2 | 0.249 +- 0.011 | 0.245 +- 0.011 | 0.237 +- 0.011 |
+| spread between seeds (sd) | 0.015 | 0.015 | 0.015 |
+
+Seeds 0.22 to 0.26 at c = 1. Total T1 per T2 0.368; T2 sides at l^2 4.7 / 85.8 / 9.4 % (3 / 4 / 5); angles within 7.3e-10 degrees of
+120; flux = (pi/3)(n - 6) within 4.7e-11; growth 1.05 x pi/3; E / E_hex 0.939; mu2 1.59 (stationary in this froth, not the 1.24 of
+their model); Aboav a 1.11; Lewis slope 0.51, n0 4.0. The two sizes agree (0.250 +- 0.015 and 0.245 +- 0.011 at c = 1), and the
+count is cut-off free at both. VERDICT unchanged and now on a tested scaling state at the larger size: NOT CONFIRMED, 0.245 +- 0.011
+(seed sd 0.015) against 0.53 +- 0.05. The rc x 4 side check (second machine) was at N = 1500 of 2500 and is still a follow-up.
