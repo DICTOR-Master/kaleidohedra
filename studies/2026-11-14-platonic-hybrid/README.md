@@ -32,5 +32,5 @@ per-mix connector sets of the four constructions are the K lines of data/hybrid-
 ## Files
 - scripts/golden.py: exact field Q(sqrt5), exact hulls and volumes, the solids in the cell frame, Admiral Caps (2 tetrahedra each), the 8 caps, integer half-spaces for exact point tests.
 - scripts/hybrid.py: all checks (E exact facts, exact covering with controls, float stack, #47's mixes3.py control, counts). Logs: data/hybrid-pilot.log (pilot, 600 points), data/hybrid-full.log (60 000 points per configuration, 12 workers, 62 s, 30/30 checks, FINAL ok); JSON beside them.
-- scripts/render_hybrid.py: Figure 8.5 (depth-buffered faces, crisp edges, 3x supersampling, element colours, DICTO mark); data/hybrid-slab.png, data/render.log.
+- scripts/render_hybrid.py: Figure 8.5 (depth-buffered faces, crisp edges, 3x supersampling, the Kaleidohedra app's colours of the five solids, DICTO mark); data/hybrid-slab.png, data/render.log.
 - Runs on the compute host through the job gate (jobs phybrid-pilot, phybrid, phybrid-render), each FINAL ok.

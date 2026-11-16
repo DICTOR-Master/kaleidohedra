@@ -7,11 +7,11 @@ current white cover (book-platonic/front.html, cover/cover-skins.png) stays unti
   in a three-quarter view. The character 風 (Wind) stands in the middle of the hoop, in the ring's plane, in the same gold.
   The five Platonic solids sit on the band as crystal stones in D·I·C·T·O order, left to right, evenly 40 degrees apart over the
   upper arc, each face-down in a small gold collet with one prong per corner of its bottom face. All five at edge 1 (the same
-  edge), in the element colours of the DICTO square: D violet (138, 92, 196), I blue (58, 112, 205), C green (72, 142, 72),
+  edge), in the colours of the DICTO square (the Kaleidohedra app's colours): D violet (138, 92, 196), I blue (58, 112, 205), C green (72, 142, 72),
   T red (205, 62, 40), O yellow (232, 200, 82).
 - Rendering: path-traced in Blender Cycles (CPU, 1024 samples, denoised, 2400 x 2200 picture block). Gold = metallic BSDF
   reflecting soft-box lights and a studio surround (highlights, reflection gradient, darker gold in shadow). Crystal = refractive
-  glass (IOR 1.45), tinted, with a volume absorption in the element colour, so the colour deepens where the stone is thicker;
+  glass (IOR 1.45), tinted, with a volume absorption in the stone's colour, so the colour deepens where the stone is thicker;
   light reaching a stone through its body comes from a banded light box, so the back facets and edges show inside it; small
   bevels give bright facet edges. The camera sees only the cover ground (20, 15, 11).
 - Lettering as the series: series line white, title in the series gold (217, 165, 33), subtitle in the champagne of the ring's

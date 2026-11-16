@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Renders of the gorinto study: render standard (solid faces, crisp edges, painter's order, no haze), DICTO mark.
 Colours: the Buddhist five colours of the rings (earth yellow, water white, fire red, wind black, void blue; ja.wikipedia 五輪塔)
-for the traditional cell, the Platonic cell and every arrangement; DICTO's element colours only in the comparison panel.
+for the traditional cell, the Platonic cell and every arrangement; the Kaleidohedra app's colours of the five solids only in the comparison panel.
 Black reads on the white ground by itself; its edges are drawn light grey so the facets of the black octahedron stay visible.
 Usage: render.py named.json search.json outdir"""
 import sys, os, json, math, itertools
@@ -115,7 +115,7 @@ def fig_cells():
     sc = F.Scene(R); add_cell(sc); finish(axs[1], sc)
     axs[1].set_title('Platonic gorintō: five solids in one sphere\nBuddhist colours', fontsize=10)
     sc = F.Scene(R); add_cell(sc, pal=DICTO); finish(axs[2], sc)
-    axs[2].set_title('Platonic gorintō, comparison:\nDICTO element colours', fontsize=10)
+    axs[2].set_title('Platonic gorintō, comparison:\nKaleidohedra app colours', fontsize=10)
     for ax in axs: ax.set_ylim(-3.9, 3.75)
     labels = ['空 void · kha', '風 wind · ha', '火 fire · ra', '水 water · va', '地 earth · a']
     zs = [(p['bottom'] + p['top']) / 2 - Hf / 2 for p in [dict(bottom=float(q['bottom']), top=float(q['top'])) for q in parts]][::-1]
@@ -192,7 +192,7 @@ def fig_mandala(name, fname):
                        Line2D([], [], color=BUD['fire'], lw=2.2, label='upper layer, +H/2: cross of four'),
                        Line2D([], [], color=BUD['void'], lw=2.2, ls='--', label='lower layer, -H/2: cross of four')],
               loc='lower center', bbox_to_anchor=(0.5, -0.02), fontsize=9, frameon=False)
-    ax.set_title('plan from above (earth-cube footprints): 1 + 4 + 4 + 4 = 13', fontsize=10)
+    ax.set_title('plan from above (cube footprints): 1 + 4 + 4 + 4 = 13', fontsize=10)
     fig.suptitle(f'Gorintō mandala web: centre + 12 (EKP 13-node pattern), middle layer the Tō-ji quincunx\n'
                  f'upper and lower layers at ±H/2; d = {d:.6f} for circumradius 1; axes vertical', fontsize=11.5)
     F.mark(fig); fig.subplots_adjust(left=0.01, right=0.99, top=0.90, bottom=0.03, wspace=0.03)

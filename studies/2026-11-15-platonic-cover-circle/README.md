@@ -4,7 +4,7 @@ Cover by DICTO: "just the five solids plain in a circle in DICTO order, Dodecahe
 see-through. Not yet in the book: the current white cover (book-platonic/front.html, cover/cover-skins.png) stays until
 DICTO chooses.
 
-- Image: the five Platonic solids, plain (no settings), see-through in the element colours of the DICTO square: Dodecahedron
+- Image: the five Platonic solids, plain (no settings), see-through in the colours of the DICTO square (the Kaleidohedra app's colours): Dodecahedron
   violet (138, 92, 196), Icosahedron blue (58, 112, 205), Cube green (72, 142, 72), Tetrahedron red (205, 62, 40), Octahedron yellow
   (232, 200, 82). Evenly on one circle (radius 720 px on the 2400 px wide cover), 72 degrees apart: Dodecahedron at the top, then
   clockwise Icosahedron, Cube, Tetrahedron, Octahedron.

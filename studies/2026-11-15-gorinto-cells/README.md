@@ -48,7 +48,7 @@ A measured single object for comparison is the ceramic gorintō-shaped container
 
 Checks: the four contacts inside the cell have gap exactly 0, and non-adjacent pieces are separated (control in the named run).
 
-Colours: the Buddhist five colours (below) in the renders; DICTO's element colours only in the comparison panel of RENDER-gorinto-cells.png.
+Colours: the Buddhist five colours (below) in the renders; the Kaleidohedra app's colours of the five solids only in the comparison panel of RENDER-gorinto-cells.png.
 
 ## 2. Connections (all spacings for circumradius 1)
 
@@ -58,15 +58,15 @@ Method (as for the EKP network, #8 §5). Two convex pieces overlap iff the trans
 
 | arrangement | spacing | minimal polynomial | density | contacts (besides the column) | certified |
 |---|---|---|---|---|---|
-| column (pagoda stack) | period H = 6.8213523 | degree 8 | – | void top face on next earth base, face–face | exact |
-| square field, θ = 0 | 2φ/√3 = 1.8683447 | 9x⁴ − 36x² + 16 | 0.3657 | void–void face–face and edge–edge | exact |
-| square field, θ = 45° | 1.7990507 | 81x⁸ − 10800x⁶ + 45360x⁴ − 38400x² + 6400 | 0.3944 | void–void face–face (4) | exact |
-| **hexagonal field, θ = 0** | √(6 − 6√5/5) = 1.8211860 | 5x⁴ − 60x² + 144 | **0.4444** | water–water face–face with all six neighbours | exact |
-| hexagonal field, θ = 90° | 1.8683447 | 9x⁴ − 36x² + 16 | 0.4223 | void–void face–face and edge–edge | exact |
-| body-centred (columns shifted H/2), θ = 0 | 1.7776701 | degree 16 | 0.4039 | water corner on wind face (both ways) | exact |
-| body-centred, θ = 45° | 1.7067689 | degree 16 | 0.4382 | fire corner on void face (both ways) | exact + digits |
-| up/down checkerboard (stupa field), θ = 0 | 1.7377720 | degree 16 | 0.4227 | up water corner on down wind face, and the reverse | exact |
-| up/down checkerboard, θ = 45° | 1.7623135 | 81x⁸ − 4104x⁶ + 17496x⁴ − 17184x² + 16 | 0.4110 | up earth edge on down void edge (edge–edge, 8) | exact |
+| column (pagoda stack) | period H = 6.8213523 | degree 8 | – | dodecahedron top face on next cube base, face–face | exact |
+| square field, θ = 0 | 2φ/√3 = 1.8683447 | 9x⁴ − 36x² + 16 | 0.3657 | dodecahedron–dodecahedron face–face and edge–edge | exact |
+| square field, θ = 45° | 1.7990507 | 81x⁸ − 10800x⁶ + 45360x⁴ − 38400x² + 6400 | 0.3944 | dodecahedron–dodecahedron face–face (4) | exact |
+| **hexagonal field, θ = 0** | √(6 − 6√5/5) = 1.8211860 | 5x⁴ − 60x² + 144 | **0.4444** | icosahedron–icosahedron face–face with all six neighbours | exact |
+| hexagonal field, θ = 90° | 1.8683447 | 9x⁴ − 36x² + 16 | 0.4223 | dodecahedron–dodecahedron face–face and edge–edge | exact |
+| body-centred (columns shifted H/2), θ = 0 | 1.7776701 | degree 16 | 0.4039 | icosahedron corner on octahedron face (both ways) | exact |
+| body-centred, θ = 45° | 1.7067689 | degree 16 | 0.4382 | tetrahedron corner on dodecahedron face (both ways) | exact + digits |
+| up/down checkerboard (stupa field), θ = 0 | 1.7377720 | degree 16 | 0.4227 | up icosahedron corner on down octahedron face, and the reverse | exact |
+| up/down checkerboard, θ = 45° | 1.7623135 | 81x⁸ − 4104x⁶ + 17496x⁴ − 17184x² + 16 | 0.4110 | up cube edge on down dodecahedron edge (edge–edge, 8) | exact |
 
 θ is the angle of the lattice from the cell's mirror direction (x). The up/down field inverts every other column (half turn about a horizontal axis), as stupas might stand on alternate sides of a slope. Inverting them is not denser here (0.4227 against 0.4444).
 
@@ -75,19 +75,19 @@ Method (as for the EKP network, #8 §5). Two convex pieces overlap iff the trans
 - *Up and down columns* (any offset of the inverted sublattice), best 0.6050.
 - *Fully general 3D lattice* (no vertical period forced): the parametrisation failed (best 0.33, below the named fields). This says nothing about the problem; a reduced-basis search is the next method.
 
-The shifted columns interlock: the wide parts (water, void, earth) of one column sit beside the narrow parts (fire apex, wind) of its neighbours. A 2D cross-section shows why: a single gorintō is wide at three heights and narrow at two.
+The shifted columns interlock: the wide parts (icosahedron, dodecahedron, cube) of one column sit beside the narrow parts (tetrahedron apex, octahedron) of its neighbours. A 2D cross-section shows why: a single gorintō is wide at three heights and narrow at two.
 
 ### Rings round a centre (axes vertical, all at one height; member k turned by 360° k/N about its own axis)
 
 | ring | radius | minimal polynomial | first contact | certified |
 |---|---|---|---|---|
-| 4 round a centre (Tō-ji quincunx) | 1.8211860 | 5x⁴ − 60x² + 144 | centre and member: water–water face–face; members free | exact |
+| 4 round a centre (Tō-ji quincunx) | 1.8211860 | 5x⁴ − 60x² + 144 | centre and member: icosahedron–icosahedron face–face; members free | exact |
 | 5 round a centre | 1.8211860 | same | the same; members free | exact |
-| 6 round a centre | 1.9644939 | 45x⁴ − 240x² + 256 | members: water–water corner–corner | exact |
-| **8 round a centre (eight-petal pattern)** | 2.5588226 | degree 16 | members: void–void face–corner | digits |
-| 8, members turned inward | 2.5588226 | – | void–void edge–corner | digits |
+| 6 round a centre | 1.9644939 | 45x⁴ − 240x² + 256 | members: icosahedron–icosahedron corner–corner | exact |
+| **8 round a centre (eight-petal pattern)** | 2.5588226 | degree 16 | members: dodecahedron–dodecahedron face–corner | digits |
+| 8, members turned inward | 2.5588226 | – | dodecahedron–dodecahedron edge–corner | digits |
 | 8 without centre | 2.5588226 | – | the same as with centre | digits |
-| 12 round a centre | 3.7899097 | – | void–void edge–edge | digits |
+| 12 round a centre | 3.7899097 | – | dodecahedron–dodecahedron edge–edge | digits |
 
 ### The 3D mandala web (main result)
 
@@ -100,9 +100,9 @@ These 12 directions are the 12 nearest neighbours of the face-centred lattice, t
 
 | version | d | minimal polynomial | contacts |
 |---|---|---|---|
-| **outer layers parallel (rendered)** | 1.7776701 | degree 16 | upper above lower: void face on earth face (4 column contacts); water corner on wind face (6, both ways) |
-| outer layers inverted | 1.7780815 | degree 8 | inverted pairs: void face on earth face; up water corner on down water face (6) |
-| layers at ±H (not ±H/2) | 1.2721210 | 81x⁸ − 5400x⁶ + 11340x⁴ − 4800x² + 400 | void–void face–face (12) |
+| **outer layers parallel (rendered)** | 1.7776701 | degree 16 | upper above lower: dodecahedron face on cube face (4 column contacts); icosahedron corner on octahedron face (6, both ways) |
+| outer layers inverted | 1.7780815 | degree 8 | inverted pairs: dodecahedron face on cube face; up icosahedron corner on down icosahedron face (6) |
+| layers at ±H (not ±H/2) | 1.2721210 | 81x⁸ − 5400x⁶ + 11340x⁴ − 4800x² + 400 | dodecahedron–dodecahedron face–face (12) |
 | the whole web (lattice spanned by the 12) | 1.7776701 | degree 16 | same as the 13, density 0.4039 (= body-centred θ = 0) |
 
 So the 13-cell mandala and the infinite web it spans touch first at the same spacing: the mandala is the first shell of the web. In the mandala the thirteen cells meet as EKP's pieces do, without overlap and only through contacts of corners on faces and faces on faces (not every neighbour touches the centre). Unlike the EKP network, which uses two kinds of piece (Kepler stars and icosahedra), it uses only one.
@@ -114,12 +114,12 @@ The Womb Realm's central court (centre + 8 on the petals) is the ring of 8 above
 | question | answer |
 |---|---|
 | does the Platonic gorintō embed in the EKP cell? | no: in the cell the five are concentric, and no EKP icosahedron can rest on a face of an EKP cube (cube axes are its two-fold axes) |
-| one element per cell up an EKP column (cube, icosahedron, stella tetrahedron, octahedron, dodecahedron at z = 0, 2, 4, 6, 8; cell edge 2) | gaps earth–water 1/φ², water–fire 1/φ², fire–wind 0 (octahedron corner on the midpoint of the tetrahedron's top edge), wind–void −1/φ (overlap: the dodecahedron crosses the wall) |
+| one solid per cell up an EKP column (cube, icosahedron, stella tetrahedron, octahedron, dodecahedron at z = 0, 2, 4, 6, 8; cell edge 2) | gaps cube–icosahedron 1/φ², icosahedron–tetrahedron 1/φ², tetrahedron–octahedron 0 (octahedron corner on the midpoint of the tetrahedron's top edge), octahedron–dodecahedron −1/φ (overlap: the dodecahedron crosses the wall) |
 | does the mandala web relate to the EKP network? | same 13-node neighbour pattern (stretched); one kind of cell instead of two; contacts are corners on faces and faces on faces rather than corners only |
 
 ## 3. Colours
 
-Buddhist five colours of the rings: **earth yellow, water white, fire red, wind black, void "all colours" (also painted blue)**. Source: ja.wikipedia 五輪塔: 「地輪は黄、水輪は白、火輪は赤、風輪は黒、」「そして空輪は全ての色」, with wooden towers often painted this way and the void ring sometimes blue (see HISTORY.md for the quotation). The blue for void follows that variant; 青 covers blue and blue-green, and the renders use blue (#2f5fae). Water is drawn in a warm stone white (#efe7d6). Wind is near-black (#2c2c30) with light grey edges (#b4b4b4), so its facets read on the white ground. DICTO's element colours (earth green, water blue, fire red, wind yellow, void violet) appear only in the comparison panel.
+Buddhist five colours of the rings: **earth yellow, water white, fire red, wind black, void "all colours" (also painted blue)**. Source: ja.wikipedia 五輪塔: 「地輪は黄、水輪は白、火輪は赤、風輪は黒、」「そして空輪は全ての色」, with wooden towers often painted this way and the void ring sometimes blue (see HISTORY.md for the quotation). The blue for void follows that variant; 青 covers blue and blue-green, and the renders use blue (#2f5fae). Water is drawn in a warm stone white (#efe7d6). Wind is near-black (#2c2c30) with light grey edges (#b4b4b4), so its facets read on the white ground. The Kaleidohedra app's colours (cube green, icosahedron blue, tetrahedron red, octahedron yellow, dodecahedron violet) appear only in the comparison panel.
 
 ## 4. Respect
 

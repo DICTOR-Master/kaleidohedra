@@ -1,5 +1,5 @@
 """Figure for "Swaps traced through depth": one depth slice (uz, 0.1 Mm below the mean tau = 1 height, Bifrost en024048_hion,
-Carlsson et al. 2016; Gudiksen et al. 2011; Hinode SDC Europe) with its cells in the element colours on a dark ground, and the
+Carlsson et al. 2016; Gudiksen et al. 2011; Hinode SDC Europe) with its cells in the five Kaleidohedra app colours on a dark ground, and the
 persistent swaps of a 10-minute window around it: rings = swaps confirmed at both adjacent depths (0.05 and 0.15 Mm, the counted
 'upright' swaps), small grey dots = swaps seen at this depth only. Usage: fig3d.py STUDYDIR"""
 import sys, os, pickle, json
@@ -49,7 +49,7 @@ leg = fig.legend(loc='lower left', bbox_to_anchor=(0.06, 0.055), ncol=2, fontsiz
 fig.text(0.04, 0.955, f'Granules as upflow cells 0.1 Mm below the surface ({len(np.unique(lab))} cells), swaps of the 10 min around this frame',
          color='#e6e6ee', fontsize=10.5)
 fig.text(0.06, 0.012, 'Vertical velocity of the Bifrost run en024048_hion (Carlsson et al. 2016; Hinode SDC Europe).\n'
-         'Cells coloured in the five element colours; walls in light grey.', color='#9a9aa6', fontsize=8)
+         'Cells coloured in the five Kaleidohedra app colours (violet, blue, green, red, yellow); walls in light grey.', color='#9a9aa6', fontsize=8)
 fig.text(0.96, 0.012, 'DICTO · dictospheres.com', ha='right', va='bottom', color='#e6e6ee', fontsize=9)
 os.makedirs(f'{S}/results/figures', exist_ok=True)
 fig.savefig(f'{S}/results/figures/sun_3d_trace.png', dpi=130, facecolor=fig.get_facecolor())

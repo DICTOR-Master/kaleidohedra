@@ -41,7 +41,7 @@ For the solids, they do not. The five hulls pile up at a common bitruncated 5-ce
 
 - `scripts/qlib.py`: exact tools. Q5 arithmetic (copied from the echo-shapes study), certified hulls, face lattice, exact volumes, caps, halfspace intersection.
 - `s1_corners600.py`, `s2_solids600.py`, `s3_catsteak.py`, `s3b_arrangement.py` (mode AB), `s4_redqueen.py`, `fig_orbits.py`. Each log in `data/` ends FINAL ok. Every run except one was a pilot of under 5 min on the compute machine. The 90-plane arrangement (`data/s3b_arrangement_all.*`) ran as a monitored job.
-- Figure: `data/queens-construct-orbits.png` (the five orbit hulls in the A4 Coxeter plane, in element colours).
+- Figure: `data/queens-construct-orbits.png` (the five orbit hulls in the A4 Coxeter plane, in the Kaleidohedra app's colours: violet, blue, green, red, yellow).
 
 ## Sources checked (16 Nov 2026)
 

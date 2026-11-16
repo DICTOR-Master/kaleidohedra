@@ -59,8 +59,8 @@ def solid_svg(V, size=110, col='var(--gold)'):
     return f'<svg viewBox="0 0 {size} {size}" width="{size}" height="{size}" role="img">{"".join(out)}</svg>'
 assert [len(edges(s[1])) for s in SOLIDS] == [30, 30, 12, 6, 12]
 
-ELEM = {'Dodecahedron': ('#8a5cc4', 'the whole'), 'Icosahedron': ('#3a70cd', 'water'), 'Cube': ('#488e48', 'earth'), 'Tetrahedron': ('#cd3e28', 'fire'), 'Octahedron': ('#e8c852', 'air')}
-five = ''.join(f'<figure>{solid_svg(V, col=ELEM[n][0])}<figcaption><b>{n}</b><br>{f}<br><span style="color:{ELEM[n][0]}">{ELEM[n][1]}</span></figcaption></figure>' for n, V, f in SOLIDS)
+COL = {'Dodecahedron': '#8a5cc4', 'Icosahedron': '#3a70cd', 'Cube': '#488e48', 'Tetrahedron': '#cd3e28', 'Octahedron': '#e8c852'}   # the Kaleidohedra app's colours
+five = ''.join(f'<figure>{solid_svg(V, col=COL[n])}<figcaption><b>{n}</b><br>{f}</figcaption></figure>' for n, V, f in SOLIDS)
 
 # ---------- rule 2: squares close, pentagons leave a gap ----------
 def poly(cx, cy, r, n, a0):
@@ -142,7 +142,7 @@ main{{max-width:760px;margin:0 auto;padding:24px 16px 64px}}
 <h2 id="rule-1"><span class="n">1</span>There are five perfect shapes</h2>
 <p>Take one flat shape, the same every time, and build a closed solid where every corner looks the same. It can be done in exactly five ways, and no more. They are the five dice in a role-playing set. DICTO's name carries them, one letter each: <b>D</b>odecahedron, <b>I</b>cosahedron, <b>C</b>ube, <b>T</b>etrahedron, <b>O</b>ctahedron.</p>
 <div class="five">{five}</div>
-<p class="word">The word: <i>Platonic solids</i>. Plato wrote about them around 360 BC and matched them to the elements, the colours above: fire the tetrahedron, air the octahedron, water the icosahedron, earth the cube, and the dodecahedron for the whole. The proof that there are only five is in Euclid.</p>
+<p class="word">The word: <i>Platonic solids</i>. Plato wrote about them around 360 BC and, in the science of his day, matched them to the elements: fire the tetrahedron, air the octahedron, water the icosahedron, earth the cube, and the dodecahedron for the whole. The proof that there are only five is in Euclid. The colours above are the ones the Kaleidohedra app gives the five solids.</p>
 <div class="try">✋ Pick up a die. Count its corners, its edges and its faces: 8, 12 and 6. Now 8 − 12 + 6 = 2. Try the same sum on any of the five, and it always comes to 2.</div>
 </section>
 
@@ -185,7 +185,7 @@ main{{max-width:760px;margin:0 auto;padding:24px 16px 64px}}
 {nets}
 </section>
 </main></body></html>'''
-open('~/k-research/papers/start-here/paper.html', 'w').write(page)
+open(__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), 'paper.html'), 'w').write(page)
 import re as _re
 live = _re.sub(r'<div class="status">.*?</div>\n', '', page, flags=_re.S)
 live = _re.sub(r'<div class="photo">.*?</div>\n', '', live, flags=_re.S)
@@ -193,5 +193,5 @@ live = _re.sub(r'<li>[^\n]*\(in preparation\)</span></li>\n', '', live)
 live = live.replace('<title>Start Here · DICTO</title>', '<title>Start Here · DICTO</title>\n<meta name="description" content="Start here: DICTO\'s geometry in three rules, five perfect shapes, filling space with no gaps, and layers that stack in any order, with nets to print and build.">\n<link rel="canonical" href="https://dictospheres.com/start-here/">\n<link rel="icon" href="../favicon.png">')
 live = live.replace('src="../dicto-logo.png"', 'src="../dicto-logo.png?v=2"').replace('<p class="small">DICTO · dictospheres.com</p>', '<p class="small"><a href="../">DICTO · dictospheres.com</a></p>')
 assert 'status' not in live.split('</style>')[1] and 'class="photo"' not in live.split('</style>')[1] and 'in preparation' not in live
-open('~/k-research/papers/start-here/live-index.html', 'w').write(live)
+open(__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), 'live-index.html'), 'w').write(live)
 print('ok', len(page))

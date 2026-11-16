@@ -361,5 +361,5 @@ The depth rule can be added on top once that passes.
 
 Files: scripts/fetch_depths.py (planes 0.05, 0.15, 0.3 Mm), trace3d.py (seg, link, track, combine), trace3d_job.sh (job
 sun-3d-trace), fig3d.py; results/trace3d/ (summary.md, summary.json, tracks.jsonl, logs), results/figures/sun_3d_trace.png (the
-0.1 Mm plane at snapshot 433 in the element colours; rings: swaps of the 10 minutes around it confirmed at 0.05 and 0.15 Mm, 63;
+0.1 Mm plane at snapshot 433 in the five Kaleidohedra app colours (violet, blue, green, red, yellow); rings: swaps of the 10 minutes around it confirmed at 0.05 and 0.15 Mm, 63;
 grey dots: swaps seen at 0.1 Mm only, 145). Segmentations, links and track files stay on the compute machine (data/trace3d, 0.8 GB).
