@@ -7,6 +7,11 @@ Reads data/census.json; reads the CURRENT order of the gold DICTO block from the
 code has exactly one census row and every census row is in the code, and writes the table
 current position -> proposed position (ring order, book order, today's order kept inside a book).
 Prints FINAL ok / FINAL FAIL.
+
+After the change (DICTO 16 Nov 2026, "apps proposal start work") the wizard holds the gold block's order itself
+(DICTO_SHELF, under FIVE_RINGS). Then the script checks the code against the census instead: every census row is on the
+shelf exactly once (the DICTO Hex Prism's key there is 'hex'), under its census book, in the proposed order, the two
+pyrochlore worlds are DICTO's work, and no other DICTO world is lost; paper/paper.html (the proposal as read) is kept.
 """
 import html, json, re, sys
 from pathlib import Path
@@ -15,6 +20,59 @@ here = Path(__file__).resolve().parent.parent
 C = json.loads((here / 'data/census.json').read_text())
 src = Path(sys.argv[1]).read_text()
 fails = []
+
+if 'const DICTO_SHELF = [' in src:
+    # --- after the change: the code's shelf against the census ---
+    rows = C['dicto_worlds']
+    code_key = lambda k: 'hex' if k == 'dictohex' else k
+    shelf_src = src[src.index('const DICTO_SHELF = ['):src.index('];', src.index('const DICTO_SHELF = ['))]
+    shelf = [(b, k) for b, ks in re.findall(r"\['(\w+)', \[([^\]]*)\]\]", shelf_src) for k in re.findall(r"'(\w+)'", ks)]
+    shelf_keys = [k for _, k in shelf]
+    work = set(re.findall(r"'(\w+)'", re.search(r'const DICTO_WORK = new Set\(\[([^\]]*)\]', src).group(1)))
+    kw = src[src.index('const K_WORLDS = ['):src.index('// A Kagome hull')]
+    worlds = set(re.findall(r"\{ key: '(\w+)'", kw)) | {'stellaJewel', 'sunstar', 'shells', 'golden'}
+    lat3 = src[src.index('export const LATTICES_3D = ['):src.index('const OBLIQUE_4D')]
+    lat_keys = set(re.findall(r"\{ key: '(\w+)'", lat3))
+    rings = re.findall(r"\{ id: '(\w+)', kanji: '(.)', colour: '(#\w+)', books: \[([^\]]*)\] \}", src)
+    ring_books = [re.findall(r"'(\w+)'", b) for _, _, _, b in rings]
+    if [k for k, _, _, _ in rings] != [r.lower() for r in C['rings']]: fails.append(f'rings in the code {[k for k, *_ in rings]}')
+    if ring_books != [R['books'] for R in C['rings'].values()]: fails.append('ring books differ from the census')
+    for (rid, kanji, col, _), (rg, R) in zip(rings, C['rings'].items()):
+        if kanji != R['kanji']: fails.append(f'{rg}: kanji {kanji}')
+    for k, n in ((k, shelf_keys.count(k)) for k in set(shelf_keys)):
+        if n != 1: fails.append(f'{k} on the shelf {n} times')
+    for r in rows:
+        k = code_key(r['key'])
+        if r['book']:
+            if k not in shelf_keys: fails.append(f'census row {r["key"]} not on the shelf')
+            elif dict((kk, b) for b, kk in shelf)[k] != r['book']: fails.append(f'{r["key"]}: book {dict((kk, b) for b, kk in shelf)[k]} in the code, {r["book"]} in the census')
+        elif k in shelf_keys: fails.append(f'{r["key"]} has no book in the census but is on the shelf')
+        elif k not in work: fails.append(f'{r["key"]} (no book yet) not DICTO work')
+    for k in shelf_keys:
+        if k not in [code_key(r['key']) for r in rows]: fails.append(f'shelf key {k} has no census row')
+        if k != 'hex' and k not in work: fails.append(f'shelf key {k} not in DICTO_WORK')
+        if k != 'hex' and k not in worlds | lat_keys: fails.append(f'shelf key {k} is no world or lattice')
+    for k in ('breathing', 'bodhiPyro'):
+        if k not in work: fails.append(f'{k} not moved into DICTO_WORK')
+    # every DICTO world/lattice in the code is listed once: on the shelf, or after the rings (no book yet)
+    code_dicto = sorted(k for k in work if k in worlds | lat_keys)
+    for k in code_dicto:
+        if k not in shelf_keys and not any(code_key(r['key']) == k and not r['book'] for r in rows): fails.append(f'DICTO world {k} neither on the shelf nor a no-book census row')
+    listed = len(shelf_keys) + sum(1 for r in rows if not r['book'] and code_key(r['key']) in work)
+    if listed != len(rows): fails.append(f'{listed} entries listed, {len(rows)} census rows')
+    # the order DICTO approved: Table 1 of the proposal as read (paper/paper.html), row by row
+    by_name = {html.escape(r['name'], quote=False): code_key(r['key']) for r in rows}
+    t1 = (here / 'paper/paper.html').read_text().split('<h2>2. Table 1')[1].split('<h2>3.')[0]
+    approved = [by_name[n] for n in re.findall(r'<tr><td>(.*?)</td>', t1) if n in by_name]
+    no_book = [code_key(r['key']) for r in rows if not r['book']]
+    if approved != shelf_keys + no_book: fails.append(f'order differs from the proposal as read: {approved}')
+    if 'gperm' in work: fails.append('gperm counted as DICTO work')
+    print(f'shelf {len(shelf_keys)} + no book yet {listed - len(shelf_keys)} = {listed} entries; census rows {len(rows)}')
+    print('order: ' + ' '.join(shelf_keys))
+    print('paper/paper.html kept (the proposal as read)')
+    for f in fails: print('FAIL', f)
+    print('FINAL ' + ('FAIL' if fails else 'ok'))
+    sys.exit(1 if fails else 0)
 
 # --- current order, from the code ---
 kw = src[src.index('const K_WORLDS = ['):src.index('// A Kagome hull')]
