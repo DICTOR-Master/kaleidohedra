@@ -4,7 +4,7 @@
 # runs ended done, their count passed its checks, and the wrong-law run failed the flux check as required.
 cd "$(dirname "$0")/.." || exit 1
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
-PY=~/geom/bin/python3
+PY="${PYTHON:-python3}"   # set PYTHON to the interpreter with numpy/scipy
 mkdir -p results
 pids=()
 for s in 1 2; do $PY scripts/vfroth.py results/n2500_rc4_s$s N0=2500 Nend=50 seed=$s rc=1.2648e-3 > results/n2500_rc4_s$s.log 2>&1 & pids+=($!); done

@@ -4,7 +4,7 @@
 # law=wrong) are runs_side.sh. Last line FINAL ok only if every run ended 'done' and every count passed its own checks.
 cd "$(dirname "$0")/.." || exit 1
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
-PY=~/geom/bin/python3
+PY="${PYTHON:-python3}"   # set PYTHON to the interpreter with numpy/scipy
 mkdir -p results
 pids=()
 for s in 1 2 3 4 5 6 7 8; do $PY scripts/vfroth.py results/n2500_s$s N0=2500 Nend=50 seed=$s maxwall=37000 > results/n2500_s$s.log 2>&1 & pids+=($!); done
