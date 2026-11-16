@@ -109,3 +109,6 @@ LEADS:
 3. **The octahedral shapes against the 24-cell's walls.** This covers the octahedral GP(2,0) solid and the two O_h echo cuts. Their natural host may be the 24-cell (F4) rather than the 600-cell. The same applies to the 6- and 8-point twisted classes of 2T and 2O, which were not run here.
 4. **The 120-cell 240-point sets fail.** Test them against walls of the 120-cell–600-cell pair beyond the 360 used here, for example the hyperplanes parallel to its 2-faces.
 5. **Not run:** the W(H4) twisted classes in S¹⁵ (no 600-cell wall system in 16 dimensions) and the dial's isolated 60-point orbits (not named as shapes).
+
+## 16 Nov: Coxeter Table V check (cross walls)
+Coxeter, Regular Polytopes (1948), Table V(iv), sections of {3,3,5} beginning with a cell (DICTO's loan screenshot, read at screen resolution): the central section (x4 = 0) holds the 12 points (±2, ±2, 0) and their cyclic permutations, a cuboctahedron. This is consistent with the computed reading that each cross wall holds 12 corners of the 600-cell and is the middle section of an inscribed 24-cell (whose central section is a cuboctahedron). Not a full verification: the table is rotated and low resolution.
