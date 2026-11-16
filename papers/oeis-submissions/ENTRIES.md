@@ -291,7 +291,7 @@ Checked 16 Nov 2026: a direct count of tailless closed walks on the fcc lattice 
 
 Add with "edit" on each entry. Signature at the end: "- _DICTO_, Nov 07 2026" (or the registered real name).
 
-**A002895** (Domb numbers; wait for #102's DOI):
+**A002895** (Domb numbers; wait for #102's DOI): DRY RUN 16 Nov 2026: DICTO wrote his own version (to be retyped for real, after the A008264 comment is approved, like for like). Points to check in his final text: 'count closed walks' (no 'on'); 'lonsdaleite'; 'polytypes' (not polytopes); 'etc.'; 'even though'; no fragment sentences; signature ' - ~~~~'; Thorpe in References, #102 (DOI 10.5281/zenodo.24037664, contains it: Theorem 1, Corollary 3) in Links; Crossrefs A008264, A400949.
 ```
 %C A002895 Also the number of closed 2n-step walks from any atom of lonsdaleite (A008264) and of the tetrahedral network of every close-packed stacking (polytypes 4H, 6H, 9R, ..., periodic or not), although the coordination sequences of these atoms differ. For periodic polytypes this is Thorpe (1972); for every atom of every stacking, including aperiodic ones, see DICTO (2026, #102, Lemma 2). Via the Ihara-Bass formula the same holds for the closed non-backtracking walks A??????.
 %D A002895 M. F. Thorpe, Random walks in polytype structures, J. Math. Phys. 13 (1972), 294-299.
