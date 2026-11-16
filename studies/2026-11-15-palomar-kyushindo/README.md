@@ -20,3 +20,12 @@ Paper #43, *Kyushindo Cores* (version 3, doi:10.5281/zenodo.24153218), Theorem 4
 - `PREFLIGHT.md`: every mechanical check, with results and what could not be run.
 - `SCORE.md`: the blind replay of Palomar's seven policy steps, our own rubric reading, and the mathematics that could raise notability.
 - `replay-review.json`: the replay's JSON for each step.
+
+## Version (Palomar-ready) (16 November 2026)
+
+Palomar now requires every committed Lean file of a submitted repository to use the module system (`module` first, module doc comments after it), with at most 10,000 physical lines per file and the Challenge within 1,000 lines and 100 KiB. DICTO approved making the work ready in this repository (16 Nov: "count them and do whichever fits").
+
+- **Module form.** The 5 Lean files of `entry/` already start with `module` and use `public import` and `@[expose] public section`, so no file changed. `Challenge.lean` has 89 lines and 4,213 bytes.
+- **Rebuild from the repository copy (job ymod-small2, FINAL ok).** Palomar's source check passes; the clean `lake build` completes (8,938 jobs); the comparator accepts the solution with con-ron (4 workers), NanoDa and Lean's kernel ("Your solution is okay!").
+- **Whole repository.** `scripts/palomar_source_check.py` (repository root) checks every committed `.lean` file against these rules; it ends FINAL ok.
+- The score estimate above is unchanged. Nothing was submitted, and no workflow or runner was added.

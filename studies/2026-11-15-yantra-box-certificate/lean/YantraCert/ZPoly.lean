@@ -1,4 +1,8 @@
-import YantraCert.Check
+module
+
+public import YantraCert.Check
+
+@[expose] public section
 
 /-!
 # Sparse polynomials in three variables with integer coefficients, evaluated by the kernel (Lean core only)

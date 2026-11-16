@@ -5,6 +5,7 @@
   KTests<n>.lean   kernel checks of the 36 tests at the main chart;
   KChart<c>.lean   kernel checks of the chart identities and of the rescaling of the stored chart polynomials.
 Every check is `by decide +kernel` on a ZP.eqv statement (no native_decide)."""
+from lean_module import modulize   # Palomar source rule: every generated file in module form (16 Nov 2026)
 import json, os
 from fractions import Fraction as Fq
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); D_ = lambda *p: os.path.join(HERE, *p)
@@ -83,11 +84,11 @@ for ch, cd in J['charts'].items():
         for j, g in enumerate(f['EN']): src += defzp(f'en{C}{n_}_{j}', g['g'])
         for j, g in enumerate(f['ED']): src += defzp(f'ed{C}{n_}_{j}', g['g'])
 src += ['', 'end YantraCert.Deriv', '']
-open(os.path.join(OUT, 'Data.lean'), 'w').write('\n'.join(src))
+open(os.path.join(OUT, 'Data.lean'), 'w').write(modulize('\n'.join(src)))
 # ---------------- kernel checks ----------------
 def kmod(name, lines, imports=('YantraCert.Deriv.Data',)):
     s = [f'import {m}' for m in imports] + ['', 'set_option maxRecDepth 200000', 'set_option maxHeartbeats 0', '', f'namespace YantraCert.Deriv', 'open YantraCert', ''] + lines + ['', 'end YantraCert.Deriv', '']
-    open(os.path.join(OUT, f'{name}.lean'), 'w').write('\n'.join(s))
+    open(os.path.join(OUT, f'{name}.lean'), 'w').write(modulize('\n'.join(s)))
 # steps and witnesses (stepOK lives in Frac, which needs Mathlib; the kernel checks themselves are cheap)
 L = []
 for s in J['steps']:

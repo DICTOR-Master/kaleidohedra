@@ -24,8 +24,17 @@ lake exe cache get > $LOG/cache.log 2>&1 || { tail -5 $LOG/cache.log; st=1; }
 echo "PROGRESS 0.08 heavy modules"
 find YantraCert -name '*.lean' | grep -E 'Data/[^/]+/P[0-9]+\.lean|Deriv/K' | sed 's#\.lean$##; s#/#.#g' | sort > $LOG/heavy.txt
 N=$(wc -l < $LOG/heavy.txt); export LOG N
+# 16 Nov 2026 (job ymod-palomar, clean build): two parallel `lake build`s raced on a shared dependency's .olean
+# (Data.Wtp.Polys). Guard: build every non-heavy module that a heavy module imports first, in one lake process;
+# then any heavy module that still fails is retried alone, and only a second failure counts.
+deps=$(sed 's#\.#/#g; s#$#.lean#' $LOG/heavy.txt | xargs grep -h '^public import YantraCert' | awk '{print $3}' | sort -u | grep -vxF -f $LOG/heavy.txt)
+echo "PROGRESS 0.08 shared dependencies ($(echo $deps | wc -w) modules)"
+lake build $deps > $LOG/deps.log 2>&1 || { grep -A5 error $LOG/deps.log | head -20; st=1; }
 xargs -P $J -I{} sh -c 'lake build {} > $LOG/b-{}.log 2>&1 || echo "FAILED {}"; n=$(ls $LOG | grep -c "^b-"); [ $((n % 100)) -eq 0 ] && echo "PROGRESS $(python3 -c "print(round(0.08 + 0.6 * $n / $N, 3))") heavy $n/$N"' < $LOG/heavy.txt | tee $LOG/heavy.out
-grep -q FAILED $LOG/heavy.out && st=1
+if grep -q FAILED $LOG/heavy.out; then
+  grep FAILED $LOG/heavy.out | awk '{print $2}' | while read m; do lake build $m > $LOG/r-$m.log 2>&1 && echo "RETRY ok $m" || echo "FAILED AGAIN $m"; done | tee $LOG/heavy-retry.out
+  grep -q "FAILED AGAIN" $LOG/heavy-retry.out && st=1
+fi
 echo "PROGRESS 0.70 full build"
 lake build > $LOG/build.log 2>&1 || { grep -A5 error $LOG/build.log | head -30; st=1; }
 tail -2 $LOG/build.log

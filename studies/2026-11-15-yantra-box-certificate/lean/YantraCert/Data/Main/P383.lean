@@ -1,0 +1,15 @@
+module
+
+public import YantraCert.Data.Main.Polys
+
+@[expose] public section
+
+namespace YantraCert.Data.Main.P383
+open YantraCert
+
+def cell : Cell := ⟨6, 47, 6, 29, 5, 16⟩
+noncomputable def codes : TC := TC.ofList [0, 0, 0, 0, 9, 0, 25, 25, 0, 9, 25, 0, 0, 9, 0, 0, 25, 25, 9, 0, 9, 0, 25, 9, 0, 0, 0, 0, 9, 25, 9, 0, 25, 9, 0, 0, 0, 0, 25, 25, 0, 0, 0, 25, 0, 0, 9, 0, 25, 25, 25, 0, 9, 0, 0, 0, 9, 9, 9, 25, 0, 0, 25, 25, 0, 9, 25, 9, 0, 0, 25, 0, 0, 25, 25, 25, 9]
+
+theorem ok : checkTree C 13 cell codes = true := by decide +kernel
+
+end YantraCert.Data.Main.P383

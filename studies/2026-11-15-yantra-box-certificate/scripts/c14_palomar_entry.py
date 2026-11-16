@@ -9,14 +9,8 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); D_ = lambda 
 OUT = sys.argv[1]; LIB = sys.argv[2] if len(sys.argv) > 2 else D_('lean')
 LOOP = os.environ.get('TEMPLATE') or os.path.join(os.path.dirname(HERE), '2026-11-14-lean-loop-equality', 'entry')  # a built Palomar template entry
 os.makedirs(OUT, exist_ok=True)
-def modulize(text):
-    """Palomar layout: `module` first, imports public, then an exposed public section"""
-    lines = text.split('\n'); out = ['module', '']; i = 0
-    while i < len(lines) and (lines[i].startswith('import ') or lines[i].strip() == ''):
-        if lines[i].startswith('import '): out.append('public ' + lines[i])
-        i += 1
-    out += ['', '@[expose] public section', '']
-    return '\n'.join(out + lines[i:])
+from lean_module import modulize   # `module` first, public imports, an exposed public section (idempotent: the study's
+                                   # sources are committed in this form since 16 Nov 2026 and are then copied unchanged)
 # library: exactly the import closure of YantraCert.Main (unused generated modules, e.g. KTest_28, stay out)
 def lib_path(m): return os.path.join(LIB, *m.split('.')) + '.lean'
 todo, keep = ['YantraCert.Main'], set()
@@ -24,7 +18,7 @@ while todo:
     m = todo.pop()
     if m in keep: continue
     keep.add(m)
-    todo += re.findall(r'^import (YantraCert\S*)', open(lib_path(m)).read(), re.M)
+    todo += re.findall(r'^(?:public )?import (YantraCert\S*)', open(lib_path(m)).read(), re.M)
 n = 0
 for m in sorted(keep):
     dst = os.path.join(OUT, *m.split('.')) + '.lean'; os.makedirs(os.path.dirname(dst), exist_ok=True)
@@ -43,9 +37,11 @@ sol = ch
 for k, pr in proofs.items():
     sol = re.sub(r'(theorem ' + k + r'[\s\S]*?:= by\n)  sorry', lambda m: m.group(1) + pr, sol, count=1)
 assert 'sorry' not in sol
-sol = sol.replace('import Mathlib', 'import Mathlib\nimport YantraCert.Main', 1)
+sol = modulize(sol)
+sol = sol.replace('public import Mathlib\n', 'public import Mathlib\npublic import YantraCert.Main\n', 1)
+assert 'public import YantraCert.Main' in sol
 sol = sol.replace('/-!\n# Kulaichev', '/-!\n# Proved solution: Kulaichev', 1)
-open(os.path.join(OUT, 'Solution.lean'), 'w').write(modulize(sol))
+open(os.path.join(OUT, 'Solution.lean'), 'w').write(sol)
 # project files
 open(os.path.join(OUT, 'lakefile.toml'), 'w').write('''name = "KulaichevYantra"
 version = "0.1.0"

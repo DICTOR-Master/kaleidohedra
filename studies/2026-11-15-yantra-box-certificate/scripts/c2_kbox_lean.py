@@ -7,6 +7,7 @@ Slopes are the polynomial slopes of YantraCert.Krawczyk (Krawczyk and Neumaier 1
 2^-60 dyadic rounding of the inverse Jacobian at the centre; every bound is checked here in exact rationals before it is written,
 and again in Lean (kernel evaluation of the corner sums, norm_num for the 3 x 3 inequalities).
 Usage: c2_kbox_lean.py   FINAL ok iff all checks hold."""
+from lean_module import modulize   # Palomar source rule: every generated file in module form (16 Nov 2026)
 import json, os, sys
 from fractions import Fraction as Fq
 import mpmath as mp
@@ -150,7 +151,7 @@ for k in range(3):
 out += [f'noncomputable def FcS : Fin 3 → ℝ := {vec(A2["Fc"])}', f'noncomputable def ZS : Fin 3 → Fin 3 → ℝ := {mat(Z)}',
         f'noncomputable def KS : ℝ := {rl(K2)}', '']
 out += ['end YantraCert.KBox', '']
-open(D_('lean', 'YantraCert', 'KBoxData.lean'), 'w').write('\n'.join(out))
+open(D_('lean', 'YantraCert', 'KBoxData.lean'), 'w').write(modulize('\n'.join(out)))
 json.dump({'X': {'contract': [str(v) for v in A1['contract']], 'incl': [str(v) for v in A1['incl']]},
            'Xs': {'centre_num': [str(n) for n in C2], 'Q': str(Q2), 'radius_num': str(R2), 'contract': [str(v) for v in A2['contract']],
                   'incl': [str(v) for v in A2['incl']], 'K': str(K2)}, 'Xs_in_X': sub, 'ok': ok},

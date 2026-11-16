@@ -1,6 +1,10 @@
-import Mathlib
-import YantraCert.ZPoly
-import YantraCert.Sound
+module
+
+public import Mathlib
+public import YantraCert.ZPoly
+public import YantraCert.Sound
+
+@[expose] public section
 
 /-!
 # Soundness of the polynomial normaliser and of fraction arithmetic

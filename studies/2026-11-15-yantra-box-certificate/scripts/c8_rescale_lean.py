@@ -2,6 +2,7 @@
 to the unit cube) equals a positive constant times the chart polynomial of the derivation (Deriv.Data, chart coordinates):
   (prod d_j^D_j) * stored(Y) = den * scaleW(F_c)(Y),   i.e.   stored(Y) = den * F_c(W Y),   W_j = n_j / d_j.
 Writes lean/YantraCert/Deriv/KR<chart>.lean and appends them to Deriv/mods-rescale.txt.  FINAL ok iff every pair is found."""
+from lean_module import modulize   # Palomar source rule: every generated file in module form (16 Nov 2026)
 import json, os
 from fractions import Fraction as Fq
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); D_ = lambda *p: os.path.join(HERE, *p)
@@ -32,6 +33,6 @@ for ch, C in CHN.items():
         L.append(f'theorem res_{st} : ZP.eqv (ZP.mul (ZP.const {Lc}) (ZP.ofSP YantraCert.Data.{C}.{st})) '
                  f'(ZP.mul (ZP.const {int(Fq(K))}) (ZP.scaleW {args} {zp})) = true := by decide +kernel')
     L += ['', f'end YantraCert.Deriv.R{C}', '']
-    open(os.path.join(OUT, f'KR{C}.lean'), 'w').write('\n'.join(L)); mods.append(f'YantraCert.Deriv.KR{C}')
+    open(os.path.join(OUT, f'KR{C}.lean'), 'w').write(modulize('\n'.join(L))); mods.append(f'YantraCert.Deriv.KR{C}')
 open(os.path.join(OUT, 'mods-rescale.txt'), 'w').write('\n'.join(mods) + '\n')
 print('FINAL ok' if ok else 'FINAL FAIL')

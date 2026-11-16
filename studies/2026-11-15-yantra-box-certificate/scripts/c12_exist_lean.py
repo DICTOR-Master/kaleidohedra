@@ -4,6 +4,7 @@ construction steps hold (Frac.step_of_inv), every admissibility test is positive
 KTest identities), the three equations hold (KPull, KFin), and every triple point holds by a `linear_combination` certificate that
 Singular finds here (`lift` into the ideal of the step relations).
 Usage: c12_exist_lean.py   FINAL ok iff every certificate is found."""
+from lean_module import modulize   # Palomar source rule: every generated file in module form (16 Nov 2026)
 import json, os, itertools
 from fractions import Fraction as Fq
 from sage.all__sagemath_singular import QQ, PolynomialRing
@@ -166,5 +167,5 @@ for nm, p, q, r in CONC:
         L += ['  simpa using h0', '']
     src += L
 src += ['end YantraCert.Y', '']
-open(D_('lean', 'YantraCert', 'Exist.lean'), 'w').write('\n'.join(src))
+open(D_('lean', 'YantraCert', 'Exist.lean'), 'w').write(modulize('\n'.join(src)))
 print('FINAL ok' if ok else 'FINAL FAIL')

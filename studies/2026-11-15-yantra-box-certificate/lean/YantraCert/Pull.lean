@@ -1,5 +1,9 @@
-import YantraCert.BoxBounds
-import YantraCert.ZPoly2Sound
+module
+
+public import YantraCert.BoxBounds
+public import YantraCert.ZPoly2Sound
+
+@[expose] public section
 
 /-!
 # The equations at an admissible figure, and the pull-back to the main chart

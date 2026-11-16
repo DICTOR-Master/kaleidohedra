@@ -1,12 +1,16 @@
-import YantraCert.Pull
-import YantraCert.GlueLemmas
-import YantraCert.Deriv.KSteps
-import YantraCert.Deriv.KFin_G
-import YantraCert.Deriv.KFin_H1
-import YantraCert.Deriv.KFin_D
-import YantraCert.Deriv.KPull_G
-import YantraCert.Deriv.KPull_H1
-import YantraCert.Deriv.KPull_D
+module
+
+public import YantraCert.Pull
+public import YantraCert.GlueLemmas
+public import YantraCert.Deriv.KSteps
+public import YantraCert.Deriv.KFin_G
+public import YantraCert.Deriv.KFin_H1
+public import YantraCert.Deriv.KFin_D
+public import YantraCert.Deriv.KPull_G
+public import YantraCert.Deriv.KPull_H1
+public import YantraCert.Deriv.KPull_D
+
+@[expose] public section
 
 set_option maxHeartbeats 4000000
 set_option maxRecDepth 100000

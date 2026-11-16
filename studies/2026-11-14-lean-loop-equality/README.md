@@ -242,3 +242,12 @@ DICTO (15 Nov): "move forward with Palomar, if score guaranteed". **Nothing subm
 - **Package:** `entry/` (text files; the build cache is not included). One Comparator configuration with 17 theorems. `Solution.lean` is the Challenge with proofs, transferred from the library (namespace `LoopEqualityProof`).
 - **Preflight:** `PREFLIGHT.md`. `lake comparator` accepts the Solution: Lean kernel, NanoDa and con-ron. The axioms are the three standard ones, and a wrong Challenge is rejected.
 - **Score:** `SCORE.md`, with the blind replay in `replay-review.json`. **Notability 3 out of 5, below the floor, so the outcome would be `rejected`.** The condition "score guaranteed" is not met, and the entry stays local.
+
+## Version (Palomar-ready) (16 November 2026)
+
+Palomar now requires every committed Lean file of a submitted repository to use the module system (`module` first, module doc comments after it), with at most 10,000 physical lines per file and the Challenge within 1,000 lines and 100 KiB. DICTO approved making the work ready in this repository (16 Nov: "count them and do whichever fits").
+
+- **Module form.** All 29 Lean files of this study, `entry/` (14) and the workspace `lean/` (15), already start with `module` and use `public import` and `@[expose] public section`, so no file changed. The longest file has well under 10,000 lines; `entry/Challenge.lean` has 363 lines and 15,825 bytes.
+- **Rebuild from the repository copies (job ymod-small2, FINAL ok).** `entry/`: Palomar's source check passes; the clean `lake build` completes (8,947 jobs); the comparator accepts the solution with con-ron (4 workers), NanoDa and Lean's kernel ("Your solution is okay!"). `lean/`: the library `LoopEquality.*` builds clean (8,942 jobs); `LoopEquality.lean` (2 `sorry`, the statement), `OctahedralNesting.lean` (4 `sorry`, the statement), `SphereLoops.lean` (1 `sorry`, the statement) and `OctahedralNestingProof.lean` typecheck, and the four proved theorems depend only on `propext`, `Classical.choice` and `Quot.sound`.
+- **Whole repository.** `scripts/palomar_source_check.py` (repository root) checks every committed `.lean` file against these rules; it ends FINAL ok.
+- Nothing was submitted, and no workflow or runner was added.

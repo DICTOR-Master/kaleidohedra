@@ -1,5 +1,9 @@
-import YantraCert.Unique2
-import YantraCert.Charts
+module
+
+public import YantraCert.Unique2
+public import YantraCert.Charts
+
+@[expose] public section
 
 /-!
 # The case split over the charts (step 3 assembled)

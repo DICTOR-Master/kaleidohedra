@@ -1,4 +1,8 @@
-import Mathlib
+module
+
+public import Mathlib
+
+@[expose] public section
 
 /-!
 # The corner charts cover the corner holes (step 3 of the Lean plan, the covering lemmas)

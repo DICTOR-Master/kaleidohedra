@@ -5,6 +5,7 @@
                 hold in a hole (no hole for most charts): every stored equation vanishes there (KC<C>_F*, KR<C>) and every stored
                 test pair has N D >= 0 there (GlueLemmas.sign_transfer with KC<C>_T*, KR<C>).
 Usage: c10_charts_lean.py   FINAL ok iff every constant has the needed sign."""
+from lean_module import modulize   # Palomar source rule: every generated file in module form (16 Nov 2026)
 import json, os
 from fractions import Fraction as Fq
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); D_ = lambda *p: os.path.join(HERE, *p)
@@ -237,5 +238,5 @@ for ch, C in CHN.items():
     L += ['']
     src += L
 src += ['end', '', 'end YantraCert.Y', '']
-open(D_('lean', 'YantraCert', 'Unique2.lean'), 'w').write('\n'.join(src))
+open(D_('lean', 'YantraCert', 'Unique2.lean'), 'w').write(modulize('\n'.join(src)))
 print('FINAL ok' if ok else 'FINAL FAIL')

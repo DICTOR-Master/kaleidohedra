@@ -1,3 +1,8 @@
+module
+
+
+@[expose] public section
+
 /-!
 # Kernel-evaluated box checks (Lean core only, no Mathlib)
 

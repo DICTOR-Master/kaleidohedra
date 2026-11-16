@@ -1,4 +1,8 @@
-import YantraCert.ExistFinal
+module
+
+public import YantraCert.ExistFinal
+
+@[expose] public section
 
 /-!
 # Kulaichev's Śrī Yantra is unique (library form)

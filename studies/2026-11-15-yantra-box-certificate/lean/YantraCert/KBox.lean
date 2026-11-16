@@ -1,4 +1,8 @@
-import YantraCert.KBoxData
+module
+
+public import YantraCert.KBoxData
+
+@[expose] public section
 
 /-!
 # The Krawczyk box: exactly one zero of `F~ = (G~, H~, D~)` in the hole `X`

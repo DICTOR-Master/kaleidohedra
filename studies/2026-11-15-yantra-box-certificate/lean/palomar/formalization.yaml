@@ -132,6 +132,24 @@ sources:
       "different sets of initial values tried for the basic variables converged
       to different solutions". P. 226: "an unlimited number of figures ... satisfy
       the general specifications of Sriyantra from traditional literature."
+  - title: "sri-yantra-constraint-engine: a reimplementation of Rao (1998)"
+    authors:
+      - "Salah-Eddin Gherbi"
+    id: "https://doi.org/10.5281/zenodo.20617730"
+    type: "other"
+    location: "GitHub salahealer9/sri-yantra-constraint-engine (MIT), README and note/corrigendum.md, read 16 November 2026"
+    relationship: "background"
+    note: >-
+      Related work. A double-precision reimplementation of Rao's construction
+      and his twenty constraint functions F1..F20; it reproduces Rao's Tables 1
+      and 3 to about 1e-7, reports four transcription errata in Rao's printed
+      equations (2.22, 3.3, 3.4, 3.14b) and a dependency lattice (two linear
+      identities among F1..F20). It makes no uniqueness claim and uses no
+      certified or formal method. Of the constraints this entry cites (Rao's 1,
+      2, 8, 9, 20), only F8 is touched: erratum E1 corrects the base arc x16
+      that F8 = r - r16 uses. Rao's tables are reproduced
+      after the correction, and this entry's statement uses Huet's and
+      Kulaichev's conditions, not Rao's equations, so it is unaffected.
   - title: "Addition to Sri Yantra and its mathematical properties"
     authors:
       - "A. P. Kulaichev"

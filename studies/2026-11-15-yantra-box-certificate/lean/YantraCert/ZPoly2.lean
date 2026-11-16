@@ -1,4 +1,8 @@
-import YantraCert.ZPoly
+module
+
+public import YantraCert.ZPoly
+
+@[expose] public section
 
 /-!
 # Signed polynomials as integer polynomials, and rescaling (Lean core only)

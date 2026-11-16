@@ -1,6 +1,7 @@
 """Lean export of the rebuilt figure and its conditions (existence): writes lean/YantraCert/ExistFinal.lean with
 `ystar` (the figure of the named quantities W i) and `ystar_ok : ystar.Huet ∧ ystar.Kulaichev ∧ ystar.Admissible`.
 Usage: c13_exist_final.py   FINAL ok iff written."""
+from lean_module import modulize   # Palomar source rule: every generated file in module form (16 Nov 2026)
 import json, os
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); D_ = lambda *p: os.path.join(HERE, *p)
 J = json.load(open(D_('data', 'lean-deriv.json'))); TK = list(J['tests'])
@@ -90,6 +91,6 @@ disc = {0: 'nlinarith [c1]', 1: 'nlinarith [q26]', 2: 'nlinarith [c3]', 3: 'nlin
         6: 'nlinarith [c7]', 7: 'nlinarith [q30]', 8: 'nlinarith [eG]'}
 L += ['  · intro i; fin_cases i'] + [f'    · show ({Wc[i]}) ^ 2 + ({B[i]}) ^ 2 - ({B[i]}) ≤ 0; {disc[i]}' for i in range(9)]
 src += L + ['', 'end YantraCert.Y', '']
-open(D_('lean', 'YantraCert', 'ExistFinal.lean'), 'w').write('\n'.join(src))
+open(D_('lean', 'YantraCert', 'ExistFinal.lean'), 'w').write(modulize('\n'.join(src)))
 _w = open(D_('lean', 'YantraCert', 'ExistFinal.lean')).read()
 print('FINAL ok' if 'theorem ystar_ok' in _w and 'sorry' not in _w else 'FINAL FAIL (file incomplete or contains sorry)')

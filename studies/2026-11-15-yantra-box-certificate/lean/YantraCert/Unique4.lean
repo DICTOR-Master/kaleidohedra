@@ -1,5 +1,9 @@
-import YantraCert.Unique3
-import YantraCert.Deriv.KKBox
+module
+
+public import YantraCert.Unique3
+public import YantraCert.Deriv.KKBox
+
+@[expose] public section
 
 /-!
 # Uniqueness

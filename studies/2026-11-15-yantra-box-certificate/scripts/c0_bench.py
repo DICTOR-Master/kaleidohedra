@@ -1,5 +1,6 @@
 """Benchmark of kernel evaluators (no Mathlib): writes lean/bench/Bench<V>.lean for 50 slope leaves of H1~ (same leaves as the pilot
 file SlopeH1_0).  V = R (recursor-based Nat-only evaluator)."""
+from lean_module import modulize   # Palomar source rule: every generated file in module form (16 Nov 2026)
 import json, sys, os
 from fractions import Fraction as Fq
 from math import gcd
@@ -42,5 +43,5 @@ def L : LL := {lv(slp)}
 theorem ok : allLeaves (fun dx ix dy iy dz iz => slopeSign {D[0]} {D[1]} {D[2]} Pp Pn dx ix dy iy dz iz) L = true := by decide +kernel
 end YantraCert.Bench
 '''
-open(os.path.join(HERE, 'lean/bench/BenchR.lean'), 'w').write(src)
+open(os.path.join(HERE, 'lean/bench/BenchR.lean'), 'w').write(modulize(src))
 print(len(p), 'terms', D, len(slp), 'leaves')

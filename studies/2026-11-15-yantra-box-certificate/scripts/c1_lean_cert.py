@@ -8,6 +8,7 @@ Rescaling: every chart box is prod [0, W_j], so y_j = x_j / W_j and the stored p
 denominator (recorded in the Polys file).  Methods: each leaf's test is tried with the monotone split first, then the slope form,
 exactly as b4_check.py; the method bits go into the codes.  Split rule and preorder as in b4_check.py.
 Usage: c1_lean_cert.py [budget]   (budget = estimated cost units per subtree file; 1 unit = one slope-form term evaluation)"""
+from lean_module import modulize   # Palomar source rule: every generated file in module form (16 Nov 2026)
 import json, os, sys, hashlib
 from multiprocessing import get_context
 NW = int(os.environ.get('NW', '8'))
@@ -179,7 +180,7 @@ for ch, CH in CHARTS:
     src.append('noncomputable def C : Chart := ⟨[' + ', '.join(f'F{i}' for i in range(len(Fk))) + '], [' +
                ', '.join(f'(T{i}N, T{i}D)' for i in range(len(Tk))) + '], [' + hb + ']⟩')
     src += ['', 'theorem C_deg : C.degOK = true := by decide +kernel', '', f'end {ns}', '']
-    open(os.path.join(cdir, 'Polys.lean'), 'w').write('\n'.join(src))
+    open(os.path.join(cdir, 'Polys.lean'), 'w').write(modulize('\n'.join(src)))
     # subtree files
     fl = []
     for k, (nd, codes, cost, dep) in enumerate(files):
@@ -187,7 +188,7 @@ for ch, CH in CHARTS:
         s = ['import YantraCert.Data.' + CH + '.Polys', '', f'namespace {ns}.P{k}', 'open YantraCert', '',
              f'def cell : Cell := {cell}', f'noncomputable def codes : TC := TC.ofList [{", ".join(map(str, codes))}]', '',
              f'theorem ok : checkTree C {dep + 1} cell codes = true := by decide +kernel', '', f'end {ns}.P{k}', '']
-        txt = '\n'.join(s); open(os.path.join(cdir, f'P{k}.lean'), 'w').write(txt)
+        txt = modulize('\n'.join(s)); open(os.path.join(cdir, f'P{k}.lean'), 'w').write(txt)
         fl.append({'file': f'YantraCert/Data/{CH}/P{k}.lean', 'module': f'{ns}.P{k}', 'cell': nd, 'leaves': sum(1 for c in codes if c % 8),
                    'cost': cost, 'depth': dep, 'bytes': len(txt), 'sha256': hashlib.sha256(txt.encode()).hexdigest()})
     # assembly
@@ -206,13 +207,13 @@ for ch, CH in CHARTS:
         s.append(f'theorem {names[nd]} : C.Covered ⟨{", ".join(map(str, nd))}⟩ := C.covered_split _ {nm(a)} {nm(b)}')
     s += ['', '/-- every point of the unit cube is `Good` for this chart -/',
           f'theorem covered : C.Covered ⟨0, 0, 0, 0, 0, 0⟩ := {nm(rootref)}', '', f'end {ns}', '']
-    open(os.path.join(cdir, 'All.lean'), 'w').write('\n'.join(s))
+    open(os.path.join(cdir, 'All.lean'), 'w').write(modulize('\n'.join(s)))
     allmods.append(f'{ns}.All')
     manifest['charts'][ch] = {'lean': CH, 'W': [str(w) for w in W], 'F': Fk, 'T': Tk, 'H': Hk, 'files': fl,
                               'KF': {k: str(FK[k]) for k in Fk}, 'KT': {k: [str(TK[k][0]), str(TK[k][1])] for k in Tk},
                               'total_cost': sum(f['cost'] for f in fl), 'leaves': len(leaves), 'top_nodes': len(top)}
     print(f'{ch}: {len(leaves)} leaves, {len(files)} files, top nodes {len(top)}, cost {sum(f["cost"] for f in fl):.3g}', flush=True)
-if not ONLY: open(os.path.join(OUT, 'All.lean'), 'w').write('\n'.join([f'import {m}' for m in allmods] + ['']))
+if not ONLY: open(os.path.join(OUT, 'All.lean'), 'w').write(modulize('\n'.join([f'import {m}' for m in allmods] + [''])))
 json.dump(manifest, open(D_('data', 'lean-cert-files.json' if not ONLY else 'lean-cert-files-partial.json'), 'w'), indent=1)
 # every leaf's test was re-proved above (assert); the codes must hold exactly one entry per leaf in every chart
 ok = all(sum(f['leaves'] for f in c['files']) == c['leaves'] for c in manifest['charts'].values())

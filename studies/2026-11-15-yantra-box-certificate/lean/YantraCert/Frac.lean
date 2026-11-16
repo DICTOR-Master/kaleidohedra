@@ -1,5 +1,9 @@
-import YantraCert.ZPolySound
-import YantraCert.Krawczyk
+module
+
+public import YantraCert.ZPolySound
+public import YantraCert.Krawczyk
+
+@[expose] public section
 
 /-!
 # Named quantities as fractions of polynomials (the divisor lemma, mechanised)

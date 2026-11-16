@@ -3,6 +3,7 @@ d_i, n_i) it writes a lemma `V y i * Ex.ev (V y) d_i = Ex.ev (V y) n_i`, proved 
 Singular finds here (`lift` of c * (lhs - rhs) into the ideal of the hypotheses: triple points, circles, slope definitions),
 c a product of factors that are nonzero at an admissible figure.  Writes lean/YantraCert/GeomSteps.lean.
 Usage: c6_geom_lean.py   FINAL ok iff every certificate is found."""
+from lean_module import modulize   # Palomar source rule: every generated file in module form (16 Nov 2026)
 import os, itertools
 from sage.all__sagemath_singular import QQ, PolynomialRing
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); D_ = lambda *p: os.path.join(HERE, *p)
@@ -149,5 +150,5 @@ for i, combo, cert, d, n, gens in out:
     src += [f'lemma dne{i} (F : Facts y) : Ex.ev (V y) d{i} ≠ 0 := by', f'  show {vsub(d[1])} ≠ 0', '  push_cast',
             '  apply ne_of_gt', f'  {PF[i]}', '']
 src += ['end', '', 'end YantraCert.Y', '']
-open(D_('lean', 'YantraCert', 'GeomSteps.lean'), 'w').write('\n'.join(src))
+open(D_('lean', 'YantraCert', 'GeomSteps.lean'), 'w').write(modulize('\n'.join(src)))
 print('FINAL ok' if ok else 'FINAL FAIL')

@@ -157,11 +157,11 @@ Status 16 Nov (§7): steps 1–4 are **DONE**, and so are the top-level theorem,
 - **`Charts.lean`.** It proves the chart coverings.
 - **`lean/Challenge/KulaichevYantra.lean`.** The top-level statement.
 
-### Generated files (not in git)
+### Generated files (in git since 16 Nov 2026)
 
-- **What they are.** `lean/YantraCert/Data/<chart>/{Polys, P<k>, All}.lean`: 1,216 files, 7.6 MB. Also `lean/YantraCert/KBoxData.lean`.
+- **What they are.** `lean/YantraCert/Data/<chart>/{Polys, P<k>, All}.lean`: 1,216 files, 7.6 MB. Also `lean/YantraCert/KBoxData.lean` and the 153 derivation files `lean/YantraCert/Deriv/*.lean` (generators c5, c8, c11). All are committed, in module form (see Version (Palomar-ready)).
 - **Generators.** `scripts/c1_lean_cert.py` (budget 1.2e5) and `scripts/c2_kbox_lean.py`. The bench is `scripts/c0_bench.py`.
-- **Hashes.** The sha256 of every generated file is in `data/lean-generated.sha256`. The manifest, with the cell, leaf count, cost and sha256 of each subtree module, is `data/lean-cert-files.json`.
+- **Hashes.** The sha256 of every generated file is in `data/lean-generated.sha256` (certificate and Krawczyk box) and `data/lean-deriv-generated.sha256` (derivation). The manifest, with the cell, leaf count, cost and sha256 of each subtree module, is `data/lean-cert-files.json`.
 - **Jobs.** `scripts/run_lean_cert.sh` (all modules, assemblies, axioms) and `scripts/run_lean_node.sh` (the independent re-check).
 
 ### Milestones
@@ -234,6 +234,22 @@ Status 16 Nov (§7): steps 1–4 are **DONE**, and so are the top-level theorem,
       - (c) One Solution proof (`kulaichev_slope`) replaced by `sorry`. `#print axioms` lists `sorryAx`, and the comparator says: "Illegal axiom detected: 'sorryAx'".
       - The comparator therefore both passes (the real entry) and fails (all three altered copies).
     - **Rerun after the metadata update (16 Nov 2026, job ylean-palomar5).** The Challenge comment header (sources with pages, a scope line) and formalization.yaml were updated, with the theorem statements unchanged. Source check, build, axioms and the 4-worker comparator all pass again (FINAL ok); see study 2026-11-16-palomar-yantra.
+
+## Version (Palomar-ready) (16 November 2026)
+
+Palomar now requires every committed Lean file of a submitted repository, generated certificates included, to use the module system (`module` first, module doc comments after it), with at most 10,000 physical lines per file and the Challenge within 1,000 lines and 100 KiB. DICTO approved making the work ready in this repository (16 Nov: "count them and do whichever fits"). The Challenge and the theorem statements are unchanged word for word; only headers and visibility changed.
+
+- **One layout, one function.** `scripts/lean_module.py` puts `module` first, makes the leading imports `public import` and opens `@[expose] public section`; the rest of each file is unchanged. It is the transformation that `scripts/c14_palomar_entry.py` already applied to the entry, and it does nothing to a file already in module form.
+- **Generators.** Every Lean generator writes through it: c1 (`Data/*`), c2 (`KBoxData`), c5, c8 and c11 (`Deriv/*`), c6 (`GeomSteps`), c9 (`Unique1`), c10 (`Unique2`), c12 (`Exist`), c13 (`ExistFinal`), and the bench c0. The hand-written files (the library, `Challenge/KulaichevYantra.lean`, `BoxCheck.lean`, `ProvedG1000.lean`, and `Deriv/KKBox.lean`, which has no generator) were converted by the same function.
+- **Regeneration (job ymod-regen2, FINAL ok).** `scripts/run_module_regen.sh` reran the ten generators on their unchanged inputs. All 1,399 library and statement files equal `modulize(the file before)` byte for byte, with none missing and none new. `data/lean-cert-files.json` changed only in each file's sha256 and size; `data/lean-generated.sha256` and `data/lean-deriv-generated.sha256` hold the new hashes.
+- **In git.** The generated files (`lean/YantraCert/Data/`, `lean/YantraCert/Deriv/`, `lean/YantraCert/KBoxData.lean`; 1,369 Lean files, 2.9 MB of text) are now committed, because Palomar builds from the repository. Only `lean/bench/` stays out of git.
+- **The entry.** `c14_palomar_entry.py` assembles it from the committed files. At the check below (ymod-palomar2) the assembled entry was byte-identical to the one checked in ylean-palomar5. After it, only two metadata files changed, with no Lean file touched: `lean/palomar/formalization.yaml` gained the related work below, and `lean/palomar/README.md` was rewritten for the standalone repository.
+- **Related work: the Rao constraint engine** (S.-E. Gherbi, sri-yantra-constraint-engine, doi:10.5281/zenodo.20617730; study 2026-11-16-palomar-yantra). It is now cited in formalization.yaml. Of its four errata to Rao's printed equations (2.22, 3.3, 3.4, 3.14b), only E1 (eq. 2.22, the base arc x16) touches a constraint the entry cites: F8 = r − r16. The corrigendum ties the other three to F3, F4 and F14/F15 and names no effect on F1, F2, F9 or F20. The entry cites Rao's tabulated figure only as a comparison, and the statement uses Huet's and Kulaichev's conditions, so the theorem is unaffected.
+- **Full check from a clean build (job ymod-palomar2).** Palomar's source check passes. A clean `lake build`, with no build folder at the start, completes with 10,307 jobs. `#print axioms` lists only propext, Classical.choice and Quot.sound for `kulaichev_unique` and `kulaichev_slope`, and no `sorry` or `native_decide` appears. The comparator accepts the solution with all three kernels: con-ron (4 workers, `--verified`, 26,723 declarations in 49 min), NanoDa and Lean's default kernel. It reports "Your solution is okay!" after 2 h 39 min of wall time, and the job ends FINAL ok.
+- **Negative controls (job ymod-negctl).** All three are rejected by the same 4-worker comparator, each in its own scratch copy, within minutes (FINAL ok): (a) one Challenge constant changed gives "theorem statement do not match: 'KulaichevYantra.kulaichev_slope'"; (b) ∃! weakened to ∃ gives the same for `kulaichev_unique`; (c) one Solution proof replaced by `sorry` lists `sorryAx` and gives "Illegal axiom detected: 'sorryAx'".
+- **A fault fixed on the way.** In the first clean build (ymod-palomar, stopped), two parallel `lake build`s raced on a shared dependency (`Data.Wtp.Polys`), and one module failed. `scripts/run_palomar.sh` now builds the 14 shared dependencies first, in one lake process, and retries a failed module alone; only a second failure counts.
+- **Whole repository.** `scripts/palomar_source_check.py` (repository root) checks every committed `.lean` file: `module` header, at most 10,000 lines, no symbolic links, Challenge limits. It ends FINAL ok; the longest file is `Data/Main/All.lean` (2,383 lines), and the Challenge has 124 lines and 7,210 bytes.
+- Nothing was submitted. No GitHub workflow or runner was added; those steps wait for DICTO.
 
 ## Credits (at point of use)
 

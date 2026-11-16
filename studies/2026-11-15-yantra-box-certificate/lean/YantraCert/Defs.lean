@@ -1,4 +1,8 @@
-import Mathlib
+module
+
+public import Mathlib
+
+@[expose] public section
 
 /-!
 # The definitions of the Challenge, copied word for word into the library namespace `YantraCert.Y`

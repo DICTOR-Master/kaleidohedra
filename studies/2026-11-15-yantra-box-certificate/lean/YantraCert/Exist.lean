@@ -1,4 +1,8 @@
-import YantraCert.ExistBase
+module
+
+public import YantraCert.ExistBase
+
+@[expose] public section
 
 set_option maxHeartbeats 8000000
 set_option maxRecDepth 100000

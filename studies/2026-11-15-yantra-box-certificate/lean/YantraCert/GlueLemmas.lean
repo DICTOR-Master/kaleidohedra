@@ -1,4 +1,8 @@
-import YantraCert.ZPoly2Sound
+module
+
+public import YantraCert.ZPoly2Sound
+
+@[expose] public section
 
 /-!
 # Small lemmas for the assembly: signs through identities

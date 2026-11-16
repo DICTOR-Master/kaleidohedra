@@ -1,4 +1,8 @@
-import YantraCert.Sound
+module
+
+public import YantraCert.Sound
+
+@[expose] public section
 
 /-!
 # Existence and uniqueness of a zero in a box (Krawczyk's test, slope form)

@@ -1,6 +1,10 @@
-import YantraCert.ZPoly2
-import YantraCert.ZPolySound
-import YantraCert.Frac
+module
+
+public import YantraCert.ZPoly2
+public import YantraCert.ZPolySound
+public import YantraCert.Frac
+
+@[expose] public section
 
 namespace YantraCert
 

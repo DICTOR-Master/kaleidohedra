@@ -1,4 +1,8 @@
-import YantraCert.GeomSteps
+module
+
+public import YantraCert.GeomSteps
+
+@[expose] public section
 
 /-!
 # The main box coordinates of an admissible figure (step 3b)

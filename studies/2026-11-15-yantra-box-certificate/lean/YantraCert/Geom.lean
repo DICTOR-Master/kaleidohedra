@@ -1,5 +1,9 @@
-import YantraCert.Defs
-import YantraCert.Frac
+module
+
+public import YantraCert.Defs
+public import YantraCert.Frac
+
+@[expose] public section
 
 /-!
 # The construction is forced (the geometric half of step 2)

@@ -1,5 +1,9 @@
-import YantraCert.Geom
-import YantraCert.Deriv.Data
+module
+
+public import YantraCert.Geom
+public import YantraCert.Deriv.Data
+
+@[expose] public section
 
 set_option maxHeartbeats 4000000
 

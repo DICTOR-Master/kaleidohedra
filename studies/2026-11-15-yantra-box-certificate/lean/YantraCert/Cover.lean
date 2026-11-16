@@ -1,4 +1,8 @@
-import YantraCert.Sound
+module
+
+public import YantraCert.Sound
+
+@[expose] public section
 
 /-!
 # Soundness of the tree walk

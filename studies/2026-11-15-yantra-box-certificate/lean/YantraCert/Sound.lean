@@ -1,5 +1,9 @@
-import Mathlib
-import YantraCert.Check
+module
+
+public import Mathlib
+public import YantraCert.Check
+
+@[expose] public section
 
 /-!
 # Soundness of the box checks

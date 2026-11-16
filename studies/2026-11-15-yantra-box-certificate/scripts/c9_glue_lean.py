@@ -5,6 +5,7 @@
   tq_<n>      every test quantity is >= 0 (> 0 for strict tests) at an admissible figure;
   tm_<n>      the main-chart sign relation of every test (KTest_<n>), in the form used by GlueLemmas.sign_transfer.
 Usage: c9_glue_lean.py   FINAL ok iff written."""
+from lean_module import modulize   # Palomar source rule: every generated file in module form (16 Nov 2026)
 import json, os
 from fractions import Fraction as Fq
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); D_ = lambda *p: os.path.join(HERE, *p)
@@ -116,6 +117,6 @@ for k, f in J['pull'].items():
           '  · exact h', '  · exact absurd h hp.ne\'', '']
     src += L
 src += ['end', '', 'end YantraCert.Y', '']
-open(D_('lean', 'YantraCert', 'Unique1.lean'), 'w').write('\n'.join(src))
+open(D_('lean', 'YantraCert', 'Unique1.lean'), 'w').write(modulize('\n'.join(src)))
 _w = open(D_('lean', 'YantraCert', 'Unique1.lean')).read()
 print('FINAL ok' if 'theorem fm_' in _w and 'sorry' not in _w else 'FINAL FAIL (file incomplete or contains sorry)')

@@ -2,6 +2,7 @@
 construction denominator D_i (pulled back to (u, tau, rho)) and every stored main-chart test polynomial TN_n, TD_n has a fixed
 sign (monotone split with the common denominator of Xs), and so has every even-power factor of a test cofactor.  Writes
 lean/YantraCert/Deriv/KEx.lean and data/lean-exist.json.  FINAL ok iff every sign is fixed and every test pair has N D > 0."""
+from lean_module import modulize   # Palomar source rule: every generated file in module form (16 Nov 2026)
 import json, os
 from fractions import Fraction as Fq
 from sage.all__sagemath_singular import QQ, ZZ, PolynomialRing
@@ -47,7 +48,7 @@ for i, row in enumerate(J['table']):
           f'theorem gQ{i} : (ZP.toSP {Dg[0]} {Dg[1]} {Dg[2]} (ZP.substH PX PY PZn PZd {d} D{i})).degOK = true := by decide +kernel',
           f'theorem sQ{i} : (ZP.toSP {Dg[0]} {Dg[1]} {Dg[2]} (ZP.substH PX PY PZn PZd {d} D{i})).boxSignN {arg} = {s} := by decide +kernel']
     LD += ['', 'end YantraCert.Deriv.KEx', '']
-    open(D_('lean', 'YantraCert', 'Deriv', f'KExD{i}.lean'), 'w').write('\n'.join(LD))
+    open(D_('lean', 'YantraCert', 'Deriv', f'KExD{i}.lean'), 'w').write(modulize('\n'.join(LD)))
 # the test quantities themselves: numerator and denominator of the kernel's fraction, pulled back, signs on Xs
 Rv = PolynomialRing(QQ, [f'v{i}' for i in range(len(J['names']))])
 TAB = [(dec3(r['N']), dec3(r['D'])) for r in J['table']]
@@ -85,15 +86,15 @@ for n, e in QX.items():
               f'theorem g{side}{n} : (ZP.toSP {Dg[0]} {Dg[1]} {Dg[2]} (ZP.substH PX PY PZn PZd {d} (Ex.frac T {qn}).{idx})).degOK = true := by decide +kernel',
               f'theorem s{side}{n} : (ZP.toSP {Dg[0]} {Dg[1]} {Dg[2]} (ZP.substH PX PY PZn PZd {d} (Ex.frac T {qn}).{idx})).boxSignN {arg} = {sgn} := by decide +kernel']
     LT += ['', 'end YantraCert.Deriv.KEx', '']
-    open(D_('lean', 'YantraCert', 'Deriv', f'KExT{n}.lean'), 'w').write('\n'.join(LT))
+    open(D_('lean', 'YantraCert', 'Deriv', f'KExT{n}.lean'), 'w').write(modulize('\n'.join(LT)))
     res['d'] = int(d)
     out['T'][n] = res
     if res['N']['s'] != res['D']['s']: ok = False; print('test negative at the yantra', n)
     print('test', n, 'num', len(Num.monomials()), 'den', len(Den.monomials()), flush=True)
 L += ['', 'end YantraCert.Deriv.KEx', '']
-open(D_('lean', 'YantraCert', 'Deriv', 'KEx.lean'), 'w').write('\n'.join(L))
+open(D_('lean', 'YantraCert', 'Deriv', 'KEx.lean'), 'w').write(modulize('\n'.join(L)))
 mods = [f'YantraCert.Deriv.KExD{i}' for i in out['D']] + [f'YantraCert.Deriv.KExT{n}' for n in out['T']]
-open(D_('lean', 'YantraCert', 'Deriv', 'KExAll.lean'), 'w').write('\n'.join(f'import {m}' for m in mods) + '\n')
+open(D_('lean', 'YantraCert', 'Deriv', 'KExAll.lean'), 'w').write(modulize('\n'.join(f'import {m}' for m in mods) + '\n'))
 open(D_('lean', 'YantraCert', 'Deriv', 'order-kex.txt'), 'w').write('\n'.join(mods) + '\n')
 json.dump(out, open(D_('data', 'lean-exist.json'), 'w'), indent=1)
 print('signs: D', [v['s'] for v in out['D'].values()])

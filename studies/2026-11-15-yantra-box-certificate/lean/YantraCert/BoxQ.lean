@@ -1,4 +1,8 @@
-import YantraCert.ZPoly2
+module
+
+public import YantraCert.ZPoly2
+
+@[expose] public section
 
 /-!
 # Signs on a box with a common denominator, Lean core only (copies of `spq`, `NP.vq`, `SP.boxSign` of `Krawczyk`/`Frac`,

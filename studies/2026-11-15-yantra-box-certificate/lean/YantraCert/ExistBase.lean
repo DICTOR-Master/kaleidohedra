@@ -1,7 +1,11 @@
-import YantraCert.Unique4
-import YantraCert.Deriv.KExAll
-import YantraCert.BoxQ
-import YantraCert.Frac2
+module
+
+public import YantraCert.Unique4
+public import YantraCert.Deriv.KExAll
+public import YantraCert.BoxQ
+public import YantraCert.Frac2
+
+@[expose] public section
 
 /-!
 # Existence: the point, the named quantities, the signs on the small box
