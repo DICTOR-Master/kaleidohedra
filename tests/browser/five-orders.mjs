@@ -24,7 +24,7 @@ const SHELF = {
     'tool:theaetetusWorld', 'tool:chainsWorld:karma', 'tool:starCoresWorld'],
   fire: ['tool:stackingsWorld', 'tool:hexoctWorld', 'tool:bitruncWorld', 'tool:perm4World'],
   wind: ['tool:platonicMixWorld', 'tool:reuleauxWorld', 'tool:aristotleWorld', 'tool:roofFoldWorld', 'tool:studiesWorld'],
-  void: ['tool:goldenWorld', 'tool:whiteQueenWorld'],
+  void: ['tool:goldenWorld', 'tool:whiteQueenWorld', 'tool:queensWallsWorld'],
 };
 const b = await chromium.launch();
 let checks = 0;
@@ -67,10 +67,10 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse,polyhedravers
     assert.deepEqual(g.jump.map((j) => j.border), RINGS.map(() => 'rgb(232, 194, 90)'), `${tag}: ring labels in DICTO gold`);
     for (const r of RINGS) assert.deepEqual(g.rings[r], SHELF[r], `${tag}: ${r} in book order`);
     assert.deepEqual(g.rings.none, ['tool:mandalaWorld'], `${tag}: Golamandalas after the rings`);
-    assert.equal(Object.values(g.rings).flat().length, 37, `${tag}: 37 entries`);
+    assert.equal(Object.values(g.rings).flat().length, 38, `${tag}: 38 entries`);
     assert.ok(g.piecesAt >= 0 && g.piecesAt < g.firstRingAt, `${tag}: DICTO's pieces first, then the ring row`);
     assert.ok(!g.kinds.includes(t('wiz.kind.worlds', 'en')) && !g.kinds.includes(t('wiz.kind.lattices', 'en')), `${tag}: rings instead of Worlds / Lattices`);
-    assert.deepEqual(g.news.sort(), ['tool:bitruncWorld', 'tool:perm4World'], `${tag}: the "new" mark on the newest work only`);
+    assert.deepEqual(g.news.sort(), ['tool:bitruncWorld', 'tool:perm4World', 'tool:queensWallsWorld'], `${tag}: the "new" mark on the newest work only`);
     // the jump row: five labels on one row, big enough for a finger, no arrows
     assert.deepEqual(g.jump.map((j) => j.ring), RINGS, `${tag}: the jump row`);
     assert.ok(g.jump.every((j) => j.h >= 44 && j.w >= 44 && Math.abs(j.top - g.jump[0].top) < 1), `${tag}: one row of touch-size labels ${JSON.stringify(g.jump)}`);

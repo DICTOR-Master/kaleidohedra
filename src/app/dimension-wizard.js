@@ -61,6 +61,7 @@ import { hexoctPreviewEdges } from './hexoct-geometry.js';
 import { mandalaPreviewEdges } from './mandala-geometry.js';
 import { bitruncPreviewEdges } from './world-bitrunc.js';
 import { perm4PreviewEdges } from './world-perm4.js';
+import { queensWallsPreviewEdges } from './world-queens-walls.js';
 import { gpermPreviewEdges } from './world-gperm.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
@@ -602,6 +603,9 @@ const K_WORLDS = [
   // The White Queen 600-cell (DICTO 2026-10-27; paper #63): the 600-cell's true shadows, computed live from the exact source model,
   // the 4D view direction on one slider through vertex-, edge-, face- and cell-first (world-white-queen.js).
   { key: 'whiteQueen', label: 'The White Queen 600-cell', pieces: [{ label: 'The White Queen 600-cell', action: 'tool:whiteQueenWorld' }] },
+  // The Queens' walls (DICTO 2026-11-16; working name): both Queens pulled apart, cell by cell or by their 60 shared sheets
+  // (world-queens-walls.js).
+  { key: 'queensWalls', label: "Queens' walls", pieces: [{ label: "Queens' walls", action: 'tool:queensWallsWorld', preview: queensWallsPreviewEdges }] },
   // Every Mix of the Platonic Solids (DICTO 2026-10-22; paper #47): five letter toggles D I C T O choose a mix; a block of its space
   // filling, one slab per world, the helper pieces muted and hideable, a slider spreading the slabs; first as the newest work
   // (world-platonic-mix.js).
@@ -711,7 +715,7 @@ const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'REULEAUX_PLATONIC', 'PLATONIC', 'A
 // DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
 // it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
 // Polyhedraverse pieces gathered from across its families.
-const DICTO_WORK = new Set(['breathing', 'bodhiPyro', 'bitrunc', 'perm4', 'mandala', 'starCores', 'whiteQueen', 'bloom', 'stackings', 'hexoct', 'dictonic', 'globalWeb', 'platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
+const DICTO_WORK = new Set(['breathing', 'bodhiPyro', 'bitrunc', 'perm4', 'mandala', 'starCores', 'whiteQueen', 'queensWalls', 'bloom', 'stackings', 'hexoct', 'dictonic', 'globalWeb', 'platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 // The Five Orders of Space (DICTO 2026-11-16, from the apps census of 2026-11-15): the gold block's worlds and lattices under the
 // five rings, Earth, Water, Fire, Wind, Void (Musashi's five rings), in book order; inside each book, the order the block had
@@ -735,10 +739,10 @@ export const DICTO_SHELF = [
   ['Seven', ['bitrunc', 'perm4']],
   ['Eight', ['platonicMix', 'reuleaux', 'aristotle', 'roofFold', 'studies']],
   ['Nine', ['golden']],
-  ['Ten', ['whiteQueen']],
+  ['Ten', ['whiteQueen', 'queensWalls']],
 ];
 // The newest work carries a small "new" mark in its row instead of moving to the top.
-const NEW_WORK = new Set(['bitrunc', 'perm4']);
+const NEW_WORK = new Set(['bitrunc', 'perm4', 'queensWalls']);
 // DICTO's newest first (DICTO 2026-11-02): the four Star Cores solids D106–D109 (named 2026-10-31), then Kagemusha's crests and the other
 // Star Cores shapes not in PV before (D105 down to D22, newest first), each in its own section.
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: [...NARCISSUS_IDS, ...STAR_CORES_SOLID_IDS, ...KAGEMUSHA_CREST_IDS, ...STAR_CORES_SHAPE_IDS, 'DICTO_ICOSAXES', 'DICTO_UNBORN_AXES', 'DICTO_LOTUS_JEWEL_AXES', 'DICTO_DODECAXES', 'DICTO_SAMSON', 'DICTO_DELILAH', 'TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY', 'DICTO_EDGE_ROOF', 'DICTO_UNBORN', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
