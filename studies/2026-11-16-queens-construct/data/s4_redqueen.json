@@ -1,0 +1,532 @@
+{
+ "vol120": "(2985/128+2415/64phi)",
+ "vol120_over_vol600P": "(141/640+57/160phi)",
+ "decagon_covers": 84,
+ "decagon_covers_hopf": 12,
+ "rings": {
+  "rings": 12,
+  "per_ring": 10,
+  "ring_fraction": "1/12"
+ },
+ "inscribed_600cells": 10,
+ "600cells_per_corner": [
+  2
+ ],
+ "splits_into_5_disjoint_600cells": 2,
+ "600cell_pair_meetings": {
+  "24": 25,
+  "0": 20
+ },
+ "vol_inscribed600_fraction": "(2-2/3phi)",
+ "inscribed_24cells": 225,
+ "24cells_per_corner": [
+  9
+ ],
+ "splits_into_25_disjoint_24cells_cap1000": 1000,
+ "24cells_inside_how_many_600cells": [
+  1,
+  2
+ ],
+ "S5_orbits": [
+  {
+   "size": 5,
+   "antipodal": false,
+   "blocks": [
+    1,
+    4
+   ],
+   "A4_type": "5-cell (simplex)",
+   "coords_shifted": [
+    "(3/4+1phi)",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "5/144",
+   "fraction_float": 0.034722222222222224,
+   "plates": 10,
+   "mirrors": 10,
+   "cross": 0,
+   "none": 0
+  },
+  {
+   "size": 5,
+   "antipodal": false,
+   "blocks": [
+    4,
+    1
+   ],
+   "A4_type": "5-cell (simplex)",
+   "coords_shifted": [
+    "(3/4+1phi)",
+    "(3/4+1phi)",
+    "(3/4+1phi)",
+    "(3/4+1phi)",
+    "0"
+   ],
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "5/144",
+   "fraction_float": 0.034722222222222224,
+   "plates": 10,
+   "mirrors": 10,
+   "cross": 0,
+   "none": 0
+  },
+  {
+   "size": 20,
+   "antipodal": false,
+   "blocks": [
+    1,
+    3,
+    1
+   ],
+   "A4_type": "runcinated (expanded) 5-cell",
+   "coords_shifted": [
+    "(3/4+5/4phi)",
+    "(1/4+1/4phi)",
+    "(1/4+1/4phi)",
+    "(1/4+1/4phi)",
+    "0"
+   ],
+   "fvec": [
+    20,
+    60,
+    70,
+    30
+   ],
+   "cells": {
+    "tetrahedron": 10,
+    "triangular prism": 20
+   },
+   "fraction": "(17/144+1/16phi)",
+   "fraction_float": 0.21918267985242398,
+   "plates": 70,
+   "mirrors": 0,
+   "cross": 20,
+   "none": 50
+  },
+  {
+   "size": 20,
+   "antipodal": false,
+   "blocks": [
+    1,
+    3,
+    1
+   ],
+   "A4_type": "runcinated (expanded) 5-cell",
+   "coords_shifted": [
+    "(3/4+5/4phi)",
+    "(1/2+1phi)",
+    "(1/2+1phi)",
+    "(1/2+1phi)",
+    "0"
+   ],
+   "fvec": [
+    20,
+    60,
+    70,
+    30
+   ],
+   "cells": {
+    "tetrahedron": 10,
+    "triangular prism": 20
+   },
+   "fraction": "(17/144+1/16phi)",
+   "fraction_float": 0.21918267985242398,
+   "plates": 70,
+   "mirrors": 0,
+   "cross": 20,
+   "none": 50
+  },
+  {
+   "size": 20,
+   "antipodal": false,
+   "blocks": [
+    1,
+    1,
+    3
+   ],
+   "A4_type": "truncated 5-cell",
+   "coords_shifted": [
+    "(1/2+1phi)",
+    "(1/2+3/4phi)",
+    "0",
+    "0",
+    "0"
+   ],
+   "fvec": [
+    20,
+    40,
+    30,
+    10
+   ],
+   "cells": {
+    "tetrahedron": 5,
+    "truncated tetrahedron": 5
+   },
+   "fraction": "(1/18+1/12phi)",
+   "fraction_float": 0.19039172128471346,
+   "plates": 30,
+   "mirrors": 10,
+   "cross": 0,
+   "none": 20
+  },
+  {
+   "size": 20,
+   "antipodal": false,
+   "blocks": [
+    3,
+    1,
+    1
+   ],
+   "A4_type": "truncated 5-cell",
+   "coords_shifted": [
+    "(1/2+1phi)",
+    "(1/2+1phi)",
+    "(1/2+1phi)",
+    "(0+1/4phi)",
+    "0"
+   ],
+   "fvec": [
+    20,
+    40,
+    30,
+    10
+   ],
+   "cells": {
+    "tetrahedron": 5,
+    "truncated tetrahedron": 5
+   },
+   "fraction": "(1/18+1/12phi)",
+   "fraction_float": 0.19039172128471346,
+   "plates": 30,
+   "mirrors": 10,
+   "cross": 0,
+   "none": 20
+  },
+  {
+   "size": 30,
+   "antipodal": true,
+   "blocks": [
+    2,
+    1,
+    2
+   ],
+   "A4_type": "bitruncated 5-cell",
+   "coords_shifted": [
+    "(1/2+1phi)",
+    "(1/2+1phi)",
+    "(1/4+1/2phi)",
+    "0",
+    "0"
+   ],
+   "fvec": [
+    30,
+    60,
+    40,
+    10
+   ],
+   "cells": {
+    "truncated tetrahedron": 10
+   },
+   "fraction": "23/72",
+   "fraction_float": 0.3194444444444444,
+   "plates": 20,
+   "mirrors": 10,
+   "cross": 0,
+   "none": 10
+  },
+  {
+   "size": 60,
+   "antipodal": false,
+   "blocks": [
+    1,
+    2,
+    1,
+    1
+   ],
+   "A4_type": "runcitruncated 5-cell",
+   "coords_shifted": [
+    "(3/4+5/4phi)",
+    "(1/4+1/2phi)",
+    "(1/4+1/2phi)",
+    "(0+1/4phi)",
+    "0"
+   ],
+   "fvec": [
+    60,
+    150,
+    120,
+    30
+   ],
+   "cells": {
+    "cuboctahedron": 5,
+    "hexagonal prism": 10,
+    "triangular prism": 10,
+    "truncated tetrahedron": 5
+   },
+   "fraction": "(-23/144+53/144phi)",
+   "fraction_float": 0.4358041764148919,
+   "plates": 75,
+   "mirrors": 30,
+   "cross": 5,
+   "none": 40
+  },
+  {
+   "size": 60,
+   "antipodal": false,
+   "blocks": [
+    2,
+    1,
+    1,
+    1
+   ],
+   "A4_type": "cantitruncated 5-cell",
+   "coords_shifted": [
+    "(3/4+1phi)",
+    "(3/4+1phi)",
+    "(1/2+3/4phi)",
+    "(1/4+1/4phi)",
+    "0"
+   ],
+   "fvec": [
+    60,
+    120,
+    80,
+    20
+   ],
+   "cells": {
+    "24-vertex cell with faces {4: 6, 6: 8}": 5,
+    "triangular prism": 10,
+    "truncated tetrahedron": 5
+   },
+   "fraction": "(25/144+1/8phi)",
+   "fraction_float": 0.37586535970484797,
+   "plates": 80,
+   "mirrors": 10,
+   "cross": 0,
+   "none": 70
+  },
+  {
+   "size": 60,
+   "antipodal": false,
+   "blocks": [
+    1,
+    1,
+    2,
+    1
+   ],
+   "A4_type": "runcitruncated 5-cell",
+   "coords_shifted": [
+    "(3/4+5/4phi)",
+    "(3/4+1phi)",
+    "(1/2+3/4phi)",
+    "(1/2+3/4phi)",
+    "0"
+   ],
+   "fvec": [
+    60,
+    150,
+    120,
+    30
+   ],
+   "cells": {
+    "cuboctahedron": 5,
+    "hexagonal prism": 10,
+    "triangular prism": 10,
+    "truncated tetrahedron": 5
+   },
+   "fraction": "(-23/144+53/144phi)",
+   "fraction_float": 0.4358041764148919,
+   "plates": 75,
+   "mirrors": 30,
+   "cross": 5,
+   "none": 40
+  },
+  {
+   "size": 60,
+   "antipodal": false,
+   "blocks": [
+    1,
+    1,
+    1,
+    2
+   ],
+   "A4_type": "cantitruncated 5-cell",
+   "coords_shifted": [
+    "(3/4+1phi)",
+    "(1/2+3/4phi)",
+    "(1/4+1/4phi)",
+    "0",
+    "0"
+   ],
+   "fvec": [
+    60,
+    120,
+    80,
+    20
+   ],
+   "cells": {
+    "24-vertex cell with faces {4: 6, 6: 8}": 5,
+    "triangular prism": 10,
+    "truncated tetrahedron": 5
+   },
+   "fraction": "(25/144+1/8phi)",
+   "fraction_float": 0.37586535970484797,
+   "plates": 80,
+   "mirrors": 10,
+   "cross": 0,
+   "none": 70
+  },
+  {
+   "size": 120,
+   "antipodal": false,
+   "blocks": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "A4_type": "omnitruncated 5-cell (permutohedron)",
+   "coords_shifted": [
+    "(3/4+5/4phi)",
+    "(1/2+1phi)",
+    "(1/2+3/4phi)",
+    "(1/4+1/2phi)",
+    "0"
+   ],
+   "fvec": [
+    120,
+    240,
+    150,
+    30
+   ],
+   "cells": {
+    "24-vertex cell with faces {4: 6, 6: 8}": 10,
+    "hexagonal prism": 20
+   },
+   "fraction": "(71/144+13/144phi)",
+   "fraction_float": 0.63912806842881,
+   "plates": 150,
+   "mirrors": 30,
+   "cross": 40,
+   "none": 80
+  },
+  {
+   "size": 120,
+   "antipodal": false,
+   "blocks": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "A4_type": "omnitruncated 5-cell (permutohedron)",
+   "coords_shifted": [
+    "(3/4+5/4phi)",
+    "(1/2+3/4phi)",
+    "(1/4+1/2phi)",
+    "(1/4+1/4phi)",
+    "0"
+   ],
+   "fvec": [
+    120,
+    240,
+    150,
+    30
+   ],
+   "cells": {
+    "24-vertex cell with faces {4: 6, 6: 8}": 10,
+    "hexagonal prism": 20
+   },
+   "fraction": "(71/144+13/144phi)",
+   "fraction_float": 0.63912806842881,
+   "plates": 150,
+   "mirrors": 30,
+   "cross": 40,
+   "none": 80
+  }
+ ],
+ "S5_orbit_walls_union": {
+  "mirrors": 40,
+  "cross": 45,
+  "none": 270
+ },
+ "caps_600": {
+  "inner": "inscribed 600-cell",
+  "caps": 480,
+  "dissection": false,
+  "overlap": "(15/8+195/64phi)",
+  "overlap_float_V": 0.08065044950046207,
+  "classes": [
+   {
+    "count": 480,
+    "fvec": [
+     14,
+     28,
+     22,
+     8
+    ],
+    "cells": {
+     "10-vertex cell with faces {3: 3, 5: 3, 6: 1}": 2,
+     "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 3,
+     "tetrahedron": 3
+    },
+    "fraction": "(31/2400-7/900phi)",
+    "corners_of_Q": 11
+   }
+  ]
+ },
+ "caps_24": {
+  "inner": "inscribed 24-cell",
+  "caps": 24,
+  "dissection": false,
+  "overlap": "(60781/14080+103019/14080phi)",
+  "overlap_float_V": 0.19147058044987375,
+  "classes": [
+   {
+    "count": 24,
+    "fvec": [
+     88,
+     182,
+     121,
+     27
+    ],
+    "cells": {
+     "12-vertex cell with faces {3: 4, 5: 4, 6: 1}": 3,
+     "14-vertex cell with faces {4: 4, 5: 4, 6: 1}": 3,
+     "16-vertex cell with faces {4: 3, 5: 6, 6: 1}": 4,
+     "20-vertex cell with faces {3: 1, 4: 1, 5: 11}": 3,
+     "40-vertex cell with faces {3: 3, 4: 3, 5: 9, 6: 10}": 1,
+     "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 6,
+     "dodecahedron": 1,
+     "pentagonal prism": 3,
+     "triangular prism": 3
+    },
+    "fraction": "(1515227/198000-932819/198000phi)",
+    "corners_of_Q": 60
+   }
+  ]
+ },
+ "seconds": 97.6661205291748
+}

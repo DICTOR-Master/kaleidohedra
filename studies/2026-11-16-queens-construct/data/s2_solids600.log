@@ -1,0 +1,35 @@
+CHECK ok   hull keeps the corner order
+CHECK ok   W(H4) as corner permutations: order 14400
+CHECK ok   control: 600 cell pyramids from the centre sum exactly to the 600-cell
+CHECK ok   all 600 cell pyramids have one volume (V/600)
+CHECK ok   inscribed 24-cell: 24 corners
+CHECK ok   snub 24-cell: 24 caps, each with 13 corners (icosahedral pyramid)
+CHECK ok   each cap = an icosahedral pyramid (icosahedron + 20 tetrahedra)
+CHECK ok   snub 24-cell + 24 icosahedral pyramids = 600-cell, volumes exact
+CHECK ok   each pyramid apex is a corner of the removed 24-cell
+CHECK ok   the 24 pyramids are one class
+CHECK ok   control: the same split with the apex at the centre fails the volume sum
+CHECK ok   24 caps over the 24-cell octahedra (24)
+caps over 24-cell: dissection False classes [{'count': 24, 'fvec': (50, 198, 246, 98), 'cells': {'42-vertex cell with faces {3: 80}': 1, '5-vertex cell with faces {3: 4, 4: 1}': 24, 'tetrahedron': 73}, 'volume': '(-31/16+23/8phi)', 'vol_fraction': '(37/80-27/100phi)'}]
+CHECK ok   two completely orthogonal great decagons (10, 10)
+CHECK ok   grand antiprism f-vector (100, 500, 720, 320)
+CHECK ok   grand antiprism cells {'pentagonal antiprism': 20, 'tetrahedron': 300}
+CHECK ok   20 caps (over the pentagonal antiprisms; tetrahedral facets are 600-cell cells): 20
+CHECK ok   the 20 caps (icosahedral pyramids) overlap: excess (-5/6+5/3phi) = 0.017595 V
+CHECK ok   link of a ring corner: pentagonal antiprism + 2 poles; edge link a pentagon
+CHECK ok   link of a ring corner: pentagonal antiprism + 2 poles; edge link a pentagon
+CHECK ok   grand antiprism + 20 pentagonal-antiprism pyramids + 20 edge joins = 600-cell, volumes exact
+CHECK ok   each icosahedral cap = its antiprism pyramid + 2 edge joins (volume), so the pieces cover the caps
+CHECK ok   cap overlap = the 20 edge joins, each counted twice
+GA {'GA_volume': '(145/6+130/3phi)', 'GA_fraction': '(17/30+1/5phi)', 'caps': {'name': 'caps of P over the grand antiprism facets', 'pieces': 20, 'classes_by_distance_multiset': [{'count': 20, 'fvec': (13, 42, 50, 21), 'cells': {'icosahedron': 1, 'tetrahedron': 20}, 'volume': '(0+5/12phi)', 'vol_fraction': '(1/30-1/60phi)'}], 'sum': '(0+25/3phi)'}, 'cap_overlap': '(-5/6+5/3phi)', 'pa_pyramids': {'name': 'pentagonal antiprism pyramids', 'pieces': 20, 'classes_by_distance_multiset': [{'count': 20, 'fvec': (11, 30, 32, 13), 'cells': {'pentagonal antiprism': 1, 'pentagonal pyramid': 2, 'tetrahedron': 10}, 'volume': '(1/12+1/4phi)', 'vol_fraction': '(1/100-1/300phi)'}], 'sum': '(5/3+5phi)'}, 'edge_joins': {'name': 'edge joins (segment * pentagon)', 'pieces': 20, 'classes_by_distance_multiset': [{'count': 20, 'fvec': (7, 16, 16, 7), 'cells': {'pentagonal pyramid': 2, 'tetrahedron': 5}, 'volume': '(-1/24+1/12phi)', 'vol_fraction': '(7/600-1/150phi)'}], 'sum': '(-5/6+5/3phi)'}}
+CHECK ok   each triangle in exactly 2 cells
+CHECK ok   every face-to-face chain (Boerdijk-Coxeter helix) closes after 30 tetrahedra: {30: 240}
+CHECK ok   240 rings (600 cells x 12 helix directions / 30)
+CHECK ok   the 600 cells split into 20 disjoint rings of 30: 828 ways (cap 2000)
+CHECK ok   each ring has 30 corners
+CHECK ok   the 20 rings of a split are congruent (one W(H4) orbit)
+CHECK ok   ring pyramids (30 cells each, from the centre) sum to the 600-cell; each = V/20
+CHECK ok   72 great decagons (exact planarity)
+decagons inside each ring [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+30 checks, 0 failed
+FINAL ok

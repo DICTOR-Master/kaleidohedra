@@ -1,0 +1,158 @@
+{
+ "a_pyramids": {
+  "pieces": 600,
+  "each": "(1/24+1/12phi)",
+  "fraction": "1/600"
+ },
+ "b_snub": {
+  "snub_volume": "(25+40phi)",
+  "snub_fraction": "(1/5+2/5phi)",
+  "pyramid": {
+   "name": "icosahedral pyramids on the snub 24-cell",
+   "pieces": 24,
+   "classes_by_distance_multiset": [
+    {
+     "count": 24,
+     "fvec": [
+      13,
+      42,
+      50,
+      21
+     ],
+     "cells": {
+      "icosahedron": 1,
+      "tetrahedron": 20
+     },
+     "volume": "(0+5/12phi)",
+     "vol_fraction": "(1/30-1/60phi)"
+    }
+   ],
+   "sum": "(0+10phi)"
+  },
+  "pyramid_fraction_each": "(1/30-1/60phi)"
+ },
+ "e_caps_over_24cell": {
+  "name": "caps of P over the 24-cell facets",
+  "pieces": 24,
+  "classes_by_distance_multiset": [
+   {
+    "count": 24,
+    "fvec": [
+     50,
+     198,
+     246,
+     98
+    ],
+    "cells": {
+     "42-vertex cell with faces {3: 80}": 1,
+     "5-vertex cell with faces {3: 4, 4: 1}": 24,
+     "tetrahedron": 73
+    },
+    "volume": "(-31/16+23/8phi)",
+    "vol_fraction": "(37/80-27/100phi)"
+   }
+  ],
+  "sum": "(-93/2+69phi)",
+  "overlap": "(-111/2+43phi)",
+  "dissection": false
+ },
+ "c_grand_antiprism": {
+  "GA_volume": "(145/6+130/3phi)",
+  "GA_fraction": "(17/30+1/5phi)",
+  "caps": {
+   "name": "caps of P over the grand antiprism facets",
+   "pieces": 20,
+   "classes_by_distance_multiset": [
+    {
+     "count": 20,
+     "fvec": [
+      13,
+      42,
+      50,
+      21
+     ],
+     "cells": {
+      "icosahedron": 1,
+      "tetrahedron": 20
+     },
+     "volume": "(0+5/12phi)",
+     "vol_fraction": "(1/30-1/60phi)"
+    }
+   ],
+   "sum": "(0+25/3phi)"
+  },
+  "cap_overlap": "(-5/6+5/3phi)",
+  "pa_pyramids": {
+   "name": "pentagonal antiprism pyramids",
+   "pieces": 20,
+   "classes_by_distance_multiset": [
+    {
+     "count": 20,
+     "fvec": [
+      11,
+      30,
+      32,
+      13
+     ],
+     "cells": {
+      "pentagonal antiprism": 1,
+      "pentagonal pyramid": 2,
+      "tetrahedron": 10
+     },
+     "volume": "(1/12+1/4phi)",
+     "vol_fraction": "(1/100-1/300phi)"
+    }
+   ],
+   "sum": "(5/3+5phi)"
+  },
+  "edge_joins": {
+   "name": "edge joins (segment * pentagon)",
+   "pieces": 20,
+   "classes_by_distance_multiset": [
+    {
+     "count": 20,
+     "fvec": [
+      7,
+      16,
+      16,
+      7
+     ],
+     "cells": {
+      "pentagonal pyramid": 2,
+      "tetrahedron": 5
+     },
+     "volume": "(-1/24+1/12phi)",
+     "vol_fraction": "(7/600-1/150phi)"
+    }
+   ],
+   "sum": "(-5/6+5/3phi)"
+  }
+ },
+ "d_rings": {
+  "rings": 240,
+  "covers_by_20_rings": 828,
+  "decagons_inside_each_ring": [
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3
+  ]
+ },
+ "seconds": 26.12159276008606
+}

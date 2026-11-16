@@ -1,0 +1,71 @@
+CHECK ok   closure of X has 120 points (120)
+CHECK ok   closure of X has 120 points (120)
+CHECK ok   all 120 on one sphere
+CHECK ok   Y = perms (phi^2,phi^2,1,1,0) lies in P exactly, no rescaling
+CHECK ok   distance profile from a corner 1,12,20,12,30,12,20,12,1
+CHECK ok   circumradius/edge = phi (600-cell)
+CHECK ok   600-cell f-vector (120, 720, 1200, 600)
+CHECK ok   600 tetrahedral cells
+CHECK ok   600-cell volume = 25 phi^3 a^4 / 4 exactly ((25+50phi), float 105.901699, qhull 105.901699)
+CHECK ok   exact volume = qhull volume
+CHECK ok   S5 orbits [20, 20, 20, 30, 30]
+CHECK ok   orbits are X, -X, Y, -Y and one more (C3)
+CHECK ok   C3 is antipodal (C3 = -C3)
+CHECK ok   C1: Euler f0-f1+f2-f3 = 0 (20, 40, 30, 10)
+CHECK ok   C1: exact volume = qhull volume
+CHECK ok   C1: every orbit point is a vertex of its hull
+ORBIT {"orbit": "C1", "size": 20, "coords_shifted": ["(1+1phi)", "(1+1phi)", "(1+1phi)", "(0+1phi)", "0"], "blocks": [3, 1, 1], "gaps": ["1", "(0+1phi)"], "A4_type": "truncated 5-cell", "uniform_gaps": false, "fvec": [20, 40, 30, 10], "cells": {"tetrahedron": 5, "truncated tetrahedron": 5}, "edge_lengths2": ["2", "(2+2phi)"], "volume": "(35/8+55/8phi)", "vol_fraction_of_600": "(1/40+3/40phi)", "vol_fraction_float": 0.1463525491562421}
+CHECK ok   C2: Euler f0-f1+f2-f3 = 0 (20, 40, 30, 10)
+CHECK ok   C2: exact volume = qhull volume
+CHECK ok   C2: every orbit point is a vertex of its hull
+ORBIT {"orbit": "C2", "size": 20, "coords_shifted": ["(1+1phi)", "1", "0", "0", "0"], "blocks": [1, 1, 3], "gaps": ["(0+1phi)", "1"], "A4_type": "truncated 5-cell", "uniform_gaps": false, "fvec": [20, 40, 30, 10], "cells": {"tetrahedron": 5, "truncated tetrahedron": 5}, "edge_lengths2": ["2", "(2+2phi)"], "volume": "(35/8+55/8phi)", "vol_fraction_of_600": "(1/40+3/40phi)", "vol_fraction_float": 0.1463525491562421}
+CHECK ok   C3: Euler f0-f1+f2-f3 = 0 (20, 60, 70, 30)
+CHECK ok   C3: exact volume = qhull volume
+CHECK ok   C3: every orbit point is a vertex of its hull
+ORBIT {"orbit": "C3", "size": 20, "coords_shifted": ["(0+2phi)", "(0+1phi)", "(0+1phi)", "(0+1phi)", "0"], "blocks": [1, 3, 1], "gaps": ["(0+1phi)", "(0+1phi)"], "A4_type": "runcinated (expanded) 5-cell", "uniform_gaps": true, "fvec": [20, 60, 70, 30], "cells": {"tetrahedron": 10, "triangular prism": 20}, "edge_lengths2": ["(2+2phi)"], "volume": "(35/3+245/12phi)", "vol_fraction_of_600": "(7/30+7/60phi)", "vol_fraction_float": 0.4221039653541544}
+CHECK ok   C4: Euler f0-f1+f2-f3 = 0 (30, 90, 80, 20)
+CHECK ok   C4: exact volume = qhull volume
+CHECK ok   C4: every orbit point is a vertex of its hull
+ORBIT {"orbit": "C4", "size": 30, "coords_shifted": ["(1+1phi)", "(1+1phi)", "1", "1", "0"], "blocks": [2, 2, 1], "gaps": ["(0+1phi)", "1"], "A4_type": "cantellated 5-cell", "uniform_gaps": false, "fvec": [30, 90, 80, 20], "cells": {"cuboctahedron": 5, "octahedron": 5, "triangular prism": 10}, "edge_lengths2": ["2", "(2+2phi)"], "volume": "(325/24+175/8phi)", "vol_fraction_of_600": "(1/8+5/24phi)", "vol_fraction_float": 0.46209041432289477}
+CHECK ok   C5: Euler f0-f1+f2-f3 = 0 (30, 90, 80, 20)
+CHECK ok   C5: exact volume = qhull volume
+CHECK ok   C5: every orbit point is a vertex of its hull
+ORBIT {"orbit": "C5", "size": 30, "coords_shifted": ["(1+1phi)", "(0+1phi)", "(0+1phi)", "0", "0"], "blocks": [1, 2, 2], "gaps": ["1", "(0+1phi)"], "A4_type": "cantellated 5-cell", "uniform_gaps": false, "fvec": [30, 90, 80, 20], "cells": {"cuboctahedron": 5, "octahedron": 5, "triangular prism": 10}, "edge_lengths2": ["2", "(2+2phi)"], "volume": "(325/24+175/8phi)", "vol_fraction_of_600": "(1/8+5/24phi)", "vol_fraction_float": 0.46209041432289477}
+CHECK ok   A is a truncated 5-cell, B a cantellated 5-cell (combinatorially)
+CHECK ok   C2 like C1, C5 like C4
+NEST {'C2 in hull C1': 0, 'C3 in hull C1': 0, 'C4 in hull C1': 0, 'C5 in hull C1': 0, 'C1 in hull C2': 0, 'C3 in hull C2': 0, 'C4 in hull C2': 0, 'C5 in hull C2': 0, 'C1 in hull C3': 0, 'C2 in hull C3': 0, 'C4 in hull C3': 0, 'C5 in hull C3': 0, 'C1 in hull C4': 0, 'C2 in hull C4': 0, 'C3 in hull C4': 0, 'C5 in hull C4': 0, 'C1 in hull C5': 0, 'C2 in hull C5': 0, 'C3 in hull C5': 0, 'C4 in hull C5': 0}
+CHECK ok   no orbit hull contains another orbit (all corners on one sphere)
+CHECK ok   control: t = 3/2 in place of phi does not close into a 120-point 600-cell (None)
+CHECK ok   control: perms (phi^2,phi^2,6/5,6/5,0) do not lie in P
+CHECK ok   the 600-cell has 25 inscribed 24-cells (25)
+CHECK ok   each is exactly a 24-cell (closed under its reflections; profile 1,8,6,8,1)
+CHECK ok   every corner lies in exactly 5 of the 25
+24-cell pair meetings {6: 200, 0: 100}
+ways to choose 5 disjoint 24-cells: 10
+CHECK ok   every 5 pairwise disjoint 24-cells cover all 120 corners
+CHECK ok   number of ways to split the 600-cell into 5 disjoint 24-cells: 10
+CHECK ok   24-cell hull (24, 96, 96, 24)
+24-cells meet C1..C5 in [(0, 0, 12, 6, 6), (5, 5, 2, 6, 6)]
+CHECK ok   the other 96 corners: hull f-vector (96, 432, 480, 144) = snub 24-cell
+CHECK ok   snub cells {'icosahedron': 24, 'tetrahedron': 120}
+CHECK ok   all snub edges equal the 600-cell edge (uniform)
+great polygons by corner count {4: 450, 6: 200, 10: 72}
+CHECK ok   72 great decagons, 200 hexagons, 450 squares ({4: 450, 6: 200, 10: 72})
+CHECK ok   each decagon exactly planar through the centre
+CHECK ok   corners split into 12 disjoint great 10-gons (84 covers found, cap 2000)
+CHECK ok   corners split into 20 disjoint great 6-gons (2000 covers found, cap 2000)
+CHECK ok   corners split into 30 disjoint great 4-gons (2000 covers found, cap 2000)
+decagon covers (all): 84
+CHECK ok   all decagon covers counted: 84
+CHECK ok   vertex axis: layers sum to 120
+LAYERS vertex [(1, 'point'), (12, 'icosahedron'), (20, 'dodecahedron'), (12, 'icosahedron'), (30, 'icosidodecahedron'), (12, 'icosahedron'), (20, 'dodecahedron'), (12, 'icosahedron'), (1, 'point')]
+CHECK ok   edge axis: layers sum to 120
+LAYERS edge [(2, 'segment'), (5, '5 points, flat (2D)'), (10, 'pentagonal prism, 2 edge lengths'), (2, 'segment'), (5, '5 points, flat (2D)'), (10, 'pentagonal prism, 2 edge lengths'), (10, 'pentagonal prism, 2 edge lengths'), (10, 'pentagonal prism'), (12, 'icosahedron, 2 edge lengths'), (10, 'pentagonal prism'), (10, 'pentagonal prism, 2 edge lengths'), (10, 'pentagonal prism, 2 edge lengths'), (5, '5 points, flat (2D)'), (2, 'segment'), (10, 'pentagonal prism, 2 edge lengths'), (5, '5 points, flat (2D)'), (2, 'segment')]
+CHECK ok   triangle axis: layers sum to 120
+LAYERS triangle [(3, '3 points, flat (2D)'), (2, 'segment'), (6, 'triangular prism, 2 edge lengths'), (6, 'triangular prism'), (6, '6 points, flat (2D)'), (6, 'triangular prism, 2 edge lengths'), (3, '3 points, flat (2D)'), (12, 'hexagonal prism, 2 edge lengths'), (6, 'triangular prism, 2 edge lengths'), (6, 'triangular prism, 2 edge lengths'), (8, 'hexagonal bipyramid, 2 edge lengths'), (6, 'triangular prism, 2 edge lengths'), (6, 'triangular prism, 2 edge lengths'), (12, 'hexagonal prism, 2 edge lengths'), (3, '3 points, flat (2D)'), (6, 'triangular prism, 2 edge lengths'), (6, '6 points, flat (2D)'), (6, 'triangular prism'), (6, 'triangular prism, 2 edge lengths'), (2, 'segment'), (3, '3 points, flat (2D)')]
+CHECK ok   cell axis: layers sum to 120
+LAYERS cell [(4, 'tetrahedron'), (4, 'tetrahedron'), (6, 'octahedron'), (12, 'cuboctahedron, 2 edge lengths'), (12, 'truncated tetrahedron, 2 edge lengths'), (12, 'truncated tetrahedron, 2 edge lengths'), (4, 'tetrahedron'), (12, 'cuboctahedron'), (4, 'tetrahedron'), (12, 'truncated tetrahedron, 2 edge lengths'), (12, 'truncated tetrahedron, 2 edge lengths'), (12, 'cuboctahedron, 2 edge lengths'), (6, 'octahedron'), (4, 'tetrahedron'), (4, 'tetrahedron')]
+CHECK ok   vertex-first layers 1,12,20,12,30,12,20,12,1
+CHECK ok   vertex-first layers icosahedron, dodecahedron, icosahedron, icosidodecahedron
+54 checks, 0 failed
+FINAL ok

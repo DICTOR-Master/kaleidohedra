@@ -8234,7 +8234,7 @@
    {
     "question": "DICTO 16 Nov: construct/deconstruct the Queens (600-cell, 120-cell) from/into polytopes; cat and steak: do A, B and partner orbits build the 600-cell (corners, solids, walls)?",
     "method": "exact Q(sqrt5): certified hulls, lattice volumes, caps, plane arrangement, S5/W(H4) orbits (queens-construct scripts s1-s4)",
-    "status": "PARKED (DICTO 16 Nov: narrow to scutoid interactions)",
+    "status": "SETTLED as far as computed; 90-plane arrangement as a monitored job",
     "result": "corners: P = A+(-A)+C3+B+(-B); walls: A and B together use all 60 mirrors + 40 cross walls; solids: no tiling, union of the 5 hulls 0.650 of P, core = uniform bitruncated 5-cell, A cap B = golden cantitruncated 5-cell; 686 regions/23 classes from A,B planes; GA complement = 20 PA-pyramids + 20 edge joins; 120-cell: 10 600-cells, 225 24-cells, 13 S5 orbits; caps over inscribed 600/24-cells overlap",
     "retry": "only the 90-plane arrangement (mode all) as a monitored job; literature check for GA complement split and the core",
     "study": "studies/2026-11-16-queens-construct",

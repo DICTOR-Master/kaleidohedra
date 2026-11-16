@@ -1,0 +1,666 @@
+{
+ "r2": "(2+2phi)",
+ "edge2": "2",
+ "vol600": "(25+50phi)",
+ "vol600_over_a4": "(25/4+25/2phi)",
+ "orbits": [
+  {
+   "orbit": "C1",
+   "size": 20,
+   "coords_shifted": [
+    "(1+1phi)",
+    "(1+1phi)",
+    "(1+1phi)",
+    "(0+1phi)",
+    "0"
+   ],
+   "blocks": [
+    3,
+    1,
+    1
+   ],
+   "gaps": [
+    "1",
+    "(0+1phi)"
+   ],
+   "A4_type": "truncated 5-cell",
+   "uniform_gaps": false,
+   "fvec": [
+    20,
+    40,
+    30,
+    10
+   ],
+   "cells": {
+    "tetrahedron": 5,
+    "truncated tetrahedron": 5
+   },
+   "edge_lengths2": [
+    "2",
+    "(2+2phi)"
+   ],
+   "volume": "(35/8+55/8phi)",
+   "vol_fraction_of_600": "(1/40+3/40phi)",
+   "vol_fraction_float": 0.1463525491562421
+  },
+  {
+   "orbit": "C2",
+   "size": 20,
+   "coords_shifted": [
+    "(1+1phi)",
+    "1",
+    "0",
+    "0",
+    "0"
+   ],
+   "blocks": [
+    1,
+    1,
+    3
+   ],
+   "gaps": [
+    "(0+1phi)",
+    "1"
+   ],
+   "A4_type": "truncated 5-cell",
+   "uniform_gaps": false,
+   "fvec": [
+    20,
+    40,
+    30,
+    10
+   ],
+   "cells": {
+    "tetrahedron": 5,
+    "truncated tetrahedron": 5
+   },
+   "edge_lengths2": [
+    "2",
+    "(2+2phi)"
+   ],
+   "volume": "(35/8+55/8phi)",
+   "vol_fraction_of_600": "(1/40+3/40phi)",
+   "vol_fraction_float": 0.1463525491562421
+  },
+  {
+   "orbit": "C3",
+   "size": 20,
+   "coords_shifted": [
+    "(0+2phi)",
+    "(0+1phi)",
+    "(0+1phi)",
+    "(0+1phi)",
+    "0"
+   ],
+   "blocks": [
+    1,
+    3,
+    1
+   ],
+   "gaps": [
+    "(0+1phi)",
+    "(0+1phi)"
+   ],
+   "A4_type": "runcinated (expanded) 5-cell",
+   "uniform_gaps": true,
+   "fvec": [
+    20,
+    60,
+    70,
+    30
+   ],
+   "cells": {
+    "tetrahedron": 10,
+    "triangular prism": 20
+   },
+   "edge_lengths2": [
+    "(2+2phi)"
+   ],
+   "volume": "(35/3+245/12phi)",
+   "vol_fraction_of_600": "(7/30+7/60phi)",
+   "vol_fraction_float": 0.4221039653541544
+  },
+  {
+   "orbit": "C4",
+   "size": 30,
+   "coords_shifted": [
+    "(1+1phi)",
+    "(1+1phi)",
+    "1",
+    "1",
+    "0"
+   ],
+   "blocks": [
+    2,
+    2,
+    1
+   ],
+   "gaps": [
+    "(0+1phi)",
+    "1"
+   ],
+   "A4_type": "cantellated 5-cell",
+   "uniform_gaps": false,
+   "fvec": [
+    30,
+    90,
+    80,
+    20
+   ],
+   "cells": {
+    "cuboctahedron": 5,
+    "octahedron": 5,
+    "triangular prism": 10
+   },
+   "edge_lengths2": [
+    "2",
+    "(2+2phi)"
+   ],
+   "volume": "(325/24+175/8phi)",
+   "vol_fraction_of_600": "(1/8+5/24phi)",
+   "vol_fraction_float": 0.46209041432289477
+  },
+  {
+   "orbit": "C5",
+   "size": 30,
+   "coords_shifted": [
+    "(1+1phi)",
+    "(0+1phi)",
+    "(0+1phi)",
+    "0",
+    "0"
+   ],
+   "blocks": [
+    1,
+    2,
+    2
+   ],
+   "gaps": [
+    "1",
+    "(0+1phi)"
+   ],
+   "A4_type": "cantellated 5-cell",
+   "uniform_gaps": false,
+   "fvec": [
+    30,
+    90,
+    80,
+    20
+   ],
+   "cells": {
+    "cuboctahedron": 5,
+    "octahedron": 5,
+    "triangular prism": 10
+   },
+   "edge_lengths2": [
+    "2",
+    "(2+2phi)"
+   ],
+   "volume": "(325/24+175/8phi)",
+   "vol_fraction_of_600": "(1/8+5/24phi)",
+   "vol_fraction_float": 0.46209041432289477
+  }
+ ],
+ "nesting_counts": {
+  "C2 in hull C1": 0,
+  "C3 in hull C1": 0,
+  "C4 in hull C1": 0,
+  "C5 in hull C1": 0,
+  "C1 in hull C2": 0,
+  "C3 in hull C2": 0,
+  "C4 in hull C2": 0,
+  "C5 in hull C2": 0,
+  "C1 in hull C3": 0,
+  "C2 in hull C3": 0,
+  "C4 in hull C3": 0,
+  "C5 in hull C3": 0,
+  "C1 in hull C4": 0,
+  "C2 in hull C4": 0,
+  "C3 in hull C4": 0,
+  "C5 in hull C4": 0,
+  "C1 in hull C5": 0,
+  "C2 in hull C5": 0,
+  "C3 in hull C5": 0,
+  "C4 in hull C5": 0
+ },
+ "24cell_pair_meetings": {
+  "6": 200,
+  "0": 100
+ },
+ "disjoint_24cell_quintuples": 10,
+ "vol24_fraction": "(0+8/25phi)",
+ "24cell_meets_orbits": [
+  [
+   0,
+   0,
+   12,
+   6,
+   6
+  ],
+  [
+   5,
+   5,
+   2,
+   6,
+   6
+  ]
+ ],
+ "vol_snub": "(25+40phi)",
+ "vol_snub_fraction": "(1/5+2/5phi)",
+ "great_polygons": {
+  "4": 450,
+  "6": 200,
+  "10": 72
+ },
+ "polygon_covers_found_cap2000": {
+  "10": 84,
+  "6": 2000,
+  "4": 2000
+ },
+ "decagon_cover_example": [
+  [
+   0,
+   2,
+   20,
+   22,
+   42,
+   43,
+   57,
+   70,
+   80,
+   81
+  ],
+  [
+   1,
+   7,
+   24,
+   35,
+   50,
+   61,
+   79,
+   82,
+   85,
+   95
+  ],
+  [
+   6,
+   12,
+   27,
+   32,
+   59,
+   62,
+   76,
+   104,
+   111,
+   118
+  ],
+  [
+   3,
+   13,
+   36,
+   41,
+   56,
+   60,
+   78,
+   106,
+   109,
+   116
+  ],
+  [
+   4,
+   14,
+   25,
+   49,
+   65,
+   73,
+   84,
+   105,
+   108,
+   112
+  ],
+  [
+   5,
+   8,
+   38,
+   58,
+   67,
+   71,
+   87,
+   90,
+   93,
+   99
+  ],
+  [
+   9,
+   11,
+   30,
+   45,
+   64,
+   72,
+   75,
+   89,
+   96,
+   103
+  ],
+  [
+   10,
+   15,
+   37,
+   44,
+   52,
+   98,
+   100,
+   107,
+   110,
+   114
+  ],
+  [
+   16,
+   17,
+   21,
+   34,
+   53,
+   63,
+   91,
+   92,
+   113,
+   115
+  ],
+  [
+   18,
+   19,
+   23,
+   26,
+   68,
+   94,
+   97,
+   102,
+   117,
+   119
+  ],
+  [
+   28,
+   29,
+   39,
+   46,
+   47,
+   55,
+   69,
+   77,
+   83,
+   101
+  ],
+  [
+   31,
+   33,
+   40,
+   48,
+   51,
+   54,
+   66,
+   74,
+   86,
+   88
+  ]
+ ],
+ "decagon_covers_total": 84,
+ "layers": {
+  "vertex": [
+   [
+    1,
+    "point"
+   ],
+   [
+    12,
+    "icosahedron"
+   ],
+   [
+    20,
+    "dodecahedron"
+   ],
+   [
+    12,
+    "icosahedron"
+   ],
+   [
+    30,
+    "icosidodecahedron"
+   ],
+   [
+    12,
+    "icosahedron"
+   ],
+   [
+    20,
+    "dodecahedron"
+   ],
+   [
+    12,
+    "icosahedron"
+   ],
+   [
+    1,
+    "point"
+   ]
+  ],
+  "edge": [
+   [
+    2,
+    "segment"
+   ],
+   [
+    5,
+    "5 points, flat (2D)"
+   ],
+   [
+    10,
+    "pentagonal prism, 2 edge lengths"
+   ],
+   [
+    2,
+    "segment"
+   ],
+   [
+    5,
+    "5 points, flat (2D)"
+   ],
+   [
+    10,
+    "pentagonal prism, 2 edge lengths"
+   ],
+   [
+    10,
+    "pentagonal prism, 2 edge lengths"
+   ],
+   [
+    10,
+    "pentagonal prism"
+   ],
+   [
+    12,
+    "icosahedron, 2 edge lengths"
+   ],
+   [
+    10,
+    "pentagonal prism"
+   ],
+   [
+    10,
+    "pentagonal prism, 2 edge lengths"
+   ],
+   [
+    10,
+    "pentagonal prism, 2 edge lengths"
+   ],
+   [
+    5,
+    "5 points, flat (2D)"
+   ],
+   [
+    2,
+    "segment"
+   ],
+   [
+    10,
+    "pentagonal prism, 2 edge lengths"
+   ],
+   [
+    5,
+    "5 points, flat (2D)"
+   ],
+   [
+    2,
+    "segment"
+   ]
+  ],
+  "triangle": [
+   [
+    3,
+    "3 points, flat (2D)"
+   ],
+   [
+    2,
+    "segment"
+   ],
+   [
+    6,
+    "triangular prism, 2 edge lengths"
+   ],
+   [
+    6,
+    "triangular prism"
+   ],
+   [
+    6,
+    "6 points, flat (2D)"
+   ],
+   [
+    6,
+    "triangular prism, 2 edge lengths"
+   ],
+   [
+    3,
+    "3 points, flat (2D)"
+   ],
+   [
+    12,
+    "hexagonal prism, 2 edge lengths"
+   ],
+   [
+    6,
+    "triangular prism, 2 edge lengths"
+   ],
+   [
+    6,
+    "triangular prism, 2 edge lengths"
+   ],
+   [
+    8,
+    "hexagonal bipyramid, 2 edge lengths"
+   ],
+   [
+    6,
+    "triangular prism, 2 edge lengths"
+   ],
+   [
+    6,
+    "triangular prism, 2 edge lengths"
+   ],
+   [
+    12,
+    "hexagonal prism, 2 edge lengths"
+   ],
+   [
+    3,
+    "3 points, flat (2D)"
+   ],
+   [
+    6,
+    "triangular prism, 2 edge lengths"
+   ],
+   [
+    6,
+    "6 points, flat (2D)"
+   ],
+   [
+    6,
+    "triangular prism"
+   ],
+   [
+    6,
+    "triangular prism, 2 edge lengths"
+   ],
+   [
+    2,
+    "segment"
+   ],
+   [
+    3,
+    "3 points, flat (2D)"
+   ]
+  ],
+  "cell": [
+   [
+    4,
+    "tetrahedron"
+   ],
+   [
+    4,
+    "tetrahedron"
+   ],
+   [
+    6,
+    "octahedron"
+   ],
+   [
+    12,
+    "cuboctahedron, 2 edge lengths"
+   ],
+   [
+    12,
+    "truncated tetrahedron, 2 edge lengths"
+   ],
+   [
+    12,
+    "truncated tetrahedron, 2 edge lengths"
+   ],
+   [
+    4,
+    "tetrahedron"
+   ],
+   [
+    12,
+    "cuboctahedron"
+   ],
+   [
+    4,
+    "tetrahedron"
+   ],
+   [
+    12,
+    "truncated tetrahedron, 2 edge lengths"
+   ],
+   [
+    12,
+    "truncated tetrahedron, 2 edge lengths"
+   ],
+   [
+    12,
+    "cuboctahedron, 2 edge lengths"
+   ],
+   [
+    6,
+    "octahedron"
+   ],
+   [
+    4,
+    "tetrahedron"
+   ],
+   [
+    4,
+    "tetrahedron"
+   ]
+  ]
+ },
+ "seconds": 22.824594736099243
+}

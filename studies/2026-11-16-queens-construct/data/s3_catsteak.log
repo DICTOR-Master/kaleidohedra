@@ -1,0 +1,31 @@
+CHECK ok   corners: the five S5 orbits are disjoint and cover the 600-cell (A, -A, C3, B, -B)
+CHECK ok   60 mirrors and 300 cross walls, distinct
+CHECK ok   control: the 600-cell's own plates are exactly its 60 mirrors
+WALLS A {'plates': 30, 'mirrors': 30, 'cross': 0, 'none': 0}
+WALLS -A {'plates': 30, 'mirrors': 30, 'cross': 0, 'none': 0}
+WALLS C3 hull {'plates': 5, 'mirrors': 0, 'cross': 5, 'none': 0}
+WALLS B {'plates': 80, 'mirrors': 40, 'cross': 40, 'none': 0}
+WALLS -B {'plates': 80, 'mirrors': 40, 'cross': 40, 'none': 0}
+CHECK ok   A: 30 plates, all mirrors (repeat of the walls study)
+CHECK ok   B: 80 plates = 40 mirrors + 40 cross walls (repeat)
+CHECK ok   -A has the plates of A, -B those of B (central plates are unchanged by x -> -x)
+CHECK ok   control: ordinary orbit (phi^2,phi^2,phi^2,3/2,0) has 20 of 30 plates in no wall
+WALLS-USE {'A+B': {'mirrors': 60, 'cross': 40}, 'A+B+C3': {'mirrors': 60, 'cross': 45}, 'A and B share': 10, 'mirror orbits under S5': [10, 20, 30], 'cross orbits under S5': [5, 15, 20, 20, 60, 60, 120], 'A mirrors orbits': [10, 20], 'B mirror orbits': [10, 30], 'B cross orbits': [20, 20], 'C3 plates': {'plates': 5, 'mirrors': 0, 'cross': 5, 'none': 0}, 'C3 mirror orbits': [], 'C3 cross orbits': [5], 'left mirrors (A+B)': [], 'left cross (A+B)': [5, 15, 60, 60, 120], 'left mirrors (all five)': [], 'left cross (all five)': [15, 60, 60, 120], 'the 10 S5 mirrors (x_i = x_j) are H4 mirrors': True, 'A uses the 10 S5 mirrors': True, 'B uses the 10 S5 mirrors': True}
+CHECK ok   the 10 S5 mirrors are among the 60 H4 mirrors
+CHECK ok   A: exact volume = qhull volume
+CHECK ok   -A: exact volume = qhull volume
+CHECK ok   C3 hull: exact volume = qhull volume
+CHECK ok   B: exact volume = qhull volume
+CHECK ok   -B: exact volume = qhull volume
+UNION fraction 0.6504063714863006 core {'fvec': (30, 60, 40, 10), 'cells': {'truncated tetrahedron': 10}, 'fraction': '(23/750+23/1500phi)'}
+CHECK ok   union of the five hulls lies in the 600-cell
+CHECK ok   the five hulls together exceed the 600-cell volume: they overlap (all contain the centre), so they cannot tile it
+CAPS A {'caps': 5, 'dissection': False, 'overlap': '(99/4-229/48phi)', 'overlap_float_V': 0.16081545057789715, 'classes': [{'count': 5, 'fvec': (98, 408, 532, 222), 'cells': {'5-vertex cell with faces {3: 4, 4: 1}': 24, '72-vertex cell with faces {3: 116, 4: 12}': 1, 'tetrahedron': 169, 'triangular prism': 28}, 'fraction': '(-713/1500+503/1200phi)', 'corners_of_P': 38}]}
+CHECK ok   A: caps cover P minus the hull (excess >= 0)
+CAPS B {'caps': 20, 'dissection': False, 'overlap': '(-3149/240+1211/80phi)', 'overlap_float_V': 0.10738407628746538, 'classes': [{'count': 5, 'fvec': (50, 198, 246, 98), 'cells': {'42-vertex cell with faces {3: 80}': 1, '5-vertex cell with faces {3: 4, 4: 1}': 24, 'tetrahedron': 73}, 'fraction': '(37/80-27/100phi)', 'corners_of_P': 14}, {'count': 10, 'fvec': (35, 135, 168, 68), 'cells': {'30-vertex cell with faces {3: 56}': 1, '5-vertex cell with faces {3: 4, 4: 1}': 12, 'tetrahedron': 55}, 'fraction': '(103/60000+121/15000phi)', 'corners_of_P': 11}, {'count': 5, 'fvec': (62, 264, 348, 146), 'cells': {'48-vertex cell with faces {3: 92}': 1, '5-vertex cell with faces {3: 4, 4: 1}': 24, 'tetrahedron': 121}, 'fraction': '(1597/6000-713/6000phi)', 'corners_of_P': 26}]}
+CHECK ok   B: caps cover P minus the hull (excess >= 0)
+CAPS C3 hull {'caps': 30, 'dissection': False, 'overlap': '(-11977/60+5981/40phi)', 'overlap_float_V': 0.39961460227688406, 'classes': [{'count': 10, 'fvec': (32, 120, 146, 58), 'cells': {'28-vertex cell with faces {3: 52}': 1, '5-vertex cell with faces {3: 4, 4: 1}': 12, 'tetrahedron': 45}, 'fraction': '(-857/600+533/600phi)', 'corners_of_P': 8}, {'count': 20, 'fvec': (65, 252, 309, 122), 'cells': {'5-vertex cell with faces {3: 4, 4: 1}': 24, '54-vertex cell with faces {3: 92, 4: 6}': 1, 'tetrahedron': 85, 'triangular prism': 12}, 'fraction': '(25483/10000-92851/60000phi)', 'corners_of_P': 17}]}
+CHECK ok   C3 hull: caps cover P minus the hull (excess >= 0)
+CHECK ok   control: vol A + vol B + vol C3 is not the 600-cell volume
+19 checks, 0 failed
+FINAL ok
