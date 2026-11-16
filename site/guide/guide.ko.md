@@ -310,7 +310,7 @@ DICTO의 Polyhedraverse 칸 맨 위에서 **검색**으로 이름, 가족, 면 �
 
 ## DICTO Vacuus
 
-**◌ DICTO Vacuus**(DICTO 2026-11-03)는 입체를 중심에서 봅니다. 중심이 모든 면의 평면 안쪽에 있는 입체(모든 볼록 입체와 스텔라 옥탕굴라 같은 별 모양 입체)를 하나 놓고 스트립의 **◌ DICTO Vacuus**를 누르세요. 다른 입체에는 버튼이 없습니다. 다섯 가지 보기: **피라미드**(중심에서 각 면으로), **분해**(슬라이더로 벌림), **별**(각 피라미드를 면 바깥으로 뒤집음, 안쪽은 빔), **핀**(중심과 각 모서리의 핀; 같은 색은 같은 모양), **스트럿**(중심에서 꼭짓점까지의 막대, 길이별 색). 피라미드에서 Kaleidohedra의 Aristotle's Pyramid로, 그곳에서 다시 돌아오는 링크가 있습니다. [polyhedraverse.dictospheres.com/?open=vacuus:CUBE](https://polyhedraverse.dictospheres.com/?open=vacuus:CUBE)로 바로 엽니다(보기는 `:exploded`, `:star`, `:sheets`, `:struts`를 붙여서).
+**◌ DICTO Vacuus**(DICTO 2026-11-03)는 입체를 중심에서 봅니다. 중심이 모든 면의 평면 안쪽에 있는 입체(모든 볼록 입체와 스텔라 옥탕굴라 같은 별 모양 입체)를 하나 놓고 스트립의 **◌ DICTO Vacuus**를 누르세요. 다른 입체에는 버튼이 없습니다. 다섯 가지 보기: **피라미드**(중심에서 각 면으로), **분해**(슬라이더로 벌림), **별**(각 피라미드를 면 바깥으로 뒤집음, 안쪽은 빔), **핀**(중심과 각 모서리의 핀; 같은 색은 같은 모양), **스트럿**(중심에서 꼭짓점까지의 막대, 길이별 색). 피라미드에서 Kaleidohedra의 Aristotle's Pyramid로, 그곳에서 다시 돌아오는 링크가 있습니다. [polyhedraverse.dictospheres.com/?open=vacuus:CUBE](https://polyhedraverse.dictospheres.com/?open=vacuus:CUBE)로 바로 엽니다(보기는 `:exploded`, `:star`, `:sheets`, `:struts`를 붙여서). **핀**에서는 **떼어 놓기** 슬라이더가 각 시트(중심을 지나는 한 평면 위의 핀들)를 법선을 따라 밀어 내고, 라벨이 입체의 종류(하트, 물려받은 하트, 비하트)를 알려 주며, **시트 종류**가 온전한 시트·공유 시트·홀로 된 핀을 색으로 나눕니다.
 
 ## 황금 절단
 

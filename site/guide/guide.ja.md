@@ -310,7 +310,7 @@ DICTO の Polyhedraverse の欄の上部では、**検索** で名前、ファ�
 
 ## DICTO Vacuus
 
-**◌ DICTO Vacuus**（DICTO 2026-11-03）は立体をその中心から見ます。中心がすべての面の平面の内側にある立体（凸な立体すべてと、ステラ・オクタンギュラのような星形のもの）を 1 つ置き、ストリップの **◌ DICTO Vacuus** をタップします。それ以外の立体にはボタンが出ません。見方は 5 つ：**ピラミッド**（中心から各面へのピラミッド）、**分解**（スライダーで離す）、**スター**（各ピラミッドを面の外へ折り返し、内側は空）、**フィン**（中心と各辺のフィン。同じ色は同じ形）、**ストラット**（中心から頂点への棒、長さで色分け）。ピラミッドから Kaleidohedra の Aristotle's Pyramid へ、そこから戻るリンクもあります。[polyhedraverse.dictospheres.com/?open=vacuus:CUBE](https://polyhedraverse.dictospheres.com/?open=vacuus:CUBE) で直接開きます（見方は `:exploded`、`:star`、`:sheets`、`:struts` を付けて）。
+**◌ DICTO Vacuus**（DICTO 2026-11-03）は立体をその中心から見ます。中心がすべての面の平面の内側にある立体（凸な立体すべてと、ステラ・オクタンギュラのような星形のもの）を 1 つ置き、ストリップの **◌ DICTO Vacuus** をタップします。それ以外の立体にはボタンが出ません。見方は 5 つ：**ピラミッド**（中心から各面へのピラミッド）、**分解**（スライダーで離す）、**スター**（各ピラミッドを面の外へ折り返し、内側は空）、**フィン**（中心と各辺のフィン。同じ色は同じ形）、**ストラット**（中心から頂点への棒、長さで色分け）。ピラミッドから Kaleidohedra の Aristotle's Pyramid へ、そこから戻るリンクもあります。[polyhedraverse.dictospheres.com/?open=vacuus:CUBE](https://polyhedraverse.dictospheres.com/?open=vacuus:CUBE) で直接開きます（見方は `:exploded`、`:star`、`:sheets`、`:struts` を付けて）。 **フィン** では **離す** スライダーで各シート（中心を通る一つの平面上のフィン）が法線に沿って滑り出し、ラベルが立体の種類（ハート、受け継いだハート、非ハート）を示し、**シートの種類** で全シート・共有シート・単独のフィンを色分けします。
 
 ## 黄金カット
 

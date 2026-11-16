@@ -4,7 +4,8 @@
 //   exploded  the same pyramids drawn apart, each along its face normal;
 //   star      each pyramid turned out over its own face: apex the mirror image of O in the face plane (the Star step's doubling
 //             rule, star-step-geometry.js tipsOf(…, 'doubling')), the inside left empty;
-//   sheets    the Fins view, the Vacuus fins: for every edge, the triangle (O, edge), grouped by congruence (three sides, SSS);
+//   sheets    the Fins view, the Vacuus fins: for every edge, the triangle (O, edge), grouped by congruence (three sides, SSS), or by
+//             plate (platesOf: the fins on one plane through O form one sheet, the solid's kind read from them);
 //   struts    the rods from O to every corner, grouped by length.
 // Pure maths, no three.js. Points are centred on O.
 import { tipsOf } from './star-step-geometry.js';
@@ -116,4 +117,29 @@ export function volumes(solid) {
   let v = 0;
   for (const f of solid.faces) for (let i = 1; i + 1 < f.length; i++) v += dot(solid.vertices[f[0]], cross(solid.vertices[f[i]], solid.vertices[f[i + 1]])) / 6;
   return { pyramids: pyr, solid: v };
+}
+
+// ---- Plates and the three kinds (DICTO 2026-11-16; Walls of Silence §2–3, in 3D as #87: the plates are spanned by the EDGES with O) ----
+export const VACUUS_KINDS = ['heart', 'inherited', 'nonheart'];
+export const SHEET_KINDS = ['full', 'shared', 'single'];
+/** The plates: each edge spans with O one plane through O, its plate; the fins on one plate form one sheet. { plates: [{ n (unit normal,
+ *  first clear coordinate positive), edges: [edge index], kind: 'full' (every fin on it with its opposite: an edge and its mirror image
+ *  through O) | 'shared' (two or more fins, not full) | 'single' (one fin) }], kind: 'heart' (the solid centrally symmetric about O) |
+ *  'nonheart' (every plate carries one fin) | 'inherited' (otherwise), counts: { full, shared, single } }. */
+export function platesOf(solid) {
+  const P = solid.vertices, R = solid.R, tol = 1e-7 * R, plates = [];
+  const canon = (n) => { const l = norm(n), u = scale(n, 1 / l), k = u.findIndex((x) => Math.abs(x) > 1e-6); return u[k] < 0 ? scale(u, -1) : u; };
+  solid.edges.forEach(([a, b], e) => {
+    const n = canon(cross(P[a], P[b]));
+    let pl = plates.find((x) => Math.abs(dot(x.n, n) - 1) < 1e-9);
+    if (!pl) { pl = { n, edges: [] }; plates.push(pl); }
+    pl.edges.push(e);
+  });
+  const same = (p, q) => Math.abs(p[0] - q[0]) < tol && Math.abs(p[1] - q[1]) < tol && Math.abs(p[2] - q[2]) < tol;
+  const opposite = (e, f) => { const [a, b] = solid.edges[e], [c, d] = solid.edges[f], na = scale(P[a], -1), nb = scale(P[b], -1); return (same(na, P[c]) && same(nb, P[d])) || (same(na, P[d]) && same(nb, P[c])); };
+  for (const pl of plates) pl.kind = pl.edges.length === 1 ? 'single' : pl.edges.every((e) => pl.edges.some((f) => f !== e && opposite(e, f))) ? 'full' : 'shared';
+  const symmetric = P.every((v) => P.some((w) => same(scale(v, -1), w)));
+  const kind = symmetric ? 'heart' : plates.every((pl) => pl.edges.length === 1) ? 'nonheart' : 'inherited';
+  const counts = Object.fromEntries(SHEET_KINDS.map((k) => [k, plates.filter((pl) => pl.kind === k).length]));
+  return { plates, kind, counts };
 }

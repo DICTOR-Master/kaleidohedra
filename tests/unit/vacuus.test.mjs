@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { POLYHEDRA } from '../../src/krp-core/src/polyhedra/index.js';
-import { VACUUS_VIEWS, vacuusSolidOf, pyramidsOf, starTipsOf, finsOf, strutsOf, volumes, isCube } from '../../src/app/vacuus-geometry.js';
+import { VACUUS_VIEWS, vacuusSolidOf, pyramidsOf, starTipsOf, finsOf, strutsOf, volumes, isCube, platesOf } from '../../src/app/vacuus-geometry.js';
 
 const close = (a, b, msg, eps = 1e-9) => assert.ok(Math.abs(a - b) <= eps, `${msg}: ${a} vs ${b}`);
 const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
@@ -88,3 +88,27 @@ test('the cube, and only the cube, gets the rhombic dodecahedron line (DICTO 11-
     if (POLYHEDRA[id]) assert.equal(isCube(vacuusSolidOf(POLYHEDRA[id])), false, `${id} is not a cube`);
   }
 });
+
+// The three kinds (DICTO 2026-11-16; Walls of Silence §2–3, plates spanned by the edges with O, as #87): heart = centrally symmetric
+// about O, non-heart = every plate one fin, otherwise inherited heart. [id, kind, plates, fins per plate (sorted), full/shared/single]
+const KINDS = [
+  ['D8', 'heart', 3, [4, 4, 4], [3, 0, 0]],                              // the octahedron: 3 square sheets
+  ['CUBE', 'heart', 6, [2, 2, 2, 2, 2, 2], [6, 0, 0]],                   // an edge and its opposite on 6 diagonal planes
+  ['CUBOCTAHEDRON', 'heart', 4, [6, 6, 6, 6], [4, 0, 0]],                // 4 hexagons
+  ['ICOSIDODECAHEDRON', 'heart', 6, [10, 10, 10, 10, 10, 10], [6, 0, 0]], // 6 decagons
+  ['D4', 'nonheart', 6, [1, 1, 1, 1, 1, 1], [0, 0, 6]],                  // the tetrahedron: 6 single fins
+  ['TRUNCATED_TETRAHEDRON', 'nonheart', 18, Array(18).fill(1), [0, 0, 18]],
+  ['D6', 'inherited', 4, [2, 2, 2, 3], [0, 4, 0]],                       // the triangular bipyramid
+  ['J1_SQUARE_PYRAMID', 'inherited', 6, [1, 1, 1, 1, 2, 2], [0, 2, 4]],
+];
+for (const [id, kind, n, per, [full, shared, single]] of KINDS) {
+  test(`${id}: ${kind}, ${n} plates`, () => {
+    const s = vacuusSolidOf(POLYHEDRA[id]), p = platesOf(s);
+    assert.equal(p.kind, kind); assert.equal(p.plates.length, n);
+    assert.deepEqual(p.plates.map((x) => x.edges.length).sort((a, b) => a - b), per);
+    assert.deepEqual([p.counts.full, p.counts.shared, p.counts.single], [full, shared, single]);
+    // every fin on its plate: both corners of the edge in the plane through O
+    for (const pl of p.plates) for (const e of pl.edges) for (const k of s.edges[e]) assert.ok(Math.abs(dot(pl.n, s.vertices[k])) < 1e-9 * s.R);
+    assert.equal(p.plates.reduce((m, x) => m + x.edges.length, 0), s.edges.length);
+  });
+}

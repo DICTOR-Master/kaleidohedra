@@ -90,8 +90,9 @@ for (const [name, opts] of DEVICES) {
     const cap = await page.textContent('[data-vac-caption]');
     console.log(name, v, '-', cap);
     if (v === 'star') assert.ok(cap.includes('rhombic dodecahedron'), `${name}: the cube's Star named as the rhombic dodecahedron (${cap})`);
-    // only the controls that apply: the slider in Exploded, the Aristotle link in Pyramids, the colour key in Fins and Struts
-    assert.equal(await page.locator('[data-vac-apart]').count(), v === 'exploded' ? 1 : 0, `${name}: ${v} slider`);
+    // only the controls that apply: the slider in Exploded and Fins (the sheets slide out, DICTO 2026-11-16), the Aristotle link in
+    // Pyramids, the colour key in Fins and Struts
+    assert.equal(await page.locator('[data-vac-apart]').count(), v === 'exploded' || v === 'sheets' ? 1 : 0, `${name}: ${v} slider`);
     assert.equal(await page.locator('[data-vac-aristotle]').count(), v === 'pyramids' ? 1 : 0, `${name}: ${v} Aristotle link`);
     assert.equal(await page.locator('.vac-legend').count(), v === 'sheets' || v === 'struts' ? 1 : 0, `${name}: ${v} colour key`);
     if (v === 'exploded') {

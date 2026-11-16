@@ -310,7 +310,7 @@ Polyhedraverse 是肖像画廊：按家族排列的每一个形状，一次一�
 
 ## DICTO Vacuus
 
-**◌ DICTO Vacuus**（DICTO 2026-11-03）从中心观看一个立体。放一个中心位于所有面所在平面内侧的立体（所有凸立体，以及星形八面体这样的星状立体），点条带中的 **◌ DICTO Vacuus**；其他立体没有这个按钮。五种视图：**棱锥**（从中心到每个面的棱锥）、**分解**（滑块把它们分开）、**星形**（每个棱锥翻到面外，内部是空的）、**鳍片**（中心到每条棱的鳍；同色即同形）和 **支杆**（从中心到顶点的杆，按长度着色）。棱锥视图链接到 Kaleidohedra 的 Aristotle's Pyramid，那里也链接回来。链接 [polyhedraverse.dictospheres.com/?open=vacuus:CUBE](https://polyhedraverse.dictospheres.com/?open=vacuus:CUBE) 可直接打开（加 `:exploded`、`:star`、`:sheets` 或 `:struts` 选视图）。
+**◌ DICTO Vacuus**（DICTO 2026-11-03）从中心观看一个立体。放一个中心位于所有面所在平面内侧的立体（所有凸立体，以及星形八面体这样的星状立体），点条带中的 **◌ DICTO Vacuus**；其他立体没有这个按钮。五种视图：**棱锥**（从中心到每个面的棱锥）、**分解**（滑块把它们分开）、**星形**（每个棱锥翻到面外，内部是空的）、**鳍片**（中心到每条棱的鳍；同色即同形）和 **支杆**（从中心到顶点的杆，按长度着色）。棱锥视图链接到 Kaleidohedra 的 Aristotle's Pyramid，那里也链接回来。链接 [polyhedraverse.dictospheres.com/?open=vacuus:CUBE](https://polyhedraverse.dictospheres.com/?open=vacuus:CUBE) 可直接打开（加 `:exploded`、`:star`、`:sheets` 或 `:struts` 选视图）。 在 **鳍片** 中，**分开** 滑块让每张薄片（过中心的一个平面上的鳍）沿法线滑出，标签给出立体的类型（心型、继承心型或非心型），**薄片类型** 为完整薄片、共享薄片和单片鳍着色。
 
 ## 黄金截角
 

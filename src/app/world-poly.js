@@ -314,14 +314,16 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   const aristotleKey = () => ARISTOTLE_SOLIDS.find((k) => ARISTOTLE_IDS[k] === vacShape) ?? 'fills';
   const vacEntry = (L) => `<div class="poly-golden poly-star"><button type="button" class="poly-vac-go" data-vac title="${t('poly.vac.title', L)}">${t('poly.vac', L)}</button></div>`;
   function vacRow(L) {
-    const v = vacuus.view, legend = vacuus.legend(), MAX = 8;
+    const v = vacuus.view, legend = vacuus.legend(L), MAX = 8;
     const chips = legend.slice(0, MAX).map((c) => `<span class="vac-chip"><i style="background:#${c.colour.toString(16).padStart(6, '0')}"></i>${c.label}</span>`).join('')
       + (legend.length > MAX ? `<span class="vac-chip">${t('poly.vac.more', L, { k: legend.length - MAX })}</span>` : '');
     return `<div class="poly-golden poly-star poly-vac" role="group" aria-label="${t('poly.vac.title', L)}">${VACUUS_VIEWS.map((x) => `<button type="button" data-vac-view="${x}" aria-pressed="${x === v}">${t(`poly.vac.view.${x}`, L)}</button>`).join('')}<button type="button" data-vac-off title="${t('poly.vac.close.title', L)}">${t('poly.vac.close', L)}</button></div>`
       + `<div class="poly-star-caption" data-vac-caption>${vacuus.caption(L)}</div>`
+      // Fins: the solid's kind, read from its plates (DICTO's names), and the sheets coloured by kind on request
+      + (v === 'sheets' ? `<div class="poly-golden poly-star vac-kind-row"><span class="vac-kind" data-vac-kind="${vacuus.kind}">${t('poly.vac.kind', L, { k: t(`poly.vac.kind.${vacuus.kind}`, L) })}</span><button type="button" data-vac-kinds aria-pressed="${vacuus.kinds}">${t('poly.vac.kinds', L)}</button></div>` : '')
       + (legend.length ? `<div class="vac-legend">${chips}</div>` : '')
       + (v === 'pyramids' ? `<div class="poly-golden poly-star"><button type="button" data-vac-aristotle>${t('poly.vac.aristotle', L)}</button></div>` : '')
-      + (v === 'exploded' ? `<label class="vac-apart-row"><span>${t('poly.vac.apart', L)}</span><input type="range" min="0" max="100" step="1" value="${vacuus.apart}" data-vac-apart aria-label="${t('poly.vac.apart', L)}"></label>` : '');
+      + (v === 'exploded' || v === 'sheets' ? `<label class="vac-apart-row"><span>${t('poly.vac.apart', L)}</span><input type="range" min="0" max="100" step="1" value="${vacuus.apart}" data-vac-apart aria-label="${t('poly.vac.apart', L)}"></label>` : '');
   }
   // ---- ✂ Golden Cut (DICTO, paper #88; golden-cut-lens.js): the Platonic solid on show cut the same depth x at every corner, a big
   // slider for x with three marked stops (Lesser Golden Cut, Archimedean, Greater Golden Cut; for the octahedron DICTO's Unborn Axes
@@ -1182,6 +1184,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if ('vac' in b.dataset) { const n = vacTarget(); if (!n || !vacStart(n)) return; selection = null; rebuild(); renderPanel(); fitView?.(vacuus.reach * 1.12, true); return; }
     if (b.dataset.vacView) { vacuus.setView(b.dataset.vacView); renderPanel(); fitView?.(vacuus.reach * 1.12, true); return; }   // each view framed on its own shape
     if ('vacOff' in b.dataset) { vacReset(); return; }
+    if ('vacKinds' in b.dataset) { vacuus.setKinds(!vacuus.kinds); renderPanel(); return; }
     if ('gcut' in b.dataset) { const n = gcutTarget(); if (!n || !gcutStart(n)) return; selection = null; rebuild(); renderPanel(); fitView?.(gcut.reach * 1.12, true); return; }
     if (b.dataset.gcutStop) { gcut.setStop(b.dataset.gcutStop); const s = stripBody.querySelector('[data-gcut-x]'); if (s) s.value = gcut.x; gcutReadouts(); return; }
     if ('gcutOff' in b.dataset) { gcutReset(); return; }
