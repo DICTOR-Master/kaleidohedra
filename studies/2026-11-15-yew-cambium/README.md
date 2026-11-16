@@ -103,3 +103,6 @@ resin canals) are a clean case. Plan and wording: "One tissue, three scales" (14
 - results/pilot/: summary.json, pilot.log, per-patch JSON (colus/, both methods), synthetic truth and evaluation JSON, and the
   run plan.
 - PRIOR_ART.md: every source checked, with the numbers found and their units.
+
+## 16 Nov: DICTO decision
+DICTO: "forget the yew sample unless available online". No own sample will be cut. One web search (16 Nov, standard: "serial tangential sections vascular cambium fusiform initials dataset Taxus yew image stack open data") found no open Taxus serial-section stack; closest published material: serial tangential sections of fusiform initials in Zelkova, Robinia and Albizia (J. Wood Sci., https://jwoodscience.springeropen.com/counter/pdf/10.1007/BF00770693.pdf) and work on Thuja occidentalis cited there (figures in papers, no dataset found). Status: PARKED until an online serial-section data set turns up (check Dryad, Zenodo, BioImage Archive when next passing).
