@@ -125,7 +125,7 @@ Tone zeros come from exact rational norms, factored over Q, with roots isolated 
   - Permutations of (φ², φ², 1, 1, 0), T₃ = T₆ = 0: a numerical continuation follows a curve of joint zeros from this edge point into the interior. So it is where an ordinary curve meets the edge, a coincidence on the edge only. This weakens it as a candidate (numeric).
   - Permutations of (φ², φ², φ², φ, 0), T₅ = T₇ = 0: the continuation failed, so this one is unsettled. **It stays the one open candidate.**
 
-**Settled the same day (studies/2026-11-15-golden-a4-candidate):** both golden members are S5-orbits of one 600-cell (twisted conjugacy classes of the binary icosahedral group). On the 600-cell, degrees 5 and 7 see one invariant function, and integrality of the twisted character table (2u + 3v = 6 in whole numbers) forces it to vanish on one orbit type. This is a law forced by representation theory (new kind (R)), and with it all 416 coincidences are explained.
+**Settled the same day (studies/2026-11-15-golden-a4-candidate):** both golden members are S5-orbits of one 600-cell (twisted conjugacy classes of the binary icosahedral group). On the 600-cell, degrees 5 and 7 see one invariant function, and integrality of the twisted character table (2u + 3v = 6 in whole numbers) forces it to vanish on one orbit type. This is a law forced by representation theory: new kind (T), twisted silence (DICTO's name, 16 Nov; working label (R)), and with it all 416 coincidences are explained.
 
 The sub-study did not cover H4, D4 and F4 on the faces, edges and vertices of the seed simplex, nor a full sweep of all triples in 4D.
 
