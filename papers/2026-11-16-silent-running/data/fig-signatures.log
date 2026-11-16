@@ -1,0 +1,34 @@
+CHECK ok   X: neighbour silences are a subset
+CHECK ok   F: neighbour silences are a subset
+CHECK ok   cuboctahedron (A3 x3o3t, t=1): neighbour silences are a subset
+CHECK ok   bitruncated 5-cell (A4 o3x3t3o, t=1): neighbour silences are a subset
+CHECK ok   runcinated 5-cell = R (A4 x3o3o3t, t=1): neighbour silences are a subset
+CHECK ok   omnitruncated 5-cell (A4 x3x3x3t, t=1): neighbour silences are a subset
+CHECK ok   bitruncated 24-cell (F4 o3x4t3o, t=1): neighbour silences are a subset
+CHECK ok   runcinated 24-cell (F4 x3o4o3t, t=1): neighbour silences are a subset
+CHECK ok   omnitruncated 24-cell (F4 x3x4x3t, t=1): neighbour silences are a subset
+CHECK ok   Icosaxes (B3 x3t4o, t=φ): neighbour silences are a subset
+CHECK ok   2I, 30-point class (equator): forced within silent
+CHECK ok   2O twisted, 12-, 6-, 2-point classes: forced within silent
+CHECK ok   Kelvin truncated octahedron (B3 x3t4o, t=1): neighbour silences are a subset
+CHECK ok   24-cell (tesseract-16-cell line, μ=2): neighbour silences are a subset
+CHECK ok   D4 o3o3x *b3x (t=1): neighbour silences are a subset
+CHECK ok   turn fixed point (cube-octahedron line, μ=√3): neighbour silences are a subset
+CHECK ok   2I, 12-point classes: forced within silent
+CHECK ok   2I, 20-point classes: forced within silent
+CHECK ok   2O twisted, 8-point classes: forced within silent
+CHECK ok   2T twisted, 6-point classes: forced within silent
+CHECK ok   D16, σ₇: rectangle (4): forced within silent
+CHECK ok   D24, σ₇: 6 points: forced within silent
+CHECK ok   W⁺(H4), Galois both: 600, 900: forced within silent
+CHECK ok   W(H4), Galois: 1200, 900: forced within silent
+CHECK ok   W⁺(H4), Galois left: 30, 360: forced within silent
+CHECK ok   W⁺(H4), Galois left: 600: forced within silent
+CHECK ok   W(H3), Galois: 10, 20, 30: forced within silent
+CHECK ok   Sym6, exceptional ξ: forced within silent
+CHECK ok   two twisted-silence rows
+CHECK ok   only X (5, 7) and F (3, 6) carry red tiles
+CHECK ok   24-cell: silences beyond its line (F4 symmetry), drawn in the X colour
+CHECK ok   rows fit the frame (36.95 <= 37.20)
+CHECK ok   frame (2200, 1875)
+FINAL ok

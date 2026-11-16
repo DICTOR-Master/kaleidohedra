@@ -1,0 +1,10 @@
+CHECK ok   −X has the same tones as X
+CHECK ok   −F has the same tones as F
+CHECK ok   X: marked degree 5 is silent
+CHECK ok   X: marked degree 7 is silent
+CHECK ok   F: marked degree 3 is silent
+CHECK ok   F: marked degree 6 is silent
+CHECK ok   controls ring in every degree from 3
+CHECK ok   every ringing tone is above the display floor
+CHECK ok   frame (2200, 1166) at the asserted aspect 10.0:5.3
+FINAL ok
