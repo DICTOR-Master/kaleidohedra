@@ -1,0 +1,24 @@
+INIT {'N': 1000, 'T1': 32, 'T2': 0, 'mu2': 1.526, 'wall': 14}
+PROGRESS 0.000 coarsen N=1000 t=0.0010 dt=1.00e-03 T1=0 T2=0 T2side=0 mix=32/0 anomalies=0 wall=14
+PROGRESS 0.015 coarsen N=955 t=0.1700 dt=2.92e-04 T1=8 T2=45 T2side=0 mix=32/0 anomalies=0 wall=74
+PROGRESS 0.031 coarsen N=911 t=0.2674 dt=1.01e-04 T1=17 T2=89 T2side=0 mix=32/0 anomalies=0 wall=134
+PROGRESS 0.044 coarsen N=876 t=0.3347 dt=2.49e-04 T1=28 T2=124 T2side=0 mix=32/0 anomalies=0 wall=195
+PROGRESS 0.051 coarsen N=859 t=0.3653 dt=4.56e-05 T1=35 T2=141 T2side=0 mix=32/0 anomalies=0 wall=255
+PROGRESS 0.063 coarsen N=827 t=0.4115 dt=8.48e-04 T1=42 T2=173 T2side=0 mix=32/0 anomalies=0 wall=315
+PROGRESS 0.071 coarsen N=808 t=0.4525 dt=2.46e-04 T1=50 T2=192 T2side=0 mix=32/0 anomalies=0 wall=375
+PROGRESS 0.081 coarsen N=784 t=0.5098 dt=1.34e-05 T1=57 T2=216 T2side=0 mix=32/0 anomalies=0 wall=436
+PROGRESS 0.093 coarsen N=756 t=0.5656 dt=8.65e-05 T1=66 T2=244 T2side=0 mix=32/0 anomalies=0 wall=496
+PROGRESS 0.110 coarsen N=719 t=0.6446 dt=5.77e-04 T1=77 T2=281 T2side=0 mix=32/0 anomalies=0 wall=556
+PROGRESS 0.122 coarsen N=694 t=0.6948 dt=1.45e-04 T1=87 T2=306 T2side=0 mix=32/0 anomalies=0 wall=617
+PROGRESS 0.143 coarsen N=651 t=0.7916 dt=2.48e-04 T1=102 T2=349 T2side=0 mix=32/0 anomalies=0 wall=677
+PROGRESS 0.164 coarsen N=611 t=0.8901 dt=5.11e-04 T1=119 T2=389 T2side=0 mix=32/0 anomalies=0 wall=737
+PROGRESS 0.185 coarsen N=575 t=1.0023 dt=4.40e-04 T1=129 T2=425 T2side=0 mix=32/0 anomalies=0 wall=797
+PROGRESS 0.218 coarsen N=520 t=1.2141 dt=1.49e-04 T1=153 T2=480 T2side=0 mix=32/0 anomalies=0 wall=857
+PROGRESS 0.246 coarsen N=479 t=1.3427 dt=4.13e-05 T1=172 T2=521 T2side=0 mix=32/0 anomalies=0 wall=917
+PROGRESS 0.276 coarsen N=438 t=1.5454 dt=1.37e-05 T1=187 T2=562 T2side=0 mix=32/0 anomalies=0 wall=978
+PROGRESS 0.309 coarsen N=396 t=1.8140 dt=1.25e-03 T1=209 T2=604 T2side=0 mix=32/0 anomalies=0 wall=1038
+PROGRESS 0.357 coarsen N=343 t=2.1895 dt=9.33e-05 T1=228 T2=657 T2side=0 mix=32/0 anomalies=0 wall=1098
+PROGRESS 0.447 coarsen N=262 t=2.8835 dt=2.09e-04 T1=263 T2=738 T2side=0 mix=32/0 anomalies=0 wall=1158
+PROGRESS 0.590 coarsen N=171 t=4.7122 dt=2.06e-04 T1=292 T2=829 T2side=0 mix=32/0 anomalies=0 wall=1218
+VFROTH {"status": "done", "N": 50, "counts": {"T1": 332, "T2": 950, "T2side": 0, "T1init": 32, "T2init": 0, "lu": 13299, "settle_global": 13}, "anomalies": {"T1 R==S": 0, "T2 shared outer": 0, "T2 n>5": 0, "relax fail": 0}}
+FINAL ok

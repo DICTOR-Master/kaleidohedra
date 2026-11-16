@@ -1,0 +1,22 @@
+INIT {'N': 1000, 'T1': 27, 'T2': 0, 'mu2': 1.648, 'wall': 17}
+PROGRESS 0.000 coarsen N=1000 t=0.0010 dt=1.00e-03 T1=0 T2=0 T2side=0 mix=27/0 anomalies=0 wall=17
+PROGRESS 0.014 coarsen N=959 t=0.1722 dt=4.22e-04 T1=5 T2=41 T2side=0 mix=27/0 anomalies=0 wall=78
+PROGRESS 0.024 coarsen N=931 t=0.2310 dt=5.13e-05 T1=9 T2=69 T2side=0 mix=27/0 anomalies=0 wall=138
+PROGRESS 0.034 coarsen N=904 t=0.2770 dt=4.03e-05 T1=15 T2=96 T2side=0 mix=27/0 anomalies=0 wall=199
+PROGRESS 0.042 coarsen N=881 t=0.3223 dt=7.65e-05 T1=22 T2=119 T2side=0 mix=27/0 anomalies=0 wall=259
+PROGRESS 0.059 coarsen N=839 t=0.4019 dt=3.90e-05 T1=27 T2=161 T2side=0 mix=27/0 anomalies=0 wall=319
+PROGRESS 0.074 coarsen N=802 t=0.4592 dt=2.54e-04 T1=35 T2=198 T2side=0 mix=27/0 anomalies=0 wall=379
+PROGRESS 0.084 coarsen N=777 t=0.5074 dt=1.41e-05 T1=47 T2=223 T2side=0 mix=27/0 anomalies=0 wall=439
+PROGRESS 0.102 coarsen N=736 t=0.5931 dt=1.04e-04 T1=61 T2=264 T2side=0 mix=27/0 anomalies=0 wall=499
+PROGRESS 0.118 coarsen N=702 t=0.6691 dt=1.23e-04 T1=74 T2=298 T2side=0 mix=27/0 anomalies=0 wall=559
+PROGRESS 0.148 coarsen N=641 t=0.7933 dt=2.29e-04 T1=90 T2=359 T2side=0 mix=27/0 anomalies=0 wall=619
+PROGRESS 0.166 coarsen N=609 t=0.8757 dt=7.08e-05 T1=105 T2=391 T2side=0 mix=27/0 anomalies=0 wall=680
+PROGRESS 0.190 coarsen N=566 t=0.9947 dt=2.00e-04 T1=114 T2=434 T2side=0 mix=27/0 anomalies=0 wall=740
+PROGRESS 0.221 coarsen N=516 t=1.1688 dt=3.35e-05 T1=136 T2=484 T2side=0 mix=27/0 anomalies=0 wall=800
+PROGRESS 0.249 coarsen N=474 t=1.3191 dt=6.99e-04 T1=150 T2=526 T2side=0 mix=27/0 anomalies=0 wall=860
+PROGRESS 0.291 coarsen N=418 t=1.6567 dt=1.85e-04 T1=174 T2=582 T2side=0 mix=27/0 anomalies=0 wall=920
+PROGRESS 0.327 coarsen N=376 t=1.8545 dt=1.73e-03 T1=194 T2=624 T2side=0 mix=27/0 anomalies=0 wall=980
+PROGRESS 0.397 coarsen N=304 t=2.4712 dt=6.48e-04 T1=219 T2=696 T2side=0 mix=27/0 anomalies=0 wall=1040
+PROGRESS 0.549 coarsen N=193 t=4.2124 dt=4.95e-03 T1=258 T2=807 T2side=0 mix=27/0 anomalies=0 wall=1100
+VFROTH {"status": "done", "N": 50, "counts": {"T1": 305, "T2": 950, "T2side": 0, "T1init": 27, "T2init": 0, "lu": 13114, "settle_global": 21}, "anomalies": {"T1 R==S": 0, "T2 shared outer": 0, "T2 n>5": 0, "relax fail": 0}}
+FINAL ok

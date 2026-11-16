@@ -1,0 +1,8 @@
+INIT {'N': 400, 'T1': 13, 'T2': 0, 'mu2': 1.615, 'wall': 4}
+PROGRESS 0.000 coarsen N=400 t=0.0010 dt=1.00e-03 T1=0 T2=0 T2side=0 mix=13/0 anomalies=0 wall=4
+PROGRESS 0.076 coarsen N=336 t=0.1780 dt=1.10e-05 T1=18 T2=64 T2side=0 mix=13/0 anomalies=0 wall=65
+PROGRESS 0.147 coarsen N=285 t=0.2898 dt=5.56e-04 T1=45 T2=115 T2side=0 mix=13/0 anomalies=0 wall=125
+PROGRESS 0.262 coarsen N=219 t=0.4599 dt=1.25e-04 T1=79 T2=181 T2side=0 mix=13/0 anomalies=0 wall=185
+PROGRESS 0.472 coarsen N=135 t=0.9715 dt=8.66e-04 T1=133 T2=265 T2side=0 mix=13/0 anomalies=0 wall=245
+VFROTH {"status": "done", "N": 40, "counts": {"T1": 194, "T2": 360, "T2side": 0, "T1init": 13, "T2init": 0, "lu": 6361, "settle_global": 10}, "anomalies": {"T1 R==S": 0, "T2 shared outer": 0, "T2 n>5": 0, "relax fail": 1}}
+FINAL ok

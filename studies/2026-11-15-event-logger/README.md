@@ -40,6 +40,10 @@ window removes 99% of the swaps (0.004 to 0.014 left). Total 0.76 against 1.5.
 SCALING-STATE FROTH (15 Nov 2026, last section; scaling/): a 2048^2 Potts froth in a tested scaling state gives 0.48 +- 0.02
 macroscopic T1 per T2 at rc = 1 pixel (paper 0.53 +- 0.05), step-independent, but 0.64 / 0.32 at rc = 0.5 / 2 and rising over the
 window; its mu2 = 1.90 is not the dry froth's 1.24. Total 1.08 against 1.5; shares at l^2 26 / 67 / 6 % against 9 / 84 / 7.
+LAW-BUILT FROTH (16 Nov 2026, last section; vfroth/): an off-lattice froth built only from Plateau's 120 degrees, Laplace arcs and
+von Neumann's law (checked to 1e-9 degrees and 1e-10), with Rutenberg-McCurdy's own T1/T2 and counting rules, gives 0.250 +- 0.015
+macroscopic T1 per T2 (N0 = 1000, 8 seeds), the same at c = 0.5 / 1 / 2 (0.256 / 0.250 / 0.242): the cut-off dependence was a
+lattice artefact, but the value is half of 0.53. NOT CONFIRMED. Window not in a tested scaling state (mu2 1.58); N0 = 2500 running.
 NEXT (as it stood): settle the Earth counting rule before any rate is quoted. First, explain the single-contact clumps. Second, a persistence
 rule for swaps (fix the tolerance first). Third, close the Müller 2019 seam and run a second model, then compare the two.
 
@@ -671,3 +675,122 @@ macroscopic count therefore still moves with rc (factor 2 for a factor 4 in rc) 
 lands on 0.53 within errors, and its drift points towards 0.53 or above, but on a lattice of this size the agreement cannot be
 separated from the choice of rc. A fair test needs a froth whose own mu2 is that of a dry froth: a vertex model with a fixed
 microscopic rc and T2n deaths (as in Rutenberg-McCurdy), not the Potts lattice.
+
+## Law-built froth: the macroscopic count off the lattice (vfroth/; scripts vfroth/scripts/vfroth.py, vf_count.py)
+
+DICTO, 16 Nov 2026: "otherwise we build a model that matches the laws". Real foams obey established laws (Plateau; von Neumann 1952,
+confirmed in real 2D foams by Glazier, Gross & Stavans 1987; Lewis; Aboav), so a model froth that obeys them stands in for real
+bubbles through the laws. Rutenberg and McCurdy's 0.53 also comes from a law-based model (a force-based vertex model), so a match is
+agreement between two law-built derivations, not an observation of real foam. Nothing below is tuned towards 0.53: the laws go in,
+the rate comes out, and 0.53 is only the check.
+
+The model (written here; vfroth.py): films are circular arcs of curvature (p_l - p_r) / sigma (Laplace); three films meet at every
+vertex with their unit tangents summing to zero (Plateau, 120 degrees exactly); the froth is held in this equilibrium at every
+instant (Newton's method on force balance and areas; the quasi-static limit of Rutenberg and McCurdy's model, the limit Herdtle and
+Aref implement); every bubble's area changes exactly by von Neumann's law dA/dt = (pi/3)(n - 6) (sigma D = 1, initial mean area 1).
+The only topological moves are T1 (a film shorter than rc) and T2_n (a bubble below 10 rc^2, its n-fold vertex resolved by the
+highest-force rule), both Rutenberg and McCurdy's rules; rc = 3.162e-4, their rc / sqrt(A0) = 0.01 / sqrt(1000). After every move
+the films relax at fixed areas by implicit gradient flow of the total film length (the tension force is minus its gradient), with
+any T1 on the way logged at the same instant. Start: periodic Voronoi of N0 random points relaxed to equilibrium (as they start).
+The grains study's vertex2d.py was not reused: it moves boundaries by curvature (grain growth), not by gas diffusion at mechanical
+equilibrium, its T1 length scales with the mean boundary, and only three-sided grains vanish; its von Neumann slope of 0.76 comes
+from straight short boundaries (angles away from 120 degrees at short films) and three-point boundaries, which this model does not
+have: here the slope is pi/3 by construction of exact 120-degree arcs, and it is measured as a check, not assumed.
+
+Rutenberg and McCurdy re-read (arXiv cond-mat/0502287v1, 16 Nov 2026, sections II and III; the source of the rules above): T1 when
+two vertices come within rc, the new film of length rc along the highest force; T2_n when a bubble's area falls below 10 rc^2;
+sigma = gamma = 1, Gamma = 0.5, D = 0.2 (and 1), dt = 0.01, rc = 0.01, A0 = 10^3, N0 up to 10^4, at least 50 samples; macroscopic
+rule as quoted above with l = sqrt(rc L(t)), L = sqrt(<A>); "Scaling l by a constant factor can significantly change the duration
+of initial transients, but it should not change results in the scaling regime"; their fit interval is t~ in [2 x 10^4, 2 x 10^5]
+(<A> about 20 to 200 A0); results for D = 1 lie higher (0.6 to 0.9) with very long transients. Their model has finite vertex and
+curvature mobilities (angles deviate from 120 degrees as t^-1/2); ours is their D -> 0 limit. Our rc definition matches theirs in
+both roles (T1 distance and l), and our T2 rule is theirs.
+
+Bug found and fixed before any production run (pilot, 16 Nov): the segment area of a curved film was given to the wrong bubble (a
+film bulging into the right bubble enlarges the LEFT one). The force-balanced states then were not minima of film length; the
+check that found it compares the tension force with the numerical gradient of the total length at fixed areas, now equal to 1e-8.
+
+Controls (all in vfroth.py test=hex and vf_count.py --selftest, run before the production runs; FINAL ok):
+- Known answers: a regular honeycomb is an exact equilibrium (forces 2e-15, angles 120 degrees to 1e-13 degrees, flux 0); one bubble's
+  area halved: Newton restores 120 degrees to 1e-13 degrees and every bubble's geometric gas flux equals (pi/3)(n - 6) = 0 to 1e-15;
+  a driven T1 (two bubbles on a film shrink, the two at its ends grow) produces exactly that swap (20, 19, 27, 11) and ends with two
+  5- and two 7-sided bubbles whose flux obeys von Neumann exactly (slope 1.0471975512 = pi/3, zero 6.0000000).
+- Count rule on a hand-made event list: macroscopic 3 / 1 / 1 at c = 0.5 / 1 / 2 as expected (an area equal to l^2 is not counted).
+- Negative controls that must fail: a vertex moved off equilibrium shows a 14.3-degree angle error; the deliberately wrong rule
+  "every T1 macroscopic" gives 3 instead of 1 at c = 2; the run law=wrong (dA/dt = (pi/3)(n - 6) + (2 pi/3)(A / <A> - 1), area-
+  conserving but not von Neumann) must fail the check "geometric gas flux = imposed dA/dt" (planned below).
+
+Pilot seen before these predictions (N0 = 400, one seed, 400 -> 40 bubbles, too small for a scaling state): macroscopic T1 per T2
+0.20 / 0.19 / 0.18 at c = 0.5 / 1 / 2 in the candidate window, T2 sides 89 / 8 / 4 % (4 / 3 / 5), total T1 per T2 0.30, E / E_hex
+0.938, angles 120 degrees to 3e-8 degrees, flux = (pi/3)(n - 6) to 2e-9.
+
+Plan and predictions (written 16 Nov 2026 before any production run):
+- Runs: N0 = 2500, seeds 1 to 8 and N0 = 1000, seeds 1 to 8 (two sizes, pooled per size); rc = 3.162e-4; until N = 50. (First
+  launched with N0 = 6400, seeds 1 to 4, in place of N0 = 1000; stopped after 12 minutes, before any count was read, because at the
+  shared machine's load it needed about 20 hours.) Side check:
+  N0 = 2500 with rc four times larger (seeds 1, 2), for their statement that results do not depend on rc. Negative control:
+  law=wrong, N0 = 400.
+- Window and scaling test fixed in advance (vf_count.py doc): <A> >= 4 to N >= 100, quarters of equal log t, the Potts study's
+  tolerances, first quarter dropped on failure (at most twice), runs of one size pooled.
+- Laws in the window: angles 120 degrees within 1e-6 degrees and flux = (pi/3)(n - 6) within 1e-6 at every record (by construction;
+  the check is of the solver); mu2 1.2 to 1.5 (Rutenberg-McCurdy 1.24 +- 0.01, undrained experiment 1.4 +- 0.1); E / E_hex 0.93 to
+  0.95 (theirs 0.938 +- 0.001); growth of <A> over pi/3 0.85 to 1.0 (theirs 0.898); Aboav-Weaire a 0.8 to 1.4; Lewis: areas rise
+  with n, slope reported (froths are known not to follow Lewis's linear law closely; no number predicted).
+- T2 shares at l^2: 4-sided 80 to 90 % (theirs 84 +- 2).
+- Count: macroscopic T1 per T2 at c = 1: 0.15 to 0.35, BELOW 0.53 +- 0.05 (the pilot's 0.19); c = 0.5 and 2 within 20 % of c = 1
+  (cut-off free off the lattice); the two sizes and the seeds agree within errors. Total T1 per T2 0.25 to 0.5, below Herdtle-Aref's
+  1.5 (most bubbles vanish four-sided at 10 rc^2 without shedding).
+- Verdict rule (from the task): ESTABLISHED only if 0.53 +- 0.05 is matched at fixed rc across at least two cut-offs, two sizes and
+  two seeds with the laws checked; CONSISTENT if only at the natural cut-off; NOT CONFIRMED otherwise. Never upgraded.
+- What a mismatch would mean: the two law-built derivations differ. Ours is the exact quasi-static limit (D -> 0); theirs has finite
+  mobilities, and their own D = 1 runs lie higher than D = 0.2, so the count may depend on the ratio of gas diffusion to film
+  relaxation, which no law fixes. Then 0.53 is a property of their model's parameters, not of the laws alone.
+
+Results (16 Nov 2026; vfroth/results/: count_n1000.json, per-run folders with events, stats, crossings and final.json; the
+snapshots stay on the compute machine). N0 = 1000, seeds 1 to 8, all FINAL ok, no anomalies, 1192 T2 and 425 T1 in the candidate
+windows (149 T2 per run). N0 = 2500 (seeds 1 to 8, main machine) and the rc x 4 side check (N0 = 2500, seeds 1 and 2, second
+machine) were still running when this was written (N about 2250 of 2500 after 22 to 33 minutes, at a shared load of 46 on 24
+cores; several hours to go); they are a dated follow-up and are not in any number below.
+
+| N0 = 1000, 8 seeds pooled | c = 0.5 | c = 1 (main) | c = 2 |
+|---|---|---|---|
+| macroscopic T1 per T2 | 0.256 +- 0.015 | 0.250 +- 0.015 | 0.242 +- 0.014 |
+| spread between seeds (sd) | 0.023 | 0.021 | 0.021 |
+| per seed | 0.21 to 0.28 | 0.21 to 0.27 | 0.21 to 0.26 |
+
+- Total T1 per T2 0.357 (Herdtle-Aref, side-shedding included, 1.5). T2 sides at l^2 (c = 1): 3 / 4 / 5 = 3.4 / 88.1 / 8.5 %
+  (Rutenberg-McCurdy 9 / 84 / 7 +- 2).
+- Laws, every record in the windows (536 records): largest angle deviation from 120 degrees 7.7e-10 degrees; largest
+  |geometric gas flux - (pi/3)(n - 6)| 5.2e-11; regression of flux on n: slope 1.0471975512 (pi/3) and zero 6.0000000 in every
+  record. Growth of <A> over pi/3: 1.02 (runs 0.83 to 1.27; Rutenberg-McCurdy 0.898). E / E_hex 0.940 (theirs 0.938 +- 0.001).
+  mu2 1.58 (theirs 1.24 +- 0.01; undrained experiment 1.4 +- 0.1). Aboav-Weaire on 90,200 bubble samples: a = 1.11, intercept 8.2505
+  against 6a + mu2 = 8.2499 (Weaire's identity holds); Poisson-Voronoi has a = 0.646 (tissue-null-models). Lewis: A_n / <A> =
+  0.09 / 0.22 / 0.44 / 0.95 / 1.50 / 2.04 / 2.61 / 3.61 / 4.38 for n = 3 to 11, linear fit slope 0.50 with zero at n0 = 4.0; the
+  curve bends at small n (froths are reported to follow a quadratic rather than linear Lewis law; abstract-level, not re-read).
+- Scaling test (fixed rule, runs pooled): FAILED in all three windows tried (quarters within tolerance in p(n), KS and mu2 but the
+  slope of <A> against t is off by 9 to 24 % in one quarter each time; mu2 1.58 is still above the dry froth's 1.24). So the
+  N0 = 1000 count is NOT in a tested scaling state. It is reported as the candidate-window count, not as a scaling-state value.
+- Negative control law=wrong (N0 = 400, second machine): FINAL ok, that is it FAILED the check as required: geometric flux against
+  the imposed dA/dt differs by up to 6.94, while the geometry itself still obeys von Neumann (flux against (pi/3)(n - 6) 6e-14,
+  angles 1.5e-11 degrees off 120): the check catches a growth law that is not von Neumann's.
+
+How the findings compare with the predictions (N0 = 1000 only):
+- Laws at the solver's precision: held. mu2 1.2 to 1.5: FAILED (1.58). E / E_hex 0.93 to 0.95: held (0.940). Growth 0.85 to 1.0:
+  FAILED narrowly (1.02). Aboav a 0.8 to 1.4: held (1.11). T2 4-sided 80 to 90 %: held (88 %).
+- Count at c = 1 0.15 to 0.35, below 0.53: held (0.250 +- 0.015, about 19 standard errors below 0.53, and below its lower edge 0.48 by
+  at least 0.2 in every seed). c = 0.5 and 2 within 20 % of c = 1: held (2.4 % and 3.2 %): off the lattice the count is cut-off
+  free, which the Potts lattice was not (factor 3.3 at 256^2 and 2.0 at 2048^2 for the same factor 4 in c). Total 0.25 to 0.5:
+  held (0.357). Sizes agree: not yet tested (N0 = 2500 running).
+
+VERDICT (16 Nov 2026): rung 4 is NOT CONFIRMED. A froth built only from Plateau's and von Neumann's laws, with Rutenberg and
+McCurdy's own T1, T2 and counting rules, gives 0.25 +- 0.02 macroscopic T1 per T2, the same at every cut-off (0.26 / 0.25 / 0.24 at
+c = 0.5 / 1 / 2), against their 0.53 +- 0.05. The cut-off dependence of the Potts count is therefore a lattice artefact, but the
+lattice's agreement at rc = 1 pixel (0.48) was not: the law-built value is half of 0.53. Limits, stated plainly: one size so far,
+the windows did not pass the fixed scaling test (mu2 1.58, not yet the dry froth's 1.24), and our model is the quasi-static limit
+of theirs (D -> 0), while their own D = 1 runs lie higher than D = 0.2; so the difference may come from the dynamics between the
+laws (how fast films relax compared with gas diffusion), which no law fixes. Either way 0.53 is not a value the laws alone deliver.
+Next (decided): read the N0 = 2500 and rc x 4 counts when they finish (same scripts, same rules; a dated follow-up), and if a
+scaling window is wanted, run N0 >= 10^4 on a free machine with a local (patch) Jacobian, which the present global solver is too
+slow for.
+Operations note: the first launch (N0 = 6400) was stopped by killing its wrapper and runs; its own script survived and later
+wrote a FINAL FAIL line into the log file of the relaunch. Nothing of its data was used. Stop a job by its process group.

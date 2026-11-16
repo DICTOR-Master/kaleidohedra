@@ -33,12 +33,12 @@
   },
   "froth-2d": {
    "part": "II",
-   "system": "2D dry froth in its scaling state (Potts model)",
-   "data": "2048^2 torus, seed 2, 3624 to 903 bubbles, window passing the scaling test fixed in advance",
-   "observed": "0.48 +- 0.02 macroscopic T1 per T2 at rc = 1 pixel, step-independent within 4%; 0.64 / 0.32 at rc = 0.5 / 2",
+   "system": "2D dry froth: Potts lattice and law-built vertex froth",
+   "data": "Potts 2048^2 torus (seed 2, scaling test passed); off-lattice froth from Plateau's 120 degrees, Laplace arcs and von Neumann's law with Rutenberg-McCurdy's rules (N0 = 1000, 8 seeds; laws held to 1e-9 degrees and 1e-10)",
+   "observed": "Potts: 0.48 +- 0.02 macroscopic T1 per T2 at rc = 1 pixel, 0.64 / 0.32 at rc = 0.5 / 2; law-built: 0.25 +- 0.02 at all cut-offs (0.26 / 0.25 / 0.24 at c = 0.5 / 1 / 2)",
    "expected": "Rutenberg-McCurdy 0.53 +- 0.05, independent of rc",
-   "verdict": "CONSISTENT",
-   "own": "agrees at the natural choice rc = 1 pixel; the claim of rc-independence FAILS on the lattice; stationary mu2 1.90 against 1.24",
+   "verdict": "NOT CONFIRMED",
+   "own": "off the lattice the count is cut-off free (the Potts rc dependence was a lattice artefact) but half of 0.53; window not yet in a tested scaling state (mu2 1.58 against 1.24); one size so far",
    "source": "2026-11-15-event-logger (scaling-state froth)"
   },
   "grains-2d": {
@@ -199,9 +199,9 @@
    "next": "for swaps: make the time matching specific (all four cells matched by overlap above a fixed share), calibrate with a control that has splits and merges, then refit to step 0; for the skeleton: a moving-Voronoi control with texture matched to the Sun's lanes, to bound the detection share of re-formation and renewal, and a longer series for the families and the box-wide oscillation"
   },
   "froth-rc": {
-   "item": "Froth benchmark on a vertex model with a fixed microscopic rc",
-   "why": "fixes whether the macroscopic count (Rutenberg-McCurdy rule) is rc-free, the rule every stream would quote",
-   "next": "a vertex-model froth with a fixed T1 length, count rule RM at rc and 2rc in the scaling state, against 0.53 +- 0.05"
+   "item": "Froth: the law-built count in a tested scaling state",
+   "why": "decides whether the law-built value 0.25 or Rutenberg-McCurdy's 0.53 is the macroscopic T1 per T2 of a froth that obeys the laws; the two law-built derivations differ by a factor 2, perhaps through the film-relaxation speed, which no law fixes",
+   "next": "add the running N0 = 2500 and rc x 4 counts (same rules), then run N0 >= 10^4 to a window that passes the fixed scaling test, with a local solver"
   },
   "earth-resolution": {
    "item": "Earth: per-plate rates with a resolution control",
