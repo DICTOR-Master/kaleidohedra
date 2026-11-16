@@ -11,7 +11,7 @@ Sources:
 | 1 | Crystallography: theorem vs analogy | **Done.** §8 is renamed "A crystallographic analogy" and opens by stating that the result is representation theory, not a diffraction result. The negative Bragg-peak pilot now comes first. Proposition 8 is renamed "a group-theoretic analogue of systematic absences", and its label covers only the proved sentences. The abstract was rewritten in the same terms. |
 | 2 | Census scope early | **Done.** The scope sentence is in the abstract and after the method. The method now states the exact union rule (two-orbit unions for subgroups with ≤ 8 orbits; twisted unions all if ≤ 9 classes, else up to 3). |
 | 3 | Three views of Prop 3 | **Done.** They are stated as "complementary explanations, not independent proofs". A paragraph says which part each covers, and it is moved from the proofs to directly after the statement. |
-| 4 | Moment rigidity in words | **Done (text).** The optional figure was **not made**; offered. |
+| 4 | Moment rigidity in words | **Done**: text and new Figure 3 (X against an ordinary orbit; DICTO asked for it 17 Nov). |
 | 5 | Ordinary vs twisted symmetry in the introduction | **Done.** New paragraph in §1. |
 | 6 | 16-dimensional candidates: make the open status visible | **Superseded.** Referee finding 1 proves these silences follow from the Main theorem: the classes are products of 2I classes. So they are no longer open. Table 3b, Figure 6 (regenerated) and §6 now say so, and open problem 3 is removed. |
 | 7 | (T) within the scope of the census | **Done** (§9). |
