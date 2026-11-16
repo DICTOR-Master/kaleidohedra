@@ -8329,6 +8329,15 @@
     "retry": "Tahta via NDL or library copy; Synapse from a normal browser before any submission; at most one blind rerun",
     "study": "studies/2026-11-16-palomar-yantra",
     "goes_to": "formalization.yaml and Challenge header of the yantra entry; #103 v5 draft (10.1, 14, reference [17]); reference library cited/; builds on ledger entries: Uniqueness of Kulaichev's Sri Yantra (Kulaichev 1984 IJHS 19.3 p. 285; open per Chiodo 202 | Lean 4 + Mathlib formal proof of Kulaichev's Sri Yantra uniqueness from the box certificat | Palomar notability pre-score of the finished Lean entry: uniqueness and existence of Kulai"
+   },
+   {
+    "date": "2026-11-16",
+    "question": "120-cell survey (DICTO 16 Nov: half-alive cats, crossover/hierarchy of the 600-cells): how many golden A/B/C3 copies does the 120-cell hold, which walls do they use, how do the two whole states of 5 inscribed 600-cells share corners, what chambers do the walls cut; do the golden fins form the Queens' skeletons; heart / inherited heart / non-heart",
+    "method": "studies/2026-11-16-redqueen-cats: exact Q(sqrt5) (qlib); W(H4) on 600-cell and 120-cell corners; 60 A4 reflection subgroups per 600-cell; exact transport into the 10 inscribed 600-cells; exhaustive congruent-copy search with full exact Gram check; exact 2D fin coverage; Zaslavsky in the Coxeter chamber + float splitting (jobs rqcats-skel, rqcats-chambers, FINAL ok)",
+    "status": "SETTLED",
+    "result": "every corner in exactly 2 of 10 inscribed 600-cells, one per state; different-state pairs share a 24-cell. 1200 A-type, 1200 B-type, 600 C3 copies, all inside inscribed 600-cells, one class each (stabiliser 12/12/24). Walls 1560 = 60 (120-cell mirrors) + 300 (inscribed mirrors) + 1200 new; chambers 14400 x 41197 = 593,236,800, none A or B. Half-cat rule: per S5, the 5 shared 24-cells split (0,12,12) once and (10,2,12) four times (A,C3,B); 18 pair patterns. Fins: all copies cover the 600-cell's triangles and edges (B-type copies partition its 1200 triangles); 120-cell pentagons only radially and only with C3 fins. Inherited-heart conjecture fails: A, B, 5-cells inherit walls but are non-heart; runcitruncated 5-cells inherited heart without walls",
+    "retry": "never for these counts; leads: A-type exact triangle covers, runcitruncated plates, classes of the 41197 regions",
+    "study": "2026-11-16-redqueen-cats"
    }
   ]
  },

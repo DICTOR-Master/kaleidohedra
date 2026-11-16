@@ -1,0 +1,79 @@
+CHECK ok   walls used by all the copies: 1560
+CHECK ok   no mirror meets the open chamber C (C is an H4 Coxeter chamber: corner, edge midpoint, triangle centre, cell centre)
+CHECK ok   exactly 4 mirrors carry 3 of its 4 rays (its 4 walls)
+walls through the open chamber C: 174 {'X': 25, 'N': 149} (7s)
+PROGRESS 0.040 pairs
+PROGRESS 0.080 pairs
+PROGRESS 0.120 pairs
+PROGRESS 0.159 pairs
+PROGRESS 0.199 pairs
+PROGRESS 0.239 pairs
+PROGRESS 0.279 pairs
+lines 12961 inside 5610 (61s)
+PROGRESS 0.314 triples
+PROGRESS 0.328 triples
+PROGRESS 0.342 triples
+PROGRESS 0.356 triples
+PROGRESS 0.370 triples
+PROGRESS 0.383 triples
+PROGRESS 0.397 triples
+PROGRESS 0.411 triples
+PROGRESS 0.425 triples
+PROGRESS 0.439 triples
+PROGRESS 0.453 triples
+PROGRESS 0.467 triples
+PROGRESS 0.481 triples
+PROGRESS 0.495 triples
+PROGRESS 0.509 triples
+PROGRESS 0.522 triples
+PROGRESS 0.536 triples
+PROGRESS 0.550 triples
+PROGRESS 0.564 triples
+PROGRESS 0.578 triples
+PROGRESS 0.592 triples
+PROGRESS 0.606 triples
+PROGRESS 0.620 triples
+PROGRESS 0.634 triples
+PROGRESS 0.648 triples
+PROGRESS 0.662 triples
+PROGRESS 0.675 triples
+PROGRESS 0.689 triples
+PROGRESS 0.703 triples
+PROGRESS 0.717 triples
+PROGRESS 0.731 triples
+PROGRESS 0.745 triples
+PROGRESS 0.759 triples
+PROGRESS 0.773 triples
+PROGRESS 0.787 triples
+PROGRESS 0.801 triples
+PROGRESS 0.815 triples
+PROGRESS 0.828 triples
+PROGRESS 0.842 triples
+PROGRESS 0.856 triples
+PROGRESS 0.870 triples
+PROGRESS 0.884 triples
+PROGRESS 0.898 triples
+EXACT regions of C: 41197 {'planes': 174, 'lines_inside': 5610, 'points_inside': 23223, 'points_multiple': 4744, 'lines_multiple': 277} (352s)
+PROGRESS 0.900 float split
+PROGRESS 0.906 float split
+PROGRESS 0.911 float split
+PROGRESS 0.917 float split
+PROGRESS 0.923 float split
+PROGRESS 0.929 float split
+PROGRESS 0.934 float split
+PROGRESS 0.940 float split
+PROGRESS 0.946 float split
+PROGRESS 0.952 float split
+PROGRESS 0.957 float split
+PROGRESS 0.963 float split
+PROGRESS 0.969 float split
+PROGRESS 0.975 float split
+PROGRESS 0.980 float split
+PROGRESS 0.986 float split
+PROGRESS 0.992 float split
+PROGRESS 0.998 float split
+CHECK ok   float pieces fill the simplex section (volume sum)
+CHECK ok   float splitting gives the exact count (41197 vs 41197)
+pieces by corner count of the section piece {4: 12992, 7: 4063, 6: 9899, 8: 3923, 5: 6196, 11: 566, 9: 1699, 10: 1236, 13: 146, 12: 356, 14: 63, 16: 16, 15: 36, 17: 4, 20: 1, 19: 1} (361s)
+5 checks, 0 failed
+FINAL ok
