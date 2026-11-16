@@ -8275,6 +8275,15 @@
      "One tissue, many scales, PLANETS stream (scope, no tracing): which planetary cell patterns (Jupiter polar cycl"
     ],
     "retry": "never the consolidation; only the five open items, each with its named next action"
+   },
+   {
+    "date": "2026-11-16",
+    "question": "Scutoid interactions open item 3 (Sun): is there a granulation swap rate stable under the time step once the pipeline's detection loss, measured on moving-Voronoi tilings with exact counts at the same steps and persistence windows, is divided out and the rate extrapolated to step 0?",
+    "method": "studies/2026-11-15-sun-granulation, section 'Swap rate at step 0': existing Bifrost planes and census.py unchanged; 17 settings at steps 10/20/30/40/60/80 s, P = 20/30/60/120/240 s; detection fraction from 6 seed-1 control sequences (exact totals reproduced); line and parabola fits to step 0; controls: held-out seed-2 sequences, time-reversed and shuffled frames; predictions written before the runs; jobs sun-stepcal (compute machine) and sun-holdout (side machine), FINAL ok; stepcal_fit.py FINAL ok",
+    "status": "COMPUTED (NOT CONFIRMED: no step-stable Sun swap rate)",
+    "result": "Corrected rate at step 0 (line, P = 60 s): 0.083 to 0.161 persistent swaps per cell per minute over 13 settings (median 0.129), +-9 to 15% per setting plus about 15% calibration (held-out control recovers 0.85 to 0.99 of the exact step-0 rate, fails the 10% criterion). But the corrected rate still falls 36 to 66% from step 0 to 80 s (the Sun loses swaps faster than the Voronoi control: raw factor 2.1 to 3.7 against 1.5), and the step-0 value moves with P (medians 0.108, 0.117, 0.129, 0.118, 0.096 at P = 20 to 240 s; 0 of 13 settings stable across P). Time reversal PASS (0.96 to 1.01). Shuffled frames FAIL the factor-2 criterion: about 3 swap patterns per frame pair in unrelated frames at every step, equal to the real count at 10 s, so the 2-2 detector is not specific to continuity.",
+    "retry": "not with the moving-Voronoi calibration alone; next only with a control that has splits and merges (scaling-state froth drawn as images, exact T1 list) and a continuity rule (all four cells matched above a fixed overlap share) that shuffled frames must fail",
+    "study": "studies/2026-11-15-sun-granulation"
    }
   ]
  },

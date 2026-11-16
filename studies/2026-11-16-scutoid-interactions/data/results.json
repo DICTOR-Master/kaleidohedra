@@ -66,11 +66,11 @@
   },
   {
    "system": "Sun: granulation (radiative-MHD simulation)",
-   "data": "Bifrost runs en024048_hion and qs024048_by3363, 13 settings, 10 s steps",
-   "observed": "0.07 to 0.15 persistent swaps per cell per minute; 0.6 to 1.3 per cell lifetime; 0.8 to 1.9 per persistent split (spread over settings; detection about 20%)",
+   "data": "Bifrost runs en024048_hion and qs024048_by3363, 13 settings, steps 10 to 80 s",
+   "observed": "0.07 to 0.15 persistent swaps per cell per minute at 10 s; 0.6 to 1.3 per cell lifetime; 0.8 to 1.9 per persistent split (spread over settings); corrected by the control's detection fraction and fitted to step 0: 0.08 to 0.16 (median 0.13) at P = 60 s, +-9 to 15% per setting plus about 15% calibration, but the corrected rate still halves from step 0 to 80 s and moves by up to 30% with P",
    "expected": "no null rate (births at junctions almost absent, so swaps per birth is undefined)",
    "verdict": "NOT CONFIRMED",
-   "own": "NOT STABLE with the time step: no swap rate is yet a stable number; order of magnitude stable",
+   "own": "NOT CONFIRMED: corrected rate still step-dependent and P-dependent; the step-0 value is an extrapolation, not a stable rate; order of magnitude stable",
    "source": "2026-11-15-sun-granulation"
   },
   {
@@ -167,9 +167,9 @@
    "next": "fetch one public 3D EBSD or DCT grain volume, sweep it by planes with the shared logger, compare swaps per birth with <F>/2 - 3 of the same volume"
   },
   {
-   "item": "Sun: a swap rate extrapolated to step 0",
-   "why": "the only natural 2D tiling with thousands of swaps; its count is not yet stable with the time step",
-   "next": "resolve the unpaired lost and gained contacts, then fit rate against step to step 0 with the moving-Voronoi control's detection efficiency (no new data needed beyond the fetched Bifrost planes)"
+   "item": "Sun: a swap rate stable under the time step",
+   "why": "the only natural 2D tiling with thousands of swaps; the step-0 fit with the moving-Voronoi detection fraction (16 Nov) still leaves the rate halving from step 0 to 80 s and moving with P, and shuffled frames give as many swap patterns as real ones at 10 s",
+   "next": "calibrate with a control that has splits and merges (the scaling-state froth drawn as images, with its exact T1 list) and count a swap only when all four cells are matched by overlap above a fixed share, a rule unrelated frames must fail; then refit to step 0"
   },
   {
    "item": "Froth benchmark on a vertex model with a fixed microscopic rc",
@@ -236,7 +236,7 @@
   [
    "sun-granulation",
    "lead 2: rate against step, extrapolated to step 0",
-   "open item 3"
+   "done 16 Nov (step-0 fit: NOT CONFIRMED); the follow-up stays in open item 3"
   ],
   [
    "sun-granulation",

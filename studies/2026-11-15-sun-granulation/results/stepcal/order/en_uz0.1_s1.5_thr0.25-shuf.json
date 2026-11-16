@@ -1,0 +1,618 @@
+{
+ "run": "en024048_hion-shuf",
+ "var": "uz",
+ "dz": 0.1,
+ "sigma": 1.5,
+ "h": 0.25,
+ "method": "thr",
+ "W_s": 60,
+ "frames_available": 242,
+ "dx_Mm": 0.047619,
+ "box_Mm": 23.999976,
+ "steps": {
+  "1": {
+   "step": 1,
+   "dt_s": 10.0,
+   "frames": 242,
+   "duration_s": 2409.96,
+   "mean_cells": 226.3305785123967,
+   "counts": {
+    "clump": 3891,
+    "split": 310,
+    "birth": 244,
+    "merge": 358,
+    "swap": 627,
+    "relabel": 49
+   },
+   "clump_patterns": {
+    "born 1 died 0 lost 1 gained 0": 310,
+    "born 0 died 1 lost 0 gained 0": 293,
+    "born 0 died 1 lost 0 gained 1": 261,
+    "born 1 died 0 lost 2 gained 0": 108,
+    "born 0 died 1 lost 0 gained 2": 95,
+    "born 0 died 2 lost 0 gained 2": 62,
+    "born 0 died 0 lost 0 gained 1": 57,
+    "born 1 died 1 lost 0 gained 1": 56,
+    "born 2 died 0 lost 2 gained 0": 52,
+    "born 0 died 0 lost 2 gained 2": 50,
+    "born 0 died 0 lost 1 gained 0": 48,
+    "born 1 died 1 lost 1 gained 0": 45
+   },
+   "n_clumps": 3891,
+   "swaps_logger": 627,
+   "swaps_elementary": 927,
+   "swaps_two_step": 1,
+   "swaps_by_event_type": {
+    "clump": 300,
+    "swap": 627
+   },
+   "swap_flicker_pairs": 80,
+   "swaps_persistent": 767,
+   "swaps_persistent_by_W": {
+    "20": 771,
+    "30": 769,
+    "60": 767,
+    "120": 767,
+    "240": 767
+   },
+   "lost_unmatched": 181,
+   "gained_unmatched": 207,
+   "frames_failing_logger_check": 0,
+   "frames_torus_euler_bad": 4,
+   "frames_odd_segment_parity": 0,
+   "junction_degrees": {
+    "3": 108590,
+    "4": 471
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "rate_per_cell_per_min": {
+    "swaps_elementary": 0.10197129077113881,
+    "swaps_persistent": 0.08437106798431875,
+    "splits": 0.0341004316494639,
+    "splits_persistent": 0.030140381522429382,
+    "merges_persistent": 0.0354204483584754,
+    "births": 0.026840339749900615,
+    "merges": 0.039380498485509924,
+    "deaths": 0.0,
+    "clumps": 0.4280154178969807
+   },
+   "lifetime_little_s": 23.957817937880947,
+   "lifetime_little_persistent_s": 23.99576089884895,
+   "lifetime_complete_tracks": {
+    "n": 22485,
+    "mean_s": 12.441627751834556,
+    "median_s": 0.0
+   },
+   "swaps_per_split": 2.7992700729927007,
+   "swaps_per_split_raw": 2.4741935483870967,
+   "split_flicker": 36,
+   "splits_persistent": 274,
+   "merges_persistent": 322,
+   "deaths_persistent": 0,
+   "splits_persistent_by_W": {
+    "20": 274,
+    "30": 274,
+    "60": 274,
+    "120": 274,
+    "240": 274
+   },
+   "swaps_per_birth": 3.1434426229508197,
+   "swaps_per_new_cell": 0.03374246623553737,
+   "swaps_per_cell_lifetime": 0.03374246623553737,
+   "swaps_touching_one_cell_per_lifetime": 0.1349698649421495
+  },
+  "2": {
+   "step": 2,
+   "dt_s": 20.0,
+   "frames": 121,
+   "duration_s": 2399.9699999999993,
+   "mean_cells": 226.4793388429752,
+   "counts": {
+    "clump": 1880,
+    "birth": 109,
+    "split": 160,
+    "swap": 297,
+    "merge": 129,
+    "relabel": 30
+   },
+   "clump_patterns": {
+    "born 0 died 1 lost 0 gained 0": 145,
+    "born 0 died 1 lost 0 gained 1": 127,
+    "born 1 died 0 lost 1 gained 0": 125,
+    "born 0 died 0 lost 2 gained 2": 45,
+    "born 0 died 1 lost 0 gained 2": 41,
+    "born 1 died 0 lost 2 gained 0": 38,
+    "born 1 died 1 lost 1 gained 0": 30,
+    "born 2 died 0 lost 2 gained 0": 27,
+    "born 0 died 0 lost 1 gained 0": 23,
+    "born 1 died 1 lost 0 gained 1": 23,
+    "born 0 died 2 lost 0 gained 3": 22,
+    "born 1 died 0 lost 1 gained 1": 20
+   },
+   "n_clumps": 1880,
+   "swaps_logger": 297,
+   "swaps_elementary": 427,
+   "swaps_two_step": 2,
+   "swaps_by_event_type": {
+    "swap": 297,
+    "clump": 130
+   },
+   "swap_flicker_pairs": 44,
+   "swaps_persistent": 339,
+   "swaps_persistent_by_W": {
+    "20": 347,
+    "30": 345,
+    "60": 339,
+    "120": 339,
+    "240": 339
+   },
+   "lost_unmatched": 99,
+   "gained_unmatched": 107,
+   "frames_failing_logger_check": 0,
+   "frames_torus_euler_bad": 1,
+   "frames_odd_segment_parity": 0,
+   "junction_degrees": {
+    "3": 54306,
+    "4": 250
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "rate_per_cell_per_min": {
+    "swaps_elementary": 0.04713513159171387,
+    "swaps_persistent": 0.037421099788269324,
+    "splits": 0.01766187600626281,
+    "splits_persistent": 0.01600607513067567,
+    "merges_persistent": 0.012584086654462251,
+    "births": 0.012032153029266537,
+    "merges": 0.01423988753004939,
+    "deaths": 0.0,
+    "clumps": 0.207527043073588
+   },
+   "lifetime_little_s": 46.353711311868935,
+   "lifetime_little_persistent_s": 46.41308332704082,
+   "lifetime_complete_tracks": {
+    "n": 11499,
+    "mean_s": 21.94277763283764,
+    "median_s": 0.0
+   },
+   "swaps_per_split": 2.3379310344827586,
+   "swaps_per_split_raw": 2.11875,
+   "split_flicker": 15,
+   "splits_persistent": 145,
+   "merges_persistent": 114,
+   "deaths_persistent": 0,
+   "splits_persistent_by_W": {
+    "20": 146,
+    "30": 145,
+    "60": 145,
+    "120": 145,
+    "240": 145
+   },
+   "swaps_per_birth": 3.110091743119266,
+   "swaps_per_new_cell": 0.0289471437110409,
+   "swaps_per_cell_lifetime": 0.028947143711040898,
+   "swaps_touching_one_cell_per_lifetime": 0.11578857484416359
+  },
+  "3": {
+   "step": 3,
+   "dt_s": 30.0,
+   "frames": 81,
+   "duration_s": 2399.9699999999993,
+   "mean_cells": 226.320987654321,
+   "counts": {
+    "clump": 1294,
+    "birth": 83,
+    "relabel": 21,
+    "split": 134,
+    "merge": 93,
+    "swap": 197
+   },
+   "clump_patterns": {
+    "born 0 died 1 lost 0 gained 0": 103,
+    "born 0 died 1 lost 0 gained 1": 91,
+    "born 1 died 0 lost 1 gained 0": 86,
+    "born 0 died 1 lost 0 gained 2": 46,
+    "born 1 died 0 lost 2 gained 0": 31,
+    "born 0 died 0 lost 2 gained 2": 25,
+    "born 0 died 0 lost 0 gained 1": 21,
+    "born 0 died 0 lost 1 gained 0": 19,
+    "born 1 died 0 lost 2 gained 1": 18,
+    "born 0 died 1 lost 1 gained 2": 17,
+    "born 2 died 0 lost 2 gained 0": 16,
+    "born 1 died 2 lost 0 gained 1": 14
+   },
+   "n_clumps": 1294,
+   "swaps_logger": 197,
+   "swaps_elementary": 272,
+   "swaps_two_step": 1,
+   "swaps_by_event_type": {
+    "clump": 75,
+    "swap": 197
+   },
+   "swap_flicker_pairs": 17,
+   "swaps_persistent": 238,
+   "swaps_persistent_by_W": {
+    "20": 272,
+    "30": 246,
+    "60": 238,
+    "120": 236,
+    "240": 234
+   },
+   "lost_unmatched": 80,
+   "gained_unmatched": 77,
+   "frames_failing_logger_check": 0,
+   "frames_torus_euler_bad": 3,
+   "frames_odd_segment_parity": 0,
+   "junction_degrees": {
+    "3": 36332,
+    "4": 162
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "rate_per_cell_per_min": {
+    "swaps_elementary": 0.0300461970917556,
+    "swaps_persistent": 0.02629042245528615,
+    "splits": 0.014802170626085479,
+    "splits_persistent": 0.012924283307850754,
+    "merges_persistent": 0.008395260952108182,
+    "births": 0.009168508671381304,
+    "merges": 0.010273148270342907,
+    "deaths": 0.0,
+    "clumps": 0.1429403641056314
+   },
+   "lifetime_little_s": 72.13327765481283,
+   "lifetime_little_persistent_s": 72.29649683758028,
+   "lifetime_complete_tracks": {
+    "n": 7308,
+    "mean_s": 30.43103448275862,
+    "median_s": 0.0
+   },
+   "swaps_per_split": 2.034188034188034,
+   "swaps_per_split_raw": 1.7761194029850746,
+   "split_flicker": 17,
+   "splits_persistent": 117,
+   "merges_persistent": 76,
+   "deaths_persistent": 0,
+   "splits_persistent_by_W": {
+    "20": 134,
+    "30": 118,
+    "60": 117,
+    "120": 117,
+    "240": 117
+   },
+   "swaps_per_birth": 2.8674698795180724,
+   "swaps_per_new_cell": 0.03167842406495408,
+   "swaps_per_cell_lifetime": 0.03167842406495408,
+   "swaps_touching_one_cell_per_lifetime": 0.12671369625981632
+  },
+  "4": {
+   "step": 4,
+   "dt_s": 40.0,
+   "frames": 61,
+   "duration_s": 2399.9699999999993,
+   "mean_cells": 225.7704918032787,
+   "counts": {
+    "clump": 873,
+    "merge": 88,
+    "swap": 161,
+    "split": 71,
+    "relabel": 13,
+    "birth": 61
+   },
+   "clump_patterns": {
+    "born 1 died 0 lost 1 gained 0": 76,
+    "born 0 died 1 lost 0 gained 0": 70,
+    "born 0 died 1 lost 0 gained 1": 60,
+    "born 0 died 1 lost 0 gained 2": 25,
+    "born 1 died 0 lost 2 gained 0": 24,
+    "born 0 died 2 lost 0 gained 1": 14,
+    "born 2 died 0 lost 3 gained 0": 13,
+    "born 1 died 1 lost 0 gained 1": 12,
+    "born 0 died 0 lost 0 gained 1": 12,
+    "born 2 died 0 lost 2 gained 0": 11,
+    "born 0 died 2 lost 0 gained 2": 11,
+    "born 1 died 1 lost 1 gained 1": 9
+   },
+   "n_clumps": 873,
+   "swaps_logger": 161,
+   "swaps_elementary": 235,
+   "swaps_two_step": 0,
+   "swaps_by_event_type": {
+    "swap": 161,
+    "clump": 74
+   },
+   "swap_flicker_pairs": 9,
+   "swaps_persistent": 217,
+   "swaps_persistent_by_W": {
+    "20": 235,
+    "30": 235,
+    "60": 217,
+    "120": 213,
+    "240": 213
+   },
+   "lost_unmatched": 25,
+   "gained_unmatched": 30,
+   "frames_failing_logger_check": 0,
+   "frames_torus_euler_bad": 1,
+   "frames_odd_segment_parity": 0,
+   "junction_degrees": {
+    "3": 27298,
+    "4": 122
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "rate_per_cell_per_min": {
+    "swaps_elementary": 0.026022326440858033,
+    "swaps_persistent": 0.02402912696879231,
+    "splits": 0.007862064584259237,
+    "splits_persistent": 0.0073083980642409795,
+    "merges_persistent": 0.00919086423230305,
+    "births": 0.006754731544222724,
+    "merges": 0.009744530752321307,
+    "deaths": 0.0,
+    "clumps": 0.0966701743951875
+   },
+   "lifetime_little_s": 94.28265307344957,
+   "lifetime_little_persistent_s": 94.36475221405689,
+   "lifetime_complete_tracks": {
+    "n": 5522,
+    "mean_s": 36.63889894965592,
+    "median_s": 0.0
+   },
+   "swaps_per_split": 3.287878787878788,
+   "swaps_per_split_raw": 3.056338028169014,
+   "split_flicker": 5,
+   "splits_persistent": 66,
+   "merges_persistent": 83,
+   "deaths_persistent": 0,
+   "splits_persistent_by_W": {
+    "20": 71,
+    "30": 71,
+    "60": 66,
+    "120": 65,
+    "240": 65
+   },
+   "swaps_per_birth": 3.557377049180328,
+   "swaps_per_new_cell": 0.03779171020550331,
+   "swaps_per_cell_lifetime": 0.03779171020550331,
+   "swaps_touching_one_cell_per_lifetime": 0.15116684082201323
+  },
+  "6": {
+   "step": 6,
+   "dt_s": 60.0,
+   "frames": 41,
+   "duration_s": 2399.9699999999993,
+   "mean_cells": 223.34146341463415,
+   "counts": {
+    "clump": 610,
+    "merge": 71,
+    "swap": 119,
+    "split": 50,
+    "birth": 42,
+    "relabel": 12
+   },
+   "clump_patterns": {
+    "born 1 died 0 lost 1 gained 0": 55,
+    "born 0 died 1 lost 0 gained 0": 48,
+    "born 0 died 1 lost 0 gained 1": 28,
+    "born 0 died 0 lost 0 gained 1": 17,
+    "born 0 died 1 lost 0 gained 2": 17,
+    "born 1 died 0 lost 2 gained 0": 17,
+    "born 0 died 0 lost 1 gained 0": 12,
+    "born 1 died 1 lost 1 gained 0": 10,
+    "born 0 died 0 lost 2 gained 2": 9,
+    "born 0 died 2 lost 0 gained 2": 9,
+    "born 1 died 0 lost 2 gained 1": 8,
+    "born 1 died 1 lost 0 gained 1": 7
+   },
+   "n_clumps": 610,
+   "swaps_logger": 119,
+   "swaps_elementary": 179,
+   "swaps_two_step": 0,
+   "swaps_by_event_type": {
+    "clump": 60,
+    "swap": 119
+   },
+   "swap_flicker_pairs": 7,
+   "swaps_persistent": 165,
+   "swaps_persistent_by_W": {
+    "20": 179,
+    "30": 179,
+    "60": 165,
+    "120": 163,
+    "240": 161
+   },
+   "lost_unmatched": 50,
+   "gained_unmatched": 49,
+   "frames_failing_logger_check": 0,
+   "frames_torus_euler_bad": 1,
+   "frames_odd_segment_parity": 0,
+   "junction_degrees": {
+    "3": 18136,
+    "4": 88
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "rate_per_cell_per_min": {
+    "swaps_elementary": 0.020036834494503483,
+    "swaps_persistent": 0.018469707774262985,
+    "splits": 0.005596881143716056,
+    "splits_persistent": 0.005373005897967414,
+    "merges_persistent": 0.007723695978328158,
+    "births": 0.004701380160721487,
+    "merges": 0.007947571224076801,
+    "deaths": 0.0,
+    "clumps": 0.06828194995333589
+   },
+   "lifetime_little_s": 157.9295262083734,
+   "lifetime_little_persistent_s": 158.02264503278872,
+   "lifetime_complete_tracks": {
+    "n": 3173,
+    "mean_s": 58.86542704065553,
+    "median_s": 0.0
+   },
+   "swaps_per_split": 3.4375,
+   "swaps_per_split_raw": 3.3,
+   "split_flicker": 2,
+   "splits_persistent": 48,
+   "merges_persistent": 69,
+   "deaths_persistent": 0,
+   "splits_persistent_by_W": {
+    "20": 50,
+    "30": 50,
+    "60": 48,
+    "120": 48,
+    "240": 48
+   },
+   "swaps_per_birth": 3.9285714285714284,
+   "swaps_per_new_cell": 0.0486438679245283,
+   "swaps_per_cell_lifetime": 0.048643867924528295,
+   "swaps_touching_one_cell_per_lifetime": 0.19457547169811318
+  },
+  "8": {
+   "step": 8,
+   "dt_s": 80.0,
+   "frames": 31,
+   "duration_s": 2399.9699999999993,
+   "mean_cells": 222.29032258064515,
+   "counts": {
+    "clump": 477,
+    "birth": 25,
+    "split": 33,
+    "relabel": 5,
+    "merge": 47,
+    "swap": 75
+   },
+   "clump_patterns": {
+    "born 0 died 1 lost 0 gained 1": 42,
+    "born 1 died 0 lost 1 gained 0": 37,
+    "born 0 died 1 lost 0 gained 0": 24,
+    "born 1 died 0 lost 2 gained 0": 13,
+    "born 0 died 1 lost 0 gained 2": 10,
+    "born 0 died 0 lost 2 gained 2": 10,
+    "born 1 died 1 lost 1 gained 0": 8,
+    "born 1 died 1 lost 0 gained 1": 8,
+    "born 1 died 1 lost 0 gained 2": 7,
+    "born 2 died 0 lost 3 gained 0": 7,
+    "born 0 died 2 lost 0 gained 2": 7,
+    "born 0 died 1 lost 1 gained 2": 7
+   },
+   "n_clumps": 477,
+   "swaps_logger": 75,
+   "swaps_elementary": 103,
+   "swaps_two_step": 0,
+   "swaps_by_event_type": {
+    "swap": 75,
+    "clump": 28
+   },
+   "swap_flicker_pairs": 0,
+   "swaps_persistent": 103,
+   "swaps_persistent_by_W": {
+    "20": 103,
+    "30": 103,
+    "60": 103,
+    "120": 99,
+    "240": 99
+   },
+   "lost_unmatched": 25,
+   "gained_unmatched": 25,
+   "frames_failing_logger_check": 0,
+   "frames_torus_euler_bad": 1,
+   "frames_odd_segment_parity": 0,
+   "junction_degrees": {
+    "3": 13646,
+    "4": 67
+   },
+   "balance_failures": 0,
+   "neg_control_caught": true,
+   "rate_per_cell_per_min": {
+    "swaps_elementary": 0.011584094881000265,
+    "swaps_persistent": 0.011584094881000265,
+    "splits": 0.0037114090395437742,
+    "splits_persistent": 0.0037114090395437742,
+    "merges_persistent": 0.005285946207835073,
+    "births": 0.0028116735148058895,
+    "merges": 0.005285946207835073,
+    "deaths": 0.0,
+    "clumps": 0.053646730662496374
+   },
+   "lifetime_little_s": 187.84862869150382,
+   "lifetime_little_persistent_s": 187.84862869150382,
+   "lifetime_complete_tracks": {
+    "n": 2620,
+    "mean_s": 57.89312977099237,
+    "median_s": 0.0
+   },
+   "swaps_per_split": 3.121212121212121,
+   "swaps_per_split_raw": 3.121212121212121,
+   "split_flicker": 0,
+   "splits_persistent": 33,
+   "merges_persistent": 47,
+   "deaths_persistent": 0,
+   "splits_persistent_by_W": {
+    "20": 33,
+    "30": 33,
+    "60": 33,
+    "120": 26,
+    "240": 26
+   },
+   "swaps_per_birth": 4.12,
+   "swaps_per_new_cell": 0.03626760563380282,
+   "swaps_per_cell_lifetime": 0.03626760563380282,
+   "swaps_touching_one_cell_per_lifetime": 0.14507042253521127
+  }
+ },
+ "cells": {
+  "frames_sampled": 49,
+  "mean_cells": 231.14285714285714,
+  "p_n": {
+   "2": 0.004856083348048737,
+   "3": 0.06030372594031432,
+   "4": 0.16625463535228677,
+   "5": 0.22223203249161222,
+   "6": 0.19494967331802932,
+   "7": 0.15592442168461945,
+   "8": 0.09191241391488611,
+   "9": 0.0580964153275649,
+   "10": 0.026929189475543,
+   "11": 0.011831184884336925,
+   "12": 0.004414621225498852,
+   "13": 0.0014126787921596327,
+   "14": 0.00026487727352993113,
+   "15": 0.0003531696980399082,
+   "16": 0.00026487727352993113
+  },
+  "mean_n": 5.969751269945985,
+  "mu2": 3.5946123751045516,
+  "aboav_a": 0.8460105848844738,
+  "aboav_intercept": 8.465518506294519,
+  "aboav_pred_intercept": 8.670675884411395,
+  "lewis": {
+   "3": 0.3152937872679936,
+   "4": 0.33057350718065004,
+   "5": 0.5672190815626662,
+   "6": 0.992520581806296,
+   "7": 1.2317616980315393
+  },
+  "lewis_slope": 0.2494882896152738,
+  "lewis_r2": 0.9294929091794446
+ },
+ "centroid_voronoi": {
+  "p_n": {
+   "3": 0.0014126787921596327,
+   "4": 0.05650715168638531,
+   "5": 0.27211725233974926,
+   "6": 0.37753840720466186,
+   "7": 0.21287303549355466,
+   "8": 0.06445346989228325,
+   "9": 0.01342044852551651,
+   "10": 0.0010595090941197245,
+   "11": 0.0006180469715698393
+  },
+  "mean_n": 6.0,
+  "mu2": 1.1395927511813377,
+  "aboav_a": 0.9494563739123935
+ },
+ "wall_s": 110.53866267204285
+}
