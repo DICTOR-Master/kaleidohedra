@@ -52,6 +52,10 @@ moves). Nothing here assumes or tests any influence of one system on another.
    rate). Much of the Sun's step dependence is therefore detection loss; at 10 s the detection factor lies between about 0.8 and
    1.15, so the Sun's 10 s rates stand to about 20% on top of the spread over settings. The control also logs false splits and
    merges, so those Sun counts carry an artefact share of unknown size.
+10. **The skeleton without swap matching** (16 Nov, DICTO's framing; section "The skeleton: persistence or reappearance"): corners
+   do NOT outlive the cells (half-life 220 s against 540 s for cells, NOT CONFIRMED); vanished corners re-form at the same place
+   within a minute 5.6 times as often as chance (CONSISTENT), and the cells at a corner are renewed while it stays (0.64 per minute,
+   CONSISTENT); no cycle of local recurrence, only a box-wide oscillation of 7 to 8 min.
 
 ## Method
 
@@ -363,3 +367,148 @@ Files: scripts/fetch_depths.py (planes 0.05, 0.15, 0.3 Mm), trace3d.py (seg, lin
 sun-3d-trace), fig3d.py; results/trace3d/ (summary.md, summary.json, tracks.jsonl, logs), results/figures/sun_3d_trace.png (the
 0.1 Mm plane at snapshot 433 in the five Kaleidohedra app colours (violet, blue, green, red, yellow); rings: swaps of the 10 minutes around it confirmed at 0.05 and 0.15 Mm, 63;
 grey dots: swaps seen at 0.1 Mm only, 145). Segmentations, links and track files stay on the compute machine (data/trace3d, 0.8 GB).
+
+## The skeleton: persistence or reappearance (16 Nov 2026; DICTO's framing)
+
+DICTO, 16 Nov 2026: "better framing can still be achieved with the sun, maybe there is a persistence, or reappearance of
+structures that reappear in cycles"; sharpened the same day: "it's a reappearance that seems to be persistence". Swap counting
+failed its shuffled-frame control because frame-to-frame matching of cells makes false swaps. Persistence and recurrence of the
+skeleton need no swap matching: cells come and go, but the walls (downflow lanes) and corners may persist, or vanish and re-form
+at the same place. Shuffled frames should show neither.
+
+Plan and predictions (written 16 Nov 2026 BEFORE the run; only pilots on 24 and 40 frames were seen first, and their numbers
+are stated in the predictions):
+- Data: en024048_hion, uz at 0.1 Mm below the mean tau = 1 height first (where the census reproduces), then 0 and 0.2 Mm, all
+  242 snapshots (10 s, 40 min); qs024048_by3363 at 0.1 Mm (101 snapshots) as a second run. Cells: the census label maps of the
+  depth trace (threshold mean + 0.25 std, smoothing 1.5 pixels); for qs segmented with the same rule.
+- Objects (scripts/skeleton.py): lanes = pixels with downflow (smoothed uz < 0); corners = junctions of the tiling (2 x 2 blocks
+  where three or more cells meet, blocks within one pixel merged) with the cells that meet there; downflow sinks = local maxima
+  of downflow speed (4 pixels apart, faster than 1.5 standard deviations); cells tracked by mutual largest overlap (the census
+  rule) and by their centres.
+- Persistence: position tracking by mutual nearest neighbours within r = 96, 144, 192 km (2, 3, 4 pixels; 144 km primary).
+  Two lifetimes: number-weighted (tracks born after the first frame, Kaplan-Meier median with the end of the run as censoring)
+  and time-weighted (the half-time of S(tau), the share of the objects present at a frame that are still present tau later;
+  no truncation bias).
+- Sites (DICTO's sharpening): corner tracks joined into one site when a new track starts within r of where the old one ended,
+  at most G = 30, 60, 120 s later (60 s primary). An apparently persistent site spans at least 5 min; it is (a) continuous with
+  the same cells (at least two of the cells meeting there at its first frame still meet there at its last; strict variant: the
+  set never changes), (b) continuous with renewed cells (at most one kept), or (c) intermittent and re-formed (absent for at
+  least one sampled frame). Reported per site: gaps, gap durations, share of the span absent, distinct cells against span.
+- Recurrence: share of corner-track ends followed by a new corner within r and G, and share of new cells (overlap rule) born
+  within r of a cell that died in the preceding 60 s, each against a uniform random place (same number, same times) and against
+  a time-shifted null (the same places with the starts or deaths taken half the run away in time: keeps any fixed spatial
+  pattern, removes continuity in time); share of a new cell's area over a place held by a corner lasting 5 min or more, against
+  the share of the whole box so covered. Families of fragmenting granules (after Roudier and co-workers): a cell's descendants
+  by splits (main parent share >= 0.5), family lifetime against single-cell lifetime; split-and-merge genealogy reported beside it.
+  Lanes at fixed pixels: autocorrelation over lag up to 20 min, power spectrum (Hann window, mean over pixels), gaps in presence
+  of pixels that are lane in at least half the frames; the uz spectrum on the same pixels for any p-mode band.
+- Controls and criteria: (1) SHUFFLED frames (seed 7): the corner half-life must fall to about one frame and the re-formation
+  and births-near-deaths ratios to the time-shifted null (about 1). (2) TIME-REVERSED frames must keep the position-track
+  statistics within 5% (mutual nearest neighbours are symmetric, so this checks the code more than the Sun). (3) MOVING VORONOI
+  (control_voronoi.py, seed 1, speeds 1 and 2, texture 0 and 1, regenerated from its seed): exact corners are the circumcentres
+  of the periodic Delaunay triangles; their combinatorial lifetimes, position-tracked lifetimes and site classes are the known
+  answer the pipeline must recover. (4) STABILITY: half-lives within 30% over steps 10 to 80 s and over r = 96 to 192 km.
+- Verdict per quantity: ESTABLISHED if it passes (1), (2), (4) and the control (3) recovers the known answer; CONSISTENT if it
+  passes (1) and (2) but not (4); NOT CONFIRMED if it fails (1) or goes against the prediction.
+- Predictions: (a) the corners outlive the cells (corner half-life at r = 144 km longer than the cell half-life). (3) Of the
+  apparently persistent corner sites, about 50% continuous with the same cells, 25% renewed, 25% re-formed (re-formed below one
+  third), strictly unchanged cells about 10% (the 40-frame pilot gave 50 / 25 / 25 and 11%); in shuffled frames more than 90%
+  re-formed; for exact Voronoi corners fewer than 5% re-formed. Re-formation and births near deaths at least twice the
+  time-shifted null in real frames. The lane autocorrelation decays without a secondary maximum (no cycle); a p-mode peak near
+  3 mHz, if any, shows in uz and not in the lane mask.
+- Job: sun-skeleton (compute machine; 52 tasks); tables by scripts/skeleton_combine.py; figure by scripts/skeleton_fig.py.
+
+### Result (jobs sun-skeleton and sun-skeleton2, both FINAL ok; tables by skeleton_combine.py, figure by skeleton_fig.py)
+
+A second pass (job sun-skeleton2, plan written before it ran) was added after reading the first results: the first-pass
+re-formation test was biased against re-formation at the next frame (a corner within r at the next frame is usually linked, so
+it cannot count as a new start), which showed as a ratio 0.36 in shuffled frames at 80 s. The second pass counts only true
+vanishings (no corner within r at the next frame) and compares with the same conditional event at the same place at least 10 min
+away; it also measures families as presence, and repeats the lane statistics with a fault fixed (the gap count of lane pixels
+read a byte as a flag and gave zero gaps everywhere).
+
+VERDICT per quantity (0.1 Mm below mean tau = 1 first; r = 144 km, G = 60 s unless stated; en = en024048_hion, qs = qs024048_by3363):
+
+1. **Corners outlive the cells: NOT CONFIRMED (against the prediction).** Time-weighted half-lives at 0.1 Mm: corners 220 s, corner
+   sites (gaps up to 60 s joined) 280 s, downflow sinks 140 s, lane pixels (autocorrelation e-fold) 190 s, cell centres tracked by
+   the same rule 150 s, but cells tracked by overlap (the census rule) 540 s. The skeleton's corners outlive the cell CENTRES
+   (x1.5) but not the cells: a granule keeps its identity 2.5 times longer than any one of its corners keeps its place. The same at
+   0 Mm (220 / 280 against 580 s), 0.2 Mm (180 / 220 against 360 s) and in qs (140 / 170 against 420 s). Number-weighted
+   Kaplan-Meier medians of tracks born during the run: corners 110 s, sinks 100 s, cell centres 100 s, cells 150 s.
+2. **Corner persistence itself (half-life about 3.5 min): CONSISTENT.** Shuffled frames: 10 s (one frame) at every plane, PASS;
+   time reversal: half-lives identical, PASS; tolerance r = 96 / 144 / 192 km: 190 / 220 / 230 s (21%), PASS; step 10 / 20 / 40 /
+   80 s: 220 / 220 / 200 / 160 s (37%), FAIL at the 30% criterion. Moving Voronoi: the pipeline gives 840 s for exact corners whose
+   half-life is 970 s (speed 1, no texture) but 200 s with texture, so the Sun value is a lower bound of unknown size.
+3. **Apparent persistence split (DICTO's three classes): NOT CONFIRMED as a measured split.** Of 1240 corner sites at 0.1 Mm that
+   span at least 5 min (median span 550 s): (a) continuous with the same cells 32%, (b) continuous with renewed cells 33%, (c)
+   intermittent and re-formed 35%; strictly unchanged cells 6%. Prediction 50 / 25 / 25 with c below one third: missed. 0 Mm 33 /
+   31 / 35, 0.2 Mm 24 / 37 / 39, qs 34 / 27 / 38. The gaps of class (c) are short: median 20 s (1 to 2 frames), 0.46 gaps per site,
+   2.1% of a site's span absent; with G = 120 s the gaps up to 2 min are spread evenly (166, 121, 104, 175, 147 gaps in the bins up
+   to 15, 25, 35, 65, 125 s). Shuffled frames: 100% re-formed, PASS; reversal equal, PASS; but the share (c) falls from 35% to 14%
+   from 10 to 80 s and moves 23 to 45% with r, and the pipeline itself makes moving-Voronoi corners look intermittent (21% at 10 s
+   without texture, 76% with texture, against 1 to 7% exact). So (c) at 10 s cannot be told from detection dropouts. What holds:
+   at least two thirds of apparently persistent corners are present in every frame, and the absent time is about 2%.
+4. **Turnover (corners stay while their cells are renewed): CONSISTENT.** Distinct cells meeting at a persistent corner site: median
+   6 over its span, 0.64 per minute at 0.1 Mm (0.63 at 0 Mm, 0.75 at 0.2 Mm, 0.76 qs); unchanged over steps 10 to 80 s (0.60 to 0.64),
+   over r (0.63 to 0.65) and under reversal; shuffled frames 3.1 to 3.5 per minute. Moving Voronoi: exact 0.20 (speed 1) and 0.30
+   (speed 2) per minute, pipeline 0.27 to 0.49, so the pipeline adds up to about 0.2 per minute and the control does not recover
+   the known value; even so the Sun's corners renew their cells at least about 1.5 times as fast as a Voronoi tiling at a Sun-like
+   swap rate. Not ESTABLISHED because the control overestimates.
+5. **Re-formation at the same place after a true vanishing: CONSISTENT.** A vanished corner is back within 144 km inside 60 s in
+   23% of cases, against 4.1% at the same place 10 min or more away: ratio 5.6 (0 Mm 5.2, 0.2 Mm 6.8, qs 4.8; downflow sinks 4.7).
+   Shuffled frames 1.03 at every plane, PASS; reversal 4.8, PASS; r = 96 / 144 / 192 km 6.6 / 5.6 / 5.4, PASS; window 300 s 2.4;
+   step 10 / 20 / 40 / 80 s 5.6 / 4.7 / 2.4 / 1.8, FAIL (falls with the step but stays above 1). So corners do re-form where they
+   vanished, beyond what a fixed spatial pattern gives; most of it is within a minute.
+6. **New granules born where one died: NOT CONFIRMED.** Births (overlap rule) within 144 km of a death in the preceding 60 s: 4.0%
+   against 0.3% (time-shifted null) at 10 s, but 0 at 80 s at every plane; this is the labelling flicker of splits and merges,
+   not recurrence. **Born at a persistent corner: NOT CONFIRMED** (share of a new cell's area over a corner place held 5 min or
+   more 0.056 against 0.049 for the whole plane, x1.1). In reversed time (births become deaths) the same share is x2.6 at 10 s and
+   x1.6 at 80 s: granules VANISH over long-lived corner places; they are not born there.
+7. **Trees of fragmenting granules outlive single granules: CONSISTENT.** Families by splits (main parent share 0.5 or more; after
+   Roudier and co-workers), counted as presence: at 0.1 Mm 93 families per frame against 226 cells; still present after 20 min:
+   51% of families (half-life beyond the 20 min window) against cell half-life 540 s; 0 Mm and 0.2 Mm the same (52%); qs half-life
+   600 s against 420 s. Unchanged from 10 to 80 s (51 to 52% at 20 min); shuffled frames 6% at 20 min. Reversal turns split trees
+   into merge trees and changes the qs value (1000 s), and the moving-Voronoi control has no splits, so there is no known answer.
+   The split-and-merge genealogy joins almost the whole plane into one family within 40 min (1 to 6 families per frame), so it says
+   nothing. Tracks born during the run: families KM median 150 s against 150 s for single cells (most new cells are small split
+   pieces). Roudier et al. 2003 report families living hours in an 11 h series; our 40 min run cannot reach that.
+8. **A cycle in the recurrence at fixed points: NOT CONFIRMED for local structures; the only cycle is box-wide.** The lane
+   autocorrelation at fixed pixels decays with e-fold 190 s (170 to 200 s at all planes, both runs) to 0.07 at 10 min and 0.03 at
+   20 min. It has a small secondary maximum at 890 to 900 s (bump 0.03 to 0.09) in all four quadrants of the en planes, but it
+   vanishes when the lane share of the whole plane is removed frame by frame: then the decay is monotone at every plane. The whole
+   plane oscillates: the lane share of en swings between 0.26 and 0.53 (0.1 Mm) with a period of 400 to 480 s (spectral peak 2.07 to
+   2.48 mHz, resolution 0.41 mHz; autocorrelation of the share -0.9 at 3.5 min, +0.8 at 7.5 min), in step with the plane-mean uz, at
+   0, 0.1 and 0.2 Mm alike; qs shows it at 505 s (1.98 mHz) and weaker. A horizontally uniform oscillation is a mode of the whole
+   simulated box (presumably acoustic), with a period of 7 to 8 min, below the solar 5-minute band (3.3 mHz). It is not a
+   reappearance of individual structures. The uz at fixed pixels shows a mild excess at 3.7 to 5.8 mHz (x1.5 to 1.9 over a power
+   law), the p-mode band; the lane mask does not (x1.1 to 1.4 at the box-mode frequency). Lane pixels that are lane in at least half
+   the frames are absent 36% of the time and almost all have gaps (95% at 0.1 Mm; qs 59%): the network at a fixed pixel comes and goes.
+
+Controls against the criteria written before the runs: (1) shuffled frames: corner, sink, site and lane half-lives fall to one
+frame at every plane and step, site class (c) to 100% (85 to 94% at 80 s), re-formation ratio to 1.02 to 1.06 and births-near-deaths ratio to 0.89 to 0.98: PASS. (2) Time
+reversal: half-lives equal, site classes within 1%, turnover equal: PASS (number-weighted medians within one frame). (3) Moving
+Voronoi: exact corner half-lives 970 s (speed 1) and 350 s (speed 2), triangles change at 190 to 290 s (KM median); the pipeline
+recovers corner persistence within 15% without texture and falls to 160 to 200 s with texture; it invents intermittency and
+turnover (see items 3 and 4). (4) Stability: over r PASS for half-lives, re-formation and turnover; over the step FAIL for corner
+and sink half-lives, site classes and re-formation, PASS for turnover, cell and family persistence.
+
+Conclusion: the frame "cells come and go, the walls and corners persist" is not what this simulation shows: a granule keeps its
+identity about 9 min, its corners keep their places about 3.5 min and the lanes at a fixed pixel decorrelate in about 3 min. What
+DICTO's sharpened idea finds is real but short: corners that vanish come back at the same place within a minute five times more
+often than chance, and the cells meeting at a corner are replaced while the corner stays (about 0.6 new cells per minute). The
+reappearance that looks like persistence is mostly continuous presence with brief dropouts; a longer recurrence, and any cycle,
+is not seen in 40 min, apart from an oscillation of the whole simulated box with a period of 7 to 8 minutes.
+
+Next (decided): the families (item 7) and the box-wide oscillation (item 8) are the two leads; a longer series is needed for
+both (the qs run is 17 min, en 40 min). A moving-Voronoi control with texture matched to the Sun's lanes would bound the
+detection share of class (c) and of the turnover.
+
+Files: scripts/skeleton.py (feat, anal, anal2, voro), skeleton_job.sh (job sun-skeleton), skeleton_job2.sh (job sun-skeleton2),
+skeleton_combine.py, skeleton_fig.py; results/skeleton/summary.md, summary.json, anal2/, voro/; results/figures/sun_skeleton.png
+(left: 12 x 12 Mm of the 0.1 Mm plane, lane share over a 10 min window, corner tracks of that window coloured by lifetime, dots on
+tracks of 5 min or more; right: autocorrelation at fixed pixels with and without the box-wide lane share, and the box-wide share
+itself; persistence S(lag) of corners, corner sites, cells and cell centres, corners in shuffled frames). The first-pass analysis
+files (33 MB, with corner tracks) and the features stay on the compute machine (results/skeleton/anal, data/skeleton).
+Prior art for this section: PRIOR_ART.md, "Persistence and recurrence of the granulation pattern" (Getling and Brandt 2002 asked
+"persistence or recurrence?" of averaged intensity images; Roudier and co-workers' trees of fragmenting granules; Hoekzema and
+co-workers' persistency regions).

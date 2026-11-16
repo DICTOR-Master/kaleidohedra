@@ -138,8 +138,18 @@
    "observed": "0.07 to 0.15 persistent swaps per cell per minute at 10 s; 0.6 to 1.3 per cell lifetime; 0.8 to 1.9 per persistent split (spread over settings); corrected by the control's detection fraction and fitted to step 0: 0.08 to 0.16 (median 0.13) at P = 60 s, +-9 to 15% per setting plus about 15% calibration, but the corrected rate still halves from step 0 to 80 s and moves by up to 30% with P; counting only swaps seen again on the neighbouring depth planes (walls standing upright: 78 to 83% of contacts in the top 0.2 Mm) leaves 0.026 per cell per minute at 0.1 Mm and 10 s, yet real frames give only 1.2 to 1.7 times as many as shuffled frames, and the rate still falls 54 to 63% from 10 to 80 s",
    "expected": "no null rate (births at junctions almost absent, so swaps per birth is undefined)",
    "verdict": "NOT CONFIRMED",
-   "own": "NOT CONFIRMED: corrected rate still step-dependent and P-dependent; the step-0 value is an extrapolation, not a stable rate; the depth rule fails the shuffled-frame control (needed 3x) and does not flatten the step; order of magnitude stable",
+   "own": "NOT CONFIRMED: corrected rate still step-dependent and P-dependent; the step-0 value is an extrapolation, not a stable rate; the depth rule fails the shuffled-frame control (needed 3x) and does not flatten the step; order of magnitude stable; DICTO's reframing (16 Nov) measures the skeleton without swap matching (next row)",
    "source": "2026-11-15-sun-granulation"
+  },
+  "sun_skeleton": {
+   "part": "V",
+   "system": "Sun: the skeleton of granulation, persistence or reappearance (radiative-MHD simulation)",
+   "data": "Bifrost en024048_hion, vertical velocity at 0, 0.1 and 0.2 Mm below the surface (40 min, 10 s), and qs024048_by3363 at 0.1 Mm; no swap matching: corners, downflow sinks and lanes followed by position within 96 to 192 km",
+   "observed": "half-lives at 0.1 Mm: corners 220 s, corner sites 280 s, lanes at a fixed point 190 s, cells 540 s; corner sites lasting 5 min or more: 32% continuous with the same cells, 33% continuous with renewed cells (0.64 new cells per minute), 35% with brief gaps (median 20 s, 2% of the span); a vanished corner is back at the same place within 60 s 5.6 times as often as at a far time; families of fragmenting granules: 51% still present after 20 min; no local cycle, only an oscillation of the whole box with a period of 400 to 480 s",
+   "expected": "prediction written before the run: corners outlive cells; shuffled frames give one-frame lifetimes and chance re-formation (both seen); moving Voronoi: exact corner half-life 970 s, re-formed sites 1 to 7%",
+   "verdict": "NOT CONFIRMED",
+   "own": "NOT CONFIRMED: corners do not outlive the cells (220 s against 540 s); CONSISTENT: re-formation at the same place (x5.6 at 10 s, falls to x1.8 at 80 s), renewal of the cells at a persistent corner, families outlive single granules; NOT CONFIRMED: the three-class split (gaps not separable from detection dropouts) and any cycle of local recurrence",
+   "source": "2026-11-15-sun-granulation (section: the skeleton)"
   },
   "jupiter": {
    "part": "V",
@@ -185,8 +195,8 @@
   },
   "sun": {
    "item": "Sun: a swap rate stable under the time step",
-   "why": "the only natural 2D tiling with thousands of swaps; neither the step-0 fit with the moving-Voronoi detection fraction nor counting only swaps seen on the neighbouring depth planes (16 Nov) gives a step-stable rate, and shuffled frames still give nearly as many swaps as real ones at 10 s: the false swaps come from the frame-to-frame matching, which repeats on planes 50 km apart",
-   "next": "make the time matching specific first: count a swap only when all four cells are matched by overlap above a fixed share, a rule unrelated frames must fail; calibrate with a control that has splits and merges (the scaling-state froth drawn as images, with its exact T1 list); then add the depth rule and refit to step 0"
+   "why": "the only natural 2D tiling with thousands of swaps; neither the step-0 fit with the moving-Voronoi detection fraction nor counting only swaps seen on the neighbouring depth planes (16 Nov) gives a step-stable rate, and shuffled frames still give nearly as many swaps as real ones at 10 s: the false swaps come from the frame-to-frame matching, which repeats on planes 50 km apart; measured without swap matching (16 Nov), the skeleton passes the shuffled control: corners vanish and come back at the same place within a minute five times as often as chance and their cells are renewed while they stay, but corners do not outlive the cells and no cycle of local recurrence is seen",
+   "next": "for swaps: make the time matching specific (all four cells matched by overlap above a fixed share), calibrate with a control that has splits and merges, then refit to step 0; for the skeleton: a moving-Voronoi control with texture matched to the Sun's lanes, to bound the detection share of re-formation and renewal, and a longer series for the families and the box-wide oscillation"
   },
   "froth-rc": {
    "item": "Froth benchmark on a vertex model with a fixed microscopic rc",

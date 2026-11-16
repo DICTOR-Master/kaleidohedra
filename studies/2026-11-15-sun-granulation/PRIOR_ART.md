@@ -75,3 +75,35 @@ AND "T1"; convection AND cells AND "neighbor switching"; granules AND "Aboav"; "
 "topological changes"; "cellular pattern" AND convection AND topolog*. Web: "T1" neighbour exchange solar granulation; Bénard-
 Marangoni T1 T2 Lewis Aboav; Rivier Cerisier Bénard-Marangoni neighbour switching frequency; granule tracking number of neighbours.
 Blocked or not used: NASA ADS (HTTP 405 for the logger study), scite.ai (HTTP 405), publisher full texts (paywalled).
+
+## Persistence and recurrence of the granulation pattern (added 16 Nov 2026, for the section "The skeleton")
+
+Searched 16 Nov 2026 (web search; abstracts and search snippets only, nothing bought):
+- Roudier, Lignières, Rieutord, Brandt & Malherbe 2003, A&A 409, 299, "Families of fragmenting granules and their relation to
+  meso- and supergranular flow fields", https://www.aanda.org/articles/aa/abs/2003/37/aa3616/aa3616.html (abstract, 16 Nov 2026):
+  11 h La Palma series; 62% of the granule area belongs to trees of fragmenting granules (TFG) living longer than 1.5 h; the
+  longest about 8 h, against about 10 min for single granules (snippet; the 8 h figure not checked in the text).
+- Roudier et al. 2004, A&A 419 (TFG lifetimes from a 3 h Pic du Midi series, histogram fitted by a power law of exponent -1.68),
+  https://www.aanda.org/articles/aa/abs/2004/20/aa0739/aa0739.html (search snippet, 16 Nov 2026).
+- "Recurrence of fragmenting granules and their relation to meso- and supergranular flow fields", EAS Publications Series
+  (Cambridge Core), https://www.cambridge.org/core/journals/european-astronomical-society-publications-series/article/recurrence-of-fragmenting-granules-and-their-relation-to-meso-and-supergranular-flow-fields/F7ED51FC2BA9DE13FD98D76A2A4E458F
+  (title only, 16 Nov 2026).
+- Malherbe, Roudier, Stein & Frank 2018, arXiv:1804.01870, https://arxiv.org/abs/1804.01870 (abstract, already listed above): a
+  simulation reproduces the TFG lifetimes and sizes of Hinode 24 h series.
+- Getling & Brandt 2002, A&A 382, L5, "Regular structures of the solar photosphere (Persistence of the granular field and
+  trenching in the brightness relief)", https://ui.adsabs.harvard.edu/abs/2002A%26A...382L...5G (abstract via search, 16 Nov
+  2026): images averaged over 2 to 8 h keep granule-sized bright blotches, read as granules emerging REPEATEDLY AT THE SAME SITES
+  (recurrence) rather than persisting; criticised as a statistical artefact by Rast 2002; Getling 2006, arXiv:astro-ph/0610698,
+  https://arxiv.org/abs/astro-ph/0610698 (abstract), answers the criticism. This is DICTO's question ("a reappearance that seems
+  to be persistence") asked of averaged intensity images; it was not settled there.
+- Hoekzema and co-workers 1998, A&A 329, 725 and A&A 333, 322 (PDFs on robrutten.nl, https://robrutten.nl/rrweb/rjr-pubs/1998AAp...333..322H.pdf;
+  search snippet, 16 Nov 2026): "persistency regions" in a 5 h La Palma series, location memories up to about 2 h; long-lived
+  intergranular holes (Roudier et al. 1997: dark sites in the lanes visible for more than 45 min, at mesoscale convergence centres).
+- Baudin et al. 1997 (snippet): the blotchy look of a 109 min average put down to persistence of granules.
+So persistence of downflow sites and recurrence of granules at the same places are known from observations, with the question
+"persistence or recurrence?" argued from averaged images. Not found: a site-by-site split of apparently persistent corners into
+continuous presence with the same cells, continuous presence with renewed cells, and re-formation, with shuffled-frame and
+moving-Voronoi controls, in a simulation.
+Searches: "trees of fragmenting granules lifetime Roudier families hours"; "granulation recurrence same location intergranular
+lanes persistence longer than granule lifetime downflow sites"; "Getling Brandt 2002 regular structures solar photosphere
+granulation averaged images recurrent granules same sites".
