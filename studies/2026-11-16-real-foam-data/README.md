@@ -59,3 +59,6 @@ No live webcam or streaming foam or bubble experiment was found anywhere (questi
 - ESA Foam-Coarsening: https://www.esa.int/ESA_Multimedia/Videos/2021/07/Foaming_fluid_science_timelapse (search result)
 - Repository searches: Zenodo API ("foam tomography", "foam coarsening", "liquid foam", "T1 foam", "emulsion tomography", "foam rheology", "2D foam", "bubble raft", "Hele-Shaw foam"); Figshare API and Dryad API ("foam coarsening", "2D foam", "foam T1", "foam tomography", "bubble raft"; Dryad 0 hits on each); web searches for the ESRF data portal, MorphoSource and the Materials Data Facility (no liquid-foam time series found; the portals were not searched directly).
 - Classic 2D coarsening papers cited from the literature, not re-read here: Glazier, Gross and Stavans 1987; Stavans 1993; Rutenberg and McCurdy (the 0.53 ± 0.05 value as used in the scutoid study).
+
+## 16 Nov: DICTO decision
+DICTO: "self bubble study not feasible". The home 2D foam rig is dropped. This route is closed for now; the FoamQuant tutorial series remains only as an optional detector pilot.
