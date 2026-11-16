@@ -3,8 +3,8 @@
 twisted-silence groups study (Table 3b of the paper) as a row of degree tiles k = 1 .. 20, grouped by the kind of law.
 A silent tile is grey when the set's family already forces it (the census rows: the t = 2 neighbour on the same Wythoff
 family is silent there too; the Table 3b rows: the twist group has no invariant there, the "forced" column), and takes the
-colour of its kind when only this member is silent there. Kinds: (T) twisted silence red, (X) extra symmetry
-yellow, (P) parity blue, (E) evenness green, and the classical latitude or cosine-rule zeros (L) violet.
+colour of its kind when only this member is silent there. Kinds (label colours only): (T) twisted silence teal,
+(X) extra symmetry apricot, (P) parity sky, (E) evenness pink, and the classical latitude or cosine-rule zeros (L) cream.
 Open candidates are hatched. Ringing tiles are dark.
 Data: data/fig-tones.json (scripts/fig_tones.py: census members, their neighbours, the 2I classes, X, F; zero patterns
 asserted there) and, for the binary-octahedral, binary-tetrahedral, dihedral and matrix-sphere classes, the signatures of
@@ -17,9 +17,13 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
 GROUND = '#05050a'; INK = '#e6e1d3'; DIM = '#8d8a82'; RING = '#161924'; RINGE = '#2a2f3c'; GREY = '#7b7d84'
-EL = {'red': '#cd3e28', 'yellow': '#e8c852', 'blue': '#3a70cd', 'green': '#488e48', 'violet': '#8a5cc4'}
-KIND = {'T': ('(T) twisted silence', EL['red']), 'X': ('(X) extra symmetry', EL['yellow']), 'P': ('(P) parity', EL['blue']),
-        'E': ('(E) evenness', EL['green']), 'L': ('(L) latitude or cosine rule, classical', EL['violet']),
+# Label colours (16 Nov 2026, DICTO: app colours only for the solid they stand for): labels only, no element or solid meaning;
+# the same palette in Silent Running and Walls of Silence; chosen apart from the five app solid colours, colour-blind checked.
+LABEL = {'teal': (32, 168, 158), 'apricot': (240, 168, 138), 'pink': (240, 150, 192), 'slate': (100, 112, 136), 'cream': (240, 230, 190),
+         'sky': (120, 200, 240), 'taupe': (176, 150, 140), 'aqua': (110, 230, 226)}
+EL = {k: '#%02x%02x%02x' % v for k, v in LABEL.items()}
+KIND = {'T': ('(T) twisted silence', EL['teal']), 'X': ('(X) extra symmetry', EL['apricot']), 'P': ('(P) parity', EL['sky']),
+        'E': ('(E) evenness', EL['pink']), 'L': ('(L) latitude or cosine rule, classical', EL['cream']),
         'O': ('open: candidates in 16 dimensions', '#c9c6bd'), 'N': ('twists with no unforced silence', GREY)}
 fails = []
 def check(ok, msg):
@@ -65,7 +69,7 @@ ROWS = [
 ]
 check(sum(1 for r in ROWS if r[0] == 'T') == 2, 'two twisted-silence rows')
 tcol = [r for r in ROWS if r[2] - r[3] - r[4] and r[0] == 'T']
-check(len(tcol) == 2 and tcol[0][2] - tcol[0][3] == {5, 7} and tcol[1][2] - tcol[1][3] == {3, 6}, 'only X (5, 7) and F (3, 6) carry red tiles')
+check(len(tcol) == 2 and tcol[0][2] - tcol[0][3] == {5, 7} and tcol[1][2] - tcol[1][3] == {3, 6}, 'only X (5, 7) and F (3, 6) carry teal (T) tiles')
 check(S['24-cell (tesseract-16-cell line, μ=2)']['silent'] != S['24-cell (tesseract-16-cell line, μ=2)']['neighbour_silent'],
       '24-cell: silences beyond its line (F4 symmetry), drawn in the X colour')
 
@@ -90,7 +94,7 @@ for kind, label, sil, forced, opn, law in ROWS:
             elif k in forced: fc, hatch, ec = GREY, None, GREY
             else:
                 extra_by_symmetry = kind == 'P' and k not in forced
-                fc, hatch, ec = (EL['yellow'] if extra_by_symmetry else col), None, None
+                fc, hatch, ec = (EL['apricot'] if extra_by_symmetry else col), None, None
                 ec = fc
         else: fc, hatch, ec = RING, None, RINGE
         ax.add_patch(Rectangle((xx + tw * 0.07, y + 0.1), tw * 0.86, 0.8, fc=fc, ec=ec, lw=0.7, hatch=hatch, zorder=2))

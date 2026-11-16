@@ -3,8 +3,7 @@
 # projection hid the differences, and in the plates figure every fin overlapped from one centre.
 # Input: data/vacuus-exact.json from scripts/vacuus_exact.py (exact Q(sqrt5) analysis; float coordinates for drawing only).
 #   (a) RENDER-non-heart-vacuus-{A,B}-slices.png: one slice per kind of plate, every face coloured by its KIND (triangle,
-#       rectangle, rhombus, trapezoid, pentagon, hexagon, heptagon; Kaleidohedra app face-kind palette, extended with element
-#       colours), in one standard pose: the plate's own two-face flat at the bottom (gold rim, dashed where hidden), the camera
+#       rectangle, rhombus, trapezoid, pentagon, hexagon, heptagon; label colours only, see KCOL), in one standard pose: the plate's own two-face flat at the bottom (gold rim, dashed where hidden), the camera
 #       at the same height and turn for every slice, and ONE scale for all slices of both solids (both solids have circumradius
 #       2.288 in these coordinates). Under each slice a face-count strip.
 #   (b) RENDER-non-heart-vacuus-{A,B}-plates.png: one plate of each kind ALONE (the cone from the centre of the solid over the
@@ -22,11 +21,14 @@ PILOT = '--pilot' in sys.argv
 SS = 2 if PILOT else 3; SIZE = 520 if PILOT else 900
 GROUND = (5, 5, 10); EDGE = np.array([240, 234, 216.]); GOLD = (222, 178, 80); CRYSTAL = np.array([150, 170, 190.])
 FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
-# face kinds: app palette (krp-core faceKinds.js: triangle, square, rhombus, hexagon), trapezoid and pentagon from the element
-# colours (Wind, Fire), heptagon the app's orange (world-chains.js)
+# face kinds: label colours only (16 Nov 2026, DICTO: app colours only for the solid they stand for; a face kind is not a solid).
+# The label palette of Silent Running and Walls of Silence, chosen apart from the five app solid colours, colour-blind checked:
+# teal (32,168,158), apricot (240,168,138), pink (240,150,192), slate (100,112,136), cream (240,230,190), sky (120,200,240),
+# taupe (176,150,140), aqua (110,230,226). Solid A's faces (triangle, trapezoid, pentagon, hexagon) take four of the five
+# colour-blind-safe colours; solid B's (triangle, rectangle, rhombus, heptagon) are told apart within B.
 KINDS = ['triangle', 'rectangle', 'rhombus', 'trapezoid', 'pentagon', 'hexagon', 'heptagon']
-KCOL = {'triangle': (0x47, 0xcc, 0x24), 'rectangle': (0x3f, 0xa9, 0xf5), 'rhombus': (0xff, 0x5f, 0xa2), 'trapezoid': (232, 200, 82),
-        'pentagon': (205, 62, 40), 'hexagon': (0xa7, 0x7b, 0xff), 'heptagon': (0xff, 0x9a, 0x52)}
+KCOL = {'triangle': (32, 168, 158), 'rectangle': (120, 200, 240), 'rhombus': (100, 112, 136), 'trapezoid': (240, 230, 190),
+        'pentagon': (240, 168, 138), 'hexagon': (240, 150, 192), 'heptagon': (176, 150, 140)}
 PLURAL = {'triangle': 'triangles', 'rectangle': 'rectangles', 'rhombus': 'rhombi', 'trapezoid': 'trapezoids', 'pentagon': 'pentagons',
           'hexagon': 'hexagons', 'heptagon': 'heptagons'}
 fails = []

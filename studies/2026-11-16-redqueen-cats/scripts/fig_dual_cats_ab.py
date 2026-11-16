@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Two-panel figure (DICTO 16 Nov: "redraw in five colours but have as a and b"), same H4 Coxeter-plane view in both panels.
-(a) "the five-colour cats" (simplified reading): the five kinds of dual cat X*, -X*, R* (= C3*), F*, -F* in the five colours of Silent Running's Fig. 2
-    (fig_600orbits.py: X red, -X blue, R violet, F yellow, -F green). Taking the 8 S5s of panel (b), each pentagon's mark is split
+(a) "the five-colour cats" (simplified reading): the five kinds of dual cat X*, -X*, R* (= C3*), F*, -F* in the five label colours of Silent Running's Fig. 2
+    (fig_600orbits.py: X teal, -X cream, R slate, F apricot, -F pink; labels only). Taking the 8 S5s of panel (b), each pentagon's mark is split
     into wedges, one per kind among those 8 S5s' 40 duals that covers it (a reading; every pentagon is covered by 10 A*, 10 B*, 5 C3*). Labels: the coordinate S5 as in Silent Running; for another S5 they are carried
     over by one symmetry h (h maps the coordinate C3 onto that S5's C3*); swapping X and -X is the central inversion.
-(b) "symmetry groups": the 16-copy A* cover, one colour per S5 symmetry group, full and pale for its two copies (as fig_dual_cats.py).
+(b) "symmetry groups": the 16-copy A* cover, one colour per S5 symmetry group, full and dark for its two copies (as fig_dual_cats.py).
 usage: fig_dual_cats_ab.py OUTDIR out.png"""
 import os, sys, pickle
 from collections import Counter
@@ -63,18 +63,21 @@ nk = Counter(len(s) for s in kinds_of)
 C(min(nk) >= 1, f'every pentagon is covered by at least one kind of its S5 (kinds per pentagon: {dict(sorted(nk.items()))})')
 patt = Counter(tuple(s) for s in kinds_of)
 print('KINDS per pentagon', dict(sorted(nk.items())), 'patterns', {''.join(KIND[i] + ' ' for i in k).strip(): v for k, v in patt.items()}, flush=True)
-EL = {'red': (205, 62, 40), 'blue': (58, 112, 205), 'violet': (138, 92, 196), 'yellow': (232, 200, 82), 'green': (72, 142, 72)}
-KCOL = [tuple(c/255 for c in EL[n]) for n in ('red', 'blue', 'violet', 'yellow', 'green')]
+# Label colours (16 Nov 2026, DICTO: app colours only for the solid they stand for): labels only, no element or solid meaning;
+# the same palette in Silent Running and Walls of Silence; chosen apart from the five app solid colours, colour-blind checked.
+LABEL = {'teal': (32, 168, 158), 'apricot': (240, 168, 138), 'pink': (240, 150, 192), 'slate': (100, 112, 136), 'cream': (240, 230, 190), 'sky': (120, 200, 240), 'taupe': (176, 150, 140), 'aqua': (110, 230, 226)}
+LHEX = {k: '#%02x%02x%02x' % v for k, v in LABEL.items()}
+KCOL = [tuple(c/255 for c in LABEL[n]) for n in ('teal', 'cream', 'slate', 'apricot', 'pink')]
 
 # ---- (b) groups ----
 s5 = {}
 for t in cover: s5.setdefault(s5key[t], []).append(t)
 groups = sorted(s5.values(), key=lambda g: min(g))
 C(set().union(*[WPn[t] for t in cover]) == set(range(720)) and all(len(g) == 2 for g in groups), f'(b) {len(cover)} A* copies, {len(groups)} S5s x 2, cover all pentagons')
-HUE = ['#8a5cc4', '#3a70cd', '#488e48', '#cd3e28', '#e8c852', '#2fa8a0', '#e0803a', '#d45f9e']
-def pale(c, f=0.5): return tuple(a*f + 0.88*(1 - f) for a in to_rgb(c))
+HUE = [LHEX[n] for n in ('teal', 'cream', 'slate', 'apricot', 'pink', 'sky', 'taupe', 'aqua')]
+def deep(c, f=0.5): return tuple(a*f + 0.14 for a in to_rgb(c))   # the second copy: a darker shade (the label colours are light, so a pale tint would not show)
 colof = {}
-for h_, g in enumerate(groups): colof[g[0]] = HUE[h_]; colof[g[1]] = pale(HUE[h_])
+for h_, g in enumerate(groups): colof[g[0]] = HUE[h_]; colof[g[1]] = deep(HUE[h_])
 cov = [[t for t in cover if kp in WPn[t]] for kp in range(720)]
 
 BG = '#121418'; INK = '#d8dbe2'; DIM = '#aab0ba'
@@ -107,8 +110,8 @@ for i, kd in enumerate(KIND):
 la.text(0.0, 0.45, 'kinds of dual cat (the 8 S5s of b); one wedge per kind that covers the pentagon', color=DIM, fontsize=11, va='center')
 lb = fig.add_axes([0.53, 0.035, 0.30, 0.08]); lb.set_facecolor(BG); lb.axis('off'); lb.set_xlim(-0.6, 8); lb.set_ylim(-1.8, 1.2)
 for h_ in range(len(groups)):
-    lb.scatter([h_], [0.55], s=110, marker='p', c=[HUE[h_]]); lb.scatter([h_], [-0.45], s=110, marker='p', c=[pale(HUE[h_])])
-lb.text(-0.5, -1.5, 'one colour per S5 symmetry group: its two A* copies (full, pale); ring = a second copy', color=DIM, fontsize=11, va='center')
+    lb.scatter([h_], [0.55], s=110, marker='p', c=[HUE[h_]]); lb.scatter([h_], [-0.45], s=110, marker='p', c=[deep(HUE[h_])])
+lb.text(-0.5, -1.5, 'one colour per S5 symmetry group: its two A* copies (full, dark); ring = a second copy', color=DIM, fontsize=11, va='center')
 fig.text(0.985, 0.012, 'DICTO · dictospheres.com', color='#9aa0aa', fontsize=11, ha='right')
 fig.savefig(PNG, dpi=110, facecolor=BG); C(os.path.getsize(PNG) > 50000, 'figure written')
 C.final()

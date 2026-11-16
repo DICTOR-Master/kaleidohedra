@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Figure: the 120-cell's 600 corners in the H4 Coxeter plane (30-fold view), each corner drawn as a dot whose FILL is the colour of
 the first-state inscribed 600-cell it lies in and whose RING is the colour of the second-state 600-cell (every corner lies in exactly
-one of each). Inset: the 5 x 5 pairs, each pair sharing a 24-cell of 24 corners. App colours on a dark ground.
+one of each). Inset: the 5 x 5 pairs, each pair sharing a 24-cell of 24 corners. Label colours (labels only, the palette of Silent Running Fig. 2) on a dark ground.
 usage: fig_pairs.py OUTDIR out.png"""
 import os, sys, pickle, itertools
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +24,11 @@ x, y = Qf @ u, Qf @ w
 pts = np.round(np.c_[x, y], 6); C(len({tuple(p) for p in pts}) == 600, 'all 600 corners land on distinct points in the Coxeter plane')
 D2 = ((Qf[:, None] - Qf[None])**2).sum(-1); m = np.min(D2[D2 > 1e-9]); E = np.argwhere(np.triu(np.abs(D2 - m) < 1e-6, 1))
 C(len(E) == 1200, '1200 edges')
-COL = ['#8a5cc4', '#3a70cd', '#488e48', '#cd3e28', '#e8c852']
+# Label colours (16 Nov 2026, DICTO: app colours only for the solid they stand for): labels only, no element or solid meaning;
+# the same palette in Silent Running and Walls of Silence; chosen apart from the five app solid colours, colour-blind checked.
+LABEL = {'teal': (32, 168, 158), 'apricot': (240, 168, 138), 'pink': (240, 150, 192), 'slate': (100, 112, 136), 'cream': (240, 230, 190), 'sky': (120, 200, 240), 'taupe': (176, 150, 140), 'aqua': (110, 230, 226)}
+LHEX = {k: '#%02x%02x%02x' % v for k, v in LABEL.items()}
+COL = [LHEX[n] for n in ('teal', 'cream', 'slate', 'apricot', 'pink')]
 f1 = {i: COL[S1.index(k)] for k in S1 for i in F600[k]}; f2 = {i: COL[S2.index(k)] for k in S2 for i in F600[k]}
 C(len(f1) == 600 and len(f2) == 600, 'every corner has one first-state and one second-state 600-cell')
 BG = '#121418'

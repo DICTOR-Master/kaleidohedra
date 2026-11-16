@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Figure: the Red Queen's (120-cell's) 720 pentagons in the H4 Coxeter plane, each drawn as a pentagon mark at its centre, coloured by
 the polar-dual cat copy whose fins cover it, in a fewest-copies cover by A* copies (from s5: 16 copies, proved minimal). Hue = the
-S5 the copy comes from (8 S5s); solid = one of its two A*-type copies, pale = the other; ring = a second copy covering the same
+S5 the copy comes from (8 S5s); solid = one of its two A*-type copies, dark = the other; ring = a second copy covering the same
 pentagon. Style and dark ground of fig_pairs.py.   usage: fig_dual_cats.py OUTDIR out.png"""
 import os, sys, pickle
 from collections import Counter
@@ -36,12 +36,16 @@ s5 = {}
 for t in cover: s5.setdefault(frozenset(mir[k] for k in WPn[t]), []).append(t)
 groups = sorted(s5.values(), key=lambda g: min(g))
 C(all(len(g) == 2 for g in groups), f'the cover uses {len(groups)} S5s, both A*-type copies of each')
-HUE = ['#8a5cc4', '#3a70cd', '#488e48', '#cd3e28', '#e8c852', '#2fa8a0', '#e0803a', '#d45f9e']
+# Label colours (16 Nov 2026, DICTO: app colours only for the solid they stand for): labels only, no element or solid meaning;
+# the same palette in Silent Running and Walls of Silence; chosen apart from the five app solid colours, colour-blind checked.
+LABEL = {'teal': (32, 168, 158), 'apricot': (240, 168, 138), 'pink': (240, 150, 192), 'slate': (100, 112, 136), 'cream': (240, 230, 190), 'sky': (120, 200, 240), 'taupe': (176, 150, 140), 'aqua': (110, 230, 226)}
+LHEX = {k: '#%02x%02x%02x' % v for k, v in LABEL.items()}
+HUE = [LHEX[n] for n in ('teal', 'cream', 'slate', 'apricot', 'pink', 'sky', 'taupe', 'aqua')]
 BG = '#121418'
-def pale(c, f=0.5): return tuple(a*f + 0.88*(1 - f) for a in to_rgb(c))   # tint toward light grey
+def deep(c, f=0.5): return tuple(a*f + 0.14 for a in to_rgb(c))   # the second copy: a darker shade (the label colours are light, so a pale tint would not show)
 colof = {}
 for h, g in enumerate(groups):
-    colof[g[0]] = HUE[h]; colof[g[1]] = pale(HUE[h])
+    colof[g[0]] = HUE[h]; colof[g[1]] = deep(HUE[h])
 cov = [[t for t in cover if k in WPn[t]] for k in range(720)]
 fig = plt.figure(figsize=(13, 14), facecolor=BG)
 ax = fig.add_axes([0.03, 0.12, 0.94, 0.85]); ax.set_facecolor(BG)
@@ -53,9 +57,9 @@ ax.set_aspect('equal'); ax.axis('off'); R = max(np.hypot(x, y).max(), r.max())*1
 ia = fig.add_axes([0.05, 0.015, 0.30, 0.09]); ia.set_facecolor(BG); ia.axis('off')
 for h in range(len(groups)):
     ia.scatter([h], [0], s=110, marker='p', c=[HUE[h]], edgecolors=[HUE[h]], linewidths=2)
-    ia.scatter([h], [-1], s=110, marker='p', c=[pale(HUE[h])], edgecolors=[pale(HUE[h])], linewidths=2)
+    ia.scatter([h], [-1], s=110, marker='p', c=[deep(HUE[h])], edgecolors=[deep(HUE[h])], linewidths=2)
 ia.set_xlim(-0.8, len(groups) - 0.2); ia.set_ylim(-1.8, 1.0)
-ia.text(-0.6, 0.55, 'one colour per S5: its two A* copies (full, pale)', color='#c8ccd4', fontsize=9, ha='left')
+ia.text(-0.6, 0.55, 'one colour per S5: its two A* copies (full, dark)', color='#c8ccd4', fontsize=9, ha='left')
 mult = Counter(len(c) for c in cov)
 fig.text(0.40, 0.065, "The 120-cell's 720 pentagons (H4 Coxeter plane), each marked at its centre.\n"
          "Colour = the polar dual of a truncated 5-cell (A*) whose fins cover it.\n"

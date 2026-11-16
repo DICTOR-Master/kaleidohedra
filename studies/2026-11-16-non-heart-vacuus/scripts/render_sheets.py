@@ -7,7 +7,7 @@
 #   RENDER-vacuus-three-kinds.png heart (600-cell) | inherited heart (a diminished 600-cell) | non-heart (A), the same method
 # Camera and colours as scripts/render_vacuus.py (DICTO 16 Nov: "keep the view angles and colours"): its standard camera CAM
 # (24 degrees above, fixed turn) for the 3D key and the 600-cell family; its locator view along the 5-cell axis (basis
-# solid_basis, first locator view) for A and B; its app colours (triangle green, rectangle blue, rhombus pink, hexagon lavender).
+# solid_basis, first locator view) for A and B; its label colours (triangle teal, rectangle sky, rhombus slate, hexagon pink; labels only).
 # Painting: sheets see-through (order-independent: every pixel composites its sheets back to front by exact depth), two-sided
 # light, then the outline of the solid's own section (faint), then slot lines (where two sheets cross, bright), crisp >= 1.5 px.
 # Run from the study folder: python scripts/render_sheets.py [--pilot] ; ends "FINAL ok" or "FINAL FAIL".
@@ -251,7 +251,7 @@ def h_basis(u5):
 
 
 KIND_COL = {'A': [K['triangle'], K['hexagon']],
-            'B': [K['triangle'], (196, 226, 64), K['rectangle'], (52, 200, 160)]}
+            'B': [K['triangle'], (240, 168, 138), K['rectangle'], (240, 150, 192)]}   # plate kinds: label colours only (teal, apricot, sky, pink)
 KIND_WORD = {'A': ['A1: the 20 triangle plates', 'A2: the 10 hexagon plates'],
              'B': ['B1: triangles (octahedron | prism)', 'B2: triangles (cuboctahedron | octahedron)',
                    'B3: the 30 rectangle plates', 'B4: triangles (two cuboctahedra)']}

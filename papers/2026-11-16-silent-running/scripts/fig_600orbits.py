@@ -7,7 +7,7 @@ Projection: the Coxeter plane of H4 (the 30-fold view, four rings of 30), where 
 kept by an element of S5 stacks corners of different orbits on one another: 31, 45 and 37 distinct points for the 5-, 4- and
 3-cycle planes, so no S5-symmetric plane shows all corners.) Depth for shading: a coordinate of the complementary plane.
 Edges: the 720 edges of the 600-cell, depth-shaded. Corners: shaded balls, painted back to front with the edges.
-Colours (colours of the Kaleidohedra app): X red, −X blue, R violet, F yellow, −F green (see the caption).
+Colours: label colours only (X teal, −X cream, R slate, F apricot, −F pink), not the app's solid colours (see the caption).
 Usage: fig_600orbits.py out.png  (ends FINAL ok / FINAL FAIL)"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -19,7 +19,10 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 
 GROUND = '#05050a'; INK = '#e6e1d3'; DIM = '#8d8a82'
-EL = {'red': (205, 62, 40), 'blue': (58, 112, 205), 'violet': (138, 92, 196), 'yellow': (232, 200, 82), 'green': (72, 142, 72)}
+# Label colours (16 Nov 2026, DICTO: app colours only for the solid they stand for): labels only, no element or solid meaning;
+# the same palette in Silent Running and Walls of Silence; chosen apart from the five app solid colours, colour-blind checked.
+LABEL = {'teal': (32, 168, 158), 'apricot': (240, 168, 138), 'pink': (240, 150, 192), 'slate': (100, 112, 136), 'cream': (240, 230, 190),
+         'sky': (120, 200, 240), 'taupe': (176, 150, 140), 'aqua': (110, 230, 226)}
 fails = []
 def check(ok, msg):
     print(('CHECK ok   ' if ok else 'CHECK FAIL ') + msg, flush=True)
@@ -74,9 +77,9 @@ fig = plt.figure(figsize=(W_IN, H_IN), dpi=DPI, facecolor=GROUND)
 ax = fig.add_axes([0.01, 0.03, 0.66, 0.94]); ax.set_facecolor(GROUND); ax.set_aspect('equal'); ax.axis('off')
 lim = np.abs(xy).max() * 1.06 + rad; ax.set_xlim(-lim, lim); ax.set_ylim(-lim, lim)
 check(abs((ax.get_position().width * W_IN) - (ax.get_position().height * H_IN)) < 0.01, 'square model frame: one scale for x and y')
-NAMES = [('X', 'golden, hull = solid A', 'red'), ('−X', 'its mirror image', 'blue'), ('R = C3', 'A4 roots, hull = expanded 5-cell', 'violet'),
-         ('F', 'golden, hull = solid B', 'yellow'), ('−F', 'its mirror image', 'green')]
-COL = [np.array(EL[n[2]]) / 255 for n in NAMES]
+NAMES = [('X', 'golden, hull = solid A', 'teal'), ('−X', 'its mirror image', 'cream'), ('R = C3', 'A4 roots, hull = expanded 5-cell', 'slate'),
+         ('F', 'golden, hull = solid B', 'apricot'), ('−F', 'its mirror image', 'pink')]
+COL = [np.array(LABEL[n[2]]) / 255 for n in NAMES]
 items = [('e', (z[i] + z[j]) / 2, (i, j)) for i, j in E] + [('b', z[i] + 1e-3, i) for i in range(120)]
 for kind, dz, it in sorted(items, key=lambda t: t[1]):
     if kind == 'e':
@@ -97,7 +100,7 @@ for k, (nm, sub, el) in enumerate(NAMES):
     fig.text(0.745, y - 0.025, sub, color=DIM, fontsize=8.4, va='center')
 fig.text(0.69, 0.94, 'The 600-cell: 120 corners,', color=INK, fontsize=11.5)
 fig.text(0.69, 0.905, 'five S5-orbits', color=INK, fontsize=11.5)
-fig.text(0.69, 0.16, 'Coxeter plane of H4 (30-fold view);', color=DIM, fontsize=8.2)
+fig.text(0.69, 0.185, 'Coxeter plane of H4 (30-fold view);', color=DIM, fontsize=8.2)
 fig.text(0.69, 0.13, 'opposite corners: X and −X, F and −F,\nR with itself.', color=DIM, fontsize=8.2)
 fig.text(0.985, 0.02, 'DICTO · dictospheres.com', color='#9a978f', fontsize=8, ha='right', va='bottom')
 fig.savefig(sys.argv[1], dpi=DPI, facecolor=GROUND)
