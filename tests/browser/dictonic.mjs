@@ -1,5 +1,5 @@
 // DICTONIC (DICTO 2026-10-23), through the real UI, touch, phone (390×844) and iPad (820×1180), on the Kaleidohedra and Rhombiverse
-// doors (DOORS): first in DICTO's list; the bond buttons (big enough to touch) and one slider, with Layers (up to 6, 4 on a phone) and
+// doors (DOORS): first under Water in DICTO's list; the bond buttons (big enough to touch) and one slider, with Layers (up to 6, 4 on a phone) and
 // Top layer sliders (DICTO 2026-10-25), a Web of bonds button (rods = the shared faces webOf finds) and a Loop button that runs the slider;
 // Golden opens at x = τ (Icosaxes + Unborn Axes named in the caption), X-ray shows the cores and AXE pyramids there, the slider snaps
 // to x = 1 (Kelvin) and reaches x → 0 and x → ∞, each drawing the pieces goldenFamily builds; Keyed has no slider and its "Set keys
@@ -31,7 +31,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     if (!(await page.locator('[data-action="tool:dictonicWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-    assert.equal(worlds[0], 'tool:dictonicWorld', `${tag}: DICTONIC first in DICTO's list`); checks++;
+    assert.equal(await page.evaluate(() => document.querySelector('.dicto-ring[data-ring="water"]')?.nextElementSibling?.dataset.action), 'tool:dictonicWorld', `${tag}: DICTONIC first under Water (the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
     await page.locator('[data-action="tool:dictonicWorld"]').first().tap();
     await page.waitForTimeout(400);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');

@@ -1,5 +1,5 @@
 // The 4D Permutohedron (DICTO 2026-11-10; src/app/world-perm4.js), through the real UI, touch, phone (390×844) and iPad (820×1180), on
-// the Kaleidohedra and Rhombiverse doors (DOORS): right after the Bitruncated 600-cell in DICTO's list (both after DICTONIC); it opens on Build (30 cells, one the outer
+// the Kaleidohedra and Rhombiverse doors (DOORS): right after the Bitruncated 600-cell in DICTO's list (Fire, Book Seven); it opens on Build (30 cells, one the outer
 // shell); the pull slider, big and at the bottom, pulls the cells apart; All cells / 3D permutohedra / Hexagonal prisms show 30 / 10 /
 // 20; Sweep: the cut slider over the 119 gaps, Next swap lands on a swap with two cells letting go and two meeting, captioned as the page;
 // Play runs the sweep and Pause holds it; each view only its own controls; no empty prompt pill. ?open=perm4[:sweep|swap]. Every one of

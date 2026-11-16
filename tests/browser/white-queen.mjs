@@ -1,5 +1,5 @@
 // The White Queen 600-cell (DICTO 2026-10-27, paper #63), through the real UI, touch, phone (390×844) and iPad (820×1180), on the
-// Kaleidohedra and Rhombiverse doors (DOORS): right after the Icosaxes Bloom in DICTO's list; two rows of four direction buttons (From,
+// Kaleidohedra and Rhombiverse doors (DOORS): after Golden Rhombohedra in DICTO's list (Void, Book Ten); two rows of four direction buttons (From,
 // To; big enough to touch, the To matching From hidden), default vertex-first → cell-first; each From button jumps to its start and each
 // To button to its end with the hull counts of #62/#63, all six turnings; the slider long, low and snapping at both ends; an in-between
 // position captioned "From → To"; ?open=whitequeen:<vertex|edge|face|cell>. No console errors. Screenshots ($SHOTS, default
@@ -44,7 +44,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-    assert.equal(worlds[worlds.indexOf('tool:bloomWorld') + 1], 'tool:whiteQueenWorld', `${tag}: right after the Icosaxes Bloom`); checks++;
+    assert.equal(worlds[worlds.indexOf('tool:goldenWorld') + 1], 'tool:whiteQueenWorld', `${tag}: Book Ten, after Golden Rhombohedra (Void; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
     await page.locator('[data-action="tool:whiteQueenWorld"]').first().tap(); await page.waitForTimeout(400);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');
     await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1200);

@@ -1,4 +1,4 @@
-// Aristotle's Pyramid (DICTO 2026-10-21; paper #44) through the real UI on an iPad: in DICTO's block right after the newest work,
+// Aristotle's Pyramid (DICTO 2026-10-21; paper #44) through the real UI on an iPad: in DICTO's block (Wind, Book Eight),
 // opened by the ?open=aristotle link; the five solids' cards (each split into its face pyramids), the draw-apart slider, the three
 // fills, and "Build it yourself" opening the Polyhedraverse kit 'antonius.block'; then the kit's own link ?open=kit:antonius.block.
 // No console errors. Screenshots (SHOTS): the pyramids drawn apart, and the golden fix.
@@ -17,7 +17,6 @@ await page.waitForTimeout(500);
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a)));
 // near the top of DICTO's list, right after the Platonic Mix and the Reuleaux solids (newer worlds join above them, so check the order,
 // not the place)
-assert.equal(worlds[0], 'tool:dictonicWorld', 'DICTONIC first');
 const at = worlds.indexOf('tool:platonicMixWorld');
 assert.ok(at > 0 && at < 10, `the Platonic Mix near the top (${at})`);
 assert.deepEqual(worlds.slice(at, at + 3), ['tool:platonicMixWorld', 'tool:reuleauxWorld', 'tool:aristotleWorld'], 'Aristotle right after the Reuleaux solids');

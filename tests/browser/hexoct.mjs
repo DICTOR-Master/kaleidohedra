@@ -38,7 +38,7 @@ for (const dev of Object.keys(DEVICES)) {
   if (!(await page.locator('[data-action="tool:hexoctWorld"]').count())) await press('.dim-wizard-card-btn[data-dim="3D"]');
   await page.waitForTimeout(500);
   const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-  assert.deepEqual(worlds.slice(2, 4), ['tool:stackingsWorld', 'tool:hexoctWorld'], `${dev}: after the Stackings World`); checks++;
+  assert.equal(worlds[worlds.indexOf('tool:stackingsWorld') + 1], 'tool:hexoctWorld', `${dev}: after the Stackings World`); checks++;
   const card = page.locator('[data-action="tool:hexoctWorld"]').first(); await card.scrollIntoViewIfNeeded(); await card[dev === 'phone' ? 'tap' : 'click'](); await page.waitForTimeout(400);
   if (await page.locator('#leave-dialog:not([hidden])').count()) await press('#leave-dialog [data-choice="keep"]');
   await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1200);

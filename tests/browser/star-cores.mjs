@@ -3,7 +3,7 @@
 // - Polyhedraverse door, DICTO's pieces (and the 42 Star Cores shapes new to PV in their own section, two of them built): Cube Pearl, Golden Clasp, Hamlet, Ophelia first in DICTO's own section; a "Kagemusha's crests"
 //   section after it with Kagemusha + MAEDATE, Kagemusha + KUWAGATA, MAEDATE, KUWAGATA; each card's details, Build and a tap on the outline place that one piece (★ Star step
 //   offered on the four convex solids);
-// - Kaleidohedra door: the Star Cores card right after HexOct opens the world in Kaleidohedra; the shape list (52, newest first), the
+// - Kaleidohedra door: the Star Cores card (Water, Book Five) opens the world in Kaleidohedra; the shape list (52, newest first), the
 //   t = 2 / t = φ buttons and one long step slider, no ◀ ▶ buttons, no paint, shear or lattice-view controls; tapping along the slider
 //   steps solid → star → halo (glass) → core (the star as glass round it) and on to the last turn; edges ≥ 1.5 px;
 // - ?open=starcores:D40:phi:3 from both doors opens the GTI's core at t = φ in Kaleidohedra. No console errors.
@@ -100,8 +100,7 @@ for (const dev of Object.keys(DEVICES)) {
   if (!(await page.locator('[data-action="tool:starCoresWorld"]').count())) await tap('.dim-wizard-card-btn[data-dim="3D"]');
   await page.waitForTimeout(500);
   const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-  assert.equal(worlds[worlds.indexOf('tool:hexoctWorld') + 1], 'tool:starCoresWorld', `${dev}: right after HexOct`);
-  assert.equal(worlds[0], 'tool:dictonicWorld', `${dev}: DICTONIC still first`); checks++;
+  assert.equal(worlds[worlds.indexOf('tool:theaetetusWorld') + 1], 'tool:starCoresWorld', `${dev}: Book Five, after Theaetetus (the chains have no World row; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
   const card = page.locator('[data-action="tool:starCoresWorld"]').first(); await card.scrollIntoViewIfNeeded(); await card.tap(); await page.waitForTimeout(400);
   await keep();
   await page.waitForSelector(`${P}.visible`);

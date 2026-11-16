@@ -1,5 +1,5 @@
-// Golden Breathing Pyrochlore (DICTO 2026-10-14), through the real UI on an iPad: listed right after the Pyrochlore (3D Kagome)
-// lattice, opens on golden, the slider snaps to the named stops, the Kagome layer shows, and a tap adds a cell.
+// Golden Breathing Pyrochlore (DICTO 2026-10-14), through the real UI on an iPad: listed once, in the gold DICTO block under Earth
+// (Book One, right after Golden Bodhi Pyrochlore Networks; DICTO 2026-11-16), opens on golden, the slider snaps to the named stops, the Kagome layer shows, and a tap adds a cell.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 const b = await chromium.launch(); const page = await b.newPage({ viewport: { width: 1024, height: 1366 }, hasTouch: true, isMobile: true });
@@ -10,9 +10,10 @@ await page.waitForSelector('.dim-wizard-overlay.open');
 if (!(await page.locator('[data-action="tool:breathingWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
 await page.waitForTimeout(500);
 const order = await page.evaluate(() => [...document.querySelectorAll('.dim-wizard-overlay [data-action]')].map((e) => e.dataset.action));
-const iPyro = order.indexOf('tool:pieceType:pyrochlore'), iB = order.indexOf('tool:breathingWorld');
-console.log('pyrochlore', iPyro, 'breathing', iB, 'times listed', order.filter((a) => a === 'tool:breathingWorld').length);
-assert.ok(iB === iPyro + 1, 'right after the Pyrochlore');
+const iBodhi = order.indexOf('tool:bodhiPyroWorld'), iB = order.indexOf('tool:breathingWorld');
+console.log('bodhi', iBodhi, 'breathing', iB, 'times listed', order.filter((a) => a === 'tool:breathingWorld').length);
+assert.ok(iB === iBodhi + 1, 'right after Golden Bodhi Pyrochlore Networks');
+assert.ok(await page.locator('.dicto-gold [data-action="tool:breathingWorld"]').count(), 'in the gold DICTO block');
 assert.equal(order.filter((a) => a === 'tool:breathingWorld').length, 1, 'listed once');
 const btn = page.locator('[data-action="tool:breathingWorld"]').first(); await btn.scrollIntoViewIfNeeded(); await btn.tap();
 await page.waitForTimeout(400);
