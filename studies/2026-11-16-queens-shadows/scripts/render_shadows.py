@@ -1,8 +1,8 @@
 # Figures for DICTO's shadows test (16 Nov 2026): one sheet per Queen.
 # Input: data/shadows.json from scripts/shadows.py (exact Q(sqrt5) analysis; float 3D coordinates for drawing only).
 # Main panel: the main shadow (White Queen corner-first, Red Queen cell-first): the shadow's hull as a faint depth-shaded cage, every
-# surviving wall as a translucent disc through the centre (mirrors blue = I water, cross walls red = T fire, element colours of the DICTO
-# square), and the possible-Vacuus layer outlines: innermost a solid lit core, the others see-through crystal shells with crisp edges.
+# surviving wall as a translucent disc through the centre (mirrors sky, cross walls apricot: label colours only, the palette of Silent Running and
+# Walls of Silence; 16 Nov, DICTO: app colours only for the solid they stand for), and the possible-Vacuus layer outlines: innermost a solid lit core, the others see-through crystal shells with crisp edges.
 # Side panels: the mirror planes alone and the cross-wall planes alone, with the same outlines.
 # Painting: far halves of the discs, then the shapes (back faces, edges, front faces, front edges on top: the 2D form of polygon offset),
 # then the near halves of the discs; 3x supersampling, edges >= 1.6 px after downsampling, depth-shaded, no haze; orthographic, one
@@ -14,10 +14,9 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 PILOT = '--pilot' in sys.argv
 SS = 2 if PILOT else 3
-GROUND = (21, 25, 33); EDGE = np.array([240, 234, 216.]); GOLD = (232, 190, 70); CRYSTAL = np.array([170, 200, 225.])
-EL = {'D': (138, 92, 196), 'I': (58, 112, 205), 'C': (72, 142, 72), 'T': (205, 62, 40), 'O': (232, 200, 82)}
-WALLCOL = {'mirror': EL['I'], 'cross': EL['T']}
-SHAPECOL = [GOLD, (236, 232, 220), (120, 210, 200), (232, 150, 90)]
+GROUND = (21, 25, 33); EDGE = np.array([240, 234, 216.]); CRYSTAL = np.array([170, 200, 225.])
+WALLCOL = {'mirror': (120, 200, 240), 'cross': (240, 168, 138)}   # label colours: sky, apricot
+SHAPECOL = [(240, 150, 192), (236, 232, 220), (32, 168, 158), (176, 150, 140)]   # layers inside out: pink core, then white, teal, taupe shells (labels; no gold, which is reserved for DICTO's pieces)
 FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 def font(px): return ImageFont.truetype(FONT, px)
 def look(d, up):
@@ -169,9 +168,9 @@ if __name__ == '__main__':
         pm = panel(sh, shapes, ('mirror',), s2, M); pc = panel(sh, shapes, ('cross',), s2, M)
         W = sh['walls']
         names = [L['name'].split(' (')[0] for L in shapes]
-        title = [ttl, f"{W['mirror'] + W['cross']} walls contain the view and stay flat: {W['mirror']} mirrors (blue) + {W['cross']} cross walls (red)"]
+        title = [ttl, f"{W['mirror'] + W['cross']} walls contain the view and stay flat: {W['mirror']} mirrors (sky) + {W['cross']} cross walls (apricot)"]
         legend = ['Possible Vacuus outlines (every edge fin from the shadow\'s centre lies in a kept wall), inside out:',
-                  '   ' + ', '.join(names) + ' (innermost solid gold, the others see-through shells).',
+                  '   ' + ', '.join(names) + ' (innermost solid pink, the others see-through shells).',
                   'Faint cage: the shadow\'s hull. Each disc is a central plane of the shadow, the trace of a wall of the 600-cell.']
         out = f'figures/RENDER-queens-shadows-{tag}.png'
         sheet(main, [(pm, f"{W['mirror']} mirror planes", WALLCOL['mirror']), (pc, f"{W['cross']} cross-wall planes", WALLCOL['cross'])], title, legend, out)

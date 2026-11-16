@@ -3,7 +3,7 @@
 # projection hid the differences, and in the plates figure every fin overlapped from one centre.
 # Input: data/vacuus-exact.json from scripts/vacuus_exact.py (exact Q(sqrt5) analysis; float coordinates for drawing only).
 #   (a) RENDER-non-heart-vacuus-{A,B}-slices.png: one slice per kind of plate, every face coloured by its KIND (triangle,
-#       rectangle, rhombus, trapezoid, pentagon, hexagon, heptagon; label colours only, see KCOL), in one standard pose: the plate's own two-face flat at the bottom (gold rim, dashed where hidden), the camera
+#       rectangle, rhombus, trapezoid, pentagon, hexagon, heptagon; label colours only, see KCOL), in one standard pose: the plate's own two-face flat at the bottom (white rim, dashed where hidden), the camera
 #       at the same height and turn for every slice, and ONE scale for all slices of both solids (both solids have circumradius
 #       2.288 in these coordinates). Under each slice a face-count strip.
 #   (b) RENDER-non-heart-vacuus-{A,B}-plates.png: one plate of each kind ALONE (the cone from the centre of the solid over the
@@ -19,7 +19,9 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 PILOT = '--pilot' in sys.argv
 SS = 2 if PILOT else 3; SIZE = 520 if PILOT else 900
-GROUND = (5, 5, 10); EDGE = np.array([240, 234, 216.]); GOLD = (222, 178, 80); CRYSTAL = np.array([150, 170, 190.])
+GROUND = (5, 5, 10); EDGE = np.array([240, 234, 216.]); RIMCOL = (255, 255, 255); CRYSTAL = np.array([150, 170, 190.])
+# RIMCOL: the rim of the plate's own two-face, white, a neutral mark (16 Nov: was gold; DICTO gold is reserved for DICTO's pieces,
+# and gold reads as octahedron yellow)
 FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 # face kinds: label colours only (16 Nov 2026, DICTO: app colours only for the solid they stand for; a face kind is not a solid).
 # The label palette of Silent Running and Walls of Silence, chosen apart from the five app solid colours, colour-blind checked:
@@ -98,7 +100,7 @@ def solid_panel(Y, faces, edges, ridge, cols, k_px, centre, extra=None, glass=Fa
         for cyc, col in sorted(zip(faces, cols), key=lambda t: cv.depth(Y[t[0]])):
             cv.poly(Y[cyc], col, 0.92 if cyc == ridge else 0.22)
         for i, j in edges: cv.line(Y[i], Y[j], shade(EDGE, 0.45 + 0.55 * cv.depth(Y[[i, j]])), 2.0)
-        for t in range(len(ridge)): cv.line(Y[ridge[t]], Y[ridge[(t + 1) % len(ridge)]], GOLD, 2.6)
+        for t in range(len(ridge)): cv.line(Y[ridge[t]], Y[ridge[(t + 1) % len(ridge)]], RIMCOL, 2.6)
         return cv
     for i, j in sorted(edges, key=lambda e: cv.depth(Y[list(e)])):            # hidden edges, dim and depth-shaded
         cv.line(Y[i], Y[j], shade(EDGE, 0.15 + 0.35 * cv.depth(Y[[i, j]])), 1.3)
@@ -110,7 +112,7 @@ def solid_panel(Y, faces, edges, ridge, cols, k_px, centre, extra=None, glass=Fa
         if any(front(c) and i in c and j in c for c in faces): cv.line(Y[i], Y[j], shade(EDGE, 0.55 + 0.45 * cv.depth(Y[[i, j]])), 2.0)
     vis = front(ridge)
     for t in range(len(ridge)):
-        a, b = Y[ridge[t]], Y[ridge[(t + 1) % len(ridge)]]; cv.line(a, b, GOLD, 2.6, dash=None if vis else 5)
+        a, b = Y[ridge[t]], Y[ridge[(t + 1) % len(ridge)]]; cv.line(a, b, RIMCOL, 2.6, dash=None if vis else 5)
     return cv
 # ------------------------------------------------------------------ locator: the whole solid as a wire view
 def solid_basis():
@@ -125,9 +127,9 @@ def locator(sol, ridge_idx, col, views):
     for i, j in sorted(sol['edges'], key=lambda e: cv.depth(P[list(e)])):
         cv.line(P[i], P[j], shade(EDGE, 0.20 + 0.55 * cv.depth(P[[i, j]])), 1.6)
     W = V[ridge_idx] - V[ridge_idx].mean(0); U = np.linalg.svd(W)[2]; cyc = [ridge_idx[t] for t in np.argsort(np.arctan2(W @ U[1], W @ U[0]))]
-    for t in cyc: cv.line(np.zeros(3), P[t], shade(GOLD, 0.8), 1.6, dash=4)
+    for t in cyc: cv.line(np.zeros(3), P[t], shade(RIMCOL, 0.8), 1.6, dash=4)
     cv.poly(P[cyc], col, 0.92)
-    for t in range(len(cyc)): cv.line(P[cyc[t]], P[cyc[(t + 1) % len(cyc)]], GOLD, 2.6)
+    for t in range(len(cyc)): cv.line(P[cyc[t]], P[cyc[(t + 1) % len(cyc)]], RIMCOL, 2.6)
     cv.dot(np.zeros(3), (250, 248, 240), 5)
     return cv.image()
 # ------------------------------------------------------------------ the face-count strip and the sheet
@@ -164,8 +166,8 @@ def sheet(rows, title, legend, out, P, cols):
         else:
             x = pad
             for k in item:
-                sw = int(26 * f); d.rectangle([x, y + int(3 * f), x + sw, y + int(3 * f) + sw], fill=KCOL[k] if k in KCOL else GOLD); x += sw + int(10 * f)
-                t = k if k in KCOL else 'gold rim: the plate\'s own two-face (at the bottom; dashed where hidden)'; d.text((x, y), t, font=fc, fill=(220, 214, 200)); x += d.textlength(t, font=fc) + int(30 * f)
+                sw = int(26 * f); d.rectangle([x, y + int(3 * f), x + sw, y + int(3 * f) + sw], fill=KCOL[k] if k in KCOL else RIMCOL); x += sw + int(10 * f)
+                t = k if k in KCOL else 'white rim: the plate\'s own two-face (at the bottom; dashed where hidden)'; d.text((x, y), t, font=fc, fill=(220, 214, 200)); x += d.textlength(t, font=fc) + int(30 * f)
             check(x < Wd, 'legend fits')
         y += int(56 * f)
     mk = 'DICTO · dictospheres.com'; d.text((Wd - pad - d.textlength(mk, font=fs_), Hd - int(46 * f)), mk, font=fs_, fill=(150, 150, 150))
@@ -217,13 +219,13 @@ if __name__ == '__main__':
         t1 = [f'Solid {tag}, perms of {seed}: one slice per kind of plate',
               f'{len(sol["V"])} corners, {len(sol["ridges"])} two-faces on {sol["n_plates"]} central plates; {len(orbs)} kinds under its {sol["group_order"]} symmetries.',
               'Every slice in the same pose and at the same scale; the plate\'s own two-face lies flat at the bottom.']
-        leg = ['Faces coloured by kind. White dots: corners of the solid; other corners are where the plate cuts an edge.', present, ['gold']]
+        leg = ['Faces coloured by kind. White dots: corners of the solid; other corners are where the plate cuts an edge.', present, ['rim']]
         out = f'figures/RENDER-non-heart-vacuus-{tag}-slices{sfx}.png'; sheet(slices, t1, leg, out, SIZE, 2); made.append(out)
         t2 = [f'Solid {tag}, perms of {seed}: one central plate of each kind, alone',
               'Left: the plate as the cone from the centre over its two-face, in the plate\'s own space (true shape; pose and scale as the slices).',
               'Right: the whole solid as a wire view along a 5-cell axis, that two-face filled, its spokes to the centre dashed.']
         leg2 = ['One two-face per plate: no centre of symmetry, so no plate carries an opposite pair (the non-heart kind).',
-                [k for k in KINDS if any(k == kind_of(f['name']) for o in orbs for f in o['slice']['faces'] if f['ridge'])], ['gold']]
+                [k for k in KINDS if any(k == kind_of(f['name']) for o in orbs for f in o['slice']['faces'] if f['ridge'])], ['rim']]
         out = f'figures/RENDER-non-heart-vacuus-{tag}-plates{sfx}.png'; sheet(plates, t2, leg2, out, SIZE, 2); made.append(out)
     ok = all(os.path.exists(m) for m in made) and not fails
     print(f'{len(fails)} checks failed', flush=True)

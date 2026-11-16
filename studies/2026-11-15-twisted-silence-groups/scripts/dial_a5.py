@@ -500,7 +500,8 @@ try:
     fig, axs = plt.subplots(2, 1, figsize=(9, 6.5))
     for ax, (ename, (u, v)) in zip(axs, EDGES.items()):
         th = np.linspace(0, np.pi, 1441)
-        uu = np.array(u, float); vv = np.array(v, float); uu /= np.linalg.norm(uu); vv /= np.linalg.norm(vv)
+        uu = np.array(u, float); vv = np.array(v, float); vv /= np.linalg.norm(vv)
+        uu = uu - (uu @ vv) * vv; uu /= np.linalg.norm(uu)   # 16 Nov fix: orthonormal basis (C3 edge u, v not perpendicular; dots sat off their zeros)
         for k in range(3, 16):
             vals = np.array([F_at(list(np.cos(t) * vv + np.sin(t) * uu), k) for t in th])
             ax.plot(np.degrees(th), k + 0.8 * vals / vals.max(), lw=0.8, color='0.35')
