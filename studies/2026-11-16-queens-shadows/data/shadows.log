@@ -1,0 +1,336 @@
+CHECK ok   600-cell: 120 unit corners
+CHECK ok   600-cell: 720 edges
+CHECK ok   600-cell: 1200 triangles
+CHECK ok   600-cell: 600 tetrahedra
+CHECK ok   120-cell: 600 corners on one sphere (r^2 = (1/4+3/8phi))
+CHECK ok   120-cell: 1200 edges (tetrahedra sharing a triangle)
+CHECK ok   120-cell: all 1200 edges equal
+CHECK ok   120-cell: 120 cells of 20 corners (dodecahedra round a 600-cell corner)
+CHECK ok   120-cell: 720 pentagons (5 tetrahedra round a 600-cell edge)
+CHECK ok   120-cell: each cell has 30 edges
+CHECK ok   walls: 60 mirrors + 300 cross walls (60 + 300)
+CHECK ok   walls: 360 distinct normals (no cross wall is a mirror)
+CHECK ok   mirrors: reflection in each maps the 600 cell onto itself (exact)
+CHECK ok   W(H4) generated exactly by the 60 reflections: 14400 elements
+CHECK ok   direction lines V/E/F/C: [60, 360, 600, 300] (60/360/600/300)
+CHECK ok   120-cell corner-first lines = 600-cell cell-first lines
+CHECK ok   120-cell edge-first lines = 600-cell face-first lines
+CHECK ok   120-cell pentagon-first lines = 600-cell edge-first lines
+CHECK ok   120-cell cell-first lines = 600-cell corner-first lines
+CHECK ok   flag: edge is an edge
+CHECK ok   600 V: the stabiliser permutes the surviving walls
+CHECK ok   600 V: kept walls = planes of the side-on cells of the two Queens, moved to the centre (15 + 30)
+  planes: {'kind': 'mirror', 'planes': 15, 'normal_line_stabiliser': 16, 'normal_parallel_to_corners_of': ['geodesic h=hull', 'icosidodecahedron h=0'], 'normal_parallel_to_edges_of': ['dodecahedron h=-1/2', 'dodecahedron h=1/2', 'geodesic h=hull', 'icosahedron h=(-1/2+1/2phi)', 'icosahedron h=(0+1/2phi)', 'icosahedron h=(0-1/2phi)', 'icosahedron h=(1/2-1/2phi)', 'icosidodecahedron h=0']}
+  planes: {'kind': 'cross', 'planes': 30, 'normal_line_stabiliser': 8, 'normal_parallel_to_corners_of': [], 'normal_parallel_to_edges_of': []}
+SHADOW 600 corner-first: walls kept {'mirror': 15, 'cross': 30} (group on shadow 120); plane orbits 15 mirror (normal stab 16), 30 cross (normal stab 8); cells {'front': 270, 'back': 270, 'side-on': 60} in 8 orbits, 8 congruence classes (7 among front cells)  [2s]
+  layer h = -1: 1 pts point; edges 0; plates(O) {} -> no plates; faces parallel to kept walls None
+  layer h = (0-1/2phi): 12 pts icosahedron (equal edges, one sphere); edges 30; plates(O) {'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 20}
+  layer h = -1/2: 20 pts dodecahedron (equal edges, one sphere); edges 30; plates(O) {'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 12}
+  layer h = (1/2-1/2phi): 12 pts icosahedron (equal edges, one sphere); edges 30; plates(O) {'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 20}
+  layer h = 0: 30 pts icosidodecahedron (equal edges, one sphere); edges 60; plates(O) {'none': 60} -> not; faces parallel to kept walls {'none': 32}
+  layer h = (-1/2+1/2phi): 12 pts icosahedron (equal edges, one sphere); edges 30; plates(O) {'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 20}
+  layer h = 1/2: 20 pts dodecahedron (equal edges, one sphere); edges 30; plates(O) {'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 12}
+  layer h = (0+1/2phi): 12 pts icosahedron (equal edges, one sphere); edges 30; plates(O) {'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 20}
+  layer h = 1: 1 pts point; edges 0; plates(O) {} -> no plates; faces parallel to kept walls None
+  shadow hull: 75 pts geodesic (2,0) type (80 triangles) (2 edge lengths, 5 radii); edges 120; plates(O) {'mirror': 60, 'none': 60} -> partly; faces parallel to kept walls {'cross': 60, 'none': 20}
+  cells (verdict at O, verdict at own centre): {('possible Vacuus', 'partly'): 380, ('partly', 'partly'): 160, ('partly', 'possible Vacuus'): 60}
+PROGRESS 0.12 600 V
+CHECK ok   600 E: the stabiliser permutes the surviving walls
+CHECK ok   600 E: kept walls = planes of the side-on cells of the two Queens, moved to the centre (6 + 10)
+  planes: {'kind': 'mirror', 'planes': 5, 'normal_line_stabiliser': 8, 'normal_parallel_to_corners_of': ['V52 E130 F80 faces{3: 60, 4: 20} h=hull', 'icosahedron h=0'], 'normal_parallel_to_edges_of': ['5-gon h=(0+1/2phi)', '5-gon h=(0-1/2phi)', '5-gon h=-1/2', '5-gon h=1/2', 'V10 E15 F7 faces{4: 5, 5: 2} h=(-1/4+1/4phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(-1/4-1/4phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(0+1/4phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(0-1/4phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(1/4+1/4phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(1/4-1/4phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=-1/4', 'V10 E15 F7 faces{4: 5, 5: 2} h=1/4', 'V52 E130 F80 faces{3: 60, 4: 20} h=hull', 'icosahedron h=0']}
+  planes: {'kind': 'mirror', 'planes': 1, 'normal_line_stabiliser': 40, 'normal_parallel_to_corners_of': ['V52 E130 F80 faces{3: 60, 4: 20} h=hull', 'icosahedron h=0', 'segment h=(-1/2-1/4phi)', 'segment h=(-1/4+1/2phi)', 'segment h=(1/2+1/4phi)', 'segment h=(1/4-1/2phi)'], 'normal_parallel_to_edges_of': ['V10 E15 F7 faces{4: 5, 5: 2} h=(-1/4+1/4phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(-1/4-1/4phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(0+1/4phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(0-1/4phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(1/4+1/4phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(1/4-1/4phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=-1/4', 'V10 E15 F7 faces{4: 5, 5: 2} h=1/4', 'segment h=(-1/2-1/4phi)', 'segment h=(-1/4+1/2phi)', 'segment h=(1/2+1/4phi)', 'segment h=(1/4-1/2phi)']}
+  planes: {'kind': 'cross', 'planes': 10, 'normal_line_stabiliser': 4, 'normal_parallel_to_corners_of': [], 'normal_parallel_to_edges_of': ['icosahedron h=0']}
+SHADOW 600 edge-first: walls kept {'mirror': 6, 'cross': 10} (group on shadow 40); plane orbits 5 mirror (normal stab 8), 1 mirror (normal stab 40), 10 cross (normal stab 4); cells {'front': 290, 'back': 290, 'side-on': 20} in 25 orbits, 23 congruence classes (22 among front cells)  [1s]
+  layer h = (-1/2-1/4phi): 2 pts segment; edges 1; plates(O) {'undefined': 1} -> no plates; faces parallel to kept walls None
+  layer h = (0-1/2phi): 5 pts 5-gon; edges 5; plates(O) {'mirror': 5} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (-1/4-1/4phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (2 edge lengths, one sphere); edges 15; plates(O) {'mirror': 5, 'none': 10} -> partly; faces parallel to kept walls {'none': 5, 'mirror': 2}
+  layer h = (1/4-1/2phi): 2 pts segment; edges 1; plates(O) {'undefined': 1} -> no plates; faces parallel to kept walls None
+  layer h = -1/2: 5 pts 5-gon; edges 5; plates(O) {'mirror': 5} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (0-1/4phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (2 edge lengths, one sphere); edges 15; plates(O) {'none': 10, 'mirror': 5} -> partly; faces parallel to kept walls {'none': 5, 'mirror': 2}
+  layer h = -1/4: 10 pts V10 E15 F7 faces{4: 5, 5: 2} (2 edge lengths, one sphere); edges 15; plates(O) {'mirror': 5, 'none': 10} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 5}
+  layer h = (1/4-1/4phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (equal edges, one sphere); edges 15; plates(O) {'mirror': 5, 'none': 10} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 5}
+  layer h = 0: 12 pts icosahedron (2 edge lengths, one sphere); edges 30; plates(O) {'none': 20, 'mirror': 10} -> partly; faces parallel to kept walls {'none': 20}
+  layer h = (-1/4+1/4phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (equal edges, one sphere); edges 15; plates(O) {'mirror': 5, 'none': 10} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 5}
+  layer h = 1/4: 10 pts V10 E15 F7 faces{4: 5, 5: 2} (2 edge lengths, one sphere); edges 15; plates(O) {'mirror': 5, 'none': 10} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 5}
+  layer h = (0+1/4phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (2 edge lengths, one sphere); edges 15; plates(O) {'none': 10, 'mirror': 5} -> partly; faces parallel to kept walls {'none': 5, 'mirror': 2}
+  layer h = 1/2: 5 pts 5-gon; edges 5; plates(O) {'mirror': 5} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (-1/4+1/2phi): 2 pts segment; edges 1; plates(O) {'undefined': 1} -> no plates; faces parallel to kept walls None
+  layer h = (1/4+1/4phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (2 edge lengths, one sphere); edges 15; plates(O) {'mirror': 5, 'none': 10} -> partly; faces parallel to kept walls {'none': 5, 'mirror': 2}
+  layer h = (0+1/2phi): 5 pts 5-gon; edges 5; plates(O) {'mirror': 5} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (1/2+1/4phi): 2 pts segment; edges 1; plates(O) {'undefined': 1} -> no plates; faces parallel to kept walls None
+  shadow hull: 116 pts V52 E130 F80 faces{3: 60, 4: 20} (6 edge lengths, 9 radii); edges 130; plates(O) {'none': 80, 'mirror': 50} -> partly; faces parallel to kept walls {'none': 60, 'cross': 20}
+  cells (verdict at O, verdict at own centre): {('possible Vacuus', 'partly'): 10, ('partly', 'partly'): 330, ('partly', 'not'): 240, ('partly', 'possible Vacuus'): 20}
+PROGRESS 0.25 600 E
+CHECK ok   600 F: the stabiliser permutes the surviving walls
+CHECK ok   600 F: kept walls = planes of the side-on cells of the two Queens, moved to the centre (4 + 12)
+  planes: {'kind': 'mirror', 'planes': 3, 'normal_line_stabiliser': 8, 'normal_parallel_to_corners_of': ['V56 E150 F96 faces{3: 84, 4: 12} h=hull', 'V8 E18 F12 faces{3: 12} h=0'], 'normal_parallel_to_edges_of': ['3-gon h=(-1/3-1/3phi)', '3-gon h=(1/3+1/3phi)', '3-gon h=-1/3', '3-gon h=1/3', '6-gon h=(0+1/3phi)', '6-gon h=(0-1/3phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(0+1/6phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(0-1/6phi)', 'V8 E18 F12 faces{3: 12} h=0', 'triangular prism h=(-1/3-1/6phi)', 'triangular prism h=(-1/6+1/6phi)', 'triangular prism h=(-1/6-1/3phi)', 'triangular prism h=(-1/6-1/6phi)', 'triangular prism h=(1/3+1/6phi)', 'triangular prism h=(1/6+1/3phi)', 'triangular prism h=(1/6+1/6phi)', 'triangular prism h=(1/6-1/6phi)', 'triangular prism h=-1/6', 'triangular prism h=1/6']}
+  planes: {'kind': 'mirror', 'planes': 1, 'normal_line_stabiliser': 24, 'normal_parallel_to_corners_of': ['V56 E150 F96 faces{3: 84, 4: 12} h=hull', 'V8 E18 F12 faces{3: 12} h=0', 'segment h=(0+1/2phi)', 'segment h=(0-1/2phi)'], 'normal_parallel_to_edges_of': ['V12 E18 F8 faces{4: 6, 6: 2} h=(0+1/6phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(0-1/6phi)', 'V56 E150 F96 faces{3: 84, 4: 12} h=hull', 'segment h=(0+1/2phi)', 'segment h=(0-1/2phi)', 'triangular prism h=(-1/3-1/6phi)', 'triangular prism h=(-1/6+1/6phi)', 'triangular prism h=(-1/6-1/3phi)', 'triangular prism h=(-1/6-1/6phi)', 'triangular prism h=(1/3+1/6phi)', 'triangular prism h=(1/6+1/3phi)', 'triangular prism h=(1/6+1/6phi)', 'triangular prism h=(1/6-1/6phi)', 'triangular prism h=-1/6', 'triangular prism h=1/6']}
+  planes: {'kind': 'cross', 'planes': 6, 'normal_line_stabiliser': 4, 'normal_parallel_to_corners_of': [], 'normal_parallel_to_edges_of': []}
+  planes: {'kind': 'cross', 'planes': 6, 'normal_line_stabiliser': 4, 'normal_parallel_to_corners_of': [], 'normal_parallel_to_edges_of': ['V8 E18 F12 faces{3: 12} h=0']}
+SHADOW 600 face-first: walls kept {'mirror': 4, 'cross': 12} (group on shadow 24); plane orbits 3 mirror (normal stab 8), 1 mirror (normal stab 24), 6 cross (normal stab 4), 6 cross (normal stab 4); cells {'front': 288, 'back': 288, 'side-on': 24} in 37 orbits, 35 congruence classes (33 among front cells)  [1s]
+  layer h = (-1/3-1/3phi): 3 pts 3-gon; edges 3; plates(O) {'mirror': 3} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (0-1/2phi): 2 pts segment; edges 1; plates(O) {'undefined': 1} -> no plates; faces parallel to kept walls None
+  layer h = (-1/6-1/3phi): 6 pts triangular prism (2 edge lengths, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = (-1/3-1/6phi): 6 pts triangular prism (equal edges, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = (0-1/3phi): 6 pts 6-gon; edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (-1/6-1/6phi): 6 pts triangular prism (2 edge lengths, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = -1/3: 3 pts 3-gon; edges 3; plates(O) {'mirror': 3} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (0-1/6phi): 12 pts V12 E18 F8 faces{4: 6, 6: 2} (2 edge lengths, one sphere); edges 18; plates(O) {'cross': 6, 'none': 12} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 6}
+  layer h = -1/6: 6 pts triangular prism (2 edge lengths, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = (1/6-1/6phi): 6 pts triangular prism (2 edge lengths, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = 0: 8 pts V8 E18 F12 faces{3: 12} (2 edge lengths, one sphere); edges 18; plates(O) {'none': 12, 'mirror': 6} -> partly; faces parallel to kept walls {'none': 12}
+  layer h = (-1/6+1/6phi): 6 pts triangular prism (2 edge lengths, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = 1/6: 6 pts triangular prism (2 edge lengths, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = (0+1/6phi): 12 pts V12 E18 F8 faces{4: 6, 6: 2} (2 edge lengths, one sphere); edges 18; plates(O) {'cross': 6, 'none': 12} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 6}
+  layer h = 1/3: 3 pts 3-gon; edges 3; plates(O) {'mirror': 3} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (1/6+1/6phi): 6 pts triangular prism (2 edge lengths, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = (0+1/3phi): 6 pts 6-gon; edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (1/3+1/6phi): 6 pts triangular prism (equal edges, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = (1/6+1/3phi): 6 pts triangular prism (2 edge lengths, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = (0+1/2phi): 2 pts segment; edges 1; plates(O) {'undefined': 1} -> no plates; faces parallel to kept walls None
+  layer h = (1/3+1/3phi): 3 pts 3-gon; edges 3; plates(O) {'mirror': 3} -> possible Vacuus; faces parallel to kept walls None
+  shadow hull: 118 pts V56 E150 F96 faces{3: 84, 4: 12} (9 edge lengths, 11 radii); edges 150; plates(O) {'none': 120, 'mirror': 30} -> partly; faces parallel to kept walls {'none': 72, 'cross': 24}
+  cells (verdict at O, verdict at own centre): {('possible Vacuus', 'partly'): 4, ('partly', 'partly'): 188, ('partly', 'not'): 336, ('partly', 'possible Vacuus'): 12, ('not', 'not'): 48, ('not', 'possible Vacuus'): 12}
+PROGRESS 0.38 600 F
+CHECK ok   600 C: the stabiliser permutes the surviving walls
+CHECK ok   600 C: kept walls = planes of the side-on cells of the two Queens, moved to the centre (6 + 27)
+  planes: {'kind': 'mirror', 'planes': 6, 'normal_line_stabiliser': 8, 'normal_parallel_to_corners_of': ['V44 E120 F78 faces{3: 72, 4: 6} h=hull', 'cuboctahedron h=0'], 'normal_parallel_to_edges_of': ['cuboctahedron h=(-1/8-1/4phi)', 'cuboctahedron h=(1/8+1/4phi)', 'cuboctahedron h=0', 'octahedron h=(-1/4-1/4phi)', 'octahedron h=(1/4+1/4phi)', 'tetrahedron h=(-1/4-3/8phi)', 'tetrahedron h=(-1/8-3/8phi)', 'tetrahedron h=(1/4+3/8phi)', 'tetrahedron h=(1/8+3/8phi)', 'tetrahedron h=-1/8', 'tetrahedron h=1/8', 'truncated tetrahedron h=(-1/8-1/8phi)', 'truncated tetrahedron h=(0+1/8phi)', 'truncated tetrahedron h=(0-1/8phi)', 'truncated tetrahedron h=(1/8+1/8phi)']}
+  planes: {'kind': 'cross', 'planes': 24, 'normal_line_stabiliser': 2, 'normal_parallel_to_corners_of': [], 'normal_parallel_to_edges_of': []}
+  planes: {'kind': 'cross', 'planes': 3, 'normal_line_stabiliser': 16, 'normal_parallel_to_corners_of': ['V44 E120 F78 faces{3: 72, 4: 6} h=hull', 'octahedron h=(-1/4-1/4phi)', 'octahedron h=(1/4+1/4phi)'], 'normal_parallel_to_edges_of': ['V44 E120 F78 faces{3: 72, 4: 6} h=hull']}
+SHADOW 600 cell-first: walls kept {'mirror': 6, 'cross': 27} (group on shadow 48); plane orbits 6 mirror (normal stab 8), 24 cross (normal stab 2), 3 cross (normal stab 16); cells {'front': 273, 'back': 273, 'side-on': 54} in 23 orbits, 22 congruence classes (20 among front cells)  [1s]
+  layer h = (-1/4-3/8phi): 4 pts tetrahedron (equal edges, one sphere); edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls {'none': 4}
+  layer h = (-1/8-3/8phi): 4 pts tetrahedron (equal edges, one sphere); edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls {'none': 4}
+  layer h = (-1/4-1/4phi): 6 pts octahedron (equal edges, one sphere); edges 12; plates(O) {'cross': 12} -> possible Vacuus; faces parallel to kept walls {'none': 8}
+  layer h = (-1/8-1/4phi): 12 pts cuboctahedron (2 edge lengths, one sphere); edges 24; plates(O) {'none': 24} -> not; faces parallel to kept walls {'none': 8, 'cross': 6}
+  layer h = (-1/8-1/8phi): 12 pts truncated tetrahedron (2 edge lengths, one sphere); edges 18; plates(O) {'mirror': 6, 'none': 12} -> partly; faces parallel to kept walls {'none': 8}
+  layer h = (0-1/8phi): 12 pts truncated tetrahedron (2 edge lengths, one sphere); edges 18; plates(O) {'none': 12, 'mirror': 6} -> partly; faces parallel to kept walls {'none': 8}
+  layer h = -1/8: 4 pts tetrahedron (equal edges, one sphere); edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls {'none': 4}
+  layer h = 0: 12 pts cuboctahedron (equal edges, one sphere); edges 24; plates(O) {'none': 24} -> not; faces parallel to kept walls {'none': 8, 'cross': 6}
+  layer h = 1/8: 4 pts tetrahedron (equal edges, one sphere); edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls {'none': 4}
+  layer h = (0+1/8phi): 12 pts truncated tetrahedron (2 edge lengths, one sphere); edges 18; plates(O) {'none': 12, 'mirror': 6} -> partly; faces parallel to kept walls {'none': 8}
+  layer h = (1/8+1/8phi): 12 pts truncated tetrahedron (2 edge lengths, one sphere); edges 18; plates(O) {'mirror': 6, 'none': 12} -> partly; faces parallel to kept walls {'none': 8}
+  layer h = (1/8+1/4phi): 12 pts cuboctahedron (2 edge lengths, one sphere); edges 24; plates(O) {'none': 24} -> not; faces parallel to kept walls {'none': 8, 'cross': 6}
+  layer h = (1/4+1/4phi): 6 pts octahedron (equal edges, one sphere); edges 12; plates(O) {'cross': 12} -> possible Vacuus; faces parallel to kept walls {'none': 8}
+  layer h = (1/8+3/8phi): 4 pts tetrahedron (equal edges, one sphere); edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls {'none': 4}
+  layer h = (1/4+3/8phi): 4 pts tetrahedron (equal edges, one sphere); edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls {'none': 4}
+  shadow hull: 114 pts V44 E120 F78 faces{3: 72, 4: 6} (4 edge lengths, 8 radii); edges 120; plates(O) {'none': 72, 'mirror': 48} -> partly; faces parallel to kept walls {'cross': 54, 'none': 24}
+  cells (verdict at O, verdict at own centre): {('possible Vacuus', 'possible Vacuus'): 2, ('possible Vacuus', 'partly'): 32, ('partly', 'partly'): 224, ('partly', 'not'): 288, ('partly', 'possible Vacuus'): 54}
+PROGRESS 0.50 600 C
+CHECK ok   120 V: the stabiliser permutes the surviving walls
+CHECK ok   120 V: kept walls = planes of the side-on cells of the two Queens, moved to the centre (15 + 30)
+  planes: {'kind': 'mirror', 'planes': 15, 'normal_line_stabiliser': 16, 'normal_parallel_to_corners_of': ['Goldberg GP(2,0) type h=hull', 'icosidodecahedron h=(-1/4-1/4phi)', 'icosidodecahedron h=(1/4+1/4phi)'], 'normal_parallel_to_edges_of': ['Goldberg GP(2,0) type h=hull', 'dodecahedron h=(-1/4-3/8phi)', 'dodecahedron h=(-1/8-3/8phi)', 'dodecahedron h=(1/4+3/8phi)', 'dodecahedron h=(1/8+3/8phi)', 'dodecahedron h=-1/8', 'dodecahedron h=1/8', 'icosidodecahedron h=(-1/4-1/4phi)', 'icosidodecahedron h=(1/4+1/4phi)', 'rhombicosidodecahedron h=(0+1/8phi)', 'rhombicosidodecahedron h=(0-1/8phi)', 'rhombicosidodecahedron h=0', 'truncated icosahedron h=(-1/8-1/4phi)', 'truncated icosahedron h=(-1/8-1/8phi)', 'truncated icosahedron h=(1/8+1/4phi)', 'truncated icosahedron h=(1/8+1/8phi)']}
+  planes: {'kind': 'cross', 'planes': 30, 'normal_line_stabiliser': 8, 'normal_parallel_to_corners_of': ['Goldberg GP(2,0) type h=hull', 'rhombicosidodecahedron h=0'], 'normal_parallel_to_edges_of': []}
+SHADOW 120 cell-first: walls kept {'mirror': 15, 'cross': 30} (group on shadow 120); plane orbits 15 mirror (normal stab 16), 30 cross (normal stab 8); cells {'front': 45, 'back': 45, 'side-on': 30} in 5 orbits, 5 congruence classes (4 among front cells)  [3s]
+  layer h = (-1/4-3/8phi): 20 pts dodecahedron (equal edges, one sphere); edges 30; plates(O) {'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 12}
+  layer h = (-1/8-3/8phi): 20 pts dodecahedron (equal edges, one sphere); edges 30; plates(O) {'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 12}
+  layer h = (-1/4-1/4phi): 30 pts icosidodecahedron (equal edges, one sphere); edges 60; plates(O) {'none': 60} -> not; faces parallel to kept walls {'none': 32}
+  layer h = (-1/8-1/4phi): 60 pts truncated icosahedron (2 edge lengths, one sphere); edges 90; plates(O) {'cross': 60, 'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 32}
+  layer h = (-1/8-1/8phi): 60 pts truncated icosahedron (2 edge lengths, one sphere); edges 90; plates(O) {'mirror': 30, 'none': 60} -> partly; faces parallel to kept walls {'none': 32}
+  layer h = (0-1/8phi): 60 pts rhombicosidodecahedron (equal edges, one sphere); edges 120; plates(O) {'none': 120} -> not; faces parallel to kept walls {'none': 32, 'mirror': 30}
+  layer h = -1/8: 20 pts dodecahedron (equal edges, one sphere); edges 30; plates(O) {'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 12}
+  layer h = 0: 60 pts rhombicosidodecahedron (2 edge lengths, one sphere); edges 120; plates(O) {'none': 120} -> not; faces parallel to kept walls {'none': 32, 'mirror': 30}
+  layer h = 1/8: 20 pts dodecahedron (equal edges, one sphere); edges 30; plates(O) {'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 12}
+  layer h = (0+1/8phi): 60 pts rhombicosidodecahedron (equal edges, one sphere); edges 120; plates(O) {'none': 120} -> not; faces parallel to kept walls {'none': 32, 'mirror': 30}
+  layer h = (1/8+1/8phi): 60 pts truncated icosahedron (2 edge lengths, one sphere); edges 90; plates(O) {'mirror': 30, 'none': 60} -> partly; faces parallel to kept walls {'none': 32}
+  layer h = (1/8+1/4phi): 60 pts truncated icosahedron (2 edge lengths, one sphere); edges 90; plates(O) {'cross': 60, 'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 32}
+  layer h = (1/4+1/4phi): 30 pts icosidodecahedron (equal edges, one sphere); edges 60; plates(O) {'none': 60} -> not; faces parallel to kept walls {'none': 32}
+  layer h = (1/8+3/8phi): 20 pts dodecahedron (equal edges, one sphere); edges 30; plates(O) {'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 12}
+  layer h = (1/4+3/8phi): 20 pts dodecahedron (equal edges, one sphere); edges 30; plates(O) {'mirror': 30} -> possible Vacuus; faces parallel to kept walls {'none': 12}
+  shadow hull: 330 pts Goldberg GP(2,0) type (12 pentagons, 30 hexagons) (2 edge lengths, 8 radii); edges 120; plates(O) {'mirror': 60, 'none': 60} -> partly; faces parallel to kept walls {'mirror': 30, 'none': 12}
+  cells (verdict at O, verdict at own centre): {('possible Vacuus', 'possible Vacuus'): 2, ('partly', 'possible Vacuus'): 30, ('possible Vacuus', 'partly'): 64, ('partly', 'partly'): 24}
+PROGRESS 0.62 120 V
+CHECK ok   120 E: the stabiliser permutes the surviving walls
+CHECK ok   120 E: kept walls = planes of the side-on cells of the two Queens, moved to the centre (6 + 10)
+  planes: {'kind': 'mirror', 'planes': 5, 'normal_line_stabiliser': 8, 'normal_parallel_to_corners_of': [], 'normal_parallel_to_edges_of': ['5-gon h=(-1/4-3/8phi)', '5-gon h=(0+1/8phi)', '5-gon h=(0-1/8phi)', '5-gon h=(1/4+3/8phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(-1/4-5/16phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(-1/8-5/16phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(-3/16-3/16phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(-3/16-3/8phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(1/4+5/16phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(1/8+5/16phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(3/16+3/16phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(3/16+3/8phi)', 'V160 E250 F92 faces{5: 80, 8: 10, 10: 2} h=hull', 'V20 E30 F12 faces{4: 10, 10: 2} h=(-1/16-3/16phi)', 'V20 E30 F12 faces{4: 10, 10: 2} h=(-3/16-1/4phi)', 'V20 E30 F12 faces{4: 10, 10: 2} h=(1/16+3/16phi)', 'V20 E30 F12 faces{4: 10, 10: 2} h=(3/16+1/4phi)', 'V20 E30 F12 faces{4: 10, 10: 2} h=0', 'V20 E40 F22 faces{3: 10, 4: 10, 5: 2} h=(-1/8-1/4phi)', 'V20 E40 F22 faces{3: 10, 4: 10, 5: 2} h=(-1/8-1/8phi)', 'V20 E40 F22 faces{3: 10, 4: 10, 5: 2} h=(1/8+1/4phi)', 'V20 E40 F22 faces{3: 10, 4: 10, 5: 2} h=(1/8+1/8phi)', 'V20 E45 F27 faces{3: 20, 4: 5, 5: 2} h=(-3/16-5/16phi)', 'V20 E45 F27 faces{3: 20, 4: 5, 5: 2} h=(3/16+5/16phi)', 'V20 E45 F27 faces{3: 20, 4: 5, 5: 2} h=-1/16', 'V20 E45 F27 faces{3: 20, 4: 5, 5: 2} h=1/16', 'V30 E45 F17 faces{3: 10, 8: 5, 10: 2} h=(-1/16-1/16phi)', 'V30 E45 F17 faces{3: 10, 8: 5, 10: 2} h=(1/16+1/16phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(-1/16-1/8phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(-1/8-3/16phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(0+1/16phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(0-1/16phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(1/16+1/8phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(1/8+3/16phi)']}
+  planes: {'kind': 'mirror', 'planes': 1, 'normal_line_stabiliser': 40, 'normal_parallel_to_corners_of': [], 'normal_parallel_to_edges_of': ['V10 E15 F7 faces{4: 5, 5: 2} h=(-1/4-5/16phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(-1/8-5/16phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(-3/16-3/16phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(-3/16-3/8phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(1/4+5/16phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(1/8+5/16phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(3/16+3/16phi)', 'V10 E15 F7 faces{4: 5, 5: 2} h=(3/16+3/8phi)', 'V160 E250 F92 faces{5: 80, 8: 10, 10: 2} h=hull', 'V20 E30 F12 faces{4: 10, 10: 2} h=(-1/16-3/16phi)', 'V20 E30 F12 faces{4: 10, 10: 2} h=(-3/16-1/4phi)', 'V20 E30 F12 faces{4: 10, 10: 2} h=(1/16+3/16phi)', 'V20 E30 F12 faces{4: 10, 10: 2} h=(3/16+1/4phi)', 'V20 E30 F12 faces{4: 10, 10: 2} h=0', 'V20 E45 F27 faces{3: 20, 4: 5, 5: 2} h=(-3/16-5/16phi)', 'V20 E45 F27 faces{3: 20, 4: 5, 5: 2} h=(3/16+5/16phi)', 'V20 E45 F27 faces{3: 20, 4: 5, 5: 2} h=-1/16', 'V20 E45 F27 faces{3: 20, 4: 5, 5: 2} h=1/16', 'V30 E45 F17 faces{3: 10, 8: 5, 10: 2} h=(-1/16-1/16phi)', 'V30 E45 F17 faces{3: 10, 8: 5, 10: 2} h=(1/16+1/16phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(-1/16-1/8phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(-1/8-3/16phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(0+1/16phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(0-1/16phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(1/16+1/8phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(1/8+3/16phi)']}
+  planes: {'kind': 'cross', 'planes': 10, 'normal_line_stabiliser': 4, 'normal_parallel_to_corners_of': ['V160 E250 F92 faces{5: 80, 8: 10, 10: 2} h=hull', 'V20 E30 F12 faces{4: 10, 10: 2} h=0'], 'normal_parallel_to_edges_of': ['V20 E45 F27 faces{3: 20, 4: 5, 5: 2} h=(-3/16-5/16phi)', 'V20 E45 F27 faces{3: 20, 4: 5, 5: 2} h=(3/16+5/16phi)', 'V20 E45 F27 faces{3: 20, 4: 5, 5: 2} h=-1/16', 'V20 E45 F27 faces{3: 20, 4: 5, 5: 2} h=1/16', 'V30 E45 F17 faces{3: 10, 8: 5, 10: 2} h=(-1/16-1/16phi)', 'V30 E45 F17 faces{3: 10, 8: 5, 10: 2} h=(1/16+1/16phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(-1/16-1/8phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(-1/8-3/16phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(0+1/16phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(0-1/16phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(1/16+1/8phi)', 'V30 E60 F32 faces{3: 10, 4: 20, 5: 2} h=(1/8+3/16phi)']}
+SHADOW 120 pentagon-first: walls kept {'mirror': 6, 'cross': 10} (group on shadow 40); plane orbits 5 mirror (normal stab 8), 1 mirror (normal stab 40), 10 cross (normal stab 4); cells {'front': 54, 'back': 54, 'side-on': 12} in 10 orbits, 10 congruence classes (8 among front cells)  [4s]
+  layer h = (-1/4-3/8phi): 5 pts 5-gon; edges 5; plates(O) {'mirror': 5} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (-3/16-3/8phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (equal edges, one sphere); edges 15; plates(O) {'none': 10, 'mirror': 5} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 5}
+  layer h = (-1/4-5/16phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (2 edge lengths, one sphere); edges 15; plates(O) {'none': 10, 'mirror': 5} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 5}
+  layer h = (-3/16-5/16phi): 20 pts V20 E45 F27 faces{3: 20, 4: 5, 5: 2} (3 edge lengths, one sphere); edges 45; plates(O) {'none': 40, 'mirror': 5} -> partly; faces parallel to kept walls {'none': 25, 'mirror': 2}
+  layer h = (-1/8-5/16phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (equal edges, one sphere); edges 15; plates(O) {'none': 10, 'mirror': 5} -> partly; faces parallel to kept walls {'none': 5, 'mirror': 2}
+  layer h = (-3/16-1/4phi): 20 pts V20 E30 F12 faces{4: 10, 10: 2} (equal edges, one sphere); edges 30; plates(O) {'none': 30} -> not; faces parallel to kept walls {'none': 10, 'mirror': 2}
+  layer h = (-1/8-1/4phi): 20 pts V20 E40 F22 faces{3: 10, 4: 10, 5: 2} (4 edge lengths, one sphere); edges 40; plates(O) {'none': 30, 'mirror': 10} -> partly; faces parallel to kept walls {'none': 20, 'mirror': 2}
+  layer h = (-3/16-3/16phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (2 edge lengths, one sphere); edges 15; plates(O) {'none': 10, 'mirror': 5} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 5}
+  layer h = (-1/8-3/16phi): 30 pts V30 E60 F32 faces{3: 10, 4: 20, 5: 2} (4 edge lengths, one sphere); edges 60; plates(O) {'none': 60} -> not; faces parallel to kept walls {'none': 30, 'mirror': 2}
+  layer h = (-1/16-3/16phi): 20 pts V20 E30 F12 faces{4: 10, 10: 2} (2 edge lengths, one sphere); edges 30; plates(O) {'none': 30} -> not; faces parallel to kept walls {'none': 10, 'mirror': 2}
+  layer h = (-1/8-1/8phi): 20 pts V20 E40 F22 faces{3: 10, 4: 10, 5: 2} (3 edge lengths, one sphere); edges 40; plates(O) {'none': 30, 'mirror': 10} -> partly; faces parallel to kept walls {'none': 20, 'mirror': 2}
+  layer h = (-1/16-1/8phi): 30 pts V30 E60 F32 faces{3: 10, 4: 20, 5: 2} (4 edge lengths, one sphere); edges 60; plates(O) {'none': 60} -> not; faces parallel to kept walls {'none': 30, 'mirror': 2}
+  layer h = (0-1/8phi): 5 pts 5-gon; edges 5; plates(O) {'mirror': 5} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (-1/16-1/16phi): 30 pts V30 E45 F17 faces{3: 10, 8: 5, 10: 2} (3 edge lengths, one sphere); edges 45; plates(O) {'none': 40, 'mirror': 5} -> partly; faces parallel to kept walls {'none': 15, 'mirror': 2}
+  layer h = (0-1/16phi): 30 pts V30 E60 F32 faces{3: 10, 4: 20, 5: 2} (3 edge lengths, one sphere); edges 60; plates(O) {'none': 60} -> not; faces parallel to kept walls {'none': 30, 'mirror': 2}
+  layer h = -1/16: 20 pts V20 E45 F27 faces{3: 20, 4: 5, 5: 2} (3 edge lengths, one sphere); edges 45; plates(O) {'none': 40, 'mirror': 5} -> partly; faces parallel to kept walls {'none': 25, 'mirror': 2}
+  layer h = 0: 20 pts V20 E30 F12 faces{4: 10, 10: 2} (2 edge lengths, one sphere); edges 30; plates(O) {'none': 30} -> not; faces parallel to kept walls {'none': 10, 'mirror': 2}
+  layer h = 1/16: 20 pts V20 E45 F27 faces{3: 20, 4: 5, 5: 2} (3 edge lengths, one sphere); edges 45; plates(O) {'none': 40, 'mirror': 5} -> partly; faces parallel to kept walls {'none': 25, 'mirror': 2}
+  layer h = (0+1/16phi): 30 pts V30 E60 F32 faces{3: 10, 4: 20, 5: 2} (3 edge lengths, one sphere); edges 60; plates(O) {'none': 60} -> not; faces parallel to kept walls {'none': 30, 'mirror': 2}
+  layer h = (1/16+1/16phi): 30 pts V30 E45 F17 faces{3: 10, 8: 5, 10: 2} (3 edge lengths, one sphere); edges 45; plates(O) {'none': 40, 'mirror': 5} -> partly; faces parallel to kept walls {'none': 15, 'mirror': 2}
+  layer h = (0+1/8phi): 5 pts 5-gon; edges 5; plates(O) {'mirror': 5} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (1/16+1/8phi): 30 pts V30 E60 F32 faces{3: 10, 4: 20, 5: 2} (4 edge lengths, one sphere); edges 60; plates(O) {'none': 60} -> not; faces parallel to kept walls {'none': 30, 'mirror': 2}
+  layer h = (1/8+1/8phi): 20 pts V20 E40 F22 faces{3: 10, 4: 10, 5: 2} (3 edge lengths, one sphere); edges 40; plates(O) {'none': 30, 'mirror': 10} -> partly; faces parallel to kept walls {'none': 20, 'mirror': 2}
+  layer h = (1/16+3/16phi): 20 pts V20 E30 F12 faces{4: 10, 10: 2} (2 edge lengths, one sphere); edges 30; plates(O) {'none': 30} -> not; faces parallel to kept walls {'none': 10, 'mirror': 2}
+  layer h = (1/8+3/16phi): 30 pts V30 E60 F32 faces{3: 10, 4: 20, 5: 2} (4 edge lengths, one sphere); edges 60; plates(O) {'none': 60} -> not; faces parallel to kept walls {'none': 30, 'mirror': 2}
+  layer h = (3/16+3/16phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (2 edge lengths, one sphere); edges 15; plates(O) {'none': 10, 'mirror': 5} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 5}
+  layer h = (1/8+1/4phi): 20 pts V20 E40 F22 faces{3: 10, 4: 10, 5: 2} (4 edge lengths, one sphere); edges 40; plates(O) {'none': 30, 'mirror': 10} -> partly; faces parallel to kept walls {'none': 20, 'mirror': 2}
+  layer h = (3/16+1/4phi): 20 pts V20 E30 F12 faces{4: 10, 10: 2} (equal edges, one sphere); edges 30; plates(O) {'none': 30} -> not; faces parallel to kept walls {'none': 10, 'mirror': 2}
+  layer h = (1/8+5/16phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (equal edges, one sphere); edges 15; plates(O) {'none': 10, 'mirror': 5} -> partly; faces parallel to kept walls {'none': 5, 'mirror': 2}
+  layer h = (3/16+5/16phi): 20 pts V20 E45 F27 faces{3: 20, 4: 5, 5: 2} (3 edge lengths, one sphere); edges 45; plates(O) {'none': 40, 'mirror': 5} -> partly; faces parallel to kept walls {'none': 25, 'mirror': 2}
+  layer h = (1/4+5/16phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (2 edge lengths, one sphere); edges 15; plates(O) {'none': 10, 'mirror': 5} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 5}
+  layer h = (3/16+3/8phi): 10 pts V10 E15 F7 faces{4: 5, 5: 2} (equal edges, one sphere); edges 15; plates(O) {'none': 10, 'mirror': 5} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 5}
+  layer h = (1/4+3/8phi): 5 pts 5-gon; edges 5; plates(O) {'mirror': 5} -> possible Vacuus; faces parallel to kept walls None
+  shadow hull: 560 pts V160 E250 F92 faces{5: 80, 8: 10, 10: 2} (8 edge lengths, 17 radii); edges 250; plates(O) {'mirror': 30, 'none': 220} -> partly; faces parallel to kept walls {'none': 80, 'mirror': 12}
+  cells (verdict at O, verdict at own centre): {('partly', 'partly'): 108, ('partly', 'possible Vacuus'): 12}
+PROGRESS 0.75 120 E
+CHECK ok   120 F: the stabiliser permutes the surviving walls
+../../studies/2026-11-15-echo-shapes/scripts/echo_lib.py:186: RuntimeWarning: invalid value encountered in divide
+  c = P[idx].mean(0); u = P[idx[0]] - c; u /= np.linalg.norm(u); v = np.cross(n, u)
+CHECK ok   120 F: kept walls = planes of the side-on cells of the two Queens, moved to the centre (4 + 12)
+  planes: {'kind': 'mirror', 'planes': 3, 'normal_line_stabiliser': 8, 'normal_parallel_to_corners_of': [], 'normal_parallel_to_edges_of': ['3-gon h=(-1/4-1/3phi)', '3-gon h=(1/4+1/3phi)', '6-gon h=(-1/6-1/3phi)', '6-gon h=(1/6+1/3phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(-1/6-5/24phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(-5/24-1/3phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(-5/24-7/24phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(1/6+5/24phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(5/24+1/3phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(5/24+7/24phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=-1/24', 'V12 E18 F8 faces{4: 6, 6: 2} h=1/24', 'V12 E21 F11 faces{3: 2, 4: 9} h=(-1/12-1/12phi)', 'V12 E21 F11 faces{3: 2, 4: 9} h=(1/12+1/12phi)', 'V14 E30 F18 faces{3: 12, 4: 6} h=(-1/8-1/4phi)', 'V14 E30 F18 faces{3: 12, 4: 6} h=(1/8+1/4phi)', 'V15 E24 F11 faces{3: 6, 6: 5} h=(-1/12-1/6phi)', 'V15 E24 F11 faces{3: 6, 6: 5} h=(1/12+1/6phi)', 'V18 E27 F11 faces{3: 6, 6: 2, 8: 3} h=(-1/24-1/12phi)', 'V18 E27 F11 faces{3: 6, 6: 2, 8: 3} h=(-1/6-7/24phi)', 'V18 E27 F11 faces{3: 6, 6: 2, 8: 3} h=(1/24+1/12phi)', 'V18 E27 F11 faces{3: 6, 6: 2, 8: 3} h=(1/6+7/24phi)', 'V18 E27 F11 faces{4: 9, 9: 2} h=(-1/8-5/24phi)', 'V18 E27 F11 faces{4: 9, 9: 2} h=(0+1/24phi)', 'V18 E27 F11 faces{4: 9, 9: 2} h=(0-1/24phi)', 'V18 E27 F11 faces{4: 9, 9: 2} h=(1/8+5/24phi)', 'V18 E36 F20 faces{3: 8, 4: 12} h=(-1/24-1/8phi)', 'V18 E36 F20 faces{3: 8, 4: 12} h=(1/24+1/8phi)', 'V180 E282 F104 faces{5: 96, 10: 6, 12: 2} h=hull', 'V24 E36 F14 faces{4: 9, 6: 2, 8: 3} h=(-1/12-1/8phi)', 'V24 E36 F14 faces{4: 9, 6: 2, 8: 3} h=(1/12+1/8phi)', 'V24 E42 F20 faces{4: 18, 6: 2} h=(-1/24-1/24phi)', 'V24 E42 F20 faces{4: 18, 6: 2} h=(1/24+1/24phi)', 'V24 E48 F26 faces{3: 12, 4: 12, 6: 2} h=0', 'V24 E57 F35 faces{3: 26, 4: 9} h=(-1/8-1/6phi)', 'V24 E57 F35 faces{3: 26, 4: 9} h=(1/8+1/6phi)', 'cuboctahedron h=(-1/6-1/4phi)', 'cuboctahedron h=(1/6+1/4phi)', 'triangular prism h=(-1/12-5/24phi)', 'triangular prism h=(-5/24-3/8phi)', 'triangular prism h=(1/12+5/24phi)', 'triangular prism h=(5/24+3/8phi)']}
+  planes: {'kind': 'mirror', 'planes': 1, 'normal_line_stabiliser': 24, 'normal_parallel_to_corners_of': ['V14 E30 F18 faces{3: 12, 4: 6} h=(-1/8-1/4phi)', 'V14 E30 F18 faces{3: 12, 4: 6} h=(1/8+1/4phi)', 'V180 E282 F104 faces{5: 96, 10: 6, 12: 2} h=hull', 'segment h=(-1/4-3/8phi)', 'segment h=(-1/8-1/8phi)', 'segment h=(1/4+3/8phi)', 'segment h=(1/8+1/8phi)'], 'normal_parallel_to_edges_of': ['V12 E18 F8 faces{4: 6, 6: 2} h=(-1/6-5/24phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(-5/24-1/3phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(-5/24-7/24phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(1/6+5/24phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(5/24+1/3phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=(5/24+7/24phi)', 'V12 E18 F8 faces{4: 6, 6: 2} h=-1/24', 'V12 E18 F8 faces{4: 6, 6: 2} h=1/24', 'V14 E30 F18 faces{3: 12, 4: 6} h=(-1/8-1/4phi)', 'V14 E30 F18 faces{3: 12, 4: 6} h=(1/8+1/4phi)', 'V18 E27 F11 faces{3: 6, 6: 2, 8: 3} h=(-1/24-1/12phi)', 'V18 E27 F11 faces{3: 6, 6: 2, 8: 3} h=(-1/6-7/24phi)', 'V18 E27 F11 faces{3: 6, 6: 2, 8: 3} h=(1/24+1/12phi)', 'V18 E27 F11 faces{3: 6, 6: 2, 8: 3} h=(1/6+7/24phi)', 'V18 E27 F11 faces{4: 9, 9: 2} h=(-1/8-5/24phi)', 'V18 E27 F11 faces{4: 9, 9: 2} h=(0+1/24phi)', 'V18 E27 F11 faces{4: 9, 9: 2} h=(0-1/24phi)', 'V18 E27 F11 faces{4: 9, 9: 2} h=(1/8+5/24phi)', 'V18 E36 F20 faces{3: 8, 4: 12} h=(-1/24-1/8phi)', 'V18 E36 F20 faces{3: 8, 4: 12} h=(1/24+1/8phi)', 'V24 E36 F14 faces{4: 9, 6: 2, 8: 3} h=(-1/12-1/8phi)', 'V24 E36 F14 faces{4: 9, 6: 2, 8: 3} h=(1/12+1/8phi)', 'V24 E42 F20 faces{4: 18, 6: 2} h=(-1/24-1/24phi)', 'V24 E42 F20 faces{4: 18, 6: 2} h=(1/24+1/24phi)', 'V24 E57 F35 faces{3: 26, 4: 9} h=(-1/8-1/6phi)', 'V24 E57 F35 faces{3: 26, 4: 9} h=(1/8+1/6phi)', 'segment h=(-1/4-3/8phi)', 'segment h=(-1/8-1/8phi)', 'segment h=(1/4+3/8phi)', 'segment h=(1/8+1/8phi)', 'triangular prism h=(-1/12-5/24phi)', 'triangular prism h=(-5/24-3/8phi)', 'triangular prism h=(1/12+5/24phi)', 'triangular prism h=(5/24+3/8phi)']}
+  planes: {'kind': 'cross', 'planes': 6, 'normal_line_stabiliser': 4, 'normal_parallel_to_corners_of': ['V180 E282 F104 faces{5: 96, 10: 6, 12: 2} h=hull', 'V24 E48 F26 faces{3: 12, 4: 12, 6: 2} h=0'], 'normal_parallel_to_edges_of': ['V18 E27 F11 faces{4: 9, 9: 2} h=(-1/8-5/24phi)', 'V18 E27 F11 faces{4: 9, 9: 2} h=(0+1/24phi)', 'V18 E27 F11 faces{4: 9, 9: 2} h=(0-1/24phi)', 'V18 E27 F11 faces{4: 9, 9: 2} h=(1/8+5/24phi)', 'V24 E57 F35 faces{3: 26, 4: 9} h=(-1/8-1/6phi)', 'V24 E57 F35 faces{3: 26, 4: 9} h=(1/8+1/6phi)']}
+  planes: {'kind': 'cross', 'planes': 6, 'normal_line_stabiliser': 4, 'normal_parallel_to_corners_of': ['V180 E282 F104 faces{5: 96, 10: 6, 12: 2} h=hull', 'V24 E48 F26 faces{3: 12, 4: 12, 6: 2} h=0'], 'normal_parallel_to_edges_of': ['V12 E21 F11 faces{3: 2, 4: 9} h=(-1/12-1/12phi)', 'V12 E21 F11 faces{3: 2, 4: 9} h=(1/12+1/12phi)', 'V18 E27 F11 faces{3: 6, 6: 2, 8: 3} h=(-1/24-1/12phi)', 'V18 E27 F11 faces{3: 6, 6: 2, 8: 3} h=(-1/6-7/24phi)', 'V18 E27 F11 faces{3: 6, 6: 2, 8: 3} h=(1/24+1/12phi)', 'V18 E27 F11 faces{3: 6, 6: 2, 8: 3} h=(1/6+7/24phi)', 'V18 E36 F20 faces{3: 8, 4: 12} h=(-1/24-1/8phi)', 'V18 E36 F20 faces{3: 8, 4: 12} h=(1/24+1/8phi)', 'V24 E36 F14 faces{4: 9, 6: 2, 8: 3} h=(-1/12-1/8phi)', 'V24 E36 F14 faces{4: 9, 6: 2, 8: 3} h=(1/12+1/8phi)', 'V24 E57 F35 faces{3: 26, 4: 9} h=(-1/8-1/6phi)', 'V24 E57 F35 faces{3: 26, 4: 9} h=(1/8+1/6phi)']}
+SHADOW 120 edge-first: walls kept {'mirror': 4, 'cross': 12} (group on shadow 24); plane orbits 3 mirror (normal stab 8), 1 mirror (normal stab 24), 6 cross (normal stab 4), 6 cross (normal stab 4); cells {'front': 56, 'back': 56, 'side-on': 8} in 12 orbits, 12 congruence classes (10 among front cells)  [4s]
+  layer h = (-1/4-3/8phi): 2 pts segment; edges 1; plates(O) {'undefined': 1} -> no plates; faces parallel to kept walls None
+  layer h = (-5/24-3/8phi): 6 pts triangular prism (equal edges, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = (-1/4-1/3phi): 3 pts 3-gon; edges 3; plates(O) {'mirror': 3} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (-5/24-1/3phi): 12 pts V12 E18 F8 faces{4: 6, 6: 2} (3 edge lengths, one sphere); edges 18; plates(O) {'none': 12, 'cross': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 6}
+  layer h = (-1/6-1/3phi): 6 pts 6-gon; edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (-5/24-7/24phi): 12 pts V12 E18 F8 faces{4: 6, 6: 2} (2 edge lengths, one sphere); edges 18; plates(O) {'cross': 6, 'none': 12} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 6}
+  layer h = (-1/6-7/24phi): 18 pts V18 E27 F11 faces{3: 6, 6: 2, 8: 3} (3 edge lengths, one sphere); edges 27; plates(O) {'mirror': 3, 'none': 24} -> partly; faces parallel to kept walls {'none': 9, 'mirror': 2}
+  layer h = (-1/6-1/4phi): 12 pts cuboctahedron (4 edge lengths, one sphere); edges 24; plates(O) {'mirror': 6, 'none': 18} -> partly; faces parallel to kept walls {'none': 12, 'mirror': 2}
+  layer h = (-1/8-1/4phi): 14 pts V14 E30 F18 faces{3: 12, 4: 6} (2 edge lengths, one sphere); edges 30; plates(O) {'none': 30} -> not; faces parallel to kept walls {'none': 18}
+  layer h = (-1/6-5/24phi): 12 pts V12 E18 F8 faces{4: 6, 6: 2} (3 edge lengths, one sphere); edges 18; plates(O) {'cross': 6, 'none': 12} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 6}
+  layer h = (-1/8-5/24phi): 18 pts V18 E27 F11 faces{4: 9, 9: 2} (2 edge lengths, one sphere); edges 27; plates(O) {'none': 24, 'mirror': 3} -> partly; faces parallel to kept walls {'none': 9, 'mirror': 2}
+  layer h = (-1/12-5/24phi): 6 pts triangular prism (equal edges, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = (-1/8-1/6phi): 24 pts V24 E57 F35 faces{3: 26, 4: 9} (4 edge lengths, one sphere); edges 57; plates(O) {'mirror': 3, 'none': 54} -> partly; faces parallel to kept walls {'none': 33, 'mirror': 2}
+  layer h = (-1/12-1/6phi): 15 pts V15 E24 F11 faces{3: 6, 6: 5} (3 edge lengths, one sphere); edges 24; plates(O) {'none': 24} -> not; faces parallel to kept walls {'none': 9, 'mirror': 2}
+  layer h = (-1/8-1/8phi): 2 pts segment; edges 1; plates(O) {'undefined': 1} -> no plates; faces parallel to kept walls None
+  layer h = (-1/12-1/8phi): 24 pts V24 E36 F14 faces{4: 9, 6: 2, 8: 3} (4 edge lengths, one sphere); edges 36; plates(O) {'cross': 6, 'none': 30} -> partly; faces parallel to kept walls {'none': 12, 'mirror': 2}
+  layer h = (-1/24-1/8phi): 18 pts V18 E36 F20 faces{3: 8, 4: 12} (4 edge lengths, one sphere); edges 36; plates(O) {'cross': 6, 'none': 30} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 18}
+  layer h = (-1/12-1/12phi): 12 pts V12 E21 F11 faces{3: 2, 4: 9} (3 edge lengths, one sphere); edges 21; plates(O) {'none': 18, 'mirror': 3} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 9}
+  layer h = (-1/24-1/12phi): 18 pts V18 E27 F11 faces{3: 6, 6: 2, 8: 3} (3 edge lengths, one sphere); edges 27; plates(O) {'mirror': 3, 'none': 24} -> partly; faces parallel to kept walls {'none': 9, 'mirror': 2}
+  layer h = (-1/24-1/24phi): 24 pts V24 E42 F20 faces{4: 18, 6: 2} (4 edge lengths, one sphere); edges 42; plates(O) {'none': 42} -> not; faces parallel to kept walls {'none': 18, 'mirror': 2}
+  layer h = (0-1/24phi): 18 pts V18 E27 F11 faces{4: 9, 9: 2} (3 edge lengths, one sphere); edges 27; plates(O) {'none': 24, 'mirror': 3} -> partly; faces parallel to kept walls {'none': 9, 'mirror': 2}
+  layer h = -1/24: 12 pts V12 E18 F8 faces{4: 6, 6: 2} (2 edge lengths, one sphere); edges 18; plates(O) {'cross': 6, 'none': 12} -> partly; faces parallel to kept walls {'none': 6, 'mirror': 2}
+  layer h = 0: 24 pts V24 E48 F26 faces{3: 12, 4: 12, 6: 2} (4 edge lengths, one sphere); edges 48; plates(O) {'mirror': 12, 'none': 36} -> partly; faces parallel to kept walls {'none': 24, 'mirror': 2}
+  layer h = 1/24: 12 pts V12 E18 F8 faces{4: 6, 6: 2} (2 edge lengths, one sphere); edges 18; plates(O) {'cross': 6, 'none': 12} -> partly; faces parallel to kept walls {'none': 6, 'mirror': 2}
+  layer h = (0+1/24phi): 18 pts V18 E27 F11 faces{4: 9, 9: 2} (3 edge lengths, one sphere); edges 27; plates(O) {'none': 24, 'mirror': 3} -> partly; faces parallel to kept walls {'none': 9, 'mirror': 2}
+  layer h = (1/24+1/24phi): 24 pts V24 E42 F20 faces{4: 18, 6: 2} (4 edge lengths, one sphere); edges 42; plates(O) {'none': 42} -> not; faces parallel to kept walls {'none': 18, 'mirror': 2}
+  layer h = (1/24+1/12phi): 18 pts V18 E27 F11 faces{3: 6, 6: 2, 8: 3} (3 edge lengths, one sphere); edges 27; plates(O) {'mirror': 3, 'none': 24} -> partly; faces parallel to kept walls {'none': 9, 'mirror': 2}
+  layer h = (1/12+1/12phi): 12 pts V12 E21 F11 faces{3: 2, 4: 9} (3 edge lengths, one sphere); edges 21; plates(O) {'none': 18, 'mirror': 3} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 9}
+  layer h = (1/24+1/8phi): 18 pts V18 E36 F20 faces{3: 8, 4: 12} (4 edge lengths, one sphere); edges 36; plates(O) {'cross': 6, 'none': 30} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 18}
+  layer h = (1/12+1/8phi): 24 pts V24 E36 F14 faces{4: 9, 6: 2, 8: 3} (4 edge lengths, one sphere); edges 36; plates(O) {'cross': 6, 'none': 30} -> partly; faces parallel to kept walls {'none': 12, 'mirror': 2}
+  layer h = (1/8+1/8phi): 2 pts segment; edges 1; plates(O) {'undefined': 1} -> no plates; faces parallel to kept walls None
+  layer h = (1/12+1/6phi): 15 pts V15 E24 F11 faces{3: 6, 6: 5} (3 edge lengths, one sphere); edges 24; plates(O) {'none': 24} -> not; faces parallel to kept walls {'none': 9, 'mirror': 2}
+  layer h = (1/8+1/6phi): 24 pts V24 E57 F35 faces{3: 26, 4: 9} (4 edge lengths, one sphere); edges 57; plates(O) {'mirror': 3, 'none': 54} -> partly; faces parallel to kept walls {'none': 33, 'mirror': 2}
+  layer h = (1/12+5/24phi): 6 pts triangular prism (equal edges, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = (1/8+5/24phi): 18 pts V18 E27 F11 faces{4: 9, 9: 2} (2 edge lengths, one sphere); edges 27; plates(O) {'none': 24, 'mirror': 3} -> partly; faces parallel to kept walls {'none': 9, 'mirror': 2}
+  layer h = (1/6+5/24phi): 12 pts V12 E18 F8 faces{4: 6, 6: 2} (3 edge lengths, one sphere); edges 18; plates(O) {'none': 12, 'cross': 6} -> partly; faces parallel to kept walls {'none': 6, 'mirror': 2}
+  layer h = (1/8+1/4phi): 14 pts V14 E30 F18 faces{3: 12, 4: 6} (2 edge lengths, one sphere); edges 30; plates(O) {'none': 30} -> not; faces parallel to kept walls {'none': 18}
+  layer h = (1/6+1/4phi): 12 pts cuboctahedron (4 edge lengths, one sphere); edges 24; plates(O) {'mirror': 6, 'none': 18} -> partly; faces parallel to kept walls {'none': 12, 'mirror': 2}
+  layer h = (1/6+7/24phi): 18 pts V18 E27 F11 faces{3: 6, 6: 2, 8: 3} (3 edge lengths, one sphere); edges 27; plates(O) {'mirror': 3, 'none': 24} -> partly; faces parallel to kept walls {'none': 9, 'mirror': 2}
+  layer h = (5/24+7/24phi): 12 pts V12 E18 F8 faces{4: 6, 6: 2} (2 edge lengths, one sphere); edges 18; plates(O) {'cross': 6, 'none': 12} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 6}
+  layer h = (1/6+1/3phi): 6 pts 6-gon; edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (5/24+1/3phi): 12 pts V12 E18 F8 faces{4: 6, 6: 2} (3 edge lengths, one sphere); edges 18; plates(O) {'none': 12, 'cross': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 6}
+  layer h = (1/4+1/3phi): 3 pts 3-gon; edges 3; plates(O) {'mirror': 3} -> possible Vacuus; faces parallel to kept walls None
+  layer h = (5/24+3/8phi): 6 pts triangular prism (equal edges, one sphere); edges 9; plates(O) {'mirror': 3, 'none': 6} -> partly; faces parallel to kept walls {'mirror': 2, 'none': 3}
+  layer h = (1/4+3/8phi): 2 pts segment; edges 1; plates(O) {'undefined': 1} -> no plates; faces parallel to kept walls None
+  shadow hull: 582 pts V180 E282 F104 faces{5: 96, 10: 6, 12: 2} (10 edge lengths, 23 radii); edges 282; plates(O) {'mirror': 30, 'none': 204, 'cross': 48} -> partly; faces parallel to kept walls {'none': 96, 'mirror': 8}
+  cells (verdict at O, verdict at own centre): {('partly', 'partly'): 112, ('partly', 'possible Vacuus'): 8}
+PROGRESS 0.88 120 F
+CHECK ok   120 C: the stabiliser permutes the surviving walls
+CHECK ok   120 C: kept walls = planes of the side-on cells of the two Queens, moved to the centre (6 + 27)
+  planes: {'kind': 'mirror', 'planes': 6, 'normal_line_stabiliser': 8, 'normal_parallel_to_corners_of': [], 'normal_parallel_to_edges_of': ['V158 E240 F84 faces{5: 72, 10: 12} h=hull', 'V24 E42 F20 faces{3: 16, 9: 4} h=(-1/32-1/16phi)', 'V24 E42 F20 faces{3: 16, 9: 4} h=(1/32+1/16phi)', 'V24 E54 F32 faces{3: 20, 4: 12} h=(-1/8-7/32phi)', 'V24 E54 F32 faces{3: 20, 4: 12} h=(-3/32-5/32phi)', 'V24 E54 F32 faces{3: 20, 4: 12} h=(1/8+7/32phi)', 'V24 E54 F32 faces{3: 20, 4: 12} h=(3/32+5/32phi)', 'V28 E60 F34 faces{3: 24, 4: 6, 6: 4} h=(-1/16-3/32phi)', 'V28 E60 F34 faces{3: 24, 4: 6, 6: 4} h=(1/16+3/32phi)', 'V32 E84 F54 faces{3: 48, 4: 6} h=(-1/8-3/16phi)', 'V32 E84 F54 faces{3: 48, 4: 6} h=(1/8+3/16phi)', 'V54 E120 F68 faces{3: 48, 4: 12, 6: 8} h=0', 'cuboctahedron h=(-3/32-1/8phi)', 'cuboctahedron h=(3/32+1/8phi)', 'tetrahedron h=(-5/32-9/32phi)', 'tetrahedron h=(-7/32-3/8phi)', 'tetrahedron h=(5/32+9/32phi)', 'tetrahedron h=(7/32+3/8phi)', 'truncated octahedron h=(-1/16-1/8phi)', 'truncated octahedron h=(-1/32-1/32phi)', 'truncated octahedron h=(-3/16-5/16phi)', 'truncated octahedron h=(-5/32-1/4phi)', 'truncated octahedron h=(1/16+1/8phi)', 'truncated octahedron h=(1/32+1/32phi)', 'truncated octahedron h=(3/16+5/16phi)', 'truncated octahedron h=(5/32+1/4phi)', 'truncated tetrahedron h=(-3/16-9/32phi)', 'truncated tetrahedron h=(-7/32-11/32phi)', 'truncated tetrahedron h=(3/16+9/32phi)', 'truncated tetrahedron h=(7/32+11/32phi)']}
+  planes: {'kind': 'cross', 'planes': 24, 'normal_line_stabiliser': 2, 'normal_parallel_to_corners_of': ['V158 E240 F84 faces{5: 72, 10: 12} h=hull', 'V54 E120 F68 faces{3: 48, 4: 12, 6: 8} h=0'], 'normal_parallel_to_edges_of': ['V24 E42 F20 faces{3: 16, 9: 4} h=(-1/32-1/16phi)', 'V24 E42 F20 faces{3: 16, 9: 4} h=(1/32+1/16phi)', 'V24 E54 F32 faces{3: 20, 4: 12} h=(-1/8-7/32phi)', 'V24 E54 F32 faces{3: 20, 4: 12} h=(-3/32-5/32phi)', 'V24 E54 F32 faces{3: 20, 4: 12} h=(1/8+7/32phi)', 'V24 E54 F32 faces{3: 20, 4: 12} h=(3/32+5/32phi)', 'V32 E84 F54 faces{3: 48, 4: 6} h=(-1/8-3/16phi)', 'V32 E84 F54 faces{3: 48, 4: 6} h=(1/8+3/16phi)', 'V54 E120 F68 faces{3: 48, 4: 12, 6: 8} h=0']}
+  planes: {'kind': 'cross', 'planes': 3, 'normal_line_stabiliser': 16, 'normal_parallel_to_corners_of': ['V158 E240 F84 faces{5: 72, 10: 12} h=hull', 'V54 E120 F68 faces{3: 48, 4: 12, 6: 8} h=0'], 'normal_parallel_to_edges_of': ['V158 E240 F84 faces{5: 72, 10: 12} h=hull', 'V54 E120 F68 faces{3: 48, 4: 12, 6: 8} h=0']}
+SHADOW 120 corner-first: walls kept {'mirror': 6, 'cross': 27} (group on shadow 48); plane orbits 6 mirror (normal stab 8), 24 cross (normal stab 2), 3 cross (normal stab 16); cells {'front': 54, 'back': 54, 'side-on': 12} in 8 orbits, 8 congruence classes (7 among front cells)  [6s]
+  layer h = (-1/4-3/8phi): 1 pts point; edges 0; plates(O) {} -> no plates; faces parallel to kept walls None
+  layer h = (-7/32-3/8phi): 4 pts tetrahedron (equal edges, one sphere); edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls {'none': 4}
+  layer h = (-7/32-11/32phi): 12 pts truncated tetrahedron (2 edge lengths, one sphere); edges 18; plates(O) {'mirror': 6, 'none': 12} -> partly; faces parallel to kept walls {'none': 8}
+  layer h = (-3/16-5/16phi): 24 pts truncated octahedron (2 edge lengths, one sphere); edges 36; plates(O) {'cross': 12, 'none': 24} -> partly; faces parallel to kept walls {'none': 8, 'cross': 6}
+  layer h = (-3/16-9/32phi): 12 pts truncated tetrahedron (2 edge lengths, one sphere); edges 18; plates(O) {'none': 12, 'mirror': 6} -> partly; faces parallel to kept walls {'none': 8}
+  layer h = (-5/32-9/32phi): 4 pts tetrahedron (equal edges, one sphere); edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls {'none': 4}
+  layer h = (-5/32-1/4phi): 24 pts truncated octahedron (3 edge lengths, one sphere); edges 36; plates(O) {'none': 36} -> not; faces parallel to kept walls {'none': 8, 'cross': 6}
+  layer h = (-1/8-7/32phi): 24 pts V24 E54 F32 faces{3: 20, 4: 12} (3 edge lengths, one sphere); edges 54; plates(O) {'none': 48, 'mirror': 6} -> partly; faces parallel to kept walls {'none': 32}
+  layer h = (-1/8-3/16phi): 32 pts V32 E84 F54 faces{3: 48, 4: 6} (3 edge lengths, one sphere); edges 84; plates(O) {'none': 24, 'cross': 60} -> partly; faces parallel to kept walls {'none': 48, 'cross': 6}
+  layer h = (-3/32-5/32phi): 24 pts V24 E54 F32 faces{3: 20, 4: 12} (4 edge lengths, one sphere); edges 54; plates(O) {'none': 48, 'mirror': 6} -> partly; faces parallel to kept walls {'none': 32}
+  layer h = (-3/32-1/8phi): 12 pts cuboctahedron (2 edge lengths, one sphere); edges 24; plates(O) {'none': 24} -> not; faces parallel to kept walls {'none': 8, 'cross': 6}
+  layer h = (-1/16-1/8phi): 24 pts truncated octahedron (2 edge lengths, one sphere); edges 36; plates(O) {'none': 24, 'cross': 12} -> partly; faces parallel to kept walls {'none': 8, 'cross': 6}
+  layer h = (-1/16-3/32phi): 28 pts V28 E60 F34 faces{3: 24, 4: 6, 6: 4} (4 edge lengths, one sphere); edges 60; plates(O) {'none': 60} -> not; faces parallel to kept walls {'none': 28, 'cross': 6}
+  layer h = (-1/32-1/16phi): 24 pts V24 E42 F20 faces{3: 16, 9: 4} (2 edge lengths, one sphere); edges 42; plates(O) {'none': 36, 'mirror': 6} -> partly; faces parallel to kept walls {'none': 20}
+  layer h = (-1/32-1/32phi): 24 pts truncated octahedron (2 edge lengths, one sphere); edges 36; plates(O) {'none': 36} -> not; faces parallel to kept walls {'cross': 6, 'none': 8}
+  layer h = 0: 54 pts V54 E120 F68 faces{3: 48, 4: 12, 6: 8} (3 edge lengths, one sphere); edges 120; plates(O) {'none': 120} -> not; faces parallel to kept walls {'none': 56, 'mirror': 12}
+  layer h = (1/32+1/32phi): 24 pts truncated octahedron (2 edge lengths, one sphere); edges 36; plates(O) {'none': 36} -> not; faces parallel to kept walls {'cross': 6, 'none': 8}
+  layer h = (1/32+1/16phi): 24 pts V24 E42 F20 faces{3: 16, 9: 4} (2 edge lengths, one sphere); edges 42; plates(O) {'none': 36, 'mirror': 6} -> partly; faces parallel to kept walls {'none': 20}
+  layer h = (1/16+3/32phi): 28 pts V28 E60 F34 faces{3: 24, 4: 6, 6: 4} (4 edge lengths, one sphere); edges 60; plates(O) {'none': 60} -> not; faces parallel to kept walls {'none': 28, 'cross': 6}
+  layer h = (1/16+1/8phi): 24 pts truncated octahedron (2 edge lengths, one sphere); edges 36; plates(O) {'none': 24, 'cross': 12} -> partly; faces parallel to kept walls {'none': 8, 'cross': 6}
+  layer h = (3/32+1/8phi): 12 pts cuboctahedron (2 edge lengths, one sphere); edges 24; plates(O) {'none': 24} -> not; faces parallel to kept walls {'none': 8, 'cross': 6}
+  layer h = (3/32+5/32phi): 24 pts V24 E54 F32 faces{3: 20, 4: 12} (4 edge lengths, one sphere); edges 54; plates(O) {'none': 48, 'mirror': 6} -> partly; faces parallel to kept walls {'none': 32}
+  layer h = (1/8+3/16phi): 32 pts V32 E84 F54 faces{3: 48, 4: 6} (3 edge lengths, one sphere); edges 84; plates(O) {'cross': 60, 'none': 24} -> partly; faces parallel to kept walls {'none': 48, 'cross': 6}
+  layer h = (1/8+7/32phi): 24 pts V24 E54 F32 faces{3: 20, 4: 12} (3 edge lengths, one sphere); edges 54; plates(O) {'none': 48, 'mirror': 6} -> partly; faces parallel to kept walls {'none': 32}
+  layer h = (5/32+1/4phi): 24 pts truncated octahedron (3 edge lengths, one sphere); edges 36; plates(O) {'none': 36} -> not; faces parallel to kept walls {'none': 8, 'cross': 6}
+  layer h = (5/32+9/32phi): 4 pts tetrahedron (equal edges, one sphere); edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls {'none': 4}
+  layer h = (3/16+9/32phi): 12 pts truncated tetrahedron (2 edge lengths, one sphere); edges 18; plates(O) {'none': 12, 'mirror': 6} -> partly; faces parallel to kept walls {'none': 8}
+  layer h = (3/16+5/16phi): 24 pts truncated octahedron (2 edge lengths, one sphere); edges 36; plates(O) {'cross': 12, 'none': 24} -> partly; faces parallel to kept walls {'none': 8, 'cross': 6}
+  layer h = (7/32+11/32phi): 12 pts truncated tetrahedron (2 edge lengths, one sphere); edges 18; plates(O) {'mirror': 6, 'none': 12} -> partly; faces parallel to kept walls {'none': 8}
+  layer h = (7/32+3/8phi): 4 pts tetrahedron (equal edges, one sphere); edges 6; plates(O) {'mirror': 6} -> possible Vacuus; faces parallel to kept walls {'none': 4}
+  layer h = (1/4+3/8phi): 1 pts point; edges 0; plates(O) {} -> no plates; faces parallel to kept walls None
+  shadow hull: 519 pts V158 E240 F84 faces{5: 72, 10: 12} (5 edge lengths, 16 radii); edges 240; plates(O) {'none': 144, 'cross': 48, 'mirror': 48} -> partly; faces parallel to kept walls {'none': 72, 'mirror': 12}
+  cells (verdict at O, verdict at own centre): {('possible Vacuus', 'partly'): 8, ('partly', 'partly'): 100, ('partly', 'possible Vacuus'): 12}
+PROGRESS 1.00 120 C
+CHECK ok   600 V: hull faces 80 = #63 80
+CHECK ok   600 V: front/side-on {'front': 270, 'back': 270, 'side-on': 60} = #63 270/60
+INFO 600 V: front-cell congruence classes 7 (#63 kinds of front piece: 7)
+CHECK ok   600 E: hull faces 80 = #63 80
+CHECK ok   600 E: front/side-on {'front': 290, 'back': 290, 'side-on': 20} = #63 290/20
+INFO 600 E: front-cell congruence classes 22 (#63 kinds of front piece: 22)
+CHECK ok   600 F: hull faces 96 = #63 96
+CHECK ok   600 F: front/side-on {'front': 288, 'back': 288, 'side-on': 24} = #63 288/24
+INFO 600 F: front-cell congruence classes 33 (#63 kinds of front piece: 33)
+CHECK ok   600 C: hull faces 78 = #63 78
+CHECK ok   600 C: front/side-on {'front': 273, 'back': 273, 'side-on': 54} = #63 273/54
+INFO 600 C: front-cell congruence classes 20 (#63 kinds of front piece: 20)
+CHECK ok   120 C: hull edges/faces 240/84 = Red Queen 240/84
+CHECK ok   120 C: front/side-on {'front': 54, 'back': 54, 'side-on': 12} = Red Queen 54/12
+CHECK ok   120 F: hull edges/faces 282/104 = Red Queen 282/104
+CHECK ok   120 F: front/side-on {'front': 56, 'back': 56, 'side-on': 8} = Red Queen 56/8
+CHECK ok   120 E: hull edges/faces 250/92 = Red Queen 250/92
+CHECK ok   120 E: front/side-on {'front': 54, 'back': 54, 'side-on': 12} = Red Queen 54/12
+CHECK ok   120 V: hull edges/faces 120/42 = Red Queen 120/42
+CHECK ok   120 V: front/side-on {'front': 45, 'back': 45, 'side-on': 30} = Red Queen 45/30
+CHECK ok   every shadow of one type keeps the same number of walls: {'V': Counter({45: 60}), 'E': Counter({16: 360}), 'F': Counter({16: 600}), 'C': Counter({33: 300})}
+LATTICE each wall contains (V, E, F, C) shadow lines: {'mirror': {(15, 36, 40, 30): 60}, 'cross': {(6, 12, 24, 27): 300}}
+LATTICE walls reached by the shadows of each type: {'V': {'mirror': 60, 'cross': 300}, 'E': {'mirror': 60, 'cross': 300}, 'F': {'mirror': 60, 'cross': 300}, 'C': {'mirror': 60, 'cross': 300}}
+LATTICE pairs of shadows by number of shared walls: {'VV': {4: 450, 5: 720, 9: 600}, 'EV': {1: 9000, 3: 7200, 4: 3600, 5: 1800}, 'FV': {1: 16200, 2: 10800, 3: 3600, 4: 3600, 9: 1800}, 'CV': {2: 1800, 3: 10800, 4: 1800, 9: 3600}, 'EE': {0: 25200, 1: 32400, 3: 3600, 4: 2700, 5: 720}, 'EF': {0: 79200, 1: 115200, 2: 14400, 4: 7200}, 'CE': {1: 75600, 2: 14400, 3: 14400, 4: 3600}, 'FF': {0: 79200, 1: 82800, 2: 12600, 3: 1800, 4: 2700, 9: 600}, 'CF': {0: 7200, 1: 118800, 2: 39600, 3: 7200, 4: 3600, 9: 3600}, 'CC': {1: 10800, 2: 14400, 3: 9000, 4: 450, 5: 7200, 9: 3000}}
+LATTICE components of the shadow graph (shadows joined when they share a wall): {'V': 1, 'E': 1, 'F': 1, 'C': 1, 'VEFC': 1}
+LATTICE components of the wall graph (walls joined when one shadow keeps both): {'V': 1, 'E': 1, 'F': 1, 'C': 1, 'VEFC': 1}
+CHECK ok   turning V-E: a view inside keeps exactly the walls shared by both ends (5)
+CHECK ok   turning V-F: a view inside keeps exactly the walls shared by both ends (4)
+CHECK ok   turning V-C: a view inside keeps exactly the walls shared by both ends (9)
+CHECK ok   turning E-F: a view inside keeps exactly the walls shared by both ends (4)
+CHECK ok   turning E-C: a view inside keeps exactly the walls shared by both ends (4)
+CHECK ok   turning F-C: a view inside keeps exactly the walls shared by both ends (9)
+TURNINGS {'VE': {'angle_deg': 18.0, 'kept': {'mirror': 5}}, 'VF': {'angle_deg': 20.905, 'kept': {'mirror': 2, 'cross': 2}}, 'VC': {'angle_deg': 22.239, 'kept': {'mirror': 3, 'cross': 6}}, 'EF': {'angle_deg': 10.812, 'kept': {'cross': 2, 'mirror': 2}}, 'EC': {'angle_deg': 13.283, 'kept': {'cross': 2, 'mirror': 2}}, 'FC': {'angle_deg': 7.761, 'kept': {'mirror': 3, 'cross': 6}}}
+CHECK ok   turning angles match #63 (18, 20.905 deg)
+CHECK ok   control: a generic direction keeps no wall
+CHECK ok   control: a generic Q(sqrt5) direction keeps no wall
+CHECK ok   control: a direction inside one mirror keeps exactly 1 wall (1)
+CHECK ok   control: the exact rotation fixes d and is orthogonal
+CHECK ok   control pass: icosahedron (equal edges, one sphere) turned by a symmetry of the shadow stays a possible Vacuus
+CHECK ok   control fail: icosahedron (equal edges, one sphere) turned generically: {'none': 30}
+CHECK ok   control fail: same, at its own centre: {'none': 30}
+CHECK ok   control fail: icosahedron (equal edges, one sphere) with one corner moved loses its 5 edges at that corner ({'none': 5, 'mirror': 25})
+CHECK ok   control: icosahedron (equal edges, one sphere) translated fails at O ({'none': 30}), keeps its parallel fins at its own centre
+CHECK ok   control pass: dodecahedron (equal edges, one sphere) turned by a symmetry of the shadow stays a possible Vacuus
+CHECK ok   control fail: dodecahedron (equal edges, one sphere) turned generically: {'none': 30}
+CHECK ok   control fail: same, at its own centre: {'none': 30}
+CHECK ok   control fail: dodecahedron (equal edges, one sphere) with one corner moved loses its 3 edges at that corner ({'none': 3, 'mirror': 27})
+CHECK ok   control: dodecahedron (equal edges, one sphere) translated fails at O ({'none': 30}), keeps its parallel fins at its own centre
+CHECK ok   control pass: icosahedron (equal edges, one sphere) turned by a symmetry of the shadow stays a possible Vacuus
+CHECK ok   control fail: icosahedron (equal edges, one sphere) turned generically: {'none': 30}
+CHECK ok   control fail: same, at its own centre: {'none': 30}
+CHECK ok   control fail: icosahedron (equal edges, one sphere) with one corner moved loses its 5 edges at that corner ({'none': 5, 'mirror': 25})
+CHECK ok   control: icosahedron (equal edges, one sphere) translated fails at O ({'none': 30}), keeps its parallel fins at its own centre
+CONTROLS {"generic_direction_walls": 0, "generic_golden_direction_walls": 0, "direction_in_one_mirror": 1, "shapes": [{"shape": "icosahedron (equal edges, one sphere)", "height": "(0-1/2phi)", "edges": 30, "original": {"mirror": 30}, "symmetric_rotation": {"mirror": 30}, "generic_rotation_O": {"none": 30}, "generic_rotation_own": {"none": 30}, "one_corner_moved": {"none": 5, "mirror": 25}, "corner_degree": 5, "translated_O": {"none": 30}, "translated_own": {"mirror": 30}}, {"shape": "dodecahedron (equal edges, one sphere)", "height": "-1/2", "edges": 30, "original": {"mirror": 30}, "symmetric_rotation": {"mirror": 30}, "generic_rotation_O": {"none": 30}, "generic_rotation_own": {"none": 30}, "one_corner_moved": {"none": 3, "mirror": 27}, "corner_degree": 3, "translated_O": {"none": 30}, "translated_own": {"mirror": 30}}, {"shape": "icosahedron (equal edges, one sphere)", "height": "(1/2-1/2phi)", "edges": 30, "original": {"mirror": 30}, "symmetric_rotation": {"mirror": 30}, "generic_rotation_O": {"none": 30}, "generic_rotation_own": {"none": 30}, "one_corner_moved": {"none": 5, "mirror": 25}, "corner_degree": 5, "translated_O": {"none": 30}, "translated_own": {"mirror": 30}}]}
+0 checks failed; 37.0 s
+FINAL ok

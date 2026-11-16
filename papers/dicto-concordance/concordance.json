@@ -8220,6 +8220,41 @@
     "retry": "no swap-rate attempt on any planetary pattern; open: Jupiter south ring PJ4-PJ30 through the event logger with the PJ18 and PJ22-25 intruder; JIRAM PJ31-PJ77 centres only via SPICE mapping; Pluto side-number statistics; supergranule tiling from free HMI magnetograms (Sun stream)",
     "study": "studies/2026-11-16-planet-cells",
     "goes_to": "One tissue, three scales: planets stream (scope); builds on ledger entries: One tissue, three scales, Step 0 and first part of Step 1 (DICTO 15 Nov: 'start on the new scutoid Earth, Sun and cosmos | One tissue, three scales, Section 2 (Sun; DICTO 15 Nov: 'throw all possible resources at the new scutoid work'): have ne | One tissue, many scales: atmosphere and sea ice (DICTO 15 Nov: 'atmospheric convection and clouds, ice sheets and sea ic | One tissue, three scales: reference (null-model) values for the event census: Euler identities, swaps per birth in sweep"
+   },
+   {
+    "date": "2026-11-16",
+    "question": "DICTO's shadows test ('all of the shadows seem to carry interconnected lattices of possible vacuus'): which 600-cell walls (60 mirrors + 300 cross walls) stay flat in each standard shadow of the 600-cell and 120-cell, which shapes in each shadow have every edge fin in those planes, and do the plane sets join into one lattice?",
+    "method": "studies/2026-11-16-queens-shadows: shadows.py (compute machine, 37 s, FINAL ok, 79 checks): exact Q(sqrt5); wall n kept iff n.d = 0; fins from the shadow centre and own centre; W(H4) as 14400 exact corner permutations; 120-cell as exact dual; checks vs #63 and the Red Queen paper (hull f-vectors, front/side-on, front kinds 7/22/33/20, turning angles); controls: generic directions keep 0 walls, symmetric rotation passes, generic exact rotation / moved corner fail",
+    "status": "SETTLED",
+    "result": "Kept walls V 15+30, E 6+10, F 4+12, C 6+27 (mirror+cross), same for both Queens; law: kept walls = planes of the side-on cells of the two Queens (White Queen flat faces = cross walls, Red Queen flat faces = mirrors). Possible Vacuus: icosahedra, dodecahedra, Cleo-Icos (600 V); regular tetrahedra, octahedron (C views); dodecahedra + one truncated icosahedron (30 mirror + 60 cross, 120 V); icosidodecahedron, cuboctahedra, rhombicosidodecahedra fail. Every type of shadow reaches all 360 walls; shadow graph and wall graph connected.",
+    "retry": "only the 3 README leads (twin truncated icosahedra, unions of cells, 24-cell shadows)",
+    "study": "studies/2026-11-16-queens-shadows",
+    "goes_to": "builds on ledger entries: DICTO's walls theory (600-cell walls) of 16 Nov"
+   },
+   {
+    "question": "DICTO 16 Nov: construct/deconstruct the Queens (600-cell, 120-cell) from/into polytopes; cat and steak: do A, B and partner orbits build the 600-cell (corners, solids, walls)?",
+    "method": "exact Q(sqrt5): certified hulls, lattice volumes, caps, plane arrangement, S5/W(H4) orbits (queens-construct scripts s1-s4)",
+    "status": "PARKED (DICTO 16 Nov: narrow to scutoid interactions)",
+    "result": "corners: P = A+(-A)+C3+B+(-B); walls: A and B together use all 60 mirrors + 40 cross walls; solids: no tiling, union of the 5 hulls 0.650 of P, core = uniform bitruncated 5-cell, A cap B = golden cantitruncated 5-cell; 686 regions/23 classes from A,B planes; GA complement = 20 PA-pyramids + 20 edge joins; 120-cell: 10 600-cells, 225 24-cells, 13 S5 orbits; caps over inscribed 600/24-cells overlap",
+    "retry": "only the 90-plane arrangement (mode all) as a monitored job; literature check for GA complement split and the core",
+    "study": "studies/2026-11-16-queens-construct",
+    "date": "2026-11-16"
+   },
+   {
+    "date": "2026-11-16",
+    "question": "DICTO 16 Nov (queens vicinity): re-evaluate as a Vacuus every shape found in or near the Queens (15 uniform H4, snub 24-cell, grand antiprism, diminished 600-cells, inscribed 24-cell and 600-cell, Koca et al. 2006 maximal-subgroup orbits, #63 and Red Queen slice atlases, Hopscotch S(mu), A and B): plates, heart/non-heart, mirror walls / cross walls / no wall",
+    "method": "studies/2026-11-16-queens-vicinity-vacuus: qv_lib.py + study1.py (job qvvacuus FINAL ok, 45 checks; exact Q(sqrt5) plate normals matched to the 60 mirror + 300 cross wall normals; controls 600-cell and 120-cell 60 mirror plates heart, perturbed and turned 600-cell no wall); station.py (FINAL ok)",
+    "status": "SETTLED (exact)",
+    "result": "hidden: snub 24-cell, grand antiprism, all diminished 600-cells (proof: every 2-face is a 600-cell triangle) on mirrors only; inscribed 24-cell (12 plates), 600-cell inscribed in the 120-cell (60), runcinated 5-cell = A4 roots (5) on cross walls only; uniform H4: two Queens hidden, 11 partly (60 M + rest none), runcinated/runcitruncated x2/omnitruncated not hidden; no uniform face on a cross wall. Exact cross-wall station law: truncated-600-cell hop at lambda3:lambda4 = 1/phi, mu = 1/2 + sqrt5/5: its Vacuus is exactly the 360 walls (20 hexagons per mirror, 8 triangles per cross wall); A and B are Koca's W(A4) orbit sets 20+/- and 30+/-. Slice atlases mostly partly hidden. Flags: none of these Vacuus readings stated by the finders",
+    "goes_to": "#107 next version (cross walls; station); Concordance"
+   },
+   {
+    "date": "2026-11-16",
+    "question": "DICTO 16 Nov (queens chambers): with the Queens' walls (60 mirrors + 300 cross walls) as the structure, which chambers do they cut the 600-cell and 120-cell into; and which chambers do the plate subsystems of A and B cut out",
+    "method": "studies/2026-11-16-queens-chambers: chambers.py (job qchambers FINAL ok, 24 checks): count = 14400 x regions of one H4 chamber C; exact Zaslavsky in Q(sqrt5), float splitting, float whole lattice of 360 hyperplanes; control mirrors alone exact 14400, chi (t-1)(t-11)(t-19)(t-29), volume sums",
+    "status": "SETTLED (exact count; classes by distance invariants)",
+    "result": "4,291,200 chambers in each Queen = 14400 x 298; 298 pairwise non-congruent pieces in C, 15 combinatorial types (155 simplices ...), all pyramids from the centre over pieces of a cell; chi = (t-1)(t^3-359t^2+45959t-2099281), not free; the 120-cell adds no walls. A: 30 mirrors (generate all W(H4)), 3360 chambers, 28 classes, 120 = the 600-cell's Coxeter chamber; B: 40 M + 40 C (cross part not a reflection system), 62,880 chambers, 524 classes, no Queen chamber",
+    "goes_to": "#107 next version; Concordance"
    }
   ]
  },

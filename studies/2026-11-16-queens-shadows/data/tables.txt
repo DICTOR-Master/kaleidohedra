@@ -1,0 +1,309 @@
+
+### White Queen, corner-first: 15 mirrors + 30 cross walls; group on the shadow of order 120
+plane orbits: 15 mirror (normal-line stabiliser 16); 30 cross (normal-line stabiliser 8)
+
+| outline | heights | shape | edges | fins (shadow centre) | verdict | own centre |
+|---|---|---|---|---|---|---|
+| layer | (0-1/2phi), (1/2-1/2phi), (-1/2+1/2phi), (0+1/2phi) | icosahedron (equal edges, one sphere) | 30 | 30 mirror | possible Vacuus | same (centred) |
+| layer | -1/2, 1/2 | dodecahedron (equal edges, one sphere) | 30 | 30 mirror | possible Vacuus | same (centred) |
+| layer | 0 | icosidodecahedron (equal edges, one sphere) | 60 | 60 none | not | same (centred) |
+| hull | all | geodesic (2,0) type (80 triangles) (2 edge lengths, 5 radii) | 120 | 60 mirror + 60 none | partly | same (centred) |
+
+hull faces parallel to kept walls: 60 cross + 20 none
+
+cells: 270 back + 270 front + 60 side-on; 8 orbits, 8 congruence classes (7 among front cells)
+
+| class | cells | front/back/side-on | fins at shadow centre | verdict | fins at own centre | verdict | own fins in a wall |
+|---|---|---|---|---|---|---|---|
+| 1 | 40 | 20/20/0 | 3 mirror + 3 undefined | possible Vacuus | 3 mirror + 3 none | partly | 3 |
+| 2 | 120 | 60/60/0 | 6 mirror | possible Vacuus | 1 mirror + 5 none | partly | 1 |
+| 3 | 120 | 60/60/0 | 5 mirror + 1 none | partly | 1 mirror + 5 none | partly | 1 |
+| 4 | 40 | 20/20/0 | 3 mirror + 3 none | partly | 3 mirror + 3 none | partly | 3 |
+| 5 | 60 | 0/0/60 | 4 mirror + 1 none + 1 undefined | partly | 5 cross + 1 undefined | possible Vacuus | 0 |
+| 6 | 40 | 20/20/0 | 6 mirror | possible Vacuus | 3 mirror + 3 none | partly | 3 |
+| 7 | 60 | 30/30/0 | 6 mirror | possible Vacuus | 2 mirror + 4 none | partly | 2 |
+| 8 | 120 | 60/60/0 | 5 mirror + 1 undefined | possible Vacuus | 1 mirror + 5 none | partly | 1 |
+
+### White Queen, edge-first: 6 mirrors + 10 cross walls; group on the shadow of order 40
+plane orbits: 5 mirror (normal-line stabiliser 8); 1 mirror (normal-line stabiliser 40); 10 cross (normal-line stabiliser 4)
+
+| outline | heights | shape | edges | fins (shadow centre) | verdict | own centre |
+|---|---|---|---|---|---|---|
+| layer | (-1/2-1/4phi), (1/4-1/2phi), (-1/4+1/2phi), (1/2+1/4phi) | segment | 1 | 1 undefined | no plates | same (centred) |
+| layer | (0-1/2phi), -1/2, 1/2, (0+1/2phi) | 5-gon | 5 | 5 mirror | possible Vacuus | same (centred) |
+| layer | (-1/4-1/4phi), (0-1/4phi), -1/4, 1/4, (0+1/4phi), (1/4+1/4phi) | V10 E15 F7 faces{4: 5, 5: 2} (2 edge lengths, one sphere) | 15 | 5 mirror + 10 none | partly | same (centred) |
+| layer | (1/4-1/4phi), (-1/4+1/4phi) | V10 E15 F7 faces{4: 5, 5: 2} (equal edges, one sphere) | 15 | 5 mirror + 10 none | partly | same (centred) |
+| layer | 0 | icosahedron (2 edge lengths, one sphere) | 30 | 10 mirror + 20 none | partly | same (centred) |
+| hull | all | V52 E130 F80 faces{3: 60, 4: 20} (6 edge lengths, 9 radii) | 130 | 50 mirror + 80 none | partly | same (centred) |
+
+hull faces parallel to kept walls: 20 cross + 60 none
+
+cells: 290 back + 290 front + 20 side-on; 25 orbits, 23 congruence classes (22 among front cells)
+
+| class | cells | front/back/side-on | fins at shadow centre | verdict | fins at own centre | verdict | own fins in a wall |
+|---|---|---|---|---|---|---|---|
+| 1 | 10 | 5/5/0 | 5 mirror + 1 undefined | possible Vacuus | 2 mirror + 4 none | partly | 2 |
+| 2 | 20 | 10/10/0 | 4 mirror + 2 none | partly | 1 mirror + 5 none | partly | 1 |
+| 3 | 20 | 10/10/0 | 3 mirror + 3 none | partly | 1 mirror + 5 none | partly | 1 |
+| 4 | 20 | 10/10/0 | 4 mirror + 1 none + 1 undefined | partly | 1 mirror + 5 none | partly | 1 |
+| 5 | 40 | 20/20/0 | 3 mirror + 3 none | partly | 1 mirror + 5 none | partly | 1 |
+| 5 | 40 | 20/20/0 | 4 mirror + 2 none | partly | 1 mirror + 5 none | partly | 1 |
+| 6 | 20 | 10/10/0 | 1 mirror + 5 none | partly | 1 mirror + 5 none | partly | 1 |
+| 7 | 20 | 10/10/0 | 3 mirror + 3 none | partly | 1 mirror + 5 none | partly | 1 |
+| 8 | 40 | 20/20/0 | 2 mirror + 4 none | partly | 6 none | not | 0 |
+| 9 | 40 | 20/20/0 | 1 mirror + 5 none | partly | 1 mirror + 5 none | partly | 1 |
+| 9 | 40 | 20/20/0 | 2 mirror + 4 none | partly | 1 mirror + 5 none | partly | 1 |
+| 10 | 20 | 10/10/0 | 3 mirror + 3 none | partly | 1 mirror + 5 none | partly | 1 |
+| 11 | 20 | 10/10/0 | 1 mirror + 5 none | partly | 1 mirror + 5 none | partly | 1 |
+| 12 | 20 | 0/0/20 | 2 mirror + 4 none | partly | 6 cross | possible Vacuus | 0 |
+| 13 | 20 | 10/10/0 | 4 mirror + 1 none + 1 undefined | partly | 1 mirror + 5 none | partly | 1 |
+| 14 | 40 | 20/20/0 | 3 mirror + 3 none | partly | 6 none | not | 0 |
+| 15 | 40 | 20/20/0 | 3 mirror + 3 none | partly | 6 none | not | 0 |
+| 16 | 40 | 20/20/0 | 2 mirror + 4 none | partly | 6 none | not | 0 |
+| 17 | 20 | 10/10/0 | 4 mirror + 2 none | partly | 1 mirror + 5 none | partly | 1 |
+| 18 | 40 | 20/20/0 | 1 mirror + 5 none | partly | 6 none | not | 0 |
+| 19 | 20 | 10/10/0 | 2 mirror + 4 none | partly | 1 mirror + 5 none | partly | 1 |
+| 20 | 10 | 5/5/0 | 2 mirror + 4 none | partly | 2 mirror + 4 none | partly | 2 |
+| 21 | 20 | 10/10/0 | 4 mirror + 2 none | partly | 1 mirror + 5 none | partly | 1 |
+| 22 | 20 | 10/10/0 | 1 mirror + 5 none | partly | 1 mirror + 5 none | partly | 1 |
+| 23 | 40 | 20/20/0 | 3 mirror + 3 none | partly | 6 none | not | 0 |
+
+### White Queen, face-first: 4 mirrors + 12 cross walls; group on the shadow of order 24
+plane orbits: 3 mirror (normal-line stabiliser 8); 1 mirror (normal-line stabiliser 24); 6 cross (normal-line stabiliser 4); 6 cross (normal-line stabiliser 4)
+
+| outline | heights | shape | edges | fins (shadow centre) | verdict | own centre |
+|---|---|---|---|---|---|---|
+| layer | (-1/3-1/3phi), -1/3, 1/3, (1/3+1/3phi) | 3-gon | 3 | 3 mirror | possible Vacuus | same (centred) |
+| layer | (0-1/2phi), (0+1/2phi) | segment | 1 | 1 undefined | no plates | same (centred) |
+| layer | (-1/6-1/3phi), (-1/6-1/6phi), -1/6, (1/6-1/6phi), (-1/6+1/6phi), 1/6, (1/6+1/6phi), (1/6+1/3phi) | triangular prism (2 edge lengths, one sphere) | 9 | 3 mirror + 6 none | partly | same (centred) |
+| layer | (-1/3-1/6phi), (1/3+1/6phi) | triangular prism (equal edges, one sphere) | 9 | 3 mirror + 6 none | partly | same (centred) |
+| layer | (0-1/3phi), (0+1/3phi) | 6-gon | 6 | 6 mirror | possible Vacuus | same (centred) |
+| layer | (0-1/6phi), (0+1/6phi) | V12 E18 F8 faces{4: 6, 6: 2} (2 edge lengths, one sphere) | 18 | 6 cross + 12 none | partly | same (centred) |
+| layer | 0 | V8 E18 F12 faces{3: 12} (2 edge lengths, one sphere) | 18 | 6 mirror + 12 none | partly | same (centred) |
+| hull | all | V56 E150 F96 faces{3: 84, 4: 12} (9 edge lengths, 11 radii) | 150 | 30 mirror + 120 none | partly | same (centred) |
+
+hull faces parallel to kept walls: 24 cross + 72 none
+
+cells: 288 back + 288 front + 24 side-on; 37 orbits, 35 congruence classes (33 among front cells)
+
+| class | cells | front/back/side-on | fins at shadow centre | verdict | fins at own centre | verdict | own fins in a wall |
+|---|---|---|---|---|---|---|---|
+| 1 | 4 | 2/2/0 | 6 mirror | possible Vacuus | 3 mirror + 3 none | partly | 3 |
+| 2 | 12 | 6/6/0 | 4 mirror + 2 none | partly | 1 mirror + 5 none | partly | 1 |
+| 3 | 6 | 3/3/0 | 2 mirror + 4 none | partly | 2 mirror + 4 none | partly | 2 |
+| 4 | 12 | 6/6/0 | 4 mirror + 2 none | partly | 1 mirror + 5 none | partly | 1 |
+| 5 | 24 | 12/12/0 | 2 mirror + 4 none | partly | 6 none | not | 0 |
+| 6 | 12 | 6/6/0 | 2 mirror + 4 none | partly | 1 mirror + 5 none | partly | 1 |
+| 7 | 24 | 12/12/0 | 4 mirror + 2 none | partly | 6 none | not | 0 |
+| 8 | 24 | 12/12/0 | 4 mirror + 2 none | partly | 1 mirror + 5 none | partly | 1 |
+| 8 | 24 | 12/12/0 | 3 mirror + 3 none | partly | 1 mirror + 5 none | partly | 1 |
+| 9 | 24 | 12/12/0 | 2 mirror + 4 none | partly | 6 none | not | 0 |
+| 10 | 12 | 6/6/0 | 1 mirror + 5 none | partly | 1 mirror + 5 none | partly | 1 |
+| 11 | 12 | 0/0/12 | 4 mirror + 2 none | partly | 5 cross + 1 undefined | possible Vacuus | 0 |
+| 12 | 24 | 12/12/0 | 2 mirror + 4 none | partly | 6 none | not | 0 |
+| 13 | 12 | 6/6/0 | 1 mirror + 5 none | partly | 1 mirror + 5 none | partly | 1 |
+| 14 | 24 | 12/12/0 | 3 mirror + 3 none | partly | 6 none | not | 0 |
+| 15 | 24 | 12/12/0 | 1 mirror + 5 none | partly | 6 none | not | 0 |
+| 16 | 24 | 12/12/0 | 2 mirror + 4 none | partly | 1 mirror + 5 none | partly | 1 |
+| 16 | 24 | 12/12/0 | 1 mirror + 5 none | partly | 1 mirror + 5 none | partly | 1 |
+| 17 | 24 | 12/12/0 | 6 none | not | 6 none | not | 0 |
+| 18 | 4 | 2/2/0 | 3 mirror + 3 none | partly | 3 mirror + 3 none | partly | 3 |
+| 19 | 12 | 6/6/0 | 3 mirror + 3 none | partly | 1 mirror + 5 none | partly | 1 |
+| 20 | 24 | 12/12/0 | 4 mirror + 2 none | partly | 6 none | not | 0 |
+| 21 | 24 | 12/12/0 | 4 mirror + 2 none | partly | 6 none | not | 0 |
+| 22 | 24 | 12/12/0 | 6 none | not | 6 none | not | 0 |
+| 23 | 24 | 12/12/0 | 1 mirror + 5 none | partly | 6 none | not | 0 |
+| 24 | 12 | 6/6/0 | 2 mirror + 4 none | partly | 1 mirror + 5 none | partly | 1 |
+| 25 | 24 | 12/12/0 | 1 mirror + 5 none | partly | 6 none | not | 0 |
+| 26 | 12 | 6/6/0 | 1 mirror + 5 none | partly | 1 mirror + 5 none | partly | 1 |
+| 27 | 24 | 12/12/0 | 1 mirror + 5 none | partly | 6 none | not | 0 |
+| 28 | 24 | 12/12/0 | 3 mirror + 3 none | partly | 6 none | not | 0 |
+| 29 | 12 | 6/6/0 | 1 mirror + 5 none | partly | 1 mirror + 5 none | partly | 1 |
+| 30 | 24 | 12/12/0 | 1 mirror + 5 none | partly | 6 none | not | 0 |
+| 31 | 24 | 12/12/0 | 1 mirror + 5 none | partly | 6 none | not | 0 |
+| 32 | 12 | 0/0/12 | 6 none | not | 6 cross | possible Vacuus | 0 |
+| 33 | 12 | 6/6/0 | 1 mirror + 5 none | partly | 1 mirror + 5 none | partly | 1 |
+| 34 | 6 | 3/3/0 | 2 mirror + 4 none | partly | 2 mirror + 4 none | partly | 2 |
+| 35 | 4 | 2/2/0 | 3 mirror + 3 none | partly | 3 mirror + 3 none | partly | 3 |
+
+### White Queen, cell-first: 6 mirrors + 27 cross walls; group on the shadow of order 48
+plane orbits: 6 mirror (normal-line stabiliser 8); 24 cross (normal-line stabiliser 2); 3 cross (normal-line stabiliser 16)
+
+| outline | heights | shape | edges | fins (shadow centre) | verdict | own centre |
+|---|---|---|---|---|---|---|
+| layer | (-1/4-3/8phi), (-1/8-3/8phi), -1/8, 1/8, (1/8+3/8phi), (1/4+3/8phi) | tetrahedron (equal edges, one sphere) | 6 | 6 mirror | possible Vacuus | same (centred) |
+| layer | (-1/4-1/4phi), (1/4+1/4phi) | octahedron (equal edges, one sphere) | 12 | 12 cross | possible Vacuus | same (centred) |
+| layer | (-1/8-1/4phi), (1/8+1/4phi) | cuboctahedron (2 edge lengths, one sphere) | 24 | 24 none | not | same (centred) |
+| layer | (-1/8-1/8phi), (0-1/8phi), (0+1/8phi), (1/8+1/8phi) | truncated tetrahedron (2 edge lengths, one sphere) | 18 | 6 mirror + 12 none | partly | same (centred) |
+| layer | 0 | cuboctahedron (equal edges, one sphere) | 24 | 24 none | not | same (centred) |
+| hull | all | V44 E120 F78 faces{3: 72, 4: 6} (4 edge lengths, 8 radii) | 120 | 48 mirror + 72 none | partly | same (centred) |
+
+hull faces parallel to kept walls: 54 cross + 24 none
+
+cells: 273 back + 273 front + 54 side-on; 23 orbits, 22 congruence classes (20 among front cells)
+
+| class | cells | front/back/side-on | fins at shadow centre | verdict | fins at own centre | verdict | own fins in a wall |
+|---|---|---|---|---|---|---|---|
+| 1 | 2 | 1/1/0 | 6 mirror | possible Vacuus | 6 mirror | possible Vacuus | 6 |
+| 2 | 8 | 4/4/0 | 6 mirror | possible Vacuus | 3 mirror + 3 none | partly | 3 |
+| 3 | 24 | 12/12/0 | 6 mirror | possible Vacuus | 1 mirror + 5 none | partly | 1 |
+| 4 | 24 | 12/12/0 | 3 mirror + 3 none | partly | 1 mirror + 5 none | partly | 1 |
+| 5 | 8 | 4/4/0 | 3 mirror + 3 none | partly | 3 mirror + 3 none | partly | 3 |
+| 6 | 48 | 24/24/0 | 5 mirror + 1 none | partly | 6 none | not | 0 |
+| 7 | 48 | 24/24/0 | 4 mirror + 2 none | partly | 6 none | not | 0 |
+| 8 | 24 | 12/12/0 | 3 mirror + 3 none | partly | 1 mirror + 5 none | partly | 1 |
+| 9 | 16 | 8/8/0 | 3 mirror + 3 none | partly | 3 mirror + 3 none | partly | 3 |
+| 10 | 48 | 24/24/0 | 2 mirror + 4 none | partly | 6 none | not | 0 |
+| 11 | 24 | 12/12/0 | 4 mirror + 2 none | partly | 1 mirror + 5 none | partly | 1 |
+| 12 | 48 | 0/0/48 | 4 mirror + 2 none | partly | 6 cross | possible Vacuus | 0 |
+| 13 | 24 | 12/12/0 | 3 mirror + 3 none | partly | 1 mirror + 5 none | partly | 1 |
+| 14 | 8 | 4/4/0 | 3 mirror + 3 none | partly | 3 mirror + 3 none | partly | 3 |
+| 15 | 48 | 24/24/0 | 1 mirror + 5 none | partly | 6 none | not | 0 |
+| 16 | 24 | 12/12/0 | 2 mirror + 4 none | partly | 1 mirror + 5 none | partly | 1 |
+| 17 | 24 | 12/12/0 | 1 mirror + 5 none | partly | 1 mirror + 5 none | partly | 1 |
+| 18 | 48 | 24/24/0 | 1 mirror + 5 none | partly | 6 none | not | 0 |
+| 19 | 48 | 24/24/0 | 4 mirror + 2 none | partly | 6 none | not | 0 |
+| 20 | 24 | 12/12/0 | 3 mirror + 3 none | partly | 1 mirror + 5 none | partly | 1 |
+| 21 | 24 | 12/12/0 | 1 mirror + 5 none | partly | 1 mirror + 5 none | partly | 1 |
+| 22 | 6 | 0/0/6 | 2 mirror + 4 none | partly | 4 cross + 2 undefined | possible Vacuus | 0 |
+
+### Red Queen, cell-first: 15 mirrors + 30 cross walls; group on the shadow of order 120
+plane orbits: 15 mirror (normal-line stabiliser 16); 30 cross (normal-line stabiliser 8)
+
+| outline | heights | shape | edges | fins (shadow centre) | verdict | own centre |
+|---|---|---|---|---|---|---|
+| layer | (-1/4-3/8phi), (-1/8-3/8phi), -1/8, 1/8, (1/8+3/8phi), (1/4+3/8phi) | dodecahedron (equal edges, one sphere) | 30 | 30 mirror | possible Vacuus | same (centred) |
+| layer | (-1/4-1/4phi), (1/4+1/4phi) | icosidodecahedron (equal edges, one sphere) | 60 | 60 none | not | same (centred) |
+| layer | (-1/8-1/4phi), (1/8+1/4phi) | truncated icosahedron (2 edge lengths, one sphere) | 90 | 60 cross + 30 mirror | possible Vacuus | same (centred) |
+| layer | (-1/8-1/8phi), (1/8+1/8phi) | truncated icosahedron (2 edge lengths, one sphere) | 90 | 30 mirror + 60 none | partly | same (centred) |
+| layer | (0-1/8phi), (0+1/8phi) | rhombicosidodecahedron (equal edges, one sphere) | 120 | 120 none | not | same (centred) |
+| layer | 0 | rhombicosidodecahedron (2 edge lengths, one sphere) | 120 | 120 none | not | same (centred) |
+| hull | all | Goldberg GP(2,0) type (12 pentagons, 30 hexagons) (2 edge lengths, 8 radii) | 120 | 60 mirror + 60 none | partly | same (centred) |
+
+hull faces parallel to kept walls: 30 mirror + 12 none
+
+cells: 45 back + 45 front + 30 side-on; 5 orbits, 5 congruence classes (4 among front cells)
+
+| class | cells | front/back/side-on | fins at shadow centre | verdict | fins at own centre | verdict | own fins in a wall |
+|---|---|---|---|---|---|---|---|
+| 1 | 2 | 1/1/0 | 30 mirror | possible Vacuus | 30 mirror | possible Vacuus | 30 |
+| 2 | 30 | 0/0/30 | 8 cross + 18 mirror + 2 none + 2 undefined | partly | 26 mirror + 4 undefined | possible Vacuus | 0 |
+| 3 | 40 | 20/20/0 | 9 cross + 21 mirror | possible Vacuus | 12 cross + 6 mirror + 12 none | partly | 6 |
+| 4 | 24 | 12/12/0 | 5 cross + 20 mirror + 5 undefined | possible Vacuus | 10 mirror + 20 none | partly | 10 |
+| 5 | 24 | 12/12/0 | 15 cross + 10 mirror + 5 none | partly | 10 mirror + 20 none | partly | 10 |
+
+### Red Queen, pentagon-first: 6 mirrors + 10 cross walls; group on the shadow of order 40
+plane orbits: 5 mirror (normal-line stabiliser 8); 1 mirror (normal-line stabiliser 40); 10 cross (normal-line stabiliser 4)
+
+| outline | heights | shape | edges | fins (shadow centre) | verdict | own centre |
+|---|---|---|---|---|---|---|
+| layer | (-1/4-3/8phi), (0-1/8phi), (0+1/8phi), (1/4+3/8phi) | 5-gon | 5 | 5 mirror | possible Vacuus | same (centred) |
+| layer | (-3/16-3/8phi), (-1/8-5/16phi), (1/8+5/16phi), (3/16+3/8phi) | V10 E15 F7 faces{4: 5, 5: 2} (equal edges, one sphere) | 15 | 5 mirror + 10 none | partly | same (centred) |
+| layer | (-1/4-5/16phi), (-3/16-3/16phi), (3/16+3/16phi), (1/4+5/16phi) | V10 E15 F7 faces{4: 5, 5: 2} (2 edge lengths, one sphere) | 15 | 5 mirror + 10 none | partly | same (centred) |
+| layer | (-3/16-5/16phi), -1/16, 1/16, (3/16+5/16phi) | V20 E45 F27 faces{3: 20, 4: 5, 5: 2} (3 edge lengths, one sphere) | 45 | 5 mirror + 40 none | partly | same (centred) |
+| layer | (-3/16-1/4phi), (3/16+1/4phi) | V20 E30 F12 faces{4: 10, 10: 2} (equal edges, one sphere) | 30 | 30 none | not | same (centred) |
+| layer | (-1/8-1/4phi), (1/8+1/4phi) | V20 E40 F22 faces{3: 10, 4: 10, 5: 2} (4 edge lengths, one sphere) | 40 | 10 mirror + 30 none | partly | same (centred) |
+| layer | (-1/8-3/16phi), (-1/16-1/8phi), (1/16+1/8phi), (1/8+3/16phi) | V30 E60 F32 faces{3: 10, 4: 20, 5: 2} (4 edge lengths, one sphere) | 60 | 60 none | not | same (centred) |
+| layer | (-1/16-3/16phi), 0, (1/16+3/16phi) | V20 E30 F12 faces{4: 10, 10: 2} (2 edge lengths, one sphere) | 30 | 30 none | not | same (centred) |
+| layer | (-1/8-1/8phi), (1/8+1/8phi) | V20 E40 F22 faces{3: 10, 4: 10, 5: 2} (3 edge lengths, one sphere) | 40 | 10 mirror + 30 none | partly | same (centred) |
+| layer | (-1/16-1/16phi), (1/16+1/16phi) | V30 E45 F17 faces{3: 10, 8: 5, 10: 2} (3 edge lengths, one sphere) | 45 | 5 mirror + 40 none | partly | same (centred) |
+| layer | (0-1/16phi), (0+1/16phi) | V30 E60 F32 faces{3: 10, 4: 20, 5: 2} (3 edge lengths, one sphere) | 60 | 60 none | not | same (centred) |
+| hull | all | V160 E250 F92 faces{5: 80, 8: 10, 10: 2} (8 edge lengths, 17 radii) | 250 | 30 mirror + 220 none | partly | same (centred) |
+
+hull faces parallel to kept walls: 12 mirror + 80 none
+
+cells: 54 back + 54 front + 12 side-on; 10 orbits, 10 congruence classes (8 among front cells)
+
+| class | cells | front/back/side-on | fins at shadow centre | verdict | fins at own centre | verdict | own fins in a wall |
+|---|---|---|---|---|---|---|---|
+| 1 | 4 | 2/2/0 | 10 cross + 15 mirror + 5 none | partly | 10 mirror + 20 none | partly | 10 |
+| 2 | 20 | 10/10/0 | 4 cross + 12 mirror + 14 none | partly | 2 mirror + 28 none | partly | 2 |
+| 3 | 20 | 10/10/0 | 4 cross + 2 mirror + 24 none | partly | 4 cross + 2 mirror + 24 none | partly | 2 |
+| 4 | 10 | 0/0/10 | 4 cross + 12 mirror + 14 none | partly | 28 mirror + 2 undefined | possible Vacuus | 0 |
+| 5 | 20 | 10/10/0 | 8 cross + 12 mirror + 10 none | partly | 4 cross + 2 mirror + 24 none | partly | 2 |
+| 6 | 10 | 5/5/0 | 4 cross + 4 mirror + 22 none | partly | 4 mirror + 26 none | partly | 4 |
+| 7 | 20 | 10/10/0 | 10 cross + 7 mirror + 13 none | partly | 2 mirror + 28 none | partly | 2 |
+| 8 | 10 | 5/5/0 | 8 cross + 14 mirror + 8 none | partly | 4 mirror + 26 none | partly | 4 |
+| 9 | 4 | 2/2/0 | 10 mirror + 20 none | partly | 10 mirror + 20 none | partly | 10 |
+| 10 | 2 | 0/0/2 | 10 mirror + 20 none | partly | 20 mirror + 10 undefined | possible Vacuus | 0 |
+
+### Red Queen, edge-first: 4 mirrors + 12 cross walls; group on the shadow of order 24
+plane orbits: 3 mirror (normal-line stabiliser 8); 1 mirror (normal-line stabiliser 24); 6 cross (normal-line stabiliser 4); 6 cross (normal-line stabiliser 4)
+
+| outline | heights | shape | edges | fins (shadow centre) | verdict | own centre |
+|---|---|---|---|---|---|---|
+| layer | (-1/4-3/8phi), (-1/8-1/8phi), (1/8+1/8phi), (1/4+3/8phi) | segment | 1 | 1 undefined | no plates | same (centred) |
+| layer | (-5/24-3/8phi), (-1/12-5/24phi), (1/12+5/24phi), (5/24+3/8phi) | triangular prism (equal edges, one sphere) | 9 | 3 mirror + 6 none | partly | same (centred) |
+| layer | (-1/4-1/3phi), (1/4+1/3phi) | 3-gon | 3 | 3 mirror | possible Vacuus | same (centred) |
+| layer | (-5/24-1/3phi), (-1/6-5/24phi), (1/6+5/24phi), (5/24+1/3phi) | V12 E18 F8 faces{4: 6, 6: 2} (3 edge lengths, one sphere) | 18 | 6 cross + 12 none | partly | same (centred) |
+| layer | (-1/6-1/3phi), (1/6+1/3phi) | 6-gon | 6 | 6 mirror | possible Vacuus | same (centred) |
+| layer | (-5/24-7/24phi), -1/24, 1/24, (5/24+7/24phi) | V12 E18 F8 faces{4: 6, 6: 2} (2 edge lengths, one sphere) | 18 | 6 cross + 12 none | partly | same (centred) |
+| layer | (-1/6-7/24phi), (-1/24-1/12phi), (1/24+1/12phi), (1/6+7/24phi) | V18 E27 F11 faces{3: 6, 6: 2, 8: 3} (3 edge lengths, one sphere) | 27 | 3 mirror + 24 none | partly | same (centred) |
+| layer | (-1/6-1/4phi), (1/6+1/4phi) | cuboctahedron (4 edge lengths, one sphere) | 24 | 6 mirror + 18 none | partly | same (centred) |
+| layer | (-1/8-1/4phi), (1/8+1/4phi) | V14 E30 F18 faces{3: 12, 4: 6} (2 edge lengths, one sphere) | 30 | 30 none | not | same (centred) |
+| layer | (-1/8-5/24phi), (1/8+5/24phi) | V18 E27 F11 faces{4: 9, 9: 2} (2 edge lengths, one sphere) | 27 | 3 mirror + 24 none | partly | same (centred) |
+| layer | (-1/8-1/6phi), (1/8+1/6phi) | V24 E57 F35 faces{3: 26, 4: 9} (4 edge lengths, one sphere) | 57 | 3 mirror + 54 none | partly | same (centred) |
+| layer | (-1/12-1/6phi), (1/12+1/6phi) | V15 E24 F11 faces{3: 6, 6: 5} (3 edge lengths, one sphere) | 24 | 24 none | not | same (centred) |
+| layer | (-1/12-1/8phi), (1/12+1/8phi) | V24 E36 F14 faces{4: 9, 6: 2, 8: 3} (4 edge lengths, one sphere) | 36 | 6 cross + 30 none | partly | same (centred) |
+| layer | (-1/24-1/8phi), (1/24+1/8phi) | V18 E36 F20 faces{3: 8, 4: 12} (4 edge lengths, one sphere) | 36 | 6 cross + 30 none | partly | same (centred) |
+| layer | (-1/12-1/12phi), (1/12+1/12phi) | V12 E21 F11 faces{3: 2, 4: 9} (3 edge lengths, one sphere) | 21 | 3 mirror + 18 none | partly | same (centred) |
+| layer | (-1/24-1/24phi), (1/24+1/24phi) | V24 E42 F20 faces{4: 18, 6: 2} (4 edge lengths, one sphere) | 42 | 42 none | not | same (centred) |
+| layer | (0-1/24phi), (0+1/24phi) | V18 E27 F11 faces{4: 9, 9: 2} (3 edge lengths, one sphere) | 27 | 3 mirror + 24 none | partly | same (centred) |
+| layer | 0 | V24 E48 F26 faces{3: 12, 4: 12, 6: 2} (4 edge lengths, one sphere) | 48 | 12 mirror + 36 none | partly | same (centred) |
+| hull | all | V180 E282 F104 faces{5: 96, 10: 6, 12: 2} (10 edge lengths, 23 radii) | 282 | 48 cross + 30 mirror + 204 none | partly | same (centred) |
+
+hull faces parallel to kept walls: 8 mirror + 96 none
+
+cells: 56 back + 56 front + 8 side-on; 12 orbits, 12 congruence classes (10 among front cells)
+
+| class | cells | front/back/side-on | fins at shadow centre | verdict | fins at own centre | verdict | own fins in a wall |
+|---|---|---|---|---|---|---|---|
+| 1 | 6 | 3/3/0 | 8 cross + 11 mirror + 10 none + 1 undefined | partly | 4 mirror + 26 none | partly | 4 |
+| 2 | 6 | 3/3/0 | 2 cross + 4 mirror + 24 none | partly | 4 mirror + 26 none | partly | 4 |
+| 3 | 6 | 0/0/6 | 10 cross + 2 mirror + 18 none | partly | 28 mirror + 2 undefined | possible Vacuus | 0 |
+| 4 | 2 | 0/0/2 | 6 mirror + 24 none | partly | 24 mirror + 6 undefined | possible Vacuus | 0 |
+| 5 | 12 | 6/6/0 | 6 cross + 2 mirror + 22 none | partly | 4 cross + 2 mirror + 24 none | partly | 2 |
+| 6 | 24 | 12/12/0 | 5 cross + 5 mirror + 20 none | partly | 6 cross + 24 none | partly | 0 |
+| 7 | 12 | 6/6/0 | 5 cross + 7 mirror + 18 none | partly | 4 cross + 2 mirror + 24 none | partly | 2 |
+| 8 | 4 | 2/2/0 | 6 cross + 6 mirror + 18 none | partly | 6 mirror + 24 none | partly | 6 |
+| 9 | 12 | 6/6/0 | 12 cross + 7 mirror + 11 none | partly | 2 mirror + 28 none | partly | 2 |
+| 10 | 12 | 6/6/0 | 6 cross + 7 mirror + 17 none | partly | 2 mirror + 28 none | partly | 2 |
+| 11 | 12 | 6/6/0 | 6 cross + 9 mirror + 14 none + 1 undefined | partly | 2 mirror + 28 none | partly | 2 |
+| 12 | 12 | 6/6/0 | 6 cross + 2 mirror + 22 none | partly | 2 mirror + 28 none | partly | 2 |
+
+### Red Queen, corner-first: 6 mirrors + 27 cross walls; group on the shadow of order 48
+plane orbits: 6 mirror (normal-line stabiliser 8); 24 cross (normal-line stabiliser 2); 3 cross (normal-line stabiliser 16)
+
+| outline | heights | shape | edges | fins (shadow centre) | verdict | own centre |
+|---|---|---|---|---|---|---|
+| layer | (-7/32-3/8phi), (-5/32-9/32phi), (5/32+9/32phi), (7/32+3/8phi) | tetrahedron (equal edges, one sphere) | 6 | 6 mirror | possible Vacuus | same (centred) |
+| layer | (-7/32-11/32phi), (-3/16-9/32phi), (3/16+9/32phi), (7/32+11/32phi) | truncated tetrahedron (2 edge lengths, one sphere) | 18 | 6 mirror + 12 none | partly | same (centred) |
+| layer | (-3/16-5/16phi), (-1/16-1/8phi), (1/16+1/8phi), (3/16+5/16phi) | truncated octahedron (2 edge lengths, one sphere) | 36 | 12 cross + 24 none | partly | same (centred) |
+| layer | (-5/32-1/4phi), (5/32+1/4phi) | truncated octahedron (3 edge lengths, one sphere) | 36 | 36 none | not | same (centred) |
+| layer | (-1/8-7/32phi), (1/8+7/32phi) | V24 E54 F32 faces{3: 20, 4: 12} (3 edge lengths, one sphere) | 54 | 6 mirror + 48 none | partly | same (centred) |
+| layer | (-1/8-3/16phi), (1/8+3/16phi) | V32 E84 F54 faces{3: 48, 4: 6} (3 edge lengths, one sphere) | 84 | 60 cross + 24 none | partly | same (centred) |
+| layer | (-3/32-5/32phi), (3/32+5/32phi) | V24 E54 F32 faces{3: 20, 4: 12} (4 edge lengths, one sphere) | 54 | 6 mirror + 48 none | partly | same (centred) |
+| layer | (-3/32-1/8phi), (3/32+1/8phi) | cuboctahedron (2 edge lengths, one sphere) | 24 | 24 none | not | same (centred) |
+| layer | (-1/16-3/32phi), (1/16+3/32phi) | V28 E60 F34 faces{3: 24, 4: 6, 6: 4} (4 edge lengths, one sphere) | 60 | 60 none | not | same (centred) |
+| layer | (-1/32-1/16phi), (1/32+1/16phi) | V24 E42 F20 faces{3: 16, 9: 4} (2 edge lengths, one sphere) | 42 | 6 mirror + 36 none | partly | same (centred) |
+| layer | (-1/32-1/32phi), (1/32+1/32phi) | truncated octahedron (2 edge lengths, one sphere) | 36 | 36 none | not | same (centred) |
+| layer | 0 | V54 E120 F68 faces{3: 48, 4: 12, 6: 8} (3 edge lengths, one sphere) | 120 | 120 none | not | same (centred) |
+| hull | all | V158 E240 F84 faces{5: 72, 10: 12} (5 edge lengths, 16 radii) | 240 | 48 cross + 48 mirror + 144 none | partly | same (centred) |
+
+hull faces parallel to kept walls: 12 mirror + 72 none
+
+cells: 54 back + 54 front + 12 side-on; 8 orbits, 8 congruence classes (7 among front cells)
+
+| class | cells | front/back/side-on | fins at shadow centre | verdict | fins at own centre | verdict | own fins in a wall |
+|---|---|---|---|---|---|---|---|
+| 1 | 8 | 4/4/0 | 15 cross + 12 mirror + 3 undefined | possible Vacuus | 6 mirror + 24 none | partly | 6 |
+| 2 | 24 | 12/12/0 | 10 cross + 9 mirror + 10 none + 1 undefined | partly | 8 cross + 2 mirror + 20 none | partly | 2 |
+| 3 | 12 | 0/0/12 | 20 cross + 2 mirror + 8 none | partly | 28 mirror + 2 undefined | possible Vacuus | 0 |
+| 4 | 8 | 4/4/0 | 6 cross + 6 mirror + 18 none | partly | 6 mirror + 24 none | partly | 6 |
+| 5 | 12 | 6/6/0 | 16 cross + 4 mirror + 10 none | partly | 2 cross + 4 mirror + 24 none | partly | 4 |
+| 6 | 24 | 12/12/0 | 13 cross + 9 mirror + 7 none + 1 undefined | partly | 8 cross + 2 mirror + 20 none | partly | 2 |
+| 7 | 24 | 12/12/0 | 10 cross + 7 mirror + 13 none | partly | 8 cross + 2 mirror + 20 none | partly | 2 |
+| 8 | 8 | 4/4/0 | 15 cross + 6 mirror + 9 none | partly | 6 mirror + 24 none | partly | 6 |
+
+LATTICE {"wall_contains_lines": {"mirror": {"(15, 36, 40, 30)": 60}, "cross": {"(6, 12, 24, 27)": 300}}, "walls_reached_by_type": {"V": {"mirror": 60, "cross": 300}, "E": {"mirror": 60, "cross": 300}, "F": {"mirror": 60, "cross": 300}, "C": {"mirror": 60, "cross": 300}}, "shadow_graph_components": {"V": 1, "E": 1, "F": 1, "C": 1, "VEFC": 1}, "wall_graph_components": {"V": 1, "E": 1, "F": 1, "C": 1, "VEFC": 1}, "turnings": {"VE": {"angle_deg": 18.0, "kept": {"mirror": 5}}, "VF": {"angle_deg": 20.905, "kept": {"mirror": 2, "cross": 2}}, "VC": {"angle_deg": 22.239, "kept": {"mirror": 3, "cross": 6}}, "EF": {"angle_deg": 10.812, "kept": {"cross": 2, "mirror": 2}}, "EC": {"angle_deg": 13.283, "kept": {"cross": 2, "mirror": 2}}, "FC": {"angle_deg": 7.761, "kept": {"mirror": 3, "cross": 6}}}}
+SHARED {"VV": {"4": 450, "5": 720, "9": 600}, "EV": {"1": 9000, "3": 7200, "4": 3600, "5": 1800}, "FV": {"1": 16200, "2": 10800, "3": 3600, "4": 3600, "9": 1800}, "CV": {"2": 1800, "3": 10800, "4": 1800, "9": 3600}, "EE": {"0": 25200, "1": 32400, "3": 3600, "4": 2700, "5": 720}, "EF": {"0": 79200, "1": 115200, "2": 14400, "4": 7200}, "CE": {"1": 75600, "2": 14400, "3": 14400, "4": 3600}, "FF": {"0": 79200, "1": 82800, "2": 12600, "3": 1800, "4": 2700, "9": 600}, "CF": {"0": 7200, "1": 118800, "2": 39600, "3": 7200, "4": 3600, "9": 3600}, "CC": {"1": 10800, "2": 14400, "3": 9000, "4": 450, "5": 7200, "9": 3000}}

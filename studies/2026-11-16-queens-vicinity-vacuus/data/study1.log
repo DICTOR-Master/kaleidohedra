@@ -1,0 +1,182 @@
+== part controls
+  600-cell (White Queen; Schlafli 1852): V120 plates 60 heart | mirror 60 cross 0 none 0 -> hidden  (0s)
+  120-cell (Red Queen; Schlafli 1852): V600 plates 60 heart | mirror 60 cross 0 none 0 -> hidden  (0s)
+PASS control 600-cell: 60 plates, all mirror walls, heart
+PASS control 120-cell: 60 plates, all mirror walls, heart
+  perturbed 600-cell (control): V120 plates 1200 non-heart | mirror 0 cross 0 none 1200 -> not hidden  (1s)
+PASS negative control perturbed 600-cell: mostly no wall (>90% of plates)
+PASS rotation is exact and orthogonal
+  turned 600-cell (control): V120 plates 60 heart | mirror 0 cross 0 none 60 -> not hidden  (1s)
+PASS negative control turned 600-cell: heart, 60 plates, none on the Queens walls
+PROGRESS 0.11 controls
+== part wythoff
+  120-cell (1, 0, 0, 0): V600 plates 60 heart | mirror 60 cross 0 none 0 -> hidden  (1s)
+PASS 120-cell: 600 corners, 120 cells, Euler 0
+  rectified 120-cell (0, 1, 0, 0): V1200 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (2s)
+PASS rectified 120-cell: 1200 corners, 720 cells, Euler 0
+  rectified 600-cell (0, 0, 1, 0): V720 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (3s)
+PASS rectified 600-cell: 720 corners, 720 cells, Euler 0
+  600-cell (0, 0, 0, 1): V120 plates 60 heart | mirror 60 cross 0 none 0 -> hidden  (3s)
+PASS 600-cell: 120 corners, 600 cells, Euler 0
+  truncated 120-cell (1, 1, 0, 0): V2400 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (5s)
+PASS truncated 120-cell: 2400 corners, 720 cells, Euler 0
+  cantellated 120-cell (1, 0, 1, 0): V3600 plates 4260 heart | mirror 60 cross 0 none 4200 -> partly hidden  (7s)
+PASS cantellated 120-cell: 3600 corners, 1920 cells, Euler 0
+  runcinated 120-cell (1, 0, 0, 1): V2400 plates 3720 heart | mirror 0 cross 0 none 3720 -> not hidden  (9s)
+PASS runcinated 120-cell: 2400 corners, 2640 cells, Euler 0
+  bitruncated 120-cell (0, 1, 1, 0): V3600 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (11s)
+PASS bitruncated 120-cell: 3600 corners, 720 cells, Euler 0
+  cantellated 600-cell (0, 1, 0, 1): V3600 plates 3780 heart | mirror 60 cross 0 none 3720 -> partly hidden  (14s)
+PASS cantellated 600-cell: 3600 corners, 1440 cells, Euler 0
+  truncated 600-cell (0, 0, 1, 1): V1440 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (15s)
+PASS truncated 600-cell: 1440 corners, 720 cells, Euler 0
+  cantitruncated 120-cell (1, 1, 1, 0): V7200 plates 4260 heart | mirror 60 cross 0 none 4200 -> partly hidden  (18s)
+PASS cantitruncated 120-cell: 7200 corners, 1920 cells, Euler 0
+  runcitruncated 120-cell (1, 1, 0, 1): V7200 plates 6720 heart | mirror 0 cross 0 none 6720 -> not hidden  (23s)
+PASS runcitruncated 120-cell: 7200 corners, 2640 cells, Euler 0
+  runcitruncated 600-cell (1, 0, 1, 1): V7200 plates 6720 heart | mirror 0 cross 0 none 6720 -> not hidden  (27s)
+PASS runcitruncated 600-cell: 7200 corners, 2640 cells, Euler 0
+  cantitruncated 600-cell (0, 1, 1, 1): V7200 plates 3780 heart | mirror 60 cross 0 none 3720 -> partly hidden  (31s)
+PASS cantitruncated 600-cell: 7200 corners, 1440 cells, Euler 0
+  omnitruncated 120-cell (1, 1, 1, 1): V14400 plates 8520 heart | mirror 0 cross 0 none 8520 -> not hidden  (38s)
+PASS omnitruncated 120-cell: 14400 corners, 2640 cells, Euler 0
+PROGRESS 0.22 wythoff
+== part stations
+PASS Mirror Law reproduced for every face type of the 15 (and roots never give stations)
+  cross: cantellated 600-cell type [2, 3] {'walls_all_seeds': 0, 'walls_uniform_seed': 0, 'stations': ['-2 + √5']}
+  cross: truncated 600-cell type [2, 3] {'walls_all_seeds': 0, 'walls_uniform_seed': 0, 'stations': ['-1/2 + 1/2√5']}
+  cross: runcitruncated 120-cell type [2, 3] {'walls_all_seeds': 0, 'walls_uniform_seed': 0, 'stations': ['codim-1 family']}
+  cross: runcitruncated 600-cell type [2, 3] {'walls_all_seeds': 0, 'walls_uniform_seed': 0, 'stations': ['codim-1 family']}
+  cross: cantitruncated 600-cell type [2, 3] {'walls_all_seeds': 0, 'walls_uniform_seed': 0, 'stations': ['codim-1 family']}
+  cross: omnitruncated 120-cell type [2, 3] {'walls_all_seeds': 0, 'walls_uniform_seed': 0, 'stations': ['codim-1 family']}
+PROGRESS 0.33 stations
+== part special
+PASS inscribed 24-cell: 24 corners
+  24-cell inscribed in the 600-cell (one of 25): V24 plates 12 heart | mirror 0 cross 12 none 0 -> hidden  (38s)
+  snub 24-cell (Gosset 1900) = 600-cell minus an inscribed 24-cell: V96 plates 60 heart | mirror 60 cross 0 none 0 -> hidden  (38s)
+PASS snub 24-cell: 96 corners, 144 cells
+PASS two orthogonal decagons
+  grand antiprism (Conway and Guy 1965): V100 plates 60 heart | mirror 60 cross 0 none 0 -> hidden  (38s)
+PASS grand antiprism: 100 corners, 320 cells, 720 two-faces
+  one-diminished 600-cell: V119 plates 60 non-heart | mirror 60 cross 0 none 0 -> hidden  (39s)
+  2-diminished 600-cell (random independent set 0): V118 plates 60 non-heart | mirror 60 cross 0 none 0 -> hidden  (39s)
+  2-diminished 600-cell (random independent set 1): V118 plates 60 non-heart | mirror 60 cross 0 none 0 -> hidden  (39s)
+  6-diminished 600-cell (random independent set 0): V114 plates 60 non-heart | mirror 60 cross 0 none 0 -> hidden  (39s)
+  6-diminished 600-cell (random independent set 1): V114 plates 60 non-heart | mirror 60 cross 0 none 0 -> hidden  (39s)
+  12-diminished 600-cell (random independent set 0): V108 plates 60 non-heart | mirror 60 cross 0 none 0 -> hidden  (39s)
+  12-diminished 600-cell (random independent set 1): V108 plates 60 non-heart | mirror 60 cross 0 none 0 -> hidden  (40s)
+  18-diminished 600-cell (random independent set 0): V102 plates 60 non-heart | mirror 60 cross 0 none 0 -> hidden  (40s)
+  18-diminished 600-cell (random independent set 1): V102 plates 60 non-heart | mirror 60 cross 0 none 0 -> hidden  (40s)
+  bi-diminished 600-cell (antipodal pair): V118 plates 60 heart | mirror 60 cross 0 none 0 -> hidden  (40s)
+PASS every diminished 600-cell tested has all plates on mirror walls
+  120-cell corners at 36 degrees from one corner: 24
+PASS inscribed 600-cell: 120 corners, all corners of the 120-cell
+  600-cell inscribed in the 120-cell (classical; credit not traced here): V120 plates 60 heart | mirror 0 cross 60 none 0 -> hidden  (41s)
+PROGRESS 0.44 special
+== part koca
+PASS W(H4) has order 14400
+PASS W(H3)xZ2, order 240 (stabiliser of a corner pair): order 240
+W(H3)xZ2, order 240 (stabiliser of a corner pair) orbits on 600-cell corners [2, 24, 24, 30, 40] on 120-cell corners [40, 40, 40, 60, 60, 120, 120, 120]
+  W(H3)xZ2 orbit of 24 600-cell corners: V24 plates 35 heart | mirror 35 cross 0 none 0 -> hidden  (42s)
+  W(H3)xZ2 orbit of 24 600-cell corners: V24 plates 35 heart | mirror 15 cross 20 none 0 -> hidden  (42s)
+  W(H3)xZ2 orbit of 40 600-cell corners: V40 plates 27 heart | mirror 27 cross 0 none 0 -> hidden  (42s)
+  W(H3)xZ2 orbit of 40 120-cell corners: V40 plates 27 heart | mirror 27 cross 0 none 0 -> hidden  (42s)
+  W(H3)xZ2 orbit of 40 120-cell corners: V40 plates 27 heart | mirror 15 cross 0 none 12 -> partly hidden  (42s)
+  W(H3)xZ2 orbit of 40 120-cell corners: V40 plates 27 heart | mirror 15 cross 0 none 12 -> partly hidden  (42s)
+  W(H3)xZ2 orbit of 60 120-cell corners: V60 plates 38 heart | mirror 0 cross 0 none 38 -> not hidden  (42s)
+  W(H3)xZ2 orbit of 120 120-cell corners: V120 plates 77 heart | mirror 15 cross 20 none 42 -> partly hidden  (42s)
+  W(H3)xZ2 orbit of 120 120-cell corners: V120 plates 122 heart | mirror 0 cross 0 none 122 -> not hidden  (42s)
+  W(H3)xZ2 orbit of 120 120-cell corners: V120 plates 77 heart | mirror 27 cross 50 none 0 -> hidden  (42s)
+  W(H3)xZ2 generic orbit (240 points): V240 plates 152 heart | mirror 0 cross 0 none 152 -> not hidden  (42s)
+PASS Aut(A4) = W(A4)xZ2, order 240 (stabiliser of an A4 root system): order 240
+Aut(A4) = W(A4)xZ2, order 240 (stabiliser of an A4 root system) orbits on 600-cell corners [20, 40, 60] on 120-cell corners [10, 30, 40, 40, 120, 120, 240]
+  Aut(A4) = W(A4)xZ2 orbit of 20 600-cell corners: V20 plates 5 heart | mirror 0 cross 5 none 0 -> hidden  (42s)
+  Aut(A4) = W(A4)xZ2 orbit of 40 600-cell corners: V40 plates 80 heart | mirror 20 cross 60 none 0 -> hidden  (42s)
+  Aut(A4) = W(A4)xZ2 orbit of 60 600-cell corners: V60 plates 80 heart | mirror 40 cross 40 none 0 -> hidden  (42s)
+  Aut(A4) = W(A4)xZ2 orbit of 10 120-cell corners: V10 plates 10 heart | mirror 10 cross 0 none 0 -> hidden  (42s)
+  Aut(A4) = W(A4)xZ2 orbit of 30 120-cell corners: V30 plates 20 heart | mirror 10 cross 0 none 10 -> partly hidden  (42s)
+  Aut(A4) = W(A4)xZ2 orbit of 40 120-cell corners: V40 plates 60 heart | mirror 10 cross 0 none 50 -> partly hidden  (42s)
+  Aut(A4) = W(A4)xZ2 orbit of 40 120-cell corners: V40 plates 140 heart | mirror 0 cross 0 none 140 -> not hidden  (43s)
+  Aut(A4) = W(A4)xZ2 orbit of 120 120-cell corners: V120 plates 85 heart | mirror 0 cross 5 none 80 -> partly hidden  (43s)
+  Aut(A4) = W(A4)xZ2 orbit of 120 120-cell corners: V120 plates 190 heart | mirror 0 cross 0 none 190 -> not hidden  (43s)
+  Aut(A4) = W(A4)xZ2 orbit of 240 120-cell corners: V240 plates 210 heart | mirror 50 cross 100 none 60 -> partly hidden  (43s)
+  Aut(A4) = W(A4)xZ2 generic orbit (240 points): V240 plates 250 heart | mirror 0 cross 0 none 250 -> not hidden  (43s)
+PASS W(D4):C3, order 576 (stabiliser of an inscribed 24-cell): order 576
+W(D4):C3, order 576 (stabiliser of an inscribed 24-cell) orbits on 600-cell corners [24, 96] on 120-cell corners [24, 96, 192, 288]
+  W(D4):C3 orbit of 24 600-cell corners: V24 plates 12 heart | mirror 0 cross 12 none 0 -> hidden  (43s)
+  W(D4):C3 orbit of 96 600-cell corners: V96 plates 60 heart | mirror 60 cross 0 none 0 -> hidden  (43s)
+  W(D4):C3 orbit of 24 120-cell corners: V24 plates 12 heart | mirror 12 cross 0 none 0 -> hidden  (43s)
+  W(D4):C3 orbit of 96 120-cell corners: V96 plates 204 heart | mirror 12 cross 0 none 192 -> partly hidden  (43s)
+  W(D4):C3 orbit of 192 120-cell corners: V192 plates 84 heart | mirror 0 cross 12 none 72 -> partly hidden  (43s)
+  W(D4):C3 orbit of 288 120-cell corners: V288 plates 384 heart | mirror 48 cross 48 none 288 -> partly hidden  (44s)
+  W(D4):C3 generic orbit (576 points): V576 plates 552 heart | mirror 0 cross 0 none 552 -> not hidden  (44s)
+PASS [W(H2)xW(H2)]:Z4, order 400 (stabiliser of two orthogonal decagons): order 400
+[W(H2)xW(H2)]:Z4, order 400 (stabiliser of two orthogonal decagons) orbits on 600-cell corners [20, 100] on 120-cell corners [100, 100, 200, 200]
+  [W(H2)xW(H2)]:Z4 orbit of 20 600-cell corners: V20 plates 10 heart | mirror 0 cross 0 none 10 -> not hidden  (44s)
+  [W(H2)xW(H2)]:Z4 orbit of 100 600-cell corners: V100 plates 60 heart | mirror 60 cross 0 none 0 -> hidden  (45s)
+  [W(H2)xW(H2)]:Z4 orbit of 100 120-cell corners: V100 plates 260 heart | mirror 10 cross 50 none 200 -> partly hidden  (45s)
+  [W(H2)xW(H2)]:Z4 orbit of 100 120-cell corners: V100 plates 60 heart | mirror 0 cross 0 none 60 -> not hidden  (45s)
+  [W(H2)xW(H2)]:Z4 orbit of 200 120-cell corners: V200 plates 620 heart | mirror 50 cross 100 none 470 -> partly hidden  (45s)
+  [W(H2)xW(H2)]:Z4 orbit of 200 120-cell corners: V200 plates 370 heart | mirror 50 cross 0 none 320 -> partly hidden  (45s)
+  [W(H2)xW(H2)]:Z4 generic orbit (400 points): V400 plates 620 heart | mirror 0 cross 0 none 620 -> not hidden  (46s)
+PASS [W(A2)xW(A2)]:Z4, order 144 (stabiliser of two orthogonal hexagons): order 144
+[W(A2)xW(A2)]:Z4, order 144 (stabiliser of two orthogonal hexagons) orbits on 600-cell corners [12, 36, 72] on 120-cell corners [24, 36, 36, 72, 72, 72, 144, 144]
+  [W(A2)xW(A2)]:Z4 orbit of 12 600-cell corners: V12 plates 6 heart | mirror 0 cross 0 none 6 -> not hidden  (46s)
+  [W(A2)xW(A2)]:Z4 orbit of 36 600-cell corners: V36 plates 96 heart | mirror 24 cross 72 none 0 -> hidden  (46s)
+  [W(A2)xW(A2)]:Z4 orbit of 72 600-cell corners: V72 plates 66 heart | mirror 54 cross 12 none 0 -> hidden  (46s)
+  [W(A2)xW(A2)]:Z4 orbit of 24 120-cell corners: V24 plates 12 heart | mirror 0 cross 0 none 12 -> not hidden  (46s)
+  [W(A2)xW(A2)]:Z4 orbit of 36 120-cell corners: V36 plates 24 heart | mirror 0 cross 0 none 24 -> not hidden  (46s)
+  [W(A2)xW(A2)]:Z4 orbit of 36 120-cell corners: V36 plates 96 heart | mirror 6 cross 18 none 72 -> partly hidden  (46s)
+  [W(A2)xW(A2)]:Z4 orbit of 72 120-cell corners: V72 plates 210 heart | mirror 0 cross 0 none 210 -> not hidden  (46s)
+  [W(A2)xW(A2)]:Z4 orbit of 72 120-cell corners: V72 plates 114 heart | mirror 6 cross 36 none 72 -> partly hidden  (46s)
+  [W(A2)xW(A2)]:Z4 orbit of 72 120-cell corners: V72 plates 138 heart | mirror 0 cross 90 none 48 -> partly hidden  (46s)
+  [W(A2)xW(A2)]:Z4 orbit of 144 120-cell corners: V144 plates 156 heart | mirror 18 cross 12 none 126 -> partly hidden  (46s)
+  [W(A2)xW(A2)]:Z4 orbit of 144 120-cell corners: V144 plates 228 heart | mirror 0 cross 0 none 228 -> not hidden  (46s)
+  [W(A2)xW(A2)]:Z4 generic orbit (144 points): V144 plates 228 heart | mirror 0 cross 0 none 228 -> not hidden  (47s)
+PROGRESS 0.56 koca
+== part atlas600
+PASS polytopes.py 600-cell matches qv_lib frame
+600-cell: 62 slices (3 below 3D), 4 shadows; hidden 4 partly 59 not 0 (50s)
+PASS #63 atlas: 62 slice types of the 600-cell reproduced
+PROGRESS 0.67 atlas600
+== part atlas120
+PASS 120-cell edges 1200
+PASS polytopes.py 600-cell matches qv_lib frame
+120-cell: 124 slices (3 below 3D), 4 shadows; hidden 6 partly 112 not 7 (58s)
+PASS Red Queen atlas: 124 slice patterns of the 120-cell reproduced
+PROGRESS 0.78 atlas120
+== part hopscotch
+  stage 600-cell mu = 1 1.0
+  stage rectified 600-cell mu = 5/8 + 1/8√5 0.9045084971874737
+  stage rectified 120-cell mu = 1/2 + 1/6√5 0.8726779962499649
+  stage 120-cell mu = 7/16 + 3/16√5 0.8567627457812106
+PASS Hopscotch frame: mu(600-cell) = 1 and mu(120-cell) = r^2 = phi^4/8
+  S(mu) seed (0, 0, 1, 2), mu = 0.952254: V1440 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (59s)
+  S(mu) seed (0, 0, 2, 1), mu = 0.923607: V1440 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (60s)
+  S(mu) seed (0, 1, 2, 0), mu = 0.890867: V3600 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (61s)
+  S(mu) seed (0, 2, 1, 0), mu = 0.880636: V3600 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (63s)
+  S(mu) seed (1, 2, 0, 0), mu = 0.868034: V2400 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (64s)
+  S(mu) seed (2, 1, 0, 0), mu = 0.862773: V2400 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (65s)
+  S(mu) seed (0, 0, 1, 1), mu = 0.936339: V1440 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (67s)
+  S(mu) seed (0, 1, 1, 0), mu = 0.885410: V3600 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (68s)
+  S(mu) seed (1, 1, 0, 0), mu = 0.865488: V2400 plates 1260 heart | mirror 60 cross 0 none 1200 -> partly hidden  (69s)
+  truncated 600-cell type at the station lambda3:lambda4 = 1/phi, mu = 1/2 + 1/5√5 = 0.947213595: V1440 plates 360 heart | mirror 60 cross 300 none 0 -> hidden  (70s)
+  cantellated 600-cell type at the station lambda2:lambda4 = sqrt5 - 2, mu = 1/2 + 1/5√5 = 0.947213595: V3600 plates 2880 heart | mirror 60 cross 300 none 2520 -> partly hidden  (73s)
+PASS station of the truncated-600-cell hop: its 2400 triangles leave the 1200 no-wall plates for cross walls
+PASS station of the cantellated 600-cell family: the 2-3 faces on cross walls
+PROGRESS 0.89 hopscotch
+== part ab
+PASS W(A4) generated by the four A4 roots has order 120
+  W(A4) orbits on the 600-cell corners: [20, 20, 20, 30, 30]
+  W(A4) orbit of 20 corners: V20 plates 5 heart | mirror 0 cross 5 none 0 -> hidden  (73s)
+  W(A4) orbit of 20 corners = solid A: V20 plates 30 non-heart | mirror 30 cross 0 none 0 -> hidden  (73s)
+  W(A4) orbit of 20 corners = solid A: V20 plates 30 non-heart | mirror 30 cross 0 none 0 -> hidden  (73s)
+  W(A4) orbit of 30 corners = solid B: V30 plates 80 non-heart | mirror 40 cross 40 none 0 -> hidden  (73s)
+  W(A4) orbit of 30 corners = solid B: V30 plates 80 non-heart | mirror 40 cross 40 none 0 -> hidden  (73s)
+PASS solid A appears twice (A and -A) among the W(A4) orbits, solid B twice
+PASS every W(A4) orbit is centred at the Queens centre
+PASS A: 30 plates, all mirror walls; B: 80 plates, 40 mirror + 40 cross (walls study reproduced in this frame)
+PROGRESS 1.00 ab
+checks 45 failed []
+FINAL ok
+[exit 0]

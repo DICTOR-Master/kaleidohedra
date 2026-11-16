@@ -1,0 +1,7 @@
+corner on the 600-cell edge pq at fraction t = 1/2 - 1/10√5 = 0.276393202250021 (uniform truncation: 1/3; rectification: 1/2)
+two shortest distances from a corner (edge lengths squared, float): [0.381966011, 1.0] ratio of lengths 1.618033989279626
+{'name': 'station truncated 600-cell', 'V': 1440, 'E': 4320, 'F2': 3600, 'F3': 720, 'euler': 0, 'ridge_sizes': {'3': 2400, '6': 1200}, 'plates': 360, 'ridges_per_plate': {'8': 300, '20': 60}, 'central_symmetry': True, 'kind': 'heart', 'plates_mirror': 60, 'plates_cross': 300, 'plates_none': 0, 'ridges_mirror': 1200, 'ridges_cross': 2400, 'ridges_none': 0, 'hidden': 'hidden'}
+triangles per cross wall: 8.0 ; hexagons per mirror wall: 20.0
+mu = 1/2 + 1/5√5 = 0.947213595499958 ; mu* (19-design) 0.924138673, mu_Omega 0.921449634, turn r 0.925615: all differ
+checks [True, True, True, True]
+FINAL ok

@@ -1,0 +1,629 @@
+== part control
+mirrors alone, exact lattice: 14400 {'hyperplanes': 60, 'flats2': 722, 'lines': 1320, 'chi': [1, -60, 1138, -7140, 6061]} (21s)
+PASS control: the 60 mirrors cut R^4 into 14400 chambers = |W(H4)| (exact)
+PASS control: characteristic polynomial (t-1)(t-11)(t-19)(t-29) (exact)
+PASS control: no mirror meets the open chamber C
+PASS 600-cell, mirrors only: pieces fill the cell orthoscheme (volume sum)
+PASS control 600-cell: one chamber per W(H4) chamber (one class, 14400 chambers)
+PASS control 600-cell: 14400 x chamber volume = volume of the 600-cell
+600-cell mirrors only: [{'class': 1, 'in_one_chamber_C': 1, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.009273625983949697}, 'chamber': {'V': 5, 'E': 10, 'F2': 10, 'F3': 5, 'vol4': np.float64(0.004291902699652046)}}] (21s)
+PASS 120-cell, mirrors only: pieces fill the cell orthoscheme (volume sum)
+PASS control 120-cell: one chamber per W(H4) chamber (one class, 14400 chambers)
+PASS control 120-cell: 14400 x chamber volume = volume of the 120-cell
+120-cell mirrors only: [{'class': 1, 'in_one_chamber_C': 1, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00798241558398399}, 'chamber': {'V': 5, 'E': 10, 'F2': 10, 'F3': 5, 'vol4': np.float64(0.003419518146850424)}}] (21s)
+PROGRESS 0.33 control
+== part cross
+cross walls through the open chamber C: 25 ; touching its boundary only: 44 (21s)
+exact regions of C: 298 {'planes': 25, 'lines_inside': 124, 'points_inside': 86, 'points_multiple': 21, 'lines_multiple': 8} (22s)
+PASS 600-cell, 60 mirrors + 300 cross walls: pieces fill the cell orthoscheme (volume sum)
+PASS 600-cell: float splitting gives the exact count 298
+600-cell pieces in C 298 congruence classes (4D invariants) 298 (22s)
+PASS 600-cell: 14400 x (sum of chamber volumes in C) = volume of the 600-cell
+600-cell combinatorial types: 15 largest/smallest chamber volume 249.01 (22s)
+   chamber (V,E,F2,F3) (5, 10, 10, 5) base faces {"3": 4} x 155
+   chamber (V,E,F2,F3) (6, 13, 13, 6) base faces {"3": 4, "4": 1} x 59
+   chamber (V,E,F2,F3) (6, 14, 15, 7) base faces {"3": 6} x 3
+   chamber (V,E,F2,F3) (7, 15, 14, 6) base faces {"3": 2, "4": 3} x 34
+   chamber (V,E,F2,F3) (7, 16, 16, 7) base faces {"3": 4, "4": 2} x 16
+   chamber (V,E,F2,F3) (7, 16, 16, 7) base faces {"3": 5, "5": 1} x 2
+   chamber (V,E,F2,F3) (8, 18, 17, 7) base faces {"3": 2, "4": 4} x 10
+   chamber (V,E,F2,F3) (8, 18, 17, 7) base faces {"3": 3, "4": 2, "5": 1} x 6
+   chamber (V,E,F2,F3) (8, 19, 19, 8) base faces {"3": 4, "4": 3} x 2
+   chamber (V,E,F2,F3) (9, 20, 18, 7) base faces {"3": 2, "4": 2, "5": 2} x 3
+   chamber (V,E,F2,F3) (9, 20, 18, 7) base faces {"4": 6} x 3
+   chamber (V,E,F2,F3) (9, 21, 20, 8) base faces {"3": 2, "4": 5} x 1
+   chamber (V,E,F2,F3) (9, 21, 20, 8) base faces {"3": 3, "4": 3, "5": 1} x 1
+   chamber (V,E,F2,F3) (10, 23, 21, 8) base faces {"3": 1, "4": 5, "5": 1} x 1
+   chamber (V,E,F2,F3) (11, 25, 22, 8) base faces {"4": 5, "5": 2} x 2
+PASS 120-cell, 60 mirrors + 300 cross walls: pieces fill the cell orthoscheme (volume sum)
+PASS 120-cell: float splitting gives the exact count 298
+120-cell pieces in C 298 congruence classes (4D invariants) 298 (22s)
+PASS 120-cell: 14400 x (sum of chamber volumes in C) = volume of the 120-cell
+120-cell combinatorial types: 15 largest/smallest chamber volume 273.69 (22s)
+   chamber (V,E,F2,F3) (5, 10, 10, 5) base faces {"3": 4} x 155
+   chamber (V,E,F2,F3) (6, 13, 13, 6) base faces {"3": 4, "4": 1} x 59
+   chamber (V,E,F2,F3) (6, 14, 15, 7) base faces {"3": 6} x 3
+   chamber (V,E,F2,F3) (7, 15, 14, 6) base faces {"3": 2, "4": 3} x 34
+   chamber (V,E,F2,F3) (7, 16, 16, 7) base faces {"3": 4, "4": 2} x 16
+   chamber (V,E,F2,F3) (7, 16, 16, 7) base faces {"3": 5, "5": 1} x 2
+   chamber (V,E,F2,F3) (8, 18, 17, 7) base faces {"3": 2, "4": 4} x 10
+   chamber (V,E,F2,F3) (8, 18, 17, 7) base faces {"3": 3, "4": 2, "5": 1} x 6
+   chamber (V,E,F2,F3) (8, 19, 19, 8) base faces {"3": 4, "4": 3} x 2
+   chamber (V,E,F2,F3) (9, 20, 18, 7) base faces {"3": 2, "4": 2, "5": 2} x 3
+   chamber (V,E,F2,F3) (9, 20, 18, 7) base faces {"4": 6} x 3
+   chamber (V,E,F2,F3) (9, 21, 20, 8) base faces {"3": 2, "4": 5} x 1
+   chamber (V,E,F2,F3) (9, 21, 20, 8) base faces {"3": 3, "4": 3, "5": 1} x 1
+   chamber (V,E,F2,F3) (10, 23, 21, 8) base faces {"3": 1, "4": 5, "5": 1} x 1
+   chamber (V,E,F2,F3) (11, 25, 22, 8) base faces {"4": 5, "5": 2} x 2
+float whole lattice of the 360 walls: 4291200 {'flats2': 35042, 'lines': 803160, 'chi': [1, -360, 46318, -2145240, 2099281]} (143s)
+PASS float whole-lattice count of the 360-wall arrangement = 14400 x exact regions of C
+PASS the 120-cell adds no cell-parallel walls of its own (its cell centres point along 600-cell corners = the mirrors)
+PROGRESS 0.67 cross
+== part ab
+PASS reference 600-cell chamber: pieces fill the cell orthoscheme (volume sum)
+PASS reference 120-cell chamber: pieces fill the cell orthoscheme (volume sum)
+A pieces congruent to the Queens chambers (distance test): {'600-cell': 120, '120-cell': 0} (147s)
+PASS A: chambers inside the solid = chambers of its own walls (every chamber meets the solid)
+A {'plates': 30, 'mirror': 30, 'cross': 0, 'mirror_closure': 60, 'mirror_subsystem_closed': False, 'chambers_own_walls': 3360, 'chi': [1, -30, 355, -1650, 1324], 'cells': 10, 'walls_through_each_cell': [6, 6, 6, 6, 6, 22, 22, 22, 22, 22], 'pieces_in_solid': 3360, 'pieces_equal_to_queen_chambers': {'600-cell': 120, '120-cell': 0}} (147s)
+    {'count': 120, 'from_cell_with_corners': 4, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0092736259839497}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.014623255527331323}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.018340531382512324}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.013755398536884242}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.011155522247329354}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.006689618666611248}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.08232721238294448}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.05874256468450427}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0053716517260117}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.008913333752504407}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.012720253862922729}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.008756824520482}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00421266632375271}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0008299658356005678}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.004762398925503854}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.03438849634221056}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0015331241753218493}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.001445502350683394}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.01003442799991688}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.016807407207190435}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.009170265691256159}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.002379352121858746}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0009475228493230543}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0029515498931138146}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.06568770404700253}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0006201617561612262}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.004427212370740908}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0005168014634676886}, 'chamber_f': [5, 10, 10, 5]}
+PASS reference 600-cell chamber: pieces fill the cell orthoscheme (volume sum)
+PASS reference 120-cell chamber: pieces fill the cell orthoscheme (volume sum)
+B pieces congruent to the Queens chambers (distance test): {'600-cell': 0, '120-cell': 0} (239s)
+PASS B: chambers inside the solid = chambers of its own walls (every chamber meets the solid)
+B {'plates': 80, 'mirror': 40, 'cross': 40, 'mirror_closure': 60, 'mirror_subsystem_closed': False, 'cross_closure': 401, 'all_closure': 401, 'cross_closure_stays_in_queen_walls': False, 'all_closure_stays_in_queen_walls': False, 'chambers_own_walls': 62880, 'chi': [1, -80, 2478, -31360, 28961], 'chambers_mirror_part': 6240, 'chambers_cross_part': 13580, 'cells': 20, 'walls_through_each_cell': [42, 42, 42, 42, 42, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 62, 62, 62, 62, 62], 'pieces_in_solid': 62880, 'pieces_equal_to_queen_chambers': {'600-cell': 0, '120-cell': 0}} (239s)
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0011568809177016064}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00028922022942540107}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0003305374050576011}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.0028127408506983353}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00018076264339087676}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 5.1646469540249766e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0006540423166339549}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0010191496131080969}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0008348151669354404}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00026102552919202957}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0004985144010996341}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0006139815065570272}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00043968083906808906}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0005181500403245061}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0003994006178454066}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00028165800045280284}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0004098742546832151}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0006359657319109211}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0035465844471756587}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.001659379682481583}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00018895174605223225}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 3, '4': 2, '5': 1}, 'vol': 0.0028461100214395305}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.005173486214515997}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.00342187493487836}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0038559293442357286}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00013503118474318419}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00037101157004878766}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0002619383718609318}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.002076043874671801}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.0014639245911279154}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.001036228561665187}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00038852836024287374}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00028606550655232673}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0004245996418690728}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0005914249897225745}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00019104366829653777}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0015119106095359853}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00022733551888327609}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0012515349818149537}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.0019292270886113203}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0009549715420368748}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0004867639655591219}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00013340207345742316}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'3': 2, '4': 2, '5': 2}, 'vol': 0.002072725646044983}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00024128430776274232}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0004973541728141799}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 10, 'E': 15, 'F': 7, 'faces': {'4': 5, '5': 2}, 'vol': 0.0024076231047163578}, 'chamber_f': [11, 25, 22, 8]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.001625498155651294}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 8.254940435579275e-06}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0005982669798365155}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 13, 'F': 7, 'faces': {'3': 3, '4': 3, '5': 1}, 'vol': 0.0007390673329832284}, 'chamber_f': [9, 21, 20, 8]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 12, 'F': 7, 'faces': {'3': 4, '4': 3}, 'vol': 0.0017725590494779174}, 'chamber_f': [8, 19, 19, 8]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00021529739258746553}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0013439506053082495}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0019152277496832936}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 12, 'F': 7, 'faces': {'3': 4, '4': 3}, 'vol': 0.002276650124724689}, 'chamber_f': [8, 19, 19, 8]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0010008339711088195}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0006936518110353968}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0008638713197039257}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0008777376589695043}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.002024181080511262}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0001832249598583991}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.004438348738023762}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0008371197815579508}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00010573717911136878}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00021516756593927425}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0007522008997988363}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0019267959677552178}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0015847826402235453}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0005355887761605867}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0005443260123014684}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0003080988437608727}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0014510214247174865}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.002517216093832254}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.002271621893689223}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0015911338893980238}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 7.113992736548556e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 5.101731221583044e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0002079032154307483}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.002182969151803148}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00019370430086616616}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.0021049194245050386}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0005001593774639281}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0001420754908940991}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0014500144164763498}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.0008712533020389026}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0007752692196320233}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0003572573420980525}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.00033712824001371053}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0010974591506393522}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0016475411396387795}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.0019724663837055478}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 8.717258470934298e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00018669236287814409}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0016101024138754688}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00201003285719794}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0015666333984506258}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0016854399171450905}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0022696758148409235}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0006407733348562369}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.000535086908451169}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0013223542456372221}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0012138286427215397}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0007902852797195074}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0016881906458483043}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00011147120886213855}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0005927403021199346}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.000571728865691023}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00023988714385995494}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.0036958217814454636}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0022465248970696457}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.0072089764206296515}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0012610088467176562}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 3.384010109544876e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0004197937614269481}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0011137559275181282}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.001543165782214042}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.000555803024920696}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0001883205186836531}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00014876683943332438}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.000498178385613133}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0020920812456412126}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0008764969221205573}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.005342515398882197}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 4.081154531535549e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.0007034955566495632}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0008233545392374519}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0008040504011089184}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0019823449431838345}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.002200535370029163}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0022301380610818106}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0014867587073878765}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 2.9138129059892955e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0003097079571812342}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0014132415184446437}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.002967221570832146}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 9.429296637497529e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.004855358920874277}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0019321622794950327}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0022250257285962747}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0004359820220116677}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0016518306113381582}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0005903161090971599}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.001238965589489896}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 3, '4': 2, '5': 1}, 'vol': 0.001460756679657039}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0025146457606088015}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0017125407400834342}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0001611769097548271}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0018078546098176927}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00013083805782803653}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.000621132643456962}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00017394633654641722}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0005891858568987755}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 3, '4': 2, '5': 1}, 'vol': 0.0012804132601359115}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00019740059360896968}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 2.807951677992159e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0005232134243943302}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 3.130613374663467e-05}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0003112626095194429}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00010311316461552763}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0004757869674203732}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.0004940111924981742}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0001680027624955852}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.0004970354404507472}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0004118765440088899}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.011117626184857485}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0012289209589620115}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00021854654351615178}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0004043636638293684}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0007229830256896848}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.0010277386642783437}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0008323119133503}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 9.991508129641447e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0009294869395475975}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 13, 'F': 7, 'faces': {'3': 2, '4': 5}, 'vol': 0.022447607519827814}, 'chamber_f': [9, 21, 20, 8]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 13, 'F': 7, 'faces': {'3': 2, '4': 5}, 'vol': 0.004117458520635983}, 'chamber_f': [9, 21, 20, 8]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0003009964716407939}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0007091706578415869}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0013133243927489643}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 9, 'E': 14, 'F': 7, 'faces': {'3': 1, '4': 5, '5': 1}, 'vol': 0.003152812293204677}, 'chamber_f': [10, 23, 21, 8]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0002446192276820447}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0005974465176650594}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0017338164053544239}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 13, 'F': 7, 'faces': {'3': 2, '4': 5}, 'vol': 0.0036488000248778353}, 'chamber_f': [9, 21, 20, 8]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.003340208537015196}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 2.795997533431632e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.008473343849260706}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.005479455281232481}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0009687769547762343}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0004701768937615459}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0004498934597807035}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.004245143982185473}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0006432208562077086}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0005157300538398697}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 10, 'E': 15, 'F': 7, 'faces': {'4': 5, '5': 2}, 'vol': 0.002583881482630658}, 'chamber_f': [11, 25, 22, 8]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00011440449090407523}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.001605186531613284}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 9, 'E': 14, 'F': 7, 'faces': {'3': 2, '4': 3, '5': 2}, 'vol': 0.002360981802189173}, 'chamber_f': [10, 23, 21, 8]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00017037936509825522}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0015997613758868604}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0004943534520936884}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00040213502591584816}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00023146308519024353}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0003356123835068785}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00014697552444706334}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.001352137168508133}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 11, 'E': 17, 'F': 8, 'faces': {'3': 1, '4': 4, '5': 3}, 'vol': 0.004899659389210328}, 'chamber_f': [12, 28, 25, 9]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0006034514927633334}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.009263339754779165}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 4.461250832394774e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'3': 2, '4': 2, '5': 2}, 'vol': 0.0012325309851688527}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0001237778337486949}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.000616362667482647}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 1.7040461856360617e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.00031741125983808966}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0004299557079485054}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0001199111052366027}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'3': 2, '4': 2, '5': 2}, 'vol': 0.005045119754330074}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0002392287975792466}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0032256116612419602}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.001977744484086916}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 8.905147702830387e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.0007519037642619829}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0003300483956048805}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0008254514061272817}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.004493510745336232}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.004329612149741107}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0010672195619440936}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.003463445829123167}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00014049397822277259}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.002103127758573656}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0027399276266459162}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0008466841999910028}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00028817663316035185}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0006103679037971362}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0015057359381692385}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00034147468804887805}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0007232549955852919}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0005742562723170027}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0017187685412976095}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 6, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.003332984882699268}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0008597124085552649}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.001562188858132695}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.001360324313850789}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.000728240285115079}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.002901418131371388}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.00151135241647906}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00019801555467888988}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0019802559549601017}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0004110229701505746}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0029124531600240914}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00018978059611959327}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0011823396102628157}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0033145715816930094}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0003353418041008069}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.000810429044194132}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0004538112695170374}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00022632379634211303}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0010147528475955784}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.005523469873526221}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00028714460325251064}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00015134048753710503}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.004639411823978958}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.009400879315533529}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00023475617849798004}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00029638532826026075}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.000585283392957221}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00020905058333160135}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0005361660957062073}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00026403067339743927}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.003396693221552782}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.008673492007601862}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.002775126910602171}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.004287111599261101}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 13, 'F': 7, 'faces': {'3': 2, '4': 5}, 'vol': 0.006408467993334481}, 'chamber_f': [9, 21, 20, 8]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 13, 'F': 7, 'faces': {'3': 2, '4': 5}, 'vol': 0.005395831846519002}, 'chamber_f': [9, 21, 20, 8]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.003271609167555772}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0031357587499740358}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00653813210142587}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0015798116464420106}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.00192637998906538}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0029301548361972463}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00844726512811922}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.001395153855579165}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00408951145944473}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00787847212837051}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.001641904597590371}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 3, '4': 2, '5': 1}, 'vol': 0.0028987162918009354}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0015031460269292912}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0002828218814690643}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0033592793329404154}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.006915810200197066}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0026882857072855182}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0005609415780785269}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00016888311428581043}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00014094585367300605}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0014546432009751897}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0014015582817816523}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0001615551883188283}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0036364759625194835}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.0018762732845188112}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0016558255137277987}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0021169153109613626}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00044979096946781726}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 9.349026301309003e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0009105444125530769}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0003251623859920352}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 6.968352777720093e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00012489862566825047}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.004173663417108071}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0023652803588709555}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00029137708631498603}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0013092273529403636}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0006765018983970521}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00023112064063702452}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0022907627341334953}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.001519818470320523}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0009013437682045491}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0040377431104189005}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00019520044199959768}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0009031726389286113}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00047842702212224514}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0005713616456613245}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0005378748679038578}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0014071021437644406}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0006271517499948091}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.005801484447498376}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00023955065239403923}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00014805044520672735}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.007094201680830606}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0008491995322305416}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00047726918415128575}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.002391555797185928}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00010336029269353733}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0009204144153135894}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0002638226807751962}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0004952132021079311}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0002848093129786838}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0003025408463446919}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 1.4868342731886566e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.00025193324210014774}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0001648161965972925}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 8.895889029238128e-05}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 1.4805044520672772e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 1.657686383293047e-05}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 5.4599296835813054e-05}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.00026158312413350064}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.0002631844891219912}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00028763944263488373}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.002818398800492434}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.003581098196981835}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 6.7902461471984e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00010986849058145027}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0002770459540593536}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0001157222518227544}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.005886877533435999}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0003828256554249957}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.004486707567774746}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.00021809212984491715}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0006507240901421639}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.00021411399595150875}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.0005441963556234887}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.000440716230429347}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00015938018935724848}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 13, 'F': 7, 'faces': {'3': 2, '4': 5}, 'vol': 0.011886198923278257}, 'chamber_f': [9, 21, 20, 8]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0006954164255241541}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.002901418131371362}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.000492171232515231}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 13, 'F': 7, 'faces': {'3': 2, '4': 5}, 'vol': 0.002180229273493717}, 'chamber_f': [9, 21, 20, 8]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0003755118892831491}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 9, 'E': 14, 'F': 7, 'faces': {'3': 1, '4': 5, '5': 1}, 'vol': 0.001669440899289001}, 'chamber_f': [10, 23, 21, 8]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.000931461628935855}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0027382284425538266}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0002922560811982038}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00033733682347558675}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0005164442008376441}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00016314143612439487}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 5.290588454362836e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0009180705191982107}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00012952795963308022}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0003163530077187165}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 13, 'F': 7, 'faces': {'3': 2, '4': 5}, 'vol': 0.0019320706177106818}, 'chamber_f': [9, 21, 20, 8]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0017686688027276905}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0017430968221406077}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0014612804059910382}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0003340686468118169}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 6.232684200872635e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00018062419159934194}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0003508940277672122}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.0017580436344730456}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00029108808380821124}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00040227383810286676}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0001045252916658015}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0023793521218587513}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0005651018264140944}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0022925664228140305}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 2.362270223837755e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.00027667037956848934}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.00039094502650773846}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00020690204699971086}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 6.349394912992309e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0014613653111560047}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0011846748392610174}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'3': 2, '4': 2, '5': 2}, 'vol': 0.002586792697727589}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.002098566502061271}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.00211572804918527}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 10, 'E': 15, 'F': 7, 'faces': {'4': 5, '5': 2}, 'vol': 0.0036358655221357125}, 'chamber_f': [11, 25, 22, 8]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00013580492294396803}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 13, 'F': 7, 'faces': {'3': 3, '4': 3, '5': 1}, 'vol': 0.0012684800131264587}, 'chamber_f': [9, 21, 20, 8]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0009552360095058509}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.0013575750159336502}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0009572743775780148}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 6.9279863375452e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.0031618968306592918}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'4': 6}, 'vol': 0.005085157919996909}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.000566631560950379}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00011366444212244457}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0005887895230338308}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0008101596304559274}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.002293938293164418}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0007031186375519413}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0004538112695170352}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.000338250949198525}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.000477618004752924}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0009552360095058516}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0004776180047529244}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 4.9134682705084354e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 6.228612507738418e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.001723059786382031}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0003288950125909799}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0011404099008877125}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.0010643151512146885}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0003514397469232937}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0016056578317422774}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0017893642739275138}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.003911684237976097}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.002486049133645073}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.008397876008603289}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00043464133882432606}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00021711135174748655}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 1.6665710570402916e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0009680077160890271}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.003998730542560689}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.003358775981014997}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0035267444266862203}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0021001463386830788}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.001985751017336831}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.012641190459059568}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0040093702829404245}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.006220937429405972}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.00031197891765058575}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 3, '4': 2, '5': 1}, 'vol': 0.0006779897011534825}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 9.210606325596077e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.0005331579269489837}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 6.535044643968908e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.001952954254885206}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 3, '4': 2, '5': 1}, 'vol': 0.0009464425113650984}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.001702009413534348}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0003373147443466785}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 5, '5': 1}, 'vol': 0.0010148486693130395}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00027486630087557177}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0002835501808426004}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 8.76218246384534e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 4.451408134727956e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00013644668031485016}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0032492272853640635}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0002001896401802691}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00017861102335818392}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0001455440419041044}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 5, '5': 1}, 'vol': 0.000537370993760656}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00015014223013520248}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 2.3570584317879038e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 4.639650068513172e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.000273083445763163}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00034059090893018377}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 10, 'E': 15, 'F': 7, 'faces': {'4': 5, '5': 2}, 'vol': 0.001368187200778303}, 'chamber_f': [11, 25, 22, 8]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0008470872420044154}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 9.0217321564933e-05}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00026176435349756726}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0008499599080601196}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 6.057815005011438e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 9, 'E': 14, 'F': 7, 'faces': {'3': 2, '4': 3, '5': 2}, 'vol': 0.0012501599259641622}, 'chamber_f': [10, 23, 21, 8]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00021293391323914541}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0007159681200880636}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 7.782478907330482e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 11, 'E': 17, 'F': 8, 'faces': {'3': 1, '4': 4, '5': 3}, 'vol': 0.002594411279911253}, 'chamber_f': [12, 28, 25, 9]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0003195326930586492}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00012256167039346192}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.00017770960882823318}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 6.554141473339218e-05}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.0001680719591872491}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'3': 2, '4': 2, '5': 2}, 'vol': 0.0006526356296937585}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 9.02306934894209e-06}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00032636926978119886}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00022766520077298919}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0022478398103514766}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 7, 'E': 11, 'F': 6, 'faces': {'3': 2, '4': 4}, 'vol': 0.004905017112490096}, 'chamber_f': [8, 18, 17, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0017079887832546214}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 4.715351377358167e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0002489626604279499}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00023822240978295403}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 8, 'E': 12, 'F': 6, 'faces': {'3': 2, '4': 2, '5': 2}, 'vol': 0.0026714337792461593}, 'chamber_f': [9, 20, 18, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0010472325095896792}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0001266736810901528}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 10, 'F': 6, 'faces': {'3': 4, '4': 2}, 'vol': 0.0003981394322439661}, 'chamber_f': [7, 16, 16, 7]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0018339239960692287}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0014508149599877186}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.000448326478329614}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00032319499147109084}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.000797299973781164}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00015259197594928448}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 7.224967663973653e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0001060021155243564}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00017476342995587703}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.000910102547315604}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.00043708353355974435}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.0003040735757550576}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 7.439275527262977e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00018081374889632312}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.00038296966579570154}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 6, 'E': 9, 'F': 5, 'faces': {'3': 2, '4': 3}, 'vol': 0.0011136240188355955}, 'chamber_f': [7, 15, 14, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 5, 'E': 8, 'F': 5, 'faces': {'3': 4, '4': 1}, 'vol': 0.0005129756294334233}, 'chamber_f': [6, 13, 13, 6]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 9.541405971424366e-05}, 'chamber_f': [5, 10, 10, 5]}
+    {'count': 120, 'from_cell_with_corners': 12, 'base': {'V': 4, 'E': 6, 'F': 4, 'faces': {'3': 4}, 'vol': 0.001764843816386658}, 'chamber_f': [5, 10, 10, 5]}
+PASS A: 30 plates all mirrors; B: 40 mirrors + 40 cross
+PROGRESS 1.00 ab
+checks 24 failed []
+FINAL ok
+[exit 0]
