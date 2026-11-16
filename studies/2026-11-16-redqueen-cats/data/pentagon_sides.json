@@ -1,0 +1,39 @@
+{
+ "true_edges": {
+  "sides with each kind (of 1200)": {},
+  "kind sets per side": {
+   "none": 1200
+  },
+  "copies per side by type": {
+   "()": 1200
+  }
+ },
+ "containing_edges": {
+  "sides with each kind (of 1200)": {
+   "X*": 846,
+   "-F*": 600,
+   "-X*": 846,
+   "F*": 600
+  },
+  "kind sets per side": {
+   "X* -F*": 123,
+   "X* -X* -F*": 246,
+   "-X* -F*": 231,
+   "-X* F*": 123,
+   "X* -X* F*": 246,
+   "X* F*": 231
+  },
+  "copies per side by type": {
+   "(('A-type', 2), ('B-type', 1))": 1200
+  }
+ },
+ "matchings_true": {
+  "0": 720
+ },
+ "matchings_containing": {
+  "0": 720
+ },
+ "verdict_true_edges": "iii",
+ "verdict_containing_edges": "iii",
+ "seconds": 30.635801792144775
+}

@@ -1,0 +1,31 @@
+CHECK ok   edges of the five duals X*, -X*, R*, F*, -F*: [30, 30, 70, 80, 80]
+CHECK ok   every A- and B-type copy belongs to exactly one S5 and gets one kind (0 ambiguous)
+CHECK ok   60 copies of each kind: {0: 60, 1: 60, 4: 60, 3: 60, 2: 60}
+kinds assigned (18s)
+PROGRESS 0.10 transport
+PROGRESS 0.20 transport
+PROGRESS 0.30 transport
+PROGRESS 0.40 transport
+PROGRESS 0.50 transport
+PROGRESS 0.60 transport
+copy edges transported 17400 (21s)
+CHECK ok   720 pentagons
+PROGRESS 0.70 sides
+PROGRESS 0.72 sides
+PROGRESS 0.75 sides
+PROGRESS 0.77 sides
+PROGRESS 0.80 sides
+PROGRESS 0.82 sides
+PROGRESS 0.85 sides
+PROGRESS 0.88 sides
+PROGRESS 0.90 sides
+PROGRESS 0.92 sides
+CHECK ok   the 720 pentagons have 1200 distinct sides (the edges of the 120-cell)
+TRUE EDGES {'sides with each kind (of 1200)': {}, 'kind sets per side': {'none': 1200}, 'copies per side by type': {'()': 1200}} (31s)
+CONTAINING EDGES {'sides with each kind (of 1200)': {'X*': 846, '-F*': 600, '-X*': 846, 'F*': 600}, 'kind sets per side': {'X* -F*': 123, 'X* -X* -F*': 246, '-X* -F*': 231, '-X* F*': 123, 'X* -X* F*': 246, 'X* F*': 231}, 'copies per side by type': {"(('A-type', 2), ('B-type', 1))": 1200}} (31s)
+MATCHINGS per pentagon (true edges) {0: 720} (containing edges) {0: 720} (31s)
+VERDICT true edges: iii | containing edges: iii
+CHECK ok   positive control: an edge of a dual copy is found as a true edge of that copy by the same search
+CHECK ok   containing edges include the true edges
+7 checks, 0 failed
+FINAL ok

@@ -195,6 +195,14 @@ The last control does not separate golden from non-golden. The fin over the dual
 - `scripts/fig_dual_cats.py` → `data/redqueen-dual-cats.png`, `data/fig_dual_cats.log` (job rqcats-dualfig, 6 checks, FINAL ok).
 - Run state `data/dual_cover.pkl`, `data/dual_min_cover.pkl` stays on the compute machine (rebuilt by s4, s5).
 
+**Does each cat own one side of a pentagon?** DICTO (16 Nov): "so cats have one side of a pentagon each?!" Exact test (`scripts/s6_pentagon_sides.py` → `data/s6_pentagon_sides.log`, `data/pentagon_sides.json`; job rqcats-sides, 7 checks, FINAL ok, 31 s). For every side of the 720 pentagons (the 1200 edges of Q) we listed the kinds X* (= A*), −X*, R* (= C3*), F* (= B*), −F* that have it as a true edge of one of their 300 copies, and as a part of a longer edge. **Verdict (iii): no.**
+- **True edges: none.** No side of any pentagon is an edge of any dual copy. Only A* has corners on Q, and those 5 corners are the apices of its pyramids, never joined to each other.
+- **Containing edges.** Every side lies inside an edge of exactly 2 A-type and 1 B-type copy, polar to the 2 A-type copies and 1 B-type copy that have the side's 600-cell triangle as a face. R* never does. Kinds per side: X* in 846, −X* in 846, F* in 600, −F* in 600, R* in 0 of the 1200 sides. Kind sets: {X*, −F*} 123, {X*, −X*, −F*} 246, {−X*, −F*} 231, {−X*, F*} 123, {X*, −X*, F*} 246, {X*, F*} 231.
+- **Matchings of 5 sides to 5 kinds:** 0 for all 720 pentagons, both for true and for containing edges, because R* holds no side.
+- X/−X and F/−F are named within each S5 by carrying the coordinate S5's labels over by one symmetry (exchanging them is the central inversion). The A-type / B-type / C3 counts do not depend on this choice.
+
+**Figure 7 of Walls of Silence, two panels** (DICTO: "redraw in five colours but have as a and b"; `scripts/fig_dual_cats_ab.py` → `data/redqueen-dual-cats-ab.png`, job rqcats-dualfig-ab2, 7 checks, FINAL ok; edge check passed). (a) *the five-colour cats*: the colours of Silent Running's Fig. 2. Each pentagon's mark is split into one wedge per kind that covers it, among the 40 duals of the 8 S5s of (b); a pentagon gets 2 to 5 kinds (290, 290, 110 and 30 pentagons). This is a reading, not a partition. (b) *symmetry groups*: the 16-copy A* cover. No 6 S5s partition the 60 mirrors (exact-cover search, job rqcats-dualfig-ab, which stopped on that check), so (a) uses the 8 S5s of (b).
+
 **Sources checked for names (16 Nov 2026):** Wikipedia "Truncated 5-cell" (names only the bitruncated 5-cell's dual, the disphenoidal 30-cell), "Cantellated 5-cell" and "Runcinated 5-cell" (no dual named), "600-cell" (25 24-cells, 10 ways into 5 disjoint ones). Grünbaum, *Convex Polytopes* (Kleetopes; polar of a truncation). The exact polar duals of the golden copies, their 120-cell walls and kinds, the coverage counts, the fewest covers and the A* corner partition were not found in the sources checked.
 
 **LEADS (dual cats)**

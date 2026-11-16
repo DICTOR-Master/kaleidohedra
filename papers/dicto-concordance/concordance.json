@@ -8353,6 +8353,16 @@
    },
    {
     "date": "2026-11-16",
+    "question": "Pentagon sides and the dual cats (DICTO 16 Nov: 'so cats have one side of a pentagon each?!'): for each side of each of the 120-cell's 720 pentagons, which kinds X*, -X*, R* (C3*), F*, -F* have it as a true edge of a copy (or inside a longer edge); is one side per kind forced, possible, or impossible?",
+    "method": "studies/2026-11-16-redqueen-cats, 'Does each cat own one side of a pentagon?': exact Q(sqrt5) transport of the edges of all 300 dual copies (placement I), float line keys proposing, exact collinearity and endpoint checks; perfect matchings per pentagon (job rqcats-sides, FINAL ok)",
+    "status": "SETTLED: verdict (iii) no",
+    "result": "No side of any pentagon is a true edge of any dual copy (only A* has corners on the 120-cell, and those are non-adjacent pyramid apices). Every side lies inside an edge of exactly 2 A-type and 1 B-type copy, never of C3*; kinds per side X* 846, -X* 846, F* 600, -F* 600, R* 0 of 1200; perfect matchings of 5 sides to 5 kinds: 0 for all 720 pentagons",
+    "retry": "never",
+    "study": "2026-11-16-redqueen-cats",
+    "goes_to": "Walls of Silence Figure 7 caption (no side is an edge of any dual copy); builds on ledger entry: Dual cats (DICTO's hypothesis ..."
+   },
+   {
+    "date": "2026-11-16",
     "question": "Space-time slicing at a tilt (DICTO 16 Nov: 'are there scutoid structures that transcend persistence or recurrence, is it possible that time is not running in a linear direction'): stacked into one 3D space-time block, are the granulation cells' births, swaps and deaths per volume the same when the block is cut along tilted directions, as #104's h-vector counts are the same in every generic sweep of a simple 4-polytope? SCOPE and pilot only",
     "method": "studies/2026-11-15-sun-granulation, section 'Space-time slicing at a tilt': theory (#104 Theorem 1 local argument; tissue-null-models THEORY section 2 counting for convex cells; stratified Morse identity for non-convex cells); scripts/spacetime_tilt.py: labelled blocks 242 x 250 x 250 (12 x 12 Mm, 40 min, en024048_hion uz 0.1 Mm), labelling A = 3D connected components of upflow + 3D watershed, B = census tracks; planes h = t cos(theta) + (x/v) sin(theta) as sphere tilings with an outside cell, pieces kept by overlap within the 3D cell, shared event logger, core counts; controls: space-time Poisson-Voronoi with exact Delaunay corner indices, moving Voronoi, shuffled frames; theta 0/15/30 at v 3 km/s and 30 at v 1.5/6; job sun-tilt-pilot FINAL ok; predictions written before the pilot",
     "status": "SCOPED + PILOT (control: theory ESTABLISHED on the exact Poisson-Voronoi block; Sun: no invariance across theta = 0 and the tilts, labelling A percolates); full run planned (job sun-tilt), NOT STARTED, waits for DICTO",

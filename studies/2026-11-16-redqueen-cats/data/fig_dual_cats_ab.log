@@ -1,0 +1,10 @@
+CHECK ok   1200 edges
+CHECK ok   60 S5s, five dual copies each
+CHECK ok   in every S5 the five duals get the five kinds once each
+CHECK ok   the 8 S5s of the cover in (b) reach all 60 mirrors
+CHECK ok   every pentagon is covered by at least one kind of its S5 (kinds per pentagon: {2: 290, 3: 290, 4: 110, 5: 30})
+KINDS per pentagon {2: 290, 3: 290, 4: 110, 5: 30} patterns {'−X* R* −F*': 145, 'X* R* F*': 145, 'X* −X* R* F*': 25, '−X* F*': 145, '−X* R* F* −F*': 25, 'X* −F*': 145, 'X* −X* R* −F*': 25, 'X* R* F* −F*': 25, 'X* −X* R* F* −F*': 30, 'X* −X* F* −F*': 10}
+CHECK ok   (b) 16 A* copies, 8 S5s x 2, cover all pentagons
+CHECK ok   figure written
+7 checks, 0 failed
+FINAL ok
