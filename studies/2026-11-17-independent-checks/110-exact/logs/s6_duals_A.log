@@ -1,0 +1,15 @@
+[MATCH] distinct values x.q sorted exactly (strictly increasing): got True, paper True
+[MATCH] A: copies in the 600-cell (orbit under W(H4), exact): got 120, paper 120
+    A*: pentagons inside a single fin, per copy: [60]; copies per pentagon [10]
+[MATCH] A*: every edge of Q lies whole in a single fin of some copy: got True, paper True
+    A*: copies per edge (single fin) [26]
+[MATCH] A*: every plate of every copy on one of Q's 60 mirrors; plates per copy: got (True, [10]), paper (True, [10])
+A: union stage 26.5 s for 120 copies
+A*: union-of-fins coverage: 86400 region LPs, positive-area regions without an exact witness: 0
+[MATCH] A*: pentagons covered whole per copy (union of its fins): got [60], paper [60]
+[MATCH] A*: copies covering each pentagon: got [10], paper [10]
+[MATCH] A*: (copy, pentagon) pairs covered only in part: got 0, paper 0
+    A*: covered by a single fin: [60] per copy; subset of union coverage: True
+wrote data/dual_sets_A.json
+runtime 27.4 s
+FINAL ok

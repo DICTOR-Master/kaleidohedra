@@ -5,7 +5,9 @@ A silent tile is grey when the set's family already forces it (the census rows: 
 family is silent there too; the Table 3b rows: the twist group has no invariant there, the "forced" column), and takes the
 colour of its kind when only this member is silent there. Kinds (label colours only): (T) twisted silence teal,
 (X) extra symmetry apricot, (P) parity sky, (E) evenness pink, and the classical latitude or cosine-rule zeros (L) cream.
-Open candidates are hatched. Ringing tiles are dark.
+The W(H4) classes on S^15 are products of 2I classes (x -> a x b-bar is bilinear in a, b), so their extra
+silences are F's twisted silence carried by the product: drawn in the (T) colour (Version 2; there were open candidates in Version 1).
+Ringing tiles are dark.
 Data: data/fig-tones.json (scripts/fig_tones.py: census members, their neighbours, the 2I classes, X, F; zero patterns
 asserted there) and, for the binary-octahedral, binary-tetrahedral, dihedral and matrix-sphere classes, the signatures of
 Table 3b as stated in the paper (from studies/2026-11-15-twisted-silence-groups, data/tw_*.log), cut at k = 20.
@@ -24,7 +26,7 @@ LABEL = {'teal': (32, 168, 158), 'apricot': (240, 168, 138), 'pink': (240, 150, 
 EL = {k: '#%02x%02x%02x' % v for k, v in LABEL.items()}
 KIND = {'T': ('(T) twisted silence', EL['teal']), 'X': ('(X) extra symmetry', EL['apricot']), 'P': ('(P) parity', EL['sky']),
         'E': ('(E) evenness', EL['pink']), 'L': ('(L) latitude or cosine rule, classical', EL['cream']),
-        'O': ('open: candidates in 16 dimensions', '#c9c6bd'), 'N': ('twists with no unforced silence', GREY)}
+        'O': ('(T) carried to 16 dimensions: products with F', EL['teal']), 'N': ('twists with no unforced silence', GREY)}
 fails = []
 def check(ok, msg):
     print(('CHECK ok   ' if ok else 'CHECK FAIL ') + msg, flush=True)
@@ -60,14 +62,15 @@ ROWS = [
     table('2T twisted, 6-point classes', 'L', {3}, set(), 'one hyperplane'),
     table('D16, σ₇: rectangle (4)', 'L', ALL - {2, 6, 8, 10, 14, 16, 18}, ODD, 'cos 4α = 0'),
     table('D24, σ₇: 6 points', 'L', ALL - {3, 9, 12, 15}, {k for k in ALL if k % 3}, 'cosine rule'),
-    table('W⁺(H4), Galois both: 600, 900', 'O', {1, 2, 3}, {1, 2}, 'full symmetry not tested', {3}),
-    table('W(H4), Galois: 1200, 900', 'O', {1, 2, 3}, {1, 2}, 'candidate', {3}),
-    table('W⁺(H4), Galois left: 30, 360', 'O', {1, 3}, {1}, 'candidate', {3}),
-    table('W⁺(H4), Galois left: 600', 'O', {1, 2, 3}, {1}, 'candidate', {2, 3}),
+    table('W⁺(H4), Galois both: 600, 900', 'O', {1, 2, 3}, {1, 2}, 'X × ±F, F × ±X, F × ±F'),
+    table('W(H4), Galois: 1200, 900', 'O', {1, 2, 3}, {1, 2}, 'unions of these products'),
+    table('W⁺(H4), Galois left: 30, 360', 'O', {1, 3}, {1}, 'F × ±1, F × 12-point class'),
+    table('W⁺(H4), Galois left: 600', 'O', {1, 2, 3}, {1}, 'F × 20-point class'),
     table('W(H3), Galois: 10, 20, 30', 'N', {1}, {1}, 'reduces to 2I'),
     table('Sym6, exceptional ξ', 'N', {1}, {1}, 'no new silence'),
 ]
-check(sum(1 for r in ROWS if r[0] == 'T') == 2, 'two twisted-silence rows')
+check(sum(1 for r in ROWS if r[0] == 'T') == 2, 'two twisted-silence rows in 2I')
+check(not any(r[4] for r in ROWS), 'no open (hatched) rows left (Version 2)')
 tcol = [r for r in ROWS if r[2] - r[3] - r[4] and r[0] == 'T']
 check(len(tcol) == 2 and tcol[0][2] - tcol[0][3] == {5, 7} and tcol[1][2] - tcol[1][3] == {3, 6}, 'only X (5, 7) and F (3, 6) carry teal (T) tiles')
 check(S['24-cell (tesseract-16-cell line, μ=2)']['silent'] != S['24-cell (tesseract-16-cell line, μ=2)']['neighbour_silent'],
@@ -107,7 +110,7 @@ ax.text(x0 - 0.008, 0.25, 'degree k', color=DIM, fontsize=6.9, ha='right', va='c
 ax.text(x1 + 0.008, 0.25, 'what forces the law', color=DIM, fontsize=6.9, ha='left', va='center')
 fig.text(0.012, 0.022, 'Tile: grey = silent and forced by the family or twist group; coloured = silent only at this member (colour of its kind; '
          'the 24-cell\'s extra tiles are F4 symmetry);', color=DIM, fontsize=6.4)
-fig.text(0.012, 0.006, 'hatched = open; dark = ringing.', color=DIM, fontsize=6.4)
+fig.text(0.012, 0.006, 'dark = ringing.', color=DIM, fontsize=6.4)
 fig.text(0.988, 0.006, 'DICTO · dictospheres.com', color='#9a978f', fontsize=7.0, ha='right', va='bottom')
 fig.savefig(sys.argv[2], dpi=DPI, facecolor=GROUND)
 from PIL import Image

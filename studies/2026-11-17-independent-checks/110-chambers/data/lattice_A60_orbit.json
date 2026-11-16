@@ -1,0 +1,78 @@
+{
+ "arrangement": "A60",
+ "walls": 60,
+ "mode": "orbit",
+ "wall_orbits": [
+  60
+ ],
+ "rank2": {
+  "2": {
+   "flats": 450,
+   "mu": 1
+  },
+  "3": {
+   "flats": 200,
+   "mu": 2
+  },
+  "5": {
+   "flats": 72,
+   "mu": 4
+  }
+ },
+ "rank3": [
+  {
+   "walls": 4,
+   "mu": -2,
+   "planes_by_size": {
+    "2": 3,
+    "3": 1
+   },
+   "lines": 600
+  },
+  {
+   "walls": 6,
+   "mu": -6,
+   "planes_by_size": {
+    "2": 3,
+    "3": 4
+   },
+   "lines": 300
+  },
+  {
+   "walls": 6,
+   "mu": -4,
+   "planes_by_size": {
+    "2": 5,
+    "5": 1
+   },
+   "lines": 360
+  },
+  {
+   "walls": 15,
+   "mu": -45,
+   "planes_by_size": {
+    "2": 15,
+    "3": 10,
+    "5": 6
+   },
+   "lines": 60
+  }
+ ],
+ "coefficients": {
+  "t4": 1,
+  "t3": -60,
+  "t2": 1138,
+  "t1": -7140,
+  "t0": 6061
+ },
+ "chi_over_t_minus_1": [
+  1,
+  -59,
+  1079,
+  -6061
+ ],
+ "remainder": 0,
+ "regions": 14400,
+ "regions_over_14400": "1",
+ "lines_found_in_representative_walls": 121
+}

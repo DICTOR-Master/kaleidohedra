@@ -1,0 +1,13 @@
+l x rbar | l xbar rbar       bar,l,r: 275/576
+l x rbar | l xbar rbar       bar,r,l: 215/576
+l x rbar | l xbar r          bar,l,r: 192/576
+l x rbar | l xbar r          bar,r,l: 159/576
+l x rbar | bar(l x rbar)     bar,l,r: 248/576
+l x rbar | bar(l x rbar)     bar,r,l: 239/576
+l x r | l xbar r             bar,l,r: 110/576
+l x r | l xbar r             bar,r,l: 92/576
+l x r | bar(l x r)           bar,l,r: 130/576
+l x r | bar(l x r)           bar,r,l: 112/576
+lbar x r | lbar xbar r       bar,l,r: 248/576
+lbar x r | lbar xbar r       bar,r,l: 239/576
+FINAL FAIL probe inconclusive: census 120-cell ordering / H4 numbering not recovered

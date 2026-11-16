@@ -1,0 +1,332 @@
+[
+ {
+  "type": "A3",
+  "order": 24,
+  "center": 1,
+  "inn": 24,
+  "aut": 24,
+  "out": 1.0,
+  "classes": [
+   {
+    "case": "a",
+    "lambda_twists": [],
+    "galois_twists": [],
+    "inner": true,
+    "reflections_to_reflections": true,
+    "n_automorphisms": 24,
+    "n_outer_classes": 1.0
+   }
+  ]
+ },
+ {
+  "type": "B3",
+  "order": 48,
+  "center": 2,
+  "inn": 24,
+  "aut": 48,
+  "out": 2.0,
+  "classes": [
+   {
+    "case": "a",
+    "lambda_twists": [],
+    "galois_twists": [],
+    "inner": true,
+    "reflections_to_reflections": true,
+    "n_automorphisms": 24,
+    "n_outer_classes": 1.0
+   },
+   {
+    "case": "b",
+    "lambda_twists": [
+     "eps--+"
+    ],
+    "galois_twists": [],
+    "inner": false,
+    "reflections_to_reflections": false,
+    "n_automorphisms": 24,
+    "n_outer_classes": 1.0
+   }
+  ]
+ },
+ {
+  "type": "H3",
+  "order": 120,
+  "center": 2,
+  "inn": 60,
+  "aut": 120,
+  "out": 2.0,
+  "classes": [
+   {
+    "case": "a",
+    "lambda_twists": [],
+    "galois_twists": [],
+    "inner": true,
+    "reflections_to_reflections": true,
+    "n_automorphisms": 60,
+    "n_outer_classes": 1.0
+   },
+   {
+    "case": "c",
+    "lambda_twists": [],
+    "galois_twists": [
+     "trivial"
+    ],
+    "inner": false,
+    "reflections_to_reflections": true,
+    "n_automorphisms": 60,
+    "n_outer_classes": 1.0
+   }
+  ]
+ },
+ {
+  "type": "A4",
+  "order": 120,
+  "center": 1,
+  "inn": 120,
+  "aut": 120,
+  "out": 1.0,
+  "classes": [
+   {
+    "case": "a",
+    "lambda_twists": [],
+    "galois_twists": [],
+    "inner": true,
+    "reflections_to_reflections": true,
+    "n_automorphisms": 120,
+    "n_outer_classes": 1.0
+   }
+  ]
+ },
+ {
+  "type": "B4",
+  "order": 384,
+  "center": 2,
+  "inn": 192,
+  "aut": 768,
+  "out": 4.0,
+  "classes": [
+   {
+    "case": "a",
+    "lambda_twists": [],
+    "galois_twists": [],
+    "inner": true,
+    "reflections_to_reflections": true,
+    "n_automorphisms": 192,
+    "n_outer_classes": 1.0
+   },
+   {
+    "case": "b",
+    "lambda_twists": [
+     "eps+++-"
+    ],
+    "galois_twists": [],
+    "inner": false,
+    "reflections_to_reflections": false,
+    "n_automorphisms": 192,
+    "n_outer_classes": 1.0
+   },
+   {
+    "case": "b",
+    "lambda_twists": [
+     "eps---+"
+    ],
+    "galois_twists": [],
+    "inner": false,
+    "reflections_to_reflections": false,
+    "n_automorphisms": 192,
+    "n_outer_classes": 1.0
+   },
+   {
+    "case": "b",
+    "lambda_twists": [
+     "eps----"
+    ],
+    "galois_twists": [],
+    "inner": false,
+    "reflections_to_reflections": false,
+    "n_automorphisms": 192,
+    "n_outer_classes": 1.0
+   }
+  ]
+ },
+ {
+  "type": "D4",
+  "order": 192,
+  "center": 2,
+  "inn": 96,
+  "aut": 1152,
+  "out": 12.0,
+  "classes": [
+   {
+    "case": "a",
+    "lambda_twists": [],
+    "galois_twists": [],
+    "inner": true,
+    "reflections_to_reflections": true,
+    "n_automorphisms": 96,
+    "n_outer_classes": 1.0
+   },
+   {
+    "case": "a",
+    "lambda_twists": [],
+    "galois_twists": [],
+    "inner": false,
+    "reflections_to_reflections": true,
+    "n_automorphisms": 480,
+    "n_outer_classes": 5.0
+   },
+   {
+    "case": "b",
+    "lambda_twists": [
+     "eps----"
+    ],
+    "galois_twists": [],
+    "inner": false,
+    "reflections_to_reflections": false,
+    "n_automorphisms": 576,
+    "n_outer_classes": 6.0
+   }
+  ]
+ },
+ {
+  "type": "F4",
+  "order": 1152,
+  "center": 2,
+  "inn": 576,
+  "aut": 4608,
+  "out": 8.0,
+  "classes": [
+   {
+    "case": "a",
+    "lambda_twists": [],
+    "galois_twists": [],
+    "inner": true,
+    "reflections_to_reflections": true,
+    "n_automorphisms": 576,
+    "n_outer_classes": 1.0
+   },
+   {
+    "case": "a",
+    "lambda_twists": [],
+    "galois_twists": [],
+    "inner": false,
+    "reflections_to_reflections": true,
+    "n_automorphisms": 576,
+    "n_outer_classes": 1.0
+   },
+   {
+    "case": "b",
+    "lambda_twists": [
+     "eps++--"
+    ],
+    "galois_twists": [],
+    "inner": false,
+    "reflections_to_reflections": false,
+    "n_automorphisms": 1152,
+    "n_outer_classes": 2.0
+   },
+   {
+    "case": "b",
+    "lambda_twists": [
+     "eps--++"
+    ],
+    "galois_twists": [],
+    "inner": false,
+    "reflections_to_reflections": false,
+    "n_automorphisms": 1152,
+    "n_outer_classes": 2.0
+   },
+   {
+    "case": "b",
+    "lambda_twists": [
+     "eps----"
+    ],
+    "galois_twists": [],
+    "inner": false,
+    "reflections_to_reflections": false,
+    "n_automorphisms": 1152,
+    "n_outer_classes": 2.0
+   }
+  ]
+ },
+ {
+  "type": "H4",
+  "order": 14400,
+  "center": 2,
+  "inn": 7200,
+  "aut": 28800,
+  "out": 4.0,
+  "classes": [
+   {
+    "case": "a",
+    "lambda_twists": [],
+    "galois_twists": [],
+    "inner": true,
+    "reflections_to_reflections": true,
+    "n_automorphisms": 7200,
+    "n_outer_classes": 1.0
+   },
+   {
+    "case": "b",
+    "lambda_twists": [
+     "eps----"
+    ],
+    "galois_twists": [],
+    "inner": false,
+    "reflections_to_reflections": false,
+    "n_automorphisms": 7200,
+    "n_outer_classes": 1.0
+   },
+   {
+    "case": "c",
+    "lambda_twists": [],
+    "galois_twists": [
+     "trivial"
+    ],
+    "inner": false,
+    "reflections_to_reflections": true,
+    "n_automorphisms": 7200,
+    "n_outer_classes": 1.0
+   },
+   {
+    "case": "c",
+    "lambda_twists": [],
+    "galois_twists": [
+     "eps----"
+    ],
+    "inner": false,
+    "reflections_to_reflections": false,
+    "n_automorphisms": 7200,
+    "n_outer_classes": 1.0
+   }
+  ]
+ },
+ {
+  "type": "A5",
+  "order": 720,
+  "center": 1,
+  "inn": 720,
+  "aut": 1440,
+  "out": 2.0,
+  "classes": [
+   {
+    "case": "a",
+    "lambda_twists": [],
+    "galois_twists": [],
+    "inner": true,
+    "reflections_to_reflections": true,
+    "n_automorphisms": 720,
+    "n_outer_classes": 1.0
+   },
+   {
+    "case": "c",
+    "lambda_twists": [],
+    "galois_twists": [],
+    "inner": false,
+    "reflections_to_reflections": false,
+    "n_automorphisms": 720,
+    "n_outer_classes": 1.0
+   }
+  ]
+ }
+]

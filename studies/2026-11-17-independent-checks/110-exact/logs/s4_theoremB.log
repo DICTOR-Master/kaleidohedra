@@ -1,0 +1,54 @@
+[MATCH] (a) each corner of Q has 24 corners at 36 deg: got {24}, paper {24}
+[MATCH] (a) the 24 split into two sets of 12 with no 36-deg pair between them: got {(12, 12)}, paper {(12, 12)}
+[MATCH] (a) inscribed 600-cells found from every corner: got (10, [120]), paper (10, [120])
+[MATCH] (a) each closed under its own reflections (exact): got 10, paper 10
+[MATCH] (a) each has 12 neighbours at 36 deg per corner inside it: got True, paper True
+[MATCH] (a) every corner in exactly 2: got {2}, paper {2}
+[MATCH] (a) two states of 5: got [5, 5], paper [5, 5]
+[MATCH] (a) same state: disjoint: got {0}, paper {0}
+[MATCH] (a) different states: meet in 24 corners: got {24}, paper {24}
+[MATCH] (a) each cross-state meeting is a 24-cell (angles and 8 at 60 deg): got 25, paper 25
+[MATCH] (a) the two through a corner are in different states: got True, paper True
+A: 144000 congruent maps found, 1200 distinct copies; full Gram exact: True
+B: 144000 congruent maps found, 1200 distinct copies; full Gram exact: True
+C3: 144000 congruent maps found, 600 distinct copies; full Gram exact: True
+[MATCH] (b) copies of A (A and -A) in Q: got 1200, paper 1200
+[MATCH] (b) copies of B (B and -B) in Q: got 1200, paper 1200
+[MATCH] (b) copies of C3 in Q: got 600, paper 600
+[MATCH] (b) every A copy inside exactly one P_i: got True, paper True
+[MATCH] (b) A copies per P_i: got [120], paper [120]
+    A copies through each corner: [40]
+[MATCH] (b) every B copy inside exactly one P_i: got True, paper True
+[MATCH] (b) B copies per P_i: got [120], paper [120]
+    B copies through each corner: [60]
+[MATCH] (b) every C3 copy inside exactly one P_i: got True, paper True
+[MATCH] (b) C3 copies per P_i: got [60], paper [60]
+    C3 copies through each corner: [20]
+[MATCH] (b) A: one class under Sym(Q), stabiliser order: got (True, 12), paper (True, 12)
+[MATCH] (b) B: one class under Sym(Q), stabiliser order: got (True, 12), paper (True, 12)
+[MATCH] (b) C3: one class under Sym(Q), stabiliser order: got (True, 24), paper (True, 24)
+[MATCH] (c) walls of the ten P_i together: got 1560, paper 1560
+[MATCH] (c) classes M, X, N: got (60, 300, 1200), paper (60, 300, 1200)
+[MATCH] (c) each M wall: (mirror of, cross wall of) how many P_i: got {(0, 10)}, paper {(0, 10)}
+[MATCH] (c) each X wall: (mirror of, cross wall of): got {(2, 0)}, paper {(2, 0)}
+[MATCH] (c) each N wall: (mirror of, cross wall of): got {(0, 2)}, paper {(0, 2)}
+[MATCH] (c) an X wall is a mirror of exactly the 2 P_i through that corner axis: got True, paper True
+[MATCH] (c) each P_i: 60 mirrors from X; 300 cross walls = 60 from M + 240 from N: got {(60, 60, 240)}, paper {(60, 60, 240)}
+A: plates per copy 30; plates outside the 1560: 0
+    distinct walls used by all A copies: M 0, X 300, N 0
+B: plates per copy 80; plates outside the 1560: 0
+    distinct walls used by all B copies: M 60, X 300, N 1200
+C3: plates per copy 70; plates outside the 1560: 0
+    distinct walls used by all C3 copies: M 60, X 0, N 1200
+[MATCH] (c) A: hidden in own P_i: got True, paper True
+[MATCH] (c) A copies hidden in Q (all plates in W(Q)): got 1200, paper 1200
+[MATCH] (c) A uses (M, X, N) walls: got (0, 300, 0), paper (0, 300, 0)
+[MATCH] (c) B: hidden in own P_i: got True, paper True
+[MATCH] (c) B copies hidden in Q: got 0, paper 0
+[MATCH] (c) B uses (M, X, N) walls: got (60, 300, 1200), paper (60, 300, 1200)
+[MATCH] (c) C3: hidden in own P_i: got True, paper True
+[MATCH] (c) C3 copies hidden in Q: got 0, paper 0
+[MATCH] (c) C3 uses (M, X, N) walls: got (60, 0, 1200), paper (60, 0, 1200)
+[MATCH] (d) per P_i: (A: copies per triangle, triangle faces per copy), (B: same): got {'[([2], [20]), ([1], [10])]'}, paper {'[([2], [20]), ([1], [10])]'}
+runtime 33.8 s
+FINAL ok

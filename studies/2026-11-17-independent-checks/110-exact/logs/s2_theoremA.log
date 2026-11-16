@@ -1,0 +1,32 @@
+A: f-vector (corners, edges, 2-faces, cells) = (20, 40, 30, 10)  cell sizes [4, 4, 4, 4, 4, 12, 12, 12, 12, 12]
+  ridge with 3 corners, squared distances ((50, 0),) -> mirror: 20 ridges
+  ridge with 6 corners, squared distances ((50, 0), (50, 50), (100, 100), (100, 150)) -> mirror: 10 ridges
+B: f-vector (corners, edges, 2-faces, cells) = (30, 90, 80, 20)  cell sizes [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 12, 12, 12, 12, 12]
+  ridge with 3 corners, squared distances ((50, 0),) -> mirror: 10 ridges
+  ridge with 3 corners, squared distances ((50, 50),) -> cross: 40 ridges
+  ridge with 4 corners, squared distances ((50, 0), (50, 50), (100, 50)) -> mirror: 30 ridges
+C3: f-vector (corners, edges, 2-faces, cells) = (20, 60, 70, 30)  cell sizes [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+  ridge with 3 corners, squared distances ((50, 50),) -> cross: 40 ridges
+  ridge with 4 corners, squared distances ((50, 50), (100, 100)) -> cross: 30 ridges
+[MATCH] A plates: got 30, paper 30
+[MATCH] A: one ridge per plate (non-heart): got {1}, paper {1}
+[MATCH] A: edge-triangle plates on mirrors: got 20, paper 20
+[MATCH] A: hexagon plates on mirrors: got 10, paper 10
+[MATCH] A: all plates in W(P): got True, paper True
+[MATCH] B plates: got 80, paper 80
+[MATCH] B: one ridge per plate (non-heart): got {1}, paper {1}
+[MATCH] B: edge triangles on mirrors: got 10, paper 10
+[MATCH] B: golden rectangles on mirrors: got 30, paper 30
+[MATCH] B: radius triangles on cross walls: got 40, paper 40
+[MATCH] B: all plates in W(P): got True, paper True
+[MATCH] A mirrors: got 30, paper 30
+[MATCH] B mirrors: got 40, paper 40
+[MATCH] A and B share exactly 10 mirrors: got 10, paper 10
+[MATCH] the shared ones are the 10 mirrors of S5: got True, paper True
+[MATCH] A and B mirrors together: all 60: got 60, paper 60
+[MATCH] C3 2-faces: got 70, paper 70
+[MATCH] C3 plates: got 5, paper 5
+[MATCH] C3 plates all cross walls: got True, paper True
+[MATCH] C3 faces per plate: got [14, 14, 14, 14, 14], paper [14, 14, 14, 14, 14]
+runtime 0.5 s
+FINAL ok

@@ -1,0 +1,7 @@
+family A*: 120 copies, 720 pentagons, copies per pentagon [10]; question: cover with <= 16 copies; fix0=False
+CP-SAT status OPTIMAL, wall time 0.1 s, branches 15816, conflicts 1010
+cover found with 16 copies: [6, 9, 15, 21, 30, 37, 40, 62, 65, 68, 80, 81, 86, 87, 97, 115]; union = all 720 pentagons: True
+multiplicity histogram {times covered: pentagons}: {1: 540, 2: 120, 3: 60}
+VERDICT A* cover with <= 16 copies: FEASIBLE; runtime 0.7 s
+runtime 0.7 s
+FINAL ok

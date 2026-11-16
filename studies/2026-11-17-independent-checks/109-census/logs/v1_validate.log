@@ -1,0 +1,21 @@
+600-cell distinct cosines: [-1.0, -0.8090169943749475, -0.5, -0.30901699437494745, 0.0, 0.30901699437494745, 0.5, 0.8090169943749475, 1.0]
+600-cell zeros k<=20: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19]
+PASS 600-cell rings only at 12 and 20
+X 20 zeros [1, 2, 5, 7]
+PASS X (20 pts, R^5 centred) silent exactly [1, 2, 5, 7]
+F 30 zeros [1, 2, 3, 6]
+PASS F (30 pts, R^5 centred) silent exactly [1, 2, 3, 6]
+H4 order 14400
+PASS H4 has 14400 distinct maps
+PASS H4 preserves the exact Gram matrix
+PASS alpha is an automorphism of 2I
+twisted class sizes under alpha: [np.int64(20), np.int64(20), np.int64(20), np.int64(30), np.int64(30)]
+PASS twisted classes 20,20,20,30,30
+  class 20 zeros [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+  class 30 zeros [1, 2, 3, 6]
+  class 30 zeros [1, 2, 3, 6]
+  class 20 zeros [1, 2, 5, 7]
+  class 20 zeros [1, 2, 5, 7]
+PASS X, -X kill 1,2,5,7 and F, -F kill 1,2,3,6 inside the 600-cell
+elapsed 9.3
+FINAL ok

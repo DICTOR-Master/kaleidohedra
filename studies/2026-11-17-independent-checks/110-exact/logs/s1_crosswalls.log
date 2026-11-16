@@ -1,0 +1,12 @@
+[MATCH] sizes of the closed D4 systems: got [24], paper [24]
+[MATCH] inscribed 24-cells: got 25, paper 25
+[MATCH] each corner in exactly 5 of the 24-cells: got {5}, paper {5}
+[MATCH] each 24-cell has only the 24-cell angles (0,60,90,120,180 deg): got True, paper True
+[MATCH] facets of each 24-cell: 24 octahedra (6 corners): got {(24, (6,))}, paper {(24, (6,))}
+[MATCH] corners of the 24-cell on each central section: got {12}, paper {12}
+[MATCH] corners of the 600-cell on each central section: got {12}, paper {12}
+[MATCH] number of sections 25 x 12: got 300, paper 300
+[MATCH] sections distinct: got 300, paper 300
+[MATCH] sections = the 300 cross walls (normals along the dual 120-cell corners): got True, paper True
+runtime 3.6 s
+FINAL ok

@@ -1,0 +1,13 @@
+[    0.0s] A60: 60 walls, mode orbit
+[    0.0s] wall orbits under W(H4): [60]
+[    0.2s] rank 2 flats by walls through them: {2: 450, 3: 200, 5: 72}  sum mu = 1138
+[    0.4s] wall 0 (weight 60): 31 planes, 465 plane pairs, 121 lines; types 4
+[    0.4s] lines: 1320  sum mu(lines) = -7140  mu(0) = 6061
+[    0.4s] chi(t) = t^4 -60 t^3 +1138 t^2 -7140 t +6061  |chi(-1)| = 14400 = 14400
+[    0.4s] chi(t)/(t-1) = t^3 -59 t^2 +1079 t -6061, remainder 0
+[    0.4s] rank-3 types (h, mu, planes through L by size): lines
+[    0.4s]     (4, -2, ((2, 3), (3, 1))) 600
+[    0.4s]     (6, -6, ((2, 3), (3, 4))) 300
+[    0.4s]     (6, -4, ((2, 5), (5, 1))) 360
+[    0.4s]     (15, -45, ((2, 15), (3, 10), (5, 6))) 60
+FINAL ok

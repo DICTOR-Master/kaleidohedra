@@ -1,0 +1,7 @@
+family C3*: 60 copies, 720 pentagons, copies per pentagon [5]; question: cover with <= 22 copies; fix0=False
+CP-SAT status OPTIMAL, wall time 0.1 s, branches 3205, conflicts 81
+cover found with 22 copies: [0, 1, 2, 3, 5, 9, 11, 17, 18, 19, 24, 26, 27, 28, 33, 36, 37, 41, 48, 49, 51, 58]; union = all 720 pentagons: True
+multiplicity histogram {times covered: pentagons}: {1: 280, 2: 288, 3: 144, 4: 8}
+VERDICT C3* cover with <= 22 copies: FEASIBLE; runtime 0.8 s
+runtime 0.8 s
+FINAL ok

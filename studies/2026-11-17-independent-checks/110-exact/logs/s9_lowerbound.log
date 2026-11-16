@@ -1,0 +1,35 @@
+A*: LP relaxation optimum 12.000000 (uniform x = 1/10 and uniform dual weight 1/60 give 720/60 = 12 exactly)
+A*: packing bound (pentagons pairwise never covered by one copy): 10 (OPTIMAL, upper bound 10)
+    most pentagons of one member covered by one copy: 3 -> each member needs >= ceil(12/3) = 4 copies
+A*: family "cell (12 pentagons of a dodecahedron)": N = 120, fewest copies covering one member r = [4], members met by one copy t = [50] -> bound ceil(N r / t) = 10
+    most pentagons of one member covered by one copy: 6 -> each member needs >= ceil(6/6) = 1 copies
+A*: family "corner of Q (6 pentagons)": N = 600, fewest copies covering one member r = [1], members met by one copy t = [195] -> bound ceil(N r / t) = 4
+    most pentagons of one member covered by one copy: 3 -> each member needs >= ceil(3/3) = 1 copies
+A*: family "edge of Q (3 pentagons)": N = 1200, fewest copies covering one member r = [1], members met by one copy t = [240] -> bound ceil(N r / t) = 5
+    most pentagons of one member covered by one copy: 6 -> each member needs >= ceil(12/6) = 2 copies
+A*: family "mirror (12 pentagons)": N = 60, fewest copies covering one member r = [2], members met by one copy t = [10] -> bound ceil(N r / t) = 12
+A*: best simple bound found: 12 (claimed optimum 16)
+B*: LP relaxation optimum 12.000000 (uniform x = 1/10 and uniform dual weight 1/60 give 720/60 = 12 exactly)
+B*: packing bound (pentagons pairwise never covered by one copy): 10 (OPTIMAL, upper bound 10)
+    most pentagons of one member covered by one copy: 3 -> each member needs >= ceil(12/3) = 4 copies
+B*: family "cell (12 pentagons of a dodecahedron)": N = 120, fewest copies covering one member r = [4], members met by one copy t = [50] -> bound ceil(N r / t) = 10
+    most pentagons of one member covered by one copy: 6 -> each member needs >= ceil(6/6) = 1 copies
+B*: family "corner of Q (6 pentagons)": N = 600, fewest copies covering one member r = [1], members met by one copy t = [195] -> bound ceil(N r / t) = 4
+    most pentagons of one member covered by one copy: 3 -> each member needs >= ceil(3/3) = 1 copies
+B*: family "edge of Q (3 pentagons)": N = 1200, fewest copies covering one member r = [1], members met by one copy t = [240] -> bound ceil(N r / t) = 5
+    most pentagons of one member covered by one copy: 6 -> each member needs >= ceil(12/6) = 2 copies
+B*: family "mirror (12 pentagons)": N = 60, fewest copies covering one member r = [2], members met by one copy t = [10] -> bound ceil(N r / t) = 12
+B*: best simple bound found: 12 (claimed optimum 16)
+C3*: LP relaxation optimum 12.000000 (uniform x = 1/5 and uniform dual weight 1/60 give 720/60 = 12 exactly)
+C3*: packing bound (pentagons pairwise never covered by one copy): 11 (OPTIMAL, upper bound 11)
+    most pentagons of one member covered by one copy: 2 -> each member needs >= ceil(12/2) = 6 copies
+C3*: family "cell (12 pentagons of a dodecahedron)": N = 120, fewest copies covering one member r = [6], members met by one copy t = [60] -> bound ceil(N r / t) = 12
+    most pentagons of one member covered by one copy: 3 -> each member needs >= ceil(6/3) = 2 copies
+C3*: family "corner of Q (6 pentagons)": N = 600, fewest copies covering one member r = [3], members met by one copy t = [190] -> bound ceil(N r / t) = 10
+    most pentagons of one member covered by one copy: 3 -> each member needs >= ceil(3/3) = 1 copies
+C3*: family "edge of Q (3 pentagons)": N = 1200, fewest copies covering one member r = [1], members met by one copy t = [260] -> bound ceil(N r / t) = 5
+    most pentagons of one member covered by one copy: 6 -> each member needs >= ceil(12/6) = 2 copies
+C3*: family "mirror (12 pentagons)": N = 60, fewest copies covering one member r = [3], members met by one copy t = [10] -> bound ceil(N r / t) = 18
+C3*: best simple bound found: 18 (claimed optimum 22)
+runtime 14.3 s
+FINAL ok

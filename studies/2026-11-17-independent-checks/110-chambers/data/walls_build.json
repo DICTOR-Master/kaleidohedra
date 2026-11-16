@@ -1,0 +1,24 @@
+{
+ "log": [
+  "P0 corners 120 all with |v|^2 = 4 (exact)",
+  "P0: 12 neighbours per corner, 600 tetrahedral cells (exact)",
+  "simple roots (indices into P0): [23, 50, 60, 61] Gram (a+b*phi): [[[4, 0], [0, 0], [0, 0], [-2, 0]], [[0, 0], [4, 0], [0, -2], [-2, 0]], [[0, 0], [0, -2], [4, 0], [0, 0]], [[-2, 0], [-2, 0], [0, 0], [4, 0]]]",
+  "Q: 600 corners; 36-degree neighbours per corner: [24]",
+  "P1 grown from corner 0: 120 corners; closed under its own 120 reflections (exact): True",
+  "inscribed 600-cells in the W-orbit of P1: 10 ; corners covered [2] times",
+  "second 12-set of corner 0 grows a 600-cell in the orbit: True",
+  "A60: 60  A360: 360",
+  "W(Q) walls: 360  union of W(P_i): 1560",
+  "walls of W(Q) that are in no W(P_i): 0",
+  "classes (Q-class, #P_i with it as mirror, #P_i with it as cross wall): count",
+  "    ('M', 0, 10) 60",
+  "    ('N', 0, 2) 1200",
+  "    ('X', 2, 0) 300",
+  "A360 (= W(Q) as hyperplanes) contained in A1560: True"
+ ],
+ "classes": {
+  "('M', 0, 10)": 60,
+  "('X', 2, 0)": 300,
+  "('N', 0, 2)": 1200
+ }
+}

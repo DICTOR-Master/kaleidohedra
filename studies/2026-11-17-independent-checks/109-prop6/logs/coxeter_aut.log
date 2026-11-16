@@ -1,0 +1,79 @@
+A3: |W| = 24, roots = 12, Coxeter matrix rows = [[1, 3, 2], [3, 1, 3], [2, 3, 1]]
+involution classes (size, trace of rep): [(6, (1, 0)), (3, (-1, 0))]
+candidates per generator: [6, 6, 6]; class reps for t1: 1
+fine tasks 4, tuples found 4
+|Z(W)| = 1, |Inn| = 24, |Aut| = 24, |Out| = 1.0
+   {'case': 'a', 'lambda_twists': [], 'galois_twists': [], 'inner': True, 'reflections_to_reflections': True, 'n_automorphisms': 24, 'n_outer_classes': 1.0}
+time 0.2s
+B3: |W| = 48, roots = 18, Coxeter matrix rows = [[1, 3, 2], [3, 1, 4], [2, 4, 1]]
+involution classes (size, trace of rep): [(6, (1, 0)), (3, (1, 0)), (6, (-1, 0)), (3, (-1, 0)), (1, (-3, 0))]
+candidates per generator: [12, 12, 6]; class reps for t1: 2
+fine tasks 8, tuples found 8
+|Z(W)| = 2, |Inn| = 24, |Aut| = 48, |Out| = 2.0
+   {'case': 'a', 'lambda_twists': [], 'galois_twists': [], 'inner': True, 'reflections_to_reflections': True, 'n_automorphisms': 24, 'n_outer_classes': 1.0}
+   {'case': 'b', 'lambda_twists': ['eps--+'], 'galois_twists': [], 'inner': False, 'reflections_to_reflections': False, 'n_automorphisms': 24, 'n_outer_classes': 1.0}
+time 0.0s
+H3: |W| = 120, roots = 30, Coxeter matrix rows = [[1, 5, 2], [5, 1, 3], [2, 3, 1]]
+involution classes (size, trace of rep): [(15, (1, 0)), (15, (-1, 0)), (1, (-3, 0))]
+candidates per generator: [30, 30, 30]; class reps for t1: 2
+fine tasks 16, tuples found 8
+|Z(W)| = 2, |Inn| = 60, |Aut| = 120, |Out| = 2.0
+   {'case': 'a', 'lambda_twists': [], 'galois_twists': [], 'inner': True, 'reflections_to_reflections': True, 'n_automorphisms': 60, 'n_outer_classes': 1.0}
+   {'case': 'c', 'lambda_twists': [], 'galois_twists': ['trivial'], 'inner': False, 'reflections_to_reflections': True, 'n_automorphisms': 60, 'n_outer_classes': 1.0}
+time 0.0s
+A4: |W| = 120, roots = 20, Coxeter matrix rows = [[1, 3, 2, 2], [3, 1, 3, 2], [2, 3, 1, 3], [2, 2, 3, 1]]
+involution classes (size, trace of rep): [(10, (2, 0)), (15, (0, 0))]
+candidates per generator: [10, 10, 10, 10]; class reps for t1: 1
+fine tasks 6, tuples found 12
+|Z(W)| = 1, |Inn| = 120, |Aut| = 120, |Out| = 1.0
+   {'case': 'a', 'lambda_twists': [], 'galois_twists': [], 'inner': True, 'reflections_to_reflections': True, 'n_automorphisms': 120, 'n_outer_classes': 1.0}
+time 0.1s
+B4: |W| = 384, roots = 32, Coxeter matrix rows = [[1, 3, 2, 2], [3, 1, 3, 2], [2, 3, 1, 4], [2, 2, 4, 1]]
+involution classes (size, trace of rep): [(12, (2, 0)), (4, (2, 0)), (12, (0, 0)), (24, (0, 0)), (6, (0, 0)), (12, (-2, 0)), (4, (-2, 0)), (1, (-4, 0))]
+candidates per generator: [36, 36, 36, 8]; class reps for t1: 3
+fine tasks 16, tuples found 64
+|Z(W)| = 2, |Inn| = 192, |Aut| = 768, |Out| = 4.0
+   {'case': 'a', 'lambda_twists': [], 'galois_twists': [], 'inner': True, 'reflections_to_reflections': True, 'n_automorphisms': 192, 'n_outer_classes': 1.0}
+   {'case': 'b', 'lambda_twists': ['eps+++-'], 'galois_twists': [], 'inner': False, 'reflections_to_reflections': False, 'n_automorphisms': 192, 'n_outer_classes': 1.0}
+   {'case': 'b', 'lambda_twists': ['eps---+'], 'galois_twists': [], 'inner': False, 'reflections_to_reflections': False, 'n_automorphisms': 192, 'n_outer_classes': 1.0}
+   {'case': 'b', 'lambda_twists': ['eps----'], 'galois_twists': [], 'inner': False, 'reflections_to_reflections': False, 'n_automorphisms': 192, 'n_outer_classes': 1.0}
+time 0.1s
+D4: |W| = 192, roots = 24, Coxeter matrix rows = [[1, 3, 2, 2], [3, 1, 3, 3], [2, 3, 1, 2], [2, 3, 2, 1]]
+involution classes (size, trace of rep): [(12, (2, 0)), (6, (0, 0)), (6, (0, 0)), (6, (0, 0)), (12, (-2, 0)), (1, (-4, 0))]
+candidates per generator: [24, 24, 24, 24]; class reps for t1: 2
+fine tasks 16, tuples found 96
+|Z(W)| = 2, |Inn| = 96, |Aut| = 1152, |Out| = 12.0
+   {'case': 'a', 'lambda_twists': [], 'galois_twists': [], 'inner': True, 'reflections_to_reflections': True, 'n_automorphisms': 96, 'n_outer_classes': 1.0}
+   {'case': 'a', 'lambda_twists': [], 'galois_twists': [], 'inner': False, 'reflections_to_reflections': True, 'n_automorphisms': 480, 'n_outer_classes': 5.0}
+   {'case': 'b', 'lambda_twists': ['eps----'], 'galois_twists': [], 'inner': False, 'reflections_to_reflections': False, 'n_automorphisms': 576, 'n_outer_classes': 6.0}
+time 0.1s
+F4: |W| = 1152, roots = 48, Coxeter matrix rows = [[1, 3, 2, 2], [3, 1, 4, 2], [2, 4, 1, 3], [2, 2, 3, 1]]
+involution classes (size, trace of rep): [(12, (2, 0)), (12, (2, 0)), (72, (0, 0)), (18, (0, 0)), (12, (-2, 0)), (12, (-2, 0)), (1, (-4, 0))]
+candidates per generator: [48, 48, 48, 48]; class reps for t1: 4
+fine tasks 32, tuples found 384
+|Z(W)| = 2, |Inn| = 576, |Aut| = 4608, |Out| = 8.0
+   {'case': 'a', 'lambda_twists': [], 'galois_twists': [], 'inner': True, 'reflections_to_reflections': True, 'n_automorphisms': 576, 'n_outer_classes': 1.0}
+   {'case': 'a', 'lambda_twists': [], 'galois_twists': [], 'inner': False, 'reflections_to_reflections': True, 'n_automorphisms': 576, 'n_outer_classes': 1.0}
+   {'case': 'b', 'lambda_twists': ['eps++--'], 'galois_twists': [], 'inner': False, 'reflections_to_reflections': False, 'n_automorphisms': 1152, 'n_outer_classes': 2.0}
+   {'case': 'b', 'lambda_twists': ['eps--++'], 'galois_twists': [], 'inner': False, 'reflections_to_reflections': False, 'n_automorphisms': 1152, 'n_outer_classes': 2.0}
+   {'case': 'b', 'lambda_twists': ['eps----'], 'galois_twists': [], 'inner': False, 'reflections_to_reflections': False, 'n_automorphisms': 1152, 'n_outer_classes': 2.0}
+time 0.3s
+H4: |W| = 14400, roots = 120, Coxeter matrix rows = [[1, 5, 2, 2], [5, 1, 3, 2], [2, 3, 1, 3], [2, 2, 3, 1]]
+involution classes (size, trace of rep): [(60, (2, 0)), (450, (0, 0)), (60, (-2, 0)), (1, (-4, 0))]
+candidates per generator: [120, 120, 120, 120]; class reps for t1: 2
+fine tasks 48, tuples found 480
+|Z(W)| = 2, |Inn| = 7200, |Aut| = 28800, |Out| = 4.0
+   {'case': 'a', 'lambda_twists': [], 'galois_twists': [], 'inner': True, 'reflections_to_reflections': True, 'n_automorphisms': 7200, 'n_outer_classes': 1.0}
+   {'case': 'b', 'lambda_twists': ['eps----'], 'galois_twists': [], 'inner': False, 'reflections_to_reflections': False, 'n_automorphisms': 7200, 'n_outer_classes': 1.0}
+   {'case': 'c', 'lambda_twists': [], 'galois_twists': ['trivial'], 'inner': False, 'reflections_to_reflections': True, 'n_automorphisms': 7200, 'n_outer_classes': 1.0}
+   {'case': 'c', 'lambda_twists': [], 'galois_twists': ['eps----'], 'inner': False, 'reflections_to_reflections': False, 'n_automorphisms': 7200, 'n_outer_classes': 1.0}
+time 2.3s
+A5: |W| = 720, roots = 30, Coxeter matrix rows = [[1, 3, 2, 2, 2], [3, 1, 3, 2, 2], [2, 3, 1, 3, 2], [2, 2, 3, 1, 3], [2, 2, 2, 3, 1]]
+involution classes (size, trace of rep): [(15, (3, 0)), (45, (1, 0)), (15, (-1, 0))]
+candidates per generator: [30, 30, 30, 30, 30]; class reps for t1: 2
+fine tasks 16, tuples found 96
+|Z(W)| = 1, |Inn| = 720, |Aut| = 1440, |Out| = 2.0
+   {'case': 'a', 'lambda_twists': [], 'galois_twists': [], 'inner': True, 'reflections_to_reflections': True, 'n_automorphisms': 720, 'n_outer_classes': 1.0}
+   {'case': 'c', 'lambda_twists': [], 'galois_twists': [], 'inner': False, 'reflections_to_reflections': False, 'n_automorphisms': 720, 'n_outer_classes': 1.0}
+time 0.1s
+FINAL ok

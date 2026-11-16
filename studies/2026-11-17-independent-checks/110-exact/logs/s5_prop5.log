@@ -1,0 +1,32 @@
+[MATCH] S5s per 600-cell: got [60, 60, 60, 60, 60, 60, 60, 60, 60, 60], paper [60, 60, 60, 60, 60, 60, 60, 60, 60, 60]
+[MATCH] each generated group has order 120: got {120}, paper {120}
+[MATCH] orbit sizes of every S5: got {(20, 20, 20, 30, 30)}, paper {(20, 20, 20, 30, 30)}
+[MATCH] kinds of orbits: got {('A', 'A', 'B', 'B', 'C3')}, paper {('A', 'A', 'B', 'B', 'C3')}
+[MATCH] A-type orbits = the 1200 A copies, each from one S5: got (1200, True), paper (1200, True)
+[MATCH] B-type orbits = the 1200 B copies, each from one S5: got (1200, True), paper (1200, True)
+[MATCH] C3 orbits = the 600 C3 copies, each from one S5: got (600, True), paper (600, True)
+[MATCH] every S5 of every 600-cell splits its 5 shared 24-cells as (A,C3,B): got {((0, 12, 12), (10, 2, 12), (10, 2, 12), (10, 2, 12), (10, 2, 12))}, paper {((0, 12, 12), (10, 2, 12), (10, 2, 12), (10, 2, 12), (10, 2, 12))}
+[MATCH] cases: got 90000, paper 90000
+distinct patterns of (kind in first, kind in second) counts [kinds A-type, C3, B-type]: 18
+distinct patterns at orbit level (blocks of the common refinement, by kinds and size): 18
+cases where every corner has the same kind in both: 1500
+cases where the two S5s cut the 24-cell into the same orbit pieces: 1500
+cases with both: 1500
+pattern tables written to data/prop5_patterns.txt
+for each (pair, first S5): number of second S5 with the same kinds: [1], over 1500 of 1500
+A (first state) vs A (second state): shared corners max 5, shared walls min 2 max 6
+[MATCH] A-A: max shared corners <= 6: got True, paper True
+[MATCH] A-A: min shared walls: got 2, paper 2
+A (first state) vs B (second state): shared corners max 3, shared walls min 1 max 6
+[MATCH] A-B: max shared corners <= 6: got True, paper True
+[MATCH] A-B: min shared walls: got 1, paper 1
+B (first state) vs B (second state): shared corners max 6, shared walls min 5 max 20
+[MATCH] B-B: max shared corners <= 6: got True, paper True
+[MATCH] B-B: min shared walls: got 5, paper 5
+A (first state) vs C3 (second state): shared corners max 3, shared walls min 0 max 0
+B (first state) vs C3 (second state): shared corners max 4, shared walls min 0 max 2
+C3 (first state) vs C3 (second state): shared corners max 12, shared walls min 0 max 2
+[MATCH] A and B copies from the two states share at most 6 corners (max over all pairs): got 6, paper 6
+NOTE: the bound 6 is for A and B copies; two C3 copies from the two states can share 12 corners (and share 0 walls), see the lines above.
+runtime 33.1 s
+FINAL ok
