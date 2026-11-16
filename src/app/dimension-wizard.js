@@ -186,8 +186,9 @@ const CSS = `
 .dicto-block-name { font: 800 var(--text-xl)/1.2 var(--font-ui); letter-spacing: 0.06em; color: var(--pale); }
 .dicto-block-name span { color: var(--accent-strong); }
 .dicto-block .dim-wizard-section .dim-wizard-label { color: var(--pale); }
-/* The gold block under The Five Orders of Space (DICTO 2026-11-16): five ring labels to jump to, each ring's heading in its
-   element colour, and a small "new" mark on the newest work. */
+/* The gold block under The Five Orders of Space (DICTO 2026-11-16): five ring labels to jump to, each ring's heading, all in DICTO
+   gold (the rings group the worlds by book, not by solid, so no solid's colour), and a small "new" mark on the newest work. */
+.dicto-ring-jump, .dicto-ring { --ring: #e8c25a; }
 .dicto-ring-jump { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 6px; margin: 10px 0 2px; }
 .dicto-ring-btn { min-height: max(var(--touch), 52px); padding: 4px 2px; cursor: pointer; touch-action: manipulation;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
@@ -714,15 +715,15 @@ const DICTO_WORK = new Set(['breathing', 'bodhiPyro', 'bitrunc', 'perm4', 'manda
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 // The Five Orders of Space (DICTO 2026-11-16, from the apps census of 2026-11-15): the gold block's worlds and lattices under the
 // five rings, Earth, Water, Fire, Wind, Void (Musashi's five rings), in book order; inside each book, the order the block had
-// before (newest first). Each ring's heading wears its element colour (DICTO's element colours, agreed 2026-10-22). An entry on
+// before (newest first). The ring labels and headings are all DICTO gold (DICTO 2026-11-16: the rings are books, not solids). An entry on
 // no shelf yet (Golamandalas, whose paper is in no book yet, and any new world) is listed after the rings. 'hex' is the
 // DICTO Hex Prism (split off the hexagonal lattice).
 export const FIVE_RINGS = [
-  { id: 'earth', kanji: '地', colour: '#488e48', books: ['One', 'Two'] },
-  { id: 'water', kanji: '水', colour: '#3a70cd', books: ['Three', 'Four', 'Five'] },
-  { id: 'fire', kanji: '火', colour: '#cd3e28', books: ['Six', 'Seven'] },
-  { id: 'wind', kanji: '風', colour: '#e8c852', books: ['Eight'] },
-  { id: 'void', kanji: '空', colour: '#8a5cc4', books: ['Nine', 'Ten', 'Eleven'] },
+  { id: 'earth', kanji: '地', books: ['One', 'Two'] },
+  { id: 'water', kanji: '水', books: ['Three', 'Four', 'Five'] },
+  { id: 'fire', kanji: '火', books: ['Six', 'Seven'] },
+  { id: 'wind', kanji: '風', books: ['Eight'] },
+  { id: 'void', kanji: '空', books: ['Nine', 'Ten', 'Eleven'] },
 ];
 export const DICTO_SHELF = [
   ['One', ['octetTruss', 'ocdStella', 'icosa', 'dodeca', 'bodhiPyro', 'breathing']],
@@ -1083,8 +1084,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     }
     return html;
   }
-  // The gold block under The Five Orders of Space: a row of the rings to jump to, then each ring's heading in its element
-  // colour and its entries in book order; a ring with nothing in it is not shown; entries on no shelf yet come last.
+  // The gold block under The Five Orders of Space: a row of the rings to jump to, then each ring's heading in DICTO gold
+  // and its entries in book order; a ring with nothing in it is not shown; entries on no shelf yet come last.
   function ringsHtml(list, row, L) {
     const place = new Map(DICTO_SHELF.flatMap(([book, keys]) => keys.map((k, i) => [k, [book, i]])));
     const bookIx = new Map(DICTO_SHELF.map(([book], n) => [book, n]));
@@ -1094,8 +1095,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     const rest = list.filter((e) => !place.has(e.lat.key));
     const name = (r) => { const n = t(`wiz.ring.${r.id}`, L); return `<span class="dicto-ring-kanji">${r.kanji}</span>${n === r.kanji ? '' : `<span class="dicto-ring-name">${n}</span>`}`; };
     let html = `<div class="dicto-ring-jump" role="navigation" aria-label="${t('wiz.ring.jump', L)}">${rings.map((r) => `
-        <button type="button" class="dicto-ring-btn" data-ring-jump="${r.id}" style="--ring: ${r.colour}">${name(r)}</button>`).join('')}</div>`;
-    for (const r of rings) html += `<div class="dicto-ring" data-ring="${r.id}" style="--ring: ${r.colour}">${name(r)}</div>` + r.list.map(row).join('');
+        <button type="button" class="dicto-ring-btn" data-ring-jump="${r.id}">${name(r)}</button>`).join('')}</div>`;
+    for (const r of rings) html += `<div class="dicto-ring" data-ring="${r.id}">${name(r)}</div>` + r.list.map(row).join('');
     if (rest.length) html += `<div class="dicto-ring dicto-ring-none">${t('wiz.ring.none', L)}</div>` + rest.map(row).join('');
     return html;
   }

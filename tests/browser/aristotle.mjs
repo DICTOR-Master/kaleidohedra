@@ -15,10 +15,10 @@ await page.waitForSelector('.dim-wizard-overlay.open');
 if (!(await page.locator('[data-action="tool:aristotleWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
 await page.waitForTimeout(500);
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a)));
-// near the top of DICTO's list, right after the Platonic Mix and the Reuleaux solids (newer worlds join above them, so check the order,
-// not the place)
+// in DICTO's list under its book (The Five Orders of Space, Book Eight), right after the Platonic Mix and the Reuleaux solids (the list
+// is in book order, so check the order, not the place)
 const at = worlds.indexOf('tool:platonicMixWorld');
-assert.ok(at > 0 && at < 10, `the Platonic Mix near the top (${at})`);
+assert.ok(at > 0, `the Platonic Mix listed (${at})`);
 assert.deepEqual(worlds.slice(at, at + 3), ['tool:platonicMixWorld', 'tool:reuleauxWorld', 'tool:aristotleWorld'], 'Aristotle right after the Reuleaux solids');
 // the link
 await page.goto(`${BASE}/index.html?site=${SITE}&open=aristotle&probe`); await page.waitForTimeout(1500);

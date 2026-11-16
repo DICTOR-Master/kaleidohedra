@@ -1,5 +1,5 @@
 // DICTO Vacuus (DICTO 2026-11-03): Polyhedraverse's lens on the solid on show, seen from its centre O, in five views (Pyramids,
-// Exploded, Star, Sheets, Struts; the geometry is vacuus-geometry.js). While the lens is on, its drawing stands in for the build, as
+// Exploded, Star, Fins, Struts; the geometry is vacuus-geometry.js). While the lens is on, its drawing stands in for the build, as
 // the ★ Star step's does. Drawn to the render standard (docs/RENDER-STANDARD.md): solid faces with polygon offset, crisp screen-space
 // edges ≥ 1.5 px; the Star view's spikes in the Star step's purple.
 import * as THREE from 'three';
@@ -111,7 +111,7 @@ export function createVacuusLens({ scene, look = () => ({ skeleton: false, opaci
     mesh(spikes, spikeMat);
     lines(segs, look().skeleton ? 0xffffff : EDGE, 2);
   }
-  function drawSheets() {
+  function drawFins() {
     const { fins } = st, O = [0, 0, 0], byClass = new Map(), segs = [];
     for (const { a, b, cls } of fins.fins) {
       if (!byClass.has(cls)) byClass.set(cls, []);
@@ -141,7 +141,7 @@ export function createVacuusLens({ scene, look = () => ({ skeleton: false, opaci
     if (st.view === 'pyramids') drawPyramids(GAP);
     else if (st.view === 'exploded') drawPyramids((st.apart / 100) * APART_MAX);
     else if (st.view === 'star') drawStar();
-    else if (st.view === 'sheets') drawSheets();
+    else if (st.view === 'sheets') drawFins();
     else drawStruts();
   }
   const legendOf = () => {
@@ -196,7 +196,7 @@ export function createVacuusLens({ scene, look = () => ({ skeleton: false, opaci
       const cap = t(`poly.vac.cap.${v}`, L, { n: s.faces.length });
       return v === 'star' && isCube(s) ? cap + t('poly.vac.cap.starCube', L) : cap;   // DICTO 11-04: name the cube's Star
     },
-    /** The colour key for Sheets and Struts: [{ colour, label }]. */
+    /** The colour key for Fins and Struts: [{ colour, label }]. */
     legend: legendOf,
     /** For the browser tests (?probe): the state in numbers. */
     probe() {

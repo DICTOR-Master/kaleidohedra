@@ -19,7 +19,7 @@ import { createInfinityPlayer } from './infinity-player.js';
 const PHI = (1 + Math.sqrt(5)) / 2, PHI3 = PHI ** 3;
 const COL = { star: 0x4dd0e1, Dp: 0xf5f0e2, ID: 0xc792ea, O: 0x2bb3a3, rTI: 0xf08fc0, TI: 0x5fd38a, H: 0xe8b84a, hull: 0x9fd8ff, RT: 0xff9a52, M: 0xc0392b, Ip3: 0x4dd0e1 };
 const LAYER_COL = { rtM: 0xf4b183, mI: 0xe9c79a };
-export const VJ_NAMES = { I: 'I', star: 'Cleo star', Dp: 'D′', ID: 'ID', O: 'O', rTI: 'rTI', TI: 'TI', H: 'H', hull: 'jtI', RT: 'RT', M: 'M', Ip3: 'I·φ³' };
+export const VJ_NAMES = { I: 'I', star: 'Cleo star', Dp: 'D′', ID: 'ID', O: 'OG', rTI: 'rTI', TI: 'TI', H: 'H', hull: 'jtI', RT: 'RT', M: 'M', Ip3: 'I·φ³' };
 const FULL = { star: 'the Cleo star: the icosahedron as 20 Cleo-Icos with 20 more turned out as spikes', Dp: 'the dodecahedron at two thirds, D′, the hull of the Cleo star',
   ID: 'the icosidodecahedron', O: 'the DICTO Ogdoecontahedron', rTI: 'the rectified truncated icosahedron', TI: 'the truncated icosahedron', H: 'the DICTO Hecatodihedron',
   hull: 'the joined truncated icosahedron (jtI)', RT: 'the rhombic triacontahedron', M: 'the DICTO Metaxyhexecontahedron', Ip3: 'the next icosahedron, I·φ³, the next turn begins' };

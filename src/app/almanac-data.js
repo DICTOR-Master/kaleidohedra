@@ -177,7 +177,7 @@ export const LATTICE_CONCEPT_ENTRIES = [
     kind: 'concept',
     id: 'concept:cutAndProject',
     label: 'Cut and Project',
-    desc: "The 5D and 6D worlds are quasicrystals made by cut and project (de Bruijn's method). Take the cube lattice Z⁵ or Z⁶, pass a 3D slice through it at an irrational angle, and keep only the lattice points that lie within a set distance of the slice: the ones whose shadow in the hidden dimensions falls inside the acceptance window. Joining them gives a tiling that fills space with no gaps but never repeats. The window is a rhombic triacontahedron in 6D and a set of pentagons in 5D; Window View shows it, with your pieces' corners as points.",
+    desc: "The 5D and 6D worlds are quasicrystals made by cut and project (de Bruijn's method). Take the cube lattice Z⁵ or Z⁶, pass a 3D slice through it at an irrational angle, and keep only the lattice points that lie within a set distance of the slice: the ones whose shadow in the hidden dimensions falls inside the acceptance window. Joining them gives a tiling that fills space with no gaps but never repeats (in 5D it never repeats across the layers; the layers repeat straight up). The window is a rhombic triacontahedron in 6D and a set of pentagons in 5D; Window View shows it, with your pieces' corners as points.",
     markKey: null,
   },
   {

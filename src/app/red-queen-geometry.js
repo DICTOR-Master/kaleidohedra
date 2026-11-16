@@ -4,7 +4,7 @@
 // The four main directions are the atlas's own (red-queen-data.js, from atlas120.json); the shadows, slices, nine cell layers and
 // halves are computed live from this model as the White Queen's are from hers. Pure maths, no three.js.
 import RQ from './red-queen-data.js';
-import { VERTICES as WV, EDGES as WE, CELLS as WC, VERTICES_EXACT, Q5, hull, turn, q5String } from './white-queen-geometry.js';
+import { VERTICES as WV, EDGES as WE, CELLS as WC, VERTICES_EXACT, Q5, hull, turn, q5String, viewAt as whiteViewAt } from './white-queen-geometry.js';
 
 const { R, qAdd, qMul, qFloat, qKey } = Q5;
 export const DIRECTIONS = ['vertex-first', 'edge-first', 'face-first', 'cell-first'];
@@ -83,6 +83,19 @@ export function shadowAt(from, to, s) {
   if (cache.has(key)) return cache.get(key);
   const view = viewAt(from, to, s), P = project(view), H = hull(P);
   const out = { u: view.u, P, ...H };
+  if (cache.size > 64) cache.clear();
+  cache.set(key, out);
+  return out;
+}
+/** The stage slider's Red end (DICTO 2026-11-16): her shadow along the White Queen's turning from `from` to `to` (the same 4D direction
+ *  and frame as the five stages, so the slider is one view). The two sets of directions are swapped exactly: the White Queen's
+ *  vertex-, edge-, face- and cell-first are the Red Queen's cell-, face-, edge- and vertex-first (WHITE_AS_RED). */
+export const WHITE_AS_RED = { 'vertex-first': 'cell-first', 'edge-first': 'face-first', 'face-first': 'edge-first', 'cell-first': 'vertex-first' };
+export function shadowAlongWhite(from, to, s) {
+  const key = `w${indexOf(from)}${indexOf(to)}${Math.round(s * 1e6)}`;
+  if (cache.has(key)) return cache.get(key);
+  const view = whiteViewAt(from, to, s), P = project(view), H = hull(P);
+  const out = { u: view.u, frame: view.frame, P, ...H };
   if (cache.size > 64) cache.clear();
   cache.set(key, out);
   return out;

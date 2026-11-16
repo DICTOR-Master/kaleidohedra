@@ -3,7 +3,7 @@
 //   - each of the five views is chosen by tapping its button, and each is measured on the screen (the scene alone, the panels hidden
 //     for the shot): something is drawn, each view is framed on its own shape (re-framed on every switch and as Exploded's slider moves), Exploded at
 //     100 is drawn apart, and
-//     Star shows the spikes' purple, Sheets and Struts their class colours;
+//     Star shows the spikes' purple, Fins and Struts their class colours;
 //   - the link with a view (vacuus:D20:sheets);
 //   - a one-piece build offers the lens button (tap: Pyramids; Close: back, the button again); a solid whose centre is outside a face
 //     plane (DICTO Hexa) has no button, and its link opens no lens;
@@ -90,7 +90,7 @@ for (const [name, opts] of DEVICES) {
     const cap = await page.textContent('[data-vac-caption]');
     console.log(name, v, '-', cap);
     if (v === 'star') assert.ok(cap.includes('rhombic dodecahedron'), `${name}: the cube's Star named as the rhombic dodecahedron (${cap})`);
-    // only the controls that apply: the slider in Exploded, the Aristotle link in Pyramids, the colour key in Sheets and Struts
+    // only the controls that apply: the slider in Exploded, the Aristotle link in Pyramids, the colour key in Fins and Struts
     assert.equal(await page.locator('[data-vac-apart]').count(), v === 'exploded' ? 1 : 0, `${name}: ${v} slider`);
     assert.equal(await page.locator('[data-vac-aristotle]').count(), v === 'pyramids' ? 1 : 0, `${name}: ${v} Aristotle link`);
     assert.equal(await page.locator('.vac-legend').count(), v === 'sheets' || v === 'struts' ? 1 : 0, `${name}: ${v} colour key`);

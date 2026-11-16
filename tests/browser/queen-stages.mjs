@@ -33,7 +33,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     for (let k = 1; k <= 5; k++) {
       await setStage(page, k); const st = await probe(page), f = STAGE_FACTS[STAGE_KEYS[k]];
       assert.equal(st.stage, STAGE_KEYS[k]); assert.equal(st.corners, f.V, `${tag} ${st.stage} corners`); assert.equal(st.edges, f.E, `${tag} ${st.stage} edges`);
-      assert.match(st.title, /cell/); assert.ok(await page.locator(`${P} .wq-halves-row`).isHidden(), `${tag}: no Halves at a stage`);
+      assert.match(st.title, /cell/); assert.ok(await page.locator(`${P} [data-wq-halves]`).isHidden(), `${tag}: no Halves at a stage`);
       assert.equal(await page.locator(`${P} [data-wq-queen].active`).count(), 0); checks++;
       if (k === 3) await page.screenshot({ path: `${SH}/${tag}-midpoint.png` });
     }

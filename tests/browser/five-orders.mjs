@@ -1,6 +1,6 @@
 // The gold DICTO block under The Five Orders of Space (DICTO 2026-11-16, from the apps census of 2026-11-15), through the real UI by
 // touch on a phone (390×844) and an iPad (820×1180), on all three doors (DOORS): DICTO → 3D+ shows DICTO's pieces, then a row of the
-// five ring labels (Earth, Water, Fire, Wind, Void; big enough to touch, no arrows), then each ring's heading in its element colour with
+// five ring labels (Earth, Water, Fire, Wind, Void; big enough to touch, no arrows), then each ring's heading in DICTO gold (the rings are books, not solids) with
 // its worlds and lattices in book order (DICTO_SHELF), and Golamandalas (no book yet) after the rings. Tapping a ring label scrolls
 // that ring's heading to the top of the list. Golden Breathing Pyrochlore and Golden Bodhi Pyrochlore Networks are listed once, in the
 // gold block under Earth (Book One), no longer among either app's lattices, and each opens its world from there. The newest work
@@ -49,7 +49,7 @@ const readGold = (page) => page.evaluate(() => {
     else if (el.classList.contains('dim-wizard-section')) { let n = el.nextElementSibling; rings[ring].push(n.dataset.action); }
   }
   const heads = [...gold.querySelectorAll('.dicto-ring[data-ring]')].map((h) => ({ ring: h.dataset.ring, colour: getComputedStyle(h).borderLeftColor }));
-  const jump = [...gold.querySelectorAll('.dicto-ring-jump [data-ring-jump]')].map((x) => { const r = x.getBoundingClientRect(); return { ring: x.dataset.ringJump, w: r.width, h: r.height, top: r.top, text: x.textContent.trim() }; });
+  const jump = [...gold.querySelectorAll('.dicto-ring-jump [data-ring-jump]')].map((x) => { const r = x.getBoundingClientRect(); return { ring: x.dataset.ringJump, w: r.width, h: r.height, top: r.top, text: x.textContent.trim(), border: getComputedStyle(x).borderTopColor }; });
   const kinds = [...gold.querySelectorAll('.dim-wizard-kind')].map((k) => k.textContent);
   const news = [...gold.querySelectorAll('.dicto-new')].map((n) => n.closest('[data-action]')?.dataset.action ?? n.closest('.dim-wizard-section')?.nextElementSibling?.dataset.action);
   const order = [...gold.children].map((c) => c.className.split(' ')[0]);
@@ -61,9 +61,10 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse,polyhedravers
     const page = await b.newPage({ viewport, hasTouch: true, isMobile: true }), tag = `${door}-${dev}`;
     const errors = await open(page, door);
     const g = await readGold(page);
-    // the rings in book order, each heading in its element colour, the entries as DICTO_SHELF, Golamandalas after them
+    // the rings in book order, every heading and label in DICTO gold, the entries as DICTO_SHELF, Golamandalas after them
     assert.deepEqual(g.heads.map((h) => h.ring), RINGS, `${tag}: five ring headings in order`);
-    assert.deepEqual(g.heads.map((h) => h.colour), ['rgb(72, 142, 72)', 'rgb(58, 112, 205)', 'rgb(205, 62, 40)', 'rgb(232, 200, 82)', 'rgb(138, 92, 196)'], `${tag}: element colours`);
+    assert.deepEqual(g.heads.map((h) => h.colour), RINGS.map(() => 'rgb(232, 194, 90)'), `${tag}: headings in DICTO gold`);
+    assert.deepEqual(g.jump.map((j) => j.border), RINGS.map(() => 'rgb(232, 194, 90)'), `${tag}: ring labels in DICTO gold`);
     for (const r of RINGS) assert.deepEqual(g.rings[r], SHELF[r], `${tag}: ${r} in book order`);
     assert.deepEqual(g.rings.none, ['tool:mandalaWorld'], `${tag}: Golamandalas after the rings`);
     assert.equal(Object.values(g.rings).flat().length, 37, `${tag}: 37 entries`);

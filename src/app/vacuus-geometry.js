@@ -4,7 +4,7 @@
 //   exploded  the same pyramids drawn apart, each along its face normal;
 //   star      each pyramid turned out over its own face: apex the mirror image of O in the face plane (the Star step's doubling
 //             rule, star-step-geometry.js tipsOf(…, 'doubling')), the inside left empty;
-//   sheets    the Vacuus fins: for every edge, the triangle (O, edge), grouped by congruence (three sides, SSS);
+//   sheets    the Fins view, the Vacuus fins: for every edge, the triangle (O, edge), grouped by congruence (three sides, SSS);
 //   struts    the rods from O to every corner, grouped by length.
 // Pure maths, no three.js. Points are centred on O.
 import { tipsOf } from './star-step-geometry.js';
