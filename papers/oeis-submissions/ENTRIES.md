@@ -241,7 +241,7 @@ Checked: the Jagodzinski types recovered from the letters for 390 layers (oeis_c
 
 ---
 
-### Entry 7 (optional). Closed non-backtracking walks per sphere of fcc: READY 16 Nov 2026 (rule 11 applied: #102 in %H only), waits for A402191 approval (rules 5 and 7)
+### Entry 7. Closed non-backtracking walks per sphere of fcc: SUBMITTED 16 Nov 2026 as A402231 (proposed); example moved to %e as asked on A402191
 
 Extension; not yet the subject of a DICTO paper beyond #102 Corollary 3 (lengths 3 to 12 printed there).
 
@@ -299,7 +299,7 @@ Add with "edit" on each entry. Signature at the end: "- _DICTO_, Nov 07 2026" (o
 %C A002899 Also the number of closed n-step walks from any sphere of the hexagonal close packing and of every close-packed stacking of equal spheres (dhcp, ..., periodic or not). For periodic stackings this is Thorpe (1972); every sphere of every stacking: DICTO (2026, #102, Corollary 3). Compare A293237 (equal escape probabilities of fcc and hcp).
 %D A002899 M. F. Thorpe, Random walks in polytype structures, J. Math. Phys. 13 (1972), 294-299.
 %H A002899 DICTO, <a href="https://doi.org/10.5281/zenodo.24037664">Every Site Hears the Same: the Loop Equality Is a Theorem</a>, Zenodo (2026).
-%Y A002899 Cf. A293237, A??????(entry 7, if submitted).
+%Y A002899 Cf. A293237, A402231.
 ```
 
 **A008264** (lonsdaleite coordination sequence):
