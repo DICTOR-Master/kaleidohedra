@@ -22,6 +22,7 @@ Related studies: `2026-11-16-600cell-walls` (A's and B's plates are walls), `202
 | 600 | solids: caps over an inscribed 24-cell | 24 caps of 50 corners each | **fails**: the caps overlap (sum exceeds by (−111/2 + 43φ)V) | fails |
 | 600 | cat/steak: solids | the hulls of the five orbits | all contain the centre, so they overlap and cannot tile. Union = 0.6504 of P (inclusion–exclusion over 31 exact intersections). Core of all five = uniform bitruncated 5-cell, (23/750 + 23φ/1500) of P. A ∩ B = golden cantitruncated 5-cell (one S5 orbit), 0.1308 of P. Caps of P over A's facets overlap (0.161 V), and over B's (0.107 V) | does not tile (the core and A ∩ B **not found in the sources checked**) |
 | 600 | cat/steak: A's and B's 30 facet hyperplanes | 686 regions in 23 S5 classes | Σ (orbit size × volume) = V exactly | new (computed) |
+| 600 | cat/steak: all 90 facet hyperplanes of the five hulls | 17,371 regions in 300 S5 classes. 14,290 regions (205 classes) lie outside every hull and fill 0.34959 of P, which matches 1 − union independently. The central region is the bitruncated core, and it is the only region inside all five hulls | Σ (orbit size × volume) = V exactly (job qconstruct-all, FINAL ok, 5 min) | new (computed) |
 | 600 | cat/steak: walls | A: 30 mirrors. B: 40 mirrors + 40 cross walls. They share the 10 S5 mirrors. **A ∪ B = all 60 mirrors + 40 cross walls**; C3 adds 5 cross walls. Left over: 255 cross walls (S5 orbits 15 + 60 + 60 + 120) | exact; control: an ordinary orbit (t = 3/2) has plates in no wall | **new**: A and B together rebuild the whole mirror system |
 | 120 | corners: 600-cells | 10 inscribed, each corner in 2; 2 splits into 5 disjoint ones (5 × 120). Control: 5·vol(600-cell) ≠ vol(120-cell) | exact closure | known (Coxeter's compounds; Wikipedia "120-cell") |
 | 120 | corners: 24-cells | 225 inscribed, each corner in 9; at least 1000 splits into 25 disjoint ones (search capped). Each lies in 1 or 2 of the 600-cells | exact | 225 and 25 known (Denney et al. 2019; Wikipedia). The split count is open |
@@ -39,7 +40,7 @@ For the solids, they do not. The five hulls pile up at a common bitruncated 5-ce
 ## Files
 
 - `scripts/qlib.py`: exact tools. Q5 arithmetic (copied from the echo-shapes study), certified hulls, face lattice, exact volumes, caps, halfspace intersection.
-- `s1_corners600.py`, `s2_solids600.py`, `s3_catsteak.py`, `s3b_arrangement.py` (mode AB), `s4_redqueen.py`, `fig_orbits.py`. Each log in `data/` ends FINAL ok. Every run was a pilot of under 5 min on the compute machine.
+- `s1_corners600.py`, `s2_solids600.py`, `s3_catsteak.py`, `s3b_arrangement.py` (mode AB), `s4_redqueen.py`, `fig_orbits.py`. Each log in `data/` ends FINAL ok. Every run except one was a pilot of under 5 min on the compute machine. The 90-plane arrangement (`data/s3b_arrangement_all.*`) ran as a monitored job.
 - Figure: `data/queens-construct-orbits.png` (the five orbit hulls in the A4 Coxeter plane, in element colours).
 
 ## Sources checked (16 Nov 2026)
@@ -54,6 +55,9 @@ For the solids, they do not. The five hulls pile up at a common bitruncated 5-ce
 
 ## LEADS
 
-1. The arrangement with all 90 facet hyperplanes (A, −A, B, −B, C3): the script supports it (mode `all`), but it was not run because it is too large for a pilot.
-2. Check in the literature whether the two-piece split of the grand antiprism's complement, the core bitruncated 5-cell and A ∩ B are known, especially in Koca et al. 2011, Table/§ on W(A4) orbits.
-3. The 120-cell's 13 S5 orbits as Vacuus: which golden twist (if any) would make a Red-Queen orbit all-wall, as A and B are for the White Queen.
+1. Reduce the 300 classes of the 90-plane arrangement by S5 × {±1}, because the plane set is centrally symmetric. Then name the classes that touch a corner of P (2,420 regions do).
+2. Check in the literature whether the two-piece split of the grand antiprism's complement, the core bitruncated 5-cell and A ∩ B are known, in particular in Koca, Koca, Al-Ajmi 2011, section on the W(A4) orbits.
+3. The 120-cell's 13 S5 orbits as Vacuus: which golden twist, if any, makes a Red-Queen orbit all-wall, as A and B are for the White Queen.
+4. Count all splits of the 120-cell into 25 disjoint 24-cells (the search stopped at its cap of 1000) and all 20-ring splits of the 600-cell up to symmetry (828 in all).
+5. The 72 non-Hopf decagon covers of the 600-cell: are they unions of partial Hopf fibres (mixed left and right)?
+6. A dissection of the 120-cell around an inscribed 600-cell does not come from caps (they overlap by 0.081 V). Try caps over the 600-cell's facets cut back by the neighbouring facet planes. This is the 120-cell version of the grand-antiprism repair.

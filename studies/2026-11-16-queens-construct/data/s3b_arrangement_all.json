@@ -1,0 +1,5766 @@
+{
+ "mode": "all",
+ "regions": 17371,
+ "region_orbits": 300,
+ "classes": [
+  {
+   "orbit_size": 1,
+   "fvec": [
+    30,
+    60,
+    40,
+    10
+   ],
+   "cells": {
+    "truncated tetrahedron": 10
+   },
+   "fraction": "(23/750+23/1500phi)",
+   "fraction_float": 0.055476521160831724,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A",
+    "B",
+    "-A",
+    "-B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 5,
+   "fvec": [
+    36,
+    72,
+    50,
+    14
+   ],
+   "cells": {
+    "18-vertex cell with faces {4: 6, 6: 5}": 4,
+    "triangular prism": 8,
+    "truncated tetrahedron": 2
+   },
+   "fraction": "(-3341/15000+1081/7500phi)",
+   "fraction_float": 0.010479298911818175,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A",
+    "B",
+    "-B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 5,
+   "fvec": [
+    36,
+    72,
+    50,
+    14
+   ],
+   "cells": {
+    "18-vertex cell with faces {4: 6, 6: 5}": 4,
+    "triangular prism": 8,
+    "truncated tetrahedron": 2
+   },
+   "fraction": "(-3341/15000+1081/7500phi)",
+   "fraction_float": 0.010479298911818175,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-A",
+    "-B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    54,
+    108,
+    70,
+    16
+   ],
+   "cells": {
+    "18-vertex cell with faces {4: 6, 6: 5}": 4,
+    "hexagonal prism": 12
+   },
+   "fraction": "(589/1875-358/1875phi)",
+   "fraction_float": 0.005196710414686723,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 5,
+   "fvec": [
+    24,
+    48,
+    34,
+    10
+   ],
+   "cells": {
+    "hexagonal prism": 4,
+    "triangular prism": 4,
+    "truncated tetrahedron": 2
+   },
+   "fraction": "(-5561/15000+3467/15000phi)",
+   "fraction_float": 0.0032482559330589966,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A",
+    "B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 5,
+   "fvec": [
+    24,
+    48,
+    34,
+    10
+   ],
+   "cells": {
+    "hexagonal prism": 4,
+    "triangular prism": 4,
+    "truncated tetrahedron": 2
+   },
+   "fraction": "(-5561/15000+3467/15000phi)",
+   "fraction_float": 0.0032482559330589966,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-A",
+    "-B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    36,
+    72,
+    49,
+    13
+   ],
+   "cells": {
+    "18-vertex cell with faces {4: 6, 6: 5}": 2,
+    "cube": 6,
+    "hexagonal prism": 5
+   },
+   "fraction": "(2563/7500-394/1875phi)",
+   "fraction_float": 0.0017304578306887586,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    36,
+    72,
+    49,
+    13
+   ],
+   "cells": {
+    "18-vertex cell with faces {4: 6, 6: 5}": 2,
+    "cube": 6,
+    "hexagonal prism": 5
+   },
+   "fraction": "(2563/7500-394/1875phi)",
+   "fraction_float": 0.0017304578306887586,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 5,
+   "fvec": [
+    24,
+    48,
+    34,
+    10
+   ],
+   "cells": {
+    "hexagonal prism": 4,
+    "triangular prism": 4,
+    "truncated tetrahedron": 2
+   },
+   "fraction": "(1373/2500-5081/15000phi)",
+   "fraction_float": 0.0011179535441189214,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 5,
+   "fvec": [
+    24,
+    48,
+    34,
+    10
+   ],
+   "cells": {
+    "hexagonal prism": 4,
+    "triangular prism": 4,
+    "truncated tetrahedron": 2
+   },
+   "fraction": "(1373/2500-5081/15000phi)",
+   "fraction_float": 0.0011179535441189214,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-A",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 5,
+   "fvec": [
+    30,
+    60,
+    40,
+    10
+   ],
+   "cells": {
+    "truncated tetrahedron": 10
+   },
+   "fraction": "(8573/15000-5291/15000phi)",
+   "fraction_float": 0.000798811034953717,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A"
+   ]
+  },
+  {
+   "orbit_size": 5,
+   "fvec": [
+    30,
+    60,
+    40,
+    10
+   ],
+   "cells": {
+    "truncated tetrahedron": 10
+   },
+   "fraction": "(8573/15000-5291/15000phi)",
+   "fraction_float": 0.000798811034953717,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-A"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    30,
+    63,
+    46,
+    13
+   ],
+   "cells": {
+    "18-vertex cell with faces {4: 6, 6: 5}": 1,
+    "7-vertex cell with faces {3: 2, 4: 4}": 3,
+    "9-vertex cell with faces {3: 4, 4: 3, 6: 1}": 1,
+    "hexagonal prism": 4,
+    "triangular prism": 3,
+    "truncated tetrahedron": 1
+   },
+   "fraction": "(-581/1250+719/2500phi)",
+   "fraction_float": 0.0005465751644698202,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    30,
+    63,
+    46,
+    13
+   ],
+   "cells": {
+    "18-vertex cell with faces {4: 6, 6: 5}": 1,
+    "7-vertex cell with faces {3: 2, 4: 4}": 3,
+    "9-vertex cell with faces {3: 4, 4: 3, 6: 1}": 1,
+    "hexagonal prism": 4,
+    "triangular prism": 3,
+    "truncated tetrahedron": 1
+   },
+   "fraction": "(-581/1250+719/2500phi)",
+   "fraction_float": 0.0005465751644698202,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    24,
+    48,
+    34,
+    10
+   ],
+   "cells": {
+    "cube": 6,
+    "hexagonal prism": 4
+   },
+   "fraction": "(1081/3750-667/3750phi)",
+   "fraction_float": 0.00047235453435201524,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    24,
+    48,
+    34,
+    10
+   ],
+   "cells": {
+    "cube": 6,
+    "hexagonal prism": 4
+   },
+   "fraction": "(281/1875-231/2500phi)",
+   "fraction_float": 0.00036032610617639516,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    24,
+    48,
+    34,
+    10
+   ],
+   "cells": {
+    "cube": 6,
+    "hexagonal prism": 4
+   },
+   "fraction": "(281/1875-231/2500phi)",
+   "fraction_float": 0.00036032610617639516,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    24,
+    48,
+    34,
+    10
+   ],
+   "cells": {
+    "cube": 6,
+    "hexagonal prism": 4
+   },
+   "fraction": "(-163/1250+101/1250phi)",
+   "fraction_float": 0.00033714629099151905,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    24,
+    48,
+    34,
+    10
+   ],
+   "cells": {
+    "cube": 6,
+    "hexagonal prism": 4
+   },
+   "fraction": "(-163/1250+101/1250phi)",
+   "fraction_float": 0.00033714629099151905,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    21,
+    42,
+    31,
+    10
+   ],
+   "cells": {
+    "12-vertex cell with faces {3: 2, 4: 2, 5: 2, 6: 2}": 3,
+    "tetrahedron": 3,
+    "triangular prism": 2,
+    "truncated tetrahedron": 2
+   },
+   "fraction": "(-153/1250+379/5000phi)",
+   "fraction_float": 0.00024697634724205053,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    21,
+    42,
+    31,
+    10
+   ],
+   "cells": {
+    "12-vertex cell with faces {3: 2, 4: 2, 5: 2, 6: 2}": 3,
+    "tetrahedron": 3,
+    "triangular prism": 2,
+    "truncated tetrahedron": 2
+   },
+   "fraction": "(-153/1250+379/5000phi)",
+   "fraction_float": 0.00024697634724205053,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    33,
+    71,
+    52,
+    14
+   ],
+   "cells": {
+    "11-vertex cell with faces {3: 1, 4: 5, 5: 1, 6: 1}": 1,
+    "12-vertex cell with faces {3: 2, 4: 2, 5: 2, 6: 2}": 2,
+    "13-vertex cell with faces {3: 1, 4: 7, 5: 1, 6: 1}": 1,
+    "13-vertex cell with faces {4: 8, 5: 2}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 4,
+    "cube": 4,
+    "hexagonal prism": 1
+   },
+   "fraction": "(7313/60000-4511/60000phi)",
+   "fraction_float": 0.00023414461248705276,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    33,
+    71,
+    52,
+    14
+   ],
+   "cells": {
+    "11-vertex cell with faces {3: 1, 4: 5, 5: 1, 6: 1}": 1,
+    "12-vertex cell with faces {3: 2, 4: 2, 5: 2, 6: 2}": 2,
+    "13-vertex cell with faces {3: 1, 4: 7, 5: 1, 6: 1}": 1,
+    "13-vertex cell with faces {4: 8, 5: 2}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 4,
+    "cube": 4,
+    "hexagonal prism": 1
+   },
+   "fraction": "(7313/60000-4511/60000phi)",
+   "fraction_float": 0.00023414461248705276,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    24,
+    48,
+    34,
+    10
+   ],
+   "cells": {
+    "cube": 6,
+    "hexagonal prism": 4
+   },
+   "fraction": "(132/625-163/1250phi)",
+   "fraction_float": 0.00020836786701372567,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    24,
+    48,
+    34,
+    10
+   ],
+   "cells": {
+    "cube": 6,
+    "hexagonal prism": 4
+   },
+   "fraction": "(132/625-163/1250phi)",
+   "fraction_float": 0.00020836786701372567,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    18,
+    36,
+    27,
+    9
+   ],
+   "cells": {
+    "hexagonal prism": 3,
+    "triangular prism": 6
+   },
+   "fraction": "(-259/3750+107/2500phi)",
+   "fraction_float": 0.0001851880518288357,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    18,
+    36,
+    27,
+    9
+   ],
+   "cells": {
+    "hexagonal prism": 3,
+    "triangular prism": 6
+   },
+   "fraction": "(-259/3750+107/2500phi)",
+   "fraction_float": 0.0001851880518288357,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-2/125+1/100phi)",
+   "fraction_float": 0.00018033988749894744,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-2/125+1/100phi)",
+   "fraction_float": 0.00018033988749894744,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    17,
+    36,
+    28,
+    9
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 2, 4: 4}": 4,
+    "9-vertex cell with faces {3: 2, 4: 4, 6: 1}": 2,
+    "hexagonal prism": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(7/3000-1/750phi)",
+   "fraction_float": 0.00017595468166680707,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    17,
+    36,
+    28,
+    9
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 2, 4: 4}": 4,
+    "9-vertex cell with faces {3: 2, 4: 4, 6: 1}": 2,
+    "hexagonal prism": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(7/3000-1/750phi)",
+   "fraction_float": 0.00017595468166680707,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    8,
+    18,
+    17,
+    7
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 4,
+    "tetrahedron": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(7/3000-1/750phi)",
+   "fraction_float": 0.00017595468166680707,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    16,
+    32,
+    24,
+    8
+   ],
+   "cells": {
+    "cube": 8
+   },
+   "fraction": "(47/500-29/500phi)",
+   "fraction_float": 0.00015402865250609132,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 10,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-537/5000+997/15000phi)",
+   "fraction_float": 0.0001453257855763418,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A",
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 10,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-537/5000+997/15000phi)",
+   "fraction_float": 0.0001453257855763418,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-A",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(329/3750-203/3750phi)",
+   "fraction_float": 0.00014376007567235005,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A",
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(329/3750-203/3750phi)",
+   "fraction_float": 0.00014376007567235005,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-A",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    21,
+    42,
+    31,
+    10
+   ],
+   "cells": {
+    "12-vertex cell with faces {3: 2, 4: 2, 5: 2, 6: 2}": 3,
+    "tetrahedron": 3,
+    "triangular prism": 2,
+    "truncated tetrahedron": 2
+   },
+   "fraction": "(-1061/3000+82/375phi)",
+   "fraction_float": 0.00014343220664370104,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    21,
+    42,
+    31,
+    10
+   ],
+   "cells": {
+    "12-vertex cell with faces {3: 2, 4: 2, 5: 2, 6: 2}": 3,
+    "tetrahedron": 3,
+    "triangular prism": 2,
+    "truncated tetrahedron": 2
+   },
+   "fraction": "(-1061/3000+82/375phi)",
+   "fraction_float": 0.00014343220664370104,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-A"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    20,
+    40,
+    29,
+    9
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 1, 4: 3, 5: 3}": 2,
+    "cube": 3,
+    "pentagonal prism": 3,
+    "triangular prism": 1
+   },
+   "fraction": "(3031/15000-78/625phi)",
+   "fraction_float": 0.00013602487067979063,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    20,
+    40,
+    29,
+    9
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 1, 4: 3, 5: 3}": 2,
+    "cube": 3,
+    "pentagonal prism": 3,
+    "triangular prism": 1
+   },
+   "fraction": "(3031/15000-78/625phi)",
+   "fraction_float": 0.00013602487067979063,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    16,
+    34,
+    27,
+    9
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 5}": 2,
+    "cube": 5,
+    "triangular prism": 2
+   },
+   "fraction": "(-143/1500+59/1000phi)",
+   "fraction_float": 0.000130672002910448,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    16,
+    34,
+    27,
+    9
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 5}": 2,
+    "cube": 5,
+    "triangular prism": 2
+   },
+   "fraction": "(-143/1500+59/1000phi)",
+   "fraction_float": 0.000130672002910448,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    24,
+    48,
+    34,
+    10
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 1, 4: 3, 5: 3}": 2,
+    "12-vertex cell with faces {3: 1, 4: 3, 5: 3, 6: 1}": 2,
+    "pentagonal prism": 4,
+    "triangular prism": 2
+   },
+   "fraction": "(-234/625+434/1875phi)",
+   "fraction_float": 0.00012093392930895286,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    18,
+    39,
+    31,
+    10
+   ],
+   "cells": {
+    "9-vertex cell with faces {3: 4, 4: 3, 6: 1}": 2,
+    "cube": 3,
+    "hexagonal prism": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(-664/1875+821/3750phi)",
+   "fraction_float": 0.00010824127031033859,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    18,
+    39,
+    31,
+    10
+   ],
+   "cells": {
+    "9-vertex cell with faces {3: 4, 4: 3, 6: 1}": 2,
+    "cube": 3,
+    "hexagonal prism": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(-664/1875+821/3750phi)",
+   "fraction_float": 0.00010824127031033859,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    24,
+    58,
+    50,
+    16
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 4, 4: 3, 5: 2}": 2,
+    "12-vertex cell with faces {3: 2, 4: 1, 5: 4, 6: 1}": 1,
+    "13-vertex cell with faces {3: 1, 4: 7, 5: 1, 6: 1}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 2,
+    "9-vertex cell with faces {3: 3, 4: 1, 5: 3}": 2,
+    "pentagonal pyramid": 1,
+    "tetrahedron": 3,
+    "triangular prism": 3
+   },
+   "fraction": "(91/1250-337/7500phi)",
+   "fraction_float": 9.633943883806395e-05,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    24,
+    58,
+    50,
+    16
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 4, 4: 3, 5: 2}": 2,
+    "12-vertex cell with faces {3: 2, 4: 1, 5: 4, 6: 1}": 1,
+    "13-vertex cell with faces {3: 1, 4: 7, 5: 1, 6: 1}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 2,
+    "9-vertex cell with faces {3: 3, 4: 1, 5: 3}": 2,
+    "pentagonal pyramid": 1,
+    "tetrahedron": 3,
+    "triangular prism": 3
+   },
+   "fraction": "(91/1250-337/7500phi)",
+   "fraction_float": 9.633943883806395e-05,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    15,
+    31,
+    24,
+    8
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2,
+    "9-vertex cell with faces {3: 2, 4: 3, 5: 2}": 1,
+    "pentagonal prism": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(-319/15000+33/2500phi)",
+   "fraction_float": 9.138198483194665e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    15,
+    31,
+    24,
+    8
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2,
+    "9-vertex cell with faces {3: 2, 4: 3, 5: 2}": 1,
+    "pentagonal prism": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(-319/15000+33/2500phi)",
+   "fraction_float": 9.138198483194665e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    18,
+    36,
+    27,
+    9
+   ],
+   "cells": {
+    "hexagonal prism": 3,
+    "triangular prism": 6
+   },
+   "fraction": "(-421/2500+781/7500phi)",
+   "fraction_float": 9.127269515571412e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    18,
+    36,
+    27,
+    9
+   ],
+   "cells": {
+    "hexagonal prism": 3,
+    "triangular prism": 6
+   },
+   "fraction": "(-421/2500+781/7500phi)",
+   "fraction_float": 9.127269515571412e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    27,
+    55,
+    39,
+    11
+   ],
+   "cells": {
+    "11-vertex cell with faces {3: 2, 4: 3, 5: 2, 6: 1}": 1,
+    "11-vertex cell with faces {4: 6, 5: 2}": 2,
+    "12-vertex cell with faces {3: 2, 4: 1, 5: 4, 6: 1}": 1,
+    "12-vertex cell with faces {4: 4, 5: 4}": 2,
+    "cube": 2,
+    "hexagonal prism": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(-329/12000+17/1000phi)",
+   "fraction_float": 8.991114208154946e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    27,
+    55,
+    39,
+    11
+   ],
+   "cells": {
+    "11-vertex cell with faces {3: 2, 4: 3, 5: 2, 6: 1}": 1,
+    "11-vertex cell with faces {4: 6, 5: 2}": 2,
+    "12-vertex cell with faces {3: 2, 4: 1, 5: 4, 6: 1}": 1,
+    "12-vertex cell with faces {4: 4, 5: 4}": 2,
+    "cube": 2,
+    "hexagonal prism": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(-329/12000+17/1000phi)",
+   "fraction_float": 8.991114208154946e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-266/1875+329/3750phi)",
+   "fraction_float": 8.884861299077174e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-266/1875+329/3750phi)",
+   "fraction_float": 8.884861299077174e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-A"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    9,
+    18,
+    15,
+    6
+   ],
+   "cells": {
+    "triangular prism": 6
+   },
+   "fraction": "(799/15000-493/15000phi)",
+   "fraction_float": 8.728290308678e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A",
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    9,
+    18,
+    15,
+    6
+   ],
+   "cells": {
+    "triangular prism": 6
+   },
+   "fraction": "(799/15000-493/15000phi)",
+   "fraction_float": 8.728290308678e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-A",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    18,
+    37,
+    28,
+    9
+   ],
+   "cells": {
+    "11-vertex cell with faces {3: 2, 4: 3, 5: 2, 6: 1}": 2,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2,
+    "hexagonal prism": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(1519/15000-469/7500phi)",
+   "fraction_float": 8.560790350657654e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    18,
+    37,
+    28,
+    9
+   ],
+   "cells": {
+    "11-vertex cell with faces {3: 2, 4: 3, 5: 2, 6: 1}": 2,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2,
+    "hexagonal prism": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(1519/15000-469/7500phi)",
+   "fraction_float": 8.560790350657654e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    22,
+    50,
+    40,
+    12
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 5, 6: 1}": 2,
+    "10-vertex cell with faces {3: 3, 4: 5, 5: 1}": 2,
+    "8-vertex cell with faces {3: 4, 4: 4}": 1,
+    "cube": 3,
+    "pentagonal prism": 1,
+    "tetrahedron": 2,
+    "triangular prism": 1
+   },
+   "fraction": "(-5641/60000+6979/120000phi)",
+   "fraction_float": 8.549339571263526e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    22,
+    50,
+    40,
+    12
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 5, 6: 1}": 2,
+    "10-vertex cell with faces {3: 3, 4: 5, 5: 1}": 2,
+    "8-vertex cell with faces {3: 4, 4: 4}": 1,
+    "cube": 3,
+    "pentagonal prism": 1,
+    "tetrahedron": 2,
+    "triangular prism": 1
+   },
+   "fraction": "(-5641/60000+6979/120000phi)",
+   "fraction_float": 8.549339571263526e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    9,
+    20,
+    18,
+    7
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 4,
+    "7-vertex cell with faces {3: 2, 4: 4}": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(23/1875-113/15000phi)",
+   "fraction_float": 7.74772847507918e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    9,
+    20,
+    18,
+    7
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 4,
+    "7-vertex cell with faces {3: 2, 4: 4}": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(23/1875-113/15000phi)",
+   "fraction_float": 7.74772847507918e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    16,
+    32,
+    24,
+    8
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2,
+    "cube": 2,
+    "pentagonal prism": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(129/1250-239/3750phi)",
+   "fraction_float": 7.730045034003152e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    16,
+    32,
+    24,
+    8
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2,
+    "cube": 2,
+    "pentagonal prism": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(129/1250-239/3750phi)",
+   "fraction_float": 7.730045034003152e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    16,
+    32,
+    24,
+    8
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2,
+    "cube": 2,
+    "pentagonal prism": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(-469/3000+29/300phi)",
+   "fraction_float": 7.661891248983421e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    16,
+    32,
+    24,
+    8
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2,
+    "cube": 2,
+    "pentagonal prism": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(-469/3000+29/300phi)",
+   "fraction_float": 7.661891248983421e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    10,
+    21,
+    18,
+    7
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "tetrahedron": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(61/15000-37/15000phi)",
+   "fraction_float": 7.551616108359294e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    10,
+    21,
+    18,
+    7
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "tetrahedron": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(61/15000-37/15000phi)",
+   "fraction_float": 7.551616108359294e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-21/500+13/500phi)",
+   "fraction_float": 6.888370749726092e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-21/500+13/500phi)",
+   "fraction_float": 6.888370749726092e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-21/500+13/500phi)",
+   "fraction_float": 6.888370749726092e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-21/500+13/500phi)",
+   "fraction_float": 6.888370749726092e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    15,
+    33,
+    27,
+    9
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 2, 4: 4}": 3,
+    "8-vertex cell with faces {3: 2, 4: 5}": 2,
+    "cube": 2,
+    "triangular prism": 1
+   },
+   "fraction": "(103/3750-127/7500phi)",
+   "fraction_float": 6.795779050177905e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    15,
+    33,
+    27,
+    9
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 2, 4: 4}": 3,
+    "8-vertex cell with faces {3: 2, 4: 5}": 2,
+    "cube": 2,
+    "triangular prism": 1
+   },
+   "fraction": "(103/3750-127/7500phi)",
+   "fraction_float": 6.795779050177905e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    15,
+    33,
+    27,
+    9
+   ],
+   "cells": {
+    "9-vertex cell with faces {3: 2, 4: 3, 5: 2}": 3,
+    "9-vertex cell with faces {3: 5, 5: 3}": 2,
+    "tetrahedron": 3,
+    "triangular prism": 1
+   },
+   "fraction": "(61/1875-301/15000phi)",
+   "fraction_float": 6.478462575210814e-05,
+   "corners_of_P": 1,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    15,
+    33,
+    27,
+    9
+   ],
+   "cells": {
+    "9-vertex cell with faces {3: 2, 4: 3, 5: 2}": 3,
+    "9-vertex cell with faces {3: 5, 5: 3}": 2,
+    "tetrahedron": 3,
+    "triangular prism": 1
+   },
+   "fraction": "(61/1875-301/15000phi)",
+   "fraction_float": 6.478462575210814e-05,
+   "corners_of_P": 1,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    18,
+    39,
+    31,
+    10
+   ],
+   "cells": {
+    "11-vertex cell with faces {3: 2, 4: 3, 5: 2, 6: 1}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 5}": 2,
+    "9-vertex cell with faces {3: 2, 4: 3, 5: 2}": 2,
+    "9-vertex cell with faces {3: 2, 4: 4, 6: 1}": 1,
+    "cube": 1,
+    "tetrahedron": 2
+   },
+   "fraction": "(6143/15000-949/3750phi)",
+   "fraction_float": 6.286524702664442e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    18,
+    39,
+    31,
+    10
+   ],
+   "cells": {
+    "11-vertex cell with faces {3: 2, 4: 3, 5: 2, 6: 1}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 5}": 2,
+    "9-vertex cell with faces {3: 2, 4: 3, 5: 2}": 2,
+    "9-vertex cell with faces {3: 2, 4: 4, 6: 1}": 1,
+    "cube": 1,
+    "tetrahedron": 2
+   },
+   "fraction": "(6143/15000-949/3750phi)",
+   "fraction_float": 6.286524702664442e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    15,
+    30,
+    23,
+    8
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 1, 4: 3, 5: 3}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2,
+    "cube": 1,
+    "tetrahedron": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(-1643/15000+127/1875phi)",
+   "fraction_float": 6.150217132622204e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    15,
+    30,
+    23,
+    8
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 1, 4: 3, 5: 3}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2,
+    "cube": 1,
+    "tetrahedron": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(-1643/15000+127/1875phi)",
+   "fraction_float": 6.150217132622204e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    23,
+    56,
+    47,
+    14
+   ],
+   "cells": {
+    "11-vertex cell with faces {3: 4, 4: 2, 5: 2, 6: 1}": 2,
+    "12-vertex cell with faces {3: 2, 4: 2, 5: 2, 6: 2}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 4,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 2, 4: 5}": 2,
+    "8-vertex cell with faces {3: 6, 5: 2}": 1,
+    "9-vertex cell with faces {3: 5, 5: 3}": 2,
+    "tetrahedron": 1
+   },
+   "fraction": "(2731/5000-5063/15000phi)",
+   "fraction_float": 5.9594330618750746e-05,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    23,
+    56,
+    47,
+    14
+   ],
+   "cells": {
+    "11-vertex cell with faces {3: 4, 4: 2, 5: 2, 6: 1}": 2,
+    "12-vertex cell with faces {3: 2, 4: 2, 5: 2, 6: 2}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 4,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 2, 4: 5}": 2,
+    "8-vertex cell with faces {3: 6, 5: 2}": 1,
+    "9-vertex cell with faces {3: 5, 5: 3}": 2,
+    "tetrahedron": 1
+   },
+   "fraction": "(2731/5000-5063/15000phi)",
+   "fraction_float": 5.9594330618750746e-05,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    16,
+    34,
+    27,
+    9
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 2,
+    "cube": 3,
+    "pentagonal prism": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-87/625+1291/15000phi)",
+   "fraction_float": 5.8791965074300734e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    16,
+    34,
+    27,
+    9
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 2,
+    "cube": 3,
+    "pentagonal prism": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-87/625+1291/15000phi)",
+   "fraction_float": 5.8791965074300734e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 10,
+   "fvec": [
+    9,
+    18,
+    15,
+    6
+   ],
+   "cells": {
+    "triangular prism": 6
+   },
+   "fraction": "(841/7500-1039/15000phi)",
+   "fraction_float": 5.751237925727404e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A",
+    "B",
+    "-B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 10,
+   "fvec": [
+    9,
+    18,
+    15,
+    6
+   ],
+   "cells": {
+    "triangular prism": 6
+   },
+   "fraction": "(841/7500-1039/15000phi)",
+   "fraction_float": 5.751237925727404e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-A",
+    "-B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    15,
+    37,
+    33,
+    11
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "6-vertex cell with faces {3: 6, 4: 1}": 2,
+    "7-vertex cell with faces {3: 5, 4: 1, 5: 1}": 2,
+    "9-vertex cell with faces {3: 2, 4: 3, 5: 2}": 1,
+    "cube": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-163/7500+101/7500phi)",
+   "fraction_float": 5.6191048498584195e-05,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    15,
+    37,
+    33,
+    11
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "6-vertex cell with faces {3: 6, 4: 1}": 2,
+    "7-vertex cell with faces {3: 5, 4: 1, 5: 1}": 2,
+    "9-vertex cell with faces {3: 2, 4: 3, 5: 2}": 1,
+    "cube": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-163/7500+101/7500phi)",
+   "fraction_float": 5.6191048498584195e-05,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    21,
+    47,
+    37,
+    11
+   ],
+   "cells": {
+    "11-vertex cell with faces {3: 4, 4: 2, 5: 2, 6: 1}": 1,
+    "12-vertex cell with faces {3: 1, 4: 3, 5: 3, 6: 1}": 1,
+    "6-vertex cell with faces {3: 4, 4: 2}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 2,
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 1,
+    "9-vertex cell with faces {3: 3, 4: 4, 5: 1}": 1,
+    "pentagonal prism": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(2471/5000-1527/5000phi)",
+   "fraction_float": 5.2419835782080426e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    21,
+    47,
+    37,
+    11
+   ],
+   "cells": {
+    "11-vertex cell with faces {3: 4, 4: 2, 5: 2, 6: 1}": 1,
+    "12-vertex cell with faces {3: 1, 4: 3, 5: 3, 6: 1}": 1,
+    "6-vertex cell with faces {3: 4, 4: 2}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 2,
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 1,
+    "9-vertex cell with faces {3: 3, 4: 4, 5: 1}": 1,
+    "pentagonal prism": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(2471/5000-1527/5000phi)",
+   "fraction_float": 5.2419835782080426e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    13,
+    26,
+    20,
+    7
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 4,
+    "cube": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(463/5000-143/2500phi)",
+   "fraction_float": 4.845584350601784e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    13,
+    26,
+    20,
+    7
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 4,
+    "cube": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(463/5000-143/2500phi)",
+   "fraction_float": 4.845584350601784e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    16,
+    32,
+    24,
+    8
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2,
+    "cube": 2,
+    "pentagonal prism": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(-313/1875+129/1250phi)",
+   "fraction_float": 4.7774305655834404e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    16,
+    32,
+    24,
+    8
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2,
+    "cube": 2,
+    "pentagonal prism": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(-313/1875+129/1250phi)",
+   "fraction_float": 4.7774305655834404e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    16,
+    35,
+    28,
+    9
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 2, 4: 5}": 1,
+    "8-vertex cell with faces {3: 4, 4: 1, 5: 2}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 1,
+    "9-vertex cell with faces {3: 2, 4: 3, 5: 2}": 1,
+    "9-vertex cell with faces {3: 3, 4: 1, 5: 3}": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(-1223/5000+189/1250phi)",
+   "fraction_float": 4.673909898408879e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    16,
+    35,
+    28,
+    9
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 2, 4: 5}": 1,
+    "8-vertex cell with faces {3: 4, 4: 1, 5: 2}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 1,
+    "9-vertex cell with faces {3: 2, 4: 3, 5: 2}": 1,
+    "9-vertex cell with faces {3: 3, 4: 1, 5: 3}": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(-1223/5000+189/1250phi)",
+   "fraction_float": 4.673909898408879e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    17,
+    37,
+    29,
+    9
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 3, 6: 2}": 1,
+    "10-vertex cell with faces {3: 4, 4: 1, 5: 2, 6: 1}": 2,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "6-vertex cell with faces {3: 4, 4: 2}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "pentagonal prism": 1,
+    "triangular prism": 1
+   },
+   "fraction": "(178/375-22/75phi)",
+   "fraction_float": 4.336330003085198e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    17,
+    37,
+    29,
+    9
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 3, 6: 2}": 1,
+    "10-vertex cell with faces {3: 4, 4: 1, 5: 2, 6: 1}": 2,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "6-vertex cell with faces {3: 4, 4: 2}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "pentagonal prism": 1,
+    "triangular prism": 1
+   },
+   "fraction": "(178/375-22/75phi)",
+   "fraction_float": 4.336330003085198e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    21,
+    47,
+    37,
+    11
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 5, 6: 1}": 1,
+    "10-vertex cell with faces {3: 3, 4: 5, 5: 1}": 1,
+    "12-vertex cell with faces {4: 4, 5: 4}": 1,
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "9-vertex cell with faces {3: 3, 4: 2, 5: 1, 6: 1}": 1,
+    "9-vertex cell with faces {3: 3, 4: 4, 5: 1}": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(4153/30000-1283/15000phi)",
+   "fraction_float": 3.749282892565042e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    21,
+    47,
+    37,
+    11
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 5, 6: 1}": 1,
+    "10-vertex cell with faces {3: 3, 4: 5, 5: 1}": 1,
+    "12-vertex cell with faces {4: 4, 5: 4}": 1,
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "9-vertex cell with faces {3: 3, 4: 2, 5: 1, 6: 1}": 1,
+    "9-vertex cell with faces {3: 3, 4: 4, 5: 1}": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(4153/30000-1283/15000phi)",
+   "fraction_float": 3.749282892565042e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    21,
+    49,
+    40,
+    12
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 5, 6: 1}": 1,
+    "10-vertex cell with faces {3: 3, 5: 3, 6: 1}": 1,
+    "12-vertex cell with faces {3: 2, 4: 3, 5: 4}": 1,
+    "6-vertex cell with faces {3: 6, 4: 1}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 4,
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 3,
+    "tetrahedron": 1
+   },
+   "fraction": "(171/800-317/2400phi)",
+   "fraction_float": 3.467731928472051e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    21,
+    49,
+    40,
+    12
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 5, 6: 1}": 1,
+    "10-vertex cell with faces {3: 3, 5: 3, 6: 1}": 1,
+    "12-vertex cell with faces {3: 2, 4: 3, 5: 4}": 1,
+    "6-vertex cell with faces {3: 6, 4: 1}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 4,
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 3,
+    "tetrahedron": 1
+   },
+   "fraction": "(171/800-317/2400phi)",
+   "fraction_float": 3.467731928472051e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    13,
+    28,
+    23,
+    8
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 2,
+    "cube": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(52/625-257/5000phi)",
+   "fraction_float": 3.305297825539899e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    13,
+    28,
+    23,
+    8
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 2,
+    "cube": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(52/625-257/5000phi)",
+   "fraction_float": 3.305297825539899e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    15,
+    34,
+    29,
+    10
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 4, 4: 1, 5: 2, 6: 1}": 1,
+    "11-vertex cell with faces {3: 4, 4: 2, 5: 2, 6: 1}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 4, 4: 3}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 4, 4: 1, 5: 2}": 1,
+    "tetrahedron": 4
+   },
+   "fraction": "(-4331/15000+2677/15000phi)",
+   "fraction_float": 3.1799192231229956e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    15,
+    34,
+    29,
+    10
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 4, 4: 1, 5: 2, 6: 1}": 1,
+    "11-vertex cell with faces {3: 4, 4: 2, 5: 2, 6: 1}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 4, 4: 3}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 4, 4: 1, 5: 2}": 1,
+    "tetrahedron": 4
+   },
+   "fraction": "(-4331/15000+2677/15000phi)",
+   "fraction_float": 3.1799192231229956e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    13,
+    32,
+    29,
+    10
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 5,
+    "7-vertex cell with faces {3: 2, 4: 4}": 1,
+    "7-vertex cell with faces {3: 6, 4: 2}": 1,
+    "8-vertex cell with faces {3: 4, 4: 4}": 1,
+    "cube": 1,
+    "triangular prism": 1
+   },
+   "fraction": "(-239/15000+37/3750phi)",
+   "fraction_float": 3.126868899895954e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    13,
+    32,
+    29,
+    10
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 5,
+    "7-vertex cell with faces {3: 2, 4: 4}": 1,
+    "7-vertex cell with faces {3: 6, 4: 2}": 1,
+    "8-vertex cell with faces {3: 4, 4: 4}": 1,
+    "cube": 1,
+    "triangular prism": 1
+   },
+   "fraction": "(-239/15000+37/3750phi)",
+   "fraction_float": 3.126868899895954e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-1223/7500+63/625phi)",
+   "fraction_float": 3.115939932274436e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-1223/7500+63/625phi)",
+   "fraction_float": 3.115939932274436e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    9,
+    18,
+    15,
+    6
+   ],
+   "cells": {
+    "triangular prism": 6
+   },
+   "fraction": "(47/2500-29/2500phi)",
+   "fraction_float": 3.0805730501220346e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 4,
+    "tetrahedron": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(-77/600+119/1500phi)",
+   "fraction_float": 3.0696440825012106e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 4,
+    "tetrahedron": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(-77/600+119/1500phi)",
+   "fraction_float": 3.0696440825012106e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    10,
+    21,
+    18,
+    7
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "tetrahedron": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(-1/375+1/600phi)",
+   "fraction_float": 3.005664791649182e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    10,
+    21,
+    18,
+    7
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "tetrahedron": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(-1/375+1/600phi)",
+   "fraction_float": 3.005664791649182e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    16,
+    37,
+    32,
+    11
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 5, 6: 1}": 2,
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 2,
+    "tetrahedron": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(-549/20000+1019/60000phi)",
+   "fraction_float": 2.961057560238109e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    16,
+    37,
+    32,
+    11
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 5, 6: 1}": 2,
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 2,
+    "tetrahedron": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(-549/20000+1019/60000phi)",
+   "fraction_float": 2.961057560238109e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 10,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-163/15000+101/15000phi)",
+   "fraction_float": 2.8095524249292098e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 10,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-163/15000+101/15000phi)",
+   "fraction_float": 2.8095524249292098e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-A"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(172/625-2551/15000phi)",
+   "fraction_float": 2.6352979934529674e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(172/625-2551/15000phi)",
+   "fraction_float": 2.6352979934529674e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-11/100+17/250phi)",
+   "fraction_float": 2.631123499285959e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-11/100+17/250phi)",
+   "fraction_float": 2.631123499285959e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    26,
+    59,
+    47,
+    14
+   ],
+   "cells": {
+    "12-vertex cell with faces {3: 3, 4: 7, 5: 1}": 1,
+    "13-vertex cell with faces {4: 8, 5: 2}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 2,
+    "cube": 5,
+    "pentagonal prism": 1,
+    "pentagonal pyramid": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(26471/30000-32719/60000phi)",
+   "fraction_float": 2.5765368203090055e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    26,
+    59,
+    47,
+    14
+   ],
+   "cells": {
+    "12-vertex cell with faces {3: 3, 4: 7, 5: 1}": 1,
+    "13-vertex cell with faces {4: 8, 5: 2}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 2,
+    "cube": 5,
+    "pentagonal prism": 1,
+    "pentagonal pyramid": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(26471/30000-32719/60000phi)",
+   "fraction_float": 2.5765368203090055e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    14,
+    37,
+    34,
+    11
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 3,
+    "6-vertex cell with faces {3: 4, 4: 2}": 3,
+    "7-vertex cell with faces {3: 4, 4: 3}": 1,
+    "7-vertex cell with faces {3: 6, 4: 2}": 2,
+    "8-vertex cell with faces {3: 2, 4: 5}": 1,
+    "triangular prism": 1
+   },
+   "fraction": "(-493/3750+1219/15000phi)",
+   "fraction_float": 2.5562152408120653e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    14,
+    37,
+    34,
+    11
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 3,
+    "6-vertex cell with faces {3: 4, 4: 2}": 3,
+    "7-vertex cell with faces {3: 4, 4: 3}": 1,
+    "7-vertex cell with faces {3: 6, 4: 2}": 2,
+    "8-vertex cell with faces {3: 2, 4: 5}": 1,
+    "triangular prism": 1
+   },
+   "fraction": "(-493/3750+1219/15000phi)",
+   "fraction_float": 2.5562152408120653e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    10,
+    26,
+    25,
+    9
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 4,
+    "6-vertex cell with faces {3: 4, 4: 2}": 1,
+    "7-vertex cell with faces {3: 6, 4: 2}": 2,
+    "tetrahedron": 2
+   },
+   "fraction": "(-31/500+23/600phi)",
+   "fraction_float": 2.463623541263532e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(123/1250-38/625phi)",
+   "fraction_float": 2.3533484006396654e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(123/1250-38/625phi)",
+   "fraction_float": 2.3533484006396654e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    16,
+    36,
+    30,
+    10
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 3, 6: 2}": 1,
+    "10-vertex cell with faces {3: 4, 4: 1, 5: 2, 6: 1}": 1,
+    "9-vertex cell with faces {3: 3, 4: 4, 5: 1}": 2,
+    "9-vertex cell with faces {3: 4, 4: 3, 6: 1}": 1,
+    "tetrahedron": 4,
+    "triangular prism": 1
+   },
+   "fraction": "(-2719/5000+3361/10000phi)",
+   "fraction_float": 2.122361883971635e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    16,
+    36,
+    30,
+    10
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 3, 6: 2}": 1,
+    "10-vertex cell with faces {3: 4, 4: 1, 5: 2, 6: 1}": 1,
+    "9-vertex cell with faces {3: 3, 4: 4, 5: 1}": 2,
+    "9-vertex cell with faces {3: 4, 4: 3, 6: 1}": 1,
+    "tetrahedron": 4,
+    "triangular prism": 1
+   },
+   "fraction": "(-2719/5000+3361/10000phi)",
+   "fraction_float": 2.122361883971635e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    13,
+    28,
+    23,
+    8
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 2, 4: 4}": 1,
+    "8-vertex cell with faces {3: 2, 4: 5}": 2,
+    "cube": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(1031/15000-637/15000phi)",
+   "fraction_float": 2.0823277754461467e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    13,
+    28,
+    23,
+    8
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 2, 4: 4}": 1,
+    "8-vertex cell with faces {3: 2, 4: 5}": 2,
+    "cube": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(1031/15000-637/15000phi)",
+   "fraction_float": 2.0823277754461467e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(47/3750-29/3750phi)",
+   "fraction_float": 2.0537153667479074e-05,
+   "corners_of_P": 1,
+   "inside_hulls": [
+    "A"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(47/3750-29/3750phi)",
+   "fraction_float": 2.0537153667479074e-05,
+   "corners_of_P": 1,
+   "inside_hulls": [
+    "-A"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    18,
+    42,
+    36,
+    12
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 4, 4: 3, 5: 2}": 2,
+    "12-vertex cell with faces {3: 2, 4: 3, 5: 4}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "pentagonal pyramid": 1,
+    "tetrahedron": 3,
+    "triangular prism": 2
+   },
+   "fraction": "(2713/60000-419/15000phi)",
+   "fraction_float": 1.9583914252933876e-05,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    18,
+    42,
+    36,
+    12
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 4, 4: 3, 5: 2}": 2,
+    "12-vertex cell with faces {3: 2, 4: 3, 5: 4}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "pentagonal pyramid": 1,
+    "tetrahedron": 3,
+    "triangular prism": 2
+   },
+   "fraction": "(2713/60000-419/15000phi)",
+   "fraction_float": 1.9583914252933876e-05,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    9,
+    22,
+    21,
+    8
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "6-vertex cell with faces {3: 4, 4: 2}": 4,
+    "tetrahedron": 2
+   },
+   "fraction": "(-19/625+47/2500phi)",
+   "fraction_float": 1.903898849802549e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    18,
+    37,
+    28,
+    9
+   ],
+   "cells": {
+    "11-vertex cell with faces {4: 6, 5: 2}": 2,
+    "7-vertex cell with faces {3: 2, 4: 4}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "cube": 1,
+    "pentagonal prism": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-3967/24000+613/6000phi)",
+   "fraction_float": 1.747251728093091e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    18,
+    37,
+    28,
+    9
+   ],
+   "cells": {
+    "11-vertex cell with faces {4: 6, 5: 2}": 2,
+    "7-vertex cell with faces {3: 2, 4: 4}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "cube": 1,
+    "pentagonal prism": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-3967/24000+613/6000phi)",
+   "fraction_float": 1.747251728093091e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    15,
+    34,
+    29,
+    10
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 2,
+    "9-vertex cell with faces {3: 3, 4: 4, 5: 1}": 1,
+    "9-vertex cell with faces {3: 5, 5: 3}": 1,
+    "tetrahedron": 2,
+    "triangular prism": 3
+   },
+   "fraction": "(-3629/15000+2243/15000phi)",
+   "fraction_float": 1.6682451067590032e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    15,
+    34,
+    29,
+    10
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 2,
+    "9-vertex cell with faces {3: 3, 4: 4, 5: 1}": 1,
+    "9-vertex cell with faces {3: 5, 5: 3}": 1,
+    "tetrahedron": 2,
+    "triangular prism": 3
+   },
+   "fraction": "(-3629/15000+2243/15000phi)",
+   "fraction_float": 1.6682451067590032e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(89/500-11/100phi)",
+   "fraction_float": 1.6261237511555615e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(89/500-11/100phi)",
+   "fraction_float": 1.6261237511555615e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    13,
+    28,
+    23,
+    8
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 2,
+    "pentagonal prism": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(61/7500-301/60000phi)",
+   "fraction_float": 1.6196156438027035e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    13,
+    28,
+    23,
+    8
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 2,
+    "pentagonal prism": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(61/7500-301/60000phi)",
+   "fraction_float": 1.6196156438027035e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    7,
+    15,
+    14,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 3,
+    "tetrahedron": 2,
+    "triangular prism": 1
+   },
+   "fraction": "(47/5000-29/5000phi)",
+   "fraction_float": 1.5402865250610173e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    7,
+    15,
+    14,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 3,
+    "tetrahedron": 2,
+    "triangular prism": 1
+   },
+   "fraction": "(47/5000-29/5000phi)",
+   "fraction_float": 1.5402865250610173e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-A"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    13,
+    30,
+    27,
+    10
+   ],
+   "cells": {
+    "9-vertex cell with faces {3: 4, 4: 3, 6: 1}": 2,
+    "tetrahedron": 2,
+    "triangular prism": 6
+   },
+   "fraction": "(161/375-199/750phi)",
+   "fraction_float": 1.4981651694612186e-05,
+   "corners_of_P": 1,
+   "inside_hulls": [
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-199/1250+123/1250phi)",
+   "fraction_float": 1.4544492989654323e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-199/1250+123/1250phi)",
+   "fraction_float": 1.4544492989654323e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    15,
+    32,
+    26,
+    9
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 2,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 2,
+    "pentagonal prism": 1,
+    "tetrahedron": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-683/15000+563/20000phi)",
+   "fraction_float": 1.4323449976205715e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    15,
+    32,
+    26,
+    9
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 2,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 2,
+    "pentagonal prism": 1,
+    "tetrahedron": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-683/15000+563/20000phi)",
+   "fraction_float": 1.4323449976205715e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    19,
+    38,
+    28,
+    9
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 3, 6: 2}": 2,
+    "12-vertex cell with faces {3: 2, 4: 2, 5: 2, 6: 2}": 2,
+    "pentagonal prism": 1,
+    "tetrahedron": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-1319/1500+1019/1875phi)",
+   "fraction_float": 1.4205085942853302e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    19,
+    38,
+    28,
+    9
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 3, 6: 2}": 2,
+    "12-vertex cell with faces {3: 2, 4: 2, 5: 2, 6: 2}": 2,
+    "pentagonal prism": 1,
+    "tetrahedron": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-1319/1500+1019/1875phi)",
+   "fraction_float": 1.4205085942853302e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    14,
+    31,
+    26,
+    9
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 4, 4: 3}": 1,
+    "9-vertex cell with faces {3: 3, 4: 1, 5: 3}": 3,
+    "9-vertex cell with faces {3: 5, 5: 3}": 1,
+    "tetrahedron": 4
+   },
+   "fraction": "(71/625-351/5000phi)",
+   "fraction_float": 1.401398975738044e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    14,
+    31,
+    26,
+    9
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 4, 4: 3}": 1,
+    "9-vertex cell with faces {3: 3, 4: 1, 5: 3}": 3,
+    "9-vertex cell with faces {3: 5, 5: 3}": 1,
+    "tetrahedron": 4
+   },
+   "fraction": "(71/625-351/5000phi)",
+   "fraction_float": 1.401398975738044e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-38/1875+47/3750phi)",
+   "fraction_float": 1.2692658998683659e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-38/1875+47/3750phi)",
+   "fraction_float": 1.2692658998683659e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-A"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    11,
+    29,
+    30,
+    12
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 5, 4: 1, 5: 1}": 1,
+    "8-vertex cell with faces {3: 6, 5: 2}": 1,
+    "8-vertex cell with faces {3: 7, 4: 1, 5: 1}": 1,
+    "tetrahedron": 9
+   },
+   "fraction": "(-457/7500+113/3000phi)",
+   "fraction_float": 1.2613576246045533e-05,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    11,
+    29,
+    30,
+    12
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 5, 4: 1, 5: 1}": 1,
+    "8-vertex cell with faces {3: 6, 5: 2}": 1,
+    "8-vertex cell with faces {3: 7, 4: 1, 5: 1}": 1,
+    "tetrahedron": 9
+   },
+   "fraction": "(-457/7500+113/3000phi)",
+   "fraction_float": 1.2613576246045533e-05,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    17,
+    40,
+    35,
+    12
+   ],
+   "cells": {
+    "11-vertex cell with faces {3: 4, 4: 2, 5: 2, 6: 1}": 2,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 2,
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 2,
+    "tetrahedron": 4,
+    "triangular prism": 2
+   },
+   "fraction": "(-761/1250+1411/3750phi)",
+   "fraction_float": 1.225550029382294e-05,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    9,
+    18,
+    15,
+    6
+   ],
+   "cells": {
+    "triangular prism": 6
+   },
+   "fraction": "(123/2500-19/625phi)",
+   "fraction_float": 1.1766742003198327e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    9,
+    18,
+    15,
+    6
+   ],
+   "cells": {
+    "triangular prism": 6
+   },
+   "fraction": "(123/2500-19/625phi)",
+   "fraction_float": 1.1766742003198327e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    9,
+    18,
+    15,
+    6
+   ],
+   "cells": {
+    "triangular prism": 6
+   },
+   "fraction": "(123/2500-19/625phi)",
+   "fraction_float": 1.1766742003198327e-05,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    9,
+    18,
+    15,
+    6
+   ],
+   "cells": {
+    "triangular prism": 6
+   },
+   "fraction": "(123/2500-19/625phi)",
+   "fraction_float": 1.1766742003198327e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    9,
+    20,
+    18,
+    7
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 6,
+    "cube": 1
+   },
+   "fraction": "(-7/1000+13/3000phi)",
+   "fraction_float": 1.148061791621073e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    9,
+    20,
+    18,
+    7
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 6,
+    "cube": 1
+   },
+   "fraction": "(-7/1000+13/3000phi)",
+   "fraction_float": 1.148061791621073e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    11,
+    24,
+    21,
+    8
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 3,
+    "9-vertex cell with faces {3: 3, 4: 1, 5: 3}": 1,
+    "tetrahedron": 3
+   },
+   "fraction": "(-289/1875+1429/15000phi)",
+   "fraction_float": 1.1371328239973e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    11,
+    24,
+    21,
+    8
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 3,
+    "9-vertex cell with faces {3: 3, 4: 1, 5: 3}": 1,
+    "tetrahedron": 3
+   },
+   "fraction": "(-289/1875+1429/15000phi)",
+   "fraction_float": 1.1371328239973e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    16,
+    39,
+    34,
+    11
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "6-vertex cell with faces {3: 4, 4: 2}": 2,
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 7, 4: 1, 5: 1}": 1,
+    "9-vertex cell with faces {3: 3, 4: 4, 5: 1}": 1,
+    "pentagonal prism": 1,
+    "tetrahedron": 1
+   },
+   "fraction": "(9011/15000-5569/15000phi)",
+   "fraction_float": 1.1247776788958497e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    16,
+    39,
+    34,
+    11
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "6-vertex cell with faces {3: 4, 4: 2}": 2,
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 7, 4: 1, 5: 1}": 1,
+    "9-vertex cell with faces {3: 3, 4: 4, 5: 1}": 1,
+    "pentagonal prism": 1,
+    "tetrahedron": 1
+   },
+   "fraction": "(9011/15000-5569/15000phi)",
+   "fraction_float": 1.1247776788958497e-05,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    18,
+    17,
+    7
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 4,
+    "tetrahedron": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(293/15000-181/15000phi)",
+   "fraction_float": 9.056535751266609e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    18,
+    17,
+    7
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 4,
+    "tetrahedron": 1,
+    "triangular prism": 2
+   },
+   "fraction": "(293/15000-181/15000phi)",
+   "fraction_float": 9.056535751266609e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    10,
+    21,
+    18,
+    7
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "tetrahedron": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(161/750-199/1500phi)",
+   "fraction_float": 7.490825847306093e-06,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    10,
+    21,
+    18,
+    7
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "tetrahedron": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(161/750-199/1500phi)",
+   "fraction_float": 7.490825847306093e-06,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    9,
+    24,
+    26,
+    11
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "6-vertex cell with faces {3: 6, 4: 1}": 1,
+    "7-vertex cell with faces {3: 6, 4: 2}": 1,
+    "tetrahedron": 8
+   },
+   "fraction": "(1013/15000-313/7500phi)",
+   "fraction_float": 7.381536171052749e-06,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    9,
+    24,
+    26,
+    11
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "6-vertex cell with faces {3: 6, 4: 1}": 1,
+    "7-vertex cell with faces {3: 6, 4: 2}": 1,
+    "tetrahedron": 8
+   },
+   "fraction": "(1013/15000-313/7500phi)",
+   "fraction_float": 7.381536171052749e-06,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(17/1500-7/1000phi)",
+   "fraction_float": 7.095412084070357e-06,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(17/1500-7/1000phi)",
+   "fraction_float": 7.095412084070357e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(17/1500-7/1000phi)",
+   "fraction_float": 7.095412084070357e-06,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(17/1500-7/1000phi)",
+   "fraction_float": 7.095412084070357e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    13,
+    27,
+    22,
+    8
+   ],
+   "cells": {
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 2,
+    "cube": 1,
+    "tetrahedron": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(-2257/24000+93/1600phi)",
+   "fraction_float": 6.558929420988346e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    13,
+    27,
+    22,
+    8
+   ],
+   "cells": {
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 2,
+    "cube": 1,
+    "tetrahedron": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(-2257/24000+93/1600phi)",
+   "fraction_float": 6.558929420988346e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    11,
+    24,
+    21,
+    8
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 1,
+    "tetrahedron": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-8137/15000+5029/15000phi)",
+   "fraction_float": 6.195294881439217e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    11,
+    24,
+    21,
+    8
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 1,
+    "tetrahedron": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-8137/15000+5029/15000phi)",
+   "fraction_float": 6.195294881439217e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    20,
+    41,
+    30,
+    9
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 3, 6: 2}": 4,
+    "12-vertex cell with faces {3: 2, 4: 2, 5: 2, 6: 2}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2
+   },
+   "fraction": "(2517/2500-18667/30000phi)",
+   "fraction_float": 5.317733523746426e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    20,
+    41,
+    30,
+    9
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 3, 6: 2}": 4,
+    "12-vertex cell with faces {3: 2, 4: 2, 5: 2, 6: 2}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 2
+   },
+   "fraction": "(2517/2500-18667/30000phi)",
+   "fraction_float": 5.317733523746426e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(47/15000-29/15000phi)",
+   "fraction_float": 5.134288416869769e-06,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(47/15000-29/15000phi)",
+   "fraction_float": 5.134288416869769e-06,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(47/15000-29/15000phi)",
+   "fraction_float": 5.134288416869769e-06,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(47/15000-29/15000phi)",
+   "fraction_float": 5.134288416869769e-06,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-A"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-18/125+89/1000phi)",
+   "fraction_float": 5.024998740638109e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-18/125+89/1000phi)",
+   "fraction_float": 5.024998740638109e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-199/3750+41/1250phi)",
+   "fraction_float": 4.848164329891713e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-199/3750+41/1250phi)",
+   "fraction_float": 4.848164329891713e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    9,
+    18,
+    15,
+    6
+   ],
+   "cells": {
+    "triangular prism": 6
+   },
+   "fraction": "(161/1250-199/2500phi)",
+   "fraction_float": 4.494495508350349e-06,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B",
+    "-B",
+    "C3"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    10,
+    21,
+    18,
+    7
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "cube": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(843/1000-521/1000phi)",
+   "fraction_float": 4.291861304683842e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    10,
+    21,
+    18,
+    7
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "cube": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(843/1000-521/1000phi)",
+   "fraction_float": 4.291861304683842e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-559/7500+691/15000phi)",
+   "fraction_float": 4.099081745159716e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-559/7500+691/15000phi)",
+   "fraction_float": 4.099081745159716e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-559/7500+691/15000phi)",
+   "fraction_float": 4.099081745159716e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-559/7500+691/15000phi)",
+   "fraction_float": 4.099081745159716e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    11,
+    23,
+    19,
+    7
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(423/5000-3137/60000phi)",
+   "fraction_float": 3.7896215263205635e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    11,
+    23,
+    19,
+    7
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 2,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(423/5000-3137/60000phi)",
+   "fraction_float": 3.7896215263205635e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(161/1500-199/3000phi)",
+   "fraction_float": 3.7454129236530465e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(161/1500-199/3000phi)",
+   "fraction_float": 3.7454129236530465e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    18,
+    17,
+    7
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 4,
+    "7-vertex cell with faces {3: 2, 4: 4}": 1,
+    "tetrahedron": 2
+   },
+   "fraction": "(-199/5000+123/5000phi)",
+   "fraction_float": 3.6361232474135807e-06,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    18,
+    17,
+    7
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 4,
+    "7-vertex cell with faces {3: 2, 4: 4}": 1,
+    "tetrahedron": 2
+   },
+   "fraction": "(-199/5000+123/5000phi)",
+   "fraction_float": 3.6361232474135807e-06,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(5957/60000-7363/120000phi)",
+   "fraction_float": 3.4645069543620677e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(5957/60000-7363/120000phi)",
+   "fraction_float": 3.4645069543620677e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(161/1875-199/3750phi)",
+   "fraction_float": 2.9963303389141105e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(161/1875-199/3750phi)",
+   "fraction_float": 2.9963303389141105e-06,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(161/1875-199/3750phi)",
+   "fraction_float": 2.9963303389141105e-06,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(161/1875-199/3750phi)",
+   "fraction_float": 2.9963303389141105e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    8,
+    19,
+    19,
+    8
+   ],
+   "cells": {
+    "6-vertex cell with faces {3: 4, 4: 2}": 3,
+    "tetrahedron": 5
+   },
+   "fraction": "(-449/1500+37/200phi)",
+   "fraction_float": 2.9545853972301472e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    8,
+    19,
+    19,
+    8
+   ],
+   "cells": {
+    "6-vertex cell with faces {3: 4, 4: 2}": 3,
+    "tetrahedron": 5
+   },
+   "fraction": "(-449/1500+37/200phi)",
+   "fraction_float": 2.9545853972301472e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    14,
+    33,
+    30,
+    11
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 2,
+    "9-vertex cell with faces {3: 5, 5: 3}": 1,
+    "tetrahedron": 4,
+    "triangular prism": 2
+   },
+   "fraction": "(1937/3750-9577/30000phi)",
+   "fraction_float": 2.949658075235284e-06,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    14,
+    33,
+    30,
+    11
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "8-vertex cell with faces {3: 3, 4: 3, 5: 1}": 2,
+    "9-vertex cell with faces {3: 5, 5: 3}": 1,
+    "tetrahedron": 4,
+    "triangular prism": 2
+   },
+   "fraction": "(1937/3750-9577/30000phi)",
+   "fraction_float": 2.949658075235284e-06,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    8,
+    20,
+    21,
+    9
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "7-vertex cell with faces {3: 6, 4: 2}": 1,
+    "tetrahedron": 6
+   },
+   "fraction": "(221/1250-1639/15000phi)",
+   "fraction_float": 2.8194959281746534e-06,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    8,
+    20,
+    21,
+    9
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "7-vertex cell with faces {3: 6, 4: 2}": 1,
+    "tetrahedron": 6
+   },
+   "fraction": "(221/1250-1639/15000phi)",
+   "fraction_float": 2.8194959281746534e-06,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(89/3000-11/600phi)",
+   "fraction_float": 2.710206251928249e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(89/3000-11/600phi)",
+   "fraction_float": 2.710206251928249e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    6,
+    13,
+    13,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "tetrahedron": 4
+   },
+   "fraction": "(-199/7500+41/2500phi)",
+   "fraction_float": 2.4240821649458566e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    6,
+    13,
+    13,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "tetrahedron": 4
+   },
+   "fraction": "(-199/7500+41/2500phi)",
+   "fraction_float": 2.4240821649458566e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-29/60000+3/10000phi)",
+   "fraction_float": 2.0768632916351166e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-29/60000+3/10000phi)",
+   "fraction_float": 2.0768632916351166e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(41/5000-19/3750phi)",
+   "fraction_float": 1.961123667199721e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(41/5000-19/3750phi)",
+   "fraction_float": 1.961123667199721e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-4291/15000+221/1250phi)",
+   "fraction_float": 1.742544314731198e-06,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(-4291/15000+221/1250phi)",
+   "fraction_float": 1.742544314731198e-06,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    15,
+    32,
+    26,
+    9
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 5, 6: 1}": 1,
+    "7-vertex cell with faces {3: 2, 4: 4}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 1,
+    "9-vertex cell with faces {3: 3, 4: 2, 5: 1, 6: 1}": 1,
+    "cube": 1,
+    "tetrahedron": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(10637/30000-3287/15000phi)",
+   "fraction_float": 1.48526527299353e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    15,
+    32,
+    26,
+    9
+   ],
+   "cells": {
+    "10-vertex cell with faces {3: 2, 4: 5, 6: 1}": 1,
+    "7-vertex cell with faces {3: 2, 4: 4}": 1,
+    "9-vertex cell with faces {3: 1, 4: 5, 5: 1}": 1,
+    "9-vertex cell with faces {3: 3, 4: 2, 5: 1, 6: 1}": 1,
+    "cube": 1,
+    "tetrahedron": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(10637/30000-3287/15000phi)",
+   "fraction_float": 1.48526527299353e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    15,
+    33,
+    28,
+    10
+   ],
+   "cells": {
+    "12-vertex cell with faces {3: 3, 4: 3, 5: 1, 6: 2}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 1,
+    "9-vertex cell with faces {3: 3, 4: 2, 5: 1, 6: 1}": 2,
+    "tetrahedron": 3,
+    "triangular prism": 2
+   },
+   "fraction": "(-31/10000+23/12000phi)",
+   "fraction_float": 1.2318117706320263e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    15,
+    33,
+    28,
+    10
+   ],
+   "cells": {
+    "12-vertex cell with faces {3: 3, 4: 3, 5: 1, 6: 2}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 1,
+    "9-vertex cell with faces {3: 3, 4: 2, 5: 1, 6: 1}": 2,
+    "tetrahedron": 3,
+    "triangular prism": 2
+   },
+   "fraction": "(-31/10000+23/12000phi)",
+   "fraction_float": 1.2318117706320263e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    11,
+    23,
+    19,
+    7
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "cube": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-8213/120000+423/10000phi)",
+   "fraction_float": 1.1710574538831287e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    11,
+    23,
+    19,
+    7
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "7-vertex cell with faces {3: 2, 4: 4}": 2,
+    "cube": 1,
+    "triangular prism": 3
+   },
+   "fraction": "(-8213/120000+423/10000phi)",
+   "fraction_float": 1.1710574538831287e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(281/1250-521/3750phi)",
+   "fraction_float": 1.1444963479434467e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(281/1250-521/3750phi)",
+   "fraction_float": 1.1444963479434467e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-1741/4000+269/1000phi)",
+   "fraction_float": 1.1429737217238944e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-1741/4000+269/1000phi)",
+   "fraction_float": 1.1429737217238944e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    7,
+    16,
+    16,
+    7
+   ],
+   "cells": {
+    "pentagonal pyramid": 2,
+    "tetrahedron": 5
+   },
+   "fraction": "(-1241/30000+767/30000phi)",
+   "fraction_float": 1.0689790389817322e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    7,
+    16,
+    16,
+    7
+   ],
+   "cells": {
+    "pentagonal pyramid": 2,
+    "tetrahedron": 5
+   },
+   "fraction": "(-1241/30000+767/30000phi)",
+   "fraction_float": 1.0689790389817322e-06,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    18,
+    39,
+    31,
+    10
+   ],
+   "cells": {
+    "12-vertex cell with faces {3: 3, 4: 3, 5: 1, 6: 2}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "9-vertex cell with faces {3: 3, 4: 1, 5: 3}": 1,
+    "9-vertex cell with faces {3: 3, 4: 2, 5: 1, 6: 1}": 2,
+    "cube": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(-3177/10000+3927/20000phi)",
+   "fraction_float": 9.736910418500777e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    18,
+    39,
+    31,
+    10
+   ],
+   "cells": {
+    "12-vertex cell with faces {3: 3, 4: 3, 5: 1, 6: 2}": 1,
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 1,
+    "9-vertex cell with faces {3: 3, 4: 1, 5: 3}": 1,
+    "9-vertex cell with faces {3: 3, 4: 2, 5: 1, 6: 1}": 2,
+    "cube": 1,
+    "triangular prism": 4
+   },
+   "fraction": "(-3177/10000+3927/20000phi)",
+   "fraction_float": 9.736910418500777e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(161/7500-199/15000phi)",
+   "fraction_float": 7.490825847285276e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(161/7500-199/15000phi)",
+   "fraction_float": 7.490825847285276e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(161/7500-199/15000phi)",
+   "fraction_float": 7.490825847285276e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(161/7500-199/15000phi)",
+   "fraction_float": 7.490825847285276e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(161/7500-199/15000phi)",
+   "fraction_float": 7.490825847285276e-07,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(161/7500-199/15000phi)",
+   "fraction_float": 7.490825847285276e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 10,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(161/7500-199/15000phi)",
+   "fraction_float": 7.490825847285276e-07,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(161/7500-199/15000phi)",
+   "fraction_float": 7.490825847285276e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(161/7500-199/15000phi)",
+   "fraction_float": 7.490825847285276e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(161/7500-199/15000phi)",
+   "fraction_float": 7.490825847285276e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(161/7500-199/15000phi)",
+   "fraction_float": 7.490825847285276e-07,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 10,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(161/7500-199/15000phi)",
+   "fraction_float": 7.490825847285276e-07,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-83/125+3283/8000phi)",
+   "fraction_float": 6.981332381084115e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    12,
+    24,
+    19,
+    7
+   ],
+   "cells": {
+    "cube": 3,
+    "triangular prism": 4
+   },
+   "fraction": "(-83/125+3283/8000phi)",
+   "fraction_float": 6.981332381084115e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    7,
+    17,
+    18,
+    8
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "6-vertex cell with faces {3: 6, 4: 1}": 1,
+    "tetrahedron": 6
+   },
+   "fraction": "(-881/30000+363/20000phi)",
+   "fraction_float": 6.502291439273999e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    7,
+    17,
+    18,
+    8
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 1,
+    "6-vertex cell with faces {3: 6, 4: 1}": 1,
+    "tetrahedron": 6
+   },
+   "fraction": "(-881/30000+363/20000phi)",
+   "fraction_float": 6.502291439273999e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    13,
+    33,
+    32,
+    12
+   ],
+   "cells": {
+    "12-vertex cell with faces {3: 3, 4: 7, 5: 1}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 7,
+    "pentagonal pyramid": 1,
+    "tetrahedron": 3
+   },
+   "fraction": "(-51557/60000+3983/7500phi)",
+   "fraction_float": 5.836254443059019e-07,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    13,
+    33,
+    32,
+    12
+   ],
+   "cells": {
+    "12-vertex cell with faces {3: 3, 4: 7, 5: 1}": 1,
+    "5-vertex cell with faces {3: 4, 4: 1}": 7,
+    "pentagonal pyramid": 1,
+    "tetrahedron": 3
+   },
+   "fraction": "(-51557/60000+3983/7500phi)",
+   "fraction_float": 5.836254443059019e-07,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    9,
+    19,
+    17,
+    7
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 2,
+    "tetrahedron": 3,
+    "triangular prism": 2
+   },
+   "fraction": "(-2327/5000+8629/30000phi)",
+   "fraction_float": 5.096307614804729e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    9,
+    19,
+    17,
+    7
+   ],
+   "cells": {
+    "7-vertex cell with faces {3: 3, 4: 2, 5: 1}": 2,
+    "tetrahedron": 3,
+    "triangular prism": 2
+   },
+   "fraction": "(-2327/5000+8629/30000phi)",
+   "fraction_float": 5.096307614804729e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    7,
+    15,
+    14,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 3,
+    "tetrahedron": 2,
+    "triangular prism": 1
+   },
+   "fraction": "(-341/1875+281/2500phi)",
+   "fraction_float": 3.5366882150666967e-07,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    7,
+    15,
+    14,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 3,
+    "tetrahedron": 2,
+    "triangular prism": 1
+   },
+   "fraction": "(-341/1875+281/2500phi)",
+   "fraction_float": 3.5366882150666967e-07,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    6,
+    13,
+    13,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "tetrahedron": 4
+   },
+   "fraction": "(-521/20000+161/10000phi)",
+   "fraction_float": 3.472188733061321e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    6,
+    13,
+    13,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "tetrahedron": 4
+   },
+   "fraction": "(-521/20000+161/10000phi)",
+   "fraction_float": 3.472188733061321e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    11,
+    22,
+    18,
+    7
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 3,
+    "tetrahedron": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(-2279/3000+939/2000phi)",
+   "fraction_float": 2.910514088627636e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    11,
+    22,
+    18,
+    7
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 3,
+    "tetrahedron": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(-2279/3000+939/2000phi)",
+   "fraction_float": 2.910514088627636e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    7,
+    15,
+    14,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 3,
+    "tetrahedron": 2,
+    "triangular prism": 1
+   },
+   "fraction": "(-4291/120000+221/10000phi)",
+   "fraction_float": 2.1781803934139976e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    7,
+    15,
+    14,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 3,
+    "tetrahedron": 2,
+    "triangular prism": 1
+   },
+   "fraction": "(-4291/120000+221/10000phi)",
+   "fraction_float": 2.1781803934139976e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(28691/120000-4433/30000phi)",
+   "fraction_float": 1.7759572387698874e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    8,
+    16,
+    14,
+    6
+   ],
+   "cells": {
+    "tetrahedron": 2,
+    "triangular prism": 4
+   },
+   "fraction": "(28691/120000-4433/30000phi)",
+   "fraction_float": 1.7759572387698874e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    11,
+    22,
+    18,
+    7
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 3,
+    "tetrahedron": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(-1109/3000+3427/15000phi)",
+   "fraction_float": 1.652963926845885e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    11,
+    22,
+    18,
+    7
+   ],
+   "cells": {
+    "8-vertex cell with faces {3: 2, 4: 2, 5: 2}": 3,
+    "tetrahedron": 2,
+    "triangular prism": 2
+   },
+   "fraction": "(-1109/3000+3427/15000phi)",
+   "fraction_float": 1.652963926845885e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    6,
+    13,
+    13,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "tetrahedron": 4
+   },
+   "fraction": "(1597/3000-329/1000phi)",
+   "fraction_float": 1.5103461792342898e-07,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    6,
+    13,
+    13,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "tetrahedron": 4
+   },
+   "fraction": "(1597/3000-329/1000phi)",
+   "fraction_float": 1.5103461792342898e-07,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(-521/60000+161/30000phi)",
+   "fraction_float": 1.1573962443653385e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(-521/60000+161/30000phi)",
+   "fraction_float": 1.1573962443653385e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(2207/15000-341/3750phi)",
+   "fraction_float": 1.0928967622558794e-07,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "A"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(2207/15000-341/3750phi)",
+   "fraction_float": 1.0928967622558794e-07,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(2207/15000-341/3750phi)",
+   "fraction_float": 1.0928967622558794e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 30,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(2207/15000-341/3750phi)",
+   "fraction_float": 1.0928967622558794e-07,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-A"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(2207/15000-341/3750phi)",
+   "fraction_float": 1.0928967622558794e-07,
+   "corners_of_P": 0,
+   "inside_hulls": [
+    "-B"
+   ]
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(2207/15000-341/3750phi)",
+   "fraction_float": 1.0928967622558794e-07,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    6,
+    13,
+    13,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "tetrahedron": 4
+   },
+   "fraction": "(-323/375+1597/3000phi)",
+   "fraction_float": 9.334452744091948e-08,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    6,
+    13,
+    13,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 2,
+    "tetrahedron": 4
+   },
+   "fraction": "(-323/375+1597/3000phi)",
+   "fraction_float": 9.334452744091948e-08,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(-3571/15000+2207/15000phi)",
+   "fraction_float": 6.75447345277469e-08,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 20,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(-3571/15000+2207/15000phi)",
+   "fraction_float": 6.75447345277469e-08,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(963/2500-3571/15000phi)",
+   "fraction_float": 4.174494167008547e-08,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(963/2500-3571/15000phi)",
+   "fraction_float": 4.174494167008547e-08,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(963/5000-3571/30000phi)",
+   "fraction_float": 2.0872470835042733e-08,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 120,
+   "fvec": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "cells": {
+    "tetrahedron": 5
+   },
+   "fraction": "(963/5000-3571/30000phi)",
+   "fraction_float": 2.0872470835042733e-08,
+   "corners_of_P": 0,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    7,
+    15,
+    14,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 3,
+    "tetrahedron": 2,
+    "triangular prism": 1
+   },
+   "fraction": "(81413/120000-4193/10000phi)",
+   "fraction_float": 1.5183835744281282e-08,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  },
+  {
+   "orbit_size": 60,
+   "fvec": [
+    7,
+    15,
+    14,
+    6
+   ],
+   "cells": {
+    "5-vertex cell with faces {3: 4, 4: 1}": 3,
+    "tetrahedron": 2,
+    "triangular prism": 1
+   },
+   "fraction": "(81413/120000-4193/10000phi)",
+   "fraction_float": 1.5183835744281282e-08,
+   "corners_of_P": 1,
+   "inside_hulls": []
+  }
+ ],
+ "seconds": 296.96124172210693
+}
