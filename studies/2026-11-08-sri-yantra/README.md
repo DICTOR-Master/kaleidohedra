@@ -20,7 +20,7 @@ Sources checked, by name:
 - G. Huet, *Śrī Yantra Geometry*, Theoretical Computer Science 281 (2002) 609–628. The full text was not reachable. His model and numbers are taken as quoted by Chiodo 2021 and Kavi Mahesh 2023.
 - A. Chiodo, *On the construction of the Śrī Yantra*, C. R. Math. 359 (2021) 377–397, doi 10.5802/crmath.163 (full text read).
 - V.-V. Pustynski, *On mathematical complexity of Śrīyantra*, IJHS 49.3 (2014) 268–277 (full text read). The link DICTO gave (cahc.jainuniversity.ac.in) returns 404, and the copy read is insa.nic.in/writereaddata/UpLoadedFiles/IJHS/Vol49_3_5_Pustynski.pdf.
-- A. P. Kulaichev, *Śrīyantra and its Mathematical Properties*, IJHS 19.3 (1984) 279–292. The INSA PDF is a scan with no text layer, so it is used as summarised by Pustynski and Chiodo.
+- A. P. Kulaichev, *Śrīyantra and its Mathematical Properties*, IJHS 19.3 (1984) 279–292. The INSA PDF is a scan with no text layer, so it is used as summarised by Pustynski and Chiodo. (Update 16 November 2026: read directly from the scan's page images; pp. 284–285 confirmed, see study 2026-11-16-palomar-yantra.)
 - Kavi Mahesh, *Understanding the geometry of Sri Chakra*, Int. J. Sanskrit Research 9(6) (2023) 242–248, anantaajournal.com/archives/2023/vol9issue6/PartD/9-6-39-715.pdf (full text read).
 - L. N. Gonçalves, M. Mádr, P. Stříž, *Drawing the Shree Yantra Core with Metapost*, Zpravodaj CSTUG 19 (2009) 212–221, DML-CZ 10338.dmlcz/150096 (abstract page only).
 - B. Tripathi, texample.net/sri-yantra (TikZ, 30 Nov 2025).

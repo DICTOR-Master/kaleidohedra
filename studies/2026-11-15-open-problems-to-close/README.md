@@ -31,7 +31,7 @@
   - With (a), (b), (c) and the inscribed great triangles, ten corners lie on the circle.
   - He argues for a solution by iterated approximation (p. 284) and asks whether it is unique (p. 285).
   - He reduces the system to one polynomial "of a single variable with a power not higher than 12544" (quoted by Pustynski, p. 269) and judges uniqueness beyond the computers of the time.
-  - The scan we hold has no text layer, so pages 284 and 285 are as Chiodo cites them.
+  - The scan we hold has no text layer, so pages 284 and 285 are as Chiodo cites them. (Update 16 November 2026: read directly from the scan's page images; pp. 284–285 confirmed, see study 2026-11-16-palomar-yantra.)
 - **Pustynski 2014.** V.-V. Pustynski, *IJHS* 49.3 (2014) 268–277 (full text read).
   - He solves the system to 15 figures (Table 1, p. 274).
   - He argues uniqueness from residual plots on dense grids (pp. 273–274: "there is evidently no chance that local extrema could have been missed"). This is numerical evidence, not a proof.
@@ -215,9 +215,9 @@ Chance is the chance that DICTO's existing results and tools close the problem. 
 - Croft–Falconer–Guy, *Unsolved Problems in Geometry*: no free copy; not purchased. Its problem numbers are not cited here.
 - Grünbaum, *Configurations of Points and Lines* (2009): not held. Its status is taken from the Palomar landscape study (Cuntz).
 - Schattschneider's open-problem lists, Senechal's *Quasicrystals and Geometry* problem list, Hirschhorn–Hunt (2D pentagons, outside the 3D scope) and Conway–Sloane on polytypes: no free text found in this session, so no claim is made from them.
-- Kulaichev 1984: a scan with no text layer; pages 284–285 as cited by Chiodo.
+- Kulaichev 1984: a scan with no text layer; pages 284–285 as cited by Chiodo. (Update 16 November 2026: read directly from the scan's page images; pp. 284–285 confirmed, see study 2026-11-16-palomar-yantra.)
 - preprints.org 202509.1564: HTTP 403; its topic is unknown.
-- Huet 2002: not reachable, as before.
+- Huet 2002: not reachable, as before. (Update 16 November 2026: read in the author's version, gallium.inria.fr/~huet/PUBLIC/Nivat.pdf; see study 2026-11-16-palomar-yantra.)
 
 ## Files
 

@@ -16,6 +16,13 @@ project:
     enclosures), a Krawczyk box (uniqueness by a contraction, existence by
     Banach's fixed-point theorem), the forced construction from the geometry,
     and a verified sparse-polynomial normaliser for the identities between them.
+    Scope: the same equations have exactly one other real solution in the range
+    that admissibility needs, at w7/b7 = 0.66866..., and it is not admissible
+    (bases out of order, two negative half-widths, t4 turned over), so it is not
+    a yantra. Audiences: the history of mathematics (Kulaichev's question in the
+    Indian Journal of History of Science, called still open in 2021), sacred
+    geometry (the construction of the Sri Yantra), and computer-assisted proof in
+    geometry (a certified interval computation checked by Lean's kernel).
   authors:
     - "DICTO"
   license: "Apache-2.0"
@@ -51,15 +58,31 @@ sources:
     authors:
       - "A. P. Kulaichev"
     type: "paper"
-    location: "Indian Journal of History of Science 19.3 (1984) 279-292"
+    id: "https://insa.nic.in/writereaddata/UpLoadedFiles/IJHS/Vol19_3_7_APKulaichev.pdf"
+    location: "Indian Journal of History of Science 19.3 (1984) 279-292; pp. 284-285"
     relationship: "background"
-    note: "Conditions (a)-(d) and the question of uniqueness (p. 285)."
+    note: >-
+      Read in the publisher's open scan. Conditions (a)-(d) and existence
+      presumed, p. 284: "it may be presumed that there is, at least, one real
+      solution (root), which may be calculated by some iterative method". The
+      question, p. 285: "system 2 may or may not possess other real roots. The
+      modern theory (higher algebra) does not give a direct answer to this
+      question"; a polynomial of degree at most 12544; "These demands very far
+      exceed the capacities of modern computers."
   - title: "Sri Yantra Geometry"
     authors:
       - "G. Huet"
     type: "paper"
-    location: "Theoretical Computer Science 281 (2002) 609-628"
+    id: "https://gallium.inria.fr/~huet/PUBLIC/Nivat.pdf"
+    location: "Theoretical Computer Science 281 (2002) 609-628; author's version (the id), pp. 2-3"
     relationship: "background"
+    note: >-
+      The conditions without Kulaichev's four. Author's version p. 2: it was
+      "undecided whether Sri Yantra was indeed uniquely defined in the real plane,
+      under-specified, or even impossible"; "a problem with 4 degrees of freedom,
+      which admits several solutions". P. 3: "Sri Yantra is an under-determined
+      Euclidean plane geometry problem with 4 real parameters, admitting an
+      infinity of solutions around the Classical Sri Yantra."
   - title: "On the construction of the Sri Yantra"
     authors:
       - "A. Chiodo"
@@ -67,14 +90,98 @@ sources:
     type: "paper"
     location: "Comptes Rendus Mathematique 359 (2021) 377-397"
     relationship: "background"
-    note: "Huet's conditions in the form used here; the uniqueness question called still open (p. 381)."
+    note: >-
+      Open access. Huet's conditions in the form used here. P. 381 (French):
+      Kulaichev "fournit un raisonnement qui indique l'existence d'une solution
+      et il se pose la question (toujours ouverte) de l'unicite". P. 387 (English,
+      section 1.2.4): Kulaichev "discusses whether the solution is unique (p. 285),
+      estimates the complexity, and argues that the answer is out of reach. This
+      problem is not considered here"; the same page describes Kulaichev's short
+      addendum (below).
   - title: "On mathematical complexity of Sriyantra"
     authors:
       - "V.-V. Pustynski"
     type: "paper"
-    location: "Indian Journal of History of Science 49.3 (2014) 268-277"
+    id: "https://insa.nic.in/writereaddata/UpLoadedFiles/IJHS/Vol49_3_5_Pustynski.pdf"
+    location: "Indian Journal of History of Science 49.3 (2014) 268-277; pp. 269, 273-276"
     relationship: "background"
-    note: "Numerical evidence for uniqueness."
+    note: >-
+      Read in the publisher's open copy. Claims uniqueness from numerical plots,
+      without error bounds: each step's function is plotted on a grid of 10,000
+      points, "there is evidently no chance that local extrema could have been
+      missed" (p. 273); "It may be concluded from Fig. 8 that Eq. (17) has a
+      single root in the range 0.25 < Dy < 0.30. This proves that Sriyantra with
+      restrictions set in (4) has a unique solution" (p. 274); "there is only one
+      set of parameters satisfying the adopted constraints" (p. 275); a changed
+      variant needs "the problem of uniqueness of that solution" studied again
+      (p. 276). The entry gives the first certified proof; Chiodo (2021, p. 381)
+      still calls the question open.
+  - title: "Sriyantra - A Study of Spherical and Plane Forms"
+    authors:
+      - "C. S. Rao"
+    id: "https://insa.nic.in/writereaddata/UpLoadedFiles/IJHS/Vol33_3_3_CSRao.pdf"
+    type: "paper"
+    location: "Indian Journal of History of Science 33.3 (1998) 203-227; pp. 217, 222, 224, 226"
+    relationship: "background"
+    note: >-
+      Read in the publisher's open scan. Numerical (Newton-Raphson) solutions for
+      sets of constraints; no claim of uniqueness. P. 217: "any 6 constraints can
+      be satisfied at a time in a figure" (spherical form). P. 224: "The figure
+      for conditions 1, 2, 8, 9, 20 ... matches exactly with the figure given by
+      Kulaichev" (Table 3: c = d = 0.279461). P. 222, for the optimum figures:
+      "different sets of initial values tried for the basic variables converged
+      to different solutions". P. 226: "an unlimited number of figures ... satisfy
+      the general specifications of Sriyantra from traditional literature."
+  - title: "Addition to Sri Yantra and its mathematical properties"
+    authors:
+      - "A. P. Kulaichev"
+    type: "note"
+    location: "English translation circulated online (Chiodo 2021, p. 387); no open copy found"
+    relationship: "background"
+    note: >-
+      Not read: the only copy found is on Scribd, whose page shows no text without
+      an account. Chiodo (p. 387) describes it as "a short addendum by Kulaichev
+      listing further methods of approximation suggested by readers".
+  - title: "On the geometry of the sriyantra"
+    authors:
+      - "D. Tahta"
+    id: "https://www.cambridge.org/core/journals/mathematical-gazette/article/on-the-geometry-of-the-sriyantra/BF9C0B796ACE5DD57FCFD2B4694F2849"
+    type: "paper"
+    location: "The Mathematical Gazette 76 (1992) no. 475, 49-60"
+    relationship: "background"
+    note: >-
+      Not read: paywalled. The open first-page extract says only that it makes
+      "some observations about the geometric structure of the sriyantra" and
+      comments on claims made about it; its reference list cites Kulaichev 1984.
+  - title: "Generation of Divine Image - Sri Yantra"
+    authors:
+      - "B. Santhi"
+      - "N. Rajesh Kumar"
+      - "C. Bharathy"
+      - "R. Bala Krishnan"
+    id: "https://maxwellsci.com/print/rjaset/v4-2241-2246.pdf (Wayback Machine copy of 8 April 2026)"
+    type: "paper"
+    location: "Research Journal of Applied Sciences, Engineering and Technology 4(14) (2012) 2241-2246; pp. 2243-2244"
+    relationship: "background"
+    note: >-
+      An algorithm for drawing the figure. Under the heading "Kulaichev method"
+      (p. 2243) it repeats Huet's four-parameter set-up, "a problem with 4 degrees
+      of freedom, which admits of several solutions", and (p. 2244) Huet's
+      statement that the figure admits "infinity of solutions around the
+      Classical Sri Yantra". Nothing on Kulaichev's four conditions or on
+      uniqueness.
+  - title: "Investigating the Development of Arithmetic and Algebra in Vedic India: Tribute to Swami Dayananda Saraswati"
+    authors:
+      - "G. A. Tularam"
+    id: "http://hdl.handle.net/10072/49210"
+    type: "paper"
+    location: "International Journal of Mathematics, Game Theory and Algebra 20(2) (2012) 163-187; author manuscript pp. 15, 20"
+    relationship: "background"
+    note: >-
+      Read in the author manuscript (Griffith repository). Mentions the Sri
+      Yantra as a hard construction (p. 15, quoting Krishnamurthy 2007, "see also
+      Kulaichev,1984") and cites Kulaichev on ancient knowledge (p. 20). Nothing
+      on existence, uniqueness or the number of solutions.
   - title: "Interval Analysis; Methods and Applications of Interval Analysis"
     authors:
       - "R. E. Moore"
@@ -179,7 +286,15 @@ review:
     the study README. The certificate was checked three ways before Lean (exact
     integers, Arb ball arithmetic on a second machine, a negative control), and
     the Lean kernel modules were re-checked on a second machine and
-    architecture.
+    architecture. Literature (16 November 2026, free routes only): Kulaichev
+    1984, Huet 2002 (author's version), Rao 1998, Pustynski 2014, Chiodo 2021,
+    Santhi et al. 2012 and Tularam 2012 were read; Tahta 1992 (paywalled) and
+    Kulaichev's addendum (no open copy) were not. None of them proves
+    uniqueness; Pustynski claims it from plots without error bounds. A Synapse
+    pre-registration on Rao's constraint system (synapsesocial.com, paper
+    6a2f980ca1cfeec4908290b7) could not be opened (HTTP 429 behind a browser
+    check; no Wayback copy); a search snippet describes it as a planned certified
+    enumeration with no reported result.
 
 alignment:
   namespace: "KulaichevYantra"

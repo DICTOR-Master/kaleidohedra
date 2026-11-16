@@ -233,6 +233,7 @@ Status 16 Nov (§7): steps 1–4 are **DONE**, and so are the top-level theorem,
       - (b) The Challenge conclusion weakened (∃! to ∃ in `kulaichev_unique`). The comparator says: "Challenge and solution theorem statement do not match: 'KulaichevYantra.kulaichev_unique'".
       - (c) One Solution proof (`kulaichev_slope`) replaced by `sorry`. `#print axioms` lists `sorryAx`, and the comparator says: "Illegal axiom detected: 'sorryAx'".
       - The comparator therefore both passes (the real entry) and fails (all three altered copies).
+    - **Rerun after the metadata update (16 Nov 2026, job ylean-palomar5).** The Challenge comment header (sources with pages, a scope line) and formalization.yaml were updated, with the theorem statements unchanged. Source check, build, axioms and the 4-worker comparator all pass again (FINAL ok); see study 2026-11-16-palomar-yantra.
 
 ## Credits (at point of use)
 

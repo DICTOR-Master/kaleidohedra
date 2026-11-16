@@ -76,7 +76,7 @@ To be placed where each result is used. All are drafts for DICTO's read. #103 it
    > Chapati and Chapati (2026) [13] reconstructed Huet's construction numerically (residual 1.9·10⁻¹⁴) from Huet's paper and his PostScript drawing, counted the 43 as the star points of the five circuits, sampled 5,000 parameter sets around Huet's classical yantra (24.3% valid; most failures close but leave the circle), trained classifiers and a generator of valid parameter sets, and computed the Dirichlet spectrum of the 43 regions by finite elements; none of the last four is in this paper. They state that the system has no closed-form solution; in Chiodo's coordinates its closing step is one quadratic (Theorem 1), and the rigid yantras have exact algebraic slopes (Theorems 9 and 10).
 5. **§14, Sources checked** (it replaces v4's last clause):
    > … G. D. Chapati and R. Chapati, Zenodo 2026 (doi:10.5281/zenodo.23188650; the 45-page report read in full on 15 November 2026, and its code, MIT licence, run on four yantras).
-6. **Only if Version 5 reads Huet in full:**
+6. **Only if Version 5 reads Huet in full:** (Update 16 November 2026: Huet's author version has now been read, pp. 2–3 checked, study 2026-11-16-palomar-yantra; this item can go ahead.)
    > Huet's paper, not reachable for Version 1, is freely available (gallium.inria.fr/~huet/PUBLIC/Nivat.pdf), with his PostScript drawing Shri.ps; we owe both links to Chapati and Chapati [13].
    Then the "(full text not reachable)" notes in §14 change.
 

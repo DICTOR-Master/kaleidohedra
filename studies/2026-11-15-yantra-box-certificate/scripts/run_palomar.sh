@@ -34,9 +34,12 @@ printf 'import Solution\n#print axioms KulaichevYantra.kulaichev_unique\n#print 
 cat $LOG/axioms.log
 [ "$(grep -c 'depends on axioms: \[propext, Classical.choice, Quot.sound\]' $LOG/axioms.log)" = 2 ] || st=1
 grep -c sorry Challenge.lean; grep -lE 'sorry|native_decide' Solution.lean YantraCert -r | grep -v '^$' && st=1
+# NOCOMP=1 skips this step (16 Nov 2026: con-ron's default 16 workers exceed the memory cage; run run_comparator_lowmem.sh after)
+if [ -z "$NOCOMP" ]; then
 echo "PROGRESS 0.80 comparator"
 bash scripts/verify-comparator.sh > $LOG/comparator.log 2>&1; cs=$?
 tail -8 $LOG/comparator.log
 [ $cs -eq 0 ] || st=1
+fi
 echo "PROGRESS 1.00 done"
 [ $st -eq 0 ] && echo "FINAL ok" || echo "FINAL FAIL"

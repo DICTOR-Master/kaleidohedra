@@ -21,15 +21,23 @@ Add Kulaichev's four conditions:
 
 Finally, ask for admissibility as in DICTO's #103, Theorem 1: the bases are strictly ordered, every half-width is positive,
 every apex lies on the correct side of its base, and every corner lies in the closed disc. Then exactly one such figure
-exists. A. P. Kulaichev asked this question in 1984 (*IJHS* 19.3, p. 285). Chiodo (*C. R. Math.* 359, 2021) called it still
-open.
+exists. A. P. Kulaichev asked this question in 1984 (*IJHS* 19.3, p. 285: system 2 "may or may not possess other real
+roots"; p. 284: "at least, one real solution" is presumed). Chiodo (*C. R. Math.* 359, 2021) called it still open
+("toujours ouverte", p. 381; in English, p. 387: Kulaichev "argues that the answer is out of reach").
+
+**Scope.** The same equations have one other real root in the range that admissibility needs, at `w7/b7 = 0.66866…`.
+It is not admissible (its bases are out of order and two half-widths are negative), so it is not a yantra.
 
 **Frame.** The axis is the line `x = 0`, and the depth `d` is measured downwards from the top point of the circle, so the
 circle is `x² + d² - d = 0`. Triangle `t(i+1)` has base depth `b i`, base half-width `w i` and apex `(0, a i)`, for
 `i : Fin 9`. By the mirror symmetry, each condition is stated on the right half. The labels, the orientation and the scale are
 fixed by this frame, so "exactly one" means exactly one 27-tuple `(b, w, a)`.
 
-**Sources.** E. Huet (2002) gave the conditions, and A. Chiodo (2021) the form used here. A. P. Kulaichev (1984) added (a)–(d).
+**Sources.** G. Huet (*Theor. Comput. Sci.* 281, 2002) gave the conditions: a problem "with 4 degrees of freedom, which
+admits several solutions" (author's version, pp. 2–3). A. Chiodo (2021, pp. 381, 387) gave the form used here.
+A. P. Kulaichev (1984, pp. 284–285) added (a)–(d). C. S. Rao (*IJHS* 33.3, 1998) computed the same figure numerically,
+as his constraints 1, 2, 8, 9, 20 (p. 224, Table 3), with no claim of uniqueness. V.-V. Pustynski (*IJHS* 49.3,
+2014) concluded uniqueness from plots of each step on grids of 10,000 points (pp. 273–275), with no error bounds.
 DICTO, #103 (*The DICTO Yantra*), Theorem 1, gives admissibility.
 -/
 
