@@ -21,6 +21,7 @@ Nothing has been submitted. DICTO submits these himself from his own OEIS accoun
     (no "this program was run on ...", no "the sheet pointed to ..."); no stray characters at the end of the name.
     Apply these to entries 2-7 before each is submitted.
 12. Learned on A402191 (editor M. Marcus, Nov 2026): worked examples ("a(4) = 15: ...") go in EXAMPLE (%e), never in COMMENTS (%C).
+14. ONE IN, ONE OUT (DICTO 16 Nov 2026): submit a new entry or comment only when one already in review has been approved (or closed); with three in review now (A402191, A402231, the A008264 comment), the next goes in only after one of them comes out.
 13. BEFORE giving DICTO any OEIS text (16 Nov 2026, after A402231): start from the prepared entry in THIS file, never from raw data; run the checklist: rules 1-12; terms recomputed two independent ways; program prints exactly the data; every A-number real (no A??????) or explained; OEIS searched for the terms; then one copy page, fields in form order.
 
 Order suggested: 1, 2, 3, 4, 5, 6, then the comments, then 7 (optional).
