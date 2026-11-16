@@ -309,6 +309,14 @@
     #worldwhiteQueen-panel .wq-row > * { flex: none; }
     #worldwhiteQueen-panel .wq-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 12px; order: 11; }   /* under the caption */
     #worldwhiteQueen-panel .wq-legend[hidden] { display: none; }
+    /* The Queens' walls, part 2 (DICTO 2026-11-16): the key and the kind line under the caption; State 1 | State 2 and Next copy big. */
+    #worldqueensWalls-panel > .qw-key, #worldqueensWalls-panel > .vac-kind-row { order: 10; }
+    #worldqueensWalls-panel .qw-key[hidden], #worldqueensWalls-panel button[hidden] { display: none; }
+    #worldqueensWalls-panel .qw-big { min-height: 52px; min-width: 128px; font-weight: 700; font-size: 1.05em; }
+    /* its fold bar: one big tap target, the panel's handle; folded, the panel is this slim bar with the mode's name */
+    #worldqueensWalls-panel > .qw-fold { align-self: stretch; align-items: center; min-height: 52px; padding: 4px 16px; font: 700 var(--text-m, 16px) var(--font-ui); color: var(--accent); }
+    #worldqueensWalls-panel.minimised > :not(.qw-fold) { display: none !important; }
+    #worldqueensWalls-panel .qw-ab button, #worldqueensWalls-panel .qw-duals button { min-width: 56px; }
     /* the Queens lens (DICTO 2026-10-30): a round window dragged over the Shadow view; the picture inside is drawn by renderLens() */
     .wq-lens { position: fixed; z-index: 5; border-radius: 50%; border: 2px solid #d4af37; box-shadow: 0 0 0 1px rgba(0,0,0,0.6), 0 6px 22px rgba(0,0,0,0.45); touch-action: none; cursor: grab; background: transparent; }
     .wq-lens:active { cursor: grabbing; }
