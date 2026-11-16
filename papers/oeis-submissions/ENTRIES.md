@@ -23,7 +23,7 @@ Nothing has been submitted. DICTO submits these himself from his own OEIS accoun
 12. Learned on A402191 (editor M. Marcus, Nov 2026): worked examples ("a(4) = 15: ...") go in EXAMPLE (%e), never in COMMENTS (%C).
 15. ORDER inside fields (learned on A008264, 16 Nov 2026): LINKS: the 'Table of n, a(n)' line first, then alphabetical by first author's surname (organisations by their name), and 'Index entries for ...' lines always LAST (place 'DICTO' in alphabetical position, not at the end); REFERENCES: alphabetical by first author; COMMENTS: chronological (new ones at the end). Copy pages must say exactly WHERE each line goes (after which existing line), after reading the live entry.
 14. ONE IN, ONE OUT, LIKE FOR LIKE (DICTO 16 Nov 2026): when a COMMENT is approved (or closed), send the next comment; when a SEQUENCE is approved (or closed), send the next sequence; never more in review than now; with three in review now (A402191, A402231, the A008264 comment), the next goes in only after one of them comes out.
-13. BEFORE giving DICTO any OEIS text (16 Nov 2026, after A402231): start from the prepared entry in THIS file, never from raw data; run the checklist: rules 1-12; terms recomputed two independent ways; program prints exactly the data; every A-number real (no A??????) or explained; OEIS searched for the terms; then one copy page, fields in form order.
+13. BEFORE giving DICTO any OEIS text (16 Nov 2026, after A402231): start from the prepared entry in THIS file, never from raw data; run the checklist: rules 1-12; terms recomputed two independent ways; EVERY cited work opened and checked to CONTAIN the claim it supports (not only that the link resolves; A008264 comment, 16 Nov: the Spin Ice paper was linked but has no coordination sequences, link removed); program prints exactly the data; every A-number real (no A??????) or explained; OEIS searched for the terms; then one copy page, fields in form order.
 
 Order suggested: 1, 2, 3, 4, 5, 6, then the comments, then 7 (optional).
 
@@ -306,7 +306,7 @@ Add with "edit" on each entry. Signature at the end: "- _DICTO_, Nov 07 2026" (o
 %Y A002899 Cf. A293237, A402231.
 ```
 
-**A008264** (lonsdaleite coordination sequence): PROPOSED 16 Nov 2026 by DICTO (comment + link; entry-2 placeholders removed, signed _James Baker_).
+**A008264** (lonsdaleite coordination sequence): PROPOSED 16 Nov 2026 by DICTO (comment only: the %H link to Spin Ice was wrong, it does not contain the claim, and is to be removed from the draft; entry-2 placeholders removed, signed _James Baker_).
 ```
 %C A008264 Empirically also the coordination sequence of every atom of the cubic (A) bilayers of the 4H polytype (stacking ABAC, network of 4H-SiC with all atoms alike); checked for n <= 100. The atoms of the hexagonal bilayers of 4H have A??????(entry 2). - _DICTO_, Nov 07 2026
 %H A008264 DICTO, <a href="https://doi.org/10.5281/zenodo.23730421">Spin Ice and Kagome Magnets on Every Stacking</a>, Zenodo (2026).
