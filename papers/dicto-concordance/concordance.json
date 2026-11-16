@@ -8435,6 +8435,15 @@
     "retry": "only the full 3D Hurwitz question along the line",
     "study": "studies/2026-11-10-ab-line",
     "date": "2026-11-16"
+   },
+   {
+    "question": "Aim 1 step 6: the 3D Hurwitz constant c(x) = liminf |pi_x n||pi_perp_x n| along the icosahedral line; is it largest at phi",
+    "method": "exact: Lagrange identity 4(1+x^2)^2|pi n|^2|pi_perp n|^2 = S^2 + (1+x^2)^2 det(MM^T) on pairs w_i = (a_i,b_i) with the index-8 parity lattice; rank split -> weighted Markov problem for Gamma(2)+- (cusp weights 3/2 odd-odd, 2 mixed; point i weight cosh/2); quadratic x by certified finite searches (automorph balancing); checks in Z^6 through the projections at 60 digits, controls: phi 1/2 and 1D Fibonacci 1/sqrt5 (positive), crystals 0, parity dropped, wrong exponents, h and x+1 (negative); survey of 500 quadratic x (studies/2026-11-10-ab-line, ico_hurwitz.py)",
+    "status": "SETTLED",
+    "result": "PROVED: the right product is |pi n||pi_perp n| (Dirichlet exponent 3/3 = 1; cube = volume form); c(x) = min{3/2 nu_oddodd, 2 nu_mixed, cosh(rho)/2, c2 >= 1/sqrt2} for irrational x; c(rational) = 0; c(phi) = c(1/phi) = 1/2 = c(sqrt2 +- 1); c(sqrt2) = c(1/sqrt2) = 3/(4 sqrt2); c(sqrt3) = c(1/sqrt3) = 1/sqrt3; c is invariant under the theta group, so under the hop g and the turn 1/x (not under h). So phi does NOT maximise c. NUMERICAL: among 500 certified quadratic x of height <= 8 the largest c is 1/sqrt3. OPEN: sup c over the line",
+    "retry": "only the supremum (is it 1/sqrt3?) and c2",
+    "study": "studies/2026-11-10-ab-line",
+    "date": "2026-11-16"
    }
   ]
  },
