@@ -1,0 +1,105 @@
+PROGRESS [    0.0s] 0. Minkowski: for every L there is n != 0 with |pi n| <= L, |pi_perp n| <= 1.53934/L, so c(x) <= 1.53934 for every x
+PROGRESS [    0.2s] 1. identity 4(1+x^2)^2|pi n|^2|pi_perp n|^2 = S^2 + (1+x^2)^2 sum D_ij^2: 3000 cases, 0 failures
+PROGRESS [    0.2s] 2. crystals: periods (and all their multiples, |n| -> oo) give product 0, so c(rational) = 0
+PROGRESS [    0.2s] 3. x = phi = 1.618033989: D = 5, mu11 = 1, muM = 1, m = 0 -> cusps 0.6708203932, point i 0.5; c = 0.5  (boxes (8, 8, 8, 0), eps 17.9443)
+PROGRESS [    0.2s] 3. x = 1+sqrt2 (silver) = 2.414213562: D = 8, mu11 = 2, muM = 1, m = 0 -> cusps 0.7071067812, point i 0.5; c = 0.5  (boxes (7, 6, 6, 0), eps 5.82843)
+PROGRESS [    0.2s] 3. x = (3+sqrt13)/2 (bronze) = 3.302775638: D = 13, mu11 = 1, muM = 1, m = 0 -> cusps 0.4160251472, point i 0.5; c = 0.416025147169  (boxes (53, 53, 53, 0), eps 1298.0)
+PROGRESS [    0.2s] 3. x = sqrt2 = 1.414213562: D = 8, mu11 = 1, muM = 1, m = 1 -> cusps 0.5303300859, point i 0.5303300859; c = 0.53033008589  (boxes (5, 5, 7, 8), eps 5.82843)
+PROGRESS [    0.2s] 3. x = sqrt3 = 1.732050808: D = 12, mu11 = 2, muM = 1, m = 2 -> cusps 0.5773502692, point i 0.5773502692; c = 0.57735026919  (boxes (9, 7, 7, 11), eps 13.9282)
+PROGRESS [    0.2s] 3. x = 1/sqrt2 = 0.7071067812: D = 8, mu11 = 1, muM = 1, m = 1 -> cusps 0.5303300859, point i 0.5303300859; c = 0.53033008589  (boxes (5, 7, 5, 8), eps 5.82843)
+PROGRESS [    0.2s] 3. x = 1/phi = 0.6180339887: D = 5, mu11 = 1, muM = 1, m = 0 -> cusps 0.6708203932, point i 0.5; c = 0.5  (boxes (8, 8, 8, 0), eps 17.9443)
+PROGRESS [    0.2s] 3. x = sqrt5 = 2.236067977: D = 20, mu11 = 4, muM = 1, m = 0 -> cusps 0.4472135955, point i 0.5; c = 0.4472135955  (boxes (12, 7, 7, 14), eps 17.9443)
+PROGRESS [    0.2s] 3. x = (1+sqrt3)/2 = 1.366025404: D = 12, mu11 = 1, muM = 1, m = 1 -> cusps 0.4330127019, point i 0.5204164999; c = 0.433012701892  (boxes (7, 9, 7, 11), eps 13.9282)
+PROGRESS [    0.2s] 3. x = 1+sqrt3 = 2.732050808: D = 12, mu11 = 1, muM = 1, m = 1 -> cusps 0.4330127019, point i 0.5204164999; c = 0.433012701892  (boxes (7, 7, 9, 12), eps 13.9282)
+PROGRESS [    0.2s] 3. x = sqrt6 = 2.449489743: D = 24, mu11 = 3, muM = 1, m = 1 -> cusps 0.4082482905, point i 0.5103103631; c = 0.408248290464  (boxes (8, 6, 7, 11), eps 9.89898)
+PROGRESS [    0.2s] 3. x = sqrt7 = 2.645751311: D = 28, mu11 = 2, muM = 1, m = 2 -> cusps 0.377964473, point i 0.5345224838; c = 0.377964473009  (boxes (27, 20, 20, 51), eps 253.996)
+PROGRESS [    0.2s] 3. x = 1+sqrt5 = 2phi = 3.236067977: D = 20, mu11 = 1, muM = 1, m = 3 -> cusps 0.3354101966, point i 0.6020797289; c = 0.335410196625  (boxes (8, 8, 13, 14), eps 17.9443)
+PROGRESS [    0.2s] 3. x = g(sqrt2) = (10+sqrt2)/7 (one icosahedral hop) = 1.630601937: D = 8, mu11 = 1, muM = 1, m = 1 -> cusps 0.5303300859, point i 0.5303300859; c = 0.53033008589  (boxes (10, 10, 14, 39), eps 5.82843)
+PROGRESS [    0.2s] 3. x = g(sqrt3) = (16+sqrt3)/11 = 1.612004619: D = 12, mu11 = 2, muM = 1, m = 2 -> cusps 0.5773502692, point i 0.5773502692; c = 0.57735026919  (boxes (20, 15, 15, 77), eps 13.9282)
+PROGRESS [    0.5s]     invariance under x+2, x/(2x+1), g, 1/x: True on 17 cases (3 over the box cap); under h and x+1: sqrt2 h = 1+1/x: 0.530330 -> 0.530330; sqrt2 x+1: 0.530330 -> 0.500000; sqrt3 h = 1+1/x: 0.577350 -> 0.433013; sqrt3 x+1: 0.577350 -> 0.433013; (1+sqrt3)/2 h = 1+1/x: 0.433013 -> 0.577350; (1+sqrt3)/2 x+1: 0.433013 -> 0.433013; sqrt7 h = 1+1/x: 0.377964 -> 0.283473; sqrt7 x+1: 0.377964 -> 0.283473; (3+sqrt13)/2 (bronze) h = 1+1/x: 0.416025 -> 0.416025; (3+sqrt13)/2 (bronze) x+1: 0.416025 -> 0.416025
+PROGRESS [    0.5s]     sqrt2: (mu11, muM, m) for G_x, G_1, G_2 = [(1, 1, 1), (1, 1, 1), (1, 1, 1)]
+PROGRESS [    0.5s]     sqrt3: (mu11, muM, m) for G_x, G_1, G_2 = [(2, 1, 2), (2, 1, 2), (2, 1, 2)]
+PROGRESS [    0.5s]     (1+sqrt3)/2: (mu11, muM, m) for G_x, G_1, G_2 = [(1, 1, 1), (1, 1, 1), (1, 1, 1)]
+PROGRESS [    0.5s] 4. phi family D1: |n|^2 179445175002939041 .. 179445175002939041; product at the two ends 0.5, 0.5
+PROGRESS [    0.5s] 4. phi family (1, 1): |n|^2 176503545691491 .. 328384493751832753539; product at the two ends 0.67082039325, 0.67082039325
+PROGRESS [    0.5s] 4. phi family (1, 0): |n|^2 1146295688027634168202 .. 89891140425706; product at the two ends 0.894427191, 0.894427191
+PROGRESS [    0.5s] 4. phi family (0, 1): |n|^2 89891140425706 .. 1146295688027634168202; product at the two ends 0.894427191, 0.894427191
+PROGRESS [    0.5s] 4. sqrt2 family D1: |n|^2 29365791859 .. 29365791859; product at the two ends 0.530330085889, 9228778025.82
+PROGRESS [    0.5s] 4. sqrt2 family (1, 1): |n|^2 5814278472243 .. 148315863; product at the two ends 0.53033008589, 46611178.4697
+PROGRESS [    0.5s] 4. sqrt2 family (1, 0): |n|^2 90368262289202 .. 67858610; product at the two ends 1.41421356237, 21325902.5858
+PROGRESS [    0.5s] 4. sqrt2 family (0, 1): |n|^2 45184131144602 .. 33929306; product at the two ends 0.707106781187, 10662952.7071
+PROGRESS [    0.5s] 4. sqrt3 family D1: |n|^2 6893504634132609 .. 6893504634132609; product at the two ends 0.57735026919, 2.98497506713e+15
+PROGRESS [    0.5s] 4. sqrt3 family (1, 1): |n|^2 7486331750517906051 .. 14282150107683; product at the two ends 0.866025403784, 6.18435240696e+12
+PROGRESS [    0.5s] 4. sqrt3 family (1, 0): |n|^2 18626246970165918730 .. 2551260391690; product at the two ends 0.57735026919, 1.10472815544e+12
+PROGRESS [    0.5s] 4. sqrt3 family (0, 1): |n|^2 1337304364548497410 .. 35534473228802; product at the two ends 0.57735026919, 1.53868782631e+13
+PROGRESS [    0.6s] 4. 1+sqrt2 (silver) family D1: |n|^2 26102926097 .. 26102926097; product at the two ends 0.5, 0.5
+PROGRESS [    0.6s] 4. 1+sqrt2 (silver) family (1, 1): |n|^2 115841895 .. 26468251220463; product at the two ends 1.06066017178, 1.06066017178
+PROGRESS [    0.6s] 4. 1+sqrt2 (silver) family (1, 0): |n|^2 13250218 .. 102845515571962; product at the two ends 0.707106781187, 0.707106781187
+PROGRESS [    0.6s] 4. 1+sqrt2 (silver) family (0, 1): |n|^2 102845515571962 .. 13250218; product at the two ends 0.707106781187, 0.707106781187
+PROGRESS [    0.6s] 4. (1+sqrt3)/2 family D1: |n|^2 5600972515232745 .. 5600972515232745; product at the two ends 0.520416499867, 1.49248753357e+15
+PROGRESS [    0.6s] 4. (1+sqrt3)/2 family (1, 1): |n|^2 5364004244535586275 .. 4048898850363; product at the two ends 0.433012701892, 1.07890746516e+12
+PROGRESS [    0.6s] 4. (1+sqrt3)/2 family (1, 0): |n|^2 13644335009762 .. 2829770007976426370; product at the two ends 0.57735026919, 7.54046988854e+17
+PROGRESS [    0.6s] 4. (1+sqrt3)/2 family (0, 1): |n|^2 7311977094250 .. 21121690887005220746; product at the two ends 1.15470053838, 5.62828334739e+18
+PROGRESS [    0.6s] 5. 1D Fibonacci 1/phi: |pi n||pi_perp n| on convergents -> 0.4472135955 (Hurwitz/Markov 0.4472135955)
+PROGRESS [    0.6s] 5. 1D Ammann-Beenker 1/sqrt2: |pi n||pi_perp n| on convergents -> 0.353553390593 (Hurwitz/Markov 0.353553390593)
+PROGRESS [    0.6s] 6a. sqrt2 without the parity condition: m = 0 at pair ((-7, -5), (3, 2)) (would give 1/2); integral placements: [None, None, None, None, None, None]
+PROGRESS [    0.6s] 6b. exponents along an extremal family at sqrt2 (a,b) = (1,1),(1,2),(2,1): 0.5, 0.146, 0.854; 0.530329, 0.000785, 190.0; 0.53033, 3.96e-6, 3.76e+4
+PROGRESS [    0.6s] 7. phi: 117648 n in [-3,3]^6: max |formula - projection| = 2.2e-14; least product 0.5000000000; 0 n below c(x) = 0.500000, largest |n|^2 among them 0
+PROGRESS [    0.7s] 7. sqrt2: 117648 n in [-3,3]^6: max |formula - projection| = 6.7e-14; least product 0.5000000000; 52 n below c(x) = 0.530330, largest |n|^2 among them 19
+PROGRESS [    0.8s] 7. sqrt3: 117648 n in [-3,3]^6: max |formula - projection| = 3.3e-14; least product 0.5000000000; 36 n below c(x) = 0.577350, largest |n|^2 among them 9
+PROGRESS [    8.6s] 8. scan H = 8: 500 quadratic x (one sign of root, x > 0), 280 skipped (box too large)
+PROGRESS [    8.6s]     exact c known for 500; 0 have min(cusp, point-i) > 1/sqrt2 (c only bounded below by 1/sqrt2)
+PROGRESS [    8.6s]     x = 1.732051 (1, 0, -3) D=12: c = 0.577350  (mu11 2, muM 1, m 2)
+PROGRESS [    8.6s]     x = 0.577350 (3, 0, -1) D=12: c = 0.577350  (mu11 2, muM 1, m 2)
+PROGRESS [    8.6s]     x = 1.414214 (1, 0, -2) D=8: c = 0.530330  (mu11 1, muM 1, m 1)
+PROGRESS [    8.6s]     x = 0.707107 (2, 0, -1) D=8: c = 0.530330  (mu11 1, muM 1, m 1)
+PROGRESS [    8.6s]     x = 2.632993 (3, -6, -5) D=96: c = 0.510310  (mu11 4, muM 3, m 2)
+PROGRESS [    8.6s]     x = 0.632993 (3, 6, -5) D=96: c = 0.510310  (mu11 4, muM 3, m 2)
+PROGRESS [    8.6s]     x = 1.579796 (5, -6, -3) D=96: c = 0.510310  (mu11 4, muM 3, m 2)
+PROGRESS [    8.6s]     x = 0.379796 (5, 6, -3) D=96: c = 0.510310  (mu11 4, muM 3, m 2)
+PROGRESS [    8.6s]     x = 2.581139 (2, -4, -3) D=40: c = 0.506211  (mu11 3, muM 2, m 1)
+PROGRESS [    8.6s]     x = 1.581139 (2, 0, -5) D=40: c = 0.506211  (mu11 3, muM 2, m 1)
+PROGRESS [    8.6s]     x = 0.581139 (2, 4, -3) D=40: c = 0.506211  (mu11 3, muM 2, m 1)
+PROGRESS [    8.6s]     x = 1.720759 (3, -4, -2) D=40: c = 0.506211  (mu11 3, muM 2, m 1)
+PROGRESS [    8.6s]     x = 0.387426 (3, 4, -2) D=40: c = 0.506211  (mu11 3, muM 2, m 1)
+PROGRESS [    8.6s]     x = 0.632456 (5, 0, -2) D=40: c = 0.506211  (mu11 3, muM 2, m 1)
+PROGRESS [    8.6s]     x = 3.436492 (2, -6, -3) D=60: c = 0.504149  (mu11 3, muM 2, m 1)
+PROGRESS [    8.6s]     c = 1/2 exactly at 14 x: 0.41421(1, 2, -1), 0.42013(6, 7, -4), 0.56619(5, 6, -5), 0.58032(7, 8, -7), 0.61803(1, 1, -1), 0.63020(4, 7, -6), 0.70472(7, 5, -7), 1.41900(7, -5, -7), 1.58680(6, -7, -4), 1.61803(1, -1, -1), 1.72318(7, -8, -7), 1.76619(5, -6, -5)
+PROGRESS [    8.6s]     c < 1/2 at 460 x, c > 1/2 at 26 x
+CHECK Lagrange identity exact (3000 n, 10 rational x): True
+CHECK NEG crystal 3/2: period (-3, -3, -2, 2, 0, 0) has product 0 (all multiples too): True
+CHECK NEG crystal 8/5: period (-8, -8, -5, 5, 0, 0) has product 0 (all multiples too): True
+CHECK NEG crystal 2: period (1, -1, 0, 0, 2, -2) has product 0 (all multiples too): True
+CHECK POS c(phi) = 1/2 (step 5b): True
+CHECK c(1/phi) = c(phi) (turn): True
+CHECK c(silver) = 1/2: True
+CHECK c(sqrt2) = 3/(4 sqrt2): True
+CHECK c(1/sqrt2) = c(sqrt2) (turn): True
+CHECK c(sqrt3) = 1/sqrt3: True
+CHECK c(sqrt2), c(sqrt3) > c(phi): True
+CHECK theta-group invariance (x+2, x/(2x+1), g, 1/x) on every computed case, >= 15 cases: True
+CHECK NEG not invariant under h or x+1 (some x changes): True
+CHECK sqrt2: G_x, G_1, G_2 give equal (mu11, muM, m): True
+CHECK sqrt3: G_x, G_1, G_2 give equal (mu11, muM, m): True
+CHECK (1+sqrt3)/2: G_x, G_1, G_2 give equal (mu11, muM, m): True
+CHECK phi: D=1 family -> point-i term 0.5: True
+CHECK phi: explicit families in Z^6 reach c = 0.5: True
+CHECK sqrt2: D=1 family -> point-i term 0.5303300859: True
+CHECK sqrt2: explicit families in Z^6 reach c = 0.5303300859: True
+CHECK sqrt3: D=1 family -> point-i term 0.5773502692: True
+CHECK sqrt3: explicit families in Z^6 reach c = 0.5773502692: True
+CHECK 1+sqrt2 (silver): D=1 family -> point-i term 0.5: True
+CHECK 1+sqrt2 (silver): explicit families in Z^6 reach c = 0.5: True
+CHECK (1+sqrt3)/2: D=1 family -> point-i term 0.5204164999: True
+CHECK (1+sqrt3)/2: explicit families in Z^6 reach c = 0.4330127019: True
+CHECK POS phi: A-orbit of e1 has product 1/2 (projection code): True
+CHECK POS 1D Fibonacci 1/phi: projection product -> 0.4472136: True
+CHECK POS 1D Ammann-Beenker 1/sqrt2: projection product -> 0.35355339: True
+CHECK NEG parity dropped at sqrt2: min 0, but no placement lies in Z^6: True
+CHECK NEG exponents (1,2) -> 0 and (2,1) -> oo; only (1,1) stays finite: True
+CHECK phi: box [-3,3]^6 formula = projections (max err 2.2e-14); global min 1/2: True
+CHECK sqrt2: box [-3,3]^6 formula = projections (max err 6.7e-14); global min 1/2: True
+CHECK sqrt3: box [-3,3]^6 formula = projections (max err 3.3e-14); global min 1/2: True
+CHECK scan H=8: c(x) = c(1/x) for every pair found: True
+PROGRESS [    8.6s] done
+FINAL ok

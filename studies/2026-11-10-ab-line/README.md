@@ -173,3 +173,151 @@ step: they are credited for the methods used, and nothing here rests on a statem
 {"question": "Aim 1 step 5a: is the icosahedral hop g = h^3 an inflation of the actual 3D tilings T(x) -> T(g(x)), not only of the projection data", "method": "exact: symbolic Q_g A = k Q_x, k = -x/(3x+2); window containment |k|W_x in W_g for all x > 0 by support functions at the 15 facet normals with exact sign analysis; exact enumeration of vertices and the 20 tile types per period for 1/1->5/3, 2/1->8/5, 3/2->13/8, 5/3->21/13, 1/2->7/4; controls: turn x -> 1/x (positive), h(x), g(g(x)) strips and 5|k| containment (negative) (studies/2026-11-10-ab-line, ico_tiles.py)", "status": "SETTLED", "result": "PROVED for all x > 0: A L(x) = model set of the strip of g(x) with window k(x)W_x, and |k|W_x is inside W_g(x), so every vertex of the inflated crystal at x is a vertex of the crystal at g(x) (density |k|^3 vol W_x / vol W_g, phi^-9 at phi; vertex ratios 1220/16, 10336/136, 43784/576, 92736/1220 -> phi^9); periods scale by s(x) = (2x+1)(1+g^2)/(1+x^2); window shapes equal only at phi, so off phi T(g(x)) is not the inflation of T(x) and frequencies differ; found: the line has a turn x -> 1/x (T(1/x) = mirror of T(x)) fixing the 1/1 crystal; MLD not tested", "retry": "never; only MLD of T(phi) with its phi^3 inflation remains", "study": "studies/2026-11-10-ab-line", "date": "2026-11-16"}
 {"question": "Aim 1 step 5b: what is extremal at the icosahedral fixed point phi of the line", "method": "exact sympy: signed permutations preserving the Gram matrix of P(x); tile volumes and Pluecker duality |det P_I| = x^3 |det Q_(I^c)|; set partitions of the four volume classes by Groebner bases; norm form N(|P(phi)n|^2) in Z[phi] with A-balancing and exhaustion of |n|^2 <= 4 (studies/2026-11-10-ab-line, ico_extremal.py)", "status": "SETTLED", "result": "PROVED: symmetry order 24 for all x > 0 except 48 at x = 1 and 120 exactly at phi, 1/phi (six directions equiangular only there); tile frequency proportional to tile volume, four classes 2x^2, 1+x^3, 2x, |x^3-1| that reduce to two non-flat volumes (golden prolate/oblate, ratio phi) only at phi, 1/phi; at phi every nonzero n in Z^6 has |pi n||pi_perp n| >= 1/2, equality on the A-orbits of the unit vectors (A-invariant), crystals give 0. OPEN: whether phi maximises liminf |pi_x n||pi_perp_x n| over the whole line", "retry": "only the full 3D Hurwitz question along the line", "study": "studies/2026-11-10-ab-line", "date": "2026-11-16"}
 ```
+
+## Step 6: the 3D Hurwitz constant along the icosahedral line (ico_hurwitz.py, FINAL ok; 16 Nov 2026)
+
+**Question (lead (b) of step 5).** With the scheme of step 5 (lattice Z⁶, P(x), Q_x = P(−1/x), π and π⊥ the orthogonal projections to
+physical and internal space), let
+
+  c(x) = liminf over n ∈ Z⁶, |n| → ∞, of |π n|·|π⊥ n|.
+
+Is c largest at the quasicrystal x = φ?
+
+**The right product.** Physical and internal space both have dimension 3. By Minkowski's convex body theorem the cylinder
+{|π y| ≤ L, |π⊥ y| ≤ r} (volume (4π/3)² L³r³) holds a nonzero lattice point once L³r³ ≥ 36/π², so for every L some n ≠ 0 has
+|π n| ≤ L and |π⊥ n| ≤ (36/π²)^(1/3)/L. The Dirichlet exponent is therefore d/m = 3/3 = 1. The invariant quantity is
+|π n|³|π⊥ n|³ = (|π n||π⊥ n|)³, and its liminf is c(x)³. Comparing c or c³ gives the same order. The plain product is the analogue of
+q|qx − p| (1 + 1 dimensions, exponent 1), and the same projection code returns Hurwitz's 1/√5 for Fibonacci. Any other pair of exponents
+a ≠ b sends the product to 0 or ∞ along every extremal family (checked at √2), so a = b is forced. Every x > 0 has c(x) ≤ (36/π²)^(1/3) ≈ 1.539.
+
+**Theorem 6a (the 3D constant is a weighted 1D problem).** Write a = (n₀−n₁, n₂−n₃, n₄+n₅) and b = (n₄−n₅, n₀+n₁, n₂+n₃). Then
+P(x)n = a + x b, and n ↦ (a, b) is a bijection of Z⁶ onto the pairs with a₁ ≡ b₂, a₂ ≡ b₃, a₃ ≡ b₁ (mod 2). Put w_i = (a_i, b_i) ∈ Z²,
+F(w) = (a + x b)(x a − b) (a binary form of discriminant (1 + x²)²) and M = the 2 × 3 matrix with columns w_i. Then
+  (i) 4(1 + x²)²·|π n|²|π⊥ n|² = S² + (1 + x²)²·det(M Mᵀ), with S = F(w₁) + F(w₂) + F(w₃).
+For irrational x this gives
+  (ii) c(x) = min{ (3/2)·ν₁₁(x),  2·ν_mix(x),  ½·cosh ρ(x),  c₂(x) },  with c₂(x) ≥ 1/√2,
+where
+- ν₁₁(x) and ν_mix(x) are the liminf of q|qx − p| over fractions p/q → x with p and q both odd, or of opposite parity (Lagrange
+  constants restricted to a parity class);
+- ρ(x) is the liminf, as γ → ∞, of the hyperbolic distance from γ(i) to the geodesic G_x with ends 1/x and −x, over
+  γ ∈ Γ(2)± = {γ ∈ GL₂(Z) : γ ≡ I mod 2}. Equivalently sinh ρ = liminf |F(w) + F(w′)|/(1 + x²) over unimodular pairs w ≡ (1, 0),
+  w′ ≡ (0, 1) mod 2.
+In words: the lattice point is close to physical space in one of three ways. (1) All three pairs lie on one line (rank 1). Then
+the parity forces weight 3 (odd–odd fractions) or 4 (mixed fractions), and we get Markov–Hurwitz approximation of x, restricted to a
+parity class. (2) Exactly two pairs, forming a unimodular basis (rank 2, det 1). Then we measure how closely the geodesic of x returns
+to the point i. (3) Anything else costs at least 1/√2.
+Geometrically, Γ(2)± is the reflection group of the ideal triangle with corners 0, 1, ∞. The odd–odd cusp 1 has weight 3/2, the two
+mixed cusps 0 and ∞ have weight 2, and the point i on the side from 0 to ∞ has weight ½·cosh(distance).
+
+**Proof.** (i) PPᵀ = 2(1+x²)I and P(x)Q_xᵀ = 0 give |π n|² = |a + x b|²/(2(1+x²)) and |π⊥ n|² = |x a − b|²/(2(1+x²)). Lagrange's identity
+|U|²|V|² = (U·V)² + Σ(u_i v_j − u_j v_i)² with u_i = a_i + x b_i, v_i = x a_i − b_i, together with u_i v_j − u_j v_i = (1+x²)(a_j b_i − a_i b_j)
+and Cauchy–Binet Σ D_ij² = det(MMᵀ), proves (i).
+(ii) Split by the rank of M.
+- *Rank 1:* w_i = λ_i w with w primitive. The value is |λ|²·|F(w)|/(2(1+x²)). The parity conditions read λ₁p ≡ λ₂q, λ₂p ≡ λ₃q,
+  λ₃p ≡ λ₁q for w = (p, q). So for w ≡ (1, 1) all λ_i have one parity (least |λ|² = 3, at (1, 1, 1)), and otherwise all λ_i are even (least
+  4, at (2, 0, 0)). If λ → ∞ with w bounded the value tends to ∞ (F(w) ≠ 0 for irrational x). If w → ∞ along a root direction of F
+  (a/b → 1/x or a/b → −x), then |F(w)|/(1+x²) tends to q|qx − p| for the matching fraction, and the parity class of w is that of p/q.
+- *Rank 2 with det MMᵀ = 1:* exactly two pairs are nonzero, at cyclically adjacent positions, and they form a unimodular basis. The
+  parity conditions force w ≡ (1, 0) and w′ ≡ (0, 1). With γ = (w w′) and (A, B, C) = (F∘γ)/(1+x²), a form of discriminant 1, the value is
+  ½√(1 + (A + C)²). For a form of discriminant 1, |A + C| = sinh of the distance from i to its geodesic, which gives the term ½·cosh ρ.
+- *Rank 2 with det ≥ 2:* the value is at least ½√2.
+As |n| → ∞ with bounded value, the relevant points run out to an end of G_x (1/x or −x). Two geodesics with a common end converge,
+so the liminf at each end may be computed with any geodesic ending there. ∎
+
+**Theorem 6b (values).** For quadratic x with primitive minimal form G(a, b) = p₂a² + p₁ab + p₀b² of discriminant D:
+ν₁₁ = μ₁₁/√D and ν_mix = μ_mix/√D, where μ = min |G(w)| over primitive w of that parity class, and sinh ρ = m/√D, where
+m = min |G(w) + G(w′)| over unimodular w ≡ (1, 0), w′ ≡ (0, 1). Each minimum is attained: an automorph of G in Γ(2)± moves any
+candidate into a bounded box, and the script searches that box completely (certified). By hand:
+- **c(rational) = 0.** A period n of the crystal has π⊥ n = 0, and so do all its multiples.
+- **c(φ) = c(1/φ) = 1/2.** G = a² − ab − b²: m = 0 (G(1,0) + G(0,1) = 0), μ₁₁ = μ_mix = 1. The cusp terms are 3/(2√5) and 2/√5, both above ½.
+  This agrees with step 5b, recomputed with the right exponents: the cube is c(φ)³ = 1/8.
+- **c(1 + √2) = c(√2 − 1) = 1/2.** G = a² − 2ab − b²: m = 0, μ₁₁ = 2 (odd–odd values are ≡ 2 mod 4), μ_mix = 1, cusp terms 3/(2√2) and 1/√2.
+- **c(√2) = c(1/√2) = 3/(4√2) ≈ 0.53033.** G = a² − 2b²: μ₁₁ = μ_mix = 1, giving cusp terms 3/(4√2) and 1/√2. G(w) + G(w′) is odd by
+  parity, and the identity gives −1, so m = 1 and ½·cosh ρ = ½·√(1 + 1/8) = 3/(4√2) as well. Both terms meet at the same value.
+- **c(√3) = c(1/√3) = 1/√3 ≈ 0.57735.** G = a² − 3b²: μ_mix = 1 (G(2,1) = 1) gives the term 2/√12 = 1/√3. Odd–odd values are ≡ −2 mod 8, so
+  μ₁₁ = 2 and that term is √3/2. G(w) + G(w′) ≡ 2 mod 4 with −2 at the identity, so m = 2 and ½·√(1 + 4/12) = 1/√3.
+- **Every x > 0 has inf |π n||π⊥ n| ≤ 1/2.** Take n = e₁ (w₁ = (1,0), w₂ = (0,1), S = x − x = 0). This single vector gives exactly 1/2 for every x.
+  What is special at φ is not this value but that it recurs for ever (the A-orbit of e₁). For every x with x − 1/x rational (φ, 1 + √2,
+  (3 + √13)/2, …) the geodesic G_x is closed through i, so ρ = 0 and c(x) ≤ 1/2.
+
+**Theorem 6c (the constant is invariant under the hop and the turn).** c(γx) = c(x) for every γ in the theta group
+Γ_θ± = {γ ∈ GL₂(Z) : γ ≡ I or ≡ (0 1; 1 0) mod 2} acting by Möbius maps (with x, γx > 0). In particular:
+- c(g(x)) = c(x) for the icosahedral hop g(x) = (3x+2)/(2x+1) of steps 4–5 (matrix (3 2; 2 1) ≡ I mod 2);
+- c(1/x) = c(x) for the turn of step 5.
+In fact c(x) depends only on the tail of x under Γ_θ±.
+*Proof.* The admissible matrices M (parity conditions) are preserved by M ↦ γM for γ ∈ Γ(2)±. The swap of a and b preserves them up to
+reversing the cyclic order of positions, and that permutes the columns, which leaves MMᵀ unchanged. The value depends only on the
+form F and the Gram matrix MMᵀ (rank 2: ½√det·cosh(distance from the point of MMᵀ to G_x); rank 1: |λ|²·|F(w)|/(2(1+x²))). By the
+end-locality in the proof of 6a, the liminf at an end r depends only on the Γ(2)±-tail of r. The ends of G_x are 1/x and −x, and
+x ↦ −x lies in Γ(2)±. ∎
+So the hop-invariant quantity that step 5b found at φ (A keeps the product) is invariant along the whole line. The Fibonacci hop
+h(x) = 1 + 1/x and x ↦ x + 1 are not in Γ_θ±, and they do change c (√3 → 0.43301 under both; checked).
+
+**Answer to the question.** No. φ does not maximise c on the line. c(φ) = 1/2 is beaten by c(√2) = 3/(4√2) and c(√3) = 1/√3 (proved
+above). The 1D picture does not carry over. In 1D the golden ratio is the unique top of the Markov spectrum. In 3D the parity
+lattice (the index-8 sublattice of pairs) weights the cusps differently (3/2 for odd–odd, 2 for mixed), and it adds the term at the
+point i. For φ this term is the binding one, and it equals ½, because the golden geodesic passes through i.
+**Numerical survey (each value certified by finite search, but the survey itself is evidence, not a theorem).** All x > 0 that are roots
+of p₂x² + p₁x + p₀ with 1 ≤ p₂ ≤ 8, |p₁| ≤ 8, −8 ≤ p₀ ≤ −1 (500 values computed, 280 skipped because the certified box was too large):
+- the largest c is 1/√3, at √3 and 1/√3; next 3/(4√2) at √2 and 1/√2, then 0.51031 (D = 96) and 0.50621 (D = 40);
+- c = 1/2 exactly at 14 values (φ, 1/φ, √2 ± 1 among them);
+- c > 1/2 at 26 values and c < 1/2 at 460;
+- none needed the rank-2 bound c₂ (every minimum was below 1/√2, so every listed value is exact).
+So φ sits in the upper part of the line but not at the top. Whether 1/√3 is the supremum over all x is open.
+
+**What is proved, exactly.** 6a for every irrational x > 0; 6c for every x > 0; the values at rational x, φ, 1/φ, √2 ± 1, √2, 1/√2, √3,
+1/√3 (by hand, and certified in the script); the certified values in the survey. **Numerical only:** that 1/√3 is the largest value among
+the surveyed quadratic irrationals. **Open:** sup c over the line (is it 1/√3?); c₂(x) exactly when both other terms exceed 1/√2 (none
+found); c at non-quadratic x beyond the formula.
+
+**Checks** (ico_hurwitz.py, FINAL ok, 35 checks).
+- Identity (i): exact in rationals for 3000 n at 10 values of x. On [−3, 3]⁶ (117648 n), formula = projections to 7·10⁻¹⁴ at φ, √2, √3.
+  The global least product there is 1/2, at small n only: at √2 the 52 vectors below c have |n|² ≤ 19, at √3 the 36 have |n|² ≤ 9.
+- Explicit lattice vectors realising each term, products computed from the projections at 60 digits:
+  - D=1 families (|n|² up to 10¹⁶) reach ½·cosh ρ;
+  - rank-1 families with λ = (1,1,1) or (2,0,0) reach the cusp terms;
+  - the least of them equals c at φ, √2, √3, 1 + √2 and (1+√3)/2.
+- The three end forms (roots x, 1/x, −x) give the same (μ₁₁, μ_mix, m).
+- Invariance: x + 2, x/(2x+1), g and 1/x keep c in all 17 computed cases. In the survey c(x) = c(1/x) for every pair.
+- Positive controls: c(φ) = 1/2; the A-orbit of e₁ has product 1/2 (step 5b) through the new projection code; the same code in 1D gives
+  1/√5 (Fibonacci) and 1/√8 (the Ammann–Beenker slope 1/√2), as in step 3.
+- Negative controls:
+  - crystals 3/2, 8/5, 2 have product 0 on periods and their multiples;
+  - with the parity condition dropped, √2 would have m = 0 (value ½), but none of the six placements of that pair is a lattice vector;
+  - the exponents (1, 2) and (2, 1) go to 0 and ∞ along the √2 family;
+  - h and x + 1 change c.
+
+**Credit.** The line, its hop and turn, and the question whether the quasicrystal is the point farthest from every crystal are DICTO's.
+- Lagrange/Markov constants and their GL₂(Z)-invariance: Markov (1879–80), Hurwitz (1891); Cassels, *An Introduction to Diophantine
+  Approximation* (1957).
+- Minkowski's convex body theorem; Dirichlet exponents of linear forms and badly approximable systems: W. M. Schmidt (1969; *Diophantine
+  Approximation*, LNM 785, 1980).
+- Products of hyperbolic spaces for approximation in real quadratic fields: T. Hattori, J. Math. Soc. Japan 59 (2007) 239–264. This is the
+  nearest framework to 6a, where the 3D problem collapses onto one hyperbolic plane because physical space is "diagonal" in (R²)³.
+- Diophantine conditions on cut-and-project sets:
+  - A. Haynes, M. Kelly, B. Weiss, Equivalence relations on separated nets arising from linear toral flows, Proc. London Math. Soc.
+    (arXiv:1211.2606);
+  - A. Haynes, H. Koivusalo, J. Walton, A characterization of linearly repetitive cut and project sets, Nonlinearity 31 (2018) 515
+    (arXiv:1503.04091). Linear repetitivity ⇔ badly approximable: c(x) > 0 is that condition along this line;
+  - Haynes–Koivusalo–Walton, Perfectly ordered quasicrystals and the Littlewood conjecture, Trans. AMS (arXiv:1506.05649).
+  (The brief named a "Haynes–Koivusoltani–Sadun" paper; the linear-repetitivity characterisation is by Haynes, Koivusalo and Walton.)
+- Kleinbock's work on badly approximable systems and dynamics on homogeneous spaces is the general setting for c > 0.
+- Theta group, Γ(2) as the reflection group of the ideal triangle: classical.
+
+**Sources checked.** This study's steps 3 and 5b. The reference library (study 2026-11-03-reference-library) has no record of the
+Diophantine works above: none is in it. Web search (16 Nov) confirmed the bibliographic data of Hattori (2007), Haynes–Kelly–Weiss and
+Haynes–Koivusalo–Walton. Their contents were not read: they are credited for setting and methods, and nothing here rests on a statement
+quoted from them. 6a–6c are proved here from first principles.
+
+**LEADS.**
+- Supremum of c over the line: is it 1/√3 (attained at √3)? Approach: the weighted cusp-and-point problem on the ideal triangle, as
+  Markov's on the modular surface.
+- The spectrum {c(x)}: is it discrete above 1/2 (1/√3, 3/(4√2), 0.51031, 0.50621, …), as Markov's is below 1/3?
+- c₂ exactly, and a non-quadratic example with c > 1/2.
+- The analogue on the Ammann–Beenker line (Z⁴, 2 + 2 dimensions): does the same parity reduction hold, and is 1/√2 at the top there?
+
+**Ready Concordance ledger line**
+
+```json
+{"question": "Aim 1 step 6: the 3D Hurwitz constant c(x) = liminf |pi_x n||pi_perp_x n| along the icosahedral line; is it largest at phi", "method": "exact: Lagrange identity 4(1+x^2)^2|pi n|^2|pi_perp n|^2 = S^2 + (1+x^2)^2 det(MM^T) on pairs w_i = (a_i,b_i) with the index-8 parity lattice; rank split -> weighted Markov problem for Gamma(2)+- (cusp weights 3/2 odd-odd, 2 mixed; point i weight cosh/2); quadratic x by certified finite searches (automorph balancing); checks in Z^6 through the projections at 60 digits, controls: phi 1/2 and 1D Fibonacci 1/sqrt5 (positive), crystals 0, parity dropped, wrong exponents, h and x+1 (negative); survey of 500 quadratic x (studies/2026-11-10-ab-line, ico_hurwitz.py)", "status": "SETTLED", "result": "PROVED: the right product is |pi n||pi_perp n| (Dirichlet exponent 3/3 = 1; cube = volume form); c(x) = min{3/2 nu_oddodd, 2 nu_mixed, cosh(rho)/2, c2 >= 1/sqrt2} for irrational x; c(rational) = 0; c(phi) = c(1/phi) = 1/2 = c(sqrt2 +- 1); c(sqrt2) = c(1/sqrt2) = 3/(4 sqrt2); c(sqrt3) = c(1/sqrt3) = 1/sqrt3; c is invariant under the theta group, so under the hop g and the turn 1/x (not under h). So phi does NOT maximise c. NUMERICAL: among 500 certified quadratic x of height <= 8 the largest c is 1/sqrt3. OPEN: sup c over the line", "retry": "only the supremum (is it 1/sqrt3?) and c2", "study": "studies/2026-11-10-ab-line", "date": "2026-11-16"}
+```
