@@ -8255,6 +8255,26 @@
     "status": "SETTLED (exact count; classes by distance invariants)",
     "result": "4,291,200 chambers in each Queen = 14400 x 298; 298 pairwise non-congruent pieces in C, 15 combinatorial types (155 simplices ...), all pyramids from the centre over pieces of a cell; chi = (t-1)(t^3-359t^2+45959t-2099281), not free; the 120-cell adds no walls. A: 30 mirrors (generate all W(H4)), 3360 chambers, 28 classes, 120 = the 600-cell's Coxeter chamber; B: 40 M + 40 C (cross part not a reflection system), 62,880 chambers, 524 classes, no Queen chamber",
     "goes_to": "#107 next version; Concordance"
+   },
+   {
+    "date": "2026-11-16",
+    "question": "DICTO 16 Nov ('narrow our focus back to core study objectives and drop any avenues that are not supportive of the scutoid interactions and pull what we have into a study that has as few loose ends to tie up as possible'): consolidate the scutoid streams (neighbour swaps in changing tilings) into one study with at most five open items",
+    "method": "studies/2026-11-16-scutoid-interactions: write-up only, no new computation; data/results.json (17 rows, 5 open, 38 closed leads), scripts/make_html.py (checks README = PDF, verdict words, source folders; FINAL ok), build.sh (figcheck + print.mjs guards); DRAFT-scutoid-interactions.pdf",
+    "status": "SETTLED (consolidation; each row keeps its source verdict)",
+    "result": "ESTABLISHED: #104 sweep counts recovered by the logger; null values (2D T1 3.04 vs 3.058, 3D 15.53 vs 15.61, 4.7669 vs 24pi^2/35-2); compound-eye law for the perfect mosaic; no swaps in spectacle hole arrays. CONSISTENT: toy moving foams one contact at a time; scaling froth 0.48+-0.02 vs 0.53 at rc = 1 only; 3D grain identity. NOT CONFIRMED: Earth cross-history agreement; Sun and cloud rates (not stable); 2D grain macroscopic count. NOT A TEST: void basins (voxel tilings not generic), interstellar toy, sea ice, butterfly eyes gw05/gw16, Jupiter south ring (0 swaps in 19 epochs). PARKED: yew. Open: (1) unevenly curved eye with cell segmentation, (2) serial-section test of <F>/2 - 3 on a 3D grain map, (3) Sun rate extrapolated to step 0, (4) vertex-model froth with fixed rc against 0.53, (5) Earth per-plate rates with a resolution control",
+    "goes_to": "One tissue, three scales (planned paper); #104 scutoid thread",
+    "follows": [
+     "One tissue, three scales, Step 0 and first part of Step 1 (DICTO 15 Nov: 'start on the new scutoid Earth, Sun ",
+     "One tissue, three scales: reference (null-model) values for the event census: Euler identities, swaps per birt",
+     "One tissue, three scales, Earth stream second round: does the plate-scale event census agree in a plate histor",
+     "One tissue, three scales, Section 2 (Sun; DICTO 15 Nov: 'throw all possible resources at the new scutoid work'",
+     "One tissue, three scales, Section 3 (cosmic voids): do 3D cells gain/lose contacts one at a time (#104 Theorem",
+     "One tissue, three scales: Rutenberg-McCurdy macroscopic T1 per T2 in a froth that reaches its scaling state (2",
+     "One tissue, three scales, GRAINS stream (DICTO 15 Nov: 'metamorphic rocks and mineral aggregates, polycrystall",
+     "Compound-eye scutoids, second trace: do the ommatidial columns of the apposition butterfly eye gw16 (Paukner e",
+     "One tissue, many scales, PLANETS stream (scope, no tracing): which planetary cell patterns (Jupiter polar cycl"
+    ],
+    "retry": "never the consolidation; only the five open items, each with its named next action"
    }
   ]
  },

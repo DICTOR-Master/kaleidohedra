@@ -1,0 +1,377 @@
+{
+ "note": "Single source for the results table, the open items and the closed list of studies/2026-11-16-scutoid-interactions. Write-up only: every number is copied from the source study named in its row; nothing was recomputed. Verdict words: ESTABLISHED, CONSISTENT, NOT CONFIRMED, NOT A TEST, PARKED (each the source study's own verdict mapped without upgrade; the source wording is kept in 'own').",
+ "rows": [
+  {
+   "system": "Sweeps of simple 4-polytopes (theory check)",
+   "data": "120-cell, truncated 120-cell, bitruncated 600-cell swept as tiling sequences; two generic directions",
+   "observed": "births / swaps / deaths 116 / 366 / 116; 716 / 966 / 716; 716 / 2166 / 716, exact; truncated 600-cell: no pure swap",
+   "expected": "h1 / h2 / h3 of #104 Theorems 1 and 2 (same numbers)",
+   "verdict": "ESTABLISHED",
+   "own": "logger built and validated; all predictions held",
+   "source": "2026-11-15-event-logger (validation a); #104"
+  },
+  {
+   "system": "Null model: moving Poisson-Voronoi seeds, linear motion",
+   "data": "2D and 3D periodic Voronoi, simulated and integrated",
+   "observed": "2D: 3.04 +- 0.005 T1 per cell per spacing (finest step); 3D: 15.53 +- 0.07 contact changes per cell per spacing; swaps per birth in a swept 3D Poisson-Voronoi 4.7669 +- 0.0006",
+   "expected": "integrals 3.058 +- 0.005 and 15.61 +- 0.03; exact 24 pi^2/35 - 2 = 4.7677",
+   "verdict": "ESTABLISHED",
+   "own": "SETTLED; two methods agree (simulation converges from below, 0.7% and 0.5% short at the finest step)",
+   "source": "2026-11-15-tissue-null-models"
+  },
+  {
+   "system": "Toy moving 3D foams (Voronoi, power diagrams)",
+   "data": "N = 512 cells, three generic motions, two time steps",
+   "observed": "30,758 contact changes, 0 simultaneous at a 1e-9 time floor, 0 clumps; lattice control caught (10 simultaneous)",
+   "expected": "one contact at a time (#104 Theorem 1' read for moving 3D tilings)",
+   "verdict": "CONSISTENT",
+   "own": "a computation, not a proof: checks the generic statement on these motions",
+   "source": "2026-11-15-cosmic-voids (item 1)"
+  },
+  {
+   "system": "2D dry froth in its scaling state (Potts model)",
+   "data": "2048^2 torus, seed 2, 3624 to 903 bubbles, window passing the scaling test fixed in advance",
+   "observed": "0.48 +- 0.02 macroscopic T1 per T2 at rc = 1 pixel, step-independent within 4%; 0.64 / 0.32 at rc = 0.5 / 2",
+   "expected": "Rutenberg-McCurdy 0.53 +- 0.05, independent of rc",
+   "verdict": "CONSISTENT",
+   "own": "agrees at the natural choice rc = 1 pixel; the claim of rc-independence FAILS on the lattice; stationary mu2 1.90 against 1.24",
+   "source": "2026-11-15-event-logger (scaling-state froth)"
+  },
+  {
+   "system": "2D grain growth (curved-boundary vertex model)",
+   "data": "6 runs, 3 seeds, 1001 to 2500 vanishings per window",
+   "observed": "1.22 to 1.27 swaps per vanished grain; macroscopic 0.06 to 0.14",
+   "expected": "about 1.34 (Sprague et al. 2009, unverified) and 3/2 with side-shedding; macroscopic 0.53",
+   "verdict": "NOT CONFIRMED",
+   "own": "macroscopic count does NOT agree with 0.53; control partly failed (von Neumann slope 0.76, mu2 1.9 to 2.0 against 1.620)",
+   "source": "2026-11-15-grains-polycrystals"
+  },
+  {
+   "system": "3D grain growth (threshold dynamics)",
+   "data": "steady windows, two runs",
+   "observed": "mean faces 13.65 to 13.85; survivors' net contact change per vanished grain e.g. -1.49, -1.66, -2.18",
+   "expected": "Mason et al. 2015: 13.766; identity f_v - <F>/2: -1.43, -1.60, -2.21",
+   "verdict": "CONSISTENT",
+   "own": "control passes; the identity holds in the steady windows",
+   "source": "2026-11-15-grains-polycrystals"
+  },
+  {
+   "system": "Earth: plate reconstructions, 230 Ma to now",
+   "data": "Müller 2016, Müller 2019 (three readings), Matthews 2016, Merdith 2021; independent history Scotese & Wright 2018",
+   "observed": "persistent swaps 23 to 35 (10 to 15 per 100 Myr), step-independent at 1 to 5 Myr; per plate per 100 Myr 0.44 to 0.58 (Müller family) against 0.07 (Scotese & Wright)",
+   "expected": "no null rate; test: agreement across independent histories, clustering at reorganisations",
+   "verdict": "NOT CONFIRMED",
+   "own": "agreement does NOT carry over to an independent history; no clustering beyond chance (p 0.12 to 0.28); counts describe the models, not the Earth",
+   "source": "2026-11-15-earth-plates (rounds 1 and 2)"
+  },
+  {
+   "system": "Sun: granulation (radiative-MHD simulation)",
+   "data": "Bifrost runs en024048_hion and qs024048_by3363, 13 settings, 10 s steps",
+   "observed": "0.07 to 0.15 persistent swaps per cell per minute; 0.6 to 1.3 per cell lifetime; 0.8 to 1.9 per persistent split (spread over settings; detection about 20%)",
+   "expected": "no null rate (births at junctions almost absent, so swaps per birth is undefined)",
+   "verdict": "NOT CONFIRMED",
+   "own": "NOT STABLE with the time step: no swap rate is yet a stable number; order of magnitude stable",
+   "source": "2026-11-15-sun-granulation"
+  },
+  {
+   "system": "Atmosphere: open-cell convection (satellite)",
+   "data": "Himawari-9, 5 Feb 2025, 6 h, 2.5 min frames",
+   "observed": "0.03 to 0.15 persistent swaps per cell-hour; within about 30% over 2.5 to 10 min steps, threefold over settings",
+   "expected": "no null rate",
+   "verdict": "NOT CONFIRMED",
+   "own": "FEASIBLE; rates NOT yet stable; no rate goes into the comparison table",
+   "source": "2026-11-15-atmosphere-seaice"
+  },
+  {
+   "system": "Sea ice floes; ice-wedge polygons",
+   "data": "Himawari-9 Okhotsk pilot; literature",
+   "observed": "0 to 33 usable cells; no event time series for polygons",
+   "expected": "-",
+   "verdict": "NOT A TEST",
+   "own": "NOT feasible from the geostationary images; no usable time series",
+   "source": "2026-11-15-atmosphere-seaice"
+  },
+  {
+   "system": "Cosmic void basins (N-body simulation)",
+   "data": "pmwd, 256^3 particles in 256 Mpc/h, watershed basins R = 3 to 6 Mpc/h, two seeds, down to Delta a = 1/512",
+   "observed": "share of contact changes that come alone 0.60 at the finest spacing (about 0.65 to 0.7 extrapolated); about 25 contact changes per merged basin (23 to 27)",
+   "expected": "all single (Theorem 1') for generic tilings; voxel tilings are not generic",
+   "verdict": "NOT A TEST",
+   "own": "cannot test Theorem 1' in its exact form; residual clumping DECIDED to be the discreteness of the units (falls with finer voxels and tracers), zero in the continuum an extrapolation",
+   "source": "2026-11-15-cosmic-voids"
+  },
+  {
+   "system": "Interstellar bubbles (toy, rung 5 of the foam ladder)",
+   "data": "2D toy slice; public ISM data single-epoch or about 10 Myr apart",
+   "observed": "Euler fails in 223 of 240 frames; swaps 0.01 per vanished cell (flicker)",
+   "expected": "-",
+   "verdict": "NOT A TEST",
+   "own": "toy rule FAILS as a tiling; real data give no usable time series",
+   "source": "2026-11-15-interstellar-bubbles"
+  },
+  {
+   "system": "Compound eyes: geometric law",
+   "data": "perfect hexagonal mosaic; four open micro-CT mosaics (ODA-3D)",
+   "observed": "one edge family flips when anisotropy A reaches sqrt 3 across the rows (1024 of 3039 edges at A = 1.74, none at 1.72), never along rows; real mosaics: swaps start well below sqrt 3 (0.2% for A < 1.2 to 33% at 2.5 to 3)",
+   "expected": "prediction stated before data (commit 2bf1098a): swaps in oval eyes, about none in near-spherical ones",
+   "verdict": "ESTABLISHED",
+   "own": "law proved for the perfect mosaic and calibrated on four real mosaics; no scutoid observed",
+   "source": "2026-11-16-compound-eye-scutoids"
+  },
+  {
+   "system": "Compound eyes: depth traces (butterfly gw05, gw16)",
+   "data": "Paukner et al. 2024 X-ray volumes, 0.6 um voxels",
+   "observed": "gw05 cone layer 10 of about 1330 pairs change against 4.2 +- 2.1; gw16 retina 799 of 4786 against null 809 +- 34; 0 of 1505 flagged changes a true exchange",
+   "expected": "about 1% scattered changes for these nearly evenly curved eyes, below the method's resolution",
+   "verdict": "NOT A TEST",
+   "own": "NOT A TEST OF THE PREDICTION (relabelled 16 Nov with DICTO); kept as method development",
+   "source": "2026-11-16-compound-eye-scutoids (gw05, survey, gw16)"
+  },
+  {
+   "system": "Jupiter: south polar cyclone ring (Juno)",
+   "data": "cyclone centres PJ4 to PJ30 (Mura et al. 2021 via Gavriel & Kaspi 2022)",
+   "observed": "0 swaps: cyclic order 1-2-3-4-5 in all 19 of 22 epochs where all five were seen; one sixth cyclone formed in Sep 2019 and was gone by Feb 2020 (an insertion, not a 2-2 move)",
+   "expected": "no rate possible (6 cells, one event in 9 years)",
+   "verdict": "NOT A TEST",
+   "own": "event catalogue, never a rate; scope SETTLED",
+   "source": "2026-11-16-planet-cells"
+  },
+  {
+   "system": "Spectacle hole arrays (model)",
+   "data": "hole columns between lens surfaces of 0 to 10 D base curve",
+   "observed": "uneven stretch at most 1.15 : 1; 0 swaps for regular layouts; 1 to 4 in about 175 edges for spiral and random holes",
+   "expected": "sqrt 3 = 1.73 : 1 needed before a hexagonal lattice swaps",
+   "verdict": "ESTABLISHED",
+   "own": "one negative: no scutoids in spectacle lenses (computed, 7 controls passed)",
+   "source": "2026-11-15-scutoid-lenses"
+  },
+  {
+   "system": "Yew and conifer cambium",
+   "data": "CoLuS conifer patches (one cross-section)",
+   "observed": "swaps not observable in one section; file starts plus ends 0.021 per file per cell (manual outlines)",
+   "expected": "-",
+   "verdict": "PARKED",
+   "own": "PARKED (DICTO 16 Nov: 'forget the yew sample unless available online')",
+   "source": "2026-11-15-yew-cambium"
+  }
+ ],
+ "open": [
+  {
+   "item": "Compound eye with strongly uneven curvature",
+   "why": "the one direct test of a scutoid prediction in living tissue; the prediction is stated and timestamped, the law proved",
+   "next": "find an open volume of an unevenly curved eye with a published cell segmentation (acute-zone or flattened eyes: dragonflies, robber flies, mantises, mantis shrimp; the 29-ommatidium oval wasp eye of Makarova et al. 2025 as the small first case), then trace with the gw16 pipeline and the contact-length restriction"
+  },
+  {
+   "item": "Serial-section test of swaps per birth = <F>/2 - 3 in a real 3D grain map",
+   "why": "an exact law of the #104 kind, tested on real data with no time series and no tracking error: 3.883 predicted for steady grain growth against 4.768 for Poisson-Voronoi",
+   "next": "fetch one public 3D EBSD or DCT grain volume, sweep it by planes with the shared logger, compare swaps per birth with <F>/2 - 3 of the same volume"
+  },
+  {
+   "item": "Sun: a swap rate extrapolated to step 0",
+   "why": "the only natural 2D tiling with thousands of swaps; its count is not yet stable with the time step",
+   "next": "resolve the unpaired lost and gained contacts, then fit rate against step to step 0 with the moving-Voronoi control's detection efficiency (no new data needed beyond the fetched Bifrost planes)"
+  },
+  {
+   "item": "Froth benchmark on a vertex model with a fixed microscopic rc",
+   "why": "fixes whether the macroscopic count (Rutenberg-McCurdy rule) is rc-free, the rule every stream would quote",
+   "next": "a vertex-model froth with a fixed T1 length, count rule RM at rc and 2rc in the scaling state, against 0.53 +- 0.05"
+  },
+  {
+   "item": "Earth: per-plate rates with a resolution control",
+   "why": "decides whether the Müller-family swap count is plate resolution or a rate shared with an independent history",
+   "next": "merge the family's microplates to Scotese-size plates and recount persistent swaps per plate per 100 Myr"
+  }
+ ],
+ "closed": [
+  [
+   "event-logger",
+   "NEXT 1: explain the single-contact clumps",
+   "done (earth-plates round 1: swaps where one pair shares a second boundary)"
+  ],
+  [
+   "event-logger",
+   "NEXT 2: persistence rule for swaps",
+   "done (pairing.py; earth-plates two-sided k = 5 Myr)"
+  ],
+  [
+   "event-logger",
+   "NEXT 3: close the Müller 2019 seam, second model",
+   "done (earth-plates: rules A, B, C; four models)"
+  ],
+  [
+   "event-logger",
+   "macroscopic count against 0.53",
+   "done (scaling-state froth row); the rc question moves to open item 4"
+  ],
+  [
+   "tissue-null-models",
+   "power diagrams with non-linear weights",
+   "dropped: DICTO's narrowing (linear-motion values suffice for the table)"
+  ],
+  [
+   "tissue-null-models",
+   "curved-film vertex model of coarsening",
+   "moved to open item 4"
+  ],
+  [
+   "earth-plates",
+   "round 1 NEXT 1 and 2: independent model, reorganisations",
+   "done (round 2: NOT CONFIRMED)"
+  ],
+  [
+   "earth-plates",
+   "round 1 NEXT 3 and round 2: Sun and void tissues with the same rules",
+   "done (sun-granulation, cosmic-voids)"
+  ],
+  [
+   "earth-plates",
+   "round 2: per-plate rates and resolution control",
+   "open item 5"
+  ],
+  [
+   "sun-granulation",
+   "lead 1: unpaired lost and gained contacts",
+   "open item 3"
+  ],
+  [
+   "sun-granulation",
+   "lead 2: rate against step, extrapolated to step 0",
+   "open item 3"
+  ],
+  [
+   "sun-granulation",
+   "lead 3: emergent intensity instead of velocity planes",
+   "dropped: DICTO's narrowing (a second observable of the same simulation)"
+  ],
+  [
+   "sun-granulation",
+   "lead 4: Hinode SOT/BFI G-band real series",
+   "dropped: DICTO's narrowing (needs calibration before any swap; reopen after open item 3)"
+  ],
+  [
+   "sun-granulation",
+   "lead 5 and planet-cells lead 4: supergranules (HMI)",
+   "dropped: DICTO's narrowing (box too small or account needed)"
+  ],
+  [
+   "sun-granulation",
+   "lead 6: ratio to #104 swaps per birth",
+   "closed: births at junctions are almost absent, so the ratio is undefined for granulation"
+  ],
+  [
+   "cosmic-voids",
+   "third voxel size (768^3)",
+   "dropped: cause already decided (discreteness); a third size refines an extrapolation only"
+  ],
+  [
+   "cosmic-voids",
+   "comparison-table numbers",
+   "done (this table)"
+  ],
+  [
+   "interstellar-bubbles",
+   "NEXT 1: pairing rule",
+   "done (event-logger pairing section)"
+  ],
+  [
+   "interstellar-bubbles",
+   "NEXT 2: rung 1 at 1024^2",
+   "done (scaling-state froth at 2048^2); rung 3 at 96^3 dropped: DICTO's narrowing"
+  ],
+  [
+   "interstellar-bubbles",
+   "NEXT 3: rung 5 new cell rule; TIGRESS at 1 Myr",
+   "dropped: toy fails as a tiling and real data have no time series"
+  ],
+  [
+   "atmosphere-seaice",
+   "NEXT 1 to 3: pure cell scenes, two-sided splits, image control",
+   "dropped: DICTO's narrowing (rates threefold setting-dependent; the Sun carries the natural 2D rate, open item 3)"
+  ],
+  [
+   "atmosphere-seaice",
+   "NEXT 4: sea ice (SubZero, MODIS), ice-wedge polygons",
+   "dropped: not feasible or no time series"
+  ],
+  [
+   "grains-polycrystals",
+   "Next 1: Ni correspondences from the authors' face table",
+   "dropped: DICTO's narrowing (grain matching too noisy; open item 2 tests a law without matching)"
+  ],
+  [
+   "grains-polycrystals",
+   "Next 2: more accurate 2D scheme",
+   "dropped: DICTO's narrowing (froth benchmark, open item 4, covers the 2D count)"
+  ],
+  [
+   "grains-polycrystals",
+   "Next 3: serial-section test of <F>/2 - 3",
+   "open item 2"
+  ],
+  [
+   "grains-polycrystals",
+   "Next 4: OCP movie count by hand",
+   "dropped: tens of grains, low resolution"
+  ],
+  [
+   "compound-eye-scutoids",
+   "next 1: butterfly volume trace",
+   "done (gw05, gw16: NOT A TEST)"
+  ],
+  [
+   "compound-eye-scutoids",
+   "next 2: D. elpenor negative control",
+   "folded into open item 1 (a control for the first positive test)"
+  ],
+  [
+   "compound-eye-scutoids",
+   "next 3: wasp eye (29 ommatidia)",
+   "folded into open item 1"
+  ],
+  [
+   "compound-eye-scutoids",
+   "next 4: orient the bee scan",
+   "dropped: names model regions only, no new swap data"
+  ],
+  [
+   "compound-eye-scutoids",
+   "set-aside (DICTO): find unevenly curved eye data",
+   "open item 1"
+  ],
+  [
+   "planet-cells",
+   "lead 1: Jupiter south ring through the logger",
+   "closed: the light check already gives 0 swaps; the logger would only classify the 2019 insertion, which is not a swap"
+  ],
+  [
+   "planet-cells",
+   "lead 2: JIRAM PJ31 to PJ77 and north insertions",
+   "dropped: DICTO's narrowing (insertions, no rate)"
+  ],
+  [
+   "planet-cells",
+   "lead 3: Pluto side-number statistics",
+   "dropped: static, no swaps"
+  ],
+  [
+   "yew-cambium",
+   "multi-ring or serial tangential sections",
+   "PARKED by DICTO until an online serial-section data set turns up"
+  ],
+  [
+   "scutoid-lenses",
+   "next 1: camera hole-array or lenslet cap",
+   "dropped: DICTO's narrowing (optics, no bearing on swaps)"
+  ],
+  [
+   "scutoid-lenses",
+   "next 2: compound-eye scutoids",
+   "done (became the compound-eye study)"
+  ],
+  [
+   "scutoid-lenses",
+   "next 3: exact exactly-one optimum",
+   "dropped: DICTO's narrowing (covering geometry, no bearing on swaps)"
+  ]
+ ]
+}
