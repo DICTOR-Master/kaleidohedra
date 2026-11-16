@@ -1,0 +1,95 @@
+== Sym6, exceptional outer automorphism ==
+xi built: bijective homomorphism; transposition -> (2, 2, 2) ; 3-cycle -> (3, 3) ; 6-cycle -> (3, 2, 1)
+twisted class sizes: [36, 144, 180, 180, 180]
+  class size 180: inner-product distribution {Fraction(-1, 5): 70, Fraction(0, 1): 64, Fraction(1, 5): 25, Fraction(2, 5): 20, Fraction(1, 1): 1} homogeneous:True; silent k<=40: [1]  min nonzero tone 4.571e-03
+  class size 180: inner-product distribution {Fraction(-1, 5): 70, Fraction(0, 1): 64, Fraction(1, 5): 25, Fraction(2, 5): 20, Fraction(1, 1): 1} homogeneous:True; silent k<=40: [1]  min nonzero tone 4.571e-03
+  class size 180: inner-product distribution {Fraction(-1, 5): 70, Fraction(0, 1): 64, Fraction(1, 5): 25, Fraction(2, 5): 20, Fraction(1, 1): 1} homogeneous:True; silent k<=40: [1]  min nonzero tone 4.571e-03
+  class size 144: inner-product distribution {Fraction(-1, 5): 55, Fraction(0, 1): 53, Fraction(1, 5): 20, Fraction(2, 5): 15, Fraction(1, 1): 1} homogeneous:True; silent k<=40: [1]  min nonzero tone 4.630e-03
+  class size 36: inner-product distribution {Fraction(-1, 5): 10, Fraction(0, 1): 20, Fraction(1, 5): 5, Fraction(1, 1): 1} homogeneous:True; silent k<=40: [1]  min nonzero tone 4.630e-03
+invariant harmonics of twist group k=1..12: [0, 1, 4, 38, 157, 858, 3437, 14004, 49784, 168235, 525342, 1558747]  zero degrees k<=40: [1]
+== W(H3) Galois twist on S^8 (rotation part = 2I/+-1; inner product (4c^2-1)/3) ==
+  image of R in A5: 10 elements; silent k<=30 on S^8: [1]
+  image of F in A5: 30 elements; silent k<=30 on S^8: [1]
+  image of F in A5: 30 elements; silent k<=30 on S^8: [1]
+  image of X in A5: 20 elements; silent k<=30 on S^8: [1]
+  image of X in A5: 20 elements; silent k<=30 on S^8: [1]
+== W+(H4) on S^15: classes O1 x O2 mod +-; inner product c1*c2; product-rule test ==
+ Galois both: twisted x twisted
+   R  0 x R  0: class size mod+- 200: direct all odd + [2] | product rule all odd + [2] | agree True
+   R  0 x F  4: class size mod+- 300: direct all odd + [2] | product rule all odd + [2] | agree True
+   R  0 x F  5: class size mod+- 300: direct all odd + [2] | product rule all odd + [2] | agree True
+   R  0 x X 25: class size mod+- 200: direct all odd + [2] | product rule all odd + [2] | agree True
+   R  0 x X 32: class size mod+- 200: direct all odd + [2] | product rule all odd + [2] | agree True
+   F  4 x R  0: class size mod+- 300: direct all odd + [2] | product rule all odd + [2] | agree True
+   F  4 x F  4: class size mod+- 900: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   F  4 x F  5: class size mod+- 900: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   F  4 x X 25: class size mod+- 600: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   F  4 x X 32: class size mod+- 600: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   F  5 x R  0: class size mod+- 300: direct all odd + [2] | product rule all odd + [2] | agree True
+   F  5 x F  4: class size mod+- 900: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   F  5 x F  5: class size mod+- 900: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   F  5 x X 25: class size mod+- 600: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   F  5 x X 32: class size mod+- 600: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   X 25 x R  0: class size mod+- 200: direct all odd + [2] | product rule all odd + [2] | agree True
+   X 25 x F  4: class size mod+- 600: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   X 25 x F  5: class size mod+- 600: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   X 25 x X 25: class size mod+- 400: direct [1, 2] | product rule [1, 2] | agree True
+   X 25 x X 32: class size mod+- 400: direct [1, 2] | product rule [1, 2] | agree True
+   X 32 x R  0: class size mod+- 200: direct all odd + [2] | product rule all odd + [2] | agree True
+   X 32 x F  4: class size mod+- 600: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   X 32 x F  5: class size mod+- 600: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   X 32 x X 25: class size mod+- 400: direct [1, 2] | product rule [1, 2] | agree True
+   X 32 x X 32: class size mod+- 400: direct [1, 2] | product rule [1, 2] | agree True
+ Galois left only: twisted x ordinary
+   R  0 x C1(Re=1): |O1||O2|=20: direct all odd + [] | product rule all odd + [] | agree True
+   R  0 x C1(Re=-1): |O1||O2|=20: direct all odd + [] | product rule all odd + [] | agree True
+   R  0 x C30(Re=0): |O1||O2|=600: direct all odd + [] | product rule all odd + [] | agree True
+   R  0 x C20(Re=1/2): |O1||O2|=400: direct all odd + [2] | product rule all odd + [2] | agree True
+   R  0 x C20(Re=-1/2): |O1||O2|=400: direct all odd + [2] | product rule all odd + [2] | agree True
+   R  0 x C12(Re=(-1/4+1/4r5)): |O1||O2|=240: direct all odd + [] | product rule all odd + [] | agree True
+   R  0 x C12(Re=(1/4+1/4r5)): |O1||O2|=240: direct all odd + [] | product rule all odd + [] | agree True
+   R  0 x C12(Re=(-1/4-1/4r5)): |O1||O2|=240: direct all odd + [] | product rule all odd + [] | agree True
+   R  0 x C12(Re=(1/4-1/4r5)): |O1||O2|=240: direct all odd + [] | product rule all odd + [] | agree True
+   F  4 x C1(Re=1): |O1||O2|=30: direct [1, 3] | product rule [1, 3] | agree True
+   F  4 x C1(Re=-1): |O1||O2|=30: direct [1, 3] | product rule [1, 3] | agree True
+   F  4 x C30(Re=0): |O1||O2|=900: direct all odd + [] | product rule all odd + [] | agree True
+   F  4 x C20(Re=1/2): |O1||O2|=600: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   F  4 x C20(Re=-1/2): |O1||O2|=600: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   F  4 x C12(Re=(-1/4+1/4r5)): |O1||O2|=360: direct [1, 3] | product rule [1, 3] | agree True
+   F  4 x C12(Re=(1/4+1/4r5)): |O1||O2|=360: direct [1, 3] | product rule [1, 3] | agree True
+   F  4 x C12(Re=(-1/4-1/4r5)): |O1||O2|=360: direct [1, 3] | product rule [1, 3] | agree True
+   F  4 x C12(Re=(1/4-1/4r5)): |O1||O2|=360: direct [1, 3] | product rule [1, 3] | agree True
+   F  5 x C1(Re=1): |O1||O2|=30: direct [1, 3] | product rule [1, 3] | agree True
+   F  5 x C1(Re=-1): |O1||O2|=30: direct [1, 3] | product rule [1, 3] | agree True
+   F  5 x C30(Re=0): |O1||O2|=900: direct all odd + [] | product rule all odd + [] | agree True
+   F  5 x C20(Re=1/2): |O1||O2|=600: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   F  5 x C20(Re=-1/2): |O1||O2|=600: direct [1, 2, 3] | product rule [1, 2, 3] | agree True
+   F  5 x C12(Re=(-1/4+1/4r5)): |O1||O2|=360: direct [1, 3] | product rule [1, 3] | agree True
+   F  5 x C12(Re=(1/4+1/4r5)): |O1||O2|=360: direct [1, 3] | product rule [1, 3] | agree True
+   F  5 x C12(Re=(-1/4-1/4r5)): |O1||O2|=360: direct [1, 3] | product rule [1, 3] | agree True
+   F  5 x C12(Re=(1/4-1/4r5)): |O1||O2|=360: direct [1, 3] | product rule [1, 3] | agree True
+   X 25 x C1(Re=1): |O1||O2|=20: direct [1] | product rule [1] | agree True
+   X 25 x C1(Re=-1): |O1||O2|=20: direct [1] | product rule [1] | agree True
+   X 25 x C30(Re=0): |O1||O2|=600: direct all odd + [] | product rule all odd + [] | agree True
+   X 25 x C20(Re=1/2): |O1||O2|=400: direct [1, 2] | product rule [1, 2] | agree True
+   X 25 x C20(Re=-1/2): |O1||O2|=400: direct [1, 2] | product rule [1, 2] | agree True
+   X 25 x C12(Re=(-1/4+1/4r5)): |O1||O2|=240: direct [1] | product rule [1] | agree True
+   X 25 x C12(Re=(1/4+1/4r5)): |O1||O2|=240: direct [1] | product rule [1] | agree True
+   X 25 x C12(Re=(-1/4-1/4r5)): |O1||O2|=240: direct [1] | product rule [1] | agree True
+   X 25 x C12(Re=(1/4-1/4r5)): |O1||O2|=240: direct [1] | product rule [1] | agree True
+   X 32 x C1(Re=1): |O1||O2|=20: direct [1] | product rule [1] | agree True
+   X 32 x C1(Re=-1): |O1||O2|=20: direct [1] | product rule [1] | agree True
+   X 32 x C30(Re=0): |O1||O2|=600: direct all odd + [] | product rule all odd + [] | agree True
+   X 32 x C20(Re=1/2): |O1||O2|=400: direct [1, 2] | product rule [1, 2] | agree True
+   X 32 x C20(Re=-1/2): |O1||O2|=400: direct [1, 2] | product rule [1, 2] | agree True
+   X 32 x C12(Re=(-1/4+1/4r5)): |O1||O2|=240: direct [1] | product rule [1] | agree True
+   X 32 x C12(Re=(1/4+1/4r5)): |O1||O2|=240: direct [1] | product rule [1] | agree True
+   X 32 x C12(Re=(-1/4-1/4r5)): |O1||O2|=240: direct [1] | product rule [1] | agree True
+   X 32 x C12(Re=(1/4-1/4r5)): |O1||O2|=240: direct [1] | product rule [1] | agree True
+ product rule agrees with direct sums on all classes: True
+== 2T with outer automorphism (conjugation by (1+i)/sqrt2: (w,x,y,z)->(w,x,-z,y)) ==
+  2T twisted class size 6 (base Re=1): silent k<=30: [3]  cos distribution {'1': 1, '0': 1, '1/2': 4}
+  2T twisted class size 6 (base Re=-1): silent k<=30: [3]  cos distribution {'1': 1, '0': 1, '1/2': 4}
+  2T twisted class size 12 (base Re=0): silent k<=30: all odd + []  cos distribution {'1': 1, '-1': 1, '0': 2, '1/2': 4, '-1/2': 4}
+time 1.574113130569458
+FINAL done

@@ -1,0 +1,162 @@
+2I closed under multiplication: OK (120 elements)
+sigma is an automorphism of 2I (all 14400 pairs): OK
+sigma involution: True
+sigma inner? conjugators found: 0
+fixed subgroup order of sigma: 6
+coordinatewise Galois conjugation preserves 2I: False
+twisted class sizes: [20, 30, 30, 20, 20]
+ordinary class sizes and Re: [(1, 1), (1, -1), (30, 0), (20, 1/2), (20, -1/2), (12, (-1/4+1/4r5)), (12, (1/4+1/4r5)), (12, (-1/4-1/4r5)), (12, (1/4-1/4r5))]
+ twisted class 0: size 20, contains 1: True, antipode class 0
+ twisted class 1: size 30, contains 1: False, antipode class 2
+ twisted class 2: size 30, contains 1: False, antipode class 1
+ twisted class 3: size 20, contains 1: False, antipode class 4
+ twisted class 4: size 20, contains 1: False, antipode class 3
+nine characters orthonormal: True
+  1 o sigma = ['1']
+  2 o sigma = ["2'"]
+  2' o sigma = ['2']
+  3 o sigma = ["3'"]
+  3' o sigma = ['3']
+  4 o sigma = ['4']
+  4s o sigma = ['4s']
+  5 o sigma = ['5']
+  6 o sigma = ['6']
+Table 2:
+  V_1 = 2
+  V_2 = 3
+  V_3 = 4s
+  V_4 = 5
+  V_5 = 6
+  V_6 = 3' + 4
+  V_7 = 2' + 6
+  V_8 = 4 + 5
+  V_9 = 4s + 6
+  V_10 = 3 + 3' + 5
+  V_11 = 2 + 4s + 6
+  V_12 = 1 + 3 + 4 + 5
+  V_13 = 2 + 2' + 4s + 6
+  V_14 = 3 + 3' + 4 + 5
+  V_15 = 4s + 2*6
+  V_16 = 3' + 4 + 2*5
+  V_17 = 2' + 4s + 2*6
+  V_18 = 3 + 3' + 2*4 + 5
+  V_19 = 2 + 2' + 4s + 2*6
+  V_20 = 1 + 3 + 3' + 4 + 2*5
+  V_21 = 2 + 2*4s + 2*6
+  V_22 = 2*3 + 3' + 4 + 2*5
+  V_23 = 2 + 2' + 2*4s + 2*6
+  V_24 = 1 + 3 + 3' + 2*4 + 2*5
+multiplicities nondecreasing k->k+12 (k<=48): True
+Twisted character products chi~(Oi)*chi~(Oj) (J^2=1 normalisation), rows=irreps:
+  1:
+       [1, 1, 1, 1, 1]
+       [1, 1, 1, 1, 1]
+       [1, 1, 1, 1, 1]
+       [1, 1, 1, 1, 1]
+       [1, 1, 1, 1, 1]
+  2:
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+  2':
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+  3:
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+  3':
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+  4:
+       [4, 0, 0, -2, -2]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [-2, 0, 0, 1, 1]
+       [-2, 0, 0, 1, 1]
+  4s:
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, -3, 3]
+       [0, 0, 0, 3, -3]
+  5:
+       [1, -1, -1, 1, 1]
+       [-1, 1, 1, -1, -1]
+       [-1, 1, 1, -1, -1]
+       [1, -1, -1, 1, 1]
+       [1, -1, -1, 1, 1]
+  6:
+       [0, 0, 0, 0, 0]
+       [0, -2, 2, 0, 0]
+       [0, 2, -2, 0, 0]
+       [0, 0, 0, 0, 0]
+       [0, 0, 0, 0, 0]
+  class 0: order of (x sigma)^2 = x*sigma(x) in 2I: 1  => order of x.sigma = 2
+  class 1: order of (x sigma)^2 = x*sigma(x) in 2I: 4  => order of x.sigma = 8
+  class 2: order of (x sigma)^2 = x*sigma(x) in 2I: 4  => order of x.sigma = 8
+  class 3: order of (x sigma)^2 = x*sigma(x) in 2I: 3  => order of x.sigma = 6
+  class 4: order of (x sigma)^2 = x*sigma(x) in 2I: 3  => order of x.sigma = 6
+Direct exact signatures of the twisted classes, k<=60:
+  class 0 size 20: silent all odd + [2]  tones rational: True nonneg: True T1..T8=['0', '0', '0', '1/25', '0', '1/7', '0', '2/15']
+     Theorem-1 prediction equals direct: True
+  class 1 size 30: silent [1, 2, 3, 6]  tones rational: True nonneg: True T1..T8=['0', '0', '0', '1/25', '1/18', '0', '1/24', '1/45']
+     Theorem-1 prediction equals direct: True
+  class 2 size 30: silent [1, 2, 3, 6]  tones rational: True nonneg: True T1..T8=['0', '0', '0', '1/25', '1/18', '0', '1/24', '1/45']
+     Theorem-1 prediction equals direct: True
+  class 3 size 20: silent [1, 2, 5, 7]  tones rational: True nonneg: True T1..T8=['0', '0', '3/16', '1/25', '0', '1/28', '0', '1/20']
+     Theorem-1 prediction equals direct: True
+  class 4 size 20: silent [1, 2, 5, 7]  tones rational: True nonneg: True T1..T8=['0', '0', '3/16', '1/25', '0', '1/28', '0', '1/20']
+     Theorem-1 prediction equals direct: True
+sizes X,F,R: 20 30 20  norms^2: (3+1r5) (3+1r5) (3+1r5)
+all 120 R^5 points distinct: True
+antipodal 20-class index: [0]  non-antipodal 20-classes: [3, 4]  30-classes: [1, 2]
+  Gram isomorphism of 120-point R^5 configuration onto 2I with X->class 3, F->class 1, R->class 0: FOUND
+  Gram isomorphism of 120-point R^5 configuration onto 2I with X->class 3, F->class 2, R->class 0: none
+  X from R^5 coordinates, k<=60: silent [1, 2, 5, 7]
+  -X from R^5 coordinates, k<=60: silent [1, 2, 5, 7]
+  F from R^5 coordinates, k<=60: silent [1, 2, 3, 6]
+  -F from R^5 coordinates, k<=60: silent [1, 2, 3, 6]
+  R from R^5 coordinates, k<=60: silent all odd + [2]
+  |Aut(Gram X)| = 120
+  |Aut(Gram F)| = 120
+  |Aut(Gram R)| = 240
+  control perms of (3,3,3,2,0) (20 pts): silent k<=30: [1, 2]
+  control perms of (1.7,1.7,1.7,0.6,0) (20 pts): silent k<=30: [1, 2]
+  control perms of (2,2,1,1,0) (30 pts): silent k<=30: [1, 2]
+  control perms of (3,3,2,2,0) (30 pts): silent k<=30: [1, 2]
+  control perms of (1,1,1,0,0) (10 pts): silent k<=30: [1, 2]
+p3 at (phi^2,phi^2,1,1,0) centred: 0  p3 at X: (-3-6/5r5)
+Ordinary classes signatures k<=60:
+  size 30 Re=0 order 4: silent all odd + [] | Chebyshev zeros U_k(Re)=0: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23]
+  size 20 Re=1/2 order 6: silent [2, 5] | Chebyshev zeros U_k(Re)=0: [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35]
+  size 20 Re=-1/2 order 3: silent [2, 5] | Chebyshev zeros U_k(Re)=0: [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35]
+  size 12 Re=(-1/4+1/4r5) order 5: silent [4] | Chebyshev zeros U_k(Re)=0: [4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54, 59]
+  size 12 Re=(1/4+1/4r5) order 10: silent [4] | Chebyshev zeros U_k(Re)=0: [4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54, 59]
+  size 12 Re=(-1/4-1/4r5) order 5: silent [4] | Chebyshev zeros U_k(Re)=0: [4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54, 59]
+  size 12 Re=(1/4-1/4r5) order 10: silent [4] | Chebyshev zeros U_k(Re)=0: [4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54, 59]
+Prop 5 class pairs:
+  C Re=(-1/4+1/4r5) (order 5); sigmaC Re=(-1/4-1/4r5); C u -sigmaC: (24, [3, 4, 5, 9, 15])  C u -C: (24, 'all odd + [4]')  C u sigmaC: (24, [4])
+  C Re=(1/4+1/4r5) (order 10); sigmaC Re=(1/4-1/4r5); C u -sigmaC: (24, [3, 4, 5, 9, 15])  C u -C: (24, 'all odd + [4]')  C u sigmaC: (24, [4])
+  C Re=(-1/4-1/4r5) (order 5); sigmaC Re=(-1/4+1/4r5); C u -sigmaC: (24, [3, 4, 5, 9, 15])  C u -C: (24, 'all odd + [4]')  C u sigmaC: (24, [4])
+  C Re=(1/4-1/4r5) (order 10); sigmaC Re=(1/4+1/4r5); C u -sigmaC: (24, [3, 4, 5, 9, 15])  C u -C: (24, 'all odd + [4]')  C u sigmaC: (24, [4])
+all 6 pairs of 12-point classes:
+   Re (-1/4+1/4r5) + Re (1/4+1/4r5): (24, [3, 4, 5, 9, 15])
+   Re (-1/4+1/4r5) + Re (-1/4-1/4r5): (24, [4])
+   Re (-1/4+1/4r5) + Re (1/4-1/4r5): (24, 'all odd + [4]')
+   Re (1/4+1/4r5) + Re (-1/4-1/4r5): (24, 'all odd + [4]')
+   Re (1/4+1/4r5) + Re (1/4-1/4r5): (24, [4])
+   Re (-1/4-1/4r5) + Re (1/4-1/4r5): (24, [3, 4, 5, 9, 15])
+V_15 = {'4s': 1, '6': 2}  V_13 = {'2': 1, "2'": 1, '4s': 1, '6': 1}  V_17 = {"2'": 1, '4s': 1, '6': 2}  V_19 = {'2': 1, "2'": 1, '4s': 1, '6': 2}  V_14 = {'3': 1, "3'": 1, '4': 1, '5': 1}  V_18= {'3': 1, "3'": 1, '4': 2, '5': 1}
+time 2.960218906402588
+FINAL done
