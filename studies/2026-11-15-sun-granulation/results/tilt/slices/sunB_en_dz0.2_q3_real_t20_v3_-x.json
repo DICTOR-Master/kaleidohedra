@@ -1,0 +1,68 @@
+{
+ "block": "sunB_en_dz0.2_q3_real",
+ "theta": 20.0,
+ "v": 3.0,
+ "az": "-x",
+ "rev": false,
+ "half": false,
+ "planes": 386,
+ "step_h_s": 9.396926207859085,
+ "core_volume_Mm2min": 1865.9425547996982,
+ "core_events": {
+  "birth": 84,
+  "swap": 101,
+  "clump": 380,
+  "split": 127,
+  "death": 90,
+  "merge": 111,
+  "relabel": 75
+ },
+ "core_swaps_twostep": 13,
+ "core_swaps_all": 114,
+ "core_swaps_persistent": 103,
+ "core_clump_patterns": {
+  "born 0 died 0 lost 0 gained 1": 99,
+  "born 0 died 0 lost 1 gained 0": 90,
+  "born 1 died 0 lost 0 gained 1": 24,
+  "born 0 died 1 lost 1 gained 0": 18,
+  "born 1 died 0 lost 1 gained 1": 17,
+  "born 1 died 0 lost 0 gained 0": 12,
+  "born 0 died 1 lost 0 gained 0": 11,
+  "born 0 died 0 lost 2 gained 0": 11
+ },
+ "truth_core": {
+  "cell first appears": 137,
+  "piece splits off": 87,
+  "cell vanishes": 118,
+  "piece of a present cell vanishes": 240,
+  "new piece of a present cell": 222,
+  "pieces of one cell join": 71
+ },
+ "boundary_events": {
+  "clump": 757,
+  "birth": 107,
+  "split": 99,
+  "death": 106,
+  "relabel": 102,
+  "swap": 376,
+  "merge": 90
+ },
+ "interior_outside_core": {
+  "birth": 109,
+  "split": 191,
+  "death": 121,
+  "relabel": 188,
+  "merge": 223,
+  "clump": 252,
+  "swap": 35
+ },
+ "planes_failing_euler": 105,
+ "balance_failures": 0,
+ "planes_cells_in_several_pieces": 1820,
+ "digital_fragments_reassigned": 501,
+ "seconds": 9.9,
+ "morse_interior_cells": {
+  "holds": 155,
+  "fails": 76
+ }
+}

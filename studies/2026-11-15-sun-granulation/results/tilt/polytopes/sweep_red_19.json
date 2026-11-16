@@ -1,0 +1,28 @@
+{
+ "stage": "red",
+ "seed": 19,
+ "corners": 600,
+ "cells": 120,
+ "faces": 720,
+ "edges": 1200,
+ "steps": {
+  "1": {
+   "frames": 599,
+   "counts": {
+    "birth": 116,
+    "swap": 366,
+    "death": 116
+   },
+   "clump_patterns": {},
+   "frames_failing": [],
+   "n_frames_failing": 0,
+   "balance_failures": [],
+   "n_balance_failures": 0,
+   "triple_formulas": {
+    "True": 599
+   },
+   "ok": true
+  }
+ },
+ "neg_control_caught": true
+}

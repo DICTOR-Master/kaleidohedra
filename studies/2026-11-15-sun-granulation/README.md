@@ -60,7 +60,17 @@ moves). Nothing here assumes or tests any influence of one system on another.
    corner argument of #104 Theorem 1 carries over to a simple space-time cell complex; births, swaps and deaths per volume are fixed
    in every generic direction only if the cells are convex in space-time. A space-time Poisson-Voronoi block shows it exactly
    (within 2% over 9 directions). The Sun's tracked cells are balls but not convex at a tilt, and the time direction is the
-   non-generic one (2.5 times fewer swaps than the tilts); the 3D connected components of upflow percolate. Full run waits for DICTO.
+   non-generic one (2.5 times fewer swaps than the tilts); the 3D connected components of upflow percolate.
+   Full run (16 Nov, 153 blocks, 15 directions): the convex-cell theorem (stated and proved in that section) holds exactly on 15
+   space-time Poisson-Voronoi blocks (no index-0/4 corner, births and deaths within the boundary bound in every direction, swaps
+   within 2.7%) and the #104 sweeps stay exact in 3 more directions; the Sun's swaps, births and deaths per volume differ over the
+   tilts by 1.2 to 3.6 times the Poisson-Voronoi spread in every labelling and depth: NOT CONFIRMED, as predicted.
+12. **Granule tubes are mostly scutoids in space-time** (16 Nov, DICTO's reading of the skeleton render; section "Granule tubes in
+   space-time"): of the tracked tubes wholly inside the 40-min block and lasting 3 min or more, 87 to 98% change neighbours along t
+   (0.89 at 0.1 Mm and 10 s), every tube over 6 min does, prisms are short and small; the share stays within 0.06 over depth, run,
+   tracking tolerance and steps 10 to 40 s and within 0.11 including 80 s (CONSISTENT), but the counts of changes and extra corners
+   per tube are NOT stable, and shuffled frames still leave long scutoid-like "tubes" (large static regions), so the share is not
+   specific to the real time order.
 
 ## Method
 
@@ -518,7 +528,7 @@ Prior art for this section: PRIOR_ART.md, "Persistence and recurrence of the gra
 "persistence or recurrence?" of averaged intensity images; Roudier and co-workers' trees of fragmenting granules; Hoekzema and
 co-workers' persistency regions).
 
-## Space-time slicing at a tilt (16 Nov 2026; DICTO's question; SCOPE and pilot only)
+## Space-time slicing at a tilt (16 Nov 2026; DICTO's question; scope, pilot and full run)
 
 DICTO, 16 Nov 2026: "are there scutoid structures that transcend persistence or recurrence, is it possible that time is not running
 in a linear direction". In DICTO's #104 (Scutoid Tissues in Four Dimensions) a sweep through a simple 4-polytope gives a tissue
@@ -526,7 +536,7 @@ whose births, swaps and deaths are fixed by the h-vector, the same for every gen
 among many. The test asked for: stack the granulation frames into one 3D space-time block, label the cells as 3D regions of the block,
 cut the block by planes tilted away from the time axis, and see whether births, deaths and swaps per unit of swept volume stay fixed
 across directions. This section is about the geometry of the block only; it makes no claim about physical time. DICTO approved the
-scope on 16 Nov 2026; the full run waits for him.
+scope on 16 Nov 2026 and the full run the same day.
 
 ### Theory: what carries over from #104, and on what conditions
 
@@ -577,6 +587,46 @@ What would count as the h-vector-like invariance in the Sun: births, deaths and 
 theta = 0, 15 and 30 degrees and for v from half to twice the granule speed, within the spread of the Poisson-Voronoi control,
 together with the Morse identity holding cell by cell. The theory says this happens only if the granules' space-time cells are
 close to convex.
+
+### The convex-cell theorem (extends DICTO's #104 Theorem 1)
+
+**Theorem.** Let a region of space-time (x, y, t) be filled by a *simple* cell complex (four edges and four cells at every corner,
+three cells round every edge, two cells sharing at most one wall) whose cells are *convex* polytopes. Let h be a linear function that
+is generic for the complex (no two corners at the same value, h not constant on any edge), and sweep the planes h = c upwards.
+1. The plane's tiling changes only when the plane passes a corner. A corner with i of its four edges below it has i = 1, 2 or 3,
+   and the plane then gains a three-sided cell (i = 1), makes one swap (i = 2) or loses a three-sided cell (i = 3).
+2. The corners with i = 1 are exactly the lowest corners of the cells, and those with i = 3 the highest. So for any region R:
+   births(R) = cells whose lowest corner lies in R, deaths(R) = cells whose highest corner lies in R,
+   swaps(R) = corners(R) - births(R) - deaths(R).
+3. For two generic directions the births in R differ by at most the number of cells with corners both inside and outside R, the
+   deaths likewise, and the swaps by at most twice that number.
+4. Hence, per unit volume, in a large region of a complex with finite mean cell size: **births = deaths = cells, and swaps =
+   corners - 2 x cells, in every generic direction and for every speed scale v**; swaps per birth = (corners per cell) - 2 = k/2 - 3,
+   where k is the mean number of walls of a cell.
+
+*Proof.* (1) Near a corner p the four cells fill a neighbourhood, and by convexity and simplicity cell C_j's cone at p is spanned by
+the three edges other than e_j. If all four edges went up (i = 0), the four cones would lie in the half-space above p and could not
+fill a neighbourhood; i = 4 likewise. If only e_j goes down (i = 1), just below p the plane meets only e_j near p, where the three
+cells holding e_j meet at a junction; C_j's cone lies wholly above, so C_j appears just above p as a small triangle: a birth. i = 3 is
+the mirror image: a death. If e_1 and e_2 go down (i = 2), just below p the plane cuts e_1 and e_2, the ends of the wall they span,
+which is shared by the two cells holding both, C_3 and C_4; so C_3 and C_4 touch and C_1, C_2 do not. Just above, the plane cuts e_3,
+e_4 and the wall between C_1 and C_2: the 2-2 swap. Away from the corners the plane crosses walls and edges transversally
+(genericity), each cell's section is one convex polygon that deforms continuously, and the tiling does not change.
+(2) A generic linear function on a convex polytope has one lowest point, and it is a vertex (the basic fact of linear programming).
+There all three edges of the cell go up, so the fourth edge, which is not on that cell, goes down: i = 1, and this cell is the one
+born. Conversely, at a corner with i = 1 the cell whose cone lies above is born there, so the corner is its lowest point. The same
+holds for i = 3 and highest points; every corner in R has i = 1, 2 or 3, which gives the swaps. (3) A cell whose corners all lie in
+R has its lowest corner in R in every direction, and a cell with no corner in R in none; only cells with corners on both sides can
+count in one direction and not in another. (4) Those cells grow as the surface of R, the others as its volume. A change of v is the
+linear map x -> x / v of the block: it keeps convexity, simplicity, the corners and the cells, so the counts in the block's own
+(x, y, t) do not depend on v. Swaps per birth: each corner lies on four cells, so corners per cell = (corners of a cell) / 4, and a
+simple polytope with k faces has 2k - 4 corners. QED
+
+This is DICTO's #104 Theorem 1 (a generic sweep of a simple 4-polytope makes one birth, swap or death at each corner, fixed by its
+index, so the counts are the h-vector and the same in every direction) carried from the closed boundary of a 4-polytope to an open
+space-time complex with convex cells; parts 2 to 4 put the cell and corner densities where #104 has the h-vector, as
+studies/2026-11-15-tissue-null-models (THEORY section 2) does for sections of normal 3D tessellations. Items 1 to 6 of the theory
+above say what happens without convexity. The synthetic evidence is in "Full-run result" below.
 
 ### Pilot plan (written 16 Nov 2026 BEFORE the pilot ran; scripts/spacetime_tilt.py, job sun-tilt-pilot)
 
@@ -711,7 +761,7 @@ counting error of this small block. Nothing here is a statement about physical t
 6. The tracked cells' count of corners (714) gives a convex prediction (416 swaps) that the data cannot reach while cells are
    non-convex; the swap count is then a property of the shapes, not of the h-vector.
 
-### Full-run plan (not started; waits for DICTO)
+### Full-run plan (written 16 Nov 2026 before the run; DICTO approved it the same day)
 
 - Job sun-tilt (plan file in the job system, written 16 Nov 2026); scripts/spacetime_tilt.py and scripts/tilt_pilot.sh extended
   to a task list. All four 12 x 12 Mm quadrants of the 24 x 24 Mm box as independent blocks (4 times the pilot volume), depths 0,
@@ -744,6 +794,223 @@ counting error of this small block. Nothing here is a statement about physical t
   directions at v >= 3 km/s only (or in some quadrants only), controls passing; **NOT CONFIRMED** if the tilted directions differ by
   more than 2 s_PV, or the shuffled control does not break the invariance.
 
+
+### Full-run definitions and a second pilot (fixed 16 Nov 2026 BEFORE the full run)
+
+- Blocks: quadrant q = 0..3 is the 250 x 250 pixel sub-box at offset (0 or 252, 0 or 252) of the 504-pixel box; core margin in t 60
+  frames for en024048_hion (242 frames), 25 frames for the 101-frame quiet-Sun run (its core is 50 frames; the plan's margin rule
+  holds there only up to theta = 20 degrees at v = 3 km/s, and its tilted counts are read with that caveat). The core test is
+  symmetric under mirroring and time reversal. Labelling A2 = per-frame census markers (connected upflow above mean + 0.25 std,
+  smoothing 1.5, under 4 pixels dropped) linked frame to frame only by mutual best overlap, then a 3D watershed of uz.
+- Directions: tilt towards -x and +y is done by mirroring / transposing the block; the time-reversed run slices L[::-1] along the
+  mirrored family with its planes shifted so that they are the forward planes taken in reverse order (same planes, same voxels).
+- Counts per core volume: persistent swaps (as the pilot), logger births, logger deaths. Spread of a block over a set of directions
+  = standard deviation / mean. TILT = the 14 tilted directions; TILT3 = the 13 tilted directions at v >= 3 km/s. s_PV = median spread
+  of the 15 Poisson-Voronoi blocks through the same pipeline (per quantity and set). A Sun group (labelling, run, depth, frame order)
+  sums its four quadrants per direction; each quadrant alone is compared with s_PV x sqrt(n_PV / n_quadrant) (n = mean count per
+  direction), because a quadrant has fewer events than a Poisson-Voronoi block. Morse rate = share of interior cells for which
+  pieces born - joins = Euler number, mean over TILT; the control-1 rate is its median over the Poisson-Voronoi blocks.
+- Verdict per Sun group, as written in the plan: ESTABLISHED if the spreads over TILT are at most s_PV for swaps, births and deaths,
+  every quadrant is within its scaled yardstick, the Morse rate reaches the control-1 rate, control 1 passes (exact counts within 3%
+  in every Poisson-Voronoi block) and the shuffled group breaks (spread of swaps and births over 3 s_PV, Morse rate under half the
+  real one); CONSISTENT if the spreads over TILT3 are at most s_PV and control 1 passes; NOT CONFIRMED if any spread over TILT is over
+  2 s_PV or the shuffled group does not break; anything else is NOT CONFIRMED too (never upgraded).
+- Control 1 adds the theorem's finite form (item 3 above): births and deaths in the core lie between the cells wholly inside the core
+  and that number plus the cells straddling its boundary, in every direction.
+- Second pilot (job sun-tilt-pilot2, 16 Nov, under 5 min): blocks 2 to 27 s, slices 5 to 9 s. The time-reversed Poisson-Voronoi slice
+  ran on exactly the forward planes (471 each) and gave 290 swaps against 291, 53 births against 52 deaths and 58 deaths against 57
+  births: the slicer is reversible, the shared event logger is not exactly mirror-symmetric (its birth and death rules and the
+  pairing of two-step swaps differ in small details). Control 3 is therefore read as "equal within the logger's asymmetry"; the
+  table gives the differences. In the same pilot the 1.0 std labelling A had its largest marker at 5.3% of the upflow (gated) and A2
+  at 4.3%.
+
+### Full-run result (job sun-tilt, FINAL ok: 153 blocks, 2370 slice runs, 40 tube runs; control 4 job sun-tilt-poly, FINAL ok; tables by scripts/tilt_full_summary.py, results/tilt/summary.md)
+
+**Control 1, space-time Poisson-Voronoi, exact (the theorem's synthetic evidence).** 15 blocks (seeds 1 to 5 x seed time scales
+1.5, 3, 6 km/s), 15 directions each, exact corner indices from the Delaunay tetrahedra: no corner of index 0 or 4 in any of the 225
+block-directions (theorem part 1); in every block and direction the births and deaths in the core lie between the cells wholly inside
+the core and that number plus the cells straddling its boundary (theorem part 3: 15 of 15 blocks, all directions). Swaps vary over
+the 15 directions by at most 2.7% in every block. Births and deaths vary by 3.5 to 11.4%, so the plan's "within 3%" FAILS for them in
+all 15 blocks: with the 600 s time margin the cores are small (1 to 213 cells wholly inside against 220 to 471 straddling), so the
+boundary term of part 3 is large; it falls with block size as the theorem says (largest ranges at time scale 1.5 km/s, where cells
+are longest in t: 5 to 11%; 3.5 to 8.7% at 3 and 6 km/s). Swaps per birth 4.03 to 5.06 (bulk value 4.77). So the theorem holds
+exactly where it is exact (parts 1 and 3), and the bulk invariance (part 4) shows as far as these block sizes allow.
+
+**Control 4, #104 polytope sweeps in three more directions (seeds 13, 17, 19): PASS**, 9 of 9 exact: 116 / 366 / 116,
+716 / 966 / 716, 716 / 2166 / 716, every frame passing, the logger's negative control caught in every sweep.
+
+**Pipeline yardstick s_PV** (median direction spread of the 15 blocks through the voxel pipeline, 14 tilts): persistent swaps 0.059,
+births 0.075, deaths 0.081 (13 tilts at v >= 3: 0.057, 0.070, 0.079); detected / exact swaps 0.45 to 0.65; Morse rate 0.85.
+Half the plane step gives 14% more persistent swaps (fewer clumps), on the Poisson-Voronoi block and on the Sun alike (16%).
+
+**Control 2, moving Voronoi: FAILS as written.** Births + deaths are 0 at theta = 0 (seeds 1 and 2), 1 to 6% of swaps at 10 and
+20 degrees but 6 to 16% at 30 and 13 to 20% at 45 degrees, although the fastest seed stays slower than v cot(theta). The plan
+assumed the stacked moving-Voronoi cells behave as convex; their walls are curved in space-time (ruled by the seed motion), so a
+tilted plane cuts them into extra pieces, as theory item 4 says of non-convex cells. It is not a known-answer control for tilts.
+
+**Control 3, time reversal: same planes (every direction), counts equal within 2.4 to 3.8%** (Poisson-Voronoi, moving Voronoi,
+Sun B quadrant 0): the slicer is reversible; the shared logger's small asymmetry (second pilot) remains. Not "identical": FAIL as
+written, explained.
+
+**Sun.** Per core volume (sum of the four quadrants, per 1000 Mm2 min), labelling B (census tracks), en024048_hion at 0.1 Mm:
+persistent swaps 16 at theta = 0 against 42 to 63 over the tilts (46 to 48 at 45 degrees, 42 at v = 1.5, 56 at v = 6); new pieces of
+a present cell 0 at theta = 0, 52 to 54 at 10, 88 to 90 at 20, 127 to 128 at 30, 150 to 154 at 45 degrees (75 at v = 6, 159 at v = 1.5):
+the pieces rise with tan(theta) / v, the cells are not convex in space-time.
+
+| group (quadrants) | spread over 14 tilts, swaps / births / deaths (in s_PV) | over 13 tilts at v >= 3 | theta 0 / tilt mean (swaps) | Morse | verdict |
+|---|---|---|---|---|---|
+| B, en, 0 / 0.1 / 0.2 Mm (4) | 1.9 / 3.6 / 3.3; 1.8 / 3.0 / 2.7; 2.2 / 3.3 / 3.4 | 1.6 / 3.5 / 2.9; 1.6 / 2.8 / 2.4; 1.9 / 3.3 / 3.0 | 0.34; 0.30; 0.25 | 0.57 to 0.60 | NOT CONFIRMED |
+| B, quiet Sun 0.1 Mm (4; short core) | 8.9 / 5.8 / 4.8 | 8.1 / 6.0 / 4.7 | 0.65 | 0.44 | NOT CONFIRMED |
+| A2, en, 0 / 0.1 / 0.2 Mm (4) | 1.3 / 2.2 / 1.0; 1.6 / 2.2 / 0.9; 2.0 / 2.4 / 1.7 | 1.1 / 2.1 / 0.8; 1.2 / 2.1 / 1.0; 1.9 / 2.3 / 1.6 | 0.55; 0.43; 0.33 | 0.63 to 0.68 | NOT CONFIRMED |
+| A2, quiet Sun (4) | 7.1 / 3.3 / 1.9 | 6.9 / 2.9 / 1.6 | 0.96 | 0.67 | NOT CONFIRMED |
+| A 1.5 std, en, 0 / 0.1 / 0.2 Mm (3, 4, 2 pass the gate) | 1.5 / 1.0 / 0.9; 1.7 / 2.3 / 0.7; 2.1 / 2.5 / 1.6 | 1.5 / 0.9 / 0.9; 1.8 / 2.2 / 0.6; 2.3 / 2.3 / 1.4 | 0.61; 0.60; 0.54 | 0.63 to 0.66 | NOT CONFIRMED |
+| A 1.0 std, en (1, 3, 1 pass) | 1.3 / 2.4 / 1.3; 1.2 / 2.7 / 0.6; 1.5 / 2.2 / 1.3 | | 0.72 to 0.77 | 0.59 to 0.67 | NOT CONFIRMED |
+| A 0.5 std, en (0 pass) | percolates in every quadrant (largest marker 8 to 92% of the upflow) | | | | not tested |
+
+No quadrant of any real group is within its counting-scaled yardstick for all three counts, except one quadrant of A 1.5 std at
+0 Mm. Shuffled frames (seeds 7 and 8) break labellings B and A2 as required (swaps 4.1 to 6.5 s_PV, births 5.5 to 9.6 s_PV; Morse
+rate 0.02 for B and 0.26 to 0.31 for A2, under half the real one) but NOT labelling A (Morse 0.35 to 0.43 against 0.59 to 0.67).
+
+**Verdict (Part A, per labelling and depth): NOT CONFIRMED everywhere**, as predicted before the run. The nearest to invariance is
+labelling A at 1.5 std, 0 Mm (births and deaths within s_PV, swaps 1.5 s_PV, 3 quadrants). The controls that test the theorem itself
+(1 in its exact parts, 4) pass; control 1's 3% rule for births and deaths and controls 2 and 3 as written fail, for the reasons
+given. The time direction is the least generic one in every Sun labelling (theta = 0 gives 25 to 77% of the tilted swap rate, 96%
+only in the short quiet-Sun core). Nothing here is a statement about physical time.
+
 Files: scripts/spacetime_tilt.py (blocks, checks, exact Poisson-Voronoi corners, tilted slicing and logging), scripts/tilt_pilot.sh
 (job sun-tilt-pilot), scripts/tilt_summary.py (tables); results/tilt-pilot/ (blocks.jsonl, one JSON per block and direction, logs).
-The blocks themselves (data/tilt/*.npz) stay on the compute machine.
+Full run: scripts/tilt_full.sh (job sun-tilt, Parts A and B), tilt_full_summary.py (tables and verdict rules), tilt_pilot2.sh (job
+sun-tilt-pilot2), tilt_polytopes.sh and tilt_polytopes_check.py (job sun-tilt-poly); results/tilt/ (blocks.jsonl, slices/ one JSON per
+block and direction, tubes/, polytopes/, summary.json, summary.md); results/tilt-pilot2/. The blocks (data/tilt*/*.npz), per-tube
+files and logs stay on the compute machine.
+
+## Granule tubes in space-time: prisms and scutoids (16 Nov 2026; DICTO's question)
+
+DICTO, 16 Nov 2026: "on the sun skeleton render I think the dark patches are more like scutoid shapes". The reading he confirmed: the
+dark patches of the 10-minute lane stack (RENDER-sun-skeleton) are shadows of each granule's history, its tube through space-time
+(x, y, t). A granule that keeps the same neighbours all its life is a PRISM in space-time; one whose neighbours change along t is a
+SCUTOID in space-time, with extra corners on its lateral surface at the moments of change. Time plays the apico-basal role of the
+epithelial scutoid (the scutoid: Gómez-Gálvez et al. 2018, Nature Communications 9, 2960). This is a statement about the geometry
+of the space-time block, not about physical time.
+
+### Plan, definitions and predictions (written 16 Nov 2026 BEFORE the run; scripts/spacetime_scutoids.py, job sun-tilt)
+
+- Tubes: the census cells of every frame (threshold 0.25, smoothing 1.5) on the whole 24 x 24 Mm periodic box, labelled through
+  time by the census overlap rule (mutual largest overlap, tiles.match), so no tube touches a side; a tube is used when it does not
+  touch the first or last frame (wholly inside the block). Tubes that run past either end are counted apart (how many, and how many
+  already show a change). Main sample: tubes of 3 min or more (3 frames even at an 80 s step).
+- Neighbours along t: contact series of the tube with each other tube over its life; contact runs shorter than 60 s are removed, then
+  gaps shorter than 60 s are filled (the 60 s of the census persistence rule). PRISM: every series constant; SCUTOID: otherwise. A
+  change is typed "between living tubes" (the neighbour exists from 60 s before to 60 s after) or "birth or death".
+- Lateral extra corners: corner windows (2 x 2 x 2 voxels with four or more tubes) joined by 26-connectivity; lateral to a tube when
+  the corner's frames do not include the tube's first or last frame; a swap corner when no tube of it starts or ends there (+-1
+  frame), else a birth or death corner. No flicker filter on corners.
+- Per run: share of scutoid tubes (3 min or more) and share with at least one lateral corner; distribution of changes and corners
+  per tube; both per minute of life; share by lifetime (0-3, 3-6, 6-10, 10+ min) and by size quartile; Spearman correlations of
+  changes and corners with lifetime and mean area; quadrant shares.
+- Settings: time step 10, 20, 40, 80 s at depths 0, 0.1, 0.2 Mm (en024048_hion) and in the quiet-Sun run (0.1 Mm); tracking
+  tolerance 0, 0.3, 0.5, 0.7 (a mutual-best link is kept only if the overlap is at least that share of the larger area; 0 = census).
+- Nulls and controls: (N1) space-time Poisson-Voronoi blocks of Part A (5 seeds x 3 time scales): every cell is convex, so seen
+  along t every corner except its lowest and highest is lateral and changes its neighbours: the exact scutoid share is 1, and the
+  exact lateral corners per cell are (its corners) - 2, 2k - 6 = 25.07 in the bulk (19.07 swap corners, 6 births and deaths of
+  neighbours), computed per cell from the Delaunay tetrahedra and compared with the pipeline. (N2) moving Voronoi (500 seeds, the
+  control_voronoi paths, seeds 1 and 2, whole periodic box): no cell is born or dies, so each seed's tube is cut into windows of 3,
+  5 and 10 min; a window is a scutoid when the seed's Delaunay neighbours change in it, exact from the periodic Delaunay
+  triangulation at every frame, against the pipeline. (N3) shuffled frames (seeds 7, 8) must destroy the tubes. (N4) the frames
+  tracked in reverse order must give the same tubes and the same classes (mutual best overlap is symmetric in time).
+- Pilot (job sun-tilt-pilot2 and sun-tubes-figpilot, 16 Nov, each under 5 min): a Sun run takes 5 to 25 s; Poisson-Voronoi 6 s,
+  exact share 1, the pipeline finds 81% of the exact lateral corners; moving Voronoi windows: pipeline share within 0.2 points of the
+  exact filtered share at 3, 5 and 10 min (0.658 / 0.659, 0.816 / 0.816, 0.935 / 0.937). Two things learnt: (a) with the census
+  overlap rule a label goes on through a split with the larger piece, so many tubes are lineages that run through the whole 40 min
+  (at a 40 s step 399 of 1270 labels touch an end); the wholly-inside tubes are mostly the side branches; (b) with shuffled frames 254
+  tubes of 3 min or more still survive at a 10 s step (mean area 4.2 Mm2, three times a granule): large regions that the
+  segmentation keeps in every frame. Both are reported with the results.
+- Predictions: (P1) Sun, primary setting (10 s, 0.1 Mm, tolerance 0): share of scutoid tubes among tubes of 3 min or more 0.80 to
+  0.95; it rises with lifetime (near 1 above 6 min) and with size (prism tubes are short and small). (P2) Fewer lateral corners per
+  tube than the Poisson-Voronoi exact value (25), most of them birth or death corners (splits and merges of neighbours). (P3) The
+  share is stable within 10 points over depth, run and tolerance; over the time step it falls less than the swap counts did but
+  more than 10 points from 10 to 80 s; the counts of changes and corners per tube are NOT stable with the step (fall by more than
+  30% from 10 to 80 s), as the swap counts were not. (P4) Shuffled: the share of real tubes of 3 min or more that survive is small,
+  but not zero (the large static regions). (P5) Reverse tracking gives identical numbers.
+- Verdicts (per quantity, never upgraded): (Q1) "most granule tubes are scutoids" (share over 0.5 for tubes of 3 min or more):
+  ESTABLISHED if so in every setting and the controls pass (N1 share 1, N2 pipeline within 0.05 of exact at every window, N3 tubes
+  of 3 min or more at most a third of the real number, N4 identical); CONSISTENT if so in the primary setting and in most others;
+  else NOT CONFIRMED. (Q2) the share is stable (range at most 0.10 over step 10 to 80 s, depth, run and tolerance): ESTABLISHED if
+  over all, CONSISTENT if over all but the step (or all but one setting), else NOT CONFIRMED. (Q3) changes and corners per tube are
+  stable within 20% over the same settings: same rule. (Q4) the share and the counts rise with lifetime (Spearman of changes with
+  lifetime over 0.3 in every setting). (Q5) they rise with size (Spearman of changes with mean area over 0.2 in every setting).
+  (Q6) fewer lateral corners per tube than the Poisson-Voronoi exact value, in every setting.
+
+### Result (job sun-tilt, FINAL ok, 40 tube runs; figure job sun-tubes-fig, FINAL ok; results/tilt/tubes/, results/tilt/summary.md)
+
+**Primary setting** (en024048_hion, 0.1 Mm, 10 s, census tracking): 1046 tubes wholly inside the 40-min block, 393 of them lasting
+3 min or more; 399 more run past an end (81% of those already show a change). Among the 393: **share of scutoid tubes 0.893**, and
+0.962 carry at least one lateral extra corner. By lifetime: 0-3 min 0.07 (653 tubes), 3-6 min 0.79 (200), 6-10 min 1.00 (89), over
+10 min 1.00 (104). By size quartile (mean area): 0.74, 0.90, 0.97, 0.97. The prism tubes are short and small (mean 3.6 min,
+0.75 Mm2, against 1.29 Mm2 for the scutoids). Neighbour changes per tube: mean 7.8, median 5 (0.99 per minute of life); lateral
+extra corners: mean 12.6, median 8 (1.60 per minute); distribution of corners per tube (3 min or more): 0: 15, 1: 24, 2: 19, 3: 21,
+4: 35, 5 to 9: 104, 10 to 19: 120, 20 to 29: 32, 30 or more: 43. Spearman: changes with lifetime 0.83, with mean area 0.62 (change
+rate with area 0.50). Quadrants: 0.84 to 0.94. Most corners are birth or death corners (a neighbour's track starts or ends there:
+splits and merges of the tracking), 10.5 of 12.6; the typing undercounts swap corners (on the Poisson-Voronoi blocks it calls 4 to
+12 of the exact 19 swap corners per cell swap-type), so the split by type is not quoted as a result.
+
+| setting | tubes 3 min+ | scutoid share | with a lateral corner | changes / corners per tube | per minute |
+|---|---|---|---|---|---|
+| 0 Mm, step 10 / 20 / 40 / 80 s | 395 / 409 / 384 / 345 | 0.896 / 0.905 / 0.875 / 0.942 | 0.98 / 0.96 / 0.88 / 0.64 | 8.6 / 14.9; 9.2 / 11.6; 8.4 / 8.7; 11.1 / 5.9 | 1.01 / 1.74 ... 1.22 / 0.65 |
+| 0.1 Mm, step 10 / 20 / 40 / 80 s | 393 / 394 / 372 / 327 | 0.893 / 0.904 / 0.887 / 0.951 | 0.96 / 0.94 / 0.88 / 0.61 | 7.8 / 12.6; 8.0 / 9.9; 7.4 / 7.7; 9.8 / 5.3 | 0.99 / 1.60 ... 1.12 / 0.61 |
+| 0.2 Mm, step 10 / 20 / 40 / 80 s | 403 / 404 / 373 / 317 | 0.906 / 0.918 / 0.903 / 0.972 | 0.98 / 0.96 / 0.89 / 0.59 | 9.4 / 15.6; 8.9 / 11.4; 8.5 / 9.0; 11.8 / 6.0 | 1.28 / 2.12 ... 1.45 / 0.74 |
+| quiet Sun 0.1 Mm, step 10 / 20 / 40 / 80 s | 104 / 106 / 102 / 89 | 0.923 / 0.925 / 0.873 / 0.978 | 0.97 / 0.94 / 0.83 / 0.51 | 5.6 / 11.7; 5.8 / 8.3; 5.0 / 5.6; 7.4 / 2.5 | 0.92 / 1.93 ... 1.18 / 0.40 |
+| tracking tolerance 0.3 / 0.5 / 0.7 (0.1 Mm, 10 s) | 393 / 403 / 660 | 0.893 / 0.891 / 0.930 | 0.96 / 0.96 / 0.99 | 7.8 / 12.6; 8.7 / 13.6; 11.3 / 17.8 | 0.99 / 1.60; 1.07 / 1.68; 1.52 / 2.38 |
+| frames tracked in reverse order | 393 | 0.893 | 0.96 | 7.8 / 12.6 | identical in every number |
+| shuffled frames, seeds 7 / 8 | 254 / 274 | 0.949 / 0.971 | 1.00 | 5.0 / 180; 6.7 / 172 | 1.0 / 36; 1.3 / 33 |
+
+**Nulls.** (N1) Space-time Poisson-Voronoi, 15 blocks: exact scutoid share 1 (as it must be); exact lateral corners per interior cell
+23.2 to 25.3 (bulk value 25.07), of which 17.3 to 19.4 swap corners and 5.7 to 6.0 births and deaths of neighbours (bulk 19.07 and
+6); the pipeline's share 0.997 to 1.000, and it finds 0.69 to 0.93 of the exact lateral corners (fewer for short cells). Per tube the
+pipeline sees 17 to 22 corners against the Sun's 12.6 (10 s). (N2) Moving Voronoi windows: pipeline share against exact (filtered)
+0.658 / 0.659 and 0.682 / 0.691 (3 min), 0.816 / 0.816 and 0.847 / 0.847 (5 min), 0.935 / 0.937 and 0.953 / 0.955 (10 min), seeds 1 and
+2: within 0.015 of exact (0.015 also against the unfiltered exact share). (N3) Shuffled frames do NOT destroy the tubes: 254 and 274
+tubes of 3 min or more survive (65 and 70% of the real 393), mean area 4.2 Mm2 (three granules): regions that the segmentation
+keeps as one cell in any frame order, so their label survives the mutual-best rule. They differ from real tubes in everything but the
+share: 30 times as many corners per minute (33 to 36), no relation of changes to size (Spearman 0.08 and 0.16 against 0.46 to 0.67
+for real tubes). (N4) Reverse tracking: identical in every number.
+
+**Stability (question 4).** The share is the robust quantity that the swap counts were not: over depth (0, 0.1, 0.2 Mm), run (quiet
+Sun), tracking tolerance (0 to 0.7) and steps 10 to 40 s it stays within 0.873 to 0.930; with the 80 s step it rises to 0.94 to 0.98
+(at 80 s the 60 s flicker filter removes nothing), range 0.105, just over the 0.10 fixed in advance. The counts per tube are NOT
+stable: lateral corners fall from 12.6 to 5.3 per tube (-58%) from 10 to 80 s at 0.1 Mm (the same in every depth and run), and
+changes per tube move from 7.8 to 11.3 with the tracking tolerance (+45%).
+
+**Verdicts (per quantity, rules written before the run, never upgraded).**
+- Q1, most granule tubes are scutoids in space-time (share over 0.5 for tubes of 3 min or more): over 0.87 in every setting;
+  N1, N2 and N4 pass, N3 FAILS (shuffled frames leave a third fewer long tubes, not two thirds fewer). **CONSISTENT** (the share is
+  not specific to the real time order; the real tubes differ from the shuffled ones in corner rate and in the size relation).
+- Q2, the share is stable: **CONSISTENT** (within 0.06 over all settings but the 80 s step; 0.105 with it).
+- Q3, changes and corners per tube stable within 20%: **NOT CONFIRMED** (corners -58% with the step, changes +45% with tolerance).
+- Q4, the share and the counts rise with lifetime: **ESTABLISHED** by the rule (Spearman 0.58 to 0.86 in every setting; every tube
+  over 6 min is a scutoid at every step), but it is what any tube with a steady rate of changes shows (Poisson-Voronoi 0.35 to 0.59,
+  shuffled 0.66 to 0.70): not a property of the Sun beyond its having a rate.
+- Q5, they rise with size: **ESTABLISHED** (Spearman with mean area 0.46 to 0.67 in every real setting; absent in shuffled frames,
+  0.08 and 0.16; present in Poisson-Voronoi, 0.52 to 0.76: larger cells have more neighbours to change).
+- Q6, fewer lateral corners per tube than random convex cells: **CONSISTENT**, not ESTABLISHED: below the exact Poisson-Voronoi 25
+  in every setting (2.5 to 17.8), but the pipeline itself finds only 17 to 22 on Poisson-Voronoi, and the 0.7 tolerance setting
+  (17.8) reaches that range.
+- Predictions: P1 held (0.89, rising with lifetime and size); P2 held for the count (12.6 against 25 exact, 20 through the pipeline);
+  P3 held in form (share stable within 0.06 except the step; counts not stable), the share ROSE at 80 s rather than fell; P4 held
+  ("small but not zero" was too optimistic: two thirds survive); P5 held.
+
+**Answer to DICTO's question.** Yes in the sense he gave it: seen as tubes through space-time, nine in ten granules that live 3 min
+or more are scutoids, not prisms: their neighbours change along t, and their lateral surfaces carry extra corners (about 8 per tube,
+median, at 10 s) where four tubes meet. Prisms exist and are the short, small granules; every granule living over 6 min is a
+scutoid. The share is robust; the number of extra corners is not (it depends on the time step like the swap counts), and the share
+alone does not tell real granulation from shuffled frames.
+
+**Figure** (results/figures/sun_spacetime_scutoids.png; RENDER-sun-spacetime-scutoids): left, the 10-minute lane stack of the
+skeleton render (same window, colours and ground) with every tube at the middle minute outlined, scutoid tubes coloured by lateral
+extra corners per minute, prisms grey, tubes that run past the 40 min with no change seen yet faint; right, a 3D view (x, y, t) of four
+scutoid tubes that touch or lie side by side and two prism tubes, each whole, with their extra corners (white: swap corners; small:
+corners where a tube starts or ends). Almost every swap corner has a tube that runs past the block, so the four tubes of one corner
+cannot all be shown whole. edgecheck passed.
+
+Files: scripts/spacetime_scutoids.py (tracking with tolerance, tube classifier, corners, Poisson-Voronoi and moving-Voronoi nulls,
+figure); results/tilt/tubes/*.json (one per run; per-tube files stay on the compute machine).

@@ -1,0 +1,28 @@
+{
+ "stage": "bitruncated",
+ "seed": 17,
+ "corners": 3600,
+ "cells": 720,
+ "faces": 4320,
+ "edges": 7200,
+ "steps": {
+  "1": {
+   "frames": 3599,
+   "counts": {
+    "birth": 716,
+    "swap": 2166,
+    "death": 716
+   },
+   "clump_patterns": {},
+   "frames_failing": [],
+   "n_frames_failing": 0,
+   "balance_failures": [],
+   "n_balance_failures": 0,
+   "triple_formulas": {
+    "True": 3599
+   },
+   "ok": true
+  }
+ },
+ "neg_control_caught": true
+}

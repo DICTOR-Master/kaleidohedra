@@ -1,0 +1,28 @@
+{
+ "stage": "trunc120",
+ "seed": 19,
+ "corners": 2400,
+ "cells": 720,
+ "faces": 3120,
+ "edges": 4800,
+ "steps": {
+  "1": {
+   "frames": 2399,
+   "counts": {
+    "birth": 716,
+    "swap": 966,
+    "death": 716
+   },
+   "clump_patterns": {},
+   "frames_failing": [],
+   "n_frames_failing": 0,
+   "balance_failures": [],
+   "n_balance_failures": 0,
+   "triple_formulas": {
+    "True": 2399
+   },
+   "ok": true
+  }
+ },
+ "neg_control_caught": true
+}

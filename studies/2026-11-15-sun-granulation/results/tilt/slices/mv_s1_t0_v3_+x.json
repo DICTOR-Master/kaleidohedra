@@ -1,0 +1,48 @@
+{
+ "block": "mv_s1",
+ "theta": 0.0,
+ "v": 3.0,
+ "az": "+x",
+ "rev": false,
+ "half": false,
+ "planes": 242,
+ "step_h_s": 10.0,
+ "core_volume_Mm2min": 1865.9425547996982,
+ "core_events": {
+  "clump": 117,
+  "swap": 94
+ },
+ "core_swaps_twostep": 35,
+ "core_swaps_all": 129,
+ "core_swaps_persistent": 118,
+ "core_clump_patterns": {
+  "born 0 died 0 lost 0 gained 1": 55,
+  "born 0 died 0 lost 1 gained 0": 51,
+  "born 0 died 0 lost 1 gained 2": 3,
+  "born 0 died 0 lost 2 gained 2": 3,
+  "born 0 died 0 lost 1 gained 1": 3,
+  "born 0 died 0 lost 2 gained 0": 2
+ },
+ "truth_core": {},
+ "boundary_events": {
+  "swap": 221,
+  "clump": 199,
+  "death": 51,
+  "birth": 49,
+  "split": 6,
+  "merge": 5,
+  "relabel": 1
+ },
+ "interior_outside_core": {
+  "swap": 94,
+  "clump": 102,
+  "split": 2,
+  "merge": 1
+ },
+ "planes_failing_euler": 0,
+ "balance_failures": 0,
+ "planes_cells_in_several_pieces": 1,
+ "digital_fragments_reassigned": 442,
+ "seconds": 10.4,
+ "morse_interior_cells": {}
+}

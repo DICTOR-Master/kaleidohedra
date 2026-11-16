@@ -1,0 +1,12 @@
+START trunc120: 2400 corners, 720 cells, 3120 faces, 4800 edges; cells per edge {3: 4800}
+PROGRESS 0.000 frames 0/2399
+PROGRESS 0.063 frames 300/2399
+PROGRESS 0.125 frames 600/2399
+PROGRESS 0.188 frames 900/2399
+PROGRESS 0.250 frames 1200/2399
+PROGRESS 0.313 frames 1500/2399
+PROGRESS 0.375 frames 1800/2399
+PROGRESS 0.438 frames 2100/2399
+step 1: 2399 frames; counts {'birth': 716, 'swap': 966, 'death': 716}; ok True; triple formulas {'True': 2399}; clump patterns {}
+NEG control (event 0 retyped birth -> swap) caught: True
+PROGRESS 1.000 done

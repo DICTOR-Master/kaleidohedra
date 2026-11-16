@@ -1,0 +1,190 @@
+{
+ "step_s": 10.0,
+ "tubes": 758,
+ "tubes_3min": 741,
+ "tubes_cut_by_block_ends": 0,
+ "cut_with_a_change_seen": null,
+ "scutoid_share_3min": 1.0,
+ "corner_share_3min": 1.0,
+ "scutoid_share_all": 0.9986807387862797,
+ "corner_share_all": 1.0,
+ "by_life": {
+  "0-3 min": {
+   "n": 17,
+   "scutoid_share": 0.9411764705882353,
+   "corner_share": 1.0,
+   "changes_mean": 3.7058823529411766,
+   "corners_mean": 10.176470588235293
+  },
+  "3-6 min": {
+   "n": 669,
+   "scutoid_share": 1.0,
+   "corner_share": 1.0,
+   "changes_mean": 10.804185351270553,
+   "corners_mean": 17.351270553064275
+  },
+  "6-10 min": {
+   "n": 72,
+   "scutoid_share": 1.0,
+   "corner_share": 1.0,
+   "changes_mean": 14.38888888888889,
+   "corners_mean": 20.40277777777778
+  },
+  "10+ min": {
+   "n": 0,
+   "scutoid_share": null,
+   "corner_share": null,
+   "changes_mean": null,
+   "corners_mean": null
+  }
+ },
+ "by_size_3min": {
+  "Q1 smallest": {
+   "n": 185,
+   "scutoid_share": 1.0,
+   "corners_mean": 13.227027027027027
+  },
+  "Q2": {
+   "n": 185,
+   "scutoid_share": 1.0,
+   "corners_mean": 16.475675675675674
+  },
+  "Q3": {
+   "n": 185,
+   "scutoid_share": 1.0,
+   "corners_mean": 18.691891891891892
+  },
+  "Q4 largest": {
+   "n": 186,
+   "scutoid_share": 1.0,
+   "corners_mean": 22.172043010752688
+  }
+ },
+ "area_quartiles_Mm2": [
+  0.7199180747567846,
+  0.9217687074829934,
+  1.1645021645021647
+ ],
+ "changes_3min": {
+  "mean": 11.152496626180836,
+  "median": 11.0,
+  "per_min": 2.293113813994358
+ },
+ "changes_live_3min": {
+  "mean": 3.2766531713900133,
+  "median": 3.0,
+  "per_min": 0.6737270499005689
+ },
+ "changes_bd_3min": {
+  "mean": 7.875843454790823,
+  "median": 8.0,
+  "per_min": 1.619386764093789
+ },
+ "corners_3min": {
+  "mean": 17.647773279352226,
+  "median": 18.0,
+  "per_min": 3.628636174443879
+ },
+ "corners_live_3min": {
+  "mean": 4.013495276653171,
+  "median": 4.0,
+  "per_min": 0.825232391435046
+ },
+ "corners_bd_3min": {
+  "mean": 13.634278002699055,
+  "median": 13.0,
+  "per_min": 2.803403783008833
+ },
+ "neighbours_3min": {
+  "mean": 11.171390013495277,
+  "median": 11.0,
+  "per_min": 2.296998566341396
+ },
+ "corners_hist_3min": {
+  "4": 1,
+  "5": 3,
+  "6": 2,
+  "7": 6,
+  "8": 8,
+  "9": 12,
+  "10": 28,
+  "11": 22,
+  "12": 32,
+  "13": 40,
+  "14": 48,
+  "15": 68,
+  "16": 42,
+  "17": 52,
+  "18": 58,
+  "19": 61,
+  "20": 48,
+  "21": 37,
+  "22": 48,
+  "23": 28,
+  "24": 32,
+  "25": 20,
+  "26": 14,
+  "27": 13,
+  "28": 7,
+  "29": 3,
+  "30": 8
+ },
+ "changes_hist_3min": {
+  "1": 3,
+  "2": 4,
+  "3": 15,
+  "4": 12,
+  "5": 31,
+  "6": 45,
+  "7": 43,
+  "8": 66,
+  "9": 66,
+  "10": 69,
+  "11": 62,
+  "12": 62,
+  "13": 55,
+  "14": 38,
+  "15": 44,
+  "16": 33,
+  "17": 33,
+  "18": 16,
+  "19": 14,
+  "20": 14,
+  "21": 8,
+  "22": 1,
+  "23": 2,
+  "25": 3,
+  "27": 1,
+  "28": 1
+ },
+ "spearman_3min": {
+  "changes_life": 0.541333839150429,
+  "corners_life": 0.42117342699815646,
+  "changes_area": 0.5826749426250405,
+  "corners_area": 0.6781329636307108,
+  "life_area": 0.20522405105309538,
+  "rate_area": 0.5939644300859785
+ },
+ "life_3min": {
+  "mean_min": 4.863472784525416,
+  "median_min": 4.833333333333333
+ },
+ "prism_life_3min_mean_min": null,
+ "prism_area_3min_mean_Mm2": null,
+ "scutoid_area_3min_mean_Mm2": 0.952693595398262,
+ "exact_scutoid_share": 1.0,
+ "exact_corners_mean": 25.34036939313984,
+ "exact_corners_swap_mean": 19.37467018469657,
+ "exact_corners_bd_mean": 5.965699208443271,
+ "exact_corners_mean_3min": 25.560053981106613,
+ "pipeline_over_exact_corners_3min": 0.6904435058078141,
+ "pipeline_over_exact_changes_3min": 0.43632523759239705,
+ "seed": 5,
+ "vc": 6.0,
+ "seconds": 6.4,
+ "corner_windows": 12178,
+ "corners": 6467,
+ "corners_simple": 5322,
+ "frames": 242,
+ "tubes_total": 1739
+}

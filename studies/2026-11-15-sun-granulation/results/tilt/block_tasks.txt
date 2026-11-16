@@ -1,0 +1,153 @@
+sunB seg=data/trace3d/seg_dz0.0.npy dz=0.0 q=0 order=real
+sunA2 data=data/bifrost dz=0.0 q=0 order=real
+sunA data=data/bifrost dz=0.0 q=0 order=real thr=0.5
+sunA data=data/bifrost dz=0.0 q=0 order=real thr=1.0
+sunA data=data/bifrost dz=0.0 q=0 order=real thr=1.5
+sunB seg=data/trace3d/seg_dz0.0.npy dz=0.0 q=0 order=shuf:7
+sunA2 data=data/bifrost dz=0.0 q=0 order=shuf:7
+sunA data=data/bifrost dz=0.0 q=0 order=shuf:7 thr=0.5
+sunA data=data/bifrost dz=0.0 q=0 order=shuf:7 thr=1.0
+sunA data=data/bifrost dz=0.0 q=0 order=shuf:7 thr=1.5
+sunB seg=data/trace3d/seg_dz0.0.npy dz=0.0 q=1 order=real
+sunA2 data=data/bifrost dz=0.0 q=1 order=real
+sunA data=data/bifrost dz=0.0 q=1 order=real thr=0.5
+sunA data=data/bifrost dz=0.0 q=1 order=real thr=1.0
+sunA data=data/bifrost dz=0.0 q=1 order=real thr=1.5
+sunB seg=data/trace3d/seg_dz0.0.npy dz=0.0 q=1 order=shuf:7
+sunA2 data=data/bifrost dz=0.0 q=1 order=shuf:7
+sunA data=data/bifrost dz=0.0 q=1 order=shuf:7 thr=0.5
+sunA data=data/bifrost dz=0.0 q=1 order=shuf:7 thr=1.0
+sunA data=data/bifrost dz=0.0 q=1 order=shuf:7 thr=1.5
+sunB seg=data/trace3d/seg_dz0.0.npy dz=0.0 q=2 order=real
+sunA2 data=data/bifrost dz=0.0 q=2 order=real
+sunA data=data/bifrost dz=0.0 q=2 order=real thr=0.5
+sunA data=data/bifrost dz=0.0 q=2 order=real thr=1.0
+sunA data=data/bifrost dz=0.0 q=2 order=real thr=1.5
+sunB seg=data/trace3d/seg_dz0.0.npy dz=0.0 q=2 order=shuf:7
+sunA2 data=data/bifrost dz=0.0 q=2 order=shuf:7
+sunA data=data/bifrost dz=0.0 q=2 order=shuf:7 thr=0.5
+sunA data=data/bifrost dz=0.0 q=2 order=shuf:7 thr=1.0
+sunA data=data/bifrost dz=0.0 q=2 order=shuf:7 thr=1.5
+sunB seg=data/trace3d/seg_dz0.0.npy dz=0.0 q=3 order=real
+sunA2 data=data/bifrost dz=0.0 q=3 order=real
+sunA data=data/bifrost dz=0.0 q=3 order=real thr=0.5
+sunA data=data/bifrost dz=0.0 q=3 order=real thr=1.0
+sunA data=data/bifrost dz=0.0 q=3 order=real thr=1.5
+sunB seg=data/trace3d/seg_dz0.0.npy dz=0.0 q=3 order=shuf:7
+sunA2 data=data/bifrost dz=0.0 q=3 order=shuf:7
+sunA data=data/bifrost dz=0.0 q=3 order=shuf:7 thr=0.5
+sunA data=data/bifrost dz=0.0 q=3 order=shuf:7 thr=1.0
+sunA data=data/bifrost dz=0.0 q=3 order=shuf:7 thr=1.5
+sunB seg=data/trace3d/seg_dz0.1.npy dz=0.1 q=0 order=real
+sunA2 data=data/bifrost dz=0.1 q=0 order=real
+sunA data=data/bifrost dz=0.1 q=0 order=real thr=0.5
+sunA data=data/bifrost dz=0.1 q=0 order=real thr=1.0
+sunA data=data/bifrost dz=0.1 q=0 order=real thr=1.5
+sunB seg=data/trace3d/seg_dz0.1.npy dz=0.1 q=0 order=shuf:7
+sunA2 data=data/bifrost dz=0.1 q=0 order=shuf:7
+sunA data=data/bifrost dz=0.1 q=0 order=shuf:7 thr=0.5
+sunA data=data/bifrost dz=0.1 q=0 order=shuf:7 thr=1.0
+sunA data=data/bifrost dz=0.1 q=0 order=shuf:7 thr=1.5
+sunB seg=data/trace3d/seg_dz0.1.npy dz=0.1 q=1 order=real
+sunA2 data=data/bifrost dz=0.1 q=1 order=real
+sunA data=data/bifrost dz=0.1 q=1 order=real thr=0.5
+sunA data=data/bifrost dz=0.1 q=1 order=real thr=1.0
+sunA data=data/bifrost dz=0.1 q=1 order=real thr=1.5
+sunB seg=data/trace3d/seg_dz0.1.npy dz=0.1 q=1 order=shuf:7
+sunA2 data=data/bifrost dz=0.1 q=1 order=shuf:7
+sunA data=data/bifrost dz=0.1 q=1 order=shuf:7 thr=0.5
+sunA data=data/bifrost dz=0.1 q=1 order=shuf:7 thr=1.0
+sunA data=data/bifrost dz=0.1 q=1 order=shuf:7 thr=1.5
+sunB seg=data/trace3d/seg_dz0.1.npy dz=0.1 q=2 order=real
+sunA2 data=data/bifrost dz=0.1 q=2 order=real
+sunA data=data/bifrost dz=0.1 q=2 order=real thr=0.5
+sunA data=data/bifrost dz=0.1 q=2 order=real thr=1.0
+sunA data=data/bifrost dz=0.1 q=2 order=real thr=1.5
+sunB seg=data/trace3d/seg_dz0.1.npy dz=0.1 q=2 order=shuf:7
+sunA2 data=data/bifrost dz=0.1 q=2 order=shuf:7
+sunA data=data/bifrost dz=0.1 q=2 order=shuf:7 thr=0.5
+sunA data=data/bifrost dz=0.1 q=2 order=shuf:7 thr=1.0
+sunA data=data/bifrost dz=0.1 q=2 order=shuf:7 thr=1.5
+sunB seg=data/trace3d/seg_dz0.1.npy dz=0.1 q=3 order=real
+sunA2 data=data/bifrost dz=0.1 q=3 order=real
+sunA data=data/bifrost dz=0.1 q=3 order=real thr=0.5
+sunA data=data/bifrost dz=0.1 q=3 order=real thr=1.0
+sunA data=data/bifrost dz=0.1 q=3 order=real thr=1.5
+sunB seg=data/trace3d/seg_dz0.1.npy dz=0.1 q=3 order=shuf:7
+sunA2 data=data/bifrost dz=0.1 q=3 order=shuf:7
+sunA data=data/bifrost dz=0.1 q=3 order=shuf:7 thr=0.5
+sunA data=data/bifrost dz=0.1 q=3 order=shuf:7 thr=1.0
+sunA data=data/bifrost dz=0.1 q=3 order=shuf:7 thr=1.5
+sunB seg=data/trace3d/seg_dz0.2.npy dz=0.2 q=0 order=real
+sunA2 data=data/bifrost dz=0.2 q=0 order=real
+sunA data=data/bifrost dz=0.2 q=0 order=real thr=0.5
+sunA data=data/bifrost dz=0.2 q=0 order=real thr=1.0
+sunA data=data/bifrost dz=0.2 q=0 order=real thr=1.5
+sunB seg=data/trace3d/seg_dz0.2.npy dz=0.2 q=0 order=shuf:7
+sunA2 data=data/bifrost dz=0.2 q=0 order=shuf:7
+sunA data=data/bifrost dz=0.2 q=0 order=shuf:7 thr=0.5
+sunA data=data/bifrost dz=0.2 q=0 order=shuf:7 thr=1.0
+sunA data=data/bifrost dz=0.2 q=0 order=shuf:7 thr=1.5
+sunB seg=data/trace3d/seg_dz0.2.npy dz=0.2 q=1 order=real
+sunA2 data=data/bifrost dz=0.2 q=1 order=real
+sunA data=data/bifrost dz=0.2 q=1 order=real thr=0.5
+sunA data=data/bifrost dz=0.2 q=1 order=real thr=1.0
+sunA data=data/bifrost dz=0.2 q=1 order=real thr=1.5
+sunB seg=data/trace3d/seg_dz0.2.npy dz=0.2 q=1 order=shuf:7
+sunA2 data=data/bifrost dz=0.2 q=1 order=shuf:7
+sunA data=data/bifrost dz=0.2 q=1 order=shuf:7 thr=0.5
+sunA data=data/bifrost dz=0.2 q=1 order=shuf:7 thr=1.0
+sunA data=data/bifrost dz=0.2 q=1 order=shuf:7 thr=1.5
+sunB seg=data/trace3d/seg_dz0.2.npy dz=0.2 q=2 order=real
+sunA2 data=data/bifrost dz=0.2 q=2 order=real
+sunA data=data/bifrost dz=0.2 q=2 order=real thr=0.5
+sunA data=data/bifrost dz=0.2 q=2 order=real thr=1.0
+sunA data=data/bifrost dz=0.2 q=2 order=real thr=1.5
+sunB seg=data/trace3d/seg_dz0.2.npy dz=0.2 q=2 order=shuf:7
+sunA2 data=data/bifrost dz=0.2 q=2 order=shuf:7
+sunA data=data/bifrost dz=0.2 q=2 order=shuf:7 thr=0.5
+sunA data=data/bifrost dz=0.2 q=2 order=shuf:7 thr=1.0
+sunA data=data/bifrost dz=0.2 q=2 order=shuf:7 thr=1.5
+sunB seg=data/trace3d/seg_dz0.2.npy dz=0.2 q=3 order=real
+sunA2 data=data/bifrost dz=0.2 q=3 order=real
+sunA data=data/bifrost dz=0.2 q=3 order=real thr=0.5
+sunA data=data/bifrost dz=0.2 q=3 order=real thr=1.0
+sunA data=data/bifrost dz=0.2 q=3 order=real thr=1.5
+sunB seg=data/trace3d/seg_dz0.2.npy dz=0.2 q=3 order=shuf:7
+sunA2 data=data/bifrost dz=0.2 q=3 order=shuf:7
+sunA data=data/bifrost dz=0.2 q=3 order=shuf:7 thr=0.5
+sunA data=data/bifrost dz=0.2 q=3 order=shuf:7 thr=1.0
+sunA data=data/bifrost dz=0.2 q=3 order=shuf:7 thr=1.5
+sunB seg=data/trace3d/seg_dz0.1.npy dz=0.1 q=0 order=shuf:8
+sunA2 data=data/bifrost dz=0.1 q=0 order=shuf:8
+sunB seg=data/skeleton/feat_qs024048_by3363_dz0.1_seg.npy run=qs024048_by3363 dz=0.1 q=0 order=real
+sunA2 data=data/bifrost run=qs024048_by3363 dz=0.1 q=0 order=real
+sunB seg=data/trace3d/seg_dz0.1.npy dz=0.1 q=1 order=shuf:8
+sunA2 data=data/bifrost dz=0.1 q=1 order=shuf:8
+sunB seg=data/skeleton/feat_qs024048_by3363_dz0.1_seg.npy run=qs024048_by3363 dz=0.1 q=1 order=real
+sunA2 data=data/bifrost run=qs024048_by3363 dz=0.1 q=1 order=real
+sunB seg=data/trace3d/seg_dz0.1.npy dz=0.1 q=2 order=shuf:8
+sunA2 data=data/bifrost dz=0.1 q=2 order=shuf:8
+sunB seg=data/skeleton/feat_qs024048_by3363_dz0.1_seg.npy run=qs024048_by3363 dz=0.1 q=2 order=real
+sunA2 data=data/bifrost run=qs024048_by3363 dz=0.1 q=2 order=real
+sunB seg=data/trace3d/seg_dz0.1.npy dz=0.1 q=3 order=shuf:8
+sunA2 data=data/bifrost dz=0.1 q=3 order=shuf:8
+sunB seg=data/skeleton/feat_qs024048_by3363_dz0.1_seg.npy run=qs024048_by3363 dz=0.1 q=3 order=real
+sunA2 data=data/bifrost run=qs024048_by3363 dz=0.1 q=3 order=real
+pv vc=1.5 seed=1
+pv vc=1.5 seed=2
+pv vc=1.5 seed=3
+pv vc=1.5 seed=4
+pv vc=1.5 seed=5
+pv vc=3.0 seed=1
+pv vc=3.0 seed=2
+pv vc=3.0 seed=3
+pv vc=3.0 seed=4
+pv vc=3.0 seed=5
+pv vc=6.0 seed=1
+pv vc=6.0 seed=2
+pv vc=6.0 seed=3
+pv vc=6.0 seed=4
+pv vc=6.0 seed=5
+mv seed=1
+mv seed=2

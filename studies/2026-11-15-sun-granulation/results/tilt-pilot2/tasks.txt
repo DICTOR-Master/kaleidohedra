@@ -1,0 +1,12 @@
+scripts/spacetime_tilt.py slice data/tilt-p2/sunB_en_dz0.0_q1_real.npz 20 3 -x results/tilt-pilot2/sunB_t20_-x.json
+scripts/spacetime_tilt.py slice data/tilt-p2/sunB_en_dz0.0_q1_real.npz 20 3 +y results/tilt-pilot2/sunB_t20_+y.json
+scripts/spacetime_tilt.py slice data/tilt-p2/sunA2_en_dz0.1_q2_real.npz 30 3 +x results/tilt-pilot2/sunA2_t30_+x.json
+scripts/spacetime_tilt.py slice data/tilt-p2/sunA_en_dz0.1_q0_real_thr1.0.npz 30 3 +x results/tilt-pilot2/sunA_t30_+x.json
+scripts/spacetime_tilt.py slice data/tilt-p2/pv_vc1.5_s2.npz 30 3 +x results/tilt-pilot2/pv_t30_+x.json
+scripts/spacetime_tilt.py slice data/tilt-p2/pv_vc1.5_s2.npz 30 3 +x results/tilt-pilot2/pv_t30_+x_rev.json rev=1
+scripts/spacetime_tilt.py slice data/tilt-p2/mv_s2.npz 10 3 +y results/tilt-pilot2/mv_t10_+y.json
+scripts/spacetime_scutoids.py sun data/trace3d/seg_dz0.1.npy results/tilt-pilot2/tubes_sun_step4.json step=4 tag=pilot
+scripts/spacetime_scutoids.py pv 1 3.0 results/tilt-pilot2/tubes_pv.json
+scripts/spacetime_scutoids.py mv 1 results/tilt-pilot2/tubes_mv.json
+scripts/spacetime_scutoids.py fig . data/trace3d/seg_dz0.1.npy
+scripts/spacetime_scutoids.py sun data/trace3d/seg_dz0.1.npy results/tilt-pilot2/tubes_sun_shuf7.json order=shuf:7 tag=pilot-shuf

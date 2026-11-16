@@ -1,0 +1,35 @@
+{
+ "seed": 2,
+ "seeds": 500,
+ "seconds": 25.5,
+ "corner_windows": 7290,
+ "corners": 4302,
+ "corners_simple": 4048,
+ "frames": 244,
+ "tubes_total": 500,
+ "window_3min": {
+  "windows": 6000,
+  "exact_scutoid_share": 0.6965,
+  "exact_filtered_scutoid_share": 0.6908333333333333,
+  "pipeline_scutoid_share": 0.6825,
+  "pipeline_corner_share": 0.7141666666666666
+ },
+ "window_5min": {
+  "windows": 3500,
+  "exact_scutoid_share": 0.858,
+  "exact_filtered_scutoid_share": 0.8474285714285714,
+  "pipeline_scutoid_share": 0.8471428571428572,
+  "pipeline_corner_share": 0.8771428571428571
+ },
+ "window_10min": {
+  "windows": 1500,
+  "exact_scutoid_share": 0.9586666666666667,
+  "exact_filtered_scutoid_share": 0.9546666666666667,
+  "pipeline_scutoid_share": 0.9526666666666667,
+  "pipeline_corner_share": 0.9673333333333334
+ },
+ "exact_flips": 2355,
+ "exact_seed_changes_per_min": 0.469045643153527,
+ "pipeline_corners_per_tube_per_min": 0.49224896265560164,
+ "pipeline_changes_per_tube_per_min": 0.4169626556016598
+}
