@@ -1,5 +1,8 @@
 # Scutoid interactions: one study of the scutoid streams (16 Nov 2026)
 
+**SHELVED 16 Nov 2026 (DICTO: "yes shelve it").** The ladder that stands is rungs 1-3 (geometry, one contact at a time, exact null rates) with the compound-eye law on top; no natural rung is established (Sun: persistence, tilts, space-time scutoid tubes still running; froth law-built model gives 0.25, not 0.53, scaling state not reached; plates, clouds, eyes not confirmed). The title Microcosm and Macrocosm is kept for a later version, when a natural rung is established. Routes still open: the space-time scutoid tubes of the Sun, the larger froth run, the wasp eye.
+
+
 Title (DICTO, 16 Nov 2026): **Microcosm and Macrocosm**: Scutoid studies from cells to stars, planets and the cosmos.
 
 DICTO, 16 Nov 2026: "narrow our focus back to core study objectives and drop any avenues that are not supportive of the scutoid
