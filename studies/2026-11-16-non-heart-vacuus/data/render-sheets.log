@@ -1,0 +1,19 @@
+PROGRESS 0.15 key (1.7s)
+PROGRESS A symmetric: 18 fins, 12 slot lines (3.2s)
+PROGRESS A generic: 15 fins, 10 slot lines (4.6s)
+PROGRESS B symmetric: 36 fins, 24 slot lines (7.6s)
+PROGRESS B generic: 39 fins, 26 slot lines (10.6s)
+  600-cell: 120 corners, 1200 two-faces, 60 plates, two-faces per plate {20: 60}; cut: 240 pieces {'through': 240, 'shared': 0, 'single': 0}
+  diminished: 112 corners, 960 two-faces, 60 plates, two-faces per plate {10: 1, 12: 1, 14: 17, 16: 27, 18: 6, 20: 8}; cut: 174 pieces {'through': 108, 'shared': 66, 'single': 0}
+  chosen sheets: |cos| between normals [np.float64(0.139), np.float64(0.388), np.float64(0.027)]
+  6 slot lines among the solid sheets
+PROGRESS three-kinds 600-cell: highlighted plates carry ['through'] (25.7s)
+  chosen sheets: |cos| between normals [np.float64(0.139), np.float64(0.388), np.float64(0.027)]
+  4 slot lines among the solid sheets
+PROGRESS three-kinds diminished: highlighted plates carry ['shared', 'through'] (36.0s)
+  chosen sheets: |cos| between normals [np.float64(0.5), np.float64(0.0), np.float64(0.5)]
+  0 slot lines among the solid sheets
+PROGRESS three-kinds A: highlighted plates carry ['single'] (37.8s)
+diminished: removed corners [53, 55, 68, 83, 87, 14, 100, 35]
+2664 exact corner checks passed; 0 checks failed; 38.0s
+FINAL ok
