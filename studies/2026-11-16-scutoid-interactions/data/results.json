@@ -134,11 +134,11 @@
   "sun": {
    "part": "V",
    "system": "Sun: granulation (radiative-MHD simulation)",
-   "data": "Bifrost runs en024048_hion and qs024048_by3363, 13 settings, steps 10 to 80 s",
-   "observed": "0.07 to 0.15 persistent swaps per cell per minute at 10 s; 0.6 to 1.3 per cell lifetime; 0.8 to 1.9 per persistent split (spread over settings); corrected by the control's detection fraction and fitted to step 0: 0.08 to 0.16 (median 0.13) at P = 60 s, +-9 to 15% per setting plus about 15% calibration, but the corrected rate still halves from step 0 to 80 s and moves by up to 30% with P",
+   "data": "Bifrost runs en024048_hion and qs024048_by3363, 13 settings, steps 10 to 80 s; en024048_hion traced through 7 depth planes (0 to 0.4 Mm below the surface)",
+   "observed": "0.07 to 0.15 persistent swaps per cell per minute at 10 s; 0.6 to 1.3 per cell lifetime; 0.8 to 1.9 per persistent split (spread over settings); corrected by the control's detection fraction and fitted to step 0: 0.08 to 0.16 (median 0.13) at P = 60 s, +-9 to 15% per setting plus about 15% calibration, but the corrected rate still halves from step 0 to 80 s and moves by up to 30% with P; counting only swaps seen again on the neighbouring depth planes (walls standing upright: 78 to 83% of contacts in the top 0.2 Mm) leaves 0.026 per cell per minute at 0.1 Mm and 10 s, yet real frames give only 1.2 to 1.7 times as many as shuffled frames, and the rate still falls 54 to 63% from 10 to 80 s",
    "expected": "no null rate (births at junctions almost absent, so swaps per birth is undefined)",
    "verdict": "NOT CONFIRMED",
-   "own": "NOT CONFIRMED: corrected rate still step-dependent and P-dependent; the step-0 value is an extrapolation, not a stable rate; order of magnitude stable",
+   "own": "NOT CONFIRMED: corrected rate still step-dependent and P-dependent; the step-0 value is an extrapolation, not a stable rate; the depth rule fails the shuffled-frame control (needed 3x) and does not flatten the step; order of magnitude stable",
    "source": "2026-11-15-sun-granulation"
   },
   "jupiter": {
@@ -185,8 +185,8 @@
   },
   "sun": {
    "item": "Sun: a swap rate stable under the time step",
-   "why": "the only natural 2D tiling with thousands of swaps; the step-0 fit with the moving-Voronoi detection fraction (16 Nov) still leaves the rate halving from step 0 to 80 s and moving with P, and shuffled frames give as many swap patterns as real ones at 10 s",
-   "next": "calibrate with a control that has splits and merges (the scaling-state froth drawn as images, with its exact T1 list) and count a swap only when all four cells are matched by overlap above a fixed share, a rule unrelated frames must fail; then refit to step 0"
+   "why": "the only natural 2D tiling with thousands of swaps; neither the step-0 fit with the moving-Voronoi detection fraction nor counting only swaps seen on the neighbouring depth planes (16 Nov) gives a step-stable rate, and shuffled frames still give nearly as many swaps as real ones at 10 s: the false swaps come from the frame-to-frame matching, which repeats on planes 50 km apart",
+   "next": "make the time matching specific first: count a swap only when all four cells are matched by overlap above a fixed share, a rule unrelated frames must fail; calibrate with a control that has splits and merges (the scaling-state froth drawn as images, with its exact T1 list); then add the depth rule and refit to step 0"
   },
   "froth-rc": {
    "item": "Froth benchmark on a vertex model with a fixed microscopic rc",

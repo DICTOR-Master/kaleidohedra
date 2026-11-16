@@ -36,6 +36,8 @@ moves). Nothing here assumes or tests any influence of one system on another.
    absence of junction births, and the cell statistics below.
    16 Nov: dividing out the detection loss measured on the moving-Voronoi control does not remove it (section "Swap rate at
    step 0": the corrected rate still halves from step 0 to 80 s and moves with P; NOT CONFIRMED).
+   16 Nov: counting only swaps seen at the same place on the neighbouring depth planes does not remove it either, and
+   real frames give only 1.2 to 1.7 times as many as shuffled frames at 10 s (section "Swaps traced through depth"; NOT CONFIRMED).
 7. **Cell statistics are robust.** The granular tiling is far from the Voronoi tiling of its own cell centres: side-number
    variance mu2 = 2.7 to 3.8 (en) and 3.3 to 4.9 (qs) against 1.0 to 1.2 for the centroid Voronoi tiling; p6 = 0.19 to 0.24 (en)
    and 0.16 to 0.21 (qs) against 0.35 to 0.40. Aboav-Weaire holds: n m(n) is linear in n with a = 0.85 to 0.90 (en), 0.67 to 0.77 (qs), and the fitted
@@ -263,3 +265,101 @@ Files: scripts/stepcal_prep.py (reversed and shuffled copies), stepcal_matrix.sh
 sun-holdout), stepcal_fit.py (fits, controls, tables, figure); results/stepcal/ (census JSON per setting and control, summary.md,
 summary.json, logs), results/figures/sun_stepcal.png (left: raw Sun rate; middle: corrected rate with the line to step 0; right:
 detection fractions, held-out sequences as crosses).
+
+## Swaps traced through depth (16 Nov 2026; DICTO's diagnosis, open item 3 of studies/2026-11-16-scutoid-interactions)
+
+DICTO, 16 Nov 2026: "the same initial problem as the shadows of the queens". A picture of the surface is a shadow of a 3D flow; as
+in the Queens' shadows, only cell walls that run along the line of sight (upright walls) stay sharp, and tilted walls smear and
+make false neighbour changes. The shuffled-frame control above (unrelated frames gave as many 2-2 patterns as real ones at 10 s)
+says the detector reads something other than continuity. Test: count a swap only when the same 2-2 change is seen at the
+adjacent depths of the 3D simulation, i.e. only between cells whose walls stand upright through the layers.
+
+What the data are (checked 16 Nov at the archive, before any run). The run en024048_hion is public in full 3D: 242 snapshots
+(303 to 544, 10 s apart, 40 min), 17 variables per snapshot (ux, uy, uz, lg T, lg rho, lg p, lg e, three field components,
+electron and hydrogen populations), one FITS file of 504 x 504 x 496 float32 (504 MB) per variable and snapshot, so 122 GB for
+uz alone and about 2 TB for everything. Grid 48 km horizontally, 19 km vertically near the surface (19 to 100 km over the box).
+The archive gives free access; it asks users to acknowledge the Hinode mission ("Hinode is a Japanese mission developed and
+launched by ISAS/JAXA, with NAOJ as domestic partner and NASA and STFC (UK) as international partners. It is operated by these
+agencies in co-operation with ESA and NSC (Norway).") and the run is cited as Carlsson et al. 2016, A&A 585, A4, the code as
+Gudiksen et al. 2011, A&A 531, A154. No other licence text was found on the archive's pages. Planes are read by HTTP range
+requests (one plane = 1 MB), so the whole horizontal box and the whole 40 min can be kept and only the depth range is cut:
+226 cells over 40 min with a lifetime of about 9 min is about 1000 cell lifetimes, well over the 200 asked for.
+
+A fact that matters for the diagnosis: the census above did not use emergent intensity. Its cells were already cut from the
+vertical velocity uz on horizontal planes of the 3D cube at fixed depths (0, 0.1, 0.2, 0.4 Mm below the mean tau = 1 height), and
+the shuffled-frame failure was measured on the 0.1 Mm plane. So the projection smear of a shadow is not what the earlier
+detector read; what the depth trace can still test is whether requiring the same change at neighbouring depths removes the
+false swaps.
+
+Plan (written before the runs; only a pilot of the scripts on 40 frames and one reproduction run was seen first):
+- Depths: 0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4 Mm below the mean tau = 1 height (grid planes 82, 79, 77, 74, 72, 66, 61; spacing
+  50 km in the top 200 km, then 100 km); 0.05, 0.15 and 0.3 Mm are fetched new (scripts/fetch_depths.py, 726 planes, 0.7 GB).
+- Cells: upflow cells bounded by downflow lanes in uz (the 15 Nov primary setting: threshold mean + 0.25 std, smoothing 1.5
+  pixels, periodic marker watershed), tracked through time at each depth with the census.py rule unchanged (pairing, two-step
+  swaps, persistence P = 60 s). Reproduction: at 0.1 Mm the per-depth counts must equal the census (733, 626, 484, 305 at 10, 20,
+  40, 80 s; 767 for the shuffled frames at 10 s).
+- Linking across depth at every frame: mutual largest pixel overlap of the label maps of adjacent depths. Walls standing upright:
+  the share of contacts at one depth whose linked pair also touches at the next depth.
+- Counted swap ("upright"): a persistent swap at depth d whose same 2-2 change (lost pair and gained pair of the linked cells) is
+  a persistent swap at every adjacent depth in the set, within max(30 s, one step) in time. Also reported: the plain per-depth
+  counts, the counts confirmed at each neighbour, a looser 'near' match (any swap within 10 pixels and the time tolerance), and
+  how deep a swap of the top plane reaches by chains of confirmations.
+- Steps 10, 20, 30, 40, 60, 80 s; frame orders real and shuffled (the same permutation as the step-0 section, seed 7, applied to
+  every depth alike).
+- Controls and criteria: (1) SHUFFLED: the upright count of real frames must exceed that of shuffled frames by at least a factor
+  of 3 at every step; (2) STEP: the upright rate from 10 to 80 s must change much less than the plain rate did (plain at 0.1 Mm:
+  -58%); we call it flatter only if the change is within 20%; (3) the moving-Voronoi detection fraction (Sun-like, P = 60 s, from
+  results/stepcal/summary.json) is applied to the plain per-depth counts as before.
+- Prediction: adjacent planes 50 km apart are strongly alike, so a false 2-2 pattern from overlap matching of unrelated frames at
+  one depth is likely to appear at the next depth too: we expect the shuffled control still to FAIL the factor-3 criterion at
+  10 s, while the depth rule removes part of the real swaps as well; the verdict would then stay NOT CONFIRMED.
+- Jobs: sun-3d-fetch (planes), sun-3d-trace (segmentation, links, tracks, combine), compute machine.
+
+### Result (job sun-3d-trace, FINAL ok; figure by fig3d.py on the compute machine, FINAL ok)
+
+VERDICT: **NOT CONFIRMED.** Requiring the same 2-2 change at the adjacent depths does not separate real swaps from false ones:
+at 10 s, real frames give only 1.2 to 1.7 times as many upright swaps as shuffled frames in the top 0.2 Mm (criterion: 3), and the
+upright rate falls with the step as steeply as the plain rate (-54 to -63% from 10 to 80 s, against -57 to -59%).
+
+- **Reproduction.** At 0.1 Mm the per-depth counts equal the census: 733, 626, 484, 305 at 10, 20, 40, 80 s; shuffled 767 at 10 s.
+- **Data used.** en024048_hion, uz on 7 planes (0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4 Mm below the mean tau = 1 height), the whole
+  24 x 24 Mm box, all 242 snapshots (40 min, 10 s); 0.7 GB fetched new. Cells per plane 270, 247, 226, 199, 182, 143, 121.
+- **Walls standing upright.** Between adjacent planes in the top 0.2 Mm, 86 to 90% of cells are linked (mutual overlap) and 78 to
+  83% of contacts keep their linked pair in contact one plane down; from 0.2 to 0.4 Mm only 69 to 71% and 51 to 55%. Below 0.2 Mm
+  the tiling itself fails (torus Euler bad in 41 of 242 frames at 0.3 Mm, 146 of 242 at 0.4 Mm), so the deep planes count little.
+- **Swaps at depth (10 s, P = 60 s).** Plain persistent swaps per plane 988, 838, 733, 617, 540, 373, 257 (0.091 down to 0.053 per
+  cell per minute; corrected by the moving-Voronoi detection fraction 0.090 to 0.052). Confirmed one plane down: 442 of 988 at the
+  top; at 0.1 Mm, 463 confirmed above and 317 below; upright (confirmed at both neighbours) 283, 232, 181 at 0.05, 0.1, 0.15 Mm,
+  i.e. 0.026 per cell per minute at 0.1 Mm, a third of the plain rate. Of the 988 top-plane swaps, 442 reach 0.05 Mm, 281 reach
+  0.1 Mm, 151 reach 0.15 Mm and 95 reach 0.2 Mm by chains of confirmations.
+- **Control 1, shuffled frames: FAIL.** Upright swaps real / shuffled at 10, 20, 30, 40, 60, 80 s: at 0.1 Mm 1.69, 2.42, 3.57, 2.62,
+  3.41, 3.31; at the top plane 1.22, 2.09, 2.94, 3.05, 3.11, 3.06 (plain counts: 0.96, 1.85, 2.30, 2.23, 2.25, 2.96 at 0.1 Mm). The
+  depth rule raises the ratio by about a factor 1.5 to 1.8 at every step but does not reach 3 at 10 and 20 s. Unrelated frames are
+  confirmed across depth almost as often as real ones (363 of 1041 shuffled top-plane swaps against 442 of 988 real), as
+  predicted: a false 2-2 pattern from overlap matching of unrelated frames repeats on the next plane, 50 km down, because the
+  planes are alike.
+- **Control 2, time step: FAIL.** Upright rate from 10 to 80 s: -55% (top), -62% (0.05), -63% (0.1), -54% (0.15), -57% (0.2);
+  the plain rate falls -57 to -59% at the same depths. Not flatter.
+- **Control 3, moving-Voronoi calibration** on the plain per-depth counts: the corrected rate still falls 34 to 37% from 10 to 80 s
+  in the top 0.2 Mm (43% and 63% at 0.3 and 0.4 Mm), as in the step-0 section.
+- A looser rule (any swap within 10 pixels and the time tolerance on the neighbouring planes) gives counts about 20 to 40% above
+  the strict rule (544 against 442 at the top plane, 325 against 232 at 0.1 Mm, 10 s) and real / shuffled 1.3 and 1.8:
+  the same failure.
+
+The diagnosis from shadows does not fit these data: the cells were never cut from a picture of the surface but from velocity on
+horizontal planes of the cube, and four of five walls do stand upright through the top 0.2 Mm. What makes unrelated frames give
+swaps is the overlap matching between frames, and that error is the same on neighbouring planes.
+
+Conclusion: NOT CONFIRMED: a swap seen at the same place on the neighbouring planes is still found almost as often in shuffled
+frames at 10 s (real / shuffled 1.2 to 1.7, criterion 3), and its rate halves from 10 to 80 s like the plain count; the upright
+rate at 0.1 Mm, 10 s (0.026 per cell per minute) is not a stable number.
+
+Next (decided): the depth rule tests the walls, the shuffled control tests the time matching, so the time matching has to be made
+specific first: a swap counts only if all four cells are matched frame to frame with overlap above a fixed share (unrelated frames
+must fail it), calibrated on a control with splits and merges (the scaling-state froth drawn as images with its exact T1 list).
+The depth rule can be added on top once that passes.
+
+Files: scripts/fetch_depths.py (planes 0.05, 0.15, 0.3 Mm), trace3d.py (seg, link, track, combine), trace3d_job.sh (job
+sun-3d-trace), fig3d.py; results/trace3d/ (summary.md, summary.json, tracks.jsonl, logs), results/figures/sun_3d_trace.png (the
+0.1 Mm plane at snapshot 433 in the element colours; rings: swaps of the 10 minutes around it confirmed at 0.05 and 0.15 Mm, 63;
+grey dots: swaps seen at 0.1 Mm only, 145). Segmentations, links and track files stay on the compute machine (data/trace3d, 0.8 GB).
