@@ -241,7 +241,7 @@ Checked: the Jagodzinski types recovered from the letters for 390 layers (oeis_c
 
 ---
 
-### Entry 7 (optional). Closed non-backtracking walks per sphere of fcc
+### Entry 7 (optional). Closed non-backtracking walks per sphere of fcc: READY 16 Nov 2026 (rule 11 applied: #102 in %H only), waits for A402191 approval (rules 5 and 7)
 
 Extension; not yet the subject of a DICTO paper beyond #102 Corollary 3 (lengths 3 to 12 printed there).
 
@@ -253,7 +253,6 @@ Extension; not yet the subject of a DICTO paper beyond #102 Corollary 3 (lengths
 %N A?????? Number of closed non-backtracking walks of length n (cyclically non-backtracking, i.e., tailless) starting and ending at a fixed vertex of the face-centered cubic lattice (12 nearest neighbours).
 %C A?????? The same numbers hold at every sphere of the hexagonal close packing and of every close-packed stacking (dhcp, ..., periodic or not), DICTO #102 Corollary 3; the corresponding statement for all closed walks (A002899) is Thorpe (1972) for periodic stackings.
 %C A?????? a(3) = 48: each vertex lies on 24 triangles (the 24 edges of its cuboctahedron of neighbours), walked in 2 directions.
-%D A?????? DICTO, Every Site Hears the Same: the Loop Equality Is a Theorem (#102), Zenodo, 2026, DICTO DOI 10.5281/zenodo.24037664, Corollary 3.
 %D A?????? M. F. Thorpe, Random walks in polytype structures, J. Math. Phys. 13 (1972), 294-299.
 %H A?????? DICTO, <a href="https://doi.org/10.5281/zenodo.24037664">Every Site Hears the Same: the Loop Equality Is a Theorem</a>, Zenodo (2026).
 %F A?????? G.f.: 10*x^2/(1-x^2) - 22*x^2/(1+11*x^2) + ((1-11*x^2)/(1+11*x^2))*(F(x/(1+11*x^2)) - 1), where F(x) = Sum_{k>=0} A002899(k)*x^k (Ihara-Bass formula for a 12-regular net).
@@ -279,7 +278,7 @@ Extension; not yet the subject of a DICTO paper beyond #102 Corollary 3 (lengths
 %A A?????? _James Baker_, Nov 08 2026
 ```
 
-Checked: lengths 3..24 equal oeis_checks.py C1b (fcc closed walks by direct propagation, then Ihara-Bass); the A002899 sum formula used in the program is David Broadhurst's PARI program on A002899; the g.f. form expanded and compared for lengths 1..40.
+Checked 16 Nov 2026: a direct count of tailless closed walks on the fcc lattice (studies/2026-11-07-oeis-candidates/fcc_tailless_direct.py) equals these terms for lengths 1..15 (FINAL ok). Earlier: lengths 3..24 equal oeis_checks.py C1b (fcc closed walks by direct propagation, then Ihara-Bass); the A002899 sum formula used in the program is David Broadhurst's PARI program on A002899; the g.f. form expanded and compared for lengths 1..40.
 
 ---
 
