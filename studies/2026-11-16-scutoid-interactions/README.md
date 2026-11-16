@@ -1,5 +1,7 @@
 # Scutoid interactions: one study of the scutoid streams (16 Nov 2026)
 
+Title (DICTO, 16 Nov 2026): **Microcosm and Macrocosm**: Scutoid studies from cells to stars, planets and the cosmos.
+
 DICTO, 16 Nov 2026: "narrow our focus back to core study objectives and drop any avenues that are not supportive of the scutoid
 interactions and pull what we have into a study that has as few loose ends to tie up as possible". Scope (DICTO): "im only talking
 about scutoid matters". This study is a WRITE-UP of results already obtained: no new computation, no new data, no new jobs. Every
