@@ -1,0 +1,30 @@
+CHECK ok   the 720 pentagons lie 12 on each of Q's 60 mirrors
+CHECK ok   every copy covers exactly 6 pentagons on each of 10 mirrors ({'(6, 6, 6, 6, 6, 6, 6, 6, 6, 6)': 300})
+S5 mirror sets 60 halves {((('A', 2), ('B', 2), ('C3', 1)), 5, (1, 1, 1, 1, 1)): 600} (14s)
+CHECK ok   A*: a cover of all pentagons by 16 copies (union re-checked); PROVED minimal (HiGHS optimal)
+PROGRESS 0.1 A* pentagons
+CHECK ok   A*: a cover of all edges by 8 copies (union re-checked); PROVED minimal (HiGHS optimal)
+PROGRESS 0.2 A* edges
+MIN A* {"pentagons": {"min copies": 16, "HiGHS status (0 = optimal)": 0, "dual bound": 15.999999999999996, "union re-checked": true, "types": {"A": 16}, "S5s used": 8, "edges whole by the same copies": 1200, "pentagon multiplicity": {"1": 540, "3": 60, "2": 120}}, "edges": {"min copies": 8, "HiGHS status (0 = optimal)": 0, "dual bound": 8.00000000000001, "union re-checked": true, "types": {"A": 8}, "S5s used": 4}} (161s)
+CHECK ok   B*: a cover of all pentagons by 16 copies (union re-checked); PROVED minimal (HiGHS optimal)
+PROGRESS 0.3 B* pentagons
+CHECK ok   B*: a cover of all edges by 8 copies (union re-checked); NOT proved minimal (solver bound 7.0)
+PROGRESS 0.4 B* edges
+MIN B* {"pentagons": {"min copies": 16, "HiGHS status (0 = optimal)": 0, "dual bound": 15.999999999999996, "union re-checked": true, "types": {"B": 16}, "S5s used": 8, "edges whole by the same copies": 1200, "pentagon multiplicity": {"2": 120, "1": 540, "3": 60}}, "edges": {"min copies": 8, "HiGHS status (0 = optimal)": 1, "dual bound": 7.0, "union re-checked": true, "types": {"B": 8}, "S5s used": 4}} (456s)
+CHECK ok   C3*: a cover of all pentagons by 22 copies (union re-checked); PROVED minimal (HiGHS optimal)
+PROGRESS 0.5 C3* pentagons
+CHECK ok   C3*: a cover of all edges by 12 copies (union re-checked); NOT proved minimal (solver bound 10.0)
+PROGRESS 0.6 C3* edges
+MIN C3* {"pentagons": {"min copies": 22, "HiGHS status (0 = optimal)": 0, "dual bound": 22.000000000000778, "union re-checked": true, "types": {"C3": 22}, "S5s used": 22, "edges whole by the same copies": 1200, "pentagon multiplicity": {"1": 280, "2": 288, "3": 144, "4": 8}}, "edges": {"min copies": 12, "HiGHS status (0 = optimal)": 1, "dual bound": 10.0, "union re-checked": true, "types": {"C3": 12}, "S5s used": 12}} (795s)
+CHECK ok   A*+B*: a cover of all pentagons by 16 copies (union re-checked); NOT proved minimal (solver bound 15.0)
+PROGRESS 0.7 A*+B* pentagons
+CHECK ok   A*+B*: a cover of all edges by 8 copies (union re-checked); NOT proved minimal (solver bound 6.0)
+PROGRESS 0.8 A*+B* edges
+MIN A*+B* {"pentagons": {"min copies": 16, "HiGHS status (0 = optimal)": 1, "dual bound": 15.0, "union re-checked": true, "types": {"A": 8, "B": 8}, "S5s used": 8, "edges whole by the same copies": 1200, "pentagon multiplicity": {"1": 540, "2": 120, "3": 60}}, "edges": {"min copies": 8, "HiGHS status (0 = optimal)": 1, "dual bound": 6.0, "union re-checked": true, "types": {"B": 8}, "S5s used": 4}} (1275s)
+CHECK ok   all: a cover of all pentagons by 16 copies (union re-checked); NOT proved minimal (solver bound 13.000000001184466)
+PROGRESS 0.9 all pentagons
+CHECK ok   all: a cover of all edges by 9 copies (union re-checked); NOT proved minimal (solver bound 6.0)
+PROGRESS 1.0 all edges
+MIN all {"pentagons": {"min copies": 16, "HiGHS status (0 = optimal)": 1, "dual bound": 13.000000001184466, "union re-checked": true, "types": {"A": 12, "B": 4}, "S5s used": 8, "edges whole by the same copies": 1200, "pentagon multiplicity": {"1": 576, "2": 72, "3": 48, "4": 24}}, "edges": {"min copies": 9, "HiGHS status (0 = optimal)": 1, "dual bound": 6.0, "union re-checked": true, "types": {"B": 9}, "S5s used": 5}} (1755s)
+12 checks, 0 failed
+FINAL ok

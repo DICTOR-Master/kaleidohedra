@@ -1,0 +1,36 @@
+CHECK ok   wall registry from the survey: 60 M + 300 X + 1200 N = 1560
+PROGRESS 0.02 world
+CHECK ok   CONTROL (must pass): the polar of the 600-cell P with r2 = |Q corner|^2 is exactly the 120-cell Q (600 corners)
+CHECK ok   the polar of Q with the same sphere is exactly P (polarity is an involution)
+CHECK ok   CONTROL (must fail): with r2 = 0.5 x |Q corner|^2 the polar of P is not Q (0 corners in common)
+CHECK ok   CONTROL (must fail): with r2 = 2.0 x |Q corner|^2 the polar of P is not Q (0 corners in common)
+PROGRESS 0.06 P* = Q
+CHECK ok   600-cell: 720 edges (exact equal lengths)
+CHECK ok   600-cell: 1200 triangles, 600 tetrahedral cells
+DUAL A {"name": "polar of the golden truncated 5-cell", "fvector (corners, edges, 2-faces, cells)": [10, 30, 40, 20], "euler": 0, "cells (corners, 2-face sizes)": {"(4, (3, 3, 3, 3))": 20}, "2-face sizes": {"3": 40}, "shape fvector": [20, 40, 30, 10], "shape edges that are 600-cell edges": 30, "shape edges": 40, "shape cells that are 600-cell cells": 5, "dual corners on Q corners": 5, "dual corner kinds": {"Q corner": 5, "along a Q corner, |y|^2 = 6.8541 R2Q": 5}, "every dual cell lies in a cell hyperplane of Q": true, "plates (walls test)": {"M": 40}, "plates distinct": 10, "faces": 40, "plates": 10, "faces_per_plate_min": 4, "faces_per_plate_max": 4, "central_symmetry": false, "kind": "inherited heart"} (28s)
+CHECK ok   A*: every cell lies in a cell hyperplane of the 120-cell (polar to a corner of A, a 600-cell corner)
+CHECK ok   A*: every plate is one of the 1560 walls ({'M': 40})
+DUAL C3 {"name": "polar of the uniform expanded (runcinated) 5-cell", "fvector (corners, edges, 2-faces, cells)": [30, 70, 60, 20], "euler": 0, "cells (corners, 2-face sizes)": {"(8, (4, 4, 4, 4, 4, 4))": 20}, "2-face sizes": {"4": 60}, "shape fvector": [20, 60, 70, 30], "shape edges that are 600-cell edges": 0, "shape edges": 60, "shape cells that are 600-cell cells": 0, "dual corners on Q corners": 0, "dual corner kinds": {"along a Q corner, |y|^2 = 1.3708 R2Q": 10, "other direction": 20}, "every dual cell lies in a cell hyperplane of Q": true, "plates (walls test)": {"M": 60}, "plates distinct": 10, "faces": 60, "plates": 10, "faces_per_plate_min": 6, "faces_per_plate_max": 6, "central_symmetry": true, "kind": "heart"} (28s)
+CHECK ok   C3*: every cell lies in a cell hyperplane of the 120-cell (polar to a corner of C3, a 600-cell corner)
+CHECK ok   C3*: every plate is one of the 1560 walls ({'M': 60})
+DUAL B {"name": "polar of the golden cantellated 5-cell", "fvector (corners, edges, 2-faces, cells)": [20, 80, 90, 30], "euler": 0, "cells (corners, 2-face sizes)": {"(5, (3, 3, 3, 3, 3, 3))": 30}, "2-face sizes": {"3": 90}, "shape fvector": [30, 90, 80, 20], "shape edges that are 600-cell edges": 30, "shape edges": 90, "shape cells that are 600-cell cells": 0, "dual corners on Q corners": 0, "dual corner kinds": {"along a Q corner, |y|^2 = 1.7135 R2Q": 5, "other direction": 10, "along a Q corner, |y|^2 = 2.6180 R2Q": 5}, "every dual cell lies in a cell hyperplane of Q": true, "plates (walls test)": {"M": 90}, "plates distinct": 10, "faces": 90, "plates": 10, "faces_per_plate_min": 9, "faces_per_plate_max": 9, "central_symmetry": false, "kind": "inherited heart"} (29s)
+CHECK ok   B*: every cell lies in a cell hyperplane of the 120-cell (polar to a corner of B, a 600-cell corner)
+CHECK ok   B*: every plate is one of the 1560 walls ({'M': 90})
+CHECK ok   C3* is centrally symmetric (heart), as C3 is
+CHECK ok   Q = A* n -A* n C3* n B* n -B*: the five duals of one S5 use all 120 cell hyperplanes of Q between them, once each
+PROGRESS 0.12 duals built
+CHECK ok   120-cell: 720 pentagons
+CHECK ok   each pentagon of Q is polar to one edge of P (its 5 corners q satisfy p1.q = p2.q = R2Q): a bijection 720 <-> 720
+CHECK ok   120-cell: 1200 edges
+CHECK ok   each edge of Q is polar to one triangle of P: a bijection 1200 <-> 1200
+PROGRESS 0.18 labels
+BASE COVER A {'touched': 120, 'whole radial': 60, 'whole finite': 60, 'partial radial': [], "whole pentagons = exactly those polar to the shape's own 600-cell edges": False} {'touched': 480, 'whole radial': 260, 'whole finite': 260, 'partial radial': []} (45s)
+CHECK ok   A*: finite = radial on every pentagon and edge it touches (A* contains Q)
+BASE COVER B {'touched': 120, 'whole radial': 60, 'whole finite': 60, 'partial radial': [], "whole pentagons = exactly those polar to the shape's own 600-cell edges": False} {'touched': 480, 'whole radial': 270, 'whole finite': 270, 'partial radial': []} (78s)
+CHECK ok   B*: finite = radial on every pentagon and edge it touches (B* contains Q)
+BASE COVER C3 {'touched': 120, 'whole radial': 60, 'whole finite': 60, 'partial radial': [], "whole pentagons = exactly those polar to the shape's own 600-cell edges": False} {'touched': 480, 'whole radial': 260, 'whole finite': 260, 'partial radial': []} (106s)
+CHECK ok   C3*: finite = radial on every pentagon and edge it touches (C3* contains Q)
+PROGRESS 0.30 base coverage
+PILOT stops here (106s)
+22 checks, 0 failed
+FINAL ok

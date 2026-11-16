@@ -1,0 +1,422 @@
+{
+ "duals": {
+  "A": {
+   "name": "polar of the golden truncated 5-cell",
+   "fvector (corners, edges, 2-faces, cells)": [
+    10,
+    30,
+    40,
+    20
+   ],
+   "euler": 0,
+   "cells (corners, 2-face sizes)": {
+    "(4, (3, 3, 3, 3))": 20
+   },
+   "2-face sizes": {
+    "3": 40
+   },
+   "shape fvector": [
+    20,
+    40,
+    30,
+    10
+   ],
+   "shape edges that are 600-cell edges": 30,
+   "shape edges": 40,
+   "shape cells that are 600-cell cells": 5,
+   "dual corners on Q corners": 5,
+   "dual corner kinds": {
+    "Q corner": 5,
+    "along a Q corner, |y|^2 = 6.8541 R2Q": 5
+   },
+   "every dual cell lies in a cell hyperplane of Q": true,
+   "plates (walls test)": {
+    "M": 40
+   },
+   "plates distinct": 10,
+   "faces": 40,
+   "plates": 10,
+   "faces_per_plate_min": 4,
+   "faces_per_plate_max": 4,
+   "central_symmetry": false,
+   "kind": "inherited heart"
+  },
+  "C3": {
+   "name": "polar of the uniform expanded (runcinated) 5-cell",
+   "fvector (corners, edges, 2-faces, cells)": [
+    30,
+    70,
+    60,
+    20
+   ],
+   "euler": 0,
+   "cells (corners, 2-face sizes)": {
+    "(8, (4, 4, 4, 4, 4, 4))": 20
+   },
+   "2-face sizes": {
+    "4": 60
+   },
+   "shape fvector": [
+    20,
+    60,
+    70,
+    30
+   ],
+   "shape edges that are 600-cell edges": 0,
+   "shape edges": 60,
+   "shape cells that are 600-cell cells": 0,
+   "dual corners on Q corners": 0,
+   "dual corner kinds": {
+    "along a Q corner, |y|^2 = 1.3708 R2Q": 10,
+    "other direction": 20
+   },
+   "every dual cell lies in a cell hyperplane of Q": true,
+   "plates (walls test)": {
+    "M": 60
+   },
+   "plates distinct": 10,
+   "faces": 60,
+   "plates": 10,
+   "faces_per_plate_min": 6,
+   "faces_per_plate_max": 6,
+   "central_symmetry": true,
+   "kind": "heart"
+  },
+  "B": {
+   "name": "polar of the golden cantellated 5-cell",
+   "fvector (corners, edges, 2-faces, cells)": [
+    20,
+    80,
+    90,
+    30
+   ],
+   "euler": 0,
+   "cells (corners, 2-face sizes)": {
+    "(5, (3, 3, 3, 3, 3, 3))": 30
+   },
+   "2-face sizes": {
+    "3": 90
+   },
+   "shape fvector": [
+    30,
+    90,
+    80,
+    20
+   ],
+   "shape edges that are 600-cell edges": 30,
+   "shape edges": 90,
+   "shape cells that are 600-cell cells": 0,
+   "dual corners on Q corners": 0,
+   "dual corner kinds": {
+    "along a Q corner, |y|^2 = 1.7135 R2Q": 5,
+    "other direction": 10,
+    "along a Q corner, |y|^2 = 2.6180 R2Q": 5
+   },
+   "every dual cell lies in a cell hyperplane of Q": true,
+   "plates (walls test)": {
+    "M": 90
+   },
+   "plates distinct": 10,
+   "faces": 90,
+   "plates": 10,
+   "faces_per_plate_min": 9,
+   "faces_per_plate_max": 9,
+   "central_symmetry": false,
+   "kind": "inherited heart"
+  }
+ },
+ "base_A_pentagons": {
+  "touched": 120,
+  "whole radial": 60,
+  "whole finite": 60,
+  "partial radial": [],
+  "whole pentagons = exactly those polar to the shape's own 600-cell edges": false
+ },
+ "base_A_edges": {
+  "touched": 480,
+  "whole radial": 260,
+  "whole finite": 260,
+  "partial radial": []
+ },
+ "base_B_pentagons": {
+  "touched": 120,
+  "whole radial": 60,
+  "whole finite": 60,
+  "partial radial": [],
+  "whole pentagons = exactly those polar to the shape's own 600-cell edges": false
+ },
+ "base_B_edges": {
+  "touched": 480,
+  "whole radial": 270,
+  "whole finite": 270,
+  "partial radial": []
+ },
+ "base_C3_pentagons": {
+  "touched": 120,
+  "whole radial": 60,
+  "whole finite": 60,
+  "partial radial": [],
+  "whole pentagons = exactly those polar to the shape's own 600-cell edges": false
+ },
+ "base_C3_edges": {
+  "touched": 480,
+  "whole radial": 260,
+  "whole finite": 260,
+  "partial radial": []
+ },
+ "placement_I_per_copy": {
+  "A*": {
+   "pentagons whole (of 720)": 720,
+   "copies wholly covering each pentagon": {
+    "10": 720
+   },
+   "pentagons touched only partially by single copies": 0,
+   "edges whole (of 1200)": 1200,
+   "copies wholly covering each edge": {
+    "26": 1200
+   }
+  },
+  "B*": {
+   "pentagons whole (of 720)": 720,
+   "copies wholly covering each pentagon": {
+    "10": 720
+   },
+   "pentagons touched only partially by single copies": 0,
+   "edges whole (of 1200)": 1200,
+   "copies wholly covering each edge": {
+    "27": 1200
+   }
+  },
+  "C3*": {
+   "pentagons whole (of 720)": 720,
+   "copies wholly covering each pentagon": {
+    "5": 720
+   },
+   "pentagons touched only partially by single copies": 0,
+   "edges whole (of 1200)": 1200,
+   "copies wholly covering each edge": {
+    "13": 1200
+   }
+  },
+  "A*+B*": {
+   "pentagons whole (of 720)": 720,
+   "copies wholly covering each pentagon": {
+    "20": 720
+   },
+   "pentagons touched only partially by single copies": 0,
+   "edges whole (of 1200)": 1200,
+   "copies wholly covering each edge": {
+    "53": 1200
+   }
+  },
+  "all": {
+   "pentagons whole (of 720)": 720,
+   "copies wholly covering each pentagon": {
+    "25": 720
+   },
+   "pentagons touched only partially by single copies": 0,
+   "edges whole (of 1200)": 1200,
+   "copies wholly covering each edge": {
+    "66": 1200
+   }
+  }
+ },
+ "placement_I_union_direct": {
+  "A*": {
+   "radial": {
+    "pentagon": "1",
+    "pentagon fins in plate": 80,
+    "edge": "1",
+    "edge fins": 240
+   },
+   "finite": {
+    "pentagon": "1",
+    "pentagon fins in plate": 80,
+    "edge": "1",
+    "edge fins": 240
+   }
+  },
+  "B*": {
+   "radial": {
+    "pentagon": "1",
+    "pentagon fins in plate": 180,
+    "edge": "1",
+    "edge fins": 540
+   },
+   "finite": {
+    "pentagon": "1",
+    "pentagon fins in plate": 180,
+    "edge": "1",
+    "edge fins": 540
+   }
+  },
+  "C3*": {
+   "radial": {
+    "pentagon": "1",
+    "pentagon fins in plate": 60,
+    "edge": "1",
+    "edge fins": 180
+   },
+   "finite": {
+    "pentagon": "1",
+    "pentagon fins in plate": 60,
+    "edge": "1",
+    "edge fins": 180
+   }
+  },
+  "A*+B*": {
+   "radial": {
+    "pentagon": "1",
+    "pentagon fins in plate": 260,
+    "edge": "1",
+    "edge fins": 780
+   },
+   "finite": {
+    "pentagon": "1",
+    "pentagon fins in plate": 260,
+    "edge": "1",
+    "edge fins": 780
+   }
+  },
+  "all": {
+   "radial": {
+    "pentagon": "1",
+    "pentagon fins in plate": 320,
+    "edge": "1",
+    "edge fins": 960
+   },
+   "finite": {
+    "pentagon": "1",
+    "pentagon fins in plate": 320,
+    "edge": "1",
+    "edge fins": 960
+   }
+  }
+ },
+ "minimal_covers": {
+  "A*": {
+   "max pentagons per copy": 60,
+   "lower bound (copies)": 12,
+   "exact covers found": 0,
+   "search complete": true
+  },
+  "B*": {
+   "max pentagons per copy": 60,
+   "lower bound (copies)": 12,
+   "exact covers found": 0,
+   "search complete": true
+  },
+  "C3*": {
+   "max pentagons per copy": 60,
+   "lower bound (copies)": 12,
+   "exact covers found": 0,
+   "search complete": true
+  },
+  "A*+B*": {
+   "max pentagons per copy": 60,
+   "lower bound (copies)": 12,
+   "exact covers found": 0,
+   "search complete": true
+  },
+  "all": {
+   "max pentagons per copy": 60,
+   "lower bound (copies)": 12,
+   "exact covers found": 0,
+   "search complete": true
+  }
+ },
+ "placement_II_plates": {
+  "X": 192000
+ },
+ "placement_II_edge": {
+  "fins whose plate holds the edge": 3840,
+  "radial coverage of the edge": "1",
+  "intervals": 372
+ },
+ "controls": {
+  "mis-scaled r2 = R2Q/2 (A*+B*)": {
+   "finite": "0",
+   "finite float": 0.0,
+   "radial": "1"
+  },
+  "non-golden (phi^2,phi^2,phi^2,3/2,0)": {
+   "dual corners on Q corners": 0,
+   "dual cells in Q cell hyperplanes": 0,
+   "dual corners": 10,
+   "orbit corners inside P (dual contains Q only if all are)": "0 of 20",
+   "plates": {
+    "M": 40
+   },
+   "pentagon radial": "1",
+   "pentagon finite": "1",
+   "finite float": 1.0
+  },
+  "non-golden (phi^2,phi^2,6/5,6/5,0)": {
+   "dual corners on Q corners": 0,
+   "dual cells in Q cell hyperplanes": 0,
+   "dual corners": 20,
+   "orbit corners inside P (dual contains Q only if all are)": "30 of 30",
+   "plates": {
+    "M": 90
+   },
+   "pentagon radial": "1",
+   "pentagon finite": "1",
+   "finite float": 1.0
+  }
+ },
+ "membership": {
+  "A": {
+   "copies through each Q cell": {
+    "20": 120
+   },
+   "copies with a corner at each Q corner": {
+    "1": 600
+   }
+  },
+  "B": {
+   "copies through each Q cell": {
+    "30": 120
+   },
+   "copies with a corner at each Q corner": {
+    "0": 600
+   }
+  },
+  "C3": {
+   "copies through each Q cell": {
+    "10": 120
+   },
+   "copies with a corner at each Q corner": {
+    "0": 600
+   }
+  }
+ },
+ "polar_24cell": {
+  "fvector": [
+   24,
+   96,
+   96,
+   24
+  ],
+  "corners on Q corners": 0,
+  "corner directions": {
+   "Q corner": 24
+  }
+ },
+ "coordinate_S5_split_of_partitions": {
+  "state 1": {
+   "((0, 12, 12), (10, 2, 12), (10, 2, 12), (10, 2, 12), (10, 2, 12))": 5
+  },
+  "state 2": {
+   "((0, 12, 12), (10, 2, 12), (10, 2, 12), (10, 2, 12), (10, 2, 12))": 5
+  }
+ },
+ "dual_corners_vs_inscribed_600cells": {
+  "A": {
+   "(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)": 120
+  },
+  "C3": {
+   "(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)": 60
+  }
+ },
+ "seconds": 381.67946195602417
+}

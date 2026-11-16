@@ -133,6 +133,75 @@ Kinds (the name "inherited heart" is DICTO's, 16 Nov 2026):
 
 **Exceptions, all of them.** (i) Inheriting the walls is not enough: A, −A, B, −B and every copy of them, and the two 5-cells, have every plate on a heart parent's walls yet one face per plate (non-heart). (ii) It is not needed either: the runcitruncated 5-cells of the 120-cell carry up to 10 faces on one plate while 40 of their 75 plates are on no wall. What does hold on every case tested: **removing corners from a heart parent (the diminished 600-cells) gives inherited heart, and twisting a parent's corners into a new orbit (A, B, the 5-cells) gives non-heart.** So the conjecture needs the parent's *faces*, not only its walls. The vicinity study's table calls the diminished 600-cells non-heart; under the three kinds they are inherited heart (that study had only two kinds).
 
+## Dual cats: the Red Queen's own cats are polar duals
+
+DICTO asked (16 Nov): "why the red queen but not the white, is there perhaps a false underlying premise ... something previously too elegant and perfect to question?" The premise: we built the 120-cell's cats from 600-cells by *inclusion*. An inscribed 600-cell uses 120-cell corners, but its edges are diagonals of the 120-cell, so its pieces never make the 120-cell's edges or pentagons. The relation between the two Queens is *duality*. DICTO's hypothesis (confirmed by him on 16 Nov 2026): the Red Queen's own cats are the polar duals A*, B*, C3* of A, B, C3, placed so that the polarity carries the White Queen onto the Red Queen.
+
+**Verdict: YES.** The false premise explains the asymmetry. Under duality, A* and B* alone cover every pentagon and every edge of the 120-cell whole, both finite and radial, with their fins on the 120-cell's own mirrors, just as A and B cover the 600-cell's triangles. The inclusion copies, dualised or not, never reach a pentagon. Two limits: (i) the cover does not need the golden form, because any orbit of the same S5 type gives the same fins (control below). The golden form gives the fit: cells on the 120-cell's cell walls, and A*'s corners on its corners. (ii) No counterpart of the exact B-type partition: no set of copies covers each pentagon exactly once.
+
+**Construction (exact in Q(√5)).** P is the 600-cell whose corners point at Q's cell centres (Q's corners are the centroids of P's cells). Polarity is taken about the common centre with a sphere of radius² r² = |Q corner|². Then X* = {y : x·y ≤ r² for every corner x of X}. A*, B*, C3* are the polars of A, B, C3 and of all their copies in P (the 60 S5s of P: 120 A*, 120 B*, 60 C3*). Because A ⊂ P, A* ⊃ Q, and every cell of A* lies in a cell wall of Q (it is polar to a corner of A, which is a corner of P). Since P = A ∪ −A ∪ C3 ∪ B ∪ −B (corners), **Q = A* ∩ −A* ∩ C3* ∩ B* ∩ −B***: the five duals of one S5 use Q's 120 cell walls once each.
+
+**The dual shapes** (`data/dual_cats.json`)
+
+| dual | corners, edges, 2-faces, cells | cells | corners on Q | other corners (\|y\|²/\|Q corner\|², float) | plates (walls) | faces per plate | kind |
+|---|---|---|---|---|---|---|---|
+| A* (polar of the golden truncated 5-cell) | 10, 30, 40, 20 | 20 tetrahedra | **5** (polar to A's 5 tetrahedral cells, which are 600-cell cells) | 5 along Q corners at 6.854 (= φ⁴) | 10 of Q's mirrors | 4 | inherited heart |
+| B* (polar of the golden cantellated 5-cell) | 20, 80, 90, 30 | 30 triangular bipyramids (5 corners, 6 triangles) | 0 | 5 along Q corners at 1.714, 5 at 2.618, 10 in other directions | 10 of Q's mirrors | 9 | inherited heart |
+| C3* (polar of the uniform expanded 5-cell) | 30, 70, 60, 20 | 20 cells of 8 corners and 6 quadrilaterals (trigonal-trapezohedron type) | 0 | 10 along Q corners at 1.371, 20 in other directions | 10 of Q's mirrors | 6 | heart |
+
+- Combinatorially, A* is the 5-cell with a low pyramid on each of its cells (the Kleetope of the 5-cell; the polar of a truncation is the Kleetope of the polar, Grünbaum, *Convex Polytopes*). Its 5 big corners carry the pyramids' bases and its 5 apices are corners of the 120-cell. B* and C3* are the polars of the cantellated and runcinated 5-cells; their cells are the polars of the vertex figures (wedge, triangular antiprism). No standard name for these three duals was found in the sources checked (below). Their golden forms here are new as far as we found.
+- **Walls test.** Every 2-face plate of every dual lies on one of the 120-cell's own **60 mirrors** (M), 10 per copy (the mirrors of its S5); none lies on the 300 cross walls (X) or on the 1200 new walls (N). Compare the inclusion copies: A on the 300 X only, B on all 1560 walls. Reason: the plate of the dual face polar to an edge ab is the hyperplane perpendicular to a − b, and every edge of an S5-orbit shape runs along a root of that S5.
+- **Kinds.** Duality turns the non-heart A and B into **inherited heart** shapes (4 and 9 faces on each plate, no central symmetry). C3* stays heart. This agrees with the tentative conjecture: A* and B* inherit their walls from a heart parent (Q's mirrors) without its central symmetry.
+
+**Coverage of the Red Queen's skeleton, placement I** (polars of the 300 copies of P's 60 S5s; `data/s4_dual_cats.log`, `data/s5_dual_min_cover.log`)
+
+| fins of | pentagons covered whole | copies covering each pentagon | edges covered whole | copies covering each edge | fewest copies for all pentagons | fewest for all edges |
+|---|---|---|---|---|---|---|
+| A* | 720 of 720 | 10 | 1200 of 1200 | 26 | **16** (proved) | **8** (proved) |
+| B* | 720 | 10 | 1200 | 27 | **16** (proved) | 8 found, at least 7 |
+| C3* | 720 | 5 | 1200 | 13 | **22** (proved) | 12 found, at least 10 |
+| A* + B* | 720 | 20 | 1200 | 53 | 16 found, at least 15 | 8 found, at least 6 |
+| all | 720 | 25 | 1200 | 66 | 16 found, at least 13 | 9 found, at least 6 |
+
+- **Finite = radial on every pentagon and edge.** A dual contains Q, so its fins reach Q's surface. The direct exact union at one pentagon and one edge (all copies transported by exact symmetries) is 1 in both readings for every row; by symmetry this holds for all 720 and 1200.
+- **All or nothing.** Each copy covers a pentagon either whole or not at all (no partial fractions occur). Each copy covers exactly 60 pentagons: 6 of the 12 on each of its S5's 10 mirrors. Within one S5 the five duals A*, −A*, C3*, B*, −B* take **five different halves** of every one of its mirrors (600 of 600 mirror cases).
+- **Fewest copies.** Every mirror needs at least 2 copies, so at least 12. An exact-cover search (complete) finds no 12-copy cover in any selection. So, unlike the 600-cell, where the 120 B-type copies split the 1200 triangles exactly once, no selection of dual copies covers each pentagon once. The fewest A* copies is 16, proved by HiGHS: 8 S5s, both A*-type copies of each; 540 pentagons once, 120 twice, 60 three times. A 16-copy cover of the pentagons also covers all 1200 edges. "Proved" = HiGHS optimal. "At least" = the solver's bound, or 13 from the exact-cover search, within 240 s.
+- **White Queen, for comparison** (section above): the A and B fins cover all 1200 triangles and 720 edges of the 600-cell. Each triangle is a face of exactly 2 A-type and 1 B-type copy. In the dual picture each pentagon is covered by 10 A* and 10 B* copies.
+
+**Placement II: dualising the inclusion copies** (all 3000 copies of the 600 S5s of the 10 inscribed 600-cells). All 192,000 fin plates lie on the 300 cross walls X; none lies on a mirror of Q, so **pentagon coverage is 0, exactly**. Their fins still cover Q's edges whole, radially (3840 fins through one edge; by symmetry every edge). (The polar of an inscribed 600-cell has its cells facing Q's corner directions, not Q's cell centres, so it is never Q.) So the inclusion picture, dualised or not, misses the pentagons.
+
+**Controls**
+
+| control | must | result |
+|---|---|---|
+| polar of P with r² = \|Q corner\|² is Q (and Q* = P) | pass | exact, all 600 corners |
+| polar of P with r² × 1/2 and × 2 | fail | 0 corners in common with Q |
+| A* and B* fins with r² × 1/2 | fail | finite coverage of the pentagon 0 |
+| non-golden orbits (φ²,φ²,φ²,3/2,0) and (φ²,φ²,6/5,6/5,0): corners on Q, cells on Q's cell walls | fail | 0 and 0 |
+| the same non-golden orbits: pentagon coverage | (required to fail) | **does not fail**: radial 1 and finite 1 |
+
+The last control does not separate golden from non-golden. The fin over the dual face polar to an edge ab is the cone of directions in which a and b are both farthest (the normal cone of the edge). Every S5 orbit of the same type (here: three equal coordinates; two pairs) has the same cones. So coverage of the pentagons is a property of the S5 fan, not of the golden ratio. What only the golden copies give: the dual's cells lie in Q's own cell walls, A*'s corners are Q's corners, and the five duals of one S5 intersect exactly in Q.
+
+**Corner membership and the two states on the dual side** (`data/dual_cats.json`)
+- Each cell of Q (one per corner of P) is a cell wall of 20 A*, 30 B* and 10 C3* copies.
+- **Each corner of Q is a corner of exactly one A* copy**: the 120 A* copies split Q's 600 corners into 120 sets of 5. Dually, the 120 A-type copies split the 600-cell's 600 cells into 120 sets of 5. **The 5 Q-corners of every A* lie one in each of the 10 inscribed 600-cells** (each corner is in 2): every A* takes exactly one corner from every White Queen of both states. B* and C3* have no corner on Q.
+- The mirror of the 10 inscribed 600-cells, one level down: P holds 25 24-cells, and every corner lies in 5 of them. P splits into 5 disjoint 24-cells in 10 ways (known: Wikipedia, "600-cell"). Every 24-cell is in exactly 2 of the 10 splits, **one from each of two states of 5**. Splits of different states share one 24-cell, splits of the same state none (the pattern K5,5), and every H4 mirror swaps the states. Polarity carries this to Q's 120 cells, grouped into 25 sets of 24 (each the cells of a 24-cell around Q, its 24 corners along Q-corner directions, none on Q), with the same two states. **One S5 splits every one of the 10 splits as (A-type, C3, B-type) = (0, 12, 12) once and (10, 2, 12) four times, in both states.** These are the same numbers as the half-cat rule for the 24-cells shared by two White Queens (item 5 above).
+
+**Figure** `data/redqueen-dual-cats.png`: the 120-cell's 720 pentagons in the H4 Coxeter plane, each marked at its centre and coloured by the A* copy of the 16-copy cover whose fins cover it (one colour per S5, full and pale for its two A* copies; ring = a second covering copy). Edge check passed.
+
+**Files (this section)**
+- `scripts/s4_dual_cats.py` → `data/s4_dual_cats.log`, `data/dual_cats.json` (job rqcats-dual, 34 checks, FINAL ok, 6.4 min; pilot rqcats-dual-pilot, 22 checks, FINAL ok, 106 s).
+- `scripts/s5_dual_min_cover.py` → `data/s5_dual_min_cover.log`, `data/dual_min_cover.json`: 0/1 set cover by HiGHS (scipy), every cover re-checked as a set union (job rqcats-dualmin2, 12 checks, FINAL ok). The first run, rqcats-dualmin, stopped at its 6-minute cap after 3 of 10 solves; the cap was raised and the run repeated.
+- `scripts/fig_dual_cats.py` → `data/redqueen-dual-cats.png`, `data/fig_dual_cats.log` (job rqcats-dualfig, 6 checks, FINAL ok).
+- Run state `data/dual_cover.pkl`, `data/dual_min_cover.pkl` stays on the compute machine (rebuilt by s4, s5).
+
+**Sources checked for names (16 Nov 2026):** Wikipedia "Truncated 5-cell" (names only the bitruncated 5-cell's dual, the disphenoidal 30-cell), "Cantellated 5-cell" and "Runcinated 5-cell" (no dual named), "600-cell" (25 24-cells, 10 ways into 5 disjoint ones). Grünbaum, *Convex Polytopes* (Kleetopes; polar of a truncation). The exact polar duals of the golden copies, their 120-cell walls and kinds, the coverage counts, the fewest covers and the A* corner partition were not found in the sources checked.
+
+**LEADS (dual cats)**
+1. Close the open minima: A* + B* pentagons (15 or 16), all types (13 to 16), the edge covers.
+2. The A* corner partition (120 sets of 5 Q corners, one in each White Queen): which sets of A* copies fill exactly one White Queen's 120 corners, or one whole state?
+3. The five halves per mirror: how the 12 pentagons of one mirror (5 halves of 6) form a design over the 10 S5s through that mirror.
+
 ## Files
 
 - `scripts/rq_lib.py`: world (P, Q, W(H4) on both, the 10 inscribed 600-cells), exact congruent-copy search (float proposal, exact full Gram check), exact linear maps, faces and plates, heart kind, exact 2D coverage of a face by fin cones and of an edge.
