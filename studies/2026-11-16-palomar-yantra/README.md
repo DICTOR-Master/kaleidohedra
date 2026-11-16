@@ -137,3 +137,6 @@
 - `blind/inputs/K-kulaichev-unique.md`: what the scorers saw.
 - `blind/policy/`: CONTRIBUTING-s1.md, CONTRIBUTING-s7.md, 04-literature-notability.md, rubric.json (PalomarPolicy @ 28bd48b).
 - `blind/blind-A-K1.json`, `blind/blind-B-K1.json`: their replies, in prompt 04's shape, with `what_would_reach_higher`.
+
+## 16 Nov: related work found by DICTO
+salahealer9, sri-yantra-constraint-engine (GitHub, MIT; Zenodo 10.5281/zenodo.20617730): a numerical reimplementation and structural analysis of Rao 1998's constraint system: reproduces Rao's tables to about 1e-7, reports four transcription errata in Rao's equations, and a dependency lattice (exactly two linear identities among F1..F20). It makes NO uniqueness claim, uses no certified/interval method, no Lean; its feasibility enumeration and pre-registration are listed as not done. So it does not affect priority. To do before submission: cite it in formalization.yaml as related work, and check whether any of its four Rao errata touch the Rao constraints the entry cites (1, 2, 8, 9, 20). Read via a fetch summary of the repository page on 16 Nov 2026, not yet in full.
