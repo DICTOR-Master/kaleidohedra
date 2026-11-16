@@ -40,7 +40,7 @@ sources:
     id: "doi:10.5281/zenodo.24052633"
     type: "paper"
     location: "https://doi.org/10.5281/zenodo.24052633 (concept DOI, all versions)"
-    relationship: "formalizes"
+    relationship: "background"
     note: >-
       The conditions (Theorem 1's admissibility) and the yantra of Theorem 10
       are formalised; the uniqueness is the new result below.
@@ -51,7 +51,7 @@ sources:
       - "DICTO"
     type: "original-proof"
     location: "this repository (README.md)"
-    relationship: "formalizes"
+    relationship: "other"
     note: "First proof of uniqueness; the Lean proof follows the box certificate, not the degree-1744 elimination."
     author_endorsement: "participated"
   - title: "Sriyantra and its Mathematical Properties"
