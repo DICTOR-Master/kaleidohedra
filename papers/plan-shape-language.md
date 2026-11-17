@@ -97,6 +97,13 @@ fill space"; "the lattice is the grammar".
   scale, and scores and degrees are counted within a scale. Scales and their number fields: golden φ (Q(√5)); silver
   1 + √2 (Q(√2)); bronze (3 + √13)/2 (Q(√13)); the heptagon's ρ = 2cos(π/7) and σ = ρ² − 1 (the cubic field
   Q(cos 2π/7); Steinbach 1997, to be checked). Stage 1's kernel carries each of these fields exactly.
+- **Plate score (2D, DICTO 18 Nov).** The number of central planes that carry the Vacuus's fins (one fin O–A–B per edge),
+  with each plate's form recorded: a whole central disc (the fins fill a polygon round O) or separate fins (e.g. the
+  cube's bow-ties: two fins of opposite edges meeting only at O). Read from the Vacuus census (studies/2026-11-02-dicto-vacuus,
+  data/vacuus-census.json, field fin_planes): tetrahedron 6 (single fins), cube 6 (bow-ties), octahedron 3 (square discs),
+  dodecahedron 15, icosahedron 15, cuboctahedron 4 (hexagon discs), icosidodecahedron 6 (decagon discs), truncated
+  octahedron 15. The fin, strut and pyramid counts are the face counts E, V, F (the face fan), so they are not separate
+  scores; the plate score is new information and ties the language to the walls (#110).
 - **Golden side.** AXE and CLEO (Mosseri–Sadoc tiles t6 and t4, scaled by 1/φ; Koca et al. 2020) as words of the
   icosahedral tilings, entering at golden enlargement steps.
 - **Credits.** Plato (*Timaeus*: solids from two right triangles); Aristotle (*De Caelo* III.8: regular tetrahedra
