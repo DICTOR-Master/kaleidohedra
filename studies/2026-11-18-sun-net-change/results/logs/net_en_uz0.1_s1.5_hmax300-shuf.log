@@ -1,0 +1,33 @@
+PROGRESS segment 242 frames 84 s
+NET step 1 tau 80 s starts 30 surv/cell 0.127 net/surv 0.4965 D/l 0.8721
+NET step 1 tau 160 s starts 29 surv/cell 0.033 net/surv 0.1176 D/l 0.9821
+NET step 1 tau 240 s starts 28 surv/cell 0.010 net/surv 0.0308 D/l 1.0201
+NET step 1 tau 320 s starts 27 surv/cell 0.004 net/surv 0.0000 D/l 1.0903
+NET step 1 tau 480 s starts 25 surv/cell 0.000 net/surv 0.0000 D/l 0.4970
+scripts/net_sz.py:104: RuntimeWarning: invalid value encountered in scalar divide
+  f'net/surv {(r[:, 6] + r[:, 7]).sum() / r[:, 3].sum():.4f} D/l {np.sqrt(r[:, 12].sum() / r[:, 3].sum()) / ell:.4f}',
+NET step 1 tau 640 s starts 23 surv/cell 0.000 net/surv nan D/l nan
+PROGRESS step 1 done 86 s
+NET step 2 tau 80 s starts 30 surv/cell 0.272 net/surv 0.9060 D/l 0.7005
+NET step 2 tau 160 s starts 29 surv/cell 0.113 net/surv 0.4051 D/l 0.8724
+NET step 2 tau 240 s starts 28 surv/cell 0.052 net/surv 0.2009 D/l 0.9187
+NET step 2 tau 320 s starts 27 surv/cell 0.025 net/surv 0.0921 D/l 0.9398
+NET step 2 tau 480 s starts 25 surv/cell 0.008 net/surv 0.0115 D/l 0.9859
+NET step 2 tau 640 s starts 23 surv/cell 0.003 net/surv 0.0000 D/l 0.9036
+PROGRESS step 2 done 87 s
+NET step 4 tau 80 s starts 30 surv/cell 0.452 net/surv 1.1847 D/l 0.5240
+NET step 4 tau 160 s starts 29 surv/cell 0.276 net/surv 0.9428 D/l 0.7130
+NET step 4 tau 240 s starts 28 surv/cell 0.178 net/surv 0.6347 D/l 0.8313
+NET step 4 tau 320 s starts 27 surv/cell 0.116 net/surv 0.4290 D/l 0.9109
+NET step 4 tau 480 s starts 25 surv/cell 0.056 net/surv 0.1981 D/l 0.9770
+NET step 4 tau 640 s starts 23 surv/cell 0.029 net/surv 0.1060 D/l 0.9998
+PROGRESS step 4 done 88 s
+NET step 8 tau 80 s starts 30 surv/cell 0.616 net/surv 1.2131 D/l 0.3782
+NET step 8 tau 160 s starts 29 surv/cell 0.456 net/surv 1.2291 D/l 0.5402
+NET step 8 tau 240 s starts 28 surv/cell 0.354 net/surv 1.0677 D/l 0.6383
+NET step 8 tau 320 s starts 27 surv/cell 0.284 net/surv 0.9613 D/l 0.7159
+NET step 8 tau 480 s starts 25 surv/cell 0.186 net/surv 0.7027 D/l 0.8200
+NET step 8 tau 640 s starts 23 surv/cell 0.125 net/surv 0.4981 D/l 0.8840
+PROGRESS step 8 done 89 s
+WALL 89 s
+FINAL ok

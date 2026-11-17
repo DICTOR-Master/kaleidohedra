@@ -8493,6 +8493,15 @@
     "retry": "only for: full corona enumeration; tilings with no period from the 11 placements; C2 alone beyond the tested model",
     "study": "2026-11-17-get-mixing",
     "date": "2026-11-17"
+   },
+   {
+    "question": "Sun granulation: net neighbour change per surviving granule after fixed time tau (null-study definition), frame-rate free? stable? vs null",
+    "method": "recomputed neighbour sets (tiles.py), 16 settings, steps 10/20/40/80 s, tau 80-640 s, null moving.py (3.602 at D=1)",
+    "status": "COMPUTED (NOT CONFIRMED as a rung)",
+    "result": "frame-rate free: steps agree within 4.9% for tau<=320 s in 16/16 settings (up to 17% at 480-640 s); planned shuffled test fails 16/16 (survivors collapse); post-hoc survivor-share step test separates real (0.4-2.2%) from shuffled (135-386%); spread across settings 37% at 80 s, 9% at 320 s, 18% at 640 s (labelling dominates; depth/smoothing/run/field <=3% at 320 s); Sun/null at matched D 0.73 (80 s) falling to 0.54 (640 s): no single ratio",
+    "retry": "only with a survivor-free (lineage) count or a null with births and deaths, and a specificity test fixed in advance; or re-read against displacement D",
+    "study": "2026-11-18-sun-net-change",
+    "date": "2026-11-18"
    }
   ]
  },
