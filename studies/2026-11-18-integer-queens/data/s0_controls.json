@@ -1,0 +1,215 @@
+{
+ "golden": {
+  "n": 120,
+  "split": [
+   20,
+   20,
+   20,
+   30,
+   30
+  ],
+  "H4": 14400
+ },
+ "containment": [
+  {
+   "n": 4,
+   "rows": [
+    {
+     "group": "A4",
+     "via": "A4",
+     "det_ratio": "1",
+     "index_test": true,
+     "divides": true
+    },
+    {
+     "group": "B4",
+     "via": "D4",
+     "det_ratio": "5/4",
+     "index_test": false,
+     "divides": false
+    },
+    {
+     "group": "C4",
+     "via": "D4",
+     "det_ratio": "5/4",
+     "index_test": false,
+     "divides": false
+    },
+    {
+     "group": "D4",
+     "via": "D4",
+     "det_ratio": "5/4",
+     "index_test": false,
+     "divides": false
+    },
+    {
+     "group": "F4",
+     "via": "D4",
+     "det_ratio": "5/4",
+     "index_test": false,
+     "divides": false
+    },
+    {
+     "group": "H4",
+     "via": "non-crystallographic",
+     "det_ratio": "-",
+     "index_test": null,
+     "divides": true
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "rows": [
+    {
+     "group": "A5",
+     "via": "A5",
+     "det_ratio": "1",
+     "index_test": true,
+     "divides": true
+    },
+    {
+     "group": "B5",
+     "via": "D5",
+     "det_ratio": "3/2",
+     "index_test": false,
+     "divides": false
+    },
+    {
+     "group": "C5",
+     "via": "D5",
+     "det_ratio": "3/2",
+     "index_test": false,
+     "divides": false
+    },
+    {
+     "group": "D5",
+     "via": "D5",
+     "det_ratio": "3/2",
+     "index_test": false,
+     "divides": false
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "rows": [
+    {
+     "group": "A6",
+     "via": "A6",
+     "det_ratio": "1",
+     "index_test": true,
+     "divides": true
+    },
+    {
+     "group": "B6",
+     "via": "D6",
+     "det_ratio": "7/4",
+     "index_test": false,
+     "divides": false
+    },
+    {
+     "group": "C6",
+     "via": "D6",
+     "det_ratio": "7/4",
+     "index_test": false,
+     "divides": false
+    },
+    {
+     "group": "D6",
+     "via": "D6",
+     "det_ratio": "7/4",
+     "index_test": false,
+     "divides": false
+    },
+    {
+     "group": "E6",
+     "via": "E6",
+     "det_ratio": "7/3",
+     "index_test": false,
+     "divides": false
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "rows": [
+    {
+     "group": "A7",
+     "via": "A7",
+     "det_ratio": "1",
+     "index_test": true,
+     "divides": true
+    },
+    {
+     "group": "B7",
+     "via": "D7",
+     "det_ratio": "2",
+     "index_test": false,
+     "divides": true
+    },
+    {
+     "group": "C7",
+     "via": "D7",
+     "det_ratio": "2",
+     "index_test": false,
+     "divides": true
+    },
+    {
+     "group": "D7",
+     "via": "D7",
+     "det_ratio": "2",
+     "index_test": false,
+     "divides": true
+    },
+    {
+     "group": "E7",
+     "via": "E7",
+     "det_ratio": "4",
+     "index_test": true,
+     "divides": true
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "rows": [
+    {
+     "group": "A8",
+     "via": "A8",
+     "det_ratio": "1",
+     "index_test": true,
+     "divides": true
+    },
+    {
+     "group": "B8",
+     "via": "D8",
+     "det_ratio": "9/4",
+     "index_test": false,
+     "divides": false
+    },
+    {
+     "group": "C8",
+     "via": "D8",
+     "det_ratio": "9/4",
+     "index_test": false,
+     "divides": false
+    },
+    {
+     "group": "D8",
+     "via": "D8",
+     "det_ratio": "9/4",
+     "index_test": false,
+     "divides": false
+    },
+    {
+     "group": "E8",
+     "via": "E8",
+     "det_ratio": "9",
+     "index_test": true,
+     "divides": true
+    }
+   ]
+  }
+ ]
+}

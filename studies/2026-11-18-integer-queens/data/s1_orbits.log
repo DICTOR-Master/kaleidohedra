@@ -1,0 +1,88 @@
+PASS E8: extra root r = [np.int64(2), np.int64(2), np.int64(2), np.int64(-1), np.int64(-1), np.int64(-1), np.int64(-1), np.int64(-1), np.int64(-1)]/3 has norm 2
+PASS E8 4_21 (E8 roots): shell of norm 2 has 240 vectors (expected 240)
+PASS E8 4_21 (E8 roots): reflection in r maps the shell to itself (exact)
+PASS E8 4_21 (E8 roots): S9 + s_r generate order 696729600 (W(E8) = 696729600), transitive; stabiliser 2903040 x orbit 240
+     72  ['1', '0', '0', '0', '0', '0', '0', '0', '-1']  expanded 8-simplex (A8 root polytope)
+     84  ['2/3', '2/3', '2/3', '-1/3', '-1/3', '-1/3', '-1/3', '-1/3', '-1/3']  hypersimplex Delta(9,3), centred = birectified 8-simplex
+     84  ['1/3', '1/3', '1/3', '1/3', '1/3', '1/3', '-2/3', '-2/3', '-2/3']  hypersimplex Delta(9,6), centred = birectified 8-simplex
+PASS E8 4_21 (E8 roots): of 7 unions of S9-orbits only the whole shell has W(E8) symmetry; every other union has exactly the 36 reflections of S9 (exact)
+     union [72]: 36 reflections, |G| = 725760 (S9 x {+-1})
+     union [84]: 36 reflections, |G| = 362880 (S9)
+     union [84]: 36 reflections, |G| = 362880 (S9)
+     union [72, 84]: 36 reflections, |G| = 362880 (S9)
+     union [72, 84]: 36 reflections, |G| = 362880 (S9)
+     union [84, 84]: 36 reflections, |G| = 725760 (S9 x {+-1})
+     union [72, 84, 84]: 120 reflections, |G| = 696729600 (W(E8))
+PASS E8 2_41: shell of norm 4 has 2160 vectors (expected 2160)
+PASS E8 2_41: reflection in r maps the shell to itself (exact)
+PASS E8 2_41: S9 + s_r generate order 696729600 (W(E8) = 696729600), transitive; stabiliser 322560 x orbit 2160
+     72  ['5/3', '2/3', '-1/3', '-1/3', '-1/3', '-1/3', '-1/3', '-1/3', '-1/3']  uniform 8-simplex orbit polytope t_{0,1}{3^7}
+    630  ['4/3', '1/3', '1/3', '1/3', '1/3', '-2/3', '-2/3', '-2/3', '-2/3']  uniform 8-simplex orbit polytope t_{0,4}{3^7}
+    756  ['1', '1', '0', '0', '0', '0', '0', '-1', '-1']  uniform 8-simplex orbit polytope t_{1,6}{3^7}
+    630  ['2/3', '2/3', '2/3', '2/3', '-1/3', '-1/3', '-1/3', '-1/3', '-4/3']  uniform 8-simplex orbit polytope t_{3,7}{3^7}
+     72  ['1/3', '1/3', '1/3', '1/3', '1/3', '1/3', '1/3', '-2/3', '-5/3']  uniform 8-simplex orbit polytope t_{6,7}{3^7}
+PASS E8 2_41: of 31 unions of S9-orbits only the whole shell has W(E8) symmetry; every other union has exactly the 36 reflections of S9 (exact)
+     union [72]: 36 reflections, |G| = 362880 (S9)
+     union [630]: 36 reflections, |G| = 362880 (S9)
+     union [756]: 36 reflections, |G| = 725760 (S9 x {+-1})
+     union [630]: 36 reflections, |G| = 362880 (S9)
+     union [72]: 36 reflections, |G| = 362880 (S9)
+     union [72, 630]: 36 reflections, |G| = 362880 (S9)
+     union [72, 756]: 36 reflections, |G| = 362880 (S9)
+     union [72, 630]: 36 reflections, |G| = 362880 (S9)
+     union [72, 72]: 36 reflections, |G| = 725760 (S9 x {+-1})
+     union [630, 756]: 36 reflections, |G| = 362880 (S9)
+     union [630, 630]: 36 reflections, |G| = 725760 (S9 x {+-1})
+     union [630, 72]: 36 reflections, |G| = 362880 (S9)
+     union [756, 630]: 36 reflections, |G| = 362880 (S9)
+     union [756, 72]: 36 reflections, |G| = 362880 (S9)
+     union [630, 72]: 36 reflections, |G| = 362880 (S9)
+     union [72, 630, 756]: 36 reflections, |G| = 362880 (S9)
+     union [72, 630, 630]: 36 reflections, |G| = 362880 (S9)
+     union [72, 630, 72]: 36 reflections, |G| = 362880 (S9)
+     union [72, 756, 630]: 36 reflections, |G| = 362880 (S9)
+     union [72, 756, 72]: 36 reflections, |G| = 725760 (S9 x {+-1})
+     union [72, 630, 72]: 36 reflections, |G| = 362880 (S9)
+     union [630, 756, 630]: 36 reflections, |G| = 725760 (S9 x {+-1})
+     union [630, 756, 72]: 36 reflections, |G| = 362880 (S9)
+     union [630, 630, 72]: 36 reflections, |G| = 362880 (S9)
+     union [756, 630, 72]: 36 reflections, |G| = 362880 (S9)
+     union [72, 630, 756, 630]: 36 reflections, |G| = 362880 (S9)
+     union [72, 630, 756, 72]: 36 reflections, |G| = 362880 (S9)
+     union [72, 630, 630, 72]: 36 reflections, |G| = 725760 (S9 x {+-1})
+     union [72, 756, 630, 72]: 36 reflections, |G| = 362880 (S9)
+     union [630, 756, 630, 72]: 36 reflections, |G| = 362880 (S9)
+     union [72, 630, 756, 630, 72]: 120 reflections, |G| = 696729600 (W(E8))
+PASS E7: extra root r = [np.int64(2), np.int64(2), np.int64(2), np.int64(2), np.int64(-2), np.int64(-2), np.int64(-2), np.int64(-2)]/4 has norm 2
+PASS E7 2_31 (E7 roots): shell of norm 2 has 126 vectors (expected 126)
+PASS E7 2_31 (E7 roots): reflection in r maps the shell to itself (exact)
+PASS E7 2_31 (E7 roots): S8 + s_r generate order 2903040 (W(E7) = 2903040), transitive; stabiliser 23040 x orbit 126
+     56  ['1', '0', '0', '0', '0', '0', '0', '-1']  expanded 7-simplex (A7 root polytope)
+     70  ['1/2', '1/2', '1/2', '1/2', '-1/2', '-1/2', '-1/2', '-1/2']  hypersimplex Delta(8,4), centred = trirectified 7-simplex
+PASS E7 2_31 (E7 roots): of 3 unions of S8-orbits only the whole shell has W(E7) symmetry; every other union has exactly the 28 reflections of S8 (exact)
+     union [56]: 28 reflections, |G| = 80640 (S8 x {+-1})
+     union [70]: 28 reflections, |G| = 80640 (S8 x {+-1})
+     union [56, 70]: 63 reflections, |G| = 2903040 (W(E7))
+PASS E7 3_21: shell of norm 3/2 has 56 vectors (expected 56)
+PASS E7 3_21: reflection in r maps the shell to itself (exact)
+PASS E7 3_21: S8 + s_r generate order 2903040 (W(E7) = 2903040), transitive; stabiliser 51840 x orbit 56
+     28  ['3/4', '3/4', '-1/4', '-1/4', '-1/4', '-1/4', '-1/4', '-1/4']  hypersimplex Delta(8,2), centred = rectified 7-simplex
+     28  ['1/4', '1/4', '1/4', '1/4', '1/4', '1/4', '-3/4', '-3/4']  hypersimplex Delta(8,6), centred = rectified 7-simplex
+PASS E7 3_21: of 3 unions of S8-orbits only the whole shell has W(E7) symmetry; every other union has exactly the 28 reflections of S8 (exact)
+     union [28]: 28 reflections, |G| = 40320 (S8)
+     union [28]: 28 reflections, |G| = 40320 (S8)
+     union [28, 28]: 63 reflections, |G| = 2903040 (W(E7))
+PASS 240 = 72 + 84 + 84
+PASS 126 = 56 + 70
+PASS 56 = 28 + 28
+PASS control (must fail): A8 roots + 2 x (+-Delta(9,3)) keeps only 36 reflections (S9: 36)
+PASS cross-shell: 4_21 u 2_41 (2400 points) is preserved by s_r
+PASS cross-shell (must fail): 4_21 u one S9-orbit of 2_41 is not
+  S7:  42  (1, 0, 0, 0, 0, 0, -1 | 0)
+  S7:  35  (1/2, 1/2, 1/2, 1/2, -1/2, -1/2, -1/2 | -1/2)
+  S7:  35  (1/2, 1/2, 1/2, -1/2, -1/2, -1/2, -1/2 | 1/2)
+  S7:   7  (1, 0, 0, 0, 0, 0, 0 | -1)
+  S7:   7  (0, 0, 0, 0, 0, 0, -1 | 1)
+PASS E7 roots under S7: [7, 7, 35, 35, 42] = 42 + 7 + 7 + 35 + 35
+time 21.4s
+FINAL ok (25 checks)

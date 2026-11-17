@@ -1,0 +1,18 @@
+PASS control: closure of A under reflection in its own members has 120 points (600-cell: 120)
+PASS control: all 120 on one sphere
+PASS control: S5 split of the 600-cell [20, 20, 20, 30, 30] = 20+20+20+30+30
+PASS control: the five orbits are A, B, -A, -B and C3 = phi x (A4 roots), together exactly the 600-cell
+PASS control: coordinate permutations act as S5 (120)
+PASS control: S5 + one reflection in a corner of A generates order 14400 (W(H4) = 14400)
+PASS control (must fail): ordinary orbit (phi^2,phi^2,phi^2,3/2,0) is not closed under reflection in its own corner
+PASS Cartan determinants: A_n n+1, D_n 4, E6 3, E7 2, E8 1 (exact)
+n=4: A4(via A4): det ratio 1, index True, divides True; B4(via D4): det ratio 5/4, index False, divides False; C4(via D4): det ratio 5/4, index False, divides False; D4(via D4): det ratio 5/4, index False, divides False; F4(via D4): det ratio 5/4, index False, divides False; H4(via non-crystallographic): det ratio -, index None, divides True
+n=5: A5(via A5): det ratio 1, index True, divides True; B5(via D5): det ratio 3/2, index False, divides False; C5(via D5): det ratio 3/2, index False, divides False; D5(via D5): det ratio 3/2, index False, divides False
+n=6: A6(via A6): det ratio 1, index True, divides True; B6(via D6): det ratio 7/4, index False, divides False; C6(via D6): det ratio 7/4, index False, divides False; D6(via D6): det ratio 7/4, index False, divides False; E6(via E6): det ratio 7/3, index False, divides False
+n=7: A7(via A7): det ratio 1, index True, divides True; B7(via D7): det ratio 2, index False, divides True; C7(via D7): det ratio 2, index False, divides True; D7(via D7): det ratio 2, index False, divides True; E7(via E7): det ratio 4, index True, divides True
+n=8: A8(via A8): det ratio 1, index True, divides True; B8(via D8): det ratio 9/4, index False, divides False; C8(via D8): det ratio 9/4, index False, divides False; D8(via D8): det ratio 9/4, index False, divides False; E8(via E8): det ratio 9, index True, divides True
+PASS heptagonal control: crystallographic groups containing W(A_n) for n=4,5,6 are only A_n (['A4'], ['A5'], ['A6']); with H4 for n=4 (600-cell)
+PASS n=7: ['A7', 'E7']; n=8: ['A8', 'E8'] (index test)
+PASS order divisibility alone does not decide n=7 (['A7', 'B7', 'C7', 'D7', 'E7'] pass); the index test is needed
+time 1.1s
+FINAL ok (11 checks)

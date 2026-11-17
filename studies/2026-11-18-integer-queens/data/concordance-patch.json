@@ -1,0 +1,16 @@
+[
+ {
+  "op": "add",
+  "path": "/ledger/entries/-",
+  "value": {
+   "date": "2026-11-18",
+   "study": "2026-11-18-integer-queens",
+   "question": "Integer Queens (DICTO 18 Nov: 'start the E7 E8 integer queens'): the 600-cell deconstruction of #110 for A7 ⊂ E7 (S8, sum-zero R^8) and A8 ⊂ E8 (S9, sum-zero R^9): orbit splits, hidden symmetry, walls and Vacuus kinds",
+   "method": "exact shell enumeration (glue construction of E8, E7, E7*); sympy Schreier–Sims group orders with stabiliser counts; exact search of all reflections of every union of S-orbits; lattice-index containment theorem (exact Cartan determinants); host facets from W-orbits of fundamental weights (exact); orbit-hull faces from ordered partitions (rearrangement inequality); plate normals certified (SVD, then exact integer check); 600-cell S5 split and 3D Vacuus controls",
+   "result": "240 = 72 (A8 roots) + 84 + 84 (±Δ(9,3)); 2160 (2_41) = 756 + 630 + 630 (± stericated 8-simplex) + 72 + 72 (± truncated 8-simplex); 126 = 56 (A7 roots) + 70 (Δ(8,4)); 56 = 28 + 28 (±Δ(8,2)). Theorem: for n ≥ 5 the only reflection groups containing W(A_n) are A_n, E7 (n=7) and E8 (n=8), each E unique; an S-invariant set gains E symmetry iff it is a union of W(E)-orbits; of 44 unions of S-orbits in the four shells only the whole shells gain (696729600; 2903040). Walls: W(4_21) = 120 mirrors + 9720 cross walls; W(2_31) = 63 + 316. Hidden: A8 roots and A7 roots (heart, 9 and 8 plates, all cross walls: the C3 analogue), ±Δ(9,3) (inherited heart, 36 S9 mirrors + 72 cross walls), Δ(8,4) (heart, 28 + 28); orbits of 2_41 and 3_21 only partly hidden. No orbit has a plate on a hidden E mirror (unlike the 600-cell). S7 split of E7 roots: 42+7+7+35+35. 72+84+84 and 28+28 known (Wikipedia 4_21, 3_21 pages); 2_41 split and wall results not found in sources checked",
+   "retry": "only for other W(E)-orbits (1_42, 1_32), polars of the 4_21 orbits, or chamber counts",
+   "status": "SETTLED (FINAL ok)"
+  },
+  "why": "studies/2026-11-18-integer-queens (s0, s1, s2 E7 and E8 all FINAL ok); answers LEAD 1 of 2026-11-18-heptagonal-queen"
+ }
+]
