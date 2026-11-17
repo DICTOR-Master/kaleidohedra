@@ -612,7 +612,21 @@
    "date_first": true,
    "version": 2,
    "doi_v2": "24061031",
-   "doi_v1": "24052634"
+   "doi_v1": "24052634",
+   "palomar": {
+    "id": "PALOMAR-2026-11-17-000006",
+    "version": 1,
+    "registered": "2026-11-17",
+    "repository_commit": "c167cf4",
+    "theorems": [
+     "KulaichevYantra.kulaichev_unique",
+     "KulaichevYantra.kulaichev_slope"
+    ],
+    "record": "https://data.palomar-registry.org/entries/PALOMAR-2026-11-17-000006-v1.json"
+   },
+   "notes": [
+    "Registered on Palomar 17 Nov 2026 as PALOMAR-2026-11-17-000006 (Lean 4 formalization of Kulaichev's uniqueness question for admissible figures, slope interval of width 2^-21; automated review: no problems). Goes into #103's next version (ledger)."
+   ]
   },
   "97": {
    "title": "Narcissus Keyed",
