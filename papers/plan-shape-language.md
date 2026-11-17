@@ -85,7 +85,12 @@ fill space"; "the lattice is the grammar".
   simple cubic; rhombic dodecahedron, face-centred cubic; truncated octahedron, body-centred cubic; hexagonal prism,
   hexagonal; elongated dodecahedron, a stretched lattice. Example: in a checkerboard of cubes, each cube of one colour
   takes the centre pyramids of its 6 neighbours and becomes a rhombic dodecahedron on the fcc lattice.
-- **Score.** The fewest space-filling words that build a shape.
+- **Scores (two, DICTO 18 Nov).** *Filling score*: the fewest space-filling words (parallelepipeds of the zonotopal
+  split) that build a shape. *Pyramid score*: the centre pyramids, one per face, so the number of faces; it applies to
+  every convex solid and its pieces are the Vacuus's pyramids: tetrahedron 4, cube 6, octahedron 8, dodecahedron 12,
+  icosahedron 20. The dodecahedron and icosahedron have no filling score from the five words: their Dehn invariants
+  are nonzero, every space-filling tile has Dehn invariant zero (Debrunner 1980), and Dehn invariants add over pieces;
+  for the same reason their centre pyramids do not fill space alone.
 - **Degrees.** Steps from a word or built shape (Conway's polyhedron operators for the steps). The Platonic solids are
   built shapes; the Archimedean solids are degree 1 from them.
 - **Scales** (DICTO: "all the measurement scales of golden etc should be in the language"). Every word comes in every
@@ -98,5 +103,5 @@ fill space"; "the lattice is the grammar".
   fill space, refuted; history in Lagarias and Zong 2012); Archimedes (the thirteen solids, via Pappus); the *Nine
   Chapters* and Liu Hui (pyramid dissections of the cube); Dehn 1901 (a cube is not cut into regular tetrahedra);
   Fedorov 1885; Conway.
-- **Open.** Scores of the
-  dodecahedron and icosahedron, which do not fill space.
+- **Open.** Golden-side filling scores of the dodecahedron and icosahedron from the Mosseri–Sadoc tiles (AXE, CLEO
+  and the others fill space together; Koca et al. 2020 build both solids from them: counts to be read from that paper).
