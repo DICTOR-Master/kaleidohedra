@@ -1,0 +1,12 @@
+PASS A: 5-fold rotation (A^5 = I: True) has trace 1/2 + 1/2√5 = phi, irrational; on V + V the trace 2 phi is irrational, so no lattice in R^6 is invariant under the diagonal icosahedral action on D x D*
+PASS A: on V + V' (Galois twin) the trace is phi + (1 - phi) = 1, rational (the icosahedral Z^6)
+PASS B: the six 5-fold axes form a tight frame: sum u u^T = 5 + √5 I
+PASS B: Z^6 Voronoi cell (6-cube) central section = regular dodecahedron (20 corners)
+PASS B: D6* Voronoi cell central section = icosidodecahedron (30 corners)
+PASS B: D6 Voronoi cell central section = rhombic triacontahedron (32 corners, faces {4: 30}: 30 rhombi)
+PASS B: shadows of the 12 Z^6 vectors of norm 1: one radius class, a regular icosahedron
+PASS B: shadows of the 60 D6 roots: two icosidodecahedra of 30 corners, squared radii ratio 2.618034 = phi^2
+   (+-1/2)^6 shadow radius classes: {'3': 20, '9/2 + 3/2√5': 20, '5/2 - 1/2√5': 12, '5 + 2√5': 12}
+    {'3': 'dodecahedron', '9/2 + 3/2√5': 'dodecahedron', '5/2 - 1/2√5': 'icosahedron', '5 + 2√5': 'icosahedron'}
+PASS B: the 64 vectors (+-1/2)^6 cast only dodecahedra and icosahedra (radius classes), i.e. 3-fold and 5-fold corners
+9/9 checks pass -> data/s2-di-lattice.json

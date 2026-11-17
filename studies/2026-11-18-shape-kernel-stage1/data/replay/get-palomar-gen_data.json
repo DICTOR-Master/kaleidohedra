@@ -1,0 +1,32 @@
+{
+ "case": "get-palomar-gen_data",
+ "group": "G6",
+ "study": "2026-11-17-get-palomar",
+ "script": "gen_data.py",
+ "args": [],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 1.0,
+ "secs_kern": 0.7,
+ "stdout_lines": 3,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": true,
+ "time_fields_masked": 0,
+ "diff_kern_orig": "none",
+ "files": [
+  {
+   "file": "2026-11-17-get-palomar/data/get-data.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 14366
+  },
+  {
+   "file": "2026-11-17-get-palomar/lean/GET/Data.lean",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 5509
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

@@ -1,0 +1,33 @@
+('cube', 'octahedron') r2 1 rho2 2 R2 3
+PASS co: polar P* = conv(N) has 6 corners, midradii multiply to 1 (rho^2 rho*^2 = 1)
+PASS co: S(mu) at mu = 1 (~1.000000) is the octahedron (dual end) (6 corners)
+PASS co:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)
+    octahedron (dual end) | mu 1 ~1.000000 | nu 1 ~1.000000
+PASS co: S(mu) at mu = 5/2 - 1/2√5 (~1.381966) is the Lesser Golden Cut Octahedron = Unborn Axes (24 corners)
+PASS co:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (14 corners)
+    Lesser Golden Cut Octahedron = Unborn Axes | mu 5/2 - 1/2√5 ~1.381966 | nu 5/2 - 1/2√5 ~1.381966
+PASS co: S(mu) at mu = 3/2 (~1.500000) is the truncated octahedron (Archimedean, dual side) (24 corners)
+PASS co:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (14 corners)
+    truncated octahedron (Archimedean, dual side) | mu 3/2 ~1.500000 | nu 3/2 ~1.500000
+PASS co: S(mu) at mu = 1/2 + 1/2√5 (~1.618034) is the Greater Golden Cut Octahedron = Icosaxes (24 corners)
+PASS co:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (14 corners)
+    Greater Golden Cut Octahedron = Icosaxes | mu 1/2 + 1/2√5 ~1.618034 | nu 1/2 + 1/2√5 ~1.618034
+PASS co: S(mu) at mu = 2 (~2.000000) is the rectified (cuboctahedron) (12 corners)
+PASS co:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (14 corners)
+    rectified (cuboctahedron) | mu 2 ~2.000000 | nu 2 ~2.000000
+PASS co: S(mu) at mu = 4 + 3/2√2 - √5 - 1/2√10 (~2.304114) is the Greater Golden Cut Cube (24 corners)
+PASS co:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (14 corners)
+    Greater Golden Cut Cube | mu 4 + 3/2√2 - √5 - 1/2√10 ~2.304114 | nu 4 + 3/2√2 - √5 - 1/2√10 ~2.304114
+PASS co: S(mu) at mu = 1 + √2 (~2.414214) is the truncated cube (Archimedean) (24 corners)
+PASS co:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (14 corners)
+    truncated cube (Archimedean) | mu 1 + √2 ~2.414214 | nu 1 + √2 ~2.414214
+PASS co: S(mu) at mu = 4 - 3/2√2 + √5 - 1/2√10 (~2.533609) is the Lesser Golden Cut Cube (24 corners)
+PASS co:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (14 corners)
+    Lesser Golden Cut Cube | mu 4 - 3/2√2 + √5 - 1/2√10 ~2.533609 | nu 4 - 3/2√2 + √5 - 1/2√10 ~2.533609
+PASS co: S(mu) at mu = 3 (~3.000000) is the cube (P end) (8 corners)
+PASS co:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (6 corners)
+    cube (P end) | mu 3 ~3.000000 | nu 3 ~3.000000
+PASS co: the stages are in increasing mu order (dual end -> P end), sweep monotone
+PASS SANITY (6D study): Unborn Axes at 3 - phi, truncated octahedron 3/2, Icosaxes phi, truncated cube 1 + sqrt2, ends 1 and 3
+PASS SANITY: Greater/Lesser GCC mu identical to the 6D study (exact strings)
+22/22 checks pass -> data/s1-sweep-co.json

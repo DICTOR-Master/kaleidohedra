@@ -1,0 +1,92 @@
+CHECK ok   station I: the icosahedron, 12 corners, 20 faces
+== Julia G3 D′ -> ID
+CHECK ok   Julia G3: D′ has 12 faces with 5 sides off the planes of ID = the stated count 12
+CHECK ok   Julia G3: 12 pieces add exactly the stated step volume 353/72 + (791/360)*sqrt(5) x I (piece = 353/864 + (791/4320)*sqrt(5) I)
+CHECK ok   piece-julia-g3: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-julia-g3: every face planar (exact)
+CHECK ok   piece-julia-g3: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-julia-g3: corners 15 = stated 15
+CHECK ok   piece-julia-g3: faces by sides {3: 5, 5: 7} = stated {5: 7, 3: 5}
+WROTE piece-julia-g3: V15 E25 F12 {3: 5, 5: 7} volume 365/1728 + (487/5184)*sqrt(5) ~ 0.421290
+== Julia G4 ID -> OG
+CHECK ok   Julia G4: ID has 12 faces with 5 sides off the planes of OG = the stated count 12
+CHECK ok   Julia G4: 12 pieces add exactly the stated step volume 207/152 + (457/760)*sqrt(5) x I (piece = 69/608 + (457/9120)*sqrt(5) I)
+CHECK ok   piece-julia-g4: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-julia-g4: every face planar (exact)
+CHECK ok   piece-julia-g4: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-julia-g4: corners 11 = stated 11
+CHECK ok   piece-julia-g4: faces by sides {3: 5, 4: 5, 5: 1} = stated {5: 1, 4: 5, 3: 5}
+WROTE piece-julia-g4: V11 E20 F11 {3: 5, 4: 5, 5: 1} volume 625/10944 + (289/10944)*sqrt(5) ~ 0.116157
+== Julia G5a OG -> rTI
+CHECK ok   Julia G5a: OG has 60 faces with 4 sides off the planes of rTI = the stated count 60
+CHECK ok   piece-julia-g5a: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-julia-g5a: every face planar (exact)
+CHECK ok   piece-julia-g5a: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-julia-g5a: corners 8 = stated 8
+CHECK ok   piece-julia-g5a: faces by sides {3: 2, 4: 5} = stated {4: 5, 3: 2}
+WROTE piece-julia-g5a: V8 E13 F7 {3: 2, 4: 5} volume -119/1824 + (49/1140)*sqrt(5) ~ 0.030870
+== Julia G5b OG -> rTI
+CHECK ok   Julia G5b: OG has 20 faces with 6 sides off the planes of rTI = the stated count 20
+CHECK ok   piece-julia-g5b: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-julia-g5b: every face planar (exact)
+CHECK ok   piece-julia-g5b: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-julia-g5b: corners 12 = stated 12
+CHECK ok   piece-julia-g5b: faces by sides {4: 6, 6: 2} = stated {6: 2, 4: 6}
+WROTE piece-julia-g5b: V12 E18 F8 {4: 6, 6: 2} volume -19/48 + (11/48)*sqrt(5) ~ 0.116599
+== Julia G6 rTI -> TI
+CHECK ok   Julia G6: rTI has 60 faces with 3 sides off the planes of TI = the stated count 60
+CHECK ok   Julia G6: 60 pieces add exactly the stated step volume 3/4 * (7/2 - (3/2)*sqrt(5)) x I (piece = 3/160 + (-1/160)*sqrt(5) I)
+CHECK ok   piece-julia-g6: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-julia-g6: every face planar (exact)
+CHECK ok   piece-julia-g6: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-julia-g6: corners 4 = stated 4
+CHECK ok   piece-julia-g6: faces by sides {3: 4} = stated {3: 4}
+WROTE piece-julia-g6: V4 E6 F4 {3: 4} volume -1/48 + (1/96)*sqrt(5) ~ 0.002459
+== Julia G8 H -> jtI
+CHECK ok   Julia G8: H has 12 faces with 5 sides off the planes of jtI = the stated count 12
+CHECK ok   Julia G8: 12 pieces add exactly the stated step volume 15/38 + (21/190)*sqrt(5) x I (piece = 5/152 + (7/760)*sqrt(5) I)
+CHECK ok   piece-julia-g8: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-julia-g8: every face planar (exact)
+CHECK ok   piece-julia-g8: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-julia-g8: corners 6 = stated 6
+CHECK ok   piece-julia-g8: faces by sides {3: 5, 5: 1} = stated {5: 1, 3: 5}
+WROTE piece-julia-g8: V6 E10 F6 {3: 5, 5: 1} volume 5/912 + (3/304)*sqrt(5) ~ 0.027549
+== Julia G9 jtI -> RT
+CHECK ok   Julia G9: jtI has 60 faces with 4 sides off the planes of RT = the stated count 60
+CHECK ok   Julia G9: 60 pieces add exactly the stated step volume 648/19 - (270/19)*sqrt(5) x I (piece = 54/95 + (-9/38)*sqrt(5) I)
+CHECK ok   piece-julia-g9: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-julia-g9: every face planar (exact)
+CHECK ok   piece-julia-g9: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-julia-g9: corners 5 = stated 5
+CHECK ok   piece-julia-g9: faces by sides {3: 4, 4: 1} = stated {4: 1, 3: 4}
+WROTE piece-julia-g9: V5 E8 F5 {3: 4, 4: 1} volume -111/152 + (51/152)*sqrt(5) ~ 0.019996
+== Julia G10 RT -> M
+CHECK ok   Julia G10: RT has 30 faces with 4 sides off the planes of M = the stated count 30
+CHECK ok   Julia G10: 30 pieces add exactly the stated step volume -98 + 51*sqrt(5) x I (piece = -49/15 + (17/10)*sqrt(5) I)
+CHECK ok   piece-julia-g10: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-julia-g10: every face planar (exact)
+CHECK ok   piece-julia-g10: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-julia-g10: corners 6 = stated 6
+CHECK ok   piece-julia-g10: faces by sides {3: 6, 4: 1} = stated {4: 1, 3: 6}
+WROTE piece-julia-g10: V6 E11 F7 {3: 6, 4: 1} volume 353/72 + (-149/72)*sqrt(5) ~ 0.275359
+== Pimentel G11 M -> I·φ³
+CHECK ok   Pimentel G11: M has 60 faces with 3 sides off the planes of I·φ³ = the stated count 60
+CHECK ok   Pimentel G11: 60 pieces add exactly the stated step volume phi^7 x I (piece = 29/120 + (13/120)*sqrt(5) I)
+CHECK ok   piece-pimentel-g11: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-pimentel-g11: every face planar (exact)
+CHECK ok   piece-pimentel-g11: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-pimentel-g11: corners 5 = stated 5
+CHECK ok   piece-pimentel-g11: faces by sides {3: 6} = stated {3: 6}
+WROTE piece-pimentel-g11: V5 E9 F6 {3: 6} volume 1/8 + (1/18)*sqrt(5) ~ 0.249226
+CHECK ok   step 5 (OG -> rTI): 60 G5a + 20 G5b add exactly the stated 2187/152 - (2129/760)sqrt5 x I
+CHECK ok   Julia G6: each corner tetrahedron is exactly (1/80) phi^-2 I (stated)
+CHECK ok   Pimentel: each is exactly phi^7/60 I (stated)
+CHECK ok   Julia G3: 12 pieces fill the layer ID - D′ exactly
+CHECK ok   Julia G4: 12 pieces fill the layer OG - ID exactly
+CHECK ok   Julia G6: 60 pieces fill the layer TI - rTI exactly
+CHECK ok   Julia G8: 12 pieces fill the layer jtI - H exactly
+CHECK ok   Julia G9: 60 pieces fill the layer RT - jtI exactly
+CHECK ok   Julia G10: 30 pieces fill the layer M - RT exactly
+CHECK ok   Pimentel G11: 60 pieces fill the layer I·φ³ - M exactly
+CHECK ok   G5a, G5b: 60 + 20 pieces fill the layer rTI - OG exactly
+SUMMARY 73 ok, 0 FAIL

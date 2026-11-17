@@ -1,0 +1,94 @@
+CHECK ok   piece-hexoct-c-tile: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-hexoct-c-tile: every face planar (exact)
+CHECK ok   piece-hexoct-c-tile: outward orientation (exact volume > 0)
+  (symmetry: corner 21 at the centroid, group taken on the other corners, 4 of 4 keep the faces)
+CHECK ok   piece-hexoct-c-tile: volume (1/2)*sqrt(2) = stated (1/2)*sqrt(2)
+WROTE piece-hexoct-c-tile: V43 E72 F32 {3: 12, 4: 6, 6: 14} volume (1/2)*sqrt(2) ~ 0.707107
+CHECK ok   piece-hexoct-c-tile: corner links pinch at 1 corner(s) [('(Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))', 2)] (lattice coords)
+CHECK ok   piece-hexoct-c-tile: union volume = sum of piece volumes (no overlap)
+piece-hexoct-c-tile: hull volume (138461/128000)*sqrt(2); hull ratio 64000/138461 ~ 0.462224
+CHECK ok   piece-hexoct-c-tile: the layer's ball (origin) is a corner
+  D110 pieces 0 (oct top half) and 2 (tet) share corners ['(Fraction(3, 20), Fraction(3, 20), Fraction(-9, 40))', '(Fraction(3, 20), Fraction(7, 10), Fraction(-9, 40))', '(Fraction(7, 10), Fraction(3, 20), Fraction(-9, 40))']
+  D110 pieces 1 (tet) and 2 (tet) share corners ['(Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))']
+  D110 pieces 1 (tet) and 3 (oct bottom half) share corners ['(Fraction(-3, 20), Fraction(-3, 20), Fraction(9, 40))', '(Fraction(-3, 20), Fraction(-7, 10), Fraction(9, 40))', '(Fraction(-7, 10), Fraction(-3, 20), Fraction(9, 40))']
+CHECK ok   piece-hexoct-h-tile: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-hexoct-h-tile: every face planar (exact)
+CHECK ok   piece-hexoct-h-tile: outward orientation (exact volume > 0)
+CHECK ok   piece-hexoct-h-tile: volume (1/2)*sqrt(2) = stated (1/2)*sqrt(2)
+WROTE piece-hexoct-h-tile: V44 E72 F30 {3: 8, 4: 6, 5: 4, 6: 8, 7: 4} volume (1/2)*sqrt(2) ~ 0.707107
+CHECK ok   piece-hexoct-h-tile: corner links one cycle at every corner (no pinch)
+CHECK ok   piece-hexoct-h-tile: union volume = sum of piece volumes (no overlap)
+piece-hexoct-h-tile: hull volume (740543/1152000)*sqrt(2); hull ratio 576000/740543 ~ 0.777808
+CHECK ok   dicto-twisted-cube: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   dicto-twisted-cube: every face planar (exact)
+CHECK ok   dicto-twisted-cube: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   dicto-twisted-cube: volume (1/2)*sqrt(2) = stated (1/2)*sqrt(2)
+CHECK ok   dicto-twisted-cube: faces 12 = stated 12
+CHECK ok   dicto-twisted-cube: faces by sides {3: 6, 4: 6} = stated {3: 6, 4: 6}
+CHECK ok   dicto-twisted-cube: corners 11 = stated 11
+CHECK ok   dicto-twisted-cube: edges 21 = stated 21
+WROTE dicto-twisted-cube: V11 E21 F12 {3: 6, 4: 6} volume (1/2)*sqrt(2) ~ 0.707107
+CHECK ok   dicto-twisted-cube: corner links one cycle at every corner (no pinch)
+CHECK ok   dicto-twisted-cube: union volume = sum of piece volumes (no overlap)
+dicto-twisted-cube: hull volume (1/2)*sqrt(2); hull ratio 1 ~ 1.000000
+CHECK ok   dicto-twisted-cube: hull ratio 1 = stated 1
+CHECK ok   dicto-twisted-cube: the 6 four-sided faces are squares of side 1/√2
+CHECK ok   dicto-twisted-cube: the 6 triangles are isosceles, sides 1/√2, 1/√2, √(2/3)
+CHECK ok   dicto-twisted-cube: corner heights (layers) {'-1': 1, '-1/2': 3, '0': 3, '1': 1, '1/2': 3} = 1+3+3+3+1 at −1, −½, 0, ½, 1
+CHECK ok   piece-hexoct-b-c-tile: piece "tet" regular, 4 corners, every edge 1
+CHECK ok   piece-hexoct-b-c-tile: piece "tet" regular, 4 corners, every edge 1
+CHECK ok   piece-hexoct-b-c-tile: piece "oct (whole, gap above)" regular, 6 corners, every edge 1
+CHECK ok   piece-hexoct-b-c-tile: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-hexoct-b-c-tile: every face planar (exact)
+CHECK ok   piece-hexoct-b-c-tile: outward orientation (exact volume > 0)
+CHECK ok   piece-hexoct-b-c-tile: volume (1/2)*sqrt(2) = stated (1/2)*sqrt(2)
+CHECK ok   piece-hexoct-b-c-tile: faces 8 = stated 8
+WROTE piece-hexoct-b-c-tile: V8 E14 F8 {3: 4, 4: 4} volume (1/2)*sqrt(2) ~ 0.707107
+CHECK ok   piece-hexoct-b-c-tile: corner links one cycle at every corner (no pinch)
+CHECK ok   piece-hexoct-b-c-tile: union volume = sum of piece volumes (no overlap)
+piece-hexoct-b-c-tile: hull volume (7/12)*sqrt(2); hull ratio 6/7 ~ 0.857143
+CHECK ok   piece-hexoct-b-c-tile: hull ratio 6/7 = stated 6/7
+CHECK ok   piece-hexoct-b-h-tile: piece "tet" regular, 4 corners, every edge 1
+CHECK ok   piece-hexoct-b-h-tile: piece "tet" regular, 4 corners, every edge 1
+CHECK ok   piece-hexoct-b-h-tile: piece "oct (whole, gap above)" regular, 6 corners, every edge 1
+CHECK ok   piece-hexoct-b-h-tile: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-hexoct-b-h-tile: every face planar (exact)
+CHECK ok   piece-hexoct-b-h-tile: outward orientation (exact volume > 0)
+CHECK ok   piece-hexoct-b-h-tile: volume (1/2)*sqrt(2) = stated (1/2)*sqrt(2)
+CHECK ok   piece-hexoct-b-h-tile: faces 10 = stated 10
+WROTE piece-hexoct-b-h-tile: V8 E16 F10 {3: 8, 4: 2} volume (1/2)*sqrt(2) ~ 0.707107
+CHECK ok   piece-hexoct-b-h-tile: corner links one cycle at every corner (no pinch)
+CHECK ok   piece-hexoct-b-h-tile: union volume = sum of piece volumes (no overlap)
+piece-hexoct-b-h-tile: hull volume (7/12)*sqrt(2); hull ratio 6/7 ~ 0.857143
+CHECK ok   piece-hexoct-b-h-tile: hull ratio 6/7 = stated 6/7
+CHECK ok   piece-hexoct-c-c-tile: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-hexoct-c-c-tile: every face planar (exact)
+CHECK ok   piece-hexoct-c-c-tile: outward orientation (exact volume > 0)
+CHECK ok   piece-hexoct-c-c-tile: volume (1/2)*sqrt(2) = stated (1/2)*sqrt(2)
+CHECK ok   piece-hexoct-c-c-tile: faces 10 = stated 10
+WROTE piece-hexoct-c-c-tile: V16 E24 F10 {3: 4, 6: 6} volume (1/2)*sqrt(2) ~ 0.707107
+CHECK ok   piece-hexoct-c-c-tile: corner links one cycle at every corner (no pinch)
+CHECK ok   piece-hexoct-c-c-tile: union volume = sum of piece volumes (no overlap)
+piece-hexoct-c-c-tile: hull volume (5/8)*sqrt(2); hull ratio 4/5 ~ 0.800000
+CHECK ok   piece-hexoct-c-c-tile: hull ratio 0.800 (exact 4/5) = stated 0.800
+CHECK ok   piece-hexoct-c-h-tile: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-hexoct-c-h-tile: every face planar (exact)
+CHECK ok   piece-hexoct-c-h-tile: outward orientation (exact volume > 0)
+CHECK ok   piece-hexoct-c-h-tile: volume (1/2)*sqrt(2) = stated (1/2)*sqrt(2)
+CHECK ok   piece-hexoct-c-h-tile: faces 14 = stated 14
+WROTE piece-hexoct-c-h-tile: V18 E30 F14 {3: 4, 4: 4, 5: 4, 6: 2} volume (1/2)*sqrt(2) ~ 0.707107
+CHECK ok   piece-hexoct-c-h-tile: corner links one cycle at every corner (no pinch)
+CHECK ok   piece-hexoct-c-h-tile: union volume = sum of piece volumes (no overlap)
+piece-hexoct-c-h-tile: hull volume (49/72)*sqrt(2); hull ratio 36/49 ~ 0.734694
+CHECK ok   piece-hexoct-c-h-tile: hull ratio 0.735 (exact 36/49) = stated 0.735
+CHECK ok   piece-hexoct-d-c-tile: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-hexoct-d-c-tile: every face planar (exact)
+CHECK ok   piece-hexoct-d-c-tile: outward orientation (exact volume > 0)
+CHECK ok   piece-hexoct-d-c-tile: volume (1/2)*sqrt(2) = stated (1/2)*sqrt(2)
+CHECK ok   piece-hexoct-d-c-tile: faces 18 = stated 18
+WROTE piece-hexoct-d-c-tile: V22 E38 F18 {4: 16, 6: 2} volume (1/2)*sqrt(2) ~ 0.707107
+CHECK ok   piece-hexoct-d-c-tile: corner links one cycle at every corner (no pinch)
+CHECK ok   piece-hexoct-d-c-tile: union volume = sum of piece volumes (no overlap)
+piece-hexoct-d-c-tile: hull volume (23/36)*sqrt(2); hull ratio 18/23 ~ 0.782609
+CHECK ok   piece-hexoct-d-c-tile: hull ratio 0.783 (exact 18/23) = stated 0.783
+SUMMARY 73 ok, 0 FAIL

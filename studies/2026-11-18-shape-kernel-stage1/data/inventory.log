@@ -1,0 +1,112 @@
+G1 Q(sqrt5) as a class (Q5 / Q): 32 copies in 27 studies, 30 distinct sources
+G2 Q(sqrt d) as a class (QF): 14 copies in 14 studies, 9 distinct sources
+G3 Q(sqrt5) as Fraction pairs (q, qa, qm, qinv, sgn ...): 10 copies in 8 studies, 7 distinct sources
+G4 class K (the pilot's four-term field list), by product: 6 copies in 6 studies, 4 distinct sources
+     2026-10-23-shadow-forms/octet/octet_special_exact.py class K: pure radical field Q(k^(1/n)), basis 1, r, ..., r^(n-1), class-level n, k
+     2026-11-03-6d-golden-cubes/scripts/cubes_lib.py class K: four-term field Q(sqrt2, sqrt5) = a + b sqrt2 + c sqrt5 + d sqrt10
+     2026-11-03-dual-pairs-dimensions/scripts/cubes_lib.py class K: four-term field Q(sqrt2, sqrt5) = a + b sqrt2 + c sqrt5 + d sqrt10
+     2026-11-03-golden-cuts-beyond-plato/scripts/cubes_lib.py class K: four-term field Q(sqrt2, sqrt5) = a + b sqrt2 + c sqrt5 + d sqrt10
+     2026-11-12-pds-hopscotch-line/scripts/pds_line.py class K: Q(sqrt5) = a + b sqrt5 (two terms; named K)
+     2026-11-15-law-giving-census/scripts/exact.py class K: Q(sqrt D), D per run (2 or 5), python-flint rationals
+G5 golden basis a + b phi as a class: 4 copies in 4 studies, 3 distinct sources
+     2026-11-13-platonic-residents-exact/scripts/residents.py class E: a + b phi (golden basis) or a + b sqrt2, chosen per element
+     2026-11-15-echo-shapes/scripts/echo_lib.py class Q5: a + b phi (golden basis)
+     2026-11-16-queens-construct/scripts/qlib.py class Q5: a + b phi (golden basis)
+     2026-11-17-get-mixing/scripts/mixlib.py class Q: a + b phi (golden basis)
+G6 Z[phi] as integer pairs (zadd, zmul, zsign ...): 4 copies in 4 studies, 3 distinct sources
+     2026-11-15-grunbaum-k10/scripts/zsurf.py: zadd, zconj, zfloat, zmul, zneg, zsign, zsub
+     2026-11-17-get-mixing/scripts/zsurf.py: zadd, zconj, zfloat, zmul, zneg, zsign, zsub
+     2026-11-17-get-palomar/scripts/getgeom.py: zadd, zmul, zneg, zsign, zsub
+     2026-11-17-independent-checks/110-exact/scripts/common.py: zfloat, zmul, zsign
+G7 cubic and general fields Q(t) (KC, AlgField, RF): 7 copies in 3 studies, 4 distinct sources
+     2026-10-25-web-of-bonds/scripts/lib.py class E: general field Q(alpha), monic minimal polynomial (Q, sqrt5, sqrt2, sqrt6, cbrt2, cbrt6), sign from an 80-digit evaluation
+     2026-11-17-atoms-missing/scripts/exactlib.py class KC: pure cubic field Q(k^(1/3)), sign by the norm
+     2026-11-17-atoms-missing/scripts/exactlib.py class AlgField: the field Q(t): polynomial and isolating interval, sign by bisection
+     2026-11-17-atoms-missing/scripts/exactlib.py class RF: element of Q(t) (uses AlgField)
+     2026-11-17-atoms-missing-2/scripts/exactlib.py class KC: pure cubic field Q(k^(1/3)), sign by the norm
+     2026-11-17-atoms-missing-2/scripts/exactlib.py class AlgField: the field Q(t): polynomial and isolating interval, sign by bisection
+     2026-11-17-atoms-missing-2/scripts/exactlib.py class RF: element of Q(t) (uses AlgField)
+G8 other Q(sqrt d) classes (wider scan): 7 copies in 7 studies, 6 distinct sources
+     2026-11-09-dual-sweeps/scripts/sweeplib.py class F: d = D, Fraction
+     2026-11-09-icosahedral-line/scripts/bird2_base.py class R5: d = 5, gmpy2 mpq
+     2026-11-09-og-margin/scripts/exact_family.py class R5: d = 5, gmpy2 mpq
+     2026-11-12-hop-4d-vacuus/scripts/vac4.py class R5: d = 5, gmpy2 mpq
+     2026-11-13-amplitude-at-distance/scripts/amp_dist.py class QD: d = D, Fraction
+     2026-11-13-palindromic-middles/scripts/middles.py class QS: d = M, Fraction
+     2026-11-15-twisted-silence-groups/scripts/tw_binary.py class F: d = F.D, Fraction
+W (a) pair arithmetic with another factor, outside the copies: 0 files
+W (b) code-map names: 22
+     sqrtQ         2026-10-16-lineup-c/scripts/lineup_c.py: number-field operation (square root in Q(sqrt5), found by a float search over small denominators)
+     sqrtQ         2026-10-16-progenitors/scripts/hypsicles_twins.py: number-field operation (square root in Q(sqrt5), found by a float search over small denominators)
+     sqrtQ         2026-10-16-sheared-spacefillers/scripts/exact_volumes.py: number-field operation (square root in Q(sqrt5), found by a float search over small denominators) (inside a listed copy)
+     exact_volume  2026-10-18-ocd-octet/fable-review/scripts/fable_exact.py: not a copy: geometry (a volume) computed with a number class
+     exact_volume  2026-10-18-ocd-octet/fable-review-2/scripts/fable2_engine.py: not a copy: geometry (a volume) computed with a number class
+     qsqrt         2026-10-18-ocd-octet/fable-review-2/scripts/fable2_exact.py: number-field operation (square root in Q(sqrt d), found by sympy sqrtdenest)
+     exact_volume  2026-10-18-p4-golden-octet-adaptor/fable-review-3/scripts/fable3_engine.py: not a copy: geometry (a volume) computed with a number class
+     exact_volume  2026-10-24-gnomon-cycle/gnomon_all12.py: not a copy: geometry (a volume) computed with a number class (inside a listed copy)
+     qsqrt         2026-10-25-gnomon-shapes/qs.py: number-field operation (square root in Q(sqrt d), found by sympy sqrtdenest) (inside a listed copy)
+     faces_exact   2026-11-03-6d-golden-cubes/scripts/cubes_lib.py: not a copy: geometry (hull faces checked exactly) computed with a number class (inside a listed copy)
+     conj2         2026-11-03-6d-golden-cubes/scripts/cubes_lib.py: number-field operation (Galois conjugate) (inside a listed copy)
+     conj5         2026-11-03-6d-golden-cubes/scripts/cubes_lib.py: number-field operation (Galois conjugate) (inside a listed copy)
+     faces_exact   2026-11-03-dual-pairs-dimensions/scripts/cubes_lib.py: not a copy: geometry (hull faces checked exactly) computed with a number class (inside a listed copy)
+     conj2         2026-11-03-dual-pairs-dimensions/scripts/cubes_lib.py: number-field operation (Galois conjugate) (inside a listed copy)
+     conj5         2026-11-03-dual-pairs-dimensions/scripts/cubes_lib.py: number-field operation (Galois conjugate) (inside a listed copy)
+     faces_exact   2026-11-03-golden-cuts-beyond-plato/scripts/cubes_lib.py: not a copy: geometry (hull faces checked exactly) computed with a number class (inside a listed copy)
+     conj2         2026-11-03-golden-cuts-beyond-plato/scripts/cubes_lib.py: number-field operation (Galois conjugate) (inside a listed copy)
+     conj5         2026-11-03-golden-cuts-beyond-plato/scripts/cubes_lib.py: number-field operation (Galois conjugate) (inside a listed copy)
+     conj5         2026-11-13-near-but-never-on/scripts/near_on.py: number-field operation (Galois conjugate)
+     exact_volume  2026-11-15-gorinto-cells/scripts/gorinto.py: not a copy: geometry (a volume) computed with a number class
+     qsqrt         2026-11-17-atoms-missing/scripts/exactlib.py: number-field operation (square root in Q(sqrt d), found by sympy sqrtdenest) (inside a listed copy)
+     qsqrt         2026-11-17-atoms-missing-2/scripts/exactlib.py: number-field operation (square root in Q(sqrt d), found by sympy sqrtdenest) (inside a listed copy)
+W (c) inline norm / sign formulas outside the copies: 40 files, 48 formulas
+     2026-10-16-ocd-pyrochlore/scripts/golden_fill.py: 1 e.g. a * a - 5 * b * b
+     2026-10-16-progenitors/scripts/gap_member.py: 2 e.g. a * a > 5 * b * b
+     2026-10-16-progenitors/scripts/metaxy_dual.py: 2 e.g. a * a > 5 * b * b
+     2026-10-18-ocd-octet/fable-review-2/scripts/fable2_exact.py: 1 e.g. a * a - 5 * b * b
+     2026-10-25-keyed-web/scripts/keyed_web_exact.py: 1 e.g. q.a * q.a - 5 * q.b * q.b
+     2026-11-03-dual-pairs-dimensions/scripts/dp_lib.py: 1 e.g. a * a - 5 * c * c
+     2026-11-08-sequences/fib_lucas.py: 1 e.g. a2 * a2 - 5 * b2 * b2
+     2026-11-09-hopscotch-rows/scripts/lead4_range.py: 1 e.g. a * a - 5 * b * b
+     2026-11-09-og-margin/scripts/og_twin.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-09-regular-stars-census/scripts/s4_starturn.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-10-ab-line/ico_hurwitz.py: 1 e.g. p1 * p1 - D * q1 * q1
+     2026-11-10-canonical-sweep/scripts/canon_unique.py: 1 e.g. p * p - 5 * q * q
+     2026-11-11-twin-vacuus/scripts/cross_trace.py: 2 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/cut_family.py: 2 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/level1_match.py: 2 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/middle_world.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/pentakis_check.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/pentakis_cycle.py: 2 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/pentakis_family.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/render_angeli_levels.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/render_bands.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/render_cut_family.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/render_hidden_fins.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/render_shared_angelus.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/render_thread.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/render_thread_og.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/scale_norm.py: 2 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/twin_disc_levels.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/twin_ratios_exact.py: 2 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/twin_regular.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-11-twin-vacuus/scripts/twin_sweep4d.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-12-og-galois-window/scripts/og_window.py: 1 e.g. x.a * x.a - 5 * x.b * x.b
+     2026-11-12-og-galois-window/scripts/window_controls.py: 1 e.g. a * a - 5 * b * b
+     2026-11-13-golden-slice-window/scripts/slice_window.py: 1 e.g. X * X - 5 * Y * Y
+     2026-11-15-golden-a4-candidate/scripts/golden_mech.py: 1 e.g. A*A - 5*B*B
+     2026-11-15-grunbaum-k10/scripts/tile_check.py: 1 e.g. a*a > 5*b*b
+     2026-11-17-atoms-missing/scripts/build_tq.py: 1 e.g. a * a > 5 * b * b
+     2026-11-17-get-mixing/scripts/corona_enum.py: 1 e.g. a*a > 5*b*b
+     2026-11-17-get-mixing/scripts/neighbours.py: 1 e.g. a*a > 5*b*b
+     2026-11-17-independent-checks/110-chambers/scripts/zphi.py: 1 e.g. p * p - 5 * q * q
+W (d) other classes with a product: 6
+     2026-11-09-yantra-audit/certificates/common/stage2_symbolic.py class T: not a copy: logging wrapper of a symbolic expression (records divisors)
+     2026-11-09-yantra-audit/certificates/common/stage5_certify.py class I: not a copy: interval arithmetic wrapper (mpmath iv)
+     2026-11-10-g1-e1-exact/threshold_cert.py class D: not a copy: interval value with two derivatives (certified bounds)
+     2026-11-15-law-giving-census/scripts/exact.py class E: not a copy: expression tree, or polynomial in t over Q(sqrt D)
+     2026-11-15-law-giving-census/silent/scripts/three_d.py class KP: not a copy: pair of multivariate polynomials over python-flint (A + B sqrt D with polynomial A, B)
+     2026-11-15-yantra-box-certificate/scripts/c4_derivation.py class E: not a copy: expression tree, or polynomial in t over Q(sqrt D)
+W (f) vectorised copies: 1
+     2026-11-17-independent-checks/110-chambers/scripts/zphi.py: a real Z[phi] copy, vectorised on numpy int64 arrays, written from scratch for an independent check: kept apart by design (an independent check must not share the kernel)
+W (e) scripts importing sympy (library use, not a copy): 199
+FINAL ok: inventory of 2515 files written to data/inventory.json

@@ -1,0 +1,31 @@
+{
+ "case": "pds-line-pilot",
+ "group": "G4",
+ "study": "2026-11-12-pds-hopscotch-line",
+ "script": "scripts/pds_line.py",
+ "args": [
+  "--pilot"
+ ],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 32.3,
+ "secs_kern": 32.8,
+ "stdout_lines": 39,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": false,
+ "time_fields_masked": 6,
+ "diff_kern_orig": "none",
+ "stdout_kern_eq_stored": false,
+ "stdout_orig_eq_stored": false,
+ "diff_kern_stored": "line 27: 'ok   book value 0.924165 (400-point grid, step 2.4e-4) agrees within one grid step; exact value corrects it diff -2.63e-05' vs 'FAIL book value 0.924165 reproduced '",
+ "files": [
+  {
+   "file": "2026-11-12-pds-hopscotch-line/data/pds-line-pilot.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 2909
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

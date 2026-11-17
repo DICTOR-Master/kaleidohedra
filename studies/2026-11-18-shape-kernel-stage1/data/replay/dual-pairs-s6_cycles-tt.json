@@ -1,0 +1,28 @@
+{
+ "case": "dual-pairs-s6_cycles-tt",
+ "group": "G4",
+ "study": "2026-11-03-dual-pairs-dimensions",
+ "script": "s6_cycles.py",
+ "args": [
+  "tt"
+ ],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 8.5,
+ "secs_kern": 9.0,
+ "stdout_lines": 16,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": true,
+ "time_fields_masked": 0,
+ "diff_kern_orig": "none",
+ "files": [
+  {
+   "file": "2026-11-03-dual-pairs-dimensions/data/s6-cycles-tt.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 7588
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

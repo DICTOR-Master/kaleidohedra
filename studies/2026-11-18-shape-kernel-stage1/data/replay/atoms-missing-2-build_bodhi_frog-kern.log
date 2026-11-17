@@ -1,0 +1,57 @@
+== the oblate rhombohedron O of the frame
+CHECK ok   the RT(1) copy: 32 corners, 30 rhombi, app corners within 5.4e-06 of r x exact
+CHECK ok   RT: all edges equal
+CHECK ok   RT: six edge directions (zones)
+CHECK ok   the parallelepipeds on three RT edge directions: two volumes, prolate = phi x oblate
+CHECK ok   oblate O = 0.470228 in the app frame (stated 0.470228)
+== Chatra
+CHECK ok   Chatra: app corners within 3.8e-06 of r x exact; the app piece (own faces) = its hull: convex
+CHECK ok   Chatra: volume = 11/12 + (5/12)*sqrt(5) x O exactly (DICTOnary A.24), 0.869152 in the app frame
+CHECK ok   Chatra: dihedrals exactly [60, 72, 90, 108, 120] degrees (stated)
+CHECK ok   piece-chatra: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-chatra: every face planar (exact)
+CHECK ok   piece-chatra: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-chatra: volume 3 + (4/3)*sqrt(5) = stated 3 + (4/3)*sqrt(5)
+CHECK ok   piece-chatra: corners 7 = stated 7
+CHECK ok   piece-chatra: faces by sides {3: 3, 4: 2, 5: 1} = stated {3: 3, 4: 2, 5: 1}
+WROTE piece-chatra: V7 E11 F6 {3: 3, 4: 2, 5: 1} volume 3 + (4/3)*sqrt(5) ~ 5.981424
+== Mudra
+CHECK ok   Mudra: app corners within 3.8e-06 of r x exact; the app piece (own faces) = its hull: convex
+CHECK ok   Mudra: volume = -1/6 + (1/6)*sqrt(5) x O exactly (DICTOnary A.24), 0.096872 in the app frame
+CHECK ok   Mudra: dihedrals exactly [36, 120, 144] degrees (stated)
+CHECK ok   piece-mudra: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-mudra: every face planar (exact)
+CHECK ok   piece-mudra: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-mudra: volume 2/3 = stated 2/3
+CHECK ok   piece-mudra: corners 5 = stated 5
+CHECK ok   piece-mudra: faces by sides {3: 4, 4: 1} = stated {3: 4, 4: 1}
+WROTE piece-mudra: V5 E8 F5 {3: 4, 4: 1} volume 2/3 ~ 0.666667
+== Diadem (L)
+CHECK ok   Diadem (L): app corners within 3.8e-06 of r x exact; the app piece (own faces) = its hull: convex
+CHECK ok   Diadem (L): volume = 1/3 x O exactly (DICTOnary A.24), 0.156743 in the app frame
+CHECK ok   Diadem (L): dihedrals exactly [36, 60, 90, 108] degrees (stated)
+CHECK ok   piece-diadem: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-diadem: every face planar (exact)
+CHECK ok   piece-diadem: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-diadem: volume 1/3 + (1/3)*sqrt(5) = stated 1/3 + (1/3)*sqrt(5)
+CHECK ok   piece-diadem: corners 6 = stated 6
+CHECK ok   piece-diadem: faces by sides {3: 2, 4: 3} = stated {3: 2, 4: 3}
+WROTE piece-diadem: V6 E9 F5 {3: 2, 4: 3} volume 1/3 + (1/3)*sqrt(5) ~ 1.078689
+CHECK ok   Diadem R: the same corner distances and volume as L (congruent or mirror)
+CHECK ok   Diadem: no mirror symmetry (chiral, stated)
+CHECK ok   piece-diadem-r: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-diadem-r: every face planar (exact)
+CHECK ok   piece-diadem-r: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-diadem-r: volume 1/3 + (1/3)*sqrt(5) = stated 1/3 + (1/3)*sqrt(5)
+WROTE piece-diadem-r: V6 E9 F5 {3: 2, 4: 3} volume 1/3 + (1/3)*sqrt(5) ~ 1.078689
+== D137 Frog Chorus (gap star, F21)
+CHECK ok   gap star: every snapped coordinate within 1e-9 of the 9-decimal source
+CHECK ok   gap star: 1735 distinct exact points
+CHECK ok   gap star: the source surface is closed as given (every edge once each way)
+CHECK ok   gap star: volume 11/16 + (23/48)*sqrt(5) = stated (33 + 23 sqrt5)/48 exactly
+CHECK ok   piece-frog-chorus: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-frog-chorus: every face planar (exact)
+CHECK ok   piece-frog-chorus: outward orientation (exact volume > 0)
+CHECK ok   piece-frog-chorus: volume 11/16 + (23/48)*sqrt(5) = stated 11/16 + (23/48)*sqrt(5)
+WROTE piece-frog-chorus: V522 E684 F164 {4: 24, 6: 32, 7: 48, 8: 24, 14: 24, 18: 12} volume 11/16 + (23/48)*sqrt(5) ~ 1.758949
+SUMMARY 46 ok, 0 FAIL

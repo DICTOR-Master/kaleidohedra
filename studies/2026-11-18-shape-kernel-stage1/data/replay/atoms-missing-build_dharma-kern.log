@@ -1,0 +1,12 @@
+CHECK ok   core icosahedron: 12 corners, edge 1/phi
+CHECK ok   core icosahedron: exact rebuild matches the study floats corner for corner (< 1e-5)
+[exit 1]
+[stderr]
+Traceback (most recent call last):
+  File "<stage1>/replay/cases/atoms-missing-build_dharma/kern/studies/2026-11-17-atoms-missing/scripts/build_dharma.py", line 51, in <module>
+    Vh, Fh, Jh = load('dicto-hecatodihedron')                             # Dharma frame: TI of edge 1/phi + 20 poles
+                 ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<stage1>/replay/cases/atoms-missing-build_dharma/kern/studies/2026-11-17-atoms-missing/scripts/atomlib.py", line 37, in load
+    J = json.load(open(os.path.join(REF, slug + '.json')))
+                  ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<stage1>/replay/cases/atoms-missing-build_dharma/kern/studies/2026-11-17-atoms-missing/scripts/../ref/dicto-hecatodihedron.json'

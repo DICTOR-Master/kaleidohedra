@@ -1,0 +1,36 @@
+{
+ "case": "get-mixing-patch-fibonacci",
+ "group": "G5+G6",
+ "study": "2026-11-17-get-mixing",
+ "script": "scripts/patch.py",
+ "args": [
+  "../2026-11-15-grunbaum-k10",
+  "data/inchbald-source.json",
+  "data/layers.json",
+  "ABAABABAABAAB",
+  "4",
+  "data/patch-fibonacci.json"
+ ],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 12.9,
+ "secs_kern": 11.2,
+ "stdout_lines": 4,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": false,
+ "time_fields_masked": 1,
+ "diff_kern_orig": "none",
+ "stdout_kern_eq_stored": true,
+ "stdout_orig_eq_stored": true,
+ "diff_kern_stored": "none",
+ "files": [
+  {
+   "file": "2026-11-17-get-mixing/data/patch-fibonacci.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 14763
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

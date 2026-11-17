@@ -1,0 +1,4 @@
+PASS dodecahedron: for all 45 configurations of four face axes (side lines 1 and 3 perpendicular, 2 and 4 perpendicular, 1 and 2 at 45 degrees, no side degenerate) the Groebner basis over Q(phi) is [1]: no plane section of a regular dodecahedron is an equiangular octagon
+PASS positive control: four axes at 45 degree steps in a plane give a non-trivial Groebner basis (the method can say yes)
+PASS sanity (floating point, 20000 random planes each): most sides of a plane section: {'tetrahedron': 4, 'cube': 6, 'octahedron': 6} (bounds 4, 6, 6)
+part A: 3/3 checks passed (7s)

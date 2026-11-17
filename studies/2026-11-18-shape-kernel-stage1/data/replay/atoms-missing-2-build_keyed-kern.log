@@ -1,0 +1,36 @@
+== stop 5/24
+CHECK ok   stop 5/24: the power cell of tet site (0, 0, 3/8) rebuilt from the lattice = the dataset dicto-ian-dury corner for corner (weight scale 2.0 in this frame)
+CHECK ok   stop 5/24: each site lies strictly inside its own cell, so every key lies inside its giver and keys meet only at the giver's site (the keyed pair is valid exactly)
+CHECK ok   stop 5/24: faces: each tet piece has 3 oct neighbours, each oct piece 6 tet neighbours (4 x 3 = 2 x 6 per cell)
+CHECK ok   stop 5/24: dented piece = piece - its keys, spiked piece = piece + its keys (exact volumes)
+CHECK ok   stop 5/24: total volume of the cell conserved exactly (4 tet + 2 oct)
+CHECK ok   stop 5/24: at ball spacing 1 Ian Dury-K 0.311127, Rhombo-K 0.084853; the source's float booleans (0.311139, 0.084853) (differ by ~1e-5: its removed keys were pushed 1e-4 past the face)
+CHECK ok   stop 5/24: the oct piece is a rhombohedron (8 corners, 6 rhombi, all edges equal, squared 2/9)
+CHECK ok   piece-ian-dury-k: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-ian-dury-k: every face planar (exact)
+CHECK ok   piece-ian-dury-k: outward orientation (exact volume > 0)
+CHECK ok   piece-ian-dury-k: corners 29 = stated 29
+WROTE piece-ian-dury-k: V29 E63 F34 {3: 18, 4: 12, 6: 4} volume 22/25 ~ 0.880000
+CHECK ok   piece-rhombo-k: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-rhombo-k: every face planar (exact)
+CHECK ok   piece-rhombo-k: outward orientation (exact volume > 0)
+CHECK ok   piece-rhombo-k: corners 38 = stated 38
+WROTE piece-rhombo-k: V38 E84 F48 {3: 24, 4: 24} volume 6/25 ~ 0.240000
+== equal volume t
+CHECK ok   equal volume t: the power cell of tet site (0, 0, 3/8) rebuilt from the lattice = the dataset dicto-sonsam corner for corner (weight scale 2.0 in this frame)
+CHECK ok   equal volume t: the power cell of oct site (2/3, 2/3, 1/4) = the dataset dicto-lahdeli
+CHECK ok   equal volume t: each site lies strictly inside its own cell, so every key lies inside its giver and keys meet only at the giver's site (the keyed pair is valid exactly)
+CHECK ok   equal volume t: faces: each tet piece has 3 oct neighbours, each oct piece 6 tet neighbours (4 x 3 = 2 x 6 per cell)
+CHECK ok   equal volume t: dented piece = piece - its keys, spiked piece = piece + its keys (exact volumes)
+CHECK ok   equal volume t: total volume of the cell conserved exactly (4 tet + 2 oct)
+CHECK ok   piece-sonsam-k: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-sonsam-k: every face planar (exact)
+CHECK ok   piece-sonsam-k: outward orientation (exact volume > 0)
+CHECK ok   piece-sonsam-k: corners 35 = stated 35
+WROTE piece-sonsam-k: V35 E75 F40 {3: 21, 4: 15, 6: 3, 9: 1} volume 583/1200 + (37/25)*t + (-12/25)*t**2 ~ 0.490663
+CHECK ok   piece-lahdeli-k: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-lahdeli-k: every face planar (exact)
+CHECK ok   piece-lahdeli-k: outward orientation (exact volume > 0)
+CHECK ok   piece-lahdeli-k: corners 48 = stated 48
+WROTE piece-lahdeli-k: V48 E108 F62 {3: 32, 4: 30} volume 617/600 + (-74/25)*t + (24/25)*t**2 ~ 1.018673
+SUMMARY 29 ok, 0 FAIL

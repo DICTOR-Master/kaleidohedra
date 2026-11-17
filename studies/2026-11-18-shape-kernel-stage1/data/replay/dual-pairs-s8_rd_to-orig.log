@@ -1,0 +1,24 @@
+PASS labels: TO = S(3/2) has 24 corners (truncated octahedron), RD = H(2) has 14 corners and 12 rhombic faces
+    cube -> Icosaxes -> cube | -3/2 + 3/2√5 ~1.854102 None
+    cube -> RD -> cube | 2 ~2.000000 None
+    cube -> TO -> cube | 2 ~2.000000 None
+    cube -> RD -> TO -> cube | 2 ~2.000000 None
+    cube -> RD -> Icosaxes -> cube | 2 ~2.000000 None
+    cube -> TO -> Icosaxes -> cube | 2 ~2.000000 None
+    cube -> Icosaxes -> TO -> cube | 2 ~2.000000 None
+    cube -> RD -> TO -> Icosaxes -> cube | 2 ~2.000000 None
+    cube -> RD -> Icosaxes -> TO -> cube | 2/3 + 2/3√5 ~2.157379 None
+    cube -> Unborn Axes -> cube | 3/2 + 3/10√5 ~2.170820 None
+    cube -> RD -> Unborn Axes -> cube | 3/2 + 3/10√5 ~2.170820 None
+    cube -> TO -> Unborn Axes -> cube | 3/2 + 3/10√5 ~2.170820 None
+PASS A: 64 space-filler cycles through the cube (exact closures; smallest -3/2 + 3/2√5)
+PASS A: space-filler cycles with a golden closure (power of phi): []
+   B 2 436 37 [{'cycle': ['cube', 'RD', 'TO', 'cube'], 'factors': ['1', '2', '1'], 'closure': '2', 'exact': True}, {'cycle': ['cube', 'H(Unborn)', 'RD', 'TO', 'cube'], 'factors': ['1', '1', '2', '1'], 'closure': '2', 'exact': True}]
+   B (1+sqrt2)^1 320 24 [{'cycle': ['cube', 'RD', 'triakis octahedron H(tC)', 'TO', 'cube'], 'factors': ['1', '1', '1 + √2', '1'], 'closure': '1 + √2', 'exact': True}, {'cycle': ['cube', 'triakis octahedron H(tC)', 'RD', 'TO', 'cube'], 'factors': ['1', '1/2 + 1/2√2', '2', '1'], 'closure': '1 + √2', 'exact': True}]
+   B 3 2630 375 [{'cycle': ['cube', 'TO', 'RD', 'cube'], 'factors': ['2', '3/4', '2'], 'closure': '3', 'exact': True}, {'cycle': ['cube', 'octahedron', 'RD', 'TO', 'cube'], 'factors': ['3', '1/2', '2', '1'], 'closure': '3', 'exact': True}]
+   B phi^2 109 10 [{'cycle': ['cube', 'RD', 'TO', 'H(Icosaxes)', 'cube'], 'factors': ['1', '2', '1/4 + 1/4√5', '1/2 + 1/2√5'], 'closure': '3/2 + 1/2√5', 'exact': True}, {'cycle': ['cube', 'H(Unborn)', 'RD', 'TO', 'H(Icosaxes)', 'cube'], 'factors': ['1', '1', '2', '1/4 + 1/4√5', '1/2 + 1/2√5'], 'closure': '3/2 + 1/2√5', 'exact': True}]
+   B 4 412 131 [{'cycle': ['cube', 'TO', 'cuboctahedron', 'RD', 'cube'], 'factors': ['2', '1', '1', '2'], 'closure': '4', 'exact': True}, {'cycle': ['cube', 'TO', 'Greater GCC', 'RD', 'cube'], 'factors': ['2', '1', '1', '2'], 'closure': '4', 'exact': True}]
+   B (1+sqrt2)^2 12 1 [{'cycle': ['cube', 'triakis octahedron H(tC)', 'truncated cube', 'TO', 'RD', 'cube'], 'factors': ['1', '1 + √2', '2/3 + 2/3√2', '3/4', '2'], 'closure': '3 + 2√2', 'exact': True}, {'cycle': ['cube', 'RD', 'triakis octahedron H(tC)', 'truncated cube', 'octahedron', 'cube'], 'factors': ['1', '1', '1 + √2', '1 + √2', '1'], 'closure': '3 + 2√2', 'exact': True}]
+   B phi^3 2 0 [{'cycle': ['cube', 'octahedron', 'Icosaxes', 'TO', 'H(Icosaxes)', 'cube'], 'factors': ['3', '1', '1/3 + 1/3√5', '1/4 + 1/4√5', '1/2 + 1/2√5'], 'closure': '2 + √5', 'exact': True}, {'cycle': ['cube', 'Icosaxes', 'tetrakis hexahedron H(TO)', 'TO', 'H(Icosaxes)', 'cube'], 'factors': ['-3/2 + 3/2√5', '1/2 + 1/6√5', '2', '1/4 + 1/4√5', '1/2 + 1/2√5'], 'closure': '2 + √5', 'exact': True}]
+PASS B: every listed example re-checked exactly
+4/4 checks pass -> data/s8-rd-to.json

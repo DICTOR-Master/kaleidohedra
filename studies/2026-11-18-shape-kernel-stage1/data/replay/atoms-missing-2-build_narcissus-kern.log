@@ -1,0 +1,28 @@
+CHECK ok   frame: e1, e2 unit at 60 degrees, layer step of length sqrt(2/3) perpendicular to both (an isometry)
+CHECK ok   the ten (alpha, beta, layer) triples reproduce the corners of common.py exactly (to 1e-12 in floats)
+CHECK ok   Narcissus: dihedral angles 90, 120 and 135 degrees only (stated): [90.0, 120.0, 135.0]
+CHECK ok   Narcissus: a regular hexagon of side 1/sqrt3 (stated)
+CHECK ok   Narcissus: the apex lies one layer down below the hexagon's centre (stated)
+CHECK ok   Narcissus: symmetry C3v (three mirror planes, its own mirror image) (stated)
+CHECK ok   piece-narcissus: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-narcissus: every face planar (exact)
+CHECK ok   piece-narcissus: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-narcissus: volume (1/4)*sqrt(2) = stated (1/4)*sqrt(2)
+CHECK ok   piece-narcissus: corners 10 = stated 10
+CHECK ok   piece-narcissus: edges 18 = stated 18
+CHECK ok   piece-narcissus: faces by sides {3: 6, 4: 3, 6: 1} = stated {6: 1, 4: 3, 3: 6}
+WROTE piece-narcissus: V10 E18 F10 {3: 6, 4: 3, 6: 1} volume (1/4)*sqrt(2) ~ 0.353553
+CHECK ok   straight join: the union is convex (hull volume = two Narcissus) with 11 corners, 6 squares and 6 triangles (the twisted cube of #86, stated)
+CHECK ok   straight join: its edge lengths are those of the dataset DICTO Twisted Cube (D112) scaled by one factor (squared 1/2)
+CHECK ok   turned join: the union of the two Narcissus is convex (hull volume = 2 x Narcissus exactly)
+CHECK ok   Covenant: all twelve faces are parallelograms (stated)
+CHECK ok   Covenant: edges 1/sqrt2 and 1/sqrt6 (stated)
+CHECK ok   Covenant: edges in four directions (a zonohedron of four zones)
+CHECK ok   dicto-covenant: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   dicto-covenant: every face planar (exact)
+CHECK ok   dicto-covenant: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   dicto-covenant: volume (1/2)*sqrt(2) = stated (1/2)*sqrt(2)
+CHECK ok   dicto-covenant: corners 14 = stated 14
+CHECK ok   dicto-covenant: faces by sides {4: 12} = stated {4: 12}
+WROTE dicto-covenant: V14 E24 F12 {4: 12} volume (1/2)*sqrt(2) ~ 0.707107
+SUMMARY 25 ok, 0 FAIL

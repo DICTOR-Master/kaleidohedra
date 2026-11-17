@@ -1,0 +1,33 @@
+{
+ "case": "pilot-fans-law",
+ "group": "G2",
+ "study": "2026-11-13-platonic-fans-law",
+ "script": "scripts/fans_law.py",
+ "args": [
+  "../2026-11-13-platonic-disc-ranking/data/registry-solids.json",
+  "../2026-11-13-platonic-disc-ranking/data/disc-ranking.json",
+  "data/fans-law.json"
+ ],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 21.9,
+ "secs_kern": 18.9,
+ "stdout_lines": 106,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": false,
+ "time_fields_masked": 31,
+ "diff_kern_orig": "none",
+ "stdout_kern_eq_stored": true,
+ "stdout_orig_eq_stored": true,
+ "diff_kern_stored": "none",
+ "files": [
+  {
+   "file": "2026-11-13-platonic-fans-law/data/fans-law.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 2905729
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

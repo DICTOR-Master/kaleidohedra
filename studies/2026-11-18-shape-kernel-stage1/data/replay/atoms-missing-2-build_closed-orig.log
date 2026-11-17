@@ -1,0 +1,111 @@
+== D169 Sheriff, D170 Lone-star (#99)
+CHECK ok   icosahedron (0, +-1, +-phi) cyclic: 12 corners, 20 faces
+CHECK ok   D = hull of the 20 face centres of I: 20 corners, 12 pentagons
+CHECK ok   Sheriff: base edge = D's edge (stated)
+CHECK ok   Sheriff: slant edges exactly sqrt3/phi x base (stated)
+CHECK ok   Lone-star: the I edge and the D edge beneath it cross at right angles (stated)
+CHECK ok   Lone-star: its other four edges are equal (stated)
+CHECK ok   I = D + 12 Sheriffs + 30 Lone-stars exactly (10 + (10/3)*sqrt(5) = 130/27 + (58/27)*sqrt(5) + 12(20/81 + (8/81)*sqrt(5)) + 30(2/27))
+CHECK ok   piece-sheriff: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-sheriff: every face planar (exact)
+CHECK ok   piece-sheriff: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-sheriff: corners 6 = stated 6
+CHECK ok   piece-sheriff: faces by sides {3: 5, 5: 1} = stated {3: 5, 5: 1}
+WROTE piece-sheriff: V6 E10 F6 {3: 5, 5: 1} volume 20/81 + (8/81)*sqrt(5) ~ 0.467760
+CHECK ok   piece-lone-star: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-lone-star: every face planar (exact)
+CHECK ok   piece-lone-star: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-lone-star: corners 4 = stated 4
+CHECK ok   piece-lone-star: faces by sides {3: 4} = stated {3: 4}
+WROTE piece-lone-star: V4 E6 F4 {3: 4} volume 2/27 ~ 0.074074
+== D171, D172 (#105)
+CHECK ok   DICTO 1:2 Truncated Octahedron: squared edge lengths [2.0, 8.0] = [2, 8]
+CHECK ok   DICTO 1:2 Truncated Octahedron: the 6 squares have squared side 2
+CHECK ok   DICTO 1:2 Truncated Octahedron: every hexagon has two side lengths in turn
+CHECK ok   dicto-1-2-truncated-octahedron: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   dicto-1-2-truncated-octahedron: every face planar (exact)
+CHECK ok   dicto-1-2-truncated-octahedron: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   dicto-1-2-truncated-octahedron: corners 24 = stated 24
+CHECK ok   dicto-1-2-truncated-octahedron: edges 36 = stated 36
+CHECK ok   dicto-1-2-truncated-octahedron: faces by sides {4: 6, 6: 8} = stated {4: 6, 6: 8}
+WROTE dicto-1-2-truncated-octahedron: V24 E36 F14 {4: 6, 6: 8} volume 244/3 ~ 81.333333
+CHECK ok   DICTO 2:1 Truncated Octahedron: squared edge lengths [8.0, 32.0] = [8, 32]
+CHECK ok   DICTO 2:1 Truncated Octahedron: the 6 squares have squared side 32
+CHECK ok   DICTO 2:1 Truncated Octahedron: every hexagon has two side lengths in turn
+CHECK ok   dicto-2-1-truncated-octahedron: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   dicto-2-1-truncated-octahedron: every face planar (exact)
+CHECK ok   dicto-2-1-truncated-octahedron: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   dicto-2-1-truncated-octahedron: corners 24 = stated 24
+CHECK ok   dicto-2-1-truncated-octahedron: edges 36 = stated 36
+CHECK ok   dicto-2-1-truncated-octahedron: faces by sides {4: 6, 6: 8} = stated {4: 6, 6: 8}
+WROTE dicto-2-1-truncated-octahedron: V24 E36 F14 {4: 6, 6: 8} volume 3232/3 ~ 1077.333333
+CHECK ok   D172 at half size: hexagons with sides sqrt2 and 2 sqrt2, congruent to the 1:2's (stated: the two solids' hexagons are congruent)
+== D154 Double TI Star (#78)
+CHECK ok   TI (#54 station 7, Dharma frame): 60 corners, 12 pentagons, 20 hexagons
+CHECK ok   frame check: TI(phi) built here = the dataset DICTO Golden TI Star corner for corner, same volume
+CHECK ok   dicto-double-ti-star: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   dicto-double-ti-star: every face planar (exact)
+CHECK ok   dicto-double-ti-star: outward orientation (exact volume > 0)
+CHECK ok   dicto-double-ti-star: volume -35/2 + (39/2)*sqrt(5) = stated -35/2 + (39/2)*sqrt(5)
+CHECK ok   dicto-double-ti-star: corners 92 = stated 92
+CHECK ok   dicto-double-ti-star: edges 270 = stated 270
+CHECK ok   dicto-double-ti-star: faces 180 = stated 180
+WROTE dicto-double-ti-star: V92 E270 F180 {3: 180} volume -35/2 + (39/2)*sqrt(5) ~ 26.103326
+== cut OG (#95)
+CHECK ok   cut OG: all 90 corners on one sphere
+CHECK ok   cut OG = the rectified truncated icosahedron: the hull of the 90 edge midpoints of TI = the #54 station rTI
+CHECK ok   #95 Theorem 1: the OG (station 5) has 90 corners on one sphere (the other 12 off it), and they are this solid's corners scaled by one factor (squared 63/2 + (-27/2)*sqrt(5))
+CHECK ok   known-cut-og: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   known-cut-og: every face planar (exact)
+CHECK ok   known-cut-og: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   known-cut-og: corners 90 = stated 90
+CHECK ok   known-cut-og: faces by sides {3: 60, 5: 12, 6: 20} = stated {3: 60, 5: 12, 6: 20}
+WROTE known-cut-og: V90 E180 F92 {3: 60, 5: 12, 6: 20} volume -15/2 + (73/8)*sqrt(5) ~ 12.904120
+== Unborn (#48)
+CHECK ok   Unborn with its mirror image: the hull is the dataset DICTO Unborn Axes (all permutations of (0, +-1/(2phi), +-phi/2))
+CHECK ok   Unborn Axes volume 1 + sqrt5/3 (#48)
+CHECK ok   known-unborn: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   known-unborn: every face planar (exact)
+CHECK ok   known-unborn: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   known-unborn: corners 12 = stated 12
+CHECK ok   known-unborn: faces by sides {3: 20} = stated {3: 20}
+WROTE known-unborn: V12 E30 F20 {3: 20} volume 1/4 + (7/12)*sqrt(5) ~ 1.554373
+== DICTO 13-COA, Hemi RD (Permutohedron Paradigm)
+CHECK ok   cuboctahedron (+-1, +-1, 0) permuted: 12 corners
+CHECK ok   13-COA: all 24 edges equal (sqrt2)
+CHECK ok   13-COA: the 4 rhombi are 60-degree rhombi (short diagonal = side), the pyramid triangles merged with the neighbouring triangles
+CHECK ok   known-dicto-13-coa: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   known-dicto-13-coa: every face planar (exact)
+CHECK ok   known-dicto-13-coa: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   known-dicto-13-coa: volume 22/3 = stated 22/3
+CHECK ok   known-dicto-13-coa: corners 13 = stated 13
+CHECK ok   known-dicto-13-coa: edges 24 = stated 24
+CHECK ok   known-dicto-13-coa: faces by sides {3: 4, 4: 9} = stated {3: 4, 4: 9}
+WROTE known-dicto-13-coa: V13 E24 F13 {3: 4, 4: 9} volume 22/3 ~ 7.333333
+CHECK ok   RD (cube of edge 1 with six pyramids of height 1/2): volume 2
+CHECK ok   Hemi RD: the cut through six RD corners (plane x = y) is a hexagon with sides 1, sqrt3/2, sqrt3/2, 1, sqrt3/2, sqrt3/2 (long sides opposite)
+CHECK ok   known-hemi-rd: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   known-hemi-rd: every face planar (exact)
+CHECK ok   known-hemi-rd: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   known-hemi-rd: volume 1 = stated 1
+CHECK ok   known-hemi-rd: corners 10 = stated 10
+WROTE known-hemi-rd: V10 E16 F8 {3: 2, 4: 5, 6: 1} volume 1 ~ 1.000000
+== OCT-16, TBP-5 (#62)
+CHECK ok   OCT-16: dihedral angles exactly 90 and 120 degrees (stated)
+CHECK ok   OCT-16: edge ratio 2/sqrt3 (stated)
+CHECK ok   known-oct-16: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   known-oct-16: every face planar (exact)
+CHECK ok   known-oct-16: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   known-oct-16: volume 8/3 = stated 8/3
+CHECK ok   known-oct-16: corners 6 = stated 6
+CHECK ok   known-oct-16: faces by sides {3: 8} = stated {3: 8}
+WROTE known-oct-16: V6 E12 F8 {3: 8} volume 8/3 ~ 2.666667
+CHECK ok   TBP-5: three edges sqrt2 and six edges sqrt(7/6) (stated)
+CHECK ok   TBP-5: base-edge dihedral exactly 120 degrees, side-edge dihedral arccos(1/8) (stated)
+CHECK ok   known-tbp-5: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   known-tbp-5: every face planar (exact)
+CHECK ok   known-tbp-5: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   known-tbp-5: corners 5 = stated 5
+CHECK ok   known-tbp-5: faces by sides {3: 6} = stated {3: 6}
+WROTE known-tbp-5: V5 E9 F6 {3: 6} volume (1/6)*sqrt(6) ~ 0.408248
+SUMMARY 92 ok, 0 FAIL

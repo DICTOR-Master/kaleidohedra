@@ -1,0 +1,28 @@
+{
+ "case": "dual-pairs-s1_sweeps-co",
+ "group": "G4",
+ "study": "2026-11-03-dual-pairs-dimensions",
+ "script": "s1_sweeps.py",
+ "args": [
+  "co"
+ ],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 4.5,
+ "secs_kern": 5.1,
+ "stdout_lines": 33,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": true,
+ "time_fields_masked": 0,
+ "diff_kern_orig": "none",
+ "files": [
+  {
+   "file": "2026-11-03-dual-pairs-dimensions/data/s1-sweep-co.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 9037
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

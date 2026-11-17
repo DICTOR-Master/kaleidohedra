@@ -1,0 +1,2827 @@
+{
+ "scanned_files": 2515,
+ "groups": {
+  "G1": {
+   "name": "Q(sqrt5) as a class (Q5 / Q)",
+   "copies": 32,
+   "studies": 27,
+   "variants": 30,
+   "identical_sets": {
+    "6405b78f": [
+     "2026-11-09-icosahedral-line/scripts/q5.py",
+     "2026-11-09-regular-stars-census/scripts/q5.py",
+     "2026-11-09-turn-theorem/scripts/q5.py"
+    ]
+   },
+   "api": {
+    "__init__": 32,
+    "__mul__": 32,
+    "__add__": 30,
+    "__sub__": 30,
+    "__eq__": 29,
+    "__repr__": 29,
+    "__truediv__": 27,
+    "__hash__": 25,
+    "__neg__": 25,
+    "sign": 19,
+    "__rsub__": 18,
+    "__float__": 16,
+    "inv": 14,
+    "f": 12,
+    "__rtruediv__": 11,
+    "c": 10,
+    "__lt__": 9,
+    "__ge__": 7,
+    "__gt__": 7,
+    "__le__": 7,
+    "conj": 5,
+    "_c": 4,
+    "z": 4,
+    "norm": 3,
+    "iszero": 3,
+    "__abs__": 2,
+    "__pow__": 2,
+    "gal": 2,
+    "zero": 2,
+    "__str__": 1,
+    "sig": 1,
+    "key": 1
+   },
+   "rows": [
+    {
+     "path": "2026-10-15-icosa-star-hollow/scripts/exact.py",
+     "study": "2026-10-15-icosa-star-hollow",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__sub__",
+      "__truediv__",
+      "f"
+     ],
+     "hash": "ee9cfac3",
+     "lines": 19,
+     "lineno": 8
+    },
+    {
+     "path": "2026-10-16-ocd-pyrochlore/scripts/gbpc_periodic_count.py",
+     "study": "2026-10-16-ocd-pyrochlore",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__init__",
+      "__mul__",
+      "__repr__",
+      "__truediv__"
+     ],
+     "hash": "23ab029a",
+     "lines": 6,
+     "lineno": 5
+    },
+    {
+     "path": "2026-10-16-polar-dharma/scripts/polar_hafner_exact.py",
+     "study": "2026-10-16-polar-dharma",
+     "cls": "Q",
+     "methods": [
+      "__init__",
+      "__mul__",
+      "__repr__",
+      "__sub__",
+      "f"
+     ],
+     "hash": "6ec8c014",
+     "lines": 6,
+     "lineno": 8
+    },
+    {
+     "path": "2026-10-16-sheared-spacefillers/scripts/exact_volumes.py",
+     "study": "2026-10-16-sheared-spacefillers",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__sub__",
+      "_c",
+      "f"
+     ],
+     "hash": "5872e0e0",
+     "lines": 15,
+     "lineno": 9
+    },
+    {
+     "path": "2026-10-19-five-fold-octet/exact_cycle.py",
+     "study": "2026-10-19-five-fold-octet",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__sub__",
+      "__truediv__",
+      "f",
+      "sign"
+     ],
+     "hash": "18aac459",
+     "lines": 22,
+     "lineno": 13
+    },
+    {
+     "path": "2026-10-19-og-gyrated-octet/dbt_exact.py",
+     "study": "2026-10-19-og-gyrated-octet",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__sub__",
+      "__truediv__",
+      "f",
+      "sign"
+     ],
+     "hash": "1e40a98f",
+     "lines": 26,
+     "lineno": 6
+    },
+    {
+     "path": "2026-10-23-shadow-forms/exact/golden_split_exact.py",
+     "study": "2026-10-23-shadow-forms",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__sub__",
+      "_c",
+      "sign"
+     ],
+     "hash": "49d0727c",
+     "lines": 20,
+     "lineno": 8
+    },
+    {
+     "path": "2026-10-24-gnomon-cycle/gnomon_all12.py",
+     "study": "2026-10-24-gnomon-cycle",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__init__",
+      "__mul__",
+      "__repr__",
+      "__sub__",
+      "__truediv__"
+     ],
+     "hash": "ff078a54",
+     "lines": 9,
+     "lineno": 11
+    },
+    {
+     "path": "2026-10-24-gnomon-cycle/gnomon_exact.py",
+     "study": "2026-10-24-gnomon-cycle",
+     "cls": "Q",
+     "methods": [
+      "__eq__",
+      "__init__",
+      "__mul__",
+      "__repr__"
+     ],
+     "hash": "fb4ffcac",
+     "lines": 5,
+     "lineno": 4
+    },
+    {
+     "path": "2026-10-24-gnomon-cycle/gnomon_table.py",
+     "study": "2026-10-24-gnomon-cycle",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__init__",
+      "__mul__",
+      "__repr__",
+      "__sub__",
+      "__truediv__"
+     ],
+     "hash": "216b2152",
+     "lines": 9,
+     "lineno": 5
+    },
+    {
+     "path": "2026-10-25-gnomon-shapes/qs.py",
+     "study": "2026-10-25-gnomon-shapes",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "f",
+      "norm",
+      "sign"
+     ],
+     "hash": "d6f6fb18",
+     "lines": 37,
+     "lineno": 5
+    },
+    {
+     "path": "2026-10-27-4d-shadows/scripts/q5.py",
+     "study": "2026-10-27-4d-shadows",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "inv",
+      "iszero",
+      "sign"
+     ],
+     "hash": "6a591c75",
+     "lines": 77,
+     "lineno": 15
+    },
+    {
+     "path": "2026-10-27-white-queen-600/scripts/check63_exact.py",
+     "study": "2026-10-27-white-queen-600",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__sub__",
+      "__truediv__",
+      "inv",
+      "sign"
+     ],
+     "hash": "b27d375c",
+     "lines": 21,
+     "lineno": 9
+    },
+    {
+     "path": "2026-10-27-white-queen-polar/scripts/five_pyramids.py",
+     "study": "2026-10-27-white-queen-polar",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__sub__",
+      "__truediv__",
+      "inv"
+     ],
+     "hash": "12c60c9a",
+     "lines": 15,
+     "lineno": 12
+    },
+    {
+     "path": "2026-10-27-white-queen-polar/scripts/red_queen.py",
+     "study": "2026-10-27-white-queen-polar",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__sub__",
+      "__truediv__",
+      "inv"
+     ],
+     "hash": "8d025d28",
+     "lines": 13,
+     "lineno": 9
+    },
+    {
+     "path": "2026-11-02-halo-census/scripts/census.py",
+     "study": "2026-11-02-halo-census",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__str__",
+      "__sub__",
+      "__truediv__",
+      "sign"
+     ],
+     "hash": "2c3d24a1",
+     "lines": 24,
+     "lineno": 18
+    },
+    {
+     "path": "2026-11-09-b1-walls/scripts/chain_sym5.py",
+     "study": "2026-11-09-b1-walls",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__rsub__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "sign"
+     ],
+     "hash": "a9064d9f",
+     "lines": 22,
+     "lineno": 13
+    },
+    {
+     "path": "2026-11-09-icosahedral-line/scripts/q5.py",
+     "study": "2026-11-09-icosahedral-line",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "conj",
+      "f",
+      "inv",
+      "sign"
+     ],
+     "hash": "6405b78f",
+     "lines": 33,
+     "lineno": 11
+    },
+    {
+     "path": "2026-11-09-regular-stars-census/scripts/q5.py",
+     "study": "2026-11-09-regular-stars-census",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "conj",
+      "f",
+      "inv",
+      "sign"
+     ],
+     "hash": "6405b78f",
+     "lines": 33,
+     "lineno": 11
+    },
+    {
+     "path": "2026-11-09-turn-theorem/scripts/q5.py",
+     "study": "2026-11-09-turn-theorem",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "conj",
+      "f",
+      "inv",
+      "sign"
+     ],
+     "hash": "6405b78f",
+     "lines": 33,
+     "lineno": 11
+    },
+    {
+     "path": "2026-11-12-e8-canonical/scripts/e8_canon.py",
+     "study": "2026-11-12-e8-canonical",
+     "cls": "Q5",
+     "methods": [
+      "__abs__",
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "f",
+      "sig",
+      "sign",
+      "z"
+     ],
+     "hash": "df79bbf2",
+     "lines": 33,
+     "lineno": 45
+    },
+    {
+     "path": "2026-11-12-repro-tang/lusztig-proof-check/referee_checks.py",
+     "study": "2026-11-12-repro-tang",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__init__",
+      "__mul__",
+      "__repr__",
+      "__sub__",
+      "__truediv__",
+      "conj",
+      "inv",
+      "norm"
+     ],
+     "hash": "06d8774f",
+     "lines": 15,
+     "lineno": 18
+    },
+    {
+     "path": "2026-11-12-solids-canonical/scripts/solids_canon.py",
+     "study": "2026-11-12-solids-canonical",
+     "cls": "Q5",
+     "methods": [
+      "__abs__",
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__pow__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "f",
+      "sign",
+      "z"
+     ],
+     "hash": "6759bfc8",
+     "lines": 36,
+     "lineno": 46
+    },
+    {
+     "path": "2026-11-13-paradigm-exact/scripts/q5.py",
+     "study": "2026-11-13-paradigm-exact",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "sign"
+     ],
+     "hash": "c4c00be1",
+     "lines": 33,
+     "lineno": 7
+    },
+    {
+     "path": "2026-11-14-d40-hexagon-ratio/d40_hex.py",
+     "study": "2026-11-14-d40-hexagon-ratio",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "f",
+      "inv",
+      "sign"
+     ],
+     "hash": "45b2d3b7",
+     "lines": 31,
+     "lineno": 8
+    },
+    {
+     "path": "2026-11-14-platonic-hybrid/scripts/golden.py",
+     "study": "2026-11-14-platonic-hybrid",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "inv",
+      "sign"
+     ],
+     "hash": "573ecafc",
+     "lines": 27,
+     "lineno": 13
+    },
+    {
+     "path": "2026-11-15-fable-golden-a4/scripts/golden_a4_mechanism.py",
+     "study": "2026-11-15-fable-golden-a4",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "gal",
+      "inv",
+      "iszero"
+     ],
+     "hash": "ff4f7cdd",
+     "lines": 19,
+     "lineno": 7
+    },
+    {
+     "path": "2026-11-15-golden-a4-candidate/scripts/q5.py",
+     "study": "2026-11-15-golden-a4-candidate",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "conj",
+      "inv",
+      "iszero",
+      "norm",
+      "sign"
+     ],
+     "hash": "1aba2830",
+     "lines": 32,
+     "lineno": 3
+    },
+    {
+     "path": "2026-11-15-golden-a4-candidate/scripts/silent_render.py",
+     "study": "2026-11-15-golden-a4-candidate",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__sub__",
+      "__truediv__",
+      "inv",
+      "sign",
+      "zero"
+     ],
+     "hash": "ec8ccd9c",
+     "lines": 27,
+     "lineno": 22
+    },
+    {
+     "path": "2026-11-15-twisted-silence-groups/scripts/dial_a5.py",
+     "study": "2026-11-15-twisted-silence-groups",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__float__",
+      "__init__",
+      "__mul__",
+      "__pow__",
+      "__sub__",
+      "z"
+     ],
+     "hash": "d912a545",
+     "lines": 13,
+     "lineno": 247
+    },
+    {
+     "path": "2026-11-15-twisted-silence-groups/scripts/tw_matrix.py",
+     "study": "2026-11-15-twisted-silence-groups",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "gal",
+      "z"
+     ],
+     "hash": "bb229241",
+     "lines": 18,
+     "lineno": 24
+    },
+    {
+     "path": "2026-11-16-non-heart-vacuus/scripts/vacuus_exact.py",
+     "study": "2026-11-16-non-heart-vacuus",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__sub__",
+      "__truediv__",
+      "inv",
+      "key",
+      "sign",
+      "zero"
+     ],
+     "hash": "ffcd8ee0",
+     "lines": 28,
+     "lineno": 15
+    }
+   ]
+  },
+  "G2": {
+   "name": "Q(sqrt d) as a class (QF)",
+   "copies": 14,
+   "studies": 14,
+   "variants": 9,
+   "identical_sets": {
+    "6c6a3131": [
+     "2026-10-31-splash2-approximants/scripts/qf.py",
+     "2026-11-09-ab-turn/scripts/qf.py",
+     "2026-11-10-icosahedra-fill/qf.py"
+    ],
+    "56482e43": [
+     "2026-11-02-dicto-vacuus/scripts/qf.py",
+     "2026-11-02-vacuus-origami/scripts/qf.py",
+     "2026-11-13-platonic-fans-law/scripts/qf.py"
+    ],
+    "dbf19987": [
+     "2026-11-17-atoms-missing/scripts/exactlib.py",
+     "2026-11-17-atoms-missing-2/scripts/exactlib.py"
+    ]
+   },
+   "api": {
+    "__add__": 14,
+    "__init__": 14,
+    "__mul__": 14,
+    "__neg__": 14,
+    "__rsub__": 14,
+    "__sub__": 14,
+    "__truediv__": 14,
+    "__eq__": 13,
+    "__hash__": 13,
+    "__lt__": 13,
+    "sign": 13,
+    "__rtruediv__": 12,
+    "__float__": 11,
+    "__repr__": 9,
+    "_c": 9,
+    "__gt__": 8,
+    "__le__": 7,
+    "__ge__": 6,
+    "__str__": 5,
+    "conj": 4,
+    "norm": 4,
+    "floor": 3,
+    "tex": 3,
+    "__pow__": 3,
+    "inv": 3,
+    "__abs__": 2,
+    "__bool__": 2,
+    "of": 2,
+    "_dd": 2,
+    "dec": 2,
+    "f": 2,
+    "_d": 1,
+    "is_int": 1,
+    "field": 1,
+    "is_zero": 1,
+    "iszero": 1,
+    "key": 1
+   },
+   "rows": [
+    {
+     "path": "2026-10-23-exact-vs-dissection/exact.py",
+     "study": "2026-10-23-exact-vs-dissection",
+     "cls": "QF",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "_d",
+      "conj",
+      "is_int",
+      "norm",
+      "sign"
+     ],
+     "hash": "3ff6a896",
+     "lines": 66,
+     "lineno": 9,
+     "per_element_d": true
+    },
+    {
+     "path": "2026-10-31-splash2-approximants/scripts/qf.py",
+     "study": "2026-10-31-splash2-approximants",
+     "cls": "QF",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "conj",
+      "floor",
+      "norm",
+      "sign",
+      "tex"
+     ],
+     "hash": "6c6a3131",
+     "lines": 60,
+     "lineno": 7,
+     "per_element_d": true
+    },
+    {
+     "path": "2026-11-02-dicto-vacuus/scripts/qf.py",
+     "study": "2026-11-02-dicto-vacuus",
+     "cls": "QF",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__rsub__",
+      "__rtruediv__",
+      "__str__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "sign"
+     ],
+     "hash": "56482e43",
+     "lines": 33,
+     "lineno": 5,
+     "per_element_d": false
+    },
+    {
+     "path": "2026-11-02-vacuus-origami/scripts/qf.py",
+     "study": "2026-11-02-vacuus-origami",
+     "cls": "QF",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__rsub__",
+      "__rtruediv__",
+      "__str__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "sign"
+     ],
+     "hash": "56482e43",
+     "lines": 33,
+     "lineno": 5,
+     "per_element_d": false
+    },
+    {
+     "path": "2026-11-08-sri-yantra/scripts/quadfield.py",
+     "study": "2026-11-08-sri-yantra",
+     "cls": "QF",
+     "methods": [
+      "__add__",
+      "__float__",
+      "__gt__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__pow__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "field",
+      "inv",
+      "is_zero"
+     ],
+     "hash": "e51b7d60",
+     "lines": 40,
+     "lineno": 6,
+     "per_element_d": false
+    },
+    {
+     "path": "2026-11-09-ab-turn/scripts/qf.py",
+     "study": "2026-11-09-ab-turn",
+     "cls": "QF",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "conj",
+      "floor",
+      "norm",
+      "sign",
+      "tex"
+     ],
+     "hash": "6c6a3131",
+     "lines": 60,
+     "lineno": 7,
+     "per_element_d": true
+    },
+    {
+     "path": "2026-11-10-icosahedra-fill/qf.py",
+     "study": "2026-11-10-icosahedra-fill",
+     "cls": "QF",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "conj",
+      "floor",
+      "norm",
+      "sign",
+      "tex"
+     ],
+     "hash": "6c6a3131",
+     "lines": 60,
+     "lineno": 7,
+     "per_element_d": true
+    },
+    {
+     "path": "2026-11-12-permutohedron-equal-edges/scripts/coxeter.py",
+     "study": "2026-11-12-permutohedron-equal-edges",
+     "cls": "QF",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__sub__",
+      "__truediv__",
+      "inv",
+      "iszero",
+      "key",
+      "sign"
+     ],
+     "hash": "557678ad",
+     "lines": 78,
+     "lineno": 13,
+     "per_element_d": false
+    },
+    {
+     "path": "2026-11-12-yantra-regions-45/scripts/yantra_regions45.py",
+     "study": "2026-11-12-yantra-regions-45",
+     "cls": "QF",
+     "methods": [
+      "__abs__",
+      "__add__",
+      "__bool__",
+      "__eq__",
+      "__float__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__pow__",
+      "__rsub__",
+      "__rtruediv__",
+      "__str__",
+      "__sub__",
+      "__truediv__",
+      "of",
+      "sign"
+     ],
+     "hash": "f2b3d5b8",
+     "lines": 56,
+     "lineno": 20,
+     "per_element_d": false
+    },
+    {
+     "path": "2026-11-13-platonic-fans-law/scripts/qf.py",
+     "study": "2026-11-13-platonic-fans-law",
+     "cls": "QF",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__rsub__",
+      "__rtruediv__",
+      "__str__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "sign"
+     ],
+     "hash": "56482e43",
+     "lines": 33,
+     "lineno": 5,
+     "per_element_d": false
+    },
+    {
+     "path": "2026-11-13-rosette-balance/scripts/rosette_balance.py",
+     "study": "2026-11-13-rosette-balance",
+     "cls": "QF",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__sub__",
+      "__truediv__",
+      "inv",
+      "sign"
+     ],
+     "hash": "03830c5b",
+     "lines": 24,
+     "lineno": 19,
+     "per_element_d": false
+    },
+    {
+     "path": "2026-11-17-atoms-missing/scripts/exactlib.py",
+     "study": "2026-11-17-atoms-missing",
+     "cls": "QF",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "_dd",
+      "dec",
+      "f",
+      "sign"
+     ],
+     "hash": "dbf19987",
+     "lines": 49,
+     "lineno": 14,
+     "per_element_d": true
+    },
+    {
+     "path": "2026-11-17-atoms-missing-2/scripts/exactlib.py",
+     "study": "2026-11-17-atoms-missing-2",
+     "cls": "QF",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "_dd",
+      "dec",
+      "f",
+      "sign"
+     ],
+     "hash": "dbf19987",
+     "lines": 49,
+     "lineno": 14,
+     "per_element_d": true
+    },
+    {
+     "path": "2026-11-17-yantra-sequence/scripts/yarr.py",
+     "study": "2026-11-17-yantra-sequence",
+     "cls": "QF",
+     "methods": [
+      "__abs__",
+      "__add__",
+      "__bool__",
+      "__eq__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__pow__",
+      "__rsub__",
+      "__rtruediv__",
+      "__str__",
+      "__sub__",
+      "__truediv__",
+      "of",
+      "sign"
+     ],
+     "hash": "9fa2f332",
+     "lines": 51,
+     "lineno": 277,
+     "per_element_d": false
+    }
+   ]
+  },
+  "G3": {
+   "name": "Q(sqrt5) as Fraction pairs (q, qa, qm, qinv, sgn ...)",
+   "copies": 10,
+   "studies": 8,
+   "variants": 7,
+   "identical_sets": {
+    "93979ea8": [
+     "2026-10-18-bcc-golden-kit/scripts/q5.py",
+     "2026-10-18-ocd-octet/scripts/q5.py",
+     "2026-10-18-p4-golden-octet-adaptor/scripts/q5.py",
+     "2026-11-09-harmonic-gaps/scripts/q5.py"
+    ]
+   },
+   "api": {
+    "qa": 10,
+    "qf": 10,
+    "qm": 10,
+    "qs": 10,
+    "q": 8,
+    "qinv": 8,
+    "sgn": 7,
+    "qd": 6,
+    "qr": 6,
+    "qn": 4,
+    "qs_": 4,
+    "qsgn": 3,
+    "qstr": 2,
+    "qsum": 1,
+    "cmp": 1
+   },
+   "rows": [
+    {
+     "path": "2026-10-16-ocd-pyrochlore/scripts/gbpc_periodic_bodhi.py",
+     "study": "2026-10-16-ocd-pyrochlore",
+     "functions": [
+      "q",
+      "qa",
+      "qf",
+      "qinv",
+      "qm",
+      "qs",
+      "qsgn"
+     ],
+     "hash": "c4822b2d"
+    },
+    {
+     "path": "2026-10-16-ocd-pyrochlore/scripts/gbpc_search.py",
+     "study": "2026-10-16-ocd-pyrochlore",
+     "functions": [
+      "q",
+      "qa",
+      "qf",
+      "qm",
+      "qs",
+      "qsgn"
+     ],
+     "hash": "765dfbc3"
+    },
+    {
+     "path": "2026-10-18-bcc-golden-kit/scripts/q5.py",
+     "study": "2026-10-18-bcc-golden-kit",
+     "functions": [
+      "q",
+      "qa",
+      "qd",
+      "qf",
+      "qinv",
+      "qm",
+      "qn",
+      "qr",
+      "qs",
+      "qs_",
+      "sgn"
+     ],
+     "hash": "93979ea8"
+    },
+    {
+     "path": "2026-10-18-ocd-octet/scripts/q5.py",
+     "study": "2026-10-18-ocd-octet",
+     "functions": [
+      "q",
+      "qa",
+      "qd",
+      "qf",
+      "qinv",
+      "qm",
+      "qn",
+      "qr",
+      "qs",
+      "qs_",
+      "sgn"
+     ],
+     "hash": "93979ea8"
+    },
+    {
+     "path": "2026-10-18-p4-golden-octet-adaptor/scripts/q5.py",
+     "study": "2026-10-18-p4-golden-octet-adaptor",
+     "functions": [
+      "q",
+      "qa",
+      "qd",
+      "qf",
+      "qinv",
+      "qm",
+      "qn",
+      "qr",
+      "qs",
+      "qs_",
+      "sgn"
+     ],
+     "hash": "93979ea8"
+    },
+    {
+     "path": "2026-10-18-slab-cover/scripts/gbpc_puzzle.py",
+     "study": "2026-10-18-slab-cover",
+     "functions": [
+      "q",
+      "qa",
+      "qf",
+      "qinv",
+      "qm",
+      "qs",
+      "qsgn",
+      "qsum"
+     ],
+     "hash": "6986d3bd"
+    },
+    {
+     "path": "2026-10-18-slab-cover/scripts/slab_exact.py",
+     "study": "2026-10-18-slab-cover",
+     "functions": [
+      "cmp",
+      "q",
+      "qa",
+      "qf",
+      "qm",
+      "qs",
+      "sgn"
+     ],
+     "hash": "dd8f8565"
+    },
+    {
+     "path": "2026-10-21-aristotle-pyramids/pyramid_checks.py",
+     "study": "2026-10-21-aristotle-pyramids",
+     "functions": [
+      "qa",
+      "qd",
+      "qf",
+      "qinv",
+      "qm",
+      "qr",
+      "qs",
+      "qstr",
+      "sgn"
+     ],
+     "hash": "c06480b9"
+    },
+    {
+     "path": "2026-10-21-reuleaux-platonic/reuleaux_checks.py",
+     "study": "2026-10-21-reuleaux-platonic",
+     "functions": [
+      "qa",
+      "qd",
+      "qf",
+      "qinv",
+      "qm",
+      "qr",
+      "qs",
+      "qstr",
+      "sgn"
+     ],
+     "hash": "df56039a"
+    },
+    {
+     "path": "2026-11-09-harmonic-gaps/scripts/q5.py",
+     "study": "2026-11-09-harmonic-gaps",
+     "functions": [
+      "q",
+      "qa",
+      "qd",
+      "qf",
+      "qinv",
+      "qm",
+      "qn",
+      "qr",
+      "qs",
+      "qs_",
+      "sgn"
+     ],
+     "hash": "93979ea8"
+    }
+   ]
+  },
+  "G4": {
+   "name": "class K (the pilot's four-term field list), by product",
+   "copies": 6,
+   "studies": 6,
+   "variants": 4,
+   "identical_sets": {
+    "9b85c947": [
+     "2026-11-03-6d-golden-cubes/scripts/cubes_lib.py",
+     "2026-11-03-dual-pairs-dimensions/scripts/cubes_lib.py",
+     "2026-11-03-golden-cuts-beyond-plato/scripts/cubes_lib.py"
+    ]
+   },
+   "api": {
+    "__add__": 6,
+    "__eq__": 6,
+    "__float__": 6,
+    "__init__": 6,
+    "__mul__": 6,
+    "__neg__": 6,
+    "__repr__": 6,
+    "__rsub__": 6,
+    "__sub__": 6,
+    "__truediv__": 6,
+    "sign": 6,
+    "inv": 5,
+    "iszero": 5,
+    "__hash__": 5,
+    "__rtruediv__": 5,
+    "__ge__": 3,
+    "__gt__": 3,
+    "__le__": 3,
+    "__lt__": 3,
+    "c": 3,
+    "conj2": 3,
+    "conj5": 3,
+    "of": 1,
+    "__abs__": 1,
+    "norm": 1,
+    "sym": 1,
+    "z": 1,
+    "ar": 1,
+    "conj": 1,
+    "key": 1
+   },
+   "rows": [
+    {
+     "path": "2026-10-23-shadow-forms/octet/octet_special_exact.py",
+     "study": "2026-10-23-shadow-forms",
+     "cls": "K",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__sub__",
+      "__truediv__",
+      "inv",
+      "iszero",
+      "of",
+      "sign"
+     ],
+     "hash": "7cead7d7",
+     "lines": 41,
+     "lineno": 8,
+     "kind": "pure radical field Q(k^(1/n)), basis 1, r, ..., r^(n-1), class-level n, k",
+     "code": "radical"
+    },
+    {
+     "path": "2026-11-03-6d-golden-cubes/scripts/cubes_lib.py",
+     "study": "2026-11-03-6d-golden-cubes",
+     "cls": "K",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "conj2",
+      "conj5",
+      "inv",
+      "iszero",
+      "sign"
+     ],
+     "hash": "9b85c947",
+     "lines": 41,
+     "lineno": 21,
+     "kind": "four-term field Q(sqrt2, sqrt5) = a + b sqrt2 + c sqrt5 + d sqrt10",
+     "code": "mq"
+    },
+    {
+     "path": "2026-11-03-dual-pairs-dimensions/scripts/cubes_lib.py",
+     "study": "2026-11-03-dual-pairs-dimensions",
+     "cls": "K",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "conj2",
+      "conj5",
+      "inv",
+      "iszero",
+      "sign"
+     ],
+     "hash": "9b85c947",
+     "lines": 41,
+     "lineno": 21,
+     "kind": "four-term field Q(sqrt2, sqrt5) = a + b sqrt2 + c sqrt5 + d sqrt10",
+     "code": "mq"
+    },
+    {
+     "path": "2026-11-03-golden-cuts-beyond-plato/scripts/cubes_lib.py",
+     "study": "2026-11-03-golden-cuts-beyond-plato",
+     "cls": "K",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "conj2",
+      "conj5",
+      "inv",
+      "iszero",
+      "sign"
+     ],
+     "hash": "9b85c947",
+     "lines": 41,
+     "lineno": 21,
+     "kind": "four-term field Q(sqrt2, sqrt5) = a + b sqrt2 + c sqrt5 + d sqrt10",
+     "code": "mq"
+    },
+    {
+     "path": "2026-11-12-pds-hopscotch-line/scripts/pds_line.py",
+     "study": "2026-11-12-pds-hopscotch-line",
+     "cls": "K",
+     "methods": [
+      "__abs__",
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "norm",
+      "sign",
+      "sym",
+      "z"
+     ],
+     "hash": "d873b419",
+     "lines": 39,
+     "lineno": 25,
+     "kind": "Q(sqrt5) = a + b sqrt5 (two terms; named K)",
+     "code": "quad5"
+    },
+    {
+     "path": "2026-11-15-law-giving-census/scripts/exact.py",
+     "study": "2026-11-15-law-giving-census",
+     "cls": "K",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "ar",
+      "conj",
+      "inv",
+      "iszero",
+      "key",
+      "sign"
+     ],
+     "hash": "24062f4c",
+     "lines": 31,
+     "lineno": 21,
+     "kind": "Q(sqrt D), D per run (2 or 5), python-flint rationals",
+     "code": "quad-flint"
+    }
+   ]
+  },
+  "G5": {
+   "name": "golden basis a + b phi as a class",
+   "copies": 4,
+   "studies": 4,
+   "variants": 3,
+   "identical_sets": {
+    "2517017e": [
+     "2026-11-15-echo-shapes/scripts/echo_lib.py",
+     "2026-11-16-queens-construct/scripts/qlib.py"
+    ]
+   },
+   "api": {
+    "__add__": 4,
+    "__eq__": 4,
+    "__hash__": 4,
+    "__init__": 4,
+    "__mul__": 4,
+    "__neg__": 4,
+    "__sub__": 4,
+    "__truediv__": 4,
+    "inv": 4,
+    "sign": 4,
+    "__float__": 3,
+    "__repr__": 3,
+    "__rsub__": 3,
+    "conj": 3,
+    "iszero": 3,
+    "__lt__": 2,
+    "__rtruediv__": 2,
+    "key": 2,
+    "mpf": 2,
+    "norm": 2,
+    "_c": 1,
+    "isint": 1,
+    "f": 1
+   },
+   "rows": [
+    {
+     "path": "2026-11-13-platonic-residents-exact/scripts/residents.py",
+     "study": "2026-11-13-platonic-residents-exact",
+     "cls": "E",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "conj",
+      "inv",
+      "isint",
+      "sign"
+     ],
+     "hash": "b964d9d2",
+     "lines": 29,
+     "lineno": 31,
+     "kind": "a + b phi (golden basis) or a + b sqrt2, chosen per element"
+    },
+    {
+     "path": "2026-11-15-echo-shapes/scripts/echo_lib.py",
+     "study": "2026-11-15-echo-shapes",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "conj",
+      "inv",
+      "iszero",
+      "key",
+      "mpf",
+      "norm",
+      "sign"
+     ],
+     "hash": "2517017e",
+     "lines": 33,
+     "lineno": 23,
+     "kind": "a + b phi (golden basis)"
+    },
+    {
+     "path": "2026-11-16-queens-construct/scripts/qlib.py",
+     "study": "2026-11-16-queens-construct",
+     "cls": "Q5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "conj",
+      "inv",
+      "iszero",
+      "key",
+      "mpf",
+      "norm",
+      "sign"
+     ],
+     "hash": "2517017e",
+     "lines": 33,
+     "lineno": 18,
+     "kind": "a + b phi (golden basis)"
+    },
+    {
+     "path": "2026-11-17-get-mixing/scripts/mixlib.py",
+     "study": "2026-11-17-get-mixing",
+     "cls": "Q",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__sub__",
+      "__truediv__",
+      "f",
+      "inv",
+      "iszero",
+      "sign"
+     ],
+     "hash": "477f1428",
+     "lines": 16,
+     "lineno": 50,
+     "kind": "a + b phi (golden basis)"
+    }
+   ]
+  },
+  "G6": {
+   "name": "Z[phi] as integer pairs (zadd, zmul, zsign ...)",
+   "copies": 4,
+   "studies": 4,
+   "variants": 3,
+   "identical_sets": {
+    "90bc5784": [
+     "2026-11-15-grunbaum-k10/scripts/zsurf.py",
+     "2026-11-17-get-mixing/scripts/zsurf.py"
+    ]
+   },
+   "api": {
+    "zmul": 4,
+    "zsign": 4,
+    "zadd": 3,
+    "zfloat": 3,
+    "zneg": 3,
+    "zsub": 3,
+    "zconj": 2
+   },
+   "rows": [
+    {
+     "path": "2026-11-15-grunbaum-k10/scripts/zsurf.py",
+     "study": "2026-11-15-grunbaum-k10",
+     "functions": [
+      "zadd",
+      "zconj",
+      "zfloat",
+      "zmul",
+      "zneg",
+      "zsign",
+      "zsub"
+     ],
+     "hash": "90bc5784",
+     "lineno": 12
+    },
+    {
+     "path": "2026-11-17-get-mixing/scripts/zsurf.py",
+     "study": "2026-11-17-get-mixing",
+     "functions": [
+      "zadd",
+      "zconj",
+      "zfloat",
+      "zmul",
+      "zneg",
+      "zsign",
+      "zsub"
+     ],
+     "hash": "90bc5784",
+     "lineno": 12
+    },
+    {
+     "path": "2026-11-17-get-palomar/scripts/getgeom.py",
+     "study": "2026-11-17-get-palomar",
+     "functions": [
+      "zadd",
+      "zmul",
+      "zneg",
+      "zsign",
+      "zsub"
+     ],
+     "hash": "6fd027ed",
+     "lineno": 4
+    },
+    {
+     "path": "2026-11-17-independent-checks/110-exact/scripts/common.py",
+     "study": "2026-11-17-independent-checks",
+     "functions": [
+      "zfloat",
+      "zmul",
+      "zsign"
+     ],
+     "hash": "853a5e84",
+     "lineno": 23
+    }
+   ]
+  },
+  "G7": {
+   "name": "cubic and general fields Q(t) (KC, AlgField, RF)",
+   "copies": 7,
+   "studies": 3,
+   "variants": 4,
+   "identical_sets": {
+    "69ab7402": [
+     "2026-11-17-atoms-missing/scripts/exactlib.py",
+     "2026-11-17-atoms-missing-2/scripts/exactlib.py"
+    ],
+    "816db887": [
+     "2026-11-17-atoms-missing/scripts/exactlib.py",
+     "2026-11-17-atoms-missing-2/scripts/exactlib.py"
+    ],
+    "858c7087": [
+     "2026-11-17-atoms-missing/scripts/exactlib.py",
+     "2026-11-17-atoms-missing-2/scripts/exactlib.py"
+    ]
+   },
+   "api": {
+    "__init__": 7,
+    "sign": 7,
+    "__add__": 5,
+    "__eq__": 5,
+    "__hash__": 5,
+    "__mul__": 5,
+    "__neg__": 5,
+    "__repr__": 5,
+    "__rsub__": 5,
+    "__sub__": 5,
+    "__truediv__": 5,
+    "__lt__": 4,
+    "__rtruediv__": 4,
+    "_c": 4,
+    "d": 4,
+    "dec": 4,
+    "f": 4,
+    "fmt": 4,
+    "mp": 4,
+    "norm": 2,
+    "approx": 2,
+    "bisect": 2,
+    "get": 2,
+    "interval_value": 2,
+    "peval": 2,
+    "poly_string": 2,
+    "reduce": 2,
+    "at": 2,
+    "inv": 2,
+    "__float__": 1,
+    "_co": 1,
+    "iszero": 1,
+    "mpf": 1
+   },
+   "rows": [
+    {
+     "path": "2026-10-25-web-of-bonds/scripts/lib.py",
+     "study": "2026-10-25-web-of-bonds",
+     "cls": "E",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__sub__",
+      "__truediv__",
+      "_co",
+      "iszero",
+      "mpf",
+      "sign"
+     ],
+     "hash": "5cb3777f",
+     "lines": 66,
+     "lineno": 31,
+     "kind": "general field Q(alpha), monic minimal polynomial (Q, sqrt5, sqrt2, sqrt6, cbrt2, cbrt6), sign from an 80-digit evaluation"
+    },
+    {
+     "path": "2026-11-17-atoms-missing/scripts/exactlib.py",
+     "study": "2026-11-17-atoms-missing",
+     "cls": "KC",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "d",
+      "dec",
+      "f",
+      "fmt",
+      "mp",
+      "norm",
+      "sign"
+     ],
+     "hash": "69ab7402",
+     "lines": 69,
+     "lineno": 65,
+     "kind": "pure cubic field Q(k^(1/3)), sign by the norm"
+    },
+    {
+     "path": "2026-11-17-atoms-missing/scripts/exactlib.py",
+     "study": "2026-11-17-atoms-missing",
+     "cls": "AlgField",
+     "methods": [
+      "__init__",
+      "approx",
+      "bisect",
+      "get",
+      "interval_value",
+      "peval",
+      "poly_string",
+      "reduce",
+      "sign"
+     ],
+     "hash": "816db887",
+     "lines": 74,
+     "lineno": 136,
+     "kind": "the field Q(t): polynomial and isolating interval, sign by bisection"
+    },
+    {
+     "path": "2026-11-17-atoms-missing/scripts/exactlib.py",
+     "study": "2026-11-17-atoms-missing",
+     "cls": "RF",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "at",
+      "d",
+      "dec",
+      "f",
+      "fmt",
+      "inv",
+      "mp",
+      "sign"
+     ],
+     "hash": "858c7087",
+     "lines": 81,
+     "lineno": 212,
+     "kind": "element of Q(t) (uses AlgField)"
+    },
+    {
+     "path": "2026-11-17-atoms-missing-2/scripts/exactlib.py",
+     "study": "2026-11-17-atoms-missing-2",
+     "cls": "KC",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "d",
+      "dec",
+      "f",
+      "fmt",
+      "mp",
+      "norm",
+      "sign"
+     ],
+     "hash": "69ab7402",
+     "lines": 69,
+     "lineno": 65,
+     "kind": "pure cubic field Q(k^(1/3)), sign by the norm"
+    },
+    {
+     "path": "2026-11-17-atoms-missing-2/scripts/exactlib.py",
+     "study": "2026-11-17-atoms-missing-2",
+     "cls": "AlgField",
+     "methods": [
+      "__init__",
+      "approx",
+      "bisect",
+      "get",
+      "interval_value",
+      "peval",
+      "poly_string",
+      "reduce",
+      "sign"
+     ],
+     "hash": "816db887",
+     "lines": 74,
+     "lineno": 136,
+     "kind": "the field Q(t): polynomial and isolating interval, sign by bisection"
+    },
+    {
+     "path": "2026-11-17-atoms-missing-2/scripts/exactlib.py",
+     "study": "2026-11-17-atoms-missing-2",
+     "cls": "RF",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "_c",
+      "at",
+      "d",
+      "dec",
+      "f",
+      "fmt",
+      "inv",
+      "mp",
+      "sign"
+     ],
+     "hash": "858c7087",
+     "lines": 81,
+     "lineno": 212,
+     "kind": "element of Q(t) (uses AlgField)"
+    }
+   ]
+  },
+  "G8": {
+   "name": "other Q(sqrt d) classes (wider scan)",
+   "copies": 7,
+   "studies": 7,
+   "variants": 6,
+   "identical_sets": {
+    "88b6019c": [
+     "2026-11-09-icosahedral-line/scripts/bird2_base.py",
+     "2026-11-09-og-margin/scripts/exact_family.py"
+    ]
+   },
+   "api": {
+    "__add__": 7,
+    "__init__": 7,
+    "__mul__": 7,
+    "__neg__": 7,
+    "__repr__": 7,
+    "__sub__": 7,
+    "__eq__": 6,
+    "__hash__": 6,
+    "__truediv__": 6,
+    "inv": 6,
+    "sign": 6,
+    "f": 4,
+    "__float__": 3,
+    "__rsub__": 3,
+    "c": 3,
+    "z": 3,
+    "__rtruediv__": 2,
+    "sym": 2,
+    "digits": 2,
+    "__ge__": 1,
+    "__gt__": 1,
+    "__le__": 1,
+    "__lt__": 1,
+    "iszero": 1,
+    "__abs__": 1,
+    "__pow__": 1,
+    "_d": 1,
+    "key": 1,
+    "gal": 1
+   },
+   "rows": [
+    {
+     "path": "2026-11-09-dual-sweeps/scripts/sweeplib.py",
+     "study": "2026-11-09-dual-sweeps",
+     "cls": "F",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__ge__",
+      "__gt__",
+      "__hash__",
+      "__init__",
+      "__le__",
+      "__lt__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "c",
+      "inv",
+      "sign",
+      "sym"
+     ],
+     "hash": "a351ca51",
+     "lines": 80,
+     "lineno": 22,
+     "d": "D",
+     "rational": "Fraction"
+    },
+    {
+     "path": "2026-11-09-icosahedral-line/scripts/bird2_base.py",
+     "study": "2026-11-09-icosahedral-line",
+     "cls": "R5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__sub__",
+      "__truediv__",
+      "digits",
+      "f",
+      "inv",
+      "sign"
+     ],
+     "hash": "88b6019c",
+     "lines": 20,
+     "lineno": 26,
+     "d": "5",
+     "rational": "gmpy2 mpq"
+    },
+    {
+     "path": "2026-11-09-og-margin/scripts/exact_family.py",
+     "study": "2026-11-09-og-margin",
+     "cls": "R5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__sub__",
+      "__truediv__",
+      "digits",
+      "f",
+      "inv",
+      "sign"
+     ],
+     "hash": "88b6019c",
+     "lines": 20,
+     "lineno": 21,
+     "d": "5",
+     "rational": "gmpy2 mpq"
+    },
+    {
+     "path": "2026-11-12-hop-4d-vacuus/scripts/vac4.py",
+     "study": "2026-11-12-hop-4d-vacuus",
+     "cls": "R5",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__sub__",
+      "__truediv__",
+      "f",
+      "inv",
+      "iszero",
+      "sign"
+     ],
+     "hash": "3f877165",
+     "lines": 20,
+     "lineno": 24,
+     "d": "5",
+     "rational": "gmpy2 mpq"
+    },
+    {
+     "path": "2026-11-13-amplitude-at-distance/scripts/amp_dist.py",
+     "study": "2026-11-13-amplitude-at-distance",
+     "cls": "QD",
+     "methods": [
+      "__abs__",
+      "__add__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__pow__",
+      "__repr__",
+      "__rsub__",
+      "__rtruediv__",
+      "__sub__",
+      "__truediv__",
+      "_d",
+      "c",
+      "f",
+      "inv",
+      "key",
+      "sign",
+      "sym",
+      "z"
+     ],
+     "hash": "ee8c9476",
+     "lines": 38,
+     "lineno": 30,
+     "d": "D",
+     "rational": "Fraction"
+    },
+    {
+     "path": "2026-11-13-palindromic-middles/scripts/middles.py",
+     "study": "2026-11-13-palindromic-middles",
+     "cls": "QS",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__rsub__",
+      "__sub__",
+      "__truediv__",
+      "inv",
+      "sign",
+      "z"
+     ],
+     "hash": "ea280143",
+     "lines": 35,
+     "lineno": 22,
+     "d": "M",
+     "rational": "Fraction"
+    },
+    {
+     "path": "2026-11-15-twisted-silence-groups/scripts/tw_binary.py",
+     "study": "2026-11-15-twisted-silence-groups",
+     "cls": "F",
+     "methods": [
+      "__add__",
+      "__eq__",
+      "__float__",
+      "__hash__",
+      "__init__",
+      "__mul__",
+      "__neg__",
+      "__repr__",
+      "__sub__",
+      "c",
+      "gal",
+      "z"
+     ],
+     "hash": "f6ce8acc",
+     "lines": 18,
+     "lineno": 29,
+     "d": "F.D",
+     "rational": "Fraction"
+    }
+   ]
+  }
+ },
+ "wider_scan": {
+  "vectorised": [
+   {
+    "path": "2026-11-17-independent-checks/110-chambers/scripts/zphi.py",
+    "verdict": "a real Z[phi] copy, vectorised on numpy int64 arrays, written from scratch for an independent check: kept apart by design (an independent check must not share the kernel)"
+   }
+  ],
+  "pairs_other_d": [],
+  "codemap_names": [
+   {
+    "path": "2026-10-16-lineup-c/scripts/lineup_c.py",
+    "name": "sqrtQ",
+    "verdict": "number-field operation (square root in Q(sqrt5), found by a float search over small denominators)",
+    "in_copy": false
+   },
+   {
+    "path": "2026-10-16-progenitors/scripts/hypsicles_twins.py",
+    "name": "sqrtQ",
+    "verdict": "number-field operation (square root in Q(sqrt5), found by a float search over small denominators)",
+    "in_copy": false
+   },
+   {
+    "path": "2026-10-16-sheared-spacefillers/scripts/exact_volumes.py",
+    "name": "sqrtQ",
+    "verdict": "number-field operation (square root in Q(sqrt5), found by a float search over small denominators)",
+    "in_copy": true
+   },
+   {
+    "path": "2026-10-18-ocd-octet/fable-review/scripts/fable_exact.py",
+    "name": "exact_volume",
+    "verdict": "not a copy: geometry (a volume) computed with a number class",
+    "in_copy": false
+   },
+   {
+    "path": "2026-10-18-ocd-octet/fable-review-2/scripts/fable2_engine.py",
+    "name": "exact_volume",
+    "verdict": "not a copy: geometry (a volume) computed with a number class",
+    "in_copy": false
+   },
+   {
+    "path": "2026-10-18-ocd-octet/fable-review-2/scripts/fable2_exact.py",
+    "name": "qsqrt",
+    "verdict": "number-field operation (square root in Q(sqrt d), found by sympy sqrtdenest)",
+    "in_copy": false
+   },
+   {
+    "path": "2026-10-18-p4-golden-octet-adaptor/fable-review-3/scripts/fable3_engine.py",
+    "name": "exact_volume",
+    "verdict": "not a copy: geometry (a volume) computed with a number class",
+    "in_copy": false
+   },
+   {
+    "path": "2026-10-24-gnomon-cycle/gnomon_all12.py",
+    "name": "exact_volume",
+    "verdict": "not a copy: geometry (a volume) computed with a number class",
+    "in_copy": true
+   },
+   {
+    "path": "2026-10-25-gnomon-shapes/qs.py",
+    "name": "qsqrt",
+    "verdict": "number-field operation (square root in Q(sqrt d), found by sympy sqrtdenest)",
+    "in_copy": true
+   },
+   {
+    "path": "2026-11-03-6d-golden-cubes/scripts/cubes_lib.py",
+    "name": "faces_exact",
+    "verdict": "not a copy: geometry (hull faces checked exactly) computed with a number class",
+    "in_copy": true
+   },
+   {
+    "path": "2026-11-03-6d-golden-cubes/scripts/cubes_lib.py",
+    "name": "conj2",
+    "verdict": "number-field operation (Galois conjugate)",
+    "in_copy": true
+   },
+   {
+    "path": "2026-11-03-6d-golden-cubes/scripts/cubes_lib.py",
+    "name": "conj5",
+    "verdict": "number-field operation (Galois conjugate)",
+    "in_copy": true
+   },
+   {
+    "path": "2026-11-03-dual-pairs-dimensions/scripts/cubes_lib.py",
+    "name": "faces_exact",
+    "verdict": "not a copy: geometry (hull faces checked exactly) computed with a number class",
+    "in_copy": true
+   },
+   {
+    "path": "2026-11-03-dual-pairs-dimensions/scripts/cubes_lib.py",
+    "name": "conj2",
+    "verdict": "number-field operation (Galois conjugate)",
+    "in_copy": true
+   },
+   {
+    "path": "2026-11-03-dual-pairs-dimensions/scripts/cubes_lib.py",
+    "name": "conj5",
+    "verdict": "number-field operation (Galois conjugate)",
+    "in_copy": true
+   },
+   {
+    "path": "2026-11-03-golden-cuts-beyond-plato/scripts/cubes_lib.py",
+    "name": "faces_exact",
+    "verdict": "not a copy: geometry (hull faces checked exactly) computed with a number class",
+    "in_copy": true
+   },
+   {
+    "path": "2026-11-03-golden-cuts-beyond-plato/scripts/cubes_lib.py",
+    "name": "conj2",
+    "verdict": "number-field operation (Galois conjugate)",
+    "in_copy": true
+   },
+   {
+    "path": "2026-11-03-golden-cuts-beyond-plato/scripts/cubes_lib.py",
+    "name": "conj5",
+    "verdict": "number-field operation (Galois conjugate)",
+    "in_copy": true
+   },
+   {
+    "path": "2026-11-13-near-but-never-on/scripts/near_on.py",
+    "name": "conj5",
+    "verdict": "number-field operation (Galois conjugate)",
+    "in_copy": false
+   },
+   {
+    "path": "2026-11-15-gorinto-cells/scripts/gorinto.py",
+    "name": "exact_volume",
+    "verdict": "not a copy: geometry (a volume) computed with a number class",
+    "in_copy": false
+   },
+   {
+    "path": "2026-11-17-atoms-missing/scripts/exactlib.py",
+    "name": "qsqrt",
+    "verdict": "number-field operation (square root in Q(sqrt d), found by sympy sqrtdenest)",
+    "in_copy": true
+   },
+   {
+    "path": "2026-11-17-atoms-missing-2/scripts/exactlib.py",
+    "name": "qsqrt",
+    "verdict": "number-field operation (square root in Q(sqrt d), found by sympy sqrtdenest)",
+    "in_copy": true
+   }
+  ],
+  "inline_norms": [
+   {
+    "path": "2026-10-16-ocd-pyrochlore/scripts/golden_fill.py",
+    "count": 1,
+    "example": "a * a - 5 * b * b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-10-16-progenitors/scripts/gap_member.py",
+    "count": 2,
+    "example": "a * a > 5 * b * b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-10-16-progenitors/scripts/metaxy_dual.py",
+    "count": 2,
+    "example": "a * a > 5 * b * b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-10-18-ocd-octet/fable-review-2/scripts/fable2_exact.py",
+    "count": 1,
+    "example": "a * a - 5 * b * b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-10-25-keyed-web/scripts/keyed_web_exact.py",
+    "count": 1,
+    "example": "q.a * q.a - 5 * q.b * q.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-03-dual-pairs-dimensions/scripts/dp_lib.py",
+    "count": 1,
+    "example": "a * a - 5 * c * c",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-08-sequences/fib_lucas.py",
+    "count": 1,
+    "example": "a2 * a2 - 5 * b2 * b2",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-09-hopscotch-rows/scripts/lead4_range.py",
+    "count": 1,
+    "example": "a * a - 5 * b * b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-09-og-margin/scripts/og_twin.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-09-regular-stars-census/scripts/s4_starturn.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-10-ab-line/ico_hurwitz.py",
+    "count": 1,
+    "example": "p1 * p1 - D * q1 * q1",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-10-canonical-sweep/scripts/canon_unique.py",
+    "count": 1,
+    "example": "p * p - 5 * q * q",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/cross_trace.py",
+    "count": 2,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/cut_family.py",
+    "count": 2,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/level1_match.py",
+    "count": 2,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/middle_world.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/pentakis_check.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/pentakis_cycle.py",
+    "count": 2,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/pentakis_family.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/render_angeli_levels.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/render_bands.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/render_cut_family.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/render_hidden_fins.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/render_shared_angelus.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/render_thread.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/render_thread_og.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/scale_norm.py",
+    "count": 2,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/twin_disc_levels.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/twin_ratios_exact.py",
+    "count": 2,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/twin_regular.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-11-twin-vacuus/scripts/twin_sweep4d.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-12-og-galois-window/scripts/og_window.py",
+    "count": 1,
+    "example": "x.a * x.a - 5 * x.b * x.b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-12-og-galois-window/scripts/window_controls.py",
+    "count": 1,
+    "example": "a * a - 5 * b * b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-13-golden-slice-window/scripts/slice_window.py",
+    "count": 1,
+    "example": "X * X - 5 * Y * Y",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-15-golden-a4-candidate/scripts/golden_mech.py",
+    "count": 1,
+    "example": "A*A - 5*B*B",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-15-grunbaum-k10/scripts/tile_check.py",
+    "count": 1,
+    "example": "a*a > 5*b*b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-17-atoms-missing/scripts/build_tq.py",
+    "count": 1,
+    "example": "a * a > 5 * b * b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-17-get-mixing/scripts/corona_enum.py",
+    "count": 1,
+    "example": "a*a > 5*b*b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-17-get-mixing/scripts/neighbours.py",
+    "count": 1,
+    "example": "a*a > 5*b*b",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   },
+   {
+    "path": "2026-11-17-independent-checks/110-chambers/scripts/zphi.py",
+    "count": 1,
+    "example": "p * p - 5 * q * q",
+    "verdict": "inline norm or sign test a^2 against d b^2 in a script without its own number class"
+   }
+  ],
+  "other_mul_classes": [
+   {
+    "path": "2026-11-09-yantra-audit/certificates/common/stage2_symbolic.py",
+    "cls": "T",
+    "verdict": "not a copy: logging wrapper of a symbolic expression (records divisors)"
+   },
+   {
+    "path": "2026-11-09-yantra-audit/certificates/common/stage5_certify.py",
+    "cls": "I",
+    "verdict": "not a copy: interval arithmetic wrapper (mpmath iv)"
+   },
+   {
+    "path": "2026-11-10-g1-e1-exact/threshold_cert.py",
+    "cls": "D",
+    "verdict": "not a copy: interval value with two derivatives (certified bounds)"
+   },
+   {
+    "path": "2026-11-15-law-giving-census/scripts/exact.py",
+    "cls": "E",
+    "verdict": "not a copy: expression tree, or polynomial in t over Q(sqrt D)"
+   },
+   {
+    "path": "2026-11-15-law-giving-census/silent/scripts/three_d.py",
+    "cls": "KP",
+    "verdict": "not a copy: pair of multivariate polynomials over python-flint (A + B sqrt D with polynomial A, B)"
+   },
+   {
+    "path": "2026-11-15-yantra-box-certificate/scripts/c4_derivation.py",
+    "cls": "E",
+    "verdict": "not a copy: expression tree, or polynomial in t over Q(sqrt D)"
+   }
+  ],
+  "sympy_scripts": 199,
+  "sympy_examples": [
+   "2026-10-12-self-building-ring/scripts/hadwiger.py",
+   "2026-10-25-atom-onions/scripts/onions_exact.py",
+   "2026-10-25-changeover-evidence/scripts/compounds.py",
+   "2026-10-25-changeover-evidence/scripts/geometry.py",
+   "2026-10-25-hidden-bonds/equal_volume_exact.py"
+  ]
+ }
+}

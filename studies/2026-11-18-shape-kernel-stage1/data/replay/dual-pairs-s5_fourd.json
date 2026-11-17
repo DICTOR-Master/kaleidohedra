@@ -1,0 +1,26 @@
+{
+ "case": "dual-pairs-s5_fourd",
+ "group": "G4",
+ "study": "2026-11-03-dual-pairs-dimensions",
+ "script": "s5_fourd.py",
+ "args": [],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 10.6,
+ "secs_kern": 11.6,
+ "stdout_lines": 61,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": true,
+ "time_fields_masked": 0,
+ "diff_kern_orig": "none",
+ "files": [
+  {
+   "file": "2026-11-03-dual-pairs-dimensions/data/s5-fourd.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 16887
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

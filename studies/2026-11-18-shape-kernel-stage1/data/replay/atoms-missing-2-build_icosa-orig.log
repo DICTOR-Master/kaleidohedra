@@ -1,0 +1,66 @@
+CHECK ok   AXE 1/12, CLEO (sqrt5 - 1)/24, FUJI (1 + 3 sqrt5)/24 (DICTOnary A.27, exact from the snapped app pieces)
+== D147 Triskelion, D146 Triskelion Hex, D139 Hasu
+CHECK ok   Triskelion: app corners within 5.6e-09 of the exact values
+CHECK ok   Triskelion = CLEO + 3 AXE exactly, = the volume of the pentagonal cap J2 of edge 1, (5 + sqrt5)/24 (stated)
+CHECK ok   piece-triskelion: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-triskelion: every face planar (exact)
+CHECK ok   piece-triskelion: outward orientation (exact volume > 0)
+CHECK ok   piece-triskelion: volume 5/24 + (1/24)*sqrt(5) = stated 5/24 + (1/24)*sqrt(5)
+WROTE piece-triskelion: V7 E15 F10 {3: 10} volume 5/24 + (1/24)*sqrt(5) ~ 0.301503
+CHECK ok   Triskelion Hex = FUJI + 3 AXE exactly, (7 + 3 sqrt5)/24
+CHECK ok   piece-triskelion-hex: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-triskelion-hex: every face planar (exact)
+CHECK ok   piece-triskelion-hex: outward orientation (exact volume > 0)
+CHECK ok   piece-triskelion-hex: volume 7/24 + (1/8)*sqrt(5) = stated 7/24 + (1/8)*sqrt(5)
+WROTE piece-triskelion-hex: V10 E21 F13 {3: 12, 6: 1} volume 7/24 + (1/8)*sqrt(5) ~ 0.571175
+CHECK ok   #19 Fig. 5 counts (21 parts, 45 faces): the app surface of the 21 parts has 32 points and 45 faces (closed exactly below); merged into whole planar faces the solid has fewer corners and faces (the counts written to the file)
+CHECK ok   12 Hasu + the central icosahedron of edge 1/phi = the Lotus seed (icosahedron of edge phi^2, phi^6 unit icosahedra) exactly
+CHECK ok   piece-hasu: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-hasu: every face planar (exact)
+CHECK ok   piece-hasu: outward orientation (exact volume > 0)
+CHECK ok   piece-hasu: volume 5/3 + (25/36)*sqrt(5) = stated 5/3 + (25/36)*sqrt(5)
+WROTE piece-hasu: V22 E35 F15 {4: 10, 6: 5} volume 5/3 + (25/36)*sqrt(5) ~ 3.219492
+== Inner Eye (known)
+CHECK ok   Inner Eye = I(1/phi) + 30 AXE + 20 CLEO exactly (#19 Fig. 6)
+CHECK ok   known-inner-eye: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   known-inner-eye: every face planar (exact)
+CHECK ok   known-inner-eye: outward orientation (exact volume > 0)
+CHECK ok   known-inner-eye: corners 32 = stated 32
+CHECK ok   known-inner-eye: faces by sides {3: 60} = stated {3: 60}
+WROTE known-inner-eye: V32 E90 F60 {3: 60} volume 5/4 + (5/4)*sqrt(5) ~ 4.045085
+== Tricap, Hound Tooth (known)
+CHECK ok   Hound Tooth: four corners of the icosahedron of edge 1/tau (found by an exact search of icosahedral points)
+CHECK ok   Tricap (Mosseri-Sadoc t3): the six edges are the Mosseri-Sadoc table LLSLSS at scale 1/tau (edges 1/tau and 1)
+CHECK ok   Tricap (Mosseri-Sadoc t3): volume (1/12) tau^-2 = 0.031831, the app solid's volume
+CHECK ok   known-tricap: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   known-tricap: every face planar (exact)
+CHECK ok   known-tricap: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   known-tricap: corners 4 = stated 4
+CHECK ok   known-tricap: faces by sides {3: 4} = stated {3: 4}
+WROTE known-tricap: V4 E6 F4 {3: 4} volume 1/8 + (-1/24)*sqrt(5) ~ 0.031831
+CHECK ok   Hound Tooth (Mosseri-Sadoc t2): the six edges are the Mosseri-Sadoc table SSSSLL at scale 1/tau (edges 1/tau and 1)
+CHECK ok   Hound Tooth (Mosseri-Sadoc t2): volume (1/12) tau^-2 = 0.031831, the app solid's volume
+CHECK ok   known-hound-tooth: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   known-hound-tooth: every face planar (exact)
+CHECK ok   known-hound-tooth: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   known-hound-tooth: corners 4 = stated 4
+CHECK ok   known-hound-tooth: faces by sides {3: 4} = stated {3: 4}
+WROTE known-hound-tooth: V4 E6 F4 {3: 4} volume 1/8 + (-1/24)*sqrt(5) ~ 0.031831
+== D135 Weirdstone, D136 Tadpole (F21)
+CHECK ok   Weirdstone (15 + 7 sqrt5)/480, Tadpole (5 + 3 sqrt5)/320 (the study's exact volumes)
+CHECK ok   octet tetrahedron phi^6/24 = icosahedron(1/2) + 4 Weirdstones + 6 Tadpoles exactly (F21)
+CHECK ok   Weirdstone: dihedrals [70.53, 90.0, 110.91, 125.26] = stated 70.53, 90, 110.91, 125.26
+CHECK ok   Weirdstone: edges sqrt15/10 x3, 1/2 x3, 0.511667 x6 (stated)
+CHECK ok   piece-weirdstone: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-weirdstone: every face planar (exact)
+CHECK ok   piece-weirdstone: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-weirdstone: volume 1/32 + (7/480)*sqrt(5) = stated 1/32 + (7/480)*sqrt(5)
+CHECK ok   piece-weirdstone: corners 7 = stated 7
+CHECK ok   piece-weirdstone: faces by sides {3: 4, 4: 3} = stated {3: 4, 4: 3}
+WROTE piece-weirdstone: V7 E12 F7 {3: 4, 4: 3} volume 1/32 + (7/480)*sqrt(5) ~ 0.063859
+CHECK ok   piece-tadpole: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-tadpole: every face planar (exact)
+CHECK ok   piece-tadpole: outward orientation (exact volume > 0)
+CHECK ok   piece-tadpole: volume 1/64 + (3/320)*sqrt(5) = stated 1/64 + (3/320)*sqrt(5)
+WROTE piece-tadpole: V6 E10 F6 {3: 4, 4: 2} volume 1/64 + (3/320)*sqrt(5) ~ 0.036588
+SUMMARY 53 ok, 0 FAIL

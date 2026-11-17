@@ -1,0 +1,42 @@
+== D155 Maedate, D156 Kuwagata (#85)
+CHECK ok   Kagemusha (dataset DICTO Shadow-17, edge 1): exactly five reflex notch edges (#85)
+CHECK ok   Maedate: edge lengths [0.507, 0.764, 0.851, 1.0] = stated 0.507, 0.764, 0.851, 1 (t = 2)
+CHECK ok   Maedate: volume 71/540 + (109/2700)*sqrt(5) = 0.221752 rounds to the stated 0.2218
+CHECK ok   piece-maedate: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-maedate: every face planar (exact)
+CHECK ok   piece-maedate: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-maedate: corners 6 = stated 6
+CHECK ok   piece-maedate: faces by sides {3: 8} = stated {3: 8}
+WROTE piece-maedate: V6 E12 F8 {3: 8} volume 71/540 + (109/2700)*sqrt(5) ~ 0.221752
+CHECK ok   Kuwagata: the two lowered apexes meet in one point X of the notch's mirror plane (exactly)
+CHECK ok   Kuwagata: the two pyramids are equal, 9/328 + (7/328)*sqrt(5) = 0.075160 each, rounds to the stated 2 x 0.0752
+CHECK ok   Kuwagata: the two pyramids together are convex (hull = their sum): an irregular triangular dipyramid (stated)
+CHECK ok   Kuwagata: edge lengths [0.729, 0.927, 1.0] = stated 0.729, 0.927, 1 (t = 2)
+CHECK ok   piece-kuwagata: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-kuwagata: every face planar (exact)
+CHECK ok   piece-kuwagata: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-kuwagata: volume 9/164 + (7/164)*sqrt(5) = stated 9/164 + (7/164)*sqrt(5)
+CHECK ok   piece-kuwagata: corners 5 = stated 5
+CHECK ok   piece-kuwagata: faces by sides {3: 6} = stated {3: 6}
+WROTE piece-kuwagata: V5 E9 F6 {3: 6} volume 9/164 + (7/164)*sqrt(5) ~ 0.150320
+== D165, D166 Golden OGs (#91)
+CHECK ok   dodecahedron D: (+-1, +-1, +-1) and (0, +-1/phi, +-phi) cyclic, 20 corners, 12 pentagons
+CHECK ok   midradius^2 of D = phi^2 (s4-og-dharma.json: rho2 = 3/2 + sqrt5/2)
+CHECK ok   Lesser Golden OG: mu = sqrt(5) = stated sqrt(5) (#91)
+CHECK ok   Lesser Golden OG: hexagons regular, quadrilaterals kites (s4c-relatives: True, True)
+CHECK ok   dicto-lesser-golden-og: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   dicto-lesser-golden-og: every face planar (exact)
+CHECK ok   dicto-lesser-golden-og: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   dicto-lesser-golden-og: corners 102 = stated 102
+CHECK ok   dicto-lesser-golden-og: faces by sides {4: 60, 6: 20} = stated {4: 60, 6: 20}
+WROTE dicto-lesser-golden-og: V102 E180 F80 {4: 60, 6: 20} volume -25 + (55/3)*sqrt(5) ~ 15.994580
+CHECK ok   Greater Golden OG: mu = 13/11 + (6/11)*sqrt(5) = stated 13/11 + (6/11)*sqrt(5) (#91)
+CHECK ok   Greater Golden OG: hexagons regular, quadrilaterals kites (s4c-relatives: True, True)
+CHECK ok   dicto-greater-golden-og: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   dicto-greater-golden-og: every face planar (exact)
+CHECK ok   dicto-greater-golden-og: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   dicto-greater-golden-og: corners 102 = stated 102
+CHECK ok   dicto-greater-golden-og: faces by sides {4: 60, 6: 20} = stated {4: 60, 6: 20}
+WROTE dicto-greater-golden-og: V102 E180 F80 {4: 60, 6: 20} volume 90/11 + (128/33)*sqrt(5) ~ 16.855052
+CHECK ok   frame check: at mu_TI the same construction gives the OG (same faces as the dataset DICTO Ogdoecontahedron, similar by volume and radius)
+SUMMARY 35 ok, 0 FAIL

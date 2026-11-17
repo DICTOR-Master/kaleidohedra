@@ -1,0 +1,10 @@
+[exit 1]
+[stderr]
+Traceback (most recent call last):
+  File "<stage1>/replay/cases/atoms-missing-build_mine_shield/orig/studies/2026-11-17-atoms-missing/scripts/build_mine.py", line 68, in <module>
+    Hv, Hf, J = load('dicto-hecatodihedron')
+                ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<stage1>/replay/cases/atoms-missing-build_mine_shield/orig/studies/2026-11-17-atoms-missing/scripts/atomlib.py", line 37, in load
+    J = json.load(open(os.path.join(REF, slug + '.json')))
+                  ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<stage1>/replay/cases/atoms-missing-build_mine_shield/orig/studies/2026-11-17-atoms-missing/scripts/../ref/dicto-hecatodihedron.json'

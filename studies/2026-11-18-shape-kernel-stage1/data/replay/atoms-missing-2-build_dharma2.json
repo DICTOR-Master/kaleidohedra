@@ -1,0 +1,83 @@
+{
+ "case": "atoms-missing-2-build_dharma2",
+ "group": "G7+G2",
+ "study": "2026-11-17-atoms-missing-2",
+ "script": "build_dharma2.py",
+ "args": [],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 1.2,
+ "secs_kern": 1.8,
+ "stdout_lines": 60,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": true,
+ "time_fields_masked": 0,
+ "diff_kern_orig": "none",
+ "stdout_kern_eq_stored": true,
+ "stdout_orig_eq_stored": true,
+ "diff_kern_stored": "none",
+ "files": [
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-cleo-low.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 2930
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-cleo-low.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 334
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-cleo-low-2.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 2887
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-cleo-low-2.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 333
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-sevenfold-blade.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 3541
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-sevenfold-blade.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 477
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-vajra-blade.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 2917
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-vajra-blade.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 334
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-vajra-twist.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 3373
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-vajra-twist.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 479
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

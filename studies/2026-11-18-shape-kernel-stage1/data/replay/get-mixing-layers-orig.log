@@ -1,0 +1,90 @@
+layer types (solid image, plane with |h| <= 1): 480 {'A': 180, 'B': 240, 'C': 60}
+  checked 0 t=1s
+  checked 20 t=2s
+  checked 40 t=3s
+  checked 60 t=5s
+  checked 80 t=5s
+  checked 100 t=7s
+  checked 120 t=7s
+  checked 140 t=8s
+  checked 160 t=9s
+  checked 180 t=10s
+  checked 200 t=10s
+  checked 220 t=11s
+  checked 240 t=11s
+  checked 260 t=12s
+  checked 280 t=13s
+  checked 300 t=13s
+  checked 320 t=13s
+  checked 340 t=14s
+  checked 360 t=14s
+  checked 380 t=14s
+  checked 400 t=15s
+  checked 420 t=15s
+  checked 440 t=15s
+  checked 460 t=15s
+swappable pairs of layer types: 572
+   SWAP A g0 h(0, 0, 1) <-> A g40 h(0, 0, 1) w [0, 0, 0, 1, 1, 0]
+   SWAP A g0 h(0, 0, 1) <-> B g10 h(1, 0, 1) w [0, 1, 1, 1, 0, 1]
+   SWAP A g0 h(0, 0, 1) <-> B g69 h(1, 0, -1) w [1, 0, 1, 1, 1, 0]
+   SWAP A g0 h(0, 1, 0) <-> C g12 h(0, 1, 0) w [0, 0, 0, 0, 0, 0]
+   SWAP A g0 h(0, 1, 1) <-> A g25 h(0, 1, 1) w [1, 1, 1, 0, 1, 0]
+   SWAP A g0 h(0, 1, 1) <-> B g0 h(0, 1, 1) w [0, 0, 0, 0, 0, 0]
+   SWAP A g0 h(0, 1, 1) <-> B g10 h(0, 1, 1) w [0, 1, 1, 1, 0, 1]
+   SWAP A g0 h(1, 0, -1) <-> B g0 h(1, 0, -1) w [0, 0, 0, 0, 0, 0]
+   SWAP A g0 h(1, 0, -1) <-> B g69 h(0, 0, 1) w [1, 0, 1, 1, 1, 0]
+   SWAP A g0 h(1, 0, -1) <-> C g13 h(1, -1, 1) w [1, 1, 1, 1, 1, 1]
+   SWAP A g0 h(1, 0, 0) <-> A g24 h(1, 0, 0) w [0, 0, 0, 1, 0, 1]
+   SWAP A g0 h(1, 0, 0) <-> B g38 h(1, 0, 0) w [1, 0, 1, 1, 1, 0]
+   SWAP A g0 h(1, 0, 0) <-> B g69 h(1, 0, 0) w [1, 0, 1, 1, 1, 0]
+   SWAP A g0 h(1, 1, 0) <-> A g41 h(1, 1, 0) w [1, 1, 1, 0, 0, 1]
+   SWAP A g0 h(1, 1, 0) <-> B g0 h(1, 1, 0) w [0, 0, 0, 0, 0, 0]
+   SWAP A g0 h(1, 1, 0) <-> B g38 h(1, -1, 0) w [1, 0, 1, 1, 1, 0]
+   SWAP A g1 h(0, 0, 1) <-> A g41 h(0, 0, 1) w [0, 0, 0, -1, -1, 0]
+   SWAP A g1 h(0, 0, 1) <-> B g11 h(1, 0, 1) w [0, -1, -1, -1, 0, -1]
+   SWAP A g1 h(0, 0, 1) <-> B g68 h(1, 0, -1) w [-1, 0, -1, -1, -1, 0]
+   SWAP A g1 h(0, 1, 0) <-> C g13 h(0, 1, 0) w [0, 0, 0, 0, 0, 0]
+   SWAP A g1 h(0, 1, 1) <-> A g24 h(0, 1, 1) w [-1, -1, -1, 0, -1, 0]
+   SWAP A g1 h(0, 1, 1) <-> B g1 h(0, 1, 1) w [0, 0, 0, 0, 0, 0]
+   SWAP A g1 h(0, 1, 1) <-> B g11 h(0, 1, 1) w [0, -1, -1, -1, 0, -1]
+   SWAP A g1 h(1, 0, -1) <-> B g1 h(1, 0, -1) w [0, 0, 0, 0, 0, 0]
+   SWAP A g1 h(1, 0, -1) <-> B g68 h(0, 0, 1) w [-1, 0, -1, -1, -1, 0]
+   SWAP A g1 h(1, 0, -1) <-> C g12 h(1, -1, 1) w [-1, -1, -1, -1, -1, -1]
+   SWAP A g1 h(1, 0, 0) <-> A g25 h(1, 0, 0) w [0, 0, 0, -1, 0, -1]
+   SWAP A g1 h(1, 0, 0) <-> B g39 h(1, 0, 0) w [-1, 0, -1, -1, -1, 0]
+   SWAP A g1 h(1, 0, 0) <-> B g68 h(1, 0, 0) w [-1, 0, -1, -1, -1, 0]
+   SWAP A g1 h(1, 1, 0) <-> A g40 h(1, 1, 0) w [-1, -1, -1, 0, 0, -1]
+   SWAP A g1 h(1, 1, 0) <-> B g1 h(1, 1, 0) w [0, 0, 0, 0, 0, 0]
+   SWAP A g1 h(1, 1, 0) <-> B g39 h(1, -1, 0) w [-1, 0, -1, -1, -1, 0]
+   SWAP A g2 h(0, 0, 1) <-> A g61 h(0, 0, 1) w [0, 0, -1, 0, 0, -1]
+   SWAP A g2 h(0, 0, 1) <-> B g6 h(1, 0, 1) w [0, 1, -1, -1, -1, 0]
+   SWAP A g2 h(0, 0, 1) <-> B g50 h(1, 0, -1) w [1, 0, -1, -1, 0, -1]
+   SWAP A g2 h(0, 1, 0) <-> C g16 h(0, 1, 0) w [0, 0, 0, 0, 0, 0]
+   SWAP A g2 h(0, 1, 1) <-> A g29 h(0, 1, 1) w [1, 1, 0, -1, 0, -1]
+   SWAP A g2 h(0, 1, 1) <-> B g2 h(0, 1, 1) w [0, 0, 0, 0, 0, 0]
+   SWAP A g2 h(0, 1, 1) <-> B g6 h(0, 1, 1) w [0, 1, -1, -1, -1, 0]
+   SWAP A g2 h(1, 0, -1) <-> B g2 h(1, 0, -1) w [0, 0, 0, 0, 0, 0]
+   SWAP A g2 h(1, 0, -1) <-> B g50 h(0, 0, 1) w [1, 0, -1, -1, 0, -1]
+   SWAP A g2 h(1, 0, -1) <-> C g17 h(1, -1, 1) w [1, 1, -1, -1, -1, -1]
+   SWAP A g2 h(1, 0, 0) <-> A g28 h(1, 0, 0) w [0, 0, -1, 0, -1, 0]
+   SWAP A g2 h(1, 0, 0) <-> B g34 h(1, 0, 0) w [1, 0, -1, -1, 0, -1]
+   SWAP A g2 h(1, 0, 0) <-> B g50 h(1, 0, 0) w [1, 0, -1, -1, 0, -1]
+   SWAP A g2 h(1, 1, 0) <-> A g60 h(1, 1, 0) w [1, 1, 0, -1, -1, 0]
+   SWAP A g2 h(1, 1, 0) <-> B g2 h(1, 1, 0) w [0, 0, 0, 0, 0, 0]
+   SWAP A g2 h(1, 1, 0) <-> B g34 h(1, -1, 0) w [1, 0, -1, -1, 0, -1]
+   SWAP A g3 h(0, 0, 1) <-> A g60 h(0, 0, 1) w [0, 0, 1, 0, 0, 1]
+   SWAP A g3 h(0, 0, 1) <-> B g7 h(1, 0, 1) w [0, -1, 1, 1, 1, 0]
+   SWAP A g3 h(0, 0, 1) <-> B g51 h(1, 0, -1) w [-1, 0, 1, 1, 0, 1]
+   SWAP A g3 h(0, 1, 0) <-> C g17 h(0, 1, 0) w [0, 0, 0, 0, 0, 0]
+   SWAP A g3 h(0, 1, 1) <-> A g28 h(0, 1, 1) w [-1, -1, 0, 1, 0, 1]
+   SWAP A g3 h(0, 1, 1) <-> B g3 h(0, 1, 1) w [0, 0, 0, 0, 0, 0]
+   SWAP A g3 h(0, 1, 1) <-> B g7 h(0, 1, 1) w [0, -1, 1, 1, 1, 0]
+   SWAP A g3 h(1, 0, -1) <-> B g3 h(1, 0, -1) w [0, 0, 0, 0, 0, 0]
+   SWAP A g3 h(1, 0, -1) <-> B g51 h(0, 0, 1) w [-1, 0, 1, 1, 0, 1]
+   SWAP A g3 h(1, 0, -1) <-> C g16 h(1, -1, 1) w [-1, -1, 1, 1, 1, 1]
+   SWAP A g3 h(1, 0, 0) <-> A g29 h(1, 0, 0) w [0, 0, 1, 0, 1, 0]
+   SWAP A g3 h(1, 0, 0) <-> B g35 h(1, 0, 0) w [-1, 0, 1, 1, 0, 1]
+mixed-solid swaps: 424  same-solid (different image) swaps: 148
+layer slides (w not in the plane, surfaces kept): 0 []
+t=15s
+FINAL ok

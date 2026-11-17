@@ -1,0 +1,17 @@
+PASS A: rectified tesseractic honeycomb, y1 = h = 2x = -1 - 3/2√2 + √5 + 1/2√10: the tile is the Greater GCC (#89 Corollary D reproduced)
+PASS A: rectified tesseractic honeycomb, y1 = h = 2x = -1 + 3/2√2 - √5 + 1/2√10: the tile is the Lesser GCC (#89 Corollary D reproduced)
+PASS B: 24-cell honeycomb slice y1 = h, h = 1/phi^2: tiles at 2Z^3 = C cap (2 - h) O and at 2Z^3 + (1,1,1) = C cap (1 + h) O are Icosaxes + Unborn Axes
+PASS B: 24-cell honeycomb slice y1 = h, h = 1/2: tiles at 2Z^3 = C cap (2 - h) O and at 2Z^3 + (1,1,1) = C cap (1 + h) O are two truncated octahedra (Kelvin)
+PASS B: 24-cell honeycomb slice y1 = h, h = 1/phi: tiles at 2Z^3 = C cap (2 - h) O and at 2Z^3 + (1,1,1) = C cap (1 + h) O are Unborn Axes + Icosaxes
+PASS B: volume per BCC cell (8 = |det 2Z^3| ) is filled for every h: vol(C cap (2-h)O) + vol(C cap (1+h)O) = 8 identically
+PASS B: the 24-cell |x|_inf <= 1, |x|_1 <= 2 is the Voronoi cell of 2Z^4 u (2Z^4 + (1,1,1,1)) (relevant vectors 2e_i and (+-1)^4: x.v <= |v|^2/2)
+PASS C: D4 Voronoi (24-cell |x_i| + |x_j| <= 1) slice x4 = h: h = 0 gives the rhombic dodecahedron (FCC Voronoi cell), h = 1/2 gives cubes on both FCC cosets (simple cubic)
+PASS C: at h = 3/2 - 1/2√5 the FCC tile RD cap (1-h) C has 32 corners, faces {4: 6, 6: 12} (for h <= 1/2: RD with its six 4-fold corners cut; for h >= 1/2 the FCC tile is the cube (2(1-h))^3 and the roles swap)
+PASS C: at h = -1/2 + 1/2√5 the FCC tile RD cap (1-h) C has 8 corners, faces {4: 6} (for h <= 1/2: RD with its six 4-fold corners cut; for h >= 1/2 the FCC tile is the cube (2(1-h))^3 and the roles swap)
+PASS C: volume per FCC cell (2) filled for every h: vol(RD cap (1-h)C) + vol((2h)^3 cube) = 2 identically
+PASS D: tesseractic honeycomb slice sum = s, s mod 1 = 1/phi^2: tiles at local heights 1 + 1/phi^2 and 2 + 1/phi^2 are the Lesser and Greater Golden Cut Tetrahedra (12, 12 corners), with small tetrahedra at f and 3 + f
+PASS E: the coding of the tile heights {k phi} = {k/phi} by [0, 1/phi) / [1/phi, 1) (Unborn Axes height) is the Fibonacci word (first 300 letters, offset -1)
+   Fibonacci word: babaababaabaababaababaabaababaabaababaababaabaababaababaabaa 
+   4-letter station word: spsqpspsrpsqpspsrpspsrpsqpspsrpsqpspsqps
+PASS E: 4-letter station word computed exactly (sympy) for 40 rows
+14/14 checks pass -> data/s7-hyper.json

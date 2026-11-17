@@ -1,0 +1,26 @@
+{
+ "case": "golden-cuts-s11_star_polytopes",
+ "group": "G4",
+ "study": "2026-11-03-golden-cuts-beyond-plato",
+ "script": "s11_star_polytopes.py",
+ "args": [],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 95.6,
+ "secs_kern": 91.5,
+ "stdout_lines": 50,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": false,
+ "time_fields_masked": 38,
+ "diff_kern_orig": "none",
+ "files": [
+  {
+   "file": "2026-11-03-golden-cuts-beyond-plato/data/s11-star-polytopes.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 9017
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

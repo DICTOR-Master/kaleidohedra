@@ -1,0 +1,31 @@
+('dodecahedron', 'icosahedron') r2 1 + 2/5√5 rho2 3/2 + 1/2√5 R2 3
+PASS di: polar P* = conv(N) has 12 corners, midradii multiply to 1 (rho^2 rho*^2 = 1)
+PASS di: S(mu) at mu = 1 + 2/5√5 (~1.894427) is the icosahedron (dual end) (12 corners)
+PASS di:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (20 corners)
+    icosahedron (dual end) | mu 1 + 2/5√5 ~1.894427 | nu 1 ~1.000000
+PASS di: S(mu) at mu = √5 (~2.236068) is the Lesser Golden Cut Icosahedron (dual side) (60 corners)
+PASS di:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (32 corners)
+    Lesser Golden Cut Icosahedron (dual side) | mu √5 ~2.236068 | nu -10 + 5√5 ~1.180340
+PASS di: S(mu) at mu = 24/19 + 9/19√5 (~2.322348) is the truncated icosahedron (Archimedean, dual side) (60 corners)
+PASS di:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (32 corners)
+    truncated icosahedron (Archimedean, dual side) | mu 24/19 + 9/19√5 ~2.322348 | nu 30/19 - 3/19√5 ~1.225884
+PASS di: S(mu) at mu = 13/11 + 6/11√5 (~2.401492) is the Greater Golden Cut Icosahedron (dual side) (60 corners)
+PASS di:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (32 corners)
+    Greater Golden Cut Icosahedron (dual side) | mu 13/11 + 6/11√5 ~2.401492 | nu 5/11 + 4/11√5 ~1.267661
+PASS di: S(mu) at mu = 3/2 + 1/2√5 (~2.618034) is the rectified (icosidodecahedron) (30 corners)
+PASS di:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (32 corners)
+    rectified (icosidodecahedron) | mu 3/2 + 1/2√5 ~2.618034 | nu 5/2 - 1/2√5 ~1.381966
+PASS di: S(mu) at mu = 2 + 1/3√5 (~2.745356) is the Greater Golden Cut Dodecahedron (60 corners)
+PASS di:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (32 corners)
+    Greater Golden Cut Dodecahedron | mu 2 + 1/3√5 ~2.745356 | nu 20/3 - 7/3√5 ~1.449175
+PASS di: S(mu) at mu = 1 + 4/5√5 (~2.788854) is the truncated dodecahedron (Archimedean) (60 corners)
+PASS di:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (32 corners)
+    truncated dodecahedron (Archimedean) | mu 1 + 4/5√5 ~2.788854 | nu -3 + 2√5 ~1.472136
+PASS di: S(mu) at mu = 20/11 + 5/11√5 (~2.834576) is the Lesser Golden Cut Dodecahedron (60 corners)
+PASS di:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (32 corners)
+    Lesser Golden Cut Dodecahedron | mu 20/11 + 5/11√5 ~2.834576 | nu 50/11 - 15/11√5 ~1.496271
+PASS di: S(mu) at mu = 3 (~3.000000) is the dodecahedron (P end) (20 corners)
+PASS di:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (12 corners)
+    dodecahedron (P end) | mu 3 ~3.000000 | nu 15 - 6√5 ~1.583592
+PASS di: the stages are in increasing mu order (dual end -> P end), sweep monotone
+20/20 checks pass -> data/s1-sweep-di.json

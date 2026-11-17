@@ -1,0 +1,61 @@
+CHECK ok   one turn of four Universal PiTet beats returns the icosidodecahedron 10/phi^4 larger (#38)
+CHECK ok   shell beats 0 -> 1: towers {3: 20, 5: 12} fill the shell exactly (one tower of each kind, times its count, = outer - inner volume)
+CHECK ok   piece-cleo-towers: shell 1 tower on a 3-gon: volume 3/8 + (-17/120)*sqrt(5) = study value 3/8+-17/120r5 (tower-shells-exact.json / polar-exact.json)
+CHECK ok   piece-cleo-towers: shell 1 tower on a 5-gon: volume 5/12 = study value 5/12+0r5 (tower-shells-exact.json / polar-exact.json)
+CHECK ok   shell beats 1 -> 2: towers {4: 30} fill the shell exactly (one tower of each kind, times its count, = outer - inner volume)
+CHECK ok   piece-cleo-towers: shell 2 tower on a 4-gon: volume 3/4 + (-1/4)*sqrt(5) = study value 3/4+-1/4r5 (tower-shells-exact.json / polar-exact.json)
+CHECK ok   shell beats 2 -> 4: towers {6: 20, 5: 12} fill the shell exactly (one tower of each kind, times its count, = outer - inner volume)
+CHECK ok   piece-cleo-towers: shell 3 tower on a 5-gon: volume 388275/8 + (-520925/24)*sqrt(5) = study value 388275/8+-520925/24r5 (tower-shells-exact.json / polar-exact.json)
+CHECK ok   piece-cleo-towers: shell 3 tower on a 6-gon: volume -78991/4 + (52991/6)*sqrt(5) = study value -78991/4+52991/6r5 (tower-shells-exact.json / polar-exact.json)
+CHECK ok   shell beats 4 -> 7: towers {3: 20, 5: 12} fill the shell exactly (one tower of each kind, times its count, = outer - inner volume)
+CHECK ok   piece-cleo-towers: shell 4 tower on a 3-gon: volume 33141662375/261 + (-14821401875/261)*sqrt(5) = study value 33141662375/261+-14821401875/261r5 (tower-shells-exact.json / polar-exact.json)
+CHECK ok   piece-cleo-towers: shell 4 tower on a 5-gon: volume 5088961250/29 + (-20482673500/261)*sqrt(5) = study value 5088961250/29+-20482673500/261r5 (tower-shells-exact.json / polar-exact.json)
+CHECK ok   shell beats 7 -> 12: towers {3: 60} fill the shell exactly (one tower of each kind, times its count, = outer - inner volume)
+CHECK ok   piece-cleo-towers: shell 5 tower on a 3-gon: volume 8747164284500000/27 + (-3911850790100000/27)*sqrt(5) = study value 8747164284500000/27+-3911850790100000/27r5 (tower-shells-exact.json / polar-exact.json)
+CHECK ok   piece-cleo-towers: 8 tower shapes = stated 8 (D74)
+CHECK ok   piece-cleo-towers: 186 towers in all = stated 186 (32, 30, 32, 32, 60; A.43)
+CHECK ok   piece-cleo-towers-shell-1-on-3-gon: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-cleo-towers-shell-1-on-3-gon: every face planar (exact)
+CHECK ok   piece-cleo-towers-shell-1-on-3-gon: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-cleo-towers-shell-1-on-3-gon: volume 3/8 + (-17/120)*sqrt(5) = stated 3/8 + (-17/120)*sqrt(5)
+WROTE piece-cleo-towers-shell-1-on-3-gon: V7 E12 F7 {3: 4, 4: 3} volume 3/8 + (-17/120)*sqrt(5) ~ 0.058224
+CHECK ok   piece-cleo-towers-shell-1-on-5-gon: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-cleo-towers-shell-1-on-5-gon: every face planar (exact)
+CHECK ok   piece-cleo-towers-shell-1-on-5-gon: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-cleo-towers-shell-1-on-5-gon: volume 5/12 = stated 5/12
+WROTE piece-cleo-towers-shell-1-on-5-gon: V11 E20 F11 {3: 5, 4: 5, 5: 1} volume 5/12 ~ 0.416667
+CHECK ok   piece-cleo-towers-shell-2-on-4-gon: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-cleo-towers-shell-2-on-4-gon: every face planar (exact)
+CHECK ok   piece-cleo-towers-shell-2-on-4-gon: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-cleo-towers-shell-2-on-4-gon: volume 3/4 + (-1/4)*sqrt(5) = stated 3/4 + (-1/4)*sqrt(5)
+WROTE piece-cleo-towers-shell-2-on-4-gon: V10 E17 F9 {3: 4, 4: 3, 5: 2} volume 3/4 + (-1/4)*sqrt(5) ~ 0.190983
+CHECK ok   piece-cleo-towers-shell-3-on-5-gon: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-cleo-towers-shell-3-on-5-gon: every face planar (exact)
+CHECK ok   piece-cleo-towers-shell-3-on-5-gon: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-cleo-towers-shell-3-on-5-gon: volume 388275/8 + (-520925/24)*sqrt(5) = stated 388275/8 + (-520925/24)*sqrt(5)
+WROTE piece-cleo-towers-shell-3-on-5-gon: V10 E15 F7 {4: 5, 5: 2} volume 388275/8 + (-520925/24)*sqrt(5) ~ 0.053701
+CHECK ok   piece-cleo-towers-shell-3-on-6-gon: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-cleo-towers-shell-3-on-6-gon: every face planar (exact)
+CHECK ok   piece-cleo-towers-shell-3-on-6-gon: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-cleo-towers-shell-3-on-6-gon: volume -78991/4 + (52991/6)*sqrt(5) = stated -78991/4 + (52991/6)*sqrt(5)
+WROTE piece-cleo-towers-shell-3-on-6-gon: V15 E24 F11 {3: 1, 4: 6, 5: 3, 6: 1} volume -78991/4 + (52991/6)*sqrt(5) ~ 0.829699
+CHECK ok   piece-cleo-towers-shell-4-on-3-gon: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-cleo-towers-shell-4-on-3-gon: every face planar (exact)
+CHECK ok   piece-cleo-towers-shell-4-on-3-gon: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-cleo-towers-shell-4-on-3-gon: volume 33141662375/261 + (-14821401875/261)*sqrt(5) = stated 33141662375/261 + (-14821401875/261)*sqrt(5)
+WROTE piece-cleo-towers-shell-4-on-3-gon: V10 E18 F10 {3: 7, 5: 3} volume 33141662375/261 + (-14821401875/261)*sqrt(5) ~ 0.998686
+CHECK ok   piece-cleo-towers-shell-4-on-5-gon: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-cleo-towers-shell-4-on-5-gon: every face planar (exact)
+CHECK ok   piece-cleo-towers-shell-4-on-5-gon: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-cleo-towers-shell-4-on-5-gon: volume 5088961250/29 + (-20482673500/261)*sqrt(5) = stated 5088961250/29 + (-20482673500/261)*sqrt(5)
+WROTE piece-cleo-towers-shell-4-on-5-gon: V16 E25 F11 {4: 5, 5: 6} volume 5088961250/29 + (-20482673500/261)*sqrt(5) ~ 3.613281
+CHECK ok   piece-cleo-towers-shell-5-on-3-gon: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-cleo-towers-shell-5-on-3-gon: every face planar (exact)
+CHECK ok   piece-cleo-towers-shell-5-on-3-gon: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-cleo-towers-shell-5-on-3-gon: volume 8747164284500000/27 + (-3911850790100000/27)*sqrt(5) = stated 8747164284500000/27 + (-3911850790100000/27)*sqrt(5)
+WROTE piece-cleo-towers-shell-5-on-3-gon: V9 E14 F7 {3: 3, 4: 1, 5: 3} volume 8747164284500000/27 + (-3911850790100000/27)*sqrt(5) ~ 5.125000
+CHECK ok   piece-cleo-towers: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-cleo-towers: every face planar (exact)
+CHECK ok   piece-cleo-towers: outward orientation (exact volume > 0)
+WROTE piece-cleo-towers: V88 E145 F73 {3: 24, 4: 28, 5: 20, 6: 1} volume 76005965949061/1566000000 + (-4248793573037/195750000)*sqrt(5) ~ 0.789231
+SUMMARY 51 ok, 0 FAIL

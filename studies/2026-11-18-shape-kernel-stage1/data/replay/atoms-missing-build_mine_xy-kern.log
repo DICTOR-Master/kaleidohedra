@@ -1,0 +1,15 @@
+CHECK ok   Euclid roof on the cube of edge phi: volume 7/24 + (1/8)*sqrt(5) = (1 + 3 phi/2)/6 (A.47)
+CHECK ok   roof edges: ridge and slopes 1, base phi (dodecahedron of edge 1 on the cube of edge phi)
+CHECK ok   piece-y: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-y: every face planar (exact)
+CHECK ok   piece-y: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-y: volume 55/24 + (9/8)*sqrt(5) = stated 55/24 + (9/8)*sqrt(5)
+WROTE piece-y: V10 E17 F9 {3: 2, 4: 7} volume 55/24 + (9/8)*sqrt(5) ~ 4.807243
+CHECK ok   Y volume ≈ 4.80724 as printed (A.47)
+CHECK ok   piece-x: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-x: every face planar (exact)
+CHECK ok   piece-x: outward orientation (exact volume > 0)
+CHECK ok   piece-x: volume 41/24 + (7/8)*sqrt(5) = stated 41/24 + (7/8)*sqrt(5)
+WROTE piece-x: V10 E17 F9 {3: 2, 4: 7} volume 41/24 + (7/8)*sqrt(5) ~ 3.664893
+CHECK ok   X volume ≈ 3.66489 as printed (A.47)
+SUMMARY 12 ok, 0 FAIL

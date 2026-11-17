@@ -1,0 +1,26 @@
+{
+ "case": "6d-golden-cubes-s2_field_signature",
+ "group": "G4",
+ "study": "2026-11-03-6d-golden-cubes",
+ "script": "s2_field_signature.py",
+ "args": [],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 7.7,
+ "secs_kern": 7.1,
+ "stdout_lines": 27,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": true,
+ "time_fields_masked": 0,
+ "diff_kern_orig": "none",
+ "files": [
+  {
+   "file": "2026-11-03-6d-golden-cubes/data/s2-field-signature.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 4641
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

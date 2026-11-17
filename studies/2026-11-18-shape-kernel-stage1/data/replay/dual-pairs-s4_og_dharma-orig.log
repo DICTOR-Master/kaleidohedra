@@ -1,0 +1,24 @@
+PASS rho^2 = 3/2 + 1/2√5 = phi^2, mu_TI = 24/19 + 9/19√5
+PASS A: H(mu_TI) is the pentakis dodecahedron: 32 corners, faces {3: 60}
+PASS A: OG = Q(mu_TI, phi^2) = H(mu_TI) cap phi^2 D*: 102 corners, faces {4: 60, 6: 20}; hexagons regular True, quadrilaterals kites True
+PASS A: the 30 corners of the icosidodecahedron S(phi^2) are corners... on the hexagon planes of OG (OG contains S(phi^2), touching)
+PASS B: chain station "dodecahedron (inner)" = c D up to one common chain scale (float match 1e-9)
+PASS B: chain station "icosidodecahedron" = S(phi^2) up to one common chain scale (float match 1e-9)
+PASS B: chain station "dual of the Hecatodihedron" = Q(mu_TI, phi^2) up to one common chain scale (float match 1e-9)
+PASS B: chain station "pentakis dodecahedron" = H(mu_TI) up to one common chain scale (float match 1e-9)
+PASS B: chain station "icosahedron" = H(3) = 3 D* up to one common chain scale (float match 1e-9)
+PASS B: chain station "rhombic triacontahedron" = (3/phi^2) H(phi^2) up to one common chain scale (float match 1e-9)
+PASS B: chain station "dodecahedron (phi^3)" = phi^3 c D up to one common chain scale (float match 1e-9)
+   scales relative to the middle stations: ['0.708203932499', '1.000000000000', '1.000000000000', '1.000000000000', '1.000000000000', '1.000000000000', '3.000000000000']
+PASS B: the four middle stations S(phi^2), OG, H(mu_TI), 3D* (and RT as (3/phi^2) H(phi^2)) share ONE scale: they are the 6D sections/hulls themselves
+   c^2 = 81 - 36*sqrt(5)
+PASS B: inner dodecahedron = c D with c^2 = 81 - 36√5, c = -6 + 3√5 (~0.708203932); outer = phi^3 c D
+PASS B: D (inner) inside icosidodecahedron: True; tight factor -99/2 + 45/2√5 (~0.811529); 0 inner corners on outer faces
+PASS B: icosidodecahedron inside OG: True; tight factor 1 (~1.000000); 30 inner corners on outer faces
+PASS B: OG inside pentakis dodecahedron: True; tight factor 1 (~1.000000); 102 inner corners on outer faces
+PASS B: pentakis dodecahedron inside icosahedron: True; tight factor 1 (~1.000000); 20 inner corners on outer faces
+PASS B: icosahedron inside rhombic triacontahedron: True; tight factor 1 (~1.000000); 12 inner corners on outer faces
+PASS B: rhombic triacontahedron inside D (phi^3): True; tight factor 5 - 2√5 (~0.527864); 0 inner corners on outer faces
+PASS B: closure of the given cycle = phi^3 (exact); closure if every link is tightened = product of tight factors = 225/2 - 99/2√5 (~1.814635)
+PASS B: sanity vs polar-Dharma step 4 (tight nest closure 1.814635): our all-tight product agrees to 1e-6
+21/21 checks pass -> data/s4-og-dharma.json

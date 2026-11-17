@@ -1,0 +1,8 @@
+n=6 k=10 symmetries=120
+PROGRESS 0.250 depth=0 states=1 in_class=1 noncoplanar=1 rank<=3=0 tilers=0 t=1s
+PROGRESS 0.500 depth=1 states=1 in_class=1 noncoplanar=1 rank<=3=0 tilers=0 t=1s
+PROGRESS 0.750 depth=2 states=4 in_class=4 noncoplanar=4 rank<=3=0 tilers=0 t=2s
+PROGRESS 1.000 depth=3 states=10 in_class=10 noncoplanar=10 rank<=3=0 tilers=0 t=2s
+RESULT n=6 k=10 states=16 rank_hist={6: 16} rank<=3=0 tilers=0 capped=False
+CONTROLS   | zonotope at depth 0 does not tile (n>=5): True
+FINAL ok

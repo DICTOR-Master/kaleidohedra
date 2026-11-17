@@ -1,0 +1,190 @@
+{
+ "case": "atoms-missing-build_octet",
+ "group": "G7+G2",
+ "study": "2026-11-17-atoms-missing",
+ "script": "build_octet.py",
+ "args": [
+  "gbpc",
+  "bull",
+  "keyed",
+  "dented",
+  "w",
+  "tetartoid",
+  "mg",
+  "fill1",
+  "fill2",
+  "fill34"
+ ],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 32.3,
+ "secs_kern": 23.1,
+ "stdout_lines": 123,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": false,
+ "time_fields_masked": 10,
+ "diff_kern_orig": "none",
+ "stdout_kern_eq_stored": false,
+ "stdout_orig_eq_stored": false,
+ "diff_kern_stored": "line 123: 'SUMMARY 77 ok, 0 FAIL' vs ''",
+ "files": [
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-bull-horns-og-adaptor.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 19888
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-bull-horns-og-adaptor.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 4981
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-dented-tetrahedron.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 11685
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-dented-tetrahedron.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 2878
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-gbpc.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 2780
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-gbpc.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 359
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-keyed-octahedron.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 8158
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-keyed-octahedron.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 2011
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-mirror-middle-piece-mg.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 6539
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-mirror-middle-piece-mg.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 1356
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-tetartoid-core.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 6234
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-tetartoid-core.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 1363
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-w.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 19940
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-w.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 5434
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-dented-tetrahedron-left.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 6518
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-dented-tetrahedron-left.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 1446
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-dented-tetrahedron-right.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 6608
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-dented-tetrahedron-right.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 1494
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-1-f1.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 30886
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-1-f1.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 7986
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f1.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 33291
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f1.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 8463
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f2-left.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 10923
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f2-left.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 2747
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f3-right.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 11097
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f3-right.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 2837
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

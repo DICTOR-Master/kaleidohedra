@@ -1,0 +1,119 @@
+{
+ "case": "atoms-missing-build_hexoct",
+ "group": "G7+G2",
+ "study": "2026-11-17-atoms-missing",
+ "script": "build_hexoct.py",
+ "args": [],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 22.5,
+ "secs_kern": 27.5,
+ "stdout_lines": 94,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": true,
+ "time_fields_masked": 0,
+ "diff_kern_orig": "none",
+ "stdout_kern_eq_stored": true,
+ "stdout_orig_eq_stored": true,
+ "diff_kern_stored": "none",
+ "files": [
+  {
+   "file": "2026-11-17-atoms-missing/models/dicto-twisted-cube.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 4617
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/dicto-twisted-cube.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 826
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-b-c-tile.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 3829
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-b-c-tile.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 619
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-b-h-tile.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 3897
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-b-h-tile.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 632
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-c-c-tile.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 5597
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-c-c-tile.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 1107
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-c-h-tile.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 6157
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-c-h-tile.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 1263
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-c-tile.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 11717
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-c-tile.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 2923
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-d-c-tile.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 7053
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-d-c-tile.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 1543
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-h-tile.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 12172
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-hexoct-h-tile.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 2992
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

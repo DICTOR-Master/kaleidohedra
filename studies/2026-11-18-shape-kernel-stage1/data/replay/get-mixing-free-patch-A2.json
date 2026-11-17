@@ -1,0 +1,36 @@
+{
+ "case": "get-mixing-free-patch-A2",
+ "group": "G5+G6",
+ "study": "2026-11-17-get-mixing",
+ "script": "scripts/free_patch.py",
+ "args": [
+  "../2026-11-15-grunbaum-k10",
+  "data/inchbald-source.json",
+  "7",
+  "3",
+  "data/free-patch-A2.json",
+  "A2"
+ ],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 38.2,
+ "secs_kern": 39.9,
+ "stdout_lines": 4,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": true,
+ "time_fields_masked": 1,
+ "diff_kern_orig": "none",
+ "stdout_kern_eq_stored": false,
+ "stdout_orig_eq_stored": false,
+ "diff_kern_stored": "line 1: 'mode A2 counts {\"A\\'\": 147, \\'A\\': 196}' vs 'mode A2 counts {\\'A\\': 196, \"A\\'\": 147}'",
+ "files": [
+  {
+   "file": "2026-11-17-get-mixing/data/free-patch-A2.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 6580
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

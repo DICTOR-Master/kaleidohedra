@@ -1,0 +1,61 @@
+   t16 16-cell 1 8 {'4 corners, faces 4x3': 16}
+   t16 Lesser GCT + octahedra 5/2 - 1/2√5 48 {'6 corners, faces 8x3': 8, '12 corners, faces 4x3, 4x6': 16}
+   t16 truncated 16-cell (uniform) 3/2 48 {'6 corners, faces 8x3': 8, '12 corners, faces 4x3, 4x6': 16}
+   t16 Greater GCT + octahedra 1/2 + 1/2√5 48 {'6 corners, faces 8x3': 8, '12 corners, faces 4x3, 4x6': 16}
+   t16 24-cell (rectified 16-cell) 2 24 {'6 corners, faces 8x3': 24}
+   t16 Unborn Axes + Greater GCT 7/2 - 1/2√5 96 {'24 corners, faces 6x4, 8x6': 8, '12 corners, faces 4x3, 4x6': 16}
+   t16 bitruncated tesseract (uniform) 5/2 96 {'24 corners, faces 6x4, 8x6': 8, '12 corners, faces 4x3, 4x6': 16}
+   t16 Icosaxes + Lesser GCT 3/2 + 1/2√5 96 {'24 corners, faces 6x4, 8x6': 8, '12 corners, faces 4x3, 4x6': 16}
+   t16 rectified tesseract 3 32 {'12 corners, faces 8x3, 6x4': 8, '4 corners, faces 4x3': 16}
+   t16 Greater GCC + tetrahedra 5 + 3/2√2 - √5 - 1/2√10 64 {'24 corners, faces 8x3, 6x8': 8, '4 corners, faces 4x3': 16}
+   t16 truncated tesseract (uniform) 2 + √2 64 {'24 corners, faces 8x3, 6x8': 8, '4 corners, faces 4x3': 16}
+   t16 Lesser GCC + tetrahedra 5 - 3/2√2 + √5 - 1/2√10 64 {'24 corners, faces 8x3, 6x8': 8, '4 corners, faces 4x3': 16}
+   t16 tesseract 4 16 {'8 corners, faces 6x4': 8}
+PASS t16 mu = phi^2 = 2 + 1/phi: cube-facet cells (24 corners) and tetrahedral cells (12 corners) are exactly the predicted golden cuts
+PASS t16 mu = 2 + 1/phi^2: cube-facet cells (24 corners) and tetrahedral cells (12 corners) are exactly the predicted golden cuts
+PASS t16 mu = phi (truncated 16-cell stage): cube-facet cells (6 corners) and tetrahedral cells (12 corners) are exactly the predicted golden cuts
+PASS t16 mu = 3 - phi (truncated 16-cell stage): cube-facet cells (6 corners) and tetrahedral cells (12 corners) are exactly the predicted golden cuts
+PASS t16 truncated-tesseract stage: cube cells = C cap (mu - 1) O are the Golden Cut Cubes at mu = 1 + mu_G, 1 + mu_L (degree 4)
+PASS t16: the shared hexagon is a truncated triangle (6 corners, 3 + 3 sides sqrt2*h and sqrt2*(1-h)); its squared side ratio (1-h)^2/h^2 is 1/phi^2 at mu = phi^2 and phi^2 at mu = 2 + 1/phi^2, so the two cells see inverse ratios
+   t24 24-cell (polar) 1 24 {'6 corners, faces 8x3': 24}
+   t24 Icosaxes-type dual side 2/phi -1 + √5 192 {'8 corners, faces 6x4': 24, '24 corners, faces 6x4, 8x6': 24}
+   t24 rectified 24-cell (polar) 4/3 96 {'8 corners, faces 6x4': 24, '12 corners, faces 8x3, 6x4': 24}
+   t24 bitruncated 24-cell (self-dual point) √2 288 {'24 corners, faces 8x3, 6x8': 48}
+   t24 rectified 24-cell 3/2 96 {'12 corners, faces 8x3, 6x4': 24, '8 corners, faces 6x4': 24}
+   t24 Icosaxes cells + cubes 1/2 + 1/2√5 192 {'24 corners, faces 6x4, 8x6': 24, '8 corners, faces 6x4': 24}
+   t24 truncated 24-cell (uniform) 5/3 192 {'24 corners, faces 6x4, 8x6': 24, '8 corners, faces 6x4': 24}
+   t24 Unborn Axes cells + cubes 3/2 + 1/10√5 192 {'24 corners, faces 6x4, 8x6': 24, '8 corners, faces 6x4': 24}
+   t24 24-cell 2 24 {'6 corners, faces 8x3': 24}
+PASS t24 mu = phi: the cell on the facet x1 = 1 is O cap (mu - 1) C = Icosaxes (24 corners)
+PASS t24 mu = 1 + 1/(3 - phi): the cell on the facet x1 = 1 is O cap (mu - 1) C = Unborn Axes (24 corners)
+PASS t24 mu = sqrt2 (self-dual point): the cell on the facet x1 = 1 is O cap (mu - 1) C = the Archimedean truncated cube (24 corners)
+PASS t24 self-duality: S(mu) and S(2/mu) are similar (mu <-> 2/mu), fixed point sqrt2 (exact: 2/sqrt2 = sqrt2)
+PASS t120: the 600-cell (R = 1, edge^2 = 3/2 - 1/2√5) has 600 tetrahedral cells
+PASS t120: inradius^2 r^2 = 7/16 + 3/16√5; all cell centres on one sphere
+   t120 radii {'R2 (600-cell corners)': '1', 'rho1^2 (edge midpoints)': '5/8 + 1/8√5', 'rho2^2 (triangle centres)': '1/2 + 1/6√5', 'r^2 (cell centres)': '7/16 + 3/16√5'}
+   t120 120-cell (polar end) 7/16 + 3/16√5 ~0.856763 600 {'20 corners, faces 12x5': 120}
+   t120 Lesser GCD cells 13/28 + 5/28√5 ~0.863584 2400 {'4 corners, faces 4x3': 600, '60 corners, faces 20x3, 12x10': 120}
+   t120 truncated 120-cell (uniform) 15/38 + 4/19√5 ~0.865488 2400 {'4 corners, faces 4x3': 600, '60 corners, faces 20x3, 12x10': 120}
+   t120 Greater GCD cells (truncated 120-cell stage) 111/244 + 45/244√5 ~0.867308 2400 {'4 corners, faces 4x3': 600, '60 corners, faces 20x3, 12x10': 120}
+   t120 rectified 120-cell 1/2 + 1/6√5 ~0.872678 1200 {'4 corners, faces 4x3': 600, '30 corners, faces 20x3, 12x5': 120}
+   t120 rectified 600-cell 5/8 + 1/8√5 ~0.904508 720 {'6 corners, faces 8x3': 600, '12 corners, faces 20x3': 120}
+   t120 Greater GCT cells -3/4 + 3/4√5 ~0.927051 1440 {'12 corners, faces 4x3, 4x6': 600, '12 corners, faces 20x3': 120}
+   t120 truncated 600-cell (uniform) 3/4 + 1/12√5 ~0.936339 1440 {'12 corners, faces 4x3, 4x6': 600, '12 corners, faces 20x3': 120}
+   t120 Lesser GCT cells (truncated 600-cell stage) 1/2 + 1/5√5 ~0.947214 1440 {'12 corners, faces 4x3, 4x6': 600, '12 corners, faces 20x3': 120}
+   t120 600-cell 1 ~1.000000 120 {'4 corners, faces 4x3': 600}
+PASS t120 lemma consistency: the dodecahedral-cell rule gives the icosahedron (nu = 1) at the rectified 600-cell: 1
+PASS t120 lemma consistency: the tetrahedral-cell rule gives -T (1/3) at the rectified 120-cell and the octahedron (1) at the rectified 600-cell
+   bitruncated stage Lesser GCT (dual side) tetra cells 2 - 1/2√5 ~0.881966011
+   bitruncated stage Greater GCT (dual side) tetra cells 19/44 + 9/44√5 ~0.889195723
+   bitruncated stage Lesser GCI dodeca cells 19/44 + 9/44√5 ~0.889195723
+   bitruncated stage Greater GCI dodeca cells 2 - 1/2√5 ~0.881966011
+   bitruncated stage bitruncated 120-cell (uniform, tetra cells Archimedean 3/5) 11/20 + 3/20√5 ~0.885410197
+PASS t120 bitruncated stage: Greater GCI cells and Lesser GCT cells occur at the SAME mu (shared hexagons swap the ratio)
+PASS t120 bitruncated stage: Lesser GCI cells and Greater GCT cells occur at the SAME mu
+PASS t120: the uniform bitruncated 120-cell has truncated icosahedron cells at the same mu (nu_TI)
+    Lesser GCT (dual side) tetra cells 3600 {'12 corners, faces 4x3, 4x6': 600, '60 corners, faces 12x5, 20x6': 120}
+    Greater GCT (dual side) tetra cells 3600 {'12 corners, faces 4x3, 4x6': 600, '60 corners, faces 12x5, 20x6': 120}
+    Lesser GCI dodeca cells 3600 {'12 corners, faces 4x3, 4x6': 600, '60 corners, faces 12x5, 20x6': 120}
+    Greater GCI dodeca cells 3600 {'12 corners, faces 4x3, 4x6': 600, '60 corners, faces 12x5, 20x6': 120}
+    bitruncated 120-cell (uniform, tetra cells Archimedean 3/5) 3600 {'12 corners, faces 4x3, 4x6': 600, '60 corners, faces 12x5, 20x6': 120}
+17/17 checks pass -> data/s5-fourd.json

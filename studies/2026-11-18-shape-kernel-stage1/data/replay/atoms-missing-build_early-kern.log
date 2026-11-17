@@ -1,0 +1,21 @@
+== D5 stretched dodecahedron
+CHECK ok   dodecahedron of edge 2/phi = (15 + 7 sqrt5)/4 (2/phi)^3 = 10 + 2 sqrt5
+CHECK ok   F11 coefficient 7.236068 = 5 + sqrt5 (the dodecahedron shadow along a cube axis) to the 6 stated decimals
+CHECK ok   the 2 rectangles are squares of edge 2/phi at s = 2/phi
+CHECK ok   dicto-stretched-dodecahedron: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   dicto-stretched-dodecahedron: every face planar (exact)
+CHECK ok   dicto-stretched-dodecahedron: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   dicto-stretched-dodecahedron: volume 10 + (6)*sqrt(5) = stated 10 + (6)*sqrt(5)
+CHECK ok   dicto-stretched-dodecahedron: faces by sides {4: 2, 5: 8, 6: 4} = stated {5: 8, 6: 4, 4: 2}
+WROTE dicto-stretched-dodecahedron: V24 E36 F14 {4: 2, 5: 8, 6: 4} volume 10 + (6)*sqrt(5) ~ 23.416408
+== D9 DICTO Dodeca-13 Star
+[exit 1]
+[stderr]
+Traceback (most recent call last):
+  File "<stage1>/replay/cases/atoms-missing-build_early/kern/studies/2026-11-17-atoms-missing/scripts/build_early.py", line 53, in <module>
+    VW, FW, JW = load('dicto-dodeca-13-wedge'); VN, FN, JN = load('dicto-dodeca-13-needle')
+                 ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<stage1>/replay/cases/atoms-missing-build_early/kern/studies/2026-11-17-atoms-missing/scripts/atomlib.py", line 37, in load
+    J = json.load(open(os.path.join(REF, slug + '.json')))
+                  ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<stage1>/replay/cases/atoms-missing-build_early/kern/studies/2026-11-17-atoms-missing/scripts/../ref/dicto-dodeca-13-wedge.json'

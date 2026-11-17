@@ -1,0 +1,131 @@
+{
+ "case": "atoms-missing-2-build_julias",
+ "group": "G7+G2",
+ "study": "2026-11-17-atoms-missing-2",
+ "script": "build_julias.py",
+ "args": [],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 5.0,
+ "secs_kern": 5.7,
+ "stdout_lines": 92,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": true,
+ "time_fields_masked": 0,
+ "diff_kern_orig": "none",
+ "stdout_kern_eq_stored": true,
+ "stdout_orig_eq_stored": true,
+ "diff_kern_stored": "none",
+ "files": [
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g10.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 3676
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g10.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 458
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g3.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 5648
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g3.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 1034
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g4.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 4869
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g4.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 781
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g5a.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 4461
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g5a.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 574
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g5b.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 4999
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g5b.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 819
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g6.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 3114
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g6.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 322
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g8.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 3465
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g8.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 453
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g9.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 3573
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-julia-g9.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 386
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-pimentel-g11.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 3623
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-pimentel-g11.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 396
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

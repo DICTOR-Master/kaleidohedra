@@ -1,0 +1,60 @@
+CHECK ok   the Dharma frame is the #54 frame: the core icosahedron = station I
+CHECK ok   Dharma frame: core icosahedron 12, ID 30, dodecahedron 20, TI 60 corners
+== Vajra (twist)
+CHECK ok   Vajra (twist): 20 pieces of this kind in the cycle = stated 20
+CHECK ok   Vajra (twist): every snapped corner is a corner of an exact Dharma-frame solid (['core icosahedron', 'icosidodecahedron'])
+CHECK ok   Vajra (twist): the app piece (its own faces) has the volume of its hull: convex
+CHECK ok   Vajra (twist): volume 9/64 + (7/192)*sqrt(5) = 0.2221483 rounds to the stated 0.22215
+CHECK ok   Vajra (twist): interior dihedrals [99.2644, 110.9052, 113.8002] = stated [99.26, 110.91, 113.8] to the printed 2 decimals (the stated values come from 5-decimal app corners: last digit +-1)
+CHECK ok   piece-vajra-twist: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-vajra-twist: every face planar (exact)
+CHECK ok   piece-vajra-twist: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-vajra-twist: faces by sides {3: 8} = stated {3: 8}
+WROTE piece-vajra-twist: V6 E12 F8 {3: 8} volume 9/64 + (7/192)*sqrt(5) ~ 0.222148
+== Cleo-low
+CHECK ok   Cleo-low: 20 pieces of this kind in the cycle = stated 20
+CHECK ok   Cleo-low: every snapped corner is a corner of an exact Dharma-frame solid (['dodecahedron', 'icosidodecahedron'])
+CHECK ok   Cleo-low: the app piece (its own faces) has the volume of its hull: convex
+CHECK ok   Cleo-low: volume 1/192 + (1/192)*sqrt(5) = 0.0168545 rounds to the stated 0.016855
+CHECK ok   Cleo-low: interior dihedrals [37.3774, 116.5651] = stated [37.38, 116.57] to the printed 2 decimals (the stated values come from 5-decimal app corners: last digit +-1)
+CHECK ok   Cleo-low: base phi/2, sides 1/2 (stated): the Mosseri-Sadoc t3 at half its scale (base tau, sides 1)
+CHECK ok   known-cleo-low: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   known-cleo-low: every face planar (exact)
+CHECK ok   known-cleo-low: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   known-cleo-low: faces by sides {3: 4} = stated {3: 4}
+WROTE known-cleo-low: V4 E6 F4 {3: 4} volume 1/192 + (1/192)*sqrt(5) ~ 0.016855
+== Vajra-blade
+CHECK ok   Vajra-blade: 60 pieces of this kind in the cycle = stated 60
+CHECK ok   Vajra-blade: every snapped corner is a corner of an exact Dharma-frame solid (['Hecatodihedron poles', 'station RT of #54', 'truncated icosahedron'])
+CHECK ok   Vajra-blade: the app piece (its own faces) has the volume of its hull: convex
+CHECK ok   Vajra-blade: volume -11/16 + (5/16)*sqrt(5) = 0.0112712 rounds to the stated 0.011271
+CHECK ok   Vajra-blade: interior dihedrals [20.5544, 20.9052, 144.0, 159.0948] = stated [20.55, 20.91, 144.0, 159.1] to the printed 2 decimals (the stated values come from 5-decimal app corners: last digit +-1)
+CHECK ok   piece-vajra-blade: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-vajra-blade: every face planar (exact)
+CHECK ok   piece-vajra-blade: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-vajra-blade: faces by sides {3: 4} = stated {3: 4}
+WROTE piece-vajra-blade: V4 E6 F4 {3: 4} volume -11/16 + (5/16)*sqrt(5) ~ 0.011271
+== Sevenfold-blade
+CHECK ok   Sevenfold-blade: 30 pieces of this kind in the cycle = stated 30
+CHECK ok   Sevenfold-blade: every snapped corner is a corner of an exact Dharma-frame solid (['Hecatodihedron poles', 'core icosahedron x phi^3', 'station RT of #54'])
+CHECK ok   Sevenfold-blade: the app piece (its own faces) has the volume of its hull: convex
+CHECK ok   Sevenfold-blade: volume 5 + (-2)*sqrt(5) = stated 5 - 2*sqrt(5) exactly
+CHECK ok   Sevenfold-blade: interior dihedrals [72.0, 85.6642, 108.0, 112.5324] = stated [72.0, 85.66, 108.0, 112.53] to the printed 2 decimals (the stated values come from 5-decimal app corners: last digit +-1)
+CHECK ok   piece-sevenfold-blade: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-sevenfold-blade: every face planar (exact)
+CHECK ok   piece-sevenfold-blade: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-sevenfold-blade: volume 5 + (-2)*sqrt(5) = stated 5 + (-2)*sqrt(5)
+CHECK ok   piece-sevenfold-blade: faces by sides {3: 6, 4: 1} = stated {3: 6, 4: 1}
+WROTE piece-sevenfold-blade: V6 E11 F7 {3: 6, 4: 1} volume 5 + (-2)*sqrt(5) ~ 0.527864
+== Cleo-low 2
+CHECK ok   Cleo-low 2: 20 pieces of this kind in the cycle = stated 20
+CHECK ok   Cleo-low 2: every snapped corner is a corner of an exact Dharma-frame solid (['Hecatodihedron poles', 'core icosahedron x phi^3'])
+CHECK ok   Cleo-low 2: the app piece (its own faces) has the volume of its hull: convex
+CHECK ok   Cleo-low 2: volume 11/48 + (1/16)*sqrt(5) = 0.3689209 rounds to the stated 0.36892
+CHECK ok   Cleo-low 2: interior dihedrals [26.2628, 134.9352] = stated [26.26, 134.93] to the printed 2 decimals (the stated values come from 5-decimal app corners: last digit +-1)
+CHECK ok   piece-cleo-low-2: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-cleo-low-2: every face planar (exact)
+CHECK ok   piece-cleo-low-2: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-cleo-low-2: faces by sides {3: 4} = stated {3: 4}
+WROTE piece-cleo-low-2: V4 E6 F4 {3: 4} volume 11/48 + (1/16)*sqrt(5) ~ 0.368921
+SUMMARY 49 ok, 0 FAIL

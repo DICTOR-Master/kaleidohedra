@@ -1,0 +1,14 @@
+PASS |a_i|^2 = 2 + phi for all six axes
+PASS Gram off-diagonal entries are +-1/sqrt5
+PASS sum a_i a_i^T = 2(2 + phi) I_3 (tight frame)
+PASS P_par^2 = P_par, symmetric, trace 3
+PASS P_perp = I - P_par is the Galois conjugate of P_par
+PASS physical shadow of the 6-cube: 32 corners, 30 faces, all rhombi with diagonal ratio phi (rhombic triacontahedron)
+PASS internal shadow of the 6-cube: 32 corners, 30 faces, all rhombi with diagonal ratio phi (rhombic triacontahedron)
+PASS central section of the 6-cube by physical space: 20 corners on one sphere, 3 edges at each, 12 regular pentagon faces (regular dodecahedron)
+PASS stabiliser of physical space in B6 (order 46080) has order 120 = |I_h|
+PASS Z-span of the 120 unit icosians has rank 8
+PASS icosian lattice with the norm 2F: Gram determinant 1, even, integral (E8)
+PASS the 240 vectors {u, u/phi} lie in the lattice and all have F = 1 (2F = 2: the 240 roots of E8)
+PASS their H4 shadows: two 600-cells, squared radii {'1': 120, '3/2 - 1/2√5': 120} (ratio phi^2), coordinates in Q(sqrt5)
+13/13 checks pass -> data/s1-sanity.json

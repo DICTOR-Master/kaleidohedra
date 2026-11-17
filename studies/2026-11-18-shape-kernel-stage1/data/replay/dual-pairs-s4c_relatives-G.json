@@ -1,0 +1,28 @@
+{
+ "case": "dual-pairs-s4c_relatives-G",
+ "group": "G4",
+ "study": "2026-11-03-dual-pairs-dimensions",
+ "script": "s4c_relatives.py",
+ "args": [
+  "G"
+ ],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 117.6,
+ "secs_kern": 100.2,
+ "stdout_lines": 3,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": true,
+ "time_fields_masked": 0,
+ "diff_kern_orig": "none",
+ "files": [
+  {
+   "file": "2026-11-03-dual-pairs-dimensions/data/s4c-relatives-G.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 851
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

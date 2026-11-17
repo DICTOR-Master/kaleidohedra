@@ -1,0 +1,28 @@
+{
+ "case": "golden-cuts-s9_why_not_cubes-E",
+ "group": "G4",
+ "study": "2026-11-03-golden-cuts-beyond-plato",
+ "script": "s9_why_not_cubes.py",
+ "args": [
+  "E"
+ ],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 5.9,
+ "secs_kern": 3.2,
+ "stdout_lines": 18,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": false,
+ "time_fields_masked": 1,
+ "diff_kern_orig": "none",
+ "files": [
+  {
+   "file": "2026-11-03-golden-cuts-beyond-plato/data/s9-why-not-cubes-E.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 3176
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

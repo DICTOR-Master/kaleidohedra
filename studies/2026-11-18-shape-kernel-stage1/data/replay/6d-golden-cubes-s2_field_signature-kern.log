@@ -1,0 +1,27 @@
+greater  dodecahedron  corners  60 field Q(sqrt5)         deg 2  rank 6  phi^k M in M: k = 3
+PASS greater golden cut dodecahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^3
+lesser   dodecahedron  corners  60 field Q(sqrt5)         deg 2  rank 6  phi^k M in M: k = 3
+PASS lesser golden cut dodecahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^3
+greater  icosahedron   corners  60 field Q(sqrt5)         deg 2  rank 6  phi^k M in M: k = 3
+PASS greater golden cut icosahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^3
+lesser   icosahedron   corners  60 field Q(sqrt5)         deg 2  rank 6  phi^k M in M: k = 3
+PASS lesser golden cut icosahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^3
+greater  cube          corners  24 field Q(sqrt2, sqrt5)  deg 4  rank 6  phi^k M in M: k = None
+PASS greater Golden Cut Cube: distance field Q(sqrt2, sqrt5) (degree 4), module rank 6, no phi^k (k <= 6) maps the corner module into itself
+lesser   cube          corners  24 field Q(sqrt2, sqrt5)  deg 4  rank 6  phi^k M in M: k = None
+PASS lesser Golden Cut Cube: distance field Q(sqrt2, sqrt5) (degree 4), module rank 6, no phi^k (k <= 6) maps the corner module into itself
+greater  tetrahedron   corners  12 field Q(sqrt5)         deg 2  rank 6  phi^k M in M: k = 6
+PASS greater golden cut tetrahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^6
+lesser   tetrahedron   corners  12 field Q(sqrt5)         deg 2  rank 6  phi^k M in M: k = 6
+PASS lesser golden cut tetrahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^6
+greater  octahedron    corners  24 field Q(sqrt5)         deg 2  rank 6  phi^k M in M: k = 3
+PASS greater golden cut octahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^3
+lesser   octahedron    corners  24 field Q(sqrt5)         deg 2  rank 6  phi^k M in M: k = 3
+PASS lesser golden cut octahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^3
+PASS truncated cube corners (+-1,+-1,+-t) perms: squared distances include 4, 4t^2 and 2(1-t)^2, so the distance field is Q(t)
+PASS greater t = 1/(1 + sqrt2 phi): minimal polynomial z**4 - 8*z**3 + 4*z - 1 (degree 4); lesser t = 1/(1 + sqrt2/phi): z**4 - 8*z**3 + 4*z - 1 (degree 4)
+PASS t = 1 - 2x agrees with #88 x_G(4), x_L(4)
+PASS octagon corner side / original side = (1 - t)/(sqrt2 t): phi at t_G, 1/phi at t_L
+PASS Icosaxes (greater golden cut octahedron) ~ all perms of (+-phi, +-1, 0) = corners of the two twin icosahedra
+PASS Unborn Axes (lesser golden cut octahedron) ~ all perms of (+-phi^2, +-1, 0) = the 24 non-cube corners of the two twin dodecahedra
+16/16 checks pass -> data/s2-field-signature.json

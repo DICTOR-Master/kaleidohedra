@@ -1,0 +1,18 @@
+   18 stations
+PASS A(i) sweep cycle S:Pstar -> S:L* -> S:A* -> S:G* -> S:rect -> S:G -> S:A -> S:L -> S:P -> S:Pstar: every link but the last has tight factor 1 (shared P-facets); closure 15 - 6√5 = (R/r)^2
+PASS A(ii) Dharma-pattern cycle S:P -> S:rect -> Q(A*,rect) -> H:A* -> S:Pstar -> H:rect -> S:P: tight factors ['9/2 - 3/2√5', '1', '1', '15 - 6√5', '1/2 + 1/10√5', '5/2 - 1/2√5']; closure 225/2 - 99/2√5 (~1.814635)
+PASS A(ii) D.I: the Dharma-pattern tight closure equals the polar-Dharma all-tight closure 225/2 - 99/2 sqrt5 (s4)
+PASS A(iii) D.I golden Dharma-pattern cycle (OG replaced by its golden relative at mu = sqrt5): factors ['9/2 - 3/2√5', '1', '1', '15 - 6√5', '1/2 + 1/10√5', '5/2 - 1/2√5'], closure 225/2 - 99/2√5 (~1.814635)
+   float hits: 43356
+    (R/r)^2 42438 [{'stations': ['S:P', 'S:Pstar', 'S:P'], 'factors': ['15 - 6√5', '1'], 'closure': '15 - 6√5', 'exact_match': True}]
+    phi^1 870 [{'stations': ['S:P', 'S:rect', 'S:G', 'H:A', 'S:P'], 'factors': ['9/2 - 3/2√5', '1', '16/33 + 7/33√5', '-3 + 2√5'], 'closure': '1/2 + 1/2√5', 'exact_match': True}]
+    phi^2 48 [{'stations': ['S:P', 'S:Pstar', 'S:rect', 'S:L*', 'S:G', 'H:A', 'S:P'], 'factors': ['15 - 6√5', '1', '1/2 + 3/10√5', '1', '16/33 + 7/33√5', '-3 + 2√5'], 'closure': '3/2 + 1/2√5', 'exact_match': True}]
+PASS two-link cycle P -> H(L*) -> P closes at nu = mu/r^2 = -10 + 5√5
+PASS two-link cycle P -> H(A*) -> P closes at nu = mu/r^2 = 30/19 - 3/19√5
+PASS two-link cycle P -> H(G*) -> P closes at nu = mu/r^2 = 5/11 + 4/11√5
+PASS two-link cycle P -> H(rect) -> P closes at nu = mu/r^2 = 5/2 - 1/2√5
+PASS two-link cycle P -> H(G) -> P closes at nu = mu/r^2 = 20/3 - 7/3√5
+PASS two-link cycle P -> H(A) -> P closes at nu = mu/r^2 = -3 + 2√5
+PASS two-link cycle P -> H(L) -> P closes at nu = mu/r^2 = 50/11 - 15/11√5
+PASS B: search finished; all reported examples re-checked exactly (exact_match flags in data)
+12/12 checks pass -> data/s6-cycles-di.json

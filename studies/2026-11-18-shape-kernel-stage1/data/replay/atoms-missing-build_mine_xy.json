@@ -1,0 +1,49 @@
+{
+ "case": "atoms-missing-build_mine_xy",
+ "group": "G7+G2",
+ "study": "2026-11-17-atoms-missing",
+ "script": "build_mine.py",
+ "args": [
+  "xy"
+ ],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 0.8,
+ "secs_kern": 0.7,
+ "stdout_lines": 15,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": true,
+ "time_fields_masked": 0,
+ "diff_kern_orig": "none",
+ "stdout_kern_eq_stored": true,
+ "stdout_orig_eq_stored": true,
+ "diff_kern_stored": "none",
+ "files": [
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-x.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 4005
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-x.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 755
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-y.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 3988
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-y.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 754
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

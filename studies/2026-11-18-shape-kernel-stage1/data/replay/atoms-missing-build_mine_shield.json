@@ -1,0 +1,16 @@
+{
+ "case": "atoms-missing-build_mine_shield",
+ "group": "G7+G2",
+ "study": "2026-11-17-atoms-missing",
+ "script": "build_mine.py",
+ "args": [
+  "shield"
+ ],
+ "rc_orig": 1,
+ "rc_kern": 1,
+ "secs_orig": 0.3,
+ "secs_kern": 0.1,
+ "status": "original fails on this machine",
+ "ok": null,
+ "stderr_orig": "')\n                ~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<stage1>/replay/cases/atoms-missing-build_mine_shield/orig/studies/2026-11-17-atoms-missing/scripts/atomlib.py\", line 37, in load\n    J = json.load(open(os.path.join(REF, slug + '.json')))\n                  ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '<stage1>/replay/cases/atoms-missing-build_mine_shield/orig/studies/2026-11-17-atoms-missing/scripts/../ref/dicto-hecatodihedron.json'\n"
+}

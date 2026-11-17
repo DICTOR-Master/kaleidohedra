@@ -1,0 +1,2823 @@
+[
+ {
+  "case": "6d-golden-cubes-s1_sanity_cut_project",
+  "group": "G4",
+  "study": "2026-11-03-6d-golden-cubes",
+  "script": "s1_sanity_cut_project.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 10.3,
+  "secs_kern": 8.2,
+  "stdout_lines": 14,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-6d-golden-cubes/data/s1-sanity.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1845
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "6d-golden-cubes-s2_field_signature",
+  "group": "G4",
+  "study": "2026-11-03-6d-golden-cubes",
+  "script": "s2_field_signature.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 7.7,
+  "secs_kern": 7.1,
+  "stdout_lines": 27,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-6d-golden-cubes/data/s2-field-signature.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 4641
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "6d-golden-cubes-s3_six_d",
+  "group": "G4",
+  "study": "2026-11-03-6d-golden-cubes",
+  "script": "s3_six_d.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 20.0,
+  "secs_kern": 19.1,
+  "stdout_lines": 75,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-6d-golden-cubes/data/s3-six-d.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 13609
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "6d-golden-cubes-s4_min_norm",
+  "group": "G4",
+  "study": "2026-11-03-6d-golden-cubes",
+  "script": "s4_min_norm.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 2.7,
+  "secs_kern": 2.5,
+  "stdout_lines": 9,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-6d-golden-cubes/data/s4-min-norm.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 2860
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "atoms-missing-2-build_bodhi_frog",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing-2",
+  "script": "build_bodhi_frog.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 2.0,
+  "secs_kern": 1.8,
+  "stdout_lines": 57,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-chatra.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3918
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-chatra.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 521
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-diadem.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3644
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-diadem.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 462
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-frog-chorus.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 120351
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-frog-chorus.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 34322
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-mudra.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3307
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-mudra.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 393
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/pieces/piece-diadem-r.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3319
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/pieces/piece-diadem-r.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 449
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "atoms-missing-2-build_closed",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing-2",
+  "script": "build_closed.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 12.3,
+  "secs_kern": 12.9,
+  "stdout_lines": 111,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-atoms-missing-2/models/dicto-1-2-truncated-octahedron.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 6243
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/dicto-1-2-truncated-octahedron.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1633
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/dicto-2-1-truncated-octahedron.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 6243
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/dicto-2-1-truncated-octahedron.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1633
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/dicto-double-ti-star.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 24170
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/dicto-double-ti-star.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 7097
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-cut-og.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 22237
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-cut-og.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 6317
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-dicto-13-coa.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 4138
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-dicto-13-coa.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 950
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-hemi-rd.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3560
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-hemi-rd.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 734
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-oct-16.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 2782
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-oct-16.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 485
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-tbp-5.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 2690
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-tbp-5.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 419
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-unborn.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 4569
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-unborn.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 925
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-lone-star.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 2778
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-lone-star.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 325
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-sheriff.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3228
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-sheriff.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 452
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "atoms-missing-2-build_dharma2",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing-2",
+  "script": "build_dharma2.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 1.2,
+  "secs_kern": 1.8,
+  "stdout_lines": 60,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-cleo-low.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 2930
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-cleo-low.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 334
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-cleo-low-2.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 2887
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-cleo-low-2.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 333
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-sevenfold-blade.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3541
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-sevenfold-blade.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 477
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-vajra-blade.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 2917
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-vajra-blade.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 334
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-vajra-twist.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3373
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-vajra-twist.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 479
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "atoms-missing-2-build_icosa",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing-2",
+  "script": "build_icosa.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 1.9,
+  "secs_kern": 3.0,
+  "stdout_lines": 66,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-hound-tooth.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 2764
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-hound-tooth.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 346
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-inner-eye.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 9184
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-inner-eye.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 2469
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-tricap.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 2878
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/known-tricap.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 342
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-hasu.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 7049
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-hasu.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1493
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-tadpole.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3649
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-tadpole.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 450
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-triskelion-hex.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 4128
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-triskelion-hex.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 760
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-triskelion.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3452
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-triskelion.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 551
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-weirdstone.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3839
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-weirdstone.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 517
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "atoms-missing-2-build_julias",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing-2",
+  "script": "build_julias.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 5.0,
+  "secs_kern": 5.7,
+  "stdout_lines": 92,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g10.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3676
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g10.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 458
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g3.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 5648
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g3.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1034
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g4.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 4869
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g4.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 781
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g5a.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 4461
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g5a.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 574
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g5b.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 4999
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g5b.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 819
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g6.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3114
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g6.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 322
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g8.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3465
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g8.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 453
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g9.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3573
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-julia-g9.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 386
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-pimentel-g11.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3623
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-pimentel-g11.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 396
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "atoms-missing-2-build_keyed",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing-2",
+  "script": "build_keyed.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 10.6,
+  "secs_kern": 7.6,
+  "stdout_lines": 36,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-ian-dury-k.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 8699
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-ian-dury-k.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 2090
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-lahdeli-k.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 14922
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-lahdeli-k.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 3468
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-rhombo-k.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 10396
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-rhombo-k.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 2740
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-sonsam-k.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 11954
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-sonsam-k.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 2521
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "atoms-missing-2-build_narcissus",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing-2",
+  "script": "build_narcissus.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 0.7,
+  "secs_kern": 1.4,
+  "stdout_lines": 28,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-atoms-missing-2/models/dicto-covenant.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 4856
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/dicto-covenant.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 981
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-narcissus.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 4326
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-narcissus.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 722
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "atoms-missing-2-build_star_og",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing-2",
+  "script": "build_star_og.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 13.2,
+  "secs_kern": 10.4,
+  "stdout_lines": 42,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-atoms-missing-2/models/dicto-greater-golden-og.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 25572
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/dicto-greater-golden-og.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 6942
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/dicto-lesser-golden-og.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 24322
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/dicto-lesser-golden-og.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 6939
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-kuwagata.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3521
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-kuwagata.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 402
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-maedate.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 3650
+   },
+   {
+    "file": "2026-11-17-atoms-missing-2/models/piece-maedate.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 473
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "atoms-missing-build_dharma",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing",
+  "script": "build_dharma.py",
+  "args": [],
+  "rc_orig": 1,
+  "rc_kern": 1,
+  "secs_orig": 0.4,
+  "secs_kern": 0.4,
+  "status": "original fails on this machine",
+  "ok": null,
+  "stderr_orig": " + 20 poles\n                 ~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<stage1>/replay/cases/atoms-missing-build_dharma/orig/studies/2026-11-17-atoms-missing/scripts/atomlib.py\", line 37, in load\n    J = json.load(open(os.path.join(REF, slug + '.json')))\n                  ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '<stage1>/replay/cases/atoms-missing-build_dharma/orig/studies/2026-11-17-atoms-missing/scripts/../ref/dicto-hecatodihedron.json'\n"
+ },
+ {
+  "case": "atoms-missing-build_early",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing",
+  "script": "build_early.py",
+  "args": [],
+  "rc_orig": 1,
+  "rc_kern": 1,
+  "secs_orig": 0.7,
+  "secs_kern": 0.9,
+  "status": "original fails on this machine",
+  "ok": null,
+  "stderr_orig": "13-needle')\n                 ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<stage1>/replay/cases/atoms-missing-build_early/orig/studies/2026-11-17-atoms-missing/scripts/atomlib.py\", line 37, in load\n    J = json.load(open(os.path.join(REF, slug + '.json')))\n                  ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '<stage1>/replay/cases/atoms-missing-build_early/orig/studies/2026-11-17-atoms-missing/scripts/../ref/dicto-dodeca-13-wedge.json'\n"
+ },
+ {
+  "case": "atoms-missing-build_hexoct",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing",
+  "script": "build_hexoct.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 22.5,
+  "secs_kern": 27.5,
+  "stdout_lines": 94,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-atoms-missing/models/dicto-twisted-cube.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 4617
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/dicto-twisted-cube.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 826
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-b-c-tile.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 3829
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-b-c-tile.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 619
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-b-h-tile.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 3897
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-b-h-tile.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 632
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-c-c-tile.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 5597
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-c-c-tile.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1107
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-c-h-tile.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 6157
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-c-h-tile.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1263
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-c-tile.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 11717
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-c-tile.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 2923
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-d-c-tile.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 7053
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-d-c-tile.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1543
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-h-tile.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 12172
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-hexoct-h-tile.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 2992
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "atoms-missing-build_mine_polar",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing",
+  "script": "build_mine.py",
+  "args": [
+   "polar"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 3.7,
+  "secs_kern": 1.8,
+  "stdout_lines": 61,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-polar-cleo-towers.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 25209
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-polar-cleo-towers.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 5597
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-core-ray.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 3004
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-core-ray.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 442
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-1-on-4-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 5554
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-1-on-4-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1036
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-2-on-5-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 5595
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-2-on-5-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1144
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-2-on-6-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 5809
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-2-on-6-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1149
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-3-on-4-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 3708
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-3-on-4-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 646
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-4-on-3-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 3523
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-4-on-3-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 527
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-5-on-3-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 3409
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-5-on-3-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 585
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-5-on-5-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 4370
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-5-on-5-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 857
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "atoms-missing-build_mine_shield",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing",
+  "script": "build_mine.py",
+  "args": [
+   "shield"
+  ],
+  "rc_orig": 1,
+  "rc_kern": 1,
+  "secs_orig": 0.3,
+  "secs_kern": 0.1,
+  "status": "original fails on this machine",
+  "ok": null,
+  "stderr_orig": "')\n                ~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<stage1>/replay/cases/atoms-missing-build_mine_shield/orig/studies/2026-11-17-atoms-missing/scripts/atomlib.py\", line 37, in load\n    J = json.load(open(os.path.join(REF, slug + '.json')))\n                  ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '<stage1>/replay/cases/atoms-missing-build_mine_shield/orig/studies/2026-11-17-atoms-missing/scripts/../ref/dicto-hecatodihedron.json'\n"
+ },
+ {
+  "case": "atoms-missing-build_mine_towers",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing",
+  "script": "build_mine.py",
+  "args": [
+   "towers"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 5.0,
+  "secs_kern": 2.7,
+  "stdout_lines": 61,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-cleo-towers.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 26466
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-cleo-towers.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 5948
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-1-on-3-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 3347
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-1-on-3-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 568
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-1-on-5-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 4215
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-1-on-5-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 840
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-2-on-4-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 4180
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-2-on-4-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 766
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-3-on-5-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 4093
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-3-on-5-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 732
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-3-on-6-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 5512
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-3-on-6-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1078
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-4-on-3-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 4486
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-4-on-3-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 768
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-4-on-5-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 5798
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-4-on-5-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1155
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-5-on-3-gon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 4573
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-5-on-3-gon.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 691
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "atoms-missing-build_mine_xy",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing",
+  "script": "build_mine.py",
+  "args": [
+   "xy"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 0.8,
+  "secs_kern": 0.7,
+  "stdout_lines": 15,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-x.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 4005
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-x.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 755
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-y.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 3988
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-y.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 754
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "atoms-missing-build_octet",
+  "group": "G7+G2",
+  "study": "2026-11-17-atoms-missing",
+  "script": "build_octet.py",
+  "args": [
+   "gbpc",
+   "bull",
+   "keyed",
+   "dented",
+   "w",
+   "tetartoid",
+   "mg",
+   "fill1",
+   "fill2",
+   "fill34"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 32.3,
+  "secs_kern": 23.1,
+  "stdout_lines": 123,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 10,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": false,
+  "stdout_orig_eq_stored": false,
+  "diff_kern_stored": "line 123: 'SUMMARY 77 ok, 0 FAIL' vs ''",
+  "files": [
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-bull-horns-og-adaptor.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 19888
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-bull-horns-og-adaptor.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 4981
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-dented-tetrahedron.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 11685
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-dented-tetrahedron.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 2878
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-gbpc.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 2780
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-gbpc.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 359
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-keyed-octahedron.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 8158
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-keyed-octahedron.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 2011
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-mirror-middle-piece-mg.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 6539
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-mirror-middle-piece-mg.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1356
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-tetartoid-core.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 6234
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-tetartoid-core.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1363
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-w.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 19940
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/piece-w.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 5434
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-dented-tetrahedron-left.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 6518
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-dented-tetrahedron-left.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1446
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-dented-tetrahedron-right.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 6608
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-dented-tetrahedron-right.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1494
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-1-f1.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 30886
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-1-f1.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 7986
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f1.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 33291
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f1.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 8463
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f2-left.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 10923
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f2-left.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 2747
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f3-right.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 11097
+   },
+   {
+    "file": "2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f3-right.off",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 2837
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s1_sweeps-co",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s1_sweeps.py",
+  "args": [
+   "co"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 4.5,
+  "secs_kern": 5.1,
+  "stdout_lines": 33,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s1-sweep-co.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 9037
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s1_sweeps-di",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s1_sweeps.py",
+  "args": [
+   "di"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 23.2,
+  "secs_kern": 18.3,
+  "stdout_lines": 31,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s1-sweep-di.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 9817
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s1_sweeps-tt",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s1_sweeps.py",
+  "args": [
+   "tt"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 3.4,
+  "secs_kern": 3.0,
+  "stdout_lines": 31,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s1-sweep-tt.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 9249
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s2_di_lattice",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s2_di_lattice.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 119.9,
+  "secs_kern": 100.6,
+  "stdout_lines": 12,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s2-di-lattice.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 2074
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s3_tt",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s3_tt.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 7.8,
+  "secs_kern": 9.4,
+  "stdout_lines": 62,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s3-tt.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 11588
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s4_og_dharma",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s4_og_dharma.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 155.9,
+  "secs_kern": 143.4,
+  "stdout_lines": 24,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s4-og-dharma.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 6279
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s4b_og_lattice",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s4b_og_lattice.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 134.4,
+  "secs_kern": 99.1,
+  "stdout_lines": 12,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s4b-og-lattice.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1665
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s4c_relatives-G",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s4c_relatives.py",
+  "args": [
+   "G"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 117.6,
+  "secs_kern": 100.2,
+  "stdout_lines": 3,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s4c-relatives-G.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 851
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s4c_relatives-L",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s4c_relatives.py",
+  "args": [
+   "L"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 134.9,
+  "secs_kern": 89.3,
+  "stdout_lines": 3,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s4c-relatives-L.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 811
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s5_fourd",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s5_fourd.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 10.6,
+  "secs_kern": 11.6,
+  "stdout_lines": 61,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s5-fourd.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 16887
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s6_cycles-co",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s6_cycles.py",
+  "args": [
+   "co"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 21.1,
+  "secs_kern": 25.5,
+  "stdout_lines": 23,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s6-cycles-co.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 16197
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s6_cycles-di",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s6_cycles.py",
+  "args": [
+   "di"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 75.1,
+  "secs_kern": 57.0,
+  "stdout_lines": 18,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s6-cycles-di.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 10840
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s6_cycles-tt",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s6_cycles.py",
+  "args": [
+   "tt"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 8.5,
+  "secs_kern": 9.0,
+  "stdout_lines": 16,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s6-cycles-tt.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 7588
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s7_hyper",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s7_hyper.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 10.8,
+  "secs_kern": 6.3,
+  "stdout_lines": 17,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s7-hyper.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 3122
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "dual-pairs-s8_rd_to",
+  "group": "G4",
+  "study": "2026-11-03-dual-pairs-dimensions",
+  "script": "s8_rd_to.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 34.8,
+  "secs_kern": 30.4,
+  "stdout_lines": 24,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-dual-pairs-dimensions/data/s8-rd-to.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 28685
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "get-mixing-decorated-sft",
+  "group": "G5+G6",
+  "study": "2026-11-17-get-mixing",
+  "script": "scripts/decorated_sft.py",
+  "args": [
+   "../2026-11-15-grunbaum-k10",
+   "data/inchbald-source.json",
+   "data/decorated.json",
+   "data/decorated-sft.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 36.3,
+  "secs_kern": 35.4,
+  "stdout_lines": 56,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 4,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-get-mixing/data/decorated-sft.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 42717
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "get-mixing-decorated",
+  "group": "G5+G6",
+  "study": "2026-11-17-get-mixing",
+  "script": "scripts/decorated_lattice.py",
+  "args": [
+   "../2026-11-15-grunbaum-k10",
+   "data/inchbald-source.json",
+   "data/layers.json",
+   "data/decorated.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 49.6,
+  "secs_kern": 58.4,
+  "stdout_lines": 136,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 1,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-get-mixing/data/decorated.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 36102
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "get-mixing-free-patch-A2",
+  "group": "G5+G6",
+  "study": "2026-11-17-get-mixing",
+  "script": "scripts/free_patch.py",
+  "args": [
+   "../2026-11-15-grunbaum-k10",
+   "data/inchbald-source.json",
+   "7",
+   "3",
+   "data/free-patch-A2.json",
+   "A2"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 38.2,
+  "secs_kern": 39.9,
+  "stdout_lines": 4,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 1,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": false,
+  "stdout_orig_eq_stored": false,
+  "diff_kern_stored": "line 1: 'mode A2 counts {\"A\\'\": 147, \\'A\\': 196}' vs 'mode A2 counts {\\'A\\': 196, \"A\\'\": 147}'",
+  "files": [
+   {
+    "file": "2026-11-17-get-mixing/data/free-patch-A2.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 6580
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "get-mixing-free-patch-AB",
+  "group": "G5+G6",
+  "study": "2026-11-17-get-mixing",
+  "script": "scripts/free_patch.py",
+  "args": [
+   "../2026-11-15-grunbaum-k10",
+   "data/inchbald-source.json",
+   "7",
+   "3",
+   "data/free-patch-AB.json",
+   "AB"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 24.0,
+  "secs_kern": 39.2,
+  "stdout_lines": 4,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 1,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": false,
+  "stdout_orig_eq_stored": false,
+  "diff_kern_stored": "line 1: \"mode AB counts {'B': 197, 'A': 146}\" vs \"mode AB counts {'A': 146, 'B': 197}\"",
+  "files": [
+   {
+    "file": "2026-11-17-get-mixing/data/free-patch-AB.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 8313
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "get-mixing-layers",
+  "group": "G5+G6",
+  "study": "2026-11-17-get-mixing",
+  "script": "scripts/layers.py",
+  "args": [
+   "../2026-11-15-grunbaum-k10",
+   "data/inchbald-source.json",
+   "data/layers.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 15.5,
+  "secs_kern": 24.8,
+  "stdout_lines": 90,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 25,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-get-mixing/data/layers.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 105149
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "get-mixing-patch-abc",
+  "group": "G5+G6",
+  "study": "2026-11-17-get-mixing",
+  "script": "scripts/patch.py",
+  "args": [
+   "../2026-11-15-grunbaum-k10",
+   "data/inchbald-source.json",
+   "data/layers.json",
+   "ACBCCABBA",
+   "4",
+   "data/patch-abc.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 11.7,
+  "secs_kern": 12.8,
+  "stdout_lines": 4,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 1,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-get-mixing/data/patch-abc.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 10157
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "get-mixing-patch-fibonacci",
+  "group": "G5+G6",
+  "study": "2026-11-17-get-mixing",
+  "script": "scripts/patch.py",
+  "args": [
+   "../2026-11-15-grunbaum-k10",
+   "data/inchbald-source.json",
+   "data/layers.json",
+   "ABAABABAABAAB",
+   "4",
+   "data/patch-fibonacci.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 12.9,
+  "secs_kern": 11.2,
+  "stdout_lines": 4,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 1,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-get-mixing/data/patch-fibonacci.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 14763
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "get-mixing-pilot-patch",
+  "group": "G5+G6",
+  "study": "2026-11-17-get-mixing",
+  "script": "scripts/patch.py",
+  "args": [
+   "../2026-11-15-grunbaum-k10",
+   "data/inchbald-source.json",
+   "data/layers.json",
+   "ABAAB",
+   "3",
+   "data/pilot-patch.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 2.2,
+  "secs_kern": 2.5,
+  "stdout_lines": 4,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 1,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-17-get-mixing/data/pilot-patch.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 3285
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "get-mixing-pilot_lib",
+  "group": "G5+G6",
+  "study": "2026-11-17-get-mixing",
+  "script": "scripts/pilot_lib.py",
+  "args": [
+   "../2026-11-15-grunbaum-k10",
+   "data/inchbald-source.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 2.0,
+  "secs_kern": 2.0,
+  "stdout_lines": 10,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 3,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "get-palomar-gen_data",
+  "group": "G6",
+  "study": "2026-11-17-get-palomar",
+  "script": "gen_data.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 1.0,
+  "secs_kern": 0.7,
+  "stdout_lines": 3,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-17-get-palomar/data/get-data.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 14366
+   },
+   {
+    "file": "2026-11-17-get-palomar/lean/GET/Data.lean",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 5509
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "golden-cuts-s10_honeycomb_cubes",
+  "group": "G4",
+  "study": "2026-11-03-golden-cuts-beyond-plato",
+  "script": "s10_honeycomb_cubes.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 2.6,
+  "secs_kern": 2.1,
+  "stdout_lines": 17,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-golden-cuts-beyond-plato/data/s10-honeycomb-cubes.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 3696
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "golden-cuts-s11_star_polytopes",
+  "group": "G4",
+  "study": "2026-11-03-golden-cuts-beyond-plato",
+  "script": "s11_star_polytopes.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 95.6,
+  "secs_kern": 91.5,
+  "stdout_lines": 50,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 38,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-golden-cuts-beyond-plato/data/s11-star-polytopes.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 9017
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "golden-cuts-s9_why_not_cubes-A",
+  "group": "G4",
+  "study": "2026-11-03-golden-cuts-beyond-plato",
+  "script": "s9_why_not_cubes.py",
+  "args": [
+   "A"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 8.8,
+  "secs_kern": 6.5,
+  "stdout_lines": 4,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 1,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-golden-cuts-beyond-plato/data/s9-why-not-cubes-A.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 854
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "golden-cuts-s9_why_not_cubes-B",
+  "group": "G4",
+  "study": "2026-11-03-golden-cuts-beyond-plato",
+  "script": "s9_why_not_cubes.py",
+  "args": [
+   "B"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 13.8,
+  "secs_kern": 11.4,
+  "stdout_lines": 10,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 1,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-golden-cuts-beyond-plato/data/s9-why-not-cubes-B.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 2660
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "golden-cuts-s9_why_not_cubes-C",
+  "group": "G4",
+  "study": "2026-11-03-golden-cuts-beyond-plato",
+  "script": "s9_why_not_cubes.py",
+  "args": [
+   "C"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 55.9,
+  "secs_kern": 48.8,
+  "stdout_lines": 108,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 11,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-golden-cuts-beyond-plato/data/s9-why-not-cubes-C.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 16164
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "golden-cuts-s9_why_not_cubes-D",
+  "group": "G4",
+  "study": "2026-11-03-golden-cuts-beyond-plato",
+  "script": "s9_why_not_cubes.py",
+  "args": [
+   "D"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 113.0,
+  "secs_kern": 120.8,
+  "stdout_lines": 46,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 31,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-golden-cuts-beyond-plato/data/s9-why-not-cubes-D.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 69159
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "golden-cuts-s9_why_not_cubes-E",
+  "group": "G4",
+  "study": "2026-11-03-golden-cuts-beyond-plato",
+  "script": "s9_why_not_cubes.py",
+  "args": [
+   "E"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 5.9,
+  "secs_kern": 3.2,
+  "stdout_lines": 18,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 1,
+  "diff_kern_orig": "none",
+  "files": [
+   {
+    "file": "2026-11-03-golden-cuts-beyond-plato/data/s9-why-not-cubes-E.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 3176
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "grunbaum-k10-cover-gnomon",
+  "group": "G6",
+  "study": "2026-11-15-grunbaum-k10",
+  "script": "scripts/cover_surface.py",
+  "args": [
+   "data/gnomon.json",
+   "data/cover-gnomon.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 42.0,
+  "secs_kern": 43.2,
+  "stdout_lines": 19,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-15-grunbaum-k10/data/cover-gnomon.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 5736
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "grunbaum-k10-cover6",
+  "group": "G6",
+  "study": "2026-11-15-grunbaum-k10",
+  "script": "scripts/cover_surface.py",
+  "args": [
+   "data/search6.json",
+   "data/cover6.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 21.4,
+  "secs_kern": 22.1,
+  "stdout_lines": 10,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-15-grunbaum-k10/data/cover6.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 2386
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "grunbaum-k10-gnomon-sources",
+  "group": "G6",
+  "study": "2026-11-15-grunbaum-k10",
+  "script": "scripts/gnomon_source.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 191.8,
+  "secs_kern": 188.2,
+  "stdout_lines": 19,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-15-grunbaum-k10/data/gnomon-sources.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1200
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "grunbaum-k10-search6-pilot",
+  "group": "G6",
+  "study": "2026-11-15-grunbaum-k10",
+  "script": "scripts/k10_search.py",
+  "args": [
+   "6",
+   "3",
+   "data/search6-pilot.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 1.6,
+  "secs_kern": 1.5,
+  "stdout_lines": 8,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 4,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-15-grunbaum-k10/data/search6-pilot.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 18345
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "grunbaum-k10-vclass3",
+  "group": "G6",
+  "study": "2026-11-15-grunbaum-k10",
+  "script": "scripts/vclass3.py",
+  "args": [
+   "data/vclass3.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 21.1,
+  "secs_kern": 24.2,
+  "stdout_lines": 5,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 1,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-15-grunbaum-k10/data/vclass3.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 10920
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "grunbaum-k10-verify",
+  "group": "G6",
+  "study": "2026-11-15-grunbaum-k10",
+  "script": "scripts/verify_k10.py",
+  "args": [
+   "data/tile12.json",
+   "data/search6.json",
+   "data/verify.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 42.0,
+  "secs_kern": 38.0,
+  "stdout_lines": 4,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-15-grunbaum-k10/data/verify.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 1876
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "octet-special-exact",
+  "group": "G4",
+  "study": "2026-10-23-shadow-forms",
+  "script": "octet_special_exact.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 125.8,
+  "secs_kern": 64.6,
+  "stdout_lines": 15,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "pds-line-pilot",
+  "group": "G4",
+  "study": "2026-11-12-pds-hopscotch-line",
+  "script": "scripts/pds_line.py",
+  "args": [
+   "--pilot"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 32.3,
+  "secs_kern": 32.8,
+  "stdout_lines": 39,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 6,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": false,
+  "stdout_orig_eq_stored": false,
+  "diff_kern_stored": "line 27: 'ok   book value 0.924165 (400-point grid, step 2.4e-4) agrees within one grid step; exact value corrects it diff -2.63e-05' vs 'FAIL book value 0.924165 reproduced '",
+  "files": [
+   {
+    "file": "2026-11-12-pds-hopscotch-line/data/pds-line-pilot.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 2909
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "pilot-fans-law",
+  "group": "G2",
+  "study": "2026-11-13-platonic-fans-law",
+  "script": "scripts/fans_law.py",
+  "args": [
+   "../2026-11-13-platonic-disc-ranking/data/registry-solids.json",
+   "../2026-11-13-platonic-disc-ranking/data/disc-ranking.json",
+   "data/fans-law.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 21.9,
+  "secs_kern": 18.9,
+  "stdout_lines": 106,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 31,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-11-13-platonic-fans-law/data/fans-law.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false,
+    "bytes": 2905729
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "pilot-ocd-octet-step12",
+  "group": "G3",
+  "study": "2026-10-18-ocd-octet",
+  "script": "step12_exact_faces.py",
+  "args": [],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 24.4,
+  "secs_kern": 21.9,
+  "stdout_lines": 13,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": true,
+  "time_fields_masked": 0,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "2026-10-18-ocd-octet/data/step12-faces.json",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true,
+    "bytes": 85659
+   }
+  ],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "pilot-paradigm-exact-hemi_exact",
+  "group": "G1",
+  "study": "2026-11-13-paradigm-exact",
+  "script": "scripts/hemi_exact.py",
+  "args": [
+   "../2026-11-11-hemi-rd-build/data/dicto-build-worldpoly.json"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 11.0,
+  "secs_kern": 12.2,
+  "stdout_lines": 33,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 1,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [],
+  "status": "replayed",
+  "ok": true
+ },
+ {
+  "case": "pilot-paradigm-exact-scutoid_exact",
+  "group": "G1",
+  "study": "2026-11-13-paradigm-exact",
+  "script": "scripts/scutoid_exact.py",
+  "args": [
+   "all"
+  ],
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 27.0,
+  "secs_kern": 21.7,
+  "stdout_lines": 41,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_orig_raw": false,
+  "time_fields_masked": 1,
+  "diff_kern_orig": "none",
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "diff_kern_stored": "none",
+  "files": [],
+  "status": "replayed",
+  "ok": true
+ }
+]

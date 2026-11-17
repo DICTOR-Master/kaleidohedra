@@ -1,0 +1,33 @@
+{
+ "case": "grunbaum-k10-search6-pilot",
+ "group": "G6",
+ "study": "2026-11-15-grunbaum-k10",
+ "script": "scripts/k10_search.py",
+ "args": [
+  "6",
+  "3",
+  "data/search6-pilot.json"
+ ],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 1.6,
+ "secs_kern": 1.5,
+ "stdout_lines": 8,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": false,
+ "time_fields_masked": 4,
+ "diff_kern_orig": "none",
+ "stdout_kern_eq_stored": true,
+ "stdout_orig_eq_stored": true,
+ "diff_kern_stored": "none",
+ "files": [
+  {
+   "file": "2026-11-15-grunbaum-k10/data/search6-pilot.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 18345
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

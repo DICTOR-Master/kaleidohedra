@@ -1,0 +1,9 @@
+PASS Unborn Axes (mu ~ 1.381966): shortest selecting vectors have norm 15, e.g. (-1, -1, 0, 2, 3, 0) (exact)
+PASS Icosaxes (mu ~ 1.618034): shortest selecting vectors have norm 2, e.g. (-1, 0, 0, 0, -1, 0) (exact)
+PASS truncated octahedron (mu ~ 1.500000): shortest selecting vectors have norm 5, e.g. (-2, -1, 0, 0, 0, 0) (exact)
+PASS cut cube 2 + 1/phi^2 (mu ~ 2.381966): shortest selecting vectors have norm 44, e.g. (-1, -1, -1, 3, 4, 4) (exact)
+PASS Greater Golden Cut Cube (mu ~ 2.304114): no selecting vector in {-4..4}^6
+PASS truncated cube (mu ~ 2.414214): shortest selecting vectors have norm 3, e.g. (-1, -1, 0, 0, 0, -1) (exact)
+PASS Lesser Golden Cut Cube (mu ~ 2.533609): no selecting vector in {-4..4}^6
+PASS cut cube 2 + 1/phi (mu ~ 2.618034): shortest selecting vectors have norm 4, e.g. (-1, -1, -1, 0, 0, 1) (exact)
+8/8 checks pass -> data/s4-min-norm.json

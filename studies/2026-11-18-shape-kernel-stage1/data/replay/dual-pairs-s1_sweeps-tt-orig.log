@@ -1,0 +1,31 @@
+('tetrahedron', 'tetrahedron (polar)') r2 1/3 rho2 1 R2 3
+PASS tt: polar P* = conv(N) has 4 corners, midradii multiply to 1 (rho^2 rho*^2 = 1)
+PASS tt: S(mu) at mu = 1/3 (~0.333333) is the tetrahedron (polar) (dual end) (4 corners)
+PASS tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (4 corners)
+    tetrahedron (polar) (dual end) | mu 1/3 ~0.333333 | nu 1 ~1.000000
+PASS tt: S(mu) at mu = 5 - 2√5 (~0.527864) is the Lesser Golden Cut Tetrahedron (dual side) (12 corners)
+PASS tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)
+    Lesser Golden Cut Tetrahedron (dual side) | mu 5 - 2√5 ~0.527864 | nu 15 - 6√5 ~1.583592
+PASS tt: S(mu) at mu = 3/5 (~0.600000) is the truncated tetrahedron (Archimedean, dual side) (12 corners)
+PASS tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)
+    truncated tetrahedron (Archimedean, dual side) | mu 3/5 ~0.600000 | nu 9/5 ~1.800000
+PASS tt: S(mu) at mu = 3/11 + 2/11√5 (~0.679285) is the Greater Golden Cut Tetrahedron (dual side) (12 corners)
+PASS tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)
+    Greater Golden Cut Tetrahedron (dual side) | mu 3/11 + 2/11√5 ~0.679285 | nu 9/11 + 6/11√5 ~2.037855
+PASS tt: S(mu) at mu = 1 (~1.000000) is the rectified (octahedron) (6 corners)
+PASS tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)
+    rectified (octahedron) | mu 1 ~1.000000 | nu 3 ~3.000000
+PASS tt: S(mu) at mu = -3 + 2√5 (~1.472136) is the Greater Golden Cut Tetrahedron (12 corners)
+PASS tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)
+    Greater Golden Cut Tetrahedron | mu -3 + 2√5 ~1.472136 | nu -9 + 6√5 ~4.416408
+PASS tt: S(mu) at mu = 5/3 (~1.666667) is the truncated tetrahedron (Archimedean) (12 corners)
+PASS tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)
+    truncated tetrahedron (Archimedean) | mu 5/3 ~1.666667 | nu 5 ~5.000000
+PASS tt: S(mu) at mu = 1 + 2/5√5 (~1.894427) is the Lesser Golden Cut Tetrahedron (12 corners)
+PASS tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)
+    Lesser Golden Cut Tetrahedron | mu 1 + 2/5√5 ~1.894427 | nu 3 + 6/5√5 ~5.683282
+PASS tt: S(mu) at mu = 3 (~3.000000) is the tetrahedron (P end) (4 corners)
+PASS tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (4 corners)
+    tetrahedron (P end) | mu 3 ~3.000000 | nu 9 ~9.000000
+PASS tt: the stages are in increasing mu order (dual end -> P end), sweep monotone
+20/20 checks pass -> data/s1-sweep-tt.json

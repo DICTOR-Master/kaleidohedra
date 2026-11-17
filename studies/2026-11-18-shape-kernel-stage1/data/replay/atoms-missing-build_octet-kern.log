@@ -1,0 +1,123 @@
+
+=== gbpc
+GBPC corners matched: [['1/9 + (-1/9)*sqrt(5)', '0', '-2/3'], ['1/3 + (-1/3)*sqrt(5)', '0', '-2/3'], ['2/9 + (-2/9)*sqrt(5)', '2/9', '-1/3 + (-1/9)*sqrt(5)'], ['2/9 + (-2/9)*sqrt(5)', '1/3 + (-1/9)*sqrt(5)', '-2/3']]
+CHECK ok   piece-gbpc: squared edges = stated base 8/27 - 8sqrt5/81 (x3) and side 20/81 - 8sqrt5/81 (x3)
+CHECK ok   piece-gbpc: the three base edges form the base triangle (apex has three side edges)
+CHECK ok   piece-gbpc: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-gbpc: every face planar (exact)
+CHECK ok   piece-gbpc: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-gbpc: volume -44/2187 + (20/2187)*sqrt(5) = stated -44/2187 + (20/2187)*sqrt(5)
+CHECK ok   piece-gbpc: f-vector (4, 6, 4) = stated (4, 6, 4)
+WROTE piece-gbpc: V4 E6 F4 {3: 4} volume -44/2187 + (20/2187)*sqrt(5) ~ 0.000330
+    (0 s)
+
+=== bull
+CHECK ok   piece-bull-horns-og-adaptor: Voronoi cell of the hole has 10 corners (stated)
+CHECK ok   piece-bull-horns-og-adaptor: exactly six OG copies bite the cell (stated six), at centre distances [0.7191, 1.017] (stated 0.7191, 1.0170)
+CHECK ok   piece-bull-horns-og-adaptor: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-bull-horns-og-adaptor: every face planar (exact)
+CHECK ok   piece-bull-horns-og-adaptor: outward orientation (exact volume > 0)
+CHECK ok   piece-bull-horns-og-adaptor: volume 18728/41553 + (-6296/41553)*sqrt(5) = stated 18728/41553 + (-6296/41553)*sqrt(5)
+WROTE piece-bull-horns-og-adaptor: V74 E124 F52 {3: 16, 4: 16, 5: 12, 7: 4, 12: 4} volume 18728/41553 + (-6296/41553)*sqrt(5) ~ 0.111898
+CHECK ok   piece-bull-horns-og-adaptor: surface volume = vol(cell) - sum vol(cell & body), computed separately by convex intersections (18728/41553 + (-6296/41553)*sqrt(5))
+    (7 s)
+
+=== keyed
+CHECK ok   piece-keyed-octahedron: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-keyed-octahedron: every face planar (exact)
+CHECK ok   piece-keyed-octahedron: outward orientation (exact volume > 0)
+CHECK ok   piece-keyed-octahedron: volume -32/9 + (64/27)*sqrt(5) = stated -32/9 + (64/27)*sqrt(5)
+WROTE piece-keyed-octahedron: V26 E72 F48 {3: 48} volume -32/9 + (64/27)*sqrt(5) ~ 1.744754
+    (0 s)
+
+=== dented
+CHECK ok   dented tetrahedron: 4 keys enter T+ (stated 4)
+CHECK ok   piece-dented-tetrahedron-left: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-dented-tetrahedron-left: every face planar (exact)
+CHECK ok   piece-dented-tetrahedron-left: outward orientation (exact volume > 0)
+CHECK ok   piece-dented-tetrahedron-left: volume 64/27 + (-8/9)*sqrt(5) = stated 64/27 + (-8/9)*sqrt(5)
+WROTE piece-dented-tetrahedron-left: V20 E42 F24 {3: 12, 4: 12} volume 64/27 + (-8/9)*sqrt(5) ~ 0.382754
+CHECK ok   piece-dented-tetrahedron-left: surface volume = vol(cell) - sum vol(cell & body), computed separately by convex intersections (64/27 + (-8/9)*sqrt(5))
+CHECK ok   piece-dented-tetrahedron-right: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-dented-tetrahedron-right: every face planar (exact)
+CHECK ok   piece-dented-tetrahedron-right: outward orientation (exact volume > 0)
+CHECK ok   piece-dented-tetrahedron-right: volume 64/27 + (-8/9)*sqrt(5) = stated 64/27 + (-8/9)*sqrt(5)
+WROTE piece-dented-tetrahedron-right: V20 E42 F24 {3: 12, 4: 12} volume 64/27 + (-8/9)*sqrt(5) ~ 0.382754
+CHECK ok   piece-dented-tetrahedron: chiral (symmetry group of order 12 has no mirror, so L and R are mirror images, not congruent by a turn)
+CHECK ok   piece-dented-tetrahedron: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-dented-tetrahedron: every face planar (exact)
+CHECK ok   piece-dented-tetrahedron: outward orientation (exact volume > 0)
+CHECK ok   piece-dented-tetrahedron: volume 128/27 + (-16/9)*sqrt(5) = stated 128/27 + (-16/9)*sqrt(5)
+WROTE piece-dented-tetrahedron: V40 E84 F48 {3: 24, 4: 24} volume 128/27 + (-16/9)*sqrt(5) ~ 0.765509
+    (1 s)
+
+=== w
+CHECK ok   piece-w: the rhombic dodecahedron round the octet vertex (0, 0, R) has the cell volume (32 + 16sqrt5)/27
+CHECK ok   piece-w: six golden envelopes bite the rhombic dodecahedron (6)
+CHECK ok   piece-w: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-w: every face planar (exact)
+CHECK ok   piece-w: outward orientation (exact volume > 0)
+CHECK ok   piece-w: volume 352/27 + (-16/3)*sqrt(5) = stated 352/27 + (-16/3)*sqrt(5)
+WROTE piece-w: V80 E144 F66 {3: 24, 4: 30, 8: 12} volume 352/27 + (-16/3)*sqrt(5) ~ 1.111341
+CHECK ok   piece-w: surface volume = vol(cell) - sum vol(cell & body), computed separately by convex intersections (352/27 + (-16/3)*sqrt(5))
+CHECK ok   piece-w: symmetry Th (order 24) = stated m3-bar (Th)
+      (Fable review 2 lists W with 80 corners, 144 edges, 66 faces; here V80 E144 F66)
+    (1 s)
+
+=== tetartoid
+CHECK ok   piece-tetartoid-core: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-tetartoid-core: every face planar (exact)
+CHECK ok   piece-tetartoid-core: outward orientation (exact volume > 0; every face plane supporting, solid inside)
+CHECK ok   piece-tetartoid-core: volume -146/27 + (22/9)*sqrt(5) = stated -146/27 + (22/9)*sqrt(5)
+CHECK ok   piece-tetartoid-core: f-vector (20, 30, 12) = stated (20, 30, 12)
+CHECK ok   piece-tetartoid-core: faces by sides {5: 12} = stated {5: 12}
+WROTE piece-tetartoid-core: V20 E30 F12 {5: 12} volume -146/27 + (22/9)*sqrt(5) ~ 0.058537
+CHECK ok   piece-tetartoid-core: edge lengths [0.157, 0.242, 0.299] = stated 0.157, 0.242, 0.299
+CHECK ok   piece-tetartoid-core: symmetry T (order 12) = stated T
+    (0 s)
+
+=== mg
+CHECK ok   piece-mirror-middle-piece-mg: hull of the star and its mirror = stated (2 + 2sqrt5)/81
+CHECK ok   piece-mirror-middle-piece-mg: the hull meets OG in the stated (-155 + 101sqrt5)/4617
+CHECK ok   piece-mirror-middle-piece-mg: the hull meets OG twin in the stated (-155 + 101sqrt5)/4617
+CHECK ok   piece-mirror-middle-piece-mg: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-mirror-middle-piece-mg: every face planar (exact)
+CHECK ok   piece-mirror-middle-piece-mg: outward orientation (exact volume > 0)
+CHECK ok   piece-mirror-middle-piece-mg: volume 424/4617 + (-88/4617)*sqrt(5) = stated 424/4617 + (-88/4617)*sqrt(5)
+WROTE piece-mirror-middle-piece-mg: V19 E39 F22 {3: 10, 4: 12} volume 424/4617 + (-88/4617)*sqrt(5) ~ 0.049215
+CHECK ok   piece-mirror-middle-piece-mg: surface volume = vol(cell) - sum vol(cell & body), computed separately by convex intersections (424/4617 + (-88/4617)*sqrt(5))
+    (1 s)
+
+=== fill1
+CHECK ok   piece-dicto-fill-set-1-f1: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-dicto-fill-set-1-f1: every face planar (exact)
+CHECK ok   piece-dicto-fill-set-1-f1: outward orientation (exact volume > 0)
+CHECK ok   piece-dicto-fill-set-1-f1: volume 968/81 + (-392/81)*sqrt(5) = stated 968/81 + (-392/81)*sqrt(5)
+WROTE piece-dicto-fill-set-1-f1: V119 E195 F78 {3: 30, 4: 12, 5: 18, 6: 6, 7: 6, 14: 6} volume 968/81 + (-392/81)*sqrt(5) ~ 1.129153
+CHECK ok   piece-dicto-fill-set-1-f1: surface volume = vol(cell) - sum vol(cell & body), computed separately by convex intersections (968/81 + (-392/81)*sqrt(5))
+    (5 s)
+
+=== fill2
+CHECK ok   piece-dicto-fill-set-2-f1: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-dicto-fill-set-2-f1: every face planar (exact)
+CHECK ok   piece-dicto-fill-set-2-f1: outward orientation (exact volume > 0)
+CHECK ok   piece-dicto-fill-set-2-f1: volume 704/81 + (-272/81)*sqrt(5) = stated 704/81 + (-272/81)*sqrt(5)
+WROTE piece-dicto-fill-set-2-f1: V125 E213 F90 {3: 42, 4: 18, 5: 18, 7: 6, 16: 6} volume 704/81 + (-272/81)*sqrt(5) ~ 1.182587
+CHECK ok   piece-dicto-fill-set-2-f1: surface volume = vol(cell) - sum vol(cell & body), computed separately by convex intersections (704/81 + (-272/81)*sqrt(5))
+    (5 s)
+
+=== fill34
+CHECK ok   piece-dicto-fill-set-2-f2-left: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-dicto-fill-set-2-f2-left: every face planar (exact)
+CHECK ok   piece-dicto-fill-set-2-f2-left: outward orientation (exact volume > 0)
+CHECK ok   piece-dicto-fill-set-2-f2-left: volume 352/81 + (-136/81)*sqrt(5) = stated 352/81 + (-136/81)*sqrt(5)
+WROTE piece-dicto-fill-set-2-f2-left: V40 E72 F34 {3: 28, 10: 6} volume 352/81 + (-136/81)*sqrt(5) ~ 0.591293
+CHECK ok   piece-dicto-fill-set-2-f2-left: surface volume = vol(cell) - sum vol(cell & body), computed separately by convex intersections (352/81 + (-136/81)*sqrt(5))
+CHECK ok   piece-dicto-fill-set-2-f3-right: closed surface (every edge in exactly two faces, once each way)
+CHECK ok   piece-dicto-fill-set-2-f3-right: every face planar (exact)
+CHECK ok   piece-dicto-fill-set-2-f3-right: outward orientation (exact volume > 0)
+CHECK ok   piece-dicto-fill-set-2-f3-right: volume 352/81 + (-136/81)*sqrt(5) = stated 352/81 + (-136/81)*sqrt(5)
+WROTE piece-dicto-fill-set-2-f3-right: V40 E72 F34 {3: 28, 10: 6} volume 352/81 + (-136/81)*sqrt(5) ~ 0.591293
+CHECK ok   F2: chiral (symmetry group of order 12 has no mirror), so F2 and F3 are a left and a right hand
+    (2 s)
+SUMMARY 77 ok, 0 FAIL

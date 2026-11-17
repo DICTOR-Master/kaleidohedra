@@ -1,0 +1,74 @@
+case                                         group  status                             s orig/kern stdout k=o k=stored | files k=o k=stored
+pilot-paradigm-exact-hemi_exact              G1     ok replayed                        11.0/12.2   True  True  | 0/0 0/0
+pilot-paradigm-exact-scutoid_exact           G1     ok replayed                        27.0/21.7   True  True  | 0/0 0/0
+pilot-fans-law                               G2     ok replayed                        21.9/18.9   True  True  | 1/1 0/1
+pilot-ocd-octet-step12                       G3     ok replayed                        24.4/21.9   True  True  | 1/1 1/1
+octet-special-exact                          G4     ok replayed                       125.8/64.6   True  True  | 0/0 0/0
+pds-line-pilot                               G4     ok replayed                        32.3/32.8   True  False | 1/1 0/1
+      stored log differs (orig too: True): line 27: 'ok   book value 0.924165 (400-point grid, step 2.4e-4) agrees within one grid step; exact value corrects it diff -2.63e-05' vs 'FAIL book value 0.924165 reproduced '
+golden-cuts-s10_honeycomb_cubes              G4     ok replayed                         2.6/2.1    True        | 1/1 1/1
+golden-cuts-s11_star_polytopes               G4     ok replayed                        95.6/91.5   True        | 1/1 1/1
+golden-cuts-s9_why_not_cubes-A               G4     ok replayed                         8.8/6.5    True        | 1/1 1/1
+golden-cuts-s9_why_not_cubes-B               G4     ok replayed                        13.8/11.4   True        | 1/1 0/1
+golden-cuts-s9_why_not_cubes-C               G4     ok replayed                        55.9/48.8   True        | 1/1 1/1
+golden-cuts-s9_why_not_cubes-D               G4     ok replayed                       113.0/120.8  True        | 1/1 1/1
+golden-cuts-s9_why_not_cubes-E               G4     ok replayed                         5.9/3.2    True        | 1/1 1/1
+6d-golden-cubes-s1_sanity_cut_project        G4     ok replayed                        10.3/8.2    True        | 1/1 1/1
+6d-golden-cubes-s2_field_signature           G4     ok replayed                         7.7/7.1    True        | 1/1 1/1
+6d-golden-cubes-s3_six_d                     G4     ok replayed                        20.0/19.1   True        | 1/1 1/1
+6d-golden-cubes-s4_min_norm                  G4     ok replayed                         2.7/2.5    True        | 1/1 1/1
+dual-pairs-s1_sweeps-co                      G4     ok replayed                         4.5/5.1    True        | 1/1 1/1
+dual-pairs-s1_sweeps-di                      G4     ok replayed                        23.2/18.3   True        | 1/1 1/1
+dual-pairs-s1_sweeps-tt                      G4     ok replayed                         3.4/3.0    True        | 1/1 1/1
+dual-pairs-s2_di_lattice                     G4     ok replayed                       119.9/100.6  True        | 1/1 1/1
+dual-pairs-s3_tt                             G4     ok replayed                         7.8/9.4    True        | 1/1 1/1
+dual-pairs-s4_og_dharma                      G4     ok replayed                       155.9/143.4  True        | 1/1 1/1
+dual-pairs-s4b_og_lattice                    G4     ok replayed                       134.4/99.1   True        | 1/1 1/1
+dual-pairs-s4c_relatives-L                   G4     ok replayed                       134.9/89.3   True        | 1/1 1/1
+dual-pairs-s4c_relatives-G                   G4     ok replayed                       117.6/100.2  True        | 1/1 1/1
+dual-pairs-s5_fourd                          G4     ok replayed                        10.6/11.6   True        | 1/1 0/1
+dual-pairs-s6_cycles-co                      G4     ok replayed                        21.1/25.5   True        | 1/1 0/1
+dual-pairs-s6_cycles-di                      G4     ok replayed                        75.1/57.0   True        | 1/1 0/1
+dual-pairs-s6_cycles-tt                      G4     ok replayed                         8.5/9.0    True        | 1/1 0/1
+dual-pairs-s7_hyper                          G4     ok replayed                        10.8/6.3    True        | 1/1 1/1
+dual-pairs-s8_rd_to                          G4     ok replayed                        34.8/30.4   True        | 1/1 1/1
+get-mixing-pilot_lib                         G5+G6  ok replayed                         2.0/2.0    True  True  | 0/0 0/0
+get-mixing-layers                            G5+G6  ok replayed                        15.5/24.8   True  True  | 1/1 1/1
+get-mixing-pilot-patch                       G5+G6  ok replayed                         2.2/2.5    True  True  | 1/1 1/1
+get-mixing-patch-abc                         G5+G6  ok replayed                        11.7/12.8   True  True  | 1/1 1/1
+get-mixing-patch-fibonacci                   G5+G6  ok replayed                        12.9/11.2   True  True  | 1/1 1/1
+get-mixing-free-patch-A2                     G5+G6  ok replayed                        38.2/39.9   True  False | 1/1 1/1
+      stored log differs (orig too: True): line 1: 'mode A2 counts {"A\'": 147, \'A\': 196}' vs 'mode A2 counts {\'A\': 196, "A\'": 147}'
+get-mixing-free-patch-AB                     G5+G6  ok replayed                        24.0/39.2   True  False | 1/1 1/1
+      stored log differs (orig too: True): line 1: "mode AB counts {'B': 197, 'A': 146}" vs "mode AB counts {'A': 146, 'B': 197}"
+get-mixing-decorated                         G5+G6  ok replayed                        49.6/58.4   True  True  | 1/1 1/1
+get-mixing-decorated-sft                     G5+G6  ok replayed                        36.3/35.4   True  True  | 1/1 1/1
+grunbaum-k10-vclass3                         G6     ok replayed                        21.1/24.2   True  True  | 1/1 1/1
+grunbaum-k10-search6-pilot                   G6     ok replayed                         1.6/1.5    True  True  | 1/1 1/1
+grunbaum-k10-cover6                          G6     ok replayed                        21.4/22.1   True  True  | 1/1 1/1
+grunbaum-k10-cover-gnomon                    G6     ok replayed                        42.0/43.2   True  True  | 1/1 1/1
+grunbaum-k10-verify                          G6     ok replayed                        42.0/38.0   True  True  | 1/1 1/1
+grunbaum-k10-gnomon-sources                  G6     ok replayed                       191.8/188.2  True  True  | 1/1 1/1
+get-palomar-gen_data                         G6     ok replayed                         1.0/0.7    True        | 2/2 2/2
+atoms-missing-2-build_keyed                  G7+G2  ok replayed                        10.6/7.6    True  True  | 8/8 4/8
+atoms-missing-2-build_bodhi_frog             G7+G2  ok replayed                         2.0/1.8    True  True  | 10/10 5/10
+atoms-missing-2-build_closed                 G7+G2  ok replayed                        12.3/12.9   True  True  | 22/22 11/22
+atoms-missing-2-build_dharma2                G7+G2  ok replayed                         1.2/1.8    True  True  | 10/10 5/10
+atoms-missing-2-build_icosa                  G7+G2  ok replayed                         1.9/3.0    True  True  | 16/16 8/16
+atoms-missing-2-build_julias                 G7+G2  ok replayed                         5.0/5.7    True  True  | 18/18 9/18
+atoms-missing-2-build_narcissus              G7+G2  ok replayed                         0.7/1.4    True  True  | 4/4 2/4
+atoms-missing-2-build_star_og                G7+G2  ok replayed                        13.2/10.4   True  True  | 8/8 4/8
+atoms-missing-build_dharma                   G7+G2  -- original fails on this machine    0.4/0.4                | 0/0 0/0
+       ["FileNotFoundError: [Errno 2] No such file or directory: '<stage1>/replay/cases/atoms-missing-build_dharma/orig/studies/2026-11-17-atoms-missing/scripts/../ref/dicto-hecatodihedron.json'"]
+atoms-missing-build_early                    G7+G2  -- original fails on this machine    0.7/0.9                | 0/0 0/0
+       ["FileNotFoundError: [Errno 2] No such file or directory: '<stage1>/replay/cases/atoms-missing-build_early/orig/studies/2026-11-17-atoms-missing/scripts/../ref/dicto-dodeca-13-wedge.json'"]
+atoms-missing-build_hexoct                   G7+G2  ok replayed                        22.5/27.5   True  True  | 16/16 16/16
+atoms-missing-build_octet                    G7+G2  ok replayed                        32.3/23.1   True  False | 26/26 24/26
+      stored log differs (orig too: True): line 123: 'SUMMARY 77 ok, 0 FAIL' vs ''
+atoms-missing-build_mine_shield              G7+G2  -- original fails on this machine    0.3/0.1                | 0/0 0/0
+       ["FileNotFoundError: [Errno 2] No such file or directory: '<stage1>/replay/cases/atoms-missing-build_mine_shield/orig/studies/2026-11-17-atoms-missing/scripts/../ref/dicto-hecatodihedron.json'"]
+atoms-missing-build_mine_xy                  G7+G2  ok replayed                         0.8/0.7    True  True  | 4/4 4/4
+atoms-missing-build_mine_towers              G7+G2  ok replayed                         5.0/2.7    True  True  | 18/18 18/18
+atoms-missing-build_mine_polar               G7+G2  ok replayed                         3.7/1.8    True  True  | 18/18 18/18
+cases 64: replayed 61, kern = orig 61, not counted 3 (over the limit 0, original fails here 3), not run 0
+FINAL ok: every replayed run gives byte-identical output with the kernel (times masked)

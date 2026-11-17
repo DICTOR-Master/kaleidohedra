@@ -1,0 +1,133 @@
+{
+ "case": "atoms-missing-build_mine_polar",
+ "group": "G7+G2",
+ "study": "2026-11-17-atoms-missing",
+ "script": "build_mine.py",
+ "args": [
+  "polar"
+ ],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 3.7,
+ "secs_kern": 1.8,
+ "stdout_lines": 61,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": true,
+ "time_fields_masked": 0,
+ "diff_kern_orig": "none",
+ "stdout_kern_eq_stored": true,
+ "stdout_orig_eq_stored": true,
+ "diff_kern_stored": "none",
+ "files": [
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-polar-cleo-towers.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 25209
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/piece-polar-cleo-towers.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 5597
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-core-ray.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 3004
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-core-ray.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 442
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-1-on-4-gon.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 5554
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-1-on-4-gon.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 1036
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-2-on-5-gon.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 5595
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-2-on-5-gon.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 1144
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-2-on-6-gon.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 5809
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-2-on-6-gon.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 1149
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-3-on-4-gon.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 3708
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-3-on-4-gon.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 646
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-4-on-3-gon.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 3523
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-4-on-3-gon.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 527
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-5-on-3-gon.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 3409
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-5-on-3-gon.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 585
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-5-on-5-gon.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 4370
+  },
+  {
+   "file": "2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-5-on-5-gon.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 857
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

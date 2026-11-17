@@ -1,0 +1,34 @@
+{
+ "case": "get-mixing-decorated-sft",
+ "group": "G5+G6",
+ "study": "2026-11-17-get-mixing",
+ "script": "scripts/decorated_sft.py",
+ "args": [
+  "../2026-11-15-grunbaum-k10",
+  "data/inchbald-source.json",
+  "data/decorated.json",
+  "data/decorated-sft.json"
+ ],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 36.3,
+ "secs_kern": 35.4,
+ "stdout_lines": 56,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": false,
+ "time_fields_masked": 4,
+ "diff_kern_orig": "none",
+ "stdout_kern_eq_stored": true,
+ "stdout_orig_eq_stored": true,
+ "diff_kern_stored": "none",
+ "files": [
+  {
+   "file": "2026-11-17-get-mixing/data/decorated-sft.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 42717
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}

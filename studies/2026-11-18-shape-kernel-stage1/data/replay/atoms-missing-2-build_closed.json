@@ -1,0 +1,155 @@
+{
+ "case": "atoms-missing-2-build_closed",
+ "group": "G7+G2",
+ "study": "2026-11-17-atoms-missing-2",
+ "script": "build_closed.py",
+ "args": [],
+ "rc_orig": 0,
+ "rc_kern": 0,
+ "secs_orig": 12.3,
+ "secs_kern": 12.9,
+ "stdout_lines": 111,
+ "stdout_kern_eq_orig": true,
+ "stdout_kern_eq_orig_raw": true,
+ "time_fields_masked": 0,
+ "diff_kern_orig": "none",
+ "stdout_kern_eq_stored": true,
+ "stdout_orig_eq_stored": true,
+ "diff_kern_stored": "none",
+ "files": [
+  {
+   "file": "2026-11-17-atoms-missing-2/models/dicto-1-2-truncated-octahedron.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 6243
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/dicto-1-2-truncated-octahedron.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 1633
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/dicto-2-1-truncated-octahedron.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 6243
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/dicto-2-1-truncated-octahedron.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 1633
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/dicto-double-ti-star.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 24170
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/dicto-double-ti-star.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 7097
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-cut-og.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 22237
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-cut-og.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 6317
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-dicto-13-coa.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 4138
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-dicto-13-coa.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 950
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-hemi-rd.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 3560
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-hemi-rd.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 734
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-oct-16.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 2782
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-oct-16.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 485
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-tbp-5.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 2690
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-tbp-5.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 419
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-unborn.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 4569
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/known-unborn.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 925
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-lone-star.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 2778
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-lone-star.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 325
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-sheriff.json",
+   "kern_eq_orig": true,
+   "kern_eq_stored": false,
+   "bytes": 3228
+  },
+  {
+   "file": "2026-11-17-atoms-missing-2/models/piece-sheriff.off",
+   "kern_eq_orig": true,
+   "kern_eq_stored": true,
+   "bytes": 452
+  }
+ ],
+ "status": "replayed",
+ "ok": true
+}
