@@ -1,0 +1,3 @@
+// The worlds with a picture taken in the world itself (assets/worlds/<key>.webp, 96 px), written by
+// scripts/capture-world-thumbs.mjs; a world not listed shows its turning wireframe in the menu instead.
+export const WORLD_THUMBS = new Set(['aristotle', 'bitrunc', 'bloom', 'bodhiPyro', 'breathing', 'chains', 'cycles', 'dictofcc', 'dictohex', 'dictonic', 'dodeca', 'doubleVision', 'globalWeb', 'golden', 'gperm', 'hexoct', 'hexoctKit', 'icosa', 'kpFilm', 'mandala', 'ocdStella', 'octet', 'octetBuild', 'octetTruss', 'perm4', 'queensWalls', 'reuleaux', 'roofFold', 'shells', 'stackings', 'starCores', 'stellaJewel', 'studies', 'sunstar', 'targets', 'theaetetus', 'thirteens', 'up', 'upFilm', 'vajrayana', 'whiteQueen']);
