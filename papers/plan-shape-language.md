@@ -62,6 +62,8 @@ and run every test. A pilot on the three most-copied modules first.
 DICTO: "minimal amount of pieces value … derivative forms are degrees"; "pieces are words, degrees are steps"; "tiles that
 fill space"; "the lattice is the grammar".
 
+- **Pragmatism first** (DICTO: "pragmatism is the key to the language, not originality"). Choose the standard, simplest,
+  most reusable rule for each word and step; known methods are preferred and credited.
 - **Words.** The base words are tiles that fill space. The five base words are Fedorov's five parallelohedra (E. S. Fedorov,
   1885): cube, hexagonal prism, rhombic dodecahedron, elongated dodecahedron, truncated octahedron. Smaller words cut them:
   the cube's centre pyramid (square base a, height a/2) builds both the cube (6) and the rhombic dodecahedron (12).
@@ -69,6 +71,8 @@ fill space"; "the lattice is the grammar".
   at the permutations of (0, ±1, ±2), volume 32, each piece 4: one whole hexagon and three quarter-squares); the 8
   hexagons face the 8 nearest neighbours of the bcc lattice. It is also degree 1 from the octahedron (truncation), so it
   joins the words and the steps.
+  The hexagonal prism is 3 identical rhombic prisms (the hexagon as 3 rhombi of 60°, the cube seen along its diagonal);
+  the rhombic prism is the unit cell of the hexagonal lattice, so this word is the lattice's own.
 - **Grammar.** The lattice says where words go and how they join. Each base word is the Voronoi cell of its lattice: cube,
   simple cubic; rhombic dodecahedron, face-centred cubic; truncated octahedron, body-centred cubic; hexagonal prism,
   hexagonal; elongated dodecahedron, a stretched lattice. Example: in a checkerboard of cubes, each cube of one colour
@@ -76,11 +80,15 @@ fill space"; "the lattice is the grammar".
 - **Score.** The fewest space-filling words that build a shape.
 - **Degrees.** Steps from a word or built shape (Conway's polyhedron operators for the steps). The Platonic solids are
   built shapes; the Archimedean solids are degree 1 from them.
+- **Scales** (DICTO: "all the measurement scales of golden etc should be in the language"). Every word comes in every
+  scale, and scores and degrees are counted within a scale. Scales and their number fields: golden φ (Q(√5)); silver
+  1 + √2 (Q(√2)); bronze (3 + √13)/2 (Q(√13)); the heptagon's ρ = 2cos(π/7) and σ = ρ² − 1 (the cubic field
+  Q(cos 2π/7); Steinbach 1997, to be checked). Stage 1's kernel carries each of these fields exactly.
 - **Golden side.** AXE and CLEO (Mosseri–Sadoc tiles t6 and t4, scaled by 1/φ; Koca et al. 2020) as words of the
   icosahedral tilings, entering at golden enlargement steps.
 - **Credits.** Plato (*Timaeus*: solids from two right triangles); Aristotle (*De Caelo* III.8: regular tetrahedra
   fill space, refuted; history in Lagarias and Zong 2012); Archimedes (the thirteen solids, via Pappus); the *Nine
   Chapters* and Liu Hui (pyramid dissections of the cube); Dehn 1901 (a cube is not cut into regular tetrahedra);
   Fedorov 1885; Conway.
-- **Open.** Smaller words for the hexagonal prism and elongated dodecahedron; scores of the
+- **Open.** Smaller words for the elongated dodecahedron; scores of the
   dodecahedron and icosahedron, which do not fill space.
