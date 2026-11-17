@@ -7,6 +7,7 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
+import { unfold } from './menu-unfold.mjs';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/queens-walls-shots';
 mkdirSync(SH, { recursive: true });
@@ -23,7 +24,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     await page.goto(`${BASE}/index.html?probe&site=${door}`);
     await page.waitForSelector('#welcome-overlay', { state: 'visible', timeout: 25000 }); await page.keyboard.press('Enter');
     await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-    if (!(await page.locator('[data-action="tool:queensWallsWorld"]').count())) await tap('.dim-wizard-card-btn[data-dim="3D"]');
+    if (!(await page.locator('[data-action="tool:queensWallsWorld"]').count())) await tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:queensWallsWorld');
     await page.waitForTimeout(500);
     // in DICTO's list right after the White Queen (Book Ten)
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action));

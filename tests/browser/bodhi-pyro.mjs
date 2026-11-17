@@ -3,6 +3,7 @@
 // adds a copy), the grow slider, the ?open=bodhiPyro:chorus link; no errors. Screenshots.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
+import { unfold } from './menu-unfold.mjs';
 const b = await chromium.launch({ args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] });
 const page = await b.newPage({ viewport: { width: 1024, height: 1366 }, hasTouch: true, isMobile: true });
 const errors = []; page.on('pageerror', (e) => errors.push(String(e))); page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
@@ -11,7 +12,7 @@ const site = process.env.SITE ?? 'kaleidohedra';
 await page.goto(`${BASE}/index.html?site=${site}`);
 await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page.keyboard.press('Enter');
 await page.waitForSelector('.dim-wizard-overlay.open');
-if (!(await page.locator('[data-action="tool:bodhiPyroWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+if (!(await page.locator('[data-action="tool:bodhiPyroWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:bodhiPyroWorld');
 await page.waitForTimeout(500);
 const btn = page.locator('[data-action="tool:bodhiPyroWorld"]').first(); await btn.scrollIntoViewIfNeeded(); await btn.tap();
 await page.waitForTimeout(500);

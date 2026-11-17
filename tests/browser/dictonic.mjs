@@ -11,6 +11,7 @@ import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
 import { goldenFamily, delianFamily, GOLDEN_STOPS, DELIAN_STOPS, DICTONIC_VIEWS } from '../../src/app/world-dictonic.js';
 import { goldenPieces } from '../../src/app/world-octet.js';
+import { unfold } from './menu-unfold.mjs';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/dictonic-shots';
 mkdirSync(SH, { recursive: true });
@@ -28,10 +29,10 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     const tag = `${door}-${dev}`, P = '#worlddictonic-panel';
     await page.waitForSelector('.dim-wizard-overlay.open');
     await page.waitForTimeout(400);
-    if (!(await page.locator('[data-action="tool:dictonicWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+    if (!(await page.locator('[data-action="tool:dictonicWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:dictonicWorld');
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-    assert.equal(await page.evaluate(() => document.querySelector('.dicto-ring[data-ring="water"]')?.nextElementSibling?.dataset.action), 'tool:dictonicWorld', `${tag}: DICTONIC first under Water (the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
+    assert.equal(await page.evaluate(() => document.querySelector('.bm-book[data-book="Three"] .bm-item [data-action]')?.dataset.action), 'tool:dictonicWorld', `${tag}: DICTONIC first in Book Three (the world menu by the books, paper order (DICTO 2026-11-17))`); checks++;
     await page.locator('[data-action="tool:dictonicWorld"]').first().tap();
     await page.waitForTimeout(400);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');

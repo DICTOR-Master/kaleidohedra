@@ -9,6 +9,7 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
+import { unfold } from './menu-unfold.mjs';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/mandala-shots';
 mkdirSync(SH, { recursive: true });
@@ -46,11 +47,11 @@ const tapSlider = async (v) => {
 // ---- the wizard card ----
 await enter();
 await page.waitForSelector('.dim-wizard-overlay.open');
-if (!(await page.locator('[data-action="tool:mandalaWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+if (!(await page.locator('[data-action="tool:mandalaWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:mandalaWorld');
 await page.waitForTimeout(500);
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-assert.equal(await page.evaluate(() => document.querySelector('.dicto-ring-none')?.nextElementSibling?.dataset.action), 'tool:mandalaWorld', 'Golamandalas after the rings, its paper in no book yet (the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))');
-assert.equal(worlds[worlds.indexOf('tool:whiteQueenWorld') + 1], 'tool:mandalaWorld', 'after the Void'); checks += 2;
+assert.equal(await page.locator('.bm-book[data-book="tools"] [data-action="tool:mandalaWorld"]').count(), 1, 'Golamandalas under Studies and tools, its paper in no book yet (the world menu by the books, paper order (DICTO 2026-11-17))');
+assert.equal(worlds[worlds.indexOf('tool:signalWorld') + 1], 'tool:mandalaWorld', 'after Signal'); checks += 2;
 const card = page.locator('[data-action="tool:mandalaWorld"]').first(); await card.scrollIntoViewIfNeeded();
 const cb = await card.boundingBox(); assert.ok(cb.width >= 44 && cb.height >= 44, 'touchable card'); checks++;
 await shot('ipad-wizard');

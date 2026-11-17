@@ -4838,6 +4838,7 @@ async function init() {
     const qcEngines = { '5d': makeQuasicrystal('5d'), '6d': makeQuasicrystal('6d') };
     const dimensionWizard = createDimensionWizard({
       pieceEdges: wizardPieceEdges,
+      openAlmanac: () => almanac.open(), // Studies and tools: the Almanac, from the menu
       // The Polyhedraverse door opens on its own space with its build behind the menu: closing the menu there without a pick
       // asks about a saved build too (once), as entering any world does.
       onClose: () => setTimeout(() => {

@@ -28,6 +28,8 @@ jobs:
       # Translations: every key in all 7 languages (the app's and Rhombis's).
       - run: node scripts/verify-i18n.mjs
       - run: node scripts/verify-rhombis-i18n.mjs
+      # The world menu by the books: every world and lattice piece placed exactly once.
+      - run: node scripts/verify-book-menu.mjs
       # The repo's About text (outside the repo, so it drifts): warns only.
       - run: node scripts/verify-about.mjs
         env:

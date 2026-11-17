@@ -10,7 +10,8 @@
     "verify:copy": "node scripts/verify-copy.mjs",
     "verify:about": "node scripts/verify-about.mjs",
     "verify:rhombis-i18n": "node scripts/verify-rhombis-i18n.mjs",
-    "verify:catalogue": "node scripts/verify-catalogue.mjs"
+    "verify:catalogue": "node scripts/verify-catalogue.mjs",
+    "verify:books": "node scripts/verify-book-menu.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.28.2",

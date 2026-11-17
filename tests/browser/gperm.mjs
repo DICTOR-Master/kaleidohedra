@@ -11,6 +11,7 @@ import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
 import * as G from '../../src/app/gperm-geometry.js';
 import { t, LANG_ORDER } from '../../src/app/i18n.js';
+import { unfold } from './menu-unfold.mjs';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/gperm-shots';
 mkdirSync(SH, { recursive: true });
@@ -46,16 +47,15 @@ for (const door of (PARTS.includes('doors') ? process.env.DOORS ?? 'kaleidohedra
     const page = await b.newPage({ viewport, hasTouch: true, isMobile: true }), tag = `${door}-${dev}`;
     const errors = await open(page, `&site=${door}`);
     await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-    if (!(await page.locator('[data-action="tool:gpermWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+    if (!(await page.locator('[data-action="tool:gpermWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:gpermWorld');
     await page.waitForTimeout(500);
-    // in Kaleidohedra's block, its first world; the other app's one row still there (smoke-both-doors rule)
+    // on the others' shelf (Postnikov, 2009), after the 3D Penrose tiling, opening in Kaleidohedra through both doors
     const row = page.locator('[data-action="tool:gpermWorld"]');
     assert.equal(await row.count(), 1, `${tag}: listed once`);
     assert.equal(await row.getAttribute('data-app'), 'kaleidohedra', `${tag}: opens in Kaleidohedra`);
-    const firstKWorld = await page.evaluate(() => { const blk = [...document.querySelectorAll('.dim-wizard-body .dicto-block')].find((x) => x.querySelector(':scope > .dicto-block-name')?.textContent === 'KALEIDOHEDRA');
-      return [...(blk?.querySelectorAll('[data-action$="World"]') ?? [])].map((e) => e.dataset.action)[0]; });
-    assert.equal(firstKWorld, 'tool:gpermWorld', `${tag}: first among Kaleidohedra's worlds`);
-    if (door === 'rhombiverse') assert.ok(await page.locator('.dim-wizard-body [data-app="kaleidohedra"][data-action="tool:pieceType:rd"]').count(), `${tag}: Kaleidohedra keeps its one row`);
+    assert.equal(await page.locator('.bm-book[data-book="others"] [data-action="tool:gpermWorld"]').count(), 1, `${tag}: on the others' shelf`);
+    const worlds = await page.evaluate(() => [...document.querySelectorAll('.bm [data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
+    assert.equal(worlds[worlds.indexOf('tool:goldenWorld') + 1], 'tool:gpermWorld', `${tag}: after Golden Rhombohedra`);
     checks++;
     await row.tap(); await page.waitForTimeout(500);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');

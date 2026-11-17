@@ -27,10 +27,11 @@ for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 
   await page.goto(`${BASE}/index.html?probe&site=polyhedraverse`);
   await page.waitForSelector('#welcome-overlay', { state: 'visible', timeout: 30000 }); await page.keyboard.press('Enter');
   await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-  if (!(await page.locator('[data-family="DICTO_PIECES"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
-  const fam = page.locator('[data-family="DICTO_PIECES"]').first(); await fam.scrollIntoViewIfNeeded(); await fam.tap(); await page.waitForTimeout(800);
-  assert.equal(await page.locator('.poly-section').first().getAttribute('data-section'), 'hexoct-kit', `${dev}: the kit first`); checks++;
-  await page.locator('[data-hexoct-kit]').first().tap(); await page.waitForTimeout(400);
+  // the kit is a world of Book Six (HexOct), after the HexOct crystal (the world menu by the books, DICTO 2026-11-17)
+  await page.locator('.bm-book[data-book="Six"] > .bm-head').tap(); await page.waitForTimeout(300);
+  const kitRow = page.locator('.bm-book[data-book="Six"] [data-action="tool:hexoctKit"]');
+  assert.equal(await page.evaluate(() => [...document.querySelectorAll('.bm-book[data-book="Six"] .bm-item')].map((x) => x.dataset.item).join(' ')), 'stackings hexoct hexoctKit', `${dev}: the kit in Book Six`); checks++;
+  await kitRow.scrollIntoViewIfNeeded(); await kitRow.tap(); await page.waitForTimeout(400);
   if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');
   await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1200);
   assert.equal((await page.textContent('#hud-world-title')).trim(), 'HexOct kit', `${dev}: title`);

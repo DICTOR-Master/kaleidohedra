@@ -3,16 +3,17 @@
 // toggles (play, pause, the other way), Pull apart, the ?open=up:cycle link; no errors. Screenshots.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
+import { unfold } from './menu-unfold.mjs';
 const b = await chromium.launch(); const page = await b.newPage({ viewport: { width: 1024, height: 1366 }, hasTouch: true, isMobile: true });
 const errors = []; page.on('pageerror', (e) => errors.push(String(e))); page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
 const SH = process.env.SHOTS ?? '/tmp', BASE = process.env.BASE_URL ?? 'http://localhost:8000', SITE = process.env.SITE ?? 'kaleidohedra';
 await page.goto(`${BASE}/index.html?site=${SITE}`);
 await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page.keyboard.press('Enter');
 await page.waitForSelector('.dim-wizard-overlay.open');
-if (!(await page.locator('[data-action="tool:upWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+if (!(await page.locator('[data-action="tool:upWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:upWorld');
 await page.waitForTimeout(500);
-const all = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a))), first = all[all.indexOf('tool:bloomWorld') + 1];
-console.log(SITE, 'after the Bloom:', first); assert.equal(first, 'tool:upWorld'); // Book Four first (Water; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))
+const all = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a))), first = all[all.indexOf('tool:vajrayanaWorld') + 1];
+console.log(SITE, 'after Vajrayana:', first); assert.equal(first, 'tool:upWorld'); // Book Four, after Vajrayana (#38; the world menu by the books, paper order (DICTO 2026-11-17))
 const btn = page.locator('[data-action="tool:upWorld"]').first(); await btn.scrollIntoViewIfNeeded(); await btn.tap();
 await page.waitForTimeout(500);
 if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');

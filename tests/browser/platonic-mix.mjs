@@ -6,6 +6,7 @@
 // No console errors. Screenshots (SHOTS): all five whole; mid-build (D and I layers, a few pieces placed).
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
+import { unfold } from './menu-unfold.mjs';
 const b = await chromium.launch(); const page = await b.newPage({ viewport: { width: 1024, height: 1366 }, hasTouch: true, isMobile: true });
 const errors = []; page.on('pageerror', (e) => errors.push(String(e))); page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
 page.on('dialog', (d) => d.accept());
@@ -13,10 +14,10 @@ const SH = process.env.SHOTS ?? '/tmp', BASE = process.env.BASE_URL ?? 'http://l
 await page.goto(`${BASE}/index.html?site=${SITE}`);
 await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page.keyboard.press('Enter');
 await page.waitForSelector('.dim-wizard-overlay.open');
-if (!(await page.locator('[data-action="tool:platonicMixWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+if (!(await page.locator('[data-action="tool:platonicMixWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:platonicMixWorld');
 await page.waitForTimeout(500);
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a)));
-assert.equal(worlds[worlds.indexOf('tool:aristotleWorld') - 2], 'tool:platonicMixWorld', 'Book Eight first (Wind; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))'); assert.ok(worlds.includes('tool:platonicMixWorld'), 'Every Mix in DICTO\'s list');   // 2026-11-10: exact order dropped (newer worlds such as Golamandalas come first, newest work at the top)
+assert.equal(worlds[worlds.indexOf('tool:reuleauxWorld') + 1], 'tool:platonicMixWorld', 'Book Eight, after the Reuleaux solids (#47; the world menu by the books, paper order (DICTO 2026-11-17))'); assert.ok(worlds.includes('tool:platonicMixWorld'), 'Every Mix in DICTO\'s list');   // 2026-11-10: exact order dropped (newer worlds such as Golamandalas come first, newest work at the top)
 await page.goto(`${BASE}/index.html?site=${SITE}&open=platonicMix&probe`); await page.waitForTimeout(1500);
 if (await page.locator('#welcome-overlay').isVisible()) await page.keyboard.press('Enter');
 await page.waitForTimeout(2500);

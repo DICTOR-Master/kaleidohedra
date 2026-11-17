@@ -20,6 +20,7 @@ import { WQ_DIRECTIONS as DIRS } from '../../src/app/world-white-queen.js';
 import { t, LANG_ORDER } from '../../src/app/i18n.js';
 import { sliceU } from '../../src/app/world-white-queen.js';
 import { readFileSync } from 'node:fs';
+import { unfold } from './menu-unfold.mjs';
 const ATLAS = JSON.parse(readFileSync(new URL('../unit/white-queen-atlas.json', import.meta.url)));
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/wq-shots';
@@ -41,10 +42,10 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     const page = await b.newPage({ viewport, hasTouch: true, isMobile: true }), tag = `${door}-${dev}`;
     const errors = await open(page, `&site=${door}`);
     await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-    if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+    if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:whiteQueenWorld');
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-    assert.equal(worlds[worlds.indexOf('tool:goldenWorld') + 1], 'tool:whiteQueenWorld', `${tag}: Book Ten, after Golden Rhombohedra (Void; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
+    assert.equal(worlds[worlds.indexOf('tool:platonicMixWorld') + 1], 'tool:whiteQueenWorld', `${tag}: Book Ten, after Book Eight (Book Nine has no world of its own; the world menu by the books, paper order (DICTO 2026-11-17))`); checks++;
     await page.locator('[data-action="tool:whiteQueenWorld"]').first().tap(); await page.waitForTimeout(400);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');
     await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1200);
@@ -205,19 +206,26 @@ for (const [short, key] of [['vertex', 'vertex-first'], ['cell', 'cell-first']])
   assert.deepEqual(errors, [], `?open=whitequeen:${short}: console errors`); checks++;
   await page.close();
 }
-// the cover in the DICTO menu: the Cleo shells, the gold core and the shells' own colours on the card's rotating preview
+// the cover in the DICTO menu: the Cleo shells, the gold core and the shells' own colours on the row's picture
 for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 }, desktop: { width: 1280, height: 800 } })) {
   const page = await b.newPage({ viewport, deviceScaleFactor: 3, hasTouch: dev === 'phone', isMobile: dev === 'phone' });
   const errors = await open(page, '&site=kaleidohedra');
   await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-  if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await page.click('.dim-wizard-card-btn[data-dim="3D"]');
+  if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await page.click('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:whiteQueenWorld');
   const card = page.locator('[data-action="tool:whiteQueenWorld"]').first();
   await card.scrollIntoViewIfNeeded(); await page.waitForTimeout(1200);
-  const hues = await card.evaluate((el) => {
-    const c = el.querySelector('canvas.dim-wizard-preview'); if (!c) return null;
+  // the menu's picture: the world's own (img.bm-thumb, taken in the world) or, without one, the turning preview
+  const hues = await card.evaluate(async (el) => {
+    let c = el.querySelector('canvas.dim-wizard-preview');
+    const img = el.querySelector('img.bm-thumb');
+    const photo = !c && img;
+    if (photo) { await img.decode(); c = document.createElement('canvas'); c.width = img.naturalWidth; c.height = img.naturalHeight; c.getContext('2d').drawImage(img, 0, 0); }
+    if (!c) return null;
+    // gold: the bright line colour on the drawing; on the photo the shaded core (red well above green, blue well below; not the shells' yellow)
+    const isGold = (r, g, bl) => (photo ? r > 150 && r > g + 20 && bl < g - 30 : r > 200 && g > 150 && bl < 140);
     const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data; let gold = 0, blue = 0, green = 0;
     for (let i = 0; i < d.length; i += 4) { if (d[i + 3] < 100) continue; const [r, g, bl] = [d[i], d[i + 1], d[i + 2]];
-      if (r > 200 && g > 150 && bl < 140) gold++; else if (bl > r + 30 && bl >= g) blue++; else if (g > r + 30 && g > bl) green++; }
+      if (isGold(r, g, bl)) gold++; else if (bl > r + 30 && bl >= g) blue++; else if (g > r + 30 && g > bl) green++; }
     return { gold, blue, green };
   });
   assert.ok(hues && hues.gold > 0 && hues.blue > 0 && hues.green > 0, `${dev}: the cover shows the gold core and coloured shells ${JSON.stringify(hues)}`); checks++;

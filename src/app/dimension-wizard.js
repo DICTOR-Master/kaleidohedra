@@ -75,6 +75,9 @@ import { countDicto } from './analytics.js';
 import { dimensionLabel } from './dimension-label.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { createLanguageButton } from './language-picker.js';
+import { openGuide } from './guide.js';
+import { BOOKS, EXTRA_WORLDS, OTHERS_SHELF, TOOLS_SHELF } from './book-menu-data.js';
+import { WORLD_THUMBS } from './world-thumbs.js';
 
 const CSS = `
 .dim-wizard-overlay {
@@ -187,24 +190,46 @@ const CSS = `
 .dicto-block-name { font: 800 var(--text-xl)/1.2 var(--font-ui); letter-spacing: 0.06em; color: var(--pale); }
 .dicto-block-name span { color: var(--accent-strong); }
 .dicto-block .dim-wizard-section .dim-wizard-label { color: var(--pale); }
-/* The gold block under The Five Orders of Space (DICTO 2026-11-16): five ring labels to jump to, each ring's heading, all in DICTO
-   gold (the rings group the worlds by book, not by solid, so no solid's colour), and a small "new" mark on the newest work. */
-.dicto-ring-jump, .dicto-ring { --ring: #e8c25a; }
-.dicto-ring-jump { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 6px; margin: 10px 0 2px; }
-.dicto-ring-btn { min-height: max(var(--touch), 52px); padding: 4px 2px; cursor: pointer; touch-action: manipulation;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
-  color: var(--pale); background: color-mix(in srgb, var(--ring) 14%, transparent);
-  border: 1px solid var(--ring); border-bottom-width: 3px; border-radius: var(--radius-m); font: 700 var(--text-s) var(--font-ui); }
-.dicto-ring-btn:hover, .dicto-ring-btn:focus-visible { background: color-mix(in srgb, var(--ring) 30%, transparent); }
-.dicto-ring-btn .dicto-ring-kanji { font-size: var(--text-xl); line-height: 1.1; color: var(--ring); }
-.dicto-ring-btn .dicto-ring-name { font-size: clamp(10px, 2.9vw, var(--text-s)); white-space: nowrap; }
-.dicto-ring { display: flex; align-items: baseline; gap: 8px; margin: 14px 0 0; padding: 2px 0 4px 8px; scroll-margin-top: 12px;
-  border-left: 4px solid var(--ring); border-bottom: 1px solid color-mix(in srgb, var(--ring) 55%, transparent);
-  font: 800 var(--text-s) var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--pale); }
-.dicto-ring .dicto-ring-kanji { font-size: var(--text-l); color: var(--ring); letter-spacing: 0; }
-.dicto-ring-none { --ring: #9ab; text-transform: none; letter-spacing: 0.02em; }
+/* The world menu by the books (DICTO 2026-11-17): neutral headings (no ring or app colours: colour only in the pictures of shapes),
+   each book folded under its cover, title and count; a tap opens it. Big touch targets for phones. */
+.bm { --bm-line: rgba(220, 214, 200, 0.16); --bm-ink: #ece6d8; --bm-dim: #a59c8c; display: flex; flex-direction: column; }
+.bm-search { margin: 4px 0 10px; }
+.bm-search .poly-search-input { min-height: var(--touch, 44px); font-size: 16px; border-color: rgba(220, 214, 200, 0.3); }
+.bm-none { color: var(--bm-dim); font: var(--text-s) var(--font-ui); padding: 6px 2px; }
+.bm-none[hidden], .bm-book[hidden], .bm-item[hidden], .bm-list[hidden], .bm-pieces[hidden], .bm-shapes[hidden] { display: none; }
+.bm-book { border-bottom: 1px solid var(--bm-line); }
+.bm-head { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 64px; padding: 6px 4px; box-sizing: border-box;
+  background: none; border: 0; color: var(--bm-ink); text-align: left; cursor: pointer; touch-action: manipulation; font: inherit; }
+.bm-head:hover, .bm-head:focus-visible { background: rgba(255, 255, 255, 0.04); }
+.bm-head[aria-expanded="true"] { background: rgba(255, 255, 255, 0.05); }
+.bm-cover { flex: none; width: 40px; height: 56px; object-fit: cover; border-radius: 3px; background: #222; }
+.bm-cover-none { flex: none; width: 40px; height: 56px; border: 1px dashed rgba(220, 214, 200, 0.3); border-radius: 3px; box-sizing: border-box; }
+.bm-titles { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.bm-num { color: var(--bm-dim); font: 600 var(--text-xs) var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; }
+.bm-title { font: 600 var(--text-m)/1.25 var(--font-ui); color: var(--bm-ink); }
+.bm-count { flex: none; color: var(--bm-dim); font: var(--text-s) var(--font-ui); white-space: nowrap; }
+.bm-list { display: flex; flex-direction: column; gap: 2px; padding: 2px 0 10px; }
+.bm-row { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 4px 4px 4px 14px; box-sizing: border-box;
+  background: none; border: 0; border-radius: var(--radius-m); color: var(--bm-ink); text-align: left; cursor: pointer; touch-action: manipulation; font: inherit; }
+.bm-row:hover, .bm-row:focus-visible { background: rgba(255, 255, 255, 0.05); }
+.bm-row .dim-wizard-label { color: var(--bm-ink); font-weight: 600; }
+.bm-row .dim-wizard-preview, .bm-thumb { flex: none; width: 48px; height: 48px; border-radius: 6px; }
+.bm-thumb { object-fit: cover; background: #0b0b10; }
+.bm-papers { color: var(--bm-dim); font: var(--text-xs) var(--font-ui); }
+.bm-more { color: var(--bm-dim); font: var(--text-s) var(--font-ui); margin-left: auto; flex: none; padding-left: 6px; }
+.bm-pieces { display: flex; flex-direction: column; gap: 2px; padding: 0 0 6px 74px; }
+.bm-piece { min-height: var(--touch, 44px); padding: 4px 10px; text-align: left; background: none; cursor: pointer; touch-action: manipulation;
+  border: 1px solid var(--bm-line); border-radius: var(--radius-s, 6px); color: var(--bm-ink); font: var(--text-s) var(--font-ui); }
+.bm-piece:hover, .bm-piece:focus-visible { background: rgba(255, 255, 255, 0.05); }
+.bm-shelf-mark { flex: none; width: 40px; height: 56px; display: flex; align-items: center; justify-content: center; color: var(--bm-dim); font: 22px var(--font-ui); }
+.bm-arrow::after { content: '▸'; }
+[aria-expanded="true"] .bm-arrow::after { content: '▾'; }
+.bm-glyph { display: inline-flex; align-items: center; justify-content: center; font: 22px var(--font-ui); color: var(--bm-dim); border: 1px solid var(--bm-line); box-sizing: border-box; }
+.bm-shapes .dim-wizard-card-btn { border-color: var(--bm-line); background: none; }
+.bm-shapes-title { margin: 18px 0 6px; color: var(--bm-dim); font: 600 var(--text-xs) var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; }
+.bm-shapes { display: flex; flex-direction: column; gap: 6px; }
 .dicto-new { display: inline-block; vertical-align: 2px; margin-left: 4px; padding: 0 7px; border-radius: 999px;
-  font: 800 var(--text-xs)/1.5 var(--font-ui); letter-spacing: 0.04em; color: #1a1408; background: var(--wire, #e8c25a); box-shadow: 0 0 4px rgba(var(--wire-rgb, 232, 194, 90), 0.8); }
+  font: 700 var(--text-xs)/1.5 var(--font-ui); letter-spacing: 0.04em; color: var(--bm-ink, #ece6d8); border: 1px solid rgba(220, 214, 200, 0.5); }
 .dim-wizard-back {
   background: none; border: none; color: var(--accent); cursor: pointer;
   font: var(--text-m) var(--font-ui); padding: 0; margin-bottom: 10px;
@@ -360,7 +385,7 @@ function rdRhombusEdges() {
 }
 // 1D's worlds: Signal, and Construct's families (direct decision,
 // 2026-09-29: "Wizard cards").
-const FAMILIES_1D = [
+export const FAMILIES_1D = [
   { id: 'signal', label: 'Signal', action: 'tool:signalWorld', preview: signalEdges },
   { id: 'construct', label: 'Construct · Square', action: 'tool:constructWorld:square', preview: constructEdges },
   { id: 'constructKagome', label: 'Construct · Kagome', action: 'tool:constructWorld:kagome', preview: kagomeStarEdges },
@@ -400,7 +425,7 @@ function edges5D() {
 // 'tool:pieceType:lattice2d:<primitiveId>', matching core/build.js's
 // own `lattice2d` param and render.js's dimensionAllowsMesh's own
 // 'lattice2d:' prefix check exactly.
-const LATTICE_FAMILIES_2D = [
+export const LATTICE_FAMILIES_2D = [
   ...LATTICE_PRIMITIVES.map((primitive) => ({
     id: primitive.id,
     label: primitive.label,
@@ -567,7 +592,7 @@ export const LATTICES_4D = [
 // enters that app's space. Worlds Kaleidohedra and Rhombiverse share are listed once, in
 // Kaleidohedra's; each app's lattices are listed once per app.
 const SHARED_WORLDS = ['roofFold', 'sunstar', 'stellaJewel', 'shells', 'golden'];
-const K_WORLDS = [
+export const K_WORLDS = [
   // DICTONIC (DICTO 2026-10-23): the three DICTONIC BONDS of the six DICTONIC SOLIDS (names by DICTO), golden, keyed and Delian,
   // a button each and one slider through the family each bond belongs to; first as the newest work (world-dictonic.js).
   { key: 'dictonic', label: 'DICTONIC', pieces: [{ label: 'DICTONIC', action: 'tool:dictonicWorld' }] },
@@ -717,30 +742,6 @@ const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'REULEAUX_PLATONIC', 'PLATONIC', 'A
 // Polyhedraverse pieces gathered from across its families.
 const DICTO_WORK = new Set(['breathing', 'bodhiPyro', 'bitrunc', 'perm4', 'mandala', 'starCores', 'whiteQueen', 'queensWalls', 'bloom', 'stackings', 'hexoct', 'dictonic', 'globalWeb', 'platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
-// The Five Orders of Space (DICTO 2026-11-16, from the apps census of 2026-11-15): the gold block's worlds and lattices under the
-// five rings, Earth, Water, Fire, Wind, Void (Musashi's five rings), in book order; inside each book, the order the block had
-// before (newest first). The ring labels and headings are all DICTO gold (DICTO 2026-11-16: the rings are books, not solids). An entry on
-// no shelf yet (Golamandalas, whose paper is in no book yet, and any new world) is listed after the rings. 'hex' is the
-// DICTO Hex Prism (split off the hexagonal lattice).
-export const FIVE_RINGS = [
-  { id: 'earth', kanji: '地', books: ['One', 'Two'] },
-  { id: 'water', kanji: '水', books: ['Three', 'Four', 'Five'] },
-  { id: 'fire', kanji: '火', books: ['Six', 'Seven'] },
-  { id: 'wind', kanji: '風', books: ['Eight'] },
-  { id: 'void', kanji: '空', books: ['Nine', 'Ten', 'Eleven'] },
-];
-export const DICTO_SHELF = [
-  ['One', ['octetTruss', 'ocdStella', 'icosa', 'dodeca', 'bodhiPyro', 'breathing']],
-  ['Two', ['octet', 'thirteens', 'stellaJewel', 'sunstar', 'octetBuild', 'targets', 'shells', 'dictofcc', 'hex']],
-  ['Three', ['dictonic', 'globalWeb', 'bloom']],
-  ['Four', ['up', 'vajrayana', 'doubleVision', 'cycles', 'theaetetus', 'chains']],
-  ['Five', ['starCores']],
-  ['Six', ['stackings', 'hexoct']],
-  ['Seven', ['bitrunc', 'perm4']],
-  ['Eight', ['platonicMix', 'reuleaux', 'aristotle', 'roofFold', 'studies']],
-  ['Nine', ['golden']],
-  ['Ten', ['whiteQueen', 'queensWalls']],
-];
 // The newest work carries a small "new" mark in its row instead of moving to the top.
 const NEW_WORK = new Set(['bitrunc', 'perm4', 'queensWalls']);
 // DICTO's newest first (DICTO 2026-11-02): the four Star Cores solids D106–D109 (named 2026-10-31), then Kagemusha's crests and the other
@@ -850,7 +851,7 @@ const passes = (app, filter) => !filter || app === filter || app === 'dicto';
 // The kinds inside an app's block, new work first.
 const KINDS = [['search', null], ['world', 'wiz.kind.worlds'], ['lattice', 'wiz.kind.lattices'], ['shapes', 'wiz.kind.shapes'], ['family', 'wiz.kind.worlds']];
 
-export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = () => {} }) {
+export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = () => {}, openAlmanac = () => {} }) {
   injectCssOnce();
 
   // Rotating previews (wireframe-preview.js): each rendered screen registers its canvases' edge
@@ -984,14 +985,9 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
       openDim = openDim === dim ? null : dim;
       showDimensions(`[data-dim="${dim}"]`);
     }));
-    bodyEl.querySelectorAll('.dicto-dim-content [data-action]:not([data-lattices])').forEach((el) => el.addEventListener('click', () => choose(openDim, el.dataset.action, el.dataset.app)));
-    bodyEl.querySelectorAll('[data-lattices]').forEach((el) => el.addEventListener('click', () => showRhombiLattices()));
+    bodyEl.querySelectorAll('.dicto-dim-content [data-action]').forEach((el) => el.addEventListener('click', () => choose(el.dataset.wdim ?? openDim, el.dataset.action, el.dataset.app)));
     bodyEl.querySelectorAll('[data-family]').forEach((el) => el.addEventListener('click', () => showPolyFamily(el.dataset.family)));
-    // A ring label scrolls the list to that ring's heading (smooth unless the reader asks for less motion).
-    bodyEl.querySelectorAll('[data-ring-jump]').forEach((el) => el.addEventListener('click', () => {
-      const still = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-      bodyEl.querySelector(`.dicto-ring[data-ring="${el.dataset.ringJump}"]`)?.scrollIntoView({ block: 'start', behavior: still ? 'auto' : 'smooth' });
-    }));
+    wireBooks();
     wireSearch(L);
     if (scrollTo) bodyEl.querySelector(scrollTo)?.scrollIntoView({ block: 'start' });
   }
@@ -1000,6 +996,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
   // 2026-10-09: "divided in each app's colours"), the door's app first; inside a block, its kinds
   // (new work first).
   function dimensionContent(dim, L) {
+    if (dim === '3D') return booksHtml(L);
     const d = dim.toLowerCase();
     // No repeats (DICTO 2026-10-09): a piece already listed by an earlier app (the door's first) is
     // left out of the later ones, and a lattice left with no pieces goes too.
@@ -1010,30 +1007,20 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
       pieces.forEach((pc) => seen.add(pc.action));
       return pieces.length ? { ...e, lat: { ...e.lat, pieces } } : null;
     }).filter(Boolean);
-    // The other door's app, whose lattices are the door's own (its difference is the Shear, or its
-    // absence): one row, so each app stays in sight with no list repeated (DICTO 2026-10-09).
-    // Rhombiverse's row opens its choice of lattices (DICTO 2026-10-31: the original app, not a jump to FCC).
-    if (dim === '3D') for (const app of ['kaleidohedra', 'rhombiverse']) {
-      // (an app block holding only worlds of its own, such as Generalized Permutohedra, still gets the row: its lattices are the door's)
-      if (app === SITE || !passes(app, filter) || entries.some((e) => e.app === app && e.kind === 'lattice')) continue;
-      entries.push({ app, kind: 'family', fam: { id: 'otherApp', label: t(`wiz.other.${app}`, L), action: 'tool:pieceType:rd', preview: () => pieceEdges('tool:pieceType:rd'), lattices: app === 'rhombiverse' } });
-    }
     entries.sort((x, y) => rank(x.app) - rank(y.app)); // stable: each block keeps its own order
     return blocksHtml(entries, d, L);
   }
-  // Entries as app blocks, each in its app's colours, its kinds in order (3D+'s content, and Rhombiverse's lattices below).
+  // Entries as app blocks, each in its app's colours, its kinds in order (1D+, 2D+ and 4D+'s content).
   function blocksHtml(entries, d, L) {
     const row = (e) => {
       if (e.kind === 'family') return `
-        <button type="button" class="dim-wizard-card-btn" data-action="${e.fam.action}" data-app="${e.app}"${e.fam.lattices ? ` data-lattices="${e.app}"` : ''}>
+        <button type="button" class="dim-wizard-card-btn" data-action="${e.fam.action}" data-app="${e.app}">
           ${previewSlot(e.fam.preview)}
           <span class="dim-wizard-row-text">
             <span class="dim-wizard-label">${e.fam.label}</span>
             <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.fam.id}`, L)}</span>
           </span>
         </button>`;
-      if (e.kind === 'search') return `
-        <div class="poly-search"><input type="search" class="poly-search-input" enterkeyhint="search" placeholder="${t('wiz.poly.searchPh', L)}" aria-label="${t('wiz.poly.searchPh', L)}"><div class="poly-search-results"></div></div>`;
       if (e.kind === 'shapes') {
         const ids = polyIds(e.key);
         if (!ids.length) return '';
@@ -1050,76 +1037,179 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
       if (e.lat.pieces.length === 1) {
         const piece = e.lat.pieces[0];
         return `
-        <button type="button" class="dim-wizard-card-btn" data-action="${piece.action}" data-app="${e.lattice3d ? dictoOpen(piece.action) : e.app}">
+        <button type="button" class="dim-wizard-card-btn" data-action="${piece.action}" data-app="${e.app}">
           ${previewSlot(() => (piece.preview ? piece.preview() : pieceEdges(piece.action)))}
           <span class="dim-wizard-row-text">
-            <span class="dim-wizard-label">${e.lat.label}${newMark(e)}</span>
-            <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.lat.key}${e.dicto && e.lat.key === 'hex' ? 'Dicto' : ''}`, L)}</span>
+            <span class="dim-wizard-label">${e.lat.label}</span>
+            <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.lat.key}`, L)}</span>
           </span>
         </button>`;
       }
       // A lattice or world: its heading, then its pieces.
       return `
         <div class="dim-wizard-section">
-          <span class="dim-wizard-label">${e.lat.label}${newMark(e)}</span>
-          <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.lat.key}${e.dicto && e.lat.key === 'hex' ? 'Dicto' : ''}`, L)}</span>
+          <span class="dim-wizard-label">${e.lat.label}</span>
+          <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.lat.key}`, L)}</span>
         </div>${e.lat.pieces.map((piece) => `
-        <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-action="${piece.action}" data-app="${e.lattice3d ? dictoOpen(piece.action) : e.app}">
+        <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-action="${piece.action}" data-app="${e.app}">
           ${previewSlot(() => (piece.preview ? piece.preview() : pieceEdges(piece.action)))}
           <span class="dim-wizard-row-text"><span class="dim-wizard-label">${piece.label}</span></span>
         </button>`).join('')}`;
     };
-    const newMark = (e) => (e.lattice3d && NEW_WORK.has(e.lat.key) ? ` <span class="dicto-new">${t('wiz.new', L)}</span>` : '');
     let html = '';
     for (const app of [...new Set(entries.map((e) => e.app))]) {
       const mine = entries.filter((e) => e.app === app);
-      const gold = app === 'dicto' && mine.some((e) => e.lattice3d);
-      html += `<div class="dicto-block${gold ? ' dicto-gold' : ''}" style="${blockStyle(app)}"><div class="dicto-block-name">${wordmark(app)}</div>`;
+      html += `<div class="dicto-block" style="${blockStyle(app)}"><div class="dicto-block-name">${wordmark(app)}</div>`;
       const kinds = app === 'dicto' ? [...KINDS.filter(([k]) => k === 'shapes'), ...KINDS.filter(([k]) => k !== 'shapes')] : KINDS;
       const present = kinds.filter(([kind]) => mine.some((e) => e.kind === kind));
       for (const [kind, label] of present) {
-        // The gold block's worlds and lattices go under the five rings instead (ringsHtml).
-        if (gold && (kind === 'world' || kind === 'lattice')) continue;
         if (present.length > 1 && label) html += `<div class="dim-wizard-kind">${t(label, L)}</div>`;
         html += mine.filter((e) => e.kind === kind).map(row).join('');
       }
-      if (gold) html += ringsHtml(mine.filter((e) => e.lattice3d), row, L);
       html += '</div>';
     }
     return html;
   }
-  // The gold block under The Five Orders of Space: a row of the rings to jump to, then each ring's heading in DICTO gold
-  // and its entries in book order; a ring with nothing in it is not shown; entries on no shelf yet come last.
-  function ringsHtml(list, row, L) {
-    const place = new Map(DICTO_SHELF.flatMap(([book, keys]) => keys.map((k, i) => [k, [book, i]])));
-    const bookIx = new Map(DICTO_SHELF.map(([book], n) => [book, n]));
-    const at = (e) => { const [book, i] = place.get(e.lat.key); return bookIx.get(book) * 1000 + i; };
-    const rings = FIVE_RINGS.map((r) => ({ ...r, list: list.filter((e) => r.books.includes(place.get(e.lat.key)?.[0])).sort((x, y) => at(x) - at(y)) }))
-      .filter((r) => r.list.length);
-    const rest = list.filter((e) => !place.has(e.lat.key));
-    const name = (r) => { const n = t(`wiz.ring.${r.id}`, L); return `<span class="dicto-ring-kanji">${r.kanji}</span>${n === r.kanji ? '' : `<span class="dicto-ring-name">${n}</span>`}`; };
-    let html = `<div class="dicto-ring-jump" role="navigation" aria-label="${t('wiz.ring.jump', L)}">${rings.map((r) => `
-        <button type="button" class="dicto-ring-btn" data-ring-jump="${r.id}">${name(r)}</button>`).join('')}</div>`;
-    for (const r of rings) html += `<div class="dicto-ring" data-ring="${r.id}">${name(r)}</div>` + r.list.map(row).join('');
-    if (rest.length) html += `<div class="dicto-ring dicto-ring-none">${t('wiz.ring.none', L)}</div>` + rest.map(row).join('');
-    return html;
+  // ---- 3D+: the world menu by the books (DICTO 2026-11-17, book-menu-data.js) ----
+  // A search box; each book a neutral heading (cover, "Book N", title, how many worlds), folded until tapped; each world once, with a
+  // picture taken in the world itself (assets/worlds/, scripts/capture-world-thumbs.mjs); then the others' lattices and tilings, the
+  // studies and tools, and the shapes. The same order through every door.
+  const openBooks = new Set(), openItems = new Set();
+  const esc = (x) => String(x).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
+  const worldOf = (key) => K_WORLDS.find((w) => w.key === key) ?? LATTICES_3D.find((l) => l.key === key);
+  // Where a world opens: DICTO's by the door (dictoOpen), Kaleidohedra's own (Generalized Permutohedra) in Kaleidohedra.
+  const worldApp = (key, action) => (K_WORLDS.some((w) => w.key === key) && !DICTO_WORK.has(key) ? 'kaleidohedra' : dictoOpen(action));
+  // A lattice of the others' shelf opens where the filter points (Kaleidohedra with the Shear, Rhombiverse without); else in
+  // Kaleidohedra through its own door when it has the lattice; else in Rhombiverse.
+  const latticeApp = (key) => {
+    if (filter === 'rhombiverse' || (filter !== 'kaleidohedra' && SITE !== 'kaleidohedra')) return 'rhombiverse';
+    return K_LATTICES.some((l) => l.key === key) ? 'kaleidohedra' : 'rhombiverse';
+  };
+  const thumb = (key) => (WORLD_THUMBS.has(key) ? `<img class="bm-thumb" src="assets/worlds/${key}.webp" alt="" loading="lazy" width="48" height="48">` : null);
+  const pictureOf = (key, piece) => thumb(key) ?? (piece.preview || piece.action?.startsWith('tool:') ? previewSlot(() => (piece.preview ? piece.preview() : pieceEdges(piece.action))) : '<span class="bm-thumb"></span>');
+  // One entry: its picture, name and a small line under it. One piece: the row opens it. Several: the row unfolds them.
+  function itemHtml({ key, label, sub = '', pieces, pic, extra = '', tip = '' }) {
+    const one = pieces.length === 1;
+    const go = (p) => (p.openDim ? `data-open-dim="${p.openDim}"` : p.open ? `data-open="${p.open}"` : `data-action="${p.action}" data-app="${p.app}" data-wdim="${p.wdim ?? '3D'}"`);
+    const open = openItems.has(key);
+    return `<div class="bm-item" data-item="${key}" data-hay="${esc(`${label} ${sub}`.toLowerCase())}">
+      <button type="button" class="bm-row"${tip ? ` title="${esc(tip)}"` : ''} ${one ? go(pieces[0]) : `data-item-toggle="${key}" aria-expanded="${open}"`}>${pic}<span class="dim-wizard-row-text"><span class="dim-wizard-label">${label}${extra}</span>${sub ? `<span class="bm-papers">${sub}</span>` : ''}</span>${one ? '' : `<span class="bm-more">${pieces.length} <span class="bm-arrow"></span></span>`}</button>${one ? '' : `
+      <div class="bm-pieces"${open ? '' : ' hidden'}>${pieces.map((p) => `<button type="button" class="bm-piece" ${go(p)} data-hay="${esc(p.label.toLowerCase())}">${p.label}</button>`).join('')}</div>`}
+    </div>`;
   }
-
-  // Rhombiverse's choice of lattices (from another door's 3D+): the list its own door shows in its block, every lattice with its
-  // pieces, in its colours; each opens in Rhombiverse. Back returns to 3D+.
-  function showRhombiLattices() {
-    current = showRhombiLattices;
-    resetPreviews();
-    const L = getSettings().language;
-    const R = 'rhombiverse';
-    const entries = R_LATTICES.map((lat) => ({ app: R, kind: 'lattice', lat })).flatMap(splitDicto).filter((e) => !e.dicto);
-    bodyEl.innerHTML = `
-      ${back(L)}
-      <div class="dim-wizard-sub"><b>${t(`wiz.other.${R}`, L)}</b> · ${tFor(R, 'wiz.3d.otherApp', L)}</div>
-      ${blocksHtml(entries, '3d', L)}`;
-    mountPreviews();
-    bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => { openDim = '3D'; showDimensions('[data-lattices]'); });
-    bodyEl.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => choose('3D', el.dataset.action, el.dataset.app)));
+  function bookItem(key, papers, L) {
+    const ex = EXTRA_WORLDS[key];
+    const mark = NEW_WORK.has(key) ? ` <span class="dicto-new">${t('wiz.new', L)}</span>` : '';
+    if (ex) {
+      const label = key === 'hexoctKit' ? t('hexkit.title', L) : ex.label;
+      const piece = { label, action: ex.action, app: ex.app ?? dictoOpen(ex.action), preview: key === 'hexoctKit' ? hexoctPreviewEdges : null };
+      return itemHtml({ key, label, sub: papers, pieces: [piece], pic: pictureOf(key, piece), extra: mark, tip: ex.tip ? t(ex.tip, L) : '' });
+    }
+    const w = worldOf(key);
+    const pieces = w.pieces.map((p) => ({ ...p, app: worldApp(key, p.action) }));
+    return itemHtml({ key, label: w.label, sub: papers, pieces, pic: pictureOf(key, pieces[0]), extra: mark, tip: tFor(pieces[0].app, `wiz.3d.${key}`, L) });
+  }
+  function othersItem(s, L) {
+    if (s.lat) {
+      const lat = LATTICES_3D.find((l) => l.key === s.lat), app = latticeApp(s.lat);
+      const pieces = lat.pieces.filter((p) => !DICTO_PIECE_ACTIONS.has(p.action)).map((p) => ({ ...p, app }));
+      return itemHtml({ key: s.id, label: s.name, sub: pieces.length === 1 ? pieces[0].label : '', pieces, pic: pictureOf(s.id, pieces[0]), tip: tFor(app, `wiz.3d.${s.lat}`, L) });
+    }
+    if (s.world) {
+      const w = worldOf(s.world), pieces = w.pieces.map((p) => ({ ...p, app: worldApp(s.world, p.action) }));
+      return itemHtml({ key: s.id, label: s.name, pieces, pic: pictureOf(s.world, pieces[0]) });
+    }
+    const pieces = s.dims.map((d) => ({ label: DIMENSIONS.find((x) => x.id === d).label, openDim: d }));
+    return itemHtml({ key: s.id, label: s.name, pieces, pic: previewSlot(DIMENSIONS.find((x) => x.id === '4D').preview ?? (() => edges4D('cell24'))) });
+  }
+  function toolItem(s, L) {
+    if (s.world) {
+      const w = worldOf(s.world), pieces = w.pieces.map((p) => ({ ...p, app: worldApp(s.world, p.action) }));
+      return itemHtml({ key: s.id, label: w.label, pieces, pic: pictureOf(s.world, pieces[0]) });
+    }
+    if (s.families) {
+      const all = s.dim === '1D' ? FAMILIES_1D : LATTICE_FAMILIES_2D;
+      const pieces = s.families.map((id) => all.find((f) => f.id === id)).map((f) => ({ label: f.label, action: f.action, app: 'dicto', wdim: s.dim, preview: f.preview }));
+      return itemHtml({ key: s.id, label: s.name, pieces, pic: previewSlot(pieces[0].preview) });
+    }
+    const label = t(s.open === 'almanac' ? 'alm.title' : 'wiz.books.guide', L);
+    return itemHtml({ key: s.id, label, pieces: [{ label, open: s.open }], pic: `<span class="bm-thumb bm-glyph">${s.open === 'almanac' ? '📖' : '?'}</span>` });
+  }
+  function sectionHtml(id, cover, num, title, items, L) {
+    const open = openBooks.has(id);
+    return `<section class="bm-book" data-book="${id}">
+      <button type="button" class="bm-head" data-book-toggle="${id}" aria-expanded="${open}">${cover}<span class="bm-titles">${num ? `<span class="bm-num">${num}</span>` : ''}<span class="bm-title">${title}</span></span><span class="bm-count" aria-label="${esc(tn('wiz.books.count', L, items.length))}">${items.length} <span class="bm-arrow"></span></span></button>
+      <div class="bm-list"${open ? '' : ' hidden'}>${items.join('')}</div></section>`;
+  }
+  function booksHtml(L) {
+    let html = `<div class="bm"><div class="poly-search bm-search"><input type="search" class="poly-search-input" enterkeyhint="search" placeholder="${esc(t('wiz.books.search', L))}" aria-label="${esc(t('wiz.books.search', L))}" title="${esc(t('wiz.poly.searchPh', L))}"></div>`;
+    for (const b of BOOKS) {
+      if (!b.worlds.length) continue; // a book with no world of its own is not listed
+      const cover = b.cover ? `<img class="bm-cover" src="assets/books/${b.cover}.webp" alt="" loading="lazy" width="40" height="56">` : '<span class="bm-cover-none"></span>';
+      html += sectionHtml(b.id, cover, t(`wiz.book.${b.id}`, L), b.title, b.worlds.map(([key, papers]) => bookItem(key, papers, L)), L);
+    }
+    if (filter !== 'polyhedraverse') html += sectionHtml('others', '', '', t('wiz.books.others', L), OTHERS_SHELF.map((s) => othersItem(s, L)), L);
+    html += sectionHtml('tools', '', '', t('wiz.books.tools', L), TOOLS_SHELF.map((s) => toolItem(s, L)), L);
+    html += `<div class="bm-none" hidden>${t('wiz.books.none', L)}</div><div class="poly-search-results"></div>`;
+    if (passes('polyhedraverse', filter)) {
+      const keys = [DICTO_POLY.key, 'FAVOURITES', 'RECENT', ...POLY_FAMILIES.filter((key) => familyIds(key).length), 'STARS'];
+      html += `<div class="bm-shapes-title">${t('wiz.kind.shapes', L)}</div><div class="bm-shapes">${keys.map((key) => {
+        const ids = polyIds(key);
+        return ids.length ? `<button type="button" class="dim-wizard-card-btn${key === DICTO_POLY.key ? ' dicto-gold' : ''}" data-family="${key}">${previewSlot(() => polyShapeEdges(ids[0]))}
+          <span class="dim-wizard-row-text"><span class="dim-wizard-label">${polyLabel(key)}</span><span class="dim-wizard-desc">${tn('wiz.poly.count', L, ids.length)}</span></span></button>` : '';
+      }).join('')}</div>`;
+    }
+    return `${html}</div>`;
+  }
+  // Folding, the pages (Almanac, User Guide), the polytopes' dimensions, and the search over every entry's name.
+  function wireBooks() {
+    const root = bodyEl.querySelector('.bm');
+    if (!root) return;
+    const fold = (btn, list, set, id, open) => {
+      list.hidden = !open; btn.setAttribute('aria-expanded', String(open));
+      if (set) { if (open) set.add(id); else set.delete(id); }
+    };
+    root.querySelectorAll('[data-book-toggle]').forEach((btn) => btn.addEventListener('click', () => fold(btn, btn.nextElementSibling, openBooks, btn.dataset.bookToggle, btn.nextElementSibling.hidden)));
+    root.querySelectorAll('[data-item-toggle]').forEach((btn) => btn.addEventListener('click', () => fold(btn, btn.nextElementSibling, openItems, btn.dataset.itemToggle, btn.nextElementSibling.hidden)));
+    root.querySelectorAll('[data-open-dim]').forEach((btn) => btn.addEventListener('click', () => {
+      const dim = btn.dataset.openDim;
+      if (dim === '5D' || dim === '6D') { showCatalogue(dim); return; }
+      openDim = dim; showDimensions(`[data-dim="${dim}"]`);
+    }));
+    root.querySelectorAll('[data-open]').forEach((btn) => btn.addEventListener('click', () => {
+      close();
+      if (btn.dataset.open === 'almanac') openAlmanac(); else openGuide();
+    }));
+    root.querySelectorAll('img.bm-thumb, img.bm-cover').forEach((img) => img.addEventListener('error', () => { img.style.visibility = 'hidden'; }, { once: true }));
+  }
+  // Every word must be in the entry's name (or one of its pieces' names); matching books unfold, the rest hide; cleared, the folds
+  // come back as they were.
+  function filterBooks(q) {
+    const root = bodyEl.querySelector('.bm');
+    if (!root) return;
+    const words = q.toLowerCase().trim().split(/\s+/).filter(Boolean);
+    const has = (hay) => words.every((w) => hay.includes(w));
+    let found = 0;
+    root.querySelectorAll('.bm-book').forEach((sec) => {
+      let hits = 0;
+      sec.querySelectorAll('.bm-item').forEach((it) => {
+        const pieces = [...it.querySelectorAll('.bm-piece')], own = has(it.dataset.hay);
+        const which = pieces.filter((p) => has(p.dataset.hay));
+        const hit = !words.length || own || which.length > 0;
+        it.hidden = !hit; if (hit) hits++;
+        const box = it.querySelector('.bm-pieces');
+        if (!box) return;
+        pieces.forEach((p) => { p.hidden = words.length > 0 && !own && !which.includes(p); });
+        const open = words.length ? !own && which.length > 0 : openItems.has(it.dataset.item);
+        box.hidden = !open;
+        const btn = it.querySelector('[data-item-toggle]'); btn.setAttribute('aria-expanded', String(open));
+      });
+      sec.hidden = words.length > 0 && !hits;
+      const list = sec.querySelector('.bm-list'), open = words.length ? hits > 0 : openBooks.has(sec.dataset.book);
+      list.hidden = !open; sec.querySelector('.bm-head').setAttribute('aria-expanded', String(open));
+      found += hits;
+    });
+    root.querySelector('.bm-none').hidden = !words.length || found > 0;
   }
 
   // 5D/6D: one world each (the tiling picks every piece's shape), so the
@@ -1283,18 +1373,10 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
         </button>`).join('');
     const kits = key === DICTO_POLY.key && !picker ? [['cleo', 'wiz.poly.kitsCleo'], ['sets', 'wiz.poly.kitsSets'], ['stars', 'wiz.poly.kitsStars'], ['13', 'wiz.poly.kits'], ['octet', 'wiz.poly.kitsOctet']].map(([g, title]) => `<div class="poly-section" data-section="kits-${g}"><div class="poly-section-title">${t(title, L)}</div>
           <div class="dim-wizard-grid dicto-block" style="${style}">${kitCards(g)}</div></div>`).join('') : '';
-    // The HexOct kit (DICTO 2026-11-01, paper #75): the two layer tiles to place one at a time, with fill helpers; first among
-    // DICTO's pieces (the HexOct crystal itself is a Kaleidohedra world, beside the Stackings World).
-    const hexoct = key === DICTO_POLY.key && !picker ? `<div class="poly-section" data-section="hexoct-kit"><div class="poly-section-title">${t('hexkit.section', L)}</div>
-          <div class="dim-wizard-grid dicto-block" style="${style}"><button type="button" class="dim-wizard-card-btn dim-wizard-piece dicto-gold" data-hexoct-kit="tool:hexoctKit">
-          ${previewSlot(hexoctPreviewEdges)}
-          <span class="dim-wizard-row-text"><span class="dim-wizard-label">${t('hexkit.title', L)}</span><span class="dim-wizard-desc">${t('hexkit.card', L)}</span></span>
-        </button></div></div>` : '';
     bodyEl.innerHTML = `
       ${back(L)}
       <div class="dim-wizard-sub"><b>${polyLabel(key)}</b> · ${t('wiz.poly.shapes', L)}</div>
-      ${hexoct}${kits}${blocks}`;
-    bodyEl.querySelector('[data-hexoct-kit]')?.addEventListener('click', () => { lastLabel = t('hexkit.title', L); choose('3D', 'tool:hexoctKit', 'polyhedraverse'); });
+      ${kits}${blocks}`;
     bodyEl.querySelectorAll('[data-kit]').forEach((el) => el.addEventListener('click', () => choose('3D', `tool:polyKit:${el.dataset.kit}`, 'polyhedraverse')));
     mountPreviews();
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => { if (picker) { showShapePicker(); return; } openDim = '3D'; showDimensions(`[data-family="${key}"]`); });
@@ -1340,6 +1422,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     const out = bodyEl.querySelector('.poly-search-results');
     const run = () => {
       const q = input.value; lastQuery = q;
+      filterBooks(q);
       const ids = searchShapes(q, L);
       out.innerHTML = !q.trim() ? '' : ids.length
         ? `<div class="dim-wizard-sub">${tn('wiz.poly.results', L, ids.length)}</div>` + ids.map((id) => `<button type="button" class="dim-wizard-card-btn dim-wizard-piece${gold(id)}" data-shape="${id}">
