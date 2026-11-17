@@ -8502,6 +8502,15 @@
     "retry": "only with a survivor-free (lineage) count or a null with births and deaths, and a specificity test fixed in advance; or re-read against displacement D",
     "study": "2026-11-18-sun-net-change",
     "date": "2026-11-18"
+   },
+   {
+    "question": "Sun net change per surviving granule against rms displacement D (stored data)",
+    "method": "net_vs_d.py on sun-net-change data; rules fixed before the run",
+    "status": "COMPUTED (NOT CONFIRMED as a rung)",
+    "result": "collapse holds just: 16 settings within 15% of one curve for D = 0.20-0.45 (max 14% vs 21% at matched tau); residual follows run and field, not labelling; Sun/null falls 0.73 -> 0.60 over D (22%): not a single number (survivor rule suspected); survivor-share step test 6/16 (fails at long tau)",
+    "retry": "only with a survivor-free (lineage) count or a null with births and deaths; small D needs a new census",
+    "study": "2026-11-18-sun-net-vs-d",
+    "date": "2026-11-18"
    }
   ]
  },
