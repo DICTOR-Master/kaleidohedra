@@ -64,6 +64,9 @@ fill space"; "the lattice is the grammar".
 
 - **Pragmatism first** (DICTO: "pragmatism is the key to the language, not originality"). Choose the standard, simplest,
   most reusable rule for each word and step; known methods are preferred and credited.
+  "No reinventing of the wheel" (DICTO): use established methods and libraries wherever they exist (exact algebraic
+  numbers: FLINT/Calcium, SymPy; polytopes: polymake, CGAL; proofs: Lean/Mathlib); our own code is the thin layer of
+  shapes, words and certificates on top.
 - **Words.** The base words are tiles that fill space. The five base words are Fedorov's five parallelohedra (E. S. Fedorov,
   1885): cube, hexagonal prism, rhombic dodecahedron, elongated dodecahedron, truncated octahedron. Smaller words cut them:
   the cube's centre pyramid (square base a, height a/2) builds both the cube (6) and the rhombic dodecahedron (12).
@@ -73,6 +76,11 @@ fill space"; "the lattice is the grammar".
   joins the words and the steps.
   The hexagonal prism is 3 identical rhombic prisms (the hexagon as 3 rhombi of 60°, the cube seen along its diagonal);
   the rhombic prism is the unit cell of the hexagonal lattice, so this word is the lattice's own.
+  **One rule for all five (DICTO 18 Nov, pragmatism, no reinventing):** every Fedorov word is a zonohedron, so each is
+  split by the standard zonotopal tiling into one parallelepiped per independent triple of its edge directions (volume
+  formula of Shephard 1974 and McMullen): cube 1, hexagonal prism 3 (the rhombic prisms), rhombic dodecahedron 4
+  rhombohedra, elongated dodecahedron 8 (the 4 rhombohedra + 4 slanted prisms), truncated octahedron 16. This replaces
+  the centre pyramids and octants as the standard split; those stay as named alternative splits.
 - **Grammar.** The lattice says where words go and how they join. Each base word is the Voronoi cell of its lattice: cube,
   simple cubic; rhombic dodecahedron, face-centred cubic; truncated octahedron, body-centred cubic; hexagonal prism,
   hexagonal; elongated dodecahedron, a stretched lattice. Example: in a checkerboard of cubes, each cube of one colour
@@ -90,5 +98,5 @@ fill space"; "the lattice is the grammar".
   fill space, refuted; history in Lagarias and Zong 2012); Archimedes (the thirteen solids, via Pappus); the *Nine
   Chapters* and Liu Hui (pyramid dissections of the cube); Dehn 1901 (a cube is not cut into regular tetrahedra);
   Fedorov 1885; Conway.
-- **Open.** Smaller words for the elongated dodecahedron; scores of the
+- **Open.** Scores of the
   dodecahedron and icosahedron, which do not fill space.
