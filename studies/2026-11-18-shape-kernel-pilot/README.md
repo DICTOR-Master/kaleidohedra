@@ -174,3 +174,4 @@ folder was changed. Nothing was committed or published.
 Every script ends with a FINAL ok / FINAL FAIL line.
 
 **LEAD 1 checked for the Yantra (18 Nov):** sri-yantra quadfield.py has no __eq__, but its one user, quadratic_family.py, tests zero with is_zero() and never compares QF values with == or uses them in sets/dict keys: #103 Theorem 1 checks are unaffected. The other three (dial_a5.py, polar_hafner_exact.py, gbpc_periodic_count.py) remain to check.
+**LEAD 1 closed (18 Nov):** dial_a5.py tests its Q5 values with .z() (exact zero) and its == 0 tests act on Fractions only; polar_hafner_exact.py compares .a and .b explicitly; gbpc_periodic_count.py never compares the numbers. None of the four identity-equality copies affects a result.
