@@ -204,7 +204,7 @@ def main(outdir):
     m = M['PF2']; need(m['n'] == 43 and abs(m['bindu']) < 1e-9, 'PF2')
     P['PF2'] = (['COMPUTED: exact form not found', 'upper slope 0.6959 has no parent solid (Proposition 8)'], [])
     m = M['E1']; need(m['n'] == 43 and m['off'][1] < 0 and m['off'][9] < 0 and abs(m['bindu']) > 1e-3, 'E1')
-    P['E1'] = ([f"small corners inside the circle (t1 by {-m['off'][1]:.3f}, t9 by {-m['off'][9]:.3f}); 28 sandhis, not 24",
+    P['E1'] = ([f"small corners inside the circle (t1 by {-m['off'][1]:.3f}, t9 by {-m['off'][9]:.3f}); on its edge 22 sandhis and two points where four sides meet, not 24 sandhis",
                 f"bindu not centred (off by {abs(m['bindu']):.3f}); COMPUTED: exact form not found"], corner_rings(*Y['E1'][1]()[:2]))
     for k in ('KRP', 'Rh345'):
         P[k] = (P[k][0], tiny_rings(M[k]))
