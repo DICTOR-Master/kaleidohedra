@@ -3216,6 +3216,15 @@
    "first": "The Turn Law (draft, 13 Nov 2026)",
    "desc": "along the polar line of a regular polytope, the containment ratio is largest exactly at the line's fixed point",
    "aka": "the summit of the turn law"
+  },
+  {
+   "name": "Valley Charge",
+   "by": "DICTO",
+   "first": "#110",
+   "d": "2026-11-17",
+   "desc": "the truncated 600-cell at the station mu = 1/2 + sqrt5/5 of the Hopscotch line between the Queens (each edge cut at 1/(1 + phi^2) from each end): 1440 corners, 2400 triangles, 1200 golden hexagons, 720 cells; its Vacuus is exactly the 600-cell's 360 walls (60 mirrors, 300 cross walls)",
+   "aka": "the golden station of the 600-cell (#110 Proposition 6)",
+   "note": "named by DICTO on 17 Nov 2026; entered in The DICTOnary of Atoms v1.4 (four-dimensional chapter); picture: studies/2026-11-17-valley-charge"
   }
  ],
  "concepts": [
@@ -8466,6 +8475,15 @@
     "retry": "only the supremum (is it 1/sqrt3?) and c2",
     "study": "studies/2026-11-10-ab-line",
     "date": "2026-11-16"
+   },
+   {
+    "question": "Sun granulation: swap rate per cell per minute extrapolated to time step 0 with moving-Voronoi efficiency (joint limit step and persistence window)",
+    "method": "sun-step-zero census (15 Nov census + full swap lists), windows P = 1-3 x step and none, seed-1 efficiencies, seed-2 held-out, continuity filter (4 cells keep >= half area), fit_sz.py",
+    "status": "COMPUTED (NOT CONFIRMED)",
+    "result": "no convergence in 0 of 13 settings; step-0 medians 0.108-0.130 swaps/cell/min (+-17-45%); held-out recovery 0.78/1.04 at P=2xstep (fails 15%); continuity filter keeps 98.5-99.8% of real 10 s swaps, shuffled floor 0.15-0.32 (en, smoothing 1.5): 10 s swaps are not matching errors; granule centroids near-diffusive (MSD ~ step^0.70-0.88), so the straight-line null does not apply",
+    "retry": "not with moving-Voronoi calibration in the joint limit; only with a Sun-like-boundary control passing held-out at P = 2 x step within 15%, or via the net neighbour change after fixed time (frame-rate free; null 3.600 per cell per spacing in 2D)",
+    "study": "2026-11-17-sun-step-zero",
+    "date": "2026-11-17"
    }
   ]
  },
