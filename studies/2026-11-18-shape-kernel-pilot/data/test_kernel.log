@@ -1,0 +1,40 @@
+ok   A1 phi^2 = phi + 1 (silent_render.py, vacuus_exact.py)
+ok   A2 1/phi = phi - 1 and phi * (phi - 1) = 1
+ok   A3 icosahedral frame: 12 five-fold, 20 three-fold axes (q5.py, turn-theorem)
+ok   A4 each three-fold axis is nearest to exactly three icosahedron corners, all at b.a = phi^2 (q5.py assert, now exact)
+ok   A5 icosidodecahedron: 30 corners, all at |v|^2 = phi^2 (d40_hex.py, exact_cycle.py)
+ok   A6 mixed fields refused (exactlib.py; exact-vs-dissection exact.py)
+ok   A7 a square field parameter is rational (yantra_regions45 assert "Delta a square")
+ok   A8 cos2_exact table = cos(2 pi k/n) for phi(n) <= 4 (qf.py of the Vacuus studies)
+ok   A9 rational_pi: 90 deg -> 1/2, 60 -> 1/3, 36 -> 1/5, 45 -> 1/4, 72 -> 2/5 (collect.log of the Vacuus census)
+ok   A10 pairs: q/qs_ round trip, PHI^2 = PHI + 1, qinv(PHI) = PHI - 1 (q5.py of the octet studies)
+ok   A11 parse: pair text, parsable text and plain rationals
+ok   B add assoc/comm (3000 random triples over d = 2, 3, 5, 6)
+ok   B mul assoc/comm (3000 random triples over d = 2, 3, 5, 6)
+ok   B distributive (3000 random triples over d = 2, 3, 5, 6)
+ok   B identities (3000 random triples over d = 2, 3, 5, 6)
+ok   B inverse (3000 random triples over d = 2, 3, 5, 6)
+ok   B conj automorphism (3000 random triples over d = 2, 3, 5, 6)
+ok   B norm multiplicative (3000 random triples over d = 2, 3, 5, 6)
+ok   B sign multiplicative (3000 random triples over d = 2, 3, 5, 6)
+ok   B trichotomy (3000 random triples over d = 2, 3, 5, 6)
+ok   B order + compatible (3000 random triples over d = 2, 3, 5, 6)
+ok   B order * positive (3000 random triples over d = 2, 3, 5, 6)
+ok   B order transitive (3000 random triples over d = 2, 3, 5, 6)
+ok   B pow (3000 random triples over d = 2, 3, 5, 6)
+ok   B floor/ceil (3000 random triples over d = 2, 3, 5, 6)
+ok   B hash consistent with == (3000 random triples over d = 2, 3, 5, 6)
+ok   B parsable round trip (3000 random triples over d = 2, 3, 5, 6)
+ok   B abs (3000 random triples over d = 2, 3, 5, 6)
+ok   C1 exact sign = sign of the 60-digit decimal value (3000 random with 12-digit parts, 454 near-zero units)
+ok   C2 exact sign = sign at 80 digits (mpmath), same elements
+     (for comparison: float64 gets the sign wrong on 250 of the 454 near-zero units; 60 digits leaves 0 undecided)
+ok   C3 exact decimal digits(50) agree with the 60-digit Decimal value to 1e-49
+ok   C4 pair sgn = kernel sign = copies' rule on the near-zero units (pairs.sgn)
+ok   D1 floats refused in arithmetic and comparison (exact only)
+ok   D2 division by zero raises ZeroDivisionError
+ok   D3 rationals mix with every field; result keeps the field
+ok   D4 Quad(Quad) copies; class default field D = 5
+ok   D5 styles: every repr style of the copies gives text for every element
+checks: 37, failed: 0
+FINAL ok: kernel tests all pass

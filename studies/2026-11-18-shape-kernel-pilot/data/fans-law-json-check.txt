@@ -1,0 +1,1 @@
+fans-law.json: re-run (orig and kern, identical bytes, 2905729 bytes) vs stored study copy (1921676 bytes): equal as parsed JSON (json.load(a) == json.load(b): True); only whitespace/indent differs, so the stored file was written with different formatting.

@@ -1,0 +1,13 @@
+ok   paradigm-exact/scripts/hemi_exact.py: exit 0/0; stdout kern=orig True (raw False), kern=stored True, orig=stored True; 33 lines, 1 time fields masked; 11.3 s / 12.6 s
+ok   paradigm-exact/scripts/scutoid_exact.py: exit 0/0; stdout kern=orig True (raw False), kern=stored True, orig=stored True; 41 lines, 1 time fields masked; 37.5 s / 40.6 s
+ok   fans-law/scripts/fans_law.py: exit 0/0; stdout kern=orig True (raw False), kern=stored True, orig=stored True; 106 lines, 31 time fields masked; 28.3 s / 24.3 s
+     data/fans-law.json (2905729 bytes): kern=orig True, kern=stored False
+ok   ocd-octet/scripts/step12_exact_faces.py: exit 0/0; stdout kern=orig True (raw True), kern=stored True, orig=stored True; 13 lines, 0 time fields masked; 38.8 s / 45.5 s
+     data/step12-faces.json (85660 bytes): kern=orig True, kern=stored True
+FINAL ok: all replays byte-identical to the original scripts (time fields masked)
+
+real	3m59.046s
+user	4m0.486s
+sys	0m0.252s
+
+[exited with code 0]

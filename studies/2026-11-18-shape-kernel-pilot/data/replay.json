@@ -1,0 +1,94 @@
+[
+ {
+  "case": "paradigm-exact",
+  "script": "scripts/hemi_exact.py",
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 11.3,
+  "secs_kern": 12.6,
+  "stdout_kern_eq_orig_raw": false,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "masked_time_fields": 1,
+  "stdout_lines": 33,
+  "diff_kern_orig": "none",
+  "diff_kern_stored": "none",
+  "files": [],
+  "ok": true
+ },
+ {
+  "case": "paradigm-exact",
+  "script": "scripts/scutoid_exact.py",
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 37.5,
+  "secs_kern": 40.6,
+  "stdout_kern_eq_orig_raw": false,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "masked_time_fields": 1,
+  "stdout_lines": 41,
+  "diff_kern_orig": "none",
+  "diff_kern_stored": "none",
+  "files": [],
+  "ok": true
+ },
+ {
+  "case": "fans-law",
+  "script": "scripts/fans_law.py",
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 28.3,
+  "secs_kern": 24.3,
+  "stdout_kern_eq_orig_raw": false,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "masked_time_fields": 31,
+  "stdout_lines": 106,
+  "diff_kern_orig": "none",
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "data/fans-law.json",
+    "bytes": 2905729,
+    "sha_orig": "5bc08562ab25abbc",
+    "sha_kern": "5bc08562ab25abbc",
+    "sha_stored": "43d6c308a6cbe860",
+    "kern_eq_orig": true,
+    "kern_eq_stored": false
+   }
+  ],
+  "ok": true
+ },
+ {
+  "case": "ocd-octet",
+  "script": "scripts/step12_exact_faces.py",
+  "rc_orig": 0,
+  "rc_kern": 0,
+  "secs_orig": 38.8,
+  "secs_kern": 45.5,
+  "stdout_kern_eq_orig_raw": true,
+  "stdout_kern_eq_orig": true,
+  "stdout_kern_eq_stored": true,
+  "stdout_orig_eq_stored": true,
+  "masked_time_fields": 0,
+  "stdout_lines": 13,
+  "diff_kern_orig": "none",
+  "diff_kern_stored": "none",
+  "files": [
+   {
+    "file": "data/step12-faces.json",
+    "bytes": 85660,
+    "sha_orig": "b1ab2b7f33d24463",
+    "sha_kern": "b1ab2b7f33d24463",
+    "sha_stored": "b1ab2b7f33d24463",
+    "kern_eq_orig": true,
+    "kern_eq_stored": true
+   }
+  ],
+  "ok": true
+ }
+]
