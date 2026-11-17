@@ -5,10 +5,13 @@
 // opens it; tapping a world opens it (its title in the HUD). Searching "Golden Rhombohedra" leaves only the 3D Penrose tiling's entry,
 // which opens Golden Rhombohedra; a name that matches nothing says so. The same entries in the same order through both doors. Big
 // touch targets; no sideways scrolling on the phone. No console errors. PREVIEW_PHONE / PREVIEW_DESKTOP, if set: screenshots of the
-// Kaleidohedra door with Book One open.
+// Kaleidohedra door with Book One open. Rhombiverse's own Lattice Select follows the same order (its lattices under the same books and
+// shelves, neutral headings, touch-size, nothing sideways) and picks a lattice; PREVIEW_RHOMBI, if set: its screenshot on the phone.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
-import { BOOKS } from '../../src/app/book-menu-data.js';
+import { BOOKS, OTHERS_SHELF, TOOLS_SHELF } from '../../src/app/book-menu-data.js';
+import { STATIONS } from '../../src/app/lattice-select.js';
+import { unfold } from './menu-unfold.mjs';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000';
 const DOORS = (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(',');
@@ -92,6 +95,31 @@ for (const door of DOORS) {
     await again.fill(''); await page.waitForTimeout(600);
     assert.ok(await page.evaluate(() => [...document.querySelectorAll('.bm-book')].every((s) => !s.hidden)), `${tag}: cleared, every book back`);
     checks += 4;
+
+    // Rhombiverse's Lattice Select: the lattices in the menu's order, under the same books and shelves
+    if (door === 'rhombiverse') {
+      const want = [...BOOKS.flatMap((bk) => bk.worlds.map(([k]) => [bk.id, k])), ...OTHERS_SHELF.map((s) => ['others', s.lat ?? s.world]), ...TOOLS_SHELF.map((s) => ['tools', s.world])].filter(([, k]) => k && STATIONS[k]);
+      await menu(); await unfold(page, 'tool:pieceType:rd'); await press('.bm [data-action="tool:pieceType:rd"]');
+      await page.waitForFunction(() => !document.querySelector('.dim-wizard-overlay')?.classList.contains('open')); await page.waitForTimeout(800);
+      await press('#hud-lattice-row .lat-toggle'); await page.waitForTimeout(300);
+      const lat = await page.evaluate(() => { const sh = document.getElementById('lattice-select');
+        return { open: !sh.hidden, order: [...sh.querySelectorAll('.lat-sec')].flatMap((s) => [...s.querySelectorAll('.lat-st')].map((e) => [s.dataset.sec, e.dataset.key])),
+          heads: [...sh.querySelectorAll('.lat-head')].map((h) => { const cs = getComputedStyle(h); return { color: cs.color, bg: cs.backgroundColor, num: h.querySelector('.lat-num')?.textContent ?? null, title: h.querySelector('.lat-title').textContent }; }),
+          rows: [...sh.querySelectorAll('.lat-st')].map((e) => e.getBoundingClientRect().height), on: [...sh.querySelectorAll('.lat-st.on')].map((e) => e.dataset.key),
+          sideways: sh.scrollWidth - sh.clientWidth };
+      });
+      assert.ok(lat.open, `${tag}: Lattice Select opens`);
+      assert.deepEqual(lat.order, want, `${tag}: Lattice Select in the menu's order`);
+      assert.deepEqual(lat.heads.map((h) => h.num ?? h.title), [...new Set(want.map(([s]) => s))].map((s) => (s === 'others' ? "Others' lattices and tilings" : s === 'tools' ? 'Studies and tools' : `Book ${s}`)), `${tag}: Lattice Select headings as the menu's`);
+      assert.ok(lat.heads.every((h) => grey(h.color) && (h.bg === 'rgba(0, 0, 0, 0)' || grey(h.bg))), `${tag}: Lattice Select headings neutral`);
+      assert.ok(lat.rows.every((h) => h >= 44), `${tag}: Lattice Select rows big enough to touch`);
+      assert.deepEqual(lat.on, ['fcc'], `${tag}: the lattice you are on marked`);
+      assert.ok(lat.sideways <= 0, `${tag}: Lattice Select: no sideways scrolling`);
+      if (touch && process.env.PREVIEW_RHOMBI) { await page.waitForTimeout(800); await page.screenshot({ path: process.env.PREVIEW_RHOMBI }); }
+      await press('#lattice-select .lat-st[data-key="hcp"]'); await page.waitForTimeout(1000);
+      assert.equal(await page.locator('#hud-lattice-row .lat-name').textContent(), 'hcp · TRD', `${tag}: a lattice picked from Lattice Select`);
+      checks += 8;
+    }
 
     // the preview pictures: the Kaleidohedra door, Book One open
     const shot = dev === 'phone' ? process.env.PREVIEW_PHONE : process.env.PREVIEW_DESKTOP;
