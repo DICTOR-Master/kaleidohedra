@@ -110,5 +110,11 @@ fill space"; "the lattice is the grammar".
   fill space, refuted; history in Lagarias and Zong 2012); Archimedes (the thirteen solids, via Pappus); the *Nine
   Chapters* and Liu Hui (pyramid dissections of the cube); Dehn 1901 (a cube is not cut into regular tetrahedra);
   Fedorov 1885; Conway.
-- **Open.** Golden-side filling scores of the dodecahedron and icosahedron from the Mosseri–Sadoc tiles (AXE, CLEO
-  and the others fill space together; Koca et al. 2020 build both solids from them: counts to be read from that paper).
+- **Golden-side filling scores** (read 18 Nov from N. Ozdes Koca, R. Koc, M. Koca and A. Al-Siyabi, "Dodecahedral
+  structures with Mosseri–Sadoc tiles", 2020, in the library). The six Mosseri–Sadoc tiles t1–t6 (AXE = t6/φ, CLEO =
+  t4/φ) fill space together, not one alone. Icosahedron of edge 1: i(1) = 7t1 + 6t2 + 2t5 + t6 = **16 tiles** (their
+  eq. 7). Dodecahedron of edge 1: d(1) = 3T1 + 4T2 + 4T4 (eq. 15) with T1 = t1 + 2t4 + 2t3 + t6, T2 = t2 + t4,
+  T4 = t5 + t6 + t3, so 3t1 + 4t2 + 10t3 + 10t4 + 4t5 + 7t6 = **38 tiles** (our count from their definitions; volumes
+  sum exactly to the solids' volumes 5φ²/6 and (15 + 7√5)/4 = (4 + 7φ)/2 from their Table 1). These are counts of their constructions, not proved
+  minima. The icosahedron cannot be inflated past edge φ with these tiles (their text after eq. 11); the dodecahedron can.
+- **Open.** Whether 16 and 38 are the fewest; the tile counts at the AXE/CLEO scale (one golden step down).
