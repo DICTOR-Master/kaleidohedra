@@ -8572,7 +8572,7 @@
    {
     "question": "Shape language (DICTO's idea, 18 Nov: a computer language of geometric shapes that only calculates perfectly and is always checkable): plan, and stage 1 pilot (one exact-number kernel for the three most-copied groups)",
     "method": "plan papers/plan-shape-language.md (6 stages); pilot: AST inventory of 2515 scripts, kernel Quad(a,b,d), 37 kernel tests, differential test of 56 copies, replays",
-    "status": "SETTLED (pilot); stage 1 proper RUNNING (studies/2026-11-18-shape-kernel-stage1)",
+    "status": "SETTLED (pilot); stage 1 proper SETTLED 18 Nov (studies/2026-11-18-shape-kernel-stage1)",
     "result": "56 copies in 48 studies agree with the kernel on every operation they provide; 4 replays byte-identical; float64 gets the sign wrong on 250 of 454 near-zero units; the 4 copies without __eq__ affect no result",
     "retry": "stage 1 proper extends to Q(sqrt2,sqrt5), golden basis, Z[phi], cubic fields",
     "study": "2026-11-18-shape-kernel-pilot",
@@ -8594,6 +8594,15 @@
     "result": "two scores: filling (zonotopal parallelepipeds: cube 1, hex prism 3, RD 4, ED 8, TO 16) and pyramid (face count: T 4, C 6, O 8, D 12, I 20); D and I have no filling score from the five words (Dehn nonzero). Plate score (central planes of the Vacuus fins): T 6, C 6 bow-ties, O 3 discs, D 15, I 15, CO 4, ID 6, TO 15. Golden side (Mosseri–Sadoc tiles, which fill space together): icosahedron i(1) 16 tiles, dodecahedron d(1) 38 tiles (counts of Koca et al.'s constructions, volumes exact; minimality open)",
     "retry": "minimality of 16 and 38 by exact cover only",
     "study": "papers/plan-shape-language.md",
+    "date": "2026-11-18"
+   },
+   {
+    "question": "Shape language stage 1 proper: one exact kernel for every number-field copy in the studies (incl. Q(√2,√5), golden basis, Z[φ], cubic and general fields; bronze Q(√13) and heptagonal Q(cos 2π/7) added by DICTO)",
+    "method": "AST inventory of 2515 scripts; differential test of every copy against the kernel; signs checked against 120-digit values and python-flint Arb balls; planted mutants; replays of every short study run with the kernel swapped in",
+    "status": "SETTLED (FINAL ok)",
+    "result": "84 copies in 8 groups agree on every operation they provide (~640,000 comparisons); 2 copies give wrong signs on large-height near-zero inputs (octet_special_exact K float guard 1e-9: 10; web-of-bonds E 80 digits: 7), kernel right each time; 7/7 mutants caught; 42/42 field tests (incl. bronze and heptagonal); 61 replays byte-identical (3 not countable: inputs missing). Lead 1 closed: web-of-bonds (#52) audit 186,611 signs at 400 digits, 0 wrong (min |value| 0.0457, height ≤ 113); octet-special-exact stored run replays identical: no published result affected",
+    "retry": "leads 2-5 in the study (110-exact zsign bound; #56 field units; sqrtQ; flint-rational element)",
+    "study": "2026-11-18-shape-kernel-stage1",
     "date": "2026-11-18"
    }
   ]

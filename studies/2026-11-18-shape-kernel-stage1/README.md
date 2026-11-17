@@ -292,3 +292,9 @@ that are not in the study, so the original fails here too.
 5. The law-giving census: a kernel element over python-flint rationals would bring its 3 E-based scripts in.
 
 Every test and run script (inventory, test_kernel, test_fields, test_differential, setup, replay) ends with a FINAL ok / FINAL FAIL line that depends on its checks; swap.py, cases.py and diff_fields.py are helpers. The replay trees and the studies source copy live only on the compute machine. Nothing outside this folder was changed.
+
+**LEAD 1 checked (18 Nov, lead1/):** web-of-bonds (#52): `wob_sign_audit.py` re-ran samples.py in a scratch copy with every sign
+re-decided at 400 digits: 186,611 signs, 0 wrong; the smallest |value| decided was 0.0457 and the largest coefficient height 113,
+far from the regime where 80 digits fail (control: a unit of height 4.3·10⁴⁵, value 1.2·10⁻⁴⁶, is caught). octet_special_exact:
+its stored run replays byte-identical with the kernel (§4), so every sign it decided there was right. Neither published result is
+affected. FINAL ok (lead1/wob-sign-audit.log).
