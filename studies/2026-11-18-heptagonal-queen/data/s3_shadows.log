@@ -1,0 +1,96 @@
+PASS T = tan(pi/14)tan(2pi/7) is a root of x^3 - 9x^2 - x + 1 (irreducible)
+PASS die: b = mu_f - 1 = sqrt(2T) has degree 6 (b**6 - 18*b**4 - 4*b**2 + 8); b/(1-b) generates the same field, so it is in no cubic field
+PASS truncated cube: a = sqrt2 - 1 has degree 2; a cubic field has no element of degree 2
+PASS classifier control P(1.500000) -> cube-octahedron line, chamber I, mu = 1.5000000000
+PASS classifier control P(2.000000) -> cuboctahedron (mu = 2)
+PASS classifier control P(2.414214) -> cube-octahedron line, chamber II, mu = 2.4142135624
+PASS classifier control P(1.756582) -> cube-octahedron line, chamber I, mu = 1.7565821359
+PASS classifier control RD -> rhombic dodecahedron
+PASS classifier control: perms(0,1,1,3) (12 corners, 8 triangles + 6 rectangles, unequal edges) is not taken for a cuboctahedron
+PASS classifier control P(1.6) is no target, mu read back 1.600000
+PASS control: the 600-cell corners in the central hyperplane perpendicular to the cell centre (1,1,1,1,-4): 12 corners -> cuboctahedron (mu = 2) (Coxeter, Table V)
+PASS note: the solid central section there is not a cuboctahedron (84 vertices, faces {3: 152, 4: 6}); Coxeter Table V lists vertex layers
+PASS control: 24-cell vertex-first shadow -> rhombic dodecahedron
+PASS 4+1+1+1: irreducible std has multiplicity 1 in sum-zero R^7 (unique W, defined over Q)
+PASS 4+1+1+1: exactly one 3D irreducible occurs ({'std': 1, 'std x sgn': 0})
+PASS 4+2+1: irreducible std has multiplicity 1 in sum-zero R^7 (unique W, defined over Q)
+PASS 4+2+1: exactly one 3D irreducible occurs ({'std': 1, 'std x sgn': 0})
+PASS 4+3: irreducible std has multiplicity 1 in sum-zero R^7 (unique W, defined over Q)
+PASS 4+3: exactly one 3D irreducible occurs ({'std': 1, 'std x sgn': 0})
+PASS 6+1 (edges): irreducible std has multiplicity 1 in sum-zero R^7 (unique W, defined over Q)
+PASS 6+1 (edges): exactly one 3D irreducible occurs ({'std': 1, 'std x sgn': 0})
+PASS 6+1 (C4 cosets): irreducible std x sgn has multiplicity 1 in sum-zero R^7 (unique W, defined over Q)
+PASS 6+1 (C4 cosets): exactly one 3D irreducible occurs ({'std': 0, 'std x sgn': 1})
+  4+1+1+1          std       A_h    shadow  v=  40 faces={4: 12, 5: 12, 6: 4} sphere=False -> other
+  4+1+1+1          std       A_h    section v=  12 faces={3: 4, 6: 4} sphere=True -> other
+  4+1+1+1          std       B_h    shadow  v=  36 faces={3: 8, 4: 12, 5: 12} sphere=False -> other
+  4+1+1+1          std       B_h    section v=  24 faces={4: 6, 6: 8} sphere=True -> other
+  4+1+1+1          std       +-A_h  shadow  v=  32 faces={4: 6, 6: 12} sphere=False -> other
+  4+1+1+1          std       +-A_h  section v=  48 faces={3: 32, 4: 6, 6: 12} sphere=False -> other
+  4+1+1+1          std       +-B_h  shadow  v=  48 faces={3: 8, 4: 6, 8: 12} sphere=False -> other
+  4+1+1+1          std       +-B_h  section v=  72 faces={4: 30, 6: 20} sphere=False -> other
+  4+1+1+1          std       Q_h    shadow  v=  32 faces={4: 6, 6: 12} sphere=False -> other
+  4+1+1+1          std       Q_h    section v=  72 faces={3: 32, 4: 6, 10: 12} sphere=False -> other
+  4+2+1            std       A_h    shadow  v=  40 faces={4: 12, 5: 12, 6: 4} sphere=False -> other
+  4+2+1            std       A_h    section v=  12 faces={3: 4, 6: 4} sphere=True -> other
+  4+2+1            std       B_h    shadow  v=  36 faces={3: 8, 4: 12, 5: 12} sphere=False -> other
+  4+2+1            std       B_h    section v=  24 faces={4: 6, 6: 8} sphere=True -> other
+  4+2+1            std       +-A_h  shadow  v=  32 faces={4: 6, 6: 12} sphere=False -> other
+  4+2+1            std       +-A_h  section v=  48 faces={3: 32, 4: 6, 6: 12} sphere=False -> other
+  4+2+1            std       +-B_h  shadow  v=  48 faces={3: 8, 4: 6, 8: 12} sphere=False -> other
+  4+2+1            std       +-B_h  section v=  72 faces={4: 30, 6: 20} sphere=False -> other
+  4+2+1            std       Q_h    shadow  v=  32 faces={4: 6, 6: 12} sphere=False -> other
+  4+2+1            std       Q_h    section v=  72 faces={3: 32, 4: 6, 10: 12} sphere=False -> other
+  4+3              std       A_h    shadow  v=  40 faces={4: 12, 5: 12, 6: 4} sphere=False -> other
+  4+3              std       A_h    section v=  12 faces={3: 4, 6: 4} sphere=True -> other
+  4+3              std       B_h    shadow  v=  36 faces={3: 8, 4: 12, 5: 12} sphere=False -> other
+  4+3              std       B_h    section v=  24 faces={4: 6, 6: 8} sphere=True -> other
+  4+3              std       +-A_h  shadow  v=  32 faces={4: 6, 6: 12} sphere=False -> other
+  4+3              std       +-A_h  section v=  48 faces={3: 32, 4: 6, 6: 12} sphere=False -> other
+  4+3              std       +-B_h  shadow  v=  48 faces={3: 8, 4: 6, 8: 12} sphere=False -> other
+  4+3              std       +-B_h  section v=  72 faces={4: 30, 6: 20} sphere=False -> other
+  4+3              std       Q_h    shadow  v=  32 faces={4: 6, 6: 12} sphere=False -> other
+  4+3              std       Q_h    section v=  72 faces={3: 32, 4: 6, 10: 12} sphere=False -> other
+  6+1 (edges)      std       A_h    shadow  v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (edges)      std       A_h    section v=   8 faces={4: 6} sphere=True -> cube (mu = 3)
+  6+1 (edges)      std       B_h    shadow  v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (edges)      std       B_h    section v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (edges)      std       +-A_h  shadow  v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (edges)      std       +-A_h  section v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (edges)      std       +-B_h  shadow  v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (edges)      std       +-B_h  section v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (edges)      std       Q_h    shadow  v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (edges)      std       Q_h    section v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (C4 cosets)  std x sgn A_h    shadow  v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (C4 cosets)  std x sgn A_h    section v=   8 faces={4: 6} sphere=True -> cube (mu = 3)
+  6+1 (C4 cosets)  std x sgn B_h    shadow  v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (C4 cosets)  std x sgn B_h    section v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (C4 cosets)  std x sgn +-A_h  shadow  v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (C4 cosets)  std x sgn +-A_h  section v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (C4 cosets)  std x sgn +-B_h  shadow  v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (C4 cosets)  std x sgn +-B_h  section v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (C4 cosets)  std x sgn Q_h    shadow  v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  6+1 (C4 cosets)  std x sgn Q_h    section v=  48 faces={4: 12, 6: 8, 8: 6} sphere=True -> other
+  layers ('4+1+1+1', 12, ((3, 4), (6, 4)), 'other') x 150
+  layers ('4+1+1+1', 12, ((3, 8), (4, 6)), 'other') x 75
+  layers ('4+1+1+1', 24, ((4, 6), (6, 8)), 'other') x 35
+  layers ('4+1+1+1', 4, ((3, 4),), 'other') x 90
+  layers ('4+1+1+1', 6, ((3, 8),), 'octahedron (mu = 1)') x 45
+  layers ('4+2+1', 12, ((3, 4), (6, 4)), 'other') x 150
+  layers ('4+2+1', 12, ((3, 8), (4, 6)), 'other') x 75
+  layers ('4+2+1', 24, ((4, 6), (6, 8)), 'other') x 35
+  layers ('4+2+1', 4, ((3, 4),), 'other') x 90
+  layers ('4+2+1', 6, ((3, 8),), 'octahedron (mu = 1)') x 45
+  layers ('4+3', 12, ((3, 4), (6, 4)), 'other') x 150
+  layers ('4+3', 12, ((3, 8), (4, 6)), 'other') x 75
+  layers ('4+3', 24, ((4, 6), (6, 8)), 'other') x 35
+  layers ('4+3', 4, ((3, 4),), 'other') x 90
+  layers ('4+3', 6, ((3, 8),), 'octahedron (mu = 1)') x 45
+  layers ('6+1 (C4 cosets)', 8, ((4, 6),), 'other') x 285
+  layers ('6+1 (edges)', 8, ((4, 6),), 'other') x 285
+PASS vertex layers parallel to W with full 3D extent: 1755 in all (0 on a target)
+PASS searched 50 shadows/sections (5 actions x 5 sets x 2 modes)
+PASS no shadow or section is the fair die or the truncated cube (as the field degree requires)
+targets found: {}
+FINAL ok (26 checks)
+time 4.5 s

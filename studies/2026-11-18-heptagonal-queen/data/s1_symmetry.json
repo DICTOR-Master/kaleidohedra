@@ -1,0 +1,87 @@
+{
+ "gold": {
+  "n": 120,
+  "G": 14400,
+  "edges": 720,
+  "A_alone": 120,
+  "ordinary": 240
+ },
+ "truncation_type": {
+  "orbits": 120,
+  "classes": 59,
+  "four_class": [
+   "rs1000",
+   "10s0r0",
+   "0r0s01",
+   "0001sr"
+  ]
+ },
+ "family4095": {
+  "orbits": 4095,
+  "sphere_classes": 1954,
+  "mates_of_Ah": [
+   "0001sr",
+   "0r0s01",
+   "10s0r0",
+   "rs1000"
+  ]
+ },
+ "C3": "none: -1+2rho+3rho^2 is not a square in Q(rho)",
+ "groups": {
+  "A_h": {
+   "n": 210,
+   "G": 5040,
+   "orbits": [
+    210
+   ]
+  },
+  "B_h": {
+   "n": 630,
+   "G": 5040,
+   "orbits": [
+    630
+   ]
+  },
+  "A_h u B_h": {
+   "n": 840,
+   "G": 5040,
+   "orbits": [
+    210,
+    630
+   ]
+  },
+  "A_h u -A_h": {
+   "n": 420,
+   "G": 10080,
+   "orbits": [
+    420
+   ]
+  },
+  "B_h u -B_h": {
+   "n": 1260,
+   "G": 10080,
+   "orbits": [
+    1260
+   ]
+  },
+  "Q_h = A_h u -A_h u B_h u -B_h": {
+   "n": 1680,
+   "G": 10080,
+   "orbits": [
+    420,
+    1260
+   ]
+  }
+ },
+ "Q_h": {
+  "n": 1680,
+  "distinct_ip_from_A": 53,
+  "distinct_ip_from_B": 59,
+  "min_dist2": 2.0,
+  "edges_min": 2100,
+  "degrees": [
+   2,
+   4
+  ]
+ }
+}

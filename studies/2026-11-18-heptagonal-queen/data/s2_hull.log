@@ -1,0 +1,43 @@
+PASS control: golden truncated 5-cell A f-vector [20, 40, 30, 10] (queens-construct: 20/40/30/10)
+PASS control: all 30 plates of A perpendicular to a 600-cell corner (H4 mirrors), 10 of them S5 mirrors [{'n_corners': 3, 'count': 20, 's_mirror': False, 'perp_to_corner': True, 'nullity': 2}, {'n_corners': 6, 'count': 10, 's_mirror': True, 'perp_to_corner': True, 'nullity': 2}]
+PASS control: ordinary orbit (phi^2 x3, 3/2, 0) has only 10 of 30 plates on H4 mirrors
+PASS A_h: f-vector [210, 630, 805, 560, 210, 35] (Euler sum 0: True; facets from qhull 35) (0.7 s)
+PASS A_h: every facet orbit representative certified exactly in Q(rho) (3 facet orbits)
+PASS A_h: facet orbit sizes sum to f5
+PASS A_h: ridges 210: on S7 mirrors 21, plate perpendicular to a corner of Q_h 0, on neither 189
+   facet {'corners': 120, 'count': 7, 'from_A_h_or_minus_A_h': None, 'normal_float': [-0.154303, -0.154303, -0.154303, -0.154303, -0.154303, -0.154303, 0.92582], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 30, 'count': 7, 'from_A_h_or_minus_A_h': None, 'normal_float': [0.154303, -0.92582, 0.154303, 0.154303, 0.154303, 0.154303, 0.154303], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 10, 'count': 21, 'from_A_h_or_minus_A_h': None, 'normal_float': [0.239046, -0.597614, -0.597614, 0.239046, 0.239046, 0.239046, 0.239046], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+PASS B_h: f-vector [630, 3150, 5040, 3465, 1050, 105] (Euler sum 0: True; facets from qhull 105) (2.6 s)
+PASS B_h: every facet orbit representative certified exactly in Q(rho) (5 facet orbits)
+PASS B_h: facet orbit sizes sum to f5
+PASS B_h: ridges 1050: on S7 mirrors 21, plate perpendicular to a corner of Q_h 0, on neither 1029
+   facet {'corners': 180, 'count': 7, 'from_A_h_or_minus_A_h': None, 'normal_float': [0.154303, 0.154303, 0.154303, -0.92582, 0.154303, 0.154303, 0.154303], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 90, 'count': 7, 'from_A_h_or_minus_A_h': None, 'normal_float': [-0.92582, 0.154303, 0.154303, 0.154303, 0.154303, 0.154303, 0.154303], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 60, 'count': 21, 'from_A_h_or_minus_A_h': None, 'normal_float': [0.597614, -0.239046, -0.239046, -0.239046, -0.239046, -0.239046, 0.597614], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 36, 'count': 35, 'from_A_h_or_minus_A_h': None, 'normal_float': [0.327327, 0.327327, -0.436436, -0.436436, -0.436436, 0.327327, 0.327327], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 18, 'count': 35, 'from_A_h_or_minus_A_h': None, 'normal_float': [0.436436, -0.327327, -0.327327, -0.327327, -0.327327, 0.436436, 0.436436], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+PASS Q_h: f-vector [1680, 20160, 62020, 78750, 42938, 7728] (Euler sum 0: True; facets from qhull 7728) (25.7 s)
+PASS Q_h: every facet orbit representative certified exactly in Q(rho) (18 facet orbits)
+PASS Q_h: facet orbit sizes sum to f5
+PASS Q_h: ridges 42938: on S7 mirrors 210, plate perpendicular to a corner of Q_h 0, on neither 42728
+   facet {'corners': 100, 'count': 42, 'from_A_h_or_minus_A_h': 40, 'normal_float': [0.0, -0.707107, 0.0, 0.0, 0.0, 0.0, 0.707107], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': True}
+   facet {'corners': 30, 'count': 14, 'from_A_h_or_minus_A_h': 30, 'normal_float': [0.154303, -0.92582, 0.154303, 0.154303, 0.154303, 0.154303, 0.154303], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 18, 'count': 70, 'from_A_h_or_minus_A_h': 0, 'normal_float': [0.436436, -0.327327, -0.327327, -0.327327, -0.327327, 0.436436, 0.436436], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 18, 'count': 140, 'from_A_h_or_minus_A_h': 0, 'normal_float': [0.408248, 0.0, -0.408248, -0.408248, -0.408248, 0.408248, 0.408248], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 15, 'count': 840, 'from_A_h_or_minus_A_h': 6, 'normal_float': [-0.091702, -0.775319, -0.091702, -0.091702, 0.287676, 0.381375, 0.381375], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 15, 'count': 280, 'from_A_h_or_minus_A_h': 6, 'normal_float': [-0.097116, -0.771475, -0.097116, -0.097116, 0.354275, 0.354275, 0.354275], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 14, 'count': 210, 'from_A_h_or_minus_A_h': 2, 'normal_float': [-0.240849, -0.51733, -0.51733, 0.318877, 0.318877, 0.318877, 0.318877], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 14, 'count': 210, 'from_A_h_or_minus_A_h': 8, 'normal_float': [0.132182, -0.549724, -0.549724, 0.132182, 0.132182, 0.132182, 0.570718], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 12, 'count': 210, 'from_A_h_or_minus_A_h': 0, 'normal_float': [0.5, 0.0, 0.0, -0.5, -0.5, 0.0, 0.5], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 12, 'count': 840, 'from_A_h_or_minus_A_h': 3, 'normal_float': [0.053478, -0.621071, -0.443649, 0.053478, 0.053478, 0.452143, 0.452143], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 12, 'count': 420, 'from_A_h_or_minus_A_h': 6, 'normal_float': [0.089351, -0.556423, -0.556423, 0.089351, 0.089351, 0.422396, 0.422396], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 11, 'count': 840, 'from_A_h_or_minus_A_h': 2, 'normal_float': [-0.19084, -0.52925, -0.52925, 0.212996, 0.345448, 0.345448, 0.345448], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 11, 'count': 840, 'from_A_h_or_minus_A_h': 2, 'normal_float': [-0.154112, -0.53252, -0.53252, 0.248877, 0.248877, 0.248877, 0.47252], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 11, 'count': 840, 'from_A_h_or_minus_A_h': 2, 'normal_float': [-0.15632, -0.746023, -0.15632, -0.028232, 0.362299, 0.362299, 0.362299], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 10, 'count': 42, 'from_A_h_or_minus_A_h': 10, 'normal_float': [0.239046, -0.597614, -0.597614, 0.239046, 0.239046, 0.239046, 0.239046], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 8, 'count': 1260, 'from_A_h_or_minus_A_h': 2, 'normal_float': [-0.043723, -0.550551, -0.550551, 0.159499, 0.159499, 0.412913, 0.412913], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 8, 'count': 210, 'from_A_h_or_minus_A_h': 2, 'normal_float': [-0.29187, -0.66375, -0.29187, 0.311873, 0.311873, 0.311873, 0.311873], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+   facet {'corners': 7, 'count': 420, 'from_A_h_or_minus_A_h': 4, 'normal_float': [0.064225, -0.57024, -0.57024, 0.064225, 0.337343, 0.337343, 0.337343], 'normal_parallel_to_corner_of_Q_h': None, 'normal_is_root': False}
+FINAL ok (15 checks)
+time 31.4 s

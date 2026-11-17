@@ -1,0 +1,1856 @@
+{
+ "gold": {
+  "A_fvec": [
+   20,
+   40,
+   30,
+   10
+  ],
+  "A_walls": [
+   {
+    "n_corners": 3,
+    "count": 20,
+    "s_mirror": false,
+    "perp_to_corner": true,
+    "nullity": 2
+   },
+   {
+    "n_corners": 6,
+    "count": 10,
+    "s_mirror": true,
+    "perp_to_corner": true,
+    "nullity": 2
+   }
+  ],
+  "ordinary_walls": [
+   {
+    "n_corners": 3,
+    "count": 20,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 2
+   },
+   {
+    "n_corners": 6,
+    "count": 10,
+    "s_mirror": true,
+    "perp_to_corner": true,
+    "nullity": 2
+   }
+  ]
+ },
+ "A_h": {
+  "n": 210,
+  "G": 5040,
+  "fvec": [
+   210,
+   630,
+   805,
+   560,
+   210,
+   35
+  ],
+  "facet_orbits": [
+   {
+    "corners": 120,
+    "count": 7,
+    "from_A_h_or_minus_A_h": null,
+    "normal": [
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      6,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     -0.154303,
+     -0.154303,
+     -0.154303,
+     -0.154303,
+     -0.154303,
+     -0.154303,
+     0.92582
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 30,
+    "count": 7,
+    "from_A_h_or_minus_A_h": null,
+    "normal": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      -6,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.154303,
+     -0.92582,
+     0.154303,
+     0.154303,
+     0.154303,
+     0.154303,
+     0.154303
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 10,
+    "count": 21,
+    "from_A_h_or_minus_A_h": null,
+    "normal": [
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      -5,
+      0,
+      0
+     ],
+     [
+      -5,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.239046,
+     -0.597614,
+     -0.597614,
+     0.239046,
+     0.239046,
+     0.239046,
+     0.239046
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   }
+  ],
+  "ridge_orbits": [
+   {
+    "n_corners": 8,
+    "count": 105,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 5,
+    "count": 42,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 20,
+    "count": 42,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 60,
+    "count": 21,
+    "s_mirror": true,
+    "perp_to_corner": false,
+    "nullity": 3
+   }
+  ],
+  "face_orbit_reps": {
+   "5": 3,
+   "4": 4,
+   "3": 4,
+   "2": 4,
+   "1": 3,
+   "0": 1
+  }
+ },
+ "B_h": {
+  "n": 630,
+  "G": 5040,
+  "fvec": [
+   630,
+   3150,
+   5040,
+   3465,
+   1050,
+   105
+  ],
+  "facet_orbits": [
+   {
+    "corners": 180,
+    "count": 7,
+    "from_A_h_or_minus_A_h": null,
+    "normal": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      -6,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.154303,
+     0.154303,
+     0.154303,
+     -0.92582,
+     0.154303,
+     0.154303,
+     0.154303
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 90,
+    "count": 7,
+    "from_A_h_or_minus_A_h": null,
+    "normal": [
+     [
+      -6,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     -0.92582,
+     0.154303,
+     0.154303,
+     0.154303,
+     0.154303,
+     0.154303,
+     0.154303
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 60,
+    "count": 21,
+    "from_A_h_or_minus_A_h": null,
+    "normal": [
+     [
+      5,
+      0,
+      0
+     ],
+     [
+      -2,
+      0,
+      0
+     ],
+     [
+      -2,
+      0,
+      0
+     ],
+     [
+      -2,
+      0,
+      0
+     ],
+     [
+      -2,
+      0,
+      0
+     ],
+     [
+      -2,
+      0,
+      0
+     ],
+     [
+      5,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.597614,
+     -0.239046,
+     -0.239046,
+     -0.239046,
+     -0.239046,
+     -0.239046,
+     0.597614
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 36,
+    "count": 35,
+    "from_A_h_or_minus_A_h": null,
+    "normal": [
+     [
+      3,
+      0,
+      0
+     ],
+     [
+      3,
+      0,
+      0
+     ],
+     [
+      -4,
+      0,
+      0
+     ],
+     [
+      -4,
+      0,
+      0
+     ],
+     [
+      -4,
+      0,
+      0
+     ],
+     [
+      3,
+      0,
+      0
+     ],
+     [
+      3,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.327327,
+     0.327327,
+     -0.436436,
+     -0.436436,
+     -0.436436,
+     0.327327,
+     0.327327
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 18,
+    "count": 35,
+    "from_A_h_or_minus_A_h": null,
+    "normal": [
+     [
+      4,
+      0,
+      0
+     ],
+     [
+      -3,
+      0,
+      0
+     ],
+     [
+      -3,
+      0,
+      0
+     ],
+     [
+      -3,
+      0,
+      0
+     ],
+     [
+      -3,
+      0,
+      0
+     ],
+     [
+      4,
+      0,
+      0
+     ],
+     [
+      4,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.436436,
+     -0.327327,
+     -0.327327,
+     -0.327327,
+     -0.327327,
+     0.436436,
+     0.436436
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   }
+  ],
+  "ridge_orbits": [
+   {
+    "n_corners": 9,
+    "count": 140,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 9,
+    "count": 140,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 12,
+    "count": 105,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 9,
+    "count": 140,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 12,
+    "count": 210,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 24,
+    "count": 105,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 24,
+    "count": 105,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 30,
+    "count": 42,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 30,
+    "count": 42,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 30,
+    "count": 21,
+    "s_mirror": true,
+    "perp_to_corner": false,
+    "nullity": 3
+   }
+  ],
+  "face_orbit_reps": {
+   "5": 5,
+   "4": 10,
+   "3": 11,
+   "2": 8,
+   "1": 3,
+   "0": 1
+  }
+ },
+ "Q_h": {
+  "n": 1680,
+  "G": 10080,
+  "fvec": [
+   1680,
+   20160,
+   62020,
+   78750,
+   42938,
+   7728
+  ],
+  "facet_orbits": [
+   {
+    "corners": 100,
+    "count": 42,
+    "from_A_h_or_minus_A_h": 40,
+    "normal": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.0,
+     -0.707107,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.707107
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": true
+   },
+   {
+    "corners": 30,
+    "count": 14,
+    "from_A_h_or_minus_A_h": 30,
+    "normal": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      -6,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.154303,
+     -0.92582,
+     0.154303,
+     0.154303,
+     0.154303,
+     0.154303,
+     0.154303
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 18,
+    "count": 70,
+    "from_A_h_or_minus_A_h": 0,
+    "normal": [
+     [
+      4,
+      0,
+      0
+     ],
+     [
+      -3,
+      0,
+      0
+     ],
+     [
+      -3,
+      0,
+      0
+     ],
+     [
+      -3,
+      0,
+      0
+     ],
+     [
+      -3,
+      0,
+      0
+     ],
+     [
+      4,
+      0,
+      0
+     ],
+     [
+      4,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.436436,
+     -0.327327,
+     -0.327327,
+     -0.327327,
+     -0.327327,
+     0.436436,
+     0.436436
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 18,
+    "count": 140,
+    "from_A_h_or_minus_A_h": 0,
+    "normal": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.408248,
+     0.0,
+     -0.408248,
+     -0.408248,
+     -0.408248,
+     0.408248,
+     0.408248
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 15,
+    "count": 840,
+    "from_A_h_or_minus_A_h": 6,
+    "normal": [
+     [
+      -10,
+      -11,
+      6
+     ],
+     [
+      1,
+      14,
+      -35
+     ],
+     [
+      -10,
+      -11,
+      6
+     ],
+     [
+      -10,
+      -11,
+      6
+     ],
+     [
+      -57,
+      19,
+      17
+     ],
+     [
+      43,
+      0,
+      0
+     ],
+     [
+      43,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     -0.091702,
+     -0.775319,
+     -0.091702,
+     -0.091702,
+     0.287676,
+     0.381375,
+     0.381375
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 15,
+    "count": 280,
+    "from_A_h_or_minus_A_h": 6,
+    "normal": [
+     [
+      12,
+      4,
+      -6
+     ],
+     [
+      -39,
+      -12,
+      18
+     ],
+     [
+      12,
+      4,
+      -6
+     ],
+     [
+      12,
+      4,
+      -6
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     -0.097116,
+     -0.771475,
+     -0.097116,
+     -0.097116,
+     0.354275,
+     0.354275,
+     0.354275
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 14,
+    "count": 210,
+    "from_A_h_or_minus_A_h": 2,
+    "normal": [
+     [
+      32,
+      -16,
+      -4
+     ],
+     [
+      -42,
+      8,
+      2
+     ],
+     [
+      -42,
+      8,
+      2
+     ],
+     [
+      13,
+      0,
+      0
+     ],
+     [
+      13,
+      0,
+      0
+     ],
+     [
+      13,
+      0,
+      0
+     ],
+     [
+      13,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     -0.240849,
+     -0.51733,
+     -0.51733,
+     0.318877,
+     0.318877,
+     0.318877,
+     0.318877
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 14,
+    "count": 210,
+    "from_A_h_or_minus_A_h": 8,
+    "normal": [
+     [
+      10,
+      5,
+      -4
+     ],
+     [
+      -33,
+      -10,
+      8
+     ],
+     [
+      -33,
+      -10,
+      8
+     ],
+     [
+      10,
+      5,
+      -4
+     ],
+     [
+      10,
+      5,
+      -4
+     ],
+     [
+      10,
+      5,
+      -4
+     ],
+     [
+      26,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.132182,
+     -0.549724,
+     -0.549724,
+     0.132182,
+     0.132182,
+     0.132182,
+     0.570718
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 12,
+    "count": 210,
+    "from_A_h_or_minus_A_h": 0,
+    "normal": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.5,
+     0.0,
+     0.0,
+     -0.5,
+     -0.5,
+     0.0,
+     0.5
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 12,
+    "count": 840,
+    "from_A_h_or_minus_A_h": 3,
+    "normal": [
+     [
+      -45,
+      -11,
+      20
+     ],
+     [
+      95,
+      24,
+      -43
+     ],
+     [
+      38,
+      9,
+      -17
+     ],
+     [
+      -45,
+      -11,
+      20
+     ],
+     [
+      -45,
+      -11,
+      20
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.053478,
+     -0.621071,
+     -0.443649,
+     0.053478,
+     0.053478,
+     0.452143,
+     0.452143
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 12,
+    "count": 420,
+    "from_A_h_or_minus_A_h": 6,
+    "normal": [
+     [
+      78,
+      30,
+      -38
+     ],
+     [
+      -158,
+      -45,
+      57
+     ],
+     [
+      -158,
+      -45,
+      57
+     ],
+     [
+      78,
+      30,
+      -38
+     ],
+     [
+      78,
+      30,
+      -38
+     ],
+     [
+      41,
+      0,
+      0
+     ],
+     [
+      41,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.089351,
+     -0.556423,
+     -0.556423,
+     0.089351,
+     0.089351,
+     0.422396,
+     0.422396
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 11,
+    "count": 840,
+    "from_A_h_or_minus_A_h": 2,
+    "normal": [
+     [
+      60,
+      -53,
+      6
+     ],
+     [
+      -65,
+      -3,
+      8
+     ],
+     [
+      -65,
+      -3,
+      8
+     ],
+     [
+      -17,
+      59,
+      -22
+     ],
+     [
+      29,
+      0,
+      0
+     ],
+     [
+      29,
+      0,
+      0
+     ],
+     [
+      29,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     -0.19084,
+     -0.52925,
+     -0.52925,
+     0.212996,
+     0.345448,
+     0.345448,
+     0.345448
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 11,
+    "count": 840,
+    "from_A_h_or_minus_A_h": 2,
+    "normal": [
+     [
+      -88,
+      -31,
+      43
+     ],
+     [
+      129,
+      32,
+      -62
+     ],
+     [
+      129,
+      32,
+      -62
+     ],
+     [
+      -61,
+      -11,
+      27
+     ],
+     [
+      -61,
+      -11,
+      27
+     ],
+     [
+      -61,
+      -11,
+      27
+     ],
+     [
+      13,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     -0.154112,
+     -0.53252,
+     -0.53252,
+     0.248877,
+     0.248877,
+     0.248877,
+     0.47252
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 11,
+    "count": 840,
+    "from_A_h_or_minus_A_h": 2,
+    "normal": [
+     [
+      -7,
+      -2,
+      3
+     ],
+     [
+      41,
+      11,
+      -20
+     ],
+     [
+      -7,
+      -2,
+      3
+     ],
+     [
+      -33,
+      -7,
+      14
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     -0.15632,
+     -0.746023,
+     -0.15632,
+     -0.028232,
+     0.362299,
+     0.362299,
+     0.362299
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 10,
+    "count": 42,
+    "from_A_h_or_minus_A_h": 10,
+    "normal": [
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      -5,
+      0,
+      0
+     ],
+     [
+      -5,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.239046,
+     -0.597614,
+     -0.597614,
+     0.239046,
+     0.239046,
+     0.239046,
+     0.239046
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 8,
+    "count": 1260,
+    "from_A_h_or_minus_A_h": 2,
+    "normal": [
+     [
+      4,
+      -6,
+      2
+     ],
+     [
+      -4,
+      0,
+      0
+     ],
+     [
+      -4,
+      0,
+      0
+     ],
+     [
+      -1,
+      3,
+      -1
+     ],
+     [
+      -1,
+      3,
+      -1
+     ],
+     [
+      3,
+      0,
+      0
+     ],
+     [
+      3,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     -0.043723,
+     -0.550551,
+     -0.550551,
+     0.159499,
+     0.159499,
+     0.412913,
+     0.412913
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 8,
+    "count": 210,
+    "from_A_h_or_minus_A_h": 2,
+    "normal": [
+     [
+      14,
+      6,
+      -16
+     ],
+     [
+      -144,
+      -12,
+      32
+     ],
+     [
+      14,
+      6,
+      -16
+     ],
+     [
+      29,
+      0,
+      0
+     ],
+     [
+      29,
+      0,
+      0
+     ],
+     [
+      29,
+      0,
+      0
+     ],
+     [
+      29,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     -0.29187,
+     -0.66375,
+     -0.29187,
+     0.311873,
+     0.311873,
+     0.311873,
+     0.311873
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   },
+   {
+    "corners": 7,
+    "count": 420,
+    "from_A_h_or_minus_A_h": 4,
+    "normal": [
+     [
+      27,
+      22,
+      -19
+     ],
+     [
+      -66,
+      -22,
+      19
+     ],
+     [
+      -66,
+      -22,
+      19
+     ],
+     [
+      27,
+      22,
+      -19
+     ],
+     [
+      26,
+      0,
+      0
+     ],
+     [
+      26,
+      0,
+      0
+     ],
+     [
+      26,
+      0,
+      0
+     ]
+    ],
+    "normal_float": [
+     0.064225,
+     -0.57024,
+     -0.57024,
+     0.064225,
+     0.337343,
+     0.337343,
+     0.337343
+    ],
+    "normal_parallel_to_corner_of_Q_h": null,
+    "normal_is_root": false
+   }
+  ],
+  "ridge_orbits": [
+   {
+    "n_corners": 6,
+    "count": 2520,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 6,
+    "count": 2520,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 6,
+    "count": 1260,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 6,
+    "count": 2520,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 6,
+    "count": 1260,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 9,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 7,
+    "count": 1680,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 7,
+    "count": 2520,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 9,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 8,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 5,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 7,
+    "count": 1680,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 9,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 8,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 5,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 7,
+    "count": 2520,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 12,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 6,
+    "count": 2520,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 12,
+    "count": 1680,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 9,
+    "count": 1680,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 9,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 6,
+    "count": 1260,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 5,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 8,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 6,
+    "count": 2520,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 9,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 5,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 9,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 7,
+    "count": 420,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 12,
+    "count": 210,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 5,
+    "count": 840,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 10,
+    "count": 420,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 8,
+    "count": 210,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 9,
+    "count": 280,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 9,
+    "count": 280,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 5,
+    "count": 84,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 18,
+    "count": 210,
+    "s_mirror": true,
+    "perp_to_corner": false,
+    "nullity": 3
+   },
+   {
+    "n_corners": 20,
+    "count": 84,
+    "s_mirror": false,
+    "perp_to_corner": false,
+    "nullity": 3
+   }
+  ],
+  "face_orbit_reps": {
+   "5": 18,
+   "4": 38,
+   "3": 39,
+   "2": 23,
+   "1": 9,
+   "0": 2
+  }
+ }
+}
