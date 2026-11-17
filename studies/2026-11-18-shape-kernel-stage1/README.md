@@ -298,3 +298,7 @@ re-decided at 400 digits: 186,611 signs, 0 wrong; the smallest |value| decided w
 far from the regime where 80 digits fail (control: a unit of height 4.3·10⁴⁵, value 1.2·10⁻⁴⁶, is caught). octet_special_exact:
 its stored run replays byte-identical with the kernel (§4), so every sign it decided there was right. Neither published result is
 affected. FINAL ok (lead1/wob-sign-audit.log).
+**LEAD 2 checked (18 Nov, lead1/zsign_audit.py):** the #110 independent checks (s0_base, s6_duals A, B, C3, the only users of
+`zsign`) re-run in a scratch copy with every zsign element also decided exactly by `_sign_int`: 1,055,142 elements, 0
+disagreements; the largest coefficient met is 50,000, far below 2^50, where the float error is about 10⁻¹¹ against the 0.01
+switch. The unproved bound is never approached in #110's runs. FINAL ok (lead1/zsign-audit.log).

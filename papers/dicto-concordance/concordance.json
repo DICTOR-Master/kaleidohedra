@@ -8600,9 +8600,18 @@
     "question": "Shape language stage 1 proper: one exact kernel for every number-field copy in the studies (incl. Q(√2,√5), golden basis, Z[φ], cubic and general fields; bronze Q(√13) and heptagonal Q(cos 2π/7) added by DICTO)",
     "method": "AST inventory of 2515 scripts; differential test of every copy against the kernel; signs checked against 120-digit values and python-flint Arb balls; planted mutants; replays of every short study run with the kernel swapped in",
     "status": "SETTLED (FINAL ok)",
-    "result": "84 copies in 8 groups agree on every operation they provide (~640,000 comparisons); 2 copies give wrong signs on large-height near-zero inputs (octet_special_exact K float guard 1e-9: 10; web-of-bonds E 80 digits: 7), kernel right each time; 7/7 mutants caught; 42/42 field tests (incl. bronze and heptagonal); 61 replays byte-identical (3 not countable: inputs missing). Lead 1 closed: web-of-bonds (#52) audit 186,611 signs at 400 digits, 0 wrong (min |value| 0.0457, height ≤ 113); octet-special-exact stored run replays identical: no published result affected",
-    "retry": "leads 2-5 in the study (110-exact zsign bound; #56 field units; sqrtQ; flint-rational element)",
+    "result": "84 copies in 8 groups agree on every operation they provide (~640,000 comparisons); 2 copies give wrong signs on large-height near-zero inputs (octet_special_exact K float guard 1e-9: 10; web-of-bonds E 80 digits: 7), kernel right each time; 7/7 mutants caught; 42/42 field tests (incl. bronze and heptagonal); 61 replays byte-identical (3 not countable: inputs missing). Lead 1 closed: web-of-bonds (#52) audit 186,611 signs at 400 digits, 0 wrong (min |value| 0.0457, height ≤ 113); octet-special-exact stored run replays identical: no published result affected; lead 2 closed: #110 independent checks' zsign audited exactly, 1,055,142 elements, 0 disagreements (largest coefficient 50,000)",
+    "retry": "leads 3-5 in the study (#56 field units; sqrtQ; flint-rational element)",
     "study": "2026-11-18-shape-kernel-stage1",
+    "date": "2026-11-18"
+   },
+   {
+    "question": "Heptagonal Queen (DICTO 18 Nov: a heptagonal construction of the 600-cell, our own deconstruction): S7 orbits in sum-zero R^7 with the heptagon's numbers rho = 2cos(pi/7), sigma = rho^2 - 1 in place of phi; hidden symmetry? does it host the fair die or the cube–octahedron line members?",
+    "method": "exact orbit census (gaps in {0,1,rho,sigma}, 4095 orbits); exact symmetry-group search with 600-cell/A/ordinary-orbit controls; exact hull and facet certificates; shadows/sections/vertex layers in the five cubic-symmetric 3-spaces; field-degree argument",
+    "status": "SETTLED (FINAL ok)",
+    "result": "exact heptagonal analogue of A and B: A_h = perms(0, rho, rho·sigma, sigma^2 x4) (210 corners) and B_h = perms(0,1,1,rho^2,rho^2,sigma^2,sigma^2) (630), the only same-sphere pair (gaps reversed on alternate nodes, as golden A and B); no C3 analogue. Q_h = ±A_h ∪ ±B_h (1680 corners) has exactly S7 x {±1} (10080), no hidden symmetry (600-cell control 14400); f-vector 1680/20160/62020/78750/42938/7728, walls only the 21 S7 mirrors. Fair die and truncated cube ruled out by field degree; Kelvin TO, cuboctahedron, RD not found in 50 shadows/sections and 1755 layers (controls found in the 600-cell and 24-cell); A_h's central section is a cube. Prior art: Steinbach 1997 verified; pair not found in sources checked",
+    "retry": "only via E7 ⊃ A7 / E8 ⊃ A8 analogues or a die search over Q(c, sqrt(2T))",
+    "study": "2026-11-18-heptagonal-queen",
     "date": "2026-11-18"
    }
   ]
