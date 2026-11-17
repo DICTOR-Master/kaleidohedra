@@ -1,0 +1,13 @@
+PROGRESS segment 80 frames 9 s
+CHECK step 1 tau 8: parent rows equal True
+LIN step 1 tau 80 s starts 9 net/surv 0.5401 lineage net/cell 1.1225 D/l 0.1607 lineage size 1.161
+CHECK step 1 tau 16: parent rows equal True
+LIN step 1 tau 160 s starts 8 net/surv 0.8310 lineage net/cell 2.1372 D/l 0.2278 lineage size 1.329
+PROGRESS step 1 done 10 s
+CHECK step 8 tau 8: parent rows equal True
+LIN step 8 tau 80 s starts 9 net/surv 0.5327 lineage net/cell 1.0167 D/l 0.1454 lineage size 1.116
+CHECK step 8 tau 16: parent rows equal True
+LIN step 8 tau 160 s starts 8 net/surv 0.8255 lineage net/cell 1.9112 D/l 0.2099 lineage size 1.251
+PROGRESS step 8 done 10 s
+WALL 10 s
+FINAL ok

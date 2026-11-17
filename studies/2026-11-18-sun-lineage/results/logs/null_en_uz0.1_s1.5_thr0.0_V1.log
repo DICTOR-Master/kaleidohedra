@@ -1,0 +1,13 @@
+PROGRESS rep 1/4 4 s
+PROGRESS rep 2/4 8 s
+PROGRESS rep 3/4 11 s
+PROGRESS rep 4/4 13 s
+NULL en_uz0.1_s1.5_thr0.0 V1 tau 80 {'tau': 80.0, 'D_target': 0.1654, 'D': 0.1651, 'lin_net': 1.5347, 'lin_err': 0.0055, 'surv_net': 1.1178, 'surv_frac': 0.8739, 'lin_share_lost': 0.159, 'lin_size': 1.1313, 'fused_per_cell': 0.1368}
+NULL en_uz0.1_s1.5_thr0.0 V1 tau 160 {'tau': 160.0, 'D_target': 0.2499, 'D': 0.2504, 'lin_net': 2.3287, 'lin_err': 0.0098, 'surv_net': 1.37, 'surv_frac': 0.7648, 'lin_share_lost': 0.1999, 'lin_size': 1.2636, 'fused_per_cell': 0.2778}
+NULL en_uz0.1_s1.5_thr0.0 V1 tau 240 {'tau': 240.0, 'D_target': 0.3186, 'D': 0.3185, 'lin_net': 2.9841, 'lin_err': 0.0052, 'surv_net': 1.4123, 'surv_frac': 0.6678, 'lin_share_lost': 0.2161, 'lin_size': 1.3958, 'fused_per_cell': 0.4337}
+NULL en_uz0.1_s1.5_thr0.0 V1 tau 320 {'tau': 320.0, 'D_target': 0.3797, 'D': 0.3801, 'lin_net': 3.6096, 'lin_err': 0.012, 'surv_net': 1.3873, 'surv_frac': 0.5824, 'lin_share_lost': 0.2256, 'lin_size': 1.5326, 'fused_per_cell': 0.6012}
+NULL en_uz0.1_s1.5_thr0.0 V1 tau 480 {'tau': 480.0, 'D_target': 0.4754, 'D': 0.4762, 'lin_net': 4.7839, 'lin_err': 0.0249, 'surv_net': 1.1945, 'surv_frac': 0.4447, 'lin_share_lost': 0.2259, 'lin_size': 1.8244, 'fused_per_cell': 0.9757}
+NULL en_uz0.1_s1.5_thr0.0 V1 tau 640 {'tau': 640.0, 'D_target': 0.5648, 'D': 0.5634, 'lin_net': 6.0091, 'lin_err': 0.0322, 'surv_net': 1.0042, 'surv_frac': 0.3402, 'lin_share_lost': 0.2188, 'lin_size': 2.1305, 'fused_per_cell': 1.4127}
+CONTACTS exactly 3N in 24 of 24 configurations
+CHECKS {'contacts_3n_within_1': True, 'links': True}
+FINAL ok

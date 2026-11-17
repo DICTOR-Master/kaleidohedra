@@ -1,0 +1,29 @@
+PROGRESS segment 242 frames 50 s
+CHECK step 1 tau 8: parent rows equal True
+LIN step 1 tau 80 s starts 30 net/surv 0.5892 lineage net/cell 1.1177 D/l 0.1525 lineage size 1.175
+CHECK step 1 tau 16: parent rows equal True
+LIN step 1 tau 160 s starts 29 net/surv 0.8699 lineage net/cell 1.9295 D/l 0.2209 lineage size 1.343
+CHECK step 1 tau 24: parent rows equal True
+LIN step 1 tau 240 s starts 28 net/surv 1.0192 lineage net/cell 2.6232 D/l 0.2771 lineage size 1.537
+CHECK step 1 tau 32: parent rows equal True
+LIN step 1 tau 320 s starts 27 net/surv 1.1213 lineage net/cell 3.2794 D/l 0.3288 lineage size 1.737
+CHECK step 1 tau 48: parent rows equal True
+LIN step 1 tau 480 s starts 25 net/surv 1.2388 lineage net/cell 4.6456 D/l 0.4157 lineage size 2.102
+CHECK step 1 tau 64: parent rows equal True
+LIN step 1 tau 640 s starts 23 net/surv 1.2899 lineage net/cell 5.9948 D/l 0.4870 lineage size 2.458
+PROGRESS step 1 done 56 s
+CHECK step 8 tau 8: parent rows equal True
+LIN step 8 tau 80 s starts 30 net/surv 0.5914 lineage net/cell 1.0242 D/l 0.1481 lineage size 1.134
+CHECK step 8 tau 16: parent rows equal True
+LIN step 8 tau 160 s starts 29 net/surv 0.8762 lineage net/cell 1.7671 D/l 0.2147 lineage size 1.277
+CHECK step 8 tau 24: parent rows equal True
+LIN step 8 tau 240 s starts 28 net/surv 1.0355 lineage net/cell 2.3794 D/l 0.2674 lineage size 1.444
+CHECK step 8 tau 32: parent rows equal True
+LIN step 8 tau 320 s starts 27 net/surv 1.1319 lineage net/cell 2.9639 D/l 0.3145 lineage size 1.620
+CHECK step 8 tau 48: parent rows equal True
+LIN step 8 tau 480 s starts 25 net/surv 1.2614 lineage net/cell 4.1927 D/l 0.3991 lineage size 1.951
+CHECK step 8 tau 64: parent rows equal True
+LIN step 8 tau 640 s starts 23 net/surv 1.3345 lineage net/cell 5.4400 D/l 0.4728 lineage size 2.267
+PROGRESS step 8 done 58 s
+WALL 58 s
+FINAL ok

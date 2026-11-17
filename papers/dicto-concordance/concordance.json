@@ -8511,6 +8511,15 @@
     "retry": "only with a survivor-free (lineage) count or a null with births and deaths; small D needs a new census",
     "study": "2026-11-18-sun-net-vs-d",
     "date": "2026-11-18"
+   },
+   {
+    "question": "Sun lineage net change (splits/mergers followed) vs moving-Voronoi null with births and deaths",
+    "method": "lineage links from overlap table; null 20000 seeds with census birth/death rates; rules fixed in advance",
+    "status": "COMPUTED (NOT CONFIRMED)",
+    "result": "specific to time order 16/16; no collapse (51-73% at matched D); Sun/null 0.95 -> 1.26 over D 0.20-0.45 (not single); not frame-rate free (up to 35.5%); count ruled by lineage spreading (made 2.8-5.9, lost 0.11-0.31 per cell at 320 s). Post-run: survivor rule on null-with-births gives a falling ratio 1.15 -> 0.62, so the survivor-count fall (0.73 -> 0.60) is of the size the survivor rule produces",
+    "retry": "only with lineages linked through persistent events (not undone within 60 s), or the lost-only share, rules fixed in advance",
+    "study": "2026-11-18-sun-lineage",
+    "date": "2026-11-18"
    }
   ]
  },

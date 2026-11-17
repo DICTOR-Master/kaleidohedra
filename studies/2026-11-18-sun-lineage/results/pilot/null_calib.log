@@ -1,0 +1,10 @@
+PROGRESS rep 1/2 0 s
+PROGRESS rep 2/2 0 s
+NULL calib calib tau 6.4 {'tau': 6.4, 'D_target': 0.1, 'D': 0.1001, 'lin_net': 0.5775, 'lin_err': 0.0035, 'surv_net': 0.5775, 'surv_frac': 1.0, 'lin_share_lost': 0.0963, 'lin_size': 1.0, 'fused_per_cell': 0.0}
+NULL calib calib tau 25.6 {'tau': 25.6, 'D_target': 0.2, 'D': 0.2013, 'lin_net': 1.0945, 'lin_err': 0.0065, 'surv_net': 1.0945, 'surv_frac': 1.0, 'lin_share_lost': 0.1824, 'lin_size': 1.0, 'fused_per_cell': 0.0}
+NULL calib calib tau 57.6 {'tau': 57.6, 'D_target': 0.3, 'D': 0.3012, 'lin_net': 1.5185, 'lin_err': 0.0155, 'surv_net': 1.5185, 'surv_frac': 1.0, 'lin_share_lost': 0.2531, 'lin_size': 1.0, 'fused_per_cell': 0.0}
+NULL calib calib tau 160 {'tau': 160.0, 'D_target': 0.5, 'D': 0.4962, 'lin_net': 2.269, 'lin_err': 0.012, 'surv_net': 2.269, 'surv_frac': 1.0, 'lin_share_lost': 0.3782, 'lin_size': 1.0, 'fused_per_cell': 0.0}
+NULL calib calib tau 313.6 {'tau': 313.6, 'D_target': 0.7, 'D': 0.6898, 'lin_net': 2.8375, 'lin_err': 0.0065, 'surv_net': 2.8375, 'surv_frac': 1.0, 'lin_share_lost': 0.4729, 'lin_size': 1.0, 'fused_per_cell': 0.0}
+NULL calib calib tau 640 {'tau': 640.0, 'D_target': 1.0, 'D': 0.987, 'lin_net': 3.5715, 'lin_err': 0.0035, 'surv_net': 3.5715, 'surv_frac': 1.0, 'lin_share_lost': 0.5953, 'lin_size': 1.0, 'fused_per_cell': 0.0}
+CHECKS {'contacts_3n': True, 'links': True, 'lineage_equals_plain': True, 'D1_reproduces_3600': False}
+FINAL FAIL (D1_reproduces_3600)
