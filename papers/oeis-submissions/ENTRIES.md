@@ -24,6 +24,7 @@ Nothing has been submitted. DICTO submits these himself from his own OEIS accoun
 15. ORDER inside fields (learned on A008264, 16 Nov 2026): LINKS: the 'Table of n, a(n)' line first, then alphabetical by first author's surname (organisations by their name), and 'Index entries for ...' lines always LAST (place 'DICTO' in alphabetical position, not at the end); REFERENCES: alphabetical by first author; COMMENTS: chronological (new ones at the end). Copy pages must say exactly WHERE each line goes (after which existing line), after reading the live entry.
 14. ONE IN, ONE OUT, LIKE FOR LIKE (DICTO 16 Nov 2026): when a COMMENT is approved (or closed), send the next comment; when a SEQUENCE is approved (or closed), send the next sequence; never more in review than now; with three in review now (A402191, A402231, the A008264 comment), the next goes in only after one of them comes out.
 0. OEIS AI POLICY (read 16 Nov 2026, https://oeis.org/wiki/Use_of_AI_for_OEIS_Submissions): PROHIBITED: AI-generated full text of comments; pasting AI-generated text into the Pink Boxes (replies to editors); AI programs the submitter does not understand; AI listed as author; bulk/serial AI submissions. REQUIRED: the human author checks name, terms, formulas (provably correct), programs (produce the terms), comments (accurate, clear). SO: DICTO writes comments and editor replies in his own words; Claude only checks facts/terms/format, lists what must be said, and explains each program line by line. Style Sheet (https://oeis.org/wiki/Style_Sheet) read the same day: Data about 260 characters (no padding beyond ~3 lines), ASCII only, signatures ' - ~~~~' on added lines and '# ~~~~' in programs, Links order (b-file first, Index entries last, rest by surname), Example shows 1-3 simple cases, Crossrefs 'Cf.' comma-space, comments chronological.
+0b. WHO WRITES WHAT (DICTO 17 Nov 2026, settled): FORMULA-LIKE FIELDS (name, example, crossrefs, keywords, formula and program format): Claude gives TWO alternative wordings; DICTO picks one, mixes them or writes his own. COMMENTS: Claude gives a plain everyday-words note (facts + sources, deliberately not OEIS phrasing) and 2-3 human-written OEIS entries as style models; DICTO writes the comment. PINK BOXES (editor replies): DICTO only, in his own words (he addresses the editor by forename); Claude confirms facts on request, writes nothing. Claude then checks DICTO's text for facts only (terms, offsets, references).
 13. BEFORE giving DICTO any OEIS text (16 Nov 2026, after A402231): start from the prepared entry in THIS file, never from raw data; run the checklist: rules 1-12; terms recomputed two independent ways; EVERY cited work opened and checked to CONTAIN the claim it supports (not only that the link resolves; A008264 comment, 16 Nov: the Spin Ice paper was linked but has no coordination sequences, link removed); program prints exactly the data; every A-number real (no A??????) or explained; OEIS searched for the terms; then one copy page, fields in form order.
 
 Order suggested: 1, 2, 3, 4, 5, 6, then the comments, then 7 (optional).
@@ -284,6 +285,32 @@ Extension; not yet the subject of a DICTO paper beyond #102 Corollary 3 (lengths
 ```
 
 Checked 16 Nov 2026: a direct count of tailless closed walks on the fcc lattice (studies/2026-11-07-oeis-candidates/fcc_tailless_direct.py) equals these terms for lengths 1..15 (FINAL ok). Earlier: lengths 3..24 equal oeis_checks.py C1b (fcc closed walks by direct propagation, then Ihara-Bass); the A002899 sum formula used in the program is David Broadhurst's PARI program on A002899; the g.f. form expanded and compared for lengths 1..40.
+
+---
+
+### Entry 8. Roundness r/R of the fair 14-face die = cot(2*Pi/7): QUEUED 18 Nov 2026 (DICTO said yes)
+
+Waits for: (1) a free sequence slot (rule 14: A402191, A402231 still proposed on 18 Nov); (2) the die's own published home with a DOI (DICTO 18 Nov: the die, "Lucky 7", is OUT of #110; held at papers/lucky-7-die-chapter-held.html for the shape language or its own paper) (the %H link must contain the claim, rule 13).
+OEIS searched 18 Nov 2026: digits 7,9,7,4,7,3,3,8,8,8,8,2,4,0 -> no match; "cot 2*Pi/7 decimal", "tan 3*Pi/14 decimal", "heptagon cot" -> no entry for this constant (not found).
+Digits: 110 digits computed two ways (mpmath cot(2*Pi/7) and the root near 0.797 of 7x^6 - 35x^4 + 21x^2 - 1), agreeing to 10^-120; also equal to tan(3*Pi/14).
+
+Name, two wordings (DICTO picks):
+  (a) Decimal expansion of cot(2*Pi/7).
+  (b) Decimal expansion of tan(3*Pi/14).
+
+```
+%S A?????? 7,9,7,4,7,3,3,8,8,8,8,2,4,0,3,9,6,1,4,1,5,6,8,8,2,5,4,2,1,4,4,3,4,8,7,7,7,4,3,3,2,0,6,5,7,4,3,6,8,3,4,2,9,4,2,6,4,6,0,6,0,0,1,9,4,1,8,6,5,1,9,1,8,7,9,5,6,7,7,8,9,2,1,0,6,6,9,2,0,5,2,5,4,0,9,2,9,5,3,5
+%F A?????? Equals tan(3*Pi/14) = 1/tan(2*Pi/7).
+%F A?????? Root of 7*x^6 - 35*x^4 + 21*x^2 - 1 = 0.
+%e A?????? 0.79747338888240396141568825421443487774332065743683...
+%o A?????? (PARI) cotan(2*Pi/7) \\ ~~~~
+%K A?????? nonn,cons,easy
+%O A?????? 0,1
+%A A?????? _James Baker_, (date of submission)
+```
+
+COMMENT facts for DICTO to write in his own words (rule 0b): the inradius/circumradius ratio r/R of the fair 14-face die (DICTO's fair die, #110 Section 9); its 12 sloping plates have unit normal (c, c, b*c), c = cos(2*Pi/7), at angle 2*Pi/7 to two cube axes; it is the roundest of the dice measured in #110 Table 5 (above the dodecahedron and icosahedron, 0.794654). Style models to read: A178817, A374971 (heptagon constants).
+Before submitting: minimal polynomial 7x^6 - 35x^4 + 21x^2 - 1 to be proved irreducible (sympy factor) and the PARI line run; crossrefs to choose (A178817, A374971, cos(2*Pi/7) entry) after reading them.
 
 ---
 
