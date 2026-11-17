@@ -91,7 +91,7 @@ CaDiCaL logs. These are timeouts, not contradictions.
     ≥ 12 for A* and B*, and ≥ **18** for C3*. The C3* figure is the best short argument found;
     it is short except that "≥ 3 per mirror" rests on a 12-pentagon ILP.
   * The dodecahedron, corner and edge families give less.
-  * The optimality of 16/16/22 rests on the two solvers.
+  * The optimality of 16/16/22 rests on the two solvers, and is now certified: DRAT proofs of "no cover of 15, 15, 21" checked by drat-trim (`cert/README.md`, 17 Nov).
 
 ## Not covered
 
