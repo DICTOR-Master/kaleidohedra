@@ -10,7 +10,7 @@ await page.goto(`${process.env.BASE_URL ?? 'http://localhost:8000'}/index.html?s
 await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page.keyboard.press('Enter');
 async function open(action) {
   if (!(await page.locator('.dim-wizard-overlay.open').count())) { await page.tap('#hud-wizard-cue'); await page.waitForSelector('.dim-wizard-overlay.open'); }
-  if (!(await page.locator(`[data-action="${action}"]`).count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, '${action}');
+  if (!(await page.locator(`[data-action="${action}"]`).count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, action);
   await page.waitForTimeout(500);
   const btn = page.locator(`[data-action="${action}"]`).first(); await btn.scrollIntoViewIfNeeded(); await btn.tap();
   await page.waitForTimeout(400);
