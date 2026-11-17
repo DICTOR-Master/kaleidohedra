@@ -206,7 +206,7 @@ for (const [short, key] of [['vertex', 'vertex-first'], ['cell', 'cell-first']])
   assert.deepEqual(errors, [], `?open=whitequeen:${short}: console errors`); checks++;
   await page.close();
 }
-// the cover in the DICTO menu: the Cleo shells, the gold core and the shells' own colours on the card's rotating preview
+// the cover in the DICTO menu: the Cleo shells, the gold core and the shells' own colours on the row's picture
 for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 }, desktop: { width: 1280, height: 800 } })) {
   const page = await b.newPage({ viewport, deviceScaleFactor: 3, hasTouch: dev === 'phone', isMobile: dev === 'phone' });
   const errors = await open(page, '&site=kaleidohedra');
@@ -214,11 +214,18 @@ for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 
   if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await page.click('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:whiteQueenWorld');
   const card = page.locator('[data-action="tool:whiteQueenWorld"]').first();
   await card.scrollIntoViewIfNeeded(); await page.waitForTimeout(1200);
-  const hues = await card.evaluate((el) => {
-    const c = el.querySelector('canvas.dim-wizard-preview'); if (!c) return null;
+  // the menu's picture: the world's own (img.bm-thumb, taken in the world) or, without one, the turning preview
+  const hues = await card.evaluate(async (el) => {
+    let c = el.querySelector('canvas.dim-wizard-preview');
+    const img = el.querySelector('img.bm-thumb');
+    const photo = !c && img;
+    if (photo) { await img.decode(); c = document.createElement('canvas'); c.width = img.naturalWidth; c.height = img.naturalHeight; c.getContext('2d').drawImage(img, 0, 0); }
+    if (!c) return null;
+    // gold: the bright line colour on the drawing; on the photo the shaded core (red well above green, blue well below; not the shells' yellow)
+    const isGold = (r, g, bl) => (photo ? r > 150 && r > g + 20 && bl < g - 30 : r > 200 && g > 150 && bl < 140);
     const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data; let gold = 0, blue = 0, green = 0;
     for (let i = 0; i < d.length; i += 4) { if (d[i + 3] < 100) continue; const [r, g, bl] = [d[i], d[i + 1], d[i + 2]];
-      if (r > 200 && g > 150 && bl < 140) gold++; else if (bl > r + 30 && bl >= g) blue++; else if (g > r + 30 && g > bl) green++; }
+      if (isGold(r, g, bl)) gold++; else if (bl > r + 30 && bl >= g) blue++; else if (g > r + 30 && g > bl) green++; }
     return { gold, blue, green };
   });
   assert.ok(hues && hues.gold > 0 && hues.blue > 0 && hues.green > 0, `${dev}: the cover shows the gold core and coloured shells ${JSON.stringify(hues)}`); checks++;

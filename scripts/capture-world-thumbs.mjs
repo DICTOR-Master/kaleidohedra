@@ -70,6 +70,8 @@ const PREP = {
   targets: async () => { await page.selectOption('[data-select="type"]', 'rhombic dodecahedron'); await page.selectOption('[data-select="show"]', 'neighbours'); await page.waitForTimeout(2000); },
   // every letter tapped, so all five solids' layers are in the mix
   platonicMix: async () => { for (const w of ['D', 'C', 'T', 'O', 'I']) { await page.click(`[data-pm-world="${w}"]`); await page.waitForTimeout(1500); } await page.waitForTimeout(2500); },
+  // the cover's picture: the Shells view cut open (Whole), the gold Cleo core inside its shells in their colours
+  whiteQueen: async () => { await page.click('#worldwhiteQueen-panel [data-wq-mode="shells"]'); await page.waitForTimeout(600); await page.click('#worldwhiteQueen-panel [data-wq-whole]'); await page.waitForTimeout(3000); },
   dictofcc: () => tapBuild(CLUSTER),
   dictohex: () => tapBuild(CLUSTER),
   // both pieces in their own colours (prolate gold, oblate blue): a few of each, then the Penrose check off
