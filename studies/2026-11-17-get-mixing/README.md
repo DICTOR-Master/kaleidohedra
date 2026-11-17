@@ -197,8 +197,44 @@ Forcing aperiodicity would need extra rules, as Inchbald notes.
 4. **Flip-connectivity of the tilings of T.** If proved (it may follow from known results on extension spaces of rank-3 oriented matroids), it would turn the Inchbald study's "no 16-cell decomposition among 160" into a theorem.
 5. **For the paper:** the A/B line theorem is short, exact and visual (one free bit per line), and could be the "bridge" figure. Placement in the GET paper or the Concordance is DICTO's call.
 
+## Overnight job (internal): Lead 1, the full face-corona count
+
+Script: `scripts/corona_enum.py` (method and controls in its header).
+
+The coronas are far too many to list, so they are **counted exactly**, by kind:
+- the conflict table is exact: integer separating-axis test on ℤ[φ] pairs; exact ℚ(φ) volumes only where C's removed corner cell is involved;
+- the count is a polynomial in the numbers of A, B and C neighbours;
+- the counter branches on the face with the fewest candidates and splits the rest into independent parts whose counts multiply (the method of #SAT model counters).
+
+Pilot (17 November, full GET A centre, 1,568 candidates, 95 s, FINAL ok; `data/corona-pilot-A.log`). These numbers are a pilot result, to be confirmed by the full run:
+- 40,549,318,640,481 face coronas around GET A, of which 40,549,140,974,737 are mixed;
+- by the set of neighbour solids: A only 177,665,744; B only 1,991,168,448; A and B 7,114,698,264,370; A and C 2,967,898,883; B and C 65,160,763,456; all three 33,364,322,879,580; C only: none (pysat agrees);
+- controls: exactly one all-lattice corona; the 26 distinct inner coronas of the four exact patches are all valid; 300 pairs agree with `mixlib.overlaps`; on 8 sub-instances the counter, a plain enumeration and pysat agree.
+
+Expected time for all three centres: about 5 to 10 minutes on 20 workers; peak memory under 2 GB. Conflict chunks, exact volumes and count branches are cached in `data/corona-cache/`, so a restart resumes (GET A is already cached).
+
+Launch line:
+
+```
+JOBSYNC=$HOME/k-research/studies/2026-11-17-get-mixing ~/dicto-alerts/dbbjob.sh get-corona 2 'cd ~/k-research/studies/2026-11-17-get-mixing && ~/venvs/indep/bin/python -u scripts/corona_enum.py ~/k-research/studies/2026-11-15-grunbaum-k10 data/inchbald-source.json data/corona-enum.json ABC --workers 20 2>&1 | tee data/corona-enum.log'
+```
+
+The plan file for the pre-flight gate is written (`get-corona.plan`, pre-flight ok). The script prints `FINAL ok` only when every control passes.
+
 ## Files
 
-- `scripts/`: `mixlib.py` (the solids, the symmetries, the exact overlap test); `pilot_lib.py`; `neighbours.py`; `layers.py`; `decorated_lattice.py`; `decorated_sft.py`; `patch.py`; `free_patch.py`; `fig.py`; `zsurf.py` (copy).
+- `scripts/`: `mixlib.py` (the solids, the symmetries, the exact overlap test); `pilot_lib.py`; `neighbours.py`; `layers.py`; `decorated_lattice.py`; `decorated_sft.py`; `patch.py`; `free_patch.py`; `fig.py`; `corona_enum.py` (Lead 1); `zsurf.py` (copy).
 - `data/`: JSON and logs of every run. `inchbald-source.json` is a copy of the Inchbald study's surface data.
 - `figures/get-mixing.png` (also in the reading folder as PREVIEW-get-mixing.png).
+
+## Full corona count (18 Nov 2026, job get-corona, FINAL ok, all controls passed)
+
+Exact counts of face coronas (every face of the centre covered face to face by neighbours from the valid placements, no two neighbours overlapping; exact Z[phi]/Q(phi) decisions; controls: candidate counts, one all-lattice corona per centre, every inner corona of the exact patches found, 300 pairs per centre agree with mixlib.overlaps, counter = plain enumeration = pysat on sub-instances):
+
+| centre | face coronas | mixed | all-lattice |
+|---|---|---|---|
+| GET A | 40,549,318,640,481 | 40,549,140,974,737 | 1 |
+| GET B | 40,416,653,308,641 | 40,414,637,840,025 | 1 |
+| Inchbald's (C2) | 40,011,535,741,281 | 40,011,535,741,265 | 1 |
+
+Mixed coronas exist around every centre, including coronas with all three solids. A corona is a local condition: these counts do not say how many coronas extend to tilings of space (the layer and line theorems above give tilings).

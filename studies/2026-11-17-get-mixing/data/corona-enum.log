@@ -1,0 +1,239 @@
+A valid face neighbours: {'A': 588, 'B': 784, 'C': 196} new exact volumes 0 t=2s
+A patch control: inner tiles 211 distinct inner coronas 26 neighbours missing from the candidates 0
+A conflict chunks: 196 (196 cached)
+PROGRESS 0.1667 A conflicts: 258528 definite, 5654 need exact volumes t=5s
+A distinct cell-pair volumes needed 5091 cached 5091
+A neighbour pairs in conflict: 262768 of 1228528 (by exact volume: 4240 of 5654; new volumes 0) t=5s
+PROGRESS 0.2000 A conflict table complete t=5s
+A sample control vs mixlib.overlaps: 300 pairs, disagreements 0 t=36s
+A patch inner coronas that are valid coronas of the table: 26 of 26
+A    cross-check on 74 candidates: enumeration 12, counter 12, pysat 12, agree True
+A    cross-check on 94 candidates: enumeration 68, counter 68, pysat 68, agree True
+A    cross-check on 112 candidates: enumeration 144, counter 144, pysat 144, agree True
+A    cross-check on 133 candidates: enumeration 114, counter 114, pysat 114, agree True
+A    cross-check on 154 candidates: enumeration 4522, counter 4522, pysat 4522, agree True
+A    cross-check on 172 candidates: enumeration 21549, counter 21549, pysat 21549, agree True
+A    cross-check on 214 candidates: enumeration 1826, counter 1826, pysat 1826, agree True
+A    cross-check on 252 candidates: enumeration 240, counter 240, pysat 240, agree True
+PROGRESS 0.2067 A counter cross-checks done t=37s
+A count tasks 784 (784 cached) t=37s
+A face coronas: 40549318640481 | mixed: 40549140974737 | all-lattice: 1 t=37s
+    A A6 B7 C1 count 2569380480488
+    A A5 B8 C1 count 2439060754586
+    A A5 B7 C2 count 2419188960028
+    A A6 B6 C2 count 2154661080430
+    A A7 B6 C1 count 2068123556484
+    A A4 B8 C2 count 2015555211224
+    A A4 B9 C1 count 1747360163556
+    A A5 B6 C3 count 1460944388416
+    A A7 B5 C2 count 1435038039176
+    A A6 B8 C0 count 1429126854642
+    A A4 B7 C3 count 1426309595968
+    A A7 B7 C0 count 1373352535712
+    A A8 B5 C1 count 1271498091528
+    A A3 B9 C2 count 1214698343852
+    A A5 B9 C0 count 1154054883196
+    A A6 B5 C3 count 1086311074824
+    A A8 B6 C0 count 1028178000792
+    A A3 B8 C3 count 990137911264
+    A A3 B10 C1 count 918023348804
+    A A4 B10 C0 count 712283087516
+    A A8 B4 C2 count 709248670952
+    A A4 B6 C4 count 670223550588
+    A A9 B5 C0 count 596015204088
+    A A9 B4 C1 count 589348622274
+    A A7 B4 C3 count 586449654292
+    A A5 B5 C4 count 578926464248
+    A A3 B7 C4 count 540013623728
+    A A2 B10 C2 count 502235351844
+    A A2 B9 C3 count 465021322528
+    A A6 B4 C4 count 352674827930
+    A A2 B11 C1 count 334740233528
+    A A3 B11 C0 count 325880624236
+    A A2 B8 C4 count 289459845440
+    A A10 B4 C0 count 262924197356
+    A A9 B3 C2 count 253611640256
+    A A8 B3 C3 count 225227517476
+    A A4 B5 C5 count 209600525444
+    A A10 B3 C1 count 199991857392
+    A A3 B6 C5 count 198888480532
+    A A7 B3 C4 count 149622638240
+A coronas by the set of neighbour solids: {'A': 177665744, 'AB': 7114698264370, 'ABC': 33364322879580, 'AC': 2967898883, 'B': 1991168448, 'BC': 65160763456}
+PROGRESS 0.3100 A count complete t=37s
+A pysat: solid sets with a corona {'A': True, 'B': True, 'C': False, 'AB': True, 'AC': True, 'BC': True, 'ABC': True} agrees with the count: True
+A coronas re-verified with mixlib.overlaps: 10 failures 0 t=40s
+PROGRESS 0.3333 A done t=40s
+B valid face neighbours: {'A': 588, 'B': 784, 'C': 196} new exact volumes 0 t=42s
+B patch control: inner tiles 99 distinct inner coronas 32 neighbours missing from the candidates 0
+B conflict chunks: 196 (0 cached)
+PROGRESS 0.3418 B conflict chunks 10/196 t=49s
+PROGRESS 0.3503 B conflict chunks 20/196 t=51s
+PROGRESS 0.3588 B conflict chunks 30/196 t=52s
+PROGRESS 0.3673 B conflict chunks 40/196 t=54s
+PROGRESS 0.3759 B conflict chunks 50/196 t=57s
+PROGRESS 0.3844 B conflict chunks 60/196 t=58s
+PROGRESS 0.3929 B conflict chunks 70/196 t=59s
+PROGRESS 0.4014 B conflict chunks 80/196 t=63s
+PROGRESS 0.4099 B conflict chunks 90/196 t=64s
+PROGRESS 0.4184 B conflict chunks 100/196 t=65s
+PROGRESS 0.4269 B conflict chunks 110/196 t=68s
+PROGRESS 0.4354 B conflict chunks 120/196 t=70s
+PROGRESS 0.4439 B conflict chunks 130/196 t=71s
+PROGRESS 0.4524 B conflict chunks 140/196 t=72s
+PROGRESS 0.4609 B conflict chunks 150/196 t=75s
+PROGRESS 0.4694 B conflict chunks 160/196 t=76s
+PROGRESS 0.4779 B conflict chunks 170/196 t=78s
+PROGRESS 0.4864 B conflict chunks 180/196 t=79s
+PROGRESS 0.4949 B conflict chunks 190/196 t=80s
+PROGRESS 0.5000 B conflict chunks 196/196 t=80s
+PROGRESS 0.5000 B conflicts: 261206 definite, 5163 need exact volumes t=80s
+B distinct cell-pair volumes needed 5301 cached 4607
+B neighbour pairs in conflict: 265200 of 1228528 (by exact volume: 3994 of 5163; new volumes 694) t=82s
+PROGRESS 0.5333 B conflict table complete t=82s
+B sample control vs mixlib.overlaps: 300 pairs, disagreements 0 t=103s
+B patch inner coronas that are valid coronas of the table: 32 of 32
+B    cross-check on 73 candidates: enumeration 66, counter 66, pysat 66, agree True
+B    cross-check on 94 candidates: enumeration 73, counter 73, pysat 73, agree True
+B    cross-check on 113 candidates: enumeration 8, counter 8, pysat 8, agree True
+B    cross-check on 134 candidates: enumeration 396, counter 396, pysat 396, agree True
+B    cross-check on 154 candidates: enumeration 132, counter 132, pysat 132, agree True
+B    cross-check on 174 candidates: enumeration 498, counter 498, pysat 498, agree True
+B    cross-check on 211 candidates: enumeration 626, counter 626, pysat 626, agree True
+B    cross-check on 251 candidates: enumeration 10905, counter 10905, pysat 10905, agree True
+PROGRESS 0.5400 B counter cross-checks done t=104s
+B count tasks 784 (0 cached) t=104s
+PROGRESS 0.6400 B count tasks 784/784 t=109s
+B face coronas: 40416653308641 | mixed: 40414637840025 | all-lattice: 1 t=109s
+    B A6 B7 C1 count 2572815324167
+    B A5 B7 C2 count 2439864515391
+    B A5 B8 C1 count 2438789422071
+    B A6 B6 C2 count 2176472321071
+    B A7 B6 C1 count 2074134586734
+    B A4 B8 C2 count 2029976187771
+    B A4 B9 C1 count 1745217498855
+    B A5 B6 C3 count 1471450951071
+    B A7 B5 C2 count 1452003836724
+    B A4 B7 C3 count 1435084817877
+    B A6 B8 C0 count 1379131475539
+    B A7 B7 C0 count 1317976962681
+    B A8 B5 C1 count 1277141779581
+    B A3 B9 C2 count 1222075972474
+    B A5 B9 C0 count 1119768323970
+    B A6 B5 C3 count 1095446730932
+    B A3 B8 C3 count 995413107701
+    B A8 B6 C0 count 980789738493
+    B A3 B10 C1 count 916425525298
+    B A8 B4 C2 count 718925180094
+    B A4 B10 C0 count 695128632900
+    B A4 B6 C4 count 666598056213
+    B A9 B4 C1 count 592774331626
+    B A7 B4 C3 count 592208631165
+    B A5 B5 C4 count 575430418476
+    B A9 B5 C0 count 564661099593
+    B A3 B7 C4 count 537402732067
+    B A2 B10 C2 count 504994508928
+    B A2 B9 C3 count 467262128112
+    B A6 B4 C4 count 350336918232
+    B A2 B11 C1 count 334294156728
+    B A3 B11 C0 count 320133768242
+    B A2 B8 C4 count 288215891136
+    B A9 B3 C2 count 257575369526
+    B A10 B4 C0 count 247106645163
+    B A8 B3 C3 count 227810349477
+    B A4 B5 C5 count 206352992055
+    B A10 B3 C1 count 201375579738
+    B A3 B6 C5 count 196307221057
+    B A7 B3 C4 count 148572376785
+B coronas by the set of neighbour solids: {'A': 158584272, 'AB': 6848865961811, 'ABC': 33497371260594, 'AC': 2973650700, 'B': 2015468616, 'BC': 65268382648}
+PROGRESS 0.6433 B count complete t=109s
+B pysat: solid sets with a corona {'A': True, 'B': True, 'C': False, 'AB': True, 'AC': True, 'BC': True, 'ABC': True} agrees with the count: True
+B coronas re-verified with mixlib.overlaps: 10 failures 0 t=111s
+PROGRESS 0.6667 B done t=112s
+C valid face neighbours: {'A': 588, 'B': 784, 'C': 196} new exact volumes 54 t=115s
+C patch control: inner tiles 12 distinct inner coronas 3 neighbours missing from the candidates 0
+C conflict chunks: 196 (0 cached)
+PROGRESS 0.6752 C conflict chunks 10/196 t=121s
+PROGRESS 0.6837 C conflict chunks 20/196 t=124s
+PROGRESS 0.6922 C conflict chunks 30/196 t=124s
+PROGRESS 0.7007 C conflict chunks 40/196 t=127s
+PROGRESS 0.7092 C conflict chunks 50/196 t=129s
+PROGRESS 0.7177 C conflict chunks 60/196 t=131s
+PROGRESS 0.7262 C conflict chunks 70/196 t=132s
+PROGRESS 0.7347 C conflict chunks 80/196 t=135s
+PROGRESS 0.7432 C conflict chunks 90/196 t=136s
+PROGRESS 0.7517 C conflict chunks 100/196 t=138s
+PROGRESS 0.7602 C conflict chunks 110/196 t=140s
+PROGRESS 0.7687 C conflict chunks 120/196 t=142s
+PROGRESS 0.7772 C conflict chunks 130/196 t=143s
+PROGRESS 0.7857 C conflict chunks 140/196 t=145s
+PROGRESS 0.7942 C conflict chunks 150/196 t=147s
+PROGRESS 0.8027 C conflict chunks 160/196 t=148s
+PROGRESS 0.8112 C conflict chunks 170/196 t=150s
+PROGRESS 0.8197 C conflict chunks 180/196 t=152s
+PROGRESS 0.8282 C conflict chunks 190/196 t=153s
+PROGRESS 0.8333 C conflict chunks 196/196 t=153s
+PROGRESS 0.8333 C conflicts: 268160 definite, 5867 need exact volumes t=153s
+C distinct cell-pair volumes needed 5424 cached 4068
+C neighbour pairs in conflict: 272496 of 1228528 (by exact volume: 4336 of 5867; new volumes 1356) t=156s
+PROGRESS 0.8667 C conflict table complete t=156s
+C sample control vs mixlib.overlaps: 300 pairs, disagreements 0 t=172s
+C patch inner coronas that are valid coronas of the table: 3 of 3
+C    cross-check on 73 candidates: enumeration 6, counter 6, pysat 6, agree True
+C    cross-check on 92 candidates: enumeration 10, counter 10, pysat 10, agree True
+C    cross-check on 113 candidates: enumeration 24, counter 24, pysat 24, agree True
+C    cross-check on 134 candidates: enumeration 180, counter 180, pysat 180, agree True
+C    cross-check on 154 candidates: enumeration 48, counter 48, pysat 48, agree True
+C    cross-check on 173 candidates: enumeration 18, counter 18, pysat 18, agree True
+C    cross-check on 213 candidates: enumeration 192, counter 192, pysat 192, agree True
+C    cross-check on 252 candidates: enumeration 6240, counter 6240, pysat 6240, agree True
+PROGRESS 0.8733 C counter cross-checks done t=173s
+C count tasks 784 (0 cached) t=173s
+PROGRESS 0.9733 C count tasks 784/784 t=178s
+C face coronas: 40011535741281 | mixed: 40011535741265 | all-lattice: 1 t=178s
+    C A6 B7 C1 count 2563851182228
+    C A5 B7 C2 count 2522980730748
+    C A5 B8 C1 count 2430408604284
+    C A6 B6 C2 count 2266283988076
+    C A4 B8 C2 count 2087445081201
+    C A7 B6 C1 count 2066412720726
+    C A4 B9 C1 count 1740241613376
+    C A7 B5 C2 count 1524059039400
+    C A5 B6 C3 count 1495696330584
+    C A4 B7 C3 count 1453547551752
+    C A8 B5 C1 count 1270907983368
+    C A3 B9 C2 count 1251891431348
+    C A6 B8 C0 count 1229506603465
+    C A7 B7 C0 count 1158232649712
+    C A6 B5 C3 count 1118447850772
+    C A5 B9 C0 count 1011472725852
+    C A3 B8 C3 count 1005599652628
+    C A3 B10 C1 count 915518495284
+    C A8 B6 C0 count 847885608684
+    C A8 B4 C2 count 761289527064
+    C A4 B6 C4 count 652855219488
+    C A4 B10 C0 count 635948566314
+    C A7 B4 C3 count 608011841556
+    C A9 B4 C1 count 588208898794
+    C A5 B5 C4 count 561381715956
+    C A3 B7 C4 count 527652591304
+    C A2 B10 C2 count 516535006668
+    C A9 B5 C0 count 478854566048
+    C A2 B9 C3 count 471451523640
+    C A6 B4 C4 count 340005058248
+    C A2 B11 C1 count 335258935032
+    C A3 B11 C0 count 296763919900
+    C A2 B8 C4 count 283450231971
+    C A9 B3 C2 count 275330069400
+    C A8 B3 C3 count 235575654264
+    C A10 B4 C0 count 204850657065
+    C A10 B3 C1 count 198768619716
+    C A4 B5 C5 count 198281873976
+    C A3 B6 C5 count 190001347910
+    C A7 B3 C4 count 143337711792
+C coronas by the set of neighbour solids: {'A': 114850272, 'AB': 6060777245960, 'ABC': 33879993090330, 'AC': 2983423311, 'B': 1962012608, 'BC': 65705118784, 'C': 16}
+PROGRESS 0.9767 C count complete t=178s
+C pysat: solid sets with a corona {'A': True, 'B': True, 'C': True, 'AB': True, 'AC': True, 'BC': True, 'ABC': True} agrees with the count: True
+C coronas re-verified with mixlib.overlaps: 10 failures 0 t=181s
+PROGRESS 1.0000 C done t=182s
+total t=183s
+FINAL ok

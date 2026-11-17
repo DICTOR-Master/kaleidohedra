@@ -1,0 +1,92 @@
+A valid face neighbours: {'A': 588, 'B': 784, 'C': 196} new exact volumes 0 t=2s
+A patch control: inner tiles 211 distinct inner coronas 26 neighbours missing from the candidates 0
+A PILOT: candidates limited to 500
+A conflict chunks: 63 (63 cached)
+PROGRESS 0.5000 A conflicts: 25766 definite, 610 need exact volumes t=3s
+A distinct cell-pair volumes needed 1973 cached 1973
+A neighbour pairs in conflict: 26216 of 124750 (by exact volume: 450 of 610; new volumes 0) t=3s
+PROGRESS 0.6000 A conflict table complete t=3s
+A sample control vs mixlib.overlaps: 300 pairs, disagreements 0 t=28s
+A patch inner coronas that are valid coronas of the table: 26 of 26
+A    cross-check on 73 candidates: enumeration 9, counter 9, pysat 9, agree True
+A    cross-check on 93 candidates: enumeration 65, counter 65, pysat 65, agree True
+A    cross-check on 110 candidates: enumeration 652, counter 652, pysat 652, agree True
+A    cross-check on 131 candidates: enumeration 1680, counter 1680, pysat 1680, agree True
+A    cross-check on 153 candidates: enumeration 2672, counter 2672, pysat 2672, agree True
+A    cross-check on 172 candidates: enumeration 9645, counter 9645, pysat 9645, agree True
+A    cross-check on 207 candidates: enumeration 34592, counter 34592, pysat 34592, agree True
+A    cross-check on 249 candidates: enumeration 98900, counter 98900, pysat 98900, agree True
+PROGRESS 0.6200 A counter cross-checks done t=38s
+A count tasks 110 (0 cached) t=38s
+PROGRESS 0.9200 A count tasks 110/110 t=38s
+A face coronas: 2723410273 | mixed: 2723300417 | all-lattice: 1 t=38s
+    A A7 B6 C1 count 211960983
+    A A6 B7 C1 count 211044514
+    A A7 B7 C0 count 203930664
+    A A8 B6 C0 count 188439315
+    A A6 B8 C0 count 171142032
+    A A8 B5 C1 count 160515553
+    A A5 B8 C1 count 158698892
+    A A9 B5 C0 count 134302398
+    A A6 B6 C2 count 114527009
+    A A5 B9 C0 count 110933056
+    A A5 B7 C2 count 103663530
+    A A7 B5 C2 count 93247202
+    A A9 B4 C1 count 90452534
+    A A4 B9 C1 count 89269327
+    A A10 B4 C0 count 72637720
+    A A4 B8 C2 count 68839435
+    A A8 B4 C2 count 55472701
+    A A4 B10 C0 count 54765096
+    A A10 B3 C1 count 36840428
+    A A3 B10 C1 count 36656740
+    A A5 B6 C3 count 36405657
+    A A3 B9 C2 count 32879089
+    A A6 B5 C3 count 32340234
+    A A4 B7 C3 count 29463680
+    A A11 B3 C0 count 28891193
+    A A9 B3 C2 count 23503929
+    A A7 B4 C3 count 20614771
+    A A3 B11 C0 count 20020492
+    A A3 B8 C3 count 16880699
+    A A2 B10 C2 count 10783315
+    A A2 B11 C1 count 10448139
+    A A11 B2 C1 count 10255060
+    A A8 B3 C3 count 9233375
+    A A12 B2 C0 count 7981410
+    A A4 B6 C4 count 6898601
+    A A5 B5 C4 count 6768893
+    A A10 B2 C2 count 6722623
+    A A2 B9 C3 count 6564054
+    A A2 B12 C0 count 5135939
+    A A3 B7 C4 count 4900902
+A coronas by the set of neighbour solids: {'A': 109856, 'AB': 1000375858, 'ABC': 1721918755, 'AC': 280042, 'B': 62864, 'BC': 662898}
+PROGRESS 0.9300 A count complete t=38s
+A pysat: solid sets with a corona {'A': True, 'B': True, 'C': False, 'AB': True, 'AC': True, 'BC': True, 'ABC': True} agrees with the count: True
+A coronas re-verified with mixlib.overlaps: 10 failures 0 t=40s
+PROGRESS 1.0000 A done t=40s
+total t=40s
+FINAL ok
+	Command being timed: "timeout 280 /home/dicto/venvs/indep/bin/python -u scripts/corona_enum.py /home/dicto/k-research/studies/2026-11-15-grunbaum-k10 data/inchbald-source.json data/corona-pilot.json A --limit 500 --workers 20"
+	User time (seconds): 47.69
+	System time (seconds): 0.50
+	Percent of CPU this job got: 118%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:40.83
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 127424
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 182
+	Minor (reclaiming a frame) page faults: 138408
+	Voluntary context switches: 1450
+	Involuntary context switches: 469
+	Swaps: 0
+	File system inputs: 51160
+	File system outputs: 1648
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
