@@ -56,3 +56,31 @@ certificate: the list of checks that prove it, which anyone can re-run without t
 
 Stage 1: list every exact-number module in the studies (the code map), merge them into one kernel with all their tests,
 and run every test. A pilot on the three most-copied modules first.
+
+## Words, grammar and scores (DICTO, 18 Nov 2026)
+
+DICTO: "minimal amount of pieces value … derivative forms are degrees"; "pieces are words, degrees are steps"; "tiles that
+fill space"; "the lattice is the grammar".
+
+- **Words.** The base words are tiles that fill space. The five base words are Fedorov's five parallelohedra (E. S. Fedorov,
+  1885): cube, hexagonal prism, rhombic dodecahedron, elongated dodecahedron, truncated octahedron. Smaller words cut them:
+  the cube's centre pyramid (square base a, height a/2) builds both the cube (6) and the rhombic dodecahedron (12).
+  The truncated octahedron is 8 identical octant pieces (cut by its three mirror planes through the centre; with corners
+  at the permutations of (0, ±1, ±2), volume 32, each piece 4: one whole hexagon and three quarter-squares); the 8
+  hexagons face the 8 nearest neighbours of the bcc lattice. It is also degree 1 from the octahedron (truncation), so it
+  joins the words and the steps.
+- **Grammar.** The lattice says where words go and how they join. Each base word is the Voronoi cell of its lattice: cube,
+  simple cubic; rhombic dodecahedron, face-centred cubic; truncated octahedron, body-centred cubic; hexagonal prism,
+  hexagonal; elongated dodecahedron, a stretched lattice. Example: in a checkerboard of cubes, each cube of one colour
+  takes the centre pyramids of its 6 neighbours and becomes a rhombic dodecahedron on the fcc lattice.
+- **Score.** The fewest space-filling words that build a shape.
+- **Degrees.** Steps from a word or built shape (Conway's polyhedron operators for the steps). The Platonic solids are
+  built shapes; the Archimedean solids are degree 1 from them.
+- **Golden side.** AXE and CLEO (Mosseri–Sadoc tiles t6 and t4, scaled by 1/φ; Koca et al. 2020) as words of the
+  icosahedral tilings, entering at golden enlargement steps.
+- **Credits.** Plato (*Timaeus*: solids from two right triangles); Aristotle (*De Caelo* III.8: regular tetrahedra
+  fill space, refuted; history in Lagarias and Zong 2012); Archimedes (the thirteen solids, via Pappus); the *Nine
+  Chapters* and Liu Hui (pyramid dissections of the cube); Dehn 1901 (a cube is not cut into regular tetrahedra);
+  Fedorov 1885; Conway.
+- **Open.** Smaller words for the hexagonal prism and elongated dodecahedron; scores of the
+  dodecahedron and icosahedron, which do not fill space.

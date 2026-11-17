@@ -8488,7 +8488,7 @@
    {
     "question": "Can GET A, GET B and Inchbald's dimpled triacontahedron be mixed in one tiling; non-periodic tilings?",
     "method": "exact Z[phi]/Q(phi) overlap + face matching over all 120 images; layer theorem; line theorem with pysat in a box; exact patches",
-    "status": "PROVED (layer and line theorems; patches exact); corona enumeration open",
+    "status": "PROVED (layer and line theorems; patches exact); corona enumeration DONE 18 Nov (see entry \"GET face coronas, full count\")",
     "result": "Inchbald's solid tiles by translation (exact). 588/784/196 face-to-face placements of A/B/C2 around any centre. One lattice plane takes all three solids: any word in A,B,C stacks (Fibonacci -> non-periodic). A/B on their common lattice: tiling iff constant along lines v -> one free bit per point of Z^2. GET A and GET B alone have non-lattice (layer) tilings. Never aperiodic: a period along v always remains (polytypism of Penrose rhombohedra).",
     "retry": "only for: full corona enumeration; tilings with no period from the 11 placements; C2 alone beyond the tested model",
     "study": "2026-11-17-get-mixing",
@@ -8525,9 +8525,54 @@
     "question": "God's Dice (DICTO): is the truncated cube the lawgiving shape? (turn point; sqrt2 station; as a die)",
     "method": "exact algebra (sympy) on S(mu) = cube ∩ mu·octahedron and the Delian line; Q_l l=4..16; solid-angle die model + quasi-static drop simulation",
     "status": "SETTLED (NO on all three); new exact fair point",
-    "result": "truncated cube at mu = 1+sqrt2: not the turn's fixed point (sqrt3) nor its image pairs; no measure picks it out (Q6 zero 0.0097 away; Mahler local max 13.38817 at 2.08525 = root of 2mu^3-9mu^2+21, not in earlier notes); equal-edge/midsphere stations 3/2, 2, 1+sqrt2. As a die: octagon 0.1511142799, triangle 0.0116642901. Unique fair member (all 14 faces 1/14): mu_f = 1+sqrt(2 tan(pi/14) tan(2pi/7)) = 1.7565821359 (minimal polynomial mu^6-6mu^5-3mu^4+52mu^3-97mu^2+74mu-13); not found in sources checked",
+    "result": "truncated cube at mu = 1+sqrt2: not the turn's fixed point (sqrt3) nor its image pairs; no measure picks it out (Q6 zero 0.0097 away; Mahler local max 13.38817 at 2.08525 = root of 2mu^3-9mu^2+21, not in earlier notes); equal-edge/midsphere stations 3/2, 2, 1+sqrt2. As a die: octagon 0.1511142799, triangle 0.0116642901. Unique fair member (all 14 faces 1/14): mu_f = 1+sqrt(2 tan(pi/14) tan(2pi/7)) = 1.7565821359 (minimal polynomial mu^6-6mu^5-3mu^4+52mu^3-97mu^2+74mu-13); not found in sources checked | 18 Nov additions: prior art read by free routes: Diaconis and Keller 1989 ('fair by continuity' gives existence of a fair cut; credited) and Rawlins US 11033806 (equal solid angles; no 14-face die); ours = exact value, minimal polynomial, uniqueness. Identity: landing directions = the 14 bcc neighbour directions with equal weight (Q_l and W_l equal the bcc shell, l = 4..16); corner Q4 .1203 Q6 .5059 (none zero); tan(pi/14)tan(2pi/7) = 9 - 4c - 16c^2, c = cos(2pi/7) (heptagonal field, x^3 - 9x^2 - x + 1); Vacuus heart kind, one strut length, 36 fins (24 at 50.51 deg, 12 at 15.78 deg); IQ .781306; Mahler 14.2455; Dehn nonzero (does not fill space alone). Print model (STL, 30 mm) in print/. Full new-shape treatment running: studies/2026-11-18-fair-die-full.",
     "retry": "never for the three readings; leads: fair die mu_f as object; midsphere stations vs the turn",
     "study": "2026-11-18-gods-dice",
+    "date": "2026-11-18"
+   },
+   {
+    "question": "GET face coronas, full count (DICTO: 'get corona'): how many face coronas does each GET solid have, and are mixed coronas possible around every centre?",
+    "method": "corona_enum.py exact counting (exact conflict test, exact cover counting), pilot then full job; pysat cross-check",
+    "status": "SETTLED (exact count)",
+    "result": "A 40,549,318,640,481 face coronas (40,549,140,974,737 mixed; C only none); B 40.42e12; C2 40.01e12; mixed around every centre; one all-lattice corona each",
+    "retry": "never",
+    "study": "2026-11-17-get-mixing",
+    "date": "2026-11-18"
+   },
+   {
+    "question": "Yantra with n triangles (#103): does DICTO's definition give one integer sequence?",
+    "method": "exact construction going down from nine and up past nine (decision 1: repeat the 7 -> 9 step); Chiodo 4-parameter family scan",
+    "status": "SETTLED",
+    "result": "down from nine exact and unique: 7, 16, 29, 43 odd regions (n = 3, 5, 7, 9); up past nine impossible under decision 1 (base meets t6's base line; 6 conditions for 4 unknowns), so no sequence of 6+ terms; in Chiodo's family the count is 43, 45, 47 or 49. Feeds #103 'why nine'",
+    "retry": "only with a different growth rule chosen by DICTO",
+    "study": "2026-11-17-yantra-sequence",
+    "date": "2026-11-17"
+   },
+   {
+    "question": "Valley Charge: build the golden station of the 600-cell from #110 Proposition 6 and check every stated value",
+    "method": "exact Q(sqrt5) construction, 22 checks",
+    "status": "SETTLED (exact, FINAL ok)",
+    "result": "1440 corners, 4320 edges, 3600 two-faces (2400 triangles, 1200 golden hexagons), 720 cells, Euler 0; mu = 1/2 + sqrt5/5; Vacuus = exactly the 600-cell's 360 walls; heart kind",
+    "retry": "never",
+    "study": "2026-11-17-valley-charge",
+    "date": "2026-11-17"
+   },
+   {
+    "question": "Shape language (DICTO's idea, 18 Nov: a computer language of geometric shapes that only calculates perfectly and is always checkable): plan, and stage 1 pilot (one exact-number kernel for the three most-copied groups)",
+    "method": "plan papers/plan-shape-language.md (6 stages); pilot: AST inventory of 2515 scripts, kernel Quad(a,b,d), 37 kernel tests, differential test of 56 copies, replays",
+    "status": "SETTLED (pilot); stage 1 proper RUNNING (studies/2026-11-18-shape-kernel-stage1)",
+    "result": "56 copies in 48 studies agree with the kernel on every operation they provide; 4 replays byte-identical; float64 gets the sign wrong on 250 of 454 near-zero units; the 4 copies without __eq__ affect no result",
+    "retry": "stage 1 proper extends to Q(sqrt2,sqrt5), golden basis, Z[phi], cubic fields",
+    "study": "2026-11-18-shape-kernel-pilot",
+    "date": "2026-11-18"
+   },
+   {
+    "question": "Shape language: words, grammar and scores (DICTO 18 Nov)",
+    "method": "decisions by DICTO, recorded in papers/plan-shape-language.md",
+    "status": "DECIDED (DICTO)",
+    "result": "pieces are words, degrees are steps; words = space-filling tiles; base words = Fedorov's five parallelohedra (1885); the cube's centre pyramid builds cube (6) and RD (12); the truncated octahedron = 8 identical octant pieces (bcc neighbours); the lattice is the grammar; score = fewest space-filling words; Archimedean solids degree 1. Credits: Plato, Aristotle, Archimedes, Nine Chapters/Liu Hui, Dehn, Fedorov, Conway. Open: hexagonal prism, elongated dodecahedron; dodecahedron and icosahedron scores",
+    "retry": "n/a (design)",
+    "study": "papers/plan-shape-language.md",
     "date": "2026-11-18"
    }
   ]
