@@ -59,7 +59,9 @@ for (const dev of Object.keys(DEVICES)) {
   if (process.env.ONLY === 'world') break pv;   // ONLY=world: the Star Cores world alone
   await openPieces();
   const own = await page.locator('.poly-section[data-section="dicto"] [data-action]').evaluateAll((els) => els.map((e) => e.dataset.action.replace('tool:polyShape:', '')));
-  assert.deepEqual(own.slice(0, 4), NEW4, `${dev}: the four new solids first in DICTO's own`);
+  const at = own.indexOf(NEW4[0]);   // newer solids (Narcissus, the RD/TRD half cell) may come before them
+  assert.ok(at >= 0, `${dev}: the four Star Cores solids in DICTO's own (${own.join(' ')})`);
+  assert.deepEqual(own.slice(at, at + 4), NEW4, `${dev}: the four Star Cores solids together, in order, in DICTO's own`);
   const sections = await page.locator('.poly-section').evaluateAll((els) => els.map((e) => e.dataset.section));
   assert.equal(sections[sections.indexOf('dicto') + 1], 'crests', `${dev}: the crests right after DICTO's own`);
   assert.equal(sections[sections.indexOf('dicto') + 2], 'starCores', `${dev}: then the Star Cores shapes`);
