@@ -117,4 +117,8 @@ fill space"; "the lattice is the grammar".
   T4 = t5 + t6 + t3, so 3t1 + 4t2 + 10t3 + 10t4 + 4t5 + 7t6 = **38 tiles** (our count from their definitions; volumes
   sum exactly to the solids' volumes 5φ²/6 and (15 + 7√5)/4 = (4 + 7φ)/2 from their Table 1). These are counts of their constructions, not proved
   minima. The icosahedron cannot be inflated past edge φ with these tiles (their text after eq. 11); the dodecahedron can.
+- **Sphere as the perfect value (DICTO 18 Nov; confirmed: "then all previous work ties in perfectly").** DICTO: "with the computation if it's of a
+  sphere as perfect value … not tetrahedra or cube". Reading: every score is read against the sphere (perfect = 1), not
+  built up from the tetrahedron or cube. Standard measures that do this: isoperimetric quotient 36πV²/S³ (Pólya), in/out
+  radius ratio r/R, and landing isotropy Q_l (Steinhardt–Nelson–Ronchetti 1983; sphere 0). Next: re-read the existing scores (IQ, r/R, Q_l already in the studies) on this one scale.
 - **Open.** Whether 16 and 38 are the fewest; the tile counts at the AXE/CLEO scale (one golden step down).
