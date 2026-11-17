@@ -1,0 +1,21 @@
+STEP 18a. Degrees
+  x_f = b/(1-b) = 3.108161920993, minimal polynomial degree 6: 13*z**6 + 4*z**5 - 78*z**4 - 144*z**3 - 116*z**2 - 48*z - 8
+  T = tan(pi/14)tan(2pi/7): z**3 - 9*z**2 - z + 1 (degree 3, in Q(cos 2pi/7), God's Dice)
+  [PASS] deg x_f = 6 and deg T = 3
+  [PASS] [Q(sqrt5) (600-cell, 120-cell, H3/H4 orbit polytopes in standard coordinates):Q] = 2 is a power of 2 and 6 does not divide it -> x_f not in the field
+  [PASS] [Q(sqrt2) (24-cell, tesseract, 16-cell rotated):Q] = 2 is a power of 2 and 6 does not divide it -> x_f not in the field
+  [PASS] [Q(sqrt2, sqrt3, sqrt5):Q] = 8 is a power of 2 and 6 does not divide it -> x_f not in the field
+  [PASS] [Q (5-cell in R^5 coordinates, 24-cell, tesseract, 16-cell):Q] = 1 is a power of 2 and 6 does not divide it -> x_f not in the field
+  [PASS] control: Kelvin's TO has x = 1 (rational), so it passes the field test (it is a facet of the 4D permutohedron, #105)
+  [PASS] T = 9 - 4c - 16c^2 with c = cos(2pi/7) (60-digit check; exact in God's Dice by to_number_field)
+
+STEP 18b. The landing directions and the 24-cell's shadow (exact, rationals)
+  [PASS] 24-cell: 24 corners, all at distance 1
+  [PASS] every face normal matches one RD direction
+  24-cell projected along w: 15 distinct points (centre counted), 14 directions; RD corner directions 14; die face normals 14
+  [PASS] corner-first shadow of the 24-cell along w has exactly the 14 RD corner directions
+  [PASS] the die's 14 face normals (its landing directions, equally weighted at mu_f) are the same 14 directions
+  [PASS] 600-cell (standard coordinates): 120 corners, all at distance 1, containing the 24-cell's 24
+
+checks 12/12
+FINAL ok

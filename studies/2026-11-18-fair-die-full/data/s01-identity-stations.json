@@ -1,0 +1,44 @@
+{
+ "mu_f": "1.756582135945042139099211822680417664867",
+ "minpoly_mu_f": "z**6 - 6*z**5 - 3*z**4 + 52*z**3 - 97*z**2 + 74*z - 13",
+ "fair die": {
+  "edge_lengths": [
+   0.344244845,
+   1.069968718
+  ],
+  "orbits": [
+   1,
+   2,
+   2
+  ]
+ },
+ "Kelvin TO (control)": {
+  "edge_lengths": [
+   0.707106781
+  ],
+  "orbits": [
+   1,
+   2,
+   2
+  ]
+ },
+ "x_f": "3.10816192099288246399269371455",
+ "minpoly_x": "13*z**6 + 4*z**5 - 78*z**4 - 144*z**3 - 116*z**2 - 48*z - 8",
+ "stations_checked": [
+  "wall: octahedron",
+  "wall: cuboctahedron",
+  "wall: cube",
+  "Kelvin TO, swap fixed point, midsphere",
+  "Icosaxes tau (Q4 = Q8 = 0, #94)",
+  "turn fixed point sqrt3 (insphere, Lindelof IQ max)",
+  "Q6 zero in chamber I: b^4-(17/2)b^2+1",
+  "Q8 zero (sqrt13-1)/2",
+  "Mahler global max 2mu^3-9mu+6",
+  "Mahler second local max 2mu^3-9mu^2+21",
+  "canonical order-4 anisotropy zero mu^4+2mu^3+mu^2-4mu-14"
+ ],
+ "turn_partner": "1.7078620683945407299",
+ "swap_partner": "1.2434178640549578609",
+ "t_min": "1.535555795660417131",
+ "minpoly_turn_partner": "13*z**6 - 222*z**5 + 873*z**4 - 1404*z**3 + 243*z**2 + 1458*z - 729"
+}

@@ -1,0 +1,28 @@
+control fcc shell: Q4 0.1909 Q6 0.5745 ok
+control bcc 14 shell: Q4 0.0364 Q6 0.5107 ok
+control icosahedron: Q4 2.8e-16 Q6 0.6633 ok
+
+1-2. corner fingerprint (C) and landing fingerprint (L, face normals weighted by solid angle)
+  Kelvin TO 3/2        C: Q4 0.1528 Q6 0.2404 Q8 0.1551 Q10 0.4141 Q12 0.3767 Q14 0.0886 Q16 0.2486  W4^ +0.1593 W6^ -0.0132
+                       L: Q4 0.2385 Q6 0.5701 Q8 0.3202 Q10 0.4244 Q12 0.3763 Q14 0.4586 Q16 0.4422  W4^ -0.1593 W6^ +0.0132
+  insphere point √3    C: Q4 0.1038 Q6 0.4898 Q8 0.1906 Q10 0.1736 Q12 0.2952 Q14 0.0888 Q16 0.3525  W4^ -0.1593 W6^ -0.0132
+                       L: Q4 0.0085 Q6 0.5167 Q8 0.4183 Q10 0.2184 Q12 0.3989 Q14 0.4541 Q16 0.3589  W4^ +0.1593 W6^ +0.0132
+  FAIR DIE mu_f        C: Q4 0.1203 Q6 0.5059 Q8 0.2274 Q10 0.1461 Q12 0.3181 Q14 0.1189 Q16 0.2986  W4^ -0.1593 W6^ -0.0132
+                       L: Q4 0.0364 Q6 0.5107 Q8 0.4293 Q10 0.1952 Q12 0.4048 Q14 0.4536 Q16 0.3560  W4^ +0.1593 W6^ +0.0132
+  cuboctahedron 2      C: Q4 0.1909 Q6 0.5745 Q8 0.4039 Q10 0.0129 Q12 0.6001 Q14 0.3060 Q16 0.3154  W4^ -0.1593 W6^ -0.0132
+                       L: Q4 0.3170 Q6 0.4501 Q8 0.5407 Q10 0.0389 Q12 0.4923 Q14 0.4484 Q16 0.4094  W4^ +0.1593 W6^ +0.0132
+  landing fingerprint of the fair die = equal-weight bcc 14 directions (all l, Q and W): True
+
+3. Vacuus of the fair die (fins O-A-B per edge; struts O->corner)
+  corners 24, edges 36, faces 14; strut lengths [1.253960337663]
+  fins between H-S: 24, apex angle [50.508495136] deg, edge [np.float64(1.069968718)]; rational multiple of pi (q<=720): none
+  fins between H-H: 12, apex angle [15.779003245] deg, edge [np.float64(0.344244845)]; rational multiple of pi (q<=720): none
+
+4. numbers
+  tan(pi/14)tan(2pi/7) = 0.286208264215581, minimal polynomial x**3 - 9*x**2 - x + 1
+  mu_f minimal polynomial x**6 - 6*x**5 - 3*x**4 + 52*x**3 - 97*x**2 + 74*x - 13
+  (heptagon: cos(2pi/7) has 8*x**3 + 4*x**2 - 4*x - 1)
+  discriminant of the cubic: 3136 = {2: 6, 7: 2}
+  T lies in Q(cos 2pi/7): T = -16*cos(2*pi/7)**2 - 4*cos(2*pi/7) + 9 with c = cos(2pi/7)  (check )
+  volume 5.4944476716  surface 16.3490750852  IQ 0.781306  Mahler 14.245481  Dehn coefficient 24√2(3-2mu) = -17.417373 (nonzero)
+FINAL ok

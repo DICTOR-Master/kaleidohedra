@@ -1,0 +1,46 @@
+STEP 6. Closed forms on chamber I checked against the hull (5 sample points + Kelvin)
+  [PASS] mu = 1.100000: volume, area, polar volume match the closed forms
+  [PASS] mu = 1.300000: volume, area, polar volume match the closed forms
+  [PASS] mu = 1.500000: volume, area, polar volume match the closed forms
+  [PASS] mu = 1.700000: volume, area, polar volume match the closed forms
+  [PASS] mu = 1.756582: volume, area, polar volume match the closed forms
+  [PASS] mu = 1.900000: volume, area, polar volume match the closed forms
+
+exact values at mu_f (minimal polynomials over Q) and at Kelvin 3/2
+  volume (half-width 1)        mu_f:    5.4944476715563  minpoly degree 6: 729*z**6 - 110808*z**5 - 21870000*z**4 + 82162944*z**3 - 325474560*z**2 + 4247808000*z - 6675582976
+                               Kelvin: 4 = 4.0000000000
+  surface area                 mu_f:   16.3490750852161  minpoly degree 12: z**12 - 864*z**11 + 149856*z**10 + 16077312*z**9 - 572961024*z**8 - 17081155584*z**7 + 452181049344*z**6 + 6334278008832*z**5 - 269138734940160*z**4 + 3008596323336192*z**3 + 288483446882304*z**2 - 177441871214149632*z - 398600899519315968
+                               Kelvin: 3 + 6*sqrt(3) = 13.3923048454
+  isoperimetric quotient 36 pi V^2/A^3   mu_f 0.781305517823; line max at sqrt3 (Lindelof) 0.781640; Kelvin 0.753367
+  [PASS] IQ(mu_f) < IQ(sqrt3) (the line's maximum)
+  Mahler product V·V(polar)    mu_f:   14.2454805811191  minpoly degree 6: 123201*z**6 - 56780352*z**5 + 7092458496*z**4 - 109689569280*z**3 - 5951097667584*z**2 + 211641962594304*z - 1749964023660544
+                               Kelvin: 128/9 = 14.2222222222
+  Omega(S;0) = 3!·vol(polar)   mu_f:    15.556228504858  minpoly degree 6: 169*z**6 - 141792*z**5 + 4126464*z**4 - 139345920*z**3 + 2330394624*z**2 - 10701766656*z + 12230590464
+                               Kelvin: 64/3 = 21.3333333333
+  [PASS] Mahler(mu_f) below the line's maximum 14.37509 and above the cube/octahedron minimum 32/3
+  Dehn invariant: 24 sqrt2 (3 - 2 mu_f) ⊗ arccos(1/sqrt3) = -17.4173729527745 ⊗ arccos(1/sqrt3); zero only at 3/2 on chamber I
+  [PASS] Dehn coefficient nonzero at mu_f (|value| > 1; exactly nonzero since mu_f != 3/2, step 4)
+
+STEP 7. Independent Dehn screen (dehn.py of studies/2026-11-04-dehn-screen, PSLQ basis, tol 1e-10, coefficients <= 300)
+  [PASS] Dehn screen: cube (control, zero): zero = True  (1 angles, basis 0)
+  [PASS] Dehn screen: Kelvin TO (control, zero): zero = True  (2 angles, basis 1)
+  [PASS] Dehn screen: octahedron (control, nonzero): zero = False  (1 angles, basis 1)
+  [PASS] Dehn screen: fair die: zero = False  (2 angles, basis 1)
+
+STEP 8. Harmonic fingerprint (corners C; landing L = face normals weighted by solid angle)
+  exact Q4 by the cubic invariant: Q4 = (5/2) sqrt(7/12) |<x^4+y^4+z^4> - 3/5|; zero iff b = 1/tau (Icosaxes)
+  corners: <x^4+y^4+z^4> - 3/5 = -0.0630276869292665 (minpoly 6125*z**3 - 178850*z**2 + 42140*z + 3368), Q4 = 0.1203454776
+  landing: equal weights on the 14 bcc directions, <x^4+y^4+z^4> = 13/21 exactly, Q4 = sqrt(7/12)/21 = 0.0363696484
+  [PASS] control fcc shell: Q4 0.1909 Q6 0.5745 (classical)
+  [PASS] control bcc 14 shell: Q4 0.0364 Q6 0.5107 (classical)
+  Kelvin TO 3/2  C: Q4 0.1528 Q6 0.2404 Q8 0.1551 Q10 0.4141 Q12 0.3767 Q14 0.0886 Q16 0.2486  W4^ +0.1593 W6^ -0.0132
+                 L: Q4 0.2385 Q6 0.5701 Q8 0.3202 Q10 0.4244 Q12 0.3763 Q14 0.4586 Q16 0.4422
+  fair die mu_f  C: Q4 0.1203 Q6 0.5059 Q8 0.2274 Q10 0.1461 Q12 0.3181 Q14 0.1189 Q16 0.2986  W4^ -0.1593 W6^ -0.0132
+                 L: Q4 0.0364 Q6 0.5107 Q8 0.4293 Q10 0.1952 Q12 0.4048 Q14 0.4536 Q16 0.3560
+  [PASS] exact corner Q4 equals the float fingerprint
+  [PASS] landing fingerprint = bcc 14 shell (all l)
+  [PASS] no corner Q_l vanishes, l = 4..16
+  [PASS] total solid angle 4 pi and each face 4 pi/14
+
+checks 19/19
+FINAL ok

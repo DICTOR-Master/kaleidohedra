@@ -1,0 +1,32 @@
+STEP 15. Vacuus
+  fins: 36; kinds by apex angle: {(4, 6): [50.508495136], (6, 6): [15.779003245]}
+  [PASS] two fin kinds (24 square-hexagon, 12 hexagon-hexagon): not isofin
+  [PASS] one strut length (all corners on one sphere)
+  square-hexagon fin: apex 50.508495136 deg; 2cos(apex) minimal polynomial 7*z**3 - 70*z**2 + 84*z - 8
+  [PASS] square-hexagon fin: 2cos(apex) is not an algebraic integer -> apex/pi irrational (exact)
+  hexagon-hexagon fin: apex 15.779003245 deg; 2cos(apex) minimal polynomial 49*z**6 + 10976*z**4 - 50176*z**2 + 32768
+  [PASS] hexagon-hexagon fin: 2cos(apex) is not an algebraic integer -> apex/pi irrational (exact)
+  [PASS] control: cuboctahedron fin (corners (1,1,0),(1,0,1), apex 60 deg) has integral 2cos (minimal polynomial z - 1)
+  [PASS] control: cube fin (corners (1,1,1),(1,1,-1), apex arccos(1/3), irrational) has non-integral 2cos (3z - 2)
+  [PASS] heart kind: centre strictly inside every face plane and centrally symmetric
+
+STEP 16. Origami fans (open centre pyramid of each face)
+  fan angles: squares [202.03398055] deg, hexagons [198.86249514] deg -> 2 distinct nets
+  [PASS] every fan angle < 360 deg (folds as modular origami, one net per face kind)
+
+STEP 17. Centre pyramids
+  [PASS] exact: 6 volS + 8 volH = volume (4/3 mu^3 - 4 b^3)
+  Kelvin TO 3/2  square pyramid volume 0.16666667, hexagon pyramid 0.37500000 (ratio 2.250000); solid angles [0.445364057364, 1.236773283772]
+  fair die mu_f  square pyramid volume 0.38161102, hexagon pyramid 0.40059769 (ratio 1.049754); solid angles [0.897597901026]
+  equal pyramid volume: 4b^2 = mu(mu^2 - 3b^2) -> mu_v = [(2*mu**3 - 2*mu**2 - 5*mu + 4, 1.7737533065824882)]
+  equal face area: 2b^2 = (sqrt3/2)(mu^2 - 3b^2) -> mu_a = [(-sqrt(3)*sqrt(4*sqrt(3) + 9)/2 - 1/2 + sqrt(3) + sqrt(4*sqrt(3) + 9), 1.766745472646289)]
+  equal solid angle (fair): mu_f = 1.7565821359; insphere (equal face distance) sqrt3 = 1.7320508076
+  [PASS] the three equal-share points are distinct from each other and from sqrt3
+  [PASS] Dehn control: cube's centre pyramid is zero (#100)
+  Dehn screen, Kelvin TO 3/2 square pyramid: zero = False (2 angles, basis 2)
+  Dehn screen, Kelvin TO 3/2 hexagon pyramid: zero = False (2 angles, basis 2)
+  Dehn screen, fair die mu_f square pyramid: zero = False (2 angles, basis 1)
+  Dehn screen, fair die mu_f hexagon pyramid: zero = False (3 angles, basis 2)
+
+checks 11/11
+FINAL ok

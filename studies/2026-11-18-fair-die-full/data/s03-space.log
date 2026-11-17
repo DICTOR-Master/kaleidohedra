@@ -1,0 +1,27 @@
+STEP 10. Alone: Dehn invariant nonzero (s02) -> no tiling by the die alone (Debrunner 1980); forced-sector search not needed
+
+STEP 11. CsCl pair with S(3 - mu)
+  [PASS] exact: V(mu) + V(3 - mu) = 8 for all mu in chamber I
+  [PASS] exact: Dehn coefficients 24 sqrt2 (3 - 2mu) + 24 sqrt2 (3 - 2(3 - mu)) = 0
+  [PASS] no interior overlap of either piece with its 34 neighbours (26 same-kind, 8 other-kind)  (68 pairs)
+  [PASS] control: S(mu_f) with S(3 - mu_f + 0.01) overlaps (the test can fail)
+  [PASS] computed: 200000 random points of the cube cell each lie in exactly one piece  (200000)
+  partner S(3 - mu_f) = S(1.2434178641): p(square) = 0.009160209716, p(hexagon) = 0.1181298427 (loaded towards the hexagons)
+
+STEP 12. Foam wall area per unit volume W = (A(mu) + A(3 - mu))/16
+  [PASS] W is symmetric under mu <-> 3 - mu and largest at Kelvin 3/2 (exact: W' = 0 only at 3/2, W'' < 0)
+  W(mu_f) = 1.6587611817; Kelvin W(3/2) = 1.67404 (studies/2026-11-04-mahler-sweep 1.67404); W exact = -sqrt(3)*mu**2 + 3*mu**2/2 - 9*mu/2 + 3*sqrt(3)*mu - 3*sqrt(3)/2 + 15/4
+  [PASS] Kelvin control reproduces 1.67404
+
+STEP 13. Regular octahedra: fill only in chamber II (God's Dice); mu_f is in chamber I -> n/a
+  [PASS] mu_f lies in chamber I (1 < mu_f < 2)
+
+STEP 14. Halves: cut through the centre, turn one half (twist as in halves/sweep_twist.py)
+  cuboctahedron 2 (control)  60 deg about a 3-fold axis: convex;  45 deg about a 4-fold axis: dented
+  [PASS] control: CO turned 60 deg is convex (the anticuboctahedron J27)
+  Kelvin TO 3/2 (control)    60 deg about a 3-fold axis: dented;  45 deg about a 4-fold axis: dented
+  [PASS] control: Kelvin TO turned 60 deg is dented (Concordance)
+  fair die mu_f              60 deg about a 3-fold axis: dented;  45 deg about a 4-fold axis: dented
+
+checks 10/10
+FINAL ok

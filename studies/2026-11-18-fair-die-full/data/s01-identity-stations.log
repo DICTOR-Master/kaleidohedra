@@ -1,0 +1,51 @@
+STEP 1. Exact definition
+  [PASS] T = tan(pi/14)tan(2pi/7) is a root of x^3-9x^2-x+1 (60 digits)
+  [PASS] b_f is a root of m_b = y^6-18y^4-4y^2+8 (60 digits)
+  [PASS] m_b irreducible over Q
+  [PASS] minimal polynomial of mu_f equals the God's Dice value  (z**6 - 6*z**5 - 3*z**4 + 52*z**3 - 97*z**2 + 74*z - 13)
+  [PASS] p(square) = 1/14 at mu_f (60-digit evaluation of the exact formula)  (0.071428571428571428571)
+
+STEP 2. Counts, symmetry, orbits (fair die and Kelvin control)
+  [PASS] fair die: 24 corners, 36 edges, 14 faces (6 squares, 8 hexagons), Euler 2
+  [PASS] fair die: all 48 signed permutation matrices (group Oh) map the corner set to itself
+  [PASS] fair die: orbits under Oh: corners 1, edges 2, faces 2 (isogonal, not isohedral)  (1,2,2)
+    fair die: edge lengths [0.344244845, 1.069968718]; circumradius 1.253960338
+  [PASS] Kelvin TO (control): 24 corners, 36 edges, 14 faces (6 squares, 8 hexagons), Euler 2
+  [PASS] Kelvin TO (control): all 48 signed permutation matrices (group Oh) map the corner set to itself
+  [PASS] Kelvin TO (control): orbits under Oh: corners 1, edges 2, faces 2 (isogonal, not isohedral)  (1,2,2)
+    Kelvin TO (control): edge lengths [0.707106781]; circumradius 1.118033989
+  Symmetry group is exactly Oh (order 48): it contains Oh; the finite subgroups of O(3) containing Oh are Oh itself (Ih does not contain Oh).
+  [PASS] fair die hexagon is not regular (edge lengths sqrt2 b and sqrt2(1-b) differ): a truncated triangle
+
+STEP 3. Similarity invariant and catalogue screen
+  x = b/(1-b) = 3.108161920992882463992694; minimal polynomial 13*z**6 + 4*z**5 - 78*z**4 - 144*z**3 - 116*z**2 - 48*z - 8
+  [PASS] x = b/(1-b) has degree 6 (so mu_f is not rational and no member of chamber I with rational x)
+  x is the parameter of #48 Theorem 4 (DICTONIC golden bond): T(x) = hull perms(±(1+x), ±x, 0) = (1+x)·S(1 + x/(1+x)); Kelvin x = 1, Icosaxes x = tau.
+  [PASS] Kelvin control: x = 1 (rational)
+  [PASS] x_f is not 1 (Kelvin) and not tau (Icosaxes)
+  Catalogue: not uniform (Archimedean) and not Johnson (faces not regular); not Catalan (2 face orbits); not a zonohedron (the
+  hexagons are not centrally symmetric: opposite edges b vs 1-b); a parallelohedron needs centrally symmetric faces, so it is not one.
+
+STEP 4. Station check: mu_f against every named point of the line (exact minimal polynomials)
+  [PASS] mu_f is not the station 'wall: octahedron' (gcd of minimal polynomials = 1)
+  [PASS] mu_f is not the station 'wall: cuboctahedron' (gcd of minimal polynomials = 1)
+  [PASS] mu_f is not the station 'wall: cube' (gcd of minimal polynomials = 1)
+  [PASS] mu_f is not the station 'Kelvin TO, swap fixed point, midsphere' (gcd of minimal polynomials = 1)
+  [PASS] mu_f is not the station 'Icosaxes tau (Q4 = Q8 = 0, #94)' (gcd of minimal polynomials = 1)
+  [PASS] mu_f is not the station 'turn fixed point sqrt3 (insphere, Lindelof IQ max)' (gcd of minimal polynomials = 1)
+  [PASS] mu_f is not the station 'Q6 zero in chamber I: b^4-(17/2)b^2+1' (gcd of minimal polynomials = 1)
+  [PASS] mu_f is not the station 'Q8 zero (sqrt13-1)/2' (gcd of minimal polynomials = 1)
+  [PASS] mu_f is not the station 'Mahler global max 2mu^3-9mu+6' (gcd of minimal polynomials = 1)
+  [PASS] mu_f is not the station 'Mahler second local max 2mu^3-9mu^2+21' (gcd of minimal polynomials = 1)
+  [PASS] mu_f is not the station 'canonical order-4 anisotropy zero mu^4+2mu^3+mu^2-4mu-14' (gcd of minimal polynomials = 1)
+
+STEP 5. Turn and swap partners; Turn Law t_min (studies/2026-11-09-turn-theorem; c = h^2 R^2 = 3 for the cube, hops [1,2], [2,3])
+  turn partner 3/mu_f = 1.70786206839454 (minpoly 13*z**6 - 222*z**5 + 873*z**4 - 1404*z**3 + 243*z**2 + 1458*z - 729); swap partner 3 - mu_f = 1.24341786405496
+  p(square) at the turn partner 0.06420527575, at the swap partner 0.009160209716 (fair = 0.07142857143)
+  [PASS] neither partner is fair (turn and swap do not fix fairness)
+  [PASS] t_min(mu_f) < t_min(sqrt3) = 5 - 2 sqrt3 (the Turn Law maximum)  (1.53555579566 < 1.53589838486)
+  [PASS] Kelvin control: t_min(3/2) = 1 + (1/2)(1) = 3/2
+  t_min(mu_f) = 1.53555579566042, minimal polynomial 13*z**6 - 90*z**5 - 693*z**4 + 4660*z**3 - 7021*z**2 - 1594*z + 6581; gap to the maximum 0.000342589
+
+checks 29/29
+FINAL ok
