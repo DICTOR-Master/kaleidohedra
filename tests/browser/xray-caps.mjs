@@ -3,6 +3,7 @@
 // that the picture changes where they are cut, with no console errors. Screenshots for a look.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
+import { unfold } from './menu-unfold.mjs';
 const SH = process.env.SHOTS ?? '/tmp', BASE = process.env.BASE_URL ?? 'http://localhost:8000';
 const b = await chromium.launch({ args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] }); const page = await b.newPage({ viewport: { width: 1100, height: 800 } });
 const errors = []; page.on('pageerror', (e) => errors.push(String(e))); page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
@@ -16,7 +17,7 @@ for (const [name, url] of [['cleostar', `${BASE}/index.html?site=kaleidohedra&op
     await page.keyboard.press('Escape'); await page.waitForTimeout(400);
     await page.evaluate(() => { const s = [...document.querySelectorAll('.qc-panel.visible select')][0]; if (s) { s.value = 'cleostar'; s.dispatchEvent(new Event('change')); } });
   } else {
-    const rd = page.locator('[data-action="tool:pieceType:rd"]').first(); if (await rd.count()) { await rd.click(); }
+    await unfold(page, 'tool:pieceType:rd'); const rd = page.locator('[data-action="tool:pieceType:rd"]').first(); if (await rd.count()) { await rd.click(); }
     const box = await page.locator('#scene-canvas').boundingBox(); for (let i = 0; i < 6; i++) { await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2); await page.waitForTimeout(250); }
   }
   await page.waitForTimeout(1200);

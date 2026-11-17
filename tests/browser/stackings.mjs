@@ -9,6 +9,7 @@ import { mkdirSync } from 'node:fs';
 import { STACKING_KINDS, STACKING_STOPS, STACKING_VIEWS, stackingColumn, wordFromTypes } from '../../src/app/world-stackings.js';
 import { PRESETS, layerTypes } from '../../src/app/stackings-geometry.js';
 import { t } from '../../src/app/i18n.js';
+import { unfold } from './menu-unfold.mjs';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/stackings-shots';
 mkdirSync(SH, { recursive: true });
@@ -28,10 +29,10 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     const page = await b.newPage({ viewport, hasTouch: true, isMobile: true }), tag = `${door}-${dev}`;
     const errors = await open(page, `&site=${door}`);
     await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-    if (!(await page.locator('[data-action="tool:stackingsWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+    if (!(await page.locator('[data-action="tool:stackingsWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:stackingsWorld');
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-    assert.equal(worlds[worlds.indexOf('tool:starCoresWorld') + 1], 'tool:stackingsWorld', `${tag}: Book Six first, after Star Cores (Fire; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
+    assert.equal(worlds[worlds.indexOf('tool:starCoresWorld') + 1], 'tool:stackingsWorld', `${tag}: Book Six first, after Star Cores (Fire; the world menu by the books, paper order (DICTO 2026-11-17))`); checks++;
     await page.locator('[data-action="tool:stackingsWorld"]').first().tap(); await page.waitForTimeout(400);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');
     await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1500);

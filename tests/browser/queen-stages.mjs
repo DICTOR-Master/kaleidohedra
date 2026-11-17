@@ -7,6 +7,7 @@ import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
 import { STAGE_KEYS, STAGE_FACTS } from '../../src/app/queen-stages-geometry.js';
+import { unfold } from './menu-unfold.mjs';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/stage-shots';
 mkdirSync(SH, { recursive: true });
@@ -22,7 +23,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     await page.goto(`${BASE}/index.html?probe&site=${door}`);
     await page.waitForSelector('#welcome-overlay', { state: 'visible', timeout: 25000 }); await page.keyboard.press('Enter');
     await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-    if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+    if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:whiteQueenWorld');
     await page.waitForTimeout(500);
     await page.locator('[data-action="tool:whiteQueenWorld"]').first().tap(); await page.waitForTimeout(400);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');

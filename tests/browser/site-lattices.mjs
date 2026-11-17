@@ -3,6 +3,7 @@
 // saved), the Lattice row names it, and there are no console errors.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
+import { unfold } from './menu-unfold.mjs';
 const SH = process.env.SHOTS ?? '/tmp', BASE = process.env.BASE_URL ?? 'http://localhost:8000';
 const b = await chromium.launch(); const page = await b.newPage({ viewport: { width: 1100, height: 800 } });
 const errors = []; page.on('pageerror', (e) => errors.push(String(e))); page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
@@ -11,7 +12,7 @@ for (const [id, station] of [['triprism', 'Triangular prisms'], ['hcp', 'hcp · 
   await page.evaluate(() => localStorage.clear()); await page.reload();
   await page.waitForSelector('#welcome-overlay', { state: 'visible', timeout: 25000 }); await page.keyboard.press('Enter');
   await page.waitForSelector('.dim-wizard-overlay.open');
-  const pick = page.locator(`[data-action="tool:pieceType:${id}"]`).first(); await pick.scrollIntoViewIfNeeded(); await pick.click(); await page.waitForTimeout(900);
+  await unfold(page, `tool:pieceType:${id}`); const pick = page.locator(`[data-action="tool:pieceType:${id}"]`).first(); await pick.scrollIntoViewIfNeeded(); await pick.click(); await page.waitForTimeout(900);
   assert.equal(await page.locator('#hud-lattice-row .lat-name').textContent(), station, `${id}: Lattice row`);
   const count = () => page.evaluate((k) => { const r = localStorage.getItem(k); return r ? Object.keys(JSON.parse(r).cells).length : 0; }, `rhombiverse-site-${id}-world`);
   const box = await (await page.waitForSelector('canvas', { state: 'attached' })).boundingBox(), cx = box.x + box.width / 2, cy = box.y + box.height / 2;

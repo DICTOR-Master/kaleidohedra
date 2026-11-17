@@ -16,6 +16,7 @@ import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
 import * as PM from '../../src/app/perm4-geometry.js';
 import { t, LANG_ORDER } from '../../src/app/i18n.js';
+import { unfold } from './menu-unfold.mjs';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/perm4-shots', RS = process.env.RCP_SHOTS ?? SH;
 mkdirSync(SH, { recursive: true }); mkdirSync(RS, { recursive: true });
@@ -56,7 +57,7 @@ for (const door of (PARTS.includes('doors') ? process.env.DOORS ?? 'kaleidohedra
     const page = await b.newPage({ viewport, hasTouch: true, isMobile: true }), tag = `${door}-${dev}`;
     const errors = await open(page, `&site=${door}`);
     await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-    if (!(await page.locator('[data-action="tool:perm4World"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+    if (!(await page.locator('[data-action="tool:perm4World"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:perm4World');
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
     assert.equal(worlds[worlds.indexOf('tool:bitruncWorld') + 1], 'tool:perm4World', `${tag}: right after the Bitruncated 600-cell`); checks++;
@@ -109,7 +110,7 @@ for (const door of (PARTS.includes('rcp') ? process.env.DOORS ?? 'kaleidohedra,r
     const page = await b.newPage({ viewport, hasTouch: true, isMobile: true }), tag = `${door}-${dev} rcp`;
     const errors = await open(page, `&site=${door}`);
     await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-    if (!(await page.locator('[data-action="tool:perm4World"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+    if (!(await page.locator('[data-action="tool:perm4World"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:perm4World');
     await page.waitForTimeout(500);
     await page.locator('[data-action="tool:perm4World"]').first().tap(); await page.waitForTimeout(500);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');

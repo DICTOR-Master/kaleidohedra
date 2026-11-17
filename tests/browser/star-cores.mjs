@@ -11,6 +11,7 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
+import { unfold } from './menu-unfold.mjs';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/star-cores-shots';
 mkdirSync(SH, { recursive: true });
@@ -97,10 +98,10 @@ for (const dev of Object.keys(DEVICES)) {
   // ---- Kaleidohedra: the Star Cores world ----
   await enter('kaleidohedra');
   await page.waitForSelector('.dim-wizard-overlay.open');
-  if (!(await page.locator('[data-action="tool:starCoresWorld"]').count())) await tap('.dim-wizard-card-btn[data-dim="3D"]');
+  if (!(await page.locator('[data-action="tool:starCoresWorld"]').count())) await tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:starCoresWorld');
   await page.waitForTimeout(500);
   const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-  assert.equal(worlds[worlds.indexOf('tool:theaetetusWorld') + 1], 'tool:starCoresWorld', `${dev}: Book Five, after Theaetetus (the chains have no World row; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
+  assert.equal(worlds[worlds.indexOf('tool:upFilmWorld') + 1], 'tool:starCoresWorld', `${dev}: Book Five, after Book Four's last world (the world menu by the books, paper order (DICTO 2026-11-17))`); checks++;
   const card = page.locator('[data-action="tool:starCoresWorld"]').first(); await card.scrollIntoViewIfNeeded(); await card.tap(); await page.waitForTimeout(400);
   await keep();
   await page.waitForSelector(`${P}.visible`);

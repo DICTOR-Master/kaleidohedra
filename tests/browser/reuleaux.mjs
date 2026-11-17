@@ -3,6 +3,7 @@
 // by tapping the real canvas (?probe gives where a face is on screen); no console errors. Screenshots (SHOTS).
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
+import { unfold } from './menu-unfold.mjs';
 const b = await chromium.launch(); const page = await b.newPage({ viewport: { width: 1024, height: 1366 }, hasTouch: true, isMobile: true });
 const errors = []; page.on('pageerror', (e) => errors.push(String(e))); page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
 const SH = process.env.SHOTS ?? '/tmp', BASE = process.env.BASE_URL ?? 'http://localhost:8000', SITE = process.env.SITE ?? 'kaleidohedra';
@@ -10,10 +11,10 @@ const SH = process.env.SHOTS ?? '/tmp', BASE = process.env.BASE_URL ?? 'http://l
 await page.goto(`${BASE}/index.html?site=${SITE}`);
 await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page.keyboard.press('Enter');
 await page.waitForSelector('.dim-wizard-overlay.open');
-if (!(await page.locator('[data-action="tool:reuleauxWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+if (!(await page.locator('[data-action="tool:reuleauxWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:reuleauxWorld');
 await page.waitForTimeout(500);
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a)));
-assert.equal(worlds[worlds.indexOf('tool:platonicMixWorld') + 1], 'tool:reuleauxWorld', 'next to Every Mix (Book Eight; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))');
+assert.equal(worlds[worlds.indexOf('tool:aristotleWorld') + 1], 'tool:reuleauxWorld', 'after Aristotle\'s Pyramid (Book Eight; the world menu by the books, paper order (DICTO 2026-11-17))');
 // the link
 await page.goto(`${BASE}/index.html?site=${SITE}&open=reuleaux&probe`); await page.waitForTimeout(1500);
 if (await page.locator('#welcome-overlay').isVisible()) await page.keyboard.press('Enter');

@@ -65,20 +65,18 @@ async function main() {
   assert.ok(wizard.open, 'the DICTO wizard should open on load');
   assert.equal(wizard.door, DOOR, `the wizard should wear ${DOOR}'s colours`);
   assert.equal(wizard.dims, '1D 2D 3D 4D 5D 6D', 'DICTO should open on all six dimensions');
-  // 3D+ is open to start with, its content in app blocks.
-  const blocks = () => page.evaluate(() => [...document.querySelectorAll('.dim-wizard-body .dicto-block-name')].map((b) => b.textContent));
-  const apps3D = await blocks();
-  assert.equal(apps3D[0], 'DICTO', "3D+ should start with DICTO's own block");
-  assert.equal(apps3D[1], DOOR.toUpperCase(), "then the door's own app");
-  assert.equal([...apps3D].sort().join(' '), 'DICTO KALEIDOHEDRA POLYHEDRAVERSE RHOMBIVERSE', '3D+ should list DICTO and all three apps, one block each');
-  // The other door's app keeps one row (its lattices are the door's own, so they aren't repeated).
-  const otherRow = await page.evaluate((door) => document.querySelector(`.dim-wizard-body [data-app="${door === 'kaleidohedra' ? 'rhombiverse' : 'kaleidohedra'}"][data-action="tool:pieceType:rd"]`) !== null, DOOR);
-  assert.ok(otherRow, "the other app's block should keep its one row");
-  // DICTO's lattices open in the door's app (DICTO 2026-10-09): Sunstar's row carries the door.
+  // 3D+ is open to start with: the world menu by the books (DICTO 2026-11-17), the same through every door -- each book with a
+  // world of its own, folded, then the others' lattices and tilings, the studies and tools, and the shapes.
+  const sections = () => page.evaluate(() => [...document.querySelectorAll('.dim-wizard-body .bm-book')].map((b) => b.dataset.book).join(' '));
+  assert.equal(await sections(), 'One Two Three Four Five Six Seven Eight Ten others tools', '3D+ should list the books in order, then the two shelves');
+  assert.ok(await page.evaluate(() => [...document.querySelectorAll('.bm-list')].every((l) => l.hidden)), 'every book folded to start with');
+  assert.ok(await page.$('.dim-wizard-body .bm-shapes [data-family="PLATONIC"]'), 'then the shapes');
+  // DICTO's worlds open in the door's app (DICTO 2026-10-09): Sunstar's row carries the door.
   const sunstarApp = await page.evaluate(() => document.querySelector('.dim-wizard-body [data-action="tool:sunstarWorld"]')?.dataset.app);
-  assert.equal(sunstarApp, DOOR, "DICTO's lattices should open in the door's app");
+  assert.equal(sunstarApp, DOOR, "DICTO's worlds should open in the door's app");
+  // the app filter: Polyhedraverse's shows the books and the shapes, not the lattices
   await page.click('.dicto-app[data-app="polyhedraverse"]');
-  assert.equal((await blocks()).join(' '), 'DICTO POLYHEDRAVERSE', "the app filter should show one app only (DICTO's own always)");
+  assert.equal(await sections(), 'One Two Three Four Five Six Seven Eight Ten tools', "the app filter should show one app's entries (DICTO's own always)");
   await page.click('.dicto-app[data-app="polyhedraverse"]');
   await page.keyboard.press('Escape');
   await page.waitForTimeout(300);

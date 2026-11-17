@@ -3,6 +3,7 @@
 // ⛶ steps wedge → plane → off (glass); the Cleo star link opens Theaetetus on its Cleo star view; no console errors.
 import { chromium, devices } from 'playwright';
 import assert from 'node:assert/strict';
+import { unfold } from './menu-unfold.mjs';
 const SH = process.env.SHOTS ?? '/tmp', BASE = process.env.BASE_URL ?? 'http://localhost:8000';
 const b = await chromium.launch(); const ctx = await b.newContext({ ...devices['iPad (gen 7) landscape'] }); const page = await ctx.newPage();
 const errors = []; page.on('pageerror', (e) => errors.push(String(e))); page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
@@ -11,8 +12,8 @@ await page.goto(`${BASE}/index.html?site=kaleidohedra`);
 await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page.keyboard.press('Enter');
 await page.waitForSelector('.dim-wizard-overlay.open');
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a)));
-assert.equal(worlds[worlds.indexOf('tool:upWorld') + 1], 'tool:vajrayanaWorld', 'after Universal PiTet (Book Four; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))');
-await page.locator('[data-action="tool:vajrayanaWorld"]').first().tap();
+assert.equal(worlds[worlds.indexOf('tool:doubleVisionWorld') + 1], 'tool:vajrayanaWorld', 'after Dual Vision (Book Four; the world menu by the books, paper order (DICTO 2026-11-17))');
+await unfold(page, 'tool:vajrayanaWorld'); await page.locator('[data-action="tool:vajrayanaWorld"]').first().tap();
 await page.waitForFunction(() => /twelve-station/.test(document.querySelector('#worldvajrayana-panel .vj-note')?.textContent ?? ''), null, { timeout: 15000 });
 await page.waitForTimeout(900);
 assert.match(await page.locator('#hud-world-title').textContent(), /Vajrayana/);

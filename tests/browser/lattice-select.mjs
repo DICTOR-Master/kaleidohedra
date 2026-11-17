@@ -3,6 +3,7 @@
 // three, a station picks the lattice the way the wizard does, and Done closes. Kaleidohedra's door has no row.
 import { chromium, devices } from 'playwright';
 import assert from 'node:assert/strict';
+import { unfold } from './menu-unfold.mjs';
 const SH = process.env.SHOTS ?? '/tmp', BASE = process.env.BASE_URL ?? 'http://localhost:8000';
 const b = await chromium.launch(); const ctx = await b.newContext({ ...devices['iPad (gen 7) landscape'] }); const page = await ctx.newPage();
 const errors = []; page.on('pageerror', (e) => errors.push(String(e))); page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
@@ -11,7 +12,7 @@ await page.goto(`${BASE}/index.html?site=rhombiverse`);
 await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page.keyboard.press('Enter');
 await page.waitForSelector('.dim-wizard-overlay.open');
 // pick fcc's RD from the wizard, as anyone arriving would
-const rd = page.locator('[data-action="tool:pieceType:rd"]').first(); await rd.scrollIntoViewIfNeeded(); await rd.tap(); await page.waitForTimeout(900);
+await unfold(page, 'tool:pieceType:rd'); const rd = page.locator('[data-action="tool:pieceType:rd"]').first(); await rd.scrollIntoViewIfNeeded(); await rd.tap(); await page.waitForTimeout(900);
 assert.equal(await page.locator(row).isVisible(), true, 'row shown in 3D+'); assert.equal(await name(), 'fcc · RD');
 await page.screenshot({ path: `${SH}/lat-row.png` });
 // Select: three blocks, three stations at most on each line

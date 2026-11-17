@@ -2,12 +2,13 @@
 // named solid shown when its ring completes (the Shields complete the DICTO Truncated-Icosahedral Hecatodihedron); Play runs.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
+import { unfold } from './menu-unfold.mjs';
 const b = await chromium.launch(); const page = await b.newPage({ viewport: { width: 1024, height: 1366 }, hasTouch: true, isMobile: true });
 const errors = []; page.on('pageerror', (e) => errors.push(String(e))); page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
 await page.goto(`${process.env.BASE_URL ?? 'http://localhost:8000'}/index.html?site=kaleidohedra`);
 await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page.keyboard.press('Enter');
 await page.waitForSelector('.dim-wizard-overlay.open');
-if (!(await page.locator('[data-action="tool:chainsWorld:dharma"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+if (!(await page.locator('[data-action="tool:chainsWorld:dharma"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:chainsWorld:dharma');
 const btn = page.locator('[data-action="tool:chainsWorld:dharma"]').first(); await btn.scrollIntoViewIfNeeded(); await btn.tap();
 await page.waitForSelector('#worldchains-panel.visible'); await page.waitForTimeout(1200);
 const set = (n) => page.evaluate((n) => { const i = document.querySelector('#worldchains-panel .ch-film-row input'); i.value = n; i.dispatchEvent(new Event('input')); }, n);

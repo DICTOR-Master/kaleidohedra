@@ -4,6 +4,7 @@
 // ?open=octetTruss:starW link; no errors. Screenshots.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
+import { unfold } from './menu-unfold.mjs';
 const b = await chromium.launch(); const page = await b.newPage({ viewport: { width: 1024, height: 1366 }, hasTouch: true, isMobile: true });
 const errors = []; page.on('pageerror', (e) => errors.push(String(e))); page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
 const SH = process.env.SHOTS ?? '/tmp', BASE = process.env.BASE_URL ?? 'http://localhost:8000';
@@ -13,11 +14,11 @@ const visible = (sel) => page.locator(`${panel} ${sel}`).isVisible();
 await page.goto(`${BASE}/index.html?site=kaleidohedra`);
 await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page.keyboard.press('Enter');
 await page.waitForSelector('.dim-wizard-overlay.open');
-if (!(await page.locator('[data-action="tool:octetTrussWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+if (!(await page.locator('[data-action="tool:octetTrussWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:octetTrussWorld');
 await page.waitForTimeout(500);
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a)));
 console.log('first DICTO worlds:', worlds.slice(0, 3).join(', '));
-assert.equal(worlds[0], 'tool:octetTrussWorld', 'first under Earth (Book One; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))');
+assert.equal(worlds[worlds.indexOf('tool:ocdStellaWorld') + 1], 'tool:octetTrussWorld', 'after OCD Stella Crystals (Book One; the world menu by the books, paper order (DICTO 2026-11-17))');
 await page.locator('[data-action="tool:octetTrussWorld"]').first().tap();
 await page.waitForTimeout(500);
 if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');

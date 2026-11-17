@@ -2,6 +2,7 @@
 // axes only when the scene has 5-fold symmetry, in the right frame (Karma and Dharma (0, φ, 1), Bodhi (0, 1, φ)). Screenshots.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
+import { unfold } from './menu-unfold.mjs';
 const b = await chromium.launch(); const page = await b.newPage({ viewport: { width: 1024, height: 1366 }, hasTouch: true, isMobile: true });
 const errors = []; page.on('pageerror', (e) => errors.push(String(e))); page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
 const SH = process.env.SHOTS ?? '/tmp';
@@ -9,7 +10,7 @@ await page.goto(`${process.env.BASE_URL ?? 'http://localhost:8000'}/index.html?s
 await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page.keyboard.press('Enter');
 async function open(action) {
   if (!(await page.locator('.dim-wizard-overlay.open').count())) { await page.tap('#hud-wizard-cue'); await page.waitForSelector('.dim-wizard-overlay.open'); }
-  if (!(await page.locator(`[data-action="${action}"]`).count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+  if (!(await page.locator(`[data-action="${action}"]`).count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, '${action}');
   await page.waitForTimeout(500);
   const btn = page.locator(`[data-action="${action}"]`).first(); await btn.scrollIntoViewIfNeeded(); await btn.tap();
   await page.waitForTimeout(400);

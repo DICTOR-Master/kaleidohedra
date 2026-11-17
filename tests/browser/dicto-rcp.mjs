@@ -7,6 +7,7 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
+import { unfold } from './menu-unfold.mjs';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/dicto-rcp-shots';
 mkdirSync(SH, { recursive: true });
@@ -77,7 +78,7 @@ for (const dev of Object.keys(DEVICES)) {
 const P = '#worldwhiteQueen-panel';
 for (const dev of Object.keys(DEVICES)) {
   const h = await openDoor(dev, 'kaleidohedra'), { page } = h, probe = () => page.evaluate(() => window.__whiteQueenProbe());
-  if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await h.press('.dim-wizard-card-btn[data-dim="3D"]');
+  if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await h.press('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:whiteQueenWorld');
   await page.waitForTimeout(500);
   await page.locator('[data-action="tool:whiteQueenWorld"]').first()[dev === 'phone' ? 'tap' : 'click'](); await page.waitForTimeout(400);
   if (await page.locator('#leave-dialog:not([hidden])').count()) await h.press('#leave-dialog [data-choice="keep"]');
@@ -123,7 +124,7 @@ for (const dev of Object.keys(DEVICES)) {
   assert.deepEqual([saved.rcp, saved.dictoRcp], [false, true], `${dev}: saved`);
   await page.reload(); await page.waitForSelector('#welcome-overlay', { state: 'visible', timeout: 30000 }); await page.keyboard.press('Enter');
   await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-  if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await h.press('.dim-wizard-card-btn[data-dim="3D"]');
+  if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await h.press('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:whiteQueenWorld');
   await page.waitForTimeout(500);
   await page.locator('[data-action="tool:whiteQueenWorld"]').first()[dev === 'phone' ? 'tap' : 'click'](); await page.waitForTimeout(400);
   if (await page.locator('#leave-dialog:not([hidden])').count()) await h.press('#leave-dialog [data-choice="keep"]');

@@ -21,6 +21,7 @@ import { mkdirSync } from 'node:fs';
 import * as BT from '../../src/app/bitrunc-geometry.js';
 import { middleSwap } from '../../src/app/world-bitrunc.js';
 import { t, LANG_ORDER } from '../../src/app/i18n.js';
+import { unfold } from './menu-unfold.mjs';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/bitrunc-shots', AS = process.env.APART_SHOTS ?? SH, RS = process.env.RCP_SHOTS ?? SH;
 mkdirSync(SH, { recursive: true }); mkdirSync(AS, { recursive: true }); mkdirSync(RS, { recursive: true });
@@ -68,10 +69,10 @@ for (const door of (PARTS.includes('doors') ? process.env.DOORS ?? 'kaleidohedra
     const page = await b.newPage({ viewport, hasTouch: true, isMobile: true }), tag = `${door}-${dev}`;
     const errors = await open(page, `&site=${door}`);
     await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-    if (!(await page.locator('[data-action="tool:bitruncWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+    if (!(await page.locator('[data-action="tool:bitruncWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:bitruncWorld');
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-    assert.equal(worlds[worlds.indexOf('tool:hexoctWorld') + 1], 'tool:bitruncWorld', `${tag}: Book Seven first, after HexOct (Fire; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
+    assert.equal(worlds[worlds.indexOf('tool:hexoctWorld') + 1], 'tool:bitruncWorld', `${tag}: Book Seven first, after HexOct (Fire; the world menu by the books, paper order (DICTO 2026-11-17))`); checks++;
     await page.locator('[data-action="tool:bitruncWorld"]').first().tap(); await leave(page);
     await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1500);
     const caption = () => page.locator(`${P} .ch-param-caption`).textContent();
@@ -189,7 +190,7 @@ for (const door of (PARTS.includes('rcp') ? process.env.DOORS ?? 'kaleidohedra,r
     const page = await b.newPage({ viewport, hasTouch: true, isMobile: true }), tag = `${door}-${dev} rcp`;
     const errors = await open(page, `&site=${door}`);
     await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-    if (!(await page.locator('[data-action="tool:bitruncWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+    if (!(await page.locator('[data-action="tool:bitruncWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:bitruncWorld');
     await page.waitForTimeout(500);
     await page.locator('[data-action="tool:bitruncWorld"]').first().tap(); await leave(page);
     await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1500);

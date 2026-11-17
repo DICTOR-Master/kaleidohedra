@@ -8,6 +8,7 @@ import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
 import { BLOOM_KINDS, BLOOM_STOPS } from '../../src/app/world-bloom.js';
 import { t } from '../../src/app/i18n.js';
+import { unfold } from './menu-unfold.mjs';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/bloom-shots';
 mkdirSync(SH, { recursive: true });
@@ -26,10 +27,10 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     const page = await b.newPage({ viewport, hasTouch: true, isMobile: true }), tag = `${door}-${dev}`;
     const errors = await open(page, `&site=${door}`);
     await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-    if (!(await page.locator('[data-action="tool:bloomWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+    if (!(await page.locator('[data-action="tool:bloomWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:bloomWorld');
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-    assert.equal(worlds[worlds.indexOf('tool:globalWebWorld') + 1], 'tool:bloomWorld', `${tag}: after the Global Web (Book Three; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
+    assert.equal(worlds[worlds.indexOf('tool:globalWebWorld') + 1], 'tool:bloomWorld', `${tag}: after the Global Web (Book Three; the world menu by the books, paper order (DICTO 2026-11-17))`); checks++;
     assert.equal(await page.evaluate(() => /wiz\.\w/.test(document.body.innerText)), false, `${tag}: no raw wiz.* keys in the menu`); checks++;
     await page.locator('[data-action="tool:bloomWorld"]').first().tap(); await page.waitForTimeout(400);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');

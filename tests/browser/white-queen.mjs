@@ -20,6 +20,7 @@ import { WQ_DIRECTIONS as DIRS } from '../../src/app/world-white-queen.js';
 import { t, LANG_ORDER } from '../../src/app/i18n.js';
 import { sliceU } from '../../src/app/world-white-queen.js';
 import { readFileSync } from 'node:fs';
+import { unfold } from './menu-unfold.mjs';
 const ATLAS = JSON.parse(readFileSync(new URL('../unit/white-queen-atlas.json', import.meta.url)));
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/wq-shots';
@@ -41,10 +42,10 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     const page = await b.newPage({ viewport, hasTouch: true, isMobile: true }), tag = `${door}-${dev}`;
     const errors = await open(page, `&site=${door}`);
     await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-    if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
+    if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:whiteQueenWorld');
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
-    assert.equal(worlds[worlds.indexOf('tool:goldenWorld') + 1], 'tool:whiteQueenWorld', `${tag}: Book Ten, after Golden Rhombohedra (Void; the gold block under The Five Orders of Space, book order (DICTO 2026-11-16))`); checks++;
+    assert.equal(worlds[worlds.indexOf('tool:platonicMixWorld') + 1], 'tool:whiteQueenWorld', `${tag}: Book Ten, after Book Eight (Book Nine has no world of its own; the world menu by the books, paper order (DICTO 2026-11-17))`); checks++;
     await page.locator('[data-action="tool:whiteQueenWorld"]').first().tap(); await page.waitForTimeout(400);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');
     await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1200);
@@ -210,7 +211,7 @@ for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 
   const page = await b.newPage({ viewport, deviceScaleFactor: 3, hasTouch: dev === 'phone', isMobile: dev === 'phone' });
   const errors = await open(page, '&site=kaleidohedra');
   await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
-  if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await page.click('.dim-wizard-card-btn[data-dim="3D"]');
+  if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await page.click('.dim-wizard-card-btn[data-dim="3D"]'); await unfold(page, 'tool:whiteQueenWorld');
   const card = page.locator('[data-action="tool:whiteQueenWorld"]').first();
   await card.scrollIntoViewIfNeeded(); await page.waitForTimeout(1200);
   const hues = await card.evaluate((el) => {
