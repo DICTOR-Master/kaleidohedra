@@ -23,3 +23,9 @@ Each fix: date | made in | fix | also applies to (papers/books that draw on it) 
 17 Nov | atoms-missing-2 | Hasu: as one solid 22 corners, 15 faces (#19 says 45 faces = faces of its 21 parts) | also in: #19, DICTOnary Hasu entry when added | carried: no
 
 - 2026-11-17 #103: add "Registered on Palomar as PALOMAR-2026-11-17-000006 (Lean 4 proof of Kulaichev's uniqueness for admissible figures)" to the next version (meta/references). Draws on it: Collected Works (Mandalas and yantras).
+
+- 2026-11-17 #103 "Why nine" (DICTO: "a why nine for 103"). Add to #103's next version (with its proof sketch and the study as supporting data, studies/2026-11-17-yantra-sequence, README §2.1, scripts/step_check.py, data/step-check.log):
+  (1) Taking up-and-down pairs off the traditional pattern keeping both great triangles and every apex on a base can be done in exactly one way, giving yantras of 3, 5, 7 and 9 triangles with 7, 16, 29 and 43 odd regions (on the traditional-pattern yantras; ring patterns 6,1 / 12,3,1 / 14,7,7,1 / 14,10,10,8,1).
+  (2) The 7→9 step (new up triangle with apex on the free end's base and three marmas; new down triangle with two marmas and a corner touch) cannot be repeated: at 9→11 the corner touch (2,6,6) puts the new up triangle's base on the line of t6's base (two bases at one depth: not admissible); and each repetition adds 6 conditions for 4 unknowns (free parameters 4 at nine → 2 → 0). So nine is the largest member of the traditional pattern's family.
+  (3) At nine, the odd-region count over the family's admissible parameters takes the values 43, 45 (three ring patterns, one Kulaichev's), 47 and 49 (exact rational samples); four patterns are not in #103; their walls remain open (LEADS).
+  Credit: Chapati and Chapati's star-point rule as in #103; the outline version of it (computed from the figure) gives 45 on Kulaichev's yantra. Draws on it: Collected Works (Mandalas and yantras).
