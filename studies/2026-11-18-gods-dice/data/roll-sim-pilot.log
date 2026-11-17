@@ -1,0 +1,19 @@
+quasi-static rolling, N = 20000
+  cube (control)           mu=3.000000  quasi-static p_C=0.16667 ± 0.00000  p_O=0.00000   solid-angle p_C=0.16667   min cos to face normal 1.000000
+  ok   control cube: p = 1/6 per face within 4 SE
+  octahedron (control)     mu=1.000000  quasi-static p_C=0.00000 ± 0.00000  p_O=0.12500   solid-angle p_C=0.00000   min cos to face normal 1.000000
+  ok   control octahedron: cube-plane faces absent (p_C = 0), 1/8 each otherwise
+  Kelvin 3/2               mu=1.500000  quasi-static p_C=0.03640 ± 0.00049  p_O=0.09770   solid-angle p_C=0.03544   min cos to face normal 1.000000
+  ok   Kelvin 3/2: every sample settled on a face (cos to nearest face normal > 0.9999)
+  turn fixed point sqrt3   mu=1.732051  quasi-static p_C=0.06800 ± 0.00058  p_O=0.07400   solid-angle p_C=0.06778   min cos to face normal 1.000000
+  ok   turn fixed point sqrt3: every sample settled on a face (cos to nearest face normal > 0.9999)
+  solid-angle fair mu_f    mu=1.756582  quasi-static p_C=0.07165 ± 0.00058  p_O=0.07126   solid-angle p_C=0.07143   min cos to face normal 1.000000
+  ok   solid-angle fair mu_f: every sample settled on a face (cos to nearest face normal > 0.9999)
+  cuboctahedron 2          mu=2.000000  quasi-static p_C=0.10783 ± 0.00056  p_O=0.04412   solid-angle p_C=0.10817   min cos to face normal 1.000000
+  ok   cuboctahedron 2: every sample settled on a face (cos to nearest face normal > 0.9999)
+  truncated cube 1+sqrt2   mu=2.414214  quasi-static p_C=0.15126 ± 0.00034  p_O=0.01156   solid-angle p_C=0.15111   min cos to face normal 1.000000
+  ok   truncated cube 1+sqrt2: every sample settled on a face (cos to nearest face normal > 0.9999)
+  quasi-static fair point mu_q ≈ 1.7553 (solid-angle fair point 1.75658); p_C there with N=20000: 0.07143
+  ok   quasi-static fair point found inside chamber I (1,2)
+105 s
+FINAL ok

@@ -1,0 +1,92 @@
+God's Dice — exact computations.  DICTO · dictospheres.com
+
+[0] controls: closed forms against the built solids
+  ok   mu=6/5: 24 corners, 14 faces, 36 edges; volume and area = closed form
+  ok   mu=3/2: 24 corners, 14 faces, 36 edges; volume and area = closed form
+  ok   mu=17/10: 24 corners, 14 faces, 36 edges; volume and area = closed form
+  ok   mu=9/4: 24 corners, 14 faces, 36 edges; volume and area = closed form
+  ok   mu=1 + sqrt(2): 24 corners, 14 faces, 36 edges; volume and area = closed form
+  ok   mu=14/5: 24 corners, 14 faces, 36 edges; volume and area = closed form
+  ok   polar volume closed form at the three walls (classical polars: cube 8, RD 2, octahedron 4/3)
+  ok   polar volume closed form at 5 interior points (float hull, 1e-12)
+
+[1] Test 1: turn point and stations
+  ok   regular octagons: a = sqrt2 - 1, mu_T = 1 + sqrt2 (silver mean)  1 + sqrt(2)
+  ok   uniform: every edge of S(1+sqrt2) has the same length 2(sqrt2-1)
+  ok   turn mu -> 3/mu: fixed point sqrt3 (insphere: cube planes at 1 = octahedron planes at mu/sqrt3)
+  ok   turn of the truncated cube = 3(sqrt2 - 1) = 1.2426..., in chamber I, not the truncated cube
+  ok   truncated cube is not tangential: face distances 1 and (1+sqrt2)/sqrt3 = 1.3938
+  ok   power line w -> mu = 3/2 - 2w: Kelvin w=0 -> 3/2, cuboctahedra w=-1/4 -> 2, truncated cubes w=1/4-1/sqrt2 -> 1+sqrt2
+  ok   power-line swap w -> -w is mu -> 3 - mu (partner cell S(3-mu)), fixed point Kelvin 3/2, not the truncated cube
+  ok   chamber I: each edge class has one length and one midpoint distance  {'CO': (2*mu**2 - 4*mu + 2, mu**2/2 - mu + 3/2), 'OO': (2*mu**2 - 8*mu + 8, mu**2/2)}
+   chamber I: equal edges at [3/2], midsphere (all edges tangent to one sphere) at [3/2]
+  ok   chamber II: each edge class has one length and one midpoint distance  {'CC': (4*mu**2 - 16*mu + 16, 2), 'CO': (2*mu**2 - 12*mu + 18, mu**2/2 - mu + 3/2)}
+   chamber II: equal edges at [1 + sqrt(2)], midsphere (all edges tangent to one sphere) at [1 + sqrt(2)]
+  ok   equal-edge stations of the line: 3/2 (Kelvin), 2 (cuboctahedron, all edges alike), 1+sqrt2 (truncated cube)
+  ok   midsphere stations coincide with them: 3/2 and 1+sqrt2 (and the wall 2)
+
+[2] Test 2: measures along the line
+   Mahler dM/dmu numerators: -32*(2*mu**3 - 9*mu + 6) | 16*(2*mu**3 - 9*mu**2 + 21) ; critical points [1.63122329229207] [2.08525365289105]
+  ok   Mahler: one critical point per chamber, roots of 2mu^3-9mu+6 (max, 1.6312) and 2mu^3-9mu^2+21 (in chamber II)
+  ok   Mahler: chamber-II critical point is not the truncated cube (2mu^3-9mu^2+21 at 1+sqrt2 is nonzero)  8 - 8*sqrt(2)
+   Mahler chamber II critical point 2.0852536528910467094 max value 13.388174072786778532 ; at truncated cube -224*(-3 + 2*sqrt(2))/3 = 12.8107746856178
+   IQ chamber I critical points: [1.7320508075688772935]
+   IQ chamber II critical points: []
+  ok   isoperimetric quotient: the one interior critical point of the line is sqrt3 (max); none in chamber II
+  ok   IQ derivative factor (mu - sqrt3) exact in chamber I
+  ok   Omega(S;0) = 48/mu^2 (I), 24/mu (II): strictly monotone, no interior special point; at 1+sqrt2 = 24(sqrt2-1)
+  ok   Dehn invariant = D(mu) ⊗ arccos(1/sqrt3), D = 24sqrt2(3-2mu) on I, -24sqrt2(3-mu) on II (built edges, 5 points)
+  ok   Dehn zero on the line only at Kelvin 3/2 and at the cube 3 (alpha/pi irrational: 2cos 2alpha = -2/3 not an algebraic integer)
+  ok   truncated cube Dehn = -24sqrt2(2-sqrt2) ⊗ alpha ≠ 0; one octahedron of edge sqrt2(2-sqrt2) adds +24sqrt2(2-sqrt2) ⊗ alpha: honeycomb sum 0
+  ok   space filling with regular octahedra: every mu in [2,3] (corner pieces at a lattice vertex = |x|+|y|+|z| <= 3-mu; volume per cube 8)
+   Q4 zeros in chamber I:  [(1.61803398874989, x**2 + x - 1)]
+   Q4 zeros in chamber II:  []
+   Q6 zeros in chamber I:  [(1.34543029620377, 2*x**4 - 17*x**2 + 2)]
+   Q6 zeros in chamber II:  [(2.42392861621922, x**6 - 15*x**4 + 75*x**2 - 13)]
+   Q8 zeros in chamber I:  [(1.30277563773199, x**2 + 3*x - 1), (1.61803398874989, x**2 + x - 1)]
+   Q8 zeros in chamber II:  []
+  ok   control: Q4 = 0 in chamber I only at Icosaxes mu = phi (#94)
+  ok   control: Q4 has no zero in chamber II (a^4 - 6a^2 - 1 has no root in (0,1))
+  ok   control: Q8 zeros in chamber I are phi and (sqrt13-1)/2 (#94)
+  ok   control: Q6 zeros 1.3454 (I) and 2.4239 (II) as in study 2026-11-04-harmonic-fingerprint
+  ok   control: cuboctahedron Q4 0.191, Q6 0.575 (classical fcc)
+  ok   truncated cube: no even Q_l (l = 2..16) vanishes except l = 2 (cubic symmetry)  {2: 0.0, 4: 0.323921, 6: 0.019629, 8: 0.197487, 10: 0.195934, 12: 0.526948, 14: 0.152184, 16: 0.227408}
+  ok   Q6 zero of chamber II is NOT the truncated cube (different minimal polynomial)
+   icosahedral line: truncated dodecahedron at lambda = 1.1698394204619259227, minimal polynomial 45*x**4 - 150*x**2 + 121
+   icosahedral line: truncated icosahedron at lambda = 0.97415420593406038165, minimal polynomial 361*x**4 - 390*x**2 + 45
+  ok   icosahedral twin: turn lam -> 1/lam does not pair the truncated icosahedron with the truncated dodecahedron  1.13960399171045
+  ok   cube line in the same scale: turn does not pair truncated octahedron (3/2) with truncated cube (it pairs 3/2 with the cuboctahedron 2)
+
+[3] Test 3: the die (solid-angle model, centre of mass = centre by symmetry)
+  ok   chamber II triangle: det = -(1-a)^2 (a+2), denominator positive
+   triangle face, chamber II: tan(Omega3/2) = (a - 1)**2*(a + 2)/(sqrt(a**2 + 2)*(a**2 + 6*a + 5))
+   truncated cube: tan(Omega3/2) = sqrt(17)*sqrt(95 - 64*sqrt(2))/119 = 0.0734203965638904720017379514174
+  ok   truncated cube: tan(Omega3/2) = (sqrt2 - 1)/((1 + 2sqrt2) sqrt(5 - 2sqrt2)) exactly  0.07342039656389047200173795
+   p_triangle  in ('0.01166429008265868508141533340308657996438', '0.01166429008265868508141533340308657996438', 1.2154326714572542e-62)
+   p_octagon   in ('0.1511142798897884198914462221292178933808', '0.1511142798897884198914462221292178933808', 3.8893845486632136e-62)
+  ok   triangle probability certified (interval width < 1e-45)
+  ok   octagon solid angle by an independent fan of 8 triangles = (4pi - 8 Omega3)/6 (40 digits)  0.151114279889788419891446222129
+  ok   p_C continuous at the cuboctahedron (b = 1, a = 0): (1/pi) atan(1/(2 sqrt2))
+  ok   p_C at the cube -> 1/6 and at the octahedron -> 0
+  ok   p_C(cuboctahedron) > 1/14: tan comparison 1/(2sqrt2) > tan(pi/14), so the fair point lies in chamber I (exact)
+  ok   fair point closed form: b^2 = 2 tan(pi/14) tan(2pi/7) satisfies (b^2/2)/sqrt(1+b^2) = tan(pi/14) (60 digits)
+  ok   fair point minimal polynomial found (factor of the resultant vanishing at mu_f to 1e-40)  [mu**6 - 6*mu**5 - 3*mu**4 + 52*mu**3 - 97*mu**2 + 74*mu - 13]
+   tan(pi/14) minimal polynomial: 7*T**6 - 35*T**4 + 21*T**2 - 1
+   mu_f = 1.75658213594504213909921182268041766486705836667900691716121  minimal polynomial (degree 6 ): mu**6 - 6*mu**5 - 3*mu**4 + 52*mu**3 - 97*mu**2 + 74*mu - 13
+  ok   fair point irreducible over Q (degree as printed)
+  ok   fair point is none of the named stations (minimal polynomials differ)
+  ok   fair point is neither the Mahler maximum nor the canonical-form anisotropy zero (no common factor)
+   mu_f in ('1.756582135945042139099211822680417664867', '1.756582135945042139099211822680417664867', 4.667261458395856e-61)
+   octahedron 1               mu=1.000000000  p(cube-plane face)=0  p(octahedron-plane face)=0.125000000000
+   Kelvin 3/2                 mu=1.500000000  p(cube-plane face)=0.0354409456025  p(octahedron-plane face)=0.0984192907981
+   Icosaxes phi               mu=1.618033989  p(cube-plane face)=0.0512646937867  p(octahedron-plane face)=0.0865514796600
+   fair mu_f                  mu=1.756582136  p(cube-plane face)=0.0714285714286  p(octahedron-plane face)=0.0714285714286
+   turn fixed point sqrt3     mu=1.732050808  p(cube-plane face)=0.0677778002323  p(octahedron-plane face)=0.0741666498258
+   cuboctahedron 2            mu=2.000000000  p(cube-plane face)=0.108173447969  p(octahedron-plane face)=0.0438699140230
+   truncated cube 1+sqrt2     mu=2.414213562  p(cube-plane face)=0.151114279890  p(octahedron-plane face)=0.0116642900827
+   cube 3                     mu=3.000000000  p(cube-plane face)=0.166666666667  p(octahedron-plane face)=0
+  ok   at mu_f every one of the 14 faces has probability 1/14 (30 digits)
+  ok   chamber II: tan(Omega3/2) strictly decreasing in a (sign of derivative at a = 0, 1/200, ..., 199/200; zero only at the cube a = 1; faces nested, so p_C increasing)
+
+51/51 checks, 12 s
+FINAL ok

@@ -1,0 +1,377 @@
+{
+ "test1": {
+  "mu_truncated_cube": "1+sqrt2",
+  "turn": "mu -> 3/mu",
+  "fixed_point": "sqrt3",
+  "turn_of_truncated_cube": "3(sqrt2-1)",
+  "power_line": "mu = 3/2 - 2w; swap w->-w = mu->3-mu, fixed 3/2",
+  "equal_edge_and_midsphere_stations": [
+   "3/2",
+   "2",
+   "1+sqrt2"
+  ]
+ },
+ "test2": {
+  "measures": {
+   "Mahler": {
+    "I_max": "CRootOf(2*x**3 - 9*x + 6, 2)",
+    "I_max_value": "14.375085515712689987",
+    "II_crit": "CRootOf(2*x**3 - 9*x**2 + 21, 1)",
+    "II_crit_value": "13.388174072786778532",
+    "II_crit_kind": "max",
+    "at_truncated_cube": "-224*(-3 + 2*sqrt(2))/3",
+    "at_truncated_cube_num": "12.810774685617806046",
+    "at_cuboctahedron": "40/3"
+   },
+   "IQ_I": [
+    "1.7320508075688772935"
+   ],
+   "IQ_II": [],
+   "IQ_at": {
+    "sqrt3": "0.78163889332548266858",
+    "truncated_cube": "0.61302821107928032110"
+   },
+   "Q": {
+    "Q4_I": [
+     {
+      "mu": "1/2 + sqrt(5)/2",
+      "mu_num": "1.6180339887498948482",
+      "factor": "x**2 + x - 1"
+     }
+    ],
+    "Q4_II": [],
+    "Q6_I": [
+     {
+      "mu": "CRootOf(2*x**4 - 17*x**2 + 2, 2) + 1",
+      "mu_num": "1.3454302962037688502",
+      "factor": "2*x**4 - 17*x**2 + 2"
+     }
+    ],
+    "Q6_II": [
+     {
+      "mu": "CRootOf(x**6 - 15*x**4 + 75*x**2 - 13, 1) + 2",
+      "mu_num": "2.4239286162192168265",
+      "factor": "x**6 - 15*x**4 + 75*x**2 - 13"
+     }
+    ],
+    "Q8_I": [
+     {
+      "mu": "-1/2 + sqrt(13)/2",
+      "mu_num": "1.3027756377319946466",
+      "factor": "x**2 + 3*x - 1"
+     },
+     {
+      "mu": "1/2 + sqrt(5)/2",
+      "mu_num": "1.6180339887498948482",
+      "factor": "x**2 + x - 1"
+     }
+    ],
+    "Q8_II": []
+   },
+   "Q_truncated_cube": {
+    "2": "0",
+    "4": "0.323921351674394",
+    "6": "0.0196288435047750",
+    "8": "0.197486746756840",
+    "10": "0.195933637284626",
+    "12": "0.526947556235146",
+    "14": "0.152184365588776",
+    "16": "0.227407591793196"
+   }
+  },
+  "icosahedral_twin": {
+   "truncated dodecahedron": {
+    "lam": "1.1698394204619259227",
+    "minpoly": "45*x**4 - 150*x**2 + 121",
+    "degree": "4"
+   },
+   "truncated icosahedron": {
+    "lam": "0.97415420593406038165",
+    "minpoly": "361*x**4 - 390*x**2 + 45",
+    "degree": "4"
+   }
+  },
+  "truncated_cube_lambda": "1.3938468501173517972"
+ },
+ "test3": {
+  "truncated_cube": {
+   "tan_half_Omega_triangle": "(-1 + sqrt(2))/((1 + 2*sqrt(2))*sqrt(5 - 2*sqrt(2)))",
+   "p_triangle": [
+    "0.01166429008265868508141533340308657996438",
+    "0.01166429008265868508141533340308657996438"
+   ],
+   "p_octagon": [
+    "0.1511142798897884198914462221292178933808",
+    "0.1511142798897884198914462221292178933808"
+   ],
+   "p_triangle_closed": "atan(t)/(2 pi), t = (-1 + sqrt(2))/((1 + 2*sqrt(2))*sqrt(5 - 2*sqrt(2)))",
+   "p_octagon_closed": "1/6 - atan(t)/(3 pi)"
+  },
+  "fair_point": {
+   "closed": "1 + sqrt(2 tan(pi/14) tan(2pi/7))",
+   "mu": [
+    "1.756582135945042139099211822680417664867",
+    "1.756582135945042139099211822680417664867"
+   ],
+   "minpoly": "mu**6 - 6*mu**5 - 3*mu**4 + 52*mu**3 - 97*mu**2 + 74*mu - 13",
+   "degree": 6,
+   "chamber": "I (1,2): 6 squares + 8 hexagons, not the truncated cube"
+  },
+  "stations": {
+   "octahedron 1": {
+    "mu": "1.0000000000000000000",
+    "p_cube_face": "0",
+    "p_octahedron_face": "0.125000000000000000000000000000"
+   },
+   "Kelvin 3/2": {
+    "mu": "1.5000000000000000000",
+    "p_cube_face": "0.0354409456024600214904675918825",
+    "p_octahedron_face": "0.0984192907981549838821493060882"
+   },
+   "Icosaxes phi": {
+    "mu": "1.6180339887498948482",
+    "p_cube_face": "0.0512646937867027621464366893973",
+    "p_octahedron_face": "0.0865514796599729283901724829520"
+   },
+   "fair mu_f": {
+    "mu": "1.7565821359450421391",
+    "p_cube_face": "0.0714285714285714285714285714286",
+    "p_octahedron_face": "0.0714285714285714285714285714286"
+   },
+   "turn fixed point sqrt3": {
+    "mu": "1.7320508075688772935",
+    "p_cube_face": "0.0677778002322956526863819873425",
+    "p_octahedron_face": "0.0741666498257782604852135094931"
+   },
+   "cuboctahedron 2": {
+    "mu": "2.0000000000000000000",
+    "p_cube_face": "0.108173447969392729829144440778",
+    "p_octahedron_face": "0.0438699140229554526281416694168"
+   },
+   "truncated cube 1+sqrt2": {
+    "mu": "2.4142135623730950488",
+    "p_cube_face": "0.151114279889788419891446222129",
+    "p_octahedron_face": "0.0116642900826586850814153334031"
+   },
+   "cube 3": {
+    "mu": "3.0000000000000000000",
+    "p_cube_face": "0.166666666666666666666666666667",
+    "p_octahedron_face": "0"
+   }
+  },
+  "pC_closed": {
+   "I": "(1/pi) atan(b^2/(2 sqrt(1+b^2))), b = mu-1",
+   "II": "1/6 - (2/(3pi)) atan(tanII(a)), a = mu-2",
+   "tanII": "(a - 1)**2*(a + 2)/(sqrt(a**2 + 2)*(a**2 + 6*a + 5))"
+  }
+ },
+ "checks": [
+  [
+   "mu=6/5: 24 corners, 14 faces, 36 edges; volume and area = closed form",
+   true
+  ],
+  [
+   "mu=3/2: 24 corners, 14 faces, 36 edges; volume and area = closed form",
+   true
+  ],
+  [
+   "mu=17/10: 24 corners, 14 faces, 36 edges; volume and area = closed form",
+   true
+  ],
+  [
+   "mu=9/4: 24 corners, 14 faces, 36 edges; volume and area = closed form",
+   true
+  ],
+  [
+   "mu=1 + sqrt(2): 24 corners, 14 faces, 36 edges; volume and area = closed form",
+   true
+  ],
+  [
+   "mu=14/5: 24 corners, 14 faces, 36 edges; volume and area = closed form",
+   true
+  ],
+  [
+   "polar volume closed form at the three walls (classical polars: cube 8, RD 2, octahedron 4/3)",
+   true
+  ],
+  [
+   "polar volume closed form at 5 interior points (float hull, 1e-12)",
+   true
+  ],
+  [
+   "regular octagons: a = sqrt2 - 1, mu_T = 1 + sqrt2 (silver mean)",
+   true
+  ],
+  [
+   "uniform: every edge of S(1+sqrt2) has the same length 2(sqrt2-1)",
+   true
+  ],
+  [
+   "turn mu -> 3/mu: fixed point sqrt3 (insphere: cube planes at 1 = octahedron planes at mu/sqrt3)",
+   true
+  ],
+  [
+   "turn of the truncated cube = 3(sqrt2 - 1) = 1.2426..., in chamber I, not the truncated cube",
+   true
+  ],
+  [
+   "truncated cube is not tangential: face distances 1 and (1+sqrt2)/sqrt3 = 1.3938",
+   true
+  ],
+  [
+   "power line w -> mu = 3/2 - 2w: Kelvin w=0 -> 3/2, cuboctahedra w=-1/4 -> 2, truncated cubes w=1/4-1/sqrt2 -> 1+sqrt2",
+   true
+  ],
+  [
+   "power-line swap w -> -w is mu -> 3 - mu (partner cell S(3-mu)), fixed point Kelvin 3/2, not the truncated cube",
+   true
+  ],
+  [
+   "chamber I: each edge class has one length and one midpoint distance",
+   true
+  ],
+  [
+   "chamber II: each edge class has one length and one midpoint distance",
+   true
+  ],
+  [
+   "equal-edge stations of the line: 3/2 (Kelvin), 2 (cuboctahedron, all edges alike), 1+sqrt2 (truncated cube)",
+   true
+  ],
+  [
+   "midsphere stations coincide with them: 3/2 and 1+sqrt2 (and the wall 2)",
+   true
+  ],
+  [
+   "Mahler: one critical point per chamber, roots of 2mu^3-9mu+6 (max, 1.6312) and 2mu^3-9mu^2+21 (in chamber II)",
+   true
+  ],
+  [
+   "Mahler: chamber-II critical point is not the truncated cube (2mu^3-9mu^2+21 at 1+sqrt2 is nonzero)",
+   true
+  ],
+  [
+   "isoperimetric quotient: the one interior critical point of the line is sqrt3 (max); none in chamber II",
+   true
+  ],
+  [
+   "IQ derivative factor (mu - sqrt3) exact in chamber I",
+   true
+  ],
+  [
+   "Omega(S;0) = 48/mu^2 (I), 24/mu (II): strictly monotone, no interior special point; at 1+sqrt2 = 24(sqrt2-1)",
+   true
+  ],
+  [
+   "Dehn invariant = D(mu) \u2297 arccos(1/sqrt3), D = 24sqrt2(3-2mu) on I, -24sqrt2(3-mu) on II (built edges, 5 points)",
+   true
+  ],
+  [
+   "Dehn zero on the line only at Kelvin 3/2 and at the cube 3 (alpha/pi irrational: 2cos 2alpha = -2/3 not an algebraic integer)",
+   true
+  ],
+  [
+   "truncated cube Dehn = -24sqrt2(2-sqrt2) \u2297 alpha \u2260 0; one octahedron of edge sqrt2(2-sqrt2) adds +24sqrt2(2-sqrt2) \u2297 alpha: honeycomb sum 0",
+   true
+  ],
+  [
+   "space filling with regular octahedra: every mu in [2,3] (corner pieces at a lattice vertex = |x|+|y|+|z| <= 3-mu; volume per cube 8)",
+   true
+  ],
+  [
+   "control: Q4 = 0 in chamber I only at Icosaxes mu = phi (#94)",
+   true
+  ],
+  [
+   "control: Q4 has no zero in chamber II (a^4 - 6a^2 - 1 has no root in (0,1))",
+   true
+  ],
+  [
+   "control: Q8 zeros in chamber I are phi and (sqrt13-1)/2 (#94)",
+   true
+  ],
+  [
+   "control: Q6 zeros 1.3454 (I) and 2.4239 (II) as in study 2026-11-04-harmonic-fingerprint",
+   true
+  ],
+  [
+   "control: cuboctahedron Q4 0.191, Q6 0.575 (classical fcc)",
+   true
+  ],
+  [
+   "truncated cube: no even Q_l (l = 2..16) vanishes except l = 2 (cubic symmetry)",
+   true
+  ],
+  [
+   "Q6 zero of chamber II is NOT the truncated cube (different minimal polynomial)",
+   true
+  ],
+  [
+   "icosahedral twin: turn lam -> 1/lam does not pair the truncated icosahedron with the truncated dodecahedron",
+   true
+  ],
+  [
+   "cube line in the same scale: turn does not pair truncated octahedron (3/2) with truncated cube (it pairs 3/2 with the cuboctahedron 2)",
+   true
+  ],
+  [
+   "chamber II triangle: det = -(1-a)^2 (a+2), denominator positive",
+   true
+  ],
+  [
+   "truncated cube: tan(Omega3/2) = (sqrt2 - 1)/((1 + 2sqrt2) sqrt(5 - 2sqrt2)) exactly",
+   true
+  ],
+  [
+   "triangle probability certified (interval width < 1e-45)",
+   true
+  ],
+  [
+   "octagon solid angle by an independent fan of 8 triangles = (4pi - 8 Omega3)/6 (40 digits)",
+   true
+  ],
+  [
+   "p_C continuous at the cuboctahedron (b = 1, a = 0): (1/pi) atan(1/(2 sqrt2))",
+   true
+  ],
+  [
+   "p_C at the cube -> 1/6 and at the octahedron -> 0",
+   true
+  ],
+  [
+   "p_C(cuboctahedron) > 1/14: tan comparison 1/(2sqrt2) > tan(pi/14), so the fair point lies in chamber I (exact)",
+   true
+  ],
+  [
+   "fair point closed form: b^2 = 2 tan(pi/14) tan(2pi/7) satisfies (b^2/2)/sqrt(1+b^2) = tan(pi/14) (60 digits)",
+   true
+  ],
+  [
+   "fair point minimal polynomial found (factor of the resultant vanishing at mu_f to 1e-40)",
+   true
+  ],
+  [
+   "fair point irreducible over Q (degree as printed)",
+   true
+  ],
+  [
+   "fair point is none of the named stations (minimal polynomials differ)",
+   true
+  ],
+  [
+   "fair point is neither the Mahler maximum nor the canonical-form anisotropy zero (no common factor)",
+   true
+  ],
+  [
+   "at mu_f every one of the 14 faces has probability 1/14 (30 digits)",
+   true
+  ],
+  [
+   "chamber II: tan(Omega3/2) strictly decreasing in a (sign of derivative at a = 0, 1/200, ..., 199/200; zero only at the cube a = 1; faces nested, so p_C increasing)",
+   true
+  ]
+ ],
+ "ok": true,
+ "seconds": 12.4,
+ "mark": "DICTO \u00b7 dictospheres.com"
+}

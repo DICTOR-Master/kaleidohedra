@@ -8520,6 +8520,15 @@
     "retry": "only with lineages linked through persistent events (not undone within 60 s), or the lost-only share, rules fixed in advance",
     "study": "2026-11-18-sun-lineage",
     "date": "2026-11-18"
+   },
+   {
+    "question": "God's Dice (DICTO): is the truncated cube the lawgiving shape? (turn point; sqrt2 station; as a die)",
+    "method": "exact algebra (sympy) on S(mu) = cube ∩ mu·octahedron and the Delian line; Q_l l=4..16; solid-angle die model + quasi-static drop simulation",
+    "status": "SETTLED (NO on all three); new exact fair point",
+    "result": "truncated cube at mu = 1+sqrt2: not the turn's fixed point (sqrt3) nor its image pairs; no measure picks it out (Q6 zero 0.0097 away; Mahler local max 13.38817 at 2.08525 = root of 2mu^3-9mu^2+21, not in earlier notes); equal-edge/midsphere stations 3/2, 2, 1+sqrt2. As a die: octagon 0.1511142799, triangle 0.0116642901. Unique fair member (all 14 faces 1/14): mu_f = 1+sqrt(2 tan(pi/14) tan(2pi/7)) = 1.7565821359 (minimal polynomial mu^6-6mu^5-3mu^4+52mu^3-97mu^2+74mu-13); not found in sources checked",
+    "retry": "never for the three readings; leads: fair die mu_f as object; midsphere stations vs the turn",
+    "study": "2026-11-18-gods-dice",
+    "date": "2026-11-18"
    }
   ]
  },

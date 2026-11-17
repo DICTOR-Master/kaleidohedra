@@ -1,0 +1,101 @@
+{
+ "cube (control)": {
+  "mu": 3.0,
+  "p_cube_face": 0.16666666666666666,
+  "p_oct_face": 0.0,
+  "se_cube_face": 0.0,
+  "min_alignment": 0.9999996788892312,
+  "solid_angle_p_cube_face": 0.16666666666666666
+ },
+ "octahedron (control)": {
+  "mu": 1.0,
+  "p_cube_face": 0.0,
+  "p_oct_face": 0.125,
+  "se_cube_face": 0.0,
+  "min_alignment": 0.9999998788426498,
+  "solid_angle_p_cube_face": 0.0
+ },
+ "Kelvin 3/2": {
+  "mu": 1.5,
+  "p_cube_face": 0.035589583333333334,
+  "p_oct_face": 0.0983078125,
+  "se_cube_face": 0.00024147926361237377,
+  "min_alignment": 0.999999919722248,
+  "solid_angle_p_cube_face": 0.03544094560246002
+ },
+ "turn fixed point sqrt3": {
+  "mu": 1.7320508075688772,
+  "p_cube_face": 0.06760624999999999,
+  "p_oct_face": 0.0742953125,
+  "se_cube_face": 0.0002893333564910645,
+  "min_alignment": 0.9999999139586507,
+  "solid_angle_p_cube_face": 0.06777780023229564
+ },
+ "solid-angle fair mu_f": {
+  "mu": 1.7565821359450422,
+  "p_cube_face": 0.07135833333333333,
+  "p_oct_face": 0.07148125,
+  "se_cube_face": 0.00029156997057834256,
+  "min_alignment": 0.9999999080954329,
+  "solid_angle_p_cube_face": 0.07142857142857142
+ },
+ "cuboctahedron 2": {
+  "mu": 2.0,
+  "p_cube_face": 0.10766666666666667,
+  "p_oct_face": 0.04425,
+  "se_cube_face": 0.00028178744944845694,
+  "min_alignment": 0.9999998394445786,
+  "solid_angle_p_cube_face": 0.10817344796939272
+ },
+ "truncated cube 1+sqrt2": {
+  "mu": 2.414213562373095,
+  "p_cube_face": 0.15097708333333335,
+  "p_oct_face": 0.0117671875,
+  "se_cube_face": 0.00017207438545516966,
+  "min_alignment": 0.9999998118975318,
+  "solid_angle_p_cube_face": 0.1511142798897884
+ },
+ "quasi_static_fair": {
+  "mu": 1.7572143554687503,
+  "p_cube_face_at_it": 0.07143541666666667,
+  "note": "bisection, 12 steps, N=4e4 common random numbers; statistical, not exact"
+ },
+ "checks": [
+  [
+   "control cube: p = 1/6 per face within 4 SE",
+   true
+  ],
+  [
+   "control octahedron: cube-plane faces absent (p_C = 0), 1/8 each otherwise",
+   true
+  ],
+  [
+   "Kelvin 3/2: every sample settled on a face (cos to nearest face normal > 0.9999)",
+   true
+  ],
+  [
+   "turn fixed point sqrt3: every sample settled on a face (cos to nearest face normal > 0.9999)",
+   true
+  ],
+  [
+   "solid-angle fair mu_f: every sample settled on a face (cos to nearest face normal > 0.9999)",
+   true
+  ],
+  [
+   "cuboctahedron 2: every sample settled on a face (cos to nearest face normal > 0.9999)",
+   true
+  ],
+  [
+   "truncated cube 1+sqrt2: every sample settled on a face (cos to nearest face normal > 0.9999)",
+   true
+  ],
+  [
+   "quasi-static fair point found inside chamber I (1,2)",
+   true
+  ]
+ ],
+ "ok": true,
+ "N": 80000,
+ "seconds": 255.9,
+ "mark": "DICTO \u00b7 dictospheres.com"
+}
