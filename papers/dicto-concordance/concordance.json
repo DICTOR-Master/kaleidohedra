@@ -8484,6 +8484,15 @@
     "retry": "not with moving-Voronoi calibration in the joint limit; only with a Sun-like-boundary control passing held-out at P = 2 x step within 15%, or via the net neighbour change after fixed time (frame-rate free; null 3.600 per cell per spacing in 2D)",
     "study": "2026-11-17-sun-step-zero",
     "date": "2026-11-17"
+   },
+   {
+    "question": "Can GET A, GET B and Inchbald's dimpled triacontahedron be mixed in one tiling; non-periodic tilings?",
+    "method": "exact Z[phi]/Q(phi) overlap + face matching over all 120 images; layer theorem; line theorem with pysat in a box; exact patches",
+    "status": "PROVED (layer and line theorems; patches exact); corona enumeration open",
+    "result": "Inchbald's solid tiles by translation (exact). 588/784/196 face-to-face placements of A/B/C2 around any centre. One lattice plane takes all three solids: any word in A,B,C stacks (Fibonacci -> non-periodic). A/B on their common lattice: tiling iff constant along lines v -> one free bit per point of Z^2. GET A and GET B alone have non-lattice (layer) tilings. Never aperiodic: a period along v always remains (polytypism of Penrose rhombohedra).",
+    "retry": "only for: full corona enumeration; tilings with no period from the 11 placements; C2 alone beyond the tested model",
+    "study": "2026-11-17-get-mixing",
+    "date": "2026-11-17"
    }
   ]
  },

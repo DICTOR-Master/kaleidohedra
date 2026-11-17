@@ -45,3 +45,5 @@ certificate needs either a cell decomposition (none found) or exact intersection
 Inchbald's solid answers Grünbaum's k = 10 question too (every zone 10 faces; tiling float-checked), published 2022–23,
 before GET; he does not mention zones or Grünbaum. It is a third k = 10 example besides GET A and GET B, and the most
 symmetric. Credit: "the dimpled rhombic triacontahedron (Inchbald, 2023)". GET A and GET B are not his.
+
+**Update 17 Nov 2026 (study 2026-11-17-get-mixing):** the tiling is now PROVED exactly: the solid written as 17 cells minus one corner cell, overlap volumes computed exactly in Q(phi) with each of its 14 lattice translates within reach are exactly 0, and volume = covolume = 20 + 32phi.
