@@ -46,6 +46,7 @@ Not claimed: that these solids are scissors congruent to a cube. That is the con
 - The polynomial identities over ℚ(√5) (16 corner-face values, the barycentric identities, lengths, Gram numbers) are closed by the tactic `grind` from √5² = 5.
 
 ## Not done: FUJI, and what would unlock it
+(Done in study 5, `studies/2026-11-19-lean-dehn-5/`: the edge reading for a solid that is not a tetrahedron, the angle relations, and FUJI nonzero.)
 1. **Geometry (the real obstruction).** FUJI has 7 faces and 12 edges; six faces meet at one corner and the seventh is a hexagon. `IsTetraData` is for four faces. Needed: an evaluation lemma for a solid given by corners and half-spaces that is not a tetrahedron, namely for each edge "the points of the solid where exactly its two faces are tight are the open segment between its two corners", and that no other set of tight faces has a line as direction space. Cutting FUJI into tetrahedra and using additivity does not avoid this: the cut edges then need their own angle evaluations.
 2. **Arithmetic.** Dehn(FUJI) = 1 ⊗ (3γ − 6ε) + ((√5−1)/2) ⊗ 3ε modulo π. The cheap test needs ε ∉ ℚπ. cos 2ε = (4√5 − 5)/15 is irrational, so Niven's theorem in its rational form does not apply. Two ways to unlock it, neither done here:
    - Mathlib has `Real.isIntegral_two_mul_cos_rat_mul_pi` (2 cos of a rational multiple of π is an algebraic integer; found in `NumberTheory/Niven.lean`). Missing lemma: 2 cos 2ε = (8√5 − 10)/15, a root of 45y² + 60y − 44, is not an algebraic integer.

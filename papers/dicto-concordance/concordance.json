@@ -8730,6 +8730,15 @@
         "retry": "never (A, B, CLEO, AXE); FUJI open: needs an evaluation lemma for a 7-face solid (edge = open segment for a non-tetrahedron), and either ε + α + β = π or that (8√5 − 10)/15 is not an algebraic integer (Mathlib Real.isIntegral_two_mul_cos_rat_mul_pi); lead: α + 2β − γ = π numerically, all three words in α and β",
         "study": "2026-11-19-lean-dehn-4",
         "date": "2026-11-19"
+      },
+      {
+        "question": "Lean canon study 5: finish the three words: prove the angle relations α + 2β − γ = π and ε = β − γ, read the edges of a solid that is not a tetrahedron, and prove FUJI's Dehn invariant is not zero",
+        "method": "Lean 4.35.0-rc2 + Mathlib; 4 files (Dehn5Angles, Dehn5Edges, Dehn5Fuji, Dehn5Pairs) importing studies 1 to 4 unchanged; angles: exact cos and sin (nested square roots) and the addition formula, every angle in [0, π/2] so arccos ∘ cos is the identity on the sums; edge reading: structure IsEdgeData (corner-face table plus one cover condition), proved for FUJI by 21 certificates computed exactly in ℚ(√5) (12 edges: a third face fixes the position along the edge; 9 pairs of triangles sharing only the apex: a relation n_c + μ n_c′ = a n_i + a′ n_j with μ > 0), identities by grind, tables by decide; not zero: a ℚ-linear map on lengths killing 12 − 3g and Niven's theorem on 2α, as in study 4",
+        "status": "SETTLED",
+        "result": "compiled, no sorry in the whole chain (19 files), standard axioms only: wordEps_eq (ε = β − γ), wordAlpha_add_wordBeta (α + β = π − ε), word_angle_relation (α + 2β − γ = π), as real numbers; IsEdgeData.dehnSet_eq (Dehn invariant of a bounded solid = Σ over its edges of distance of the two corners ⊗ angle class of the two faces; corners with any number of faces allowed); dehnSet_fuji (6 × 1 at α + β, 3 × 1 at γ, 3 × g at ε, g = (√5−1)/2); the three words over α, β: CLEO = 3 ⊗ α + 3g ⊗ β, AXE = (1 + g) ⊗ α + 6 ⊗ β, FUJI = (9 − 3g) ⊗ α + (12 − 3g) ⊗ β; dehnSet_fuji_ne_zero; no similar copy of FUJI is scissors congruent to a cube or to a cube ∩ rhombic dodecahedron solid. CONDITIONAL only (hypothesis WordAnglesIndep: α, β independent modulo π over ℚ, not proved in Lean): no similar copies of two different words are scissors congruent. Not proved: fujiSet = convex hull of its seven corners (only ⊇)",
+        "retry": "never (angles, edge reading, FUJI); open: WordAnglesIndep in Lean (by hand: e^{2iβ} has nonzero valuation at a prime above 3 in ℚ(√5, i), e^{2iα} has none); lead: the edge reading is ready for the octahedron, dodecahedron, icosahedron and the fair dice",
+        "study": "2026-11-19-lean-dehn-5",
+        "date": "2026-11-19"
       }
     ]
   },
