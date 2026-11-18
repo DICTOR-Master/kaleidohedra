@@ -1,3 +1,5 @@
+**Status (19 November 2026): set aside by DICTO as not viable for Palomar for now (pre-score 3). Not submitted.**
+
 # Second Palomar entry, prepared locally: #43 Theorem 4, the octahedral constant 3 (15 November 2026)
 
 **Conclusion.** The entry is packaged and mechanically green: build, comparator (Lean kernel, NanoDa, con-ron), axioms only `propext`, `Classical.choice`, `Quot.sound`, a wrong Challenge rejected, Palomar's Python metadata validator passed. The estimated score is **notability 2 out of 5, below the floor of 4, so it would be rejected**. Do not submit. Nothing was submitted, no repository was created, and nothing was pushed outside this research repository.

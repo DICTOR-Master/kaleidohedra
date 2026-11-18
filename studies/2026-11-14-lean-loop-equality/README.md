@@ -1,3 +1,5 @@
+**Status (19 November 2026): set aside by DICTO as not viable for Palomar for now (pre-score 3). Not submitted.**
+
 # Palomar preparation (2026-11-14)
 
 DICTO said yes to preparing a Palomar submission on 14 November 2026. This study covers steps 1–3 only: the rules, a working Lean workspace, and the choice of a first entry. **Nothing has been submitted.** No issue or pull request was opened anywhere. Submission needs DICTO's word.
