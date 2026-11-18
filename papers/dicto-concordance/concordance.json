@@ -8622,6 +8622,15 @@
     "result": "240 = 72 (A8 roots) + 84 + 84 (±Δ(9,3)); 2160 (2_41) = 756 + 630 + 630 (± stericated 8-simplex) + 72 + 72 (± truncated 8-simplex); 126 = 56 (A7 roots) + 70 (Δ(8,4)); 56 = 28 + 28 (±Δ(8,2)). Theorem: for n ≥ 5 the only reflection groups containing W(A_n) are A_n, E7 (n=7) and E8 (n=8), each E unique; an S-invariant set gains E symmetry iff it is a union of W(E)-orbits; of 44 unions of S-orbits in the four shells only the whole shells gain (696729600; 2903040). Walls: W(4_21) = 120 mirrors + 9720 cross walls; W(2_31) = 63 + 316. Hidden: A8 roots and A7 roots (heart, 9 and 8 plates, all cross walls: the C3 analogue), ±Δ(9,3) (inherited heart, 36 S9 mirrors + 72 cross walls), Δ(8,4) (heart, 28 + 28); orbits of 2_41 and 3_21 only partly hidden. No orbit has a plate on a hidden E mirror (unlike the 600-cell). S7 split of E7 roots: 42+7+7+35+35. 72+84+84 and 28+28 known (Wikipedia 4_21, 3_21 pages); 2_41 split and wall results not found in sources checked",
     "retry": "only for other W(E)-orbits (1_42, 1_32), polars of the 4_21 orbits, or chamber counts",
     "status": "SETTLED (FINAL ok)"
+   },
+   {
+    "date": "2026-11-18",
+    "study": "2026-11-18-fair-32-die",
+    "question": "Is Lucky 7 (the fair 14-face die) part of a family? (DICTO 18 Nov: \"So is it part of a family\", \"Yes\"): the fair member of the dodecahedron–icosahedron line, and the (N/2)-gon prediction",
+    "method": "plane-triple hull (double-precision combinatorics, 140-digit vertices), Van Oosterom–Strackee solid angles, root-finding; PSLQ for the polynomial, sympy factorisation over fields, exact check of the closed form; control = Lucky 7 reproduced to 1e-141; symmetry guard",
+    "result": "fair 32-face die D ∩ μI exists at μ_f = 1.00436194970341… (12 pentagons + 20 truncated triangles, each 4π/32), just past the equal-depth member μ = 1 (as Lucky 7 sits past √3); R² = 35 − 20√2 + 8√10 − 14√5 + (−40 + 30√2 + 16√5 − 12√10)√(2+√2) = 1.1823250951…, minimal polynomial degree 8, splits over Q(cos 2π/16, √5): the 16-gon prediction holds (Lucky 7: R² = tan²(2π/7)); r/R = 0.91966899…; minimal polynomial of R² certified numerically (hand proof pending); μ_f polynomial not found to degree 24",
+    "retry": "only for a hand proof, the general (N/2)-gon rule, or a bounce model",
+    "status": "SETTLED (FINAL ok)"
    }
   ]
  },
