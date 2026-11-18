@@ -8676,6 +8676,15 @@
         "result": "4 more fair dice: C∩D 18 (Th, rectangles, no hidden angle), O∩D 20 (Th, theta pi/5, R/r = 8-3sqrt5), T∩D 16 (chiral T, theta 5pi/24), RD∩D 24 (Th, mu_f 0.99915 < 1, no regular faces, no hidden angle). 12 lines in all. Controls with a split family: no fair member. Theorem 6 holds with rotations only; hidden angle iff a regular face family (10 of 12)",
         "retry": "exact values for C∩D and RD∩D; off-axis families",
         "status": "SETTLED (FINAL ok)"
+      },
+      {
+        "date": "2026-11-18",
+        "study": "2026-11-18-fair-32-die (part 7)",
+        "question": "DICTO: exact values for the 18-face C∩D and the 24-face RD∩D fair dice",
+        "method": "Girard on the rectangle (C∩D) and on the quadrilateral (RD∩D); exact corners in s; resultants over sqrt2, sqrt3, sqrt5, sin(pi/18); factor by |f/f`| at 3000 digits",
+        "result": "C∩D: YZ = sin(pi/18) sqrt((1+Y^2)(1+Z^2)), Y = s-phi, Z = (s-1)/phi; mu_f algebraic of degree 48. RD∩D: a1+a2 = 13pi/12; mu_f algebraic of degree 64 (32 in mu^2). Both irreducible over Q; explains the failed degree<=24 search",
+        "retry": "none",
+        "status": "SETTLED (FINAL ok)"
       }
     ]
   },

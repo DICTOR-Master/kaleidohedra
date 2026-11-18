@@ -138,3 +138,11 @@ Theorem 6 generalised: only the m rotations about the face axis are needed (regu
 Figures: fig_vacuus.py guards that the drawn axis views are m-fold symmetric (0 misses on all ten); the O∩D and T∩D views turn without a mirror.
 Faults fixed: a hook-blocked command had silently dropped a fair_line2.py edit (KeyError 'cd'): reapplied and grep-verified before running;
 a brace glob in scp failed and skipped this README entry: refetched file by file.
+
+## Part 7 — exact values for the two dice without regular faces (DICTO: "Try to get exact values for the 18 and the 24")
+- scripts/exact_cd.py (C∩D): rectangle (1, ±Y, ±Z), Y = s − φ, Z = (s−1)/φ, s = μ√(φ+2); fair iff YZ = sin(π/18)√((1+Y²)(1+Z²))
+  (rectangle solid angle 4 arcsin(...) = 4π/18). Root agrees with computed μ to 1e-100. Resultants: minimal polynomial of s degree 24, of μ degree 48 (irreducible over Q). data/exact-cd.log FINAL ok.
+- scripts/exact_rdd.py (RD∩D): quadrilateral corner angles a1,a1,a2,a2; Girard a1+a2 = 13π/12 -> c1²+c2²−2Cc1c2 = 1−C², squared;
+  degree 32 in s over Q(√2,√3,√5); eliminated -> irreducible factor of degree 64 in s and in μ (even: 32 in μ²); distance to root 1e-121. data/exact-rdd.log FINAL ok.
+- Faults fixed on the way: unbuffered output needed under timeout; sympy Expr expansion too slow -> Poly arithmetic with denominators cleared
+  by positive scaling; Poly.rem did not fully reduce r² -> term-by-term reduction; factor choice at 110 digits lost to cancellation -> |f/f'| at 3000 digits.
