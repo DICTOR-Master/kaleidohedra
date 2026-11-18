@@ -108,3 +108,17 @@ Lines with off-axis faces form infinite families and were not run. Added here: `
 - On the two tetrahedral lines the multiple is a third of a whole number, so they hide the 3N-gon.
 
 The lengths follow a polygon field only for 14, 20 and 32 faces.
+
+## Part 5 — the hidden angles proved by hand; every fair die in closed form (18 Nov 2026)
+DICTO: "Try to find the rest and write a proof by hand please."
+- scripts/corners.py: per face, the spherical corner angles of the face cone (angles between consecutive plates), Girard check
+  (excess = 4pi/N on every face, all eight lines), and for every sloping plate its neighbours. Result (data/corners-*.log):
+  on every line the A faces are regular m-gons (m = order of their axis), all corner angles alpha = ((m-2)pi + 4pi/N)/m,
+  every sloping plate is an A-face edge plate whose neighbour round the A face is its own mirror image; B-B plates lie on mirrors.
+- Hand proof (paper #111 Theorem 6): mirror through a corner bisects the corner angle, so the plate meets it at
+  theta = alpha/2 = pi/2 - (N-2)pi/(mN). All eight PSLQ angles reproduced. kpi/N iff 2m | (m-2)N+4; tetrahedral lines N = 4 mod 6 -> pi/3N.
+- scripts/exact_mu.py (Corollary 7): Napier, cos rho = cot(pi/m) cot theta; |corner| = tan(pi/m) tan theta; mu_f = b.a + (b.u) sqrt(tan^2(pi/m)tan^2 theta - 1).
+  Agrees with the computed mu_f to 1e-90 on all eight; control Lucky 7 (1+sqrt(2T))/sqrt3 OK. data/exact-mu.log FINAL ok.
+  First run FAILED on T∩RD only: the B-face normal was taken as the centroid direction, wrong on an irregular pentagon; fixed to the true plane normal, rerun FINAL ok.
+- O∩RD: 3tan^2(pi/5) - 1 = (3 - sqrt5)^2, mu_f = (2sqrt2 + 3 - sqrt5)/(2sqrt3) exact.
+- 42 and 50: exact closed forms now exist (degree search no longer needed); fields not determined.
