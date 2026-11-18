@@ -62,3 +62,23 @@ Answer: every line has a fair member, but the polygon rule holds for 14, 20 and 
 - 24 faces: not run.
 
 The polynomials are found by PSLQ at 140 digits and certified numerically. The signature test (counting real roots) is exact once the polynomial is right.
+
+## Part 3: the Vacuus of the fair dice (DICTO: "Is there a vacuus if not a polygon")
+
+`scripts/vacuus_check.py` and `scripts/vacuus_axes.py` take one plate through the centre and each edge, then the angle of each plate normal to every symmetry axis, and test whether that angle is a rational multiple of π (PSLQ at 100 digits, denominator ≤ 200). Control: Lucky 7 shows 2π/7. Output: data/vacuus.log and data/vacuus-axes.log, FINAL ok.
+
+| faces | sloping plates (off the mirrors) | kind | angle to a symmetry axis |
+|---|---|---|---|
+| 10 | 12 | single fins (1 edge each) | **7π/30** |
+| 14 (Lucky 7) | 12 | 2 edges each | **2π/7** |
+| 18 | 12 | 2 edges each | **5π/18** |
+| 20 | 12 | 2 edges each | **π/5** |
+| 32 | 30 | 2 edges each | **5π/16** |
+
+The other plates of each die lie on the group's mirrors, at the familiar angles π/2, π/3, π/4, and so on.
+
+Answer: every fair die has a polygon angle in its Vacuus, including the 10- and 18-face dice, whose lengths ((R/r)²) lie in no polygon field. So the polygon is always in the angles, and only in some cases in the lengths.
+
+Reason, a conjecture not yet proved: fairness fixes each face's solid angle at 4π/N. By Girard's theorem the solid angle of the cone over a face is (sum of the angles between consecutive Vacuus plates) − (n − 2)π. So the plate angles are tied to rational multiples of π. Converting angles into lengths needs a square root, and that root stays inside a polygon field only for 14, 20 and 32 faces. The step from the dihedral angles to the axis angle still needs a proof.
+
+LEAD: prove the axis-angle formula for each line, and explain the denominators 30, 7, 18, 5 and 16.

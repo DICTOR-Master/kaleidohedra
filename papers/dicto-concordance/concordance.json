@@ -8640,6 +8640,15 @@
     "result": "fair members exist on all five lines tested: 10 (T∩C, μ 1.0659166), 14 (Lucky 7), 18 (C∩RD, 1.0312505), 20 (O∩RD, 1.0370248), 32 (D∩I, 1.0043619). Polygon-field rule holds for 14 (Q(cos 2π/7)), 20 (Q(cos 2π/10, √2)) and 32 (Q(cos 2π/16, √5)), FAILS for 10 and 18 (mixed signature, not Galois). 23 faces impossible (face orbits even). Why these three: open",
     "retry": "only to explain the 14/20/32 versus 10/18 split, or for 24 faces",
     "status": "SETTLED (FINAL ok)"
+   },
+   {
+    "date": "2026-11-18",
+    "study": "2026-11-18-fair-32-die (part 3)",
+    "question": "Is there a Vacuus (polygon) where the lengths are not in a polygon field? (DICTO: \"Is there a vacuus if not a polygon\")",
+    "method": "plates through centre and each edge; angle of each plate normal to every symmetry axis; PSLQ angle/pi at 100 digits (denominator <= 200); control Lucky 7 2pi/7",
+    "result": "every fair die has its sloping Vacuus plates at a rational angle to a symmetry axis: 10 faces 7pi/30 (single fins), 14 2pi/7, 18 5pi/18, 20 pi/5, 32 5pi/16; so the polygon is always in the Vacuus angles, only sometimes (14, 20, 32) in the lengths. Reason conjectured via Girard (solid angle = angle sum - (n-2)pi); axis-angle formula unproved",
+    "retry": "only for the proof or the pattern of denominators",
+    "status": "SETTLED (FINAL ok), conjecture marked"
    }
   ]
  },

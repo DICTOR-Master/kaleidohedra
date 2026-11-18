@@ -143,3 +143,6 @@ if rel and max(abs(c) for c in rel) < 10**7:
             print('  in Q(cos 2pi/%d%s)?' % (m, (', ' + fr_name) if fr_name else ''), rr)
 else:
     print('no small polynomial for (R/r)^2 up to degree 24:', rel)
+import json
+json.dump({'mode': mode, 'mu': str(mu), 'faces': {str(f): [[nstr(c, 120) for c in v] for v in vs] for f, vs in faces.items() if len(vs) >= 3}},
+          open('verts-%s.json' % mode, 'w'))
