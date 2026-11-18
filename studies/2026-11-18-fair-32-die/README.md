@@ -122,3 +122,19 @@ DICTO: "Try to find the rest and write a proof by hand please."
   First run FAILED on T∩RD only: the B-face normal was taken as the centroid direction, wrong on an irregular pentagon; fixed to the true plane normal, rerun FINAL ok.
 - O∩RD: 3tan^2(pi/5) - 1 = (3 - sqrt5)^2, mu_f = (2sqrt2 + 3 - sqrt5)/(2sqrt3) exact.
 - 42 and 50: exact closed forms now exist (degree search no longer needed); fields not determined.
+
+## Part 6 — the mixed lines (DICTO 18 Nov: "have we really found them all?")
+Enumeration: a fair member needs each family to be ONE orbit of the line's group (else 2 equations, 1 parameter).
+Cube and icosahedron frames share Th (order 24) and T (12). Under Th: C, O, RD, D whole; I splits 8+12, RT 6+24. Under T: T, D whole.
+New lines (fair_line2.py modes cd, od, td, rdd; all FINAL ok, SYMMETRY CHECK OK):
+- C∩D 18 faces (Th) mu_f 1.0384442830, faces 4,6: squares are rectangles (cube axes only 2-fold in Th): no rational plate angle (corners-cd.log).
+- O∩D 20 faces (Th) mu_f 1.0265315223, faces 3,7: theta = pi/5 (Theorem 6, rotations only); R/r = 8 - 3sqrt5 (PSLQ quadratic, 140 digits), mu^2 = (65-22sqrt5)/15.
+- T∩D 16 faces (chiral T) mu_f 1.0603736500, faces 3,6: theta = 5pi/24; left and right hands.
+- RD∩D 24 faces (Th) mu_f 0.9991525381 (< 1: first fair die inside the sphere), faces 7,4: no regular faces, no rational angle (corners-rdd.log).
+Controls with a split family (ci C∩I 26, ort O∩RT 38, trt T∩RT 34): SYMMETRY CHECK FAIL at the A crossing = no fair member there (expected).
+Trivial lines through face-transitive solids (T∩T' octahedron, O∩(I\O) icosahedron, ...) left out.
+Corollary 7 closed form verified for od, td to 1e-90 (exact-mu-new.log FINAL ok); cd fails it as expected (rectangles).
+Theorem 6 generalised: only the m rotations about the face axis are needed (regular spherical m-gon bisected by the plane through axis and corner).
+Figures: fig_vacuus.py guards that the drawn axis views are m-fold symmetric (0 misses on all ten); the O∩D and T∩D views turn without a mirror.
+Faults fixed: a hook-blocked command had silently dropped a fair_line2.py edit (KeyError 'cd'): reapplied and grep-verified before running;
+a brace glob in scp failed and skipped this README entry: refetched file by file.
