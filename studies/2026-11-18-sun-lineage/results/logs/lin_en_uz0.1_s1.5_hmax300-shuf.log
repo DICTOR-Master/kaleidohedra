@@ -10,9 +10,9 @@ LIN step 1 tau 320 s starts 27 net/surv 0.0000 lineage net/cell 180.1327 D/l 1.0
 CHECK step 1 tau 48: parent rows equal True
 LIN step 1 tau 480 s starts 25 net/surv 0.0000 lineage net/cell 222.9985 D/l 0.4970 lineage size 164.086
 CHECK step 1 tau 64: parent rows equal True
-/home/dicto/k-research/studies/2026-11-18-sun-lineage/scripts/lin_sun.py:123: RuntimeWarning: invalid value encountered in scalar divide
+studies/2026-11-18-sun-lineage/scripts/lin_sun.py:123: RuntimeWarning: invalid value encountered in scalar divide
   print(f'LIN step {s} tau {tf * res["dt_s"]:.0f} s starts {len(r)} net/surv {(r[:, 6] + r[:, 7]).sum() / r[:, 3].sum():.4f} '
-/home/dicto/k-research/studies/2026-11-18-sun-lineage/scripts/lin_sun.py:124: RuntimeWarning: invalid value encountered in scalar divide
+studies/2026-11-18-sun-lineage/scripts/lin_sun.py:124: RuntimeWarning: invalid value encountered in scalar divide
   f'lineage net/cell {(r[:, 14] + r[:, 15]).sum() / r[:, 1].sum():.4f} D/l {np.sqrt(r[:, 12].sum() / r[:, 3].sum()) / ell:.4f} '
 LIN step 1 tau 640 s starts 23 net/surv nan lineage net/cell 223.3212 D/l nan lineage size 299.051
 PROGRESS step 1 done 101 s

@@ -86,7 +86,7 @@ A coronas re-verified with mixlib.overlaps: 10 failures 0 t=94s
 PROGRESS 1.0000 A done t=94s
 total t=94s
 FINAL ok
-	Command being timed: "timeout 285 /home/dicto/venvs/indep/bin/python -u scripts/corona_enum.py /home/dicto/k-research/studies/2026-11-15-grunbaum-k10 data/inchbald-source.json data/corona-pilot-A.json A --workers 20"
+	Command being timed: "timeout 285 python -u scripts/corona_enum.py studies/2026-11-15-grunbaum-k10 data/inchbald-source.json data/corona-pilot-A.json A --workers 20"
 	User time (seconds): 926.71
 	System time (seconds): 149.59
 	Percent of CPU this job got: 1133%
