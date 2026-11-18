@@ -8649,6 +8649,15 @@
     "result": "every fair die has its sloping Vacuus plates at a rational angle to a symmetry axis: 10 faces 7pi/30 (single fins), 14 2pi/7, 18 5pi/18, 20 pi/5, 32 5pi/16; so the polygon is always in the Vacuus angles, only sometimes (14, 20, 32) in the lengths. Reason conjectured via Girard (solid angle = angle sum - (n-2)pi); axis-angle formula unproved",
     "retry": "only for the proof or the pattern of denominators",
     "status": "SETTLED (FINAL ok), conjecture marked"
+   },
+   {
+    "date": "2026-11-18",
+    "study": "2026-11-18-fair-32-die (part 4)",
+    "question": "Are there more fair dice? (DICTO: \"Are we sure there are no more\"): the remaining axis lines T∩RD, D∩RT, I∩RT",
+    "method": "fair_line2.py, vacuus_axes.py, galois_check.py as before",
+    "result": "all 8 axis lines have a fair member (16: T∩RD 1.0692105; 42: D∩RT 1.0072683; 50: I∩RT 1.0155843). Hidden angles of the sloping Vacuus plates: 10 7pi/30, 14 2pi/7, 16 5pi/24, 18 5pi/18, 20 pi/5, 32 5pi/16, 42 13pi/42, 50 9pi/50: a whole multiple of pi/N on the 6 non-tetrahedral lines, of pi/(3N) on the 2 tetrahedral lines (conjecture: a fair N-face die hides the regular N-gon in its Vacuus). Lengths in a polygon field only for 14, 20, 32; 16 not Galois; 42, 50 unknown",
+    "retry": "only for a proof, the off-axis families, or the 42/50 polynomials at higher precision",
+    "status": "SETTLED (FINAL ok), pattern conjectural"
    }
   ]
  },

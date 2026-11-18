@@ -32,9 +32,18 @@ AX = [(1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)]
 CORN = list(itertools.product((1,-1), repeat=3))
 TET = [v for v in CORN if v[0]*v[1]*v[2] == 1]
 RD = [v for v in itertools.product((1,-1,0), repeat=3) if sum(1 for c in v if c) == 2]
-FAM = {'co': (AX, CORN), 'cr': (AX, RD), 'tc': (TET, AX), 'or': (CORN, RD), 'di': (None, None)}
+FAM = {'co': (AX, CORN), 'cr': (AX, RD), 'tc': (TET, AX), 'or': (CORN, RD), 'tr': (TET, RD), 'di': (None, None)}
+def rt_normals():
+    V = list(AX)
+    for s1, s2, s3 in itertools.product((1,-1), repeat=3):
+        V += [(s1, s2*phi, s3/phi), (s3/phi, s1, s2*phi), (s2*phi, s3/phi, s1)]
+    return [unit(v) for v in V]
 if mode == 'di':
     A = ico_vertices(); B = dod_vertices()
+elif mode == 'dt':
+    A = ico_vertices(); B = rt_normals()
+elif mode == 'it':
+    A = dod_vertices(); B = rt_normals()
 else:
     A = [unit(v) for v in FAM[mode][0]]; B = [unit(v) for v in FAM[mode][1]]
 scaleB = 1
@@ -82,7 +91,7 @@ def shareA(mu):
 
 # bracket: scan mu for faces of both families present and shareA crossing 4pi/N
 target = 4*pi/N
-grid = np.linspace(0.30, 3.00, 541)
+grid = np.linspace(float(sys.argv[2]), float(sys.argv[3]), int(sys.argv[4])) if len(sys.argv) > 4 else np.linspace(0.30, 3.00, 541)
 prev = None; bracket = None
 for g in grid:
     o, fc = face_angles(mpf(g))

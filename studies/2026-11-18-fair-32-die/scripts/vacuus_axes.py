@@ -20,7 +20,7 @@ ICO = uniq([p for s1, s2 in itertools.product((1,-1), repeat=2) for p in ((0, s1
 CUBIC_MIRRORS = uniq([(1,0,0),(0,1,0),(0,0,1),(1,1,0),(1,-1,0),(1,0,1),(1,0,-1),(0,1,1),(0,1,-1)])
 ok = True
 for mode in sys.argv[1:]:
-    axes = ICO if mode == 'di' else CUB
+    axes = ICO if mode in ('di', 'dt', 'it') else CUB
     D = json.load(open('verts-%s.json' % mode))
     faces = [[[mpf(c) for c in v] for v in vs] for vs in D['faces'].values()]
     found = set()

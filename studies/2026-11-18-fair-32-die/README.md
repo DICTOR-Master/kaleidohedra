@@ -82,3 +82,29 @@ Answer: every fair die has a polygon angle in its Vacuus, including the 10- and 
 Reason, a conjecture not yet proved: fairness fixes each face's solid angle at 4π/N. By Girard's theorem the solid angle of the cone over a face is (sum of the angles between consecutive Vacuus plates) − (n − 2)π. So the plate angles are tied to rational multiples of π. Converting angles into lengths needs a square root, and that root stays inside a polygon field only for 14, 20 and 32 faces. The step from the dihedral angles to the axis angle still needs a proof.
 
 LEAD: prove the axis-angle formula for each line, and explain the denominators 30, 7, 18, 5 and 16.
+
+## Part 4: all eight axis lines (DICTO: "Are we sure there are no more")
+
+The lines on which both face families sit on symmetry axes:
+- cubic group: 6/8/12;
+- tetrahedral group: 4 with 6 or 12;
+- icosahedral group: 12/20/30.
+
+Lines with off-axis faces form infinite families and were not run. Added here: `tr`, `dt` and `it`. The `it` run used a narrowed grid (argv 0.95 1.10 31). Output: data/f2-tr.log, f2-dt.log, f2-it.log, new-lines-axes-galois.log, it.txt.
+
+| faces N | line | μ_f | hidden angle (sloping plates to an axis) | as a multiple of π/N | lengths (R/r)² in a polygon field? |
+|---|---|---|---|---|---|
+| 10 | T ∩ C | 1.06591660 | 7π/30 | 7/3 | no (not Galois) |
+| 14 | C ∩ O (Lucky 7) | 1.01416317 | 2π/7 | 4 | yes |
+| 16 | T ∩ RD | 1.06921054 | 5π/24 | 10/3 | no (not Galois) |
+| 18 | C ∩ RD | 1.03125051 | 5π/18 | 5 | no (not Galois) |
+| 20 | O ∩ RD | 1.03702476 | π/5 | 4 | yes (with √2) |
+| 32 | D ∩ I | 1.00436195 | 5π/16 | 10 | yes (with √5) |
+| 42 | D ∩ RT | 1.00726832 | 13π/42 | 13 | unknown (no polynomial up to degree 24) |
+| 50 | I ∩ RT | 1.01558430 | 9π/50 | 9 | unknown (no polynomial up to degree 24) |
+
+**Observed pattern** (8 of 8 lines; a conjecture, not proved):
+- A fair N-face die hides the regular N-gon in its Vacuus: the sloping plates make a whole multiple of π/N with a symmetry axis.
+- On the two tetrahedral lines the multiple is a third of a whole number, so they hide the 3N-gon.
+
+The lengths follow a polygon field only for 14, 20 and 32 faces.

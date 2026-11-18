@@ -21,7 +21,7 @@ def ico_mirrors():
     for m in M:
         if not any(abs(abs(dot(m, q)) - 1) < mpf(10)**-60 for q in out): out.append(m)
     return out
-MIR = {'co': CUBIC_MIRRORS, 'cr': CUBIC_MIRRORS, 'or': CUBIC_MIRRORS, 'tc': TET_MIRRORS, 'di': ico_mirrors()}
+MIR = {'tr': TET_MIRRORS, 'dt': ico_mirrors(), 'it': ico_mirrors(), 'co': CUBIC_MIRRORS, 'cr': CUBIC_MIRRORS, 'or': CUBIC_MIRRORS, 'tc': TET_MIRRORS, 'di': ico_mirrors()}
 allok = True
 for mode in sys.argv[1:]:
     D = json.load(open('verts-%s.json' % mode)); mirrors = MIR[mode]
