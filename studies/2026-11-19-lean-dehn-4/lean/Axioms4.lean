@@ -1,0 +1,24 @@
+import DehnCanon.Dehn4Words
+#print axioms DehnCanon.dehnSet_smul_set
+#print axioms DehnCanon.dehnSet_similarCopy
+#print axioms DehnCanon.similarTetra_not_scissorsCongruent_similarCube
+#print axioms DehnCanon.theta_cone_eq_zero_of_rational
+#print axioms DehnCanon.dehnSet_sol_eq_zero_of_rational
+#print axioms DehnCanon.mem_cubeRDSet
+#print axioms DehnCanon.dehnSet_cubeRD
+#print axioms DehnCanon.dehnSet_fairDie18
+#print axioms DehnCanon.dehnSet_cubeRD_eq_cube
+#print axioms DehnCanon.tmul_add_tmul_ne_zero
+#print axioms DehnCanon.IsTetraData.eq_convexHull
+#print axioms DehnCanon.IsTetraData.dehnSet_eq
+#print axioms DehnCanon.wordAlpha_not_ratPi
+#print axioms DehnCanon.cleoSet_eq_convexHull
+#print axioms DehnCanon.dehnSet_cleo
+#print axioms DehnCanon.dehnSet_cleo_ne_zero
+#print axioms DehnCanon.cleo_not_scissorsCongruent_cube
+#print axioms DehnCanon.cleo_not_scissorsCongruent_cubeRD
+#print axioms DehnCanon.axeSet_eq_convexHull
+#print axioms DehnCanon.dehnSet_axe
+#print axioms DehnCanon.dehnSet_axe_ne_zero
+#print axioms DehnCanon.axe_not_scissorsCongruent_cube
+#print axioms DehnCanon.axe_not_scissorsCongruent_cubeRD

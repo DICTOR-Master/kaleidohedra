@@ -8721,6 +8721,15 @@
         "retry": "never; leads: all sizes and positions (scaling lemma), several angle classes, the canon words AXE, CLEO, FUJI",
         "study": "2026-11-19-lean-dehn-3",
         "date": "2026-11-19"
+      },
+      {
+        "question": "Lean canon study 4: Dehn's theorem for every size and position; the zero word (fair 18-face die, cube ∩ rhombic dodecahedron) and a nonzero word (one of AXE, CLEO, FUJI) as theorems about the sets",
+        "method": "Lean 4.35.0-rc2 + Mathlib; 4 files (Dehn4Similar, Dehn4Rational, Dehn4Simplex, Dehn4Words) importing studies 1 to 3 unchanged; scaling by hausdorffMeasure_smul₀; zero word: in the plane across an edge the cone of the tight constraints is the cone of two extreme ones, then theta_pair, and the 324 pairs of the 18 whole-number normals checked by decide +kernel; nonzero words: tetrahedron evaluated from four corners and four normals (barycentric identities over ℚ(√5) by grind), then a ℚ-linear map killing the other edge length and Niven's theorem on 2α (cos 2α = −3/5)",
+        "status": "SETTLED",
+        "result": "compiled, no sorry in the whole chain (15 files), standard axioms only: dehnSet_smul_set (dehnSet (a • P) = a • dehnSet P, a > 0); similarTetra_not_scissorsCongruent_similarCube (Dehn's theorem for all similar copies of the model tetrahedron and cube); dehnSet_sol_eq_zero_of_rational (normals with pairwise rational angles give invariant 0); dehnSet_cubeRD (= 0 for every cube ∩ rhombic dodecahedron solid |x_i| ≤ s, |x_i ± x_j| ≤ c, the fair 18-face die among them); dehnSet_cleo and dehnSet_axe (= study 1's edge-list values: CLEO 3 × 1 at α = arccos(1/√5), 3 × (√5−1)/2 at β; AXE 1 × (√5−1)/2 at α, 4 × 1 at β, 1 × 1 at γ = arccos(√5/3)); dehnSet_cleo_ne_zero, dehnSet_axe_ne_zero; no similar copy of CLEO or AXE is scissors congruent to a cube or to a cube ∩ rhombic dodecahedron solid. Not claimed: zero invariant ⇒ scissors congruent to a cube (Sydler direction not in Lean). FUJI not done. Study 2's DehnCanon2Gaps.lean deleted",
+        "retry": "never (A, B, CLEO, AXE); FUJI open: needs an evaluation lemma for a 7-face solid (edge = open segment for a non-tetrahedron), and either ε + α + β = π or that (8√5 − 10)/15 is not an algebraic integer (Mathlib Real.isIntegral_two_mul_cos_rat_mul_pi); lead: α + 2β − γ = π numerically, all three words in α and β",
+        "study": "2026-11-19-lean-dehn-4",
+        "date": "2026-11-19"
       }
     ]
   },

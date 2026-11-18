@@ -1,0 +1,78 @@
+toolchain: leanprover/lean4:v4.35.0-rc2; Mathlib rev: "rev":"065356127b1dc0016f66b7283ce0ce2c4055aa55"
+== DehnCanon1.lean
+exit=0
+== Dehn2Poly.lean
+exit=0
+== Dehn2Local.lean
+exit=0
+== Dehn2Sum.lean
+exit=0
+== Dehn2Cut.lean
+exit=0
+== Dehn2Motion.lean
+exit=0
+== DehnCanon2.lean
+exit=0
+== Dehn2Edges.lean
+exit=0
+== Dehn2R3.lean
+exit=0
+== Dehn3Sector.lean
+exit=0
+== Dehn3Solids.lean
+exit=0
+== Dehn4Similar.lean
+exit=0
+== Dehn4Rational.lean
+exit=0
+== Dehn4Simplex.lean
+exit=0
+== Dehn4Words.lean
+exit=0
+== Axioms4.lean
+'DehnCanon.dehnSet_smul_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_similarCopy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.similarTetra_not_scissorsCongruent_similarCube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.theta_cone_eq_zero_of_rational' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_sol_eq_zero_of_rational' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.mem_cubeRDSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_cubeRD' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_fairDie18' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_cubeRD_eq_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.tmul_add_tmul_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.IsTetraData.eq_convexHull' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.IsTetraData.dehnSet_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.wordAlpha_not_ratPi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.cleoSet_eq_convexHull' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_cleo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_cleo_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.cleo_not_scissorsCongruent_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.cleo_not_scissorsCongruent_cubeRD' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.axeSet_eq_convexHull' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_axe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_axe_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.axe_not_scissorsCongruent_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.axe_not_scissorsCongruent_cubeRD' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+== grep sorry (the fifteen files of the chain and Axioms4)
+DehnCanon/Dehn2Poly.lean:8:No `sorry`.
+DehnCanon/Dehn2Local.lean:15:No `sorry`.
+DehnCanon/Dehn2Sum.lean:8:No `sorry`.
+DehnCanon/Dehn2Cut.lean:8:No `sorry`.
+DehnCanon/Dehn2Motion.lean:6:No `sorry`.
+DehnCanon/DehnCanon2.lean:19:No `sorry`.
+DehnCanon/Dehn2Edges.lean:9:No `sorry`.
+DehnCanon/Dehn2R3.lean:4:No `sorry`.
+DehnCanon/Dehn3Sector.lean:19:No `sorry`.
+DehnCanon/Dehn3Solids.lean:19:No `sorry`.
+DehnCanon/Dehn4Similar.lean:12:No `sorry`.
+DehnCanon/Dehn4Rational.lean:20:No `sorry`.
+DehnCanon/Dehn4Simplex.lean:21:No `sorry`.
+DehnCanon/Dehn4Words.lean:25:No `sorry`.
+grep exit=0 (0 = matches listed above; they must all be header lines saying: No `sorry`)
+== grep native_decide / axiom declarations
+grep exit=1 (1 = no match)
+
+real	1m4.990s
+user	1m14.448s
+sys	0m17.566s

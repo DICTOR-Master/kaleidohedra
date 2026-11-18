@@ -4,6 +4,8 @@
 
 **Result:** proved. Eight Lean files (1,661 lines) compile with Lean v4.35.0-rc2 and the pinned Mathlib: no errors, no warnings, no `sorry`; every main theorem uses only the three standard axioms (`lean/compile.log`). The one file with `sorry` is `lean/DehnCanon2Gaps.lean`; it holds what remains, which is the evaluation of the invariant on concrete solids, not the bridge.
 
+**Update (19 November 2026):** `lean/DehnCanon2Gaps.lean` is deleted: its three `sorry` statements are proved, under the same names, in study 3 (`../2026-11-19-lean-dehn-3/`).
+
 ## The definition (file `Dehn2Local.lean`)
 - A convex polytope (`IsPoly`, file `Dehn2Poly.lean`) is a bounded intersection of finitely many closed half-spaces.
 - `tcone P x`: the directions that stay in `P` near the point `x`. `linSpace`: the span of the directions `v` with `v` and `-v` both in the cone. The point `x` is an edge point when that span is a line `K`.
