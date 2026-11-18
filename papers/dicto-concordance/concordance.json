@@ -8703,6 +8703,15 @@
         "retry": "never (layer a); layer b next",
         "study": "2026-11-19-lean-dehn-1",
         "date": "2026-11-19"
+      },
+      {
+        "question": "Lean canon study 2: Dehn's theorem layer (b), the bridge (cutting and regluing keeps the Dehn invariant)",
+        "method": "Lean 4.35.0-rc2 + Mathlib; 8 files (Dehn2Poly, Dehn2Local, Dehn2Sum, Dehn2Cut, Dehn2Motion, DehnCanon2, Dehn2Edges, Dehn2R3); invariant dehnSet defined from the set alone (cone of directions, angle by disc-sector area, Hausdorff length); plane-cut lemma + rigid motions + refinement by all facet planes",
+        "status": "SETTLED",
+        "result": "compiled, no sorry, standard axioms: dehnSet_cut (additive under any plane cut), dehnSet_image (isometry invariant), dehnSet_dissection, dehnSet_eq_of_scissorsCongruent (scissors-congruent convex polytopes in 3-space have equal Dehn invariant), dehnSum_eq_of_scissors (unions, not nec. convex), dehnSet_eq_dehn_edgeList (link to study 1). NOT proved (DehnCanon2Gaps.lean, 3 sorry): evaluation on concrete solids: sector-area angle = π − angle of normals; dehnSet cube = 0; dehnSet tetrahedron = study 1 value. FormalBook PR #157 compiles on rc2; only its Minkowski–Weyl is borrowed (optional Dehn2Hull)",
+        "retry": "never (bridge); evaluation layer = study 3 (sector area via polar coordinates)",
+        "study": "2026-11-19-lean-dehn-2",
+        "date": "2026-11-19"
       }
     ]
   },

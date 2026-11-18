@@ -1,0 +1,41 @@
+toolchain: leanprover/lean4:v4.35.0-rc2; Mathlib rev: "rev":"065356127b1dc0016f66b7283ce0ce2c4055aa55"
+== Dehn2Poly.lean
+exit=0
+== Dehn2Local.lean
+exit=0
+== Dehn2Sum.lean
+exit=0
+== Dehn2Cut.lean
+exit=0
+== Dehn2Motion.lean
+exit=0
+== DehnCanon2.lean
+exit=0
+== Dehn2Edges.lean
+exit=0
+== Dehn2R3.lean
+exit=0
+== Axioms2.lean
+'DehnCanon.dissection_additive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.wedgeAngle_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.wedgeAngle_mem_ratPi_of_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_dissection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_eq_of_scissorsCongruent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSum_eq_of_same_union' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSum_eq_of_scissors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_eq_dehn_edgeList' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehn_bridge_R3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.isPoly_tetra' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.isPoly_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+== Dehn2Hull.lean (optional; needs FormalBook/Chapter_10.lean)
+'DehnCanon.isPoly_iff_convexHull' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehn_bridge_convexHull' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+== DehnCanon2Gaps.lean (the only file with sorry)
+DehnCanon/DehnCanon2Gaps.lean:19:8: warning: declaration uses `sorry`
+DehnCanon/DehnCanon2Gaps.lean:27:8: warning: declaration uses `sorry`
+DehnCanon/DehnCanon2Gaps.lean:32:8: warning: declaration uses `sorry`
+exit=0
