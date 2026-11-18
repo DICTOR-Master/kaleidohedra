@@ -22,7 +22,7 @@ Nothing has been submitted. DICTO submits these himself from his own OEIS accoun
     Apply these to entries 2-7 before each is submitted.
 12. Learned on A402191 (editor M. Marcus, Nov 2026): worked examples ("a(4) = 15: ...") go in EXAMPLE (%e), never in COMMENTS (%C).
 15. ORDER inside fields (learned on A008264, 16 Nov 2026): LINKS: the 'Table of n, a(n)' line first, then alphabetical by first author's surname (organisations by their name), and 'Index entries for ...' lines always LAST (place 'DICTO' in alphabetical position, not at the end); REFERENCES: alphabetical by first author; COMMENTS: chronological (new ones at the end). Copy pages must say exactly WHERE each line goes (after which existing line), after reading the live entry.
-14. ONE IN, ONE OUT, LIKE FOR LIKE (DICTO 16 Nov 2026): when a COMMENT is approved (or closed), send the next comment; when a SEQUENCE is approved (or closed), send the next sequence; never more in review than now; with three in review now (A402191, A402231, the A008264 comment), the next goes in only after one of them comes out.
+14. MAX 3 OPEN (DICTO 18 Nov 2026: "Stay at 3, as it gets a bit confusing who and what are being responded to as only 3-4 different editors so far"; OEIS allows new contributors 7, edit-heavy ones 3). ONE IN, ONE OUT, LIKE FOR LIKE (DICTO 16 Nov 2026): when a COMMENT is approved (or closed), send the next comment; when a SEQUENCE is approved (or closed), send the next sequence; never more in review than now; with three in review now (A402191, A402231, the A008264 comment), the next goes in only after one of them comes out.
 0. OEIS AI POLICY (read 16 Nov 2026, https://oeis.org/wiki/Use_of_AI_for_OEIS_Submissions): PROHIBITED: AI-generated full text of comments; pasting AI-generated text into the Pink Boxes (replies to editors); AI programs the submitter does not understand; AI listed as author; bulk/serial AI submissions. REQUIRED: the human author checks name, terms, formulas (provably correct), programs (produce the terms), comments (accurate, clear). SO: DICTO writes comments and editor replies in his own words; Claude only checks facts/terms/format, lists what must be said, and explains each program line by line. Style Sheet (https://oeis.org/wiki/Style_Sheet) read the same day: Data about 260 characters (no padding beyond ~3 lines), ASCII only, signatures ' - ~~~~' on added lines and '# ~~~~' in programs, Links order (b-file first, Index entries last, rest by surname), Example shows 1-3 simple cases, Crossrefs 'Cf.' comma-space, comments chronological.
 0b. WHO WRITES WHAT (DICTO 17 Nov 2026, settled): FORMULA-LIKE FIELDS (name, example, crossrefs, keywords, formula and program format): Claude gives TWO alternative wordings; DICTO picks one, mixes them or writes his own. COMMENTS: Claude gives a plain everyday-words note (facts + sources, deliberately not OEIS phrasing) and 2-3 human-written OEIS entries as style models; DICTO writes the comment. PINK BOXES (editor replies): DICTO only, in his own words (he addresses the editor by forename); Claude confirms facts on request, writes nothing. Claude then checks DICTO's text for facts only (terms, offsets, references).
 13. BEFORE giving DICTO any OEIS text (16 Nov 2026, after A402231): start from the prepared entry in THIS file, never from raw data; run the checklist: rules 1-12; terms recomputed two independent ways; EVERY cited work opened and checked to CONTAIN the claim it supports (not only that the link resolves; A008264 comment, 16 Nov: the Spin Ice paper was linked but has no coordination sequences, link removed); program prints exactly the data; every A-number real (no A??????) or explained; OEIS searched for the terms; then one copy page, fields in form order.
@@ -32,6 +32,28 @@ Order suggested: 1, 2, 3, 4, 5, 6, then the comments, then 7 (optional).
 All terms below were recomputed on 7 November 2026: `studies/2026-11-07-oeis-candidates/oeis_checks.py` rerun (output identical to `data-oeis-terms.txt`, FINAL ok); the coordination sequences extended to n = 100 by breadth-first search on all atoms of one period; and every program printed in this file was run as written and compared term by term with the data lines.
 
 ---
+
+## QUEUE (DICTO 18 Nov 2026: "Queue all possible sequences"; MAX 3 OPEN, one in one out, rule 14)
+
+The order in which items go in as places free up. Sources: this file, and the sweep in studies/2026-11-18-oeis-sweep/README.md (terms computed two independent ways, FINAL ok; OEIS searched 18 Nov: not found).
+
+Sequences:
+1. Entry 2: 4H hexagonal-layer coordination sequence. READY.
+2. Sweep 1: closed walks per site of the pyrochlore (spin-ice) network, n = 0..40, from #102 Corollary 2. READY. Exact formula in the Domb numbers: a(n) = 1/2 Sum C(n,i) 2^(n-i) D(i) + 1/2 (-2)^n. The pyrochlore network is the line graph of diamond; the formula is not printed in #102.
+3. Sweep 2: closed tailless walks per pyrochlore site, n = 1..40, from #102 Corollary 2. READY. Completes the set with A400949 (diamond) and A402231 (fcc).
+4. Entries 3, 4, 5: 6H sites. READY. Sent one at a time, never in bulk (rule 0).
+5. Entry 6: the Fibonacci stacking word. READY.
+6. Entry 8: the cot(2*Pi/7) constant (Lucky 7). Waits for the die's published home.
+7. DICTO'S CALL: sweep 3, the mode counts of the Poincare dodecahedral space (Queens book ch. 9 Thm 3). Classical mathematics (Aurich-Lustig-Steiner, Ikeda); DICTO's part is the check.
+8. DICTO'S CALL: sweep 4, the slope of the great triangles of Kulaichev's Sri Yantra (#103 Thm 10). He dropped the yantra region sequence on 17 Nov.
+9. NEEDS A HOME FIRST: sweep 5 (stackings by period and number of hexagonal layers; check McLarnan/Iglesias first) and sweep 6 (the 19-design station, which is only in a draft).
+
+Comments:
+- A038515 (diamond polygons, #102 Thm 5). READY once the factor of 2 in #102's wording is checked.
+- A008651, with sweep 3.
+- A402191: its three-valued part, after approval.
+- A015448 and A033887: need a proof and a prior-art check.
+- A011957 and A011768: with sweep 5.
 
 ## A. New entries
 

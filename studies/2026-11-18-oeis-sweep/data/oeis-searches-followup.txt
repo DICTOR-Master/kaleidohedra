@@ -1,0 +1,7 @@
+Follow-up OEIS lookups, 18 Nov 2026 (fmt=text, run from the compute host, one query per 4 s)
+- "dodecahedral space": hits only dodecahedron constants and packing bounds (A374753, A374755, A374772, A374837, A374838, A374955, A385024..A385278, ...); none is a Poincare-space spectrum.
+- id:A008651 (Molien series of binary icosahedral group): no comment on the Poincare dodecahedral space or on (k+1)*a(k); %Y points to A319974.
+- id:A319974: Expansion of (1-x^3+x^4+x^6)/((1-x^2)(1-x^3)(1-x^4)) (harmonic polynomials in 4 variables invariant under subgroup 105 of Mendes 1975): not the PDS count.
+- "Poincare sphere": homotopy-sphere and unrelated entries; no PDS spectrum.
+- "self-avoiding polygons diamond": A038515 (closed self-avoiding walks on the diamond net, 2n steps): 1,0,0,6,12,120,564,4074,25008,... (Guttmann-Jensen); #102 Theorem 5's diamond row equals 2*A038515 (ring-counts study README line 56).
+- 349236 (18-cycles per diamond site): only A349236 (unrelated, matched as a number).
