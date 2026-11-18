@@ -1,0 +1,44 @@
+toolchain: leanprover/lean4:v4.35.0-rc2; Mathlib rev: "rev":"065356127b1dc0016f66b7283ce0ce2c4055aa55"
+== DehnCanon1.lean
+exit=0
+== Dehn2Poly.lean
+exit=0
+== Dehn2Local.lean
+exit=0
+== Dehn2Sum.lean
+exit=0
+== Dehn2Cut.lean
+exit=0
+== Dehn2Motion.lean
+exit=0
+== DehnCanon2.lean
+exit=0
+== Dehn2Edges.lean
+exit=0
+== Dehn2R3.lean
+exit=0
+== Dehn3Sector.lean
+exit=0
+== Dehn3Solids.lean
+exit=0
+== Axioms3.lean
+'DehnCanon.volume_sector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.wedgeAngle_two_planes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.theta_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.tet_openSegment_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_tetra' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.tetra_not_scissorsCongruent_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+== grep sorry (study 3 files and every file they import)
+DehnCanon/Dehn2Poly.lean:8:No `sorry`.
+DehnCanon/Dehn2Local.lean:15:No `sorry`.
+DehnCanon/Dehn2Sum.lean:8:No `sorry`.
+DehnCanon/Dehn2Cut.lean:8:No `sorry`.
+DehnCanon/Dehn2Motion.lean:6:No `sorry`.
+DehnCanon/DehnCanon2.lean:19:No `sorry`.
+DehnCanon/Dehn2Edges.lean:9:No `sorry`.
+DehnCanon/Dehn2R3.lean:4:No `sorry`.
+DehnCanon/Dehn3Sector.lean:19:No `sorry`.
+DehnCanon/Dehn3Solids.lean:19:No `sorry`.
+grep exit=0 (1 = no match)

@@ -8712,6 +8712,15 @@
         "retry": "never (bridge); evaluation layer = study 3 (sector area via polar coordinates)",
         "study": "2026-11-19-lean-dehn-2",
         "date": "2026-11-19"
+      },
+      {
+        "question": "Lean canon study 3: close the three evaluation gaps of study 2, so Dehn's theorem (regular tetrahedron not scissors congruent to the cube) compiles end to end",
+        "method": "Lean 4.35.0-rc2 + Mathlib; 2 files (Dehn3Sector, Dehn3Solids) importing studies 1 and 2 unchanged; sector area by Mathlib's polar coordinates (Complex.lintegral_comp_polarCoord_symm) after an isometry of the plane perpendicular to the edge onto ℂ; cube and tetrahedron from the tight constraints at each point; edge lengths by hausdorffMeasure_segment",
+        "status": "SETTLED",
+        "result": "compiled, no sorry in the whole chain (11 files), standard axioms only: wedgeAngle_two_planes (area-measured wedge angle = π − angle of the normals), dehnSet_cube (= 0), dehnSet_tetra (= study 1's value, six edges 2√2 at arccos(1/3)), tetra_not_scissorsCongruent_cube: ¬ ScissorsCongruent tetraSet (cubeSet s) for every s > 0. Limits: dimension 3, convex pieces, the tetrahedron with corners (−1,−1,−1),(1,1,−1),(1,−1,1),(−1,1,1), cubes [−s,s]³. Study 2's DehnCanon2Gaps.lean is superseded",
+        "retry": "never; leads: all sizes and positions (scaling lemma), several angle classes, the canon words AXE, CLEO, FUJI",
+        "study": "2026-11-19-lean-dehn-3",
+        "date": "2026-11-19"
       }
     ]
   },
