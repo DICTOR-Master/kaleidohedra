@@ -8685,6 +8685,15 @@
         "result": "C∩D: YZ = sin(pi/18) sqrt((1+Y^2)(1+Z^2)), Y = s-phi, Z = (s-1)/phi; mu_f algebraic of degree 48. RD∩D: a1+a2 = 13pi/12; mu_f algebraic of degree 64 (32 in mu^2). Both irreducible over Q; explains the failed degree<=24 search",
         "retry": "none",
         "status": "SETTLED (FINAL ok)"
+      },
+      {
+        "question": "Dehn words: AXE, CLEO, FUJI, the twelve fair dice (shape language)",
+        "method": "dehn_mp.py, 80 digits, exact corners, 11 calibrations",
+        "status": "SETTLED (high-precision numerical)",
+        "result": "nonzero: AXE, CLEO, FUJI and 11 fair dice incl. Lucky 7; zero: fair 18 cube∩RD (all dihedrals rational in π, whole line), GET A/B and Inchbald by additivity (RT − 4 oblate)",
+        "retry": "only symbolic certification or a tiling test of the 18-face die",
+        "study": "2026-11-19-dehn-words",
+        "date": "2026-11-19"
       }
     ]
   },
