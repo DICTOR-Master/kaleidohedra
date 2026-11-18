@@ -1,3 +1,5 @@
+**Status (19 November 2026): published on Palomar, validated and approved.** The pre-score below was written before submission.
+
 **Verdict: notability 4 (estimate), at the floor and not above it; literature 4 once one page number is corrected.** Both fresh blind scorers gave the finished Lean entry (`kulaichev_unique`, `kulaichev_slope`) notability 4 / literature 4, outcome `neutral`, with no findings. I agree with 4. The reason is the one the landscape study predicted: the entry settles a question someone else put in print (Kulaichev 1984), and a peer-reviewed paper calls that question still open (Chiodo 2021). That makes this the first DICTO entry whose finished form, not only a planned target, reaches 4 in our replays. It is still only at the floor, and production scores vary by about one point between runs, so 4 is likely but not guaranteed. **Nothing was submitted. Submission happens only on DICTO's word.** Updated the same day after reading the problem's other sources (section "Update, 16 November 2026" below): still 4, still at the floor.
 
 # Palomar pre-score: the Lean entry for Kulaichev's Śrī Yantra (16 November 2026)
