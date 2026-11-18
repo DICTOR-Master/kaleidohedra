@@ -9,7 +9,7 @@ from mpmath import mp, mpf, sqrt, pi, tan, nstr, identify, cot
 mp.dps = 110
 def unit(v): n = sqrt(sum(c*c for c in v)); return [c/n for c in v]
 def dot(a, b): return sum(x*y for x, y in zip(a, b))
-NF = {'tc': 10, 'co': 14, 'tr': 16, 'cr': 18, 'or': 20, 'di': 32, 'dt': 42, 'it': 50}
+NF = {'cd': 18, 'od': 20, 'td': 16, 'tc': 10, 'co': 14, 'tr': 16, 'cr': 18, 'or': 20, 'di': 32, 'dt': 42, 'it': 50}
 ok = True
 for mode in sys.argv[1:]:
     N = NF[mode]; D = json.load(open('verts-%s.json' % mode)); mu0 = mpf(D['mu'])

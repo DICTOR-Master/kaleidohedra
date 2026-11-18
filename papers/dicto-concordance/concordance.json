@@ -8667,6 +8667,15 @@
         "result": "PROVED (#111 Theorem 6): A faces are regular m-gons on m-fold axes; the mirror through a corner bisects the corner angle, so the sloping plate meets it at theta = ((m-2)N+4)pi/(2mN) = pi/2-(N-2)pi/(mN); all 8 angles reproduced; kpi/N iff 2m | (m-2)N+4, tetrahedral lines N=4 mod 6 give pi/3N. Corollary 7: mu_f = b.a + (b.u) sqrt(tan^2(pi/m)tan^2 theta - 1) on all 8 lines (incl. 42, 50); O∩RD mu_f = (2sqrt2+3-sqrt5)/(2sqrt3); unique among members with the same face shapes",
         "retry": "fields of the 42/50 radii; off-axis families",
         "status": "SETTLED (FINAL ok), proved by hand"
+      },
+      {
+        "date": "2026-11-18",
+        "study": "2026-11-18-fair-32-die (part 6)",
+        "question": "DICTO: \"have we really found them all?\": axis lines mixing the cube and icosahedron frames",
+        "method": "enumeration of single-orbit pairs under Th and T; fair_line2.py cd od td rdd; controls ci ort trt; corners.py; exact_mu.py",
+        "result": "4 more fair dice: C∩D 18 (Th, rectangles, no hidden angle), O∩D 20 (Th, theta pi/5, R/r = 8-3sqrt5), T∩D 16 (chiral T, theta 5pi/24), RD∩D 24 (Th, mu_f 0.99915 < 1, no regular faces, no hidden angle). 12 lines in all. Controls with a split family: no fair member. Theorem 6 holds with rotations only; hidden angle iff a regular face family (10 of 12)",
+        "retry": "exact values for C∩D and RD∩D; off-axis families",
+        "status": "SETTLED (FINAL ok)"
       }
     ]
   },

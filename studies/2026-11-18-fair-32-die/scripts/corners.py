@@ -11,6 +11,7 @@ def unit(v): n = sqrt(sum(c*c for c in v)); return [c/n for c in v]
 def cross(a, b): return [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]]
 def dot(a, b): return sum(x*y for x, y in zip(a, b))
 def rat(a):
+    if abs(a) < mpf(10)**-60: return '0'
     rel = pslq([a, pi], maxcoeff=500, maxsteps=10**6)
     if rel and rel[0] != 0:
         p, q = -rel[1], rel[0]
@@ -27,10 +28,15 @@ def uniq(L):
 OH = uniq([(1,0,0),(0,1,0),(0,0,1),(1,1,0),(1,-1,0),(1,0,1),(1,0,-1),(0,1,1),(0,1,-1)])
 TD = uniq([(1,1,0),(1,-1,0),(1,0,1),(1,0,-1),(0,1,1),(0,1,-1)])
 IH = uniq([(1,0,0),(0,1,0),(0,0,1)] + [p for s1, s2 in itertools.product((1,-1), repeat=2) for p in ((1, s1*phi, s2/phi), (s2/phi, 1, s1*phi), (s1*phi, s2/phi, 1))])
-NF = {'tc': 10, 'co': 14, 'tr': 16, 'cr': 18, 'or': 20, 'di': 32, 'dt': 42, 'it': 50}
+NF = {'rdd': 24, 'cd': 18, 'od': 20, 'td': 16, 'tc': 10, 'co': 14, 'tr': 16, 'cr': 18, 'or': 20, 'di': 32, 'dt': 42, 'it': 50}
 ok = True
 for mode in sys.argv[1:]:
-    mirrors = IH if mode in ('di', 'dt', 'it') else (TD if mode in ('tc', 'tr') else OH)
+    TH = uniq([(1,0,0),(0,1,0),(0,0,1)])     # pyritohedral group: the 3 coordinate mirrors only
+    mirrors = IH if mode in ('di', 'dt', 'it') else (TD if mode in ('tc', 'tr') else (TH if mode in ('cd', 'od') else ([] if mode == 'td' else OH)))
+    # all rotation axes of the cube and the icosahedron, for the angle test on the mixed lines
+    AXES = uniq([v for v in itertools.product((1,0,-1), repeat=3) if any(v)] + IH +
+                [p for s1, s2 in itertools.product((1,-1), repeat=2) for p in ((0, s1, s2*phi), (s2*phi, 0, s1), (s1, s2*phi, 0))] +
+                [p for s1, s2 in itertools.product((1,-1), repeat=2) for p in ((0, s1/phi, s2*phi), (s1/phi, s2*phi, 0), (s2*phi, 0, s1/phi))])
     N = NF[mode]
     D = json.load(open('verts-%s.json' % mode))
     faces = [[[mpf(c) for c in v] for v in vs] for vs in D['faces'].values() if len(vs) >= 3]
@@ -54,7 +60,7 @@ for mode in sys.argv[1:]:
         rows = []
         for i in range(n):
             if onm[i]: continue
-            th = [rat(acos(min(mpf(1), abs(dot(P[i], m))))) for m in mirrors]
+            th = [rat(acos(min(mpf(1), abs(dot(P[i], m))))) for m in (AXES if mode in ('cd', 'od', 'td') else mirrors)]
             th = sorted(set(t for t in th if t))
             nb = []
             for j, corner in (((i-1) % n, i), ((i+1) % n, (i+1) % n)):

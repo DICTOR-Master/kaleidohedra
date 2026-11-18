@@ -44,6 +44,15 @@ elif mode == 'dt':
     A = ico_vertices(); B = rt_normals()
 elif mode == 'it':
     A = dod_vertices(); B = rt_normals()
+elif mode in ('cd', 'od', 'td'):   # mixed lines (DICTO 18 Nov: "have we really found them all?"): a cubic family with the
+    # dodecahedron's 12 face normals (icosahedral 5-fold axes); common group pyritohedral (cd, od) or chiral tetrahedral (td)
+    A = [unit(v) for v in {'cd': AX, 'od': CORN, 'td': TET}[mode]]; B = ico_vertices()
+elif mode == 'rdd':   # rhombic dodecahedron (cubic 2-fold axes) with the dodecahedron (icosahedral 5-fold axes): pyritohedral, 12 + 12
+    A = [unit(v) for v in RD]; B = ico_vertices()
+elif mode in ('ci', 'ort', 'trt'):   # completeness controls: lines where one family splits into two orbits of the common group
+    # (cube with icosahedron; octahedron with rhombic triacontahedron; tetrahedron with rhombic triacontahedron).
+    # Expected: at the crossing of the A share, the two B orbits differ, so SYMMETRY CHECK FAIL = no fair member there.
+    A = [unit(v) for v in {'ci': AX, 'ort': CORN, 'trt': TET}[mode]]; B = dod_vertices() if mode == 'ci' else rt_normals()
 else:
     A = [unit(v) for v in FAM[mode][0]]; B = [unit(v) for v in FAM[mode][1]]
 scaleB = 1

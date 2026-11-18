@@ -4,16 +4,19 @@ import json, numpy as np, matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-ORDER = [('tc', 10, 'tetrahedron ∩ cube'), ('co', 14, 'cube ∩ octahedron'), ('tr', 16, 'tetrahedron ∩ rhombic dodecahedron'),
-         ('cr', 18, 'cube ∩ rhombic dodecahedron'), ('or', 20, 'octahedron ∩ rhombic dodecahedron'), ('di', 32, 'dodecahedron ∩ icosahedron'),
-         ('dt', 42, 'dodecahedron ∩ rhombic triacontahedron'), ('it', 50, 'icosahedron ∩ rhombic triacontahedron')]
-NA = {'tc': 4, 'co': 6, 'tr': 4, 'cr': 6, 'or': 8, 'di': 12, 'dt': 12, 'it': 20}
+ORDER = [('tc', 10, 'tetrahedron ∩ cube', '7π/30'), ('co', 14, 'cube ∩ octahedron', '2π/7'),
+         ('tr', 16, 'tetrahedron ∩ rhombic dodecahedron', '5π/24'), ('td', 16, 'tetrahedron ∩ dodecahedron', '5π/24'),
+         ('cr', 18, 'cube ∩ rhombic dodecahedron', '5π/18'), ('cd', 18, 'cube ∩ dodecahedron', None),
+         ('or', 20, 'octahedron ∩ rhombic dodecahedron', 'π/5'), ('od', 20, 'octahedron ∩ dodecahedron', 'π/5'),
+         ('rdd', 24, 'rhombic dodecahedron ∩ dodecahedron', None), ('di', 32, 'dodecahedron ∩ icosahedron', '5π/16'),
+         ('dt', 42, 'dodecahedron ∩ rhombic triacontahedron', '13π/42'), ('it', 50, 'icosahedron ∩ rhombic triacontahedron', '9π/50')]
+NA = {'tc': 4, 'co': 6, 'tr': 4, 'td': 4, 'cr': 6, 'cd': 6, 'or': 8, 'od': 8, 'rdd': 12, 'di': 12, 'dt': 12, 'it': 20}
 CA, CB = '#5b6f8a', '#d9c7a3'   # slate, sand (labels only)
 L = np.array([0.45, -0.35, 0.82]); L /= np.linalg.norm(L)
-fig = plt.figure(figsize=(12, 6.4), dpi=200)
-for k, (m, N, name) in enumerate(ORDER):
+fig = plt.figure(figsize=(12, 9.6), dpi=200)
+for k, (m, N, name, th) in enumerate(ORDER):
     D = json.load(open('verts-%s.json' % m))
-    ax = fig.add_subplot(2, 4, k + 1, projection='3d', computed_zorder=False)
+    ax = fig.add_subplot(3, 4, k + 1, projection='3d', computed_zorder=False)
     polys, cols = [], []
     for f, vs in D['faces'].items():
         P = np.array([[float(c) for c in v] for v in vs]); c = P.mean(0); n = c / np.linalg.norm(c)
@@ -28,6 +31,6 @@ for k, (m, N, name) in enumerate(ORDER):
     for s in (ax.set_xlim, ax.set_ylim, ax.set_zlim): s(-r, r)
     ax.set_box_aspect((1, 1, 1)); ax.view_init(elev=22, azim=-58); ax.set_axis_off()
     ax.set_title('%d faces\n%s' % (N, name), fontsize=9)
-plt.subplots_adjust(left=0, right=1, top=0.93, bottom=0, wspace=0, hspace=0.12)
+plt.subplots_adjust(left=0, right=1, top=0.95, bottom=0, wspace=0, hspace=0.12)
 plt.savefig('fig-fair-dice.png', facecolor='white')
 print('FINAL ok')
