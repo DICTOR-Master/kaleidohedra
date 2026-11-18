@@ -1,0 +1,15 @@
+mode tc faces 10 bracket (np.float64(1.065), np.float64(1.07))
+mu_f = 1.06591659511404576682342110647274526026009654014221397633739
+checks: A share 0.1  B share 0.1  total 1.0
+SYMMETRY CHECK (all faces of a family equal): OK
+face sizes A,B: 3 6
+r/R = 0.5416467590767298678962984869058239039506  R = 1.84622169936835097521590954451886802794
+minpoly (R/r)^2 (8, [-6561, 285768, -358668, 290376, -133510, 28696, -2508, 88, -1])
+minpoly mu^2 (8, [-81, 10584, -39852, 96792, -133510, 86088, -22572, 2376, -81])
+minpoly mu (12, [-107547565, -163950210, 314094629, -182315478, 583109018, -280934133, 426216613, 143313124, 131463010, -294034951, -609980690, 34935751, 148056503])
+FINAL ok
+N/2 = 5  minimal polynomial of cos(2pi/N/2): 4*x**2 + 2*x - 1
+  over Q(cos 2pi/5): factor degrees [4, 4]
+  over Q(cos 2pi/5), sqrt(2): factor degrees [4, 4]
+  over Q(cos 2pi/5), sqrt(3): factor degrees [4, 4]
+  over Q(cos 2pi/5), sqrt(5): factor degrees [4, 4]

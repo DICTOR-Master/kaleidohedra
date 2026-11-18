@@ -1,0 +1,15 @@
+mode cr faces 18 bracket (np.float64(1.03), np.float64(1.035))
+mu_f = 1.0312505091303433803393614649247152492097993268769992789168
+checks: A share 0.0555555555555555555555555555556  B share 0.0555555555555555555555555555556  total 1.0
+SYMMETRY CHECK (all faces of a family equal): OK
+face sizes A,B: 4 6
+r/R = 0.7917538694029640057105429864073024910995  R = 1.263018772177353131792276826174006854146
+minpoly (R/r)^2 (6, [81, -648, 1620, -1872, 1440, -576, 64])
+minpoly mu^2 (6, [-1, 12, -45, 78, -90, 54, -9])
+minpoly mu (12, [-1, 0, 12, 0, -45, 0, 78, 0, -90, 0, 54, 0, -9])
+FINAL ok
+N/2 = 9  minimal polynomial of cos(2pi/N/2): 8*x**3 - 6*x + 1
+  in Q(cos 2pi/9)? None
+  in Q(cos 2pi/9, sqrt2)? None
+  in Q(cos 2pi/9, sqrt3)? None
+  in Q(cos 2pi/9, sqrt5)? None

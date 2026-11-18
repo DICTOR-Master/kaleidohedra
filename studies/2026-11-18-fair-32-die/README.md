@@ -42,3 +42,23 @@ The first run took the icosahedron in the wrong orientation relative to the dode
 1. Hand proof of the R² identity, as Theorem 3A.1 (b) is for Lucky 7.
 2. Does every face-transitive pair of a dual line follow the (N/2)-gon rule? The tetrahedron pairing is trivial: the octahedron.
 3. Bouncing (lower faces more stable) moves both fair members. Test by printing and throwing.
+
+## Part 2: more lines, and the rule tested (DICTO: "23 faces 18 faces 24 faces?", then "Run away!")
+
+`scripts/fair_line2.py MODE` gives each line's fair member, with the scale-invariant (R/r)², its polynomial and a field test; `scripts/galois_check.py` tests whether it is abelian, that is, whether it lies in the field of some regular polygon (Kronecker–Weber).
+- Control `co`: Lucky 7, (R/r)² = 19 − 8c − 32c² with c = cos 2π/7.
+- Both scripts end FINAL ok (data/f2-*.log, data/galois.log).
+
+| faces | line | μ_f (B faces at μ, unit normals) | (R/r)² minimal polynomial degree | polygon field? |
+|---|---|---|---|---|
+| 10 | tetrahedron ∩ cube | 1.065916595114… | 8 (6 real roots of 8) | **no**: mixed signature, not Galois |
+| 14 | cube ∩ octahedron (Lucky 7) | 1.014163169041… (= 1.7566/√3) | 3 | **yes**: Q(cos 2π/7) |
+| 18 | cube ∩ rhombic dodecahedron | 1.031250509130… | 6 (4 real roots of 6) | **no**: mixed signature |
+| 20 | octahedron ∩ rhombic dodecahedron | 1.037024760344… | 4 | **yes**: splits over Q(cos 2π/10, √2) |
+| 32 | dodecahedron ∩ icosahedron | 1.004361949703… | 8 | **yes**: Q(cos 2π/16, √5) |
+
+Answer: every line has a fair member, but the polygon rule holds for 14, 20 and 32 faces only. For 10 and 18 the numbers belong to no regular polygon's field: the polynomial has both real and complex roots, so the field is not Galois. Why exactly these three is not yet understood (LEAD).
+- 23 faces: impossible in symmetric families, since every face orbit has an even number of faces.
+- 24 faces: not run.
+
+The polynomials are found by PSLQ at 140 digits and certified numerically. The signature test (counting real roots) is exact once the polynomial is right.
