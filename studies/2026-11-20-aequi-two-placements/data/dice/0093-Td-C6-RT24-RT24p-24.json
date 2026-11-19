@@ -1,0 +1,75 @@
+{
+ "label": "Td: C6 + RT24+RT24′/24",
+ "sid": 93,
+ "group": "Td",
+ "symmetry_order": 24,
+ "m": 2,
+ "N": 30,
+ "orbits": [
+  "C6",
+  "RT24+RT24′/24"
+ ],
+ "orbit_sizes": [
+  6,
+  24
+ ],
+ "orbit_representatives": [
+  "(1, 0, 0)",
+  "(φ, 1, 1/φ)"
+ ],
+ "faces_by_orbit": [
+  "6×4-gon",
+  "24×4-gon"
+ ],
+ "corners": 32,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.950952047504101660031297625778705548732973601618159526230798"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.9509520475041"
+ ],
+ "residual_solid_angle": "3.57e-102",
+ "residual_incidence": "1.23e-101",
+ "face_directions": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  50,
+  52,
+  53,
+  54,
+  56,
+  60,
+  61,
+  62,
+  65,
+  67,
+  71,
+  73,
+  98,
+  99,
+  101,
+  102,
+  103,
+  105,
+  107,
+  108,
+  111,
+  115,
+  119,
+  120
+ ],
+ "found_under": [
+  [
+   "T",
+   3
+  ]
+ ],
+ "file": "dice/0093-Td-C6-RT24-RT24p-24.json"
+}

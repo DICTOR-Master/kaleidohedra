@@ -1,0 +1,13 @@
+refined vs double-precision classification (group, corners, orbits): 0 mismatches -> PASS
+pilot C6+D12+I12      N=30 (1.035081866, 1.008326858) here (1.03508186623, 1.00832685841) [as its quarter-turned image] -> PASS: Th: C6 + D12 + I12′
+pilot C6+D12+RT24     N=42 (0.968371571, 0.978746466) here (0.968371570562, 0.978746466298) [as its quarter-turned image] -> PASS: Th: C6 + D12 + RT24′
+pilot O8+D12+I12      N=32 (0.976386131, 0.980845617) here (0.976386131274, 0.980845617257) [as its quarter-turned image] -> PASS: Th: O8 + D12 + I12′
+pilot O8+D12+RT24     N=44 (1.025156621, 1.021400472) here (1.025156621, 1.02140047185) [as its quarter-turned image] -> PASS: Th: O8 + D12 + RT24′
+pilot RD12+D12+I12    N=36 (0.977791453, 0.982791948) here (0.977791453091, 0.982791948384) [as its quarter-turned image] -> PASS: Th: RD12 + D12 + I12′
+pilot RD12+D12+RT24   N=48 (0.995037734, 1.008212282) here (0.995037734186, 1.00821228228) [as its quarter-turned image] -> PASS: Th: RD12 + D12 + RT24′
+pilot D12+I12+RT24    N=48 (1.008451630, 1.019765250) here (1.00845163014, 1.01976525045) [as its quarter-turned image] -> PASS: Th: D12 + I12′ + RT24′
+one-placement sets: Th 57, T 153 (= the sets searched in study 2026-11-19-aequi-complete: 57, 153), excluded; searched here: Th 224, T 1088 (= both-placement sets 224, 1088) -> PASS
+congruence with the 4553 Aequi of study 2026-11-19-aequi-complete: 0 of 1083 dice here congruent to one there -> PASS
+fair dice per searched set (double precision, in the search box): {'1': 1312}
+face-transitive solids met (excluded, one orbit): O RT24+RT24′/24 N=24, Oh D12+D12′/24 N=24, Oh I12+I12′/24 N=24, Oh RT24+RT24′/48 N=48, Td RT24+RT24′/24 N=24
+CONTROLS ALL PASS

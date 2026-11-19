@@ -1,0 +1,79 @@
+{
+ "label": "Oh: C6 + D12+D12′/24",
+ "sid": 3,
+ "group": "Oh",
+ "symmetry_order": 48,
+ "m": 2,
+ "N": 30,
+ "orbits": [
+  "C6",
+  "D12+D12′/24"
+ ],
+ "orbit_sizes": [
+  6,
+  24
+ ],
+ "orbit_representatives": [
+  "(1, 0, 0)",
+  "(φ, 1, 0)"
+ ],
+ "faces_by_orbit": [
+  "6×4-gon",
+  "24×4-gon"
+ ],
+ "corners": 32,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "1.03027096408871550558006022150475270874733106753777248848194"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.030270964089"
+ ],
+ "residual_solid_angle": "1.43e-101",
+ "residual_incidence": "1.88e-102",
+ "face_directions": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  74,
+  75,
+  76,
+  77,
+  78,
+  79,
+  80,
+  81,
+  82,
+  83,
+  84,
+  85
+ ],
+ "found_under": [
+  [
+   "Th",
+   3
+  ],
+  [
+   "T",
+   3
+  ]
+ ],
+ "file": "dice/0003-Oh-C6-D12-D12p-24.json"
+}

@@ -8804,6 +8804,15 @@
         "retry": "never (frame groups, as defined); open: the two icosahedron placements together under Th and T; caps above m = 3/4 on the low classes; closed forms; uniqueness proof; names and numbers are DICTO's",
         "study": "2026-11-19-aequi-complete",
         "date": "2026-11-20"
+      },
+      {
+        "question": "The Aequi with both icosahedron placements under Th and T (the lead left open by 2026-11-19-aequi-complete): fair dice whose face families are full Th or T orbits of the cube axes and of the icosahedron axes in placement A (vertices (0, ±φ, ±1) cyclic) and placement B (its quarter turn, (0, ±1, ±φ) cyclic), using at least one orbit from each placement",
+        "method": "122 axis directions (the study's 74 plus D12′, I12′, RT24′); Th 9 orbits, T 12 orbits; every orbit set with an orbit from each placement (m ≥ 2, bounded), reduced by the 48 Oh maps (a set and its quarter-turned image count once): 224 Th sets, 1088 T sets; solver, classification, 80-digit refinement and renders of 2026-11-19-aequi-complete unchanged; one T set (m = 8) re-searched from 2049 Sobol starts",
+        "status": "SETTLED for Th and T with both placements (every both-placement orbit set searched, one fair die per set within the search box)",
+        "result": "1083 Aequi, none congruent to any of the study's 4553: Oh 53, O 31 (two hands), Td 91, Th 168, T 740 (two hands); by m: 30, 88, 167, 228, 234, 181, 103, 41, 10, 1 (m = 2..11); all |Ω − 4π/N| < 1.4e-100. Symmetries O and Td appear (quarter turns and diagonal mirrors swap the placements). Td by m equals the study's T by m (8, 21, 28, 22, 10, 2): same orbit-permutation action. O = 2^5 − 1: one chiral RT24+RT24′/24 orbit with any nonempty set of the five Oh orbits. Controls: the pilot's 7 cross-placement sets PASS to 9 digits (as quarter-turned images); one-placement sets (Th 57, T 153) excluded; 5 face-transitive solids met and excluded",
+        "retry": "never (Th and T, both placements, as defined); open: other subgroups of Oh with both placements (D2h, D3d, D4h, ... capped or not searched); closed forms; uniqueness proof; names and numbers are DICTO's",
+        "study": "2026-11-20-aequi-two-placements",
+        "date": "2026-11-20"
       }
     ]
   },
