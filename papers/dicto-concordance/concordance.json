@@ -8775,6 +8775,15 @@
         "retry": "never (these pairs); open: same-sign pairs over arccos(1/3) (e.g. Lucky 7 vs tetrahedron) need volumes in Lean; the ten other nonzero fair dice; convex hulls; Sydler's converse",
         "study": "2026-11-19-lean-dehn-8",
         "date": "2026-11-19"
+      },
+      {
+        "question": "Lean canon study 9: the same-sign pairs over arccos(1/3) (Lucky 7 vs tetrahedron, cube ∩ octahedron t < 3/2 vs octahedron, members of the line against each other), decided by adding volumes",
+        "method": "Lean 4.35.0-rc2 + Mathlib; 2 files (Dehn9Vol, Dehn9Same) importing studies 1 to 8 unchanged; scissors congruence keeps volume (convex boundaries null, Convex.addHaar_frontier); volumes cut from Mathlib's ℓ¹-ball volume by coordinate reflections, translations and null planes; criterion a³ vol Q ≠ b³ vol P from s a = s′ b (edgeTerm_inj) and s³ vol P = s′³ vol Q; exact check checks/vol_check.py",
+        "status": "SETTLED (Lean, axioms propext, Classical.choice, Quot.sound only)",
+        "result": "volume_eq_of_scissorsCongruent; volume_oct = 4/3, volume_tetra = 8/3, volume_co = (4/3)(t³ − 3(t − 1)³) for 1 ≤ t < 2; not_scissorsCongruent_of_cube_ne; co_tetra_…', co_oct_…' (all 1 < t < 2), co_co_not_scissorsCongruent (s ≠ t), luckySeven_tetra_not_scissorsCongruent, canon_tet_not_scissorsCongruent (TetFamily pairwise), canon_complete (every pair of different nonzero words decided). Scale-free a³/vol = 2592√2·g, g(t) = (2t−3)³/(t³−3(t−1)³) strictly increasing from −1 (octahedron) to 1/5; tetrahedron 1/2: no exceptional t",
+        "retry": "never (these pairs); open: the ten other nonzero fair dice; convex hulls; Sydler's converse; paper §10 update",
+        "study": "2026-11-19-lean-dehn-9",
+        "date": "2026-11-19"
       }
     ]
   },

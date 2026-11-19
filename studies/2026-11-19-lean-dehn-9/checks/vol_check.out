@@ -1,0 +1,18 @@
+tetrahedron volume 8/3 expected 8/3: True
+octahedron volume 4/3 expected 4/3: True
+cube ∩ octahedron t = 5/4 volume 61/24 formula 61/24 True
+cube ∩ octahedron t = 3/2 volume 4 formula 4 True
+cube ∩ octahedron t = 7/4 volume 131/24 formula 131/24 True
+cube ∩ octahedron t = 9/5 volume 716/125 formula 716/125 True
+cube ∩ octahedron t = 11/10 volume 664/375 formula 664/375 True
+cube ∩ octahedron t = 19/10 volume 2336/375 formula 2336/375 True
+2(2t-3)^3 - D(t) = -3 - 9(t-1)(2-t)(2t-3): True
+(2t-3)^3 + D(t) = 3(t-1)(2t^2-7t+8): True
+4 D((x+3)/2) = 12 + 9x - x^3: True
+x^3(12+9y-y^3) - y^3(12+9x-x^3) = (x-y)(12(x^2+xy+y^2)+9xy(x+y)): True
+K > 0 on the grid of (-1,1)^2 off (0,0): True
+g(1) = -1  g(3/2) = 0  g(2) = 1/5
+tetrahedron a^3/vol / (2592 sqrt2) = (12^3*2)/(8/3)/2592 = 1/2
+octahedron  a^3/vol / (2592 sqrt2) = -1
+g strictly increasing on [1,2] (grid of 1001): True
+Lucky 7: t = 1.75658, g = 0.032793, volume = 5.494448, Dehn length 12*sqrt2*(2t-3) = 8.708686
