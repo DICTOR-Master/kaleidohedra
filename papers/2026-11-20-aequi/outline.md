@@ -51,7 +51,7 @@ DICTO's question that frames the paper: "How to enumerate the innumerable." Answ
 | the two-placement dice (Th, T) | this paper, §5 (study running) |
 | the 4553 below the frame groups, prisms included | dataset record (is-part-of this paper) |
 | Theorem A (Alexandrov reading) | this paper, §2 |
-| names and numbers for new dice | DICTO's; table labels by group and orbit set until he names them |
+| names and numbers for new dice | numbered within each symmetry group (Ih 1–4, Oh 1–4, Td 1–3, Th 1–47, T 1–91 before the two-placement dice), ordered by number of face kinds m, then by face count N; each keeps its name in the settled form (source-solid initials and face count), with the group number as catalogue number, e.g. "Aequus CO-14, Oh 2" (DICTO, 20 Nov). Numbers are assigned once the two-placement search lands, so they are fixed once. |
 
 ## Sources so far
 
