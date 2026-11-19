@@ -6,6 +6,14 @@ Split agreed with DICTO (20 Nov): (1) Equanimity with its twelve dice, as it sta
 
 DICTO's question that frames the paper: "How to enumerate the innumerable." Answer: with a rule instead of a list. Theorem A covers every fair die; the list is complete for the frame axes.
 
+## Definitions (DICTO, 20 Nov)
+
+- **Main catalogue:** an Aequus whose faces lie on the symmetry axes of one cube and one icosahedron sharing their three 2-fold axes (the placement of Equanimity and D191), under one of the seven frame groups. Exactly 149, complete.
+- **Related solids:**
+  - the 1083 two-icosahedron dice (faces on the axes of the cube and both icosahedra that fit it; study 2026-11-20-aequi-two-placements), a related section of this paper;
+  - the 4404 dice below the frame groups, in the dataset record.
+- **Aequi Mosaici** (singular Aequus Mosaicus): Aequi with four or more kinds of face (m ≥ 4); a die with two or three kinds is still read as named solids cut together. Main catalogue: 26 (m = 2), 41 (m = 3), 82 Mosaici; two-icosahedron dice: 30, 88, 965 Mosaici.
+
 ## Lead theorem (to check before drafting)
 
 **Theorem A (one fair die per set of face directions).** For any finite set of unit face normals n_1..n_N that satisfies Alexandrov's condition for equal masses 4π/N, there is exactly one convex polytope, up to scale about the centre, whose faces have these normals and each subtend the solid angle 4π/N from the centre. If the normals are invariant under a point group G, so is the die; when G fixes only the centre, the centre is the centroid and the die is an Aequus.
