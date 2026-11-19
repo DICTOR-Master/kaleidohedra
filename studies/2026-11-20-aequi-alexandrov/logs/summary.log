@@ -1,0 +1,11 @@
+319 polar sets with no die in the study box: 319
+  condition fails: 87 (of which with equality: 12 )
+  condition holds: 232 | die found and confirmed to 80 digits: 232
+  by class (fails, holds): [((11, 'C5v', 'fails'), 5), ((11, 'C5v', 'holds'), 5), ((15, 'C4v', 'fails'), 2), ((15, 'C4v', 'holds'), 2), ((21, 'C3v', 'fails'), 3), ((21, 'C3v', 'holds'), 2), ((22, 'C3v', 'fails'), 10), ((22, 'C3v', 'holds'), 8), ((26, 'C5', 'fails'), 5), ((26, 'C5', 'holds'), 5), ((29, 'C2v', 'fails'), 2), ((29, 'C2v', 'holds'), 4), ((30, 'C2v', 'fails'), 10), ((30, 'C2v', 'holds'), 60), ((31, 'C2v', 'fails'), 1), ((31, 'C2v', 'holds'), 7), ((32, 'C4', 'fails'), 2), ((32, 'C4', 'holds'), 2), ((36, 'C3', 'fails'), 12), ((36, 'C3', 'holds'), 30), ((37, 'C2', 'fails'), 8), ((37, 'C2', 'holds'), 52), ((38, 'C2', 'holds'), 2), ((40, 'Cs', 'fails'), 26), ((40, 'Cs', 'holds'), 51), ((41, 'Cs', 'fails'), 1), ((41, 'Cs', 'holds'), 2)]
+  fails: smallest g 0.0 | witness sizes [((3, 4), 19), ((4, 5), 32), ((5, 6), 9), ((6, 7), 18), ((7, 8), 2), ((9, 10), 5), ((10, 11), 2)]
+  fails: die-finder grid minimiser runs to the bound |psi| = 25: 78 of 87
+  holds: largest g (exhaustive over all subsets) -0.036915763778975916
+  holds: largest depth ratio of the die from 4.528 to 116.383 (study search box e^1.5 = 4.482)
+  holds: centroid offset / volume^(1/3) from 0.214 to 1.02 (none at the centre: none is an Aequus)
+50 controls: condition holds 50 | largest g -0.5385587406153931 | die found 50 | confirmed to 80 digits 50 | largest relative depth difference from the study die 1.2e-12
+FINAL ok
