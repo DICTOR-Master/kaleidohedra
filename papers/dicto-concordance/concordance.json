@@ -8766,6 +8766,15 @@
         "retry": "only exact models for the 14 float-only atoms, fill tests of zero atoms without a tiling, or symbolic certification",
         "study": "2026-11-19-dehn-atoms",
         "date": "2026-11-19"
+      },
+      {
+        "question": "Lean canon study 8: the two families of nonzero words apart: arccos(1/3) independent of α, β modulo π; each of octahedron, tetrahedron, cube ∩ octahedron (t ≠ 3/2, Lucky 7 among them) against each of dodecahedron, icosahedron, CLEO, AXE, FUJI; the canon table",
+        "method": "Lean 4.35.0-rc2 + Mathlib; 2 files (Dehn8Indep, Dehn8Cross) importing studies 1 to 7 unchanged; two quadratic fields: sin(nθ) ∈ ℚ√2, sin(Q·2α + R·2β) ∈ ℚ(√5), √2 ∉ ℚ(√5) (√10 irrational), then Niven (study 1) and study 6; cross pairs by a ℚ-linear map on angle classes killing α, β (study 5's lengthPart); exact check checks/cross_check.py; independence on paper: Conway–Radin–Sadun 1999 (Splitting Theorem), Ogievetsky–Papadopolos 1999 Lemma 2",
+        "status": "SETTLED (Lean, axioms propext, Classical.choice, Quot.sound only)",
+        "result": "tet_word_angles_indep: pθ + qα + rβ ∈ ℚπ ⇒ p = q = r = 0 (θ = arccos(1/3), α = arccos(1/√5), β the second word angle); tet_not_mem_span; not_scissorsCongruent_tet_ab; the fifteen pairs oct_/tetra_/co_ × dod_/ico_/cleo_/axe_/fuji_not_scissorsCongruent (similar copies, any sizes and positions); canon_ab_not_scissorsCongruent (the five over α, β pairwise, one statement); canon_cross_not_scissorsCongruent; canon_table (nonzero vs zero, α–β family pairwise, the two families apart). Closes paper §10 open question 1",
+        "retry": "never (these pairs); open: same-sign pairs over arccos(1/3) (e.g. Lucky 7 vs tetrahedron) need volumes in Lean; the ten other nonzero fair dice; convex hulls; Sydler's converse",
+        "study": "2026-11-19-lean-dehn-8",
+        "date": "2026-11-19"
       }
     ]
   },
