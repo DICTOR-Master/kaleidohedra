@@ -1,0 +1,15 @@
+Main sets (exact existence by Alexandrov's condition):
+  main Td  sets    3  holds    3  undecided   0  bounds {'H + D': 3}  N 10..22  max M/N 0.6000  min margin 1.2572  refined pairs 0
+  main T   sets   91  holds   91  undecided   0  bounds {'H + D': 91}  N 16..70  max M/N 0.6875  min margin 0.8827  refined pairs 0
+  two  O   sets   31  holds   31  undecided   0  bounds {'H + D': 31}  N 30..98  max M/N 0.5667  min margin 1.3376  refined pairs 0
+  two  Td  sets   91  holds   91  undecided   0  bounds {'H + D': 91}  N 28..118  max M/N 0.6786  min margin 1.0112  refined pairs 0
+  two  T   sets  740  holds  740  undecided   0  bounds {'H + D': 740}  N 24..110  max M/N 0.6250  min margin 1.2290  refined pairs 0
+Arithmetic: largest |w.x| classed zero 2.55e-16; smallest classed nonzero 0.0211; smallest |cos| in half-circle counts 1.00e-06; smallest |x_i x x_j| kept 0.1876
+Controls (study 2026-11-20-aequi-alexandrov, exhaustive):
+  fail sets  87  certified   0  undecided  87
+  hold sets 232  certified  60  undecided 172
+  ctrl sets  50  certified  45  undecided   5
+  failing sets certified (must be 0): 0 | certified against the exhaustive verdict (must be 0): 0
+  cap hunt finds a witness g >= 0 on 87 of the 87 failing sets
+Independent checks: M sampled > exact 0, M sampled = exact 1325 of 1325; certified sets with a cap of g >= 0: 0; largest cap g on the main sets -3.8601
+FINAL ok
