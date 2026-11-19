@@ -1,0 +1,38 @@
+{
+ "index": 85,
+ "no": "D86",
+ "name": "Kagemusha",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Kagemusha",
+   "corners": 17,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 45,
+    "max_planarity": "2.11e-81",
+    "planar": true,
+    "volume": "3.760384316458175605640214",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "Kagemusha",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-shadow-17.json"
+   },
+   "faces": 30,
+   "edges": 45,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "40.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

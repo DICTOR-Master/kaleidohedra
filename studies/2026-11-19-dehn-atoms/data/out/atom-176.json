@@ -1,0 +1,38 @@
+{
+ "index": 176,
+ "no": "U5; W2",
+ "name": "regular octahedron at the Delian bond* (classical)",
+ "kind": "solid",
+ "book": "known",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Delilah",
+   "corners": 6,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 12,
+    "max_planarity": "0.0",
+    "planar": true,
+    "volume": "0.6666666666666666666666667",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(2**(1/3))",
+    "convex": true,
+    "model_name": "Delilah",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-delilah.json"
+   },
+   "faces": 8,
+   "edges": 12,
+   "distinct_dihedrals": 1,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "13.47",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

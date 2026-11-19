@@ -1,0 +1,38 @@
+{
+ "index": 107,
+ "no": "D108",
+ "name": "Hamlet",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Hamlet",
+   "corners": 452,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 720,
+    "max_planarity": "2.45e-81",
+    "planar": true,
+    "volume": "1.742494068294532173119998",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Hamlet",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hamlet.json"
+   },
+   "faces": 270,
+   "edges": 720,
+   "distinct_dihedrals": 8,
+   "independent_mod_pi": 8,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "27.222",
+   "verdict": "NONZERO",
+   "seconds": 0.9
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,38 @@
+{
+ "index": 84,
+ "no": "D85",
+ "name": "cell-first section of the 600-cell at height (2 + √5)/2* (Boole Stott, 1900)",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Humpty Dumpty",
+   "corners": 48,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 138,
+    "max_planarity": "1.13e-80",
+    "planar": true,
+    "volume": "88.98917427845408169573879",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Humpty Dumpty",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-humpty-dumpty.json"
+   },
+   "faces": 92,
+   "edges": 138,
+   "distinct_dihedrals": 7,
+   "independent_mod_pi": 7,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "62.85",
+   "verdict": "NONZERO",
+   "seconds": 0.4
+  }
+ ],
+ "verdict": "NONZERO"
+}

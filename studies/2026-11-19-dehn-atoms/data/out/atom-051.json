@@ -1,0 +1,38 @@
+{
+ "index": 51,
+ "no": "D52",
+ "name": "DICTO TQHD",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO TQHD",
+   "corners": 162,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 360,
+    "max_planarity": "1.34e-80",
+    "planar": true,
+    "volume": "10.4208017970791416698301",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO TQHD",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-tqhd.json"
+   },
+   "faces": 200,
+   "edges": 360,
+   "distinct_dihedrals": 5,
+   "independent_mod_pi": 5,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "59.724",
+   "verdict": "NONZERO",
+   "seconds": 0.2
+  }
+ ],
+ "verdict": "NONZERO"
+}

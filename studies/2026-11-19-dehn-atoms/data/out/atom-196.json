@@ -1,0 +1,36 @@
+{
+ "index": 196,
+ "no": "—",
+ "name": "Bain rhombic dodecahedron",
+ "kind": "solid",
+ "book": "known",
+ "source": "cons",
+ "solids": [
+  {
+   "name": "Bain rhombic dodecahedron",
+   "corners": 14,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 24,
+    "max_planarity": "0.0",
+    "planar": true,
+    "volume": "2.828427124746190097603377",
+    "volume_sign": 1
+   },
+   "info": {
+    "field": "Q(sqrt(2))",
+    "convex": true,
+    "construction": "bain_rd"
+   },
+   "faces": 12,
+   "edges": 24,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

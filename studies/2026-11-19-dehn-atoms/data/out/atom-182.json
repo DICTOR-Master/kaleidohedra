@@ -1,0 +1,37 @@
+{
+ "index": 182,
+ "no": "—",
+ "name": "regular-hexagon stage of the icosidodecahedron* (Zefiro, 2011)",
+ "kind": "solid",
+ "book": "known",
+ "source": "cons",
+ "solids": [
+  {
+   "name": "regular-hexagon stage of the icosidodecahedron* (Zefiro, 2011)",
+   "corners": 120,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 180,
+    "max_planarity": "1.84e-81",
+    "planar": true,
+    "volume": "13.65034075106421895464081",
+    "volume_sign": 1
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "cut": "0.33333333333333333333",
+    "construction": "id_stage_third"
+   },
+   "faces": 62,
+   "edges": 180,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "12.361",
+   "verdict": "NONZERO",
+   "seconds": 0.1
+  }
+ ],
+ "verdict": "NONZERO"
+}

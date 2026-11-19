@@ -1,0 +1,38 @@
+{
+ "index": 2,
+ "no": "D3",
+ "name": "DICTO skewed elongated dodecahedron ED F18",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO skewed elongated dodecahedron (ED F18)",
+   "corners": 18,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 28,
+    "max_planarity": "2.11e-81",
+    "planar": true,
+    "volume": "4.736067977499789696409174",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO skewed elongated dodecahedron (ED F18)",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-skewed-ed-18.json"
+   },
+   "faces": 12,
+   "edges": 28,
+   "distinct_dihedrals": 6,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "5.2711e-81",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

@@ -1,0 +1,38 @@
+{
+ "index": 94,
+ "no": "D95",
+ "name": "White Rabbit",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "White Rabbit",
+   "corners": 144,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 360,
+    "max_planarity": "4.95e-80",
+    "planar": true,
+    "volume": "167.9419290628578471845728",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "White Rabbit",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-white-rabbit.json"
+   },
+   "faces": 218,
+   "edges": 360,
+   "distinct_dihedrals": 14,
+   "independent_mod_pi": 13,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "72.0",
+   "verdict": "NONZERO",
+   "seconds": 7.5
+  }
+ ],
+ "verdict": "NONZERO"
+}

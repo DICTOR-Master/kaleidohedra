@@ -1,0 +1,38 @@
+{
+ "index": 108,
+ "no": "D109",
+ "name": "Ophelia",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Ophelia",
+   "corners": 642,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 1080,
+    "max_planarity": "4.74e-81",
+    "planar": true,
+    "volume": "1.799658753384912754251729",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Ophelia",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-ophelia.json"
+   },
+   "faces": 440,
+   "edges": 1080,
+   "distinct_dihedrals": 12,
+   "independent_mod_pi": 12,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "23.573",
+   "verdict": "NONZERO",
+   "seconds": 4.6
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,38 @@
+{
+ "index": 104,
+ "no": "D105",
+ "name": "TI Star core",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "TI Star core",
+   "corners": 60,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 90,
+    "max_planarity": "2.86e-81",
+    "planar": true,
+    "volume": "28.35690058970699089541189",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "TI Star core",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-ti-star-core.json"
+   },
+   "faces": 32,
+   "edges": 90,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "60.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

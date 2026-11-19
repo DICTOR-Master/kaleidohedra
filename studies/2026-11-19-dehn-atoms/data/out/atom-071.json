@@ -1,0 +1,65 @@
+{
+ "index": 71,
+ "no": "D72",
+ "name": "Dented tetrahedron L/R (golden-key octet)",
+ "kind": "piece",
+ "book": "new",
+ "source": "set",
+ "solids": [
+  {
+   "name": "Dented tetrahedron L (golden-key octet)",
+   "corners": 20,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 42,
+    "max_planarity": "1.84e-81",
+    "planar": true,
+    "volume": "0.3827543903705573068955493",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "Dented tetrahedron L (golden-key octet)",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-dented-tetrahedron-left.json"
+   },
+   "faces": 24,
+   "edges": 42,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "9.8885",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  },
+  {
+   "name": "Dented tetrahedron R (golden-key octet)",
+   "corners": 20,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 42,
+    "max_planarity": "1.84e-81",
+    "planar": true,
+    "volume": "0.3827543903705573068955493",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "Dented tetrahedron R (golden-key octet)",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-dented-tetrahedron-right.json"
+   },
+   "faces": 24,
+   "edges": 42,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "9.8885",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,38 @@
+{
+ "index": 192,
+ "no": "—",
+ "name": "triangular bipyramid* (classical)",
+ "kind": "solid",
+ "book": "known",
+ "source": "file",
+ "solids": [
+  {
+   "name": "TBP-5 (5-cell edge-first shadow)",
+   "corners": 5,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 9,
+    "max_planarity": "5.27e-82",
+    "planar": true,
+    "volume": "0.408248290463863016366214",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(6))",
+    "convex": true,
+    "model_name": "TBP-5 (5-cell edge-first shadow)",
+    "file": "studies/2026-11-17-atoms-missing-2/models/known-tbp-5.json"
+   },
+   "faces": 6,
+   "edges": 9,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "6.4807",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

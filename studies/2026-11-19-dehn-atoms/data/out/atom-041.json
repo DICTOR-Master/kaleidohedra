@@ -1,0 +1,38 @@
+{
+ "index": 41,
+ "no": "D42",
+ "name": "Five-sided Vajra",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Five-sided Vajra",
+   "corners": 12,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 25,
+    "max_planarity": "5.27e-81",
+    "planar": true,
+    "volume": "0.8198242561342300504272",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Five-sided Vajra",
+    "file": "studies/2026-11-17-atoms-missing/models/piece-five-sided-vajra.json"
+   },
+   "faces": 15,
+   "edges": 25,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 3,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "5.3934",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

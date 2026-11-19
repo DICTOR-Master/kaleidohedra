@@ -1,0 +1,38 @@
+{
+ "index": 88,
+ "no": "D89",
+ "name": "Tweedledum",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Tweedledum",
+   "corners": 32,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 90,
+    "max_planarity": "5.53e-81",
+    "planar": true,
+    "volume": "136.6563145999495271382017",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Tweedledum",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-tweedledum.json"
+   },
+   "faces": 60,
+   "edges": 90,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "129.64",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,38 @@
+{
+ "index": 96,
+ "no": "D97",
+ "name": "Hatta",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Hatta",
+   "corners": 114,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 171,
+    "max_planarity": "1.69e-80",
+    "planar": true,
+    "volume": "144.4298241086045324512885",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Hatta",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hatta.json"
+   },
+   "faces": 59,
+   "edges": 171,
+   "distinct_dihedrals": 13,
+   "independent_mod_pi": 10,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "24.579",
+   "verdict": "NONZERO",
+   "seconds": 1.9
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,39 @@
+{
+ "index": 53,
+ "no": "D54",
+ "name": "DICTO Hex Aktis",
+ "kind": "piece",
+ "book": "new",
+ "source": "cons",
+ "solids": [
+  {
+   "name": "DICTO Hex Aktis",
+   "corners": 7,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 12,
+    "max_planarity": "7.91e-82",
+    "planar": true,
+    "volume": "0.03052019697530344929405367",
+    "volume_sign": 1
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "classes": [
+     20
+    ],
+    "construction": "hex_aktis"
+   },
+   "faces": 7,
+   "edges": 12,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "4.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,38 @@
+{
+ "index": 168,
+ "no": "D178",
+ "name": "DICTO 2:1 Truncated Octahedron",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO 2:1 Truncated Octahedron",
+   "corners": 24,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 36,
+    "max_planarity": "4.22e-81",
+    "planar": true,
+    "volume": "1077.333333333333333333333",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q",
+    "convex": true,
+    "model_name": "DICTO 2:1 Truncated Octahedron",
+    "file": "studies/2026-11-17-atoms-missing-2/models/dicto-2-1-truncated-octahedron.json"
+   },
+   "faces": 14,
+   "edges": 36,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "67.882",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

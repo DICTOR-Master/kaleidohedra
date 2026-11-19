@@ -1,0 +1,38 @@
+{
+ "index": 188,
+ "no": "—",
+ "name": "rectified truncated icosahedron* (classical; near-miss Johnson solid, McCooey)",
+ "kind": "solid",
+ "book": "known",
+ "source": "file",
+ "solids": [
+  {
+   "name": "cut OG (rectified truncated icosahedron)",
+   "corners": 90,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 180,
+    "max_planarity": "5.27e-81",
+    "planar": true,
+    "volume": "12.90412029468558097973371",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "cut OG (rectified truncated icosahedron)",
+    "file": "studies/2026-11-17-atoms-missing-2/models/known-cut-og.json"
+   },
+   "faces": 92,
+   "edges": 180,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "64.228",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

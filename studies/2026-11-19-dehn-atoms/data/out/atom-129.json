@@ -1,0 +1,38 @@
+{
+ "index": 129,
+ "no": "D131",
+ "name": "Greater Golden Cut Snub Dodecahedron L/R",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Greater Golden Cut Snub Dodecahedron L/R",
+   "corners": 300,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 450,
+    "max_planarity": "5.27e-81",
+    "planar": true,
+    "volume": "61.19095201836881300563215",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(xi)",
+    "convex": true,
+    "model_name": "Greater Golden Cut Snub Dodecahedron L/R",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-greater-golden-cut-snub-dodecahedron.json"
+   },
+   "faces": 152,
+   "edges": 450,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 4,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "94.39",
+   "verdict": "NONZERO",
+   "seconds": 0.1
+  }
+ ],
+ "verdict": "NONZERO"
+}

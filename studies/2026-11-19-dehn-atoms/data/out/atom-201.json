@@ -1,0 +1,40 @@
+{
+ "index": 201,
+ "no": "—",
+ "name": "D · HexOct −11/24 h-tile, regular hexagonal prism",
+ "kind": "solid",
+ "book": "known",
+ "source": "cons",
+ "solids": [
+  {
+   "name": "D · HexOct −11/24 h-tile, regular hexagonal prism",
+   "corners": 12,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 18,
+    "max_planarity": "3.04e-82",
+    "planar": true,
+    "volume": "2.59807621135331594029117",
+    "volume_sign": 1
+   },
+   "info": {
+    "field": "Q(sqrt(3))",
+    "convex": true,
+    "note": "side 1, height 1; every height gives the same dihedrals 90 and 120 degrees",
+    "construction": "hex_prism"
+   },
+   "faces": 8,
+   "edges": 18,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 0,
+   "rational_pi_dihedrals_deg": [
+    "120.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

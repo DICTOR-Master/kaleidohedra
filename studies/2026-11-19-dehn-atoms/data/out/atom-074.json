@@ -1,0 +1,238 @@
+{
+ "index": 74,
+ "no": "D75",
+ "name": "Polar Cleo Towers (7 tower pieces + core ray)",
+ "kind": "piece",
+ "book": "new",
+ "source": "set",
+ "solids": [
+  {
+   "name": "Polar Cleo Towers (7 tower pieces + core ray): core ray",
+   "corners": 5,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 8,
+    "max_planarity": "1.05e-81",
+    "planar": true,
+    "volume": "0.06912133332690341621436685",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Polar Cleo Towers (7 tower pieces + core ray): core ray",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-core-ray.json"
+   },
+   "faces": 5,
+   "edges": 8,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 0,
+   "rational_pi_dihedrals_deg": [
+    "120.0",
+    "72.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  },
+  {
+   "name": "Polar Cleo Towers (7 tower pieces + core ray): shell 1 on 4 gon",
+   "corners": 14,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 21,
+    "max_planarity": "1.05e-81",
+    "planar": true,
+    "volume": "0.207039197617041930872233",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Polar Cleo Towers (7 tower pieces + core ray): shell 1 on 4 gon",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-1-on-4-gon.json"
+   },
+   "faces": 9,
+   "edges": 21,
+   "distinct_dihedrals": 6,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "0.84721",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  },
+  {
+   "name": "Polar Cleo Towers (7 tower pieces + core ray): shell 2 on 5 gon",
+   "corners": 16,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 25,
+    "max_planarity": "2.37e-81",
+    "planar": true,
+    "volume": "0.1442602510190523118069164",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Polar Cleo Towers (7 tower pieces + core ray): shell 2 on 5 gon",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-2-on-5-gon.json"
+   },
+   "faces": 11,
+   "edges": 25,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 3,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "2.431",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  },
+  {
+   "name": "Polar Cleo Towers (7 tower pieces + core ray): shell 2 on 6 gon",
+   "corners": 16,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 24,
+    "max_planarity": "3.16e-81",
+    "planar": true,
+    "volume": "0.4992030529726505922859504",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Polar Cleo Towers (7 tower pieces + core ray): shell 2 on 6 gon",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-2-on-6-gon.json"
+   },
+   "faces": 10,
+   "edges": 24,
+   "distinct_dihedrals": 6,
+   "independent_mod_pi": 4,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "2.5416",
+   "verdict": "NONZERO",
+   "seconds": 0.1
+  },
+  {
+   "name": "Polar Cleo Towers (7 tower pieces + core ray): shell 3 on 4 gon",
+   "corners": 8,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 13,
+    "max_planarity": "5.27e-81",
+    "planar": true,
+    "volume": "0.4742863148599911417330638",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Polar Cleo Towers (7 tower pieces + core ray): shell 3 on 4 gon",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-3-on-4-gon.json"
+   },
+   "faces": 7,
+   "edges": 13,
+   "distinct_dihedrals": 5,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "5.4518",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  },
+  {
+   "name": "Polar Cleo Towers (7 tower pieces + core ray): shell 4 on 3 gon",
+   "corners": 6,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 11,
+    "max_planarity": "9.49e-81",
+    "planar": true,
+    "volume": "0.1456549470305119463158143",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Polar Cleo Towers (7 tower pieces + core ray): shell 4 on 3 gon",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-4-on-3-gon.json"
+   },
+   "faces": 7,
+   "edges": 11,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 3,
+   "rational_pi_dihedrals_deg": [
+    "90.0"
+   ],
+   "max_coefficient_sum": "2.7259",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  },
+  {
+   "name": "Polar Cleo Towers (7 tower pieces + core ray): shell 5 on 3 gon",
+   "corners": 7,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 12,
+    "max_planarity": "4.74e-81",
+    "planar": true,
+    "volume": "0.1808206979748713530748499",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Polar Cleo Towers (7 tower pieces + core ray): shell 5 on 3 gon",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-5-on-3-gon.json"
+   },
+   "faces": 7,
+   "edges": 12,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "144.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "4.3769",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  },
+  {
+   "name": "Polar Cleo Towers (7 tower pieces + core ray): shell 5 on 5 gon",
+   "corners": 11,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 20,
+    "max_planarity": "2.64e-81",
+    "planar": true,
+    "volume": "1.294008339642441058123271",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Polar Cleo Towers (7 tower pieces + core ray): shell 5 on 5 gon",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-5-on-5-gon.json"
+   },
+   "faces": 11,
+   "edges": 20,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "144.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "7.2949",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "mixed: ZERO, NONZERO, NONZERO, NONZERO, NONZERO, NONZERO, NONZERO, NONZERO"
+}

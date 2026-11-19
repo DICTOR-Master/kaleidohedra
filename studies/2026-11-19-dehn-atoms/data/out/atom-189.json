@@ -1,0 +1,38 @@
+{
+ "index": 189,
+ "no": "—",
+ "name": "augmented cuboctahedron* (Stewart, 1970)",
+ "kind": "solid",
+ "book": "known",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO 13-COA (13-Corner Octet Atom)",
+   "corners": 13,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 24,
+    "max_planarity": "0.0",
+    "planar": true,
+    "volume": "7.333333333333333333333333",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q",
+    "convex": true,
+    "model_name": "DICTO 13-COA (13-Corner Octet Atom)",
+    "file": "studies/2026-11-17-atoms-missing-2/models/known-dicto-13-coa.json"
+   },
+   "faces": 13,
+   "edges": 24,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "16.971",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

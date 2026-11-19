@@ -1,0 +1,36 @@
+{
+ "index": 199,
+ "no": "—",
+ "name": "Tetrahedron face pyramid Q and Q' (#44, #47 connectors)",
+ "kind": "piece",
+ "book": "known",
+ "source": "cons",
+ "solids": [
+  {
+   "name": "Tetrahedron face pyramid Q and Q' (#44, #47 connectors)",
+   "corners": 4,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 6,
+    "max_planarity": "0.0",
+    "planar": true,
+    "volume": "0.6666666666666666666666667",
+    "volume_sign": 1
+   },
+   "info": {
+    "field": "Q",
+    "convex": true,
+    "construction": "tetra_face_pyramid"
+   },
+   "faces": 4,
+   "edges": 6,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "8.4853",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,75 @@
+{
+ "index": 136,
+ "no": "D138",
+ "name": "Diadem L/R",
+ "kind": "piece",
+ "book": "new",
+ "source": "set",
+ "solids": [
+  {
+   "name": "Diadem (L)",
+   "corners": 6,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 9,
+    "max_planarity": "1.58e-80",
+    "planar": true,
+    "volume": "1.078689325833263232136391",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Diadem (L)",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-diadem.json"
+   },
+   "faces": 5,
+   "edges": 9,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 0,
+   "rational_pi_dihedrals_deg": [
+    "108.0",
+    "36.0",
+    "60.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  },
+  {
+   "name": "Diadem (R)",
+   "corners": 6,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 9,
+    "max_planarity": "1.05e-81",
+    "planar": true,
+    "volume": "1.078689325833263232136391",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Diadem (R)",
+    "file": "studies/2026-11-17-atoms-missing-2/models/pieces/piece-diadem-r.json"
+   },
+   "faces": 5,
+   "edges": 9,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 0,
+   "rational_pi_dihedrals_deg": [
+    "108.0",
+    "36.0",
+    "60.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

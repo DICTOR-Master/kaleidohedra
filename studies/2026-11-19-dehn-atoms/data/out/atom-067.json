@@ -1,0 +1,40 @@
+{
+ "index": 67,
+ "no": "D68",
+ "name": "Y (cube of edge φ plus one Euclid roof) (#47)",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Y (cube of edge phi plus one Euclid roof) (#47)",
+   "corners": 10,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 17,
+    "max_planarity": "1.58e-81",
+    "planar": true,
+    "volume": "4.807243141353930075126987",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Y (cube of edge phi plus one Euclid roof) (#47)",
+    "file": "studies/2026-11-17-atoms-missing/models/piece-y.json"
+   },
+   "faces": 9,
+   "edges": 17,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "90.0"
+   ],
+   "max_coefficient_sum": "10.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

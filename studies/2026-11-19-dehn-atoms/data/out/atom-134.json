@@ -1,0 +1,38 @@
+{
+ "index": 134,
+ "no": "D136",
+ "name": "Tadpole L/R",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Tadpole",
+   "corners": 6,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 10,
+    "max_planarity": "1.58e-81",
+    "planar": true,
+    "volume": "0.036588137289060528403836",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "Tadpole",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-tadpole.json"
+   },
+   "faces": 6,
+   "edges": 10,
+   "distinct_dihedrals": 6,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "2.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

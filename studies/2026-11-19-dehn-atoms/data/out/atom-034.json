@@ -1,0 +1,38 @@
+{
+ "index": 34,
+ "no": "D35",
+ "name": "W (one-piece glue)",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "W (one-piece glue)",
+   "corners": 80,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 144,
+    "max_planarity": "3.43e-81",
+    "planar": true,
+    "volume": "1.111341157038158656188111",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "W (one-piece glue)",
+    "file": "studies/2026-11-17-atoms-missing/models/piece-w.json"
+   },
+   "faces": 66,
+   "edges": 144,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

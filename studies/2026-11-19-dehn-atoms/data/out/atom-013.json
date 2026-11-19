@@ -1,0 +1,38 @@
+{
+ "index": 13,
+ "no": "D14",
+ "name": "King of Pentacles",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "King of Pentacles",
+   "corners": 15,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 30,
+    "max_planarity": "3.16e-81",
+    "planar": true,
+    "volume": "1.46352549156242113615344",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "King of Pentacles",
+    "file": "studies/2026-11-17-atoms-missing/models/piece-king-of-pentacles.json"
+   },
+   "faces": 17,
+   "edges": 30,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "15.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

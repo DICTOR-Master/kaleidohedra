@@ -1,0 +1,40 @@
+{
+ "index": 106,
+ "no": "D107",
+ "name": "Golden Clasp",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Golden Clasp",
+   "corners": 48,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 72,
+    "max_planarity": "1.58e-81",
+    "planar": true,
+    "volume": "5.431482861220662649079727",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Golden Clasp",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-golden-clasp.json"
+   },
+   "faces": 26,
+   "edges": 72,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "135.0"
+   ],
+   "max_coefficient_sum": "12.019",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

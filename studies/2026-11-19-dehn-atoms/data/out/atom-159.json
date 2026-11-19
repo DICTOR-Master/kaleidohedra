@@ -1,0 +1,38 @@
+{
+ "index": 159,
+ "no": "D161",
+ "name": "Maedate",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Maedate",
+   "corners": 6,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 12,
+    "max_planarity": "1.05e-81",
+    "planar": true,
+    "volume": "0.2217523739064729914476296",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Maedate",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-maedate.json"
+   },
+   "faces": 8,
+   "edges": 12,
+   "distinct_dihedrals": 5,
+   "independent_mod_pi": 5,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "4.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

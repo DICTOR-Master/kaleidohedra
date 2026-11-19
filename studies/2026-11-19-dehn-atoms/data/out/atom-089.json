@@ -1,0 +1,38 @@
+{
+ "index": 89,
+ "no": "D90",
+ "name": "Tweedledee",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Tweedledee",
+   "corners": 32,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 90,
+    "max_planarity": "5.8e-81",
+    "planar": true,
+    "volume": "60.99039208854560985899466",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Tweedledee",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-tweedledee.json"
+   },
+   "faces": 60,
+   "edges": 90,
+   "distinct_dihedrals": 6,
+   "independent_mod_pi": 6,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "41.099",
+   "verdict": "NONZERO",
+   "seconds": 0.2
+  }
+ ],
+ "verdict": "NONZERO"
+}

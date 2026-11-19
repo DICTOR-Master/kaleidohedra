@@ -1,0 +1,36 @@
+{
+ "index": 172,
+ "no": "Mosseri–Sadoc t4 (scaled by 1/φ)",
+ "name": "Mosseri–Sadoc tile t4* (Mosseri and Sadoc, 1982)",
+ "kind": "piece",
+ "book": "known",
+ "source": "ident",
+ "solids": [
+  {
+   "name": "CLEO",
+   "corners": 4,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 6,
+    "max_planarity": "2.5e-82",
+    "planar": true,
+    "volume": "0.05150283239582457068371557",
+    "volume_sign": 1
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "identified": "CLEO"
+   },
+   "faces": 4,
+   "edges": 6,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "3.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

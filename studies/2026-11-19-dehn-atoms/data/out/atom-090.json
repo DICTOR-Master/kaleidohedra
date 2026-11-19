@@ -1,0 +1,38 @@
+{
+ "index": 90,
+ "no": "D91",
+ "name": "Mad Hatter",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Mad Hatter",
+   "corners": 144,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 360,
+    "max_planarity": "3.8e-80",
+    "planar": true,
+    "volume": "180.5656034787140083686926",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Mad Hatter",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-mad-hatter.json"
+   },
+   "faces": 218,
+   "edges": 360,
+   "distinct_dihedrals": 22,
+   "independent_mod_pi": 14,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "237.43",
+   "verdict": "NONZERO",
+   "seconds": 15.6
+  }
+ ],
+ "verdict": "NONZERO"
+}

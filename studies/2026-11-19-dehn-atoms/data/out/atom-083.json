@@ -1,0 +1,38 @@
+{
+ "index": 83,
+ "no": "D84",
+ "name": "Ganesha",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Ganesha",
+   "corners": 30,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 45,
+    "max_planarity": "1.58e-81",
+    "planar": true,
+    "volume": "0.7191966247867675004401363",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(3))",
+    "convex": true,
+    "model_name": "Ganesha",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-ganesha.json"
+   },
+   "faces": 17,
+   "edges": 45,
+   "distinct_dihedrals": 10,
+   "independent_mod_pi": 5,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "3.1465",
+   "verdict": "NONZERO",
+   "seconds": 0.1
+  }
+ ],
+ "verdict": "NONZERO"
+}

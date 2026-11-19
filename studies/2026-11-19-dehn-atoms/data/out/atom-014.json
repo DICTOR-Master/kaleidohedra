@@ -1,0 +1,38 @@
+{
+ "index": 14,
+ "no": "D15",
+ "name": "Lotus Jewel (clawed icosahedron)",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Lotus Jewel (clawed icosahedron)",
+   "corners": 20,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 54,
+    "max_planarity": "5.27e-82",
+    "planar": true,
+    "volume": "1.92705098312484227230688",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "Lotus Jewel (clawed icosahedron)",
+    "file": "studies/2026-11-17-atoms-missing/models/dicto-lotus-jewel.json"
+   },
+   "faces": 36,
+   "edges": 54,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "53.666",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

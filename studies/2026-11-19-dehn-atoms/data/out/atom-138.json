@@ -1,0 +1,44 @@
+{
+ "index": 138,
+ "no": "D140",
+ "name": "Chatra",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Chatra",
+   "corners": 7,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 11,
+    "max_planarity": "1.37e-80",
+    "planar": true,
+    "volume": "5.981423969999719595212232",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Chatra",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-chatra.json"
+   },
+   "faces": 6,
+   "edges": 11,
+   "distinct_dihedrals": 5,
+   "independent_mod_pi": 0,
+   "rational_pi_dihedrals_deg": [
+    "108.0",
+    "120.0",
+    "60.0",
+    "72.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

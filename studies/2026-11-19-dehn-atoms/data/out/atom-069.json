@@ -1,0 +1,38 @@
+{
+ "index": 69,
+ "no": "D70",
+ "name": "Dodecaxes",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Dodecaxes",
+   "corners": 32,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 84,
+    "max_planarity": "1.32e-81",
+    "planar": true,
+    "volume": "2.0",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "Dodecaxes",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-dodecaxes.json"
+   },
+   "faces": 54,
+   "edges": 84,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 3,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "24.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

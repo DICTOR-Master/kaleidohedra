@@ -1,0 +1,38 @@
+{
+ "index": 45,
+ "no": "D46",
+ "name": "DICTO PHE",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO PHE (Pentagon-Hexagon Enneacontadihedron)",
+   "corners": 180,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 270,
+    "max_planarity": "3.2e-81",
+    "planar": true,
+    "volume": "20.01012214752010571228107",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO PHE (Pentagon-Hexagon Enneacontadihedron)",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-phe.json"
+   },
+   "faces": 92,
+   "edges": 270,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 3,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "67.362",
+   "verdict": "NONZERO",
+   "seconds": 0.1
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,40 @@
+{
+ "index": 37,
+ "no": "D38",
+ "name": "DICTO OTT (Octahedrally Truncated Triacontahedron)",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO OTT (Octahedrally Truncated Triacontahedron)",
+   "corners": 24,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 60,
+    "max_planarity": "1.05e-81",
+    "planar": true,
+    "volume": "1.327675960492996331493032",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO OTT (Octahedrally Truncated Triacontahedron)",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-ott.json"
+   },
+   "faces": 38,
+   "edges": 60,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "144.0"
+   ],
+   "max_coefficient_sum": "19.777",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

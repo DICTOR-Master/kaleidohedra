@@ -1,0 +1,38 @@
+{
+ "index": 185,
+ "no": "Mosseri–Sadoc t2",
+ "name": "Mosseri–Sadoc tile t2* (Mosseri and Sadoc, 1982)",
+ "kind": "piece",
+ "book": "known",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Hound Tooth (Mosseri-Sadoc t2)",
+   "corners": 4,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 6,
+    "max_planarity": "1.05e-81",
+    "planar": true,
+    "volume": "0.03183050093750876264961776",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Hound Tooth (Mosseri-Sadoc t2)",
+    "file": "studies/2026-11-17-atoms-missing-2/models/known-hound-tooth.json"
+   },
+   "faces": 4,
+   "edges": 6,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "2.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

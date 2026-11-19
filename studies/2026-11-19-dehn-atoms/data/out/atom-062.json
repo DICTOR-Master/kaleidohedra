@@ -1,0 +1,38 @@
+{
+ "index": 62,
+ "no": "D63",
+ "name": "DICTO TQHD-662",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO TQHD-662",
+   "corners": 480,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 1140,
+    "max_planarity": "6.68e-80",
+    "planar": true,
+    "volume": "7.431308023682747394317798",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO TQHD-662",
+    "file": "studies/2026-11-17-atoms-missing/models/dicto-tqhd-662.json"
+   },
+   "faces": 662,
+   "edges": 1140,
+   "distinct_dihedrals": 13,
+   "independent_mod_pi": 13,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "39.728",
+   "verdict": "NONZERO",
+   "seconds": 6.8
+  }
+ ],
+ "verdict": "NONZERO"
+}

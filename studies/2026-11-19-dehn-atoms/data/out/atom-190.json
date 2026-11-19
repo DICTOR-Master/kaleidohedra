@@ -1,0 +1,42 @@
+{
+ "index": 190,
+ "no": "—",
+ "name": "half rhombic dodecahedron* (classical)",
+ "kind": "piece",
+ "book": "known",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Hemi RD (half rhombic dodecahedron)",
+   "corners": 10,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 16,
+    "max_planarity": "0.0",
+    "planar": true,
+    "volume": "1.0",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q",
+    "convex": true,
+    "model_name": "Hemi RD (half rhombic dodecahedron)",
+    "file": "studies/2026-11-17-atoms-missing-2/models/known-hemi-rd.json"
+   },
+   "faces": 8,
+   "edges": 16,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 0,
+   "rational_pi_dihedrals_deg": [
+    "120.0",
+    "60.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

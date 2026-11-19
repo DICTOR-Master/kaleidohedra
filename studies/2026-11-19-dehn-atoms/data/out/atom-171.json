@@ -1,0 +1,36 @@
+{
+ "index": 171,
+ "no": "Mosseri–Sadoc t6 (scaled by 1/φ)",
+ "name": "Mosseri–Sadoc tile t6* (Mosseri and Sadoc, 1982)",
+ "kind": "piece",
+ "book": "known",
+ "source": "ident",
+ "solids": [
+  {
+   "name": "AXE",
+   "corners": 4,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 6,
+    "max_planarity": "2.64e-81",
+    "planar": true,
+    "volume": "0.08333333333333333333333333",
+    "volume_sign": 1
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "identified": "AXE"
+   },
+   "faces": 4,
+   "edges": 6,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "2.7639",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

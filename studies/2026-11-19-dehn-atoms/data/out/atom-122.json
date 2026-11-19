@@ -1,0 +1,40 @@
+{
+ "index": 122,
+ "no": "D124",
+ "name": "Lesser Golden Cut Cube",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Lesser Golden Cut Cube",
+   "corners": 24,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 36,
+    "max_planarity": "2.96e-82",
+    "planar": true,
+    "volume": "0.9830917063714071505793406",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(t)",
+    "convex": true,
+    "model_name": "Lesser Golden Cut Cube",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lesser-golden-cut-cube.json"
+   },
+   "faces": 14,
+   "edges": 36,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "90.0"
+   ],
+   "max_coefficient_sum": "7.9149",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,41 @@
+{
+ "index": 125,
+ "no": "D127",
+ "name": "Greater Golden Cut Rhombic Dodecahedron",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Greater Golden Cut Rhombic Dodecahedron",
+   "corners": 48,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 72,
+    "max_planarity": "6.68e-82",
+    "planar": true,
+    "volume": "1.912890904861718327287424",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(t)",
+    "convex": true,
+    "model_name": "Greater Golden Cut Rhombic Dodecahedron",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-greater-golden-cut-rhombic-dodecahedron.json"
+   },
+   "faces": 26,
+   "edges": 72,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "120.0",
+    "135.0"
+   ],
+   "max_coefficient_sum": "9.9143",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -8757,6 +8757,15 @@
         "retry": "never (these solids); open: the ten other nonzero fair dice; pairs across the α–β family and the arccos(1/3) family (needs independence of arccos(1/3) from α, β modulo π; α vs arccos(1/3) looks within reach at the prime 3); same-sign pairs over arccos(1/3) (e.g. Lucky 7 vs tetrahedron) need volumes; solid = convex hull of corners for the edge-read solids",
         "study": "2026-11-19-lean-dehn-7",
         "date": "2026-11-19"
+      },
+      {
+        "question": "Dehn atoms: every single-solid atom of The DICTOnary of Atoms (D1–D178 + known) and the 12 fair dice",
+        "method": "dehn_mp.py (dehn-words tool, unchanged), 80 digits, PSLQ; exact corners from the DICTO Solids dataset, the 17 Nov missing-atoms models and exact constructions; calibration 11/11",
+        "status": "SETTLED (high-precision numerical)",
+        "result": "202 in scope, 184 screened (204 solids): 32 zero, 151 nonzero, 1 mixed (D75: core ray zero, towers nonzero), 0 undecided; 17 skipped (14 float only, D133/D134 no exact form, Bain disphenoid no data). Zero: D1–D3, W, Tetartoid core, Triaktis, Tetraktis, Ian Dury, Blockhead, Cube Pearl, HexOct tiles D110–D118, Diadem, Chatra, Mudra, Narcissus, Covenant, half RD, square bipyramid (OCT-16), all-rhombus block, flattened rhombohedron, Bain RD, Fedorov ED, brick, hex prism. Dice as dehn-words (only cr zero)",
+        "retry": "only exact models for the 14 float-only atoms, fill tests of zero atoms without a tiling, or symbolic certification",
+        "study": "2026-11-19-dehn-atoms",
+        "date": "2026-11-19"
       }
     ]
   },

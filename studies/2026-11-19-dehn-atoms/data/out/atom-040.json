@@ -1,0 +1,38 @@
+{
+ "index": 40,
+ "no": "D41",
+ "name": "DICTO FPD (flat pentakis dodecahedron)",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO FPD (flat pentakis dodecahedron)",
+   "corners": 32,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 90,
+    "max_planarity": "3.16e-81",
+    "planar": true,
+    "volume": "34.22858944579973425199191",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO FPD (flat pentakis dodecahedron)",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-fpd.json"
+   },
+   "faces": 60,
+   "edges": 90,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "81.776",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

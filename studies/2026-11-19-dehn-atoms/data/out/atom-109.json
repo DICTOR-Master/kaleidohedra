@@ -1,0 +1,40 @@
+{
+ "index": 109,
+ "no": "D110",
+ "name": "HexOct c-tile (λ = 1/10)",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "HexOct c-tile (λ = 1/10)",
+   "corners": 43,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 72,
+    "max_planarity": "6.59e-82",
+    "planar": true,
+    "volume": "0.7071067811865475244008444",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(2))",
+    "convex": false,
+    "model_name": "HexOct c-tile (λ = 1/10)",
+    "file": "studies/2026-11-17-atoms-missing/models/piece-hexoct-c-tile.json"
+   },
+   "faces": 32,
+   "edges": 72,
+   "distinct_dihedrals": 5,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "90.0"
+   ],
+   "max_coefficient_sum": "8.4338e-81",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

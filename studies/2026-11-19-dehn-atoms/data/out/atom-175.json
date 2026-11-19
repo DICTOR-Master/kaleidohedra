@@ -1,0 +1,38 @@
+{
+ "index": 175,
+ "no": "—",
+ "name": "truncated octahedron x = 1/φ* (Koca et al., 2015)",
+ "kind": "solid",
+ "book": "known",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Unborn Axes",
+   "corners": 24,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 36,
+    "max_planarity": "5.27e-82",
+    "planar": true,
+    "volume": "1.745355992499929898803058",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Unborn Axes",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-unborn-axes.json"
+   },
+   "faces": 14,
+   "edges": 36,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "6.4822",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

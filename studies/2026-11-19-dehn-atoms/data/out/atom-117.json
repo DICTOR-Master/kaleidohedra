@@ -1,0 +1,38 @@
+{
+ "index": 117,
+ "no": "D119",
+ "name": "Greater Golden Cut Dodecahedron",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Greater Golden Cut Dodecahedron",
+   "corners": 60,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 90,
+    "max_planarity": "2.11e-81",
+    "planar": true,
+    "volume": "7.563240319343774262036758",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Greater Golden Cut Dodecahedron",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-greater-golden-cut-dodecahedron.json"
+   },
+   "faces": 32,
+   "edges": 90,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "32.361",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

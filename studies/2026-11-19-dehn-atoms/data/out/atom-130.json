@@ -1,0 +1,38 @@
+{
+ "index": 130,
+ "no": "D132",
+ "name": "Lesser Golden Cut Snub Dodecahedron L/R",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Lesser Golden Cut Snub Dodecahedron L/R",
+   "corners": 300,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 450,
+    "max_planarity": "9.75e-81",
+    "planar": true,
+    "volume": "61.44639897031868073627598",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(xi)",
+    "convex": true,
+    "model_name": "Lesser Golden Cut Snub Dodecahedron L/R",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lesser-golden-cut-snub-dodecahedron.json"
+   },
+   "faces": 152,
+   "edges": 450,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 4,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "78.266",
+   "verdict": "NONZERO",
+   "seconds": 0.2
+  }
+ ],
+ "verdict": "NONZERO"
+}

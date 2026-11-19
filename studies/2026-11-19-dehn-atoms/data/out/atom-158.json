@@ -1,0 +1,38 @@
+{
+ "index": 158,
+ "no": "D160",
+ "name": "Rhombo-K",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Rhombo-K",
+   "corners": 38,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 84,
+    "max_planarity": "6.59e-82",
+    "planar": true,
+    "volume": "0.24",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q",
+    "convex": false,
+    "model_name": "Rhombo-K",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-rhombo-k.json"
+   },
+   "faces": 48,
+   "edges": 60,
+   "distinct_dihedrals": 7,
+   "independent_mod_pi": 6,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "8.551",
+   "verdict": "NONZERO",
+   "seconds": 0.3
+  }
+ ],
+ "verdict": "NONZERO"
+}

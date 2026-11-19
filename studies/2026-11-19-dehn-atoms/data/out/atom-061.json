@@ -1,0 +1,38 @@
+{
+ "index": 61,
+ "no": "D62",
+ "name": "DICTO TQD-732",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO TQD-732",
+   "corners": 500,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 1230,
+    "max_planarity": "9.15e-78",
+    "planar": true,
+    "volume": "7.629879767510146369505098",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO TQD-732",
+    "file": "studies/2026-11-17-atoms-missing/models/dicto-tqd-732.json"
+   },
+   "faces": 732,
+   "edges": 1230,
+   "distinct_dihedrals": 14,
+   "independent_mod_pi": 14,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "61.578",
+   "verdict": "NONZERO",
+   "seconds": 10.9
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,133 @@
+{
+ "index": 72,
+ "no": "D73",
+ "name": "DICTO Fill set 1 / 2 pieces (grown bipyramid, grown tetrahedra L/R)",
+ "kind": "piece",
+ "book": "new",
+ "source": "set",
+ "solids": [
+  {
+   "name": "DICTO Fill set 1 (DBT) F1, grown bipyramid",
+   "corners": 119,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 195,
+    "max_planarity": "1.94e-80",
+    "planar": true,
+    "volume": "1.129152503951635049476592",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "DICTO Fill set 1 (DBT) F1, grown bipyramid",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-1-f1.json"
+   },
+   "faces": 78,
+   "edges": 195,
+   "distinct_dihedrals": 14,
+   "independent_mod_pi": 6,
+   "rational_pi_dihedrals_deg": [
+    "120.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "2.4721",
+   "verdict": "NONZERO",
+   "seconds": 0.4
+  },
+  {
+   "name": "DICTO Fill set 2 (OTT) F1, grown bipyramid",
+   "corners": 125,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 213,
+    "max_planarity": "1.84e-80",
+    "planar": true,
+    "volume": "1.182586544692064229342034",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "DICTO Fill set 2 (OTT) F1, grown bipyramid",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f1.json"
+   },
+   "faces": 90,
+   "edges": 213,
+   "distinct_dihedrals": 17,
+   "independent_mod_pi": 7,
+   "rational_pi_dihedrals_deg": [
+    "120.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "19.777",
+   "verdict": "NONZERO",
+   "seconds": 0.5
+  },
+  {
+   "name": "DICTO Fill set 2 (OTT) F2, grown tetrahedron L",
+   "corners": 40,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 72,
+    "max_planarity": "1.58e-81",
+    "planar": true,
+    "volume": "0.5912932723460321146710171",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "DICTO Fill set 2 (OTT) F2, grown tetrahedron L",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f2-left.json"
+   },
+   "faces": 34,
+   "edges": 72,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "108.0",
+    "216.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "9.8885",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  },
+  {
+   "name": "DICTO Fill set 2 (OTT) F3, grown tetrahedron R",
+   "corners": 40,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 72,
+    "max_planarity": "1.58e-81",
+    "planar": true,
+    "volume": "0.5912932723460321146710171",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "DICTO Fill set 2 (OTT) F3, grown tetrahedron R",
+    "file": "studies/2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f3-right.json"
+   },
+   "faces": 34,
+   "edges": 72,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "108.0",
+    "216.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "9.8885",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

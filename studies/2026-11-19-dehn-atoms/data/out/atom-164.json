@@ -1,0 +1,42 @@
+{
+ "index": 164,
+ "no": "D174",
+ "name": "Covenant",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Covenant",
+   "corners": 14,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 24,
+    "max_planarity": "7.91e-82",
+    "planar": true,
+    "volume": "0.7071067811865475244008444",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(2))",
+    "convex": true,
+    "model_name": "Covenant",
+    "file": "studies/2026-11-17-atoms-missing-2/models/dicto-covenant.json"
+   },
+   "faces": 12,
+   "edges": 24,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 0,
+   "rational_pi_dihedrals_deg": [
+    "120.0",
+    "135.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

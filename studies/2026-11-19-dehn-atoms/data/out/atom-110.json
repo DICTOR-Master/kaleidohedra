@@ -1,0 +1,40 @@
+{
+ "index": 110,
+ "no": "D111",
+ "name": "HexOct h-tile (λ = 1/10)",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "HexOct h-tile",
+   "corners": 44,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 72,
+    "max_planarity": "5.01e-81",
+    "planar": true,
+    "volume": "2.0",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q",
+    "convex": false,
+    "model_name": "HexOct h-tile",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hexoct-h-tile.json"
+   },
+   "faces": 30,
+   "edges": 72,
+   "distinct_dihedrals": 11,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "90.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

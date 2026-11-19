@@ -1,0 +1,42 @@
+{
+ "index": 56,
+ "no": "D57",
+ "name": "DICTO Tetraktis (OTT rhombic ray)",
+ "kind": "piece",
+ "book": "new",
+ "source": "cons",
+ "solids": [
+  {
+   "name": "DICTO Tetraktis (OTT rhombic ray)",
+   "corners": 5,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 8,
+    "max_planarity": "0.0",
+    "planar": true,
+    "volume": "0.0466307116048967301548985",
+    "volume_sign": 1
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "classes": [
+     6
+    ],
+    "construction": "tetraktis"
+   },
+   "faces": 5,
+   "edges": 8,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 0,
+   "rational_pi_dihedrals_deg": [
+    "120.0",
+    "72.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

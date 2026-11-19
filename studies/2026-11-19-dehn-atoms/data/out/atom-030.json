@@ -1,0 +1,38 @@
+{
+ "index": 30,
+ "no": "D31",
+ "name": "DICTO Palintriacontahedron",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO Palintriacontahedron",
+   "corners": 32,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 90,
+    "max_planarity": "5.27e-81",
+    "planar": true,
+    "volume": "29.0892665416654983133843",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO Palintriacontahedron",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-palintriacontahedron.json"
+   },
+   "faces": 60,
+   "edges": 90,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "77.46",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

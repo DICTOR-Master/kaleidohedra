@@ -1,0 +1,38 @@
+{
+ "index": 156,
+ "no": "D158",
+ "name": "Lahdeli-K",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Lahdeli-K",
+   "corners": 48,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 108,
+    "max_planarity": "2.32e-81",
+    "planar": true,
+    "volume": "1.018673386751022745796999",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(t)",
+    "convex": false,
+    "model_name": "Lahdeli-K",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-lahdeli-k.json"
+   },
+   "faces": 62,
+   "edges": 78,
+   "distinct_dihedrals": 8,
+   "independent_mod_pi": 7,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "10.44",
+   "verdict": "NONZERO",
+   "seconds": 0.1
+  }
+ ],
+ "verdict": "NONZERO"
+}

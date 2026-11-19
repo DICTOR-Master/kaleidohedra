@@ -1,0 +1,38 @@
+{
+ "index": 178,
+ "no": "—",
+ "name": "tetragonal disphenoid* (classical)",
+ "kind": "solid",
+ "book": "known",
+ "source": "file",
+ "solids": [
+  {
+   "name": "David",
+   "corners": 4,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 6,
+    "max_planarity": "0.0",
+    "planar": true,
+    "volume": "0.1666666666666666666666667",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q",
+    "convex": true,
+    "model_name": "David",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-david.json"
+   },
+   "faces": 4,
+   "edges": 6,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "4.899",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

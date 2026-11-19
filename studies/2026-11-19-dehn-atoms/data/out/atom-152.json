@@ -1,0 +1,38 @@
+{
+ "index": 152,
+ "no": "D154",
+ "name": "Julia G9",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Julia G9",
+   "corners": 5,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 8,
+    "max_planarity": "5.27e-81",
+    "planar": true,
+    "volume": "0.01999649245058733234781485",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Julia G9",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-julia-g9.json"
+   },
+   "faces": 5,
+   "edges": 8,
+   "distinct_dihedrals": 5,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "1.3019",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,38 @@
+{
+ "index": 68,
+ "no": "D69",
+ "name": "Lotus Jewel Axes",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Lotus Jewel Axes",
+   "corners": 32,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 84,
+    "max_planarity": "5.27e-82",
+    "planar": true,
+    "volume": "2.236067977499789696409174",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "Lotus Jewel Axes",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lotus-jewel-axes.json"
+   },
+   "faces": 54,
+   "edges": 84,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 3,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "24.0",
+   "verdict": "NONZERO",
+   "seconds": 0.1
+  }
+ ],
+ "verdict": "NONZERO"
+}

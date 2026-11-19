@@ -1,0 +1,38 @@
+{
+ "index": 52,
+ "no": "D53",
+ "name": "DICTO Sunstar-Hexa-Key",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO Sunstar-Hexa-Key",
+   "corners": 74,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 144,
+    "max_planarity": "9.22e-82",
+    "planar": true,
+    "volume": "0.5954915028125262879488533",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "DICTO Sunstar-Hexa-Key",
+    "file": "studies/2026-11-17-atoms-missing/models/dicto-sunstar-hexa-key.json"
+   },
+   "faces": 72,
+   "edges": 144,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "37.082",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

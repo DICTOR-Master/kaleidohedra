@@ -1,0 +1,38 @@
+{
+ "index": 3,
+ "no": "D4",
+ "name": "DICTO Jewel (EKP windows; first called Dragon Jewel)",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO Jewel (EKP windows; first called Dragon Jewel)",
+   "corners": 38,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 96,
+    "max_planarity": "1.05e-81",
+    "planar": true,
+    "volume": "6.354101966249684544613761",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "DICTO Jewel (EKP windows; first called Dragon Jewel)",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-jewel.json"
+   },
+   "faces": 60,
+   "edges": 96,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "41.188",
+   "verdict": "NONZERO",
+   "seconds": 0.1
+  }
+ ],
+ "verdict": "NONZERO"
+}

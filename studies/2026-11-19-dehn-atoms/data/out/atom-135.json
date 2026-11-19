@@ -1,0 +1,38 @@
+{
+ "index": 135,
+ "no": "D137",
+ "name": "Frog Chorus (the gap star)",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Frog Chorus (gap star)",
+   "corners": 522,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 684,
+    "max_planarity": "1.3e-80",
+    "planar": true,
+    "volume": "1.758949239218649229529396",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "Frog Chorus (gap star)",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-frog-chorus.json"
+   },
+   "faces": 164,
+   "edges": 684,
+   "distinct_dihedrals": 8,
+   "independent_mod_pi": 3,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "60.0",
+   "verdict": "NONZERO",
+   "seconds": 0.3
+  }
+ ],
+ "verdict": "NONZERO"
+}

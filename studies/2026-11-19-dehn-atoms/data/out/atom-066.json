@@ -1,0 +1,40 @@
+{
+ "index": 66,
+ "no": "D67",
+ "name": "X (cube of edge φ minus one Euclid roof) (#47)",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "X (cube of edge phi minus one Euclid roof) (#47)",
+   "corners": 10,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 17,
+    "max_planarity": "5.27e-82",
+    "planar": true,
+    "volume": "3.66489281364564931769136",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "X (cube of edge phi minus one Euclid roof) (#47)",
+    "file": "studies/2026-11-17-atoms-missing/models/piece-x.json"
+   },
+   "faces": 9,
+   "edges": 17,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "90.0"
+   ],
+   "max_coefficient_sum": "10.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

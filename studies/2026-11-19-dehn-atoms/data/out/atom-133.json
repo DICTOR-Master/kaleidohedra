@@ -1,0 +1,38 @@
+{
+ "index": 133,
+ "no": "D135",
+ "name": "Weirdstone L/R",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Weirdstone",
+   "corners": 7,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 12,
+    "max_planarity": "1.32e-81",
+    "planar": true,
+    "volume": "0.06385932467187193307263378",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Weirdstone",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-weirdstone.json"
+   },
+   "faces": 7,
+   "edges": 12,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "4.605",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

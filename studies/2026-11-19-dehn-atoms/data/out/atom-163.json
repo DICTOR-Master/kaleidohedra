@@ -1,0 +1,42 @@
+{
+ "index": 163,
+ "no": "D173",
+ "name": "Narcissus",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Narcissus",
+   "corners": 10,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 18,
+    "max_planarity": "1.58e-81",
+    "planar": true,
+    "volume": "0.3535533905932737622004222",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(2))",
+    "convex": true,
+    "model_name": "Narcissus",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-narcissus.json"
+   },
+   "faces": 10,
+   "edges": 18,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 0,
+   "rational_pi_dihedrals_deg": [
+    "120.0",
+    "135.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

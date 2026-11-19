@@ -1,0 +1,38 @@
+{
+ "index": 148,
+ "no": "D150",
+ "name": "Julia G5a",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Julia G5a",
+   "corners": 8,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 13,
+    "max_planarity": "4.28e-81",
+    "planar": true,
+    "volume": "0.03087046569955236414390308",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Julia G5a",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-julia-g5a.json"
+   },
+   "faces": 7,
+   "edges": 13,
+   "distinct_dihedrals": 8,
+   "independent_mod_pi": 4,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "0.77412",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

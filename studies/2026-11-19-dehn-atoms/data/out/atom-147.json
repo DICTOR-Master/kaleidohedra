@@ -1,0 +1,38 @@
+{
+ "index": 147,
+ "no": "D149",
+ "name": "Julia G4",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Julia G4",
+   "corners": 11,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 20,
+    "max_planarity": "3.03e-81",
+    "planar": true,
+    "volume": "0.1161571313502777067125595",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Julia G4",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-julia-g4.json"
+   },
+   "faces": 11,
+   "edges": 20,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 3,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "4.6709",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

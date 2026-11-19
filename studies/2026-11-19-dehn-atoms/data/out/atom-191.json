@@ -1,0 +1,41 @@
+{
+ "index": 191,
+ "no": "—",
+ "name": "square bipyramid* (classical)",
+ "kind": "solid",
+ "book": "known",
+ "source": "file",
+ "solids": [
+  {
+   "name": "OCT-16 (square bipyramid)",
+   "corners": 6,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 12,
+    "max_planarity": "0.0",
+    "planar": true,
+    "volume": "2.666666666666666666666667",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q",
+    "convex": true,
+    "model_name": "OCT-16 (square bipyramid)",
+    "file": "studies/2026-11-17-atoms-missing-2/models/known-oct-16.json"
+   },
+   "faces": 8,
+   "edges": 12,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 0,
+   "rational_pi_dihedrals_deg": [
+    "120.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

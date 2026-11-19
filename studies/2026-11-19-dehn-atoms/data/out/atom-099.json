@@ -1,0 +1,38 @@
+{
+ "index": 99,
+ "no": "D100",
+ "name": "Red Knight",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Red Knight",
+   "corners": 120,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 180,
+    "max_planarity": "5.53e-81",
+    "planar": true,
+    "volume": "113.192943540529751936669",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Red Knight",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-red-knight.json"
+   },
+   "faces": 62,
+   "edges": 180,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "77.109",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

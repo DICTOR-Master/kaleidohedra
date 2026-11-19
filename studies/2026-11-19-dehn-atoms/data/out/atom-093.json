@@ -1,0 +1,38 @@
+{
+ "index": 93,
+ "no": "D94",
+ "name": "Alice",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Alice",
+   "corners": 144,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 360,
+    "max_planarity": "2.49e-80",
+    "planar": true,
+    "volume": "175.2590640293230185422021",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Alice",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-alice.json"
+   },
+   "faces": 218,
+   "edges": 360,
+   "distinct_dihedrals": 12,
+   "independent_mod_pi": 11,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "91.758",
+   "verdict": "NONZERO",
+   "seconds": 1.8
+  }
+ ],
+ "verdict": "NONZERO"
+}

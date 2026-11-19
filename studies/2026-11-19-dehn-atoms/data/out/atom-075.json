@@ -1,0 +1,40 @@
+{
+ "index": 75,
+ "no": "D76",
+ "name": "Sonsam",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Sonsam",
+   "corners": 19,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 30,
+    "max_planarity": "1.58e-81",
+    "planar": true,
+    "volume": "0.6666666666666666666666667",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(t)",
+    "convex": true,
+    "model_name": "Sonsam",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-sonsam.json"
+   },
+   "faces": 13,
+   "edges": 30,
+   "distinct_dihedrals": 5,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "90.0"
+   ],
+   "max_coefficient_sum": "10.44",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

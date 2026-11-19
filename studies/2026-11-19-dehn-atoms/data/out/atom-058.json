@@ -1,0 +1,38 @@
+{
+ "index": 58,
+ "no": "D59",
+ "name": "DICTO TQ-320",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO TQ-320",
+   "corners": 192,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 510,
+    "max_planarity": "1.11e-80",
+    "planar": true,
+    "volume": "8.779905210066191397044488",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO TQ-320",
+    "file": "studies/2026-11-17-atoms-missing/models/dicto-tq-320.json"
+   },
+   "faces": 320,
+   "edges": 510,
+   "distinct_dihedrals": 7,
+   "independent_mod_pi": 7,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "74.645",
+   "verdict": "NONZERO",
+   "seconds": 0.3
+  }
+ ],
+ "verdict": "NONZERO"
+}

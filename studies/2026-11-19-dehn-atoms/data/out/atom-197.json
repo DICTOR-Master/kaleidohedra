@@ -1,0 +1,36 @@
+{
+ "index": 197,
+ "no": "—",
+ "name": "Fedorov's elongated dodecahedron with regular hexagons* (Fedorov, 1885)",
+ "kind": "solid",
+ "book": "known",
+ "source": "cons",
+ "solids": [
+  {
+   "name": "Fedorov's elongated dodecahedron with regular hexagons* (Fedorov, 1885)",
+   "corners": 18,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 28,
+    "max_planarity": "0.0",
+    "planar": true,
+    "volume": "5.656854249492380195206755",
+    "volume_sign": 1
+   },
+   "info": {
+    "field": "Q(sqrt(2))",
+    "convex": true,
+    "construction": "regular_hex_ed"
+   },
+   "faces": 12,
+   "edges": 28,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

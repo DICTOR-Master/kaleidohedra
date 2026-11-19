@@ -1,0 +1,38 @@
+{
+ "index": 8,
+ "no": "D9",
+ "name": "DICTO Dodeca-13 Star",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO Dodeca-13 Star",
+   "corners": 19,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 33,
+    "max_planarity": "9.75e-81",
+    "planar": true,
+    "volume": "0.6396013773374751140750856",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "model_name": "DICTO Dodeca-13 Star",
+    "file": "studies/2026-11-17-atoms-missing/models/piece-dicto-dodeca-13-star.json"
+   },
+   "faces": 16,
+   "edges": 33,
+   "distinct_dihedrals": 7,
+   "independent_mod_pi": 4,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "36.256",
+   "verdict": "NONZERO",
+   "seconds": 0.1
+  }
+ ],
+ "verdict": "NONZERO"
+}

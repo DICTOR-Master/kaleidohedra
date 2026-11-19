@@ -1,0 +1,38 @@
+{
+ "index": 21,
+ "no": "D22",
+ "name": "DICTO Truncated-Icosahedral Hecatodihedron",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO Truncated-Icosahedral Hecatodihedron (DICTO Hecatodihedron, TIH)",
+   "corners": 80,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 180,
+    "max_planarity": "3.16e-81",
+    "planar": true,
+    "volume": "14.40421193686506315533346",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO Truncated-Icosahedral Hecatodihedron (DICTO Hecatodihedron, TIH)",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hecatodihedron.json"
+   },
+   "faces": 102,
+   "edges": 180,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "78.116",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

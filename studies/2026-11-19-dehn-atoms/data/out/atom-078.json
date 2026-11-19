@@ -1,0 +1,42 @@
+{
+ "index": 78,
+ "no": "D79",
+ "name": "Blockhead",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Blockhead",
+   "corners": 10,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 18,
+    "max_planarity": "1.05e-81",
+    "planar": true,
+    "volume": "1.0",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q",
+    "convex": true,
+    "model_name": "Blockhead",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-blockhead.json"
+   },
+   "faces": 10,
+   "edges": 18,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 0,
+   "rational_pi_dihedrals_deg": [
+    "120.0",
+    "135.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

@@ -1,0 +1,40 @@
+{
+ "index": 121,
+ "no": "D123",
+ "name": "Greater Golden Cut Cube",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Greater Golden Cut Cube",
+   "corners": 24,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 36,
+    "max_planarity": "0.0",
+    "planar": true,
+    "volume": "0.9438352388359719720969153",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(t)",
+    "convex": true,
+    "model_name": "Greater Golden Cut Cube",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-greater-golden-cut-cube.json"
+   },
+   "faces": 14,
+   "edges": 36,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "90.0"
+   ],
+   "max_coefficient_sum": "11.81",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

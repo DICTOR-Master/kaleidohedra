@@ -1,0 +1,40 @@
+{
+ "index": 36,
+ "no": "D37",
+ "name": "DICTO Belted Triacontahedron (DBT)",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO Belted Triacontahedron (DBT)",
+   "corners": 30,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 60,
+    "max_planarity": "1.05e-81",
+    "planar": true,
+    "volume": "1.381110001233425511358474",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO Belted Triacontahedron (DBT)",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-dbt.json"
+   },
+   "faces": 32,
+   "edges": 60,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "144.0"
+   ],
+   "max_coefficient_sum": "4.9443",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

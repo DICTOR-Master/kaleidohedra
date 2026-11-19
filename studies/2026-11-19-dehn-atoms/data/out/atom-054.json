@@ -1,0 +1,39 @@
+{
+ "index": 54,
+ "no": "D55",
+ "name": "DICTO Deltoid Aktis",
+ "kind": "piece",
+ "book": "new",
+ "source": "cons",
+ "solids": [
+  {
+   "name": "DICTO Deltoid Aktis",
+   "corners": 5,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 8,
+    "max_planarity": "8.57e-82",
+    "planar": true,
+    "volume": "0.009024394944768237538189337",
+    "volume_sign": 1
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "classes": [
+     60
+    ],
+    "construction": "deltoid_aktis"
+   },
+   "faces": 5,
+   "edges": 8,
+   "distinct_dihedrals": 5,
+   "independent_mod_pi": 3,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "1.3333",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

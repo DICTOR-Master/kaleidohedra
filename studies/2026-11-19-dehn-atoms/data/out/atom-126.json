@@ -1,0 +1,41 @@
+{
+ "index": 126,
+ "no": "D128",
+ "name": "Lesser Golden Cut Rhombic Dodecahedron",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Lesser Golden Cut Rhombic Dodecahedron",
+   "corners": 48,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 72,
+    "max_planarity": "1.17e-81",
+    "planar": true,
+    "volume": "1.972965324103670052802093",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(t)",
+    "convex": true,
+    "model_name": "Lesser Golden Cut Rhombic Dodecahedron",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lesser-golden-cut-rhombic-dodecahedron.json"
+   },
+   "faces": 26,
+   "edges": 72,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "120.0",
+    "135.0"
+   ],
+   "max_coefficient_sum": "6.7124",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

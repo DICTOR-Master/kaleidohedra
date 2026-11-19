@@ -1,0 +1,40 @@
+{
+ "index": 146,
+ "no": "D148",
+ "name": "Julia G3",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Julia G3",
+   "corners": 15,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 25,
+    "max_planarity": "4.22e-81",
+    "planar": true,
+    "volume": "0.4212895650158945953223896",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Julia G3",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-julia-g3.json"
+   },
+   "faces": 12,
+   "edges": 25,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [
+    "120.0"
+   ],
+   "max_coefficient_sum": "4.0451",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

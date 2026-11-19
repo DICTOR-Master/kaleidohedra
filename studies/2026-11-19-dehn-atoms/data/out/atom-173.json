@@ -1,0 +1,36 @@
+{
+ "index": 173,
+ "no": "—",
+ "name": "icosahedron face pyramid* (classical; Mackay, 1962)",
+ "kind": "piece",
+ "book": "known",
+ "source": "cons",
+ "solids": [
+  {
+   "name": "icosahedron face pyramid* (classical; Mackay, 1962)",
+   "corners": 4,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 6,
+    "max_planarity": "1.05e-81",
+    "planar": true,
+    "volume": "0.8726779962499649494015289",
+    "volume_sign": 1
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "construction": "cleo_icos"
+   },
+   "faces": 4,
+   "edges": 6,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "6.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

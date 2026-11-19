@@ -1,0 +1,2681 @@
+{
+ "atoms": [
+  {
+   "no": "D1",
+   "name": "DICTO skewed rhombic dodecahedron",
+   "kind": "solid",
+   "frm": "finding F1",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-skewed-rhombic-dodecahedron.json"
+   ]
+  },
+  {
+   "no": "D2",
+   "name": "DICTO skewed elongated dodecahedron ED F16",
+   "kind": "solid",
+   "frm": "finding F7",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-skewed-ed-16.json"
+   ]
+  },
+  {
+   "no": "D3",
+   "name": "DICTO skewed elongated dodecahedron ED F18",
+   "kind": "solid",
+   "frm": "finding F7",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-skewed-ed-18.json"
+   ]
+  },
+  {
+   "no": "D4",
+   "name": "DICTO Jewel (EKP windows; first called Dragon Jewel)",
+   "kind": "solid",
+   "frm": "#41",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-jewel.json"
+   ]
+  },
+  {
+   "no": "D5",
+   "name": "Stretched dodecahedron",
+   "kind": "solid",
+   "frm": "finding F11",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/dicto-stretched-dodecahedron.json"
+   ]
+  },
+  {
+   "no": "D6",
+   "name": "DICTO Dodeca-13 Wedge",
+   "kind": "piece",
+   "frm": "#13",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-dodeca-13-wedge.json"
+   ]
+  },
+  {
+   "no": "D7",
+   "name": "DICTO Dodeca-13 Needle",
+   "kind": "piece",
+   "frm": "#13",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-dodeca-13-needle.json"
+   ]
+  },
+  {
+   "no": "D8",
+   "name": "DICTO Dodeca-13 Unit (finned unit)",
+   "kind": "piece",
+   "frm": "#13",
+   "book": "new",
+   "source": "float",
+   "note": "k-mix krp-core dodeca13Data.js (registry floats)"
+  },
+  {
+   "no": "D9",
+   "name": "DICTO Dodeca-13 Star",
+   "kind": "piece",
+   "frm": "#13",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-dicto-dodeca-13-star.json"
+   ]
+  },
+  {
+   "no": "D10",
+   "name": "DICTO Hexa-Key",
+   "kind": "solid",
+   "frm": "#18",
+   "book": "new",
+   "source": "float",
+   "note": "k-mix krp-core hexaData.js (registry floats, about 8 digits)"
+  },
+  {
+   "no": "D11",
+   "name": "DICTO Hexa Jewel",
+   "kind": "piece",
+   "frm": "#18",
+   "book": "new",
+   "source": "same",
+   "key": "D4",
+   "note": "the DICTO Jewel itself (#18 defines the Hexa Jewels as exact DICTO Jewels; 2026-11-17-atoms-missing, \"Not drawn\")"
+  },
+  {
+   "no": "D12",
+   "name": "FUJI",
+   "kind": "piece",
+   "frm": "#19",
+   "book": "new",
+   "source": "ident",
+   "key": "FUJI",
+   "note": "studies/2026-10-14-axe-cleo-fuji/nets/pieces.json, identified in Q(sqrt5) by the dehn-words rule (each corner to 2e-9)"
+  },
+  {
+   "no": "D13",
+   "name": "VAJRA",
+   "kind": "piece",
+   "frm": "#19",
+   "book": "new",
+   "source": "float",
+   "note": "k-mix krp-core kits13.js KIT13_UNITY_VAJRA (6 digits)"
+  },
+  {
+   "no": "D14",
+   "name": "King of Pentacles",
+   "kind": "piece",
+   "frm": "#19",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-king-of-pentacles.json"
+   ]
+  },
+  {
+   "no": "D15",
+   "name": "Lotus Jewel (clawed icosahedron)",
+   "kind": "solid",
+   "frm": "finding F21",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/dicto-lotus-jewel.json"
+   ]
+  },
+  {
+   "no": "D16",
+   "name": "Admiral Cap (icosahedron edge roof)",
+   "kind": "piece",
+   "frm": "#47",
+   "book": "new",
+   "source": "cons",
+   "key": "admiral_cap",
+   "note": "exact definition in the app source (k-mix krp-core edgeRoof.js): two tetrahedra over one edge of the unit icosahedron, apex at the octahedron's corner; checked: volume phi/12, edges 1, sqrt2/2, phi sqrt2/2"
+  },
+  {
+   "no": "D17",
+   "name": "Crown Jewel",
+   "kind": "piece",
+   "frm": "#24",
+   "book": "new",
+   "source": "float",
+   "note": "kits13.js KIT13_BODHI_B4 (6 digits)"
+  },
+  {
+   "no": "D18",
+   "name": "Vajra (fine)",
+   "kind": "piece",
+   "frm": "#24",
+   "book": "new",
+   "source": "float",
+   "note": "kits13.js KIT13_BODHI_B1 (6 digits)"
+  },
+  {
+   "no": "D19",
+   "name": "Stupa",
+   "kind": "piece",
+   "frm": "#27",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-stupa.json"
+   ]
+  },
+  {
+   "no": "D20",
+   "name": "Monkey Staff",
+   "kind": "piece",
+   "frm": "#27",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-monkey-staff.json"
+   ]
+  },
+  {
+   "no": "D21",
+   "name": "Shield",
+   "kind": "piece",
+   "frm": "#28",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-shield.json"
+   ]
+  },
+  {
+   "no": "D22",
+   "name": "DICTO Truncated-Icosahedral Hecatodihedron",
+   "kind": "solid",
+   "frm": "#28",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hecatodihedron.json"
+   ]
+  },
+  {
+   "no": "D23",
+   "name": "Kion",
+   "kind": "piece",
+   "frm": "#29",
+   "book": "new",
+   "source": "float",
+   "note": "studies/2026-10-16-polar-dharma (floats)"
+  },
+  {
+   "no": "D24",
+   "name": "Atraktos",
+   "kind": "piece",
+   "frm": "#29",
+   "book": "new",
+   "source": "float",
+   "note": "studies/2026-10-15-icosa-star-hollow/data/exact_meshes.json (9-digit floats)"
+  },
+  {
+   "no": "D25",
+   "name": "Aetos",
+   "kind": "piece",
+   "frm": "#29",
+   "book": "new",
+   "source": "float",
+   "note": "studies/2026-10-15-icosa-star-hollow/data/exact_meshes.json (9-digit floats)"
+  },
+  {
+   "no": "D26",
+   "name": "Sphen",
+   "kind": "piece",
+   "frm": "#29",
+   "book": "new",
+   "source": "float",
+   "note": "studies/2026-10-15-icosa-star-hollow/data/exact_meshes.json (9-digit floats)"
+  },
+  {
+   "no": "D27",
+   "name": "Sphenion",
+   "kind": "piece",
+   "frm": "#29",
+   "book": "new",
+   "source": "float",
+   "note": "studies/2026-10-15-icosa-star-hollow/data/exact_meshes.json (9-digit floats)"
+  },
+  {
+   "no": "D28",
+   "name": "DICTO Ogdoecontahedron (OG)",
+   "kind": "solid",
+   "frm": "#31",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-ogdoecontahedron.json"
+   ]
+  },
+  {
+   "no": "D29",
+   "name": "DICTO OCD Stella",
+   "kind": "solid",
+   "frm": "#31a",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-ocd-stella.json"
+   ]
+  },
+  {
+   "no": "D30",
+   "name": "DICTO Metaxyhexecontahedron",
+   "kind": "solid",
+   "frm": "#35a",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-metaxyhexecontahedron.json"
+   ]
+  },
+  {
+   "no": "D31",
+   "name": "DICTO Palintriacontahedron",
+   "kind": "solid",
+   "frm": "#35b",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-palintriacontahedron.json"
+   ]
+  },
+  {
+   "no": "D32",
+   "name": "GBPC (Golden Bodhi Pyrochlore Corner)",
+   "kind": "piece",
+   "frm": "#36",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-gbpc.json"
+   ]
+  },
+  {
+   "no": "D33",
+   "name": "Bull-horns OG adaptor",
+   "kind": "piece",
+   "frm": "#36",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-bull-horns-og-adaptor.json"
+   ]
+  },
+  {
+   "no": "D34",
+   "name": "Keyed octahedron (golden-key octet)",
+   "kind": "piece",
+   "frm": "#37",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-keyed-octahedron.json"
+   ]
+  },
+  {
+   "no": "D35",
+   "name": "W (one-piece glue)",
+   "kind": "piece",
+   "frm": "#37",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-w.json"
+   ]
+  },
+  {
+   "no": "D36",
+   "name": "Tetartoid core (golden envelope network)",
+   "kind": "piece",
+   "frm": "#37",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-tetartoid-core.json"
+   ]
+  },
+  {
+   "no": "D37",
+   "name": "DICTO Belted Triacontahedron (DBT)",
+   "kind": "solid",
+   "frm": "#37a",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-dbt.json"
+   ]
+  },
+  {
+   "no": "D38",
+   "name": "DICTO OTT (Octahedrally Truncated Triacontahedron)",
+   "kind": "solid",
+   "frm": "#37a",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-ott.json"
+   ]
+  },
+  {
+   "no": "D39",
+   "name": "Mirror middle piece Mg",
+   "kind": "piece",
+   "frm": "#37a",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-mirror-middle-piece-mg.json"
+   ]
+  },
+  {
+   "no": "D40",
+   "name": "DICTO GTI (golden truncated icosahedron)",
+   "kind": "solid",
+   "frm": "#38",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-gti.json"
+   ]
+  },
+  {
+   "no": "D41",
+   "name": "DICTO FPD (flat pentakis dodecahedron)",
+   "kind": "solid",
+   "frm": "#38",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-fpd.json"
+   ]
+  },
+  {
+   "no": "D42",
+   "name": "Five-sided Vajra",
+   "kind": "piece",
+   "frm": "#38",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-five-sided-vajra.json"
+   ]
+  },
+  {
+   "no": "D43",
+   "name": "Hexagonal Cleo",
+   "kind": "piece",
+   "frm": "#38",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-hexagonal-cleo.json"
+   ]
+  },
+  {
+   "no": "D44",
+   "name": "Monkey Staff B",
+   "kind": "piece",
+   "frm": "#38",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-monkey-staff-b.json"
+   ]
+  },
+  {
+   "no": "D45",
+   "name": "DICTO KRE",
+   "kind": "solid",
+   "frm": "#39",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-kre.json"
+   ]
+  },
+  {
+   "no": "D46",
+   "name": "DICTO PHE",
+   "kind": "solid",
+   "frm": "#39",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-phe.json"
+   ]
+  },
+  {
+   "no": "D47",
+   "name": "DICTO TPP",
+   "kind": "solid",
+   "frm": "#39",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-tpp.json"
+   ]
+  },
+  {
+   "no": "D48",
+   "name": "DICTO DPHP",
+   "kind": "solid",
+   "frm": "#39",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-dphp.json"
+   ]
+  },
+  {
+   "no": "D49",
+   "name": "DICTO TPH",
+   "kind": "solid",
+   "frm": "#39",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-tph.json"
+   ]
+  },
+  {
+   "no": "D50",
+   "name": "DICTO TQH",
+   "kind": "solid",
+   "frm": "#39",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-tqh.json"
+   ]
+  },
+  {
+   "no": "D51",
+   "name": "DICTO TQP",
+   "kind": "solid",
+   "frm": "#39",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-tqp.json"
+   ]
+  },
+  {
+   "no": "D52",
+   "name": "DICTO TQHD",
+   "kind": "solid",
+   "frm": "#39",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-tqhd.json"
+   ]
+  },
+  {
+   "no": "D53",
+   "name": "DICTO Sunstar-Hexa-Key",
+   "kind": "solid",
+   "frm": "#42",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/dicto-sunstar-hexa-key.json"
+   ]
+  },
+  {
+   "no": "D54",
+   "name": "DICTO Hex Aktis",
+   "kind": "piece",
+   "frm": "#43",
+   "book": "new",
+   "source": "cons",
+   "key": "hex_aktis",
+   "note": "OG (dataset dicto-ogdoecontahedron) hexagon joined to the centre (build-cleo-towers.py: 20 Hex Aktis + 60 Deltoid Aktis, every apex at the centre)"
+  },
+  {
+   "no": "D55",
+   "name": "DICTO Deltoid Aktis",
+   "kind": "piece",
+   "frm": "#43",
+   "book": "new",
+   "source": "cons",
+   "key": "deltoid_aktis",
+   "note": "OG (dataset dicto-ogdoecontahedron) deltoid joined to the centre (as D54)"
+  },
+  {
+   "no": "D56",
+   "name": "DICTO Triaktis (OTT triangle ray)",
+   "kind": "piece",
+   "frm": "#43",
+   "book": "new",
+   "source": "cons",
+   "key": "triaktis",
+   "note": "OTT (dataset dicto-ott) triangle of the 24-class joined to the centre (studies/2026-10-20-ott-rays: 8 Oktaktis + 24 Triaktis + 6 Tetraktis)"
+  },
+  {
+   "no": "D57",
+   "name": "DICTO Tetraktis (OTT rhombic ray)",
+   "kind": "piece",
+   "frm": "#43",
+   "book": "new",
+   "source": "cons",
+   "key": "tetraktis",
+   "note": "OTT (dataset dicto-ott) rhombus joined to the centre (as D56)"
+  },
+  {
+   "no": "D58",
+   "name": "DICTO TQP-252",
+   "kind": "solid",
+   "frm": "#43",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/dicto-tqp-252.json"
+   ]
+  },
+  {
+   "no": "D59",
+   "name": "DICTO TQ-320",
+   "kind": "solid",
+   "frm": "#43",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/dicto-tq-320.json"
+   ]
+  },
+  {
+   "no": "D60",
+   "name": "DICTO TQP-402",
+   "kind": "solid",
+   "frm": "#43",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/dicto-tqp-402.json"
+   ]
+  },
+  {
+   "no": "D61",
+   "name": "DICTO TQ-500",
+   "kind": "solid",
+   "frm": "#43",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/dicto-tq-500.json"
+   ]
+  },
+  {
+   "no": "D62",
+   "name": "DICTO TQD-732",
+   "kind": "solid",
+   "frm": "#43",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/dicto-tqd-732.json"
+   ]
+  },
+  {
+   "no": "D63",
+   "name": "DICTO TQHD-662",
+   "kind": "solid",
+   "frm": "#43",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/dicto-tqhd-662.json"
+   ]
+  },
+  {
+   "no": "D64",
+   "name": "DICTO TQP-672",
+   "kind": "solid",
+   "frm": "#43",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/dicto-tqp-672.json"
+   ]
+  },
+  {
+   "no": "D65",
+   "name": "Antonius",
+   "kind": "piece",
+   "frm": "#44",
+   "book": "new",
+   "source": "float",
+   "note": "k-mix krp-core cleo-sphere.js ANTONIUS (floats)"
+  },
+  {
+   "no": "D66",
+   "name": "Penta-cleo",
+   "kind": "piece",
+   "frm": "#20",
+   "book": "new",
+   "source": "float",
+   "note": "k-mix krp-core cleo-sphere.js PENTA_CLEO (floats)"
+  },
+  {
+   "no": "D67",
+   "name": "X (cube of edge φ minus one Euclid roof) (#47)",
+   "kind": "piece",
+   "frm": "#47",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-x.json"
+   ]
+  },
+  {
+   "no": "D68",
+   "name": "Y (cube of edge φ plus one Euclid roof) (#47)",
+   "kind": "piece",
+   "frm": "#47",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-y.json"
+   ]
+  },
+  {
+   "no": "D69",
+   "name": "Lotus Jewel Axes",
+   "kind": "solid",
+   "frm": "#48",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lotus-jewel-axes.json"
+   ]
+  },
+  {
+   "no": "D70",
+   "name": "Dodecaxes",
+   "kind": "solid",
+   "frm": "#48",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-dodecaxes.json"
+   ]
+  },
+  {
+   "no": "D71",
+   "name": "Samson",
+   "kind": "solid",
+   "frm": "#51",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-samson.json"
+   ]
+  },
+  {
+   "no": "D72",
+   "name": "Dented tetrahedron L/R (golden-key octet)",
+   "kind": "piece",
+   "frm": "#37",
+   "book": "new",
+   "source": "set",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-dented-tetrahedron-left.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-dented-tetrahedron-right.json"
+   ]
+  },
+  {
+   "no": "D73",
+   "name": "DICTO Fill set 1 / 2 pieces (grown bipyramid, grown tetrahedra L/R)",
+   "kind": "piece",
+   "frm": "#37a",
+   "book": "new",
+   "source": "set",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-1-f1.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f1.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f2-left.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-dicto-fill-set-2-f3-right.json"
+   ]
+  },
+  {
+   "no": "D74",
+   "name": "Cleo Towers (8 tower pieces)",
+   "kind": "piece",
+   "frm": "#43",
+   "book": "new",
+   "source": "set",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-1-on-3-gon.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-1-on-5-gon.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-2-on-4-gon.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-3-on-5-gon.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-3-on-6-gon.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-4-on-3-gon.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-4-on-5-gon.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-cleo-towers-shell-5-on-3-gon.json"
+   ]
+  },
+  {
+   "no": "D75",
+   "name": "Polar Cleo Towers (7 tower pieces + core ray)",
+   "kind": "piece",
+   "frm": "#43",
+   "book": "new",
+   "source": "set",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-core-ray.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-1-on-4-gon.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-2-on-5-gon.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-2-on-6-gon.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-3-on-4-gon.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-4-on-3-gon.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-5-on-3-gon.json",
+    "studies/2026-11-17-atoms-missing/models/pieces/piece-polar-cleo-towers-shell-5-on-5-gon.json"
+   ]
+  },
+  {
+   "no": "D76",
+   "name": "Sonsam",
+   "kind": "solid",
+   "frm": "#56",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-sonsam.json"
+   ]
+  },
+  {
+   "no": "D77",
+   "name": "Lahdeli",
+   "kind": "solid",
+   "frm": "#56",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lahdeli.json"
+   ]
+  },
+  {
+   "no": "D78",
+   "name": "Ian Dury",
+   "kind": "solid",
+   "frm": "#56",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-ian-dury.json"
+   ]
+  },
+  {
+   "no": "D79",
+   "name": "Blockhead",
+   "kind": "solid",
+   "frm": "#56",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-blockhead.json"
+   ]
+  },
+  {
+   "no": "D80",
+   "name": "Chucky",
+   "kind": "solid",
+   "frm": "#57",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-chucky.json"
+   ]
+  },
+  {
+   "no": "D81",
+   "name": "Fang",
+   "kind": "solid",
+   "frm": "#57",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-fang.json"
+   ]
+  },
+  {
+   "no": "D82",
+   "name": "Triskelion Tetrahedron",
+   "kind": "solid",
+   "frm": "#57",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-triskelion-tetrahedron.json"
+   ]
+  },
+  {
+   "no": "D83",
+   "name": "Keyaxes",
+   "kind": "solid",
+   "frm": "#59",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-keyaxes.json"
+   ]
+  },
+  {
+   "no": "D84",
+   "name": "Ganesha",
+   "kind": "solid",
+   "frm": "#61",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-ganesha.json"
+   ]
+  },
+  {
+   "no": "D85",
+   "name": "cell-first section of the 600-cell at height (2 + √5)/2* (Boole Stott, 1900)",
+   "kind": "solid",
+   "frm": "#63",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-humpty-dumpty.json"
+   ]
+  },
+  {
+   "no": "D86",
+   "name": "Kagemusha",
+   "kind": "solid",
+   "frm": "#62",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-shadow-17.json"
+   ]
+  },
+  {
+   "no": "D87",
+   "name": "Lion",
+   "kind": "solid",
+   "frm": "#63",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lion.json"
+   ]
+  },
+  {
+   "no": "D88",
+   "name": "Jabberwock",
+   "kind": "solid",
+   "frm": "#63",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-jabberwock.json"
+   ]
+  },
+  {
+   "no": "D89",
+   "name": "Tweedledum",
+   "kind": "solid",
+   "frm": "#63",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-tweedledum.json"
+   ]
+  },
+  {
+   "no": "D90",
+   "name": "Tweedledee",
+   "kind": "solid",
+   "frm": "#63",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-tweedledee.json"
+   ]
+  },
+  {
+   "no": "D91",
+   "name": "Mad Hatter",
+   "kind": "solid",
+   "frm": "#63",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-mad-hatter.json"
+   ]
+  },
+  {
+   "no": "D92",
+   "name": "March Hare",
+   "kind": "solid",
+   "frm": "#63",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-march-hare.json"
+   ]
+  },
+  {
+   "no": "D93",
+   "name": "Jubjub",
+   "kind": "solid",
+   "frm": "#63",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-jubjub.json"
+   ]
+  },
+  {
+   "no": "D94",
+   "name": "Alice",
+   "kind": "solid",
+   "frm": "#63",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-alice.json"
+   ]
+  },
+  {
+   "no": "D95",
+   "name": "White Rabbit",
+   "kind": "solid",
+   "frm": "#63",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-white-rabbit.json"
+   ]
+  },
+  {
+   "no": "D96",
+   "name": "Haigha",
+   "kind": "solid",
+   "frm": "#65",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-haigha.json"
+   ]
+  },
+  {
+   "no": "D97",
+   "name": "Hatta",
+   "kind": "solid",
+   "frm": "#65",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hatta.json"
+   ]
+  },
+  {
+   "no": "D98",
+   "name": "Red King",
+   "kind": "solid",
+   "frm": "#65",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-red-king.json"
+   ]
+  },
+  {
+   "no": "D99",
+   "name": "Walrus",
+   "kind": "solid",
+   "frm": "#65",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-walrus.json"
+   ]
+  },
+  {
+   "no": "D100",
+   "name": "Red Knight",
+   "kind": "solid",
+   "frm": "#65",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-red-knight.json"
+   ]
+  },
+  {
+   "no": "D101",
+   "name": "White Knight",
+   "kind": "solid",
+   "frm": "#65",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-white-knight.json"
+   ]
+  },
+  {
+   "no": "D102",
+   "name": "Fallen Humpty",
+   "kind": "solid",
+   "frm": "#62",
+   "book": "new",
+   "source": "float",
+   "note": "studies/2026-10-29-quanta-atoms/dicto-fallen-humpty.json (16-digit decimals only)"
+  },
+  {
+   "no": "D103",
+   "name": "Golden TI Star",
+   "kind": "solid",
+   "frm": "#78",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-golden-ti-star.json"
+   ]
+  },
+  {
+   "no": "D104",
+   "name": "Star Halo",
+   "kind": "solid",
+   "frm": "#78",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-star-halo.json"
+   ]
+  },
+  {
+   "no": "D105",
+   "name": "TI Star core",
+   "kind": "solid",
+   "frm": "#78",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-ti-star-core.json"
+   ]
+  },
+  {
+   "no": "D106",
+   "name": "Cube Pearl",
+   "kind": "solid",
+   "frm": "#80",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-cube-pearl.json"
+   ]
+  },
+  {
+   "no": "D107",
+   "name": "Golden Clasp",
+   "kind": "solid",
+   "frm": "Star Cores",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-golden-clasp.json"
+   ]
+  },
+  {
+   "no": "D108",
+   "name": "Hamlet",
+   "kind": "solid",
+   "frm": "#80",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hamlet.json"
+   ]
+  },
+  {
+   "no": "D109",
+   "name": "Ophelia",
+   "kind": "solid",
+   "frm": "#80",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-ophelia.json"
+   ]
+  },
+  {
+   "no": "D110",
+   "name": "HexOct c-tile (λ = 1/10)",
+   "kind": "piece",
+   "frm": "#75",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing/models/piece-hexoct-c-tile.json"
+   ]
+  },
+  {
+   "no": "D111",
+   "name": "HexOct h-tile (λ = 1/10)",
+   "kind": "piece",
+   "frm": "#75",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hexoct-h-tile.json"
+   ]
+  },
+  {
+   "no": "D112",
+   "name": "A · HexOct 3/8 h-tile, the twisted cube",
+   "kind": "solid",
+   "frm": "#86",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-twisted-cube.json"
+   ]
+  },
+  {
+   "no": "D113",
+   "name": "B · HexOct −1/8 (whole octahedra) c-tile",
+   "kind": "piece",
+   "frm": "#86",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hexoct-b-c-tile.json"
+   ]
+  },
+  {
+   "no": "D114",
+   "name": "B · HexOct −1/8 (whole octahedra) h-tile",
+   "kind": "piece",
+   "frm": "#86",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hexoct-b-h-tile.json"
+   ]
+  },
+  {
+   "no": "D115",
+   "name": "C · HexOct −1/8 c-tile",
+   "kind": "piece",
+   "frm": "#86",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hexoct-c-c-tile.json"
+   ]
+  },
+  {
+   "no": "D116",
+   "name": "C · HexOct −1/8 h-tile",
+   "kind": "piece",
+   "frm": "#86",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hexoct-c-h-tile.json"
+   ]
+  },
+  {
+   "no": "D117",
+   "name": "D · HexOct −11/24 c-tile",
+   "kind": "piece",
+   "frm": "#86",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hexoct-d-c-tile.json"
+   ]
+  },
+  {
+   "no": "D119",
+   "name": "Greater Golden Cut Dodecahedron",
+   "kind": "solid",
+   "frm": "#88",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-greater-golden-cut-dodecahedron.json"
+   ]
+  },
+  {
+   "no": "D120",
+   "name": "Lesser Golden Cut Dodecahedron",
+   "kind": "solid",
+   "frm": "#88",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lesser-golden-cut-dodecahedron.json"
+   ]
+  },
+  {
+   "no": "D121",
+   "name": "Greater Golden Cut Icosahedron",
+   "kind": "solid",
+   "frm": "#88",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-greater-golden-cut-icosahedron.json"
+   ]
+  },
+  {
+   "no": "D122",
+   "name": "Lesser Golden Cut Icosahedron",
+   "kind": "solid",
+   "frm": "#88",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lesser-golden-cut-icosahedron.json"
+   ]
+  },
+  {
+   "no": "D123",
+   "name": "Greater Golden Cut Cube",
+   "kind": "solid",
+   "frm": "#88",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-greater-golden-cut-cube.json"
+   ]
+  },
+  {
+   "no": "D124",
+   "name": "Lesser Golden Cut Cube",
+   "kind": "solid",
+   "frm": "#88",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lesser-golden-cut-cube.json"
+   ]
+  },
+  {
+   "no": "D125",
+   "name": "Greater Golden Cut Tetrahedron",
+   "kind": "solid",
+   "frm": "#88",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-greater-golden-cut-tetrahedron.json"
+   ]
+  },
+  {
+   "no": "D126",
+   "name": "Lesser Golden Cut Tetrahedron",
+   "kind": "solid",
+   "frm": "#88",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lesser-golden-cut-tetrahedron.json"
+   ]
+  },
+  {
+   "no": "D127",
+   "name": "Greater Golden Cut Rhombic Dodecahedron",
+   "kind": "solid",
+   "frm": "#89",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-greater-golden-cut-rhombic-dodecahedron.json"
+   ]
+  },
+  {
+   "no": "D128",
+   "name": "Lesser Golden Cut Rhombic Dodecahedron",
+   "kind": "solid",
+   "frm": "#89",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lesser-golden-cut-rhombic-dodecahedron.json"
+   ]
+  },
+  {
+   "no": "D129",
+   "name": "Greater Golden Cut Rhombic Triacontahedron",
+   "kind": "solid",
+   "frm": "#89",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-greater-golden-cut-rhombic-triacontahedron.json"
+   ]
+  },
+  {
+   "no": "D130",
+   "name": "Lesser Golden Cut Rhombic Triacontahedron",
+   "kind": "solid",
+   "frm": "#89",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lesser-golden-cut-rhombic-triacontahedron.json"
+   ]
+  },
+  {
+   "no": "D131",
+   "name": "Greater Golden Cut Snub Dodecahedron L/R",
+   "kind": "solid",
+   "frm": "#89",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-greater-golden-cut-snub-dodecahedron.json"
+   ]
+  },
+  {
+   "no": "D132",
+   "name": "Lesser Golden Cut Snub Dodecahedron L/R",
+   "kind": "solid",
+   "frm": "#89",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-lesser-golden-cut-snub-dodecahedron.json"
+   ]
+  },
+  {
+   "no": "D133",
+   "name": "DICTO Void Keeper",
+   "kind": "piece",
+   "frm": "#96",
+   "book": "new",
+   "source": "skip",
+   "key": "no exact form",
+   "note": "#96 leaves the exact form open (Section 6); no model file"
+  },
+  {
+   "no": "D134",
+   "name": "DICTO Golden Skin",
+   "kind": "piece (a family, one per brick size)",
+   "frm": "#96",
+   "book": "new",
+   "source": "skip",
+   "key": "no exact form",
+   "note": "#96 leaves the exact form open (Section 6); a family, one per brick size; no model file"
+  },
+  {
+   "no": "D135",
+   "name": "Weirdstone L/R",
+   "kind": "piece",
+   "frm": "finding F21",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-weirdstone.json"
+   ]
+  },
+  {
+   "no": "D136",
+   "name": "Tadpole L/R",
+   "kind": "piece",
+   "frm": "finding F21",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-tadpole.json"
+   ]
+  },
+  {
+   "no": "D137",
+   "name": "Frog Chorus (the gap star)",
+   "kind": "piece",
+   "frm": "finding F21",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-frog-chorus.json"
+   ]
+  },
+  {
+   "no": "D138",
+   "name": "Diadem L/R",
+   "kind": "piece",
+   "frm": "#24",
+   "book": "new",
+   "source": "set",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-diadem.json",
+    "studies/2026-11-17-atoms-missing-2/models/pieces/piece-diadem-r.json"
+   ]
+  },
+  {
+   "no": "D139",
+   "name": "Hasu",
+   "kind": "piece",
+   "frm": "#26",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-hasu.json"
+   ]
+  },
+  {
+   "no": "D140",
+   "name": "Chatra",
+   "kind": "piece",
+   "frm": "#26",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-chatra.json"
+   ]
+  },
+  {
+   "no": "D141",
+   "name": "Mudra",
+   "kind": "piece",
+   "frm": "#26",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-mudra.json"
+   ]
+  },
+  {
+   "no": "D142",
+   "name": "Vajra (twist)",
+   "kind": "piece",
+   "frm": "#27",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-vajra-twist.json"
+   ]
+  },
+  {
+   "no": "D143",
+   "name": "Cleo-low 2",
+   "kind": "piece",
+   "frm": "#27",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-cleo-low-2.json"
+   ]
+  },
+  {
+   "no": "D144",
+   "name": "Vajra-blade",
+   "kind": "piece",
+   "frm": "#27",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-vajra-blade.json"
+   ]
+  },
+  {
+   "no": "D145",
+   "name": "Sevenfold-blade",
+   "kind": "piece",
+   "frm": "#27",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-sevenfold-blade.json"
+   ]
+  },
+  {
+   "no": "D146",
+   "name": "Triskelion Hex",
+   "kind": "piece",
+   "frm": "#19",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-triskelion-hex.json"
+   ]
+  },
+  {
+   "no": "D147",
+   "name": "Triskelion",
+   "kind": "piece",
+   "frm": "#19",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-triskelion.json"
+   ]
+  },
+  {
+   "no": "D148",
+   "name": "Julia G3",
+   "kind": "piece",
+   "frm": "#54",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-julia-g3.json"
+   ]
+  },
+  {
+   "no": "D149",
+   "name": "Julia G4",
+   "kind": "piece",
+   "frm": "#54",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-julia-g4.json"
+   ]
+  },
+  {
+   "no": "D150",
+   "name": "Julia G5a",
+   "kind": "piece",
+   "frm": "#54",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-julia-g5a.json"
+   ]
+  },
+  {
+   "no": "D151",
+   "name": "Julia G5b",
+   "kind": "piece",
+   "frm": "#54",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-julia-g5b.json"
+   ]
+  },
+  {
+   "no": "D152",
+   "name": "Julia G6",
+   "kind": "piece",
+   "frm": "#54",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-julia-g6.json"
+   ]
+  },
+  {
+   "no": "D153",
+   "name": "Julia G8",
+   "kind": "piece",
+   "frm": "#54",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-julia-g8.json"
+   ]
+  },
+  {
+   "no": "D154",
+   "name": "Julia G9",
+   "kind": "piece",
+   "frm": "#54",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-julia-g9.json"
+   ]
+  },
+  {
+   "no": "D155",
+   "name": "Julia G10",
+   "kind": "piece",
+   "frm": "#54",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-julia-g10.json"
+   ]
+  },
+  {
+   "no": "D156",
+   "name": "Pimentel G11",
+   "kind": "piece",
+   "frm": "#54",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-pimentel-g11.json"
+   ]
+  },
+  {
+   "no": "D157",
+   "name": "Sonsam-K",
+   "kind": "piece",
+   "frm": "#56",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-sonsam-k.json"
+   ]
+  },
+  {
+   "no": "D158",
+   "name": "Lahdeli-K",
+   "kind": "piece",
+   "frm": "#56",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-lahdeli-k.json"
+   ]
+  },
+  {
+   "no": "D159",
+   "name": "Ian Dury-K",
+   "kind": "piece",
+   "frm": "#56",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-ian-dury-k.json"
+   ]
+  },
+  {
+   "no": "D160",
+   "name": "Rhombo-K",
+   "kind": "piece",
+   "frm": "#56",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-rhombo-k.json"
+   ]
+  },
+  {
+   "no": "D161",
+   "name": "Maedate",
+   "kind": "piece",
+   "frm": "#85",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-maedate.json"
+   ]
+  },
+  {
+   "no": "D162",
+   "name": "Kuwagata",
+   "kind": "piece",
+   "frm": "#85",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-kuwagata.json"
+   ]
+  },
+  {
+   "no": "D171",
+   "name": "Lesser Golden OG",
+   "kind": "solid",
+   "frm": "#91",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/dicto-lesser-golden-og.json"
+   ]
+  },
+  {
+   "no": "D172",
+   "name": "Greater Golden OG",
+   "kind": "solid",
+   "frm": "#91",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/dicto-greater-golden-og.json"
+   ]
+  },
+  {
+   "no": "D173",
+   "name": "Narcissus",
+   "kind": "piece",
+   "frm": "#98",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-narcissus.json"
+   ]
+  },
+  {
+   "no": "D174",
+   "name": "Covenant",
+   "kind": "solid",
+   "frm": "#98",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/dicto-covenant.json"
+   ]
+  },
+  {
+   "no": "D175",
+   "name": "Sheriff",
+   "kind": "piece",
+   "frm": "#99",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-sheriff.json"
+   ]
+  },
+  {
+   "no": "D176",
+   "name": "Lone-star",
+   "kind": "piece",
+   "frm": "#99",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/piece-lone-star.json"
+   ]
+  },
+  {
+   "no": "D177",
+   "name": "DICTO 1:2 Truncated Octahedron",
+   "kind": "solid",
+   "frm": "#105",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/dicto-1-2-truncated-octahedron.json"
+   ]
+  },
+  {
+   "no": "D178",
+   "name": "DICTO 2:1 Truncated Octahedron",
+   "kind": "solid",
+   "frm": "#105",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/dicto-2-1-truncated-octahedron.json"
+   ]
+  },
+  {
+   "no": "D118",
+   "name": "E · HexOct 1/10 c-tile",
+   "kind": "piece",
+   "frm": "#86",
+   "book": "new",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hexoct-e-c-tile.json"
+   ]
+  },
+  {
+   "no": "Hart 1996, tetrahedral stellations of the dodecahedron, no. 8",
+   "name": "dodecahedron stellation 8* (Hart, 1996)",
+   "kind": "solid",
+   "frm": "#42",
+   "book": "known",
+   "source": "float",
+   "note": "k-mix krp-core sunstar.js DOGSTAR (registry floats)"
+  },
+  {
+   "no": "Mosseri–Sadoc t6 (scaled by 1/φ)",
+   "name": "Mosseri–Sadoc tile t6* (Mosseri and Sadoc, 1982)",
+   "kind": "piece",
+   "frm": "#19",
+   "book": "known",
+   "source": "ident",
+   "key": "AXE"
+  },
+  {
+   "no": "Mosseri–Sadoc t4 (scaled by 1/φ)",
+   "name": "Mosseri–Sadoc tile t4* (Mosseri and Sadoc, 1982)",
+   "kind": "piece",
+   "frm": "#19",
+   "book": "known",
+   "source": "ident",
+   "key": "CLEO"
+  },
+  {
+   "no": "—",
+   "name": "icosahedron face pyramid* (classical; Mackay, 1962)",
+   "kind": "piece",
+   "frm": "#29",
+   "book": "known",
+   "source": "cons",
+   "key": "cleo_icos"
+  },
+  {
+   "no": "—",
+   "name": "truncated octahedron x = φ* (Koca et al., 2015)",
+   "kind": "solid",
+   "frm": "#48",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-icosaxes.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "truncated octahedron x = 1/φ* (Koca et al., 2015)",
+   "kind": "solid",
+   "frm": "#48",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-unborn-axes.json"
+   ]
+  },
+  {
+   "no": "U5; W2",
+   "name": "regular octahedron at the Delian bond* (classical)",
+   "kind": "solid",
+   "frm": "#51",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-delilah.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "convex hull of Jessen's orthogonal icosahedron* (Jessen, 1967)",
+   "kind": "solid",
+   "frm": "#55",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-goliath.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "tetragonal disphenoid* (classical)",
+   "kind": "solid",
+   "frm": "#55",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-david.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "cell-first section of the 600-cell at height 0* (Boole Stott, 1900)",
+   "kind": "solid",
+   "frm": "#63",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-alicia.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "cell-first section of the 600-cell at height (3 + √5)/2* (Boole Stott, 1900)",
+   "kind": "solid",
+   "frm": "#63",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-unicorn.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "cell-first section of the 600-cell at height (5 + 3√5)/4* (Boole Stott, 1900)",
+   "kind": "solid",
+   "frm": "#63",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-bandersnatch.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "regular-hexagon stage of the icosidodecahedron* (Zefiro, 2011)",
+   "kind": "solid",
+   "frm": "#89",
+   "book": "known",
+   "source": "cons",
+   "key": "id_stage_third"
+  },
+  {
+   "no": "—",
+   "name": "regular-decagon stage of the icosidodecahedron* (Zefiro, 2011)",
+   "kind": "solid",
+   "frm": "#89",
+   "book": "known",
+   "source": "cons",
+   "key": "id_stage_golden"
+  },
+  {
+   "no": "Mosseri–Sadoc t3 (half size)",
+   "name": "Mosseri–Sadoc tile t3* (Mosseri and Sadoc, 1982)",
+   "kind": "piece",
+   "frm": "#27",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/known-tricap.json",
+    "studies/2026-11-17-atoms-missing-2/models/known-cleo-low.json"
+   ]
+  },
+  {
+   "no": "Mosseri–Sadoc t2",
+   "name": "Mosseri–Sadoc tile t2* (Mosseri and Sadoc, 1982)",
+   "kind": "piece",
+   "frm": "#77",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/known-hound-tooth.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "pseudoicosahedron* (Koca et al., 2015)",
+   "kind": "solid",
+   "frm": "#48",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/known-unborn.json"
+   ]
+  },
+  {
+   "no": "Wenninger 28",
+   "name": "excavated dodecahedron* (Coxeter, Du Val, Flather and Petrie, 1938)",
+   "kind": "solid",
+   "frm": "#19",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/known-inner-eye.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "rectified truncated icosahedron* (classical; near-miss Johnson solid, McCooey)",
+   "kind": "solid",
+   "frm": "#95",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/known-cut-og.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "augmented cuboctahedron* (Stewart, 1970)",
+   "kind": "solid",
+   "frm": "The Permutohedron Paradigm",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/known-dicto-13-coa.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "half rhombic dodecahedron* (classical)",
+   "kind": "piece",
+   "frm": "The Permutohedron Paradigm",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/known-hemi-rd.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "square bipyramid* (classical)",
+   "kind": "solid",
+   "frm": "#62",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/known-oct-16.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "triangular bipyramid* (classical)",
+   "kind": "solid",
+   "frm": "#62",
+   "book": "known",
+   "source": "file",
+   "files": [
+    "studies/2026-11-17-atoms-missing-2/models/known-tbp-5.json"
+   ]
+  },
+  {
+   "no": "—",
+   "name": "DICTO all-rhombus block",
+   "kind": "piece",
+   "frm": "finding F1",
+   "book": "known",
+   "source": "cons",
+   "key": "all_rhombus_block"
+  },
+  {
+   "no": "—",
+   "name": "DICTO flattened rhombohedron",
+   "kind": "piece",
+   "frm": "finding F1",
+   "book": "known",
+   "source": "cons",
+   "key": "flattened_rhombohedron"
+  },
+  {
+   "no": "—",
+   "name": "Bain disphenoid",
+   "kind": "solid",
+   "frm": "finding F3",
+   "book": "known",
+   "source": "skip",
+   "key": "no data",
+   "note": "no vertex data found (finding F3; not in the dataset or the app registry)"
+  },
+  {
+   "no": "—",
+   "name": "Bain rhombic dodecahedron",
+   "kind": "solid",
+   "frm": "finding F4",
+   "book": "known",
+   "source": "cons",
+   "key": "bain_rd"
+  },
+  {
+   "no": "—",
+   "name": "Fedorov's elongated dodecahedron with regular hexagons* (Fedorov, 1885)",
+   "kind": "solid",
+   "frm": "finding F5",
+   "book": "known",
+   "source": "cons",
+   "key": "regular_hex_ed"
+  },
+  {
+   "no": "J1",
+   "name": "Half octahedron P (#47 connector)",
+   "kind": "piece",
+   "frm": "#47",
+   "book": "known",
+   "source": "cons",
+   "key": "half_octahedron"
+  },
+  {
+   "no": "—",
+   "name": "Tetrahedron face pyramid Q and Q' (#44, #47 connectors)",
+   "kind": "piece",
+   "frm": "#47",
+   "book": "known",
+   "source": "cons",
+   "key": "tetra_face_pyramid"
+  },
+  {
+   "no": "—",
+   "name": "A · HexOct 3/8 c-tile, brick of two cubes",
+   "kind": "solid",
+   "frm": "#86",
+   "book": "known",
+   "source": "cons",
+   "key": "brick"
+  },
+  {
+   "no": "—",
+   "name": "D · HexOct −11/24 h-tile, regular hexagonal prism",
+   "kind": "solid",
+   "frm": "#86",
+   "book": "known",
+   "source": "cons",
+   "key": "hex_prism"
+  }
+ ],
+ "out_of_scope": [
+  {
+   "no": "D163",
+   "name": "Greater Golden Cut Great Dodecahedron",
+   "kind": "star polyhedron",
+   "frm": "#89",
+   "book": "new"
+  },
+  {
+   "no": "D164",
+   "name": "Lesser Golden Cut Great Dodecahedron",
+   "kind": "star polyhedron",
+   "frm": "#89",
+   "book": "new"
+  },
+  {
+   "no": "D165",
+   "name": "Greater Golden Cut Great Icosahedron",
+   "kind": "star polyhedron",
+   "frm": "#89",
+   "book": "new"
+  },
+  {
+   "no": "D166",
+   "name": "Lesser Golden Cut Great Icosahedron",
+   "kind": "star polyhedron",
+   "frm": "#89",
+   "book": "new"
+  },
+  {
+   "no": "D167",
+   "name": "Greater Golden Cut Small Stellated Dodecahedron",
+   "kind": "star polyhedron",
+   "frm": "#89",
+   "book": "new"
+  },
+  {
+   "no": "D168",
+   "name": "Lesser Golden Cut Small Stellated Dodecahedron",
+   "kind": "star polyhedron",
+   "frm": "#89",
+   "book": "new"
+  },
+  {
+   "no": "D169",
+   "name": "Greater Golden Cut Great Stellated Dodecahedron",
+   "kind": "star polyhedron",
+   "frm": "#89",
+   "book": "new"
+  },
+  {
+   "no": "D170",
+   "name": "Lesser Golden Cut Great Stellated Dodecahedron",
+   "kind": "star polyhedron",
+   "frm": "#89",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Dodeca-13",
+   "kind": "cluster",
+   "frm": "#13",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Hexa",
+   "kind": "cluster",
+   "frm": "#18",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Jewel-Tetra",
+   "kind": "cluster",
+   "frm": "#41",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Jewel-Octa",
+   "kind": "cluster",
+   "frm": "#41",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Sunstar-Tetra",
+   "kind": "cluster",
+   "frm": "#42",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Sunstar-Octa",
+   "kind": "cluster",
+   "frm": "#42",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Icosaxes Hexa",
+   "kind": "cluster",
+   "frm": "#59",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Lotus Hexa",
+   "kind": "cluster",
+   "frm": "#59",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Vacuus Solids (every solid emptied to its fins: SHEETS and STRUTS)",
+   "kind": "structure",
+   "frm": "#87",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Mono-Strut Vacuus (Blockhead, Cube Pearl, DICTO GTI, tetragonal disphenoid* (classical), regular octahedron at the Delian bond, Dodecaxes, Golden Clasp, convex hull of Jessen's orthogonal icosahedron** (Jessen, 1967), truncated octahedron x = φ, TI Star core, truncated octahedron x = 1/φ, White Knight)",
+   "kind": "structure",
+   "frm": "#87",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Mono-Length Vacuus (the cuboctahedron)",
+   "kind": "structure",
+   "frm": "#87",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Disc Vacuus: Kagemusha Pentagon Disc",
+   "kind": "structure",
+   "frm": "#87",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Disc Vacuus: Lion Disc Vacuus",
+   "kind": "structure",
+   "frm": "#87",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Isofin Vacuus (5 Platonic, 13 Archimedean, rhombic dodecahedron, rhombic triacontahedron, regular octahedron at the Delian bond)",
+   "kind": "structure",
+   "frm": "#87",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Vacuus of the DICTO 1:2 and 2:1 Truncated Octahedra",
+   "kind": "structure",
+   "frm": "#105",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Angeli (the Vacuus of a Galois twin; Angelus for one)",
+   "kind": "structure family",
+   "frm": "The Platonic Solids",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Disc Vacuus: twin OG Angelus",
+   "kind": "structure",
+   "frm": "The Platonic Solids",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Euclid–Kepler–Pacioli (EKP) cell",
+   "kind": "structure",
+   "frm": "#8",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Euclid–Kepler–Pacioli network",
+   "kind": "structure",
+   "frm": "#8",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Star Chain Reaction",
+   "kind": "structure",
+   "frm": "#42",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Jewel chain",
+   "kind": "structure",
+   "frm": "finding F12a",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO-Star",
+   "kind": "cluster",
+   "frm": "#14",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Kagome hulls (six hull networks)",
+   "kind": "structure",
+   "frm": "#17",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Icosa-13",
+   "kind": "structure",
+   "frm": "#19",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "UNITY (icosidodecahedron + 12 J11)",
+   "kind": "cluster",
+   "frm": "#19",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Stella-Corona",
+   "kind": "cluster",
+   "frm": "#19",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Icosahedral octet",
+   "kind": "structure",
+   "frm": "finding F21",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Chain of Karma",
+   "kind": "structure",
+   "frm": "#22",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Spheres of Dharma",
+   "kind": "structure",
+   "frm": "#23",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Spheroid-13 RD",
+   "kind": "cluster",
+   "frm": "#25",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO ATOM-13×13",
+   "kind": "structure",
+   "frm": "#26",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Hecatogdoecontahedron",
+   "kind": "compound",
+   "frm": "#34a",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Interlock set 1 and set 2 (piece sets)",
+   "kind": "structure",
+   "frm": "#33",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Cleo star",
+   "kind": "cluster",
+   "frm": "#35",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Golden Bodhi Pyrochlore",
+   "kind": "structure",
+   "frm": "#36",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Kepler–Poinsot–UP cycle",
+   "kind": "structure",
+   "frm": "#38a",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Jewel-Rhombi",
+   "kind": "cluster",
+   "frm": "#41",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Sunstar-Rhombi",
+   "kind": "cluster",
+   "frm": "#42",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Sunstar-Hexa",
+   "kind": "cluster",
+   "frm": "#42",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Reuleaux octahedron, Reuleaux cube, Reuleaux icosahedron, Reuleaux dodecahedron (balls on the cube, octahedron, dodecahedron, icosahedron corners; names by look)",
+   "kind": "curved",
+   "frm": "#45",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Icosaxes Bloom",
+   "kind": "cluster",
+   "frm": "#59",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Icosaxes Bud",
+   "kind": "cluster",
+   "frm": "#59",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Icosaxes Seed",
+   "kind": "cluster",
+   "frm": "#59",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Lotus Jewel Bloom",
+   "kind": "cluster",
+   "frm": "#59",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Lotus Jewel Bud",
+   "kind": "cluster",
+   "frm": "#59",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Lotus Jewel Seed",
+   "kind": "cluster",
+   "frm": "#59",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Void set 1 (piece set)",
+   "kind": "structure",
+   "frm": "#96",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "DICTO Void set 2 (piece set)",
+   "kind": "structure",
+   "frm": "#96",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "The kits of #37 (piece sets on the octet truss)",
+   "kind": "structure",
+   "frm": "#37",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "The kits of #95 (piece sets for the cut OG)",
+   "kind": "structure",
+   "frm": "#95",
+   "book": "new"
+  },
+  {
+   "no": "—",
+   "name": "Golden Truncated 5-cell",
+   "kind": "four-dimensional solid",
+   "frm": "#109",
+   "book": "known"
+  },
+  {
+   "no": "—",
+   "name": "Golden Cantellated 5-cell",
+   "kind": "four-dimensional solid",
+   "frm": "#109",
+   "book": "known"
+  },
+  {
+   "no": "—",
+   "name": "DICTO All-Golden Polytopes",
+   "kind": "four-dimensional solids (a family)",
+   "frm": "#91",
+   "book": "known"
+  },
+  {
+   "no": "—",
+   "name": "Valley Charge",
+   "kind": "four-dimensional solid",
+   "frm": "#110",
+   "book": "known"
+  },
+  {
+   "no": "—",
+   "name": "the Red Queen's dual cats A*, B*, C3*",
+   "kind": "four-dimensional solids (three)",
+   "frm": "#110",
+   "book": "known"
+  },
+  {
+   "no": "{3,3,5}",
+   "name": "600-cell* (Schläfli, 1852)",
+   "kind": "four-dimensional regular solid",
+   "frm": "#63",
+   "book": "known"
+  },
+  {
+   "no": "{5,3,3}",
+   "name": "120-cell* (Schläfli, 1852)",
+   "kind": "four-dimensional regular solid",
+   "frm": "#65",
+   "book": "known"
+  },
+  {
+   "no": "—",
+   "name": "expanded 5-cell* (Elte, 1912; as an orbit of the 600-cell: Koca, Koç, Al-Barwani and Al-Farsi, 2006)",
+   "kind": "four-dimensional solid",
+   "frm": "#110",
+   "book": "known"
+  },
+  {
+   "no": "—",
+   "name": "4D permutohedron* (Schoute, 1911)",
+   "kind": "four-dimensional uniform solid",
+   "frm": "#105",
+   "book": "known"
+  },
+  {
+   "no": "—",
+   "name": "Sunstar Lattice (dodecahedra and stellations 8)",
+   "kind": "structure",
+   "frm": "#42",
+   "book": "known"
+  },
+  {
+   "no": "—",
+   "name": "Gray's cage of twelve icosahedra* (Gray, 2002)",
+   "kind": "structure",
+   "frm": "#19",
+   "book": "known"
+  },
+  {
+   "no": "—",
+   "name": "Bodhi seed",
+   "kind": "structure",
+   "frm": "#24",
+   "book": "known"
+  },
+  {
+   "no": "—",
+   "name": "Reuleaux tetrahedron",
+   "kind": "curved",
+   "frm": "#45",
+   "book": "known"
+  }
+ ]
+}

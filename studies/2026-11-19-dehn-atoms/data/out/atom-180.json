@@ -1,0 +1,38 @@
+{
+ "index": 180,
+ "no": "—",
+ "name": "cell-first section of the 600-cell at height (3 + √5)/2* (Boole Stott, 1900)",
+ "kind": "solid",
+ "book": "known",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Unicorn",
+   "corners": 42,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 120,
+    "max_planarity": "9.22e-81",
+    "planar": true,
+    "volume": "50.69975341728933580186834",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Unicorn",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-unicorn.json"
+   },
+   "faces": 80,
+   "edges": 120,
+   "distinct_dihedrals": 7,
+   "independent_mod_pi": 7,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "48.0",
+   "verdict": "NONZERO",
+   "seconds": 0.4
+  }
+ ],
+ "verdict": "NONZERO"
+}

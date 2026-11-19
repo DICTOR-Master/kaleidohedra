@@ -1,0 +1,37 @@
+{
+ "index": 15,
+ "no": "D16",
+ "name": "Admiral Cap (icosahedron edge roof)",
+ "kind": "piece",
+ "book": "new",
+ "source": "cons",
+ "solids": [
+  {
+   "name": "Admiral Cap (icosahedron edge roof)",
+   "corners": 5,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 9,
+    "max_planarity": "5.27e-82",
+    "planar": true,
+    "volume": "0.1348361657291579040170489",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": false,
+    "construction": "admiral_cap"
+   },
+   "faces": 6,
+   "edges": 9,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "5.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

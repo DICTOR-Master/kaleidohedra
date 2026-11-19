@@ -1,0 +1,38 @@
+{
+ "index": 59,
+ "no": "D60",
+ "name": "DICTO TQP-402",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO TQP-402",
+   "corners": 260,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 660,
+    "max_planarity": "2.56e-80",
+    "planar": true,
+    "volume": "8.735471322238993139389934",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO TQP-402",
+    "file": "studies/2026-11-17-atoms-missing/models/dicto-tqp-402.json"
+   },
+   "faces": 402,
+   "edges": 660,
+   "distinct_dihedrals": 8,
+   "independent_mod_pi": 8,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "75.135",
+   "verdict": "NONZERO",
+   "seconds": 0.5
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,42 @@
+{
+ "index": 35,
+ "no": "D36",
+ "name": "Tetartoid core (golden envelope network)",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Tetartoid core (golden envelope network)",
+   "corners": 20,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 30,
+    "max_planarity": "3.03e-81",
+    "planar": true,
+    "volume": "0.05853653759207851714835045",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Tetartoid core (golden envelope network)",
+    "file": "studies/2026-11-17-atoms-missing/models/piece-tetartoid-core.json"
+   },
+   "faces": 12,
+   "edges": 30,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 0,
+   "rational_pi_dihedrals_deg": [
+    "108.0",
+    "144.0",
+    "90.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

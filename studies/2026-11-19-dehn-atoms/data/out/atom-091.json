@@ -1,0 +1,38 @@
+{
+ "index": 91,
+ "no": "D92",
+ "name": "March Hare",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "March Hare",
+   "corners": 144,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 360,
+    "max_planarity": "4.56e-80",
+    "planar": true,
+    "volume": "175.6942793971087810847115",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "March Hare",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-march-hare.json"
+   },
+   "faces": 218,
+   "edges": 360,
+   "distinct_dihedrals": 26,
+   "independent_mod_pi": 14,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "92.764",
+   "verdict": "NONZERO",
+   "seconds": 17.6
+  }
+ ],
+ "verdict": "NONZERO"
+}

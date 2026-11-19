@@ -1,0 +1,46 @@
+{
+ "index": 193,
+ "no": "—",
+ "name": "DICTO all-rhombus block",
+ "kind": "piece",
+ "book": "known",
+ "source": "cons",
+ "solids": [
+  {
+   "name": "DICTO all-rhombus block",
+   "corners": 8,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 12,
+    "max_planarity": "1.05e-81",
+    "planar": true,
+    "volume": "0.8090169943749474241022934",
+    "volume_sign": 1
+   },
+   "info": {
+    "field": "Q(sqrt3, sqrt5, sqrt(1 - y^2)) at 80 digits",
+    "convex": true,
+    "construction": "all_rhombus_block"
+   },
+   "faces": 6,
+   "edges": 12,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "2.1084e-81",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "d1_check": {
+  "construction_faces": 12,
+  "dataset_faces": 12,
+  "construction_verdict": "ZERO",
+  "dataset_verdict": "ZERO",
+  "distinct": [
+   5,
+   5
+  ]
+ },
+ "verdict": "ZERO"
+}

@@ -1,0 +1,38 @@
+{
+ "index": 97,
+ "no": "D98",
+ "name": "Red King",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Red King",
+   "corners": 80,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 130,
+    "max_planarity": "6.33e-81",
+    "planar": true,
+    "volume": "137.5950487681484774666558",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Red King",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-red-king.json"
+   },
+   "faces": 52,
+   "edges": 130,
+   "distinct_dihedrals": 6,
+   "independent_mod_pi": 5,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "45.332",
+   "verdict": "NONZERO",
+   "seconds": 0.1
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,40 @@
+{
+ "index": 31,
+ "no": "D32",
+ "name": "GBPC (Golden Bodhi Pyrochlore Corner)",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "GBPC (Golden Bodhi Pyrochlore Corner)",
+   "corners": 4,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 6,
+    "max_planarity": "7.25e-82",
+    "planar": true,
+    "volume": "0.0003298397576569702460829782",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "GBPC (Golden Bodhi Pyrochlore Corner)",
+    "file": "studies/2026-11-17-atoms-missing/models/piece-gbpc.json"
+   },
+   "faces": 4,
+   "edges": 6,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "144.0"
+   ],
+   "max_coefficient_sum": "0.82405",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

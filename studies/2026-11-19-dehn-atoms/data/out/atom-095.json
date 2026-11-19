@@ -1,0 +1,38 @@
+{
+ "index": 95,
+ "no": "D96",
+ "name": "Haigha",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Haigha",
+   "corners": 114,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 171,
+    "max_planarity": "1.59e-80",
+    "planar": true,
+    "volume": "145.5669723570803700696207",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Haigha",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-haigha.json"
+   },
+   "faces": 59,
+   "edges": 171,
+   "distinct_dihedrals": 12,
+   "independent_mod_pi": 9,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "28.862",
+   "verdict": "NONZERO",
+   "seconds": 1.6
+  }
+ ],
+ "verdict": "NONZERO"
+}

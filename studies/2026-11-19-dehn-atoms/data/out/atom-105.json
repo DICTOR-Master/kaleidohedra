@@ -1,0 +1,41 @@
+{
+ "index": 105,
+ "no": "D106",
+ "name": "Cube Pearl",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Cube Pearl",
+   "corners": 32,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 48,
+    "max_planarity": "1.05e-81",
+    "planar": true,
+    "volume": "3.392",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Cube Pearl",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-cube-pearl.json"
+   },
+   "faces": 18,
+   "edges": 48,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 0,
+   "rational_pi_dihedrals_deg": [
+    "120.0",
+    "135.0"
+   ],
+   "max_coefficient_sum": "0.0",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

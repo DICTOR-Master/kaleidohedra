@@ -1,0 +1,40 @@
+{
+ "index": 154,
+ "no": "D156",
+ "name": "Pimentel G11",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Pimentel G11",
+   "corners": 5,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 9,
+    "max_planarity": "7.12e-81",
+    "planar": true,
+    "volume": "0.2492259987499883164671763",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Pimentel G11",
+    "file": "studies/2026-11-17-atoms-missing-2/models/piece-pimentel-g11.json"
+   },
+   "faces": 6,
+   "edges": 9,
+   "distinct_dihedrals": 5,
+   "independent_mod_pi": 3,
+   "rational_pi_dihedrals_deg": [
+    "90.0"
+   ],
+   "max_coefficient_sum": "2.4325",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

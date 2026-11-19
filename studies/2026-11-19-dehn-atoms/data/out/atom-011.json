@@ -1,0 +1,36 @@
+{
+ "index": 11,
+ "no": "D12",
+ "name": "FUJI",
+ "kind": "piece",
+ "book": "new",
+ "source": "ident",
+ "solids": [
+  {
+   "name": "FUJI",
+   "corners": 7,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 12,
+    "max_planarity": "5.27e-82",
+    "planar": true,
+    "volume": "0.3211751638541403787178134",
+    "volume_sign": 1
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "identified": "FUJI"
+   },
+   "faces": 7,
+   "edges": 12,
+   "distinct_dihedrals": 3,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "4.1459",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

@@ -1,0 +1,65 @@
+{
+ "index": 184,
+ "no": "Mosseri–Sadoc t3 (half size)",
+ "name": "Mosseri–Sadoc tile t3* (Mosseri and Sadoc, 1982)",
+ "kind": "piece",
+ "book": "known",
+ "source": "file",
+ "solids": [
+  {
+   "name": "Tricap (Mosseri-Sadoc t3)",
+   "corners": 4,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 6,
+    "max_planarity": "2.64e-81",
+    "planar": true,
+    "volume": "0.03183050093750876264961776",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Tricap (Mosseri-Sadoc t3)",
+    "file": "studies/2026-11-17-atoms-missing-2/models/known-tricap.json"
+   },
+   "faces": 4,
+   "edges": 6,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "3.0",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  },
+  {
+   "name": "Cleo-low",
+   "corners": 4,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 6,
+    "max_planarity": "5.27e-81",
+    "planar": true,
+    "volume": "0.01685452071614473800213111",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "Cleo-low",
+    "file": "studies/2026-11-17-atoms-missing-2/models/known-cleo-low.json"
+   },
+   "faces": 4,
+   "edges": 6,
+   "distinct_dihedrals": 2,
+   "independent_mod_pi": 2,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "2.4271",
+   "verdict": "NONZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "NONZERO"
+}

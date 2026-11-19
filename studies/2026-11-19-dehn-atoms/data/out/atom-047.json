@@ -1,0 +1,38 @@
+{
+ "index": 47,
+ "no": "D48",
+ "name": "DICTO DPHP",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO DPHP (Decagon-Pentagon-Hexagon Polyhedron)",
+   "corners": 270,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 420,
+    "max_planarity": "3.95e-81",
+    "planar": true,
+    "volume": "23.54340303030870618731086",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO DPHP (Decagon-Pentagon-Hexagon Polyhedron)",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-dphp.json"
+   },
+   "faces": 152,
+   "edges": 420,
+   "distinct_dihedrals": 4,
+   "independent_mod_pi": 4,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "48.522",
+   "verdict": "NONZERO",
+   "seconds": 0.2
+  }
+ ],
+ "verdict": "NONZERO"
+}

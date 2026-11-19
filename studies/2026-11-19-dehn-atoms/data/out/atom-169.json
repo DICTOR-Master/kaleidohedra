@@ -1,0 +1,40 @@
+{
+ "index": 169,
+ "no": "D118",
+ "name": "E · HexOct 1/10 c-tile",
+ "kind": "piece",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "E · HexOct 1/10 c-tile",
+   "corners": 36,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 58,
+    "max_planarity": "3.16e-81",
+    "planar": true,
+    "volume": "2.0",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q",
+    "convex": false,
+    "model_name": "E · HexOct 1/10 c-tile",
+    "file": "math-data:studies/2026-10-22-math-data-dicto-solids/solids/dicto-hexoct-e-c-tile.json"
+   },
+   "faces": 24,
+   "edges": 58,
+   "distinct_dihedrals": 6,
+   "independent_mod_pi": 1,
+   "rational_pi_dihedrals_deg": [
+    "90.0"
+   ],
+   "max_coefficient_sum": "1.3705e-80",
+   "verdict": "ZERO",
+   "seconds": 0.0
+  }
+ ],
+ "verdict": "ZERO"
+}

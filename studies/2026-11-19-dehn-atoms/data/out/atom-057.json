@@ -1,0 +1,38 @@
+{
+ "index": 57,
+ "no": "D58",
+ "name": "DICTO TQP-252",
+ "kind": "solid",
+ "book": "new",
+ "source": "file",
+ "solids": [
+  {
+   "name": "DICTO TQP-252",
+   "corners": 200,
+   "checks": {
+    "closed_oriented": true,
+    "edges": 450,
+    "max_planarity": "8.7e-81",
+    "planar": true,
+    "volume": "9.741402536498440834113129",
+    "volume_sign": 1,
+    "stated_volume_match": true
+   },
+   "info": {
+    "field": "Q(sqrt(5))",
+    "convex": true,
+    "model_name": "DICTO TQP-252",
+    "file": "studies/2026-11-17-atoms-missing/models/dicto-tqp-252.json"
+   },
+   "faces": 252,
+   "edges": 450,
+   "distinct_dihedrals": 7,
+   "independent_mod_pi": 7,
+   "rational_pi_dihedrals_deg": [],
+   "max_coefficient_sum": "66.461",
+   "verdict": "NONZERO",
+   "seconds": 0.6
+  }
+ ],
+ "verdict": "NONZERO"
+}
