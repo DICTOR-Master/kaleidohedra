@@ -1,0 +1,63 @@
+# Paper 2 on the Aequi: outline (draft, 20 November 2026)
+
+Title: DICTO's to choose. Working label only: "The Aequi of the cube and the icosahedron".
+
+Split agreed with DICTO (20 Nov): (1) Equanimity with its twelve dice, as it stands; (2) this paper, on the 149 Aequi of the seven frame groups, plus the search with both icosahedron placements (running); (3) a dataset record of all 4553, with data and contact sheets, is-part-of this paper. The prisms belong in the dataset only.
+
+DICTO's question that frames the paper: "How to enumerate the innumerable." Answer: with a rule instead of a list. Theorem A covers every fair die; the list is complete for the frame axes.
+
+## Lead theorem (to check before drafting)
+
+**Theorem A (one fair die per set of face directions).** For any finite set of unit face normals n_1..n_N that satisfies Alexandrov's condition for equal masses 4π/N, there is exactly one convex polytope, up to scale about the centre, whose faces have these normals and each subtend the solid angle 4π/N from the centre. If the normals are invariant under a point group G, so is the die; when G fixes only the centre, the centre is the centroid and the die is an Aequus.
+
+*Route.* A ray from the centre in direction u hits face k when k maximises (n_k·u)/d_k. That set of directions is the normal cone of the polar body at its vertex n_k/d_k. So the solid angle of face k is the integral Gauss curvature of the polar at that vertex. Prescribing equal solid angles therefore means prescribing equal integral curvature at given vertex directions. That is Alexandrov's problem, and its existence and uniqueness are Alexandrov's theorem (1942; variational proof Oliker 2007; optimal-transport proof Bertrand 2016; discrete conditions Semenov 2022). Symmetry follows from uniqueness.
+
+*What it explains in the study.*
+- Every one of the 6684 orbit sets with one fixed point gave exactly one die.
+- The polar groups gave dice fair about the frame centre, but with the centroid elsewhere.
+- The 319 polar sets without a solution are to be tested against Alexandrov's condition.
+
+*Credit.* The theorem is Alexandrov's. Ours, not found in the sources checked (search 20 Nov), is reading a fair die as Alexandrov's problem for the polar.
+
+*Before drafting:*
+- Read Alexandrov's condition from the full text of Bertrand, arXiv:1505.04821, and Oliker, arXiv:math/0701398.
+- Check it on all 6684 sets and on the 319.
+- Add the four papers to the reference library.
+
+## Arc (beginning, middle, end; one line per section)
+
+1. **Introduction.** The cube is fair by symmetry. Equanimity found twelve dice that are fair with two kinds of face. Fair dice are innumerable; here is the rule that covers them all and the complete list on the axes of the cube and the icosahedron.
+2. **The fair die as Alexandrov's problem.** The polar picture, Theorem A and its consequences: existence, uniqueness, symmetry and the centroid.
+3. **The frames and the groups.** The 74 axis directions, the seven frame groups and their face orbits; the definition of an Aequus (as in the study).
+4. **The count.** 149 Aequi: Ih 4, Oh 4, Td 3, Th 47, T 91 (two hands); O and I none, because their dice always gain mirrors. By m: 26, 41, 42, 27, 11, 2. Theorem A makes the count exact: one die per admissible orbit set, classified by full symmetry.
+5. **Both icosahedron placements.** Results of the running search under Th and T.
+6. **The pictures.** A solid and a Vacuus for each of the 149; which Vacuus hide a regular polygon (Equanimity Theorem 6) and which turn without a mirror (as D191 does).
+7. **Beyond the frames.** One paragraph pointing to the dataset of 4553 below the frame groups. The prisms are noted as known in idea (Diaconis–Keller; Goucher's fair triangular prism).
+8. **Claimed here, and known and used; sources checked.**
+
+## Scope check (every shape and result with its home)
+
+| item | home |
+|---|---|
+| the twelve axis-line dice and their exact values | Equanimity (cited, not repeated) |
+| D191 (RD ∩ icosahedron, two depths) | already in the book atoms; here as one of the 149 (cited by number) |
+| D179–D193 Aequi in the book atoms | book; this paper cites their numbers |
+| the 149 frame-group Aequi | this paper |
+| the two-placement dice (Th, T) | this paper, §5 (study running) |
+| the 4553 below the frame groups, prisms included | dataset record (is-part-of this paper) |
+| Theorem A (Alexandrov reading) | this paper, §2 |
+| names and numbers for new dice | DICTO's; table labels by group and orbit set until he names them |
+
+## Sources so far
+
+- Diaconis and Keller 1989; Rawlins (patent US 11033806); Van Oosterom and Strackee 1983. All as in Equanimity.
+- Alexandrov's problem:
+  - Oliker, arXiv:math/0701398 (abstract read)
+  - Bertrand, arXiv:1505.04821 (not yet read)
+  - Semenov, arXiv:2210.16974 (abstract read)
+- Checked for dice prior art on 20 Nov (none has these dice or the Alexandrov link):
+  - McCooey's catalogue
+  - Michon's Numericana page on dice
+  - Sherman (loki3)
+  - Taniguchi and Uehara, arXiv:1810.12108
+  - Irving and Patel
