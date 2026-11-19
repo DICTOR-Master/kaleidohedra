@@ -1,0 +1,131 @@
+toolchain: leanprover/lean4:v4.35.0-rc2; Mathlib rev: "rev":"065356127b1dc0016f66b7283ce0ce2c4055aa55"
+== DehnCanon1.lean
+exit=0
+== Dehn2Poly.lean
+exit=0
+== Dehn2Local.lean
+exit=0
+== Dehn2Sum.lean
+exit=0
+== Dehn2Cut.lean
+exit=0
+== Dehn2Motion.lean
+exit=0
+== DehnCanon2.lean
+exit=0
+== Dehn2Edges.lean
+exit=0
+== Dehn2R3.lean
+exit=0
+== Dehn3Sector.lean
+exit=0
+== Dehn3Solids.lean
+exit=0
+43.36 s
+== Dehn4Similar.lean
+exit=0
+== Dehn4Rational.lean
+exit=0
+== Dehn4Simplex.lean
+exit=0
+== Dehn4Words.lean
+exit=0
+== Dehn5Angles.lean
+exit=0
+== Dehn5Edges.lean
+exit=0
+== Dehn5Fuji.lean
+exit=0
+== Dehn5Pairs.lean
+exit=0
+== Dehn6Indep.lean
+exit=0
+== Dehn6Pairs.lean
+exit=0
+44.06 s
+== Dehn7Gold.lean
+exit=0
+== Dehn7Octa.lean
+exit=0
+== Dehn7CubeOct.lean
+exit=0
+== Dehn7Dodeca.lean
+exit=0
+== Dehn7Icosa.lean
+exit=0
+== Dehn7Table.lean
+exit=0
+96.48 s
+== Axioms7.lean
+'DehnCanon.mem_ratPi_of_cos_gold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.rtN_angle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_rtFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_rt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.goldProlateSet_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.goldOblateSet_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_goldProlate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_goldOblate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.gold_edge_vectors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_crFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_rd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.two_octDelta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.oct_isEdgeData' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_oct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_oct_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.co_isEdgeData' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_co' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_truncOct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_co_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_luckySeven_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.false_of_comb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dod_isEdgeData' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_dod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_dod_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.wordGamma_not_ratPi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.ico_isEdgeData' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_ico' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_ico_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.zeroWords' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.nonzeroWords' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.canon_not_scissorsCongruent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dod_ico_not_scissorsCongruent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dod_cleo_not_scissorsCongruent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dod_axe_not_scissorsCongruent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dod_fuji_not_scissorsCongruent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.ico_cleo_not_scissorsCongruent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.ico_axe_not_scissorsCongruent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.ico_fuji_not_scissorsCongruent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.oct_tetra_not_scissorsCongruent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.co_oct_not_scissorsCongruent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.co_tetra_not_scissorsCongruent' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+== grep sorry (the twenty-seven files of the chain and Axioms7)
+DehnCanon/Dehn2Poly.lean:8:No `sorry`.
+DehnCanon/Dehn2Local.lean:15:No `sorry`.
+DehnCanon/Dehn2Sum.lean:8:No `sorry`.
+DehnCanon/Dehn2Cut.lean:8:No `sorry`.
+DehnCanon/Dehn2Motion.lean:6:No `sorry`.
+DehnCanon/DehnCanon2.lean:19:No `sorry`.
+DehnCanon/Dehn2Edges.lean:9:No `sorry`.
+DehnCanon/Dehn2R3.lean:4:No `sorry`.
+DehnCanon/Dehn3Sector.lean:19:No `sorry`.
+DehnCanon/Dehn3Solids.lean:19:No `sorry`.
+DehnCanon/Dehn4Similar.lean:12:No `sorry`.
+DehnCanon/Dehn4Rational.lean:20:No `sorry`.
+DehnCanon/Dehn4Simplex.lean:21:No `sorry`.
+DehnCanon/Dehn4Words.lean:25:No `sorry`.
+DehnCanon/Dehn5Angles.lean:19:No `sorry`.
+DehnCanon/Dehn5Edges.lean:34:No `sorry`.
+DehnCanon/Dehn5Fuji.lean:31:No `sorry`.
+DehnCanon/Dehn5Pairs.lean:24:No `sorry`.
+DehnCanon/Dehn6Indep.lean:22:No `sorry`.
+DehnCanon/Dehn6Pairs.lean:19:No `sorry`.
+DehnCanon/Dehn7Gold.lean:29:No `sorry`.
+DehnCanon/Dehn7Octa.lean:22:No `sorry`.
+DehnCanon/Dehn7CubeOct.lean:32:No `sorry`.
+DehnCanon/Dehn7Dodeca.lean:23:No `sorry`.
+DehnCanon/Dehn7Icosa.lean:20:No `sorry`.
+DehnCanon/Dehn7Table.lean:24:No `sorry`.
+grep exit=0 (0 = matches listed above; they must all be header lines saying: No `sorry`)
+== grep native_decide / axiom declarations
+grep exit=1 (1 = no match)

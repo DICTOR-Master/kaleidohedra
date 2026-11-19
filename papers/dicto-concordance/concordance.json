@@ -8748,6 +8748,15 @@
         "retry": "never; lead: which sums of the three words have invariant zero (by hand: none, all six coefficients positive) as a Lean statement; the same recurrence method for the angles of other solids",
         "study": "2026-11-19-lean-dehn-6",
         "date": "2026-11-19"
+      },
+      {
+        "question": "Lean canon study 7: the rest of the canon on top of Dehn's theorem: zero words (golden rhombohedra, rhombic triacontahedron, truncated octahedron, rhombic dodecahedron, cube), nonzero words (dodecahedron, icosahedron, octahedron), the fair 14-face die Lucky 7, and a table of proved pairs",
+        "method": "Lean 4.35.0-rc2 + Mathlib; 6 files (Dehn7Gold, Dehn7Octa, Dehn7CubeOct, Dehn7Dodeca, Dehn7Icosa, Dehn7Table) importing studies 1 to 6 unchanged; zero words with icosahedral normals by study 4's rational-normal theorem (all face normals are two-fold axes, all dihedrals multiples of 36°; Gram table over ℤ[√5] by decide +kernel; cos 5θ = ±1 for cos θ = (±1 ± √5)/4); edge reading (study 5's IsEdgeData) for the octahedron, the cube ∩ octahedron line with t as a variable, the dodecahedron and the icosahedron, with tables and per-pair certificates written by exact generators on the compute host (mem_segment_of_tight for edges, eq_of_tight for one-corner pairs, a Farkas certificate false_of_comb or linarith for disjoint pairs) and checked again by Lean; angle relation 2·arccos(1/√3) = π − arccos(1/3)",
+        "status": "SETTLED",
+        "result": "compiled, no sorry in the whole chain (27 files), standard axioms only: dehnSet_rtFamily (every solid with faces perpendicular to two-fold icosahedral directions has D = 0), dehnSet_rt, goldProlateSet_eq and goldOblateSet_eq (the six half-spaces = the parallelepiped on three five-fold axes), dehnSet_goldProlate, dehnSet_goldOblate, dehnSet_rd = 0; dehnSet_oct = (−12√2) ⊗ arccos(1/3) ≠ 0; dehnSet_co: cube ∩ octahedron |x_i| ≤ 1, |x|+|y|+|z| ≤ t (1 < t < 2) has D = 12√2(2t − 3) ⊗ arccos(1/3), so the truncated octahedron (t = 3/2) is zero and every other member nonzero, Lucky 7 (t = 1.7566…, interval 7/4 < t < 9/5 proved) nonzero; dehnSet_dod = (−30(2√5 − 2)) ⊗ α ≠ 0 (α = arccos(1/√5), the α of the words); dehnSet_ico = (−120) ⊗ γ ≠ 0 (γ = arccos(√5/3) = α + 2β − π, not in ℚπ by study 6); canon_not_scissorsCongruent (no nonzero word ≈ any zero word, similar copies); pairs: dodecahedron–icosahedron, dodecahedron and icosahedron against each of CLEO, AXE, FUJI, octahedron–tetrahedron, Lucky 7 (3/2 < t < 2)–octahedron, cube ∩ octahedron (1 < t < 3/2)–tetrahedron. Correction to the brief: the golden rhombohedra and the triacontahedron have only rational dihedrals (72°/108°, 36°/144°, 144°)",
+        "retry": "never (these solids); open: the ten other nonzero fair dice; pairs across the α–β family and the arccos(1/3) family (needs independence of arccos(1/3) from α, β modulo π; α vs arccos(1/3) looks within reach at the prime 3); same-sign pairs over arccos(1/3) (e.g. Lucky 7 vs tetrahedron) need volumes; solid = convex hull of corners for the edge-read solids",
+        "study": "2026-11-19-lean-dehn-7",
+        "date": "2026-11-19"
       }
     ]
   },
