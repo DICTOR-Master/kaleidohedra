@@ -46,6 +46,7 @@ DICTO's question that frames the paper: "How to enumerate the innumerable." Answ
 | the twelve axis-line dice and their exact values | Equanimity (cited, not repeated) |
 | D191 (RD ∩ icosahedron, two depths) | already in the book atoms; here as one of the 149 (cited by number) |
 | D179–D193 Aequi in the book atoms | book; this paper cites their numbers |
+| the other Aequi of the 149 (and two-placement dice) in the book | own section as a family, not numbered atoms (DICTO, 20 Nov) |
 | the 149 frame-group Aequi | this paper |
 | the two-placement dice (Th, T) | this paper, §5 (study running) |
 | the 4553 below the frame groups, prisms included | dataset record (is-part-of this paper) |
