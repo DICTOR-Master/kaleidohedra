@@ -1,0 +1,53 @@
+{
+ "label": "C2h: RT24/4a + RT24/4b (3)",
+ "sid": 3133,
+ "group": "C2h",
+ "symmetry_order": 4,
+ "m": 2,
+ "N": 8,
+ "orbits": [
+  "RT24/4a",
+  "RT24/4b"
+ ],
+ "orbit_sizes": [
+  4,
+  4
+ ],
+ "orbit_representatives": [
+  "(1/φ, 1, φ)",
+  "(φ, 1/φ, 1)"
+ ],
+ "faces_by_orbit": [
+  "4×4-gon",
+  "4×3-gon"
+ ],
+ "corners": 8,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.950828180572655232472356708201373932069606938326777859443345"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.9508281805727"
+ ],
+ "residual_solid_angle": "2.86e-101",
+ "residual_incidence": "2.14e-101",
+ "face_directions": [
+  50,
+  58,
+  61,
+  69,
+  65,
+  68,
+  71,
+  72
+ ],
+ "found_under": [
+  [
+   "C2h",
+   2
+  ]
+ ],
+ "file": "dice/3133-C2h-RT24-4a-RT24-4b-3.json"
+}

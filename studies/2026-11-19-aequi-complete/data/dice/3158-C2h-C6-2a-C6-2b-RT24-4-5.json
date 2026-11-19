@@ -1,0 +1,59 @@
+{
+ "label": "C2h: C6/2a + C6/2b + RT24/4 (5)",
+ "sid": 3158,
+ "group": "C2h",
+ "symmetry_order": 4,
+ "m": 3,
+ "N": 8,
+ "orbits": [
+  "C6/2a",
+  "C6/2b",
+  "RT24/4"
+ ],
+ "orbit_sizes": [
+  2,
+  2,
+  4
+ ],
+ "orbit_representatives": [
+  "(1, 0, 0)",
+  "(0, 0, 1)",
+  "(1/φ, 1, φ)"
+ ],
+ "faces_by_orbit": [
+  "2×6-gon",
+  "2×4-gon",
+  "4×4-gon"
+ ],
+ "corners": 12,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.75158974236985077141329469331324416678505469787356191091304",
+  "0.834414048731966654326486517998554483881152380218043766765524"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.7515897423699",
+  "0.834414048732"
+ ],
+ "residual_solid_angle": "4.29e-101",
+ "residual_incidence": "3.31e-102",
+ "face_directions": [
+  2,
+  3,
+  4,
+  5,
+  50,
+  58,
+  61,
+  69
+ ],
+ "found_under": [
+  [
+   "C2h",
+   3
+  ]
+ ],
+ "file": "dice/3158-C2h-C6-2a-C6-2b-RT24-4-5.json"
+}

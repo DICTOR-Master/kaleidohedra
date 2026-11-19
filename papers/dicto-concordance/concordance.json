@@ -8793,6 +8793,15 @@
         "retry": "never (these statements); open: second blind Palomar score of D1 with the two theorems quoted; Hilbert's sentence for every base and altitude; faces exposed = extreme for polytopes; Sydler's converse; Challenge file",
         "study": "2026-11-19-lean-dehn-10",
         "date": "2026-11-19"
+      },
+      {
+        "question": "The complete family of the Aequi (fair dice whose face families are full orbits of cube- and icosahedron-frame axis directions under a point group, one depth per orbit, every face 4π/N from the centroid): every member for the seven frame groups, and every subgroup of Oh and Ih crossed (DICTO: \"cross all possible symmetry groups, see what falls out\")",
+        "method": "Frames as in Equanimity (74 axis directions); all 236 subgroups of Oh and Ih in 43 conjugacy classes (frame maps); every orbit subset (m ≥ 2, bounded, normaliser-reduced) solved in double precision (hybrid Powell from a grid of starts, depth ratios e^±1.5; solid angles by Van Oosterom–Strackee 1983 as in Equanimity); full symmetry group by all isometries fixing the centroid; repeats removed by congruence; every Aequus refined to 80 digits (mpmath, corners by Cramer's rule); caps m ≤ 3 or 4 on classes with many orbits (README table)",
+        "status": "SETTLED for the seven frame groups (every orbit set searched, one fair die per set within the search box); subgroup sweep complete for every one-fixed-point class with ≤ 8 orbits, capped elsewhere",
+        "result": "149 Aequi for the frame groups: Ih 4, Oh 4, Td 3, Th 47, T 91 (two hands), O 0, I 0; by m: 26, 41, 42, 27, 11, 2 (m = 2..7). 4553 Aequi over all subgroups (C2h 888, D2 857, D2h 848, S6 694, D3 344, Ci 280, D3d 261, D5d 112, T 91, D5 62, Th 47, D2d 27, D4h 17, S4 8, Ih 4, Oh 4, Td 3, prisms D3h, D5h, D6h ×2, D8h, D10h); all confirmed |Ω − 4π/N| < 7e-100. Every one-fixed-point orbit set (6684) gave exactly one fair die; polar groups give none about the centroid (3554 frame-centre-only solids). Controls: Equanimity's twelve with their groups (T ∩ D under T, two hands), D191, 13 single-frame pilot sets PASS; the pilot's other 7 sets mixed the two icosahedron placements (its D12 = (0, ±1, ±φ) cyclic) and lie outside the definition",
+        "retry": "never (frame groups, as defined); open: the two icosahedron placements together under Th and T; caps above m = 3/4 on the low classes; closed forms; uniqueness proof; names and numbers are DICTO's",
+        "study": "2026-11-19-aequi-complete",
+        "date": "2026-11-20"
       }
     ]
   },

@@ -1,0 +1,75 @@
+{
+ "label": "Td: C6 + O8/4",
+ "sid": 19,
+ "group": "Td",
+ "symmetry_order": 24,
+ "m": 2,
+ "N": 10,
+ "orbits": [
+  "C6",
+  "O8/4"
+ ],
+ "orbit_sizes": [
+  6,
+  4
+ ],
+ "orbit_representatives": [
+  "(1, 0, 0)",
+  "(1, 1, 1)"
+ ],
+ "faces_by_orbit": [
+  "6×6-gon",
+  "4×3-gon"
+ ],
+ "corners": 16,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.938159706475915084962270054562738948916844671679383836823081"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.9381597064759"
+ ],
+ "residual_solid_angle": "2.86e-101",
+ "residual_incidence": "2.68e-102",
+ "face_directions": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  10,
+  11,
+  13
+ ],
+ "found_under": [
+  [
+   "Td",
+   2
+  ],
+  [
+   "T",
+   2
+  ],
+  [
+   "D2d",
+   3
+  ],
+  [
+   "C3v",
+   4
+  ],
+  [
+   "D2",
+   4
+  ],
+  [
+   "S4",
+   3
+  ]
+ ],
+ "file": "dice/0019-Td-C6-O8-4.json"
+}

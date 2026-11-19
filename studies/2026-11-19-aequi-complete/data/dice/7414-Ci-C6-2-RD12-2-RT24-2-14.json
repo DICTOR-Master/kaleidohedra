@@ -1,0 +1,57 @@
+{
+ "label": "Ci: C6/2 + RD12/2 + RT24/2 (14)",
+ "sid": 7414,
+ "group": "Ci",
+ "symmetry_order": 2,
+ "m": 3,
+ "N": 6,
+ "orbits": [
+  "C6/2",
+  "RD12/2",
+  "RT24/2"
+ ],
+ "orbit_sizes": [
+  2,
+  2,
+  2
+ ],
+ "orbit_representatives": [
+  "(0, 1, 0)",
+  "(1, 1, 0)",
+  "(1, -φ, -1/φ)"
+ ],
+ "faces_by_orbit": [
+  "2×4-gon",
+  "2×4-gon",
+  "2×4-gon"
+ ],
+ "corners": 8,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "1.16174344681219923343654126521314436438480169237664736696072",
+  "1.10093039599125781221209466531900062720809399030026029006261"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.161743446812",
+  "1.100930395991"
+ ],
+ "residual_solid_angle": "2.86e-101",
+ "residual_incidence": "1.03e-101",
+ "face_directions": [
+  0,
+  1,
+  16,
+  21,
+  51,
+  53
+ ],
+ "found_under": [
+  [
+   "Ci",
+   3
+  ]
+ ],
+ "file": "dice/7414-Ci-C6-2-RD12-2-RT24-2-14.json"
+}

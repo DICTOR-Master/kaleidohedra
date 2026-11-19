@@ -1,0 +1,61 @@
+{
+ "label": "S6: C6 + RT24/6 (2)",
+ "sid": 2357,
+ "group": "S6",
+ "symmetry_order": 6,
+ "m": 2,
+ "N": 12,
+ "orbits": [
+  "C6",
+  "RT24/6"
+ ],
+ "orbit_sizes": [
+  6,
+  6
+ ],
+ "orbit_representatives": [
+  "(1, 0, 0)",
+  "(φ, 1/φ, -1)"
+ ],
+ "faces_by_orbit": [
+  "6×5-gon",
+  "6×5-gon"
+ ],
+ "corners": 20,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.975231576209216476728949283891428730404839831480629848702519"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.9752315762092"
+ ],
+ "residual_solid_angle": "2.86e-101",
+ "residual_incidence": "8.85e-102",
+ "face_directions": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  51,
+  53,
+  60,
+  65,
+  70,
+  72
+ ],
+ "found_under": [
+  [
+   "S6",
+   2
+  ],
+  [
+   "S6",
+   2
+  ]
+ ],
+ "file": "dice/2357-S6-C6-RT24-6-2.json"
+}

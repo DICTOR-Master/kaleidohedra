@@ -1,0 +1,73 @@
+{
+ "label": "D2h: O8 + I12/4",
+ "sid": 849,
+ "group": "D2h",
+ "symmetry_order": 8,
+ "m": 2,
+ "N": 12,
+ "orbits": [
+  "O8",
+  "I12/4"
+ ],
+ "orbit_sizes": [
+  8,
+  4
+ ],
+ "orbit_representatives": [
+  "(1, 1, 1)",
+  "(1/φ, φ, 0)"
+ ],
+ "faces_by_orbit": [
+  "8×4-gon",
+  "4×3-gon"
+ ],
+ "corners": 12,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.868344717925431392902237247096090659258575653033990484881127"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.8683447179254"
+ ],
+ "residual_solid_angle": "1.43e-101",
+ "residual_incidence": "8.34e-102",
+ "face_directions": [
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  38,
+  43,
+  44,
+  45
+ ],
+ "found_under": [
+  [
+   "D2h",
+   2
+  ],
+  [
+   "C2h",
+   3
+  ],
+  [
+   "C2h",
+   3
+  ],
+  [
+   "C2v",
+   3
+  ],
+  [
+   "D2",
+   3
+  ]
+ ],
+ "file": "dice/0849-D2h-O8-I12-4.json"
+}

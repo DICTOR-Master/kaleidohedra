@@ -1,0 +1,69 @@
+{
+ "label": "D3d: C6+RT24/6a + C6+RT24/6b (3)",
+ "sid": 237,
+ "group": "D3d",
+ "symmetry_order": 12,
+ "m": 2,
+ "N": 12,
+ "orbits": [
+  "C6+RT24/6a",
+  "C6+RT24/6b"
+ ],
+ "orbit_sizes": [
+  6,
+  6
+ ],
+ "orbit_representatives": [
+  "(1, 0, 0)",
+  "(φ, -1/φ, 1)"
+ ],
+ "faces_by_orbit": [
+  "6×4-gon",
+  "6×4-gon"
+ ],
+ "corners": 14,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.944688073708792486088256240699413647954902701308378876624475"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.9446880737088"
+ ],
+ "residual_solid_angle": "4.29e-101",
+ "residual_incidence": "9.37e-102",
+ "face_directions": [
+  2,
+  3,
+  60,
+  64,
+  67,
+  70,
+  4,
+  5,
+  54,
+  55,
+  56,
+  57
+ ],
+ "found_under": [
+  [
+   "D3d",
+   2
+  ],
+  [
+   "C3v",
+   3
+  ],
+  [
+   "D3",
+   3
+  ],
+  [
+   "S6",
+   2
+  ]
+ ],
+ "file": "dice/0237-D3d-C6-RT24-6a-C6-RT24-6b-3.json"
+}

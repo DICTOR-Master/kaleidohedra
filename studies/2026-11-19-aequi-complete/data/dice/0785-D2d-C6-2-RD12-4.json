@@ -1,0 +1,63 @@
+{
+ "label": "D2d: C6/2 + RD12/4",
+ "sid": 785,
+ "group": "D2d",
+ "symmetry_order": 8,
+ "m": 2,
+ "N": 6,
+ "orbits": [
+  "C6/2",
+  "RD12/4"
+ ],
+ "orbit_sizes": [
+  2,
+  4
+ ],
+ "orbit_representatives": [
+  "(0, 1, 0)",
+  "(1, 1, 0)"
+ ],
+ "faces_by_orbit": [
+  "2×4-gon",
+  "4×4-gon"
+ ],
+ "corners": 8,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "1.1547005383792515290182975610039149112952035025402537520372"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.154700538379"
+ ],
+ "residual_solid_angle": "5.71e-101",
+ "residual_incidence": "1.54e-101",
+ "face_directions": [
+  0,
+  1,
+  14,
+  16,
+  18,
+  22
+ ],
+ "found_under": [
+  [
+   "D2d",
+   2
+  ],
+  [
+   "D2",
+   2
+  ],
+  [
+   "S4",
+   2
+  ],
+  [
+   "C2",
+   3
+  ]
+ ],
+ "file": "dice/0785-D2d-C6-2-RD12-4.json"
+}

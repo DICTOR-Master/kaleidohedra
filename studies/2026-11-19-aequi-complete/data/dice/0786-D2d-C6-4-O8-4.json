@@ -1,0 +1,65 @@
+{
+ "label": "D2d: C6/4 + O8/4",
+ "sid": 786,
+ "group": "D2d",
+ "symmetry_order": 8,
+ "m": 2,
+ "N": 8,
+ "orbits": [
+  "C6/4",
+  "O8/4"
+ ],
+ "orbit_sizes": [
+  4,
+  4
+ ],
+ "orbit_representatives": [
+  "(1, 0, 0)",
+  "(1, 1, 1)"
+ ],
+ "faces_by_orbit": [
+  "4×4-gon",
+  "4×3-gon"
+ ],
+ "corners": 8,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "1.01923503457041481319672926957249763327089189543024553090784"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.01923503457"
+ ],
+ "residual_solid_angle": "4.29e-101",
+ "residual_incidence": "6.86e-102",
+ "face_directions": [
+  2,
+  3,
+  4,
+  5,
+  6,
+  10,
+  11,
+  13
+ ],
+ "found_under": [
+  [
+   "D2d",
+   2
+  ],
+  [
+   "C2v",
+   3
+  ],
+  [
+   "D2",
+   3
+  ],
+  [
+   "S4",
+   2
+  ]
+ ],
+ "file": "dice/0786-D2d-C6-4-O8-4.json"
+}

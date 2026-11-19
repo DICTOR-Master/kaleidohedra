@@ -1,0 +1,53 @@
+{
+ "label": "D2: RD12/4 + RT24/4 (2)",
+ "sid": 4942,
+ "group": "D2",
+ "symmetry_order": 4,
+ "m": 2,
+ "N": 8,
+ "orbits": [
+  "RD12/4",
+  "RT24/4"
+ ],
+ "orbit_sizes": [
+  4,
+  4
+ ],
+ "orbit_representatives": [
+  "(0, 1, 1)",
+  "(1, φ, -1/φ)"
+ ],
+ "faces_by_orbit": [
+  "4×4-gon",
+  "4×5-gon"
+ ],
+ "corners": 12,
+ "hands": "two hands",
+ "depths_60_digits": [
+  "1.0",
+  "1.02098418937984625353726181886530632966620299436141359207674"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.02098418938"
+ ],
+ "residual_solid_angle": "2.86e-101",
+ "residual_incidence": "1.01e-101",
+ "face_directions": [
+  14,
+  18,
+  24,
+  25,
+  51,
+  59,
+  63,
+  66
+ ],
+ "found_under": [
+  [
+   "D2",
+   2
+  ]
+ ],
+ "file": "dice/4942-D2-RD12-4-RT24-4-2.json"
+}

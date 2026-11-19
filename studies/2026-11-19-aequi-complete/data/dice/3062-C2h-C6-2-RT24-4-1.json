@@ -1,0 +1,67 @@
+{
+ "label": "C2h: C6/2 + RT24/4 (1)",
+ "sid": 3062,
+ "group": "C2h",
+ "symmetry_order": 4,
+ "m": 2,
+ "N": 6,
+ "orbits": [
+  "C6/2",
+  "RT24/4"
+ ],
+ "orbit_sizes": [
+  2,
+  4
+ ],
+ "orbit_representatives": [
+  "(0, 1, 0)",
+  "(1/φ, 1, φ)"
+ ],
+ "faces_by_orbit": [
+  "2×4-gon",
+  "4×4-gon"
+ ],
+ "corners": 8,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "1.03113309066934289316626256367959517701217956006330767411646"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.031133090669"
+ ],
+ "residual_solid_angle": "2.86e-101",
+ "residual_incidence": "9.92e-102",
+ "face_directions": [
+  0,
+  1,
+  50,
+  58,
+  61,
+  69
+ ],
+ "found_under": [
+  [
+   "C2h",
+   2
+  ],
+  [
+   "C2",
+   3
+  ],
+  [
+   "Ci",
+   3
+  ],
+  [
+   "Ci",
+   3
+  ],
+  [
+   "Ci",
+   3
+  ]
+ ],
+ "file": "dice/3062-C2h-C6-2-RT24-4-1.json"
+}

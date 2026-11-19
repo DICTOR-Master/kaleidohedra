@@ -1,0 +1,77 @@
+{
+ "label": "D3d: C6 + O8/6",
+ "sid": 223,
+ "group": "D3d",
+ "symmetry_order": 12,
+ "m": 2,
+ "N": 12,
+ "orbits": [
+  "C6",
+  "O8/6"
+ ],
+ "orbit_sizes": [
+  6,
+  6
+ ],
+ "orbit_representatives": [
+  "(1, 0, 0)",
+  "(1, 1, 1)"
+ ],
+ "faces_by_orbit": [
+  "6×5-gon",
+  "6×5-gon"
+ ],
+ "corners": 20,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.96962098662128265093885360625709646204564258552438177365467"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.9696209866213"
+ ],
+ "residual_solid_angle": "1.43e-101",
+ "residual_incidence": "6.55e-102",
+ "face_directions": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  11,
+  13
+ ],
+ "found_under": [
+  [
+   "D3d",
+   2
+  ],
+  [
+   "C3v",
+   4
+  ],
+  [
+   "D3",
+   2
+  ],
+  [
+   "S6",
+   2
+  ],
+  [
+   "S6",
+   2
+  ],
+  [
+   "C2h",
+   4
+  ]
+ ],
+ "file": "dice/0223-D3d-C6-O8-6.json"
+}

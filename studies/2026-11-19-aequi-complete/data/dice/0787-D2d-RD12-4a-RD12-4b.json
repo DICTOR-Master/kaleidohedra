@@ -1,0 +1,65 @@
+{
+ "label": "D2d: RD12/4a + RD12/4b",
+ "sid": 787,
+ "group": "D2d",
+ "symmetry_order": 8,
+ "m": 2,
+ "N": 8,
+ "orbits": [
+  "RD12/4a",
+  "RD12/4b"
+ ],
+ "orbit_sizes": [
+  4,
+  4
+ ],
+ "orbit_representatives": [
+  "(1, 1, 0)",
+  "(1, 0, 1)"
+ ],
+ "faces_by_orbit": [
+  "4×3-gon",
+  "4×4-gon"
+ ],
+ "corners": 8,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "1.0"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.0"
+ ],
+ "residual_solid_angle": "1.43e-101",
+ "residual_incidence": "5.94e-103",
+ "face_directions": [
+  14,
+  16,
+  18,
+  22,
+  15,
+  17,
+  19,
+  20
+ ],
+ "found_under": [
+  [
+   "D2d",
+   2
+  ],
+  [
+   "C2v",
+   3
+  ],
+  [
+   "D2",
+   3
+  ],
+  [
+   "S4",
+   2
+  ]
+ ],
+ "file": "dice/0787-D2d-RD12-4a-RD12-4b.json"
+}

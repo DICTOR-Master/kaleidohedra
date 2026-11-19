@@ -1,0 +1,75 @@
+{
+ "label": "Th: C6 + I12",
+ "sid": 25,
+ "group": "Th",
+ "symmetry_order": 24,
+ "m": 2,
+ "N": 18,
+ "orbits": [
+  "C6",
+  "I12"
+ ],
+ "orbit_sizes": [
+  6,
+  12
+ ],
+ "orbit_representatives": [
+  "(1, 0, 0)",
+  "(φ, 0, 1/φ)"
+ ],
+ "faces_by_orbit": [
+  "6×4-gon",
+  "12×6-gon"
+ ],
+ "corners": 32,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "1.04358804140947771970989015234697491035001565875095975053876"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.043588041409"
+ ],
+ "residual_solid_angle": "7.14e-102",
+ "residual_incidence": "1.5e-101",
+ "face_directions": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  46,
+  47,
+  48,
+  49
+ ],
+ "found_under": [
+  [
+   "Th",
+   2
+  ],
+  [
+   "T",
+   2
+  ],
+  [
+   "S6",
+   3
+  ],
+  [
+   "S6",
+   3
+  ]
+ ],
+ "file": "dice/0025-Th-C6-I12.json"
+}

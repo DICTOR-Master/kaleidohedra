@@ -1,0 +1,53 @@
+{
+ "label": "C2h: O8/4 + RT24/4 (3)",
+ "sid": 3109,
+ "group": "C2h",
+ "symmetry_order": 4,
+ "m": 2,
+ "N": 8,
+ "orbits": [
+  "O8/4",
+  "RT24/4"
+ ],
+ "orbit_sizes": [
+  4,
+  4
+ ],
+ "orbit_representatives": [
+  "(1, -1, 1)",
+  "(1, φ, 1/φ)"
+ ],
+ "faces_by_orbit": [
+  "4×4-gon",
+  "4×3-gon"
+ ],
+ "corners": 8,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.862423396581861380971506234174332716937017173722695984884115"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.8624233965819"
+ ],
+ "residual_solid_angle": "1.43e-101",
+ "residual_incidence": "1.05e-101",
+ "face_directions": [
+  6,
+  7,
+  9,
+  11,
+  52,
+  59,
+  63,
+  73
+ ],
+ "found_under": [
+  [
+   "C2h",
+   2
+  ]
+ ],
+ "file": "dice/3109-C2h-O8-4-RT24-4-3.json"
+}

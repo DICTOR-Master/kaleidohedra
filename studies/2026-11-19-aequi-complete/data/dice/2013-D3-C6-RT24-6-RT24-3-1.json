@@ -1,0 +1,58 @@
+{
+ "label": "D3: C6+RT24/6 + RT24/3 (1)",
+ "sid": 2013,
+ "group": "D3",
+ "symmetry_order": 6,
+ "m": 2,
+ "N": 9,
+ "orbits": [
+  "C6+RT24/6",
+  "RT24/3"
+ ],
+ "orbit_sizes": [
+  6,
+  3
+ ],
+ "orbit_representatives": [
+  "(1, 0, 0)",
+  "(1, -φ, 1/φ)"
+ ],
+ "faces_by_orbit": [
+  "6×5-gon",
+  "3×4-gon"
+ ],
+ "corners": 14,
+ "hands": "two hands",
+ "depths_60_digits": [
+  "1.0",
+  "0.940144677643633339225434547296940537050835133358272171682532"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.9401446776436"
+ ],
+ "residual_solid_angle": "2.86e-101",
+ "residual_incidence": "2.14e-101",
+ "face_directions": [
+  0,
+  2,
+  5,
+  52,
+  56,
+  67,
+  57,
+  58,
+  66
+ ],
+ "found_under": [
+  [
+   "D3",
+   2
+  ],
+  [
+   "C3",
+   3
+  ]
+ ],
+ "file": "dice/2013-D3-C6-RT24-6-RT24-3-1.json"
+}

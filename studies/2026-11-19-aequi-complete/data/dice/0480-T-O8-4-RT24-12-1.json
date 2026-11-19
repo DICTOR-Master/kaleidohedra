@@ -1,0 +1,65 @@
+{
+ "label": "T: O8/4 + RT24/12 (1)",
+ "sid": 480,
+ "group": "T",
+ "symmetry_order": 12,
+ "m": 2,
+ "N": 16,
+ "orbits": [
+  "O8/4",
+  "RT24/12"
+ ],
+ "orbit_sizes": [
+  4,
+  12
+ ],
+ "orbit_representatives": [
+  "(1, 1, 1)",
+  "(φ, 1/φ, 1)"
+ ],
+ "faces_by_orbit": [
+  "4×3-gon",
+  "12×6-gon"
+ ],
+ "corners": 28,
+ "hands": "two hands",
+ "depths_60_digits": [
+  "1.0",
+  "1.09035817287165545189816582661849354923798291129820728278902"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.090358172872"
+ ],
+ "residual_solid_angle": "1.21e-100",
+ "residual_incidence": "2.86e-101",
+ "face_directions": [
+  6,
+  10,
+  11,
+  13,
+  50,
+  52,
+  53,
+  54,
+  56,
+  60,
+  61,
+  62,
+  65,
+  67,
+  71,
+  73
+ ],
+ "found_under": [
+  [
+   "T",
+   2
+  ],
+  [
+   "D2",
+   4
+  ]
+ ],
+ "file": "dice/0480-T-O8-4-RT24-12-1.json"
+}

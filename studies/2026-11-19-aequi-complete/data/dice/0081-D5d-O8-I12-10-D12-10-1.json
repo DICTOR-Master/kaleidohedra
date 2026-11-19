@@ -1,0 +1,73 @@
+{
+ "label": "D5d: O8+I12/10 + D12/10 (1)",
+ "sid": 81,
+ "group": "D5d",
+ "symmetry_order": 20,
+ "m": 2,
+ "N": 20,
+ "orbits": [
+  "O8+I12/10",
+  "D12/10"
+ ],
+ "orbit_sizes": [
+  10,
+  10
+ ],
+ "orbit_representatives": [
+  "(φ, 0, 1/φ)",
+  "(φ, 1, 0)"
+ ],
+ "faces_by_orbit": [
+  "10×4-gon",
+  "10×6-gon"
+ ],
+ "corners": 32,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "1.05496475631736413235187917735129120711453294160649839293834"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.054964756317"
+ ],
+ "residual_solid_angle": "2.86e-101",
+ "residual_incidence": "1.43e-101",
+ "face_directions": [
+  6,
+  7,
+  9,
+  11,
+  39,
+  42,
+  43,
+  44,
+  46,
+  48,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "found_under": [
+  [
+   "D5d",
+   2
+  ],
+  [
+   "D5",
+   2
+  ],
+  [
+   "S10",
+   2
+  ]
+ ],
+ "file": "dice/0081-D5d-O8-I12-10-D12-10-1.json"
+}

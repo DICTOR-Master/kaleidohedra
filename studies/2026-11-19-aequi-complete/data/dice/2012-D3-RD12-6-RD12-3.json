@@ -1,0 +1,58 @@
+{
+ "label": "D3: RD12/6 + RD12/3",
+ "sid": 2012,
+ "group": "D3",
+ "symmetry_order": 6,
+ "m": 2,
+ "N": 9,
+ "orbits": [
+  "RD12/6",
+  "RD12/3"
+ ],
+ "orbit_sizes": [
+  6,
+  3
+ ],
+ "orbit_representatives": [
+  "(1, 1, 0)",
+  "(1, -1, 0)"
+ ],
+ "faces_by_orbit": [
+  "6×5-gon",
+  "3×4-gon"
+ ],
+ "corners": 14,
+ "hands": "two hands",
+ "depths_60_digits": [
+  "1.0",
+  "1.05824136823145201239715681299483759062106326659332832015478"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.058241368231"
+ ],
+ "residual_solid_angle": "4.29e-101",
+ "residual_incidence": "2.14e-101",
+ "face_directions": [
+  14,
+  15,
+  16,
+  20,
+  21,
+  25,
+  17,
+  23,
+  24
+ ],
+ "found_under": [
+  [
+   "D3",
+   2
+  ],
+  [
+   "C3",
+   3
+  ]
+ ],
+ "file": "dice/2012-D3-RD12-6-RD12-3.json"
+}

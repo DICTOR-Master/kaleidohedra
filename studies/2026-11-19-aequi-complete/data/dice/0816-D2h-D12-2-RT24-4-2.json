@@ -1,0 +1,67 @@
+{
+ "label": "D2h: D12/2 + RT24/4 (2)",
+ "sid": 816,
+ "group": "D2h",
+ "symmetry_order": 8,
+ "m": 2,
+ "N": 6,
+ "orbits": [
+  "D12/2",
+  "RT24/4"
+ ],
+ "orbit_sizes": [
+  2,
+  4
+ ],
+ "orbit_representatives": [
+  "(φ, 1, 0)",
+  "(1/φ, -1, φ)"
+ ],
+ "faces_by_orbit": [
+  "2×4-gon",
+  "4×4-gon"
+ ],
+ "corners": 8,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.983550207596661389034859953902983418095159710571743711679779"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.9835502075967"
+ ],
+ "residual_solid_angle": "2.86e-101",
+ "residual_incidence": "1.43e-101",
+ "face_directions": [
+  26,
+  27,
+  60,
+  64,
+  67,
+  70
+ ],
+ "found_under": [
+  [
+   "C2h",
+   2
+  ],
+  [
+   "C2",
+   3
+  ],
+  [
+   "Ci",
+   3
+  ],
+  [
+   "Ci",
+   3
+  ],
+  [
+   "Ci",
+   3
+  ]
+ ],
+ "file": "dice/0816-D2h-D12-2-RT24-4-2.json"
+}

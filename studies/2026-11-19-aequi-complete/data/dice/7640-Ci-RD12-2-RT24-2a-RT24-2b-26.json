@@ -1,0 +1,57 @@
+{
+ "label": "Ci: RD12/2 + RT24/2a + RT24/2b (26)",
+ "sid": 7640,
+ "group": "Ci",
+ "symmetry_order": 2,
+ "m": 3,
+ "N": 6,
+ "orbits": [
+  "RD12/2",
+  "RT24/2a",
+  "RT24/2b"
+ ],
+ "orbit_sizes": [
+  2,
+  2,
+  2
+ ],
+ "orbit_representatives": [
+  "(0, 1, 1)",
+  "(φ, -1/φ, -1)",
+  "(φ, 1/φ, -1)"
+ ],
+ "faces_by_orbit": [
+  "2×4-gon",
+  "2×4-gon",
+  "2×4-gon"
+ ],
+ "corners": 8,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.854721068923833227071984675181963113603207160694506671311846",
+  "0.905624981937374808332657375076879277138570429777651317755004"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.8547210689238",
+  "0.9056249819374"
+ ],
+ "residual_solid_angle": "5.71e-101",
+ "residual_incidence": "2.86e-101",
+ "face_directions": [
+  14,
+  25,
+  54,
+  57,
+  65,
+  72
+ ],
+ "found_under": [
+  [
+   "Ci",
+   3
+  ]
+ ],
+ "file": "dice/7640-Ci-RD12-2-RT24-2a-RT24-2b-26.json"
+}

@@ -1,0 +1,64 @@
+{
+ "label": "D5: C6+RT24/5 + O8+I12/10 (2)",
+ "sid": 684,
+ "group": "D5",
+ "symmetry_order": 10,
+ "m": 2,
+ "N": 15,
+ "orbits": [
+  "C6+RT24/5",
+  "O8+I12/10"
+ ],
+ "orbit_sizes": [
+  5,
+  10
+ ],
+ "orbit_representatives": [
+  "(1, 0, 0)",
+  "(φ, 0, 1/φ)"
+ ],
+ "faces_by_orbit": [
+  "5×4-gon",
+  "10×5-gon"
+ ],
+ "corners": 22,
+ "hands": "two hands",
+ "depths_60_digits": [
+  "1.0",
+  "1.05933109304240181897332593416066793603906839356797166150876"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.059331093042"
+ ],
+ "residual_solid_angle": "9.29e-101",
+ "residual_incidence": "2.95e-101",
+ "face_directions": [
+  2,
+  56,
+  58,
+  65,
+  70,
+  6,
+  9,
+  10,
+  12,
+  39,
+  40,
+  42,
+  46,
+  48,
+  49
+ ],
+ "found_under": [
+  [
+   "D5",
+   2
+  ],
+  [
+   "C5",
+   3
+  ]
+ ],
+ "file": "dice/0684-D5-C6-RT24-5-O8-I12-10-2.json"
+}

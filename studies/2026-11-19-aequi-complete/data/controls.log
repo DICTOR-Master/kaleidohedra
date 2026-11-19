@@ -1,0 +1,34 @@
+Equanimity N=10 Td O8/4 ∩ C6: μ_f here 1.06591659511405, published 1.0659165951, hands: one (mirror-symmetric) -> PASS
+Equanimity N=14 Oh C6 ∩ O8: μ_f here 1.01416316904156, published 1.0141631690, hands: one (mirror-symmetric) -> PASS
+Equanimity N=16 Td O8/4 ∩ RD12: μ_f here 1.06921053639296, published 1.0692105364, hands: one (mirror-symmetric) -> PASS
+Equanimity N=16 T O8/4 ∩ D12: μ_f here 1.06037365000129, published 1.0603736500, hands: two hands -> PASS
+Equanimity N=18 Oh C6 ∩ RD12: μ_f here 1.03125050913034, published 1.0312505091, hands: one (mirror-symmetric) -> PASS
+Equanimity N=18 Th C6 ∩ D12: μ_f here 1.03844428300912, published 1.0384442830, hands: one (mirror-symmetric) -> PASS
+Equanimity N=20 Oh O8 ∩ RD12: μ_f here 1.03702476034426, published 1.0370247603, hands: one (mirror-symmetric) -> PASS
+Equanimity N=20 Th O8 ∩ D12: μ_f here 1.02653152232829, published 1.0265315223, hands: one (mirror-symmetric) -> PASS
+Equanimity N=24 Th RD12 ∩ D12: μ_f here 0.999152538059567, published 0.9991525381, hands: one (mirror-symmetric) -> PASS
+Equanimity N=32 Ih D12 ∩ O8+I12/20: μ_f here 1.00436194970341, published 1.0043619497, hands: one (mirror-symmetric) -> PASS
+Equanimity N=42 Ih D12 ∩ C6+RT24/30: μ_f here 1.00726832235757, published 1.0072683224, hands: one (mirror-symmetric) -> PASS
+Equanimity N=50 Ih O8+I12/20 ∩ C6+RT24/30: μ_f here 1.01558430363324, published 1.0155843036, hands: one (mirror-symmetric) -> PASS
+D191 (Th: O8 + RD12 + I12, RD at 1): m1 = 1.002759250965267365113858822494329216912, m2 = 1.0106639425964276013947211797925550524897; study 2026-11-19-aequus-rd-ico: 1.0027592509652673651138588224943292169120, 1.0106639425964276013947211797925550524897 (40 digits) -> PASS
+pilot C6+O8+RD12       (0.963813528, 0.971626373) -> PASS: Oh: C6 + O8 + RD12
+pilot C6+O8+D12        (0.994293328, 0.990422489) -> PASS: Th: C6 + O8 + D12
+pilot C6+O8+I12        (1.048487700, 1.012801306) -> PASS: Th: C6 + O8 + I12
+pilot C6+O8+RT24       (0.949330218, 0.976545615) -> PASS: Th: C6 + O8 + RT24
+pilot C6+RD12+D12      (1.007009289, 0.996724055) -> PASS: Th: C6 + RD12 + D12
+pilot C6+RD12+I12      (1.060203478, 1.020043218) -> PASS: Th: C6 + RD12 + I12
+pilot C6+RD12+RT24     (0.968343360, 0.975414600) -> PASS: Th: C6 + RD12 + RT24
+pilot C6+D12+I12       cross-frame set (pilot D12 from the other icosahedron placement): not in this definition, not compared
+pilot C6+D12+RT24      cross-frame set (pilot D12 from the other icosahedron placement): not in this definition, not compared
+pilot C6+I12+RT24      (0.990127197, 1.020424343) -> PASS: Th: C6 + I12 + RT24
+pilot O8+RD12+D12      (0.996787591, 1.007795782) -> PASS: Th: O8 + RD12 + D12
+pilot O8+RD12+I12      (0.997248342, 1.007882941) -> PASS: Th: O8 + RD12 + I12
+pilot O8+RD12+RT24     (1.021684479, 1.025098978) -> PASS: Th: O8 + RD12 + RT24
+pilot O8+D12+I12       cross-frame set (pilot D12 from the other icosahedron placement): not in this definition, not compared
+pilot O8+D12+RT24      cross-frame set (pilot D12 from the other icosahedron placement): not in this definition, not compared
+pilot O8+I12+RT24      (1.022982968, 1.021400472) -> PASS: Th: O8 + I12 + RT24
+pilot RD12+D12+I12     cross-frame set (pilot D12 from the other icosahedron placement): not in this definition, not compared
+pilot RD12+D12+RT24    cross-frame set (pilot D12 from the other icosahedron placement): not in this definition, not compared
+pilot RD12+I12+RT24    (1.002372301, 0.998803897) -> PASS: Th: RD12 + I12 + RT24
+pilot D12+I12+RT24     cross-frame set (pilot D12 from the other icosahedron placement): not in this definition, not compared
+CONTROLS ALL PASS

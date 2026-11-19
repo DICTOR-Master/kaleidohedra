@@ -1,0 +1,65 @@
+{
+ "label": "D2d: O8/4 + RD12/4",
+ "sid": 788,
+ "group": "D2d",
+ "symmetry_order": 8,
+ "m": 2,
+ "N": 8,
+ "orbits": [
+  "O8/4",
+  "RD12/4"
+ ],
+ "orbit_sizes": [
+  4,
+  4
+ ],
+ "orbit_representatives": [
+  "(1, 1, 1)",
+  "(1, 0, 1)"
+ ],
+ "faces_by_orbit": [
+  "4×4-gon",
+  "4×5-gon"
+ ],
+ "corners": 12,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.97054473325940012970427792022388702395507099570836969219488"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.9705447332594"
+ ],
+ "residual_solid_angle": "1.43e-101",
+ "residual_incidence": "1.15e-102",
+ "face_directions": [
+  6,
+  10,
+  11,
+  13,
+  15,
+  17,
+  19,
+  20
+ ],
+ "found_under": [
+  [
+   "D2d",
+   2
+  ],
+  [
+   "C2v",
+   4
+  ],
+  [
+   "D2",
+   2
+  ],
+  [
+   "S4",
+   2
+  ]
+ ],
+ "file": "dice/0788-D2d-O8-4-RD12-4.json"
+}

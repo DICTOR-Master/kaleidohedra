@@ -1,0 +1,70 @@
+{
+ "label": "D3h: O8/2 + RD12/3",
+ "sid": 477,
+ "group": "D3h",
+ "symmetry_order": 12,
+ "m": 2,
+ "N": 5,
+ "orbits": [
+  "O8/2",
+  "RD12/3"
+ ],
+ "orbit_sizes": [
+  2,
+  3
+ ],
+ "orbit_representatives": [
+  "(1, 1, 1)",
+  "(1, -1, 0)"
+ ],
+ "faces_by_orbit": [
+  "2×3-gon",
+  "3×4-gon"
+ ],
+ "corners": 6,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "1.08204454309882128295756603369978066587574747463359195514329"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.082044543099"
+ ],
+ "residual_solid_angle": "8.57e-101",
+ "residual_incidence": "2.86e-101",
+ "face_directions": [
+  8,
+  13,
+  17,
+  23,
+  24
+ ],
+ "found_under": [
+  [
+   "D3",
+   2
+  ],
+  [
+   "D3",
+   2
+  ],
+  [
+   "C3",
+   3
+  ],
+  [
+   "C3",
+   3
+  ],
+  [
+   "C2",
+   3
+  ],
+  [
+   "C2",
+   3
+  ]
+ ],
+ "file": "dice/0477-D3h-O8-2-RD12-3.json"
+}

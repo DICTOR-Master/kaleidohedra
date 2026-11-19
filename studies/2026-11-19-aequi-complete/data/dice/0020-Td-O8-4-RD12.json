@@ -1,0 +1,77 @@
+{
+ "label": "Td: O8/4 + RD12",
+ "sid": 20,
+ "group": "Td",
+ "symmetry_order": 24,
+ "m": 2,
+ "N": 16,
+ "orbits": [
+  "O8/4",
+  "RD12"
+ ],
+ "orbit_sizes": [
+  4,
+  12
+ ],
+ "orbit_representatives": [
+  "(1, 1, 1)",
+  "(1, 1, 0)"
+ ],
+ "faces_by_orbit": [
+  "4×3-gon",
+  "12×5-gon"
+ ],
+ "corners": 22,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "1.06921053639295663130311275870285824531420296107897983854143"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.069210536393"
+ ],
+ "residual_solid_angle": "2.14e-101",
+ "residual_incidence": "2.38e-102",
+ "face_directions": [
+  6,
+  10,
+  11,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25
+ ],
+ "found_under": [
+  [
+   "Td",
+   2
+  ],
+  [
+   "T",
+   2
+  ],
+  [
+   "D2d",
+   3
+  ],
+  [
+   "D2",
+   4
+  ],
+  [
+   "S4",
+   4
+  ]
+ ],
+ "file": "dice/0020-Td-O8-4-RD12.json"
+}

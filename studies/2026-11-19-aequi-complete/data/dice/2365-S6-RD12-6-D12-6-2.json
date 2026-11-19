@@ -1,0 +1,57 @@
+{
+ "label": "S6: RD12/6 + D12/6 (2)",
+ "sid": 2365,
+ "group": "S6",
+ "symmetry_order": 6,
+ "m": 2,
+ "N": 12,
+ "orbits": [
+  "RD12/6",
+  "D12/6"
+ ],
+ "orbit_sizes": [
+  6,
+  6
+ ],
+ "orbit_representatives": [
+  "(1, 1, 0)",
+  "(φ, -1, 0)"
+ ],
+ "faces_by_orbit": [
+  "6×5-gon",
+  "6×5-gon"
+ ],
+ "corners": 20,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "1.01468077173296029384847742640858790446717093774142156681997"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.014680771733"
+ ],
+ "residual_solid_angle": "2.86e-101",
+ "residual_incidence": "1.48e-101",
+ "face_directions": [
+  14,
+  15,
+  16,
+  20,
+  21,
+  25,
+  29,
+  30,
+  33,
+  35,
+  36,
+  37
+ ],
+ "found_under": [
+  [
+   "S6",
+   2
+  ]
+ ],
+ "file": "dice/2365-S6-RD12-6-D12-6-2.json"
+}

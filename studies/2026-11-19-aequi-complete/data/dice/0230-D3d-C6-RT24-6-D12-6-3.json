@@ -1,0 +1,65 @@
+{
+ "label": "D3d: C6+RT24/6 + D12/6 (3)",
+ "sid": 230,
+ "group": "D3d",
+ "symmetry_order": 12,
+ "m": 2,
+ "N": 12,
+ "orbits": [
+  "C6+RT24/6",
+  "D12/6"
+ ],
+ "orbit_sizes": [
+  6,
+  6
+ ],
+ "orbit_representatives": [
+  "(1, 0, 0)",
+  "(φ, 1, 0)"
+ ],
+ "faces_by_orbit": [
+  "6×5-gon",
+  "6×5-gon"
+ ],
+ "corners": 20,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.976266680968093339600491114615808727783732448088071968147273"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.9762666809681"
+ ],
+ "residual_solid_angle": "4.29e-101",
+ "residual_incidence": "7.14e-102",
+ "face_directions": [
+  2,
+  3,
+  60,
+  64,
+  67,
+  70,
+  26,
+  27,
+  30,
+  31,
+  32,
+  33
+ ],
+ "found_under": [
+  [
+   "D3d",
+   2
+  ],
+  [
+   "D3",
+   2
+  ],
+  [
+   "S6",
+   2
+  ]
+ ],
+ "file": "dice/0230-D3d-C6-RT24-6-D12-6-3.json"
+}

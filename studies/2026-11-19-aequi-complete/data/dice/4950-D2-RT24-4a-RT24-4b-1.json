@@ -1,0 +1,53 @@
+{
+ "label": "D2: RT24/4a + RT24/4b (1)",
+ "sid": 4950,
+ "group": "D2",
+ "symmetry_order": 4,
+ "m": 2,
+ "N": 8,
+ "orbits": [
+  "RT24/4a",
+  "RT24/4b"
+ ],
+ "orbit_sizes": [
+  4,
+  4
+ ],
+ "orbit_representatives": [
+  "(1/φ, 1, φ)",
+  "(1, φ, -1/φ)"
+ ],
+ "faces_by_orbit": [
+  "4×4-gon",
+  "4×5-gon"
+ ],
+ "corners": 12,
+ "hands": "two hands",
+ "depths_60_digits": [
+  "1.0",
+  "1.02558588149551280232582792665856993225395842023078976951556"
+ ],
+ "depths_12": [
+  "1.0",
+  "1.025585881496"
+ ],
+ "residual_solid_angle": "1.43e-101",
+ "residual_incidence": "1.43e-101",
+ "face_directions": [
+  50,
+  60,
+  61,
+  67,
+  51,
+  59,
+  63,
+  66
+ ],
+ "found_under": [
+  [
+   "D2",
+   2
+  ]
+ ],
+ "file": "dice/4950-D2-RT24-4a-RT24-4b-1.json"
+}

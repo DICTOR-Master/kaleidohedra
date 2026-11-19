@@ -1,0 +1,65 @@
+{
+ "label": "D2h: O8 + RT24/8",
+ "sid": 859,
+ "group": "D2h",
+ "symmetry_order": 8,
+ "m": 2,
+ "N": 16,
+ "orbits": [
+  "O8",
+  "RT24/8"
+ ],
+ "orbit_sizes": [
+  8,
+  8
+ ],
+ "orbit_representatives": [
+  "(1, 1, 1)",
+  "(1/φ, 1, φ)"
+ ],
+ "faces_by_orbit": [
+  "8×4-gon",
+  "8×3-gon"
+ ],
+ "corners": 14,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.927050086136300899308765154558181289490186411923075944854284"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.9270500861363"
+ ],
+ "residual_solid_angle": "7.14e-102",
+ "residual_incidence": "1.43e-101",
+ "face_directions": [
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  50,
+  58,
+  60,
+  61,
+  64,
+  67,
+  69,
+  70
+ ],
+ "found_under": [
+  [
+   "D2h",
+   2
+  ],
+  [
+   "D2",
+   4
+  ]
+ ],
+ "file": "dice/0859-D2h-O8-RT24-8.json"
+}

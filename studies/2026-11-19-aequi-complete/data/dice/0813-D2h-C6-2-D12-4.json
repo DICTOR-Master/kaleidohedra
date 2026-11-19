@@ -1,0 +1,95 @@
+{
+ "label": "D2h: C6/2 + D12/4",
+ "sid": 813,
+ "group": "D2h",
+ "symmetry_order": 8,
+ "m": 2,
+ "N": 6,
+ "orbits": [
+  "C6/2",
+  "D12/4"
+ ],
+ "orbit_sizes": [
+  2,
+  4
+ ],
+ "orbit_representatives": [
+  "(0, 1, 0)",
+  "(1, 0, φ)"
+ ],
+ "faces_by_orbit": [
+  "2×4-gon",
+  "4×4-gon"
+ ],
+ "corners": 8,
+ "hands": "one (mirror-symmetric)",
+ "depths_60_digits": [
+  "1.0",
+  "0.964167064016022719261608648697042959412360860947985063006845"
+ ],
+ "depths_12": [
+  "1.0",
+  "0.964167064016"
+ ],
+ "residual_solid_angle": "2.86e-101",
+ "residual_incidence": "3.86e-102",
+ "face_directions": [
+  0,
+  1,
+  28,
+  29,
+  34,
+  35
+ ],
+ "found_under": [
+  [
+   "D2h",
+   2
+  ],
+  [
+   "C2h",
+   2
+  ],
+  [
+   "C2h",
+   2
+  ],
+  [
+   "C2h",
+   3
+  ],
+  [
+   "C2v",
+   3
+  ],
+  [
+   "C2v",
+   3
+  ],
+  [
+   "C2v",
+   3
+  ],
+  [
+   "D2",
+   2
+  ],
+  [
+   "C2",
+   3
+  ],
+  [
+   "C2",
+   3
+  ],
+  [
+   "Ci",
+   3
+  ],
+  [
+   "Ci",
+   3
+  ]
+ ],
+ "file": "dice/0813-D2h-C6-2-D12-4.json"
+}
