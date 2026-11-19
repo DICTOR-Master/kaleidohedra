@@ -1,6 +1,6 @@
 # Exact existence of the fair dice without central symmetry, by Alexandrov's condition (20 November 2026)
 
-**Verdict: all 956 orbit sets satisfy Alexandrov's condition, so each carries a fair die (and exactly one, up to scale), without numerics: the 94 Td and T dice of the main catalogue (Td 3, T 91) and the 31 O, 91 Td and 740 T dice of the two-icosahedron study, 956 of 956 certified, none undecided. The bound used is the same for all: (H) no open hemisphere holds more than M of the N directions, and here M/N ≤ 0.6875; with (D), the perimeter of a hull is at least twice its diameter, every set A that could fail would need more than N/2 directions within a diameter of at most π(2M − N)/N ≤ 67.5°, and no pair of directions has that many in its lens. The smallest exclusion margin is 0.88 (in the cosine), far above the arithmetic error (1e-14). Controls: on the 87 polar sets that fail the condition (exhaustive, study 2026-11-20-aequi-alexandrov) the test certifies none; of the 232 that hold it certifies 60 and leaves 172 undecided, of the 50 solved controls 45 and 5; it never contradicts the exhaustive verdict. This closes open item (1) of the Aequi draft.**
+**Verdict: all 956 orbit sets satisfy Alexandrov's condition, so each carries a fair die (and exactly one, up to scale), without numerics: the 94 Td and T dice of the main catalogue (Td 3, T 91) and the 31 O, 91 Td and 740 T dice of the two-icosahedron study, 956 of 956 certified, none undecided. The bound used is the same for all: (H) no open hemisphere holds more than M of the N directions, and here M/N ≤ 0.6875; with (D), the perimeter of a hull is at least twice its diameter, every set A that could fail would need more than N/2 directions within a diameter of at most π(2M − N)/N ≤ 67.5°, and no pair of directions has that many in its lens. The smallest exclusion margin is 0.88 (in the cosine), far above the arithmetic error (1e-14). Controls: on the 87 polar sets that fail the condition (exhaustive, study 2026-11-20-aequi-alexandrov) the test certifies none; of the 232 that hold it certifies 60 and leaves 172 undecided, of the 50 solved controls 45 and 5; it never contradicts the exhaustive verdict. This closes open item (1) of the Aequi draft. Part 2 (below the frame groups): of the 4404 dice of the draft's §5.3, 3104 have their face directions in opposite pairs (Corollary 3, not tested) and the other 1300 (D2 857, D3 344, D5 62, D2d 27, S4 8, D3h 1, D5h 1) are all certified by the same test, none undecided (M/N ≤ 0.75, smallest margin 0.33); so existence is exact for all 4553 dice of study 2026-11-19-aequi-complete. The controls, rerun, give the same verdicts as above, the 87 failing sets again none certified.**
 
 ## The condition
 
@@ -64,15 +64,53 @@ No set has M ≤ N/2 (none is centrally symmetric), so every one needed the pair
 
 It certifies no failing set, including the 12 with g = 0 exactly (the exclusion is strict), and every set it certifies is one the exhaustive test found to hold. The polar sets are small (N = 4 to 15) and often have most of their directions in one hemisphere (M/N up to 0.92), where the diameter bound is too weak; for them the exhaustive test of the earlier study decides.
 
+## Part 2: the 4404 dice below the frame groups (20 November 2026)
+
+The draft's open question 1: run the certificate on the dice of §5.3, the 4404 Aequi of study 2026-11-19-aequi-complete whose full group is not a frame group (prisms included; the 149 frame-group dice are Part 1 and Corollary 3).
+
+**Method.** (1) scripts/extract_below.py (data/sets-below.jsonl, logs/extract-below.log) reads the 4553 files data/dice/*.json of study 2026-11-19-aequi-complete (each label met once in its data/table.csv), sets aside the 149 of Ih, I, Oh, O, Td, Th, T, and tests each of the other 4404 for opposite pairs (the index set equals its negative, exactly, the frames being centrally symmetric). As Theorem A (b) predicts, a set has opposite pairs exactly when its full group contains the central inversion (no exception among the 4404). (2) existence.py unchanged (data/results-below.jsonl, logs/run-below.log), with every safeguard of Part 1. (3) check.py unchanged on these results (data/check-below.jsonl, logs/check-below.log). (4) The controls rerun with existence.py in the same session (data/controls-rerun.jsonl, logs/controls-rerun.log). (5) scripts/summarise_below.py (data/verdicts-below.csv, one row per tested set, logs/summary-below.log).
+
+**Results.**
+
+| group | dice | opposite pairs (Corollary 3) | tested | N | largest M/N | certified | undecided | smallest margin |
+|---|---|---|---|---|---|---|---|---|
+| C2h | 888 | 888 | 0 | | | | | |
+| D2 | 857 | 0 | 857 | 6–20 | 0.7500 | 857 | 0 | 0.3333 |
+| D2h | 848 | 848 | 0 | | | | | |
+| S6 | 694 | 694 | 0 | | | | | |
+| D3 | 344 | 0 | 344 | 8–24 | 0.6667 | 344 | 0 | 0.9397 |
+| Ci | 280 | 280 | 0 | | | | | |
+| D3d | 261 | 261 | 0 | | | | | |
+| D5d | 112 | 112 | 0 | | | | | |
+| D5 | 62 | 0 | 62 | 15–57 | 0.5333 | 62 | 0 | 1.1706 |
+| D2d | 27 | 0 | 27 | 6–22 | 0.6667 | 27 | 0 | 0.8090 |
+| D4h | 17 | 17 | 0 | | | | | |
+| S4 | 8 | 0 | 8 | 8–18 | 0.7500 | 8 | 0 | 0.3333 |
+| D6h | 2 | 2 | 0 | | | | | |
+| D10h | 1 | 1 | 0 | | | | | |
+| D8h | 1 | 1 | 0 | | | | | |
+| D3h (triangular prism) | 1 | 0 | 1 | 5 | 0.6000 | 1 | 0 | 1.3090 |
+| D5h (pentagonal prism) | 1 | 0 | 1 | 7 | 0.5714 | 1 | 0 | 0.9010 |
+| **all** | **4404** | **3104** | **1300** | 5–57 | 0.7500 | **1300** | **0** | 0.3333 |
+
+All 1300 are certified by (H) and (D) alone: no pair needed the refinement M(S), and no set has M ≤ N/2. None is undecided, so the exhaustive test of study 2026-11-20-aequi-alexandrov (planned for undecided sets with N ≤ 13) was not needed. The largest M/N is 0.75 (some D2 and S4 sets), so a failing A would need more than N/2 directions within a diameter of at most 90°. The smallest margin, 0.3333 = 0 − (−1/3), is on 5789-S4-O8-4-RD12-4 (N = 8, M = 6): the bound angle is π(2·6 − 8)/8 = 90°, and the closest pair whose lens holds more than 4 directions is two O8 directions at arccos(−1/3) ≈ 109.5°. It is the closest call of all 2256 certified sets, still far above the arithmetic error (1e-14).
+
+**Arithmetic** (these 1300 sets and the controls rerun): largest |w·x| classed zero 2.6 × 10⁻¹⁶, smallest classed nonzero 0.048, nothing between; smallest |x_i × x_j| used 0.230; smallest |cos| in the half-circle counts the deliberate tilt 10⁻⁶. The exact directions agree with the study's floats to 1.1 × 10⁻¹⁶.
+
+**Controls**, rerun: on the 87 failing polar sets the test certifies none; of the 232 that hold it certifies 60 and leaves 172 undecided, of the 50 solved controls 45 and 5; it never contradicts the exhaustive verdict, and all 369 results (verdict, M and margin) are the same as Part 1's data/controls.jsonl. **Independent checks** on the 1300: M by sampling equals the exact M on all 1300 (never above it); the cap hunt finds no A with g ≥ 0 on any of them (largest g −2.92).
+
+So, with Part 1 and Corollary 3, **existence is exact for all 4553 dice** of study 2026-11-19-aequi-complete: 3104 + 55 by Corollary 3, 1300 + 94 by the diameter certificate.
+
 ## LEADS
 
 - For the paper (not edited here): open item (1) closes. Existence is exact for all 149 Aequi of the main catalogue (Corollary 3 for the 55 of Ih, Oh, Th; this certificate for the 94 of Td and T), and for the 31 O, 91 Td and 740 T dice of Proposition 6 (with Corollary 3 for the Oh and Th ones). The sentence "existence rests on the 80-digit solutions" can change to "existence is by Alexandrov's condition, checked exactly (study 2026-11-20-aequi-existence)"; the 80-digit dice remain as the dice themselves.
 - The Lemma could stand in the paper as a corollary of Proposition 2, a sufficient condition that needs only pairs: if every pair of directions whose lens holds more than N/2 of them is more than π(2M − N)/N apart, the fair die exists.
 - A structural reason for groups fixing only the centre (the paper's open question) is not found here; the data show M/N ≤ 0.6875 on all 956, and the margins are wide, which suggests a proof by bounding M and the lens counts for the T orbits directly.
-- The certificate works for any direction set; it could replace the 80-digit existence argument for the 4404 dice below the frame groups whose groups contain no inversion (not run here).
+- For the paper (not edited here): the first half of open question 1 is answered (Part 2). Existence is exact for all 4404 dice of §5.3: 3104 by Corollary 3, the 1300 without opposite pairs (D2 857, D3 344, D5 62, D2d 27, S4 8, D3h 1, D5h 1) by Corollary 3′, none undecided. §5.3 and the proof notes can say existence is exact for all 4553; the question's second half (a structural reason) stays open.
+- A structural reason now has more data: on all 2256 sets without opposite pairs (Parts 1 and 2), M/N ≤ 0.75 and every set passes on (H) and (D) alone; the two tightest (4939-D2-O8-4-RT24-4-1 and 5789-S4-O8-4-RD12-4, both N = 8, M = 6, margin 1/3) are where the 90° bound meets two O8 directions at 109.5°.
 
 ## Files
 
-scripts/: extract.py, existence.py, check.py, summarise.py (they read groups.py of studies 2026-11-19-aequi-complete and 2026-11-20-aequi-two-placements). data/: sets.jsonl, results.jsonl, controls.jsonl, check-results.jsonl, check-controls.jsonl, verdicts.csv. logs/: extract.log, run.log, controls.log, check-results.log, check-controls.log, summary.log. Computed on a remote host; nothing here depends on the 80-digit dice.
+scripts/: extract.py, existence.py, check.py, summarise.py (they read groups.py of studies 2026-11-19-aequi-complete and 2026-11-20-aequi-two-placements). data/: sets.jsonl, results.jsonl, controls.jsonl, check-results.jsonl, check-controls.jsonl, verdicts.csv. logs/: extract.log, run.log, controls.log, check-results.log, check-controls.log, summary.log. Part 2: scripts/extract_below.py, summarise_below.py (existence.py and check.py unchanged; they also read the dice files and groups.py of study 2026-11-19-aequi-complete); data/sets-below.jsonl, results-below.jsonl, check-below.jsonl, controls-rerun.jsonl, verdicts-below.csv; logs/extract-below.log, run-below.log, check-below.log, controls-rerun.log, summary-below.log. Computed on a remote host; nothing here depends on the 80-digit dice.
 
 FINAL ok

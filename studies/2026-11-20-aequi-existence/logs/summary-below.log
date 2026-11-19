@@ -1,0 +1,20 @@
+Dice below the frame groups without opposite pairs (exact existence by Alexandrov's condition):
+  D2   sets  857  holds  857  undecided   0  bounds {'H + D': 857}  N 6..20  max M/N 0.7500  min margin 0.3333  refined pairs 0
+  D3   sets  344  holds  344  undecided   0  bounds {'H + D': 344}  N 8..24  max M/N 0.6667  min margin 0.9397  refined pairs 0
+  D5   sets   62  holds   62  undecided   0  bounds {'H + D': 62}  N 15..57  max M/N 0.5333  min margin 1.1706  refined pairs 0
+  D2d  sets   27  holds   27  undecided   0  bounds {'H + D': 27}  N 6..22  max M/N 0.6667  min margin 0.8090  refined pairs 0
+  S4   sets    8  holds    8  undecided   0  bounds {'H + D': 8}  N 8..18  max M/N 0.7500  min margin 0.3333  refined pairs 0
+  D3h  sets    1  holds    1  undecided   0  bounds {'H + D': 1}  N 5..5  max M/N 0.6000  min margin 1.3090  refined pairs 0
+  D5h  sets    1  holds    1  undecided   0  bounds {'H + D': 1}  N 7..7  max M/N 0.5714  min margin 0.9010  refined pairs 0
+  all  sets 1300  holds 1300  undecided   0
+Undecided: 0 []
+Smallest margin 0.3333 on 5789-S4-O8-4-RD12-4 (S4, N 8, M 6)
+Sets with no live pair (every lens holds at most N/2): 0 []
+Arithmetic: largest |w.x| classed zero 2.55e-16; smallest classed nonzero 0.0482; smallest |cos| in half-circle counts 1.00e-06; smallest |x_i x x_j| kept 0.2298
+Controls rerun (study 2026-11-20-aequi-alexandrov, exhaustive):
+  fail sets  87  certified   0  undecided  87
+  hold sets 232  certified  60  undecided 172
+  ctrl sets  50  certified  45  undecided   5
+  failing sets certified (must be 0): 0 | certified against the exhaustive verdict (must be 0): 0 | same as Part 1: 369 of 369
+Independent checks: M sampled > exact 0, M sampled = exact 1300 of 1300; certified sets with a cap of g >= 0: 0; largest cap g -2.9160
+FINAL ok
