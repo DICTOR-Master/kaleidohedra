@@ -9,6 +9,7 @@ DICTO's question that frames the paper: "How to enumerate the innumerable." Answ
 ## Definitions (DICTO, 20 Nov)
 
 - **Main catalogue:** an Aequus whose faces lie on the symmetry axes of one cube and one icosahedron sharing their three 2-fold axes (the placement of Equanimity and D191), under one of the seven frame groups. Exactly 149, complete.
+- **Order inside the main catalogue** (DICTO, 20 Nov: keep all 149): by number of face kinds, two (26), three (41), then the Aequi Mosaici (82); no cap.
 - **Related solids:**
   - the 1083 two-icosahedron dice (faces on the axes of the cube and both icosahedra that fit it; study 2026-11-20-aequi-two-placements), a related section of this paper;
   - the 4404 dice below the frame groups, in the dataset record.
