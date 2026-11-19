@@ -1,0 +1,6 @@
+solutions (m1 = 8 cube-diagonal faces, m2 = 12 other icosahedron faces; RD at 1):
+  m1 = 1.002759250954  m2 = 1.010663942602  max |Ω - 4π/32| = 4.4e-11  faces present 12/8/12: True
+control: one depth μ, I8 minus I12 share at μ = 0.9, 1.0, 1.1: ['-0.0062', '-0.0286', '-0.0610']
+FINAL ok
+corners 60 | sides RD [5] I8 [6] I12 [6]
+r/R = 0.883568616534088
