@@ -44,3 +44,14 @@ What would raise D1 (both scorers): Hilbert's literal statement (two tetrahedra 
 **Metadata** (`package/palomar/formalization.yaml`, `package/palomar/README.md`). Author DICTO; AI use declared as in the Yantra entry (method `agent`, models "Claude Opus (Anthropic)", framework "Claude Code (Opus)", subscription-based, no human line-by-line audit). Provenance: source-based; it `formalizes` Dehn (1901) and Hilbert (1900, problem 3, in Newson's translation). FormalBook chapter 10 (commit 54da1ce, the file read) is credited under `related_formalizations` as the first Lean formalization of the problem, with the same pair of tetrahedra in its abstract model; atlas-lean, proof_in_the_book and lean-genius follow, each pinned to the last commit touching its file up to 19 November 2026. Sources as in the paper's §9: Jessen, Aigner–Ziegler, Sydler, Hartshorne, Hadwiger, Groemer, Boltianskii, Sah, Dupont, Benko, Campbell–Zakharevich, Niven (with Mathlib's Meiburg–Broshi), and DICTO's draft paper; the DOIs of Dehn, Groemer and Benko were checked on Crossref. Each source says whether it was read, partly read or only cited.
 
 **Open before any submission (DICTO's word only):** the namespace name `HilbertThird` (placeholder); whether the draft paper is published first (then it can be cited with a DOI); a second blind score of D1 with study 10's theorems; Sydler's converse stays out.
+
+## Second pre-score: the finished entry D1b (19 November 2026, night)
+
+Input blind/inputs/D1b-hilbert3-entry.md quotes the Challenge file in full. Two fresh scorers, same policy files.
+
+| candidate | scorer A | scorer B |
+|---|---|---|
+| D1b (Hilbert's sentence for point sets, edge-sum identity, bridge incl. finite unions, Dehn's theorem) | 4 / 4, neutral | 4 / 4, neutral |
+
+Both verified FormalBook (54da1ce, PR #157) and atlas-lean at the pinned commits and found our account accurate. Scorer A: the mathematics alone could support 5; held at 4 because the theorem is already in Lean (FormalBook). Still at the floor, but steady: four of four D1 scores are 4.
+Cheap improvements both named (citations only): Dehn's 1900 Göttingen note "Über raumgleiche Polyeder" (Nachr. Ges. Wiss. Göttingen 1900, 345–354) and the Math. Ann. year; Bricard 1896; Aigner–Ziegler edition and pages; Newson's Bull. AMS scan page; a sentence naming the research audience (a base for Sydler's converse, Jessen's 4D case, valuations in Mathlib); make the paper public as a dated preprint; dated library/Zulip searches.
