@@ -60,6 +60,7 @@ for g in GROUPS:
     L = sorted([d for d in dice if d['group'] == g], key=order)
     for i, d in enumerate(L, 1):
         ini, got = initials(d['orbits'])
+        if 'DIRT' in ini: ini = '·'.join(x for x in INIT_ORDER if x in got)   # DICTO 20 Nov: dots where the initials would spell a word
         dn = [s for s in SETTLED if s[1] == g and sorted(s[2]) == sorted(d['orbits'])]
         rows.append(dict(group=g, number=i, name='Aequus %s-%d, %s %d' % (ini, d['N'], g, i), short='%s-%d' % (ini, d['N']),
             initials=ini, solids=' + '.join(SOLID[x] for x in INIT_ORDER if x in got), m=d['m'], N=d['N'],

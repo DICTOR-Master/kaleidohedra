@@ -106,4 +106,11 @@ The settled names do not fix the following. The rule chosen is the one in the ta
   - Each caption gives the catalogue name and number, then m, the D-number, "Mosaicus" and "two hands" where they apply.
 - scripts/build_catalogue.py (DICE_DIR OUT_DIR) and scripts/catalogue_sheets.py (catalogue.json, the per-die render folder, the source study's render.py, OUT_DIR). Both were run on a compute host, not on the interface machine.
 
+## DICTO's decisions (20 Nov)
+
+- Names whose initials would spell DIRT are written with dots between the initials, as in the D·I·C·T·O key: for example Aequus D·I·RT-62, Ih 4, and RD·I·RT-48, Th 26. All other names, the settled ones included, are unchanged.
+- The cube's 6 and the triacontahedron's other 24, as separate face kinds, are named RT (as the icosahedron's 20 are named I in D191 RDI-32).
+- Kept: I12 alone named I; RT24 or a half of it alone named RT; both tetrahedra together under T named O.
+- The outline's example is CO-14, Oh 1 (corrected there).
+
 FINAL ok
