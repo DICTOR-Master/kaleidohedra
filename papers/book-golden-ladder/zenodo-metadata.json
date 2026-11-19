@@ -1,6 +1,8 @@
 {
- "upload_type": "publication",
- "publication_type": "book",
+ "title": "The Golden Ladder: Golden Cuts from Plato to the Eighth Dimension",
+ "publication_date": "2026-11-20",
+ "description": "<p>The Golden Ladder, Version 2: the whole book. A ladder whose rungs are dimensions, with something golden on each. Opening: <i>Map of the Ladder</i>. Chapter 1, <i>One Triangle, Three Numbers</i>: the five Platonic solids come from three kaleidoscopes, and these from one triangle with a single number in its corner, 1, √2 or φ. Chapter 2, <i>Silence Is Golden</i>: the octahedron–cube sweep as weight shapes of SU(4), SO(7) and SO(9), with Fibonacci ladders of multiplets converging at the golden solids. Chapters 3 to 8 are DICTO's papers set as chapters: 3A The FUJI Family (#20) and 3B The Golden Split (#48), the 2D rung; 4 Every Platonic Solid Has Exactly Two Golden Cuts (#88); 5 The Red Queen 120-cell (#65); 6 All Five Golden Pairs Are Slices of Four-Dimensional Solids (#89); 7 Golden on the Octahedron, Silver on the Cube (#90); 8 Four-Dimensional Solids Whose Every Cell Is a Golden Cut (#91). Chapter 9, <i>The Top Rung</i>: E8 and its golden twist, the 240 roots folding into two 600-cells, one φ times the other. Version 2 adds the opening, Chapters 3 to 9 and the cover by DICTO. Version 3 re-lays the cover (more room for the top rung, the ladder centred) and the subtitle now reaches the eighth dimension, where the book ends. Version 4 cleans the photographs of DICTO's work in Figure 3A.1.</p><p>Version 8 adds the roundest member of the cube–octahedron line (Lindelöf) and Theorem 3A.1, its fair member, to Chapter 3A, §5.4, with four references, and gives the golden-cut-cube depths of Chapter 6 their own minimal polynomial 4z⁴ + 8z³ − 18z² + 8z − 1 (erratum 54 of The DICTO Concordance).</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
+ "access_right": "open",
  "creators": [
   {
    "name": "DICTO",
@@ -8,25 +10,6 @@
    "orcid": "0009-0001-2620-2036"
   }
  ],
- "language": "eng",
- "license": "cc-by-sa-4.0",
- "access_right": "open",
- "subjects": [
-  {
-   "term": "MSC2020 52C22: Tilings in n dimensions",
-   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
-   "scheme": "url"
-  },
-  {
-   "term": "MSC2020 51M20: Polyhedra and polytopes; regular figures, division of spaces",
-   "identifier": "https://zbmath.org/classification/?q=cc:51M20",
-   "scheme": "url"
-  }
- ],
- "version": "6",
- "publication_date": "2026-11-07",
- "title": "The Golden Ladder: Golden Cuts from Plato to the Eighth Dimension",
- "description": "<p>The Golden Ladder, Version 2: the whole book. A ladder whose rungs are dimensions, with something golden on each. Opening: <i>Map of the Ladder</i>. Chapter 1, <i>One Triangle, Three Numbers</i>: the five Platonic solids come from three kaleidoscopes, and these from one triangle with a single number in its corner, 1, √2 or φ. Chapter 2, <i>Silence Is Golden</i>: the octahedron–cube sweep as weight shapes of SU(4), SO(7) and SO(9), with Fibonacci ladders of multiplets converging at the golden solids. Chapters 3 to 8 are DICTO's papers set as chapters: 3A The FUJI Family (#20) and 3B The Golden Split (#48), the 2D rung; 4 Every Platonic Solid Has Exactly Two Golden Cuts (#88); 5 The Red Queen 120-cell (#65); 6 All Five Golden Pairs Are Slices of Four-Dimensional Solids (#89); 7 Golden on the Octahedron, Silver on the Cube (#90); 8 Four-Dimensional Solids Whose Every Cell Is a Golden Cut (#91). Chapter 9, <i>The Top Rung</i>: E8 and its golden twist, the 240 roots folding into two 600-cells, one φ times the other. Version 2 adds the opening, Chapters 3 to 9 and the cover by DICTO. Version 3 re-lays the cover (more room for the top rung, the ladder centred) and the subtitle now reaches the eighth dimension, where the book ends. Version 4 cleans the photographs of DICTO's work in Figure 3A.1.</p>",
  "keywords": [
   "DICTO",
   "golden ratio",
@@ -38,6 +21,18 @@
   "SU(4)",
   "SO(7)",
   "Fibonacci"
+ ],
+ "subjects": [
+  {
+   "term": "MSC2020 52C22: Tilings in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 51M20: Polyhedra and polytopes; regular figures, division of spaces",
+   "identifier": "https://zbmath.org/classification/?q=cc:51M20",
+   "scheme": "url"
+  }
  ],
  "related_identifiers": [
   {
@@ -96,5 +91,10 @@
    "scheme": "doi"
   }
  ],
- "notes": "Version 6: Chapter 2 writes the Pell multiplets of SO(7) as (0, P_n, Q_n) with Q = A001333, the notation of the printed dimensions (erratum 24 of The DICTO Concordance); Chapter 7 adds Theorem 1A, the Galois twins of the other golden cuts (the dodecahedron's greater cut is its own twin, its lesser cut's twin is the φ³-cut dodecahedron, not a station of the golden cycle; the triangle-faced solids have no twin solid); Chapter 8 adds the prior art of the Golden OGs (face pattern known, golden metric forms not found). Otherwise as Version 5."
+ "version": "8",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "notes": "Version 8 adds the roundest member of the cube–octahedron line (Lindelöf) and Theorem 3A.1, its fair member, to Chapter 3A, §5.4, with four references, and gives the golden-cut-cube depths of Chapter 6 their own minimal polynomial 4z⁴ + 8z³ − 18z² + 8z − 1 (erratum 54 of The DICTO Concordance). Otherwise as Version 7.",
+ "upload_type": "publication",
+ "publication_type": "book"
 }
