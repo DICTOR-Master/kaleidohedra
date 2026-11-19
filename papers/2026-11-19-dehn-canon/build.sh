@@ -1,0 +1,11 @@
+#!/bin/sh
+# paper.html -> DRAFT PDF on compute-host with the house pipeline (figures and number audit first, then edgecheck, figcheck.mjs and print.mjs)
+set -e
+cd "$(dirname "$0")"
+D=2026-11-19-dehn-canon
+rsync -a --delete --exclude '*.pdf' ./ compute-host:kaleidohedra-papers/$D/
+rsync -a ../paper.css ../dicto-logo.png ../print.mjs ../figcheck.mjs ../edgecheck.py ../edgecheck-allow.txt compute-host:kaleidohedra-papers/
+rsync -a --relative ../../studies/./2026-11-19-lean-dehn-1 ../../studies/./2026-11-19-lean-dehn-2 ../../studies/./2026-11-19-lean-dehn-3 ../../studies/./2026-11-19-lean-dehn-4 ../../studies/./2026-11-19-lean-dehn-5 ../../studies/./2026-11-19-lean-dehn-6 ../../studies/./2026-11-19-lean-dehn-7 ../../studies/./2026-11-19-dehn-atoms/README.md compute-host:kres-audit/studies/
+ssh compute-host "cd ~/kaleidohedra-papers/$D/scripts && ~/geom/bin/python3 fig_wedge.py && ~/geom/bin/python3 fig_canon.py && ~/geom/bin/python3 fig_words.py && STUDIES=~/kres-audit/studies ~/geom/bin/python3 audit.py | tee /dev/stderr | grep -q '^AUDIT OK'"
+ssh compute-host "cd ~/kaleidohedra-papers && python3 edgecheck.py $D/figures/*.png && node figcheck.mjs $D && node print.mjs $D DRAFT-dehn-canon.pdf 'Dehn Canon' draft"
+rsync -a compute-host:kaleidohedra-papers/$D/DRAFT-dehn-canon.pdf compute-host:kaleidohedra-papers/$D/figures ./
