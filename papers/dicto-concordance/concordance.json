@@ -8784,6 +8784,15 @@
         "retry": "never (these pairs); open: the ten other nonzero fair dice; convex hulls; Sydler's converse; paper §10 update",
         "study": "2026-11-19-lean-dehn-9",
         "date": "2026-11-19"
+      },
+      {
+        "question": "Lean canon study 10 (the two Lean points both Palomar pre-scorers asked for): (1) Hilbert's literal statement, two tetrahedra of equal bases and equal altitudes neither scissors congruent nor equicomplementable; (2) dehnSet = the classical edge sum (length ⊗ interior dihedral angle) for every convex polytope, with edges, facets and angle defined from the set alone",
+        "method": "Lean 4.35.0-rc2 + Mathlib; 2 files (Dehn10Hilbert importing study 9, Dehn10Edges importing study 4), studies 1 to 9 unchanged. (1) Aigner–Ziegler's T₁, T₂ on one base triangle: A (0,0,0), B (1,0,0), C (0,1,0), apexes (0,0,1) and (0,1,1); IsTetraData for both; angles by Gram numbers; 2 arccos(1/√3) = π − arccos(1/3) and Niven; orthoscheme zero by rational normals; altitudes as infDist to the base plane; volumes 1/6 by three halvings of the ℓ¹ ball and a shear of determinant 1; EquiComplementable through dehnSum_eq_of_scissors. (2) from dehnSet_eq_sum_faceSet: a tight set with a line as direction space is a segment (compact convex set of the line), an exposed face, in bijection with the edges (tight set of the midpoint); two_extreme gives two constraints with independent normals spanning the cone; these are exactly the two facet normals; theta_pair gives π − angle. Independent corner check checks/hilbert_pair_check.py",
+        "status": "SETTLED (Lean, axioms propext, Classical.choice, Quot.sound only)",
+        "result": "hilbert_third_problem: ∃ A B C D D′, both altitudes over ABC = 1, both volumes = 1/6, ¬ ScissorsCongruent, ¬ EquiComplementable (convex hulls of the corners); dehnSet cornerTet = 3√2 ⊗ arccos(1/√3) ≠ 0, dehnSet orthoTet = 0; dehnSet_eq_of_equiComplementable. dehnSet_eq_edge_sum: for every IsPoly P with interior points, dehnSet P = Σ over edges F (exposed faces that are segments) of length(F) ⊗ dihedral P F; IsEdge.facetNormals_eq_pair (exactly two facets through each edge, dihedral = π − angle of their outward unit normals, in (0, π)); edges_finite. No general-position or irredundancy hypothesis. Prior Lean: FormalBook ch. 10 has the same pair in its edge-data model (no bridge); the set-level statements: not found in the sources checked",
+        "retry": "never (these statements); open: second blind Palomar score of D1 with the two theorems quoted; Hilbert's sentence for every base and altitude; faces exposed = extreme for polytopes; Sydler's converse; Challenge file",
+        "study": "2026-11-19-lean-dehn-10",
+        "date": "2026-11-19"
       }
     ]
   },

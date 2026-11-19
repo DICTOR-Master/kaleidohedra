@@ -1,0 +1,132 @@
+toolchain: leanprover/lean4:v4.35.0-rc2; Mathlib rev: "rev":"065356127b1dc0016f66b7283ce0ce2c4055aa55"
+== DehnCanon1.lean
+exit=0
+== Dehn2Poly.lean
+exit=0
+== Dehn2Local.lean
+exit=0
+== Dehn2Sum.lean
+exit=0
+== Dehn2Cut.lean
+exit=0
+== Dehn2Motion.lean
+exit=0
+== DehnCanon2.lean
+exit=0
+== Dehn2Edges.lean
+exit=0
+== Dehn2R3.lean
+exit=0
+== Dehn3Sector.lean
+exit=0
+== Dehn3Solids.lean
+exit=0
+== Dehn4Similar.lean
+exit=0
+== Dehn4Rational.lean
+exit=0
+== Dehn4Simplex.lean
+exit=0
+== Dehn4Words.lean
+exit=0
+== Dehn5Angles.lean
+exit=0
+== Dehn5Edges.lean
+exit=0
+== Dehn5Fuji.lean
+exit=0
+== Dehn5Pairs.lean
+exit=0
+== Dehn6Indep.lean
+exit=0
+== Dehn6Pairs.lean
+exit=0
+== Dehn7Gold.lean
+exit=0
+== Dehn7Octa.lean
+exit=0
+== Dehn7CubeOct.lean
+exit=0
+== Dehn7Dodeca.lean
+exit=0
+== Dehn7Icosa.lean
+exit=0
+== Dehn7Table.lean
+exit=0
+== Dehn8Indep.lean
+exit=0
+== Dehn8Cross.lean
+exit=0
+== Dehn9Vol.lean
+exit=0
+== Dehn9Same.lean
+exit=0
+== Dehn10Hilbert.lean
+exit=0
+== Dehn10Edges.lean
+exit=0
+== Axioms10.lean
+'DehnCanon.dehnSet_eq_of_equiComplementable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.cornerTet_eq_convexHull' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.orthoTet_eq_convexHull' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.hil_height_corner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.hil_height_ortho' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.volume_cornerTet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.volume_orthoTet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_cornerTet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.arccos_inv_sqrt_three_not_ratPi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_cornerTet_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_orthoTet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.cornerTet_not_scissorsCongruent_orthoTet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.cornerTet_not_equiComplementable_orthoTet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.hilbert_third_problem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.isExposed_faceIn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dihedral_eq_of_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.tightSet_eq_segment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.isExposed_tightSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.exists_tight_of_edge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.exists_pair_cone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.facetNormals_tightSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.edge_of_tight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_sol_eq_edge_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.edges_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.IsEdge.facetNormals_eq_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.IsEdge.length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DehnCanon.dehnSet_eq_edge_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+== grep sorry (the thirty-three files of the chain and Axioms10)
+DehnCanon/Dehn2Poly.lean:8:No `sorry`.
+DehnCanon/Dehn2Local.lean:15:No `sorry`.
+DehnCanon/Dehn2Sum.lean:8:No `sorry`.
+DehnCanon/Dehn2Cut.lean:8:No `sorry`.
+DehnCanon/Dehn2Motion.lean:6:No `sorry`.
+DehnCanon/DehnCanon2.lean:19:No `sorry`.
+DehnCanon/Dehn2Edges.lean:9:No `sorry`.
+DehnCanon/Dehn2R3.lean:4:No `sorry`.
+DehnCanon/Dehn3Sector.lean:19:No `sorry`.
+DehnCanon/Dehn3Solids.lean:19:No `sorry`.
+DehnCanon/Dehn4Similar.lean:12:No `sorry`.
+DehnCanon/Dehn4Rational.lean:20:No `sorry`.
+DehnCanon/Dehn4Simplex.lean:21:No `sorry`.
+DehnCanon/Dehn4Words.lean:25:No `sorry`.
+DehnCanon/Dehn5Angles.lean:19:No `sorry`.
+DehnCanon/Dehn5Edges.lean:34:No `sorry`.
+DehnCanon/Dehn5Fuji.lean:31:No `sorry`.
+DehnCanon/Dehn5Pairs.lean:24:No `sorry`.
+DehnCanon/Dehn6Indep.lean:22:No `sorry`.
+DehnCanon/Dehn6Pairs.lean:19:No `sorry`.
+DehnCanon/Dehn7Gold.lean:29:No `sorry`.
+DehnCanon/Dehn7Octa.lean:22:No `sorry`.
+DehnCanon/Dehn7CubeOct.lean:32:No `sorry`.
+DehnCanon/Dehn7Dodeca.lean:23:No `sorry`.
+DehnCanon/Dehn7Icosa.lean:20:No `sorry`.
+DehnCanon/Dehn7Table.lean:24:No `sorry`.
+DehnCanon/Dehn8Indep.lean:28:No `sorry`.
+DehnCanon/Dehn8Cross.lean:23:No `sorry`.
+DehnCanon/Dehn9Vol.lean:30:No `sorry`.
+DehnCanon/Dehn9Same.lean:34:No `sorry`.
+DehnCanon/Dehn10Hilbert.lean:43:No `sorry`.
+DehnCanon/Dehn10Edges.lean:48:No `sorry`.
+grep exit=0 (0 = matches listed above; they must all be header lines saying: No `sorry`)
+== grep native_decide / axiom declarations
+grep exit=1 (1 = no match)
