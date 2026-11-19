@@ -19,9 +19,13 @@ DICTO's question that frames the paper: "How to enumerate the innumerable." Answ
 
 *Credit.* The theorem is Alexandrov's. Ours, not found in the sources checked (search 20 Nov), is reading a fair die as Alexandrov's problem for the polar.
 
-*Before drafting:*
-- Read Alexandrov's condition from the full text of Bertrand, arXiv:1505.04821, and Oliker, arXiv:math/0701398.
-- Check it on all 6684 sets and on the 319.
+*Alexandrov's condition (read 20 Nov in Bertrand, arXiv:1505.04821, Theorem 1.2; original: A. D. Aleksandrov, Existence and uniqueness of a convex surface with a given integral curvature, C. R. (Dokl.) Acad. Sci. URSS 35 (1942) 131–134).* With σ the uniform probability measure on the sphere: for every nonempty spherical convex set ω ≠ S², μ(ω) < σ(ω_{π/2}), where ω_{π/2} is the set of points within π/2 of ω. Necessary and sufficient. The body is unique up to dilation about the origin. For a fair die, μ puts mass 1/N at each face normal.
+
+*Consequence for the count.* For the 149 no test of the condition is needed. Existence is shown by construction: the die was found and confirmed to 80 digits. Uniqueness is Alexandrov's. So each admissible orbit set carries exactly one die, and the count is exact, not "seen inside a search box".
+
+*Still to do:*
+- Check that the 319 polar sets without a solution fail Alexandrov's condition (they should, since the condition is necessary and sufficient).
+- Confirm that Bertrand's and Oliker's statements cover the polytope case as used (Oliker's abstract says so).
 - Add the four papers to the reference library.
 
 ## Arc (beginning, middle, end; one line per section)
