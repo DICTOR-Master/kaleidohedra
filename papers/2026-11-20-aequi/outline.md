@@ -1,6 +1,6 @@
 # Paper 2 on the Aequi: outline (draft, 20 November 2026)
 
-Title (DICTO, 20 Nov): **Enumerating the Innumerable**.
+Title (DICTO, 20 Nov): **Fair Dice — The Aequi**. Subtitle: **Enumerating the Innumerable**.
 
 Split agreed with DICTO (20 Nov): (1) Equanimity with its twelve dice, as it stands; (2) this paper, on the 149 Aequi of the seven frame groups, plus the search with both icosahedron placements (running); (3) a dataset record of all 4553, with data and contact sheets, is-part-of this paper. The prisms belong in the dataset only.
 
