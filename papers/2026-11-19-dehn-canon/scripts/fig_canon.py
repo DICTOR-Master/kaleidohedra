@@ -1,5 +1,5 @@
 # Figure 3: the canon. Left: the solids proved to have Dehn invariant zero; right: those proved nonzero, in their two angle families.
-# Every line is a non-congruence proved in Lean (studies 2026-11-19-lean-dehn-6 and -7). Node colours: the app colour of the solid
+# Every line is a non-congruence proved in Lean (studies 2026-11-19-lean-dehn-6, -7 and -8). Node colours: the app colour of the solid
 # it stands for (Platonic solids in the element colours; AXE cyan, CLEO and FUJI lilac); other solids and the boxes neutral.
 import numpy as np, matplotlib
 matplotlib.use('Agg')
@@ -57,8 +57,9 @@ ax.add_patch(FancyArrowPatch((3.45, 6.45), (11.9, 6.45), arrowstyle='<->', mutat
                              connectionstyle='arc3,rad=0'))
 ax.text(7.7, 6.6, 'no similar copy of a nonzero solid is scissors congruent to a similar copy of a zero solid',
         ha='center', fontsize=9)
-ax.add_patch(FancyArrowPatch((8.75, 3.0), (9.35, 3.0), arrowstyle='<->', mutation_scale=12, lw=1.1, color='#8c8475', ls='--'))
-ax.text(9.05, 3.2, 'open', ha='center', fontsize=8, color='#6b6457')
+# across the two nonzero families: all 15 pairs proved (study 8)
+ax.add_patch(FancyArrowPatch((8.75, 3.0), (9.35, 3.0), arrowstyle='<->', mutation_scale=12, lw=1.4, color=INK))
+ax.text(9.05, 3.15, 'all 15\npairs', ha='center', va='bottom', fontsize=7.5, color='#3d3d3d', linespacing=1.0)
 ax.set_xlim(0, 12); ax.set_ylim(0, 6.9); ax.set_aspect('equal'); ax.axis('off')
 plt.subplots_adjust(left=0.005, right=0.995, top=0.995, bottom=0.005)
 plt.savefig('../figures/fig-canon.png', facecolor='white')
