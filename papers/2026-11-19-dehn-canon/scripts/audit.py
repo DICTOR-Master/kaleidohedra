@@ -14,6 +14,9 @@ r5 = sqrt(5); g = (r5 - 1) / 2; tau = 1 / g
 r = sqrt(3 * (10 - 2 * r5))
 a = acos(1 / r5); b = acos((3 - r5) / r); c = acos(r5 / 3); e = acos((r5 + 1) / r); t3 = acos(mpf(1) / 3)
 ok(abs(a + b + e - pi) < 1e-50, 'α + β + ε = π'); ok(abs(a + 2 * b - c - pi) < 1e-50, 'α + 2β − γ = π'); ok(abs(e - (b - c)) < 1e-50, 'ε = β − γ')
+# Conway-Radin-Sadun reduction (Theorem 12, §9): β = (π + γ − α)/2, the same identity as word_angle_relation α + 2β − γ = π
+ok(abs(b - (pi + c - a) / 2) < 1e-50, 'β = (π + γ − α)/2'); ok(abs((a + 2 * ((pi + c - a) / 2) - c) - pi) < 1e-50, 'β = (π + γ − α)/2 ⇔ α + 2β − γ = π')
+need('β = (π + γ − α)/2', 'CRS reduction'); need('α + 2β − γ = π', 'word_angle_relation')
 ok(abs(((3 - r5) / r) ** 2 - (mpf(1) / 3 - 2 * r5 / 15)) < 1e-50, 'cos² β'); ok(abs(((r5 + 1) / r) ** 2 - (mpf(1) / 3 + 2 * r5 / 15)) < 1e-50, 'cos² ε')
 for v, s in [(a, '63.43'), (b, '79.18'), (c, '41.81'), (e, '37.37'), (a + b, '142.62')]:
     ok(str(degrees(v))[:len(s)] == s, f'{s}° truncation'); need(s, 'angle in degrees')
@@ -145,4 +148,6 @@ for s in ['184 screened, 32 zero, 151 nonzero, 1 mixed', '11 of 11', '324 pairs'
     need(s, 'fact')
 log = open(ST + '/2026-11-19-dehn-atoms/README.md', encoding='utf-8').read()
 ok('184 have exact corners' in log and '32 have Dehn invariant ZERO, 151 NONZERO' in log, 'atoms counts vs README')
+L5 = open(base + '5/lean/Dehn5Angles.lean', encoding='utf-8').read()
+ok('theorem word_angle_relation : wordAlpha + 2 * wordBeta - wordGamma = π' in L5, 'Lean word_angle_relation is α + 2β − γ = π')
 print('\n'.join(bad) if bad else 'AUDIT OK: every number recomputed and found in the text')
