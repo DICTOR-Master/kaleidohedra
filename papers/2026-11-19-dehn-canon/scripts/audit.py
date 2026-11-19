@@ -1,5 +1,5 @@
 # Number audit for the Dehn canon paper: recompute every number of the text and tables (60 digits) and check that the
-# paper prints it (Theorem 15's values, Theorem 14's volumes and a³/vol, and the study 8 and 9 counts included). Also checks CLEO = F* and AXE = A* of Ogievetsky-Papadopolos (1999, eq. (8)) and the study line counts.
+# paper prints it (Theorem 15's values, Theorem 14's volumes and a³/vol, Hilbert's pair of Theorem 6′ from its corners, and the study 8, 9 and 10 counts included). Also checks CLEO = F* and AXE = A* of Ogievetsky-Papadopolos (1999, eq. (8)) and the study line counts.
 import re, json, os, glob
 from mpmath import mp, mpf, sqrt, acos, pi, degrees
 mp.dps = 60
@@ -120,17 +120,73 @@ for v, s_ in [(g7, '0.0327'), (a7, '8.7086'), (v7, '5.4944')]:
     ok(mp.nstr(v, 12)[:len(s_)] == s_, f'Lucky 7 {s_} truncation ({mp.nstr(v, 8)})'); need(s_, 'Lucky 7 value')
 for s_ in ['volume 4/3', 'volume 8/3', '(4/3)(t³ − 3(t − 1)³)', '2592√2', 'g(1) = −1', 'g(2) = 1/5', '9(2t − 1)(2t − 3)²',
            '−3 + 9(t − 1)(t − 2)(2t − 3)', '3(t − 1)(2t² − 7t + 8)', '(x − y)(12(x² + xy + y²) + 9xy(x + y))', '8 − 16/3 = 8/3',
-           '(4/3)t³ − 6 · (2/3)(t − 1)³', '510a799f', '31 files', 'compile_all9.sh', 'Theorem 14', 'Table 5']: need(s_, 'study 9 fact')
+           '(4/3)t³ − 6 · (2/3)(t − 1)³', '510a799f', 'Theorem 14', 'Table 5']: need(s_, 'study 9 fact')
 ok(Fr(8) - 4 * Fr(4, 3) == Fr(8, 3), 'tetra = cube less four corners')
 for t in [Fr(11, 10), Fr(3, 2), Fr(19, 10)]: ok(Fr(4, 3) * t ** 3 - 6 * Fr(2, 3) * (t - 1) ** 3 == Fr(4, 3) * D_(t), f'ball less six caps at {t}')
+# Theorem 6′ (study 10): Hilbert's pair from its corners alone, exact over Q(√2, √3) where needed
+Pa, Pb, Pc, Pd, Pd2 = (0, 0, 0), (1, 0, 0), (0, 1, 0), (0, 0, 1), (0, 1, 1)
+sub3 = lambda u, v: tuple(x - y for x, y in zip(u, v)); dot3 = lambda u, v: sum(x * y for x, y in zip(u, v))
+cross3 = lambda u, v: (u[1]*v[2]-u[2]*v[1], u[2]*v[0]-u[0]*v[2], u[0]*v[1]-u[1]*v[0])
+def tet_edges(V):                                     # {(i, j): (length², interior dihedral angle)} from the corners only
+    cen = tuple(Fr(sum(v[k] for v in V), 4) for k in range(3)); out = {}
+    def nrm(face):                                    # outward normal of the face opposite the fourth corner
+        n = cross3(sub3(V[face[1]], V[face[0]]), sub3(V[face[2]], V[face[0]]))
+        return n if dot3(n, sub3(V[face[0]], cen)) > 0 else tuple(-x for x in n)
+    for i in range(4):
+        for j in range(i + 1, 4):
+            k, l = [m for m in range(4) if m not in (i, j)]
+            n1, n2 = nrm((i, j, k)), nrm((i, j, l))
+            ang = pi - acos(mpf(dot3(n1, n2)) / sqrt(mpf(dot3(n1, n1)) * dot3(n2, n2)))
+            out[(i, j)] = (dot3(sub3(V[i], V[j]), sub3(V[i], V[j])), ang)
+    return out
+T1 = tet_edges([Pa, Pb, Pc, Pd]); T2 = tet_edges([Pa, Pb, Pc, Pd2])
+ac3 = acos(1 / sqrt(3))
+exp1 = {(0, 1): (1, pi / 2), (0, 2): (1, pi / 2), (0, 3): (1, pi / 2), (1, 2): (2, ac3), (1, 3): (2, ac3), (2, 3): (2, ac3)}
+exp2 = {(0, 1): (1, pi / 4), (0, 2): (1, pi / 2), (0, 3): (2, pi / 2), (1, 2): (2, pi / 2), (1, 3): (3, pi / 3), (2, 3): (1, pi / 4)}
+for nm_, T, X in [('T', T1, exp1), ("T′", T2, exp2)]:
+    for e_ in X: ok(T[e_][0] == X[e_][0] and abs(T[e_][1] - X[e_][1]) < 1e-50, f'{nm_} edge {e_}: length² and angle')
+ok(sum(sqrt(T1[e_][0]) for e_ in T1 if abs(T1[e_][1] - ac3) < 1e-40) - 3 * sqrt(2) < 1e-50, 'dehnSet T = 3√2 ⊗ arccos(1/√3): total length at that angle')
+ok(all(abs(T1[e_][1] - pi / 2) < 1e-50 for e_ in T1 if T1[e_][0] == 1), 'T: the other three angles π/2, class 0')
+ok(all(abs(12 * T2[e_][1] / pi - mp.nint(12 * T2[e_][1] / pi)) < 1e-50 for e_ in T2), "T′: every angle in ℚπ, dehnSet T′ = 0")
+ok(str(degrees(ac3))[:5] == '54.73', 'arccos(1/√3) in degrees'); need('54.73', 'arccos(1/√3) in degrees')
+N2 = [(1, 1, 0), (-1, 0, 0), (0, -1, 1), (0, 0, -1)]            # the face normals of T′ quoted in the proof
+for n_ in N2:                                                   # each is outward: ≤ on all corners, = on exactly three
+    hv = [dot3(n_, v) for v in (Pa, Pb, Pc, Pd2)]; mx = max(hv); ok(hv.count(mx) == 3, f'normal {n_} supports a face of T′')
+    ok(dot3(n_, sub3((Fr(1, 4), Fr(2, 4), Fr(1, 4)), (Pa, Pb, Pc, Pd2)[hv.index(mx)])) < 0, f'normal {n_} points out')
+for i in range(4):
+    for j in range(i + 1, 4):
+        an = acos(mpf(dot3(N2[i], N2[j])) / sqrt(mpf(dot3(N2[i], N2[i])) * dot3(N2[j], N2[j])))
+        ok(abs(12 * an / pi - mp.nint(12 * an / pi)) < 1e-50, f'T′ normals {i},{j}: angle in ℚπ')
+vol6 = lambda V: abs(det3(*[sub3(V[k], V[0]) for k in (1, 2, 3)]))
+ok(vol6([Pa, Pb, Pc, Pd]) == 1 and vol6([Pa, Pb, Pc, Pd2]) == 1, 'volumes 1/6'); ok(Fr(4, 3) / 8 == Fr(1, 6), '(4/3)/8 = 1/6')
+ok(Pd[2] == 1 and Pd2[2] == 1 and all(v[2] == 0 for v in (Pa, Pb, Pc)), 'base in z = 0, apexes at z = 1: altitudes 1')
+ok(sub3(Pd, Pa) == (0, 0, 1) and sub3(Pd2, Pc) == (0, 0, 1), 'feet A and C at distance 1')
+shear = lambda u: (u[0], u[1] + u[2], u[2]); ok(det3((1, 0, 0), (0, 1, 1), (0, 0, 1)) == 1, 'shear determinant 1')
+ok([shear(v) for v in (Pa, Pb, Pc, Pd)] == [Pa, Pb, Pc, Pd2], 'the shear carries T onto T′')
+for s_ in ['A = (0, 0, 0), B = (1, 0, 0), C = (0, 1, 0)', 'D = (0, 0, 1)', 'D′ = (0, 1, 1)', 'volume 1/6 each', 'both volumes are 1/6',
+           '3√2 ⊗ arccos(1/√3)', 'dehnSet T′ = 0', '(1, 1, 0), (−1, 0, 0), (0, −1, 1), (0, 0, −1)', '(4/3)/8 = 1/6',
+           '(u<sub>0</sub>, u<sub>1</sub>, u<sub>2</sub>) ↦ (u<sub>0</sub>, u<sub>1</sub> + u<sub>2</sub>, u<sub>2</sub>)'.replace('<sub>', '').replace('</sub>', ''),
+           'Theorem 6′', 'Theorem 6″', 'Definition 3', '559c72d3', '33 files', 'compile_all10.sh', 'Bull. Amer. Math. Soc. 8 (1902) 437–479']:
+    need(s_, 'study 10 fact')
+ok('AB of length 1 at π/4, AC of length 1 at π/2, AD′ and BC of length √2 at π/2, BD′ of length √3 at π/3 and CD′ of length 1 at π/4' in txt, 'T′ edge list as printed')
+# Hilbert's sentence as quoted in study 10 (checked there against the transcription of Newson's translation)
+ST_ = os.environ.get('STUDIES', '../../../studies'); R10 = open(ST_ + '/2026-11-19-lean-dehn-10/README.md', encoding='utf-8').read()
+qh = re.search(r'Hilbert \(1900\) asked for "([^"]+)"', R10).group(1); ok(f'"{qh}" [2]' in txt, "Hilbert's sentence as in study 10")
+# Lean statements printed for study 10 are verbatim in the files
+import html as _h
+L10 = ''.join(open(ST_ + f'/2026-11-19-lean-dehn-10/lean/{f}.lean', encoding='utf-8').read() for f in ('Dehn10Hilbert', 'Dehn10Edges'))
+for blk in re.findall(r'<pre><code>(.*?)</code></pre>', H, re.S):
+    if 'hilbert_third_problem' in blk or 'edge_sum' in blk or 'facetNormals_eq_pair' in blk:
+        for th in re.split(r'\n(?=theorem )', _h.unescape(blk)):
+            ok(th.strip() in L10, f'Lean statement verbatim: {th.strip()[:50]}')
 # Lean line and file counts per study
 ST = os.environ.get('STUDIES', '../../../studies')
 base = ST + '/2026-11-19-lean-dehn-'
 tot_l = tot_f = 0
-for k, (nf, nl) in {1: (1, 153), 2: (10, 1708), 3: (3, 909), 4: (5, 1303), 5: (5, 1326), 6: (3, 314), 7: (7, 7504), 8: (3, 477), 9: (3, 833)}.items():
+for k, (nf, nl) in {1: (1, 153), 2: (10, 1708), 3: (3, 909), 4: (5, 1303), 5: (5, 1326), 6: (3, 314), 7: (7, 7504), 8: (3, 477), 9: (3, 833), 10: (3, 1353)}.items():
     fs = glob.glob(base + f'{k}/lean/*.lean'); L = sum(sum(1 for _ in open(f, encoding='utf-8')) for f in fs)
     ok(len(fs) == nf and L == nl, f'study {k}: {len(fs)} files {L} lines'); tot_l += L; tot_f += len(fs)
-ok(tot_l == 14527 and tot_f == 40, 'totals'); need('14,527', 'total lines'); need('40 Lean files', 'total files'); need('477', 'study 8 lines'); need('833', 'study 9 lines')
+ok(tot_l == 15880 and tot_f == 43, 'totals'); need('15,880', 'total lines'); need('43 Lean files', 'total files'); need('1,353', 'study 10 lines'); need('477', 'study 8 lines'); need('833', 'study 9 lines')
 # study 8: theorems and lemmas in its two proof files, and the #print axioms list
 L8 = ''.join(open(base + f'8/lean/{f}.lean', encoding='utf-8').read() for f in ('Dehn8Indep', 'Dehn8Cross'))
 n8 = len(re.findall(r'^\s*(?:theorem|lemma) ', L8, re.M)); ok(n8 == 49, f'study 8: {n8} theorems and lemmas'); need('49 theorems and lemmas', 'study 8 count')
@@ -144,6 +200,15 @@ for nm in ['volume_iUnion_poly', 'volume_eq_of_scissorsCongruent', 'volume_simil
            'not_scissorsCongruent_of_cube_ne', "co_tetra_not_scissorsCongruent'", "co_oct_not_scissorsCongruent'", 'co_co_not_scissorsCongruent',
            "oct_tetra_not_scissorsCongruent'", 'luckySeven_tetra_not_scissorsCongruent', 'canon_tet_not_scissorsCongruent', 'canon_complete']:
     ok(re.search(r'^(?:theorem|lemma) ' + re.escape(nm) + r'[\s{(:]', L9, re.M) is not None, f'study 9 has {nm}'); need(nm, 'Lean name')
+# study 10: theorems and lemmas in its two proof files, the #print axioms list, and every Lean name §5.1 cites
+n10 = len(re.findall(r'^\s*(?:theorem|lemma) ', L10, re.M)); ok(n10 == 56, f'study 10: {n10} theorems and lemmas'); need('56 theorems and lemmas', 'study 10 count')
+A10 = open(base + '10/lean/Axioms10.lean', encoding='utf-8').read(); ok(A10.count('#print axioms') == 27, 'study 10: 27 axiom checks')
+for nm in ['hilbert_third_problem', 'dehnSet_eq_of_equiComplementable', 'hil_height_corner', 'hil_height_ortho', 'volume_cornerTet', 'volume_orthoTet',
+           'dehnSet_cornerTet', 'dehnSet_orthoTet', 'dehnSet_eq_edge_sum', 'IsEdge.facetNormals_eq_pair', 'edges_finite', 'IsEdge.length']:
+    ok(re.search(r'^(?:theorem|lemma) ' + re.escape(nm) + r'[\s{(:]', L10, re.M) is not None, f'study 10 has {nm}'); need(nm, 'Lean name')
+    ok('#print axioms ' + nm in A10 or '#print axioms DehnCanon.' + nm in A10, f'study 10 axiom check for {nm}')
+for nm in ['EquiComplementable', 'IsEdge', 'edges', 'facetNormals', 'dihedral', 'faceIn']:
+    ok(re.search(r'^(?:noncomputable )?def ' + nm + r'\b', L10, re.M) is not None, f'study 10 defines {nm}')
 for s in ['184 screened, 32 zero, 151 nonzero, 1 mixed', '11 of 11', '324 pairs', '900 pairs', '21 pairs', 'v4.35.0-rc2', '065356127b1dc0016f66b7283ce0ce2c4055aa55', '349 PDF']:
     need(s, 'fact')
 log = open(ST + '/2026-11-19-dehn-atoms/README.md', encoding='utf-8').read()
