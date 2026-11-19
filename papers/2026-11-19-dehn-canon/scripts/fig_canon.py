@@ -1,5 +1,5 @@
 # Figure 3: the canon. Left: the solids proved to have Dehn invariant zero; right: those proved nonzero, in their two angle families.
-# Every line is a non-congruence proved in Lean (studies 2026-11-19-lean-dehn-6, -7 and -8). Node colours: the app colour of the solid
+# Every line is a non-congruence proved in Lean (studies 2026-11-19-lean-dehn-6 to -9). Node colours: the app colour of the solid
 # it stands for (Platonic solids in the element colours; AXE cyan, CLEO and FUJI lilac); other solids and the boxes neutral.
 import numpy as np, matplotlib
 matplotlib.use('Agg')
@@ -38,19 +38,21 @@ for i in range(5):
 for (l, c), (x, y) in zip(ab, pos): node(x, y, l, c, w=1.4)
 ax.text(cx, 0.42, 'all 10 pairs proved', ha='center', fontsize=8.5, color='#3d3d3d')
 
-# nonzero, arccos(1/3) family: tetrahedron-octahedron, low cuts-tetrahedron, high cuts-octahedron (opposite signs only)
+# nonzero, arccos(1/3) family: pairwise apart (study 7 by sign, study 9 by the scale-free number a^3/vol):
+# tetrahedron, the cube ∩ octahedron line (any two members: the loop), octahedron
 box(9.4, 0.2, 2.55, 6.0, 'nonzero, over\narccos(1/3)')
-X = 10.45
-tp, lo, hi, op = (X, 4.75), (X, 3.55), (X, 2.35), (X, 1.15)
-ax.plot([X, X], [tp[1], lo[1]], color='#3d3d3d', lw=1.3, zorder=2)
-ax.plot([X, X], [hi[1], op[1]], color='#3d3d3d', lw=1.3, zorder=2)
-ax.plot([X + 0.8, 11.65, 11.65, X + 0.8], [tp[1], tp[1], op[1], op[1]], color='#3d3d3d', lw=1.3, zorder=2)
-node(*tp, 'tetrahedron', T, w=1.6, sub='+12√2 ⊗ arccos(1/3)')
-node(*lo, 'cube ∩ octahedron', NEU, w=1.6, sub='1 < t < 3/2: sign −')
-node(*hi, 'cube ∩ octahedron', NEU, w=1.6, sub='3/2 < t < 2: sign +')
-node(*op, 'octahedron', O, w=1.6, sub='−12√2 ⊗ arccos(1/3)')
-ax.text(X - 0.08, 1.78, 'fair 14-face die:\nt ≈ 1.757', ha='right', fontsize=7, color='#444')
-ax.text(10.675, 0.42, 'pairs of opposite sign', ha='center', fontsize=8.5, color='#3d3d3d')
+X = 10.35
+tp, li, op = (X, 4.75), (X, 2.95), (X, 1.15)
+ax.plot([X, X], [tp[1], op[1]], color='#3d3d3d', lw=1.3, zorder=2)
+ax.plot([X + 0.75, 11.72, 11.72, X + 0.75], [tp[1], tp[1], op[1], op[1]], color='#3d3d3d', lw=1.3, zorder=2)
+ax.add_patch(FancyArrowPatch((X + 0.75, li[1] + 0.15), (X + 0.75, li[1] - 0.15), arrowstyle='-', lw=1.3, color='#3d3d3d',
+                             connectionstyle='arc3,rad=-2.4', zorder=2))
+node(*tp, 'tetrahedron', T, w=1.5, sub='+12√2 ⊗ arccos(1/3)')
+node(*li, 'cube ∩ octahedron', NEU, w=1.5, sub='1 < t < 2, t ≠ 3/2')
+node(*op, 'octahedron', O, w=1.5, sub='−12√2 ⊗ arccos(1/3)')
+ax.text(11.4, 3.16, 'any two\nmembers', ha='center', va='bottom', fontsize=6.5, color='#444', linespacing=1.0)
+ax.text(X - 0.08, 2.2, 'fair 14-face die:\nt ≈ 1.757', ha='right', fontsize=7, color='#444')
+ax.text(10.675, 0.42, 'all pairs proved', ha='center', fontsize=8.5, color='#3d3d3d')
 
 # zero vs nonzero
 ax.add_patch(FancyArrowPatch((3.45, 6.45), (11.9, 6.45), arrowstyle='<->', mutation_scale=14, lw=1.4, color=INK,
