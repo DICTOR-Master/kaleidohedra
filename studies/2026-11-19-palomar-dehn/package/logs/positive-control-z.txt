@@ -1,0 +1,7 @@
+Positive (calibration) control, run once by hand on 19 Nov 2026 in a scratch copy of the built entry: the line
+"-- a comment" appended to Challenge.lean, then `CJ=default bash scripts/run_comparator_lowmem.sh`. The scratch copy and
+its log were removed afterwards; the last lines of the run, as printed:
+Lean default kernel accepts the solution
+Your solution is okay!
+cgroup memory.peak (bytes, whole run): 3052314624
+FINAL ok

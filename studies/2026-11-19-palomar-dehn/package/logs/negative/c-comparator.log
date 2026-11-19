@@ -1,0 +1,45 @@
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+No files to download
+Already decompressed 8915 file(s)
+Resolving dependencies
+Building Challenge
+⚠ [8931/8932] Replayed Challenge
+warning: Challenge.lean:241:8: declaration uses `sorry`
+warning: Challenge.lean:274:8: declaration uses `sorry`
+warning: Challenge.lean:291:8: declaration uses `sorry`
+warning: Challenge.lean:299:8: declaration uses `sorry`
+warning: Challenge.lean:326:8: declaration uses `sorry`
+Build completed successfully (8932 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HilbertThird.hilbert_third_problem, HilbertThird.dehnSet_eq_edge_sum, HilbertThird.dehnSet_eq_of_scissorsCongruent, HilbertThird.dehnSum_eq_of_scissors, HilbertThird.similarTetra_not_scissorsCongruent_similarCube, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+⚠ [8963/8964] Replayed Solution
+warning: Solution.lean:276:8: declaration uses `sorry`
+Build completed successfully (8964 jobs).
+error: Illegal axiom detected: 'sorryAx'
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HilbertThird.hilbert_third_problem, HilbertThird.dehnSet_eq_edge_sum, HilbertThird.dehnSet_eq_of_scissorsCongruent, HilbertThird.dehnSum_eq_of_scissors, HilbertThird.similarTetra_not_scissorsCongruent_similarCube, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Command exited with non-zero status 1
+	Command being timed: "bash scripts/verify-comparator-lowmem.sh"
+	User time (seconds): 21.50
+	System time (seconds): 2.34
+	Percent of CPU this job got: 29%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:20.20
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 887632
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 64482
+	Voluntary context switches: 134310
+	Involuntary context switches: 421
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+cgroup memory.peak (bytes, whole run): 1559531520

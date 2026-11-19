@@ -1,0 +1,369 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4
+version: "v0.4"
+
+project:
+  name: "Hilbert's third problem, with the Dehn invariant of a set"
+  description: >-
+    Dehn's answer to Hilbert's third problem, with the Dehn invariant defined
+    from the solid as a set of points in 3-space rather than from a list of
+    edges. For a set P, the invariant dehnSet P in R (x)_Q (R/Q pi) adds, over
+    the angle classes theta, the length (1-dimensional Hausdorff measure) of the
+    points of P whose cone of directions has a line as its lineality space and
+    the angle class theta there, the angle being 2 pi times the area of the cone
+    in the unit disc across that line divided by the area of the disc. Proved:
+    (1) Hilbert's problem in his words: two tetrahedra on one and the same base
+    triangle, with apexes at the same distance 1 from its plane and volume 1/6,
+    that are neither scissors congruent nor equicomplementable (pieces: convex
+    polytopes moved by isometries); (2) for every convex polytope with interior
+    points, dehnSet P equals the classical sum over its edges of length (x)
+    dihedral angle, with edges, facets and dihedral angles also defined from the
+    set (Dehn's invariant in Jessen's tensor form); (3) the bridge:
+    scissors-congruent convex polytopes have the same invariant, in every
+    3-dimensional real inner product space, and for finite unions of convex
+    polytopes the total over the pieces does not depend on the dissection and is
+    kept by scissors congruence; (4) Dehn's theorem: no similar copy of the
+    regular tetrahedron is scissors congruent to a similar copy of the cube. The
+    theorem is classical (Dehn 1901) and already formalized in Lean in
+    FormalBook's chapter 10, in an abstract model of edges and angles; what is
+    added here is the set-defined invariant, the proved bridge from geometric
+    dissections, its agreement with the edge sum, and Hilbert's statement for
+    tetrahedra as point sets.
+  authors:
+    - "DICTO"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "DICTO"
+
+classification:
+  arxiv: ["math.MG", "math.HO"]
+  msc2020: ["52B45", "52B10", "51M20", "03B35"]
+
+sources:
+  - title: "Ueber den Rauminhalt"
+    authors:
+      - "M. Dehn"
+    id: "doi:10.1007/BF01448001"
+    type: "paper"
+    location: "Mathematische Annalen 55 (1901) 465-478"
+    relationship: "formalizes"
+    note: >-
+      Dehn's invariant and his theorem that the regular tetrahedron and the
+      cube are not scissors congruent (similarTetra_not_scissorsCongruent_similarCube),
+      and his answer to Hilbert's question (hilbert_third_problem). The invariant
+      is used in Jessen's tensor form (below). Cited, not reread for this entry.
+    author_endorsement: "n/a"
+  - title: "Mathematische Probleme (problem 3)"
+    authors:
+      - "D. Hilbert"
+    contributors:
+      - name: "M. W. Newson"
+        role: "translator: Mathematical problems, Bull. Amer. Math. Soc. 8 (1902) 437-479"
+    type: "paper"
+    location: "Nachrichten der Gesellschaft der Wissenschaften zu Goettingen (1900) 253-297, problem 3; English by Newson, Bull. Amer. Math. Soc. 8 (1902) 437-479"
+    relationship: "formalizes"
+    note: >-
+      The statement of hilbert_third_problem follows Hilbert's sentence: "two
+      tetrahedra of equal bases and equal altitudes which can in no way be split
+      up into congruent tetrahedra, and which cannot be combined with congruent
+      tetrahedra to form two polyhedra which themselves could be split up into
+      congruent tetrahedra". The sentence was compared fragment by fragment with
+      the Wikisource transcription of Newson's translation (read 19 November
+      2026; that page is not backed by a scan, and the Bulletin itself was not
+      opened, so no page is given).
+    author_endorsement: "n/a"
+  - title: "The algebra of polyhedra and the Dehn-Sydler theorem"
+    authors:
+      - "B. Jessen"
+    type: "paper"
+    location: "Mathematica Scandinavica 22 (1968) 241-256"
+    relationship: "background"
+    note: "The tensor form, the sum of length (x) angle in R (x)_Q (R/Q pi), used for dehnSet and in dehnSet_eq_edge_sum. Cited, not reread."
+    author_endorsement: "n/a"
+  - title: "Proofs from THE BOOK, chapter \"Hilbert's third problem: decomposing polyhedra\", Examples 2 and 3"
+    authors:
+      - "M. Aigner"
+      - "G. M. Ziegler"
+    type: "book"
+    location: "Springer; the tetrahedra T1 and T2 of the chapter"
+    relationship: "background"
+    note: >-
+      The pair of tetrahedra of hilbert_third_problem (here placed on one base
+      triangle) and their dihedral angles. The book was not opened; the
+      examples were read from the docstrings of FormalBook's Chapter_10.lean
+      (related formalization below) and the angles recomputed by an
+      independent exact script.
+    author_endorsement: "n/a"
+  - title: "Conditions necessaires et suffisantes pour l'equivalence des polyedres de l'espace euclidien a trois dimensions"
+    authors:
+      - "J.-P. Sydler"
+    type: "paper"
+    location: "Commentarii Mathematici Helvetici 40 (1965) 43-80"
+    relationship: "background"
+    note: "The converse (volume and Dehn invariant decide scissors congruence). Quoted, not used and not formalized."
+    author_endorsement: "n/a"
+  - title: "Geometry: Euclid and Beyond, Chapter 5, section 27 \"Hilbert's Third Problem\""
+    authors:
+      - "R. Hartshorne"
+    type: "book"
+    location: "Undergraduate Texts in Mathematics, Springer, New York, 2000, pp. 231-240 (Proposition 27.2, p. 235)"
+    relationship: "background"
+    note: >-
+      The textbook edge argument for additivity under gluing (Proposition 27.2),
+      the argument behind the plane-cut identity (dehnSet_cut) of the
+      development. Read (section 27). The edge sum (dehnSet_eq_edge_sum) does
+      not use this cutting argument.
+    author_endorsement: "n/a"
+  - title: "Vorlesungen ueber Inhalt, Oberflaeche und Isoperimetrie"
+    authors:
+      - "H. Hadwiger"
+    type: "book"
+    location: "Springer, Berlin, 1957"
+    relationship: "background"
+    note: >-
+      With Groemer (below): the extension of additivity from single plane cuts
+      to dissections, proved in the development by refinement along facet
+      planes. Cited through Dupont's bibliography; not opened.
+    author_endorsement: "n/a"
+  - title: "On the extension of additive functionals on classes of convex sets"
+    authors:
+      - "H. Groemer"
+    id: "doi:10.2140/pjm.1978.75.397"
+    type: "paper"
+    location: "Pacific Journal of Mathematics 75 (1978) 397-410"
+    relationship: "background"
+    note: "Credited for the valuation extension behind the bridge (additivity over dissections from additivity under cuts). Abstract page read."
+    author_endorsement: "n/a"
+  - title: "Hilbert's Third Problem"
+    authors:
+      - "V. G. Boltianskii"
+    type: "book"
+    location: "translated from the Russian, Winston and Wiley, 1978"
+    relationship: "background"
+    note: "Book-length account of the theory; for context, not opened."
+    author_endorsement: "n/a"
+  - title: "Hilbert's Third Problem: Scissors Congruence"
+    authors:
+      - "C.-H. Sah"
+    type: "book"
+    location: "Research Notes in Mathematics 33, Pitman, 1979"
+    relationship: "background"
+    note: "Book-length account of the theory; for context, not opened."
+    author_endorsement: "n/a"
+  - title: "Scissors Congruences, Group Homology and Characteristic Classes"
+    authors:
+      - "J. L. Dupont"
+    type: "book"
+    location: "Nankai Tracts in Mathematics 1, World Scientific, Singapore, 2001"
+    relationship: "background"
+    note: "Book-length account; section 1 and the bibliography read (the source of the entries for Hadwiger, Boltianskii and Sah)."
+    author_endorsement: "n/a"
+  - title: "A new approach to Hilbert's third problem"
+    authors:
+      - "D. Benko"
+    id: "doi:10.1080/00029890.2007.11920458"
+    type: "paper"
+    location: "American Mathematical Monthly 114 (2007) 665-676"
+    relationship: "background"
+    note: "A short elementary proof of Dehn's theorem; bibliographic record only."
+    author_endorsement: "n/a"
+  - title: "Hilbert's third problem and a conjecture of Goncharov"
+    authors:
+      - "J. Campbell"
+      - "I. Zakharevich"
+    id: "arXiv:1910.07112"
+    type: "paper"
+    location: "arXiv:1910.07112 (2019)"
+    relationship: "background"
+    note: "Scissors congruence through algebraic K-theory; abstract page read."
+    author_endorsement: "n/a"
+  - title: "Irrational Numbers (Niven's theorem)"
+    authors:
+      - "I. Niven"
+    contributors:
+      - name: "Y. Meiburg"
+        role: "Mathlib formalization, NumberTheory/Niven.lean (2025)"
+      - name: "A. Broshi"
+        role: "Mathlib formalization, NumberTheory/Niven.lean (2025)"
+    type: "book"
+    location: "Carus Mathematical Monographs 11, MAA, 1956; used through Mathlib's NumberTheory/Niven.lean"
+    relationship: "background"
+    note: "arccos(1/3) is not a rational multiple of pi, from Mathlib's Niven theorem."
+    author_endorsement: "n/a"
+  - title: "Dehn's Theorem from the Solids Up (draft paper)"
+    authors:
+      - "DICTO"
+    type: "other"
+    location: "unpublished draft, 19 November 2026, not peer reviewed"
+    relationship: "other"
+    note: >-
+      DICTO's paper presenting this development (its Theorems 4, 4', 6, 6' and
+      6'') together with a canon of solids built on it. No earlier non-Lean
+      publication of the bridge.
+    author_endorsement: "participated"
+
+related_formalizations:
+  - id: "https://github.com/mo271/FormalBook/blob/54da1cecd8f3a27faa5d46a23b273611fc4f3365/FormalBook/Chapter_10.lean"
+    relationship: "independent"
+    note: >-
+      FormalBook chapter 10 (pull request #157, merged 6 October 2026; the file
+      at the commit in the id) is a complete, sorry-free Lean proof of Hilbert's
+      third problem by the route of Proofs from THE BOOK (Bricard's condition,
+      the pearl lemma), in a clean abstract model of segments and angles
+      (EdgeData, Decomp). It has the same pair of tetrahedra, T1 and T2, and a
+      theorem headed "Hilbert's third problem" for them in that model, and also
+      convex polytopes, faces and a Minkowski-Weyl theorem. Its description says
+      that it does not establish the bridge from arbitrary geometric
+      decompositions to the model, and it has no Dehn invariant. This entry was
+      made independently, by Dehn's invariant, and supplies that bridge for
+      dissections of sets in 3-space into convex polytopes. FormalBook's
+      Minkowski-Weyl theorem is used in one optional file of the development
+      that is not part of this entry. Credit: the theorem was first formalized
+      in Lean there.
+  - id: "https://github.com/facebookresearch/atlas-lean/blob/0ab82d469546484e0e05985b2df6c1aa49d7edc9/MathlibExt/Geometry/Dissections/DehnInvariant.lean"
+    relationship: "independent"
+    note: >-
+      ATLAS defines the Dehn invariant of a list of edges; the cube is zero and
+      the regular tetrahedron nonzero given the irrationality of arccos(1/3)/pi
+      as a hypothesis. No scissors congruence and no invariance theorem. (Commit:
+      the last one touching the file up to 19 November 2026, the version read.)
+  - id: "https://github.com/xiangyazi24/proof_in_the_book/blob/fa7ce8348a8a5b4bd910dccec442194a1a93b3d4/ProofsInTheBook/Chapter09Final.lean"
+    relationship: "independent"
+    note: >-
+      Non-equidecomposability of a regular tetrahedron and a subdivided cube with
+      concrete pieces, by Bricard's route, with the pearl-lemma edge-count
+      balance as a hypothesis of the headline theorem. (Commit as above.)
+  - id: "https://github.com/rjwalters/lean-genius/blob/af3b43e44060363964d24d563c35bdbcf808f659/proofs/Proofs/DissectionOfCubesOQ02.lean"
+    relationship: "independent"
+    note: >-
+      Proves arccos(1/3)/pi irrational and takes Dehn's theorem for its pair as
+      a hypothesis. (Commit as above.)
+
+status:
+  scope: >-
+    Formalised (Challenge, five theorems): hilbert_third_problem,
+    dehnSet_eq_edge_sum, dehnSet_eq_of_scissorsCongruent,
+    dehnSum_eq_of_scissors, similarTetra_not_scissorsCongruent_similarCube.
+    Restrictions: dimension 3; the pieces of a dissection are convex polytopes
+    (bounded intersections of finitely many closed half-spaces), finitely many,
+    moved by isometries including reflections; P and Q in the bridge are convex
+    (dehnSum_eq_of_scissors covers finite unions); the edge sum is for convex
+    polytopes with interior points; "regular tetrahedron" and "cube" mean
+    similar copies of the two models tetraSet and cubeSet 1; Hilbert's
+    statement is proved for one pair (equal bases as the same base triangle,
+    equal altitudes as equal distances of the apexes from its plane). Not
+    formalised: Sydler's converse; the edge sum for solids that are not convex;
+    that every 1-dimensional face of a convex polytope is exposed (not needed).
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude Opus (Anthropic)"]
+      framework: "Claude Code (Opus)"
+      tool_setup: >-
+        A Claude Code agent wrote the definitions, the statements and the proofs
+        of the ten Lean studies, the generator of the Challenge from their
+        sources and the independent exact checks (plain Python), and ran the
+        Lake builds and the comparator against Mathlib v4.35.0-rc2 on Linux
+        compute machines; no native_decide.
+      cost:
+        wall_time: "about one day (19 November 2026)"
+        spend_usd: "subscription-based"
+        hardware: "local Linux machines"
+      prompting_notes: >-
+        DICTO set the target ("Dehn's own theorem in Lean could prove to be the
+        backbone" of a canon of solids) and the order of the studies; the two
+        points of study 10 (Hilbert's literal statement, the edge sum) followed
+        a blind pre-score of this entry.
+  spend_usd: "subscription-based"
+  notes: >-
+    DICTO posed the formalisation and directed the studies; every definition,
+    statement and proof was written by the agent. Every study was checked by a
+    full recompilation and #print axioms (only propext, Classical.choice and
+    Quot.sound). No independent human line-by-line audit of the Lean code has
+    been made.
+
+fidelity:
+  divergences: >-
+    (1) Scissors congruence uses convex polytopes as pieces, not only
+    tetrahedra, and isometries including reflections; both make the
+    non-congruence statements stronger than Hilbert's. (2) Equicomplementable:
+    finitely many convex polytopes are added to P, and congruent copies of the
+    same pieces to Q, with interiors disjoint from each other and from P (from
+    Q), and the enlarged solids are scissors congruent. (3) "Equal bases and
+    equal altitudes" is proved in the strongest form available for one pair: the
+    same base triangle A B C, and both apexes at distance 1 (Metric.infDist)
+    from its affine span; the volumes (Lebesgue measure of the convex hulls)
+    are both 1/6. (4) The angle in dehnSet is an area ratio of a cone in the
+    disc across the edge; dehnSet_eq_edge_sum shows that the invariant equals
+    the sum with pi minus the angle between the outward unit normals of the two
+    facets through each edge, so the set definition agrees with Jessen's form.
+    (5) An edge is an exposed face (Mathlib's IsExposed) that is a segment with
+    two different ends; the facets through an edge are given by unit normals
+    whose exposed face contains the edge and is not collinear. (6) The model
+    tetrahedron has corners (-1,-1,-1), (1,1,-1), (1,-1,1), (-1,1,1); the cube
+    is [-1,1]^3; a similar copy is a scaling by a > 0 followed by an isometry.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none"
+  notes: >-
+    The Challenge is generated mechanically from the Lean sources, so every
+    definition and statement is the development's own text; the Solution is the
+    Challenge word for word with each proof transferred from the development.
+    Two blind pre-scores (19 November 2026) read the statements and the prior
+    formalizations; their requests (Hilbert's literal statement, the edge sum,
+    the bridge for finite unions, the references above, pinned commits of the
+    other formalizations, a real Challenge and Comparator configuration) are met
+    here, except Sydler's converse. The pair of tetrahedra was rechecked from
+    its corners by an independent exact script (edge lengths, the twelve
+    angles, volume, altitude). The comparator was run locally with Lean's
+    kernel, NanoDa and con-ron, and three altered copies (a changed constant, a
+    changed definition, a proof replaced by sorry) were each rejected.
+    Literature (19 November 2026, free routes only): Hartshorne section 27 and
+    Dupont section 1 read; Groemer and Campbell-Zakharevich abstract pages;
+    Benko bibliographic record; Boltianskii, Sah and Hadwiger not opened;
+    Hilbert through the Wikisource transcription of Newson; Aigner-Ziegler
+    through FormalBook's docstrings. Formal search: FormalBook, atlas-lean,
+    proof_in_the_book and lean-genius read; Mathlib (no Dehn invariant;
+    Equidecomp.lean is equidecomposability under a group action); Isabelle AFP,
+    Rocq/Coq, HOL Light, Metamath, Mizar, Naproche: none found; Hilbert's third
+    problem is not on Wiedijk's list of 100 theorems.
+
+alignment:
+  namespace: "HilbertThird"
+  statements:
+    - source: "Hilbert 1900, problem 3 (in Newson's translation); Dehn 1901"
+      lean: "HilbertThird.hilbert_third_problem"
+      module: "Challenge"
+      status: "proved"
+      note: "One pair on one base triangle (Aigner-Ziegler's T1 and T2); both halves of Hilbert's sentence."
+    - source: "Dehn 1901, the invariant in Jessen's form (1968)"
+      lean: "HilbertThird.dehnSet_eq_edge_sum"
+      module: "Challenge"
+      status: "proved"
+      note: "Every convex polytope with interior points; edges, facets and dihedral angles defined from the set."
+    - source: "Dehn 1901 (invariance under scissors congruence)"
+      lean: "HilbertThird.dehnSet_eq_of_scissorsCongruent"
+      module: "Challenge"
+      status: "proved"
+      note: "Convex polytopes, in any 3-dimensional real inner product space."
+    - source: "Dehn 1901 (invariance, polyhedra as finite unions of convex polytopes)"
+      lean: "HilbertThird.dehnSum_eq_of_scissors"
+      module: "Challenge"
+      status: "proved"
+    - source: "Dehn 1901 (the regular tetrahedron and the cube)"
+      lean: "HilbertThird.similarTetra_not_scissorsCongruent_similarCube"
+      module: "Challenge"
+      status: "proved"
+      note: "Similar copies of the two models, any size and position."
+
+acknowledgements: >-
+  Mathlib (in particular Niven's theorem by Y. Meiburg and A. Broshi, polar
+  coordinates, Hausdorff measure and IsExposed; each lemma is credited at its
+  point of use in the files); FormalBook chapter 10, the first Lean
+  formalization of Hilbert's third problem.

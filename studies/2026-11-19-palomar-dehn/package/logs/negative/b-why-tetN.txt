@@ -1,0 +1,11 @@
+Control b changes only the definition wedgeAngle (2 * Real.pi -> Real.pi); the comparator names HilbertThird.tetN.
+Why (checked by #print with pp.all on the original and on the altered Challenge): Lean abstracts a proof term used
+inside these definitions into an auxiliary lemma and reuses the first one made. In the original Challenge that lemma is
+HilbertThird.wedgeAngle._proof_1, and tetN refers to it; in the altered Challenge wedgeAngle no longer makes it, so
+tetN gets its own HilbertThird.tetN._proof_1. tetN therefore differs between the altered Challenge and the Solution,
+and the comparator meets it first on its worklist. The rejection is a direct consequence of the changed definition.
+diff (original < , altered >) of `#print HilbertThird.tetN` under pp.all, first lines:
+8c8
+<         HilbertThird.wedgeAngle._proof_1))
+---
+>         HilbertThird.tetN._proof_1))

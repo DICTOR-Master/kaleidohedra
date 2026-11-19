@@ -1,0 +1,49 @@
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+No files to download
+Already decompressed 8915 file(s)
+Resolving dependencies
+Building Challenge
+⚠ [8931/8932] Replayed Challenge
+warning: Challenge.lean:241:8: declaration uses `sorry`
+warning: Challenge.lean:274:8: declaration uses `sorry`
+warning: Challenge.lean:291:8: declaration uses `sorry`
+warning: Challenge.lean:299:8: declaration uses `sorry`
+warning: Challenge.lean:326:8: declaration uses `sorry`
+Build completed successfully (8932 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HilbertThird.hilbert_third_problem, HilbertThird.dehnSet_eq_edge_sum, HilbertThird.dehnSet_eq_of_scissorsCongruent, HilbertThird.dehnSum_eq_of_scissors, HilbertThird.similarTetra_not_scissorsCongruent_similarCube, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+Build completed successfully (8964 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HilbertThird.hilbert_third_problem, HilbertThird.dehnSet_eq_edge_sum, HilbertThird.dehnSet_eq_of_scissorsCongruent, HilbertThird.dehnSum_eq_of_scissors, HilbertThird.similarTetra_not_scissorsCongruent_similarCube, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running con-ron kernel on solution
+con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)
+con-ron: accepted 54369 declarations (--verified)
+con-ron kernel accepts the solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!
+	Command being timed: "bash scripts/verify-comparator-lowmem.sh"
+	User time (seconds): 31.72
+	System time (seconds): 2.41
+	Percent of CPU this job got: 16%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:23.16
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 881968
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 773
+	Minor (reclaiming a frame) page faults: 67716
+	Voluntary context switches: 144448
+	Involuntary context switches: 267
+	Swaps: 0
+	File system inputs: 399496
+	File system outputs: 24
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
