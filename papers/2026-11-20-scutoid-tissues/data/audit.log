@@ -1,0 +1,101 @@
+PASS 120-cell 116/366/116 (sweep.json)
+PASS text has: 120-cell 116/366/116 (sweep.json) 116 / 366 / 116
+PASS truncated 120-cell 716/966/716
+PASS text has: truncated 120-cell 716/966/716 716 / 966 / 716
+PASS bitruncated 600-cell 716/2166/716
+PASS text has: bitruncated 600-cell 716/2166/716 716 / 2166 / 716
+PASS 120-cell in words
+PASS text has: 120-cell in words 116 births, 366 swaps and 116 deaths
+PASS truncated 120-cell in words
+PASS text has: truncated 120-cell in words 716, 966, 716
+PASS bitruncated 600-cell in words
+PASS text has: bitruncated 600-cell in words 716, 2166, 716
+PASS logger returns the #104 counts in two directions
+PASS three further directions, 9 of 9 exact
+PASS closed swaps = f0 - 2 f3 + 6 (120-cell: 600 - 240 + 6 = 366)
+PASS text has: closed swaps = f0 - 2 f3 + 6 (120-cell: 600 - 240 + 6 = 366) f0 − 2f3 \+ 6
+PASS closed births = f3 - 4 (120 - 4 = 116)
+PASS text has: closed births = f3 - 4 (120 - 4 = 116) f3 − 4
+PASS 24 pi^2/35 - 2 = 4.7677
+PASS text has: 24 pi^2/35 - 2 = 4.7677 24π²/35 − 2 = 4\.7677
+PASS PV simulation 4.7669 +- 0.0006 (sweep.json check)
+PASS text has: PV simulation 4.7669 +- 0.0006 (sweep.json check) 4\.7669 ± 0\.0006
+PASS text has: PV value repeated 4\.7677
+PASS typical PV cell corners 96 pi^2/35 (THEORY section 3)
+PASS text has: typical PV cell corners 96 pi^2/35 (THEORY section 3) 96π²/35 corners
+PASS walls = 2 + 48 pi^2/35, and (walls)/2 - 3 = 24 pi^2/35 - 2
+PASS text has: walls = 2 + 48 pi^2/35, and (walls)/2 - 3 = 24 pi^2/35 - 2 2 \+ 48π²/35 walls
+PASS random simple 4-polytope 4.76291 at n = 300000
+PASS text has: random simple 4-polytope 4.76291 at n = 300000 4\.76291 at n = 300000
+PASS bcc 14 walls -> 4
+PASS text has: bcc 14 walls -> 4 14/2 − 3 = 4
+PASS perturbed bcc sweep exactly 4
+PASS text has: perturbed bcc sweep exactly 4 gives exactly 4
+PASS truncated octahedron 14 walls
+PASS text has: truncated octahedron 14 walls with 14 walls
+PASS bcc 4 swaps per birth
+PASS text has: bcc 4 swaps per birth 4 swaps per birth
+PASS 15 blocks x 15 directions
+PASS text has: 15 blocks x 15 directions 15 space-time Poisson–Voronoi blocks, swept in 15 directions each
+PASS 225 block-directions, no index 0 or 4
+PASS text has: 225 block-directions, no index 0 or 4 any of the 225 block-directions
+PASS swaps within 2.7%
+PASS text has: swaps within 2.7% at most 2\.7%
+PASS text has: summary 2.7% within 2\.7%
+PASS moving Voronoi 13 to 20% at 45 degrees
+PASS text has: moving Voronoi 13 to 20% at 45 degrees tilt of 45 degrees births and deaths are 13 to 20% of the swaps
+PASS Sun tilts 1.2 to 3.6 x PV spread
+PASS text has: Sun tilts 1.2 to 3.6 x PV spread differ over the tilts by 1\.2 to 3\.6 times
+PASS toy foams 30,758 events
+PASS text has: toy foams 30,758 events 30,758 contact changes
+PASS 0 simultaneous at 1e-9
+PASS text has: 0 simultaneous at 1e-9 time floor of 1e-9
+PASS text has: summary 30,758 30,758 events
+PASS grain model <F> 13.65 to 13.85
+PASS text has: grain model <F> 13.65 to 13.85 13\.65 to 13\.85
+PASS Mason <F> 13.766
+PASS text has: Mason <F> 13.766 13\.766
+PASS 13.766/2 - 3 = 3.883
+PASS text has: 13.766/2 - 3 = 3.883 3\.883
+PASS step zero: 0 of 13 settings
+PASS text has: step zero: 0 of 13 settings criteria passed in 0 of 13 settings
+PASS net change frame-rate free 16 of 16
+PASS text has: net change frame-rate free 16 of 16 frame-rate free in 16 of 16 settings
+PASS net vs D: 16 settings
+PASS text has: net vs D: 16 settings the 16 settings collapse
+PASS net vs D ratio 0.73 to 0.60
+PASS text has: net vs D ratio 0.73 to 0.60 falls from 0\.73 to 0\.60
+PASS lineage spread 51 to 73%
+PASS text has: lineage spread 51 to 73% spread of 51 to 73%
+PASS lineage ratio 0.95 to 1.26
+PASS text has: lineage ratio 0.95 to 1.26 rising from 0\.95 to 1\.26
+PASS clouds 0.03 to 0.15
+PASS text has: clouds 0.03 to 0.15 0\.03 to 0\.15 per cell-hour
+PASS law-built froth 0.245 +- 0.011
+PASS text has: law-built froth 0.245 +- 0.011 0\.245 ± 0\.011
+PASS Rutenberg-McCurdy 0.53 +- 0.05
+PASS text has: Rutenberg-McCurdy 0.53 +- 0.05 0\.53 ± 0\.05
+PASS earth: agreement does NOT carry over
+PASS figure: 12 and 14 swaps
+PASS text has: figure: 12 and 14 swaps \(12 in one direction, 14 in the other\)
+PASS figure: 18 middle corners
+PASS text has: figure: 18 middle corners its 18 other corners
+PASS figure: corner indices of the whole sweep
+PASS text has: figure: corner indices of the whole sweep \(1, 116, 366, 116, 1\)
+PASS figure: 600 corners, 1200 edges
+PASS text has: figure: 600 corners, 1200 edges 600 corners and 1200 edges
+PASS figure: 20 checks all passing
+PASS text has: figure: 20 checks all passing \(20 checks, all passing\)
+PASS figure: 20 checks (data section)
+PASS text has: figure: 20 checks (data section) whose 20 checks
+PASS figure: sides 3 to 3
+PASS text has: figure: sides 3 to 3 from 3 at birth to 3 at death
+PASS figure: sections at 10..90%
+PASS text has: figure: sections at 10..90% 10, 30, 50, 70 and 90%
+PASS section 4: whole-sweep indices (figure json)
+PASS text has: section 4: whole-sweep indices (figure json) 1, 116, 366, 116, 1 corners of index 0 to 4
+PASS #104 concept DOI 24111864
+PASS #104 is Version 3
+PASS every number in the body is checked or structural 0 unmatched
+99 checks, 0 failed
+FINAL ok

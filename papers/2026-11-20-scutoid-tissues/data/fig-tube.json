@@ -1,0 +1,168 @@
+{
+ "cell_corners": 20,
+ "cell_walls": 12,
+ "directions": [
+  {
+   "counts": {
+    "birth": 1,
+    "swap": 12,
+    "neighbour born": 3,
+    "neighbour dies": 3,
+    "death": 1
+   },
+   "sides": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    7,
+    6,
+    7,
+    6,
+    7,
+    6,
+    7,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3
+   ]
+  },
+  {
+   "counts": {
+    "birth": 1,
+    "swap": 14,
+    "neighbour born": 2,
+    "neighbour dies": 2,
+    "death": 1
+   },
+   "sides": [
+    3,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    9,
+    8,
+    9,
+    8,
+    7,
+    6,
+    5,
+    6,
+    5,
+    4,
+    3
+   ]
+  }
+ ],
+ "checks": [
+  [
+   "120-cell: 600 corners",
+   true,
+   "600"
+  ],
+  [
+   "120 cells of 20 corners",
+   true,
+   ""
+  ],
+  [
+   "1200 edges, four at every corner",
+   true,
+   "1200"
+  ],
+  [
+   "direction 1: corner indices (1, 116, 366, 116, 1)",
+   true,
+   "[1, 116, 366, 116, 1]"
+  ],
+  [
+   "direction 1 generic: no edge level",
+   true,
+   "0.0014055815572192598"
+  ],
+  [
+   "direction 2: corner indices (1, 116, 366, 116, 1)",
+   true,
+   "[1, 116, 366, 116, 1]"
+  ],
+  [
+   "direction 2 generic: no edge level",
+   true,
+   "0.0003253077608684207"
+  ],
+  [
+   "the cell has 30 edges, three of them at each corner",
+   true,
+   ""
+  ],
+  [
+   "12 pentagonal walls",
+   true,
+   ""
+  ],
+  [
+   "direction 1: one birth corner (index 1) and one death corner (index 3)",
+   true,
+   ""
+  ],
+  [
+   "direction 1: birth lowest, death highest",
+   true,
+   ""
+  ],
+  [
+   "direction 1: section sides follow the corners (+1 at one own edge below, -1 at two)",
+   true,
+   "[3, 4, 5, 6, 7, 8, 7, 6, 7, 6, 7, 6, 7, 8, 7, 6, 5, 4, 3]"
+  ],
+  [
+   "direction 1: every section a convex polygon",
+   true,
+   ""
+  ],
+  [
+   "direction 1: drawn sections avoid the corner levels",
+   true,
+   ""
+  ],
+  [
+   "direction 2: one birth corner (index 1) and one death corner (index 3)",
+   true,
+   ""
+  ],
+  [
+   "direction 2: birth lowest, death highest",
+   true,
+   ""
+  ],
+  [
+   "direction 2: section sides follow the corners (+1 at one own edge below, -1 at two)",
+   true,
+   "[3, 4, 5, 6, 5, 6, 7, 8, 9, 8, 9, 8, 7, 6, 5, 6, 5, 4, 3]"
+  ],
+  [
+   "direction 2: every section a convex polygon",
+   true,
+   ""
+  ],
+  [
+   "direction 2: drawn sections avoid the corner levels",
+   true,
+   ""
+  ],
+  [
+   "cell circumradius / edge = sqrt(3)(1 + sqrt5)/4 (regular dodecahedron)",
+   true,
+   "1.4012585384440854"
+  ]
+ ]
+}
