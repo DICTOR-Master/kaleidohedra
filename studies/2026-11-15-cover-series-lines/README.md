@@ -34,11 +34,3 @@ DICTO: "3 fully". The whole series line is in the ring's colour (python scripts/
 <cover>-series-v4.png; Platonic Solids: platonic-cover-front-series-full.png copied to book-platonic/cover/platonic-cover-front-series-v4.png).
 FINAL ok for all ten covers plus the Platonic cover. The partial (v3) files stay for comparison only. Each book takes its v4 cover at
 its next version (Concordance next_versions updated); no cover-only releases.
-
-## Quanta of Space I, Version 3.0 (20 Nov 2026, v5)
-
-DICTO: re-render the Quanta cover with the same image and design, only the series line changed to "The Five Orders of
-Space · Book One, Volume I", no element word and no kanji. Run (needs scipy): python scripts/quanta_cover_v5.py <papers>
--> book-quanta-of-space/figures/cover/quanta-cover-front-series-v5.png. Same LED letters, size rule, gap and colour (the
-cube's green, ON_DARK Earth) as v4; result: ok, size 44, lettering not moved, picture unchanged pixel for pixel, only rows
-1717..1791 of 2524 (the series line) differ from v4. Checked at full size.
