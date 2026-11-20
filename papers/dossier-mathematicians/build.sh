@@ -1,6 +1,6 @@
 #!/bin/sh
 # paper.html -> DRAFT PDF on the compute host with the house pipeline: edgecheck.py on the figures, figcheck.mjs, print.mjs.
-# The figures are copied unchanged from the source papers and study (see Appendix B); nothing is computed on this machine.
+# The figures are copied unchanged from the source papers named in their captions; nothing is computed on this machine.
 set -e
 cd "$(dirname "$0")"
 D=dossier-mathematicians
