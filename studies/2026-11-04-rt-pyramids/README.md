@@ -18,3 +18,6 @@ Search status (4 Nov): controls pass (C6 reaches 31; RD no collapse in 25 min); 
   β = arccos(1/√3) with β/π irrational (cos²β = 1/3). Round a generic point of a rectangle–octagon edge: x(3π/4) + y(π/2 + β) + z(π − β) + wπ = 2π (or π) forces y = z and
   (3/4)x + (3/2)y + w ∈ {2, 1} with x ≥ 1: no non-negative integer solution. So Dehn zero (necessary) is not sufficient here; the local angle count kills it.
   (Same angles as the Archimedean truncated cuboctahedron, which tiles only with cubes: 3π/4 + 3π/4 + π/2.) Test competence: Dehn = global, angle count = local.
+
+## Rerun, 21 Nov 2026 (watched job rt-pyramids-21nov)
+Control C6 reached 31 pieces in 60 s. The RT searches to 60, 100 and 150 pieces were all still running after 3 h 20 min and were stopped by hand: the script writes only at the end, so a timeout yields no patch. Outcome: undecided, as on 4 Nov (31 pieces reached then). The depth-first search is not the right tool for a decision; the next method is an exact SAT encoding of the tiling (periodic patches on tori, in the manner of Kaplan's monotile searches), which can prove that no periodic tiling exists up to a size or produce one.
