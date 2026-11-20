@@ -1,0 +1,48 @@
+== controls (framework: ring sum 2pi, vertex areas sum 4pi)
+  [pass] octet ring: 2 tetra + 2 octa dihedrals = 2pi
+  [pass] octet vertex: 8 tetra + 6 octa vertex figures = 4pi
+  [pass] non-filler: dodecahedron dihedral 2alpha is not a rational multiple of pi (2cos(2alpha) not an algebraic integer: minpoly 5*x**2 - 4)
+== C1 at a truncated-icosahedron vertex v
+  [pass] spike triangle base angle = 3pi/4 - beta (cos = 1/(sqrt3 phi))
+  [pass] spike triangle apex angle = 2beta - pi/2
+  [pass] leftover X at v: corners [221.8103, 159.0948, 240.0, 159.0948], area (pi-part, beta-part) = (7/3,0) = 7pi/3
+== face-to-face lemmas (faces meet in whole faces)
+  [pass] B1: two C1 on one spike triangle put two reflex edges on its base: 2(3pi/4+beta) > 2pi (beta > pi/4)
+  [pass] B2: hexagon shared with types kept: r + r > 2pi (overlap)
+  [pass] B2: hexagon shared with types swapped: each of the 6 edges leaves a wedge 2pi - hh - r = (-1/4,1) = beta - pi/4 = 20.9052 deg
+== hexagon graph of C1 (hexagons adjacent across hexagon-hexagon edges)
+  [pass] hexagon graph is cubic on 20 nodes (dodecahedral), largest independent set = 8
+  [pass] B3: the two hexagons at a hh edge cannot both be shared with C1 copies: hh + 2r > 2pi
+== ring alphabet (scope): K dihedrals are p*pi + b*beta with b in {-1,0,1}; b=+-1: p in Z/4 (the side-plane angles T, B, t', pi-t' and pi-shifts); b=0: p in Z/12
+  convex K      r | hexagon on C1               : 1 fillings; beta signatures [(1,)]
+  convex K      r | hexagon on K                : 29 fillings; beta signatures [(-1, -1, 0, 1), (-1, -1, 1), (-1, 0), (-1, 0, 0), (-1, 0, 0, 0)]
+  convex K      hh | one hexagon on C1          : 1 fillings; beta signatures [(1,)]
+  convex K      hh | both hexagons on K         : 32 fillings; beta signatures [(-1, 1, 1, 1), (0, 0, 1, 1), (0, 1, 1), (1, 1)]
+  convex K      s | both spike triangles on K   : 97 fillings; beta signatures [(-1, 0, 0, 1), (-1, 0, 1), (0, 0), (0, 0, 0), (0, 0, 0, 0)]
+  [pass] FORCED (both alphabets): where a hexagon is shared with C1', each wedge is ONE K edge of dihedral t' = beta - pi/4 (20.9052 deg)
+  non-convex K  r | hexagon on C1               : 1 fillings; beta signatures [(1,)]
+  non-convex K  r | hexagon on K                : 29 fillings; beta signatures [(-1, -1, 0, 1), (-1, -1, 1), (-1, 0), (-1, 0, 0), (-1, 0, 0, 0)]
+  non-convex K  hh | one hexagon on C1          : 1 fillings; beta signatures [(1,)]
+  non-convex K  hh | both hexagons on K         : 33 fillings; beta signatures [(-1, 1, 1, 1), (0, 0, 1, 1), (0, 1, 1), (1, 1)]
+  non-convex K  s | both spike triangles on K   : 106 fillings; beta signatures [(-1, 0, 0, 1), (-1, 0, 1), (0, 0), (0, 0, 0), (0, 0, 0, 0)]
+  [pass] same with non-convex K
+== the leftover L at v when hexagon H1 at v is shared with C1' (types swapped)
+  C1' hh edge on a C1 reflex edge: True;  C1' reflex edge on the C1 hh edge: True
+  L rays: C1 reflex, C1 spike edge, shared ray (C1 reflex + C1' hh), C1' reflex, C1' spike edge, shared ray (C1 hh + C1' reflex)
+  L sides (deg): 69.09484255, 69.09484255, 120.0, 69.09484255, 69.09484255, 120.0
+  [pass] L corners [159.0948, 240.0, 20.9052, 159.0948, 240.0, 20.9052]: area = (2/3,0) = 2pi/3
+  side 0 (spike triangle): L in one closed hemisphere: False (smallest |margin| 0.3090)
+  side 1 (spike triangle): L in one closed hemisphere: False (smallest |margin| 0.3090)
+  side 2 (C1' hexagon): L in one closed hemisphere: False (smallest |margin| 0.3333)
+  side 3 (C1' spike triangle): L in one closed hemisphere: False (smallest |margin| 0.3090)
+  side 4 (C1' spike triangle): L in one closed hemisphere: False (smallest |margin| 0.3090)
+  side 5 (C1 hexagon): L in one closed hemisphere: False (smallest |margin| 0.3333)
+FINAL ok
+top spike apex height zA = sqrt(5*sqrt(5)/2 + 25/4) = 3.440955; pentagon height rp = 2.327438; next-highest C1 vertex 2.327438
+  [pass] only the top spike rises above zc = (rp + zA)/2: zc - (next-highest vertex)  (margin 0.556758)
+  [pass] zc inside the top spike: zA - zc  (margin 0.556758)
+  [pass] every truncated-icosahedron vertex is inside the ball of radius RA (apex distance)  (margin 0.962936)
+  [pass] lateral period W = 2RA + 1 exceeds 2RA  (margin 1.000000)
+  [pass] bottom surface bump stays below C1: (h - zA) - RA  i.e. bump top zA - h < -RA  (margin 1.000000)
+vol C1 = 62.950850 (step 3 float value 62.950850); vol K = W^2 h - vol C1 = 426.7088
+FINAL ok

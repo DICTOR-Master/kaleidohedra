@@ -1,0 +1,688 @@
+{
+ "checks": [
+  [
+   "octet ring: 2 tetra + 2 octa dihedrals = 2pi",
+   true
+  ],
+  [
+   "octet vertex: 8 tetra + 6 octa vertex figures = 4pi",
+   true
+  ],
+  [
+   "non-filler: dodecahedron dihedral 2alpha is not a rational multiple of pi (2cos(2alpha) not an algebraic integer: minpoly 5*x**2 - 4)",
+   true
+  ],
+  [
+   "spike triangle base angle = 3pi/4 - beta (cos = 1/(sqrt3 phi))",
+   true
+  ],
+  [
+   "spike triangle apex angle = 2beta - pi/2",
+   true
+  ],
+  [
+   "leftover X at v: corners [221.8103, 159.0948, 240.0, 159.0948], area (pi-part, beta-part) = (7/3,0) = 7pi/3",
+   true
+  ],
+  [
+   "B1: two C1 on one spike triangle put two reflex edges on its base: 2(3pi/4+beta) > 2pi (beta > pi/4)",
+   true
+  ],
+  [
+   "B2: hexagon shared with types kept: r + r > 2pi (overlap)",
+   true
+  ],
+  [
+   "B2: hexagon shared with types swapped: each of the 6 edges leaves a wedge 2pi - hh - r = (-1/4,1) = beta - pi/4 = 20.9052 deg",
+   true
+  ],
+  [
+   "hexagon graph is cubic on 20 nodes (dodecahedral), largest independent set = 8",
+   true
+  ],
+  [
+   "B3: the two hexagons at a hh edge cannot both be shared with C1 copies: hh + 2r > 2pi",
+   true
+  ],
+  [
+   "FORCED (both alphabets): where a hexagon is shared with C1', each wedge is ONE K edge of dihedral t' = beta - pi/4 (20.9052 deg)",
+   true
+  ],
+  [
+   "same with non-convex K",
+   true
+  ],
+  [
+   "L corners [159.0948, 240.0, 20.9052, 159.0948, 240.0, 20.9052]: area = (2/3,0) = 2pi/3",
+   true
+  ]
+ ],
+ "X": {
+  "corners": [
+   [
+    "1/2",
+    "2"
+   ],
+   [
+    "5/4",
+    "-1"
+   ],
+   [
+    "4/3",
+    "0"
+   ],
+   [
+    "5/4",
+    "-1"
+   ]
+  ],
+  "sides_deg": [
+   120,
+   69.0948,
+   69.0948,
+   120
+  ],
+  "area": "7pi/3"
+ },
+ "hexagons": {
+  "max_shared_with_C1": 8,
+  "min_K_hexagon_faces_per_C1": 12
+ },
+ "alphabet": {
+  "beta_items": [
+   [
+    "-1/4",
+    1,
+    20.9052
+   ],
+   [
+    "0",
+    1,
+    65.9052
+   ],
+   [
+    "1/4",
+    1,
+    110.9052
+   ],
+   [
+    "1/2",
+    1,
+    155.9052
+   ],
+   [
+    "3/4",
+    1,
+    200.9052
+   ],
+   [
+    "1",
+    1,
+    245.9052
+   ],
+   [
+    "5/4",
+    1,
+    290.9052
+   ],
+   [
+    "3/2",
+    1,
+    335.9052
+   ],
+   [
+    "1/2",
+    -1,
+    24.0948
+   ],
+   [
+    "3/4",
+    -1,
+    69.0948
+   ],
+   [
+    "1",
+    -1,
+    114.0948
+   ],
+   [
+    "5/4",
+    -1,
+    159.0948
+   ],
+   [
+    "3/2",
+    -1,
+    204.0948
+   ],
+   [
+    "7/4",
+    -1,
+    249.0948
+   ],
+   [
+    "2",
+    -1,
+    294.0948
+   ],
+   [
+    "9/4",
+    -1,
+    339.0948
+   ]
+  ],
+  "rational_step": "pi/12"
+ },
+ "rings": {
+  "convex K": {
+   "r | hexagon on C1": {
+    "count": 1,
+    "beta_signatures": [
+     [
+      1
+     ]
+    ],
+    "examples": [
+     [
+      20.9052
+     ]
+    ]
+   },
+   "r | hexagon on K": {
+    "count": 29,
+    "beta_signatures": [
+     [
+      -1,
+      -1,
+      0,
+      1
+     ],
+     [
+      -1,
+      -1,
+      1
+     ],
+     [
+      -1,
+      0
+     ],
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      -1,
+      0,
+      0,
+      0
+     ]
+    ],
+    "examples": [
+     [
+      20.9052,
+      24.0948,
+      24.0948,
+      90.0
+     ],
+     [
+      20.9052,
+      24.0948,
+      69.0948,
+      45.0
+     ],
+     [
+      20.9052,
+      24.0948,
+      114.0948
+     ],
+     [
+      20.9052,
+      69.0948,
+      69.0948
+     ],
+     [
+      65.9052,
+      24.0948,
+      24.0948,
+      45.0
+     ],
+     [
+      65.9052,
+      24.0948,
+      69.0948
+     ]
+    ]
+   },
+   "hh | one hexagon on C1": {
+    "count": 1,
+    "beta_signatures": [
+     [
+      1
+     ]
+    ],
+    "examples": [
+     [
+      20.9052
+     ]
+    ]
+   },
+   "hh | both hexagons on K": {
+    "count": 32,
+    "beta_signatures": [
+     [
+      -1,
+      1,
+      1,
+      1
+     ],
+     [
+      0,
+      0,
+      1,
+      1
+     ],
+     [
+      0,
+      1,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "examples": [
+     [
+      20.9052,
+      20.9052,
+      20.9052,
+      159.0948
+     ],
+     [
+      20.9052,
+      20.9052,
+      65.9052,
+      114.0948
+     ],
+     [
+      20.9052,
+      20.9052,
+      110.9052,
+      69.0948
+     ],
+     [
+      20.9052,
+      20.9052,
+      155.9052,
+      24.0948
+     ],
+     [
+      20.9052,
+      20.9052,
+      15.0,
+      165.0
+     ],
+     [
+      20.9052,
+      20.9052,
+      30.0,
+      150.0
+     ]
+    ]
+   },
+   "s | both spike triangles on K": {
+    "count": 97,
+    "beta_signatures": [
+     [
+      -1,
+      0,
+      0,
+      1
+     ],
+     [
+      -1,
+      0,
+      1
+     ],
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "examples": [
+     [
+      20.9052,
+      24.0948,
+      30.0,
+      165.0
+     ],
+     [
+      20.9052,
+      24.0948,
+      45.0,
+      150.0
+     ],
+     [
+      20.9052,
+      24.0948,
+      60.0,
+      135.0
+     ],
+     [
+      20.9052,
+      24.0948,
+      75.0,
+      120.0
+     ],
+     [
+      20.9052,
+      24.0948,
+      90.0,
+      105.0
+     ],
+     [
+      20.9052,
+      69.0948,
+      15.0,
+      135.0
+     ]
+    ]
+   }
+  },
+  "non-convex K": {
+   "r | hexagon on C1": {
+    "count": 1,
+    "beta_signatures": [
+     [
+      1
+     ]
+    ],
+    "examples": [
+     [
+      20.9052
+     ]
+    ]
+   },
+   "r | hexagon on K": {
+    "count": 29,
+    "beta_signatures": [
+     [
+      -1,
+      -1,
+      0,
+      1
+     ],
+     [
+      -1,
+      -1,
+      1
+     ],
+     [
+      -1,
+      0
+     ],
+     [
+      -1,
+      0,
+      0
+     ],
+     [
+      -1,
+      0,
+      0,
+      0
+     ]
+    ],
+    "examples": [
+     [
+      20.9052,
+      24.0948,
+      24.0948,
+      90.0
+     ],
+     [
+      20.9052,
+      24.0948,
+      69.0948,
+      45.0
+     ],
+     [
+      20.9052,
+      24.0948,
+      114.0948
+     ],
+     [
+      20.9052,
+      69.0948,
+      69.0948
+     ],
+     [
+      65.9052,
+      24.0948,
+      24.0948,
+      45.0
+     ],
+     [
+      65.9052,
+      24.0948,
+      69.0948
+     ]
+    ]
+   },
+   "hh | one hexagon on C1": {
+    "count": 1,
+    "beta_signatures": [
+     [
+      1
+     ]
+    ],
+    "examples": [
+     [
+      20.9052
+     ]
+    ]
+   },
+   "hh | both hexagons on K": {
+    "count": 33,
+    "beta_signatures": [
+     [
+      -1,
+      1,
+      1,
+      1
+     ],
+     [
+      0,
+      0,
+      1,
+      1
+     ],
+     [
+      0,
+      1,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "examples": [
+     [
+      20.9052,
+      20.9052,
+      20.9052,
+      159.0948
+     ],
+     [
+      20.9052,
+      20.9052,
+      65.9052,
+      114.0948
+     ],
+     [
+      20.9052,
+      20.9052,
+      110.9052,
+      69.0948
+     ],
+     [
+      20.9052,
+      20.9052,
+      155.9052,
+      24.0948
+     ],
+     [
+      20.9052,
+      20.9052,
+      15.0,
+      165.0
+     ],
+     [
+      20.9052,
+      20.9052,
+      30.0,
+      150.0
+     ]
+    ]
+   },
+   "s | both spike triangles on K": {
+    "count": 106,
+    "beta_signatures": [
+     [
+      -1,
+      0,
+      0,
+      1
+     ],
+     [
+      -1,
+      0,
+      1
+     ],
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "examples": [
+     [
+      20.9052,
+      24.0948,
+      30.0,
+      165.0
+     ],
+     [
+      20.9052,
+      24.0948,
+      45.0,
+      150.0
+     ],
+     [
+      20.9052,
+      24.0948,
+      60.0,
+      135.0
+     ],
+     [
+      20.9052,
+      24.0948,
+      75.0,
+      120.0
+     ],
+     [
+      20.9052,
+      24.0948,
+      90.0,
+      105.0
+     ],
+     [
+      20.9052,
+      24.0948,
+      195.0
+     ]
+    ]
+   }
+  }
+ },
+ "L": {
+  "corners_deg": [
+   159.0948,
+   240.0,
+   20.9052,
+   159.0948,
+   240.0,
+   20.9052
+  ],
+  "sides_deg": [
+   69.0948425521107,
+   69.0948425521107,
+   120.0,
+   69.0948425521107,
+   69.0948425521107,
+   120.0
+  ],
+  "area": "2pi/3",
+  "hemisphere_test": [
+   {
+    "side": 0,
+    "face": "spike triangle",
+    "L_in_one_hemisphere": false,
+    "min_abs_margin": 0.30901699437494745
+   },
+   {
+    "side": 1,
+    "face": "spike triangle",
+    "L_in_one_hemisphere": false,
+    "min_abs_margin": 0.30901699437494745
+   },
+   {
+    "side": 2,
+    "face": "C1' hexagon",
+    "L_in_one_hemisphere": false,
+    "min_abs_margin": 0.3333333333333333
+   },
+   {
+    "side": 3,
+    "face": "C1' spike triangle",
+    "L_in_one_hemisphere": false,
+    "min_abs_margin": 0.30901699437494745
+   },
+   {
+    "side": 4,
+    "face": "C1' spike triangle",
+    "L_in_one_hemisphere": false,
+    "min_abs_margin": 0.30901699437494745
+   },
+   {
+    "side": 5,
+    "face": "C1 hexagon",
+    "L_in_one_hemisphere": false,
+    "min_abs_margin": 0.3333333333333333
+   }
+  ]
+ }
+}

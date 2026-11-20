@@ -99,3 +99,56 @@ Vertex ledger at a truncated-icosahedron vertex v (exact; spherical vertex figur
 
 ## Status box
 Study note, not published. Exact run on the compute host (sympy Fractions in the basis pi, alpha, beta, gamma). No tiling search.
+
+## Proper round (scripts/round_local.py, scripts/round_trivial.py, data/round_local.json, data/round_trivial.json, log_round.txt)
+DICTO's question: can a TRUE SCUTOID be the stand-in piece that lets dodecahedron centre pyramids and truncated icosahedra (12:1) fill
+space? Unit: C1 (edge 1). Helper: one kind K, mirror images allowed. All claims below are exact (sympy; angles as p*pi + b*beta with
+pi, beta independent) or certified at 50 digits with the margin printed. Controls pass: octet ring and octet vertex (8 tetrahedra +
+6 octahedra = 4pi); the dodecahedron (known non-filler) fails (2cos 2alpha has minimal polynomial 5x^2 - 4, so 2alpha/pi is irrational).
+
+**1. Without a shape restriction the answer is yes, trivially (round_trivial.py).** Stand C1 on a 5-fold axis. Its top spike rises
+1.1135 above the pentagon (zA = 3.4410, pentagon at 2.3274; every other point of C1 is at most 2.3274). Let D be the slab between a
+surface S and S - h, where S is the plane z = zc = (2.3274 + 3.4410)/2 with the spike tip above zc added over every lattice point
+(period W = 2RA + 1, h = 2RA + 1, RA = 3.4410 the apex distance). D tiles space by translations, C1 lies inside D, and only the
+spike tip touches the top. So K = D minus C1 is one flat-faced solid (a ball; its face in the plane zc has a pentagonal hole) and
+C1 + K tile space periodically, 1 K per C1 (vol C1 = 62.9509, vol K = 426.7088). A box with a C1-shaped cavity also works. So "one
+helper kind" is no obstacle by itself, and packets never stop it (C1 has packet zero, so K needs packet zero, which any such cell
+remainder has). The real question is the SHAPE: a true scutoid (two parallel end faces, all other faces lateral, at least one
+Y-junction vertex). K above is not a scutoid.
+
+**2. Vertex figures at a truncated-icosahedron vertex v (round_local.py).** What C1 leaves at v is the spherical quadrilateral X:
+corners 221.81, 159.09, 240, 159.09 degrees, sides 120 (hexagon), 69.09, 69.09 (spike triangle), 120; area 7pi/3. The spike
+triangle has base angle exactly 3pi/4 - beta (cos = 1/(sqrt3 phi), the icosahedron pyramid's base dihedral) and apex angle exactly
+2beta - pi/2. Ring alphabet (scope): K dihedrals p*pi + b*beta with b in {-1, 0, 1}; for b = +-1, p in Z/4 (the side-plane angles
+T, B, t' = beta - pi/4, pi - t' and their pi-shifts, the ring-closing set of step 2); for b = 0, p in Z/12. Ring fillings at the
+corners of X: reflex edge 29 (when the hexagon beside it is a K face), hexagon-hexagon edge 32, spike edge 97 for convex K (29, 33,
+106 for non-convex K). So rings and areas alone decide nothing, as in step 4.
+
+**3. Face-to-face tilings (faces meet in whole faces): exact lemmas.**
+- B1. Two C1 never share a spike triangle (the base edges coincide: 2(3pi/4 + beta) > 2pi). So every one of the 60 spike triangles
+  of every C1 is a face of K: K must have a face congruent to the spike triangle (legs sqrt3 phi/2, base 1).
+- B2. Two C1 can share a hexagon only with edge types swapped (hexagon-hexagon edge on reflex edge); then each of the six edges keeps
+  a wedge of exactly t' = beta - pi/4 = 20.91 degrees.
+- B3. The two hexagons at a hexagon-hexagon edge are never both shared with C1 copies. The hexagon graph is the dodecahedral graph;
+  its largest independent set is 8, so at least 12 of the 20 hexagons of each C1 are faces of K: K has a regular hexagon face.
+- FORCED. Each wedge t' is ONE edge of ONE K (no other filling in the alphabet). So where a hexagon is shared, K has an edge of length
+  1 between its spike-triangle face and a regular-hexagon face at dihedral exactly t'. Since t' carries beta, it is not a lateral
+  (rational) angle in the scope: one of these two faces is an end face of the scutoid.
+- At v the leftover is then the hexagon L: corners 159.09, 240, 20.91, 159.09, 240, 20.91; sides 69.09, 69.09, 120, 69.09, 69.09, 120;
+  area 2pi/3. L is not one scutoid vertex figure: it is not a triangle (Y-vertex) and it lies in no closed hemisphere bounded by any of
+  its six sides (end-face vertex; margins >= 0.309). So at least two K meet there.
+
+**Verdict.** Not decided for true scutoids; not proved impossible; no stand-in constructed. Exact so far: (1) unrestricted, one
+helper kind always exists, periodic, 1 per C1, so the whole content is the scutoid shape; (2) in a face-to-face tiling a scutoid
+helper must carry a face congruent to the spike triangle and a regular-hexagon face, and at every shared hexagon an edge triangle-hexagon
+at exactly beta - pi/4 with one of the two as an end face. Obstacle: the remaining search is over scutoid combinatorial types
+(end polygons, Y positions) with these forced faces; not run. The step 3 overlap test (float) is not relied on here. Not a
+periodic search either: no scutoid K survived to be placed.
+
+LEADS (proper round)
+1. Two concrete scutoid cases from the forced edge: (a) end face = the hexagon, the spike triangle a lateral face falling 0.467 to its
+   apex; (b) end face = the spike triangle, the hexagon lateral, its two middle vertices Y-vertices, height 0.618. Build each with its
+   other faces fitted to X at v and test around one C1 (exact).
+2. Case "no hexagon shared" (all 20 hexagons are K faces): K then has both forced faces at every vertex; count faces per C1 (60
+   triangles + 20 hexagons) against the faces of one scutoid.
+3. The same lemmas for C2 (beta replaced by alpha) are a direct rerun.
