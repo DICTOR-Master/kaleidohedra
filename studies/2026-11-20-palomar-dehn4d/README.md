@@ -202,3 +202,7 @@ preflight and then give you the submission data".
 - Formalize Jessen's converse in ℝ⁴ (long term).
 
 FINAL ok
+
+## Submitted
+
+DICTO submitted the entry to Palomar on 20 November 2026: commit 5a2cf4ca1b3a5f14f9e2cfd5596189219bdd31e9, request id dehnhad4d001. Registration id to follow.
