@@ -1,0 +1,29 @@
+==== C1 (X = beta)
+reflex ring needs S+rational complement of (5/4,-1); h ring needs (1/2,2)
+  single convex complement of the reflex edge: (Fraction(5, 4), Fraction(-1, 1)); hh complement is over pi in angle, so >= 2 S edges (b total 2)
+minimal S pair: top (Fraction(1, 4), Fraction(1, 1)) / bottom (Fraction(3, 4), Fraction(-1, 1)) (sum 1,0 = (1,0), a side plane)
+ring r + B leaves rational remainder 1/2 pi; hh ring h + 2T: p-sum 2, b-sum 0
+closed side-plane polygons with rational lateral dihedrals (k<=4, denominators<=12): 3367 (up to cyclic order repeats)
+  distinct S candidates: 67;  those where EVERY edge kind (h,r,s,T,B and each lateral) lies in a closing ring: 38
+   k=4 laterals ['1/8pi', '7/8pi']  rings: h:{'h': 1, 'T': 2}; r:{'r': 1, 'B': 1, 'L1/8': 4}
+   k=4 laterals ['1/8pi', '1/7pi', '6/7pi', '7/8pi']  rings: h:{'h': 1, 'T': 2}; r:{'r': 1, 'B': 1, 'L1/8': 4}
+   k=4 laterals ['1/8pi', '1/6pi', '5/6pi', '7/8pi']  rings: h:{'h': 1, 'T': 2}; r:{'r': 1, 'B': 1, 'L1/6': 3}
+   k=4 laterals ['1/8pi', '1/5pi', '4/5pi', '7/8pi']  rings: h:{'h': 1, 'T': 2}; r:{'r': 1, 'B': 1, 'L1/8': 4}
+   k=4 laterals ['1/8pi', '1/4pi', '3/4pi', '7/8pi']  rings: h:{'h': 1, 'T': 2}; r:{'r': 1, 'B': 1, 'L1/4': 2}
+   k=4 laterals ['1/8pi', '2/7pi', '5/7pi', '7/8pi']  rings: h:{'h': 1, 'T': 2}; r:{'r': 1, 'B': 1, 'L1/8': 4}
+  regular frustum k sides, tilt delta, lateral phi: k=3: 72.0 deg, k=4: 97.314868 deg, k=5: 113.39041 deg, k=6: 124.30936 deg
+==== C2 (X = alpha)
+reflex ring needs S+rational complement of (1/2,1); h ring needs (2,-2)
+  single convex complement of the reflex edge: (Fraction(1, 2), Fraction(1, 1)); hh complement is over pi in angle, so >= 2 S edges (b total -2)
+minimal S pair: top (Fraction(1, 1), Fraction(-1, 1)) / bottom (Fraction(0, 1), Fraction(1, 1)) (sum 1,0 = (1,0), a side plane)
+ring r + B leaves rational remainder 1/2 pi; hh ring h + 2T: p-sum 2, b-sum 0
+closed side-plane polygons with rational lateral dihedrals (k<=4, denominators<=12): 2282 (up to cyclic order repeats)
+  distinct S candidates: 70;  those where EVERY edge kind (h,r,s,T,B and each lateral) lies in a closing ring: 38
+   k=4 laterals ['1/8pi', '7/8pi']  rings: h:{'h': 1, 'T': 2}; r:{'r': 1, 'B': 1, 'L1/8': 4}
+   k=4 laterals ['1/8pi', '1/7pi', '6/7pi', '7/8pi']  rings: h:{'h': 1, 'T': 2}; r:{'r': 1, 'B': 1, 'L1/8': 4}
+   k=4 laterals ['1/8pi', '1/6pi', '5/6pi', '7/8pi']  rings: h:{'h': 1, 'T': 2}; r:{'r': 1, 'B': 1, 'L1/6': 3}
+   k=4 laterals ['1/8pi', '1/5pi', '4/5pi', '7/8pi']  rings: h:{'h': 1, 'T': 2}; r:{'r': 1, 'B': 1, 'L1/8': 4}
+   k=4 laterals ['1/8pi', '1/4pi', '3/4pi', '7/8pi']  rings: h:{'h': 1, 'T': 2}; r:{'r': 1, 'B': 1, 'L1/4': 2}
+   k=4 laterals ['1/8pi', '2/7pi', '5/7pi', '7/8pi']  rings: h:{'h': 1, 'T': 2}; r:{'r': 1, 'B': 1, 'L1/8': 4}
+  regular frustum k sides, tilt delta, lateral phi: k=3: 85.100387 deg, k=4: 106.04506 deg, k=5: 120.0 deg, k=6: 129.65748 deg
+FINAL ok
