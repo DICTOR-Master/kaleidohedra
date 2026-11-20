@@ -6,7 +6,8 @@
 .status { border: 2px solid #b22; background: #fff4f2; padding: 2mm 3mm; margin: 3mm 0; font-size: 9pt; }
 body { font-size: 11pt; line-height: 1.55; }
 .page { break-after: page; }
-.titlepage { text-align: center; padding-top: 38mm; }
+.titlepage { text-align: center; padding-top: 0; }
+.page.centred, .titlepage { min-height: 252mm; display: flex; flex-direction: column; justify-content: center; align-items: stretch; text-align: center; break-before: page; break-after: page; box-sizing: border-box; }
 .titlepage img.big { width: 62mm; margin: 0 auto 12mm; display: block; }
 .titlepage h1 { font-size: 34pt; margin: 0 0 6pt; letter-spacing: .5pt; }
 .titlepage .sub { font-size: 13pt; margin: 0 0 22mm; }
@@ -67,7 +68,7 @@ figure { break-inside: avoid; }
 <section class="page coverpage" style="height:252mm;display:flex;justify-content:center;align-items:center">
 <img src="figures/cover/quanta-cover-front-series-v4.png" alt="Cover: Quanta of Space, A Manifesto, DICTO, under the DICTO square of the five Platonic solids of DICTO's name, D I C T O" style="width:100%;height:auto;display:block">
 </section>
-<section class="page" style="text-align:center;padding-top:62mm">
+<section class="page centred">
 <p style="font-size:15pt;font-style:italic;line-height:1.7;margin:0">To see a World in a Grain of Sand<br>And a Heaven in a Wild Flower,<br>Hold Infinity in the palm of your hand<br>And Eternity in an hour.</p>
 <p style="font-size:10pt;color:#555;margin-top:5mm">William Blake, <i>Auguries of Innocence</i></p>
 <p style="font-size:10.5pt;margin:40mm auto 0;max-width:150mm;line-height:1.6">The papers, apps and data of this work are free to use; every one is open access, under the licence CC BY-SA 4.0, free to read, share and build on.</p>
@@ -86,7 +87,7 @@ Licence CC BY-SA 4.0</p>
 <p class="small" style="margin-top:2mm">Volume II: <i>The DICTOnary of Atoms: Quanta of Space II</i>, the catalogue of all the atoms, the data work by work and the known and rediscovered shapes (Version 1.4, 20 November 2026, DICTO DOI: 10.5281/zenodo.24385357).</p>
 </section>
 
-<section class="page" style="text-align:center;padding-top:80mm"><p style="font-size:14pt;font-style:italic">For my father, Alan Baker</p></section>
+<section class="page centred"><p style="font-size:14pt;font-style:italic">For my father, Alan Baker</p></section>
 <!-- ============ CONTENTS ============ -->
 <section class="page contents">
 <img class="logo" src="../dicto-logo.png" alt="DICTO" style="width:22mm">
