@@ -8,20 +8,21 @@ For each item (definition or theorem) the script copies, from its source file:
   * the `variable` commands in scope at the item (section and namespace scopes are tracked),
   * the item itself: its doc comment, an `omit ... in` line directly before it, and its text
     (a definition up to the first blank line; a theorem up to the `:=` that ends its statement).
-Items are written in source order (definitions first, then the theorems) inside `namespace HilbertThird`.
+Items are written in source order (definitions first, then the theorems) inside `namespace DehnCanon`.
 In the Challenge every proof is `sorry`; the Solution is the Challenge word for word, with only the imports added
-and each `sorry` replaced by the proof that transfers the library theorem `DehnCanon.<name>` (the definitions are
-the same texts, so the transfer is by unfolding). Doc comments are copied too; DOC_FIX lists the one wording fix
+and each `sorry` replaced by the proof that transfers the library theorem `DehnCanon.Library.<name>` (the definitions
+are the same texts, so the transfer is by unfolding; assemble_entry.py puts the library in namespace
+`DehnCanon.Library`, since the entry's own namespace is `DehnCanon`). Doc comments are copied too; DOC_FIX lists the one wording fix
 (a reference to "study 2" removed from a doc comment).
 
-Usage: gen_challenge.py   (writes ../Challenge/HilbertThird.lean and ../Solution/HilbertThird.lean)
+Usage: gen_challenge.py   (writes ../Challenge/DehnCanon.lean and ../Solution/DehnCanon.lean)
 """
 import re
 from pathlib import Path
 
 PKG = Path(__file__).resolve().parent.parent
 STUDIES = PKG.parent.parent
-NS = "HilbertThird"
+NS = "DehnCanon"
 
 
 def src(module):
@@ -43,13 +44,13 @@ DEFS = [
 ]
 # (file, theorem name, proof in the Solution)
 THMS = [
-    ("Dehn10Hilbert", "hilbert_third_problem", "  exact DehnCanon.hilbert_third_problem"),
-    ("Dehn10Edges", "dehnSet_eq_edge_sum", "  exact DehnCanon.dehnSet_eq_edge_sum hP hint"),
-    ("DehnCanon2", "dehnSet_eq_of_scissorsCongruent", "  exact DehnCanon.dehnSet_eq_of_scissorsCongruent hP hQ h"),
+    ("Dehn10Hilbert", "hilbert_third_problem", "  exact DehnCanon.Library.hilbert_third_problem"),
+    ("Dehn10Edges", "dehnSet_eq_edge_sum", "  exact DehnCanon.Library.dehnSet_eq_edge_sum hP hint"),
+    ("DehnCanon2", "dehnSet_eq_of_scissorsCongruent", "  exact DehnCanon.Library.dehnSet_eq_of_scissorsCongruent hP hQ h"),
     ("DehnCanon2", "dehnSum_eq_of_scissors",
-     "  exact DehnCanon.dehnSum_eq_of_scissors hp hdp hdg hp₁ hd₁ hU₁ hp₂ hd₂ hU₂"),
+     "  exact DehnCanon.Library.dehnSum_eq_of_scissors hp hdp hdg hp₁ hd₁ hU₁ hp₂ hd₂ hU₂"),
     ("Dehn4Similar", "similarTetra_not_scissorsCongruent_similarCube",
-     "  exact DehnCanon.similarTetra_not_scissorsCongruent_similarCube hT hQ"),
+     "  exact DehnCanon.Library.similarTetra_not_scissorsCongruent_similarCube hT hQ"),
 ]
 
 DECL = re.compile(r"^(?:noncomputable )?(?:def|abbrev|theorem|lemma|structure) (\S+)")
@@ -177,8 +178,9 @@ G. M. Ziegler, *Proofs from THE BOOK*, chapter "Hilbert's third problem" (their 
 **Scope.** Dimension 3. The pieces of a dissection are convex polytopes, finitely many, moved by isometries
 (reflections included). The edge sum is for convex polytopes with interior points. Sydler's converse is not stated.
 
-Every definition and statement below is copied, character for character, from the Lean development (namespace
-`DehnCanon`, studies 2026-11-19-lean-dehn-1 to -10); the comment before each group names its file.
+Every definition and statement below is copied, character for character, from the Lean development (studies
+2026-11-19-lean-dehn-1 to -10; in this entry its namespace is `DehnCanon.Library`); the comment before each group
+names its file.
 -/"""
 
 
@@ -210,8 +212,8 @@ def main():
         f"namespace {NS}", "", sol_body, "", f"end {NS}", ""])
     (PKG / "Challenge").mkdir(exist_ok=True)
     (PKG / "Solution").mkdir(exist_ok=True)
-    (PKG / "Challenge" / "HilbertThird.lean").write_text(challenge, encoding="utf-8")
-    (PKG / "Solution" / "HilbertThird.lean").write_text(solution, encoding="utf-8")
+    (PKG / "Challenge" / "DehnCanon.lean").write_text(challenge, encoding="utf-8")
+    (PKG / "Solution" / "DehnCanon.lean").write_text(solution, encoding="utf-8")
     print("Challenge:", challenge.count("\n"), "lines,", len(challenge.encode()), "bytes; theorems:",
           ", ".join(k for _, k, _ in THMS))
 

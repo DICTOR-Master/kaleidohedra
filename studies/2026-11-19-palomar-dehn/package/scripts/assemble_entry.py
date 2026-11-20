@@ -4,7 +4,9 @@
   DehnCanon/*.lean                   the library: exactly the import closure of DehnCanon.Dehn10Hilbert and
                                      DehnCanon.Dehn10Edges, from the study folders 2026-11-19-lean-dehn-1 ... -10,
                                      put in Palomar's module layout (`module`, `public import`, `@[expose] public
-                                     section`; the leading comment and the rest of each file unchanged);
+                                     section`; the namespace `DehnCanon` renamed `DehnCanon.Library`, so that it does not
+                                     clash with the entry's namespace `DehnCanon`; the leading comment and the rest of
+                                     each file unchanged);
   lakefile.toml, lean-toolchain, lake-manifest.json, comparator.json, LICENSE, README.md, formalization.yaml,
   scripts/ (Palomar template scripts, as carried by the 2026-11-17-get-palomar entry, and this package's build.sh,
   run_comparator_lowmem.sh and run_negative_controls.sh).
@@ -45,7 +47,21 @@ def modulize(text):
             imports.append("public " + rest[k])
         k += 1
     assert not any(l.startswith("import ") for l in rest[k:]), "an import after the leading block"
-    return "\n".join(head + ["module", ""] + imports + ["", "@[expose] public section", ""] + rest[k:])
+    return "\n".join(head + ["module", ""] + imports + ["", "@[expose] public section", ""] + relib(rest[k:]))
+
+
+def relib(lines):
+    """the library namespace `DehnCanon` becomes `DehnCanon.Library` (the entry's own namespace is `DehnCanon`):
+    the `namespace`/`end` lines and every qualified name `DehnCanon.x` (import lines are not in `lines`)"""
+    out = []
+    for l in lines:
+        if l in ("namespace DehnCanon", "end DehnCanon"):
+            l = l + ".Library"
+        else:
+            l = re.sub(r"\bDehnCanon\.(?!Library\.)", "DehnCanon.Library.", l)
+        out.append(l)
+    assert "namespace DehnCanon.Library" in out and "end DehnCanon.Library" in out
+    return out
 
 
 # library: the import closure of the two top files
@@ -62,17 +78,17 @@ while todo:
 for m in sorted(keep):
     (OUT / "DehnCanon" / f"{m}.lean").write_text(modulize(src(m).read_text(encoding="utf-8")), encoding="utf-8")
 
-shutil.copy(PKG / "Challenge" / "HilbertThird.lean", OUT / "Challenge.lean")
-shutil.copy(PKG / "Solution" / "HilbertThird.lean", OUT / "Solution.lean")
+shutil.copy(PKG / "Challenge" / "DehnCanon.lean", OUT / "Challenge.lean")
+shutil.copy(PKG / "Solution" / "DehnCanon.lean", OUT / "Solution.lean")
 shutil.copy(PKG / "comparator.json", OUT / "comparator.json")
 shutil.copy(PKG / "palomar" / "formalization.yaml", OUT / "formalization.yaml")
 shutil.copy(PKG / "palomar" / "README.md", OUT / "README.md")
 shutil.copy(GET / "LICENSE", OUT / "LICENSE")
 shutil.copy(GET / "lean-toolchain", OUT / "lean-toolchain")
 manifest = json.loads((GET / "lake-manifest.json").read_text(encoding="utf-8"))
-manifest["name"] = "HilbertThird"
+manifest["name"] = "DehnCanon"
 (OUT / "lake-manifest.json").write_text(json.dumps(manifest, indent=1) + "\n", encoding="utf-8")
-(OUT / "lakefile.toml").write_text("""name = "HilbertThird"
+(OUT / "lakefile.toml").write_text("""name = "DehnCanon"
 version = "0.1.0"
 defaultTargets = ["DehnCanon", "Challenge", "Solution"]
 

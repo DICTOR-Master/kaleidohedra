@@ -5,33 +5,33 @@ Already decompressed 8915 file(s)
 Resolving dependencies
 Building Challenge
 ⚠ [8931/8932] Replayed Challenge
-warning: Challenge.lean:241:8: declaration uses `sorry`
-warning: Challenge.lean:274:8: declaration uses `sorry`
-warning: Challenge.lean:291:8: declaration uses `sorry`
-warning: Challenge.lean:299:8: declaration uses `sorry`
-warning: Challenge.lean:326:8: declaration uses `sorry`
+warning: Challenge.lean:242:8: declaration uses `sorry`
+warning: Challenge.lean:275:8: declaration uses `sorry`
+warning: Challenge.lean:292:8: declaration uses `sorry`
+warning: Challenge.lean:300:8: declaration uses `sorry`
+warning: Challenge.lean:327:8: declaration uses `sorry`
 Build completed successfully (8932 jobs).
-Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HilbertThird.hilbert_third_problem, HilbertThird.dehnSet_eq_edge_sum, HilbertThird.dehnSet_eq_of_scissorsCongruent, HilbertThird.dehnSum_eq_of_scissors, HilbertThird.similarTetra_not_scissorsCongruent_similarCube, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, DehnCanon.hilbert_third_problem, DehnCanon.dehnSet_eq_edge_sum, DehnCanon.dehnSet_eq_of_scissorsCongruent, DehnCanon.dehnSum_eq_of_scissors, DehnCanon.similarTetra_not_scissorsCongruent_similarCube, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
 Building Solution
 Build completed successfully (8964 jobs).
-error: Const does not match between challenge and target 'HilbertThird.tetN'
-Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HilbertThird.hilbert_third_problem, HilbertThird.dehnSet_eq_edge_sum, HilbertThird.dehnSet_eq_of_scissorsCongruent, HilbertThird.dehnSum_eq_of_scissors, HilbertThird.similarTetra_not_scissorsCongruent_similarCube, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+error: Const does not match between challenge and target 'DehnCanon.tetN'
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, DehnCanon.hilbert_third_problem, DehnCanon.dehnSet_eq_edge_sum, DehnCanon.dehnSet_eq_of_scissorsCongruent, DehnCanon.dehnSum_eq_of_scissors, DehnCanon.similarTetra_not_scissorsCongruent_similarCube, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
 Command exited with non-zero status 1
 	Command being timed: "bash scripts/verify-comparator-lowmem.sh"
-	User time (seconds): 12.51
-	System time (seconds): 1.18
+	User time (seconds): 12.99
+	System time (seconds): 1.17
 	Percent of CPU this job got: 34%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:39.71
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:40.68
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 887476
+	Maximum resident set size (kbytes): 887224
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 61812
-	Voluntary context switches: 135586
-	Involuntary context switches: 154
+	Minor (reclaiming a frame) page faults: 62687
+	Voluntary context switches: 135578
+	Involuntary context switches: 160
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 16
@@ -40,4 +40,4 @@ Command exited with non-zero status 1
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 1
-cgroup memory.peak (bytes, whole run): 1556058112
+cgroup memory.peak (bytes, whole run): 1557065728

@@ -3,7 +3,7 @@
 version: "v0.4"
 
 project:
-  name: "Hilbert's third problem, with the Dehn invariant of a set"
+  name: "The Dehn Canon: Hilbert's Third Problem, Machine-Checked"
   description: >-
     Dehn's answer to Hilbert's third problem, with the Dehn invariant defined
     from the solid as a set of points in 3-space rather than from a list of
@@ -222,16 +222,19 @@ sources:
     relationship: "background"
     note: "arccos(1/3) is not a rational multiple of pi, from Mathlib's Niven theorem."
     author_endorsement: "n/a"
-  - title: "Dehn's Theorem from the Solids Up (draft paper)"
+  - title: "The Dehn Canon: Hilbert's Third Problem, Machine-Checked. From the solids up, deciding every pair of the canon"
     authors:
       - "DICTO"
-    type: "other"
-    location: "unpublished draft, 19 November 2026, not peer reviewed"
-    relationship: "other"
+    id: "doi:10.5281/zenodo.24383552"
+    type: "paper"
+    location: "Zenodo preprint, 20 November 2026, version 1: doi:10.5281/zenodo.24383553 (all versions: doi:10.5281/zenodo.24383552); not peer reviewed"
+    relationship: "formalizes"
     note: >-
-      DICTO's paper presenting this development (its Theorems 4, 4', 6, 6' and
-      6'') together with a canon of solids built on it. No earlier non-Lean
-      publication of the bridge.
+      DICTO's paper presenting this development: its Theorem 4 (the bridge),
+      Corollary 4' (finite unions), Theorem 6 (Dehn's theorem), Theorem 6'
+      (Hilbert's question) and Theorem 6'' (the edge sum) are the five
+      statements of this entry, together with a canon of solids built on them
+      (not part of this entry). No earlier non-Lean publication of the bridge.
     author_endorsement: "participated"
 
 related_formalizations:
@@ -371,29 +374,29 @@ review:
     problem is not on Wiedijk's list of 100 theorems.
 
 alignment:
-  namespace: "HilbertThird"
+  namespace: "DehnCanon"
   statements:
     - source: "Hilbert 1900, problem 3 (in Newson's translation); Dehn 1901"
-      lean: "HilbertThird.hilbert_third_problem"
+      lean: "DehnCanon.hilbert_third_problem"
       module: "Challenge"
       status: "proved"
       note: "One pair on one base triangle (Aigner-Ziegler's T1 and T2); both halves of Hilbert's sentence."
     - source: "Dehn 1901, the invariant in Jessen's form (1968)"
-      lean: "HilbertThird.dehnSet_eq_edge_sum"
+      lean: "DehnCanon.dehnSet_eq_edge_sum"
       module: "Challenge"
       status: "proved"
       note: "Every convex polytope with interior points; edges, facets and dihedral angles defined from the set."
     - source: "Dehn 1901 (invariance under scissors congruence)"
-      lean: "HilbertThird.dehnSet_eq_of_scissorsCongruent"
+      lean: "DehnCanon.dehnSet_eq_of_scissorsCongruent"
       module: "Challenge"
       status: "proved"
       note: "Convex polytopes, in any 3-dimensional real inner product space."
     - source: "Dehn 1901 (invariance, polyhedra as finite unions of convex polytopes)"
-      lean: "HilbertThird.dehnSum_eq_of_scissors"
+      lean: "DehnCanon.dehnSum_eq_of_scissors"
       module: "Challenge"
       status: "proved"
     - source: "Dehn 1901 (the regular tetrahedron and the cube)"
-      lean: "HilbertThird.similarTetra_not_scissorsCongruent_similarCube"
+      lean: "DehnCanon.similarTetra_not_scissorsCongruent_similarCube"
       module: "Challenge"
       status: "proved"
       note: "Similar copies of the two models, any size and position."

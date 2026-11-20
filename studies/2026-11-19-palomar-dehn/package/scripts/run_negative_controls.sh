@@ -17,14 +17,14 @@ case $V in
      grep -q "ENNReal.ofReal (1 / 7)" $D/Challenge.lean || { echo "control a: edit failed"; exit 1; } ;;
   b) sed -i 's/^  2 \* Real.pi \* ((volume (wedgeSet T K)).toReal/  Real.pi * ((volume (wedgeSet T K)).toReal/' $D/Challenge.lean
      grep -q "^  Real.pi \* ((volume (wedgeSet T K))" $D/Challenge.lean || { echo "control b: edit failed"; exit 1; } ;;
-  c) sed -i 's/^  exact DehnCanon.dehnSet_eq_edge_sum hP hint$/  sorry/' $D/Solution.lean
+  c) sed -i 's/^  exact DehnCanon.Library.dehnSet_eq_edge_sum hP hint$/  sorry/' $D/Solution.lean
      grep -q "^  sorry" $D/Solution.lean || { echo "control c: edit failed"; exit 1; } ;;
 esac
 diff $ENTRY/Challenge.lean $D/Challenge.lean > $LOG/$V.diff; diff $ENTRY/Solution.lean $D/Solution.lean >> $LOG/$V.diff
 cat $LOG/$V.diff
 cd $D
 timeout 200 lake build Challenge Solution > $LOG/$V-build.log 2>&1; echo "control $V: build exit $?"
-printf 'import Solution\n#print axioms HilbertThird.dehnSet_eq_edge_sum\n' > AxiomsCheck.lean
+printf 'import Solution\n#print axioms DehnCanon.dehnSet_eq_edge_sum\n' > AxiomsCheck.lean
 timeout 120 lake env lean AxiomsCheck.lean > $LOG/$V-axioms.log 2>&1; rm -f AxiomsCheck.lean
 echo "control $V: sorryAx in axioms of dehnSet_eq_edge_sum: $(grep -c sorryAx $LOG/$V-axioms.log)"
 CJ=default TMO=280 LOG=$LOG/$V-comparator.log bash scripts/run_comparator_lowmem.sh > $LOG/$V-summary.log 2>&1

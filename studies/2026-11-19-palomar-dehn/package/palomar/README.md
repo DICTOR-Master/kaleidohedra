@@ -1,4 +1,4 @@
-# Hilbert's third problem, with the Dehn invariant of a set (Lean 4 + Mathlib)
+# The Dehn Canon: Hilbert's Third Problem, Machine-Checked (Lean 4 + Mathlib)
 
 Author: DICTO.
 
@@ -29,7 +29,7 @@ moved by isometries, reflections included. Sydler's converse is not stated.
 - `Challenge.lean`: the definitions and the five statements, with every proof `sorry`. It imports only Mathlib. Every
   definition and statement is copied, character for character, from the development by a script.
 - `Solution.lean`: the Challenge word for word, with proofs that transfer the theorems of the development.
-- `DehnCanon/`: the development (32 modules): the invariant of a set and its plane-cut identity, invariance under
+- `DehnCanon/`: the development (32 modules, namespace `DehnCanon.Library`): the invariant of a set and its plane-cut identity, invariance under
   isometries, additivity over dissections, the sector-area angle, the model solids, scaling, the edge sum, and the
   volumes and altitudes of the pair.
 
@@ -61,5 +61,7 @@ Apache-2.0 (see `LICENSE`). Copyright 2026 DICTO.
 
 ## Other work by DICTO
 
+- The paper: DICTO, *The Dehn Canon: Hilbert's Third Problem, Machine-Checked. From the solids up, deciding every pair
+  of the canon*, Zenodo, 2026. DICTO DOI: 10.5281/zenodo.24383552
 - ORCID (all works): https://orcid.org/0009-0001-2620-2036
 - Website: https://dictospheres.com

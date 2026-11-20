@@ -1,186 +1,217 @@
-⚠ [8931/8932] Built Challenge (12s)
-warning: Challenge.lean:241:8: declaration uses `sorry`
-warning: Challenge.lean:274:8: declaration uses `sorry`
-warning: Challenge.lean:291:8: declaration uses `sorry`
-warning: Challenge.lean:299:8: declaration uses `sorry`
-warning: Challenge.lean:326:8: declaration uses `sorry`
+⚠ [8931/8932] Built Challenge (2.5s)
+warning: Challenge.lean:242:8: declaration uses `sorry`
+warning: Challenge.lean:275:8: declaration uses `sorry`
+warning: Challenge.lean:292:8: declaration uses `sorry`
+warning: Challenge.lean:300:8: declaration uses `sorry`
+warning: Challenge.lean:327:8: declaration uses `sorry`
 Build completed successfully (8932 jobs).
 	Command being timed: "lake build Challenge"
-	User time (seconds): 8.92
-	System time (seconds): 2.42
-	Percent of CPU this job got: 65%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:17.35
+	User time (seconds): 7.08
+	System time (seconds): 1.24
+	Percent of CPU this job got: 131%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.33
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 2929304
-	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 27034
-	Minor (reclaiming a frame) page faults: 133333
-	Voluntary context switches: 198083
-	Involuntary context switches: 653
-	Swaps: 0
-	File system inputs: 4789408
-	File system outputs: 15664
-	Socket messages sent: 0
-	Socket messages received: 0
-	Signals delivered: 0
-	Page size (bytes): 4096
-	Exit status: 0
-EXIT 0
-✔ [8931/8941] Built DehnCanon.DehnCanon1 (2.4s)
-✔ [8932/8941] Built DehnCanon.Dehn2Poly (2.5s)
-✔ [8933/8941] Built DehnCanon.Dehn2Local (4.1s)
-✔ [8934/8941] Built DehnCanon.Dehn2Sum (2.1s)
-✔ [8935/8941] Built DehnCanon.Dehn2Cut (2.8s)
-✔ [8936/8941] Built DehnCanon.Dehn2Motion (2.4s)
-✔ [8937/8941] Built DehnCanon.DehnCanon2 (2.0s)
-✔ [8938/8941] Built DehnCanon.Dehn2Edges (2.1s)
-✔ [8939/8941] Built DehnCanon.Dehn2R3 (2.0s)
-✔ [8940/8941] Built DehnCanon.Dehn3Sector (7.0s)
-✔ [8941/8941] Built DehnCanon.Dehn3Solids (3.4s)
-Build completed successfully (8941 jobs).
-	Command being timed: "lake build DehnCanon.Dehn3Solids"
-	User time (seconds): 45.61
-	System time (seconds): 4.56
-	Percent of CPU this job got: 145%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:34.42
-	Average shared text size (kbytes): 0
-	Average unshared data size (kbytes): 0
-	Average stack size (kbytes): 0
-	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 3022888
-	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 30
-	Minor (reclaiming a frame) page faults: 867262
-	Voluntary context switches: 105740
-	Involuntary context switches: 1065
-	Swaps: 0
-	File system inputs: 3992
-	File system outputs: 123448
-	Socket messages sent: 0
-	Socket messages received: 0
-	Signals delivered: 0
-	Page size (bytes): 4096
-	Exit status: 0
-EXIT 0
-✔ [8942/8952] Built DehnCanon.Dehn4Similar (4.5s)
-✔ [8943/8952] Built DehnCanon.Dehn4Rational (10s)
-✔ [8944/8952] Built DehnCanon.Dehn4Simplex (6.1s)
-✔ [8945/8952] Built DehnCanon.Dehn10Edges (8.9s)
-✔ [8946/8952] Built DehnCanon.Dehn4Words (11s)
-✔ [8947/8952] Built DehnCanon.Dehn5Angles (4.4s)
-✔ [8948/8952] Built DehnCanon.Dehn6Indep (4.6s)
-✔ [8949/8952] Built DehnCanon.Dehn5Edges (6.3s)
-✔ [8950/8952] Built DehnCanon.Dehn5Fuji (20s)
-✔ [8951/8952] Built DehnCanon.Dehn5Pairs (5.3s)
-✔ [8952/8952] Built DehnCanon.Dehn6Pairs (4.3s)
-Build completed successfully (8952 jobs).
-	Command being timed: "lake build DehnCanon.Dehn6Pairs DehnCanon.Dehn10Edges"
-	User time (seconds): 173.15
-	System time (seconds): 7.49
-	Percent of CPU this job got: 230%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:18.24
-	Average shared text size (kbytes): 0
-	Average unshared data size (kbytes): 0
-	Average stack size (kbytes): 0
-	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 3258888
+	Maximum resident set size (kbytes): 2959724
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 915031
-	Voluntary context switches: 113756
-	Involuntary context switches: 51820
+	Minor (reclaiming a frame) page faults: 116089
+	Voluntary context switches: 68523
+	Involuntary context switches: 326
 	Swaps: 0
-	File system inputs: 64
-	File system outputs: 140256
+	File system inputs: 0
+	File system outputs: 13360
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
 EXIT 0
-✔ [8952/8957] Built DehnCanon.Dehn7Gold (12s)
-✔ [8953/8957] Built DehnCanon.Dehn7Octa (4.0s)
-✔ [8954/8957] Built DehnCanon.Dehn7CubeOct (23s)
-✔ [8955/8957] Built DehnCanon.Dehn7Dodeca (19s)
-✔ [8956/8957] Built DehnCanon.Dehn7Icosa (38s)
-✔ [8957/8957] Built DehnCanon.Dehn7Table (3.2s)
-Build completed successfully (8957 jobs).
-	Command being timed: "lake build DehnCanon.Dehn7Table"
-	User time (seconds): 727.11
-	System time (seconds): 13.88
-	Percent of CPU this job got: 702%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:45.47
+✔ [8931/8942] Built DehnCanon.DehnCanon1 (2.5s)
+✔ [8932/8942] Built DehnCanon.Dehn2Poly (2.6s)
+✔ [8933/8942] Built DehnCanon.Dehn2Local (4.2s)
+✔ [8934/8942] Built DehnCanon.Dehn2Sum (2.1s)
+✔ [8935/8942] Built DehnCanon.Dehn2Cut (2.8s)
+✔ [8936/8942] Built DehnCanon.Dehn2Motion (2.3s)
+✔ [8937/8942] Built DehnCanon.DehnCanon2 (2.0s)
+✔ [8938/8942] Built DehnCanon.Dehn2Edges (2.1s)
+✔ [8939/8942] Built DehnCanon.Dehn2R3 (2.0s)
+✔ [8940/8942] Built DehnCanon.Dehn3Sector (7.8s)
+✔ [8941/8942] Built DehnCanon.Dehn3Solids (3.1s)
+✔ [8942/8942] Built DehnCanon.Dehn4Similar (2.2s)
+Build completed successfully (8942 jobs).
+	Command being timed: "lake build DehnCanon.Dehn4Similar"
+	User time (seconds): 48.25
+	System time (seconds): 4.91
+	Percent of CPU this job got: 145%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:36.43
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 4500800
+	Maximum resident set size (kbytes): 3044848
 	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 1
-	Minor (reclaiming a frame) page faults: 928549
-	Voluntary context switches: 685852
-	Involuntary context switches: 50598
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 958003
+	Voluntary context switches: 109721
+	Involuntary context switches: 3825
 	Swaps: 0
-	File system inputs: 128
-	File system outputs: 160984
+	File system inputs: 0
+	File system outputs: 133968
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
 EXIT 0
-✔ [8958/8960] Built DehnCanon.Dehn8Indep (2.2s)
-✔ [8959/8960] Built DehnCanon.Dehn8Cross (3.4s)
-✔ [8960/8960] Built DehnCanon.Dehn9Vol (8.1s)
-Build completed successfully (8960 jobs).
-	Command being timed: "lake build DehnCanon.Dehn9Vol"
-	User time (seconds): 27.97
-	System time (seconds): 2.13
-	Percent of CPU this job got: 178%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.88
+✔ [8943/8961] Built DehnCanon.Dehn4Rational (4.8s)
+✔ [8944/8961] Built DehnCanon.Dehn4Simplex (2.8s)
+✔ [8945/8961] Built DehnCanon.Dehn4Words (5.3s)
+✔ [8946/8961] Built DehnCanon.Dehn5Angles (2.1s)
+✔ [8947/8961] Built DehnCanon.Dehn6Indep (2.3s)
+✔ [8948/8961] Built DehnCanon.Dehn5Edges (3.0s)
+✔ [8949/8961] Built DehnCanon.Dehn8Indep (2.4s)
+✔ [8950/8961] Built DehnCanon.Dehn5Fuji (8.7s)
+✔ [8951/8961] Built DehnCanon.Dehn5Pairs (2.4s)
+✔ [8952/8961] Built DehnCanon.Dehn6Pairs (2.1s)
+✔ [8953/8961] Built DehnCanon.Dehn7Gold (7.3s)
+✔ [8954/8961] Built DehnCanon.Dehn7Octa (3.9s)
+✔ [8955/8961] Built DehnCanon.Dehn7CubeOct (21s)
+✔ [8956/8961] Built DehnCanon.Dehn7Dodeca (19s)
+✔ [8957/8961] Built DehnCanon.Dehn7Icosa (53s)
+✔ [8958/8961] Built DehnCanon.Dehn7Table (3.2s)
+✔ [8959/8961] Built DehnCanon.Dehn8Cross (3.5s)
+✔ [8960/8961] Built DehnCanon.Dehn9Vol (8.2s)
+✔ [8961/8961] Built DehnCanon.Dehn10Hilbert (3.2s)
+Build completed successfully (8961 jobs).
+	Command being timed: "lake build DehnCanon.Dehn10Hilbert"
+	User time (seconds): 829.55
+	System time (seconds): 18.75
+	Percent of CPU this job got: 537%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:37.76
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 3292080
+	Maximum resident set size (kbytes): 4499964
 	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 2
-	Minor (reclaiming a frame) page faults: 278707
-	Voluntary context switches: 90859
-	Involuntary context switches: 952
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1783095
+	Voluntary context switches: 830500
+	Involuntary context switches: 25581
 	Swaps: 0
-	File system inputs: 560
-	File system outputs: 42488
+	File system inputs: 0
+	File system outputs: 334192
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
 EXIT 0
-✔ [8962/8964] Built DehnCanon.Dehn10Hilbert (3.3s)
+✔ [8945/8945] Built DehnCanon.Dehn10Edges (3.5s)
+Build completed successfully (8945 jobs).
+	Command being timed: "lake build DehnCanon.Dehn10Edges"
+	User time (seconds): 12.72
+	System time (seconds): 1.39
+	Percent of CPU this job got: 198%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3063272
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 115104
+	Voluntary context switches: 70290
+	Involuntary context switches: 733
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 14416
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+EXIT 0
+Build completed successfully (8963 jobs).
+	Command being timed: "lake build DehnCanon"
+	User time (seconds): 5.11
+	System time (seconds): 1.11
+	Percent of CPU this job got: 169%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1013944
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 33933
+	Voluntary context switches: 66263
+	Involuntary context switches: 254
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+EXIT 0
 ✔ [8963/8964] Built Solution (2.5s)
 Build completed successfully (8964 jobs).
 	Command being timed: "lake build Solution"
-	User time (seconds): 15.95
-	System time (seconds): 1.87
-	Percent of CPU this job got: 189%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:09.40
+	User time (seconds): 6.46
+	System time (seconds): 1.28
+	Percent of CPU this job got: 141%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.48
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 3065824
+	Maximum resident set size (kbytes): 2961952
 	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 1
-	Minor (reclaiming a frame) page faults: 196375
-	Voluntary context switches: 89504
-	Involuntary context switches: 614
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 106943
+	Voluntary context switches: 69201
+	Involuntary context switches: 339
 	Swaps: 0
-	File system inputs: 32
-	File system outputs: 25192
+	File system inputs: 0
+	File system outputs: 10448
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+EXIT 0
+⚠ [8964/8967] Replayed Challenge
+warning: Challenge.lean:242:8: declaration uses `sorry`
+warning: Challenge.lean:275:8: declaration uses `sorry`
+warning: Challenge.lean:292:8: declaration uses `sorry`
+warning: Challenge.lean:300:8: declaration uses `sorry`
+warning: Challenge.lean:327:8: declaration uses `sorry`
+Build completed successfully (8967 jobs).
+	Command being timed: "lake build"
+	User time (seconds): 5.04
+	System time (seconds): 1.09
+	Percent of CPU this job got: 168%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.63
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1003044
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 34161
+	Voluntary context switches: 66517
+	Involuntary context switches: 278
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0

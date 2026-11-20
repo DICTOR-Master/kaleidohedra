@@ -44,11 +44,12 @@ G. M. Ziegler, *Proofs from THE BOOK*, chapter "Hilbert's third problem" (their 
 **Scope.** Dimension 3. The pieces of a dissection are convex polytopes, finitely many, moved by isometries
 (reflections included). The edge sum is for convex polytopes with interior points. Sydler's converse is not stated.
 
-Every definition and statement below is copied, character for character, from the Lean development (namespace
-`DehnCanon`, studies 2026-11-19-lean-dehn-1 to -10); the comment before each group names its file.
+Every definition and statement below is copied, character for character, from the Lean development (studies
+2026-11-19-lean-dehn-1 to -10; in this entry its namespace is `DehnCanon.Library`); the comment before each group
+names its file.
 -/
 
-namespace HilbertThird
+namespace DehnCanon
 
 -- from DehnCanon1.lean
 section
@@ -249,7 +250,7 @@ theorem hilbert_third_problem :
       ¬ ScissorsCongruent (convexHull ℝ ({A, B, C, D} : Set R3)) (convexHull ℝ ({A, B, C, D'} : Set R3)) ∧
       ¬ EquiComplementable (convexHull ℝ ({A, B, C, D} : Set R3))
         (convexHull ℝ ({A, B, C, D'} : Set R3)) := by
-  exact DehnCanon.hilbert_third_problem
+  exact DehnCanon.Library.hilbert_third_problem
 
 end
 
@@ -276,7 +277,7 @@ the angle between the outward unit normals of the two facets through the edge,
 theorem dehnSet_eq_edge_sum {P : Set E} (hP : IsPoly P) (hint : (interior P).Nonempty) :
     dehnSet P = ∑ᶠ F ∈ edges P,
       (μH[1] F).toReal ⊗ₜ[ℚ] (Submodule.Quotient.mk (dihedral P F) : Angle) := by
-  exact DehnCanon.dehnSet_eq_edge_sum hP hint
+  exact DehnCanon.Library.dehnSet_eq_edge_sum hP hint
 
 end
 
@@ -292,7 +293,7 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDim
 invariant. -/
 theorem dehnSet_eq_of_scissorsCongruent {P Q : Set E} (hP : IsPoly P) (hQ : IsPoly Q)
     (h : ScissorsCongruent P Q) : dehnSet P = dehnSet Q := by
-  exact DehnCanon.dehnSet_eq_of_scissorsCongruent hP hQ h
+  exact DehnCanon.Library.dehnSet_eq_of_scissorsCongruent hP hQ h
 
 /-- **Dehn's theorem for polyhedra that need not be convex.** Let the polyhedron `⋃ k, p k` be cut into the
 convex pieces `p k`, and let the moved pieces `g k '' p k` fill a second polyhedron. Then every dissection
@@ -310,7 +311,7 @@ theorem dehnSum_eq_of_scissors {κ κ₁ κ₂ : Type} [Fintype κ] [Fintype κ�
     (hd₂ : Pairwise fun i j => Disjoint (interior (p₂ i)) (interior (p₂ j)))
     (hU₂ : (⋃ k, p₂ k) = ⋃ k, g k '' p k) :
     ∑ k, dehnSet (p₁ k) = ∑ k, dehnSet (p₂ k) := by
-  exact DehnCanon.dehnSum_eq_of_scissors hp hdp hdg hp₁ hd₁ hU₁ hp₂ hd₂ hU₂
+  exact DehnCanon.Library.dehnSum_eq_of_scissors hp hdp hdg hp₁ hd₁ hU₁ hp₂ hd₂ hU₂
 
 end
 
@@ -327,8 +328,8 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDim
 `[-1, 1]³`. Here "a regular tetrahedron" and "a cube" mean: a similar copy of these two models. -/
 theorem similarTetra_not_scissorsCongruent_similarCube {T Q : Set R3}
     (hT : IsSimilarCopy tetraSet T) (hQ : IsSimilarCopy (cubeSet 1) Q) : ¬ ScissorsCongruent T Q := by
-  exact DehnCanon.similarTetra_not_scissorsCongruent_similarCube hT hQ
+  exact DehnCanon.Library.similarTetra_not_scissorsCongruent_similarCube hT hQ
 
 end
 
-end HilbertThird
+end DehnCanon

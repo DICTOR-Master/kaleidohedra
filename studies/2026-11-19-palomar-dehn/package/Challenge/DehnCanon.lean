@@ -42,11 +42,12 @@ G. M. Ziegler, *Proofs from THE BOOK*, chapter "Hilbert's third problem" (their 
 **Scope.** Dimension 3. The pieces of a dissection are convex polytopes, finitely many, moved by isometries
 (reflections included). The edge sum is for convex polytopes with interior points. Sydler's converse is not stated.
 
-Every definition and statement below is copied, character for character, from the Lean development (namespace
-`DehnCanon`, studies 2026-11-19-lean-dehn-1 to -10); the comment before each group names its file.
+Every definition and statement below is copied, character for character, from the Lean development (studies
+2026-11-19-lean-dehn-1 to -10; in this entry its namespace is `DehnCanon.Library`); the comment before each group
+names its file.
 -/
 
-namespace HilbertThird
+namespace DehnCanon
 
 -- from DehnCanon1.lean
 section
@@ -329,4 +330,4 @@ theorem similarTetra_not_scissorsCongruent_similarCube {T Q : Set R3}
 
 end
 
-end HilbertThird
+end DehnCanon
