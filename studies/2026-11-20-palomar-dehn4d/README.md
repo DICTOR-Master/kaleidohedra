@@ -195,8 +195,8 @@ preflight and then give you the submission data".
 
 ## LEADS
 
-- DICTO submits at submit.palomar-registry.org with the data above; then follow the runs
-  (`read_report.py --find DICTOR-Master/dehn-hadwiger-4d-lean`) and with commit 5a2cf4c; record the PALOMAR id here, in `concordance.json`
+- DICTO submits at submit.palomar-registry.org with the data above (commit 5a2cf4c); then follow the runs
+  (`read_report.py --find DICTOR-Master/dehn-hadwiger-4d-lean`) and record the PALOMAR id here, in `concordance.json`
   and in open-work (checklist F).
 - Formalize the face-sum identity for every convex polytope in ℝ⁴ (both scorers' main lever for a higher score).
 - Formalize Jessen's converse in ℝ⁴ (long term).
