@@ -1,0 +1,537 @@
+<title>Aequi Picker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root {
+  --bg: #f5f3ee; --surface: #ffffff; --surface-2: #efece5; --text: #1c1e22; --muted: #5c626a;
+  --line: #d8d3c9; --accent: #2e5c8a; --accent-text: #ffffff; --view-bg: #e9e6df; --ok: #2f7d3c; --ok-text: #ffffff;
+  --shadow: 0 1px 3px rgba(0,0,0,.08);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141619; --surface: #1e2125; --surface-2: #272b30; --text: #ebe9e3; --muted: #a2a8af;
+    --line: #363a40; --accent: #8db5df; --accent-text: #10161d; --view-bg: #1a1d21; --ok: #6cc17a; --ok-text: #0d1a10;
+    --shadow: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141619; --surface: #1e2125; --surface-2: #272b30; --text: #ebe9e3; --muted: #a2a8af;
+  --line: #363a40; --accent: #8db5df; --accent-text: #10161d; --view-bg: #1a1d21; --ok: #6cc17a; --ok-text: #0d1a10;
+  --shadow: none; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow-x: hidden; }
+body { background: var(--bg); color: var(--text); font: 16px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-text-size-adjust: 100%; }
+#app { display: flex; flex-direction: column; height: 100vh; height: 100dvh; max-width: 100vw; }
+header { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--surface); }
+header h1 { font-size: 19px; margin: 0; font-weight: 650; letter-spacing: .01em; white-space: nowrap; }
+.tabs { display: flex; gap: 6px; margin-left: auto; }
+.tabs button { min-height: 44px; padding: 0 16px; border-radius: 22px; border: 1px solid var(--line); background: var(--surface-2); color: var(--text); font: inherit; font-size: 15px; }
+.tabs button[aria-selected="true"] { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.mark { position: fixed; right: 10px; bottom: 6px; font-size: 10px; letter-spacing: .18em; color: var(--muted); opacity: .8; pointer-events: none; z-index: 5; }
+.stage { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.view { position: relative; flex: 1 1 58%; min-height: 200px; background: var(--view-bg); touch-action: none; overflow: hidden; }
+.view canvas { display: block; width: 100%; height: 100%; }
+.hint { position: absolute; left: 12px; bottom: 8px; font-size: 12px; color: var(--muted); pointer-events: none; }
+.panel { flex: 0 1 auto; max-height: 26vh; overflow-y: auto; padding: 12px 16px; background: var(--surface); border-top: 1px solid var(--line); }
+@media (orientation: landscape) and (min-width: 700px) {
+  .stage { flex-direction: row; }
+  .view { flex: 1 1 60%; }
+  .panel { flex: 0 0 38%; max-width: 440px; max-height: none; border-top: none; border-left: 1px solid var(--line); }
+}
+.dock { flex: 0 0 auto; max-height: 40vh; display: flex; flex-direction: column; gap: 10px; padding: 12px 16px calc(14px + env(safe-area-inset-bottom)); background: var(--surface); border-top: 1px solid var(--line); box-shadow: 0 -2px 8px rgba(0,0,0,.05); }
+.dock[hidden] { display: none; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+select, .btn, .seg button { min-height: 48px; font: inherit; font-size: 16px; color: var(--text); background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 0 14px; }
+select { padding-right: 10px; min-width: 120px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.seg button { border: none; border-radius: 0; background: var(--surface-2); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); }
+.btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.btn[hidden] { display: none; }
+.scroll { overflow-y: auto; min-height: 0; flex: 1 1 auto; -webkit-overflow-scrolling: touch; }
+.ticks { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; }
+.tick { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); cursor: pointer; user-select: none; -webkit-user-select: none; }
+.tick input { width: 24px; height: 24px; margin: 0; accent-color: var(--accent); flex: 0 0 auto; }
+.tick.on { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.tick .t { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+.tech { font-size: 11.5px; color: var(--muted); font-family: ui-monospace, Menlo, monospace; }
+.sw { width: 16px; height: 16px; border-radius: 4px; flex: 0 0 auto; border: 1px solid rgba(0,0,0,.25); }
+.list { display: flex; flex-direction: column; gap: 6px; }
+.item { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); text-align: left; font: inherit; color: var(--text); width: 100%; }
+.item.sel { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.item .sws { display: flex; gap: 3px; flex: 0 0 auto; }
+.item .sw { width: 12px; height: 12px; }
+.item .meta { margin-left: auto; color: var(--muted); font-size: 13px; white-space: nowrap; }
+.item .nm { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.sec { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin: 8px 2px 2px; }
+h2 { font-size: 18px; margin: 0 0 4px; }
+.sub { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+.msg { background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin: 0 0 10px; font-size: 15px; }
+.msg .btn { margin-top: 8px; }
+dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; margin: 6px 0 10px; font-size: 15px; }
+dt { color: var(--muted); }
+dd { margin: 0; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 10px; background: var(--accent); color: var(--accent-text); font-size: 13px; margin-right: 6px; }
+table.kinds { border-collapse: collapse; width: 100%; font-size: 14px; }
+table.kinds td { padding: 5px 4px; border-top: 1px solid var(--line); vertical-align: top; }
+table.kinds td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.note { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+/* Make it fair */
+.sliderbox { position: relative; flex: 1 1 260px; min-width: 0; padding-top: 18px; }
+input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 48px; background: transparent; margin: 0; touch-action: none; }
+input[type=range]::-webkit-slider-runnable-track { height: 10px; border-radius: 5px; background: var(--line); }
+input[type=range]::-moz-range-track { height: 10px; border-radius: 5px; background: var(--line); }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); margin-top: -15px; border: 3px solid var(--surface); box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+input[type=range]::-moz-range-thumb { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); border: 3px solid var(--surface); }
+.fairmark { position: absolute; top: 0; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; font-size: 11px; color: var(--ok); background: none; border: none; padding: 0 6px; min-height: 44px; font-weight: 600; }
+.fairmark::after { content: ""; width: 3px; height: 30px; background: var(--ok); border-radius: 2px; margin-top: 1px; }
+.muval { font-variant-numeric: tabular-nums; min-width: 112px; font-size: 17px; }
+.bars { display: flex; flex-direction: column; gap: 10px; margin: 8px 0; }
+.bar { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; font-size: 14px; }
+.track { grid-column: 1 / 3; position: relative; height: 22px; border-radius: 6px; background: var(--surface-2); border: 1px solid var(--line); overflow: hidden; }
+.fill { position: absolute; left: 0; top: 0; bottom: 0; transition: width .06s linear; }
+.fairline { position: absolute; top: -2px; bottom: -2px; left: 50%; width: 2px; background: var(--text); opacity: .7; }
+.light { display: inline-block; padding: 4px 14px; border-radius: 16px; border: 1px solid var(--line); color: var(--muted); font-weight: 600; letter-spacing: .04em; }
+.light.on { background: var(--ok); color: var(--ok-text); border-color: var(--ok); }
+.err { color: #c0392b; }
+input.cpick { width: 30px; height: 30px; padding: 0; border: 1px solid var(--line); border-radius: 6px; background: none; flex: 0 0 auto; }
+.toast { font-size: 13px; color: var(--muted); }
+</style>
+
+<div id="app">
+  <header>
+    <h1>Aequi picker</h1>
+    <div class="tabs" role="tablist">
+      <button id="tabPick" role="tab" aria-selected="true">Pick a die</button>
+      <button id="tabFair" role="tab" aria-selected="false">Make it fair</button>
+    </div>
+  </header>
+  <main class="stage">
+    <div class="view" id="view"><div class="hint">drag to turn · pinch to zoom</div></div>
+    <section class="panel" id="panel" aria-live="polite"></section>
+  </main>
+  <footer class="dock" id="dockPick">
+    <div class="row">
+      <select id="groupSel" aria-label="Symmetry group"></select>
+      <div class="seg" role="group" aria-label="Mode">
+        <button id="modeTick" aria-pressed="true">Tick faces</button>
+        <button id="modeList" aria-pressed="false">List</button>
+      </div>
+      <button class="btn" id="vacBtn" aria-pressed="false">Vacuus</button>
+      <button class="btn" id="handBtn" aria-pressed="false" hidden>Other hand</button>
+      <button class="btn" id="clearBtn">Clear</button>
+      <button class="btn" id="stlBtn" hidden>3D print</button>
+    </div>
+    <div class="scroll" id="choices"></div>
+  </footer>
+  <footer class="dock" id="dockFair" hidden>
+    <div class="row">
+      <select id="lineSel" aria-label="Axis line"></select>
+      <button class="btn" id="snapBtn">Snap to fair</button>
+      <button class="btn" id="vacBtn2" aria-pressed="false">Vacuus</button>
+      <button class="btn" id="stlBtn2" hidden>3D print</button>
+    </div>
+    <div class="row">
+      <span class="muval" id="muVal">μ = 1</span>
+      <div class="sliderbox">
+        <button class="fairmark" id="fairMark" aria-label="Snap to the fair value">fair</button>
+        <input type="range" id="muSlider" min="0" max="1" step="any" aria-label="μ, the B faces' distance">
+      </div>
+    </div>
+  </footer>
+  <div class="mark">DICTO</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="geom.js"></script>
+<script>
+(function () {
+'use strict';
+var G = window.AequiGeom;
+var $ = function (id) { return document.getElementById(id); };
+// app colours, only for the solid each face family stands for; neutrals for the rhombic solids
+var COL = { C: '#488e48', O: '#e8c852', T: '#cd3e28', D: '#8a5cc4', I: '#3a70cd', RD: '#b3a489', RT: '#8e9aa5' };
+var SOLID = { C: 'cube', O: 'octahedron', T: 'tetrahedron', D: 'dodecahedron', I: 'icosahedron', RD: 'rhombic dodecahedron', RT: 'triacontahedron' };
+var SLATE = '#5e6e7f', SAND = '#e8dcc0', EDGE = 0x15181c;
+function mix(a, b, t) {
+  var p = function (h, i) { return parseInt(h.substr(1 + 2 * i, 2), 16); };
+  return '#' + [0, 1, 2].map(function (i) { return Math.round(p(a, i) * (1 - t) + p(b, i) * t).toString(16).padStart(2, '0'); }).join('');
+}
+var custom = {};
+try { custom = JSON.parse(localStorage.getItem('aequiColours') || '{}') || {}; } catch (e) { custom = {}; }
+function colOf(key) { if (custom[key]) return custom[key]; var base = COL[key.replace('2', '')]; return /2$/.test(key) ? mix(base, '#ffffff', 0.45) : base; }
+function setColour(key, val) { custom[key] = val; try { localStorage.setItem('aequiColours', JSON.stringify(custom)); } catch (e) {} if (tab === 'pick') { renderChoices(); updatePick(); } else updateFair(true); }
+function resetColours() { custom = {}; try { localStorage.removeItem('aequiColours'); } catch (e) {} if (tab === 'pick') { renderChoices(); updatePick(); } else updateFair(true); }
+function picker(key) { return '<input type="color" class="cpick" data-key="' + key + '" value="' + colOf(key) + '" aria-label="Colour for these faces">'; }
+function wirePickers(root) { root.querySelectorAll('input.cpick').forEach(function (c) { c.oninput = function () { setColour(c.dataset.key, c.value); }; }); var r = root.querySelector('#resetCol'); if (r) r.onclick = resetColours; }
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+// ---------------- viewer
+var view = $('view');
+var renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+view.insertBefore(renderer.domElement, view.firstChild);
+var scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+camera.position.set(0, 0, 5.2); scene.add(camera);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x50555c, 0.62));
+var key = new THREE.DirectionalLight(0xffffff, 0.62); key.position.set(2.5, 3, 4); camera.add(key);
+var holder = new THREE.Group(); scene.add(holder);
+holder.quaternion.setFromEuler(new THREE.Euler(-0.42, 0.62, 0.08));
+var content = null, dirty = true;
+function themeBg() { scene.background = new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue('--view-bg').trim() || '#e9e6df'); dirty = true; }
+themeBg();
+if (window.matchMedia) { var mq = window.matchMedia('(prefers-color-scheme: dark)'); (mq.addEventListener ? mq.addEventListener('change', themeBg) : mq.addListener(themeBg)); }
+function resize() {
+  var w = view.clientWidth, h = view.clientHeight; if (!w || !h) return;
+  renderer.setSize(w, h, false); camera.aspect = w / h;
+  camera.position.z = (w < h ? 5.2 * Math.max(1, h / w * 0.82) : 5.2) * zoom; camera.updateProjectionMatrix(); dirty = true;
+}
+var zoom = 1;
+new ResizeObserver(resize).observe(view);
+function dispose(o) { o.traverse(function (c) { if (c.geometry) c.geometry.dispose(); if (c.material) c.material.dispose(); }); }
+function setContent(obj) { if (content) { holder.remove(content); dispose(content); } content = obj; if (obj) holder.add(obj); dirty = true; }
+(function loop() { if (dirty) { renderer.render(scene, camera); dirty = false; } requestAnimationFrame(loop); })();
+// touch: one finger turns, two fingers pinch
+var pts = {}, lastPinch = 0;
+view.addEventListener('pointerdown', function (e) { view.setPointerCapture(e.pointerId); pts[e.pointerId] = { x: e.clientX, y: e.clientY }; });
+view.addEventListener('pointermove', function (e) {
+  if (!pts[e.pointerId]) return;
+  var ids = Object.keys(pts), p = pts[e.pointerId], dx = e.clientX - p.x, dy = e.clientY - p.y;
+  if (ids.length === 1) {
+    var ang = Math.sqrt(dx * dx + dy * dy) * 0.009;
+    if (ang > 0) {
+      var q = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(dy, dx, 0).normalize(), ang);
+      holder.quaternion.premultiply(q); dirty = true;
+    }
+    p.x = e.clientX; p.y = e.clientY;
+  } else if (ids.length >= 2) {
+    p.x = e.clientX; p.y = e.clientY;
+    var a = pts[ids[0]], b = pts[ids[1]], d = Math.hypot(a.x - b.x, a.y - b.y);
+    if (lastPinch) { zoom = Math.min(3, Math.max(0.45, zoom * lastPinch / d)); resize(); }
+    lastPinch = d;
+  }
+});
+function up(e) { delete pts[e.pointerId]; if (Object.keys(pts).length < 2) lastPinch = 0; }
+view.addEventListener('pointerup', up); view.addEventListener('pointercancel', up);
+view.addEventListener('wheel', function (e) { e.preventDefault(); zoom = Math.min(3, Math.max(0.45, zoom * Math.exp(e.deltaY * 0.001))); resize(); }, { passive: false });
+
+function radius(S) { var r = 0; S.verts.forEach(function (v) { r = Math.max(r, Math.hypot(v[0], v[1], v[2])); }); return r; }
+function solidObject(S, colours, mirror) {
+  var grp = new THREE.Group(), pos = [], col = [], c = new THREE.Color();
+  S.faces.forEach(function (f) {
+    c.set(colours[f.k]);
+    for (var t = 1; t + 1 < f.v.length; t++) [f.v[0], f.v[t], f.v[t + 1]].forEach(function (i) { pos.push.apply(pos, S.verts[i]); col.push(c.r, c.g, c.b); });
+  });
+  var geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  geo.computeVertexNormals();
+  grp.add(new THREE.Mesh(geo, new THREE.MeshPhongMaterial({ vertexColors: true, flatShading: true, shininess: 18, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+  grp.add(edgeLines(S, S.edges.map(function (e) { return [S.verts[e[0]], S.verts[e[1]]]; })));
+  var s = 1 / radius(S); grp.scale.set(mirror ? -s : s, s, s);
+  return grp;
+}
+function edgeLines(S, segs) {
+  var pos = []; segs.forEach(function (sg) { pos.push.apply(pos, sg[0]); pos.push.apply(pos, sg[1]); });
+  var g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  return new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: EDGE }));
+}
+function vacuusObject(S, plates, mirror) {
+  var grp = new THREE.Group(), pos = [], col = [], cs = new THREE.Color(SLATE), cm = new THREE.Color(SAND), O = [0, 0, 0];
+  plates.forEach(function (p) {
+    var c = p.mirror ? cm : cs;
+    [O, S.verts[p.e[0]], S.verts[p.e[1]]].forEach(function (v) { pos.push.apply(pos, v); col.push(c.r, c.g, c.b); });
+  });
+  var geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  geo.computeVertexNormals();
+  grp.add(new THREE.Mesh(geo, new THREE.MeshPhongMaterial({ vertexColors: true, flatShading: true, shininess: 10, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+  var segs = S.edges.map(function (e) { return [S.verts[e[0]], S.verts[e[1]]]; }).concat(S.verts.map(function (v) { return [O, v]; }));
+  grp.add(edgeLines(S, segs));
+  var s = 1 / radius(S); grp.scale.set(mirror ? -s : s, s, s);
+  return grp;
+}
+function polyCounts(S, k) {
+  var cnt = {}; S.faces.forEach(function (f) { if (f.k === k) cnt[f.v.length] = (cnt[f.v.length] || 0) + 1; });
+  return Object.keys(cnt).sort(function (a, b) { return a - b; }).map(function (n) { return cnt[n] + '×' + n + '-gon'; }).join(', ');
+}
+
+// ---------------- tabs
+var tab = 'pick';
+function setTab(t) {
+  tab = t; $('tabPick').setAttribute('aria-selected', t === 'pick'); $('tabFair').setAttribute('aria-selected', t === 'fair');
+  $('dockPick').hidden = t !== 'pick'; $('dockFair').hidden = t !== 'fair';
+  resize();
+  if (t === 'pick') updatePick(); else { placeMark(); updateFair(true); }
+}
+$('tabPick').onclick = function () { setTab('pick'); };
+$('tabFair').onclick = function () { setTab('fair'); };
+
+// ---------------- Pick a die
+var data = null, fair = null;
+var st = { g: null, ticked: [], mode: 'tick', vac: false, hand: false };
+var GROUP_WORDS = { Ih: 'Ih · icosahedral, 120', Oh: 'Oh · cube, 48', O: 'O · cube turns only, 24', Td: 'Td · tetrahedral with mirrors, 24', Th: 'Th · pyritohedral, 24', T: 'T · tetrahedral turns only, 12' };
+function dieTitle(e) { return e.s === 'A' ? e.name : e.g + ': ' + e.o.map(function (oi) { return data.groups[e.g][oi].lab; }).join(' + '); }
+function groupDice(g) {
+  var A = data.dice.filter(function (e) { return e.g === g && e.s === 'A'; }).sort(function (a, b) { return a.num - b.num; });
+  var B = data.dice.filter(function (e) { return e.g === g && e.s === 'B'; }).sort(function (a, b) { return a.m - b.m || a.N - b.N || dieTitle(a).localeCompare(dieTitle(b)); });
+  return { A: A, B: B };
+}
+function fillGroups() {
+  var sel = $('groupSel');
+  Object.keys(data.groups).forEach(function (g) {
+    var n = data.dice.filter(function (e) { return e.g === g; }).length;
+    var o = document.createElement('option'); o.value = g; o.textContent = GROUP_WORDS[g] + ' (' + n + ' dice)'; sel.appendChild(o);
+  });
+  sel.onchange = function () { setGroup(sel.value, []); };
+}
+function setGroup(g, ticked) { st.g = g; st.ticked = ticked.slice().sort(function (a, b) { return a - b; }); st.hand = false; $('groupSel').value = g; renderChoices(); updatePick(); }
+function renderChoices() {
+  var box = $('choices'), orbs = data.groups[st.g];
+  if (st.mode === 'tick') {
+    box.innerHTML = '<div class="ticks">' + orbs.map(function (o, i) {
+      var on = st.ticked.indexOf(i) >= 0;
+      return '<label class="tick' + (on ? ' on' : '') + '"><input type="checkbox" data-i="' + i + '"' + (on ? ' checked' : '') + '>' +
+        '<span class="sw" style="background:' + colOf(o.col) + '"></span><span class="t"><span>' + esc(o.plain) + '</span><span class="tech">' + esc(o.lab) + '</span></span></label>';
+    }).join('') + '</div>';
+    box.querySelectorAll('input').forEach(function (inp) {
+      inp.onchange = function () {
+        var i = +inp.dataset.i, k = st.ticked.indexOf(i);
+        if (inp.checked && k < 0) st.ticked.push(i); if (!inp.checked && k >= 0) st.ticked.splice(k, 1);
+        st.ticked.sort(function (a, b) { return a - b; }); st.hand = false;
+        inp.parentNode.classList.toggle('on', inp.checked); updatePick();
+      };
+    });
+  } else {
+    var L = groupDice(st.g), cur = st.ticked.join(',');
+    var item = function (e) {
+      var sel = e.o.slice().sort(function (a, b) { return a - b; }).join(',') === cur;
+      return '<button class="item' + (sel ? ' sel' : '') + '" data-k="' + e.k + '"><span class="sws">' +
+        e.o.map(function (oi) { return '<span class="sw" style="background:' + colOf(orbs[oi].col) + '"></span>'; }).join('') +
+        '</span><span class="nm">' + esc(e.s === 'A' ? e.name : e.o.map(function (oi) { return orbs[oi].lab; }).join(' + ')) + '</span><span class="meta">m ' + e.m + ' · N ' + e.N + '</span></button>';
+    };
+    var h = '';
+    if (L.A.length) h += '<div class="sec">Main catalogue · ' + L.A.length + '</div><div class="list">' + L.A.map(item).join('') + '</div>';
+    if (L.B.length) h += '<div class="sec">Both icosahedron placements · ' + L.B.length + ' (not yet named)</div><div class="list">' + L.B.map(item).join('') + '</div>';
+    box.innerHTML = h;
+    box.querySelectorAll('.item').forEach(function (b) {
+      b.onclick = function () {
+        var e = data.dice[+b.dataset.k]; st.ticked = e.o.slice().sort(function (a, b) { return a - b; }); st.hand = false;
+        box.querySelectorAll('.item').forEach(function (x) { x.classList.toggle('sel', x === b); }); updatePick();
+      };
+    });
+  }
+}
+$('modeTick').onclick = function () { st.mode = 'tick'; $('modeTick').setAttribute('aria-pressed', 'true'); $('modeList').setAttribute('aria-pressed', 'false'); renderChoices(); };
+$('modeList').onclick = function () { st.mode = 'list'; $('modeList').setAttribute('aria-pressed', 'true'); $('modeTick').setAttribute('aria-pressed', 'false'); renderChoices(); var s = $('choices').querySelector('.sel'); if (s) s.scrollIntoView({ block: 'center' }); };
+$('clearBtn').onclick = function () { setGroup(st.g, []); };
+function toggleVac() { st.vac = !st.vac; $('vacBtn').setAttribute('aria-pressed', st.vac); $('vacBtn2').setAttribute('aria-pressed', st.vac); if (tab === 'pick') updatePick(); else updateFair(false); }
+$('vacBtn').onclick = toggleVac; $('vacBtn2').onclick = toggleVac;
+$('handBtn').onclick = function () { st.hand = !st.hand; $('handBtn').setAttribute('aria-pressed', st.hand); updatePick(); };
+
+function show(S, colours, mirror) {
+  if (st.vac) {
+    var plates = G.vacuusPlates(S);
+    setContent(vacuusObject(S, plates, mirror));
+    return plates;
+  }
+  setContent(solidObject(S, colours, mirror)); return null;
+}
+function vacNote(plates) {
+  if (!plates) return '';
+  var m = plates.filter(function (p) { return p.mirror; }).length;
+  return '<p class="note">Vacuus: ' + plates.length + ' plates, one triangle from the centre to each edge. ' +
+    '<span class="sw" style="display:inline-block;vertical-align:-2px;background:' + SAND + '"></span> on a mirror: ' + m +
+    ' · <span class="sw" style="display:inline-block;vertical-align:-2px;background:' + SLATE + '"></span> sloping: ' + (plates.length - m) + '.</p>';
+}
+function updatePick() {
+  var panel = $('panel'), orbs = data.groups[st.g], t = st.ticked;
+  $('handBtn').hidden = true;
+  if (!t.length) {
+    setContent(null); cur = null; $('stlBtn').hidden = true;
+    panel.innerHTML = '<h2>' + esc(GROUP_WORDS[st.g]) + '</h2><p class="sub">Tick two or more kinds of face below, or choose List to see every die of this group.</p>';
+    return;
+  }
+  var r = t.length >= 2 ? G.lookup(data, st.g, t) : null, html = '', S, colours, planes, e = null;
+  if (r) {
+    e = r.die;
+    planes = G.planesFor(data, e, G.inverse(r.t.p));
+    colours = e.o.map(function (oi) { return colOf(data.groups[e.g][oi].col); });
+    if (!r.exact) {
+      html += '<div class="msg">Under ' + st.g + ' this set of faces has no die of its own: its full symmetry is <b>' + e.g + '</b>, a larger group, and the die is ' + esc(dieTitle(e)) + '.' +
+        '<br><button class="btn" id="goLarger">Open it under ' + e.g + '</button></div>';
+    } else if (r.t.id !== 'I') {
+      var how = !r.t.improper ? esc(dieTitle(e)) + ' turned a quarter turn about the z axis'
+        : e.h ? 'the other hand of ' + esc(dieTitle(e))
+        : esc(dieTitle(e)) + ' in another position (its mirror image is the same die)';
+      html += '<div class="msg">This set of faces is ' + how + '. It is shown here as you ticked it.' +
+        '<br><button class="btn" id="goLarger">Show the listed form</button></div>';
+    }
+  } else {
+    var one = G.singleOrbit(data, st.g, t);
+    planes = [];
+    t.forEach(function (oi, j) { orbs[oi].dirs.forEach(function (d) { planes.push({ n: data.dirs[d], d: 1, k: j }); }); });
+    colours = t.map(function (oi) { return colOf(orbs[oi].col); });
+    if (one) {
+      html += '<div class="msg">One kind of face: under its full symmetry <b>' + one.g + '</b> these faces form a single family (' + esc(one.plain) + '), so every face is alike and the solid is fair by symmetry alone. The Aequi have two or more kinds of face.</div>';
+    } else {
+      html += '<div class="msg">This set of faces is not in the catalogue.</div>';
+    }
+  }
+  S = G.buildSolid(planes);
+  var N = e ? e.N : planes.length;
+  console.assert(S.faces.length === N, 'face count ' + S.faces.length + ' differs from N = ' + N);
+  if (e) console.assert(S.verts.length === e.c, 'corner count ' + S.verts.length + ' differs from ' + e.c);
+  var mirrorShow = !!(e && e.h && st.hand);
+  var plates = show(S, colours, mirrorShow);
+  if (e) {
+    if (e.h) { $('handBtn').hidden = false; $('handBtn').setAttribute('aria-pressed', st.hand); }
+    var kinds = e.o.map(function (oi, j) {
+      var o = data.groups[e.g][oi];
+      return '<tr><td>' + picker(o.col) + '</td><td>' + esc(o.plain) + '<br><span class="tech">' + esc(o.lab) + '</span></td><td class="num">' + polyCounts(S, j) + '</td><td class="num">' + e.d[j].toFixed(12) + '</td></tr>';
+    }).join('');
+    html += '<h2>' + esc(dieTitle(e)) + '</h2>' +
+      '<p class="sub">' + (e.s === 'A' ? 'Main catalogue, ' + e.g + ' no. ' + e.num + (e.book ? ' · book atom ' + esc(e.book) : '') : 'Both icosahedron placements · not yet named') + '</p>' +
+      (e.m >= 4 ? '<span class="badge">Aequus Mosaicus</span>' : '') + (e.h ? '<span class="badge">two hands</span>' : '') +
+      '<dl><dt>group</dt><dd>' + e.g + '</dd><dt>kinds of face m</dt><dd>' + e.m + '</dd><dt>faces N</dt><dd>' + e.N + ' (built: ' + S.faces.length + ')</dd><dt>corners</dt><dd>' + S.verts.length + '</dd>' +
+      '<dt>hands</dt><dd>' + (e.h ? 'two hands (chiral)' + (st.hand ? ' · showing the other hand' : '') : 'one (mirror-symmetric)') + '</dd></dl>' +
+      '<table class="kinds"><tr><td></td><td class="tech">faces by kind</td><td class="num tech">faces</td><td class="num tech">depth</td></tr>' + kinds + '</table>' +
+      '<p class="note">Depths: distance of each kind of face from the centre, the first kind at 1. Every face takes 1/N of the view from the centre. Tap a colour square to change that kind\'s colour <button class="btn" id="resetCol" style="min-height:36px;margin-left:6px">Reset colours</button></p>';
+  } else {
+    html += '<p class="sub">' + S.faces.length + ' faces, all at depth 1.</p>';
+  }
+  if (S.faces.length !== N) html += '<p class="err">Check failed: built ' + S.faces.length + ' faces, expected ' + N + '.</p>';
+  html += vacNote(plates);
+  panel.innerHTML = html; wirePickers(panel);
+  cur = { S: S, name: e ? (e.s === 'A' ? e.name.replace(/^Aequus /, 'Aequus-') : e.g + '-' + e.o.map(function (oi) { return data.groups[e.g][oi].lab; }).join('-')) : 'solid', mirror: mirrorShow };
+  $('stlBtn').hidden = !canSave;
+  var go = $('goLarger');
+  if (go) go.onclick = function () { setGroup(e.g, e.o); };
+}
+
+// ---------------- Make it fair
+var fs = { li: 1, mu: 1, lo: 0, hi: 2, S: null };
+function fairPlanes(L, mu) {
+  return L.A.dirs.map(function (d) { return { n: fair.dirs[d], d: 1, k: 0 }; }).concat(L.B.dirs.map(function (d) { return { n: fair.dirs[d], d: mu, k: 1 }; }));
+}
+function present(L, mu) { return G.buildSolid(fairPlanes(L, mu)).faces.length === L.N; }
+function bound(L, from, to) { // last mu from 'from' toward 'to' with every face present
+  if (present(L, to)) return to;
+  var a = from, b = to;
+  for (var i = 0; i < 40; i++) { var m = (a + b) / 2; if (present(L, m)) a = m; else b = m; }
+  return a;
+}
+function fillLines() {
+  var sel = $('lineSel');
+  fair.lines.forEach(function (L, i) { var o = document.createElement('option'); o.value = i; o.textContent = L.line + ' · Aequus ' + L.name; sel.appendChild(o); });
+  sel.value = fs.li;
+  sel.onchange = function () { setLine(+sel.value); };
+  var sl = $('muSlider');
+  sl.oninput = function () { setMu(+sl.value, true); };
+  $('snapBtn').onclick = function () { setMu(fair.lines[fs.li].mu, false); };
+  $('fairMark').onclick = $('snapBtn').onclick;
+}
+function setLine(i) {
+  var L = fair.lines[i]; fs.li = i;
+  fs.lo = bound(L, L.mu, 0.25); fs.hi = bound(L, L.mu, 4);
+  var pad = (fs.hi - fs.lo) * 0.004; fs.lo += pad; fs.hi -= pad;
+  var sl = $('muSlider'); sl.min = fs.lo; sl.max = fs.hi;
+  setMu(L.mu, false); if (tab === 'fair') placeMark();
+}
+function placeMark() {
+  var L = fair.lines[fs.li], sl = $('muSlider'), w = sl.clientWidth, thumb = 40;
+  var x = thumb / 2 + (L.mu - fs.lo) / (fs.hi - fs.lo) * (w - thumb);
+  $('fairMark').style.left = x + 'px';
+}
+window.addEventListener('resize', function () { if (fair) placeMark(); });
+function setMu(mu, fromSlider) {
+  var L = fair.lines[fs.li], tol = (fs.hi - fs.lo) * 0.006;
+  if (fromSlider && Math.abs(mu - L.mu) < tol) mu = L.mu;   // the fair value holds the slider when it is close
+  fs.mu = mu; if (!fromSlider || mu === L.mu) $('muSlider').value = mu;
+  if (tab === 'fair') updateFair(true);
+}
+function updateFair(rebuild) {
+  if (!fair || tab !== 'fair') return;
+  var L = fair.lines[fs.li], mu = fs.mu;
+  var S = G.buildSolid(fairPlanes(L, mu));
+  var colours = [colOf(L.A.col), colOf(L.B.col)];
+  var plates = show(S, colours, false);
+  var sum = [0, 0], cnt = [0, 0];
+  S.faces.forEach(function (f) { sum[f.k] += G.faceSolidAngle(S, f) / (4 * Math.PI); cnt[f.k]++; });
+  var share = [cnt[0] ? sum[0] / cnt[0] : 0, cnt[1] ? sum[1] / cnt[1] : 0], fairShare = 1 / L.N;
+  var isFair = mu === L.mu;
+  var bar = function (j, fam) {
+    var w = Math.min(100, share[j] / (2 * fairShare) * 100);
+    return '<div class="bar"><span>' + picker(fam.col) + ' each of the ' + cnt[j] + ' ' + SOLID[fam.col] + ' faces</span>' +
+      '<span class="num">' + (share[j] * 100).toFixed(4) + '%</span><div class="track"><div class="fill" style="width:' + w + '%;background:' + colours[j] + '"></div><div class="fairline"></div></div></div>';
+  };
+  var A = SOLID[L.A.col], B = SOLID[L.B.col];
+  $('muVal').textContent = 'μ = ' + mu.toFixed(6);
+  $('panel').innerHTML = '<h2>' + esc(L.line) + ' · Aequus ' + esc(L.name) + '</h2>' +
+    '<p class="sub">A faces: ' + A + ' at distance 1 · B faces: ' + B + ' at distance μ · N = ' + L.N + ' (' + L.g + ' no. ' + L.num + ')</p>' +
+    '<span class="light' + (isFair ? ' on' : '') + '">' + (isFair ? 'fair' : 'not fair') + '</span>' +
+    '<div class="bars">' + bar(0, L.A) + bar(1, L.B) + '</div>' +
+    '<p class="note">Bar: the share of the view from the centre that one face takes (its solid angle over 4π). The line marks the fair share 1/N = ' + (fairShare * 100).toFixed(4) + '%. ' +
+    'Fair value μ<sub>f</sub> = ' + L.muT + ' (Equanimity, Table 1; faces ' + L.faces[0] + '-gon and ' + L.faces[1] + '-gon).</p>' +
+    '<p class="note">Solid angles by Van Oosterom and Strackee\'s formula (1983), on a fan of triangles from one corner of each face.</p>' + vacNote(plates);
+  wirePickers($('panel'));
+  cur = { S: S, name: L.line.replace(/ ∩ /g, '-and-') + '-mu-' + mu.toFixed(6), mirror: false }; $('stlBtn2').hidden = !canSave;
+  if (isFair) console.assert(Math.abs(share[0] - fairShare) < 1e-9 && Math.abs(share[1] - fairShare) < 1e-9, 'shares at μf differ from 1/N on ' + L.line);
+}
+
+// ---------------- 3D print export (STL inside a zip; the viewer confirms the save)
+var cur = null, canSave = false, dl = null;
+function stlText(S, name, sizeMM, mirror) {
+  var r = 0; S.verts.forEach(function (v) { r = Math.max(r, Math.hypot(v[0], v[1], v[2])); });
+  var k = sizeMM / (2 * r), sx = mirror ? -k : k, out = ['solid ' + name];
+  var V = S.verts.map(function (v) { return [v[0] * sx, v[1] * k, v[2] * k]; });
+  S.faces.forEach(function (f) {
+    for (var t = 1; t + 1 < f.v.length; t++) {
+      var a = V[f.v[0]], b = V[f.v[t]], c = V[f.v[t + 1]];
+      var n = G.cross([b[0] - a[0], b[1] - a[1], b[2] - a[2]], [c[0] - a[0], c[1] - a[1], c[2] - a[2]]);
+      var ln = Math.hypot(n[0], n[1], n[2]) || 1; n = [n[0] / ln, n[1] / ln, n[2] / ln];
+      var m = [(a[0] + b[0] + c[0]) / 3, (a[1] + b[1] + c[1]) / 3, (a[2] + b[2] + c[2]) / 3];
+      if (n[0] * m[0] + n[1] * m[1] + n[2] * m[2] < 0) { var tmp = b; b = c; c = tmp; n = [-n[0], -n[1], -n[2]]; }   // outward winding
+      out.push(' facet normal ' + n.map(function (x) { return x.toExponential(6); }).join(' '), '  outer loop');
+      [a, b, c].forEach(function (p) { out.push('   vertex ' + p.map(function (x) { return x.toFixed(5); }).join(' ')); });
+      out.push('  endloop', ' endfacet');
+    }
+  });
+  out.push('endsolid ' + name); return out.join('\n') + '\n';
+}
+var CRC = (function () { var t = []; for (var n = 0; n < 256; n++) { var c = n; for (var k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+function crc32(u) { var c = 0xFFFFFFFF; for (var i = 0; i < u.length; i++) c = CRC[(c ^ u[i]) & 255] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; }
+function zipOne(fname, text) {   // a zip archive holding one stored (uncompressed) file
+  var enc = new TextEncoder(), data = enc.encode(text), nm = enc.encode(fname), crc = crc32(data), sz = data.length;
+  var lh = new DataView(new ArrayBuffer(30)); lh.setUint32(0, 0x04034b50, true); lh.setUint16(4, 20, true); lh.setUint32(14, crc, true); lh.setUint32(18, sz, true); lh.setUint32(22, sz, true); lh.setUint16(26, nm.length, true);
+  var ch = new DataView(new ArrayBuffer(46)); ch.setUint32(0, 0x02014b50, true); ch.setUint16(4, 20, true); ch.setUint16(6, 20, true); ch.setUint32(16, crc, true); ch.setUint32(20, sz, true); ch.setUint32(24, sz, true); ch.setUint16(28, nm.length, true);
+  var off = 30 + nm.length + sz;
+  var end = new DataView(new ArrayBuffer(22)); end.setUint32(0, 0x06054b50, true); end.setUint16(8, 1, true); end.setUint16(10, 1, true); end.setUint32(12, 46 + nm.length, true); end.setUint32(16, off, true);
+  return new Blob([lh, nm, data, ch, nm, end], { type: 'application/zip' });
+}
+function exportSTL() {
+  if (!cur || !dl) return;
+  var size = 30;   // 30 mm across (circumscribed diameter)
+  var safe = cur.name.replace(/[^A-Za-z0-9·.\-]+/g, '-').replace(/·/g, '').replace(/-+/g, '-').replace(/^-|-$/g, '');
+  var stl = stlText(cur.S, safe, size, cur.mirror);
+  dl.save({ filename: safe + '-30mm.zip', data: zipOne(safe + '-30mm.stl', stl) }).then(function () {}, function (err) {
+    if (err && (err.code === 'unavailable' || err.code === 'not_granted')) { canSave = false; $('stlBtn').hidden = true; $('stlBtn2').hidden = true; }
+  });
+}
+$('stlBtn').onclick = exportSTL; $('stlBtn2').onclick = exportSTL;
+if (window.claude && window.claude.use) window.claude.use('downloads').then(function (d) { dl = d; canSave = !!d; if (cur) { if (tab === 'pick') $('stlBtn').hidden = !canSave; else $('stlBtn2').hidden = !canSave; } }, function () {});
+
+// ---------------- load
+Promise.all([fetch('dice.json').then(function (r) { return r.json(); }), fetch('fair.json').then(function (r) { return r.json(); })]).then(function (res) {
+  data = res[0]; fair = res[1];
+  G.prepare(data);
+  fillGroups(); fillLines();
+  setGroup('Oh', [0, 1]);   // opens on Aequus CO-14
+  setLine(1); resize();
+}).catch(function (err) {
+  $('panel').innerHTML = '<p class="err">The data did not load: ' + esc(err.message) + '</p>';
+});
+})();
+</script>
