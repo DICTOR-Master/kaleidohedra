@@ -1,0 +1,208 @@
+{
+ "checks": [
+  [
+   "120-cell: every drawn edge has the exact length",
+   true,
+   "1200 edges, length 0.270091 R"
+  ],
+  [
+   "120-cell: the shaded facet is a dodecahedron",
+   true,
+   "20 corners"
+  ],
+  [
+   "600-cell: every drawn edge has the exact length",
+   true,
+   "720 edges, length 0.618034 R"
+  ],
+  [
+   "600-cell: the shaded facet is a tetrahedron",
+   true,
+   "4 corners"
+  ],
+  [
+   "tesseract: every drawn edge has the exact length",
+   true,
+   "32 edges, length 1.000000 R"
+  ],
+  [
+   "tesseract: the shaded facet is a cube",
+   true,
+   "8 corners"
+  ],
+  [
+   "5-cell: every drawn edge has the exact length",
+   true,
+   "10 edges, length 1.581139 R"
+  ],
+  [
+   "5-cell: the shaded facet is a tetrahedron",
+   true,
+   "4 corners"
+  ],
+  [
+   "16-cell: every drawn edge has the exact length",
+   true,
+   "24 edges, length 1.414214 R"
+  ],
+  [
+   "16-cell: the shaded facet is a tetrahedron",
+   true,
+   "4 corners"
+  ],
+  [
+   "24-cell: every drawn edge has the exact length",
+   true,
+   "96 edges, length 1.000000 R"
+  ],
+  [
+   "24-cell: the shaded facet is a octahedron",
+   true,
+   "6 corners"
+  ],
+  [
+   "caps: no_shared_triangle",
+   true,
+   ""
+  ],
+  [
+   "caps: edges_once",
+   true,
+   ""
+  ],
+  [
+   "caps: corner_in_4",
+   true,
+   ""
+  ],
+  [
+   "caps: tip_r2",
+   true,
+   ""
+  ],
+  [
+   "caps: cap_regular",
+   true,
+   ""
+  ],
+  [
+   "caps: tips_are_P_t0",
+   true,
+   ""
+  ],
+  [
+   "caps: tips at radius \u221a2 (floats agree)",
+   true,
+   ""
+  ],
+  [
+   "caps: 20 facets at a corner",
+   true,
+   ""
+  ],
+  [
+   "caps: 4 of them capped",
+   true,
+   ""
+  ],
+  [
+   "caps: the corner and its 12 neighbours",
+   true,
+   ""
+  ],
+  [
+   "caps: 42 edges among them (12 spokes, 30 of the icosahedron)",
+   true,
+   ""
+  ],
+  [
+   "caps: each of the 12 edges at the corner in exactly one capped facet",
+   true,
+   ""
+  ],
+  [
+   "caps: 480 cap edges, each of length = the edge",
+   true,
+   ""
+  ],
+  [
+   "caps: the tips span 720 edges of length \u221a2 \u00d7 edge (a 600-cell)",
+   true,
+   ""
+  ]
+ ],
+ "log": {
+  "120-cell": {
+   "counts": [
+    600,
+    1200,
+    720,
+    120
+   ],
+   "eye": 1.32,
+   "shaded": "dodecahedron"
+  },
+  "600-cell": {
+   "counts": [
+    120,
+    720,
+    1200,
+    600
+   ],
+   "eye": 2.0,
+   "shaded": "tetrahedron"
+  },
+  "tesseract": {
+   "counts": [
+    16,
+    32,
+    24,
+    8
+   ],
+   "eye": 1.25,
+   "shaded": "cube"
+  },
+  "5-cell": {
+   "counts": [
+    5,
+    10,
+    10,
+    5
+   ],
+   "eye": 3.2,
+   "shaded": "tetrahedron"
+  },
+  "16-cell": {
+   "counts": [
+    8,
+    24,
+    32,
+    16
+   ],
+   "eye": 2.4,
+   "shaded": "tetrahedron"
+  },
+  "24-cell": {
+   "counts": [
+    24,
+    96,
+    96,
+    24
+   ],
+   "eye": 2.2,
+   "shaded": "octahedron"
+  },
+  "caps": {
+   "orbit_size": 120,
+   "facts": {
+    "no_shared_triangle": true,
+    "edges_once": true,
+    "corner_in_4": true,
+    "tip_r2": true,
+    "cap_regular": true,
+    "tips_are_P_t0": true
+   },
+   "eye": 3.0
+  }
+ }
+}
