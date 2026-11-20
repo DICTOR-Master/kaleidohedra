@@ -1,0 +1,65 @@
+ok   control #88 cube: sigma(x1) = x2 (the Golden Cut Cubes are twins)
+ok   control #88 cube: twin depths real (0 < x < 1/2)
+ok   control #88 triangle-faced: sigma(x1) = phi^2 and sigma(x2) = 1/2 + sqrt5/10, both over-cut (> 1/2)
+ok   RD: K = (2 sqrt3 + sqrt6)/4 as in #89
+    RD greater cut under sqrt2->+sqrt2, sqrt3->+sqrt3, sqrt5->+sqrt5: y_sharp = 0.413094951204, y_blunt = 0.292102241270, sum = 0.705197192474  -> REAL SOLID
+ok   RD greater: identity embedding reproduces #89 Table 2 and is a real solid
+    RD lesser cut under sqrt2->+sqrt2, sqrt3->+sqrt3, sqrt5->+sqrt5: y_sharp = 0.279684957340, y_blunt = 0.197767129931, sum = 0.477452087271  -> REAL SOLID
+ok   RD lesser: identity embedding reproduces #89 Table 2 and is a real solid
+    RD greater cut under sqrt2->+sqrt2, sqrt3->+sqrt3, sqrt5->-sqrt5: y_sharp = -6.20201436601, y_blunt = -4.38548641522, sum = -10.5875007812  -> no solid
+    RD lesser cut under sqrt2->+sqrt2, sqrt3->+sqrt3, sqrt5->-sqrt5: y_sharp = 1.00658041717, y_blunt = 0.711759838789, sum = 1.71834025596  -> no solid
+    RD greater cut under sqrt2->+sqrt2, sqrt3->-sqrt3, sqrt5->+sqrt5: y_sharp = 1.00658041717, y_blunt = 0.711759838789, sum = 1.71834025596  -> no solid
+    RD lesser cut under sqrt2->+sqrt2, sqrt3->-sqrt3, sqrt5->+sqrt5: y_sharp = -6.20201436601, y_blunt = -4.38548641522, sum = -10.5875007812  -> no solid
+    RD greater cut under sqrt2->+sqrt2, sqrt3->-sqrt3, sqrt5->-sqrt5: y_sharp = 0.279684957340, y_blunt = 0.197767129931, sum = 0.477452087271  -> REAL SOLID
+    RD lesser cut under sqrt2->+sqrt2, sqrt3->-sqrt3, sqrt5->-sqrt5: y_sharp = 0.413094951204, y_blunt = 0.292102241270, sum = 0.705197192474  -> REAL SOLID
+    RD greater cut under sqrt2->-sqrt2, sqrt3->+sqrt3, sqrt5->+sqrt5: y_sharp = 0.993505061640, y_blunt = -0.702514166229, sum = 0.290990895411  -> no solid
+    RD lesser cut under sqrt2->-sqrt2, sqrt3->+sqrt3, sqrt5->+sqrt5: y_sharp = 0.462697782137, y_blunt = -0.327176739389, sum = 0.135521042748  -> no solid
+    RD greater cut under sqrt2->-sqrt2, sqrt3->+sqrt3, sqrt5->-sqrt5: y_sharp = -0.634738676858, y_blunt = 0.448828022688, sum = -0.185910654170  -> no solid
+    RD lesser cut under sqrt2->-sqrt2, sqrt3->+sqrt3, sqrt5->-sqrt5: y_sharp = -2.37670283214, y_blunt = 1.68058268947, sum = -0.696120142669  -> no solid
+    RD greater cut under sqrt2->-sqrt2, sqrt3->-sqrt3, sqrt5->+sqrt5: y_sharp = -2.37670283214, y_blunt = 1.68058268947, sum = -0.696120142669  -> no solid
+    RD lesser cut under sqrt2->-sqrt2, sqrt3->-sqrt3, sqrt5->+sqrt5: y_sharp = -0.634738676858, y_blunt = 0.448828022688, sum = -0.185910654170  -> no solid
+    RD greater cut under sqrt2->-sqrt2, sqrt3->-sqrt3, sqrt5->-sqrt5: y_sharp = 0.462697782137, y_blunt = -0.327176739389, sum = 0.135521042748  -> no solid
+    RD lesser cut under sqrt2->-sqrt2, sqrt3->-sqrt3, sqrt5->-sqrt5: y_sharp = 0.993505061640, y_blunt = -0.702514166229, sum = 0.290990895411  -> no solid
+ok   RD: sigma(sqrt3 -> -sqrt3, sqrt5 -> -sqrt5, sqrt2 fixed) sends the greater golden cut exactly to the lesser one (y_sharp and y_blunt)
+ok   RD: sigma(sqrt3 -> -sqrt3, sqrt5 -> -sqrt5, sqrt2 fixed) sends the lesser golden cut exactly to the greater one (y_sharp and y_blunt)
+ok   RD: sigma(K) = -K for that embedding (the reason: b = 1/(1 + phi K) -> 1/(1 + K/phi))
+ok   RD: every other non-trivial embedding gives no real cut
+ok   RT: s^4 - 5 s^2 + 5 has four real roots +-sqrt((5 +- sqrt5)/2)
+ok   RT: K = phi sqrt(2 + phi)/2 as in #89 (at s = sqrt((5 + sqrt5)/2))
+    RT greater cut, s -> 1.90211303259: y_sharp = 0.440941724650, y_blunt = 0.272516972891, sum = 0.713458697541  -> REAL SOLID
+ok         exact sign of y_sharp (RT greater cut, s -> 1.90211303259): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of y_blunt (RT greater cut, s -> 1.90211303259): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of 1 - y_sharp - y_blunt (RT greater cut, s -> 1.90211303259): isolating interval of its minimal polynomial excludes 0
+ok   RT greater: identity embedding reproduces #89 Table 2 and is a real solid
+    RT lesser cut, s -> 1.90211303259: y_sharp = 0.301265108101, y_blunt = 0.186192076431, sum = 0.487457184532  -> REAL SOLID
+ok         exact sign of y_sharp (RT lesser cut, s -> 1.90211303259): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of y_blunt (RT lesser cut, s -> 1.90211303259): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of 1 - y_sharp - y_blunt (RT lesser cut, s -> 1.90211303259): isolating interval of its minimal polynomial excludes 0
+ok   RT lesser: identity embedding reproduces #89 Table 2 and is a real solid
+    RT greater cut, s -> 1.17557050459: y_sharp = -0.296665671015, y_blunt = 0.480015138997, sum = 0.183349467982  -> no solid
+ok         exact sign of y_sharp (RT greater cut, s -> 1.17557050459): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of y_blunt (RT greater cut, s -> 1.17557050459): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of 1 - y_sharp - y_blunt (RT greater cut, s -> 1.17557050459): isolating interval of its minimal polynomial excludes 0
+    RT lesser cut, s -> 1.17557050459: y_sharp = -0.598983089761, y_blunt = 0.969174997920, sum = 0.370191908159  -> no solid
+ok         exact sign of y_sharp (RT lesser cut, s -> 1.17557050459): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of y_blunt (RT lesser cut, s -> 1.17557050459): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of 1 - y_sharp - y_blunt (RT lesser cut, s -> 1.17557050459): isolating interval of its minimal polynomial excludes 0
+    RT greater cut, s -> -1.17557050459: y_sharp = 0.468443348451, y_blunt = -0.757957259598, sum = -0.289513911147  -> no solid
+ok         exact sign of y_sharp (RT greater cut, s -> -1.17557050459): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of y_blunt (RT greater cut, s -> -1.17557050459): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of 1 - y_sharp - y_blunt (RT greater cut, s -> -1.17557050459): isolating interval of its minimal polynomial excludes 0
+    RT lesser cut, s -> -1.17557050459: y_sharp = 2.30718702226, y_blunt = -3.73310702042, sum = -1.42591999816  -> no solid
+ok         exact sign of y_sharp (RT lesser cut, s -> -1.17557050459): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of y_blunt (RT lesser cut, s -> -1.17557050459): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of 1 - y_sharp - y_blunt (RT lesser cut, s -> -1.17557050459): isolating interval of its minimal polynomial excludes 0
+    RT greater cut, s -> -1.90211303259: y_sharp = 1.03285021817, y_blunt = 0.638336540115, sum = 1.67118675828  -> no solid
+ok         exact sign of y_sharp (RT greater cut, s -> -1.90211303259): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of y_blunt (RT greater cut, s -> -1.90211303259): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of 1 - y_sharp - y_blunt (RT greater cut, s -> -1.90211303259): isolating interval of its minimal polynomial excludes 0
+    RT lesser cut, s -> -1.90211303259: y_sharp = -12.0094690406, y_blunt = -7.42226005393, sum = -19.4317290945  -> no solid
+ok         exact sign of y_sharp (RT lesser cut, s -> -1.90211303259): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of y_blunt (RT lesser cut, s -> -1.90211303259): isolating interval of its minimal polynomial excludes 0
+ok         exact sign of 1 - y_sharp - y_blunt (RT lesser cut, s -> -1.90211303259): isolating interval of its minimal polynomial excludes 0
+RT real twins: none
+ok   RT: no Galois conjugate of either golden cut (3 non-trivial embeddings x 2 cuts) is a real cut
+FINAL ok

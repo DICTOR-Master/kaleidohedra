@@ -1,0 +1,57 @@
+ok   rational_pi(cos pi/5) is rational
+ok   rational_pi(1/3) is irrational (arccos 1/3)
+ok   rational_pi(-1/2) is rational (120 deg)
+ok   ID has 30 corners
+ok   CO has 12 corners
+ok   RD has 14 corners
+ok   cube: all pyramids over faces of the same size have the same edge data (exact)
+--- cube: 8 corners, faces by size {4: 6}
+    4-gon pyramid: 4 x base edge, length 2, cos(dihedral) = sqrt(2)/2, angle/pi rational: True (n = 8)
+    4-gon pyramid: 4 x lateral edge, length sqrt(3), cos(dihedral) = -1/2, angle/pi rational: True (n = 3)
+ok   RD: all pyramids over faces of the same size have the same edge data (exact)
+--- RD: 14 corners, faces by size {4: 12}
+    4-gon pyramid: 4 x base edge, length sqrt(3), cos(dihedral) = 1/2, angle/pi rational: True (n = 6)
+    4-gon pyramid: 2 x lateral edge, length sqrt(3), cos(dihedral) = -1/2, angle/pi rational: True (n = 3)
+    4-gon pyramid: 2 x lateral edge, length 2, cos(dihedral) = 0, angle/pi rational: True (n = 4)
+ok   tetrahedron: all pyramids over faces of the same size have the same edge data (exact)
+--- tetrahedron: 4 corners, faces by size {3: 4}
+    3-gon pyramid: 3 x base edge, length 2*sqrt(2), cos(dihedral) = sqrt(6)/3, angle/pi rational: False
+    3-gon pyramid: 3 x lateral edge, length sqrt(3), cos(dihedral) = -1/2, angle/pi rational: True (n = 3)
+ok   CO: all pyramids over faces of the same size have the same edge data (exact)
+--- CO: 12 corners, faces by size {3: 8, 4: 6}
+    3-gon pyramid: 3 x base edge, length sqrt(2), cos(dihedral) = 1/3, angle/pi rational: False
+    3-gon pyramid: 3 x lateral edge, length sqrt(2), cos(dihedral) = 1/3, angle/pi rational: False
+    4-gon pyramid: 4 x base edge, length sqrt(2), cos(dihedral) = sqrt(3)/3, angle/pi rational: False
+    4-gon pyramid: 4 x lateral edge, length sqrt(2), cos(dihedral) = -1/3, angle/pi rational: False
+ok   ID: all pyramids over faces of the same size have the same edge data (exact)
+--- ID: 30 corners, faces by size {3: 20, 5: 12}
+    3-gon pyramid: 1 x base edge, length 1, cos(dihedral) = (-2*sqrt(15) + 5*sqrt(3))*sqrt(2*sqrt(5) + 5)/15, angle/pi rational: False
+    3-gon pyramid: 2 x base edge, length 1, cos(dihedral) = sqrt(sqrt(5) + 5)*(-sqrt(6)/12 + sqrt(30)/20), angle/pi rational: False
+    3-gon pyramid: 3 x lateral edge, length 1/2 + sqrt(5)/2, cos(dihedral) = sqrt(5)/5, angle/pi rational: False
+    5-gon pyramid: 5 x base edge, length 1, cos(dihedral) = sqrt(5)/5, angle/pi rational: False
+    5-gon pyramid: 5 x lateral edge, length 1/2 + sqrt(5)/2, cos(dihedral) = -sqrt(5)/5, angle/pi rational: False
+ok   control cube: every centre-pyramid dihedral is a rational multiple of pi (Dehn zero)
+ok   control RD: every centre-pyramid dihedral is a rational multiple of pi (Dehn zero)
+ok   control tetrahedron: its centre pyramid has an irrational dihedral
+ok   CO triangle pyramid: all six dihedrals have cos 1/3 (regular tetrahedron)
+ok   CO triangle pyramid: all six edges sqrt2
+ok   CO square pyramid: base dihedrals cos = 1/sqrt3 = sin(t/2) = cos((pi - t)/2)
+ok   CO square pyramid: lateral dihedrals cos = -1/3 = cos(pi - t)
+ok   CO square pyramid: all eight edges sqrt2
+CO: Dehn(T) = 6*sqrt2 (x) t,  Dehn(S) = -2*sqrt2 (x) t - 4*sqrt2 (x) t = -6*sqrt2 (x) t;  n3*T + n4*S = 0 iff n3 = n4
+ok   CO: t = arccos(1/3) is irrational in pi, so the count is exactly n3 = n4 (the octet: one tetrahedron per half-octahedron)
+ok   ID: base edges have length 1, lateral edges length phi (circumradius)
+ok   ID: beta3 + beta5 = pi exactly (cos of the sum = -1): the four lateral wedges round a corner, T P T P, fill 2 pi
+ok   ID: alpha3 + alpha5 = delta, the ID dihedral, cos = -sqrt((5 + 2 sqrt5)/15)
+ok   ID: the pentagon pyramid base angle alpha5 equals beta3 (both cos = 1/sqrt5)
+ID: cos beta3 = sqrt(5)/5  minimal polynomial 5*x**2 - 1
+ID: cos delta = -sqrt(2*sqrt(5)/15 + 1/3)  minimal polynomial 45*x**4 - 30*x**2 + 1
+ok   ID: beta3/pi is irrational
+ok   ID: delta/pi is irrational
+ok   ID: 1 and phi are linearly independent over Q (phi irrational)
+ID: n3*Dehn(P3) + n5*Dehn(P5) = 1 (x) (3 n3 alpha3 + 5 n5 alpha5) + phi (x) (3 n3 beta3 + 5 n5 beta5)
+    = 1 (x) (3 n3 alpha3 + 5 n5 (delta - alpha3)) + phi (x) (3 n3 - 5 n5) beta3   (mod Q pi)
+    phi-part zero and beta3 irrational  =>  3 n3 = 5 n5 = m;  then the 1-part is m*delta, zero only if m = 0 (delta irrational).
+THEOREM (ID x DEHN): no nonzero set of the icosidodecahedron's centre pyramids (with any multiplicities) has Dehn invariant zero;
+    by #44 Lemma 1 (edge counting, several kinds of tile) no set of them fills space.
+FINAL ok

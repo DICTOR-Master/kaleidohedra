@@ -1,0 +1,191 @@
+# Prints the verdict tables of study 2026-11-21-gap-study (counts computed, not typed) and writes data/verdicts.json, counts.json, waiting-flags.json.
+# Verdict codes: CA closed already | CN closable now | SET closable now and SETTLED tonight | NP needs a new paper | NR not a real gap
+import json, os, collections
+HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
+C = json.load(open(os.path.expanduser('~/k-research/papers/dicto-concordance/concordance.json')))['gaps']
+
+V = {'CA': 'CLOSED ALREADY', 'CN': 'CLOSABLE NOW', 'SET': 'CLOSABLE NOW, SETTLED TONIGHT', 'NP': 'NEEDS A NEW PAPER', 'NR': 'NOT A REAL GAP'}
+
+GRID = [  # (solid, theme, verdict, reason / citation)
+ ('Dodecahedron', 'CH', 'CA', '#99 puts the dodecahedron inside every octahedron of the octet (five-chains O > I > D > C > T), and every close-packed stacking is made of regular octahedra and tetrahedra (#57, #92 v3). So it sits in every c/h stacking; one sentence to write, cell should read "99 + 57".'),
+ ('Icosahedron', 'CH', 'CA', 'Same: #99 (icosahedron in every octahedron) with #57 / #92 v3; #47\'s slab already uses icosahedra in octet octahedra (Admiral Caps).'),
+ ('Tetrahedron', 'TWIN', 'CA', 'The Golden Ladder v6, Theorem 1A (c) (study 2026-11-04-golden-twins): the twins of both golden cuts over-cut (sigma(x1) = phi^2, sigma(x2) = 1/2 + sqrt5/10, both > 1/2): no twin solid. Cell should read "GL Thm 1A: none".'),
+ ('Octahedron', 'TWIN', 'CA', 'Same theorem (triangle faces, k = 1): no twin solid.'),
+ ('Rhombic dodecahedron', 'TWIN', 'SET', 'Tonight (golden_twins_rhombic.py, FINAL ok): the RD\'s two golden cuts (#89 Theorem 3) ARE Galois twins of each other, like the cube\'s, under the extension of Double Vision that fixes sqrt2 and sends sqrt3, sqrt5 to their negatives (it sends K to -K). Under the Golden Ladder\'s convention (sqrt2 and sqrt5 negated, sqrt3 fixed) and every other embedding: no solid.'),
+ ('Rhombic dodecahedron', 'CH', 'CA', 'HexOct v12, "The Turned Twin" (study 2026-11-04-trd, read ok): on every Barlow stacking a c ball has an RD cell, an h ball a TRD cell; RD = 1/2 polar(CO), TRD = 1/2 polar(anticuboctahedron). Also #97/#98: Narcissus (a half RD) stacks any word.'),
+ ('Rhombic dodecahedron', 'DEHN', 'CA', 'Study 2026-11-04-rt-pyramids (ranked 9): RD centre-pyramid angles 60, 90, 120 degrees, all rational in pi: Dehn zero; the pyramids tile (#93 Theorem C). Recomputed tonight as a control.'),
+ ('Cuboctahedron', 'PYR', 'CA', '#92 v2, Theorem 10 (ranked 1 already says so; the grid cell is stale).'),
+ ('Cuboctahedron', 'TWIN', 'NR', 'No golden cut exists on the CO (#89) and its corners are rational, so Double Vision fixes it: nothing to twin.'),
+ ('Cuboctahedron', 'CH', 'CA', '#92 v3/v4: whole COs form at straight corners, anticuboctahedra at twisted ones, at most a quarter of the corners are centres; study 2026-11-04-cuboctahedron-pyramids: anticuboctahedra + octahedra fill hcp (integer program; also in #92\'s text).'),
+ ('Cuboctahedron', 'DEHN', 'CA', 'Its pyramids are the regular tetrahedron and the half-octahedron, #44\'s T + O set (#92 v2 Theorem 10). Confirmed exactly tonight: Dehn(T) = 6 sqrt2 (x) t, Dehn(S) = -6 sqrt2 (x) t, t = arccos(1/3); a set has Dehn zero exactly when it has as many tetrahedra as half-octahedra.'),
+ ('Rhombic triacontahedron', 'PYR', 'NP', 'Do the RT centre pyramids tile space? Dehn zero (rational angles 72, 120 degrees); the 4 Nov search reached 31 pieces and its long-run logs were lost (run audit, 10 Nov). Open; a monotile-clue candidate (ledger: watch list). New direction 1.'),
+ ('Rhombic triacontahedron', 'CH', 'NR', 'Five-fold symmetry is not a site symmetry of any close-packed stacking; the RT has no cell or hole role there, and placing it inside octahedra would be decoration (Occam).'),
+ ('Rhombic triacontahedron', '4D', 'CA', 'Its lift is six-dimensional: The Golden Ladder v8, Chapter 7: the RT is the central section of the Voronoi cell of D6 (s2 checks). Tonight\'s float screen found NO RT among the shadows, central sections or corner layers of the 600-cell, 120-cell and their rectifications along corner, edge, 2-face and cell axes (rt_4d_screen.py; controls RD and CO pass). Cell should read "GL ch 7 (6D)".'),
+ ('Icosidodecahedron', 'CH', 'NR', 'As for the RT: no layer role; ID inside I inside O is decoration only.'),
+ ('Icosidodecahedron', 'DEHN', 'SET', 'Tonight (pyramid_dehn.py, FINAL ok): no combination of the ID\'s centre pyramids, with any integer multiplicities, has Dehn invariant zero, so (by #44 Lemma 1) no set of them fills space.'),
+]
+QCELLS = [  # cells marked "?" in the grid
+ ('Cube', 'CH', '86 (?)', 'Rock-salt pieces on stackings (cubes in cubic stretches, study 2026-11-06-premise-challenge, ledger row 58) is the likely link; keep "?" until a paper states it.'),
+ ('Cuboctahedron', 'NEST', '?', 'Needs DICTO\'s word on what a nest means for the CO; nothing in the studies.'),
+ ('Cuboctahedron', '4D', '91 (?)', 'Classical and confirmed tonight (float control): the 24-cell\'s central section perpendicular to a corner is the CO. Drop the "?" and credit it as classical.'),
+ ('Rhombic triacontahedron', 'TWIN', '33 (?)', 'Tonight: no Galois conjugate of either RT golden cut is a real cut (all three non-trivial embeddings). If the cell means the cuts, it reads "none".'),
+ ('Rhombic triacontahedron', 'DEHN', '38 (?)', 'RT Dehn zero (studies 2026-11-19-dehn-atoms calibration, 2026-11-04-rt-pyramids); the centre-pyramid count is zero too. Cite those studies in place of "38 (?)".'),
+ ('Icosidodecahedron', 'TWIN', '33 (?)', 'Not computed tonight (the ID has only golden-regular cuts, #89).'),
+]
+
+RANKED = {
+ 1: ('CA', '#92 v2 Theorem 10 (published).'),
+ 2: ('CA', 'Study 2026-11-09-dual-sweeps (premise corrected). No waiting row names a home for it: propose #89/#91 next version.'),
+ 3: ('CA', '#92 v3 Theorem 12 and #93 v2 Theorem E, both published.'),
+ 4: ('CN', 'Exact Q(sqrt5) builds of the three #76 stations; one exact engine (Normaliz with e-antic, study 2026-11-21-new-tools item 1) serves it. Direction 5.'),
+ 5: ('CA', '#43 v2 Theorem 4 (published).'),
+ 6: ('CA', 'Study 2026-11-12-laves-three-layer-swap; home #66/#67 next versions (waiting row 81).'),
+ 7: ('CN', 'Regular part DONE (study 2026-11-09-regular-stars-census, 25 of 25 exact); the 13 Archimedean and 13 Catalan solids remain, census scripts exist. Home: Star Cores v3.'),
+ 8: ('CA', 'The Golden Ladder v6 Theorem 1A; extended tonight to the RD (twins) and RT (none).'),
+ 9: ('NP', 'All isohedral cases answered (cube, RD, RT Dehn zero); CO and ID settled tonight; what is left is the RT tiling question. Direction 1.'),
+ 10: ('CA', 'HexOct v12 "The Turned Twin" chapter; the TRD DICTOnode clock positions made exact on 21 Nov (Rhombiverse repository).'),
+ 11: ('CN', 'Observations 1, 2, 4 proved (studies 2026-11-08-switch-theorem, 2026-11-09-cscl-zincblende); Observation 3 left: tabulate tau_A + tau_B against site symmetry on the twelve networks (small).'),
+ 12: ('CN', 'Method and uniqueness theorem of #48 exist; run the split at t = phi on the other AXE networks (medium).'),
+ 13: ('CA', 'Study 2026-11-12-permutohedron-equal-edges with PRIOR-ART.md; published in The Permutohedron Paradigm Ch 14 (17, 101, 4427). #49 v2 still to cite it.'),
+ 14: ('CN', 'Test every #88/#91 golden-cut station S for O inside S inside rTI exactly (medium).'),
+ 15: ('CN', 'Largely joined since: Space-Fillers and Lattice Moves v1, #106 One World, #47 v3 Theorem 2. Left: #47 question 3 (a three-periodic C + T + O filling), a SAT search on tori.'),
+}
+
+LOOSE = {  # index (1-based in gaps.loose) -> (verdict, note); closed rows (2, 10, 24, 25) are skipped
+ 1: ('CN', 'Three of four parts closed (#92 v3 Thm 12, Table 2; #93 v2 Thm E and the uncountable R12 tilings). Left: the 10 non-face-to-face combinations of #93 and the TRD pyramid control + prior art: one SAT batch.'),
+ 3: ('CN', 'As ranked 12; printed keyed sets are a build task.'),
+ 4: ('CN', 'As ranked 14; the 9/phi^4 coincidence = #34\'s tightest cycle (cite); the build is not mathematics.'),
+ 5: ('NP', 'Paused: needs DICTO\'s definition of the golden fill G\' first (9 Nov triage question).'),
+ 6: ('CN', 'The Bull-horns adaptor for the cut OG is in #95 (published); the rhombic division of the 72-piece gap and the Cleo-Ico adapters remain (hole_piece_cut.py).'),
+ 7: ('NP', 'Spine as a thinned cut-and-project chain, seams as model sets: bridge aim. Direction 2.'),
+ 8: ('CN', 'Leftover volume per layer type follows the Window Law (#84); diffraction from the exact Fibonacci spectrum (ledger row 21). Direction 2.'),
+ 9: ('NP', 'Queued: needs DICTO\'s definition of a third-level Hexa first.'),
+ 11: ('NP', 'Conjecture 1 beyond k = 40 needs the New-Face (inradius) lemma, a new idea; shell 5 exact and the full flip are small exact builds.'),
+ 12: ('CN', 'Desk comparison with published Tsai-cluster and capsid radii (small); Occam: only if one line links it to #43\'s theorem.'),
+ 13: ('CN', 'Width w(u) = h(u) + h(-u) piecewise on the fundamental triangle, critical points exactly (medium).'),
+ 14: ('NP', 'C + T + O without connectors answered (#47 v3); smallest kit: five connectors in the hybrid slab, no lower bound proof; three-periodicity open.'),
+ 15: ('CA', 'Listed and prior art checked (study 2026-11-12-permutohedron-equal-edges; Paradigm Ch 14). Write into #49 v2.'),
+ 16: ('CN', 'Perfect points as walls of the move sliders; match Hill, Sommerville, Goldberg lists (medium).'),
+ 17: ('CN', 'Delian bond answered: O(t) is never Dehn-zero except at the RD (study 2026-11-04-dehn-screen). Screen the pieces of the other bonds with dehn_mp.py (small).'),
+ 18: ('NP', 'Needs DICTO\'s choice (keys as a second colour of bond, or their own network).'),
+ 19: ('CN', 'Observations 1, 2, 4 proved; Observation 3 and three-kind walks remain (ranked 11).'),
+ 20: ('CN', 'Small exact checks (shorter run, capped cubes).'),
+ 21: ('CN', 'Feed sigma, Z, C15 site lists to the #57 census engine (medium).'),
+ 22: ('NP', 'Keyed Blockhead, Chucky, Fang: keying is paused (DICTO 12 Nov); the three-kind walk goes with row 19.'),
+ 23: ('NP', 'Proved on [1/8, 1/4] (#104 Thm 3). Below: study 2026-11-09-b1-walls found a constant shift delta_tet = -(1 - 4s)^3/(54 s) in a middle zone and clashes below. Direction 3.'),
+ 26: ('CN', 'Exact atlas in Q(sqrt5) (Normaliz/e-antic or own Q(sqrt5) hull). Direction 5.'),
+ 27: ('NP', '"Why 89" answered (#80); the nine-layer match needs DICTO\'s meaning of "layer".'),
+ 28: ('CN', 'Platonic chains mapped (b1-walls): period 4 on most depths, exact on two hops, but a NON-closing window exists, so "close in four steps" is false in general; Archimedean and omnitruncate chains remain.'),
+ 29: ('CN', 'Regimes located numerically (cube non-closing 0.62-0.74, dodecahedron 1.10-1.24, matching the open windows); exact symbolic stepping failed at step 6, so exact edges need root isolation (FLINT qqbar, new-tools item 7).'),
+ 30: ('CA', 'Study 2026-11-09-b1-walls: #86 tower walls DONE, exact at every wall and one point of every hop. Home #86 next version.'),
+ 31: ('NP', 'Needs DICTO\'s choice of centre for low-symmetry solids.'),
+ 32: ('NR', 'Cardboard sheets are a build task, not an open point of the mathematics.'),
+ 33: ('CN', 'Lemma 6, tilted slice, factor 2: exact Q(sqrt5) stations. Direction 5.'),
+ 34: ('CN', 'The 10 Schlafli-Hess polytopes now have exact flags (regular-stars-census); #89\'s "no section" search was float only: redo exactly. Direction 5.'),
+ 35: ('NP', 'Needs DICTO\'s choice of picture (9 Nov triage question).'),
+ 36: ('CN', 'Desk search of free prototype databases for the 1b + 12j point set (small).'),
+ 37: ('CN', 'Exact heights of the six all-triangle 600-cell slices (incidence events). Direction 5.'),
+ 38: ('NP', 'Same as row 23. Direction 3.'),
+ 39: ('CN', 'Lead 2 (the heart for an even number of values), medium.'),
+ 40: ('CN', 'Observation 5 made exact (study 2026-11-13-platonic-residents-exact); Observation 4 (the second Vacuus) remains, medium.'),
+ 41: ('CA', 'Study 2026-11-15-stanley-check: in substance yes (Bayer-Billera 1985); to be said at #104 and #108 next versions.'),
+ 42: ('CA', 'Dehn invariant -12 sqrt2 (x) beta, nonzero (#100 Thm 1.1 with Debrunner; also in #113). Into #105 next version.'),
+ 43: ('CN', 'The fields of the radii are exact algebra (small); the physical fair point of a print is not mathematics.'),
+ 44: ('CN', 'The Vacuus of the 149 Aequi and both placements under subgroups of Oh are computations (medium); Aequi as Wulff shapes would be new work.'),
+ 45: ('NP', 'Lean developments (ten dice, Debrunner, Sydler\'s converse): each a formal project.'),
+ 46: ('NP', 'Open lead on real data; the scutoid streams were shelved 16 Nov.'),
+ 47: ('NP', 'E2 is published as #116 (20 Nov); E1 fell below Palomar\'s floor; Sydler\'s converse in Lean is a large formal project.'),
+ 48: ('NP', 'Part 2 being checked; a 4D union that fills space and an actual dissection to the 4-cube are new work. Direction 4.'),
+}
+
+# waiting rows: index -> (flag, proposed home / note). Flags: STALE = goes_to names a version or book since published that holds the
+# result (text found in the published folder); STALE-T = goes_to names a target that does not exist or no longer fits;
+# DONE = row already says done/published; OPEN = home still to come; CHECK = text probably in the named published work, wording to confirm.
+W = {
+ 1: ('STALE', '#92 v3 Thm 12 + #93 v2 Thm E (published)'), 2: ('STALE', '#92 v3 (published)'), 3: ('STALE', '#93 v2 (published)'),
+ 4: ('STALE', 'Space-Fillers and Lattice Moves v1 (published 14 Nov)'), 5: ('STALE', 'The Golden Ladder v6 Thm 1A; tonight\'s RD/RT twins to GL v9'),
+ 6: ('STALE', 'The Golden Ladder (published)'), 7: ('STALE', 'HexOct v12 "The Turned Twin"'), 8: ('STALE', '#94 v3 (7 Nov) and Space-Fillers v1'),
+ 9: ('OPEN', 'HexOct next version (build sheet) / Quanta nodes'), 10: ('DONE', 'housekeeping, not a result'),
+ 11: ('OPEN', 'open conjecture: #92 next version (stated, unproved)'), 12: ('STALE', '#94 v3'), 13: ('STALE', '#94 v3; the sqrt3 point is Lindelof (GL v8)'),
+ 14: ('STALE', 'Alicia v6 / #94'), 15: ('STALE', 'Alicia v6'), 16: ('STALE', '#94 v3'), 17: ('STALE', '#94 v3'), 18: ('STALE', '#93 v2+'),
+ 19: ('STALE-T', '"OG volume" does not exist in the series: propose The Golden Cycle v5 (drafted)'), 20: ('STALE', 'Alicia v6'),
+ 21: ('STALE', 'HexOct v12'), 22: ('STALE', '#92 v3/v4 (hcp, integer program in its text)'), 23: ('STALE', 'GL Ch 2'), 24: ('STALE', 'GL Ch 2 (app part open)'),
+ 25: ('STALE', 'GL Ch 2'), 26: ('STALE', 'GL v1+'), 27: ('STALE-T', '#93 is at v4 without it; the RT tiling is open: new paper (direction 1)'),
+ 28: ('STALE', 'Space-Fillers v1 and #100'), 29: ('STALE', 'Alicia v6'), 30: ('STALE', '#101 Held by Shape Alone'), 31: ('STALE', '#101'),
+ 32: ('CHECK', 'HexOct v12 has "interlock"; confirm the c/h-tile locking is stated'), 33: ('STALE', '#100'), 34: ('STALE', 'GL v8 (Lindelof)'),
+ 35: ('STALE-T', '"OG volume" does not exist: The Golden Cycle v5 or the DICTOnary (dehn-atoms confirms at 80 digits)'),
+ 36: ('OPEN', 'HexOct next version'), 37: ('CHECK', 'Space-Fillers v1 (Admiral Cap network chapter)'), 38: ('STALE', '#93 v2+ (144.74 degrees, O(t))'),
+ 39: ('OPEN', 'Space-Fillers v2 / direction 1'), 40: ('OPEN', 'aim 3 watch list (no claim)'), 41: ('STALE', '#100 (the six truncated tetrahedra)'),
+ 42: ('STALE', 'Alicia v6'), 43: ('STALE', '#97 Narcissus Keyed'), 44: ('DONE', '#98'), 45: ('DONE', 'prior-art note'), 46: ('DONE', 'prior-art note'),
+ 47: ('STALE', 'GL v6 Ch 8 (prior art of the Golden OGs)'), 48: ('DONE', 'aim 3 note'), 49: ('DONE', 'superseded by GL v8'), 50: ('DONE', '#47 v3'),
+ 51: ('DONE', 'record'), 52: ('DONE', 'record'), 53: ('DONE', 'record'), 54: ('STALE', '#99 Plato\'s Five in the Octet'), 55: ('STALE', '#99'),
+ 56: ('STALE', '#99'), 57: ('STALE', '#99 ladder section'), 58: ('CHECK', 'Space-Fillers v1 mentions rock salt; else HexOct / #47 next'),
+ 59: ('OPEN', 'draft "Scutoids: Layers, Shells and Cycles" (unnumbered)'), 60: ('DONE', 'record'), 61: ('STALE', 'Permutohedron Paradigm v1'),
+ 62: ('STALE', 'Paradigm Ch 14; #49 v2 still to cite'), 63: ('OPEN', 'Book Eleven'), 64: ('OPEN', 'Book Eleven'), 65: ('STALE', 'Paradigm Ch 14'),
+ 66: ('OPEN', 'Book Eleven'), 67: ('STALE', 'the three books published 14-15 Nov'), 68: ('STALE', 'Paradigm'), 69: ('STALE', 'Paradigm Ch 12; #105 next version open'),
+ 70: ('STALE', 'Paradigm'), 71: ('STALE', 'Paradigm'), 72: ('CHECK', 'Platonic Ch 11 (1560 found, 34200 not); #108 next version open'),
+ 73: ('CHECK', 'Platonic Ch 4 (wording "fin graph" not found)'), 74: ('CHECK', 'Platonic (Dogstar found)'), 75: ('OPEN', 'HexOct next / Book Eleven'),
+ 76: ('STALE', 'Paradigm (Stanley credited)'), 77: ('OPEN', 'Geometry Gives Laws draft (Paradigm\'s "palindromic" is the bells)'),
+ 78: ('OPEN', 'Geometry Gives Laws draft'), 79: ('OPEN', 'Book Eleven Ch 12'), 80: ('OPEN', 'Kyushindo Cores v4 / Platonic v2'),
+ 81: ('OPEN', '#66, #67 next versions'), 82: ('OPEN', 'aim 3 research'), 83: ('STALE', 'Alicia v6 (19-design); also the Geometry Gives Laws draft'),
+ 84: ('STALE', 'GL v8 (Gosset)'), 85: ('OPEN', '#104, #108 next versions'), 86: ('OPEN', '#108 next version'), 87: ('OPEN', 'Paradigm v2 (Narayana not yet in it)'),
+ 88: ('STALE-T', 'one formula wrong, rest untested: no home until tested'), 89: ('OPEN', 'GL next / Book Eleven'), 90: ('OPEN', '#100 next version'),
+ 91: ('OPEN', 'Book Eleven (prior art first)'), 92: ('OPEN', 'Space-Fillers v2'), 93: ('OPEN', '#104 next version'),
+ 94: ('STALE', 'in #113 The Dehn Canon; still to be written into #105 next version'), 95: ('STALE-T', 'A2.1 wrong, A2.2 done (#43 Thm 5)'),
+ 96: ('DONE', 'Space-Fillers Ch 8 §6'), 97: ('OPEN', 'The Golden Cycle v5'), 98: ('STALE', 'Space-Fillers v1 (wall-area maximum); Book Eleven'),
+ 99: ('CHECK', 'DICTOnary v1.5 has D40 with 5 - 2 sqrt5; #38 still says 1 : phi (#38 next version)'), 100: ('STALE', '#103 v5+'),
+ 101: ('OPEN', 'Book Eleven'), 102: ('STALE', 'Platonic Ch 10 Filigree'), 103: ('DONE', '#102 v5'), 104: ('DONE', '#102 v5'), 105: ('DONE', '#102 v6'),
+ 106: ('DONE', '#116'), 107: ('DONE', '#116'), 108: ('STALE', 'DICTOnary v1.5 (Hall credited); GET paper open'), 109: ('DONE', 'DICTOnary v1.4/1.5'),
+ 110: ('OPEN', 'Palomar, held until the GET paper'), 111: ('STALE', '#103 v7 published (row still says "awaits DICTO")'),
+ 112: ('STALE', '#103 v8 Proposition 17 published (row still says "awaits DICTO")'),
+}
+
+def esc(s): return s.replace('|', '/')
+out = []
+P = out.append
+cnt = collections.Counter()
+for g in GRID: cnt[g[2]] += 1
+rc = collections.Counter(v for v, _ in RANKED.values()); lc = collections.Counter(v for v, _ in LOOSE.values())
+tot = cnt + rc + lc
+open(os.path.join(ROOT, 'data', 'verdicts.json'), 'w').write(json.dumps({'grid': GRID, 'qcells': QCELLS, 'ranked': RANKED, 'loose': LOOSE, 'waiting': W}, ensure_ascii=False, indent=1))
+json.dump({'grid': dict(cnt), 'ranked': dict(rc), 'loose': dict(lc), 'total': dict(tot)}, open(os.path.join(ROOT, 'data', 'counts.json'), 'w'), indent=1)
+TABLES = {}
+t = ['| # | Solid × theme | Verdict | Why, or where it is settled |', '|---|---|---|---|']
+for i, (s, th, v, r) in enumerate(GRID, 1): t.append(f'| G{i} | {s} × {th} | {V[v]} | {esc(r)} |')
+TABLES['grid'] = '\n'.join(t)
+t = ['| Solid × theme | Cell now | Reading |', '|---|---|---|']
+for s, th, now, r in QCELLS: t.append(f'| {s} × {th} | {now} | {esc(r)} |')
+TABLES['q'] = '\n'.join(t)
+t = ['| # | Ranked problem | Verdict | Why, or where it is settled |', '|---|---|---|---|']
+for i, row in enumerate(C['ranked'], 1):
+    v, r = RANKED[i]; t.append(f'| R{i} | {esc(row[0])} | {V[v]} | {esc(r)} |')
+TABLES['ranked'] = '\n'.join(t)
+t = ['| # | From | Open point | Verdict | Why, or where it is settled |', '|---|---|---|---|---|']
+for i, row in enumerate(C['loose'], 1):
+    if i not in LOOSE: continue
+    v, r = LOOSE[i]; t.append(f'| L{i} | {esc(row["src"])} | {esc(row["what"][:150])}{"…" if len(row["what"]) > 150 else ""} | {V[v]} | {esc(r)} |')
+TABLES['loose'] = '\n'.join(t)
+groups = collections.OrderedDict()
+for i, row in enumerate(C['waiting'], 1):
+    f, home = W[i]; groups.setdefault(f, []).append((i, row, home))
+t = []
+for f in ['STALE', 'STALE-T', 'CHECK', 'OPEN', 'DONE']:
+    rows = groups.get(f, [])
+    t.append(f'\n**{f}** ({len(rows)} rows)\n')
+    t.append('| # | Result (start) | goes_to in the Concordance | Proposed home / note |'); t.append('|---|---|---|---|')
+    for i, row, home in rows:
+        res = (row.get('result') or row.get('what') or '')[:110]
+        t.append(f'| W{i} | {esc(res)}… | {esc(str(row.get("goes_to"))[:90])} | {esc(home)} |')
+TABLES['waiting'] = '\n'.join(t)
+wc = collections.Counter(f for f, _ in W.values())
+json.dump(dict(wc), open(os.path.join(ROOT, 'data', 'waiting-flags.json'), 'w'))
+fmt = lambda c: ', '.join(f'{V[k]} {c.get(k, 0)}' for k in ['CA', 'SET', 'CN', 'NP', 'NR'])
+for k in ['grid', 'q', 'ranked', 'loose']: print(f'\n===== TABLE {k}\n' + TABLES[k])
+print('\n===== WAITING by flag')
+for f in ['STALE', 'STALE-T', 'CHECK', 'OPEN', 'DONE']:
+    print(f'{f} ({len(groups.get(f, []))}): ' + ', '.join(f'W{i}' for i, _, _ in groups.get(f, [])))
+print('\ncounts: grid', fmt(cnt), '| ranked', fmt(rc), '| loose', fmt(lc), '| total', fmt(tot))
+print('grid', dict(cnt)); print('ranked', dict(rc)); print('loose', dict(lc)); print('total', dict(tot)); print('waiting', dict(wc))
+ok = (sum(cnt.values()) == 16 == len(GRID) and sum(rc.values()) == 15 == len(C['ranked']) and len(W) == len(C['waiting']) == 112
+      and all(i in LOOSE or C['loose'][i - 1]['status'].startswith('CLOSED') for i in range(1, len(C['loose']) + 1)))
+print('FINAL ok' if ok else 'FINAL FAIL (a gap without a verdict, or a count mismatch)')
