@@ -1,0 +1,14 @@
+GET A: solid + 4 removed oblate cells = T exactly (30 faces, six zones of 10, corners of valence 3 and 5); dimples on one inscribed cube (the four corners of a square face of the cube)
+GET B: solid + 4 removed oblate cells = T exactly (30 faces, six zones of 10, corners of valence 3 and 5); dimples on one inscribed cube (a corner of the cube and its three neighbours on it)
+candidate 2: solid + 4 removed oblate cells = T exactly (30 faces, six zones of 10, corners of valence 3 and 5); dimples on one inscribed cube (four alternate corners of the cube (a regular tetrahedron))
+tri.html: 4 scenes
+GET A: 16 cells, boundary = the 30 faces exactly; 10 prolate drawn #c8952a, the rest oblate #ecd9a0
+GET B: 16 cells, boundary = the 30 faces exactly; 10 prolate drawn #9ea4ad, the rest oblate #d9dce1
+apart.html: 4 scenes
+GET A: six zones, each one closed belt of 10 faces
+GET B: six zones, each one closed belt of 10 faces
+zones.html: 12 scenes
+GET A: block on the face-neighbour basis ((-1, -1, -1, 0, 0, 0), (-1, 0, 0, 1, 0, 1), (0, -1, 0, 0, 1, -1)) (lattice index 1), each basis vector a face contact, no two tiles with a common face on the same side
+GET B: block on the face-neighbour basis ((-1, -1, -1, 0, 0, 0), (-1, 0, 0, 1, 0, 1), (0, -1, 0, 0, 1, -1)) (lattice index 1), each basis vector a face contact, no two tiles with a common face on the same side
+tiling.html: 4 scenes
+FINAL ok
