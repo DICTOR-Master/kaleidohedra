@@ -82,3 +82,7 @@ DICTO (20 November): keep `DehnCanon.Library`; "Fit check, then submit".
 The build in steps can only understate a peak if two heavy modules would run together across a step boundary; with peaks under 3 GB against 16 GB that margin does not matter.
 
 **Repository: not created.** The standalone repository was assembled locally exactly like the Yantra entry's (the 47 entry files without SHA256SUMS; a second commit adds the manual-dispatch preflight workflow pinned to PalomarSubmission 14aa8d6, request id `dehncanon001`; author DICTO with the GitHub no-reply address), but creating the public GitHub repository was refused by the permission system, so nothing was pushed and nothing was submitted. Submission itself goes through Palomar's web form (submit.palomar-registry.org), which needs DICTO's GitHub login.
+
+## Submission (20 Nov 2026)
+
+Submitted by DICTO 02:19Z (repo DICTOR-Master/dehn-canon-lean, commit 9ea20f6, verification run 44659975000). Verification success 02:29Z; Challenge renderability check passed 03:45Z; automated review 03:48Z: "No problems were identified" (no suggestions; scores are not shown to the submitter); DICTO asked for registration 03:49Z. Palomar has no human sign-off on review outcomes.
