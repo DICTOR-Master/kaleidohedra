@@ -775,7 +775,7 @@
       "version": 1,
       "doi_v1": "24383315",
       "notes": [
-        "Published 20 Nov 2026 (Version 1, 10.5281/zenodo.24383315; folder papers/2026-11-20-aequi; studies 2026-11-19-aequi-complete, 2026-11-20-aequi-two-placements, 2026-11-19-aequus-rd-ico; ledger entries 331-332).",
+        "Published 20 Nov 2026 (Version 1, 10.5281/zenodo.24383315; folder papers/2026-11-20-aequi; studies 2026-11-19-aequi-complete, 2026-11-20-aequi-two-placements, 2026-11-19-aequus-rd-ico, 2026-11-20-aequi-alexandrov (Proposition 5: Alexandrov's condition decides the 319 polar sets, 87 no die, 232 a die outside the search box), 2026-11-20-aequi-existence (existence exact for all 4553 and all 1083 by Corollaries 3 and 3′), 2026-11-20-aequi-catalogue, 2026-11-20-seraphim-catalogue; ledger entries 331-332).",
         "Results: Lemma 1 (exact, the polar identity): the solid angle of a face is the integral Gauss curvature of the polar at the matching corner. Theorem A (exact, from Alexandrov 1942; Oliker 2007, Bertrand 2016 credited): N face directions carry a fair die exactly when they satisfy Alexandrov's condition for equal masses, unique up to scale; its symmetry group is that of the directions, and a group fixing no direction puts the centroid at the centre. Proposition 2 (exact): the finite test for equal masses. Corollary 3 (exact): directions in opposite pairs always carry a fair die. Corollary 3′ (exact): the diameter certificate. Corollary 4 (exact): what the search saw. Proposition 5 (computed): of 319 polar orbit sets with no die in the search box, 87 fail Alexandrov's condition (12 with equality), 232 carry a die outside the box. Theorem B (exact, existence of 94 dice computed): exactly 149 Aequi in the main catalogue: Ih 4, Oh 4, Td 3, Th 47, T 91 (two hands), none exactly O or I; by kinds of face 26, 41, 42, 27, 11, 2 (m = 2 to 7); 82 Aequi Mosaici. Proposition 6 (computed): with both icosahedron placements under Th and T, 1083 more Aequi, none congruent to the main catalogue. Proposition 7 (exact): 31 two-icosahedron dice with symmetry exactly O, 53 exactly Oh.",
         "Open (§8): a structural reason the diameter certificate never failed on the frame orbit sets (2256 tested, smallest margin 1/3); whether every failure of Alexandrov's condition has a witness of N − 1 directions; how many dice the one-orbit-at-a-time depth ratios determine, and their closed forms; the Vacuus of the 149 (which hide a regular polygon, which turn without a mirror; only D191 checked); closed forms beyond #111's twelve; raise the caps of §5.3 and add both placements under the subgroups of Oh; is any Aequus a Wulff shape of a real crystal or quasicrystal?",
         "Links: #111 (the twelve two-family fair dice, Theorem 6 the hidden angle); #87 (Vacuus); The DICTOnary of Atoms v1.4 (the families of the Aequi, D179-D191).",
@@ -3350,6 +3350,15 @@
       "first": "#112",
       "d": "2026-11-20",
       "desc": "the Aequi with four or more kinds of face (82 of the 149 of the main catalogue)"
+    },
+    {
+      "name": "Seraph (plural Seraphim)",
+      "by": "DICTO",
+      "first": "#112",
+      "d": "2026-11-20",
+      "desc": "a two-icosahedron fair die: an Aequus whose faces use the axes of both icosahedra that fit the cube (placements a quarter turn apart); the 1083 of #112 §5 (Oh 53, O 31, Td 91, Th 168, T 740), \"multi-faced angels\"",
+      "aka": "Seraph Mosaicus (plural Seraphim Mosaici): a Seraph with four or more kinds of face (965 of the 1083)",
+      "note": "named by DICTO on 20 Nov 2026; numbered 'Seraph ‹initials›-‹N›, ‹group› ‹number›' with primes for the second placement (study 2026-11-20-seraphim-catalogue); entered in The DICTOnary of Atoms v1.4"
     }
   ],
   "concepts": [
@@ -4766,6 +4775,16 @@
         "src": "#114",
         "what": "swaps per birth against ⟨F⟩/2 − 3 in a public three-dimensional grain map swept by planes (§7); the Sun, Earth's plates, clouds and froth not confirmed",
         "status": "open lead"
+      },
+      {
+        "src": "study 2026-11-20-palomar-next-prescore",
+        "what": "Sydler's converse (in Lean, and the 4D analogue of Jessen); E1 as a general theorem (formal Wallace–Bolyai–Gerwien, box to cube, then every zonotope or parallelohedron to a cube), needs DICTO's word; E2, the Dehn–Hadwiger invariant in four dimensions, with the bridge as headline",
+        "status": "open lead; E2 in progress"
+      },
+      {
+        "src": "study 2026-11-20-600cell-5cell-zero",
+        "what": "how the cap solid and the √2 tip 600-cell relate to the earlier 600-cell work (Part 2); whether the edge partition by 120 facets is known; a 4D union that fills space; an actual dissection to the 4-cube",
+        "status": "Part 2 being checked; rest open"
       }
     ],
     "waiting": [
@@ -5348,6 +5367,41 @@
         "study": "studies/2026-11-15-polygon-bijection",
         "goes_to": "#102 Version 6, Section 5 (Theorems A, B, Corollary A, Lemmas 5-7, Figure 4); published in Version 6 (15 Nov 2026, 10.5281/zenodo.24241321; aiXiv 2611.01038v6)",
         "date": "2026-11-15"
+      },
+      {
+        "result": "A 600-cell and 120 5-cells (exact): one regular 600-cell of edge a with 120 regular 5-cells of the same edge has Dehn–Hadwiger invariant zero (D(600-cell) = −300√3 a² ⊗ θ₅, D(5-cell) = (5√3/2) b² ⊗ θ₅, θ₅ = arccos(1/4); zero iff n b² = 120 a², so 120 is the only and smallest equal-edge count). The 5-cells sit as caps on 120 facets: one solid, star-shaped, never convex (cap meets uncapped facet at 4π/3). A natural cap set (one orbit of left multiplication by the 120 vertex quaternions; all 5 orbits pass) uses every edge of the 600-cell exactly once, no two caps share a triangle, and the cap tips form a larger regular 600-cell at radius √2 (circumradius 1); the solid keeps 1440 rotations and no reflections (chiral; mirror from the right orbits). Volume 5√5 φ² a⁴; by Jessen (1968, 1972) scissors congruent to a 4-cube of edge 5^(3/8) √φ a ≈ 2.32599 a (existence only, no dissection claimed). Relations to the earlier 600-cell work (#110 Walls of Silence, #63, the Alicia book): being checked in the study's Part 2, nothing claimed",
+        "study": "studies/2026-11-20-600cell-5cell-zero (commit bba449de; Part 2 running)",
+        "goes_to": "not yet in a paper (outside the plan; DICTO approved it as a study)",
+        "status": "exact; Part 2 relations being checked",
+        "date": "2026-11-20"
+      },
+      {
+        "result": "The six regular 4-polytopes and the Dehn–Hadwiger invariant (exact, classical angles): the tesseract (π/2), 16-cell (2π/3), 24-cell (2π/3) and 120-cell (4π/5) have invariant zero; the 5-cell (arccos(1/4)) and the 600-cell do not, and the 600-cell's dihedral angle is 4π/3 − the 5-cell's, so their invariants are opposite multiples of one class and differ at every scale. Neither is scissors congruent to the four zero-invariant polytopes or to the other; no discovery claimed (both follow at once from classical angles). Palomar pre-score: E1 (explicit scissors congruences) notability 3 in both scores, below the floor; E2 (4D invariant) notability 4 in both, at the floor, once Hadwiger 1954/1957 and Dupont–Sah 1990 are cited",
+        "study": "studies/2026-11-20-palomar-next-prescore (checks/dihedral4d.py, rational_pi.py, relation_600_5.py)",
+        "goes_to": "planned Palomar entry E2 (the Dehn–Hadwiger invariant in four dimensions), being built; not yet in a paper",
+        "status": "exact (angles); E2 build in progress",
+        "date": "2026-11-20"
+      },
+      {
+        "result": "D. Hall's \"Dimpled Rhombic Triacontahedron\" (Sketchfab, 28 June 2016) is exactly candidate 2, Inchbald's dimpled (indented) rhombic triacontahedron, in both hands (exact corner matching in Z[φ]; ten tetrahedral corner sets, five per hand); not GET A, not GET B. J. Kostick's \"concavo-convex triacon array\" (3 April 2022) shows GET A: 19 translates on GET A's own lattice. GET B seen in neither",
+        "study": "studies/2026-11-20-hall-2016-check",
+        "goes_to": "The DICTOnary of Atoms v1.4 (known atom credited to Hall 2016, Inchbald, Senechal–Taylor; note at D192 GET A crediting Kostick 2022); the GET study's prior-art table; literature of the Grünbaum k = 10 Palomar entry and its paper (papers/2026-11-20-grunbaum-k10, not yet published)",
+        "status": "exact",
+        "date": "2026-11-20"
+      },
+      {
+        "result": "The Seraphim (singular Seraph; DICTO's name, \"multi-faced angels\"): the 1083 two-icosahedron fair dice numbered and named, Oh 1–53, O 1–31, Td 1–91, Th 1–168, T 1–740; 965 Seraphim Mosaici (singular Seraph Mosaicus, four or more kinds of face); name \"Seraph ‹initials›-‹N›, ‹group› ‹number›\" (e.g. Seraph CDD′-30, Oh 1); the Aequi rules unchanged, the solids of the second icosahedron placement primed (D′, I′, RT′); numbering by m, then N, then orbit families, then split-orbit placement (no ties)",
+        "study": "studies/2026-11-20-seraphim-catalogue",
+        "goes_to": "The DICTOnary of Atoms v1.4 (published) and #112 §5",
+        "status": "exact (catalogue of computed dice)",
+        "date": "2026-11-20"
+      },
+      {
+        "result": "Palomar entry for Grünbaum's zone question at k = 10 (GrunbaumK10) built and proved in Lean with GET B as the witness (DICTO's decision, 20 Nov): four Challenge theorems, no sorry, no native_decide, standard axioms only; Palomar's comparator, NanoDa and con-ron accept the Solution; the three altered copies are rejected. Literature credits GET A to Kostick 2022 and the tetrahedrally dimpled solid to Hall 2016. Not submitted",
+        "study": "studies/2026-11-20-palomar-grunbaum (and 2026-11-20-palomar-grunbaum-prescore)",
+        "goes_to": "Palomar, held until the GET paper (papers/2026-11-20-grunbaum-k10) is published",
+        "status": "exact (Lean); held",
+        "date": "2026-11-20"
       }
     ]
   },
@@ -8954,6 +9008,60 @@
         "result": "1083 Aequi, none congruent to any of the study's 4553: Oh 53, O 31 (two hands), Td 91, Th 168, T 740 (two hands); by m: 30, 88, 167, 228, 234, 181, 103, 41, 10, 1 (m = 2..11); all |Ω − 4π/N| < 1.4e-100. Symmetries O and Td appear (quarter turns and diagonal mirrors swap the placements). Td by m equals the study's T by m (8, 21, 28, 22, 10, 2): same orbit-permutation action. O = 2^5 − 1: one chiral RT24+RT24′/24 orbit with any nonempty set of the five Oh orbits. Controls: the pilot's 7 cross-placement sets PASS to 9 digits (as quarter-turned images); one-placement sets (Th 57, T 153) excluded; 5 face-transitive solids met and excluded",
         "retry": "never (Th and T, both placements, as defined); open: other subgroups of Oh with both placements (D2h, D3d, D4h, ... capped or not searched); closed forms; uniqueness proof; names and numbers are DICTO's",
         "study": "2026-11-20-aequi-two-placements",
+        "date": "2026-11-20"
+      },
+      {
+        "question": "Does a regular 600-cell together with regular 5-cells have Dehn–Hadwiger invariant zero (the 4D echo of octahedron + two tetrahedra), and how do the 5-cells sit on it?",
+        "method": "exact arithmetic in Q(√5): the 600-cell as the 120 unit quaternions of the binary icosahedral group; ridges, facets and dihedral angles by exact inner products; θ₆₀₀ = 4π/3 − θ₅ re-proved in sympy; cap sets as left- and right-multiplication orbits of the 600 facets; direct boundary sum; volumes; Jessen (1968, 1972) for scissors congruence in 4D",
+        "status": "SETTLED (exact); Part 2 (relations to the earlier 600-cell work) running",
+        "result": "120 equal-edge 5-cells is the only and smallest count with invariant zero; caps on one left orbit use every edge once, share no triangle, tips form a 600-cell at radius √2, 1440 rotations, chiral, never convex (4π/3 at cap-facet ridges); volume 5√5 φ² a⁴; scissors congruent to a 4-cube of edge 5^(3/8) √φ a (existence only). Not found in the sources checked",
+        "retry": "never (these statements); open: Part 2 relations; known edge partition?; 4D space-filling union; explicit dissection",
+        "study": "2026-11-20-600cell-5cell-zero",
+        "date": "2026-11-20"
+      },
+      {
+        "question": "Palomar pre-score of the next Dehn entries: E1 explicit scissors congruences to a cube; E2 the Dehn invariant in four dimensions; first, which regular 4-polytopes have invariant zero",
+        "method": "dihedral angles from coordinates, algebraic-integer test for ℚπ, θ₆₀₀ = 4π/3 − θ₅ exactly; four blind scorers (two per candidate) on the byte-identical policy files, as in the Dehn and Grünbaum pre-scores",
+        "status": "SETTLED (angles exact; scores recorded)",
+        "result": "zero: tesseract, 16-cell, 24-cell, 120-cell; nonzero: 5-cell, 600-cell, opposite classes. E1 notability 3 / 3 (failure, below floor); E2 4 / 4 (at floor; Hadwiger not cited, a finding of one scorer)",
+        "retry": "E1 only as the general theorem (needs DICTO's word); E2 re-score blind once the citations are fixed and the Challenge is built",
+        "study": "2026-11-20-palomar-next-prescore",
+        "date": "2026-11-20"
+      },
+      {
+        "question": "Is Hall's Dimpled Rhombic Triacontahedron (Sketchfab 2016) GET A, GET B or candidate 2; do Kostick's triacon arrays (2022) show any of them?",
+        "method": "exact Z[φ] construction from Hall's description (all ten tetrahedral corner sets), corner-matching congruence in both hands; Kostick's panel exports snapped to (a + bφ)/2 and read cell by cell",
+        "status": "SETTLED (exact)",
+        "result": "Hall's solid = candidate 2 (Inchbald's) in both hands; Kostick's concavo-convex array = GET A on its own lattice; GET B in neither",
+        "retry": "never",
+        "study": "2026-11-20-hall-2016-check",
+        "date": "2026-11-20"
+      },
+      {
+        "question": "Alexandrov's condition for the 319 polar orbit sets with no die in the Aequi search box",
+        "method": "exhaustive subset test of g(A) = 2π(2|A| − N)/N − L(A) (N ≤ 13), 50-digit recheck; convex die-finder with no box; 80-digit confirmation; 50 controls",
+        "status": "SETTLED",
+        "result": "87 fail (12 with equality; witness always N − 1 directions); 232 hold, each die found outside the box and confirmed to 80 digits, none an Aequus; counts 149 and 4553 unchanged; in #112 (Proposition 5)",
+        "retry": "never",
+        "study": "2026-11-20-aequi-alexandrov",
+        "date": "2026-11-20"
+      },
+      {
+        "question": "Exact existence of the fair dice without central symmetry by Alexandrov's condition (no numerics)",
+        "method": "diameter certificate (hemisphere bound M and lens counts over all pairs; perimeter ≥ twice the diameter), margins far above rounding",
+        "status": "SETTLED",
+        "result": "956 of 956 (94 main Td and T; 31 O, 91 Td, 740 T two-icosahedron) and the 1300 non-centrosymmetric dice below the frame groups certified; with Corollary 3, existence exact for all 4553 and all 1083; in #112 (Corollaries 3, 3′)",
+        "retry": "never",
+        "study": "2026-11-20-aequi-existence",
+        "date": "2026-11-20"
+      },
+      {
+        "question": "Build the Palomar entry for Grünbaum's zone question at k = 10 with GET B as witness",
+        "method": "GET A development rewritten to GET B (certificates and sphere data regenerated by the GET study's own generators); comparator, NanoDa, con-ron; three altered copies; fit check; blind re-score",
+        "status": "SETTLED (built and proved; held until the GET paper is published)",
+        "result": "GrunbaumK10: four Challenge theorems proved, standard axioms only; accepted by three kernels; altered copies rejected",
+        "retry": "never (the build); submit after the GET paper",
+        "study": "2026-11-20-palomar-grunbaum",
         "date": "2026-11-20"
       }
     ]
