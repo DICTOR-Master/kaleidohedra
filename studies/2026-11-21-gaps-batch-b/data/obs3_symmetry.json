@@ -1,0 +1,662 @@
+[
+ {
+  "key": "square",
+  "label": "square + centres",
+  "d": 2,
+  "A": "corner",
+  "B": "centre",
+  "counts": {
+   "corner": 1,
+   "centre": 1
+  },
+  "range": [
+   "-2",
+   "2"
+  ],
+  "sym_ops_mod_T": 8,
+  "swap_ops_mod_T": 8,
+  "centrosymmetric": true,
+  "site_group": {
+   "corner": "4mm (D4)",
+   "centre": "4mm (D4)"
+  },
+  "site_order": {
+   "corner": 8,
+   "centre": 8
+  },
+  "tau": {
+   "corner": "0",
+   "centre": "0"
+  },
+  "tau_sum": "0",
+  "type": "switch",
+  "mu": {
+   "corner": "0",
+   "centre": "0"
+  },
+  "distance_rule_decides": {
+   "corner": true,
+   "centre": true
+  },
+  "voronoi_lam0": {
+   "corner": [
+    [
+     0,
+     4
+    ]
+   ],
+   "centre": [
+    [
+     0,
+     4
+    ]
+   ]
+  },
+  "swap_prediction": "switch"
+ },
+ {
+  "key": "honeycomb",
+  "label": "honeycomb + centres",
+  "d": 2,
+  "A": "honeycomb",
+  "B": "centre",
+  "counts": {
+   "honeycomb": 2,
+   "centre": 1
+  },
+  "range": [
+   "-1",
+   "1"
+  ],
+  "sym_ops_mod_T": 12,
+  "swap_ops_mod_T": 0,
+  "centrosymmetric": true,
+  "site_group": {
+   "honeycomb": "3m (C3v)",
+   "centre": "6mm (D6)"
+  },
+  "site_order": {
+   "honeycomb": 6,
+   "centre": 12
+  },
+  "tau": {
+   "honeycomb": "-1/2",
+   "centre": "1/2"
+  },
+  "tau_sum": "0",
+  "type": "switch",
+  "mu": {
+   "honeycomb": "-1/2",
+   "centre": "1/2"
+  },
+  "distance_rule_decides": {
+   "honeycomb": true,
+   "centre": true
+  },
+  "voronoi_lam0": {
+   "honeycomb": [
+    [
+     3,
+     3
+    ]
+   ],
+   "centre": [
+    [
+     0,
+     6
+    ]
+   ]
+  },
+  "swap_prediction": "(no swap)"
+ },
+ {
+  "key": "kagome",
+  "label": "kagome + centres",
+  "d": 2,
+  "A": "kagome",
+  "B": "centre",
+  "counts": {
+   "kagome": 3,
+   "centre": 1
+  },
+  "range": [
+   "-1",
+   "1"
+  ],
+  "sym_ops_mod_T": 12,
+  "swap_ops_mod_T": 0,
+  "centrosymmetric": true,
+  "site_group": {
+   "kagome": "mm2 (C2v)",
+   "centre": "6mm (D6)"
+  },
+  "site_order": {
+   "kagome": 4,
+   "centre": 12
+  },
+  "tau": {
+   "kagome": "-1",
+   "centre": "1"
+  },
+  "tau_sum": "0",
+  "type": "one like bond only",
+  "mu": {
+   "kagome": "-1/2",
+   "centre": "1"
+  },
+  "distance_rule_decides": {
+   "kagome": false,
+   "centre": true
+  },
+  "voronoi_lam0": {
+   "kagome": [
+    [
+     4,
+     2
+    ]
+   ],
+   "centre": [
+    [
+     0,
+     6
+    ]
+   ]
+  },
+  "swap_prediction": "(no swap)"
+ },
+ {
+  "key": "bcc",
+  "label": "CsCl",
+  "d": 3,
+  "A": "big",
+  "B": "small",
+  "counts": {
+   "big": 1,
+   "small": 1
+  },
+  "range": [
+   "-3",
+   "3"
+  ],
+  "sym_ops_mod_T": 48,
+  "swap_ops_mod_T": 48,
+  "centrosymmetric": true,
+  "site_group": {
+   "big": "m-3m (Oh)",
+   "small": "m-3m (Oh)"
+  },
+  "site_order": {
+   "big": 48,
+   "small": 48
+  },
+  "tau": {
+   "big": "-1",
+   "small": "-1"
+  },
+  "tau_sum": "-2",
+  "type": "gradual",
+  "mu": {
+   "big": "-1",
+   "small": "-1"
+  },
+  "distance_rule_decides": {
+   "big": true,
+   "small": true
+  },
+  "voronoi_lam0": {
+   "big": [
+    [
+     6,
+     8
+    ]
+   ],
+   "small": [
+    [
+     6,
+     8
+    ]
+   ]
+  },
+  "swap_prediction": "gradual"
+ },
+ {
+  "key": "delian",
+  "label": "fluorite",
+  "d": 3,
+  "A": "tet",
+  "B": "oct",
+  "counts": {
+   "tet": 8,
+   "oct": 4
+  },
+  "range": [
+   "-3/8",
+   "3/8"
+  ],
+  "sym_ops_mod_T": 192,
+  "swap_ops_mod_T": 0,
+  "centrosymmetric": true,
+  "site_group": {
+   "tet": "-43m (Td)",
+   "oct": "m-3m (Oh)"
+  },
+  "site_order": {
+   "tet": 24,
+   "oct": 48
+  },
+  "tau": {
+   "tet": "-1/8",
+   "oct": "1/8"
+  },
+  "tau_sum": "0",
+  "type": "switch",
+  "mu": {
+   "tet": "-1/8",
+   "oct": "1/8"
+  },
+  "distance_rule_decides": {
+   "tet": true,
+   "oct": true
+  },
+  "voronoi_lam0": {
+   "oct": [
+    [
+     0,
+     8
+    ]
+   ],
+   "tet": [
+    [
+     6,
+     4
+    ]
+   ]
+  },
+  "swap_prediction": "(no swap)"
+ },
+ {
+  "key": "nacl",
+  "label": "rock salt",
+  "d": 3,
+  "A": "Na",
+  "B": "Cl",
+  "counts": {
+   "Na": 4,
+   "Cl": 4
+  },
+  "range": [
+   "-1",
+   "1"
+  ],
+  "sym_ops_mod_T": 192,
+  "swap_ops_mod_T": 192,
+  "centrosymmetric": true,
+  "site_group": {
+   "Na": "m-3m (Oh)",
+   "Cl": "m-3m (Oh)"
+  },
+  "site_order": {
+   "Na": 48,
+   "Cl": 48
+  },
+  "tau": {
+   "Na": "0",
+   "Cl": "0"
+  },
+  "tau_sum": "0",
+  "type": "switch",
+  "mu": {
+   "Na": "0",
+   "Cl": "0"
+  },
+  "distance_rule_decides": {
+   "Na": true,
+   "Cl": true
+  },
+  "voronoi_lam0": {
+   "Na": [
+    [
+     0,
+     6
+    ]
+   ],
+   "Cl": [
+    [
+     0,
+     6
+    ]
+   ]
+  },
+  "swap_prediction": "switch"
+ },
+ {
+  "key": "zincblende",
+  "label": "zinc blende",
+  "d": 3,
+  "A": "Zn",
+  "B": "S",
+  "counts": {
+   "Zn": 4,
+   "S": 4
+  },
+  "range": [
+   "-3",
+   "3"
+  ],
+  "sym_ops_mod_T": 96,
+  "swap_ops_mod_T": 96,
+  "centrosymmetric": false,
+  "site_group": {
+   "Zn": "-43m (Td)",
+   "S": "-43m (Td)"
+  },
+  "site_order": {
+   "Zn": 24,
+   "S": 24
+  },
+  "tau": {
+   "Zn": "-1",
+   "S": "-1"
+  },
+  "tau_sum": "-2",
+  "type": "gradual",
+  "mu": {
+   "Zn": "1",
+   "S": "1"
+  },
+  "distance_rule_decides": {
+   "Zn": false,
+   "S": false
+  },
+  "voronoi_lam0": {
+   "Zn": [
+    [
+     12,
+     4
+    ]
+   ],
+   "S": [
+    [
+     12,
+     4
+    ]
+   ]
+  },
+  "swap_prediction": "gradual"
+ },
+ {
+  "key": "hcpholes",
+  "label": "hcp holes",
+  "d": 3,
+  "A": "tet",
+  "B": "oct",
+  "counts": {
+   "tet": 4,
+   "oct": 2
+  },
+  "range": [
+   "-11/24",
+   "3/8"
+  ],
+  "sym_ops_mod_T": 24,
+  "swap_ops_mod_T": 0,
+  "centrosymmetric": true,
+  "site_group": {
+   "tet": "3m (C3v)",
+   "oct": "-3m (D3d)"
+  },
+  "site_order": {
+   "tet": 6,
+   "oct": 12
+  },
+  "tau": {
+   "tet": "-11/24",
+   "oct": "-5/24"
+  },
+  "tau_sum": "-2/3",
+  "type": "gradual",
+  "mu": {
+   "tet": "-11/24",
+   "oct": "-5/24"
+  },
+  "distance_rule_decides": {
+   "tet": false,
+   "oct": false
+  },
+  "voronoi_lam0": {
+   "oct": [
+    [
+     2,
+     6
+    ]
+   ],
+   "tet": [
+    [
+     10,
+     3
+    ]
+   ]
+  },
+  "swap_prediction": "(no swap)"
+ },
+ {
+  "key": "a15",
+  "label": "A15",
+  "d": 3,
+  "A": "Si",
+  "B": "Cr",
+  "counts": {
+   "Si": 2,
+   "Cr": 6
+  },
+  "range": [
+   "-5/4",
+   "5/4"
+  ],
+  "sym_ops_mod_T": 48,
+  "swap_ops_mod_T": 0,
+  "centrosymmetric": true,
+  "site_group": {
+   "Si": "m-3 (Th)",
+   "Cr": "-42m (D2d)"
+  },
+  "site_order": {
+   "Si": 24,
+   "Cr": 8
+  },
+  "tau": {
+   "Si": "1/4",
+   "Cr": "-3/4"
+  },
+  "tau_sum": "-1/2",
+  "type": "gradual",
+  "mu": {
+   "Si": "1/4",
+   "Cr": "-3/4"
+  },
+  "distance_rule_decides": {
+   "Si": false,
+   "Cr": true
+  },
+  "voronoi_lam0": {
+   "Si": [
+    [
+     0,
+     12
+    ]
+   ],
+   "Cr": [
+    [
+     10,
+     4
+    ]
+   ]
+  },
+  "swap_prediction": "(no swap)"
+ },
+ {
+  "key": "c15",
+  "label": "C15",
+  "d": 3,
+  "A": "Mg",
+  "B": "Cu",
+  "counts": {
+   "Mg": 8,
+   "Cu": 16
+  },
+  "range": [
+   "-11",
+   "11"
+  ],
+  "sym_ops_mod_T": 192,
+  "swap_ops_mod_T": 0,
+  "centrosymmetric": true,
+  "site_group": {
+   "Mg": "-43m (Td)",
+   "Cu": "-3m (D3d)"
+  },
+  "site_order": {
+   "Mg": 24,
+   "Cu": 12
+  },
+  "tau": {
+   "Mg": "-5",
+   "Cu": "-9"
+  },
+  "tau_sum": "-14",
+  "type": "gradual",
+  "mu": {
+   "Mg": "-5",
+   "Cu": "-7"
+  },
+  "distance_rule_decides": {
+   "Mg": true,
+   "Cu": false
+  },
+  "voronoi_lam0": {
+   "Mg": [
+    [
+     4,
+     12
+    ]
+   ],
+   "Cu": [
+    [
+     6,
+     6
+    ]
+   ]
+  },
+  "swap_prediction": "(no swap)"
+ },
+ {
+  "key": "hbn",
+  "label": "h-BN (control)",
+  "d": 2,
+  "A": "B",
+  "B": "N",
+  "counts": {
+   "B": 1,
+   "N": 1
+  },
+  "range": [
+   "-1",
+   "1"
+  ],
+  "sym_ops_mod_T": 6,
+  "swap_ops_mod_T": 6,
+  "centrosymmetric": false,
+  "site_group": {
+   "B": "3m (C3v)",
+   "N": "3m (C3v)"
+  },
+  "site_order": {
+   "B": 6,
+   "N": 6
+  },
+  "tau": {
+   "B": "0",
+   "N": "0"
+  },
+  "tau_sum": "0",
+  "type": "switch",
+  "mu": {
+   "B": "1/2",
+   "N": "1/2"
+  },
+  "distance_rule_decides": {
+   "B": false,
+   "N": false
+  },
+  "voronoi_lam0": {
+   "B": [
+    [
+     0,
+     3
+    ]
+   ],
+   "N": [
+    [
+     0,
+     3
+    ]
+   ]
+  },
+  "swap_prediction": "switch"
+ },
+ {
+  "key": "sodalite",
+  "label": "sodalite (control)",
+  "d": 3,
+  "A": "Si",
+  "B": "Al",
+  "counts": {
+   "Si": 6,
+   "Al": 6
+  },
+  "range": [
+   "-2",
+   "2"
+  ],
+  "sym_ops_mod_T": 48,
+  "swap_ops_mod_T": 48,
+  "centrosymmetric": true,
+  "site_group": {
+   "Si": "-42m (D2d)",
+   "Al": "-42m (D2d)"
+  },
+  "site_order": {
+   "Si": 8,
+   "Al": 8
+  },
+  "tau": {
+   "Si": "0",
+   "Al": "0"
+  },
+  "tau_sum": "0",
+  "type": "switch",
+  "mu": {
+   "Si": "0",
+   "Al": "0"
+  },
+  "distance_rule_decides": {
+   "Si": true,
+   "Al": true
+  },
+  "voronoi_lam0": {
+   "Si": [
+    [
+     0,
+     4
+    ]
+   ],
+   "Al": [
+    [
+     0,
+     4
+    ]
+   ]
+  },
+  "swap_prediction": "switch"
+ }
+]

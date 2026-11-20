@@ -1,0 +1,77 @@
+PASS square: mu_K >= tau_K for both kinds (midpoint is feasible) mu = (0, 0), tau = (0, 0)
+PASS square: distance rule decides kind corner: mu = tau 
+PASS square: distance rule decides kind centre: mu = tau 
+PASS square: swap corollary part 1, tau_A = tau_B 0, 0
+PASS square: swap corollary, type predicted from the equal-weight Voronoi cells = type of the walk like faces at lam=0: {'corner': [(0, 4)], 'centre': [(0, 4)]}; predicted switch, census switch
+PASS square: swap: equal counts of the two kinds 
+PASS square: each kind is one orbit of the symmetry group 
+PASS square: site groups named corner: 4mm (D4); centre: 4mm (D4)
+PASS honeycomb: mu_K >= tau_K for both kinds (midpoint is feasible) mu = (-1/2, 1/2), tau = (-1/2, 1/2)
+PASS honeycomb: distance rule decides kind honeycomb: mu = tau 
+PASS honeycomb: distance rule decides kind centre: mu = tau 
+PASS honeycomb: each kind is one orbit of the symmetry group 
+PASS honeycomb: site groups named honeycomb: 3m (C3v); centre: 6mm (D6)
+PASS kagome: mu_K >= tau_K for both kinds (midpoint is feasible) mu = (-1/2, 1), tau = (-1, 1)
+PASS kagome: distance rule decides kind centre: mu = tau 
+PASS kagome: each kind is one orbit of the symmetry group 
+PASS kagome: site groups named kagome: mm2 (C2v); centre: 6mm (D6)
+PASS bcc: mu_K >= tau_K for both kinds (midpoint is feasible) mu = (-1, -1), tau = (-1, -1)
+PASS bcc: distance rule decides kind big: mu = tau 
+PASS bcc: distance rule decides kind small: mu = tau 
+PASS bcc: swap corollary part 1, tau_A = tau_B -1, -1
+PASS bcc: swap corollary, type predicted from the equal-weight Voronoi cells = type of the walk like faces at lam=0: {'big': [(6, 8)], 'small': [(6, 8)]}; predicted gradual, census gradual
+PASS bcc: swap: equal counts of the two kinds 
+PASS bcc: each kind is one orbit of the symmetry group 
+PASS bcc: site groups named big: m-3m (Oh); small: m-3m (Oh)
+PASS delian: mu_K >= tau_K for both kinds (midpoint is feasible) mu = (-1/8, 1/8), tau = (-1/8, 1/8)
+PASS delian: distance rule decides kind tet: mu = tau 
+PASS delian: distance rule decides kind oct: mu = tau 
+PASS delian: each kind is one orbit of the symmetry group 
+PASS delian: site groups named tet: -43m (Td); oct: m-3m (Oh)
+PASS nacl: mu_K >= tau_K for both kinds (midpoint is feasible) mu = (0, 0), tau = (0, 0)
+PASS nacl: distance rule decides kind Na: mu = tau 
+PASS nacl: distance rule decides kind Cl: mu = tau 
+PASS nacl: swap corollary part 1, tau_A = tau_B 0, 0
+PASS nacl: swap corollary, type predicted from the equal-weight Voronoi cells = type of the walk like faces at lam=0: {'Na': [(0, 6)], 'Cl': [(0, 6)]}; predicted switch, census switch
+PASS nacl: swap: equal counts of the two kinds 
+PASS nacl: each kind is one orbit of the symmetry group 
+PASS nacl: site groups named Na: m-3m (Oh); Cl: m-3m (Oh)
+PASS zincblende: mu_K >= tau_K for both kinds (midpoint is feasible) mu = (1, 1), tau = (-1, -1)
+PASS zincblende: swap corollary part 1, tau_A = tau_B -1, -1
+PASS zincblende: swap corollary, type predicted from the equal-weight Voronoi cells = type of the walk like faces at lam=0: {'Zn': [(12, 4)], 'S': [(12, 4)]}; predicted gradual, census gradual
+PASS zincblende: swap: equal counts of the two kinds 
+PASS zincblende: each kind is one orbit of the symmetry group 
+PASS zincblende: site groups named Zn: -43m (Td); S: -43m (Td)
+PASS hcpholes: mu_K >= tau_K for both kinds (midpoint is feasible) mu = (-11/24, -5/24), tau = (-11/24, -5/24)
+PASS hcpholes: each kind is one orbit of the symmetry group 
+PASS hcpholes: site groups named tet: 3m (C3v); oct: -3m (D3d)
+PASS a15: mu_K >= tau_K for both kinds (midpoint is feasible) mu = (1/4, -3/4), tau = (1/4, -3/4)
+PASS a15: distance rule decides kind Cr: mu = tau 
+PASS a15: each kind is one orbit of the symmetry group 
+PASS a15: site groups named Si: m-3 (Th); Cr: -42m (D2d)
+PASS c15: mu_K >= tau_K for both kinds (midpoint is feasible) mu = (-5, -7), tau = (-5, -9)
+PASS c15: distance rule decides kind Mg: mu = tau 
+PASS c15: each kind is one orbit of the symmetry group 
+PASS c15: site groups named Mg: -43m (Td); Cu: -3m (D3d)
+PASS hbn: mu_K >= tau_K for both kinds (midpoint is feasible) mu = (1/2, 1/2), tau = (0, 0)
+PASS hbn: swap corollary part 1, tau_A = tau_B 0, 0
+PASS hbn: swap corollary, type predicted from the equal-weight Voronoi cells = type of the walk like faces at lam=0: {'B': [(0, 3)], 'N': [(0, 3)]}; predicted switch, census switch
+PASS hbn: swap: equal counts of the two kinds 
+PASS hbn: each kind is one orbit of the symmetry group 
+PASS hbn: site groups named B: 3m (C3v); N: 3m (C3v)
+PASS sodalite: mu_K >= tau_K for both kinds (midpoint is feasible) mu = (0, 0), tau = (0, 0)
+PASS sodalite: distance rule decides kind Si: mu = tau 
+PASS sodalite: distance rule decides kind Al: mu = tau 
+PASS sodalite: swap corollary part 1, tau_A = tau_B 0, 0
+PASS sodalite: swap corollary, type predicted from the equal-weight Voronoi cells = type of the walk like faces at lam=0: {'Si': [(0, 4)], 'Al': [(0, 4)]}; predicted switch, census switch
+PASS sodalite: swap: equal counts of the two kinds 
+PASS sodalite: each kind is one orbit of the symmetry group 
+PASS sodalite: site groups named Si: -42m (D2d); Al: -42m (D2d)
+PASS control (expected to break the swap corollary's conclusion without a swap): honeycomb + centres has like neighbours at lam = 0 and yet a single switch (at -1/2); the hypothesis is needed 
+PASS control: fluorite has no swap and tau_A != tau_B (the swap identity tau_A = tau_B fails without a swap) 
+PASS site symmetry alone does not decide the type: CsCl and rock salt both have site groups m-3m (Oh) for both kinds, both centrosymmetric with a kind swap, and CsCl is gradual (tau sum -2), rock salt a switch (0) 
+PASS CsCl in dimension 1: like-pair value l^2/4 - delta^2 = 2 - d, float LP agrees exact midpoint 1, float LP 1.000000000000
+PASS CsCl in dimension 2: like-pair value l^2/4 - delta^2 = 2 - d, float LP agrees exact midpoint 0, float LP 0.000000000000
+PASS CsCl in dimension 3: like-pair value l^2/4 - delta^2 = 2 - d, float LP agrees exact midpoint -1, float LP -1.000000000000
+PASS CsCl in dimension 4: like-pair value l^2/4 - delta^2 = 2 - d, float LP agrees exact midpoint -2, float LP -2.000000000000
+PASS square + centres is the d = 2 member (tau = 0, switch) and CsCl the d = 3 member (tau = -1, gradual), in the units of the census (half edge 1) 

@@ -1,0 +1,16 @@
+od: N = 20, m = 3, theta = pi/5, mu_f = 1.026531522328292546330643815932361730051
+PASS od: Corollary 7 closed form = the earlier study's 140-digit mu_f (to 1e-100) diff 0.0
+  36 corner-plane triples feasible; R^2 = 1.66873708001009457235966390089874069885; farthest corners 12, plane kinds [('B', 'B', 'B')]
+  r/R = 0.774115996447
+PASS od: r/R = Table 1 of #111 (10 digits) 0.774115996447
+PASS od: mu_f > 1, so r = 1
+PASS od: exact R^2 expression agrees with the corner search to 1e-70
+  minimal polynomial of R^2 found in 0.1 s, degree 2
+PASS od: minimal polynomial irreducible over Q
+PASS od: R^2 is a root (80 digits)
+  od: degree 2, real roots 2 of 2
+  polynomial: x**2 - 218*x + 361
+  discriminant primes: [2, 3, 5]
+PASS control O ∩ D: (R/r)^2 = 109 - 48 sqrt5 (Theorem 4A) x**2 - 218*x + 361
+7/7 PASS
+FINAL ok

@@ -1,0 +1,16 @@
+PASS every station except the Cleo star is convex with all stored points as corners I: 12 corners, 20 facets; Cleo star: 32 corners, 12 facets; D′: 20 corners, 12 facets; ID: 30 corners, 32 facets; OG: 102 corners, 80 facets; rTI: 90 corners, 92 facets; TI: 60 corners, 32 facets; H: 80 corners, 102 facets; jtI: 92 corners, 90 facets; RT: 32 corners, 30 facets; M: 32 corners, 60 facets; I·φ³: 12 corners, 20 facets
+PASS control: I·φ³ = φ³ I exactly 
+PASS control: every nesting S_j ⊂ hull(S_j+1) holds exactly (11 steps) 
+PASS the symmetry group of I has 120 elements (exact) 
+PASS every station's corner set is invariant under all 120 symmetries of I (so one face cone of the star suffices) []
+PASS control (star test): s·I lies in the Cleo star exactly for s <= 1 (its corners leave the star at once) 1
+PASS control (star test): the Cleo star's own hull D′ is not inside it (s < 1) 9/4 − 3/4√5
+PASS control that fails as it should: RT ⊄ TI 
+PASS windows computed for 11 convex stations × 11 gaps 
+PASS controls: A(1) = pi (cube edge flattens: the rhombic dodecahedron's rhombi), B(1) = 2pi/3 (RD's 120°), A(1/2) = B(1/2) = arccos(-4/5) (tetrakis hexahedron) 
+PASS control: golden polars' angles as in #54 Remarks (153.43°, 136.35° / 131.81°, 150.77°) 
+PASS pass control: h = 2 − √3 gives A(h) = 2π/3 exactly (three cube edges close) 
+PASS pass control: the elimination finds h = 2 − √3 among the roots of 3·A(h) = 2π 
+PASS control: Tricap volume (3 − √5)/24 = 1/(12φ²) as in #54 0.031830500937508756
+PASS (b) no h in (0,1) lets P(h) and P(1−h) pass the edge test together candidates [('0.2679491924', {'A(h)': True, 'B(h)': False, 'A(1−h)': False, 'B(1−h)': False}), ('0.2273398554', {'A(h)': True, 'B(h)': False, 'A(1−h)': False, 'B(1−h)': True}), ('0.1601505699', {'A(h)': True, 'B(h)': False, 'A(1−h)': False, 'B(1−h)': True}), ('0.8398494300', {'A(h)': False, 'B(h)': True, 'A(1−h)': True, 'B(1−h)': False}), ('0.7726601445', {'A(h)': False, 'B(h)': True, 'A(1−h)': True, 'B(1−h)': False}), ('0.7320508075', {'A(h)': False, 'B(h)': False, 'A(1−h)': True, 'B(1−h)': False})]
+PASS (b) with the Tricaps: some edge of the golden polars still has no closing combination {'A(1/φ)': True, 'B(1/φ)': False, 'A(1/φ²)': True, 'B(1/φ²)': False}

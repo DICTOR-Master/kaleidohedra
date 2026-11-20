@@ -1,0 +1,82 @@
+PASS every station except the Cleo star is convex with all stored points as corners I: 12 corners, 20 facets; Cleo star: 32 corners, 12 facets; D′: 20 corners, 12 facets; ID: 30 corners, 32 facets; OG: 102 corners, 80 facets; rTI: 90 corners, 92 facets; TI: 60 corners, 32 facets; H: 80 corners, 102 facets; jtI: 92 corners, 90 facets; RT: 32 corners, 30 facets; M: 32 corners, 60 facets; I·φ³: 12 corners, 20 facets
+PASS control: I·φ³ = φ³ I exactly
+PASS control: every nesting S_j ⊂ hull(S_j+1) holds exactly (11 steps)
+PASS the symmetry group of I has 120 elements (exact)
+PASS every station's corner set is invariant under all 120 symmetries of I (so one face cone of the star suffices) []
+PASS control (star test): s·I lies in the Cleo star exactly for s <= 1 (its corners leave the star at once) 1
+PASS control (star test): the Cleo star's own hull D′ is not inside it (s < 1) 9/4 − 3/4√5
+PASS control that fails as it should: RT ⊄ TI
+  WINDOW {'X': 'D′', 'i': 2, 'j': 2, 'gap': 'D′ → ID', 'lo': '1', 'hi': '3/4 + 1/4√5', 'lo_f': 1.0, 'hi_f': 1.3090169943749475, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 1}
+  WINDOW {'X': 'ID', 'i': 3, 'j': 10, 'gap': 'M → I·φ³', 'lo': '1/2 + 1/2√5', 'hi': '1/2 + 1/2√5', 'lo_f': 1.618033988749895, 'hi_f': 1.618033988749895, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 8}
+  WINDOW {'X': 'ID', 'i': 3, 'j': 13, 'gap': 'D′·φ³ → ID·φ³', 'lo': '1 + 1√5', 'hi': '2 + 1√5', 'lo_f': 3.23606797749979, 'hi_f': 4.23606797749979, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 11}
+  WINDOW {'X': 'OG', 'i': 4, 'j': 4, 'gap': 'OG → rTI', 'lo': '1', 'hi': '13/3 − 22/15√5', 'lo_f': 1.0, 'hi_f': 1.0537669663336415, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 1}
+  WINDOW {'X': 'OG', 'i': 4, 'j': 10, 'gap': 'M → I·φ³', 'lo': '1/2 + 1/2√5', 'hi': '1/2 + 1/2√5', 'lo_f': 1.618033988749895, 'hi_f': 1.618033988749895, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 7}
+  WINDOW {'X': 'OG', 'i': 4, 'j': 13, 'gap': 'D′·φ³ → ID·φ³', 'lo': '1 + 1√5', 'hi': '5/3 + 4/5√5', 'lo_f': 3.23606797749979, 'hi_f': 3.4555210486664985, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 10}
+  WINDOW {'X': 'rTI', 'i': 5, 'j': 10, 'gap': 'M → I·φ³', 'lo': '2/3 + 1/3√5', 'hi': '2/3 + 1/3√5', 'lo_f': 1.4120226591665965, 'hi_f': 1.4120226591665965, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 6}
+  WINDOW {'X': 'rTI', 'i': 5, 'j': 13, 'gap': 'D′·φ³ → ID·φ³', 'lo': '4/3 + 2/3√5', 'hi': '31/19 + 14/19√5', 'lo_f': 2.824045318333193, 'hi_f': 3.2792079834208976, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 9}
+  WINDOW {'X': 'rTI', 'i': 5, 'j': 14, 'gap': 'ID·φ³ → OG·φ³', 'lo': '11/6 + 5/6√5', 'hi': '11/6 + 5/6√5', 'lo_f': 3.696723314583158, 'hi_f': 3.696723314583158, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 10}
+  WINDOW {'X': 'rTI', 'i': 5, 'j': 15, 'gap': 'OG·φ³ → rTI·φ³', 'lo': '720/361 + 327/361√5', 'hi': '2 + 1√5', 'lo_f': 4.019928611197871, 'hi_f': 4.23606797749979, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 11}
+  WINDOW {'X': 'TI', 'i': 6, 'j': 10, 'gap': 'M → I·φ³', 'lo': '2/3 + 1/3√5', 'hi': '2/3 + 1/3√5', 'lo_f': 1.4120226591665965, 'hi_f': 1.4120226591665965, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 5}
+  WINDOW {'X': 'TI', 'i': 6, 'j': 13, 'gap': 'D′·φ³ → ID·φ³', 'lo': '4/3 + 2/3√5', 'hi': '31/19 + 14/19√5', 'lo_f': 2.824045318333193, 'hi_f': 3.2792079834208976, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 8}
+  WINDOW {'X': 'TI', 'i': 6, 'j': 15, 'gap': 'OG·φ³ → rTI·φ³', 'lo': '720/361 + 327/361√5', 'hi': '423/218 + 207/218√5', 'lo_f': 4.019928611197871, 'hi_f': 4.063605831846131, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 10}
+  WINDOW {'X': 'H', 'i': 7, 'j': 10, 'gap': 'M → I·φ³', 'lo': '11/18 + 5/18√5', 'hi': '11/18 + 5/18√5', 'lo_f': 1.2322411048610529, 'hi_f': 1.2322411048610529, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 4}
+  WINDOW {'X': 'H', 'i': 7, 'j': 13, 'gap': 'D′·φ³ → ID·φ³', 'lo': '11/9 + 5/9√5', 'hi': '29/18 + 13/18√5', 'lo_f': 2.4644822097221057, 'hi_f': 3.2260490948609593, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 7}
+  WINDOW {'X': 'jtI', 'i': 8, 'j': 9, 'gap': 'RT → M', 'lo': '3/2 − 1/6√5', 'hi': '3/2 − 1/6√5', 'lo_f': 1.127322003750035, 'hi_f': 1.127322003750035, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 2}
+  WINDOW {'X': 'jtI', 'i': 8, 'j': 10, 'gap': 'M → I·φ³', 'lo': '11/18 + 5/18√5', 'hi': '11/18 + 5/18√5', 'lo_f': 1.2322411048610529, 'hi_f': 1.2322411048610529, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 3}
+  WINDOW {'X': 'jtI', 'i': 8, 'j': 13, 'gap': 'D′·φ³ → ID·φ³', 'lo': '11/9 + 5/9√5', 'hi': '3/2 + 61/90√5', 'lo_f': 2.4644822097221057, 'hi_f': 3.0155571847498575, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 6}
+  WINDOW {'X': 'jtI', 'i': 8, 'j': 15, 'gap': 'OG·φ³ → rTI·φ³', 'lo': '11/6 + 5/6√5', 'hi': '11/6 + 5/6√5', 'lo_f': 3.696723314583158, 'hi_f': 3.696723314583158, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 8}
+  WINDOW {'X': 'RT', 'i': 9, 'j': 10, 'gap': 'M → I·φ³', 'lo': '11/18 + 5/18√5', 'hi': '11/18 + 5/18√5', 'lo_f': 1.2322411048610529, 'hi_f': 1.2322411048610529, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 2}
+  WINDOW {'X': 'RT', 'i': 9, 'j': 11, 'gap': 'I·φ³ → Cleo star·φ³', 'lo': '2/3 + 1/3√5', 'hi': '2/3 + 1/3√5', 'lo_f': 1.4120226591665965, 'hi_f': 1.4120226591665965, 'window': True, 'upper_star_exact': True, 'steps_X_to_sX': 3}
+  WINDOW {'X': 'RT', 'i': 9, 'j': 13, 'gap': 'D′·φ³ → ID·φ³', 'lo': '11/9 + 5/9√5', 'hi': '4/3 + 3/5√5', 'lo_f': 2.4644822097221057, 'hi_f': 2.674974119833207, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 5}
+  WINDOW {'X': 'M', 'i': 10, 'j': 13, 'gap': 'D′·φ³ → ID·φ³', 'lo': '2', 'hi': '3/2 + 1/2√5', 'lo_f': 2.0, 'hi_f': 2.618033988749895, 'window': True, 'upper_star_exact': False, 'steps_X_to_sX': 4}
+PASS windows computed for 11 convex stations × 11 gaps
+  I: best gap I → Cleo star: need s >= 1.000000 and s <= 1.000000 (ratio 1.000000)
+  D′: best gap D′ → ID: need s >= 1.000000 and s <= 1.309017 (ratio 1.309017)
+  ID: best gap D′·φ³ → ID·φ³: need s >= 3.236068 and s <= 4.236068 (ratio 1.309017)
+  OG: best gap D′·φ³ → ID·φ³: need s >= 3.236068 and s <= 3.455521 (ratio 1.067815)
+  rTI: best gap D′·φ³ → ID·φ³: need s >= 2.824045 and s <= 3.279208 (ratio 1.161174)
+  TI: best gap D′·φ³ → ID·φ³: need s >= 2.824045 and s <= 3.279208 (ratio 1.161174)
+  H: best gap D′·φ³ → ID·φ³: need s >= 2.464482 and s <= 3.226049 (ratio 1.309017)
+  jtI: best gap D′·φ³ → ID·φ³: need s >= 2.464482 and s <= 3.015557 (ratio 1.223607)
+  RT: best gap D′·φ³ → ID·φ³: need s >= 2.464482 and s <= 2.674974 (ratio 1.085410)
+  M: best gap D′·φ³ → ID·φ³: need s >= 2.000000 and s <= 2.618034 (ratio 1.309017)
+  I·φ³: best gap I·φ³ → Cleo star·φ³: need s >= 1.000000 and s <= 1.000000 (ratio 1.000000)
+  triple ['A(h)', 'A(h)', 'A(h)'] roots in (0,1): ['0.26794919243112270647']
+  triple ['A(h)', 'A(h)', 'B(h)'] roots in (0,1): []
+  triple ['A(h)', 'A(h)', 'A(1−h)'] roots in (0,1): []
+  triple ['A(h)', 'A(h)', 'B(1−h)'] roots in (0,1): ['0.22733985545120622702']
+  triple ['A(h)', 'B(h)', 'B(h)'] roots in (0,1): []
+  triple ['A(h)', 'B(h)', 'A(1−h)'] roots in (0,1): []
+  triple ['A(h)', 'B(h)', 'B(1−h)'] roots in (0,1): []
+  triple ['A(h)', 'A(1−h)', 'A(1−h)'] roots in (0,1): []
+  triple ['A(h)', 'A(1−h)', 'B(1−h)'] roots in (0,1): []
+  triple ['A(h)', 'B(1−h)', 'B(1−h)'] roots in (0,1): ['0.16015056991550916838']
+  triple ['B(h)', 'B(h)', 'B(h)'] roots in (0,1): []
+  triple ['B(h)', 'B(h)', 'A(1−h)'] roots in (0,1): ['0.83984943008449083162']
+  triple ['B(h)', 'B(h)', 'B(1−h)'] roots in (0,1): []
+  triple ['B(h)', 'A(1−h)', 'A(1−h)'] roots in (0,1): ['0.77266014454879377298']
+  triple ['B(h)', 'A(1−h)', 'B(1−h)'] roots in (0,1): []
+  triple ['B(h)', 'B(1−h)', 'B(1−h)'] roots in (0,1): []
+  triple ['A(1−h)', 'A(1−h)', 'A(1−h)'] roots in (0,1): ['0.73205080756887729353']
+  triple ['A(1−h)', 'A(1−h)', 'B(1−h)'] roots in (0,1): []
+  triple ['A(1−h)', 'B(1−h)', 'B(1−h)'] roots in (0,1): []
+  triple ['B(1−h)', 'B(1−h)', 'B(1−h)'] roots in (0,1): []
+  candidate h = 0.2679491924311227064725537 {'A(h)': True, 'B(h)': False, 'A(1−h)': False, 'B(1−h)': False} both pass: False
+  candidate h = 0.2273398554512062270187823 {'A(h)': True, 'B(h)': False, 'A(1−h)': False, 'B(1−h)': True} both pass: False
+  candidate h = 0.160150569915509168376837 {'A(h)': True, 'B(h)': False, 'A(1−h)': False, 'B(1−h)': True} both pass: False
+  candidate h = 0.839849430084490831623163 {'A(h)': False, 'B(h)': True, 'A(1−h)': True, 'B(1−h)': False} both pass: False
+  candidate h = 0.7726601445487937729812177 {'A(h)': False, 'B(h)': True, 'A(1−h)': True, 'B(1−h)': False} both pass: False
+  candidate h = 0.7320508075688772935274463 {'A(h)': False, 'B(h)': False, 'A(1−h)': True, 'B(1−h)': False} both pass: False
+PASS controls: A(1) = pi (cube edge flattens: the rhombic dodecahedron's rhombi), B(1) = 2pi/3 (RD's 120°), A(1/2) = B(1/2) = arccos(-4/5) (tetrakis hexahedron)
+PASS control: golden polars' angles as in #54 Remarks (153.43°, 136.35° / 131.81°, 150.77°)
+PASS pass control: h = 2 − √3 gives A(h) = 2π/3 exactly (three cube edges close)
+PASS pass control: the elimination finds h = 2 − √3 among the roots of 3·A(h) = 2π
+PASS control: Tricap volume (3 − √5)/24 = 1/(12φ²) as in #54 0.031830500937508756
+  angles (deg): {'A(1/φ)': '153.434948823', 'B(1/φ)': '136.353072891', 'A(1/φ²)': '131.810314896', 'B(1/φ²)': '150.771347172', 'Tricap1': '116.565051177', 'Tricap2': '37.3773681406', 'pi (face interior)': '180.0'}
+  combinations closing 2π: [['A(1/φ)', 'A(1/φ²)', 'Tricap2', 'Tricap2']]
+  nearest misses (deg): [(0.5074704948056743, ['A(1/φ²)', 'Tricap1', 'Tricap2', 'Tricap2', 'Tricap2'])]
+  (a) 23 proper windows (1 < s < φ³) for a scaled station inside one turn
+PASS (b) no h in (0,1) lets P(h) and P(1−h) pass the edge test together candidates [('0.2679491924', {'A(h)': True, 'B(h)': False, 'A(1−h)': False, 'B(1−h)': False}), ('0.2273398554', {'A(h)': True, 'B(h)': False, 'A(1−h)': False, 'B(1−h)': True}), ('0.1601505699', {'A(h)': True, 'B(h)': False, 'A(1−h)': False, 'B(1−h)': True}), ('0.8398494300', {'A(h)': False, 'B(h)': True, 'A(1−h)': True, 'B(1−h)': False}), ('0.7726601445', {'A(h)': False, 'B(h)': True, 'A(1−h)': True, 'B(1−h)': False}), ('0.7320508075', {'A(h)': False, 'B(h)': False, 'A(1−h)': True, 'B(1−h)': False})]
+PASS (b) with the Tricaps: some edge of the golden polars still has no closing combination {'A(1/φ)': True, 'B(1/φ)': False, 'A(1/φ²)': True, 'B(1/φ²)': False}
+16/16 PASS
+FINAL ok

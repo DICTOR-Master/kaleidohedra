@@ -1,0 +1,17 @@
+td: theta = 5*pi/24, c = cos(5*pi/12) of degree 4
+PASS td: ba^2 = 1/3 + (2/15)√5 exactly
+PASS td: bu^2 = 1/6 + (-1/30)√5 exactly
+PASS td: ba*bu = 1/6 + (1/30)√5 exactly
+PASS td: tan^2(pi/m) = 3 + (0)√5 exactly
+PASS td: kappa = rho^2 (B-solid corner at face distance 1) = 15 + (-6)√5 exactly
+  kappa = 15 - 6*s, R^2 = 1.780578767490521713029785733501241702811
+PASS td: R^2 = kappa mu_f^2 agrees with the corner search (radii_fields.py) to 1e-38
+  eliminant degree 16
+PASS td: exactly one irreducible factor of the eliminant vanishes at R^2 (gap: others >= 1.0)
+PASS td: minimal polynomial irreducible over Q
+  td: minimal polynomial of (R/r)^2, degree 16, real roots 12:
+  Y**16 - 2480*Y**15 + 1675096*Y**14 - 177829328*Y**13 + 7571346940*Y**12 - 149471190320*Y**11 + 1279295060392*Y**10 - 2954760706256*Y**9 + 14841544631974*Y**8 - 513853873867152*Y**7 + 3791213388985320*Y**6 - 12227865792686064*Y**5 + 21073471473201084*Y**4 - 20605838160123792*Y**3 + 10926297454205592*Y**2 - 2443317420261744*Y + 99586049276961
+  discriminant primes (trial division to 1e6): [2, 3, 5, 7, 13, 23, 61, 89, 113, 197, 241, 313, 1129, 1889, 5581, 10067, 415447]
+  td: not Galois (both real and non-real conjugates): in no field of a regular polygon
+8/8 PASS
+FINAL ok

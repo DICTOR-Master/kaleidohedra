@@ -1,0 +1,8 @@
+PASS td: ba^2 = 1/3 + (2/15)√5 exactly 
+PASS td: bu^2 = 1/6 + (-1/30)√5 exactly 
+PASS td: ba*bu = 1/6 + (1/30)√5 exactly 
+PASS td: tan^2(pi/m) = 3 + (0)√5 exactly 
+PASS td: kappa = rho^2 (B-solid corner at face distance 1) = 15 + (-6)√5 exactly 
+PASS td: R^2 = kappa mu_f^2 agrees with the corner search (radii_fields.py) to 1e-38 
+PASS td: exactly one irreducible factor of the eliminant vanishes at R^2 (gap: others >= 1.0) 
+PASS td: minimal polynomial irreducible over Q 
