@@ -83,5 +83,19 @@ both face orders, mirror images included) were generated and tested with the exa
   candidates (laterals of other angles), edges meeting at partial length, or other ring splits. C2 not run, since C1 failed.
 - LEAD: repeat place.py for one of the 38 other candidates, or allow S edges shorter than a (partial overlap along the edge).
 
+## Step 4 (true scutoids at a TI vertex; scripts/scutoid.py, data/scutoid.json): bounded, undecided
+Vertex ledger at a truncated-icosahedron vertex v (exact; spherical vertex figures, area = angle sum - (n-2) pi):
+- C1 seen from v is a spherical quadrilateral with corners 138.19, 200.91, 200.91, 120 degrees: solid angle exactly 5pi/3 (alpha and
+  beta cancel). What C1 leaves at v is the quadrilateral X with corners 221.81 (hh), 159.09, 159.09 (reflex), 240 (ss): 7pi/3.
+- A pyramid apex cone is 5 x 2pi/3 - 3pi = pi/3.
+- New exact constraint on the ss ring (not used by the ring theorem): if all three pyramids round one ss edge had their truncated
+  icosahedron at the same end, three cones of 5pi/3 would meet there (5pi > 4pi). Only the mixed orientations k = 1, 2 survive
+  (k pyramids with base end at v): they leave 5pi/3 at one end of the ss edge and pi/3 at the other, for K pieces and any further C1.
+- So a K at v lives in the 5pi/3 end (or fits in pi/3 at the other end) and its vertex figure must tile what X leaves, with corners
+  T,T at the hh direction and B,Q at both reflex directions, flush with the four C1 faces. A thin spherical polygon can carry any corner
+  angle, so the ledger alone gives no contradiction and no K.
+- Verdict (3), undecided. Obstacle: a spherical tiling search of X (area 7pi/3 or 5pi/3) by apex pentagons (pi/3, corners 120), C1
+  quadrilaterals (5pi/3) and K polygons, then a 3D K from it. Not done; step 3 already shows that the prism K cannot be that K.
+
 ## Status box
 Study note, not published. Exact run on the compute host (sympy Fractions in the basis pi, alpha, beta, gamma). No tiling search.

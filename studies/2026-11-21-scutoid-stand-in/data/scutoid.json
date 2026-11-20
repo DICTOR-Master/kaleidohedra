@@ -1,0 +1,44 @@
+{
+ "C1_cone": "5pi/3",
+ "exterior": "7pi/3",
+ "apex_cone": "pi/3",
+ "ss_orientations": [
+  {
+   "k": 0,
+   "at_v": "1pi",
+   "left_at_v": "3pi",
+   "at_A": "5pi",
+   "left_at_A": "-1pi",
+   "possible": false
+  },
+  {
+   "k": 1,
+   "at_v": "7/3pi",
+   "left_at_v": "5/3pi",
+   "at_A": "11/3pi",
+   "left_at_A": "1/3pi",
+   "possible": true
+  },
+  {
+   "k": 2,
+   "at_v": "11/3pi",
+   "left_at_v": "1/3pi",
+   "at_A": "7/3pi",
+   "left_at_A": "5/3pi",
+   "possible": true
+  },
+  {
+   "k": 3,
+   "at_v": "5pi",
+   "left_at_v": "-1pi",
+   "at_A": "1pi",
+   "left_at_A": "3pi",
+   "possible": false
+  }
+ ],
+ "demands_at_v": {
+  "hh": "T+T = 2pi - hh",
+  "hp": "B+Q",
+  "hp2": "B+Q"
+ }
+}

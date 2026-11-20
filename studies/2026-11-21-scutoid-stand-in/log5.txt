@@ -1,0 +1,8 @@
+C1 vertex cone at a TI vertex: corners (deg) [138.1897, 200.9052, 200.9052, 120.0], solid angle = 5*pi/3 (5pi/3: True)
+exterior polygon X (what C1 leaves at v): corners [221.8103, 159.0948, 159.0948, 240.0], solid angle = 7*pi/3 (7pi/3: True)
+apex cone of a dodecahedron centre pyramid: pi/3
+k=0 pyramids with base end at v: C1/apex cones at v 1 pi (left 3 pi), at A 5 pi (left -1 pi) -> impossible (cones overlap)
+k=1 pyramids with base end at v: C1/apex cones at v 7/3 pi (left 5/3 pi), at A 11/3 pi (left 1/3 pi) -> possible
+k=2 pyramids with base end at v: C1/apex cones at v 11/3 pi (left 1/3 pi), at A 7/3 pi (left 5/3 pi) -> possible
+k=3 pyramids with base end at v: C1/apex cones at v 5 pi (left -1 pi), at A 1 pi (left 3 pi) -> impossible (cones overlap)
+FINAL ok
