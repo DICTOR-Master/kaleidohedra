@@ -1,0 +1,94 @@
+--- Dodecahedron: K = phi
+    sigma[sqrt5->+]: K->1.618033989  sigma(K)=-K:False  x1->0.3333333333 x2->0.2165423647  swaps cuts:False  conjugate valid(0<x<1/2): True,True
+    sigma[sqrt5->-]: K->-0.6180339888  sigma(K)=-K:False  x1->0.3333333333 x2->0.4198212717  swaps cuts:False  conjugate valid(0<x<1/2): True,True
+ok   Dodecahedron: identity cuts x1=0.33333333, x2=0.21654236
+ok   Dodecahedron: literal rule (False) <=> twins (False) 
+ok   Dodecahedron: refined rule (False) <=> twins (False) 
+--- Icosahedron: K = 1
+    sigma[sqrt5->+]: K->1.000000000  sigma(K)=-K:False  x1->0.3819660112 x2->0.2763932022  swaps cuts:False  conjugate valid(0<x<1/2): True,True
+    sigma[sqrt5->-]: K->1.000000000  sigma(K)=-K:False  x1->2.618033989 x2->0.7236067978  swaps cuts:False  conjugate valid(0<x<1/2): False,False
+ok   Icosahedron: identity cuts x1=0.38196601, x2=0.27639320
+ok   Icosahedron: literal rule (False) <=> twins (False) 
+ok   Icosahedron: refined rule (False) <=> twins (False) 
+--- Cube: K = sqrt2
+    sigma[sqrt2->+,sqrt5->+]: K->1.414213562  sigma(K)=-K:False  x1->0.3479432320 x2->0.2331955981  swaps cuts:False  conjugate valid(0<x<1/2): True,True
+    sigma[sqrt2->+,sqrt5->-]: K->1.414213562  sigma(K)=-K:False  x1->-3.469263576 x2->0.8881247455  swaps cuts:False  conjugate valid(0<x<1/2): False,False
+    sigma[sqrt2->-,sqrt5->+]: K->-1.414213562  sigma(K)=-K:True  x1->0.8881247455 x2->-3.469263576  swaps cuts:False  conjugate valid(0<x<1/2): False,False
+    sigma[sqrt2->-,sqrt5->-]: K->-1.414213562  sigma(K)=-K:True  x1->0.2331955981 x2->0.3479432320  swaps cuts:True  conjugate valid(0<x<1/2): True,True
+ok   Cube: identity cuts x1=0.34794323, x2=0.23319560
+ok   Cube: literal rule (True) <=> twins (True) 
+ok   Cube: refined rule (True) <=> twins (True) 
+--- Tetrahedron: K = 1
+    sigma[sqrt5->+]: K->1.000000000  sigma(K)=-K:False  x1->0.3819660112 x2->0.2763932022  swaps cuts:False  conjugate valid(0<x<1/2): True,True
+    sigma[sqrt5->-]: K->1.000000000  sigma(K)=-K:False  x1->2.618033989 x2->0.7236067978  swaps cuts:False  conjugate valid(0<x<1/2): False,False
+ok   Tetrahedron: identity cuts x1=0.38196601, x2=0.27639320
+ok   Tetrahedron: literal rule (False) <=> twins (False) 
+ok   Tetrahedron: refined rule (False) <=> twins (False) 
+--- Octahedron: K = 1
+    sigma[sqrt5->+]: K->1.000000000  sigma(K)=-K:False  x1->0.3819660112 x2->0.2763932022  swaps cuts:False  conjugate valid(0<x<1/2): True,True
+    sigma[sqrt5->-]: K->1.000000000  sigma(K)=-K:False  x1->2.618033989 x2->0.7236067978  swaps cuts:False  conjugate valid(0<x<1/2): False,False
+ok   Octahedron: identity cuts x1=0.38196601, x2=0.27639320
+ok   Octahedron: literal rule (False) <=> twins (False) 
+ok   Octahedron: refined rule (False) <=> twins (False) 
+--- Great dodecahedron (pentagons): K = phi
+    sigma[sqrt5->+]: K->1.618033989  sigma(K)=-K:False  x1->0.3333333333 x2->0.2165423647  swaps cuts:False  conjugate valid(0<x<1/2): True,True
+    sigma[sqrt5->-]: K->-0.6180339888  sigma(K)=-K:False  x1->0.3333333333 x2->0.4198212717  swaps cuts:False  conjugate valid(0<x<1/2): True,True
+ok   Great dodecahedron (pentagons): identity cuts x1=0.33333333, x2=0.21654236
+ok   Great dodecahedron (pentagons): literal rule (False) <=> twins (False) 
+ok   Great dodecahedron (pentagons): refined rule (False) <=> twins (False) 
+--- Great icosahedron (triangles): K = 1
+    sigma[sqrt5->+]: K->1.000000000  sigma(K)=-K:False  x1->0.3819660112 x2->0.2763932022  swaps cuts:False  conjugate valid(0<x<1/2): True,True
+    sigma[sqrt5->-]: K->1.000000000  sigma(K)=-K:False  x1->2.618033989 x2->0.7236067978  swaps cuts:False  conjugate valid(0<x<1/2): False,False
+ok   Great icosahedron (triangles): identity cuts x1=0.38196601, x2=0.27639320
+ok   Great icosahedron (triangles): literal rule (False) <=> twins (False) 
+ok   Great icosahedron (triangles): refined rule (False) <=> twins (False) 
+--- Small stellated dodecahedron (pentagrams): K = 1/phi
+    sigma[sqrt5->+]: K->0.6180339888  sigma(K)=-K:False  x1->0.4198212717 x2->0.3333333333  swaps cuts:False  conjugate valid(0<x<1/2): True,True
+    sigma[sqrt5->-]: K->-1.618033989  sigma(K)=-K:False  x1->0.2165423647 x2->0.3333333333  swaps cuts:False  conjugate valid(0<x<1/2): True,True
+ok   Small stellated dodecahedron (pentagrams): identity cuts x1=0.41982127, x2=0.33333333
+ok   Small stellated dodecahedron (pentagrams): literal rule (False) <=> twins (False) 
+ok   Small stellated dodecahedron (pentagrams): refined rule (False) <=> twins (False) 
+--- Great stellated dodecahedron (pentagrams): K = 1/phi
+    sigma[sqrt5->+]: K->0.6180339888  sigma(K)=-K:False  x1->0.4198212717 x2->0.3333333333  swaps cuts:False  conjugate valid(0<x<1/2): True,True
+    sigma[sqrt5->-]: K->-1.618033989  sigma(K)=-K:False  x1->0.2165423647 x2->0.3333333333  swaps cuts:False  conjugate valid(0<x<1/2): True,True
+ok   Great stellated dodecahedron (pentagrams): identity cuts x1=0.41982127, x2=0.33333333
+ok   Great stellated dodecahedron (pentagrams): literal rule (False) <=> twins (False) 
+ok   Great stellated dodecahedron (pentagrams): refined rule (False) <=> twins (False) 
+ok   pentagram: x1 = (7+sqrt5)/22 and x2 = 1/3 (Prop 4)
+ok   pentagon: x1 = 1/3 and x2 = (7-sqrt5)/22 (Prop 4)
+ok   cube: x1 = (...) numeric 0.1465.. and sigma gives the other cut (#88, golden-twins study)
+--- Rhombic dodecahedron
+    sigma[sqrt2:+1 sqrt3:+1 sqrt5:+1]: sigma(K)=-K:False swaps cuts:False conjugate valid: greater True, lesser True
+    sigma[sqrt2:+1 sqrt3:+1 sqrt5:-1]: sigma(K)=-K:False swaps cuts:False conjugate valid: greater False, lesser False
+    sigma[sqrt2:+1 sqrt3:-1 sqrt5:+1]: sigma(K)=-K:True swaps cuts:False conjugate valid: greater False, lesser False
+    sigma[sqrt2:+1 sqrt3:-1 sqrt5:-1]: sigma(K)=-K:True swaps cuts:True conjugate valid: greater True, lesser True
+    sigma[sqrt2:-1 sqrt3:+1 sqrt5:+1]: sigma(K)=-K:False swaps cuts:False conjugate valid: greater False, lesser False
+    sigma[sqrt2:-1 sqrt3:+1 sqrt5:-1]: sigma(K)=-K:False swaps cuts:False conjugate valid: greater False, lesser False
+    sigma[sqrt2:-1 sqrt3:-1 sqrt5:+1]: sigma(K)=-K:False swaps cuts:False conjugate valid: greater False, lesser False
+    sigma[sqrt2:-1 sqrt3:-1 sqrt5:-1]: sigma(K)=-K:False swaps cuts:False conjugate valid: greater False, lesser False
+ok   RD control: twins (as the gap study)
+ok   RD: literal (True) <=> twins (True)
+ok   RD: refined (True) <=> twins (True)
+--- Rhombic triacontahedron
+    sigma[s->+s0; sqrt5 -> +1sqrt5]: K->1.538841769  sigma(K)=-K:False  swaps cuts:False  conjugate valid: greater True, lesser True
+    sigma[s->-s0; sqrt5 -> +1sqrt5]: K->-1.538841769  sigma(K)=-K:True  swaps cuts:False  conjugate valid: greater False, lesser False
+    sigma[s->+s1; sqrt5 -> -1sqrt5]: K->-0.3632712640  sigma(K)=-K:False  swaps cuts:False  conjugate valid: greater False, lesser False
+    sigma[s->-s1; sqrt5 -> -1sqrt5]: K->0.3632712640  sigma(K)=-K:False  swaps cuts:False  conjugate valid: greater False, lesser False
+ok   RT control: no twins (as the gap study)
+RT: literal rule gives True, twins False, refined rule gives False
+ok   RT: refined (False) <=> twins (False)
+FAIL RT: literal (True) <=> twins (False)  [expected to FAIL: counterexample s -> -s]
+
+TABLE: solid | field | K | exists sigma(K)=-K | ... and sigma(sqrt5)=-sqrt5 | twins
+Dodecahedron | Q(sqrt5) | phi | False | False | False
+Icosahedron | Q(sqrt5) | 1 | False | False | False
+Cube | Q(sqrt2,sqrt5) | sqrt2 | True | True | True
+Tetrahedron | Q(sqrt5) | 1 | False | False | False
+Octahedron | Q(sqrt5) | 1 | False | False | False
+Great dodecahedron (pentagons) | Q(sqrt5) | phi | False | False | False
+Great icosahedron (triangles) | Q(sqrt5) | 1 | False | False | False
+Small stellated dodecahedron (pentagrams) | Q(sqrt5) | 1/phi | False | False | False
+Great stellated dodecahedron (pentagrams) | Q(sqrt5) | 1/phi | False | False | False
+Rhombic dodecahedron | Q(sqrt2,sqrt3,sqrt5) | (2sqrt3+sqrt6)/4 | True | True | True
+Rhombic triacontahedron | Q(s), s^2=(5+sqrt5)/2 | phi*s/2 | True | False | False
+FINAL ok
