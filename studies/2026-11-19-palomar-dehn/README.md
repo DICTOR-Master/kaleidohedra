@@ -86,3 +86,5 @@ The build in steps can only understate a peak if two heavy modules would run tog
 ## Submission (20 Nov 2026)
 
 Submitted by DICTO 02:19Z (repo DICTOR-Master/dehn-canon-lean, commit 9ea20f6, verification run 44659975000). Verification success 02:29Z; Challenge renderability check passed 03:45Z; automated review 03:48Z: "No problems were identified" (no suggestions; scores are not shown to the submitter); DICTO asked for registration 03:49Z. Palomar has no human sign-off on review outcomes.
+
+Registered on Palomar as **PALOMAR-2026-11-20-000003** (version 1), 20 Nov 2026.
