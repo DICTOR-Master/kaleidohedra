@@ -21,7 +21,7 @@ DICTO's gnomon reaches GET as well. Adding one whole zone layer to k = 8 surface
 
 An independent floating-point check agrees: 200,000 random points are each covered exactly once, and no two faces cross.
 
-**Novelty: not found in the sources checked (below), but provisional.** The full text of Senechal–Taylor 2023 is closed and has not been read. Before any "new" claim it must be confirmed that GET is not among their three nonconvex parallelohedra. The free routes are an NDL copy or a library visit.
+**Novelty: not found in the sources checked (below), but provisional.** *Update 20 Nov 2026:* Marjorie Senechal replied to DICTO that GET and the Senechal–Taylor solids only share similarities, so GET is not among their three (her reply as reported by DICTO; her exact words to be quoted before any public claim). The full text of Senechal–Taylor 2023 is closed and has not been read. Before any "new" claim it must be confirmed that GET is not among their three nonconvex parallelohedra. The free routes are an NDL copy or a library visit.
 
 **Not claimed:**
 - k ≥ 12 is untouched.
@@ -214,3 +214,7 @@ The runs were split across the two compute hosts.
 - `scripts/render2.py`: the figure.
 - `data/`: JSON outputs and logs (`vclass.json`, 1.8 MB, superseded, is kept only on the compute host).
 - `figures/grunbaum-k10-tilers.png`: the figure.
+
+## For the GET paper (DICTO, 17 Nov 2026)
+
+**Bridge sentence (to go in the paper):** GET is built entirely from the two golden rhombohedra of the three-dimensional Penrose tiling (Ammann, 1976; Kramer, 1982), the building blocks of icosahedral quasicrystals, yet its translates fill space on a lattice: a periodic crystal assembled from quasicrystal pieces, a bridge between the periodic and the aperiodic. Like every parallelohedron, it cannot force aperiodicity (it always admits its lattice tiling); Inchbald notes the same for his dimpled triacontahedron, that further rules would be needed for a quasiperiodic structure.
