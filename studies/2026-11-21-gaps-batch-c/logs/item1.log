@@ -1,0 +1,46 @@
+Dharma frame: (3/(2φ))·TI0 under identity matches #35 TI corner for corner (60/60)
+rTI (90) and ID (30) match #35 corner for corner
+OG = Q(μ_TI, φ²): 102 corners, 80 faces
+O = (φ²/2)/(1/2 + 1/2√5) · OG matches #35 O corner for corner (102/102)
+control ID ⊂ O: factor 1, 30 of 30 corners touch   (#35: tight, 30)
+control O ⊂ rTI: factor 195/361 + 66/361√5 = 0.948976, 12 touch   (#35: loose)
+control rTI ⊂ TI: factor 1, 90 of 90 corners touch   (#35: tight, 90)
+room in the step: O may grow by 13/3 - 22/15√5 = 1.053767 before it leaves rTI
+bound: (R_rTI/r_O)² = 243 - 108√5 = 1.504658  (R_rTI/r_O = 1.226645)
+
+Stations (GGC/LGC = Greater/Lesser Golden Cut, #88 Table 2; Golden OGs #91 Theorem 5), D·I·C·T·O order:
+  GGC Dodecahedron               corners  60  (R_S/r_S)² = 1.404369  radius bound passes
+      O ⊂ λS needs λ >= 15/76 + 27/76√5 = 0.991761 (12 corners of O touch);  λS ⊂ rTI needs λ <= 9/124 + 45/124√5 = 0.884057 (60 corners of S touch)
+      => does NOT fit (exact: λ_min > λ_max)
+  LGC Dodecahedron               corners  60  (R_S/r_S)² = 1.446767  radius bound passes
+      O ⊂ λS needs λ >= 15/76 + 27/76√5 = 0.991761 (12 corners of O touch);  λS ⊂ rTI needs λ <= -3/20 + 9/20√5 = 0.856231 (60 corners of S touch)
+      => does NOT fit (exact: λ_min > λ_max)
+  GGC Icosahedron                corners  60  (R_S/r_S)² = 1.187562  radius bound passes
+      O ⊂ λS needs λ >= 405/836 + 159/836√5 = 0.909731 (12 corners of O touch);  λS ⊂ rTI needs λ <= 9/10 = 0.900000 (60 corners of S touch)
+      => does NOT fit (exact: λ_min > λ_max)
+  LGC Icosahedron                corners  60  (R_S/r_S)² = 1.233437  radius bound passes
+      O ⊂ λS needs λ >= 165/76 - 45/76√5 = 0.847065 (12 corners of O touch);  λS ⊂ rTI needs λ <= -45/29 + 63/58√5 = 0.877108 (60 corners of S touch)
+      => FITS for λ in [0.847065, 0.877108]
+  Lesser Golden OG               corners 102  (R_S/r_S)² = 1.155215  radius bound passes
+      O ⊂ λS needs λ >= 33/76 + 69/380√5 = 0.840233 (12 corners of O touch);  λS ⊂ rTI needs λ <= 11/20 + 3/20√5 = 0.885410 (12 corners of S touch)
+      => FITS for λ in [0.840233, 0.885410]
+  Greater Golden OG              corners 102  (R_S/r_S)² = 1.332462  radius bound passes
+      O ⊂ λS needs λ >= 1/4 + 1/4√5 = 0.809017 (90 corners of O touch);  λS ⊂ rTI needs λ <= 27/4 - 53/20√5 = 0.824420 (12 corners of S touch)
+      => FITS for λ in [0.809017, 0.824420]
+  cube cuts (x involves √2, outside Q(√5)) by closed form, see below
+  GGC Tetrahedron                corners  12  (R_S/r_S)² = 3.334369  radius bound FAILS (no position works)
+  LGC Tetrahedron                corners  12  (R_S/r_S)² = 4.200000  radius bound FAILS (no position works)
+  Icosaxes (GGC Octahedron)      corners  24  (R_S/r_S)² = 1.583592  radius bound FAILS (no position works)
+  Unborn Axes (LGC Octahedron)   corners  24  (R_S/r_S)² = 1.800000  radius bound FAILS (no position works)
+  GGC Cube                       x = 0.347943  (R_S/r_S)² = 2.092485  radius bound FAILS (no position works)
+  LGC Cube                       x = 0.233196  (R_S/r_S)² = 2.284738  radius bound FAILS (no position works)
+
+Controls of the λ test:
+  O itself (must fit, λ = 1 .. room)       λ_min 1.000000  λ_max 1.053767  fits True
+  rTI itself (must fit)                    λ_min 0.948976  λ_max 1.000000  fits True
+  ID (must fit? O ⊄ λID for λ <= room)     λ_min 1.225884  λ_max 1.145898  fits False
+  I (Dharma icosahedron)                   λ_min 2.618034  λ_max 2.447214  fits False
+  TI                                       λ_min 0.948976  λ_max 0.959287  fits True
+
+VERDICT: stations that fit: LGC Icosahedron, Lesser Golden OG, Greater Golden OG
+FINAL ok

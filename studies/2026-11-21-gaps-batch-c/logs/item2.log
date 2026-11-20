@@ -1,0 +1,28 @@
+   distinct |x|² values among candidates (D = 1): ['0.308573948138']
+dodecahedron: 20 corners; candidates in B: 120 three-sphere points, 0 arc maxima
+   largest |x| at D = 1: 0.5554943277281333431287991  -> largest width 2|x| = 1.110988655456266686257598
+   face-axis width (#45 main theorem) 2(√(3/4 + r²) - r) = 1.110988655456266686257598;  difference 1.5336e-42
+   attained at 120 candidates, kinds [('vertex', 5)], all on face axes: True; next largest width none (single value) (gap 1.11099)
+   Conjecture 1 for dodecahedron: PROVED
+   distinct |x|² values among candidates (D = 1): ['0.308573948138']
+icosahedron: 12 corners; candidates in B: 20 three-sphere points, 0 arc maxima
+   largest |x| at D = 1: 0.5554943277281333431287991  -> largest width 2|x| = 1.110988655456266686257598
+   face-axis width (#45 main theorem) 2(√(3/4 + r²) - r) = 1.110988655456266686257598;  difference 1.5336e-42
+   attained at 20 candidates, kinds [('vertex', 3)], all on face axes: True; next largest width none (single value) (gap 1.11099)
+   Conjecture 1 for icosahedron: PROVED
+   distinct |x|² values among candidates (D = 1): ['0.389620389972']
+cube: 8 corners; candidates in B: 24 three-sphere points, 0 arc maxima
+   largest |x| at D = 1: 0.6241957945804639735070419  -> largest width 2|x| = 1.248391589160927947014084
+   face-axis width (#45 main theorem) 2(√(3/4 + r²) - r) = 1.248391589160927947014084;  difference -5.9891e-42
+   attained at 24 candidates, kinds [('vertex', 4)], all on face axes: True; next largest width none (single value) (gap 1.24839)
+   Conjecture 1 for cube: PROVED
+   distinct |x|² values among candidates (D = 1): ['0.389620389972']
+octahedron: 6 corners; candidates in B: 8 three-sphere points, 0 arc maxima
+   largest |x| at D = 1: 0.6241957945804639735070419  -> largest width 2|x| = 1.248391589160927947014084
+   face-axis width (#45 main theorem) 2(√(3/4 + r²) - r) = 1.248391589160927947014084;  difference -5.9891e-42
+   attained at 8 candidates, kinds [('vertex', 3)], all on face axes: True; next largest width none (single value) (gap 1.24839)
+   Conjecture 1 for octahedron: PROVED
+control (must exceed): cube, arc maxima without the membership test give |x| = 1.36567539822 > face value 0.62419579458: True
+control (must match #45 widths.log): cube/octahedron 1.248391589161, dodecahedron/icosahedron 1.110988655456 (see lines above)
+VERDICT: Conjecture 1 PROVED for the cube, octahedron, dodecahedron and icosahedron; the tetrahedron part (√3 − √2/2) is the classical Reuleaux tetrahedron value, not re-proved here.
+FINAL ok

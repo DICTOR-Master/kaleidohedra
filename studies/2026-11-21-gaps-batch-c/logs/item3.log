@@ -1,0 +1,9 @@
+AFLOW A12B_cP13_200_j_b-001 (LiH12, theoretical): a = 2.8013 Å, Li 1b at (0.5000000000, 0.5000000000, 0.5000000000), H 12j (0, 0.24009, 0.64734)
+EKP cell (#8): 12j (0, 0.309017, 0.190983), 1b at (1/2, 1/2, 1/2)
+canonical |y|, |z| (mod 1, folded, unordered): AFLOW 0.240090, 0.352660;  EKP 0.190983, 0.309017
+same parameters: False
+  AFLOW: 12 points (0, 0.24009, -0.35266) about 1a; small/large = 0.680797; 30 shortest distances span 0.44123..0.48018 (a = 1) -> not a regular icosahedron
+  EKP: 12 points (0, 0.30902, 0.19098) about 1a; small/large = 0.618034; 30 shortest distances span 0.38197..0.38197 (a = 1) -> regular icosahedron
+control: canonical form invariant under y <-> z, sign changes, lattice translations (pass); and it separates AFLOW from EKP (fail case): True
+VERDICT: the Wyckoff set 1b + 12j of Pm-3 is in AFLOW as the theoretical LiH12 prototype A12B_cP13_200_j_b-001, with different free parameters (a distorted 12-point cluster, not a regular icosahedron); the EKP parameters y = 1/(2φ), z = 1/(2φ²) were not found.
+FINAL ok
