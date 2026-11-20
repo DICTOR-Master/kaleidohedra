@@ -1,0 +1,88 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "subjects": [
+  {
+   "term": "MSC2020 52B10: Three-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B10",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52A15: Convex sets in 3 dimensions (including convex surfaces)",
+   "identifier": "https://zbmath.org/classification/?q=cc:52A15",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52B15: Symmetry properties of polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B15",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 60C05: Combinatorial probability",
+   "identifier": "https://zbmath.org/classification/?q=cc:60C05",
+   "scheme": "url"
+  }
+ ],
+ "version": "1",
+ "publication_date": "2026-11-20",
+ "title": "Fair Dice — The Aequi: Enumerating the Innumerable",
+ "description": "<p>A die is fair in the solid-angle model when every face, seen from the centre, fills the same share 4π/N of the sky. Fair dice are innumerable: every choice of face directions gives a new problem. We show that one rule covers them all. Through the polar body, the solid angle of a face is the integral Gauss curvature at the matching corner of the polar, so a fair die is Alexandrov's problem of prescribing curvature, with equal masses. Theorem A follows from Alexandrov's theorem (1942; proofs by Oliker, 2007, and Bertrand, 2016): a set of N face directions carries a fair die exactly when it satisfies Alexandrov's condition for equal masses, and the die is then unique up to scale. Its symmetry group is exactly the symmetry group of its face directions, so a group that fixes only the centre makes the centre the centroid. For equal masses the condition becomes a finite test, and it always holds when the directions come in opposite pairs. With the rule, the list becomes exact. On the symmetry axes of a cube and an icosahedron that share their three 2-fold axes, under the seven groups of these two frames, there are exactly 149 fair dice with at least two kinds of face, the Aequi of the main catalogue: Ih 4, Oh 4, Td 3, Th 47 and T 91 (each in two hands), none with symmetry exactly O or I; by number of kinds of face, 26 with two, 41 with three, and 82 Aequi Mosaici with four to seven. We number and name all 149. Related solids: with both placements of the icosahedron against the cube there are 1083 more (among them 31 = 2⁵ − 1 with symmetry O and 53 = 2⁶ − 2³ − 3 with symmetry Oh, both counts exact by Theorem A), and below the frame groups a dataset of 4553 in all.</p><p>Builds on Equanimity (#111, DICTO DOI: 10.5281/zenodo.24379796).</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "DICTO",
+  "Aequi",
+  "Aequus",
+  "fair dice",
+  "solid angle",
+  "Alexandrov's problem",
+  "integral Gauss curvature",
+  "polar body",
+  "enumeration",
+  "point groups",
+  "cube",
+  "icosahedron",
+  "Aequi Mosaici",
+  "quasicrystals"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24379796",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1016/j.aim.2007.01.005",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1007/s10711-016-0147-3",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1103/PhysRevLett.53.1951",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1038/324048a0",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}
