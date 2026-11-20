@@ -180,6 +180,51 @@ PS = os.path.join(ST, '2026-11-20-palomar-next-prescore', 'checks')
 for f in ('dihedral4d.log', 'rational_pi.log', 'relation_600_5.log'):
     t = open(os.path.join(PS, f), encoding='utf-8').read(); ok(f'pre-score {f}: FINAL ok', t.rstrip().endswith('FINAL ok'))
 
+
+# ---------------- §6: the Part 2 results ------------------------------------------------------------------------------------
+import part2
+Q = part2.run()
+ok('§6 (i): 5 left and 5 right sets of 120', Q['left_sizes'] == [120] * 5 and Q['right_sizes'] == [120] * 5)
+ok('§6 (i): every left set meets every right set in 24 facets', Q['meet'] == [24]); has('meets each right set in 24 facets')
+ok('§6 (i): the ten sets are distinct', Q['ten_distinct'])
+ok('§6 (i): centres of each set on a regular 600-cell, 12 nearest neighbours', Q['sets_on_600cells']); has('12 nearest neighbours each')
+ok('§6 (ii): right stabiliser of a left set has order 24 (2T: real parts ±1, 0 six times, ±1/2 eight times each)', Q['stab_order'] == 24 and
+   Q['stab_real_parts'] == [-1.0] + [-0.5] * 8 + [0.0] * 6 + [0.5] * 8 + [1.0])
+ok('§6 (ii): 120 · 24 / 2 = 1440 rotations', Q['rotations'] == 1440); has('120 · 24 / 2 = 1440')
+ok('§6: |sum of the 4 corners|² = 7 + 3√5', Q['cc'] == Q5(7, 3))
+ok('Prop 15 (i): smallest turn cos² = (7 + 3√5)/16 ≈ 0.85676', Q['turn_cos2'] == Q5(Fr(7, 16), Fr(3, 16)) and f"{float(Q['turn_cos2']):.5f}" == '0.85676')
+has('(7 + 3√5)/16 ≈ 0.85676')
+ok('Prop 15 (ii): tip inradius² = (7 + 3√5)/8 > 1', Q['tip_inradius2'] == Q5(Fr(7, 8), Fr(3, 8)) and Q['tip_inradius2'] > Q5(1)); has('(7 + 3√5)/8 > 1')
+hr = Q['hull_ratio']
+ok('Prop 15 (ii): solid / hull = 1/(√5 φ) ≈ 0.27639', hr == 1 / (R5 * PHI) and hr == 5 * R5 * PHI * PHI / (25 * PHI * PHI * PHI) and f'{float(hr):.5f}' == '0.27639')
+has('5√5 φ² / (25 φ³) = 1/(√5 φ) ≈ 0.27639')
+ok('Prop 16: 60 mirrors, 300 cross walls, no wall a mirror', Q['n_mirrors'] == 60 and Q['n_walls'] == 300 and not Q['overlap'])
+ok('Prop 16 (i): all 1200 old triangles and 720 cap sides on exactly one mirror, no cross wall', Q['plates_bad'] == 0)
+ok('Prop 16 (i): 20 old triangles and 12 cap sides on each mirror', Q['per_mirror'] == ([20], [12]) and 60 * 20 == 1200 and 60 * 12 == 720)
+has('Each mirror carries 20 old triangles and 12 cap sides')
+ok('Prop 16 (ii): each cap side on the mirror perpendicular to the opposite edge', Q['side_mirror_perp_opposite_edge'])
+ok('Prop 16 (iii): every cap: 10 plates on 10 different mirrors', Q['caps_hidden']); has('10 two-face plates on 10 different mirrors')
+ok('Prop 16 (iv): every tip on 6 mirrors and 27 cross walls', Q['tip_on'] == [(6, 27)]); has('6 mirrors and on 27 cross walls')
+ok('Prop 16 (iv): tip 600-cell: 1200 triangles on 60 cross walls, 20 each, none on a mirror', Q['tip_triangles'] == (1200, 0, 60, [20]))
+has("1200 triangles lie on 60 of P's 300 cross walls, 20 on each")
+c = Q['corner']
+ok('Prop 17 (i): 20 facets at a corner, 5 sets of 4, regular tetrahedra, left and right compounds disjoint', c == (20, [4] * 5, True, True))
+PL = open(os.path.join(ST, '2026-11-20-600cell-5cell-zero', 'checks', 'part2_queens.log'), encoding='utf-8').read()
+ok('part2_queens.log: 50 PASS, FINAL ok', len(re.findall(r'^PASS ', PL, re.M)) == 50 and PL.rstrip().endswith('FINAL ok'))
+for key, s in (('five cosets of 2T in 2I', 'the five cosets of 2T in 2I'), ('pentagon pairing', "12 pentagons (#107) and its 12 cap sides pair off one to one"),
+               ('hidden caps', 'every cap is hidden'), ('heart kind', 'heart kind (#110 Lemma 1)'), ('hull', 'the hull of the capped solid is the tip 600-cell'),
+               ('P inscribed in the tip dual', "P is inscribed in the tip 600-cell's dual 120-cell"), ('ten duals', 'ten different dual 120-cells'),
+               ('not u*P', 'NOT u * P'), ('S5 120', 'S5: 120 elements'), ('orbits 20,20,20,30,30', 'orbits 20,20,20,30,30'),
+               ('A4 of 12', 'exactly 12 rotations (an A4)'), ('A5 on left sets', 'full alternating group A5'), ('odd swap', 'odd elements swap left and right'),
+               ('A: 5 tetrahedra', 'A has exactly 5 tetrahedral cells'), ('transversal', 'one tetrahedron from each left set and one from each right set'),
+               ('120 A copies', 'every cell exactly once'), ('shells', '[20, 20, 30, 60, 60, 60, 20, 60, 20, 60, 60, 60, 30, 20, 20]'),
+               ('shells split', 'every shell splits equally among the five left sets'), ('11-design', 'is an 11-design (both parts are) but not a 12-design'),
+               ('19800', 'degree-12 zonal sum = (19800+0*sqrt5)'), ('stella', 'tetrahedra on them have tips'), ('converse walls', "P's 60 mirrors are cross walls of the tip 600-cell"),
+               ('Hess compound', 'compounds of five tetrahedra')):
+    ok(f'part2 log: {key}', s in PL)
+for s in ('20, 20, 30, 60, 60, 60, 20, 60, 20, 60, 60, 60, 30, 20, 20', '20, 20, 20, 30, 30', '19800', '11-design', '12-design', '(240 points)',
+          'A4 of 12 rotations'.replace('A4', 'A4'), 'ten 600-cells', '±[I×T]', 'Hess, 1876', 'five cosets of 2T in 2I'):
+    has(s)
 # ---------------- figures --------------------------------------------------------------------------------------------------
 fs = json.load(open(os.path.join(HERE, '..', 'data', 'fig-scenes.json')))
 ok('figure asserts all pass', all(c[1] for c in fs['checks']) and len(fs['checks']) >= 26, len(fs['checks']))
