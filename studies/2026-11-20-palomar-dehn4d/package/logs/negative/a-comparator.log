@@ -1,0 +1,52 @@
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+No files to download
+Already decompressed 8915 file(s)
+Resolving dependencies
+Building Challenge
+⚠ [8931/8932] Replayed Challenge
+warning: Challenge.lean:215:8: declaration uses `sorry`
+warning: Challenge.lean:222:8: declaration uses `sorry`
+warning: Challenge.lean:237:8: declaration uses `sorry`
+warning: Challenge.lean:240:8: declaration uses `sorry`
+warning: Challenge.lean:243:8: declaration uses `sorry`
+warning: Challenge.lean:248:8: declaration uses `sorry`
+warning: Challenge.lean:252:8: declaration uses `sorry`
+warning: Challenge.lean:258:8: declaration uses `sorry`
+warning: Challenge.lean:262:8: declaration uses `sorry`
+warning: Challenge.lean:267:8: declaration uses `sorry`
+warning: Challenge.lean:275:8: declaration uses `sorry`
+warning: Challenge.lean:280:8: declaration uses `sorry`
+warning: Challenge.lean:287:8: declaration uses `sorry`
+warning: Challenge.lean:294:8: declaration uses `sorry`
+Build completed successfully (8932 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, DehnHadwiger4D.dehnHadwiger_eq_of_scissorsCongruent, DehnHadwiger4D.dehnHadwigerSum_eq_of_scissors, DehnHadwiger4D.dehnHadwiger_tesseract, DehnHadwiger4D.dehnHadwiger_cell16, DehnHadwiger4D.dehnHadwiger_cell24, DehnHadwiger4D.arccos_quarter_not_ratPi, DehnHadwiger4D.dehnHadwiger_cell5_eq, DehnHadwiger4D.dehnHadwiger_cell5_ne_zero, DehnHadwiger4D.dehnHadwiger_cell120, DehnHadwiger4D.dehnHadwiger_cell600_eq, DehnHadwiger4D.dehnHadwiger_cell600_ne_zero, DehnHadwiger4D.similarCell5_not_scissorsCongruent, DehnHadwiger4D.similarCell600_not_scissorsCongruent, DehnHadwiger4D.similarCell5_not_scissorsCongruent_similarCell600, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+Build completed successfully (8960 jobs).
+error: Challenge and solution theorem statement do not match: 'DehnHadwiger4D.arccos_quarter_not_ratPi'
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, DehnHadwiger4D.dehnHadwiger_eq_of_scissorsCongruent, DehnHadwiger4D.dehnHadwigerSum_eq_of_scissors, DehnHadwiger4D.dehnHadwiger_tesseract, DehnHadwiger4D.dehnHadwiger_cell16, DehnHadwiger4D.dehnHadwiger_cell24, DehnHadwiger4D.arccos_quarter_not_ratPi, DehnHadwiger4D.dehnHadwiger_cell5_eq, DehnHadwiger4D.dehnHadwiger_cell5_ne_zero, DehnHadwiger4D.dehnHadwiger_cell120, DehnHadwiger4D.dehnHadwiger_cell600_eq, DehnHadwiger4D.dehnHadwiger_cell600_ne_zero, DehnHadwiger4D.similarCell5_not_scissorsCongruent, DehnHadwiger4D.similarCell600_not_scissorsCongruent, DehnHadwiger4D.similarCell5_not_scissorsCongruent_similarCell600, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Command exited with non-zero status 1
+	Command being timed: "bash scripts/verify-comparator-kit.sh"
+	User time (seconds): 12.06
+	System time (seconds): 1.23
+	Percent of CPU this job got: 33%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:39.70
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 887672
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 61976
+	Voluntary context switches: 136362
+	Involuntary context switches: 137
+	Swaps: 0
+	File system inputs: 23608
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+cgroup memory.peak (bytes, whole run): 1559740416

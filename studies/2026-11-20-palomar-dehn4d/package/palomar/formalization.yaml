@@ -1,0 +1,276 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4
+# Source rule: SOURCE-BASED (Hadwiger 1954 "formalizes"; no original-proof source).
+version: "v0.4"
+
+project:
+  name: "The Dehn–Hadwiger invariant in four dimensions"
+  description: >-
+    Hadwiger (Math. Ann. 127, 1954) extended Dehn's invariant to convex
+    polytopes in R^n: for the faces of codimension 2, the sum of their
+    (n-2)-dimensional volume tensored with the dihedral angle modulo rational
+    multiples of pi is kept under dissection. This entry defines that invariant
+    from the set alone, in every finite-dimensional real inner product space:
+    at each point the cone of directions that stay in the set, its lineality
+    space, and, where that space has codimension 2, the angle of the cone in
+    the orthogonal plane; the invariant sums (n-2)-dimensional Hausdorff measure
+    tensored with the angle class, in R tensor_Q (R / Q pi). It proves the
+    bridge: scissors-congruent convex polytopes (pieces are convex polytopes
+    moved by isometries) have the same invariant, in every dimension, also for
+    finite unions of convex polytopes. In R^4 it computes the invariant of the
+    six regular polytopes: zero for the tesseract, the 16-cell, the 24-cell and
+    the 120-cell; for the 5-cell it is A5 tensor arccos(1/4) and for the
+    600-cell A600 tensor (4 pi / 3 - arccos(1/4)), where A is the area of the
+    ridge points, positive in both; arccos(1/4) is not a rational multiple of
+    pi (Niven's theorem in Mathlib). Hence no similar copy of the 5-cell or of
+    the 600-cell is scissors congruent to a similar copy of the tesseract, the
+    16-cell, the 24-cell or the 120-cell, and, because the 600-cell's dihedral
+    angle is 4 pi / 3 minus the 5-cell's, their invariants have opposite signs
+    and no similar copy of the 5-cell is scissors congruent to a similar copy of
+    the 600-cell. The non-congruence of the regular simplex and the cube is
+    classical; the entry claims no new mathematics, only the formalization.
+    The 600-cell needs the face structure: at every ridge point the two tight
+    facets are neighbours across a triangle; this is proved from exact Z[phi]
+    data (its 600 facet normals, 120 corners and, for every facet, its four
+    corners and four neighbours) checked by kernel evaluation, with a
+    barycentric argument on the facet. Not formalized: Jessen's converse in R^4
+    (equal volume and equal invariant imply scissors congruence), Hadwiger's
+    other invariants in higher dimensions, and the identification of the set
+    invariant with the face sum for every convex polytope (the six polytopes
+    are computed directly). The library reuses the Dehn Canon development
+    (registered PALOMAR-2026-11-20-000003) for convex polytopes, cones, wedge
+    angles, cuts and dissections. Audience: researchers on scissors congruence,
+    valuations on polytopes and regular polytopes, and Mathlib contributors.
+  authors:
+    - name: "DICTO"
+      orcid: "0009-0001-2620-2036"
+      github: "DICTOR-Master"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - name: "DICTO"
+      orcid: "0009-0001-2620-2036"
+      github: "DICTOR-Master"
+
+classification:
+  arxiv: ["math.MG"]
+  msc2020: ["52B45", "52B11", "52B15", "03B35"]
+
+sources:
+  - title: "Zum Problem der Zerlegungsgleichheit k-dimensionaler Polyeder"
+    authors:
+      - "H. Hadwiger"
+    id: "doi:10.1007/BF01361118"
+    type: "paper"
+    location: "Mathematische Annalen 127 (1954) 170-174"
+    relationship: "formalizes"
+    note: >-
+      Cited only (not read; bibliographic data from Crossref). The invariants of
+      codimension-2 faces (volume tensored with dihedral angle modulo rational
+      multiples of pi) and their invariance under dissection; the entry states
+      the codimension-2 invariant for sets, its invariance, and its values on
+      the regular 4-polytopes.
+    author_endorsement: "n/a"
+  - title: "Vorlesungen über Inhalt, Oberfläche und Isoperimetrie"
+    authors:
+      - "H. Hadwiger"
+    id: "doi:10.1007/978-3-642-94702-5"
+    type: "book"
+    location: "Springer, Berlin, 1957"
+    relationship: "background"
+    note: "Cited only (not read; bibliographic data from Crossref). Hadwiger's account of the invariants."
+    author_endorsement: "n/a"
+  - title: "Ueber den Rauminhalt"
+    authors:
+      - "M. Dehn"
+    id: "doi:10.1007/BF01448001"
+    type: "paper"
+    location: "Mathematische Annalen 55 (1901) 465-478"
+    relationship: "background"
+    note: "Cited only (bibliographic data from Crossref). Dehn's invariant in dimension 3, which the entry generalizes."
+    author_endorsement: "n/a"
+  - title: "The algebra of polyhedra and the Dehn-Sydler theorem"
+    authors:
+      - "B. Jessen"
+    id: "doi:10.7146/math.scand.a-10888"
+    type: "paper"
+    location: "Mathematica Scandinavica 22 (1968) 241-256"
+    relationship: "background"
+    note: "Cited only (bibliographic data from Crossref). The tensor form of the invariant and the converse in dimension 3."
+    author_endorsement: "n/a"
+  - title: "Zur Algebra der Polytope"
+    authors:
+      - "B. Jessen"
+    type: "paper"
+    location: "Nachrichten der Akademie der Wissenschaften in Göttingen, II. Math.-phys. Klasse 1972, 47-53 (Zbl 0262.52004)"
+    relationship: "background"
+    note: >-
+      Cited only (bibliographic data from zbMATH). The converse in dimension 4:
+      equal volume and equal Dehn-Hadwiger invariant imply scissors
+      congruence. Not formalized here.
+    author_endorsement: "n/a"
+  - title: "Homology of Euclidean groups of motions made discrete and Euclidean scissors congruences"
+    authors:
+      - "J. L. Dupont"
+      - "C.-H. Sah"
+    id: "doi:10.1007/BF02392750"
+    type: "paper"
+    location: "Acta Mathematica 164 (1990) 1-27"
+    relationship: "background"
+    note: "Cited only (bibliographic data from Crossref). Scissors congruence in higher dimensions and the Hadwiger invariants."
+    author_endorsement: "n/a"
+  - title: "Polytopes that fill R^n and scissors congruence"
+    authors:
+      - "J. C. Lagarias"
+      - "D. Moews"
+    id: "doi:10.1007/BF02574064"
+    type: "paper"
+    location: "Discrete & Computational Geometry 13 (1995) 573-583"
+    relationship: "background"
+    note: "Cited only (bibliographic data from Crossref). Dehn invariants and Hadwiger invariants of space-filling polytopes."
+    author_endorsement: "n/a"
+  - title: "The Dehn Canon: Hilbert's Third Problem, Machine-Checked"
+    authors:
+      - name: "DICTO"
+        orcid: "0009-0001-2620-2036"
+        github: "DICTOR-Master"
+    id: "doi:10.5281/zenodo.24383552"
+    type: "paper"
+    location: "Zenodo; its Lean development is the registered Palomar entry PALOMAR-2026-11-20-000003"
+    relationship: "background"
+    note: >-
+      The 3-dimensional development whose definitions (convex polytopes, tangent
+      cones, lineality spaces, wedge angles, scissors congruence, similar copies)
+      and cut and dissection lemmas this entry's library reuses unchanged.
+    author_endorsement: "participated"
+
+related_formalizations:
+  - id: "https://github.com/DICTOR-Master/dehn-canon-lean/blob/9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57/Challenge.lean"
+    relationship: "other"
+    note: >-
+      The Dehn Canon entry (PALOMAR-2026-11-20-000003): the set-defined Dehn
+      invariant and the bridge in dimension 3. This entry's library contains its
+      modules on convex polytopes, cones and dissections and adds the
+      codimension-2 invariant in every dimension and the four-dimensional
+      results.
+  - id: "https://github.com/mo271/FormalBook/blob/54da1cecd8f3a27faa5d46a23b273611fc4f3365/FormalBook/Chapter_10.lean"
+    relationship: "independent"
+    note: "Hilbert's third problem in dimension 3, in an abstract model; no higher-dimensional invariant."
+  - id: "https://github.com/facebookresearch/atlas-lean/blob/0ab82d469546484e0e05985b2df6c1aa49d7edc9/MathlibExt/Geometry/Dissections/DehnInvariant.lean"
+    relationship: "independent"
+    note: "The Dehn invariant of a list of edges in dimension 3; cube versus regular tetrahedron. No higher dimensions."
+  - id: "https://github.com/jonhanke/undergraduate-math-lean/blob/fd2d40d0aafd2cbf5a3174db3741b29b3e5de17c/UndergradKB/RepresentationTheory/DehnInvariant.lean"
+    relationship: "independent"
+    note: "The Dehn invariant of a list of edges in dimension 3; cube versus regular tetrahedron. No higher dimensions."
+
+status:
+  scope: >-
+    Formalized (Challenge, fourteen theorems): the bridge
+    (dehnHadwiger_eq_of_scissorsCongruent, dehnHadwigerSum_eq_of_scissors), in
+    every finite-dimensional real inner product space; the invariants of the
+    tesseract, 16-cell, 24-cell, 120-cell (zero), the 5-cell and the 600-cell
+    (exact form and non-zero); arccos(1/4) not in Q pi; non-congruence of
+    similar copies of the 5-cell or the 600-cell with similar copies of the
+    four others, and of the 5-cell with the 600-cell. Pieces are convex
+    polytopes, finitely many, moved by isometries including reflections. Not
+    formalized: Jessen's converse in R^4; the face-sum formula for an arbitrary
+    convex polytope; Hadwiger's invariants of other codimensions.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude Opus (Anthropic)"]
+      framework: "Claude Code (Opus)"
+      tool_setup: >-
+        A Claude Code agent wrote the definitions, the statements and the
+        proofs, the exact Z[phi] data generator (plain Python) and the generator
+        of the Challenge from the Lean sources, and ran the Lake builds and the
+        comparator against Mathlib v4.35.0-rc2 on Linux compute machines; no
+        native_decide (the data checks use decide +kernel).
+      cost:
+        wall_time: "about one day (20 November 2026)"
+        spend_usd: "subscription-based"
+        hardware: "local Linux machines"
+      prompting_notes: >-
+        DICTO set the target (the bridge first, then the six regular
+        4-polytopes, the 5-cell against the 600-cell stated only if true, and
+        the credits) after the Dehn Canon entry.
+  spend_usd: "subscription-based"
+  notes: >-
+    DICTO posed the formalization and directed the work; every definition,
+    statement and proof was written by the agent. Every build was checked by a
+    full recompilation and #print axioms (only propext, Classical.choice and
+    Quot.sound). No independent human line-by-line audit of the Lean code has
+    been made.
+
+fidelity:
+  divergences: >-
+    (1) The invariant is defined from the set: the class at a point is the
+    angle of the tangent cone in the plane orthogonal to its lineality space
+    where that space has codimension 2, else 0, and the invariant sums
+    (n-2)-dimensional Hausdorff measure of the points of each class; for a
+    convex polytope in R^4 these points are the relative interior points of
+    the 2-faces, and for the six polytopes the angle is computed as pi minus
+    the angle between the two facet normals. (2) Scissors congruence uses
+    convex polytopes as pieces and isometries including reflections. (3) The
+    regular polytopes are given by facet normals with offset 1: tesseract
+    [-1,1]^4, the 16-cell and a 24-cell by whole-number normals, the 5-cell by
+    five normals of length 4 with dot products -4, the 120-cell by the 120
+    vertices of a 600-cell and the 600-cell by the 600 vertices of a 120-cell,
+    both in Z[phi] (the 600 are generated by sign changes and orderings of seven
+    vectors). A similar copy is a scaling by a > 0 followed by an isometry. (4)
+    The relation of the 600-cell's dihedral angle to the 5-cell's is stated
+    through the two invariants, A5 tensor arccos(1/4) and A600 tensor
+    (4 pi / 3 - arccos(1/4)).
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none"
+  notes: >-
+    The Challenge is generated mechanically from the Lean sources, so every
+    definition and statement is the development's own text; the Solution is the
+    Challenge word for word with each proof transferred from the development.
+    The 600-cell data (normals, corners, facet neighbours) were generated by an
+    exact Z[phi] script and are rechecked in Lean by kernel evaluation; the
+    relation of the two dihedral angles was also checked in exact arithmetic in
+    a separate study. The comparator was run locally with Lean's kernel, NanoDa
+    and con-ron, and three altered copies (a changed constant, a changed
+    definition, a proof replaced by sorry) were each rejected. Literature (20
+    November 2026, free routes only): bibliographic records of every source
+    checked on Crossref or zbMATH; the papers themselves were not read. Formal
+    search (20 November 2026): GitHub Lean code for Dehn invariant, Hadwiger
+    and scissors congruence (atlas-lean, undergraduate-math-lean, FormalBook:
+    dimension 3 only); Mathlib has no Dehn invariant; no formalization of the
+    Dehn-Hadwiger invariant in dimension 4 was found.
+
+alignment:
+  namespace: "DehnHadwiger4D"
+  statements:
+    - source: "Hadwiger 1954: invariance of the codimension-2 invariant under dissection"
+      lean: "DehnHadwiger4D.dehnHadwiger_eq_of_scissorsCongruent"
+      module: "Challenge"
+      status: "proved"
+    - source: "Hadwiger 1954, for finite unions of convex polytopes"
+      lean: "DehnHadwiger4D.dehnHadwigerSum_eq_of_scissors"
+      module: "Challenge"
+      status: "proved"
+    - source: "The 5-cell's invariant"
+      lean: "DehnHadwiger4D.dehnHadwiger_cell5_ne_zero"
+      module: "Challenge"
+      status: "proved"
+    - source: "The 600-cell's invariant"
+      lean: "DehnHadwiger4D.dehnHadwiger_cell600_ne_zero"
+      module: "Challenge"
+      status: "proved"
+    - source: "Non-congruence across the split of the six regular 4-polytopes"
+      lean: "DehnHadwiger4D.similarCell600_not_scissorsCongruent"
+      module: "Challenge"
+      status: "proved"
+
+acknowledgements: >-
+  Mathlib (Hausdorff measure, inner product spaces, tensor products, Niven's
+  theorem by Meiburg and Broshi, the golden ratio); H. Hadwiger, M. Dehn and B.
+  Jessen, whose invariants and theorems are formalized or used.

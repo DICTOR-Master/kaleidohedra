@@ -1,0 +1,28 @@
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+No files to download
+Already decompressed 8915 file(s)
+Resolving dependencies
+Building Challenge
+⚠ [8931/8932] Replayed Challenge
+warning: Challenge.lean:215:8: declaration uses `sorry`
+warning: Challenge.lean:222:8: declaration uses `sorry`
+warning: Challenge.lean:237:8: declaration uses `sorry`
+warning: Challenge.lean:240:8: declaration uses `sorry`
+warning: Challenge.lean:243:8: declaration uses `sorry`
+warning: Challenge.lean:248:8: declaration uses `sorry`
+warning: Challenge.lean:252:8: declaration uses `sorry`
+warning: Challenge.lean:258:8: declaration uses `sorry`
+warning: Challenge.lean:262:8: declaration uses `sorry`
+warning: Challenge.lean:267:8: declaration uses `sorry`
+warning: Challenge.lean:275:8: declaration uses `sorry`
+warning: Challenge.lean:280:8: declaration uses `sorry`
+warning: Challenge.lean:287:8: declaration uses `sorry`
+warning: Challenge.lean:294:8: declaration uses `sorry`
+Build completed successfully (8932 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, DehnHadwiger4D.dehnHadwiger_eq_of_scissorsCongruent, DehnHadwiger4D.dehnHadwigerSum_eq_of_scissors, DehnHadwiger4D.dehnHadwiger_tesseract, DehnHadwiger4D.dehnHadwiger_cell16, DehnHadwiger4D.dehnHadwiger_cell24, DehnHadwiger4D.arccos_quarter_not_ratPi, DehnHadwiger4D.dehnHadwiger_cell5_eq, DehnHadwiger4D.dehnHadwiger_cell5_ne_zero, DehnHadwiger4D.dehnHadwiger_cell120, DehnHadwiger4D.dehnHadwiger_cell600_eq, DehnHadwiger4D.dehnHadwiger_cell600_ne_zero, DehnHadwiger4D.similarCell5_not_scissorsCongruent, DehnHadwiger4D.similarCell600_not_scissorsCongruent, DehnHadwiger4D.similarCell5_not_scissorsCongruent_similarCell600, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+Build completed successfully (8961 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, DehnHadwiger4D.dehnHadwiger_eq_of_scissorsCongruent, DehnHadwiger4D.dehnHadwigerSum_eq_of_scissors, DehnHadwiger4D.dehnHadwiger_tesseract, DehnHadwiger4D.dehnHadwiger_cell16, DehnHadwiger4D.dehnHadwiger_cell24, DehnHadwiger4D.arccos_quarter_not_ratPi, DehnHadwiger4D.dehnHadwiger_cell5_eq, DehnHadwiger4D.dehnHadwiger_cell5_ne_zero, DehnHadwiger4D.dehnHadwiger_cell120, DehnHadwiger4D.dehnHadwiger_cell600_eq, DehnHadwiger4D.dehnHadwiger_cell600_ne_zero, DehnHadwiger4D.similarCell5_not_scissorsCongruent, DehnHadwiger4D.similarCell600_not_scissorsCongruent, DehnHadwiger4D.similarCell5_not_scissorsCongruent_similarCell600, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running con-ron kernel on solution
+con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)

@@ -1,0 +1,4 @@
+101c101
+<   if finrank ℝ (linSpace T) + 2 = finrank ℝ E then Submodule.Quotient.mk (wedgeAngle T (linSpace T)) else 0
+---
+>   if finrank ℝ (linSpace T) + 1 = finrank ℝ E then Submodule.Quotient.mk (wedgeAngle T (linSpace T)) else 0

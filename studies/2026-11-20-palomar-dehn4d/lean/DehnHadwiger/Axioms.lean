@@ -1,0 +1,15 @@
+import DehnHadwiger.DH15Results600
+#print axioms DehnHadwiger.dehnHadwiger_eq_of_scissorsCongruent
+#print axioms DehnHadwiger.dehnHadwigerSum_eq_of_scissors
+#print axioms DehnHadwiger.dehnHadwiger_cell5_eq
+#print axioms DehnHadwiger.dehnHadwiger_cell5_ne_zero
+#print axioms DehnHadwiger.dehnHadwiger_cell600_eq
+#print axioms DehnHadwiger.dehnHadwiger_cell600_ne_zero
+#print axioms DehnHadwiger.dehnHadwiger_tesseract
+#print axioms DehnHadwiger.dehnHadwiger_cell16
+#print axioms DehnHadwiger.dehnHadwiger_cell24
+#print axioms DehnHadwiger.dehnHadwiger_cell120
+#print axioms DehnHadwiger.arccos_quarter_not_ratPi
+#print axioms DehnHadwiger.similarCell5_not_scissorsCongruent
+#print axioms DehnHadwiger.similarCell600_not_scissorsCongruent
+#print axioms DehnHadwiger.similarCell5_not_scissorsCongruent_similarCell600

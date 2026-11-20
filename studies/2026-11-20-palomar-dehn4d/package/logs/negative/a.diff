@@ -1,0 +1,4 @@
+248c248
+< theorem arccos_quarter_not_ratPi : Real.arccos (1 / 4) ∉ ratPi := by
+---
+> theorem arccos_quarter_not_ratPi : Real.arccos (1 / 5) ∉ ratPi := by

@@ -1,0 +1,15 @@
+comparator exit 1; CPUS=all MEM=14G CJ=default; log <home>/lean/palomar-dehn4d/logs/negative/a-comparator.log
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:39.70
+	Maximum resident set size (kbytes): 887672
+cgroup memory.peak (bytes, whole run): 1559740416
+Already decompressed 8915 file(s)
+Resolving dependencies
+Building Challenge
+⚠ [8931/8932] Replayed Challenge
+Build completed successfully (8932 jobs).
+Building Solution
+Build completed successfully (8960 jobs).
+error: Challenge and solution theorem statement do not match: 'DehnHadwiger4D.arccos_quarter_not_ratPi'
+Command exited with non-zero status 1
+cgroup memory.peak (bytes, whole run): 1559740416
+FINAL FAIL (comparator exit 1)

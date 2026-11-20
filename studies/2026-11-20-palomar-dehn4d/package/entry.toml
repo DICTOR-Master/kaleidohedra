@@ -1,0 +1,41 @@
+# The Dehn–Hadwiger invariant in four dimensions (placeholder names, for DICTO to approve). Paths are relative to
+# this file. The library folder is made by scripts/prep_library.py (not kept in git).
+[entry]
+name = "DehnHadwiger4D"
+title = "The Dehn–Hadwiger invariant in four dimensions"
+library = "DehnHadwiger"
+repo = "dehn-hadwiger-4d-lean"
+owner = "DICTOR-Master"
+request_id = "dehnhad4d001"
+theorems = ["dehnHadwiger_eq_of_scissorsCongruent", "dehnHadwigerSum_eq_of_scissors", "dehnHadwiger_tesseract",
+            "dehnHadwiger_cell16", "dehnHadwiger_cell24", "arccos_quarter_not_ratPi", "dehnHadwiger_cell5_eq",
+            "dehnHadwiger_cell5_ne_zero", "dehnHadwiger_cell120", "dehnHadwiger_cell600_eq",
+            "dehnHadwiger_cell600_ne_zero", "similarCell5_not_scissorsCongruent",
+            "similarCell600_not_scissorsCongruent", "similarCell5_not_scissorsCongruent_similarCell600"]
+definitions = []
+existing_entry = ""
+known_warnings = []
+
+[author]
+name = "DICTO"
+orcid = "0009-0001-2620-2036"
+github = "DICTOR-Master"
+
+[assemble]
+challenge = "Challenge/DehnHadwiger4D.lean"
+solution = "Solution/DehnHadwiger4D.lean"
+library_dir = "library"
+modulize = true
+rename_namespace = []
+formalization = "palomar/formalization.yaml"
+readme = "palomar/README.md"
+lake_manifest = "../../2026-11-17-get-palomar/lean/lake-manifest.json"
+extra_scripts = []
+commit_message = "The Dehn–Hadwiger invariant in four dimensions: Lean 4 + Mathlib Palomar entry (Challenge, Solution, library DehnHadwiger)"
+
+[negative]
+a_old = "theorem arccos_quarter_not_ratPi : Real.arccos (1 / 4) ∉ ratPi"
+a_new = "theorem arccos_quarter_not_ratPi : Real.arccos (1 / 5) ∉ ratPi"
+b_old = "  if finrank ℝ (linSpace T) + 2 = finrank ℝ E then"
+b_new = "  if finrank ℝ (linSpace T) + 1 = finrank ℝ E then"
+c_theorem = "dehnHadwiger_cell600_ne_zero"
