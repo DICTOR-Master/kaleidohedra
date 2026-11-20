@@ -7,6 +7,8 @@
 #   zones.html  the six zones of GET A and of GET B, each zone's 10 faces coloured, the rest see-through, the axis drawn;
 #   tiling.html eight lattice translates of GET A and of GET B (a 2 × 2 × 2 block on a basis of face-neighbour vectors),
 #               together and pulled apart.
+#   Version 2 (20 Nov): lines behind any face are hidden (render3d.py), and GET B pulled apart is turned slightly so that no
+#   face is seen nearly edge-on (two thin bright slivers in Version 1).
 import json, os, itertools
 import numpy as np
 from getlib import *
@@ -83,6 +85,15 @@ for i in (0, 1):
     cl = cells_of(i); Fo = FO[i]
     assert boundary(cl) == Fo and len(cl) == 16
     c = centre(Fo); d = -np.array(VIEW[i])
+    if i == 1:   # Version 2: GET B turned by at most 10 degrees so that no face of the pulled-apart cells is seen nearly edge-on
+        nrm = [unitv(np.cross(np.subtract(posf(corners(*f)[1]), posf(corners(*f)[0])), np.subtract(posf(corners(*f)[3]), posf(corners(*f)[0]))))
+               for p, t in cl for f in boundary([(p, t)])]
+        mc = lambda v: min(abs(n @ unitv(v)) for n in nrm)
+        e1 = unitv(np.cross(d, [0, 1, 0])); e2 = unitv(np.cross(d, e1)); m0 = mc(d)
+        d = max((unitv(unitv(d) + np.tan(np.radians(a)) * (np.cos(np.radians(b)) * e1 + np.sin(np.radians(b)) * e2))
+                 for a in (0, 2, 4, 6, 8, 10) for b in range(0, 360, 10)), key=mc)
+        assert mc(d) > 0.12, mc(d)
+        LOG.append(f'GET B pulled apart: view turned so the most edge-on face has |cos| {mc(d):.3f} (was {m0:.3f})')
     whole = [surf(Fo, COL[i], -c)]
     apart = []
     for p, t in cl:

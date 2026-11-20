@@ -159,7 +159,7 @@ def corners():
             tiling(im, polys, int(xx), int(y), ins, edge_hi=hi)
             ctext(d, xx + ins / 2, y + ins + 8 * K, 'just before' if nm == 'before' else 'just after', f(25 * K), MUTE, ins + 40 * K)
     fo = f(25 * K)
-    for row, items in enumerate((((BORN, 'the cell born'), (DIES, 'the cell dying'), ('#a8967a', 'other cells, see-through in 3D')),
+    for row, items in enumerate((((BORN, 'the cell born'), (DIES, 'the cell dying'), ('#a8967a', 'other cells, front walls cut away in 3D')),
                                  ((CREAM, 'the pair that meets'), (TAUPE, 'the pair that parts'), (AMBER, 'the wall of the meeting pair; the contact that changes')))):
         x = 80 * K; y = Hh - 190 * K + row * 50 * K
         for col, txt in items: x = swatch(d, x, y, hexc(col), txt, fo)

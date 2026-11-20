@@ -3,6 +3,8 @@
 #   Figures 1, 2, 3: one space-time Poisson–Voronoi complex (stc.py): a scutoid between two planes, a block of the moving
 #   tiling, and the three kinds of corner (birth, swap, death). Figure 4: the 120-cell cell of fig_tube.py (data/fig-tube.json).
 #   Figure 5: a Poisson–Voronoi block and a bcc block (truncated octahedra) in space.
+#   Version 2 (20 Nov): in Figures 3 and 4 the cells round the corner and the 120-cell cell are drawn solid with their front walls
+#   cut away (back_faces), so every face hides what lies behind it; no see-through faces.
 # Space-time (x, y, t) is drawn with t upward: three.js coordinates (x, v t, −y), a rotation after the stretch t -> v t, which
 # maps convex cells to convex cells and corners to corners (the Speed paragraph of Section 2).
 # Usage: python3 fig_scenes.py      (run on a compute host; then node shots.mjs renders/<fig>.html renders/<fig>; fig_compose.py)
@@ -39,6 +41,16 @@ def framing(Ps, dirv, frac=0.9, E=1.0):
     P = np.vstack(Ps); x, y, _ = basis(dirv); Q = np.c_[P @ x, P @ y]; c = (Q.max(0) + Q.min(0)) / 2
     off = c[0] * x + c[1] * y; s = frac * E / np.abs(Q - c).max()
     return lambda R: (np.atleast_2d(R) - off) * s
+
+
+def back_faces(Q, F, d):
+    """the faces of a convex cell (corners Q, faces F) whose outward normal points away from the eye on the side d: the cell
+    with its front walls cut away (20 Nov, Version 2: drawn solid, so every face hides what lies behind it)."""
+    Q = np.asarray(Q, float); c = Q.mean(0); keep = []
+    for o in F:
+        P = Q[list(o)]; n = np.cross(P[1] - P[0], P[2] - P[0]); n = n if n @ (P.mean(0) - c) > 0 else -n
+        if n @ np.asarray(d, float) <= 0: keep.append(o)
+    return keep
 
 
 def wall_face(poly, n):
@@ -255,7 +267,8 @@ for kind in ('birth', 'swap', 'death'):
         hz = n1 + n2; hz[1] = 0; hz /= np.linalg.norm(hz); dv = rot(hz, np.radians(28)) + [0, 0.36, 0]
     fr3 = framing(allP, dv, 0.86)
     sc3.append({'E': 1.0, 'dir': list(map(float, dv)), 'parts':
-                [poly_part(fr3(Q), F, c, alpha=1.0 if m == 'solid' else 0.20, edge_col=EDGE if m == 'solid' else '#cfc4ae', rad=0.0035,
+                [poly_part(fr3(Q), F if m == 'solid' else back_faces(Q, F, dv), c, edge_col=EDGE if m == 'solid' else '#cfc4ae', rad=0.0035,
+                           edges=None if m == 'solid' else sorted({tuple(sorted((int(a), int(b)))) for o in F for a, b in zip(o, list(o[1:]) + [o[0]])}),
                            balls=[(pk, EV[kind], 6.5)] if m == 'solid' or kind == 'swap' else []) for m, Q, F, c, pk in parts]})
     lab3.append({'kind': kind, 'index': int(corner[k][0]), 'secs': secs})
 write(os.path.join(OUT, 'corners.html'), sc3); json.dump(lab3, open(os.path.join(OUT, 'corners.json'), 'w'))
@@ -323,10 +336,10 @@ for d in FT['directions']:
         walls.append([w[i] for i in np.argsort(np.arctan2((P - c) @ np.cross(n, u), (P - c) @ u))])
     secP = [np.array(s) for s in d['sections']]; secQ = [np.c_[s[:, 0], s[:, 2], -s[:, 1]] for s in secP]
     fr4 = framing([Q], dirv, 0.80)
-    parts = [poly_part(fr4(Q), walls, VIO, alpha=0.34, edges=[tuple(e) for e in d['edges']], edge_col=VIO_E, rad=0.0042,
+    parts = [poly_part(fr4(Q), back_faces(Q, walls, dirv), VIO, edges=[tuple(e) for e in d['edges']], edge_col=VIO_E, rad=0.0042,
                        balls=[(i, KCOL[d['kind'][i]], 5.0 if d['kind'][i] in ('birth', 'death') else 3.6) for i in range(len(Q))])]
     for s in secQ:
-        n = len(s); parts.append(poly_part(fr4(s), [list(range(n))], '#d9c7a3', alpha=0.82, edge_col='#e9dcc0', rad=0.0024))
+        n = len(s); parts.append(poly_part(fr4(s), [list(range(n))], '#d9c7a3', edge_col='#e9dcc0', rad=0.0024))
     sc4.append({'E': 1.0, 'dir': dirv.tolist(), 'parts': parts})
     lab4.append({'sections': [[len(s), project(fr4(s), dirv, 1.0)[:, 0].max(), project(fr4(s), dirv, 1.0)[:, 1].mean()] for s in secQ]})
 write(os.path.join(OUT, 'tube.html'), sc4); json.dump(lab4, open(os.path.join(OUT, 'tube.json'), 'w'))

@@ -4,6 +4,7 @@
 #     facet, outside the polytope; edges as tubes shaded from light (near the eye in 4D) to dark (far); the facet farthest
 #     from the eye (the small one in the middle; for the 5-cell and the 16-cell one of the large tetrahedra) is drawn solid in the app colour of its solid: dodecahedron violet,
 #     tetrahedron red, cube green, octahedron yellow. Every edge of each polytope is drawn, none added.
+#     The 5-cell is seen from its own direction (DIRS), chosen so that no edge passes in front of the red facet (asserted).
 #     Solid faces hide the edges behind them (depth buffer, every facet opaque). In the 120-cell and the 600-cell the small
 #     facet, deep inside a dense wire solid, is drawn in a second pass over the wires (part 'top'), with its own edges.
 #   Figure 3 (caps.html): the 600-cell with the 120 caps of one left orbit. (a) the 20 facets at one corner, projected
@@ -80,6 +81,27 @@ def hull_part(P3, col, alpha=1.0):
 P = X.six(); LOG = {}
 # ---------------- Figure 1: the six polytopes -------------------------------------------------------------------------------
 EYE = {'120-cell': 1.32, '600-cell': 2.0, 'tesseract': 1.25, '5-cell': 3.2, '16-cell': 2.4, '24-cell': 2.2}
+DIRS = {'5-cell': np.array([0.50, -0.55, 1.0])}  # the 5-cell turned so that no edge passes in front of the red facet (DICTO, 20 Nov)
+
+
+def front_cross(P3, E, cell, d, n=200):
+    """edge samples (edges not of the facet) that fall inside the facet's image and lie in front of it, and those inside at all"""
+    x, y, z = basis(d); cs = sorted(cell); front = inside = 0
+    tris = [P3[list(t)] for t in ([cs[0], cs[1], cs[2]], [cs[0], cs[1], cs[3]], [cs[0], cs[2], cs[3]], [cs[1], cs[2], cs[3]])]
+    for i, j in E:
+        if i in cell and j in cell: continue
+        for u in np.linspace(0.01, 0.99, n):
+            P = P3[i] + u * (P3[j] - P3[i]); q = np.array([P @ x, P @ y]); zs = []
+            for T in tris:
+                a = np.c_[T @ x, T @ y]; M = np.array([a[1] - a[0], a[2] - a[0]]).T
+                if abs(np.linalg.det(M)) < 1e-12: continue
+                l = np.linalg.solve(M, q - a[0])
+                if l.min() >= -1e-9 and l.sum() <= 1 + 1e-9: zs.append((T @ z) @ np.r_[1 - l.sum(), l])
+            if zs:
+                inside += 1; front += P @ z > max(zs) - 1e-9
+    return front, inside
+
+
 TOP = {'120-cell', '600-cell'}             # the small facet drawn over the dense wires, so that it shows
 RAD = {'120-cell': 0.0042, '600-cell': 0.0055, 'tesseract': 0.010, '5-cell': 0.010, '16-cell': 0.010, '24-cell': 0.008}
 sc = []
@@ -99,7 +121,11 @@ for nm in X.ORDER:
         own = [k for k, (i, j) in enumerate(p.E) if i in p.cells[far] and j in p.cells[far]]
         check(f'{nm}: the facet drawn on top carries its own {len(own)} edges', len(own) == {'dodecahedron': 30, 'tetrahedron': 6}[CELL[nm]])
         parts += [dict(parts[0], top=True), dict(edge_part(P3, [p.E[k] for k in own], [cols[k] for k in own], RAD[nm]), top=True)]
-    sc.append({'E': ext(P3, VIEW), 'dir': VIEW.tolist(), 'parts': parts, 'name': nm})
+    dv = DIRS.get(nm, VIEW)
+    if nm == '5-cell':
+        fr, ins = front_cross(P3, p.E, set(cell), dv)
+        check('5-cell: no edge crosses the red facet\'s image in front of it', fr == 0, f'{fr} of {ins} samples inside the image in front')
+    sc.append({'E': ext(P3, dv), 'dir': dv.tolist(), 'parts': parts, 'name': nm})
     LOG[nm] = {'counts': p.counts(), 'eye': EYE[nm], 'shaded': CELL[nm]}
 write(os.path.join(OUT, 'six.html'), sc)
 
