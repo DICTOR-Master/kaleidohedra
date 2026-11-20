@@ -46,9 +46,9 @@ def swatch(d, x, y, col, txt, fo, outline=None):
 
 
 # ---------- the canon gallery, in two figures ----------
-def gallery(blocks, title, sub, name):
-    L = json.load(open(os.path.join(R, 'canon-labels.json'))); cols, cell, gap = 5, 380 * K, 36 * K
-    rowh = cell + 140 * K; bh = 90 * K; rows = lambda n: (n + cols - 1) // cols
+def gallery(blocks, title, sub, name, cols=5, fs=1.0):
+    L = json.load(open(os.path.join(R, 'canon-labels.json'))); cell, gap = 380 * K, 36 * K
+    rowh = cell + int(140 * fs) * K; bh = 90 * K; rows = lambda n: (n + cols - 1) // cols
     idx = [[i for i, l in enumerate(L) if l['block'] == b] for b, _ in blocks]
     W = cols * cell + (cols - 1) * gap + 160 * K; top = 200 * K
     Hh = top + len(blocks) * bh + sum(rows(len(x)) for x in idx) * rowh + 20 * K * len(blocks) + 90 * K
@@ -60,11 +60,11 @@ def gallery(blocks, title, sub, name):
             x = 80 * K + (k % cols) * (cell + gap); yy = y + (k // cols) * rowh
             paste(im, f'{R}/canon/p{i}.png', x, yy, cell)
             t, w, sy = L[i]['title'], cell + gap - 8 * K, yy + cell + 50 * K
-            if d.textlength(t, font=f(32 * K, True)) > w * 1.15 and ' ' in t:      # a long name on two lines
+            if d.textlength(t, font=f(32 * fs * K, True)) > w * 1.15 and ' ' in t:      # a long name on two lines
                 cut = min(range(len(t)), key=lambda j: abs(j - len(t) / 2) if t[j] == ' ' else 1e9)
-                ctext(d, x + cell / 2, yy + cell + 2 * K, t[:cut], f(30 * K, True), INK, w); ctext(d, x + cell / 2, yy + cell + 40 * K, t[cut + 1:], f(30 * K, True), INK, w); sy = yy + cell + 82 * K
-            else: ctext(d, x + cell / 2, yy + cell + 6 * K, t, f(32 * K, True), INK, w)
-            ctext(d, x + cell / 2, sy, L[i]['sub'], f(25 * K), MUTE, w)
+                ctext(d, x + cell / 2, yy + cell + 2 * K, t[:cut], f(30 * fs * K, True), INK, w); ctext(d, x + cell / 2, yy + cell + (2 + 38 * fs) * K, t[cut + 1:], f(30 * fs * K, True), INK, w); sy = yy + cell + (6 + 76 * fs) * K
+            else: ctext(d, x + cell / 2, yy + cell + 6 * K, t, f(32 * fs * K, True), INK, w)
+            ctext(d, x + cell / 2, sy, L[i]['sub'], f(25 * fs * K), MUTE, w)
         y += rows(len(ids)) * rowh + 20 * K
     mark(d, W, Hh); save(im, name)
 
@@ -72,7 +72,7 @@ def gallery(blocks, title, sub, name):
 def canon():
     gallery([('lean', 'Proved zero in Lean (Theorem 7)'), ('nine', 'The nine most regular space-fillers (Kaleidohedra), zero by Proposition 7′')],
             'The canon: Dehn invariant zero', 'Each solid drawn to fill its frame, from exact corners · under each name its invariant, 0, and for the nine their faces',
-            'fig-canon-zero.png')
+            'fig-canon-zero.png', cols=7, fs=1.12)
     gallery([('nonzero', 'Dehn invariant nonzero')], 'The canon: Dehn invariant nonzero',
             'Each solid drawn to fill its frame · under each name its Dehn invariant, for the solid as written in Table 1', 'fig-canon-nonzero.png')
 
