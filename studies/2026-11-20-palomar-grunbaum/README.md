@@ -181,3 +181,7 @@ and Hall 2016 and Kostick 2022 were checked against the pages.
 Nothing is left running. The entry's Lean workspace is kept on the compute host.
 
 FINAL ok
+
+## con-ron at Palomar real profile (dbb job grunbaum-conron-real, 20 Nov): NOT RUN
+
+The job printed a final "ok" line, but both steps failed: the export step exited 1, and the con-ron step exited 127 (command not found; run from the entry workspace, the split script did not find its toolchain paths). The split script prints "FINAL FAIL" yet returns exit 0, so the chained wrapper went on and printed "ok". The question (does con-ron fit at 2 workers / 31 GB) stays OPEN. Fix before rerun: make run_comparator_split.sh exit non-zero on FINAL FAIL (also in palomar-kit), and run it from the directory layout it expects.
