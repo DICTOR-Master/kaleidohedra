@@ -74,6 +74,16 @@ passed, 20 Nov 2026). Study folders: `studies/2026-11-16-palomar-yantra`, `studi
 - [ ] **Negative controls** (`run_negative_controls.sh`): a changed numeral in a statement, a weakened definition, a
       proof replaced by `sorry`; each must be REJECTED. A changed definition may be reported under another constant
       that shares an auxiliary proof term (Dehn: `wedgeAngle` changed, `tetN` reported); check why once.
+- [ ] **Negative controls give a reason.** A control counts as rejected only when the comparator names a statement or
+      constant mismatch or an illegal axiom; a build or git failure is no verdict (Dehn–Hadwiger 4D: a scratch folder
+      on another filesystem broke the hard-linked packages, the comparator failed on git, and the old script reported
+      REJECTED). Keep SCRATCH on the entry's filesystem.
+- [ ] **Exit codes, not printed lines.** Every kit script exits non-zero with FINAL FAIL; wrappers use the exit code.
+- [ ] **Kernel time of `decide +kernel` data.** The comparator replays every kernel check in each kernel; time Lean's
+      kernel alone (`STEP=kernel K=lean`) early. Dehn–Hadwiger 4D: the 600-cell checks first cost about 3 min of kernel
+      time (list membership by scanning, 72,000 dot products); flat integer records, index tables instead of
+      membership scans, chunked lookups and a symmetry reduction (three generators, three representative corners)
+      brought Lean's kernel step to 2 min 37 s.
 - [ ] **Blind pre-score once after building**, with the real Challenge quoted in full and the literature corrected.
 
 ## E. Repository and submission

@@ -10,8 +10,10 @@
 # entry's .lake (build copied, packages hard-linked), builds Challenge and Solution (200 s), prints #print axioms of the
 # checked theorem, then runs the template comparator unchanged (run_comparator_full.sh, CJ=default) under TMO (280 s)
 # and MEM (14G). Logs: $ENTRY/logs/negative/<V>-*.log and <V>.diff.
-# FINAL ok and exit 0 iff the control is rejected (run_comparator_full.sh exits neither 0 nor 124, and no "Your
-# solution is okay"); otherwise FINAL FAIL and exit 1.
+# FINAL ok and exit 0 iff the control is rejected: run_comparator_full.sh exits neither 0 nor 124, there is no "Your
+# solution is okay", and the comparator gives a rejection reason (a statement or constant mismatch, or an illegal
+# axiom); a comparator that fails for another reason (a build or git error) is no verdict. Otherwise FINAL FAIL, exit 1.
+# SCRATCH must be on the same filesystem as the entry (the packages are hard-linked).
 V=${V:?V=a|b|c}; SCRATCH=${SCRATCH:?}; TMO=${TMO:-280}; KIT=$(cd "$(dirname "$0")" && pwd)
 ENTRY=$(cd "${ENTRY:-.}" && pwd); LOG=$ENTRY/logs/negative; mkdir -p "$LOG"; export PATH=$HOME/.elan/bin:$PATH
 CFGARG=(); [ -n "$CONFIG" ] && CFGARG=(--config "$(cd "$(dirname "$CONFIG")" && pwd)/$(basename "$CONFIG")")
@@ -34,4 +36,6 @@ grep -aiE "^error|uncaught|do not match|mismatch|illegal|axiom|okay" "$LOG/$V-co
 cd / && rm -rf "$D"
 if grep -q "Your solution is okay" "$LOG/$V-comparator.log" || [ "$cs" -eq 0 ]; then echo "control $V: NOT REJECTED"; echo "FINAL FAIL"; exit 1
 elif [ "$cs" -eq 124 ]; then echo "control $V: TIMEOUT (no verdict)"; echo "FINAL FAIL"; exit 1
+elif ! grep -aqiE "do not match|does not match|mismatch|Illegal axiom" "$LOG/$V-comparator.log"; then
+  echo "control $V: the comparator failed without a rejection message (no verdict; see $V-comparator.log)"; echo "FINAL FAIL"; exit 1
 else echo "control $V: REJECTED"; echo "FINAL ok"; exit 0; fi
