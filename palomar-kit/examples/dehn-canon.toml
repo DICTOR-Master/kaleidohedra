@@ -1,0 +1,38 @@
+# The Dehn Canon (registered PALOMAR-2026-11-20-000003, version 1). Paths are relative to this file.
+[entry]
+name = "DehnCanon"
+title = "The Dehn Canon: Hilbert's Third Problem, Machine-Checked"
+library = "DehnCanon"
+repo = "dehn-canon-lean"
+owner = "DICTOR-Master"
+request_id = "dehncanon001"
+theorems = ["hilbert_third_problem", "dehnSet_eq_edge_sum", "dehnSet_eq_of_scissorsCongruent",
+            "dehnSum_eq_of_scissors", "similarTetra_not_scissorsCongruent_similarCube"]
+definitions = []
+existing_entry = "PALOMAR-2026-11-20-000003"
+# 333 lines: over the preferred 300 (Palomar warns, does not block); accepted for version 1
+known_warnings = ["challenge-size"]
+
+[author]
+name = "DICTO"
+orcid = "0009-0001-2620-2036"
+github = "DICTOR-Master"
+
+[assemble]
+# The library comes from the ten study folders 2026-11-19-lean-dehn-*; the entry's own assemble_entry.py selects the
+# import closure. Collect those modules into one folder first, then point library_dir at it.
+challenge = "../../studies/2026-11-19-palomar-dehn/package/Challenge/DehnCanon.lean"
+solution = "../../studies/2026-11-19-palomar-dehn/package/Solution/DehnCanon.lean"
+library_dir = "<folder with the import closure of Dehn10Hilbert and Dehn10Edges>"
+modulize = true
+rename_namespace = [["DehnCanon", "DehnCanon.Library"]]
+formalization = "../../studies/2026-11-19-palomar-dehn/package/palomar/formalization.yaml"
+readme = "../../studies/2026-11-19-palomar-dehn/package/palomar/README.md"
+lake_manifest = "../../studies/2026-11-17-get-palomar/lean/lake-manifest.json"
+
+[negative]
+a_old = "volume (convexHull ℝ ({A, B, C, D} : Set R3)) = ENNReal.ofReal (1 / 6)"
+a_new = "volume (convexHull ℝ ({A, B, C, D} : Set R3)) = ENNReal.ofReal (1 / 7)"
+b_old = "  2 * Real.pi * ((volume (wedgeSet T K)).toReal"
+b_new = "  Real.pi * ((volume (wedgeSet T K)).toReal"
+c_theorem = "dehnSet_eq_edge_sum"

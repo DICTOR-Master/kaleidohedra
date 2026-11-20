@@ -1,0 +1,38 @@
+# Palomar entry configuration: copy to the entry's study folder as entry.toml and fill in.
+# Relative paths resolve against the folder of this file; ~ and $VARS are expanded. No host names or home paths here.
+
+[entry]
+name = "EntryName"              # Lake package name = Lean namespace of Challenge and Solution (DICTO's choice)
+title = "The entry's title"     # project.name in formalization.yaml
+library = "EntryLib"            # library folder and module prefix; must differ from `name` as a namespace
+repo = "entry-name-lean"        # GitHub repository name (DICTO's choice)
+owner = "DICTOR-Master"
+request_id = "entryname001"     # exactly 12 lowercase letters or digits
+theorems = ["main_theorem"]     # short names, in comparator order (the namespace is added)
+definitions = []
+existing_entry = ""             # "PALOMAR-YYYY-MM-DD-NNNNNN" only when submitting a new version of a registered entry
+known_warnings = []             # warnings DICTO accepted, e.g. ["challenge-size"] for a Challenge over 300 lines
+
+[author]
+name = "DICTO"
+orcid = "0009-0001-2620-2036"
+github = "DICTOR-Master"
+
+[assemble]                      # used by scripts/assemble_entry.py
+challenge = "package/Challenge/EntryName.lean"
+solution = "package/Solution/EntryName.lean"
+library_dir = "package/lean/EntryLib"
+modulize = false                # true: plain Lean files are put in module form
+rename_namespace = []           # e.g. [["EntryName", "EntryName.Library"]] (library only, with modulize)
+formalization = "package/palomar/formalization.yaml"
+readme = "package/palomar/README.md"
+lake_manifest = "package/lean/lake-manifest.json"   # resolved for Mathlib v4.35.0-rc2
+extra_scripts = []
+commit_message = "The entry's title: Lean 4 + Mathlib Palomar entry (Challenge, Solution, library EntryLib)"
+
+[negative]                      # optional: exact mutations for scripts/run_negative_controls.sh (else automatic)
+# a_old = "...text in a theorem statement..."
+# a_new = "...the same with one numeral changed..."
+# b_old = "def IsThing (x : X) : Prop := A ∧ B"
+# b_new = "def IsThing (x : X) : Prop := A"
+# c_theorem = "main_theorem"

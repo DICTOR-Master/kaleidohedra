@@ -1,0 +1,43 @@
+# @TITLE@ (Lean 4 + Mathlib)
+
+Author: DICTO.
+
+## The theorems
+
+<The question or theorem in the source's words, with its citation; then one item per Challenge theorem, each in plain
+sentences.>
+
+1. **`@THEOREM1@`**: ...
+
+- `Challenge.lean`: the definitions and the statements, with every proof `sorry`. It imports only Mathlib.
+- `Solution.lean`: the proofs, from the library.
+- `@LIBRARY@/`: the library (namespace `@LIBRARY@`): <one line per part>.
+
+Toolchain `leanprover/lean4:v4.35.0-rc2`, Mathlib `v4.35.0-rc2`. The theorems depend only on the axioms `propext`,
+`Classical.choice` and `Quot.sound`. Neither `sorry` nor `native_decide` is used. Every Lean file uses the module
+system.
+
+## Earlier work
+
+<Every earlier source on the same objects, with what it shows and what it does not; `formalization.yaml` lists every
+source checked.>
+
+## How it was made
+
+DICTO <set the question / found the result / chose ...>. A Claude Code agent (Claude Opus, Anthropic) wrote the
+definitions, the statements and the proofs, and ran the checks. `formalization.yaml` (section `automation`) records
+this in full.
+
+## Checks
+
+`scripts/check-lean-sources.py` and `scripts/verify-comparator.sh` come from Palomar's entry template (PalomarRegistry).
+They check the source rules and run `lake comparator` the way Palomar does.
+
+## Licence
+
+Apache-2.0 (see `LICENSE`). Copyright 2026 DICTO.
+
+## Other work by DICTO
+
+- ORCID (all works): https://orcid.org/0009-0001-2620-2036
+- Website: https://dictospheres.com

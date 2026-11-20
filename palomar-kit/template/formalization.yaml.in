@@ -1,0 +1,121 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4
+#
+# Palomar submission kit template. Fill every <...>; delete these guidance comments only if you wish (they are legal YAML).
+# Check with: python3 -I <kit>/scripts/preflight_checks.py <entry> --config entry.toml   (runs Palomar's own parser).
+#
+# SOURCE RULE (Palomar CONTRIBUTING, "sources"; the Yantra entry was blocked at review for breaking it, 17 Nov 2026):
+#   An entry is EXACTLY ONE of
+#   (1) ORIGINAL: one source of type "original-proof" (relationship "other"); every other source "background" or "other".
+#   (2) SOURCE-BASED: no "original-proof" source; at least one source with relationship
+#         "formalizes"            the Lean statement is a result or question stated in that source,
+#         "adapts"                the Lean statement is a changed form of a result in that source,
+#         "independently-proves"  a new proof of a result already known from that source.
+#   Ask first: does the Lean statement use anything first stated in a cited paper (DICTO's own included)?
+#   If yes, the entry is SOURCE-BASED and that paper is "formalizes". A new claim of the entry then goes in a note
+#   (a source of type "other"), never as an original-proof source.
+#   Source `type` is one of: paper, book, "web discussion", folklore, original-proof, other.
+#   Every source says in its note whether it was read, partly read, or only cited.
+version: "v0.4"
+
+project:
+  name: "@TITLE@"
+  description: >-
+    <The abstract. It is also the Notes text of the submission form (form_answers.py prints it). Say what is proved,
+    in the source's words; who asked the question and where; what earlier work did and did not do; what is not
+    formalized; and the audience (the research communities who would use the entry).>
+  # Person records from the FIRST submission (ORCID validated by Palomar; a resubmission to add them cost a full run).
+  authors:
+    - name: "DICTO"
+      orcid: "0009-0001-2620-2036"
+      github: "DICTOR-Master"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - name: "DICTO"
+      orcid: "0009-0001-2620-2036"
+      github: "DICTOR-Master"
+
+classification:
+  arxiv: ["<math.XX>"]
+  msc2020: ["<NNXNN>", "03B35"]
+
+sources:
+  - title: "<title of the paper whose result or question the Challenge states>"
+    authors:
+      - "<A. Author>"
+    id: "doi:<10.xxxx/...>"
+    type: "paper"           # paper | book | "web discussion" | folklore | original-proof | other
+    location: "<journal, volume, year, pages; the page of the statement formalized>"
+    relationship: "formalizes"   # formalizes | adapts | independently-proves | background | other
+    note: >-
+      <Read / partly read / cited only. The exact words of the statement formalized, with the page.>
+    author_endorsement: "n/a"
+  # DICTO's own paper, when the Lean statement is one of its theorems (then it is "formalizes", not original-proof):
+  # - title: "<paper title>"
+  #   authors:
+  #     - name: "DICTO"
+  #       orcid: "0009-0001-2620-2036"
+  #       github: "DICTOR-Master"
+  #   id: "doi:10.5281/zenodo.<concept record>"
+  #   type: "paper"
+  #   location: "Zenodo, version <N> (doi:10.5281/zenodo.<version record>); Theorem <n>"
+  #   relationship: "formalizes"
+  #   note: "<which theorems of the paper are which Lean theorems>"
+  #   author_endorsement: "participated"
+
+related_formalizations: []
+  # - name: "<project>"
+  #   url: "https://github.com/<owner>/<repo>"
+  #   commit: "<full sha of the last commit touching the file read>"
+  #   note: "<what it formalizes and how this entry differs>"
+
+status:
+  scope: >-
+    <Proved: ... Not formalized: ...>
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude Opus (Anthropic)"]
+      framework: "Claude Code (Opus)"
+      tool_setup: >-
+        A Claude Code agent wrote the statement and the proofs, and ran the Lake builds and the comparator against
+        Mathlib v4.35.0-rc2 on Linux compute machines.
+      cost:
+        wall_time: "<about N days (dates)>"
+        spend_usd: "subscription-based"
+        hardware: "local Linux machines"
+      prompting_notes: >-
+        <What DICTO set, found, chose and decided; reviews and blind pre-scores applied.>
+  spend_usd: "subscription-based"
+  notes: >-
+    DICTO posed the formalization and directed the work; every definition, statement and proof was written by the
+    agent. Every build was checked by a full recompilation and #print axioms (only propext, Classical.choice and
+    Quot.sound). No independent human line-by-line audit of the Lean code has been made.
+
+fidelity:
+  divergences: >-
+    <(1) ... one numbered item per place where the Lean definitions differ from, or make precise, the source's words.>
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none"
+  notes: >-
+    <Statement review; comparator with Lean's kernel, NanoDa and con-ron; three negative controls rejected.
+    Literature (date, free routes only): which sources were read. Formal search (date): Mathlib, GitHub Lean code,
+    the Isabelle AFP, and Rocq, HOL Light and Mizar by web search; what was found.>
+
+alignment:
+  namespace: "@NAME@"
+  statements:
+    - source: "<source, the statement formalized>"
+      lean: "@NAME@.@THEOREM1@"
+      module: "Challenge"
+      status: "proved"
+
+acknowledgements: >-
+  Mathlib (<the parts used>); <the authors whose question or results are formalized>.

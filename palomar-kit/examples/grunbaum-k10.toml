@@ -1,0 +1,35 @@
+# Grünbaum's zone question at k = 10 (preflight passed 20 Nov 2026). Paths are relative to this file.
+[entry]
+name = "GrunbaumK10"
+title = "Grünbaum's zone question at k = 10"
+library = "GET"
+repo = "grunbaum-k10-lean"
+owner = "DICTOR-Master"
+request_id = "grunbaumk100"
+theorems = ["cube_everyZoneHas", "rhombicDodecahedron_everyZoneHas", "grunbaum_k10", "grunbaum_k10_parallelohedron"]
+definitions = []
+existing_entry = ""
+known_warnings = []
+
+[author]
+name = "DICTO"
+orcid = "0009-0001-2620-2036"
+github = "DICTOR-Master"
+
+[assemble]
+challenge = "../../studies/2026-11-20-palomar-grunbaum/package/Challenge/GrunbaumK10.lean"
+solution = "../../studies/2026-11-20-palomar-grunbaum/package/Solution/GrunbaumK10.lean"
+library_dir = "../../studies/2026-11-20-palomar-grunbaum/package/lean-B/GET"
+modulize = false
+formalization = "../../studies/2026-11-20-palomar-grunbaum/package/palomar/formalization.yaml"
+readme = "../../studies/2026-11-20-palomar-grunbaum/package/palomar/README.md"
+lake_manifest = "../../studies/2026-11-17-get-palomar/lean/lake-manifest.json"
+extra_scripts = []
+commit_message = "Grünbaum's zone question at k = 10: Lean 4 + Mathlib Palomar entry (Challenge, Solution, library GET; witness GET B)"
+
+[negative]
+a_old = "      EveryZoneHas F 10 ∧ LinearIndependent ℝ b ∧"
+a_new = "      EveryZoneHas F 12 ∧ LinearIndependent ℝ b ∧"
+b_old = "def IsRhombus (F : Parallelogram) : Prop := F.Nondegenerate ∧ ‖F.u‖ = ‖F.v‖"
+b_new = "def IsRhombus (F : Parallelogram) : Prop := F.Nondegenerate ∧ ‖F.u‖ ≤ ‖F.v‖"
+c_theorem = "grunbaum_k10"

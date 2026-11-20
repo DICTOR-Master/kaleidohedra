@@ -1,0 +1,28 @@
+module
+
+public import Mathlib
+
+@[expose] public section
+
+/-!
+# @TITLE@
+
+**Informal statement.** Say in full sentences what the theorems below assert, with the source's own words for each
+notion (quote the source and give its page). Name every place where the Lean definition makes a loose notion precise.
+
+**Sources.** Author, title, venue, year, page of the question or theorem formalized.
+
+Rules for this file (Palomar): Mathlib only; at most 300 lines and 32 KiB preferred (1,000 lines and 100 KiB hard
+cap); every definition a theorem needs is stated here in full; every proof is `sorry`.
+-/
+
+namespace @NAME@
+
+/-- One definition per notion, each with a doc comment that says what it means in words. -/
+def ExampleNotion (n : ℕ) : Prop := 0 < n
+
+/-- The main theorem, in the source's terms. -/
+theorem @THEOREM1@ : ExampleNotion 1 := by
+  sorry
+
+end @NAME@

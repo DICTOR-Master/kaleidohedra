@@ -1,0 +1,24 @@
+module
+
+public import Mathlib
+public import @LIBRARY@.Main
+
+@[expose] public section
+
+/-!
+# @TITLE@ (proved)
+
+The Challenge word for word, with the library imported and each `sorry` replaced by a proof from the library.
+Keep every definition and statement byte-identical to `Challenge.lean`: the comparator rejects any difference.
+-/
+
+namespace @NAME@
+
+/-- One definition per notion, each with a doc comment that says what it means in words. -/
+def ExampleNotion (n : ℕ) : Prop := 0 < n
+
+/-- The main theorem, in the source's terms. -/
+theorem @THEOREM1@ : ExampleNotion 1 := by
+  exact @LIBRARY@.example_theorem
+
+end @NAME@
