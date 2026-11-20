@@ -60,3 +60,7 @@ Apache-2.0 (see `LICENSE`). Copyright 2026 DICTO.
 
 - ORCID (all works): https://orcid.org/0009-0001-2620-2036
 - Website: https://dictospheres.com
+
+## Paper
+
+The statement formalized here is Theorem 1 of DICTO, *Ten Faces in Every Zone: Grünbaum's Question at k = 10* (paper #115), DICTO DOI 10.5281/zenodo.24389006.

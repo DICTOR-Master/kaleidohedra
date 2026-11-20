@@ -64,7 +64,7 @@ sources:
       exactly k faces? ... No information is available for any k >= 10." Also
       the definitions used: parallelohedron (a polyhedron that admits a tiling
       of space by translated copies of itself), polyhedra of spherical type
-      (surface homeomorphic to a sphere, adjacent faces not coplanar, p. 9),
+      (surface homeomorphic to a sphere, adjacent faces not coplanar; author's version, p. 11),
       zones; and the known cases k = 4 (cube), 6 (the rhombic dodecahedra of
       Kepler and Bilinski), 8 (Grunbaum's doubly indented rhombic icosahedra D1,
       D2). On indentations (author's version p. 15): "None of the other
@@ -180,19 +180,21 @@ sources:
     relationship: "background"
     note: "Not read."
     author_endorsement: "n/a"
-  - title: "Grunbaum's zone question at k = 10: computational study of unions of golden rhombohedra (finding GET A and GET B)"
+  - title: "Ten Faces in Every Zone: Grunbaum's Question at k = 10 (the DICTO Grunbaum-Escher Triacontahedron, GET A and GET B)"
     authors:
       - name: "DICTO"
         orcid: "0009-0001-2620-2036"
         github: "DICTOR-Master"
-    type: "other"
-    location: "unpublished study of 15 November 2026, not peer reviewed"
-    relationship: "other"
+    id: "doi:10.5281/zenodo.24389006"
+    type: "paper"
+    location: "Zenodo preprint (paper #115), 20 November 2026, version 1: doi:10.5281/zenodo.24389007 (all versions: doi:10.5281/zenodo.24389006); not peer reviewed"
+    relationship: "formalizes"
     note: >-
-      The witness and its exact data (cells, faces, lattice) come from this
-      study, which checked GET A and GET B in exact arithmetic in Z[phi]. Its
-      classification of a class of lattice tilers and the sibling solid GET A
-      are not part of this entry.
+      Theorem 1 of this paper (GET B: a rhombic monohedral parallelohedron of
+      spherical type with every zone of exactly 10 faces, tiling space by lattice
+      translates) is the statement formalized here. The paper's other results
+      (GET A, the non-congruence of GET A and GET B, the C(6) classification) are
+      not part of this entry.
     author_endorsement: "participated"
 
 related_formalizations: []
@@ -241,7 +243,7 @@ fidelity:
   divergences: >-
     (1) Faces are given as parallelograms p + [0,1]u + [0,1]v; every face of a
     rhombic polyhedron is one. (2) "Polyhedron" has no generally accepted
-    definition (Grunbaum, p. 9); the statement takes his spherical type and
+    definition (Grunbaum, author's version, p. 11); the statement takes his spherical type and
     makes it precise: a compact solid equal to the closure of its interior,
     whose frontier is the union of the faces and is homeomorphic to the
     sphere; the faces are distinct and meet in a common side, a common corner or

@@ -10,7 +10,7 @@ public import GET.Main
 
 **Informal statement.** There is a polyhedron `P` in Euclidean 3-space with these properties.
 
-* `P` is a polyhedron of spherical type in Grünbaum's sense (2010, p. 9): its surface is homeomorphic to a sphere and
+* `P` is a polyhedron of spherical type in Grünbaum's sense (2010, author's version, p. 11): its surface is homeomorphic to a sphere and
   adjacent faces are not coplanar. Here `P` is the solid: a compact set equal to the closure of its interior, whose
   frontier is the union of its 30 parallelogram faces; the 30 faces are distinct, and two faces meet in a common side,
   a common corner, or not at all.
