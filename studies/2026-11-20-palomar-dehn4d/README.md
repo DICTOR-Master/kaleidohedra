@@ -3,9 +3,9 @@
 **Verdict: the whole brief is proved in Lean and packaged. Fourteen theorems depend only on `propext`,
 `Classical.choice` and `Quot.sound`. The comparator accepts the Solution with all three kernels, and three altered
 copies are each rejected with the right reason. The fit check at Palomar's real profile passes, Palomar's own parser
-and the kit's preflight pass, and the blind re-score gives 4 / 4 (neutral) from both scorers. The repository is
-assembled locally only: it was not created on GitHub and nothing was submitted. The names below are placeholders for
-DICTO to approve.**
+and the kit's preflight pass, and the blind re-score gives 4 / 4 (neutral) from both scorers. DICTO approved the
+names and the repository (20 November); the public repository DICTOR-Master/dehn-hadwiger-4d-lean cites paper #116
+and is ready for submission (section "Repository and submission data"). Nothing was submitted: DICTO submits.**
 
 DICTO's brief (20 November): the bridge first, then the six regular 4-polytopes, the 5-cell against the 600-cell
 (stated only if true), the credits, and packaging with the Palomar kit.
@@ -151,9 +151,46 @@ configuration has no definition targets.
   folder on another filesystem had made the comparator fail on git, and the old script reported REJECTED. Checklist
   lessons were added.
 
+## Repository and submission data (20 November, evening)
+
+DICTO, 20 November: "create the public GitHub repo DICTOR-Master/dehn-hadwiger-4d-lean, cite #116 in it, run the
+preflight and then give you the submission data".
+
+- **Paper #116 cited** as a `formalizes` source in `formalization.yaml` (DICTO DOI 10.5281/zenodo.24393967; Version 1
+  10.5281/zenodo.24393968): its Theorem 1 (a) to (e) are the fourteen statements. The entry stays source-based (Hadwiger
+  1954 and #116 `formalizes`; no original-proof source), as the kit's source rule requires. `CITATION.cff` and a
+  "How to cite and reuse" section in the README, in the form of the Dehn Canon and Grünbaum repositories.
+- **Repository:** https://github.com/DICTOR-Master/dehn-hadwiger-4d-lean, public. Three commits by DICTO with the
+  GitHub no-reply address and plain messages: the two from `assemble_entry.py` and
+  `85f77970d2bbb58f7847be69ebbbc574b772ccb2` (the citation commit; the Lean files are unchanged since `1606210`).
+  The working copy is at `palomar-entries/dehn-hadwiger-4d-lean`.
+- **Kit preflight** (`preflight_checks.py`, PalomarSubmission 14aa8d6) on the final commit: `FINAL ok`, exit 0;
+  0 FAIL, 0 WARN. Request id `dehnhad4d001` (12 lowercase alphanumerics). Challenge 300 lines, 19,552 bytes.
+  Parser: source-based, substantive development, 9 sources, 4 related formalizations, ORCID read. Privacy: no home
+  paths, host names or e-mail addresses in 42 files or in the 3 commits.
+- **Comparator again, at `palomar-namespace-16x32-v1`** (`fit_check.sh` with the split steps; the compute
+  workspace's 34 Lean and configuration files are identical to the repository's): export 0:21; judge with Lean's
+  kernel "Your solution is okay!" 2:32, 8.9 GiB; NanoDa accepts 0:51; con-ron at Palomar's `--jobs=2` accepts in
+  2:58, 18.5 GiB. Every step exit 0 (`logs/fit/SUMMARY.tsv`, last four lines; the con-ron line before them is the
+  earlier run at con-ron's own worker count). con-ron at two workers now fits a 280 s step.
+- **Preflight workflow on GitHub** (run 44722199841, commit 85f7797): status **pass**, run concluded success (11.2 min). Profile
+  `palomar-standard-v1` (4 CPUs, 15.6 GiB): Lean's kernel and NanoDa accept ("Your solution is okay!"); con-ron
+  **declined (capacity)** with a warning: out of memory at the runner's ceiling (exit 137), budget 1800 s. As
+  checklist D says, this is a warning, not a rejection; at Palomar's real profile (32 GB) con-ron at two workers
+  needed 18.5 GiB here and accepted. Challenge trust high; ORCID validated; source-based, substantive development,
+  9 sources. Peak 9.18 GiB (solution build).
+- **Form answers** (`form_answers.py`): `papers-to-read/PALOMAR-dehn4d-submission.txt` in DICTO's Documents.
+- Not done, as before: the blind scorers' citation additions (Boltianskii 1978, Sah 1979, Dupont 2001, a source for
+  the simplex and the cube, the Lagarias–Moews tiling note, Jessen 1972 with Dupont–Sah, the AFP/Rocq/HOL Light/Mizar
+  search, Hadwiger's theorem number).
+
 ## LEADS
 
-- The citation additions above, then DICTO's word on the names, before creating the repository.
+- DICTO submits at submit.palomar-registry.org with the data above; then follow the runs
+  (`read_report.py --find DICTOR-Master/dehn-hadwiger-4d-lean`) and record the PALOMAR id here, in `concordance.json`
+  and in open-work (checklist F).
+- The blind scorers' citation additions, if DICTO wants them before submission (a metadata commit; the preflight
+  would be rerun on it).
 - Formalize the face-sum identity for every convex polytope in ℝ⁴ (both scorers' main lever for a higher score).
 - Formalize Jessen's converse in ℝ⁴ (long term).
 
