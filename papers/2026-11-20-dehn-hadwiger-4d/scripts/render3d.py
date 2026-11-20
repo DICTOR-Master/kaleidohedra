@@ -3,6 +3,8 @@
 # as tubes (one colour per edge, an outline tube behind it so dark edges stay visible on the dark ground) with balls at the
 # corners. Lights at 0.8 of the Dehn Canon values here, so that the pale silver and cream faces keep their tone (no faces
 # washed out to white). Orthographic camera; project() gives the pixel of a 3D point exactly as the camera draws it, for labels.
+# 20 Nov (Dehn–Hadwiger 4D, Version 2): a part marked 'top' is drawn in a second pass after the depth buffer is cleared, so
+# nothing hides it (a small coloured facet inside a dense wire solid); within each pass solid faces hide what lies behind them.
 import json, os
 import numpy as np
 
@@ -20,20 +22,22 @@ window.show = (i) => { const s = SC[i]; scene = new THREE.Scene(); const E = s.E
   scene.add(new THREE.HemisphereLight(0xffffff, 0xb8b0a0, 0.50)); const F = new THREE.DirectionalLight(0xffffff, 0.32); F.position.copy(dir.clone().multiplyScalar(6)); scene.add(F);
   const L = new THREE.DirectionalLight(0xffffff, 0.50); L.position.copy(dir.clone().multiplyScalar(4).add(new THREE.Vector3(-2, 3, 1))); scene.add(L);
   cam = new THREE.OrthographicCamera(-E, E, E, -E, 0.1, 50); cam.up.set(0, 1, 0); cam.position.copy(dir.clone().multiplyScalar(10)); cam.lookAt(0, 0, 0);
-  const grp = new THREE.Group();
-  for (const d of s.parts) {
+  const grp = new THREE.Group(), top = new THREE.Group();
+  for (const d of s.parts) { const grp0 = d.top ? top : grp;
     const g = new THREE.BufferGeometry(); const p = new Float32Array(d.t.length * 9), c = new Float32Array(d.t.length * 9); let k = 0;
     d.t.forEach((tr, ti) => { const col = new THREE.Color(d.c[ti]); for (const j of tr) { p[k] = d.v[j][0]; p[k + 1] = d.v[j][1]; p[k + 2] = d.v[j][2]; c[k] = col.r; c[k + 1] = col.g; c[k + 2] = col.b; k += 3; } });
     g.setAttribute('position', new THREE.BufferAttribute(p, 3)); g.setAttribute('color', new THREE.BufferAttribute(c, 3)); g.computeVertexNormals();
     const glass = d.a < 1; const mesh = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.5, metalness: 0.05, flatShading: true, transparent: glass, opacity: d.a, depthWrite: !glass, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }));
-    if (glass) mesh.renderOrder = 5; grp.add(mesh);
+    if (glass) mesh.renderOrder = 5; grp0.add(mesh);
     for (const e of (d.tubes || [])) {
-      grp.add(tube(d.v[e[0]], d.v[e[1]], d.rad * E, e[2], false));
-      if (e[3]) grp.add(tube(d.v[e[0]], d.v[e[1]], d.rad * E * 1.55, e[3], true));
+      grp0.add(tube(d.v[e[0]], d.v[e[1]], d.rad * E, e[2], false));
+      if (e[3]) grp0.add(tube(d.v[e[0]], d.v[e[1]], d.rad * E * 1.55, e[3], true));
     }
-    for (const b of (d.balls || [])) { const m = new THREE.Mesh(new THREE.SphereGeometry(d.rad * E * 1.25, 20, 14), new THREE.MeshStandardMaterial({ color: b[1], roughness: 0.55 })); m.position.set(...d.v[b[0]]); grp.add(m); }
+    for (const b of (d.balls || [])) { const m = new THREE.Mesh(new THREE.SphereGeometry(d.rad * E * 1.25, 20, 14), new THREE.MeshStandardMaterial({ color: b[1], roughness: 0.55 })); m.position.set(...d.v[b[0]]); grp0.add(m); }
   }
-  scene.add(grp); r.render(scene, cam); return SC.length; };
+  scene.add(grp); scene.add(top); r.autoClear = true; top.visible = false; r.render(scene, cam);
+  if (top.children.length) { r.autoClear = false; grp.visible = false; top.visible = true; r.clearDepth(); r.render(scene, cam); grp.visible = true; r.autoClear = true; }
+  return SC.length; };
 </script></body></html>'''
 
 

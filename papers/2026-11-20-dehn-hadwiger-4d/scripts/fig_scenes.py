@@ -2,8 +2,10 @@
 # polytopes of exact4d.py, with asserts on every drawn geometry (data/fig-scenes.json).
 #   Figure 1 (six.html): the six regular 4-polytopes, each by a perspective projection from a point on the axis of one
 #     facet, outside the polytope; edges as tubes shaded from light (near the eye in 4D) to dark (far); the facet farthest
-#     from the eye (the small one in the middle; for the 5-cell and the 16-cell one of the large tetrahedra, see-through) is drawn in the app colour of its solid: dodecahedron violet,
+#     from the eye (the small one in the middle; for the 5-cell and the 16-cell one of the large tetrahedra) is drawn solid in the app colour of its solid: dodecahedron violet,
 #     tetrahedron red, cube green, octahedron yellow. Every edge of each polytope is drawn, none added.
+#     Solid faces hide the edges behind them (depth buffer, every facet opaque). In the 120-cell and the 600-cell the small
+#     facet, deep inside a dense wire solid, is drawn in a second pass over the wires (part 'top'), with its own edges.
 #   Figure 3 (caps.html): the 600-cell with the 120 caps of one left orbit. (a) the 20 facets at one corner, projected
 #     orthogonally to the corner's axis: the 4 capped facets solid, their tips and cap edges; (b) the whole solid in
 #     perspective; (c) the 120 tips with the edges of their own 600-cell, round the 600-cell, at the scale of (b).
@@ -78,7 +80,7 @@ def hull_part(P3, col, alpha=1.0):
 P = X.six(); LOG = {}
 # ---------------- Figure 1: the six polytopes -------------------------------------------------------------------------------
 EYE = {'120-cell': 1.32, '600-cell': 2.0, 'tesseract': 1.25, '5-cell': 3.2, '16-cell': 2.4, '24-cell': 2.2}
-ALPHA = {'5-cell': 0.5, '16-cell': 0.6}   # simplex facets are large in any projection: drawn see-through so the edges behind show
+TOP = {'120-cell', '600-cell'}             # the small facet drawn over the dense wires, so that it shows
 RAD = {'120-cell': 0.0042, '600-cell': 0.0055, 'tesseract': 0.010, '5-cell': 0.010, '16-cell': 0.010, '24-cell': 0.008}
 sc = []
 for nm in X.ORDER:
@@ -92,7 +94,11 @@ for nm in X.ORDER:
     t = (w - w.min()) / (w.max() - w.min()); cols = [hexc(FAR + (NEAR - FAR) * (t[i] + t[j]) / 2) for i, j in p.E]
     far = int(np.argmin(N @ c)); cell = sorted(p.cells[far])
     check(f'{nm}: the shaded facet is a {CELL[nm]}', len(cell) == CELLN[CELL[nm]], f'{len(cell)} corners')
-    parts = [hull_part(P3[cell], APP[CELL[nm]], ALPHA.get(nm, 1.0)), edge_part(P3, p.E, cols, RAD[nm])]
+    parts = [hull_part(P3[cell], APP[CELL[nm]]), edge_part(P3, p.E, cols, RAD[nm])]
+    if nm in TOP:
+        own = [k for k, (i, j) in enumerate(p.E) if i in p.cells[far] and j in p.cells[far]]
+        check(f'{nm}: the facet drawn on top carries its own {len(own)} edges', len(own) == {'dodecahedron': 30, 'tetrahedron': 6}[CELL[nm]])
+        parts += [dict(parts[0], top=True), dict(edge_part(P3, [p.E[k] for k in own], [cols[k] for k in own], RAD[nm]), top=True)]
     sc.append({'E': ext(P3, VIEW), 'dir': VIEW.tolist(), 'parts': parts, 'name': nm})
     LOG[nm] = {'counts': p.counts(), 'eye': EYE[nm], 'shaded': CELL[nm]}
 write(os.path.join(OUT, 'six.html'), sc)

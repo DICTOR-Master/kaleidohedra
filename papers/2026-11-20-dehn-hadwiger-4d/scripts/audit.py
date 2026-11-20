@@ -250,7 +250,7 @@ for w in ('fire', 'water', 'earth', 'aether', 'void', 'wind'):
 ok('Queens only in the two notes (titles of references aside)', body.count('White Queen') == 1 and body.count('Red Queen') == 1)
 ok('DICTO DOI labels', all(m.startswith('DICTO DOI:') for m in re.findall(r'DICTO DOI:[^,.]*', flat)))
 ok('status box present (draft)', 'delete this box at publication' in flat)
-ok('paper number at publication', 'Paper # (at publication)' in flat)
+ok('paper number at publication (or the number given: #116)', 'Paper # (at publication)' in flat or 'Paper #116 ' in flat)
 
 print('AUDIT OK' if not FAILS else f'AUDIT FAIL ({len(FAILS)}): ' + '; '.join(FAILS))
 sys.exit(1 if FAILS else 0)
