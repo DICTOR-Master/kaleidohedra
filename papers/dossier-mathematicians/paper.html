@@ -24,7 +24,7 @@ table.over td:nth-child(3) { width: 30%; }
 <img class="watermark" src="../dicto-logo.png" alt="">
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
 <h1>DICTO: Selected New Mathematical Proofs</h1>
-<p class="sub">Six proved results in geometry, one page each</p>
+<p class="sub">Seven proved results in geometry, one page each</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
 Version 1 · 20 November 2026 · Licence CC BY-SA 4.0 · Every statement here is taken from the paper named on its card and is claimed only as that paper states it.<br>
@@ -35,7 +35,7 @@ Computation, proofs, verification and drafting with Claude (Anthropic).
 
 <div class="front">
 <p class="hook">DICTO is a sculptor in Osaka. He trained as a stonemason, a Buddhist statue wood-carver and a restoration technician, and he now builds from recycled PET bottles. The shapes he builds lead into questions of geometry, and he publishes the answers as numbered papers.</p>
-<p>The six results below are proved. Four of them carry proofs machine-checked in the proof assistant Lean 4 with the Mathlib library: two of these are registered on Palomar, a public registry of formalised mathematics, and a third has been submitted to it. The others are proved by exact, certified computation or by hand. Every paper is open access on Zenodo under a DICTO DOI, with its scripts, exact checks and data.</p>
+<p>The seven results below are proved. Five of them carry proofs machine-checked in the proof assistant Lean 4 with the Mathlib library: two of these are registered on Palomar, a public registry of formalised mathematics, a third has been submitted to it, and a fourth is prepared for it. The others are proved by exact, certified computation or by hand. Every paper is open access on Zenodo under a DICTO DOI, with its scripts, exact checks and data.</p>
 <p>Each card gives the theorem in one sentence, why it may interest a mathematician, how it is proved, whose work it builds on, and where to find it. "Not found in the sources checked" means exactly that: each paper lists the sources it checked. Where DICTO's name for a known shape is used, an asterisk leads to its regular name and its discoverer.</p>
 <table class="over">
 <tr><th></th><th>Result</th><th>How it is proved</th></tr>
@@ -45,6 +45,7 @@ Computation, proofs, verification and drafting with Claude (Anthropic).
 <tr><td>4</td><td>Fair dice are Alexandrov's problem: the 149 Aequi and the 1083 Seraphim (#112, #111)</td><td>proof by hand; exact computation</td></tr>
 <tr><td>5</td><td>The scutoid law: swaps per birth = ⟨F⟩/2 − 3 (#114)</td><td>proof by hand</td></tr>
 <tr><td>6</td><td>The Loop Equality on every close-packed stacking (#102)</td><td>proof by hand; Lean</td></tr>
+<tr><td>7</td><td>The Dehn–Hadwiger invariant in four dimensions: 120 regular 5-cells balance one 600-cell (#116)</td><td>Lean, prepared for Palomar; exact computation</td></tr>
 </table>
 </div>
 
@@ -158,7 +159,25 @@ Computation, proofs, verification and drafting with Claude (Anthropic).
 <dt>Links</dt>
 <dd>DICTO DOI: 10.5281/zenodo.24037664 (Version 6: 10.5281/zenodo.24241321) · aiXiv 2611.01038 · OEIS A400949</dd>
 </dl>
-<p class="note" style="margin-top:10pt">Work in progress includes further formalisations in Lean.</p>
+</div>
+
+<!-- ============ CARD 7 ============ -->
+<div class="card">
+<h2>7 · The Dehn–Hadwiger invariant in four dimensions</h2>
+<p class="src">Paper #116, <i>The Dehn–Hadwiger invariant in four dimensions</i></p>
+<figure><img style="max-height:42mm" src="figures/dehn4d-fig1.png" alt="the six regular 4-polytopes in perspective, one facet of each solid in colour: above, the 120-cell, tesseract, 16-cell and 24-cell with invariant zero; below, the 600-cell and the 5-cell with invariant nonzero"><figcaption>From #116, Figure 1. The six regular 4-polytopes, from exact corners, in perspective; one far facet in the app colour of its solid. Upper row: invariant zero; lower row: nonzero.</figcaption></figure>
+<div class="result"><b>Theorem.</b> In Lean 4 with Mathlib, the Dehn–Hadwiger invariant, read from the solid as a set, is proved to be kept by every dissection into convex polytopes in every finite dimension, to be zero for the tesseract, the 16-cell, the 24-cell and the 120-cell and nonzero for the 5-cell and the 600-cell, so that no similar copy of the 5-cell or of the 600-cell is scissors congruent to a similar copy of any of the other four, nor to a similar copy of the other; and, exactly, one 600-cell of edge a and n regular 5-cells of edge b have total invariant zero if and only if n b² = 120 a², so 120 5-cells of the same edge balance one 600-cell.</div>
+<dl>
+<dt>Why it matters</dt>
+<dd>Hadwiger carried Dehn's invariant to every dimension in 1954, with the faces of dimension n − 2 in place of the edges; in ℝ⁴ volume and this invariant decide scissors congruence (Jessen). The mathematics of the invariance is classical; what is claimed is its machine-checked proof: the formal proofs found treat dimension 3 only. The 600-cell's dihedral angle is 4π/3 minus the 5-cell's, so their invariants have opposite signs. With equal edges the 120 5-cells fit on the 600-cell as caps: the facets of one orbit of left multiplication by its own quaternion group take every edge once, the tips form a larger 600-cell of radius √2 times the circumradius, and the capped solid is star-shaped, chiral and never convex. By Jessen's theorem it is scissors congruent to a 4-cube of edge 5<sup>3/8</sup>√φ a ≈ 2.32599 a (existence only). By their centres the cap sets are one state of Coxeter's compound of ten 600-cells.</dd>
+<dt>How it is proved</dt>
+<dd>In Lean 4 with Mathlib: 15 modules, 3,383 lines, on 13 modules of the Dehn Canon (#113) reused unchanged; the 14 theorems depend only on the three standard axioms (propext, Classical.choice, Quot.sound), with no <code>sorry</code> and no <code>native_decide</code>; the 600-cell's data in ℤ[φ] are checked by the Lean kernel. Palomar's comparator accepts the statement file locally with three independent kernels (Lean's own, NanoDa, con-ron); Lean proof prepared for Palomar. The balance and the caps: exact computation in ℚ(√5) and by hand; the angle relation also in Lean; the cube by Jessen's theorem, cited.</dd>
+<dt>Credits</dt>
+<dd>Dehn (1901) for the invariant and the theorem; Hilbert (1900) for the question; Hadwiger (1954) for the invariants in every dimension and the regular simplex against the cube for every k ≥ 3; Jessen for the tensor form and the theorem in ℝ⁴; Dupont and Sah (1990); Lagarias and Moews (1995); Schläfli for the six regular 4-polytopes; Coxeter for their angles and the compound of ten 600-cells in the 120-cell; Conway and Smith for the quaternion groups; Niven's theorem in Mathlib (Meiburg, Broshi). Not found in the sources checked: a machine-checked proof of the invariance in every finite dimension with the invariant defined from the set, and of the invariants of the six; the balance of one 600-cell against 120 regular 5-cells, and n b² = 120 a²; the cap set and the 600-cell of its tips.</dd>
+<dt>Links</dt>
+<dd>DICTO DOI: 10.5281/zenodo.24393967 (Version 1: 10.5281/zenodo.24393968) · Lean proof prepared for Palomar</dd>
+</dl>
+<p class="note" style="margin-top:6pt">Work in progress includes further formalisations in Lean.</p>
 <p class="note">DICTO · https://dictospheres.com · contact@dictospheres.com · ORCID 0009-0001-2620-2036</p>
 </div>
 </body></html>
