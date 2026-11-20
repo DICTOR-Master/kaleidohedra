@@ -1,0 +1,64 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "version": "1",
+ "publication_date": "2026-11-20",
+ "title": "The Dehn–Hadwiger invariant in four dimensions",
+ "subjects": [
+  {
+   "term": "MSC2020 52B45: Dissections and valuations (Hilbert's third problem, etc.)",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B45",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52B11: n-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B11",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 68V20: Formalization of mathematics in connection with theorem provers",
+   "identifier": "https://zbmath.org/classification/?q=cc:68V20",
+   "scheme": "url"
+  }
+ ],
+ "description": "<p>Two solids are scissors congruent when one can be cut into finitely many pieces that, moved rigidly, fill the other. In 1901 Dehn showed that volume does not decide this in space: the sum over the edges of length ⊗ dihedral angle, with angles counted modulo rational multiples of π, cannot be changed by cutting [1]. Hadwiger carried the invariant to every dimension in 1954: in ℝ<sup>n</sup> the faces of dimension n − 2 take the place of the edges [3]. We prove this invariant in Lean 4 with Mathlib, read from the solid as a set, and compute it for the six regular polytopes of four-dimensional space. <b>Main theorem</b> (Theorem 1, Lean): scissors-congruent convex polytopes have the same Dehn–Hadwiger invariant, in every finite dimension, and so do finite unions of them; in ℝ⁴ the tesseract, the 16-cell, the 24-cell and the 120-cell have invariant zero, the 5-cell has A<sub>5</sub> ⊗ arccos(1/4) and the 600-cell A<sub>600</sub> ⊗ (4π/3 − arccos(1/4)), both nonzero; hence no similar copy of the 5-cell or of the 600-cell is scissors congruent to a similar copy of any of the other four, nor to a similar copy of the other. The 600-cell's dihedral angle is 4π/3 minus the 5-cell's, so their invariants have opposite signs. <b>Theorem 2</b> (exact) follows: one 600-cell and n regular 5-cells, of edges a and b, have total invariant zero exactly when n b² = 120 a², so 120 5-cells of the same edge balance one 600-cell. They fit on it as caps: the 120 facets of one orbit of left multiplication by the 600-cell's own quaternion group take every edge once, the caps' tips form a larger 600-cell of radius √2 times the circumradius, and the capped solid is star-shaped, chiral and never convex. By Jessen's theorem it is scissors congruent to a 4-cube of edge 5<sup>3/8</sup>√φ a ≈ 2.32599 a (existence only). The mathematics of Theorem 1 is classical; what is claimed is its machine-checked proof. By their centres the five cap sets are one state of Coxeter's compound of ten 600-cells in the 120-cell, the five cosets of the binary tetrahedral group in 2I, and the caps lie on the 600-cell's own mirrors (§6). The relation of Theorem 2 and its cap set were not found in the sources checked.</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "DICTO",
+  "Dehn invariant",
+  "Dehn–Hadwiger invariant",
+  "scissors congruence",
+  "600-cell",
+  "5-cell",
+  "regular polytopes",
+  "Lean 4",
+  "Mathlib",
+  "Coxeter compound"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24383552",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1007/BF01361118",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}
