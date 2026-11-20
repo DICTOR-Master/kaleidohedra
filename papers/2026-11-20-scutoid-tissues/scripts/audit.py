@@ -132,6 +132,26 @@ data(r'from 3 at birth to 3 at death', 'figure: sides 3 to 3', d1['sides'][0] ==
 src = open('scripts/fig_tube.py').read()
 data(r'10, 30, 50, 70 and 90%', 'figure: sections at 10..90%', 'FR = (0.1, 0.3, 0.5, 0.7, 0.9)' in src)
 data(r'1, 116, 366, 116, 1 corners of index 0 to 4', 'section 4: whole-sweep indices (figure json)', fchk.get('direction 1: corner indices (1, 116, 366, 116, 1)'))
+# the rendered figures: facts from fig_scenes.py's output, the study data and the Sun faces
+FS = json.load(open('data/fig-scenes.json')); fsc = {c[0]: c[1] for c in FS['checks']}; G = FS['figures']
+ok('figures: every check of fig_scenes.py passes', all(c[1] for c in FS['checks']))
+data(r'with 43 checks', 'figures: 43 checks (data section)', len(FS['checks']) == 43)
+data(r'its section has 5 sides on the lower plane and 6 on the upper', 'Figure 1: 5 and 6 sides',
+     G['fig1'] == {'bottom_sides': 5, 'top_sides': 6} and fsc.get('Figure 1: the scutoid has 5 sides at the bottom and 6 at the top'))
+g2 = G['fig2']
+data(r'86 cells, 211 corners, 36 births, 147 swaps and 28 deaths', 'Figure 2: block counts',
+     (g2['cells'], g2['corners'], g2['births'], g2['swaps'], g2['deaths']) == (86, 211, 36, 147, 28))
+data(r'147 = 211 − 36 − 28', 'Figure 2: swaps = corners - births - deaths', 147 == 211 - 36 - 28 and fsc.get('Figure 2: swaps = corners - births - deaths'))
+data(r'14 walls, 6 squares and 8 hexagons', 'Figure 5: bcc cells 14 walls, 6 squares, 8 hexagons', fsc.get('Figure 5: every whole bcc cell has 14 walls (6 squares, 8 hexagons)'))
+data(r'\(100 to 300000', 'Figure 5: random polytopes from 100 to 300000 cells', min(rs) == 100 and max(rs) == 300000)
+csrc = open('scripts/fig_compose.py').read()
+data(r'2nd and 98th percentiles', 'Figure 6: colour ramp percentiles', 'np.percentile(allv, 2), np.percentile(allv, 98)' in csrc)
+import numpy as np
+SF = np.load('data/sun-faces.npz'); NS = int(SF['crop'][2]); TS = SF['front'].shape[0]
+data(r'a 12 Mm square', 'Figure 6: 12 Mm square', round(NS * float(SF['dx'])) == 12)
+data(r'40 minutes of the same square \(242 frames, 10 s apart\)', 'Figure 6: 242 frames, 10 s apart, 40 minutes',
+     TS == 242 and float(SF['dt']) == 10.0 and round((TS - 1) * 10 / 60) == 40)
+data(r'0\.1 Mm below the surface in the Bifrost run en024048_hion', 'Figure 6: run and depth (study text)', 'en024048_hion' in SG and '0.1 Mm below tau = 1' in SG)
 # #104 DOIs against the Concordance
 C = json.load(open(CONC))['papers']['104']
 ok('#104 concept DOI ' + C['doi'], '10.5281/zenodo.%s (all versions; Version 3: 10.5281/zenodo.%s)' % (C['doi'], C['doi_v3']) in raw)
@@ -156,7 +176,8 @@ S = [
     (r'(x, y, v t)|\(x, y, t\)', 'coordinates'), (r'Version 3', 'version'), (r'Phil\. Mag\.|Nat\. Commun\.', 'journal'),
     (r'with five or more cells', 'words'), (r'\[\d+(, \d+)*\]', 'citation numbers'), (r'4-polytopes?', 'name'),
     (r'step 0', 'time step 0 (limit)'), (r'\[\d+, Theorems? \d( and \d)?\]', 'citation with theorem'),
-    (r'index cannot be 0|index is 1', 'proof cases'), (r'Python 3', 'software'), (r'fig_tube', 'file name'), (r'Lemma 5', 'lemma of #104'), (r'1′', 'theorem prime'),
+    (r'index cannot be 0|index is 1', 'proof cases'), (r'Python 3', 'software'), (r'fig_tube', 'file name'), (r'render3d', 'file name'),
+    (r'Figures \d( to \d)?', 'figures'), (r'24π²/35 − 2', 'the Poisson–Voronoi value as a formula'), (r'Theorem 1\(\w\)', 'theorem part'), (r'Lemma 5', 'lemma of #104'), (r'1′', 'theorem prime'),
 ]
 for rx, why in S:
     span(rx, why, need=0)

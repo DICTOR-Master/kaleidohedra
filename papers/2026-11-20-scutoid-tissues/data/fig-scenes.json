@@ -1,0 +1,241 @@
+{
+ "checks": [
+  [
+   "space-time complex: every inner corner has index 1, 2 or 3",
+   true,
+   "{0: 0, 1: 227, 2: 1063, 3: 228, 4: 0}"
+  ],
+  [
+   "Figure 1: the scutoid has 5 sides at the bottom and 6 at the top",
+   true,
+   "(5, 6)"
+  ],
+  [
+   "Figure 1: the scutoid has one corner between the planes, the swap corner",
+   true,
+   ""
+  ],
+  [
+   "Figure 1: the wall it gains at the swap is a triangle from the corner to the top plane",
+   true,
+   ""
+  ],
+  [
+   "Figure 1: the wall the other pair loses is a triangle from the bottom plane to the corner",
+   true,
+   ""
+  ],
+  [
+   "Figure 1: the scutoid is convex (Euler and every corner inside every face plane)",
+   true,
+   ""
+  ],
+  [
+   "Figure 1: bottom slice: the parting pair touches, the meeting pair does not",
+   true,
+   ""
+  ],
+  [
+   "Figure 1: top slice: the meeting pair touches, the parting pair does not",
+   true,
+   ""
+  ],
+  [
+   "Figure 1: the bottom slice tiles its window (areas sum to 4)",
+   true,
+   "3.9999999999999996"
+  ],
+  [
+   "Figure 1: the top slice tiles its window (areas sum to 4)",
+   true,
+   "4.0"
+  ],
+  [
+   "Figure 3 birth: the corner is the one corner of each of its four cells inside the box",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 birth: the corner is the one corner of each of its four cells inside the box",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 birth: the corner is the one corner of each of its four cells inside the box",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 birth: the corner is the one corner of each of its four cells inside the box",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 birth: the four cells fill the box (volumes sum to its volume)",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 birth: the section before fills its square",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 birth: the section after fills its square",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 birth: 3 cells before, 4 after, the new one a triangle",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 swap: the corner is the one corner of each of its four cells inside the box",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 swap: the corner is the one corner of each of its four cells inside the box",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 swap: the corner is the one corner of each of its four cells inside the box",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 swap: the corner is the one corner of each of its four cells inside the box",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 swap: the four cells fill the box (volumes sum to its volume)",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 swap: the section before fills its square",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 swap: the section after fills its square",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 swap: 4 cells before and after",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 swap: before, the parting pair touches and the meeting pair does not",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 swap: after, the meeting pair touches and the parting pair does not",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 death: the corner is the one corner of each of its four cells inside the box",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 death: the corner is the one corner of each of its four cells inside the box",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 death: the corner is the one corner of each of its four cells inside the box",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 death: the corner is the one corner of each of its four cells inside the box",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 death: the four cells fill the box (volumes sum to its volume)",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 death: the section before fills its square",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 death: the section after fills its square",
+   true,
+   ""
+  ],
+  [
+   "Figure 3 death: 4 cells before, the dying one a triangle, 3 after",
+   true,
+   ""
+  ],
+  [
+   "Figure 2: every corner in the block has index 1, 2 or 3",
+   true,
+   "211"
+  ],
+  [
+   "Figure 2: the births in the block are exactly the lowest corners of cells in the block, cell by cell",
+   true,
+   ""
+  ],
+  [
+   "Figure 2: the deaths in the block are exactly the highest corners of cells in the block, cell by cell",
+   true,
+   ""
+  ],
+  [
+   "Figure 2: swaps = corners - births - deaths",
+   true,
+   "(211, np.int64(36), np.int64(147), np.int64(28))"
+  ],
+  [
+   "Figure 4: fig_tube.py checks all pass",
+   true,
+   ""
+  ],
+  [
+   "Figure 5: Poisson\u2013Voronoi cells drawn, mean walls of the whole inner cells near 2 + 48\u03c0\u00b2/35",
+   true,
+   "(172, np.float64(15.215116279069768))"
+  ],
+  [
+   "Figure 5: every whole bcc cell has 14 walls (6 squares, 8 hexagons)",
+   true,
+   "189"
+  ]
+ ],
+ "figures": {
+  "fig1": {
+   "bottom_sides": 5,
+   "top_sides": 6
+  },
+  "fig3": {},
+  "fig2": {
+   "cells": 86,
+   "corners": 211,
+   "births": 36,
+   "swaps": 147,
+   "deaths": 28,
+   "born": 28,
+   "dies": 20,
+   "both": 8,
+   "through": 30
+  },
+  "fig5": {
+   "pv_cells_counted": 172,
+   "pv_mean_walls": 15.215116279069768
+  }
+ }
+}

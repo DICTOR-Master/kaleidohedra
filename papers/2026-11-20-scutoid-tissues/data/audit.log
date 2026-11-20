@@ -94,8 +94,29 @@ PASS figure: sections at 10..90%
 PASS text has: figure: sections at 10..90% 10, 30, 50, 70 and 90%
 PASS section 4: whole-sweep indices (figure json)
 PASS text has: section 4: whole-sweep indices (figure json) 1, 116, 366, 116, 1 corners of index 0 to 4
+PASS figures: every check of fig_scenes.py passes
+PASS figures: 43 checks (data section)
+PASS text has: figures: 43 checks (data section) with 43 checks
+PASS Figure 1: 5 and 6 sides
+PASS text has: Figure 1: 5 and 6 sides its section has 5 sides on the lower plane and 6 on the upper
+PASS Figure 2: block counts
+PASS text has: Figure 2: block counts 86 cells, 211 corners, 36 births, 147 swaps and 28 deaths
+PASS Figure 2: swaps = corners - births - deaths
+PASS text has: Figure 2: swaps = corners - births - deaths 147 = 211 − 36 − 28
+PASS Figure 5: bcc cells 14 walls, 6 squares, 8 hexagons
+PASS text has: Figure 5: bcc cells 14 walls, 6 squares, 8 hexagons 14 walls, 6 squares and 8 hexagons
+PASS Figure 5: random polytopes from 100 to 300000 cells
+PASS text has: Figure 5: random polytopes from 100 to 300000 cells \(100 to 300000
+PASS Figure 6: colour ramp percentiles
+PASS text has: Figure 6: colour ramp percentiles 2nd and 98th percentiles
+PASS Figure 6: 12 Mm square
+PASS text has: Figure 6: 12 Mm square a 12 Mm square
+PASS Figure 6: 242 frames, 10 s apart, 40 minutes
+PASS text has: Figure 6: 242 frames, 10 s apart, 40 minutes 40 minutes of the same square \(242 frames, 10 s apart\)
+PASS Figure 6: run and depth (study text)
+PASS text has: Figure 6: run and depth (study text) 0\.1 Mm below the surface in the Bifrost run en024048_hion
 PASS #104 concept DOI 24111864
 PASS #104 is Version 3
 PASS every number in the body is checked or structural 0 unmatched
-99 checks, 0 failed
+120 checks, 0 failed
 FINAL ok
