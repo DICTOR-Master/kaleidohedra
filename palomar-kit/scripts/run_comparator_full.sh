@@ -3,12 +3,16 @@
 # con-ron gets --jobs=$CJ (CJ=default: the template exactly). For entries whose whole judge fits the time limit, and for
 # the negative controls. Time limit TMO (default 280 s), memory cap MEM (default 14G) without swap, CPUs CPUS (empty =
 # all). /usr/bin/time gives wall time and the largest process; the cgroup's memory.peak the peak of the whole run.
-#   ENTRY=<entry> [CJ=2] [LOG=logs/comparator.log] bash run_comparator_full.sh       FINAL ok iff the comparator exits 0
+#   ENTRY=<entry> [CJ=2] [LOG=logs/comparator.log] bash run_comparator_full.sh       FINAL ok and exit 0 iff the comparator exits 0, else FINAL FAIL and a non-zero exit
 CJ=${CJ:-2}; TMO=${TMO:-280}; MEM=${MEM:-14G}; CPUS=${CPUS:-}
 ENTRY=$(cd "${ENTRY:-.}" && pwd); cd "$ENTRY" || exit 1; mkdir -p logs; LOG=${LOG:-logs/comparator.log}
 export PATH=$HOME/.elan/bin:$PATH
 PIN=""; if [ -n "$CPUS" ]; then PIN="taskset -c $CPUS"
   export LEAN_NUM_THREADS=$(python3 -c 'import sys; print(sum(int(r.split("-")[-1]) - int(r.split("-")[0]) + 1 for r in sys.argv[1].split(",")))' "$CPUS"); fi
+PFX=$(lean --print-prefix 2>/dev/null) || { echo "lean not found for the toolchain of $ENTRY"; echo "FINAL FAIL (no toolchain)"; exit 1; }
+for tool in lake leanexport leanchecker nanoda_bin con-ron; do
+  [ -x "$PFX/bin/$tool" ] || { echo "the toolchain at $PFX has no $tool"; echo "FINAL FAIL (missing $tool)"; exit 1; }
+done
 V=scripts/verify-comparator-kit.sh
 if [ "$CJ" = default ]; then cp scripts/verify-comparator.sh $V; else
   sed "s#\"con-ron\": \[f\"{prefix}/bin/con-ron\"\]#\"con-ron\": [f\"{prefix}/bin/con-ron\", \"--jobs=$CJ\"]#" scripts/verify-comparator.sh > $V
@@ -21,4 +25,5 @@ rm -f $V
 echo "comparator exit $cs; CPUS=${CPUS:-all} MEM=$MEM CJ=$CJ; log $LOG"
 grep -aE "Maximum resident|Elapsed \(wall|memory.peak" "$LOG"
 grep -av "linter\|^warning\|^Note\|^$\|^Exporting" "$LOG" | grep -av "^	" | tail -10 | cut -c1-300
-[ $cs -eq 0 ] && echo "FINAL ok" || echo "FINAL FAIL (comparator exit $cs)"
+if [ $cs -eq 0 ]; then echo "FINAL ok"; exit 0; fi
+echo "FINAL FAIL (comparator exit $cs)"; exit $cs

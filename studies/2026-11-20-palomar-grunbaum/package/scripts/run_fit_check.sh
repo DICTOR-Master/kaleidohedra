@@ -30,4 +30,5 @@ kill $smp 2>/dev/null; rm -f scripts/verify-comparator-fit.sh
 cat $LOG/$N-last.log >> $LOG/$N.log
 echo "step $STEP ${T:-}: exit $cs; most lean processes at once: $(cat $LOG/maxlean-$N 2>/dev/null || echo 0)"
 grep -aE "Elapsed \(wall|Maximum resident|memory.peak|^error|kernel accepts|okay|Illegal|do not match|Build completed" $LOG/$N-last.log | grep -v "^Exporting" | tail -10
-[ $cs -eq 0 ] && echo "FINAL ok" || echo "FINAL FAIL (exit $cs)"
+if [ $cs -eq 0 ]; then echo "FINAL ok"; exit 0; fi
+echo "FINAL FAIL (exit $cs)"; exit 1

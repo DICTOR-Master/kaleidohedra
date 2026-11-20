@@ -21,4 +21,5 @@ timeout $TMO systemd-run --user --scope -q -p MemoryMax=$MEM -p MemorySwapMax=0 
 rm -f scripts/verify-comparator-lowmem.sh
 grep -aE "Maximum resident|Elapsed \(wall|memory.peak" $LOG
 grep -av "linter\|^warning\|^Note\|^$" $LOG | grep -av "^	" | tail -14
-[ $cs -eq 0 ] && echo "FINAL ok" || echo "FINAL FAIL (comparator exit $cs)"
+if [ $cs -eq 0 ]; then echo "FINAL ok"; exit 0; fi
+echo "FINAL FAIL (comparator exit $cs)"; exit 1

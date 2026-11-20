@@ -19,7 +19,7 @@
 # Usage (from the entry root): EXPORTS=<dir> STEP=export bash scripts/run_comparator_split.sh
 #                              EXPORTS=<dir> STEP=judge K=none [FIT=1] [LOG=...] bash scripts/run_comparator_split.sh
 #                              EXPORTS=<dir> STEP=kernel K=con-ron [CJ=2] [FIT=1] [MEM=..] bash scripts/run_comparator_split.sh
-# FINAL ok iff the step exits 0.
+# FINAL ok and exit 0 iff the step exits 0; otherwise FINAL FAIL and the step's non-zero exit code.
 STEP=${STEP:?}; EXPORTS=${EXPORTS:?}; TMO=${TMO:-280}; MEM=${MEM:-14G}; CJ=${CJ:-default}
 ENTRY=$(cd "$(dirname "$0")/.." && pwd); cd "$ENTRY" || exit 1; mkdir -p logs "$EXPORTS"
 export PATH=$HOME/.elan/bin:$PATH
@@ -67,4 +67,5 @@ timeout $TMO systemd-run --user --scope -q -p MemoryMax=$MEM -p MemorySwapMax=0 
    exit \$s" > $LOG 2>&1; cs=$?
 grep -aE "Maximum resident|Elapsed \(wall|memory.peak" $LOG
 grep -av "linter\|^warning\|^Note\|^$\|^Exporting" $LOG | grep -av "^	" | tail -8 | cut -c1-300
-[ $cs -eq 0 ] && echo "FINAL ok" || echo "FINAL FAIL (exit $cs)"
+if [ $cs -eq 0 ]; then echo "FINAL ok"; exit 0; fi
+echo "FINAL FAIL (exit $cs)"; exit $cs

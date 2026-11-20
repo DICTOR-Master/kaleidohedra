@@ -20,7 +20,8 @@
 # all); CJ=default leaves con-ron at its own worker count with LEAN_NUM_THREADS = number of CPUs; /usr/bin/time gives wall time and the largest process, the cgroup's
 # memory.peak the peak of the whole step; a sampler writes memory.current every 2 s to $LOG.mem. Exports go to
 # EXPORTS (default $ENTRY/.lake/palomar-exports). Logs: $ENTRY/logs/comparator-split-*.log.
-# Prints FINAL ok iff the step exits 0.
+# Prints FINAL ok and exits 0 iff the step exits 0; otherwise prints FINAL FAIL and exits with the step's code (1 if
+# that was 0). Wrappers must use the exit code.
 STEP=${STEP:?STEP=decls|export|judge|kernel}; TMO=${TMO:-280}; MEM=${MEM:-14G}; CJ=${CJ:-2}; CPUS=${CPUS:-}
 ENTRY=$(cd "${ENTRY:-.}" && pwd); cd "$ENTRY" || exit 1; mkdir -p logs
 EXPORTS=${EXPORTS:-$ENTRY/.lake/palomar-exports}; mkdir -p "$EXPORTS"
@@ -37,12 +38,20 @@ tail = ("Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble
 print(" ".join(base + c["theorem_names"] + c.get("definition_names", []) + c["permitted_axioms"] + tail))
 PY
 )
+# The judging binaries come from the entry's own toolchain (its lean-toolchain, read by elan from the entry folder),
+# as in the template's verify-comparator.sh; stop at once if one is missing.
+if [ "$STEP" != decls ]; then
+  PFX=$(lean --print-prefix 2>/dev/null) || { echo "lean not found for the toolchain of $ENTRY"; echo "FINAL FAIL (no toolchain)"; exit 1; }
+  for tool in lake leanexport leanchecker nanoda_bin con-ron; do
+    [ -x "$PFX/bin/$tool" ] || { echo "the toolchain at $PFX has no $tool"; echo "FINAL FAIL (missing $tool)"; exit 1; }
+  done
+fi
 case $STEP in
   decls) echo "$DECLS"; exit 0 ;;
   export) LOG=${LOG:-logs/comparator-split-export.log}
     CMD="for M in Challenge Solution; do lake env leanexport \$M -- $DECLS > $EXPORTS/\$M.ndjson || exit 1; done; sha256sum $EXPORTS/*.ndjson" ;;
   judge) K=${K:?K=none|nanoda|con-ron}; LOG=${LOG:-logs/comparator-split-judge-$K.log}; CFG=$EXPORTS/config-$K.json
-    python3 - comparator.json "$CFG" "$(lean --print-prefix)" "$K" "$CJ" <<'PY' || exit 1
+    python3 - comparator.json "$CFG" "$PFX" "$K" "$CJ" <<'PY' || exit 1
 import json, pathlib, sys
 source, destination, prefix, k, cj = sys.argv[1:]
 config = json.loads(pathlib.Path(source).read_text(encoding="utf-8"))
@@ -53,7 +62,7 @@ config["external_kernels"] = {} if k == "none" else {k: kernels[k]}
 pathlib.Path(destination).write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
 PY
     CMD="lake comparator --config $CFG --challenge-from-export $EXPORTS/Challenge.ndjson --solution-from-export $EXPORTS/Solution.ndjson" ;;
-  kernel) K=${K:?K=lean|nanoda|con-ron}; LOG=${LOG:-logs/comparator-split-kernel-$K.log}; PFX=$(lean --print-prefix)
+  kernel) K=${K:?K=lean|nanoda|con-ron}; LOG=${LOG:-logs/comparator-split-kernel-$K.log}
     case $K in
       nanoda) NCFG=$EXPORTS/nanoda-config.json
         python3 -c 'import json,sys; json.dump({"use_stdin": False, "export_file_path": sys.argv[1], "permitted_axioms": json.load(open(sys.argv[2]))["permitted_axioms"], "unpermitted_axiom_hard_error": False, "num_threads": 4, "nat_extension": True, "string_extension": True}, open(sys.argv[3], "w"))' \
@@ -74,4 +83,5 @@ timeout "$TMO" systemd-run --user --scope -q -p MemoryMax="$MEM" -p MemorySwapMa
 echo "step $STEP ${K:-}: exit $cs; CPUS=${CPUS:-all} MEM=$MEM CJ=$CJ; log $LOG"
 grep -aE "Maximum resident|Elapsed \(wall|memory.peak" "$LOG"
 grep -av "linter\|^warning\|^Note\|^$\|^Exporting" "$LOG" | grep -av "^	" | tail -6 | cut -c1-300
-[ $cs -eq 0 ] && echo "FINAL ok" || echo "FINAL FAIL (exit $cs)"
+if [ $cs -eq 0 ]; then echo "FINAL ok"; exit 0; fi
+echo "FINAL FAIL (exit $cs)"; exit $cs

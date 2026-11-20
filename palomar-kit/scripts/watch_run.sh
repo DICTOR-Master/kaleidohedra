@@ -14,5 +14,6 @@ RUN=${RUN:?set RUN, FIND or PREFLIGHT}
 echo "watching run $RUN of $REPO"
 gh run watch "$RUN" -R "$REPO" --interval 120 --exit-status > /dev/null; s=$?
 gh run view "$RUN" -R "$REPO" --json status,conclusion,displayTitle,url --jq '"\(.displayTitle): \(.status)/\(.conclusion) \(.url)"'
-python3 -I "$KIT/read_report.py" --run "$RUN" --repo "$REPO" | tee /dev/stderr | grep -q "^status pass" && [ $s -eq 0 ] \
-  && echo "FINAL ok" || echo "FINAL FAIL (run exit $s; see the report above)"
+if python3 -I "$KIT/read_report.py" --run "$RUN" --repo "$REPO" | tee /dev/stderr | grep -q "^status pass" && [ $s -eq 0 ]; then
+  echo "FINAL ok"; exit 0; fi
+echo "FINAL FAIL (run exit $s; see the report above)"; exit 1

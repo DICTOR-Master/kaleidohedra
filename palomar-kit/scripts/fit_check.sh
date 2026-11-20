@@ -19,7 +19,8 @@
 #   STEP=comparator                the template comparator in one run (run_comparator_full.sh, con-ron --jobs=2)
 #   STEP=export | STEP=judge K=none | STEP=kernel K=lean|nanoda|con-ron    the split judge (run_comparator_split.sh)
 # Each call appends one line to $ENTRY/logs/fit/SUMMARY.tsv: date, profile, step, exit, wall time, peak memory
-# (cgroup, whole step), most Lean processes at once. Prints FINAL ok iff the step exits 0 within the limit.
+# (cgroup, whole step), most Lean processes at once. Prints FINAL ok and exits 0 iff the step exits 0 within the limit
+# (the comparator scripts' exit codes are used, not their printed lines); otherwise FINAL FAIL and exit 1.
 PROFILE=${PROFILE:?PROFILE=namespace|standard}; STEP=${STEP:?}; TMO=${TMO:-280}; CJ=${CJ:-2}
 KIT=$(cd "$(dirname "$0")" && pwd); ENTRY=$(cd "${ENTRY:-.}" && pwd); cd "$ENTRY" || exit 1
 case $PROFILE in
@@ -42,10 +43,10 @@ case $STEP in
     cat "$OUT" >> "$LOG/build.log" ;;
   comparator) OUT=$LOG/comparator.log
     ENTRY=$ENTRY CPUS=$CPUS MEM=$MEM CJ=$CJ TMO=$TMO LOG=$OUT bash "$KIT/run_comparator_full.sh" > "$LOG/comparator-summary.txt" 2>&1; cs=$?
-    grep -q "^FINAL ok" "$LOG/comparator-summary.txt" || cs=1 ;;
+    ;;
   export|judge|kernel) OUT=$LOG/$STEP-${K:-all}.log
     ENTRY=$ENTRY STEP=$STEP K=$K CPUS=$CPUS MEM=$MEM CJ=$CJ TMO=$TMO LOG=$OUT bash "$KIT/run_comparator_split.sh" > "$LOG/$STEP-${K:-all}-summary.txt" 2>&1; cs=$?
-    grep -q "^FINAL ok" "$LOG/$STEP-${K:-all}-summary.txt" || cs=1 ;;
+    ;;
   *) kill $smp; echo "unknown STEP"; exit 1 ;;
 esac
 kill $smp 2>/dev/null
@@ -55,4 +56,5 @@ MAXL=$(cat "$LOG/maxlean-$STEP" 2>/dev/null || echo 0)
 printf '%s\t%s\t%s %s\texit %s\twall %s\tpeak %s\tlean procs %s\n' "$(date -u +%FT%TZ)" "$NAME" "$STEP" "${K:-${T:-}}" \
   "$cs" "${WALL:-?}" "${PEAK:-?}" "$MAXL" | tee -a logs/fit/SUMMARY.tsv
 grep -aE "^error|kernel accepts|okay|Illegal|do not match|Build completed|CUT OFF" "$OUT" | grep -v "^Exporting" | tail -6 | cut -c1-300
-[ $cs -eq 0 ] && echo "FINAL ok" || echo "FINAL FAIL (exit $cs)"
+if [ $cs -eq 0 ]; then echo "FINAL ok"; exit 0; fi
+echo "FINAL FAIL (exit $cs)"; exit 1
