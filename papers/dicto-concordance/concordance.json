@@ -1,5 +1,6 @@
 {
   "status": [
+    "Version 2.4 in detail (21 November 2026): #109, #110, #115 and #116, which stood in no thread, enter the threads their own abstracts name; a new section 2.13 gives, for every paper, the books of The Five Orders of Space that cite it (survey of 21 November 2026), and lists the papers awaiting a home; the newer Zenodo versions of 20 November are recorded; the ring column of the books names each ring by its solid.",
     "Version 2.3 in detail (15 November 2026): #104–#108, Kyushindo Cores Version 3 and #47 Version 3 enter their threads, Names, the Almanac, the open points and the test table; Part 1 has one more kind of gap, a crossing nobody has computed; running “DICTO's idea / observation” wording is removed, and names keep DICTO at their first mention. Descriptions in Names marked † rest on the entry's own notes and are still to be checked against their papers.",
     "Version 2.2 adds the papers #97–#103 to the list and to their threads, and an eleventh thread, Mandalas and yantras, opened by #103; it removes stale \"draft\" marks (#90 and #91 are published; the book corrections name the published versions; the waiting list names #98, #47 v3 and HexOct v8–11 as published), names the I−D nest pieces Sheriffs and Lone-stars, and adds DICTO's names for the unifying framework, the DICTO Hopscotch (Antipol, hop, step, jump, turn, emergence, dissolution).",
     "Version 2, 5 November 2026 (version 1, 4 November). Sources: every paper.src.html (else paper.html) in papers/, the paper cards of dictospheres.com, the DICTOnary atom cards and the cross-links audit of 4 November; papers to #96. Each new paper, read or test is one edit to concordance.json and a rebuild; each version is released as soon as DICTO has read it.",
@@ -12,8 +13,8 @@
     "Part 5B: every outside find was checked against its abstract or a reliable record (column “checked”); none is yet read in full, all stand “to read”. Unrefereed preprints found by the search are left out. Library copies: only Hermann is held so far."
   ],
   "title": "The DICTO Concordance",
-  "date": "2026-11-15",
-  "version": "version 2.3",
+  "date": "2026-11-21",
+  "version": "version 2.4",
   "papers": {
     "1": {
       "title": "DICTO skewed rhombic dodecahedron",
@@ -612,11 +613,11 @@
       "date_first": true
     },
     "103": {
-      "title": "The DICTO Yantra: Two Exact Solutions — Overcoming the Seemingly Impossible, Towards Perfection",
+      "title": "The DICTO Yantra: Unique and Traditional, Exact but Not Constructible",
       "doi": "24052633",
       "date": "2026-11-08",
       "date_first": true,
-      "version": 5,
+      "version": 8,
       "doi_v2": "24061031",
       "doi_v1": "24052634",
       "doi_v3": "24092662",
@@ -634,8 +635,12 @@
         "record": "https://data.palomar-registry.org/entries/PALOMAR-2026-11-17-000006-v1.json"
       },
       "notes": [
-        "Registered on Palomar 17 Nov 2026 as PALOMAR-2026-11-17-000006 (Lean 4 formalization of Kulaichev's uniqueness question for admissible figures, slope interval of width 2^-21; automated review: no problems). Goes into #103's next version (ledger)."
-      ]
+        "Registered on Palomar 17 Nov 2026 as PALOMAR-2026-11-17-000006 (Lean 4 formalization of Kulaichev's uniqueness question for admissible figures, slope interval of width 2^-21; automated review: no problems). Goes into #103's next version (ledger).",
+        "Versions 6, 7 and 8 published 20 Nov 2026 (Version 8: 10.5281/zenodo.24393733); title from Version 7: The DICTO Yantra: Unique and Traditional, Exact but Not Constructible; Version 8 adds Proposition 17, the traditional window (certified)."
+      ],
+      "doi_v6": "24389344",
+      "doi_v7": "24390460",
+      "doi_v8": "24393733"
     },
     "97": {
       "title": "Narcissus Keyed",
@@ -696,10 +701,11 @@
       "doi": "24121177",
       "date": "2026-11-11",
       "date_first": true,
-      "version": 3,
+      "version": 4,
       "doi_v2": "24122019",
       "doi_v1": "24121178",
-      "doi_v3": "24122514"
+      "doi_v3": "24122514",
+      "doi_v4": "24142706"
     },
     "106": {
       "title": "One World for the Platonic Solids",
@@ -787,7 +793,7 @@
       "doi": "24383552",
       "date": "2026-11-20",
       "date_first": true,
-      "version": 1,
+      "version": 2,
       "doi_v1": "24383553",
       "palomar": {
         "id": "PALOMAR-2026-11-20-000003",
@@ -808,49 +814,57 @@
         "Results (Lean 4 with Mathlib, standard axioms only; the Dehn invariant read from the solid as a set, no edge list as input): Theorem 1, the machine-checked canon: (a) the bridge, scissors congruence of convex polytopes and of finite unions keeps the invariant (Theorem 4, Corollary 4′); (b) Dehn's theorem for every size and position (Theorem 6); (c) zero: cube, rhombic dodecahedron, the whole cube ∩ rhombic dodecahedron line (fair 18-face die), truncated octahedron, rhombic triacontahedron, both golden rhombohedra (Theorem 7); (d) nonzero: dodecahedron, icosahedron, tetrahedron, octahedron, every cube ∩ octahedron solid with 1 < t < 2, t ≠ 3/2 (Lucky 7), CLEO, AXE, FUJI (Theorems 8, 11; Corollary 9); (e) CLEO, AXE, FUJI, dodecahedron, icosahedron pairwise apart (Theorems 12, 13); (f) across the two angle families, 15 pairs (Theorems 15, 16); (g) the canon complete, with volume (Theorem 14); (h) Hilbert's question in his words: two tetrahedra of equal base and altitude neither scissors congruent nor equicomplementable (Theorem 6′); Theorem 6″: the set-defined invariant equals the classical edge sum for every convex polytope. Proposition 7′ (by hand, exact check): the nine most regular space-fillers of DICTO's census all have invariant zero.",
         "Open (§10): the ten other fair dice in Lean; does the fair 18-face die fill space (zero is necessary only), and Debrunner's theorem in Lean; Sydler's converse in Lean; convex hulls equal to the solids read by edges; an exact t for Lucky 7's cut; Hilbert's sentence for every base and altitude; the edge sum for solids that are not convex.",
         "Links: #19 (AXE, CLEO and FUJI, here pairwise not scissors congruent); #111 (the 14- and 18-face fair dice); #100 (the Dehn test, here with the invariant defined from the solid); Palomar PALOMAR-2026-11-20-000003.",
-        "Errata: none."
-      ]
+        "Errata: none.",
+        "Version 2 published 20 Nov 2026 (10.5281/zenodo.24391370): the Palomar registration of the Lean statements [33]."
+      ],
+      "doi_v2": "24391370"
     },
     "114": {
       "title": "Scutoid Tissues in Space and Time",
       "doi": "24384789",
       "date": "2026-11-20",
       "date_first": true,
-      "version": 1,
+      "version": 2,
       "doi_v1": "24384790",
       "notes": [
         "Published 20 Nov 2026 (Version 1, 10.5281/zenodo.24384790; subtitle: births, swaps and deaths counted in every direction; folder papers/2026-11-20-scutoid-tissues; studies 2026-11-15-event-logger, -grains-polycrystals, -sun-granulation, -earth-plates, -atmosphere-seaice, -tissue-null-models, and the Sun studies of 17-18 Nov, ledger entries 297, 299-301).",
         "Results: Theorem 1 (proved in general): an open region of three-dimensional space-time filled by a simple complex of convex cells, swept by planes in any generic direction, changes only at corners, by a birth (index 1), a swap (index 2) or a death (index 3); each cell is born at its lowest corner and dies at its highest; births = deaths = cells and swaps = corners − 2 × cells per period (or per volume of a large region), so swaps per birth = ⟨F⟩/2 − 3, in every generic direction. Corollary 1: large regions and stationary random complexes (Poisson–Voronoi). Lemma 1: the corner of a simple complex. Exact cases: the swept 120-cell, truncated 120-cell, bitruncated 600-cell (116/366/116, 716/966/716, 716/2166/716, as #104), bcc tessellation 4 swaps per birth, Poisson–Voronoi 24π²/35 − 2 = 4.7677 (simulated 4.7669 ± 0.0006). Without convexity the counts depend on the direction (moving Voronoi cells; the Sun's granules).",
         "Open (§7): the open lead, swaps per birth against ⟨F⟩/2 − 3 in a public three-dimensional grain map swept by planes; NOT CONFIRMED: the Sun (tilts, swap rate at step 0, net change, net against displacement, lineages), Earth's plates, open-cell clouds, two-dimensional froth.",
         "Links: #104 (Theorem 1 carries its sweep of a simple 4-polytope to open space-time; #104 Theorems 1, 2 are the closed version, h₁, h₂, h₃).",
-        "Errata: none."
-      ]
+        "Errata: none.",
+        "Version 2 published 20 Nov 2026 (10.5281/zenodo.24396097): figures redrawn with hidden lines; no result changes."
+      ],
+      "doi_v2": "24396097"
     },
     "116": {
       "title": "The Dehn–Hadwiger invariant in four dimensions",
       "doi": "24393967",
       "date": "2026-11-20",
       "date_first": true,
-      "version": 1,
+      "version": 2,
       "doi_v1": "24393968",
       "notes": [
         "Published 20 Nov 2026 (Version 1, 10.5281/zenodo.24393968; folder papers/2026-11-20-dehn-hadwiger-4d; studies 2026-11-20-palomar-dehn4d, 2026-11-20-600cell-5cell-zero (Parts 1 and 2), 2026-11-20-palomar-next-prescore; audit 276 checks).",
         "Results: Theorem 1 (Lean 4 + Mathlib, 14 Challenge theorems, standard axioms): the bridge (invariant kept by dissections) in every finite dimension; invariant zero for the tesseract, 16-cell, 24-cell and 120-cell; 5-cell and 600-cell nonzero (θ₅ = arccos 1/4 ∉ ℚπ); no similar copy of the 5-cell or 600-cell is scissors congruent to a similar copy of the other four, nor to each other. Theorem 2 (exact): θ₆₀₀ = 4π/3 − θ₅; 600-cell + n 5-cells balance iff n b² = 120 a²; the 120 caps of one left-multiplication orbit use every edge once, tips form a 600-cell of radius √2 (= hull), star-shaped never convex, volume 5√5φ²a⁴, SC to a 4-cube by Jessen. §6 (exact): the five cap sets = one state of Coxeter's ten 600-cells in the 120-cell and the cosets of 2T in 2I; symmetry ±[I×T]; ridge plates on P's 60 mirrors, caps hidden (#110), cap sides pair with #107's pentagons; Hess's compound at each corner; not A's or B's symmetry (meet in A4).",
-        "Palomar entry E2 prepared: public repo dehn-hadwiger-4d-lean, request id dehnhad4d001; citations being added before DICTO submits."
-      ]
+        "Palomar entry E2 prepared: public repo dehn-hadwiger-4d-lean, request id dehnhad4d001; citations being added before DICTO submits.",
+        "Version 2 published 20 Nov 2026 (10.5281/zenodo.24396156): figures redrawn with hidden lines; no result changes."
+      ],
+      "doi_v2": "24396156"
     },
     "115": {
       "title": "Ten Faces in Every Zone: Grünbaum's Question at k = 10 — The DICTO Grünbaum–Escher Triacontahedron (GET A and GET B)",
       "doi": "24389006",
       "date": "2026-11-20",
       "date_first": true,
-      "version": 1,
+      "version": 2,
       "doi_v1": "24389007",
       "notes": [
         "Published 20 Nov 2026 (Version 1, 10.5281/zenodo.24389007; folder papers/2026-11-20-grunbaum-k10; studies 2026-11-20-palomar-grunbaum, 2026-11-20-hall-2016-check).",
         "Results: Theorem 1: GET A and GET B (rhombic triacontahedron less four oblate golden rhombohedra at four three-face corners) are rhombic monohedral parallelohedra of Grünbaum's spherical type with every one of six zones of exactly 10 faces, answering Grünbaum's question (2010) at k = 10; exact in ℤ[φ], GET B also Lean 4. Theorem 2: GET A and GET B not congruent, same lattice, 16 cell types, volume 20 + 32φ. Corollary 3: contradicts Grünbaum's tentative remark on indentations. GET A first shown by Kostick (2022) without proof; Hall (2016) = Inchbald's indented triacontahedron.",
-        "Palomar: submitted 20 Nov 2026 (entry grunbaum-k10-lean, commit a6b16c2); verification passed; awaiting registration id."
-      ]
+        "Palomar: submitted 20 Nov 2026 (entry grunbaum-k10-lean, commit a6b16c2); verification passed; awaiting registration id.",
+        "Version 2 published 20 Nov 2026 (10.5281/zenodo.24396137): figures redrawn with hidden lines; no result changes."
+      ],
+      "doi_v2": "24396137"
     }
   },
   "strands": [
@@ -1149,6 +1163,10 @@
         {
           "n": "113",
           "adds": "the Dehn invariant read from the solid as a set and kept by scissors congruence, machine-checked (Theorem 1 (a), Theorem 6″); invariant zero for the cube, rhombic dodecahedron, truncated octahedron, rhombic triacontahedron and golden rhombohedra, and the nine most regular space-fillers (Proposition 7′)."
+        },
+        {
+          "n": "115",
+          "adds": "GET A and GET B, the rhombic triacontahedron less four oblate golden rhombohedra at four three-face corners, fill space by translation face to face with every one of six zones of exactly 10 faces, answering Grünbaum's question at k = 10 (Theorem 1); not congruent, same lattice, volume 20 + 32φ (Theorem 2)."
         }
       ],
       "links": [
@@ -1384,6 +1402,10 @@
         {
           "n": "112",
           "adds": "one fair die per set of face directions, through the polar body and Alexandrov's theorem (Theorem A); exactly 149 Aequi in the main catalogue of the cube and icosahedron frames (Theorem B), 1083 more with both icosahedron placements (Proposition 6)."
+        },
+        {
+          "n": "110",
+          "adds": "a shape is hidden in a host when every central plate of its Vacuus is a wall of the host, a mirror or a cross wall; three face lemmas and an index law (heart, inherited heart, non-heart) carry the Vacuus of #87 and #105 to the 600-cell and the 120-cell."
         }
       ],
       "links": [
@@ -1393,7 +1415,8 @@
         "→ (4 Nov) Reversed neighbour impossible for T and C6 (search proof): T pyramids form whole tetrahedra, C6 whole cubes, in every tiling; R12 free + slides; the CO pyramids build CO on straight and J27 on twisted layers, and J27 + octahedra tile hcp (twin of the rectified cubic).",
         "→ (4 Nov) Admiral Cap network (#47) is frustrated (8 of 12 shared edges at most); its ground states are layer words — the same layer freedom as #92.",
         "#87 → #105, #107, #108 (v2.3): the Vacuus taken to four dimensions: the permutohedron's 65 slices (#105), the mirror slices of every reflection polytope (#107), and the only non-mirror Vacuus in four dimensions (#108 Observation 4); #107 Corollary 4 is the split of T(x)'s edges seen in #105 Figure 4.",
-        "#87 → #111 → #112 (v2.3 addition, 20 Nov): the Vacuus read on fair dice; #111 Theorem 6 hides a regular polygon in ten of its twelve dice; #112 Theorem A gives every fair die from its face directions and asks which of the 149 Aequi hide a polygon."
+        "#87 → #111 → #112 (v2.3 addition, 20 Nov): the Vacuus read on fair dice; #111 Theorem 6 hides a regular polygon in ten of its twelve dice; #112 Theorem A gives every fair die from its face directions and asks which of the 149 Aequi hide a polygon.",
+        "#87, #105 → #110 (v2.4, from #110's text): the Vacuus widened from fins over the edges (#87) and central slices carrying two-faces (#105) to every polytope, as the plates through its centre."
       ]
     },
     {
@@ -1440,6 +1463,18 @@
         {
           "n": "114",
           "adds": "#104's sweep carried to open space-time: in a simple complex of convex cells, births = deaths = cells and swaps = corners − 2 × cells in every generic direction, so swaps per birth = ⟨F⟩/2 − 3 (Theorem 1); bcc 4, Poisson–Voronoi 24π²/35 − 2."
+        },
+        {
+          "n": "109",
+          "adds": "the 600-cell's 120 corners read as the quaternion group 2I: two orbits of the 5-cell's group S5, the Golden Truncated 5-cell (20 corners) and the Golden Cantellated 5-cell (30 corners), are silent in harmonic degrees 5 and 7, and 3 and 6, which their symmetry does not force; twisted characters force them (main theorem, Theorem 1)."
+        },
+        {
+          "n": "110",
+          "adds": "the 120-cell holds exactly 1200 Golden Truncated 5-cells, 1200 Golden Cantellated 5-cells and 600 expanded 5-cells, all inside its ten 600-cells; every central plate of the first lies on a wall of the 120-cell, of the other two only on the walls of their own 600-cell; the walls cut the 600-cell into 4,291,200 chambers."
+        },
+        {
+          "n": "116",
+          "adds": "the Dehn–Hadwiger invariant of the six regular 4D solids, machine-checked in Lean: zero for the tesseract, 16-cell, 24-cell and 120-cell, nonzero for the 5-cell and the 600-cell (Theorem 1); 120 5-cells of the same edge balance one 600-cell, set on it as caps along one orbit of its own quaternion group (Theorem 2)."
         }
       ],
       "links": [
@@ -1447,7 +1482,10 @@
         "→ (4 Nov) Both Queens are spherical 11-designs; on the path between them the truncated 600-cell at μ ≈ 0.92417 is a 19-design (the classical W(H4) orbit, Goethals–Seidel); the 4D sweep's tone zeros: 24-cell, √2, 1 + √3.",
         "→ (4 Nov) #91's 4D sweep = SO(9) weight shapes; the All-Golden Polytopes are limits of Fibonacci multiplets, as Icosaxes is in 3D (SU(4)).",
         "#104 → #108 (v2.3, from #108 Corollary 2): #104 Theorem 4 (two kinds of cells) is the two-kind case of #108 Theorem 1 (any multiset of cell types); 601 = (R–R faces) − (R cells) + 1 = E − V + 1 of the 600-cell.",
-        "#104 → #114 (20 Nov): #104 Theorems 1, 2 (h₁, h₂, h₃ of a swept simple 4-polytope) are the closed version of #114 Theorem 1; the 120-cell, truncated 120-cell and bitruncated 600-cell counts reappear exactly."
+        "#104 → #114 (20 Nov): #104 Theorems 1, 2 (h₁, h₂, h₃ of a swept simple 4-polytope) are the closed version of #114 Theorem 1; the 120-cell, truncated 120-cell and bitruncated 600-cell counts reappear exactly.",
+        "#33 → #109 (v2.4, from #109's abstract): Galois conjugation, DICTO's Double Vision, builds the twist that forces the silences; on its own it forces only that every tone is rational.",
+        "#109 → #110 (v2.4, from #110's abstract): the two solids of Silent Running are hidden in walls: every central plate of the Golden Truncated 5-cell on a wall of the 120-cell, of the Golden Cantellated 5-cell on a wall of its own 600-cell.",
+        "#110, #113 → #116 (v2.4, from #116): #113's invariant, read from the solid as a set, carried to every finite dimension (Theorem 1); the balancing caps lie on the 600-cell's own mirrors, hidden in the sense of #110 (§6)."
       ]
     },
     {
@@ -3385,6 +3423,25 @@
       "desc": "a two-icosahedron fair die: an Aequus whose faces use the axes of both icosahedra that fit the cube (placements a quarter turn apart); the 1083 of #112 §5 (Oh 53, O 31, Td 91, Th 168, T 740), \"multi-faced angels\"",
       "aka": "Seraph Mosaicus (plural Seraphim Mosaici): a Seraph with four or more kinds of face (965 of the 1083)",
       "note": "named by DICTO on 20 Nov 2026; numbered 'Seraph ‹initials›-‹N›, ‹group› ‹number›' with primes for the second placement (study 2026-11-20-seraphim-catalogue); entered in The DICTOnary of Atoms v1.4"
+    },
+    {
+      "name": "Golden Truncated 5-cell (solid A)",
+      "by": "DICTO",
+      "first": "#109",
+      "desc": "the hull of the 20 permutations of (φ², φ², φ², φ, 0), one orbit of the 5-cell's group S5 on the 600-cell's corners: symmetry S5 and no more, silent in harmonic degrees 1, 2, 5 and 7"
+    },
+    {
+      "name": "Golden Cantellated 5-cell (solid B)",
+      "by": "DICTO",
+      "first": "#109",
+      "desc": "the hull of the 30 permutations of (φ², φ², 1, 1, 0), one orbit of S5 on the 600-cell's corners: silent in harmonic degrees 1, 2, 3 and 6"
+    },
+    {
+      "name": "DICTO Grünbaum–Escher Triacontahedron (GET A and GET B)",
+      "by": "DICTO",
+      "first": "#115",
+      "desc": "the rhombic triacontahedron less four oblate golden rhombohedra at four of its three-face corners, in two placements: 30 congruent golden rhombi, six zones of exactly 10 faces, translates fill space face to face",
+      "note": "GET A first shown, without proof, by J. Kostick (2022); GET B not found in the sources checked"
     }
   ],
   "concepts": [
@@ -4222,6 +4279,20 @@
         "fill"
       ],
       "by": "DICTO (#106)"
+    },
+    {
+      "id": "twisted-silence",
+      "name": "twisted silence",
+      "sub": "harmonic silences forced by a hidden symmetry, not by the set's own",
+      "definition": "A finite set of points on a sphere is silent in degree k when every harmonic polynomial of degree k sums to zero over it. When the set is a twisted conjugacy class {a·x·σ(a)⁻¹} of a finite group, σ an automorphism, it is silent in every degree whose twisted character vanishes on it (#109 Theorem 1, Frobenius's central-character formula applied to the group extended by the twist).",
+      "first": "109",
+      "used": [
+        "110"
+      ],
+      "strands": [
+        "queens"
+      ],
+      "by": "the formula is Frobenius's; the name twisted silence: DICTO (#109)"
     }
   ],
   "triangle": [
@@ -5115,7 +5186,7 @@
       },
       {
         "what": "Truncated-icosahedron layer (scutoid project A)",
-        "result": "pentagon-hexagon linked truncated-icosahedron layer at 79.19 deg; two orientations -> chains only. studies/2026-11-06-football-scutoids",
+        "result": "pentagon-hexagon linked truncated-icosahedron layer at 79.19 deg; two orientations -> chains only. study of 6 November 2026 on scutoid layers",
         "goes_to": "scutoid paper",
         "date": "2026-11-06"
       },
@@ -5128,7 +5199,7 @@
       {
         "what": "Permutohedron Paradigm Chapter 13 'Change, Rhythm, Harmony' (change ringing on the permutohedron; the three Kyushindo principles of #43) drafted",
         "result": "extents = Hamiltonian cycles of the change graph R_n (changes = cube-face diagonals, F(n+1)-1 per row); 4 bells: 44 edge tours / 5396 tours, 162 classes; the three double Minimus methods are the most symmetric (D3d); plain hunt = shortest way across; Doubles and Minor extent searches; study 2026-11-12-change-ringing",
-        "goes_to": "The Permutohedron Paradigm, Part Three, Chapter 13 (before the Coda); DRAFT PDF in papers-to-read for DICTO's read; not published",
+        "goes_to": "The Permutohedron Paradigm, Part Three, Chapter 13 (before the Coda); published 15 November 2026 (Version 1)",
         "date": "2026-11-12"
       },
       {
@@ -5137,19 +5208,19 @@
         "goes_to": "#49 next version (Archimedean stretches, open question 1)"
       },
       {
-        "result": "The Turn Law (draft): every polar line S(μ) of a polytope with one inradius h and one circumradius R folds onto itself under μ ↦ h²R²/μ, the antipol S(μ)∨ being h⁻²·S(h²R²/μ) (Theorem 1); on the regular lines the containment ratio is largest exactly at the fixed point (Theorem 2, the Turn Theorem); a line of crystals that turns at the Ammann–Beenker quasicrystal (Theorem 3)",
+        "result": "The Turn Law, a draft paper: every polar line S(μ) of a polytope with one inradius h and one circumradius R folds onto itself under μ ↦ h²R²/μ, the antipol S(μ)∨ being h⁻²·S(h²R²/μ) (Theorem 1); on the regular lines the containment ratio is largest exactly at the fixed point (Theorem 2, the Turn Theorem); a line of crystals that turns at the Ammann–Beenker quasicrystal (Theorem 3)",
         "study": "papers/2026-11-13-turn-law",
         "goes_to": "Book Eleven (A Brief Geometry of Space) or its own number; DICTO assigns",
         "date": "2026-11-13"
       },
       {
-        "result": "Geometry Gives Laws (draft, revised 13 Nov): canonical forms of the polar lines, solids and yantras: the golden window of E8, a 19-design beside the turn, marmas as double zeros, exact Mahler products",
+        "result": "Geometry Gives Laws, a draft paper revised 13 Nov: canonical forms of the polar lines, solids and yantras: the golden window of E8, a 19-design beside the turn, marmas as double zeros, exact Mahler products",
         "study": "papers/2026-11-12-geometry-gives-laws",
         "goes_to": "Book Eleven (A Brief Geometry of Space)",
         "date": "2026-11-13"
       },
       {
-        "result": "The Permutohedron Family (draft): the line from the permutohedron to the associahedron, every equal-edged member of the A₃, B₃, H₃ cones (17, 101, 4427 solids), which members fill space; its Conjectures 1 and 2 proved for every n (ledger [198])",
+        "result": "The Permutohedron Family, a draft paper: the line from the permutohedron to the associahedron, every equal-edged member of the A₃, B₃, H₃ cones (17, 101, 4427 solids), which members fill space; its Conjectures 1 and 2 proved for every n (ledger [198])",
         "study": "papers/2026-11-12-permutohedron-family",
         "goes_to": "The Permutohedron Paradigm, Chapter 14",
         "date": "2026-11-12"
@@ -5373,7 +5444,7 @@
       {
         "result": "Platonic book Chapter 10, Filigree (new, after One World; former Chapters 10-13 now 11-14): the connectors read as gold round stones, three roles (settings, ground, edging); the hybrid golden slab (Book Two Ch 8 §6, Theorem 8.3) as the best equal-edge form; gold shares of the #106 settings exact (cube 1/√5); Table 10.3 connectors per mix under both rules (from the checked constructions); jewellery from exact coordinates: ring, bracelet, brooch, pendant (icosahedral octet band with a tunnel), necklace (16-place golden loop), earrings, with pierced bands, a 12-stone octet loop (Prop. 10.3, exact), satellite stones (pendant = tetrahedron of twice the edge, classical) and a chiral satellite earring pair (Prop. 10.4, exact)",
         "study": "studies/2026-11-15-filigree; papers/book-platonic/chapters/ch10.html",
-        "goes_to": "The Platonic Solids (Book Eight), Chapter 10; in the draft for DICTO's read (DRAFT-platonic-book.pdf, 15 Nov); not published. Open: least metal / smallest kit, one edging piece for R and Z, edge-1 settings for C, T, O, face to face, 3-periodicity, interlocking pierced links (clearance unchecked), golden-cycle necklace, nest pendant drawn",
+        "goes_to": "The Platonic Solids (Book Eight), Chapter 10; published 15 November 2026 (Version 1). Open: least metal / smallest kit, one edging piece for R and Z, edge-1 settings for C, T, O, face to face, 3-periodicity, interlocking pierced links (clearance unchecked), golden-cycle necklace, nest pendant drawn",
         "date": "2026-11-15"
       },
       {
@@ -10910,78 +10981,86 @@
   ],
   "series": {
     "name": "The Five Orders of Space",
-    "note": "All the books form one work in eleven books and twelve volumes, in five rings after Musashi's Book of Five Rings and built like Euclid's Elements: the DICTOnary as Definitions, Quanta of Space I as Postulates, Books Two to Eleven as Propositions (series page, 13 November 2026). Each ring is one Platonic solid in its element's colour.",
+    "note": "All the books form one work in eleven books and twelve volumes, in five rings after Musashi's Book of Five Rings and built like Euclid's Elements: the DICTOnary as Definitions, Quanta of Space I as Postulates, Books Two to Eleven as Propositions (series page, 13 November 2026). Each ring is one Platonic solid in its own colour.",
     "books": [
       [
         "One",
-        "Earth (cube)",
+        "cube",
         "Quanta of Space I and II (II: The DICTOnary of Atoms)",
-        "published; Quanta of Space Version 3.0 published 20 Nov 2026 (10.5281/zenodo.24386728); The DICTOnary of Atoms Version 1.4 published 20 Nov 2026 (10.5281/zenodo.24385357)"
+        "published; Quanta of Space Version 3.0 published 20 Nov 2026 (10.5281/zenodo.24386728); The DICTOnary of Atoms Version 1.5 published 20 Nov 2026 (10.5281/zenodo.24395996)"
       ],
       [
         "Two",
-        "Earth (cube)",
+        "cube",
         "Space-Fillers and Lattice Moves",
         "published 14 November 2026 (Version 1, 91 pp), DICTO DOI 10.5281/zenodo.24221378: ten chapters in three parts, the hybrid golden slab (Ch 8 §6), a Closing and an Atlas of 28 plates"
       ],
       [
         "Three",
-        "Water (icosahedron)",
+        "icosahedron",
         "DICTONIC Bonds",
         "published; next version drafted (v3)"
       ],
       [
         "Four",
-        "Water (icosahedron)",
+        "icosahedron",
         "The Golden Cycle",
         "published; next version drafted (v5)"
       ],
       [
         "Five",
-        "Water (icosahedron)",
+        "icosahedron",
         "Star Cores",
         "published; next version drafted (v3)"
       ],
       [
         "Six",
-        "Fire (tetrahedron)",
+        "tetrahedron",
         "HexOct: The Hexagonality Law",
         "published"
       ],
       [
         "Seven",
-        "Fire (tetrahedron)",
+        "tetrahedron",
         "The Permutohedron Paradigm",
         "published 15 November 2026 (Version 1, 111 pp), DICTO DOI 10.5281/zenodo.24239019: one swap of neighbours from the truncated triangle through the 4D scutoid tissues (#104, #105, #107, #108) to the Permutohedron Family and change ringing; Opening, fifteen chapters in five parts, Epilogue; exploded cover and back cover by DICTO"
       ],
       [
         "Eight",
-        "Wind (octahedron)",
+        "octahedron",
         "The Platonic Solids",
-        "published 15 November 2026 (Version 1, 125 pp), DICTO DOI 10.5281/zenodo.24241612: inside the five, the five filling space (#47, #106, Chapter 10 Filigree), where the five live (#108 Observation 5, made exact); Opening, fourteen chapters in three parts, Epilogue, Coda; equal-volume see-through cover and back cover by DICTO"
+        "published 15 November 2026 (Version 1, 125 pp; Version 1.1 the same day, 10.5281/zenodo.24241835), DICTO DOI 10.5281/zenodo.24241612: inside the five, the five filling space (#47, #106, Chapter 10 Filigree), where the five live (#108 Observation 5, made exact); Opening, fourteen chapters in three parts, Epilogue, Coda; equal-volume see-through cover and back cover by DICTO"
       ],
       [
         "Nine",
-        "Void (dodecahedron)",
+        "dodecahedron",
         "The Golden Ladder",
         "published; Version 8 published 20 Nov 2026 (10.5281/zenodo.24379535)"
       ],
       [
         "Ten",
-        "Void (dodecahedron)",
+        "dodecahedron",
         "Alicia in Wonderland: The Red & White Queens",
         "published; Version 6 published 20 Nov 2026 (10.5281/zenodo.24383095)"
       ],
       [
         "Eleven",
-        "Void (dodecahedron)",
-        "A Brief Geometry of Space (DICTO's working title)",
+        "dodecahedron",
+        "A Brief Geometry of Space",
         "plan of 13 November 2026: the three aims as one story; holds the drafts The Turn Law and Geometry Gives Laws"
       ]
     ]
   },
-  "status_box": [],
-  "version_line": "Version 2.3 (15 November 2026) adds the papers up to #108 to their threads, Names and the Almanac; the books of The Five Orders of Space, with Book Two published; a plain description for every name and a one-line subtitle for every concept of the Almanac; a new front page of six results in standard terms; What Is Missing moved forward to Part 1; and the studies of 14–15 November under “Waiting for their volume”.",
+  "status_box": [
+    "DRAFT Version 2.4 for DICTO's reading. Not published; nothing on Zenodo touched. At publication this box becomes the one version line above it.",
+    "Threads: #109 and #110 and #116 placed under the four-dimensional queens, #110 also under Pyramids, Stars and Vacuus (its abstract widens the Vacuus of #87 and #105), #115 under space-fillers and lattice moves (GET fills space by translation). #116 is not placed under space-fillers: its abstract is about scissors congruence of the 4D solids, not about filling space. #115 cites no earlier paper, so it has no cross-link line.",
+    "Awaiting a home (2.13): 34a, 38a, 112, 113 and 115 are cited only in Book One (Quanta of Space or The DICTOnary of Atoms); 83, 114 and 116 are cited in no book yet. Which book takes each is DICTO's choice.",
+    "Book homes count citations in the published books and The DICTOnary only; the drafts of a centre-pyramids book (citing #44 and #87) and of Book Eleven are not counted.",
+    "Ring column: \"Earth (cube)\" and the like now read \"cube\" (house rule of 16 November: no element words in papers); Book Eleven's title cell no longer carries \"(DICTO's working title)\", which the print guard stops in any PDF; the plan line is unchanged.",
+    "Waiting list (1.6): the Filigree chapter and Chapter 13 'Change, Rhythm, Harmony' now read as published (both are in Version 1 of their books, 15 November); three entries read 'a draft paper' in place of '(draft):', which the red-box print guard stops; a study folder is named by its date, without a word the house rules ban.",
+    "Not done in this version: the open points (1.3) and the waiting list (1.6) of #109–#116 are as in the data of 20 November; Names entries for the Aequi and the Seraphim were already in."
+  ],
+  "version_line": "Version 2.4 (21 November 2026) adds #109, #110, #115 and #116 to their threads (the four-dimensional queens; Pyramids, Stars and Vacuus; space-fillers and lattice moves), the names Golden Truncated 5-cell, Golden Cantellated 5-cell and GET A and GET B, the concept twisted silence, the newer versions of #103, #105 and #113–#116 and of The DICTOnary of Atoms (1.5) and The Platonic Solids (1.1), and the book homes of every paper, with the eight papers awaiting a home.",
   "oeis": [
     {
       "a": "A400949",
@@ -11112,5 +11191,133 @@
       "title": "Walls of Silence (DICTO 16 Nov)",
       "published": "#110, published 16 Nov 2026, DICTO DOI: 10.5281/zenodo.24272477 (Version 1: 10.5281/zenodo.24272478)"
     }
-  ]
+  ],
+  "book_homes": {
+    "source": "study 2026-11-21-survey-map: a paper is at home in a book when the book cites it by its DICTO DOI (concept or version) or by its number",
+    "homes": {
+      "1": "One, Two, Three, Four, Five, Seven, Eight",
+      "5": "One, Two, Three, Four, Five, Eight",
+      "8": "One, Two, Six, Eight",
+      "10": "One, Two, Three, Four, Five, Eight",
+      "11": "One, Two, Three, Four, Five, Eight",
+      "12": "One, Two, Three, Four, Five, Eight",
+      "13": "One, Two, Five",
+      "14": "One, Four",
+      "15": "One, Two, Three, Four, Five, Eight",
+      "16": "One, Two, Three, Four, Five, Eight",
+      "17": "One, Two, Three, Seven",
+      "18": "One, Two, Three, Seven, Eight",
+      "19": "One, Four, Eight, Nine, Ten",
+      "20": "One, Two, Seven, Eight, Nine, Ten",
+      "22": "One, Four, Seven, Eight, Ten",
+      "23": "One, Four, Five, Nine",
+      "24": "One, Four",
+      "25": "One, Two, Seven",
+      "26": "One, Two, Four, Seven",
+      "27": "One, Two, Four, Ten",
+      "28": "One, Four, Five",
+      "29": "One, Four",
+      "30": "One, Six, Nine",
+      "31": "One, Four, Five, Eight, Nine",
+      "31a": "One, Five",
+      "32": "One, Four, Nine",
+      "33": "One, Four, Nine, Ten",
+      "34": "One, Four, Nine",
+      "34a": "One",
+      "35": "One, Four, Five",
+      "35a": "One, Four, Five",
+      "35b": "One, Five",
+      "36": "One, Two, Seven",
+      "37": "One, Two, Four",
+      "37a": "One, Two, Three, Four, Five",
+      "38": "One, Four, Five",
+      "38a": "One",
+      "39": "One, Four, Five, Eight",
+      "40": "One, Two, Three, Six, Seven, Eight",
+      "41": "One, Two, Five, Seven, Eight",
+      "42": "One, Two, Three, Six, Seven, Eight, Nine, Ten",
+      "43": "One, Four, Seven, Eight, Nine",
+      "44": "One, Two, Three, Four, Five, Seven, Eight, Nine, Ten",
+      "45": "One, Eight",
+      "47": "One, Two, Three, Six, Seven, Eight, Nine, Ten",
+      "48": "One, Two, Three, Four, Five, Six, Seven, Eight, Nine",
+      "49": "One, Two, Three, Seven",
+      "50": "One, Two, Three, Seven",
+      "51": "One, Two, Three, Five, Six, Seven, Eight, Nine",
+      "52": "One, Two, Three, Six, Seven, Eight, Nine",
+      "53": "One, Two, Three, Six, Seven, Eight, Nine",
+      "54": "One, Four, Five, Seven, Eight, Nine",
+      "55": "One, Two, Three, Six, Seven, Eight",
+      "56": "One, Two, Three, Five, Six, Seven",
+      "57": "One, Two, Three, Five, Six, Seven, Eight, Ten",
+      "58": "One, Three, Six, Seven, Eight, Nine",
+      "59": "One, Three, Five, Six, Eight, Nine",
+      "60": "One, Six",
+      "61": "One, Five, Six, Seven",
+      "62": "One, Two, Five, Six, Seven, Eight, Ten",
+      "63": "One, Five, Six, Seven, Eight, Nine, Ten",
+      "64": "One, Six, Seven",
+      "65": "One, Four, Five, Six, Seven, Eight, Nine, Ten",
+      "66": "One, Six, Seven",
+      "67": "One, Six",
+      "68": "One, Six",
+      "69": "One, Six, Nine",
+      "70": "One, Six",
+      "71": "One, Six",
+      "72": "One, Six",
+      "73": "One, Six",
+      "74": "One, Six",
+      "75": "One, Two, Six, Seven",
+      "76": "One, Four, Five, Seven, Eight, Nine, Ten",
+      "77": "One, Two, Four, Five, Eight, Ten",
+      "78": "One, Four, Five",
+      "79": "Five",
+      "80": "One, Five, Seven, Nine",
+      "81": "Five, Seven, Eight, Nine",
+      "83": "",
+      "84": "Six, Seven",
+      "85": "One, Five",
+      "86": "One, Two, Six, Seven, Eight",
+      "87": "One, Seven, Eight, Ten",
+      "88": "One, Two, Seven, Eight, Nine",
+      "89": "One, Two, Seven, Eight, Nine",
+      "90": "Two, Seven, Eight, Nine",
+      "91": "One, Seven, Eight, Nine",
+      "92": "Two, Six, Eight, Nine",
+      "93": "Two, Six, Seven, Eight",
+      "94": "Two, Six, Seven, Nine, Ten",
+      "95": "One, Two, Seven",
+      "96": "One, Two, Seven, Eight",
+      "97": "One, Two, Six, Seven",
+      "98": "One, Two, Six, Seven",
+      "99": "One, Two, Eight",
+      "100": "Two, Seven",
+      "101": "Two",
+      "102": "Six, Seven",
+      "103": "Seven",
+      "104": "One, Seven, Eight, Ten",
+      "105": "One, Seven, Eight, Ten",
+      "106": "Two, Seven, Eight",
+      "107": "One, Seven, Eight, Ten",
+      "108": "One, Seven, Eight, Ten",
+      "109": "One, Ten",
+      "110": "One, Ten",
+      "111": "One, Two, Seven, Eight, Nine, Ten",
+      "112": "One",
+      "113": "One",
+      "114": "",
+      "115": "One",
+      "116": ""
+    },
+    "awaiting": [
+      "34a",
+      "38a",
+      "83",
+      "112",
+      "113",
+      "114",
+      "115",
+      "116"
+    ]
+  }
 }

@@ -95,10 +95,10 @@ w('<p class="sub">A map and almanac of the work: results, gaps, threads, names, 
 w(f'<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>'
   f'{date(D["date"])} · {e(D["version"])} · DICTO DOI: {D.get("doi", "to be reserved")} (concept) · Licence CC BY-SA 4.0 · Compiled with Claude (Anthropic) from the papers, the site cards and the DICTOnary, generated from concordance.json by build.py<br>'
   'The work, its ideas and its names are DICTO\'s, as each paper\'s credit line says; this map only gathers them.</div>')
-if D.get('version_line'):
-    w('<p class="version"><b>' + e(D['version_line'].split(' adds ')[0]) + ' adds</b> ' + e(D['version_line'].split(' adds ', 1)[1]) + '</p>')
 if D.get('status_box'):
     w('<div class="status"><b>Draft notes</b><ul>' + ''.join(f'<li>{e(x)}</li>' for x in D['status_box']) + '</ul></div>')
+if D.get('version_line'):
+    w('<p class="version"><b>' + e(D['version_line'].split(' adds ')[0]) + ' adds</b> ' + e(D['version_line'].split(' adds ', 1)[1]) + '</p>')
 
 w('<p class="hook">This is a map of DICTO\'s work in one place, so that no detail has to be carried in the head. '
   'The next page states six results in standard terms, each with its paper. <b>What Is Missing</b> (Part 1) holds the gaps, the open points and the work of other fields that bears on them; '
@@ -171,7 +171,7 @@ if D.get('overlaps_note'):
 # 2. Threads
 w('<h2>2. Threads</h2>')
 w(f'<p>{len(D["strands"])} threads run through the papers. Each paper is listed, in the order of its number, with one line on what it adds to the thread; '
-  'a paper can sit on several threads. Lines marked → are the verified cross-links of the audit of 4 November 2026 (study 2026-11-04-cross-links, section A) and, marked v2.3, links stated in the later paper\'s own text.</p>')
+  'a paper can sit on several threads. Lines marked → are the verified cross-links of the audit of 4 November 2026 (study 2026-11-04-cross-links, section A) and, marked v2.3 or v2.4, links stated in the later paper\'s own text.</p>')
 for i, s in enumerate(D['strands'], 1):
     seen = set()
     where = f'2.{i} {s["name"]}'
@@ -190,6 +190,26 @@ if SE:
     for b in SE['books']:
         w(f'<tr><td>{e(b[0])}</td><td>{e(b[1])}</td><td>{e(b[2])}</td><td>{e(fm(b[3], seen, "series"))}</td></tr>')
     w('</tbody></table>')
+BH = D.get('book_homes')
+if BH:
+    n = len(D['strands']) + (2 if SE else 1)
+    H = BH['homes']
+    w(f'<h3>2.{n} The papers in the books</h3><p>For every paper, the books of {e(SE["name"]) if SE else "the series"} that cite it, by book number '
+      f'(One: Quanta of Space I and II; Two to Ten as in 2.{n - 1}). Source: {e(BH["source"])}.</p>')
+    ks = sorted(H, key=key)
+    C4 = 4
+    w('<table class="grid"><thead><tr>' + '<th style="width:6%">#</th><th>Books</th>' * C4 + '</tr></thead><tbody>')
+    rows = (len(ks) + C4 - 1) // C4
+    for r in range(rows):
+        cells = [ks[c * rows + r] if c * rows + r < len(ks) else None for c in range(C4)]
+        w('<tr>' + ''.join(f'<td><b>#{e(k)}</b></td><td class="{"gap" if not H[k] else ""}">{e(H[k]) or "—"}</td>' if k else '<td></td><td></td>' for k in cells) + '</tr>')
+    w('</tbody></table>')
+    aw = BH['awaiting']
+    only1 = [k for k in aw if H.get(k) == 'One']
+    none = [k for k in aw if not H.get(k)]
+    w(f'<p><b>Awaiting a home.</b> {len(aw)} papers have no book of their own yet: ' + ', '.join(ref(k, True) for k in aw) + '. '
+      + (f'Of these, {", ".join("#" + k for k in only1)} are cited only in Book One' if only1 else '')
+      + (f', and {", ".join("#" + k for k in none)} in no book yet.' if none else '.') + '</p>')
 
 # 3. Names
 w('<h2>3. Names</h2>')
