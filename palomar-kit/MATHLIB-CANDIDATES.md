@@ -251,3 +251,9 @@ should be followed rather than duplicated.
 
 Item 1 alone is a natural first offer: small, self-contained and next to Mathlib's existing `niven`. Before it, search
 open Mathlib pull requests and Zulip for the same statement.
+
+## Dehn packets and helpers (DICTO's idea, 21 Nov 2026)
+- The Dehn invariant as a conserved "packet": additivity over dissections and the mixed-tiling condition n·D(P) + Σ m_i·D(H_i) = 0, with the octet (2 tetrahedra + 1 octahedron) as the worked example. Builds on #113's Lean base (invariant read from the set, the bridge to the edge sum).
+- Centre pyramids: D(pyramid) = (base edges) ⊗ θ/2; zero exactly when θ/π is rational (cube, rhombic dodecahedron, rhombic triacontahedron among the isohedral solids).
+- Each exact cancelling relation found by the packet screen (studies/2026-11-21-packet-screen) is a small, self-contained Lean lemma candidate.
+- The shear ledger: volume-preserving affine maps change the packet by computable amounts; their sum from tetrahedron to cube is −6a ⊗ arccos(1/3).
