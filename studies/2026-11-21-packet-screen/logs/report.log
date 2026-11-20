@@ -1,0 +1,48 @@
+{'zero': 3, 'one': 10, 'two': 17, 'none': 17}
+tetrahedron triangle pyramid + octahedron triangle pyramid: 1:1 (edges 1.0000=1.0000 scaled); complements 1
+octahedron triangle pyramid + tetrahedron triangle pyramid: 1:1 (edges 1.0000=1.0000 scaled); complements 1
+cuboctahedron triangle pyramid + truncated tetrahedron: 1:1 (edges 1.0000=1.0000 scaled); complements 1
+cuboctahedron square pyramid + tetrahedron: 1:1 (edges 1.0000=1.0000 scaled); complements 1
+cuboctahedron triangle pyramid + octahedron: 2:1 (edges 1.0000=1.0000 scaled); complements 1
+cuboctahedron square pyramid + truncated cube: 2:1 (edges 1.0000=1.0000 scaled); complements 1
+tetrahedron triangle pyramid + cuboctahedron square pyramid: 4:1 (edges 1.0000=1.0000 scaled); complements 1
+cuboctahedron square pyramid + tetrahedron triangle pyramid: 1:4 (edges 1.0000=1.0000 scaled); complements 1
+cuboctahedron triangle pyramid + rhombicuboctahedron: 2:1 (edges 1.0000=1.0000 scaled); complements 0
+tetrahedron triangle pyramid + truncated tetrahedron: 4:1 (edges 1.0000=1.0000 scaled); complements 0
+octahedron triangle pyramid + tetrahedron: 4:1 (edges 1.0000=1.0000 scaled); complements 0
+octahedron triangle pyramid + cuboctahedron triangle pyramid: 4:1 (edges 1.0000=1.0000 scaled); complements 0
+cuboctahedron triangle pyramid + octahedron triangle pyramid: 1:4 (edges 1.0000=1.0000 scaled); complements 0
+tetrahedron triangle pyramid + rhombicuboctahedron: 8:1 (edges 1.0000=1.0000 scaled); complements 1
+octahedron triangle pyramid + cuboctahedron: 8:1 (edges 1.0000=1.0000 scaled); complements 1
+octahedron triangle pyramid + truncated cube: 8:1 (edges 1.0000=1.0000 scaled); complements 1
+tetrahedron triangle pyramid + octahedron: 8:1 (edges 1.0000=1.0000 scaled); complements 0
+tetrakis hexahedron triangle pyramid + truncated icosahedron: 9:1 (edges 1.5910=1.0000 scaled); complements 0
+dodecahedron pentagon pyramid + truncated icosahedron: 12:1 (edges 1.0000=1.0000 scaled); complements 0
+icosahedron triangle pyramid + truncated dodecahedron: 20:1 (edges 1.0000=1.0000 scaled); complements 0
+icosidodecahedron pentagon pyramid + truncated icosahedron: mu=0.10301; complements 0
+cuboctahedron triangle pyramid + cuboctahedron square pyramid: 1:1 (edges 1.0000=1.0000 scaled); complements 1; sibling pyramid (same solid)
+cuboctahedron square pyramid + cuboctahedron triangle pyramid: 1:1 (edges 1.0000=1.0000 scaled); complements 1; sibling pyramid (same solid)
+cuboctahedron square pyramid + cuboctahedron: 2:1 (edges 1.0000=1.0000 scaled); complements 1; its own solid
+truncated octahedron square pyramid + truncated octahedron hexagon pyramid: 3:4 (edges 1.0000=1.0000 scaled); complements 0; sibling pyramid (same solid)
+truncated octahedron hexagon pyramid + truncated octahedron square pyramid: 4:3 (edges 1.0000=1.0000 scaled); complements 0; sibling pyramid (same solid)
+--- two-helper sets, non-trivial (no sibling pyramid / own solid), exact:
+icosidodecahedron triangle pyramid + dodecahedron + icosahedron: a = 0.1118, 0.05 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + dodecahedron + icosahedron triangle pyramid: a = 0.1118, 1 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + dodecahedron + rhombicosidodecahedron: a = 0.061803, 0.05 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + dodecahedron + pentagonal antiprism: a = 0.12847, 0.1 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + dodecahedron pentagon pyramid + icosahedron: a = 1.3416, 0.05 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + dodecahedron pentagon pyramid + icosahedron triangle pyramid: a = 1.3416, 1 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + dodecahedron pentagon pyramid + rhombicosidodecahedron: a = 0.74164, 0.05 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + dodecahedron pentagon pyramid + pentagonal antiprism: a = 1.5416, 0.1 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + icosahedron + tetrakis hexahedron: a = 0.05, 0.026352 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + icosahedron + tetrakis hexahedron triangle pyramid: a = 0.05, 0.63246 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + icosahedron triangle pyramid + tetrakis hexahedron: a = 1, 0.026352 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + icosahedron triangle pyramid + tetrakis hexahedron triangle pyramid: a = 1, 0.63246 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + tetrakis hexahedron + rhombicosidodecahedron: a = 0.014567, 0.05 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + tetrakis hexahedron + pentagonal antiprism: a = 0.030281, 0.1 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + tetrakis hexahedron triangle pyramid + rhombicosidodecahedron: a = 0.34961, 0.05 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + tetrakis hexahedron triangle pyramid + pentagonal antiprism: a = 0.72674, 0.1 (irrational at canonical scale)
+icosidodecahedron triangle pyramid + truncated dodecahedron + rhombicosidodecahedron: a = 0.061803, 0.1118 (irrational at canonical scale)
+ok   every one of the 47 centre pyramids is in exactly one row
+ok   every cancellation listed is proved exactly
+FINAL ok

@@ -1,0 +1,1975 @@
+{
+ "counts": {
+  "zero": 3,
+  "one": 10,
+  "two": 17,
+  "none": 17
+ },
+ "leads": [
+  {
+   "pyramid": "P[tetrahedron|3]",
+   "helper": "P[octahedron|3]",
+   "exact": true,
+   "mu": 1.0,
+   "proportions": [
+    {
+     "n": 1,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 1,
+   "helper_faces": 3
+  },
+  {
+   "pyramid": "P[octahedron|3]",
+   "helper": "P[tetrahedron|3]",
+   "exact": true,
+   "mu": 1.0,
+   "proportions": [
+    {
+     "n": 1,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 1,
+   "helper_faces": 3
+  },
+  {
+   "pyramid": "P[cuboctahedron|3]",
+   "helper": "truncated_tetrahedron",
+   "exact": true,
+   "mu": 1.0,
+   "proportions": [
+    {
+     "n": 1,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 1,
+   "helper_faces": 8
+  },
+  {
+   "pyramid": "P[cuboctahedron|4]",
+   "helper": "tetrahedron",
+   "exact": true,
+   "mu": 1.0,
+   "proportions": [
+    {
+     "n": 1,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 1,
+   "helper_faces": 4
+  },
+  {
+   "pyramid": "P[cuboctahedron|3]",
+   "helper": "octahedron",
+   "exact": true,
+   "mu": 0.5,
+   "proportions": [
+    {
+     "n": 2,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 1,
+   "helper_faces": 8
+  },
+  {
+   "pyramid": "P[cuboctahedron|4]",
+   "helper": "truncated_cube",
+   "exact": true,
+   "mu": 0.5,
+   "proportions": [
+    {
+     "n": 2,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 1,
+   "helper_faces": 14
+  },
+  {
+   "pyramid": "P[tetrahedron|3]",
+   "helper": "P[cuboctahedron|4]",
+   "exact": true,
+   "mu": 0.25,
+   "proportions": [
+    {
+     "n": 4,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 1,
+   "helper_faces": 4
+  },
+  {
+   "pyramid": "P[cuboctahedron|4]",
+   "helper": "P[tetrahedron|3]",
+   "exact": true,
+   "mu": 4.0,
+   "proportions": [
+    {
+     "n": 1,
+     "m": 4,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 1,
+   "helper_faces": 3
+  },
+  {
+   "pyramid": "P[cuboctahedron|3]",
+   "helper": "rhombicuboctahedron",
+   "exact": true,
+   "mu": 0.5,
+   "proportions": [
+    {
+     "n": 2,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 0,
+   "helper_faces": 26
+  },
+  {
+   "pyramid": "P[tetrahedron|3]",
+   "helper": "truncated_tetrahedron",
+   "exact": true,
+   "mu": 0.25,
+   "proportions": [
+    {
+     "n": 4,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 0,
+   "helper_faces": 8
+  },
+  {
+   "pyramid": "P[octahedron|3]",
+   "helper": "tetrahedron",
+   "exact": true,
+   "mu": 0.25,
+   "proportions": [
+    {
+     "n": 4,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 0,
+   "helper_faces": 4
+  },
+  {
+   "pyramid": "P[octahedron|3]",
+   "helper": "P[cuboctahedron|3]",
+   "exact": true,
+   "mu": 0.25,
+   "proportions": [
+    {
+     "n": 4,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 0,
+   "helper_faces": 3
+  },
+  {
+   "pyramid": "P[cuboctahedron|3]",
+   "helper": "P[octahedron|3]",
+   "exact": true,
+   "mu": 4.0,
+   "proportions": [
+    {
+     "n": 1,
+     "m": 4,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 0,
+   "helper_faces": 3
+  },
+  {
+   "pyramid": "P[tetrahedron|3]",
+   "helper": "rhombicuboctahedron",
+   "exact": true,
+   "mu": 0.125,
+   "proportions": [
+    {
+     "n": 8,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 1,
+   "helper_faces": 26
+  },
+  {
+   "pyramid": "P[octahedron|3]",
+   "helper": "cuboctahedron",
+   "exact": true,
+   "mu": 0.125,
+   "proportions": [
+    {
+     "n": 8,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 1,
+   "helper_faces": 14
+  },
+  {
+   "pyramid": "P[octahedron|3]",
+   "helper": "truncated_cube",
+   "exact": true,
+   "mu": 0.125,
+   "proportions": [
+    {
+     "n": 8,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 1,
+   "helper_faces": 14
+  },
+  {
+   "pyramid": "P[tetrahedron|3]",
+   "helper": "octahedron",
+   "exact": true,
+   "mu": 0.125,
+   "proportions": [
+    {
+     "n": 8,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 0,
+   "helper_faces": 8
+  },
+  {
+   "pyramid": "P[tetrakis_hexahedron|3]",
+   "helper": "truncated_icosahedron",
+   "exact": true,
+   "mu": 0.1767766952966369,
+   "proportions": [
+    {
+     "n": 9,
+     "m": 1,
+     "P_edge2": [
+      "81/32",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.590990257669732,
+     "H_edge": 1.0
+    },
+    {
+     "n": 12,
+     "m": 1,
+     "P_edge2": [
+      "9/2",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 2.1213203435596424,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 0,
+   "helper_faces": 32
+  },
+  {
+   "pyramid": "P[dodecahedron|5]",
+   "helper": "truncated_icosahedron",
+   "exact": true,
+   "mu": 0.08333333333333333,
+   "proportions": [
+    {
+     "n": 12,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 0,
+   "helper_faces": 32
+  },
+  {
+   "pyramid": "P[icosahedron|3]",
+   "helper": "truncated_dodecahedron",
+   "exact": true,
+   "mu": 0.05,
+   "proportions": [
+    {
+     "n": 20,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "",
+   "complements": 0,
+   "helper_faces": 32
+  },
+  {
+   "pyramid": "P[icosidodecahedron|5]",
+   "helper": "truncated_icosahedron",
+   "exact": true,
+   "mu": 0.10300566479164915,
+   "proportions": [],
+   "trivial": "",
+   "complements": 0,
+   "helper_faces": 32
+  },
+  {
+   "pyramid": "P[cuboctahedron|3]",
+   "helper": "P[cuboctahedron|4]",
+   "exact": true,
+   "mu": 1.0,
+   "proportions": [
+    {
+     "n": 1,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "sibling pyramid (same solid)",
+   "complements": 1,
+   "helper_faces": 4
+  },
+  {
+   "pyramid": "P[cuboctahedron|4]",
+   "helper": "P[cuboctahedron|3]",
+   "exact": true,
+   "mu": 1.0,
+   "proportions": [
+    {
+     "n": 1,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "sibling pyramid (same solid)",
+   "complements": 1,
+   "helper_faces": 3
+  },
+  {
+   "pyramid": "P[cuboctahedron|4]",
+   "helper": "cuboctahedron",
+   "exact": true,
+   "mu": 0.5,
+   "proportions": [
+    {
+     "n": 2,
+     "m": 1,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    }
+   ],
+   "trivial": "its own solid",
+   "complements": 1,
+   "helper_faces": 14
+  },
+  {
+   "pyramid": "P[truncated_octahedron|4]",
+   "helper": "P[truncated_octahedron|6]",
+   "exact": true,
+   "mu": 1.3333333333333333,
+   "proportions": [
+    {
+     "n": 3,
+     "m": 4,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    },
+    {
+     "n": 3,
+     "m": 4,
+     "P_edge2": [
+      "5/2",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "5/2",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.5811388300841898,
+     "H_edge": 1.5811388300841898
+    }
+   ],
+   "trivial": "sibling pyramid (same solid)",
+   "complements": 0,
+   "helper_faces": 6
+  },
+  {
+   "pyramid": "P[truncated_octahedron|6]",
+   "helper": "P[truncated_octahedron|4]",
+   "exact": true,
+   "mu": 0.75,
+   "proportions": [
+    {
+     "n": 4,
+     "m": 3,
+     "P_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.0,
+     "H_edge": 1.0
+    },
+    {
+     "n": 4,
+     "m": 3,
+     "P_edge2": [
+      "5/2",
+      "0",
+      "0",
+      "0"
+     ],
+     "H_edge2": [
+      "5/2",
+      "0",
+      "0",
+      "0"
+     ],
+     "P_edge": 1.5811388300841898,
+     "H_edge": 1.5811388300841898
+    }
+   ],
+   "trivial": "sibling pyramid (same solid)",
+   "complements": 0,
+   "helper_faces": 4
+  }
+ ],
+ "two_helper": [
+  {
+   "pyramid": "P[truncated_tetrahedron|3]",
+   "helpers": [
+    "tetrahedron",
+    "P[truncated_tetrahedron|6]"
+   ],
+   "exact": true,
+   "proportion": [
+    4,
+    1,
+    4
+   ],
+   "a": [
+    0.2499999999999998,
+    0.9999999999999998
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_tetrahedron|3]",
+   "helpers": [
+    "P[tetrahedron|3]",
+    "P[truncated_tetrahedron|6]"
+   ],
+   "exact": true,
+   "proportion": [
+    1,
+    1,
+    1
+   ],
+   "a": [
+    0.9999999999999992,
+    1.0
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_tetrahedron|3]",
+   "helpers": [
+    "P[truncated_tetrahedron|6]",
+    "cuboctahedron"
+   ],
+   "exact": true,
+   "proportion": [
+    8,
+    8,
+    1
+   ],
+   "a": [
+    1.0000000000000004,
+    0.125
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_tetrahedron|3]",
+   "helpers": [
+    "P[truncated_tetrahedron|6]",
+    "P[cuboctahedron|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    4,
+    4,
+    1
+   ],
+   "a": [
+    0.9999999999999997,
+    0.24999999999999992
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_tetrahedron|3]",
+   "helpers": [
+    "P[truncated_tetrahedron|6]",
+    "truncated_cube"
+   ],
+   "exact": true,
+   "proportion": [
+    8,
+    8,
+    1
+   ],
+   "a": [
+    1.0000000000000004,
+    0.125
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_tetrahedron|6]",
+   "helpers": [
+    "tetrahedron",
+    "P[truncated_tetrahedron|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    4,
+    1,
+    4
+   ],
+   "a": [
+    0.2500000000000002,
+    1.0000000000000004
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_tetrahedron|6]",
+   "helpers": [
+    "P[tetrahedron|3]",
+    "P[truncated_tetrahedron|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    1,
+    1,
+    1
+   ],
+   "a": [
+    1.0000000000000002,
+    1.0
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_tetrahedron|6]",
+   "helpers": [
+    "P[truncated_tetrahedron|3]",
+    "cuboctahedron"
+   ],
+   "exact": true,
+   "proportion": [
+    8,
+    8,
+    1
+   ],
+   "a": [
+    1.0000000000000002,
+    0.1249999999999999
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_tetrahedron|6]",
+   "helpers": [
+    "P[truncated_tetrahedron|3]",
+    "P[cuboctahedron|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    4,
+    4,
+    1
+   ],
+   "a": [
+    1.0,
+    0.24999999999999975
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_tetrahedron|6]",
+   "helpers": [
+    "P[truncated_tetrahedron|3]",
+    "truncated_cube"
+   ],
+   "exact": true,
+   "proportion": [
+    8,
+    8,
+    1
+   ],
+   "a": [
+    1.0000000000000002,
+    0.1249999999999999
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_cube|3]",
+   "helpers": [
+    "octahedron",
+    "P[truncated_cube|8]"
+   ],
+   "exact": true,
+   "proportion": [
+    8,
+    1,
+    6
+   ],
+   "a": [
+    0.125,
+    0.7500000000000001
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_cube|3]",
+   "helpers": [
+    "P[octahedron|3]",
+    "P[truncated_cube|8]"
+   ],
+   "exact": true,
+   "proportion": [
+    4,
+    4,
+    3
+   ],
+   "a": [
+    0.9999999999999999,
+    0.7500000000000001
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_cube|3]",
+   "helpers": [
+    "truncated_tetrahedron",
+    "P[truncated_cube|8]"
+   ],
+   "exact": true,
+   "proportion": [
+    4,
+    1,
+    3
+   ],
+   "a": [
+    0.25,
+    0.7500000000000001
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_cube|3]",
+   "helpers": [
+    "P[cuboctahedron|4]",
+    "P[truncated_cube|8]"
+   ],
+   "exact": true,
+   "proportion": [
+    4,
+    1,
+    3
+   ],
+   "a": [
+    0.25,
+    0.7500000000000001
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_cube|3]",
+   "helpers": [
+    "P[truncated_cube|8]",
+    "rhombicuboctahedron"
+   ],
+   "exact": true,
+   "proportion": [
+    8,
+    6,
+    1
+   ],
+   "a": [
+    0.7500000000000001,
+    0.125
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_cube|8]",
+   "helpers": [
+    "octahedron",
+    "P[truncated_cube|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    6,
+    1,
+    8
+   ],
+   "a": [
+    0.16666666666666666,
+    1.3333333333333335
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_cube|8]",
+   "helpers": [
+    "P[octahedron|3]",
+    "P[truncated_cube|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    3,
+    4,
+    4
+   ],
+   "a": [
+    1.3333333333333333,
+    1.3333333333333333
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_cube|8]",
+   "helpers": [
+    "truncated_tetrahedron",
+    "P[truncated_cube|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    3,
+    1,
+    4
+   ],
+   "a": [
+    0.3333333333333333,
+    1.333333333333333
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_cube|8]",
+   "helpers": [
+    "P[cuboctahedron|4]",
+    "P[truncated_cube|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    3,
+    1,
+    4
+   ],
+   "a": [
+    0.3333333333333333,
+    1.333333333333333
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_cube|8]",
+   "helpers": [
+    "P[truncated_cube|3]",
+    "rhombicuboctahedron"
+   ],
+   "exact": true,
+   "proportion": [
+    6,
+    8,
+    1
+   ],
+   "a": [
+    1.3333333333333333,
+    0.16666666666666666
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[rhombicuboctahedron|3]",
+   "helpers": [
+    "tetrahedron",
+    "P[rhombicuboctahedron|4]"
+   ],
+   "exact": true,
+   "proportion": [
+    4,
+    1,
+    9
+   ],
+   "a": [
+    0.25,
+    2.25
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[rhombicuboctahedron|3]",
+   "helpers": [
+    "P[tetrahedron|3]",
+    "P[rhombicuboctahedron|4]"
+   ],
+   "exact": true,
+   "proportion": [
+    4,
+    4,
+    9
+   ],
+   "a": [
+    1.0,
+    2.25
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[rhombicuboctahedron|3]",
+   "helpers": [
+    "cuboctahedron",
+    "P[rhombicuboctahedron|4]"
+   ],
+   "exact": true,
+   "proportion": [
+    8,
+    1,
+    18
+   ],
+   "a": [
+    0.125,
+    2.25
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[rhombicuboctahedron|3]",
+   "helpers": [
+    "P[cuboctahedron|3]",
+    "P[rhombicuboctahedron|4]"
+   ],
+   "exact": true,
+   "proportion": [
+    4,
+    1,
+    9
+   ],
+   "a": [
+    0.25,
+    2.25
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[rhombicuboctahedron|3]",
+   "helpers": [
+    "truncated_cube",
+    "P[rhombicuboctahedron|4]"
+   ],
+   "exact": true,
+   "proportion": [
+    8,
+    1,
+    18
+   ],
+   "a": [
+    0.125,
+    2.25
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[rhombicuboctahedron|4]",
+   "helpers": [
+    "tetrahedron",
+    "P[rhombicuboctahedron|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    9,
+    1,
+    4
+   ],
+   "a": [
+    0.11111111111111108,
+    0.4444444444444445
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[rhombicuboctahedron|4]",
+   "helpers": [
+    "P[tetrahedron|3]",
+    "P[rhombicuboctahedron|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    9,
+    4,
+    4
+   ],
+   "a": [
+    0.44444444444444436,
+    0.44444444444444436
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[rhombicuboctahedron|4]",
+   "helpers": [
+    "cuboctahedron",
+    "P[rhombicuboctahedron|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    18,
+    1,
+    8
+   ],
+   "a": [
+    0.05555555555555555,
+    0.4444444444444444
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[rhombicuboctahedron|4]",
+   "helpers": [
+    "P[cuboctahedron|3]",
+    "P[rhombicuboctahedron|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    9,
+    1,
+    4
+   ],
+   "a": [
+    0.11111111111111108,
+    0.4444444444444445
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[rhombicuboctahedron|4]",
+   "helpers": [
+    "truncated_cube",
+    "P[rhombicuboctahedron|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    18,
+    1,
+    8
+   ],
+   "a": [
+    0.05555555555555555,
+    0.4444444444444444
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_cuboctahedron|4]",
+   "helpers": [
+    "P[truncated_cuboctahedron|6]",
+    "P[truncated_cuboctahedron|8]"
+   ],
+   "exact": true,
+   "proportion": [
+    6,
+    4,
+    3
+   ],
+   "a": [
+    0.6666666666666665,
+    0.4999999999999999
+   ],
+   "trivial": "sibling pyramid (same solid), sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_cuboctahedron|6]",
+   "helpers": [
+    "P[truncated_cuboctahedron|4]",
+    "P[truncated_cuboctahedron|8]"
+   ],
+   "exact": true,
+   "proportion": [
+    4,
+    6,
+    3
+   ],
+   "a": [
+    1.4999999999999998,
+    0.75
+   ],
+   "trivial": "sibling pyramid (same solid), sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_cuboctahedron|8]",
+   "helpers": [
+    "P[truncated_cuboctahedron|4]",
+    "P[truncated_cuboctahedron|6]"
+   ],
+   "exact": true,
+   "proportion": [
+    3,
+    6,
+    4
+   ],
+   "a": [
+    1.9999999999999996,
+    1.3333333333333333
+   ],
+   "trivial": "sibling pyramid (same solid), sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "dodecahedron",
+    "icosahedron"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.11180339887498948,
+    0.05
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "dodecahedron",
+    "P[icosahedron|3]"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.11180339887498948,
+    1.0
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "dodecahedron",
+    "rhombicosidodecahedron"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.06180339887498947,
+    0.04999999999999998
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "dodecahedron",
+    "pentagonal_antiprism"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.1284700655416561,
+    0.09999999999999995
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "P[dodecahedron|5]",
+    "icosahedron"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    1.3416407864998738,
+    0.05
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "P[dodecahedron|5]",
+    "P[icosahedron|3]"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    1.341640786499874,
+    1.0
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "P[dodecahedron|5]",
+    "rhombicosidodecahedron"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.741640786499874,
+    0.049999999999999975
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "P[dodecahedron|5]",
+    "pentagonal_antiprism"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    1.5416407864998736,
+    0.09999999999999998
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "icosahedron",
+    "tetrakis_hexahedron"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.05,
+    0.026352313834736497
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "icosahedron",
+    "P[tetrakis_hexahedron|3]"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.05,
+    0.6324555320336759
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "icosahedron",
+    "P[icosidodecahedron|5]"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.05,
+    1.0854101966249687
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "P[icosahedron|3]",
+    "tetrakis_hexahedron"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    1.0,
+    0.026352313834736497
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "P[icosahedron|3]",
+    "P[tetrakis_hexahedron|3]"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    1.0,
+    0.6324555320336759
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "P[icosahedron|3]",
+    "P[icosidodecahedron|5]"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    1.0,
+    1.0854101966249687
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "tetrakis_hexahedron",
+    "rhombicosidodecahedron"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.014567200814960704,
+    0.04999999999999998
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "tetrakis_hexahedron",
+    "pentagonal_antiprism"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.030280684841328433,
+    0.1
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "P[tetrakis_hexahedron|3]",
+    "rhombicosidodecahedron"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.34961281955905676,
+    0.04999999999999997
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "P[tetrakis_hexahedron|3]",
+    "pentagonal_antiprism"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.7267364361918821,
+    0.1
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "P[icosidodecahedron|5]",
+    "rhombicosidodecahedron"
+   ],
+   "exact": true,
+   "proportion": [
+    20,
+    12,
+    1
+   ],
+   "a": [
+    0.6,
+    0.05000000000000002
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "P[icosidodecahedron|5]",
+    "pentagonal_antiprism"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    1.2472135954999581,
+    0.10000000000000002
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[icosidodecahedron|3]",
+   "helpers": [
+    "truncated_dodecahedron",
+    "rhombicosidodecahedron"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.0618033988749895,
+    0.11180339887498947
+   ],
+   "trivial": ""
+  },
+  {
+   "pyramid": "P[truncated_dodecahedron|3]",
+   "helpers": [
+    "icosahedron",
+    "P[truncated_dodecahedron|10]"
+   ],
+   "exact": true,
+   "proportion": [
+    20,
+    1,
+    12
+   ],
+   "a": [
+    0.05,
+    0.6000000000000001
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_dodecahedron|3]",
+   "helpers": [
+    "P[icosahedron|3]",
+    "P[truncated_dodecahedron|10]"
+   ],
+   "exact": true,
+   "proportion": [
+    5,
+    5,
+    3
+   ],
+   "a": [
+    1.0,
+    0.6000000000000002
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_dodecahedron|10]",
+   "helpers": [
+    "icosahedron",
+    "P[truncated_dodecahedron|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    12,
+    1,
+    20
+   ],
+   "a": [
+    0.08333333333333334,
+    1.6666666666666667
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_dodecahedron|10]",
+   "helpers": [
+    "P[icosahedron|3]",
+    "P[truncated_dodecahedron|3]"
+   ],
+   "exact": true,
+   "proportion": [
+    3,
+    5,
+    5
+   ],
+   "a": [
+    1.6666666666666679,
+    1.6666666666666674
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_icosahedron|5]",
+   "helpers": [
+    "dodecahedron",
+    "P[truncated_icosahedron|6]"
+   ],
+   "exact": true,
+   "proportion": [
+    12,
+    1,
+    20
+   ],
+   "a": [
+    0.08333333333333333,
+    1.6666666666666663
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_icosahedron|5]",
+   "helpers": [
+    "P[dodecahedron|5]",
+    "P[truncated_icosahedron|6]"
+   ],
+   "exact": true,
+   "proportion": [
+    3,
+    3,
+    5
+   ],
+   "a": [
+    1.0,
+    1.6666666666666663
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_icosahedron|5]",
+   "helpers": [
+    "tetrakis_hexahedron",
+    "P[truncated_icosahedron|6]"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.019641855032959656,
+    1.6666666666666665
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_icosahedron|5]",
+   "helpers": [
+    "P[tetrakis_hexahedron|3]",
+    "P[truncated_icosahedron|6]"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.4714045207910317,
+    1.666666666666666
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_icosahedron|5]",
+   "helpers": [
+    "P[icosidodecahedron|5]",
+    "P[truncated_icosahedron|6]"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.8090169943749473,
+    1.6666666666666663
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_icosahedron|6]",
+   "helpers": [
+    "dodecahedron",
+    "P[truncated_icosahedron|5]"
+   ],
+   "exact": true,
+   "proportion": [
+    20,
+    1,
+    12
+   ],
+   "a": [
+    0.050000000000000024,
+    0.6000000000000001
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_icosahedron|6]",
+   "helpers": [
+    "P[dodecahedron|5]",
+    "P[truncated_icosahedron|5]"
+   ],
+   "exact": true,
+   "proportion": [
+    5,
+    3,
+    3
+   ],
+   "a": [
+    0.6000000000000001,
+    0.6000000000000001
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_icosahedron|6]",
+   "helpers": [
+    "tetrakis_hexahedron",
+    "P[truncated_icosahedron|5]"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.011785113019775787,
+    0.5999999999999996
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_icosahedron|6]",
+   "helpers": [
+    "P[tetrakis_hexahedron|3]",
+    "P[truncated_icosahedron|5]"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.28284271247461906,
+    0.6000000000000001
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_icosahedron|6]",
+   "helpers": [
+    "P[icosidodecahedron|5]",
+    "P[truncated_icosahedron|5]"
+   ],
+   "exact": true,
+   "proportion": null,
+   "a": [
+    0.4854101966249685,
+    0.6000000000000005
+   ],
+   "trivial": "sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_icosidodecahedron|4]",
+   "helpers": [
+    "P[truncated_icosidodecahedron|6]",
+    "P[truncated_icosidodecahedron|10]"
+   ],
+   "exact": true,
+   "proportion": [
+    15,
+    10,
+    6
+   ],
+   "a": [
+    0.6666666666666669,
+    0.4
+   ],
+   "trivial": "sibling pyramid (same solid), sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_icosidodecahedron|6]",
+   "helpers": [
+    "P[truncated_icosidodecahedron|4]",
+    "P[truncated_icosidodecahedron|10]"
+   ],
+   "exact": true,
+   "proportion": [
+    10,
+    15,
+    6
+   ],
+   "a": [
+    1.4999999999999991,
+    0.5999999999999999
+   ],
+   "trivial": "sibling pyramid (same solid), sibling pyramid (same solid)"
+  },
+  {
+   "pyramid": "P[truncated_icosidodecahedron|10]",
+   "helpers": [
+    "P[truncated_icosidodecahedron|4]",
+    "P[truncated_icosidodecahedron|6]"
+   ],
+   "exact": true,
+   "proportion": [
+    6,
+    15,
+    10
+   ],
+   "a": [
+    2.5000000000000004,
+    1.666666666666667
+   ],
+   "trivial": "sibling pyramid (same solid), sibling pyramid (same solid)"
+  }
+ ]
+}

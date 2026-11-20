@@ -1,0 +1,74 @@
+ok   truncated_tetrahedron: 12 corners, 8 faces, one edge length (exact)
+ok   truncated_tetrahedron: all corners on one sphere (exact)
+ok   triakis_tetrahedron: 8 corners, 12 faces (polar of truncated_tetrahedron)
+ok   cuboctahedron: 12 corners, 14 faces, one edge length (exact)
+ok   cuboctahedron: all corners on one sphere (exact)
+ok   rhombic_dodecahedron: 14 corners, 12 faces (polar of cuboctahedron)
+ok   truncated_cube: 24 corners, 14 faces, one edge length (exact)
+ok   truncated_cube: all corners on one sphere (exact)
+ok   triakis_octahedron: 14 corners, 24 faces (polar of truncated_cube)
+ok   truncated_octahedron: 24 corners, 14 faces, one edge length (exact)
+ok   truncated_octahedron: all corners on one sphere (exact)
+ok   tetrakis_hexahedron: 14 corners, 24 faces (polar of truncated_octahedron)
+ok   rhombicuboctahedron: 24 corners, 26 faces, one edge length (exact)
+ok   rhombicuboctahedron: all corners on one sphere (exact)
+ok   deltoidal_icositetrahedron: 26 corners, 24 faces (polar of rhombicuboctahedron)
+ok   truncated_cuboctahedron: 48 corners, 26 faces, one edge length (exact)
+ok   truncated_cuboctahedron: all corners on one sphere (exact)
+ok   disdyakis_dodecahedron: 26 corners, 48 faces (polar of truncated_cuboctahedron)
+ok   snub_cube: 24 corners, 38 faces, one edge length (exact)
+ok   snub_cube: all corners on one sphere (exact)
+ok   pentagonal_icositetrahedron: 38 corners, 24 faces (polar of snub_cube)
+ok   icosidodecahedron: 30 corners, 32 faces, one edge length (exact)
+ok   icosidodecahedron: all corners on one sphere (exact)
+ok   rhombic_triacontahedron: 32 corners, 30 faces (polar of icosidodecahedron)
+ok   truncated_dodecahedron: 60 corners, 32 faces, one edge length (exact)
+ok   truncated_dodecahedron: all corners on one sphere (exact)
+ok   triakis_icosahedron: 32 corners, 60 faces (polar of truncated_dodecahedron)
+ok   truncated_icosahedron: 60 corners, 32 faces, one edge length (exact)
+ok   truncated_icosahedron: all corners on one sphere (exact)
+ok   pentakis_dodecahedron: 32 corners, 60 faces (polar of truncated_icosahedron)
+ok   rhombicosidodecahedron: 60 corners, 62 faces, one edge length (exact)
+ok   rhombicosidodecahedron: all corners on one sphere (exact)
+ok   deltoidal_hexecontahedron: 62 corners, 60 faces (polar of rhombicosidodecahedron)
+ok   truncated_icosidodecahedron: 120 corners, 62 faces, one edge length (exact)
+ok   truncated_icosidodecahedron: all corners on one sphere (exact)
+ok   disdyakis_triacontahedron: 62 corners, 120 faces (polar of truncated_icosidodecahedron)
+ok   snub_dodecahedron: 60 corners, 92 faces, one edge length (exact)
+ok   snub_dodecahedron: all corners on one sphere (exact)
+ok   pentagonal_hexecontahedron: 92 corners, 60 faces (polar of snub_dodecahedron)
+ok   square antiprism: 8 corners, 10 faces, edge 1 (exact)
+ok   pentagonal antiprism: 10 corners, 12 faces, one edge length
+dodecahedron: 12 faces -> 1 pyramid type(s): 5-gon x12
+icosahedron: 20 faces -> 1 pyramid type(s): 3-gon x20
+cube: 6 faces -> 1 pyramid type(s): 4-gon x6
+tetrahedron: 4 faces -> 1 pyramid type(s): 3-gon x4
+octahedron: 8 faces -> 1 pyramid type(s): 3-gon x8
+truncated_tetrahedron: 8 faces -> 2 pyramid type(s): 3-gon x4, 6-gon x4
+triakis_tetrahedron: 12 faces -> 1 pyramid type(s): 3-gon x12
+cuboctahedron: 14 faces -> 2 pyramid type(s): 3-gon x8, 4-gon x6
+rhombic_dodecahedron: 12 faces -> 1 pyramid type(s): 4-gon x12
+truncated_cube: 14 faces -> 2 pyramid type(s): 3-gon x8, 8-gon x6
+triakis_octahedron: 24 faces -> 1 pyramid type(s): 3-gon x24
+truncated_octahedron: 14 faces -> 2 pyramid type(s): 4-gon x6, 6-gon x8
+tetrakis_hexahedron: 24 faces -> 1 pyramid type(s): 3-gon x24
+rhombicuboctahedron: 26 faces -> 2 pyramid type(s): 3-gon x8, 4-gon x18
+deltoidal_icositetrahedron: 24 faces -> 1 pyramid type(s): 4-gon x24
+truncated_cuboctahedron: 26 faces -> 3 pyramid type(s): 4-gon x12, 6-gon x8, 8-gon x6
+disdyakis_dodecahedron: 48 faces -> 1 pyramid type(s): 3-gon x48
+snub_cube: 38 faces -> 2 pyramid type(s): 3-gon x32, 4-gon x6
+pentagonal_icositetrahedron: 24 faces -> 1 pyramid type(s): 5-gon x24
+icosidodecahedron: 32 faces -> 2 pyramid type(s): 3-gon x20, 5-gon x12
+rhombic_triacontahedron: 30 faces -> 1 pyramid type(s): 4-gon x30
+truncated_dodecahedron: 32 faces -> 2 pyramid type(s): 3-gon x20, 10-gon x12
+triakis_icosahedron: 60 faces -> 1 pyramid type(s): 3-gon x60
+truncated_icosahedron: 32 faces -> 2 pyramid type(s): 6-gon x20, 5-gon x12
+pentakis_dodecahedron: 60 faces -> 1 pyramid type(s): 3-gon x60
+rhombicosidodecahedron: 62 faces -> 3 pyramid type(s): 3-gon x20, 4-gon x30, 5-gon x12
+deltoidal_hexecontahedron: 60 faces -> 1 pyramid type(s): 4-gon x60
+truncated_icosidodecahedron: 62 faces -> 3 pyramid type(s): 4-gon x30, 6-gon x20, 10-gon x12
+disdyakis_triacontahedron: 120 faces -> 1 pyramid type(s): 3-gon x120
+snub_dodecahedron: 92 faces -> 2 pyramid type(s): 3-gon x80, 5-gon x12
+pentagonal_hexecontahedron: 60 faces -> 1 pyramid type(s): 5-gon x60
+pieces: 80 (47 centre pyramids, 33 solids)
+FINAL ok

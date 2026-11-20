@@ -1,0 +1,87 @@
+packets built [11.4s]
+ok   control: cube centre pyramid packet is exactly zero
+ok   control: rhombic dodecahedron centre pyramid packet is exactly zero
+ok   control: rhombic triacontahedron centre pyramid packet is exactly zero
+ok   control: dodecahedron centre pyramid packet is nonzero
+ok   control: tetrahedron + octahedron cancel, 2:1 at equal edges (octet)
+ok   control: CO triangle pyramid + CO square pyramid cancel 1:1 (the octet again)
+ok   control: ID triangle pyramid + ID pentagon pyramid do NOT cancel (gap study theorem)
+ok   control: tetrahedron + cube do NOT cancel (cube is zero, tetrahedron is not)
+ok   additivity: sum of the centre pyramids of dodecahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of icosahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of cube = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of tetrahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of octahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of truncated_tetrahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of triakis_tetrahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of cuboctahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of rhombic_dodecahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of truncated_cube = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of triakis_octahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of truncated_octahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of tetrakis_hexahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of rhombicuboctahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of deltoidal_icositetrahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of truncated_cuboctahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of disdyakis_dodecahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of snub_cube = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of pentagonal_icositetrahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of icosidodecahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of rhombic_triacontahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of truncated_dodecahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of triakis_icosahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of truncated_icosahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of pentakis_dodecahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of rhombicosidodecahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of deltoidal_hexecontahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of truncated_icosidodecahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of disdyakis_triacontahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of snub_dodecahedron = the solid's packet (exact)
+ok   additivity: sum of the centre pyramids of pentagonal_hexecontahedron = the solid's packet (exact)
+P[dodecahedron|5]: support [1]; one-helper cancellations 1; two-helper -
+P[icosahedron|3]: support [76]; one-helper cancellations 1; two-helper -
+P[tetrahedron|3]: support [9]; one-helper cancellations 5; two-helper -
+P[octahedron|3]: support [9]; one-helper cancellations 5; two-helper -
+P[truncated_tetrahedron|3]: support [9, 13]; one-helper cancellations 0; two-helper 5
+P[truncated_tetrahedron|6]: support [9, 13]; one-helper cancellations 0; two-helper 5
+P[triakis_tetrahedron|3]: support [16]; one-helper cancellations 0; two-helper 0
+P[cuboctahedron|3]: support [9]; one-helper cancellations 5; two-helper -
+P[cuboctahedron|4]: support [9]; one-helper cancellations 5; two-helper -
+P[truncated_cube|3]: support [9, 20]; one-helper cancellations 0; two-helper 5
+P[truncated_cube|8]: support [20]; one-helper cancellations 0; two-helper 5
+P[triakis_octahedron|3]: support [23]; one-helper cancellations 0; two-helper 0
+P[truncated_octahedron|4]: support [9, 76]; one-helper cancellations 1; two-helper -
+P[truncated_octahedron|6]: support [9, 76]; one-helper cancellations 1; two-helper -
+P[tetrakis_hexahedron|3]: support [1]; one-helper cancellations 1; two-helper -
+P[rhombicuboctahedron|3]: support [9, 31]; one-helper cancellations 0; two-helper 5
+P[rhombicuboctahedron|4]: support [31]; one-helper cancellations 0; two-helper 5
+P[deltoidal_icositetrahedron|4]: support [35]; one-helper cancellations 0; two-helper 0
+P[truncated_cuboctahedron|4]: support [9, 36]; one-helper cancellations 0; two-helper 1
+P[truncated_cuboctahedron|6]: support [37]; one-helper cancellations 0; two-helper 1
+P[truncated_cuboctahedron|8]: support [9, 36, 37]; one-helper cancellations 0; two-helper 1
+P[disdyakis_dodecahedron|3]: support [41]; one-helper cancellations 0; two-helper 0
+P[snub_cube|3]: support [44, 45]; one-helper cancellations 0; two-helper 0
+P[snub_cube|4]: support [45, 46]; one-helper cancellations 0; two-helper 0
+P[pentagonal_icositetrahedron|5]: support [49]; one-helper cancellations 0; two-helper 0
+P[icosidodecahedron|3]: support [1, 76]; one-helper cancellations 0; two-helper 21
+P[icosidodecahedron|5]: support [1]; one-helper cancellations 1; two-helper -
+P[truncated_dodecahedron|3]: support [1, 55, 76]; one-helper cancellations 0; two-helper 2
+P[truncated_dodecahedron|10]: support [1, 55]; one-helper cancellations 0; two-helper 2
+P[triakis_icosahedron|3]: support [58]; one-helper cancellations 0; two-helper 0
+P[truncated_icosahedron|5]: support [1, 61, 76]; one-helper cancellations 0; two-helper 5
+P[truncated_icosahedron|6]: support [61, 76]; one-helper cancellations 0; two-helper 5
+P[pentakis_dodecahedron|3]: support [64]; one-helper cancellations 0; two-helper 0
+P[rhombicosidodecahedron|3]: support [1, 68, 76]; one-helper cancellations 0; two-helper 0
+P[rhombicosidodecahedron|4]: support [1, 70]; one-helper cancellations 0; two-helper 0
+P[rhombicosidodecahedron|5]: support [1, 68, 70]; one-helper cancellations 0; two-helper 0
+P[deltoidal_hexecontahedron|4]: support [73]; one-helper cancellations 0; two-helper 0
+P[truncated_icosidodecahedron|4]: support [1, 74, 76]; one-helper cancellations 0; two-helper 1
+P[truncated_icosidodecahedron|6]: support [1, 75]; one-helper cancellations 0; two-helper 1
+P[truncated_icosidodecahedron|10]: support [74, 75, 76]; one-helper cancellations 0; two-helper 1
+P[disdyakis_triacontahedron|3]: support [79]; one-helper cancellations 0; two-helper 0
+P[snub_dodecahedron|3]: support [82, 83]; one-helper cancellations 0; two-helper 0
+P[snub_dodecahedron|5]: support [83, 84]; one-helper cancellations 0; two-helper 0
+P[pentagonal_hexecontahedron|5]: support [87]; one-helper cancellations 0; two-helper 0
+zero packets: ['P[cube|4]', 'P[rhombic_dodecahedron|4]', 'P[rhombic_triacontahedron|4]', 'cube', 'rhombic_dodecahedron', 'rhombic_triacontahedron', 'truncated_cuboctahedron', 'truncated_icosidodecahedron', 'truncated_octahedron']
+[12.3s]
+FINAL ok

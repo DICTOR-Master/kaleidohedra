@@ -1,0 +1,150 @@
+# relations.py ran in three parts of <= 275 s each (checkpoint data/relations-checkpoint.json, deleted after the final part); parts 1 and 2 stopped at the time limit by design
+### part 1
+irrational angles: 82; square classes of c2(1-c2): 19
+  class ('A', 0) ['116.56505', '58.282525', '138.18968', '69.094842', '70.528779', '35.264389', '109.47122', '54.735610', '74.206830', '129.52119', '64.760598', '125.26438', '80.264389', '147.35010', '73.675050', '96.379370', '131.81031', '143.13010', '71.565051', '144.73561', '77.235610', '57.764389', '142.62263', '79.187683', '63.434948', '84.340106', '160.61255', '80.306276', '73.527789', '156.71855', '78.359276', '159.09484', '148.28252', '82.377368', '76.717474', '65.905157', '100.81231']
+  class ('A', 13) ['67.114619', '146.44269']
+  class ('A', 20) ['62.799429', '148.60028']
+  class ('A', 31) ['64.736825', '98.421058']
+  class ('A', 34) ['138.11795', '69.058979']
+  class ('A', 36) ['92.798036', '124.97530', '142.22665']
+  class ('A', 40) ['155.08217', '77.541089']
+  class ('T', 42) ['153.23458', '142.98343', '76.617293', '66.366136']
+  class ('T', 45) ['65.187925', '99.248297']
+  class ('T', 48) ['136.30923', '68.154616']
+  class ('A', 55) ['60.960649', '149.51967']
+  class ('A', 61) ['111.38127', '124.30936']
+  class ('A', 68) ['61.731322', '93.025844', '112.21698']
+  class ('A', 72) ['154.12136', '77.060681']
+  class ('A', 74) ['91.008198', '121.76208', '147.22972']
+  class ('A', 78) ['164.88789', '82.443945']
+  class ('X', 80) ['152.92992', '164.17536', '82.087683', '70.842237', '153.17873', '76.589366']
+  class ('X', 83) ['61.863377', '112.54649']
+  class ('S4', 88) ['127.55160', '103.83616']
+   basis + th9 (35.2643896 deg) [0.0s]
+ok   relation for th11 (54.7356103 deg): (-2)*th11 + (-2)*th9 = (-1)*pi  proved exactly
+ok   relation for th38 (57.7643896 deg): (-8)*th38 + (8)*th9 = (-1)*pi  proved exactly
+   basis + th1 (58.2825255 deg) [0.1s]
+ok   relation for th52 (63.4349488 deg): (-1)*th52 + (-2)*th1 = (-1)*pi  proved exactly
+   basis + th16 (64.7605981 deg) [0.1s]
+   basis + th76 (65.9051574 deg) [0.2s]
+ok   relation for th4 (69.0948425 deg): (4)*th4 + (4)*th76 = (3)*pi  proved exactly
+ok   relation for th8 (70.5287793 deg): (-1)*th8 + (2)*th9 = (0)*pi  proved exactly
+ok   relation for th27 (71.5650511 deg): (-4)*th27 + (8)*th1 = (1)*pi  proved exactly
+ok   relation for th60 (73.5277893 deg): (1)*th60 + (1)*th1 + (-2)*th76 = (0)*pi  proved exactly
+   basis + th23 (73.6750500 deg) [0.4s]
+ok   relation for th12 (74.2068309 deg): (1)*th12 + (3)*th9 = (1)*pi  proved exactly
+ok   relation for th69 (76.7174744 deg): (-4)*th69 + (-4)*th1 = (-3)*pi  proved exactly
+ok   relation for th30 (77.2356103 deg): (-8)*th30 + (-8)*th9 = (-5)*pi  proved exactly
+   basis + th64 (78.3592768 deg) [0.6s]
+ok   relation for th51 (79.1876830 deg): (-4)*th51 + (4)*th1 + (4)*th76 = (1)*pi  proved exactly
+ok   relation for th19 (80.2643896 deg): (4)*th19 + (-4)*th9 = (1)*pi  proved exactly
+   basis + th58 (80.3062761 deg) [1.0s]
+ok   relation for th67 (82.3773681 deg): (2)*th67 + (-2)*th1 + (2)*th76 = (1)*pi  proved exactly
+ok   relation for th54 (84.3401062 deg): (4)*th54 + (8)*th1 + (-4)*th76 = (3)*pi  proved exactly
+ok   relation for th24 (96.3793702 deg): (1)*th24 + (4)*th76 = (2)*pi  proved exactly
+ok   relation for th90 (100.812316 deg): (-4)*th90 + (-4)*th1 + (-4)*th76 = (-5)*pi  proved exactly
+ok   relation for th10 (109.471220 deg): (-1)*th10 + (-2)*th9 = (-1)*pi  proved exactly
+ok   relation for th0 (116.565051 deg): (1)*th0 + (-2)*th1 = (0)*pi  proved exactly
+ok   relation for th18 (125.264389 deg): (-2)*th18 + (2)*th9 = (-1)*pi  proved exactly
+ok   relation for th15 (129.521196 deg): (1)*th15 + (-2)*th16 = (0)*pi  proved exactly
+ok   relation for th25 (131.810314 deg): (1)*th25 + (-2)*th76 = (0)*pi  proved exactly
+ok   relation for th3 (138.189685 deg): (2)*th3 + (4)*th76 = (3)*pi  proved exactly
+ok   relation for th50 (142.622631 deg): (-4)*th50 + (-4)*th1 + (4)*th76 = (-3)*pi  proved exactly
+ok   relation for th26 (143.130102 deg): (2)*th26 + (-8)*th1 = (-1)*pi  proved exactly
+ok   relation for th28 (144.735610 deg): (-1)*th28 + (-1)*th9 = (-1)*pi  proved exactly
+ok   relation for th22 (147.350100 deg): (1)*th22 + (-2)*th23 = (0)*pi  proved exactly
+ok   relation for th66 (148.282525 deg): (2)*th66 + (-2)*th1 = (1)*pi  proved exactly
+ok   relation for th63 (156.718553 deg): (1)*th63 + (-2)*th64 = (0)*pi  proved exactly
+ok   relation for th65 (159.094842 deg): (-4)*th65 + (-4)*th76 = (-5)*pi  proved exactly
+ok   relation for th57 (160.612552 deg): (1)*th57 + (-2)*th58 = (0)*pi  proved exactly
+   basis + th84 (70.8422372 deg) [1.9s]
+   basis + th87 (76.5893662 deg) [2.2s]
+   basis + th82 (82.0876830 deg) [2.7s]
+ok   relation for th80 (152.929920 deg): (1)*th80 + (-1)*th84 + (-1)*th82 = (0)*pi  proved exactly
+ok   relation for th86 (153.178732 deg): (1)*th86 + (-2)*th87 = (0)*pi  proved exactly
+ok   relation for th81 (164.175366 deg): (1)*th81 + (-2)*th82 = (0)*pi  proved exactly
+   basis + th46 (66.3661362 deg) [5.4s]
+   basis + th44 (76.6172938 deg) [6.4s]
+ok   relation for th43 (142.983430 deg): (1)*th43 + (-1)*th46 + (-1)*th44 = (0)*pi  proved exactly
+ok   relation for th42 (153.234587 deg): (1)*th42 + (-2)*th44 = (0)*pi  proved exactly
+   basis + th36 (92.7980362 deg) [8.1s]
+   basis + th37 (124.975303 deg) [10.1s]
+ok   relation for th39 (142.226659 deg): (1)*th39 + (1)*th36 + (1)*th37 = (2)*pi  proved exactly
+   basis + th68 (61.7313225 deg) [12.9s]
+   basis + th70 (93.0258445 deg) [16.7s]
+ok   relation for th71 (112.216988 deg): (1)*th71 + (1)*th68 + (2)*th70 = (2)*pi  proved exactly
+   basis + th74 (91.0081980 deg) [21.7s]
+   basis + th75 (121.762080 deg) [27.7s]
+ok   relation for th77 (147.229721 deg): (1)*th77 + (1)*th74 + (1)*th75 = (2)*pi  proved exactly
+   basis + th13 (67.1146195 deg) [35.7s]
+ok   relation for th14 (146.442690 deg): (-2)*th14 + (-1)*th13 = (-2)*pi  proved exactly
+   basis + th20 (62.7994296 deg) [45.7s]
+ok   relation for th21 (148.600285 deg): (2)*th21 + (1)*th20 = (2)*pi  proved exactly
+   basis + th31 (64.7368256 deg) [58.0s]
+ok   relation for th33 (98.4210581 deg): (3)*th33 + (1)*th31 = (2)*pi  proved exactly
+   basis + th35 (69.0589795 deg) [73.4s]
+ok   relation for th34 (138.117959 deg): (1)*th34 + (-2)*th35 = (0)*pi  proved exactly
+   basis + th41 (77.5410898 deg) [92.7s]
+ok   relation for th40 (155.082179 deg): (1)*th40 + (-2)*th41 = (0)*pi  proved exactly
+   basis + th45 (65.1879255 deg) [116.3s]
+ok   relation for th47 (99.2482979 deg): (-1)*th47 + (-4)*th45 = (-2)*pi  proved exactly
+   basis + th49 (68.1546164 deg) [144.3s]
+ok   relation for th48 (136.309232 deg): (1)*th48 + (-2)*th49 = (0)*pi  proved exactly
+   basis + th55 (60.9606491 deg) [177.6s]
+ok   relation for th56 (149.519675 deg): (2)*th56 + (1)*th55 = (2)*pi  proved exactly
+   basis + th61 (111.381279 deg) [216.3s]
+ok   relation for th62 (124.309360 deg): (2)*th62 + (1)*th61 = (2)*pi  proved exactly
+   basis + th73 (77.0606815 deg) [261.9s]
+ok   relation for th72 (154.121363 deg): (1)*th72 + (-2)*th73 = (0)*pi  proved exactly
+### part 2
+irrational angles: 82; square classes of c2(1-c2): 19
+  class ('A', 0) ['116.56505', '58.282525', '138.18968', '69.094842', '70.528779', '35.264389', '109.47122', '54.735610', '74.206830', '129.52119', '64.760598', '125.26438', '80.264389', '147.35010', '73.675050', '96.379370', '131.81031', '143.13010', '71.565051', '144.73561', '77.235610', '57.764389', '142.62263', '79.187683', '63.434948', '84.340106', '160.61255', '80.306276', '73.527789', '156.71855', '78.359276', '159.09484', '148.28252', '82.377368', '76.717474', '65.905157', '100.81231']
+  class ('A', 13) ['67.114619', '146.44269']
+  class ('A', 20) ['62.799429', '148.60028']
+  class ('A', 31) ['64.736825', '98.421058']
+  class ('A', 34) ['138.11795', '69.058979']
+  class ('A', 36) ['92.798036', '124.97530', '142.22665']
+  class ('A', 40) ['155.08217', '77.541089']
+  class ('T', 42) ['153.23458', '142.98343', '76.617293', '66.366136']
+  class ('T', 45) ['65.187925', '99.248297']
+  class ('T', 48) ['136.30923', '68.154616']
+  class ('A', 55) ['60.960649', '149.51967']
+  class ('A', 61) ['111.38127', '124.30936']
+  class ('A', 68) ['61.731322', '93.025844', '112.21698']
+  class ('A', 72) ['154.12136', '77.060681']
+  class ('A', 74) ['91.008198', '121.76208', '147.22972']
+  class ('A', 78) ['164.88789', '82.443945']
+  class ('X', 80) ['152.92992', '164.17536', '82.087683', '70.842237', '153.17873', '76.589366']
+  class ('X', 83) ['61.863377', '112.54649']
+  class ('S4', 88) ['127.55160', '103.83616']
+resumed: 76 angles done, basis 28
+   basis + th79 (82.4439459 deg) [53.8s]
+ok   relation for th78 (164.887891 deg): (1)*th78 + (-2)*th79 = (0)*pi  proved exactly
+   basis + th83 (61.8633772 deg) [117.3s]
+ok   relation for th85 (112.546491 deg): (-1)*th85 + (-4)*th83 = (-2)*pi  proved exactly
+   basis + th89 (103.836160 deg) [191.8s]
+### part 3
+irrational angles: 82; square classes of c2(1-c2): 19
+  class ('A', 0) ['116.56505', '58.282525', '138.18968', '69.094842', '70.528779', '35.264389', '109.47122', '54.735610', '74.206830', '129.52119', '64.760598', '125.26438', '80.264389', '147.35010', '73.675050', '96.379370', '131.81031', '143.13010', '71.565051', '144.73561', '77.235610', '57.764389', '142.62263', '79.187683', '63.434948', '84.340106', '160.61255', '80.306276', '73.527789', '156.71855', '78.359276', '159.09484', '148.28252', '82.377368', '76.717474', '65.905157', '100.81231']
+  class ('A', 13) ['67.114619', '146.44269']
+  class ('A', 20) ['62.799429', '148.60028']
+  class ('A', 31) ['64.736825', '98.421058']
+  class ('A', 34) ['138.11795', '69.058979']
+  class ('A', 36) ['92.798036', '124.97530', '142.22665']
+  class ('A', 40) ['155.08217', '77.541089']
+  class ('T', 42) ['153.23458', '142.98343', '76.617293', '66.366136']
+  class ('T', 45) ['65.187925', '99.248297']
+  class ('T', 48) ['136.30923', '68.154616']
+  class ('A', 55) ['60.960649', '149.51967']
+  class ('A', 61) ['111.38127', '124.30936']
+  class ('A', 68) ['61.731322', '93.025844', '112.21698']
+  class ('A', 72) ['154.12136', '77.060681']
+  class ('A', 74) ['91.008198', '121.76208', '147.22972']
+  class ('A', 78) ['164.88789', '82.443945']
+  class ('X', 80) ['152.92992', '164.17536', '82.087683', '70.842237', '153.17873', '76.589366']
+  class ('X', 83) ['61.863377', '112.54649']
+  class ('S4', 88) ['127.55160', '103.83616']
+resumed: 81 angles done, basis 31
+   basis + th88 (127.551602 deg) [86.9s]
+basis angles: 32; relations: 50; proved: 50  [86.9s]
+FINAL ok
