@@ -1,0 +1,18 @@
+Pilot, 20 Nov 2026, on the compute host (Lean 4 v4.35.0-rc2, Mathlib v4.35.0-rc2), foreground only.
+
+1. Existing library, workspace of the published entry (commit as on GitHub, ORCID metadata):
+   lake build YantraCert Solution
+   -> Build completed successfully (10305 jobs).   wall 3.83 s, peak 1.0 GB (all modules already built; replay only)
+
+2. DictoYantraStatement.lean, compiled against that build with `lake env lean`:
+   first attempt: the two new definitions were declared inside the pilot namespace, so dot notation y.KulaichevBCD
+   failed ("Invalid field"); fixed by declaring them as YantraCert.Y.Yantra.KulaichevBCD / .CleoAntonius.
+   second attempt:
+   DictoYantraStatement.lean:39:8: warning: declaration uses `sorry`     (dicto_unique)
+   DictoYantraStatement.lean:43:8: warning: declaration uses `sorry`     (dicto_slope)
+   wall 3.38 s, peak 6.7 GB (the Mathlib import)
+   No errors. kulaichev_eq_a_and_bcd closes by Iff.rfl; two_div_phi_cube (2/phi^3 = 2*sqrt 5 - 4) is proved (nlinarith).
+
+Slope interval in dicto_slope: [3059377869223857, 3059380016707505] / 2^52 = [0.67931835028..., 0.67931882712...],
+width 2^-21, holding Theorem 9's u = 0.6793185887067746573886503103907545526887... (checked with exact fractions).
+FINAL ok
