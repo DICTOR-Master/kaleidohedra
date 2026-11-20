@@ -180,17 +180,24 @@ preflight and then give you the submission data".
   needed 18.5 GiB here and accepted. Challenge trust high; ORCID validated; source-based, substantive development,
   9 sources. Peak 9.18 GiB (solution build).
 - **Form answers** (`form_answers.py`): `papers-to-read/PALOMAR-dehn4d-submission.txt` in DICTO's Documents.
-- Not done, as before: the blind scorers' citation additions (Boltianskii 1978, Sah 1979, Dupont 2001, a source for
-  the simplex and the cube, the Lagarias–Moews tiling note, Jessen 1972 with Dupont–Sah, the AFP/Rocq/HOL Light/Mizar
-  search, Hadwiger's theorem number).
+- **Citations added first** (DICTO, 20 November), commit `5a2cf4ca1b3a5f14f9e2cfd5596189219bdd31e9`, details taken
+  from #116's reference list: Hadwiger 1954 now read, with §V for the simplex against the cube (the 5-cell against
+  the tesseract is its case k = 4); Lagarias–Moews on space-filling polytopes (abstract and review only); the
+  monographs of Boltianskii 1978, Sah 1979 and Dupont 2001 (cited only); the formal search (Lean/Mathlib, Isabelle
+  AFP, Rocq, HOL Light, Mizar: nothing in dimension 4). A "Sources" section in the README. No Lean file changed, so
+  the comparator was not rerun. Still source-based (Hadwiger 1954 and #116 `formalizes`), 12 sources.
+  - Kit preflight on 5a2cf4c: `FINAL ok`, exit 0, 0 FAIL, 0 WARN (4 commits, author DICTO, no-reply, no trailers).
+  - `form_answers.py`: exit 0.
+  - Preflight workflow run 44726704299 on 5a2cf4c: concluded success, status **pass** (9.4 min); Lean's kernel and
+    NanoDa accept; con-ron declined (capacity) on the 16 GB runner, as before; Challenge trust high; ORCID
+    validated; source-based, 12 sources.
+  - **The commit to submit is 5a2cf4c**; the submission file gives it.
 
 ## LEADS
 
 - DICTO submits at submit.palomar-registry.org with the data above; then follow the runs
-  (`read_report.py --find DICTOR-Master/dehn-hadwiger-4d-lean`) and record the PALOMAR id here, in `concordance.json`
+  (`read_report.py --find DICTOR-Master/dehn-hadwiger-4d-lean`) and with commit 5a2cf4c; record the PALOMAR id here, in `concordance.json`
   and in open-work (checklist F).
-- The blind scorers' citation additions, if DICTO wants them before submission (a metadata commit; the preflight
-  would be rerun on it).
 - Formalize the face-sum identity for every convex polytope in ℝ⁴ (both scorers' main lever for a higher score).
 - Formalize Jessen's converse in ℝ⁴ (long term).
 
