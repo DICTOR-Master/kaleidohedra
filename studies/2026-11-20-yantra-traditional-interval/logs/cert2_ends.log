@@ -1,0 +1,34 @@
+PARI stack size set to 4000000000 bytes, maximum size set to 4000002048
+[    0.3 s] v = u: G, H1, C degrees (u, t, S): [[10, 0, 2], [24, 10, 3], [32, 16, 4]] terms [10, 312, 767]
+[    2.1 s] event c = 0.34619829022988503693: u = 0.588386174404094098215896, t = 0.08885788289578091732794175, S = 0.9938460024848486780882835; - -> -
+[    3.6 s] event c = 0.55651083349095950353: u = 0.7459965371842951815858598, t = 0.3292475112310248349260053, S = 0.924570013872418157418366; - -> -
+[    3.6 s] Krawczyk (exactly one solution of G = H1 = C = 0 in the box of radius 2^-300): True ; u enclosed to radius [1.28067404930428620587677997590231008479783958257358315889442931826272179237435222136999329424510780338203724390766144851896033702047959323108856827546893942780968557875136481139923970504521251852460164598769539224809394282557632407922388564050076448874131290398024773330934270671267493870896719404204482977271672500444086384616897785468708607856321767691003053e-174 +/- 2.69e-534]
+[    3.6 s] Krawczyk (exactly one solution of G = H1 = C = 0 in the box of radius 2^-300): True ; u enclosed to radius [1.06004099238714106927587836631083284650295156009611077205396786554942655297998471103094120702572348229602774849186984848491204194830852588832978699880254037027627694453028340101996928725042655934710036784246919381663957179584921394990115715514457264625053546342244228411648339108007464105963091149009157219686451210546557402463052580381195698215542218985231981e-174 +/- 6.30e-535]
+[    3.6 s] R1 = Res_S(G, H1) degrees (u, t) 78 20
+[    3.7 s] R2 = Res_S(G, C) degrees (u, t) 104 32
+[    3.7 s]    R1 factor degrees (u, t) = (1, 0)^6: may vanish at the events: [False, False]
+[    3.7 s]    R1 factor degrees (u, t) = (1, 0)^6: may vanish at the events: [False, False]
+[    3.7 s]    R1 factor degrees (u, t) = (1, 0)^8: may vanish at the events: [False, False]
+[    3.7 s]    R1 factor degrees (u, t) = (2, 0)^4: may vanish at the events: [False, False]
+[    3.7 s]    R1 factor degrees (u, t) = (50, 20)^1: may vanish at the events: [True, True]
+[    3.8 s]    R2 factor degrees (u, t) = (1, 0)^6: may vanish at the events: [False, False]
+[    3.8 s]    R2 factor degrees (u, t) = (1, 0)^6: may vanish at the events: [False, False]
+[    3.8 s]    R2 factor degrees (u, t) = (1, 0)^12: may vanish at the events: [False, False]
+[    3.8 s]    R2 factor degrees (u, t) = (2, 0)^6: may vanish at the events: [False, False]
+[    3.8 s]    R2 factor degrees (u, t) = (14, 8)^1: may vanish at the events: [False, False]
+[    3.8 s]    R2 factor degrees (u, t) = (54, 24)^1: may vanish at the events: [True, True]
+[    3.8 s] event 0: kept factors of R1 [(50, 20)], of R2 [(54, 24)]
+[    6.2 s]    Res_t: degree 1928 (2.4 s)
+[    6.4 s]    factor of degree 180 may vanish on the u-ball
+[    6.4 s] event 0: the only factor of E that can vanish there is f180: True; f180 has 1 root(s) in [5883861744040940982158959752997598882043/10000000000000000000000000000000000000000, 2941930872020470491079479876498799441023/5000000000000000000000000000000000000000] (holds the u-ball: True)
+[    6.4 s] event 1: kept factors of R1 [(50, 20)], of R2 [(54, 24)]
+[    8.8 s]    Res_t: degree 1928 (2.4 s)
+[    9.0 s]    factor of degree 180 may vanish on the u-ball
+[    9.0 s] event 1: the only factor of E that can vanish there is f180: True; f180 has 1 root(s) in [7459965371842951815858597872774762128801/10000000000000000000000000000000000000000, 1864991342960737953964649468193690532201/2500000000000000000000000000000000000000] (holds the u-ball: True)
+[    9.1 s] f180 and g90 irreducible over Q: True ; g90 degree 90 , real roots 22 , in (0, 1): ['0.34619829023', '0.444764016613', '0.556510833491', '0.616343216484', '0.637054495655', '0.788017033005']
+[    9.1 s] window end 0: c = 0.346198290229885036933754557990166630326319481; g90 roots in [3461982902298850369337545579901666303262, 3461982902298850369337545579901666303265]*10^-40: 1
+[    9.1 s] window end 1: c = 0.556510833490959503531639852908872858234158899; g90 roots in [5565108334909595035316398529088728582340, 5565108334909595035316398529088728582343]*10^-40: 1
+[    9.1 s] g90 at 2/phi^3 (nonzero expected): -0.057023
+[    9.2 s] end 0: C on the branch at u_m -+ 2^-310: -4.9253e-100, 4.9253e-100 (sign change True); branch over that u-interval inside the Krawczyk box: True
+[    9.3 s] end 1: C on the branch at u_m -+ 2^-310: 1.9511e-97, -1.9511e-97 (sign change True); branch over that u-interval inside the Krawczyk box: True
+FINAL ok

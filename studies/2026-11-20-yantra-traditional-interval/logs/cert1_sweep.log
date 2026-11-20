@@ -1,0 +1,10 @@
+[    0.0 s] sweep u in [29/50, 751/1000] = c in [0.336400, 0.564001], 684 boxes of width 1/4000, up to 12 bisections; window ends u_lo in [0.588386174404 +/- 9.42e-14], u* in [0.745996537184 +/- 2.96e-13]
+[   34.6 s] PROGRESS 0.971 boxes done 2122
+[   34.6 s] 2375 boxes (deepest bisection 11), contiguous cover of [U0, U1]: True; failures 0
+[   34.6 s]   end box [602507/1024000, 241003/409600] holds window end 0: dC/du sign 1, all six threshold triples monotone True
+[   34.6 s]   end box [3055601/4096000, 1527801/2048000] holds window end 1: dC/du sign -1, all six threshold triples monotone True
+[   34.6 s]   C sign -1 on boxes from u = 0.580000 to 0.750969 (474 boxes)
+[   34.6 s]   C sign +1 on boxes from u = 0.588386 to 0.745996 (1899 boxes)
+[   34.6 s]   2 boxes where a triple holding two opposite rhombus sides (parallel, distinct) may vanish: excused, no finite meeting; u from 0.746844 to 0.746875
+[   34.6 s]   smallest certified |det| over all boxes 4.276e-12; smallest admissibility slack 5.278e-03
+FINAL ok

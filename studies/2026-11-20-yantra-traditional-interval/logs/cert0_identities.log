@@ -1,0 +1,6 @@
+[    0.5 s] u = 7/10: t radius 9.34e-600, admissible (strict) True []; candidates (ball contains 0) 115; smallest certified |det| among the others 3.3622e-5
+[    0.6 s] u = 29/50: t radius 1.98e-600, admissible (strict) True []; candidates (ball contains 0) 115; smallest certified |det| among the others 4.2369e-6
+[    0.7 s] same candidates at both points: True; 115 candidates: 84 triples of bases, 31 others; decided exactly zero (identically, or a multiple of Fc): 115
+[    0.7 s] the non-base identities: ['B1-R8-L8', 'B2-R6-L6', 'B3-R9-L9', 'B4-L4-L8', 'B4-R4-R8', 'B5-L5-L6', 'B5-R5-R6', 'L1-B2-L7', 'L1-B3-L8', 'L1-B4-L6', 'L1-B5-L9', 'L2-B3-L7', 'L2-B6-L6', 'L2-B7-L9', 'L3-B7-L8', 'L3-B8-L9', 'L4-B6-L9', 'R1-B2-R7', 'R1-B3-R8', 'R1-B4-R6', 'R1-B5-R9', 'R1-L1-B6', 'R2-B3-R7', 'R2-B6-R6', 'R2-B7-R9', 'R2-L2-B9', 'R3-B7-R8', 'R3-B8-R9', 'R4-B6-R9', 'R4-L4-B8', 'R5-L5-B7']
+[    0.7 s] opposite rhombus sides parallel identically (exact, case K): {'R3-L7': True, 'L3-R7': True} ; R3 and L3 end at the apex (0, 1), R7 and L7 at (0, 0): distinct lines
+FINAL ok
