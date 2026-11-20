@@ -1,0 +1,35 @@
+PASS 120 vertices, all on the unit sphere
+PASS 720 edges, edge length^2 = 1/phi^2
+PASS 1200 triangles, 600 tetrahedral facets
+PASS every triangle lies in exactly 2 facets
+PASS one dihedral cosine for the 600-cell, = -(1+3 sqrt5)/8
+PASS cos(4pi/3 - theta5) = -(1+3sqrt5)/8 exactly
+PASS 4pi/3 - theta5 in (0,pi), equal to the 600-cell angle numerically
+   theta5 = 75.52248781407008 deg ; 600-cell dihedral = 164.47751218592992 deg
+PASS 2cos(theta5) = 1/2 is not an algebraic integer (so theta5 is not a rational multiple of pi)
+   total ridge area 600-cell: 300*sqrt(3)*a**2 ; 5-cell: 5*sqrt(3)*b**2/2
+   D(600-cell, a) =  -300*sqrt(3)*a**2 (x) theta5 ;  D(5-cell, b) =  5*sqrt(3)*b**2/2 (x) theta5   (mod Q pi)
+   union of one 600-cell and n 5-cells: invariant 0  <=>  n = 120*a**2/b**2
+PASS equal edges b=a: n = 120 exactly (the only, hence smallest, equal-edge solution)
+PASS rational b/a with integer n: numerator p must divide... p^2|120 only for p=1,2
+PASS vertex set is closed under quaternion product (group 2I)
+PASS left multiplication splits the 600 facets into 5 orbits of 120
+   orbit 0: ridges shared by two capped facets = 0 ; capped facets per vertex = {4}
+   orbit 0: capped facets per edge, distribution: {1: 720} (edges with none: 0)
+   600-cell ridges by number of adjacent caps: {1: 480, 0: 720} ; cap side ridges: 720
+PASS direct boundary sum: invariant of the augmented solid = 0 (x) theta5
+PASS ridge angles: 4pi/3 (rational multiple of pi) next to one cap; 4pi/3+theta5 between two caps
+   interior angle next to one cap = 240 deg (>180: reflex, so not convex); between two caps = 315.5224878140701 deg (<360: caps do not overlap there)
+   unit circumradius: inradius = sqrt(3*sqrt(5)/16 + 7/16) = 0.9256147934109581 ; cap height = 0.488598768962137 ; apex radius = 1.4142135623730951
+PASS apex radius > 1: caps reach outside the circumsphere (star-shaped, spiky)
+PASS V(600-cell, edge 1) = (25/4)(2+sqrt5)
+PASS V(5-cell, edge 1) = sqrt5/96 (from height sqrt(5/8))
+PASS total = (25+15sqrt5)/2 = 5 sqrt5 phi^2
+PASS cube edge = 5^(3/8) sqrt(phi) a
+   V600 = 26.475424859373685 ; 120 V5 = 2.7950849718747373 ; total = 29.27050983124842 ; cube edge = 2.32598854586477 a
+   variant n=30, b=2a: total volume = 25/2 + 45*sqrt(5)/4 = 37.655764746872634 ; cube edge 2.4771817284413453 a
+PASS 3D: octahedron dihedral = pi - arccos(1/3); oct (12 edges) + 2 tets (6 edges each) -> -12+12 = 0
+   3D: tet angle + oct angle = pi exactly (faces merge flat: convex union possible); 4D: 5-cell angle + 600-cell angle = 4pi/3 (reflex: never convex)
+   symmetries of the 600-cell (order 14400) keeping the 120 capped facets: rotations 1440 , reflections 0
+PASS chosen union keeps a symmetry group of order >= 120
+FINAL ok
