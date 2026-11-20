@@ -92,12 +92,17 @@ for nm, S, key, _ in ZERO[1:]:
 log.append(cs.check('cube', ZERO[0][1])); log.append(cs.check_co(Fr(3, 2), ZERO[3][1])); log.append(cs.check_co(T7, NONZERO[4][1]))
 for nm, S, key, _ in NONZERO:
     if key: log.append(cs.check(key, S))
+import nine_fillers as NF                                               # the nine most regular space-fillers (Proposition 7′)
+NINE = []
+for Zz, irr, nr in NF.build():
+    NINE.append((Zz.name, Zz, 'cube' if Zz.key == 'CUBE' else None, '0 · ' + Zz.label)); log.append(f'{Zz.name}: exact, Dehn invariant 0')
+PREF = {'leaning square prism': (-0.72, 0.42, 0.55)}                    # a view across the lean
 scenes, labels = [], []
-for block in (ZERO, NONZERO):
+for bname, block in (('lean', ZERO), ('nine', NINE), ('nonzero', NONZERO)):
     for nm, S, key, sub in block:
-        P = centred(S, 1.0); v = pick_view(S, P); P = fill(P, v); col = APP[key] if key else NEUTRAL
+        P = centred(S, 1.0); v = pick_view(S, P, PREF.get(nm, VIEW)); P = fill(P, v); col = APP[key] if key else NEUTRAL
         scenes.append({'E': 1.08, 'dir': v.tolist(), 'parts': [solid_part(S, col, P, rad=0.0055)]})
-        labels.append({'title': nm, 'sub': sub, 'zero': block is ZERO})
+        labels.append({'title': nm, 'sub': sub, 'block': bname})
 write(os.path.join(OUT, 'canon.html'), scenes); json.dump(labels, open(os.path.join(OUT, 'canon-labels.json'), 'w'), indent=1)
 
 # ---------- Figure B: Dehn's pair and Hilbert's pair ----------

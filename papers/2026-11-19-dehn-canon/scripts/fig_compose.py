@@ -45,27 +45,36 @@ def swatch(d, x, y, col, txt, fo, outline=None):
     d.text((x + 66 * K, y), txt, font=fo, fill=INK); return x + 66 * K + d.textlength(txt, font=fo) + 44 * K
 
 
-# ---------- the canon gallery ----------
-def canon():
+# ---------- the canon gallery, in two figures ----------
+def gallery(blocks, title, sub, name):
     L = json.load(open(os.path.join(R, 'canon-labels.json'))); cols, cell, gap = 5, 380 * K, 36 * K
-    zero = [i for i, l in enumerate(L) if l['zero']]; non = [i for i, l in enumerate(L) if not l['zero']]
-    rowh = cell + 120 * K; bh = 90 * K
-    rows = lambda n: (n + cols - 1) // cols
+    rowh = cell + 140 * K; bh = 90 * K; rows = lambda n: (n + cols - 1) // cols
+    idx = [[i for i, l in enumerate(L) if l['block'] == b] for b, _ in blocks]
     W = cols * cell + (cols - 1) * gap + 160 * K; top = 200 * K
-    Hh = top + 2 * bh + (rows(len(zero)) + rows(len(non))) * rowh + 40 * K + 90 * K
-    im = Image.new('RGB', (W, Hh), BG); d = ImageDraw.Draw(im)
-    head(d, W, 'The canon', 'Every solid of Table 1, each drawn to fill its frame · under each name its Dehn invariant, for the solid as written in Table 1')
-    y = top
-    for title, idx in [('Dehn invariant zero', zero), ('Dehn invariant nonzero', non)]:
-        d.text((80 * K, y + 18 * K), title, font=f(44 * K, True), fill=INK)
+    Hh = top + len(blocks) * bh + sum(rows(len(x)) for x in idx) * rowh + 20 * K * len(blocks) + 90 * K
+    im = Image.new('RGB', (W, Hh), BG); d = ImageDraw.Draw(im); head(d, W, title, sub); y = top
+    for (b, btitle), ids in zip(blocks, idx):
+        d.text((80 * K, y + 18 * K), btitle, font=f(44 * K, True), fill=INK)
         d.line((80 * K, y + 78 * K, W - 80 * K, y + 78 * K), fill=RULE, width=2 * K); y += bh
-        for k, i in enumerate(idx):
+        for k, i in enumerate(ids):
             x = 80 * K + (k % cols) * (cell + gap); yy = y + (k // cols) * rowh
             paste(im, f'{R}/canon/p{i}.png', x, yy, cell)
-            ctext(d, x + cell / 2, yy + cell + 6 * K, L[i]['title'], f(32 * K, True), INK, cell + gap - 8 * K)
-            ctext(d, x + cell / 2, yy + cell + 50 * K, L[i]['sub'], f(25 * K), MUTE, cell + gap - 8 * K)
-        y += rows(len(idx)) * rowh + 20 * K
-    mark(d, W, Hh); save(im, 'fig-canon-solids.png')
+            t, w, sy = L[i]['title'], cell + gap - 8 * K, yy + cell + 50 * K
+            if d.textlength(t, font=f(32 * K, True)) > w * 1.15 and ' ' in t:      # a long name on two lines
+                cut = min(range(len(t)), key=lambda j: abs(j - len(t) / 2) if t[j] == ' ' else 1e9)
+                ctext(d, x + cell / 2, yy + cell + 2 * K, t[:cut], f(30 * K, True), INK, w); ctext(d, x + cell / 2, yy + cell + 40 * K, t[cut + 1:], f(30 * K, True), INK, w); sy = yy + cell + 82 * K
+            else: ctext(d, x + cell / 2, yy + cell + 6 * K, t, f(32 * K, True), INK, w)
+            ctext(d, x + cell / 2, sy, L[i]['sub'], f(25 * K), MUTE, w)
+        y += rows(len(ids)) * rowh + 20 * K
+    mark(d, W, Hh); save(im, name)
+
+
+def canon():
+    gallery([('lean', 'Proved zero in Lean (Theorem 7)'), ('nine', 'The nine most regular space-fillers (Kaleidohedra), zero by Proposition 7′')],
+            'The canon: Dehn invariant zero', 'Each solid drawn to fill its frame, from exact corners · under each name its invariant, 0, and for the nine their faces',
+            'fig-canon-zero.png')
+    gallery([('nonzero', 'Dehn invariant nonzero')], 'The canon: Dehn invariant nonzero',
+            'Each solid drawn to fill its frame · under each name its Dehn invariant, for the solid as written in Table 1', 'fig-canon-nonzero.png')
 
 
 # ---------- Dehn's pair and Hilbert's pair ----------

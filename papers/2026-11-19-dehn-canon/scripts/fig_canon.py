@@ -1,4 +1,4 @@
-# Figure 3: the canon. Left: the solids proved to have Dehn invariant zero; right: those proved nonzero, in their two angle families.
+# The box diagram of the canon (Figure 6 of the paper). Left: the solids proved to have Dehn invariant zero; right: those proved nonzero, in their two angle families.
 # Every line is a non-congruence proved in Lean (studies 2026-11-19-lean-dehn-6 to -9). Node colours: the app colour of the solid
 # it stands for (Platonic solids in the element colours; AXE cyan, CLEO and FUJI lilac); other solids and the boxes neutral.
 import numpy as np, matplotlib
@@ -24,8 +24,9 @@ def node(x, y, label, col, w=1.75, sub=None):
 box(0.1, 0.2, 3.3, 6.0, 'Dehn invariant zero')
 zero = [('cube', C, None), ('rhombic dodecahedron', NEU, None), ('cube ∩ rhombic dodecahedron', NEU, 'every cut; fair 18-face die'),
         ('truncated octahedron', NEU, 'cube ∩ octahedron, t = 3/2'), ('rhombic triacontahedron', NEU, 'and every solid on 2-fold normals'),
-        ('golden rhombohedron, prolate', NEU, None), ('golden rhombohedron, oblate', NEU, None)]
-for k, (l, c, s) in enumerate(zero): node(1.75, 5.35 - 0.72 * k, l, c, w=2.9, sub=s)
+        ('golden rhombohedron, prolate', NEU, None), ('golden rhombohedron, oblate', NEU, None),
+        ('the nine most regular space-fillers', NEU, 'Kaleidohedra; Proposition 7′, by hand')]
+for k, (l, c, s) in enumerate(zero): node(1.75, 5.40 - 0.64 * k, l, c, w=2.9, sub=s)
 
 # nonzero, alpha-beta family: complete graph on five
 box(4.3, 0.2, 4.4, 6.0, 'nonzero, over α and β')
