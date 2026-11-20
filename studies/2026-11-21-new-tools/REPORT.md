@@ -117,7 +117,7 @@ Effort: small = cite, or one script; medium = one study; large = several studies
 - **What it does:** `qqbar` stores an algebraic number by its minimal polynomial and an isolating
   interval, so equality and sign tests are exact; Arb ball arithmetic for fast certified bounds.
 - **Gaps served:** #90 structure over Q(√2, √5); #111 the fields of the radii of T ∩ D and of the 42-
-  and 50-face dice; #6 lead (the 19-design station μ* of degree 20 over Q) — exact root isolation of
+  and 50-face dice; laws aim chunk 6 (the 19-design station μ* of degree 20 over Q) — exact root isolation of
   high-degree stations; #80/#81 windows. Also the e-antic back end of item 1.
 - **Effort:** small (python-flint bindings).
 - **Our hosts:** yes (LGPL, packaged on Linux).
