@@ -50,7 +50,7 @@ The new rule is the **prime.** Solids on the axes of the second icosahedron plac
 
 The 8 octahedron directions belong to both icosahedra. When both are complete, they are absorbed into both: O8 + I12 + I12′ is II′. Likewise the 6 cube directions belong to both triacontahedra: C6 + RT24+RT24′/48 is RTRT′ (Seraph RTRT′-54, Oh 8).
 
-**Dots.** Where the initials, primes aside, would spell DIRT, every initial is separated by a dot, as DICTO decided for the Aequi. Examples are Seraph D·I′·RT-48, Th 17 and Seraph RD·D·D′·I·RT·RT′-102, Th 162. This applies to 420 names; all other names are written without dots.
+**Dots.** Where the initials, primes aside, would spell DIRT (as DICTO decided for the Aequi) or ODD (DICTO, 20 Nov), every initial is separated by a dot. Examples are Seraph D·I′·RT-48, Th 17, Seraph RD·D·D′·I·RT·RT′-102, Th 162 and Seraph O·D·D′-32, Oh 3. This applies to 434 names (420 with DIRT, 14 with ODD); COD and CORD stay without dots, as in the Aequi; all other names are written without dots.
 
 ## Counts
 
@@ -74,7 +74,7 @@ The Aequi decisions do not fix the following. The rule chosen is the one above. 
 3. **Joined orbits named by both initials** (175 dice). D12+D12′/24 is the 24 orbit of (φ, 1, 0) under Oh: half of it lies on each dodecahedron, and it is written DD′. Examples are Seraph CDD′-30, Oh 1 and Seraph II′-32, Oh 4.
 4. **The shared 8 and 6:** O8 is absorbed into both complete icosahedra (96 dice, for example Seraph II′-32, Oh 4), and C6 into both complete triacontahedra (60 dice, for example Seraph RTRT′-54, Oh 8).
 5. **Shared initials and N** (255 names, 622 dice). These dice are told apart by their group number: 191 pairs, 16 triples and 48 quadruples. Under T, a quadruple is typically one tetrahedron set against one or the other half of RT24 and of RT24′, for example Seraph TDRTRT′-40, T 47 to T 50. 47 names are shared across groups: 31 by an O die and a Td die, for example Seraph CRTRT′-30, O 1 and Td 5, and 16 by a Td die and a T die. The O die carries a chiral 24 of RT24 + RT24′; the Td die carries a mirror-symmetric 24.
-6. **Other words.** The only words that occur besides DIRT are ODD (14 names, for example Seraph ODD′-32, Oh 3), CORD (9) and COD (7), with primes aside. The Aequi kept CORD and COD without dots, so these are left as they are here. In ODD′ the prime falls on the last letter.
+6. **Other words.** The only words that occur besides DIRT are ODD (14 names), CORD (9) and COD (3 without ODD), with primes aside.
 
 ## Checks (scripts/build_catalogue.py, data/build.log: FINAL ok)
 
@@ -111,5 +111,14 @@ The Aequi decisions do not fix the following. The rule chosen is the one above. 
 
   Each panel shows the solid (orbit tones are labels only) and its Vacuus (slate sloping, sand on a mirror). Each caption gives the catalogue name and number, then m, "Mosaicus" and "two hands" where they apply.
 - scripts/build_catalogue.py (DICE_DIR OUT_DIR [WORD_LIST]) and scripts/catalogue_sheets.py (catalogue.json, the per-die render folder, the source study's render.py, OUT_DIR).
+
+## DICTO's decisions (20 Nov)
+
+- Primes go after each letter, as above (D, D′, I, I′, RT, RT′).
+- ODD gets dots as DIRT does, wherever the letters, primes aside, would spell ODD: Seraph O·D·D′-32, Oh 3; C·O·D·D′-38, Oh 13 (14 names). COD and CORD stay plain, as in the Aequi.
+- Both letters are kept for shared or joined faces: II′, DD′, RTRT′.
+- The rule for which icosahedron is primed stays as set; the group number tells shared names apart.
+
+The catalogue and its sheets were rebuilt with the ODD rule (data/build.log, data/sheets.log: FINAL ok); only the 14 ODD names changed.
 
 FINAL ok

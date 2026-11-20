@@ -64,7 +64,7 @@ def canonical(got):
 def initials(got):
     seq = [x for x in INIT_ORDER if x in got]
     plain = ''.join(x.rstrip(P) for x in seq)
-    if 'DIRT' in plain: return '·'.join(seq)     # DICTO 20 Nov (Aequi): dots where the initials would spell a word
+    if 'DIRT' in plain or 'ODD' in plain: return '·'.join(seq)   # DICTO 20 Nov: dots where the initials, primes aside, spell DIRT (Aequi) or ODD (Seraphim); COD, CORD stay plain
     return ''.join(seq)
 def famkey(labels):
     return sorted(tuple(sorted(FAM.index(f) for f in parts(l))) for l in labels)
