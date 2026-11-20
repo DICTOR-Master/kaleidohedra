@@ -1,0 +1,180 @@
+[
+ {
+  "name": "cube",
+  "faces": 6,
+  "edges": 12,
+  "distinct_dihedrals": 1,
+  "independent_mod_pi": 0,
+  "rational_pi_dihedrals_deg": [
+   "90.0"
+  ],
+  "max_coefficient_sum": "0.0",
+  "verdict": "ZERO",
+  "want": "ZERO"
+ },
+ {
+  "name": "rhombic dodecahedron",
+  "faces": 12,
+  "edges": 24,
+  "distinct_dihedrals": 1,
+  "independent_mod_pi": 0,
+  "rational_pi_dihedrals_deg": [
+   "120.0"
+  ],
+  "max_coefficient_sum": "0.0",
+  "verdict": "ZERO",
+  "want": "ZERO"
+ },
+ {
+  "name": "truncated octahedron",
+  "faces": 14,
+  "edges": 36,
+  "distinct_dihedrals": 2,
+  "independent_mod_pi": 1,
+  "rational_pi_dihedrals_deg": [],
+  "max_coefficient_sum": "0.0",
+  "verdict": "ZERO",
+  "want": "ZERO"
+ },
+ {
+  "name": "rhombic triacontahedron",
+  "faces": 30,
+  "edges": 60,
+  "distinct_dihedrals": 1,
+  "independent_mod_pi": 0,
+  "rational_pi_dihedrals_deg": [
+   "144.0"
+  ],
+  "max_coefficient_sum": "0.0",
+  "verdict": "ZERO",
+  "want": "ZERO"
+ },
+ {
+  "name": "golden prolate rhombohedron",
+  "faces": 6,
+  "edges": 12,
+  "distinct_dihedrals": 2,
+  "independent_mod_pi": 0,
+  "rational_pi_dihedrals_deg": [
+   "108.0",
+   "72.0"
+  ],
+  "max_coefficient_sum": "0.0",
+  "verdict": "ZERO",
+  "want": "ZERO"
+ },
+ {
+  "name": "golden oblate rhombohedron",
+  "faces": 6,
+  "edges": 12,
+  "distinct_dihedrals": 2,
+  "independent_mod_pi": 0,
+  "rational_pi_dihedrals_deg": [
+   "108.0",
+   "72.0"
+  ],
+  "max_coefficient_sum": "0.0",
+  "verdict": "ZERO",
+  "want": "ZERO"
+ },
+ {
+  "name": "tetrahedron",
+  "faces": 4,
+  "edges": 6,
+  "distinct_dihedrals": 1,
+  "independent_mod_pi": 1,
+  "rational_pi_dihedrals_deg": [],
+  "max_coefficient_sum": "16.971",
+  "verdict": "NONZERO",
+  "want": "NONZERO"
+ },
+ {
+  "name": "octahedron",
+  "faces": 8,
+  "edges": 12,
+  "distinct_dihedrals": 1,
+  "independent_mod_pi": 1,
+  "rational_pi_dihedrals_deg": [],
+  "max_coefficient_sum": "16.971",
+  "verdict": "NONZERO",
+  "want": "NONZERO"
+ },
+ {
+  "name": "icosahedron",
+  "faces": 20,
+  "edges": 30,
+  "distinct_dihedrals": 1,
+  "independent_mod_pi": 1,
+  "rational_pi_dihedrals_deg": [],
+  "max_coefficient_sum": "60.0",
+  "verdict": "NONZERO",
+  "want": "NONZERO"
+ },
+ {
+  "name": "dodecahedron",
+  "faces": 12,
+  "edges": 30,
+  "distinct_dihedrals": 1,
+  "independent_mod_pi": 1,
+  "rational_pi_dihedrals_deg": [],
+  "max_coefficient_sum": "37.082",
+  "verdict": "NONZERO",
+  "want": "NONZERO"
+ },
+ {
+  "name": "RD centre pyramid over one rhombus",
+  "faces": 5,
+  "edges": 8,
+  "distinct_dihedrals": 3,
+  "independent_mod_pi": 0,
+  "rational_pi_dihedrals_deg": [
+   "120.0",
+   "60.0",
+   "90.0"
+  ],
+  "max_coefficient_sum": "0.0",
+  "verdict": "ZERO",
+  "want": "ZERO"
+ },
+ {
+  "name": "union control: two unit cubes (a brick)",
+  "faces": 12,
+  "edges": 24,
+  "distinct_dihedrals": 1,
+  "independent_mod_pi": 0,
+  "rational_pi_dihedrals_deg": [
+   "90.0"
+  ],
+  "max_coefficient_sum": "0.0",
+  "verdict": "ZERO",
+  "note": "",
+  "parts": 2,
+  "want": "ZERO"
+ },
+ {
+  "name": "union control: one tetrahedron + one octahedron of the octet",
+  "faces": 12,
+  "edges": 18,
+  "distinct_dihedrals": 2,
+  "independent_mod_pi": 1,
+  "rational_pi_dihedrals_deg": [],
+  "max_coefficient_sum": "8.4853",
+  "verdict": "NONZERO",
+  "note": "",
+  "parts": 2,
+  "want": "NONZERO"
+ },
+ {
+  "name": "union control: one octet cell, 2 tetrahedra + 1 octahedron (the lattice relation)",
+  "faces": 16,
+  "edges": 24,
+  "distinct_dihedrals": 2,
+  "independent_mod_pi": 1,
+  "rational_pi_dihedrals_deg": [],
+  "max_coefficient_sum": "0.0",
+  "verdict": "ZERO",
+  "note": "",
+  "parts": 3,
+  "want": "ZERO"
+ }
+]

@@ -1,0 +1,37 @@
+PASS Q(sqrt2, sqrt5): sqrt2^2 = 2 and sqrt5^2 = 5 exactly
+PASS Q(t, sqrt5): t^3 = t^2 + t + 1, sqrt5^2 = 5, t + sqrt5 = theta exactly
+PASS Q(xi): phi = xi^3 - 2 xi satisfies phi^2 = phi + 1 exactly
+PASS icosahedral rotation group: 60 matrices, all orthogonal (exact, Q(phi))
+PASS dodecahedron [Q(sqrt5)]: exact hull ok, V 20/20, E 30/30, F 12/12, faces by sides {5: 12}, all edges equal exactly (30), 0 s
+PASS icosahedron [Q(sqrt5)]: exact hull ok, V 12/12, E 30/30, F 20/20, faces by sides {3: 20}, all edges equal exactly (30), 0 s
+PASS cube [Q(sqrt5)]: exact hull ok, V 8/8, E 12/12, F 6/6, faces by sides {4: 6}, all edges equal exactly (12), 0 s
+PASS tetrahedron [Q(sqrt5)]: exact hull ok, V 4/4, E 6/6, F 4/4, faces by sides {3: 4}, all edges equal exactly (6), 0 s
+PASS octahedron [Q(sqrt5)]: exact hull ok, V 6/6, E 12/12, F 8/8, faces by sides {3: 8}, all edges equal exactly (12), 0 s
+PASS truncated tetrahedron [Q(sqrt5)]: exact hull ok, V 12/12, E 18/18, F 8/8, faces by sides {3: 4, 6: 4}, all edges equal exactly (18), 0 s
+PASS   polar = triakis tetrahedron: exact hull ok, V 8/8, F 12/12, all faces at one distance from the centre (exact)
+PASS cuboctahedron [Q(sqrt5)]: exact hull ok, V 12/12, E 24/24, F 14/14, faces by sides {3: 8, 4: 6}, all edges equal exactly (24), 0 s
+PASS   polar = rhombic dodecahedron: exact hull ok, V 14/14, F 12/12, all faces at one distance from the centre (exact)
+PASS truncated octahedron [Q(sqrt5)]: exact hull ok, V 24/24, E 36/36, F 14/14, faces by sides {4: 6, 6: 8}, all edges equal exactly (36), 0 s
+PASS   polar = tetrakis hexahedron: exact hull ok, V 14/14, F 24/24, all faces at one distance from the centre (exact)
+PASS truncated cube [Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5]: exact hull ok, V 24/24, E 36/36, F 14/14, faces by sides {3: 8, 8: 6}, all edges equal exactly (36), 0 s
+PASS   polar = triakis octahedron: exact hull ok, V 14/14, F 24/24, all faces at one distance from the centre (exact)
+PASS rhombicuboctahedron [Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5]: exact hull ok, V 24/24, E 48/48, F 26/26, faces by sides {3: 8, 4: 18}, all edges equal exactly (48), 0 s
+PASS   polar = deltoidal icositetrahedron: exact hull ok, V 26/26, F 24/24, all faces at one distance from the centre (exact)
+PASS truncated cuboctahedron [Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5]: exact hull ok, V 48/48, E 72/72, F 26/26, faces by sides {4: 12, 6: 8, 8: 6}, all edges equal exactly (72), 1 s
+PASS   polar = disdyakis dodecahedron: exact hull ok, V 26/26, F 48/48, all faces at one distance from the centre (exact)
+PASS icosidodecahedron [Q(sqrt5)]: exact hull ok, V 30/30, E 60/60, F 32/32, faces by sides {3: 20, 5: 12}, all edges equal exactly (60), 1 s
+PASS   polar = rhombic triacontahedron: exact hull ok, V 32/32, F 30/30, all faces at one distance from the centre (exact)
+PASS truncated icosahedron [Q(sqrt5)]: exact hull ok, V 60/60, E 90/90, F 32/32, faces by sides {5: 12, 6: 20}, all edges equal exactly (90), 1 s
+PASS   polar = pentakis dodecahedron: exact hull ok, V 32/32, F 60/60, all faces at one distance from the centre (exact)
+PASS truncated dodecahedron [Q(sqrt5)]: exact hull ok, V 60/60, E 90/90, F 32/32, faces by sides {3: 20, 10: 12}, all edges equal exactly (90), 1 s
+PASS   polar = triakis icosahedron: exact hull ok, V 32/32, F 60/60, all faces at one distance from the centre (exact)
+PASS rhombicosidodecahedron [Q(sqrt5)]: exact hull ok, V 60/60, E 120/120, F 62/62, faces by sides {3: 20, 4: 30, 5: 12}, all edges equal exactly (120), 1 s
+PASS   polar = deltoidal hexecontahedron: exact hull ok, V 62/62, F 60/60, all faces at one distance from the centre (exact)
+PASS truncated icosidodecahedron [Q(sqrt5)]: exact hull ok, V 120/120, E 180/180, F 62/62, faces by sides {4: 30, 6: 20, 10: 12}, all edges equal exactly (180), 2 s
+PASS   polar = disdyakis triacontahedron: exact hull ok, V 62/62, F 120/120, all faces at one distance from the centre (exact)
+PASS snub cube [Q(t, sqrt5) = Q(theta), theta = t + sqrt5, t the tribonacci constant]: exact hull ok, V 24/24, E 60/60, F 38/38, faces by sides {3: 32, 4: 6}, all edges equal exactly (60), 2 s
+PASS   polar = pentagonal icositetrahedron: exact hull ok, V 38/38, F 24/24, all faces at one distance from the centre (exact)
+PASS snub dodecahedron [Q(xi), xi^3 - 2 xi = phi]: exact hull ok, V 60/60, E 150/150, F 92/92, faces by sides {3: 80, 5: 12}, all edges equal exactly (150), 3 s
+PASS   polar = pentagonal hexecontahedron: exact hull ok, V 92/92, F 60/60, all faces at one distance from the centre (exact)
+solids written: 31 pairs 13
+FINAL ok

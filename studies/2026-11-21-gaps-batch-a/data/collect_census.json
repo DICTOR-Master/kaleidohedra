@@ -1,0 +1,3038 @@
+[
+ {
+  "shape": "cube",
+  "D": null,
+  "slug": "cube",
+  "part": "centre_halo",
+  "corners": 6,
+  "edges": 12,
+  "faces": 8,
+  "faces_by_sides": {
+   "3": 8
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Platonic: OCTAHEDRON",
+   "v7: Delilah",
+   "v7: octahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "cube",
+  "D": null,
+  "slug": "cube",
+  "part": "polar_halo",
+  "corners": 6,
+  "edges": 12,
+  "faces": 8,
+  "faces_by_sides": {
+   "3": 8
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Platonic: OCTAHEDRON",
+   "v7: Delilah",
+   "v7: octahedron"
+  ],
+  "same_as": [
+   "cube / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "cube",
+  "D": null,
+  "slug": "cube",
+  "part": "star_2",
+  "corners": 14,
+  "edges": 24,
+  "faces": 12,
+  "faces_by_sides": {
+   "4": 12
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "v7: rhombic dodecahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null,
+  "base_is_classical": [
+   "Platonic: CUBE"
+  ]
+ },
+ {
+  "shape": "cube",
+  "D": null,
+  "slug": "cube",
+  "part": "star_phi",
+  "corners": 14,
+  "edges": 36,
+  "faces": 24,
+  "faces_by_sides": {
+   "3": 24
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden cube Star",
+  "base_is_classical": [
+   "Platonic: CUBE"
+  ]
+ },
+ {
+  "shape": "cuboctahedron",
+  "D": null,
+  "slug": "cuboctahedron",
+  "part": "centre_halo",
+  "corners": 14,
+  "edges": 36,
+  "faces": 24,
+  "faces_by_sides": {
+   "3": 24
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Catalan: TETRAKIS_HEXAHEDRON",
+   "v7: tetrakis hexahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "cuboctahedron",
+  "D": null,
+  "slug": "cuboctahedron",
+  "part": "polar_halo",
+  "corners": 14,
+  "edges": 24,
+  "faces": 12,
+  "faces_by_sides": {
+   "4": 12
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Catalan: RHOMBIC_DODECAHEDRON",
+   "v7: rhombic dodecahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "cuboctahedron",
+  "D": null,
+  "slug": "cuboctahedron",
+  "part": "star_2",
+  "corners": 26,
+  "edges": 72,
+  "faces": 48,
+  "faces_by_sides": {
+   "3": 48
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "cuboctahedron Star",
+  "base_is_classical": [
+   "Archimedean: CUBOCTAHEDRON"
+  ]
+ },
+ {
+  "shape": "cuboctahedron",
+  "D": null,
+  "slug": "cuboctahedron",
+  "part": "star_phi",
+  "corners": 26,
+  "edges": 72,
+  "faces": 48,
+  "faces_by_sides": {
+   "3": 48
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden cuboctahedron Star",
+  "base_is_classical": [
+   "Archimedean: CUBOCTAHEDRON"
+  ]
+ },
+ {
+  "shape": "deltoidal hexecontahedron",
+  "D": null,
+  "slug": "deltoidal-hexecontahedron",
+  "part": "centre_halo",
+  "corners": 60,
+  "edges": 120,
+  "faces": 62,
+  "faces_by_sides": {
+   "3": 20,
+   "4": 30,
+   "5": 12
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: RHOMBICOSIDODECAHEDRON",
+   "v7: rhombicosidodecahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "deltoidal hexecontahedron",
+  "D": null,
+  "slug": "deltoidal-hexecontahedron",
+  "part": "polar_halo",
+  "corners": 60,
+  "edges": 120,
+  "faces": 62,
+  "faces_by_sides": {
+   "3": 20,
+   "4": 30,
+   "5": 12
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: RHOMBICOSIDODECAHEDRON",
+   "v7: rhombicosidodecahedron"
+  ],
+  "same_as": [
+   "deltoidal hexecontahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "deltoidal hexecontahedron",
+  "D": null,
+  "slug": "deltoidal-hexecontahedron",
+  "part": "star_2",
+  "corners": 122,
+  "edges": 360,
+  "faces": 240,
+  "faces_by_sides": {
+   "3": 240
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "deltoidal hexecontahedron Star",
+  "base_is_classical": [
+   "Catalan: DELTOIDAL_HEXECONTAHEDRON"
+  ]
+ },
+ {
+  "shape": "deltoidal hexecontahedron",
+  "D": null,
+  "slug": "deltoidal-hexecontahedron",
+  "part": "star_phi",
+  "corners": 122,
+  "edges": 360,
+  "faces": 240,
+  "faces_by_sides": {
+   "3": 240
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden deltoidal hexecontahedron Star",
+  "base_is_classical": [
+   "Catalan: DELTOIDAL_HEXECONTAHEDRON"
+  ]
+ },
+ {
+  "shape": "deltoidal icositetrahedron",
+  "D": null,
+  "slug": "deltoidal-icositetrahedron",
+  "part": "centre_halo",
+  "corners": 24,
+  "edges": 48,
+  "faces": 26,
+  "faces_by_sides": {
+   "3": 8,
+   "4": 18
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [
+   "Archimedean: RHOMBICUBOCTAHEDRON",
+   "v7: rhombicuboctahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "deltoidal icositetrahedron",
+  "D": null,
+  "slug": "deltoidal-icositetrahedron",
+  "part": "polar_halo",
+  "corners": 24,
+  "edges": 48,
+  "faces": 26,
+  "faces_by_sides": {
+   "3": 8,
+   "4": 18
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [
+   "Archimedean: RHOMBICUBOCTAHEDRON",
+   "v7: rhombicuboctahedron"
+  ],
+  "same_as": [
+   "deltoidal icositetrahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "deltoidal icositetrahedron",
+  "D": null,
+  "slug": "deltoidal-icositetrahedron",
+  "part": "star_2",
+  "corners": 50,
+  "edges": 144,
+  "faces": 96,
+  "faces_by_sides": {
+   "3": 96
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "deltoidal icositetrahedron Star",
+  "base_is_classical": [
+   "Catalan: DELTOIDAL_ICOSITETRAHEDRON"
+  ]
+ },
+ {
+  "shape": "deltoidal icositetrahedron",
+  "D": null,
+  "slug": "deltoidal-icositetrahedron",
+  "part": "star_phi",
+  "corners": 50,
+  "edges": 144,
+  "faces": 96,
+  "faces_by_sides": {
+   "3": 96
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden deltoidal icositetrahedron Star",
+  "base_is_classical": [
+   "Catalan: DELTOIDAL_ICOSITETRAHEDRON"
+  ]
+ },
+ {
+  "shape": "disdyakis dodecahedron",
+  "D": null,
+  "slug": "disdyakis-dodecahedron",
+  "part": "centre_halo",
+  "corners": 48,
+  "edges": 72,
+  "faces": 26,
+  "faces_by_sides": {
+   "4": 12,
+   "6": 8,
+   "8": 6
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [
+   "Archimedean: TRUNCATED_CUBOCTAHEDRON",
+   "v7: truncated cuboctahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "disdyakis dodecahedron",
+  "D": null,
+  "slug": "disdyakis-dodecahedron",
+  "part": "polar_halo",
+  "corners": 48,
+  "edges": 72,
+  "faces": 26,
+  "faces_by_sides": {
+   "4": 12,
+   "6": 8,
+   "8": 6
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [
+   "Archimedean: TRUNCATED_CUBOCTAHEDRON",
+   "v7: truncated cuboctahedron"
+  ],
+  "same_as": [
+   "disdyakis dodecahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "disdyakis dodecahedron",
+  "D": null,
+  "slug": "disdyakis-dodecahedron",
+  "part": "star_2",
+  "corners": 74,
+  "edges": 216,
+  "faces": 144,
+  "faces_by_sides": {
+   "3": 144
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "disdyakis dodecahedron Star",
+  "base_is_classical": [
+   "Catalan: DISDYAKIS_DODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "disdyakis dodecahedron",
+  "D": null,
+  "slug": "disdyakis-dodecahedron",
+  "part": "star_phi",
+  "corners": 74,
+  "edges": 216,
+  "faces": 144,
+  "faces_by_sides": {
+   "3": 144
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden disdyakis dodecahedron Star",
+  "base_is_classical": [
+   "Catalan: DISDYAKIS_DODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "disdyakis triacontahedron",
+  "D": null,
+  "slug": "disdyakis-triacontahedron",
+  "part": "centre_halo",
+  "corners": 120,
+  "edges": 180,
+  "faces": 62,
+  "faces_by_sides": {
+   "4": 30,
+   "6": 20,
+   "10": 12
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: TRUNCATED_ICOSIDODECAHEDRON",
+   "v7: truncated icosidodecahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "disdyakis triacontahedron",
+  "D": null,
+  "slug": "disdyakis-triacontahedron",
+  "part": "polar_halo",
+  "corners": 120,
+  "edges": 180,
+  "faces": 62,
+  "faces_by_sides": {
+   "4": 30,
+   "6": 20,
+   "10": 12
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: TRUNCATED_ICOSIDODECAHEDRON",
+   "v7: truncated icosidodecahedron"
+  ],
+  "same_as": [
+   "disdyakis triacontahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "disdyakis triacontahedron",
+  "D": null,
+  "slug": "disdyakis-triacontahedron",
+  "part": "star_2",
+  "corners": 182,
+  "edges": 540,
+  "faces": 360,
+  "faces_by_sides": {
+   "3": 360
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "disdyakis triacontahedron Star",
+  "base_is_classical": [
+   "Catalan: DISDYAKIS_TRIACONTAHEDRON"
+  ]
+ },
+ {
+  "shape": "disdyakis triacontahedron",
+  "D": null,
+  "slug": "disdyakis-triacontahedron",
+  "part": "star_phi",
+  "corners": 182,
+  "edges": 540,
+  "faces": 360,
+  "faces_by_sides": {
+   "3": 360
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden disdyakis triacontahedron Star",
+  "base_is_classical": [
+   "Catalan: DISDYAKIS_TRIACONTAHEDRON"
+  ]
+ },
+ {
+  "shape": "dodecahedron",
+  "D": null,
+  "slug": "dodecahedron",
+  "part": "centre_halo",
+  "corners": 12,
+  "edges": 30,
+  "faces": 20,
+  "faces_by_sides": {
+   "3": 20
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Platonic: ICOSAHEDRON",
+   "v7: icosahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "dodecahedron",
+  "D": null,
+  "slug": "dodecahedron",
+  "part": "polar_halo",
+  "corners": 12,
+  "edges": 30,
+  "faces": 20,
+  "faces_by_sides": {
+   "3": 20
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Platonic: ICOSAHEDRON",
+   "v7: icosahedron"
+  ],
+  "same_as": [
+   "dodecahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "dodecahedron",
+  "D": null,
+  "slug": "dodecahedron",
+  "part": "star_2",
+  "corners": 32,
+  "edges": 90,
+  "faces": 60,
+  "faces_by_sides": {
+   "3": 60
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "dodecahedron Star",
+  "base_is_classical": [
+   "Platonic: DODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "dodecahedron",
+  "D": null,
+  "slug": "dodecahedron",
+  "part": "star_phi",
+  "corners": 32,
+  "edges": 90,
+  "faces": 60,
+  "faces_by_sides": {
+   "3": 60
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden dodecahedron Star",
+  "base_is_classical": [
+   "Platonic: DODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "icosahedron",
+  "D": null,
+  "slug": "icosahedron",
+  "part": "centre_halo",
+  "corners": 20,
+  "edges": 30,
+  "faces": 12,
+  "faces_by_sides": {
+   "5": 12
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Platonic: DODECAHEDRON",
+   "v7: dodecahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "icosahedron",
+  "D": null,
+  "slug": "icosahedron",
+  "part": "polar_halo",
+  "corners": 20,
+  "edges": 30,
+  "faces": 12,
+  "faces_by_sides": {
+   "5": 12
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Platonic: DODECAHEDRON",
+   "v7: dodecahedron"
+  ],
+  "same_as": [
+   "icosahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "icosahedron",
+  "D": null,
+  "slug": "icosahedron",
+  "part": "star_2",
+  "corners": 32,
+  "edges": 90,
+  "faces": 60,
+  "faces_by_sides": {
+   "3": 60
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "icosahedron Star",
+  "base_is_classical": [
+   "Platonic: ICOSAHEDRON"
+  ]
+ },
+ {
+  "shape": "icosahedron",
+  "D": null,
+  "slug": "icosahedron",
+  "part": "star_phi",
+  "corners": 32,
+  "edges": 90,
+  "faces": 60,
+  "faces_by_sides": {
+   "3": 60
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden icosahedron Star",
+  "base_is_classical": [
+   "Platonic: ICOSAHEDRON"
+  ]
+ },
+ {
+  "shape": "icosidodecahedron",
+  "D": null,
+  "slug": "icosidodecahedron",
+  "part": "centre_halo",
+  "corners": 32,
+  "edges": 90,
+  "faces": 60,
+  "faces_by_sides": {
+   "3": 60
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "v7: DICTO FPD (flat pentakis dodecahedron)",
+   "v7: DICTO Palintriacontahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "icosidodecahedron",
+  "D": null,
+  "slug": "icosidodecahedron",
+  "part": "polar_halo",
+  "corners": 32,
+  "edges": 60,
+  "faces": 30,
+  "faces_by_sides": {
+   "4": 30
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Catalan: RHOMBIC_TRIACONTAHEDRON",
+   "v7: rhombic triacontahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "icosidodecahedron",
+  "D": null,
+  "slug": "icosidodecahedron",
+  "part": "star_2",
+  "corners": 62,
+  "edges": 180,
+  "faces": 120,
+  "faces_by_sides": {
+   "3": 120
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "icosidodecahedron Star",
+  "base_is_classical": [
+   "Archimedean: ICOSIDODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "icosidodecahedron",
+  "D": null,
+  "slug": "icosidodecahedron",
+  "part": "star_phi",
+  "corners": 62,
+  "edges": 180,
+  "faces": 120,
+  "faces_by_sides": {
+   "3": 120
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden icosidodecahedron Star",
+  "base_is_classical": [
+   "Archimedean: ICOSIDODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "octahedron",
+  "D": null,
+  "slug": "octahedron",
+  "part": "centre_halo",
+  "corners": 8,
+  "edges": 12,
+  "faces": 6,
+  "faces_by_sides": {
+   "4": 6
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Platonic: CUBE",
+   "v7: cube"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "octahedron",
+  "D": null,
+  "slug": "octahedron",
+  "part": "polar_halo",
+  "corners": 8,
+  "edges": 12,
+  "faces": 6,
+  "faces_by_sides": {
+   "4": 6
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Platonic: CUBE",
+   "v7: cube"
+  ],
+  "same_as": [
+   "octahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "octahedron",
+  "D": null,
+  "slug": "octahedron",
+  "part": "star_2",
+  "corners": 14,
+  "edges": 36,
+  "faces": 24,
+  "faces_by_sides": {
+   "3": 24
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "v7: tetrakis hexahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null,
+  "base_is_classical": [
+   "Platonic: OCTAHEDRON"
+  ]
+ },
+ {
+  "shape": "octahedron",
+  "D": null,
+  "slug": "octahedron",
+  "part": "star_phi",
+  "corners": 14,
+  "edges": 36,
+  "faces": 24,
+  "faces_by_sides": {
+   "3": 24
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden octahedron Star",
+  "base_is_classical": [
+   "Platonic: OCTAHEDRON"
+  ]
+ },
+ {
+  "shape": "pentagonal hexecontahedron",
+  "D": null,
+  "slug": "pentagonal-hexecontahedron",
+  "part": "centre_halo",
+  "corners": 60,
+  "edges": 150,
+  "faces": 92,
+  "faces_by_sides": {
+   "3": 80,
+   "5": 12
+  },
+  "symmetry": "I",
+  "symmetry_order": 60,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(xi), xi^3 - 2 xi = phi",
+  "matches": [
+   "Archimedean: SNUB_DODECAHEDRON",
+   "v7: snub dodecahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "pentagonal hexecontahedron",
+  "D": null,
+  "slug": "pentagonal-hexecontahedron",
+  "part": "polar_halo",
+  "corners": 60,
+  "edges": 150,
+  "faces": 92,
+  "faces_by_sides": {
+   "3": 80,
+   "5": 12
+  },
+  "symmetry": "I",
+  "symmetry_order": 60,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(xi), xi^3 - 2 xi = phi",
+  "matches": [
+   "Archimedean: SNUB_DODECAHEDRON",
+   "v7: snub dodecahedron"
+  ],
+  "same_as": [
+   "pentagonal hexecontahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "pentagonal hexecontahedron",
+  "D": null,
+  "slug": "pentagonal-hexecontahedron",
+  "part": "star_2",
+  "corners": 152,
+  "edges": 450,
+  "faces": 300,
+  "faces_by_sides": {
+   "3": 300
+  },
+  "symmetry": "I",
+  "symmetry_order": 60,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(xi), xi^3 - 2 xi = phi",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "pentagonal hexecontahedron Star",
+  "base_is_classical": [
+   "Catalan: PENTAGONAL_HEXECONTAHEDRON"
+  ]
+ },
+ {
+  "shape": "pentagonal hexecontahedron",
+  "D": null,
+  "slug": "pentagonal-hexecontahedron",
+  "part": "star_phi",
+  "corners": 152,
+  "edges": 450,
+  "faces": 300,
+  "faces_by_sides": {
+   "3": 300
+  },
+  "symmetry": "I",
+  "symmetry_order": 60,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(xi), xi^3 - 2 xi = phi",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden pentagonal hexecontahedron Star",
+  "base_is_classical": [
+   "Catalan: PENTAGONAL_HEXECONTAHEDRON"
+  ]
+ },
+ {
+  "shape": "pentagonal icositetrahedron",
+  "D": null,
+  "slug": "pentagonal-icositetrahedron",
+  "part": "centre_halo",
+  "corners": 24,
+  "edges": 60,
+  "faces": 38,
+  "faces_by_sides": {
+   "3": 32,
+   "4": 6
+  },
+  "symmetry": "O",
+  "symmetry_order": 24,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(t, sqrt5) = Q(theta), theta = t + sqrt5, t the tribonacci constant",
+  "matches": [
+   "Archimedean: SNUB_CUBE",
+   "v7: snub cube"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "pentagonal icositetrahedron",
+  "D": null,
+  "slug": "pentagonal-icositetrahedron",
+  "part": "polar_halo",
+  "corners": 24,
+  "edges": 60,
+  "faces": 38,
+  "faces_by_sides": {
+   "3": 32,
+   "4": 6
+  },
+  "symmetry": "O",
+  "symmetry_order": 24,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(t, sqrt5) = Q(theta), theta = t + sqrt5, t the tribonacci constant",
+  "matches": [
+   "Archimedean: SNUB_CUBE",
+   "v7: snub cube"
+  ],
+  "same_as": [
+   "pentagonal icositetrahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "pentagonal icositetrahedron",
+  "D": null,
+  "slug": "pentagonal-icositetrahedron",
+  "part": "star_2",
+  "corners": 62,
+  "edges": 180,
+  "faces": 120,
+  "faces_by_sides": {
+   "3": 120
+  },
+  "symmetry": "O",
+  "symmetry_order": 24,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(t, sqrt5) = Q(theta), theta = t + sqrt5, t the tribonacci constant",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "pentagonal icositetrahedron Star",
+  "base_is_classical": [
+   "Catalan: PENTAGONAL_ICOSITETRAHEDRON"
+  ]
+ },
+ {
+  "shape": "pentagonal icositetrahedron",
+  "D": null,
+  "slug": "pentagonal-icositetrahedron",
+  "part": "star_phi",
+  "corners": 62,
+  "edges": 180,
+  "faces": 120,
+  "faces_by_sides": {
+   "3": 120
+  },
+  "symmetry": "O",
+  "symmetry_order": 24,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(t, sqrt5) = Q(theta), theta = t + sqrt5, t the tribonacci constant",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden pentagonal icositetrahedron Star",
+  "base_is_classical": [
+   "Catalan: PENTAGONAL_ICOSITETRAHEDRON"
+  ]
+ },
+ {
+  "shape": "pentakis dodecahedron",
+  "D": null,
+  "slug": "pentakis-dodecahedron",
+  "part": "centre_halo",
+  "corners": 60,
+  "edges": 90,
+  "faces": 32,
+  "faces_by_sides": {
+   "5": 12,
+   "6": 20
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: TRUNCATED_ICOSAHEDRON",
+   "v7: truncated icosahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "pentakis dodecahedron",
+  "D": null,
+  "slug": "pentakis-dodecahedron",
+  "part": "polar_halo",
+  "corners": 60,
+  "edges": 90,
+  "faces": 32,
+  "faces_by_sides": {
+   "5": 12,
+   "6": 20
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: TRUNCATED_ICOSAHEDRON",
+   "v7: truncated icosahedron"
+  ],
+  "same_as": [
+   "pentakis dodecahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "pentakis dodecahedron",
+  "D": null,
+  "slug": "pentakis-dodecahedron",
+  "part": "star_2",
+  "corners": 92,
+  "edges": 270,
+  "faces": 180,
+  "faces_by_sides": {
+   "3": 180
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "pentakis dodecahedron Star",
+  "base_is_classical": [
+   "Catalan: PENTAKIS_DODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "pentakis dodecahedron",
+  "D": null,
+  "slug": "pentakis-dodecahedron",
+  "part": "star_phi",
+  "corners": 92,
+  "edges": 270,
+  "faces": 180,
+  "faces_by_sides": {
+   "3": 180
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden pentakis dodecahedron Star",
+  "base_is_classical": [
+   "Catalan: PENTAKIS_DODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "rhombic dodecahedron",
+  "D": null,
+  "slug": "rhombic-dodecahedron",
+  "part": "centre_halo",
+  "corners": 12,
+  "edges": 24,
+  "faces": 14,
+  "faces_by_sides": {
+   "3": 8,
+   "4": 6
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: CUBOCTAHEDRON",
+   "v7: cuboctahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "rhombic dodecahedron",
+  "D": null,
+  "slug": "rhombic-dodecahedron",
+  "part": "polar_halo",
+  "corners": 12,
+  "edges": 24,
+  "faces": 14,
+  "faces_by_sides": {
+   "3": 8,
+   "4": 6
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: CUBOCTAHEDRON",
+   "v7: cuboctahedron"
+  ],
+  "same_as": [
+   "rhombic dodecahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "rhombic dodecahedron",
+  "D": null,
+  "slug": "rhombic-dodecahedron",
+  "part": "star_2",
+  "corners": 26,
+  "edges": 72,
+  "faces": 48,
+  "faces_by_sides": {
+   "3": 48
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "rhombic dodecahedron Star",
+  "base_is_classical": [
+   "Catalan: RHOMBIC_DODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "rhombic dodecahedron",
+  "D": null,
+  "slug": "rhombic-dodecahedron",
+  "part": "star_phi",
+  "corners": 26,
+  "edges": 72,
+  "faces": 48,
+  "faces_by_sides": {
+   "3": 48
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden rhombic dodecahedron Star",
+  "base_is_classical": [
+   "Catalan: RHOMBIC_DODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "rhombic triacontahedron",
+  "D": null,
+  "slug": "rhombic-triacontahedron",
+  "part": "centre_halo",
+  "corners": 30,
+  "edges": 60,
+  "faces": 32,
+  "faces_by_sides": {
+   "3": 20,
+   "5": 12
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: ICOSIDODECAHEDRON",
+   "v7: icosidodecahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "rhombic triacontahedron",
+  "D": null,
+  "slug": "rhombic-triacontahedron",
+  "part": "polar_halo",
+  "corners": 30,
+  "edges": 60,
+  "faces": 32,
+  "faces_by_sides": {
+   "3": 20,
+   "5": 12
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: ICOSIDODECAHEDRON",
+   "v7: icosidodecahedron"
+  ],
+  "same_as": [
+   "rhombic triacontahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "rhombic triacontahedron",
+  "D": null,
+  "slug": "rhombic-triacontahedron",
+  "part": "star_2",
+  "corners": 62,
+  "edges": 180,
+  "faces": 120,
+  "faces_by_sides": {
+   "3": 120
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "rhombic triacontahedron Star",
+  "base_is_classical": [
+   "Catalan: RHOMBIC_TRIACONTAHEDRON"
+  ]
+ },
+ {
+  "shape": "rhombic triacontahedron",
+  "D": null,
+  "slug": "rhombic-triacontahedron",
+  "part": "star_phi",
+  "corners": 62,
+  "edges": 180,
+  "faces": 120,
+  "faces_by_sides": {
+   "3": 120
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden rhombic triacontahedron Star",
+  "base_is_classical": [
+   "Catalan: RHOMBIC_TRIACONTAHEDRON"
+  ]
+ },
+ {
+  "shape": "rhombicosidodecahedron",
+  "D": null,
+  "slug": "rhombicosidodecahedron",
+  "part": "centre_halo",
+  "corners": 62,
+  "edges": 180,
+  "faces": 120,
+  "faces_by_sides": {
+   "3": 120
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "rhombicosidodecahedron Halo"
+ },
+ {
+  "shape": "rhombicosidodecahedron",
+  "D": null,
+  "slug": "rhombicosidodecahedron",
+  "part": "polar_halo",
+  "corners": 62,
+  "edges": 120,
+  "faces": 60,
+  "faces_by_sides": {
+   "4": 60
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Catalan: DELTOIDAL_HEXECONTAHEDRON",
+   "v7: deltoidal hexecontahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "rhombicosidodecahedron",
+  "D": null,
+  "slug": "rhombicosidodecahedron",
+  "part": "star_2",
+  "corners": 122,
+  "edges": 360,
+  "faces": 240,
+  "faces_by_sides": {
+   "3": 240
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "rhombicosidodecahedron Star",
+  "base_is_classical": [
+   "Archimedean: RHOMBICOSIDODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "rhombicosidodecahedron",
+  "D": null,
+  "slug": "rhombicosidodecahedron",
+  "part": "star_phi",
+  "corners": 122,
+  "edges": 360,
+  "faces": 240,
+  "faces_by_sides": {
+   "3": 240
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden rhombicosidodecahedron Star",
+  "base_is_classical": [
+   "Archimedean: RHOMBICOSIDODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "rhombicuboctahedron",
+  "D": null,
+  "slug": "rhombicuboctahedron",
+  "part": "centre_halo",
+  "corners": 26,
+  "edges": 72,
+  "faces": 48,
+  "faces_by_sides": {
+   "3": 48
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "rhombicuboctahedron Halo"
+ },
+ {
+  "shape": "rhombicuboctahedron",
+  "D": null,
+  "slug": "rhombicuboctahedron",
+  "part": "polar_halo",
+  "corners": 26,
+  "edges": 48,
+  "faces": 24,
+  "faces_by_sides": {
+   "4": 24
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [
+   "Catalan: DELTOIDAL_ICOSITETRAHEDRON",
+   "v7: deltoidal icositetrahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "rhombicuboctahedron",
+  "D": null,
+  "slug": "rhombicuboctahedron",
+  "part": "star_2",
+  "corners": 50,
+  "edges": 144,
+  "faces": 96,
+  "faces_by_sides": {
+   "3": 96
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "rhombicuboctahedron Star",
+  "base_is_classical": [
+   "Archimedean: RHOMBICUBOCTAHEDRON"
+  ]
+ },
+ {
+  "shape": "rhombicuboctahedron",
+  "D": null,
+  "slug": "rhombicuboctahedron",
+  "part": "star_phi",
+  "corners": 50,
+  "edges": 144,
+  "faces": 96,
+  "faces_by_sides": {
+   "3": 96
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden rhombicuboctahedron Star",
+  "base_is_classical": [
+   "Archimedean: RHOMBICUBOCTAHEDRON"
+  ]
+ },
+ {
+  "shape": "snub cube",
+  "D": null,
+  "slug": "snub-cube",
+  "part": "centre_halo",
+  "corners": 38,
+  "edges": 84,
+  "faces": 48,
+  "faces_by_sides": {
+   "3": 24,
+   "4": 24
+  },
+  "symmetry": "O",
+  "symmetry_order": 24,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(t, sqrt5) = Q(theta), theta = t + sqrt5, t the tribonacci constant",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "snub cube Halo"
+ },
+ {
+  "shape": "snub cube",
+  "D": null,
+  "slug": "snub-cube",
+  "part": "polar_halo",
+  "corners": 38,
+  "edges": 60,
+  "faces": 24,
+  "faces_by_sides": {
+   "5": 24
+  },
+  "symmetry": "O",
+  "symmetry_order": 24,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(t, sqrt5) = Q(theta), theta = t + sqrt5, t the tribonacci constant",
+  "matches": [
+   "Catalan: PENTAGONAL_ICOSITETRAHEDRON",
+   "v7: pentagonal icositetrahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "snub cube",
+  "D": null,
+  "slug": "snub-cube",
+  "part": "star_2",
+  "corners": 62,
+  "edges": 180,
+  "faces": 120,
+  "faces_by_sides": {
+   "3": 120
+  },
+  "symmetry": "O",
+  "symmetry_order": 24,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(t, sqrt5) = Q(theta), theta = t + sqrt5, t the tribonacci constant",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "snub cube Star",
+  "base_is_classical": [
+   "Archimedean: SNUB_CUBE"
+  ]
+ },
+ {
+  "shape": "snub cube",
+  "D": null,
+  "slug": "snub-cube",
+  "part": "star_phi",
+  "corners": 62,
+  "edges": 180,
+  "faces": 120,
+  "faces_by_sides": {
+   "3": 120
+  },
+  "symmetry": "O",
+  "symmetry_order": 24,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(t, sqrt5) = Q(theta), theta = t + sqrt5, t the tribonacci constant",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden snub cube Star",
+  "base_is_classical": [
+   "Archimedean: SNUB_CUBE"
+  ]
+ },
+ {
+  "shape": "snub dodecahedron",
+  "D": null,
+  "slug": "snub-dodecahedron",
+  "part": "centre_halo",
+  "corners": 92,
+  "edges": 210,
+  "faces": 120,
+  "faces_by_sides": {
+   "3": 60,
+   "4": 60
+  },
+  "symmetry": "I",
+  "symmetry_order": 60,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(xi), xi^3 - 2 xi = phi",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "snub dodecahedron Halo"
+ },
+ {
+  "shape": "snub dodecahedron",
+  "D": null,
+  "slug": "snub-dodecahedron",
+  "part": "polar_halo",
+  "corners": 92,
+  "edges": 150,
+  "faces": 60,
+  "faces_by_sides": {
+   "5": 60
+  },
+  "symmetry": "I",
+  "symmetry_order": 60,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(xi), xi^3 - 2 xi = phi",
+  "matches": [
+   "Catalan: PENTAGONAL_HEXECONTAHEDRON",
+   "v7: pentagonal hexecontahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "snub dodecahedron",
+  "D": null,
+  "slug": "snub-dodecahedron",
+  "part": "star_2",
+  "corners": 152,
+  "edges": 450,
+  "faces": 300,
+  "faces_by_sides": {
+   "3": 300
+  },
+  "symmetry": "I",
+  "symmetry_order": 60,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(xi), xi^3 - 2 xi = phi",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "snub dodecahedron Star",
+  "base_is_classical": [
+   "Archimedean: SNUB_DODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "snub dodecahedron",
+  "D": null,
+  "slug": "snub-dodecahedron",
+  "part": "star_phi",
+  "corners": 152,
+  "edges": 450,
+  "faces": 300,
+  "faces_by_sides": {
+   "3": 300
+  },
+  "symmetry": "I",
+  "symmetry_order": 60,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(xi), xi^3 - 2 xi = phi",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden snub dodecahedron Star",
+  "base_is_classical": [
+   "Archimedean: SNUB_DODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "tetrahedron",
+  "D": null,
+  "slug": "tetrahedron",
+  "part": "centre_halo",
+  "corners": 4,
+  "edges": 6,
+  "faces": 4,
+  "faces_by_sides": {
+   "3": 4
+  },
+  "symmetry": "Td",
+  "symmetry_order": 24,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Platonic: TETRAHEDRON",
+   "v7: tetrahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "tetrahedron",
+  "D": null,
+  "slug": "tetrahedron",
+  "part": "polar_halo",
+  "corners": 4,
+  "edges": 6,
+  "faces": 4,
+  "faces_by_sides": {
+   "3": 4
+  },
+  "symmetry": "Td",
+  "symmetry_order": 24,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Platonic: TETRAHEDRON",
+   "v7: tetrahedron"
+  ],
+  "same_as": [
+   "tetrahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "tetrahedron",
+  "D": null,
+  "slug": "tetrahedron",
+  "part": "star_2",
+  "corners": 8,
+  "edges": 18,
+  "faces": 12,
+  "faces_by_sides": {
+   "3": 12
+  },
+  "symmetry": "Td",
+  "symmetry_order": 24,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "tetrahedron Star",
+  "base_is_classical": [
+   "Platonic: TETRAHEDRON"
+  ]
+ },
+ {
+  "shape": "tetrahedron",
+  "D": null,
+  "slug": "tetrahedron",
+  "part": "star_phi",
+  "corners": 8,
+  "edges": 18,
+  "faces": 12,
+  "faces_by_sides": {
+   "3": 12
+  },
+  "symmetry": "Td",
+  "symmetry_order": 24,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden tetrahedron Star",
+  "base_is_classical": [
+   "Platonic: TETRAHEDRON"
+  ]
+ },
+ {
+  "shape": "tetrakis hexahedron",
+  "D": null,
+  "slug": "tetrakis-hexahedron",
+  "part": "centre_halo",
+  "corners": 24,
+  "edges": 36,
+  "faces": 14,
+  "faces_by_sides": {
+   "4": 6,
+   "6": 8
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: TRUNCATED_OCTAHEDRON",
+   "v7: truncated octahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "tetrakis hexahedron",
+  "D": null,
+  "slug": "tetrakis-hexahedron",
+  "part": "polar_halo",
+  "corners": 24,
+  "edges": 36,
+  "faces": 14,
+  "faces_by_sides": {
+   "4": 6,
+   "6": 8
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: TRUNCATED_OCTAHEDRON",
+   "v7: truncated octahedron"
+  ],
+  "same_as": [
+   "tetrakis hexahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "tetrakis hexahedron",
+  "D": null,
+  "slug": "tetrakis-hexahedron",
+  "part": "star_2",
+  "corners": 38,
+  "edges": 108,
+  "faces": 72,
+  "faces_by_sides": {
+   "3": 72
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "tetrakis hexahedron Star",
+  "base_is_classical": [
+   "Catalan: TETRAKIS_HEXAHEDRON"
+  ]
+ },
+ {
+  "shape": "tetrakis hexahedron",
+  "D": null,
+  "slug": "tetrakis-hexahedron",
+  "part": "star_phi",
+  "corners": 38,
+  "edges": 108,
+  "faces": 72,
+  "faces_by_sides": {
+   "3": 72
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden tetrakis hexahedron Star",
+  "base_is_classical": [
+   "Catalan: TETRAKIS_HEXAHEDRON"
+  ]
+ },
+ {
+  "shape": "triakis icosahedron",
+  "D": null,
+  "slug": "triakis-icosahedron",
+  "part": "centre_halo",
+  "corners": 60,
+  "edges": 90,
+  "faces": 32,
+  "faces_by_sides": {
+   "3": 20,
+   "10": 12
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: TRUNCATED_DODECAHEDRON",
+   "v7: truncated dodecahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "triakis icosahedron",
+  "D": null,
+  "slug": "triakis-icosahedron",
+  "part": "polar_halo",
+  "corners": 60,
+  "edges": 90,
+  "faces": 32,
+  "faces_by_sides": {
+   "3": 20,
+   "10": 12
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: TRUNCATED_DODECAHEDRON",
+   "v7: truncated dodecahedron"
+  ],
+  "same_as": [
+   "triakis icosahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "triakis icosahedron",
+  "D": null,
+  "slug": "triakis-icosahedron",
+  "part": "star_2",
+  "corners": 92,
+  "edges": 270,
+  "faces": 180,
+  "faces_by_sides": {
+   "3": 180
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "triakis icosahedron Star",
+  "base_is_classical": [
+   "Catalan: TRIAKIS_ICOSAHEDRON"
+  ]
+ },
+ {
+  "shape": "triakis icosahedron",
+  "D": null,
+  "slug": "triakis-icosahedron",
+  "part": "star_phi",
+  "corners": 92,
+  "edges": 270,
+  "faces": 180,
+  "faces_by_sides": {
+   "3": 180
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden triakis icosahedron Star",
+  "base_is_classical": [
+   "Catalan: TRIAKIS_ICOSAHEDRON"
+  ]
+ },
+ {
+  "shape": "triakis octahedron",
+  "D": null,
+  "slug": "triakis-octahedron",
+  "part": "centre_halo",
+  "corners": 24,
+  "edges": 36,
+  "faces": 14,
+  "faces_by_sides": {
+   "3": 8,
+   "8": 6
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [
+   "Archimedean: TRUNCATED_CUBE",
+   "v7: truncated cube"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "triakis octahedron",
+  "D": null,
+  "slug": "triakis-octahedron",
+  "part": "polar_halo",
+  "corners": 24,
+  "edges": 36,
+  "faces": 14,
+  "faces_by_sides": {
+   "3": 8,
+   "8": 6
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [
+   "Archimedean: TRUNCATED_CUBE",
+   "v7: truncated cube"
+  ],
+  "same_as": [
+   "triakis octahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "triakis octahedron",
+  "D": null,
+  "slug": "triakis-octahedron",
+  "part": "star_2",
+  "corners": 38,
+  "edges": 108,
+  "faces": 72,
+  "faces_by_sides": {
+   "3": 72
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "triakis octahedron Star",
+  "base_is_classical": [
+   "Catalan: TRIAKIS_OCTAHEDRON"
+  ]
+ },
+ {
+  "shape": "triakis octahedron",
+  "D": null,
+  "slug": "triakis-octahedron",
+  "part": "star_phi",
+  "corners": 38,
+  "edges": 108,
+  "faces": 72,
+  "faces_by_sides": {
+   "3": 72
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden triakis octahedron Star",
+  "base_is_classical": [
+   "Catalan: TRIAKIS_OCTAHEDRON"
+  ]
+ },
+ {
+  "shape": "triakis tetrahedron",
+  "D": null,
+  "slug": "triakis-tetrahedron",
+  "part": "centre_halo",
+  "corners": 12,
+  "edges": 18,
+  "faces": 8,
+  "faces_by_sides": {
+   "3": 4,
+   "6": 4
+  },
+  "symmetry": "Td",
+  "symmetry_order": 24,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: TRUNCATED_TETRAHEDRON",
+   "v7: truncated tetrahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "triakis tetrahedron",
+  "D": null,
+  "slug": "triakis-tetrahedron",
+  "part": "polar_halo",
+  "corners": 12,
+  "edges": 18,
+  "faces": 8,
+  "faces_by_sides": {
+   "3": 4,
+   "6": 4
+  },
+  "symmetry": "Td",
+  "symmetry_order": 24,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Archimedean: TRUNCATED_TETRAHEDRON",
+   "v7: truncated tetrahedron"
+  ],
+  "same_as": [
+   "triakis tetrahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "triakis tetrahedron",
+  "D": null,
+  "slug": "triakis-tetrahedron",
+  "part": "star_2",
+  "corners": 20,
+  "edges": 54,
+  "faces": 36,
+  "faces_by_sides": {
+   "3": 36
+  },
+  "symmetry": "Td",
+  "symmetry_order": 24,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "triakis tetrahedron Star",
+  "base_is_classical": [
+   "Catalan: TRIAKIS_TETRAHEDRON"
+  ]
+ },
+ {
+  "shape": "triakis tetrahedron",
+  "D": null,
+  "slug": "triakis-tetrahedron",
+  "part": "star_phi",
+  "corners": 20,
+  "edges": 54,
+  "faces": 36,
+  "faces_by_sides": {
+   "3": 36
+  },
+  "symmetry": "Td",
+  "symmetry_order": 24,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden triakis tetrahedron Star",
+  "base_is_classical": [
+   "Catalan: TRIAKIS_TETRAHEDRON"
+  ]
+ },
+ {
+  "shape": "truncated cube",
+  "D": null,
+  "slug": "truncated-cube",
+  "part": "centre_halo",
+  "corners": 14,
+  "edges": 36,
+  "faces": 24,
+  "faces_by_sides": {
+   "3": 24
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "truncated cube Halo"
+ },
+ {
+  "shape": "truncated cube",
+  "D": null,
+  "slug": "truncated-cube",
+  "part": "polar_halo",
+  "corners": 14,
+  "edges": 36,
+  "faces": 24,
+  "faces_by_sides": {
+   "3": 24
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [
+   "Catalan: TRIAKIS_OCTAHEDRON",
+   "v7: triakis octahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "truncated cube",
+  "D": null,
+  "slug": "truncated-cube",
+  "part": "star_2",
+  "corners": 38,
+  "edges": 96,
+  "faces": 60,
+  "faces_by_sides": {
+   "3": 48,
+   "4": 12
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "truncated cube Star",
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_CUBE"
+  ]
+ },
+ {
+  "shape": "truncated cube",
+  "D": null,
+  "slug": "truncated-cube",
+  "part": "star_phi",
+  "corners": 38,
+  "edges": 108,
+  "faces": 72,
+  "faces_by_sides": {
+   "3": 72
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden truncated cube Star",
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_CUBE"
+  ]
+ },
+ {
+  "shape": "truncated cuboctahedron",
+  "D": null,
+  "slug": "truncated-cuboctahedron",
+  "part": "centre_halo",
+  "corners": 26,
+  "edges": 72,
+  "faces": 48,
+  "faces_by_sides": {
+   "3": 48
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "truncated cuboctahedron Halo"
+ },
+ {
+  "shape": "truncated cuboctahedron",
+  "D": null,
+  "slug": "truncated-cuboctahedron",
+  "part": "polar_halo",
+  "corners": 26,
+  "edges": 72,
+  "faces": 48,
+  "faces_by_sides": {
+   "3": 48
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": null,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [
+   "Catalan: DISDYAKIS_DODECAHEDRON",
+   "v7: disdyakis dodecahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "truncated cuboctahedron",
+  "D": null,
+  "slug": "truncated-cuboctahedron",
+  "part": "star_2",
+  "corners": 74,
+  "edges": 216,
+  "faces": 144,
+  "faces_by_sides": {
+   "3": 144
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "truncated cuboctahedron Star",
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_CUBOCTAHEDRON"
+  ]
+ },
+ {
+  "shape": "truncated cuboctahedron",
+  "D": null,
+  "slug": "truncated-cuboctahedron",
+  "part": "star_phi",
+  "corners": 74,
+  "edges": 216,
+  "faces": 144,
+  "faces_by_sides": {
+   "3": 144
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": false,
+  "exact_check": false,
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden truncated cuboctahedron Star",
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_CUBOCTAHEDRON"
+  ]
+ },
+ {
+  "shape": "truncated dodecahedron",
+  "D": null,
+  "slug": "truncated-dodecahedron",
+  "part": "centre_halo",
+  "corners": 32,
+  "edges": 90,
+  "faces": 60,
+  "faces_by_sides": {
+   "3": 60
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "truncated dodecahedron Halo"
+ },
+ {
+  "shape": "truncated dodecahedron",
+  "D": null,
+  "slug": "truncated-dodecahedron",
+  "part": "polar_halo",
+  "corners": 32,
+  "edges": 90,
+  "faces": 60,
+  "faces_by_sides": {
+   "3": 60
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Catalan: TRIAKIS_ICOSAHEDRON",
+   "v7: triakis icosahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "truncated dodecahedron",
+  "D": null,
+  "slug": "truncated-dodecahedron",
+  "part": "star_2",
+  "corners": 92,
+  "edges": 270,
+  "faces": 180,
+  "faces_by_sides": {
+   "3": 180
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "truncated dodecahedron Star",
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_DODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "truncated dodecahedron",
+  "D": null,
+  "slug": "truncated-dodecahedron",
+  "part": "star_phi",
+  "corners": 92,
+  "edges": 270,
+  "faces": 180,
+  "faces_by_sides": {
+   "3": 180
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden truncated dodecahedron Star",
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_DODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "truncated icosahedron",
+  "D": null,
+  "slug": "truncated-icosahedron",
+  "part": "centre_halo",
+  "corners": 32,
+  "edges": 90,
+  "faces": 60,
+  "faces_by_sides": {
+   "3": 60
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "v7: Star Halo"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "truncated icosahedron",
+  "D": null,
+  "slug": "truncated-icosahedron",
+  "part": "polar_halo",
+  "corners": 32,
+  "edges": 90,
+  "faces": 60,
+  "faces_by_sides": {
+   "3": 60
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Catalan: PENTAKIS_DODECAHEDRON",
+   "v7: pentakis dodecahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "truncated icosahedron",
+  "D": null,
+  "slug": "truncated-icosahedron",
+  "part": "star_2",
+  "corners": 92,
+  "edges": 270,
+  "faces": 180,
+  "faces_by_sides": {
+   "3": 180
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "truncated icosahedron Star",
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_ICOSAHEDRON"
+  ]
+ },
+ {
+  "shape": "truncated icosahedron",
+  "D": null,
+  "slug": "truncated-icosahedron",
+  "part": "star_phi",
+  "corners": 92,
+  "edges": 270,
+  "faces": 180,
+  "faces_by_sides": {
+   "3": 180
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "v7: Golden TI Star"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null,
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_ICOSAHEDRON"
+  ]
+ },
+ {
+  "shape": "truncated icosidodecahedron",
+  "D": null,
+  "slug": "truncated-icosidodecahedron",
+  "part": "centre_halo",
+  "corners": 62,
+  "edges": 180,
+  "faces": 120,
+  "faces_by_sides": {
+   "3": 120
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "truncated icosidodecahedron Halo"
+ },
+ {
+  "shape": "truncated icosidodecahedron",
+  "D": null,
+  "slug": "truncated-icosidodecahedron",
+  "part": "polar_halo",
+  "corners": 62,
+  "edges": 180,
+  "faces": 120,
+  "faces_by_sides": {
+   "3": 120
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Catalan: DISDYAKIS_TRIACONTAHEDRON",
+   "v7: disdyakis triacontahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "truncated icosidodecahedron",
+  "D": null,
+  "slug": "truncated-icosidodecahedron",
+  "part": "star_2",
+  "corners": 182,
+  "edges": 540,
+  "faces": 360,
+  "faces_by_sides": {
+   "3": 360
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "truncated icosidodecahedron Star",
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_ICOSIDODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "truncated icosidodecahedron",
+  "D": null,
+  "slug": "truncated-icosidodecahedron",
+  "part": "star_phi",
+  "corners": 182,
+  "edges": 540,
+  "faces": 360,
+  "faces_by_sides": {
+   "3": 360
+  },
+  "symmetry": "Ih",
+  "symmetry_order": 120,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden truncated icosidodecahedron Star",
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_ICOSIDODECAHEDRON"
+  ]
+ },
+ {
+  "shape": "truncated octahedron",
+  "D": null,
+  "slug": "truncated-octahedron",
+  "part": "centre_halo",
+  "corners": 14,
+  "edges": 24,
+  "faces": 12,
+  "faces_by_sides": {
+   "4": 12
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Catalan: RHOMBIC_DODECAHEDRON",
+   "v7: rhombic dodecahedron"
+  ],
+  "same_as": [
+   "cuboctahedron / polar_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "truncated octahedron",
+  "D": null,
+  "slug": "truncated-octahedron",
+  "part": "polar_halo",
+  "corners": 14,
+  "edges": 36,
+  "faces": 24,
+  "faces_by_sides": {
+   "3": 24
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Catalan: TETRAKIS_HEXAHEDRON",
+   "v7: tetrakis hexahedron"
+  ],
+  "same_as": [
+   "cuboctahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "truncated octahedron",
+  "D": null,
+  "slug": "truncated-octahedron",
+  "part": "star_2",
+  "corners": 38,
+  "edges": 108,
+  "faces": 72,
+  "faces_by_sides": {
+   "3": 72
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "truncated octahedron Star",
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_OCTAHEDRON"
+  ]
+ },
+ {
+  "shape": "truncated octahedron",
+  "D": null,
+  "slug": "truncated-octahedron",
+  "part": "star_phi",
+  "corners": 38,
+  "edges": 108,
+  "faces": 72,
+  "faces_by_sides": {
+   "3": 72
+  },
+  "symmetry": "Oh",
+  "symmetry_order": 48,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden truncated octahedron Star",
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_OCTAHEDRON"
+  ]
+ },
+ {
+  "shape": "truncated tetrahedron",
+  "D": null,
+  "slug": "truncated-tetrahedron",
+  "part": "centre_halo",
+  "corners": 8,
+  "edges": 18,
+  "faces": 12,
+  "faces_by_sides": {
+   "3": 12
+  },
+  "symmetry": "Td",
+  "symmetry_order": 24,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Catalan: TRIAKIS_TETRAHEDRON",
+   "v7: triakis tetrahedron"
+  ],
+  "same_as": [],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "truncated tetrahedron",
+  "D": null,
+  "slug": "truncated-tetrahedron",
+  "part": "polar_halo",
+  "corners": 8,
+  "edges": 18,
+  "faces": 12,
+  "faces_by_sides": {
+   "3": 12
+  },
+  "symmetry": "Td",
+  "symmetry_order": 24,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [
+   "Catalan: TRIAKIS_TETRAHEDRON",
+   "v7: triakis tetrahedron"
+  ],
+  "same_as": [
+   "truncated tetrahedron / centre_halo"
+  ],
+  "status": "known",
+  "placeholder": null
+ },
+ {
+  "shape": "truncated tetrahedron",
+  "D": null,
+  "slug": "truncated-tetrahedron",
+  "part": "star_2",
+  "corners": 20,
+  "edges": 54,
+  "faces": 36,
+  "faces_by_sides": {
+   "3": 36
+  },
+  "symmetry": "Td",
+  "symmetry_order": 24,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "truncated tetrahedron Star",
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_TETRAHEDRON"
+  ]
+ },
+ {
+  "shape": "truncated tetrahedron",
+  "D": null,
+  "slug": "truncated-tetrahedron",
+  "part": "star_phi",
+  "corners": 20,
+  "edges": 54,
+  "faces": 36,
+  "faces_by_sides": {
+   "3": 36
+  },
+  "symmetry": "Td",
+  "symmetry_order": 24,
+  "exact": true,
+  "exact_check": true,
+  "field": "Q(sqrt(5))",
+  "matches": [],
+  "same_as": [],
+  "status": "NEW",
+  "placeholder": "Golden truncated tetrahedron Star",
+  "base_is_classical": [
+   "Archimedean: TRUNCATED_TETRAHEDRON"
+  ]
+ }
+]

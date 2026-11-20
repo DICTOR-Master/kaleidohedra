@@ -1,0 +1,15 @@
+PASS calibration cube: ZERO (want ZERO)
+PASS calibration rhombic dodecahedron: ZERO (want ZERO)
+PASS calibration truncated octahedron: ZERO (want ZERO)
+PASS calibration rhombic triacontahedron: ZERO (want ZERO)
+PASS calibration golden prolate rhombohedron: ZERO (want ZERO)
+PASS calibration golden oblate rhombohedron: ZERO (want ZERO)
+PASS calibration tetrahedron: NONZERO (want NONZERO)
+PASS calibration octahedron: NONZERO (want NONZERO)
+PASS calibration icosahedron: NONZERO (want NONZERO)
+PASS calibration dodecahedron: NONZERO (want NONZERO)
+PASS calibration RD centre pyramid over one rhombus: ZERO (want ZERO)
+PASS union control: two unit cubes (a brick): ZERO (want ZERO); dihedrals 1, independent 0, max coefficient sum 0.0
+PASS union control: one tetrahedron + one octahedron of the octet: NONZERO (want NONZERO); dihedrals 2, independent 1, max coefficient sum 8.4853
+PASS union control: one octet cell, 2 tetrahedra + 1 octahedron (the lattice relation): ZERO (want ZERO); dihedrals 2, independent 1, max coefficient sum 0.0
+FINAL ok

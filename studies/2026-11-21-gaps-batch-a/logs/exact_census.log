@@ -1,0 +1,156 @@
+PASS dodecahedron / centre_halo: exact hull/surface ok True; 12 corners, 20 faces {3: 20}; census.py agrees True; collect: known; exact: [('Platonic: ICOSAHEDRON', 'same'), ('v7: icosahedron', 'same')]
+PASS dodecahedron / polar_halo: exact hull/surface ok True; 12 corners, 20 faces {3: 20}; census.py agrees True; collect: known; exact: [('Platonic: ICOSAHEDRON', 'same'), ('v7: icosahedron', 'same')]
+PASS dodecahedron / star_2: exact hull/surface ok True; 32 corners, 60 faces {3: 60}; census.py agrees True; collect: NEW; exact: []
+PASS dodecahedron / star_phi: exact hull/surface ok True; 32 corners, 60 faces {3: 60}; census.py agrees True; collect: NEW; exact: []
+   0 s
+PASS icosahedron / centre_halo: exact hull/surface ok True; 20 corners, 12 faces {5: 12}; census.py agrees True; collect: known; exact: [('Platonic: DODECAHEDRON', 'same'), ('v7: dodecahedron', 'same')]
+PASS icosahedron / polar_halo: exact hull/surface ok True; 20 corners, 12 faces {5: 12}; census.py agrees True; collect: known; exact: [('Platonic: DODECAHEDRON', 'same'), ('v7: dodecahedron', 'same')]
+PASS icosahedron / star_2: exact hull/surface ok True; 32 corners, 60 faces {3: 60}; census.py agrees True; collect: NEW; exact: []
+PASS icosahedron / star_phi: exact hull/surface ok True; 32 corners, 60 faces {3: 60}; census.py agrees True; collect: NEW; exact: []
+   0 s
+PASS cube / centre_halo: exact hull/surface ok True; 6 corners, 8 faces {3: 8}; census.py agrees True; collect: known; exact: [('Platonic: OCTAHEDRON', 'same'), ('v7: Delilah', 'not checked exactly (target not exact here)'), ('v7: octahedron', 'same')]
+PASS cube / polar_halo: exact hull/surface ok True; 6 corners, 8 faces {3: 8}; census.py agrees True; collect: known; exact: [('Platonic: OCTAHEDRON', 'same'), ('v7: Delilah', 'not checked exactly (target not exact here)'), ('v7: octahedron', 'same')]
+PASS cube / star_2: exact hull/surface ok True; 14 corners, 12 faces {4: 12}; census.py agrees True; collect: known; exact: [('v7: rhombic dodecahedron', 'same solid')]
+PASS cube / star_phi: exact hull/surface ok True; 14 corners, 24 faces {3: 24}; census.py agrees True; collect: NEW; exact: []
+   0 s
+PASS tetrahedron / centre_halo: exact hull/surface ok True; 4 corners, 4 faces {3: 4}; census.py agrees True; collect: known; exact: [('Platonic: TETRAHEDRON', 'same'), ('v7: tetrahedron', 'same')]
+PASS tetrahedron / polar_halo: exact hull/surface ok True; 4 corners, 4 faces {3: 4}; census.py agrees True; collect: known; exact: [('Platonic: TETRAHEDRON', 'same'), ('v7: tetrahedron', 'same')]
+PASS tetrahedron / star_2: exact hull/surface ok True; 8 corners, 12 faces {3: 12}; census.py agrees True; collect: NEW; exact: []
+PASS tetrahedron / star_phi: exact hull/surface ok True; 8 corners, 12 faces {3: 12}; census.py agrees True; collect: NEW; exact: []
+   0 s
+PASS octahedron / centre_halo: exact hull/surface ok True; 8 corners, 6 faces {4: 6}; census.py agrees True; collect: known; exact: [('Platonic: CUBE', 'same'), ('v7: cube', 'same')]
+PASS octahedron / polar_halo: exact hull/surface ok True; 8 corners, 6 faces {4: 6}; census.py agrees True; collect: known; exact: [('Platonic: CUBE', 'same'), ('v7: cube', 'same')]
+PASS octahedron / star_2: exact hull/surface ok True; 14 corners, 24 faces {3: 24}; census.py agrees True; collect: known; exact: [('v7: tetrakis hexahedron', 'same corners only')]
+PASS octahedron / star_phi: exact hull/surface ok True; 14 corners, 24 faces {3: 24}; census.py agrees True; collect: NEW; exact: []
+   0 s
+PASS cuboctahedron / centre_halo: exact hull/surface ok True; 14 corners, 24 faces {3: 24}; census.py agrees True; collect: known; exact: [('Catalan: TETRAKIS_HEXAHEDRON', 'same'), ('v7: tetrakis hexahedron', 'same')]
+PASS cuboctahedron / polar_halo: exact hull/surface ok True; 14 corners, 12 faces {4: 12}; census.py agrees True; collect: known; exact: [('Catalan: RHOMBIC_DODECAHEDRON', 'same'), ('v7: rhombic dodecahedron', 'same')]
+PASS cuboctahedron / star_2: exact hull/surface ok True; 26 corners, 48 faces {3: 48}; census.py agrees True; collect: NEW; exact: []
+PASS cuboctahedron / star_phi: exact hull/surface ok True; 26 corners, 48 faces {3: 48}; census.py agrees True; collect: NEW; exact: []
+   0 s
+PASS icosidodecahedron / centre_halo: exact hull/surface ok True; 32 corners, 60 faces {3: 60}; census.py agrees True; collect: known; exact: [('v7: DICTO FPD (flat pentakis dodecahedron)', 'same'), ('v7: DICTO Palintriacontahedron', 'same')]
+PASS icosidodecahedron / polar_halo: exact hull/surface ok True; 32 corners, 30 faces {4: 30}; census.py agrees True; collect: known; exact: [('Catalan: RHOMBIC_TRIACONTAHEDRON', 'same'), ('v7: rhombic triacontahedron', 'same')]
+PASS icosidodecahedron / star_2: exact hull/surface ok True; 62 corners, 120 faces {3: 120}; census.py agrees True; collect: NEW; exact: []
+PASS icosidodecahedron / star_phi: exact hull/surface ok True; 62 corners, 120 faces {3: 120}; census.py agrees True; collect: NEW; exact: []
+   1 s
+PASS rhombicosidodecahedron / centre_halo: exact hull/surface ok True; 62 corners, 120 faces {3: 120}; census.py agrees True; collect: NEW; exact: []
+PASS rhombicosidodecahedron / polar_halo: exact hull/surface ok True; 62 corners, 60 faces {4: 60}; census.py agrees True; collect: known; exact: [('Catalan: DELTOIDAL_HEXECONTAHEDRON', 'same'), ('v7: deltoidal hexecontahedron', 'same')]
+PASS rhombicosidodecahedron / star_2: exact hull/surface ok True; 122 corners, 240 faces {3: 240}; census.py agrees True; collect: NEW; exact: []
+PASS rhombicosidodecahedron / star_phi: exact hull/surface ok True; 122 corners, 240 faces {3: 240}; census.py agrees True; collect: NEW; exact: []
+   1 s
+PASS rhombicuboctahedron / centre_halo: exact hull/surface ok True; 26 corners, 48 faces {3: 48}; census.py agrees True; collect: NEW; exact: []
+PASS rhombicuboctahedron / polar_halo: exact hull/surface ok True; 26 corners, 24 faces {4: 24}; census.py agrees True; collect: known; exact: [('Catalan: DELTOIDAL_ICOSITETRAHEDRON', 'same'), ('v7: deltoidal icositetrahedron', 'same')]
+PASS rhombicuboctahedron / star_2: exact hull/surface ok True; 50 corners, 96 faces {3: 96}; census.py agrees True; collect: NEW; exact: []
+PASS rhombicuboctahedron / star_phi: exact hull/surface ok True; 50 corners, 96 faces {3: 96}; census.py agrees True; collect: NEW; exact: []
+   2 s
+PASS snub cube / centre_halo: exact hull/surface ok True; 38 corners, 48 faces {3: 24, 4: 24}; census.py agrees True; collect: NEW; exact: []
+PASS snub cube / polar_halo: exact hull/surface ok True; 38 corners, 24 faces {5: 24}; census.py agrees True; collect: known; exact: [('Catalan: PENTAGONAL_ICOSITETRAHEDRON', 'same'), ('v7: pentagonal icositetrahedron', 'same')]
+PASS snub cube / star_2: exact hull/surface ok True; 62 corners, 120 faces {3: 120}; census.py agrees True; collect: NEW; exact: []
+PASS snub cube / star_phi: exact hull/surface ok True; 62 corners, 120 faces {3: 120}; census.py agrees True; collect: NEW; exact: []
+   3 s
+PASS snub dodecahedron / centre_halo: exact hull/surface ok True; 92 corners, 120 faces {3: 60, 4: 60}; census.py agrees True; collect: NEW; exact: []
+PASS snub dodecahedron / polar_halo: exact hull/surface ok True; 92 corners, 60 faces {5: 60}; census.py agrees True; collect: known; exact: [('Catalan: PENTAGONAL_HEXECONTAHEDRON', 'same'), ('v7: pentagonal hexecontahedron', 'same')]
+PASS snub dodecahedron / star_2: exact hull/surface ok True; 152 corners, 300 faces {3: 300}; census.py agrees True; collect: NEW; exact: []
+PASS snub dodecahedron / star_phi: exact hull/surface ok True; 152 corners, 300 faces {3: 300}; census.py agrees True; collect: NEW; exact: []
+   7 s
+PASS truncated cube / centre_halo: exact hull/surface ok True; 14 corners, 24 faces {3: 24}; census.py agrees True; collect: NEW; exact: []
+PASS truncated cube / polar_halo: exact hull/surface ok True; 14 corners, 24 faces {3: 24}; census.py agrees True; collect: known; exact: [('Catalan: TRIAKIS_OCTAHEDRON', 'same'), ('v7: triakis octahedron', 'same')]
+PASS truncated cube / star_2: exact hull/surface ok True; 38 corners, 60 faces {3: 48, 4: 12}; census.py agrees True; collect: NEW; exact: []
+PASS truncated cube / star_phi: exact hull/surface ok True; 38 corners, 72 faces {3: 72}; census.py agrees True; collect: NEW; exact: []
+   7 s
+PASS truncated cuboctahedron / centre_halo: exact hull/surface ok True; 26 corners, 48 faces {3: 48}; census.py agrees True; collect: NEW; exact: []
+PASS truncated cuboctahedron / polar_halo: exact hull/surface ok True; 26 corners, 48 faces {3: 48}; census.py agrees True; collect: known; exact: [('Catalan: DISDYAKIS_DODECAHEDRON', 'same'), ('v7: disdyakis dodecahedron', 'same')]
+PASS truncated cuboctahedron / star_2: exact hull/surface ok True; 74 corners, 144 faces {3: 144}; census.py agrees True; collect: NEW; exact: []
+PASS truncated cuboctahedron / star_phi: exact hull/surface ok True; 74 corners, 144 faces {3: 144}; census.py agrees True; collect: NEW; exact: []
+   8 s
+PASS truncated dodecahedron / centre_halo: exact hull/surface ok True; 32 corners, 60 faces {3: 60}; census.py agrees True; collect: NEW; exact: []
+PASS truncated dodecahedron / polar_halo: exact hull/surface ok True; 32 corners, 60 faces {3: 60}; census.py agrees True; collect: known; exact: [('Catalan: TRIAKIS_ICOSAHEDRON', 'same'), ('v7: triakis icosahedron', 'same')]
+PASS truncated dodecahedron / star_2: exact hull/surface ok True; 92 corners, 180 faces {3: 180}; census.py agrees True; collect: NEW; exact: []
+PASS truncated dodecahedron / star_phi: exact hull/surface ok True; 92 corners, 180 faces {3: 180}; census.py agrees True; collect: NEW; exact: []
+   8 s
+PASS truncated icosahedron / centre_halo: exact hull/surface ok True; 32 corners, 60 faces {3: 60}; census.py agrees True; collect: known; exact: [('v7: Star Halo', 'same')]
+PASS truncated icosahedron / polar_halo: exact hull/surface ok True; 32 corners, 60 faces {3: 60}; census.py agrees True; collect: known; exact: [('Catalan: PENTAKIS_DODECAHEDRON', 'same'), ('v7: pentakis dodecahedron', 'same')]
+PASS truncated icosahedron / star_2: exact hull/surface ok True; 92 corners, 180 faces {3: 180}; census.py agrees True; collect: NEW; exact: []
+PASS truncated icosahedron / star_phi: exact hull/surface ok True; 92 corners, 180 faces {3: 180}; census.py agrees True; collect: known; exact: [('v7: Golden TI Star', 'same solid')]
+   8 s
+PASS truncated icosidodecahedron / centre_halo: exact hull/surface ok True; 62 corners, 120 faces {3: 120}; census.py agrees True; collect: NEW; exact: []
+PASS truncated icosidodecahedron / polar_halo: exact hull/surface ok True; 62 corners, 120 faces {3: 120}; census.py agrees True; collect: known; exact: [('Catalan: DISDYAKIS_TRIACONTAHEDRON', 'same'), ('v7: disdyakis triacontahedron', 'same')]
+PASS truncated icosidodecahedron / star_2: exact hull/surface ok True; 182 corners, 360 faces {3: 360}; census.py agrees True; collect: NEW; exact: []
+PASS truncated icosidodecahedron / star_phi: exact hull/surface ok True; 182 corners, 360 faces {3: 360}; census.py agrees True; collect: NEW; exact: []
+   9 s
+PASS truncated octahedron / centre_halo: exact hull/surface ok True; 14 corners, 12 faces {4: 12}; census.py agrees True; collect: known; exact: [('Catalan: RHOMBIC_DODECAHEDRON', 'same'), ('v7: rhombic dodecahedron', 'same')]
+PASS truncated octahedron / polar_halo: exact hull/surface ok True; 14 corners, 24 faces {3: 24}; census.py agrees True; collect: known; exact: [('Catalan: TETRAKIS_HEXAHEDRON', 'same'), ('v7: tetrakis hexahedron', 'same')]
+PASS truncated octahedron / star_2: exact hull/surface ok True; 38 corners, 72 faces {3: 72}; census.py agrees True; collect: NEW; exact: []
+PASS truncated octahedron / star_phi: exact hull/surface ok True; 38 corners, 72 faces {3: 72}; census.py agrees True; collect: NEW; exact: []
+   9 s
+PASS truncated tetrahedron / centre_halo: exact hull/surface ok True; 8 corners, 12 faces {3: 12}; census.py agrees True; collect: known; exact: [('Catalan: TRIAKIS_TETRAHEDRON', 'same'), ('v7: triakis tetrahedron', 'same')]
+PASS truncated tetrahedron / polar_halo: exact hull/surface ok True; 8 corners, 12 faces {3: 12}; census.py agrees True; collect: known; exact: [('Catalan: TRIAKIS_TETRAHEDRON', 'same'), ('v7: triakis tetrahedron', 'same')]
+PASS truncated tetrahedron / star_2: exact hull/surface ok True; 20 corners, 36 faces {3: 36}; census.py agrees True; collect: NEW; exact: []
+PASS truncated tetrahedron / star_phi: exact hull/surface ok True; 20 corners, 36 faces {3: 36}; census.py agrees True; collect: NEW; exact: []
+   9 s
+PASS deltoidal hexecontahedron / centre_halo: exact hull/surface ok True; 60 corners, 62 faces {3: 20, 4: 30, 5: 12}; census.py agrees True; collect: known; exact: [('Archimedean: RHOMBICOSIDODECAHEDRON', 'same'), ('v7: rhombicosidodecahedron', 'same')]
+PASS deltoidal hexecontahedron / polar_halo: exact hull/surface ok True; 60 corners, 62 faces {3: 20, 4: 30, 5: 12}; census.py agrees True; collect: known; exact: [('Archimedean: RHOMBICOSIDODECAHEDRON', 'same'), ('v7: rhombicosidodecahedron', 'same')]
+PASS deltoidal hexecontahedron / star_2: exact hull/surface ok True; 122 corners, 240 faces {3: 240}; census.py agrees True; collect: NEW; exact: []
+PASS deltoidal hexecontahedron / star_phi: exact hull/surface ok True; 122 corners, 240 faces {3: 240}; census.py agrees True; collect: NEW; exact: []
+   10 s
+PASS deltoidal icositetrahedron / centre_halo: exact hull/surface ok True; 24 corners, 26 faces {3: 8, 4: 18}; census.py agrees True; collect: known; exact: [('Archimedean: RHOMBICUBOCTAHEDRON', 'same'), ('v7: rhombicuboctahedron', 'same')]
+PASS deltoidal icositetrahedron / polar_halo: exact hull/surface ok True; 24 corners, 26 faces {3: 8, 4: 18}; census.py agrees True; collect: known; exact: [('Archimedean: RHOMBICUBOCTAHEDRON', 'same'), ('v7: rhombicuboctahedron', 'same')]
+PASS deltoidal icositetrahedron / star_2: exact hull/surface ok True; 50 corners, 96 faces {3: 96}; census.py agrees True; collect: NEW; exact: []
+PASS deltoidal icositetrahedron / star_phi: exact hull/surface ok True; 50 corners, 96 faces {3: 96}; census.py agrees True; collect: NEW; exact: []
+   10 s
+PASS disdyakis dodecahedron / centre_halo: exact hull/surface ok True; 48 corners, 26 faces {4: 12, 6: 8, 8: 6}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_CUBOCTAHEDRON', 'same'), ('v7: truncated cuboctahedron', 'same')]
+PASS disdyakis dodecahedron / polar_halo: exact hull/surface ok True; 48 corners, 26 faces {4: 12, 6: 8, 8: 6}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_CUBOCTAHEDRON', 'same'), ('v7: truncated cuboctahedron', 'same')]
+PASS disdyakis dodecahedron / star_2: exact hull/surface ok True; 74 corners, 144 faces {3: 144}; census.py agrees True; collect: NEW; exact: []
+PASS disdyakis dodecahedron / star_phi: exact hull/surface ok True; 74 corners, 144 faces {3: 144}; census.py agrees True; collect: NEW; exact: []
+   11 s
+PASS disdyakis triacontahedron / centre_halo: exact hull/surface ok True; 120 corners, 62 faces {4: 30, 6: 20, 10: 12}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_ICOSIDODECAHEDRON', 'same'), ('v7: truncated icosidodecahedron', 'same')]
+PASS disdyakis triacontahedron / polar_halo: exact hull/surface ok True; 120 corners, 62 faces {4: 30, 6: 20, 10: 12}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_ICOSIDODECAHEDRON', 'same'), ('v7: truncated icosidodecahedron', 'same')]
+PASS disdyakis triacontahedron / star_2: exact hull/surface ok True; 182 corners, 360 faces {3: 360}; census.py agrees True; collect: NEW; exact: []
+PASS disdyakis triacontahedron / star_phi: exact hull/surface ok True; 182 corners, 360 faces {3: 360}; census.py agrees True; collect: NEW; exact: []
+   11 s
+PASS pentagonal hexecontahedron / centre_halo: exact hull/surface ok True; 60 corners, 92 faces {3: 80, 5: 12}; census.py agrees True; collect: known; exact: [('Archimedean: SNUB_DODECAHEDRON', 'same'), ('v7: snub dodecahedron', 'same')]
+PASS pentagonal hexecontahedron / polar_halo: exact hull/surface ok True; 60 corners, 92 faces {3: 80, 5: 12}; census.py agrees True; collect: known; exact: [('Archimedean: SNUB_DODECAHEDRON', 'same'), ('v7: snub dodecahedron', 'same')]
+PASS pentagonal hexecontahedron / star_2: exact hull/surface ok True; 152 corners, 300 faces {3: 300}; census.py agrees True; collect: NEW; exact: []
+PASS pentagonal hexecontahedron / star_phi: exact hull/surface ok True; 152 corners, 300 faces {3: 300}; census.py agrees True; collect: NEW; exact: []
+   15 s
+PASS pentagonal icositetrahedron / centre_halo: exact hull/surface ok True; 24 corners, 38 faces {3: 32, 4: 6}; census.py agrees True; collect: known; exact: [('Archimedean: SNUB_CUBE', 'same'), ('v7: snub cube', 'same')]
+PASS pentagonal icositetrahedron / polar_halo: exact hull/surface ok True; 24 corners, 38 faces {3: 32, 4: 6}; census.py agrees True; collect: known; exact: [('Archimedean: SNUB_CUBE', 'same'), ('v7: snub cube', 'same')]
+PASS pentagonal icositetrahedron / star_2: exact hull/surface ok True; 62 corners, 120 faces {3: 120}; census.py agrees True; collect: NEW; exact: []
+PASS pentagonal icositetrahedron / star_phi: exact hull/surface ok True; 62 corners, 120 faces {3: 120}; census.py agrees True; collect: NEW; exact: []
+   16 s
+PASS pentakis dodecahedron / centre_halo: exact hull/surface ok True; 60 corners, 32 faces {5: 12, 6: 20}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_ICOSAHEDRON', 'same'), ('v7: truncated icosahedron', 'same')]
+PASS pentakis dodecahedron / polar_halo: exact hull/surface ok True; 60 corners, 32 faces {5: 12, 6: 20}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_ICOSAHEDRON', 'same'), ('v7: truncated icosahedron', 'same')]
+PASS pentakis dodecahedron / star_2: exact hull/surface ok True; 92 corners, 180 faces {3: 180}; census.py agrees True; collect: NEW; exact: []
+PASS pentakis dodecahedron / star_phi: exact hull/surface ok True; 92 corners, 180 faces {3: 180}; census.py agrees True; collect: NEW; exact: []
+   17 s
+PASS rhombic dodecahedron / centre_halo: exact hull/surface ok True; 12 corners, 14 faces {3: 8, 4: 6}; census.py agrees True; collect: known; exact: [('Archimedean: CUBOCTAHEDRON', 'same'), ('v7: cuboctahedron', 'same')]
+PASS rhombic dodecahedron / polar_halo: exact hull/surface ok True; 12 corners, 14 faces {3: 8, 4: 6}; census.py agrees True; collect: known; exact: [('Archimedean: CUBOCTAHEDRON', 'same'), ('v7: cuboctahedron', 'same')]
+PASS rhombic dodecahedron / star_2: exact hull/surface ok True; 26 corners, 48 faces {3: 48}; census.py agrees True; collect: NEW; exact: []
+PASS rhombic dodecahedron / star_phi: exact hull/surface ok True; 26 corners, 48 faces {3: 48}; census.py agrees True; collect: NEW; exact: []
+   17 s
+PASS rhombic triacontahedron / centre_halo: exact hull/surface ok True; 30 corners, 32 faces {3: 20, 5: 12}; census.py agrees True; collect: known; exact: [('Archimedean: ICOSIDODECAHEDRON', 'same'), ('v7: icosidodecahedron', 'same')]
+PASS rhombic triacontahedron / polar_halo: exact hull/surface ok True; 30 corners, 32 faces {3: 20, 5: 12}; census.py agrees True; collect: known; exact: [('Archimedean: ICOSIDODECAHEDRON', 'same'), ('v7: icosidodecahedron', 'same')]
+PASS rhombic triacontahedron / star_2: exact hull/surface ok True; 62 corners, 120 faces {3: 120}; census.py agrees True; collect: NEW; exact: []
+PASS rhombic triacontahedron / star_phi: exact hull/surface ok True; 62 corners, 120 faces {3: 120}; census.py agrees True; collect: NEW; exact: []
+   17 s
+PASS tetrakis hexahedron / centre_halo: exact hull/surface ok True; 24 corners, 14 faces {4: 6, 6: 8}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_OCTAHEDRON', 'same'), ('v7: truncated octahedron', 'same')]
+PASS tetrakis hexahedron / polar_halo: exact hull/surface ok True; 24 corners, 14 faces {4: 6, 6: 8}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_OCTAHEDRON', 'same'), ('v7: truncated octahedron', 'same')]
+PASS tetrakis hexahedron / star_2: exact hull/surface ok True; 38 corners, 72 faces {3: 72}; census.py agrees True; collect: NEW; exact: []
+PASS tetrakis hexahedron / star_phi: exact hull/surface ok True; 38 corners, 72 faces {3: 72}; census.py agrees True; collect: NEW; exact: []
+   17 s
+PASS triakis icosahedron / centre_halo: exact hull/surface ok True; 60 corners, 32 faces {3: 20, 10: 12}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_DODECAHEDRON', 'same'), ('v7: truncated dodecahedron', 'same')]
+PASS triakis icosahedron / polar_halo: exact hull/surface ok True; 60 corners, 32 faces {3: 20, 10: 12}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_DODECAHEDRON', 'same'), ('v7: truncated dodecahedron', 'same')]
+PASS triakis icosahedron / star_2: exact hull/surface ok True; 92 corners, 180 faces {3: 180}; census.py agrees True; collect: NEW; exact: []
+PASS triakis icosahedron / star_phi: exact hull/surface ok True; 92 corners, 180 faces {3: 180}; census.py agrees True; collect: NEW; exact: []
+   17 s
+PASS triakis octahedron / centre_halo: exact hull/surface ok True; 24 corners, 14 faces {3: 8, 8: 6}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_CUBE', 'same'), ('v7: truncated cube', 'same')]
+PASS triakis octahedron / polar_halo: exact hull/surface ok True; 24 corners, 14 faces {3: 8, 8: 6}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_CUBE', 'same'), ('v7: truncated cube', 'same')]
+PASS triakis octahedron / star_2: exact hull/surface ok True; 38 corners, 72 faces {3: 72}; census.py agrees True; collect: NEW; exact: []
+PASS triakis octahedron / star_phi: exact hull/surface ok True; 38 corners, 72 faces {3: 72}; census.py agrees True; collect: NEW; exact: []
+   18 s
+PASS triakis tetrahedron / centre_halo: exact hull/surface ok True; 12 corners, 8 faces {3: 4, 6: 4}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_TETRAHEDRON', 'same'), ('v7: truncated tetrahedron', 'same')]
+PASS triakis tetrahedron / polar_halo: exact hull/surface ok True; 12 corners, 8 faces {3: 4, 6: 4}; census.py agrees True; collect: known; exact: [('Archimedean: TRUNCATED_TETRAHEDRON', 'same'), ('v7: truncated tetrahedron', 'same')]
+PASS triakis tetrahedron / star_2: exact hull/surface ok True; 20 corners, 36 faces {3: 36}; census.py agrees True; collect: NEW; exact: []
+PASS triakis tetrahedron / star_phi: exact hull/surface ok True; 20 corners, 36 faces {3: 36}; census.py agrees True; collect: NEW; exact: []
+   18 s
+FINAL ok

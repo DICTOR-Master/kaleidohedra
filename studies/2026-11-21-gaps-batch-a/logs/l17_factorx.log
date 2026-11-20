@@ -1,0 +1,15 @@
+PASS factor x: T(x = 1/3): NONZERO (want NONZERO); dihedrals 2, independent 1, max coefficient sum 22.627
+PASS factor x: cell T(x) + x T(1/x), x = 1/3: ZERO (want ZERO); dihedrals 2, independent 1, max coefficient sum 1.6868e-79
+PASS factor x: T(x = 1/2 (DICTO 1:2 Truncated Octahedron)): NONZERO (want NONZERO); dihedrals 2, independent 1, max coefficient sum 16.971
+PASS factor x: cell T(x) + x T(1/x), x = 1/2 (DICTO 1:2 Truncated Octahedron): ZERO (want ZERO); dihedrals 2, independent 1, max coefficient sum 0.0
+PASS factor x: T(x = 1/tau): NONZERO (want NONZERO); dihedrals 2, independent 1, max coefficient sum 12.964
+PASS factor x: cell T(x) + x T(1/x), x = 1/tau: ZERO (want ZERO); dihedrals 2, independent 1, max coefficient sum 1.6024e-79
+PASS factor x: T(x = 1 (Kelvin)): ZERO (want ZERO); dihedrals 2, independent 1, max coefficient sum 0.0
+PASS factor x: cell T(x) + x T(1/x), x = 1 (Kelvin): ZERO (want ZERO); dihedrals 2, independent 1, max coefficient sum 0.0
+PASS factor x: T(x = tau (Icosaxes)): NONZERO (want NONZERO); dihedrals 2, independent 1, max coefficient sum 10.488
+PASS factor x: cell T(x) + x T(1/x), x = tau (Icosaxes): ZERO (want ZERO); dihedrals 2, independent 1, max coefficient sum 5.0603e-80
+PASS factor x: T(x = 2 (DICTO 2:1 Truncated Octahedron)): NONZERO (want NONZERO); dihedrals 2, independent 1, max coefficient sum 33.941
+PASS factor x: cell T(x) + x T(1/x), x = 2 (DICTO 2:1 Truncated Octahedron): ZERO (want ZERO); dihedrals 2, independent 1, max coefficient sum 0.0
+PASS factor x: T(x = 3): NONZERO (want NONZERO); dihedrals 2, independent 1, max coefficient sum 67.882
+PASS factor x: cell T(x) + x T(1/x), x = 3: ZERO (want ZERO); dihedrals 2, independent 1, max coefficient sum 4.0482e-79
+FINAL ok

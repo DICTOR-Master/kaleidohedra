@@ -1,0 +1,39 @@
+PASS exact volumes: icosahedron 5/4 + 5/12*sqrt5, Unborn 1/4 + 7/12*sqrt5 = (3 + 7 sqrt5)/12, dodecahedron (edge 1/phi) 5/4 + 1/4*sqrt5, Tricap 1/8 + -1/24*sqrt5 = (3 - sqrt5)/24 (all 8 equal), D = Unborn + 8 Tricaps
+PASS s = 1/10: 12 + 12 pyramids; cell volume I(s) + U(s) = 2 + 1*sqrt5 = phi^3 (exact)
+     keyed walk: Dodecaxes(s) = dodecahedron + 12 AXE pyramids, s = 1/10: NONZERO; dihedrals 5, independent mod pi 4, rational [], max coefficient sum 24.0, 1 s
+     keyed walk: the same as Unborn + 8 Tricaps + 12 pyramids, s = 1/10: NONZERO; dihedrals 7, independent mod pi 5, rational [], max coefficient sum 24.0, 1 s
+PASS s = 1/5: 12 + 12 pyramids; cell volume I(s) + U(s) = 2 + 1*sqrt5 = phi^3 (exact)
+     keyed walk: Dodecaxes(s) = dodecahedron + 12 AXE pyramids, s = 1/5: NONZERO; dihedrals 5, independent mod pi 4, rational [], max coefficient sum 24.0, 1 s
+     keyed walk: the same as Unborn + 8 Tricaps + 12 pyramids, s = 1/5: NONZERO; dihedrals 7, independent mod pi 5, rational [], max coefficient sum 24.0, 1 s
+PASS s = 3/10: 12 + 12 pyramids; cell volume I(s) + U(s) = 2 + 1*sqrt5 = phi^3 (exact)
+     keyed walk: Dodecaxes(s) = dodecahedron + 12 AXE pyramids, s = 3/10: NONZERO; dihedrals 5, independent mod pi 4, rational [], max coefficient sum 24.0, 1 s
+     keyed walk: the same as Unborn + 8 Tricaps + 12 pyramids, s = 3/10: NONZERO; dihedrals 7, independent mod pi 5, rational [], max coefficient sum 24.0, 1 s
+PASS s = 2/5: 12 + 12 pyramids; cell volume I(s) + U(s) = 2 + 1*sqrt5 = phi^3 (exact)
+     keyed walk: Dodecaxes(s) = dodecahedron + 12 AXE pyramids, s = 2/5: NONZERO; dihedrals 5, independent mod pi 4, rational [], max coefficient sum 24.0, 1 s
+     keyed walk: the same as Unborn + 8 Tricaps + 12 pyramids, s = 2/5: NONZERO; dihedrals 7, independent mod pi 5, rational [], max coefficient sum 24.0, 1 s
+PASS s = 1/2: 12 + 12 pyramids; cell volume I(s) + U(s) = 2 + 1*sqrt5 = phi^3 (exact)
+     keyed walk: Dodecaxes(s) = dodecahedron + 12 AXE pyramids, s = 1/2: NONZERO; dihedrals 5, independent mod pi 4, rational [], max coefficient sum 24.0, 1 s
+     keyed walk: the same as Unborn + 8 Tricaps + 12 pyramids, s = 1/2: NONZERO; dihedrals 7, independent mod pi 5, rational [], max coefficient sum 24.0, 1 s
+PASS s = 3/5: 12 + 12 pyramids; cell volume I(s) + U(s) = 2 + 1*sqrt5 = phi^3 (exact)
+     keyed walk: Dodecaxes(s) = dodecahedron + 12 AXE pyramids, s = 3/5: NONZERO; dihedrals 5, independent mod pi 4, rational [], max coefficient sum 24.0, 1 s
+     keyed walk: the same as Unborn + 8 Tricaps + 12 pyramids, s = 3/5: NONZERO; dihedrals 7, independent mod pi 5, rational [], max coefficient sum 24.0, 1 s
+PASS s = 1/phi (golden): 12 + 12 pyramids; cell volume I(s) + U(s) = 2 + 1*sqrt5 = phi^3 (exact)
+     keyed walk: Dodecaxes(s) = dodecahedron + 12 AXE pyramids, s = 1/phi (golden): NONZERO; dihedrals 5, independent mod pi 3, rational [], max coefficient sum 24.0, 1 s
+     keyed walk: the same as Unborn + 8 Tricaps + 12 pyramids, s = 1/phi (golden): NONZERO; dihedrals 6, independent mod pi 3, rational [], max coefficient sum 24.0, 1 s
+     keyed variants at the golden cut: Unborn Axes + 1 Tricap keys: NONZERO; dihedrals 6, independent mod pi 3, rational [], max coefficient sum 6.4822, 1 s
+     keyed variants at the golden cut: Unborn Axes + 2 Tricap keys: NONZERO; dihedrals 6, independent mod pi 3, rational [], max coefficient sum 6.4822, 2 s
+     keyed variants at the golden cut: Unborn Axes + 3 Tricap keys: NONZERO; dihedrals 6, independent mod pi 3, rational [], max coefficient sum 9.0, 2 s
+     keyed variants at the golden cut: Unborn Axes + 4 Tricap keys: NONZERO; dihedrals 6, independent mod pi 3, rational [], max coefficient sum 12.0, 2 s
+     keyed variants at the golden cut: Unborn Axes + 5 Tricap keys: NONZERO; dihedrals 6, independent mod pi 3, rational [], max coefficient sum 15.0, 2 s
+     keyed variants at the golden cut: Unborn Axes + 6 Tricap keys: NONZERO; dihedrals 6, independent mod pi 3, rational [], max coefficient sum 18.0, 2 s
+     keyed variants at the golden cut: Unborn Axes + 7 Tricap keys: NONZERO; dihedrals 6, independent mod pi 3, rational [], max coefficient sum 21.0, 2 s
+PASS s = 7/10: 12 + 12 pyramids; cell volume I(s) + U(s) = 2 + 1*sqrt5 = phi^3 (exact)
+     keyed walk: Dodecaxes(s) = dodecahedron + 12 AXE pyramids, s = 7/10: NONZERO; dihedrals 5, independent mod pi 4, rational [], max coefficient sum 24.0, 2 s
+     keyed walk: the same as Unborn + 8 Tricaps + 12 pyramids, s = 7/10: NONZERO; dihedrals 7, independent mod pi 5, rational [], max coefficient sum 24.0, 2 s
+PASS s = 4/5: 12 + 12 pyramids; cell volume I(s) + U(s) = 2 + 1*sqrt5 = phi^3 (exact)
+     keyed walk: Dodecaxes(s) = dodecahedron + 12 AXE pyramids, s = 4/5: NONZERO; dihedrals 5, independent mod pi 4, rational [], max coefficient sum 24.0, 2 s
+     keyed walk: the same as Unborn + 8 Tricaps + 12 pyramids, s = 4/5: NONZERO; dihedrals 7, independent mod pi 5, rational [], max coefficient sum 24.0, 2 s
+PASS s = 9/10: 12 + 12 pyramids; cell volume I(s) + U(s) = 2 + 1*sqrt5 = phi^3 (exact)
+     keyed walk: Dodecaxes(s) = dodecahedron + 12 AXE pyramids, s = 9/10: NONZERO; dihedrals 5, independent mod pi 4, rational [], max coefficient sum 24.0, 2 s
+     keyed walk: the same as Unborn + 8 Tricaps + 12 pyramids, s = 9/10: NONZERO; dihedrals 7, independent mod pi 5, rational [], max coefficient sum 24.0, 2 s
+FINAL ok

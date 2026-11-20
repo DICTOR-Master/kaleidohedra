@@ -1,0 +1,35 @@
+PASS Delian t = 1/10: exact volumes T(t) 9/1000, O(t) 991/500 as #51 Main theorem; 2 T + O = 2 octet tetrahedra + 1 octahedron = 2
+     Delian T(t), t = 1/10: NONZERO; dihedrals 1, independent mod pi 1, rational [], max coefficient sum 2.5456, 1 s
+     Delian O(t), t = 1/10: NONZERO; dihedrals 2, independent mod pi 1, rational [], max coefficient sum 10.182, 1 s
+PASS Delian cell 2 T(t) + O(t), t = 1/10: ZERO (want ZERO); dihedrals 3, independent 1, max coefficient sum 7.9066e-81
+PASS Delian t = 1/5: exact volumes T(t) 9/125, O(t) 232/125 as #51 Main theorem; 2 T + O = 2 octet tetrahedra + 1 octahedron = 2
+     Delian T(t), t = 1/5: NONZERO; dihedrals 1, independent mod pi 1, rational [], max coefficient sum 5.0912, 2 s
+     Delian O(t), t = 1/5: NONZERO; dihedrals 2, independent mod pi 1, rational [], max coefficient sum 20.365, 2 s
+PASS Delian cell 2 T(t) + O(t), t = 1/5: ZERO (want ZERO); dihedrals 3, independent 1, max coefficient sum 1.5813e-80
+PASS Delian t = 1/3: exact volumes T(t) 1/3, O(t) 4/3 as #51 Main theorem; 2 T + O = 2 octet tetrahedra + 1 octahedron = 2
+     Delian T(t), t = 1/3: NONZERO; dihedrals 1, independent mod pi 1, rational [], max coefficient sum 8.4853, 2 s
+     Delian O(t), t = 1/3: NONZERO; dihedrals 1, independent mod pi 1, rational [], max coefficient sum 16.971, 2 s
+PASS Delian cell 2 T(t) + O(t), t = 1/3: ZERO (want ZERO); dihedrals 2, independent 1, max coefficient sum 0.0
+PASS Delian t = 2/5: exact volumes T(t) 257/500, O(t) 243/250 as #51 Main theorem; 2 T + O = 2 octet tetrahedra + 1 octahedron = 2
+     Delian T(t), t = 2/5: NONZERO; dihedrals 2, independent mod pi 1, rational [], max coefficient sum 15.274, 2 s
+     Delian O(t), t = 2/5: NONZERO; dihedrals 1, independent mod pi 1, rational [], max coefficient sum 15.274, 2 s
+PASS Delian cell 2 T(t) + O(t), t = 2/5: ZERO (want ZERO); dihedrals 3, independent 1, max coefficient sum 0.0
+PASS Delian t = 1/2: exact volumes T(t) 23/32, O(t) 9/16 as #51 Main theorem; 2 T + O = 2 octet tetrahedra + 1 octahedron = 2
+     Delian T(t), t = 1/2: NONZERO; dihedrals 2, independent mod pi 1, rational [], max coefficient sum 12.728, 2 s
+     Delian O(t), t = 1/2: NONZERO; dihedrals 1, independent mod pi 1, rational [], max coefficient sum 12.728, 2 s
+PASS Delian cell 2 T(t) + O(t), t = 1/2: ZERO (want ZERO); dihedrals 3, independent 1, max coefficient sum 1.3494e-79
+PASS Delian t = 3/5: exact volumes T(t) 107/125, O(t) 36/125 as #51 Main theorem; 2 T + O = 2 octet tetrahedra + 1 octahedron = 2
+     Delian T(t), t = 3/5: NONZERO; dihedrals 2, independent mod pi 1, rational [], max coefficient sum 10.182, 2 s
+     Delian O(t), t = 3/5: NONZERO; dihedrals 1, independent mod pi 1, rational [], max coefficient sum 10.182, 2 s
+PASS Delian cell 2 T(t) + O(t), t = 3/5: ZERO (want ZERO); dihedrals 3, independent 1, max coefficient sum 2.9518e-80
+PASS Delian t = 4/5: exact volumes T(t) 491/500, O(t) 9/250 as #51 Main theorem; 2 T + O = 2 octet tetrahedra + 1 octahedron = 2
+     Delian T(t), t = 4/5: NONZERO; dihedrals 2, independent mod pi 1, rational [], max coefficient sum 5.0912, 2 s
+     Delian O(t), t = 4/5: NONZERO; dihedrals 1, independent mod pi 1, rational [], max coefficient sum 5.0912, 2 s
+PASS Delian cell 2 T(t) + O(t), t = 4/5: ZERO (want ZERO); dihedrals 3, independent 1, max coefficient sum 2.1084e-81
+PASS Delian t = 9/10: exact volumes T(t) 3991/4000, O(t) 9/2000 as #51 Main theorem; 2 T + O = 2 octet tetrahedra + 1 octahedron = 2
+     Delian T(t), t = 9/10: NONZERO; dihedrals 2, independent mod pi 1, rational [], max coefficient sum 2.5456, 2 s
+     Delian O(t), t = 9/10: NONZERO; dihedrals 1, independent mod pi 1, rational [], max coefficient sum 2.5456, 2 s
+PASS Delian cell 2 T(t) + O(t), t = 9/10: ZERO (want ZERO); dihedrals 3, independent 1, max coefficient sum 1.0542e-81
+PASS Delian t = 0: O(0) = the rhombic dodecahedron: ZERO (want ZERO); dihedrals 1, independent 0, max coefficient sum 0.0
+PASS Delian t = 1: T(1) = the cube: ZERO (want ZERO); dihedrals 1, independent 0, max coefficient sum 0.0
+FINAL ok

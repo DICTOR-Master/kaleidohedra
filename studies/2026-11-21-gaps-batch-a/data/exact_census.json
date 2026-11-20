@@ -1,0 +1,2602 @@
+[
+ {
+  "slug": "dodecahedron",
+  "name": "dodecahedron",
+  "family": "Platonic",
+  "field": "Q(sqrt5)",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 12,
+   "faces": 20,
+   "faces_by_sides": {
+    "3": 20
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Platonic: ICOSAHEDRON",
+    "v7: icosahedron"
+   ],
+   "exact_matches": [
+    [
+     "Platonic: ICOSAHEDRON",
+     "same"
+    ],
+    [
+     "v7: icosahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 12,
+   "faces": 20,
+   "faces_by_sides": {
+    "3": 20
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Platonic: ICOSAHEDRON",
+    "v7: icosahedron"
+   ],
+   "exact_matches": [
+    [
+     "Platonic: ICOSAHEDRON",
+     "same"
+    ],
+    [
+     "v7: icosahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 32,
+   "faces": 60,
+   "faces_by_sides": {
+    "3": 60
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 32,
+   "faces": 60,
+   "faces_by_sides": {
+    "3": 60
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "icosahedron",
+  "name": "icosahedron",
+  "family": "Platonic",
+  "field": "Q(sqrt5)",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 20,
+   "faces": 12,
+   "faces_by_sides": {
+    "5": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Platonic: DODECAHEDRON",
+    "v7: dodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Platonic: DODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: dodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 20,
+   "faces": 12,
+   "faces_by_sides": {
+    "5": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Platonic: DODECAHEDRON",
+    "v7: dodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Platonic: DODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: dodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 32,
+   "faces": 60,
+   "faces_by_sides": {
+    "3": 60
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 32,
+   "faces": 60,
+   "faces_by_sides": {
+    "3": 60
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "cube",
+  "name": "cube",
+  "family": "Platonic",
+  "field": "Q(sqrt5)",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 6,
+   "faces": 8,
+   "faces_by_sides": {
+    "3": 8
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Platonic: OCTAHEDRON",
+    "v7: Delilah",
+    "v7: octahedron"
+   ],
+   "exact_matches": [
+    [
+     "Platonic: OCTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: Delilah",
+     "not checked exactly (target not exact here)"
+    ],
+    [
+     "v7: octahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 6,
+   "faces": 8,
+   "faces_by_sides": {
+    "3": 8
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Platonic: OCTAHEDRON",
+    "v7: Delilah",
+    "v7: octahedron"
+   ],
+   "exact_matches": [
+    [
+     "Platonic: OCTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: Delilah",
+     "not checked exactly (target not exact here)"
+    ],
+    [
+     "v7: octahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 14,
+   "faces": 12,
+   "faces_by_sides": {
+    "4": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "v7: rhombic dodecahedron"
+   ],
+   "convex": true,
+   "exact_matches": [
+    [
+     "v7: rhombic dodecahedron",
+     "same solid"
+    ]
+   ]
+  },
+  "star_phi": {
+   "corners": 14,
+   "faces": 24,
+   "faces_by_sides": {
+    "3": 24
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": true,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "tetrahedron",
+  "name": "tetrahedron",
+  "family": "Platonic",
+  "field": "Q(sqrt5)",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 4,
+   "faces": 4,
+   "faces_by_sides": {
+    "3": 4
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Td",
+   "collect_status": "known",
+   "collect_matches": [
+    "Platonic: TETRAHEDRON",
+    "v7: tetrahedron"
+   ],
+   "exact_matches": [
+    [
+     "Platonic: TETRAHEDRON",
+     "same"
+    ],
+    [
+     "v7: tetrahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 4,
+   "faces": 4,
+   "faces_by_sides": {
+    "3": 4
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Td",
+   "collect_status": "known",
+   "collect_matches": [
+    "Platonic: TETRAHEDRON",
+    "v7: tetrahedron"
+   ],
+   "exact_matches": [
+    [
+     "Platonic: TETRAHEDRON",
+     "same"
+    ],
+    [
+     "v7: tetrahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 8,
+   "faces": 12,
+   "faces_by_sides": {
+    "3": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Td",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": true,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 8,
+   "faces": 12,
+   "faces_by_sides": {
+    "3": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Td",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": true,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "octahedron",
+  "name": "octahedron",
+  "family": "Platonic",
+  "field": "Q(sqrt5)",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 8,
+   "faces": 6,
+   "faces_by_sides": {
+    "4": 6
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Platonic: CUBE",
+    "v7: cube"
+   ],
+   "exact_matches": [
+    [
+     "Platonic: CUBE",
+     "same"
+    ],
+    [
+     "v7: cube",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 8,
+   "faces": 6,
+   "faces_by_sides": {
+    "4": 6
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Platonic: CUBE",
+    "v7: cube"
+   ],
+   "exact_matches": [
+    [
+     "Platonic: CUBE",
+     "same"
+    ],
+    [
+     "v7: cube",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 14,
+   "faces": 24,
+   "faces_by_sides": {
+    "3": 24
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "v7: tetrakis hexahedron"
+   ],
+   "convex": false,
+   "exact_matches": [
+    [
+     "v7: tetrakis hexahedron",
+     "same corners only"
+    ]
+   ]
+  },
+  "star_phi": {
+   "corners": 14,
+   "faces": 24,
+   "faces_by_sides": {
+    "3": 24
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "cuboctahedron",
+  "name": "cuboctahedron",
+  "family": "Archimedean",
+  "field": "Q(sqrt5)",
+  "face_families": 2,
+  "centre_halo": {
+   "corners": 14,
+   "faces": 24,
+   "faces_by_sides": {
+    "3": 24
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: TETRAKIS_HEXAHEDRON",
+    "v7: tetrakis hexahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: TETRAKIS_HEXAHEDRON",
+     "same"
+    ],
+    [
+     "v7: tetrakis hexahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 14,
+   "faces": 12,
+   "faces_by_sides": {
+    "4": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: RHOMBIC_DODECAHEDRON",
+    "v7: rhombic dodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: RHOMBIC_DODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: rhombic dodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 26,
+   "faces": 48,
+   "faces_by_sides": {
+    "3": 48
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 26,
+   "faces": 48,
+   "faces_by_sides": {
+    "3": 48
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "icosidodecahedron",
+  "name": "icosidodecahedron",
+  "family": "Archimedean",
+  "field": "Q(sqrt5)",
+  "face_families": 2,
+  "centre_halo": {
+   "corners": 32,
+   "faces": 60,
+   "faces_by_sides": {
+    "3": 60
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "v7: DICTO FPD (flat pentakis dodecahedron)",
+    "v7: DICTO Palintriacontahedron"
+   ],
+   "exact_matches": [
+    [
+     "v7: DICTO FPD (flat pentakis dodecahedron)",
+     "same"
+    ],
+    [
+     "v7: DICTO Palintriacontahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 32,
+   "faces": 30,
+   "faces_by_sides": {
+    "4": 30
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: RHOMBIC_TRIACONTAHEDRON",
+    "v7: rhombic triacontahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: RHOMBIC_TRIACONTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: rhombic triacontahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 62,
+   "faces": 120,
+   "faces_by_sides": {
+    "3": 120
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 62,
+   "faces": 120,
+   "faces_by_sides": {
+    "3": 120
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "rhombicosidodecahedron",
+  "name": "rhombicosidodecahedron",
+  "family": "Archimedean",
+  "field": "Q(sqrt5)",
+  "face_families": 3,
+  "centre_halo": {
+   "corners": 62,
+   "faces": 120,
+   "faces_by_sides": {
+    "3": 120
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "exact_matches": []
+  },
+  "polar_halo": {
+   "corners": 62,
+   "faces": 60,
+   "faces_by_sides": {
+    "4": 60
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: DELTOIDAL_HEXECONTAHEDRON",
+    "v7: deltoidal hexecontahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: DELTOIDAL_HEXECONTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: deltoidal hexecontahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 122,
+   "faces": 240,
+   "faces_by_sides": {
+    "3": 240
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 122,
+   "faces": 240,
+   "faces_by_sides": {
+    "3": 240
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "rhombicuboctahedron",
+  "name": "rhombicuboctahedron",
+  "family": "Archimedean",
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "face_families": 2,
+  "centre_halo": {
+   "corners": 26,
+   "faces": 48,
+   "faces_by_sides": {
+    "3": 48
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "exact_matches": []
+  },
+  "polar_halo": {
+   "corners": 26,
+   "faces": 24,
+   "faces_by_sides": {
+    "4": 24
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: DELTOIDAL_ICOSITETRAHEDRON",
+    "v7: deltoidal icositetrahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: DELTOIDAL_ICOSITETRAHEDRON",
+     "same"
+    ],
+    [
+     "v7: deltoidal icositetrahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 50,
+   "faces": 96,
+   "faces_by_sides": {
+    "3": 96
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 50,
+   "faces": 96,
+   "faces_by_sides": {
+    "3": 96
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "snub-cube",
+  "name": "snub cube",
+  "family": "Archimedean",
+  "field": "Q(t, sqrt5) = Q(theta), theta = t + sqrt5, t the tribonacci constant",
+  "face_families": 2,
+  "centre_halo": {
+   "corners": 38,
+   "faces": 48,
+   "faces_by_sides": {
+    "3": 24,
+    "4": 24
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "O",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "exact_matches": []
+  },
+  "polar_halo": {
+   "corners": 38,
+   "faces": 24,
+   "faces_by_sides": {
+    "5": 24
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "O",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: PENTAGONAL_ICOSITETRAHEDRON",
+    "v7: pentagonal icositetrahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: PENTAGONAL_ICOSITETRAHEDRON",
+     "same"
+    ],
+    [
+     "v7: pentagonal icositetrahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 62,
+   "faces": 120,
+   "faces_by_sides": {
+    "3": 120
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "O",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 62,
+   "faces": 120,
+   "faces_by_sides": {
+    "3": 120
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "O",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "snub-dodecahedron",
+  "name": "snub dodecahedron",
+  "family": "Archimedean",
+  "field": "Q(xi), xi^3 - 2 xi = phi",
+  "face_families": 2,
+  "centre_halo": {
+   "corners": 92,
+   "faces": 120,
+   "faces_by_sides": {
+    "3": 60,
+    "4": 60
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "I",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "exact_matches": []
+  },
+  "polar_halo": {
+   "corners": 92,
+   "faces": 60,
+   "faces_by_sides": {
+    "5": 60
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "I",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: PENTAGONAL_HEXECONTAHEDRON",
+    "v7: pentagonal hexecontahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: PENTAGONAL_HEXECONTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: pentagonal hexecontahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 152,
+   "faces": 300,
+   "faces_by_sides": {
+    "3": 300
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "I",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 152,
+   "faces": 300,
+   "faces_by_sides": {
+    "3": 300
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "I",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "truncated-cube",
+  "name": "truncated cube",
+  "family": "Archimedean",
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "face_families": 2,
+  "centre_halo": {
+   "corners": 14,
+   "faces": 24,
+   "faces_by_sides": {
+    "3": 24
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "exact_matches": []
+  },
+  "polar_halo": {
+   "corners": 14,
+   "faces": 24,
+   "faces_by_sides": {
+    "3": 24
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: TRIAKIS_OCTAHEDRON",
+    "v7: triakis octahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: TRIAKIS_OCTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: triakis octahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 38,
+   "faces": 60,
+   "faces_by_sides": {
+    "3": 48,
+    "4": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 38,
+   "faces": 72,
+   "faces_by_sides": {
+    "3": 72
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "truncated-cuboctahedron",
+  "name": "truncated cuboctahedron",
+  "family": "Archimedean",
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "face_families": 3,
+  "centre_halo": {
+   "corners": 26,
+   "faces": 48,
+   "faces_by_sides": {
+    "3": 48
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "exact_matches": []
+  },
+  "polar_halo": {
+   "corners": 26,
+   "faces": 48,
+   "faces_by_sides": {
+    "3": 48
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: DISDYAKIS_DODECAHEDRON",
+    "v7: disdyakis dodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: DISDYAKIS_DODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: disdyakis dodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 74,
+   "faces": 144,
+   "faces_by_sides": {
+    "3": 144
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 74,
+   "faces": 144,
+   "faces_by_sides": {
+    "3": 144
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "truncated-dodecahedron",
+  "name": "truncated dodecahedron",
+  "family": "Archimedean",
+  "field": "Q(sqrt5)",
+  "face_families": 2,
+  "centre_halo": {
+   "corners": 32,
+   "faces": 60,
+   "faces_by_sides": {
+    "3": 60
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "exact_matches": []
+  },
+  "polar_halo": {
+   "corners": 32,
+   "faces": 60,
+   "faces_by_sides": {
+    "3": 60
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: TRIAKIS_ICOSAHEDRON",
+    "v7: triakis icosahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: TRIAKIS_ICOSAHEDRON",
+     "same"
+    ],
+    [
+     "v7: triakis icosahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 92,
+   "faces": 180,
+   "faces_by_sides": {
+    "3": 180
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 92,
+   "faces": 180,
+   "faces_by_sides": {
+    "3": 180
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "truncated-icosahedron",
+  "name": "truncated icosahedron",
+  "family": "Archimedean",
+  "field": "Q(sqrt5)",
+  "face_families": 2,
+  "centre_halo": {
+   "corners": 32,
+   "faces": 60,
+   "faces_by_sides": {
+    "3": 60
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "v7: Star Halo"
+   ],
+   "exact_matches": [
+    [
+     "v7: Star Halo",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 32,
+   "faces": 60,
+   "faces_by_sides": {
+    "3": 60
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: PENTAKIS_DODECAHEDRON",
+    "v7: pentakis dodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: PENTAKIS_DODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: pentakis dodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 92,
+   "faces": 180,
+   "faces_by_sides": {
+    "3": 180
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 92,
+   "faces": 180,
+   "faces_by_sides": {
+    "3": 180
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "v7: Golden TI Star"
+   ],
+   "convex": false,
+   "exact_matches": [
+    [
+     "v7: Golden TI Star",
+     "same solid"
+    ]
+   ]
+  }
+ },
+ {
+  "slug": "truncated-icosidodecahedron",
+  "name": "truncated icosidodecahedron",
+  "family": "Archimedean",
+  "field": "Q(sqrt5)",
+  "face_families": 3,
+  "centre_halo": {
+   "corners": 62,
+   "faces": 120,
+   "faces_by_sides": {
+    "3": 120
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "exact_matches": []
+  },
+  "polar_halo": {
+   "corners": 62,
+   "faces": 120,
+   "faces_by_sides": {
+    "3": 120
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: DISDYAKIS_TRIACONTAHEDRON",
+    "v7: disdyakis triacontahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: DISDYAKIS_TRIACONTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: disdyakis triacontahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 182,
+   "faces": 360,
+   "faces_by_sides": {
+    "3": 360
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 182,
+   "faces": 360,
+   "faces_by_sides": {
+    "3": 360
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "truncated-octahedron",
+  "name": "truncated octahedron",
+  "family": "Archimedean",
+  "field": "Q(sqrt5)",
+  "face_families": 2,
+  "centre_halo": {
+   "corners": 14,
+   "faces": 12,
+   "faces_by_sides": {
+    "4": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: RHOMBIC_DODECAHEDRON",
+    "v7: rhombic dodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: RHOMBIC_DODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: rhombic dodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 14,
+   "faces": 24,
+   "faces_by_sides": {
+    "3": 24
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: TETRAKIS_HEXAHEDRON",
+    "v7: tetrakis hexahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: TETRAKIS_HEXAHEDRON",
+     "same"
+    ],
+    [
+     "v7: tetrakis hexahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 38,
+   "faces": 72,
+   "faces_by_sides": {
+    "3": 72
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 38,
+   "faces": 72,
+   "faces_by_sides": {
+    "3": 72
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "truncated-tetrahedron",
+  "name": "truncated tetrahedron",
+  "family": "Archimedean",
+  "field": "Q(sqrt5)",
+  "face_families": 2,
+  "centre_halo": {
+   "corners": 8,
+   "faces": 12,
+   "faces_by_sides": {
+    "3": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Td",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: TRIAKIS_TETRAHEDRON",
+    "v7: triakis tetrahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: TRIAKIS_TETRAHEDRON",
+     "same"
+    ],
+    [
+     "v7: triakis tetrahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 8,
+   "faces": 12,
+   "faces_by_sides": {
+    "3": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Td",
+   "collect_status": "known",
+   "collect_matches": [
+    "Catalan: TRIAKIS_TETRAHEDRON",
+    "v7: triakis tetrahedron"
+   ],
+   "exact_matches": [
+    [
+     "Catalan: TRIAKIS_TETRAHEDRON",
+     "same"
+    ],
+    [
+     "v7: triakis tetrahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 20,
+   "faces": 36,
+   "faces_by_sides": {
+    "3": 36
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Td",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 20,
+   "faces": 36,
+   "faces_by_sides": {
+    "3": 36
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Td",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "deltoidal-hexecontahedron",
+  "name": "deltoidal hexecontahedron",
+  "family": "Catalan",
+  "field": "Q(sqrt5)",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 60,
+   "faces": 62,
+   "faces_by_sides": {
+    "3": 20,
+    "4": 30,
+    "5": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: RHOMBICOSIDODECAHEDRON",
+    "v7: rhombicosidodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: RHOMBICOSIDODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: rhombicosidodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 60,
+   "faces": 62,
+   "faces_by_sides": {
+    "3": 20,
+    "4": 30,
+    "5": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: RHOMBICOSIDODECAHEDRON",
+    "v7: rhombicosidodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: RHOMBICOSIDODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: rhombicosidodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 122,
+   "faces": 240,
+   "faces_by_sides": {
+    "3": 240
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 122,
+   "faces": 240,
+   "faces_by_sides": {
+    "3": 240
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "deltoidal-icositetrahedron",
+  "name": "deltoidal icositetrahedron",
+  "family": "Catalan",
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 24,
+   "faces": 26,
+   "faces_by_sides": {
+    "3": 8,
+    "4": 18
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: RHOMBICUBOCTAHEDRON",
+    "v7: rhombicuboctahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: RHOMBICUBOCTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: rhombicuboctahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 24,
+   "faces": 26,
+   "faces_by_sides": {
+    "3": 8,
+    "4": 18
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: RHOMBICUBOCTAHEDRON",
+    "v7: rhombicuboctahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: RHOMBICUBOCTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: rhombicuboctahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 50,
+   "faces": 96,
+   "faces_by_sides": {
+    "3": 96
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 50,
+   "faces": 96,
+   "faces_by_sides": {
+    "3": 96
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "disdyakis-dodecahedron",
+  "name": "disdyakis dodecahedron",
+  "family": "Catalan",
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 48,
+   "faces": 26,
+   "faces_by_sides": {
+    "4": 12,
+    "6": 8,
+    "8": 6
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_CUBOCTAHEDRON",
+    "v7: truncated cuboctahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_CUBOCTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: truncated cuboctahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 48,
+   "faces": 26,
+   "faces_by_sides": {
+    "4": 12,
+    "6": 8,
+    "8": 6
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_CUBOCTAHEDRON",
+    "v7: truncated cuboctahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_CUBOCTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: truncated cuboctahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 74,
+   "faces": 144,
+   "faces_by_sides": {
+    "3": 144
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 74,
+   "faces": 144,
+   "faces_by_sides": {
+    "3": 144
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "disdyakis-triacontahedron",
+  "name": "disdyakis triacontahedron",
+  "family": "Catalan",
+  "field": "Q(sqrt5)",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 120,
+   "faces": 62,
+   "faces_by_sides": {
+    "4": 30,
+    "6": 20,
+    "10": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_ICOSIDODECAHEDRON",
+    "v7: truncated icosidodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_ICOSIDODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: truncated icosidodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 120,
+   "faces": 62,
+   "faces_by_sides": {
+    "4": 30,
+    "6": 20,
+    "10": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_ICOSIDODECAHEDRON",
+    "v7: truncated icosidodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_ICOSIDODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: truncated icosidodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 182,
+   "faces": 360,
+   "faces_by_sides": {
+    "3": 360
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 182,
+   "faces": 360,
+   "faces_by_sides": {
+    "3": 360
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "pentagonal-hexecontahedron",
+  "name": "pentagonal hexecontahedron",
+  "family": "Catalan",
+  "field": "Q(xi), xi^3 - 2 xi = phi",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 60,
+   "faces": 92,
+   "faces_by_sides": {
+    "3": 80,
+    "5": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "I",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: SNUB_DODECAHEDRON",
+    "v7: snub dodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: SNUB_DODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: snub dodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 60,
+   "faces": 92,
+   "faces_by_sides": {
+    "3": 80,
+    "5": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "I",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: SNUB_DODECAHEDRON",
+    "v7: snub dodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: SNUB_DODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: snub dodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 152,
+   "faces": 300,
+   "faces_by_sides": {
+    "3": 300
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "I",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 152,
+   "faces": 300,
+   "faces_by_sides": {
+    "3": 300
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "I",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "pentagonal-icositetrahedron",
+  "name": "pentagonal icositetrahedron",
+  "family": "Catalan",
+  "field": "Q(t, sqrt5) = Q(theta), theta = t + sqrt5, t the tribonacci constant",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 24,
+   "faces": 38,
+   "faces_by_sides": {
+    "3": 32,
+    "4": 6
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "O",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: SNUB_CUBE",
+    "v7: snub cube"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: SNUB_CUBE",
+     "same"
+    ],
+    [
+     "v7: snub cube",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 24,
+   "faces": 38,
+   "faces_by_sides": {
+    "3": 32,
+    "4": 6
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "O",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: SNUB_CUBE",
+    "v7: snub cube"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: SNUB_CUBE",
+     "same"
+    ],
+    [
+     "v7: snub cube",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 62,
+   "faces": 120,
+   "faces_by_sides": {
+    "3": 120
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "O",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 62,
+   "faces": 120,
+   "faces_by_sides": {
+    "3": 120
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "O",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "pentakis-dodecahedron",
+  "name": "pentakis dodecahedron",
+  "family": "Catalan",
+  "field": "Q(sqrt5)",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 60,
+   "faces": 32,
+   "faces_by_sides": {
+    "5": 12,
+    "6": 20
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_ICOSAHEDRON",
+    "v7: truncated icosahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_ICOSAHEDRON",
+     "same"
+    ],
+    [
+     "v7: truncated icosahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 60,
+   "faces": 32,
+   "faces_by_sides": {
+    "5": 12,
+    "6": 20
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_ICOSAHEDRON",
+    "v7: truncated icosahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_ICOSAHEDRON",
+     "same"
+    ],
+    [
+     "v7: truncated icosahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 92,
+   "faces": 180,
+   "faces_by_sides": {
+    "3": 180
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 92,
+   "faces": 180,
+   "faces_by_sides": {
+    "3": 180
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "rhombic-dodecahedron",
+  "name": "rhombic dodecahedron",
+  "family": "Catalan",
+  "field": "Q(sqrt5)",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 12,
+   "faces": 14,
+   "faces_by_sides": {
+    "3": 8,
+    "4": 6
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: CUBOCTAHEDRON",
+    "v7: cuboctahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: CUBOCTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: cuboctahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 12,
+   "faces": 14,
+   "faces_by_sides": {
+    "3": 8,
+    "4": 6
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: CUBOCTAHEDRON",
+    "v7: cuboctahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: CUBOCTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: cuboctahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 26,
+   "faces": 48,
+   "faces_by_sides": {
+    "3": 48
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 26,
+   "faces": 48,
+   "faces_by_sides": {
+    "3": 48
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "rhombic-triacontahedron",
+  "name": "rhombic triacontahedron",
+  "family": "Catalan",
+  "field": "Q(sqrt5)",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 30,
+   "faces": 32,
+   "faces_by_sides": {
+    "3": 20,
+    "5": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: ICOSIDODECAHEDRON",
+    "v7: icosidodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: ICOSIDODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: icosidodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 30,
+   "faces": 32,
+   "faces_by_sides": {
+    "3": 20,
+    "5": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: ICOSIDODECAHEDRON",
+    "v7: icosidodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: ICOSIDODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: icosidodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 62,
+   "faces": 120,
+   "faces_by_sides": {
+    "3": 120
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 62,
+   "faces": 120,
+   "faces_by_sides": {
+    "3": 120
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "tetrakis-hexahedron",
+  "name": "tetrakis hexahedron",
+  "family": "Catalan",
+  "field": "Q(sqrt5)",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 24,
+   "faces": 14,
+   "faces_by_sides": {
+    "4": 6,
+    "6": 8
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_OCTAHEDRON",
+    "v7: truncated octahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_OCTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: truncated octahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 24,
+   "faces": 14,
+   "faces_by_sides": {
+    "4": 6,
+    "6": 8
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_OCTAHEDRON",
+    "v7: truncated octahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_OCTAHEDRON",
+     "same"
+    ],
+    [
+     "v7: truncated octahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 38,
+   "faces": 72,
+   "faces_by_sides": {
+    "3": 72
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 38,
+   "faces": 72,
+   "faces_by_sides": {
+    "3": 72
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "triakis-icosahedron",
+  "name": "triakis icosahedron",
+  "family": "Catalan",
+  "field": "Q(sqrt5)",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 60,
+   "faces": 32,
+   "faces_by_sides": {
+    "3": 20,
+    "10": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_DODECAHEDRON",
+    "v7: truncated dodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_DODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: truncated dodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 60,
+   "faces": 32,
+   "faces_by_sides": {
+    "3": 20,
+    "10": 12
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_DODECAHEDRON",
+    "v7: truncated dodecahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_DODECAHEDRON",
+     "same"
+    ],
+    [
+     "v7: truncated dodecahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 92,
+   "faces": 180,
+   "faces_by_sides": {
+    "3": 180
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 92,
+   "faces": 180,
+   "faces_by_sides": {
+    "3": 180
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Ih",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "triakis-octahedron",
+  "name": "triakis octahedron",
+  "family": "Catalan",
+  "field": "Q(sqrt2, sqrt5) = Q(theta), theta = sqrt2 + sqrt5",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 24,
+   "faces": 14,
+   "faces_by_sides": {
+    "3": 8,
+    "8": 6
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_CUBE",
+    "v7: truncated cube"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_CUBE",
+     "same"
+    ],
+    [
+     "v7: truncated cube",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 24,
+   "faces": 14,
+   "faces_by_sides": {
+    "3": 8,
+    "8": 6
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_CUBE",
+    "v7: truncated cube"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_CUBE",
+     "same"
+    ],
+    [
+     "v7: truncated cube",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 38,
+   "faces": 72,
+   "faces_by_sides": {
+    "3": 72
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 38,
+   "faces": 72,
+   "faces_by_sides": {
+    "3": 72
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Oh",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ },
+ {
+  "slug": "triakis-tetrahedron",
+  "name": "triakis tetrahedron",
+  "family": "Catalan",
+  "field": "Q(sqrt5)",
+  "face_families": 1,
+  "centre_halo": {
+   "corners": 12,
+   "faces": 8,
+   "faces_by_sides": {
+    "3": 4,
+    "6": 4
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Td",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_TETRAHEDRON",
+    "v7: truncated tetrahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_TETRAHEDRON",
+     "same"
+    ],
+    [
+     "v7: truncated tetrahedron",
+     "same"
+    ]
+   ]
+  },
+  "polar_halo": {
+   "corners": 12,
+   "faces": 8,
+   "faces_by_sides": {
+    "3": 4,
+    "6": 4
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Td",
+   "collect_status": "known",
+   "collect_matches": [
+    "Archimedean: TRUNCATED_TETRAHEDRON",
+    "v7: truncated tetrahedron"
+   ],
+   "exact_matches": [
+    [
+     "Archimedean: TRUNCATED_TETRAHEDRON",
+     "same"
+    ],
+    [
+     "v7: truncated tetrahedron",
+     "same"
+    ]
+   ]
+  },
+  "star_2": {
+   "corners": 20,
+   "faces": 36,
+   "faces_by_sides": {
+    "3": 36
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Td",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  },
+  "star_phi": {
+   "corners": 20,
+   "faces": 36,
+   "faces_by_sides": {
+    "3": 36
+   },
+   "exact_ok": true,
+   "census_agrees": true,
+   "symmetry": "Td",
+   "collect_status": "NEW",
+   "collect_matches": [],
+   "convex": false,
+   "exact_matches": []
+  }
+ }
+]
