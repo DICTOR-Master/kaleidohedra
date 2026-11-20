@@ -1,0 +1,4 @@
+68c68
+< def IsRhombus (F : Parallelogram) : Prop := F.Nondegenerate ∧ ‖F.u‖ = ‖F.v‖
+---
+> def IsRhombus (F : Parallelogram) : Prop := F.Nondegenerate ∧ ‖F.u‖ ≤ ‖F.v‖

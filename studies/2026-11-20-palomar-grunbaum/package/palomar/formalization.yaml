@@ -1,0 +1,308 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4
+version: "v0.4"
+
+project:
+  name: "Grünbaum's zone question at k = 10"
+  description: >-
+    A rhombic monohedral polyhedron of spherical type (surface homeomorphic to
+    a sphere, adjacent faces not coplanar) with exactly 30 faces, all of them
+    congruent rhombi whose diagonals are in the golden ratio, in which every
+    zone has exactly 10 faces, and whose translates by a lattice tile space face
+    to face. This gives an example for k = 10 for the question of B. Grunbaum
+    (Math. Intelligencer 32(4), 2010): "Given an even integer k >= 4, is there a
+    rhombic monohedral parallelohedron such that every zone has exactly k
+    faces?", where he wrote that "no information is available for any k >= 10".
+    The witness is DICTO's Grunbaum-Escher Triacontahedron GET B: the rhombic
+    triacontahedron less four oblate golden rhombohedra, a union of 16 golden
+    rhombohedra (its exact model also has 32 vertices and 60 edges; these
+    counts are properties of the witness, checked in the model, not part of the
+    theorem). Two calibration theorems check that the zone definition gives 4
+    for the cube and 6 for the rhombic dodecahedron. Earlier solids of the same
+    family (the rhombic triacontahedron with four corners indented) were shown
+    on the web as space-fillers, without proof, without zone sizes and without
+    reference to Grunbaum's question: by D. Hall (Sketchfab, 2016; the same solid as
+    G. Inchbald's dimpled rhombic triacontahedron, by 2023) and by J. Kostick
+    (vZome, 2022), whose concavo-convex triacon array shows GET A, a sibling of
+    GET B. So this entry does not claim the first example for k = 10. GET B
+    itself was not found in the sources checked. Since GET B is an indentation
+    of the triacontahedron and is proved here to be a parallelohedron, it is
+    also a counterexample to Grunbaum's tentative remark (same paper) that
+    "none of the other isozonohedra obtainable by indentation of F or T seem to
+    be parallelohedra". The proof checks exact data in Z[phi] by kernel
+    evaluation (zones, congruence, separating normals, contacts, face matching,
+    cone separation from an interior point) and derives the tiling from volume
+    = covolume with Mathlib's fundamental domains. The entry is meant for
+    researchers on parallelohedra and space-filling polyhedra (nonconvex
+    parallelohedra, Venkov-McMullen belt theory) and on golden-rhombohedron
+    polyhedra.
+  authors:
+    - name: "DICTO"
+      orcid: "0009-0001-2620-2036"
+      github: "DICTOR-Master"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - name: "DICTO"
+      orcid: "0009-0001-2620-2036"
+      github: "DICTOR-Master"
+
+classification:
+  arxiv: ["math.MG", "math.CO"]
+  msc2020: ["52C22", "52B10", "52C07", "03B35"]
+
+sources:
+  - title: "The Bilinski dodecahedron, and assorted parallelohedra, zonohedra, monohedra, isozonohedra and otherhedra"
+    authors:
+      - "B. Grunbaum"
+    id: "doi:10.1007/s00283-010-9138-7"
+    type: "paper"
+    location: "Mathematical Intelligencer 32(4) (2010) 5-15; the open problem in the section on nonconvex parallelohedra (author's version, University of Washington repository hdl:1773/15593, version 2/3/10, p. 17)"
+    relationship: "formalizes"
+    note: >-
+      The question formalized at k = 10: "Given an even integer k >= 4, is
+      there a rhombic monohedral parallelohedron such that every zone has
+      exactly k faces? ... No information is available for any k >= 10." Also
+      the definitions used: parallelohedron (a polyhedron that admits a tiling
+      of space by translated copies of itself), polyhedra of spherical type
+      (surface homeomorphic to a sphere, adjacent faces not coplanar, p. 9),
+      zones; and the known cases k = 4 (cube), 6 (the rhombic dodecahedra of
+      Kepler and Bilinski), 8 (Grunbaum's doubly indented rhombic icosahedra D1,
+      D2). On indentations (author's version p. 15): "None of the other
+      isozonohedra obtainable by indentation of F or T seem to be
+      parallelohedra"; GET B is a counterexample (see the description). Read in
+      the author's version; the journal pages from the DOI record.
+    author_endorsement: "n/a"
+  - title: "A supplement to Bilinski's paper on rhombic dodecahedra"
+    authors:
+      - "B. Grunbaum"
+    type: "other"
+    location: "web page, University of Washington (faculty.washington.edu/moishe/branko/, 'Bilinski paper files'); undated, its latest references are of September 2009"
+    relationship: "background"
+    note: >-
+      Read (text). Describes the family P_n of sphere-like rhombic monohedral
+      parallelohedra built from aligned rhombohedra and says of the rhombic
+      triacontahedron that "multiple indentations lead to a considerable number
+      of polyhedra, which have not been examined in detail". It gives no zone
+      sizes for P_n and does not address zones of 10; the later 2010 paper
+      above still says that no information is available for k >= 10.
+    author_endorsement: "n/a"
+  - title: "Tilings by some nonconvex parallelohedra"
+    authors:
+      - "B. Grunbaum"
+    type: "paper"
+    location: "Geombinatorics 19 (2010) 100-107"
+    relationship: "background"
+    note: "Read: crosses and semicrosses of cubes; nothing for k >= 10."
+    author_endorsement: "n/a"
+  - title: "On a class of Euclidean polyhedra"
+    authors:
+      - "B. A. Venkov"
+    type: "paper"
+    location: "Vestnik Leningradskogo Universiteta, Ser. Mat. Fiz. Khim. 9 (1954) 11-31 (in Russian)"
+    relationship: "background"
+    note: >-
+      With McMullen (below): a convex parallelohedron has belts (zones) of 4 or
+      6 faces only, so every example with k >= 8 is nonconvex. Cited, not read.
+    author_endorsement: "n/a"
+  - title: "Convex bodies which tile space by translation"
+    authors:
+      - "P. McMullen"
+    type: "paper"
+    location: "Mathematika 27 (1980) 113-121"
+    relationship: "background"
+    note: "See Venkov above. Cited, not read."
+    author_endorsement: "n/a"
+  - title: "Dimpled Rhombic Triacontahedron - Construction; DRT with Positive Tetrahedral Translation"
+    authors:
+      - "D. Hall"
+    type: "other"
+    location: "Sketchfab 3D models, published 28 June 2016 (sketchfab.com/3d-models/dimpled-rhombic-triacontahedron-construction-9e2be3ccfe7b480c846f4d431441ac19) and 11 July 2016 (sketchfab.com/3d-models/drt-with-positive-tetrahedral-translation-0ccb9676d36148189af82c77ae4bb8d8)"
+    relationship: "background"
+    note: >-
+      Read (descriptions and metadata). The earliest dated source found for a
+      solid of this family as a space-filler: the rhombic triacontahedron with
+      one golden rhombohedron removed at each of four vertices with tetrahedral
+      symmetry, chiral, packing as a lattice ("fourteen such DRTs will
+      completely enclose one"). No proof, no zones, no reference to Grunbaum.
+      An exact corner-matching computation by the author identifies it (in
+      both hands) with Inchbald's solid below; it is not GET A or GET B.
+    author_endorsement: "n/a"
+  - title: "A 3-D Quasicrystal Structure? (section: Tilings and the dimpled rhombic triacontahedron)"
+    authors:
+      - "G. Inchbald"
+    type: "other"
+    location: "steelpillow.com/polyhedra/quasicr/quasicr.html (updated 6 December 2024; the dimpling text is absent from the Internet Archive copy of 31 March 2022 and present on 23 March 2023)"
+    relationship: "background"
+    note: >-
+      Read. The rhombic triacontahedron with four of its eight cube-corner face
+      triplets dimpled in tetrahedral alternation, described as a periodic
+      space-filler with cubic periodicity; no proof, no zones, no reference to
+      Grunbaum. The same solid as Hall's (above); not GET A or GET B.
+    author_endorsement: "n/a"
+  - title: "Triacon arrays"
+    authors:
+      - "J. Kostick"
+    type: "other"
+    location: "vZome sharing page, john-kostick.github.io/vzome-sharing/2022/04/03/Triacon-array-2-part-11-46-35.html (posted 3 April 2022), and its three exported vZome models"
+    relationship: "background"
+    note: >-
+      Read (page and exported models). Arrays of rhombic triacontahedra and of
+      dimpled triacontahedra filling space, without proof and without reference
+      to Grunbaum; the page marks "a set of 3 parallel zones" as blue bands but
+      gives no zone sizes. An exact reading of the exported panels by the
+      author shows that the "concavo-convex triacon array" consists of
+      translates of GET A on GET A's lattice: GET A, the sibling of this
+      entry's witness, was shown there first, as an array cell. The other two
+      arrays use differently dimpled cells. GET B does not appear.
+    author_endorsement: "n/a"
+  - title: "Parallelohedra, old and new"
+    authors:
+      - "M. Senechal"
+      - "J. E. Taylor"
+    id: "doi:10.1107/S2053273323001444"
+    type: "paper"
+    location: "Acta Crystallographica Section A 79 (2023) 273-279"
+    relationship: "background"
+    note: >-
+      Not read (closed access; no free copy found through Unpaywall, Europe PMC
+      or arXiv); abstract read: three new nonconvex parallelohedra built from
+      skeletons of Fedorov's five convex parallelohedra, and "a counterexample
+      to a statement by Grunbaum". The author reports private correspondence in
+      which M. Senechal wrote that GET A and GET B and the Senechal-Taylor
+      solids only share similarities. This cannot be checked by a reader, and
+      no priority is claimed from it.
+    author_endorsement: "n/a"
+  - title: "Natural Structure"
+    authors:
+      - "R. Williams"
+    type: "book"
+    location: "Eudaemon Press, Moorpark, 1972; p. 196 (an eightfold indentation of the triacontahedron, cited by Grunbaum 2010)"
+    relationship: "background"
+    note: "Not read."
+    author_endorsement: "n/a"
+  - title: "Grunbaum's zone question at k = 10: computational study of unions of golden rhombohedra (finding GET A and GET B)"
+    authors:
+      - name: "DICTO"
+        orcid: "0009-0001-2620-2036"
+        github: "DICTOR-Master"
+    type: "other"
+    location: "unpublished study of 15 November 2026, not peer reviewed"
+    relationship: "other"
+    note: >-
+      The witness and its exact data (cells, faces, lattice) come from this
+      study, which checked GET A and GET B in exact arithmetic in Z[phi]. Its
+      classification of a class of lattice tilers and the sibling solid GET A
+      are not part of this entry.
+    author_endorsement: "participated"
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Proved: existence (grunbaum_k10, grunbaum_k10_parallelohedron) with the
+    witness GET B, and the two calibration theorems (cube_everyZoneHas,
+    rhombicDodecahedron_everyZoneHas). Not formalized: the sibling solid GET A
+    and the non-congruence of GET A and GET B; the classification of the
+    computational study; k >= 12. The statement is existential: one witness.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude Opus (Anthropic)"]
+      framework: "Claude Code (Opus)"
+      tool_setup: >-
+        A Claude Code agent wrote the statement, the generators of the exact
+        data and certificates (plain Python, exact arithmetic in Z[phi]) and the
+        proofs, and ran the Lake builds and the comparator against Mathlib
+        v4.35.0-rc2 on Linux compute machines; decide +kernel only (no
+        native_decide). The proofs were first written for GET A (17 November
+        2026) and carried over to GET B by regenerating the witness data; every
+        exact fact is re-decided by the kernel.
+      cost:
+        wall_time: "about two days (17 and 20 November 2026)"
+        spend_usd: "subscription-based"
+        hardware: "local Linux machines"
+      prompting_notes: >-
+        DICTO set the question, found and named the solids and chose GET B as
+        the witness; an independent statement review (17 November 2026) and
+        blind pre-scores of the entry (20 November 2026) were applied.
+  spend_usd: "subscription-based"
+  notes: >-
+    DICTO posed the formalization and directed the work; every definition,
+    statement and proof was written by the agent. Every build was checked by a
+    full recompilation and #print axioms (only propext, Classical.choice and
+    Quot.sound). No independent human line-by-line audit of the Lean code has
+    been made.
+
+fidelity:
+  divergences: >-
+    (1) Faces are given as parallelograms p + [0,1]u + [0,1]v; every face of a
+    rhombic polyhedron is one. (2) "Polyhedron" has no generally accepted
+    definition (Grunbaum, p. 9); the statement takes his spherical type and
+    makes it precise: a compact solid equal to the closure of its interior,
+    whose frontier is the union of the faces and is homeomorphic to the
+    sphere; the faces are distinct and meet in a common side, a common corner or
+    not at all; adjacent faces are not coplanar. (3) A zone is the belt reached
+    by crossing sides parallel to one direction; the statement also asserts that
+    each belt is the set of all faces with a side of that direction. The
+    calibration theorems show that this definition gives 4 for the cube and 6
+    for the rhombic dodecahedron. (4) Grunbaum's parallelohedron needs only
+    some tiling by translates; the main theorem gives a lattice tiling, which is
+    stronger; the second theorem states Grunbaum's form. (5) FaceToFace is a
+    per-face matching condition (every face of P is a face of a translate of P
+    by a non-zero lattice vector); with MeetProperly, the frontier condition and
+    disjoint interiors it gives the standard notion. (6) Congruence of faces is
+    Mathlib's Congruent on the four corners up to relabelling (equivalent to an
+    isometry of space taking one face onto the other); the golden ratio of the
+    diagonals is stated with Mathlib's Real.goldenRatio.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none"
+  notes: >-
+    The definitions of the library (GET/Statement.lean) are generated from the
+    Challenge, so the Solution uses the Challenge's definitions verbatim. An
+    independent statement review (17 November 2026) found no definitional
+    trick. The comparator was run locally with Lean's kernel, NanoDa and
+    con-ron, and three altered copies (a changed constant, a changed
+    definition, a proof replaced by sorry) were each rejected. Literature (20
+    November 2026, free routes only): Grunbaum 2010 (author's version), his
+    Supplement to Bilinski and Geombinatorics 2010 read; Hall's Sketchfab pages
+    and metadata, Inchbald's page, and Kostick's page with its exported models
+    read, and their solids compared with GET A and GET B by exact computation;
+    Senechal-Taylor 2023 abstract only; Venkov, McMullen and Williams not read.
+    Formal search: Mathlib (ZSpan fundamental domains; no parallelohedra and no
+    zones of polyhedra); GitHub code search for Lean files mentioning
+    parallelohedra or zonohedra (none); the Isabelle AFP index (no zonotope,
+    zonohedron or parallelohedron entry); web searches for Rocq/Coq, HOL Light
+    and Mizar formalizations of parallelohedra or zonohedra (none found).
+
+alignment:
+  namespace: "GrunbaumK10"
+  statements:
+    - source: "Grunbaum 2010, the question for k = 10"
+      lean: "GrunbaumK10.grunbaum_k10"
+      module: "Challenge"
+      status: "proved"
+      note: "Lattice face-to-face tiling, 30 congruent golden rhombi; witness GET B."
+    - source: "Grunbaum 2010, the question in his own terms"
+      lean: "GrunbaumK10.grunbaum_k10_parallelohedron"
+      module: "Challenge"
+      status: "proved"
+    - source: "calibration of the zone definition (cube: 4)"
+      lean: "GrunbaumK10.cube_everyZoneHas"
+      module: "Challenge"
+      status: "proved"
+    - source: "calibration of the zone definition (rhombic dodecahedron: 6)"
+      lean: "GrunbaumK10.rhombicDodecahedron_everyZoneHas"
+      module: "Challenge"
+      status: "proved"
+
+acknowledgements: >-
+  Mathlib (in particular ZSpan fundamental domains, Real.goldenRatio and
+  Congruent); B. Grunbaum's question and his k = 8 examples; the earlier web
+  models of D. Hall, G. Inchbald and J. Kostick.

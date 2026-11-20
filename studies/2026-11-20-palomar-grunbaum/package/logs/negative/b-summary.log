@@ -1,0 +1,18 @@
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:33.24
+	Maximum resident set size (kbytes): 843292
+cgroup memory.peak (bytes, whole run): 1382924288
+  [apply] simp only [xLo, toReal_add, toReal_negPart, Fin.sum_univ_two, XPar.sv, Matrix.cons_val_zero,
+    Matrix.cons_val_one]
+⚠ [8952/8955] Replayed GET.SphereB
+info: GET/SphereB.lean:160:4: Try this:
+  [apply] abel_nf
+info: GET/SphereB.lean:168:4: Try this:
+  [apply] abel_nf
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hl0
+Build completed successfully (8955 jobs).
+error: Const does not match between challenge and target 'GrunbaumK10.Parallelogram.IsRhombus'
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, GrunbaumK10.cube_everyZoneHas, GrunbaumK10.rhombicDodecahedron_everyZoneHas, GrunbaumK10.grunbaum_k10, GrunbaumK10.grunbaum_k10_parallelohedron, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Command exited with non-zero status 1
+cgroup memory.peak (bytes, whole run): 1382924288
+FINAL FAIL (comparator exit 1)

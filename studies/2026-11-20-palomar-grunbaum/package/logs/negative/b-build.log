@@ -1,0 +1,92 @@
+⚠ [8938/8957] Replayed GET.Exact
+warning: GET/Exact.lean:63:35: This simp argument is unused:
+  PiLp.toLp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [PiLp.inner_apply, ev, rv, Fin.sum_univ_three, dot, toReal_add, toReal_mul, RCLike.inner_apply,
+    conj_trivial]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: GET/Exact.lean:104:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8939/8957] Replayed GET.Zones
+warning: GET/Zones.lean:261:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [8942/8957] Replayed GET.Faces
+warning: GET/Faces.lean:98:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8943/8957] Replayed GET.Solid
+warning: GET/Solid.lean:121:18: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hl]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8945/8957] Replayed GET.Cover
+warning: GET/Cover.lean:33:27: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: GET/Cover.lean:99:60: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8949/8957] Replayed GET.Meet
+warning: GET/Meet.lean:50:25: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [xHi, toReal_add, toReal_posPart, Fin.sum_univ_two, XPar.sv, Matrix.cons_val_zero,
+    Matrix.cons_val_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: GET/Meet.lean:56:25: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [xLo, toReal_add, toReal_negPart, Fin.sum_univ_two, XPar.sv, Matrix.cons_val_zero,
+    Matrix.cons_val_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: GET/Meet.lean:225:67: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: GET/Meet.lean:228:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: GET/Meet.lean:231:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: GET/Meet.lean:225:67: Unused tactic linter: `abel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8952/8957] Replayed GET.SphereB
+info: GET/SphereB.lean:160:4: Try this:
+  [apply] abel_nf
+info: GET/SphereB.lean:168:4: Try this:
+  [apply] abel_nf
+warning: GET/SphereB.lean:191:87: Variable name `hl0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hl0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8956/8957] Built Challenge (2.1s)
+warning: Challenge.lean:171:8: declaration uses `sorry`
+warning: Challenge.lean:175:8: declaration uses `sorry`
+warning: Challenge.lean:181:8: declaration uses `sorry`
+warning: Challenge.lean:189:8: declaration uses `sorry`
+Build completed successfully (8957 jobs).

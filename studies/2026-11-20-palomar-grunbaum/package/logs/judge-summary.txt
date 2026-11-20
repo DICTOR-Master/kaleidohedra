@@ -1,0 +1,25 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "GrunbaumK10.cube_everyZoneHas",
+    "GrunbaumK10.rhombicDodecahedron_everyZoneHas",
+    "GrunbaumK10.grunbaum_k10",
+    "GrunbaumK10.grunbaum_k10_parallelohedron"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "external_kernels": {}
+}
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:39.56
+	Maximum resident set size (kbytes): 678324
+cgroup memory.peak (bytes, whole step): 6192504832
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!
+cgroup memory.peak (bytes, whole step): 6192504832
+FINAL ok

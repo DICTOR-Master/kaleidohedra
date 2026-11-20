@@ -1,0 +1,130 @@
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+No files to download
+Already decompressed 8915 file(s)
+Resolving dependencies
+Building Challenge
+⚠ [8931/8932] Replayed Challenge
+warning: Challenge.lean:171:8: declaration uses `sorry`
+warning: Challenge.lean:175:8: declaration uses `sorry`
+warning: Challenge.lean:181:8: declaration uses `sorry`
+warning: Challenge.lean:189:8: declaration uses `sorry`
+Build completed successfully (8932 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, GrunbaumK10.cube_everyZoneHas, GrunbaumK10.rhombicDodecahedron_everyZoneHas, GrunbaumK10.grunbaum_k10, GrunbaumK10.grunbaum_k10_parallelohedron, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+⚠ [8938/8955] Replayed GET.Exact
+warning: GET/Exact.lean:63:35: This simp argument is unused:
+  PiLp.toLp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [PiLp.inner_apply, ev, rv, Fin.sum_univ_three, dot, toReal_add, toReal_mul, RCLike.inner_apply,
+    conj_trivial]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: GET/Exact.lean:104:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8939/8955] Replayed GET.Zones
+warning: GET/Zones.lean:261:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [8942/8955] Replayed GET.Faces
+warning: GET/Faces.lean:98:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8943/8955] Replayed GET.Solid
+warning: GET/Solid.lean:121:18: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hl]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8945/8955] Replayed GET.Cover
+warning: GET/Cover.lean:33:27: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: GET/Cover.lean:99:60: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8949/8955] Replayed GET.Meet
+warning: GET/Meet.lean:50:25: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [xHi, toReal_add, toReal_posPart, Fin.sum_univ_two, XPar.sv, Matrix.cons_val_zero,
+    Matrix.cons_val_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: GET/Meet.lean:56:25: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [xLo, toReal_add, toReal_negPart, Fin.sum_univ_two, XPar.sv, Matrix.cons_val_zero,
+    Matrix.cons_val_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: GET/Meet.lean:225:67: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: GET/Meet.lean:228:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: GET/Meet.lean:231:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: GET/Meet.lean:225:67: Unused tactic linter: `abel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8952/8955] Replayed GET.SphereB
+info: GET/SphereB.lean:160:4: Try this:
+  [apply] abel_nf
+info: GET/SphereB.lean:168:4: Try this:
+  [apply] abel_nf
+warning: GET/SphereB.lean:191:87: Variable name `hl0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hl0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8954/8955] Replayed Solution
+warning: Solution.lean:49:8: declaration uses `sorry`
+Build completed successfully (8955 jobs).
+error: Illegal axiom detected: 'sorryAx'
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, GrunbaumK10.cube_everyZoneHas, GrunbaumK10.rhombicDodecahedron_everyZoneHas, GrunbaumK10.grunbaum_k10, GrunbaumK10.grunbaum_k10_parallelohedron, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Command exited with non-zero status 1
+	Command being timed: "bash scripts/verify-comparator-lowmem.sh"
+	User time (seconds): 11.36
+	System time (seconds): 1.13
+	Percent of CPU this job got: 35%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:35.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 843328
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 61912
+	Voluntary context switches: 104213
+	Involuntary context switches: 149
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+cgroup memory.peak (bytes, whole run): 1382993920

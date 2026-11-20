@@ -1,0 +1,13 @@
+Terminated                 timeout $TMO systemd-run --user --scope -q -p MemoryMax=$MEM -p MemorySwapMax=0 $PIN bash -c "cg=/sys/fs/cgroup\$(cut -d: -f3 /proc/self/cgroup); ( while sleep 2; do echo \$(date +%s) \$(cat \$cg/memory.current) \$(grep -E '^(full|some)' \$cg/memory.pressure | tr '\n' ' '); done ) > $LOG.mem & smp=\$!
+   /usr/bin/time -v timeout -k 5 $((TMO - 20)) bash -c '$CMD'; s=\$?; kill \$smp; [ \$s -eq 124 ] && echo 'STEP CUT OFF at the time limit'
+   echo \"cgroup memory.peak (bytes, whole step): \$(cat /sys/fs/cgroup\$(cut -d: -f3 /proc/self/cgroup)/memory.peak)\"
+   exit \$s" > $LOG 2>&1
+con-ron: check 41500/45355 theorem ENNReal.ennrealEquivSum._proof_1 t=42.095s
+con-ron: check 42000/45355 theorem instClosedIciTopologyOrderDual t=42.270s
+con-ron: check 42500/45355 theorem _private.Mathlib.MeasureTheory.Integral.Lebesgue.Basic.0.MeasureTheory.lintegral_indicator_le._simp_1_1 t=42.407s
+con-ron: check 43000/45355 definition _private.Mathlib.MeasureTheory.Group.FundamentalDomain.0.MeasureTheory.IsAddFundamentalDomain.iUnion_vadd_ae_eq.match_1_1 t=44.096s
+con-ron: check 43500/45355 theorem Fintype.piFinset_subset t=44.634s
+con-ron: check 44000/45355 theorem List.mergeSort_perm._unary t=45.720s
+con-ron: check 44500/45355 theorem Matrix.diagonal_eq_diagonal_iff._simp_1 t=46.045s
+con-ron: check 45000/45355 theorem LinearMap.toMatrix_id_eq_basis_toMatrix t=46.875s
+FINAL FAIL (exit 143)
