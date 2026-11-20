@@ -71,3 +71,14 @@ DICTO's decisions (20 November): namespace and entry name `DehnCanon`; title "Th
 - **Negative controls** (`logs/negative/`), all rejected: (a) volume 1/6 → 1/7: "Challenge and solution theorem statement do not match: 'DehnCanon.hilbert_third_problem'" (39 s, 1.56 GB); (b) `wedgeAngle` with π for 2π: "Const does not match between challenge and target 'DehnCanon.tetN'" (41 s, 1.56 GB; why `tetN`: `b-why-tetN.txt`, from the earlier build, same mechanism); (c) `dehnSet_eq_edge_sum`'s proof → `sorry`: "Illegal axiom detected: 'sorryAx'" (42 s, 1.55 GB).
 - **Palomar's parser** (`submission_contract.py`: `load_formalization_metadata`, `normalized_provenance`) loads the final `formalization.yaml`: `result_origin: source-based`, `repository_role: substantive-development`, 17 sources, 4 related formalizations.
 - `logs/entry-SHA256SUMS` lists the 47 assembled files again. Not rerun this time: the con-ron 4-worker run and the comment-line calibration (their logs from the earlier build were removed).
+
+## Fit check under Palomar's runner limits, and the repository (20 November 2026)
+
+DICTO (20 November): keep `DehnCanon.Library`; "Fit check, then submit".
+
+**Fit check: passes, far inside the limits** (`package/scripts/run_fit_check.sh`, logs `package/logs/fit/`). Every step ran on 4 CPUs (`taskset -c 0-3`, `LEAN_NUM_THREADS=4`) in a cgroup capped at 14 GB with no swap, from an empty build folder, each step in the foreground under 280 s:
+- build, in four calls (lake resumes between them; the last is Palomar's `lake build Solution`): 36 s, 35 s, 2 min 28 s, 19 s, about 4 min in all; memory peak 2.78 GB (largest single process 4.5 GB RSS, shared pages included); at most 2 Lean processes at once;
+- comparator, the template script with con-ron at 2 workers (Palomar's count): "Your solution is okay!" (con-ron, NanoDa and Lean's kernel accept) in 2 min 26 s, memory peak 2.50 GB.
+The build in steps can only understate a peak if two heavy modules would run together across a step boundary; with peaks under 3 GB against 16 GB that margin does not matter.
+
+**Repository: not created.** The standalone repository was assembled locally exactly like the Yantra entry's (the 47 entry files without SHA256SUMS; a second commit adds the manual-dispatch preflight workflow pinned to PalomarSubmission 14aa8d6, request id `dehncanon001`; author DICTO with the GitHub no-reply address), but creating the public GitHub repository was refused by the permission system, so nothing was pushed and nothing was submitted. Submission itself goes through Palomar's web form (submit.palomar-registry.org), which needs DICTO's GitHub login.
