@@ -477,7 +477,13 @@
       "title": "Between the Queens",
       "doi": "23780068",
       "date": "2026-10-30",
-      "date_first": true
+      "date_first": true,
+      "version": 2,
+      "doi_v1": "23780069",
+      "doi_v2": "24384410",
+      "notes": [
+        "Version 2 published 20 Nov 2026 (10.5281/zenodo.24384410): short cross-references to later results (the three uniform members of #91's 600-cell × 120-cell sweep are the cuts of Proposition 1; the ends and every stage are spherical 11-designs, with a 19-design, found numerically, on the path; the walls and hidden shapes of #110 and of Alicia in Wonderland Chapters 10 and 11; the midpoint's truncated icosahedra); regular names 600-cell and 120-cell with Schläfli's credit and DICTO's names in a note; one credit line for the computation."
+      ]
     },
     "77": {
       "title": "Face to Face: A New Law of Aristotle's Pyramids",
@@ -745,6 +751,80 @@
         "Version 2 published 17 Nov 2026 (10.5281/zenodo.24296556): subtitle 'The Walls of the 4D 600-cell and 120-cell'; cross walls justified from the 25 inscribed 24-cells; second implementation of the exact arguments; optimality of the fewest covers of Theorem B' (d) (16, 16, 22) certified by DRAT proofs checked by drat-trim (studies/2026-11-17-independent-checks/110-exact/cert); intersection-lattice data (Appendix B); names Golden Truncated / Cantellated 5-cell.",
         "Next version (DICTO 18 Nov 2026, revised same day): new Section 9, the integer Queens E7 and E8 (study 2026-11-18-integer-queens; Theorem D: only W(E7), W(E8) can hide S_{n+1}, n >= 5; Theorem E: root orbits hidden through cross walls only, no plate on a hidden E mirror) (heptagon: one clause only, Occam, DICTO 18 Nov). The fair 14-face die chapter (DICTO: Lucky 7) was MOVED OUT on DICTO's word (does not earn its place in #110): held at papers/lucky-7-die-chapter-held.html for the shape language (sphere as perfect value) or its own short paper; OEIS Entry 8 (r/R = cot(2pi/7)) waits for that home."
       ]
+    },
+    "111": {
+      "title": "Equanimity: Fair Dice and the Regular Polygons Hidden in Their Vacuus",
+      "doi": "24379796",
+      "date": "2026-11-20",
+      "date_first": true,
+      "version": 1,
+      "doi_v1": "24379797",
+      "notes": [
+        "Published 20 Nov 2026 (Version 1, 10.5281/zenodo.24379797; folder papers/2026-11-18-equanimity; studies 2026-11-18-fair-32-die parts 1-7, ledger entries 312-318).",
+        "Results: Proposition 1 (exact): each of the twelve axis lines (two face families along symmetry axes of the cube or the icosahedron, each one orbit of the line's group) has a fair member, every face subtending 4π/N: fair dice with 10, 14, 16, 16, 18, 18, 20, 20, 24, 32, 42 and 50 faces, not face-transitive, four mixing the cube's and the icosahedron's axes; each within 7% of the member whose faces all touch one sphere. Theorem 2 (exact): the fair 14-face die (C ∩ O, Lucky 7): μ = 1 + √(2 tan(π/14) tan(2π/7)), r/R = cot(2π/7). Theorem 3 (certified): the 20-face die O ∩ RD, (R/r)² = 11/3 + 2√2 − √5 − (2/3)√10, field ℚ(cos 2π/10, √2). Theorem 4 (certified): the 32-face die D ∩ I, field ℚ(cos 2π/16, √5). Theorem 4A (certified): O ∩ D, R/r = 8 − 3√5. Theorem 4B (exact): the two dice without regular faces (C ∩ D 18 faces, RD ∩ D 24 faces). Proposition 5 (certified): the 10-, 16- and 18-face cubic dice have (R/r)² in no regular polygon's field (not Galois; Kronecker–Weber). Theorem 6 (exact, the hidden angle): on a member whose A faces are regular m-gons the Vacuus plates meet the mirror plane through the face's axis at θ = ((m − 2)π + Ω)/(2m), on the fair member π/2 − (N − 2)π/(mN): ten of the twelve hide a regular polygon in their Vacuus. Corollary 7 (exact): every fair die of the ten lines with regular faces in closed form.",
+        "Open (§7): which lines put the polygon in the lengths (four do: C ∩ O, O ∩ RD, O ∩ D, D ∩ I); the fields of the radii of T ∩ D and of the 42- and 50-face dice; lines with faces off the axes; the physical fair point of a printed die against the solid-angle one.",
+        "Links: #87 (the Vacuus read on the dice); The Golden Ladder Ch. 3A §5.4; followed by #112 (all fair dice of the two frames) and #113 (the 14- and 18-face dice in the Lean canon).",
+        "Errata: none."
+      ]
+    },
+    "112": {
+      "title": "Fair Dice — The Aequi: Enumerating the Innumerable",
+      "doi": "24383314",
+      "date": "2026-11-20",
+      "date_first": true,
+      "version": 1,
+      "doi_v1": "24383315",
+      "notes": [
+        "Published 20 Nov 2026 (Version 1, 10.5281/zenodo.24383315; folder papers/2026-11-20-aequi; studies 2026-11-19-aequi-complete, 2026-11-20-aequi-two-placements, 2026-11-19-aequus-rd-ico; ledger entries 331-332).",
+        "Results: Lemma 1 (exact, the polar identity): the solid angle of a face is the integral Gauss curvature of the polar at the matching corner. Theorem A (exact, from Alexandrov 1942; Oliker 2007, Bertrand 2016 credited): N face directions carry a fair die exactly when they satisfy Alexandrov's condition for equal masses, unique up to scale; its symmetry group is that of the directions, and a group fixing no direction puts the centroid at the centre. Proposition 2 (exact): the finite test for equal masses. Corollary 3 (exact): directions in opposite pairs always carry a fair die. Corollary 3′ (exact): the diameter certificate. Corollary 4 (exact): what the search saw. Proposition 5 (computed): of 319 polar orbit sets with no die in the search box, 87 fail Alexandrov's condition (12 with equality), 232 carry a die outside the box. Theorem B (exact, existence of 94 dice computed): exactly 149 Aequi in the main catalogue: Ih 4, Oh 4, Td 3, Th 47, T 91 (two hands), none exactly O or I; by kinds of face 26, 41, 42, 27, 11, 2 (m = 2 to 7); 82 Aequi Mosaici. Proposition 6 (computed): with both icosahedron placements under Th and T, 1083 more Aequi, none congruent to the main catalogue. Proposition 7 (exact): 31 two-icosahedron dice with symmetry exactly O, 53 exactly Oh.",
+        "Open (§8): a structural reason the diameter certificate never failed on the frame orbit sets (2256 tested, smallest margin 1/3); whether every failure of Alexandrov's condition has a witness of N − 1 directions; how many dice the one-orbit-at-a-time depth ratios determine, and their closed forms; the Vacuus of the 149 (which hide a regular polygon, which turn without a mirror; only D191 checked); closed forms beyond #111's twelve; raise the caps of §5.3 and add both placements under the subgroups of Oh; is any Aequus a Wulff shape of a real crystal or quasicrystal?",
+        "Links: #111 (the twelve two-family fair dice, Theorem 6 the hidden angle); #87 (Vacuus); The DICTOnary of Atoms v1.4 (the families of the Aequi, D179-D191).",
+        "Errata: none."
+      ]
+    },
+    "113": {
+      "title": "The Dehn Canon: Hilbert's Third Problem, Machine-Checked",
+      "doi": "24383552",
+      "date": "2026-11-20",
+      "date_first": true,
+      "version": 1,
+      "doi_v1": "24383553",
+      "palomar": {
+        "id": "PALOMAR-2026-11-20-000003",
+        "version": 1,
+        "registered": "2026-11-20",
+        "repository_commit": "9ea20f6",
+        "theorems": [
+          "DehnCanon.hilbert_third_problem",
+          "DehnCanon.dehnSet_eq_edge_sum",
+          "DehnCanon.dehnSet_eq_of_scissorsCongruent",
+          "DehnCanon.dehnSum_eq_of_scissors",
+          "DehnCanon.similarTetra_not_scissorsCongruent_similarCube"
+        ],
+        "record": "https://data.palomar-registry.org/entries/PALOMAR-2026-11-20-000003-v1.json"
+      },
+      "notes": [
+        "Published 20 Nov 2026 (Version 1, 10.5281/zenodo.24383553; folder papers/2026-11-19-dehn-canon; Lean studies 2026-11-19-lean-dehn-1 to -10, 2026-11-19-dehn-words, 2026-11-19-dehn-atoms; ledger entries 319-330). Registered on Palomar 20 Nov 2026 as PALOMAR-2026-11-20-000003 (comparator accepted by three kernels; automated review: no problems; study 2026-11-19-palomar-dehn); Version 2 (the registration, reference [33]) drafted for DICTO's read, not published.",
+        "Results (Lean 4 with Mathlib, standard axioms only; the Dehn invariant read from the solid as a set, no edge list as input): Theorem 1, the machine-checked canon: (a) the bridge, scissors congruence of convex polytopes and of finite unions keeps the invariant (Theorem 4, Corollary 4′); (b) Dehn's theorem for every size and position (Theorem 6); (c) zero: cube, rhombic dodecahedron, the whole cube ∩ rhombic dodecahedron line (fair 18-face die), truncated octahedron, rhombic triacontahedron, both golden rhombohedra (Theorem 7); (d) nonzero: dodecahedron, icosahedron, tetrahedron, octahedron, every cube ∩ octahedron solid with 1 < t < 2, t ≠ 3/2 (Lucky 7), CLEO, AXE, FUJI (Theorems 8, 11; Corollary 9); (e) CLEO, AXE, FUJI, dodecahedron, icosahedron pairwise apart (Theorems 12, 13); (f) across the two angle families, 15 pairs (Theorems 15, 16); (g) the canon complete, with volume (Theorem 14); (h) Hilbert's question in his words: two tetrahedra of equal base and altitude neither scissors congruent nor equicomplementable (Theorem 6′); Theorem 6″: the set-defined invariant equals the classical edge sum for every convex polytope. Proposition 7′ (by hand, exact check): the nine most regular space-fillers of DICTO's census all have invariant zero.",
+        "Open (§10): the ten other fair dice in Lean; does the fair 18-face die fill space (zero is necessary only), and Debrunner's theorem in Lean; Sydler's converse in Lean; convex hulls equal to the solids read by edges; an exact t for Lucky 7's cut; Hilbert's sentence for every base and altitude; the edge sum for solids that are not convex.",
+        "Links: #19 (AXE, CLEO and FUJI, here pairwise not scissors congruent); #111 (the 14- and 18-face fair dice); #100 (the Dehn test, here with the invariant defined from the solid); Palomar PALOMAR-2026-11-20-000003.",
+        "Errata: none."
+      ]
+    },
+    "114": {
+      "title": "Scutoid Tissues in Space and Time",
+      "doi": "24384789",
+      "date": "2026-11-20",
+      "date_first": true,
+      "version": 1,
+      "doi_v1": "24384790",
+      "notes": [
+        "Published 20 Nov 2026 (Version 1, 10.5281/zenodo.24384790; subtitle: births, swaps and deaths counted in every direction; folder papers/2026-11-20-scutoid-tissues; studies 2026-11-15-event-logger, -grains-polycrystals, -sun-granulation, -earth-plates, -atmosphere-seaice, -tissue-null-models, and the Sun studies of 17-18 Nov, ledger entries 297, 299-301).",
+        "Results: Theorem 1 (proved in general): an open region of three-dimensional space-time filled by a simple complex of convex cells, swept by planes in any generic direction, changes only at corners, by a birth (index 1), a swap (index 2) or a death (index 3); each cell is born at its lowest corner and dies at its highest; births = deaths = cells and swaps = corners − 2 × cells per period (or per volume of a large region), so swaps per birth = ⟨F⟩/2 − 3, in every generic direction. Corollary 1: large regions and stationary random complexes (Poisson–Voronoi). Lemma 1: the corner of a simple complex. Exact cases: the swept 120-cell, truncated 120-cell, bitruncated 600-cell (116/366/116, 716/966/716, 716/2166/716, as #104), bcc tessellation 4 swaps per birth, Poisson–Voronoi 24π²/35 − 2 = 4.7677 (simulated 4.7669 ± 0.0006). Without convexity the counts depend on the direction (moving Voronoi cells; the Sun's granules).",
+        "Open (§7): the open lead, swaps per birth against ⟨F⟩/2 − 3 in a public three-dimensional grain map swept by planes; NOT CONFIRMED: the Sun (tilts, swap rate at step 0, net change, net against displacement, lineages), Earth's plates, open-cell clouds, two-dimensional froth.",
+        "Links: #104 (Theorem 1 carries its sweep of a simple 4-polytope to open space-time; #104 Theorems 1, 2 are the closed version, h₁, h₂, h₃).",
+        "Errata: none."
+      ]
     }
   },
   "strands": [
@@ -902,10 +982,15 @@
         {
           "n": "103",
           "adds": "the DICTO Yantra nests in its own bindu like the gnomon of #54 (ratio 0.0550); its slopes multiply to 2/φ³."
+        },
+        {
+          "n": "113",
+          "adds": "AXE, CLEO and FUJI, the dodecahedron and the icosahedron pairwise not scissors congruent, in any sizes, machine-checked in Lean (Theorem 1 (e), Theorems 12, 13)."
         }
       ],
       "links": [
-        "#34 → #91 (+ #35, #33): the same tight-cycle criterion; none of #34’s 8,742 cycles closes on a power of φ, while #91’s golden-cut stations give 119 at φ (row 7)."
+        "#34 → #91 (+ #35, #33): the same tight-cycle criterion; none of #34’s 8,742 cycles closes on a power of φ, while #91’s golden-cut stations give 119 at φ (row 7).",
+        "#19 → #113 (20 Nov): #19's AXE, CLEO and FUJI get exact Dehn invariants over the two angles α = arccos(1/√5), β and are pairwise apart (#113 Theorems 11-13; Palomar PALOMAR-2026-11-20-000003 registers the bridge and Hilbert's question)."
       ]
     },
     {
@@ -1034,10 +1119,15 @@
         {
           "n": "106",
           "adds": "with the solids at their own sizes, each of the five Platonic solids and the cuboctahedron sits in a skin that makes it a dodecahedron of edge 1, so every mix of these and the rhombic dodecahedron (127 mixes) fills space on one cubic grid of edge φ, with no layers (Theorems 1, 2)."
+        },
+        {
+          "n": "113",
+          "adds": "the Dehn invariant read from the solid as a set and kept by scissors congruence, machine-checked (Theorem 1 (a), Theorem 6″); invariant zero for the cube, rhombic dodecahedron, truncated octahedron, rhombic triacontahedron and golden rhombohedra, and the nine most regular space-fillers (Proposition 7′)."
         }
       ],
       "links": [
-        "#47 → #106 (v2.3, from #106's opening): #47's four layers and kit of seven connectors become one cubic grid with skins once the solids take their own sizes."
+        "#47 → #106 (v2.3, from #106's opening): #47's four layers and kit of seven connectors become one cubic grid with skins once the solids take their own sizes.",
+        "#100 → #113 (20 Nov): the Dehn test of #100 rests on the invariant that #113 defines from the solid and proves equal to the classical edge sum (Theorem 6″); whether the fair 18-face die (invariant zero) fills space is open."
       ]
     },
     {
@@ -1260,6 +1350,14 @@
         {
           "n": "108",
           "adds": "the second Vacuus: a central slice that carries three or more faces without being a mirror occurs only in the cuboctahedron, the icosidodecahedron, the runcinated 5-cell and the 4D permutohedron (Observation 4)."
+        },
+        {
+          "n": "111",
+          "adds": "the Vacuus of fair dice: the twelve axis lines each have a fair member (every face 4π/N; 10 to 50 faces), and on the ten with regular faces the Vacuus plates meet a mirror plane at θ = π/2 − (N − 2)π/(mN), a regular polygon hidden in the walls (Theorem 6), even where the lengths lie in no polygon's field (Proposition 5)."
+        },
+        {
+          "n": "112",
+          "adds": "one fair die per set of face directions, through the polar body and Alexandrov's theorem (Theorem A); exactly 149 Aequi in the main catalogue of the cube and icosahedron frames (Theorem B), 1083 more with both icosahedron placements (Proposition 6)."
         }
       ],
       "links": [
@@ -1268,7 +1366,8 @@
         "#85 → #87: #85’s angles δ = α + α′ are the angles of #87’s Vacuus fins (row 13).",
         "→ (4 Nov) Reversed neighbour impossible for T and C6 (search proof): T pyramids form whole tetrahedra, C6 whole cubes, in every tiling; R12 free + slides; the CO pyramids build CO on straight and J27 on twisted layers, and J27 + octahedra tile hcp (twin of the rectified cubic).",
         "→ (4 Nov) Admiral Cap network (#47) is frustrated (8 of 12 shared edges at most); its ground states are layer words — the same layer freedom as #92.",
-        "#87 → #105, #107, #108 (v2.3): the Vacuus taken to four dimensions: the permutohedron's 65 slices (#105), the mirror slices of every reflection polytope (#107), and the only non-mirror Vacuus in four dimensions (#108 Observation 4); #107 Corollary 4 is the split of T(x)'s edges seen in #105 Figure 4."
+        "#87 → #105, #107, #108 (v2.3): the Vacuus taken to four dimensions: the permutohedron's 65 slices (#105), the mirror slices of every reflection polytope (#107), and the only non-mirror Vacuus in four dimensions (#108 Observation 4); #107 Corollary 4 is the split of T(x)'s edges seen in #105 Figure 4.",
+        "#87 → #111 → #112 (v2.3 addition, 20 Nov): the Vacuus read on fair dice; #111 Theorem 6 hides a regular polygon in ten of its twelve dice; #112 Theorem A gives every fair die from its face directions and asks which of the 149 Aequi hide a polygon."
       ]
     },
     {
@@ -1311,13 +1410,18 @@
         {
           "n": "108",
           "adds": "all 81 polytopes of the chain groups A₃, B₃, H₃, A₄, B₄, F₄, H₄ from their 0/1 seeds: a balance law for any multiset of cell types (Theorem 1); the 601 balanced exchanges of the Queens' family are the independent loops of the 600-cell's skeleton, E − V + 1 (Theorem 3); which Platonic solids live on the corners of each family (Observation 5)."
+        },
+        {
+          "n": "114",
+          "adds": "#104's sweep carried to open space-time: in a simple complex of convex cells, births = deaths = cells and swaps = corners − 2 × cells in every generic direction, so swaps per birth = ⟨F⟩/2 − 3 (Theorem 1); bcc 4, Poisson–Voronoi 24π²/35 − 2."
         }
       ],
       "links": [
         "#76 → #91: the three uniform μ of #91’s 600 × 120 sweep are #76’s edge-equalising cuts (row 3).",
         "→ (4 Nov) Both Queens are spherical 11-designs; on the path between them the truncated 600-cell at μ ≈ 0.92417 is a 19-design (the classical W(H4) orbit, Goethals–Seidel); the 4D sweep's tone zeros: 24-cell, √2, 1 + √3.",
         "→ (4 Nov) #91's 4D sweep = SO(9) weight shapes; the All-Golden Polytopes are limits of Fibonacci multiplets, as Icosaxes is in 3D (SU(4)).",
-        "#104 → #108 (v2.3, from #108 Corollary 2): #104 Theorem 4 (two kinds of cells) is the two-kind case of #108 Theorem 1 (any multiset of cell types); 601 = (R–R faces) − (R cells) + 1 = E − V + 1 of the 600-cell."
+        "#104 → #108 (v2.3, from #108 Corollary 2): #104 Theorem 4 (two kinds of cells) is the two-kind case of #108 Theorem 1 (any multiset of cell types); 601 = (R–R faces) − (R cells) + 1 = E − V + 1 of the 600-cell.",
+        "#104 → #114 (20 Nov): #104 Theorems 1, 2 (h₁, h₂, h₃ of a swept simple 4-polytope) are the closed version of #114 Theorem 1; the 120-cell, truncated 120-cell and bitruncated 600-cell counts reappear exactly."
       ]
     },
     {
@@ -3231,6 +3335,21 @@
       "desc": "the truncated 600-cell at the station mu = 1/2 + sqrt5/5 of the Hopscotch line between the Queens (each edge cut at 1/(1 + phi^2) from each end): 1440 corners, 2400 triangles, 1200 golden hexagons, 720 cells; its Vacuus is exactly the 600-cell's 360 walls (60 mirrors, 300 cross walls)",
       "aka": "the golden station of the 600-cell (#110 Proposition 6)",
       "note": "named by DICTO on 17 Nov 2026; entered in The DICTOnary of Atoms v1.4 (four-dimensional chapter); picture: studies/2026-11-17-valley-charge"
+    },
+    {
+      "name": "Aequus (plural Aequi)",
+      "by": "DICTO",
+      "first": "#111",
+      "d": "2026-11-19",
+      "desc": "a fair die whose face families are whole orbits, under a point group, of directions along symmetry axes of the cube or the icosahedron frame, one depth per orbit, at least two kinds of face, every face subtending 4π/N from the centroid",
+      "note": "defined in #112; named 'Aequus ‹initials›-‹N›' after the solids whose faces it carries (e.g. Aequus CO-14, the cube cut by the octahedron; Lucky 7 is its nickname only); entered in The DICTOnary of Atoms v1.4 (D179-D191)"
+    },
+    {
+      "name": "Aequi Mosaici (singular Aequus Mosaicus)",
+      "by": "DICTO",
+      "first": "#112",
+      "d": "2026-11-20",
+      "desc": "the Aequi with four or more kinds of face (82 of the 149 of the main catalogue)"
     }
   ],
   "concepts": [
@@ -4627,6 +4746,26 @@
         "src": "#105",
         "what": "whether turned or mirrored copies of the DICTO 1:2 Truncated Octahedron fill space (§5)",
         "status": "no: its Dehn invariant is nonzero (#100 Theorem 1.1, with Debrunner's theorem; study 2026-11-14-chat-handoff, Lead 10); to be written into the next version"
+      },
+      {
+        "src": "#111",
+        "what": "which axis lines put the regular polygon in the lengths (four do); the fields of the radii of T ∩ D and of the 42- and 50-face dice; lines with faces off the axes; the physical fair point of a printed die (§7)",
+        "status": "open"
+      },
+      {
+        "src": "#112",
+        "what": "a structural reason for the diameter certificate; witnesses of N − 1 directions; closed forms; the Vacuus of the 149 Aequi (only D191 checked); both placements under the subgroups of Oh; Aequi as Wulff shapes (§8)",
+        "status": "open"
+      },
+      {
+        "src": "#113",
+        "what": "the ten other fair dice in Lean; does the fair 18-face die fill space (Debrunner in Lean); Sydler's converse in Lean; convex hulls; an exact t for Lucky 7; Hilbert's sentence for every base and altitude; edge sums for non-convex solids (§10)",
+        "status": "open"
+      },
+      {
+        "src": "#114",
+        "what": "swaps per birth against ⟨F⟩/2 − 3 in a public three-dimensional grain map swept by planes (§7); the Sun, Earth's plates, clouds and froth not confirmed",
+        "status": "open lead"
       }
     ],
     "waiting": [
@@ -10629,7 +10768,7 @@
         "One",
         "Earth (cube)",
         "Quanta of Space I and II (II: The DICTOnary of Atoms)",
-        "published; next versions drafted (Quanta 2.3, DICTOnary 1.4)"
+        "published; Quanta of Space Version 3.0 published 20 Nov 2026 (10.5281/zenodo.24386728); The DICTOnary of Atoms Version 1.4 published 20 Nov 2026 (10.5281/zenodo.24385357)"
       ],
       [
         "Two",
