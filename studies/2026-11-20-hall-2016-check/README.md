@@ -78,9 +78,8 @@ Results (`data/kostick_cells.json`, `data/kostick_check.json`):
   - One sentence is added to the status box, and the change is logged in names-changes.md.
   - Rebuilt with print.mjs; figcheck is OK; the draft now has 129 pages. The reading-folder draft was replaced, and the old one was moved to read-earlier.
 - GET study README (2026-11-15-grunbaum-k10): rows for Hall 2016, Inchbald and Kostick 2022 were added to the prior-art table, with an update under the novelty verdict.
-- **Not changed, for DICTO:**
-  - D192 GET A still says "not found in the sources checked". Kostick 2022 shows it.
-  - The Palomar entry's witness is GET A, so its literature section must credit Kostick 2022 too.
+- **D192 GET A (DICTO's decision, 20 Nov):** name and number kept; note added at its first use: "* First shown by J. Kostick in a vZome array (“concavo-convex triacon array”, 3 April 2022), without proof; rediscovered by DICTO as GET A." Its "not found in the sources checked" now covers only the zone property and the proof of tiling. D193 GET B unchanged. Status box and names-changes.md updated; rebuilt (129 pages, figcheck OK); reading-folder draft replaced, previous copy kept in read-earlier.
+- **Still open:** the Palomar entry's witness is GET A, so its literature section must credit Kostick 2022 too.
 
 ## Files
 
