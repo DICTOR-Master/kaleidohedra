@@ -8,13 +8,13 @@
    "orcid": "0009-0001-2620-2036"
   }
  ],
- "version": "1",
+ "version": "2",
  "language": "eng",
  "license": "cc-by-sa-4.0",
- "publication_date": "2026-10-30",
+ "publication_date": "2026-11-20",
  "access_right": "open",
  "title": "Between the Queens: the five stages from the 600-cell to the 120-cell, with their slices and shadows",
- "description": "<p>In #63 the White Queen is the 600-cell, and in #65 the Red Queen, the 120-cell, is built exactly from her. The four-dimensional icosahedron with hexagons, and the stages that lead from one queen to the other, are DICTO's ideas. Cut the White Queen's corners, deeper and deeper, and she passes through five uniform four-dimensional solids before she becomes the Red Queen: the truncated and rectified 600-cell, the bitruncated 600-cell (the midpoint, whose cells are 120 truncated icosahedra and 600 truncated tetrahedra), and the rectified and truncated 120-cell. All seven are classical: Alicia Boole Stott was the first to list the semiregular four-dimensional solids, in 1910, and they are Wythoff's and Coxeter's uniform polytopes. We build each stage from the White Queen's own corners, edges, triangles and cells, prove the cut positions that make every edge equal (1/3, 1/2, 3/5, the triangle centre and (5 − √5)/10), and give the complete atlas of their slices and shadows in the queens' four directions: 1402 slices from the centre to the tips, and 20 shadows. Main theorem: the numbers of slices and the shadows of Table 2, with both ends equal to the exact atlases of #63 and #65; and in every direction the shadows of the truncated and the rectified 600-cell have the same number of faces, and so do those of the rectified and the truncated 120-cell. The stages are in the app: a slider in the White Queen world runs from White to Red.</p><p>View in app: <a href=\"https://kaleidohedra.dictospheres.com/?open=whitequeen:t12\">Kaleidohedra, White Queen world, the bitruncated midpoint</a>. Computation, proofs and drafting with Claude (Anthropic). More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "description": "<p>Version 2 adds short cross-references to later results: the three uniform members of the 600-cell × 120-cell sweep of #91 are the cuts of Proposition 1; the two ends and every stage are spherical 11-designs, with a 19-design, found numerically, on the path (Section 2); the walls and the hidden shapes of #110 and of <i>Alicia in Wonderland</i>, Chapters 10 and 11 (Sections 1, 2 and 4); the midpoint's truncated icosahedra (Section 4). It uses the regular names 600-cell and 120-cell in the text, with Schläfli's credit and DICTO's names in a note, and one credit line for the computation.</p><p>In #63 the 600-cell* (Schläfli, 1852) is mapped, and in #65 the 120-cell** (Schläfli, 1852) is built exactly from it. The four-dimensional icosahedron with hexagons, and the stages that lead from the one to the other, are DICTO's ideas. Cut the 600-cell's corners, deeper and deeper, and it passes through five uniform four-dimensional solids before it becomes the 120-cell: the truncated and rectified 600-cell, the bitruncated 600-cell (the midpoint, whose cells are 120 truncated icosahedra and 600 truncated tetrahedra), and the rectified and truncated 120-cell. All seven are classical: Alicia Boole Stott was the first to list the semiregular four-dimensional solids, in 1910, and they are Wythoff's and Coxeter's uniform polytopes. We build each stage from the 600-cell's own corners, edges, triangles and cells, prove the cut positions that make every edge equal (1/3, 1/2, 3/5, the triangle centre and (5 − √5)/10), and give the complete atlas of their slices and shadows in the four directions of #63 and #65: 1402 slices from the centre to the tips, and 20 shadows. <b>Main theorem:</b> the numbers of slices and the shadows of Table 2, with both ends equal to the exact atlases of #63 and #65; and in every direction the shadows of the truncated and the rectified 600-cell have the same number of faces, and so do those of the rectified and the truncated 120-cell. The stages are in the app: a slider in the 600-cell's world runs from the 600-cell to the 120-cell.</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
  "keywords": [
   "DICTO",
   "White Queen",
@@ -52,6 +52,21 @@
    "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/3c3ae4f9635d5cadad2a25de513a812704c7da94/studies/2026-10-30-queen-stages",
    "relation": "isSupplementedBy",
    "scheme": "url"
+  },
+  {
+   "identifier": "10.5281/zenodo.23931389",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24272477",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24383095",
+   "relation": "references",
+   "scheme": "doi"
   }
  ],
  "subjects": [
@@ -65,5 +80,6 @@
    "identifier": "https://zbmath.org/classification/?q=cc:51M20",
    "scheme": "url"
   }
- ]
+ ],
+ "notes": "Version 2 adds short cross-references to later results: the three uniform members of the 600-cell × 120-cell sweep of #91 are the cuts of Proposition 1; the two ends and every stage are spherical 11-designs, with a 19-design, found numerically, on the path (Section 2); the walls and the hidden shapes of #110 and of Alicia in Wonderland, Chapters 10 and 11 (Sections 1, 2 and 4); the midpoint's truncated icosahedra (Section 4). It uses the regular names 600-cell and 120-cell in the text, with Schläfli's credit and DICTO's names in a note, and one credit line for the computation."
 }
