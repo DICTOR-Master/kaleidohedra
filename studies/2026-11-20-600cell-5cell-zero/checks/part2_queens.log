@@ -1,0 +1,61 @@
+PASS all 600 centroids have the same norm^2 cc = ((7+3*sqrt5))
+PASS left multiplication: 5 sets of 120 cells; right multiplication: 5 sets of 120; each cell in one of each
+PASS every left set meets every right set in exactly 24 cells
+PASS the ten sets are distinct (no left set is a right set)
+PASS the 600 centres: nearest neighbours are exactly the cells sharing a triangle (4 each, 1200 edges): the 120-cell of #65
+PASS each of the ten sets has its 120 centres on a regular 600-cell (Gram values and 12 neighbours at cos 36 deg)
+PASS each left set meets each right set in 24 centres forming a 24-cell (Gram values {-1, +-1/2, 0})
+    so the ten sets are Coxeter's compound of ten 600-cells in the 120-cell of the centres, two states of five, as in #110 Theorem B(a)
+PASS the right symmetries of each left set form a binary tetrahedral group 2T (order 24, real parts 1,-1,0^6,(1/2)^8,(-1/2)^8)
+PASS the five left sets have five different 2T's; the right sets have the same five as left stabilisers
+PASS the five 2T's are conjugate in 2I (g T g^-1 runs over all five)
+    left set i and right set j share a 2T for (i,j) = [(0, 3), (1, 4), (2, 1), (3, 2), (4, 0)] ; they still meet in 24 cells, like every pair
+PASS rotations x -> l x r^-1 with l in 2I and r in the set's 2T keep the set: 120*24/2 = 1440 = the study's count, so the group is +-[I x T] (Conway-Smith)
+PASS the left set of the centre c0 r^-1 depends exactly on the coset r T0: the five sets are the five cosets of 2T in 2I
+PASS the 2T cosets give 10 splits of the 600-cell into 5 disjoint 24-cells, 25 different 24-cells, each in exactly 2 splits (one left, one right): #110 B'(f)
+PASS a capped cell has its 4 corners in 4 different 24-cells of every split, missing one (adjacent corners are never in one 24-cell)
+PASS four roots of the 600-cell at 120/90 degrees (an A4 diagram) generate the 5-cell's group S5: 120 elements
+PASS S5 splits the 120 corners into orbits 20,20,20,30,30 (Koca et al.)
+PASS #110's A (perms of (phi^2,phi^2,phi^2,phi,0)) has the same Gram values as the two non-root 20-orbits (A and -A); not as C3
+PASS -A is the antipode of A
+PASS every element of S5 maps each of the ten sets onto one of the ten
+PASS rotations (even) keep left sets left; odd elements swap left and right sets
+PASS the 60 rotations of S5 act on the five left sets as the full alternating group A5 (faithful, transitive)
+PASS S5 meets the symmetry group of each left set in exactly 12 rotations (an A4), no reflections: S5 is not inside it, nor it in S5
+PASS A has exactly 5 tetrahedral cells that are cells of the 600-cell, and so does -A
+PASS the A4 fixing left set i fixes exactly 2 cells: one tetrahedron of A and the opposite one of -A, both in left set i
+PASS A's five tetrahedra lie one in each left set and one in each right set (and the same for -A)
+PASS the centre axis of each such tetrahedron is a cross wall normal carrying 12 of C3's 20 corners (C3's walls x_k = mean, #110 Table 1)
+PASS the 120 A copies of the 600-cell (A and -A for its 60 S5's) have 600 tetrahedra: every cell exactly once (dual of #110 B'(f))
+PASS every one of the 120 A copies takes one tetrahedron from each left set and one from each right set
+    so each A copy is a transversal of both states; the 24 cells of a left-right meeting are the tetrahedra of 24 A copies
+    tip 600-cell = sqrt2 * (2I c)/|c| = sqrt2 * P * c^ : P turned by right multiplication by a unit quaternion; smallest turn cos^2 = (7/16+3/16*sqrt5) = 0.856763
+PASS the unit tip 600-cell is P * c^ (right multiplication), and NOT u * P for any u: c^-1 2I c is not 2I
+PASS the cell centres of the tip 600-cell, at unit radius, are 600 points that contain all 120 corners of P: P is inscribed in the tip 600-cell's dual 120-cell
+PASS the ten tip 600-cells (5 left choices, 5 mirror choices) have ten different dual 120-cells, each holding P as an inscribed 600-cell
+PASS in each, P is a left orbit (left choices) or a right orbit (mirror choices) of 2I: one state or the other
+    count: a 600-cell lies in exactly 10 of the 120-cells of its size (both groups have order 14400; #110 B(a) read the other way), so these are all of them
+PASS P lies strictly inside the tip 600-cell (P's radius 1 < tip inradius sqrt2 * r_in, r_in^2 = cc/16): the hull of the capped solid is the tip 600-cell
+PASS volume of the capped solid / volume of its hull = 5 sqrt5 phi^2 / (4 * 25/4 phi^3) = 1/(sqrt5 phi)
+    ratio = 0.276393
+PASS 60 mirror normals (corners) and 300 cross-wall normals (cell centres), no overlap
+PASS every ridge plate of the capped solid (1200 old triangles, 720 cap sides) is one of the 60 mirrors; none is a cross wall
+PASS each cap side triangle (tip, u, v) lies on the mirror perpendicular to the opposite edge wx of its cell
+PASS that mirror also carries the 120-cell pentagon dual to wx (#107 Cor. 2), and the tip lies on the ray through one of its corners
+PASS each mirror carries 20 old triangles and 12 cap sides: its 12 pentagons (#107) and its 12 cap sides pair off one to one
+PASS every plate carries each ridge together with its opposite (the solid is centrally symmetric): heart kind (#110 Lemma 1)
+PASS each cap (a 5-cell) has its 10 two-face plates, about P's centre, on 10 different mirrors: every cap is hidden in P's mirrors
+    each tip lies on {6: 120} mirrors and {27: 120} cross walls (as a point)
+PASS every tip lies on the same number of mirrors, and of cross walls (as printed)
+PASS the tip 600-cell's 1200 triangles lie on 60 of P's 300 cross walls, 20 on each (its own mirrors); none on P's mirrors
+PASS conversely P's 60 mirrors are cross walls of the tip 600-cell (its cell centres include P's corners)
+PASS at a corner the 20 cells (faces of the icosahedral vertex figure) split by left set into 5 sets of 4 whose face centres form 5 regular tetrahedra
+PASS the left tetrahedra and the right tetrahedra are different (no tetrahedron in both): the two chiral compounds of five tetrahedra in the dodecahedron of face centres
+PASS each set of 4 faces at a corner meets all 12 neighbours once (edge cover once, read at a corner)
+PASS 3D: the octahedron's 4 alternate faces cover its 12 edges once; tetrahedra on them have tips (1,1,1)-type: a regular tetrahedron of twice the edge, convex
+PASS #63's 15 shells round one corner: every shell splits equally among the five left sets (and the five right sets)
+    shell sizes from the corner outward: [20, 20, 30, 60, 60, 60, 20, 60, 20, 60, 60, 60, 30, 20, 20]
+PASS P together with the unit tip 600-cell (240 points) is an 11-design (both parts are) but not a 12-design: no new design from the pair
+    degree-12 zonal sum = (19800+0*sqrt5)
+    run time 67 s
+FINAL ok
