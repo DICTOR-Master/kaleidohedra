@@ -67,5 +67,21 @@ LEADS: (a) place 15 S around one C1 (reflex edge: one S edge B and one S lateral
 (b) the same for C2; (c) the faces of S (rhombi, side rectangles) must meet C1's faces: check face-to-face fit of the rhombus against
 hexagons and pyramid sides.
 
+## Step 3 (placement around one C1; scripts/place.py, data/place.json, log.txt)
+The slanted prism S of step 2 is a rhombohedron with all 12 edges equal to a (face angles cos = phi^-2, phi^-2, phi^-4). Each of the 30
+hexagon-hexagon edges takes wedges T,T (110.905 deg each) and each of the 60 reflex edges takes B (69.095) and Q (90) in either order,
+S edge on the C1 edge at full length a, first face flush with the C1 face. All 48 isometries of S per wedge (all 12 edges, both ends,
+both face orders, mirror images included) were generated and tested with the exact separating-axis test for convex polytopes
+(C1 split into the truncated icosahedron and 12 pyramids; float64, tolerance 1e-9).
+- Each slot alone works: no S wedge overlaps C1; 16 placements per hh slot and 32 per reflex slot survive (faces flush, wedge rings close).
+- **Contradiction.** Slots at one truncated-icosahedron vertex clash: an hh slot and a reflex slot meeting at the same vertex have
+  NO pair of placements (all 512 tried) whose S pieces are interior-disjoint or identical; the best achievable worst-case
+  separation is -0.2432 (a forced interior overlap, far from the tolerance). The same failure holds for 30 hh/reflex pairs without a
+  shared vertex and for 60 reflex/reflex pairs, so arc consistency empties the hh slots at once.
+- Verdict: one S kind (the slanted rhombic prism of step 2) placed edge to edge at length a cannot be placed around C1: the edge rings
+  close in angle and count but the pieces overlap at the vertices. Not excluded: other S kinds in the 38 further ring-closing
+  candidates (laterals of other angles), edges meeting at partial length, or other ring splits. C2 not run, since C1 failed.
+- LEAD: repeat place.py for one of the 38 other candidates, or allow S edges shorter than a (partial overlap along the edge).
+
 ## Status box
 Study note, not published. Exact run on the compute host (sympy Fractions in the basis pi, alpha, beta, gamma). No tiling search.

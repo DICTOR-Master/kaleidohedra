@@ -55,3 +55,21 @@ C2 c^2 = 1/2 - sqrt(5)/10   n_z^2 = sqrt(5)/5  (>0: True )  acute edge angle alp
    edges: 4 x acute + 4 x obtuse (one of each on every side plane top/bottom), 4 right-angled lateral edges; Dehn: a x (acute+obtuse) = a x pi = 0
 FINAL (script-level ok)
 FINAL ok
+C1: TI vol 55.287731, pyramid vol 0.638593, total 62.950850
+S dihedrals: {90.0: 4, 69.0948: 4, 110.9052: 4}
+hh: 30 edges, exterior angle 221.8103 (should be 221.8103)
+hp: 60 edges, exterior angle 159.0948 (should be 159.0948)
+hh: edges 30; surviving ring placements per edge: min 16 max 16; sample stats ('TT', [4, 4], [4, 4], 16)
+hp: edges 60; surviving ring placements per edge: min 32 max 32; sample stats ('BQ', [4, 4], [4, 4], 16)
+unique S placements: 1200
+pair of slots with NO mutually compatible placements: ('hh', 'hp', 'shared vertex'): 60 pairs, first (0, 1)
+pair of slots with NO mutually compatible placements: ('hh', 'hh', 'no shared vertex'): 60 pairs, first (0, 5)
+pair of slots with NO mutually compatible placements: ('hh', 'hp', 'no shared vertex'): 30 pairs, first (0, 13)
+pair of slots with NO mutually compatible placements: ('hp', 'hp', 'no shared vertex'): 60 pairs, first (1, 3)
+pair of slots with NO mutually compatible placements: ('hp', 'hh', 'shared vertex'): 60 pairs, first (1, 5)
+pair of slots with NO mutually compatible placements: ('hp', 'hh', 'no shared vertex'): 30 pairs, first (1, 7)
+for that pair the best achievable worst-case separation over all placements = -0.243182 (negative = forced interior overlap)
+adjacent slots at one TI vertex: hh edge 0 and hp edge 1: best worst-case separation over all 512 placement pairs = -0.243182
+arc consistency: 1 rounds, domain sizes {'hh': [0, 16], 'hp': [32]}, time 48s
+CONTRADICTION: edge slot hh (index 0) has no placement compatible with its neighbours' placements
+FINAL ok

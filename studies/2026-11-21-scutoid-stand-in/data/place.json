@@ -1,0 +1,67 @@
+{
+ "hh_survivors": [
+  16
+ ],
+ "hp_survivors": [
+  32
+ ],
+ "stats_hh": [
+  "TT",
+  [
+   4,
+   4
+  ],
+  [
+   4,
+   4
+  ],
+  16
+ ],
+ "stats_hp": [
+  [
+   "BQ",
+   [
+    4,
+    4
+   ],
+   [
+    4,
+    4
+   ],
+   16
+  ],
+  [
+   "QB",
+   [
+    4,
+    4
+   ],
+   [
+    4,
+    4
+   ],
+   16
+  ]
+ ],
+ "contradiction": true,
+ "pair_contradictions": {
+  "('hh', 'hp', 'shared vertex')": 60,
+  "('hh', 'hh', 'no shared vertex')": 60,
+  "('hh', 'hp', 'no shared vertex')": 30,
+  "('hp', 'hp', 'no shared vertex')": 60,
+  "('hp', 'hh', 'shared vertex')": 60,
+  "('hp', 'hh', 'no shared vertex')": 30
+ },
+ "best_separation_first_bad_pair": -0.243182472501694,
+ "best_separation_adjacent_pair": -0.243182472501694,
+ "domains_after_AC": {
+  "hh": [
+   0,
+   16
+  ],
+  "hp": [
+   32
+  ]
+ },
+ "contradiction_edge": "hh"
+}
