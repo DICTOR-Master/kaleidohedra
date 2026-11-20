@@ -82,7 +82,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
       assert.equal(st.vertices, RED_ALONG_WHITE[k], `${tag} ${k}: the Red Queen's outline at 6`);
       assert.equal(st.vertices, RQ.shadows[WHITE_AS_RED[k]].V, `${tag} ${k}: = her own ${WHITE_AS_RED[k]} (atlas)`);
       const cap = await page.locator(`${P} .ch-param-caption`).textContent();
-      assert.ok(cap.includes('(White Queen)') && cap.includes('(Red Queen)'), `${tag} ${k}: the caption names both (${cap})`); checks++;
+      assert.ok(cap.includes('(600-cell)') && cap.includes('(120-cell)'), `${tag} ${k}: the caption names both (${cap})`); checks++;
       if (k === 'vertex-first') {
         await page.screenshot({ path: `${SH}/${tag}-stage6.png` });
         await drag(6, 5); assert.equal(await stageNo(), 5); await page.screenshot({ path: `${SH}/${tag}-stage5.png` });

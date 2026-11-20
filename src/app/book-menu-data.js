@@ -12,10 +12,10 @@ export const BOOKS = [
   { id: 'Four', title: 'The Golden Cycle', cover: 'golden-cycle', worlds: [['chains', '#22, #23, #24'], ['cycles', '#27, #28'], ['kpFilm', '#27'], ['theaetetus', '#29'], ['doubleVision', '#32, #33'], ['vajrayana', '#34, #34a, #35, #35a, #35b'], ['up', '#38, #38a, #39'], ['upFilm', '#38']] },
   { id: 'Five', title: 'Star Cores', cover: 'star-cores', worlds: [['starCores', '#79, #80, #81']] },
   { id: 'Six', title: 'HexOct', cover: 'hexoct', worlds: [['stackings', '#57, #58, #66, #68, #70–#74'], ['hexoct', '#75, #83'], ['hexoctKit', '#86']] },
-  { id: 'Seven', title: 'The Permutohedron Paradigm', cover: 'permutohedron-paradigm', worlds: [['bitrunc', '#104, #107'], ['perm4', '#105']] },
+  { id: 'Seven', title: 'The Permutohedron Paradigm', cover: 'permutohedron-paradigm', worlds: [['bitrunc', '#76, #104, #107'], ['perm4', '#105']] },
   { id: 'Eight', title: 'The Platonic Solids', cover: 'platonic-solids', worlds: [['roofFold', '#8'], ['aristotle', '#44, #77, #92'], ['reuleaux', '#45'], ['platonicMix', '#47, #106']] },
   { id: 'Nine', title: 'The Golden Ladder', cover: 'golden-ladder', worlds: [] },
-  { id: 'Ten', title: 'Alicia in Wonderland', cover: 'alicia', worlds: [['whiteQueen', '#63, #76'], ['queensWalls', '#110']] },
+  { id: 'Ten', title: 'Alicia in Wonderland', cover: 'alicia', worlds: [['whiteQueen', '#63, #65, #76'], ['queensWalls', '#107, #109, #110']] },
   { id: 'Eleven', title: 'A Brief Geometry of Space', cover: null, worlds: [] },
 ];
 
