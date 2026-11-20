@@ -1,9 +1,9 @@
-# Figure 1 of #76: the seven vertex-first shadows, White Queen to Red Queen, from the app (Kaleidohedra, White Queen world, Shadow,
-# stage slider; screenshots by Playwright), cropped and labelled.
+# Figure 1 of #76: the seven vertex-first shadows, 600-cell to 120-cell, from the app (Kaleidohedra, the 600-cell's world, Shadow,
+# stage slider; screenshots by Playwright), cropped and labelled (#76 v2, 20 Nov 2026: regular names only in the labels).
 from PIL import Image, ImageDraw, ImageFont
 import os
 H = os.path.dirname(os.path.abspath(__file__)) + '/../figures/'
-names = ['White Queen\n600-cell', 'truncated\n600-cell', 'rectified\n600-cell', 'bitruncated\n(midpoint)', 'rectified\n120-cell', 'truncated\n120-cell', 'Red Queen\n120-cell']
+names = ['600-cell', 'truncated\n600-cell', 'rectified\n600-cell', 'bitruncated\n(midpoint)', 'rectified\n120-cell', 'truncated\n120-cell', '120-cell']
 tiles = [Image.open(f'{H}stage-fig-{k}.png').crop((230, 230, 670, 670)).resize((330, 330)) for k in range(7)]
 W, TH = 330 * 4, 330 + 70
 im = Image.new('RGB', (W, TH * 2 + 40), tiles[0].getpixel((2, 2))[:3]); d = ImageDraw.Draw(im)
