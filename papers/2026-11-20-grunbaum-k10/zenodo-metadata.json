@@ -1,0 +1,59 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "version": "1",
+ "publication_date": "2026-11-20",
+ "title": "Ten Faces in Every Zone: Grünbaum's Question at k = 10 — The DICTO Grünbaum–Escher Triacontahedron (GET A and GET B)",
+ "subjects": [
+  {
+   "term": "MSC2020 52C22: Tilings in n dimensions (aspects of discrete geometry)",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52B10: Three-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B10",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52C07: Lattices and convex bodies in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C07",
+   "scheme": "url"
+  }
+ ],
+ "description": "<p>A zone of a polyhedron with parallelogram faces is a belt of faces joined across parallel edges. Grünbaum asked in 2010 whether, for each even k ≥ 4, some rhombic monohedral parallelohedron (a polyhedron with congruent rhombic faces whose translates fill space) has every zone of exactly k faces; the cube gives 4, the rhombic dodecahedra 6, his doubly indented rhombic icosahedra 8, and \"no information is available for any k ≥ 10\" [1]. We answer k = 10. <b>Main theorem</b> (Theorem 1): GET A and GET B, the rhombic triacontahedron less four oblate golden rhombohedra taken at four of its three-face corners, are polyhedra of Grünbaum's spherical type with 30 congruent golden rhombic faces, every one of their six zones has exactly 10 faces, and their translates by one lattice fill space face to face. The proof is an exact computation in ℤ[φ]; for GET B it is also a Lean 4 proof checked by the kernel (§9). GET A and GET B are not congruent, even as mirror images, yet they have the same lattice, the same 16 cell types and the same volume 20 + 32φ (Theorem 2). Both are indentations of the triacontahedron, so they contradict Grünbaum's tentative remark that none of its other indentations \"seem to be parallelohedra\" (Corollary 3). In one copy of the triacontahedron, the four dimples of GET A, of GET B and of the indented rhombic triacontahedron of Hall (2016) lie on one inscribed cube: on a square face, at a corner and its three neighbours, and at alternate corners (Proposition 6). Within one class of surfaces, those whose six zones cross each other exactly twice, every face-to-face lattice tiler built from golden rhombohedra consists, like GET, of 16 golden rhombohedra of 16 different types, the four missing types oblate (Theorem 10, exact computation). GET A was first shown, without proof, in a vZome array by J. Kostick (2022); GET B was not found in the sources checked.</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "DICTO",
+  "Grünbaum",
+  "parallelohedra",
+  "isozonohedra",
+  "rhombic triacontahedron",
+  "golden rhombohedra",
+  "zones",
+  "space-filling",
+  "GET",
+  "Lean 4"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24385357",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}
