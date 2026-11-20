@@ -1,0 +1,134 @@
+== controls ==
+ok   octet [strict]: all pieces survive the angle test  (expected pass)
+ok   cube alone [strict]: all pieces survive the angle test  (expected pass)
+   [B3 permutohedron alone] prune B3 permutohedron: edge (4, 8) angle 3/4π has no closure (sum π or 2π) using ['B3 permutohedron']
+ok   B3 permutohedron alone [strict]: survivors: []  (expected fail)
+ok   truncated cuboctahedron + cube [strict]: all pieces survive the angle test  (expected pass)
+ok   truncated octahedron alone [strict]: all pieces survive the angle test  (expected pass)
+   [dodecahedron alone] prune dodecahedron: edge (5, 5) angle +2α has no closure (sum π or 2π) using ['dodecahedron']
+ok   dodecahedron alone [strict]: survivors: []  (expected fail)
+   [regular tetrahedron alone] prune tetrahedron: edge (3, 3) angle +2γ has no closure (sum π or 2π) using ['tetrahedron']
+ok   regular tetrahedron alone [strict]: survivors: []  (expected fail)
+     octet closures at a tetrahedron edge: [('1', {'octahedron': 1, 'tetrahedron': 1}), ('2', {'octahedron': 2, 'tetrahedron': 2})]
+== leads ==
+-- lead 1: ['dodecahedron centre pyramid', 'truncated_icosahedron']
+     dodecahedron centre pyramid  edge ('base', 'side')   x  5  +α             = 58.282526°
+     dodecahedron centre pyramid  edge ('side', 'side')   x  5  2/3π           = 120.000000°
+     truncated_icosahedron        edge (6, 6)             x 30  3/2π−2β        = 138.189685°
+     truncated_icosahedron        edge (5, 6)             x 60  3/4π−α+β       = 142.622632°
+     cheapest closure of the irrational part at dodecahedron centre pyramid edge ('base', 'side'): 3π  e.g. [{'truncated_icosahedron 3/4π−α+β': 2, 'truncated_icosahedron 3/2π−2β': 1, 'dodecahedron centre pyramid +α': 2}]
+     cheapest closure of the irrational part at truncated_icosahedron edge (6, 6): 3π  e.g. [{'truncated_icosahedron 3/4π−α+β': 2, 'truncated_icosahedron 3/2π−2β': 1, 'dodecahedron centre pyramid +α': 2}]
+     cheapest closure of the irrational part at truncated_icosahedron edge (5, 6): 3π  e.g. [{'truncated_icosahedron 3/4π−α+β': 2, 'truncated_icosahedron 3/2π−2β': 1, 'dodecahedron centre pyramid +α': 2}]
+   [lead 1 pair alone] prune dodecahedron centre pyramid: edge ('base', 'side') angle +α has no closure (sum π or 2π) using ['truncated_icosahedron', 'dodecahedron centre pyramid']
+   [lead 1 pair alone] prune truncated_icosahedron: edge (6, 6) angle 3/2π−2β has no closure (sum π or 2π) using ['truncated_icosahedron']
+ok   lead 1 pair alone [strict]: survivors: []
+     -> lead pieces cannot occur in any tiling
+   [lead 1 pair alone] prune dodecahedron centre pyramid: edge ('base', 'side') angle +α has no closure (irrational part 0 and sum ≤ 2π) using ['truncated_icosahedron', 'dodecahedron centre pyramid']
+   [lead 1 pair alone] prune truncated_icosahedron: edge (6, 6) angle 3/2π−2β has no closure (irrational part 0 and sum ≤ 2π) using ['truncated_icosahedron']
+ok   lead 1 pair alone [rational]: survivors: []
+     -> lead pieces cannot occur in any tiling
+   [lead 1 + dodecahedron + icosahedron] prune dodecahedron centre pyramid: edge ('base', 'side') angle +α has no closure (sum π or 2π) using ['truncated_icosahedron', 'dodecahedron', 'icosahedron', 'dodecahedron centre pyramid']
+   [lead 1 + dodecahedron + icosahedron] prune truncated_icosahedron: edge (6, 6) angle 3/2π−2β has no closure (sum π or 2π) using ['dodecahedron', 'icosahedron', 'truncated_icosahedron']
+   [lead 1 + dodecahedron + icosahedron] prune dodecahedron: edge (5, 5) angle +2α has no closure (sum π or 2π) using ['icosahedron', 'dodecahedron']
+   [lead 1 + dodecahedron + icosahedron] prune icosahedron: edge (3, 3) angle 3/2π−2β has no closure (sum π or 2π) using ['icosahedron']
+ok   lead 1 + dodecahedron + icosahedron [strict]: survivors: []
+     -> lead pieces cannot occur in any tiling
+   [lead 1 + dodecahedron + icosahedron] prune dodecahedron centre pyramid: edge ('base', 'side') angle +α has no closure (irrational part 0 and sum ≤ 2π) using ['truncated_icosahedron', 'dodecahedron', 'icosahedron', 'dodecahedron centre pyramid']
+   [lead 1 + dodecahedron + icosahedron] prune truncated_icosahedron: edge (6, 6) angle 3/2π−2β has no closure (irrational part 0 and sum ≤ 2π) using ['dodecahedron', 'icosahedron', 'truncated_icosahedron']
+   [lead 1 + dodecahedron + icosahedron] prune dodecahedron: edge (5, 5) angle +2α has no closure (irrational part 0 and sum ≤ 2π) using ['icosahedron', 'dodecahedron']
+   [lead 1 + dodecahedron + icosahedron] prune icosahedron: edge (3, 3) angle 3/2π−2β has no closure (irrational part 0 and sum ≤ 2π) using ['icosahedron']
+ok   lead 1 + dodecahedron + icosahedron [rational]: survivors: []
+     -> lead pieces cannot occur in any tiling
+   [lead 1 + truncated octahedron + truncated cuboctahedron + cube] prune dodecahedron centre pyramid: edge ('base', 'side') angle +α has no closure (sum π or 2π) using ['truncated_icosahedron', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'dodecahedron centre pyramid']
+   [lead 1 + truncated octahedron + truncated cuboctahedron + cube] prune truncated_icosahedron: edge (6, 6) angle 3/2π−2β has no closure (sum π or 2π) using ['truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosahedron']
+ok   lead 1 + truncated octahedron + truncated cuboctahedron + cube [strict]: survivors: ['truncated_octahedron', 'truncated_cuboctahedron', 'cube']
+     -> lead pieces cannot occur in any tiling
+   [lead 1 + truncated octahedron + truncated cuboctahedron + cube] prune dodecahedron centre pyramid: edge ('base', 'side') angle +α has no closure (irrational part 0 and sum ≤ 2π) using ['truncated_icosahedron', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'dodecahedron centre pyramid']
+   [lead 1 + truncated octahedron + truncated cuboctahedron + cube] prune truncated_icosahedron: edge (6, 6) angle 3/2π−2β has no closure (irrational part 0 and sum ≤ 2π) using ['truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosahedron']
+ok   lead 1 + truncated octahedron + truncated cuboctahedron + cube [rational]: survivors: ['truncated_octahedron', 'truncated_cuboctahedron', 'cube']
+     -> lead pieces cannot occur in any tiling
+   [lead 1 + truncated icosidodecahedron] prune truncated_icosahedron: edge (6, 6) angle 3/2π−2β has no closure (sum π or 2π) using ['dodecahedron centre pyramid', 'truncated_icosidodecahedron', 'truncated_icosahedron']
+   [lead 1 + truncated icosidodecahedron] prune truncated_icosidodecahedron: edge (4, 10) angle 1/2π+α has no closure (sum π or 2π) using ['dodecahedron centre pyramid', 'truncated_icosidodecahedron']
+   [lead 1 + truncated icosidodecahedron] prune dodecahedron centre pyramid: edge ('base', 'side') angle +α has no closure (sum π or 2π) using ['dodecahedron centre pyramid']
+ok   lead 1 + truncated icosidodecahedron [strict]: survivors: []
+     -> lead pieces cannot occur in any tiling
+   [lead 1 + truncated icosidodecahedron] prune truncated_icosahedron: edge (6, 6) angle 3/2π−2β has no closure (irrational part 0 and sum ≤ 2π) using ['dodecahedron centre pyramid', 'truncated_icosidodecahedron', 'truncated_icosahedron']
+   [lead 1 + truncated icosidodecahedron] prune truncated_icosidodecahedron: edge (4, 10) angle 1/2π+α has no closure (irrational part 0 and sum ≤ 2π) using ['dodecahedron centre pyramid', 'truncated_icosidodecahedron']
+   [lead 1 + truncated icosidodecahedron] prune dodecahedron centre pyramid: edge ('base', 'side') angle +α has no closure (irrational part 0 and sum ≤ 2π) using ['dodecahedron centre pyramid']
+ok   lead 1 + truncated icosidodecahedron [rational]: survivors: []
+     -> lead pieces cannot occur in any tiling
+   [lead 1 + all of these] prune truncated_icosahedron: edge (6, 6) angle 3/2π−2β has no closure (sum π or 2π) using ['dodecahedron centre pyramid', 'dodecahedron', 'icosahedron', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron', 'truncated_icosahedron']
+   [lead 1 + all of these] prune dodecahedron: edge (5, 5) angle +2α has no closure (sum π or 2π) using ['dodecahedron centre pyramid', 'icosahedron', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron', 'dodecahedron']
+   [lead 1 + all of these] prune icosahedron: edge (3, 3) angle 3/2π−2β has no closure (sum π or 2π) using ['dodecahedron centre pyramid', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron', 'icosahedron']
+   [lead 1 + all of these] prune truncated_icosidodecahedron: edge (4, 10) angle 1/2π+α has no closure (sum π or 2π) using ['dodecahedron centre pyramid', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron']
+   [lead 1 + all of these] prune dodecahedron centre pyramid: edge ('base', 'side') angle +α has no closure (sum π or 2π) using ['truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'dodecahedron centre pyramid']
+ok   lead 1 + all of these [strict]: survivors: ['truncated_octahedron', 'truncated_cuboctahedron', 'cube']
+     -> lead pieces cannot occur in any tiling
+   [lead 1 + all of these] prune truncated_icosahedron: edge (6, 6) angle 3/2π−2β has no closure (irrational part 0 and sum ≤ 2π) using ['dodecahedron centre pyramid', 'dodecahedron', 'icosahedron', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron', 'truncated_icosahedron']
+   [lead 1 + all of these] prune dodecahedron: edge (5, 5) angle +2α has no closure (irrational part 0 and sum ≤ 2π) using ['dodecahedron centre pyramid', 'icosahedron', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron', 'dodecahedron']
+   [lead 1 + all of these] prune icosahedron: edge (3, 3) angle 3/2π−2β has no closure (irrational part 0 and sum ≤ 2π) using ['dodecahedron centre pyramid', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron', 'icosahedron']
+   [lead 1 + all of these] prune truncated_icosidodecahedron: edge (4, 10) angle 1/2π+α has no closure (irrational part 0 and sum ≤ 2π) using ['dodecahedron centre pyramid', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron']
+   [lead 1 + all of these] prune dodecahedron centre pyramid: edge ('base', 'side') angle +α has no closure (irrational part 0 and sum ≤ 2π) using ['truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'dodecahedron centre pyramid']
+ok   lead 1 + all of these [rational]: survivors: ['truncated_octahedron', 'truncated_cuboctahedron', 'cube']
+     -> lead pieces cannot occur in any tiling
+-- lead 2: ['icosahedron centre pyramid', 'truncated_dodecahedron']
+     icosahedron centre pyramid   edge ('base', 'side')   x  3  3/4π−β         = 69.094843°
+     icosahedron centre pyramid   edge ('side', 'side')   x  3  2/5π           = 72.000000°
+     truncated_dodecahedron       edge (3, 10)            x 60  3/4π−α+β       = 142.622632°
+     truncated_dodecahedron       edge (10, 10)           x 30  +2α            = 116.565051°
+     cheapest closure of the irrational part at icosahedron centre pyramid edge ('base', 'side'): 3π  e.g. [{'truncated_dodecahedron 3/4π−α+β': 2, 'truncated_dodecahedron +2α': 1, 'icosahedron centre pyramid 3/4π−β': 2}]
+     cheapest closure of the irrational part at truncated_dodecahedron edge (3, 10): 3π  e.g. [{'truncated_dodecahedron 3/4π−α+β': 2, 'truncated_dodecahedron +2α': 1, 'icosahedron centre pyramid 3/4π−β': 2}]
+     cheapest closure of the irrational part at truncated_dodecahedron edge (10, 10): 3π  e.g. [{'truncated_dodecahedron 3/4π−α+β': 2, 'truncated_dodecahedron +2α': 1, 'icosahedron centre pyramid 3/4π−β': 2}]
+   [lead 2 pair alone] prune icosahedron centre pyramid: edge ('base', 'side') angle 3/4π−β has no closure (sum π or 2π) using ['truncated_dodecahedron', 'icosahedron centre pyramid']
+   [lead 2 pair alone] prune truncated_dodecahedron: edge (3, 10) angle 3/4π−α+β has no closure (sum π or 2π) using ['truncated_dodecahedron']
+ok   lead 2 pair alone [strict]: survivors: []
+     -> lead pieces cannot occur in any tiling
+   [lead 2 pair alone] prune icosahedron centre pyramid: edge ('base', 'side') angle 3/4π−β has no closure (irrational part 0 and sum ≤ 2π) using ['truncated_dodecahedron', 'icosahedron centre pyramid']
+   [lead 2 pair alone] prune truncated_dodecahedron: edge (3, 10) angle 3/4π−α+β has no closure (irrational part 0 and sum ≤ 2π) using ['truncated_dodecahedron']
+ok   lead 2 pair alone [rational]: survivors: []
+     -> lead pieces cannot occur in any tiling
+   [lead 2 + dodecahedron + icosahedron] prune icosahedron centre pyramid: edge ('base', 'side') angle 3/4π−β has no closure (sum π or 2π) using ['truncated_dodecahedron', 'dodecahedron', 'icosahedron', 'icosahedron centre pyramid']
+   [lead 2 + dodecahedron + icosahedron] prune truncated_dodecahedron: edge (3, 10) angle 3/4π−α+β has no closure (sum π or 2π) using ['dodecahedron', 'icosahedron', 'truncated_dodecahedron']
+   [lead 2 + dodecahedron + icosahedron] prune dodecahedron: edge (5, 5) angle +2α has no closure (sum π or 2π) using ['icosahedron', 'dodecahedron']
+   [lead 2 + dodecahedron + icosahedron] prune icosahedron: edge (3, 3) angle 3/2π−2β has no closure (sum π or 2π) using ['icosahedron']
+ok   lead 2 + dodecahedron + icosahedron [strict]: survivors: []
+     -> lead pieces cannot occur in any tiling
+   [lead 2 + dodecahedron + icosahedron] prune icosahedron centre pyramid: edge ('base', 'side') angle 3/4π−β has no closure (irrational part 0 and sum ≤ 2π) using ['truncated_dodecahedron', 'dodecahedron', 'icosahedron', 'icosahedron centre pyramid']
+   [lead 2 + dodecahedron + icosahedron] prune truncated_dodecahedron: edge (3, 10) angle 3/4π−α+β has no closure (irrational part 0 and sum ≤ 2π) using ['dodecahedron', 'icosahedron', 'truncated_dodecahedron']
+   [lead 2 + dodecahedron + icosahedron] prune dodecahedron: edge (5, 5) angle +2α has no closure (irrational part 0 and sum ≤ 2π) using ['icosahedron', 'dodecahedron']
+   [lead 2 + dodecahedron + icosahedron] prune icosahedron: edge (3, 3) angle 3/2π−2β has no closure (irrational part 0 and sum ≤ 2π) using ['icosahedron']
+ok   lead 2 + dodecahedron + icosahedron [rational]: survivors: []
+     -> lead pieces cannot occur in any tiling
+   [lead 2 + truncated octahedron + truncated cuboctahedron + cube] prune icosahedron centre pyramid: edge ('base', 'side') angle 3/4π−β has no closure (sum π or 2π) using ['truncated_dodecahedron', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'icosahedron centre pyramid']
+   [lead 2 + truncated octahedron + truncated cuboctahedron + cube] prune truncated_dodecahedron: edge (3, 10) angle 3/4π−α+β has no closure (sum π or 2π) using ['truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_dodecahedron']
+ok   lead 2 + truncated octahedron + truncated cuboctahedron + cube [strict]: survivors: ['truncated_octahedron', 'truncated_cuboctahedron', 'cube']
+     -> lead pieces cannot occur in any tiling
+   [lead 2 + truncated octahedron + truncated cuboctahedron + cube] prune icosahedron centre pyramid: edge ('base', 'side') angle 3/4π−β has no closure (irrational part 0 and sum ≤ 2π) using ['truncated_dodecahedron', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'icosahedron centre pyramid']
+   [lead 2 + truncated octahedron + truncated cuboctahedron + cube] prune truncated_dodecahedron: edge (3, 10) angle 3/4π−α+β has no closure (irrational part 0 and sum ≤ 2π) using ['truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_dodecahedron']
+ok   lead 2 + truncated octahedron + truncated cuboctahedron + cube [rational]: survivors: ['truncated_octahedron', 'truncated_cuboctahedron', 'cube']
+     -> lead pieces cannot occur in any tiling
+   [lead 2 + truncated icosidodecahedron] prune truncated_dodecahedron: edge (10, 10) angle +2α has no closure (sum π or 2π) using ['icosahedron centre pyramid', 'truncated_icosidodecahedron', 'truncated_dodecahedron']
+   [lead 2 + truncated icosidodecahedron] prune truncated_icosidodecahedron: edge (4, 6) angle 5/4π−β has no closure (sum π or 2π) using ['icosahedron centre pyramid', 'truncated_icosidodecahedron']
+   [lead 2 + truncated icosidodecahedron] prune icosahedron centre pyramid: edge ('base', 'side') angle 3/4π−β has no closure (sum π or 2π) using ['icosahedron centre pyramid']
+ok   lead 2 + truncated icosidodecahedron [strict]: survivors: []
+     -> lead pieces cannot occur in any tiling
+   [lead 2 + truncated icosidodecahedron] prune truncated_dodecahedron: edge (10, 10) angle +2α has no closure (irrational part 0 and sum ≤ 2π) using ['icosahedron centre pyramid', 'truncated_icosidodecahedron', 'truncated_dodecahedron']
+   [lead 2 + truncated icosidodecahedron] prune truncated_icosidodecahedron: edge (4, 6) angle 5/4π−β has no closure (irrational part 0 and sum ≤ 2π) using ['icosahedron centre pyramid', 'truncated_icosidodecahedron']
+   [lead 2 + truncated icosidodecahedron] prune icosahedron centre pyramid: edge ('base', 'side') angle 3/4π−β has no closure (irrational part 0 and sum ≤ 2π) using ['icosahedron centre pyramid']
+ok   lead 2 + truncated icosidodecahedron [rational]: survivors: []
+     -> lead pieces cannot occur in any tiling
+   [lead 2 + all of these] prune truncated_dodecahedron: edge (10, 10) angle +2α has no closure (sum π or 2π) using ['icosahedron centre pyramid', 'dodecahedron', 'icosahedron', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron', 'truncated_dodecahedron']
+   [lead 2 + all of these] prune dodecahedron: edge (5, 5) angle +2α has no closure (sum π or 2π) using ['icosahedron centre pyramid', 'icosahedron', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron', 'dodecahedron']
+   [lead 2 + all of these] prune icosahedron: edge (3, 3) angle 3/2π−2β has no closure (sum π or 2π) using ['icosahedron centre pyramid', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron', 'icosahedron']
+   [lead 2 + all of these] prune truncated_icosidodecahedron: edge (4, 6) angle 5/4π−β has no closure (sum π or 2π) using ['icosahedron centre pyramid', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron']
+   [lead 2 + all of these] prune icosahedron centre pyramid: edge ('base', 'side') angle 3/4π−β has no closure (sum π or 2π) using ['truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'icosahedron centre pyramid']
+ok   lead 2 + all of these [strict]: survivors: ['truncated_octahedron', 'truncated_cuboctahedron', 'cube']
+     -> lead pieces cannot occur in any tiling
+   [lead 2 + all of these] prune truncated_dodecahedron: edge (10, 10) angle +2α has no closure (irrational part 0 and sum ≤ 2π) using ['icosahedron centre pyramid', 'dodecahedron', 'icosahedron', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron', 'truncated_dodecahedron']
+   [lead 2 + all of these] prune dodecahedron: edge (5, 5) angle +2α has no closure (irrational part 0 and sum ≤ 2π) using ['icosahedron centre pyramid', 'icosahedron', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron', 'dodecahedron']
+   [lead 2 + all of these] prune icosahedron: edge (3, 3) angle 3/2π−2β has no closure (irrational part 0 and sum ≤ 2π) using ['icosahedron centre pyramid', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron', 'icosahedron']
+   [lead 2 + all of these] prune truncated_icosidodecahedron: edge (4, 6) angle 5/4π−β has no closure (irrational part 0 and sum ≤ 2π) using ['icosahedron centre pyramid', 'truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'truncated_icosidodecahedron']
+   [lead 2 + all of these] prune icosahedron centre pyramid: edge ('base', 'side') angle 3/4π−β has no closure (irrational part 0 and sum ≤ 2π) using ['truncated_octahedron', 'truncated_cuboctahedron', 'cube', 'icosahedron centre pyramid']
+ok   lead 2 + all of these [rational]: survivors: ['truncated_octahedron', 'truncated_cuboctahedron', 'cube']
+     -> lead pieces cannot occur in any tiling
+FINAL ok

@@ -1,0 +1,956 @@
+[
+ {
+  "set": "octet",
+  "pieces": [
+   "tetrahedron",
+   "octahedron"
+  ],
+  "mode": "strict",
+  "removed": [],
+  "alive": [
+   "tetrahedron",
+   "octahedron"
+  ]
+ },
+ {
+  "set": "cube alone",
+  "pieces": [
+   "cube"
+  ],
+  "mode": "strict",
+  "removed": [],
+  "alive": [
+   "cube"
+  ]
+ },
+ {
+  "set": "B3 permutohedron alone",
+  "pieces": [
+   "B3 permutohedron"
+  ],
+  "mode": "strict",
+  "removed": [
+   [
+    "B3 permutohedron",
+    [
+     4,
+     8
+    ],
+    "3/4π"
+   ]
+  ],
+  "alive": []
+ },
+ {
+  "set": "truncated cuboctahedron + cube",
+  "pieces": [
+   "truncated_cuboctahedron",
+   "cube"
+  ],
+  "mode": "strict",
+  "removed": [],
+  "alive": [
+   "truncated_cuboctahedron",
+   "cube"
+  ]
+ },
+ {
+  "set": "truncated octahedron alone",
+  "pieces": [
+   "truncated_octahedron"
+  ],
+  "mode": "strict",
+  "removed": [],
+  "alive": [
+   "truncated_octahedron"
+  ]
+ },
+ {
+  "set": "dodecahedron alone",
+  "pieces": [
+   "dodecahedron"
+  ],
+  "mode": "strict",
+  "removed": [
+   [
+    "dodecahedron",
+    [
+     5,
+     5
+    ],
+    "+2α"
+   ]
+  ],
+  "alive": []
+ },
+ {
+  "set": "regular tetrahedron alone",
+  "pieces": [
+   "tetrahedron"
+  ],
+  "mode": "strict",
+  "removed": [
+   [
+    "tetrahedron",
+    [
+     3,
+     3
+    ],
+    "+2γ"
+   ]
+  ],
+  "alive": []
+ },
+ {
+  "set": "lead 1 pair alone",
+  "pieces": [
+   "dodecahedron centre pyramid",
+   "truncated_icosahedron"
+  ],
+  "mode": "strict",
+  "removed": [
+   [
+    "dodecahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "+α"
+   ],
+   [
+    "truncated_icosahedron",
+    [
+     6,
+     6
+    ],
+    "3/2π−2β"
+   ]
+  ],
+  "alive": [],
+  "leads_survive": false,
+  "lead": "lead 1"
+ },
+ {
+  "set": "lead 1 pair alone",
+  "pieces": [
+   "dodecahedron centre pyramid",
+   "truncated_icosahedron"
+  ],
+  "mode": "rational",
+  "removed": [
+   [
+    "dodecahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "+α"
+   ],
+   [
+    "truncated_icosahedron",
+    [
+     6,
+     6
+    ],
+    "3/2π−2β"
+   ]
+  ],
+  "alive": [],
+  "leads_survive": false,
+  "lead": "lead 1"
+ },
+ {
+  "set": "lead 1 + dodecahedron + icosahedron",
+  "pieces": [
+   "dodecahedron centre pyramid",
+   "truncated_icosahedron",
+   "dodecahedron",
+   "icosahedron"
+  ],
+  "mode": "strict",
+  "removed": [
+   [
+    "dodecahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "+α"
+   ],
+   [
+    "truncated_icosahedron",
+    [
+     6,
+     6
+    ],
+    "3/2π−2β"
+   ],
+   [
+    "dodecahedron",
+    [
+     5,
+     5
+    ],
+    "+2α"
+   ],
+   [
+    "icosahedron",
+    [
+     3,
+     3
+    ],
+    "3/2π−2β"
+   ]
+  ],
+  "alive": [],
+  "leads_survive": false,
+  "lead": "lead 1"
+ },
+ {
+  "set": "lead 1 + dodecahedron + icosahedron",
+  "pieces": [
+   "dodecahedron centre pyramid",
+   "truncated_icosahedron",
+   "dodecahedron",
+   "icosahedron"
+  ],
+  "mode": "rational",
+  "removed": [
+   [
+    "dodecahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "+α"
+   ],
+   [
+    "truncated_icosahedron",
+    [
+     6,
+     6
+    ],
+    "3/2π−2β"
+   ],
+   [
+    "dodecahedron",
+    [
+     5,
+     5
+    ],
+    "+2α"
+   ],
+   [
+    "icosahedron",
+    [
+     3,
+     3
+    ],
+    "3/2π−2β"
+   ]
+  ],
+  "alive": [],
+  "leads_survive": false,
+  "lead": "lead 1"
+ },
+ {
+  "set": "lead 1 + truncated octahedron + truncated cuboctahedron + cube",
+  "pieces": [
+   "dodecahedron centre pyramid",
+   "truncated_icosahedron",
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube"
+  ],
+  "mode": "strict",
+  "removed": [
+   [
+    "dodecahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "+α"
+   ],
+   [
+    "truncated_icosahedron",
+    [
+     6,
+     6
+    ],
+    "3/2π−2β"
+   ]
+  ],
+  "alive": [
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube"
+  ],
+  "leads_survive": false,
+  "lead": "lead 1"
+ },
+ {
+  "set": "lead 1 + truncated octahedron + truncated cuboctahedron + cube",
+  "pieces": [
+   "dodecahedron centre pyramid",
+   "truncated_icosahedron",
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube"
+  ],
+  "mode": "rational",
+  "removed": [
+   [
+    "dodecahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "+α"
+   ],
+   [
+    "truncated_icosahedron",
+    [
+     6,
+     6
+    ],
+    "3/2π−2β"
+   ]
+  ],
+  "alive": [
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube"
+  ],
+  "leads_survive": false,
+  "lead": "lead 1"
+ },
+ {
+  "set": "lead 1 + truncated icosidodecahedron",
+  "pieces": [
+   "dodecahedron centre pyramid",
+   "truncated_icosahedron",
+   "truncated_icosidodecahedron"
+  ],
+  "mode": "strict",
+  "removed": [
+   [
+    "truncated_icosahedron",
+    [
+     6,
+     6
+    ],
+    "3/2π−2β"
+   ],
+   [
+    "truncated_icosidodecahedron",
+    [
+     4,
+     10
+    ],
+    "1/2π+α"
+   ],
+   [
+    "dodecahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "+α"
+   ]
+  ],
+  "alive": [],
+  "leads_survive": false,
+  "lead": "lead 1"
+ },
+ {
+  "set": "lead 1 + truncated icosidodecahedron",
+  "pieces": [
+   "dodecahedron centre pyramid",
+   "truncated_icosahedron",
+   "truncated_icosidodecahedron"
+  ],
+  "mode": "rational",
+  "removed": [
+   [
+    "truncated_icosahedron",
+    [
+     6,
+     6
+    ],
+    "3/2π−2β"
+   ],
+   [
+    "truncated_icosidodecahedron",
+    [
+     4,
+     10
+    ],
+    "1/2π+α"
+   ],
+   [
+    "dodecahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "+α"
+   ]
+  ],
+  "alive": [],
+  "leads_survive": false,
+  "lead": "lead 1"
+ },
+ {
+  "set": "lead 1 + all of these",
+  "pieces": [
+   "dodecahedron centre pyramid",
+   "truncated_icosahedron",
+   "dodecahedron",
+   "icosahedron",
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube",
+   "truncated_icosidodecahedron"
+  ],
+  "mode": "strict",
+  "removed": [
+   [
+    "truncated_icosahedron",
+    [
+     6,
+     6
+    ],
+    "3/2π−2β"
+   ],
+   [
+    "dodecahedron",
+    [
+     5,
+     5
+    ],
+    "+2α"
+   ],
+   [
+    "icosahedron",
+    [
+     3,
+     3
+    ],
+    "3/2π−2β"
+   ],
+   [
+    "truncated_icosidodecahedron",
+    [
+     4,
+     10
+    ],
+    "1/2π+α"
+   ],
+   [
+    "dodecahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "+α"
+   ]
+  ],
+  "alive": [
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube"
+  ],
+  "leads_survive": false,
+  "lead": "lead 1"
+ },
+ {
+  "set": "lead 1 + all of these",
+  "pieces": [
+   "dodecahedron centre pyramid",
+   "truncated_icosahedron",
+   "dodecahedron",
+   "icosahedron",
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube",
+   "truncated_icosidodecahedron"
+  ],
+  "mode": "rational",
+  "removed": [
+   [
+    "truncated_icosahedron",
+    [
+     6,
+     6
+    ],
+    "3/2π−2β"
+   ],
+   [
+    "dodecahedron",
+    [
+     5,
+     5
+    ],
+    "+2α"
+   ],
+   [
+    "icosahedron",
+    [
+     3,
+     3
+    ],
+    "3/2π−2β"
+   ],
+   [
+    "truncated_icosidodecahedron",
+    [
+     4,
+     10
+    ],
+    "1/2π+α"
+   ],
+   [
+    "dodecahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "+α"
+   ]
+  ],
+  "alive": [
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube"
+  ],
+  "leads_survive": false,
+  "lead": "lead 1"
+ },
+ {
+  "set": "lead 2 pair alone",
+  "pieces": [
+   "icosahedron centre pyramid",
+   "truncated_dodecahedron"
+  ],
+  "mode": "strict",
+  "removed": [
+   [
+    "icosahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "3/4π−β"
+   ],
+   [
+    "truncated_dodecahedron",
+    [
+     3,
+     10
+    ],
+    "3/4π−α+β"
+   ]
+  ],
+  "alive": [],
+  "leads_survive": false,
+  "lead": "lead 2"
+ },
+ {
+  "set": "lead 2 pair alone",
+  "pieces": [
+   "icosahedron centre pyramid",
+   "truncated_dodecahedron"
+  ],
+  "mode": "rational",
+  "removed": [
+   [
+    "icosahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "3/4π−β"
+   ],
+   [
+    "truncated_dodecahedron",
+    [
+     3,
+     10
+    ],
+    "3/4π−α+β"
+   ]
+  ],
+  "alive": [],
+  "leads_survive": false,
+  "lead": "lead 2"
+ },
+ {
+  "set": "lead 2 + dodecahedron + icosahedron",
+  "pieces": [
+   "icosahedron centre pyramid",
+   "truncated_dodecahedron",
+   "dodecahedron",
+   "icosahedron"
+  ],
+  "mode": "strict",
+  "removed": [
+   [
+    "icosahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "3/4π−β"
+   ],
+   [
+    "truncated_dodecahedron",
+    [
+     3,
+     10
+    ],
+    "3/4π−α+β"
+   ],
+   [
+    "dodecahedron",
+    [
+     5,
+     5
+    ],
+    "+2α"
+   ],
+   [
+    "icosahedron",
+    [
+     3,
+     3
+    ],
+    "3/2π−2β"
+   ]
+  ],
+  "alive": [],
+  "leads_survive": false,
+  "lead": "lead 2"
+ },
+ {
+  "set": "lead 2 + dodecahedron + icosahedron",
+  "pieces": [
+   "icosahedron centre pyramid",
+   "truncated_dodecahedron",
+   "dodecahedron",
+   "icosahedron"
+  ],
+  "mode": "rational",
+  "removed": [
+   [
+    "icosahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "3/4π−β"
+   ],
+   [
+    "truncated_dodecahedron",
+    [
+     3,
+     10
+    ],
+    "3/4π−α+β"
+   ],
+   [
+    "dodecahedron",
+    [
+     5,
+     5
+    ],
+    "+2α"
+   ],
+   [
+    "icosahedron",
+    [
+     3,
+     3
+    ],
+    "3/2π−2β"
+   ]
+  ],
+  "alive": [],
+  "leads_survive": false,
+  "lead": "lead 2"
+ },
+ {
+  "set": "lead 2 + truncated octahedron + truncated cuboctahedron + cube",
+  "pieces": [
+   "icosahedron centre pyramid",
+   "truncated_dodecahedron",
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube"
+  ],
+  "mode": "strict",
+  "removed": [
+   [
+    "icosahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "3/4π−β"
+   ],
+   [
+    "truncated_dodecahedron",
+    [
+     3,
+     10
+    ],
+    "3/4π−α+β"
+   ]
+  ],
+  "alive": [
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube"
+  ],
+  "leads_survive": false,
+  "lead": "lead 2"
+ },
+ {
+  "set": "lead 2 + truncated octahedron + truncated cuboctahedron + cube",
+  "pieces": [
+   "icosahedron centre pyramid",
+   "truncated_dodecahedron",
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube"
+  ],
+  "mode": "rational",
+  "removed": [
+   [
+    "icosahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "3/4π−β"
+   ],
+   [
+    "truncated_dodecahedron",
+    [
+     3,
+     10
+    ],
+    "3/4π−α+β"
+   ]
+  ],
+  "alive": [
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube"
+  ],
+  "leads_survive": false,
+  "lead": "lead 2"
+ },
+ {
+  "set": "lead 2 + truncated icosidodecahedron",
+  "pieces": [
+   "icosahedron centre pyramid",
+   "truncated_dodecahedron",
+   "truncated_icosidodecahedron"
+  ],
+  "mode": "strict",
+  "removed": [
+   [
+    "truncated_dodecahedron",
+    [
+     10,
+     10
+    ],
+    "+2α"
+   ],
+   [
+    "truncated_icosidodecahedron",
+    [
+     4,
+     6
+    ],
+    "5/4π−β"
+   ],
+   [
+    "icosahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "3/4π−β"
+   ]
+  ],
+  "alive": [],
+  "leads_survive": false,
+  "lead": "lead 2"
+ },
+ {
+  "set": "lead 2 + truncated icosidodecahedron",
+  "pieces": [
+   "icosahedron centre pyramid",
+   "truncated_dodecahedron",
+   "truncated_icosidodecahedron"
+  ],
+  "mode": "rational",
+  "removed": [
+   [
+    "truncated_dodecahedron",
+    [
+     10,
+     10
+    ],
+    "+2α"
+   ],
+   [
+    "truncated_icosidodecahedron",
+    [
+     4,
+     6
+    ],
+    "5/4π−β"
+   ],
+   [
+    "icosahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "3/4π−β"
+   ]
+  ],
+  "alive": [],
+  "leads_survive": false,
+  "lead": "lead 2"
+ },
+ {
+  "set": "lead 2 + all of these",
+  "pieces": [
+   "icosahedron centre pyramid",
+   "truncated_dodecahedron",
+   "dodecahedron",
+   "icosahedron",
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube",
+   "truncated_icosidodecahedron"
+  ],
+  "mode": "strict",
+  "removed": [
+   [
+    "truncated_dodecahedron",
+    [
+     10,
+     10
+    ],
+    "+2α"
+   ],
+   [
+    "dodecahedron",
+    [
+     5,
+     5
+    ],
+    "+2α"
+   ],
+   [
+    "icosahedron",
+    [
+     3,
+     3
+    ],
+    "3/2π−2β"
+   ],
+   [
+    "truncated_icosidodecahedron",
+    [
+     4,
+     6
+    ],
+    "5/4π−β"
+   ],
+   [
+    "icosahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "3/4π−β"
+   ]
+  ],
+  "alive": [
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube"
+  ],
+  "leads_survive": false,
+  "lead": "lead 2"
+ },
+ {
+  "set": "lead 2 + all of these",
+  "pieces": [
+   "icosahedron centre pyramid",
+   "truncated_dodecahedron",
+   "dodecahedron",
+   "icosahedron",
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube",
+   "truncated_icosidodecahedron"
+  ],
+  "mode": "rational",
+  "removed": [
+   [
+    "truncated_dodecahedron",
+    [
+     10,
+     10
+    ],
+    "+2α"
+   ],
+   [
+    "dodecahedron",
+    [
+     5,
+     5
+    ],
+    "+2α"
+   ],
+   [
+    "icosahedron",
+    [
+     3,
+     3
+    ],
+    "3/2π−2β"
+   ],
+   [
+    "truncated_icosidodecahedron",
+    [
+     4,
+     6
+    ],
+    "5/4π−β"
+   ],
+   [
+    "icosahedron centre pyramid",
+    [
+     "base",
+     "side"
+    ],
+    "3/4π−β"
+   ]
+  ],
+  "alive": [
+   "truncated_octahedron",
+   "truncated_cuboctahedron",
+   "cube"
+  ],
+  "leads_survive": false,
+  "lead": "lead 2"
+ }
+]
