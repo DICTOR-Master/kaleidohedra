@@ -1,0 +1,73 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "subjects": [
+  {
+   "term": "MSC2020 52B45: Dissections and valuations (Hilbert's third problem, etc.)",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B45",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52B10: Three-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B10",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 03B35: Mechanization of proofs and logical operations",
+   "identifier": "https://zbmath.org/classification/?q=cc:03B35",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 68V20: Formalization of mathematics in connection with theorem provers",
+   "identifier": "https://zbmath.org/classification/?q=cc:68V20",
+   "scheme": "url"
+  }
+ ],
+ "version": "1",
+ "publication_date": "2026-11-20",
+ "title": "The Dehn Canon: Hilbert's Third Problem, Machine-Checked — From the solids up, deciding every pair of the canon",
+ "description": "<p>Two solids are scissors congruent when one can be cut into finitely many pieces that, moved rigidly, fill the other. The name comes from polygons, which can always be cut from paper with scissors and rearranged when their areas are equal (Wallace, Bolyai and Gerwien); for solids the scissors become planar cuts. Dehn proved in 1901 that a regular tetrahedron and a cube of the same volume are not: the sum over the edges of length ⊗ dihedral angle, with angles counted modulo rational multiples of π, is kept by cutting and regluing, and the two solids give different sums [1]. We prove this in Lean 4 with Mathlib from the solid upward. The angle at a point is read from the solid as a set, as a share of the area of a disc across the edge, and the lengths are Hausdorff lengths: no list of edges is ever given as input. <b>Main theorem</b> (Theorem 1): for convex polytopes in ℝ³, and for finite unions of them, scissors congruence keeps this invariant; the tetrahedron is not scissors congruent to any cube, in any size and position; the cube, the rhombic dodecahedron, every solid of the cube ∩ rhombic dodecahedron line, the truncated octahedron, the rhombic triacontahedron and both golden rhombohedra have invariant zero, and the dodecahedron, the icosahedron, the tetrahedron, the octahedron, every other member of the cube ∩ octahedron line (the fair 14-face die among them) and DICTO's CLEO, AXE and FUJI have nonzero invariant, so no similar copy of one of these is scissors congruent to a similar copy of a zero solid; and <b>CLEO, AXE, FUJI, the dodecahedron and the icosahedron are pairwise not scissors congruent</b>, in any sizes, and none of them is scissors congruent to the tetrahedron, the octahedron or a nonzero member of the cube ∩ octahedron line; with volume, which scissors congruence also keeps, <b>every two different nonzero solids of the canon are not scissors congruent</b>. We also prove Hilbert's question in his own words: two tetrahedra on one base with equal altitudes that are neither scissors congruent nor equicomplementable (the pair of Aigner and Ziegler); and that for every convex polytope the invariant read from the set equals the classical edge sum, with edges and dihedral angles also read from the set. These steps need two angles, α = arccos(1/√5) and β, with α + β + ε = π and α + 2β − γ = π, independent modulo π, and arccos(1/3) independent of both; we prove the first in Lean by a recurrence at the prime 3, a classical idea, and the second by comparing sines in ℚ√2 and in ℚ(√5). 43 Lean files (15,880 lines) compile with no <code>sorry</code> and only the three standard axioms. Each result is marked <i>Lean</i> (machine-checked), <i>by hand</i> or <i>numerical</i>.</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "DICTO",
+  "Dehn invariant",
+  "Hilbert's third problem",
+  "scissors congruence",
+  "Lean 4",
+  "Mathlib",
+  "formalization",
+  "polyhedra",
+  "CLEO",
+  "AXE",
+  "FUJI",
+  "dodecahedron",
+  "icosahedron",
+  "space-fillers"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23351291",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1007/BF01235384",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}
