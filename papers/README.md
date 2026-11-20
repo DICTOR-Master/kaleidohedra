@@ -1,5 +1,7 @@
 # Papers
 
+**House style for every paper and book: [HOUSE-STYLE.md](HOUSE-STYLE.md)** (promise, cycling, fence, contributions close; Pledge, Turn, Prestige).
+
 Short papers by DICTO, one per finding, drafted 2026-10-09/10 for their own Zenodo DOIs (not yet published; each
 needs DICTO's OK). Each folder holds the paper (`paper.html` and its PDF), the fields for its Zenodo record
 (`ZENODO-FIELDS.md`), its renders and the check outputs it cites. Shared style: `paper.css`.
