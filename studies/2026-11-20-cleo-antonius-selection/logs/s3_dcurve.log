@@ -1,0 +1,213 @@
+PROGRESS 0.4 named products 2s
+named products of two slopes (all conditions (b), (c), (d) with uv = product):
+   Antonius 1/phi x Antonius 1/phi    c =  0.38196601125: u 0.59775942 v 0.63899621 odd 43 (43 tri) marmas 18 sandhis 24 k 0.0433599 spread 1.21910
+   Antonius 1/phi x stella 1/sqrt2    c = 0.437016024449: u 0.64877698 v 0.67359976 odd 43 (43 tri) marmas 18 sandhis 24 k 0.0514138 spread 0.97665
+   Antonius 1/phi x 3/4               c = 0.463525491562: u 0.67198703 v 0.68978338 odd 43 (43 tri) marmas 18 sandhis 24 k 0.0542425 spread 0.88948
+   Cleo-Icos 2/phi^2 x Antonius 1/phi c =    0.472135955: u 0.67931858 v 0.69501403 odd 43 (43 tri) marmas 18 sandhis 24 k 0.0549838 spread 0.86614
+   Antonius 1/phi x phi/2             c =            0.5: u 0.70232419 v 0.71192193 odd 43 (43 tri) marmas 18 sandhis 24 k 0.0567417 spread 0.80671
+   stella 1/sqrt2 x stella 1/sqrt2    c =            0.5: u 0.70232419 v 0.71192193 odd 43 (43 tri) marmas 18 sandhis 24 k 0.0567417 spread 0.80671
+   stella 1/sqrt2 x 3/4               c =  0.53033008589: u 0.72611010 v 0.73037144 odd 43 (43 tri) marmas 18 sandhis 24 k 0.0575104 spread 0.76453
+   Cleo-Icos 2/phi^2 x stella 1/sqrt2 c = 0.540181513475: u 0.73356054 v 0.73638299 odd 43 (43 tri) marmas 18 sandhis 24 k 0.0575055 spread 0.75425
+   3/4 x 3/4                          c =         0.5625: u 0.74996455 v 0.75003545 odd 45 (41 tri) marmas 18 sandhis 28 k 0.0570534 spread 0.78227
+   stella 1/sqrt2 x phi/2             c = 0.572061402818: u 0.75680009 v 0.75589499 odd 45 (41 tri) marmas 18 sandhis 28 k 0.0566818 spread 0.77583
+   Cleo-Icos 2/phi^2 x 3/4            c = 0.572949016875: u 0.75742907 v 0.75643916 odd 45 (41 tri) marmas 18 sandhis 28 k 0.0566421 spread 0.77529
+   Cleo-Icos 2/phi^2 x Cleo-Icos 2/phi^2 c = 0.583592135001: u 0.76489952 v 0.76296574 odd 45 (41 tri) marmas 18 sandhis 28 k 0.0561008 spread 0.76983
+   phi/2 x 3/4                        c = 0.606762745781: u 0.78073360 v 0.77717001 odd 45 (41 tri) marmas 18 sandhis 28 k 0.0545304 spread 0.76801
+   Cleo-Icos 2/phi^2 x phi/2          c =  0.61803398875: u 0.78824090 v 0.78406739 odd 45 (41 tri) marmas 18 sandhis 28 k 0.0535912 spread 0.77559
+   phi/2 x phi/2                      c = 0.654508497187: u 0.81178242 v 0.80626098 odd 45 (41 tri) marmas 18 sandhis 28 k 0.0499029 spread 0.87162
+grid (c: number of (d) members; counts; k; smallest non-identity |det|):
+   0.004: 45/28 k 8.721071 spread 3.31720 min/max 2.10816 mindet 3.25954e-17
+   0.008: 45/28 k 4.909719 spread 3.29790 min/max 2.20521 mindet 4.15065e-15
+   0.012: 45/28 k 1.346531 spread 3.27851 min/max 1.29938 mindet 7.05587e-14
+   0.016: 45/28 k 2.751141 spread 3.25902 min/max 2.35839 mindet 5.25972e-13
+   0.02: 45/28 k 4.783581 spread 3.23941 min/max 2.24553 mindet 2.49585e-12
+   0.024: 45/28 k 7.510786 spread 3.21966 min/max 1.42181 mindet 8.90056e-12
+   0.028: 45/28 k 0.000109 spread 3.19976 min/max 6.79391 mindet 2.60628e-11
+   0.032: 45/28 k 0.000152 spread 3.17972 min/max 2.64208 mindet 6.60673e-11
+   0.036: 45/28 k 0.000204 spread 3.15952 min/max 8.77951 mindet 1.5001e-10
+   0.04: 45/28 k 0.000264 spread 3.13918 min/max 2.57711 mindet 3.12273e-10
+   0.044: 45/28 k 0.000334 spread 3.11869 min/max 6.84281 mindet 6.05955e-10
+   0.048: 45/28 k 0.000413 spread 3.09805 min/max 1.67254 mindet 1.10959e-9
+   0.052: 45/28 k 0.000502 spread 3.07727 min/max 3.81360 mindet 1.93528e-9
+   0.056: 45/28 k 0.000602 spread 3.05635 min/max 8.19594 mindet 3.23838e-9
+   0.06: 45/28 k 0.000712 spread 3.03530 min/max 1.67387 mindet 5.22884e-9
+   0.064: 45/28 k 0.000833 spread 3.01411 min/max 3.27023 mindet 8.18439e-9
+   0.068: 45/28 k 0.000965 spread 2.99279 min/max 6.14480 mindet 1.24656e-8
+   0.072: 45/28 k 0.001108 spread 2.97136 min/max 1.11546 mindet 1.8533e-8
+   0.076: 45/28 k 0.001263 spread 2.94980 min/max 1.96358 mindet 2.69665e-8
+   0.08: 45/28 k 0.001429 spread 2.92814 min/max 3.36252 mindet 3.8487e-8
+   0.084: 45/28 k 0.001608 spread 2.90637 min/max 5.61667 mindet 5.39805e-8
+   0.088: 45/28 k 0.001798 spread 2.88450 min/max 9.17277 mindet 7.45248e-8
+   0.092: 45/28 k 0.002000 spread 2.86253 min/max 1.46759 mindet 1.01419e-7
+   0.096: 45/28 k 0.002215 spread 2.84048 min/max 2.30441 mindet 1.36217e-7
+   0.1: 45/28 k 0.002442 spread 2.81835 min/max 3.55657 mindet 1.80759e-7
+   0.104: 45/28 k 0.002681 spread 2.79615 min/max 5.40275 mindet 2.37215e-7
+   0.108: 45/28 k 0.002933 spread 2.77387 min/max 8.08782 mindet 3.08125e-7
+   0.112: 45/28 k 0.003197 spread 2.75154 min/max 1.19440 mindet 3.96442e-7
+   0.116: 45/28 k 0.003474 spread 2.72915 min/max 1.74176 mindet 5.05584e-7
+   0.12: 45/28 k 0.003764 spread 2.70671 min/max 2.51027 mindet 6.39485e-7
+   0.124: 45/28 k 0.004066 spread 2.68423 min/max 3.57839 mindet 8.02655e-7
+   0.128: 45/28 k 0.004382 spread 2.66170 min/max 5.04887 mindet 1.00023e-6
+   0.132: 45/28 k 0.004710 spread 2.63915 min/max 7.05534 mindet 1.23807e-6
+   0.136: 45/28 k 0.005051 spread 2.61657 min/max 9.77040 mindet 1.52277e-6
+   0.14: 45/28 k 0.005405 spread 2.59398 min/max 1.34155 mindet 1.8618e-6
+   0.144: 45/28 k 0.005771 spread 2.57136 min/max 1.82732 mindet 2.26353e-6
+   0.148: 45/28 k 0.006150 spread 2.54874 min/max 2.47019 mindet 1.78629e-6
+   0.152: 45/28 k 0.006542 spread 2.52611 min/max 3.31536 mindet 9.21946e-7
+   0.156: 45/28 k 0.006947 spread 2.50347 min/max 4.41957 mindet 1.96214e-7
+   0.16: 45/28 k 0.007364 spread 2.48084 min/max 5.85371 mindet 1.32309e-6
+   0.164: 45/28 k 0.007794 spread 2.45822 min/max 7.70591 mindet 1.64376e-6
+   0.168: 45/28 k 0.008236 spread 2.43561 min/max 1.00853 mindet 5.18933e-6
+   0.172: 45/28 k 0.008691 spread 2.41301 min/max 1.31264 mindet 5.68861e-6
+   0.176: 45/28 k 0.009158 spread 2.39042 min/max 1.69947 mindet 5.49657e-6
+   0.18: 45/28 k 0.009637 spread 2.36786 min/max 2.18922 mindet 5.16765e-6
+   0.184: 45/28 k 0.010128 spread 2.34531 min/max 2.80658 mindet 4.6796e-6
+   0.188: 45/28 k 0.010631 spread 2.32279 min/max 3.58150 mindet 4.00811e-6
+   0.192: 45/28 k 0.011146 spread 2.30029 min/max 4.55031 mindet 3.12677e-6
+   0.196: 45/28 k 0.011672 spread 2.27781 min/max 5.75683 mindet 2.0069e-6
+   0.2: 45/28 k 0.012210 spread 2.25536 min/max 7.25387 mindet 6.17519e-7
+   0.204: 45/28 k 0.012759 spread 2.23294 min/max 9.10480 mindet 1.07482e-6
+   0.208: 45/28 k 0.013319 spread 2.21054 min/max 1.13854 mindet 3.10607e-6
+   0.212: 45/28 k 0.013889 spread 2.18817 min/max 1.41865 mindet 5.51483e-6
+   0.216: 45/28 k 0.014471 spread 2.16583 min/max 1.76159 mindet 8.34242e-6
+   0.22: 45/28 k 0.015062 spread 2.14352 min/max 2.18018 mindet 8.36798e-6
+   0.224: 45/28 k 0.015664 spread 2.12123 min/max 2.68963 mindet 1.54336e-5
+   0.228: 45/28 k 0.016276 spread 2.09897 min/max 3.30792 mindet 1.97944e-5
+   0.232: 45/28 k 0.016897 spread 2.07673 min/max 4.05626 mindet 2.47684e-5
+   0.236: 45/28 k 0.017528 spread 2.05452 min/max 4.95966 mindet 3.04121e-5
+   0.24: 45/28 k 0.018167 spread 2.03233 min/max 6.04746 mindet 3.67852e-5
+   0.244: 45/28 k 0.018815 spread 2.01016 min/max 7.35413 mindet 4.39505e-5
+   0.248: 45/28 k 0.019472 spread 1.98802 min/max 8.92000 mindet 5.19745e-5
+   0.252: 45/28 k 0.020137 spread 1.96589 min/max 1.07921 mindet 6.09271e-5
+   0.256: 45/28 k 0.020809 spread 1.94378 min/max 1.30256 mindet 7.08818e-5
+   0.26: 45/28 k 0.021489 spread 1.92169 min/max 1.56843 mindet 8.19157e-5
+   0.264: 45/28 k 0.022176 spread 1.89962 min/max 1.88426 mindet 9.41093e-5
+   0.268: 45/28 k 0.022869 spread 1.87756 min/max 2.25870 mindet 0.000107547
+   0.272: 45/28 k 0.023568 spread 1.85552 min/max 2.70172 mindet 0.000122318
+   0.276: 45/28 k 0.024274 spread 1.83350 min/max 3.22491 mindet 0.000138512
+   0.28: 45/28 k 0.024984 spread 1.81149 min/max 3.84161 mindet 0.000156227
+   0.284: 45/28 k 0.025700 spread 1.78949 min/max 4.56723 mindet 0.000175561
+   0.288: 45/28 k 0.026420 spread 1.76751 min/max 5.41950 mindet 0.000196617
+   0.292: 45/28 k 0.027144 spread 1.74554 min/max 6.41881 mindet 0.000219503
+   0.296: 45/28 k 0.027872 spread 1.72360 min/max 7.58857 mindet 0.000217915
+   0.3: 45/28 k 0.028602 spread 1.70167 min/max 7.51692 mindet 0.000159595
+   0.304: 45/28 k 0.029335 spread 1.67976 min/max 6.22690 mindet 9.41154e-5
+   0.308: 45/28 k 0.030071 spread 1.65788 min/max 5.06314 mindet 2.10446e-5
+   0.312: 45/28 k 0.030808 spread 1.63602 min/max 4.02474 mindet 6.00602e-5
+   0.316: 45/28 k 0.031546 spread 1.61420 min/max 3.11049 mindet 6.72548e-5
+   0.32: 45/28 k 0.032284 spread 1.59241 min/max 2.31885 mindet 4.44818e-6
+   0.324: 45/28 k 0.033022 spread 1.57067 min/max 1.64797 mindet 8.33849e-5
+   0.328: 45/28 k 0.033760 spread 1.54897 min/max 1.09562 mindet 0.000143316
+   0.332: 45/28 k 0.034497 spread 1.52733 min/max 6.59271 mindet 0.000115193
+   0.336: 45/28 k 0.035232 spread 1.50574 min/max 3.35987 mindet 7.31259e-5
+   0.34: 45/28 k 0.035964 spread 1.48423 min/max 1.22507 mindet 5.32361e-5
+   0.344: 45/28 k 0.036694 spread 1.46280 min/max 1.51985 mindet 1.94013e-5
+   0.348: 43/24 k 0.037420 spread 1.39321 min/max 0.00057 mindet 9.92852e-6
+   0.352: 43/24 k 0.038142 spread 1.37220 min/max 0.00066 mindet 5.39234e-5
+   0.356: 43/24 k 0.038859 spread 1.35130 min/max 0.00077 mindet 9.33632e-5
+   0.36: 43/24 k 0.039571 spread 1.33052 min/max 0.00089 mindet 6.18179e-5
+   0.364: 43/24 k 0.040277 spread 1.30986 min/max 0.00102 mindet 0.00017057
+   0.368: 43/24 k 0.040977 spread 1.28935 min/max 0.00118 mindet 0.000103955
+   0.372: 43/24 k 0.041669 spread 1.26900 min/max 0.00135 mindet 3.20948e-5
+   0.376: 43/24 k 0.042354 spread 1.24882 min/max 0.00156 mindet 4.52237e-5
+   0.38: 43/24 k 0.043030 spread 1.22884 min/max 0.00179 mindet 0.000128217
+   0.384: 43/24 k 0.043698 spread 1.20908 min/max 0.00205 mindet 0.000217104
+   0.388: 43/24 k 0.044355 spread 1.18954 min/max 0.00234 mindet 0.000312109
+   0.392: 43/24 k 0.045003 spread 1.17025 min/max 0.00268 mindet 0.000413457
+   0.396: 43/24 k 0.045640 spread 1.15124 min/max 0.00306 mindet 0.000521377
+   0.4: 43/24 k 0.046265 spread 1.13251 min/max 0.00349 mindet 0.000549182
+   0.404: 43/24 k 0.046879 spread 1.11410 min/max 0.00398 mindet 0.000521548
+   0.408: 43/24 k 0.047480 spread 1.09602 min/max 0.00453 mindet 7.19381e-5
+   0.412: 43/24 k 0.048068 spread 1.07829 min/max 0.00515 mindet 0.000128161
+   0.416: 43/24 k 0.048642 spread 1.06094 min/max 0.00585 mindet 2.18995e-5
+   0.42: 43/24 k 0.049202 spread 1.04397 min/max 0.00664 mindet 0.000351848
+   0.424: 43/24 k 0.049747 spread 1.02742 min/max 0.00753 mindet 0.000151956
+   0.428: 43/24 k 0.050277 spread 1.01131 min/max 0.00852 mindet 4.2311e-5
+   0.432: 43/24 k 0.050791 spread 0.99564 min/max 0.00896 mindet 5.83804e-5
+   0.436: 43/24 k 0.051289 spread 0.98044 min/max 0.00920 mindet 0.000178684
+   0.44: 43/24 k 0.051771 spread 0.96572 min/max 0.00944 mindet 5.66533e-5
+   0.444: 43/24 k 0.052235 spread 0.95149 min/max 0.00968 mindet 8.04292e-6
+   0.448: 43/24 k 0.052682 spread 0.93777 min/max 0.00991 mindet 1.01133e-5
+   0.452: 43/24 k 0.053111 spread 0.92457 min/max 0.01015 mindet 8.06081e-5
+   0.456: 43/24 k 0.053521 spread 0.91189 min/max 0.01039 mindet 0.00015487
+   0.46: 43/24 k 0.053913 spread 0.89974 min/max 0.01062 mindet 0.000232867
+   0.464: 43/24 k 0.054285 spread 0.88813 min/max 0.01085 mindet 0.000314553
+   0.468: 43/24 k 0.054639 spread 0.87704 min/max 0.01108 mindet 0.000378419
+   0.472: 43/24 k 0.054972 spread 0.86649 min/max 0.01131 mindet 5.53982e-5
+   0.476: 43/24 k 0.055286 spread 0.85647 min/max 0.01153 mindet 0.000505835
+   0.48: 43/24 k 0.055580 spread 0.84696 min/max 0.01175 mindet 5.26102e-5
+   0.484: 43/24 k 0.055853 spread 0.83795 min/max 0.01197 mindet 6.56577e-5
+   0.488: 43/24 k 0.056106 spread 0.82945 min/max 0.01218 mindet 0.000877338
+   0.492: 43/24 k 0.056339 spread 0.82141 min/max 0.01239 mindet 0.000982074
+   0.496: 43/24 k 0.056550 spread 0.81384 min/max 0.01260 mindet 0.00108949
+   0.5: 43/24 k 0.056741 spread 0.80671 min/max 0.01280 mindet 0.00119938
+   0.504: 43/24 k 0.056911 spread 0.80000 min/max 0.01299 mindet 0.000179904
+   0.508: 43/24 k 0.057060 spread 0.79368 min/max 0.01319 mindet 0.00131614
+   0.512: 43/24 k 0.057188 spread 0.78774 min/max 0.01338 mindet 0.00073822
+   0.516: 43/24 k 0.057296 spread 0.78213 min/max 0.01356 mindet 0.000990332
+   0.52: 43/24 k 0.057382 spread 0.77686 min/max 0.01374 mindet 0.00112237
+   0.524: 43/24 k 0.057448 spread 0.77187 min/max 0.01391 mindet 0.00104748
+   0.528: 43/24 k 0.057493 spread 0.76716 min/max 0.01408 mindet 0.000322982
+   0.532: 43/24 k 0.057518 spread 0.76270 min/max 0.01388 mindet 0.000825301
+   0.536: 43/24 k 0.057522 spread 0.75846 min/max 0.01368 mindet 0.000704314
+   0.54: 43/24 k 0.057506 spread 0.75443 min/max 0.01349 mindet 0.000577634
+   0.544: 43/24 k 0.057470 spread 0.75059 min/max 0.01331 mindet 0.000445499
+   0.548: 43/24 k 0.057415 spread 0.74693 min/max 0.01313 mindet 0.000308172
+   0.552: 43/24 k 0.057340 spread 0.74344 min/max 0.01296 mindet 3.01421e-6
+   0.556: 43/24 k 0.057246 spread 0.74011 min/max 0.01279 mindet 1.90718e-5
+   0.56: 45/28 k 0.057133 spread 0.78413 min/max 8.66604 mindet 0.000132091
+   0.564: 45/28 k 0.057002 spread 0.78119 min/max 4.08083 mindet 0.00028723
+   0.568: 45/28 k 0.056852 spread 0.77843 min/max 9.79757 mindet 1.1473e-5
+   0.572: 45/28 k 0.056684 spread 0.77586 min/max 1.81616 mindet 0.000608046
+   0.576: 45/28 k 0.056499 spread 0.77353 min/max 2.93191 mindet 0.000273883
+   0.58: 45/28 k 0.056296 spread 0.77144 min/max 4.34193 mindet 0.000126068
+   0.584: 45/28 k 0.056077 spread 0.76966 min/max 6.06154 mindet 0.00103313
+   0.588: 45/28 k 0.055842 spread 0.76822 min/max 8.10650 mindet 0.00128145
+   0.592: 45/28 k 0.055590 spread 0.76718 min/max 0.00010 mindet 5.26697e-5
+   0.596: 45/28 k 0.055323 spread 0.76661 min/max 0.00013 mindet 0.00162779
+   0.6: 45/28 k 0.055041 spread 0.76658 min/max 0.00016 mindet 0.00180195
+   0.604: 45/28 k 0.054744 spread 0.76718 min/max 0.00019 mindet 0.00171452
+   0.608: 45/28 k 0.054432 spread 0.76849 min/max 0.00023 mindet 0.000304518
+   0.612: 45/28 k 0.054107 spread 0.77062 min/max 0.00028 mindet 0.00113751
+   0.616: 45/28 k 0.053768 spread 0.77366 min/max 0.00032 mindet 0.00013755
+   0.62: 45/28 k 0.053416 spread 0.77773 min/max 0.00037 mindet 0.00147071
+   0.624: 45/28 k 0.053052 spread 0.78294 min/max 0.00040 mindet 0.000726114
+   0.628: 45/28 k 0.052675 spread 0.78940 min/max 0.00044 mindet 0.000541102
+   0.632: 45/28 k 0.052287 spread 0.79722 min/max 0.00047 mindet 0.000340799
+   0.636: 45/28 k 0.051887 spread 0.80652 min/max 0.00050 mindet 0.00147457
+   0.64: 45/28 k 0.051477 spread 0.81741 min/max 0.00053 mindet 0.000839989
+   0.644: 45/28 k 0.051056 spread 0.82997 min/max 0.00056 mindet 0.000281456
+   0.648: 45/28 k 0.050624 spread 0.84431 min/max 0.00059 mindet 0.00120972
+   0.652: 45/28 k 0.050184 spread 0.86050 min/max 0.00062 mindet 0.000340983
+   0.656: 45/28 k 0.049734 spread 0.87860 min/max 0.00065 mindet 0.000117684
+   0.66: 45/28 k 0.049275 spread 0.89867 min/max 0.00067 mindet 0.000520999
+   0.664: 45/28 k 0.048807 spread 0.92075 min/max 0.00070 mindet 0.00053256
+   0.668: 45/28 k 0.048331 spread 0.94486 min/max 0.00072 mindet 0.000973737
+   0.672: 45/28 k 0.047848 spread 0.97101 min/max 0.00075 mindet 0.000642353
+   0.676: 45/28 k 0.047357 spread 0.99918 min/max 0.00077 mindet 0.000212747
+   0.68: 45/28 k 0.046859 spread 1.02937 min/max 0.00079 mindet 0.000188016
+   0.684: 45/28 k 0.046355 spread 1.06155 min/max 0.00081 mindet 0.000230156
+   0.688: 45/28 k 0.045844 spread 1.09565 min/max 0.00083 mindet 0.000249792
+   0.692: 45/28 k 0.045326 spread 1.13165 min/max 0.00085 mindet 0.00012028
+   0.696: 45/28 k 0.044803 spread 1.16946 min/max 0.00087 mindet 0.000473399
+   0.7: 45/28 k 0.044275 spread 1.20903 min/max 0.00089 mindet 0.000534317
+   0.704: 45/28 k 0.043741 spread 1.25028 min/max 0.00090 mindet 0.00111492
+   0.708: 45/28 k 0.043203 spread 1.29312 min/max 0.00092 mindet 0.00116535
+   0.712: 45/28 k 0.042660 spread 1.33747 min/max 0.00093 mindet 6.50426e-5
+   0.716: 45/28 k 0.042112 spread 1.38324 min/max 0.00094 mindet 0.0011048
+   0.72: 45/28 k 0.041560 spread 1.43035 min/max 0.00095 mindet 0.000671164
+   0.724: 45/28 k 0.041005 spread 1.47869 min/max 0.00096 mindet 0.000250962
+   0.728: 45/28 k 0.040446 spread 1.52817 min/max 0.00097 mindet 0.000155506
+   0.732: 45/28 k 0.039883 spread 1.57869 min/max 0.00098 mindet 0.000547961
+   0.736: 45/28 k 0.039317 spread 1.63016 min/max 0.00099 mindet 0.000926144
+   0.74: 45/28 k 0.038748 spread 1.68249 min/max 0.00100 mindet 0.00128982
+   0.744: 45/28 k 0.038176 spread 1.73557 min/max 0.00100 mindet 0.000284734
+   0.748: 45/28 k 0.037601 spread 1.78932 min/max 0.00101 mindet 0.000590841
+   0.752: 45/28 k 0.037024 spread 1.84364 min/max 0.00101 mindet 2.19103e-5
+   0.756: 45/28 k 0.036445 spread 1.89844 min/max 0.00101 mindet 0.000526722
+window on this grid: c in [0.348, 0.556] (43 / 24 at every grid point between)
+   max of k in the window: c = 0.5348 (to 2e-4), value 0.0575233794; interior: True; at 2/phi^3 = 0.4721: 0.0549838451
+   min of spread in the window: c = 0.5564 (to 2e-4), value 0.7397923966; interior: False; at 2/phi^3 = 0.4721: 0.866147937
+   max of min_over_max in the window: c = 0.528 (to 2e-4), value 0.0140821035; interior: True; at 2/phi^3 = 0.4721: 0.0113180942
+time 30s
+FINAL ok

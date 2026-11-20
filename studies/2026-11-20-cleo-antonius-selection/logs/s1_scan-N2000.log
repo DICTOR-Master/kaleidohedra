@@ -1,0 +1,23 @@
+PROGRESS 0.8 rhombus scan done 17s
+reduction check (12 random (u, v) vs rhombus member, same uv): counts and number of members agree: True
+    0.449089 lam 1.0355 [(43, 24)]
+    0.314293 lam 0.8671 [(45, 28)]
+    0.175159 lam 0.8083 [(45, 28)]
+    0.913767 lam 0.8236 []
+    0.163638 lam 0.8696 [(45, 28)]
+    0.470314 lam 1.2187 [(43, 24)]
+    0.191059 lam 1.1115 [(45, 28)]
+    0.318997 lam 0.9144 [(45, 28)]
+    0.154592 lam 0.9402 [(45, 28)]
+    0.866569 lam 0.9707 []
+    0.333333 lam 1.1294 [(45, 28)]
+    0.381735 lam 1.1768 [(43, 24)]
+runs of c with the same members and counts (members: odd, odd triangles, marmas, sandhis, all regions):
+   c in [0.0005, 0.001]: [(45, 40, 18, 28, 78)]
+   c in [0.0015, 0.1615]: [(45, 42, 18, 28, 78)]
+   c in [0.162, 0.346]: [(45, 41, 18, 28, 78)]
+   c in [0.3465, 0.5565]: [(43, 43, 18, 24, 74)]
+   c in [0.557, 0.761]: [(45, 41, 18, 28, 78)]
+   c in [0.7615, 0.9995]: []
+time 17s
+FINAL ok
