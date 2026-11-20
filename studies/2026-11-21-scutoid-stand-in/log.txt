@@ -1,0 +1,22 @@
+== C1 = truncated icosahedron + dodecahedron centre pyramid on each pentagon (12:1)
+packet (alpha,beta,gamma coefficients per length class, pi part is 0 in the tensor): {'a': ['0', '0', '0'], 'R': ['0', '0', '0']}  zero=True
+hexagon-hexagon                  x30 theta=[3/2,0,-2,0] 138.1897  ring: [1/2,0,2,0] 221.8103  on-face:  41.8103 
+pyramid side-hexagon (reflex)    x60 theta=[3/4,0,1,0] 200.9052  ring: [5/4,0,-1,0] 159.0948  on-face: -20.9052 (impossible: reflex)
+pyramid side-side                x60 theta=[2/3,0,0,0] 120.0000  ring: [4/3,0,0,0] 240.0000  on-face:  60.0000 
+  total alpha-coefficient demanded at length-a edges (ring case): 0
+  total beta-coefficient demanded at length-a edges (ring case): 0
+  total gamma-coefficient demanded at length-a edges (ring case): 0
+== C2 = truncated dodecahedron + icosahedron centre pyramid on each triangle (20:1)
+packet (alpha,beta,gamma coefficients per length class, pi part is 0 in the tensor): {'a': ['0', '0', '0'], 'R': ['0', '0', '0']}  zero=True
+decagon-decagon                  x30 theta=[0,2,0,0] 116.5651  ring: [2,-2,0,0] 243.4349  on-face:  63.4349 
+pyramid side-decagon (reflex)    x60 theta=[3/2,-1,0,0] 211.7175  ring: [1/2,1,0,0] 148.2825  on-face: -31.7175 (impossible: reflex)
+pyramid side-side                x60 theta=[2/5,0,0,0]  72.0000  ring: [8/5,0,0,0] 288.0000  on-face: 108.0000 
+  total alpha-coefficient demanded at length-a edges (ring case): 0
+  total beta-coefficient demanded at length-a edges (ring case): 0
+  total gamma-coefficient demanded at length-a edges (ring case): 0
+scutoid side plane between parallel faces: top angle t, bottom pi-t, sum = pi exactly; Dehn term = (lt-lb) x t mod pi: True
+C1 reflex 5pi/4-beta: 159.0948 deg, single convex edge possible: True; partner bottom edge pi-theta: 20.9052
+C2 reflex pi/2+alpha: 148.2825 deg, single convex edge possible: True; partner bottom edge pi-theta: 31.7175
+C1 hex-hex pi/2+2beta (ring, >pi: needs >=2 edges): 221.8103 deg, single convex edge possible: False; partner bottom edge pi-theta: -41.8103
+C2 decagon pi/2+... 2pi-2alpha (needs >=2 edges): 243.4349 deg, single convex edge possible: False; partner bottom edge pi-theta: -63.4349
+FINAL ok
