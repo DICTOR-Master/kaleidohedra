@@ -1,0 +1,41 @@
+diff --git a/Mathlib/NumberTheory/Niven.lean b/Mathlib/NumberTheory/Niven.lean
+index a4c6ba0..1ca7a35 100644
+--- a/Mathlib/NumberTheory/Niven.lean
++++ b/Mathlib/NumberTheory/Niven.lean
+@@ -6,6 +6,7 @@ Authors: Alex Meiburg, Snir Broshi
+ module
+ 
+ public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
++public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+ public import Mathlib.NumberTheory.Real.Irrational
+ public import Mathlib.RingTheory.Polynomial.RationalRoot
+ 
+@@ -167,3 +168,28 @@ theorem irrational_cos_rat_mul_pi {r : ℚ} (hr : 3 < r.den) :
+   by_contra hnz
+   rcases niven_fract_angle_div_pi_eq (exists_rat_of_not_irrational hnz) with (hr' | hr' | hr' | hr')
+   all_goals (try rw [Set.mem_singleton_iff] at hr'); rw [hr'] at hr; norm_num at hr
++
++namespace Real
++
++/-- The arccosine of a rational number `q` is not a rational multiple of `π`, unless
++`q ∈ {-1, -1/2, 0, 1/2, 1}`. This is a consequence of Niven's theorem.
++
++The hypothesis `|q| ≤ 1` cannot be dropped: for `1 ≤ q` we have `arccos q = 0 = 0 * π`,
++and for `q ≤ -1` we have `arccos q = π = 1 * π`. -/
++theorem arccos_ne_rat_mul_pi {q : ℚ} (hq : |(q : ℝ)| ≤ 1)
++    (h : q ∉ ({-1, -1 / 2, 0, 1 / 2, 1} : Set ℚ)) (r : ℚ) : arccos q ≠ r * π := by
++  intro hr
++  have hcos := cos_arccos (abs_le.mp hq).1 (abs_le.mp hq).2
++  have := niven ⟨r, hr⟩ ⟨q, hcos⟩
++  rw [hcos] at this
++  refine h <| Rat.cast_injective (α := ℝ) |>.mem_set_image.mp ?_
++  simpa [Set.image_insert_eq] using this
++
++/-- For a rational number `q` with `|q| ≤ 1` and `q ∉ {-1, -1/2, 0, 1/2, 1}`,
++the number `arccos q / π` is irrational. -/
++theorem irrational_arccos_div_pi {q : ℚ} (hq : |(q : ℝ)| ≤ 1)
++    (h : q ∉ ({-1, -1 / 2, 0, 1 / 2, 1} : Set ℚ)) : Irrational (arccos q / π) := by
++  rintro ⟨r, hr⟩
++  exact arccos_ne_rat_mul_pi hq h r (by rw [hr, div_mul_cancel₀ _ pi_ne_zero])
++
++end Real
