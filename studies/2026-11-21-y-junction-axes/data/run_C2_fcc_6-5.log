@@ -1,0 +1,24 @@
+=== amber  C2  fcc  s0 = 5+2r5 = 9.472136  s = 6/5 s0 = 11.366563  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 12  (0.2s)
+outer pattern computed (1.5s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 180, shared 120, outer-only 60, inner-only 30
+pinched inner edges: 30 {('dec', 'dec'): 30}
+clusters 50: (inner, outer) vertex counts {(1, 1): 20, (2, 3): 30}; Y vertices 30; persistent inner edges 120/150
+sampling cross-check: 1848 points (1411 in the resin), points not covered exactly once: 0, max winding rounding 2.55e-15
+volume sum - resin = 0 (exact 0); resin = 279.915100; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 72, scutoid pieces 72, kinds 4 (T_h orbit members congruent: True); 157.7612 present: False
+  kind dec face 0 (12 per cell): facets 29 vertices 21 Y 5 scutoid True vol 8.760490  C1-side neighbours [1, 2, 3, 4, 8, 14, 25, 37, 42, 60] mould-side [14, 25, 37, 42, 60]
+     angles at C1 edges: [62.2685, 65.2801, 70.1266, 119.2351, 121.7175, 124.1999]
+     all dihedrals: 40.01390372 [not in basis]; 62.26853422 [not in basis]; 65.28009104 [not in basis]; 70.12659766 [not in basis]; 73.75447653 [not in basis]; 88.34901565 [not in basis]; 91.09167835 [not in basis]; 94.30166328 [not in basis]; 101.6006429 [not in basis]; 102.7222325 [not in basis]; 115.5178404 [not in basis]; 119.235095 [not in basis]; 119.2614745 [not in basis]; 121.7174744 [1pi + -1alpha]; 124.1998539 [not in basis]; 137.0941987 [not in basis]; 152.6759813 [not in basis]; 182.8859755 [not in basis]; 185.3374482 [not in basis]; 189.0464297 [not in basis]; 195.1253303 [not in basis]; 197.9615136 [not in basis]; 202.4462886 [not in basis]; 205.6240339 [not in basis]; 219.4971741 [not in basis]
+  kind tri face 12 (24 per cell): facets 15 vertices 11 Y 2 scutoid True vol 2.752982  C1-side neighbours [1, 13, 14] mould-side [1, 13, 14, 36, 40]
+     angles at C1 edges: [86.014, 141.9692, 146.0308]
+     all dihedrals: 60.73852555 [not in basis]; 69.29518895 [not in basis]; 77.37858352 [not in basis]; 79.70664794 [not in basis]; 84.39104587 [not in basis]; 86.01399137 [not in basis]; 88.26947093 [not in basis]; 91.73052907 [not in basis]; 97.76124391 [-1/3pi + 1LAMBDA]; 110.7048111 [not in basis]; 120.0 [2/3pi]; 141.9691715 [not in basis]; 143.1227617 [not in basis]; 144.5185504 [not in basis]; 146.0308285 [not in basis]; 154.3759661 [not in basis]; 162.0384864 [not in basis]; 174.6625518 [not in basis]; 175.7432344 [not in basis]; 176.9775575 [not in basis]; 183.0224425 [not in basis]; 184.2567656 [not in basis]
+  kind tri face 36 (24 per cell): facets 13 vertices 11 Y 2 scutoid True vol 3.645830  C1-side neighbours [1, 37, 38] mould-side [1, 12, 37, 38, 54]
+     angles at C1 edges: [83.0024, 141.9692, 144.0]
+     all dihedrals: 77.27776748 [not in basis]; 79.70664794 [not in basis]; 82.23875609 [4/3pi + -1LAMBDA]; 83.00243455 [not in basis]; 90.0 [1/2pi]; 91.65098435 [not in basis]; 91.73052907 [not in basis]; 102.6214165 [not in basis]; 110.7048111 [not in basis]; 120.0 [2/3pi]; 140.5028259 [not in basis]; 141.9691715 [not in basis]; 143.1227617 [not in basis]; 144.0 [4/5pi]; 157.5537114 [not in basis]; 159.9930481 [not in basis]; 176.9775575 [not in basis]; 177.1140245 [not in basis]; 184.2567656 [not in basis]
+  kind tri face 37 (12 per cell): facets 16 vertices 11 Y 2 scutoid True vol 1.768143  C1-side neighbours [0, 36, 38] mould-side [0, 14, 25, 36, 38]
+     angles at C1 edges: [78.1559, 146.0308]
+     all dihedrals: 42.9058013 [not in basis]; 63.17486877 [not in basis]; 69.29518895 [not in basis]; 78.15592793 [not in basis]; 82.23875609 [4/3pi + -1LAMBDA]; 88.26947093 [not in basis]; 120.0 [2/3pi]; 124.3897713 [not in basis]; 146.0308285 [not in basis]; 164.8746697 [not in basis]; 170.9535703 [not in basis]; 175.7432344 [not in basis]; 183.0224425 [not in basis]; 207.3240187 [not in basis]
+RESULT fcc 6/5 cen: valid=True  partition; scutoid pieces 72; kinds 4; Y vertices 30; 157.7612 present False
+(9.3s)
