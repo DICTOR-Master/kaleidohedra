@@ -1,0 +1,8 @@
+combi bcc 6/5 s0 cen: 80 pieces, sum vol 154.611496707 = mould - C1 154.611496707; 30 Y vertices, each on pieces; Y per kind [3, 3, 2, 2, 2]
+combi_cell.html: one cell pulled apart (f = 0.85), mould see-through at (1+f) x
+combi_kinds.html: kinds 1-5 alone, from above (p0-4) and below (p5-9), same scale, C1 side dark, mould side light, Y dots
+skeleton exact bcc 6/5 s0: slab volumes match the stored kind volumes; scutoid kinds [2, 3] (Y points are corners of their pieces)
+skeleton: sum of kind volume x orbit = 154.611496707 = mould - C1
+skeleton: 12 distinct hexagon scutoids (kind 2) from T_h
+skeleton.html: kind 2 from above and below, kind 3 from above and below, the 12 kind-2 pieces round C1
+FINAL ok

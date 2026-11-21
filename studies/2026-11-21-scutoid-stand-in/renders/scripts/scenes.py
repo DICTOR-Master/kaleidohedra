@@ -138,6 +138,9 @@ def ext(parts, dirv, pad=1.07):
     return float(max(np.abs(P @ x).max(), np.abs(P @ y).max()) * pad)
 
 
+def back(S_, d): return [k for k, (n, dd, o) in enumerate(S_.F) if n @ np.asarray(d) < 0]   # faces turned away from the camera
+
+
 DIR = np.array([0.36, 0.30, 1.0])         # a general view (no symmetry axis along the line of sight)
 sc = []
 # 1. C1 clean, C1 pyramids pulled out along their axes
@@ -150,7 +153,7 @@ f = 0.85
 parts = [c1_whole(0.0028)]
 for kn, P in pieces: parts.append(solid_part(moved(P, f * P.V.mean(0)), KIND[kn - 1], rad=0.0022, edge_col=EDGE))
 shell = Solid(mould.V * (1 + f), [(n, d * (1 + f), o) for n, d, o in mould.F])
-parts.append(solid_part(shell, GLASS, alpha=0.16, rad=0.0018, edge_col=LIGHT))
+parts.append(solid_part(shell, GLASS, alpha=0.16, rad=0.0018, edge_col=LIGHT, faces=back(shell, DIR)))   # far side only: the near glass would hide every edge behind it
 sc = [{'E': ext(parts, DIR, 1.04), 'dir': DIR.tolist(), 'parts': parts}]
 # the same cell together (mould see-through, resin solid)
 parts2 = [c1_whole(0.0028)] + [solid_part(P, KIND[kn - 1], rad=0.0022, edge_col=EDGE) for kn, P in pieces]
@@ -158,13 +161,14 @@ sc.append({'E': sc[0]['E'], 'dir': DIR.tolist(), 'parts': parts2})
 write(os.path.join(OUT, 'cell.html'), sc); LOG.append(f'cell.html: 2 scenes (pulled apart, f = {f}; together)')
 
 # 3. a few cells together: bcc translates; the front-top cell shows C1 in its see-through mould, the others their resin
+DT = np.array([0.55, 0.42, 1.0])
 T = [np.array(v) * s for v in [(0, 0, 0), (1, 0, 0), (0, 1, 0), (1, 1, 0), (.5, .5, -.5), (.5, .5, .5)]]
 parts = []
 for t in T[:-1]:
     for kn, P in pieces: parts.append(solid_part(moved(P, t), KIND[kn - 1], rad=0.0016, edge_col=EDGE))
 parts.append(c1_whole(0.0016, T[-1]))
-parts.append(solid_part(moved(mould, T[-1]), GLASS, alpha=0.22, rad=0.0016, edge_col=LIGHT))
-cen = np.mean(T, 0); DT = np.array([0.55, 0.42, 1.0])
+parts.append(solid_part(moved(mould, T[-1]), GLASS, alpha=0.22, rad=0.0016, edge_col=LIGHT, faces=back(mould, DT)))
+cen = np.mean(T, 0)
 for q in parts: q['v'] = (np.array(q['v']) - cen).round(6).tolist()
 sc = [{'E': ext(parts, DT, 1.04), 'dir': DT.tolist(), 'parts': parts}]
 write(os.path.join(OUT, 'tiling.html'), sc); LOG.append('tiling.html: 6 cells of the bcc lattice (5 with resin, 1 with C1 in its see-through mould)')
