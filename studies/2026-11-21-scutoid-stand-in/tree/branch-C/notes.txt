@@ -1,0 +1,22 @@
+Branch C (tree round 1): counting for C1 + one scutoid kind K, face-to-face, periodic. 21 Nov 2026.
+Script count.py (equations E1-E6 in its docstring); log.txt (ends FINAL ok); count_summary.json (all 936 strict types; loose counts by n).
+
+Scope (inherited from the proper round): K dihedrals p*pi + b*beta, b in {-1,0,1}; lateral-lateral edges rational, so beta edges are
+end edges; scutoid simple (all vertices degree 3), at most one top and one bottom edge per lateral face; faces meet in whole faces.
+
+Proved by counting:
+1. Beta demand per C1 is at least 120 - 6s K edges of length 1 carrying beta (s = shared hexagons per C1): hh ring b-sum +2 needs >= 2,
+   reflex ring b-sum -1 needs >= 1, each merged ring at a shared hexagon exactly one t' edge. A second C1 in an hh/reflex ring saves
+   nothing (t' across two gaps has no filling: p-sum >= -1/4 + w/4 + z/12, equality only for a single edge).
+2. No hexagon shared (s = 0), all triangle/hexagon faces of K on C1 (strict): n*t = 60, n*h = 20, t+h <= 16 leaves n in {5, 10, 20}.
+   n = 5 is impossible: K = 12 triangles + 4 hexagons, all 16 faces on C1, so both end faces are triangles or hexagons, at most
+   6 + 6 = 12 end edges of length 1 per K, and 5 x 12 = 60 < 120.
+3. Volume (cell free) and packet (C1 demands cancel, +60 - 60) give no integer restriction.
+
+Survivors (SCORE): strict 936 combinatorial types (n, s, t, h, f, end kinds, p, q, y); s = 0: 663 (n = 10: 213; n = 20: 450);
+s > 0: (n,s) = (6,2) 1, (6,8) 28, (12,8) 119, (15,5) 125. Loose (a K triangle/hexagon face may lie on another K): 3,199,324 types,
+n = 6 .. 60. Smallest strict s = 0 type: n = 20, K = 3 spike triangles + 1 hexagon + 3 K-K faces, both ends K-K triangles, y = 4.
+Verdict: branch C NOT closed by counting. Decisive constraint where it bites: the beta-edge supply (E4) against Euler and the
+lateral-face capacity (E2, E3); it kills n <= 5 and nothing beyond.
+LEADS: (a) place the smallest types (n = 20, 7 faces; n = 10, t = 6, h = 2) around one C1 with the exact ring fillings of round_local.py;
+(b) add the per-K packet sum b*l = 0 with actual edge lengths (needs geometry, not counts); (c) the ss rings (length L) are unused here.
