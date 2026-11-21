@@ -110,3 +110,10 @@ figure('c2-cell.png', f'{C2N} in its tightest mould',
        'fcc lattice, rhombic dodecahedron mould at s = 5 + 2√5; each piece sits on one face (central division) · 72 pieces, 4 kinds; colours are labels only',
        [(s('c2cell', 0), 'together', 'the mould filled'), (s('c2cell', 1), 'pulled apart', 'mould see-through, enlarged with the pull')],
        [(KIND[i], f'kind {i + 1}') for i in range(4)] + [(BLUE, 'pyramids'), (GLASS, 'mould')], cell=720)
+
+# ---- Fullerene-Amber Cell completed with scutoids (scenes4.py) ----
+figure('fullerene-amber-cell-scutoids.png', 'Fullerene-Amber Cell: 80 scutoids',
+       "DICTO's combined method, bcc mould at 6/5 s0 · every piece is a scutoid (5 kinds, 30 Y vertices) · exploded: each piece moved out by 1.7 × its distance from the centre",
+       [(s('amber', 0), 'complete', 'the mould filled · outline of the mould'), (s('amber', 1), 'exploded', 'all 80 pieces round the Fullerene Star'),
+        (s('amber', 2), 'exploded, cutaway', 'the 25 pieces facing the viewer left out')],
+       KL + [(VIO, 'pyramids'), (PEARL, 'Fullerene Star'), ((255, 255, 255), 'Y vertex')], cell=720)
