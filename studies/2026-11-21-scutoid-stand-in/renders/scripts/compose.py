@@ -100,3 +100,13 @@ figure('scutoid-skeleton-kinds.png', 'Exact straight skeleton: the two scutoid k
 figure('scutoid-skeleton-hexagons.png', f'The 12 hexagon scutoids round the {FS}',
        'Exact straight skeleton, bcc mould at 6/5 s0 · kind 2 on the 12 hexagons of one orbit; the other 68 pieces left out · white dots: Y vertices',
        [(s('skeleton', 4), 'kind 2 × 12', f'on the {FS}')], [(KIND[1], 'kind 2'), (VIO, 'pyramids'), ((255, 255, 255), 'Y vertex')], cell=900)
+
+# ---- C2 (name to come) (scenes3.py) ----
+BLUE = (58, 112, 205); C2N = 'C2 (name to come)'
+figure('c2.png', C2N, 'Truncated dodecahedron with a regular icosahedron centre pyramid (blue) on each of its 20 triangles (side edges = the icosahedron circumradius) · right: pyramids pulled out along their 3-fold axes',
+       [(s('c2', 0), C2N, '12 decagons, 60 triangles'), (s('c2', 1), 'pyramids pulled out', 'each along its own 3-fold axis')],
+       [(PEARL, 'decagon faces'), (BLUE, 'pyramids')], cell=640)
+figure('c2-cell.png', f'{C2N} in its tightest mould',
+       'fcc lattice, rhombic dodecahedron mould at s = 5 + 2√5; each piece sits on one face (central division) · 72 pieces, 4 kinds; colours are labels only',
+       [(s('c2cell', 0), 'together', 'the mould filled'), (s('c2cell', 1), 'pulled apart', 'mould see-through, enlarged with the pull')],
+       [(KIND[i], f'kind {i + 1}') for i in range(4)] + [(BLUE, 'pyramids'), (GLASS, 'mould')], cell=720)
