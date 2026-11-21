@@ -1,73 +1,73 @@
 {
- "upload_type": "publication",
- "publication_type": "preprint",
- "creators": [
-  {
-   "name": "DICTO",
-   "affiliation": "Independent artist, Osaka, Japan",
-   "orcid": "0009-0001-2620-2036"
-  }
- ],
- "language": "eng",
- "license": "cc-by-sa-4.0",
- "access_right": "open",
- "version": "1",
- "publication_date": "2026-11-21",
- "title": "From Dehn Packets to Scutoids: How the Fullerene Star Fills Space",
- "subjects": [
-  {
-   "term": "MSC2020 52B45: Dissections and valuations (Hilbert's third problem, etc.)",
-   "identifier": "https://zbmath.org/classification/?q=cc:52B45",
-   "scheme": "url"
-  },
-  {
-   "term": "MSC2020 52C22: Tilings in n dimensions",
-   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
-   "scheme": "url"
-  },
-  {
-   "term": "MSC2020 52B10: Three-dimensional polytopes",
-   "identifier": "https://zbmath.org/classification/?q=cc:52B10",
-   "scheme": "url"
-  }
- ],
- "description": "<p>DICTO's idea is that every solid carries a packet: its Dehn invariant, the sum over its edges of length ⊗ dihedral angle, with angles counted modulo rational multiples of π. Pieces that fill space together in fixed proportions must have packets that cancel in those proportions (Proposition 1, for periodic tilings). We screened the 47 centre pyramids of the Platonic, Archimedean and Catalan solids against a library of 80 pieces and found 97 exact cancellations (Proposition 6). The two new ones are icosahedral: twelve dodecahedron centre pyramids cancel one truncated icosahedron, and twenty icosahedron centre pyramids cancel one truncated dodecahedron, all edges equal. <b>Main theorem</b> (Theorem 4, by hand, checked by exact enumeration): neither pair fills space, in any tiling, face-to-face or not, also with dodecahedra, icosahedra, truncated octahedra, truncated cuboctahedra, truncated icosidodecahedra and any convex pieces whose dihedral angles are all rational multiples of π. The reason is local: around an edge the irrational parts of the angles must cancel within one full turn, and the smallest ring of these pieces in which they cancel is 540°, one and a half turns. The packet must cancel edge by edge, not only in the whole. Glued into one piece, the twelve pyramids and the truncated icosahedron make a solid C1 of packet zero (C2 likewise). Any solid has a helper of some shape that completes it to a tiling (Lemma 9); for scutoids, which DICTO proposed, we prove exact constraints: in a face-to-face tiling a scutoid helper of C1 must carry a face congruent to the pyramid's side triangle and a regular-hexagon face, and wherever C1 copies share a hexagon, an edge between those two faces at exactly arccos(1/√6) − π/4 ≈ 20.91° (Lemma 10, within a stated angle alphabet). Whether a true scutoid stand-in exists is open.</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
- "keywords": [
-  "DICTO",
-  "Dehn invariant",
-  "scissors congruence",
-  "space-filling",
-  "tiling",
-  "centre pyramids",
-  "truncated icosahedron",
-  "truncated dodecahedron",
-  "scutoid"
- ],
- "related_identifiers": [
-  {
-   "identifier": "10.5281/zenodo.23345699",
-   "relation": "isPartOf",
-   "scheme": "doi"
-  },
-  {
-   "identifier": "10.5281/zenodo.23529497",
-   "relation": "references",
-   "scheme": "doi"
-  },
-  {
-   "identifier": "10.5281/zenodo.24030326",
-   "relation": "references",
-   "scheme": "doi"
-  },
-  {
-   "identifier": "10.5281/zenodo.24383552",
-   "relation": "references",
-   "scheme": "doi"
-  },
-  {
-   "identifier": "10.5281/zenodo.24384789",
-   "relation": "references",
-   "scheme": "doi"
-  }
- ]
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "creators": [
+    {
+      "name": "DICTO",
+      "affiliation": "Independent artist, Osaka, Japan",
+      "orcid": "0009-0001-2620-2036"
+    }
+  ],
+  "language": "eng",
+  "license": "cc-by-sa-4.0",
+  "access_right": "open",
+  "version": "1",
+  "publication_date": "2026-11-21",
+  "title": "From Dehn Packets to Scutoids: How the Fullerene Star Fills Space",
+  "subjects": [
+    {
+      "term": "MSC2020 52B45: Dissections and valuations (Hilbert's third problem, etc.)",
+      "identifier": "https://zbmath.org/classification/?q=cc:52B45",
+      "scheme": "url"
+    },
+    {
+      "term": "MSC2020 52C22: Tilings in n dimensions",
+      "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+      "scheme": "url"
+    },
+    {
+      "term": "MSC2020 52B10: Three-dimensional polytopes",
+      "identifier": "https://zbmath.org/classification/?q=cc:52B10",
+      "scheme": "url"
+    }
+  ],
+  "description": "<p>DICTO's idea is that every solid carries a packet: its Dehn invariant, the sum over its edges of length ⊗ dihedral angle, with angles counted modulo rational multiples of π. Pieces that fill space together in fixed proportions must have packets that cancel in those proportions (Proposition 1, for periodic tilings). We screened the 47 centre pyramids of the Platonic, Archimedean and Catalan solids against a library of 80 pieces and found 97 exact cancellations (Proposition 6). The two new ones are icosahedral: twelve dodecahedron centre pyramids cancel one truncated icosahedron, and twenty icosahedron centre pyramids cancel one truncated dodecahedron, all edges equal. <b>Main theorem</b> (Theorem 4, by hand, checked by exact enumeration): neither pair fills space, in any tiling, face-to-face or not, also with dodecahedra, icosahedra, truncated octahedra, truncated cuboctahedra, truncated icosidodecahedra and any convex pieces whose dihedral angles are all rational multiples of π. The reason is local: around an edge the irrational parts of the angles must cancel within one full turn, and the smallest ring of these pieces in which they cancel is 540°, one and a half turns. The packet must cancel edge by edge, not only in the whole. Glued into one piece, the twelve pyramids and the truncated icosahedron make a solid C1 of packet zero (C2 likewise). Any solid has a helper of some shape that completes it to a tiling (Lemma 9); for scutoids, which DICTO proposed, we prove exact constraints: in a face-to-face tiling a scutoid helper of C1 must carry a face congruent to the pyramid's side triangle and a regular-hexagon face, and wherever C1 copies share a hexagon, an edge between those two faces at exactly arccos(1/√6) − π/4 ≈ 20.91° (Lemma 10, within a stated angle alphabet). Whether a true scutoid stand-in exists is open.</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
+  "keywords": [
+    "DICTO",
+    "Dehn invariant",
+    "scissors congruence",
+    "space-filling",
+    "tiling",
+    "centre pyramids",
+    "truncated icosahedron",
+    "truncated dodecahedron",
+    "scutoid"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23345699",
+      "relation": "isPartOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.23529497",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.24030326",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.24383552",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.24384789",
+      "relation": "references",
+      "scheme": "doi"
+    }
+  ]
 }
