@@ -1,0 +1,29 @@
+Branch A (hexagon = end face of the scutoid K), tree-search round 1, 21 Nov 2026.  Run: scripts/branchA.py (50-digit mpmath), log.txt.
+
+Setting: C1 and C1' share hexagon H, edge types swapped (B2).  H2 = the C1 hexagon across the hh edge e = AB of H.  K sits on H2 outside C1;
+its lateral face over e is the C1' spike triangle Delta_e (apex P), at beta - pi/4 = 20.9052 deg to H2; P lies 0.467086 outside H2, over H2.
+
+Construction (classic scutoid combinatorics, Y vertex at P): the faces next to Delta_e at the top edges FA, BC must contain P, so their tilt is
+forced: exactly pi/2 - beta = 24.0948 deg (in the ring-closing alphabet).  The down edge from P dips 12.60 deg, on K's side of Delta_e.
+41 symmetric choices of the other tilts (CD = EF, DE) from the convex alphabet give the true scutoid (top hexagon, bottom pentagon, one Y at P);
+representative K0: CD = EF = beta = 65.9052, DE = pi/4 + beta = 110.9052, depth 0.5.  Vertices in data/branchA.json.
+
+Score of K0 (value function):
+ (1) faces planar, Delta face = whole spike triangle, top = whole H2, bottom 5 sides, one Y vertex: PASS.
+ (2) rings closable: FAIL (first failure).  The forced leg dihedral of K0 at AP (and BP) is lambda* = 157.7612 deg,
+     cos^2 lambda* = (7 + 3 sqrt5)/16, not p pi + b beta.  Every C1 spike triangle is a K face (B1), so at each pyramid side-side edge the
+     ring is 120 + lambda + lambda' + ... ; with lambda = lambda' = lambda*: 435.52 deg > 360 (excess 75.52 deg).  Independent of the tilts
+     CD, DE, EF and of the depth: the whole classic family dies at (2).
+ (3) not reached.
+ (4) partial: K0 meets C1 and C1' flush, no interior overlap (margins ~1e-50); no further copies placed, since (2) fails.
+ Score 1 of 4 (by order: 1 pass, first failure 2).
+
+Lemma A1 (exact, all branch-A K): if K is locally convex at a leg end A of Delta, its dihedral at leg AP is >= lambda* (the next face after
+Delta in the convex vertex figure at A must keep the hexagon side AF inside).  So a branch-A K convex at both A and B is impossible
+(ss ring 120 + 2 lambda* > 360).  Every branch-A K needs a reflex vertex figure at A or B, and at each ss edge one of the two K has a leg
+dihedral <= 82.2388 deg.  Alphabet completions of the ss ring with one convex leg end: (165, 75), (159.09, 20.91, 60), (159.09, 65.91, 15),
+(165, 15, 60), (165, 30, 45) and orderings.
+
+Next expansion: a chiral K with leg dihedrals 165 (convex end) and 75 (reflex end), the second face at the reflex end an up-triangle through
+A and P (meets the top only at A); all K round each pyramid oriented alike so 165 always meets 75 (5-cycle forces one orientation).
+Then rings at the new edges, packet, and placement.  (Branch B hit the same 157.76 deg leg value from its side.)

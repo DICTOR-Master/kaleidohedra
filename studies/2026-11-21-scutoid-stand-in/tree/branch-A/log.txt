@@ -1,0 +1,25 @@
+== part 1: frame
+  [pass] C1' has a spike triangle on the C1 hh edge e (types swapped)
+  [pass] P (spike apex of C1') at depth 0.467086179481 outside H2, over H2 (y=1.2228475); angle to H2 = beta - pi/4 exactly
+  C1 edge types round H2: {'AB': 'hh', 'BC': 'r', 'CD': 'hh', 'DE': 'r', 'EF': 'hh', 'FA': 'r'}
+  [pass] H2 edges alternate hh, r with AB = hh
+== part 2: classic scutoid, Y vertex at P
+  [pass] forced tilt of the faces through P at FA and BC: 24.094843 deg = (Fraction(1, 2), -1) = pi/2 - beta (in the alphabet)
+  forced dihedrals: leg AP 157.761244 (None), leg BP 157.761244 (None), down edge PP' 138.590378 (None)
+  [pass] down edge PP' leaves P downward on K's side of Delta_e (dip 12.6044 < 20.9052 deg)
+== lemma A1: leg dihedral of ANY branch-A K that is locally convex at A (or B)
+  lambda* = angle(B, AP, F) = 157.76124390703503806 deg; cos lambda* = -0.9256147934109580598, integer polynomial [-64, 0, 56, 0, -1]
+  [pass] lambda* is not p*pi + b*beta (no integer relation lambda*, pi, beta with coefficients <= 1e4 at 50 digits: None)
+  [pass] ss ring with both K convex at their leg ends: 120 + 2 lambda* = 435.52248781407 deg > 360 (excess 75.5224878141 deg)
+  => a branch-A K with Delta's two leg ends convex cannot exist; at every ss edge one of the two K has a leg dihedral <= 82.23875609 deg (reflex vertex figure at that end).
+  alphabet completions of the ss ring with one convex leg end: [[165.0, 75.0], [159.0948, 20.9052, 60.0], [159.0948, 65.9052, 15.0], [159.0948, 15.0, 65.9052], [159.0948, 60.0, 20.9052], [165.0, 15.0, 60.0], [165.0, 30.0, 45.0], [165.0, 45.0, 30.0], [165.0, 60.0, 15.0]]
+== score of the classic candidate K0 (Y at P)
+  symmetric tilt choices (CD = EF, DE) from the convex alphabet giving the classic scutoid (6 top, 5 bottom, Y at P) for some h in 0.5, 0.6, 0.8: 41: [(65.9052, 110.9052, 0.5), (65.9052, 114.0948, 0.5), (65.9052, 105.0, 0.5), (65.9052, 120.0, 0.5), (110.9052, 155.9052, 0.5), (110.9052, 135.0, 0.5), (110.9052, 150.0, 0.5), (155.9052, 165.0, 0.5), (69.0948, 110.9052, 0.5), (69.0948, 114.0948, 0.5), (69.0948, 105.0, 0.5), (69.0948, 120.0, 0.5), (114.0948, 155.9052, 0.5), (114.0948, 159.0948, 0.5), (114.0948, 135.0, 0.5), (114.0948, 150.0, 0.5), (159.0948, 165.0, 0.5), (45.0, 65.9052, 0.5), (45.0, 69.0948, 0.5), (60.0, 110.9052, 0.5), (60.0, 114.0948, 0.5), (60.0, 90.0, 0.5), (60.0, 105.0, 0.5), (75.0, 110.9052, 0.5), (75.0, 114.0948, 0.5), (75.0, 105.0, 0.5), (75.0, 120.0, 0.5), (75.0, 135.0, 0.5), (90.0, 120.0, 0.5), (90.0, 135.0, 0.5), (105.0, 155.9052, 0.5), (105.0, 135.0, 0.5), (105.0, 150.0, 0.5), (120.0, 155.9052, 0.5), (120.0, 159.0948, 0.5), (120.0, 150.0, 0.5), (135.0, 155.9052, 0.5), (135.0, 159.0948, 0.5), (135.0, 150.0, 0.5), (150.0, 159.0948, 0.5), (150.0, 165.0, 0.5)]
+  representative K0: CD = EF = 65.9052, DE = 110.9052, h = 0.5
+  K0: 12 vertices; face sizes {'top': 6, 'bottom': 5, 'Delta': 3, 'FA': 5, 'BC': 5, 'CD': 4, 'DE': 4, 'EF': 4}; vertices strictly between the end planes: ['0.46708618']
+  [score pass] (1) K0 faces planar (each face is a plane section of a convex polytope); Delta face = whole spike triangle A,B,P; top = whole H2; bottom 5 sides; one Y vertex (P)
+  [score FAIL] (2) K0 rings closable: ss ring at leg AP = 120 + 157.7612 (K0) + 157.7612 (the K0 on the neighbouring C1' spike) > 360
+  worst separation K0|C1 = -2.1382118e-50, K0|C1' = -5.3455294e-51, C1|C1' = -5.3455294e-51 (>= -1e-30 means interiors disjoint)
+  [score pass] (4) K0 interior-disjoint from C1 and C1' (local): margins -2.13821e-50, -5.34553e-51
+  [pass] control: C1 and C1' interior-disjoint (hexagon shared, types swapped)
+FINAL ok
