@@ -1,0 +1,10 @@
+every wall normal e_i x e_j is a 2-fold axis of the core: True
+cells reached 402/402
+path independence (g_B = R_W g_A at all 998 shared walls, exact): False
+loop holonomies: {'identity': 428, 'improper': 368, 'proper': 202}
+common fixed set of all holonomies: rank 3, EMPTY (inconsistent equations)
+LP: status 0; largest core scale r = -2.000000 (r <= 0: no point of the start cell works)
+   x0 = [-1.        0.618034 -2.381966]
+   exact slack at rational x0 (point core): min over all constraints -5.236068
+interior edges 814 by number of cells round them: {3: 364, 4: 239, 5: 156, 6: 13, 7: 30, 8: 10, 9: 2}; odd: 552
+an odd edge forces each core round it onto one plane through the edge (the holonomy is a reflection); the planes of different odd edges have no common point (exact, above)

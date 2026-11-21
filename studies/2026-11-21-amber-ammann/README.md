@@ -108,6 +108,48 @@ face) was computed exactly and compared after translation:
 So inside runs of one cell type, the pieces meet top to top across walls. Every prolate–oblate wall is a seam where the two patterns
 differ. The division is valid all the same, because each cell is divided on its own.
 
+## Seams (follow-up, 21 Nov 2026): can the prolate–oblate walls be closed?
+
+Question (DICTO, via the coordinator): is there a seed rule, core size or placement, or wall rule under which the piece patterns also line
+up across prolate–oblate walls, so that the whole patch is edge to edge? Result: **no rule tried closes them. For the whole family that
+makes the same-type walls agree, the obstruction is exact.**
+
+1. Why same-type walls agree (exact). Every wall normal e_i × e_j is a 2-fold axis of the core (checked for all 15 pairs, exact), so the
+   mirror in the wall is a symmetry of the core's direction set. If the two cores are mirror images across the wall, the mirror maps one
+   seed set onto the other (face centroids move with the core) and fixes the wall pointwise. So it carries one Voronoi pattern on the wall
+   onto the other: the patterns agree. Two prolates (or two oblates) on one wall are placed exactly like that. A prolate and an oblate
+   are not: their centres are at different heights (ratio φ) and laterally offset.
+2. Converse (power-diagram argument). On the wall plane, the restricted Voronoi diagram is the power diagram of the projected seeds
+   with weights −(height)². Two weighted sets give the same diagram exactly when their power functions differ by a common positive factor
+   and a common affine function (around a vertex where three regions meet, the factors are equal). Take two rigid, congruent seed sets
+   whose labels correspond through a symmetry of the core, with at least three non-collinear seeds on the wall. Then the lateral
+   positions must agree (factor 1, no translation), the linear part must be the identity or the mirror, and the heights must satisfy
+   (h_B ± u)² − (h_A + u)² = const for non-coplanar seeds. That forces the mirror with h_A = h_B. So agreement means mirror images.
+   This argument does not cover labellings that no core symmetry induces.
+3. Mirror placement is impossible in the Ammann tiling (scripts/seams_mirror.py, logs/seams_mirror.log, exact). Put a core x_0 in one
+   cell and carry it to every cell by reflecting across shared walls. The result is consistent only if every loop's holonomy fixes x_0.
+   Round an interior edge with an odd number of cells, the holonomy is a reflection, and the patch has 552 such edges out of 814 (cells
+   round an edge: 3: 364, 4: 239, 5: 156, 6: 13, 7: 30, 8: 10, 9: 2). Over the 998 shared walls: 428 loops trivial, 368 improper, 202
+   proper. Their common fixed set is empty (exact elimination over Q(√5), inconsistent equations). So no placement of the cores, at
+   any size, makes every pair of neighbours mirror images. In particular, mirror pairs on every wall cannot be had. The patch's
+   configurations recur in every Ammann tiling of this class (cut-and-project tilings are repetitive), so this holds for the infinite
+   tiling too.
+4. Wall-cast rule (scripts/seams_cell.py, logs/seams_wall.log). The pattern on each wall is cast by a virtual copy of the core standing
+   on the wall's normal through its centre, at the oblate height, the prolate height or their mean. Its regions are labelled by the
+   cell's own faces. By item 1 this pattern is the same from both sides of every wall, so it is edge to edge by construction. But the
+   combined method fails in all 30 cases (5 cores × 3 heights × 2 cells). Each virtual core shows almost all of its faces on every wall,
+   so a core face gets top regions on several walls that do not touch (disconnected tops), or none at all (empty tops).
+
+Verdict: no tested rule closes the prolate–oblate seams. Within the mirror family, which is the mechanism that closes the same-type walls,
+closing them is impossible. The never-repeating result above is unaffected (it does not use the seams).
+
+Not excluded (leads): wall patterns that are not the Voronoi pattern of any core, with each cell choosing its own merges across its mould
+edges. Merges there never touch a neighbour, so they keep the walls edge to edge. Example: each wall cut by a fixed symmetric pattern
+(an n × n net of lines parallel to the edges). Each cell then merges sub-regions only across its own edges and corners: for n = 2, 3, 4
+the fewest regions per cell are 8, 26, 56 and the most 24, 54, 96. The counts must match the core (20 for the icosahedron, 72 for the
+Rollerball, 80 for the Fullerene Star), and the labels must stay close enough to the core's faces for the cut to pass the checks.
+Untested.
+
 ## Sources checked
 
 The private reference library: no entry on the Ammann rhombohedra, Kramer & Neri or Socolar & Steinhardt.
@@ -124,6 +166,7 @@ quasicrystal world (k-mix src/app/world-quasicrystal.js) was looked at for conve
 - scripts/run_all.sh: the 600 runs (job amber-ammann on the compute host, logs/job.log ends FINAL ok); logs/runs/*.log; data/ammann_*.json.
 - scripts/summary.py: re-checks and the table → logs/summary.txt (ends SUMMARY OK).
 - scripts/facematch.py: wall matching → logs/facematch.log.
+- scripts/seams_mirror.py, scripts/seams_cell.py: the seam study → logs/seams_mirror.log, logs/seams_wall.log, data/seams*.
 
 LEADS
 1. Prolate–oblate seams: seeds chosen so that the two patterns agree on P–O faces (for example seeds placed on the shared face by a
