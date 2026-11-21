@@ -257,3 +257,9 @@ open Mathlib pull requests and Zulip for the same statement.
 - Centre pyramids: D(pyramid) = (base edges) ⊗ θ/2; zero exactly when θ/π is rational (cube, rhombic dodecahedron, rhombic triacontahedron among the isohedral solids).
 - Each exact cancelling relation found by the packet screen (studies/2026-11-21-packet-screen) is a small, self-contained Lean lemma candidate.
 - The shear ledger: volume-preserving affine maps change the packet by computable amounts; their sum from tetrahedron to cube is −6a ⊗ arccos(1/3).
+
+## Prior-work search for item 1 (21 Nov 2026)
+- Mathlib master `Mathlib/NumberTheory/Niven.lean` (read 21 Nov): `niven`, `niven_sin`, `niven_angle_eq`, `niven_angle_div_pi_eq`, `niven_fract_angle_div_pi_eq`, `irrational_cos_rat_mul_pi`; no `arccos` statement.
+- Open and closed mathlib4 pull requests searched for "arccos niven", "arccos rational", "arccos irrational pi", "irrational arccos", "arccos_div_pi": none on this statement (the only arccos hits: #41188 obtuse/right-angle criteria, #44944 unistochastic matrices).
+- Web search of the Lean Zulip archive for arccos at rational multiples of π, Niven, "Dehn invariant", "Hilbert's third problem": no thread found (one 2019 new-members thread on defining arccos only).
+- Verdict: item 1 is not in Mathlib and not proposed; the Dehn invariant has no Mathlib/Zulip trace. Next (outward, needs DICTO's yes): a short Zulip post in #mathlib4 proposing the corollary (and asking interest in the Dehn invariant), then a small PR to Niven.lean.
