@@ -1,0 +1,21 @@
+=== amber  GP_2_0  bcc  s0 = 2.47213595499957939281834733746 = 2.472136  s = 6/5 s0 = 2.966563  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 14  (0.6s)
+outer pattern computed (1.2s); faces with an empty outer cell: []
+adjacency: inner pairs 120, outer pairs 120, shared 120, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 80: (inner, outer) vertex counts {(1, 1): 80}; Y vertices 0; persistent inner edges 120/120
+sampling cross-check: 3729 points (2478 in the resin), points not covered exactly once: 0, max winding rounding 2.11e-14
+volume sum - resin = 0.0 (exact 0); resin = 8.538139; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 42, scutoid pieces 0, kinds 3 (T_h orbit members congruent: True); 157.7612 present: False
+  kind pent face 0 (12 per cell): facets 9 vertices 13 Y 0 scutoid False vol 0.215913  C1-side neighbours [1, 3, 25, 26, 32] mould-side [1, 3, 25, 26, 32]
+     angles at C1 edges: [105.8587]
+     all dihedrals: 85.63108765 [not in basis]; 104.7900608 [not in basis]; 105.8587372 [not in basis]; 109.4712206 [not in basis]; 111.1380236 [not in basis]; 125.2643897 [not in basis]
+  kind hex face 1 (24 per cell): facets 9 vertices 14 Y 0 scutoid False vol 0.184748  C1-side neighbours [0, 2, 3, 4, 31, 32] mould-side [0, 2, 3, 4, 31, 32]
+     angles at C1 edges: [105.8587, 108.0]
+     all dihedrals: 54.73561032 [not in basis]; 75.20993918 [not in basis]; 90.0 [not in basis]; 94.36891235 [not in basis]; 105.8587372 [not in basis]; 108.0 [not in basis]; 120.0 [not in basis]; 124.4309882 [not in basis]; 125.2643897 [not in basis]
+  kind hex face 9 (6 per cell): facets 8 vertices 12 Y 0 scutoid False vol 0.252205  C1-side neighbours [6, 7, 10, 11, 30, 34] mould-side [6, 7, 10, 11, 30, 34]
+     angles at C1 edges: [105.8587, 108.0]
+     all dihedrals: 72.0 [not in basis]; 74.14126279 [not in basis]; 105.8587372 [not in basis]; 108.0 [not in basis]; 120.0 [not in basis]; 124.4309882 [not in basis]
+RESULT bcc 6/5 cen: valid=True  partition; scutoid pieces 0; kinds 3; Y vertices 0; 157.7612 present False
+(5.0s)

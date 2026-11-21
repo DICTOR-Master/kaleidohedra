@@ -1,0 +1,11 @@
+canonical form GP(5,2): Gauss-Newton iterations 5, max edge tangency residual (60-digit check) 5.99e-16, tangency points inside their edges (margin 5.298e-03)
+=== amber  GPc_5_2  bcc  s0 = 2.29746679524363119221114542978 = 2.297467  s = 1 s0 = 2.297467  seeds cen  tau 1/2
+solid vertices on the mould surface: 24; edges on it 24; faces on it 4
+mould faces 14  (15.3s)
+outer pattern computed (67.0s); faces with an empty outer cell: []
+adjacency: inner pairs 1170, outer pairs 1170, shared 1170, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 780: (inner, outer) vertex counts {(1, 1): 780}; Y vertices 0; persistent inner edges 1170/1170
+volume sum - resin = 1.24460305557222834142881281076e-60 (exact 0); resin = 1.900969; problems 28: [(7, 'self-intersecting surface'), (8, 'self-intersecting surface'), (11, 'self-intersecting surface'), (12, 'self-intersecting surface'), (13, 'self-intersecting surface'), (15, 'self-intersecting surface'), (16, 'self-intersecting surface'), (88, 'self-intersecting surface'), (89, 'self-intersecting surface'), (92, 'self-intersecting surface'), (93, 'self-intersecting surface'), (94, 'self-intersecting surface'), (96, 'self-intersecting surface'), (97, 'self-intersecting surface'), (282, 'self-intersecting surface'), (283, 'self-intersecting surface'), (286, 'self-intersecting surface'), (287, 'self-intersecting surface'), (288, 'self-intersecting surface'), (290, 'self-intersecting surface'), (291, 'self-intersecting surface'), (359, 'self-intersecting surface'), (360, 'self-intersecting surface'), (363, 'self-intersecting surface'), (364, 'self-intersecting surface'), (365, 'self-intersecting surface'), (367, 'self-intersecting surface'), (368, 'self-intersecting surface')]
+RESULT bcc 1 cen: valid=False  partition checks failed: [(7, 'self-intersecting surface'), (8, 'self-intersecting surface'), (11, 'self-intersecting surface'), (12, 'self-intersecting surface')], volume ok True
+(163.8s)

@@ -1,0 +1,16 @@
+canonical form GP(1,0): Gauss-Newton iterations 6, max edge tangency residual (60-digit check) 3.39e-16, tangency points inside their edges (margin 3.820e-01)
+=== amber  GPc_1_0  bcc  s0 = 2.47213595499957914019602813176 = 2.472136  s = 1 s0 = 2.472136  seeds cen  tau 1/2
+solid vertices on the mould surface: 8; edges on it 0; faces on it 0
+mould faces 14  (0.9s)
+outer pattern computed (1.5s); faces with an empty outer cell: []
+adjacency: inner pairs 30, outer pairs 30, shared 30, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 20: (inner, outer) vertex counts {(1, 1): 20}; Y vertices 0; persistent inner edges 30/30
+sampling cross-check: 3729 points (2101 in the resin), points not covered exactly once: 0, max winding rounding 5.33e-15
+volume sum - resin = 6.22301527786114170714406405378e-61 (exact 0); resin = 4.137767; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 12, scutoid pieces 0, kinds 1 (T_h orbit members congruent: True); 157.7612 present: False
+  kind pent face 0 (12 per cell): facets 22 vertices 18 Y 0 scutoid False vol 0.344814  C1-side neighbours [1, 2, 8, 9, 10] mould-side [1, 2, 8, 9, 10]
+     angles at C1 edges: [121.7175]
+     all dihedrals: 72.0 [not in basis]; 90.0 [not in basis]; 108.0 [not in basis]; 109.4712206 [not in basis]; 120.0 [not in basis]; 121.7174744 [not in basis]; 125.2643897 [not in basis]; 180.0 [not in basis]
+RESULT bcc 1 cen: valid=True  partition; scutoid pieces 0; kinds 1; Y vertices 0; 157.7612 present False
+(9.3s)

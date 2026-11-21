@@ -1,0 +1,10 @@
+=== amber  GP_1_1  bcc  s0 = 2.30940107675850305803659512201 = 2.309401  s = 1 s0 = 2.309401  seeds cen  tau 1/2
+solid vertices on the mould surface: 48; edges on it 48; faces on it 8
+mould faces 14  (0.9s)
+outer pattern computed (1.6s); faces with an empty outer cell: []
+adjacency: inner pairs 90, outer pairs 90, shared 90, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 60: (inner, outer) vertex counts {(1, 1): 60}; Y vertices 0; persistent inner edges 90/90
+volume sum - resin = 4.35611069450279919500084483765e-60 (exact 0); resin = 1.533984; problems 8: [(2, 'self-intersecting surface'), (11, 'self-intersecting surface'), (14, 'non-positive volume'), (17, 'self-intersecting surface'), (21, 'non-positive volume'), (25, 'self-intersecting surface'), (28, 'self-intersecting surface'), (30, 'non-positive volume')]
+RESULT bcc 1 cen: valid=False  partition checks failed: [(2, 'self-intersecting surface'), (11, 'self-intersecting surface'), (14, 'non-positive volume'), (17, 'self-intersecting surface')], volume ok True
+(4.8s)

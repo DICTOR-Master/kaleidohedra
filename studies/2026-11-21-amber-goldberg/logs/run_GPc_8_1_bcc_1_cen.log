@@ -1,0 +1,10 @@
+canonical form GP(8,1): Gauss-Newton iterations 5, max edge tangency residual (60-digit check) 8.78e-16, tangency points inside their edges (margin 2.498e-03)
+=== amber  GPc_8_1  bcc  s0 = 2.31153000395695530129262758953 = 2.311530  s = 1 s0 = 2.311530  seeds cen  tau 1/2
+solid vertices on the mould surface: 4; edges on it 0; faces on it 0
+mould faces 14  (34.4s)
+outer pattern computed (199.3s); faces with an empty outer cell: []
+adjacency: inner pairs 2190, outer pairs 2190, shared 2190, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 1460: (inner, outer) vertex counts {(1, 1): 1460}; Y vertices 0; persistent inner edges 2190/2190
+RESULT bcc 1 cen: valid=False  wall [241, 247] cannot be triangulated
+(339.9s)
