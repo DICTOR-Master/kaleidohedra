@@ -80,6 +80,9 @@ for pat in ["2026-11-21-packet-screen/logs/*.log", "2026-11-21-packet-leads-tili
         ok("FINAL ok" in open(f).read().strip().splitlines()[-1], "log " + f.split("studies/")[-1])
 for f in ["log.txt", "log_round.txt"]:
     ok("FINAL ok" in open(os.path.join(S, "2026-11-21-scutoid-stand-in", f)).read(), "log " + f)
+rl = open(os.path.join(S, "2026-11-21-scutoid-stand-in/tree/branch-D-resin/log.txt")).read()
+ok("FINAL ok" in rl, "log branch D")
+ok(rl.count("R1: kinds 5, scutoid kinds 0") == 9, "resin R1 five kinds, no scutoids, nine arrangements")
 lt = open(os.path.join(S, "2026-11-21-packet-leads-tiling/logs/angle_test.log")).read()
 ok(lt.count("-> lead pieces cannot occur in any tiling") >= 20, "angle test verdicts")
 ok("worst" not in paper or "−0.2432" in paper, "overlap number")
