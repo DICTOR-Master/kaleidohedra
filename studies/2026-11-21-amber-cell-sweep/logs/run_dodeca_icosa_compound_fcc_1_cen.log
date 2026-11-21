@@ -1,0 +1,10 @@
+=== amber  dodeca_icosa_compound  fcc  s0 = 3+1r5 = 5.236068  s = 1 s0 = 5.236068  seeds cen  tau 1/2
+solid vertices on the mould surface: 12; edges on it 0; faces on it 0
+mould faces 12  (0.3s)
+outer pattern computed (4.5s); faces with an empty outer cell: []
+adjacency: inner pairs 180, outer pairs 240, shared 180, outer-only 60, inner-only 0
+pinched inner edges: 0 {}
+clusters 62: (inner, outer) vertex counts {(1, 1): 32, (1, 3): 30}; Y vertices 30; persistent inner edges 180/180
+volume sum - resin = 0 (exact 0); resin = 17.798374; problems 24: [(0, 'self-intersecting surface'), (1, 'self-intersecting surface'), (2, 'self-intersecting surface'), (12, 'self-intersecting surface'), (13, 'self-intersecting surface'), (14, 'self-intersecting surface'), (15, 'self-intersecting surface'), (16, 'self-intersecting surface'), (17, 'self-intersecting surface'), (21, 'self-intersecting surface'), (22, 'self-intersecting surface'), (23, 'self-intersecting surface'), (30, 'self-intersecting surface'), (31, 'self-intersecting surface'), (32, 'self-intersecting surface'), (42, 'self-intersecting surface'), (43, 'self-intersecting surface'), (44, 'self-intersecting surface'), (48, 'self-intersecting surface'), (49, 'self-intersecting surface'), (50, 'self-intersecting surface'), (54, 'self-intersecting surface'), (55, 'self-intersecting surface'), (56, 'self-intersecting surface')]
+RESULT fcc 1 cen: valid=False  partition checks failed: [(0, 'self-intersecting surface'), (1, 'self-intersecting surface'), (2, 'self-intersecting surface'), (12, 'self-intersecting surface')], volume ok True
+(14.9s)

@@ -1,0 +1,18 @@
+=== amber  icosahedron  bcc  s0 = 1+1/3r5 = 1.745356  s = 6/5 s0 = 2.094427  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 14  (0.3s)
+outer pattern computed (0.6s); faces with an empty outer cell: []
+adjacency: inner pairs 30, outer pairs 30, shared 30, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 12: (inner, outer) vertex counts {(1, 1): 12}; Y vertices 0; persistent inner edges 30/30
+sampling cross-check: 3729 points (1978 in the resin), points not covered exactly once: 0, max winding rounding 6.70e-15
+volume sum - resin = 0 (exact 0); resin = 2.412039; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 20, scutoid pieces 0, kinds 2 (T_h orbit members congruent: True); 157.7612 present: False
+  kind tri face 0 (8 per cell): facets 5 vertices 6 Y 0 scutoid False vol 0.079414  C1-side neighbours [3, 9, 12] mould-side [3, 9, 12]
+     angles at C1 edges: [110.9052]
+     all dihedrals: 69.09484255 [3/4pi + -1beta]; 72.0 [2/5pi]; 110.9051574 [1/4pi + 1beta]
+  kind tri face 1 (12 per cell): facets 7 vertices 9 Y 0 scutoid False vol 0.148061  C1-side neighbours [4, 13, 16] mould-side [4, 13, 16]
+     angles at C1 edges: [110.9052]
+     all dihedrals: 54.73561032 [1/2pi + -1gamma]; 72.0 [2/5pi]; 90.0 [1/2pi]; 109.4712206 [1pi + -2gamma]; 110.9051574 [1/4pi + 1beta]; 125.2643897 [1/2pi + 1gamma]
+RESULT bcc 6/5 cen: valid=True  partition; scutoid pieces 0; kinds 2; Y vertices 0; 157.7612 present False
+(3.6s)

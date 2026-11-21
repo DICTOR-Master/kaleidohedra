@@ -1,0 +1,10 @@
+=== amber  truncated_icosahedron  fcc  s0 = 7/2+3/2r5 = 6.854102  s = 1 s0 = 6.854102  seeds cen  tau 1/2
+solid vertices on the mould surface: 24; edges on it 12; faces on it 0
+mould faces 12  (0.7s)
+outer pattern computed (1.7s); faces with an empty outer cell: []
+adjacency: inner pairs 90, outer pairs 90, shared 90, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 60: (inner, outer) vertex counts {(1, 1): 60}; Y vertices 0; persistent inner edges 90/90
+volume sum - resin = 0 (exact 0); resin = 25.211493; problems 12: [(1, 'self-intersecting surface'), (3, 'self-intersecting surface'), (5, 'self-intersecting surface'), (6, 'self-intersecting surface'), (8, 'self-intersecting surface'), (13, 'self-intersecting surface'), (16, 'self-intersecting surface'), (18, 'self-intersecting surface'), (21, 'self-intersecting surface'), (25, 'self-intersecting surface'), (28, 'self-intersecting surface'), (30, 'self-intersecting surface')]
+RESULT fcc 1 cen: valid=False  partition checks failed: [(1, 'self-intersecting surface'), (3, 'self-intersecting surface'), (5, 'self-intersecting surface'), (6, 'self-intersecting surface')], volume ok True
+(9.8s)

@@ -1,0 +1,18 @@
+=== amber  rhombic_triacontahedron  fcc  s0 = 3+1r5 = 5.236068  s = 6/5 s0 = 6.283282  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 12  (0.4s)
+outer pattern computed (1.2s); faces with an empty outer cell: []
+adjacency: inner pairs 60, outer pairs 60, shared 60, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 32: (inner, outer) vertex counts {(1, 1): 32}; Y vertices 0; persistent inner edges 60/60
+sampling cross-check: 1848 points (1271 in the resin), points not covered exactly once: 0, max winding rounding 9.74e-15
+volume sum - resin = 0 (exact 0); resin = 42.015404; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 30, scutoid pieces 0, kinds 2 (T_h orbit members congruent: True); 157.7612 present: False
+  kind quad face 0 (24 per cell): facets 7 vertices 9 Y 0 scutoid False vol 1.267514  C1-side neighbours [1, 3, 8, 13] mould-side [1, 3, 8, 13]
+     angles at C1 edges: [108.0]
+     all dihedrals: 69.29518895 [not in basis]; 72.0 [2/5pi]; 77.37858352 [not in basis]; 82.23875609 [4/3pi + -1LAMBDA]; 90.0 [1/2pi]; 102.6214165 [not in basis]; 108.0 [3/5pi]; 120.0 [2/3pi]
+  kind quad face 7 (6 per cell): facets 9 vertices 13 Y 0 scutoid False vol 1.932511  C1-side neighbours [5, 6, 20, 22] mould-side [5, 6, 20, 22]
+     angles at C1 edges: [108.0]
+     all dihedrals: 72.0 [2/5pi]; 97.76124391 [-1/3pi + 1LAMBDA]; 108.0 [3/5pi]; 110.7048111 [not in basis]; 120.0 [2/3pi]
+RESULT fcc 6/5 cen: valid=True  partition; scutoid pieces 0; kinds 2; Y vertices 0; 157.7612 present False
+(6.9s)

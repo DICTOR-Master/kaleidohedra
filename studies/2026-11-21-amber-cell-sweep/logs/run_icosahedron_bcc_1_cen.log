@@ -1,0 +1,10 @@
+=== amber  icosahedron  bcc  s0 = 1+1/3r5 = 1.745356  s = 1 s0 = 1.745356  seeds cen  tau 1/2
+solid vertices on the mould surface: 12; edges on it 24; faces on it 8
+mould faces 14  (0.3s)
+outer pattern computed (0.6s); faces with an empty outer cell: []
+adjacency: inner pairs 30, outer pairs 30, shared 30, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 12: (inner, outer) vertex counts {(1, 1): 12}; Y vertices 0; persistent inner edges 30/30
+volume sum - resin = 0 (exact 0); resin = 0.476716; problems 8: [(0, 'non-positive volume'), (4, 'non-positive volume'), (6, 'non-positive volume'), (7, 'non-positive volume'), (10, 'non-positive volume'), (14, 'non-positive volume'), (16, 'non-positive volume'), (18, 'non-positive volume')]
+RESULT bcc 1 cen: valid=False  partition checks failed: [(0, 'non-positive volume'), (4, 'non-positive volume'), (6, 'non-positive volume'), (7, 'non-positive volume')], volume ok True
+(1.5s)

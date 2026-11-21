@@ -1,0 +1,205 @@
+{
+ "solid": "truncated_dodecahedron",
+ "s0": "3+5/3r5",
+ "s0_float": 6.72677996249965,
+ "n_faces": 32,
+ "contact_edges": 24,
+ "contact_faces": 8,
+ "lattice": "bcc",
+ "factor": "1",
+ "s": 6.72677996249965,
+ "seeds": "cen",
+ "tau": "1/2",
+ "contact_vertices": [
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  46,
+  47,
+  48,
+  49,
+  50,
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  59
+ ],
+ "inner_pairs": 90,
+ "outer_pairs": 90,
+ "shared_pairs": 60,
+ "fins_cancelled": 0,
+ "volume_gap": "0",
+ "resin": 67.15228134062195,
+ "n_Y": 30,
+ "persistent": 60,
+ "clusters": [
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ]
+ ],
+ "problems": [
+  [
+   2,
+   "self-intersecting surface"
+  ],
+  [
+   5,
+   "self-intersecting surface"
+  ],
+  [
+   6,
+   "self-intersecting surface"
+  ],
+  [
+   9,
+   "self-intersecting surface"
+  ],
+  [
+   11,
+   "self-intersecting surface"
+  ],
+  [
+   13,
+   "self-intersecting surface"
+  ],
+  [
+   14,
+   "self-intersecting surface"
+  ],
+  [
+   16,
+   "self-intersecting surface"
+  ]
+ ],
+ "valid": false,
+ "why": "partition checks failed: [(2, 'self-intersecting surface'), (5, 'self-intersecting surface'), (6, 'self-intersecting surface'), (9, 'self-intersecting surface')], volume ok True"
+}

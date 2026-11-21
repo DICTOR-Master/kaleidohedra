@@ -1,0 +1,10 @@
+=== amber  truncated_dodecahedron  bcc  s0 = 3+5/3r5 = 6.726780  s = 1 s0 = 6.726780  seeds cen  tau 1/2
+solid vertices on the mould surface: 24; edges on it 24; faces on it 8
+mould faces 14  (0.6s)
+outer pattern computed (1.6s); faces with an empty outer cell: []
+adjacency: inner pairs 90, outer pairs 90, shared 60, outer-only 30, inner-only 30
+pinched inner edges: 30 {('dec', 'dec'): 30}
+clusters 30: (inner, outer) vertex counts {(2, 2): 30}; Y vertices 30; persistent inner edges 60/90
+volume sum - resin = 0 (exact 0); resin = 67.152281; problems 8: [(2, 'self-intersecting surface'), (5, 'self-intersecting surface'), (6, 'self-intersecting surface'), (9, 'self-intersecting surface'), (11, 'self-intersecting surface'), (13, 'self-intersecting surface'), (14, 'self-intersecting surface'), (16, 'self-intersecting surface')]
+RESULT bcc 1 cen: valid=False  partition checks failed: [(2, 'self-intersecting surface'), (5, 'self-intersecting surface'), (6, 'self-intersecting surface'), (9, 'self-intersecting surface')], volume ok True
+(9.9s)

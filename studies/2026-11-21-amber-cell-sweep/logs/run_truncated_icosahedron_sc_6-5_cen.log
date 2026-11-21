@@ -1,0 +1,21 @@
+=== amber  truncated_icosahedron  sc  s0 = 3/2+3/2r5 = 4.854102  s = 6/5 s0 = 5.824922  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 6  (0.2s)
+outer pattern computed (1.1s); faces with an empty outer cell: []
+adjacency: inner pairs 90, outer pairs 90, shared 90, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 60: (inner, outer) vertex counts {(1, 1): 60}; Y vertices 0; persistent inner edges 90/90
+sampling cross-check: 6000 points (4360 in the resin), points not covered exactly once: 0, max winding rounding 4.00e-15
+volume sum - resin = 0 (exact 0); resin = 142.350257; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 32, scutoid pieces 0, kinds 3 (T_h orbit members congruent: True); 157.7612 present: False
+  kind hex face 0 (12 per cell): facets 10 vertices 12 Y 0 scutoid False vol 2.979980  C1-side neighbours [2, 3, 4, 6, 16, 17] mould-side [2, 3, 4, 6, 16, 17]
+     angles at C1 edges: [94.5731, 102.3983, 110.9052]
+     all dihedrals: 56.6965539 [not in basis]; 60.0 [1/3pi]; 90.0 [1/2pi]; 91.39653704 [not in basis]; 94.5731225 [not in basis]; 102.3982886 [not in basis]; 110.9051574 [1/4pi + 1beta]; 119.4775623 [not in basis]; 119.6070636 [not in basis]; 122.1951752 [not in basis]; 185.8415324 [not in basis]
+  kind pent face 1 (12 per cell): facets 14 vertices 12 Y 0 scutoid False vol 3.893135  C1-side neighbours [2, 15, 23, 24, 26] mould-side [2, 15, 23, 24, 26]
+     angles at C1 edges: [114.9791, 116.6669, 122.8042]
+     all dihedrals: 62.9159869 [not in basis]; 88.60346296 [not in basis]; 90.0 [1/2pi]; 93.32325712 [not in basis]; 114.9790795 [not in basis]; 116.6460321 [not in basis]; 116.6669087 [not in basis]; 118.8364896 [not in basis]; 120.7858727 [not in basis]; 122.8042456 [not in basis]; 123.3034461 [not in basis]; 174.1584676 [not in basis]; 175.5115583 [not in basis]; 178.2981135 [not in basis]
+  kind hex face 2 (8 per cell): facets 16 vertices 16 Y 0 scutoid False vol 7.484109  C1-side neighbours [0, 1, 3, 15, 16, 24] mould-side [0, 1, 3, 15, 16, 24]
+     angles at C1 edges: [100.7105, 110.9052]
+     all dihedrals: 86.67674288 [not in basis]; 90.0 [1/2pi]; 100.7104594 [not in basis]; 110.9051574 [1/4pi + 1beta]; 117.0840131 [not in basis]; 120.0 [2/3pi]; 121.1587927 [not in basis]; 121.6859481 [not in basis]; 181.7018865 [not in basis]; 184.4884417 [not in basis]
+RESULT sc 6/5 cen: valid=True  partition; scutoid pieces 0; kinds 3; Y vertices 0; 157.7612 present False
+(11.1s)

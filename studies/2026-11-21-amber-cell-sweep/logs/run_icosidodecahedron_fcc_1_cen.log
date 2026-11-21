@@ -1,0 +1,10 @@
+=== amber  icosidodecahedron  fcc  s0 = 2+1r5 = 4.236068  s = 1 s0 = 4.236068  seeds cen  tau 1/2
+solid vertices on the mould surface: 24; edges on it 12; faces on it 0
+mould faces 12  (0.4s)
+outer pattern computed (1.2s); faces with an empty outer cell: []
+adjacency: inner pairs 60, outer pairs 90, shared 60, outer-only 30, inner-only 0
+pinched inner edges: 0 {}
+clusters 30: (inner, outer) vertex counts {(1, 2): 30}; Y vertices 30; persistent inner edges 60/60
+volume sum - resin = 0 (exact 0); resin = 5.167763; problems 32: [(0, 'self-intersecting surface'), (1, 'self-intersecting surface'), (2, 'self-intersecting surface'), (3, 'self-intersecting surface'), (4, 'self-intersecting surface'), (5, 'self-intersecting surface'), (6, 'self-intersecting surface'), (7, 'self-intersecting surface'), (8, 'self-intersecting surface'), (9, 'self-intersecting surface'), (10, 'self-intersecting surface'), (11, 'self-intersecting surface'), (12, 'self-intersecting surface'), (13, 'self-intersecting surface'), (14, 'self-intersecting surface'), (15, 'self-intersecting surface'), (16, 'self-intersecting surface'), (17, 'self-intersecting surface'), (18, 'self-intersecting surface'), (19, 'self-intersecting surface'), (20, 'self-intersecting surface'), (21, 'self-intersecting surface'), (22, 'self-intersecting surface'), (23, 'self-intersecting surface'), (24, 'self-intersecting surface'), (25, 'self-intersecting surface'), (26, 'self-intersecting surface'), (27, 'self-intersecting surface'), (28, 'self-intersecting surface'), (29, 'self-intersecting surface'), (30, 'self-intersecting surface'), (31, 'self-intersecting surface')]
+RESULT fcc 1 cen: valid=False  partition checks failed: [(0, 'self-intersecting surface'), (1, 'self-intersecting surface'), (2, 'self-intersecting surface'), (3, 'self-intersecting surface')], volume ok True
+(2.7s)

@@ -1,0 +1,221 @@
+{
+ "solid": "truncated_dodecahedron",
+ "s0": "9/2+3/2r5",
+ "s0_float": 7.854101966249685,
+ "n_faces": 32,
+ "contact_edges": 12,
+ "contact_faces": 0,
+ "lattice": "fcc",
+ "factor": "1",
+ "s": 7.854101966249685,
+ "seeds": "cen",
+ "tau": "1/2",
+ "contact_vertices": [
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "inner_pairs": 90,
+ "outer_pairs": 90,
+ "shared_pairs": 60,
+ "fins_cancelled": 0,
+ "volume_gap": "0",
+ "resin": 36.08417083312344,
+ "n_Y": 30,
+ "persistent": 60,
+ "clusters": [
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   2
+  ]
+ ],
+ "problems": [
+  [
+   0,
+   "self-intersecting surface"
+  ],
+  [
+   1,
+   "self-intersecting surface"
+  ],
+  [
+   3,
+   "self-intersecting surface"
+  ],
+  [
+   4,
+   "self-intersecting surface"
+  ],
+  [
+   7,
+   "self-intersecting surface"
+  ],
+  [
+   8,
+   "self-intersecting surface"
+  ],
+  [
+   10,
+   "self-intersecting surface"
+  ],
+  [
+   12,
+   "self-intersecting surface"
+  ],
+  [
+   15,
+   "self-intersecting surface"
+  ],
+  [
+   17,
+   "self-intersecting surface"
+  ],
+  [
+   18,
+   "self-intersecting surface"
+  ],
+  [
+   19,
+   "self-intersecting surface"
+  ]
+ ],
+ "valid": false,
+ "why": "partition checks failed: [(0, 'self-intersecting surface'), (1, 'self-intersecting surface'), (3, 'self-intersecting surface'), (4, 'self-intersecting surface')], volume ok True"
+}

@@ -1,0 +1,121 @@
+{
+ "solid": "icosahedron",
+ "s0": "1+1/3r5",
+ "s0_float": 1.7453559924999298,
+ "n_faces": 20,
+ "contact_edges": 24,
+ "contact_faces": 8,
+ "lattice": "bcc",
+ "factor": "1",
+ "s": 1.7453559924999298,
+ "seeds": "cen",
+ "tau": "1/2",
+ "contact_vertices": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11
+ ],
+ "inner_pairs": 30,
+ "outer_pairs": 30,
+ "shared_pairs": 30,
+ "fins_cancelled": 8,
+ "volume_gap": "0",
+ "resin": 0.47671566270829635,
+ "n_Y": 0,
+ "persistent": 30,
+ "clusters": [
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ]
+ ],
+ "problems": [
+  [
+   0,
+   "non-positive volume"
+  ],
+  [
+   4,
+   "non-positive volume"
+  ],
+  [
+   6,
+   "non-positive volume"
+  ],
+  [
+   7,
+   "non-positive volume"
+  ],
+  [
+   10,
+   "non-positive volume"
+  ],
+  [
+   14,
+   "non-positive volume"
+  ],
+  [
+   16,
+   "non-positive volume"
+  ],
+  [
+   18,
+   "non-positive volume"
+  ]
+ ],
+ "valid": false,
+ "why": "partition checks failed: [(0, 'non-positive volume'), (4, 'non-positive volume'), (6, 'non-positive volume'), (7, 'non-positive volume')], volume ok True"
+}

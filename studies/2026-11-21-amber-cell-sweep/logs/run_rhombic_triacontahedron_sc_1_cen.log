@@ -1,0 +1,10 @@
+=== amber  rhombic_triacontahedron  sc  s0 = 1+1r5 = 3.236068  s = 1 s0 = 3.236068  seeds cen  tau 1/2
+solid vertices on the mould surface: 24; edges on it 24; faces on it 6
+mould faces 6  (0.2s)
+outer pattern computed (0.6s); faces with an empty outer cell: []
+adjacency: inner pairs 60, outer pairs 60, shared 60, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 32: (inner, outer) vertex counts {(1, 1): 32}; Y vertices 0; persistent inner edges 60/60
+volume sum - resin = 0 (exact 0); resin = 13.888544; problems 6: [(7, 'self-intersecting surface'), (8, 'non-positive volume'), (14, 'self-intersecting surface'), (18, 'non-positive volume'), (23, 'self-intersecting surface'), (28, 'non-positive volume')]
+RESULT sc 1 cen: valid=False  partition checks failed: [(7, 'self-intersecting surface'), (8, 'non-positive volume'), (14, 'self-intersecting surface'), (18, 'non-positive volume')], volume ok True
+(1.6s)

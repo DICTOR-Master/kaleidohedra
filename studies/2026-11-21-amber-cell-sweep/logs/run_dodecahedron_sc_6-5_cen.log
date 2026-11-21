@@ -1,0 +1,15 @@
+=== amber  dodecahedron  sc  s0 = 3/2+1/2r5 = 2.618034  s = 6/5 s0 = 3.141641  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 6  (0.0s)
+outer pattern computed (0.1s); faces with an empty outer cell: []
+adjacency: inner pairs 30, outer pairs 30, shared 30, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 20: (inner, outer) vertex counts {(1, 1): 20}; Y vertices 0; persistent inner edges 30/30
+sampling cross-check: 6000 points (4554 in the resin), points not covered exactly once: 0, max winding rounding 3.99e-14
+volume sum - resin = 0 (exact 0); resin = 23.344583; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 12, scutoid pieces 0, kinds 1 (T_h orbit members congruent: True); 157.7612 present: False
+  kind pent face 0 (12 per cell): facets 8 vertices 10 Y 0 scutoid False vol 1.945382  C1-side neighbours [1, 2, 5, 6, 8] mould-side [1, 2, 5, 6, 8]
+     angles at C1 edges: [121.7175]
+     all dihedrals: 72.0 [2/5pi]; 90.0 [1/2pi]; 108.0 [3/5pi]; 120.0 [2/3pi]; 121.7174744 [1pi + -1alpha]
+RESULT sc 6/5 cen: valid=True  partition; scutoid pieces 0; kinds 1; Y vertices 0; 157.7612 present False
+(2.4s)
