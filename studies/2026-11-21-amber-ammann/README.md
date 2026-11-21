@@ -175,3 +175,25 @@ LEADS
 3. Fewer kinds: the Rollerball gives 8 kinds per cell here against 4 in the bcc mould; D3d is smaller than T_h, so orbits split.
 4. Fullerene Star with centroid seeds fails in the prolate cell (empty outer cells: the core is small there at the common scale).
    The cproj rule works there.
+
+## Exact follow-up (22 Nov 2026, DICTO: "all work capable of standing up to intense scrutiny")
+
+Every floating-point step behind the claims of the #118 draft was replaced by an exact one and rerun on the compute host:
+- `scripts/make_exact.py` writes `exact_cell.py`, `seams_exact.py`, `facematch_exact.py` from `ammann_cell.py`, `seams_cell.py`,
+  `facematch.py` with four changes only: (1) no float pruning of the Voronoi clipping (every bisector clipped exactly); (2) embedding test
+  with exact orientation signs only (coordinates scaled to Z[sqrt5], exact bounding boxes); (3) no float sampling cross-check; (4) exact
+  boundary signature of every piece (facets as sets of boundary edges between exact points).
+- `scripts/run_exact.sh`: the 600 runs again (logs/exact/, data/exact/ not in git, 163 MB; regenerate in about 4 minutes on 20 cores).
+  Every verdict agrees with the float runs (valid / failure reason, counts of pieces, scutoids, Y vertices, kinds).
+- `scripts/exact_summary.py` (logs/exact/summary/, all 30 settings end EXACT SUMMARY OK): orbit check (every D3d element maps the
+  piece on F onto the piece on gF, exact signatures), rotation check (an exact g in I_h maps the reference cell onto each orientation of
+  its type, piece by piece), kinds = orbits with pairwise distinct exact volumes, prolate and oblate exact volumes disjoint (no shared
+  kind). Rollerball S0 cen: closest pair 13861/3648 + 73841/43776 r5 (prolate triangle kind) and the oblate decagon kind, exact
+  difference nonzero, about 0.080553.
+- `scripts/patch_exact.py` (logs/exact/patch_exact.log, PATCH EXACT OK): mirror relation on all 998 walls exact (PP 319, OO 61 mirror;
+  OP 618 not), interior edges 814 with 552 odd by integer combinatorics.
+- logs/exact/fm_*.log: the 8 wall-pattern settings exact, unchanged (380/998 agree, OP 0/618); logs/exact/seam_*.log: the 30 wall-cast
+  runs exact, all fail as before.
+- Still floating point, but only a choice, not a check: the least-area split of a bent wall into triangles (min_area_tri, earclip); the
+  resulting pieces are checked exactly. Not used in any claim: the float LP of seams_mirror.py, the float solid-angle sum of tiling.py,
+  the float pre-selection of candidate tiles in tiling.py (every selected tile is checked exactly), the dihedral angles (mpmath).

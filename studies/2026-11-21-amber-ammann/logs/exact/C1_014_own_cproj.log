@@ -1,0 +1,12 @@
+solid orientation: as built
+stabiliser of the mould in I_h: order 12
+=== amber  C1  014  s0 = 15/2+3/2r5 = 10.854102  s = 1 s0 = 10.854102  seeds cproj  tau 1/2
+solid vertices on the mould surface: 12; edges on it 0; faces on it 0
+mould faces 6  (1.2s)
+outer pattern computed (3.9s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 210, shared 138, outer-only 72, inner-only 12
+pinched inner edges: 12 {('hex', 'hex'): 12}
+clusters 60: (inner, outer) vertex counts {(1, 1): 12, (1, 2): 36, (2, 4): 12}; Y vertices 48; persistent inner edges 138/150
+volume sum - resin = 0 (exact 0); resin = 185.032889; problems 24: [(22, 'self-intersecting surface'), (23, 'self-intersecting surface'), (25, 'self-intersecting surface'), (29, 'self-intersecting surface'), (33, 'self-intersecting surface'), (34, 'self-intersecting surface'), (36, 'self-intersecting surface'), (37, 'self-intersecting surface'), (40, 'self-intersecting surface'), (44, 'self-intersecting surface'), (48, 'self-intersecting surface'), (49, 'self-intersecting surface'), (52, 'self-intersecting surface'), (53, 'self-intersecting surface'), (55, 'self-intersecting surface'), (59, 'self-intersecting surface'), (60, 'self-intersecting surface'), (61, 'self-intersecting surface'), (66, 'self-intersecting surface'), (67, 'self-intersecting surface'), (70, 'self-intersecting surface'), (74, 'self-intersecting surface'), (75, 'self-intersecting surface'), (76, 'self-intersecting surface')]
+RESULT 014 1 cproj: valid=False  partition checks failed: [(22, 'self-intersecting surface'), (23, 'self-intersecting surface'), (25, 'self-intersecting surface'), (29, 'self-intersecting surface')], volume ok True
+(8.2s)

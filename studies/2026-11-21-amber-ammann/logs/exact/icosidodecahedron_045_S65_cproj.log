@@ -1,0 +1,28 @@
+solid orientation: reflected y<->z
+stabiliser of the mould in I_h: order 12
+=== amber  icosidodecahedron  045  s0 = 3+3r5 = 9.708204  s = S65 s0 = 11.649845  seeds cproj  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 6  (0.4s)
+outer pattern computed (0.7s); faces with an empty outer cell: []
+adjacency: inner pairs 60, outer pairs 90, shared 60, outer-only 30, inner-only 0
+pinched inner edges: 0 {}
+clusters 30: (inner, outer) vertex counts {(1, 2): 30}; Y vertices 30; persistent inner edges 60/60
+volume sum - resin = 0 (exact 0); resin = 175.666685; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 32, scutoid pieces 18, kinds 5 (stabiliser orbit members congruent: True); 157.7612 present: False
+  kind tri face 0 (6 per cell): facets 17 vertices 12 Y 2 scutoid True vol 0.908334  C1-side neighbours [20, 22, 23] mould-side [2, 3, 7, 20, 22, 23]
+     angles at C1 edges: [128.5325, 141.4136]
+     all dihedrals: 28.07257288 [not in basis]; 47.01205921 [not in basis]; 63.49825336 [not in basis]; 90.0 [1/2pi]; 124.7666463 [not in basis]; 128.532465 [not in basis]; 135.8569172 [not in basis]; 139.6474604 [not in basis]; 141.4136116 [not in basis]; 143.2896278 [not in basis]; 162.8742513 [not in basis]; 170.0341582 [not in basis]; 175.6332756 [not in basis]; 177.5658908 [not in basis]; 187.0472743 [not in basis]
+  kind tri face 1 (2 per cell): facets 16 vertices 13 Y 0 scutoid False vol 0.447624  C1-side neighbours [24, 26, 30] mould-side [4, 6, 13, 24, 26, 30]
+     angles at C1 edges: [132.9191]
+     all dihedrals: 45.73230145 [not in basis]; 90.0 [1/2pi]; 112.1151277 [not in basis]; 132.9190965 [not in basis]; 144.0 [4/5pi]; 196.3820969 [not in basis]
+  kind tri face 2 (12 per cell): facets 19 vertices 14 Y 3 scutoid True vol 5.047009  C1-side neighbours [20, 21, 22] mould-side [0, 5, 9, 20, 21, 22]
+     angles at C1 edges: [77.8545, 101.9372, 107.9719]
+     all dihedrals: 31.71747441 [1/2pi + -1alpha]; 36.0 [1/5pi]; 54.6988777 [not in basis]; 58.00294401 [not in basis]; 66.07893091 [not in basis]; 72.0 [2/5pi]; 75.39849535 [not in basis]; 77.85450897 [not in basis]; 86.59473858 [not in basis]; 101.9372211 [not in basis]; 107.9718532 [not in basis]; 117.7675314 [not in basis]; 121.3475116 [not in basis]; 129.171736 [not in basis]; 129.5391185 [not in basis]; 132.9879408 [not in basis]; 140.0769432 [not in basis]; 144.0 [4/5pi]; 146.7630607 [not in basis]; 148.2825256 [1/2pi + 1alpha]; 153.7111379 [not in basis]; 154.296069 [not in basis]; 159.3203515 [not in basis]; 178.8509112 [not in basis]; 189.020714 [not in basis]; 193.4042022 [not in basis]; 195.430464 [not in basis]; 206.2391585 [not in basis]; 223.685646 [not in basis]; 230.3846805 [not in basis]
+  kind pent face 20 (6 per cell): facets 28 vertices 19 Y 5 scutoid False vol 16.146392  C1-side neighbours [0, 2, 5, 7, 12] mould-side [0, 2, 5, 7, 12]
+     angles at C1 edges: [88.8449, 109.4055, 115.4401]
+     all dihedrals: 31.71747441 [1/2pi + -1alpha]; 36.0 [1/5pi]; 77.11712606 [not in basis]; 88.8449031 [not in basis]; 93.40526142 [not in basis]; 95.36286055 [not in basis]; 104.4156386 [not in basis]; 109.4055149 [not in basis]; 115.440147 [not in basis]; 115.8822548 [not in basis]; 124.4649373 [not in basis]; 125.3011223 [not in basis]; 144.0 [4/5pi]; 148.2825256 [1/2pi + 1alpha]; 151.9274271 [not in basis]; 153.7608415 [not in basis]; 164.569536 [not in basis]; 166.5957978 [not in basis]; 170.979286 [not in basis]; 172.9527257 [not in basis]; 181.1490888 [not in basis]; 182.4341092 [not in basis]; 184.3667244 [not in basis]; 200.6796485 [not in basis]; 219.9230568 [not in basis]
+  kind pent face 22 (6 per cell): facets 20 vertices 14 Y 3 scutoid False vol 1.979828  C1-side neighbours [0, 2, 3, 9, 16] mould-side [0, 2, 3, 9, 16]
+     angles at C1 edges: [75.9638, 84.4583, 139.5229]
+     all dihedrals: 43.20278112 [not in basis]; 57.93395703 [not in basis]; 75.96375653 [not in basis]; 84.45827162 [not in basis]; 100.9217629 [not in basis]; 104.6015046 [not in basis]; 111.9598834 [not in basis]; 116.5017466 [not in basis]; 123.118226 [not in basis]; 129.6153195 [not in basis]; 134.2676986 [not in basis]; 136.314354 [not in basis]; 139.5228592 [not in basis]; 144.0 [4/5pi]; 163.6179031 [not in basis]; 197.1257487 [not in basis]; 205.703931 [not in basis]; 224.1430828 [not in basis]
+RESULT 045 S65 cproj: valid=True  partition; scutoid pieces 18; kinds 5; Y vertices 30; 157.7612 present False
+(5.8s)

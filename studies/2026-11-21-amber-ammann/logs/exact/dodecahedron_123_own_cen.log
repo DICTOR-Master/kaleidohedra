@@ -1,0 +1,19 @@
+solid orientation: reflected y<->z
+stabiliser of the mould in I_h: order 12
+=== amber  dodecahedron  123  s0 = 3/2+3/2r5 = 4.854102  s = 1 s0 = 4.854102  seeds cen  tau 1/2
+solid vertices on the mould surface: 12; edges on it 6; faces on it 0
+mould faces 6  (1.2s)
+outer pattern computed (1.3s); faces with an empty outer cell: []
+adjacency: inner pairs 30, outer pairs 30, shared 30, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 20: (inner, outer) vertex counts {(1, 1): 20}; Y vertices 0; persistent inner edges 30/30
+volume sum - resin = 0 (exact 0); resin = 14.517221; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 12, scutoid pieces 0, kinds 2 (stabiliser orbit members congruent: True); 157.7612 present: False
+  kind pent face 0 (6 per cell): facets 6 vertices 8 Y 0 scutoid False vol 1.604441  C1-side neighbours [1, 2, 5, 6, 8] mould-side [1, 2, 5, 6, 8]
+     angles at C1 edges: [31.7175, 121.7175]
+     all dihedrals: 31.71747441 [1/2pi + -1alpha]; 36.0 [1/5pi]; 72.0 [2/5pi]; 120.0 [2/3pi]; 121.7174744 [1pi + -1alpha]
+  kind pent face 2 (6 per cell): facets 8 vertices 9 Y 0 scutoid False vol 0.815096  C1-side neighbours [0, 1, 3, 6, 10] mould-side [0, 1, 3, 6, 10]
+     angles at C1 edges: [31.7175, 121.7175]
+     all dihedrals: 31.71747441 [1/2pi + -1alpha]; 72.0 [2/5pi]; 108.0 [3/5pi]; 120.0 [2/3pi]; 121.7174744 [1pi + -1alpha]
+RESULT 123 1 cen: valid=True  partition; scutoid pieces 0; kinds 2; Y vertices 0; 157.7612 present False
+(1.9s)
