@@ -1,0 +1,42 @@
+All rule tables (types per face class), tori Lambda/N Lambda, N = 2..6: SAT result and parity count must agree
+  sc {'square': 'all'}: configurations on tori N=(2, 3, 4, 5, 6): ['2^8', '2^27', '2^64', '2^125', '2^216']  -> (a) all (free; aperiodic allowed, not forced)
+  sc {'square': 'eq'}: configurations on tori N=(2, 3, 4, 5, 6): ['2^1', '2^1', '2^1', '2^1', '2^1']  -> (b) finitely many, all periodic
+  sc {'square': 'neq'}: configurations on tori N=(2, 3, 4, 5, 6): ['2^1', '-', '2^1', '-', '2^1']  -> (b) finitely many, all periodic
+  sc {'square': 'none'}: configurations on tori N=(2, 3, 4, 5, 6): ['-', '-', '-', '-', '-']  -> (d) none
+  bcc {'square': 'all', 'hexagon': 'all'}: configurations on tori N=(2, 3, 4, 5, 6): ['2^8', '2^27', '2^64', '2^125', '2^216']  -> (a) all (free; aperiodic allowed, not forced)
+  bcc {'square': 'all', 'hexagon': 'eq'}: configurations on tori N=(2, 3, 4, 5, 6): ['2^1', '2^1', '2^1', '2^1', '2^1']  -> (b) finitely many, all periodic
+  bcc {'square': 'all', 'hexagon': 'neq'}: configurations on tori N=(2, 3, 4, 5, 6): ['2^1', '-', '2^1', '-', '2^1']  -> (b) finitely many, all periodic
+  bcc {'square': 'all', 'hexagon': 'none'}: configurations on tori N=(2, 3, 4, 5, 6): ['-', '-', '-', '-', '-']  -> (d) none
+  bcc {'square': 'eq', 'hexagon': 'all'}: configurations on tori N=(2, 3, 4, 5, 6): ['2^2', '2^1', '2^2', '2^1', '2^2']  -> (b) finitely many, all periodic
+  bcc {'square': 'eq', 'hexagon': 'eq'}: configurations on tori N=(2, 3, 4, 5, 6): ['2^1', '2^1', '2^1', '2^1', '2^1']  -> (b) finitely many, all periodic
+  bcc {'square': 'eq', 'hexagon': 'neq'}: configurations on tori N=(2, 3, 4, 5, 6): ['2^1', '-', '2^1', '-', '2^1']  -> (b) finitely many, all periodic
+  bcc {'square': 'eq', 'hexagon': 'none'}: configurations on tori N=(2, 3, 4, 5, 6): ['-', '-', '-', '-', '-']  -> (d) none
+  bcc {'square': 'neq', 'hexagon': 'all'}: configurations on tori N=(2, 3, 4, 5, 6): ['-', '-', '2^2', '-', '-']  -> (b) finitely many, all periodic
+  bcc {'square': 'neq', 'hexagon': 'eq'}: configurations on tori N=(2, 3, 4, 5, 6): ['-', '-', '-', '-', '-']  -> (d) none
+  bcc {'square': 'neq', 'hexagon': 'neq'}: configurations on tori N=(2, 3, 4, 5, 6): ['-', '-', '-', '-', '-']  -> (d) none
+  bcc {'square': 'neq', 'hexagon': 'none'}: configurations on tori N=(2, 3, 4, 5, 6): ['-', '-', '-', '-', '-']  -> (d) none
+  bcc {'square': 'none', 'hexagon': 'all'}: configurations on tori N=(2, 3, 4, 5, 6): ['-', '-', '-', '-', '-']  -> (d) none
+  bcc {'square': 'none', 'hexagon': 'eq'}: configurations on tori N=(2, 3, 4, 5, 6): ['-', '-', '-', '-', '-']  -> (d) none
+  bcc {'square': 'none', 'hexagon': 'neq'}: configurations on tori N=(2, 3, 4, 5, 6): ['-', '-', '-', '-', '-']  -> (d) none
+  bcc {'square': 'none', 'hexagon': 'none'}: configurations on tori N=(2, 3, 4, 5, 6): ['-', '-', '-', '-', '-']  -> (d) none
+  fcc {'rhombus': 'all'}: configurations on tori N=(2, 3, 4, 5, 6): ['2^8', '2^27', '2^64', '2^125', '2^216']  -> (a) all (free; aperiodic allowed, not forced)
+  fcc {'rhombus': 'eq'}: configurations on tori N=(2, 3, 4, 5, 6): ['2^1', '2^1', '2^1', '2^1', '2^1']  -> (b) finitely many, all periodic
+  fcc {'rhombus': 'neq'}: configurations on tori N=(2, 3, 4, 5, 6): ['-', '-', '-', '-', '-']  -> (d) none
+  fcc {'rhombus': 'none'}: configurations on tori N=(2, 3, 4, 5, 6): ['-', '-', '-', '-', '-']  -> (d) none
+Real rule tables of the Fullerene-Amber Cell (from keyed_*.json):
+  bcc 1 s0, R1: {'square': 'eq', 'hexagon': 'none'} -> (d) none
+  bcc 1 s0, comb: {'square': 'eq', 'hexagon': 'none'} -> (d) none
+  bcc 6/5 s0, R1: {'square': 'eq', 'hexagon': 'none'} -> (d) none
+  bcc 6/5 s0, comb: {'square': 'eq', 'hexagon': 'none'} -> (d) none
+  fcc 1 s0, R1: {'rhombus': 'neq'} -> (d) none
+  fcc 1 s0, comb: {'rhombus': 'neq'} -> (d) none
+  fcc 6/5 s0, R1: {'rhombus': 'neq'} -> (d) none
+  fcc 6/5 s0, comb: {'rhombus': 'neq'} -> (d) none
+  sc 1 s0, R1: {'square': 'eq'} -> (b) finitely many, all periodic
+  sc 1 s0, comb: {'square': 'eq'} -> (b) finitely many, all periodic
+  sc 6/5 s0, R1: {'square': 'eq'} -> (b) finitely many, all periodic
+  sc 6/5 s0, comb: {'square': 'eq'} -> (b) finitely many, all periodic
+  controls sc: comb s0 vs comb 6/5 s0 scaled: 0/6 faces match (must be 0); R1 vs comb: 0/12 (must be 0); R1 s0 vs R1 6/5 s0 scaled (central projection, exact identity): 6/6 (must be 6)
+  controls bcc: comb s0 vs comb 6/5 s0 scaled: 0/14 faces match (must be 0); R1 vs comb: 0/28 (must be 0); R1 s0 vs R1 6/5 s0 scaled (central projection, exact identity): 14/14 (must be 14)
+  controls fcc: comb s0 vs comb 6/5 s0 scaled: 0/12 faces match (must be 0); R1 vs comb: 0/24 (must be 0); R1 s0 vs R1 6/5 s0 scaled (central projection, exact identity): 12/12 (must be 12)
+FINAL ok
