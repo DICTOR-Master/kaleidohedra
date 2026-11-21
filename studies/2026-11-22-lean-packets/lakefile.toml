@@ -1,0 +1,12 @@
+name = "Packets"
+version = "0.1.0"
+defaultTargets = ["Packets"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "v4.35.0-rc2"
+
+[[lean_lib]]
+name = "Packets"
+globs = ["Packets.*"]
