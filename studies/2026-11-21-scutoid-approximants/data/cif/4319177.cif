@@ -1,0 +1,254 @@
+#------------------------------------------------------------------------------
+#$Date: 2016-03-23 02:57:53 +0100 (Wed 23 de Mar de 2016) $
+#$Revision: 179271 $
+#$URL: svn://www.crystallography.net/cod/cif/4/31/91/4319177.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/
+#
+# All data on this site have been placed in the public domain by the
+# contributors.
+#
+data_4319177
+loop_
+_publ_author_name
+'Chi-Shen Lee'
+'Gordon J. Miller'
+_publ_contact_author_address
+;
+Department of Chemistry
+Iowa State University
+Ames, Iowa 50011
+USA
+;
+_publ_contact_author_email       gmiller@iastate.edu
+_publ_contact_author_name        'Gordon J. Miller'
+_publ_section_title
+;
+ Experimental and Theoretical Studies of Elemental Site Preferences in
+ Quasicrystalline Approximants (R-Phases) within the Li-Mg-Zn-Al System
+;
+_journal_name_full               'Inorganic Chemistry'
+_journal_page_first              338
+_journal_page_last               345
+_journal_paper_doi               10.1021/ic0008363
+_journal_volume                  40
+_journal_year                    2001
+_chemical_formula_sum            'Al23 Li20 Mg32 Zn85'
+_chemical_formula_weight         7093.71
+_chemical_name_systematic
+; 
+ ? 
+;
+_space_group_IT_number           204
+_symmetry_cell_setting           cubic
+_symmetry_space_group_name_Hall  '-I 2 2 3'
+_symmetry_space_group_name_H-M   'I m -3'
+_atom_sites_solution_hydrogens   geom
+_atom_sites_solution_primary     direct
+_atom_sites_solution_secondary   difmap
+_audit_creation_method           SHELXL-97
+_cell_angle_alpha                90.00
+_cell_angle_beta                 90.00
+_cell_angle_gamma                90.00
+_cell_formula_units_Z            1
+_cell_length_a                   14.1109(17)
+_cell_length_b                   14.1109(17)
+_cell_length_c                   14.1109(17)
+_cell_measurement_temperature    293(2)
+_cell_volume                     2809.7(6)
+_computing_structure_refinement  'SHELXL-97 (Sheldrick, 1997)'
+_computing_structure_solution    'SHELXS-97 (Sheldrick, 1990)'
+_diffrn_ambient_temperature      293(2)
+_diffrn_measured_fraction_theta_full 0.979
+_diffrn_measured_fraction_theta_max 0.979
+_diffrn_radiation_monochromator  graphite
+_diffrn_radiation_source         'fine-focus sealed tube'
+_diffrn_radiation_type           MoK\a
+_diffrn_radiation_wavelength     0.71073
+_diffrn_reflns_av_R_equivalents  0.0587
+_diffrn_reflns_av_sigmaI/netI    0.0424
+_diffrn_reflns_limit_h_max       18
+_diffrn_reflns_limit_h_min       -1
+_diffrn_reflns_limit_k_max       17
+_diffrn_reflns_limit_k_min       -12
+_diffrn_reflns_limit_l_max       17
+_diffrn_reflns_limit_l_min       -12
+_diffrn_reflns_number            2695
+_diffrn_reflns_theta_full        28.28
+_diffrn_reflns_theta_max         28.28
+_diffrn_reflns_theta_min         2.04
+_exptl_absorpt_coefficient_mu    18.105
+_exptl_crystal_density_diffrn    4.192
+_exptl_crystal_density_method    'not measured'
+_exptl_crystal_F_000             3293
+_refine_diff_density_max         0.360
+_refine_diff_density_min         -0.468
+_refine_diff_density_rms         0.088
+_refine_ls_extinction_coef       0.00047(6)
+_refine_ls_extinction_expression Fc^*^=kFc[1+0.001xFc^2^\l^3^/sin(2\q)]^-1/4^
+_refine_ls_extinction_method     SHELXL
+_refine_ls_goodness_of_fit_ref   1.036
+_refine_ls_hydrogen_treatment    mixed
+_refine_ls_matrix_type           full
+_refine_ls_number_parameters     47
+_refine_ls_number_reflns         645
+_refine_ls_number_restraints     0
+_refine_ls_restrained_S_all      1.036
+_refine_ls_R_factor_all          0.0274
+_refine_ls_R_factor_gt           0.0209
+_refine_ls_shift/su_max          0.001
+_refine_ls_shift/su_mean         0.000
+_refine_ls_structure_factor_coef Fsqd
+_refine_ls_weighting_details
+'calc w=1/[\s^2^(Fo^2^)+(0.0040P)^2^+0.0000P] where P=(Fo^2^+2Fc^2^)/3'
+_refine_ls_weighting_scheme      calc
+_refine_ls_wR_factor_gt          0.0414
+_refine_ls_wR_factor_ref         0.0426
+_reflns_number_gt                545
+_reflns_number_total             645
+_reflns_threshold_expression     >2sigma(I)
+_cod_data_source_file            ic0008363_2.cif
+_cod_data_source_block           1
+_cod_database_code               4319177
+loop_
+_symmetry_equiv_pos_as_xyz
+'x, y, z'
+'-x, -y, z'
+'-x, y, -z'
+'x, -y, -z'
+'z, x, y'
+'z, -x, -y'
+'-z, -x, y'
+'-z, x, -y'
+'y, z, x'
+'-y, z, -x'
+'y, -z, -x'
+'-y, -z, x'
+'x+1/2, y+1/2, z+1/2'
+'-x+1/2, -y+1/2, z+1/2'
+'-x+1/2, y+1/2, -z+1/2'
+'x+1/2, -y+1/2, -z+1/2'
+'z+1/2, x+1/2, y+1/2'
+'z+1/2, -x+1/2, -y+1/2'
+'-z+1/2, -x+1/2, y+1/2'
+'-z+1/2, x+1/2, -y+1/2'
+'y+1/2, z+1/2, x+1/2'
+'-y+1/2, z+1/2, -x+1/2'
+'y+1/2, -z+1/2, -x+1/2'
+'-y+1/2, -z+1/2, x+1/2'
+'-x, -y, -z'
+'x, y, -z'
+'x, -y, z'
+'-x, y, z'
+'-z, -x, -y'
+'-z, x, y'
+'z, x, -y'
+'z, -x, y'
+'-y, -z, -x'
+'y, -z, x'
+'-y, z, x'
+'y, z, -x'
+'-x+1/2, -y+1/2, -z+1/2'
+'x+1/2, y+1/2, -z+1/2'
+'x+1/2, -y+1/2, z+1/2'
+'-x+1/2, y+1/2, z+1/2'
+'-z+1/2, -x+1/2, -y+1/2'
+'-z+1/2, x+1/2, y+1/2'
+'z+1/2, x+1/2, -y+1/2'
+'z+1/2, -x+1/2, y+1/2'
+'-y+1/2, -z+1/2, -x+1/2'
+'y+1/2, -z+1/2, x+1/2'
+'-y+1/2, z+1/2, x+1/2'
+'y+1/2, z+1/2, -x+1/2'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_U_iso_or_equiv
+_atom_site_adp_type
+_atom_site_occupancy
+_atom_site_symmetry_multiplicity
+_atom_site_calc_flag
+_atom_site_refinement_flags
+_atom_site_disorder_assembly
+_atom_site_disorder_group
+A1 Li 0.2003(6) 0.5000 0.0000 0.030(2) Uani 1 4 d S . .
+A2 Mg 0.18736(14) 0.18736(14) 0.18736(14) 0.0214(12) Uani 0.231(5) 3 d SP . .
+A2A Li 0.18736(14) 0.18736(14) 0.18736(14) 0.0214(12) Uani 0.77 3 d SP . .
+A3 Mg 0.12087(11) 0.30278(10) 0.0000 0.0181(6) Uani 0.589(5) 2 d SP . .
+A3A Li 0.12087(11) 0.30278(10) 0.0000 0.0181(6) Uani 0.41 2 d SP . .
+M1 Zn 0.30914(4) 0.17692(4) 0.0000 0.01552(19) Uani 0.466(4) 2 d SP . .
+M1A Al 0.30914(4) 0.17692(4) 0.0000 0.01552(19) Uani 0.53 2 d SP . .
+M2 Zn 0.15265(3) 0.09348(3) 0.0000 0.01307(18) Uani 0.514(4) 2 d SP . .
+M2A Al 0.15265(3) 0.09348(3) 0.0000 0.01307(18) Uani 0.49 2 d SP . .
+M3 Zn 0.31096(3) 0.34193(3) 0.09557(3) 0.01483(16) Uani 0.343(3) 1 d P . .
+M3A Al 0.31096(3) 0.34193(3) 0.09557(3) 0.01483(16) Uani 0.66 1 d P . .
+M4 Al 0.40365(9) 0.5000 0.0000 0.0184(4) Uani 1 4 d S . .
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_23
+_atom_site_aniso_U_13
+_atom_site_aniso_U_12
+A1 0.027(4) 0.026(4) 0.038(5) 0.000 0.000 0.000
+A2 0.0214(12) 0.0214(12) 0.0214(12) -0.0007(8) -0.0007(8) -0.0007(8)
+A2A 0.0214(12) 0.0214(12) 0.0214(12) -0.0007(8) -0.0007(8) -0.0007(8)
+A3 0.0184(9) 0.0180(9) 0.0181(9) 0.000 0.000 -0.0030(7)
+A3 0.0184(9) 0.0180(9) 0.0181(9) 0.000 0.000 -0.0030(7)
+M1 0.0151(3) 0.0164(3) 0.0150(3) 0.000 0.000 -0.0033(2)
+M1A 0.0151(3) 0.0164(3) 0.0150(3) 0.000 0.000 -0.0033(2)
+M2 0.0128(3) 0.0128(3) 0.0136(3) 0.000 0.000 -0.00072(19)
+M2A 0.0128(3) 0.0128(3) 0.0136(3) 0.000 0.000 -0.00072(19)
+M3 0.0172(3) 0.0135(3) 0.0139(2) -0.00174(17) 0.00047(16) 0.00134(17)
+M3A 0.0172(3) 0.0135(3) 0.0139(2) -0.00174(17) 0.00047(16) 0.00134(17)
+M4 0.0174(7) 0.0173(7) 0.0205(8) 0.000 0.000 0.000
+loop_
+_atom_type_symbol
+_atom_type_description
+_atom_type_scat_dispersion_real
+_atom_type_scat_dispersion_imag
+_atom_type_scat_source
+Li Li -0.0003 0.0001 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+Mg Mg 0.0486 0.0363 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+Al Al 0.0645 0.0514 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+Zn Zn 0.2839 1.4301 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+loop_
+_geom_bond_atom_site_label_1
+_geom_bond_atom_site_label_2
+_geom_bond_distance
+A1 A3 3.004(4)
+A1 M1 3.186(5)
+A1 M3 3.031(2)
+A1 M3 3.040(5)
+A1 M4 2.863(10)
+A1 M4 3.141(9)
+A2 A2 3.055(7)
+A2 A3 3.1586(8)
+A2 M1 2.995(3)
+A2 M2 3.0792(19)
+A2 M3 3.0846(19)
+A2 M3 3.2388(17)
+A3 A3 3.409(3)
+A3 M1 3.0150(11)
+A3 M1 3.2022(18)
+A3 M2 2.9818(17)
+A3 M2 3.0177(15)
+A3 M3 3.0564(10)
+A3 M3 3.0627(16)
+A3 M4 3.5286(17)
+M1 M2 2.5042(9)
+M1 M3 2.6058(6)
+M1 M3 2.6902(8)
+M1 M4 2.9125(9)
+M1 M2 2.6336(11)
+M1 M2 2.6568(7)
+M3 M3 2.6766(5)
+M3 M3 2.6954(10)
+M3 M4 2.9154(9)
+M4 M4 2.690(3)

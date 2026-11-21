@@ -1,0 +1,27 @@
+=== amber  capped_icosidodecahedron  bcc  s0 = 2+2/3r5 = 3.490712  s = S1971|500 s0 = 3.942000  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 14  (0.3s)
+outer pattern computed (1.7s); faces with an empty outer cell: []
+adjacency: inner pairs 120, outer pairs 180, shared 120, outer-only 60, inner-only 0
+pinched inner edges: 0 {}
+clusters 42: (inner, outer) vertex counts {(1, 1): 12, (1, 3): 30}; Y vertices 30; persistent inner edges 120/120
+sampling cross-check: 3729 points (2060 in the resin), points not covered exactly once: 0, max winding rounding 8.50e-15
+volume sum - resin = 0 (exact 0); resin = 16.686523; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 80, scutoid pieces 60, kinds 5 (T_h orbit members congruent: True); 157.7612 present: False
+  kind tri face 0 (12 per cell): facets 19 vertices 13 Y 3 scutoid False vol 0.296833  C1-side neighbours [2, 8, 21] mould-side [2, 8, 21]
+     angles at C1 edges: [102.7054, 102.9624]
+     all dihedrals: 66.39122732 [not in basis]; 66.60040056 [not in basis]; 66.92174961 [not in basis]; 75.39335498 [not in basis]; 90.41275119 [not in basis]; 102.7053759 [not in basis]; 102.9623579 [not in basis]; 109.3263664 [not in basis]; 109.4712206 [1pi + -2gamma]; 125.2643897 [1/2pi + 1gamma]; 171.6905378 [not in basis]; 171.761793 [not in basis]; 177.8327738 [not in basis]; 177.9904072 [not in basis]; 178.0831043 [not in basis]; 179.5747549 [not in basis]
+  kind tri face 2 (24 per cell): facets 14 vertices 12 Y 2 scutoid True vol 0.247559  C1-side neighbours [0, 3, 31] mould-side [0, 3, 8, 21, 31]
+     angles at C1 edges: [90.7539, 91.2047, 113.3894]
+     all dihedrals: 54.73561032 [1/2pi + -1gamma]; 56.80438634 [not in basis]; 56.85152133 [not in basis]; 70.67363364 [not in basis]; 72.04467137 [not in basis]; 89.58724881 [not in basis]; 90.0 [1/2pi]; 90.75385053 [not in basis]; 91.20468377 [not in basis]; 111.2908966 [not in basis]; 113.389395 [not in basis]; 125.2643897 [1/2pi + 1gamma]; 142.3033225 [not in basis]; 146.6997997 [not in basis]; 179.5477648 [not in basis]; 179.5890152 [not in basis]; 180.4252451 [not in basis]; 181.9168957 [not in basis]; 182.0095928 [not in basis]; 188.3094622 [not in basis]
+  kind tri face 3 (24 per cell): facets 16 vertices 11 Y 2 scutoid True vol 0.155439  C1-side neighbours [2, 4, 78] mould-side [2, 4, 23, 35, 78]
+     angles at C1 edges: [90.303, 118.0096]
+     all dihedrals: 58.60768452 [not in basis]; 68.70910337 [not in basis]; 71.91065725 [not in basis]; 90.0 [1/2pi]; 90.30301729 [not in basis]; 95.54029765 [not in basis]; 118.0095843 [not in basis]; 150.3423933 [not in basis]; 177.3478009 [not in basis]; 177.5898748 [not in basis]; 180.4109848 [not in basis]; 180.4522352 [not in basis]; 187.5187622 [not in basis]
+  kind tri face 4 (8 per cell): facets 20 vertices 12 Y 3 scutoid False vol 0.092771  C1-side neighbours [3, 23, 35] mould-side [3, 23, 35]
+     angles at C1 edges: [98.0852]
+     all dihedrals: 59.31521333 [not in basis]; 62.32456879 [not in basis]; 84.45970235 [not in basis]; 98.08518664 [not in basis]; 172.4812378 [not in basis]; 182.4101252 [not in basis]; 182.6521991 [not in basis]
+  kind tri face 7 (12 per cell): facets 16 vertices 11 Y 2 scutoid True vol 0.225867  C1-side neighbours [1, 17, 49] mould-side [1, 6, 10, 17, 49]
+     angles at C1 edges: [91.2047, 113.1324]
+     all dihedrals: 56.68679124 [not in basis]; 70.67363364 [not in basis]; 72.08934275 [not in basis]; 90.0 [1/2pi]; 91.20468377 [not in basis]; 109.4712206 [1pi + -2gamma]; 111.2908966 [not in basis]; 113.132413 [not in basis]; 142.3033225 [not in basis]; 179.5477648 [not in basis]; 179.5890152 [not in basis]; 182.1672262 [not in basis]; 188.238207 [not in basis]
+RESULT bcc S1971|500 cen: valid=True  partition; scutoid pieces 60; kinds 5; Y vertices 30; 157.7612 present False
+(11.0s)

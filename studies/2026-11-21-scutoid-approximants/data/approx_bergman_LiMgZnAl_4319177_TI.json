@@ -1,0 +1,40 @@
+{
+ "case": "bergman_LiMgZnAl_4319177_TI",
+ "cif": "4319177",
+ "family": "Bergman 1/1 Mg32(Al,Zn)49 type, Li20Mg32Zn85Al23 (Im-3)",
+ "a": 14.1109,
+ "space_group": "I m -3",
+ "solid": "truncated_icosahedron",
+ "centres": [
+  [
+   0,
+   0,
+   0
+  ]
+ ],
+ "doi": "10.1021/ic0008363",
+ "n_vertices": 60,
+ "face_sizes": {
+  "5": 12,
+  "6": 20
+ },
+ "frame": "turned90z",
+ "frame_max_dev_deg": 0.7335217103443065,
+ "n_core_atoms": [
+  60
+ ],
+ "k": 2.733661076501687,
+ "k_per_centre": [
+  2.733661076501687
+ ],
+ "r_core_mean": 6.774063155138034,
+ "r_core_min": 6.659774829783805,
+ "r_core_max": 7.185252024762012,
+ "atom_to_ideal_vertex_max_A": 0.4207775795862077,
+ "atom_to_ideal_vertex_rms_A": 0.21560505715131353,
+ "s_real": 5.161905446617385,
+ "s0": 5.23606797749979,
+ "ratio": 0.9858362169473175,
+ "fits": false,
+ "note": "real shell larger than its bcc Voronoi cell allows: neighbouring shells overlap, no amber cell at the real scale"
+}

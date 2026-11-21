@@ -1,0 +1,788 @@
+#------------------------------------------------------------------------------
+#$Date: 2016-03-21 15:53:48 +0100 (Mon 21 de Mar de 2016) $
+#$Revision: 178759 $
+#$URL: svn://www.crystallography.net/cod/cif/4/10/13/4101359.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/
+#
+# All data on this site have been placed in the public domain by the
+# contributors.
+#
+data_4101359
+loop_
+_publ_author_name
+'Lin, Qisheng'
+'Corbett, John D'
+_publ_section_title
+;
+ The 1/1 and 2/1 approximants in the Sc-Mg-Zn quasicrystal system:
+ triacontahedral clusters as fundamental building blocks.
+;
+_journal_issue                   40
+_journal_name_full               'Journal of the American Chemical Society'
+_journal_page_first              13268
+_journal_page_last               13273
+_journal_paper_doi               10.1021/ja063897u
+_journal_volume                  128
+_journal_year                    2006
+_chemical_formula_sum            'Mg0.18 Sc3 Zn17.73'
+_chemical_formula_weight         1298.08
+_chemical_name_systematic
+;
+ ?
+;
+_space_group_IT_number           204
+_symmetry_space_group_name_Hall  '-I 2 2 3'
+_symmetry_space_group_name_H-M   'I m -3'
+_atom_sites_solution_hydrogens   geom
+_atom_sites_solution_primary     direct
+_atom_sites_solution_secondary   difmap
+_audit_creation_method           SHELXL-97
+_cell_angle_alpha                90.00
+_cell_angle_beta                 90.00
+_cell_angle_gamma                90.00
+_cell_formula_units_Z            8
+_cell_length_a                   13.8629(16)
+_cell_length_b                   13.8629(16)
+_cell_length_c                   13.8629(16)
+_cell_measurement_temperature    293(2)
+_cell_volume                     2664.2(5)
+_computing_structure_refinement  'SHELXL-97 (Sheldrick, 1997)'
+_diffrn_ambient_temperature      293(2)
+_diffrn_measured_fraction_theta_full 0.989
+_diffrn_measured_fraction_theta_max 0.989
+_diffrn_radiation_monochromator  graphite
+_diffrn_radiation_source         'fine-focus sealed tube'
+_diffrn_radiation_type           MoK\a
+_diffrn_radiation_wavelength     0.71073
+_diffrn_reflns_av_R_equivalents  0.0475
+_diffrn_reflns_av_sigmaI/netI    0.0242
+_diffrn_reflns_limit_h_max       18
+_diffrn_reflns_limit_h_min       -14
+_diffrn_reflns_limit_k_max       16
+_diffrn_reflns_limit_k_min       -17
+_diffrn_reflns_limit_l_max       18
+_diffrn_reflns_limit_l_min       -17
+_diffrn_reflns_number            8391
+_diffrn_reflns_theta_full        28.21
+_diffrn_reflns_theta_max         28.21
+_diffrn_reflns_theta_min         2.08
+_exptl_absorpt_coefficient_mu    32.606
+_exptl_crystal_density_diffrn    6.473
+_exptl_crystal_density_method    'not measured'
+_exptl_crystal_F_000             4776
+_refine_diff_density_max         3.153
+_refine_diff_density_min         -1.363
+_refine_diff_density_rms         0.181
+_refine_ls_extinction_method     none
+_refine_ls_goodness_of_fit_ref   1.056
+_refine_ls_hydrogen_treatment    mixed
+_refine_ls_matrix_type           full
+_refine_ls_number_parameters     47
+_refine_ls_number_reflns         613
+_refine_ls_number_restraints     0
+_refine_ls_restrained_S_all      1.056
+_refine_ls_R_factor_all          0.0320
+_refine_ls_R_factor_gt           0.0264
+_refine_ls_shift/su_max          0.000
+_refine_ls_shift/su_mean         0.000
+_refine_ls_structure_factor_coef Fsqd
+_refine_ls_weighting_details
+'calc w=1/[\s^2^(Fo^2^)+(0.0185P)^2^+53.1413P] where P=(Fo^2^+2Fc^2^)/3'
+_refine_ls_weighting_scheme      calc
+_refine_ls_wR_factor_gt          0.0564
+_refine_ls_wR_factor_ref         0.0580
+_reflns_number_gt                549
+_reflns_number_total             613
+_reflns_threshold_expression     >2sigma(I)
+_cod_data_source_file            ja063897usi20060613_121704.cif
+_cod_data_source_block           1/1_AC_Sc3Mg0.18(1)Zn17.73(3)
+_cod_database_code               4101359
+loop_
+_symmetry_equiv_pos_as_xyz
+'x, y, z'
+'-x, -y, z'
+'-x, y, -z'
+'x, -y, -z'
+'z, x, y'
+'z, -x, -y'
+'-z, -x, y'
+'-z, x, -y'
+'y, z, x'
+'-y, z, -x'
+'y, -z, -x'
+'-y, -z, x'
+'x+1/2, y+1/2, z+1/2'
+'-x+1/2, -y+1/2, z+1/2'
+'-x+1/2, y+1/2, -z+1/2'
+'x+1/2, -y+1/2, -z+1/2'
+'z+1/2, x+1/2, y+1/2'
+'z+1/2, -x+1/2, -y+1/2'
+'-z+1/2, -x+1/2, y+1/2'
+'-z+1/2, x+1/2, -y+1/2'
+'y+1/2, z+1/2, x+1/2'
+'-y+1/2, z+1/2, -x+1/2'
+'y+1/2, -z+1/2, -x+1/2'
+'-y+1/2, -z+1/2, x+1/2'
+'-x, -y, -z'
+'x, y, -z'
+'x, -y, z'
+'-x, y, z'
+'-z, -x, -y'
+'-z, x, y'
+'z, x, -y'
+'z, -x, y'
+'-y, -z, -x'
+'y, -z, x'
+'-y, z, x'
+'y, z, -x'
+'-x+1/2, -y+1/2, -z+1/2'
+'x+1/2, y+1/2, -z+1/2'
+'x+1/2, -y+1/2, z+1/2'
+'-x+1/2, y+1/2, z+1/2'
+'-z+1/2, -x+1/2, -y+1/2'
+'-z+1/2, x+1/2, y+1/2'
+'z+1/2, x+1/2, -y+1/2'
+'z+1/2, -x+1/2, y+1/2'
+'-y+1/2, -z+1/2, -x+1/2'
+'y+1/2, -z+1/2, x+1/2'
+'-y+1/2, z+1/2, x+1/2'
+'y+1/2, z+1/2, -x+1/2'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_U_iso_or_equiv
+_atom_site_adp_type
+_atom_site_occupancy
+_atom_site_symmetry_multiplicity
+_atom_site_calc_flag
+_atom_site_refinement_flags
+Sc Sc 0.20097(9) 0.30973(9) 0.5000 0.0083(3) Uani 1 2 d S
+Zn1 Zn 0.11725(4) 0.19950(4) 0.34094(4) 0.01536(17) Uani 1 1 d .
+Zn2 Zn 0.0000 0.34513(5) 0.40438(5) 0.01026(19) Uani 1 2 d S
+Zn3 Zn 0.0000 0.09169(6) 0.23916(9) 0.0283(3) Uani 1 2 d S
+Zn4 Zn 0.0000 0.0797(5) 0.0769(5) 0.108(3) Uani 0.303(4) 2 d SP
+Zn5 Zn 0.16208(5) 0.16208(5) 0.16208(5) 0.0218(3) Uani 1 3 d S
+Zn6 Zn 0.0000 0.18960(8) 0.5000 0.0129(3) Uani 1 4 d S
+Zn7 Zn 0.09460(10) 0.5000 0.5000 0.0246(5) Uani 0.879(9) 4 d SP
+Mg7 Mg 0.09460(10) 0.5000 0.5000 0.0246(5) Uani 0.121(9) 4 d SP
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_23
+_atom_site_aniso_U_13
+_atom_site_aniso_U_12
+Sc 0.0090(6) 0.0087(6) 0.0073(6) 0.000 0.000 0.0010(5)
+Zn1 0.0209(3) 0.0135(3) 0.0117(3) -0.0016(2) -0.0039(2) 0.0057(2)
+Zn2 0.0114(4) 0.0104(4) 0.0090(4) 0.0021(3) 0.000 0.000
+Zn3 0.0126(4) 0.0118(4) 0.0604(7) 0.0109(4) 0.000 0.000
+Zn4 0.207(7) 0.053(4) 0.063(4) -0.039(3) 0.000 0.000
+Zn5 0.0218(3) 0.0218(3) 0.0218(3) 0.0122(3) 0.0122(3) 0.0122(3)
+Zn6 0.0094(5) 0.0102(5) 0.0192(6) 0.000 0.000 0.000
+Zn7 0.0134(7) 0.0117(7) 0.0488(11) 0.000 0.000 0.000
+Mg7 0.0134(7) 0.0117(7) 0.0488(11) 0.000 0.000 0.000
+loop_
+_atom_type_symbol
+_atom_type_description
+_atom_type_scat_dispersion_real
+_atom_type_scat_dispersion_imag
+_atom_type_scat_source
+Mg Mg 0.0486 0.0363 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+Sc Sc 0.2519 0.3716 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+Zn Zn 0.2839 1.4301 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+loop_
+_geom_angle_atom_site_label_1
+_geom_angle_atom_site_label_2
+_geom_angle_atom_site_label_3
+_geom_angle
+_geom_angle_site_symmetry_1
+_geom_angle_site_symmetry_3
+Zn1 Sc Zn1 97.94(4) . 26_556
+Zn1 Sc Zn3 105.45(3) . 45
+Zn1 Sc Zn3 105.45(3) 26_556 45
+Zn1 Sc Zn5 153.39(5) . 14
+Zn1 Sc Zn5 75.62(3) 26_556 14
+Zn3 Sc Zn5 53.67(2) 45 14
+Zn1 Sc Zn5 75.62(3) . 37
+Zn1 Sc Zn5 153.39(5) 26_556 37
+Zn3 Sc Zn5 53.67(2) 45 37
+Zn5 Sc Zn5 98.44(6) 14 37
+Zn1 Sc Zn1 53.62(2) . 45
+Zn1 Sc Zn1 103.21(4) 26_556 45
+Zn3 Sc Zn1 52.37(3) 45 45
+Zn5 Sc Zn1 102.05(4) 14 45
+Zn5 Sc Zn1 51.98(2) 37 45
+Zn1 Sc Zn1 103.21(4) . 24
+Zn1 Sc Zn1 53.62(2) 26_556 24
+Zn3 Sc Zn1 52.37(3) 45 24
+Zn5 Sc Zn1 51.98(2) 14 24
+Zn5 Sc Zn1 102.05(4) 37 24
+Zn1 Sc Zn1 65.99(4) 45 24
+Zn1 Sc Zn1 142.61(5) . 19
+Zn1 Sc Zn1 53.448(19) 26_556 19
+Zn3 Sc Zn1 105.41(3) 45 19
+Zn5 Sc Zn1 51.814(19) 14 19
+Zn5 Sc Zn1 140.99(5) 37 19
+Zn1 Sc Zn1 145.81(3) 45 19
+Zn1 Sc Zn1 79.85(3) 24 19
+Zn1 Sc Zn1 53.448(19) . 41
+Zn1 Sc Zn1 142.61(5) 26_556 41
+Zn3 Sc Zn1 105.41(3) 45 41
+Zn5 Sc Zn1 140.99(5) 14 41
+Zn5 Sc Zn1 51.814(19) 37 41
+Zn1 Sc Zn1 79.85(3) 45 41
+Zn1 Sc Zn1 145.81(3) 24 41
+Zn1 Sc Zn1 134.24(5) 19 41
+Zn1 Sc Zn7 105.22(3) . .
+Zn1 Sc Zn7 105.22(3) 26_556 .
+Zn3 Sc Zn7 132.48(5) 45 .
+Zn5 Sc Zn7 101.38(3) 14 .
+Zn5 Sc Zn7 101.38(3) 37 .
+Zn1 Sc Zn7 146.763(18) 45 .
+Zn1 Sc Zn7 146.763(18) 24 .
+Zn1 Sc Zn7 67.12(2) 19 .
+Zn1 Sc Zn7 67.12(2) 41 .
+Zn1 Sc Zn2 53.51(2) . 45
+Zn1 Sc Zn2 53.51(2) 26_556 45
+Zn3 Sc Zn2 88.88(4) 45 45
+Zn5 Sc Zn2 105.27(3) 14 45
+Zn5 Sc Zn2 105.27(3) 37 45
+Zn1 Sc Zn2 54.07(3) 45 45
+Zn1 Sc Zn2 54.07(3) 24 45
+Zn1 Sc Zn2 106.79(3) 19 45
+Zn1 Sc Zn2 106.79(3) 41 45
+Zn7 Sc Zn2 138.64(5) . 45
+Zn5 Zn1 Zn3 61.48(3) . .
+Zn5 Zn1 Zn1 86.43(2) . 41
+Zn3 Zn1 Zn1 124.42(3) . 41
+Zn5 Zn1 Zn1 86.43(2) . 45
+Zn3 Zn1 Zn1 126.04(3) . 45
+Zn1 Zn1 Zn1 92.23(3) 41 45
+Zn5 Zn1 Zn2 128.89(3) . 45
+Zn3 Zn1 Zn2 104.88(3) . 45
+Zn1 Zn1 Zn2 129.92(4) 41 45
+Zn1 Zn1 Zn2 61.54(3) 45 45
+Zn5 Zn1 Zn2 126.42(3) . .
+Zn3 Zn1 Zn2 103.02(3) . .
+Zn1 Zn1 Zn2 59.58(2) 41 .
+Zn1 Zn1 Zn2 130.64(4) 45 .
+Zn2 Zn1 Zn2 104.30(2) 45 .
+Zn5 Zn1 Zn6 153.57(4) . .
+Zn3 Zn1 Zn6 92.11(3) . .
+Zn1 Zn1 Zn6 110.22(4) 41 .
+Zn1 Zn1 Zn6 112.30(3) 45 .
+Zn2 Zn1 Zn6 55.11(2) 45 .
+Zn2 Zn1 Zn6 55.01(3) . .
+Zn5 Zn1 Sc 136.59(4) . .
+Zn3 Zn1 Sc 161.92(4) . .
+Zn1 Zn1 Sc 64.79(3) 41 .
+Zn1 Zn1 Sc 64.37(3) 45 .
+Zn2 Zn1 Sc 65.40(3) 45 .
+Zn2 Zn1 Sc 66.91(3) . .
+Zn6 Zn1 Sc 69.82(3) . .
+Zn5 Zn1 Sc 63.67(2) . 41
+Zn3 Zn1 Sc 63.20(3) . 41
+Zn1 Zn1 Sc 62.01(3) 41 41
+Zn1 Zn1 Sc 140.22(2) 45 41
+Zn2 Zn1 Sc 158.20(3) 45 41
+Zn2 Zn1 Sc 63.92(3) . 41
+Zn6 Zn1 Sc 105.25(3) . 41
+Sc Zn1 Sc 120.16(4) . 41
+Zn5 Zn1 Sc 63.41(3) . 45
+Zn3 Zn1 Sc 65.14(3) . 45
+Zn1 Zn1 Sc 139.83(3) 41 45
+Zn1 Zn1 Sc 61.76(3) 45 45
+Zn2 Zn1 Sc 66.38(3) 45 45
+Zn2 Zn1 Sc 160.40(3) . 45
+Zn6 Zn1 Sc 108.02(4) . 45
+Sc Zn1 Sc 119.59(4) . 45
+Sc Zn1 Sc 118.30(5) 41 45
+Zn5 Zn1 Mg7 101.90(3) . 45
+Zn3 Zn1 Mg7 50.81(3) . 45
+Zn1 Zn1 Mg7 162.59(2) 41 45
+Zn1 Zn1 Mg7 103.43(2) 45 45
+Zn2 Zn1 Mg7 55.18(3) 45 45
+Zn2 Zn1 Mg7 103.68(2) . 45
+Zn6 Zn1 Mg7 56.87(3) . 45
+Sc Zn1 Mg7 115.18(3) . 45
+Sc Zn1 Mg7 107.81(3) 41 45
+Sc Zn1 Mg7 56.73(3) 45 45
+Zn6 Zn2 Zn6 179.66(4) 41 .
+Zn6 Zn2 Zn2 121.25(3) 41 26_556
+Zn6 Zn2 Zn2 58.41(2) . 26_556
+Zn6 Zn2 Zn1 63.62(2) 41 18_455
+Zn6 Zn2 Zn1 116.51(2) . 18_455
+Zn2 Zn2 Zn1 122.436(18) 26_556 18_455
+Zn6 Zn2 Zn1 63.62(2) 41 41
+Zn6 Zn2 Zn1 116.51(2) . 41
+Zn2 Zn2 Zn1 122.436(18) 26_556 41
+Zn1 Zn2 Zn1 110.44(4) 18_455 41
+Zn6 Zn2 Zn1 117.64(3) 41 28
+Zn6 Zn2 Zn1 62.61(2) . 28
+Zn2 Zn2 Zn1 108.74(2) 26_556 28
+Zn1 Zn2 Zn1 58.88(3) 18_455 28
+Zn1 Zn2 Zn1 117.30(3) 41 28
+Zn6 Zn2 Zn1 117.64(3) 41 .
+Zn6 Zn2 Zn1 62.61(2) . .
+Zn2 Zn2 Zn1 108.74(2) 26_556 .
+Zn1 Zn2 Zn1 117.30(3) 18_455 .
+Zn1 Zn2 Zn1 58.88(3) 41 .
+Zn1 Zn2 Zn1 72.86(3) 28 .
+Zn6 Zn2 Zn7 66.20(3) 41 .
+Zn6 Zn2 Zn7 113.52(3) . .
+Zn2 Zn2 Zn7 62.214(16) 26_556 .
+Zn1 Zn2 Zn7 118.82(3) 18_455 .
+Zn1 Zn2 Zn7 74.01(3) 41 .
+Zn1 Zn2 Zn7 168.68(3) 28 .
+Zn1 Zn2 Zn7 115.65(3) . .
+Zn6 Zn2 Mg7 66.20(3) 41 25_566
+Zn6 Zn2 Mg7 113.52(3) . 25_566
+Zn2 Zn2 Mg7 62.214(16) 26_556 25_566
+Zn1 Zn2 Mg7 74.01(3) 18_455 25_566
+Zn1 Zn2 Mg7 118.82(3) 41 25_566
+Zn1 Zn2 Mg7 115.65(3) 28 25_566
+Zn1 Zn2 Mg7 168.68(3) . 25_566
+Zn7 Zn2 Mg7 54.92(5) . 25_566
+Zn6 Zn2 Zn7 66.20(3) 41 25_566
+Zn6 Zn2 Zn7 113.52(3) . 25_566
+Zn2 Zn2 Zn7 62.214(16) 26_556 25_566
+Zn1 Zn2 Zn7 74.01(3) 18_455 25_566
+Zn1 Zn2 Zn7 118.82(3) 41 25_566
+Zn1 Zn2 Zn7 115.65(3) 28 25_566
+Zn1 Zn2 Zn7 168.68(3) . 25_566
+Zn7 Zn2 Zn7 54.92(5) . 25_566
+Mg7 Zn2 Zn7 0.00(5) 25_566 25_566
+Zn6 Zn2 Sc 70.90(4) 41 41
+Zn6 Zn2 Sc 109.44(4) . 41
+Zn2 Zn2 Sc 167.85(3) 26_556 41
+Zn1 Zn2 Sc 61.09(2) 18_455 41
+Zn1 Zn2 Sc 61.09(2) 41 41
+Zn1 Zn2 Sc 62.01(3) 28 41
+Zn1 Zn2 Sc 62.01(3) . 41
+Zn7 Zn2 Sc 127.92(3) . 41
+Mg7 Zn2 Sc 127.92(3) 25_566 41
+Zn7 Zn2 Sc 127.92(3) 25_566 41
+Zn4 Zn3 Zn3 85.77(18) . 2
+Zn4 Zn3 Zn1 125.38(12) . .
+Zn3 Zn3 Zn1 124.77(2) 2 .
+Zn4 Zn3 Zn1 125.38(12) . 28
+Zn3 Zn3 Zn1 124.77(2) 2 28
+Zn1 Zn3 Zn1 76.68(4) . 28
+Zn4 Zn3 Mg7 146.89(19) . 45
+Zn3 Zn3 Mg7 61.12(3) 2 45
+Zn1 Zn3 Mg7 78.70(4) . 45
+Zn1 Zn3 Mg7 78.70(4) 28 45
+Zn4 Zn3 Zn7 146.89(19) . 45
+Zn3 Zn3 Zn7 61.12(3) 2 45
+Zn1 Zn3 Zn7 78.70(4) . 45
+Zn1 Zn3 Zn7 78.70(4) 28 45
+Mg7 Zn3 Zn7 0.0 45 45
+Zn4 Zn3 Zn5 68.17(8) . .
+Zn3 Zn3 Zn5 111.41(2) 2 .
+Zn1 Zn3 Zn5 59.04(3) . .
+Zn1 Zn3 Zn5 121.91(4) 28 .
+Mg7 Zn3 Zn5 121.76(3) 45 .
+Zn7 Zn3 Zn5 121.76(3) 45 .
+Zn4 Zn3 Zn5 68.17(8) . 28
+Zn3 Zn3 Zn5 111.41(2) 2 28
+Zn1 Zn3 Zn5 121.91(4) . 28
+Zn1 Zn3 Zn5 59.04(3) 28 28
+Mg7 Zn3 Zn5 121.76(3) 45 28
+Zn7 Zn3 Zn5 121.76(3) 45 28
+Zn5 Zn3 Zn5 114.44(4) . 28
+Zn4 Zn3 Zn4 33.74(18) . 30
+Zn3 Zn3 Zn4 62.62(8) 2 30
+Zn1 Zn3 Zn4 158.79(10) . 30
+Zn1 Zn3 Zn4 116.98(12) 28 30
+Mg7 Zn3 Zn4 118.57(7) 45 30
+Zn7 Zn3 Zn4 118.57(7) 45 30
+Zn5 Zn3 Zn4 99.93(11) . 30
+Zn5 Zn3 Zn4 61.56(12) 28 30
+Zn4 Zn3 Zn4 33.74(18) . 5
+Zn3 Zn3 Zn4 62.62(8) 2 5
+Zn1 Zn3 Zn4 116.98(12) . 5
+Zn1 Zn3 Zn4 158.79(10) 28 5
+Mg7 Zn3 Zn4 118.57(7) 45 5
+Zn7 Zn3 Zn4 118.57(7) 45 5
+Zn5 Zn3 Zn4 61.56(12) . 5
+Zn5 Zn3 Zn4 99.93(11) 28 5
+Zn4 Zn3 Zn4 45.4(2) 30 5
+Zn4 Zn3 Sc 80.96(18) . 41
+Zn3 Zn3 Sc 166.73(3) 2 41
+Zn1 Zn3 Sc 64.44(3) . 41
+Zn1 Zn3 Sc 64.44(3) 28 41
+Mg7 Zn3 Sc 132.15(5) 45 41
+Zn7 Zn3 Sc 132.15(5) 45 41
+Zn5 Zn3 Sc 63.44(2) . 41
+Zn5 Zn3 Sc 63.44(2) 28 41
+Zn4 Zn3 Sc 105.31(8) 30 41
+Zn4 Zn3 Sc 105.31(8) 5 41
+Zn4 Zn3 Sc 103.95(9) . 23_455
+Zn3 Zn3 Sc 65.312(18) 2 23_455
+Zn1 Zn3 Sc 128.98(5) . 23_455
+Zn1 Zn3 Sc 63.50(2) 28 23_455
+Mg7 Zn3 Sc 63.86(3) 45 23_455
+Zn7 Zn3 Sc 63.86(3) 45 23_455
+Zn5 Zn3 Sc 171.97(6) . 23_455
+Zn5 Zn3 Sc 62.151(19) 28 23_455
+Zn4 Zn3 Sc 72.04(10) 30 23_455
+Zn4 Zn3 Sc 111.12(12) 5 23_455
+Sc Zn3 Sc 117.98(2) 41 23_455
+Zn4 Zn4 Zn4 60.0 30 10
+Zn4 Zn4 Zn4 87.9(7) 30 5
+Zn4 Zn4 Zn4 119.92(5) 10 5
+Zn4 Zn4 Zn4 119.92(5) 30 9
+Zn4 Zn4 Zn4 92.0(6) 10 9
+Zn4 Zn4 Zn4 60.0 5 9
+Zn4 Zn4 Zn4 91.4(5) 30 26
+Zn4 Zn4 Zn4 46.0(3) 10 26
+Zn4 Zn4 Zn4 91.4(5) 5 26
+Zn4 Zn4 Zn4 46.0(3) 9 26
+Zn4 Zn4 Zn4 44.0(3) 30 2
+Zn4 Zn4 Zn4 88.6(5) 10 2
+Zn4 Zn4 Zn4 44.0(3) 5 2
+Zn4 Zn4 Zn4 88.6(5) 9 2
+Zn4 Zn4 Zn4 90.0 26 2
+Zn4 Zn4 Zn3 91.6(6) 30 .
+Zn4 Zn4 Zn3 134.0(3) 10 .
+Zn4 Zn4 Zn3 91.6(6) 5 .
+Zn4 Zn4 Zn3 134.0(3) 9 .
+Zn4 Zn4 Zn3 175.77(18) 26 .
+Zn4 Zn4 Zn3 94.23(18) 2 .
+Zn4 Zn4 Zn4 30.04(3) 30 33
+Zn4 Zn4 Zn4 53.3(5) 10 33
+Zn4 Zn4 Zn4 73.214(5) 5 33
+Zn4 Zn4 Zn4 90.0 9 33
+Zn4 Zn4 Zn4 66.36(15) 26 33
+Zn4 Zn4 Zn4 35.269(3) 2 33
+Zn3 Zn4 Zn4 117.4(3) . 33
+Zn4 Zn4 Zn4 56.2(5) 30 29
+Zn4 Zn4 Zn4 30.04(3) 10 29
+Zn4 Zn4 Zn4 90.0 5 29
+Zn4 Zn4 Zn4 73.214(4) 9 29
+Zn4 Zn4 Zn4 35.269(3) 26 29
+Zn4 Zn4 Zn4 65.45(14) 2 29
+Zn3 Zn4 Zn4 147.66(11) . 29
+Zn4 Zn4 Zn4 33.572(9) 33 29
+Zn4 Zn4 Zn4 73.214(5) 30 34
+Zn4 Zn4 Zn4 90.0 10 34
+Zn4 Zn4 Zn4 30.04(3) 5 34
+Zn4 Zn4 Zn4 53.3(5) 9 34
+Zn4 Zn4 Zn4 66.36(15) 26 34
+Zn4 Zn4 Zn4 35.269(3) 2 34
+Zn3 Zn4 Zn4 117.4(3) . 34
+Zn4 Zn4 Zn4 49.1(3) 33 34
+Zn4 Zn4 Zn4 60.0 29 34
+Zn4 Zn4 Zn4 90.0 30 6
+Zn4 Zn4 Zn4 73.214(5) 10 6
+Zn4 Zn4 Zn4 56.2(5) 5 6
+Zn4 Zn4 Zn4 30.04(3) 9 6
+Zn4 Zn4 Zn4 35.269(3) 26 6
+Zn4 Zn4 Zn4 65.45(14) 2 6
+Zn3 Zn4 Zn4 147.66(11) . 6
+Zn4 Zn4 Zn4 60.0 33 6
+Zn4 Zn4 Zn4 47.3(3) 29 6
+Zn4 Zn4 Zn4 33.572(9) 34 6
+Zn4 Zn4 Zn3 154.7(7) 30 9
+Zn4 Zn4 Zn3 94.8(7) 10 9
+Zn4 Zn4 Zn3 105.4(4) 5 9
+Zn4 Zn4 Zn3 54.6(5) 9 9
+Zn4 Zn4 Zn3 67.31(12) 26 9
+Zn4 Zn4 Zn3 143.11(8) 2 9
+Zn3 Zn4 Zn3 109.01(17) . 9
+Zn4 Zn4 Zn3 133.6(2) 33 9
+Zn4 Zn4 Zn3 101.64(16) 29 9
+Zn4 Zn4 Zn3 107.89(8) 34 9
+Zn4 Zn4 Zn3 80.4(2) 6 9
+Zn1 Zn5 Zn1 94.87(4) 5 .
+Zn1 Zn5 Zn1 94.87(4) 5 9
+Zn1 Zn5 Zn1 94.87(4) . 9
+Zn1 Zn5 Zn3 127.56(2) 5 9
+Zn1 Zn5 Zn3 129.25(2) . 9
+Zn1 Zn5 Zn3 59.48(3) 9 9
+Zn1 Zn5 Zn3 129.25(2) 5 .
+Zn1 Zn5 Zn3 59.48(3) . .
+Zn1 Zn5 Zn3 127.56(2) 9 .
+Zn3 Zn5 Zn3 100.09(4) 9 .
+Zn1 Zn5 Zn3 59.48(3) 5 5
+Zn1 Zn5 Zn3 127.56(2) . 5
+Zn1 Zn5 Zn3 129.25(2) 9 5
+Zn3 Zn5 Zn3 100.09(4) 9 5
+Zn3 Zn5 Zn3 100.09(4) . 5
+Zn1 Zn5 Zn4 116.72(17) 5 9
+Zn1 Zn5 Zn4 138.93(11) . 9
+Zn1 Zn5 Zn4 107.00(12) 9 9
+Zn3 Zn5 Zn4 48.78(15) 9 9
+Zn3 Zn5 Zn4 79.80(10) . 9
+Zn3 Zn5 Zn4 60.84(18) 5 9
+Zn1 Zn5 Zn4 138.93(11) 5 .
+Zn1 Zn5 Zn4 107.00(12) . .
+Zn1 Zn5 Zn4 116.72(17) 9 .
+Zn3 Zn5 Zn4 60.84(18) 9 .
+Zn3 Zn5 Zn4 48.78(15) . .
+Zn3 Zn5 Zn4 79.80(10) 5 .
+Zn4 Zn5 Zn4 32.03(13) 9 .
+Zn1 Zn5 Zn4 107.00(12) 5 5
+Zn1 Zn5 Zn4 116.72(17) . 5
+Zn1 Zn5 Zn4 138.93(11) 9 5
+Zn3 Zn5 Zn4 79.80(10) 9 5
+Zn3 Zn5 Zn4 60.84(18) . 5
+Zn3 Zn5 Zn4 48.78(15) 5 5
+Zn4 Zn5 Zn4 32.03(13) 9 5
+Zn4 Zn5 Zn4 32.03(13) . 5
+Zn1 Zn5 Sc 64.35(3) 5 45
+Zn1 Zn5 Sc 64.77(2) . 45
+Zn1 Zn5 Sc 147.79(5) 9 45
+Zn3 Zn5 Sc 152.71(6) 9 45
+Zn3 Zn5 Sc 65.07(3) . 45
+Zn3 Zn5 Sc 62.89(3) 5 45
+Zn4 Zn5 Sc 104.44(14) 9 45
+Zn4 Zn5 Sc 93.84(18) . 45
+Zn4 Zn5 Sc 72.97(10) 5 45
+Zn1 Zn5 Sc 64.77(2) 5 37
+Zn1 Zn5 Sc 147.79(5) . 37
+Zn1 Zn5 Sc 64.35(3) 9 37
+Zn3 Zn5 Sc 62.89(3) 9 37
+Zn3 Zn5 Sc 152.71(6) . 37
+Zn3 Zn5 Sc 65.07(3) 5 37
+Zn4 Zn5 Sc 72.97(10) 9 37
+Zn4 Zn5 Sc 104.44(14) . 37
+Zn4 Zn5 Sc 93.84(18) 5 37
+Sc Zn5 Sc 119.993(1) 45 37
+Zn1 Zn5 Sc 147.79(5) 5 41
+Zn1 Zn5 Sc 64.35(3) . 41
+Zn1 Zn5 Sc 64.77(2) 9 41
+Zn3 Zn5 Sc 65.07(3) 9 41
+Zn3 Zn5 Sc 62.89(3) . 41
+Zn3 Zn5 Sc 152.71(6) 5 41
+Zn4 Zn5 Sc 93.84(18) 9 41
+Zn4 Zn5 Sc 72.97(10) . 41
+Zn4 Zn5 Sc 104.44(14) 5 41
+Sc Zn5 Sc 119.993(1) 45 41
+Sc Zn5 Sc 119.993(1) 37 41
+Zn2 Zn6 Zn2 117.50(6) 46_455 45
+Zn2 Zn6 Zn2 116.23(2) 46_455 26_556
+Zn2 Zn6 Zn2 116.23(2) 45 26_556
+Zn2 Zn6 Zn2 116.23(2) 46_455 .
+Zn2 Zn6 Zn2 116.23(2) 45 .
+Zn2 Zn6 Zn2 63.17(4) 26_556 .
+Zn2 Zn6 Zn1 122.18(3) 46_455 26_556
+Zn2 Zn6 Zn1 61.270(15) 45 26_556
+Zn2 Zn6 Zn1 62.38(2) 26_556 26_556
+Zn2 Zn6 Zn1 112.24(4) . 26_556
+Zn2 Zn6 Zn1 61.270(15) 46_455 3_556
+Zn2 Zn6 Zn1 122.18(3) 45 3_556
+Zn2 Zn6 Zn1 62.38(2) 26_556 3_556
+Zn2 Zn6 Zn1 112.24(4) . 3_556
+Zn1 Zn6 Zn1 72.68(2) 26_556 3_556
+Zn2 Zn6 Zn1 61.270(15) 46_455 28
+Zn2 Zn6 Zn1 122.18(3) 45 28
+Zn2 Zn6 Zn1 112.24(4) 26_556 28
+Zn2 Zn6 Zn1 62.38(2) . 28
+Zn1 Zn6 Zn1 174.27(5) 26_556 28
+Zn1 Zn6 Zn1 107.02(3) 3_556 28
+Zn2 Zn6 Zn1 122.18(3) 46_455 .
+Zn2 Zn6 Zn1 61.270(15) 45 .
+Zn2 Zn6 Zn1 112.24(4) 26_556 .
+Zn2 Zn6 Zn1 62.38(2) . .
+Zn1 Zn6 Zn1 107.02(3) 26_556 .
+Zn1 Zn6 Zn1 174.27(5) 3_556 .
+Zn1 Zn6 Zn1 72.68(2) 28 .
+Zn2 Zn6 Mg7 62.34(3) 46_455 45
+Zn2 Zn6 Mg7 62.34(3) 45 45
+Zn2 Zn6 Mg7 174.93(4) 26_556 45
+Zn2 Zn6 Mg7 121.90(3) . 45
+Zn1 Zn6 Mg7 113.81(4) 26_556 45
+Zn1 Zn6 Mg7 113.81(4) 3_556 45
+Zn1 Zn6 Mg7 71.69(3) 28 45
+Zn1 Zn6 Mg7 71.69(3) . 45
+Zn2 Zn6 Zn7 62.34(3) 46_455 45
+Zn2 Zn6 Zn7 62.34(3) 45 45
+Zn2 Zn6 Zn7 174.93(4) 26_556 45
+Zn2 Zn6 Zn7 121.90(3) . 45
+Zn1 Zn6 Zn7 113.81(4) 26_556 45
+Zn1 Zn6 Zn7 113.81(4) 3_556 45
+Zn1 Zn6 Zn7 71.69(3) 28 45
+Zn1 Zn6 Zn7 71.69(3) . 45
+Mg7 Zn6 Zn7 0.0 45 45
+Zn2 Zn6 Mg7 62.34(3) 46_455 21_445
+Zn2 Zn6 Mg7 62.34(3) 45 21_445
+Zn2 Zn6 Mg7 121.90(3) 26_556 21_445
+Zn2 Zn6 Mg7 174.93(4) . 21_445
+Zn1 Zn6 Mg7 71.69(3) 26_556 21_445
+Zn1 Zn6 Mg7 71.69(3) 3_556 21_445
+Zn1 Zn6 Mg7 113.81(4) 28 21_445
+Zn1 Zn6 Mg7 113.81(4) . 21_445
+Mg7 Zn6 Mg7 53.03(5) 45 21_445
+Zn7 Zn6 Mg7 53.03(5) 45 21_445
+Zn2 Zn6 Zn7 62.34(3) 46_455 21_445
+Zn2 Zn6 Zn7 62.34(3) 45 21_445
+Zn2 Zn6 Zn7 121.90(3) 26_556 21_445
+Zn2 Zn6 Zn7 174.93(4) . 21_445
+Zn1 Zn6 Zn7 71.69(3) 26_556 21_445
+Zn1 Zn6 Zn7 71.69(3) 3_556 21_445
+Zn1 Zn6 Zn7 113.81(4) 28 21_445
+Zn1 Zn6 Zn7 113.81(4) . 21_445
+Mg7 Zn6 Zn7 53.03(5) 45 21_445
+Zn7 Zn6 Zn7 53.03(5) 45 21_445
+Mg7 Zn6 Zn7 0.0 21_445 21_445
+Mg7 Zn7 Zn7 0.0 25_566 25_566
+Mg7 Zn7 Zn3 151.12(3) 25_566 42
+Zn7 Zn7 Zn3 151.12(3) 25_566 42
+Mg7 Zn7 Zn3 151.12(3) 25_566 41
+Zn7 Zn7 Zn3 151.12(3) 25_566 41
+Zn3 Zn7 Zn3 57.76(5) 42 41
+Mg7 Zn7 Zn2 62.54(3) 25_566 .
+Zn7 Zn7 Zn2 62.54(3) 25_566 .
+Zn3 Zn7 Zn2 128.97(3) 42 .
+Zn3 Zn7 Zn2 100.29(2) 41 .
+Mg7 Zn7 Zn2 62.54(3) 25_566 26_556
+Zn7 Zn7 Zn2 62.54(3) 25_566 26_556
+Zn3 Zn7 Zn2 100.29(2) 42 26_556
+Zn3 Zn7 Zn2 128.97(3) 41 26_556
+Zn2 Zn7 Zn2 55.57(3) . 26_556
+Mg7 Zn7 Zn2 62.54(3) 25_566 25_566
+Zn7 Zn7 Zn2 62.54(3) 25_566 25_566
+Zn3 Zn7 Zn2 100.29(2) 42 25_566
+Zn3 Zn7 Zn2 128.97(3) 41 25_566
+Zn2 Zn7 Zn2 125.08(5) . 25_566
+Zn2 Zn7 Zn2 98.05(4) 26_556 25_566
+Mg7 Zn7 Zn2 62.54(3) 25_566 2_565
+Zn7 Zn7 Zn2 62.54(3) 25_566 2_565
+Zn3 Zn7 Zn2 128.97(3) 42 2_565
+Zn3 Zn7 Zn2 100.29(2) 41 2_565
+Zn2 Zn7 Zn2 98.05(4) . 2_565
+Zn2 Zn7 Zn2 125.08(5) 26_556 2_565
+Zn2 Zn7 Zn2 55.57(3) 25_566 2_565
+Mg7 Zn7 Zn6 63.48(3) 25_566 41
+Zn7 Zn7 Zn6 63.48(3) 25_566 41
+Zn3 Zn7 Zn6 145.40(5) 42 41
+Zn3 Zn7 Zn6 87.64(3) 41 41
+Zn2 Zn7 Zn6 51.464(19) . 41
+Zn2 Zn7 Zn6 102.20(3) 26_556 41
+Zn2 Zn7 Zn6 102.20(3) 25_566 41
+Zn2 Zn7 Zn6 51.464(19) 2_565 41
+Mg7 Zn7 Zn6 63.48(3) 25_566 17_455
+Zn7 Zn7 Zn6 63.48(3) 25_566 17_455
+Zn3 Zn7 Zn6 87.64(3) 42 17_455
+Zn3 Zn7 Zn6 145.40(5) 41 17_455
+Zn2 Zn7 Zn6 102.20(3) . 17_455
+Zn2 Zn7 Zn6 51.464(19) 26_556 17_455
+Zn2 Zn7 Zn6 51.464(19) 25_566 17_455
+Zn2 Zn7 Zn6 102.20(3) 2_565 17_455
+Zn6 Zn7 Zn6 126.97(5) 41 17_455
+Mg7 Zn7 Sc 119.21(3) 25_566 27_565
+Zn7 Zn7 Sc 119.21(3) 25_566 27_565
+Zn3 Zn7 Sc 64.70(3) 42 27_565
+Zn3 Zn7 Sc 64.70(3) 41 27_565
+Zn2 Zn7 Sc 152.134(15) . 27_565
+Zn2 Zn7 Sc 152.134(15) 26_556 27_565
+Zn2 Zn7 Sc 64.28(2) 25_566 27_565
+Zn2 Zn7 Sc 64.28(2) 2_565 27_565
+Zn6 Zn7 Sc 102.583(10) 41 27_565
+Zn6 Zn7 Sc 102.583(10) 17_455 27_565
+Mg7 Zn7 Sc 119.21(3) 25_566 .
+Zn7 Zn7 Sc 119.21(3) 25_566 .
+Zn3 Zn7 Sc 64.70(3) 42 .
+Zn3 Zn7 Sc 64.70(3) 41 .
+Zn2 Zn7 Sc 64.28(2) . .
+Zn2 Zn7 Sc 64.28(2) 26_556 .
+Zn2 Zn7 Sc 152.134(15) 25_566 .
+Zn2 Zn7 Sc 152.134(15) 2_565 .
+Zn6 Zn7 Sc 102.583(10) 41 .
+Zn6 Zn7 Sc 102.583(10) 17_455 .
+Sc Zn7 Sc 121.59(6) 27_565 .
+loop_
+_geom_bond_atom_site_label_1
+_geom_bond_atom_site_label_2
+_geom_bond_distance
+_geom_bond_site_symmetry_2
+Sc Zn1 2.9231(10) .
+Sc Zn1 2.9231(10) 26_556
+Sc Zn3 2.9531(15) 45
+Sc Zn5 2.9675(9) 14
+Sc Zn5 2.9675(9) 37
+Sc Zn1 2.9847(12) 45
+Sc Zn1 2.9847(12) 24
+Sc Zn1 3.0018(8) 19
+Sc Zn1 3.0018(8) 41
+Sc Zn7 3.0219(14) .
+Sc Zn2 3.0361(14) 45
+Zn1 Zn5 2.6082(9) .
+Zn1 Zn3 2.6203(11) .
+Zn1 Zn1 2.6653(9) 41
+Zn1 Zn1 2.6653(9) 45
+Zn1 Zn2 2.6848(8) 45
+Zn1 Zn2 2.7370(9) .
+Zn1 Zn6 2.7428(7) .
+Zn1 Sc 2.9847(12) 41
+Zn1 Sc 3.0018(8) 45
+Zn1 Mg7 3.3300(8) 45
+Zn2 Zn6 2.5114(10) 41
+Zn2 Zn6 2.5309(13) .
+Zn2 Zn2 2.6513(15) 26_556
+Zn2 Zn1 2.6848(8) 18_455
+Zn2 Zn1 2.6848(8) 41
+Zn2 Zn1 2.7370(9) 28
+Zn2 Zn7 2.8437(10) .
+Zn2 Mg7 2.8437(10) 25_566
+Zn2 Zn7 2.8437(10) 25_566
+Zn2 Sc 3.0361(14) 41
+Zn3 Zn4 2.255(7) .
+Zn3 Zn3 2.5423(18) 2
+Zn3 Zn1 2.6203(11) 28
+Zn3 Mg7 2.6319(17) 45
+Zn3 Zn7 2.6319(17) 45
+Zn3 Zn5 2.6726(9) .
+Zn3 Zn5 2.6726(9) 28
+Zn3 Zn4 2.764(7) 30
+Zn3 Zn4 2.764(7) 5
+Zn3 Sc 2.9531(15) 41
+Zn3 Sc 3.0434(12) 23_455
+Zn4 Zn4 1.536(5) 30
+Zn4 Zn4 1.536(5) 10
+Zn4 Zn4 1.536(5) 5
+Zn4 Zn4 1.536(5) 9
+Zn4 Zn4 2.133(14) 26
+Zn4 Zn4 2.209(13) 2
+Zn4 Zn4 2.659(8) 33
+Zn4 Zn4 2.659(8) 29
+Zn4 Zn4 2.659(8) 34
+Zn4 Zn4 2.659(8) 6
+Zn4 Zn3 2.764(7) 9
+Zn5 Zn1 2.6082(9) 5
+Zn5 Zn1 2.6082(9) 9
+Zn5 Zn3 2.6726(9) 9
+Zn5 Zn3 2.6726(9) 5
+Zn5 Zn4 2.783(3) 9
+Zn5 Zn4 2.783(3) 5
+Zn5 Sc 2.9675(9) 45
+Zn5 Sc 2.9675(9) 37
+Zn5 Sc 2.9675(9) 41
+Zn6 Zn2 2.5114(10) 46_455
+Zn6 Zn2 2.5114(10) 45
+Zn6 Zn2 2.5309(13) 26_556
+Zn6 Zn1 2.7428(7) 26_556
+Zn6 Zn1 2.7428(7) 3_556
+Zn6 Zn1 2.7428(7) 28
+Zn6 Mg7 2.9374(13) 45
+Zn6 Zn7 2.9374(13) 45
+Zn6 Mg7 2.9374(13) 21_445
+Zn6 Zn7 2.9374(13) 21_445
+Zn7 Mg7 2.623(3) 25_566
+Zn7 Zn7 2.623(3) 25_566
+Zn7 Zn3 2.6319(17) 42
+Zn7 Zn3 2.6319(17) 41
+Zn7 Zn2 2.8437(10) 26_556
+Zn7 Zn2 2.8437(10) 25_566
+Zn7 Zn2 2.8437(10) 2_565
+Zn7 Zn6 2.9374(13) 41
+Zn7 Zn6 2.9374(13) 17_455
+Zn7 Sc 3.0219(14) 27_565

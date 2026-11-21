@@ -1,0 +1,112 @@
+#------------------------------------------------------------------------------
+#$Date: 2018-09-27 06:13:35 +0200 (Thu 27 de Sep de 2018) $
+#$Revision: 211196 $
+#$URL: svn://www.crystallography.net/cod/cif/1/53/21/1532186.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/
+#
+# All data on this site have been placed in the public domain by the
+# contributors.
+#
+data_1532186
+loop_
+_publ_author_name
+'Takeuchi, T.'
+'Mizutani, U.'
+_publ_section_title
+;
+ Interpretation of high electrical resistivity based on the structure
+ determination of the Al - Cu - (Fe, Ru) - Si 1/1-cubic approximants
+;
+_journal_name_full               'Journal of Alloys Compd.'
+_journal_page_first              416
+_journal_page_last               421
+_journal_volume                  342
+_journal_year                    2002
+_chemical_formula_sum            'Al93.38 Cu6.02 Fe24 Si16.27'
+_space_group_IT_number           204
+_symmetry_space_group_name_Hall  '-I 2 2 3'
+_symmetry_space_group_name_H-M   'I m -3'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                90
+_cell_formula_units_Z            1
+_cell_length_a                   12.48
+_cell_length_b                   12.48
+_cell_length_c                   12.48
+_cell_volume                     1943.765
+_citation_journal_id_ASTM        JALCEU
+_cod_data_source_file            Takeuchi_JALCEU_2002_512.cif
+_cod_data_source_block           Al93.38Cu6.02Fe24Si16.27
+_cod_database_code               1532186
+loop_
+_symmetry_equiv_pos_as_xyz
+x,y,z
+-x,-y,z
+x,-y,-z
+-x,y,-z
+z,x,y
+-z,-x,y
+z,-x,-y
+-z,x,-y
+y,z,x
+y,-z,-x
+-y,z,-x
+-y,-z,x
+-x,-y,-z
+x,y,-z
+-x,y,z
+x,-y,z
+-z,-x,-y
+z,x,-y
+-z,x,y
+z,-x,y
+-y,-z,-x
+-y,z,x
+y,-z,x
+y,z,-x
+x+1/2,y+1/2,z+1/2
+-x+1/2,-y+1/2,z+1/2
+x+1/2,-y+1/2,-z+1/2
+-x+1/2,y+1/2,-z+1/2
+z+1/2,x+1/2,y+1/2
+-z+1/2,-x+1/2,y+1/2
+z+1/2,-x+1/2,-y+1/2
+-z+1/2,x+1/2,-y+1/2
+y+1/2,z+1/2,x+1/2
+y+1/2,-z+1/2,-x+1/2
+-y+1/2,z+1/2,-x+1/2
+-y+1/2,-z+1/2,x+1/2
+-x+1/2,-y+1/2,-z+1/2
+x+1/2,y+1/2,-z+1/2
+-x+1/2,y+1/2,z+1/2
+x+1/2,-y+1/2,z+1/2
+-z+1/2,-x+1/2,-y+1/2
+z+1/2,x+1/2,-y+1/2
+-z+1/2,x+1/2,y+1/2
+z+1/2,-x+1/2,y+1/2
+-y+1/2,-z+1/2,-x+1/2
+-y+1/2,z+1/2,x+1/2
+y+1/2,-z+1/2,x+1/2
+y+1/2,z+1/2,-x+1/2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_U_iso_or_equiv
+Cu2 Cu 0.3771 0 0 0.092 0.0
+Si2 Si 0.3124 0.4097 0 0.378 0.0
+Cu3 Cu 0.1147 0.1844 0.3016 0.036 0.0
+Al1 Al 0.1657 0.1018 0 0.887 0.0
+Al4 Al 0.368 0.33867 0 0.622 0.0
+Cu4 Cu 0.3123 0 0.5 0.04 0.0
+Fe1 Fe 0.3238 0.1997 0 1 0.0
+Cu1 Cu 0.1657 0.1018 0 0.113 0.0
+Al2 Al 0.3771 0 0 0.908 0.0
+Al3 Al 0.1147 0.1844 0.3016 0.964 0.0
+Si1 Si 0.3123 0 0.5 0.6 0.0
