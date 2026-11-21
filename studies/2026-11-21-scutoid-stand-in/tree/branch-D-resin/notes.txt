@@ -94,3 +94,28 @@ Score after round 2. Valid division with scutoids: the straight skeleton at bcc 
 merged at bcc s0, no scutoids). C2: 4 kinds, valid, no scutoids under R1.
 LEADS: skeleton for C2 (decagon-decagon edges play the hexagon-hexagon role); merge the skeleton pieces at bcc 6/5 s0 toward 2 kinds while
 keeping the scutoids; prove t1 exactly (it is a 3x3 linear solve in Q(sqrt3, sqrt5)).
+
+ROUND 3 (scripts/skeleton2.py; log_skeleton2.txt, ends FINAL ok; data/skeleton2_C1.json, skeleton2_C2_*.json, skeleton_exact.json)
+
+R3.1 C1 straight skeleton made EXACT. Field K = Q(sqrt5, sqrt3): hexagon unit normals are v/sqrt3 with v in Q(sqrt5)^3, spike-triangle unit
+   normals lie in Q(sqrt5)^3, so every plane, wavefront vertex, event height, slab vertex and volume is in K; every decision is an exact
+   sign in K (a + b sqrt5 + c sqrt3 + d sqrt15).
+   - Event heights, exact: t1 = (2 + sqrt3)(sqrt5 - 1)/4 = 1.1532671 (PROVED: the computed height equals it exactly in K; the 30
+     hexagon-hexagon edges collapse) and t2 = (3 + 3 sqrt5 + 3 sqrt3 + sqrt15)/4 = 4.6943 (the 3-fold hexagons close).
+   - Validity, exact, for sc, bcc, fcc at s0, 6/5 s0, 3/2 s0 (9 moulds): slab volumes add to mould - C1 with gap exactly 0, and every slab
+     pair of different faces and every slab/C1-part pair (TI, 12 pyramids) has a separating axis verified exactly (max <= min in K).
+     Disjoint interiors + exact volume sum => the slabs tile the resin.
+   - bcc 6/5 s0, exact: 5 kinds, 2 true scutoids. 12-orbit hexagon piece: neighbours 6 on C1 -> 5 at the mould, one Y vertex at
+     (0, 3 + 3sqrt3/2 - sqrt15/2, 0) (on a coordinate axis; volume (1619029/311520) + (3114707/1557600)sqrt5 - (197487/103840)sqrt3
+     - (66329/103840)sqrt15 = 3.900624). One 24-orbit of triangle pieces: 3 -> 4, Y vertex the image point (0, 0, same).
+     All vertices of one piece per kind, exact strings: data/skeleton_exact.json.
+   - Scutoid range (exact; scutoids exist exactly when a real event point lies strictly inside the mould):
+     bcc: s > 6 + 3 sqrt3 - sqrt15 = 7.323169 = 1.159691 s0 (so none at s0, 2 kinds at 6/5 s0, all 5 kinds at 3/2 s0);
+     sc:  s > (3 + 3 sqrt5 - sqrt3 + sqrt15)/2 = 5.924568 = 1.012037 s0 (0 kinds at s0, all 5 at 6/5 s0 and 3/2 s0);
+     fcc: threshold 0.773128 s0 < s0, so scutoids at every valid fcc scale (2 kinds at s0, 5 at 6/5 s0 and 3/2 s0).
+R3.2 C2 straight skeleton (50 digits: decagon normals need sqrt((5+sqrt5)/2)); sc, bcc, fcc at s0 and 6/5 s0: all VALID (volume gap
+   < 1e-46; separating axes verified, none fails). First event at 0.3748253 (the decagon-decagon edges collapse), next 5.4169.
+   4 kinds everywhere, ALL 4 are scutoids: decagon pieces 10 -> 5 neighbours (5 Y vertices), the three triangle kinds 3 -> 5 (2 Y each).
+   Threshold 0.795 s0 (sc, bcc), 0.711 s0 (fcc): every valid mould gives scutoids.
+Score after round 3. Exact and valid with scutoids: C1 in bcc at 6/5 s0 (5 kinds, 2 scutoid), sc at 6/5 s0 (5 kinds, all scutoids).
+C2: every mould, 4 kinds, all scutoids (50 digits; exact would need the degree-8 field).

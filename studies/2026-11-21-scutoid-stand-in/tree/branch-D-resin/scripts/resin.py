@@ -53,7 +53,7 @@ def dot(u, v): return u[0]*v[0] + u[1]*v[1] + u[2]*v[2]
 def cross(u, v): return [u[1]*v[2]-u[2]*v[1], u[2]*v[0]-u[0]*v[2], u[0]*v[1]-u[1]*v[0]]
 def det3(a, b, c): return dot(a, cross(b, c))
 def sgn(x, tol=None):
-    if isinstance(x, Q): return x.sign()
+    if hasattr(x, "sign"): return x.sign()
     return 0 if abs(x) < tol else (1 if x > 0 else -1)
 def tofl(u): return np.array([float(x) for x in u])
 

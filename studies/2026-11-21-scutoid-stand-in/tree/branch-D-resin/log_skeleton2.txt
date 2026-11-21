@@ -1,0 +1,271 @@
+
+=== C1 sc s = 1 s0 = 5.854102 (exact): events 110 flips (50 real) at heights (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/4) + (3/4)*sqrt5 + (3/4)*sqrt3 + (1/4)*sqrt15
+   slabs 112; volume sum - (mould - solid) = 0; separating axes verified for 642 slab pairs and 256 slab/part pairs, failures 0 []  => VALID division
+   kind hex face 0 (8 per cell): vol (2247/352) + (915/352)*sqrt5 + (-819/352)*sqrt3 + (-315/352)*sqrt15 (= 4.700179); neighbours C1 side 6 -> mould side 6; Y vertices 0; scutoid False; walls [8, 9, 10, 21, 26, 31], mould facets 3
+   kind hex face 8 (12 per cell): vol (-15/16) + (-49/48)*sqrt5 + (11/9)*sqrt3 + (7/8)*sqrt15 (= 2.285659); neighbours C1 side 6 -> mould side 6; Y vertices 0; scutoid False; walls [0, 4, 11, 22, 30, 60], mould facets 1
+   kind tri face 20 (24 per cell): vol (11/96) + (5/96)*sqrt5 + (19/288)*sqrt3 + (1/32)*sqrt15 (= 0.466343); neighbours C1 side 3 -> mould side 3; Y vertices 0; scutoid False; walls [9, 21, 24], mould facets 1
+   kind tri face 21 (24 per cell): vol (-221/352) + (-35/1056)*sqrt5 + (273/352)*sqrt3 + (105/352)*sqrt15 (= 1.796664); neighbours C1 side 3 -> mould side 3; Y vertices 0; scutoid False; walls [0, 20, 22], mould facets 2
+   kind tri face 22 (12 per cell): vol (25/8) + (47/24)*sqrt5 + (-65/48)*sqrt3 + (-15/16)*sqrt15 (= 1.527559); neighbours C1 side 3 -> mould side 3; Y vertices 0; scutoid False; walls [8, 21, 23], mould facets 2
+   SUMMARY C1 sc x1: valid True; kinds 5; scutoid kinds 0; scutoids appear for mould scale s > (3/2) + (3/2)*sqrt5 + (-1/2)*sqrt3 + (1/2)*sqrt15 (= 5.924568 = 1.012037 s0)
+   first event height t1 = (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15; equals (2+sqrt3)(sqrt5-1)/4 exactly: True
+
+=== C1 sc s = 6/5 s0 = 7.024922 (exact): events 110 flips (50 real) at heights (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/4) + (3/4)*sqrt5 + (3/4)*sqrt3 + (1/4)*sqrt15
+   slabs 160; volume sum - (mould - solid) = 0; separating axes verified for 1446 slab pairs and 256 slab/part pairs, failures 0 []  => VALID division
+   kind hex face 0 (8 per cell): vol (12057/880) + (18597/4400)*sqrt5 + (-5443/880)*sqrt3 + (-7873/4400)*sqrt15 (= 5.508954); neighbours C1 side 6 -> mould side 3; Y vertices 3; scutoid True; walls [8, 9, 10, 21, 26, 31], mould facets 3
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: ((3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15)
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   kind hex face 8 (12 per cell): vol (189/20) + (97/25)*sqrt5 + (-171/40)*sqrt3 + (-183/100)*sqrt15 (= 3.633867); neighbours C1 side 6 -> mould side 4; Y vertices 2; scutoid True; walls [0, 4, 11, 22, 30, 60], mould facets 1
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: ((3/4) + (-3/4)*sqrt5 + (1)*sqrt3 + (-1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   kind tri face 20 (24 per cell): vol (1243/240) + (2969/1200)*sqrt5 + (-613/240)*sqrt3 + (-1453/1200)*sqrt15 (= 1.598088); neighbours C1 side 3 -> mould side 4; Y vertices 1; scutoid True; walls [9, 21, 24, 27], mould facets 1
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+   kind tri face 21 (24 per cell): vol (-4093/2640) + (2413/13200)*sqrt5 + (5443/2640)*sqrt3 + (7873/13200)*sqrt15 (= 4.739424); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [0, 20, 22, 26, 31], mould facets 2
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   kind tri face 22 (12 per cell): vol (-1723/120) + (-493/75)*sqrt5 + (563/60)*sqrt3 + (2551/600)*sqrt15 (= 3.662291); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [8, 21, 23, 30, 60], mould facets 2
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: ((3/4) + (-3/4)*sqrt5 + (1)*sqrt3 + (-1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   SUMMARY C1 sc x6/5: valid True; kinds 5; scutoid kinds 5; scutoids appear for mould scale s > (3/2) + (3/2)*sqrt5 + (-1/2)*sqrt3 + (1/2)*sqrt15 (= 5.924568 = 1.012037 s0)
+   first event height t1 = (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15; equals (2+sqrt3)(sqrt5-1)/4 exactly: True
+
+=== C1 sc s = 3/2 s0 = 8.781153 (exact): events 110 flips (50 real) at heights (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/4) + (3/4)*sqrt5 + (3/4)*sqrt3 + (1/4)*sqrt15
+   slabs 184; volume sum - (mould - solid) = 0; separating axes verified for 1908 slab pairs and 256 slab/part pairs, failures 0 []  => VALID division
+   kind hex face 0 (8 per cell): vol (15/8) + (3/8)*sqrt5 + (11/16)*sqrt3 + (7/16)*sqrt15 (= 5.598741); neighbours C1 side 6 -> mould side 2; Y vertices 4; scutoid True; walls [8, 9, 10, 21, 26, 31], mould facets 0
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: ((3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15)
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: ((3/2) + (1/2)*sqrt5 + (1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (1/2)*sqrt5 + (1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (1/2)*sqrt5 + (1/4)*sqrt3 + (1/4)*sqrt15)
+   kind hex face 8 (12 per cell): vol (55545/1408) + (24039/1408)*sqrt5 + (-14833/704)*sqrt3 + (-6585/704)*sqrt15 (= 4.905986); neighbours C1 side 6 -> mould side 3; Y vertices 3; scutoid True; walls [0, 4, 11, 22, 30, 60], mould facets 1
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: ((3/4) + (-3/4)*sqrt5 + (1)*sqrt3 + (-1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: (0, (3) + (3/2)*sqrt3 + (-1/2)*sqrt15, 0)
+   kind tri face 20 (24 per cell): vol (33595/2112) + (31289/4224)*sqrt5 + (-33293/4224)*sqrt3 + (-15313/4224)*sqrt15 (= 4.777976); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [9, 21, 24, 27, 50], mould facets 1
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: (0, 0, (3) + (3/2)*sqrt3 + (-1/2)*sqrt15)
+   kind tri face 21 (24 per cell): vol (559/96) + (611/192)*sqrt5 + (-11/48)*sqrt3 + (-7/48)*sqrt15 (= 11.976999); neighbours C1 side 3 -> mould side 4; Y vertices 3; scutoid True; walls [0, 20, 22, 26, 31], mould facets 2
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: ((3/2) + (1/2)*sqrt5 + (1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (1/2)*sqrt5 + (1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (1/2)*sqrt5 + (1/4)*sqrt3 + (1/4)*sqrt15)
+   kind tri face 22 (12 per cell): vol (-22637/384) + (-10325/384)*sqrt5 + (221/6)*sqrt3 + (797/48)*sqrt15 (= 9.030903); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [8, 21, 23, 30, 60], mould facets 2
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: ((3/4) + (-3/4)*sqrt5 + (1)*sqrt3 + (-1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   SUMMARY C1 sc x3/2: valid True; kinds 5; scutoid kinds 5; scutoids appear for mould scale s > (3/2) + (3/2)*sqrt5 + (-1/2)*sqrt3 + (1/2)*sqrt15 (= 5.924568 = 1.012037 s0)
+   first event height t1 = (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15; equals (2+sqrt3)(sqrt5-1)/4 exactly: True
+
+=== C1 bcc s = 1 s0 = 6.314757 (exact): events 90 flips (30 real) at heights (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15
+   slabs 92; volume sum - (mould - solid) = 0; separating axes verified for 354 slab pairs and 200 slab/part pairs, failures 0 []  => VALID division
+   kind hex face 0 (8 per cell): vol (5/8) + (5/12)*sqrt5 + (-1/12)*sqrt3 + (-1/24)*sqrt15 (= 1.250983); neighbours C1 side 6 -> mould side 6; Y vertices 0; scutoid False; walls [8, 9, 10, 21, 26, 31], mould facets 1
+   kind hex face 8 (12 per cell): vol (62635/50976) + (39437/50976)*sqrt5 + (-58579/458784)*sqrt3 + (-45785/458784)*sqrt15 (= 2.350960); neighbours C1 side 6 -> mould side 6; Y vertices 0; scutoid False; walls [0, 4, 11, 22, 30, 60], mould facets 3
+   kind tri face 20 (24 per cell): vol (7981/38232) + (5011/76464)*sqrt5 + (3539/114696)*sqrt3 + (3931/114696)*sqrt15 (= 0.541473); neighbours C1 side 3 -> mould side 3; Y vertices 0; scutoid False; walls [9, 21, 24], mould facets 2
+   kind tri face 21 (24 per cell): vol (11/144) + (5/144)*sqrt5 + (1/36)*sqrt3 + (1/72)*sqrt15 (= 0.255934); neighbours C1 side 3 -> mould side 3; Y vertices 0; scutoid False; walls [0, 20, 22], mould facets 1
+   kind tri face 22 (12 per cell): vol (11/96) + (5/96)*sqrt5 + (19/288)*sqrt3 + (1/32)*sqrt15 (= 0.466343); neighbours C1 side 3 -> mould side 3; Y vertices 0; scutoid False; walls [8, 21, 23], mould facets 2
+   SUMMARY C1 bcc x1: valid True; kinds 5; scutoid kinds 0; scutoids appear for mould scale s > (6) + (3)*sqrt3 + (-1)*sqrt15 (= 7.323169 = 1.159691 s0)
+   first event height t1 = (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15; equals (2+sqrt3)(sqrt5-1)/4 exactly: True
+
+=== C1 bcc s = 6/5 s0 = 7.577709 (exact): events 90 flips (30 real) at heights (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15
+   slabs 128; volume sum - (mould - solid) = 0; separating axes verified for 900 slab pairs and 200 slab/part pairs, failures 0 []  => VALID division
+   kind hex face 0 (8 per cell): vol (9/40) + (9/40)*sqrt5 + (9/16)*sqrt3 + (99/400)*sqrt15 (= 2.660957); neighbours C1 side 6 -> mould side 6; Y vertices 0; scutoid False; walls [8, 9, 10, 21, 26, 31], mould facets 1
+   kind hex face 8 (12 per cell): vol (1619029/311520) + (3114707/1557600)*sqrt5 + (-197487/103840)*sqrt3 + (-66329/103840)*sqrt15 (= 3.900624); neighbours C1 side 6 -> mould side 5; Y vertices 1; scutoid True; walls [0, 4, 11, 22, 30, 60], mould facets 3
+      Y vertex: (0, (3) + (3/2)*sqrt3 + (-1/2)*sqrt15, 0)
+   kind tri face 20 (24 per cell): vol (-7318/9735) + (-33443/389400)*sqrt5 + (28033/31152)*sqrt3 + (9203/31152)*sqrt15 (= 1.759039); neighbours C1 side 3 -> mould side 4; Y vertices 1; scutoid True; walls [9, 21, 24, 50], mould facets 2
+      Y vertex: (0, 0, (3) + (3/2)*sqrt3 + (-1/2)*sqrt15)
+   kind tri face 21 (24 per cell): vol (101/120) + (113/300)*sqrt5 + (-3/16)*sqrt3 + (-33/400)*sqrt15 (= 1.039638); neighbours C1 side 3 -> mould side 3; Y vertices 0; scutoid False; walls [0, 20, 22], mould facets 1
+   kind tri face 22 (12 per cell): vol (299/480) + (673/2400)*sqrt5 + (49/480)*sqrt3 + (23/480)*sqrt15 (= 1.612341); neighbours C1 side 3 -> mould side 3; Y vertices 0; scutoid False; walls [8, 21, 23], mould facets 2
+   SUMMARY C1 bcc x6/5: valid True; kinds 5; scutoid kinds 2; scutoids appear for mould scale s > (6) + (3)*sqrt3 + (-1)*sqrt15 (= 7.323169 = 1.159691 s0)
+   first event height t1 = (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15; equals (2+sqrt3)(sqrt5-1)/4 exactly: True
+
+=== C1 bcc s = 3/2 s0 = 9.472136 (exact): events 110 flips (50 real) at heights (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/4) + (3/4)*sqrt5 + (3/4)*sqrt3 + (1/4)*sqrt15
+   slabs 160; volume sum - (mould - solid) = 0; separating axes verified for 1788 slab pairs and 256 slab/part pairs, failures 0 []  => VALID division
+   kind hex face 0 (8 per cell): vol (102) + (2913/64)*sqrt5 + (-3673/64)*sqrt3 + (-1655/64)*sqrt15 (= 4.219624); neighbours C1 side 6 -> mould side 3; Y vertices 3; scutoid True; walls [8, 9, 10, 21, 26, 31], mould facets 1
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: ((3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15)
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   kind hex face 8 (12 per cell): vol (-193448223/2949056) + (-88213419/2949056)*sqrt5 + (699311029/17694336)*sqrt3 + (316200217/17694336)*sqrt15 (= 5.181537); neighbours C1 side 6 -> mould side 3; Y vertices 3; scutoid True; walls [0, 4, 11, 22, 30, 60], mould facets 3
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: ((3/4) + (-3/4)*sqrt5 + (1)*sqrt3 + (-1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: (0, (3) + (3/2)*sqrt3 + (-1/2)*sqrt15, 0)
+   kind tri face 20 (24 per cell): vol (-53341671/11796224) + (-60395045/35388672)*sqrt5 + (35691131/8847168)*sqrt3 + (15053161/8847168)*sqrt15 (= 5.239121); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [9, 21, 24, 27, 50], mould facets 2
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: (0, 0, (3) + (3/2)*sqrt3 + (-1/2)*sqrt15)
+   kind tri face 21 (24 per cell): vol (-12155/384) + (-5411/384)*sqrt5 + (3673/192)*sqrt3 + (1655/192)*sqrt15 (= 3.356397); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [0, 20, 22, 26, 31], mould facets 1
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   kind tri face 22 (12 per cell): vol (2310337/27264) + (1037101/27264)*sqrt5 + (-432499/9088)*sqrt3 + (-579989/27264)*sqrt15 (= 4.978979); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [8, 21, 23, 30, 60], mould facets 3
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: ((3/4) + (-3/4)*sqrt5 + (1)*sqrt3 + (-1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   SUMMARY C1 bcc x3/2: valid True; kinds 5; scutoid kinds 5; scutoids appear for mould scale s > (6) + (3)*sqrt3 + (-1)*sqrt15 (= 7.323169 = 1.159691 s0)
+   first event height t1 = (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15; equals (2+sqrt3)(sqrt5-1)/4 exactly: True
+
+=== C1 fcc s = 1 s0 = 9.472136 (exact): events 110 flips (50 real) at heights (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/4) + (3/4)*sqrt5 + (3/4)*sqrt3 + (1/4)*sqrt15
+   slabs 148; volume sum - (mould - solid) = 0; separating axes verified for 1032 slab pairs and 232 slab/part pairs, failures 0 []  => VALID division
+   kind hex face 0 (8 per cell): vol (795/128) + (369/128)*sqrt5 + (-391/128)*sqrt3 + (-121/128)*sqrt15 (= 3.705049); neighbours C1 side 6 -> mould side 6; Y vertices 0; scutoid False; walls [8, 9, 10, 21, 26, 31], mould facets 3
+   kind hex face 8 (12 per cell): vol (-39/176) + (14/11)*sqrt5 + (409/352)*sqrt3 + (-323/1056)*sqrt15 (= 3.452205); neighbours C1 side 6 -> mould side 5; Y vertices 1; scutoid True; walls [0, 4, 11, 22, 30, 60], mould facets 1
+      Y vertex: (0, (3) + (3/2)*sqrt3 + (-1/2)*sqrt15, 0)
+   kind tri face 20 (24 per cell): vol (1321/704) + (493/2112)*sqrt5 + (-337/528)*sqrt3 + (67/528)*sqrt15 (= 1.784345); neighbours C1 side 3 -> mould side 4; Y vertices 1; scutoid True; walls [9, 21, 24, 50], mould facets 2
+      Y vertex: (0, 0, (3) + (3/2)*sqrt3 + (-1/2)*sqrt15)
+   kind tri face 21 (24 per cell): vol (-123/128) + (-53/128)*sqrt5 + (391/384)*sqrt3 + (121/384)*sqrt15 (= 1.097208); neighbours C1 side 3 -> mould side 3; Y vertices 0; scutoid False; walls [0, 20, 22], mould facets 2
+   kind tri face 22 (12 per cell): vol (3/16) + (1/12)*sqrt5 + (11/96)*sqrt3 + (5/96)*sqrt15 (= 0.774021); neighbours C1 side 3 -> mould side 3; Y vertices 0; scutoid False; walls [8, 21, 23], mould facets 1
+   SUMMARY C1 fcc x1: valid True; kinds 5; scutoid kinds 2; scutoids appear for mould scale s > (6) + (3)*sqrt3 + (-1)*sqrt15 (= 7.323169 = 0.773128 s0)
+   first event height t1 = (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15; equals (2+sqrt3)(sqrt5-1)/4 exactly: True
+
+=== C1 fcc s = 6/5 s0 = 11.366563 (exact): events 110 flips (50 real) at heights (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/4) + (3/4)*sqrt5 + (3/4)*sqrt3 + (1/4)*sqrt15
+   slabs 160; volume sum - (mould - solid) = 0; separating axes verified for 1788 slab pairs and 256 slab/part pairs, failures 0 []  => VALID division
+   kind hex face 0 (8 per cell): vol (11067/880) + (5217/880)*sqrt5 + (-2837/440)*sqrt3 + (-277/110)*sqrt15 (= 4.911795); neighbours C1 side 6 -> mould side 3; Y vertices 3; scutoid True; walls [8, 9, 10, 21, 26, 31], mould facets 3
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: ((3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15)
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   kind hex face 8 (12 per cell): vol (-6531/1760) + (-3519/8800)*sqrt5 + (3187/880)*sqrt3 + (3321/4400)*sqrt15 (= 4.591033); neighbours C1 side 6 -> mould side 3; Y vertices 3; scutoid True; walls [0, 4, 11, 22, 30, 60], mould facets 1
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: ((3/4) + (-3/4)*sqrt5 + (1)*sqrt3 + (-1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: (0, (3) + (3/2)*sqrt3 + (-1/2)*sqrt15, 0)
+   kind tri face 20 (24 per cell): vol (37291/5280) + (69689/26400)*sqrt5 + (-15391/5280)*sqrt3 + (-24109/26400)*sqrt15 (= 4.379569); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [9, 21, 24, 27, 50], mould facets 2
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: (0, 0, (3) + (3/2)*sqrt3 + (-1/2)*sqrt15)
+   kind tri face 21 (24 per cell): vol (-977/528) + (-11609/13200)*sqrt5 + (2837/1320)*sqrt3 + (277/330)*sqrt15 (= 3.156623); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [0, 20, 22, 26, 31], mould facets 2
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   kind tri face 22 (12 per cell): vol (-1303/480) + (-3059/2400)*sqrt5 + (53/24)*sqrt3 + (643/600)*sqrt15 (= 2.410854); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [8, 21, 23, 30, 60], mould facets 1
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: ((3/4) + (-3/4)*sqrt5 + (1)*sqrt3 + (-1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   SUMMARY C1 fcc x6/5: valid True; kinds 5; scutoid kinds 5; scutoids appear for mould scale s > (6) + (3)*sqrt3 + (-1)*sqrt15 (= 7.323169 = 0.773128 s0)
+   first event height t1 = (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15; equals (2+sqrt3)(sqrt5-1)/4 exactly: True
+
+=== C1 fcc s = 3/2 s0 = 14.208204 (exact): events 110 flips (50 real) at heights (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/4) + (3/4)*sqrt5 + (3/4)*sqrt3 + (1/4)*sqrt15
+   slabs 160; volume sum - (mould - solid) = 0; separating axes verified for 1812 slab pairs and 256 slab/part pairs, failures 0 []  => VALID division
+   kind hex face 0 (8 per cell): vol (400755/11264) + (185205/11264)*sqrt5 + (-223811/11264)*sqrt3 + (-94153/11264)*sqrt15 (= 5.555837); neighbours C1 side 6 -> mould side 3; Y vertices 3; scutoid True; walls [8, 9, 10, 21, 26, 31], mould facets 3
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: ((3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15)
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   kind hex face 8 (12 per cell): vol (-1995/176) + (-639/176)*sqrt5 + (23261/2816)*sqrt3 + (7677/2816)*sqrt15 (= 5.412134); neighbours C1 side 6 -> mould side 3; Y vertices 3; scutoid True; walls [0, 4, 11, 22, 30, 60], mould facets 1
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: ((3/4) + (-3/4)*sqrt5 + (1)*sqrt3 + (-1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: (0, (3) + (3/2)*sqrt3 + (-1/2)*sqrt15, 0)
+   kind tri face 20 (24 per cell): vol (322679/16896) + (134633/16896)*sqrt5 + (-67831/8448)*sqrt3 + (-26657/8448)*sqrt15 (= 10.787750); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [9, 21, 24, 27, 50], mould facets 2
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: (0, 0, (3) + (3/2)*sqrt3 + (-1/2)*sqrt15)
+   kind tri face 21 (24 per cell): vol (-227417/33792) + (-106115/33792)*sqrt5 + (223811/33792)*sqrt3 + (94153/33792)*sqrt15 (= 8.511117); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [0, 20, 22, 26, 31], mould facets 2
+      Y vertex: ((3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15, (-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15)
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   kind tri face 22 (12 per cell): vol (-3899/384) + (-1793/384)*sqrt5 + (5989/768)*sqrt3 + (2753/768)*sqrt15 (= 6.795619); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [8, 21, 23, 30, 60], mould facets 1
+      Y vertex: ((-3/4) + (3/4)*sqrt5 + (-1)*sqrt3 + (1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+      Y vertex: ((3/4) + (-3/4)*sqrt5 + (1)*sqrt3 + (-1/2)*sqrt15, (3/4) + (3/4)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15, (3/2) + (3/4)*sqrt3 + (-1/4)*sqrt15)
+   SUMMARY C1 fcc x3/2: valid True; kinds 5; scutoid kinds 5; scutoids appear for mould scale s > (6) + (3)*sqrt3 + (-1)*sqrt15 (= 7.323169 = 0.773128 s0)
+   first event height t1 = (-1/2) + (1/2)*sqrt5 + (-1/4)*sqrt3 + (1/4)*sqrt15; equals (2+sqrt3)(sqrt5-1)/4 exactly: True
+FINAL ok
+
+=== C2 sc s = 1 s0 = 6.854102 (50 digits): events 126 flips (66 real) at heights 0.374825253213, 5.41694926801
+   slabs 144; volume sum - (mould - solid) = -6.8423e-49; separating axes verified for 1560 slab pairs and 360 slab/part pairs, failures 0 []  => VALID division
+   kind dec face 0 (12 per cell): vol 9.394735848075875 (= 9.394736); neighbours C1 side 10 -> mould side 5; Y vertices 5; scutoid True; walls [1, 2, 3, 4, 8, 14, 25, 37, 42, 60], mould facets 1
+      Y vertex: (-4.6773382426613423807459388175150932879265945401838e-51, 3.3676844951752497544764557775112825506384258096729, 0.0)
+      Y vertex: (-1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241)
+      Y vertex: (-1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241)
+   kind tri face 12 (24 per cell): vol 3.583917068780885 (= 3.583917); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [1, 13, 14, 36, 40], mould facets 2
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365)
+   kind tri face 36 (24 per cell): vol 0.5640105643248347 (= 0.564011); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [1, 12, 37, 38, 54], mould facets 1
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (0.0, 1.3363823550460978230702682335757409394075984400525e-50, 3.3676844951752497544764557775112825506384258096729)
+   kind tri face 37 (12 per cell): vol 1.8740367882117743 (= 1.874037); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [0, 14, 25, 36, 38], mould facets 2
+      Y vertex: (-1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+   SUMMARY C2 sc x1: valid True; kinds 4; scutoid kinds 4; scutoids appear for mould scale s > 5.44902797657959 (= 5.449028 = 0.795002 s0)
+
+=== C2 sc s = 6/5 s0 = 8.224922 (50 digits): events 126 flips (66 real) at heights 0.374825253213, 5.41694926801
+   slabs 144; volume sum - (mould - solid) = 1.0948e-47; separating axes verified for 1608 slab pairs and 360 slab/part pairs, failures 0 []  => VALID division
+   kind dec face 0 (12 per cell): vol 12.423775902492876 (= 12.423776); neighbours C1 side 10 -> mould side 5; Y vertices 5; scutoid True; walls [1, 2, 3, 4, 8, 14, 25, 37, 42, 60], mould facets 1
+      Y vertex: (-4.6773382426613423807459388175150932879265945401838e-51, 3.3676844951752497544764557775112825506384258096729, 0.0)
+      Y vertex: (-1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241)
+      Y vertex: (-1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241)
+   kind tri face 12 (24 per cell): vol 8.217119176222196 (= 8.217119); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [1, 13, 14, 36, 40], mould facets 2
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365)
+   kind tri face 36 (24 per cell): vol 2.3573078048074545 (= 2.357308); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [1, 12, 37, 38, 54], mould facets 1
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (0.0, 1.3363823550460978230702682335757409394075984400525e-50, 3.3676844951752497544764557775112825506384258096729)
+   kind tri face 37 (12 per cell): vol 5.526476296999327 (= 5.526476); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [0, 14, 25, 36, 38], mould facets 2
+      Y vertex: (-1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+   SUMMARY C2 sc x6/5: valid True; kinds 4; scutoid kinds 4; scutoids appear for mould scale s > 5.44902797657959 (= 5.449028 = 0.795002 s0)
+FINAL ok
+
+=== C2 bcc s = 1 s0 = 8.472136 (50 digits): events 90 flips (30 real) at heights 0.374825253213
+   slabs 144; volume sum - (mould - solid) = -3.7633e-48; separating axes verified for 1560 slab pairs and 360 slab/part pairs, failures 0 []  => VALID division
+   kind dec face 0 (12 per cell): vol 10.472065547389828 (= 10.472066); neighbours C1 side 10 -> mould side 5; Y vertices 5; scutoid True; walls [1, 2, 3, 4, 8, 14, 25, 37, 42, 60], mould facets 3
+      Y vertex: (-4.6773382426613423807459388175150932879265945401838e-51, 3.3676844951752497544764557775112825506384258096729, 0.0)
+      Y vertex: (-1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241)
+      Y vertex: (-1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241)
+   kind tri face 12 (24 per cell): vol 0.7568478835583525 (= 0.756848); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [1, 13, 14, 36, 40], mould facets 1
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365)
+   kind tri face 36 (24 per cell): vol 2.0535037670731504 (= 2.053504); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [1, 12, 37, 38, 54], mould facets 2
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (0.0, 1.3363823550460978230702682335757409394075984400525e-50, 3.3676844951752497544764557775112825506384258096729)
+   kind tri face 37 (12 per cell): vol 1.9765030613463253 (= 1.976503); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [0, 14, 25, 36, 38], mould facets 3
+      Y vertex: (-1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+   SUMMARY C2 bcc x1: valid True; kinds 4; scutoid kinds 4; scutoids appear for mould scale s > 6.7353689903505 (= 6.735369 = 0.795002 s0)
+
+=== C2 bcc s = 6/5 s0 = 10.166563 (50 digits): events 126 flips (66 real) at heights 0.374825253213, 5.41694926801
+   slabs 144; volume sum - (mould - solid) = -1.3685e-48; separating axes verified for 1560 slab pairs and 360 slab/part pairs, failures 0 []  => VALID division
+   kind dec face 0 (12 per cell): vol 13.602443766461336 (= 13.602444); neighbours C1 side 10 -> mould side 5; Y vertices 5; scutoid True; walls [1, 2, 3, 4, 8, 14, 25, 37, 42, 60], mould facets 3
+      Y vertex: (-4.6773382426613423807459388175150932879265945401838e-51, 3.3676844951752497544764557775112825506384258096729, 0.0)
+      Y vertex: (-1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241)
+      Y vertex: (-1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241)
+   kind tri face 12 (24 per cell): vol 3.07163838450636 (= 3.071638); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [1, 13, 14, 36, 40], mould facets 1
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365)
+   kind tri face 36 (24 per cell): vol 5.671374796226928 (= 5.671375); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [1, 12, 37, 38, 54], mould facets 2
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (0.0, 1.3363823550460978230702682335757409394075984400525e-50, 3.3676844951752497544764557775112825506384258096729)
+   kind tri face 37 (12 per cell): vol 5.426660878583713 (= 5.426661); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [0, 14, 25, 36, 38], mould facets 3
+      Y vertex: (-1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+   SUMMARY C2 bcc x6/5: valid True; kinds 4; scutoid kinds 4; scutoids appear for mould scale s > 6.7353689903505 (= 6.735369 = 0.795002 s0)
+
+=== C2 fcc s = 1 s0 = 9.472136 (50 digits): events 90 flips (30 real) at heights 0.374825253213
+   slabs 144; volume sum - (mould - solid) = 2.908e-48; separating axes verified for 1560 slab pairs and 360 slab/part pairs, failures 0 []  => VALID division
+   kind dec face 0 (12 per cell): vol 6.646032568465206 (= 6.646033); neighbours C1 side 10 -> mould side 5; Y vertices 5; scutoid True; walls [1, 2, 3, 4, 8, 14, 25, 37, 42, 60], mould facets 1
+      Y vertex: (-4.6773382426613423807459388175150932879265945401838e-51, 3.3676844951752497544764557775112825506384258096729, 0.0)
+      Y vertex: (-1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241)
+      Y vertex: (-1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241)
+   kind tri face 12 (24 per cell): vol 0.6631363209628114 (= 0.663136); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [1, 13, 14, 36, 40], mould facets 2
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365)
+   kind tri face 36 (24 per cell): vol 1.073091068351782 (= 1.073091); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [1, 12, 37, 38, 54], mould facets 2
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (0.0, 1.3363823550460978230702682335757409394075984400525e-50, 3.3676844951752497544764557775112825506384258096729)
+   kind tri face 37 (12 per cell): vol 0.3183351013426247 (= 0.318335); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [0, 14, 25, 36, 38], mould facets 1
+      Y vertex: (-1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+   SUMMARY C2 fcc x1: valid True; kinds 4; scutoid kinds 4; scutoids appear for mould scale s > 6.7353689903505 (= 6.735369 = 0.711072 s0)
+
+=== C2 fcc s = 6/5 s0 = 11.366563 (50 digits): events 126 flips (66 real) at heights 0.374825253213, 5.41694926801
+   slabs 144; volume sum - (mould - solid) = 1.3685e-48; separating axes verified for 1608 slab pairs and 360 slab/part pairs, failures 0 []  => VALID division
+   kind dec face 0 (12 per cell): vol 10.10904515002169 (= 10.109045); neighbours C1 side 10 -> mould side 5; Y vertices 5; scutoid True; walls [1, 2, 3, 4, 8, 14, 25, 37, 42, 60], mould facets 1
+      Y vertex: (-4.6773382426613423807459388175150932879265945401838e-51, 3.3676844951752497544764557775112825506384258096729, 0.0)
+      Y vertex: (-1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241)
+      Y vertex: (-1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241)
+   kind tri face 12 (24 per cell): vol 2.4066877418698933 (= 2.406688); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [1, 13, 14, 36, 40], mould facets 2
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (2.7245139882897926862209725758987633937896062411605, 1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365)
+   kind tri face 36 (24 per cell): vol 3.397936735706222 (= 3.397937); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [1, 12, 37, 38, 54], mould facets 2
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411606)
+      Y vertex: (0.0, 1.3363823550460978230702682335757409394075984400525e-50, 3.3676844951752497544764557775112825506384258096729)
+   kind tri face 37 (12 per cell): vol 1.607964231758326 (= 1.607964); neighbours C1 side 3 -> mould side 5; Y vertices 2; scutoid True; walls [0, 14, 25, 36, 38], mould facets 1
+      Y vertex: (-1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+      Y vertex: (1.0406717407021678089827446871431221184703933363241, 1.6838422475876248772382278887556412753192129048365, 2.7245139882897926862209725758987633937896062411605)
+   SUMMARY C2 fcc x6/5: valid True; kinds 4; scutoid kinds 4; scutoids appear for mould scale s > 6.7353689903505 (= 6.735369 = 0.711072 s0)
+FINAL ok
