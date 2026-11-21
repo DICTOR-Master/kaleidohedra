@@ -1,0 +1,9 @@
+PROGRESS 0.05 vertex lists 120 600
+600-cell {"input_points": 120, "vertices": 120, "facets": 600, "vertices_per_facet": {"4": 600}, "f_vector": [1, 120, 720, 1200, 600, 1], "all_points_inside": true, "same_vertex_set": true, "seconds": 3.2, "ok": true}
+PROGRESS 0.4 600-cell hull
+120-cell {"input_points": 600, "vertices": 600, "facets": 120, "vertices_per_facet": {"20": 120}, "f_vector": [1, 600, 1200, 720, 120, 1], "all_points_inside": true, "same_vertex_set": true, "seconds": 6.4, "ok": true}
+PROGRESS 0.8 120-cell hull
+duality {'600-cell polar = 120-cell (sphere + cosine pattern)': True, '120-cell polar = 600-cell (sphere + cosine pattern)': True}
+inradius^2 7/4 + 3/4√5 7/2 + 3/2√5
+PROGRESS 1.0 done 6.5 s
+FINAL ok

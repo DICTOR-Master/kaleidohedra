@@ -1,0 +1,38 @@
+PROGRESS 0.04 600-cell v: 9 slices, 7 patterns, shadow 42/80 (5 s)
+PROGRESS 0.07 600-cell c: 15 slices, 14 patterns, shadow 44/78 (13 s)
+PROGRESS 0.11 600-cell e: 17 slices, 15 patterns, shadow 52/80 (15 s)
+PROGRESS 0.14 600-cell f: 21 slices, 19 patterns, shadow 56/96 (20 s)
+PROGRESS 0.18 rectified 600-cell v: 17 slices, 16 patterns, shadow 132/110 (27 s)
+PROGRESS 0.21 truncated 600-cell v: 29 slices, 21 patterns, shadow 192/110 (48 s)
+PROGRESS 0.25 rectified 600-cell c: 33 slices, 33 patterns, shadow 144/194 (63 s)
+PROGRESS 0.29 rectified 600-cell e: 37 slices, 35 patterns, shadow 150/232 (76 s)
+PROGRESS 0.32 bitruncated v: 43 slices, 23 patterns, shadow 240/122 (72 s)
+PROGRESS 0.36 truncated 600-cell e: 85 slices, 77 patterns, shadow 280/232 (116 s)
+PROGRESS 0.39 rectified 600-cell f: 49 slices, 49 patterns, shadow 168/272 (103 s)
+PROGRESS 0.43 rectified 120-cell v: 21 slices, 14 patterns, shadow 140/102 (19 s)
+PROGRESS 0.46 truncated 600-cell c: 72 slices, 63 patterns, shadow 240/194 (130 s)
+PROGRESS 0.50 rectified 120-cell e: 49 slices, 46 patterns, shadow 260/252 (34 s)
+PROGRESS 0.54 truncated 120-cell v: 33 slices, 12 patterns, shadow 200/102 (20 s)
+PROGRESS 0.57 truncated 600-cell f: 103 slices, 98 patterns, shadow 312/272 (161 s)
+PROGRESS 0.61 rectified 120-cell c: 45 slices, 41 patterns, shadow 240/242 (47 s)
+PROGRESS 0.64 120-cell v: 15 slices, 8 patterns, shadow 80/42 (3 s)
+PROGRESS 0.68 120-cell e: 33 slices, 29 patterns, shadow 160/92 (7 s)
+PROGRESS 0.71 120-cell f: 45 slices, 40 patterns, shadow 180/104 (10 s)
+PROGRESS 0.75 rectified 120-cell f: 65 slices, 60 patterns, shadow 282/296 (74 s)
+PROGRESS 0.79 120-cell c: 31 slices, 24 patterns, shadow 158/84 (6 s)
+PROGRESS 0.82 truncated 120-cell f: 117 slices, 96 patterns, shadow 564/296 (56 s)
+PROGRESS 0.86 truncated 120-cell e: 87 slices, 69 patterns, shadow 500/252 (59 s)
+PROGRESS 0.89 truncated 120-cell c: 81 slices, 62 patterns, shadow 480/242 (57 s)
+PROGRESS 0.93 bitruncated e: 135 slices, 110 patterns, shadow 580/312 (197 s)
+PROGRESS 0.96 bitruncated c: 125 slices, 97 patterns, shadow 504/266 (172 s)
+PROGRESS 1.00 bitruncated f: 175 slices, 151 patterns, shadow 636/368 (229 s)
+TABLE stage: slices v.e.f.c (all) | patterns v.e.f.c | shadows corners/faces v.e.f.c
+TABLE 600-cell : 9·17·21·15 62 | 7·15·19·14 | 42/80 · 52/80 · 56/96 · 44/78
+TABLE truncated 600-cell : 29·85·103·72 289 | 21·77·98·63 | 192/110 · 280/232 · 312/272 · 240/194
+TABLE rectified 600-cell : 17·37·49·33 136 | 16·35·49·33 | 132/110 · 150/232 · 168/272 · 144/194
+TABLE bitruncated : 43·135·175·125 478 | 23·110·151·97 | 240/122 · 580/312 · 636/368 · 504/266
+TABLE rectified 120-cell : 21·49·65·45 180 | 14·46·60·41 | 140/102 · 260/252 · 282/296 · 240/242
+TABLE truncated 120-cell : 33·87·117·81 318 | 12·69·96·62 | 200/102 · 500/252 · 564/296 · 480/242
+TABLE 120-cell : 15·33·45·31 124 | 8·29·40·24 | 80/42 · 160/92 · 180/104 · 158/84
+checks failing: 0 time 314 s
+FINAL ok

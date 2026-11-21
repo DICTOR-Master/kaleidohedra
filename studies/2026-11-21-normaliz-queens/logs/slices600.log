@@ -1,0 +1,75 @@
+vertex-first interval h = -5/2 - 1/2√5 V = 12 E = 30 F = 20 {3: 20} ALL-TRIANGLE 
+vertex-first vertex height h = -1 - 1√5 V = 12 E = 30 F = 20 {3: 20} ALL-TRIANGLE 
+vertex-first interval h = -3/2 - 1/2√5 V = 72 E = 180 F = 110 {4: 30, 3: 80}  
+vertex-first vertex height h = -2 V = 32 E = 90 F = 60 {3: 60} ALL-TRIANGLE 
+vertex-first interval h = -1/2 - 1/2√5 V = 132 E = 330 F = 200 {3: 140, 4: 60}  
+vertex-first vertex height h = 1 - 1√5 V = 72 E = 210 F = 140 {3: 140} ALL-TRIANGLE 
+vertex-first interval h = 1/2 - 1/2√5 V = 132 E = 330 F = 200 {3: 140, 4: 60}  
+vertex-first vertex height h = 0 V = 42 E = 120 F = 80 {3: 80} ALL-TRIANGLE 
+PROGRESS 0.25 vertex-first done (8 probes, 4 s)
+edge-first interval h = -7/4 - 3/4√5 V = 22 E = 55 F = 35 {3: 30, 4: 5}  
+edge-first vertex height h = -1 - 1√5 V = 17 E = 45 F = 30 {3: 30} ALL-TRIANGLE 
+edge-first interval h = -5/4 - 3/4√5 V = 52 E = 130 F = 80 {3: 60, 4: 20}  
+edge-first vertex height h = -3/2 - 1/2√5 V = 32 E = 90 F = 60 {3: 60} ALL-TRIANGLE 
+edge-first interval h = -3/4 - 3/4√5 V = 92 E = 230 F = 140 {3: 100, 4: 40}  
+edge-first vertex height h = -1√5 V = 82 E = 210 F = 130 {3: 100, 4: 30}  
+edge-first interval h = -1 - 1/2√5 V = 92 E = 230 F = 140 {3: 100, 4: 40}  
+edge-first vertex height h = -2 V = 77 E = 205 F = 130 {3: 110, 4: 20}  
+edge-first interval h = -5/4 - 1/4√5 V = 112 E = 280 F = 170 {3: 120, 4: 50}  
+edge-first vertex height h = -1/2 - 1/2√5 V = 72 E = 200 F = 130 {3: 120, 4: 10}  
+edge-first interval h = -3/4 - 1/4√5 V = 122 E = 305 F = 185 {3: 130, 4: 55}  
+edge-first vertex height h = -1 V = 92 E = 245 F = 155 {3: 130, 4: 25}  
+edge-first interval h = -1/4 - 1/4√5 V = 142 E = 355 F = 215 {3: 150, 4: 65}  
+edge-first vertex height h = 1/2 - 1/2√5 V = 92 E = 255 F = 165 {3: 150, 4: 15}  
+edge-first interval h = 1/4 - 1/4√5 V = 142 E = 355 F = 215 {3: 150, 4: 65}  
+edge-first vertex height h = 0 V = 92 E = 250 F = 160 {3: 140, 4: 20}  
+PROGRESS 0.50 edge-first done (16 probes, 10 s)
+face-first interval h = -3/2 - 5/6√5 V = 30 E = 75 F = 47 {3: 38, 4: 9}  
+face-first vertex height h = -1 - 1√5 V = 26 E = 69 F = 45 {3: 42, 4: 3}  
+face-first interval h = -7/6 - 5/6√5 V = 42 E = 105 F = 65 {3: 50, 4: 15}  
+face-first vertex height h = -4/3 - 2/3√5 V = 30 E = 84 F = 56 {3: 56} ALL-TRIANGLE 
+face-first interval h = -3/2 - 1/2√5 V = 72 E = 180 F = 110 {3: 80, 4: 30}  
+face-first vertex height h = -5/3 - 1/3√5 V = 54 E = 150 F = 98 {3: 92, 4: 6}  
+face-first interval h = -7/6 - 1/2√5 V = 96 E = 240 F = 146 {3: 104, 4: 42}  
+face-first vertex height h = -2/3 - 2/3√5 V = 72 E = 192 F = 122 {3: 104, 4: 18}  
+face-first interval h = -5/6 - 1/2√5 V = 102 E = 255 F = 155 {3: 110, 4: 45}  
+face-first vertex height h = -1 - 1/3√5 V = 84 E = 219 F = 137 {3: 110, 4: 27}  
+face-first interval h = -7/6 - 1/6√5 V = 114 E = 285 F = 173 {3: 122, 4: 51}  
+face-first vertex height h = -4/3 V = 105 E = 270 F = 167 {3: 128, 4: 39}  
+face-first interval h = -5/6 - 1/6√5 V = 126 E = 315 F = 191 {3: 134, 4: 57}  
+face-first vertex height h = -1/3 - 1/3√5 V = 78 E = 219 F = 143 {3: 134, 4: 9}  
+face-first interval h = -1/2 - 1/6√5 V = 138 E = 345 F = 209 {3: 146, 4: 63}  
+face-first vertex height h = -2/3 V = 114 E = 300 F = 188 {3: 152, 4: 36}  
+face-first interval h = -1/6 - 1/6√5 V = 144 E = 360 F = 218 {3: 152, 4: 66}  
+face-first vertex height h = 1/3 - 1/3√5 V = 114 E = 300 F = 188 {3: 152, 4: 36}  
+face-first interval h = 1/6 - 1/6√5 V = 144 E = 360 F = 218 {3: 152, 4: 66}  
+face-first vertex height h = 0 V = 104 E = 282 F = 180 {3: 156, 4: 24}  
+PROGRESS 0.75 face-first done (20 probes, 19 s)
+cell-first interval h = -3/2 - 3/4√5 V = 36 E = 90 F = 56 {3: 44, 4: 12}  
+cell-first vertex height h = -5/4 - 3/4√5 V = 28 E = 78 F = 52 {3: 52} ALL-TRIANGLE 
+cell-first interval h = -11/8 - 5/8√5 V = 60 E = 150 F = 92 {3: 68, 4: 24}  
+cell-first vertex height h = -3/2 - 1/2√5 V = 42 E = 120 F = 80 {3: 80} ALL-TRIANGLE 
+cell-first interval h = -5/4 - 1/2√5 V = 84 E = 210 F = 128 {3: 92, 4: 36}  
+cell-first vertex height h = -1 - 1/2√5 V = 48 E = 138 F = 92 {3: 92} ALL-TRIANGLE 
+cell-first interval h = -7/8 - 3/8√5 V = 108 E = 270 F = 164 {3: 116, 4: 48}  
+cell-first vertex height h = -3/4 - 1/4√5 V = 72 E = 198 F = 128 {3: 116, 4: 12}  
+cell-first interval h = -1/2 - 1/4√5 V = 132 E = 330 F = 200 {3: 140, 4: 60}  
+cell-first vertex height h = -1/4 - 1/4√5 V = 84 E = 234 F = 152 {3: 140, 4: 12}  
+cell-first interval h = -3/8 - 1/8√5 V = 144 E = 360 F = 218 {3: 152, 4: 66}  
+cell-first vertex height h = -1/2 V = 124 E = 324 F = 202 {3: 160, 4: 42}  
+cell-first interval h = -1/4 V = 144 E = 360 F = 218 {3: 152, 4: 66}  
+cell-first vertex height h = 0 V = 84 E = 240 F = 158 {3: 152, 4: 6}  
+PROGRESS 1.00 cell-first done (14 probes, 25 s)
+ALL-TRIANGLE SLICES (h <= 0 shown; -h congruent):
+  vertex-first interval h = -5/2 - 1/2√5 h/(d.d) = -5/8 - 1/8√5 V,E,F = 12 30 20
+  vertex-first vertex height h = -1 - 1√5 h/(d.d) = -1/4 - 1/4√5 V,E,F = 12 30 20
+  vertex-first vertex height h = -2 h/(d.d) = -1/2 V,E,F = 32 90 60
+  vertex-first vertex height h = 1 - 1√5 h/(d.d) = 1/4 - 1/4√5 V,E,F = 72 210 140
+  vertex-first vertex height h = 0 h/(d.d) = 0 V,E,F = 42 120 80
+  edge-first vertex height h = -1 - 1√5 h/(d.d) = -2/5√5 V,E,F = 17 45 30
+  edge-first vertex height h = -3/2 - 1/2√5 h/(d.d) = -1/2 - 1/10√5 V,E,F = 32 90 60
+  face-first vertex height h = -4/3 - 2/3√5 h/(d.d) = -1/4 - 1/4√5 V,E,F = 30 84 56
+  cell-first vertex height h = -5/4 - 3/4√5 h/(d.d) = 5/2 - 3/2√5 V,E,F = 28 78 52
+  cell-first vertex height h = -3/2 - 1/2√5 h/(d.d) = -3 + 1√5 V,E,F = 42 120 80
+  cell-first vertex height h = -1 - 1/2√5 h/(d.d) = 1/2 - 1/2√5 V,E,F = 48 138 92
+FINAL ok

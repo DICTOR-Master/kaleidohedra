@@ -1,0 +1,385 @@
+{
+ "frame": {
+  "r^2": "7/16 + 3/16√5",
+  "edge^2": "3/2 - 1/2√5"
+ },
+ "lemma6": {
+  "tetrahedral_cells": {
+   "lifted_vertices": 15,
+   "max_other": "-1/4 + 1/12√5",
+   "redundant": true
+  },
+  "dodecahedral_cells": {
+   "lifted_vertices": 63,
+   "max_other": "-7/8 + 3/8√5",
+   "redundant": true
+  }
+ },
+ "stations": [
+  {
+   "station": "truncated 600-cell (uniform)",
+   "mu": "3/4 + 1/12√5",
+   "mu_float": 0.936339,
+   "f_vector": [
+    1440,
+    4320,
+    3600,
+    720
+   ],
+   "cells_by_vertex_count": {
+    "12": 720
+   },
+   "edge_lengths^2": {
+    "1/6 - 1/18√5": 4320
+   },
+   "one_sphere": true,
+   "tetrahedral_cell": {
+    "vertices": 12,
+    "nu3": "5",
+    "TT_station": "truncated tetrahedron"
+   },
+   "dodecahedral_cell": {
+    "vertices": 12,
+    "nu3": "10/19 + 1/19√5",
+    "DI_station": null
+   },
+   "lemma6_direct": true
+  },
+  {
+   "station": "rectified 600-cell",
+   "mu": "5/8 + 1/8√5",
+   "mu_float": 0.904508,
+   "f_vector": [
+    720,
+    3600,
+    3600,
+    720
+   ],
+   "cells_by_vertex_count": {
+    "6": 600,
+    "12": 120
+   },
+   "edge_lengths^2": {
+    "3/8 - 1/8√5": 3600
+   },
+   "one_sphere": true,
+   "tetrahedral_cell": {
+    "vertices": 6,
+    "nu3": "3",
+    "TT_station": "octahedron"
+   },
+   "dodecahedral_cell": {
+    "vertices": 12,
+    "nu3": "1",
+    "DI_station": "icosahedron"
+   },
+   "lemma6_direct": true
+  },
+  {
+   "station": "bitruncated (uniform midpoint)",
+   "mu": "11/20 + 3/20√5",
+   "mu_float": 0.88541,
+   "f_vector": [
+    3600,
+    7200,
+    4320,
+    720
+   ],
+   "cells_by_vertex_count": {
+    "12": 600,
+    "60": 120
+   },
+   "edge_lengths^2": {
+    "3/50 - 1/50√5": 7200
+   },
+   "one_sphere": true,
+   "tetrahedral_cell": {
+    "vertices": 12,
+    "nu3": "9/5",
+    "TT_station": "truncated (-T)"
+   },
+   "dodecahedral_cell": {
+    "vertices": 60,
+    "nu3": "30/19 - 3/19√5",
+    "DI_station": "truncated icosahedron"
+   },
+   "lemma6_direct": true
+  },
+  {
+   "station": "rectified 120-cell",
+   "mu": "1/2 + 1/6√5",
+   "mu_float": 0.872678,
+   "f_vector": [
+    1200,
+    3600,
+    3120,
+    720
+   ],
+   "cells_by_vertex_count": {
+    "4": 600,
+    "30": 120
+   },
+   "edge_lengths^2": {
+    "1/6 - 1/18√5": 3600
+   },
+   "one_sphere": true,
+   "tetrahedral_cell": {
+    "vertices": 4,
+    "nu3": "1",
+    "TT_station": "-T"
+   },
+   "dodecahedral_cell": {
+    "vertices": 30,
+    "nu3": "5/2 - 1/2√5",
+    "DI_station": "icosidodecahedron"
+   },
+   "lemma6_direct": true
+  },
+  {
+   "station": "truncated 120-cell (uniform)",
+   "mu": "15/38 + 4/19√5",
+   "mu_float": 0.865488,
+   "f_vector": [
+    2400,
+    4800,
+    3120,
+    720
+   ],
+   "cells_by_vertex_count": {
+    "4": 600,
+    "60": 120
+   },
+   "edge_lengths^2": {
+    "83/722 - 33/722√5": 4800
+   },
+   "one_sphere": true,
+   "tetrahedral_cell": {
+    "vertices": 4,
+    "nu3": "-3/19 + 6/19√5",
+    "TT_station": null
+   },
+   "dodecahedral_cell": {
+    "vertices": 60,
+    "nu3": "-3 + 2√5",
+    "DI_station": "truncated dodecahedron"
+   },
+   "lemma6_direct": true
+  },
+  {
+   "station": "golden 1: (13+5√5)/28",
+   "mu": "13/28 + 5/28√5",
+   "mu_float": 0.863584,
+   "f_vector": [
+    2400,
+    4800,
+    3120,
+    720
+   ],
+   "cells_by_vertex_count": {
+    "4": 600,
+    "60": 120
+   },
+   "edge_lengths^2": {
+    "1/49": 1200,
+    "3/98 - 1/98√5": 3600
+   },
+   "one_sphere": true,
+   "tetrahedral_cell": {
+    "vertices": 4,
+    "nu3": "3/7",
+    "TT_station": null
+   },
+   "dodecahedral_cell": {
+    "vertices": 60,
+    "nu3": "50/11 - 15/11√5",
+    "DI_station": "Lesser GCD"
+   },
+   "lemma6_direct": true,
+   "edge_ratio^2": "3/2 + 1/2√5",
+   "golden_ratio_of_edges": true
+  },
+  {
+   "station": "golden 2: (111+45√5)/244",
+   "mu": "111/244 + 45/244√5",
+   "mu_float": 0.867308,
+   "f_vector": [
+    2400,
+    4800,
+    3120,
+    720
+   ],
+   "cells_by_vertex_count": {
+    "4": 600,
+    "60": 120
+   },
+   "edge_lengths^2": {
+    "167/7442 - 51/7442√5": 1200,
+    "123/7442 + 7/7442√5": 3600
+   },
+   "one_sphere": true,
+   "tetrahedral_cell": {
+    "vertices": 4,
+    "nu3": "27/61 + 6/61√5",
+    "TT_station": null
+   },
+   "dodecahedral_cell": {
+    "vertices": 60,
+    "nu3": "20/3 - 7/3√5",
+    "DI_station": "Greater GCD"
+   },
+   "lemma6_direct": true,
+   "edge_ratio^2": "3/2 + 1/2√5",
+   "golden_ratio_of_edges": true
+  },
+  {
+   "station": "golden 3 (Prop 7): 2-√5/2",
+   "mu": "2 - 1/2√5",
+   "mu_float": 0.881966,
+   "f_vector": [
+    3600,
+    7200,
+    4320,
+    720
+   ],
+   "cells_by_vertex_count": {
+    "12": 600,
+    "60": 120
+   },
+   "edge_lengths^2": {
+    "123/2 - 55/2√5": 3600,
+    "47/2 - 21/2√5": 3600
+   },
+   "one_sphere": true,
+   "tetrahedral_cell": {
+    "vertices": 12,
+    "nu3": "15 - 6√5",
+    "TT_station": "Lesser GCT (dual side)"
+   },
+   "dodecahedral_cell": {
+    "vertices": 60,
+    "nu3": "5/11 + 4/11√5",
+    "DI_station": "Greater GCI"
+   },
+   "lemma6_direct": true,
+   "edge_ratio^2": "3/2 + 1/2√5",
+   "golden_ratio_of_edges": true
+  },
+  {
+   "station": "golden 4 (Prop 7): (19+9√5)/44",
+   "mu": "19/44 + 9/44√5",
+   "mu_float": 0.889196,
+   "f_vector": [
+    3600,
+    7200,
+    4320,
+    720
+   ],
+   "cells_by_vertex_count": {
+    "12": 600,
+    "60": 120
+   },
+   "edge_lengths^2": {
+    "21/121 - 8/121√5": 3600,
+    "103/242 - 45/242√5": 3600
+   },
+   "one_sphere": true,
+   "tetrahedral_cell": {
+    "vertices": 12,
+    "nu3": "9/11 + 6/11√5",
+    "TT_station": "Greater GCT (dual side)"
+   },
+   "dodecahedral_cell": {
+    "vertices": 60,
+    "nu3": "-10 + 5√5",
+    "DI_station": "Lesser GCI"
+   },
+   "lemma6_direct": true,
+   "edge_ratio^2": "3/2 + 1/2√5",
+   "golden_ratio_of_edges": true
+  },
+  {
+   "station": "golden 5: 3(√5-1)/4",
+   "mu": "-3/4 + 3/4√5",
+   "mu_float": 0.927051,
+   "f_vector": [
+    1440,
+    4320,
+    3600,
+    720
+   ],
+   "cells_by_vertex_count": {
+    "12": 720
+   },
+   "edge_lengths^2": {
+    "9 - 4√5": 3600,
+    "47/2 - 21/2√5": 720
+   },
+   "one_sphere": true,
+   "tetrahedral_cell": {
+    "vertices": 12,
+    "nu3": "-9 + 6√5",
+    "TT_station": "Greater GCT"
+   },
+   "dodecahedral_cell": {
+    "vertices": 12,
+    "nu3": "1/3√5",
+    "DI_station": null
+   },
+   "lemma6_direct": true,
+   "edge_ratio^2": "3/2 + 1/2√5",
+   "golden_ratio_of_edges": true
+  },
+  {
+   "station": "golden 6: (5+2√5)/10",
+   "mu": "1/2 + 1/5√5",
+   "mu_float": 0.947214,
+   "f_vector": [
+    1440,
+    4320,
+    3600,
+    720
+   ],
+   "cells_by_vertex_count": {
+    "12": 720
+   },
+   "edge_lengths^2": {
+    "7/10 - 3/10√5": 3600,
+    "3/10 - 1/10√5": 720
+   },
+   "one_sphere": true,
+   "tetrahedral_cell": {
+    "vertices": 12,
+    "nu3": "3 + 6/5√5",
+    "TT_station": "Lesser GCT"
+   },
+   "dodecahedral_cell": {
+    "vertices": 12,
+    "nu3": "5 - 2√5",
+    "DI_station": null
+   },
+   "lemma6_direct": true,
+   "edge_ratio^2": "3/2 + 1/2√5",
+   "golden_ratio_of_edges": true
+  }
+ ],
+ "76_vs_91": {
+  "truncated 600-cell (uniform)": {
+   "corners_76": 1440,
+   "corners_sweep": 1440,
+   "scale": "1",
+   "identical": true
+  },
+  "bitruncated (uniform midpoint)": {
+   "corners_76": 3600,
+   "corners_sweep": 3600,
+   "scale": "1",
+   "identical": true
+  },
+  "truncated 120-cell (uniform)": {
+   "corners_76": 2400,
+   "corners_sweep": 2400,
+   "scale": "-30/19 + 22/19√5",
+   "identical": true
+  }
+ }
+}

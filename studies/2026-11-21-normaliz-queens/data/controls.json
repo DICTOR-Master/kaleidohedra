@@ -1,0 +1,48 @@
+{
+ "600-cell": {
+  "input_points": 120,
+  "vertices": 120,
+  "facets": 600,
+  "vertices_per_facet": {
+   "4": 600
+  },
+  "f_vector": [
+   1,
+   120,
+   720,
+   1200,
+   600,
+   1
+  ],
+  "all_points_inside": true,
+  "same_vertex_set": true,
+  "seconds": 3.2,
+  "ok": true
+ },
+ "120-cell": {
+  "input_points": 600,
+  "vertices": 600,
+  "facets": 120,
+  "vertices_per_facet": {
+   "20": 120
+  },
+  "f_vector": [
+   1,
+   600,
+   1200,
+   720,
+   120,
+   1
+  ],
+  "all_points_inside": true,
+  "same_vertex_set": true,
+  "seconds": 6.4,
+  "ok": true
+ },
+ "duality": {
+  "600-cell polar = 120-cell (sphere + cosine pattern)": true,
+  "120-cell polar = 600-cell (sphere + cosine pattern)": true
+ },
+ "600-cell inradius^2": "7/4 + 3/4\u221a5",
+ "120-cell inradius^2": "7/2 + 3/2\u221a5"
+}
