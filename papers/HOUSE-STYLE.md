@@ -5,7 +5,7 @@ Applied in every new draft, every book chapter, and every paper at its next vers
 
 **Backbone: Pledge, Turn, Prestige.** Pledge: the ordinary thing the reader trusts. Turn: it does something extraordinary (the result). Prestige: it comes back changed (the close). Unlike magic, the method is shown.
 
-1. **Promise.** The opening lines say what the reader will know by the end.
+1. **Promise.** The opening lines say what the paper shows, in a sober scientific tone ("We prove that …", "This paper shows …"). No theatre: no "you will see", no drama, no addressing the reader with suspense (DICTO, 21 Nov 2026).
 2. **Cycling.** The main idea is told three times: abstract, opening, close, in nearly the same words.
 3. **Fence.** Say what the idea is and what it is not; set it beside its near misses (examples that almost work, and why not). True, checked facts only.
 4. **Signposts.** Mark each turn: "First…", "The second idea…", "Here is where it fails…".
@@ -14,6 +14,6 @@ Applied in every new draft, every book chapter, and every paper at its next vers
 7. **Vision early.** The problem, why it matters, the approach, the steps taken, the news.
 8. **Figures.** Few words, one idea per figure, building up step by step.
 9. **A question to the reader** at a turn, before the answer.
-10. **Passion, no throat-clearing.** Open with the idea itself.
+10. **Passion, no throat-clearing.** Open with the idea itself; let the result carry the interest, never the wording.
 
 These sit beside the standing rules: theorem-led papers, the layman hook at each theorem, one status box in drafts, the "Version N adds" line at release, and the banned-phrase guard in print.mjs.
