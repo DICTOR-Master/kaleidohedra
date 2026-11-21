@@ -86,3 +86,18 @@ papers/2026-10-25-web-of-bonds/zenodo-state.json (reserved, `published: false`).
 | 64 | Weaire–Phelan: "polyhedral cells, before relaxation" | Cor. 5 | Sloane & Vaishampayan (referee point 11) | PASS (wording) |
 
 **Result v2: 64 rows; all PASS except row 45 v1 (corrected in v2).**
+
+## Version 4 draft (21 November 2026): numbers added, checked against studies/2026-11-21-gaps-batch-b (commit 6d46ee1)
+
+| # | Number in the paper | Where | Source | Result |
+|---|---|---|---|---|
+| V4-1 | site groups of all 12 networks (4mm … 4̄2m) | Table 5, Prop. G | data/obs3_symmetry.json `site_group` | PASS |
+| V4-2 | swap yes on square, CsCl, rock salt, zinc blende, h-BN, sodalite; centrosymmetric except zinc blende, h-BN | Table 5, Cor. H text | json `swap_ops_mod_T`, `centrosymmetric` | PASS |
+| V4-3 | like faces at λ = 0 (A; B), 12 rows; CsCl 6, zinc blende 12, honeycomb 3 | Table 5, Cor. H checks | json `voronoi_lam0` (sums of like counts) | PASS |
+| V4-4 | τ_A + τ_B column (0, 0, 0, −2, 0, 0, −2, −2/3, −1/2, −14, 0, 0) | Table 5 | json `tau_sum`; = Table 4 | PASS |
+| V4-5 | μ = τ: both on 8 (square, honeycomb, CsCl, fluorite, rock salt, hcp, A15, sodalite); kagome centre only; C15 Mg only; zinc blende, h-BN neither | Table 5, distance-value paragraph | json `mu` vs `tau` | PASS |
+| V4-6 | midpoint rule certifies both kinds on 6 (square, honeycomb, CsCl, fluorite, rock salt, sodalite); hcp and A15 Si by comparison only | distance-value paragraph | json `distance_rule_decides` | PASS |
+| V4-7 | 2 − d for d = 1 to 4; d = 2 switch, d = 3 gradual | Prop. G (2) | obs3_symmetry-checks.txt lines 73–77 | PASS |
+| V4-8 | Swap Corollary 6/6; controls honeycomb (switch at −1/2 with like faces) and fluorite (τ_tet ≠ τ_oct) | Cor. H checks | checks lines 4–66, 70–71 | PASS |
+| V4-9 | 77 checks, 0 FAIL; Section 6 total 340 + 77 = 417; total 988 + 77 = 1065 | App. B | obs3_symmetry-checks.txt (77 PASS, 0 FAIL), log FINAL ok | PASS |
+| V4-10 | 10 of 12 = swap 6 ∪ distance 8; kagome, C15 left | "Together" | set union of V4-2 and V4-5 | PASS |

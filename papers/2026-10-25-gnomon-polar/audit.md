@@ -96,3 +96,20 @@ Wording v2: "proposed", "theorised", "concluded" ("the nature of the beast" — 
 | 63 | "Terms and conventions": ℚ(√5) arithmetic; scale (Part A I edge 1/φ, volume (5/12)(√5 − 1); Part B icosahedron edge 1, lattice φℤ³); T(x) = perms (±(1 + x), ±x, 0), Koca [9], fill for every x [1, Thm 4]; hull-and-remainder polar defined | checks.py (edge 1/φ); #48 Thm 4; keyed_polar_exact.py frame | PASS |
 | 64 | Tricap volume cited to #48 [1], DICTO DOI 10.5281/zenodo.23596362 | #48 §2 "(3 − √5)/24" | PASS |
 | 65 | Thm B (i) note: elementary; not found in the sources searched; likely known (Wenninger [11]) | wording | done |
+
+## Version 3 draft (21 November 2026): numbers added, checked against studies/2026-11-21-gaps-batch-b (commit 6d46ee1), data/gnomon_open.json and gnomon_open-checks.txt (16 PASS, 0 FAIL; log FINAL ok)
+
+| # | Number in the paper | Where | Source | Result |
+|---|---|---|---|---|
+| V3-1 | 23 windows; 11 single-point (lo = hi) | Prop. 1, Table 5 | json a.windows with window = true (23), lo == hi (11) | PASS |
+| V3-2 | every window's exact ends: 3/4 + √5/4 = φ²/2; 13/3 − 22√5/15; 1/2 + √5/2 = φ; 2/3 + √5/3 = φ³/3; 11/6 + 5√5/6 = φ⁵/3; 11/18 + 5√5/18 = φ⁵/9; 11/9 + 5√5/9 = 2φ⁵/9; 4/3 + 2√5/3 = 2φ³/3; 3/2 − √5/6 = (9 − √5)/6; 1 + √5; 5/3 + 4√5/5; 31/19 + 14√5/19; 720/361 + 327√5/361; 423/218 + 207√5/218; 29/18 + 13√5/18; 3/2 + 61√5/90; 4/3 + 3√5/5; 2; 3/2 + √5/2 = φ²; hi 2 + √5 = φ³ taken as s < φ³ | Table 5 | json lo, hi strings; φ-power forms by hand (φ⁵ = (11 + 5√5)/2) | PASS |
+| V3-3 | steps column (1, 8, 11, 1, 7, 10, 6, 9, 10, 11, 5, 8, 10, 4, 7, 2, 3, 6, 8, 2, 3, 5, 4) | Table 5 | json steps_X_to_sX | PASS |
+| V3-4 | decimals in Table 5 | Table 5 | json lo_f, hi_f (rounded to 4 places) | PASS |
+| V3-5 | D = (3/2)·D′; D′ has one window, s ≤ φ²/2 ≈ 1.309 < 3/2 | Prop. 1 (iii) | json (D′ appears once); #35 D′ at 2/3 of D | PASS |
+| V3-6 | controls: I·φ³ = φ³I; 11 nestings; 120 symmetries; RT ⊄ TI; s·I ⊂ star iff s ≤ 1; D′ ⊂ star only for s ≤ 9/4 − 3√5/4 | Prop. 1 proof | checks lines 2–9 | PASS |
+| V3-7 | A(h) = π/2 + 2 atan h, B(h) = π − arccos(1/(1 + h²)); A(1) = π, B(1) = 2π/3, A(1/2) = B(1/2) = arccos(−4/5) | Prop. 2 | checks line 10 | PASS |
+| V3-8 | six heights 2 − √3, √3 − 1, 0.16015, 0.22734, 0.77266, 0.83985; for each, both pieces have a failing edge type | Prop. 2 (i) | json b.candidates (completable flags) | PASS |
+| V3-9 | Tricap angles arccos(−1/√5) = 116.565°, atan(2/φ²) = 37.377°, cos² = 1/3 + 2√5/15 | Prop. 2 (ii) | json tricaps.tricap_exact | PASS |
+| V3-10 | one combination A(1/φ) + A(1/φ²) + 2·Tricap2 = 2π; apex edges B never close; nearest miss 0.51° | Prop. 2 (ii) | json tricaps.combos, near_misses (0.5075°), polar_edges_completable | PASS |
+| V3-11 | golden angles 153.43°, 136.35°, 131.81°, 150.77° | Prop. 2 (ii) | json tricaps.angles_deg | PASS |
+| V3-12 | checks 16 + 119 = 135 | abstract, Appendix | gnomon_open-checks.txt | PASS |
