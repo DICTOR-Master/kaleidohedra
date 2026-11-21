@@ -117,3 +117,11 @@ figure('fullerene-amber-cell-scutoids.png', 'Fullerene-Amber Cell: 80 scutoids',
        [(s('amber', 0), 'complete', 'the mould filled · outline of the mould'), (s('amber', 1), 'exploded', 'all 80 pieces round the Fullerene Star'),
         (s('amber', 2), 'exploded, cutaway', 'the 25 pieces facing the viewer left out')],
        KL + [(VIO, 'pyramids'), (PEARL, 'Fullerene Star'), ((255, 255, 255), 'Y vertex')], cell=720)
+
+# ---- the OG beside the Fullerene Star (scenes5.py) ----
+SAND = (214, 180, 106)
+figure('og-vs-fullerene-star.png', 'The OG and the Fullerene Star on the same 80 planes',
+       'The 20 hexagon planes of the truncated icosahedron and the 60 face planes of a pentakis dodecahedron · same frame, same viewpoint · exact data: study fullerene-star-og',
+       [(s('og', 0), 'OG', '60 kites + 20 hexagons · 102 corners · convex · pentakis corners cut off'),
+        (s('og', 1), 'Fullerene Star', '60 triangles + 20 hexagons · 72 corners · non-convex · nothing cut')],
+       [(SAND, 'kites'), (PEARL, 'hexagons'), (VIO, 'pyramid triangles')], cell=720)
