@@ -59,3 +59,7 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
   Helpers: boundary point of an open set in a connected set; homogeneity and continuity of the
   farthest-corner function; planes through 0 have volume 0; cells of fixed corners only grow.
   Build ok, no sorry.
+* M3 (2026-11-22) `Alexandrov/Uniqueness.lean`: **Step 1 done.** `alexandrov_uniqueness`: same positive
+  curvature at every corner ⇒ r' = c • r with c > 0 (scale r' by the largest ratio r'_i/r_i, then the
+  comparison lemma rules out any strict ray). Full `lake build` ok (log `logs/build-M3.log`, FINAL ok);
+  0 sorry; axioms of `alexandrov_uniqueness`: propext, Classical.choice, Quot.sound; 456 lines.
