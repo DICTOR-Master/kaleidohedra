@@ -1,0 +1,12 @@
+sum e_i e_i'^T = 0 (exact); sum e_i e_i^T = 5+1r5 I; |e|^2 = 5/2+1/2r5
+volumes (edge |e|): prolate 3+1r5 = 5.236068, oblate 1+1r5 = 3.236068, ratio 1/2+1/2r5; prolate triples 10
+window frequencies: prolate : oblate = 1/2+1/2r5 = 1.618033989 (phi = 1.618033989); irrational: True
+patch: tile centres within 4 edges = 7.6085; search box |n_i| <= 5
+tiles selected: 402  (P 278, O 124)  (1.5s)
+faces 1414: shared 998 (all from opposite sides), boundary 416, bad 0
+edges 1646: interior 814, dihedral sum != 360 deg at 0; dihedrals (x36 deg) used: [1, 2, 3, 4]
+volume: tiles 1856.899327, enclosed by boundary 1856.899327, difference 0 (exact 0)
+vertices 635: interior 217, max |solid angle sum - 4pi| = 3.55e-15
+orientations present: P 10/10, O 10/10
+shared faces by cell pair: {'OP': 618, 'OO': 61, 'PP': 319}
+PATCH OK  tiles 402  (2.4s)

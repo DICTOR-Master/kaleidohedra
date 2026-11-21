@@ -1,0 +1,137 @@
+{
+ "solid": "icosahedron",
+ "s0": "3",
+ "s0_float": 3.0,
+ "n_faces": 20,
+ "contact_edges": 6,
+ "contact_faces": 0,
+ "lattice": "125",
+ "factor": "1",
+ "s": 3.0,
+ "seeds": "cproj",
+ "tau": "1/2",
+ "contact_vertices": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11
+ ],
+ "inner_pairs": 30,
+ "outer_pairs": 42,
+ "shared_pairs": 30,
+ "fins_cancelled": 12,
+ "volume_gap": "0",
+ "resin": 3.0543729868748777,
+ "n_Y": 12,
+ "persistent": 30,
+ "clusters": [
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ]
+ ],
+ "problems": [
+  [
+   0,
+   "self-intersecting surface"
+  ],
+  [
+   3,
+   "self-intersecting surface"
+  ],
+  [
+   6,
+   "self-intersecting surface"
+  ],
+  [
+   8,
+   "self-intersecting surface"
+  ],
+  [
+   10,
+   "self-intersecting surface"
+  ],
+  [
+   12,
+   "self-intersecting surface"
+  ],
+  [
+   13,
+   "self-intersecting surface"
+  ],
+  [
+   14,
+   "self-intersecting surface"
+  ],
+  [
+   15,
+   "self-intersecting surface"
+  ],
+  [
+   16,
+   "self-intersecting surface"
+  ],
+  [
+   17,
+   "self-intersecting surface"
+  ],
+  [
+   18,
+   "self-intersecting surface"
+  ]
+ ],
+ "valid": false,
+ "why": "partition checks failed: [(0, 'self-intersecting surface'), (3, 'self-intersecting surface'), (6, 'self-intersecting surface'), (8, 'self-intersecting surface')], volume ok True"
+}

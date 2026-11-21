@@ -1,0 +1,12 @@
+solid orientation: as built
+stabiliser of the mould in I_h: order 12
+=== amber  icosahedron  125  s0 = 3 = 3.000000  s = 1 s0 = 3.000000  seeds cproj  tau 1/2
+solid vertices on the mould surface: 12; edges on it 6; faces on it 0
+mould faces 6  (0.5s)
+outer pattern computed (0.8s); faces with an empty outer cell: []
+adjacency: inner pairs 30, outer pairs 42, shared 30, outer-only 12, inner-only 0
+pinched inner edges: 0 {}
+clusters 12: (inner, outer) vertex counts {(1, 2): 12}; Y vertices 12; persistent inner edges 30/30
+volume sum - resin = 0 (exact 0); resin = 3.054373; problems 12: [(0, 'self-intersecting surface'), (3, 'self-intersecting surface'), (6, 'self-intersecting surface'), (8, 'self-intersecting surface'), (10, 'self-intersecting surface'), (12, 'self-intersecting surface'), (13, 'self-intersecting surface'), (14, 'self-intersecting surface'), (15, 'self-intersecting surface'), (16, 'self-intersecting surface'), (17, 'self-intersecting surface'), (18, 'self-intersecting surface')]
+RESULT 125 1 cproj: valid=False  partition checks failed: [(0, 'self-intersecting surface'), (3, 'self-intersecting surface'), (6, 'self-intersecting surface'), (8, 'self-intersecting surface')], volume ok True
+(3.7s)

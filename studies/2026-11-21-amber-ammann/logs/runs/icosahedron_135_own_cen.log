@@ -1,0 +1,23 @@
+solid orientation: as built
+stabiliser of the mould in I_h: order 12
+=== amber  icosahedron  135  s0 = 3/2+3/2r5 = 4.854102  s = 1 s0 = 4.854102  seeds cen  tau 1/2
+solid vertices on the mould surface: 6; edges on it 6; faces on it 0
+mould faces 6  (0.7s)
+outer pattern computed (0.9s); faces with an empty outer cell: []
+adjacency: inner pairs 30, outer pairs 30, shared 30, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 12: (inner, outer) vertex counts {(1, 1): 12}; Y vertices 0; persistent inner edges 30/30
+sampling cross-check: 6000 points (5045 in the resin), points not covered exactly once: 0, max winding rounding 1.51e-14
+volume sum - resin = 0 (exact 0); resin = 11.526509; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 20, scutoid pieces 0, kinds 3 (stabiliser orbit members congruent: True); 157.7612 present: False
+  kind tri face 0 (12 per cell): facets 6 vertices 7 Y 0 scutoid False vol 0.924181  C1-side neighbours [3, 9, 12] mould-side [3, 9, 12]
+     angles at C1 edges: [110.9052]
+     all dihedrals: 36.0 [1/5pi]; 72.0 [2/5pi]; 90.0 [1/2pi]; 110.9051574 [1/4pi + 1beta]; 120.0 [2/3pi]; 144.0 [4/5pi]
+  kind tri face 2 (6 per cell): facets 4 vertices 4 Y 0 scutoid False vol 0.067418  C1-side neighbours [3, 4, 10] mould-side [3, 4, 10]
+     angles at C1 edges: [20.9052, 110.9052]
+     all dihedrals: 20.90515745 [-1/4pi + 1beta]; 60.0 [1/3pi]; 72.0 [2/5pi]; 110.9051574 [1/4pi + 1beta]
+  kind tri face 10 (2 per cell): facets 4 vertices 4 Y 0 scutoid False vol 0.015915  C1-side neighbours [2, 12, 13] mould-side [2, 12, 13]
+     angles at C1 edges: [20.9052]
+     all dihedrals: 20.90515745 [-1/4pi + 1beta]; 144.0 [4/5pi]
+RESULT 135 1 cen: valid=True  partition; scutoid pieces 0; kinds 3; Y vertices 0; 157.7612 present False
+(2.1s)

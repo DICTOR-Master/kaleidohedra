@@ -1,0 +1,12 @@
+solid orientation: reflected y<->z
+stabiliser of the mould in I_h: order 12
+=== amber  C2  012  s0 = 21/2+9/2r5 = 20.562306  s = S0 s0 = 20.562306  seeds cproj  tau 1/2
+solid vertices on the mould surface: 8; edges on it 0; faces on it 0
+mould faces 6  (1.4s)
+outer pattern computed (4.4s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 198, shared 120, outer-only 78, inner-only 30
+pinched inner edges: 30 {('dec', 'dec'): 30}
+clusters 50: (inner, outer) vertex counts {(1, 1): 20, (2, 3): 12, (2, 4): 18}; Y vertices 30; persistent inner edges 120/150
+volume sum - resin = 0 (exact 0); resin = 954.782479; problems 12: [(15, 'self-intersecting surface'), (16, 'self-intersecting surface'), (22, 'self-intersecting surface'), (23, 'self-intersecting surface'), (24, 'self-intersecting surface'), (26, 'self-intersecting surface'), (30, 'self-intersecting surface'), (31, 'self-intersecting surface'), (39, 'self-intersecting surface'), (41, 'self-intersecting surface'), (66, 'self-intersecting surface'), (68, 'self-intersecting surface')]
+RESULT 012 S0 cproj: valid=False  partition checks failed: [(15, 'self-intersecting surface'), (16, 'self-intersecting surface'), (22, 'self-intersecting surface'), (23, 'self-intersecting surface')], volume ok True
+(18.6s)

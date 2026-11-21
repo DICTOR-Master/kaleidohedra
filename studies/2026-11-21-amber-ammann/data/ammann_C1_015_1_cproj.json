@@ -1,0 +1,377 @@
+{
+ "solid": "C1",
+ "s0": "15/2+3/2r5",
+ "s0_float": 10.854101966249685,
+ "n_faces": 80,
+ "contact_edges": 0,
+ "contact_faces": 0,
+ "lattice": "015",
+ "factor": "1",
+ "s": 10.854101966249685,
+ "seeds": "cproj",
+ "tau": "1/2",
+ "contact_vertices": [
+  60,
+  61,
+  62,
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69,
+  70,
+  71
+ ],
+ "inner_pairs": 150,
+ "outer_pairs": 210,
+ "shared_pairs": 138,
+ "fins_cancelled": 28,
+ "volume_gap": "0",
+ "resin": 185.03288904374108,
+ "n_Y": 48,
+ "persistent": 138,
+ "clusters": [
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   2,
+   4
+  ]
+ ],
+ "problems": [
+  [
+   21,
+   "self-intersecting surface"
+  ],
+  [
+   22,
+   "self-intersecting surface"
+  ],
+  [
+   25,
+   "self-intersecting surface"
+  ],
+  [
+   29,
+   "self-intersecting surface"
+  ],
+  [
+   30,
+   "self-intersecting surface"
+  ],
+  [
+   31,
+   "self-intersecting surface"
+  ],
+  [
+   37,
+   "self-intersecting surface"
+  ],
+  [
+   38,
+   "self-intersecting surface"
+  ],
+  [
+   40,
+   "self-intersecting surface"
+  ],
+  [
+   44,
+   "self-intersecting surface"
+  ],
+  [
+   45,
+   "self-intersecting surface"
+  ],
+  [
+   46,
+   "self-intersecting surface"
+  ],
+  [
+   51,
+   "self-intersecting surface"
+  ],
+  [
+   52,
+   "self-intersecting surface"
+  ],
+  [
+   55,
+   "self-intersecting surface"
+  ],
+  [
+   59,
+   "self-intersecting surface"
+  ],
+  [
+   63,
+   "self-intersecting surface"
+  ],
+  [
+   64,
+   "self-intersecting surface"
+  ],
+  [
+   67,
+   "self-intersecting surface"
+  ],
+  [
+   68,
+   "self-intersecting surface"
+  ],
+  [
+   70,
+   "self-intersecting surface"
+  ],
+  [
+   74,
+   "self-intersecting surface"
+  ],
+  [
+   78,
+   "self-intersecting surface"
+  ],
+  [
+   79,
+   "self-intersecting surface"
+  ]
+ ],
+ "valid": false,
+ "why": "partition checks failed: [(21, 'self-intersecting surface'), (22, 'self-intersecting surface'), (25, 'self-intersecting surface'), (29, 'self-intersecting surface')], volume ok True"
+}
