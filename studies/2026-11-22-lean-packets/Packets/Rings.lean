@@ -5,7 +5,7 @@ Lean formalization of DICTO's paper #117 (Zenodo 10.5281/zenodo.24411660). Part 
 * Table 1 of the paper: the dihedral angles of the pieces (`pyrD`, `ti`, `pyrI`, `td`, `dod`, `ico`, `tid`, `toA`,
   `tcoA`), each with its closed form (`ti_eq`, …). The edge counts of Table 1 play no part and are not recorded.
 * `ring_weight_le`: if the angles of a ring all have coordinates with q + u·a + v·b ≥ 0 and the ring adds up to
-  2π or π, then every angle of the ring has q + u·a + v·b ≤ 2 (Lemma 3 makes the coordinates add up exactly).
+  2π, then every angle of the ring has q + u·a + v·b ≤ 2 (Lemma 3 makes the coordinates add up exactly).
 * `theorem4c_lead1`, `theorem4c_lead2`: **Theorem 4 (c)**: for each pair alone, a ring of its angles whose
   irrational parts cancel and which uses at least one irrational angle sums to at least 3π; 3π is attained
   (`ring3pi_lead1`, `ring3pi_lead2`); so no such ring is 2π or π (`no_ring_lead1`, `no_ring_lead2`).
@@ -88,37 +88,33 @@ theorem tcoA_eq : tcoA = [π - γ, 3 * π / 4, π / 2 + γ] := by
 /-- `θ` has coordinates of nonnegative weight for `(u, v)`. -/
 def Light (u v : ℚ) (θ : ℝ) : Prop := ∃ x : Co, θ = x.val ∧ 0 ≤ x.w u v
 
-lemma light_sum {u v : ℚ} : ∀ L : List ℝ, (∀ θ ∈ L, Light u v θ) → Light u v L.sum
-  | [], _ => ⟨⟨0, 0, 0, 0⟩, by simp [Co.val], by simp [Co.w]⟩
-  | θ :: L, h => by
-    obtain ⟨x, hx, hx0⟩ := h θ (by simp)
-    obtain ⟨y, hy, hy0⟩ := light_sum L (fun φ hφ => h φ (by simp [hφ]))
-    refine ⟨⟨x.q + y.q, x.a + y.a, x.b + y.b, x.c + y.c⟩, ?_, ?_⟩
-    · rw [List.sum_cons, hx, hy]; simp only [Co.val]; push_cast; ring
-    · have : Co.w u v ⟨x.q + y.q, x.a + y.a, x.b + y.b, x.c + y.c⟩ = x.w u v + y.w u v := by
-        simp only [Co.w]; ring
-      rw [this]; linarith
+lemma light_zero {u v : ℚ} : Light u v 0 := ⟨⟨0, 0, 0, 0⟩, by simp [Co.val], by simp [Co.w]⟩
 
-/-- **The ring bound.** If every angle of a ring is `Light u v` and the ring adds up to `2π` or `π`, then every
-angle of the ring has weight at most 2. -/
-theorem ring_weight_le {u v : ℚ} {L : List ℝ} (hL : ∀ θ ∈ L, Light u v θ)
-    (hsum : L.sum = 2 * π ∨ L.sum = π) {x : Co} (hx : x.val ∈ L) : x.w u v ≤ 2 := by
-  obtain ⟨s, t, rfl⟩ := List.append_of_mem hx
-  obtain ⟨y, hy, hy0⟩ := light_sum (s ++ t) (fun θ hθ => hL θ (by simp at hθ ⊢; tauto))
-  have hs : (s ++ x.val :: t).sum = x.val + (s ++ t).sum := by simp [List.sum_append]; ring
-  rw [hs, hy] at hsum
-  have key : ∀ k : ℚ, x.val + y.val = k * π → x.q + y.q = k ∧ x.a + y.a = 0 ∧ x.b + y.b = 0 := by
-    intro k hk
-    obtain ⟨h1, h2, h3, -⟩ := lemma3 (x.q + y.q - k) (x.a + y.a) (x.b + y.b) (x.c + y.c) (by
-      simp only [Co.val] at hk; push_cast; linear_combination hk)
-    exact ⟨by linarith, h2, h3⟩
+lemma Light.add {u v : ℚ} {θ φ : ℝ} (h1 : Light u v θ) (h2 : Light u v φ) : Light u v (θ + φ) := by
+  obtain ⟨x, hx, hx0⟩ := h1
+  obtain ⟨y, hy, hy0⟩ := h2
+  refine ⟨⟨x.q + y.q, x.a + y.a, x.b + y.b, x.c + y.c⟩, ?_, ?_⟩
+  · rw [hx, hy]; simp only [Co.val]; push_cast; ring
+  · have : Co.w u v ⟨x.q + y.q, x.a + y.a, x.b + y.b, x.c + y.c⟩ = x.w u v + y.w u v := by
+      simp only [Co.w]; ring
+    rw [this]; linarith
+
+lemma light_sum {ι : Type*} {u v : ℚ} (J : Finset ι) (ω : ι → ℝ) (h : ∀ j ∈ J, Light u v (ω j)) :
+    Light u v (∑ j ∈ J, ω j) :=
+  Finset.sum_induction ω (Light u v) (fun _ _ h1 h2 => h1.add h2) light_zero h
+
+/-- **The ring bound.** If every angle `ω j` of a ring `J` is `Light u v` and the ring adds up to `2π`, then
+every angle of the ring has weight at most 2. -/
+theorem ring_weight_le {ι : Type*} {u v : ℚ} {J : Finset ι} {ω : ι → ℝ} (hL : ∀ j ∈ J, Light u v (ω j))
+    (hsum : ∑ j ∈ J, ω j = 2 * π) {t : ι} (ht : t ∈ J) {x : Co} (hx : ω t = x.val) : x.w u v ≤ 2 := by
+  classical
+  obtain ⟨y, hy, hy0⟩ := light_sum (J.erase t) ω (fun j hj => hL j (Finset.mem_of_mem_erase hj))
+  rw [← Finset.add_sum_erase J ω ht, hx, hy] at hsum
+  obtain ⟨h1, h2, h3, -⟩ := lemma3 (x.q + y.q - 2) (x.a + y.a) (x.b + y.b) (x.c + y.c) (by
+    simp only [Co.val] at hsum; push_cast; linear_combination hsum)
   have hw : x.w u v + y.w u v = (x.q + y.q) + u * (x.a + y.a) + v * (x.b + y.b) := by
     simp only [Co.w]; ring
-  rcases hsum with h | h
-  · obtain ⟨e1, e2, e3⟩ := key 2 (by rw [h]; push_cast; ring)
-    rw [e1, e2, e3, mul_zero, mul_zero] at hw; linarith
-  · obtain ⟨e1, e2, e3⟩ := key 1 (by rw [h]; push_cast; ring)
-    rw [e1, e2, e3, mul_zero, mul_zero] at hw; linarith
+  rw [h2, h3, mul_zero, mul_zero] at hw; linarith
 
 /-! ### Theorem 4 (c): the pairs alone need 3π -/
 

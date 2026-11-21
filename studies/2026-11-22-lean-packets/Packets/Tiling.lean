@@ -1,15 +1,14 @@
 /-
 Lean formalization of DICTO's paper #117 (Zenodo 10.5281/zenodo.24411660). Part 3: Theorem 4 (a) and (b).
 
-The geometric step, Lemma 2 of the paper (angles round an edge; cited there from DICTO's #44, Lemma 1, and the
-edge-counting step behind Debrunner's theorem), is **not** formalised here. It is taken as the hypothesis
-`LocalAngleCondition`: each tile `t` comes with the list `ang t` of its dihedral angles, and for every dihedral
-angle `θ` of every tile there is a ring, a finite list of tiles each with one of its own dihedral angles, that
-contains `(t, θ)` and whose angles add up to `2π` or to `π`. Lemma 2 gives this at a generic point of each edge
-of a locally finite tiling by convex polyhedra. Scales and mirror images do not change dihedral angles, so they
-are covered.
+Here the tiles enter only through the ring condition `LocalAngleCondition`: each tile `t` comes with the list
+`ang t` of its dihedral angles, and for every dihedral angle `θ` of every tile there is a ring, a finite set of
+tiles `J ∋ t` with an angle `ω j` for each, `ω t = θ`, where each `ω j` is a dihedral angle of `j`, or `π` (a tile
+with the point inside a face), or `2π`, and the angles add up to `2π`. This is Lemma 2 of the paper; it is
+proved for tilings by convex polytopes in `Packets/Lemma2.lean` (`localAngleCondition_of_tiling`).
 
-* `theorem4a`: **Theorem 4 (a).** If every tile is a dodecahedron centre pyramid, a truncated icosahedron, a
+* `theorem4a`: **Theorem 4 (a)**, from the ring condition. If every tile is a dodecahedron centre pyramid, a
+  truncated icosahedron, a
   dodecahedron, an icosahedron, a truncated icosidodecahedron, a truncated octahedron, a truncated cuboctahedron,
   or a convex piece whose dihedral angles are all nonnegative rational multiples of π, and the local angle
   condition holds, then no tile is a dodecahedron centre pyramid or a truncated icosahedron (nor a dodecahedron,
@@ -33,10 +32,10 @@ open Real
 
 namespace Packets
 
-/-- **The local angle condition** (consequence of Lemma 2 of the paper; hypothesis, not proved here). -/
+/-- **The local angle condition** (Lemma 2 of the paper). -/
 def LocalAngleCondition {ι : Type*} (ang : ι → List ℝ) : Prop :=
-  ∀ t, ∀ θ ∈ ang t, ∃ R : List (ι × ℝ), (t, θ) ∈ R ∧ (∀ p ∈ R, p.2 ∈ ang p.1) ∧
-    ((R.map Prod.snd).sum = 2 * π ∨ (R.map Prod.snd).sum = π)
+  ∀ t, ∀ θ ∈ ang t, ∃ (J : Finset ι) (ω : ι → ℝ), t ∈ J ∧ ω t = θ ∧
+    (∀ j ∈ J, ω j ∈ ang j ∨ ω j = π ∨ ω j = 2 * π) ∧ ∑ j ∈ J, ω j = 2 * π
 
 /-- A piece whose dihedral angles are all nonnegative rational multiples of π. -/
 def RationalPiece (l : List ℝ) : Prop := ∀ θ ∈ l, ∃ q : ℚ, 0 ≤ q ∧ θ = q * π
@@ -54,11 +53,12 @@ lemma light_of_co {P : List Co} {u v : ℚ} (h : ∀ x ∈ P, 0 ≤ x.w u v) : �
 /-- **Pruning.** If every angle of every tile is `Light u v`, every angle of every tile has weight at most 2. -/
 theorem prune {ι : Type*} {ang : ι → List ℝ} (hL : LocalAngleCondition ang) {u v : ℚ}
     (hg : ∀ t, ∀ θ ∈ ang t, Light u v θ) (t : ι) {x : Co} (hx : x.val ∈ ang t) : x.w u v ≤ 2 := by
-  obtain ⟨R, hR, hRang, hsum⟩ := hL t x.val hx
-  refine ring_weight_le (L := R.map Prod.snd) ?_ hsum (List.mem_map.2 ⟨(t, x.val), hR, rfl⟩)
-  intro θ hθ
-  obtain ⟨p, hp, rfl⟩ := List.mem_map.1 hθ
-  exact hg p.1 p.2 (hRang p hp)
+  obtain ⟨J, ω, htJ, hωt, hcl, hsum⟩ := hL t x.val hx
+  refine ring_weight_le (fun j hj => ?_) hsum htJ hωt
+  rcases hcl j hj with h | h | h
+  · exact hg j _ h
+  · rw [h]; exact ⟨⟨1, 0, 0, 0⟩, by simp [Co.val], by simp [Co.w]⟩
+  · rw [h]; exact ⟨⟨2, 0, 0, 0⟩, by simp [Co.val], by simp [Co.w]⟩
 
 lemma mem_val {P : List Co} {x : Co} (hx : x ∈ P) : x.val ∈ P.map Co.val := List.mem_map.2 ⟨x, hx, rfl⟩
 

@@ -8,15 +8,21 @@ mirrors its sources (no `.lake`). Toolchain and Mathlib pin as the Dehn Canon (`
 - Study, not published; no public repository (needs DICTO's approval).
 - Built clean from scratch on the compute host: `lake build`, no `sorry`, axioms only propext, Classical.choice,
   Quot.sound (logs/build.log).
-- Lemma 2 (angles round an edge, cited from #44) is a hypothesis (`LocalAngleCondition`), not proved here.
-- Table 1's angles are entered in their closed forms; their derivation from the solids' coordinates is not formalized.
+- Lemma 2 is proved (22 Nov, second step): Theorem 4 (a), (b) hold for every tiling of 3-space by convex polytopes
+  (`ConvexTiling`: bounded, finitely many half-spaces, interior points, cover, disjoint interiors, locally finite;
+  not necessarily face-to-face).
+- Remaining hypothesis: `HasAngles` — each tile's dihedral angles, read from the set at its edge points, are those of
+  its row of Table 1. Not formalized: the derivation of Table 1 from the solids' coordinates, and the invariance of
+  `wedgeAngle` under motions/reflections/scalings (so copies are taken with their angles as given).
 
 ## What is proved
 | file | result | paper |
 |---|---|---|
 | Packets/Angles.lean | `lemma3`: π, α, β, γ independent over ℚ; exact cos/sin of 2α, 4α, 2β, 2γ; `two_γ_eq` | Lemma 3 |
 | Packets/Rings.lean | Table 1 as rational coordinates (`ti_eq`, …); `ring_weight_le`; `theorem4c_lead1/2`, `ring3pi_lead1/2`, `no_ring_lead1/2` | Theorem 4 (c) |
-| Packets/Tiling.lean | `theorem4a`, `theorem4b` from `LocalAngleCondition` | Theorem 4 (a), (b) |
+| Packets/Tiling.lean | `theorem4a`, `theorem4b` from the ring condition `LocalAngleCondition` | Theorem 4 (a), (b) |
+| Packets/Cones.lean | Canon's set-defined angles (`tcone`, `wedgeAngle`); `wedge_sum`, `face_angle`, `local_sol` | Lemma 2, local part |
+| Packets/Lemma2.lean | `lemma2`; `localAngleCondition_of_tiling`; `theorem4a_tiling`, `theorem4b_tiling` | Lemma 2, Theorem 4 |
 
 Method of Lemma 3: the field argument of the Dehn Canon's study 8 (credited in the file), with Niven's theorem.
 Theorem 4 (a), (b): each of the paper's three steps is one weight q + u·a + v·b, nonnegative on every angle still
@@ -24,5 +30,5 @@ possible and above 2 on an angle of the piece removed; the ring bound (via Lemma
 order removes the dodecahedron in step 1 of (b), so the parity case of the paper's step 2 is not needed.
 
 ## LEADS
-- Formalize Lemma 2 (geometric edge ring), possibly reusing the Canon's `tcone`/`wedgeAngle` framework.
+- Prove `wedgeAngle` invariant under isometries and scalings (copies of a piece have its angles).
 - Derive Table 1's angles from coordinates (arccos forms) to tie the pieces to the solids.
