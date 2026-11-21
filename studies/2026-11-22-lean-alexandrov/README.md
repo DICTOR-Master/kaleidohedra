@@ -53,3 +53,9 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
 * M1 (2026-11-22) `Alexandrov/Basic.lean`: definitions; normal cone of the ray polytope at a corner =
   its cell (`normalCone_rayPolytope`); curvature = 3·volume(cell ∩ ball); curvature unchanged by
   scaling (`curvature_smul`); cells closed; corners on distinct rays are distinct. Build ok, no sorry.
+* M2 (2026-11-22) `Alexandrov/Comparison.lean`: the comparison lemma `exists_cell_volume_lt`
+  (maximum principle): if ρ ≤ r with equality on a nonempty set I and strict inequality on a nonempty
+  set J, and every cell of r has positive volume, some corner in I has a strictly larger cell for ρ.
+  Helpers: boundary point of an open set in a connected set; homogeneity and continuity of the
+  farthest-corner function; planes through 0 have volume 0; cells of fixed corners only grow.
+  Build ok, no sorry.
