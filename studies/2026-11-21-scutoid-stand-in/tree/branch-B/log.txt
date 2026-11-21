@@ -1,0 +1,126 @@
+== frame
+  [pass] hexagon regular, side 1 
+  [pass] legs of the end triangle = sqrt3 phi/2 
+  [pass] hexagon planar and at dihedral t' = beta - pi/4 to the end face 
+  [pass] height of the other end = sqrt3 sin t' = 1/phi exactly (R0, R1 at z = 1/phi) 
+  [pass] (sympy) sqrt3 sin(beta-pi/4) - 1/phi == 0 
+== forced faces at P0, P1 (standard scutoid: end vertices of degree 3)
+  end triangle | F0 at P0Pa: 157.761244 deg; nearest alphabet item 7/8pi+0beta = 157.500000 deg, gap 0.261244 deg
+    PSLQ in (pi, alpha, beta, gamma), coeffs <= 2000: none
+  hexagon | F0 at P0Q0: 24.094843 deg; nearest alphabet item 1/2pi-1beta = 24.094843 deg, gap 0.000000 deg
+    PSLQ in (pi, alpha, beta, gamma), coeffs <= 2000: ['1/2', '0', '-1', '0']
+  exact |cos| of the F0 plane against the end plane: sqrt(3*sqrt(5) + 7)/4  (= 0.925614793411)
+  [pass] exact: interior dihedral end|F0 is obtuse with cos = -sqrt(7+3sqrt5)/4 < -1/2, so on a C1 pyramid side-side edge 2pi/3 + 2 x (end|F0) > 2pi (two K on adjacent spike triangles overlap, for every g) 
+== scan g = dihedral(hexagon, G0) over the alphabet (0 < g < pi)
+  g =   20.9052 rejected: end face is not the spike triangle
+  g =   65.9052 rejected: top is a triangle
+  g =  110.9052 rejected: top is a triangle
+  g = 1/2pi+1beta       155.9052  10 vertices, 15 edges, Y = 2, top 5-gon      score 3  (1)1 (2)1 (3)1 (4)0  ring-fails 0  overlap C1 0.0000 K-K 0.6180
+  g =   24.0948 rejected: end face is not the spike triangle
+  g =   69.0948 rejected: top is a triangle
+  g =  114.0948 rejected: top is a triangle
+  g = 5/4pi-1beta       159.0948  10 vertices, 15 edges, Y = 2, top 5-gon      score 1  (1)1 (2)0 (3)0 (4)0  ring-fails 7  overlap C1 0.0000 K-K 0.6180
+  g =   90.0000 rejected: top is a triangle
+  g =   60.0000 rejected: top is a triangle
+  g =  120.0000 rejected: top is a triangle
+  g =   45.0000 rejected: top is a triangle
+  g =  135.0000 rejected: top is a triangle
+  g =   36.0000 rejected: top is a triangle
+  g =   72.0000 rejected: top is a triangle
+  g =  108.0000 rejected: top is a triangle
+  g = 4/5pi+0beta       144.0000  10 vertices, 15 edges, Y = 2, top 5-gon      score 1  (1)1 (2)0 (3)0 (4)0  ring-fails 9  overlap C1 0.0000 K-K 0.6180
+  g =   30.0000 rejected: end face is not the spike triangle
+  g = 5/6pi+0beta       150.0000  10 vertices, 15 edges, Y = 2, top 5-gon      score 1  (1)1 (2)0 (3)0 (4)0  ring-fails 5  overlap C1 0.0000 K-K 0.6180
+  g =   25.7143 rejected: end face is not the spike triangle
+  g =   51.4286 rejected: top is a triangle
+  g =   77.1429 rejected: top is a triangle
+  g =  102.8571 rejected: top is a triangle
+  g =  128.5714 rejected: top is a triangle
+  g = 6/7pi+0beta       154.2857  10 vertices, 15 edges, Y = 2, top 5-gon      score 1  (1)1 (2)0 (3)0 (4)0  ring-fails 9  overlap C1 0.0000 K-K 0.6180
+  g =   22.5000 rejected: end face is not the spike triangle
+  g =   67.5000 rejected: top is a triangle
+  g =  112.5000 rejected: top is a triangle
+  g = 7/8pi+0beta       157.5000  10 vertices, 15 edges, Y = 2, top 5-gon      score 1  (1)1 (2)0 (3)0 (4)0  ring-fails 5  overlap C1 0.0000 K-K 0.6180
+  g =   20.0000 rejected: end face is not the spike triangle
+  g =   40.0000 rejected: top is a triangle
+  g =   80.0000 rejected: top is a triangle
+  g =  100.0000 rejected: top is a triangle
+  g = 7/9pi+0beta       140.0000  10 vertices, 15 edges, Y = 2, top 5-gon      score 1  (1)1 (2)0 (3)0 (4)0  ring-fails 9  overlap C1 0.0000 K-K 0.6180
+  g = 8/9pi+0beta       160.0000  10 vertices, 15 edges, Y = 2, top 5-gon      score 1  (1)1 (2)0 (3)0 (4)0  ring-fails 9  overlap C1 0.0000 K-K 0.6180
+  g =   18.0000 rejected: end face is not the spike triangle
+  g =   54.0000 rejected: top is a triangle
+  g =  126.0000 rejected: top is a triangle
+  g = 9/10pi+0beta      162.0000  10 vertices, 15 edges, Y = 2, top 5-gon      score 1  (1)1 (2)0 (3)0 (4)0  ring-fails 9  overlap C1 0.0000 K-K 0.6180
+  g =   16.3636 rejected: end face is not the spike triangle
+  g =   32.7273 rejected: end face is not the spike triangle
+  g =   49.0909 rejected: top is a triangle
+  g =   65.4545 rejected: top is a triangle
+  g =   81.8182 rejected: top is a triangle
+  g =   98.1818 rejected: top is a triangle
+  g =  114.5455 rejected: top is a triangle
+  g =  130.9091 rejected: top is a triangle
+  g = 9/11pi+0beta      147.2727  10 vertices, 15 edges, Y = 2, top 5-gon      score 1  (1)1 (2)0 (3)0 (4)0  ring-fails 9  overlap C1 0.0000 K-K 0.6180
+  g = 10/11pi+0beta     163.6364  10 vertices, 15 edges, Y = 2, top 5-gon      score 1  (1)1 (2)0 (3)0 (4)0  ring-fails 9  overlap C1 0.0000 K-K 0.6180
+  g =   15.0000 rejected: end face is not the spike triangle
+  g =   75.0000 rejected: top is a triangle
+  g =  105.0000 rejected: top is a triangle
+  g = 11/12pi+0beta     165.0000  10 vertices, 15 edges, Y = 2, top 5-gon      score 1  (1)1 (2)0 (3)0 (4)0  ring-fails 9  overlap C1 0.0000 K-K 0.6180
+== best K
+{
+ "g_key": "1/2pi+1beta",
+ "g_deg": 155.9051574478893,
+ "combinatorics": "10 vertices, 15 edges, Y = 2, top 5-gon",
+ "score": "3",
+ "s1": true,
+ "s2": true,
+ "s3": true,
+ "s4": "False",
+ "ring_fail": [],
+ "dehn_coeffs": [
+  "0.0",
+  "3.11150763893e-61",
+  "0.0",
+  "-1.24460305557e-60",
+  "6.22301527786e-61"
+ ],
+ "basis": [
+  "pi",
+  "alpha",
+  "beta",
+  "gamma",
+  "theta1",
+  "theta2"
+ ],
+ "overlap_with_C1": 0.0,
+ "overlap_KK": 0.6180339887498949,
+ "KK_pair": [
+  0,
+  2
+ ]
+}
+   bottom(end triangle)  |hexagon                len                1.0     20.905157 deg  vec ['-1/4', '0', '1', '0', '0', '0']  res 0.0
+   bottom(end triangle)  |F0                     len   1.40125853844407    157.761244 deg  vec ['0', '0', '0', '0', '1', '0']  res 0.0
+   bottom(end triangle)  |F1                     len   1.40125853844407    157.761244 deg  vec ['0', '0', '0', '0', '1', '0']  res 0.0
+   top                   |hexagon                len                1.0    159.094843 deg  vec ['5/4', '0', '-1', '0', '0', '0']  res 0.0
+   top                   |F0                     len   2.80251707688815     22.238756 deg  vec ['1', '0', '0', '0', '-1', '0']  res 0.0
+   top                   |F1                     len   2.80251707688815     22.238756 deg  vec ['1', '0', '0', '0', '-1', '0']  res 0.0
+   top                   |G0                     len   1.40125853844407    157.761244 deg  vec ['0', '0', '0', '0', '1', '0']  res 3.11e-61
+   top                   |G1                     len   1.40125853844407    157.761244 deg  vec ['0', '0', '0', '0', '1', '0']  res 3.11e-61
+   hexagon               |F0                     len                1.0     24.094843 deg  vec ['1/2', '0', '-1', '0', '0', '0']  res 0.0
+   hexagon               |F1                     len                1.0     24.094843 deg  vec ['1/2', '0', '-1', '0', '0', '0']  res 0.0
+   hexagon               |G0                     len                1.0    155.905157 deg  vec ['1/2', '0', '1', '0', '0', '0']  res 0.0
+   hexagon               |G1                     len                1.0    155.905157 deg  vec ['1/2', '0', '1', '0', '0', '0']  res 0.0
+   F0                    |F1                     len    4.2809155470821    138.590378 deg  vec ['0', '0', '0', '0', '0', '1']  res 0.0
+   F0                    |G0                     len   2.14045777354105     41.409622 deg  vec ['1', '0', '0', '0', '0', '-1']  res 0.0
+   F1                    |G1                     len   2.14045777354105     41.409622 deg  vec ['1', '0', '0', '0', '0', '-1']  res 0.0
+   v ['-0.5', '0.0', '0.0']
+   v ['0.5', '0.0', '0.0']
+   v ['0.0', '1.30901699437495', '0.0']
+   v ['-0.5', '1.61803398874989', '0.618033988749895']
+   v ['0.5', '1.61803398874989', '0.618033988749895']
+   v ['0.0', '5.54508497187474', '0.618033988749895']
+   v ['-1.0', '2.92705098312484', '0.618033988749895']
+   v ['1.0', '2.92705098312484', '0.618033988749895']
+   v ['-1.0', '0.809016994374947', '0.309016994374947']
+   v ['1.0', '0.809016994374947', '0.309016994374947']
+FINAL ok

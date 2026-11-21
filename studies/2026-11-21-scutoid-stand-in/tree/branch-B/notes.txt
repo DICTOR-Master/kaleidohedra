@@ -1,0 +1,34 @@
+Scutoid stand-in, tree round 1, branch B (21 Nov 2026): the SPIKE TRIANGLE is the end face of K.
+Run: scripts/branchB.py on the compute host (mpmath 60 digits, sympy for the exact cosines, PSLQ for angle identification);
+output data/branchB.json, log.txt (ends FINAL ok).
+
+Construction (exact frame). End face z = 0 = the spike triangle P0 P1 Pa (base 1, legs sqrt3 phi/2, height h = sqrt(3phi^2-1)/2).
+Regular hexagon lateral face on P0P1 at the forced dihedral t' = beta - pi/4: Q0 = (-1, phi/2, 1/(2phi)), R0 = (-1/2, phi, 1/phi)
+and mirrors. Its far edge R0R1 fixes the other end at height sqrt3 sin t' = 1/phi exactly (sympy). Standard scutoid rule (each end
+vertex has degree 3) FORCES the face on each leg: F0 = plane(P0, Pa, Q0). Q0, Q1 are Y-junctions (hexagon, F0, G0); G0 turns about
+the line Q0R0 at g = dihedral(hexagon, G0), scanned over the whole alphabet (p pi + b beta, b = +-1, p in Z/4; b = 0, p rational,
+denominator <= 12, which covers data/rings.json). K = intersection of the 7 half-spaces.
+
+Forced angles. end|F0 = pi - arccos(sqrt(7+3sqrt5)/4) = 157.7612 deg: NOT in the alphabet (nearest 7pi/8, gap 0.2612 deg; no PSLQ
+relation in pi, alpha, beta, gamma with coefficients <= 2000). hexagon|F0 = pi/2 - beta = 24.0948 deg (in the alphabet).
+
+Scan (53 values of g in (0, pi)). 41 give no scutoid (top a triangle, or the end face cut), 12 give the same combinatorial type: 10 vertices,
+15 edges, 7 faces (end triangle, top pentagon, hexagon, F0, F1, G0, G1), two Y vertices Q0, Q1, all vertices of degree 3.
+
+Best K: g = pi/2 + beta (155.9052 deg). SCORE 3 of 4.
+ (1) pass: faces planar by construction, deviation < 1e-40; true scutoid (two Y vertices; end triangle -> top pentagon).
+ (2) pass: every edge ring closes with C1 + K dihedrals. Two new angles theta1 = 157.7612, theta2 = 138.5904 (F0|F1) occur only
+     with their partners pi - theta (top|F0 22.2388, F0|G0 41.4096), the scutoid pairing.
+ (3) pass: Dehn invariant of K is zero (coefficients of alpha, beta, gamma, theta1, theta2 all < 1e-59 at 60 digits; the theta
+     terms cancel by lengths: 2 x 1.4013 + 2 x 1.4013 = 2 x 2.8025 and 4.2809 = 2 x 2.1405), so C1 + nK has packet zero.
+ (4) FAIL, exact: by B1 every spike triangle carries a K, here as its end face. Two K on adjacent spike triangles of one pyramid
+     both put end|F0 on the shared leg: 2pi/3 + 2 x 157.7612 = 435.52 deg > 2pi (cos(end|F0) = -sqrt(7+3sqrt5)/4 < -1/2, sympy).
+     Independent of g. The SAT test of the 60 placed copies agrees: K-K overlap depth 0.6180 = 1/phi, no overlap with C1 (touching).
+ Other g: score 1 (only (1)); rings and packet fail because G0 brings an angle with no partner.
+Also: K is long (top vertex S at y = 5.545 = 4.236 beyond the spike apex), far outside one C1's spike.
+
+Verdict: the standard branch-B scutoid (end vertices of degree 3) cannot stand in: its forced leg face is too obtuse for the
+pyramid side-side edge, for every g. Not excluded: non-standard end vertices.
+NEXT EXPANSION: let P0 have degree 4 (an extra lateral face E0 on the hexagon edge P0Q0, touching the end face only at P0) so that
+the leg face F0 is free; the side-side ring then needs end|F0 <= 2pi/3, and 2pi/3 exactly closes it (C1 + K + K = 3 x 120 deg).
+Scan e = dihedral(hexagon, E0) and g over the alphabet with end|F0 = 2pi/3 and score again.
