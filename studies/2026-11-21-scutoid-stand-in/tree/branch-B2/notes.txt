@@ -1,0 +1,28 @@
+Scutoid stand-in, tree round 2, branch B2 (21 Nov 2026): branch B with an end corner of degree 4, folding in branch A's lemma A1.
+Run: scripts/stage1.py on the compute host (mpmath 60 digits, PSLQ), data/stage1.json, log.txt (ends FINAL ok).
+
+Why degree 4. Round 1 (branch B) and lemma A1 (branch A): if K is convex at the end corner P0 with degree 3, the leg face is forced to
+157.7612 deg and 2pi/3 + 2 x 157.7612 > 2pi at every pyramid side-side edge. So the leg face F0 is set free, with dihedral
+f = dihedral(end, F0) from the side-side ring completions: f = 2pi/3 (ring 120 + 120 + 120), or branch A's chiral pair 165 / 75 deg.
+P0 then has four faces: end triangle, F0 (on the leg P0Pa), E0 (on the hexagon edge P0Q0, turned by e = dihedral(hexagon, E0)), hexagon.
+
+Exact local fact. The vertex figure of K at P0 is a spherical quadrilateral with corners t' (end|hexagon, fixed), f, rho (F0|E0 along
+the edge d = F0 cap E0) and e. Fixing f and e fixes rho. Scanned: f in {2pi/3, 11pi/12, 5pi/12} x e over the alphabet (p pi + b beta,
+b = +-1, p in Z/4; b = 0, p rational with denominator <= 12) in (0, 2pi): 156 valid vertex figures (positive area, all corners matched
+at 1e-40).
+ - rho is in the alphabet in exactly 2 cases, both with f = 2pi/3: e = 7pi/4 - beta (249.09 deg) gives rho = 9pi/5 (324 deg), and
+   e = 9pi/4 - beta (339.09 deg) gives rho = 7pi/5 (252 deg) (PSLQ 5 rho = 9 pi and 5 rho = 7 pi, residual < 1e-50).
+   Both FAIL the ring at P0Q0: there K's hexagon is flush with the hexagon H' of the second C1 (forced wedge, B2), and P0Q0 is a reflex
+   edge of that C1 (3pi/4 + beta = 200.91 deg). The ring needs e <= 5pi/4 - beta = 159.09 deg; these e exceed it by pi/2 and pi.
+ - In all 53 cases with e <= 5pi/4 - beta (every f, including 165 and 75), rho is not in the alphabet (smallest gap 0.0092 deg) and
+   has no PSLQ relation in (pi, alpha, beta, gamma) with coefficients <= 500.
+
+Score. No full K was built: every candidate fails check (2) at its end corner P0 already, so (3) and (4) are not reached.
+Best score 1 of 4 ((1) planar: the local faces are planes; (2) fails first). The round-1 standard K (3 of 4) is still the best K.
+Scope: rho outside the alphabet is excluded by the round's rule (only ring-closing angles). It could still close a ring if another
+K edge carried c - rho exactly; that was not searched.
+
+Decisive fact: with end corners of degree 4, the side-side ring (f = 120, or 165/75) and the hexagon-edge ring (e <= 159.09) cannot both
+hold with the corner rho in the ring-closing set.
+NEXT EXPANSION: degree 5 at P0 (two faces between the hexagon and F0, one more free angle), or allow rho outside the alphabet and search
+for a K edge carrying its partner c - rho.
