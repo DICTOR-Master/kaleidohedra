@@ -66,11 +66,11 @@ KL = [(KIND[i], f'kind {i + 1}') for i in range(5)]
 figure('resin-c1.png', 'Fullerene Star', 'Twelve dodecahedron centre pyramids (violet) on the pentagons of the core; on the right pulled out along their axes',
        [(s('c1', 0), 'Fullerene Star', '20 hexagons, 60 triangles'), (s('c1', 1), 'pyramids pulled out', 'each along its own 5-fold axis')],
        [(PEARL, 'hexagon faces'), (VIO, 'pyramids')], cell=640)
-figure('resin-cell.png', 'One cell: Fullerene Star in its mould with 80 resin pieces',
+figure('resin-cell.png', 'The Fullerene-Amber Cell: the Fullerene Star in its mould with 80 resin pieces',
        'bcc lattice at its smallest scale s0; each piece sits on one face of the Fullerene Star (central division) · left: pulled apart from the centre, mould see-through and enlarged with the pull',
        [(s('cell', 0), 'pulled apart', '80 pieces, 5 kinds'), (s('cell', 1), 'together', 'the mould filled')],
        KL + [(VIO, 'pyramids'), (GLASS, 'mould')], cell=720)
-figure('resin-tiling.png', 'Cells together fill space',
+figure('resin-tiling.png', 'Fullerene-Amber Cells together fill space',
        'Six cells of the bcc lattice face to face; the front cell shows the Fullerene Star inside its see-through mould, the others their resin',
        [(s('tiling', 0), 'six cells', 'bcc translates at s0')], KL + [(VIO, 'pyramids')], cell=900)
 SUB = ['on a hexagon · 8 per cell', 'on a hexagon · 12 per cell', 'on a triangle · 24 per cell', 'on a triangle · 24 per cell',
@@ -82,7 +82,7 @@ figure('resin-kinds.png', 'Kinds 1–5', 'One piece of each kind, standing on it
 # ---- scutoid divisions, bcc mould at 6/5 s0 (scenes2.py) ----
 def sh(c, k): return tuple(int(round(x * (1 + k) if k < 0 else x + (255 - x) * k)) for x in c)
 FS = 'Fullerene Star'
-figure('scutoid-combi-cell.png', 'One cell cut by the combi method: 80 scutoids',
+figure('scutoid-combi-cell.png', 'One Fullerene-Amber Cell cut by the combi method: 80 scutoids',
        f'bcc mould at 6/5 s0, centroid seeds · every piece has a Y vertex · pulled apart from the centre, mould see-through and enlarged with the pull',
        [(s('combi_cell', 0), 'pulled apart', '80 pieces, 5 kinds, 30 Y vertices')], KL + [(VIO, 'pyramids'), (GLASS, 'mould')], cell=900)
 NB = ['6 → 3 neighbours · 8 per cell', '6 → 3 neighbours · 12 per cell', '3 → 5 neighbours · 24 per cell', '3 → 5 neighbours · 24 per cell',
@@ -101,12 +101,12 @@ figure('scutoid-skeleton-hexagons.png', f'The 12 hexagon scutoids round the {FS}
        'Exact straight skeleton, bcc mould at 6/5 s0 · kind 2 on the 12 hexagons of one orbit; the other 68 pieces left out · white dots: Y vertices',
        [(s('skeleton', 4), 'kind 2 × 12', f'on the {FS}')], [(KIND[1], 'kind 2'), (VIO, 'pyramids'), ((255, 255, 255), 'Y vertex')], cell=900)
 
-# ---- C2 (name to come) (scenes3.py) ----
-BLUE = (58, 112, 205); C2N = 'C2 (name to come)'
+# ---- Rollerball (scenes3.py) ----
+BLUE = (58, 112, 205); C2N = 'Rollerball'
 figure('c2.png', C2N, 'Truncated dodecahedron with a regular icosahedron centre pyramid (blue) on each of its 20 triangles (side edges = the icosahedron circumradius) · right: pyramids pulled out along their 3-fold axes',
        [(s('c2', 0), C2N, '12 decagons, 60 triangles'), (s('c2', 1), 'pyramids pulled out', 'each along its own 3-fold axis')],
        [(PEARL, 'decagon faces'), (BLUE, 'pyramids')], cell=640)
-figure('c2-cell.png', f'{C2N} in its tightest mould',
+figure('c2-cell.png', 'Rollerball-Amber Cell: the Rollerball in its tightest mould',
        'fcc lattice, rhombic dodecahedron mould at s = 5 + 2√5; each piece sits on one face (central division) · 72 pieces, 4 kinds; colours are labels only',
        [(s('c2cell', 0), 'together', 'the mould filled'), (s('c2cell', 1), 'pulled apart', 'mould see-through, enlarged with the pull')],
        [(KIND[i], f'kind {i + 1}') for i in range(4)] + [(BLUE, 'pyramids'), (GLASS, 'mould')], cell=720)
