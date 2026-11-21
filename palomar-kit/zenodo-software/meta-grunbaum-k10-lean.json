@@ -1,0 +1,48 @@
+{
+ "repo": "grunbaum-k10-lean",
+ "commit": "a6b16c25d80fa90ea28259bad6a53d7e81d01779",
+ "zip": "grunbaum-k10-lean-a6b16c2.zip",
+ "palomar": "PALOMAR-2026-11-20-000013-v1",
+ "metadata": {
+  "upload_type": "software",
+  "title": "Ten Faces in Every Zone: Lean 4 formalization (PALOMAR-2026-11-20-000013)",
+  "creators": [
+   {
+    "name": "DICTO",
+    "affiliation": "Independent artist, Osaka, Japan",
+    "orcid": "0009-0001-2620-2036"
+   }
+  ],
+  "description": "<p>Lean 4 formalization accompanying DICTO's paper #115, <i>Ten Faces in Every Zone</i> (<a href=\"https://doi.org/10.5281/zenodo.24389006\">doi:10.5281/zenodo.24389006</a>). It proves: An answer to Grünbaum's zone question (Math. Intelligencer 32(4), 2010) for k = 10: there is a polyhedron of spherical type whose 30 faces are congruent golden rhombi, in which every zone has exactly 10 faces, and whose lattice translates tile space face to face; the zone definition is calibrated on the cube (4) and the rhombic dodecahedron (6).</p><p>Built with Lean 4 (leanprover/lean4:v4.35.0-rc2) with Mathlib at commit 0653561 (tag v4.35.0-rc2). This archive is the GitHub repository DICTOR-Master/grunbaum-k10-lean at commit a6b16c25d80fa90ea28259bad6a53d7e81d01779, registered in the Palomar registry as PALOMAR-2026-11-20-000013-v1 at this commit; every proof is checked by the Lean kernel.</p>",
+  "access_right": "open",
+  "license": "Apache-2.0",
+  "version": "registered commit a6b16c2",
+  "language": "eng",
+  "keywords": [
+   "Lean 4",
+   "Mathlib",
+   "formalization",
+   "machine-checked proof"
+  ],
+  "related_identifiers": [
+   {
+    "identifier": "https://doi.org/10.5281/zenodo.24389006",
+    "relation": "isSupplementTo",
+    "resource_type": "publication-preprint",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "https://github.com/DICTOR-Master/grunbaum-k10-lean/tree/a6b16c25d80fa90ea28259bad6a53d7e81d01779",
+    "relation": "isIdenticalTo",
+    "resource_type": "software",
+    "scheme": "url"
+   },
+   {
+    "identifier": "https://data.palomar-registry.org/entries/PALOMAR-2026-11-20-000013-v1.json",
+    "relation": "isDocumentedBy",
+    "resource_type": "other",
+    "scheme": "url"
+   }
+  ]
+ }
+}

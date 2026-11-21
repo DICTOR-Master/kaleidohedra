@@ -1,0 +1,48 @@
+{
+ "repo": "kulaichev-yantra-lean",
+ "commit": "6bf9e0401c673ccf1030794493650331b7962b25",
+ "zip": "kulaichev-yantra-lean-6bf9e04.zip",
+ "palomar": "PALOMAR-2026-11-17-000006-v2",
+ "metadata": {
+  "upload_type": "software",
+  "title": "The DICTO Yantra: Lean 4 formalization (PALOMAR-2026-11-17-000006)",
+  "creators": [
+   {
+    "name": "DICTO",
+    "affiliation": "Independent artist, Osaka, Japan",
+    "orcid": "0009-0001-2620-2036"
+   }
+  ],
+  "description": "<p>Lean 4 formalization accompanying DICTO's paper #103, <i>The DICTO Yantra</i> (<a href=\"https://doi.org/10.5281/zenodo.24052633\">doi:10.5281/zenodo.24052633</a>). It proves: Kulaichev's uniqueness question for the Śrī Yantra (1984): under the classical conditions in Huet's form as given by Chiodo, Kulaichev's four conditions and the admissibility of paper #103, exactly one figure exists, and its slope w7/b7 lies in a proved interval of width 2⁻²¹; the proof uses a kernel-checked certificate of 64,613 rational boxes.</p><p>Built with Lean 4 (leanprover/lean4:v4.35.0-rc2) with Mathlib at commit 0653561 (tag v4.35.0-rc2). This archive is the GitHub repository DICTOR-Master/kulaichev-yantra-lean at commit 6bf9e0401c673ccf1030794493650331b7962b25, registered in the Palomar registry as PALOMAR-2026-11-17-000006-v2 at this commit; every proof is checked by the Lean kernel.</p>",
+  "access_right": "open",
+  "license": "Apache-2.0",
+  "version": "registered commit 6bf9e04",
+  "language": "eng",
+  "keywords": [
+   "Lean 4",
+   "Mathlib",
+   "formalization",
+   "machine-checked proof"
+  ],
+  "related_identifiers": [
+   {
+    "identifier": "https://doi.org/10.5281/zenodo.24052633",
+    "relation": "isSupplementTo",
+    "resource_type": "publication-preprint",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "https://github.com/DICTOR-Master/kulaichev-yantra-lean/tree/6bf9e0401c673ccf1030794493650331b7962b25",
+    "relation": "isIdenticalTo",
+    "resource_type": "software",
+    "scheme": "url"
+   },
+   {
+    "identifier": "https://data.palomar-registry.org/entries/PALOMAR-2026-11-17-000006-v2.json",
+    "relation": "isDocumentedBy",
+    "resource_type": "other",
+    "scheme": "url"
+   }
+  ]
+ }
+}

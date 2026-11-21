@@ -1,0 +1,48 @@
+{
+ "repo": "dehn-canon-lean",
+ "commit": "9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57",
+ "zip": "dehn-canon-lean-9ea20f6.zip",
+ "palomar": "PALOMAR-2026-11-20-000003-v1",
+ "metadata": {
+  "upload_type": "software",
+  "title": "The Dehn Canon: Lean 4 formalization (PALOMAR-2026-11-20-000003)",
+  "creators": [
+   {
+    "name": "DICTO",
+    "affiliation": "Independent artist, Osaka, Japan",
+    "orcid": "0009-0001-2620-2036"
+   }
+  ],
+  "description": "<p>Lean 4 formalization accompanying DICTO's paper #113, <i>The Dehn Canon</i> (<a href=\"https://doi.org/10.5281/zenodo.24383552\">doi:10.5281/zenodo.24383552</a>). It proves: Dehn's answer to Hilbert's third problem, with the Dehn invariant defined from the solid as a set of points: Hilbert's two tetrahedra on one base are neither scissors congruent nor equicomplementable; the set-defined invariant equals the classical edge sum of length ⊗ dihedral angle; scissors-congruent convex polytopes have the same invariant; and no similar copy of the regular tetrahedron is scissors congruent to a similar copy of the cube.</p><p>Built with Lean 4 (leanprover/lean4:v4.35.0-rc2) with Mathlib at commit 0653561 (tag v4.35.0-rc2). This archive is the GitHub repository DICTOR-Master/dehn-canon-lean at commit 9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57, registered in the Palomar registry as PALOMAR-2026-11-20-000003-v1 at this commit; every proof is checked by the Lean kernel.</p>",
+  "access_right": "open",
+  "license": "Apache-2.0",
+  "version": "registered commit 9ea20f6",
+  "language": "eng",
+  "keywords": [
+   "Lean 4",
+   "Mathlib",
+   "formalization",
+   "machine-checked proof"
+  ],
+  "related_identifiers": [
+   {
+    "identifier": "https://doi.org/10.5281/zenodo.24383552",
+    "relation": "isSupplementTo",
+    "resource_type": "publication-preprint",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "https://github.com/DICTOR-Master/dehn-canon-lean/tree/9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57",
+    "relation": "isIdenticalTo",
+    "resource_type": "software",
+    "scheme": "url"
+   },
+   {
+    "identifier": "https://data.palomar-registry.org/entries/PALOMAR-2026-11-20-000003-v1.json",
+    "relation": "isDocumentedBy",
+    "resource_type": "other",
+    "scheme": "url"
+   }
+  ]
+ }
+}
