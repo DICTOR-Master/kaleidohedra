@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Amber Cells · Kaleidohedra</title>
+<meta name="description" content="DICTO's Amber cells: the Fullerene Star and the Rollerball in their space-filling moulds, the resin between cut into frusta, straight-skeleton pieces or scutoids. Turn, pull apart, compare.">
+<link rel="icon" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root {
+  --bg: #f5f3ee; --surface: #ffffff; --surface-2: #efece5; --text: #1c1e22; --muted: #5c626a;
+  --line: #d8d3c9; --accent: #2e5c8a; --accent-text: #ffffff; --view-bg: #e9e6df;
+  --shadow: 0 1px 3px rgba(0,0,0,.08);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141619; --surface: #1e2125; --surface-2: #272b30; --text: #ebe9e3; --muted: #a2a8af;
+    --line: #363a40; --accent: #8db5df; --accent-text: #10161d; --view-bg: #1a1d21;
+    --shadow: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141619; --surface: #1e2125; --surface-2: #272b30; --text: #ebe9e3; --muted: #a2a8af;
+  --line: #363a40; --accent: #8db5df; --accent-text: #10161d; --view-bg: #1a1d21;
+  --shadow: none; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow-x: hidden; }
+body { background: var(--bg); color: var(--text); font: 16px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-text-size-adjust: 100%; }
+a { color: var(--accent); }
+#app { display: flex; flex-direction: column; height: 100vh; height: 100dvh; max-width: 100vw; }
+header { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--surface); flex-wrap: wrap; }
+header h1 { font-size: 19px; margin: 0; font-weight: 650; letter-spacing: .01em; white-space: nowrap; }
+header nav { margin-left: auto; display: flex; gap: 14px; font-size: 14px; flex-wrap: wrap; }
+.mark { position: fixed; right: 10px; bottom: 6px; font-size: 10px; letter-spacing: .18em; color: var(--muted); opacity: .8; z-index: 5; pointer-events: none; }
+.mark a { pointer-events: auto; }
+.stage { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.view { position: relative; flex: 1 1 58%; min-height: 220px; background: var(--view-bg); touch-action: none; overflow: hidden; }
+.view canvas { display: block; width: 100%; height: 100%; }
+.hint { position: absolute; left: 12px; bottom: 8px; font-size: 12px; color: var(--muted); pointer-events: none; }
+.panel { flex: 0 1 auto; max-height: 26vh; overflow-y: auto; padding: 12px 16px; background: var(--surface); border-top: 1px solid var(--line); }
+@media (orientation: landscape) and (min-width: 700px) {
+  .stage { flex-direction: row; }
+  .view { flex: 1 1 60%; }
+  .panel { flex: 0 0 38%; max-width: 440px; max-height: none; border-top: none; border-left: 1px solid var(--line); }
+}
+.dock { flex: 0 0 auto; display: flex; flex-direction: column; gap: 10px; padding: 12px 16px calc(14px + env(safe-area-inset-bottom)); background: var(--surface); border-top: 1px solid var(--line); box-shadow: 0 -2px 8px rgba(0,0,0,.05); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; flex-wrap: wrap; }
+.seg button, .btn { min-height: 48px; font: inherit; font-size: 16px; color: var(--text); background: var(--surface-2); border: none; padding: 0 14px; }
+.btn { border: 1px solid var(--line); border-radius: 12px; }
+.seg button[aria-pressed="true"], .btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.seg button[hidden], .btn[hidden] { display: none; }
+.sliderrow { display: flex; align-items: center; gap: 12px; }
+.sliderrow label { font-size: 15px; color: var(--muted); white-space: nowrap; }
+input[type=range] { -webkit-appearance: none; appearance: none; flex: 1 1 auto; min-width: 0; height: 48px; background: transparent; margin: 0; touch-action: none; }
+input[type=range]::-webkit-slider-runnable-track { height: 10px; border-radius: 5px; background: var(--line); }
+input[type=range]::-moz-range-track { height: 10px; border-radius: 5px; background: var(--line); }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); margin-top: -15px; border: 3px solid var(--surface); box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+input[type=range]::-moz-range-thumb { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); border: 3px solid var(--surface); }
+h2 { font-size: 18px; margin: 0 0 4px; }
+p { margin: 0 0 8px; font-size: 15px; }
+.sub { color: var(--muted); font-size: 14px; }
+table.kinds { border-collapse: collapse; width: 100%; font-size: 14px; margin: 6px 0 8px; }
+table.kinds td { padding: 5px 4px; border-top: 1px solid var(--line); vertical-align: middle; }
+table.kinds td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.sw { display: inline-block; width: 16px; height: 16px; border-radius: 4px; border: 1px solid rgba(0,0,0,.25); vertical-align: -3px; }
+.note { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+.links { font-size: 14px; margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.err { color: #c0392b; }
+</style>
+</head>
+<body>
+
+<div id="app">
+  <header>
+    <h1>Amber cells</h1>
+    <nav><a href="/aequi/">Aequi fair dice</a><a href="/">Kaleidohedra</a></nav>
+  </header>
+  <main class="stage">
+    <div class="view" id="view"><div class="hint">drag to turn · pinch to zoom</div></div>
+    <section class="panel" id="panel" aria-live="polite"></section>
+  </main>
+  <footer class="dock">
+    <div class="row">
+      <div class="seg" role="group" aria-label="Cell">
+        <button data-cell="fullerene" aria-pressed="true">Fullerene-Amber Cell</button>
+        <button data-cell="rollerball" aria-pressed="false">Rollerball-Amber Cell</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="seg" role="group" aria-label="Division">
+        <button data-div="frusta" aria-pressed="false">Frusta</button>
+        <button data-div="skeleton" aria-pressed="false">Straight skeleton</button>
+        <button data-div="scutoids" aria-pressed="true">Scutoids</button>
+      </div>
+      <button class="btn" id="coreBtn" aria-pressed="true">Core</button>
+      <button class="btn" id="mouldBtn" aria-pressed="true">Mould</button>
+      <button class="btn" id="yBtn" aria-pressed="true">Y-junctions</button>
+    </div>
+    <div class="sliderrow">
+      <label for="explode">Pull apart</label>
+      <input type="range" id="explode" min="0" max="1.5" step="any" value="0.6" aria-label="Pull the pieces apart from the centre">
+    </div>
+  </footer>
+  <div class="mark">DICTO · <a href="/" style="color:inherit">Kaleidohedra</a> · <a href="/aequi/" style="color:inherit">Aequi</a> · paper in preparation</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+'use strict';
+var $ = function (id) { return document.getElementById(id); };
+// colours as the house renders: the core's big faces pearl; its pyramids in the colour of the solid they come from
+// (dodecahedron violet for the Fullerene Star, icosahedron blue for the Rollerball); piece kinds neutral labels only.
+var PEARL = '#e2ded6', EDGE = 0x2b261e, MOULD = 0x6b7680;
+var PYR = { fullerene: '#8a5cc4', rollerball: '#3a70cd' };
+var KIND = ['#d6b46a', '#9c7448', '#7f93a8', '#c99e95', '#8f8a80'];   // sand, bronze, slate, rose-beige, ash
+var CELLS = {
+  fullerene: {
+    name: 'Fullerene-Amber Cell', core: 'Fullerene Star', big: 'hexagon',
+    about: 'DICTO\'s Fullerene Star (a truncated icosahedron, edge 1, with a dodecahedron centre pyramid on each of its 12 pentagons) ' +
+      'inside its mould: the Voronoi cell of a bcc lattice, a truncated octahedron, at 6/5 of the smallest scale s<sub>0</sub> = (10 + 4√5)/3. ' +
+      'Moulds fill space face to face; the resin between core and mould is cut into 80 pieces, one on each face of the Fullerene Star.'
+  },
+  rollerball: {
+    name: 'Rollerball-Amber Cell', core: 'Rollerball', big: 'decagon',
+    about: 'DICTO\'s Rollerball (a truncated dodecahedron, edge 1, with an icosahedron centre pyramid on each of its 20 triangles) ' +
+      'inside its mould: the Voronoi cell of an fcc lattice, a rhombic dodecahedron, at the smallest scale s<sub>0</sub> = 5 + 2√5. ' +
+      'Moulds fill space face to face; the resin is cut into 72 pieces, one on each face of the Rollerball.'
+  }
+};
+var DIVS = {
+  frusta: { name: 'Frusta', about: 'Central division: each piece is the part of the mould beyond one core face and inside the cone from the centre over that face. Every piece is a frustum; there is no Y-junction.' },
+  skeleton: { name: 'Straight skeleton', about: 'Exact straight skeleton: every face plane moves outward at the same speed, and where the moving faces meet they make the walls. Where an edge shrinks to a point inside the mould, a Y-junction appears and the pieces beside it are scutoids. All coordinates exact in ℚ(√5, √3).' },
+  scutoids: { name: 'Scutoids', about: 'DICTO\'s combined method: fill the two ends in 2D (the core\'s faces inside; on the mould, the Voronoi pattern of the face centres), then cut the resin to fit. Where the two patterns differ, the walls meet at a Y-junction halfway out; every piece here is a scutoid.' }
+};
+var state = { cell: 'fullerene', div: 'scutoids', core: true, mould: true, y: true, f: 0.6 };
+try { var saved = JSON.parse(localStorage.getItem('amberView') || '{}'); ['cell', 'div', 'core', 'mould', 'y'].forEach(function (k) { if (k in saved) state[k] = saved[k]; }); } catch (e) {}
+if (!CELLS[state.cell]) state.cell = 'fullerene';
+if (!DIVS[state.div] || (state.cell === 'rollerball' && state.div === 'skeleton')) state.div = 'scutoids';
+function save() { try { localStorage.setItem('amberView', JSON.stringify({ cell: state.cell, div: state.div, core: state.core, mould: state.mould, y: state.y })); } catch (e) {} }
+
+// ---------------- viewer (as the Aequi page)
+var view = $('view');
+var renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+view.insertBefore(renderer.domElement, view.firstChild);
+var scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+camera.position.set(0, 0, 5.2); scene.add(camera);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x50555c, 0.62));
+var key = new THREE.DirectionalLight(0xffffff, 0.62); key.position.set(2.5, 3, 4); camera.add(key);
+var holder = new THREE.Group(); scene.add(holder);
+holder.quaternion.setFromEuler(new THREE.Euler(0.38, -0.55, 0.05));
+var dirty = true, zoom = 1;
+function themeBg() { scene.background = new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue('--view-bg').trim() || '#e9e6df'); dirty = true; }
+themeBg();
+if (window.matchMedia) { var mq = window.matchMedia('(prefers-color-scheme: dark)'); (mq.addEventListener ? mq.addEventListener('change', themeBg) : mq.addListener(themeBg)); }
+function resize() {
+  var w = view.clientWidth, h = view.clientHeight; if (!w || !h) return;
+  renderer.setSize(w, h, false); camera.aspect = w / h;
+  camera.position.z = (w < h ? 5.2 * Math.max(1, h / w * 0.82) : 5.2) * zoom; camera.updateProjectionMatrix(); dirty = true;
+}
+new ResizeObserver(resize).observe(view);
+(function loop() { if (dirty) { renderer.render(scene, camera); dirty = false; } requestAnimationFrame(loop); })();
+var pts = {}, lastPinch = 0;
+view.addEventListener('pointerdown', function (e) { view.setPointerCapture(e.pointerId); pts[e.pointerId] = { x: e.clientX, y: e.clientY }; });
+view.addEventListener('pointermove', function (e) {
+  if (!pts[e.pointerId]) return;
+  var ids = Object.keys(pts), p = pts[e.pointerId], dx = e.clientX - p.x, dy = e.clientY - p.y;
+  if (ids.length === 1) {
+    var ang = Math.sqrt(dx * dx + dy * dy) * 0.009;
+    if (ang > 0) { holder.quaternion.premultiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(dy, dx, 0).normalize(), ang)); dirty = true; }
+    p.x = e.clientX; p.y = e.clientY;
+  } else if (ids.length >= 2) {
+    p.x = e.clientX; p.y = e.clientY;
+    var a = pts[ids[0]], b = pts[ids[1]], d = Math.hypot(a.x - b.x, a.y - b.y);
+    if (lastPinch) { zoom = Math.min(3, Math.max(0.35, zoom * lastPinch / d)); resize(); }
+    lastPinch = d;
+  }
+});
+function up(e) { delete pts[e.pointerId]; if (Object.keys(pts).length < 2) lastPinch = 0; }
+view.addEventListener('pointerup', up); view.addEventListener('pointercancel', up);
+view.addEventListener('wheel', function (e) { e.preventDefault(); zoom = Math.min(3, Math.max(0.35, zoom * Math.exp(e.deltaY * 0.001))); resize(); }, { passive: false });
+
+// Y-junction dots: white with a dark rim, so they read on light and dark grounds
+var dotTex = (function () {
+  var c = document.createElement('canvas'); c.width = c.height = 64; var g = c.getContext('2d');
+  g.beginPath(); g.arc(32, 32, 28, 0, 2 * Math.PI); g.fillStyle = '#ffffff'; g.fill(); g.lineWidth = 6; g.strokeStyle = '#2b261e'; g.stroke();
+  return new THREE.CanvasTexture(c);
+})();
+
+// ---------------- building the cell
+var cache = {}, world = null;
+function dispose(o) { o.traverse(function (c) { if (c.geometry) c.geometry.dispose(); if (c.material && c.material !== sharedEdge) c.material.dispose(); }); }
+var sharedEdge = new THREE.LineBasicMaterial({ color: EDGE });
+function faceMesh(V, F, colour) {
+  var pos = [];
+  F.forEach(function (f) { for (var t = 1; t + 1 < f.length; t++) [f[0], f[t], f[t + 1]].forEach(function (i) { pos.push(V[i][0], V[i][1], V[i][2]); }); });
+  var g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+  return new THREE.Mesh(g, new THREE.MeshPhongMaterial({ color: colour, flatShading: true, shininess: 18, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }));
+}
+function edgeLines(V, E, mat) {
+  var pos = []; E.forEach(function (e) { pos.push.apply(pos, V[e[0]]); pos.push.apply(pos, V[e[1]]); });
+  var g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  return new THREE.LineSegments(g, mat);
+}
+function build(D, cell) {
+  var w = { root: new THREE.Group(), pieces: [], core: new THREE.Group(), mould: null, dots: [], R: 0 };
+  D.mould.v.forEach(function (v) { w.R = Math.max(w.R, Math.hypot(v[0], v[1], v[2])); });
+  // core: big faces pearl, pyramid faces in the solid's colour
+  var big = [], pyr = [];
+  D.core.f.forEach(function (f, i) { (D.core.big[i] ? big : pyr).push(f); });
+  w.core.add(faceMesh(D.core.v, big, PEARL)); w.core.add(faceMesh(D.core.v, pyr, PYR[cell])); w.core.add(edgeLines(D.core.v, D.core.e, sharedEdge));
+  w.root.add(w.core);
+  D.pieces.forEach(function (p) {
+    var g = new THREE.Group(), c = [0, 0, 0];
+    p.v.forEach(function (v) { c[0] += v[0]; c[1] += v[1]; c[2] += v[2]; });
+    c = c.map(function (x) { return x / p.v.length; });
+    g.add(faceMesh(p.v, p.f, KIND[p.k % KIND.length])); g.add(edgeLines(p.v, p.e, sharedEdge));
+    if (p.y.length) {
+      var pos = []; p.y.forEach(function (i) { pos.push.apply(pos, p.v[i]); });
+      var dg = new THREE.BufferGeometry(); dg.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+      var dots = new THREE.Points(dg, new THREE.PointsMaterial({ map: dotTex, size: 0.035 * w.R, sizeAttenuation: true, transparent: true, alphaTest: 0.4, depthTest: true }));
+      g.add(dots); w.dots.push(dots);
+    }
+    w.pieces.push({ g: g, c: c }); w.root.add(g);
+  });
+  w.mould = edgeLines(D.mould.v, D.mould.e, new THREE.LineBasicMaterial({ color: MOULD, transparent: true, opacity: 0.85 }));
+  w.root.add(w.mould);
+  return w;
+}
+function place() {
+  if (!world) return;
+  var f = state.f;
+  world.pieces.forEach(function (p) { p.g.position.set(p.c[0] * f, p.c[1] * f, p.c[2] * f); });
+  world.mould.scale.setScalar(1 + f);
+  world.core.visible = state.core; world.mould.visible = state.mould;
+  world.dots.forEach(function (d) { d.visible = state.y; });
+  var s = 1.05 / (world.R * (1 + f)); world.root.scale.setScalar(s);
+  dirty = true;
+}
+var want = 0;
+function load() {
+  var name = state.cell + '-' + state.div, my = ++want;
+  var got = cache[name] ? Promise.resolve(cache[name]) : fetch('/amber/' + name + '.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
+  got.then(function (D) {
+    cache[name] = D; if (my !== want) return;
+    if (world) { holder.remove(world.root); dispose(world.root); }
+    world = build(D, state.cell); holder.add(world.root); place(); panel(D);
+  }).catch(function (e) { $('panel').innerHTML = '<p class="err">Could not load ' + name + '.json (' + e.message + ').</p>'; });
+}
+
+// ---------------- panel and controls
+function panel(D) {
+  var C = CELLS[state.cell], V = DIVS[state.div], n = D.pieces.length, nsc = 0;
+  D.pieces.forEach(function (p) { if (p.y.length) nsc++; });
+  var rows = D.kinds.map(function (k, i) {
+    return '<tr><td><span class="sw" style="background:' + KIND[i % KIND.length] + '"></span> kind ' + (i + 1) + '</td><td>on the ' + (k.face === 'big' ? C.big + 's' : 'triangles') +
+      '</td><td class="num">' + k.orbit + ' per cell</td><td>' + (k.scutoid ? 'scutoid' : 'frustum') + '</td></tr>';
+  }).join('');
+  $('panel').innerHTML = '<h2>' + C.name + ' · ' + V.name + '</h2>' +
+    '<p>' + C.about + '</p><p>' + V.about + '</p>' +
+    '<p class="sub">' + n + ' pieces, ' + D.kinds.length + ' kinds, ' + nsc + ' scutoids, ' + D.nY + ' Y-junctions per cell. ' +
+    'Piece colours label the kinds only; one kind keeps its colour in every division.</p>' +
+    '<table class="kinds">' + rows + '</table>' +
+    '<p class="note">Checked: one piece on each core face, every piece inside the mould, and the piece volumes add up to the mould minus the core. Pulled apart, each piece moves out from the centre by the slider times its own centre; the mould outline grows with it.</p>' +
+    '<div class="links"><a href="/aequi/">Aequi fair dice</a><span>Paper in preparation</span><a href="/">Back to Kaleidohedra</a></div>';
+}
+function sync() {
+  document.querySelectorAll('[data-cell]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.cell === state.cell)); });
+  document.querySelectorAll('[data-div]').forEach(function (b) {
+    b.setAttribute('aria-pressed', String(b.dataset.div === state.div));
+    b.hidden = b.dataset.div === 'skeleton' && state.cell !== 'fullerene';   // the exact skeleton is computed for the Fullerene Star only
+  });
+  $('coreBtn').setAttribute('aria-pressed', String(state.core));
+  $('mouldBtn').setAttribute('aria-pressed', String(state.mould));
+  $('yBtn').setAttribute('aria-pressed', String(state.y));
+  $('yBtn').hidden = state.div === 'frusta';                                 // frusta have no Y-junctions
+}
+document.querySelectorAll('[data-cell]').forEach(function (b) { b.onclick = function () {
+  state.cell = b.dataset.cell; if (state.cell !== 'fullerene' && state.div === 'skeleton') state.div = 'scutoids';
+  save(); sync(); load();
+}; });
+document.querySelectorAll('[data-div]').forEach(function (b) { b.onclick = function () { state.div = b.dataset.div; save(); sync(); load(); }; });
+[['coreBtn', 'core'], ['mouldBtn', 'mould'], ['yBtn', 'y']].forEach(function (x) { $(x[0]).onclick = function () { state[x[1]] = !state[x[1]]; save(); sync(); place(); }; });
+$('explode').value = state.f;
+$('explode').oninput = function () { state.f = parseFloat(this.value) || 0; place(); };
+sync(); load();
+})();
+</script>
+</body>
+</html>

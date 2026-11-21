@@ -1090,7 +1090,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
   // One entry: its picture, name and a small line under it. One piece: the row opens it. Several: the row unfolds them.
   function itemHtml({ key, label, sub = '', pieces, pic, extra = '', tip = '' }) {
     const one = pieces.length === 1;
-    const go = (p) => (p.openDim ? `data-open-dim="${p.openDim}"` : p.open ? `data-open="${p.open}"` : `data-action="${p.action}" data-app="${p.app}" data-wdim="${p.wdim ?? '3D'}"`);
+    const go = (p) => (p.href ? `data-href="${p.href}"` : p.openDim ? `data-open-dim="${p.openDim}"` : p.open ? `data-open="${p.open}"` : `data-action="${p.action}" data-app="${p.app}" data-wdim="${p.wdim ?? '3D'}"`);
     const open = openItems.has(key);
     return `<div class="bm-item" data-item="${key}" data-hay="${esc(`${label} ${sub}`.toLowerCase())}">
       <button type="button" class="bm-row"${tip ? ` title="${esc(tip)}"` : ''} ${one ? go(pieces[0]) : `data-item-toggle="${key}" aria-expanded="${open}"`}>${pic}<span class="dim-wizard-row-text"><span class="dim-wizard-label">${label}${extra}</span>${sub ? `<span class="bm-papers">${sub}</span>` : ''}</span>${one ? '' : `<span class="bm-more">${pieces.length} <span class="bm-arrow"></span></span>`}</button>${one ? '' : `
@@ -1131,6 +1131,10 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
       const all = s.dim === '1D' ? FAMILIES_1D : LATTICE_FAMILIES_2D;
       const pieces = s.families.map((id) => all.find((f) => f.id === id)).map((f) => ({ label: f.label, action: f.action, app: 'dicto', wdim: s.dim, preview: f.preview }));
       return itemHtml({ key: s.id, label: s.name, pieces, pic: previewSlot(pieces[0].preview) });
+    }
+    if (s.href) {
+      const label = t(s.label, L);
+      return itemHtml({ key: s.id, label, sub: t(s.sub, L), pieces: [{ label, href: s.href }], pic: `<span class="bm-thumb bm-glyph">${s.glyph}</span>` });
     }
     const label = t(s.open === 'almanac' ? 'alm.title' : 'wiz.books.guide', L);
     return itemHtml({ key: s.id, label, pieces: [{ label, open: s.open }], pic: `<span class="bm-thumb bm-glyph">${s.open === 'almanac' ? '📖' : '?'}</span>` });
@@ -1180,6 +1184,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
       close();
       if (btn.dataset.open === 'almanac') openAlmanac(); else openGuide();
     }));
+    root.querySelectorAll('[data-href]').forEach((btn) => btn.addEventListener('click', () => { location.href = btn.dataset.href; }));
     root.querySelectorAll('img.bm-thumb, img.bm-cover').forEach((img) => img.addEventListener('error', () => { img.style.visibility = 'hidden'; }, { once: true }));
   }
   // Every word must be in the entry's name (or one of its pieces' names); matching books unfold, the rest hide; cleared, the folds
