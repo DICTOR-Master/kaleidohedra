@@ -67,3 +67,15 @@ export const TOOLS_SHELF = [
 
 // Every world key of the books, in menu order.
 export const bookWorldKeys = () => BOOKS.flatMap((b) => b.worlds.map(([k]) => k));
+
+// A world's paper list as numbers: '#57, #58, #70–#74' -> ['57', '58', '70', '71', '72', '73', '74'] (for its paper chips).
+export function paperNumbers(s) {
+  const out = [];
+  for (const part of String(s ?? '').split(',')) {
+    const m = part.trim().match(/^#(\d+)([a-z]?)(?:\s*[–-]\s*#?(\d+))?$/);
+    if (!m) continue;
+    if (m[3]) for (let i = Number(m[1]); i <= Number(m[3]); i++) out.push(String(i));
+    else out.push(m[1] + m[2]);
+  }
+  return out;
+}

@@ -76,7 +76,11 @@ import { dimensionLabel } from './dimension-label.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { createLanguageButton } from './language-picker.js';
 import { openGuide } from './guide.js';
-import { BOOKS, EXTRA_WORLDS, OTHERS_SHELF, TOOLS_SHELF } from './book-menu-data.js';
+import { BOOKS, EXTRA_WORLDS, OTHERS_SHELF, TOOLS_SHELF, paperNumbers } from './book-menu-data.js';
+// Paper titles, concept DOIs and each book's papers (data/papers.json, written by scripts/papers-json.mjs); fetched once. Until it
+// arrives (or if it fails) a world shows its paper numbers as plain text, as before.
+let PAPERS = null;
+if (globalThis.fetch) fetch('./data/papers.json').then((r) => (r.ok ? r.json() : null)).then((d) => { PAPERS = d; }).catch(() => {});
 import { WORLD_THUMBS } from './world-thumbs.js';
 
 const CSS = `
@@ -223,6 +227,20 @@ const CSS = `
 .bm-piece:hover, .bm-piece:focus-visible { background: rgba(255, 255, 255, 0.05); }
 .bm-shelf-mark { flex: none; width: 40px; height: 56px; display: flex; align-items: center; justify-content: center; color: var(--bm-dim); font: 22px var(--font-ui); }
 .bm-arrow::after { content: '▸'; }
+.bm-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 4px 8px 74px; }
+.bm-chip { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 40px; padding: 0 10px; box-sizing: border-box;
+  border: 1px solid var(--bm-line); border-radius: 20px; color: var(--bm-ink); font: 600 var(--text-xs) var(--font-ui); text-decoration: none; touch-action: manipulation; }
+.bm-chip:hover, .bm-chip:focus-visible { background: rgba(255, 255, 255, 0.06); }
+.bm-paperbox { margin: 4px 0 0 14px; }
+.bm-papers-toggle { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 44px; padding: 4px; box-sizing: border-box; background: none; border: 0;
+  border-top: 1px dashed var(--bm-line); color: var(--bm-dim); font: 600 var(--text-s) var(--font-ui); text-align: left; cursor: pointer; touch-action: manipulation; }
+.bm-paperlist { display: flex; flex-direction: column; gap: 2px; padding: 2px 0 6px; }
+.bm-paperlist[hidden] { display: none; }
+.bm-paper { display: flex; align-items: baseline; gap: 10px; min-height: 44px; padding: 10px 6px; box-sizing: border-box; border-radius: var(--radius-s, 6px);
+  color: var(--bm-ink); text-decoration: none; font: var(--text-s)/1.3 var(--font-ui); touch-action: manipulation; }
+.bm-paper:hover, .bm-paper:focus-visible { background: rgba(255, 255, 255, 0.05); }
+.bm-paper-n { flex: none; min-width: 3.2em; color: var(--bm-dim); font-weight: 600; font-variant-numeric: tabular-nums; }
+.bm-paper-t { min-width: 0; overflow-wrap: anywhere; }
 [aria-expanded="true"] .bm-arrow::after { content: '▾'; }
 .bm-glyph { display: inline-flex; align-items: center; justify-content: center; font: 22px var(--font-ui); color: var(--bm-dim); border: 1px solid var(--bm-line); box-sizing: border-box; }
 .bm-shapes .dim-wizard-card-btn { border-color: var(--bm-line); background: none; }
@@ -1074,7 +1092,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
   // A search box; each book a neutral heading (cover, "Book N", title, how many worlds), folded until tapped; each world once, with a
   // picture taken in the world itself (assets/worlds/, scripts/capture-world-thumbs.mjs); then the others' lattices and tilings, the
   // studies and tools, and the shapes. The same order through every door.
-  const openBooks = new Set(), openItems = new Set();
+  const openBooks = new Set(), openItems = new Set(), openPapers = new Set();
   const esc = (x) => String(x).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
   const worldOf = (key) => K_WORLDS.find((w) => w.key === key) ?? LATTICES_3D.find((l) => l.key === key);
   // Where a world opens: DICTO's by the door (dictoOpen), Kaleidohedra's own (Generalized Permutohedra) in Kaleidohedra.
@@ -1088,14 +1106,29 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
   const thumb = (key) => (WORLD_THUMBS.has(key) ? `<img class="bm-thumb" src="assets/worlds/${key}.webp" alt="" loading="lazy" width="48" height="48">` : null);
   const pictureOf = (key, piece) => thumb(key) ?? (piece.preview || piece.action?.startsWith('tool:') ? previewSlot(() => (piece.preview ? piece.preview() : pieceEdges(piece.action))) : '<span class="bm-thumb"></span>');
   // One entry: its picture, name and a small line under it. One piece: the row opens it. Several: the row unfolds them.
-  function itemHtml({ key, label, sub = '', pieces, pic, extra = '', tip = '' }) {
+  function itemHtml({ key, label, sub = '', pieces, pic, extra = '', tip = '', chips = '' }) {
     const one = pieces.length === 1;
     const go = (p) => (p.href ? `data-href="${p.href}"` : p.openDim ? `data-open-dim="${p.openDim}"` : p.open ? `data-open="${p.open}"` : `data-action="${p.action}" data-app="${p.app}" data-wdim="${p.wdim ?? '3D'}"`);
     const open = openItems.has(key);
-    return `<div class="bm-item" data-item="${key}" data-hay="${esc(`${label} ${sub}`.toLowerCase())}">
+    return `<div class="bm-item" data-item="${key}" data-hay="${esc(`${label} ${sub} ${chips ? chipHay(chips) : ''}`.toLowerCase())}">
       <button type="button" class="bm-row"${tip ? ` title="${esc(tip)}"` : ''} ${one ? go(pieces[0]) : `data-item-toggle="${key}" aria-expanded="${open}"`}>${pic}<span class="dim-wizard-row-text"><span class="dim-wizard-label">${label}${extra}</span>${sub ? `<span class="bm-papers">${sub}</span>` : ''}</span>${one ? '' : `<span class="bm-more">${pieces.length} <span class="bm-arrow"></span></span>`}</button>${one ? '' : `
-      <div class="bm-pieces"${open ? '' : ' hidden'}>${pieces.map((p) => `<button type="button" class="bm-piece" ${go(p)} data-hay="${esc(p.label.toLowerCase())}">${p.label}</button>`).join('')}</div>`}
+      <div class="bm-pieces"${open ? '' : ' hidden'}>${pieces.map((p) => `<button type="button" class="bm-piece" ${go(p)} data-hay="${esc(p.label.toLowerCase())}">${p.label}</button>`).join('')}</div>`}${chips}
     </div>`;
+  }
+  // A paper's link, its numbered chips under a world (only where the world has papers), and a book's "Papers in this book" fold.
+  const paperUrl = (n) => `https://doi.org/${PAPERS.papers[n].doi}`;
+  const chipHay = (html) => (html.match(/#\d+[a-z]?/g) ?? []).join(' ');
+  function chipsHtml(papers, L) {
+    const ns = PAPERS ? paperNumbers(papers).filter((n) => PAPERS.papers[n]) : [];
+    if (!ns.length) return '';
+    return `<div class="bm-chips">${ns.map((n) => `<a class="bm-chip" href="${paperUrl(n)}" target="_blank" rel="noopener" title="${esc(`#${n} ${PAPERS.papers[n].title}`)}" aria-label="${esc(t('wiz.books.openPaper', L, { n }))}">#${n}</a>`).join('')}</div>`;
+  }
+  function bookPapersHtml(id, L) {
+    const ns = (PAPERS?.books?.[id] ?? []).filter((n) => PAPERS.papers[n]);
+    if (!ns.length) return '';
+    const open = openPapers.has(id);
+    return `<div class="bm-paperbox"><button type="button" class="bm-papers-toggle" data-papers-toggle="${id}" aria-expanded="${open}"><span>${t('wiz.books.papersIn', L)}</span><span class="bm-more">${ns.length} <span class="bm-arrow"></span></span></button>
+      <div class="bm-paperlist"${open ? '' : ' hidden'}>${ns.map((n) => `<a class="bm-paper" href="${paperUrl(n)}" target="_blank" rel="noopener" title="${esc(PAPERS.papers[n].title)}" aria-label="${esc(t('wiz.books.openPaper', L, { n }))}"><span class="bm-paper-n">#${n}</span><span class="bm-paper-t">${esc(PAPERS.papers[n].t)}</span></a>`).join('')}</div></div>`;
   }
   function bookItem(key, papers, L) {
     const ex = EXTRA_WORLDS[key];
@@ -1103,11 +1136,13 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     if (ex) {
       const label = key === 'hexoctKit' ? t('hexkit.title', L) : ex.label;
       const piece = { label, action: ex.action, app: ex.app ?? dictoOpen(ex.action), preview: key === 'hexoctKit' ? hexoctPreviewEdges : null };
-      return itemHtml({ key, label, sub: papers, pieces: [piece], pic: pictureOf(key, piece), extra: mark, tip: ex.tip ? t(ex.tip, L) : '' });
+      const chips = chipsHtml(papers, L);
+      return itemHtml({ key, label, sub: chips ? '' : papers, pieces: [piece], pic: pictureOf(key, piece), extra: mark, tip: ex.tip ? t(ex.tip, L) : '', chips });
     }
     const w = worldOf(key);
     const pieces = w.pieces.map((p) => ({ ...p, app: worldApp(key, p.action) }));
-    return itemHtml({ key, label: w.label, sub: papers, pieces, pic: pictureOf(key, pieces[0]), extra: mark, tip: tFor(pieces[0].app, `wiz.3d.${key}`, L) });
+    const chips = chipsHtml(papers, L);
+    return itemHtml({ key, label: w.label, sub: chips ? '' : papers, pieces, pic: pictureOf(key, pieces[0]), extra: mark, tip: tFor(pieces[0].app, `wiz.3d.${key}`, L), chips });
   }
   function othersItem(s, L) {
     if (s.lat) {
@@ -1139,18 +1174,18 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     const label = t(s.open === 'almanac' ? 'alm.title' : 'wiz.books.guide', L);
     return itemHtml({ key: s.id, label, pieces: [{ label, open: s.open }], pic: `<span class="bm-thumb bm-glyph">${s.open === 'almanac' ? '📖' : '?'}</span>` });
   }
-  function sectionHtml(id, cover, num, title, items, L) {
+  function sectionHtml(id, cover, num, title, items, L, after = '') {
     const open = openBooks.has(id);
     return `<section class="bm-book" data-book="${id}">
       <button type="button" class="bm-head" data-book-toggle="${id}" aria-expanded="${open}">${cover}<span class="bm-titles">${num ? `<span class="bm-num">${num}</span>` : ''}<span class="bm-title">${title}</span></span><span class="bm-count" aria-label="${esc(tn('wiz.books.count', L, items.length))}">${items.length} <span class="bm-arrow"></span></span></button>
-      <div class="bm-list"${open ? '' : ' hidden'}>${items.join('')}</div></section>`;
+      <div class="bm-list"${open ? '' : ' hidden'}>${items.join('')}${after}</div></section>`;
   }
   function booksHtml(L) {
     let html = `<div class="bm"><div class="poly-search bm-search"><input type="search" class="poly-search-input" enterkeyhint="search" placeholder="${esc(t('wiz.books.search', L))}" aria-label="${esc(t('wiz.books.search', L))}" title="${esc(t('wiz.poly.searchPh', L))}"></div>`;
     for (const b of BOOKS) {
       if (!b.worlds.length) continue; // a book with no world of its own is not listed
       const cover = b.cover ? `<img class="bm-cover" src="assets/books/${b.cover}.webp" alt="" loading="lazy" width="40" height="56">` : '<span class="bm-cover-none"></span>';
-      html += sectionHtml(b.id, cover, t(`wiz.book.${b.id}`, L), b.title, b.worlds.map(([key, papers]) => bookItem(key, papers, L)), L);
+      html += sectionHtml(b.id, cover, t(`wiz.book.${b.id}`, L), b.title, b.worlds.map(([key, papers]) => bookItem(key, papers, L)), L, bookPapersHtml(b.id, L));
     }
     if (filter !== 'polyhedraverse') html += sectionHtml('others', '', '', t('wiz.books.others', L), OTHERS_SHELF.map((s) => othersItem(s, L)), L);
     html += sectionHtml('tools', '', '', t('wiz.books.tools', L), TOOLS_SHELF.map((s) => toolItem(s, L)), L);
@@ -1175,6 +1210,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     };
     root.querySelectorAll('[data-book-toggle]').forEach((btn) => btn.addEventListener('click', () => fold(btn, btn.nextElementSibling, openBooks, btn.dataset.bookToggle, btn.nextElementSibling.hidden)));
     root.querySelectorAll('[data-item-toggle]').forEach((btn) => btn.addEventListener('click', () => fold(btn, btn.nextElementSibling, openItems, btn.dataset.itemToggle, btn.nextElementSibling.hidden)));
+    root.querySelectorAll('[data-papers-toggle]').forEach((btn) => btn.addEventListener('click', () => fold(btn, btn.nextElementSibling, openPapers, btn.dataset.papersToggle, btn.nextElementSibling.hidden)));
     root.querySelectorAll('[data-open-dim]').forEach((btn) => btn.addEventListener('click', () => {
       const dim = btn.dataset.openDim;
       if (dim === '5D' || dim === '6D') { showCatalogue(dim); return; }
