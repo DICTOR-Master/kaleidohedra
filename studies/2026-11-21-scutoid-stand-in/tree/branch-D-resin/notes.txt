@@ -1,0 +1,57 @@
+Branch D, DICTO's idea, which he names "the resin solution" (tree search, 21 Nov 2026).
+Build a mould round C1 that tiles space by itself, fill the gap between C1 and the mould (the resin), and map the resin by division.
+Run: scripts/resin.py and scripts/overlap.py on the compute host; data/resin.json (every piece kind: vertices, faces, dihedrals, neighbours);
+log.txt (ends FINAL ok).
+
+Setting. C1 = truncated icosahedron (edge 1) with a dodecahedron centre pyramid on each pentagon; apices exactly at ((5+sqrt5)/4)(0, 1, phi)
+and its images (lateral edges sqrt3 phi/2 checked exactly). vol C1 = 35 + 25 sqrt5/2 = 62.9508. C1 at every point of a cubic lattice with
+its T_h axes on the cube axes (both T_h settings are equivalent under the lattice's O_h). Mould = Voronoi cell. All coordinates in Q(sqrt5).
+
+1. Moulds (exact smallest scale with C1 inside its Voronoi cell; s = cube edge of the lattice; set by the spike apices)
+   sc  cube                 s0 = (5 + 3 sqrt5)/2 = 5.854102   cell 100 + 45 sqrt5 = 200.62    resin 137.67   C1 share 0.314
+   bcc truncated octahedron s0 = (10 + 4 sqrt5)/3 = 6.314757  cell 125.90                     resin 62.95    C1 share 0.49999
+   fcc rhombic dodecahedron s0 = 5 + 2 sqrt5 = 9.472136       cell 212.46                     resin 149.51   C1 share 0.296
+   Smallest scale with no overlap between C1 copies (LP scan, float): sc 5.8541 (= s0), bcc 5.8541, fcc 7.7485. Below s0 the copies
+   interlock but C1 pokes out of its Voronoi cell, so the Voronoi mould needs s >= s0. Scales run: s0, 6/5 s0, 3/2 s0.
+
+2. Division rules (one convex flat-faced piece per C1 face, 80 per cell)
+   R1 central: piece(F) = mould cap {beyond F's plane} cap the cone from C1's centre over F. Exact in Q(sqrt5). It is a partition for
+      every mould and scale: C1 is star-shaped from its centre and all 80 face planes lie at positive offset (exact), so the cones
+      tile space outside C1. Checked: sum of piece volumes = mould - C1 exactly (Q(sqrt5)); no overlaps (LP).
+   R2 normal/mitre (DICTO's segments along face normals, with each edge's dihedral bisector plane as the wall): 50 digits (the
+      hexagon-triangle bisectors carry sqrt3). It is a partition only if the walls reach the mould before they meet.
+
+3. Map (T_h face orbits: hexagons 8 (on the 3-fold axes) + 12; triangles 24 + 24 + 12; no two orbits ever gave congruent pieces)
+   arrangement      R1: kinds / scutoid kinds / partition     R2: kinds / scutoid kinds / partition
+   sc  s0           5 / 0 / yes                              5 / 0 / yes
+   sc  6/5, 3/2     5 / 0 / yes                              5 / 2, 1 / NO (overlap 0.146, 0.379)
+   bcc s0           5 / 0 / yes                              5 / 0 / yes
+   bcc 6/5, 3/2     5 / 0 / yes                              5 / 1, 2 / NO (overlap 0.025, 0.213)
+   fcc s0, 6/5, 3/2 5 / 0 / yes                              5 / 1, 2, 2 / NO (overlap 0.166, 0.313, 0.533)
+   Per kind (faces, vertices, neighbours on the C1 side and the mould side, Y vertices, every dihedral with its basis form): log.txt.
+   - R1 never gives a scutoid, proved: each lateral face is a plane through the centre and one C1 edge, so the piece across it is the
+     same all the way out; two lateral planes meet only along the ray through a C1 vertex, so no Y vertex. The pieces are frusta
+     whose tops break over the mould's edges (1 to 3 top facets).
+   - R2: the hexagon pieces' walls on the three hexagon-triangle (valley) edges lean in over the hexagon at 79.5474 deg = 5pi/8 - beta/2.
+     Where the mould is far enough they close over the hexagon: the hexagon-hexagon walls end at Y vertices (Y = 3, shell-side
+     neighbours = the three spike triangles only), a true scutoid shape. But exactly there the local mitre regions of neighbouring
+     faces overlap, so these scutoid pieces are not a valid division; the valid one needs the full straight skeleton (new walls between
+     faces that are not neighbours on C1). Not computed.
+
+4. Rings. Every valid division is a tiling, so all edge rings close. Dihedrals on the C1 side are in the basis: R1 pi/4 + beta (hexagon),
+   pi - 2beta and 2pi/3 (triangle); R2 the half angles 5pi/8 - beta/2, pi/4 + beta, 2pi/3. Lateral-lateral angles are outside
+   {pi, alpha, beta, gamma} (R1 124.3094 / 55.6906 on the vertex rays; R2 113.2410 / 66.7590); several lateral-mould angles too, a few of
+   them are lambda* shifted (R2 sc: 102.3087 = lambda* - pi/8 - beta/2). The 157.7612 barrier (lemma A1) never appears as a dihedral:
+   each piece sits on one whole C1 face and nothing asks it to close a ring of C1 faces alone.
+
+Score. Fewest kinds: 5 in every arrangement (the five T_h face orbits; T_h is the most of I_h a lattice keeps). Scutoids: none in any
+valid division. Rings: close in all valid divisions, no 157.76 barrier. Best: bcc at s0 (truncated-octahedron mould, the tightest: the
+resin is 62.95, just under C1's own 62.95), where R1 and R2 are both valid; R1 is exact in Q(sqrt5).
+Verdict: the resin solution works as a construction (5 piece kinds, periodic, exact) but gives no scutoid pieces in its valid forms.
+
+LEADS
+1. R2 with the full straight skeleton beyond the first event (bcc 6/5 s0 has the smallest overlap, 0.025): the closing hexagon pieces
+   are scutoids with 3 Y vertices; the valid skeleton decides whether they survive.
+2. Fewer than 5 kinds needs pieces spanning several faces (for example the 3 triangles of one T_h orbit round a spike merged with
+   their hexagon): test merged cells at bcc s0.
+3. The same for C2 (truncated dodecahedron with icosahedron centre pyramids) is a rerun of resin.py with the C2 faces.
