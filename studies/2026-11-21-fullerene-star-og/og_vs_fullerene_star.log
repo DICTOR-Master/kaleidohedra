@@ -1,0 +1,62 @@
+  [ok] TI has 60 vertices
+  [ok] TI has 90 edges of length 2 (exact)
+  [ok] 12 five-fold and 20 three-fold axes
+  [ok] pentagons have 5 vertices, hexagons 6
+  [ok] all 12 pentagon planes at one offset (exact)
+  [ok] 3-fold axis vectors (+-1,+-1,+-1) and (0,phi,1/phi) have equal length^2 = 3
+  [ok] hexagon plane offsets all equal
+  [ok] TI midsphere: all 90 edge midpoints at one radius^2 (exact)
+== OG (pentakis dodecahedron = polar of TI in its midsphere, cut at TI's 20 hexagon planes)
+  [ok] OG has 102 corners (exact)
+  [ok] OG has 80 faces
+  [ok] 60 quadrilaterals (kites) + 20 hexagons
+  [ok] OG has 180 edges, Euler 102-180+80=2
+  [ok] valences 12 x5, 30 x4, 60 x3
+  OG edge types (faces on each side): {'H-K': 120, 'K-K': 60}
+  [ok] OG: no hexagon-hexagon edge (hexagons meet only at the 30 four-valent corners)
+  OG edge length^2 classes: [('(3+0r5)', 120), ('(783/722+315/722r5)', 60)]
+  [ok] OG: two edge lengths, 120 + 60
+  OG corner radius^2 classes: [('(27/2+9/2r5)', 90), ('(5265/361+1782/361r5)', 12)]
+  [ok] OG: 90 corners on one sphere, 12 on another
+  [ok] pentagon centroid is parallel to the 5-fold axis
+  [ok] regular dodecahedron(edge 2): inradius^2 + pentagon circumradius^2 = circumradius^2 (exact)
+  [ok] TI pentagon circumradius^2 = 2(5+sqrt5)/5 (exact)
+  ri^2/|centre|^2 = (87/722+35/722r5); sqrt in Q(sqrt5): (7/38+5/38r5)
+  [ok] apex height ratio ri/|centre| lies in Q(sqrt5)
+  [ok] FS: apex to each pentagon vertex = R (circumradius) and = pyramid side edge; (R^2 exact)
+== Fullerene Star (TI + regular-dodecahedron centre pyramid on each pentagon, same TI, same hexagon planes)
+  [ok] FS: 72 corners, 80 faces (60 triangles + 20 hexagons)
+  [ok] FS: 150 edges, Euler 72-150+80=2
+  FS edge length^2 classes: [('(4+0r5)', 90), ('(9/2+3/2r5)', 60)]
+  FS edge types: {'H-H': 30, 'H-T': 60, 'T-T': 60}
+  FS valences: 5-valent 12, 4-valent 60, 3-valent 0
+== Comparison
+  OG (V,E,F)=(102,180,80) ; FS (V,E,F)=(72,150,80) ; same combinatorial type: False
+  [ok] FS is NOT combinatorially the OG (72 vs 102 corners; triangles vs kites; hexagons share edges in FS, only corners in OG)
+  [ok] pentagon apothem^2 = (a/2)^2 tan^2(54deg) = (5+2sqrt5)/... (float check)
+  pentagon apothem 1.376382; FS pyramid height (dodecahedron inradius) 2.227033
+  TI pentagon-hexagon dihedral 142.6226
+  FS hexagon-triangle interior dihedral = 142.6226 + 58.2825 = 200.9052  (reflex if > 180)
+  Family G(H): TI + pyramid of apex height H over each pentagon; hexagon-triangle dihedral 142.6226+atan(H/1.3764); convex iff H <= H_c = 1.051462 (triangle coplanar with its hexagon); FS has H = 2.227033 = 2.1180 H_c
+  [ok] FS lies outside the convex range of G (H_fs > H_c)
+  [ok] H_c exact: hexagon plane meets the 5-fold axis at t*centre, t in Q(sqrt5)
+  apex at H_c is (30/19+-3/19r5) x pentagon centre, i.e. height 1.051462
+  [ok] float H_c equals exact H_c
+  [ok] OG apex = plane v.x=rm2 meets the 5-fold axis, and is one of the 12 five-valent OG corners (exact)
+  OG apex radius^2 = (5265/361+1782/361r5) (5.061854); in OG corner classes: True
+  FS apex radius^2 = (25+10r5) (6.881910)
+  hexagon plane distance from centre (common): 4.534568
+  OG pentakis vertex B on the 3-fold axis of hexagon 0 at radius 5.196152; hexagon plane at 4.534568 (cut depth 0.661585)
+  FS triangle plane meets the 3-fold axis of its hexagon at radius 3.872983 (hexagon plane 4.534568, below it)
+  OG: apex/hexplane = 1.116281; B/hexplane = 1.145898
+  FS: apex/hexplane = 1.517655; B/hexplane = 0.854102
+  OG hexagon-kite interior dihedral (convex solid) = 156.199817 deg; cos(theta_ext)^2 = (51/109+18/109r5)
+  FS hexagon-triangle interior dihedral = 200.905157 deg (reflex); outward-normal angle 20.905157; cos^2 = (1/2+1/6r5)
+  [ok] FS dihedral equals TI pent-hex dihedral + atan(H/apothem) (float, 1e-9)
+  [ok] OG dihedral convex (<180), FS reflex (>180)
+== Link
+  Both solids are made from the same 20 hexagon planes of the TI frame. The OG is a pentakis dodecahedron whose 20 six-fold corners are cut at those planes so that neighbouring hexagons touch only at the 30 edge-midpoint corners (kites).
+  The Fullerene Star's 60 triangle planes also form a pentakis dodecahedron, but its six-fold corners lie BELOW the hexagon planes (B/hexplane < 1), so no cut occurs: the FS is TI + 12 pyramids (union), reflex at all 60 hexagon-triangle edges; the OG has B/hexplane > 1 (cut).
+  [ok] OG pentakis six-fold corners above the hexagon planes (cut), FS below
+  [ok] FS corner count 72 differs from every corner count in the OG family of #39 (OG 102; up 92,180,212,270; down 80,132,140,162)
+FINAL ok
