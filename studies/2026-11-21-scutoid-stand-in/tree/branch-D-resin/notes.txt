@@ -22,12 +22,17 @@ its T_h axes on the cube axes (both T_h settings are equivalent under the lattic
       hexagon-triangle bisectors carry sqrt3). It is a partition only if the walls reach the mould before they meet.
 
 3. Map (T_h face orbits: hexagons 8 (on the 3-fold axes) + 12; triangles 24 + 24 + 12; no two orbits ever gave congruent pieces)
-   arrangement      R1: kinds / scutoid kinds / partition     R2: kinds / scutoid kinds / partition
-   sc  s0           5 / 0 / yes                              5 / 0 / yes
-   sc  6/5, 3/2     5 / 0 / yes                              5 / 2, 1 / NO (overlap 0.146, 0.379)
-   bcc s0           5 / 0 / yes                              5 / 0 / yes
-   bcc 6/5, 3/2     5 / 0 / yes                              5 / 1, 2 / NO (overlap 0.025, 0.213)
-   fcc s0, 6/5, 3/2 5 / 0 / yes                              5 / 1, 2, 2 / NO (overlap 0.166, 0.313, 0.533)
+   arrangement   R1 kinds / scutoid kinds / partition   R2 kinds / scutoid kinds / partition (max overlap depth)
+   sc  s0        5 / 0 / yes                            5 / 0 / yes
+   sc  6/5 s0    5 / 0 / yes                            5 / 2 / NO (0.146)
+   sc  3/2 s0    5 / 0 / yes                            5 / 1 / NO (0.379)
+   bcc s0        5 / 0 / yes                            5 / 0 / yes
+   bcc 6/5 s0    5 / 0 / yes                            5 / 1 / NO (0.025)
+   bcc 3/2 s0    5 / 0 / yes                            5 / 2 / NO (0.213)
+   fcc s0        5 / 0 / yes                            5 / 1 / NO (0.166)
+   fcc 6/5 s0    5 / 0 / yes                            5 / 2 / NO (0.313)
+   fcc 3/2 s0    5 / 0 / yes                            5 / 2 / NO (0.533)
+   R2 is a valid division only at sc s0 and bcc s0 (log.txt); R1 at all nine.
    Per kind (faces, vertices, neighbours on the C1 side and the mould side, Y vertices, every dihedral with its basis form): log.txt.
    - R1 never gives a scutoid, proved: each lateral face is a plane through the centre and one C1 edge, so the piece across it is the
      same all the way out; two lateral planes meet only along the ray through a C1 vertex, so no Y vertex. The pieces are frusta
@@ -55,3 +60,37 @@ LEADS
 2. Fewer than 5 kinds needs pieces spanning several faces (for example the 3 triangles of one T_h orbit round a spike merged with
    their hexagon): test merged cells at bcc s0.
 3. The same for C2 (truncated dodecahedron with icosahedron centre pyramids) is a rerun of resin.py with the C2 faces.
+
+ROUND 2: the three leads (scripts/skeleton.py, merge.py, c2.py; data/skeleton_*.json, merge.json, c2.json; log_skeleton.txt,
+log_merge.txt, log_c2.txt, each ending FINAL ok)
+
+L1. Straight skeleton (the full version of R2). Every face plane moves out along its normal at unit speed; the wavefront is tracked as a
+   polyhedral surface; when an edge shrinks to 0 the faces either side part and the two faces at its ends meet (flip). The degree-4 TI
+   vertices and degree-5 apices stay concurrent by symmetry; they are carried as zero-length edges, and every simultaneous event is resolved
+   until no edge is negative or shrinking. Piece(F) = the slabs F sweeps between events, cut by the walls of its neighbours of that interval
+   and by the mould. 50 digits; checks: volumes add to mould - C1 (|gap| < 1e-47), no overlap slab/slab or slab/C1 (LP depth <= 0).
+   - First event at t1 = (2 + sqrt3)(sqrt5 - 1)/4 = 1.1532671 above every face (closed form identified at 40 digits, not proved): all
+     30 hexagon-hexagon edges shrink to points; across each, a spike triangle of one pyramid meets a spike triangle of the neighbouring
+     pyramid (new triangle-triangle wall). Next event 4.6943: each 3-fold hexagon closes to a point.
+   - bcc 6/5 s0: VALID. 5 kinds, 2 of them true scutoids: the 12 hexagon pieces per cell (C1 side 6 neighbours; one of its hexagon-hexagon
+     edges collapses inside the mould, one Y vertex; mould side 5 neighbours) and one 24-orbit of triangle pieces (C1 side 3
+     neighbours; gains the triangle across, one Y vertex; mould side 4). The 3-fold hexagons, the other 24 triangles and the 12-orbit
+     triangles stay frusta (their events lie outside the mould).
+   - bcc s0 and sc s0: VALID, 5 kinds, 0 scutoids (every event lies outside the mould; the pieces equal R2 of round 1).
+   - So the earlier R2 overlaps were the local rule's fault: past t1 the honest skeleton is a valid division, and it is where the scutoids
+     live. Scutoids appear exactly where an event point lies inside the mould; the first ones are the t1 points.
+L2. Fewer kinds, from R1 at bcc s0. A merged piece over a set D of C1 faces is a flat-faced ball when D is a disk and no point where C1
+   touches the mould (the 12 apices) lies inside D. Lower bound 2 (proved in merge.py's docstring): a disk cluster's stabiliser fixes a point
+   of the disk, so its orbit has 24, 12, 8 or 6 members and divides each face orbit it holds; the 8 hexagons on the 3-fold axes force 8,
+   the 12-orbits force 6 or 12. Attained, two ways (volumes add exactly in Q(sqrt5)):
+   (a) 8 x [3-fold hexagon + its 3 triangle neighbours] (14 flat faces) + 6 x [2 hexagons + 6 triangles round a coordinate axis] (25 faces);
+   (b) 8 x [3-fold hexagon + 6 triangles] (23 faces) + 6 x [2 hexagons + 2 triangles] (21 faces).
+   Minimum found: 2 kinds (one kind needs pieces that are not balls, for example the whole resin).
+L3. C2 (truncated dodecahedron, icosahedron centre pyramids; vol 85/2 + 20 sqrt5 = 87.2214), R1 at the smallest valid scale, exact:
+   sc s0 = (7 + 3 sqrt5)/2, bcc s0 = 4 + 2 sqrt5, fcc s0 = 5 + 2 sqrt5; star check true; all three VALID (volume identity exact).
+   4 kinds each (T_h face orbits: decagons 12; triangles 24 + 24 + 12), 0 scutoids (R1 never gives them). Tightest mould for C2: fcc (C2 share 0.41).
+
+Score after round 2. Valid division with scutoids: the straight skeleton at bcc 6/5 s0 (5 kinds, 2 scutoid kinds). Fewest kinds: 2 (R1
+merged at bcc s0, no scutoids). C2: 4 kinds, valid, no scutoids under R1.
+LEADS: skeleton for C2 (decagon-decagon edges play the hexagon-hexagon role); merge the skeleton pieces at bcc 6/5 s0 toward 2 kinds while
+keeping the scutoids; prove t1 exactly (it is a 3x3 linear solve in Q(sqrt3, sqrt5)).

@@ -1,0 +1,49 @@
+
+=== bcc s = 6/5 s0 = 7.577709: wavefront events up to t_end = 4.2361: 90 flips in 1 event times: 1.153267123
+   t = 1.15326712341: 90 flips (A|B part, C|D meet) types [('hex', 'hex', 'tri', 'tri'), ('hex', 'tri', 'tri', 'tri')]; event points inside the mould: 18
+   slabs 128 (empty or degenerate slabs dropped: 32); volume sum - (mould - C1) = 1.0263e-48; overlap depth slab/slab max -0 over 900 pairs; slab/C1 max -0  => VALID division
+   kind hex face 0 (8 per cell; merged [0]): planes 8 (walls to [8, 9, 10, 21, 26, 31], mould facets 1), points 12, vol 2.660957; C1-side neighbours [8, 9, 10, 21, 26, 31]; inside the mould loses [] gains []; Y events 0 scutoid False
+      dihedrals: 69.0948 lat|shell [3/4pi + -1beta]; 79.5474 bottom|lat [5/8pi + -1/2beta]; 100.4526 lat|shell [3/8pi + 1/2beta]; 110.9052 bottom|lat [1/4pi + 1beta]; 113.2410 lat|lat [not in basis]
+   kind hex face 8 (12 per cell; merged [8]): planes 10 (walls to [0, 4, 11, 22, 30, 60], mould facets 3), points 20, vol 3.900624; C1-side neighbours [0, 4, 11, 22, 30, 60]; inside the mould loses [11] gains []; Y events 1 scutoid True
+      dihedrals: 63.2159 lat|lat [not in basis]; 79.5474 bottom|lat [5/8pi + -1/2beta]; 109.4712 shell|shell [1pi + -2gamma]; 110.1775 lat|shell [not in basis]; 110.9052 bottom|lat [1/4pi + 1beta]; 113.2410 lat|lat [not in basis]; 117.5825 lat|shell [not in basis]; 125.2644 shell|shell [1/2pi + 1gamma]
+   kind tri face 20 (24 per cell; merged [20]): planes 7 (walls to [9, 21, 24, 50], mould facets 2), points 13, vol 1.759039; C1-side neighbours [9, 21, 24]; inside the mould loses [] gains [50]; Y events 1 scutoid True
+      dihedrals: 54.7356 lat|shell [1/2pi + -1gamma]; 62.4175 lat|shell [not in basis]; 66.7590 lat|lat [not in basis]; 69.8225 lat|shell [not in basis]; 72.0000 lat|lat [2/5pi]; 79.5474 bottom|lat [5/8pi + -1/2beta]; 90.0000 lat|shell [1/2pi]; 110.9052 lat|shell [1/4pi + 1beta]; 120.0000 bottom|lat [2/3pi]; 125.2644 shell|shell [1/2pi + 1gamma]; 148.3920 lat|lat [not in basis]
+   kind tri face 21 (24 per cell; merged [21]): planes 5 (walls to [0, 20, 22], mould facets 1), points 6, vol 1.039638; C1-side neighbours [0, 20, 22]; inside the mould loses [] gains []; Y events 0 scutoid False
+      dihedrals: 66.7590 lat|lat [not in basis]; 69.0948 lat|shell [3/4pi + -1beta]; 72.0000 lat|lat [2/5pi]; 79.5474 bottom|lat [5/8pi + -1/2beta]; 120.0000 bottom|lat [2/3pi]
+   kind tri face 22 (12 per cell; merged [22]): planes 6 (walls to [8, 21, 23], mould facets 2), points 10, vol 1.612341; C1-side neighbours [8, 21, 23]; inside the mould loses [] gains []; Y events 0 scutoid False
+      dihedrals: 62.4175 lat|shell [not in basis]; 66.7590 lat|lat [not in basis]; 72.0000 lat|lat [2/5pi]; 79.5474 bottom|lat [5/8pi + -1/2beta]; 109.4712 shell|shell [1pi + -2gamma]; 110.9052 lat|shell [1/4pi + 1beta]; 120.0000 bottom|lat [2/3pi]
+   SUMMARY bcc x6/5: valid True; kinds 5; scutoid kinds 2
+FINAL ok
+
+=== bcc s = 1 s0 = 6.314757: wavefront events up to t_end = 3.5301: 90 flips in 1 event times: 1.153267123
+   t = 1.15326712341: 90 flips (A|B part, C|D meet) types [('hex', 'hex', 'tri', 'tri'), ('hex', 'tri', 'tri', 'tri')]; event points inside the mould: 0
+   slabs 92 (empty or degenerate slabs dropped: 68); volume sum - (mould - C1) = -2.3948e-48; overlap depth slab/slab max -0 over 354 pairs; slab/C1 max -0  => VALID division
+   kind hex face 0 (8 per cell; merged [0]): planes 8 (walls to [8, 9, 10, 21, 26, 31], mould facets 1), points 12, vol 1.250983; C1-side neighbours [8, 9, 10, 21, 26, 31]; inside the mould loses [] gains []; Y events 0 scutoid False
+      dihedrals: 69.0948 lat|shell [3/4pi + -1beta]; 79.5474 bottom|lat [5/8pi + -1/2beta]; 100.4526 lat|shell [3/8pi + 1/2beta]; 110.9052 bottom|lat [1/4pi + 1beta]; 113.2410 lat|lat [not in basis]
+   kind hex face 8 (12 per cell; merged [8]): planes 10 (walls to [0, 4, 11, 22, 30, 60], mould facets 3), points 19, vol 2.350960; C1-side neighbours [0, 4, 11, 22, 30, 60]; inside the mould loses [] gains []; Y events 0 scutoid False
+      dihedrals: 79.5474 bottom|lat [5/8pi + -1/2beta]; 90.0000 lat|shell [1/2pi]; 109.4712 shell|shell [1pi + -2gamma]; 110.1775 lat|shell [not in basis]; 110.9052 bottom|lat [1/4pi + 1beta]; 113.2410 lat|lat [not in basis]; 117.5825 lat|shell [not in basis]; 125.2644 shell|shell [1/2pi + 1gamma]
+   kind tri face 20 (24 per cell; merged [20]): planes 6 (walls to [9, 21, 24], mould facets 2), points 7, vol 0.541473; C1-side neighbours [9, 21, 24]; inside the mould loses [] gains []; Y events 0 scutoid False
+      dihedrals: 54.7356 lat|shell [1/2pi + -1gamma]; 62.4175 lat|shell [not in basis]; 66.7590 lat|lat [not in basis]; 69.8225 lat|shell [not in basis]; 79.5474 bottom|lat [5/8pi + -1/2beta]; 90.0000 lat|shell [1/2pi]; 110.9052 lat|shell [1/4pi + 1beta]; 120.0000 bottom|lat [2/3pi]; 125.2644 shell|shell [1/2pi + 1gamma]
+   kind tri face 21 (24 per cell; merged [21]): planes 5 (walls to [0, 20, 22], mould facets 1), points 5, vol 0.255934; C1-side neighbours [0, 20, 22]; inside the mould loses [] gains []; Y events 0 scutoid False
+      dihedrals: 66.7590 lat|lat [not in basis]; 69.0948 lat|shell [3/4pi + -1beta]; 79.5474 bottom|lat [5/8pi + -1/2beta]; 120.0000 bottom|lat [2/3pi]
+   kind tri face 22 (12 per cell; merged [22]): planes 6 (walls to [8, 21, 23], mould facets 2), points 6, vol 0.466343; C1-side neighbours [8, 21, 23]; inside the mould loses [] gains []; Y events 0 scutoid False
+      dihedrals: 62.4175 lat|shell [not in basis]; 66.7590 lat|lat [not in basis]; 79.5474 bottom|lat [5/8pi + -1/2beta]; 109.4712 shell|shell [1pi + -2gamma]; 110.9052 lat|shell [1/4pi + 1beta]; 120.0000 bottom|lat [2/3pi]
+   SUMMARY bcc x1: valid True; kinds 5; scutoid kinds 0
+FINAL ok
+
+=== sc s = 1 s0 = 5.854102: wavefront events up to t_end = 5.0698: 110 flips in 2 event times: 1.153267123, 4.694334925
+   t = 1.15326712341: 90 flips (A|B part, C|D meet) types [('hex', 'hex', 'tri', 'tri'), ('hex', 'tri', 'tri', 'tri')]; event points inside the mould: 0
+   t = 4.69433492535: 20 flips (A|B part, C|D meet) types [('hex', 'tri', 'tri', 'tri')]; event points inside the mould: 0
+   slabs 112 (empty or degenerate slabs dropped: 108); volume sum - (mould - C1) = 3.4211e-49; overlap depth slab/slab max -0 over 642 pairs; slab/C1 max -0  => VALID division
+   kind hex face 0 (8 per cell; merged [0]): planes 10 (walls to [8, 9, 10, 21, 26, 31], mould facets 3), points 22, vol 4.700179; C1-side neighbours [8, 9, 10, 21, 26, 31]; inside the mould loses [] gains []; Y events 0 scutoid False
+      dihedrals: 79.5474 bottom|lat [5/8pi + -1/2beta]; 90.0000 shell|shell [1/2pi]; 102.3087 lat|shell [-1/8pi + -1/2beta + 1LAMBDA]; 110.9052 bottom|lat [1/4pi + 1beta]; 113.2410 lat|lat [not in basis]; 120.0000 lat|shell [2/3pi]; 137.6913 lat|shell [35/24pi + 1/2beta + -1LAMBDA]
+   kind hex face 8 (12 per cell; merged [8]): planes 8 (walls to [0, 4, 11, 22, 30, 60], mould facets 1), points 12, vol 2.285659; C1-side neighbours [0, 4, 11, 22, 30, 60]; inside the mould loses [] gains []; Y events 0 scutoid False
+      dihedrals: 60.0000 lat|shell [1/3pi]; 79.5474 bottom|lat [5/8pi + -1/2beta]; 90.0000 lat|shell [1/2pi]; 110.1775 lat|shell [not in basis]; 110.9052 bottom|lat [1/4pi + 1beta]; 113.2410 lat|lat [not in basis]
+   kind tri face 20 (24 per cell; merged [20]): planes 5 (walls to [9, 21, 24], mould facets 1), points 5, vol 0.466343; C1-side neighbours [9, 21, 24]; inside the mould loses [] gains []; Y events 0 scutoid False
+      dihedrals: 60.0000 lat|shell [1/3pi]; 66.7590 lat|lat [not in basis]; 69.8225 lat|shell [not in basis]; 79.5474 bottom|lat [5/8pi + -1/2beta]; 90.0000 lat|shell [1/2pi]; 120.0000 bottom|lat [2/3pi]
+   kind tri face 21 (24 per cell; merged [21]): planes 6 (walls to [0, 20, 22], mould facets 2), points 10, vol 1.796664; C1-side neighbours [0, 20, 22]; inside the mould loses [] gains []; Y events 0 scutoid False
+      dihedrals: 42.3087 lat|shell [-11/24pi + -1/2beta + 1LAMBDA]; 66.7590 lat|lat [not in basis]; 72.0000 lat|shell [2/5pi]; 77.6913 lat|shell [9/8pi + 1/2beta + -1LAMBDA]; 79.5474 bottom|lat [5/8pi + -1/2beta]; 90.0000 shell|shell [1/2pi]; 120.0000 bottom|lat [2/3pi]
+   kind tri face 22 (12 per cell; merged [22]): planes 6 (walls to [8, 21, 23], mould facets 2), points 7, vol 1.527559; C1-side neighbours [8, 21, 23]; inside the mould loses [] gains []; Y events 0 scutoid False
+      dihedrals: 60.0000 lat|shell [1/3pi]; 66.7590 lat|lat [not in basis]; 79.5474 bottom|lat [5/8pi + -1/2beta]; 90.0000 shell|shell [1/2pi]; 100.4526 lat|shell [3/8pi + 1/2beta]; 108.0000 lat|shell [3/5pi]; 120.0000 bottom|lat [2/3pi]
+   SUMMARY sc x1: valid True; kinds 5; scutoid kinds 0
+FINAL ok

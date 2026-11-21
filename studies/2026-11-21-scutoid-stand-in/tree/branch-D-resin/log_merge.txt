@@ -1,0 +1,7 @@
+face orbits: [('hex', 8), ('hex', 12), ('tri', 24), ('tri', 24), ('tri', 12)]
+bcc s0 = 10/3+4/3r5: C1 vertices on the mould: 12 (['apex'])
+2-kind merges found: 2
+ A: 4 C1 faces (1 hex, 3 tri) x 8 per cell, vol 41/48+25/48r5 = 2.018785, flat faces 14 (on C1 4, cone walls 9, mould 1);  B: 8 C1 faces (2 hex, 6 tri) x 6, vol 1141/324+155/81r5 = 7.800500, flat faces 25 (on C1 8, walls 12, mould 5); 8 vA + 6 vB = resin exactly: True
+ A: 7 C1 faces (1 hex, 6 tri) x 8 per cell, vol 25691/20088+10007/13392r5 = 2.949796, flat faces 23 (on C1 7, cone walls 12, mould 4);  B: 4 C1 faces (2 hex, 2 tri) x 6, vol 22262/7533+1349/837r5 = 6.559153, flat faces 21 (on C1 4, walls 12, mould 5); 8 vA + 6 vB = resin exactly: True
+minimum number of kinds (disk pieces, T_h orbits): 2 (bound attained)
+FINAL ok

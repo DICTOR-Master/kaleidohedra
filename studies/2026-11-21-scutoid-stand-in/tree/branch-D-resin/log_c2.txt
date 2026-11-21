@@ -1,0 +1,38 @@
+C2: 60 truncated-dodecahedron vertices (edge 1 exact), 20 apices (lateral edges^2 = (phi+2)/4 exact); faces 12 decagons + 60 triangles
+star check (all 72 face planes at positive offset from the centre, exact): True
+vol C2 = 85/2+20r5 = 87.2213595500
+T_h face orbits: [('dec', 12), ('tri', 24), ('tri', 24), ('tri', 12)]
+
+=== sc: s0 = 7/2+3/2r5 = 6.854102; cell 321.9969, resin 234.7755, C2 share 0.2709; volume sum - resin = 0 => VALID (exact)
+   kind dec face 0 (12 per cell): F=13 V=22 faces [4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 6, 8, 10] top facets 2 Y=0 scutoid=False vol=17.852882
+      dihedrals: 54.1680 lat|shell [not in basis]; 72.0000 lat|shell [2/5pi]; 85.1004 lat|shell [not in basis]; 86.9742 lat|shell [not in basis]; 90.0000 lat|shell [1/2pi]; 108.0000 lat|shell [3/5pi]; 116.5651 lat|shell [2alpha]; 121.7175 bottom|lat [1pi + -1alpha]; 149.5197 lat|lat [not in basis]
+   kind tri face 12 (24 per cell): F=6 V=7 faces [3, 3, 3, 4, 4, 5] top facets 2 Y=0 scutoid=False vol=0.698894
+      dihedrals: 26.5651 bottom|lat [-1/2pi + 2alpha]; 30.4803 lat|lat [not in basis]; 72.0000 lat|shell [2/5pi]; 90.0000 shell|shell [1/2pi]; 93.0258 lat|shell [not in basis]; 108.0000 lat|shell [3/5pi]; 120.0000 lat|lat [2/3pi]; 125.8320 lat|shell [not in basis]; 144.0000 bottom|lat [4/5pi]
+   kind tri face 36 (24 per cell): F=5 V=5 faces [3, 3, 3, 3, 4] top facets 1 Y=0 scutoid=False vol=0.094010
+      dihedrals: 26.5651 bottom|lat [-1/2pi + 2alpha]; 30.4803 lat|lat [not in basis]; 72.0000 lat|shell [2/5pi]; 90.0000 lat|shell [1/2pi]; 94.8996 lat|shell [not in basis]; 144.0000 bottom|lat [4/5pi]
+   kind tri face 37 (12 per cell): F=5 V=5 faces [3, 3, 3, 3, 4] top facets 1 Y=0 scutoid=False vol=0.125939
+      dihedrals: 26.5651 bottom|lat [-1/2pi + 2alpha]; 30.4803 lat|lat [not in basis]; 63.4349 lat|shell [1pi + -2alpha]; 108.0000 lat|shell [3/5pi]; 144.0000 bottom|lat [4/5pi]
+   SUMMARY C2 sc s0 R1: kinds 4, scutoid kinds 0, valid True
+
+=== bcc: s0 = 4+2r5 = 8.472136; cell 304.0526, resin 216.8313, C2 share 0.2869; volume sum - resin = 0 => VALID (exact)
+   kind dec face 0 (12 per cell): F=14 V=24 faces [4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 7, 7, 10] top facets 3 Y=0 scutoid=False vol=16.864962
+      dihedrals: 75.0368 lat|shell [not in basis]; 85.1004 lat|shell [not in basis]; 90.0000 lat|shell [1/2pi]; 95.6599 lat|shell [1/4pi + 2alpha + -1beta]; 109.4712 shell|shell [1pi + -2gamma]; 121.7175 bottom|lat [1pi + -1alpha]; 125.2644 shell|shell [1/2pi + 1gamma]; 149.5197 lat|lat [not in basis]
+   kind tri face 12 (24 per cell): F=5 V=5 faces [3, 3, 3, 3, 4] top facets 1 Y=0 scutoid=False vol=0.103475
+      dihedrals: 26.5651 bottom|lat [-1/2pi + 2alpha]; 30.4803 lat|lat [not in basis]; 84.3401 lat|shell [3/4pi + -2alpha + 1beta]; 90.0000 lat|shell [1/2pi]; 144.0000 bottom|lat [4/5pi]
+   kind tri face 36 (24 per cell): F=6 V=8 faces [3, 3, 4, 4, 5, 5] top facets 2 Y=0 scutoid=False vol=0.321279
+      dihedrals: 26.5651 bottom|lat [-1/2pi + 2alpha]; 30.4803 lat|lat [not in basis]; 72.0000 lat|shell [2/5pi]; 90.0000 lat|shell [1/2pi]; 94.8996 lat|shell [not in basis]; 104.9632 lat|shell [not in basis]; 120.0000 lat|lat [2/3pi]; 125.2644 shell|shell [1/2pi + 1gamma]; 144.0000 bottom|lat [4/5pi]
+   kind tri face 37 (12 per cell): F=7 V=9 faces [3, 3, 3, 4, 5, 5, 5] top facets 3 Y=0 scutoid=False vol=0.354803
+      dihedrals: 26.5651 bottom|lat [-1/2pi + 2alpha]; 30.4803 lat|lat [not in basis]; 90.0000 lat|shell [1/2pi]; 104.9632 lat|shell [not in basis]; 108.0000 lat|shell [3/5pi]; 120.0000 lat|lat [2/3pi]; 125.2644 shell|shell [1/2pi + 1gamma]; 144.0000 bottom|lat [4/5pi]
+   SUMMARY C2 bcc s0 R1: kinds 4, scutoid kinds 0, valid True
+
+=== fcc: s0 = 5+2r5 = 9.472136; cell 212.4632, resin 125.2419, C2 share 0.4105; volume sum - resin = 0 => VALID (exact)
+   kind dec face 0 (12 per cell): F=14 V=23 faces [4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 7, 10] top facets 3 Y=0 scutoid=False vol=9.799677
+      dihedrals: 63.1746 lat|shell [not in basis]; 69.2952 lat|shell [not in basis]; 71.5651 lat|shell [-1/4pi + 2alpha]; 90.0000 lat|shell [1/2pi]; 99.0974 lat|shell [not in basis]; 107.0472 lat|shell [not in basis]; 110.7048 lat|shell [not in basis]; 120.0000 shell|shell [2/3pi]; 121.7175 bottom|lat [1pi + -1alpha]; 149.5197 lat|lat [not in basis]
+   kind tri face 12 (24 per cell): F=6 V=7 faces [3, 3, 3, 4, 4, 5] top facets 2 Y=0 scutoid=False vol=0.160797
+      dihedrals: 26.5651 bottom|lat [-1/2pi + 2alpha]; 30.4803 lat|lat [not in basis]; 69.2952 lat|shell [not in basis]; 80.9026 lat|shell [not in basis]; 110.7048 lat|shell [not in basis]; 116.8254 lat|shell [not in basis]; 120.0000 lat|lat [2/3pi]; 144.0000 bottom|lat [4/5pi]
+   kind tri face 36 (24 per cell): F=5 V=5 faces [3, 3, 3, 3, 4] top facets 1 Y=0 scutoid=False vol=0.117669
+      dihedrals: 26.5651 bottom|lat [-1/2pi + 2alpha]; 30.4803 lat|lat [not in basis]; 72.9528 lat|shell [not in basis]; 90.0000 lat|shell [1/2pi]; 110.7048 lat|shell [not in basis]; 144.0000 bottom|lat [4/5pi]
+   kind tri face 37 (12 per cell): F=5 V=5 faces [3, 3, 3, 3, 4] top facets 1 Y=0 scutoid=False vol=0.080214
+      dihedrals: 26.5651 bottom|lat [-1/2pi + 2alpha]; 30.4803 lat|lat [not in basis]; 69.2952 lat|shell [not in basis]; 108.4349 lat|shell [5/4pi + -2alpha]; 144.0000 bottom|lat [4/5pi]
+   SUMMARY C2 fcc s0 R1: kinds 4, scutoid kinds 0, valid True
+FINAL ok
