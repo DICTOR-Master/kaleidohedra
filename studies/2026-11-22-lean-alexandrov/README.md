@@ -63,3 +63,16 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
   curvature at every corner ⇒ r' = c • r with c > 0 (scale r' by the largest ratio r'_i/r_i, then the
   comparison lemma rules out any strict ray). Full `lake build` ok (log `logs/build-M3.log`, FINAL ok);
   0 sorry; axioms of `alexandrov_uniqueness`: propext, Classical.choice, Quot.sound; 456 lines.
+* M4 (2026-11-22) `Alexandrov/Total.lean`: first piece of Step 2. `sum_curvature`: the curvatures at
+  the corners add up to 4π (cells cover space, two cells meet in a plane of volume 0, unit ball volume
+  4π/3 from Mathlib). So Σκ_i = 4π is necessary; for the dice κ_i = 4π/N. Full build ok
+  (`logs/build-M4.log`, FINAL ok); 0 sorry; standard axioms only; 522 lines.
+
+## Next steps (existence, small pieces)
+
+* M5: each cell volume depends continuously on r (cell boundaries move continuously; symmetric
+  differences lie in thin wedges).
+* M6: necessity of Alexandrov's condition (Σ_{n_i∈ω} κ_i(r) < area ω^{π/2}).
+* M7: monotonicity: raising r_k alone increases κ_k and decreases every other κ_j (weakly).
+* M8+: existence for κ satisfying the condition, by Aleksandrov's continuity method or the
+  finite-dimensional variational route (Oliker 2007, Theorems 4 and 6).
