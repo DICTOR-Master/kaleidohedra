@@ -9,9 +9,10 @@
 <p class="sub">Machine-checked for the six regular polytopes, and one 600-cell balanced by 120 regular 5-cells</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
-Paper #116 · Version 3 · 21 November 2026 · DICTO DOI: 10.5281/zenodo.24393967 (all versions; Version 1: 10.5281/zenodo.24393968) · Licence CC BY-SA 4.0 · Lean files, exact checks and data: https://github.com/DICTOR-Master/kaleidohedra/tree/5f0a8d3c/studies (research branch, commit 5f0a8d3c: folders 2026-11-20-palomar-dehn4d, 2026-11-20-600cell-5cell-zero and 2026-11-20-palomar-next-prescore), and the scripts beside this paper.<br>
+Paper #116 · Version 4 · 21 November 2026 · DICTO DOI: 10.5281/zenodo.24393967 (all versions; Version 1: 10.5281/zenodo.24393968) · Licence CC BY-SA 4.0 · Lean files, exact checks and data: https://github.com/DICTOR-Master/kaleidohedra/tree/5f0a8d3c/studies (research branch, commit 5f0a8d3c: folders 2026-11-20-palomar-dehn4d, 2026-11-20-600cell-5cell-zero and 2026-11-20-palomar-next-prescore), and the scripts beside this paper.<br>
 DICTO: the step from the Dehn Canon to four dimensions, in his order: the bridge first, then the six regular 4-polytopes, then the 5-cell against the 600-cell, stated only if true; the study of the 600-cell with 5-cell caps; the order paper first, then the formal entry. Computation, proofs, verification and drafting with Claude (Anthropic).
 </div>
+<p style="font-size:8.6pt;color:#555">Version 4 adds the Palomar registration of the Lean formalization (PALOMAR-2026-11-21-000004) and its archived software record (10.5281/zenodo.24411429).</p>
 <p style="font-size:8.6pt;color:#555">Version 3 revises the text for greater clarity; no result changes.</p>
 <p style="font-size:8.6pt;color:#555">Version 2 redraws the figures so that lines behind solid faces are hidden; no result changes.</p>
 
@@ -150,7 +151,7 @@ the sum over the classes that occur (a finite sum for convex polytopes).</p>
 <tr><td>DH15Results600</td><td class="n">90</td><td>Corollary 9 for the 600-cell, and the 5-cell against it</td></tr>
 <tr class="hd"><td>all</td><td class="n">3,383</td><td>15 modules</td></tr>
 </table>
-<p>The fourteen statements are prepared as an entry for the Palomar registry, as the Dehn Canon's were [20]: a statement file of 300 lines with Mathlib as its only import, accepted locally by the comparator with three independent kernels (Lean's own, NanoDa and con-ron), and three altered copies (a changed constant, a changed definition, a proof replaced by <code>sorry</code>) each rejected. The entry has been submitted and is not yet registered.</p>
+<p>The fourteen statements are registered on Palomar as PALOMAR-2026-11-21-000004 [33], as the Dehn Canon's were [20]: a statement file of 300 lines with Mathlib as its only import, accepted locally by the comparator with three independent kernels (Lean's own, NanoDa and con-ron), and three altered copies (a changed constant, a changed definition, a proof replaced by <code>sorry</code>) each rejected. The Lean formalization is also archived as a software record on Zenodo [34].</p>
 <p><b>Limits of what is stated.</b> Pieces are convex polytopes, finitely many, moved by isometries, reflections included. The polytopes are the sets written in the files, by facet normals; their corners and edges are used as data for the 600-cell, but equality with the convex hull of the corners is not stated. The areas A<sub>5</sub> and A<sub>600</sub> are proved positive, not computed; the face-sum identity for convex polytopes in ℝ⁴ is not formalized. Theorem 2 is not in Lean, except its angle relation. Jessen's converse is not formalized; no statement of the files says that equal volume and equal invariant imply scissors congruence.</p>
 
 <h2>8. Prior art, and what is claimed</h2>
@@ -178,7 +179,7 @@ the sum over the classes that occur (a finite sum for convex polytopes).</p>
 <li>Machine-checked invariants of the six regular 4-polytopes and the non-congruences that follow (Theorem 6, Corollary 9; Table 1).</li>
 <li>The balance n b² = 120 a² of one 600-cell against n regular 5-cells (Proposition 10).</li>
 <li>The edge-once cap set, its tip 600-cell, and the capped solid's scissors congruence with a 4-cube, existence only (Theorem 12, Proposition 13).</li>
-<li>The cap sets in the 600-cell's own structure (§6), and the statements prepared as a registry entry (§7).</li>
+<li>The cap sets in the 600-cell's own structure (§6), and the statements registered as a Palomar entry (§7).</li>
 </ol>
 
 <h2>Data and reproducibility</h2>
@@ -218,6 +219,8 @@ the sum over the classes that occur (a finite sum for convex polytopes).</p>
 <li>E. Hess, 1876: the compound of five tetrahedra, as credited by Wikipedia, "Compound of five tetrahedra"; the original publication not identified or read.</li>
 <li>DICTO, Between the Queens (#76), DICTO DOI: 10.5281/zenodo.23780068.</li>
 <li>DICTO, Scutoid Tissues in Four Dimensions (#104), DICTO DOI: 10.5281/zenodo.24111864.</li>
+<li>Palomar registry entry PALOMAR-2026-11-21-000004 (21 November 2026): The Dehn–Hadwiger invariant in four dimensions, Lean 4 formalization, https://data.palomar-registry.org/entries/PALOMAR-2026-11-21-000004-v1.json.</li>
+<li>DICTO, The Dehn–Hadwiger invariant in four dimensions: Lean 4 formalization (software), DICTO DOI: 10.5281/zenodo.24411429.</li>
 </ol>
 <p>DICTO · dictospheres.com</p>
 </body></html>

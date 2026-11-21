@@ -11,7 +11,7 @@
  "language": "eng",
  "license": "cc-by-sa-4.0",
  "access_right": "open",
- "version": "3",
+ "version": "3.1",
  "publication_date": "2026-11-20",
  "title": "Scutoid Tissues in Space and Time: births, swaps and deaths counted in every direction",
  "subjects": [
@@ -36,7 +36,7 @@
    "scheme": "url"
   }
  ],
- "description": "<p>Version 3 revises the text for greater clarity; no result changes.</p><p>Version 2 redraws the figures so that lines behind solid faces are hidden; no result changes.</p><p>When the cells of a sheet of tissue, a froth or any flat tiling move against each other, they are born, swap neighbours and die. Stack the moving tiling in time and every cell becomes a tube in space-time; a cell that swaps neighbours on the way is a scutoid. We prove that the count of these events does not depend on which direction is called time. Let an open region of three-dimensional space-time be filled by a simple face-to-face complex of convex polytopes, and sweep it by parallel planes in any generic direction (Theorem 1). Then the tiling seen in the plane changes only at the corners of the complex, by a birth, a swap or a death according to how many of the corner's four edges lie below the plane; each cell is born at its lowest corner and dies at its highest; and, per unit volume of a large region, births = deaths = cells and swaps = corners − 2 × cells, in every generic direction. Hence swaps per birth = ⟨F⟩/2 − 3, where ⟨F⟩ is the mean number of walls of a cell. This carries DICTO's reading of the scutoid tissue as a slice of a four-dimensional polytope (#104, where the counts are the h-vector) from the closed polytope to open space-time. Exact cases: the swept 120-cell, truncated 120-cell and bitruncated 600-cell (116 / 366 / 116, 716 / 966 / 716, 716 / 2166 / 716), the bcc tessellation (4 swaps per birth) and the Poisson–Voronoi tessellation (24π²/35 − 2 = 4.7677, simulated 4.7669 ± 0.0006). Without convexity the counts can depend on the direction, and on the Sun's granulation they do. No natural system has yet given a swap count that passes its checks; the one check that could, swaps per birth against ⟨F⟩/2 − 3 in a public three-dimensional grain map swept by planes, is the open lead.</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
+ "description": "<p>Version 3.1 corrects the wording of a note; no result changes.</p><p>Version 3 revises the text for greater clarity; no result changes.</p><p>Version 2 redraws the figures so that lines behind solid faces are hidden; no result changes.</p><p>When the cells of a sheet of tissue, a froth or any flat tiling move against each other, they are born, swap neighbours and die. Stack the moving tiling in time and every cell becomes a tube in space-time; a cell that swaps neighbours on the way is a scutoid. We prove that the count of these events does not depend on which direction is called time. Let an open region of three-dimensional space-time be filled by a simple face-to-face complex of convex polytopes, and sweep it by parallel planes in any generic direction (Theorem 1). Then the tiling seen in the plane changes only at the corners of the complex, by a birth, a swap or a death according to how many of the corner's four edges lie below the plane; each cell is born at its lowest corner and dies at its highest; and, per unit volume of a large region, births = deaths = cells and swaps = corners − 2 × cells, in every generic direction. Hence swaps per birth = ⟨F⟩/2 − 3, where ⟨F⟩ is the mean number of walls of a cell. This carries DICTO's reading of the scutoid tissue as a slice of a four-dimensional polytope (#104, where the counts are the h-vector) from the closed polytope to open space-time. Exact cases: the swept 120-cell, truncated 120-cell and bitruncated 600-cell (116 / 366 / 116, 716 / 966 / 716, 716 / 2166 / 716), the bcc tessellation (4 swaps per birth) and the Poisson–Voronoi tessellation (24π²/35 − 2 = 4.7677, simulated 4.7669 ± 0.0006). Without convexity the counts can depend on the direction, and on the Sun's granulation they do. No natural system has yet given a swap count that passes its checks; the one check that could, swaps per birth against ⟨F⟩/2 − 3 in a public three-dimensional grain map swept by planes, is the open lead.</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
  "keywords": [
   "DICTO",
   "scutoids",
@@ -62,5 +62,5 @@
    "scheme": "doi"
   }
  ],
- "notes": "Version 3 revises the text for greater clarity; no result changes."
+ "notes": "Version 3.1 corrects the wording of a note; no result changes. Version 3 revises the text for greater clarity; no result changes."
 }
