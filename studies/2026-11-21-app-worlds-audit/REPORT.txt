@@ -1,0 +1,107 @@
+# App worlds audit, 21 Nov 2026 (read-only; Kaleidohedra app, master)
+
+Sources: the world menu by the books (src/app/book-menu-data.js on master, which lists each world's papers), the wizard's lists (K_WORLDS,
+LATTICES_3D, LATTICES_4D, 1D/2D families, 5D/6D catalogues in dimension-wizard.js), the Concordance (113 papers), the survey map, and a text
+search of every paper and book source for each world's name and shape. The Zenodo link map used by zen_applink.py is an input file passed on the
+command line and is not kept in the repository, so the menu's paper lists stand in for it. "Covered" = a paper or book describes the world by name or
+shape or links to it. "(thin)" = covered, but only by a mention or a sibling world, so a figure from the app would add something.
+
+COUNTS: worlds total 63 | covered 52 (of which 6 thin) | uncovered 11.
+(63 = 37 worlds in the K list incl. shells, targets, studies, golden, sunstar, stella-jewel, breathing, bodhi-pyro, octet-build, roof-fold;
+ 13 lattices; 3 films/kits; 3 four-dimensional lattices; 5D and 6D; 5 in 1D/2D.)
+
+## Table
+
+| World (app name) | What it shows | Covered by | Could illustrate / seed |
+|---|---|---|---|
+| DICTONIC | the three DICTONIC bonds of the six DICTONIC solids on one slider | #51, #52; book Three | covered |
+| Bitruncated 600-cell | midpoint of the White and Red Queens, sweep with every scutoid swap | #76, #104, #107; book Seven | covered |
+| The 4D Permutohedron | 120 orderings of five numbers as a 4D solid, Schlegel build and sweep | #105; book Seven | covered |
+| Generalized Permutohedra | the 3D permutohedron's deformation cone to Loday's associahedron | permutohedron-family, #104-#106 (by name); book Seven | covered; no own paper (Postnikov's, not DICTO's) |
+| Golamandalas | the DICTO Yantra's nine triangles as spinning tetrahedra, Cleo and 81 spheres | #103 DICTO Yantra | covered |
+| The Global Web of Bonds | square+centres, honeycomb+centres, rock salt on one weight slider | #53; book Three | covered |
+| The Stackings World | every close-packed stacking of the HexOct pieces | #57, #58, #66, #68, #70-#74; book Six | covered |
+| HexOct | the two layer tiles stacked into any stacking | #75, #83, #86; book Six | covered |
+| HexOct kit | the same tiles as a build kit | #86; book Six | covered |
+| Star Cores | any of 52 convex Star Cores shapes, star, halo and core on a slider | #79, #80, #81; book Five | covered |
+| The Icosaxes Bloom | twenty Icosaxes slid in to Bloom, Bud and Seed | #59; book Three | covered |
+| The White Queen 600-cell | true shadows of the 600-cell, view direction on one slider | #63, #65, #76; book Ten | covered |
+| Queens' walls | both Queens pulled apart, cell by cell or by 60 shared sheets | #107, #109, #110; book Ten | covered |
+| Every Mix of the Platonic Solids | D I C T O toggles choose a mix; its space filling in slabs | #47, #106; book Eight | covered |
+| The Reuleaux Platonic Solids | balls on a solid's corners grow into its Reuleaux body | #45; book Eight | covered |
+| Aristotle's Pyramid | a Platonic solid cut into face pyramids, three fills | #44, #77, #92; book Eight, book centre-pyramids | covered |
+| Euclid-Kepler-Pacioli Cell Network (EKP) | Euclid's roofs folded into the EKP cell network | #8; book Eight | covered |
+| Studies | exact constructions on the EKP cell, one at a time | #10, #11 (EKP studies); book Two | covered (thin: no paper names the world) |
+| The OG on the Octet Truss | Ogdoecontahedron kits in the octet truss, octet to gyrated | #37, #37a, #40; book One | covered |
+| Universal PiTet | the Cleo star grown in spherical shells to a cycle of four solids | #38, #38a, #39; book Four | covered |
+| Universal PiTet film | its film | #38; book Four | covered |
+| Kepler-Poinsot-UP film | the Kepler-Poinsot cycle as a film | #27, #38a; book Four | covered |
+| Vajrayana | the twelve-station golden cycle, peeled station by station | #34-#35b; book Four | covered |
+| OCD Stella Crystals | the OCD Stella on one network, three on the other | #31a; book One | covered |
+| Dual Vision | Spheres of Dharma and their polar reversal in one space | #32, #33; book Four | covered |
+| DICTO-TIC (Transitional Icosahedral Cycles) | two loops and their side paths | #27, #28; book Four | covered |
+| Theaetetus | the Cleo core grown to the DICTO Hecatodihedron | #29; book Four | covered |
+| Multi-shell chains | Chain of Karma, Spheres of Dharma, Bodhi Seed | #22, #23, #24, #108; book Four | covered |
+| DICTO Icosahedral Octet | caps, all-icosahedral, frog chorus, mixed blocks, golden split | #48 (Golden Split), #19, #20; book Two | covered |
+| Icosahedral Octet Lattice (build) | the octet built cell by cell or by cluster | #48 and the octet papers; no paper of its own | covered (thin) |
+| DICTO ATOM-13x13 | twelve around one, thirteen ways | #25, #26; book Two | covered |
+| DICTO Icosa | the Lotus seed (Icosa-13) and its icosahedral twin of Dodeca | #22 (Lotus seed), #26; book One (no paper listed in the menu) | covered (thin) |
+| DICTO Dodeca | Dodeca-13, DICTO-Star, DICTO-ICOSA star | #13, #14; book One | covered |
+| Sunstar Lattice | Dodecahedra and Dogstars, clusters, octet, Kagome | #16, #42; book Two | covered |
+| Stella-Jewel Lattice | DICTO Jewel checkerboard, clusters, Hexa, Kagome hulls | #15, #17, #18, #41; book Two | covered |
+| Golden Breathing Pyrochlore | the golden pyrochlore breathing | #20, #36; book One | covered |
+| Golden Bodhi Pyrochlore Networks | Bodhi networks in the pyrochlore | #30, #31, #36; book One | covered |
+| Golden Rhombohedra | the 3D Penrose tiling (Ammann, Kramer) | #84 Window Law, turn-law, book Laws of Stacking (by name) | covered |
+| FCC / rhombic dodecahedra | Rhombiverse's home lattice | #1 and most papers | covered |
+| DICTO FCC | the skewed RD on the FCC lattice | #1, #25, bull-horns; book Two | covered |
+| RD Dual (cuboctahedra, octahedra) | the RD lattice's dual | cubic-pairings, pyramid-tilings (#99 family) | covered |
+| BCC (truncated octahedra) | the truncated octahedron lattice | #105 (the 1:2 TO), #1 context, many | covered |
+| BCC interstitial | the gaps between truncated octahedra | Golden Bodhi Pyrochlore (#36), Laws of Stacking | covered (thin) |
+| ED (elongated dodecahedra) | Fedorov's elongated dodecahedron lattice | #5 | covered |
+| Hexagonal prisms | the hexagonal lattice | #57, #68-#75 | covered |
+| DICTO Hex Prism | DICTO's leaning hexagonal prism | #84, hexoct-narcissus; book Two | covered (thin) |
+| Triangular prisms | the triangular prism lattice | #109/#110, #111, #112 mentions | covered (thin) |
+| HCP (trapezo-rhombic dodecahedra) | the HCP cell lattice | #60, #68, TRD study note; book Laws of Stacking | covered |
+| Gyrated Octet | tetrahedra and octahedra, gyrated | #37a, #40 | covered |
+| Rhombohedral | the rhombohedral lattice | #17 (rhombohedral Kagome), #18; book Two | covered |
+| Pyrochlore (3D Kagome) | the 3D Kagome lattice | #36, #60, #74 | covered |
+| D4 (24-cell and 16-cell) | the 24-cell and 16-cell as 4D lattice cells | #89-#91, #107, #110 (as solids; not the lattice) | covered by shape |
+| Z4 (Hypercubic) | the tesseract lattice | none | NEW (see below) |
+| Hyper-pyrochlore (4D Kagome) | truncated, bitruncated and 5-cell tiles | #104, #105 (the bitruncated 5-cell as scutoid cell; not the lattice) | covered by shape (thin) |
+| 5D quasicrystal | decagonal quasicrystal, Penrose rhombi from Z^5 | none | NEW |
+| 6D quasicrystal | icosahedral quasicrystal, golden rhombohedra from Z^6 | named only as source of the golden rhombohedra (Golden Rhombohedra world) | NEW |
+| 2D lattices (3 primitives) | triangular, square and others, by angle | none | NEW |
+| Signal (1D) | a one-dimensional trajectory carrying Morse code | none | NEW |
+| Construct (1D: Square, Kagome, RD) | the construction microscope: square, Kagome and RD built in 1D cells | none | NEW |
+| Kaleidoscope (2D) | flat tiles reflected in mirrors to one wedge | none (kaleidoscope appears only as Wythoff's) | NEW |
+| Nets (2D to 3D) | a solid's net, built and folded by a slider | none | NEW |
+| Targets | gallery of the 160 target cells (TARGETS.md) | partly #1, #5, #25 (cells they came from); no paper of the 160 | NEW |
+| Shells | hulls built from shells of RDs, hull shapes, fragments | none (only unrelated "shells" in the chains papers) | NEW |
+
+(Row count: 63 including the nine "covered" rows grouped by name above.)
+
+## Uncovered worlds: what each could illustrate or seed
+
+| World | Could illustrate | New paper idea |
+|---|---|---|
+| Z4 (Hypercubic) | #104, #114 scutoid tissues, the Dual-pairs-in-dimensions note | new paper: "The hypercubic lattice's pieces": the tesseract lattice as the base case of the 4D swaps ladder (square, cube, tesseract) |
+| Hyper-pyrochlore (4D Kagome) | #105 (4D Vacuus of the permutohedron), #107 | covered by shape; a figure of the lattice would fit book Seven |
+| 5D quasicrystal | Golden Ladder chapters on golden cycles | new paper: "Penrose from five dimensions": the thick and thin rhombi as the 5D cut, set beside the golden rhombohedra as the 6D cut |
+| 6D quasicrystal | #84 Window Law, turn-law; book Laws of Stacking | figure for the window law: the 6D cut-and-project behind the Golden Rhombohedra world |
+| 2D lattices | #62 Shadows of the Fourth Dimension, book Eleven opening chapters | figure only (the 2D case of the swap rule) |
+| Signal | none of the papers | new paper (small): Morse message as a 1D trajectory; fits the 1D chapter of book Eleven "A Brief Geometry of Space" |
+| Construct | book Eleven (1D: building a square from 1D cells) | figure and one chapter for book Eleven, arc from 1D to 3D |
+| Kaleidoscope | #84 Window Law, #103 Yantra (mirror-built star), book Golden Ladder (kaleidoscope as Wythoff's) | new paper: "A kaleidoscope of Penrose rhombi and Kagome tiles": which tile sets close under mirrors (links to Mirror Law) |
+| Nets | Dehn papers (#100, #113, #116): a net folds into the solid that scissors-congruence needs | figure for the Dehn Canon: the cube's net folding; new paper: "Which nets fold to the Platonic and DICTO solids" |
+| Targets | #1, #5, #25, #49 Stretching Theorem | new paper: "The 160 target cells": the exact search for space-fillers of the sheared lattices (TARGETS.md and DISCOVERIES.md F9, F21) |
+| Shells | #22-#24 chains, #43 Kyushindo Cores | new paper: "Shells of rhombic dodecahedra": hull shapes and shell counts; or a figure for book Quanta of Space |
+
+## Top 5 uncovered worlds most worth a paper or a figure
+
+1. Targets: the exact search and the 160 cells are already done (TARGETS.md, DISCOVERIES.md), only the paper is missing; it also closes the loop with #1, #5, #25 and #49.
+2. Nets: connects directly to the Dehn Canon (#113) and #116 (a net folding to a solid), and a figure is cheap.
+3. Kaleidoscope: a clean statement (which tile sets close under mirrors) that links to the Mirror Law and the Window Law.
+4. 5D quasicrystal with the 6D quasicrystal: one paper "Penrose from five dimensions, golden rhombohedra from six", completing the Golden Rhombohedra world, which is covered only by name.
+5. Z4 (Hypercubic): the missing base case of the scutoid tissues ladder (square, cube, tesseract), one figure for #104 and #114 at least.
+
+Also worth one chapter figure: Construct and Signal for book Eleven (1D start of "A Brief Geometry of Space").
