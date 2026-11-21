@@ -263,3 +263,6 @@ open Mathlib pull requests and Zulip for the same statement.
 - Open and closed mathlib4 pull requests searched for "arccos niven", "arccos rational", "arccos irrational pi", "irrational arccos", "arccos_div_pi": none on this statement (the only arccos hits: #41188 obtuse/right-angle criteria, #44944 unistochastic matrices).
 - Web search of the Lean Zulip archive for arccos at rational multiples of π, Niven, "Dehn invariant", "Hilbert's third problem": no thread found (one 2019 new-members thread on defining arccos only).
 - Verdict: item 1 is not in Mathlib and not proposed; the Dehn invariant has no Mathlib/Zulip trace. Next (outward, needs DICTO's yes): a short Zulip post in #mathlib4 proposing the corollary (and asking interest in the Dehn invariant), then a small PR to Niven.lean.
+
+## Status (21 Nov 2026)
+DICTO decided not to contribute to Mathlib or post on the Lean Zulip. This list stays as a private record only.
