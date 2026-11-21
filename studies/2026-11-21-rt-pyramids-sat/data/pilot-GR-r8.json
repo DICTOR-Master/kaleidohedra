@@ -1,0 +1,292 @@
+{
+ "kind": "GR",
+ "lattice": [
+  [
+   4,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   4,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   4,
+   0
+  ]
+ ],
+ "R2": 8,
+ "vol6_piece": [
+  96,
+  96
+ ],
+ "det_lattice": [
+  128,
+  128
+ ],
+ "N": 8,
+ "classes": 152,
+ "placements": 1520,
+ "verdict": "SAT",
+ "rounds": 1,
+ "seconds": 7.9,
+ "samples": 1520,
+ "random_points_in_open_pieces_max": 1,
+ "random_point_cover_counts": {
+  "1": 3000
+ },
+ "tiling": [
+  {
+   "template": 0,
+   "apex_module_coords": [
+    0,
+    0,
+    0,
+    -2,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    0.763932,
+    2.472136
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     4,
+     -2
+    ],
+    [
+     -4,
+     4
+    ]
+   ]
+  },
+  {
+   "template": 0,
+   "apex_module_coords": [
+    0,
+    2,
+    2,
+    0,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    5.236068,
+    1.236068,
+    5.236068
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     2
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     2,
+     2
+    ]
+   ]
+  },
+  {
+   "template": 0,
+   "apex_module_coords": [
+    2,
+    0,
+    0,
+    -2,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    2.763932,
+    5.708204
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     6,
+     -2
+    ],
+    [
+     -4,
+     6
+    ]
+   ]
+  },
+  {
+   "template": 0,
+   "apex_module_coords": [
+    2,
+    2,
+    2,
+    0,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    5.236068,
+    3.236068,
+    8.472136
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     4
+    ]
+   ]
+  },
+  {
+   "template": 8,
+   "apex_module_coords": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 8,
+   "apex_module_coords": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    3.236068,
+    0.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 8,
+   "apex_module_coords": [
+    2,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    2.0,
+    3.236068
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     2
+    ]
+   ]
+  },
+  {
+   "template": 8,
+   "apex_module_coords": [
+    2,
+    0,
+    0,
+    0,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    3.236068,
+    2.0,
+    5.236068
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     2
+    ]
+   ]
+  }
+ ],
+ "volume_check": "8 x vol(piece) = vol(Lambda): True"
+}

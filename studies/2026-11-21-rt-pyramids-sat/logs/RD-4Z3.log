@@ -1,0 +1,16 @@
+== RD lattice [[4, 0, 0], [0, 4, 0], [0, 0, 4]] R2 0: det(Lambda) = [64, 0] (a + b phi), 6 vol(piece) = [8, 0], N = 48
+classes 16
+templates usable (no overlap with own translates): 12/12
+placements 192
+PROGRESS 0.1 encoding sample 0/192 (0 s)
+encoded: 192 placement variables, 192 sample points, 192 open-incidences (1 s)
+round 1: model with 48 pieces, 32 overlapping pairs (1 s)
+  added 32 constraints
+round 2: model with 48 pieces, 16 overlapping pairs (1 s)
+  added 16 constraints
+round 3: model with 48 pieces, 16 overlapping pairs (1 s)
+  added 16 constraints
+round 4: model with 48 pieces, 16 overlapping pairs (1 s)
+  added 16 constraints
+round 5: model with 48 pieces, 0 overlapping pairs (1 s)
+RESULT RD lattice [[4, 0, 0], [0, 4, 0], [0, 0, 4]] R2 0 N 48: SAT closed-cover counts {1: 3000}, max open-cover 1

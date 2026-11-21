@@ -1,0 +1,205 @@
+{
+ "kind": "C6",
+ "lattice": [
+  [
+   2,
+   0,
+   0
+  ],
+  [
+   0,
+   2,
+   0
+  ],
+  [
+   0,
+   0,
+   2
+  ]
+ ],
+ "R2": 0,
+ "vol6_piece": [
+  8,
+  0
+ ],
+ "det_lattice": [
+  8,
+  0
+ ],
+ "N": 6,
+ "classes": 2,
+ "placements": 12,
+ "verdict": "SAT",
+ "rounds": 5,
+ "seconds": 0.2,
+ "samples": 12,
+ "random_points_in_open_pieces_max": 1,
+ "random_point_cover_counts": {
+  "1": 3000
+ },
+ "tiling": [
+  {
+   "template": 0,
+   "apex_module_coords": [
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 1,
+   "apex_module_coords": [
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 2,
+   "apex_module_coords": [
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 3,
+   "apex_module_coords": [
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 4,
+   "apex_module_coords": [
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 5,
+   "apex_module_coords": [
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  }
+ ],
+ "volume_check": "6 x vol(piece) = vol(Lambda): True"
+}

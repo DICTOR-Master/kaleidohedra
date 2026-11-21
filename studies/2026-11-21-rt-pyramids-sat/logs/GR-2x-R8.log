@@ -1,0 +1,11 @@
+== GR lattice [[4, 0, 0, 0, 0, 0], [0, 0, 4, 0, 0, 0], [0, 0, 0, 0, 4, 0]] R2 8: det(Lambda) = [128, 128] (a + b phi), 6 vol(piece) = [96, 96], N = 8
+classes 152
+templates usable (no overlap with own translates): 10/10
+placements 1520
+PROGRESS 0.1 encoding sample 0/1520 (2 s)
+PROGRESS 0.1 encoding sample 500/1520 (6 s)
+PROGRESS 0.1 encoding sample 1000/1520 (11 s)
+PROGRESS 0.1 encoding sample 1500/1520 (15 s)
+encoded: 1520 placement variables, 1520 sample points, 259568 open-incidences (16 s)
+round 1: model with 8 pieces, 0 overlapping pairs (17 s)
+RESULT GR lattice [[4, 0, 0, 0, 0, 0], [0, 0, 4, 0, 0, 0], [0, 0, 0, 0, 4, 0]] R2 8 N 8: SAT closed-cover counts {1: 3000}, max open-cover 1

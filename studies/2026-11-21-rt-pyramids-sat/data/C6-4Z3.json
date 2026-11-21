@@ -1,0 +1,1339 @@
+{
+ "kind": "C6",
+ "lattice": [
+  [
+   4,
+   0,
+   0
+  ],
+  [
+   0,
+   4,
+   0
+  ],
+  [
+   0,
+   0,
+   4
+  ]
+ ],
+ "R2": 0,
+ "vol6_piece": [
+  8,
+  0
+ ],
+ "det_lattice": [
+  64,
+  0
+ ],
+ "N": 48,
+ "classes": 16,
+ "placements": 96,
+ "verdict": "SAT",
+ "rounds": 10,
+ "seconds": 3.4,
+ "samples": 96,
+ "random_points_in_open_pieces_max": 1,
+ "random_point_cover_counts": {
+  "1": 3000
+ },
+ "tiling": [
+  {
+   "template": 0,
+   "apex_module_coords": [
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 0,
+   "apex_module_coords": [
+    0,
+    0,
+    2
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 0,
+   "apex_module_coords": [
+    0,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    2.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 0,
+   "apex_module_coords": [
+    0,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    0.0,
+    2.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 0,
+   "apex_module_coords": [
+    2,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    2.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 0,
+   "apex_module_coords": [
+    2,
+    0,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    0.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 0,
+   "apex_module_coords": [
+    2,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    2.0,
+    2.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 0,
+   "apex_module_coords": [
+    2,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    2.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 1,
+   "apex_module_coords": [
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 1,
+   "apex_module_coords": [
+    0,
+    0,
+    2
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 1,
+   "apex_module_coords": [
+    0,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    2.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 1,
+   "apex_module_coords": [
+    0,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    0.0,
+    2.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 1,
+   "apex_module_coords": [
+    2,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    2.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 1,
+   "apex_module_coords": [
+    2,
+    0,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    0.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 1,
+   "apex_module_coords": [
+    2,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    2.0,
+    2.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 1,
+   "apex_module_coords": [
+    2,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    2.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 2,
+   "apex_module_coords": [
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 2,
+   "apex_module_coords": [
+    0,
+    0,
+    2
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 2,
+   "apex_module_coords": [
+    0,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    2.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 2,
+   "apex_module_coords": [
+    0,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    0.0,
+    2.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 2,
+   "apex_module_coords": [
+    2,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    2.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 2,
+   "apex_module_coords": [
+    2,
+    0,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    0.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 2,
+   "apex_module_coords": [
+    2,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    2.0,
+    2.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 2,
+   "apex_module_coords": [
+    2,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    2.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 3,
+   "apex_module_coords": [
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 3,
+   "apex_module_coords": [
+    0,
+    0,
+    2
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 3,
+   "apex_module_coords": [
+    0,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    2.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 3,
+   "apex_module_coords": [
+    0,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    0.0,
+    2.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 3,
+   "apex_module_coords": [
+    2,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    2.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 3,
+   "apex_module_coords": [
+    2,
+    0,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    0.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 3,
+   "apex_module_coords": [
+    2,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    2.0,
+    2.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 3,
+   "apex_module_coords": [
+    2,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    2.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 4,
+   "apex_module_coords": [
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 4,
+   "apex_module_coords": [
+    0,
+    0,
+    2
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 4,
+   "apex_module_coords": [
+    0,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    2.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 4,
+   "apex_module_coords": [
+    0,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    0.0,
+    2.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 4,
+   "apex_module_coords": [
+    2,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    2.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 4,
+   "apex_module_coords": [
+    2,
+    0,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    0.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 4,
+   "apex_module_coords": [
+    2,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    2.0,
+    2.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 4,
+   "apex_module_coords": [
+    2,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    2.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 5,
+   "apex_module_coords": [
+    0,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 5,
+   "apex_module_coords": [
+    0,
+    0,
+    2
+   ],
+   "apex_xyz": [
+    0.0,
+    0.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 5,
+   "apex_module_coords": [
+    0,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    0.0,
+    2.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 5,
+   "apex_module_coords": [
+    0,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    0.0,
+    2.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 5,
+   "apex_module_coords": [
+    2,
+    0,
+    0
+   ],
+   "apex_xyz": [
+    2.0,
+    0.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 5,
+   "apex_module_coords": [
+    2,
+    0,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    0.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 5,
+   "apex_module_coords": [
+    2,
+    2,
+    0
+   ],
+   "apex_xyz": [
+    2.0,
+    2.0,
+    0.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "template": 5,
+   "apex_module_coords": [
+    2,
+    2,
+    2
+   ],
+   "apex_xyz": [
+    2.0,
+    2.0,
+    2.0
+   ],
+   "apex_exact_a_b_per_coord": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  }
+ ],
+ "volume_check": "48 x vol(piece) = vol(Lambda): True"
+}

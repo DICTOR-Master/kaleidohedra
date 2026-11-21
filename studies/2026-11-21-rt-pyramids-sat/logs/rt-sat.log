@@ -1,0 +1,262 @@
+rt-sat: 125 instances (2 edge-to-edge checks, 9 SAT controls, 112 RT tori), 10 workers, cap 3600 s each
+RESULT E2E-C6: alive (expected alive: ok) N=None classes=None placements=None t=0.7s
+PROGRESS 0.008 1/125 instances done (5 s)
+RESULT C6-2Z3: SAT (expected SAT: ok) N=6 classes=2 placements=12 t=0.5s
+PROGRESS 0.016 2/125 instances done (5 s)
+RESULT RD-fcc: SAT (expected SAT: ok) N=12 classes=4 placements=48 t=0.7s
+PROGRESS 0.024 3/125 instances done (5 s)
+RESULT RD-4Z3: SAT (expected SAT: ok) N=48 classes=16 placements=192 t=1.5s
+PROGRESS 0.032 4/125 instances done (5 s)
+RESULT TET-fcc: UNSAT (expected UNSAT: ok) N=6 classes=4 placements=8 t=0.1s
+PROGRESS 0.040 5/125 instances done (5 s)
+RESULT TET-2Z3: UNSAT (expected UNSAT: ok) N=3 classes=2 placements=4 t=0.1s
+PROGRESS 0.048 6/125 instances done (5 s)
+RESULT TET-4Z3: UNSAT (expected UNSAT: ok) N=24 classes=16 placements=32 t=0.0s
+PROGRESS 0.056 7/125 instances done (5 s)
+RESULT GR-2x-R0: SAT (expected SAT: ok) N=8 classes=8 placements=80 t=1.2s
+PROGRESS 0.064 8/125 instances done (5 s)
+RESULT E2E-RT: dies (expected dies: ok) N=None classes=None placements=None t=5.6s
+PROGRESS 0.072 9/125 instances done (10 s)
+RESULT C6-4Z3: SAT (expected SAT: ok) N=48 classes=16 placements=96 t=3.4s
+PROGRESS 0.080 10/125 instances done (10 s)
+RESULT RT-cube4phi-R2_2: UNSAT N=12 classes=14 placements=420 t=3.1s
+PROGRESS 0.088 11/125 instances done (10 s)
+RESULT GR-2x-R8: SAT (expected SAT: ok) N=8 classes=152 placements=1520 t=17.4s
+PROGRESS 0.096 12/125 instances done (25 s)
+RESULT RT-cube4phi-R2_4: UNSAT N=12 classes=38 placements=1140 t=26.4s
+PROGRESS 0.104 13/125 instances done (30 s)
+RESULT RT-cube4phi-R2_6: UNSAT N=12 classes=54 placements=1620 t=39.9s
+PROGRESS 0.112 14/125 instances done (45 s)
+RESULT RT-lat00-N3-R2_4: UNSAT N=3 classes=19 placements=190 t=1.3s
+PROGRESS 0.120 15/125 instances done (50 s)
+RESULT RT-lat00-N3-R2_8: UNSAT N=3 classes=33 placements=330 t=3.2s
+PROGRESS 0.128 16/125 instances done (50 s)
+RESULT RT-lat00-N3-R2_12: UNSAT N=3 classes=81 placements=810 t=18.9s
+PROGRESS 0.136 17/125 instances done (70 s)
+RESULT RT-lat01-N3-R2_4: UNSAT N=3 classes=21 placements=126 t=0.8s
+PROGRESS 0.144 18/125 instances done (70 s)
+RESULT RT-lat01-N3-R2_8: UNSAT N=3 classes=49 placements=294 t=2.7s
+PROGRESS 0.152 19/125 instances done (75 s)
+RESULT RT-lat01-N3-R2_12: UNSAT N=3 classes=99 placements=594 t=3.9s
+PROGRESS 0.160 20/125 instances done (80 s)
+RESULT RT-lat02-N3-R2_4: UNSAT N=3 classes=21 placements=252 t=2.0s
+PROGRESS 0.168 21/125 instances done (80 s)
+RESULT RT-lat02-N3-R2_8: UNSAT N=3 classes=49 placements=588 t=6.0s
+PROGRESS 0.176 22/125 instances done (90 s)
+RESULT RT-lat02-N3-R2_12: UNSAT N=3 classes=99 placements=1188 t=16.0s
+PROGRESS 0.184 23/125 instances done (105 s)
+RESULT RT-lat03-N3-R2_4: UNSAT N=3 classes=23 placements=368 t=1.9s
+PROGRESS 0.192 24/125 instances done (105 s)
+RESULT RT-cube4phi-R2_8: UNSAT N=12 classes=66 placements=1980 t=110.2s
+PROGRESS 0.200 25/125 instances done (115 s)
+RESULT RT-lat03-N3-R2_8: UNSAT N=3 classes=43 placements=688 t=15.4s
+PROGRESS 0.208 26/125 instances done (125 s)
+RESULT RT-lat04-N3-R2_4: UNSAT N=3 classes=15 placements=150 t=1.0s
+PROGRESS 0.216 27/125 instances done (125 s)
+RESULT RT-lat04-N3-R2_8: UNSAT N=3 classes=35 placements=350 t=4.6s
+PROGRESS 0.224 28/125 instances done (130 s)
+RESULT RT-lat04-N3-R2_12: UNSAT N=3 classes=73 placements=730 t=8.0s
+PROGRESS 0.232 29/125 instances done (140 s)
+RESULT RT-lat05-N3-R2_4: UNSAT N=3 classes=23 placements=322 t=1.5s
+PROGRESS 0.240 30/125 instances done (140 s)
+RESULT RT-lat05-N3-R2_8: UNSAT N=3 classes=43 placements=602 t=5.7s
+PROGRESS 0.248 31/125 instances done (145 s)
+RESULT RT-lat05-N3-R2_12: UNSAT N=3 classes=99 placements=1386 t=27.6s
+PROGRESS 0.256 32/125 instances done (175 s)
+RESULT RT-lat06-N3-R2_4: UNSAT N=3 classes=15 placements=180 t=0.8s
+PROGRESS 0.264 33/125 instances done (175 s)
+RESULT RT-lat06-N3-R2_8: UNSAT N=3 classes=37 placements=444 t=3.7s
+PROGRESS 0.272 34/125 instances done (180 s)
+RESULT RT-lat03-N3-R2_12: UNSAT N=3 classes=99 placements=1584 t=71.8s
+PROGRESS 0.280 35/125 instances done (190 s)
+RESULT RT-lat07-N3-R2_4: UNSAT (no placement fits in the torus) N=3 classes=15 placements=0 t=Nones
+PROGRESS 0.288 36/125 instances done (190 s)
+RESULT RT-lat07-N3-R2_8: UNSAT (no placement fits in the torus) N=3 classes=37 placements=0 t=Nones
+PROGRESS 0.296 37/125 instances done (190 s)
+RESULT RT-lat07-N3-R2_12: UNSAT (no placement fits in the torus) N=3 classes=79 placements=0 t=Nones
+PROGRESS 0.304 38/125 instances done (190 s)
+RESULT RT-lat08-N3-R2_4: UNSAT N=3 classes=9 placements=90 t=0.3s
+PROGRESS 0.312 39/125 instances done (190 s)
+RESULT RT-lat08-N3-R2_8: UNSAT N=3 classes=29 placements=290 t=1.3s
+PROGRESS 0.320 40/125 instances done (195 s)
+RESULT RT-lat06-N3-R2_12: UNSAT N=3 classes=79 placements=948 t=18.8s
+PROGRESS 0.328 41/125 instances done (200 s)
+RESULT RT-lat08-N3-R2_12: UNSAT N=3 classes=59 placements=590 t=6.3s
+PROGRESS 0.336 42/125 instances done (200 s)
+RESULT RT-lat09-N3-R2_4: UNSAT N=3 classes=15 placements=210 t=0.7s
+PROGRESS 0.344 43/125 instances done (200 s)
+RESULT RT-cube4phi-R2_10: UNSAT N=12 classes=114 placements=3420 t=196.6s
+PROGRESS 0.352 44/125 instances done (205 s)
+RESULT RT-lat09-N3-R2_8: UNSAT N=3 classes=35 placements=490 t=3.8s
+PROGRESS 0.360 45/125 instances done (205 s)
+RESULT RT-lat10-N3-R2_4: UNSAT (no placement fits in the torus) N=3 classes=15 placements=0 t=Nones
+PROGRESS 0.368 46/125 instances done (205 s)
+RESULT RT-lat10-N3-R2_8: UNSAT (no placement fits in the torus) N=3 classes=35 placements=0 t=Nones
+PROGRESS 0.376 47/125 instances done (205 s)
+RESULT RT-lat10-N3-R2_12: UNSAT (no placement fits in the torus) N=3 classes=73 placements=0 t=Nones
+PROGRESS 0.384 48/125 instances done (205 s)
+RESULT RT-lat11-N3-R2_4: UNSAT N=3 classes=23 placements=138 t=0.5s
+PROGRESS 0.392 49/125 instances done (205 s)
+RESULT RT-lat11-N3-R2_8: UNSAT N=3 classes=43 placements=258 t=1.1s
+PROGRESS 0.400 50/125 instances done (210 s)
+RESULT RT-lat11-N3-R2_12: UNSAT N=3 classes=99 placements=594 t=5.0s
+PROGRESS 0.408 51/125 instances done (210 s)
+RESULT RT-lat12-N3-R2_4: UNSAT N=3 classes=15 placements=90 t=0.3s
+PROGRESS 0.416 52/125 instances done (210 s)
+RESULT RT-lat12-N3-R2_8: UNSAT N=3 classes=35 placements=210 t=1.0s
+PROGRESS 0.424 53/125 instances done (210 s)
+RESULT RT-lat12-N3-R2_12: UNSAT N=3 classes=73 placements=438 t=2.4s
+PROGRESS 0.432 54/125 instances done (215 s)
+RESULT RT-lat13-N3-R2_4: UNSAT N=3 classes=23 placements=414 t=3.7s
+PROGRESS 0.440 55/125 instances done (215 s)
+RESULT RT-lat09-N3-R2_12: UNSAT N=3 classes=73 placements=1022 t=20.4s
+PROGRESS 0.448 56/125 instances done (220 s)
+RESULT RT-lat13-N3-R2_8: UNSAT N=3 classes=43 placements=774 t=9.6s
+PROGRESS 0.456 57/125 instances done (225 s)
+RESULT RT-lat14-N3-R2_4: UNSAT N=3 classes=15 placements=240 t=1.3s
+PROGRESS 0.464 58/125 instances done (225 s)
+RESULT RT-lat14-N3-R2_8: UNSAT N=3 classes=37 placements=592 t=6.7s
+PROGRESS 0.472 59/125 instances done (230 s)
+RESULT RT-lat15-N3-R2_4: UNSAT N=3 classes=15 placements=150 t=0.6s
+PROGRESS 0.480 60/125 instances done (230 s)
+RESULT RT-lat15-N3-R2_8: UNSAT N=3 classes=27 placements=270 t=1.0s
+PROGRESS 0.488 61/125 instances done (235 s)
+RESULT RT-lat15-N3-R2_12: UNSAT N=3 classes=59 placements=590 t=3.9s
+PROGRESS 0.496 62/125 instances done (235 s)
+RESULT RT-lat16-N3-R2_4: UNSAT N=3 classes=15 placements=180 t=0.8s
+PROGRESS 0.504 63/125 instances done (240 s)
+RESULT RT-lat16-N3-R2_8: UNSAT N=3 classes=35 placements=420 t=3.0s
+PROGRESS 0.512 64/125 instances done (240 s)
+RESULT RT-lat16-N3-R2_12: UNSAT N=3 classes=73 placements=876 t=11.5s
+PROGRESS 0.520 65/125 instances done (255 s)
+RESULT RT-lat13-N3-R2_12: UNSAT N=3 classes=99 placements=1782 t=45.2s
+PROGRESS 0.528 66/125 instances done (260 s)
+RESULT RT-lat14-N3-R2_12: UNSAT N=3 classes=79 placements=1264 t=33.4s
+PROGRESS 0.536 67/125 instances done (260 s)
+RESULT RT-lat17-N3-R2_4: UNSAT N=3 classes=23 placements=368 t=3.9s
+PROGRESS 0.544 68/125 instances done (260 s)
+RESULT RT-lat17-N3-R2_8: UNSAT N=3 classes=43 placements=688 t=8.9s
+PROGRESS 0.552 69/125 instances done (265 s)
+RESULT RT-lat18-N3-R2_4: UNSAT (no placement fits in the torus) N=3 classes=15 placements=0 t=Nones
+PROGRESS 0.560 70/125 instances done (265 s)
+RESULT RT-lat18-N3-R2_8: UNSAT (no placement fits in the torus) N=3 classes=37 placements=0 t=Nones
+PROGRESS 0.568 71/125 instances done (265 s)
+RESULT RT-lat18-N3-R2_12: UNSAT (no placement fits in the torus) N=3 classes=79 placements=0 t=Nones
+PROGRESS 0.576 72/125 instances done (265 s)
+RESULT RT-lat19-N3-R2_4: UNSAT N=3 classes=15 placements=240 t=1.0s
+PROGRESS 0.584 73/125 instances done (265 s)
+RESULT RT-lat19-N3-R2_8: UNSAT N=3 classes=35 placements=560 t=4.7s
+PROGRESS 0.592 74/125 instances done (270 s)
+RESULT RT-lat20-N6-R2_4: UNSAT N=6 classes=38 placements=988 t=9.8s
+PROGRESS 0.600 75/125 instances done (280 s)
+RESULT RT-lat19-N3-R2_12: UNSAT N=3 classes=73 placements=1168 t=21.5s
+PROGRESS 0.608 76/125 instances done (290 s)
+RESULT RT-lat17-N3-R2_12: UNSAT N=3 classes=99 placements=1584 t=41.5s
+PROGRESS 0.616 77/125 instances done (300 s)
+RESULT RT-lat20-N6-R2_8: UNSAT N=6 classes=66 placements=1716 t=24.1s
+PROGRESS 0.624 78/125 instances done (305 s)
+RESULT RT-lat21-N6-R2_4: UNSAT N=6 classes=21 placements=546 t=3.1s
+PROGRESS 0.632 79/125 instances done (305 s)
+RESULT RT-lat21-N6-R2_8: UNSAT N=6 classes=49 placements=1274 t=12.0s
+PROGRESS 0.640 80/125 instances done (315 s)
+RESULT RT-lat22-N6-R2_4: UNSAT N=6 classes=27 placements=702 t=5.2s
+PROGRESS 0.648 81/125 instances done (320 s)
+RESULT RT-lat22-N6-R2_8: UNSAT N=6 classes=59 placements=1534 t=21.6s
+PROGRESS 0.656 82/125 instances done (345 s)
+RESULT RT-lat21-N6-R2_12: UNSAT N=6 classes=99 placements=2574 t=50.9s
+PROGRESS 0.664 83/125 instances done (360 s)
+RESULT RT-lat23-N6-R2_4: UNSAT N=6 classes=21 placements=420 t=1.8s
+PROGRESS 0.672 84/125 instances done (360 s)
+RESULT RT-lat23-N6-R2_8: UNSAT N=6 classes=49 placements=980 t=6.6s
+PROGRESS 0.680 85/125 instances done (365 s)
+RESULT RT-cube4phi-R2_12: UNSAT N=12 classes=162 placements=4860 t=377.9s
+PROGRESS 0.688 86/125 instances done (385 s)
+RESULT RT-cube4phi-R2_14: UNSAT N=12 classes=162 placements=4860 t=379.7s
+PROGRESS 0.696 87/125 instances done (390 s)
+RESULT RT-lat24-N6-R2_4: UNSAT N=6 classes=27 placements=702 t=5.1s
+PROGRESS 0.704 88/125 instances done (390 s)
+RESULT RT-lat23-N6-R2_12: UNSAT N=6 classes=99 placements=1980 t=29.7s
+PROGRESS 0.712 89/125 instances done (400 s)
+RESULT RT-lat25-N6-R2_4: UNSAT N=6 classes=23 placements=598 t=3.0s
+PROGRESS 0.720 90/125 instances done (400 s)
+RESULT RT-lat20-N6-R2_12: UNSAT N=6 classes=162 placements=4212 t=117.6s
+PROGRESS 0.728 91/125 instances done (410 s)
+RESULT RT-lat24-N6-R2_8: UNSAT N=6 classes=59 placements=1534 t=27.9s
+PROGRESS 0.736 92/125 instances done (415 s)
+RESULT RT-lat25-N6-R2_8: UNSAT N=6 classes=43 placements=1118 t=12.0s
+PROGRESS 0.744 93/125 instances done (415 s)
+RESULT RT-lat26-N6-R2_4: UNSAT N=6 classes=30 placements=780 t=6.2s
+PROGRESS 0.752 94/125 instances done (420 s)
+RESULT RT-lat26-N6-R2_8: UNSAT N=6 classes=54 placements=1404 t=29.2s
+PROGRESS 0.760 95/125 instances done (445 s)
+RESULT RT-lat27-N6-R2_4: UNSAT N=6 classes=30 placements=780 t=5.3s
+PROGRESS 0.768 96/125 instances done (455 s)
+RESULT RT-lat22-N6-R2_12: UNSAT N=6 classes=125 placements=3250 t=122.9s
+PROGRESS 0.776 97/125 instances done (470 s)
+RESULT RT-lat27-N6-R2_8: UNSAT N=6 classes=54 placements=1404 t=19.2s
+PROGRESS 0.784 98/125 instances done (470 s)
+RESULT RT-lat28-N6-R2_4: UNSAT N=6 classes=27 placements=702 t=4.0s
+PROGRESS 0.792 99/125 instances done (475 s)
+RESULT RT-lat25-N6-R2_12: UNSAT N=6 classes=99 placements=2574 t=73.9s
+PROGRESS 0.800 100/125 instances done (480 s)
+RESULT RT-lat28-N6-R2_8: UNSAT N=6 classes=59 placements=1534 t=17.0s
+PROGRESS 0.808 101/125 instances done (495 s)
+RESULT RT-lat29-N6-R2_4: UNSAT N=6 classes=15 placements=300 t=1.5s
+PROGRESS 0.816 102/125 instances done (495 s)
+RESULT RT-lat29-N6-R2_8: UNSAT N=6 classes=35 placements=700 t=5.7s
+PROGRESS 0.824 103/125 instances done (500 s)
+RESULT RT-lat26-N6-R2_12: UNSAT N=6 classes=118 placements=3068 t=101.9s
+PROGRESS 0.832 104/125 instances done (525 s)
+RESULT RT-lat30-N6-R2_4: UNSAT N=6 classes=21 placements=378 t=1.4s
+PROGRESS 0.840 105/125 instances done (525 s)
+RESULT RT-lat29-N6-R2_12: UNSAT N=6 classes=73 placements=1460 t=27.7s
+PROGRESS 0.848 106/125 instances done (530 s)
+RESULT RT-lat30-N6-R2_8: UNSAT N=6 classes=49 placements=882 t=5.1s
+PROGRESS 0.856 107/125 instances done (530 s)
+RESULT RT-lat24-N6-R2_12: UNSAT N=6 classes=125 placements=3250 t=141.6s
+PROGRESS 0.864 108/125 instances done (535 s)
+RESULT RT-lat31-N6-R2_4: UNSAT N=6 classes=19 placements=570 t=2.7s
+PROGRESS 0.872 109/125 instances done (535 s)
+RESULT RT-cube4phi-R2_16: UNSAT N=12 classes=186 placements=5580 t=539.0s
+PROGRESS 0.880 110/125 instances done (550 s)
+RESULT RT-lat30-N6-R2_12: UNSAT N=6 classes=99 placements=1782 t=20.2s
+PROGRESS 0.888 111/125 instances done (550 s)
+RESULT RT-lat31-N6-R2_8: UNSAT N=6 classes=33 placements=990 t=13.8s
+PROGRESS 0.896 112/125 instances done (550 s)
+RESULT RT-lat32-N9-R2_4: UNSAT N=9 classes=23 placements=690 t=7.7s
+PROGRESS 0.904 113/125 instances done (555 s)
+RESULT RT-lat32-N9-R2_8: UNSAT N=9 classes=43 placements=1290 t=10.0s
+PROGRESS 0.912 114/125 instances done (560 s)
+RESULT RT-lat27-N6-R2_12: UNSAT N=6 classes=118 placements=3068 t=105.1s
+PROGRESS 0.920 115/125 instances done (575 s)
+RESULT RT-lat33-N12-R2_4: UNSAT RESULT RT-lat33-N12-R2_12: UNSAT N=12 classes=162 placements=4860 t=673.1s
+PROGRESS 0.920 115/125 instances done (1045 s)
+HEARTBEAT 1200 s, 115/125 done
+HEARTBEAT 1800 s, 115/125 done
+HEARTBEAT 2400 s, 115/125 done
+HEARTBEAT 3000 s, 115/125 done
+HEARTBEAT 3600 s, 115/125 done
+s=81 placements=2430 t=95.7s
+PROGRESS 0.944 118/125 instances done (630 s)
+RESULT RT-lat33-N12-R2_8: UNSAT N=12 classes=66 placements=1980 t=72.0s
+PROGRESS 0.952 119/125 instances done (630 s)
+RESULT RT-lat32-N9-R2_12: UNSAT N=9 classes=99 placements=2970 t=132.4s
+PROGRESS 0.960 120/125 instances done (685 s)
+RESULT RT-cube4phi-R2_18: UNSAT N=12 classes=246 placements=7380 t=810.0s
+PROGRESS 0.968 121/125 instances done (835 s)
+RESULT RT-lat33-N12-R2_12: UNSAT N=12 classes=162 placements=4860 t=492.8s
+PROGRESS 0.976 122/125 instances done (1065 s)
+HEARTBEAT 1200 s, 122/125 done
+RESULT RT-cube4phi-R2_20: UNSAT N=12 classes=294 placements=8820 t=1191.5s
+PROGRESS 0.984 123/125 instances done (1225 s)
+HEARTBEAT 1800 s, 123/125 done
+HEARTBEAT 2400 s, 123/125 done
+HEARTBEAT 3000 s, 123/125 done
+RESULT FRAMES1-e2e-float: UNDECIDED (time cap) N=None classes=None placements=None t=Nones
+PROGRESS 0.992 124/125 instances done (3600 s)
+RESULT FRAMES2-e2e-float: UNDECIDED (time cap) N=None classes=None placements=None t=Nones
+PROGRESS 1.000 125/125 instances done (3600 s)
+HEARTBEAT 3600 s, 125/125 done
+RT verdicts: {'UNSAT': 103, 'UNSAT (no placement fits in the torus)': 9}
+FINAL ok
+[exit 0]

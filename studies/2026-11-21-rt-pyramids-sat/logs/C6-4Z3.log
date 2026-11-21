@@ -1,0 +1,26 @@
+== C6 lattice [[4, 0, 0], [0, 4, 0], [0, 0, 4]] R2 0: det(Lambda) = [64, 0] (a + b phi), 6 vol(piece) = [8, 0], N = 48
+classes 16
+templates usable (no overlap with own translates): 6/6
+placements 96
+PROGRESS 0.1 encoding sample 0/96 (0 s)
+encoded: 96 placement variables, 96 sample points, 96 open-incidences (0 s)
+round 1: model with 48 pieces, 64 overlapping pairs (0 s)
+  added 50 constraints
+round 2: model with 48 pieces, 69 overlapping pairs (1 s)
+  added 50 constraints
+round 3: model with 48 pieces, 73 overlapping pairs (1 s)
+  added 50 constraints
+round 4: model with 48 pieces, 42 overlapping pairs (2 s)
+  added 42 constraints
+round 5: model with 48 pieces, 14 overlapping pairs (2 s)
+  added 14 constraints
+round 6: model with 48 pieces, 7 overlapping pairs (2 s)
+  added 7 constraints
+round 7: model with 48 pieces, 21 overlapping pairs (3 s)
+  added 21 constraints
+round 8: model with 48 pieces, 7 overlapping pairs (3 s)
+  added 7 constraints
+round 9: model with 48 pieces, 7 overlapping pairs (3 s)
+  added 7 constraints
+round 10: model with 48 pieces, 0 overlapping pairs (3 s)
+RESULT C6 lattice [[4, 0, 0], [0, 4, 0], [0, 0, 4]] R2 0 N 48: SAT closed-cover counts {1: 3000}, max open-cover 1
