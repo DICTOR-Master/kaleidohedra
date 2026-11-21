@@ -7,7 +7,7 @@ R = [
  dict(repo='dehn-canon-lean', commit='9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57', palomar='PALOMAR-2026-11-20-000003-v1',
       short='The Dehn Canon', paper='#113', concept='10.5281/zenodo.24383552',
       what="Dehn's answer to Hilbert's third problem, with the Dehn invariant defined from the solid as a set of points: Hilbert's two tetrahedra on one base are neither scissors congruent nor equicomplementable; the set-defined invariant equals the classical edge sum of length ⊗ dihedral angle; scissors-congruent convex polytopes have the same invariant; and no similar copy of the regular tetrahedron is scissors congruent to a similar copy of the cube."),
- dict(repo='dehn-hadwiger-4d-lean', commit='5a2cf4ca1b3a5f14f9e2cfd5596189219bdd31e9', palomar=None,
+ dict(repo='dehn-hadwiger-4d-lean', commit='5a2cf4ca1b3a5f14f9e2cfd5596189219bdd31e9', palomar='PALOMAR-2026-11-21-000004-v1',
       short='The Dehn–Hadwiger Invariant in Four Dimensions', paper='#116', concept='10.5281/zenodo.24393967',
       what="The Dehn–Hadwiger invariant defined from the set alone, in every finite-dimensional real inner product space: scissors-congruent convex polytopes, and finite unions of them, have the same invariant in every dimension; its values on the six regular 4-polytopes (0 for the tesseract, 16-cell, 24-cell and 120-cell; nonzero for the 5-cell and the 600-cell, of opposite signs); and the resulting non-congruences between similar copies of these polytopes."),
  dict(repo='grunbaum-k10-lean', commit='a6b16c25d80fa90ea28259bad6a53d7e81d01779', palomar='PALOMAR-2026-11-20-000013-v1',

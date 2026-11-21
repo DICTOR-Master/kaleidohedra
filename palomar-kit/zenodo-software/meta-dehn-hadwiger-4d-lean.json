@@ -2,10 +2,10 @@
  "repo": "dehn-hadwiger-4d-lean",
  "commit": "5a2cf4ca1b3a5f14f9e2cfd5596189219bdd31e9",
  "zip": "dehn-hadwiger-4d-lean-5a2cf4c.zip",
- "palomar": null,
+ "palomar": "PALOMAR-2026-11-21-000004-v1",
  "metadata": {
   "upload_type": "software",
-  "title": "The Dehn–Hadwiger Invariant in Four Dimensions: Lean 4 formalization (PALOMAR registration pending)",
+  "title": "The Dehn–Hadwiger Invariant in Four Dimensions: Lean 4 formalization (PALOMAR-2026-11-21-000004)",
   "creators": [
    {
     "name": "DICTO",
@@ -13,7 +13,7 @@
     "orcid": "0009-0001-2620-2036"
    }
   ],
-  "description": "<p>Lean 4 formalization accompanying DICTO's paper #116, <i>The Dehn–Hadwiger Invariant in Four Dimensions</i> (<a href=\"https://doi.org/10.5281/zenodo.24393967\">doi:10.5281/zenodo.24393967</a>). It proves: The Dehn–Hadwiger invariant defined from the set alone, in every finite-dimensional real inner product space: scissors-congruent convex polytopes, and finite unions of them, have the same invariant in every dimension; its values on the six regular 4-polytopes (0 for the tesseract, 16-cell, 24-cell and 120-cell; nonzero for the 5-cell and the 600-cell, of opposite signs); and the resulting non-congruences between similar copies of these polytopes.</p><p>Built with Lean 4 (leanprover/lean4:v4.35.0-rc2) with Mathlib at commit 0653561 (tag v4.35.0-rc2). This archive is the GitHub repository DICTOR-Master/dehn-hadwiger-4d-lean at commit 5a2cf4ca1b3a5f14f9e2cfd5596189219bdd31e9, submitted for registration in the Palomar registry at this commit; every proof is checked by the Lean kernel.</p>",
+  "description": "<p>Lean 4 formalization accompanying DICTO's paper #116, <i>The Dehn–Hadwiger Invariant in Four Dimensions</i> (<a href=\"https://doi.org/10.5281/zenodo.24393967\">doi:10.5281/zenodo.24393967</a>). It proves: The Dehn–Hadwiger invariant defined from the set alone, in every finite-dimensional real inner product space: scissors-congruent convex polytopes, and finite unions of them, have the same invariant in every dimension; its values on the six regular 4-polytopes (0 for the tesseract, 16-cell, 24-cell and 120-cell; nonzero for the 5-cell and the 600-cell, of opposite signs); and the resulting non-congruences between similar copies of these polytopes.</p><p>Built with Lean 4 (leanprover/lean4:v4.35.0-rc2) with Mathlib at commit 0653561 (tag v4.35.0-rc2). This archive is the GitHub repository DICTOR-Master/dehn-hadwiger-4d-lean at commit 5a2cf4ca1b3a5f14f9e2cfd5596189219bdd31e9, registered in the Palomar registry as PALOMAR-2026-11-21-000004-v1 at this commit; every proof is checked by the Lean kernel.</p>",
   "access_right": "open",
   "license": "Apache-2.0",
   "version": "registered commit 5a2cf4c",
@@ -35,6 +35,12 @@
     "identifier": "https://github.com/DICTOR-Master/dehn-hadwiger-4d-lean/tree/5a2cf4ca1b3a5f14f9e2cfd5596189219bdd31e9",
     "relation": "isIdenticalTo",
     "resource_type": "software",
+    "scheme": "url"
+   },
+   {
+    "identifier": "https://data.palomar-registry.org/entries/PALOMAR-2026-11-21-000004-v1.json",
+    "relation": "isDocumentedBy",
+    "resource_type": "other",
     "scheme": "url"
    }
   ]
