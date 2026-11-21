@@ -1,0 +1,61 @@
+Branch E: DICTO's combi method (scutoid + resin), his idea of 21 Nov 2026: "fill the ends in 2D, then cut the resin to fit".
+Run: scripts/combi.py LATTICE FACTOR SEEDS (on the compute host; imports C1 and Q(sqrt5) from ../branch-D-resin/scripts/resin.py, unchanged);
+scripts/summary.py re-checks every record and prints the table. data/combi_<lattice>_<factor>_<seeds>.json; log.txt (ends FINAL ok).
+
+Setting as branch D: C1 (truncated icosahedron, edge 1, dodecahedron centre pyramid on each pentagon) at the points of a cubic lattice,
+mould = Voronoi cell, scale s (s0 = the smallest with C1 inside its cell; at s0 the 12 apices touch the mould). All exact in Q(sqrt5).
+
+Method
+1. Two ends. Inner pattern = C1's 80 faces. Outer pattern = 3D Voronoi diagram of 80 seeds (one per face) intersected with the mould
+   surface (the cleanest form; for seeds on the mould it equals the Voronoi diagram on the surface). Seeds tried:
+   cen = face centroid; cproj = centroid projected from C1's centre onto the mould; nproj = centroid pushed out along the face normal to the mould.
+2. Cut. Piece(F) = region between face F and its outer cell. An inner edge F|G whose outer boundary F|G is one chain with matching ends keeps
+   its wall (polygon: C1 edge, two rising edges, the chain). Otherwise the vertices are merged into a cluster with one interior vertex m
+   (the Y vertex), on the ray from C1's centre through the cluster's mean point, halfway between C1 and the mould: an inner edge with no outer
+   partner pinches to m (triangle); an outer boundary with no inner partner grows from m (fan). Non-flat walls are split into flat triangles
+   (least-area triangulation, symmetric fan in case of a tie); facet counts below count coplanar triangles as one facet.
+3. Checks (each run): every piece surface is a closed oriented 2-manifold; it is embedded (pairwise triangle tests, float64 with 1e-9 margin,
+   exact Q(sqrt5) at the margin); every piece has positive exact volume; every wall triangle is used by exactly two pieces with opposite
+   orientation. Together these make the pieces a partition of the resin (each piece is the indicator of its inside; the oriented boundaries
+   add up to mould minus C1). Volumes add exactly to the resin volume (exact 0 gap). Independent sampling check: winding numbers of all 80
+   pieces at 1848-6000 random points of the mould; every resin point covered exactly once, no C1 point covered.
+   Scutoid = piece with a Y vertex whose neighbours on the C1 side and on the mould side differ. Kinds = congruence classes (T_h orbit
+   members checked congruent). Every dihedral at a C1 edge printed; 157.7612 (lambda*) tested on every dihedral of every piece.
+
+Results (log.txt; tau = 1/2)
+   arrangement   seeds   valid   scutoid pieces   kinds   Y vertices   157.76
+   bcc s0        cen     yes     36 / 80          5       6            absent
+   bcc s0        cproj   no (pieces at the 12 contact apices are not closed manifolds: the outer pattern is 3-valent where C1 touches)
+   bcc s0        nproj   no (self-intersecting pieces round the pyramids)
+   bcc 6/5 s0    cen     yes     80 / 80          5       30           absent
+   bcc 6/5 s0    cproj   yes     72 / 80          5       60           absent
+   bcc 6/5 s0    nproj   no (self-intersecting at tau 1/2; at tau 1/4 and 3/4 walls coincide at the apices)
+   sc s0         cen     yes     80 / 80          5       24           absent
+   sc s0         cproj   no (self-intersecting; also at tau 1/4, 3/4)
+   sc s0         nproj   no (self-intersecting)
+   fcc s0        cen     yes     80 / 80          5       30           absent
+   fcc s0        cproj   no (self-intersecting; also at tau 1/4, 3/4)
+   fcc s0        nproj   no (self-intersecting)
+- Centroid seeds give a valid division in all four arrangements. Where the two patterns differ it is always at hexagon-hexagon edges:
+  on the mould the two triangles beside such an edge meet across it (a T1 swap); the hexagon-hexagon wall pinches to a Y vertex and the
+  triangle-triangle wall grows from it. Every piece touching such an edge is a true scutoid (bcc 6/5 s0: the 8 hexagons on the 3-fold axes
+  keep only their 3 triangle neighbours on the mould; every triangle gains 2 neighbours). At bcc s0 only the 6 hexagon-hexagon edges joining
+  two hexagons of the 12-orbit swap, so 36 pieces are scutoids and 44 have no Y vertex.
+- Central-projection seeds keep all 150 C1 adjacencies and add 72 (one diagonal at each 4-valent C1 vertex, a split 5-valent apex):
+  72 scutoid pieces, 60 Y vertices, valid at bcc 6/5 s0 only.
+- At the apex pentagons the outer centroid pattern has a 5-valent point on the pyramid axis (5 seeds on a circle), so the apex rises as
+  one edge, no Y vertex; at s0 that point is the apex itself (no vertical edge).
+- Kinds: 5 in every valid run (the five T_h face orbits; no two orbits congruent). Facets per kind are large where walls bend
+  (bcc 6/5 cen: 23, 25, 16, 20, 24; bcc s0 cen: 8, 18, 10, 5, 8).
+- Rings at C1: every edge ring closes (it is a tiling). Piece angles at C1 edges include pi/4 + beta (110.9052, unchanged hexagon walls)
+  and 2pi/3; the others are not in the basis. 157.7612 occurs nowhere, in any piece, in any valid run.
+
+Best: bcc at 6/5 s0 with centroid seeds: all 80 pieces true scutoids, 5 kinds, exact partition. The tightest true-scutoid division is
+bcc s0 with centroid seeds (36 scutoids). The mixed method gives what the pure resin method (branch D, R1) could not: scutoids, in a
+valid division.
+
+LEADS
+1. Fewer kinds: the outer pattern only has to keep T_h; merging orbits needs seeds chosen so two orbits get congruent pieces.
+2. cproj / nproj failures are failures of the one-Y-per-cluster cut, not proofs that no division exists for those patterns (the walls
+   could bend differently).
+3. C2 (truncated dodecahedron with icosahedron pyramids): rerun with C2's faces.

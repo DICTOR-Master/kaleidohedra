@@ -1,0 +1,220 @@
+=== combi  bcc  s = 1 s0 = 6.314757  seeds cen  tau 1/2
+C1 vertices on the mould surface: 12 (apices)
+mould faces 14  (0.3s)
+outer pattern computed (1.6s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 156, shared 144, outer-only 12, inner-only 6
+pinched inner edges: 6 {('hex', 'hex'): 6}
+clusters 66: (inner, outer) vertex counts {(1, 1): 60, (2, 3): 6}; Y vertices 6; persistent inner edges 144/150
+sampling cross-check: 3729 points (1883 in the resin), points not covered exactly once: 0, max winding rounding 3.11e-15
+volume sum - resin = 0 (exact 0); resin = 62.953286; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 80, scutoid pieces 36, kinds 5 (T_h orbit members congruent: True); 157.7612 present: False
+  kind hex face 0 (8 per cell): facets 8 vertices 12 Y 0 scutoid False vol 1.062089  C1-side neighbours [8, 9, 10, 21, 26, 31] mould-side [8, 9, 10, 21, 26, 31]
+     angles at C1 edges: [59.3498, 110.9052]
+     all dihedrals: 59.34977092 [not in basis]; 69.09484255 [3/4pi + -1beta]; 102.7046694 [not in basis]; 110.9051574 [1/4pi + 1beta]; 120.6502291 [not in basis]
+  kind hex face 8 (12 per cell): facets 18 vertices 16 Y 1 scutoid True vol 1.998980  C1-side neighbours [0, 4, 11, 22, 30, 60] mould-side [0, 4, 22, 30, 60]
+     angles at C1 edges: [71.7699, 72.8304, 110.9052]
+     all dihedrals: 52.11529475 [not in basis]; 71.76991414 [not in basis]; 72.83040298 [not in basis]; 90.06113051 [not in basis]; 109.4712206 [1pi + -2gamma]; 110.9051574 [1/4pi + 1beta]; 117.5399783 [not in basis]; 119.5188724 [not in basis]; 125.2643897 [1/2pi + 1gamma]; 134.4018649 [not in basis]; 155.5324787 [not in basis]; 166.7513516 [not in basis]; 167.1134752 [not in basis]; 227.2935308 [not in basis]
+  kind tri face 20 (24 per cell): facets 10 vertices 9 Y 1 scutoid True vol 0.673141  C1-side neighbours [9, 21, 24] mould-side [9, 21, 24, 50]
+     angles at C1 edges: [87.3249, 120.0]
+     all dihedrals: 45.59813506 [not in basis]; 54.73561032 [1/2pi + -1gamma]; 60.48112757 [not in basis]; 62.4600217 [not in basis]; 87.32492841 [not in basis]; 89.93886949 [not in basis]; 90.0 [1/2pi]; 110.9051574 [1/4pi + 1beta]; 120.0 [2/3pi]; 125.2643897 [1/2pi + 1gamma]; 132.7064692 [not in basis]; 153.9423526 [not in basis]; 192.8865248 [not in basis]; 204.4675213 [not in basis]
+  kind tri face 21 (24 per cell): facets 5 vertices 5 Y 0 scutoid False vol 0.318899  C1-side neighbours [0, 20, 22] mould-side [0, 20, 22]
+     angles at C1 edges: [99.7451, 120.0]
+     all dihedrals: 59.34977092 [not in basis]; 69.09484255 [3/4pi + -1beta]; 77.29533057 [not in basis]; 99.74507163 [not in basis]; 120.0 [2/3pi]
+  kind tri face 22 (12 per cell): facets 8 vertices 6 Y 0 scutoid False vol 0.554989  C1-side neighbours [8, 21, 23] mould-side [8, 21, 23]
+     angles at C1 edges: [86.2644, 120.0]
+     all dihedrals: 45.59813506 [not in basis]; 62.4600217 [not in basis]; 86.26443957 [not in basis]; 109.4712206 [1pi + -2gamma]; 110.9051574 [1/4pi + 1beta]; 120.0 [2/3pi]; 193.2486484 [not in basis]
+RESULT bcc 1 cen: valid=True  partition; scutoid pieces 36; kinds 5; Y vertices 6; 157.7612 present False
+(7.0s)
+=== combi  bcc  s = 1 s0 = 6.314757  seeds cproj  tau 1/2
+C1 vertices on the mould surface: 12 (apices)
+mould faces 14  (0.2s)
+outer pattern computed (1.8s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 222, shared 150, outer-only 72, inner-only 0
+pinched inner edges: 0 {}
+clusters 72: (inner, outer) vertex counts {(1, 1): 12, (1, 2): 48, (1, 3): 12}; Y vertices 60; persistent inner edges 150/150
+volume sum - resin = -9860426045733750002251437802839341154730865/2626925943987236728188034502711937026386944+-865520214217931109396558807658644899174737/1125825404565958597794871929733687297022976r5 (NONZERO); resin = 62.953286; problems 12: [(22, 'not a closed 2-manifold'), (27, 'not a closed 2-manifold'), (32, 'not a closed 2-manifold'), (37, 'not a closed 2-manifold'), (42, 'not a closed 2-manifold'), (47, 'not a closed 2-manifold'), (52, 'not a closed 2-manifold'), (57, 'not a closed 2-manifold'), (62, 'not a closed 2-manifold'), (67, 'not a closed 2-manifold'), (72, 'not a closed 2-manifold'), (77, 'not a closed 2-manifold')]
+RESULT bcc 1 cproj: valid=False  partition checks failed: [(22, 'not a closed 2-manifold'), (27, 'not a closed 2-manifold'), (32, 'not a closed 2-manifold'), (37, 'not a closed 2-manifold')], volume ok False
+(10.7s)
+=== combi  bcc  s = 1 s0 = 6.314757  seeds nproj  tau 1/2
+C1 vertices on the mould surface: 12 (apices)
+mould faces 14  (0.2s)
+outer pattern computed (1.6s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 216, shared 120, outer-only 96, inner-only 30
+pinched inner edges: 30 {('hex', 'hex'): 30}
+clusters 42: (inner, outer) vertex counts {(1, 2): 12, (2, 3): 6, (2, 4): 24}; Y vertices 42; persistent inner edges 120/150
+volume sum - resin = 0 (exact 0); resin = 62.953286; problems 48: [(20, 'self-intersecting surface'), (21, 'self-intersecting surface'), (23, 'self-intersecting surface'), (24, 'self-intersecting surface'), (25, 'self-intersecting surface'), (26, 'self-intersecting surface'), (28, 'self-intersecting surface'), (29, 'self-intersecting surface'), (30, 'self-intersecting surface'), (31, 'self-intersecting surface'), (33, 'self-intersecting surface'), (34, 'self-intersecting surface'), (35, 'self-intersecting surface'), (36, 'self-intersecting surface'), (38, 'self-intersecting surface'), (39, 'self-intersecting surface'), (40, 'self-intersecting surface'), (41, 'self-intersecting surface'), (43, 'self-intersecting surface'), (44, 'self-intersecting surface'), (45, 'self-intersecting surface'), (46, 'self-intersecting surface'), (48, 'self-intersecting surface'), (49, 'self-intersecting surface'), (50, 'self-intersecting surface'), (51, 'self-intersecting surface'), (53, 'self-intersecting surface'), (54, 'self-intersecting surface'), (55, 'self-intersecting surface'), (56, 'self-intersecting surface'), (58, 'self-intersecting surface'), (59, 'self-intersecting surface'), (60, 'self-intersecting surface'), (61, 'self-intersecting surface'), (63, 'self-intersecting surface'), (64, 'self-intersecting surface'), (65, 'self-intersecting surface'), (66, 'self-intersecting surface'), (68, 'self-intersecting surface'), (69, 'self-intersecting surface'), (70, 'self-intersecting surface'), (71, 'self-intersecting surface'), (73, 'self-intersecting surface'), (74, 'self-intersecting surface'), (75, 'self-intersecting surface'), (76, 'self-intersecting surface'), (78, 'self-intersecting surface'), (79, 'self-intersecting surface')]
+RESULT bcc 1 nproj: valid=False  partition checks failed: [(20, 'self-intersecting surface'), (21, 'self-intersecting surface'), (23, 'self-intersecting surface'), (24, 'self-intersecting surface')], volume ok True
+(7.1s)
+=== combi  bcc  s = 6/5 s0 = 7.577709  seeds cen  tau 1/2
+C1 vertices on the mould surface: 0 (apices)
+mould faces 14  (0.2s)
+outer pattern computed (1.6s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 180, shared 120, outer-only 60, inner-only 30
+pinched inner edges: 30 {('hex', 'hex'): 30}
+clusters 42: (inner, outer) vertex counts {(1, 1): 12, (2, 3): 30}; Y vertices 30; persistent inner edges 120/150
+sampling cross-check: 3729 points (2686 in the resin), points not covered exactly once: 0, max winding rounding 8.59e-15
+volume sum - resin = 0 (exact 0); resin = 154.611497; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 80, scutoid pieces 80, kinds 5 (T_h orbit members congruent: True); 157.7612 present: False
+  kind hex face 0 (8 per cell): facets 23 vertices 15 Y 3 scutoid True vol 2.023210  C1-side neighbours [8, 9, 10, 21, 26, 31] mould-side [21, 26, 31]
+     angles at C1 edges: [66.214, 113.731]
+     all dihedrals: 66.21398001 [not in basis]; 72.46210506 [not in basis]; 103.3924937 [not in basis]; 106.4041031 [not in basis]; 113.7309523 [not in basis]; 167.6753287 [not in basis]; 172.5268122 [not in basis]; 206.0068343 [not in basis]
+  kind hex face 8 (12 per cell): facets 25 vertices 17 Y 3 scutoid True vol 2.761923  C1-side neighbours [0, 4, 11, 22, 30, 60] mould-side [22, 30, 60]
+     angles at C1 edges: [56.0938, 72.4007, 108.0794, 110.9052]
+     all dihedrals: 56.09376315 [not in basis]; 60.32238118 [not in basis]; 65.79306698 [not in basis]; 72.40071504 [not in basis]; 78.19809896 [not in basis]; 101.9984353 [not in basis]; 102.7896352 [not in basis]; 105.7521765 [not in basis]; 108.0793626 [not in basis]; 110.9051574 [1/4pi + 1beta]; 114.4268862 [not in basis]; 117.6618819 [not in basis]; 119.2950325 [not in basis]; 125.2643897 [1/2pi + 1gamma]; 164.3612291 [not in basis]; 172.5874464 [not in basis]; 175.1252333 [not in basis]; 178.2532096 [not in basis]; 180.9698584 [not in basis]; 186.6278143 [not in basis]; 204.3197387 [not in basis]; 205.8976571 [not in basis]
+  kind tri face 20 (24 per cell): facets 16 vertices 13 Y 2 scutoid True vol 2.157136  C1-side neighbours [9, 21, 24] mould-side [9, 21, 24, 27, 50]
+     angles at C1 edges: [103.0011, 119.3296, 120.0]
+     all dihedrals: 54.73561032 [1/2pi + -1gamma]; 65.57311384 [not in basis]; 71.63841299 [not in basis]; 74.24782349 [not in basis]; 78.00156473 [not in basis]; 79.28737628 [not in basis]; 90.0 [1/2pi]; 91.06079871 [not in basis]; 103.0010794 [not in basis]; 110.2087678 [not in basis]; 119.3295884 [not in basis]; 120.0 [2/3pi]; 125.2643897 [1/2pi + 1gamma]; 148.6810353 [not in basis]; 149.8388094 [not in basis]; 154.1023429 [not in basis]; 173.3721857 [not in basis]; 177.6032461 [not in basis]; 178.4832635 [not in basis]; 179.0301416 [not in basis]; 180.4415053 [not in basis]; 180.9383299 [not in basis]; 184.292153 [not in basis]; 184.8747667 [not in basis]
+  kind tri face 21 (24 per cell): facets 20 vertices 13 Y 2 scutoid True vol 1.269573  C1-side neighbours [0, 20, 22] mould-side [0, 20, 22, 26, 31]
+     angles at C1 edges: [92.8809, 120.6704]
+     all dihedrals: 69.7912322 [not in basis]; 71.51888542 [not in basis]; 72.72317401 [not in basis]; 76.60750633 [not in basis]; 88.93920129 [not in basis]; 90.0 [1/2pi]; 92.88086254 [not in basis]; 120.6704116 [not in basis]; 143.7689475 [not in basis]; 153.9931657 [not in basis]; 175.707847 [not in basis]; 179.0616701 [not in basis]; 179.5584947 [not in basis]; 181.5167365 [not in basis]; 182.3967539 [not in basis]; 187.4731878 [not in basis]; 192.3246713 [not in basis]
+  kind tri face 22 (12 per cell): facets 24 vertices 16 Y 2 scutoid True vol 1.920144  C1-side neighbours [8, 21, 23] mould-side [8, 21, 23, 30, 60]
+     angles at C1 edges: [86.6941, 119.3296]
+     all dihedrals: 62.3381181 [not in basis]; 62.78197904 [not in basis]; 71.27682599 [not in basis]; 86.69412751 [not in basis]; 90.0 [1/2pi]; 91.06079871 [not in basis]; 101.801901 [not in basis]; 109.4712206 [1pi + -2gamma]; 110.2087678 [not in basis]; 119.3295884 [not in basis]; 125.2643897 [1/2pi + 1gamma]; 145.5258977 [not in basis]; 155.6802613 [not in basis]; 177.6032461 [not in basis]; 178.4832635 [not in basis]; 180.4415053 [not in basis]; 180.9383299 [not in basis]; 181.7467904 [not in basis]; 184.292153 [not in basis]; 187.4125536 [not in basis]; 195.6387709 [not in basis]
+RESULT bcc 6/5 cen: valid=True  partition; scutoid pieces 80; kinds 5; Y vertices 30; 157.7612 present False
+(10.8s)
+=== combi  bcc  s = 6/5 s0 = 7.577709  seeds cproj  tau 1/2
+C1 vertices on the mould surface: 0 (apices)
+mould faces 14  (0.2s)
+outer pattern computed (1.8s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 222, shared 150, outer-only 72, inner-only 0
+pinched inner edges: 0 {}
+clusters 72: (inner, outer) vertex counts {(1, 1): 12, (1, 2): 48, (1, 3): 12}; Y vertices 60; persistent inner edges 150/150
+sampling cross-check: 3729 points (2686 in the resin), points not covered exactly once: 0, max winding rounding 1.11e-14
+volume sum - resin = 0 (exact 0); resin = 154.611497; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 80, scutoid pieces 72, kinds 5 (T_h orbit members congruent: True); 157.7612 present: False
+  kind hex face 0 (8 per cell): facets 38 vertices 24 Y 6 scutoid False vol 3.252222  C1-side neighbours [8, 9, 10, 21, 26, 31] mould-side [8, 9, 10, 21, 26, 31]
+     angles at C1 edges: [89.4307, 117.6196]
+     all dihedrals: 65.2663307 [not in basis]; 89.43068847 [not in basis]; 89.85366763 [not in basis]; 109.9317128 [not in basis]; 113.3670512 [not in basis]; 117.6196484 [not in basis]; 170.7616685 [not in basis]; 179.0529331 [not in basis]; 179.3587741 [not in basis]; 182.024561 [not in basis]; 185.2847179 [not in basis]; 186.8489503 [not in basis]
+  kind hex face 8 (12 per cell): facets 36 vertices 27 Y 4 scutoid True vol 4.870713  C1-side neighbours [0, 4, 11, 22, 30, 60] mould-side [0, 4, 11, 21, 22, 23, 30, 31, 60, 61]
+     angles at C1 edges: [79.782, 88.3392, 104.1907, 110.9052]
+     all dihedrals: 79.78202357 [not in basis]; 88.33915425 [not in basis]; 90.0 [1/2pi]; 99.82002416 [not in basis]; 104.1906665 [not in basis]; 106.141003 [not in basis]; 106.8334106 [not in basis]; 109.4712206 [1pi + -2gamma]; 110.9051574 [1/4pi + 1beta]; 114.152474 [not in basis]; 114.7336693 [not in basis]; 121.9787393 [not in basis]; 122.3783005 [not in basis]; 125.2643897 [1/2pi + 1gamma]; 130.7868161 [not in basis]; 149.1706366 [not in basis]; 160.3019686 [not in basis]; 161.0840433 [not in basis]; 167.6161158 [not in basis]; 169.839089 [not in basis]; 170.1429792 [not in basis]; 173.1510497 [not in basis]; 174.7152821 [not in basis]; 180.7868238 [not in basis]; 182.4629123 [not in basis]; 189.2383315 [not in basis]; 194.9399409 [not in basis]; 197.8637884 [not in basis]
+  kind tri face 20 (24 per cell): facets 13 vertices 11 Y 2 scutoid True vol 1.304620  C1-side neighbours [9, 21, 24] mould-side [9, 21, 22, 24]
+     angles at C1 edges: [79.3128, 110.7867, 120.0]
+     all dihedrals: 54.73561032 [1/2pi + -1gamma]; 57.23679735 [not in basis]; 57.62169952 [not in basis]; 65.33621821 [not in basis]; 66.81990418 [not in basis]; 73.16658943 [not in basis]; 79.31281898 [not in basis]; 80.17997584 [not in basis]; 90.0 [1/2pi]; 92.87650078 [not in basis]; 104.1076384 [not in basis]; 106.2395725 [not in basis]; 110.7866811 [not in basis]; 120.0 [2/3pi]; 125.2643897 [1/2pi + 1gamma]; 139.9254216 [not in basis]; 162.1362116 [not in basis]; 177.5370877 [not in basis]; 178.9734732 [not in basis]; 188.2840923 [not in basis]; 188.8753045 [not in basis]; 192.3838842 [not in basis]
+  kind tri face 21 (24 per cell): facets 18 vertices 12 Y 3 scutoid True vol 1.055200  C1-side neighbours [0, 20, 22] mould-side [0, 8, 9, 20, 22]
+     angles at C1 edges: [69.6642, 129.2133]
+     all dihedrals: 61.26964378 [not in basis]; 65.84752603 [not in basis]; 69.66415408 [not in basis]; 75.89236156 [not in basis]; 80.17364036 [not in basis]; 80.92348229 [not in basis]; 85.79978027 [not in basis]; 90.14633237 [not in basis]; 97.46231222 [not in basis]; 129.2133189 [not in basis]; 141.6791593 [not in basis]; 163.9646918 [not in basis]; 171.1246955 [not in basis]; 171.7159077 [not in basis]; 174.7236754 [not in basis]; 177.975439 [not in basis]; 180.6412259 [not in basis]; 180.9470669 [not in basis]; 181.0265268 [not in basis]
+  kind tri face 22 (12 per cell): facets 20 vertices 13 Y 3 scutoid True vol 1.125791  C1-side neighbours [8, 21, 23] mould-side [8, 20, 21, 23, 24]
+     angles at C1 edges: [70.7557, 110.7867]
+     all dihedrals: 57.72800305 [not in basis]; 58.0118273 [not in basis]; 58.01887207 [not in basis]; 70.7556883 [not in basis]; 73.85899701 [not in basis]; 87.12349922 [not in basis]; 99.82635964 [not in basis]; 109.4712206 [1pi + -2gamma]; 110.7866811 [not in basis]; 139.1510961 [not in basis]; 147.520855 [not in basis]; 165.0600591 [not in basis]; 178.9734732 [not in basis]; 179.2131762 [not in basis]; 185.2763246 [not in basis]; 189.8570208 [not in basis]; 190.160911 [not in basis]; 196.0353082 [not in basis]
+RESULT bcc 6/5 cproj: valid=True  partition; scutoid pieces 72; kinds 5; Y vertices 60; 157.7612 present False
+(13.7s)
+=== combi  bcc  s = 6/5 s0 = 7.577709  seeds nproj  tau 1/2
+C1 vertices on the mould surface: 0 (apices)
+mould faces 14  (0.2s)
+outer pattern computed (1.8s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 216, shared 120, outer-only 96, inner-only 30
+pinched inner edges: 30 {('hex', 'hex'): 30}
+clusters 42: (inner, outer) vertex counts {(1, 2): 12, (2, 3): 6, (2, 4): 24}; Y vertices 42; persistent inner edges 120/150
+volume sum - resin = 0 (exact 0); resin = 154.611497; problems 24: [(20, 'self-intersecting surface'), (24, 'self-intersecting surface'), (25, 'self-intersecting surface'), (29, 'self-intersecting surface'), (30, 'self-intersecting surface'), (34, 'self-intersecting surface'), (35, 'self-intersecting surface'), (39, 'self-intersecting surface'), (40, 'self-intersecting surface'), (44, 'self-intersecting surface'), (45, 'self-intersecting surface'), (49, 'self-intersecting surface'), (50, 'self-intersecting surface'), (54, 'self-intersecting surface'), (55, 'self-intersecting surface'), (59, 'self-intersecting surface'), (60, 'self-intersecting surface'), (64, 'self-intersecting surface'), (65, 'self-intersecting surface'), (69, 'self-intersecting surface'), (70, 'self-intersecting surface'), (74, 'self-intersecting surface'), (75, 'self-intersecting surface'), (79, 'self-intersecting surface')]
+RESULT bcc 6/5 nproj: valid=False  partition checks failed: [(20, 'self-intersecting surface'), (24, 'self-intersecting surface'), (25, 'self-intersecting surface'), (29, 'self-intersecting surface')], volume ok True
+(11.4s)
+=== combi  sc  s = 1 s0 = 5.854102  seeds cen  tau 1/2
+C1 vertices on the mould surface: 12 (apices)
+mould faces 6  (0.1s)
+outer pattern computed (1.6s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 174, shared 126, outer-only 48, inner-only 24
+pinched inner edges: 24 {('hex', 'hex'): 24}
+clusters 48: (inner, outer) vertex counts {(1, 1): 24, (2, 3): 24}; Y vertices 24; persistent inner edges 126/150
+sampling cross-check: 6000 points (4140 in the resin), points not covered exactly once: 0, max winding rounding 7.51e-15
+volume sum - resin = 0 (exact 0); resin = 137.672209; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 80, scutoid pieces 80, kinds 5 (T_h orbit members congruent: True); 157.7612 present: False
+  kind hex face 0 (8 per cell): facets 28 vertices 19 Y 3 scutoid True vol 3.522177  C1-side neighbours [8, 9, 10, 21, 26, 31] mould-side [21, 26, 31]
+     angles at C1 edges: [73.4625, 104.9468]
+     all dihedrals: 71.64888988 [not in basis]; 73.4624945 [not in basis]; 90.0 [1/2pi]; 102.9385645 [not in basis]; 104.9467722 [not in basis]; 121.6391331 [not in basis]; 122.1809668 [not in basis]; 137.8192239 [not in basis]; 164.8587405 [not in basis]; 165.1570911 [not in basis]; 174.1536138 [not in basis]; 174.4581255 [not in basis]; 176.0616481 [not in basis]; 200.1485377 [not in basis]; 200.365915 [not in basis]
+  kind hex face 8 (12 per cell): facets 17 vertices 13 Y 2 scutoid True vol 1.852563  C1-side neighbours [0, 4, 11, 22, 30, 60] mould-side [11, 22, 30, 60]
+     angles at C1 edges: [59.3498, 68.1926, 110.9052, 116.8635]
+     all dihedrals: 59.34977092 [not in basis]; 68.19255056 [not in basis]; 83.46696393 [not in basis]; 87.54185909 [not in basis]; 90.0 [1/2pi]; 102.7046694 [not in basis]; 105.2765473 [not in basis]; 110.9051574 [1/4pi + 1beta]; 116.8635426 [not in basis]; 120.3369109 [not in basis]; 128.0620234 [not in basis]; 152.5964393 [not in basis]; 171.3000996 [not in basis]; 174.807953 [not in basis]; 191.7343163 [not in basis]; 198.2464103 [not in basis]
+  kind tri face 20 (24 per cell): facets 9 vertices 7 Y 1 scutoid True vol 0.605037  C1-side neighbours [9, 21, 24] mould-side [9, 21, 24, 27]
+     angles at C1 edges: [99.7451, 120.0, 124.8625]
+     all dihedrals: 49.70091037 [not in basis]; 59.66308908 [not in basis]; 66.68132864 [not in basis]; 72.0 [2/5pi]; 77.29533057 [not in basis]; 87.62066999 [not in basis]; 90.0 [1/2pi]; 99.74507163 [not in basis]; 120.0 [2/3pi]; 124.8625424 [not in basis]; 127.5955744 [not in basis]; 168.2656837 [not in basis]; 169.1987365 [not in basis]; 207.4035607 [not in basis]
+  kind tri face 21 (24 per cell): facets 17 vertices 12 Y 2 scutoid True vol 2.141136  C1-side neighbours [0, 20, 22] mould-side [0, 20, 22, 26, 31]
+     angles at C1 edges: [85.6323, 115.1375, 120.0]
+     all dihedrals: 42.1807761 [not in basis]; 60.59793313 [not in basis]; 64.22429854 [not in basis]; 72.0 [2/5pi]; 77.06143549 [not in basis]; 85.63234805 [not in basis]; 87.62066999 [not in basis]; 90.0 [1/2pi]; 92.37933001 [not in basis]; 108.0 [3/5pi]; 113.3186714 [not in basis]; 115.1374576 [not in basis]; 120.0 [2/3pi]; 144.0457213 [not in basis]; 144.3053888 [not in basis]; 159.634085 [not in basis]; 159.8514623 [not in basis]; 174.6905192 [not in basis]; 183.9383519 [not in basis]; 185.5418745 [not in basis]; 185.8463862 [not in basis]; 190.8012635 [not in basis]; 190.9571296 [not in basis]; 194.8429089 [not in basis]; 195.1412595 [not in basis]
+  kind tri face 22 (12 per cell): facets 17 vertices 12 Y 2 scutoid True vol 1.779657  C1-side neighbours [8, 21, 23] mould-side [8, 21, 23, 30, 60]
+     angles at C1 edges: [90.9023, 120.0]
+     all dihedrals: 66.68132864 [not in basis]; 68.3181874 [not in basis]; 90.0 [1/2pi]; 90.90229199 [not in basis]; 92.37933001 [not in basis]; 96.53303607 [not in basis]; 108.0 [3/5pi]; 120.0 [2/3pi]; 144.8625665 [not in basis]; 161.7535897 [not in basis]; 169.0428704 [not in basis]; 185.192047 [not in basis]; 185.3094808 [not in basis]; 188.6999004 [not in basis]
+RESULT sc 1 cen: valid=True  partition; scutoid pieces 80; kinds 5; Y vertices 24; 157.7612 present False
+(8.7s)
+=== combi  sc  s = 1 s0 = 5.854102  seeds cproj  tau 1/2
+C1 vertices on the mould surface: 12 (apices)
+mould faces 6  (0.1s)
+outer pattern computed (1.7s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 210, shared 126, outer-only 84, inner-only 24
+pinched inner edges: 24 {('hex', 'hex'): 24}
+clusters 48: (inner, outer) vertex counts {(1, 1): 12, (1, 2): 12, (2, 4): 24}; Y vertices 36; persistent inner edges 126/150
+volume sum - resin = 0 (exact 0); resin = 137.672209; problems 24: [(20, 'self-intersecting surface'), (24, 'self-intersecting surface'), (25, 'self-intersecting surface'), (29, 'self-intersecting surface'), (30, 'self-intersecting surface'), (34, 'self-intersecting surface'), (35, 'self-intersecting surface'), (39, 'self-intersecting surface'), (40, 'self-intersecting surface'), (44, 'self-intersecting surface'), (45, 'self-intersecting surface'), (49, 'self-intersecting surface'), (50, 'self-intersecting surface'), (54, 'self-intersecting surface'), (55, 'self-intersecting surface'), (59, 'self-intersecting surface'), (60, 'self-intersecting surface'), (64, 'self-intersecting surface'), (65, 'self-intersecting surface'), (69, 'self-intersecting surface'), (70, 'self-intersecting surface'), (74, 'self-intersecting surface'), (75, 'self-intersecting surface'), (79, 'self-intersecting surface')]
+RESULT sc 1 cproj: valid=False  partition checks failed: [(20, 'self-intersecting surface'), (24, 'self-intersecting surface'), (25, 'self-intersecting surface'), (29, 'self-intersecting surface')], volume ok True
+(9.7s)
+=== combi  sc  s = 1 s0 = 5.854102  seeds nproj  tau 1/2
+C1 vertices on the mould surface: 12 (apices)
+mould faces 6  (0.1s)
+outer pattern computed (1.7s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 228, shared 120, outer-only 108, inner-only 30
+pinched inner edges: 30 {('hex', 'hex'): 30}
+clusters 42: (inner, outer) vertex counts {(1, 3): 12, (2, 3): 6, (2, 4): 24}; Y vertices 42; persistent inner edges 120/150
+volume sum - resin = 0 (exact 0); resin = 137.672209; problems 24: [(20, 'self-intersecting surface'), (24, 'self-intersecting surface'), (25, 'self-intersecting surface'), (29, 'self-intersecting surface'), (30, 'self-intersecting surface'), (34, 'self-intersecting surface'), (35, 'self-intersecting surface'), (39, 'self-intersecting surface'), (40, 'self-intersecting surface'), (44, 'self-intersecting surface'), (45, 'self-intersecting surface'), (49, 'self-intersecting surface'), (50, 'self-intersecting surface'), (54, 'self-intersecting surface'), (55, 'self-intersecting surface'), (59, 'self-intersecting surface'), (60, 'self-intersecting surface'), (64, 'self-intersecting surface'), (65, 'self-intersecting surface'), (69, 'self-intersecting surface'), (70, 'self-intersecting surface'), (74, 'self-intersecting surface'), (75, 'self-intersecting surface'), (79, 'self-intersecting surface')]
+RESULT sc 1 nproj: valid=False  partition checks failed: [(20, 'self-intersecting surface'), (24, 'self-intersecting surface'), (25, 'self-intersecting surface'), (29, 'self-intersecting surface')], volume ok True
+(8.3s)
+=== combi  fcc  s = 1 s0 = 9.472136  seeds cen  tau 1/2
+C1 vertices on the mould surface: 12 (apices)
+mould faces 12  (0.2s)
+outer pattern computed (1.9s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 180, shared 120, outer-only 60, inner-only 30
+pinched inner edges: 30 {('hex', 'hex'): 30}
+clusters 42: (inner, outer) vertex counts {(1, 1): 12, (2, 3): 30}; Y vertices 30; persistent inner edges 120/150
+sampling cross-check: 1848 points (1298 in the resin), points not covered exactly once: 0, max winding rounding 4.00e-15
+volume sum - resin = 0 (exact 0); resin = 149.512379; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 80, scutoid pieces 80, kinds 5 (T_h orbit members congruent: True); 157.7612 present: False
+  kind hex face 0 (8 per cell): facets 28 vertices 19 Y 3 scutoid True vol 2.819312  C1-side neighbours [8, 9, 10, 21, 26, 31] mould-side [21, 26, 31]
+     angles at C1 edges: [70.9615, 109.701]
+     all dihedrals: 70.84962646 [not in basis]; 70.96151792 [not in basis]; 94.41402445 [not in basis]; 109.7009988 [not in basis]; 113.8187207 [not in basis]; 114.8561756 [not in basis]; 120.0 [2/3pi]; 132.7211226 [not in basis]; 169.0421027 [not in basis]; 169.4689138 [not in basis]; 172.4189242 [not in basis]; 173.3882088 [not in basis]; 176.9890791 [not in basis]; 200.5918811 [not in basis]; 201.1928949 [not in basis]
+  kind hex face 8 (12 per cell): facets 19 vertices 13 Y 3 scutoid True vol 2.847942  C1-side neighbours [0, 4, 11, 22, 30, 60] mould-side [22, 30, 60]
+     angles at C1 edges: [68.3831, 72.8304, 110.9052, 112.1093]
+     all dihedrals: 60.97566913 [not in basis]; 68.38311595 [not in basis]; 72.83040298 [not in basis]; 93.42095332 [not in basis]; 95.367497 [not in basis]; 108.9347799 [not in basis]; 109.1223619 [not in basis]; 110.9051574 [1/4pi + 1beta]; 112.1093161 [not in basis]; 126.7902824 [not in basis]; 138.2881316 [not in basis]; 149.6518746 [not in basis]; 170.0607959 [not in basis]; 172.661906 [not in basis]; 178.5324286 [not in basis]; 184.7467573 [not in basis]; 201.5781379 [not in basis]
+  kind tri face 20 (24 per cell): facets 13 vertices 10 Y 2 scutoid True vol 1.972001  C1-side neighbours [9, 21, 24] mould-side [9, 21, 24, 27, 50]
+     angles at C1 edges: [86.2644, 120.0]
+     all dihedrals: 39.92993474 [not in basis]; 71.06522007 [not in basis]; 83.52418735 [not in basis]; 86.26443957 [not in basis]; 86.57904668 [not in basis]; 90.0 [1/2pi]; 90.45863669 [not in basis]; 102.6214165 [not in basis]; 110.7048111 [not in basis]; 120.0 [2/3pi]; 120.6194527 [not in basis]; 149.5121654 [not in basis]; 175.2532427 [not in basis]; 177.7853921 [not in basis]; 181.3651331 [not in basis]; 181.4675714 [not in basis]; 210.3481254 [not in basis]
+  kind tri face 21 (24 per cell): facets 17 vertices 12 Y 2 scutoid True vol 1.384595  C1-side neighbours [0, 20, 22] mould-side [0, 20, 22, 26, 31]
+     angles at C1 edges: [88.1333, 119.0243, 120.0]
+     all dihedrals: 47.27887743 [not in basis]; 66.63608912 [not in basis]; 66.92575799 [not in basis]; 69.29518895 [not in basis]; 77.37858352 [not in basis]; 85.58597555 [not in basis]; 88.13332463 [not in basis]; 89.54136331 [not in basis]; 90.45863669 [not in basis]; 96.47581265 [not in basis]; 110.7048111 [not in basis]; 119.0242831 [not in basis]; 120.0 [2/3pi]; 144.2899451 [not in basis]; 144.8604285 [not in basis]; 158.8071051 [not in basis]; 159.4081189 [not in basis]; 178.6348669 [not in basis]; 182.1151743 [not in basis]; 182.2146079 [not in basis]; 183.0109209 [not in basis]; 186.6117912 [not in basis]; 187.5810758 [not in basis]; 190.5310862 [not in basis]; 190.9578973 [not in basis]
+  kind tri face 22 (12 per cell): facets 14 vertices 10 Y 2 scutoid True vol 1.018689  C1-side neighbours [8, 21, 23] mould-side [8, 21, 23, 30, 60]
+     angles at C1 edges: [90.7117, 120.9757]
+     all dihedrals: 53.20971756 [not in basis]; 69.29518895 [not in basis]; 70.42282834 [not in basis]; 83.52418735 [not in basis]; 89.54136331 [not in basis]; 90.7117266 [not in basis]; 120.9757169 [not in basis]; 144.0130503 [not in basis]; 158.4218621 [not in basis]; 177.8848257 [not in basis]; 187.338094 [not in basis]; 189.9392041 [not in basis]
+RESULT fcc 1 cen: valid=True  partition; scutoid pieces 80; kinds 5; Y vertices 30; 157.7612 present False
+(9.2s)
+=== combi  fcc  s = 1 s0 = 9.472136  seeds cproj  tau 1/2
+C1 vertices on the mould surface: 12 (apices)
+mould faces 12  (0.2s)
+outer pattern computed (2.3s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 210, shared 150, outer-only 60, inner-only 0
+pinched inner edges: 0 {}
+clusters 72: (inner, outer) vertex counts {(1, 1): 12, (1, 2): 60}; Y vertices 60; persistent inner edges 150/150
+volume sum - resin = 0 (exact 0); resin = 149.512379; problems 36: [(21, 'self-intersecting surface'), (22, 'self-intersecting surface'), (23, 'self-intersecting surface'), (26, 'self-intersecting surface'), (27, 'self-intersecting surface'), (28, 'self-intersecting surface'), (31, 'self-intersecting surface'), (32, 'self-intersecting surface'), (33, 'self-intersecting surface'), (36, 'self-intersecting surface'), (37, 'self-intersecting surface'), (38, 'self-intersecting surface'), (41, 'self-intersecting surface'), (42, 'self-intersecting surface'), (43, 'self-intersecting surface'), (46, 'self-intersecting surface'), (47, 'self-intersecting surface'), (48, 'self-intersecting surface'), (51, 'self-intersecting surface'), (52, 'self-intersecting surface'), (53, 'self-intersecting surface'), (56, 'self-intersecting surface'), (57, 'self-intersecting surface'), (58, 'self-intersecting surface'), (61, 'self-intersecting surface'), (62, 'self-intersecting surface'), (63, 'self-intersecting surface'), (66, 'self-intersecting surface'), (67, 'self-intersecting surface'), (68, 'self-intersecting surface'), (71, 'self-intersecting surface'), (72, 'self-intersecting surface'), (73, 'self-intersecting surface'), (76, 'self-intersecting surface'), (77, 'self-intersecting surface'), (78, 'self-intersecting surface')]
+RESULT fcc 1 cproj: valid=False  partition checks failed: [(21, 'self-intersecting surface'), (22, 'self-intersecting surface'), (23, 'self-intersecting surface'), (26, 'self-intersecting surface')], volume ok True
+(10.5s)
+=== combi  fcc  s = 1 s0 = 9.472136  seeds nproj  tau 1/2
+C1 vertices on the mould surface: 12 (apices)
+mould faces 12  (0.2s)
+outer pattern computed (2.2s); faces with an empty outer cell: []
+adjacency: inner pairs 150, outer pairs 228, shared 120, outer-only 108, inner-only 30
+pinched inner edges: 30 {('hex', 'hex'): 30}
+clusters 42: (inner, outer) vertex counts {(1, 3): 12, (2, 3): 6, (2, 4): 24}; Y vertices 42; persistent inner edges 120/150
+volume sum - resin = 0 (exact 0); resin = 149.512379; problems 12: [(22, 'self-intersecting surface'), (27, 'self-intersecting surface'), (32, 'self-intersecting surface'), (37, 'self-intersecting surface'), (42, 'self-intersecting surface'), (47, 'self-intersecting surface'), (52, 'self-intersecting surface'), (57, 'self-intersecting surface'), (62, 'self-intersecting surface'), (67, 'self-intersecting surface'), (72, 'self-intersecting surface'), (77, 'self-intersecting surface')]
+RESULT fcc 1 nproj: valid=False  partition checks failed: [(22, 'self-intersecting surface'), (27, 'self-intersecting surface'), (32, 'self-intersecting surface'), (37, 'self-intersecting surface')], volume ok True
+(9.9s)
+
+=== SUMMARY
+bcc     1 s0  seeds cen    PARTITION  scutoid pieces 36/80  kinds 5  Y vertices 6  157.7612 absent  facets per kind [8, 18, 10, 5, 8]  sampling 3729 pts ok
+bcc     1 s0  seeds cproj  not valid: partition checks failed: [(22, 'not a closed 2-manifold'), (27, 'not a closed 2-manifold'), (32, 'not a closed 2-manifold'), (37, 'not a closed 2-mani
+bcc     1 s0  seeds nproj  not valid: partition checks failed: [(20, 'self-intersecting surface'), (21, 'self-intersecting surface'), (23, 'self-intersecting surface'), (24, 'self-intersec
+bcc   6/5 s0  seeds cen    PARTITION  scutoid pieces 80/80  kinds 5  Y vertices 30  157.7612 absent  facets per kind [23, 25, 16, 20, 24]  sampling 3729 pts ok
+bcc   6/5 s0  seeds cproj  PARTITION  scutoid pieces 72/80  kinds 5  Y vertices 60  157.7612 absent  facets per kind [38, 36, 13, 18, 20]  sampling 3729 pts ok
+bcc   6/5 s0  seeds nproj  not valid: partition checks failed: [(20, 'self-intersecting surface'), (24, 'self-intersecting surface'), (25, 'self-intersecting surface'), (29, 'self-intersec
+sc      1 s0  seeds cen    PARTITION  scutoid pieces 80/80  kinds 5  Y vertices 24  157.7612 absent  facets per kind [28, 17, 9, 17, 17]  sampling 6000 pts ok
+sc      1 s0  seeds cproj  not valid: partition checks failed: [(20, 'self-intersecting surface'), (24, 'self-intersecting surface'), (25, 'self-intersecting surface'), (29, 'self-intersec
+sc      1 s0  seeds nproj  not valid: partition checks failed: [(20, 'self-intersecting surface'), (24, 'self-intersecting surface'), (25, 'self-intersecting surface'), (29, 'self-intersec
+fcc     1 s0  seeds cen    PARTITION  scutoid pieces 80/80  kinds 5  Y vertices 30  157.7612 absent  facets per kind [28, 19, 13, 17, 14]  sampling 1848 pts ok
+fcc     1 s0  seeds cproj  not valid: partition checks failed: [(21, 'self-intersecting surface'), (22, 'self-intersecting surface'), (23, 'self-intersecting surface'), (26, 'self-intersec
+fcc     1 s0  seeds nproj  not valid: partition checks failed: [(22, 'self-intersecting surface'), (27, 'self-intersecting surface'), (32, 'self-intersecting surface'), (37, 'self-intersec
+FINAL ok
