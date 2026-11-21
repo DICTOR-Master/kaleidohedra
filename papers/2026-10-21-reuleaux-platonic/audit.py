@@ -37,8 +37,15 @@ chk(inn('r² = (5 + 2√5)/60') and abs((5 + 2 * 5 ** .5) / 15 / 4 - (5 + 2 * 5 
 chk(inn('1.248391589161') and inn('1.110988655456') and inn('1.024944026382') and mx['cube'] == mx['octahedron'] == '1.248391589161' and mx['dodecahedron'] == mx['icosahedron'] == '1.110988655456' and mx['tetrahedron'] == '1.024944026382', 'numerical maxima quoted')
 chk('sqrt3 - sqrt2/2 = 1.024944026382 = the largest width' in L and inn('√3 − √2/2'), 'tetrahedron sqrt3 - sqrt2/2')
 chk('face-axis width 1.248391589161 = the largest width' in L and 'face-axis width 1.110988655456 = the largest width' in L, 'face-axis = max (numerical)')
-chk(inn('Conjecture 1 (the largest width).') and inn('Evidence (numerical).') and 'largest width' not in txt.split('Main theorem.')[2].split('Proof')[0], 'global maximum stated as Conjecture 1 with numerical evidence, not in the theorem')
-chk(src.index('<h2>1. The theorem') < src.index('<h2>2. Proof') < src.index('<h2>3. Corollaries') < src.index('<h2>4. Conjectures') < src.index('<h2>6. Conclusion') < src.index('<h2>7. Prior art') < src.index('Appendix A'), 'theorem-first order')
+I2 = rd('studies/2026-11-21-gaps-batch-c/logs/item2.log')
+chk(I2.strip().endswith('FINAL ok') and all(f'Conjecture 1 for {s}: PROVED' in I2 for s in ['dodecahedron', 'icosahedron', 'cube', 'octahedron']) and inn('Theorem 2 (the largest width).'), 'item2.log: Conjecture 1 proved for D, I, C, O; stated as Theorem 2')
+for s, n, k, t in [('dodecahedron', 120, 5, 12), ('icosahedron', 20, 3, 20), ('cube', 24, 4, 6), ('octahedron', 8, 3, 8)]:
+    chk(f'{s}: ' in I2 and re.search(rf"{s}: \d+ corners; candidates in B: {n} three-sphere points, 0 arc maxima", I2) and f"attained at {n} candidates, kinds [('vertex', {k})], all on face axes: True" in I2 and t * (k * (k - 1) * (k - 2) // 6) == n, f'{s}: {n} candidate triples = {t} face-axis points on {k} spheres, no arc maxima')
+chk(inn('12 for the dodecahedron, each on the 5 spheres') and inn('20 for the icosahedron, each on 3, 6 for the cube, each on 4, and 8 for the octahedron, each on 3'), 'Proposition 1 counts quoted')
+chk('0.5554943277281333' in I2 and '0.6241957945804639' in I2 and inn('0.5554943277') and inn('0.6241957945'), 'largest |x| quoted')
+chk('|x| = 1.36567539822 > face value 0.62419579458: True' in I2 and inn('|x| ≈ 1.3657') and inn('true 0.6242'), 'failing control quoted')
+chk(not re.search(r'Main theorem\.</b>[^<]*largest width', src), 'main theorem block does not claim the largest width')
+chk(src.index('<h2>1. The theorem') < src.index('<h2>2. Proof') < src.index('<h2>3. Corollaries') < src.index('<h2>4. The largest width') < src.index('<h2>6. Prior art') < src.index('<h2>Contributions') < src.index('Appendix A'), 'theorem-first order')
 chk(inn('Proved in general') and inn('Proved for the cases built') and inn('Observed numerically') and inn('does not apply to the tetrahedron: its diameter is its edge'), 'status classes; tetrahedron case explained')
 chk("along a face axis every corner has height >= -r, with equality exactly at the" in L, 'corner heights >= -r (exact)')
 chk(inn('3000 random directions') and 'U = rng.normal(size=(3000, 3))' in rd(ST + 'widths.py'), '3000 directions')
@@ -53,7 +60,7 @@ chk(max(abs(a - b) for a, b in vols.values()) < 6e-7 and inn('agree to within 6 
 chk(inn('7200 points') and '7200' in rd(ST + 'reuleaux_checks.py') and inn('margin 10 −9'), 'arc sampling')
 # figure labels (drawn by reuleaux_platonic.py at edge 1): radius = diameter
 P = rd(ST + 'reuleaux_platonic.py'); chk("radius {D:.3f}" in P and 'V /= E' in P and inn("their radius, which is the solid's diameter"), 'figure labels: radius = diameter at edge 1')
-chk(inn('4, 2, 3, 3, 4') and inn('4, 2, 3, 3 and 4'), 'colours 4/2/3/3/4')
+chk(inn('3, 4, 2, 4, 3') and inn('3, 4, 2, 4 and 3'), 'colours 3/4/2/4/3 (D, I, C, T, O)')
 # library text facts
 LT = {}
 import subprocess, unicodedata
@@ -69,9 +76,9 @@ chk('proposal' not in txt.lower() and 'proposed' not in txt.lower(), 'no "propos
 chk(inn("are DICTO's idea") and inn('drafting with Claude (Anthropic)'), 'credit line')
 rows = open(os.path.join(HERE, 'lib-rows.html')).read().count('<tr>')
 chk(rows == 81 and inn('81 library sources with a text layer') and inn('269 entries, of which 94 have a local file') and inn('175 link-only'), f'library rows {rows}, counts')
-chk(inn('Version 1 · 21 October 2026') and inn('Licence CC BY-SA 4.0'), 'version, date, licence')
+chk(inn('Version 3 (draft) · 21 November 2026 (Version 2: 22 October 2026; Version 1: 21 October 2026)') and inn('Licence CC BY-SA 4.0'), 'version, date, licence')
 # referee fixes (Fable, 2026-10-21)
 chk("in Sallee's sense" not in txt and inn('following Sallee') and inn("Sallee's paper [4] itself was not read"), 'Reuleaux-polyhedron definition attributed to Montejano-Roldan-Pensado (following Sallee) and Hynd')
 chk(inn('Discrete Comput. Geom. 38 (2007) 201–230, doi:10.1007/s00454-007-1334-7; arXiv:1110.4329'), 'Bezdek et al. journal reference')
-chk(inn('The four other bodies (not found in the sources checked)') and inn('new only for the other four bodies') and inn('The names describe the look only'), 'abstract novelty, Conjecture 1 scope, names by look')
+chk(inn('The four other bodies (not found in the sources checked)') and inn('We quote it and do not re-prove it here') and inn('The names describe the look only'), 'abstract novelty, Conjecture 1 scope, names by look')
 print('ALL PASS' if bad == 0 else f'{bad} FAIL')
