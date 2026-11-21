@@ -17,3 +17,5 @@ Applied in every new draft, every book chapter, and every paper at its next vers
 10. **Passion, no throat-clearing.** Open with the idea itself; let the result carry the interest, never the wording.
 
 These sit beside the standing rules: theorem-led papers, the layman hook at each theorem, one status box in drafts, the "Version N adds" line at release, and the banned-phrase guard in print.mjs.
+
+**Internal only (DICTO 22 Nov):** never name this style, Winston or its moves in any public text. Version line: "Version N revises the exposition; no result changes."
