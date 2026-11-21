@@ -1,0 +1,68 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "creators": [
+    {
+      "name": "DICTO",
+      "affiliation": "Independent artist, Osaka, Japan",
+      "orcid": "0009-0001-2620-2036"
+    }
+  ],
+  "language": "eng",
+  "license": "cc-by-sa-4.0",
+  "access_right": "open",
+  "version": "1",
+  "publication_date": "2026-11-22",
+  "title": "Icosahedral Cores in the 3D Penrose Tiling",
+  "subjects": [
+    {
+      "term": "MSC2020 52C22: Tilings in n dimensions",
+      "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+      "scheme": "url"
+    },
+    {
+      "term": "MSC2020 52B10: Three-dimensional polytopes",
+      "identifier": "https://zbmath.org/classification/?q=cc:52B10",
+      "scheme": "url"
+    },
+    {
+      "term": "MSC2020 52C23: Quasicrystals and aperiodic tilings in discrete geometry",
+      "identifier": "https://zbmath.org/classification/?q=cc:52C23",
+      "scheme": "url"
+    }
+  ],
+  "description": "<p>We prove that icosahedral cores can be set in the never-repeating 3D Penrose tiling by the two golden rhombohedra (the Ammann–Kramer–Neri tiling) with the resin between core and cell cut entirely into true scutoids. Put one core at the centre of every rhombohedron, all cores the same size and the same way up. <b>Main theorem</b> (Theorem 1, exact in ℚ(√5)): for the Rollerball, DICTO's combined method gives a valid division of the resin of every cell, prolate and oblate, in all 20 orientations that occur; all 72 pieces of each cell are true scutoids, with 30 Y-vertices per cell, in 8 kinds per cell type. No kind of piece occurs in both cell types, so the cells can be read back from the pieces and the scutoid layer has exactly the symmetries of the tiling: it never repeats, and it carries the tiling's order one to one, prolate to oblate in the golden ratio φ. Four further cores (Fullerene Star, icosidodecahedron, icosahedron, dodecahedron) give valid divisions as well, with fewer scutoids or none (Proposition 4). The second result (Theorem 3, exact) is a seam obstruction. Across a wall shared by two cells of the same type the two cut patterns line up exactly, because the two cores are mirror images in the wall, every wall being perpendicular to a two-fold axis of the core. Across every prolate–oblate wall they do not. No placement of the cores makes every pair of neighbours mirror images: 552 of the 814 interior edges of the patch are surrounded by an odd number of cells, and the conditions they impose have no common solution. That mirror placement is the only way to line up two Voronoi patterns of this kind is argued, not proved. The cores sit in a never-repeating pattern and every piece is a scutoid; whether the pieces can also meet edge to edge across every wall is open.</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
+  "keywords": [
+    "DICTO",
+    "3D Penrose tiling",
+    "Ammann-Kramer-Neri tiling",
+    "golden rhombohedra",
+    "quasicrystal",
+    "scutoid",
+    "Rollerball",
+    "space-filling",
+    "cut and project"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23345699",
+      "relation": "isPartOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.24411660",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.24384789",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.24111864",
+      "relation": "references",
+      "scheme": "doi"
+    }
+  ]
+}
