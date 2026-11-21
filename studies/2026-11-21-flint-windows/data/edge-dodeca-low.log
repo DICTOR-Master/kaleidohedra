@@ -1,0 +1,15 @@
+[   0.3s] START dodeca edge dodeca-low: at 27/25 closure (3, 7) counts [80, 72, 80, 62, 120, 62, 60, 62, 120, 62]; at 11/10 closure None counts [80, 72, 80, 102, 200, 252, 272, 440, 612, 800]
+[   3.0s] float chain degenerate inside [1.0872222222, 1.0879629630]: bisection stops here
+[   3.0s] bisected: edge in [1.087222222222, 1.087962962963]
+[   3.2s] type of this side read at 1.087221222 (closure (3, 7)); carried in arb, valid at 1.0872222222222
+[   9.9s] wall: type of the low side fails at 1.087343960918101: step 3, 20 slacks (one orbit expected); corner 1, plane 0
+[  10.5s] secant on the wall determinant: s* = [1.08734396091810083601009744406 +/- 2.57e-30], root known to about 6397 bits
+[  11.2s] secant on the corner slack: s* = [1.08734396091810083601009744406 +/- 2.57e-30], root known to about 6397 bits
+[  11.2s] integer relations searched at 6000 bits
+[  11.2s] relation at degree 6: height 10 bits, residual < 2^-4800
+[  11.3s] minimal polynomial (degree 6): 144*x^6 + (-528)*x^5 + 640*x^4 + (-196)*x^3 + (-124)*x^2 + 40*x + 25
+[  11.3s] real roots of f: ['[1.08734396091810 +/- 8.37e-16]', '[1.32942726647072 +/- 2.70e-16]']
+[  11.3s] sqrt5 relation [5, 4, 18, -18, 0, -8, -2, 6]: square 5 exactly True, value [2.236067977 +/- 5.00e-10]
+[  11.3s] sqrt5 = -g0(x)/g1(x) in K, checked: its square is 5 exactly and its value at s* is +2.236...
+[  11.3s] EXACT in K: wall determinant zero: True (the triple of the corner degenerate there: False); all 840 tight incidences of steps 0..2 zero: True; the other 19 failing slacks (their determinants) zero too: True
+FINAL ok

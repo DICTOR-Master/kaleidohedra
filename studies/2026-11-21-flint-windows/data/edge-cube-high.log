@@ -1,0 +1,13 @@
+[   0.1s] START cube edge cube-high: at 37/50 closure None counts [32, 42, 80, 102, 110, 176, 126, 176, 138, 248]; at 19/25 closure (1, 5) counts [32, 26, 48, 26, 24, 26, 48, 26, 24, 26]
+[   0.8s] float chain degenerate inside [0.7496875000, 0.7500000000]: bisection stops here
+[   0.8s] bisected: edge in [0.749687500000, 0.750000000000]
+[   1.2s] type of this side read at 0.750001000 (closure (1, 5)); carried in arb, valid at 0.7500000001000
+[   2.1s] wall: type of the high side fails at 0.750000000000000: step 1, 8 slacks (one orbit expected); corner 5, plane 4
+[   2.1s] secant on the wall determinant: s* = [0.750000000000000000000000000000 +/- 1e-35], root known to about 6400 bits
+[   2.1s] secant on the corner slack: s* = 0.750000000000000000000000000000, root known to about 6400 bits
+[   2.1s] integer relations searched at 6000 bits
+[   2.1s] relation at degree 1: height 3 bits, residual < 2^-4800
+[   2.1s] minimal polynomial (degree 1): 4*x + (-3)
+[   2.1s] real roots of f: ['0.750000000000000']
+[   2.1s] EXACT in K: wall determinant zero: True (the triple of the corner degenerate there: False); all 96 tight incidences of steps 0..0 zero: True; the other 7 failing slacks (their determinants) zero too: True
+FINAL ok

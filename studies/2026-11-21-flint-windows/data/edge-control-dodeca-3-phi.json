@@ -1,0 +1,62 @@
+{
+ "kind": "dodeca",
+ "label": "control-dodeca-3-phi",
+ "bracket": [
+  "7073/5120",
+  "1769/1280"
+ ],
+ "pattern_low": "(1, 5)",
+ "pattern_high": "(0, 2)",
+ "counts_low": [
+  80,
+  62,
+  120,
+  62,
+  60,
+  62,
+  120,
+  62,
+  60,
+  62
+ ],
+ "counts_high": [
+  20,
+  12,
+  20,
+  12,
+  20,
+  12,
+  20,
+  12,
+  20,
+  12
+ ],
+ "wall": {
+  "side": "low",
+  "step": 5,
+  "corner": 5,
+  "plane": 14,
+  "orbit": 4
+ },
+ "s_star": "[1.38196601125010515179541316563436188227969082019423713786455 +/- 1.38e-60]",
+ "minpoly": "x^2 + (-5)*x + 5",
+ "minpoly_coeffs": [
+  5,
+  -5,
+  1
+ ],
+ "degree": 2,
+ "isolating_interval": [
+  "1.381966011250105151795413165634361882280",
+  "1.381966011250105151795413165634361882280"
+ ],
+ "exact_wall_zero": null,
+ "early_wall": [
+  1,
+  0
+ ],
+ "triple_degenerate": true,
+ "exact_incidences": true,
+ "exact_orbit": null,
+ "sqrt5": "in K"
+}

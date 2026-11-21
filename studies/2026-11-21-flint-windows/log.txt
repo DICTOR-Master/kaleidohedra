@@ -1,0 +1,17 @@
+2026-11-21  study 2026-11-21-flint-windows (gap L28/L29: exact edges of the open windows of #80/#81)
+python-flint 0.9.0 (FLINT 3) in a venv on the compute host, Python 3.14; scipy 1.18 for the floating-point hulls.
+Every run below: foreground, under 280 s; outputs in data/.
+1  map.py cube 0.50..1.00 FINAL ok; dodeca 0.40..1.50 FINAL FAIL only for 2 depths degenerate in floating point (1.16, 1.38 = near 3 - phi); b1-walls regimes reproduced
+2  edge.py cube 59/100 31/50      edge 3/5   exact (5s - 3), wall of step 1  FINAL ok
+3  edge.py cube 37/50 19/25       edge 3/4   exact (4s - 3), wall of step 1  FINAL ok
+4  edge.py dodeca 27/25 11/10     edge s* = 1.0873439609181008360..., degree 6, wall of step 3   FINAL ok
+5  edge.py dodeca 31/25 63/50     edge 5/4   exact (4s - 5), wall of step 1  FINAL ok
+6  edge.py dodeca 13/10 29/20     CONTROL 3 - phi (s^2 - 5s + 5), wall of step 1  FINAL ok
+7  edge.py dodeca 3/4 26/25       CONTROL 1 (s - 1)                        FINAL ok
+8  sym.py (depth as a symbol, Q(sqrt5)(s) in FLINT): closure identities on the hops
+   cube 59/100 -> (1/2, 3/5); cube 43/50 -> (3/4, 1);
+   dodeca 3/4 -> (2/5, 1]; 27/25 -> (1, s*) with s* the same degree-6 root; 63/50 -> (5/4, 3 - phi); 29/20 -> (3 - phi, 3/2]   FINAL ok each
+   inside the windows (no closure, walls crowd): cube 7/10 (hop (0.69940, 0.70008) by step 4); dodeca 6/5 (cut by the time limit at step 3)
+9  certify.py: 21 rational depths, exact type + exact closure or certified non-closure     FINAL ok each
+   controls: cube 1/2 gain^2 25/4 (5/2), cube 1 gain^2 9 (3), dodeca 3/4 and 1 gain^2 (35 - 15 sqrt5)^2, dodeca 29/20 gain^2 (15 - 6 sqrt5)^2
+FINAL ok

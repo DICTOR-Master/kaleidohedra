@@ -1,0 +1,58 @@
+{
+ "kind": "cube",
+ "label": "cube-high",
+ "bracket": [
+  "2399/3200",
+  "3/4"
+ ],
+ "pattern_low": "None",
+ "pattern_high": "(1, 5)",
+ "counts_low": [
+  32,
+  42,
+  80,
+  102,
+  110,
+  176,
+  126,
+  176,
+  138,
+  248
+ ],
+ "counts_high": [
+  32,
+  26,
+  48,
+  26,
+  24,
+  26,
+  48,
+  26,
+  24,
+  26
+ ],
+ "wall": {
+  "side": "high",
+  "step": 1,
+  "corner": 5,
+  "plane": 4,
+  "orbit": 8
+ },
+ "s_star": "[0.750000000000000000000000000000000000000000000000000000000000 +/- 1e-65]",
+ "minpoly": "4*x + (-3)",
+ "minpoly_coeffs": [
+  -3,
+  4
+ ],
+ "degree": 1,
+ "isolating_interval": [
+  "0.7500000000000000000000000000000000000000",
+  "0.7500000000000000000000000000000000000000"
+ ],
+ "exact_wall_zero": true,
+ "early_wall": null,
+ "triple_degenerate": false,
+ "exact_incidences": true,
+ "exact_orbit": true,
+ "sqrt5": null
+}

@@ -1,0 +1,8 @@
+step 0: 80 corners, 120 edges, 42 faces, kinds {5: 12, 6: 30}; exact incidences True, free slacks < 0 True, Euler 2; 0.1s
+step 1: 62 corners, 120 edges, 60 faces, kinds {4: 60}; exact incidences True, free slacks < 0 True, Euler 2; 0.1s
+step 2: 120 corners, 180 edges, 62 faces, kinds {4: 30, 6: 20, 10: 12}; exact incidences True, free slacks < 0 True, Euler 2; 0.2s
+step 3: 62 corners, 180 edges, 120 faces, kinds {3: 120}; exact incidences True, free slacks < 0 True, Euler 2; 0.2s
+step 4: 60 corners, 120 edges, 62 faces, kinds {3: 20, 4: 30, 5: 12}; exact incidences True, free slacks < 0 True, Euler 2; 0.2s
+step 5: 62 corners, 120 edges, 60 faces, kinds {4: 60}; exact incidences True, free slacks < 0 True, Euler 2; 0.2s
+CLOSES exactly: step 5 = step 1 scaled, period 4, entered at step 1; squared radius gain over the period 430411583321397701870001548/45824617801365270077109375 + -471953200497819551755035952/137473853404095810231328125 sqrt5 ~ 1.7160740433
+FINAL ok

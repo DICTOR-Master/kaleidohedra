@@ -1,0 +1,14 @@
+[   0.4s] START dodeca edge dodeca-high: at 31/25 closure None counts [80, 102, 200, 252, 272, 440, 642, 410, 492, 620]; at 63/50 closure (1, 5) counts [80, 62, 120, 62, 60, 62, 120, 62, 60, 62]
+[   2.4s] float chain degenerate inside [1.2496875000, 1.2500000000]: bisection stops here
+[   2.4s] bisected: edge in [1.249687500000, 1.250000000000]
+[   3.5s] type of this side read at 1.250001000 (closure (1, 5)); carried in arb, valid at 1.2500000001000
+[   8.1s] wall: type of the high side fails at 1.250000000000000: step 1, 20 slacks (one orbit expected); corner 3, plane 0
+[   8.3s] secant on the wall determinant: s* = [1.25000000000000000000000000000 +/- 3e-34], root known to about 6400 bits
+[   8.5s] secant on the corner slack: s* = [1.25000000000000000000000000000 +/- 3e-34], root known to about 6396 bits
+[   8.5s] integer relations searched at 6000 bits
+[   8.5s] relation at degree 1: height 3 bits, residual < 2^-4800
+[   8.5s] minimal polynomial (degree 1): 4*x + (-5)
+[   8.5s] real roots of f: ['1.25000000000000']
+[   8.5s] the root lies in Q(sqrt5): s* = 5/4 + (0) sqrt5; exact check in Q(sqrt5)
+[   8.5s] EXACT in K: wall determinant zero: True (the triple of the corner degenerate there: False); all 240 tight incidences of steps 0..0 zero: True; the other 19 failing slacks (their determinants) zero too: True
+FINAL ok

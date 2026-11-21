@@ -1,0 +1,14 @@
+[   0.1s] START dodeca edge control-dodeca-3-phi: at 13/10 closure (1, 5) counts [80, 62, 120, 62, 60, 62, 120, 62, 60, 62]; at 29/20 closure (0, 2) counts [20, 12, 20, 12, 20, 12, 20, 12, 20, 12]
+[   0.6s] float chain degenerate inside [1.3814453125, 1.3820312500]: bisection stops here
+[   0.6s] bisected: edge in [1.381445312500, 1.382031250000]
+[   0.8s] type of this side read at 1.381444312 (closure (1, 5)); carried in arb, valid at 1.3814453125000
+[   5.8s] wall: type of the low side fails at 1.381966011250105: step 5, 4 slacks (one orbit expected); corner 5, plane 14
+[  21.7s] secant on the wall determinant: s* = [1.38196601125010515179541316563 +/- 4.37e-30], root known to about 194 bits
+[  22.4s] secant on the corner slack: s* = [1.38196601125010515179541316563 +/- 4.37e-30], root known to about 943 bits
+[  22.4s] integer relations searched at 879 bits
+[  22.4s] relation at degree 2: height 3 bits, residual < 2^-703
+[  22.4s] minimal polynomial (degree 2): x^2 + (-5)*x + 5
+[  22.4s] real roots of f: ['[1.38196601125011 +/- 4.85e-15]', '[3.61803398874989 +/- 4.85e-15]']
+[  22.4s] the root lies in Q(sqrt5): s* = 5/2 + (-1/2) sqrt5; exact check in Q(sqrt5)
+[  22.5s] EXACT at s*: the triple of corner 0 of step 1 is exactly dependent: s* is a wall of step 1 (corners merge there; the sign test first saw it at step 5); tight incidences of steps 0..0 exactly zero: True (240)
+FINAL ok

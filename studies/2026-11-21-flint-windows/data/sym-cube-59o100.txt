@@ -1,0 +1,11 @@
+[   0.0s] step 0: 32 corners, kinds {4: 6, 6: 12}; incidences identical in s; 480 free slacks; largest degree 1; hop so far (0.500000000000, 1.00000000000)
+[   0.1s] step 1: 30 corners, kinds {3: 24, 6: 8}; incidences identical in s; 840 free slacks; largest degree 2; hop so far (0.500000000000, [0.600000000000 +/- 3e-17])
+[   0.1s] step 2: 32 corners, kinds {4: 30}; incidences identical in s; 840 free slacks; largest degree 2; hop so far (0.500000000000, [0.600000000000 +/- 3e-17])
+[   0.1s] step 3: 26 corners, kinds {4: 24}; incidences identical in s; 736 free slacks; largest degree 4; hop so far (0.500000000000, [0.600000000000 +/- 3e-17])
+[   0.2s] step 4: 48 corners, kinds {4: 12, 6: 8, 8: 6}; incidences identical in s; 1104 free slacks; largest degree 6; hop so far (0.500000000000, [0.600000000000 +/- 3e-17])
+[   0.5s] step 5: 26 corners, kinds {3: 48}; incidences identical in s; 1104 free slacks; largest degree 12; hop so far (0.500000000000, [0.600000000000 +/- 3e-17])
+[   0.8s] step 6: 24 corners, kinds {3: 8, 4: 18}; incidences identical in s; 528 free slacks; largest degree 14; hop so far (0.500000000000, [0.600000000000 +/- 3e-17])
+[   1.3s] step 7: 26 corners, kinds {4: 24}; incidences identical in s; 528 free slacks; largest degree 16; hop so far (0.500000000000, [0.600000000000 +/- 3e-17])
+[   1.3s] HOP of the type around s0 = 59/100: low end root of 2*x + (-1) in 0.5000000000000000000000000; high end root of 5*x + (-3) in [0.6000000000000000000000000 +/- 3e-30]
+[   1.3s] CLOSURE IDENTITY: step 7 = step 3 scaled for every s on the hop; period 4, entered at step 3; squared radius gain varies with s (degree 24); at s0 [3.80844474852 +/- 1.24e-13]
+FINAL ok

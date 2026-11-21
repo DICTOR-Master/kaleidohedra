@@ -1,0 +1,11 @@
+step 0: 32 corners, 48 edges, 18 faces, kinds {4: 6, 6: 12}; exact incidences True, free slacks < 0 True, Euler 2; 0.1s
+step 1: 42 corners, 72 edges, 32 faces, kinds {3: 8, 5: 24}; exact incidences True, free slacks < 0 True, Euler 2; 0.1s
+step 2: 80 corners, 120 edges, 42 faces, kinds {4: 12, 5: 24, 12: 6}; exact incidences True, free slacks < 0 True, Euler 2; 0.1s
+step 3: 102 corners, 180 edges, 80 faces, kinds {3: 48, 5: 24, 12: 8}; exact incidences True, free slacks < 0 True, Euler 2; 0.1s
+step 4: 110 corners, 204 edges, 96 faces, kinds {3: 24, 4: 24, 5: 48}; exact incidences True, free slacks < 0 True, Euler 2; 0.1s
+step 5: 176 corners, 276 edges, 102 faces, kinds {4: 54, 6: 24, 8: 24}; exact incidences True, free slacks < 0 True, Euler 2; 0.2s
+step 6: 126 corners, 228 edges, 104 faces, kinds {3: 8, 4: 72, 6: 24}; exact incidences True, free slacks < 0 True, Euler 2; 0.3s
+step 7: 200 corners, 324 edges, 126 faces, kinds {3: 24, 4: 30, 5: 24, 6: 24, 8: 24}; exact incidences True, free slacks < 0 True, Euler 2; 0.5s
+step 8: 198 corners, 322 edges, 128 faces, kinds {3: 9, 4: 71, 7: 48}; exact incidences True, free slacks < 0 False, Euler 4; 0.9s
+NO CLOSURE within 7 steps (certified exactly); step 8: the floating-point type is not clean, not used
+FINAL ok

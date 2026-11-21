@@ -1,0 +1,63 @@
+{
+ "kind": "dodeca",
+ "label": "dodeca-low",
+ "bracket": [
+  "1957/1800",
+  "235/216"
+ ],
+ "pattern_low": "(3, 7)",
+ "pattern_high": "None",
+ "counts_low": [
+  80,
+  72,
+  80,
+  62,
+  120,
+  62,
+  60,
+  62,
+  120,
+  62
+ ],
+ "counts_high": [
+  80,
+  72,
+  80,
+  102,
+  200,
+  252,
+  272,
+  440,
+  612,
+  800
+ ],
+ "wall": {
+  "side": "low",
+  "step": 3,
+  "corner": 1,
+  "plane": 0,
+  "orbit": 20
+ },
+ "s_star": "[1.08734396091810083601009744406256504613613018459570303510380 +/- 3.62e-60]",
+ "minpoly": "144*x^6 + (-528)*x^5 + 640*x^4 + (-196)*x^3 + (-124)*x^2 + 40*x + 25",
+ "minpoly_coeffs": [
+  25,
+  40,
+  -124,
+  -196,
+  640,
+  -528,
+  144
+ ],
+ "degree": 6,
+ "isolating_interval": [
+  "1.087343960918100836010097444062565046136",
+  "1.087343960918100836010097444062565046136"
+ ],
+ "exact_wall_zero": true,
+ "early_wall": null,
+ "triple_degenerate": false,
+ "exact_incidences": true,
+ "exact_orbit": true,
+ "sqrt5": "in K"
+}
