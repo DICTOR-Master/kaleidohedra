@@ -10,3 +10,7 @@ rev = "v4.35.0-rc2"
 [[lean_lib]]
 name = "Packets"
 globs = ["Packets.*"]
+
+[[require]]
+name = "DehnCanon"
+path = "../palomar-dehn"

@@ -5,8 +5,8 @@ The angle of a solid at a point is read from the set, as in DICTO's Dehn Canon (
 `tcone P x` is the cone of directions that stay in `P` near `x`, `linSpace` the span of its two-way directions,
 and `wedgeAngle T K` is `2π · area(T ∩ unit disc of Kᗮ) / area(unit disc of Kᗮ)`: the share of a small disc
 across the line `K`. The definitions `tcone`, `linSpace`, `wedgeSet`, `wedgeAngle`, `sol`, `IsPoly`, `act`,
-`cone`, `linCone` are those of the Canon (files Dehn2Local, Dehn2Poly, Dehn2Cut), restated here so that this
-project stands alone.
+`cone`, `linCone` are imported from the Canon (files Dehn2Local, Dehn2Poly, Dehn2Cut), which this project
+requires as a Lake dependency.
 
 * `tcone_sol`, `local_sol`, `edge_shift`: near a point of a polytope, the polytope is its cone of directions.
 * `wedge_sum`: closed convex cones invariant along `K`, covering space, with pairwise disjoint interiors, have
@@ -17,7 +17,9 @@ No `sorry`.
 -/
 module
 
-public import Mathlib
+public import DehnCanon.Dehn10Edges
+public import DehnCanon.Dehn7Dodeca
+public import DehnCanon.Dehn4Similar
 
 @[expose] public section
 
@@ -26,47 +28,13 @@ open scoped RealInnerProductSpace
 
 namespace Packets
 
+open DehnCanon.Library (tcone linSpace wedgeSet wedgeAngle sol act cone linCone)
+
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-/-- The cone of directions that stay in `P` near the point `x` of `P` (empty when `x ∉ P`). -/
-def tcone (P : Set E) (x : E) : Set E := {v | x ∈ P ∧ ∃ t : ℝ, 0 < t ∧ x + t • v ∈ P}
-
-/-- The span of the directions `v` of a cone for which `-v` is in the cone too. -/
-def linSpace (T : Set E) : Submodule ℝ E := Submodule.span ℝ {v | v ∈ T ∧ -v ∈ T}
-
-/-- The part of the cone `T` inside the open unit disc of the space perpendicular to `K`. -/
-def wedgeSet (T : Set E) (K : Submodule ℝ E) : Set Kᗮ := {w | (w : E) ∈ T ∧ ‖w‖ < 1}
-
-/-- The angle of the cone `T` around the line `K`: 2π × area(T ∩ unit disc of Kᗮ) / area(unit disc of Kᗮ). -/
-noncomputable def wedgeAngle [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] (T : Set E)
-    (K : Submodule ℝ E) : ℝ :=
-  2 * Real.pi * ((volume (wedgeSet T K)).toReal / (volume (Metric.ball (0 : Kᗮ) 1)).toReal)
-
-/-- The solution set of a system of linear inequalities `⟪a i, x⟫ ≤ b i`. -/
-def sol {ι : Type} (a : ι → E) (b : ι → ℝ) : Set E := {x | ∀ i, ⟪a i, x⟫ ≤ b i}
-
-/-- A convex polytope: a bounded intersection of finitely many closed half-spaces. -/
-def IsPoly (P : Set E) : Prop :=
-  Bornology.IsBounded P ∧ ∃ (ι : Type) (_ : Fintype ι) (a : ι → E) (b : ι → ℝ), P = sol a b
 
 section Poly
 
 variable {ι : Type} {a : ι → E} {b : ι → ℝ}
-
-/-- The constraints active at `x`. -/
-def act (a : ι → E) (b : ι → ℝ) (x : E) : Set ι := {i | ⟪a i, x⟫ = b i}
-
-/-- The cone cut out by the constraints in `A`. -/
-def cone (a : ι → E) (A : Set ι) : Set E := {v | ∀ i ∈ A, ⟪a i, v⟫ ≤ 0}
-
-/-- The largest linear subspace inside `cone a A`. -/
-def linCone (a : ι → E) (A : Set ι) : Submodule ℝ E where
-  carrier := {v | ∀ i ∈ A, ⟪a i, v⟫ = 0}
-  add_mem' := fun {u v} hu hv i hi => by
-    rw [inner_add_right, show ⟪a i, u⟫ = 0 from hu i hi, show ⟪a i, v⟫ = 0 from hv i hi, add_zero]
-  zero_mem' := fun i _ => inner_zero_right _
-  smul_mem' := fun r {v} hv i hi => by
-    rw [inner_smul_right, show ⟪a i, v⟫ = 0 from hv i hi, mul_zero]
 
 lemma mem_linCone {A : Set ι} {v : E} : v ∈ linCone a A ↔ ∀ i ∈ A, ⟪a i, v⟫ = 0 := Iff.rfl
 

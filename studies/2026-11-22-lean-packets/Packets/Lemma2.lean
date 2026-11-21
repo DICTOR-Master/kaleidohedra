@@ -11,9 +11,7 @@ unconditional Theorem 4 (a), (b).
   each of these angles is the tile's dihedral angle at an edge point, or `π` (the point lies inside a face of
   that tile), or `2π`. Angles are read from the sets (`wedgeAngle` of `tcone`: the share of a small disc across
   the edge), as in DICTO's Dehn Canon.
-* `HasAngles P l`: the dihedral angles of the polytope `P`, read from the set at its edge points, are exactly
-  the angles in the list `l`. A copy of a piece by a rigid motion, a reflection or a scaling has the same angles,
-  so a tiling by copies of the pieces of Table 1 has `HasAngles (P i) (ang i)` with `ang i` the piece's row.
+* `EdgeAngle P θ`: `θ` is a dihedral angle of the polytope `P`, read from the set at an edge point.
 * `localAngleCondition_of_tiling`, and **Theorem 4 (a), (b) for tilings**: `theorem4a_tiling`,
   `theorem4b_tiling`.
 
@@ -36,11 +34,13 @@ open scoped RealInnerProductSpace
 
 namespace Packets
 
+open DehnCanon.Library (tcone linSpace wedgeSet wedgeAngle sol act cone linCone)
+
 /-- **A tiling of space by convex polytopes.** -/
 structure ConvexTiling (ι : Type*) (E : Type*) [NormedAddCommGroup E] [InnerProductSpace ℝ E] where
   /-- The tiles. -/
   P : ι → Set E
-  poly : ∀ i, IsPoly (P i)
+  poly : ∀ i, DehnCanon.Library.IsPoly (P i)
   nonempty_interior : ∀ i, (interior (P i)).Nonempty
   cover : ∀ x, ∃ i, x ∈ P i
   disjoint : Pairwise fun i j => Disjoint (interior (P i)) (interior (P j))
@@ -53,7 +53,7 @@ lemma isClosed_sol {ι : Type} (a : ι → E) (b : ι → ℝ) : IsClosed (sol a
   rw [this]
   exact isClosed_iInter fun i => isClosed_le (by fun_prop) continuous_const
 
-lemma IsPoly.isClosed {P : Set E} (hP : IsPoly P) : IsClosed P := by
+lemma isClosed_of_isPoly {P : Set E} (hP : DehnCanon.Library.IsPoly P) : IsClosed P := by
   obtain ⟨-, ι, _, a, b, rfl⟩ := hP; exact isClosed_sol a b
 
 /-- The cones at `y` of the tiles containing `y` cover space. -/
@@ -69,7 +69,7 @@ lemma cover_tcone {ι : Type*} (T : ConvexTiling ι E) {y : E} {U : Set E} (hU :
     by_cases hy : y ∈ T.P j
     · filter_upwards [self_mem_nhdsWithin] with t ht hmem
       exact hcon j hj ⟨hy, t, ht, hmem⟩
-    · exact hlim.eventually_mem ((T.poly j).isClosed.isOpen_compl.mem_nhds hy)
+    · exact hlim.eventually_mem ((isClosed_of_isPoly (T.poly j)).isOpen_compl.mem_nhds hy)
   have hall : ∀ᶠ t in 𝓝[>] (0 : ℝ), ∀ j ∈ F, y + t • v ∉ T.P j := (eventually_all_finset F).2 hev
   obtain ⟨t, ht1, ht2⟩ := (hall.and (hlim.eventually_mem hU)).exists
   obtain ⟨k, hk⟩ := T.cover (y + t • v)
@@ -129,7 +129,7 @@ section Angles
 variable [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] [Fact (finrank ℝ E = 3)]
 
 /-- One entry of the ring: the cone at `y` of a tile containing `y` with `±d` among its directions. -/
-lemma ring_entry {P : Set E} (hP : IsPoly P) (hint : (interior P).Nonempty) {y d : E} (hy : y ∈ P)
+lemma ring_entry {P : Set E} (hP : DehnCanon.Library.IsPoly P) (hint : (interior P).Nonempty) {y d : E} (hy : y ∈ P)
     (hd0 : d ≠ 0) (hd : d ∈ tcone P y) (hnd : -d ∈ tcone P y) :
     IsClosed (tcone P y) ∧ Convex ℝ (tcone P y) ∧ (∀ v ∈ tcone P y, ∀ k ∈ ℝ ∙ d, v + k ∈ tcone P y) ∧
       ((finrank ℝ (linSpace (tcone P y)) = 1 ∧ linSpace (tcone P y) = ℝ ∙ d) ∨
@@ -265,38 +265,35 @@ theorem lemma2 {ι : Type*} (T : ConvexTiling ι E) {i : ι} {x : E} (hx : x ∈
     obtain ⟨j, -, hv⟩ := cover_tcone T (Metric.isOpen_ball.mem_nhds hyB) hFmem v
     exact ⟨j, (hJ j).2 hv.1, hv⟩
 
-/-- The dihedral angles of the polytope `P`, read from the set at its edge points, are exactly those in `l`. -/
-def HasAngles (P : Set E) (l : List ℝ) : Prop :=
-  (∀ x ∈ P, finrank ℝ (linSpace (tcone P x)) = 1 → wedgeAngle (tcone P x) (linSpace (tcone P x)) ∈ l) ∧
-  (∀ θ ∈ l, ∃ x ∈ P, finrank ℝ (linSpace (tcone P x)) = 1 ∧
-    wedgeAngle (tcone P x) (linSpace (tcone P x)) = θ)
+/-- `θ` is a dihedral angle of `P`, read from the set at an edge point. -/
+def EdgeAngle (P : Set E) (θ : ℝ) : Prop :=
+  ∃ x ∈ P, finrank ℝ (linSpace (tcone P x)) = 1 ∧ wedgeAngle (tcone P x) (linSpace (tcone P x)) = θ
 
-/-- **Lemma 2 gives the local angle condition** for every tiling by convex polytopes. -/
+/-- **Lemma 2 gives the local angle condition** for every tiling by convex polytopes, with `ok j` the dihedral
+angles of tile `j` and any lists `ang j` of dihedral angles of the tiles. -/
 theorem localAngleCondition_of_tiling {ι : Type*} (T : ConvexTiling ι E) (ang : ι → List ℝ)
-    (h : ∀ i, HasAngles (T.P i) (ang i)) : LocalAngleCondition ang := by
+    (h : ∀ i, ∀ θ ∈ ang i, EdgeAngle (T.P i) θ) : LocalAngleCondition ang fun i => EdgeAngle (T.P i) := by
   intro t θ hθ
-  obtain ⟨x, hx, h1, rfl⟩ := (h t).2 θ hθ
+  obtain ⟨x, hx, h1, rfl⟩ := h t θ hθ
   obtain ⟨J, ω, hJ, hω, hcls, hsum⟩ := lemma2 T hx h1
   refine ⟨J, ω, hJ, hω, fun j hj => ?_, hsum⟩
   rcases hcls j hj with ⟨y, hy, hy1, hωj⟩ | h' | h'
-  · exact Or.inl (hωj ▸ (h j).1 y hy hy1)
+  · exact Or.inl ⟨y, hy, hy1, hωj.symm⟩
   · exact Or.inr (Or.inl h')
   · exact Or.inr (Or.inr h')
 
-/-- **Theorem 4 (a).** In a tiling of 3-space by convex polytopes, each with the dihedral angles of a dodecahedron
-centre pyramid, a truncated icosahedron, a dodecahedron, an icosahedron, a truncated icosidodecahedron, a truncated
-octahedron, a truncated cuboctahedron, or only nonnegative rational multiples of π, no tile is a dodecahedron centre
-pyramid or a truncated icosahedron (nor a dodecahedron, an icosahedron or a truncated icosidodecahedron). -/
+/-- **Theorem 4 (a)** for tilings by convex polytopes, given the dihedral angles of the tiles (`ang i` lists
+dihedral angles of tile `i`; `AllowedA` says which piece's angles the tile has). -/
 theorem theorem4a_tiling {ι : Type*} (T : ConvexTiling ι E) (ang : ι → List ℝ)
-    (h : ∀ i, HasAngles (T.P i) (ang i)) (hk : ∀ i, AllowedA (ang i)) (i : ι) :
+    (h : ∀ i, ∀ θ ∈ ang i, EdgeAngle (T.P i) θ) (hk : ∀ i, AllowedA (ang i) (EdgeAngle (T.P i))) (i : ι) :
     ang i ≠ pyrD ∧ ang i ≠ ti ∧ ang i ≠ dod ∧ ang i ≠ ico ∧ ang i ≠ tid :=
-  theorem4a ang (localAngleCondition_of_tiling T ang h) hk i
+  theorem4a ang _ (localAngleCondition_of_tiling T ang h) hk i
 
-/-- **Theorem 4 (b)**, the same with the icosahedron centre pyramid and the truncated dodecahedron. -/
+/-- **Theorem 4 (b)** for tilings by convex polytopes, given the dihedral angles of the tiles. -/
 theorem theorem4b_tiling {ι : Type*} (T : ConvexTiling ι E) (ang : ι → List ℝ)
-    (h : ∀ i, HasAngles (T.P i) (ang i)) (hk : ∀ i, AllowedB (ang i)) (i : ι) :
+    (h : ∀ i, ∀ θ ∈ ang i, EdgeAngle (T.P i) θ) (hk : ∀ i, AllowedB (ang i) (EdgeAngle (T.P i))) (i : ι) :
     ang i ≠ pyrI ∧ ang i ≠ td ∧ ang i ≠ dod ∧ ang i ≠ ico ∧ ang i ≠ tid :=
-  theorem4b ang (localAngleCondition_of_tiling T ang h) hk i
+  theorem4b ang _ (localAngleCondition_of_tiling T ang h) hk i
 
 end Angles
 
