@@ -1,0 +1,15 @@
+comparator exit 1; CPUS=all MEM=14G CJ=default; log <entry>/logs/negative/a-comparator.log
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:19.25
+	Maximum resident set size (kbytes): 1211744
+cgroup memory.peak (bytes, whole run): 2423341056
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+Build completed successfully (8975 jobs).
+error: Challenge and solution theorem statement do not match: 'DehnPackets.lemma2'
+Command exited with non-zero status 1
+cgroup memory.peak (bytes, whole run): 2423341056
+FINAL FAIL (comparator exit 1)

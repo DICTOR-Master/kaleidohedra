@@ -1,0 +1,38 @@
+# Dehn packets: Theorem 4 of #117 (placeholder names, for DICTO to approve). Paths are relative to this file.
+# The library folder is made by scripts/prep_library.py (not kept in git); the Challenge and Solution by
+# scripts/gen_challenge.py.
+[entry]
+name = "DehnPackets"
+title = "Dehn Packets in Lean: two icosahedral pairs that cannot fill space"
+library = "Packets"
+repo = "dehn-packets-lean"
+owner = "DICTOR-Master"
+request_id = "dehnpacket01"
+theorems = ["lemma3", "lemma2", "theorem4a_copies", "theorem4b_copies"]
+definitions = []
+existing_entry = ""
+known_warnings = []
+
+[author]
+name = "DICTO"
+orcid = "0009-0001-2620-2036"
+github = "DICTOR-Master"
+
+[assemble]
+challenge = "Challenge/DehnPackets.lean"
+solution = "Solution/DehnPackets.lean"
+library_dir = "library"
+modulize = false
+rename_namespace = []
+formalization = "palomar/formalization.yaml"
+readme = "palomar/README.md"
+lake_manifest = "../../2026-11-17-get-palomar/lean/lake-manifest.json"
+extra_scripts = ["gen/gen_pieces.py", "gen/mk_solids.py", "gen/q5.py", "gen/q2.py"]
+commit_message = "Dehn Packets in Lean: Lean 4 + Mathlib Palomar entry (Challenge, Solution, library Packets)"
+
+[negative]
+a_old = "      ∑ j ∈ J, ω j = 2 * Real.pi := by"
+a_new = "      ∑ j ∈ J, ω j = 3 * Real.pi := by"
+b_old = "def RationalAngles (P : Set R3) : Prop := ∀ θ, EdgeAngle P θ → ∃ q : ℚ, 0 ≤ q ∧ θ = q * Real.pi"
+b_new = "def RationalAngles (P : Set R3) : Prop := ∀ θ, EdgeAngle P θ → ∃ q : ℚ, θ = q * Real.pi"
+c_theorem = "theorem4a_copies"

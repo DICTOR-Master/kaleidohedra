@@ -1,0 +1,15 @@
+comparator exit 1; CPUS=all MEM=14G CJ=default; log <entry>/logs/negative/b-comparator.log
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:31.14
+	Maximum resident set size (kbytes): 1209840
+cgroup memory.peak (bytes, whole run): 2201833472
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+Build completed successfully (8975 jobs).
+error: Const does not match between challenge and target 'DehnPackets.RationalAngles'
+Command exited with non-zero status 1
+cgroup memory.peak (bytes, whole run): 2201833472
+FINAL FAIL (comparator exit 1)

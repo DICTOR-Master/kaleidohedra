@@ -54,3 +54,6 @@ order removes the dodecahedron in step 1 of (b), so the parity case of the paper
 - Derive Table 1's angles from coordinates (arccos forms) to tie the pieces to the solids.
 
 - 22 Nov: dbb job lean-packets-tid (09:16) finished OK and was read; alert closed. dbb job lean-tid (several-hour TID build) FAILED: duplicate fin5_cases in Solids.lean and a heartbeat timeout in GenTID2 line 5968; fix and relaunch with the parallel layout.
+- 22 Nov 16:10 alert lean-tid (exit 1 at start) was the quoting-error relaunch; superseded by the running relaunch (gen/run_tid.sh); GenTID2 compiling again ~35 min at last check.
+
+- 22 Nov: dbb job lean-tid FINAL ok: the truncated icosidodecahedron from exact coordinates (`tid_edgeAngle`), now a helper in theorem4a_copies/theorem4b_copies; axioms propext, Classical.choice, Quot.sound; 0 sorry. GenTID2 took 48 min to compile (parallel parts 3-5 about 3.5 min each). Palomar note: adding it to the entry would push the checker far past its 30-min cap unless GenTID2 is slimmed.

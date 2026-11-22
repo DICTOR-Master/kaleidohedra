@@ -1,0 +1,243 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4 (Palomar submission kit; source rule: SOURCE-BASED, the paper #117 "formalizes")
+version: "v0.4"
+
+project:
+  name: "Dehn Packets in Lean: two icosahedral pairs that cannot fill space"
+  description: >-
+    DICTO's paper "From Dehn Packets to Scutoids: How the Fullerene Star
+    Fills Space" (Zenodo, 2026) proves, as its Theorem 4, that two pairs of
+    icosahedral pieces whose Dehn invariants cancel cannot tile space: (a) no
+    tiling of 3-space contains a dodecahedron centre pyramid or a truncated
+    icosahedron if every tile is a similar copy (motion, reflection, positive
+    scaling) of one of these two, of the dodecahedron, the icosahedron, the
+    truncated octahedron or the truncated cuboctahedron, or a convex polytope
+    whose dihedral angles are all nonnegative rational multiples of pi; (b)
+    the same for the icosahedron centre pyramid and the truncated
+    dodecahedron. The tiling need not be face to face. This entry proves (a)
+    and (b) in Lean, with each named solid given by exact face inequalities
+    over Q(sqrt 5) or Q(sqrt 2) and its dihedral angles read from the set
+    itself, as in the registered Dehn Canon entry: at an edge point, the
+    share of a small disc across the edge that lies in the tangent cone. It
+    also proves the paper's two lemmas: Lemma 3, that pi, arctan(phi),
+    arccos(1/sqrt 6) and arccos(sqrt(2/3)) are linearly independent over Q
+    (Niven's theorem in Mathlib and a field argument), and Lemma 2, that the
+    angles round an edge of a tiling by convex polytopes (locally finite,
+    not necessarily face to face) sum to 2 pi, each being a dihedral angle of
+    its tile, pi or 2 pi. The paper takes Lemma 2 from DICTO's earlier paper
+    "Aristotle's Pyramid"; it is the edge-counting step behind Debrunner's
+    theorem (1980). The proof of Theorem 4 counts the angles round one edge:
+    the coefficients of the three irrational angles must cancel within one
+    turn, and a weight argument removes the pieces one after another. Not
+    formalized: the truncated icosidodecahedron of the paper's helper list
+    (a library theorem covers it when its angles are given as a hypothesis);
+    Theorem 4 (c), on the smallest ring, is proved in the library but is not
+    in the Challenge; the rest of the paper (scutoid fillings, the Fullerene
+    Star). Audience: researchers on tilings, space-filling polyhedra and
+    scissors congruence, and Mathlib contributors.
+  authors:
+    - name: "DICTO"
+      orcid: "0009-0001-2620-2036"
+      github: "DICTOR-Master"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - name: "DICTO"
+      orcid: "0009-0001-2620-2036"
+      github: "DICTOR-Master"
+
+classification:
+  arxiv: ["math.MG"]
+  msc2020: ["52C22", "52B10", "52B45", "03B35"]
+
+sources:
+  - title: "From Dehn Packets to Scutoids: How the Fullerene Star Fills Space"
+    authors:
+      - name: "DICTO"
+        orcid: "0009-0001-2620-2036"
+        github: "DICTOR-Master"
+    id: "doi:10.5281/zenodo.24411660"
+    type: "paper"
+    location: "Zenodo, version 1 (doi:10.5281/zenodo.24411661, 21 November 2026); Lemma 2, Lemma 3, Theorem 4 (a), (b)"
+    relationship: "formalizes"
+    note: >-
+      Read (the statements formalized and their proofs). Theorem 4 (a), (b)
+      are theorem4a_copies and theorem4b_copies, without the truncated
+      icosidodecahedron; Lemma 3 is lemma3; Lemma 2 is lemma2, stated at one
+      nearby point of the edge rather than at all but finitely many points.
+    author_endorsement: "participated"
+  - title: "Aristotle's Pyramid"
+    authors:
+      - name: "DICTO"
+        orcid: "0009-0001-2620-2036"
+        github: "DICTOR-Master"
+    id: "doi:10.5281/zenodo.23529497"
+    type: "paper"
+    location: "Zenodo; Lemma 1 (angles round an edge)"
+    relationship: "background"
+    note: "Cited through the paper above, which takes its Lemma 2 from this Lemma 1."
+    author_endorsement: "participated"
+  - title: "Über Zerlegungsgleichheit von Pflasterpolyedern mit Würfeln"
+    authors:
+      - "H. E. Debrunner"
+    type: "paper"
+    location: "Archiv der Mathematik 35 (1980) 583-587"
+    relationship: "background"
+    note: >-
+      Cited only (not read). Debrunner's theorem that a polyhedron tiling
+      space is scissors congruent to a cube; the angle count round an edge
+      (Lemma 2) is its edge-counting step.
+    author_endorsement: "n/a"
+  - title: "Ueber den Rauminhalt"
+    authors:
+      - "M. Dehn"
+    id: "doi:10.1007/BF01448001"
+    type: "paper"
+    location: "Mathematische Annalen 55 (1901) 465-478"
+    relationship: "background"
+    note: "Cited only. Dehn's invariant, whose cancellation in the two pairs is the setting of Theorem 4."
+    author_endorsement: "n/a"
+  - title: "Polytopes that fill R^n and scissors congruence"
+    authors:
+      - "J. C. Lagarias"
+      - "D. Moews"
+    id: "doi:10.1007/BF02574064"
+    type: "paper"
+    location: "Discrete & Computational Geometry 13 (1995) 573-583"
+    relationship: "background"
+    note: "Cited only. Dehn invariants of space-filling polytopes."
+    author_endorsement: "n/a"
+  - title: "The Dehn Canon: Hilbert's Third Problem, Machine-Checked"
+    authors:
+      - name: "DICTO"
+        orcid: "0009-0001-2620-2036"
+        github: "DICTOR-Master"
+    id: "doi:10.5281/zenodo.24383552"
+    type: "paper"
+    location: "Zenodo; its Lean development is the registered Palomar entry PALOMAR-2026-11-20-000003"
+    relationship: "background"
+    note: >-
+      The development whose set-defined angle (tangent cone, lineality space,
+      wedge angle) and convex polytopes this entry uses; 26 of its modules are
+      included unchanged under Packets/Canon.
+    author_endorsement: "participated"
+
+related_formalizations:
+  - id: "https://github.com/DICTOR-Master/dehn-canon-lean/blob/9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57/Challenge.lean"
+    relationship: "other"
+    note: >-
+      The Dehn Canon entry (PALOMAR-2026-11-20-000003): the set-defined Dehn
+      invariant and Hilbert's third problem. This entry's library contains 26
+      of its modules unchanged (imports renamed to Packets.Canon) and adds
+      tilings, Lemma 2, Lemma 3, the solids and Theorem 4.
+
+status:
+  scope: >-
+    Formalized (Challenge, four theorems): lemma3 (pi, alpha, beta, gamma
+    linearly independent over Q); lemma2 (angles round an edge of a tiling by
+    convex polytopes, in every 3-dimensional real inner product space);
+    theorem4a_copies and theorem4b_copies (Theorem 4 (a), (b) for tilings of
+    R^3 by similar copies of the named solids and convex polytopes whose
+    dihedral angles are nonnegative rational multiples of pi). Not
+    formalized: the truncated icosidodecahedron as a named helper; Theorem 4
+    (c) is in the library (Packets/Rings.lean), not in the Challenge.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude Opus (Anthropic)"]
+      framework: "Claude Code (Opus)"
+      tool_setup: >-
+        A Claude Code agent wrote the definitions, the statements and the
+        proofs, the exact Q(sqrt 5) and Q(sqrt 2) generator of the solids'
+        edge data (plain Python, scripts/gen_pieces.py) and the generator of
+        the Challenge from the Lean sources, and ran the Lake builds and the
+        comparator against Mathlib v4.35.0-rc2 on Linux compute machines.
+      cost:
+        wall_time: "about one day (22 November 2026)"
+        spend_usd: "subscription-based"
+        hardware: "local Linux machines"
+      prompting_notes: >-
+        DICTO found the result (paper #117), asked for its lead theorem in
+        Lean, and set the order of the work: Lemma 3 and the ring condition,
+        then Lemma 2 for every convex tiling, then the solids from
+        coordinates with their angles read from the sets.
+  spend_usd: "subscription-based"
+  notes: >-
+    DICTO posed the formalization and directed the work; every definition,
+    statement and proof was written by the agent. Every build was checked by
+    a full recompilation and #print axioms (only propext, Classical.choice
+    and Quot.sound). No independent human line-by-line audit of the Lean
+    code has been made.
+
+fidelity:
+  divergences: >-
+    (1) Dihedral angles are read from the set: at a point where the
+    directions v with v and -v in the tangent cone span a line K, the angle
+    is 2 pi times the area of the cone's part of the unit disc of K-perp over
+    the disc's area (EdgeAngle). (2) A tiling (ConvexTiling) is a family of
+    convex polytopes (bounded intersections of finitely many closed
+    half-spaces) with interior points, covering space, with pairwise
+    disjoint interiors, locally finite; the paper's finitely many kinds at
+    finitely many scales is replaced by local finiteness, which it implies.
+    (3) Lemma 2 is stated at one point y of the same edge near the given
+    point (the angles: the tile's own angle at the given point, and for each
+    other tile through y a dihedral angle, pi or 2 pi), which is what the
+    proof of Theorem 4 uses; the paper states it for all but finitely many
+    points of the edge. (4) A similar copy is a positive scaling followed by
+    an isometry (reflections allowed). (5) The solids are given by face
+    normals and offsets: the dodecahedron, the icosahedron, their
+    truncations and the two centre pyramids (apex at the origin) in Q(sqrt
+    5), the truncated octahedron in Q, the truncated cuboctahedron in Q(sqrt
+    2). (6) A helper piece with rational angles has every dihedral angle
+    equal to q pi with q a nonnegative rational (RationalAngles). (7) The
+    truncated icosidodecahedron is left out of the Challenge's helper list.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none"
+  notes: >-
+    The Challenge is generated mechanically from the Lean sources, so every
+    definition and statement is the library's own text (the one change: the
+    qualifier DehnCanon.Library dropped); the Solution is the Challenge word
+    for word with each proof transferred from the library. The solids' edge
+    data were generated by an exact script and are rechecked in Lean. The
+    comparator was run locally with Lean's kernel, NanoDa and con-ron, and
+    three altered copies (a changed numeral, a changed definition, a proof
+    replaced by sorry) were each rejected. Literature (22 November 2026): the
+    formalized paper was read; the other sources are cited through it.
+    Formal search (22 November 2026): GitHub code search of Lean files for
+    Debrunner, dihedral angles of tilings, the truncated icosahedron,
+    space-filling polyhedra and Dehn invariants of tilings found no
+    formalization of tilings with dihedral angle conditions, of Debrunner's
+    theorem or of these pairs (one unrelated file names the truncated
+    icosahedron's vertex and edge counts); Mathlib v4.35.0-rc2 has no tilings
+    of space by polytopes. The Dehn Canon is the related development.
+
+alignment:
+  namespace: "DehnPackets"
+  statements:
+    - source: "#117, Lemma 3 (independence)"
+      lean: "DehnPackets.lemma3"
+      module: "Challenge"
+      status: "proved"
+    - source: "#117, Lemma 2 (angles round an edge)"
+      lean: "DehnPackets.lemma2"
+      module: "Challenge"
+      status: "proved"
+    - source: "#117, Theorem 4 (a)"
+      lean: "DehnPackets.theorem4a_copies"
+      module: "Challenge"
+      status: "proved"
+    - source: "#117, Theorem 4 (b)"
+      lean: "DehnPackets.theorem4b_copies"
+      module: "Challenge"
+      status: "proved"
+
+acknowledgements: >-
+  Mathlib (inner product spaces, measure theory, Niven's theorem, the golden
+  ratio); M. Dehn and H. E. Debrunner, whose invariant and edge count the
+  result rests on.

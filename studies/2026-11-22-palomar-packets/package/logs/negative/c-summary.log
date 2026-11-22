@@ -1,0 +1,15 @@
+comparator exit 1; CPUS=all MEM=14G CJ=default; log <entry>/logs/negative/c-comparator.log
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:10.48
+	Maximum resident set size (kbytes): 1100804
+cgroup memory.peak (bytes, whole run): 2182492160
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [8974/8975] Replayed Solution
+Build completed successfully (8975 jobs).
+error: Illegal axiom detected: 'sorryAx'
+Command exited with non-zero status 1
+cgroup memory.peak (bytes, whole run): 2182492160
+FINAL FAIL (comparator exit 1)

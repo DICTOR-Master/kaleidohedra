@@ -1,0 +1,67 @@
+✔ [8931/8978] Built Packets.Canon.Dehn2Poly (4.8s)
+✔ [8932/8978] Built Packets.Angles (4.9s)
+✔ [8933/8978] Built Packets.Canon.DehnCanon1 (5.2s)
+⚠ [8934/8978] Built Challenge (5.6s)
+warning: Challenge.lean:104:8: declaration uses `sorry`
+warning: Challenge.lean:129:8: declaration uses `sorry`
+warning: Challenge.lean:283:8: declaration uses `sorry`
+warning: Challenge.lean:291:8: declaration uses `sorry`
+✔ [8936/8978] Built Packets.Rings (9.7s)
+✔ [8937/8978] Built Packets.Canon.Dehn2Local (11s)
+✔ [8938/8978] Built Packets.Tiling (4.1s)
+✔ [8939/8978] Built Packets.Canon.Dehn2Sum (2.0s)
+✔ [8940/8978] Built Packets.Canon.Dehn2Cut (3.3s)
+✔ [8941/8978] Built Packets.Canon.Dehn2Motion (2.5s)
+✔ [8942/8978] Built Packets.Canon.DehnCanon2 (2.3s)
+✔ [8943/8978] Built Packets.Canon.Dehn2Edges (2.5s)
+✔ [8944/8978] Built Packets.Canon.Dehn2R3 (2.4s)
+✔ [8945/8978] Built Packets.Canon.Dehn3Sector (8.6s)
+✔ [8946/8978] Built Packets.Canon.Dehn3Solids (3.9s)
+✔ [8947/8978] Built Packets.Canon.Dehn4Similar (2.4s)
+✔ [8948/8978] Built Packets.Canon.Dehn4Rational (5.4s)
+✔ [8949/8978] Built Packets.Canon.Dehn4Simplex (3.0s)
+✔ [8950/8978] Built Packets.Canon.Dehn10Edges (6.6s)
+✔ [8951/8978] Built Packets.Canon.Dehn4Words (8.2s)
+✔ [8952/8978] Built Packets.Canon.Dehn5Angles (2.5s)
+✔ [8953/8978] Built Packets.Canon.Dehn6Indep (3.1s)
+✔ [8954/8978] Built Packets.Canon.Dehn5Edges (3.6s)
+✔ [8955/8978] Built Packets.Canon.Dehn5Fuji (11s)
+✔ [8956/8978] Built Packets.Canon.Dehn5Pairs (2.9s)
+✔ [8957/8978] Built Packets.Canon.Dehn6Pairs (2.3s)
+✔ [8958/8978] Built Packets.Canon.Dehn7Gold (7.9s)
+✔ [8959/8978] Built Packets.Canon.Dehn7Octa (5.5s)
+✔ [8960/8978] Built Packets.Canon.Dehn7CubeOct (32s)
+✔ [8961/8978] Built Packets.Canon.Dehn7Dodeca (33s)
+✔ [8962/8978] Built Packets.Cones (25s)
+⚠ [8963/8978] Built Packets.GenPyrI (55s)
+warning: Packets/GenPyrI.lean:366:103: This simp argument is unused:
+  inner3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pyrIN, pyrIFi, pyrIFj, pyrIKd, pyrIGg, pyrIGX, pyrIGY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8964/8978] Built Packets.GenDH (179s)
+warning: Packets/GenDH.lean:1388:89: This simp argument is unused:
+  inner3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [dhN, dhFi, dhFj, dhKd, dhGg, dhGX, dhGY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8965/8978] Built Packets.GenTO (232s)
+warning: Packets/GenTO.lean:1794:89: This simp argument is unused:
+  inner3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [toN, toFi, toFj, toKd, toGg, toGX, toGY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8966/8978] Built Packets.GenPyrD (125s)
+warning: Packets/GenPyrD.lean:522:103: This simp argument is unused:
+  inner3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pyrDN, pyrDFi, pyrDFj, pyrDKd, pyrDGg, pyrDGX, pyrDGY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

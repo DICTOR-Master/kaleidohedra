@@ -1,0 +1,28 @@
+PROGRESS 0.1 start
+-- wrote 6 files
+   8527 Packets/GenTID1.lean
+   6697 Packets/GenTID2.lean
+   8517 Packets/GenTID3.lean
+   8526 Packets/GenTID4.lean
+   6721 Packets/GenTID5.lean
+   3990 Packets/GenTID6.lean
+      7 Packets/GenTID.lean
+  42985 total
+PROGRESS 0.2 generated
+PROGRESS 0.5 ⚠ [8974/8984] Built Packets.Solids (3.8s)
+PROGRESS 0.5 ⚠ [8975/8984] Built Packets.GenTID2 (2877s)
+PROGRESS 0.5 ✔ [8976/8984] Built Packets.GenTID5 (191s)
+PROGRESS 0.5 ✔ [8977/8984] Built Packets.GenTID3 (200s)
+PROGRESS 0.5 ✔ [8978/8984] Built Packets.GenTID4 (209s)
+PROGRESS 0.5 ⚠ [8979/8984] Built Packets.GenTID6 (35s)
+PROGRESS 0.5 ✔ [8980/8984] Built Packets.GenTID (1.9s)
+PROGRESS 0.5 ✔ [8981/8984] Built Packets.SolidTID (2.4s)
+PROGRESS 0.5 ⚠ [8982/8984] Built Packets.Copies (2.7s)
+PROGRESS 0.5 ✔ [8983/8984] Built Packets (1.9s)
+PROGRESS 0.9 built
+'Packets.theorem4a_copies' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Packets.theorem4b_copies' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Packets.tid_edgeAngle' depends on axioms: [propext, Classical.choice, Quot.sound]
+PROGRESS 1 checked
+FINAL ok
+[exit 0]

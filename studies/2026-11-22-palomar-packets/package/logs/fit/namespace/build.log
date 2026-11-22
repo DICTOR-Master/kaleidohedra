@@ -1,0 +1,498 @@
+✔ [8931/8978] Built Packets.Canon.DehnCanon1 (3.8s)
+✔ [8932/8978] Built Packets.Canon.Dehn2Poly (3.0s)
+✔ [8933/8978] Built Packets.Angles (4.1s)
+⚠ [8934/8978] Built Challenge (4.8s)
+warning: Challenge.lean:104:8: declaration uses `sorry`
+warning: Challenge.lean:129:8: declaration uses `sorry`
+warning: Challenge.lean:283:8: declaration uses `sorry`
+warning: Challenge.lean:291:8: declaration uses `sorry`
+✔ [8936/8978] Built Packets.Rings (3.7s)
+✔ [8937/8978] Built Packets.Canon.Dehn2Local (5.7s)
+✔ [8938/8978] Built Packets.Tiling (3.7s)
+✔ [8939/8978] Built Packets.Canon.Dehn2Sum (2.6s)
+✔ [8940/8978] Built Packets.Canon.Dehn2Cut (3.1s)
+✔ [8941/8978] Built Packets.Canon.Dehn2Motion (2.5s)
+✔ [8942/8978] Built Packets.Canon.DehnCanon2 (2.2s)
+✔ [8943/8978] Built Packets.Canon.Dehn2Edges (2.2s)
+✔ [8944/8978] Built Packets.Canon.Dehn2R3 (2.3s)
+✔ [8945/8978] Built Packets.Canon.Dehn3Sector (8.3s)
+✔ [8946/8978] Built Packets.Canon.Dehn3Solids (3.4s)
+✔ [8947/8978] Built Packets.Canon.Dehn4Similar (2.5s)
+✔ [8948/8978] Built Packets.Canon.Dehn4Rational (5.3s)
+✔ [8949/8978] Built Packets.Canon.Dehn4Simplex (3.0s)
+✔ [8950/8978] Built Packets.Canon.Dehn10Edges (5.1s)
+✔ [8951/8978] Built Packets.Canon.Dehn4Words (6.8s)
+✔ [8952/8978] Built Packets.Canon.Dehn5Angles (2.4s)
+✔ [8953/8978] Built Packets.Canon.Dehn6Indep (2.0s)
+✔ [8954/8978] Built Packets.Canon.Dehn5Edges (3.6s)
+✔ [8955/8978] Built Packets.Canon.Dehn5Fuji (9.4s)
+✔ [8956/8978] Built Packets.Canon.Dehn5Pairs (2.7s)
+✔ [8957/8978] Built Packets.Canon.Dehn6Pairs (2.1s)
+✔ [8958/8978] Built Packets.Canon.Dehn7Gold (7.7s)
+✔ [8959/8978] Built Packets.Canon.Dehn7Octa (4.3s)
+✔ [8960/8978] Built Packets.Canon.Dehn7CubeOct (24s)
+✔ [8961/8978] Built Packets.Canon.Dehn7Dodeca (22s)
+✔ [8962/8978] Built Packets.Cones (20s)
+✔ [8963/8978] Built Packets.Lemma2 (49s)
+⚠ [8964/8978] Built Packets.GenPyrD (95s)
+warning: Packets/GenPyrD.lean:522:103: This simp argument is unused:
+  inner3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pyrDN, pyrDFi, pyrDFj, pyrDKd, pyrDGg, pyrDGX, pyrDGY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8965/8978] Built Packets.GenPyrI (96s)
+warning: Packets/GenPyrI.lean:366:103: This simp argument is unused:
+  inner3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pyrIN, pyrIFi, pyrIFj, pyrIKd, pyrIGg, pyrIGX, pyrIGY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [8966/8978] Built Packets.Pieces (35s)
+✔ [8967/8978] Built Packets.Values (37s)
+⚠ [8968/8978] Built Packets.GenDH (165s)
+warning: Packets/GenDH.lean:1388:89: This simp argument is unused:
+  inner3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [dhN, dhFi, dhFj, dhKd, dhGg, dhGX, dhGY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8969/8978] Built Packets.GenTO (202s)
+warning: Packets/GenTO.lean:1794:89: This simp argument is unused:
+  inner3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [toN, toFi, toFj, toKd, toGg, toGX, toGY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8970/8978] Built Packets.GenIH (256s)
+warning: Packets/GenIH.lean:3250:89: This simp argument is unused:
+  inner3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ihN, ihFi, ihFj, ihKd, ihGg, ihGX, ihGY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8971/8978] Built Packets.GenTCO (515s)
+warning: Packets/GenTCO.lean:5500:96: This simp argument is unused:
+  inner3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [tcoN, tcoFi, tcoFj, tcoKd, tcoGg, tcoGX, tcoGY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8972/8978] Built Packets.GenTD (759s)
+warning: Packets/GenTD.lean:8143:89: This simp argument is unused:
+  inner3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [tdN, tdFi, tdFj, tdKd, tdGg, tdGX, tdGY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8973/8978] Built Packets.GenTI (768s)
+warning: Packets/GenTI.lean:8143:89: This simp argument is unused:
+  inner3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [tiN, tiFi, tiFj, tiKd, tiGg, tiGX, tiGY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8974/8978] Built Packets.Solids (14s)
+warning: Packets/Solids.lean:56:82: This simp argument is unused:
+  Matrix.cons_val_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pyrDGg, pyrDGX, pyrDGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_three,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:56:103: This simp argument is unused:
+  Matrix.cons_val_three
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pyrDGg, pyrDGX, pyrDGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:56:126: This simp argument is unused:
+  Matrix.cons_val_four
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pyrDGg, pyrDGX, pyrDGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:56:148: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pyrDGg, pyrDGX, pyrDGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:56:166: This simp argument is unused:
+  Matrix.tail_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pyrDGg, pyrDGX, pyrDGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:89:76: This simp argument is unused:
+  Matrix.cons_val_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tiGg, tiGX, tiGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_three,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:89:97: This simp argument is unused:
+  Matrix.cons_val_three
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tiGg, tiGX, tiGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:89:120: This simp argument is unused:
+  Matrix.cons_val_four
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tiGg, tiGX, tiGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:89:142: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tiGg, tiGX, tiGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:89:160: This simp argument is unused:
+  Matrix.tail_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tiGg, tiGX, tiGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:122:82: This simp argument is unused:
+  Matrix.cons_val_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pyrIGg, pyrIGX, pyrIGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_three,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:122:103: This simp argument is unused:
+  Matrix.cons_val_three
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pyrIGg, pyrIGX, pyrIGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:122:126: This simp argument is unused:
+  Matrix.cons_val_four
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pyrIGg, pyrIGX, pyrIGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:122:148: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pyrIGg, pyrIGX, pyrIGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:122:166: This simp argument is unused:
+  Matrix.tail_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pyrIGg, pyrIGX, pyrIGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:155:76: This simp argument is unused:
+  Matrix.cons_val_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tdGg, tdGX, tdGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_three,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:155:97: This simp argument is unused:
+  Matrix.cons_val_three
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tdGg, tdGX, tdGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:155:120: This simp argument is unused:
+  Matrix.cons_val_four
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tdGg, tdGX, tdGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:155:142: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tdGg, tdGX, tdGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:155:160: This simp argument is unused:
+  Matrix.tail_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tdGg, tdGX, tdGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:182:50: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Packets/Solids.lean:182:78: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Packets/Solids.lean:188:53: This simp argument is unused:
+  Matrix.cons_val_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [dhGg, dhGX, dhGY, Matrix.cons_val_zero, Matrix.cons_val_two, Matrix.cons_val_three,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:188:74: This simp argument is unused:
+  Matrix.cons_val_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [dhGg, dhGX, dhGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_three,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:188:95: This simp argument is unused:
+  Matrix.cons_val_three
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [dhGg, dhGX, dhGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:188:118: This simp argument is unused:
+  Matrix.cons_val_four
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [dhGg, dhGX, dhGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:188:140: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [dhGg, dhGX, dhGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:188:158: This simp argument is unused:
+  Matrix.tail_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [dhGg, dhGX, dhGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:197:52: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Packets/Solids.lean:213:50: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Packets/Solids.lean:213:78: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Packets/Solids.lean:219:53: This simp argument is unused:
+  Matrix.cons_val_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ihGg, ihGX, ihGY, Matrix.cons_val_zero, Matrix.cons_val_two, Matrix.cons_val_three,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:219:74: This simp argument is unused:
+  Matrix.cons_val_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ihGg, ihGX, ihGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_three,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:219:95: This simp argument is unused:
+  Matrix.cons_val_three
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ihGg, ihGX, ihGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:219:118: This simp argument is unused:
+  Matrix.cons_val_four
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ihGg, ihGX, ihGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:219:140: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ihGg, ihGX, ihGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:219:158: This simp argument is unused:
+  Matrix.tail_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ihGg, ihGX, ihGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:228:52: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Packets/Solids.lean:244:82: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Packets/Solids.lean:250:76: This simp argument is unused:
+  Matrix.cons_val_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [toGg, toGX, toGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_three,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:250:97: This simp argument is unused:
+  Matrix.cons_val_three
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [toGg, toGX, toGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:250:120: This simp argument is unused:
+  Matrix.cons_val_four
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [toGg, toGX, toGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:250:142: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [toGg, toGX, toGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:250:160: This simp argument is unused:
+  Matrix.tail_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [toGg, toGX, toGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:277:91: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Packets/Solids.lean:283:100: This simp argument is unused:
+  Matrix.cons_val_three
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tcoGg, tcoGX, tcoGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Packets/Solids.lean:283:123: This simp argument is unused:
+  Matrix.cons_val_four
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tcoGg, tcoGX, tcoGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+    Matrix.cons_val_three, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8975/8978] Built Packets.Copies (3.0s)
+warning: Packets/Copies.lean:67:42: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Packets/Copies.lean:69:33: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Packets/Copies.lean:70:33: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Packets/Copies.lean:70:44: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Packets/Copies.lean:104:42: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Packets/Copies.lean:106:33: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Packets/Copies.lean:107:33: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Packets/Copies.lean:107:44: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+✔ [8977/8978] Built Solution (4.3s)
+Build completed successfully (8978 jobs).
+	Command being timed: "lake build Packets Challenge Solution"
+	User time (seconds): 7198.89
+	System time (seconds): 327.47
+	Percent of CPU this job got: 810%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 15:29.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8714084
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 34450
+	Minor (reclaiming a frame) page faults: 27192640
+	Voluntary context switches: 1231376
+	Involuntary context switches: 2041722
+	Swaps: 0
+	File system inputs: 6525208
+	File system outputs: 1016664
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+cgroup memory.peak (bytes, whole step): 20810141696
