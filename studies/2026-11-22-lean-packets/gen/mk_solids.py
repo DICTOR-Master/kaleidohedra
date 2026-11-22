@@ -57,8 +57,6 @@ lemma fin2_cases : ∀ k : Fin 2, k = 0 ∨ k = 1 := by decide
 lemma fin3_cases : ∀ k : Fin 3, k = 0 ∨ k = 1 ∨ k = 2 := by decide
 
 lemma fin5_cases : ∀ k : Fin 5, k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 := by decide
-
-lemma fin5_cases : ∀ k : Fin 5, k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 := by decide
 ''']
 for (X, Sn, nE, vals, tab, L, real, nm) in S:
     nK = len(vals)

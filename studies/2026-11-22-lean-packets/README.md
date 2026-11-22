@@ -52,3 +52,5 @@ order removes the dodecahedron in step 1 of (b), so the parity case of the paper
   Packaging for Palomar: the Canon as a pinned Git dependency (Palomar exempts
   external pinned Git dependencies from the line cap; local path dependencies count).
 - Derive Table 1's angles from coordinates (arccos forms) to tie the pieces to the solids.
+
+- 22 Nov: dbb job lean-packets-tid (09:16) finished OK and was read; alert closed. dbb job lean-tid (several-hour TID build) FAILED: duplicate fin5_cases in Solids.lean and a heartbeat timeout in GenTID2 line 5968; fix and relaunch with the parallel layout.

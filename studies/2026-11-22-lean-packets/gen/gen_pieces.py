@@ -315,20 +315,21 @@ w(f"def {X}Vl : Fin {len(edges)} → Fin {K} := ![" + ", ".join(str(e[3]) for e 
 w(f"\n/-- Three faces through each corner. -/")
 w(f"def {X}T : Fin {K} → Fin {F} × Fin {F} × Fin {F} :=\n  ![" + ", ".join(
     f"({f[0]}, {f[1]}, {f[2]})" for f in faces_at) + "]")
+DEC = "decide +kernel" if K > 100 else "decide"
 w(f"""
 lemma {X}T_spec : ∀ k, ({X}T k).1 ≠ ({X}T k).2.1 ∧ ({X}T k).1 ≠ ({X}T k).2.2 ∧
     ({X}T k).2.1 ≠ ({X}T k).2.2 ∧ {X}Z ({X}T k).1 k = true ∧ {X}Z ({X}T k).2.1 k = true ∧
-    {X}Z ({X}T k).2.2 k = true := by decide
+    {X}Z ({X}T k).2.2 k = true := by {DEC}
 
-lemma {X}E_lt : ∀ e, {X}Fi e < {X}Fj e := by decide
+lemma {X}E_lt : ∀ e, {X}Fi e < {X}Fj e := by {DEC}
 
-lemma {X}E_inj : ∀ e e', {X}Fi e = {X}Fi e' → {X}Fj e = {X}Fj e' → e = e' := by decide
+lemma {X}E_inj : ∀ e e', {X}Fi e = {X}Fi e' → {X}Fj e = {X}Fj e' → e = e' := by {DEC}
 
 lemma {X}E_tight : ∀ e, {X}Z ({X}Fi e) ({X}Vk e) = true ∧ {X}Z ({X}Fi e) ({X}Vl e) = true ∧
-    {X}Z ({X}Fj e) ({X}Vk e) = true ∧ {X}Z ({X}Fj e) ({X}Vl e) = true := by decide
+    {X}Z ({X}Fj e) ({X}Vk e) = true ∧ {X}Z ({X}Fj e) ({X}Vl e) = true := by {DEC}
 
 lemma {X}E_other : ∀ e m, m ≠ {X}Fi e → m ≠ {X}Fj e →
-    {X}Z m ({X}Vk e) = false ∨ {X}Z m ({X}Vl e) = false := by decide
+    {X}Z m ({X}Vk e) = false ∨ {X}Z m ({X}Vl e) = false := by {DEC}
 
 /-- The statement of `IsEdgeData.cover`. -/
 def {X}Cover (x : R3) (i j : Fin {F}) : Prop :=
@@ -539,17 +540,26 @@ if X == "tid":
     body = [x for x in o[1:i_cov0]]
     covers = o[i_cov0:i_cov1]
     tail = o[i_cov1:]
-    parts = []
-    cur = []; cnt = 0
-    for c in body + covers:
-        n = c.count("\n") + 1
-        if cnt + n > 8500 and cur:
-            parts.append(cur); cur = []; cnt = 0
-        cur.append(c); cnt += n
-    parts.append(cur)
-    parts.append(tail)
+    def chunk(items):
+        out = []; cur = []; cnt = 0
+        for c in items:
+            n = c.count("\n") + 1
+            if cnt + n > 8500 and cur:
+                out.append(cur); cur = []; cnt = 0
+            cur.append(c); cnt += n
+        if cur: out.append(cur)
+        return out
+    bparts = chunk(body); cparts = chunk(covers)
+    nb, nc = len(bparts), len(cparts)
+    parts = bparts + cparts + [tail]
+    imports = {}
+    for k in range(1, len(parts) + 1):
+        if k == 1: imports[k] = ["DehnCanon.Dehn7Dodeca"]
+        elif k <= nb: imports[k] = [f"Packets.GenTID{k - 1}"]
+        elif k <= nb + nc: imports[k] = [f"Packets.GenTID{nb}"]
+        else: imports[k] = [f"Packets.GenTID{j}" for j in range(nb + 1, nb + nc + 1)]
     for k, part in enumerate(parts, 1):
-        h = hdr if k == 1 else hdr.replace("public import DehnCanon.Dehn7Dodeca", f"public import Packets.GenTID{k - 1}")
+        h = hdr.replace("public import DehnCanon.Dehn7Dodeca", "\n".join(f"public import {m}" for m in imports[k]))
         txt = h + "\n" + "\n".join(part)
         if "end PacketsGen" not in txt: txt += "\n\nend PacketsGen\n"
         open(f"../Packets/GenTID{k}.lean", "w").write(txt)
