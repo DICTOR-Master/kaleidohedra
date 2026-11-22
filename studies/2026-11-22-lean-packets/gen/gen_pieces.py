@@ -34,30 +34,50 @@ if which == "ti":
     for base in ([z, Q(2), Q(3, 3)], [Q(2), Q(5, 1), Q(2, 2)], [Q(1, 1), Q(4), Q(4, 2)]):
         for v in cyc(base): P += signs(v)
     Zpt = [z, z, z]
-elif which == "pyrD":
-    X = "pyrD"; n0 = ico_corners[0]
-    vals = [dot(n0, v) for v in dod_corners]
+elif which in ("pyrD", "pyrI"):
+    X = which
+    n0, corners = (ico_corners[0], dod_corners) if which == "pyrD" else (dod_corners[0], ico_corners)
+    vals = [dot(n0, v) for v in corners]
     mx = vals[0]
     for v in vals:
         if (v - mx).sign() > 0: mx = v
-    base = [v for v in dod_corners if dot(n0, v) == mx]
-    assert len(base) == 5
+    base = [v for v in corners if dot(n0, v) == mx]
+    nb = len(base)
     d2 = lambda u, v: dot(sub(u, v), sub(u, v))
     m2 = min((d2(u, v) for u in base for v in base if u != v), key=lambda q: q.f())
     sides = []
-    for i in range(5):
-        for j in range(i + 1, 5):
+    for i in range(nb):
+        for j in range(i + 1, nb):
             if d2(base[i], base[j]) == m2:
                 nv = cross(base[i], base[j])
                 other = [w for w in base if w is not base[i] and w is not base[j]][0]
                 if dot(nv, other).sign() > 0: nv = [-c for c in nv]
                 sides.append(nv)
-    assert len(sides) == 5
+    assert len(sides) == nb
     N = [n0] + sides
     P = [[z, z, z]] + base
-    Zpt = [sum((w[r] for w in base), Q(0)) / 10 for r in range(3)]
+    Zpt = [sum((w[r] for w in base), Q(0)) / (2 * nb) for r in range(3)]
+elif which == "td":
+    X = "td"; N = ico_corners + dod_corners
+    P = []
+    for bse in ([z, Q(5, 1), Q(-1, 1)], [Q(-1, 1), Q(2, 2), Q(1, 1)], [Q(1, 1), Q(3, 1), Q(4)]):
+        for v in cyc(bse): P += signs(v)
+    Zpt = [z, z, z]
+elif which == "dh":
+    X = "dh"; N = ico_corners; P = dod_corners; Zpt = [z, z, z]
+elif which == "ih":
+    X = "ih"; N = dod_corners; P = ico_corners; Zpt = [z, z, z]
+elif which == "to":
+    X = "to"
+    N = []
+    for v in cyc([Q(1), z, z]): N += signs(v)
+    N += signs([Q(1), Q(1), Q(1)])
+    P = []
+    for bse in ([z, Q(1), Q(2)], [z, Q(2), Q(1)]):
+        for v in cyc(bse): P += signs(v)
+    Zpt = [z, z, z]
 else:
-    raise SystemExit("ti or pyrD")
+    raise SystemExit("unknown piece")
 F, K = len(N), len(P)
 B = []
 for m in range(F):
