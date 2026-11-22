@@ -8,4 +8,5 @@ public import Packets.Lemma2
 public import Packets.Pieces
 public import Packets.Values
 public import Packets.Solids
+public import Packets.SolidTID
 public import Packets.Copies

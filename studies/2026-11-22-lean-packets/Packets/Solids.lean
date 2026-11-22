@@ -37,6 +37,8 @@ lemma fin3_cases : ∀ k : Fin 3, k = 0 ∨ k = 1 ∨ k = 2 := by decide
 
 lemma fin5_cases : ∀ k : Fin 5, k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 := by decide
 
+lemma fin5_cases : ∀ k : Fin 5, k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 := by decide
+
 
 /-! ### The dodecahedron centre pyramid -/
 

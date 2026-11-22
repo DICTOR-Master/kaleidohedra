@@ -236,21 +236,49 @@ w(f"def {X}Z : Fin {F} → Fin {K} → Bool :=\n  ![" + ",\n    ".join(
 w(f"\n/-- The values `b m − ⟪n m, p k⟫`. -/")
 w(f"noncomputable def {X}S : Fin {F} → Fin {K} → ℝ :=\n  ![" + ",\n    ".join(
     "![" + ", ".join(S[m][k].lean() for k in range(K)) + "]" for m in range(F)) + "]")
+import os
+BLK = int(os.environ.get("PK_BLK", 10 if K > 100 else K))
+blocks = [list(range(b0, min(K, b0 + BLK))) for b0 in range(0, K, BLK)]
+def blk_head(nm, m, bi, blk):
+    return f"lemma {nm}_{m}_{bi} : ∀ k ∈ ([" + ", ".join(str(k) for k in blk) + f"] : List (Fin {K})),"
+def blk_intro(n):
+    return ("  intro k hk\n  simp only [List.mem_cons, List.mem_singleton, List.not_mem_nil, or_false] at hk\n"
+            "  rcases hk with " + " | ".join(["rfl"] * n))
 for m in range(F):
-    w(f"""
+    if len(blocks) == 1:
+        w(f"""
 lemma {X}_slack_{m} (k : Fin {K}) : {X}B {m} - ⟪{X}N {m}, {X}P k⟫ = {X}S {m} k := by
   have ht := sqrt5_sq
   fin_cases k <;> simp [{X}B, {X}N, {X}P, {X}S, inner3] <;> grind""")
+    else:
+        for bi, blk in enumerate(blocks):
+            w("\n" + blk_head(f"{X}_slackb", m, bi, blk) + f"""
+    {X}B {m} - ⟪{X}N {m}, {X}P k⟫ = {X}S {m} k := by
+  have ht := sqrt5_sq
+""" + blk_intro(len(blk)) + f" <;>\n    simp [{X}B, {X}N, {X}P, {X}S, inner3] <;> grind")
+        w(f"""
+lemma {X}_slack_{m} (k : Fin {K}) : {X}B {m} - ⟪{X}N {m}, {X}P k⟫ = {X}S {m} k := by
+  fin_cases k <;> first""" + "".join(f"\n    | exact {X}_slackb_{m}_{bi} _ (by decide)" for bi in range(len(blocks))))
 w(f"""
 lemma {X}_slack (m : Fin {F}) (k : Fin {K}) : {X}B m - ⟪{X}N m, {X}P k⟫ = {X}S m k := by
   fin_cases m""" + "".join(f"\n  · exact {X}_slack_{m} k" for m in range(F)))
 w("")
 for m in range(F):
-    w(f"""lemma {X}S_spec_{m} (k : Fin {K}) :
+    if len(blocks) == 1:
+        w(f"""lemma {X}S_spec_{m} (k : Fin {K}) :
     ({X}Z {m} k = true → {X}S {m} k = 0) ∧ ({X}Z {m} k = false → 0 < {X}S {m} k) := by
   have h1 := sqrt5_gt; have h2 := sqrt5_lt
   fin_cases k <;> simp [{X}Z, {X}S] <;> linarith
 """)
+    else:
+        for bi, blk in enumerate(blocks):
+            w(blk_head(f"{X}S_specb", m, bi, blk) + f"""
+    ({X}Z {m} k = true → {X}S {m} k = 0) ∧ ({X}Z {m} k = false → 0 < {X}S {m} k) := by
+  have h1 := sqrt5_gt; have h2 := sqrt5_lt
+""" + blk_intro(len(blk)) + f" <;>\n    simp [{X}Z, {X}S] <;> linarith\n")
+        w(f"""lemma {X}S_spec_{m} (k : Fin {K}) :
+    ({X}Z {m} k = true → {X}S {m} k = 0) ∧ ({X}Z {m} k = false → 0 < {X}S {m} k) := by
+  fin_cases k <;> first""" + "".join(f"\n    | exact {X}S_specb_{m}_{bi} _ (by decide)" for bi in range(len(blocks))) + "\n")
 w(f"""lemma {X}S_spec (m : Fin {F}) (k : Fin {K}) :
     ({X}Z m k = true → {X}S m k = 0) ∧ ({X}Z m k = false → 0 < {X}S m k) := by
   fin_cases m""" + "".join(f"\n  · exact {X}S_spec_{m} k" for m in range(F)))
@@ -511,9 +539,9 @@ if X == "tid":
     body = [x for x in o[1:i_cov0]]
     covers = o[i_cov0:i_cov1]
     tail = o[i_cov1:]
-    parts = [body]
+    parts = []
     cur = []; cnt = 0
-    for c in covers:
+    for c in body + covers:
         n = c.count("\n") + 1
         if cnt + n > 8500 and cur:
             parts.append(cur); cur = []; cnt = 0
@@ -525,6 +553,14 @@ if X == "tid":
         txt = h + "\n" + "\n".join(part)
         if "end PacketsGen" not in txt: txt += "\n\nend PacketsGen\n"
         open(f"../Packets/GenTID{k}.lean", "w").write(txt)
+    open("../Packets/GenTID.lean", "w").write(f"""/-
+The truncated icosidodecahedron's generated edge data, in {len(parts)} parts (GenTID1 … GenTID{len(parts)}), each
+under 10,000 lines.
+-/
+module
+
+public import Packets.GenTID{len(parts)}
+""")
     print(f"-- wrote {len(parts)} files", file=sys.stderr)
 else:
     print(out)
