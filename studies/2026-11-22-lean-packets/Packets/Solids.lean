@@ -35,6 +35,8 @@ lemma fin2_cases : ∀ k : Fin 2, k = 0 ∨ k = 1 := by decide
 
 lemma fin3_cases : ∀ k : Fin 3, k = 0 ∨ k = 1 ∨ k = 2 := by decide
 
+lemma fin5_cases : ∀ k : Fin 5, k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 := by decide
+
 
 /-! ### The dodecahedron centre pyramid -/
 
@@ -51,7 +53,7 @@ lemma pyrD_val (e : Fin 10) :
     Real.pi - InnerProductGeometry.angle (pyrDN (pyrDFi e)) (pyrDN (pyrDFj e)) = (![α, 2 * Real.pi / 3] : Fin 2 → ℝ) (pyrDKd e) := by
   obtain ⟨hg, hX, hY⟩ := pyrD_gram e
   rcases fin2_cases (pyrDKd e) with hk | hk <;> rw [hk] at hg hX hY ⊢ <;>
-    simp only [pyrDGg, pyrDGX, pyrDGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+    simp only [pyrDGg, pyrDGX, pyrDGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
   · exact val_pyrDBase hg hX hY
   · exact val_pyrDSide hg hX hY
 
@@ -84,7 +86,7 @@ lemma ti_val (e : Fin 90) :
     Real.pi - InnerProductGeometry.angle (tiN (tiFi e)) (tiN (tiFj e)) = (![3 * Real.pi / 4 - α + β, 3 * Real.pi / 2 - 2 * β] : Fin 2 → ℝ) (tiKd e) := by
   obtain ⟨hg, hX, hY⟩ := ti_gram e
   rcases fin2_cases (tiKd e) with hk | hk <;> rw [hk] at hg hX hY ⊢ <;>
-    simp only [tiGg, tiGX, tiGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+    simp only [tiGg, tiGX, tiGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
   · exact val_pentHex hg hX hY
   · exact val_hexHex hg hX hY
 
@@ -117,7 +119,7 @@ lemma pyrI_val (e : Fin 6) :
     Real.pi - InnerProductGeometry.angle (pyrIN (pyrIFi e)) (pyrIN (pyrIFj e)) = (![3 * Real.pi / 4 - β, 2 * Real.pi / 5] : Fin 2 → ℝ) (pyrIKd e) := by
   obtain ⟨hg, hX, hY⟩ := pyrI_gram e
   rcases fin2_cases (pyrIKd e) with hk | hk <;> rw [hk] at hg hX hY ⊢ <;>
-    simp only [pyrIGg, pyrIGX, pyrIGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+    simp only [pyrIGg, pyrIGX, pyrIGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
   · exact val_pyrIBase hg hX hY
   · exact val_pyrISide hg hX hY
 
@@ -150,7 +152,7 @@ lemma td_val (e : Fin 90) :
     Real.pi - InnerProductGeometry.angle (tdN (tdFi e)) (tdN (tdFj e)) = (![2 * α, 3 * Real.pi / 4 - α + β] : Fin 2 → ℝ) (tdKd e) := by
   obtain ⟨hg, hX, hY⟩ := td_gram e
   rcases fin2_cases (tdKd e) with hk | hk <;> rw [hk] at hg hX hY ⊢ <;>
-    simp only [tdGg, tdGX, tdGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+    simp only [tdGg, tdGX, tdGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
   · exact val_decDec hg hX hY
   · exact val_pentHex hg hX hY
 
@@ -183,7 +185,7 @@ lemma dh_val (e : Fin 30) :
     Real.pi - InnerProductGeometry.angle (dhN (dhFi e)) (dhN (dhFj e)) = (![2 * α] : Fin 1 → ℝ) (dhKd e) := by
   obtain ⟨hg, hX, hY⟩ := dh_gram e
   rw [show dhKd e = 0 from Subsingleton.elim _ _] at hg hX hY ⊢
-  simp only [dhGg, dhGX, dhGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+  simp only [dhGg, dhGX, dhGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
   exact val_decDec hg hX hY
 
 /-- **The dihedral angles of the dodecahedron, read from the set, are exactly its row of Table 1.** -/
@@ -214,7 +216,7 @@ lemma ih_val (e : Fin 30) :
     Real.pi - InnerProductGeometry.angle (ihN (ihFi e)) (ihN (ihFj e)) = (![3 * Real.pi / 2 - 2 * β] : Fin 1 → ℝ) (ihKd e) := by
   obtain ⟨hg, hX, hY⟩ := ih_gram e
   rw [show ihKd e = 0 from Subsingleton.elim _ _] at hg hX hY ⊢
-  simp only [ihGg, ihGX, ihGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+  simp only [ihGg, ihGX, ihGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
   exact val_hexHex hg hX hY
 
 /-- **The dihedral angles of the icosahedron, read from the set, are exactly its row of Table 1.** -/
@@ -245,7 +247,7 @@ lemma to_val (e : Fin 36) :
     Real.pi - InnerProductGeometry.angle (toN (toFi e)) (toN (toFj e)) = (![Real.pi / 2 + γ, Real.pi - 2 * γ] : Fin 2 → ℝ) (toKd e) := by
   obtain ⟨hg, hX, hY⟩ := to_gram e
   rcases fin2_cases (toKd e) with hk | hk <;> rw [hk] at hg hX hY ⊢ <;>
-    simp only [toGg, toGX, toGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+    simp only [toGg, toGX, toGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
   · exact val_toSqHex hg hX hY
   · exact val_toHexHex hg hX hY
 
@@ -278,7 +280,7 @@ lemma tco_val (e : Fin 72) :
     Real.pi - InnerProductGeometry.angle (tcoN (tcoFi e)) (tcoN (tcoFj e)) = (![Real.pi - γ, 3 * Real.pi / 4, Real.pi / 2 + γ] : Fin 3 → ℝ) (tcoKd e) := by
   obtain ⟨hg, hX, hY⟩ := tco_gram e
   rcases fin3_cases (tcoKd e) with hk | hk | hk <;> rw [hk] at hg hX hY ⊢ <;>
-    simp only [tcoGg, tcoGX, tcoGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+    simp only [tcoGg, tcoGX, tcoGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
   · exact val_tcoSqHex hg hX hY
   · exact val_tcoSqOct hg hX hY
   · exact val_tcoHexOct hg hX hY

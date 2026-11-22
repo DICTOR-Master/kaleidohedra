@@ -52,20 +52,20 @@ open PacketsGen
 lemma fin2_cases : ∀ k : Fin 2, k = 0 ∨ k = 1 := by decide
 
 lemma fin3_cases : ∀ k : Fin 3, k = 0 ∨ k = 1 ∨ k = 2 := by decide
+
+lemma fin5_cases : ∀ k : Fin 5, k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 := by decide
 ''']
 for (X, Sn, nE, vals, tab, L, real, nm) in S:
     nK = len(vals)
-    if nK == 3:
-        kcase = f"rcases fin3_cases ({X}Kd e) with hk | hk | hk <;> rw [hk]"
-        kcase_at = f"rcases fin3_cases ({X}Kd e) with hk | hk | hk <;> rw [hk] at hg hX hY ⊢"
-    elif nK == 2:
-        kcase = f"rcases fin2_cases ({X}Kd e) with hk | hk <;> rw [hk]"
-        kcase_at = f"rcases fin2_cases ({X}Kd e) with hk | hk <;> rw [hk] at hg hX hY ⊢"
+    if nK >= 2:
+        pat = " | ".join(["hk"] * nK)
+        kcase = f"rcases fin{nK}_cases ({X}Kd e) with {pat} <;> rw [hk]"
+        kcase_at = f"rcases fin{nK}_cases ({X}Kd e) with {pat} <;> rw [hk] at hg hX hY ⊢"
     else:
         kcase = f"rw [show {X}Kd e = 0 from Subsingleton.elim _ _]"
         kcase_at = f"rw [show {X}Kd e = 0 from Subsingleton.elim _ _] at hg hX hY ⊢"
     vec = "![" + ", ".join(tab) + "]"
-    simps = f"simp only [{X}Gg, {X}GX, {X}GY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢"
+    simps = f"simp only [{X}Gg, {X}GX, {X}GY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢"
     if nK >= 2:
         body = f"""  {kcase_at} <;>
     {simps}

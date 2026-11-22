@@ -188,4 +188,55 @@ lemma val_tcoHexOct (hg : ⟪u, v⟫ = 1) (hX : ⟪u, u⟫ = 3) (hY : ⟪v, v⟫
     Real.sq_sqrt (by norm_num), Real.sqrt_one, mul_one, show (1 : ℝ) - 2 / 3 = 3⁻¹ by norm_num,
     Real.sqrt_inv, one_div]
 
+lemma val_sqAlpha {g X Y : ℝ} (hg : ⟪u, v⟫ = g) (hX : ⟪u, u⟫ = X) (hY : ⟪v, v⟫ = Y) (hg0 : 0 ≤ g)
+    (hX0 : 0 < X) (hY0 : 0 < Y) (hsq : (1 / 2 + √5 / 10) * (X * Y) = g ^ 2) :
+    Real.pi - InnerProductGeometry.angle u v = Real.pi / 2 + α := by
+  have hpi := Real.pi_pos
+  have ha1 := α_nonneg; have ha2 := α_le
+  refine pi_sub_angle_eq hg hX hY (by linarith) (by linarith) ?_
+  apply cos_eq_neg_of_sq
+  · have hc : Real.cos (Real.pi / 2 + α) ≤ 0 := Real.cos_nonpos_of_pi_div_two_le_of_le (by linarith) (by linarith)
+    have hd : 0 ≤ g / (√X * √Y) := by positivity
+    nlinarith
+  · rw [Real.cos_sq, show 2 * (Real.pi / 2 + α) = 2 * α + Real.pi by ring, Real.cos_add_pi, cos_two_α,
+      div_pow, mul_pow, Real.sq_sqrt hX0.le, Real.sq_sqrt hY0.le, eq_div_iff (by positivity)]
+    linarith
+
+lemma val_sqBeta {g X Y : ℝ} (hg : ⟪u, v⟫ = g) (hX : ⟪u, u⟫ = X) (hY : ⟪v, v⟫ = Y) (hg0 : 0 ≤ g)
+    (hX0 : 0 < X) (hY0 : 0 < Y) (hsq : (1 / 2 + √5 / 6) * (X * Y) = g ^ 2) :
+    Real.pi - InnerProductGeometry.angle u v = 5 * Real.pi / 4 - β := by
+  have hpi := Real.pi_pos
+  have hb1 := β_le; have hb2 := β_ge
+  refine pi_sub_angle_eq hg hX hY (by linarith) (by linarith) ?_
+  apply cos_eq_neg_of_sq
+  · have hc : Real.cos (5 * Real.pi / 4 - β) ≤ 0 :=
+      Real.cos_nonpos_of_pi_div_two_le_of_le (by linarith) (by linarith)
+    have hd : 0 ≤ g / (√X * √Y) := by positivity
+    nlinarith
+  · rw [Real.cos_sq, show 2 * (5 * Real.pi / 4 - β) = (Real.pi / 2 - 2 * β) + 2 * Real.pi by ring,
+      Real.cos_add_two_pi, Real.cos_pi_div_two_sub, sin_two_β,
+      div_pow, mul_pow, Real.sq_sqrt hX0.le, Real.sq_sqrt hY0.le, eq_div_iff (by positivity)]
+    linarith
+
+/-- Decagon–square of the truncated icosidodecahedron (two normal lengths). -/
+lemma val_decSqA (hg : ⟪u, v⟫ = (2 + 2 * √5)) (hX : ⟪u, u⟫ = (10 + 2 * √5)) (hY : ⟪v, v⟫ = 4) :
+    Real.pi - InnerProductGeometry.angle u v = Real.pi / 2 + α :=
+  val_sqAlpha hg hX hY (by positivity) (by positivity) (by norm_num)
+    (by linear_combination (-16 / 5 : ℝ) * sqrt5_sq)
+
+lemma val_decSqB (hg : ⟪u, v⟫ = (6 + 2 * √5)) (hX : ⟪u, u⟫ = (10 + 2 * √5)) (hY : ⟪v, v⟫ = (6 + 2 * √5)) :
+    Real.pi - InnerProductGeometry.angle u v = Real.pi / 2 + α :=
+  val_sqAlpha hg hX hY (by positivity) (by positivity) (by positivity)
+    (by linear_combination (6 / 5 + 2 / 5 * √5 : ℝ) * sqrt5_sq)
+
+/-- Hexagon–square of the truncated icosidodecahedron (two normal lengths). -/
+lemma val_hexSqA (hg : ⟪u, v⟫ = (6 + 2 * √5)) (hX : ⟪u, u⟫ = 12) (hY : ⟪v, v⟫ = (6 + 2 * √5)) :
+    Real.pi - InnerProductGeometry.angle u v = 5 * Real.pi / 4 - β :=
+  val_sqBeta hg hX hY (by positivity) (by norm_num) (by positivity) (by ring)
+
+lemma val_hexSqB (hg : ⟪u, v⟫ = (2 + 2 * √5)) (hX : ⟪u, u⟫ = 12) (hY : ⟪v, v⟫ = 4) :
+    Real.pi - InnerProductGeometry.angle u v = 5 * Real.pi / 4 - β :=
+  val_sqBeta hg hX hY (by positivity) (by norm_num) (by norm_num)
+    (by linear_combination (-4 : ℝ) * sqrt5_sq)
+
 end Packets
