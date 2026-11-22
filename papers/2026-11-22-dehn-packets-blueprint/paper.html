@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Cancelling Packets That Cannot Fill Space, in Lean</title>
+<link rel="stylesheet" href="../paper.css">
+<style>td.n { font-variant-numeric: tabular-nums; white-space: nowrap; } table { font-size: 8.4pt; max-width: 100%; border-collapse: collapse; } td,th{overflow-wrap:anywhere; padding:1px 4px; vertical-align: top} th{text-align:left} figure img{width:100%;display:block;margin:0 auto} .thm{margin:6pt 0} table.w{width:100%} tr.hd td{border-top:1px solid #b8962e} figure{break-inside:avoid} pre{font:7.3pt/1.3 "DejaVu Sans Mono",monospace;background:#f6f4ee;border-left:2px solid #b8962e;padding:4pt 6pt;white-space:pre-wrap;break-inside:auto;margin:3pt 0 6pt} h3{font:600 10pt "DejaVu Sans",sans-serif;margin:10pt 0 3pt;color:#6b5310;break-after:avoid} caption{caption-side:top;text-align:left;font-size:8.6pt} p.hook{font-style:italic} p.note{font-size:8.6pt;color:#555} span.st{font:600 8pt "DejaVu Sans",sans-serif;color:#6b5310} table.map code{white-space:normal} table.map td:nth-child(1){width:15%} table.map td:nth-child(3){width:17%} table.map td:nth-child(4){width:9%;white-space:nowrap} table.map td:nth-child(5){width:13%}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Cancelling Packets That Cannot Fill Space, in Lean</h1>
+<p class="sub">The edge-ring theorem for the two icosahedral pairs of the Fullerene Star paper, stated as formalised</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
+Paper #119 · Version 1 · Licence CC BY-SA 4.0 · Lean source: https://github.com/DICTOR-Master/dehn-packets-lean (the paper and the Lean source are one release, at one commit; §8).<br>
+DICTO: the reading of the Dehn invariant as a packet that pieces filling space must cancel, from which the result grew (#117 [1]); the decision to formalise Theorem 4 of #117 and to release the paper and the Lean source together as one work. Computation, proofs, verification and drafting with Claude (Anthropic).
+</div>
+<div class="status"><b>DRAFT of 22 November 2026, for DICTO's read; nothing published.</b><br>
+· Title DICTO's to choose: (1) Cancelling Packets That Cannot Fill Space, in Lean; (2) Around Every Edge: A Formal Proof That Two Icosahedral Pairs Do Not Fill Space; (3) Dehn Packets in Lean: No Tiling by the Two Icosahedral Pairs.<br>
+· Paper number #119 proposed; DICTO DOI reserved at release (Zenodo record: this PDF and the Lean source at the release commit; Palomar entry at the same commit).<br>
+· Repository name dehn-packets-lean is DICTO's to approve; the repository is not yet created. Until then the source is the study mirror of 22 November 2026 (no public link).<br>
+· Truncated icosidodecahedron: its build from coordinates is running. If it lands before release it is added to Theorem 4 and Proposition 5 (one more row of Table 2); until then it is not claimed, and the text below says so.<br>
+· The grey boxes match the last completed build of the Lean study (research branch commit 72e20c97, the build whose axioms are checked here). Commit d66968f5 wires the truncated icosidodecahedron into Theorem 4 and is building; it is not claimed here.<br>
+· Before release: a search for earlier formal proofs of non-tiling theorems (§7 lists only what was checked for this draft).</div>
+
+<div class="abstract"><b>Abstract.</b> Twelve dodecahedron centre pyramids and one truncated icosahedron have Dehn invariants that cancel exactly, and so do twenty icosahedron centre pyramids and one truncated dodecahedron. DICTO's paper #117 [1] proved by hand that neither pair can fill space, with or without a list of helpers, because around every edge the irrational parts of the dihedral angles cancel only in a ring of 3π, one and a half turns. This paper is the informal account of a Lean 4 proof of that theorem. Every statement below is worded to match a Lean declaration, which is named beside it. The setting is a tiling of three-space by bounded convex polytopes with interior points, covering space, with disjoint interiors, locally finite, and not necessarily face-to-face. Tiles are similar copies (motions, reflections, positive scalings) of pieces built from exact coordinates: both centre pyramids, the truncated icosahedron and the truncated dodecahedron, and the helpers dodecahedron, icosahedron, truncated octahedron and truncated cuboctahedron, with any convex piece whose dihedral angles are nonnegative rational multiples of π. The proof builds on DICTO's Dehn Canon (#113 [2]), a pinned dependency. It compiles with no <code>sorry</code> and only Lean's three standard axioms.</div>
+
+<h2>1. What is proved</h2>
+<p class="hook">Two kinds of pieces can balance each other's Dehn invariant in the whole and still be unable to sit together in space. Round any edge the angles must close one full turn. For these pieces the irrational parts of the angles cancel only after one and a half turns. The computer has checked every step of this argument.</p>
+<p>Paper #117, <i>From Dehn Packets to Scutoids: How the Fullerene Star Fills Space</i> [1], is where the result was first found and proved by hand (its Theorem 4). The Dehn Canon, paper #113 [2], with its Lean entry PALOMAR-2026-11-20-000003 [3], is the base we build on. It supplies polytopes as solution sets of finitely many inequalities, and dihedral angles read from the sets. Its Lean files are a pinned dependency of this work.</p>
+<p>The formal entry stands alone: its statements are complete, and every hypothesis appears in them. This paper is its informal account. It contains exactly the statements that are formalised. Each one carries its Lean name and file, and the Lean text of each statement is printed beside it. The proofs are in the Lean files; here we give only their outline (§6).</p>
+<p><b>How statements are marked.</b> <span class="st">Formalised</span>: the statement as worded is the Lean declaration named beside it. Every part is proved in the Lean files, with no <code>sorry</code> and only the axioms propext, Classical.choice and Quot.sound (§8). <span class="st">By hand</span>: a statement whose proof, or some part of it, is not machine-checked. One remark carries this mark (Remark 8). All Lean names live in the namespace <code>Packets</code>, except the Canon's <code>DehnCanon.Library</code> definitions. <code>R3</code> is <code>EuclideanSpace ℝ (Fin 3)</code>.</p>
+
+<h2>2. The setting</h2>
+<p class="thm"><b>Definition A</b> (convex polytope). <span class="st">Formalised</span> (Dehn Canon, <code>DehnCanon.Library.sol</code>, <code>IsPoly</code>). In a real inner product space E, <code>sol a b</code> is the set of x with ⟨a<sub>i</sub>, x⟩ ≤ b<sub>i</sub> for every index i. A set P is a <i>convex polytope</i> if it is bounded and equals <code>sol a b</code> for some finite family of vectors a<sub>i</sub> and numbers b<sub>i</sub>.</p>
+<pre class="lean">def sol {ι : Type} (a : ι → E) (b : ι → ℝ) : Set E := {x | ∀ i, ⟪a i, x⟫ ≤ b i}
+
+def IsPoly (P : Set E) : Prop :=
+  Bornology.IsBounded P ∧ ∃ (ι : Type) (_ : Fintype ι) (a : ι → E) (b : ι → ℝ), P = sol a b</pre>
+<p class="thm"><b>Definition B</b> (tiling). <span class="st">Formalised</span> (<code>ConvexTiling</code>, Lemma2.lean). A <i>tiling of E by convex polytopes</i> is a family of sets P<sub>i</sub>, indexed by any type, such that each P<sub>i</sub> is a convex polytope with an interior point, every point of E lies in some P<sub>i</sub>, distinct tiles have disjoint interiors, and the family is locally finite: every point has a neighbourhood that meets only finitely many tiles. Nothing is assumed about how tiles meet; the tiling need not be face-to-face.</p>
+<pre class="lean">structure ConvexTiling (ι : Type*) (E : Type*) [NormedAddCommGroup E] [InnerProductSpace ℝ E] where
+  P : ι → Set E
+  poly : ∀ i, DehnCanon.Library.IsPoly (P i)
+  nonempty_interior : ∀ i, (interior (P i)).Nonempty
+  cover : ∀ x, ∃ i, x ∈ P i
+  disjoint : Pairwise fun i j => Disjoint (interior (P i)) (interior (P j))
+  locallyFinite : LocallyFinite P</pre>
+<p class="thm"><b>Definition C</b> (dihedral angle, read from the set). <span class="st">Formalised</span> (Dehn Canon, <code>tcone</code>, <code>linSpace</code>, <code>wedgeSet</code>, <code>wedgeAngle</code>; <code>EdgeAngle</code>, Lemma2.lean). For a point x of a set P, the <i>cone</i> <code>tcone P x</code> is the set of directions v with x + tv ∈ P for some t &gt; 0. The <i>line space</i> <code>linSpace T</code> of a cone T is the span of the v with v and −v both in T. For a subspace K, the <i>angle</i> <code>wedgeAngle T K</code> is 2π times the measure of the part of T in the open unit ball of the orthogonal complement of K, divided by the measure of that ball. A real number θ is a <i>dihedral angle</i> of P, <code>EdgeAngle P θ</code>, if at some point x of P the line space of the cone is a line and the angle of the cone round that line is θ.</p>
+<pre class="lean">def tcone (P : Set E) (x : E) : Set E := {v | x ∈ P ∧ ∃ t : ℝ, 0 &lt; t ∧ x + t • v ∈ P}
+
+def linSpace (T : Set E) : Submodule ℝ E := Submodule.span ℝ {v | v ∈ T ∧ -v ∈ T}
+
+def wedgeSet (T : Set E) (K : Submodule ℝ E) : Set Kᗮ := {w | (w : E) ∈ T ∧ ‖w‖ &lt; 1}
+
+noncomputable def wedgeAngle (T : Set E) (K : Submodule ℝ E) : ℝ :=
+  2 * Real.pi * ((volume (wedgeSet T K)).toReal / (volume (Metric.ball (0 : Kᗮ) 1)).toReal)
+
+def EdgeAngle (P : Set E) (θ : ℝ) : Prop :=
+  ∃ x ∈ P, finrank ℝ (linSpace (tcone P x)) = 1 ∧ wedgeAngle (tcone P x) (linSpace (tcone P x)) = θ</pre>
+<p>For a convex polytope, the points where the line space is a line are the points inside its edges, and the angle there is the interior dihedral angle of that edge. The definition does not use this: angles are read from the set itself, with no list of faces or edges.</p>
+<p class="thm"><b>Definition D</b> (similar copy; rational angles). <span class="st">Formalised</span> (<code>SimilarCopy</code>, Pieces.lean; <code>RationalAngles</code>, Copies.lean). Q is a <i>similar copy</i> of S if Q = g(cS) for some c &gt; 0 and some affine isometry g of E onto itself. So g may be any motion, reflections included, and c any positive scaling. A set P has <i>rational angles</i> if every dihedral angle of P is qπ for a rational q ≥ 0.</p>
+<pre class="lean">def SimilarCopy (Q S : Set E) : Prop := ∃ (g : E ≃ᵃⁱ[ℝ] E) (c : ℝ), 0 &lt; c ∧ Q = g '' (c • S)
+
+def RationalAngles (P : Set R3) : Prop := ∀ θ, EdgeAngle P θ → ∃ q : ℚ, 0 ≤ q ∧ θ = q * Real.pi</pre>
+<p class="thm"><b>Lemma 1</b> (copies keep their angles). <span class="st">Formalised</span> (<code>SimilarCopy.edgeAngle_iff</code>, Pieces.lean). Let E be finite-dimensional, with its Borel measure. If Q is a similar copy of S, then for every θ, θ is a dihedral angle of Q exactly when it is a dihedral angle of S.</p>
+<pre class="lean">theorem SimilarCopy.edgeAngle_iff {Q S : Set E} (h : SimilarCopy Q S) (θ : ℝ) :
+    EdgeAngle Q θ ↔ EdgeAngle S θ</pre>
+
+<h2>3. Angles round an edge</h2>
+<p class="hook">Stand at a point inside an edge of one tile. The tiles that touch that point share out the full turn round the edge line between them. Each one takes its own dihedral angle, or a half turn if the point lies inside one of its faces.</p>
+<p class="thm"><b>Lemma 2</b> (angles round an edge). <span class="st">Formalised</span> (<code>lemma2</code>, Lemma2.lean). Let E be a real inner product space of dimension 3, with its Borel measure, and let (P<sub>j</sub>) be a tiling of E by convex polytopes. Let x be a point of a tile P<sub>i</sub> at which the line space of the cone of P<sub>i</sub> is a line. Then there are a finite set J of indices and numbers ω<sub>j</sub> such that: i ∈ J; ω<sub>i</sub> is the angle of the cone of P<sub>i</sub> at x round its line space; for each j ∈ J, either there is a point y of P<sub>j</sub> at which the line space of the cone of P<sub>j</sub> is a line and ω<sub>j</sub> is the angle round it, or ω<sub>j</sub> = π, or ω<sub>j</sub> = 2π; and the ω<sub>j</sub>, j ∈ J, add up to 2π.</p>
+<pre class="lean">theorem lemma2 {ι : Type*} (T : ConvexTiling ι E) {i : ι} {x : E} (hx : x ∈ T.P i)
+    (h1 : finrank ℝ (linSpace (tcone (T.P i) x)) = 1) :
+    ∃ (J : Finset ι) (ω : ι → ℝ), i ∈ J ∧
+      ω i = wedgeAngle (tcone (T.P i) x) (linSpace (tcone (T.P i) x)) ∧
+      (∀ j ∈ J, (∃ y ∈ T.P j, finrank ℝ (linSpace (tcone (T.P j) y)) = 1 ∧
+          ω j = wedgeAngle (tcone (T.P j) y) (linSpace (tcone (T.P j) y))) ∨
+        ω j = Real.pi ∨ ω j = 2 * Real.pi) ∧
+      ∑ j ∈ J, ω j = 2 * Real.pi</pre>
+<p>In #117 this is its Lemma 2, cited there from DICTO's #44 [4, Lemma 1]; the edge count goes back to Debrunner [5]. In particular, every dihedral angle θ of a tile lies in a <i>ring</i>: finitely many angles, each a dihedral angle of its tile, or π, or 2π, that add up to 2π (<code>localAngleCondition_of_tiling</code>).</p>
+
+<h2>4. The angles</h2>
+<p class="thm"><b>Definition E</b> (three angles). <span class="st">Formalised</span> (<code>α</code>, <code>β</code>, <code>γ</code>, Angles.lean). With φ = (1 + √5)/2: α = arctan φ ≈ 58.2825°, β = arccos(1/√6) ≈ 65.9052°, γ = arccos √(2/3) ≈ 35.2644°.</p>
+<pre class="lean">noncomputable def α : ℝ := Real.arctan ((1 + √5) / 2)
+
+noncomputable def β : ℝ := Real.arccos (1 / √6)
+
+noncomputable def γ : ℝ := Real.arccos (√(2 / 3))</pre>
+<p>2α is the dihedral angle of the regular dodecahedron, 3π/2 − 2β that of the regular icosahedron, and 2γ = arccos(1/3) that of the regular tetrahedron (<code>two_γ_eq</code>).</p>
+<p class="hook">None of the three angles is a fraction of a half turn, and no combination of them is either. A sum of these angles can therefore be a whole number of half turns only when each of α, β and γ appears with total weight zero.</p>
+<p class="thm"><b>Lemma 3</b> (independence). <span class="st">Formalised</span> (<code>lemma3</code>, Angles.lean). If q, a, b, c are rational and qπ + aα + bβ + cγ = 0, then q = a = b = c = 0.</p>
+<pre class="lean">theorem lemma3 (q a b c : ℚ) (h : (q : ℝ) * π + a * α + b * β + c * γ = 0) :
+    q = 0 ∧ a = 0 ∧ b = 0 ∧ c = 0</pre>
+<p>The proof uses 4α, 2β and 2γ. Their cosines −3/5, −2/3 and 1/3 are rational, and their sines lie in ℚ, ℚ√5 and ℚ√2. Niven's theorem in Mathlib [6, 7] then shows that none of the three is a rational multiple of π. The field argument, and its lemmas <code>irrational_sqrt10</code> and <code>eq_zero_of_mul_sqrt2_inQ5</code>, are taken from study 8 of the Dehn Canon [2], credited in the file.</p>
+<p class="thm"><b>Definition F</b> (angle lists). <span class="st">Formalised</span> (Rings.lean). An angle qπ + aα + bβ + cγ is recorded by its rational coordinates (<code>Co</code>, value <code>Co.val</code>). The nine lists of Table 1 are defined by coordinates. Their closed forms are theorems (<code>pyrD_eq</code>, …, <code>tcoA_eq</code>).</p>
+<table class="w"><caption><b>Table 1.</b> The angle lists (the dihedral angles of the pieces, from #117 Table 1, with edge counts left out). The row <code>tid</code> is used in Proposition 7 only; no solid is shown to have it here.</caption>
+<tr><th>list</th><th>closed form (theorem)</th><th>degrees</th><th>the piece it belongs to</th></tr>
+<tr class="hd"><td><code>pyrD</code></td><td>[α, 2π/3] (<code>pyrD_eq</code>)</td><td class="n">58.2825, 120</td><td>dodecahedron centre pyramid</td></tr>
+<tr><td><code>ti</code></td><td>[3π/2 − 2β, 3π/4 − α + β] (<code>ti_eq</code>)</td><td class="n">138.1897, 142.6226</td><td>truncated icosahedron</td></tr>
+<tr class="hd"><td><code>pyrI</code></td><td>[3π/4 − β, 2π/5] (<code>pyrI_eq</code>)</td><td class="n">69.0948, 72</td><td>icosahedron centre pyramid</td></tr>
+<tr><td><code>td</code></td><td>[2α, 3π/4 − α + β] (<code>td_eq</code>)</td><td class="n">116.5651, 142.6226</td><td>truncated dodecahedron</td></tr>
+<tr class="hd"><td><code>dod</code></td><td>[2α] (<code>dod_eq</code>)</td><td class="n">116.5651</td><td>dodecahedron</td></tr>
+<tr><td><code>ico</code></td><td>[3π/2 − 2β] (<code>ico_eq</code>)</td><td class="n">138.1897</td><td>icosahedron</td></tr>
+<tr><td><code>toA</code></td><td>[π/2 + γ, π − 2γ] (<code>toA_eq</code>)</td><td class="n">125.2644, 109.4712</td><td>truncated octahedron</td></tr>
+<tr><td><code>tcoA</code></td><td>[π − γ, 3π/4, π/2 + γ] (<code>tcoA_eq</code>)</td><td class="n">144.7356, 135, 125.2644</td><td>truncated cuboctahedron</td></tr>
+<tr><td><code>tid</code></td><td>[5π/4 − β, π/2 + α, 3π/4 − α + β] (<code>tid_eq</code>)</td><td class="n">159.0948, 148.2825, 142.6226</td><td>(list only)</td></tr>
+</table>
+
+<h2>5. The pieces and the main theorem</h2>
+<p class="thm"><b>Definition G</b> (the eight pieces). <span class="st">Formalised</span> (Gen*.lean, Solids.lean). Each piece is the set <code>sol n b</code> for explicit outward face normals n and offsets b, in exact arithmetic. Table 2 lists them. For each set the Lean files prove an interior point, boundedness (<code>isPoly_pyrD</code>, …), and the edge data that Proposition 5 reads.</p>
+<table class="w"><caption><b>Table 2.</b> The pieces built from exact coordinates (faces = inequalities; edges and corners as in the edge data).</caption>
+<tr><th>Lean set</th><th>piece</th><th>faces</th><th>edges</th><th>corners</th><th>numbers in</th><th>file</th></tr>
+<tr class="hd"><td><code>pyrDSet</code></td><td>dodecahedron centre pyramid</td><td class="n">6</td><td class="n">10</td><td class="n">6</td><td>ℚ(√5)</td><td>GenPyrD</td></tr>
+<tr><td><code>tiSet</code></td><td>truncated icosahedron</td><td class="n">32</td><td class="n">90</td><td class="n">60</td><td>ℚ(√5)</td><td>GenTI</td></tr>
+<tr class="hd"><td><code>pyrISet</code></td><td>icosahedron centre pyramid</td><td class="n">4</td><td class="n">6</td><td class="n">4</td><td>ℚ(√5)</td><td>GenPyrI</td></tr>
+<tr><td><code>tdSet</code></td><td>truncated dodecahedron</td><td class="n">32</td><td class="n">90</td><td class="n">60</td><td>ℚ(√5)</td><td>GenTD</td></tr>
+<tr class="hd"><td><code>dhSet</code></td><td>dodecahedron</td><td class="n">12</td><td class="n">30</td><td class="n">20</td><td>ℚ(√5)</td><td>GenDH</td></tr>
+<tr><td><code>ihSet</code></td><td>icosahedron</td><td class="n">20</td><td class="n">30</td><td class="n">12</td><td>ℚ(√5)</td><td>GenIH</td></tr>
+<tr><td><code>toSet</code></td><td>truncated octahedron</td><td class="n">14</td><td class="n">36</td><td class="n">24</td><td>ℚ</td><td>GenTO</td></tr>
+<tr><td><code>tcoSet</code></td><td>truncated cuboctahedron</td><td class="n">26</td><td class="n">72</td><td class="n">48</td><td>ℚ(√2)</td><td>GenTCO</td></tr>
+</table>
+<p>The truncated icosidodecahedron, a helper in #117, is not built from coordinates here. It is therefore not among the helpers of Theorem 4.</p>
+<p class="hook">The theorem says: build space out of copies of these pieces, at any sizes and in any positions, mirror images allowed, with any rational-angle pieces besides. Then the pyramid and its truncated partner can never be used.</p>
+<p class="thm"><b>Theorem 4</b> (cancelling packets that cannot fill space). <span class="st">Formalised</span> (<code>theorem4a_copies</code>, <code>theorem4b_copies</code>, Copies.lean; <code>theorem4c_lead1</code>, <code>theorem4c_lead2</code>, <code>ring3pi_lead1</code>, <code>ring3pi_lead2</code>, <code>no_ring_lead1</code>, <code>no_ring_lead2</code>, Rings.lean).<br>
+(a) Let (P<sub>i</sub>) be a tiling of ℝ³ by convex polytopes in which every tile is a similar copy of <code>pyrDSet</code>, <code>tiSet</code>, <code>dhSet</code>, <code>ihSet</code>, <code>toSet</code> or <code>tcoSet</code>, or has rational angles. Then no tile is a similar copy of <code>pyrDSet</code>, and no tile is a similar copy of <code>tiSet</code>.<br>
+(b) The same holds with <code>pyrISet</code> and <code>tdSet</code> in place of <code>pyrDSet</code> and <code>tiSet</code>.<br>
+(c) Let n<sub>1</sub>, n<sub>2</sub>, n<sub>3</sub>, n<sub>4</sub> be natural numbers with n<sub>1</sub> + n<sub>3</sub> + n<sub>4</sub> &gt; 0 and r a rational number. If n<sub>1</sub>α + n<sub>2</sub>(2π/3) + n<sub>3</sub>(3π/2 − 2β) + n<sub>4</sub>(3π/4 − α + β) = rπ, then r ≥ 3. The value 3 is attained: 2α + 2(3π/4 − α + β) + (3π/2 − 2β) = 3π. So no such sum is 2π or π. The same holds for n<sub>1</sub>(3π/4 − β) + n<sub>2</sub>(2π/5) + n<sub>3</sub>(2α) + n<sub>4</sub>(3π/4 − α + β), with 2(3π/4 − β) + 2(3π/4 − α + β) + 2α = 3π.</p>
+<pre class="lean">theorem theorem4a_copies {ι : Type*} (T : ConvexTiling ι R3)
+    (hk : ∀ i, SimilarCopy (T.P i) pyrDSet ∨ SimilarCopy (T.P i) tiSet ∨ SimilarCopy (T.P i) dhSet ∨
+      SimilarCopy (T.P i) ihSet ∨ SimilarCopy (T.P i) toSet ∨ SimilarCopy (T.P i) tcoSet ∨
+      RationalAngles (T.P i)) (i : ι) :
+    ¬ SimilarCopy (T.P i) pyrDSet ∧ ¬ SimilarCopy (T.P i) tiSet
+
+theorem theorem4b_copies {ι : Type*} (T : ConvexTiling ι R3)
+    (hk : ∀ i, SimilarCopy (T.P i) pyrISet ∨ SimilarCopy (T.P i) tdSet ∨ SimilarCopy (T.P i) dhSet ∨
+      SimilarCopy (T.P i) ihSet ∨ SimilarCopy (T.P i) toSet ∨ SimilarCopy (T.P i) tcoSet ∨
+      RationalAngles (T.P i)) (i : ι) :
+    ¬ SimilarCopy (T.P i) pyrISet ∧ ¬ SimilarCopy (T.P i) tdSet
+
+theorem theorem4c_lead1 (n1 n2 n3 n4 : ℕ) (r : ℚ)
+    (h : (n1 : ℝ) * α + n2 * (2 * π / 3) + n3 * (3 * π / 2 - 2 * β) + n4 * (3 * π / 4 - α + β) = r * π)
+    (hn : 0 &lt; n1 + n3 + n4) : 3 ≤ r
+
+theorem ring3pi_lead1 : 2 * α + 2 * (3 * π / 4 - α + β) + (3 * π / 2 - 2 * β) = 3 * π
+
+theorem no_ring_lead1 (n1 n2 n3 n4 : ℕ) (hn : 0 &lt; n1 + n3 + n4) :
+    (n1 : ℝ) * α + n2 * (2 * π / 3) + n3 * (3 * π / 2 - 2 * β) + n4 * (3 * π / 4 - α + β) ≠ 2 * π ∧
+    (n1 : ℝ) * α + n2 * (2 * π / 3) + n3 * (3 * π / 2 - 2 * β) + n4 * (3 * π / 4 - α + β) ≠ π
+
+theorem theorem4c_lead2 (n1 n2 n3 n4 : ℕ) (r : ℚ)
+    (h : (n1 : ℝ) * (3 * π / 4 - β) + n2 * (2 * π / 5) + n3 * (2 * α) + n4 * (3 * π / 4 - α + β) = r * π)
+    (hn : 0 &lt; n1 + n3 + n4) : 3 ≤ r
+
+theorem ring3pi_lead2 : 2 * (3 * π / 4 - β) + 2 * (3 * π / 4 - α + β) + 2 * α = 3 * π
+
+theorem no_ring_lead2 (n1 n2 n3 n4 : ℕ) (hn : 0 &lt; n1 + n3 + n4) :
+    (n1 : ℝ) * (3 * π / 4 - β) + n2 * (2 * π / 5) + n3 * (2 * α) + n4 * (3 * π / 4 - α + β) ≠ 2 * π ∧
+    (n1 : ℝ) * (3 * π / 4 - β) + n2 * (2 * π / 5) + n3 * (2 * α) + n4 * (3 * π / 4 - α + β) ≠ π</pre>
+<p>In (a) and (b) the hypotheses are exactly those printed. The scales of the copies are arbitrary, and local finiteness is part of the tiling (Definition B). The tile indices may form any type. In (c), n<sub>1</sub> and n<sub>2</sub> count the base and side angles of the centre pyramid, and n<sub>3</sub> and n<sub>4</sub> the two angles of its truncated partner (Table 1). The condition n<sub>1</sub> + n<sub>3</sub> + n<sub>4</sub> &gt; 0 says that at least one irrational angle is used.</p>
+<figure><img src="figures/fig-ring-3d.webp" style="width:56%;margin:0 auto" alt="Five wedges laid round one edge as slabs: 58.28, 142.62, 138.19 degrees fill 339 degrees of the first turn, and the next two, 142.62 and 58.28 degrees, overlap the first ones beyond 360 degrees"><figcaption><b>Figure 1.</b> The ring of <code>ring3pi_lead1</code>: the angles 58.28° (pyramid base), 142.62°, 138.19°, 142.62° (truncated icosahedron) and 58.28° laid in order round one edge as wedges. The first three fill 339.09°; the fourth and fifth go on past 360° and overlap the first (ghosted, red edges). The sum is 540°, one and a half turns. Figure 1 of #117 [1], reused; angles drawn from their exact values.</figcaption></figure>
+
+<h2>6. The proof</h2>
+<p class="hook">The proof has three parts. The angles of each piece are read from its coordinates. A weight then shows that some angle of a piece can never close its ring. With that piece removed, the next weight removes the next piece.</p>
+<p class="thm"><b>Proposition 5</b> (the angles of the pieces). <span class="st">Formalised</span> (<code>pyrD_edgeAngle</code>, <code>ti_edgeAngle</code>, <code>pyrI_edgeAngle</code>, <code>td_edgeAngle</code>, <code>dh_edgeAngle</code>, <code>ih_edgeAngle</code>, <code>to_edgeAngle</code>, <code>tco_edgeAngle</code>, Solids.lean). For every real θ, θ is a dihedral angle of <code>pyrDSet</code> exactly when θ lies in the list <code>pyrD</code>. The same holds for <code>tiSet</code> and <code>ti</code>, <code>pyrISet</code> and <code>pyrI</code>, <code>tdSet</code> and <code>td</code>, <code>dhSet</code> and <code>dod</code>, <code>ihSet</code> and <code>ico</code>, <code>toSet</code> and <code>toA</code>, and <code>tcoSet</code> and <code>tcoA</code>.</p>
+<pre class="lean">theorem pyrD_edgeAngle (θ : ℝ) : EdgeAngle pyrDSet θ ↔ θ ∈ pyrD
+
+theorem ti_edgeAngle (θ : ℝ) : EdgeAngle tiSet θ ↔ θ ∈ ti
+
+theorem pyrI_edgeAngle (θ : ℝ) : EdgeAngle pyrISet θ ↔ θ ∈ pyrI
+
+theorem td_edgeAngle (θ : ℝ) : EdgeAngle tdSet θ ↔ θ ∈ td
+
+theorem dh_edgeAngle (θ : ℝ) : EdgeAngle dhSet θ ↔ θ ∈ dod
+
+theorem ih_edgeAngle (θ : ℝ) : EdgeAngle ihSet θ ↔ θ ∈ ico
+
+theorem to_edgeAngle (θ : ℝ) : EdgeAngle toSet θ ↔ θ ∈ toA
+
+theorem tco_edgeAngle (θ : ℝ) : EdgeAngle tcoSet θ ↔ θ ∈ tcoA</pre>
+<p><i>Outline.</i> For a set <code>sol n b</code> with an interior point and edge data in the Canon's sense (<code>IsEdgeData</code>, Canon study 5), the dihedral angles read from the set are exactly the values π − ∠(n<sub>i</sub>, n<sub>j</sub>) over its edges, where i and j are the two faces at the edge (<code>edgeAngle_edgeData</code>, Pieces.lean, from the Canon's <code>faceSet_edge</code> and <code>wedgeAngle_two_planes</code>). The edge data and the Gram values ⟨n<sub>i</sub>, n<sub>j</sub>⟩ of each piece are generated in exact arithmetic by a script adapted from the Canon's <code>gen_edges5.py</code>, then checked again by Lean. Values.lean turns the Gram values into the closed forms of Table 1.</p>
+<p class="thm"><b>Lemma 6</b> (ring bound). <span class="st">Formalised</span> (<code>ring_weight_le</code>, Rings.lean). For rationals u, v, the <i>weight</i> of coordinates (q, a, b, c) is q + ua + vb (<code>Co.w</code>). A number is <i>light</i> for (u, v) if it has coordinates of weight ≥ 0 (<code>Light</code>). Suppose every ω<sub>j</sub>, j in a finite set J, is light, and the ω<sub>j</sub> add up to 2π. Then for every t ∈ J and all coordinates x of ω<sub>t</sub>, the weight of x is at most 2.</p>
+<pre class="lean">theorem ring_weight_le {ι : Type*} {u v : ℚ} {J : Finset ι} {ω : ι → ℝ} (hL : ∀ j ∈ J, Light u v (ω j))
+    (hsum : ∑ j ∈ J, ω j = 2 * π) {t : ι} (ht : t ∈ J) {x : Co} (hx : ω t = x.val) : x.w u v ≤ 2</pre>
+<p>By Lemma 3 the coordinates of a ring of sum 2π add up to (2, 0, 0, 0). So the weights add up to 2, and none of them is negative.</p>
+<p class="thm"><b>Proposition 7</b> (Theorem 4 for tiles given by their angle lists). <span class="st">Formalised</span> (<code>theorem4a_tiling</code>, <code>theorem4b_tiling</code>, Lemma2.lean). Let (P<sub>i</sub>) be a tiling of a three-dimensional real inner product space by convex polytopes. Give each tile a list <code>ang i</code> of reals such that every entry is a dihedral angle of P<sub>i</sub>. Suppose further that for each i, either <code>ang i</code> is one of <code>pyrD</code>, <code>ti</code>, <code>dod</code>, <code>ico</code>, <code>tid</code>, <code>toA</code>, <code>tcoA</code> and every dihedral angle of P<sub>i</sub> lies in <code>ang i</code>, or P<sub>i</sub> has rational angles. Then for every i, <code>ang i</code> is none of <code>pyrD</code>, <code>ti</code>, <code>dod</code>, <code>ico</code>, <code>tid</code>. The same holds for (b), with <code>pyrI</code> and <code>td</code> in place of <code>pyrD</code> and <code>ti</code>.</p>
+<pre class="lean">def AllowedA (l : List ℝ) (ok : ℝ → Prop) : Prop :=
+  (l = pyrD ∨ l = ti ∨ l = dod ∨ l = ico ∨ l = tid ∨ l = toA ∨ l = tcoA) ∧ (∀ θ, ok θ → θ ∈ l) ∨
+    RationalPiece ok
+
+theorem theorem4a_tiling {ι : Type*} (T : ConvexTiling ι E) (ang : ι → List ℝ)
+    (h : ∀ i, ∀ θ ∈ ang i, EdgeAngle (T.P i) θ) (hk : ∀ i, AllowedA (ang i) (EdgeAngle (T.P i))) (i : ι) :
+    ang i ≠ pyrD ∧ ang i ≠ ti ∧ ang i ≠ dod ∧ ang i ≠ ico ∧ ang i ≠ tid
+
+def AllowedB (l : List ℝ) (ok : ℝ → Prop) : Prop :=
+  (l = pyrI ∨ l = td ∨ l = dod ∨ l = ico ∨ l = tid ∨ l = toA ∨ l = tcoA) ∧ (∀ θ, ok θ → θ ∈ l) ∨
+    RationalPiece ok
+
+theorem theorem4b_tiling {ι : Type*} (T : ConvexTiling ι E) (ang : ι → List ℝ)
+    (h : ∀ i, ∀ θ ∈ ang i, EdgeAngle (T.P i) θ) (hk : ∀ i, AllowedB (ang i) (EdgeAngle (T.P i))) (i : ι) :
+    ang i ≠ pyrI ∧ ang i ≠ td ∧ ang i ≠ dod ∧ ang i ≠ ico ∧ ang i ≠ tid</pre>
+<p>Here <code>RationalPiece ok</code> is the condition of Definition D for the predicate <code>ok</code>. Proposition 7 applies to any tile whose dihedral angles are exactly the list <code>tid</code>. It is not shown here that the truncated icosidodecahedron is such a tile.</p>
+<p><i>Outline of Proposition 7.</i> Lemma 2 puts every listed angle in a ring. Each step chooses one weight (u, v) under which every angle still possible is light. It then finds an angle of some piece whose weight exceeds 2. By Lemma 6 that angle lies in no ring, so the piece is not used, and the next step may use a weight that only the remaining pieces need to satisfy. For (a), the weight (0, −3/4) removes the truncated icosahedron and the icosahedron, (2, 5/4) the list <code>tid</code>, and (3, 0) the pyramid and the dodecahedron. For (b), (3/2, 3/4) removes the truncated dodecahedron and the dodecahedron, (−1/4, −1) the list <code>tid</code> and the icosahedron, and (0, −3) the pyramid (<code>theorem4a</code>, <code>theorem4b</code>, Tiling.lean). These are the three steps of #117. In (b) the order removes the dodecahedron in the first step, so the parity case of #117's second step is not needed.</p>
+<p><i>Proof of Theorem 4.</i> (a) Give each tile the list of the piece it copies (<code>pyrD</code>, <code>ti</code>, <code>dod</code>, <code>ico</code>, <code>toA</code> or <code>tcoA</code>, taking the first that applies), or the empty list if it only has rational angles. By Lemma 1 and Proposition 5, every entry is a dihedral angle of the tile, and every dihedral angle of the tile is in its list. Proposition 7 then excludes the lists <code>pyrD</code> and <code>ti</code>. (b) is the same. (c) Lemma 3 splits the equation into its π, α and β parts. For lead 1 this gives n<sub>1</sub> = n<sub>4</sub> = 2n<sub>3</sub>, so n<sub>3</sub> ≥ 1 and r = 3n<sub>3</sub> + (2/3)n<sub>2</sub> ≥ 3. For lead 2, n<sub>1</sub> = n<sub>4</sub> = 2n<sub>3</sub> and r = 3n<sub>3</sub> + (2/5)n<sub>2</sub>. The two 3π identities are ring identities. ∎</p>
+<p class="thm"><b>Remark 8</b> (the sets are the named solids). <span class="st">By hand</span>. The Lean theorems are about the sets of Table 2. That these sets are the solids named there is read from their coordinates. <code>dhSet</code> has the normals (0, ±2, ±(1 + √5)) and their cyclic shifts, all with offset 6 + 2√5: a regular dodecahedron centred at the origin. <code>pyrDSet</code> keeps one of these faces, with the same normal and offset, and adds five planes through the origin: the centre pyramid on that face. <code>tcoSet</code> has the 26 face planes of the uniform truncated cuboctahedron whose corners are all points with coordinates a permutation of (±1, ±(1 + √2), ±(1 + 2√2)). The other sets are listed in the same way, with their corners, in the files. Nothing in the proofs depends on this remark.</p>
+
+<h2>7. The statement map, and what is claimed</h2>
+<table class="w map"><caption><b>Table 3.</b> Each numbered statement, its Lean declarations and files (folder <code>Packets/</code>; Canon definitions in the pinned Dehn Canon), its status, and the statement of #117 [1] it formalises.</caption>
+<tr><th>statement</th><th>Lean name</th><th>file</th><th>status</th><th>#117</th></tr>
+<tr class="hd"><td>Definition A</td><td><code>IsPoly</code>, <code>sol</code></td><td>Canon Dehn2Poly</td><td>formalised</td><td>§2</td></tr>
+<tr><td>Definition B</td><td><code>ConvexTiling</code></td><td>Lemma2.lean</td><td>formalised</td><td>Lemma 2</td></tr>
+<tr><td>Definition C</td><td><code>tcone</code>, <code>linSpace</code>, <code>wedgeAngle</code>, <code>EdgeAngle</code></td><td>Canon Dehn2Local; Lemma2.lean</td><td>formalised</td><td>§2</td></tr>
+<tr><td>Definition D</td><td><code>SimilarCopy</code>, <code>RationalAngles</code></td><td>Pieces.lean; Copies.lean</td><td>formalised</td><td>Theorem 4</td></tr>
+<tr><td>Lemma 1</td><td><code>SimilarCopy.edgeAngle_iff</code></td><td>Pieces.lean</td><td>formalised</td><td>Theorem 4</td></tr>
+<tr class="hd"><td>Lemma 2</td><td><code>lemma2</code></td><td>Lemma2.lean</td><td>formalised</td><td>Lemma 2</td></tr>
+<tr class="hd"><td>Definition E</td><td><code>α</code>, <code>β</code>, <code>γ</code></td><td>Angles.lean</td><td>formalised</td><td>§1</td></tr>
+<tr><td>Lemma 3</td><td><code>lemma3</code></td><td>Angles.lean</td><td>formalised</td><td>Lemma 3</td></tr>
+<tr><td>Definition F</td><td><code>pyrD_eq</code>, <code>ti_eq</code>, <code>pyrI_eq</code>, <code>td_eq</code>, <code>dod_eq</code>, <code>ico_eq</code>, <code>toA_eq</code>, <code>tcoA_eq</code>, <code>tid_eq</code></td><td>Rings.lean</td><td>formalised</td><td>Table 1</td></tr>
+<tr class="hd"><td>Definition G</td><td><code>pyrDSet</code>, <code>tiSet</code>, <code>pyrISet</code>, <code>tdSet</code>, <code>dhSet</code>, <code>ihSet</code>, <code>toSet</code>, <code>tcoSet</code></td><td>Gen*.lean; Solids.lean</td><td>formalised</td><td>Table 1</td></tr>
+<tr><td>Theorem 4 (a), (b)</td><td><code>theorem4a_copies</code>, <code>theorem4b_copies</code></td><td>Copies.lean</td><td>formalised</td><td>Theorem 4 (a), (b)</td></tr>
+<tr><td>Theorem 4 (c)</td><td><code>theorem4c_lead1</code>, <code>theorem4c_lead2</code>, <code>ring3pi_lead1</code>, <code>ring3pi_lead2</code>, <code>no_ring_lead1</code>, <code>no_ring_lead2</code></td><td>Rings.lean</td><td>formalised</td><td>Theorem 4 (c)</td></tr>
+<tr class="hd"><td>Proposition 5</td><td><code>pyrD_edgeAngle</code>, <code>ti_edgeAngle</code>, <code>pyrI_edgeAngle</code>, <code>td_edgeAngle</code>, <code>dh_edgeAngle</code>, <code>ih_edgeAngle</code>, <code>to_edgeAngle</code>, <code>tco_edgeAngle</code></td><td>Solids.lean</td><td>formalised</td><td>Table 1</td></tr>
+<tr><td>Lemma 6</td><td><code>ring_weight_le</code></td><td>Rings.lean</td><td>formalised</td><td>proof of Theorem 4</td></tr>
+<tr><td>Proposition 7</td><td><code>theorem4a_tiling</code>, <code>theorem4b_tiling</code></td><td>Lemma2.lean</td><td>formalised</td><td>Theorem 4 (a), (b)</td></tr>
+<tr class="hd"><td>Remark 8</td><td>(none)</td><td>Gen*.lean (coordinates)</td><td>by hand</td><td>Table 1</td></tr>
+</table>
+<p><b>Known and used.</b> Dehn's invariant and theorem [8] are the background only; no statement here uses them. The edge count round an edge (#44 [4, Lemma 1]; Debrunner [5]) is proved again here in Lean as Lemma 2. Niven's theorem is taken from Mathlib [6, 7]. The Dehn Canon [2, 3] supplies polytopes, cones, angles read from sets, edge data, the field argument of Lemma 3 and the edge-data generator. Lean 4 [9] and Mathlib [10] are the basis of all of it. Theorem 4 itself, with its proof, is from #117 [1].</p>
+<p><b>Claimed here.</b> The Lean proof of Theorem 4 (a), (b) and (c) of #117, for the helpers of Table 2. Lemma 2 is proved in Lean for every locally finite tiling by convex polytopes, face-to-face or not.</p>
+<p><b>Sources checked</b> (22 November 2026). #117 and #113 and their Lean files.</p>
+
+<h2>8. How to check</h2>
+<p>The repository is <code>dehn-packets-lean</code> (meta line). Toolchain <code>leanprover/lean4:v4.35.0-rc2</code>, with Mathlib at tag <code>v4.35.0-rc2</code> (commit 065356127b1dc0016f66b7283ce0ce2c4055aa55). The Dehn Canon (https://github.com/DICTOR-Master/dehn-canon-lean) is a Git dependency pinned at commit 9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57, the commit registered as Palomar entry PALOMAR-2026-11-20-000003 [3]. Both pins are in <code>lakefile.toml</code> and <code>lake-manifest.json</code>.</p>
+<pre>git clone https://github.com/DICTOR-Master/dehn-packets-lean
+cd dehn-packets-lean
+lake exe cache get      # Mathlib's compiled files
+lake build              # Build completed successfully (8976 jobs)</pre>
+<p>The library has 17 Lean files with 31,296 lines in <code>Packets/</code>, plus the root file <code>Packets.lean</code>. Eight of them (<code>Gen*.lean</code>, 29,230 lines) are generated edge data, made by <code>gen/gen_pieces.py</code>. <code>Solids.lean</code> is made by <code>gen/mk_solids.py</code>. Both scripts are in the repository and compute in exact arithmetic before Lean checks every fact again. No file contains <code>sorry</code>, <code>native_decide</code> or an added <code>axiom</code>. For every Lean name in Table 3 that is a theorem, <code>#print axioms</code> reports <code>[propext, Classical.choice, Quot.sound]</code>, Lean's three standard axioms, and nothing else. The check file <code>axioms.lean</code> and its output are beside this paper.</p>
+<p>To compare this paper with the Lean source, read each grey box against the file named in Table 3. The boxes are the statements as written in Lean, without their proofs. A script beside this paper (<code>scripts/audit.py</code>) checks that every box occurs word for word in the source, that every name in Table 3 is declared, and that every theorem in it has the axiom line above.</p>
+
+<h2>9. Conclusion and contributions</h2>
+<p>Theorem 4 of #117 is now a theorem of Lean, with nothing assumed beyond what its statement prints: the packets of the two icosahedral pairs cancel in the whole, and the pieces still cannot be used in any tiling with these helpers.</p>
+<h3>Contributions</h3>
+<ol>
+<li>A Lean 4 proof of Theorem 4 (a) and (b) of #117. It holds for every locally finite tiling of space by convex polytopes, face-to-face or not, built from similar copies of the two icosahedral pairs, the dodecahedron, the icosahedron, the truncated octahedron, the truncated cuboctahedron and any rational-angle convex pieces. The hypotheses are exactly those printed.</li>
+<li>A Lean proof of Theorem 4 (c): the 3π minimum of a cancelling ring for each pair, and that the minimum is attained.</li>
+<li>Lemma 2 in Lean: round an edge point of any tile, the angles of the tiles there add up to 2π, with each angle read from the sets.</li>
+<li>Eight pieces built from exact coordinates, whose dihedral angles, read from the sets, are proved to be exactly the lists of Table 1.</li>
+<li>A paper and a Lean source released as one work. Each statement in the paper carries its Lean name, and a script checks every printed statement against the source.</li>
+</ol>
+
+<h2>References</h2>
+<ol class="refs">
+<li>DICTO, From Dehn Packets to Scutoids: How the Fullerene Star Fills Space (#117), DICTO DOI: 10.5281/zenodo.24411660 (Theorem 4, Lemmas 2 and 3, Table 1, Figure 1).</li>
+<li>DICTO, The Dehn Canon: Hilbert's Third Problem, Machine-Checked (#113), DICTO DOI: 10.5281/zenodo.24383552; Lean files https://github.com/DICTOR-Master/dehn-canon-lean, commit 9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57.</li>
+<li>Palomar registry entry PALOMAR-2026-11-20-000003 (20 November 2026): The Dehn Canon, Lean 4 formalization, https://data.palomar-registry.org/entries/PALOMAR-2026-11-20-000003-v1.json.</li>
+<li>DICTO, Aristotle's Pyramid (#44), DICTO DOI: 10.5281/zenodo.23529497 (Lemma 1, angles round an edge).</li>
+<li>H. E. Debrunner, Über Zerlegungsgleichheit von Pflasterpolyedern mit Würfeln, Arch. Math. 35 (1980) 583–587. Cited only, through citations.</li>
+<li>Mathlib, NumberTheory/Niven.lean (Niven's theorem; Y. Meiburg, A. Broshi, 2025).</li>
+<li>I. Niven, Irrational Numbers, Carus Math. Monographs 11, MAA (1956).</li>
+<li>M. Dehn, Ueber den Rauminhalt, Math. Ann. 55 (1902) 465–478. Cited only.</li>
+<li>L. de Moura, S. Ullrich, The Lean 4 theorem prover and programming language, CADE-28 (2021), LNCS 12699, 625–635.</li>
+<li>The mathlib Community, The Lean mathematical library, CPP 2020, 367–381; https://github.com/leanprover-community/mathlib4.</li>
+</ol>
+<p>DICTO · dictospheres.com</p>
+</body></html>
