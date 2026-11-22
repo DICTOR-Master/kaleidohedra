@@ -15,6 +15,10 @@ Nothing is created on GitHub, pushed or dispatched: that is DICTO's step.
 - The truncated icosidodecahedron is in (`GenTID.lean`, `SolidTID.lean`; helper in theorem4a/4b_copies; gen_challenge.py
   SOLIDS + "tid"). Warnings fixed: Copies `if_pos`/`if_neg` -> `↓reduceIte`; Solids unused simp args and `<;>`;
   generated files set the unused-tactic/seq-focus linters off as the Canon's generated files do.
+- Run 1 of `packets-fit` FAILED (22 Nov 19:43): GenTID.lean timed out (200,000 heartbeats) elaborating its big
+  `![...]` tables and the one-shot `tidN_eq`. Fixed in the generator for large solids: integer tables as flat
+  `List ℤ` in chunks of 240 with `getD`, the bridge lemmas per face (code side by `decide +kernel`), and one top-level
+  lemma per checked table. Pilot: the whole GenTID.lean compiles in 2 min 15 s in the foreground. Relaunched.
 - JOB `packets-fit` (plan ~/dicto-alerts/plans/packets-fit.plan, cap 10 h, script package/scripts/run_fit_tid.sh):
   TID generation -> reference build -> library refresh (Canon imports renamed) -> gen_challenge -> run_checks.sh
   (namespace build, axioms, comparator, controls, standard profile) -> split con-ron timing. FINAL ok only if checks

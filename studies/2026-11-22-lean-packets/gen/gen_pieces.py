@@ -238,6 +238,39 @@ def scale(qs):   # common positive integer factor making all coordinates integra
     L = lcm(*[den(q) for q in qs])
     return L, [q * L for q in qs]
 def vec(v): return "!₂[" + ", ".join(x.lean() for x in v) + "]"
+
+def flat_list(name, ints, per_line):
+    """`name : List ℤ`, in chunks of at most 240 numbers (each chunk elaborated on its own)."""
+    rows = [", ".join(ints[i:i + per_line]) for i in range(0, len(ints), per_line)]
+    chunks = [ints[i:i + 240] for i in range(0, len(ints), 240)]
+    if len(chunks) == 1:
+        return f"def {name} : List ℤ :=\n  [" + ",\n    ".join(rows) + "]\n"
+    out = ""
+    for c, ch in enumerate(chunks):
+        rs = [", ".join(ch[i:i + per_line]) for i in range(0, len(ch), per_line)]
+        out += f"def {name}{c} : List ℤ :=\n  [" + ",\n    ".join(rs) + "]\n"
+    return out + f"def {name} : List ℤ := " + " ++ ".join(f"{name}{c}" for c in range(len(chunks))) + "\n"
+
+BIG = F > 40 or K > 100
+def table(name, n, typ, elems, default, sep=", "):
+    """A lookup table: `![...]` when small; a list with `getD` when large (cheap to elaborate)."""
+    if not BIG:
+        return f"def {name} : Fin {n} → {typ} :=\n  ![" + sep.join(elems) + "]"
+    if typ == "V3":   # a flat list of integers, six per vector
+        import re as _re
+        ints = [x for e in elems for x in _re.findall(r"-?\d+", e)]
+        assert len(ints) == 6 * n
+        return (flat_list(f"{name}L", ints, 6) +
+                f"def {name} (i : Fin {n}) : V3 := fun t : Fin 3 =>\n" +
+                f"  ({name}L.getD (6 * i.val + 2 * t.val) 0, {name}L.getD (6 * i.val + 2 * t.val + 1) 0)")
+    if typ == "Zd":   # a flat list of integers, two per number
+        import re as _re
+        ints = [x for e in elems for x in _re.findall(r"-?\d+", e)]
+        assert len(ints) == 2 * n
+        return (flat_list(f"{name}L", ints, 12) +
+                f"def {name} (i : Fin {n}) : Zd := ({name}L.getD (2 * i.val) 0, {name}L.getD (2 * i.val + 1) 0)")
+    return (f"def {name}L : List ({typ}) :=\n  [" + sep.join(elems) + "]\n" +
+            f"def {name} (i : Fin {n}) : {typ} := {name}L.getD i.val {default}")
 D = FIELD
 o = []
 w = o.append
@@ -272,17 +305,16 @@ w(f"\n/-- Offsets. -/")
 w(f"noncomputable def {X}B : Fin {F} → ℝ := ![" + ", ".join(b.lean() for b in B) + "]")
 w(f"\n/-- The solid. -/\ndef {X}Set : Set R3 := sol {X}N {X}B")
 w(f"\n/-- Integer codes of the normals, offsets and corners (`x.1 + x.2 √{D}`). -/")
-w(f"def {X}Nc : Fin {F} → V3 :=\n  ![" + ",\n    ".join(iv(n) for n in N) + "]")
-w(f"def {X}Bc : Fin {F} → Zd := ![" + ", ".join(iq(b) for b in B) + "]")
-w(f"def {X}Pc : Fin {K} → V3 :=\n  ![" + ",\n    ".join(iv(p) for p in P) + "]")
+w(table(f"{X}Nc", F, "V3", [iv(n) for n in N], "(fun _ => (0, 0))", ",\n    "))
+w(table(f"{X}Bc", F, "Zd", [iq(b) for b in B], "(0, 0)"))
+w(table(f"{X}Pc", K, "V3", [iv(p) for p in P], "(fun _ => (0, 0))", ",\n    "))
 w(f"\n/-- The {len(edges)} edges: the two faces of each edge and its two corners. -/")
-w(f"def {X}Fi : Fin {len(edges)} → Fin {F} := ![" + ", ".join(str(e[0]) for e in edges) + "]")
-w(f"def {X}Fj : Fin {len(edges)} → Fin {F} := ![" + ", ".join(str(e[1]) for e in edges) + "]")
-w(f"def {X}Vk : Fin {len(edges)} → Fin {K} := ![" + ", ".join(str(e[2]) for e in edges) + "]")
-w(f"def {X}Vl : Fin {len(edges)} → Fin {K} := ![" + ", ".join(str(e[3]) for e in edges) + "]")
+w(table(f"{X}Fi", len(edges), f"Fin {F}", [str(e[0]) for e in edges], "0"))
+w(table(f"{X}Fj", len(edges), f"Fin {F}", [str(e[1]) for e in edges], "0"))
+w(table(f"{X}Vk", len(edges), f"Fin {K}", [str(e[2]) for e in edges], "0"))
+w(table(f"{X}Vl", len(edges), f"Fin {K}", [str(e[3]) for e in edges], "0"))
 w(f"\n/-- Three faces through each corner. -/")
-w(f"def {X}T : Fin {K} → Fin {F} × Fin {F} × Fin {F} :=\n  ![" + ", ".join(
-    f"({f[0]}, {f[1]}, {f[2]})" for f in faces_at) + "]")
+w(table(f"{X}T", K, f"Fin {F} × Fin {F} × Fin {F}", [f"({f[0]}, {f[1]}, {f[2]})" for f in faces_at], "(0, 0, 0)"))
 w(f"\ndef {X}Sol : Solid {D} {F} {K} {len(edges)} := ⟨{X}Nc, {X}Bc, {X}Pc, {X}Fi, {X}Fj, {X}Vk, {X}Vl⟩")
 w(f"\n/-- Corners. -/\nnoncomputable def {X}P : Fin {K} → R3 := {X}Sol.p")
 # certificates
@@ -303,7 +335,12 @@ rows = []
 for i in range(F):
     rows.append("![" + ", ".join(cert_text(i, j) if i < j else ".none" for j in range(F)) + "]")
 w(f"\n/-- How each two faces meet (edge, corner, or a Farkas certificate that they do not). -/")
-w(f"def {X}Ct : Fin {F} → Fin {F} → Cert {F} {K} {len(edges)} :=\n  ![" + ",\n    ".join(rows) + "]")
+if BIG:
+    lrows = ["[" + r[2:-1] + "]" for r in rows]
+    w(f"def {X}CtL : List (List (Cert {F} {K} {len(edges)})) :=\n  [" + ",\n    ".join(lrows) + "]")
+    w(f"def {X}Ct (i j : Fin {F}) : Cert {F} {K} {len(edges)} := ({X}CtL.getD i.val []).getD j.val .none")
+else:
+    w(f"def {X}Ct : Fin {F} → Fin {F} → Cert {F} {K} {len(edges)} :=\n  ![" + ",\n    ".join(rows) + "]")
 bl = []
 for (tri, so) in bnd:
     L, sc = scale(list(so))
@@ -311,30 +348,61 @@ for (tri, so) in bnd:
 w(f"\n/-- Bounds along the six axis directions. -/")
 w(f"def {X}Bd : Fin 6 → BCert {F} := ![" + ", ".join(bl) + "]")
 w(f"\n/-- An interior point (times {lamZ}). -/\ndef {X}Zc : V3 := {iv(Zc)}")
+for m in range(F):
+    w(f"""lemma {X}N_eq_{m} : {X}N {m} = {X}Sol.n {m} := by
+  rw [Solid.n, show {X}Sol.N {m} = {iv(N[m])} by decide +kernel]
+  ext t; fin_cases t <;> simp [{X}N, evv, ev] <;> ring
+""")
 w(f"""
 lemma {X}N_eq : {X}N = {X}Sol.n := by
-  funext m; fin_cases m <;> ext t <;> fin_cases t <;>
-    simp [{X}N, {X}Sol, {X}Nc, Solid.n, evv, ev] <;> ring
+  funext m; fin_cases m""" + "".join(f"\n  · exact {X}N_eq_{m}" for m in range(F)) + f"""
 
+""")
+for m in range(F):
+    w(f"""lemma {X}B_eq_{m} : {X}B {m} = {X}Sol.b {m} := by
+  rw [Solid.b, show {X}Sol.B {m} = {iq(B[m])} by decide +kernel]
+  simp [{X}B, ev] <;> ring
+""")
+w(f"""
 lemma {X}B_eq : {X}B = {X}Sol.b := by
-  funext m; fin_cases m <;> simp [{X}B, {X}Sol, {X}Bc, Solid.b, ev] <;> ring
+  funext m; fin_cases m""" + "".join(f"\n  · exact {X}B_eq_{m}" for m in range(F)) + f"""
+
+lemma {X}_bd : ∀ t, {X}Sol.bOK (Solid.axis t) ({X}Bd t) = true := by decide +kernel
 
 theorem {X}_bounded : Bornology.IsBounded (sol {X}N {X}B) := by
-  rw [{X}N_eq, {X}B_eq]; exact {X}Sol.bounded_of (by norm_num) {X}Bd (by decide +kernel)
+  rw [{X}N_eq, {X}B_eq]; exact {X}Sol.bounded_of (by norm_num) {X}Bd {X}_bd
 
 theorem isPoly_{X} : DehnCanon.Library.IsPoly {X}Set := ⟨{X}_bounded, Fin {F}, inferInstance, {X}N, _, rfl⟩
 
 theorem {X}_interior : (interior (sol {X}N {X}B)).Nonempty := by
   rw [{X}N_eq, {X}B_eq]; exact {X}Sol.interior_of (by norm_num) {X}Zc ({lamZ}, 0) (by decide +kernel) (by decide +kernel)
 
+lemma {X}_mem : ∀ m k, {X}Sol.tight m k = true ∨ {X}Sol.below m k = true := by decide +kernel
+
+lemma {X}_three : ∀ k, ({X}T k).1 ≠ ({X}T k).2.1 ∧ ({X}T k).1 ≠ ({X}T k).2.2 ∧ ({X}T k).2.1 ≠ ({X}T k).2.2 ∧
+    {X}Sol.tight ({X}T k).1 k = true ∧ {X}Sol.tight ({X}T k).2.1 k = true ∧
+    {X}Sol.tight ({X}T k).2.2 k = true := by decide +kernel
+
+lemma {X}_lt : ∀ e, {X}Sol.fi e < {X}Sol.fj e := by decide +kernel
+
+lemma {X}_inj : ∀ e e', {X}Sol.fi e = {X}Sol.fi e' → {X}Sol.fj e = {X}Sol.fj e' → e = e' := by decide +kernel
+
+lemma {X}_tight : ∀ e, {X}Sol.tight ({X}Sol.fi e) ({X}Sol.vk e) = true ∧
+    {X}Sol.tight ({X}Sol.fi e) ({X}Sol.vl e) = true ∧ {X}Sol.tight ({X}Sol.fj e) ({X}Sol.vk e) = true ∧
+    {X}Sol.tight ({X}Sol.fj e) ({X}Sol.vl e) = true := by decide +kernel
+
+lemma {X}_other : ∀ e m, m ≠ {X}Sol.fi e → m ≠ {X}Sol.fj e →
+    {X}Sol.below m ({X}Sol.vk e) = true ∨ {X}Sol.below m ({X}Sol.vl e) = true := by decide +kernel
+
+lemma {X}_cov : ∀ i j, i < j → {X}Sol.certOK i j ({X}Ct i j) = true := by decide +kernel
+
 theorem {X}_isEdgeData : IsEdgeData {X}N {X}B {X}P {X}Fi {X}Fj {X}Vk {X}Vl := by
   rw [{X}N_eq, {X}B_eq]
-  exact {X}Sol.isEdgeData_of (by norm_num) ({X}Sol.bounded_of (by norm_num) {X}Bd (by decide +kernel))
-    (by decide +kernel) {X}T (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel)
-    (by decide +kernel) {X}Ct (by decide +kernel)""")
+  exact {X}Sol.isEdgeData_of (by norm_num) ({X}Sol.bounded_of (by norm_num) {X}Bd {X}_bd) {X}_mem {X}T
+    {X}_three {X}_lt {X}_inj {X}_tight {X}_other {X}Ct {X}_cov""")
 w(f"""
 /-- The kinds of edges, by the Gram values (⟪n i, n j⟫, ⟪n i, n i⟫, ⟪n j, n j⟫) of their two faces. -/
-def {X}Kd : Fin {len(edges)} → Fin {len(kinds)} := ![""" + ", ".join(str(c) for c in kd) + f"""]
+""" + table(f"{X}Kd", len(edges), f"Fin {len(kinds)}", [str(c) for c in kd], "0") + f"""
 noncomputable def {X}Gg : Fin {len(kinds)} → ℝ := ![""" + ", ".join(t[0].lean() for t in kinds) + f"""]
 noncomputable def {X}GX : Fin {len(kinds)} → ℝ := ![""" + ", ".join(t[1].lean() for t in kinds) + f"""]
 noncomputable def {X}GY : Fin {len(kinds)} → ℝ := ![""" + ", ".join(t[2].lean() for t in kinds) + f"""]
