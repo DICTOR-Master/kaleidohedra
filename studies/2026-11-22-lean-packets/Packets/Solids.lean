@@ -42,18 +42,14 @@ lemma fin5_cases : ∀ k : Fin 5, k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 
 
 def pyrDSet : Set R3 := sol pyrDN pyrDB
 
-lemma pyrD_ind (e : Fin 10) : LinearIndependent ℝ ![pyrDN (pyrDFi e), pyrDN (pyrDFj e)] := by
-  obtain ⟨hg, hX, hY⟩ := pyrD_gram e
-  apply linIndep_of_gram
-  rw [hg, hX, hY]
-  have h5 := sqrt5_sq
-  rcases fin2_cases (pyrDKd e) with hk | hk <;> rw [hk] <;> simp [pyrDGg, pyrDGX, pyrDGY] <;> nlinarith [Real.sqrt_nonneg 5]
+lemma pyrD_ind (e : Fin 10) : LinearIndependent ℝ ![pyrDN (pyrDFi e), pyrDN (pyrDFj e)] :=
+  linIndep_of_gram (pyrD_gram_lt e)
 
 lemma pyrD_val (e : Fin 10) :
     Real.pi - InnerProductGeometry.angle (pyrDN (pyrDFi e)) (pyrDN (pyrDFj e)) = (![α, 2 * Real.pi / 3] : Fin 2 → ℝ) (pyrDKd e) := by
   obtain ⟨hg, hX, hY⟩ := pyrD_gram e
   rcases fin2_cases (pyrDKd e) with hk | hk <;> rw [hk] at hg hX hY ⊢ <;>
-    simp only [pyrDGg, pyrDGX, pyrDGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+    simp only [pyrDGg, pyrDGX, pyrDGY, Matrix.cons_val_zero, Matrix.cons_val_one] at hg hX hY ⊢
   · exact val_pyrDBase hg hX hY
   · exact val_pyrDSide hg hX hY
 
@@ -63,7 +59,7 @@ theorem pyrD_edgeAngle (θ : ℝ) : EdgeAngle pyrDSet θ ↔ θ ∈ pyrD := by
   constructor
   · rintro ⟨e, rfl⟩
     rw [pyrD_val]
-    rcases fin2_cases (pyrDKd e) with hk | hk <;> rw [hk] <;> simp
+    rcases fin2_cases (pyrDKd e) with hk | hk <;> simp [hk]
   · intro h
     simp only [List.mem_cons, List.not_mem_nil, or_false] at h
     rcases h with rfl | rfl
@@ -75,18 +71,14 @@ theorem pyrD_edgeAngle (θ : ℝ) : EdgeAngle pyrDSet θ ↔ θ ∈ pyrD := by
 
 def tiSet : Set R3 := sol tiN tiB
 
-lemma ti_ind (e : Fin 90) : LinearIndependent ℝ ![tiN (tiFi e), tiN (tiFj e)] := by
-  obtain ⟨hg, hX, hY⟩ := ti_gram e
-  apply linIndep_of_gram
-  rw [hg, hX, hY]
-  have h5 := sqrt5_sq
-  rcases fin2_cases (tiKd e) with hk | hk <;> rw [hk] <;> simp [tiGg, tiGX, tiGY] <;> nlinarith [Real.sqrt_nonneg 5]
+lemma ti_ind (e : Fin 90) : LinearIndependent ℝ ![tiN (tiFi e), tiN (tiFj e)] :=
+  linIndep_of_gram (ti_gram_lt e)
 
 lemma ti_val (e : Fin 90) :
     Real.pi - InnerProductGeometry.angle (tiN (tiFi e)) (tiN (tiFj e)) = (![3 * Real.pi / 4 - α + β, 3 * Real.pi / 2 - 2 * β] : Fin 2 → ℝ) (tiKd e) := by
   obtain ⟨hg, hX, hY⟩ := ti_gram e
   rcases fin2_cases (tiKd e) with hk | hk <;> rw [hk] at hg hX hY ⊢ <;>
-    simp only [tiGg, tiGX, tiGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+    simp only [tiGg, tiGX, tiGY, Matrix.cons_val_zero, Matrix.cons_val_one] at hg hX hY ⊢
   · exact val_pentHex hg hX hY
   · exact val_hexHex hg hX hY
 
@@ -96,7 +88,7 @@ theorem ti_edgeAngle (θ : ℝ) : EdgeAngle tiSet θ ↔ θ ∈ ti := by
   constructor
   · rintro ⟨e, rfl⟩
     rw [ti_val]
-    rcases fin2_cases (tiKd e) with hk | hk <;> rw [hk] <;> simp
+    rcases fin2_cases (tiKd e) with hk | hk <;> simp [hk]
   · intro h
     simp only [List.mem_cons, List.not_mem_nil, or_false] at h
     rcases h with rfl | rfl
@@ -108,18 +100,14 @@ theorem ti_edgeAngle (θ : ℝ) : EdgeAngle tiSet θ ↔ θ ∈ ti := by
 
 def pyrISet : Set R3 := sol pyrIN pyrIB
 
-lemma pyrI_ind (e : Fin 6) : LinearIndependent ℝ ![pyrIN (pyrIFi e), pyrIN (pyrIFj e)] := by
-  obtain ⟨hg, hX, hY⟩ := pyrI_gram e
-  apply linIndep_of_gram
-  rw [hg, hX, hY]
-  have h5 := sqrt5_sq
-  rcases fin2_cases (pyrIKd e) with hk | hk <;> rw [hk] <;> simp [pyrIGg, pyrIGX, pyrIGY] <;> nlinarith [Real.sqrt_nonneg 5]
+lemma pyrI_ind (e : Fin 6) : LinearIndependent ℝ ![pyrIN (pyrIFi e), pyrIN (pyrIFj e)] :=
+  linIndep_of_gram (pyrI_gram_lt e)
 
 lemma pyrI_val (e : Fin 6) :
     Real.pi - InnerProductGeometry.angle (pyrIN (pyrIFi e)) (pyrIN (pyrIFj e)) = (![3 * Real.pi / 4 - β, 2 * Real.pi / 5] : Fin 2 → ℝ) (pyrIKd e) := by
   obtain ⟨hg, hX, hY⟩ := pyrI_gram e
   rcases fin2_cases (pyrIKd e) with hk | hk <;> rw [hk] at hg hX hY ⊢ <;>
-    simp only [pyrIGg, pyrIGX, pyrIGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+    simp only [pyrIGg, pyrIGX, pyrIGY, Matrix.cons_val_zero, Matrix.cons_val_one] at hg hX hY ⊢
   · exact val_pyrIBase hg hX hY
   · exact val_pyrISide hg hX hY
 
@@ -129,7 +117,7 @@ theorem pyrI_edgeAngle (θ : ℝ) : EdgeAngle pyrISet θ ↔ θ ∈ pyrI := by
   constructor
   · rintro ⟨e, rfl⟩
     rw [pyrI_val]
-    rcases fin2_cases (pyrIKd e) with hk | hk <;> rw [hk] <;> simp
+    rcases fin2_cases (pyrIKd e) with hk | hk <;> simp [hk]
   · intro h
     simp only [List.mem_cons, List.not_mem_nil, or_false] at h
     rcases h with rfl | rfl
@@ -141,18 +129,14 @@ theorem pyrI_edgeAngle (θ : ℝ) : EdgeAngle pyrISet θ ↔ θ ∈ pyrI := by
 
 def tdSet : Set R3 := sol tdN tdB
 
-lemma td_ind (e : Fin 90) : LinearIndependent ℝ ![tdN (tdFi e), tdN (tdFj e)] := by
-  obtain ⟨hg, hX, hY⟩ := td_gram e
-  apply linIndep_of_gram
-  rw [hg, hX, hY]
-  have h5 := sqrt5_sq
-  rcases fin2_cases (tdKd e) with hk | hk <;> rw [hk] <;> simp [tdGg, tdGX, tdGY] <;> nlinarith [Real.sqrt_nonneg 5]
+lemma td_ind (e : Fin 90) : LinearIndependent ℝ ![tdN (tdFi e), tdN (tdFj e)] :=
+  linIndep_of_gram (td_gram_lt e)
 
 lemma td_val (e : Fin 90) :
     Real.pi - InnerProductGeometry.angle (tdN (tdFi e)) (tdN (tdFj e)) = (![2 * α, 3 * Real.pi / 4 - α + β] : Fin 2 → ℝ) (tdKd e) := by
   obtain ⟨hg, hX, hY⟩ := td_gram e
   rcases fin2_cases (tdKd e) with hk | hk <;> rw [hk] at hg hX hY ⊢ <;>
-    simp only [tdGg, tdGX, tdGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+    simp only [tdGg, tdGX, tdGY, Matrix.cons_val_zero, Matrix.cons_val_one] at hg hX hY ⊢
   · exact val_decDec hg hX hY
   · exact val_pentHex hg hX hY
 
@@ -162,7 +146,7 @@ theorem td_edgeAngle (θ : ℝ) : EdgeAngle tdSet θ ↔ θ ∈ td := by
   constructor
   · rintro ⟨e, rfl⟩
     rw [td_val]
-    rcases fin2_cases (tdKd e) with hk | hk <;> rw [hk] <;> simp
+    rcases fin2_cases (tdKd e) with hk | hk <;> simp [hk]
   · intro h
     simp only [List.mem_cons, List.not_mem_nil, or_false] at h
     rcases h with rfl | rfl
@@ -174,18 +158,14 @@ theorem td_edgeAngle (θ : ℝ) : EdgeAngle tdSet θ ↔ θ ∈ td := by
 
 def dhSet : Set R3 := sol dhN dhB
 
-lemma dh_ind (e : Fin 30) : LinearIndependent ℝ ![dhN (dhFi e), dhN (dhFj e)] := by
-  obtain ⟨hg, hX, hY⟩ := dh_gram e
-  apply linIndep_of_gram
-  rw [hg, hX, hY]
-  have h5 := sqrt5_sq
-  rw [show dhKd e = 0 from Subsingleton.elim _ _] <;> simp [dhGg, dhGX, dhGY] <;> nlinarith [Real.sqrt_nonneg 5]
+lemma dh_ind (e : Fin 30) : LinearIndependent ℝ ![dhN (dhFi e), dhN (dhFj e)] :=
+  linIndep_of_gram (dh_gram_lt e)
 
 lemma dh_val (e : Fin 30) :
     Real.pi - InnerProductGeometry.angle (dhN (dhFi e)) (dhN (dhFj e)) = (![2 * α] : Fin 1 → ℝ) (dhKd e) := by
   obtain ⟨hg, hX, hY⟩ := dh_gram e
   rw [show dhKd e = 0 from Subsingleton.elim _ _] at hg hX hY ⊢
-  simp only [dhGg, dhGX, dhGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+  simp only [dhGg, dhGX, dhGY, Matrix.cons_val_zero] at hg hX hY ⊢
   exact val_decDec hg hX hY
 
 /-- **The dihedral angles of the dodecahedron, read from the set, are exactly its row of Table 1.** -/
@@ -194,7 +174,7 @@ theorem dh_edgeAngle (θ : ℝ) : EdgeAngle dhSet θ ↔ θ ∈ dod := by
   constructor
   · rintro ⟨e, rfl⟩
     rw [dh_val]
-    rw [show dhKd e = 0 from Subsingleton.elim _ _] <;> simp
+    simp [show dhKd e = 0 from Subsingleton.elim _ _]
   · intro h
     simp only [List.mem_cons, List.not_mem_nil, or_false] at h
     rcases h with rfl
@@ -205,18 +185,14 @@ theorem dh_edgeAngle (θ : ℝ) : EdgeAngle dhSet θ ↔ θ ∈ dod := by
 
 def ihSet : Set R3 := sol ihN ihB
 
-lemma ih_ind (e : Fin 30) : LinearIndependent ℝ ![ihN (ihFi e), ihN (ihFj e)] := by
-  obtain ⟨hg, hX, hY⟩ := ih_gram e
-  apply linIndep_of_gram
-  rw [hg, hX, hY]
-  have h5 := sqrt5_sq
-  rw [show ihKd e = 0 from Subsingleton.elim _ _] <;> simp [ihGg, ihGX, ihGY] <;> nlinarith [Real.sqrt_nonneg 5]
+lemma ih_ind (e : Fin 30) : LinearIndependent ℝ ![ihN (ihFi e), ihN (ihFj e)] :=
+  linIndep_of_gram (ih_gram_lt e)
 
 lemma ih_val (e : Fin 30) :
     Real.pi - InnerProductGeometry.angle (ihN (ihFi e)) (ihN (ihFj e)) = (![3 * Real.pi / 2 - 2 * β] : Fin 1 → ℝ) (ihKd e) := by
   obtain ⟨hg, hX, hY⟩ := ih_gram e
   rw [show ihKd e = 0 from Subsingleton.elim _ _] at hg hX hY ⊢
-  simp only [ihGg, ihGX, ihGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+  simp only [ihGg, ihGX, ihGY, Matrix.cons_val_zero] at hg hX hY ⊢
   exact val_hexHex hg hX hY
 
 /-- **The dihedral angles of the icosahedron, read from the set, are exactly its row of Table 1.** -/
@@ -225,7 +201,7 @@ theorem ih_edgeAngle (θ : ℝ) : EdgeAngle ihSet θ ↔ θ ∈ ico := by
   constructor
   · rintro ⟨e, rfl⟩
     rw [ih_val]
-    rw [show ihKd e = 0 from Subsingleton.elim _ _] <;> simp
+    simp [show ihKd e = 0 from Subsingleton.elim _ _]
   · intro h
     simp only [List.mem_cons, List.not_mem_nil, or_false] at h
     rcases h with rfl
@@ -236,18 +212,14 @@ theorem ih_edgeAngle (θ : ℝ) : EdgeAngle ihSet θ ↔ θ ∈ ico := by
 
 def toSet : Set R3 := sol toN toB
 
-lemma to_ind (e : Fin 36) : LinearIndependent ℝ ![toN (toFi e), toN (toFj e)] := by
-  obtain ⟨hg, hX, hY⟩ := to_gram e
-  apply linIndep_of_gram
-  rw [hg, hX, hY]
-  have h5 := sqrt5_sq
-  rcases fin2_cases (toKd e) with hk | hk <;> rw [hk] <;> simp [toGg, toGX, toGY] <;> nlinarith [Real.sqrt_nonneg 5]
+lemma to_ind (e : Fin 36) : LinearIndependent ℝ ![toN (toFi e), toN (toFj e)] :=
+  linIndep_of_gram (to_gram_lt e)
 
 lemma to_val (e : Fin 36) :
     Real.pi - InnerProductGeometry.angle (toN (toFi e)) (toN (toFj e)) = (![Real.pi / 2 + γ, Real.pi - 2 * γ] : Fin 2 → ℝ) (toKd e) := by
   obtain ⟨hg, hX, hY⟩ := to_gram e
   rcases fin2_cases (toKd e) with hk | hk <;> rw [hk] at hg hX hY ⊢ <;>
-    simp only [toGg, toGX, toGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+    simp only [toGg, toGX, toGY, Matrix.cons_val_zero, Matrix.cons_val_one] at hg hX hY ⊢
   · exact val_toSqHex hg hX hY
   · exact val_toHexHex hg hX hY
 
@@ -257,7 +229,7 @@ theorem to_edgeAngle (θ : ℝ) : EdgeAngle toSet θ ↔ θ ∈ toA := by
   constructor
   · rintro ⟨e, rfl⟩
     rw [to_val]
-    rcases fin2_cases (toKd e) with hk | hk <;> rw [hk] <;> simp
+    rcases fin2_cases (toKd e) with hk | hk <;> simp [hk]
   · intro h
     simp only [List.mem_cons, List.not_mem_nil, or_false] at h
     rcases h with rfl | rfl
@@ -269,18 +241,14 @@ theorem to_edgeAngle (θ : ℝ) : EdgeAngle toSet θ ↔ θ ∈ toA := by
 
 def tcoSet : Set R3 := sol tcoN tcoB
 
-lemma tco_ind (e : Fin 72) : LinearIndependent ℝ ![tcoN (tcoFi e), tcoN (tcoFj e)] := by
-  obtain ⟨hg, hX, hY⟩ := tco_gram e
-  apply linIndep_of_gram
-  rw [hg, hX, hY]
-  have h5 := sqrt5_sq
-  rcases fin3_cases (tcoKd e) with hk | hk | hk <;> rw [hk] <;> simp [tcoGg, tcoGX, tcoGY] <;> nlinarith [Real.sqrt_nonneg 5]
+lemma tco_ind (e : Fin 72) : LinearIndependent ℝ ![tcoN (tcoFi e), tcoN (tcoFj e)] :=
+  linIndep_of_gram (tco_gram_lt e)
 
 lemma tco_val (e : Fin 72) :
     Real.pi - InnerProductGeometry.angle (tcoN (tcoFi e)) (tcoN (tcoFj e)) = (![Real.pi - γ, 3 * Real.pi / 4, Real.pi / 2 + γ] : Fin 3 → ℝ) (tcoKd e) := by
   obtain ⟨hg, hX, hY⟩ := tco_gram e
   rcases fin3_cases (tcoKd e) with hk | hk | hk <;> rw [hk] at hg hX hY ⊢ <;>
-    simp only [tcoGg, tcoGX, tcoGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
+    simp only [tcoGg, tcoGX, tcoGY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢
   · exact val_tcoSqHex hg hX hY
   · exact val_tcoSqOct hg hX hY
   · exact val_tcoHexOct hg hX hY
@@ -291,7 +259,7 @@ theorem tco_edgeAngle (θ : ℝ) : EdgeAngle tcoSet θ ↔ θ ∈ tcoA := by
   constructor
   · rintro ⟨e, rfl⟩
     rw [tco_val]
-    rcases fin3_cases (tcoKd e) with hk | hk | hk <;> rw [hk] <;> simp
+    rcases fin3_cases (tcoKd e) with hk | hk | hk <;> simp [hk]
   · intro h
     simp only [List.mem_cons, List.not_mem_nil, or_false] at h
     rcases h with rfl | rfl | rfl

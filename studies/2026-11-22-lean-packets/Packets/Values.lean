@@ -224,13 +224,13 @@ lemma val_decSqA (hg : ⟪u, v⟫ = (2 + 2 * √5)) (hX : ⟪u, u⟫ = (10 + 2 *
   val_sqAlpha hg hX hY (by positivity) (by positivity) (by norm_num)
     (by linear_combination (-16 / 5 : ℝ) * sqrt5_sq)
 
-lemma val_decSqB (hg : ⟪u, v⟫ = (6 + 2 * √5)) (hX : ⟪u, u⟫ = (10 + 2 * √5)) (hY : ⟪v, v⟫ = (6 + 2 * √5)) :
+lemma val_decSqB (hg : ⟪u, v⟫ = (12 + 4 * √5)) (hX : ⟪u, u⟫ = (10 + 2 * √5)) (hY : ⟪v, v⟫ = (24 + 8 * √5)) :
     Real.pi - InnerProductGeometry.angle u v = Real.pi / 2 + α :=
   val_sqAlpha hg hX hY (by positivity) (by positivity) (by positivity)
-    (by linear_combination (6 / 5 + 2 / 5 * √5 : ℝ) * sqrt5_sq)
+    (by linear_combination (24 / 5 + 8 / 5 * √5 : ℝ) * sqrt5_sq)
 
 /-- Hexagon–square of the truncated icosidodecahedron (two normal lengths). -/
-lemma val_hexSqA (hg : ⟪u, v⟫ = (6 + 2 * √5)) (hX : ⟪u, u⟫ = 12) (hY : ⟪v, v⟫ = (6 + 2 * √5)) :
+lemma val_hexSqA (hg : ⟪u, v⟫ = (12 + 4 * √5)) (hX : ⟪u, u⟫ = 12) (hY : ⟪v, v⟫ = (24 + 8 * √5)) :
     Real.pi - InnerProductGeometry.angle u v = 5 * Real.pi / 4 - β :=
   val_sqBeta hg hX hY (by positivity) (by norm_num) (by positivity) (by ring)
 

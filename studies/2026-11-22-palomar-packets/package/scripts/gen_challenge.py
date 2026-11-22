@@ -22,9 +22,9 @@ from pathlib import Path
 PKG = Path(__file__).resolve().parent.parent
 LIBDIR = PKG / "library"
 NS = "DehnPackets"
-SOLIDS = ["pyrD", "ti", "pyrI", "td", "dh", "ih", "to", "tco"]
+SOLIDS = ["pyrD", "ti", "pyrI", "td", "dh", "ih", "to", "tco", "tid"]
 GEN = {"pyrD": "GenPyrD", "ti": "GenTI", "pyrI": "GenPyrI", "td": "GenTD", "dh": "GenDH", "ih": "GenIH",
-       "to": "GenTO", "tco": "GenTCO"}
+       "to": "GenTO", "tco": "GenTCO", "tid": "GenTID"}
 DEFS = [
     ("Canon/Dehn2Poly", ["sol", "IsPoly"]),
     ("Canon/Dehn2Local", ["tcone", "linSpace", "wedgeSet", "wedgeAngle"]),

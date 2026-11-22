@@ -5,27 +5,21 @@ How the Fullerene Star Fills Space", DICTO DOI 10.5281/zenodo.24411660), followi
 1-4, CHECKLIST). Source: the prepared repository `~/dehn-packets-lean` at commit ddb5f59 (study 2026-11-22-lean-packets).
 Nothing is created on GitHub, pushed or dispatched: that is DICTO's step.
 
-## Tuesday resume (written 22 Nov, tokens out)
-- DONE and passing (entry `~/dehn-packets-lean`, commits d84010c + a9315d3, not pushed): build, axioms (3 standard),
-  comparator all three kernels, controls a/b/c rejected, preflight_checks.py FINAL ok.
-- DICTO 22 Nov "do all possible fixes": NOT started (no edits made). Left:
-  (1) 63 warnings in the library (Solids.lean 47 unused simp args / `<;>` style, Copies.lean 8 deprecated
-  `if_pos`/`if_neg` -> `ite_eq_left`/`ite_eq_right`, 1 unused `inner3` simp arg per Gen file; fix in
-  gen/mk_solids.py, gen/gen_pieces.py and the Copies source; Canon files gave no warnings).
-  (2) con-ron about 25 min of Palomar's 30 (comparator 52:42 at 16 CPUs). The Gen* files dominate: their
-  .olean.private are MB-sized (GenTO 11.8 MB, GenDH 9.6 MB; TI/TD/TCO larger) against about 0.1-0.25 MB per Canon
-  module; the `fin_cases <;> simp <;> grind` slack/sign/cover lemmas are the suspects. Next: measure term size per
-  lemma family (scratch script failed on `String.dropRightWhile`; use `dropRightWhile` from `String.Slice`, or
-  group by prefix without it), then shrink the largest family (e.g. one Q(√5) identity lemma per value instead of
-  per-corner grind). Target con-ron <= 15 min. Mirror every fix to studies/2026-11-22-lean-packets.
-  (3) Standard profile (4 CPUs, 14 GB): the build was stopped twice by SIGTERM (exit 143), both times during
-  the large Gen modules (jobs packets-entry and packets-standard, FAILED). Most likely the 14 GB memory cap
-  (systemd stops the scope; namespace build peak was 19.38 GiB with up to 10 Lean processes). Not blocking:
-  Palomar ran the Dehn Canon on the namespace profile (16 CPUs, 32 GB), where this entry fits. To fit standard:
-  smaller Gen proof terms (same work as (2)), or chain the heavy Gen modules by imports (Yantra lesson).
-- Next step: do (1) and (2) in a fresh copy `~/lean/packets-fix` (packages
-  hard-linked from packets-entry), rerun `package/scripts/run_checks.sh` as one dbb job, reassemble with the kit
-  (assemble_entry.py --git into a fresh folder, swap with ~/dehn-packets-lean), preflight_checks.py.
+## Resume (22 Nov, exact-code generator; watched job `packets-fit` running)
+- WHAT CHANGED: the generator (gen/gen_pieces.py, here and in studies/2026-11-22-lean-packets) now writes each solid as
+  integer codes in Z[√d] (`Packets/Exact.lean`: `Zd`, `ev`, `zpos`, `Solid`, `Cert`) and proves `IsEdgeData`,
+  boundedness, interior point, Gram values and independence of the normals from tables checked by `decide +kernel`
+  (one generic soundness proof each). The per-corner `fin_cases <;> simp <;> grind` slack/sign/cover lemmas are gone.
+  Measured before (GenTO): sign 414k, cover 276k, slack 267k proof objects; after: GenTO 159 lines (was 1806),
+  .olean.private 1.8 MB (was 12.1 MB); the eight solids plus Solids build in 38 s on the host.
+- The truncated icosidodecahedron is in (`GenTID.lean`, `SolidTID.lean`; helper in theorem4a/4b_copies; gen_challenge.py
+  SOLIDS + "tid"). Warnings fixed: Copies `if_pos`/`if_neg` -> `↓reduceIte`; Solids unused simp args and `<;>`;
+  generated files set the unused-tactic/seq-focus linters off as the Canon's generated files do.
+- JOB `packets-fit` (plan ~/dicto-alerts/plans/packets-fit.plan, cap 10 h, script package/scripts/run_fit_tid.sh):
+  TID generation -> reference build -> library refresh (Canon imports renamed) -> gen_challenge -> run_checks.sh
+  (namespace build, axioms, comparator, controls, standard profile) -> split con-ron timing. FINAL ok only if checks
+  pass, standard profile passes and con-ron <= 15 min. Check: `tr -d "\000" < ~/dbb-logs/packets-fit.log | tail` on
+  the compute host. Then: reassemble with the kit (assemble_entry.py --git) into a fresh folder, preflight_checks.py.
 
 ## Status box
 - Job `packets-entry` ended FINAL ok (standard profile part stopped, see resume box).

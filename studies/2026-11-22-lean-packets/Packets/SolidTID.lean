@@ -24,12 +24,8 @@ open PacketsGen
 
 def tidSet : Set R3 := sol tidN tidB
 
-lemma tid_ind (e : Fin 180) : LinearIndependent ℝ ![tidN (tidFi e), tidN (tidFj e)] := by
-  obtain ⟨hg, hX, hY⟩ := tid_gram e
-  apply linIndep_of_gram
-  rw [hg, hX, hY]
-  have h5 := sqrt5_sq
-  rcases fin5_cases (tidKd e) with hk | hk | hk | hk | hk <;> rw [hk] <;> simp [tidGg, tidGX, tidGY] <;> nlinarith [Real.sqrt_nonneg 5]
+lemma tid_ind (e : Fin 180) : LinearIndependent ℝ ![tidN (tidFi e), tidN (tidFj e)] :=
+  linIndep_of_gram (tid_gram_lt e)
 
 lemma tid_val (e : Fin 180) :
     Real.pi - InnerProductGeometry.angle (tidN (tidFi e)) (tidN (tidFj e)) = (![3 * Real.pi / 4 - α + β, Real.pi / 2 + α, Real.pi / 2 + α, 5 * Real.pi / 4 - β, 5 * Real.pi / 4 - β] : Fin 5 → ℝ) (tidKd e) := by
@@ -48,7 +44,7 @@ theorem tid_edgeAngle (θ : ℝ) : EdgeAngle tidSet θ ↔ θ ∈ tid := by
   constructor
   · rintro ⟨e, rfl⟩
     rw [tid_val]
-    rcases fin5_cases (tidKd e) with hk | hk | hk | hk | hk <;> rw [hk] <;> simp
+    rcases fin5_cases (tidKd e) with hk | hk | hk | hk | hk <;> simp [hk]
   · intro h
     simp only [List.mem_cons, List.not_mem_nil, or_false] at h
     rcases h with rfl | rfl | rfl

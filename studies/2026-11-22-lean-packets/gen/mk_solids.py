@@ -60,15 +60,19 @@ lemma fin5_cases : ∀ k : Fin 5, k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 
 ''']
 for (X, Sn, nE, vals, tab, L, real, nm) in S:
     nK = len(vals)
+    simp_args = {1: "Matrix.cons_val_zero", 2: "Matrix.cons_val_zero, Matrix.cons_val_one",
+                 3: "Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.head_cons, Matrix.tail_cons",
+                 5: "Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, "
+                    "Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons"}[nK]
     if nK >= 2:
         pat = " | ".join(["hk"] * nK)
-        kcase = f"rcases fin{nK}_cases ({X}Kd e) with {pat} <;> rw [hk]"
+        kcase_mem = f"rcases fin{nK}_cases ({X}Kd e) with {pat} <;> simp [hk]"
         kcase_at = f"rcases fin{nK}_cases ({X}Kd e) with {pat} <;> rw [hk] at hg hX hY ⊢"
     else:
-        kcase = f"rw [show {X}Kd e = 0 from Subsingleton.elim _ _]"
+        kcase_mem = f"simp [show {X}Kd e = 0 from Subsingleton.elim _ _]"
         kcase_at = f"rw [show {X}Kd e = 0 from Subsingleton.elim _ _] at hg hX hY ⊢"
     vec = "![" + ", ".join(tab) + "]"
-    simps = f"simp only [{X}Gg, {X}GX, {X}GY, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four, Matrix.head_cons, Matrix.tail_cons] at hg hX hY ⊢"
+    simps = f"simp only [{X}Gg, {X}GX, {X}GY, {simp_args}] at hg hX hY ⊢"
     if nK >= 2:
         body = f"""  {kcase_at} <;>
     {simps}
@@ -84,12 +88,8 @@ for (X, Sn, nE, vals, tab, L, real, nm) in S:
 
 def {Sn} : Set R3 := sol {X}N {X}B
 
-lemma {X}_ind (e : Fin {nE}) : LinearIndependent ℝ ![{X}N ({X}Fi e), {X}N ({X}Fj e)] := by
-  obtain ⟨hg, hX, hY⟩ := {X}_gram e
-  apply linIndep_of_gram
-  rw [hg, hX, hY]
-  have h5 := sqrt5_sq
-  {kcase} <;> simp [{X}Gg, {X}GX, {X}GY] <;> nlinarith [Real.sqrt_nonneg 5]
+lemma {X}_ind (e : Fin {nE}) : LinearIndependent ℝ ![{X}N ({X}Fi e), {X}N ({X}Fj e)] :=
+  linIndep_of_gram ({X}_gram_lt e)
 
 lemma {X}_val (e : Fin {nE}) :
     Real.pi - InnerProductGeometry.angle ({X}N ({X}Fi e)) ({X}N ({X}Fj e)) = ({vec} : Fin {nK} → ℝ) ({X}Kd e) := by
@@ -102,7 +102,7 @@ theorem {X}_edgeAngle (θ : ℝ) : EdgeAngle {Sn} θ ↔ θ ∈ {L} := by
   constructor
   · rintro ⟨e, rfl⟩
     rw [{X}_val]
-    {kcase} <;> simp
+    {kcase_mem}
   · intro h
     simp only [List.mem_cons, List.not_mem_nil, or_false] at h
     rcases h with {pats}

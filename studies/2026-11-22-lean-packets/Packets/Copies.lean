@@ -66,10 +66,10 @@ theorem theorem4a_copies {ι : Type*} (T : ConvexTiling ι R3)
       · exact absurd h h6
       · exact h
   obtain ⟨n1, n2, -⟩ := theorem4a_tiling T ang (fun j => (H j).1) (fun j => (H j).2) i
-  refine ⟨fun h => n1 (by simp only [ang, if_pos h]), fun h => ?_⟩
+  refine ⟨fun h => n1 (by simp only [ang, h, ↓reduceIte]), fun h => ?_⟩
   by_cases h1 : SimilarCopy (T.P i) pyrDSet
-  · exact n1 (by simp only [ang, if_pos h1])
-  · exact n2 (by simp only [ang, if_neg h1, if_pos h])
+  · exact n1 (by simp only [ang, h1, ↓reduceIte])
+  · exact n2 (by simp only [ang, h1, h, ↓reduceIte])
 
 /-- **Theorem 4 (b)** for tilings by copies, with no hypothesis. -/
 theorem theorem4b_copies {ι : Type*} (T : ConvexTiling ι R3)
@@ -106,9 +106,9 @@ theorem theorem4b_copies {ι : Type*} (T : ConvexTiling ι R3)
       · exact absurd h h6
       · exact h
   obtain ⟨n1, n2, -⟩ := theorem4b_tiling T ang (fun j => (H j).1) (fun j => (H j).2) i
-  refine ⟨fun h => n1 (by simp only [ang, if_pos h]), fun h => ?_⟩
+  refine ⟨fun h => n1 (by simp only [ang, h, ↓reduceIte]), fun h => ?_⟩
   by_cases h1 : SimilarCopy (T.P i) pyrISet
-  · exact n1 (by simp only [ang, if_pos h1])
-  · exact n2 (by simp only [ang, if_neg h1, if_pos h])
+  · exact n1 (by simp only [ang, h1, ↓reduceIte])
+  · exact n2 (by simp only [ang, h1, h, ↓reduceIte])
 
 end Packets
