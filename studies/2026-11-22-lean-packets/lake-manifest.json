@@ -3,12 +3,15 @@
  "packagesDir": ".lake/packages",
  "packages": [
   {
-   "type": "path",
+   "url": "https://github.com/DICTOR-Master/dehn-canon-lean",
+   "type": "git",
+   "subDir": null,
    "scope": "",
+   "rev": "9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57",
    "name": "DehnCanon",
    "manifestFile": "lake-manifest.json",
+   "inputRev": "9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57",
    "inherited": false,
-   "dir": "../palomar-dehn",
    "configFile": "lakefile.toml"
   },
   {

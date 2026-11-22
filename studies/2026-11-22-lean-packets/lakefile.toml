@@ -13,4 +13,5 @@ globs = ["Packets.*"]
 
 [[require]]
 name = "DehnCanon"
-path = "../palomar-dehn"
+git = "https://github.com/DICTOR-Master/dehn-canon-lean"
+rev = "9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57"

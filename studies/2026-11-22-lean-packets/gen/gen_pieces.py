@@ -4,10 +4,11 @@
 #   python3 gen_edges5.py ico > ico_block.lean
 # Every emitted fact is checked here exactly first; Lean checks it again.
 import sys
-exec(open('q5.py').read())
+FIELD = 2 if sys.argv[1] == 'tco' else 5
+exec(open('q2.py' if FIELD == 2 else 'q5.py').read())
 from fractions import Fraction as Fr
 
-LO, HI = Fr(2236, 1000), Fr(2237, 1000)   # LO < sqrt5 < HI
+LO, HI = (Fr(1414, 1000), Fr(1415, 1000)) if FIELD == 2 else (Fr(2236, 1000), Fr(2237, 1000))   # LO < sqrt5 < HI
 def pos(v):   # certified v > 0 from LO < sqrt5 < HI
     a, b = v.a, v.b
     return (a + b * (LO if b >= 0 else HI)) > 0
@@ -76,6 +77,28 @@ elif which == "to":
     for bse in ([z, Q(1), Q(2)], [z, Q(2), Q(1)]):
         for v in cyc(bse): P += signs(v)
     Zpt = [z, z, z]
+elif which == "tid":
+    X = "tid"
+    phi = Q(Fr(1, 2), Fr(1, 2)); iphi = phi - 1
+    sq = []
+    for v in cyc([Q(2), z, z]): sq += signs(v)
+    for v in cyc([Q(1), phi * phi, phi]): sq += signs(v)
+    N = ico_corners + dod_corners + sq
+    P = []
+    for bse in ([iphi, iphi, 3 + phi], [2 * iphi, phi, 1 + 2 * phi], [iphi, phi * phi, -1 + 3 * phi],
+                [2 * phi - 1, Q(2), 2 + phi], [phi, Q(3), 2 * phi]):
+        for v in cyc([bse[0], bse[2], bse[1]]): P += signs(v)
+    Zpt = [z, z, z]
+elif which == "tco":
+    X = "tco"
+    N = []
+    for v in cyc([Q(1), Q(1), z]): N += signs(v)
+    N += signs([Q(1), Q(1), Q(1)])
+    for v in cyc([Q(1), z, z]): N += signs(v)
+    P = []
+    for bse in ([Q(1), Q(1, 1), Q(1, 2)], [Q(1), Q(1, 2), Q(1, 1)]):
+        for v in cyc(bse): P += signs(v)
+    Zpt = [z, z, z]
 else:
     raise SystemExit("unknown piece")
 F, K = len(N), len(P)
@@ -135,24 +158,35 @@ for (i, j), k in vonly.items():
     vcert[(i, j)] = (k, c, cp, mu, a, a2, det(N[i], N[j], N[c]))
 # disjoint pairs: a n_i + a' n_j = sum mu_c n_c (mu_c >= 0, up to three faces), sum mu_c b_c < a b_i + a' b_j
 dcert = {}
+WEIGHTS = [(Q(1), Q(1)), (Q(2), Q(1)), (Q(1), Q(2)), (Q(3), Q(1)), (Q(1), Q(3)), (Q(3), Q(2)), (Q(2), Q(3)),
+           (Q(Fr(1, 2), Fr(1, 2)), Q(1)), (Q(1), Q(Fr(1, 2), Fr(1, 2)))]
 for (i, j) in disj:
     found = None
     if all(N[i][r] + N[j][r] == Q(0) for r in range(3)):
         found = (Q(1), Q(1), [])
     else:
-        tgt = [N[i][r] + N[j][r] for r in range(3)]
-        best = None
-        for tri in itertools.combinations([m for m in range(F) if m not in (i, j)], 3):
-            rows = [[N[m][r] for m in tri] for r in range(3)]
-            sol = solve3(rows, tgt)
-            if sol is None: continue
-            if not all(s == Q(0) or pos(s) for s in sol): continue
-            gap = B[i] + B[j] - sum((sol[t] * B[tri[t]] for t in range(3)), Q(0))
-            if not pos(gap): continue
-            cplx = sum(abs(s.a.numerator) + abs(s.b.numerator) + s.a.denominator + s.b.denominator for s in sol)
-            if best is None or cplx < best[0]:
-                best = (cplx, [(tri[t], sol[t]) for t in range(3) if sol[t] != Q(0)])
-        if best: found = (Q(1), Q(1), best[1])
+        nrm = lambda v: math.sqrt(sum(x.f() ** 2 for x in v))
+        dirv = [N[i][r].f() / nrm(N[i]) + N[j][r].f() / nrm(N[j]) for r in range(3)]
+        others = [m for m in range(F) if m not in (i, j)]
+        cand = sorted(others, key=lambda m: -sum(N[m][r].f() * dirv[r] for r in range(3)) / nrm(N[m]))[:16]
+        for (wa, wb) in WEIGHTS:
+            tgt = [wa * N[i][r] + wb * N[j][r] for r in range(3)]
+            best = None
+            for pool in (cand, others):
+                for tri in itertools.combinations(pool, 3):
+                    rows = [[N[m][r] for m in tri] for r in range(3)]
+                    sol = solve3(rows, tgt)
+                    if sol is None: continue
+                    if not all(s == Q(0) or pos(s) for s in sol): continue
+                    gap = wa * B[i] + wb * B[j] - sum((sol[t] * B[tri[t]] for t in range(3)), Q(0))
+                    if not pos(gap): continue
+                    cplx = sum(abs(s.a.numerator) + abs(s.b.numerator) + s.a.denominator + s.b.denominator for s in sol)
+                    if best is None or cplx < best[0]:
+                        best = (cplx, [(tri[t], sol[t]) for t in range(3) if sol[t] != Q(0)])
+                    if pool is others: break
+                if best: break
+            if best:
+                found = (wa, wb, best[1]); break
     assert found, (i, j)
     a, a2, lst = found
     while len(lst) < 3: lst = lst + [(i, Q(0))]
@@ -279,8 +313,9 @@ w("")
 for (i, j, c), D in sorted(inds.items()):
     w(f"""lemma {X}_ind_{i}_{j}_{c} (v : R3) (h1 : ⟪{X}N {i}, v⟫ = 0) (h2 : ⟪{X}N {j}, v⟫ = 0)
     (h3 : ⟪{X}N {c}, v⟫ = 0) : v = 0 :=
-  ind3 (D := {D.lean()}) (by have ht := sqrt5_sq; simp [{X}N]; grind) (by s5ne) v h1 h2 h3
+  ind3 (D := {D.lean()}) (by have ht := sqrt5_sq; simp [{X}N] <;> grind) (by s5ne) v h1 h2 h3
 """)
+i_cov0 = len(o)
 cov = f"{{x : R3}} (hx : x ∈ sol {X}N {X}B)"
 for i in range(F):
     for j in range(i + 1, F):
@@ -313,11 +348,12 @@ for i in range(F):
     (by
       have ht := sqrt5_sq
       have e : {a.lean()} * {X}B {i} + {a2.lean()} * {X}B {j} - ({m1.lean()} * {X}B {c1} + {m2.lean()} * {X}B {c2} +
-          {m3.lean()} * {X}B {c3}) = {gap.lean()} := by simp [{X}B]; grind
+          {m3.lean()} * {X}B {c3}) = {gap.lean()} := by simp [{X}B] <;> grind
       have h1 := sqrt5_gt; have h2 := sqrt5_lt
       linarith)
     hx hi hj).elim
 """)
+i_cov1 = len(o)
 lines = [f"""lemma {X}_cover_lt {cov} :
     ∀ i j : Fin {F}, i < j → ⟪{X}N i, x⟫ = {X}B i → ⟪{X}N j, x⟫ = {X}B j → {X}Cover x i j := by
   intro i j hij hi hj
@@ -451,7 +487,47 @@ lemma {X}_gram (e : Fin {len(edges)}) : ⟪{X}N ({X}Fi e), {X}N ({X}Fj e)⟫ = {
 w("\nend PacketsGen")
 for c, t in enumerate(kinds):
     print(f"-- kind {c}: gram {t} first edge {kd.index(c)} count {kd.count(c)}", file=sys.stderr)
-print("\n".join(o))
+out = "\n".join(o)
+if FIELD == 2:
+    out = (out.replace("√5", "√2").replace("sqrt5_sq", "pk_sqrt2_sq").replace("s5pos", "pk2pos")
+           .replace("s5nn", "pk2nn").replace("s5ne", "pk2ne").replace("sqrt5_gt", "pk_sqrt2_gt")
+           .replace("sqrt5_lt", "pk_sqrt2_lt"))
+    out = out.replace("set_option maxRecDepth 20000", """set_option maxRecDepth 20000
+
+lemma pk_sqrt2_sq : (√2 : ℝ) ^ 2 = 2 := Real.sq_sqrt (by norm_num)
+
+lemma pk_sqrt2_gt : (1414 / 1000 : ℝ) < √2 := (Real.lt_sqrt (by norm_num)).2 (by norm_num)
+
+lemma pk_sqrt2_lt : √2 < (1415 / 1000 : ℝ) := (Real.sqrt_lt' (by norm_num)).2 (by norm_num)
+
+/-- Signs of numbers a + b√2 from 1.414 < √2 < 1.415. -/
+macro "pk2pos" : tactic => `(tactic| (have h1 := pk_sqrt2_gt; have h3 := pk_sqrt2_lt; linarith))
+
+macro "pk2nn" : tactic => `(tactic| (have h1 := pk_sqrt2_gt; have h3 := pk_sqrt2_lt; linarith))
+
+macro "pk2ne" : tactic => `(tactic| (have h1 := pk_sqrt2_gt; have h3 := pk_sqrt2_lt; intro h; linarith))""", 1)
+if X == "tid":
+    hdr = o[0]
+    body = [x for x in o[1:i_cov0]]
+    covers = o[i_cov0:i_cov1]
+    tail = o[i_cov1:]
+    parts = [body]
+    cur = []; cnt = 0
+    for c in covers:
+        n = c.count("\n") + 1
+        if cnt + n > 8500 and cur:
+            parts.append(cur); cur = []; cnt = 0
+        cur.append(c); cnt += n
+    parts.append(cur)
+    parts.append(tail)
+    for k, part in enumerate(parts, 1):
+        h = hdr if k == 1 else hdr.replace("public import DehnCanon.Dehn7Dodeca", f"public import Packets.GenTID{k - 1}")
+        txt = h + "\n" + "\n".join(part)
+        if "end PacketsGen" not in txt: txt += "\n\nend PacketsGen\n"
+        open(f"../Packets/GenTID{k}.lean", "w").write(txt)
+    print(f"-- wrote {len(parts)} files", file=sys.stderr)
+else:
+    print(out)
 for (i, j, k, l) in edges:
     d2 = sum(((P[k][r] - P[l][r]) * (P[k][r] - P[l][r]) for r in range(3)), Q(0))
     g = dot(N[i], N[j]); X1 = dot(N[i], N[i]); Y1 = dot(N[j], N[j])

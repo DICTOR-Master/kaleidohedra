@@ -160,4 +160,32 @@ lemma val_toHexHex (hg : ⟪u, v⟫ = 1) (hX : ⟪u, u⟫ = 3) (hY : ⟪v, v⟫ 
   refine pi_sub_angle_eq hg hX hY (by linarith) (by linarith) ?_
   rw [Real.cos_pi_sub, cos_two_γ, Real.mul_self_sqrt (by norm_num)]
 
+/-- Square–hexagon of the truncated cuboctahedron. -/
+lemma val_tcoSqHex (hg : ⟪u, v⟫ = 2) (hX : ⟪u, u⟫ = 2) (hY : ⟪v, v⟫ = 3) :
+    Real.pi - InnerProductGeometry.angle u v = Real.pi - γ := by
+  have hpi := Real.pi_pos
+  have hg1 := γ_nonneg; have hg2 := γ_le
+  refine pi_sub_angle_eq hg hX hY (by linarith) (by linarith) ?_
+  rw [Real.cos_pi_sub, cos_γ, Real.sqrt_div (by norm_num : (0 : ℝ) ≤ 2), neg_inj,
+    div_eq_div_iff (by positivity) (by positivity), ← mul_assoc, Real.mul_self_sqrt (by norm_num)]
+
+/-- Square–octagon of the truncated cuboctahedron. -/
+lemma val_tcoSqOct (hg : ⟪u, v⟫ = 1) (hX : ⟪u, u⟫ = 2) (hY : ⟪v, v⟫ = 1) :
+    Real.pi - InnerProductGeometry.angle u v = 3 * Real.pi / 4 := by
+  have hpi := Real.pi_pos
+  refine pi_sub_angle_eq hg hX hY (by positivity) (by linarith) ?_
+  rw [show 3 * Real.pi / 4 = Real.pi - Real.pi / 4 by ring, Real.cos_pi_sub, Real.cos_pi_div_four,
+    Real.sqrt_one, mul_one, neg_inj, div_eq_div_iff (by norm_num) (by positivity), one_mul,
+    Real.mul_self_sqrt (by norm_num)]
+
+/-- Hexagon–octagon of the truncated cuboctahedron. -/
+lemma val_tcoHexOct (hg : ⟪u, v⟫ = 1) (hX : ⟪u, u⟫ = 3) (hY : ⟪v, v⟫ = 1) :
+    Real.pi - InnerProductGeometry.angle u v = Real.pi / 2 + γ := by
+  have hpi := Real.pi_pos
+  have hg1 := γ_nonneg; have hg2 := γ_le
+  refine pi_sub_angle_eq hg hX hY (by linarith) (by linarith) ?_
+  rw [show Real.pi / 2 + γ = γ + Real.pi / 2 by ring, Real.cos_add_pi_div_two, γ, Real.sin_arccos,
+    Real.sq_sqrt (by norm_num), Real.sqrt_one, mul_one, show (1 : ℝ) - 2 / 3 = 3⁻¹ by norm_num,
+    Real.sqrt_inv, one_div]
+
 end Packets
