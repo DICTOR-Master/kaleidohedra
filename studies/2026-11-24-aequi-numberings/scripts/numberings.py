@@ -208,7 +208,7 @@ def balanced(L):
         sol = sol1; v2 = None; b2 = None; s2 = "UNKNOWN (stage-1 numbering kept)"
     return dict(numbers=sol, corner_spread=v1, corner_spread_lower_bound=b1, corner_status="OPTIMAL" if c1 == cp_model.OPTIMAL else "FEASIBLE",
                 neighbour_spread=spread_of(sol, [nb[f] for f in range(N)]), neighbour_spread_lower_bound=b2 if b2 is not None else 0,
-                neighbour_status=s2 if s2 != "OPTIMAL" else "OPTIMAL", det_time=[T1, T2])
+                neighbour_status=s2 if s2 != "OPTIMAL" else "OPTIMAL", det_time=[T1, T2], workers=WORKERS, swap_steps=ITERS)
 
 def spread_of(num, groups):
     s = [sum(num[f] for f in g) for g in groups]; return max(s) - min(s)
@@ -248,9 +248,12 @@ def one(n, out):
     try: return one_(n, out)
     except Exception as ex: return n, "DIE FAILED %r" % (ex,)
 
+MODE = os.environ.get("MODE", "full")   # full | fast (all but balanced) | balanced (fill pending balanced)
 def one_(n, out):
     fn = os.path.join(out, "%04d.json" % n)
-    if os.path.exists(fn): return n, "skip"
+    if os.path.exists(fn):
+        r = json.load(open(fn))
+        if MODE != "balanced" or r["schemes"]["balanced"].get("status") != "pending": return n, "skip"
     t0 = time.time(); L = lattice(n); e = L["e"]; N = L["N"]
     res = dict(n=n, name=name_of(n), name_shown="%s (no. %d)" % (name_of(n), n), catalogue=e["name"] if e["s"] == "A" else None,
                group=e["g"], group_no=e.get("num"), N=N, corners=len(L["verts"]),
@@ -266,19 +269,26 @@ def one_(n, out):
         sch["opposite"] = dict(available=True, numbers=num); L["_opp_num"] = num
     else:
         sch["opposite"] = dict(available=False, reason="not centrally symmetric")
-    sch["balanced"] = balanced(L)
-    sch["spin_down"] = spin(L)
+    if MODE == "balanced":
+        old = r["schemes"]; assert old["plain"]["numbers"] == sch["plain"]["numbers"]
+        if L["opp"]: assert old["opposite"]["numbers"] == sch["opposite"]["numbers"]
+        sch["spin_down"] = old["spin_down"]; sch["balanced"] = balanced(L)
+    elif MODE == "fast":
+        sch["balanced"] = dict(status="pending"); sch["spin_down"] = spin(L)
+    else:
+        sch["balanced"] = balanced(L); sch["spin_down"] = spin(L)
     res["schemes"] = sch; res["seconds"] = round(time.time() - t0, 1)
     json.dump(res, open(fn + ".tmp", "w"), separators=(",", ":")); os.replace(fn + ".tmp", fn)
-    return n, "%s N=%d corner %d/%d %s spin %s" % (res["name"], N, sch["balanced"]["corner_spread"], sch["balanced"]["corner_spread_lower_bound"],
-                                                  sch["balanced"]["corner_status"], sch["spin_down"]["kind"])
+    b = sch["balanced"]
+    return n, "%s N=%d corner %s/%s %s spin %s" % (res["name"], N, b.get("corner_spread"), b.get("corner_spread_lower_bound"),
+                                                  b.get("corner_status", "pending"), sch["spin_down"]["kind"])
 
 if __name__ == "__main__":
     out = sys.argv[1]; os.makedirs(out, exist_ok=True)
     a = sys.argv[2:]; procs = 1
     if "--procs" in a: procs = int(a[a.index("--procs") + 1]); a = a[:a.index("--procs")]
     ids = list(range(int(a[0]), int(a[1]) + 1)) if a else list(range(1, len(D["dice"]) + 1))
-    ids.sort(key=lambda n: -D["dice"][n - 1]["N"])   # largest first, for even load
+    ids.sort(key=lambda n: D["dice"][n - 1]["N"] * (1 if MODE == "balanced" else -1))   # balanced: smallest first; else largest first
     from multiprocessing import Pool
     done = 0
     with Pool(procs) as P:

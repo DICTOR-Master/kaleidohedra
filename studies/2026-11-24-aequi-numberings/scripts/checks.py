@@ -58,7 +58,7 @@ for n in range(1, len(D["dice"]) + 1):
         adj.add(frozenset(two))
     nb = [[g for g in range(N) if frozenset((f, g)) in adj] for f in range(N)]
     sch = r["schemes"]
-    for k in ("plain", "balanced", "spin_down") + (("opposite",) if sch["opposite"]["available"] else ()):
+    for k in ("plain", "spin_down") + (("balanced",) if sch["balanced"].get("status") != "pending" else ()) + (("opposite",) if sch["opposite"]["available"] else ()):
         if sorted(sch[k]["numbers"]) != list(range(1, N + 1)): err(k + " not a bijection")
     if sch["plain"]["numbers"] != list(range(1, N + 1)): err("plain")
     cs = ROWS[n]["centrally_symmetric"] == "True"
@@ -68,13 +68,16 @@ for n in range(1, len(D["dice"]) + 1):
         for i in range(N):
             j = [k for k in range(N) if np.abs(nf[k] + nf[i]).max() < 1e-9]
             if len(j) != 1 or num[i] + num[j[0]] != N + 1: err("opposite sum")
-    b = sch["balanced"]; x = b["numbers"]
-    sv = [sum(x[f] for f in v) for v in cf]; sn = [sum(x[g] for g in nb[f]) for f in range(N)]
-    if max(sv) - min(sv) != b["corner_spread"] or max(sn) - min(sn) != b["neighbour_spread"]: err("balanced spreads")
-    if b["corner_spread_lower_bound"] > b["corner_spread"] or b["neighbour_spread_lower_bound"] > b["neighbour_spread"]: err("bound above value")
-    if (b["corner_status"] == "OPTIMAL") != (b["corner_spread_lower_bound"] == b["corner_spread"]): err("corner status vs bound")
-    if b["neighbour_status"] == "OPTIMAL" and b["neighbour_spread_lower_bound"] != b["neighbour_spread"]: err("neighbour status vs bound")
-    cnt["balanced_opt"] += b["corner_status"] == "OPTIMAL"; cnt["balanced_both_opt"] += b["corner_status"] == "OPTIMAL" and b["neighbour_status"] == "OPTIMAL"
+    b = sch["balanced"]
+    if b.get("status") == "pending": cnt["balanced_pending"] = cnt.get("balanced_pending", 0) + 1
+    else:
+        x = b["numbers"]
+        sv = [sum(x[f] for f in v) for v in cf]; sn = [sum(x[g] for g in nb[f]) for f in range(N)]
+        if max(sv) - min(sv) != b["corner_spread"] or max(sn) - min(sn) != b["neighbour_spread"]: err("balanced spreads")
+        if b["corner_spread_lower_bound"] > b["corner_spread"] or b["neighbour_spread_lower_bound"] > b["neighbour_spread"]: err("bound above value")
+        if (b["corner_status"] == "OPTIMAL") != (b["corner_spread_lower_bound"] == b["corner_spread"]): err("corner status vs bound")
+        if b["neighbour_status"] == "OPTIMAL" and b["neighbour_spread_lower_bound"] != b["neighbour_spread"]: err("neighbour status vs bound")
+        cnt["balanced_opt"] += b["corner_status"] == "OPTIMAL"; cnt["balanced_both_opt"] += b["corner_status"] == "OPTIMAL" and b["neighbour_status"] == "OPTIMAL"
     s = sch["spin_down"]; pos = {v: f for f, v in enumerate(s["numbers"])}
     for k in range(1, N):
         if frozenset((pos[k], pos[k + 1])) not in adj: err("spin-down step %d" % k)
@@ -85,4 +88,4 @@ for n in range(1, len(D["dice"]) + 1):
 if len(names) != cnt["dice"]: bad.append((0, "names not distinct"))
 print(cnt)
 for b_ in bad[:50]: print("FAIL", b_)
-print("FINAL ok" if not bad and cnt["dice"] == len(D["dice"]) else "FAIL %d problems" % len(bad))
+print("FINAL ok" if not bad and cnt["dice"] == len(D["dice"]) and not cnt.get("balanced_pending") else "FAIL %d problems" % len(bad))

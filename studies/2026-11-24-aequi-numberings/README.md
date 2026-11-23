@@ -4,6 +4,9 @@ For DICTO's Aequi picker (chosen 22 Nov: all four numberings, switchable per die
 App UI waits for DICTO's choice of syllable set (names below are a proposal).
 
 **Status: RUNNING** (see "Resume" below). Counts are filled in when all 1232 dice are done.
+Plain, opposite, spin-down and names: all 1232 dice done. Balanced: filled in die by die; a die not yet done has
+`"balanced": {"status": "pending"}`. The first 105 dice (largest N) ran with deterministic limits 120 + 40 (4 workers); the rest with
+8 + 4 (2 workers, 50000 swap steps), smallest N first; each die records its own limits (`det_time`).
 
 ## Data
 
@@ -34,7 +37,7 @@ recomputed at 70 digits: its planes pass through it (residual < 1e-45), every ot
    0, 2 on its lower-index neighbour on the cycle); if none is found, a Hamiltonian path (1 at the end with the lower face index), and
    `hamiltonian_cycle` says "proved absent" or "unknown".
 
-## Names (proposal for DICTO)
+## Names (APPROVED by DICTO 24 Nov)
 
 Each die's name is its picker number read digit by digit in goroawase syllables: 0 o/re/maru, 1 i/hi, 2 ni/fu, 3 mi/sa, 4 yo/shi,
 5 go/ko, 6 mu/ro, 7 na, 8 ya/ha, 9 ku (DICTO's candidate set, 22 Nov). **Rule:** the first reading of each digit, except that a
@@ -54,6 +57,8 @@ opposite = N + 1; balanced spreads recomputed, bound ≤ value, OPTIMAL only whe
 Each die is written to its own file as soon as it is done; finished dice are skipped on restart. To resume on the compute host:
 
     cd <k-research>/studies/2026-11-24-aequi-numberings
-    WORKERS=4 T1=120 T2=40 T3=20 ITERS=200000 python scripts/numberings.py data/dice --procs 6 && python scripts/checks.py . | tee logs/checks.out
+    MODE=balanced WORKERS=2 T1=8 T2=4 ITERS=50000 python scripts/numberings.py data/dice --procs 11 && python scripts/checks.py . | tee logs/checks.out
+
+(MODE=fast fills plain/opposite/spin-down for any missing die with balanced pending; MODE=balanced fills every pending balanced.)
 
 (Python with ortools, numpy, mpmath; the sibling study 2026-11-24-aequi-vacuus-scutoids and the two search studies must be present.)
