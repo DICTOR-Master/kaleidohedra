@@ -123,7 +123,7 @@ for name,(gens,u,axes,(m01,m12,m02)) in GROUPS.items():
         for row in g:
             for e in row: assert e.a.denominator==1 and e.b.denominator==1
     nkey={tuple(x.key() for x in n):z for z,n in enumerate(nt)}
-    perm=[[nkey[tuple((e*Q(F(1,4))).key() for e in mv(g,n))] for n in nt] for g in gm]
+    gperm=[[nkey[tuple((e*Q(F(1,4))).key() for e in mv(gm[rt[i][0]],n))] for n in nt] for i in range(3)]
     gkey={tuple(e.key() for row in g for e in row):x for x,g in enumerate(gm)}
     inv=[gkey[tuple(g[c][r].key() for r in range(3) for c in range(3))] for g in gm]
     val=[sum(1 for f in fv if v in f) for v in range(len(verts))]
@@ -188,9 +188,10 @@ def gm : List (List (List Q5)) :=
 def inv : List Nat :=
   {str(inv).replace(' ','')}
 
-/-- `perm[x][z]`: the symmetry of face `x` takes the normal of face `z` to that of face `perm[x][z]` -/
-def perm : List (List Nat) :=
-  {str(perm).replace(' ','')}
+/-- `gperm[i][z]`: the mirror of the edge of type `i` of face 0 takes the normal of face `z`
+to that of face `gperm[i][z]` -/
+def gperm : List (List Nat) :=
+  {str(gperm).replace(' ','')}
 
 end RollingLaw.Data.{name}
 """)

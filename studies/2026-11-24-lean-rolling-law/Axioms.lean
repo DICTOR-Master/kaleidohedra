@@ -43,3 +43,9 @@ open RollingLaw
 #print axioms H3.card_mirrors
 #print axioms H3.longest_crosses_each_once
 #print axioms mirrorsCrossed_swaps
+#print axioms A3.fair
+#print axioms A3.G_maps
+#print axioms B3.fair
+#print axioms B3.G_maps
+#print axioms H3.fair
+#print axioms H3.G_maps
