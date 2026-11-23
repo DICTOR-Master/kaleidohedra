@@ -2,7 +2,9 @@
 
 DICTO · study for the V SF A project (Vacuus, Scutoid Frusta, Aequus), row V: the Vacuus alone.
 
-**Conclusion.** Exactly computed (number fields, no rounding in any decision): the Vacuus of all 5 Platonic, 13 Archimedean and 13 Catalan solids and of the prisms, antiprisms, bipyramids and trapezohedra for n = 3 to 12 (71 rows); the 92 Johnson solids as a floating-point pilot (clear margins, not yet exact). A solid is of the **heart** kind exactly when it is centrally symmetric (Lemma 1). The dodecahedral permutahedron check holds **for the face-parallel plates** (31 = 15 + 10 + 6, the 15 being the 15 mirrors of H3, the 6 being the icosidodecahedron's Vacuus), but **not for the edge plates of the published definition**, which give 90 plates, none of them a mirror. Which reading DICTO means is question 1. The three permutahedra and their dual dice pass every exact check of the rolling law (Section 4).
+**Decisions of DICTO (24 Nov).** (1) The Vacuus is the edge-plate definition of #110. The face-parallel planes are a separate construction, not the Vacuus; their tables are kept and labelled as such. (2) Aequus is widened to include face-transitive dice, so the three permutahedron duals are Aequi. (3) Johnson solids: both centres, (a) corner centroid and (b) volume centroid, are computed and compared.
+
+**Conclusion.** Exactly computed (number fields, no rounding in any decision): the Vacuus of all 5 Platonic, 13 Archimedean and 13 Catalan solids and of the prisms, antiprisms, bipyramids and trapezohedra for n = 3 to 12 (71 rows); the 92 Johnson solids as a floating-point pilot (clear margins, not yet exact). A solid is of the **heart** kind exactly when it is centrally symmetric (Lemma 1). The Vacuus of the dodecahedral permutahedron has **90 plates** (60 + 30, all full sheets, none a mirror). The statement 31 = 15 + 10 + 6 (the 15 mirrors of H3; the 6 = the icosidodecahedron's Vacuus) holds for its **face-parallel planes**, a separate construction, not for its Vacuus. The three permutahedra and their dual dice pass every exact check of the rolling law (Section 4).
 
 Status: exact for Tables 1 and 2 and Section 4; Table 3 (Johnson) is a float pilot, to be made exact before any release.
 
@@ -10,7 +12,7 @@ Status: exact for Tables 1 and 2 and Section 4; Table 3 (Johnson) is a float pil
 
 From Walls of Silence (#110, Section 2), which widens #87 (fins to the edges) and #105 (central slices carrying two-faces): for a convex polytope X with centre O, each edge (a ridge, in 3D) spans with O a plane through O, its **plate**; the Vacuus is the set of plates, each with the edges on it. A plate is a **full sheet** if with each edge e it carries the opposite edge −e, a **shared sheet** if it carries two or more edges but is not full, a **single fin** if it carries one. The Vacuus is of the **heart** kind when every plate is a full sheet, **non-heart** when every plate is a single fin, **inherited heart** otherwise (DICTO's names).
 
-Also reported, because DICTO's V SF A page describes the plates as "one plate for each pair of parallel faces (or each face)" and the permutahedron check is stated that way: the **face plates**, the planes through O parallel to a face (one per pair of parallel faces, or per face). These coincide with the edge plates only for the rhombic dodecahedron and the rhombic triacontahedron.
+**Face-parallel planes (a separate construction, not the Vacuus).** The planes through O parallel to a face, one per pair of parallel faces (or per face). Called "face plates" in the tables and data files; they are not plates of the Vacuus. They coincide with the Vacuus plates only for the rhombic dodecahedron and the rhombic triacontahedron.
 
 The centre O is the corner centroid (#87); for Tables 1 and 2 it is the centre of the symmetry group. The **slice** of a plate is the polygon the plate cuts from the solid (corners of the solid on the plate plus crossings of edges); "regular" means equal sides and equal radii, both checked exactly.
 
@@ -51,11 +53,11 @@ The centre O is the corner centroid (#87); for Tables 1 and 2 it is the centre o
 | corners one per chamber; W transitive | yes | yes | yes |
 | each edge crosses exactly one Coxeter mirror, whose reflection swaps its ends | yes | yes | yes |
 | each 2m-gon face crosses the m mirrors through its axis, each twice; (st)^m = 1 | yes (m = 2, 3) | yes (2, 3, 4) | yes (2, 3, 5) |
-| edge plates (published definition) | 15: 12 hexagon slices + 3 octagon slices (the 3 on mirrors) | 36, none on a mirror | 90 (60 + 30), none on a mirror |
-| face plates | 7 = 3 (square, mirror) + 4 (hexagon) | 13 = 6 (square, mirror) + 4 (hexagon) + 3 (octagon, mirror) | 31 = 15 (square, mirror) + 10 (hexagon) + 6 (decagon) |
-| face plates that are Coxeter mirrors | 0 (its 3 mirror face plates are the coordinate mirrors of B3, not of A3) | 9 = all | 15 = all |
+| Vacuus plates (edge plates) | 15: 12 hexagon slices + 3 octagon slices (the 3 on mirrors) | 36, none on a mirror | 90 (60 + 30), none on a mirror |
+| face-parallel planes (not the Vacuus) | 7 = 3 (square, mirror) + 4 (hexagon) | 13 = 6 (square, mirror) + 4 (hexagon) + 3 (octagon, mirror) | 31 = 15 (square, mirror) + 10 (hexagon) + 6 (decagon) |
+| face-parallel planes that are Coxeter mirrors | 0 (its 3 mirror face plates are the coordinate mirrors of B3, not of A3) | 9 = all | 15 = all |
 
-**The dodecahedral permutahedron check (V SF A item 1).** Face plates: 31 = 15 parallel to the 30 squares + 10 parallel to the 20 hexagons + 6 parallel to the 12 decagons. The 15 square plates are exactly the 15 mirrors of H3 (each square is crossed by a 2-fold axis, and since −1 is in H3 the plane through O at right angles to a 2-fold axis is a mirror). The 120 corners lie one in each of the 120 chambers. Each of the 180 edges crosses exactly one square plate. The 6 decagon plates are exactly the 6 edge plates of the icosidodecahedron (its Vacuus, 6 regular decagons). The slices are not squares or decagons: a square plate cuts a 12-gon, a hexagon plate a 12-gon, a decagon plate a 20-gon. Under the published edge-plate definition the truncated icosidodecahedron has 90 plates, all full sheets of 2 edges, none a mirror.
+**The dodecahedral permutahedron check (V SF A item 1).** Its Vacuus has 90 plates, none a mirror. The statement holds for the face-parallel planes (not the Vacuus): 31 = 15 parallel to the 30 squares + 10 parallel to the 20 hexagons + 6 parallel to the 12 decagons. The 15 square plates are exactly the 15 mirrors of H3 (each square is crossed by a 2-fold axis, and since −1 is in H3 the plane through O at right angles to a 2-fold axis is a mirror). The 120 corners lie one in each of the 120 chambers. Each of the 180 edges crosses exactly one square plate. The 6 decagon plates are exactly the 6 edge plates of the icosidodecahedron (its Vacuus, 6 regular decagons). The slices are not squares or decagons: a square plate cuts a 12-gon, a hexagon plate a 12-gon, a decagon plate a 20-gon. So V SF A item 1 should read: "the face-parallel planes of the dodecahedral permutahedron …"; its Vacuus is the 90 edge plates.
 
 The 12 hexagon-slice and 3 octagon-slice edge plates of the truncated octahedron are #105's "15 central cards, three of them octagons in the coordinate planes", recomputed.
 
@@ -65,16 +67,16 @@ The 12 hexagon-slice and 3 octagon-slice edge plates of the truncated octahedron
 - rolling across any edge is one reflection, in the mirror holding that edge, and that reflection carries one face onto the other;
 - the wall types (three per face, carried from face to face by the rolls) are consistent, and round every corner two types alternate, k each, with (st)^k = 1 for k minimal: corners of valence 4, 6 (tetrakis hexahedron, k = 2, 3), 4, 6, 8 (disdyakis dodecahedron, k = 2, 3, 4), 4, 6, 10 (disdyakis triacontahedron, k = 2, 3, 5).
 
-**Aequus codes.** None of the three is in the Aequi catalogue of #111/#112: the Aequus definition requires m ≥ 2 kinds of face and face directions along the frame's symmetry axes; these dice have one kind of face (fair by symmetry) and face normals through chamber interiors, which are on no axis. They are not among the 30 face-transitive solids listed in `2026-11-19-aequi-complete/data/not-aequi.csv` either (question 3).
+**Aequi (widened definition).** With face-transitive dice admitted (DICTO, 24 Nov), the three are Aequi. Being fair by symmetry, they belong to the classical isohedral dice: a die is fair by symmetry exactly when it is face-transitive (Diaconis and Keller, "Fair dice", Amer. Math. Monthly 96 (1989) 337–339). They are not in the #111/#112 catalogue, which required two or more kinds of face and face directions along symmetry axes. Their codes are DICTO's to name; placeholders: Aequus A3-24 (tetrakis hexahedron), Aequus B3-48 (disdyakis dodecahedron), Aequus H3-120 (disdyakis triacontahedron).
 
-**The rolling law, stated for DICTO.** Let W be a finite reflection group of rank 3 with simple reflections s₁, s₂, s₃ and m_ij the order of s_i s_j, and let D be the dual of the W-permutahedron (its die). Then:
-1. (faces = group) the faces of D correspond one to one with the elements of W; the walls of each face carry the types 1, 2, 3;
-2. (one roll = one reflection) rolling D across an edge of type i takes the face of w to the face of w·s_i, and is the reflection in the mirror holding that edge;
-3. (corner moves) going round a corner where types i and j meet takes 2·m_ij rolls and gives (s_i s_j)^m_ij = 1; the corner has valence 2·m_ij;
-4. (shortest rolls) the fewest rolls from face u to face v is the number of mirrors separating them, which is the length of u⁻¹v;
-5. (Matsumoto's theorem) any two shortest roll sequences between the same two faces are joined by corner moves alone: replacing m_ij alternating rolls i, j, i, … by the m_ij rolls j, i, j, … round the same corner.
+**The rolling law (proposition for DICTO).** Let W be a finite reflection group of rank 3 (A3, B3 or H3) with simple reflections s₁, s₂, s₃, and let m_ij be the order of s_i s_j. Let A be the Aequus of W: the polar of the W-permutahedron (tetrakis hexahedron, disdyakis dodecahedron, disdyakis triacontahedron). Then:
+1. **Faces are the group.** The faces of A are the chambers of the mirrors of W, one each, so they correspond one to one with the elements of W. Each face has three edges of the three types 1, 2, 3.
+2. **One roll is one reflection.** Rolling A across an edge of type i takes the face of w to the face of w·s_i. As a motion of space it is the reflection in the mirror that holds that edge.
+3. **Corner relation.** A corner where edges of types i and j meet has valence 2·m_ij. Rolling once round it alternates the types i, j, and returns to the start: (s_i s_j)^m_ij = 1.
+4. **Shortest rolls.** The fewest rolls from face u to face v equals the number of mirrors separating the two faces, which is the length of u⁻¹v in the generators s₁, s₂, s₃.
+5. **Matsumoto's theorem.** Any two shortest roll sequences between the same two faces can be turned into one another by corner moves alone. A corner move replaces m_ij alternating rolls i, j, i, … by the m_ij rolls j, i, j, … that go round the same corner the other way.
 
-Items 1 to 3 are checked exactly here for A3, B3, H3. Items 4 and 5 are the standard theorems for reflection groups (Coxeter 1934; Matsumoto 1964; Tits 1969); the die reading is DICTO's. Not computed here.
+Items 1 to 3 are checked exactly here for A3, B3 and H3 (Section 4). Items 4 and 5 are standard theorems on reflection groups (Coxeter 1934; Matsumoto 1964; Tits 1969) and are not recomputed. The reading of them as rolling an Aequus is DICTO's.
 
 ## 5. LEADS
 
@@ -87,9 +89,9 @@ Items 1 to 3 are checked exactly here for A3, B3, H3. Items 4 and 5 are the stan
 
 ## 6. Questions for DICTO
 
-1. Which plates are the 3D Vacuus: the edge plates (#110's definition: plane through O and an edge), or the face plates ("one plate for each pair of parallel faces")? The dodecahedral permutahedron statement holds for the face plates (31) and fails for the edge plates (90). The two agree only for the rhombic dodecahedron and rhombic triacontahedron.
-2. Johnson solids with only an axis or plane of symmetry (56 of 92): is their centre the corner centroid (#87 convention, used here), or do they count as having no centre?
-3. The three Coxeter dice are fair by symmetry but outside the Aequus definition (one kind of face; faces not on symmetry axes). Should the Aequus family include them, under a code of their own?
+1. (Answered 24 Nov: the Vacuus is the edge-plate definition.) Do the face-parallel planes need a name of their own?
+2. (Answered 24 Nov: compute both the corner centroid and the volume centroid.)
+3. (Answered 24 Nov: Aequus widened to face-transitive dice.) Codes for the three: the placeholders above, or names of your choice.
 4. "Plate shape": reported here as the slice polygon the plate cuts. Did you mean the slice, or the face the plate is parallel to?
 
 ## Files
