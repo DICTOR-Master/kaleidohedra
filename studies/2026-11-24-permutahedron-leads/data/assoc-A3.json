@@ -1,0 +1,2591 @@
+{
+ "type": "A3",
+ "permutahedron": "truncated octahedron",
+ "W": 24,
+ "mirrors": 6,
+ "coxeter_matrix": [
+  [
+   1,
+   3,
+   2
+  ],
+  [
+   3,
+   1,
+   3
+  ],
+  [
+   2,
+   3,
+   1
+  ]
+ ],
+ "perm_facets": 14,
+ "results": {
+  "s1 s2 s3": {
+   "w0c": [
+    2,
+    1,
+    3,
+    2,
+    1,
+    2
+   ],
+   "commutation_class": 2,
+   "c_singletons": 8,
+   "kept_facets": 9,
+   "kept_by_sides": {
+    "4": 3,
+    "6": 6
+   },
+   "removed_facets": 5,
+   "removed_by_sides": {
+    "4": 3,
+    "6": 2
+   },
+   "removed_normals": [
+    [
+     4,
+     0.0,
+     -2.0,
+     0.0
+    ],
+    [
+     4,
+     0.0,
+     0.0,
+     -2.0
+    ],
+    [
+     4,
+     0.0,
+     2.0,
+     0.0
+    ],
+    [
+     6,
+     -1.0,
+     1.0,
+     -1.0
+    ],
+    [
+     6,
+     1.0,
+     -1.0,
+     -1.0
+    ]
+   ],
+   "vertices": 14,
+   "shared_vertices_with_perm": 8,
+   "f_vector": [
+    14,
+    21,
+    9
+   ],
+   "faces_by_sides": {
+    "5": 6,
+    "4": 3
+   },
+   "centroid": [
+    "0.0",
+    "0.0",
+    "0.0"
+   ],
+   "vacuus": {
+    "name": "A3 associahedron c=s1 s2 s3",
+    "V": 14,
+    "E": 21,
+    "F": 9,
+    "centrally_symmetric": false,
+    "mirrors": 0,
+    "plates": 16,
+    "kind": "inherited heart",
+    "plate_classes": [
+     {
+      "count": 4,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "5-gon (4 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "5-gon (3 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "5-gon (5 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "6-gon (6 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 2,
+      "sheet": "shared",
+      "slice": "5-gon (4 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "6-gon (4 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "edges_per_plate": 2,
+      "sheet": "full",
+      "slice": "6-gon (2 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "edges_per_plate": 2,
+      "sheet": "shared",
+      "slice": "5-gon (3 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "edges_per_plate": 2,
+      "sheet": "shared",
+      "slice": "7-gon (3 side lengths)",
+      "mirror": false
+     }
+    ],
+    "plates_on_mirrors": 0,
+    "face_plates": 6,
+    "face_plate_classes": [
+     {
+      "count": 2,
+      "faces": [
+       5,
+       5
+      ],
+      "slice": "5-gon (5 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "faces": [
+       5
+      ],
+      "slice": "5-gon (2 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "faces": [
+       4,
+       4
+      ],
+      "slice": "5-gon (3 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "faces": [
+       4
+      ],
+      "slice": "6-gon (2 side lengths)",
+      "mirror": false
+     }
+    ],
+    "face_plates_on_mirrors": 0,
+    "secs": 0.0
+   },
+   "symmetry": "order 2 (2 rotations, 0 mirrors, central inversion no), fixed space of dimension 1",
+   "fair": {
+    "face_orbits": 5,
+    "orbits": [
+     {
+      "faces": 2,
+      "sides": 5,
+      "solid_angle_over_4pi_corner_centroid": "0.179785948816411",
+      "solid_angle_over_4pi_volume_centroid": "0.218841216695209",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 2,
+      "sides": 4,
+      "solid_angle_over_4pi_corner_centroid": "0.0645696526937251",
+      "solid_angle_over_4pi_volume_centroid": "0.0682501594215523",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 2,
+      "sides": 5,
+      "solid_angle_over_4pi_corner_centroid": "0.130644398489864",
+      "solid_angle_over_4pi_volume_centroid": "0.114339025887706",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 2,
+      "sides": 5,
+      "solid_angle_over_4pi_corner_centroid": "0.10727952719877",
+      "solid_angle_over_4pi_volume_centroid": "0.0863585160606723",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 1,
+      "sides": 4,
+      "solid_angle_over_4pi_corner_centroid": "0.03544094560246",
+      "solid_angle_over_4pi_volume_centroid": "0.0244221638697208",
+      "fair_share": "0.111111111111111"
+     }
+    ],
+    "volume_centroid_is_corner_centroid": false,
+    "volume": "47.3333333333333",
+    "verdict": "5 face orbits; NOT fair: largest |solid angle/4pi - 1/9| about the volume centroid = 0.10773 (60-digit evaluation; certified unequal, gap >> 1e-50)"
+   },
+   "dual": {
+    "faces": 14,
+    "face_orbits": 7,
+    "orbits": [
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0859248578976956"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0399316490858917"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.118004830653536"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0480090474046787"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0931648601397523"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.057482377409223"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.057482377409223"
+     }
+    ],
+    "f_vector": [
+     9,
+     21,
+     14
+    ],
+    "verdict": "14 faces in 7 orbits; NOT fair: largest |solid angle/4pi - 1/14| = 0.0465763 (60 digits)"
+   },
+   "_distkey": "-9044417644275149337",
+   "_V": [
+    [
+     -2.0,
+     2.0,
+     -3.0
+    ],
+    [
+     -2.0,
+     -1.0,
+     0.0
+    ],
+    [
+     -2.0,
+     3.0,
+     -2.0
+    ],
+    [
+     -2.0,
+     0.0,
+     1.0
+    ],
+    [
+     2.0,
+     -3.0,
+     -2.0
+    ],
+    [
+     0.0,
+     -3.0,
+     0.0
+    ],
+    [
+     2.0,
+     -2.0,
+     -3.0
+    ],
+    [
+     2.0,
+     0.0,
+     1.0
+    ],
+    [
+     1.0,
+     0.0,
+     2.0
+    ],
+    [
+     2.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     3.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     2.0
+    ],
+    [
+     0.0,
+     -1.0,
+     2.0
+    ],
+    [
+     -1.0,
+     0.0,
+     2.0
+    ]
+   ],
+   "_faces": [
+    [
+     5,
+     1,
+     0,
+     6,
+     4
+    ],
+    [
+     2,
+     0,
+     1,
+     3
+    ],
+    [
+     12,
+     5,
+     4,
+     7,
+     8
+    ],
+    [
+     7,
+     4,
+     6,
+     9
+    ],
+    [
+     6,
+     0,
+     2,
+     10,
+     9
+    ],
+    [
+     11,
+     8,
+     7,
+     9,
+     10
+    ],
+    [
+     13,
+     3,
+     1,
+     5,
+     12
+    ],
+    [
+     11,
+     10,
+     2,
+     3,
+     13
+    ],
+    [
+     12,
+     8,
+     11,
+     13
+    ]
+   ],
+   "_perm_V": [
+    [
+     2.0,
+     1.0,
+     0.0
+    ],
+    [
+     1.0,
+     2.0,
+     0.0
+    ],
+    [
+     -1.0,
+     -2.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     2.0
+    ],
+    [
+     0.0,
+     1.0,
+     -2.0
+    ],
+    [
+     2.0,
+     0.0,
+     1.0
+    ],
+    [
+     2.0,
+     0.0,
+     -1.0
+    ],
+    [
+     -2.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     2.0,
+     1.0
+    ],
+    [
+     0.0,
+     2.0,
+     -1.0
+    ],
+    [
+     1.0,
+     0.0,
+     2.0
+    ],
+    [
+     1.0,
+     0.0,
+     -2.0
+    ],
+    [
+     0.0,
+     -2.0,
+     -1.0
+    ],
+    [
+     0.0,
+     -2.0,
+     1.0
+    ],
+    [
+     -1.0,
+     0.0,
+     -2.0
+    ],
+    [
+     -1.0,
+     0.0,
+     2.0
+    ],
+    [
+     -2.0,
+     1.0,
+     0.0
+    ],
+    [
+     2.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     -2.0
+    ],
+    [
+     0.0,
+     -1.0,
+     2.0
+    ],
+    [
+     -2.0,
+     0.0,
+     -1.0
+    ],
+    [
+     -2.0,
+     0.0,
+     1.0
+    ],
+    [
+     -1.0,
+     2.0,
+     0.0
+    ],
+    [
+     1.0,
+     -2.0,
+     0.0
+    ]
+   ],
+   "_perm_faces_removed": [
+    [
+     8,
+     1,
+     9,
+     22
+    ],
+    [
+     13,
+     2,
+     12,
+     23
+    ],
+    [
+     14,
+     4,
+     11,
+     18
+    ],
+    [
+     22,
+     9,
+     4,
+     14,
+     20,
+     16
+    ],
+    [
+     18,
+     11,
+     6,
+     17,
+     23,
+     12
+    ]
+   ],
+   "_perm_faces_kept": [
+    [
+     20,
+     7,
+     21,
+     16
+    ],
+    [
+     18,
+     12,
+     2,
+     7,
+     20,
+     14
+    ],
+    [
+     10,
+     5,
+     0,
+     1,
+     8,
+     3
+    ],
+    [
+     23,
+     17,
+     5,
+     10,
+     19,
+     13
+    ],
+    [
+     9,
+     1,
+     0,
+     6,
+     11,
+     4
+    ],
+    [
+     6,
+     0,
+     5,
+     17
+    ],
+    [
+     21,
+     15,
+     3,
+     8,
+     22,
+     16
+    ],
+    [
+     21,
+     7,
+     2,
+     13,
+     19,
+     15
+    ],
+    [
+     10,
+     3,
+     15,
+     19
+    ]
+   ]
+  },
+  "s3 s2 s1": {
+   "w0c": [
+    3,
+    1,
+    2,
+    3,
+    1,
+    3
+   ],
+   "commutation_class": 2,
+   "c_singletons": 8,
+   "kept_facets": 9,
+   "kept_by_sides": {
+    "4": 3,
+    "6": 6
+   },
+   "removed_facets": 5,
+   "removed_by_sides": {
+    "4": 3,
+    "6": 2
+   },
+   "removed_normals": [
+    [
+     4,
+     0.0,
+     -2.0,
+     0.0
+    ],
+    [
+     4,
+     0.0,
+     0.0,
+     2.0
+    ],
+    [
+     4,
+     0.0,
+     2.0,
+     0.0
+    ],
+    [
+     6,
+     -1.0,
+     1.0,
+     1.0
+    ],
+    [
+     6,
+     1.0,
+     -1.0,
+     1.0
+    ]
+   ],
+   "vertices": 14,
+   "shared_vertices_with_perm": 8,
+   "f_vector": [
+    14,
+    21,
+    9
+   ],
+   "faces_by_sides": {
+    "5": 6,
+    "4": 3
+   },
+   "centroid": [
+    "0.0",
+    "0.0",
+    "0.0"
+   ],
+   "vacuus": {
+    "name": "A3 associahedron c=s3 s2 s1",
+    "V": 14,
+    "E": 21,
+    "F": 9,
+    "centrally_symmetric": false,
+    "mirrors": 0,
+    "plates": 16,
+    "kind": "inherited heart",
+    "plate_classes": [
+     {
+      "count": 4,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "5-gon (4 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "5-gon (3 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "5-gon (5 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "6-gon (6 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 2,
+      "sheet": "shared",
+      "slice": "5-gon (4 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "6-gon (4 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "edges_per_plate": 2,
+      "sheet": "full",
+      "slice": "6-gon (2 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "edges_per_plate": 2,
+      "sheet": "shared",
+      "slice": "5-gon (3 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "edges_per_plate": 2,
+      "sheet": "shared",
+      "slice": "7-gon (3 side lengths)",
+      "mirror": false
+     }
+    ],
+    "plates_on_mirrors": 0,
+    "face_plates": 6,
+    "face_plate_classes": [
+     {
+      "count": 2,
+      "faces": [
+       5,
+       5
+      ],
+      "slice": "5-gon (5 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "faces": [
+       5
+      ],
+      "slice": "5-gon (2 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "faces": [
+       4,
+       4
+      ],
+      "slice": "5-gon (3 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "faces": [
+       4
+      ],
+      "slice": "6-gon (2 side lengths)",
+      "mirror": false
+     }
+    ],
+    "face_plates_on_mirrors": 0,
+    "secs": 0.0
+   },
+   "symmetry": "order 2 (2 rotations, 0 mirrors, central inversion no), fixed space of dimension 1",
+   "fair": {
+    "face_orbits": 5,
+    "orbits": [
+     {
+      "faces": 2,
+      "sides": 5,
+      "solid_angle_over_4pi_corner_centroid": "0.179785948816411",
+      "solid_angle_over_4pi_volume_centroid": "0.218841216695209",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 2,
+      "sides": 4,
+      "solid_angle_over_4pi_corner_centroid": "0.0645696526937251",
+      "solid_angle_over_4pi_volume_centroid": "0.0682501594215523",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 2,
+      "sides": 5,
+      "solid_angle_over_4pi_corner_centroid": "0.130644398489864",
+      "solid_angle_over_4pi_volume_centroid": "0.114339025887706",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 2,
+      "sides": 5,
+      "solid_angle_over_4pi_corner_centroid": "0.10727952719877",
+      "solid_angle_over_4pi_volume_centroid": "0.0863585160606723",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 1,
+      "sides": 4,
+      "solid_angle_over_4pi_corner_centroid": "0.03544094560246",
+      "solid_angle_over_4pi_volume_centroid": "0.0244221638697208",
+      "fair_share": "0.111111111111111"
+     }
+    ],
+    "volume_centroid_is_corner_centroid": false,
+    "volume": "47.3333333333333",
+    "verdict": "5 face orbits; NOT fair: largest |solid angle/4pi - 1/9| about the volume centroid = 0.10773 (60-digit evaluation; certified unequal, gap >> 1e-50)"
+   },
+   "dual": {
+    "faces": 14,
+    "face_orbits": 7,
+    "orbits": [
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0399316490858917"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0480090474046787"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0859248578976956"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.118004830653536"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.057482377409223"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.057482377409223"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0931648601397523"
+     }
+    ],
+    "f_vector": [
+     9,
+     21,
+     14
+    ],
+    "verdict": "14 faces in 7 orbits; NOT fair: largest |solid angle/4pi - 1/14| = 0.0465763 (60 digits)"
+   },
+   "_distkey": "-9044417644275149337",
+   "_V": [
+    [
+     -2.0,
+     -1.0,
+     0.0
+    ],
+    [
+     -2.0,
+     0.0,
+     -1.0
+    ],
+    [
+     -2.0,
+     2.0,
+     3.0
+    ],
+    [
+     -2.0,
+     3.0,
+     2.0
+    ],
+    [
+     -1.0,
+     0.0,
+     -2.0
+    ],
+    [
+     0.0,
+     -1.0,
+     -2.0
+    ],
+    [
+     0.0,
+     -3.0,
+     0.0
+    ],
+    [
+     2.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     3.0,
+     0.0
+    ],
+    [
+     2.0,
+     -2.0,
+     3.0
+    ],
+    [
+     2.0,
+     0.0,
+     -1.0
+    ],
+    [
+     0.0,
+     1.0,
+     -2.0
+    ],
+    [
+     1.0,
+     0.0,
+     -2.0
+    ],
+    [
+     2.0,
+     -3.0,
+     2.0
+    ]
+   ],
+   "_faces": [
+    [
+     7,
+     8,
+     3,
+     2,
+     9
+    ],
+    [
+     1,
+     0,
+     2,
+     3
+    ],
+    [
+     11,
+     4,
+     1,
+     3,
+     8
+    ],
+    [
+     2,
+     0,
+     6,
+     13,
+     9
+    ],
+    [
+     10,
+     7,
+     9,
+     13
+    ],
+    [
+     8,
+     7,
+     10,
+     12,
+     11
+    ],
+    [
+     6,
+     0,
+     1,
+     4,
+     5
+    ],
+    [
+     13,
+     6,
+     5,
+     12,
+     10
+    ],
+    [
+     5,
+     4,
+     11,
+     12
+    ]
+   ],
+   "_perm_V": [
+    [
+     2.0,
+     1.0,
+     0.0
+    ],
+    [
+     1.0,
+     2.0,
+     0.0
+    ],
+    [
+     -1.0,
+     -2.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     2.0
+    ],
+    [
+     0.0,
+     1.0,
+     -2.0
+    ],
+    [
+     2.0,
+     0.0,
+     1.0
+    ],
+    [
+     2.0,
+     0.0,
+     -1.0
+    ],
+    [
+     -2.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     2.0,
+     1.0
+    ],
+    [
+     0.0,
+     2.0,
+     -1.0
+    ],
+    [
+     1.0,
+     0.0,
+     2.0
+    ],
+    [
+     1.0,
+     0.0,
+     -2.0
+    ],
+    [
+     0.0,
+     -2.0,
+     -1.0
+    ],
+    [
+     0.0,
+     -2.0,
+     1.0
+    ],
+    [
+     -1.0,
+     0.0,
+     -2.0
+    ],
+    [
+     -1.0,
+     0.0,
+     2.0
+    ],
+    [
+     -2.0,
+     1.0,
+     0.0
+    ],
+    [
+     2.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     -2.0
+    ],
+    [
+     0.0,
+     -1.0,
+     2.0
+    ],
+    [
+     -2.0,
+     0.0,
+     -1.0
+    ],
+    [
+     -2.0,
+     0.0,
+     1.0
+    ],
+    [
+     -1.0,
+     2.0,
+     0.0
+    ],
+    [
+     1.0,
+     -2.0,
+     0.0
+    ]
+   ],
+   "_perm_faces_removed": [
+    [
+     8,
+     1,
+     9,
+     22
+    ],
+    [
+     13,
+     2,
+     12,
+     23
+    ],
+    [
+     21,
+     15,
+     3,
+     8,
+     22,
+     16
+    ],
+    [
+     10,
+     3,
+     15,
+     19
+    ],
+    [
+     23,
+     17,
+     5,
+     10,
+     19,
+     13
+    ]
+   ],
+   "_perm_faces_kept": [
+    [
+     20,
+     7,
+     21,
+     16
+    ],
+    [
+     18,
+     12,
+     2,
+     7,
+     20,
+     14
+    ],
+    [
+     10,
+     5,
+     0,
+     1,
+     8,
+     3
+    ],
+    [
+     9,
+     1,
+     0,
+     6,
+     11,
+     4
+    ],
+    [
+     6,
+     0,
+     5,
+     17
+    ],
+    [
+     14,
+     4,
+     11,
+     18
+    ],
+    [
+     21,
+     7,
+     2,
+     13,
+     19,
+     15
+    ],
+    [
+     22,
+     9,
+     4,
+     14,
+     20,
+     16
+    ],
+    [
+     18,
+     11,
+     6,
+     17,
+     23,
+     12
+    ]
+   ]
+  },
+  "s2 s1 s3 (s2 first, bipartite)": {
+   "w0c": [
+    1,
+    2,
+    3,
+    1,
+    2,
+    3
+   ],
+   "commutation_class": 4,
+   "c_singletons": 9,
+   "kept_facets": 9,
+   "kept_by_sides": {
+    "4": 3,
+    "6": 6
+   },
+   "removed_facets": 5,
+   "removed_by_sides": {
+    "4": 3,
+    "6": 2
+   },
+   "removed_normals": [
+    [
+     4,
+     0.0,
+     -2.0,
+     0.0
+    ],
+    [
+     4,
+     0.0,
+     0.0,
+     -2.0
+    ],
+    [
+     4,
+     0.0,
+     0.0,
+     2.0
+    ],
+    [
+     6,
+     1.0,
+     -1.0,
+     -1.0
+    ],
+    [
+     6,
+     1.0,
+     -1.0,
+     1.0
+    ]
+   ],
+   "vertices": 14,
+   "shared_vertices_with_perm": 9,
+   "f_vector": [
+    14,
+    21,
+    9
+   ],
+   "faces_by_sides": {
+    "4": 3,
+    "5": 6
+   },
+   "centroid": [
+    "0.0",
+    "0.0",
+    "0.0"
+   ],
+   "vacuus": {
+    "name": "A3 associahedron c=s2 s1 s3 (s2 first, bipartite)",
+    "V": 14,
+    "E": 21,
+    "F": 9,
+    "centrally_symmetric": false,
+    "mirrors": 1,
+    "plates": 14,
+    "kind": "inherited heart",
+    "plate_classes": [
+     {
+      "count": 4,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "5-gon (4 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "5-gon (5 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "6-gon (6 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 2,
+      "sheet": "shared",
+      "slice": "5-gon (3 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 2,
+      "sheet": "shared",
+      "slice": "5-gon (4 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "edges_per_plate": 2,
+      "sheet": "shared",
+      "slice": "6-gon (2 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "edges_per_plate": 3,
+      "sheet": "shared",
+      "slice": "6-gon (4 side lengths)",
+      "mirror": true
+     }
+    ],
+    "plates_on_mirrors": 1,
+    "face_plates": 6,
+    "face_plate_classes": [
+     {
+      "count": 2,
+      "faces": [
+       5,
+       5
+      ],
+      "slice": "5-gon (4 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "faces": [
+       5
+      ],
+      "slice": "5-gon (2 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "faces": [
+       4,
+       4
+      ],
+      "slice": "5-gon (3 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "faces": [
+       4
+      ],
+      "slice": "6-gon (2 side lengths)",
+      "mirror": false
+     }
+    ],
+    "face_plates_on_mirrors": 0,
+    "secs": 0.0
+   },
+   "symmetry": "order 2 (1 rotations, 1 mirrors, central inversion no), fixed space of dimension 2",
+   "fair": {
+    "face_orbits": 6,
+    "orbits": [
+     {
+      "faces": 1,
+      "sides": 4,
+      "solid_angle_over_4pi_corner_centroid": "0.124113507435512",
+      "solid_angle_over_4pi_volume_centroid": "0.196712871495844",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 2,
+      "sides": 5,
+      "solid_angle_over_4pi_corner_centroid": "0.16457837499115",
+      "solid_angle_over_4pi_volume_centroid": "0.199517822862636",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 2,
+      "sides": 5,
+      "solid_angle_over_4pi_corner_centroid": "0.130644398489864",
+      "solid_angle_over_4pi_volume_centroid": "0.116369911175523",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 1,
+      "sides": 4,
+      "solid_angle_over_4pi_corner_centroid": "0.03544094560246",
+      "solid_angle_over_4pi_volume_centroid": "0.0220189531942505",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 2,
+      "sides": 5,
+      "solid_angle_over_4pi_corner_centroid": "0.10727952719877",
+      "solid_angle_over_4pi_volume_centroid": "0.0649681526805391",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 1,
+      "sides": 4,
+      "solid_angle_over_4pi_corner_centroid": "0.03544094560246",
+      "solid_angle_over_4pi_volume_centroid": "0.0195564018725079",
+      "fair_share": "0.111111111111111"
+     }
+    ],
+    "volume_centroid_is_corner_centroid": false,
+    "volume": "52.6666666666667",
+    "verdict": "6 face orbits; NOT fair: largest |solid angle/4pi - 1/9| about the volume centroid = 0.0915547 (60-digit evaluation; certified unequal, gap >> 1e-50)"
+   },
+   "dual": {
+    "faces": 14,
+    "face_orbits": 10,
+    "orbits": [
+     {
+      "faces": 1,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0395461808821357"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0485862348473193"
+     },
+     {
+      "faces": 1,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0615808213847063"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.101392813001677"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0993409567481392"
+     },
+     {
+      "faces": 1,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.134878327036802"
+     },
+     {
+      "faces": 1,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0480257483335135"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0561657461786789"
+     },
+     {
+      "faces": 1,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0395461808821357"
+     },
+     {
+      "faces": 1,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0668447454418546"
+     }
+    ],
+    "f_vector": [
+     9,
+     21,
+     14
+    ],
+    "verdict": "14 faces in 10 orbits; NOT fair: largest |solid angle/4pi - 1/14| = 0.0634498 (60 digits)"
+   },
+   "_distkey": "886713114193161134",
+   "_V": [
+    [
+     -2.0,
+     -1.0,
+     0.0
+    ],
+    [
+     -2.0,
+     0.0,
+     -1.0
+    ],
+    [
+     -2.0,
+     0.0,
+     1.0
+    ],
+    [
+     -2.0,
+     1.0,
+     0.0
+    ],
+    [
+     2.0,
+     -2.0,
+     -3.0
+    ],
+    [
+     0.0,
+     0.0,
+     -3.0
+    ],
+    [
+     2.0,
+     -5.0,
+     0.0
+    ],
+    [
+     1.0,
+     2.0,
+     0.0
+    ],
+    [
+     0.0,
+     2.0,
+     1.0
+    ],
+    [
+     2.0,
+     1.0,
+     0.0
+    ],
+    [
+     2.0,
+     -2.0,
+     3.0
+    ],
+    [
+     0.0,
+     0.0,
+     3.0
+    ],
+    [
+     0.0,
+     2.0,
+     -1.0
+    ],
+    [
+     -1.0,
+     2.0,
+     0.0
+    ]
+   ],
+   "_faces": [
+    [
+     6,
+     4,
+     9,
+     10
+    ],
+    [
+     6,
+     0,
+     1,
+     5,
+     4
+    ],
+    [
+     7,
+     9,
+     4,
+     5,
+     12
+    ],
+    [
+     10,
+     11,
+     2,
+     0,
+     6
+    ],
+    [
+     1,
+     0,
+     2,
+     3
+    ],
+    [
+     10,
+     9,
+     7,
+     8,
+     11
+    ],
+    [
+     5,
+     1,
+     3,
+     13,
+     12
+    ],
+    [
+     13,
+     3,
+     2,
+     11,
+     8
+    ],
+    [
+     8,
+     7,
+     12,
+     13
+    ]
+   ],
+   "_perm_V": [
+    [
+     2.0,
+     1.0,
+     0.0
+    ],
+    [
+     1.0,
+     2.0,
+     0.0
+    ],
+    [
+     -1.0,
+     -2.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     2.0
+    ],
+    [
+     0.0,
+     1.0,
+     -2.0
+    ],
+    [
+     2.0,
+     0.0,
+     1.0
+    ],
+    [
+     2.0,
+     0.0,
+     -1.0
+    ],
+    [
+     -2.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     2.0,
+     1.0
+    ],
+    [
+     0.0,
+     2.0,
+     -1.0
+    ],
+    [
+     1.0,
+     0.0,
+     2.0
+    ],
+    [
+     1.0,
+     0.0,
+     -2.0
+    ],
+    [
+     0.0,
+     -2.0,
+     -1.0
+    ],
+    [
+     0.0,
+     -2.0,
+     1.0
+    ],
+    [
+     -1.0,
+     0.0,
+     -2.0
+    ],
+    [
+     -1.0,
+     0.0,
+     2.0
+    ],
+    [
+     -2.0,
+     1.0,
+     0.0
+    ],
+    [
+     2.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     -2.0
+    ],
+    [
+     0.0,
+     -1.0,
+     2.0
+    ],
+    [
+     -2.0,
+     0.0,
+     -1.0
+    ],
+    [
+     -2.0,
+     0.0,
+     1.0
+    ],
+    [
+     -1.0,
+     2.0,
+     0.0
+    ],
+    [
+     1.0,
+     -2.0,
+     0.0
+    ]
+   ],
+   "_perm_faces_removed": [
+    [
+     13,
+     2,
+     12,
+     23
+    ],
+    [
+     10,
+     3,
+     15,
+     19
+    ],
+    [
+     14,
+     4,
+     11,
+     18
+    ],
+    [
+     23,
+     17,
+     5,
+     10,
+     19,
+     13
+    ],
+    [
+     18,
+     11,
+     6,
+     17,
+     23,
+     12
+    ]
+   ],
+   "_perm_faces_kept": [
+    [
+     20,
+     7,
+     21,
+     16
+    ],
+    [
+     18,
+     12,
+     2,
+     7,
+     20,
+     14
+    ],
+    [
+     10,
+     5,
+     0,
+     1,
+     8,
+     3
+    ],
+    [
+     8,
+     1,
+     9,
+     22
+    ],
+    [
+     9,
+     1,
+     0,
+     6,
+     11,
+     4
+    ],
+    [
+     6,
+     0,
+     5,
+     17
+    ],
+    [
+     21,
+     15,
+     3,
+     8,
+     22,
+     16
+    ],
+    [
+     21,
+     7,
+     2,
+     13,
+     19,
+     15
+    ],
+    [
+     22,
+     9,
+     4,
+     14,
+     20,
+     16
+    ]
+   ]
+  },
+  "s1 s3 s2 (bipartite)": {
+   "w0c": [
+    2,
+    3,
+    1,
+    2,
+    3,
+    1
+   ],
+   "commutation_class": 4,
+   "c_singletons": 9,
+   "kept_facets": 9,
+   "kept_by_sides": {
+    "4": 3,
+    "6": 6
+   },
+   "removed_facets": 5,
+   "removed_by_sides": {
+    "4": 3,
+    "6": 2
+   },
+   "removed_normals": [
+    [
+     4,
+     0.0,
+     0.0,
+     -2.0
+    ],
+    [
+     4,
+     0.0,
+     0.0,
+     2.0
+    ],
+    [
+     4,
+     0.0,
+     2.0,
+     0.0
+    ],
+    [
+     6,
+     -1.0,
+     1.0,
+     -1.0
+    ],
+    [
+     6,
+     -1.0,
+     1.0,
+     1.0
+    ]
+   ],
+   "vertices": 14,
+   "shared_vertices_with_perm": 9,
+   "f_vector": [
+    14,
+    21,
+    9
+   ],
+   "faces_by_sides": {
+    "4": 3,
+    "5": 6
+   },
+   "centroid": [
+    "0.0",
+    "0.0",
+    "0.0"
+   ],
+   "vacuus": {
+    "name": "A3 associahedron c=s1 s3 s2 (bipartite)",
+    "V": 14,
+    "E": 21,
+    "F": 9,
+    "centrally_symmetric": false,
+    "mirrors": 1,
+    "plates": 14,
+    "kind": "inherited heart",
+    "plate_classes": [
+     {
+      "count": 4,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "5-gon (4 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "5-gon (5 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 1,
+      "sheet": "single",
+      "slice": "6-gon (6 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 2,
+      "sheet": "shared",
+      "slice": "5-gon (3 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "edges_per_plate": 2,
+      "sheet": "shared",
+      "slice": "5-gon (4 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "edges_per_plate": 2,
+      "sheet": "shared",
+      "slice": "6-gon (2 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "edges_per_plate": 3,
+      "sheet": "shared",
+      "slice": "6-gon (4 side lengths)",
+      "mirror": true
+     }
+    ],
+    "plates_on_mirrors": 1,
+    "face_plates": 6,
+    "face_plate_classes": [
+     {
+      "count": 2,
+      "faces": [
+       5,
+       5
+      ],
+      "slice": "5-gon (4 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 2,
+      "faces": [
+       5
+      ],
+      "slice": "5-gon (2 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "faces": [
+       4,
+       4
+      ],
+      "slice": "5-gon (3 side lengths)",
+      "mirror": false
+     },
+     {
+      "count": 1,
+      "faces": [
+       4
+      ],
+      "slice": "6-gon (2 side lengths)",
+      "mirror": false
+     }
+    ],
+    "face_plates_on_mirrors": 0,
+    "secs": 0.0
+   },
+   "symmetry": "order 2 (1 rotations, 1 mirrors, central inversion no), fixed space of dimension 2",
+   "fair": {
+    "face_orbits": 6,
+    "orbits": [
+     {
+      "faces": 1,
+      "sides": 4,
+      "solid_angle_over_4pi_corner_centroid": "0.124113507435512",
+      "solid_angle_over_4pi_volume_centroid": "0.196712871495844",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 2,
+      "sides": 5,
+      "solid_angle_over_4pi_corner_centroid": "0.16457837499115",
+      "solid_angle_over_4pi_volume_centroid": "0.199517822862636",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 2,
+      "sides": 5,
+      "solid_angle_over_4pi_corner_centroid": "0.130644398489864",
+      "solid_angle_over_4pi_volume_centroid": "0.116369911175523",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 1,
+      "sides": 4,
+      "solid_angle_over_4pi_corner_centroid": "0.03544094560246",
+      "solid_angle_over_4pi_volume_centroid": "0.0220189531942505",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 2,
+      "sides": 5,
+      "solid_angle_over_4pi_corner_centroid": "0.10727952719877",
+      "solid_angle_over_4pi_volume_centroid": "0.0649681526805391",
+      "fair_share": "0.111111111111111"
+     },
+     {
+      "faces": 1,
+      "sides": 4,
+      "solid_angle_over_4pi_corner_centroid": "0.03544094560246",
+      "solid_angle_over_4pi_volume_centroid": "0.0195564018725079",
+      "fair_share": "0.111111111111111"
+     }
+    ],
+    "volume_centroid_is_corner_centroid": false,
+    "volume": "52.6666666666667",
+    "verdict": "6 face orbits; NOT fair: largest |solid angle/4pi - 1/9| about the volume centroid = 0.0915547 (60-digit evaluation; certified unequal, gap >> 1e-50)"
+   },
+   "dual": {
+    "faces": 14,
+    "face_orbits": 10,
+    "orbits": [
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.101392813001677"
+     },
+     {
+      "faces": 1,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0395461808821357"
+     },
+     {
+      "faces": 1,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.134878327036802"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0993409567481392"
+     },
+     {
+      "faces": 1,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0480257483335135"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0561657461786789"
+     },
+     {
+      "faces": 1,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0395461808821357"
+     },
+     {
+      "faces": 2,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0485862348473193"
+     },
+     {
+      "faces": 1,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0615808213847063"
+     },
+     {
+      "faces": 1,
+      "sides": 3,
+      "solid_angle_over_4pi_volume_centroid": "0.0668447454418546"
+     }
+    ],
+    "f_vector": [
+     9,
+     21,
+     14
+    ],
+    "verdict": "14 faces in 10 orbits; NOT fair: largest |solid angle/4pi - 1/14| = 0.0634498 (60 digits)"
+   },
+   "_distkey": "886713114193161134",
+   "_V": [
+    [
+     -2.0,
+     2.0,
+     -3.0
+    ],
+    [
+     -2.0,
+     -1.0,
+     0.0
+    ],
+    [
+     -2.0,
+     5.0,
+     0.0
+    ],
+    [
+     -2.0,
+     2.0,
+     3.0
+    ],
+    [
+     0.0,
+     0.0,
+     -3.0
+    ],
+    [
+     -1.0,
+     -2.0,
+     0.0
+    ],
+    [
+     0.0,
+     -2.0,
+     -1.0
+    ],
+    [
+     2.0,
+     1.0,
+     0.0
+    ],
+    [
+     2.0,
+     0.0,
+     1.0
+    ],
+    [
+     0.0,
+     0.0,
+     3.0
+    ],
+    [
+     2.0,
+     0.0,
+     -1.0
+    ],
+    [
+     2.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -2.0,
+     1.0
+    ],
+    [
+     1.0,
+     -2.0,
+     0.0
+    ]
+   ],
+   "_faces": [
+    [
+     2,
+     0,
+     1,
+     3
+    ],
+    [
+     7,
+     10,
+     4,
+     0,
+     2
+    ],
+    [
+     5,
+     1,
+     0,
+     4,
+     6
+    ],
+    [
+     8,
+     7,
+     2,
+     3,
+     9
+    ],
+    [
+     10,
+     7,
+     8,
+     11
+    ],
+    [
+     9,
+     3,
+     1,
+     5,
+     12
+    ],
+    [
+     13,
+     6,
+     4,
+     10,
+     11
+    ],
+    [
+     13,
+     11,
+     8,
+     9,
+     12
+    ],
+    [
+     12,
+     5,
+     6,
+     13
+    ]
+   ],
+   "_perm_V": [
+    [
+     2.0,
+     1.0,
+     0.0
+    ],
+    [
+     1.0,
+     2.0,
+     0.0
+    ],
+    [
+     -1.0,
+     -2.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     2.0
+    ],
+    [
+     0.0,
+     1.0,
+     -2.0
+    ],
+    [
+     2.0,
+     0.0,
+     1.0
+    ],
+    [
+     2.0,
+     0.0,
+     -1.0
+    ],
+    [
+     -2.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     2.0,
+     1.0
+    ],
+    [
+     0.0,
+     2.0,
+     -1.0
+    ],
+    [
+     1.0,
+     0.0,
+     2.0
+    ],
+    [
+     1.0,
+     0.0,
+     -2.0
+    ],
+    [
+     0.0,
+     -2.0,
+     -1.0
+    ],
+    [
+     0.0,
+     -2.0,
+     1.0
+    ],
+    [
+     -1.0,
+     0.0,
+     -2.0
+    ],
+    [
+     -1.0,
+     0.0,
+     2.0
+    ],
+    [
+     -2.0,
+     1.0,
+     0.0
+    ],
+    [
+     2.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     -2.0
+    ],
+    [
+     0.0,
+     -1.0,
+     2.0
+    ],
+    [
+     -2.0,
+     0.0,
+     -1.0
+    ],
+    [
+     -2.0,
+     0.0,
+     1.0
+    ],
+    [
+     -1.0,
+     2.0,
+     0.0
+    ],
+    [
+     1.0,
+     -2.0,
+     0.0
+    ]
+   ],
+   "_perm_faces_removed": [
+    [
+     8,
+     1,
+     9,
+     22
+    ],
+    [
+     21,
+     15,
+     3,
+     8,
+     22,
+     16
+    ],
+    [
+     10,
+     3,
+     15,
+     19
+    ],
+    [
+     14,
+     4,
+     11,
+     18
+    ],
+    [
+     22,
+     9,
+     4,
+     14,
+     20,
+     16
+    ]
+   ],
+   "_perm_faces_kept": [
+    [
+     20,
+     7,
+     21,
+     16
+    ],
+    [
+     18,
+     12,
+     2,
+     7,
+     20,
+     14
+    ],
+    [
+     10,
+     5,
+     0,
+     1,
+     8,
+     3
+    ],
+    [
+     9,
+     1,
+     0,
+     6,
+     11,
+     4
+    ],
+    [
+     6,
+     0,
+     5,
+     17
+    ],
+    [
+     13,
+     2,
+     12,
+     23
+    ],
+    [
+     21,
+     7,
+     2,
+     13,
+     19,
+     15
+    ],
+    [
+     23,
+     17,
+     5,
+     10,
+     19,
+     13
+    ],
+    [
+     18,
+     11,
+     6,
+     17,
+     23,
+     12
+    ]
+   ]
+  }
+ },
+ "secs": 0.7
+}
